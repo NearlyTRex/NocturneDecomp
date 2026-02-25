@@ -15,7 +15,7 @@ void __cdecl core_morph_cpp_CMorphModel_renderFaces_FUN_0052b160(CMorphModel *th
   longlong lVar2;
   int iVar3;
   int iVar4;
-  SMRGLHeaderPrimitive *polygon_info;
+  SMRGLHeaderPrimitive *prim;
   int local_14;
   
   engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0048d6c0(g_CDemonRendererPtr2,0);
@@ -37,13 +37,13 @@ void __cdecl core_morph_cpp_CMorphModel_renderFaces_FUN_0052b160(CMorphModel *th
                   (g_CDemonRendererPtr2,this_ptr->textures[iVar1].textures);
         local_14 = iVar1;
       }
-      polygon_info = (SMRGLHeaderPrimitive *)
-                     ((int)&(((SMRGLPrimitiveTriangle *)(this_ptr->faces->vertices + -2))->base).
-                            base.type + iVar3);
+      prim = (SMRGLHeaderPrimitive *)
+             ((int)&(((SMRGLPrimitiveTriangle *)(this_ptr->faces->vertices + -2))->base).base.type +
+             iVar3);
       iVar4 = iVar4 + 1;
       iVar3 = iVar3 + 0x3c;
       engine_drender_cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0
-                (g_CDemonRendererPtr2,polygon_info,0x267);
+                (g_CDemonRendererPtr2,prim,0x267);
     } while (iVar4 < this_ptr->num_faces);
   }
   engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80(g_CDemonRendererPtr2);

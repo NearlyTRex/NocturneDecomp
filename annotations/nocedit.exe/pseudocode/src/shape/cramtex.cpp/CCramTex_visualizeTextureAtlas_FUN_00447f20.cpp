@@ -59,7 +59,7 @@ void __cdecl shape_cramtex_cpp_CCramTex_visualizeTextureAtlas_FUN_00447f20(CCram
             (local_100,"CramTex II %s:  N=%d  Map %d/%d  Coverage: %4.1f%%  Shrink: %4.1f%%  Size: %u (%u)\n",pcVar6,g_CramTextureCount,
              g_CramMapNumber + 1,g_CramTotalMaps,
              ((double)local_14 * 100) / (double)local_18,
-             ((double)g_CramAtlasWidth * 100) /
+             ((double)g_CramAtlasDimension * 100) /
              (double)g_CramCurrentAcceptableSize,g_CramCurrentAcceptableSize,g_CramAcceptableSize);
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_drawText_FUN_00401fd0(local_100,0,0);
@@ -95,9 +95,9 @@ void __cdecl shape_cramtex_cpp_CCramTex_visualizeTextureAtlas_FUN_00447f20(CCram
       local_30 = local_2c - local_24;
       pSVar8 = g_CramRectangles;
       do {
-        if ((g_CramMapNumber == pSVar8->left) && (-1 < pSVar8->active_flag)) {
-          iVar7 = local_28 + (pSVar8->top * local_38) / g_CramCurrentAcceptableSize;
-          y = local_24 + (pSVar8->right * local_30) / g_CramCurrentAcceptableSize;
+        if ((g_CramMapNumber == pSVar8->map_id) && (-1 < pSVar8->active_flag)) {
+          iVar7 = local_28 + (pSVar8->start_x * local_38) / g_CramCurrentAcceptableSize;
+          y = local_24 + (pSVar8->start_y * local_30) / g_CramCurrentAcceptableSize;
           if ((iVar7 < local_20) && (y < local_2c)) {
             g_ActiveRenderColor = pSVar8->active_flag;
             engine_2d_c_plotPixel_FUN_00401140(iVar7,y);

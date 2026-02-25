@@ -4,13 +4,13 @@
       {
         "category": "undeclared_identifier",
         "column": 17,
-        "line": 111,
+        "line": 105,
         "message": "use of undeclared identifier 'stack0xfffff964'"
       },
       {
         "category": "undeclared_identifier",
         "column": 32,
-        "line": 113,
+        "line": 107,
         "message": "use of undeclared identifier 'stack0xfffff964'"
       }
     ],
@@ -19,18 +19,18 @@
   },
   "complexity": {
     "assembly_lines": 730,
-    "complexity_score": 355,
+    "complexity_score": 350,
     "cross_reference_count": 0,
     "function_call_count": 35,
     "global_count": 40,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 305,
+    "pseudocode_lines": 300,
     "suspect_count": 4,
     "suspect_types": [
       "pointer_cast",
       "stack_ref"
     ],
-    "total_lines": 1035
+    "total_lines": 1030
   },
   "cross_references": [],
   "function": {
@@ -423,13 +423,13 @@
     },
     {
       "addr": "02d12bf0",
-      "name": "g_VersionControlSession.unk1[0]",
+      "name": "g_VersionControlSession.overwrite_own_choice",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02d12bf4",
-      "name": "g_VersionControlSession.unk1[4]",
+      "name": "g_VersionControlSession.overwrite_writeable_choice",
       "type": "undefined4",
       "value": null
     },
@@ -665,7 +665,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 104,
+      "line": 98,
       "match": "&stack0xfffff964",
       "severity": "moderate",
       "text": "(&stack0xfffff964,\"A writable copy of %s exists.  Replace it?\",local_340);",
@@ -673,10 +673,10 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 106,
+      "line": 100,
       "match": "&stack0xfffff964",
       "severity": "moderate",
-      "text": "((int *)&stack0xfffff964,g_VersionControlSession.unk1 + 4);",
+      "text": "((int *)&stack0xfffff964,",
       "type": "stack_ref"
     }
   ]

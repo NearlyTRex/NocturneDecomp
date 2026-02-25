@@ -16,7 +16,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0(CDemo
   int iVar3;
   int iVar4;
   CVector3f *pCVar5;
-  CMatrix3x3i *pCVar6;
+  CMatrix3x3f *pCVar6;
   int *piVar7;
   byte bVar8;
   bool bVar9;
@@ -42,8 +42,8 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0(CDemo
   pCVar6 = &(light_source->base).base.rotation_matrix;
   piVar7 = (int *)&g_CoronaCameraRotationMatrix;
   for (iVar4 = 10; iVar3 = 0, iVar4 != 0; iVar4 = iVar4 + -1) {
-    *piVar7 = pCVar6->m[0].x;
-    pCVar6 = (CMatrix3x3i *)&pCVar6->m[0].y;
+    *piVar7 = (int)pCVar6->m[0].x;
+    pCVar6 = (CMatrix3x3f *)&pCVar6->m[0].y;
     piVar7 = piVar7 + 1;
   }
   do {
@@ -105,14 +105,14 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0(CDemo
               *local_14 = *local_14 +
                           (char)((int)((g_CoronaMaxDepth - uVar2) *
                                       (uint)g_CurrentLightForCorona->precomputed_lighting_textures
-                                            [((g_CurrentLightForCorona->teture_coord_mask &
+                                            [((g_CurrentLightForCorona->texture_coord_mask &
                                               local_50[0] >>
                                               ((byte)g_CurrentLightForCorona->shadow_y_shift & 0x1f)
                                               ) << ((byte)g_CurrentLightForCorona->texture_row_shift
                                                    & 0x1f)) +
                                              ((int)local_54 >>
                                               ((byte)g_CurrentLightForCorona->shadow_x_shift & 0x1f)
-                                             & g_CurrentLightForCorona->teture_coord_mask)]) >>
+                                             & g_CurrentLightForCorona->texture_coord_mask)]) >>
                                 ((byte)g_CoronaDepthShift & 0x1f));
             }
           }

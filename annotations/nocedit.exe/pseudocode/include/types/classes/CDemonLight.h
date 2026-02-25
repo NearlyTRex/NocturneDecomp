@@ -18,7 +18,7 @@ typedef struct CDemonLight {
     int texture_height; // 0x1c5c
     int texture_row_shift; // 0x1c60
     int texture_col_shift; // 0x1c64
-    uint teture_coord_mask; // 0x1c68
+    uint texture_coord_mask; // 0x1c68
     uchar* filter_buffer; // 0x1c6c
     int unused; // 0x1c70
     char filter_name[64]; // 0x1c74
@@ -33,7 +33,7 @@ typedef struct CDemonLight {
     void* saved_screen_buffer_rows[1200]; // 0x1cd4
     ushort* shadow_depth_buffer; // 0x2f94
     void* shadow_buffer_raw; // 0x2f98
-    int restore_memory_size; // 0x2f9c
+    void* master_zbuffer; // 0x2f9c
     uchar* lightmap_visibility_bits; // 0x2fa0
     int transform_scale_factor; // 0x2fa4, fixed point
     float volumetric_intensity; // 0x2fa8

@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonPlaneMaskedComplex_FUN_00404c60(SMRGLHeaderPrimitive *polygon_info)
+; SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonPlaneMaskedComplex_FUN_00404c60(SMRGLHeaderPrimitive *prim)
 ;
 ; Parameters:
-; SMRGLHeaderPrimitive * Stack[0x4]:4   polygon_info
+; SMRGLHeaderPrimitive * Stack[0x4]:4   prim
 ;
 ; XREF[1]:
 ;   shape_design.c_renderSinglePolygon_FUN_0045ce20 at 0045d0d9
@@ -57,7 +57,7 @@ section .text
     MOV dword ptr [0x02d052a0],EDX      ; 00404cad | g_RenderStateFlags
     MOV dword ptr [0x02d052a4],ECX      ; 00404cb3 | g_RenderStateFlag2
     CALL engine_3d.c_calculatePolygonLighting_FUN_00403a00 ; 00404cb9
-        ;   XREF to: 00403a00 (UNCONDITIONAL_CALL)  ; void engine_3d.c_calculatePolygonLighting_FUN_00403a00(SMRGLHeaderPrimitive * polygon_info)
+        ;   XREF to: 00403a00 (UNCONDITIONAL_CALL)  ; void engine_3d.c_calculatePolygonLighting_FUN_00403a00(SMRGLHeaderPrimitive * prim)
     ADD ESP,0x4                         ; 00404cbe
     PUSH ESI                            ; 00404cc1
     MOV ESI,dword ptr [EBX + 0x4]       ; 00404cc2

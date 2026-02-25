@@ -12,7 +12,7 @@ int __cdecl wincore_windll_cpp_loadExternalRenderer_FUN_005b6750(HWND window_han
   HWND pHVar1;
   FARPROC pFVar2;
   int iVar3;
-  char acStack_3c2c [4];
+  void *pvStack_3c2c;
   byte auStack_1e64 [7624];
   CExternalRendererBridge CStack_9c;
   
@@ -37,10 +37,10 @@ int __cdecl wincore_windll_cpp_loadExternalRenderer_FUN_005b6750(HWND window_han
     g_FullscreenMode = 0;
     return 0;
   }
-  (*pFVar2)(g_RendererDLLHandle,acStack_3c2c);
+  (*pFVar2)(g_RendererDLLHandle,&pvStack_3c2c);
   wincore_windll_cpp_CExternalRenderer_ctor_FUN_005b7f90((CExternalRenderer *)auStack_1e64);
   iVar3 = wincore_windll_cpp_CExternalRenderer_validate_FUN_005b7fe0
-                    ((CExternalRenderer *)acStack_3c2c,(CExternalRenderer *)auStack_1e64);
+                    ((CExternalRenderer *)&pvStack_3c2c,(CExternalRenderer *)auStack_1e64);
   if (iVar3 != 0) {
     g_DLLFunctionsMissing = 0;
     g_APIDLL_init =
@@ -400,10 +400,7 @@ int __cdecl wincore_windll_cpp_loadExternalRenderer_FUN_005b6750(HWND window_han
       CStack_9c.sizeof7 = 0x28;
       iVar3 = (*g_APIDLL_init)(pHVar1,&CStack_9c);
       if (iVar3 != 0) {
-        acStack_3c2c[0] = -0x3b;
-        acStack_3c2c[1] = 'q';
-        acStack_3c2c[2] = '[';
-        acStack_3c2c[3] = '\0';
+        pvStack_3c2c = (void *)0x5b71c5;
         wincore_windll_cpp_selectCard_FUN_005b7d90(g_RendererHandle);
         return 1;
       }

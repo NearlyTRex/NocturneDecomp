@@ -5,7 +5,6 @@
 // =============================================================================
 
 // CVector3f
-CVector3f g_SavedCameraOrigin = {};
 CVector3f g_SavedCameraRotation = {};
 CVector3f g_VDTempVector = {};
 
@@ -17,6 +16,9 @@ SDisplayListSortEntry g_SetDisplayListSortBuffer[2000] = {};
 
 // SRaytraceState[5]
 SRaytraceState g_RaytraceStateStack[5] = {};
+
+// UVector3
+UVector3 g_SavedCameraOrigin = {};
 
 // float
 float g_SavedProjectionFactor = {};

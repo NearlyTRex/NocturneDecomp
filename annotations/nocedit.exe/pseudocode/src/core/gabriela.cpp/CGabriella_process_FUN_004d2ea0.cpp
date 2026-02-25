@@ -656,7 +656,7 @@ LAB_004d344b:
           this_ptr->dynamite_charge_power = 60.0f;
         }
       }
-      local_e8.x = this_ptr->dynamite_throw_angle;
+      local_e8.x = this_ptr->aim_pitch;
       local_e8.z = 0.0;
       local_e8.y = 0.0;
       core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
@@ -697,7 +697,7 @@ LAB_004d368e:
   iVar15 = (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)this_ptr);
   if (iVar15 != 2) {
     core_cloth_cpp_CCloth_process_FUN_0043ab80
-              (&this_ptr->coat,&(this_ptr->base).base.base.location.position,
+              (&this_ptr->coat_cloth,&(this_ptr->base).base.base.location.position,
                &(this_ptr->base).base.base.orient.vec,delta_time,
                (this_ptr->base).base.closest_distance_threshold,&(this_ptr->base).base.model);
   }

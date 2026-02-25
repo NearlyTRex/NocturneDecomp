@@ -19,15 +19,15 @@ void __cdecl core_trash_cpp_CTrash_setup_FUN_005debc0(CTrash *this_ptr)
   (this_ptr->velocity).z = 0.0;
   (this_ptr->velocity).y = (this_ptr->velocity).z;
   (this_ptr->velocity).x = (this_ptr->velocity).y;
-  this_ptr->unk = (void *)0x3f000000;
-  this_ptr->field4_0x2e4 = (void *)0x40000000;
+  this_ptr->collision_bottom_y = 0.5;
+  this_ptr->collision_top_y = 2.0;
   this_ptr->damping_factor = 1.0;
   this_ptr->collision_radius = 1.0;
   fVar1 = core_actor_cpp_getRandomFloat_FUN_0040cc10(6.0,20.0);
   this_ptr->animation_timer = fVar1;
-  (this_ptr->fog_target).z = 0.0;
-  (this_ptr->fog_target).y = (this_ptr->fog_target).z;
-  (this_ptr->fog_target).x = (this_ptr->fog_target).y;
-  this_ptr->rotation_y = 8.0;
+  (this_ptr->drift_target).z = 0.0;
+  (this_ptr->drift_target).y = (this_ptr->drift_target).z;
+  (this_ptr->drift_target).x = (this_ptr->drift_target).y;
+  this_ptr->gravity = 8.0;
   return;
 }

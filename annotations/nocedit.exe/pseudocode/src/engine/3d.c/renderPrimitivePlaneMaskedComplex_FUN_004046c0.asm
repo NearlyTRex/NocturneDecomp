@@ -61,7 +61,7 @@ section .text
     PUSH EDI                            ; 00404702
         ;   Label: LAB_00404702
     CALL engine_3d.c_calculatePolygonLighting_FUN_00403a00 ; 00404703
-        ;   XREF to: 00403a00 (UNCONDITIONAL_CALL)  ; void engine_3d.c_calculatePolygonLighting_FUN_00403a00(SMRGLHeaderPrimitive * polygon_info)
+        ;   XREF to: 00403a00 (UNCONDITIONAL_CALL)  ; void engine_3d.c_calculatePolygonLighting_FUN_00403a00(SMRGLHeaderPrimitive * prim)
     MOV EDX,dword ptr [0x02d051f4]      ; 00404708 | g_PerspectiveReciprocal
     ADD ESP,0x4                         ; 0040470e
     TEST EDX,EDX                        ; 00404711

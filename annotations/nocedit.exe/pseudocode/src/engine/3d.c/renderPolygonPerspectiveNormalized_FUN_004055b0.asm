@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonPerspectiveNormalized_FUN_004055b0(SMRGLHeaderPrimitive *polygon_info)
+; SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonPerspectiveNormalized_FUN_004055b0(SMRGLHeaderPrimitive *prim)
 ;
 ; Parameters:
-; SMRGLHeaderPrimitive * Stack[0x4]:4   polygon_info
+; SMRGLHeaderPrimitive * Stack[0x4]:4   prim
 ; Local Variables:
 ; undefined4       Stack[-0x28]:4  local_28
 ; undefined4       Stack[-0x24]:4  local_24
@@ -75,7 +75,7 @@ section .text
     MOV dword ptr [0x02d052a0],EDI      ; 00405623 | g_RenderStateFlags
     MOV dword ptr [0x02d052a4],EBP      ; 00405629 | g_RenderStateFlag2
     CALL engine_3d.c_calculatePolygonLighting_FUN_00403a00 ; 0040562f
-        ;   XREF to: 00403a00 (UNCONDITIONAL_CALL)  ; void engine_3d.c_calculatePolygonLighting_FUN_00403a00(SMRGLHeaderPrimitive * polygon_info)
+        ;   XREF to: 00403a00 (UNCONDITIONAL_CALL)  ; void engine_3d.c_calculatePolygonLighting_FUN_00403a00(SMRGLHeaderPrimitive * prim)
     ADD ESP,0x4                         ; 00405634
     PUSH ESI                            ; 00405637
     MOV EAX,dword ptr [EBX + 0x4]       ; 00405638

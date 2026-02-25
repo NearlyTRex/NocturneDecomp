@@ -1,0 +1,448 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "incompatible_types",
+        "column": 14,
+        "line": 33,
+        "message": "assigning to 'CVector3i *' from incompatible type 'void *'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 200,
+    "complexity_score": 200,
+    "cross_reference_count": 2,
+    "function_call_count": 13,
+    "global_count": 15,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 110,
+    "suspect_count": 8,
+    "suspect_types": [
+      "pointer_cast",
+      "stack_alignment_array"
+    ],
+    "total_lines": 310
+  },
+  "cross_references": [
+    {
+      "addr": "0057d660",
+      "from_addr": "0057e188",
+      "name": "core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0057a940",
+      "from_addr": "0057adcc",
+      "name": "core_setedit.cpp_CDemonSet_showScenePreview_FUN_0057a940",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0057fd00",
+    "address_range": [
+      [
+        "0057fd00",
+        "0057ff02"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_setedit.cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00",
+    "signature": "void __cdecl core_setedit_cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00(CDemonSet *this_ptr,char *coverage_map,int exclude_camera_index)"
+  },
+  "function_calls": [
+    {
+      "addr": "004204f0",
+      "is_variadic": false,
+      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0"
+    },
+    {
+      "addr": "0044c430",
+      "is_variadic": false,
+      "name": "core_dcamera.cpp_CDemonCamera_beginScene_FUN_0044c430"
+    },
+    {
+      "addr": "0044cb80",
+      "is_variadic": false,
+      "name": "core_dcamera.cpp_CDemonCamera_endScene_FUN_0044cb80"
+    },
+    {
+      "addr": "0044d2a0",
+      "is_variadic": false,
+      "name": "core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0"
+    },
+    {
+      "addr": "0044d370",
+      "is_variadic": false,
+      "name": "core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370"
+    },
+    {
+      "addr": "00506f10",
+      "is_variadic": true,
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "00580310",
+      "is_variadic": false,
+      "name": "core_setedit.cpp_CDemonSet_buildCameraDepthData_FUN_00580310"
+    },
+    {
+      "addr": "005fde40",
+      "is_variadic": false,
+      "name": "crt_memory.c_memset_FUN_005fde40"
+    },
+    {
+      "addr": "0048c4f0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0"
+    },
+    {
+      "addr": "0048c640",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720"
+    },
+    {
+      "addr": "0048c450",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450"
+    },
+    {
+      "addr": "0050f1f0",
+      "is_variadic": false,
+      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1f0"
+    },
+    {
+      "addr": "005fe659",
+      "is_variadic": false,
+      "name": "shape_memdbg.cpp_free_FUN_005fe659"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0064851d",
+      "name": "s_core_setedit_cpp_0064851d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00648531",
+      "name": "s_core_setedit_cpp_00648531",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00648545",
+      "name": "s_Out_of_memory_00648545",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00648553",
+      "name": "s_core_setedit_cpp_00648553",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr2",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "00679394",
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
+    },
+    {
+      "addr": "00679398",
+      "name": "g_WindowHeight",
+      "type": "int",
+      "value": "0xc8"
+    },
+    {
+      "addr": "0067d20c",
+      "name": "g_CurrentDebugFilename",
+      "type": "char*",
+      "value": "0067d200"
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02f0d944",
+      "name": "g_CurrentDebugLine",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "032758e4",
+      "name": "g_CDemonCameraInstance",
+      "type": "CDemonCamera",
+      "value": null
+    },
+    {
+      "addr": "03275a28",
+      "name": "g_ScreenHeightForFonts",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03275a2c",
+      "name": "g_CDemonCameraInstance.framebuffer_height",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0057e188",
+        "call_type": "direct",
+        "caller": "core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660",
+        "estimated_params": 3,
+        "instructions_analyzed": 8,
+        "reg_params": [],
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0057adcc",
+        "call_type": "direct",
+        "caller": "core_setedit.cpp_CDemonSet_showScenePreview_FUN_0057a940",
+        "estimated_params": 3,
+        "instructions_analyzed": 6,
+        "reg_params": [],
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "estimated_params": 3
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.607361963190184,
+    "instruction_count": 163,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 6,
+      "BOOL_OR": 2,
+      "BRANCH": 4,
+      "CALL": 13,
+      "CBRANCH": 7,
+      "COPY": 135,
+      "INT_ADD": 81,
+      "INT_AND": 83,
+      "INT_CARRY": 19,
+      "INT_EQUAL": 72,
+      "INT_LEFT": 2,
+      "INT_LESS": 7,
+      "INT_MULT": 15,
+      "INT_NOTEQUAL": 8,
+      "INT_OR": 5,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 22,
+      "INT_SEXT": 6,
+      "INT_SLESS": 37,
+      "INT_SUB": 62,
+      "INT_XOR": 4,
+      "INT_ZEXT": 12,
+      "LOAD": 40,
+      "POPCOUNT": 35,
+      "RETURN": 1,
+      "STORE": 62,
+      "SUBPIECE": 4
+    },
+    "pcode_op_count": 751
+  },
+  "stack_frame": {
+    "frame_size": 96,
+    "local_size": 84,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      },
+      {
+        "is_param": true,
+        "name": "coverage_map",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "exclude_camera_index",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 11,
+      "match": "aiStackY_1038",
+      "severity": "moderate",
+      "text": "int aiStackY_1038 [1015];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 43,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&local_44 + (uint)bVar6 * -8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 44,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&local_38 + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 45,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&local_44 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 46,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&local_38 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 50,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "puVar5 = (uint *)((int)pCVar3 + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 52,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*puVar5 = *(uint *)((int)&local_50 + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 54,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&local_50 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
+      "type": "pointer_cast"
+    }
+  ]
+}

@@ -57,7 +57,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053e220(CDemonMission *this_ptr
   g_CDemonLightInstance.light_enabled_flag = 0;
   g_CDemonLightInstance.base.max_distance = 64.0;
   core_set_cpp_CDemonSet_initScene_FUN_0056aa10(g_CDemonSetPtr);
-  core_setedit_cpp_CDemonSet_FUN_00576da0(g_CDemonSetPtr);
+  core_setedit_cpp_CDemonSet_loadOrBuildThumbnails_FUN_00576da0(g_CDemonSetPtr,0);
   core_setdir_cpp_CDemonSet_clearCameraSwitchCooldown_FUN_00575b20(g_CDemonSetPtr);
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Preparing actors.");

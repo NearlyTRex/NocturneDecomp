@@ -31,19 +31,13 @@ void __cdecl core_spike_cpp_CSpike_setup_FUN_005b8360(CSpike *this_ptr)
   fVar2 = pCVar5->y;
   fVar3 = (this_ptr->base).location.position.z;
   fVar4 = pCVar5->z;
-  if ((float *)this_ptr->unk1 == local_2c) {
-    this_ptr->unk6[0] = '\0';
-    this_ptr->unk6[1] = '\0';
-    this_ptr->unk6[2] = '\0';
-    this_ptr->unk6[3] = '\0';
+  if (&this_ptr->base_position == (CVector3f *)local_2c) {
+    this_ptr->wait_timer = 0.0;
     return;
   }
-  *(float *)this_ptr->unk1 = (this_ptr->base).location.position.x - pCVar5->x;
-  *(float *)(this_ptr->unk1 + 4) = fVar1 - fVar2;
-  *(float *)(this_ptr->unk1 + 8) = fVar3 - fVar4;
-  this_ptr->unk6[0] = '\0';
-  this_ptr->unk6[1] = '\0';
-  this_ptr->unk6[2] = '\0';
-  this_ptr->unk6[3] = '\0';
+  (this_ptr->base_position).x = (this_ptr->base).location.position.x - pCVar5->x;
+  (this_ptr->base_position).y = fVar1 - fVar2;
+  (this_ptr->base_position).z = fVar3 - fVar4;
+  this_ptr->wait_timer = 0.0;
   return;
 }

@@ -48,7 +48,7 @@
 ;   CBitFont* g_SmallEditorFont
 ;   char* g_WrappedTextBuffer
 ;   undefined4 DAT_02d7b9e0
-;   undefined1 DAT_02d830a8
+;   char[256] g_ChapterDisplayName
 ;   char* g_CurrentDisplayText
 ;   ... and 3 more
 ;
@@ -139,7 +139,7 @@ section .text
     CALL engine_3d.c_setRenderAlpha_FUN_00406d80 ; 004d8115
         ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; void engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
     ADD ESP,0x4                         ; 004d811a
-    PUSH 0x2d830a8                      ; 004d811d | DAT_02d830a8
+    PUSH 0x2d830a8                      ; 004d811d | g_ChapterDisplayName
     MOV ECX,dword ptr [0x02d831a8]      ; 004d8122 | g_CurrentDisplayText
     PUSH ECX                            ; 004d8128
     PUSH 0x62b265                       ; 004d8129 | = "%d - %s"

@@ -176,11 +176,11 @@ switchD_004f8665_default:
                                (&(this_ptr->base).base.model.motion_controller);
             if (iVar3 != pSVar9->state_index) {
               if ((((iVar3 == 0xe) || (iVar3 == 0xf)) || (iVar3 == 0x10)) &&
-                 (iVar7 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->swing_sfx_handle),
+                 (iVar7 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handles[0]),
                  iVar7 == 0)) {
                 uVar8 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                                   ((CDemonActor *)this_ptr,"icepick-miss?.wav");
-                this_ptr->swing_sfx_handle = uVar8;
+                this_ptr->sfx_handles[0] = uVar8;
               }
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                         (&(this_ptr->base).base.model.motion_controller,iVar3,1);

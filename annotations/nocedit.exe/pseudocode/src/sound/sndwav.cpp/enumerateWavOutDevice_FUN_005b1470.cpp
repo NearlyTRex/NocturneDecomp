@@ -25,7 +25,7 @@ int __cdecl sound_sndwav_cpp_enumerateWavOutDevice_FUN_005b1470(UINT device_id,S
   }
   device_info->api_type = 0;
   device_info->device_id = device_id;
-  device_info->device_value1 = 0;
+  device_info->has_hardware_mixing = 0;
   device_info->flags = 0;
   pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("WavOutWrite: ");
   pSVar6 = device_info;
@@ -48,7 +48,7 @@ int __cdecl sound_sndwav_cpp_enumerateWavOutDevice_FUN_005b1470(UINT device_id,S
     pcVar3 = device_info->device_name;
     device_info = pSVar6;
   } while (*pcVar3 != '\0');
-  pcVar3 = (char *)((int)&pSVar6[-1].device_value2 + 3);
+  pcVar3 = (char *)((int)&pSVar6[-1].is_emulated + 3);
   do {
     cVar1 = *pCVar5;
     *pcVar3 = cVar1;

@@ -45,7 +45,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_0050aba0(CM
   (pSVar3->rotation_matrix).m[2].x = (pSVar1->rotation_matrix).m[2].x;
   (pSVar3->rotation_matrix).m[2].y = (pSVar1->rotation_matrix).m[2].y;
   (pSVar3->rotation_matrix).m[2].z = (pSVar1->rotation_matrix).m[2].z;
-  pSVar3->unk = pSVar1->unk;
+  pSVar3->dead = pSVar1->dead;
   (pSVar3->color).r = (pSVar1->color).r;
   (pSVar3->color).g = (pSVar1->color).g;
   (pSVar3->color).b = (pSVar1->color).b;

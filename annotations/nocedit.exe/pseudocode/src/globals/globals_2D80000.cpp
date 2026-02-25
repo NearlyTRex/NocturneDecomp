@@ -38,6 +38,10 @@ char* g_CurrentDisplayText = {};
 // char[20]
 char g_InputHistory[20] = {};
 
+// char[256]
+char g_ScreenshotFilename[256] = {};
+char g_ChapterDisplayName[256] = {};
+
 // char[600]
 char g_PrevKeyboardState[600] = {};
 
@@ -46,9 +50,11 @@ float g_OverlayDisplayTimer = {};
 float FLOAT_02d831bc = {};
 
 // int
+int INT_02d82568 = {};
 int g_InputResetFlag = {};
 int g_StoredCameraValue = {};
 int g_CheatSystemEnabled = {};
+int g_HasSavedLightState = {};
 int g_CheatFlags = {};
 int g_DebugRecording = {};
 int g_DebugRecordingParams = {};
@@ -97,23 +103,17 @@ int g_BloodParticleIndex = {};
 int g_BloodSplatIndex = {};
 int g_BloodSplatCount = {};
 
+// int[201]
+int g_MasterLightStateSaveBuffer[201] = {};
+
 // undefined1
 undefined1 DAT_02d82c81 = {};
 undefined1 DAT_02d82c82 = {};
 undefined1 DAT_02d82c83 = {};
-undefined1 DAT_02d830a8 = {};
-undefined1 DAT_02d830a9 = {};
-undefined1 DAT_02d830aa = {};
-undefined1 DAT_02d830ab = {};
 undefined1 DAT_02d831d6 = {};
 undefined1 DAT_02d831eb = {};
 
 // undefined4
-undefined4 DAT_02d82568 = {};
-undefined4 DAT_02d82d80 = {};
-undefined4 DAT_02d82d84 = {};
-undefined4 DAT_02d82d88 = {};
-undefined4 DAT_02d82d8c = {};
 undefined4 DAT_02d831ec = {};
 undefined4 DAT_02d831f0 = {};
 undefined4 DAT_02d831f4 = {};

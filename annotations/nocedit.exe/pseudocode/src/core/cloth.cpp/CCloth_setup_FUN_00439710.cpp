@@ -350,8 +350,8 @@ void __cdecl core_cloth_cpp_CCloth_setup_FUN_00439710(CCloth *this_ptr,CVector3f
       pCVar11 = (CCloth *)&(pCVar11->model).env_map_opac_list;
     } while (iVar8 < (this_ptr->model).vertex_count);
   }
-  (this_ptr->unk).z = 0.0;
-  (this_ptr->unk).y = (this_ptr->unk).z;
-  (this_ptr->unk).x = (this_ptr->unk).y;
+  (this_ptr->wind_velocity).z = 0.0;
+  (this_ptr->wind_velocity).y = (this_ptr->wind_velocity).z;
+  (this_ptr->wind_velocity).x = (this_ptr->wind_velocity).y;
   return;
 }

@@ -19,9 +19,9 @@ void __cdecl shape_cramtex_cpp_placementCollisionCheck_FUN_00448260(int layer_id
   if (0 < g_CramRectangleCount) {
     iVar1 = 0;
     do {
-      if (((layer_id == *(int *)((int)&g_CramRectangles[0].left + iVar1)) &&
-          (start_x == *(int *)((int)&g_CramRectangles[0].top + iVar1))) &&
-         (start_y == *(int *)((int)&g_CramRectangles[0].right + iVar1))) {
+      if (((layer_id == *(int *)((int)&g_CramRectangles[0].map_id + iVar1)) &&
+          (start_x == *(int *)((int)&g_CramRectangles[0].start_x + iVar1))) &&
+         (start_y == *(int *)((int)&g_CramRectangles[0].start_y + iVar1))) {
         return;
       }
       iVar1 = iVar1 + 0x28;
@@ -49,14 +49,14 @@ void __cdecl shape_cramtex_cpp_placementCollisionCheck_FUN_00448260(int layer_id
       } while (-1 < iVar3);
     }
     if (iVar3 < 0) {
-      local_14->unk1 = 0;
+      local_14->occupant = 0;
       local_14->active_flag = 1;
-      local_14->left = layer_id;
-      local_14->top = start_x;
-      local_14->right = start_y;
-      local_14->bottom = iVar4 + start_x;
+      local_14->map_id = layer_id;
+      local_14->start_x = start_x;
+      local_14->start_y = start_y;
+      local_14->end_x = iVar4 + start_x;
       local_14->orientation = local_18;
-      local_14->max_dimension = iVar1 + start_y;
+      local_14->end_y = iVar1 + start_y;
       g_CramRectangleCount = g_CramRectangleCount + 1;
       local_14 = local_14 + 1;
     }

@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; istrstream * __cdecl crt_strstream_cpp_istrstream_dtor_FUN_005ff5ca(istrstream *this_ptr,uint flags)
+; _istrstream * __cdecl crt_strstream.cpp_istrstream_dtor_FUN_005ff5ca(void * this_ptr,uint flags)
 ;
 ; Parameters:
-; istrstream *     Stack[0x4]:4   this_ptr
+; void *           Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[4]:
@@ -50,7 +50,7 @@ section .text
     PUSH EBX                            ; 005ff5f9
     MOV dword ptr [EBX + EAX*0x1 + -0x20],0x665c04 ; 005ff5fa | PTR_FUN_00665c04
     CALL crt_iostream.cpp_istream_dtor_FUN_006063e1 ; 005ff602
-        ;   XREF to: 006063e1 (UNCONDITIONAL_CALL)  ; istream * crt_iostream.cpp_istream_dtor_FUN_006063e1(istream * this_ptr, uint flags)
+        ;   XREF to: 006063e1 (UNCONDITIONAL_CALL)  ; _istream * crt_iostream.cpp_istream_dtor_FUN_006063e1(_istream * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005ff607
     PUSH 0x1                            ; 005ff60a
     LEA EBX,[EAX + -0x48]               ; 005ff60c

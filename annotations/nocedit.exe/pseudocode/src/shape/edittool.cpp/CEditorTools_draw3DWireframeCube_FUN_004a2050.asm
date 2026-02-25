@@ -55,8 +55,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   core_setedit.cpp_CDemonSet_FUN_00581aa0 at 00581da5
-;   core_setedit.cpp_CDemonSet_FUN_00583170 at 00583571
+;   core_setedit.cpp_CDemonSet_showRoomEditor_FUN_00581aa0 at 00581da5
+;   core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170 at 00583571
 ;   shape_edittool.cpp_CEditorTools_drawCenteredWireframeCube_FUN_004a2510 at 004a256e
 ;
 ; Referenced Globals:

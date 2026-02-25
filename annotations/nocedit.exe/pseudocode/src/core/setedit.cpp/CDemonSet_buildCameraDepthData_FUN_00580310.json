@@ -1,0 +1,392 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 188,
+    "complexity_score": 105,
+    "cross_reference_count": 3,
+    "function_call_count": 9,
+    "global_count": 23,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 75,
+    "suspect_count": 2,
+    "suspect_types": [
+      "param_count_too_few",
+      "pointer_cast"
+    ],
+    "total_lines": 263
+  },
+  "cross_references": [
+    {
+      "addr": "0057fd00",
+      "from_addr": "0057fd0d",
+      "name": "core_setedit.cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005801b0",
+      "from_addr": "005801c0",
+      "name": "core_setedit.cpp_CDemonSet_isPointVisibleFromCamera_FUN_005801b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0057a940",
+      "from_addr": "0057a99d",
+      "name": "core_setedit.cpp_CDemonSet_showScenePreview_FUN_0057a940",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00580310",
+    "address_range": [
+      [
+        "00580310",
+        "00580553"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_setedit.cpp_CDemonSet_buildCameraDepthData_FUN_00580310",
+    "signature": "void __cdecl core_setedit_cpp_CDemonSet_buildCameraDepthData_FUN_00580310(CDemonSet *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "is_variadic": true,
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "0056a190",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0056a190"
+    },
+    {
+      "addr": "0048c8c0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480"
+    },
+    {
+      "addr": "0048c450",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450"
+    },
+    {
+      "addr": "0048c890",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0048c890"
+    },
+    {
+      "addr": "0048c150",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150"
+    },
+    {
+      "addr": "0048c650",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0048c650"
+    },
+    {
+      "addr": "0048c1d0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0"
+    },
+    {
+      "addr": "0050f1f0",
+      "is_variadic": false,
+      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00648567",
+      "name": "s_core_setedit_cpp_00648567",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064857b",
+      "name": "s_core_setedit_cpp_0064857b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064858f",
+      "name": "s_Out_of_memory_0064858f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr2",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "02cf7d5c",
+      "name": "g_ZBufferScanlineArray",
+      "type": "uint*[1200]",
+      "value": null
+    },
+    {
+      "addr": "02cf7d60",
+      "name": "g_ZBufferScanlineArray[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d052c4",
+      "name": "g_CameraOriginX",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052c8",
+      "name": "g_CameraOriginY",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052cc",
+      "name": "g_CameraOriginZ",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052e8",
+      "name": "g_TransformMatrix",
+      "type": "CMatrix3x3i",
+      "value": null
+    },
+    {
+      "addr": "02d052ec",
+      "name": "g_TransformMatrix[0][1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d052f0",
+      "name": "g_TransformMatrix[0][2]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d052f4",
+      "name": "g_TransformMatrix[1][0]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d052f8",
+      "name": "g_TransformMatrix[1][1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d052fc",
+      "name": "g_TransformMatrix[1][2]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d05300",
+      "name": "g_TransformMatrix[2][0]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d05304",
+      "name": "g_TransformMatrix[2][1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d05308",
+      "name": "g_TransformMatrix[2][2]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03659384",
+      "name": "g_CameraDepthData",
+      "type": "void*",
+      "value": null
+    },
+    {
+      "addr": "03f87558",
+      "name": "g_ZeroVector",
+      "type": "CVector3f",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "005801c0",
+        "call_type": "direct",
+        "caller": "core_setedit.cpp_CDemonSet_isPointVisibleFromCamera_FUN_005801b0",
+        "estimated_params": 5,
+        "instructions_analyzed": 8,
+        "reg_params": [],
+        "stack_params": 5
+      },
+      {
+        "call_addr": "0057a99d",
+        "call_type": "direct",
+        "caller": "core_setedit.cpp_CDemonSet_showScenePreview_FUN_0057a940",
+        "estimated_params": 1,
+        "instructions_analyzed": 3,
+        "reg_params": [],
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0057fd0d",
+        "call_type": "direct",
+        "caller": "core_setedit.cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00",
+        "estimated_params": 5,
+        "instructions_analyzed": 8,
+        "reg_params": [],
+        "stack_params": 5
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 1,
+    "estimated_params": 5
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.25625,
+    "instruction_count": 160,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 9,
+      "BOOL_OR": 2,
+      "BRANCH": 2,
+      "CALL": 9,
+      "CBRANCH": 8,
+      "COPY": 125,
+      "INT_ADD": 70,
+      "INT_AND": 86,
+      "INT_CARRY": 22,
+      "INT_EQUAL": 75,
+      "INT_LEFT": 1,
+      "INT_LESS": 6,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 7,
+      "INT_OR": 5,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 23,
+      "INT_SDIV": 1,
+      "INT_SEXT": 7,
+      "INT_SLESS": 36,
+      "INT_SREM": 1,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 41,
+      "INT_XOR": 3,
+      "INT_ZEXT": 2,
+      "LOAD": 28,
+      "POPCOUNT": 36,
+      "RETURN": 1,
+      "STORE": 58,
+      "SUBPIECE": 6
+    },
+    "pcode_op_count": 681
+  },
+  "stack_frame": {
+    "frame_size": 48,
+    "local_size": 44,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 58,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "iVar1 = *(int *)(iVar4 + *(int *)((int)g_ZBufferScanlineArray + iVar5));",
+      "type": "pointer_cast"
+    },
+    {
+      "call_site_count": 3,
+      "declared_params": 1,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 5,
+      "fix_type": "add_params",
+      "match": "declared:1 vs estimated:5",
+      "param_delta": 4,
+      "text": "Function declares 1 params but call sites push 5 (4 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

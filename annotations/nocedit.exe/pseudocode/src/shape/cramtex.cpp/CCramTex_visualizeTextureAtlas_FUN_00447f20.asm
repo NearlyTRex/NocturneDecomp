@@ -38,7 +38,7 @@
 ;   double g_CramPercentageMultiplier = 100
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
-;   CCramTex[1] g_CramSortedTextureEntries
+;   CCramTex[250] g_CramSortedTextureEntries
 ;   undefined4 DAT_0083c20c
 ;   undefined4 DAT_0083c210
 ;   undefined4 DAT_0083c214
@@ -77,7 +77,7 @@ section .text
     MOV EBX,dword ptr [0x0084a858]      ; 00447f40 | g_CramTotalMaps
     SAR EDX,0x1f                        ; 00447f46
     IDIV EBX                            ; 00447f49
-    FILD dword ptr [0x0084a878]         ; 00447f4b | g_CramAtlasWidth
+    FILD dword ptr [0x0084a878]         ; 00447f4b | g_CramAtlasDimension
     FMUL double ptr [0x00619ad2]        ; 00447f51 | g_CramPercentageMultiplier
     FILD dword ptr [0x0084a884]         ; 00447f57 | g_CramCurrentAcceptableSize
     FDIVP                               ; 00447f5d

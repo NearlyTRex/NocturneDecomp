@@ -378,7 +378,7 @@ section .text
     PUSH 0x888e50                       ; 0044f6df | g_CameraLoadImageReadBuffer
     PUSH 0x13d9728                      ; 0044f6e4 | g_CLZWDecompressInstance
     CALL support_codec.cpp_CLZWDecompress_processBuffer_FUN_0043f5d0 ; 0044f6e9
-        ;   XREF to: 0043f5d0 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_CLZWDecompress_processBuffer_FUN_0043f5d0(CLZWDecompress * this_ptr, byte * input, int * input_length, byte * output, ...)
+        ;   XREF to: 0043f5d0 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_CLZWDecompress_processBuffer_FUN_0043f5d0(CLZWDecompress * this_ptr, char * input, int * input_length, char * output, ...)
     ADD ESP,0x18                        ; 0044f6ee
     TEST EAX,EAX                        ; 0044f6f1
     JZ 0x0044fc36                       ; 0044f6f3

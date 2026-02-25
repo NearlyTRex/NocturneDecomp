@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Variable defined which should be unmapped: local_a4 */
-
 int __cdecl core_set_cpp_CDemonSet_processActors_FUN_0056b810(CDemonSet *this_ptr)
 
 {
@@ -28,7 +26,11 @@ int __cdecl core_set_cpp_CDemonSet_processActors_FUN_0056b810(CDemonSet *this_pt
   int iVar10;
   CDemonSet *pCVar11;
   CPathMap *damage_info;
-  SDamageInfo local_a4;
+  CVector3f aCStack_94 [3];
+  int iStack_70;
+  CDemonActor *local_68;
+  float local_64;
+  float local_60;
   float fStack_5c;
   CVector3f CStack_58;
   float fStack_48;
@@ -93,6 +95,9 @@ int __cdecl core_set_cpp_CDemonSet_processActors_FUN_0056b810(CDemonSet *this_pt
             if (pCVar3->process_disabled == 0) {
               iVar8 = pCVar3->health;
               if (iVar8 == local_24) {
+                local_68 = (CDemonActor *)(pCVar3->orient).vec.x;
+                local_64 = (pCVar3->orient).vec.y;
+                local_60 = (pCVar3->orient).vec.z;
                 g_CurrentProcessingActor = pCVar3;
                 if (g_CGamePtr->profile_mode == 2) {
                   local_44 = (float)wincore_winrun_cpp_getTime_FUN_005f2dc0();
@@ -100,7 +105,6 @@ int __cdecl core_set_cpp_CDemonSet_processActors_FUN_0056b810(CDemonSet *this_pt
                 (*((g_CurrentProcessingActor->vtable)._ub)->process)
                           (g_CurrentProcessingActor,(float)damage_info);
                 if (g_CGamePtr->profile_mode == 2) {
-                  local_a4.fire_type = 0x56b9e8;
                   iVar8 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
                   *(int *)((int)g_ActorProfileTimes + iVar7) = iVar8 - local_3c;
                   *(CDemonActor **)((int)g_ActorProfileActors + iVar7) = g_CurrentProcessingActor;
@@ -109,15 +113,12 @@ int __cdecl core_set_cpp_CDemonSet_processActors_FUN_0056b810(CDemonSet *this_pt
                   iStack_18 = iStack_18 + 1;
                   iVar7 = iVar7 + 4;
                 }
-                local_a4.fire_type = (int)g_CurrentProcessingActor;
                 damage_info = (CPathMap *)0x56ba31;
                 this_ptr_00 = (*((g_CurrentProcessingActor->vtable)._ub)->getPathMap)
                                         (g_CurrentProcessingActor);
                 if (this_ptr_00 != (CPathMap *)0x0) {
-                  local_a4.damage_amount = 0.0;
-                  local_a4.fire_type = (int)&g_CurrentProcessingActor->location;
                   core_path_cpp_CPathMap_updateIfNeeded_FUN_00546a60
-                            (this_ptr_00,(CVector3f *)local_a4.fire_type,0);
+                            (this_ptr_00,&(g_CurrentProcessingActor->location).position,0);
                   damage_info = this_ptr_00;
                 }
                 if (((CStack_58.x == (g_CurrentProcessingActor->orient).vec.y) &&
@@ -126,8 +127,6 @@ int __cdecl core_set_cpp_CDemonSet_processActors_FUN_0056b810(CDemonSet *this_pt
                   g_CurrentProcessingActor = (CDemonActor *)0x0;
                 }
                 else {
-                  local_a4.damage_amount = (float)g_CurrentProcessingActor;
-                  local_a4.fire_type = 0x56ba6b;
                   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
                             (g_CurrentProcessingActor);
                   g_CurrentProcessingActor = (CDemonActor *)0x0;
@@ -161,15 +160,14 @@ int __cdecl core_set_cpp_CDemonSet_processActors_FUN_0056b810(CDemonSet *this_pt
                             (g_CFireEffectPtr,&(this_ptr_01->base).location.position,0.0,&CStack_58,
                              (int *)damage_info);
           if (iVar7 != 0) {
-            core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&local_a4.damage_amount);
-            local_a4.damage_flags = (int)fStack_48;
-            local_a4.attacker = (CDemonActor *)&DAT_00000004;
-            if ((CVector3f *)&local_a4.impact_point.y != &CStack_58) {
-              local_a4.impact_point.y = CStack_58.x;
-              local_a4.impact_point.z = CStack_58.y;
-              local_a4.impact_force = CStack_58.z;
+            core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xffffff60);
+            iStack_70 = 4;
+            if (aCStack_94 != &CStack_58) {
+              aCStack_94[0].x = CStack_58.x;
+              aCStack_94[0].y = CStack_58.y;
+              aCStack_94[0].z = CStack_58.z;
             }
-            damage_info = (CPathMap *)&local_a4.damage_amount;
+            damage_info = (CPathMap *)&stack0xffffff60;
             (*(((pCStack_30->base).vtable._uc)->_uc).processDamage)
                       (pCStack_30,(SDamageInfo *)damage_info);
           }

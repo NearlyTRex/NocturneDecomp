@@ -2,7 +2,6 @@
 
 // Type dependencies
 #include "system/basetypes.h"
-#include "system/misc.h"
 #include "system/signal.h"
 #include "system/stdio.h"
 #include "system/stdlib.h"
@@ -19,6 +18,7 @@
 #include "types/classes/CNetGame.h"
 #include "types/classes/CProceduralTexture.h"
 #include "types/classes/CScript.h"
+#include "types/classes/CSlew.h"
 #include "types/classes/CSound.h"
 #include "types/classes/CSpotView.h"
 #include "types/classes/CTerrain.h"
@@ -62,6 +62,9 @@ extern CProceduralTexture* g_CProceduralTexturePtr;
 
 // CScript*
 extern CScript* g_CScriptPtr;
+
+// CSlew*
+extern CSlew* g_CSlewPtr;
 
 // CSound*
 extern CSound* g_CSoundPtr;
@@ -166,8 +169,8 @@ extern SMRGLPrimitiveQuad g_BoundingBoxQuadTemplates[6];
 
 // SMRGLTextureBasic
 extern SMRGLTextureBasic SMRGLTextureBasic_00680bb0;
-extern SMRGLTextureBasic SMRGLTextureBasic_006813e4;
-extern SMRGLTextureBasic SMRGLTextureBasic_006816c0;
+extern SMRGLTextureBasic g_EnvMapTexture;
+extern SMRGLTextureBasic g_SolidWhiteTexture;
 extern SMRGLTextureBasic SMRGLTextureBasic_006817fc;
 extern SMRGLTextureBasic SMRGLTextureBasic_006819e4;
 extern SMRGLTextureBasic SMRGLTextureBasic_00684178;
@@ -243,8 +246,8 @@ extern WatcomStaticDestructorNode g_CDemonCameraDestructorNode;
 extern WatcomStaticDestructorNode g_CDemonRaytraceDestructorNode;
 extern WatcomStaticDestructorNode g_CKeyFramedModelDestructorNode;
 extern WatcomStaticDestructorNode g_CZThumbPoolDestructorNode;
-extern WatcomStaticDestructorNode WatcomStaticDestructorNode_006816a0;
-extern WatcomStaticDestructorNode WatcomStaticDestructorNode_006816b0;
+extern WatcomStaticDestructorNode g_MissingBackdropFilesDestructorNode;
+extern WatcomStaticDestructorNode g_ThumbnailScrollBarDestructorNode;
 extern WatcomStaticDestructorNode WatcomStaticDestructorNode_00681850;
 extern WatcomStaticDestructorNode g_DeformableModelPoolDestructorNode;
 extern WatcomStaticDestructorNode g_SkeletonPoolDestructorNode;

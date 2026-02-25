@@ -25,9 +25,7 @@ uint __cdecl core_sound_cpp_playSfxInternal_FUN_005b1fd0(void *user_data,char *s
   char local_178 [100];
   char local_114 [100];
   char local_b0 [100];
-  float local_4c;
-  float local_48;
-  float local_44;
+  CVector3f local_4c;
   int local_40;
   float local_3c;
   char *local_38;
@@ -133,15 +131,16 @@ LAB_005b20b2:
       core_sound_cpp_CSound_findRandomSoundFile_FUN_005b1ed0(g_CSoundPtr,local_b0,local_114);
     }
     else {
-      local_4c = x;
-      local_48 = y;
-      local_44 = z;
+      local_4c.x = x;
+      local_4c.y = y;
+      local_4c.z = z;
       if (position_tracker != (CVector3f *)0x0) {
-        local_4c = x + position_tracker->x;
-        local_48 = y + position_tracker->y;
-        local_44 = z + position_tracker->z;
+        local_4c.x = x + position_tracker->x;
+        local_4c.y = y + position_tracker->y;
+        local_4c.z = z + position_tracker->z;
       }
-      local_18 = core_set_cpp_CDemonSet_getReverbPresetAtPosition_FUN_0056fac0(g_CDemonSetPtr);
+      local_18 = core_set_cpp_CDemonSet_getReverbPresetAtPosition_FUN_0056fac0
+                           (g_CDemonSetPtr,&local_4c);
       local_1c = local_18;
       local_40 = (int)local_18 + 5;
       do {

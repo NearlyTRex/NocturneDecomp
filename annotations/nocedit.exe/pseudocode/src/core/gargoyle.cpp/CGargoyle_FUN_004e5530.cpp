@@ -20,22 +20,22 @@ void __cdecl core_gargoyle_cpp_CGargoyle_FUN_004e5530(CGargoyle *this_ptr)
     iVar1 = rand();
     switch(iVar1 % 6) {
     case 0:
-      iVar1 = *(int *)this_ptr->unk;
+      iVar1 = this_ptr->part_indices[0];
       break;
     case 1:
-      iVar1 = *(int *)(this_ptr->unk + 4);
+      iVar1 = this_ptr->part_indices[1];
       break;
     case 2:
-      iVar1 = *(int *)(this_ptr->unk + 8);
+      iVar1 = this_ptr->part_indices[2];
       break;
     case 3:
-      iVar1 = *(int *)(this_ptr->unk + 0xc);
+      iVar1 = this_ptr->part_indices[3];
       break;
     case 4:
-      iVar1 = *(int *)(this_ptr->unk + 0x28);
+      iVar1 = this_ptr->part_indices[10];
       break;
     case 5:
-      iVar1 = *(int *)(this_ptr->unk + 0x24);
+      iVar1 = this_ptr->part_indices[9];
       break;
     default:
       goto switchD_004e5566_default;
@@ -44,15 +44,15 @@ void __cdecl core_gargoyle_cpp_CGargoyle_FUN_004e5530(CGargoyle *this_ptr)
   }
 switchD_004e5566_default:
   iVar1 = *in_stack_00000008;
-  if (((((iVar1 == *(int *)this_ptr->unk) || (iVar1 == *(int *)(this_ptr->unk + 4))) ||
-       (iVar1 == *(int *)(this_ptr->unk + 8))) ||
-      ((iVar1 == *(int *)(this_ptr->unk + 0xc) || (iVar1 == *(int *)(this_ptr->unk + 0x24))))) ||
-     (iVar1 == *(int *)(this_ptr->unk + 0x28))) {
+  if (((((iVar1 == this_ptr->part_indices[0]) || (iVar1 == this_ptr->part_indices[1])) ||
+       (iVar1 == this_ptr->part_indices[2])) ||
+      ((iVar1 == this_ptr->part_indices[3] || (iVar1 == this_ptr->part_indices[9])))) ||
+     (iVar1 == this_ptr->part_indices[10])) {
     local_14 = (float)in_stack_00000008[0xb];
-    if (*(int *)(this_ptr->unk + 0x28) == *in_stack_00000008) {
+    if (this_ptr->part_indices[10] == *in_stack_00000008) {
       local_14 = 0.05;
     }
-    if (*(int *)(this_ptr->unk + 0x24) == *in_stack_00000008) {
+    if (this_ptr->part_indices[9] == *in_stack_00000008) {
       local_14 = 0.02;
     }
     if (g_CGamePtr->gratuitous_dismemberment != 0) {
@@ -63,40 +63,39 @@ switchD_004e5566_default:
       body_part = core_bodypart_cpp_createBodyPart_FUN_00418e10();
       core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30
                 ((CCharacter *)this_ptr,body_part,*in_stack_00000008,1);
-      if (*in_stack_00000008 == *(int *)this_ptr->unk) {
+      if (*in_stack_00000008 == this_ptr->part_indices[0]) {
         core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30
-                  ((CCharacter *)this_ptr,body_part,*(int *)(this_ptr->unk + 4),1);
+                  ((CCharacter *)this_ptr,body_part,this_ptr->part_indices[1],1);
       }
-      if (*(int *)(this_ptr->unk + 8) == *in_stack_00000008) {
+      if (this_ptr->part_indices[2] == *in_stack_00000008) {
         core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30
-                  ((CCharacter *)this_ptr,body_part,*(int *)(this_ptr->unk + 0xc),1);
+                  ((CCharacter *)this_ptr,body_part,this_ptr->part_indices[3],1);
       }
-      if (*(int *)(this_ptr->unk + 0x24) == *in_stack_00000008) {
+      if (this_ptr->part_indices[9] == *in_stack_00000008) {
         core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0
-                  ((CCharacter *)this_ptr,*(int *)(this_ptr->unk + 8));
+                  ((CCharacter *)this_ptr,this_ptr->part_indices[2]);
         core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0
-                  ((CCharacter *)this_ptr,*(int *)(this_ptr->unk + 0xc));
+                  ((CCharacter *)this_ptr,this_ptr->part_indices[3]);
         core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0
-                  ((CCharacter *)this_ptr,*(int *)this_ptr->unk);
+                  ((CCharacter *)this_ptr,this_ptr->part_indices[0]);
         core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0
-                  ((CCharacter *)this_ptr,*(int *)(this_ptr->unk + 4));
+                  ((CCharacter *)this_ptr,this_ptr->part_indices[1]);
         core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0
-                  ((CCharacter *)this_ptr,*(int *)(this_ptr->unk + 0x28));
+                  ((CCharacter *)this_ptr,this_ptr->part_indices[10]);
       }
       core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_0041a050(body_part);
-      if ((this_ptr->base).base.model.part_data.visibility_flags[*(int *)(this_ptr->unk + 0x28)] ==
-          0) {
+      if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[10]] == 0) {
         in_stack_00000008[1] = 0x461c3c00;
       }
       in_stack_00000008[2] = (int)((float)in_stack_00000008[2] * (float)7);
     }
   }
   iVar1 = *in_stack_00000008;
-  if (iVar1 == *(int *)(this_ptr->unk + 0x28)) {
+  if (iVar1 == this_ptr->part_indices[10]) {
     in_stack_00000008[1] = (int)((float)in_stack_00000008[1] * (float)2.5);
     return;
   }
-  if ((iVar1 != *(int *)(this_ptr->unk + 0x20)) && (iVar1 != *(int *)(this_ptr->unk + 0x24))) {
+  if ((iVar1 != this_ptr->part_indices[8]) && (iVar1 != this_ptr->part_indices[9])) {
     in_stack_00000008[1] = (int)((float)in_stack_00000008[1] * (float)0.5);
     return;
   }

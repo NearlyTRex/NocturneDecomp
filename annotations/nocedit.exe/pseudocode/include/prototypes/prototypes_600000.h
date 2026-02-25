@@ -6,7 +6,6 @@
 #include "system/fstream.h"
 #include "system/iostream.h"
 #include "system/math.h"
-#include "system/misc.h"
 #include "system/signal.h"
 #include "system/stat.h"
 #include "system/stdarg.h"
@@ -55,8 +54,8 @@ int __cdecl crt_io_c_chsize_FUN_00600cf0(int file_handle,long new_size);
 int __cdecl crt_watcom_c__mkdir_FUN_00600e10(char *path);
 int __cdecl crt_stdio_c_fflush_FUN_00600e29(_FILE *stream);
 uint __cdecl crt_stdio_c_clear_and_preserve_state_FUN_00600e64(FileEmbeddedData *embedded_data,uint error_code);
-void __cdecl crt_fstream_cpp_openFile_FUN_00600e85(ifstream *stream_obj,char *filename,int open_mode,SIZE_T buffer_size);
-_FILE * crt_unknown_c_FUN_00600ee4(_FILE *param_1,undefined4 param_2);
+void __cdecl crt_fstream_cpp_openFile_FUN_00600e85(void *stream_obj,char *filename,int open_mode,SIZE_T buffer_size);
+_istream * __cdecl crt_fstream_cpp_istream_seekg_FUN_00600ee4(void *this_ptr,int offset);
 char * __cdecl crt_string_c__strncpy_FUN_00600f40(char *dest,char *src,SIZE_T count);
 time_t __cdecl crt_time_c__mktime_FUN_00600f80(_tm *timeptr);
 char * __cdecl crt_stdlib_c__fullpath_FUN_00601140(char *buffer,char *path,SIZE_T buffer_size);
@@ -200,18 +199,18 @@ _FILE * __watcallStack crt_stdio_c_fgetcInternal_FUN_00605fad(_FILE *stream,byte
 void __cdecl crt_stdio_c_reportStreamError_FUN_00606020(FileEmbeddedData *embedded_data,uint error_flags);
 BOOL __cdecl crt_stdio_c_prepare_stream_for_write_FUN_00606055(_FILE *stream);
 _FILE * __watcallStack crt_stdio_c_stream_flush_FUN_006060bb(_FILE *stream);
-strstreambase * __cdecl crt_strstream_cpp_strstreambase_constructor_FUN_006060fe(strstreambase *this_ptr,int ctor_flags,char *buffer,int size,char *pstart);
+strstreambase * __cdecl crt_strstream_cpp_strstreambase_ctor_FUN_006060fe(strstreambase *this_ptr,int ctor_flags,char *buffer,int size,char *pstart);
 void __cdecl crt_strstream_cpp_strstreambase_destructor_thunk_FUN_0060618a(ios *this_ptr,int dtor_flags);
-ostream * __cdecl crt_iostream_cpp_ostream_ctor_FUN_006061a2(ostream *this_ptr,uint c1);
+_ostream * __cdecl crt_iostream_cpp_ostream_ctor_FUN_006061a2(_ostream *this_ptr,uint c1);
 void __cdecl crt_iostream_cpp_ostream_destructor_thunk_FUN_006061e4(ios *this_ptr,int dtor_flags);
 ios * __cdecl crt_iostream_cpp_ios_ctor_FUN_006061fc(ios *this_ptr);
-ostream * __cdecl crt_iostream_cpp_ostream_dtor_FUN_00606231(ostream *this_ptr,uint flags);
+_ostream * __cdecl crt_iostream_cpp_ostream_dtor_FUN_00606231(_ostream *this_ptr,uint flags);
 strstreambase * __cdecl crt_strstream_cpp_strstreambase_dtor_FUN_006062a6(strstreambase *this_ptr,uint flags);
 ios * __cdecl crt_iostream_cpp_ios_dtor_FUN_0060632c(ios *this_ptr,uint flags);
-istream * __cdecl crt_iostream_cpp_istream_ctor_FUN_00606376(istream *this_ptr,uint c1);
+_istream * __cdecl crt_iostream_cpp_istream_ctor_FUN_00606376(_istream *this_ptr,uint c1);
 void __cdecl crt_iostream_cpp_istream_destructor_thunk_from_ios_FUN_006063c9(ios *this_ptr,int dtor_flags);
-istream * __cdecl crt_iostream_cpp_istream_dtor_FUN_006063e1(istream *this_ptr,uint flags);
-void __cdecl crt_fstream_cpp_fstreambase_constructor_FUN_00606456(fstreambase *this_ptr,int ctor_flags,int fd,int mode,char *buffer,SIZE_T buffer_size );
+_istream * __cdecl crt_iostream_cpp_istream_dtor_FUN_006063e1(_istream *this_ptr,uint flags);
+void __cdecl crt_fstream_cpp_fstreambase_ctor_FUN_00606456(fstreambase *this_ptr,int ctor_flags,int fd,int mode,char *buffer,SIZE_T buffer_size );
 void __cdecl crt_fstream_cpp_fstream_destructor_thunk_from_ios_FUN_006064f1(ios *this_ptr,int dtor_flags);
 fstreambase * __cdecl crt_fstream_cpp_fstreambase_dtor_FUN_00606509(fstreambase *this_ptr,uint flags);
 fstreambase * __cdecl crt_fstream_cpp_fstreambase_ctor_FUN_0060658f(fstreambase *this_ptr,uint c1);
@@ -434,7 +433,7 @@ char * crt_unknown_c_FUN_0060b670(char *param_1,char *param_2,ulong param_3);
 char * __watcallStack crt_string_c_mbstrncpy_core_FUN_0060b670(char *dest,char *src,int count);
 void __watcallStack crt_stdio_c_storeErrorState_FUN_0060b78e(uint *destination,uint error_state);
 _FILE * __cdecl crt_stdio_c_get_standard_file_handle_FUN_0060b7a0(int fd);
-streambuf * __watcallStack crt_iostream_cpp_streambuf_constructor_FUN_0060b7c2(streambuf *this_ptr);
+streambuf * __cdecl crt_iostream_cpp_streambuf_ctor_FUN_0060b7c2(streambuf *this_ptr);
 void __watcallStack crt_strstream_cpp_strstreambuf_init_FUN_0060b815 (strstreambuf *this_ptr,char *buffer_ptr,int buffer_size,char *put_start);
 void __watcallStack crt_iostream_cpp_streambuf_initBuffer_FUN_0060b815 (streambuf *this_ptr,char *buffer_ptr,int buffer_size,char *put_start);
 int __watcallStack crt_iostream_cpp_streambuf_do_sgetn_FUN_0060b932 (streambuf *buffer,void *output_buffer,SIZE_T bytes_to_read);

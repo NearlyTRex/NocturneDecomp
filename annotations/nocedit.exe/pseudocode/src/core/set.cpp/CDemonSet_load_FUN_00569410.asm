@@ -68,7 +68,7 @@
 ;   core_path.cpp_FUN_00548590
 ;   core_set.cpp_CDemonSet_clear_FUN_005693c0
 ;   core_setcolid.cpp_CDemonSet_FUN_00574560
-;   core_setdir.cpp_CDemonSet_FUN_00576710
+;   core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_00576710
 ;   core_setdir.cpp_CDemonSet_refreshThumbs_FUN_00575b40
 ;   core_setdir.cpp_CDemonSet_skipDeprecatedVirtualDirectorData_FUN_00576200
 ;   core_setutil.cpp_C3DSCamera_load_FUN_00585420
@@ -720,8 +720,8 @@ section .text
     LEA EAX,[EAX]                       ; 00569c0c
     PUSH EBP                            ; 00569c10
         ;   Label: LAB_00569c10
-    CALL core_setdir.cpp_CDemonSet_FUN_00576710 ; 00569c11
-        ;   XREF to: 00576710 (UNCONDITIONAL_CALL)  ; int core_setdir.cpp_CDemonSet_FUN_00576710(CDemonSet * this_ptr)
+    CALL core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_00576710 ; 00569c11
+        ;   XREF to: 00576710 (UNCONDITIONAL_CALL)  ; int core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_00576710(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 00569c16
     CMP dword ptr [EBP + 0x15acac],0xe  ; 00569c19
         ;   Label: LAB_00569c19

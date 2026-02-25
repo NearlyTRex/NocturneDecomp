@@ -18,8 +18,8 @@
 ;   core_level.cpp_CLevelLoader_update_FUN_00504160 at 005041b1
 ;   core_morph.cpp_CMorph_editMorph_FUN_0052bcb0 at 0052c032
 ;   core_setdir.cpp_CZThumb_pushRenderingContext_FUN_00574e70 at 00574eab
-;   core_setedit.cpp_CDemonSet_FUN_00580310 at 005803dc
-;   core_setedit.cpp_FUN_0057ce80 at 0057cff5
+;   core_setedit.cpp_CDemonSet_buildCameraDepthData_FUN_00580310 at 005803dc
+;   core_setedit.cpp_renderBackdropImage_FUN_0057ce80 at 0057cff5
 ;
 ; Called Functions:
 ;   engine_matrix.c_pushViewport_FUN_0050e320

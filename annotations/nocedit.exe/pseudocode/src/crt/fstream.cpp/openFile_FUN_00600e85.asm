@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl crt_fstream_cpp_openFile_FUN_00600e85(ifstream *stream_obj,char *filename,int open_mode,SIZE_T buffer_size)
+; void __cdecl crt_fstream_cpp_openFile_FUN_00600e85(void *stream_obj,char *filename,int open_mode,SIZE_T buffer_size)
 ;
 ; Parameters:
-; ifstream *       Stack[0x4]:4   stream_obj
+; void *           Stack[0x4]:4   stream_obj
 ; char *           Stack[0x8]:4   filename
 ; int              Stack[0xc]:4   open_mode
 ; SIZE_T           Stack[0x10]:4   buffer_size

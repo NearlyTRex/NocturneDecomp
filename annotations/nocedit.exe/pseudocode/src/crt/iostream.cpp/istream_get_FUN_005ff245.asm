@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; istream * __cdecl crt_iostream_cpp_istream_get_FUN_005ff245(istream *this_ptr,char *c)
+; _istream * __cdecl crt_iostream_cpp_istream_get_FUN_005ff245(_istream *this_ptr,char *c)
 ;
 ; Parameters:
-; istream *        Stack[0x4]:4   this_ptr
+; _istream *       Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   c
 ;
 ; XREF[4]:

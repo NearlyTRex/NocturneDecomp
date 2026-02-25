@@ -927,7 +927,7 @@
     "vars":{
       "params":[
         {
-          "name":"polygon_info",
+          "name":"prim",
           "storage":{
             "offset":4,
             "size":4,
@@ -971,7 +971,7 @@
     "vars":{
       "params":[
         {
-          "name":"vertex_batch",
+          "name":"mrgl",
           "storage":{
             "offset":4,
             "size":4,
@@ -984,7 +984,7 @@
               }
             ]
           },
-          "type":"SVertexBatch*"
+          "type":"SMRGLHeaderExtended*"
         }
       ],
       "ret_storage":{
@@ -1015,7 +1015,7 @@
     "vars":{
       "params":[
         {
-          "name":"polygon_info",
+          "name":"prim",
           "storage":{
             "offset":4,
             "size":4,
@@ -15168,7 +15168,7 @@
           "type":"SBitBuffer*"
         },
         {
-          "name":"output_stream",
+          "name":"ostream",
           "storage":{
             "offset":16,
             "size":4,
@@ -15181,7 +15181,7 @@
               }
             ]
           },
-          "type":"_FILE*"
+          "type":"_ostream*"
         }
       ]
     }
@@ -28035,7 +28035,7 @@
           "type":"CDemonRenderer*"
         },
         {
-          "name":"polygon_info",
+          "name":"prim",
           "storage":{
             "offset":8,
             "size":4,
@@ -28085,7 +28085,7 @@
           "type":"CDemonRenderer*"
         },
         {
-          "name":"polygon_info",
+          "name":"prim",
           "storage":{
             "offset":8,
             "size":4,
@@ -70204,7 +70204,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_set.cpp_CDemonSet_saveLightState_FUN_00571170",
+    "name":"core_set.cpp_CDemonSet_saveMasterLightStates_FUN_00571170",
     "ret":"int",
     "vars":{
       "params":[
@@ -70225,7 +70225,7 @@
           "type":"CDemonSet*"
         },
         {
-          "name":"param_2",
+          "name":"light_state_buffer",
           "storage":{
             "offset":8,
             "size":4,
@@ -70238,7 +70238,7 @@
               }
             ]
           },
-          "type":"void*"
+          "type":"int*"
         }
       ],
       "ret_storage":{
@@ -70368,7 +70368,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setcolid.cpp_CDemonSet_testCapsuleCollision_FUN_00573470",
+    "name":"core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00573470",
     "ret":"float",
     "vars":{
       "locals":[
@@ -70903,7 +70903,7 @@
           "type":"float"
         },
         {
-          "name":"user_data1",
+          "name":"bottom_y",
           "storage":{
             "offset":28,
             "size":4,
@@ -70916,10 +70916,10 @@
               }
             ]
           },
-          "type":"void*"
+          "type":"float"
         },
         {
-          "name":"user_data2",
+          "name":"top_y",
           "storage":{
             "offset":32,
             "size":4,
@@ -70932,7 +70932,7 @@
               }
             ]
           },
-          "type":"void*"
+          "type":"float"
         }
       ],
       "ret_storage":{
@@ -71628,7 +71628,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setedit.cpp_CDemonSet_FUN_00577af0",
+    "name":"core_setedit.cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0",
     "ret":"int",
     "vars":{
       "locals":[
@@ -72225,6 +72225,22 @@
             ]
           },
           "type":"CDemonSet*"
+        },
+        {
+          "name":"camera_flags",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int*"
         }
       ],
       "ret_storage":{
@@ -72250,8 +72266,44 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setedit.cpp_FUN_0057a270",
-    "ret":"void"
+    "name":"core_setedit.cpp_CDemonSet_importDemonPart_FUN_0057a270",
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonSet*"
+        },
+        {
+          "name":"file_handle",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"_FILE*"
+        }
+      ]
+    }
   },
   {
     "addr":"0057ff70",
@@ -72264,7 +72316,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setedit.cpp_CDemonSet_FUN_0057ff70",
+    "name":"core_setedit.cpp_CDemonSet_drawCameraCoverageMap_FUN_0057ff70",
     "ret":"void",
     "vars":{
       "locals":[
@@ -72381,6 +72433,22 @@
             ]
           },
           "type":"CDemonSet*"
+        },
+        {
+          "name":"coverage_map",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
         }
       ]
     }
@@ -72406,7 +72474,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setedit.cpp_CDemonSet_FUN_00583170",
+    "name":"core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170",
     "ret":"void",
     "vars":{
       "locals":[
@@ -74410,7 +74478,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setedit.cpp_CDemonSet_FUN_00584e70",
+    "name":"core_setedit.cpp_CDemonSet_writeFileDependencies_FUN_00584e70",
     "ret":"void",
     "vars":{
       "locals":[
@@ -74527,6 +74595,22 @@
             ]
           },
           "type":"CDemonSet*"
+        },
+        {
+          "name":"file_handle",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"_FILE*"
         }
       ]
     }
@@ -83701,7 +83785,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"wincore_windll.cpp_CExternalRenderer_setProcessingDataAndValidate_FUN_005b5cf0",
+    "name":"wincore_windll.cpp_CExternalRenderer_initValidate_FUN_005b5cf0",
     "ret":"void",
     "vars":{
       "params":[
@@ -83722,7 +83806,7 @@
           "type":"CExternalRenderer*"
         },
         {
-          "name":"data",
+          "name":"buffer_ptr",
           "storage":{
             "offset":8,
             "size":4,
@@ -98076,7 +98160,7 @@
               }
             ]
           },
-          "type":"ifstream*"
+          "type":"void*"
         },
         {
           "name":"c1",

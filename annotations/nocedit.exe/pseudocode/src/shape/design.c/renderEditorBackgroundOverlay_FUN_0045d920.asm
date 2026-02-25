@@ -59,7 +59,7 @@ section .text
     LEA EAX,[EBP + -0x10]               ; 0045d966
     PUSH EAX                            ; 0045d969
     CALL engine_3d.c_processPolygonColor_FUN_00403e30 ; 0045d96a
-        ;   XREF to: 00403e30 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_processPolygonColor_FUN_00403e30(SMRGLHeaderPrimitive * polygon_info)
+        ;   XREF to: 00403e30 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_processPolygonColor_FUN_00403e30(SMRGLHeaderPrimitive * prim)
     ADD ESP,0x4                         ; 0045d96f
     JMP 0x0045d985                      ; 0045d972
         ;   XREF to: 0045d985 (UNCONDITIONAL_JUMP)  ; LAB_0045d985

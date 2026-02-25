@@ -6,18 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 211,
-    "complexity_score": 138,
+    "complexity_score": 136,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 16,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 108,
+    "pseudocode_lines": 106,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast",
       "undefined_data"
     ],
-    "total_lines": 319
+    "total_lines": 317
   },
   "cross_references": [],
   "function": {
@@ -30,7 +30,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_3d.c_renderPolygonTextureAdaptiveWrapped_FUN_00406430",
-    "signature": "SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTextureAdaptiveWrapped_FUN_00406430(SMRGLHeaderPrimitive *polygon_info)"
+    "signature": "SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTextureAdaptiveWrapped_FUN_00406430(SMRGLHeaderPrimitive *prim)"
   },
   "function_calls": [
     {
@@ -200,7 +200,7 @@
     "variables": [
       {
         "is_param": true,
-        "name": "polygon_info",
+        "name": "prim",
         "offset": 4,
         "size": 4,
         "type": "SMRGLHeaderPrimitive *"
@@ -218,10 +218,10 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 110,
+      "line": 108,
       "match": "(SMRGLHeaderExtended *)((int)",
       "severity": "mild",
-      "text": "return (SMRGLHeaderExtended *)((int)&polygon_info[1].base + (polygon_info->base).count * 0xc);",
+      "text": "return (SMRGLHeaderExtended *)((int)&prim[1].base + (prim->base).count * 0xc);",
       "type": "pointer_cast"
     }
   ],

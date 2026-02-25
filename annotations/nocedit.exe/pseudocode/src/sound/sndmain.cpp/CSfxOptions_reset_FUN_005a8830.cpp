@@ -33,7 +33,7 @@ void __cdecl sound_sndmain_cpp_CSfxOptions_reset_FUN_005a8830(CSfxOptions *this_
   *(uint *)((int)&this_ptr->trigger_time + 4) = 0;
   this_ptr->trigger_id = 0;
   dVar1 = -1;
-  this_ptr->unk = 0;
+  this_ptr->dead = 0;
   this_ptr->delay_remaining = dVar1;
   return;
 }

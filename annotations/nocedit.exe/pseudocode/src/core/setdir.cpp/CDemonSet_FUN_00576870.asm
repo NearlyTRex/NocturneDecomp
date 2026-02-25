@@ -11,8 +11,8 @@
 ;   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0 at 005754dd
 ;
 ; Called Functions:
+;   core_setdir.cpp_CDemonSet_findVdirBoxRoot_FUN_00576820
 ;   core_setdir.cpp_CDemonSet_FUN_005762a0
-;   core_setdir.cpp_CDemonSet_FUN_00576820
 ;
 ; *****************************************************************************
 
@@ -52,8 +52,8 @@ section .text
     PUSH EBX                            ; 005768a8
         ;   Label: LAB_005768a8
     PUSH ESI                            ; 005768a9
-    CALL core_setdir.cpp_CDemonSet_FUN_00576820 ; 005768aa
-        ;   XREF to: 00576820 (UNCONDITIONAL_CALL)  ; int core_setdir.cpp_CDemonSet_FUN_00576820(CDemonSet * this_ptr)
+    CALL core_setdir.cpp_CDemonSet_findVdirBoxRoot_FUN_00576820 ; 005768aa
+        ;   XREF to: 00576820 (UNCONDITIONAL_CALL)  ; int core_setdir.cpp_CDemonSet_findVdirBoxRoot_FUN_00576820(CDemonSet * this_ptr, int box_index)
     ADD ESP,0x8                         ; 005768af
     POP EDI                             ; 005768b2
     POP ESI                             ; 005768b3

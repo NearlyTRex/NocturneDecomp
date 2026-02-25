@@ -75,10 +75,10 @@ void __cdecl core_set_cpp_CDemonSet_renderStaticLights_FUN_0056be80(CDemonSet *t
       } while (local_28 < g_DynamicLightCount);
     }
     local_24 = 0;
-    if (0 < g_ActiveLightCount) {
+    if (0 < g_SpotLightCount) {
       local_2c = 0;
       do {
-        pCVar2 = *(CDemonLight **)((int)g_ActiveLightList + local_2c);
+        pCVar2 = *(CDemonLight **)((int)g_SpotLightList + local_2c);
         if (pCVar2->light_enabled_flag != 0) {
           core_dlight_cpp_CDemonLight_beginScene_FUN_00472a80(pCVar2,1);
           core_set_cpp_CDemonSet_buildDisplayList_FUN_0056fbd0(this_ptr,0x22);
@@ -110,7 +110,7 @@ void __cdecl core_set_cpp_CDemonSet_renderStaticLights_FUN_0056be80(CDemonSet *t
         }
         local_2c = local_2c + 4;
         local_24 = local_24 + 1;
-      } while (local_24 < g_ActiveLightCount);
+      } while (local_24 < g_SpotLightCount);
     }
     if (g_CGamePtr->profile_mode != 0) {
       iVar5 = wincore_winrun_cpp_getTime_FUN_005f2dc0();

@@ -305,7 +305,7 @@ LAB_00503184:
     (this_ptr->base).attack_cooldown = (this_ptr->base).attack_cooldown - delta_time;
   }
   if (local_30 == 1) {
-    iVar6 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->slime_sfx_handle);
+    iVar6 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handles[1]);
     if (iVar6 == 0) {
       fVar15 = (float10)1;
       fVar13 = (float10)1.4426950408889634 *
@@ -320,11 +320,11 @@ LAB_00503184:
                  (double)(local_14 * (float)local_68));
       uVar10 = (*((this_ptr->base).base.base.vtable._ub)->playAmbientSound)
                          ((CDemonActor *)this_ptr,&stack0xfffffe10);
-      this_ptr->slime_sfx_handle = uVar10;
+      this_ptr->sfx_handles[1] = uVar10;
     }
   }
   else {
-    sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->slime_sfx_handle);
+    sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handles[1]);
   }
   iVar6 = core_charactr_cpp_CCharacter_isOnGround_FUN_004297e0((CCharacter *)this_ptr);
   if (iVar6 != 0) {

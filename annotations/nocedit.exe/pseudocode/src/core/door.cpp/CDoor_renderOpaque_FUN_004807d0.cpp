@@ -66,7 +66,7 @@ LAB_0048085a:
       g_ActiveRenderColor = 2;
       pCVar4 = (CQuaternion4f *)
                core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-                         (&this_ptr->base,&CStack_2c,(CVector3f *)this_ptr->unk3);
+                         (&this_ptr->base,&CStack_2c,&this_ptr->open_position);
       shape_edittool_cpp_CEditorTools_draw3DProjectedLine_FUN_004a28a0
                 (g_CEditorToolsPtr,pCVar4,iVar3);
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(&this_ptr->base);
@@ -77,7 +77,7 @@ LAB_0048085a:
       g_ActiveRenderColor = 1;
       pCVar4 = (CQuaternion4f *)
                core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-                         (&this_ptr->base,&CStack_20,(CVector3f *)this_ptr->unk3);
+                         (&this_ptr->base,&CStack_20,&this_ptr->open_position);
       shape_edittool_cpp_CEditorTools_draw3DProjectedLine_FUN_004a28a0
                 (g_CEditorToolsPtr,pCVar4,iVar3);
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(&this_ptr->base);

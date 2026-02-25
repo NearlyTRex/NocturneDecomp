@@ -11,7 +11,7 @@ typedef struct SRoom {
     CVector3f position; // 0x0
     CVector3f extents; // 0xc
     CMatrix3x3f rotation_matrix; // 0x18
-    int reserved; // 0x3c
-    int reverb_preset; // 0x40
+    int dead; // 0x3c
+    int reverb_size; // 0x40
 } SRoom;
 

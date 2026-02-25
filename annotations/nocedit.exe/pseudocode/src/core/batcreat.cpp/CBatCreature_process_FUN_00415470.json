@@ -10,25 +10,25 @@
       {
         "category": "incompatible_types",
         "column": 17,
-        "line": 157,
+        "line": 156,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
       },
       {
         "category": "incompatible_types",
         "column": 25,
-        "line": 224,
+        "line": 223,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
       },
       {
         "category": "incompatible_types",
         "column": 25,
-        "line": 250,
+        "line": 249,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
       },
       {
         "category": "undeclared_identifier",
         "column": 71,
-        "line": 264,
+        "line": 263,
         "message": "use of undeclared identifier 'stack0xfffffec4'; did you mean 'in_stack_fffffec4'?"
       }
     ],
@@ -37,12 +37,12 @@
   },
   "complexity": {
     "assembly_lines": 805,
-    "complexity_score": 491,
+    "complexity_score": 490,
     "cross_reference_count": 0,
     "function_call_count": 25,
     "global_count": 19,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 336,
+    "pseudocode_lines": 335,
     "suspect_count": 13,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -51,7 +51,7 @@
       "undefined_data",
       "warning_type_propagation"
     ],
-    "total_lines": 1141
+    "total_lines": 1140
   },
   "cross_references": [],
   "function": {
@@ -792,7 +792,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 194,
+      "line": 193,
       "match": "SQRT",
       "severity": "mild",
       "text": "local_20 = SQRT(local_98 * local_98 + local_a0 * local_a0);",
@@ -800,7 +800,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 206,
+      "line": 205,
       "match": "ABS",
       "severity": "mild",
       "text": "if ((ABS(local_14) < (float)0.52359877558333301) &&",
@@ -808,7 +808,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 207,
+      "line": 206,
       "match": "ABS",
       "severity": "mild",
       "text": "(ABS((((this_ptr->base).victim)->location).position.y -",
@@ -816,7 +816,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 234,
+      "line": 233,
       "match": "ABS",
       "severity": "mild",
       "text": "if (ABS(local_14) < (float)0.52359877558333301) {",
@@ -824,7 +824,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 257,
+      "line": 256,
       "match": "&stack0xfffffec4",
       "severity": "moderate",
       "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffec4);",
@@ -832,7 +832,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 262,
+      "line": 261,
       "match": "DAT_00822754",
       "severity": "mild",
       "text": "DAT_00822754);",
@@ -840,7 +840,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 338,
+      "line": 337,
       "match": "in_stack_fffffec4",
       "severity": "moderate",
       "text": "((CCharacter *)this_ptr,delta_time,in_stack_fffffec4);",

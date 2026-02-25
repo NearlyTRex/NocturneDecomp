@@ -3,13 +3,13 @@
     "errors": [
       {
         "category": "undeclared_identifier",
-        "column": 15,
+        "column": 17,
         "line": 49,
         "message": "use of undeclared identifier 'stack0x00000000'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 15,
+        "column": 17,
         "line": 61,
         "message": "use of undeclared identifier 'stack0x00000000'"
       }
@@ -304,7 +304,7 @@
     },
     {
       "addr": "02d7eb28",
-      "name": "g_CDemonLightInstance.base.base.projection_scale",
+      "name": "g_CDemonLightInstance.base.base.focal_length",
       "type": "undefined4",
       "value": null
     },
@@ -585,7 +585,7 @@
       "line": 42,
       "match": "&stack0x00000000",
       "severity": "moderate",
-      "text": "if ((int *)&stack0x00000000 != &g_CDemonLightInstance.base.base.rotation_matrix.m[2].z) {",
+      "text": "if ((float *)&stack0x00000000 != &g_CDemonLightInstance.base.base.rotation_matrix.m[2].z) {",
       "type": "stack_ref"
     },
     {
@@ -593,7 +593,7 @@
       "line": 54,
       "match": "&stack0x00000000",
       "severity": "moderate",
-      "text": "if ((int *)&stack0x00000000 != &g_CDemonCameraInstance.base.rotation_matrix.m[2].z) {",
+      "text": "if ((float *)&stack0x00000000 != &g_CDemonCameraInstance.base.rotation_matrix.m[2].z) {",
       "type": "stack_ref"
     },
     {

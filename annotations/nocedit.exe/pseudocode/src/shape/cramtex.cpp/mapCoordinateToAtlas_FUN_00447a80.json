@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 3,
-        "line": 15,
+        "line": 12,
         "message": "no matching function for call to '__STK'"
       }
     ],
@@ -13,17 +13,15 @@
   },
   "complexity": {
     "assembly_lines": 19,
-    "complexity_score": 63,
+    "complexity_score": 5,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 8,
-    "suspect_count": 5,
-    "suspect_types": [
-      "stack_param"
-    ],
-    "total_lines": 27
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 5,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 24
   },
   "cross_references": [],
   "function": {
@@ -94,75 +92,34 @@
     "pcode_op_count": 103
   },
   "stack_frame": {
-    "frame_size": 24,
+    "frame_size": 16,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 20,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": true,
         "name": "min_coord",
-        "offset": 12,
+        "offset": 4,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
         "name": "max_coord",
-        "offset": 16,
+        "offset": 8,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
         "name": "pixel_offset",
-        "offset": 20,
+        "offset": 12,
         "size": 4,
         "type": "int"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 5,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "int in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 6,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "int in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "return ((in_stack_00000008 - in_stack_00000004) * min_coord) / g_CramCurrentAcceptableSize +",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "return ((in_stack_00000008 - in_stack_00000004) * min_coord) / g_CramCurrentAcceptableSize +",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "in_stack_00000004;",
-      "type": "stack_param"
-    }
-  ]
+  "suspects": []
 }

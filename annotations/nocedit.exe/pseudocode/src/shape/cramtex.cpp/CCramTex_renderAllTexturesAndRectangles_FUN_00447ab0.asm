@@ -15,7 +15,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   CCramTex[1] g_CramSortedTextureEntries
+;   CCramTex[250] g_CramSortedTextureEntries
 ;   undefined4 DAT_0083c228
 ;   SCramRectangle[50] g_CramRectangles
 ;   undefined4 DAT_00840c18

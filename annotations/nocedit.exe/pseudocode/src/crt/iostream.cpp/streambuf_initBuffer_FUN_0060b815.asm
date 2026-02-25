@@ -10,9 +10,9 @@
 ; char *           Stack[0x10]:4   put_start
 ;
 ; XREF[3]:
-;   crt_fstream.cpp_fstreambase_constructor_FUN_00606456 at 006064b3
+;   crt_fstream.cpp_fstreambase_ctor_FUN_00606456 at 006064b3
 ;   crt_fstream.cpp_fstreambase_ctor_FUN_0060658f at 006065d5
-;   crt_strstream.cpp_strstreambase_constructor_FUN_006060fe at 00606166
+;   crt_strstream.cpp_strstreambase_ctor_FUN_006060fe at 00606166
 ;
 ; *****************************************************************************
 

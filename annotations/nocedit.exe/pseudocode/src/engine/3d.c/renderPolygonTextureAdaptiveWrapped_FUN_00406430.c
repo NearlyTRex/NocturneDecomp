@@ -2,18 +2,18 @@
 // Address: 00406430
 // Address Range: [[00406430, 004066c3]]
 // Convention: __cdecl
-// Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTextureAdaptiveWrapped_FUN_00406430(SMRGLHeaderPrimitive *polygon_info)
+// Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTextureAdaptiveWrapped_FUN_00406430(SMRGLHeaderPrimitive *prim)
 
 #include "nocturne.h"
 
-SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTextureAdaptiveWrapped_FUN_00406430(SMRGLHeaderPrimitive *polygon_info)
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTextureAdaptiveWrapped_FUN_00406430(SMRGLHeaderPrimitive *prim)
 
 {
   int iVar1;
   SMRGLHeaderPrimitive *pSVar2;
   int *piVar3;
   
-  iVar1 = engine_3d_c_isVisiblePlane_FUN_00403950(&polygon_info->surface_normal);
+  iVar1 = engine_3d_c_isVisiblePlane_FUN_00403950(&prim->surface_normal);
   if (iVar1 != 0) {
     if (g_TexturesDisabled == 0) {
       if (DAT_00772a70 == 0) {
@@ -78,8 +78,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTextureAdaptiveWrapped_FU
         g_RenderStateFlags.dword = RENDER_TEXTURE_BASE;
         g_RenderStateFlag2 = PREPROCESS_DEPTH_BUFFER_PREP;
         engine_light_cpp_calculateLighting_FUN_00505780
-                  ((polygon_info->surface_normal).A,(polygon_info->surface_normal).B,
-                   (polygon_info->surface_normal).C);
+                  ((prim->surface_normal).A,(prim->surface_normal).B,(prim->surface_normal).C);
         g_ActiveRenderColor = engine_3d_c_makeGrayscaleColor_FUN_004039c0(g_CurrentPolygonColor);
       }
     }
@@ -102,8 +101,8 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTextureAdaptiveWrapped_FU
       g_RenderStateFlag2 = PREPROCESS_NONE;
     }
     piVar3 = g_ProcessedVertexIndices;
-    pSVar2 = polygon_info + 1;
-    for (iVar1 = 0; iVar1 < (polygon_info->base).count * 3; iVar1 = iVar1 + 3) {
+    pSVar2 = prim + 1;
+    for (iVar1 = 0; iVar1 < (prim->base).count * 3; iVar1 = iVar1 + 3) {
       *piVar3 = (pSVar2->base).type + g_ProcessedVertexOffset;
       g_RenderVertexBuffer[(pSVar2->base).type + g_ProcessedVertexOffset].u = (pSVar2->base).count;
       piVar3 = piVar3 + 1;
@@ -111,8 +110,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTextureAdaptiveWrapped_FU
            (pSVar2->surface_normal).A;
       pSVar2 = (SMRGLHeaderPrimitive *)&(pSVar2->surface_normal).B;
     }
-    engine_clipper_c_clipAndRasterize_FUN_004371b0
-              ((polygon_info->base).count,g_ProcessedVertexIndices);
+    engine_clipper_c_clipAndRasterize_FUN_004371b0((prim->base).count,g_ProcessedVertexIndices);
   }
-  return (SMRGLHeaderExtended *)((int)&polygon_info[1].base + (polygon_info->base).count * 0xc);
+  return (SMRGLHeaderExtended *)((int)&prim[1].base + (prim->base).count * 0xc);
 }

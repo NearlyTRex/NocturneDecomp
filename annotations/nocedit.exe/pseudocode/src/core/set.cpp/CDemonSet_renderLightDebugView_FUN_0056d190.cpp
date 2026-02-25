@@ -18,17 +18,17 @@ void __cdecl core_set_cpp_CDemonSet_renderLightDebugView_FUN_0056d190(CDemonSet 
   char local_110 [256];
   
   iVar5 = 0;
-  if (0 < g_ActiveLightCount) {
+  if (0 < g_SpotLightCount) {
     iVar4 = 0;
     do {
       piVar1 = (int *)((int)g_LightDebugScreenY + iVar4);
       piVar2 = (int *)((int)g_LightDebugScreenX + iVar4);
-      puVar3 = (uint *)((int)g_ActiveLightList + iVar4);
+      puVar3 = (uint *)((int)g_SpotLightList + iVar4);
       iVar4 = iVar4 + 4;
       iVar5 = iVar5 + 1;
       core_dlight_cpp_CDemonLight_renderShadowMapDebugView_FUN_00473390
                 ((CDemonLight *)*puVar3,*piVar2,*piVar1,0x80);
-    } while (iVar5 < g_ActiveLightCount);
+    } while (iVar5 < g_SpotLightCount);
   }
   iVar4 = 0;
   if (0 < g_DynamicLightCount) {
@@ -45,11 +45,11 @@ void __cdecl core_set_cpp_CDemonSet_renderLightDebugView_FUN_0056d190(CDemonSet 
                 ((CDemonLight *)*puVar3,*piVar2,*piVar1,0x80);
     } while (iVar4 < g_DynamicLightCount);
   }
-  iVar5 = g_ActiveLightCount + g_DynamicLightCount;
+  iVar5 = g_SpotLightCount + g_DynamicLightCount;
   _sprintf(local_110,"%d omni lights",g_OmniLightCount);
   engine_2d_c_drawText_FUN_00401fd0(local_110,g_LightDebugScreenX[iVar5],g_LightDebugScreenY[iVar5])
   ;
-  _sprintf(local_110,"%d spot lights",g_ActiveLightCount);
+  _sprintf(local_110,"%d spot lights",g_SpotLightCount);
   engine_2d_c_drawText_FUN_00401fd0
             (local_110,g_LightDebugScreenX[iVar5],g_LightDebugScreenY[iVar5] + 0xb);
   return;

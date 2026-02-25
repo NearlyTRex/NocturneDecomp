@@ -37,6 +37,6 @@ typedef struct CKeyFramedModel {
     int disable_backface_culling; // 0x56a0
     CVector3f transform_vector; // 0x56a4
     CMatrix3x3f rotation_matrix_workspace; // 0x56b0
-    int padding; // 0x56d4
+    int dead; // 0x56d4
 } CKeyFramedModel;
 

@@ -16,8 +16,8 @@ void __cdecl core_dest_cpp_CActorDestination_setup_FUN_0046f970(CActorDestinatio
   pCVar2 = g_CDemonMissionPtr;
   (this_ptr->base).is_renderable = 0;
   iVar1 = pCVar2->is_in_editor;
-  this_ptr->unk1 = 0;
-  this_ptr->unk4 = 1;
+  this_ptr->triggered = 0;
+  this_ptr->needs_actor_search = 1;
   (this_ptr->base).is_transparent = iVar1;
   return;
 }

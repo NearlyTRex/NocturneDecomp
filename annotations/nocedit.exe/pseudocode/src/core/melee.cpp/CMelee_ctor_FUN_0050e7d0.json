@@ -6,17 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 93,
-    "complexity_score": 105,
+    "complexity_score": 64,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 14,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 70,
-    "suspect_count": 3,
-    "suspect_types": [
-      "pointer_cast"
-    ],
-    "total_lines": 163
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 64,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 157
   },
   "cross_references": [
     {
@@ -193,32 +191,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 45,
-      "match": "(char *)((int)",
-      "severity": "mild",
-      "text": "*(char *)((int)ppcVar4 + 1) = cVar1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 56,
-      "match": "(char *)((int)",
-      "severity": "mild",
-      "text": "*(char *)((int)ppcVar4 + 1) = cVar1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 69,
-      "match": "(char *)((int)",
-      "severity": "mild",
-      "text": "*(char *)((int)ppcVar4 + 1) = cVar1;",
-      "type": "pointer_cast"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

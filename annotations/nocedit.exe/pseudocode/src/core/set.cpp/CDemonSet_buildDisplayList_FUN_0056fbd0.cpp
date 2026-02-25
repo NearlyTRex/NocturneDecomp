@@ -47,7 +47,7 @@ void __cdecl core_set_cpp_CDemonSet_buildDisplayList_FUN_0056fbd0(CDemonSet *thi
   if ((g_DynamicLightCount != 0) || (g_CGamePtr->block_auto_save != 0)) {
     local_28 = 0xd;
   }
-  if (g_ActiveLightCount != 0) {
+  if (g_SpotLightCount != 0) {
     local_28 = local_28 | 0x22;
   }
   local_24 = 0;

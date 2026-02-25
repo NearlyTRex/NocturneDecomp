@@ -36,7 +36,7 @@
 ;   core_fire.cpp_CMuzzleFlash_init_FUN_004c1940 at 004c19bc
 ;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 00539457
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50 at 0056b128
-;   core_setedit.cpp_CDemonSet_FUN_00581aa0 at 00581bbc
+;   core_setedit.cpp_CDemonSet_save_FUN_0057a2a0 at 0057a782
 ;   ... and 3 more
 ;
 ; Referenced Globals:

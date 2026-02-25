@@ -19,7 +19,7 @@ typedef struct C3DSLight {
     float aspect; // 0x120
     float intensity; // 0x124
     char visible_flags[250]; // 0x128
-    char padding[2]; // 0x222
+    short dead; // 0x222
     CRect camera_light_bounds[250]; // 0x224
     CColor3f color; // 0x11c4
     float atten_start; // 0x11d0

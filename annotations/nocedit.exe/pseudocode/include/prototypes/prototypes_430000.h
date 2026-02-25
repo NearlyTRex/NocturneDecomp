@@ -2,6 +2,8 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "system/fstream.h"
+#include "system/iostream.h"
 #include "system/stdio.h"
 #include "types/classes/CActorPropertyList.h"
 #include "types/classes/CBoundingBox3D.h"
@@ -183,43 +185,43 @@ SClothVertex * __cdecl core_cloth_cpp_SClothVertex_dtor_FUN_0043e440(SClothVerte
 CVector3f * __cdecl core_cloth_cpp_CVector3f_arrdtor_FUN_0043e460(CVector3f *objs,uint flags);
 SClothVertex * __cdecl core_cloth_cpp_SClothVertex_arrdtor_FUN_0043e480(SClothVertex *objs,uint flags);
 SClothBone * __cdecl core_cloth_cpp_SClothBone_arrdtor_FUN_0043e4a0(SClothBone *objs,uint flags);
-int __cdecl support_codec_cpp_readByteWithCount_FUN_0043e4c0(_FILE *file,int *remaining_count);
-void __cdecl support_codec_cpp_resetDictionary_FUN_0043e510(CLZWDictionary *dict);
-int __cdecl support_codec_cpp_readBitsFromStream_FUN_0043e530(SBitBuffer *bit_buffer,int bit_count,_FILE *file_stream,int *bytes_remaining);
-void __cdecl support_codec_cpp_writeBitsToStream_FUN_0043e6c0(SBitBuffer *bit_buffer,int bit_count,int bit_value,_FILE *output_stream);
-void __cdecl support_codec_cpp_flushBitBuffer_FUN_0043e7e0(SBitBuffer *bit_buffer,_FILE *output_stream);
-int __cdecl support_codec_cpp_extractBitsFromBuffer_FUN_0043e840(SBitBuffer *bit_state,int bit_count,byte **output_pos,int *bytes_remaining);
+int __cdecl support_codec_cpp_readByteWithCount_FUN_0043e4c0(_istream *istream,int *remaining_count);
+void __cdecl support_codec_cpp_resetBitBuffer_FUN_0043e510(SBitBuffer *bit_buffer);
+int __cdecl support_codec_cpp_readBitsFromStream_FUN_0043e530(SBitBuffer *bit_buffer,int bit_count,_istream *istream,int *bytes_remaining);
+void __cdecl support_codec_cpp_writeBitsToStream_FUN_0043e6c0(SBitBuffer *bit_buffer,int bit_count,int bit_value,_ostream *ostream);
+void __cdecl support_codec_cpp_flushBitBuffer_FUN_0043e7e0(SBitBuffer *bit_buffer,_ostream *ostream);
+int __cdecl support_codec_cpp_extractBitsFromBuffer_FUN_0043e840(SBitBuffer *bit_state,int bit_count,char **output_pos,int *bytes_remaining);
 CCodec * __cdecl support_codec_cpp_CCodec_ctor_FUN_0043e9a0(CCodec *this_ptr);
 CCodec * __cdecl support_codec_cpp_CCodec_dtor_FUN_0043e9b0(CCodec *this_ptr,uint flags);
 void __cdecl support_codec_cpp_CCodec_init_FUN_0043e9d0(CCodec *this_ptr);
 int __cdecl support_codec_cpp_CCodec_finalize_FUN_0043ea00(CCodec *this_ptr,_FILE *output_file);
-int __cdecl support_codec_cpp_CCodec_process_FUN_0043ea10(CCodec *this_ptr,_FILE *input_file,int byte_count,_FILE *output_file);
-int __cdecl support_codec_cpp_CCodec_processToBuffer_FUN_0043ea80(CCodec *this_ptr,void *input_param,void *context_param,char *output_buffer, int *output_size,int enable_finalize);
-int __cdecl support_codec_cpp_CCodec_processFromBuffer_FUN_0043eb30(CCodec *this_ptr,byte *input,int *input_length,byte *output,int *output_length);
-int __cdecl support_codec_cpp_CCodec_processBuffer_FUN_0043eba0(CCodec *this_ptr,byte *input,int *input_length,byte *output,int *output_length, int enable_callback);
+int __cdecl support_codec_cpp_CCodec_process_FUN_0043ea10(CCodec *this_ptr,_istream *istream,int byte_count,_ostream *ostream);
+int __cdecl support_codec_cpp_CCodec_processToBuffer_FUN_0043ea80(CCodec *this_ptr,_istream *ifstream,int byte_count,char *output_buffer, int *output_size,int enable_finalize);
+int __cdecl support_codec_cpp_CCodec_processFromBuffer_FUN_0043eb30(CCodec *this_ptr,char *input,int *input_length,char *output,int *output_length);
+int __cdecl support_codec_cpp_CCodec_processBuffer_FUN_0043eba0(CCodec *this_ptr,char *input,int *input_length,char *output,int *output_length, int enable_callback);
 int __cdecl support_codec_cpp_CCodec_processFiles_FUN_0043ec30(CCodec *this_ptr,char *input_file_path,char *output_file_path);
 int __cdecl support_codec_cpp_CCodec_finalizeBuffer_FUN_0043ed50(CCodec *this_ptr,char *buffer_ptr,int *buffer_size_ptr);
 CLZWDictionary * __cdecl support_codec_cpp_CLZWDictionary_ctor_FUN_0043edd0(CLZWDictionary *this_ptr);
 CLZWDictionary * __cdecl support_codec_cpp_CLZWDictionary_dtor_FUN_0043edf0(CLZWDictionary *this_ptr,uint flags);
 void __cdecl support_codec_cpp_CLZWDictionary_free_FUN_0043ee10(CLZWDictionary *this_ptr);
-void __cdecl support_codec_cpp_CLZWDictionary_init_FUN_0043ee60(CLZWDictionary *this_ptr,int new_dict_size,int new_num_bits,int normal_code_width, int fallback_code_width);
+void __cdecl support_codec_cpp_CLZWDictionary_init_FUN_0043ee60(CLZWDictionary *this_ptr,int new_dict_size,int new_num_bits);
 void __cdecl support_codec_cpp_CLZWDictionary_initTable_FUN_0043eef0(CLZWDictionary *this_ptr);
 int __cdecl support_codec_cpp_CLZWDictionary_findCode_FUN_0043ef50(CLZWDictionary *this_ptr,int search_code,int start_index);
 int __cdecl support_codec_cpp_CLZWDictionary_addNode_FUN_0043ef90(CLZWDictionary *this_ptr,int code,int parent_index);
-int __cdecl support_codec_cpp_CLZWDictionary_readCodeFromStream_FUN_0043f030(CLZWDictionary *this_ptr,SBitBuffer *bit_buffer,_FILE *input_file, int *bytes_remaining);
-int __cdecl support_codec_cpp_CLZWDictionary_writeCodeToStream_FUN_0043f0d0(CLZWDictionary *this_ptr,SBitBuffer *bit_buffer,byte *output_stream, int *bytes_remaining,int code_value);
-void __cdecl support_codec_cpp_CLZWDictionary_writeCodeBits_FUN_0043f170(CLZWDictionary *this_ptr,int code_value,SBitBuffer *bit_buffer,_FILE *output_stream);
-int __cdecl support_codec_cpp_CLZWDictionary_writeCodeSequence_FUN_0043f200(CLZWDictionary *this_ptr,int code,_FILE *output_file);
+int __cdecl support_codec_cpp_CLZWDictionary_readCodeFromStream_FUN_0043f030(CLZWDictionary *this_ptr,SBitBuffer *bit_buffer,_istream *istream, int *bytes_remaining);
+int __cdecl support_codec_cpp_CLZWDictionary_readCodeFromBuffer_FUN_0043f0d0(CLZWDictionary *this_ptr,SBitBuffer *bit_buffer,char **input_buffer, int *bytes_remaining);
+void __cdecl support_codec_cpp_CLZWDictionary_writeCodeBits_FUN_0043f170(CLZWDictionary *this_ptr,int code_value,SBitBuffer *bit_buffer,_ostream *ostream);
+int __cdecl support_codec_cpp_CLZWDictionary_writeCodeSequence_FUN_0043f200(CLZWDictionary *this_ptr,int code,_ostream *ostream);
 int __cdecl support_codec_cpp_CLZWDictionary_decodeCodeToBuffer_FUN_0043f270(CLZWDictionary *this_ptr,int code,char **buffer_ptr_ptr);
-CLZWCompress * __cdecl support_codec_cpp_CLZWCompress_ctor_FUN_0043f2d0(CLZWCompress *this_ptr);
+CLZWCompress * __cdecl support_codec_cpp_CLZWCompress_ctor_FUN_0043f2d0(CLZWCompress *this_ptr,int buffer_size,int num_bits);
 void __cdecl support_codec_cpp_CLZWCompress_init_FUN_0043f320(CLZWCompress *this_ptr);
-int __cdecl support_codec_cpp_CLZWCompress_process_FUN_0043f360(CLZWCompress *this_ptr,_FILE *input_file,int byte_count,_FILE *output_file);
-int __cdecl support_codec_cpp_CLZWCompress_finalize_FUN_0043f440(CLZWCompress *this_ptr,_FILE *output_file);
+int __cdecl support_codec_cpp_CLZWCompress_process_FUN_0043f360(CLZWCompress *this_ptr,_istream *istream,int byte_count,_ostream *ostream);
+int __cdecl support_codec_cpp_CLZWCompress_finalize_FUN_0043f440(CLZWCompress *this_ptr,_ostream *ostream);
 CLZWDecompress * __cdecl support_codec_cpp_CLZWDecompress_ctor_FUN_0043f490(CLZWDecompress *this_ptr,int buffer_size,int initial_bits);
 void __cdecl support_codec_cpp_CLZWDecompress_init_FUN_0043f4d0(CLZWDecompress *this_ptr);
-int __cdecl support_codec_cpp_CLZWDecompress_process_FUN_0043f510(CLZWDecompress *this_ptr,_FILE *input_file,int byte_count,_FILE *output_file);
-int __cdecl support_codec_cpp_CLZWDecompress_finalize_FUN_0043f590(CLZWDecompress *this_ptr,_FILE *output_file);
-int __cdecl support_codec_cpp_CLZWDecompress_processBuffer_FUN_0043f5d0(CLZWDecompress *this_ptr,byte *input,int *input_length,byte *output, int *output_length,int enable_callback);
+int __cdecl support_codec_cpp_CLZWDecompress_process_FUN_0043f510(CLZWDecompress *this_ptr,_istream *istream,int byte_count,_ostream *ostream);
+int __cdecl support_codec_cpp_CLZWDecompress_finalize_FUN_0043f590(CLZWDecompress *this_ptr,_ostream *ostream);
+int __cdecl support_codec_cpp_CLZWDecompress_processBuffer_FUN_0043f5d0(CLZWDecompress *this_ptr,char *input,int *input_length,char *output, int *output_length,int enable_callback);
 int __cdecl support_codec_cpp_CLZWDecompress_isDictionaryEmpty_FUN_0043f690(CLZWDecompress *this_ptr);
 CLZWDecompress * __cdecl support_codec_cpp_CLZWDecompress_dtor_FUN_0043f6b0(CLZWDecompress *this_ptr,uint flags);
 CLZWCompress * __cdecl support_codec_cpp_CLZWCompress_dtor_FUN_0043f710(CLZWCompress *this_ptr,uint flags);

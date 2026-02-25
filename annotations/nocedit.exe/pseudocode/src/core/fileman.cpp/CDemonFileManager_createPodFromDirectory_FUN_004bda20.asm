@@ -651,7 +651,7 @@ section .text
     PUSH EAX                            ; 004bdfdd
     PUSH EBP                            ; 004bdfde
     CALL core_fileman.cpp_CDemonFileManager_addSetToExtractList_FUN_004bd8e0 ; 004bdfdf
-        ;   XREF to: 004bd8e0 (UNCONDITIONAL_CALL)  ; void core_fileman.cpp_CDemonFileManager_addSetToExtractList_FUN_004bd8e0(CDemonFileManager * file_manager_ptr, char * set_filename)
+        ;   XREF to: 004bd8e0 (UNCONDITIONAL_CALL)  ; void core_fileman.cpp_CDemonFileManager_addSetToExtractList_FUN_004bd8e0(CDemonFileManager * this_ptr, char * set_filename)
     ADD ESP,0x8                         ; 004bdfe4
     JMP 0x004bdb2c                      ; 004bdfe7
         ;   XREF to: 004bdb2c (UNCONDITIONAL_JUMP)  ; LAB_004bdb2c

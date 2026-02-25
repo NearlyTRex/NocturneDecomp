@@ -11,8 +11,8 @@
 ;   core_level.cpp_CLevelLoader_update_FUN_00504160 at 00504599
 ;   core_morph.cpp_CMorph_editMorph_FUN_0052bcb0 at 0052c344
 ;   core_setdir.cpp_CZThumb_popRenderingContext_FUN_00574ef0 at 00574ef7
-;   core_setedit.cpp_CDemonSet_FUN_00580310 at 005804fd
-;   core_setedit.cpp_FUN_0057ce80 at 0057d21e
+;   core_setedit.cpp_CDemonSet_buildCameraDepthData_FUN_00580310 at 005804fd
+;   core_setedit.cpp_renderBackdropImage_FUN_0057ce80 at 0057d21e
 ;
 ; *****************************************************************************
 

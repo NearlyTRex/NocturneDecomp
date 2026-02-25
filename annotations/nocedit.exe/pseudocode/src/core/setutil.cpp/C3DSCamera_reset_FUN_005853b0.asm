@@ -7,7 +7,7 @@
 ; C3DSCamera *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
-;   core_setedit.cpp_CDemonSet_FUN_0057e7c0 at 0057eab2
+;   core_setedit.cpp_CDemonSet_showCameraEditor_FUN_0057e7c0 at 0057eab2
 ;   core_setutil.cpp_C3DSCamera_importS3D_FUN_00585ff0 at 00585fff
 ;   core_setutil.cpp_C3DSCamera_load_FUN_00585420 at 00585439
 ;

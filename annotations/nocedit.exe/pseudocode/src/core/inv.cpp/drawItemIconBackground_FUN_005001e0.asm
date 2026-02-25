@@ -132,7 +132,7 @@ section .text
     MOV dword ptr [ESP + 0x28],ESI      ; 00500310
     MOV dword ptr [ESP + 0x2c],EDI      ; 00500314
     CALL engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10 ; 00500318
-        ;   XREF to: 0048ae10 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info, int render_flags)
+        ;   XREF to: 0048ae10 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, int render_flags)
     ADD ESP,0xc                         ; 0050031d
     MOV EAX,dword ptr [ESP + 0x4c]      ; 00500320
     MOV dword ptr [ESP + 0x28],EAX      ; 00500324

@@ -256,7 +256,7 @@ section .text
     PUSH 0xf77                          ; 004e1f5b
     PUSH 0x62d217                       ; 004e1f60 | = "..\\core\\game.cpp"
     PUSH EAX                            ; 004e1f65
-    MOV EDI,0x2d830a8                   ; 004e1f66 | DAT_02d830a8
+    MOV EDI,0x2d830a8                   ; 004e1f66 | g_ChapterDisplayName
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 004e1f6b
         ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     MOV ECX,0x41000000                  ; 004e1f70
@@ -264,10 +264,10 @@ section .text
     MOV EBX,dword ptr [EBP*0x4 + 0x67b854] ; 004e1f78 | DAT_0067b850 | DAT_0067b854
     MOV ESI,dword ptr [ESP + EBP*0x4 + 0x6ac] ; 004e1f7f
     MOV dword ptr [0x02d831a8],EBX      ; 004e1f86 | g_CurrentDisplayText
-    PUSH EDI                            ; 004e1f8c | DAT_02d830a8
+    PUSH EDI                            ; 004e1f8c | g_ChapterDisplayName
     MOV AL,byte ptr [ESI]               ; 004e1f8d
         ;   Label: LAB_004e1f8d
-    MOV byte ptr [EDI],AL               ; 004e1f8f | DAT_02d830a8 | DAT_02d830aa
+    MOV byte ptr [EDI],AL               ; 004e1f8f | g_ChapterDisplayName | DAT_02d830aa
     CMP AL,0x0                          ; 004e1f91
     JZ 0x004e1fa5                       ; 004e1f93
         ;   XREF to: 004e1fa5 (CONDITIONAL_JUMP)  ; LAB_004e1fa5
@@ -1160,7 +1160,7 @@ section .text
     MOV [0x02d831a8],EAX                ; 004e286a | g_CurrentDisplayText
     XOR AH,AH                           ; 004e286f
     MOV dword ptr [0x02d831ac],EDX      ; 004e2871 | g_OverlayDisplayTimer
-    MOV byte ptr [0x02d830a8],AH        ; 004e2877 | DAT_02d830a8
+    MOV byte ptr [0x02d830a8],AH        ; 004e2877 | g_ChapterDisplayName
     JMP 0x004e1fac                      ; 004e287d
         ;   XREF to: 004e1fac (UNCONDITIONAL_JUMP)  ; LAB_004e1fac
 

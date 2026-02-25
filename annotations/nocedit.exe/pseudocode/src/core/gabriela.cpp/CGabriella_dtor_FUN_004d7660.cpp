@@ -18,7 +18,7 @@ CGabriella * __cdecl core_gabriela_cpp_CGabriella_dtor_FUN_004d7660(CGabriella *
     shape_memdbg_cpp_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
-  pCVar1 = core_cloth_cpp_CCloth_dtor_FUN_00438c00(&this_ptr->coat,0);
+  pCVar1 = core_cloth_cpp_CCloth_dtor_FUN_00438c00(&this_ptr->coat_cloth,0);
   ptr = (CGabriella *)
         core_hero_cpp_CHero_dtor_FUN_004f2470
                   ((CHero *)(pCVar1[-1].vertices[0x181].connected_indices + 0xd),1);

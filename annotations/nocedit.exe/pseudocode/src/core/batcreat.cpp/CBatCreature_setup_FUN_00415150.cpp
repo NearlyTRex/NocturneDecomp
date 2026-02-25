@@ -55,49 +55,49 @@ void __cdecl core_batcreat_cpp_CBatCreature_setup_FUN_00415150(CBatCreature *thi
   this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr_00);
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"head01",1);
-  this_ptr->part_head = iVar1;
+  this_ptr->part_indices[0] = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"torso01",1);
-  this_ptr->part_torso = iVar1;
+  this_ptr->part_indices[1] = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"ass01",1);
-  this_ptr->part_pelvis = iVar1;
+  this_ptr->part_indices[2] = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"tail01",1);
-  this_ptr->part_tail = iVar1;
+  this_ptr->part_indices[3] = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"lthigh01",1);
-  this_ptr->part_lthigh = iVar1;
+  this_ptr->part_indices[4] = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"lshin01",1);
-  this_ptr->part_lshin = iVar1;
+  this_ptr->part_indices[5] = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"rthigh01",1);
-  this_ptr->part_rthigh = iVar1;
+  this_ptr->part_indices[6] = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"rshin01",1);
-  this_ptr->part_rshin = iVar1;
+  this_ptr->part_indices[7] = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"larm01",1);
-  this_ptr->part_larm = iVar1;
+  this_ptr->part_indices[8] = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"l4arm01",1);
-  this_ptr->part_lforearm = iVar1;
+  this_ptr->part_indices[9] = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"rarm01",1);
-  this_ptr->part_rarm = iVar1;
+  this_ptr->part_indices[10] = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"r4arm01",1);
-  this_ptr->part_rforearm = iVar1;
+  this_ptr->part_indices[0xb] = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"lwing",1);
-  this_ptr->part_lwing = iVar1;
+  this_ptr->part_indices[0xc] = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"rwing",1);
-  this_ptr->alert_sound_handle = 0;
-  this_ptr->voice_sound_handle = 0;
-  this_ptr->attack_sound_handle = 0;
+  this_ptr->sfx_handles[0] = 0;
+  this_ptr->sfx_handles[1] = 0;
+  this_ptr->sfx_handles[2] = 0;
   this_ptr->alert_played = 0;
-  this_ptr->part_rwing = iVar1;
+  this_ptr->part_indices[0xd] = iVar1;
   return;
 }

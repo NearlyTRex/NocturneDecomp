@@ -19,7 +19,7 @@
     {
       "addr": "005ff710",
       "from_addr": "005ff73e",
-      "name": "crt_fstream.cpp_ofstream_constructor_FUN_005ff710",
+      "name": "crt_fstream.cpp_ofstream_ctor_FUN_005ff710",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -45,7 +45,7 @@
     ],
     "convention": "__cdecl",
     "name": "crt_iostream.cpp_ostream_ctor_FUN_006061a2",
-    "signature": "ostream * __cdecl crt_iostream_cpp_ostream_ctor_FUN_006061a2(ostream *this_ptr,uint c1)"
+    "signature": "_ostream * __cdecl crt_iostream_cpp_ostream_ctor_FUN_006061a2(_ostream *this_ptr,uint c1)"
   },
   "function_calls": [
     {
@@ -98,7 +98,7 @@
       {
         "call_addr": "005ff73e",
         "call_type": "direct",
-        "caller": "crt_fstream.cpp_ofstream_constructor_FUN_005ff710",
+        "caller": "crt_fstream.cpp_ofstream_ctor_FUN_005ff710",
         "estimated_params": 2,
         "instructions_analyzed": 5,
         "reg_params": [],
@@ -146,7 +146,7 @@
         "name": "this_ptr",
         "offset": 4,
         "size": 4,
-        "type": "ostream *"
+        "type": "_ostream *"
       },
       {
         "is_param": true,
@@ -171,7 +171,7 @@
       "line": 11,
       "match": "piVar2[-1].",
       "severity": "mild",
-      "text": "this_ptr = (ostream *)&piVar2[-1].__fill_character;",
+      "text": "this_ptr = (_ostream *)&piVar2[-1].__fill_character;",
       "type": "negative_offset"
     },
     {

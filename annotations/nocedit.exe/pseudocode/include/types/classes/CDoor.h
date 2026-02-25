@@ -32,9 +32,9 @@ typedef struct CDoor {
     float max_param; // 0x9b0
     float open_speed; // 0x9b4
     float close_speed; // 0x9b8
-    char unk3[12]; // 0x9bc
+    CVector3f open_position; // 0x9bc
     int one_shot; // 0x9c8
-    char unk4[4]; // 0x9cc
+    float swing_range; // 0x9cc
     int block_virtual_director_flag; // 0x9d0
     int plot_as_box_in_shadow; // 0x9d4
     int allowed_sides; // 0x9d8

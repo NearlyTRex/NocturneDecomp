@@ -735,33 +735,33 @@ CCodec_vtable g_CCodecVTable = {
     .init = (CCodec_init *)support_codec_cpp_CCodec_init_FUN_0043e9d0,
     .process = (CCodec_process *)support_codec_cpp_CCodec_process_FUN_0043ea10,
     .finalize = (CCodec_finalize *)support_codec_cpp_CCodec_finalize_FUN_0043ea00,
-    .processToBuffer = (void *)support_codec_cpp_CCodec_processToBuffer_FUN_0043ea80,
-    .processFromBuffer = (void *)support_codec_cpp_CCodec_processFromBuffer_FUN_0043eb30,
+    .processToBuffer = (CCodec_processToBuffer *)support_codec_cpp_CCodec_processToBuffer_FUN_0043ea80,
+    .processFromBuffer = (CCodec_processFromBuffer *)support_codec_cpp_CCodec_processFromBuffer_FUN_0043eb30,
     .processBuffer = (CCodec_processBuffer *)support_codec_cpp_CCodec_processBuffer_FUN_0043eba0,
-    .processFiles = (void *)support_codec_cpp_CCodec_processFiles_FUN_0043ec30,
-    .finalizeBuffer = (void *)support_codec_cpp_CCodec_finalizeBuffer_FUN_0043ed50
+    .processFiles = (CCodec_processFiles *)support_codec_cpp_CCodec_processFiles_FUN_0043ec30,
+    .finalizeBuffer = (CCodec_finalizeBuffer *)support_codec_cpp_CCodec_finalizeBuffer_FUN_0043ed50
 };
 CCodec_vtable g_CLZWCompressVTable = {
     .dtor = (CCodec_dtor *)support_codec_cpp_CLZWCompress_dtor_FUN_0043f710,
     .init = (CCodec_init *)support_codec_cpp_CLZWCompress_init_FUN_0043f320,
     .process = (CCodec_process *)support_codec_cpp_CLZWCompress_process_FUN_0043f360,
     .finalize = (CCodec_finalize *)support_codec_cpp_CLZWCompress_finalize_FUN_0043f440,
-    .processToBuffer = (void *)support_codec_cpp_CCodec_processToBuffer_FUN_0043ea80,
-    .processFromBuffer = (void *)support_codec_cpp_CCodec_processFromBuffer_FUN_0043eb30,
+    .processToBuffer = (CCodec_processToBuffer *)support_codec_cpp_CCodec_processToBuffer_FUN_0043ea80,
+    .processFromBuffer = (CCodec_processFromBuffer *)support_codec_cpp_CCodec_processFromBuffer_FUN_0043eb30,
     .processBuffer = (CCodec_processBuffer *)support_codec_cpp_CCodec_processBuffer_FUN_0043eba0,
-    .processFiles = (void *)support_codec_cpp_CCodec_processFiles_FUN_0043ec30,
-    .finalizeBuffer = (void *)support_codec_cpp_CCodec_finalizeBuffer_FUN_0043ed50
+    .processFiles = (CCodec_processFiles *)support_codec_cpp_CCodec_processFiles_FUN_0043ec30,
+    .finalizeBuffer = (CCodec_finalizeBuffer *)support_codec_cpp_CCodec_finalizeBuffer_FUN_0043ed50
 };
 CCodec_vtable g_CLZWDecompressVTable = {
     .dtor = (CCodec_dtor *)support_codec_cpp_CLZWDecompress_dtor_FUN_0043f6b0,
     .init = (CCodec_init *)support_codec_cpp_CLZWDecompress_init_FUN_0043f4d0,
     .process = (CCodec_process *)support_codec_cpp_CLZWDecompress_process_FUN_0043f510,
     .finalize = (CCodec_finalize *)support_codec_cpp_CLZWDecompress_finalize_FUN_0043f590,
-    .processToBuffer = (void *)support_codec_cpp_CCodec_processToBuffer_FUN_0043ea80,
-    .processFromBuffer = (void *)support_codec_cpp_CCodec_processFromBuffer_FUN_0043eb30,
+    .processToBuffer = (CCodec_processToBuffer *)support_codec_cpp_CCodec_processToBuffer_FUN_0043ea80,
+    .processFromBuffer = (CCodec_processFromBuffer *)support_codec_cpp_CCodec_processFromBuffer_FUN_0043eb30,
     .processBuffer = (CCodec_processBuffer *)support_codec_cpp_CLZWDecompress_processBuffer_FUN_0043f5d0,
-    .processFiles = (void *)support_codec_cpp_CCodec_processFiles_FUN_0043ec30,
-    .finalizeBuffer = (void *)support_codec_cpp_CCodec_finalizeBuffer_FUN_0043ed50
+    .processFiles = (CCodec_processFiles *)support_codec_cpp_CCodec_processFiles_FUN_0043ec30,
+    .finalizeBuffer = (CCodec_finalizeBuffer *)support_codec_cpp_CCodec_finalizeBuffer_FUN_0043ed50
 };
 
 // CDemonActor*

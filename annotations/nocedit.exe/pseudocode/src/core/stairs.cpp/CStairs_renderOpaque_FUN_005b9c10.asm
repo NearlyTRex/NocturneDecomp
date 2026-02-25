@@ -454,7 +454,7 @@ section .text
     MOV dword ptr [ESP + 0x30],EBP      ; 005ba20f
     MOV dword ptr [ESP + 0x34],EBX      ; 005ba213
     CALL engine_drender.cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0 ; 005ba217
-        ;   XREF to: 0048bad0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info)
+        ;   XREF to: 0048bad0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD ESP,0x8                         ; 005ba21c
     LEA EAX,[ESP + 0xc]                 ; 005ba21f
     MOV dword ptr [ESP + 0x24],EBP      ; 005ba223
@@ -467,7 +467,7 @@ section .text
     MOV dword ptr [ESP + 0x30],EBP      ; 005ba239
     MOV dword ptr [ESP + 0x34],ESI      ; 005ba23d
     CALL engine_drender.cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0 ; 005ba241
-        ;   XREF to: 0048bad0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info)
+        ;   XREF to: 0048bad0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD ESP,0x8                         ; 005ba246
     MOV EAX,dword ptr [ESP + 0xf4]      ; 005ba249
     INC EDI                             ; 005ba250
@@ -597,7 +597,7 @@ section .text
     PUSH EAX                            ; 005ba425
     PUSH EDX                            ; 005ba426 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0 ; 005ba427
-        ;   XREF to: 0048bad0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info)
+        ;   XREF to: 0048bad0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD ESP,0x8                         ; 005ba42c
     MOV EBX,dword ptr [ESP + 0xc0]      ; 005ba42f
     MOV EAX,dword ptr [ESP + 0xbc]      ; 005ba436

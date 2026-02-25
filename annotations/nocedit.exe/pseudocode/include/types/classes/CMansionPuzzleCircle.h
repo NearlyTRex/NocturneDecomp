@@ -6,7 +6,7 @@
 #include "types/classes/CKeyFramedModelInstance.h"
 #include "types/classes/CVector3f.h"
 #include "types/structs/SGem.h"
-#include "types/structs/SMRGLTextureBasic.h"
+#include "types/structs/SMRGLTextureLod.h"
 #include "types/structs/SPanel.h"
 #include "types/structs/SReflector.h"
 #include "types/unions/UOrientationVector.h"
@@ -28,8 +28,7 @@ typedef struct CMansionPuzzleCircle {
     int laser_color_g[12]; // 0x1430
     int laser_color_b[12]; // 0x1460
     int laser_intensity[12]; // 0x1490
-    SMRGLTextureBasic light_texture; // 0x14c0
-    CVector3f unk[4]; // 0x14d8
+    SMRGLTextureLod light_texture; // 0x14c0
     float bbox_extent; // 0x1508
     float panel_radius; // 0x150c
     float bbox_height; // 0x1510

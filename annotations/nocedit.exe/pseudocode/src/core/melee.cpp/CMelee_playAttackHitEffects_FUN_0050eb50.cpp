@@ -16,17 +16,17 @@ void __cdecl core_melee_cpp_CMelee_playAttackHitEffects_FUN_0050eb50(CMelee *thi
     core_melee_cpp_CMelee_FUN_0050ebe0(this_ptr);
     if (attack_flags == 1) {
       (*((this_ptr->base).base.vtable._ub)->playSound)
-                ((CDemonActor *)this_ptr,(char *)&this_ptr->thrust_hit_character_sound);
+                ((CDemonActor *)this_ptr,this_ptr->thrust_hit_character_sound);
       return;
     }
     (*((this_ptr->base).base.vtable._ub)->playSound)
-              ((CDemonActor *)this_ptr,(char *)&this_ptr->swing_hit_character_sound);
+              ((CDemonActor *)this_ptr,this_ptr->swing_hit_character_sound);
     return;
   }
   if (victim == (CDemonActor *)0x0) {
     return;
   }
   (*((this_ptr->base).base.vtable._ub)->playSound)
-            ((CDemonActor *)this_ptr,(char *)&this_ptr->hit_other_sound);
+            ((CDemonActor *)this_ptr,this_ptr->hit_other_sound);
   return;
 }

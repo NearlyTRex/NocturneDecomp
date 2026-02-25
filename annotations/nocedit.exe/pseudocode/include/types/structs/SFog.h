@@ -12,6 +12,6 @@ typedef struct SFog {
     CVector3f scroll; // 0xc
     float height_threshold; // 0x18
     float density_multiplier; // 0x1c
-    float reserved; // 0x20
+    float temperature; // 0x20
 } SFog;
 

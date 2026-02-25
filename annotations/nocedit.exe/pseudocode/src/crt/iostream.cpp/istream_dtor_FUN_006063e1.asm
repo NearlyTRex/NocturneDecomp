@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; istream * __cdecl crt_iostream_cpp_istream_dtor_FUN_006063e1(istream *this_ptr,uint flags)
+; _istream * __cdecl crt_iostream_cpp_istream_dtor_FUN_006063e1(_istream *this_ptr,uint flags)
 ;
 ; Parameters:
-; istream *        Stack[0x4]:4   this_ptr
+; _istream *       Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[3]:

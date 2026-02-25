@@ -2,11 +2,11 @@
 // Address: 0048b550
 // Address Range: [[0048b550, 0048b649]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_renderPerspectiveLit_FUN_0048b550(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info)
+// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_renderPerspectiveLit_FUN_0048b550(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim)
 
 #include "nocturne.h"
 
-void __cdecl engine_drender_cpp_CDemonRenderer_renderPerspectiveLit_FUN_0048b550(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info)
+void __cdecl engine_drender_cpp_CDemonRenderer_renderPerspectiveLit_FUN_0048b550(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim)
 
 {
   int iVar1;
@@ -15,11 +15,11 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderPerspectiveLit_FUN_0048b550
   int iVar4;
   
   if ((this_ptr->plane_culling_enabled == 0) ||
-     (iVar3 = engine_3d_c_isVisiblePlane_FUN_00403950(&polygon_info->surface_normal), iVar3 != 0)) {
+     (iVar3 = engine_3d_c_isVisiblePlane_FUN_00403950(&prim->surface_normal), iVar3 != 0)) {
     iVar3 = 0;
-    if (0 < (polygon_info->base).count) {
+    if (0 < (prim->base).count) {
       iVar4 = 0;
-      pSVar2 = polygon_info;
+      pSVar2 = prim;
       do {
         iVar1 = pSVar2[1].base.type;
         if (this_ptr->skip_uv_extraction == 0) {
@@ -30,7 +30,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderPerspectiveLit_FUN_0048b550
         pSVar2 = (SMRGLHeaderPrimitive *)&(pSVar2->surface_normal).B;
         iVar3 = iVar3 + 1;
         iVar4 = iVar4 + 4;
-      } while (iVar3 < (polygon_info->base).count);
+      } while (iVar3 < (prim->base).count);
     }
     if (this_ptr->face_count == 0) {
       if (g_BitsPerPixel == 0x20) {
@@ -48,7 +48,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderPerspectiveLit_FUN_0048b550
       g_ScanlineRenderFunc = (RenderScanlineFunc *)core_dstrender_cpp_renderTexturedAlphaMMXScanline_FUN_004907e7;
     }
     engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740
-              (this_ptr,(polygon_info->base).count,g_VertexIndexBuffer);
+              (this_ptr,(prim->base).count,g_VertexIndexBuffer);
   }
   return;
 }

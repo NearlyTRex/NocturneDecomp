@@ -9,7 +9,6 @@
 typedef struct CTommyGun {
     CWeapon base; // 0x0
     int fire_frames_remaining; // 0x578
-    uint sfx_handle; // 0x57c
-    uint sfx_handle_tail; // 0x580
+    uint sfx_handles[2]; // 0x57c
 } CTommyGun;
 

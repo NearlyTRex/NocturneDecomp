@@ -4,25 +4,25 @@
       {
         "category": "incompatible_types",
         "column": 13,
-        "line": 108,
+        "line": 110,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
       },
       {
         "category": "incompatible_types",
         "column": 15,
-        "line": 183,
+        "line": 185,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
       },
       {
         "category": "other",
         "column": 13,
-        "line": 190,
+        "line": 192,
         "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 32,
-        "line": 191,
+        "line": 193,
         "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
       }
     ],
@@ -31,12 +31,12 @@
   },
   "complexity": {
     "assembly_lines": 379,
-    "complexity_score": 399,
+    "complexity_score": 401,
     "cross_reference_count": 0,
     "function_call_count": 13,
     "global_count": 12,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 189,
+    "pseudocode_lines": 191,
     "suspect_count": 18,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -46,7 +46,7 @@
       "suspect_float",
       "unknown_field"
     ],
-    "total_lines": 568
+    "total_lines": 570
   },
   "cross_references": [],
   "function": {
@@ -418,7 +418,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 62,
+      "line": 63,
       "match": "3.57331e-43",
       "severity": "mild",
       "text": "(this_ptr->base).muzzle_flash_offset.x = 3.57331e-43;",
@@ -426,7 +426,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 80,
+      "line": 81,
       "match": "3.57331e-43",
       "severity": "mild",
       "text": "(this_ptr->base).muzzle_flash_offset.y = 3.57331e-43;",
@@ -434,7 +434,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 111,
+      "line": 113,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar7 = (uint *)((int)&local_90 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
@@ -442,7 +442,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 112,
+      "line": 114,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_90 + (uint)bVar9 * -8 + 4) =",
@@ -450,7 +450,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 121,
+      "line": 123,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar8 = (uint *)((int)&local_50 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
@@ -458,7 +458,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 122,
+      "line": 124,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar7 = (uint *)((int)&local_70 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
@@ -466,7 +466,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 123,
+      "line": 125,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_50 + (uint)bVar9 * -8 + 4) =",
@@ -474,7 +474,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 124,
+      "line": 126,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_70 + (uint)bVar9 * -8 + 4);",
@@ -482,7 +482,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 133,
+      "line": 135,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar8 = (uint *)((int)&local_80 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
@@ -490,7 +490,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 134,
+      "line": 136,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar7 = (uint *)((int)&local_60 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
@@ -498,7 +498,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 135,
+      "line": 137,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_80 + (uint)bVar9 * -8 + 4) =",
@@ -506,7 +506,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 136,
+      "line": 138,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_60 + (uint)bVar9 * -8 + 4);",
@@ -514,7 +514,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 183,
+      "line": 185,
       "match": "in_stack_ffffff08",
       "severity": "moderate",
       "text": "local_30._12_8_ = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(2,in_stack_ffffff08);",
@@ -522,7 +522,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 183,
+      "line": 185,
       "match": "._12_8_",
       "severity": "mild",
       "text": "local_30._12_8_ = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(2,in_stack_ffffff08);",
@@ -530,7 +530,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 184,
+      "line": 186,
       "match": "._12_8_",
       "severity": "mild",
       "text": "if (0.0 <= (double)local_30._12_8_) {",

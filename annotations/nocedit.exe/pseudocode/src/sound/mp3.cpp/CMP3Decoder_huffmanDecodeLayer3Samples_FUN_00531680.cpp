@@ -49,9 +49,9 @@ uint __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00531680(C
       *(uint *)((int)&g_HuffmanTables[0].table_size + iVar8) =
            *(uint *)((int)&g_HuffmanTableSources[0].table_size + local_18);
       *(uint *)(g_HuffmanTables[0].table_id + iVar8 + 4) =
-           *(uint *)((int)&g_HuffmanTableSources[0].unk1 + local_18);
+           *(uint *)((int)&g_HuffmanTableSources[0].xlen + local_18);
       *(uint *)(g_HuffmanTables[0].table_id + iVar8 + 8) =
-           *(uint *)((int)&g_HuffmanTableSources[0].unk2 + local_18);
+           *(uint *)((int)&g_HuffmanTableSources[0].ylen + local_18);
       *(uint *)(g_HuffmanTables[0].table_id + iVar8 + 0xc) =
            *(uint *)((int)&g_HuffmanTableSources[0].bits + local_18);
       *(int *)(g_HuffmanTables[0].table_id + iVar8 + 0x10) =
@@ -151,7 +151,7 @@ LAB_00531a14:
   iVar6 = 1;
   local_24 = granule_info + channel;
   for (uVar9 = 0; pSVar1 = local_24, iVar7 = local_30,
-      uVar9 < (uint)(*(int *)(local_24->unk3 + local_30 + 0x14) * 2); uVar9 = uVar9 + 2) {
+      uVar9 < (uint)(*(int *)(local_24->unk + local_30 + 0x14) * 2); uVar9 = uVar9 + 2) {
     if ((int)uVar9 < local_20) {
       pSVar4 = g_HuffmanTables + *(int *)((int)local_24->table_select + local_30);
     }
@@ -173,7 +173,7 @@ LAB_00531a14:
   local_28 = g_HuffmanTables + *(int *)(pSVar1->unk4 + iVar7 + -4) + 0x20;
   iVar8 = uVar9 + 3;
   iVar6 = uVar9 + 2;
-  local_2c = granule_info[channel].unk3 + granule * 0x48 + -8;
+  local_2c = granule_info[channel].unk + granule * 0x48 + -8;
   iVar7 = uVar9 + 1;
   while( true ) {
     local_14 = (int)&frame->header + *(int *)(local_2c + 0x18);
@@ -194,16 +194,16 @@ LAB_00531a14:
     spectral_dest[iVar3 * 0x12 + iVar5] = local_44;
   }
   sound_mp3_cpp_CMP3Decoder_getTotalBitsRead_FUN_0052f160(this_ptr);
-  iVar8 = *(int *)(granule_info[channel].unk3 + granule * 0x48 + 0x10);
+  iVar8 = *(int *)(granule_info[channel].unk + granule * 0x48 + 0x10);
   uVar2 = sound_mp3_cpp_CMP3Decoder_getTotalBitsRead_FUN_0052f160(this_ptr);
   if ((uint)((int)&frame->header + iVar8) < uVar2) {
     uVar2 = sound_mp3_cpp_CMP3Decoder_getTotalBitsRead_FUN_0052f160(this_ptr);
     uVar9 = uVar9 - 4;
     sound_mp3_cpp_CMP3Decoder_unreadBits_FUN_0052f2c0
               (this_ptr,(uVar2 - (int)frame) -
-                        *(int *)(granule_info[channel].unk3 + granule * 0x48 + 0x10));
+                        *(int *)(granule_info[channel].unk + granule * 0x48 + 0x10));
   }
-  iVar8 = (int)&frame->header + *(int *)(granule_info[channel].unk3 + granule * 0x48 + 0x10);
+  iVar8 = (int)&frame->header + *(int *)(granule_info[channel].unk + granule * 0x48 + 0x10);
   uVar2 = sound_mp3_cpp_CMP3Decoder_getTotalBitsRead_FUN_0052f160(this_ptr);
   if ((int)uVar2 < iVar8) {
     uVar2 = sound_mp3_cpp_CMP3Decoder_readBits_FUN_0052f170(this_ptr,iVar8 - uVar2);

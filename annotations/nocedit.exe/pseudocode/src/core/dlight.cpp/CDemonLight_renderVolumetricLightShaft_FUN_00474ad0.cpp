@@ -68,14 +68,14 @@ void __cdecl core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0
     local_8c.y = local_8c.y - (float)(this_ptr->base).base.position.y;
     local_8c.z = local_8c.z - (float)(this_ptr->base).base.position.z;
     pCVar3 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
-                       ((CMatrix3x3f *)&(this_ptr->base).base.rotation_matrix,&local_68,&local_8c);
+                       (&(this_ptr->base).base.rotation_matrix,&local_68,&local_8c);
     if (&local_8c != pCVar3) {
       local_8c.x = pCVar3->x;
       local_8c.y = pCVar3->y;
       local_8c.z = pCVar3->z;
     }
     local_28 = local_8c.y * local_8c.y;
-    local_20 = ((local_8c.z * (float)18) / (this_ptr->base).base.projection_scale) *
+    local_20 = ((local_8c.z * (float)18) / (this_ptr->base).base.focal_length) *
                (float)2;
     local_1c = local_8c.x * local_8c.x + local_28;
     local_24 = local_20 * local_20;
@@ -104,20 +104,19 @@ void __cdecl core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0
         local_ec.z = 1.0;
         local_14 = (float)(0xffff - (int)g_PerspectiveReciprocal);
         pCVar3 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
-                           ((CMatrix3x3f *)&(this_ptr->base).base.rotation_matrix,&local_104,
-                            &local_ec);
+                           (&(this_ptr->base).base.rotation_matrix,&local_104,&local_ec);
         if (0.0 < (local_30 * pCVar3->z + local_38 * pCVar3->x + local_34 * pCVar3->y) * local_14 *
                   1.525902e-05f) {
           iVar4 = 0;
           engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
           do {
             fVar2 = (float)iVar4 * 0.04f * (this_ptr->base).max_distance;
-            local_18 = (fVar2 * (float)18) / (this_ptr->base).base.projection_scale;
-            local_bc = (float)(this_ptr->base).base.rotation_matrix.m[0].z;
+            local_18 = (fVar2 * (float)18) / (this_ptr->base).base.focal_length;
+            local_bc = (this_ptr->base).base.rotation_matrix.m[0].z;
             local_b0 = local_bc * fVar2;
-            local_b8 = (float)(this_ptr->base).base.rotation_matrix.m[1].z;
+            local_b8 = (this_ptr->base).base.rotation_matrix.m[1].z;
             local_ac = local_b8 * fVar2;
-            local_b4 = (float)(this_ptr->base).base.rotation_matrix.m[2].z;
+            local_b4 = (this_ptr->base).base.rotation_matrix.m[2].z;
             local_a8 = local_b4 * fVar2;
             local_a4.x = (float)(this_ptr->base).base.position.x + local_b0;
             local_a4.y = (float)(this_ptr->base).base.position.y + local_ac;

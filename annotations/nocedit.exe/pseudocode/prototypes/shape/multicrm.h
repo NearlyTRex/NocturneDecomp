@@ -21,7 +21,7 @@ CMultiCram * __cdecl CMultiCram::setModelCount(CMultiCram *this_ptr,int *model_c
 
 // Original: shape_multicrm.cpp_CMultiCram_setModelCount_FUN_0053ee60
 // Address: 0053ee60
-int * __cdecl CMultiCram::setModelCount(CMultiCram *this_ptr,int *model_count);
+CMultiCram * __cdecl CMultiCram::setModelCount(CMultiCram *this_ptr,int *model_count);
 
 // Original: shape_multicrm.cpp_CMultiCram_run_FUN_0053ee70
 // Address: 0053ee70

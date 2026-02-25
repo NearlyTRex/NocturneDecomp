@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SMRGLHeaderExtended * __cdecl engine_3d_c_updateAnimatedTexture_FUN_004050c0(SAnimatedTexture *anim_texture)
+; SMRGLHeaderExtended * __cdecl engine_3d_c_updateAnimatedTexture_FUN_004050c0(SMRGLAnimatedTexture *texture)
 ;
 ; Parameters:
-; SAnimatedTexture * Stack[0x4]:4   anim_texture
+; SMRGLAnimatedTexture * Stack[0x4]:4   texture
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
 ; undefined1       Stack[-0x20]:1  local_20

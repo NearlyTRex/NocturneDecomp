@@ -41,7 +41,7 @@ void __cdecl core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_004f6550(CHost
   CVector3f local_24 [2];
   
   bVar4 = 0;
-  if ((*(int *)this_ptr->unk2 == 1) &&
+  if ((this_ptr->hostage_type == 1) &&
      (iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0
                         ((this_ptr->base).base.carry_hands[hand_index].carry_actor,
                          "CShotgun"), iVar1 != 0)) {
@@ -59,7 +59,7 @@ void __cdecl core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_004f6550(CHost
                (this_ptr->base).base.carry_hands[hand_index].bone_index,local_1d4);
     pCVar2 = local_1d4;
   }
-  else if (*(int *)this_ptr->unk2 == 3) {
+  else if (this_ptr->hostage_type == 3) {
     local_3c.x = 0.265971;
     local_3c.y = -0.200311;
     local_3c.z = 0.0324051;
@@ -83,7 +83,7 @@ void __cdecl core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_004f6550(CHost
                (this_ptr->base).base.carry_hands[hand_index].bone_index,local_264);
     pCVar2 = local_264;
   }
-  else if (*(int *)this_ptr->unk2 == 5) {
+  else if (this_ptr->hostage_type == 5) {
     local_78[0].x = 0.265971;
     local_78[0].y = -0.200311;
     local_78[0].z = 0.0324051;

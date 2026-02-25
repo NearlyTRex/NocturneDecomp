@@ -59,16 +59,13 @@ LAB_005b85e2:
       this_ptr->are_we_active = 1;
     }
   }
-  fVar6 = *(float *)this_ptr->unk6 - delta_time;
-  *(float *)this_ptr->unk6 = fVar6;
+  fVar6 = this_ptr->wait_timer - delta_time;
+  this_ptr->wait_timer = fVar6;
   if (0.0 < fVar6) {
     return;
   }
   iVar4 = this_ptr->spike_state;
-  this_ptr->unk6[0] = '\0';
-  this_ptr->unk6[1] = '\0';
-  this_ptr->unk6[2] = '\0';
-  this_ptr->unk6[3] = '\0';
+  this_ptr->wait_timer = 0.0;
   if (iVar4 == 0) {
     this_ptr->spike_state = 1;
     this_ptr->param = 0.0;
@@ -86,7 +83,7 @@ LAB_005b8655:
       goto LAB_005b84db;
     }
     if (this_ptr->spike_type != 1) {
-      *(float *)this_ptr->unk6 = this_ptr->period;
+      this_ptr->wait_timer = this_ptr->period;
       goto LAB_005b84db;
     }
   }
@@ -103,12 +100,12 @@ LAB_005b8655:
     this_ptr->param = 0.0;
     if (this_ptr->spike_type == 2) goto LAB_005b8655;
     if (this_ptr->spike_type != 1) {
-      *(float *)this_ptr->unk6 = this_ptr->period;
+      this_ptr->wait_timer = this_ptr->period;
       goto LAB_005b84db;
     }
   }
   fVar6 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.75,1.25);
-  *(float *)this_ptr->unk6 = fVar6 * this_ptr->period;
+  this_ptr->wait_timer = fVar6 * this_ptr->period;
 LAB_005b84db:
   pCVar1 = &(this_ptr->base).location;
   local_38 = (pCVar1->position).x;
@@ -120,9 +117,9 @@ LAB_005b84db:
   local_14 = local_50.z;
   pCVar5 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
                      (&this_ptr->base,local_2c,&local_50);
-  local_44 = *(float *)this_ptr->unk1 + pCVar5->x;
-  local_40 = *(float *)(this_ptr->unk1 + 4) + pCVar5->y;
-  local_3c = *(float *)(this_ptr->unk1 + 8) + pCVar5->z;
+  local_44 = (this_ptr->base_position).x + pCVar5->x;
+  local_40 = (this_ptr->base_position).y + pCVar5->y;
+  local_3c = (this_ptr->base_position).z + pCVar5->z;
   (pCVar1->position).x = local_44;
   (this_ptr->base).location.position.y = local_40;
   (this_ptr->base).location.position.z = local_3c;

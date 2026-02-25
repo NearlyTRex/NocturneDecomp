@@ -44,7 +44,7 @@ void __cdecl core_setedit_cpp_FUN_00577430(void)
         iVar5 = local_1c * 0x100 + iVar2;
         do {
           puVar3 = puVar3 + 1;
-          uVar1 = *(uint *)(&DAT_03365cc0 + iVar5);
+          uVar1 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar5);
           iVar5 = iVar5 + 4;
           *puVar3 = g_ColorCubeLookup
                     [((uVar1 >> 8 & 0xff) >> 3) * 0x20 + ((uVar1 & 0xff) >> 3) * 0x400 +
@@ -64,7 +64,7 @@ void __cdecl core_setedit_cpp_FUN_00577430(void)
         iVar5 = iVar2 + local_20 * 0x100;
         do {
           local_14 = local_14 + 1;
-          uVar1 = *(uint *)(&DAT_03365cc0 + iVar5);
+          uVar1 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar5);
           *local_14 = (ushort)((uVar1 & 0xff) / (uint)g_RedScaleFactor <<
                               (g_RedBitPosition.bytes[0] & 0x1f)) |
                       (ushort)((uVar1 >> 8 & 0xff) / (uint)g_GreenScaleFactor <<
@@ -87,7 +87,7 @@ void __cdecl core_setedit_cpp_FUN_00577430(void)
         iVar5 = local_24 * 0x100 + iVar2;
         do {
           puVar4 = puVar4 + 1;
-          uVar1 = *(uint *)(&DAT_03365cc0 + iVar5);
+          uVar1 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar5);
           uVar7 = uVar1 >> 8 & 0xff;
           uVar6 = uVar1 >> 0x10 & 0xff;
           if (g_BitsPerPixel == 0x20) {

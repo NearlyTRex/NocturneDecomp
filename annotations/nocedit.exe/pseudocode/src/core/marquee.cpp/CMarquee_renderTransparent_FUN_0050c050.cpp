@@ -33,12 +33,12 @@ int __cdecl core_marquee_cpp_CMarquee_renderTransparent_FUN_0050c050(CMarquee *t
   int local_10;
   int local_c;
   
-  if (*(int *)(this_ptr->unk2 + 0x18) != 0) {
+  if (this_ptr->is_visible != 0) {
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,0xffff);
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
               (g_CDemonRendererPtr2,&SMRGLTextureBasic_0067d150);
-    this_ptr_00 = (CCourse *)this_ptr->unk3;
+    this_ptr_00 = &this_ptr->course;
     if (g_CDemonMissionPtr->is_in_editor == 0) {
       if (this_ptr->type == 1) {
         iVar2 = (int)ROUND(ROUND(this_ptr->param));
@@ -62,7 +62,7 @@ int __cdecl core_marquee_cpp_CMarquee_renderTransparent_FUN_0050c050(CMarquee *t
         }
       }
       else if (this_ptr->type == 0) {
-        local_14 = *(int *)this_ptr_00;
+        local_14 = this_ptr_00->len;
         iVar3 = 0;
         iVar2 = (int)ROUND(ROUND(this_ptr->param));
         local_1c = iVar2;
@@ -89,7 +89,7 @@ int __cdecl core_marquee_cpp_CMarquee_renderTransparent_FUN_0050c050(CMarquee *t
       }
     }
     else {
-      iVar2 = *(int *)this_ptr_00;
+      iVar2 = this_ptr_00->len;
       iVar3 = 0;
       if (0 < iVar2) {
         do {

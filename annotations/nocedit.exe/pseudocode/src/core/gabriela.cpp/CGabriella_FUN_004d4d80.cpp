@@ -70,9 +70,9 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d4d80(CGabriella *this_ptr)
   bVar6 = 0;
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
             (&(this_ptr->base).base.model);
-  local_78.x = this_ptr->dynamite_throw_angle;
+  local_78.x = this_ptr->aim_pitch;
   local_78.z = 0.0;
-  local_78.y = (float)this_ptr->unk2;
+  local_78.y = this_ptr->aim_yaw;
   core_xform_cpp_eulerToQuaternion_FUN_005f7b20(&local_78,&local_124);
   local_1a4.w = local_124.w;
   puVar5 = (uint *)((int)&local_1a4 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
@@ -87,7 +87,7 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d4d80(CGabriella *this_ptr)
       local_28 = 1.0;
     }
     if (0.82f < this_ptr->draw_blend) {
-      local_28 = (1.0 - (1.0 - (float)this_ptr->unk3) *
+      local_28 = (1.0 - (1.0 - this_ptr->aim_weight) *
                         ((this_ptr->draw_blend - 0.82f) / (1.0 - 0.82f))) *
                  local_28;
     }
@@ -116,7 +116,7 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d4d80(CGabriella *this_ptr)
                    core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0);
         if (0.82f <= this_ptr->draw_blend) {
           local_2c = ((this_ptr->draw_blend - 0.82f) / (1.0 - 0.82f)) *
-                     (float)this_ptr->unk3;
+                     this_ptr->aim_weight;
           if (local_2c < this_ptr->fire_cooldown_timer) {
             local_2c = this_ptr->fire_cooldown_timer;
           }
@@ -177,14 +177,14 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d4d80(CGabriella *this_ptr)
       if (0.0 < this_ptr->fire_cooldown_timer) {
         fVar9 = this_ptr->fire_cooldown_timer;
         pCVar7 = &(this_ptr->base).base.model;
-        (this_ptr->base).base.model.unk = 2;
+        (this_ptr->base).base.model.bone_update_mode = 2;
         local_1c = (CDeformableModelInstance *)
                    core_motion_cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0
                              (&pCVar7->motion_controller,iVar2,fVar9);
         local_14 = local_1c;
         core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
                   (pCVar7,INT_02d7b880,(float)local_1c,0);
-        (this_ptr->base).base.model.unk = 0;
+        (this_ptr->base).base.model.bone_update_mode = 0;
       }
     }
     else {
@@ -222,7 +222,7 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d4d80(CGabriella *this_ptr)
                    core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0);
         if ((0.82f <= this_ptr->draw_blend) &&
            (local_40 = ((this_ptr->draw_blend - 0.82f) / (1.0 - 0.82f)) *
-                       (float)this_ptr->unk3, (float)0.001 < local_40)) {
+                       this_ptr->aim_weight, (float)0.001 < local_40)) {
           if ((DAT_02d7b804 & 1) == 0) {
             DAT_02d7b804 = DAT_02d7b804 | 1;
             core_xform_cpp_quaternionFromAngleZ_FUN_005f7a30(-1.5707964,&local_e4);
@@ -272,7 +272,7 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d4d80(CGabriella *this_ptr)
       if (0.0 < this_ptr->fire_cooldown_timer) {
         fVar9 = this_ptr->fire_cooldown_timer;
         fVar1 = (float)0.90000000000000002;
-        (this_ptr->base).base.model.unk = 2;
+        (this_ptr->base).base.model.bone_update_mode = 2;
         pCVar7 = &(this_ptr->base).base.model;
         local_18 = (CDeformableModelInstance *)
                    core_motion_cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0
@@ -280,7 +280,7 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d4d80(CGabriella *this_ptr)
         local_14 = local_18;
         core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
                   (pCVar7,INT_02d7b884,(float)local_18,INT_02d7b860);
-        (this_ptr->base).base.model.unk = 0;
+        (this_ptr->base).base.model.bone_update_mode = 0;
       }
     }
   }
@@ -300,7 +300,7 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d4d80(CGabriella *this_ptr)
     local_78.y = 1.7453293;
   }
   pcVar10 = core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0;
-  fVar9 = this_ptr->aim_blend * (float)this_ptr->unk3;
+  fVar9 = this_ptr->aim_blend * this_ptr->aim_weight;
   iVar2 = INT_02d7b848;
   core_xform_cpp_eulerToQuaternion_FUN_005f7b20(&local_78,&local_c4);
   pCVar8 = &local_194;

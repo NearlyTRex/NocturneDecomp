@@ -303,7 +303,7 @@ section .text
     MOV dword ptr [ESP + 0x28],EDI      ; 004c67ec
     MOV dword ptr [ESP + 0x2c],EBP      ; 004c67f0
     CALL engine_drender.cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0 ; 004c67f4
-        ;   XREF to: 0048bad0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info)
+        ;   XREF to: 0048bad0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD ESP,0x8                         ; 004c67f9
     XOR EBX,EBX                         ; 004c67fc
     PUSH EBX                            ; 004c67fe

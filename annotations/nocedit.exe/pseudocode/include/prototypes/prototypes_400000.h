@@ -28,7 +28,6 @@
 #include "types/funcdefs/CActorPropertyDisplayFunc.h"
 #include "types/funcdefs/CActorPropertyValidatorFunc.h"
 #include "types/funcdefs/CDemonActor_FactoryFunc.h"
-#include "types/structs/SAnimatedTexture.h"
 #include "types/structs/SClipPlane.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SCollisionReturnInfo.h"
@@ -38,12 +37,12 @@
 #include "types/structs/SIntersectXZCylinder.h"
 #include "types/structs/SLaserInfo.h"
 #include "types/structs/SLineStrip.h"
+#include "types/structs/SMRGLAnimatedTexture.h"
 #include "types/structs/SMRGLHeaderExtended.h"
 #include "types/structs/SMRGLHeaderPrimitive.h"
 #include "types/structs/SPlayerControl.h"
 #include "types/structs/SRenderBufferEntry.h"
 #include "types/structs/SRenderVertex.h"
-#include "types/structs/SVertexBatch.h"
 #include "types/unions/UOrientationVector.h"
 
 // =============================================================================
@@ -127,30 +126,30 @@ void __cdecl engine_2d_c_setSolidColor_FUN_004033a0(int red_component,int green_
 int __cdecl engine_2d_c_mapFrameBuffer_FUN_00403430(int width,int height,int bits_per_pixel,int stride,void *frame_buffer);
 int __cdecl engine_2d_c_mapTextureFrameBuffer_FUN_00403650(void);
 void __cdecl engine_2d_c_unmapFrameBuffer_FUN_00403670(void);
-void * __cdecl engine_3d_c_oldFunction_FUN_00403740(SMRGLHeaderPrimitive *primitive);
+void * __cdecl engine_3d_c_oldFunction_FUN_00403740(SMRGLHeaderPrimitive *prim);
 CTextureCache * __cdecl wincore_wddvmem_cpp_initTextureCache_FUN_005dd760(void);
 void __cdecl wincore_wddvmem_cpp_freeTextureCache_FUN_005dd7a0(void);
-SMRGLHeaderExtended * __cdecl engine_3d_c_badMRGLStruct_FUN_004037b0(SMRGLHeaderExtended *primitive);
+SMRGLHeaderExtended * __cdecl engine_3d_c_badMRGLStruct_FUN_004037b0(SMRGLHeaderExtended *prim);
 SMRGLHeaderExtended * __cdecl engine_3d_c_processCameraRelativePoint_FUN_004037e0(CQuaternion4f *input_point);
-SMRGLHeaderExtended * __cdecl engine_3d_c_transformAndBufferVertices_FUN_00403840(SVertexBatch *vertex_source,SVertexBatch *processing_params);
+SMRGLHeaderExtended * __cdecl engine_3d_c_transformAndBufferVertices_FUN_00403840(SMRGLHeaderExtended *mrgl);
 int __cdecl engine_3d_c_isVisiblePlane_FUN_00403950(SClipPlane *plane);
 uint __cdecl engine_3d_c_makeGrayscaleColor_FUN_004039c0(int intensity);
-void __cdecl engine_3d_c_calculatePolygonLighting_FUN_00403a00(SMRGLHeaderPrimitive *polygon_info);
-SMRGLHeaderExtended * __cdecl engine_3d_c_processVertexLighting_FUN_00403a20(SVertexBatch *vertex_batch);
-SMRGLHeaderExtended * __cdecl engine_3d_c_processTextureCoordinates_FUN_00403a80(SMRGLHeaderPrimitive *polygon_info);
+void __cdecl engine_3d_c_calculatePolygonLighting_FUN_00403a00(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl engine_3d_c_processVertexLighting_FUN_00403a20(SMRGLHeaderExtended *mrgl);
+SMRGLHeaderExtended * __cdecl engine_3d_c_processTextureCoordinates_FUN_00403a80(SMRGLHeaderPrimitive *prim);
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLastPixelMode_FUN_00403ad0(SMRGLHeaderPrimitive *primitive);
-SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygon_FUN_00403ba0(SMRGLHeaderPrimitive *polygon_info);
-SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTextureEnable_FUN_00403cc0(SMRGLHeaderPrimitive *polygon_info);
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygon_FUN_00403ba0(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTextureEnable_FUN_00403cc0(SMRGLHeaderPrimitive *prim);
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPrimitiveUVWrappedSpecial_FUN_00403d60(SMRGLHeaderPrimitive *primitive);
 SMRGLHeaderExtended * __cdecl engine_3d_c_oldFunction_FUN_00403e00(SMRGLHeaderExtended *primitive);
-SMRGLHeaderExtended * __cdecl engine_3d_c_processPolygonColor_FUN_00403e30(SMRGLHeaderPrimitive *polygon_info);
+SMRGLHeaderExtended * __cdecl engine_3d_c_processPolygonColor_FUN_00403e30(SMRGLHeaderPrimitive *prim);
 SMRGLHeaderExtended * __cdecl engine_3d_c_oldFunction_FUN_00403ec0(SMRGLHeaderExtended *primitive);
 SMRGLHeaderExtended * __cdecl engine_3d_c_oldFunction_FUN_00403ef0(SMRGLHeaderExtended *primitive);
-SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTextureNormalized_FUN_00403f20(SMRGLHeaderPrimitive *polygon_info);
-void * __cdecl engine_3d_c_renderOverlayTextureEnable_FUN_00404020(SMRGLHeaderPrimitive *polygon_info);
-SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonVertexLit_FUN_00404120(SMRGLHeaderPrimitive *polygon_info);
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTextureNormalized_FUN_00403f20(SMRGLHeaderPrimitive *prim);
+void * __cdecl engine_3d_c_renderOverlayTextureEnable_FUN_00404020(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonVertexLit_FUN_00404120(SMRGLHeaderPrimitive *prim);
 SMRGLHeaderExtended * __cdecl engine_3d_c_oldFunction_FUN_004041d0(SMRGLHeaderExtended *primitive);
-SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLitDetailed_FUN_00404220(SMRGLHeaderPrimitive *polygon_info);
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLitDetailed_FUN_00404220(SMRGLHeaderPrimitive *prim);
 SMRGLHeaderExtended * __watcallRegister engine_3d_c_oldFunction_FUN_00404420(SMRGLHeaderExtended *primitive);
 SMRGLHeaderExtended * __cdecl engine_3d_c_setRelativeCoord_FUN_00404450(SMRGLHeaderPrimitive *primitive);
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTextureNormalized_FUN_004044a0(SMRGLHeaderPrimitive *primitive);
@@ -160,67 +159,67 @@ void __cdecl engine_3d_c_drawLineStrip3D_FUN_00404600(SLineStrip *line_strip);
 SMRGLHeaderExtended * __cdecl engine_3d_c_oldFunction_FUN_00404690(SMRGLHeaderExtended *primitive);
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPrimitivePlaneMaskedComplex_FUN_004046c0(SMRGLHeaderPrimitive *primitive);
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPrimitiveAdaptivePlaneMasked_FUN_00404840(SMRGLHeaderPrimitive *primitive);
-SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonPlaneMaskedNearPlane_FUN_00404a40(SMRGLHeaderPrimitive *polygon_info);
-SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAdaptiveDepthMode_FUN_00404ae0(SMRGLHeaderPrimitive *polygon_info);
-SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonPlaneMaskedComplex_FUN_00404c60(SMRGLHeaderPrimitive *polygon_info);
-SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonUVMappedComplex_FUN_00404d50(SMRGLHeaderPrimitive *polygon_info);
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonPlaneMaskedNearPlane_FUN_00404a40(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAdaptiveDepthMode_FUN_00404ae0(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonPlaneMaskedComplex_FUN_00404c60(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonUVMappedComplex_FUN_00404d50(SMRGLHeaderPrimitive *prim);
 SMRGLHeaderExtended * __cdecl engine_3d_c_oldFunction_FUN_00404df0(SMRGLHeaderExtended *primitive);
-void * __cdecl engine_3d_c_renderPolygonVertexLitNearPlane_FUN_00404e40(SMRGLHeaderPrimitive *polygon_info);
-void * __cdecl engine_3d_c_renderPolygonTextureNearPlane_FUN_00404ee0(SMRGLHeaderPrimitive *polygon_info);
-void * __cdecl engine_3d_c_renderPolygonVertexLitNormalized_FUN_00404f80(SMRGLHeaderPrimitive *polygon_info);
-void * __cdecl engine_3d_c_renderPolygonVertexLitNormalized_FUN_00405020(SMRGLHeaderPrimitive *polygon_info);
-SMRGLHeaderExtended * __cdecl engine_3d_c_updateAnimatedTexture_FUN_004050c0(SAnimatedTexture *anim_texture);
-SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonUVTextureEnable_FUN_00405170(SMRGLHeaderPrimitive *polygon_info);
-SMRGLHeaderExtended * __cdecl engine_3d_c_setVertexTextureU_FUN_00405270(SVertexBatch *vertex_batch);
-SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLitComplexAlpha_FUN_004052b0(SMRGLHeaderPrimitive *polygon_info);
-SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonUVTextureEnable_FUN_00405350(SMRGLHeaderPrimitive *polygon_info);
-SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonUVTextureNormalized_FUN_00405430(SMRGLHeaderPrimitive *polygon_info);
-SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonUVVertexLitNormalized_FUN_00405510(SMRGLHeaderPrimitive *polygon_info);
-SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonPerspectiveNormalized_FUN_004055b0(SMRGLHeaderPrimitive *polygon_info);
-SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonEnginePlaneMaskedEffect_FUN_00405690(SMRGLHeaderPrimitive *polygon_info);
-SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonEnginePlaneMaskedAdvanced_FUN_004057b0(SMRGLHeaderPrimitive *polygon_info);
-SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonUVWrappedAdvanced_FUN_004058d0(SMRGLHeaderPrimitive *polygon_info);
-SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonDepthWriteTextured_FUN_00405960(SMRGLHeaderPrimitive *polygon_info);
-SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonUVTextureEnable_FUN_00405a00(SMRGLHeaderPrimitive *polygon_info);
-SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonUVVertexLit_FUN_00405aa0(SMRGLHeaderPrimitive *polygon_info);
-SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTextureWrappedPlaneMasked_FUN_00405b50(SMRGLHeaderPrimitive *polygon_info);
-SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTextureWrappedStandard_FUN_00405ce0(SMRGLHeaderPrimitive *polygon_info);
-SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonDepthWriteTexturedLit_FUN_00405d80(SMRGLHeaderPrimitive *polygon_info);
-SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonDepthWriteTexturedAdvanced_FUN_00405e20(SMRGLHeaderPrimitive *polygon_info);
-SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTexturedBasic_FUN_00405ec0(SMRGLHeaderPrimitive *polygon_info);
-SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonOverlayTextured_FUN_00405f60(SMRGLHeaderPrimitive *polygon_info);
-SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonDepthWriteTexturedLit_FUN_00406000(SMRGLHeaderPrimitive *polygon_info);
-SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTexturePerspectiveCorrect_FUN_004060a0(SMRGLHeaderPrimitive *polygon_info);
-SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTextureWrappedLit_FUN_00406150(SMRGLHeaderPrimitive *polygon_info);
-SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonUVTextureNormalized_FUN_004061f0(SMRGLHeaderPrimitive *polygon_info);
-SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTexturePerspectiveCorrect_FUN_00406290(SMRGLHeaderPrimitive *polygon_info);
-SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTextureAdaptiveWrapped_FUN_00406430(SMRGLHeaderPrimitive *polygon_info);
-SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLastPixelMode_FUN_004066d0(SMRGLHeaderPrimitive *polygon_info);
-SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonPerspectiveAlphaSpecial_FUN_004067a0(SMRGLHeaderPrimitive *polygon_info);
-SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonPlaneMaskedDetailedComplex_FUN_00406860(SMRGLHeaderPrimitive *polygon_info);
-SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLitDetailed_FUN_00406a20(SMRGLHeaderPrimitive *polygon_info);
-SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonExtremeQualityMode_FUN_00406b40(SMRGLHeaderPrimitive *polygon_info);
-SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonEngineDepthLit_FUN_00406be0(SMRGLHeaderPrimitive *polygon_info);
-SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonEngineEnhancedDepthLit_FUN_00406c80(SMRGLHeaderPrimitive *polygon_info);
+void * __cdecl engine_3d_c_renderPolygonVertexLitNearPlane_FUN_00404e40(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTextureNearPlane_FUN_00404ee0(SMRGLHeaderPrimitive *prim);
+void * __cdecl engine_3d_c_renderPolygonVertexLitNormalized_FUN_00404f80(SMRGLHeaderPrimitive *prim);
+void * __cdecl engine_3d_c_renderPolygonVertexLitNormalized_FUN_00405020(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl engine_3d_c_updateAnimatedTexture_FUN_004050c0(SMRGLAnimatedTexture *texture);
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonUVTextureEnable_FUN_00405170(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl engine_3d_c_setVertexTextureU_FUN_00405270(SMRGLHeaderExtended *mrgl);
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLitComplexAlpha_FUN_004052b0(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonUVTextureEnable_FUN_00405350(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonUVTextureNormalized_FUN_00405430(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonUVVertexLitNormalized_FUN_00405510(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonPerspectiveNormalized_FUN_004055b0(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonEnginePlaneMaskedEffect_FUN_00405690(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonEnginePlaneMaskedAdvanced_FUN_004057b0(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonUVWrappedAdvanced_FUN_004058d0(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonDepthWriteTextured_FUN_00405960(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonUVTextureEnable_FUN_00405a00(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonUVVertexLit_FUN_00405aa0(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTextureWrappedPlaneMasked_FUN_00405b50(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTextureWrappedStandard_FUN_00405ce0(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonDepthWriteTexturedLit_FUN_00405d80(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonDepthWriteTexturedAdvanced_FUN_00405e20(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTexturedBasic_FUN_00405ec0(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonOverlayTextured_FUN_00405f60(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonDepthWriteTexturedLit_FUN_00406000(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTexturePerspectiveCorrect_FUN_004060a0(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTextureWrappedLit_FUN_00406150(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonUVTextureNormalized_FUN_004061f0(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTexturePerspectiveCorrect_FUN_00406290(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTextureAdaptiveWrapped_FUN_00406430(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLastPixelMode_FUN_004066d0(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonPerspectiveAlphaSpecial_FUN_004067a0(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonPlaneMaskedDetailedComplex_FUN_00406860(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLitDetailed_FUN_00406a20(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonExtremeQualityMode_FUN_00406b40(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonEngineDepthLit_FUN_00406be0(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonEngineEnhancedDepthLit_FUN_00406c80(SMRGLHeaderPrimitive *prim);
 SMRGLHeaderExtended * __cdecl engine_3d_c_setRenderAlpha_FUN_00406d60(SMRGLHeaderExtended *block);
 void __cdecl engine_3d_c_setRenderAlpha_FUN_00406d80(int alpha_color_value);
 void __cdecl engine_3d_c_setBlendMode_FUN_00406dd0(int blend_mode);
-SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonSpecialEffectsPlaneMasked_FUN_00406de0(SMRGLHeaderPrimitive *polygon_info);
-SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonSpecialEffectsAdvanced_FUN_00406f20(SMRGLHeaderPrimitive *polygon_info);
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonSpecialEffectsPlaneMasked_FUN_00406de0(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonSpecialEffectsAdvanced_FUN_00406f20(SMRGLHeaderPrimitive *prim);
 void __cdecl engine_3d_c_resetRenderBuffer_FUN_00407060(void);
 int __cdecl engine_3d_c_qsortByRenderDepth_FUN_00407080(SRenderBufferEntry **entry1_ptr,SRenderBufferEntry **entry2_ptr);
-SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonEngineAPIPremiumMultiState_FUN_004070c0(SMRGLHeaderPrimitive *polygon_info);
-SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonEngineAPIPremiumMultiState_FUN_00407290(SMRGLHeaderPrimitive *polygon_info);
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonEngineAPIPremiumMultiState_FUN_004070c0(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonEngineAPIPremiumMultiState_FUN_00407290(SMRGLHeaderPrimitive *prim);
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonEngineAPIPremiumMultiState_FUN_00407470(SMRGLHeaderPrimitive *primitive);
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAPIAdaptivePreprocessing_FUN_00407620(SMRGLHeaderPrimitive *primitive,int render_flags,int render_state_flags, int alpha_blend_flags,int special_render_mode);
-SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAPIAdaptivePreprocessing_FUN_00407720(SMRGLHeaderPrimitive *polygon_info);
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAPIAdaptivePreprocessing_FUN_00407720(SMRGLHeaderPrimitive *prim);
 void __cdecl engine_3d_c_setProcessorType_FUN_00407870(int processor_type);
 void __cdecl engine_3d_c_setRenderingQuality_FUN_00407880(int quality);
 void __cdecl engine_3d_c_dispatchMRGLBlockChain_FUN_00407890(SMRGLHeaderExtended *chain);
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPrim_FUN_00407920(SMRGLHeaderPrimitive *primitive);
 void __cdecl engine_3d_c_addFaceIfVisible_FUN_004079c0(SMRGLHeaderPrimitive *cull_reference,SMRGLHeaderPrimitive *face_to_queue);
 void __cdecl engine_3d_c_flushRenderQueue_FUN_00407a30(void);
-void __cdecl engine_3d_c_dispatchMRGLToRenderer_FUN_00407aa0(SVertexBatch *cmd);
+void __cdecl engine_3d_c_dispatchMRGLToRenderer_FUN_00407aa0(SMRGLHeaderExtended *mrgl);
 void __cdecl engine_3d_c_drawLine2DFromIndices_FUN_00407cf0(int vertex_index1,int vertex_index2);
 void __cdecl engine_3d_c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex vertex1,SRenderVertex vertex2);
 void __cdecl engine_3d_c_drawLine3DFromIndices_FUN_00407ff0(int vertex_index1,int vertex_index2);

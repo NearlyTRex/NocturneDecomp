@@ -35,7 +35,7 @@ CVector3f * __cdecl core_dcamera_cpp_CDemonCamera_computeVisibleFrustumBounds_FU
   CVector3f local_50;
   CVector3i local_44;
   int local_38;
-  CMatrix3x3i *local_34;
+  CMatrix3x3f *local_34;
   int local_30;
   int local_2c;
   int local_28;
@@ -93,7 +93,7 @@ LAB_00454218:
         local_5c.y = local_a0 - (float)local_20->y;
         local_5c.z = local_9c - (float)local_20->z;
         core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
-                  ((CMatrix3x3f *)local_34,&local_50,&local_5c);
+                  (local_34,&local_50,&local_5c);
         core_box_cpp_CBoundingBox3D_expand_FUN_00420240((CBoundingBox3D *)output_bounds,&local_50);
       }
       else {

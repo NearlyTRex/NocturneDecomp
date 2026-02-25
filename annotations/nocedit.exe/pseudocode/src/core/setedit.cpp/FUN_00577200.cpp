@@ -28,7 +28,7 @@ void __cdecl core_setedit_cpp_FUN_00577200(void)
     iVar2 = in_stack_00000004 * 0x3000 + local_14 * 0x100;
     do {
       local_24 = local_24 + 1;
-      uVar1 = *(uint *)(&DAT_03365cc0 + iVar2);
+      uVar1 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar2);
       iVar2 = iVar2 + 4;
       *local_24 = (ushort)((uVar1 >> 8 & 0xff) / (uint)g_GreenScaleFactor <<
                           (g_GreenBitPosition.bytes[0] & 0x1f)) |

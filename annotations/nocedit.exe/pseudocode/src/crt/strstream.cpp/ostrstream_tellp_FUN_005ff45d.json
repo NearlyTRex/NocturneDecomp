@@ -1,18 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 21,
-    "complexity_score": 41,
+    "complexity_score": 65,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 11,
-    "suspect_count": 2,
+    "pseudocode_lines": 10,
+    "suspect_count": 4,
     "suspect_types": [
+      "pointer_cast",
       "special_crt_function",
       "unresolved_funcptr"
     ],
-    "total_lines": 32
+    "total_lines": 31
   },
   "cross_references": [
     {
@@ -38,7 +39,7 @@
     ],
     "convention": "__cdecl",
     "name": "crt_strstream.cpp_ostrstream_tellp_FUN_005ff45d",
-    "signature": "int __cdecl crt_strstream_cpp_ostrstream_tellp_FUN_005ff45d(ostrstream *this_ptr)"
+    "signature": "int __cdecl crt_strstream_cpp_ostrstream_tellp_FUN_005ff45d(void *this_ptr)"
   },
   "function_calls": [],
   "globals": [],
@@ -101,14 +102,30 @@
         "name": "this_ptr",
         "offset": 4,
         "size": 4,
-        "type": "ostrstream *"
+        "type": "void *"
       }
     ]
   },
   "suspects": [
     {
+      "description": "Complex pointer cast",
+      "line": 7,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "if ((*(uint *)((int)this_ptr + *(int *)(*(int *)this_ptr + 4) + 0x10) & 3) != 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 10,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "iVar1 = *(int *)((int)this_ptr + *(int *)(*(int *)this_ptr + 4) + 4);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 12,
+      "line": 11,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar1 = (**(code **)(*(int *)(iVar1 + 0x28) + 0x18))(iVar1,0,1,2);",

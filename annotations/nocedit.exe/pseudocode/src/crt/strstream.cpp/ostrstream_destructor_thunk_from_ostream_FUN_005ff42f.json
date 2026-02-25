@@ -1,18 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 10,
-    "complexity_score": 36,
+    "complexity_score": 35,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 6,
+    "pseudocode_lines": 5,
     "suspect_count": 2,
     "suspect_types": [
       "negative_offset",
       "special_crt_function"
     ],
-    "total_lines": 16
+    "total_lines": 15
   },
   "cross_references": [],
   "function": {
@@ -25,7 +25,7 @@
     ],
     "convention": "__cdecl",
     "name": "crt_strstream.cpp_ostrstream_destructor_thunk_from_ostream_FUN_005ff42f",
-    "signature": "void __cdecl crt_strstream_cpp_ostrstream_destructor_thunk_from_ostream_FUN_005ff42f(ostream *this_ptr,int dtor_flags)"
+    "signature": "void __cdecl crt_strstream_cpp_ostrstream_destructor_thunk_from_ostream_FUN_005ff42f(_ostream *this_ptr,int dtor_flags)"
   },
   "function_calls": [
     {
@@ -76,7 +76,7 @@
         "name": "this_ptr",
         "offset": 4,
         "size": 4,
-        "type": "ostream *"
+        "type": "_ostream *"
       },
       {
         "is_param": true,
@@ -90,10 +90,10 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 6,
+      "line": 5,
       "match": "this_ptr[-2].",
       "severity": "mild",
-      "text": "((ostrstream *)&this_ptr[-2]._ios.__xalloc_list,dtor_flags);",
+      "text": "crt_strstream_cpp_ostrstream_dtor_FUN_005ff48a(&this_ptr[-2]._ios.__xalloc_list,dtor_flags);",
       "type": "negative_offset"
     },
     {

@@ -26,7 +26,7 @@
     {
       "addr": "00573470",
       "from_addr": "005738f2",
-      "name": "core_setcolid.cpp_CDemonSet_testCapsuleCollision_FUN_00573470",
+      "name": "core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00573470",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -40,7 +40,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_setcolid.cpp_CDemonSet_testOBBCylinderCollision_FUN_00573140",
-    "signature": "int __cdecl core_setcolid_cpp_CDemonSet_testOBBCylinderCollision_FUN_00573140(CDemonSet *this_ptr,CBoundingBox3D *bounding_box,CMatrix3x3f *orientation_matrix,SIntersectXZCylinder *cylinder1,SIntersectXZCylinder *cylinder2)"
+    "signature": "int __cdecl core_setcolid_cpp_CDemonSet_testOBBCylinderCollision_FUN_00573140(CDemonSet *this_ptr,SIntersectXZCylinder *cylinder,CBoundingBox3D *bounding_box,CVector3f *position,CMatrix3x3f *orientation_matrix)"
   },
   "function_calls": [
     {
@@ -92,7 +92,7 @@
       {
         "call_addr": "005738f2",
         "call_type": "direct",
-        "caller": "core_setcolid.cpp_CDemonSet_testCapsuleCollision_FUN_00573470",
+        "caller": "core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00573470",
         "estimated_params": 3,
         "instructions_analyzed": 6,
         "reg_params": [],
@@ -309,31 +309,31 @@
       },
       {
         "is_param": true,
-        "name": "bounding_box",
+        "name": "cylinder",
         "offset": 8,
+        "size": 4,
+        "type": "SIntersectXZCylinder *"
+      },
+      {
+        "is_param": true,
+        "name": "bounding_box",
+        "offset": 12,
         "size": 4,
         "type": "CBoundingBox3D *"
       },
       {
         "is_param": true,
-        "name": "orientation_matrix",
-        "offset": 12,
-        "size": 4,
-        "type": "CMatrix3x3f *"
-      },
-      {
-        "is_param": true,
-        "name": "cylinder1",
+        "name": "position",
         "offset": 16,
         "size": 4,
-        "type": "SIntersectXZCylinder *"
+        "type": "CVector3f *"
       },
       {
         "is_param": true,
-        "name": "cylinder2",
+        "name": "orientation_matrix",
         "offset": 20,
         "size": 4,
-        "type": "SIntersectXZCylinder *"
+        "type": "CMatrix3x3f *"
       }
     ]
   },

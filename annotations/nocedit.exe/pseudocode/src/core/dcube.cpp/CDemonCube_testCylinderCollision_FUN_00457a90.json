@@ -1,0 +1,158 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 92,
+    "complexity_score": 45,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 9,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 45,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 137
+  },
+  "cross_references": [
+    {
+      "addr": "00496c60",
+      "from_addr": "00496dda",
+      "name": "core_dtrace.cpp_CDemonRaytrace_testCylinderCollision_FUN_00496c60",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00457a90",
+    "address_range": [
+      [
+        "00457a90",
+        "00457b5f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dcube.cpp_CDemonCube_testCylinderCollision_FUN_00457a90",
+    "signature": "void __cdecl core_dcube_cpp_CDemonCube_testCylinderCollision_FUN_00457a90(CDemonCube *this_ptr,SIntersectXZCylinder *cylinder)"
+  },
+  "function_calls": [
+    {
+      "addr": "00455a30",
+      "is_variadic": false,
+      "name": "core_dcube.cpp_intersectTriangleWithXZCylinder_FUN_00455a30"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "015c4800",
+      "name": "g_TempNormal0",
+      "type": "CVector3f",
+      "value": null
+    },
+    {
+      "addr": "015c4804",
+      "name": "g_TempNormal0.y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "015c4808",
+      "name": "g_TempNormal0.z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "015c480c",
+      "name": "g_TempNormal1",
+      "type": "CVector3f",
+      "value": null
+    },
+    {
+      "addr": "015c4810",
+      "name": "g_TempNormal1.y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "015c4814",
+      "name": "g_TempNormal1.z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "015c4818",
+      "name": "g_TempNormal2",
+      "type": "CVector3f",
+      "value": null
+    },
+    {
+      "addr": "015c481c",
+      "name": "g_TempNormal2.y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "015c4820",
+      "name": "g_TempNormal2.z",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.54054054054054,
+    "instruction_count": 74,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 17,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 1,
+      "CBRANCH": 7,
+      "COPY": 165,
+      "FLOAT2FLOAT": 12,
+      "INT_ADD": 33,
+      "INT_AND": 68,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 35,
+      "INT_LEFT": 6,
+      "INT_LESS": 4,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 9,
+      "INT_OR": 15,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 22,
+      "INT_SUB": 14,
+      "INT_XOR": 5,
+      "LOAD": 30,
+      "POPCOUNT": 16,
+      "RETURN": 2,
+      "STORE": 7
+    },
+    "pcode_op_count": 484
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonCube *"
+      },
+      {
+        "is_param": true,
+        "name": "cylinder",
+        "offset": 8,
+        "size": 4,
+        "type": "SIntersectXZCylinder *"
+      }
+    ]
+  },
+  "suspects": []
+}

@@ -2,11 +2,11 @@
 // Address: 00572e80
 // Address Range: [[00572e80, 005730ca]]
 // Convention: __cdecl
-// Signature: int __cdecl core_setcolid_cpp_intersectXZCylinder_FUN_00572e80(SIntersectXZCylinder *cylinder,float ray_x,float ray_z,void *bounds_struct)
+// Signature: int __cdecl core_setcolid_cpp_intersectXZCylinder_FUN_00572e80(SIntersectXZCylinder *cylinder,float obstacle_x,float obstacle_y,SCollisionInfo *collision_info)
 
 #include "nocturne.h"
 
-int __cdecl core_setcolid_cpp_intersectXZCylinder_FUN_00572e80(SIntersectXZCylinder *cylinder,float ray_x,float ray_z,void *bounds_struct)
+int __cdecl core_setcolid_cpp_intersectXZCylinder_FUN_00572e80(SIntersectXZCylinder *cylinder,float obstacle_x,float obstacle_y,SCollisionInfo *collision_info)
 
 {
   float fVar1;
@@ -17,11 +17,11 @@ int __cdecl core_setcolid_cpp_intersectXZCylinder_FUN_00572e80(SIntersectXZCylin
   float fVar6;
   float fVar7;
   
-  if ((*(float *)((int)bounds_struct + 0x14) < cylinder->bottom_y) &&
-     (cylinder->top_y < *(float *)((int)bounds_struct + 0x18))) {
-    fVar3 = ray_x - cylinder->center_x;
-    fVar4 = ray_z - cylinder->center_z;
-    fVar2 = *(float *)((int)bounds_struct + 0x1c) + cylinder->radius;
+  if ((collision_info->cylinder_bottom_y < cylinder->top_y) &&
+     (cylinder->bottom_y < collision_info->cylinder_top_y)) {
+    fVar3 = obstacle_x - cylinder->center_x;
+    fVar4 = obstacle_y - cylinder->center_z;
+    fVar2 = collision_info->cylinder_radius + cylinder->radius;
     fVar5 = fVar2 * fVar2;
     fVar1 = fVar4 * fVar4 + fVar3 * fVar3;
     if (fVar5 <= fVar1) {
@@ -30,9 +30,9 @@ int __cdecl core_setcolid_cpp_intersectXZCylinder_FUN_00572e80(SIntersectXZCylin
       fVar3 = fVar4 * fVar2 + fVar3 * fVar1;
       if (0.0 < fVar3) {
         fVar7 = fVar1 * fVar3 + cylinder->center_x;
-        fVar4 = ray_x - fVar7;
+        fVar4 = obstacle_x - fVar7;
         fVar6 = fVar2 * fVar3 + cylinder->center_z;
-        fVar3 = ray_z - fVar6;
+        fVar3 = obstacle_y - fVar6;
         fVar3 = fVar3 * fVar3 + fVar4 * fVar4;
         if (fVar3 < fVar5) {
           fVar3 = SQRT(fVar5 - fVar3);
@@ -50,8 +50,8 @@ int __cdecl core_setcolid_cpp_intersectXZCylinder_FUN_00572e80(SIntersectXZCylin
             }
             (cylinder->push_normal).y = 0.0;
             cylinder->closest_t = fVar3;
-            (cylinder->push_normal).x = fVar7 - ray_x;
-            (cylinder->push_normal).z = fVar6 - ray_z;
+            (cylinder->push_normal).x = fVar7 - obstacle_x;
+            (cylinder->push_normal).z = fVar6 - obstacle_y;
             return 1;
           }
         }

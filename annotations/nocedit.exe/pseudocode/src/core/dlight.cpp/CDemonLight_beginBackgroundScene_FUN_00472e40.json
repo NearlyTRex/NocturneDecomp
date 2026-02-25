@@ -213,10 +213,10 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 41,
-      "match": "(int *)((int)",
+      "line": 42,
+      "match": "(void *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)g_ScreenBufferArray + iVar3) =",
+      "text": "(void *)((int)this_ptr->master_zbuffer + this_ptr->shadow_map_width * iVar2 * 2);",
       "type": "pointer_cast"
     }
   ]

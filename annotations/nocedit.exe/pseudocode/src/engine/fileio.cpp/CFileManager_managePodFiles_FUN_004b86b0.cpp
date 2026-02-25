@@ -27,6 +27,7 @@ void __cdecl engine_fileio_cpp_CFileManager_managePodFiles_FUN_004b86b0(CFileMan
   char *pcVar13;
   SFoundFileInfo *pSVar14;
   byte bVar15;
+  int *dialog_message;
   char local_2338 [2048];
   CPodFile local_1b38;
   CPickList local_170c;
@@ -656,14 +657,8 @@ LAB_004b9590:
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_170c,0);
       local_20 = 0;
       this_ptr->batch_mode = 1;
-      g_VersionControlSession.unk1[0] = '\0';
-      g_VersionControlSession.unk1[1] = '\0';
-      g_VersionControlSession.unk1[2] = '\0';
-      g_VersionControlSession.unk1[3] = '\0';
-      g_VersionControlSession.unk1[4] = '\0';
-      g_VersionControlSession.unk1[5] = '\0';
-      g_VersionControlSession.unk1[6] = '\0';
-      g_VersionControlSession.unk1[7] = '\0';
+      g_VersionControlSession.overwrite_own_choice = 0;
+      g_VersionControlSession.overwrite_writeable_choice = 0;
       if (0 < local_48) {
         local_24 = (char *)((int)local_44 + 0x100);
         do {
@@ -729,17 +724,17 @@ LAB_004b9590:
                     if ((local_38 & 8) != 0) goto LAB_004b9af4;
                     _sprintf
                               ((char *)local_980,"A writable copy of %s exists.  Replace it?",pcVar12);
-                    pcVar12 = g_VersionControlSession.unk1 + 4;
+                    dialog_message = &g_VersionControlSession.overwrite_writeable_choice;
                     piVar8 = local_980;
                   }
                   else {
                     _sprintf
                               ((char *)local_78c,"You currently have %s checked out.  Replace local copy with network copy?",pcVar12);
-                    pcVar12 = g_VersionControlSession.unk1;
+                    dialog_message = &g_VersionControlSession.overwrite_own_choice;
                     piVar8 = local_78c;
                   }
                   iVar2 = engine_fileio_cpp_showOverwriteConfirmationDialog_FUN_004b2f90
-                                    (piVar8,pcVar12);
+                                    (piVar8,(char *)dialog_message);
                   if (iVar2 < 0) break;
                   if (iVar2 == 0) goto LAB_004b8f32;
                 }

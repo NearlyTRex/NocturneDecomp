@@ -1,48 +1,22 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 24,
-        "line": 30,
-        "message": "type 'CDrip_ptr_344' does not provide a subscript operator"
-      },
-      {
-        "category": "other",
-        "column": 30,
-        "line": 31,
-        "message": "type 'CDrip_ptr_344' does not provide a subscript operator"
-      },
-      {
-        "category": "other",
-        "column": 30,
-        "line": 32,
-        "message": "type 'CDrip_ptr_344' does not provide a subscript operator"
-      },
-      {
-        "category": "other",
-        "column": 30,
-        "line": 33,
-        "message": "type 'CDrip_ptr_344' does not provide a subscript operator"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 60,
-    "complexity_score": 240,
+    "complexity_score": 212,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 6,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 40,
-    "suspect_count": 19,
+    "pseudocode_lines": 37,
+    "suspect_count": 17,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "pointer_cast"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 100
+    "total_lines": 97
   },
   "cross_references": [
     {
@@ -258,32 +232,16 @@
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 24,
-      "match": "(char *)((int)",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 23,
+      "match": "ADJ",
       "severity": "mild",
-      "text": "*(char *)((int)(this_ptr_00[1].part_visibility_flags + 2) + 1) = '\\0';",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 25,
-      "match": "(char *)((int)",
-      "severity": "mild",
-      "text": "*(char *)((int)(this_ptr_00[1].part_visibility_flags + 2) + 2) = '\\0';",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 26,
-      "match": "(char *)((int)",
-      "severity": "mild",
-      "text": "*(char *)((int)(this_ptr_00[1].part_visibility_flags + 2) + 3) = '\\0';",
-      "type": "pointer_cast"
+      "text": "ADJ(this_ptr_00)->drip_timer = 0.0;",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 28,
+      "line": 25,
       "match": "ADJ",
       "severity": "mild",
       "text": "ADJ(this_ptr_00)->drip_radius = 0.0;",
@@ -291,7 +249,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 29,
+      "line": 26,
       "match": "ADJ",
       "severity": "mild",
       "text": "ADJ(this_ptr_00)->damage = 10.0;",
@@ -299,7 +257,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 30,
+      "line": 27,
       "match": "ADJ",
       "severity": "mild",
       "text": "pcVar3 = ADJ(this_ptr_00)->hit_sound;",
@@ -307,15 +265,15 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 31,
+      "line": 28,
       "match": "ADJ",
       "severity": "mild",
-      "text": "ADJ(this_ptr_00)->unk3 = 0;",
+      "text": "ADJ(this_ptr_00)->is_visible = 0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 41,
+      "line": 38,
       "match": "ADJ",
       "severity": "mild",
       "text": "ADJ(this_ptr_00)->no_rock_flag = 0;",
@@ -323,7 +281,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 42,
+      "line": 39,
       "match": "ADJ",
       "severity": "mild",
       "text": "return ADJ(this_ptr_00);",

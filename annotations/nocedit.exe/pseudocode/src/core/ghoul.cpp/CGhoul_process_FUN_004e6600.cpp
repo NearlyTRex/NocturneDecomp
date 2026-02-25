@@ -369,16 +369,16 @@ LAB_004e6a5f:
           if ((this_ptr->base).victim != (CDemonActor *)0x0) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                       (&(this_ptr->base).base.model.motion_controller,1,1);
-            iVar9 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->alert_sfx_handle);
+            iVar9 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handles[0]);
             if (iVar9 != 0) {
               in_stack_fffffc88 = (char *)0x4e75e4;
-              iVar9 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->pain_sfx_handle);
+              iVar9 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handles[1]);
               if (iVar9 != 0) break;
             }
             in_stack_fffffc88 = (char *)this_ptr;
             uVar14 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                                ((CDemonActor *)this_ptr,"ghoul-alert-?.wav");
-            this_ptr->alert_sfx_handle = uVar14;
+            this_ptr->sfx_handles[0] = uVar14;
           }
         }
         else {
@@ -426,9 +426,9 @@ LAB_004e6a5f:
              (this_ptr->base).base.model.accumulated_root_motion.z;
         (this_ptr->base).base.model.accumulated_root_motion.x =
              (this_ptr->base).base.model.accumulated_root_motion.y;
-        cVar18 = (this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_r_lower_arm]
+        cVar18 = (this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[1]]
                  != 0;
-        if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_l_lower_arm] != 0)
+        if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[3]] != 0)
         {
           cVar18 = cVar18 + '\x01';
         }
@@ -489,12 +489,12 @@ LAB_004e6a5f:
                 local_40 = 0.0;
                 local_38 = 0.0;
                 if ((this_ptr->base).base.model.part_data.visibility_flags
-                    [this_ptr->part_l_lower_arm] != 0) {
+                    [this_ptr->part_indices[3]] != 0) {
                   local_24 = (1.0 - ABS(local_48 - 3.4f) / 3.4f) *
                              (float)0.29999999999999999;
                 }
                 if ((this_ptr->base).base.model.part_data.visibility_flags
-                    [this_ptr->part_r_lower_arm] != 0) {
+                    [this_ptr->part_indices[1]] != 0) {
                   local_40 = (1.0 - ABS(local_48 - 2.5f) / 2.5f) *
                              (float)0.40000000000000002;
                 }
@@ -558,9 +558,9 @@ LAB_004e6a5f:
         else {
           if (this_ptr->pending_eat_state < 0) {
             cVar18 = (this_ptr->base).base.model.part_data.visibility_flags
-                     [this_ptr->part_r_lower_arm] != 0;
-            if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_l_lower_arm]
-                != 0) {
+                     [this_ptr->part_indices[1]] != 0;
+            if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[3]] !=
+                0) {
               cVar18 = cVar18 + '\x01';
             }
             if (cVar18 != '\0') {
@@ -637,7 +637,7 @@ LAB_004e7576:
         if (pCVar13 == (CDemonActor *)0x0) {
           in_stack_fffffc88 = (char *)0x3f000000;
           local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.2,0.5);
-          iVar9 = this_ptr->part_l_lower_arm;
+          iVar9 = this_ptr->part_indices[3];
           (this_ptr->base).attack_cooldown = local_14;
           if ((this_ptr->base).base.model.part_data.visibility_flags[iVar9] != 0) {
             local_50 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_0052e2b0
@@ -748,16 +748,15 @@ LAB_004e7243:
                         (g_CDemonSetPtr,(CDemonActor *)this_ptr);
               fVar19 = (float10)fcos((float10)local_68);
               fVar20 = (float10)fsin((float10)local_68);
-              local_6c = core_setcolid_cpp_CDemonSet_testCapsuleCollision_FUN_00573470
+              local_6c = core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_00573470
                                    (g_CDemonSetPtr,(this_ptr->base).base.base.location.position.x,
                                     (this_ptr->base).base.base.location.position.z,
                                     (float)(fVar20 * (float10)0.050000000000000003),
                                     (float)(fVar19 * (float10)0.050000000000000003),
                                     (this_ptr->base).base.collision_cylinder_radius,
-                                    (void *)((this_ptr->base).base.base.location.position.y +
-                                            (this_ptr->base).base.collision_cylinder_bottom),
-                                    (void *)((this_ptr->base).base.base.location.position.y +
-                                            local_1c));
+                                    (this_ptr->base).base.base.location.position.y +
+                                    (this_ptr->base).base.collision_cylinder_bottom,
+                                    (this_ptr->base).base.base.location.position.y + local_1c);
               local_14 = local_6c;
               core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
               if (local_6c < 1.0) break;
@@ -820,7 +819,7 @@ LAB_004e7d9a:
          pCVar13 != (CDemonActor *)0x0)) goto LAB_004e7d9a;
       in_stack_fffffc88 = (char *)0x3f000000;
       local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.2,0.5);
-      iVar9 = this_ptr->part_r_lower_arm;
+      iVar9 = this_ptr->part_indices[1];
       (this_ptr->base).attack_cooldown = local_14;
       if ((this_ptr->base).base.model.part_data.visibility_flags[iVar9] != 0) {
         local_4c = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_0052e2b0
@@ -991,40 +990,39 @@ LAB_004e6754:
      (fVar22 = (this_ptr->base).base.position_delta.y,
      fVar1 = (this_ptr->base).base.position_delta.x, fVar2 = (this_ptr->base).base.position_delta.z,
      (float)0.01 < SQRT(fVar2 * fVar2 + fVar1 * fVar1 + fVar22 * fVar22))) {
-    iVar9 = core_sound_cpp_CSound_isSoundPlaying_FUN_005b3b80(g_CSoundPtr,this_ptr->walk_sfx_handle)
-    ;
+    iVar9 = core_sound_cpp_CSound_isSoundPlaying_FUN_005b3b80(g_CSoundPtr,this_ptr->sfx_handle);
     if (iVar9 == 0) {
       _sprintf
                 (&stack0xfffffc88,"ghoul-walk-?.wav *%f",(double)(this_ptr->base).speed);
       uVar14 = (*((this_ptr->base).base.base.vtable._ub)->playAmbientSound)
                          ((CDemonActor *)this_ptr,&stack0xfffffc88);
-      this_ptr->walk_sfx_handle = uVar14;
+      this_ptr->sfx_handle = uVar14;
     }
   }
   else {
-    core_sound_cpp_CSound_killSound_FUN_005b3b90(g_CSoundPtr,this_ptr->walk_sfx_handle);
+    core_sound_cpp_CSound_killSound_FUN_005b3b90(g_CSoundPtr,this_ptr->sfx_handle);
   }
   if ((this_ptr->base).pool_me == 0) {
-    if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_upper_torso] == 0) {
+    if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[9]] == 0) {
       fVar22 = 0.5;
-      iVar9 = this_ptr->part_upper_torso;
+      iVar9 = this_ptr->part_indices[9];
       bone_index = INT_02d83324;
     }
     else {
       core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_0042b760
-                ((CCharacter *)this_ptr,this_ptr->part_r_upper_arm,INT_02d83310,0.2);
-      if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_r_upper_arm] != 0) {
+                ((CCharacter *)this_ptr,this_ptr->part_indices[0],INT_02d83310,0.2);
+      if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[0]] != 0) {
         core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_0042b760
-                  ((CCharacter *)this_ptr,this_ptr->part_r_lower_arm,INT_02d83308,0.2);
+                  ((CCharacter *)this_ptr,this_ptr->part_indices[1],INT_02d83308,0.2);
       }
       core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_0042b760
-                ((CCharacter *)this_ptr,this_ptr->part_l_upper_arm,INT_02d83314,0.2);
-      if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_l_upper_arm] != 0) {
+                ((CCharacter *)this_ptr,this_ptr->part_indices[2],INT_02d83314,0.2);
+      if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[2]] != 0) {
         core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_0042b760
-                  ((CCharacter *)this_ptr,this_ptr->part_l_lower_arm,INT_02d8330c,0.2);
+                  ((CCharacter *)this_ptr,this_ptr->part_indices[3],INT_02d8330c,0.2);
       }
       fVar22 = 0.7;
-      iVar9 = this_ptr->part_head;
+      iVar9 = this_ptr->part_indices[10];
       bone_index = INT_02d832fc;
     }
     core_charactr_cpp_CCharacter_spawnBloodAtBone_FUN_0042b810

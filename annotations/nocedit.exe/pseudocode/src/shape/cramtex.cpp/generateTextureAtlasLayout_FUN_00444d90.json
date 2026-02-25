@@ -1,30 +1,22 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 29,
-        "line": 96,
-        "message": "use of undeclared identifier 'DAT_0084a8b0'; did you mean 'DAT_00823a80'?"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 926,
-    "complexity_score": 527,
+    "complexity_score": 513,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 100,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 397,
-    "suspect_count": 12,
+    "pseudocode_lines": 398,
+    "suspect_count": 11,
     "suspect_types": [
-      "pointer_cast",
-      "undefined_data"
+      "pointer_cast"
     ],
-    "total_lines": 1323
+    "total_lines": 1324
   },
   "cross_references": [
     {
@@ -282,7 +274,7 @@
     {
       "addr": "0083c1dc",
       "name": "g_CramSortedTextureEntries",
-      "type": "CCramTex[1]",
+      "type": "CCramTex[250]",
       "value": null
     },
     {
@@ -623,13 +615,13 @@
     },
     {
       "addr": "0084a878",
-      "name": "g_CramAtlasWidth",
+      "name": "g_CramAtlasDimension",
       "type": "int",
       "value": null
     },
     {
       "addr": "0084a87c",
-      "name": "g_CramAtlasHeight",
+      "name": "g_CramPaddingSize",
       "type": "int",
       "value": null
     },
@@ -689,14 +681,14 @@
     },
     {
       "addr": "0084a8b0",
-      "name": "DAT_0084a8b0",
-      "type": "undefined4",
+      "name": "g_CramCandidateRectangles",
+      "type": "SCramRectangle*[62500]",
       "value": null
     },
     {
       "addr": "00887940",
-      "name": "g_CramAlgorithmState",
-      "type": "void*",
+      "name": "g_CramCandidateWriteCursor",
+      "type": "SCramRectangle**",
       "value": null
     }
   ],
@@ -951,67 +943,51 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 89,
-      "match": "DAT_0084a8b0",
-      "severity": "mild",
-      "text": "g_CramAlgorithmState = &DAT_0084a8b0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 167,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "if (((*(int *)((int)&g_CramRectangles[0].left + iVar10) == 0) &&",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 168,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "(*(int *)((int)&g_CramRectangles[0].top + iVar10) == 0)) &&",
+      "text": "if (((*(int *)((int)&g_CramRectangles[0].map_id + iVar10) == 0) &&",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 170,
+      "line": 169,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)&g_CramRectangles[0].right + iVar10))) goto LAB_004451a8;",
+      "text": "(*(int *)((int)&g_CramRectangles[0].start_x + iVar10) == 0)) &&",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 215,
+      "line": 171,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "if (((*(int *)((int)&g_CramRectangles[0].left + iVar14) == 0) &&",
+      "text": "*(int *)((int)&g_CramRectangles[0].start_y + iVar10))) goto LAB_004451a8;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 217,
+      "line": 216,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)&g_CramRectangles[0].top + iVar14))) &&",
+      "text": "if (((*(int *)((int)&g_CramRectangles[0].map_id + iVar14) == 0) &&",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 219,
+      "line": 218,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)&g_CramRectangles[0].right + iVar14))) goto LAB_004451f7;",
+      "text": "*(int *)((int)&g_CramRectangles[0].start_x + iVar14))) &&",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 265,
+      "line": 220,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "if (((local_14 == *(int *)((int)&g_CramRectangles[0].left + iVar13)) &&",
+      "text": "*(int *)((int)&g_CramRectangles[0].start_y + iVar14))) goto LAB_004451f7;",
       "type": "pointer_cast"
     },
     {
@@ -1019,7 +995,7 @@
       "line": 266,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "(*(int *)((int)&g_CramRectangles[0].top + iVar13) == 0)) &&",
+      "text": "if (((local_14 == *(int *)((int)&g_CramRectangles[0].map_id + iVar13)) &&",
       "type": "pointer_cast"
     },
     {
@@ -1027,7 +1003,15 @@
       "line": 267,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "(*(int *)((int)&g_CramRectangles[0].right + iVar13) == 0)) goto LAB_00445252;",
+      "text": "(*(int *)((int)&g_CramRectangles[0].start_x + iVar13) == 0)) &&",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 268,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "(*(int *)((int)&g_CramRectangles[0].start_y + iVar13) == 0)) goto LAB_00445252;",
       "type": "pointer_cast"
     }
   ]

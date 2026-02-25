@@ -21,10 +21,7 @@ int __cdecl core_gargoyle_cpp_CGargoyle_FUN_004e48a0(CGargoyle *this_ptr)
   CVector3f local_18;
   
   pCVar2 = (this_ptr->base).victim;
-  this_ptr->unk2[0x14] = '\0';
-  this_ptr->unk2[0x15] = '\0';
-  this_ptr->unk2[0x16] = '\0';
-  this_ptr->unk2[0x17] = '\0';
+  this_ptr->returning_home = 0;
   if (pCVar2 != (CDemonActor *)0x0) {
     pCVar1 = &(this_ptr->base).base.base.location;
     local_24.x = (pCVar1->position).x - (pCVar2->location).position.x;
@@ -52,10 +49,7 @@ int __cdecl core_gargoyle_cpp_CGargoyle_FUN_004e48a0(CGargoyle *this_ptr)
         fVar3 = (pCVar2->location).position.y - (this_ptr->base).base.base.location.position.y;
         fVar4 = (pCVar2->location).position.z - (this_ptr->base).base.base.location.position.z;
         if (1.0 <= SQRT(fVar4 * fVar4 + fVar6 * fVar6 + fVar3 * fVar3)) {
-          this_ptr->unk2[0x14] = '\x01';
-          this_ptr->unk2[0x15] = '\0';
-          this_ptr->unk2[0x16] = '\0';
-          this_ptr->unk2[0x17] = '\0';
+          this_ptr->returning_home = 1;
           return 1;
         }
       }

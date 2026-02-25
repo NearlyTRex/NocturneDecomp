@@ -322,7 +322,7 @@ section .text
     MOV dword ptr [ESP + 0x4c],EBX      ; 004904f6
     MOV dword ptr [ESP + 0x50],EBX      ; 004904fa
     CALL engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0 ; 004904fe
-        ;   XREF to: 0048aeb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info, int render_flags)
+        ;   XREF to: 0048aeb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, int render_flags)
     ADD ESP,0xc                         ; 00490503
     MOV dword ptr [ESP + 0x90],EDI      ; 00490506
     MOV ESI,dword ptr [ESP + 0x90]      ; 0049050d
@@ -418,7 +418,7 @@ section .text
     MOV dword ptr [ESP + 0x50],EBP      ; 00490643
     ADD ESI,0x1000000                   ; 00490647 | DAT_01000000
     CALL engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0 ; 0049064d
-        ;   XREF to: 0048aeb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info, int render_flags)
+        ;   XREF to: 0048aeb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, int render_flags)
     ADD ESP,0xc                         ; 00490652
     CMP EDI,0x3                         ; 00490655
     JL 0x00490593                       ; 00490658

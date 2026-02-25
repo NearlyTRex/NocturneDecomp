@@ -20,16 +20,15 @@ void __cdecl core_lightgun_cpp_CLightGun_FUN_00505ac0(CLightGun *this_ptr)
             ((CDemonActor *)this_ptr,(CVector3f *)&fStack_10,input_local_point);
   g_CDemonLightInstance.light_enabled_flag = 1;
   g_CDemonLightInstance.volumetric_enabled = 0;
-  if ((int *)&stack0x00000000 != &g_CDemonLightInstance.base.base.rotation_matrix.m[0].y) {
+  if ((float *)&stack0x00000000 != &g_CDemonLightInstance.base.base.rotation_matrix.m[0].y) {
     g_CDemonLightInstance.base.base.position.x = (int)fStack_10;
     g_CDemonLightInstance.base.base.position.y = (int)fStack_c;
     g_CDemonLightInstance.base.base.position.z = unaff_ESI;
   }
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
-            ((CMatrix3x3f *)&g_CDemonLightInstance.base.base.rotation_matrix,
-             &(this_ptr->base).base.orient.vec);
+            (&g_CDemonLightInstance.base.base.rotation_matrix,&(this_ptr->base).base.orient.vec);
   g_CDemonLightInstance.base.max_distance = 32.0;
-  g_CDemonLightInstance.base.base.projection_scale = 112.0f;
+  g_CDemonLightInstance.base.base.focal_length = 112.0f;
   g_CDemonLightInstance.antialiasing_enabled = 1;
   core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0(&g_CDemonLightInstance,1.0);
   return;

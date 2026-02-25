@@ -35,9 +35,9 @@ void __cdecl core_dlight_cpp_CDemonLight_beginScene_FUN_00472a80(CDemonLight *th
   engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
             (this_ptr_00,&(this_ptr->base).base.position);
   engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0048c650
-            (g_CDemonRendererPtr2,(this_ptr->base).base.projection_scale);
+            (g_CDemonRendererPtr2,(this_ptr->base).base.focal_length);
   engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200
-            (g_CDemonRendererPtr2,(CMatrix3x3f *)&(this_ptr->base).base.rotation_matrix);
+            (g_CDemonRendererPtr2,&(this_ptr->base).base.rotation_matrix);
   lVar1 = (longlong)this_ptr->transform_scale_factor * (longlong)g_TransformMatrix.m[0].y;
   g_TransformMatrix.m[0].y = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
   lVar1 = (longlong)this_ptr->transform_scale_factor * (longlong)g_TransformMatrix.m[1].y;

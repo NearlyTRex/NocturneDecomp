@@ -23,8 +23,8 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_004529b0(CDemonCamer
   CVector3i *end_pos;
   int iVar9;
   int *in_stack_fffffd8c;
-  byte local_174 [96];
-  int local_114;
+  byte local_174 [68];
+  _ostream local_130;
   char local_f8 [100];
   CLZWCompress local_94;
   CVector3i local_5c;
@@ -62,29 +62,26 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_004529b0(CDemonCamer
     return;
   }
   _sprintf(local_f8,"backdrop\\%s",&stack0xfffffd8c);
-  crt_fstream_cpp_ofstream_constructor_FUN_005ff710
-            ((ofstream *)local_174,0,(int)local_f8,0x110,(char *)g_DefaultStreamBufferSize,
-             (SIZE_T)in_stack_fffffd8c);
-  if (local_114 != 0) {
+  crt_fstream_cpp_ofstream_ctor_FUN_005ff710(local_174,0,local_f8,0x110,g_DefaultStreamBufferSize);
+  if (local_130._ios.__enabled_exceptions != 0) {
     g_CurrentFilename = "..\\core\\dcamera.cpp";
     g_CurrentLineNumber = 0x12dc;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't create %s",local_f8);
   }
-  stream_write_internal
-            ((_FILE *)(local_174 + 0x44),&g_CameraFogGrid,0x1000);
+  crt_fstream_cpp_ostream_write_FUN_005ffcb3(&local_130,&g_CameraFogGrid,0x1000);
   if (g_CameraFogGrid.density_multiplier != 0) {
     local_50[0] = "EFD"[0];
     local_50[1] = "EFD"[1];
     local_50[2] = "EFD"[2];
     local_50[3] = "EFD"[3];
-    stream_write_internal((_FILE *)(local_174 + 0x44),local_50,3);
+    crt_fstream_cpp_ostream_write_FUN_005ffcb3(&local_130,local_50,3);
     local_5c.x = (int)ROUND(ROUND((double)(float)(this_ptr->base).position.x *
                                   256));
     local_5c.y = (int)ROUND(ROUND((double)(float)(this_ptr->base).position.y *
                                   256));
     local_5c.z = (int)ROUND(ROUND(256 *
                                   (double)(float)(this_ptr->base).position.z));
-    support_codec_cpp_CLZWCompress_ctor_FUN_0043f2d0(&local_94);
+    support_codec_cpp_CLZWCompress_ctor_FUN_0043f2d0(&local_94,0x10000,6);
     support_codec_cpp_CLZWCompress_init_FUN_0043f320(&local_94);
     local_18 = 0;
     if (0 < g_ImageBytesPerPixel) {
@@ -177,8 +174,8 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_004529b0(CDemonCamer
         }
         local_4c = 0x12c00;
         iVar6 = support_codec_cpp_CCodec_processFromBuffer_FUN_0043eb30
-                          (&local_94.base,(byte *)&g_CameraPlaneWorkBuffer,&local_4c,
-                           local_174 + 0x44,in_stack_fffffd8c);
+                          (&local_94.base,(char *)&g_CameraPlaneWorkBuffer,&local_4c,
+                           (char *)&local_130,in_stack_fffffd8c);
         if (iVar6 == 0) {
           g_CurrentFilename = "..\\core\\dcamera.cpp";
           g_CurrentLineNumber = 0x1349;
@@ -190,7 +187,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_004529b0(CDemonCamer
           core_main_c_displayErrorAndQuit_FUN_00506f10("Not all bytes consumed compressing %s",local_f8)
           ;
         }
-        if (local_114 != 0) {
+        if (local_130._ios.__enabled_exceptions != 0) {
           g_CurrentLineNumber = 0x134c;
           g_CurrentFilename = "..\\core\\dcamera.cpp";
           core_main_c_displayErrorAndQuit_FUN_00506f10("Error writing compressed file %s",local_f8)
@@ -201,10 +198,10 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_004529b0(CDemonCamer
         local_18 = local_18 + 1;
       } while (local_18 < g_ImageBytesPerPixel);
     }
-    support_codec_cpp_CLZWCompress_finalize_FUN_0043f440(&local_94,(_FILE *)(local_174 + 0x44));
+    support_codec_cpp_CLZWCompress_finalize_FUN_0043f440(&local_94,&local_130);
     support_codec_cpp_CLZWDictionary_dtor_FUN_0043edf0(&local_94.dictionary,0);
     support_codec_cpp_CCodec_dtor_FUN_0043e9b0(&local_94.base,1);
   }
-  crt_fstream_cpp_ofstream_dtor_FUN_005ff7bc((ofstream *)local_174,0);
+  crt_fstream_cpp_ofstream_dtor_FUN_005ff7bc(local_174,0);
   return;
 }

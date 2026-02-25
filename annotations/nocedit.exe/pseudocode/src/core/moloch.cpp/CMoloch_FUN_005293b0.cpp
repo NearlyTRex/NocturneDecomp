@@ -132,14 +132,14 @@ void __cdecl core_moloch_cpp_CMoloch_FUN_005293b0(CMoloch *this_ptr)
     if (fStack_58 < -local_24) {
       fStack_58 = -local_24;
     }
-    fStack_78 = fStack_58 - *(float *)(this_ptr->unk2 + 0xc30);
+    fStack_78 = fStack_58 - this_ptr->aim_yaw;
     if (in_stack_00000008 * (float)3.1415926535000001 < fStack_78) {
       fStack_78 = in_stack_00000008 * (float)3.1415926535000001;
     }
     if (fStack_78 < in_stack_00000008 * (float)-3.1415926535000001) {
       fStack_78 = in_stack_00000008 * (float)-3.1415926535000001;
     }
-    *(float *)(this_ptr->unk2 + 0xc30) = *(float *)(this_ptr->unk2 + 0xc30) + fStack_78;
+    this_ptr->aim_yaw = this_ptr->aim_yaw + fStack_78;
   }
   return;
 }

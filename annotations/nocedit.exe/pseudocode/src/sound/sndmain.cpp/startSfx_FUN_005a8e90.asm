@@ -26,7 +26,7 @@
 ;   core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_0050ad40 at 0050adba
 ;   core_manpuz.cpp_FUN_0050a4f0 at 0050a5e3
 ;   core_menu.cpp_configureSoundOptions_FUN_00511e50 at 00512877
-;   core_setedit.cpp_CDemonSet_FUN_00580730 at 00581131
+;   core_setedit.cpp_CDemonSet_showFogEditor_FUN_00580730 at 00581131
 ;   ... and 13 more
 ;
 ; Referenced Globals:

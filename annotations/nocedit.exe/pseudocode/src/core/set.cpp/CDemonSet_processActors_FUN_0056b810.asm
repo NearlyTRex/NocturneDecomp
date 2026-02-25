@@ -7,7 +7,6 @@
 ; CDemonSet *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0xa8]:4  local_a8
-; SDamageInfo      Stack[-0xa4]:60  local_a4
 ; undefined4       Stack[-0x68]:4  local_68
 ; undefined4       Stack[-0x64]:4  local_64
 ; undefined4       Stack[-0x60]:4  local_60

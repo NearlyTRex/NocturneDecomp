@@ -20,7 +20,7 @@ typedef struct CCloth {
     float floor_friction; // 0x3ce6c
     float wind_area; // 0x3ce70
     float mom_inert; // 0x3ce74
-    char reserved[12]; // 0x3ce78
+    char dead[12]; // 0x3ce78
     int double_sided; // 0x3ce84
     float transparency; // 0x3ce88
     int collide_bone_count; // 0x3ce8c
@@ -33,6 +33,6 @@ typedef struct CCloth {
     CVector3f last_position; // 0x3fe48
     CVector3f last_euler; // 0x3fe54
     int version_num; // 0x3fe60
-    CVector3f unk; // 0x3fe64
+    CVector3f wind_velocity; // 0x3fe64
 } CCloth;
 

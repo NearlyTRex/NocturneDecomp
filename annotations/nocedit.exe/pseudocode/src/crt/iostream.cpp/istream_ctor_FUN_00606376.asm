@@ -1,16 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; istream * __cdecl crt_iostream_cpp_istream_ctor_FUN_00606376(istream *this_ptr,uint c1)
+; _istream * __cdecl crt_iostream_cpp_istream_ctor_FUN_00606376(_istream *this_ptr,uint c1)
 ;
 ; Parameters:
-; istream *        Stack[0x4]:4   this_ptr
+; _istream *       Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   c1
 ;
 ; XREF[3]:
-;   crt_fstream.cpp_ifstream_constructor_FUN_005ff664 at 005ff692
+;   crt_fstream.cpp_ifstream_ctor_FUN_005ff664 at 005ff692
 ;   crt_fstream.cpp_ifstream_ctor_FUN_005ff8f0 at 005ff90c
-;   crt_strstream.cpp_istrstream_constructor_FUN_005ff524 at 005ff54c
+;   crt_strstream.cpp_istrstream_ctor_FUN_005ff524 at 005ff54c
 ;
 ; Referenced Globals:
 ;   WatcomInheritanceLayout DAT_00665e68

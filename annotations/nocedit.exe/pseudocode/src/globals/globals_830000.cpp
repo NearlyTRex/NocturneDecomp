@@ -7,8 +7,8 @@
 // CConsole
 CConsole g_CConsoleInstance = {};
 
-// CCramTex[1]
-CCramTex g_CramSortedTextureEntries[1] = {};
+// CCramTex[250]
+CCramTex g_CramSortedTextureEntries[250] = {};
 
 // CDeformableModelInstance
 CDeformableModelInstance g_CDeformableModelInstanceInstance = {};
@@ -44,6 +44,4 @@ int g_CramVisualizationUpdateCounter = {};
 
 // undefined4
 undefined4 DAT_0083b10c = {};
-undefined4 DAT_0083c298 = {};
-undefined4 DAT_0083c29c = {};
 

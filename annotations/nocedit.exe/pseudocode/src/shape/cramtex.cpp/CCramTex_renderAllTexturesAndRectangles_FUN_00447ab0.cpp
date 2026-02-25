@@ -35,9 +35,9 @@ void __cdecl shape_cramtex_cpp_CCramTex_renderAllTexturesAndRectangles_FUN_00447
     if ((this_ptr == (CCramTex *)0x0) && (iVar3 = 0, 0 < g_CramRectangleCount)) {
       pSVar2 = g_CramRectangles;
       do {
-        if ((g_CramMapNumber == pSVar2->left) && (-1 < pSVar2->active_flag)) {
-          iVar1 = x + (pSVar2->top * (width - x)) / g_CramCurrentAcceptableSize;
-          y_00 = y + (pSVar2->right * (height - y)) / g_CramCurrentAcceptableSize;
+        if ((g_CramMapNumber == pSVar2->map_id) && (-1 < pSVar2->active_flag)) {
+          iVar1 = x + (pSVar2->start_x * (width - x)) / g_CramCurrentAcceptableSize;
+          y_00 = y + (pSVar2->start_y * (height - y)) / g_CramCurrentAcceptableSize;
           if ((iVar1 < width) && (y_00 < height)) {
             g_ActiveRenderColor = pSVar2->active_flag;
             engine_2d_c_plotPixel_FUN_00401140(iVar1,y_00);

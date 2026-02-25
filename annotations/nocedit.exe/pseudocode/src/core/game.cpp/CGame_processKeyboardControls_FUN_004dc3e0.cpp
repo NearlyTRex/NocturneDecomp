@@ -247,7 +247,7 @@ LAB_004dc4e9:
     iVar3 = g_CDemonSetPtr->selected_camera_index;
     core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0
               (g_CDemonSetPtr,g_CScriptPtr->focus_actor,1);
-    g_CScriptPtr->unk2 = 0;
+    g_CScriptPtr->focus_actor_changed = 0;
     if (iVar3 == g_CDemonSetPtr->selected_camera_index) {
       core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50
                 (g_CDemonSetPtr,g_CDemonSetPtr->selected_camera_index);

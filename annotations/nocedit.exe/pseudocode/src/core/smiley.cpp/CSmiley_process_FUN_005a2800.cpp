@@ -61,7 +61,7 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_005a2800(CSmiley *this_ptr,floa
   if (fVar12 < 0.0) {
     this_ptr->dismember_cooldown = 0.0;
   }
-  if (((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_index_head] == 0) &&
+  if (((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[10]] == 0) &&
      (iVar5 = (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)
                         ((CCharacter *)this_ptr), iVar5 == 0)) {
     core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffe34);

@@ -95,8 +95,8 @@ section .text
     PUSH EBX                            ; 0053e29c
     MOV EBX,dword ptr [0x006810c8]      ; 0053e29d | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH EBX                            ; 0053e2a3 | g_CDemonSetInstance
-    CALL core_setedit.cpp_CDemonSet_FUN_00576da0 ; 0053e2a4
-        ;   XREF to: 00576da0 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_CDemonSet_FUN_00576da0(CDemonSet * this_ptr)
+    CALL core_setedit.cpp_CDemonSet_loadOrBuildThumbnails_FUN_00576da0 ; 0053e2a4
+        ;   XREF to: 00576da0 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_CDemonSet_loadOrBuildThumbnails_FUN_00576da0(CDemonSet * this_ptr, int force_rebuild)
     ADD ESP,0x8                         ; 0053e2a9
     MOV ESI,dword ptr [0x006810c8]      ; 0053e2ac | g_CDemonSetPtr
     PUSH ESI                            ; 0053e2b2 | g_CDemonSetInstance

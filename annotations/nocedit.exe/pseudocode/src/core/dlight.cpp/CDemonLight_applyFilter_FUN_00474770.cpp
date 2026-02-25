@@ -49,7 +49,7 @@ void __cdecl core_dlight_cpp_CDemonLight_applyFilter_FUN_00474770(CDemonLight *t
   this_ptr->shadow_y_shift = this_ptr->shadow_y_shift - filter_index;
   this_ptr->shadow_x_shift = this_ptr->shadow_x_shift - filter_index;
   local_34 = this_ptr->filter_buffer;
-  this_ptr->teture_coord_mask = this_ptr->texture_width - 1;
+  this_ptr->texture_coord_mask = this_ptr->texture_width - 1;
   if (local_34 != (uchar *)0x0) {
     uVar8 = filter_pos_x & 0xff;
     local_30 = 0;

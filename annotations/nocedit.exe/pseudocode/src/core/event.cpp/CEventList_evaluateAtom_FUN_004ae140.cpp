@@ -52,7 +52,7 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
   char acStack_345 [101];
   char local_2e0 [99];
   char acStack_27d [101];
-  byte local_218 [99];
+  char local_218 [99];
   char acStack_1b5 [101];
   char local_150 [64];
   CVector3f local_110;
@@ -93,8 +93,8 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
   char *local_58;
   int local_54;
   char *local_50;
-  int local_4c;
-  int local_48;
+  C3DSLight *local_4c;
+  CDemonLight *local_48;
   int local_44;
   int local_40;
   char *local_3c;
@@ -1003,8 +1003,9 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
                     } while (cVar1 != '\0');
                     return -1;
                   }
-                  core_set_cpp_CDemonSet_addLightFilter_FUN_00570f10(g_CDemonSetPtr);
-                  if (local_4c == 0) {
+                  core_set_cpp_CDemonSet_addLightFilter_FUN_00570f10
+                            (g_CDemonSetPtr,local_218,&local_4c,&local_48);
+                  if (local_4c == (C3DSLight *)0x0) {
                     _sprintf
                               (local_a84,"Spotlight %s doesn't exist.",local_218);
                     pcVar16 = local_a84;
@@ -1022,7 +1023,7 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
                     } while (cVar1 != '\0');
                     return -1;
                   }
-                  local_e0 = (uint)(*(int *)(local_48 + 0x1cb4) != 0);
+                  local_e0 = (uint)(local_48->light_enabled_flag != 0);
                   *parse_position = *parse_position + local_54;
                 }
                 else {

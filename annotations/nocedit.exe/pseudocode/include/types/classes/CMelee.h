@@ -13,13 +13,13 @@ typedef struct CMelee {
     float strength_hi; // 0x580
     float dismember_prob; // 0x584
     int can_go_in_inventory; // 0x588
-    char unk1[16]; // 0x58c
+    int blood_gore_type; // 0x58c
+    int blood_spurt_count; // 0x590
+    float blood_spurt_timer; // 0x594
+    float blood_spurt_interval; // 0x598
     int damage_type; // 0x59c
-    char* thrust_hit_character_sound; // 0x5a0
-    char unk2[96]; // 0x5a4
-    char* swing_hit_character_sound; // 0x604
-    char unk3[96]; // 0x608
-    char* hit_other_sound; // 0x668
-    char unk4[96]; // 0x66c
+    char thrust_hit_character_sound[100]; // 0x5a0
+    char swing_hit_character_sound[100]; // 0x604
+    char hit_other_sound[100]; // 0x668
 } CMelee;
 

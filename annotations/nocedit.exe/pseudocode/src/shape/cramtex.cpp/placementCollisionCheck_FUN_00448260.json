@@ -66,7 +66,7 @@
     {
       "addr": "0083c1dc",
       "name": "g_CramSortedTextureEntries",
-      "type": "CCramTex[1]",
+      "type": "CCramTex[250]",
       "value": null
     },
     {
@@ -293,7 +293,7 @@
       "line": 15,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "if (((layer_id == *(int *)((int)&g_CramRectangles[0].left + iVar1)) &&",
+      "text": "if (((layer_id == *(int *)((int)&g_CramRectangles[0].map_id + iVar1)) &&",
       "type": "pointer_cast"
     },
     {
@@ -301,7 +301,7 @@
       "line": 16,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "(start_x == *(int *)((int)&g_CramRectangles[0].top + iVar1))) &&",
+      "text": "(start_x == *(int *)((int)&g_CramRectangles[0].start_x + iVar1))) &&",
       "type": "pointer_cast"
     },
     {
@@ -309,7 +309,7 @@
       "line": 17,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "(start_y == *(int *)((int)&g_CramRectangles[0].right + iVar1))) {",
+      "text": "(start_y == *(int *)((int)&g_CramRectangles[0].start_y + iVar1))) {",
       "type": "pointer_cast"
     }
   ]

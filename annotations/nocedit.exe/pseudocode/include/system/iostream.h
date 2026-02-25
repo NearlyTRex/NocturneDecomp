@@ -47,7 +47,7 @@ typedef int cpp_streambuf_underflow(struct streambuf* param0);
 // Structure: ios
 typedef struct ios {
     struct streambuf* _strmbuf;
-    struct ostream* _tied_stream;
+    struct _ostream* _tied_stream;
     long _format_flags;
     int _error_state;
     int _enabled_exceptions;
@@ -68,11 +68,11 @@ typedef struct istream_core {
     void* istream_data;
 } istream_core;
 
-// Structure: istream
-typedef struct istream {
+// Structure: _istream
+typedef struct _istream {
     istream_core _istream_core;
     ios _ios;
-} istream;
+} _istream;
 
 // Structure: ostream_core
 typedef struct ostream_core {
@@ -81,11 +81,11 @@ typedef struct ostream_core {
     void* ostream_data;
 } ostream_core;
 
-// Structure: ostream
-typedef struct ostream {
+// Structure: _ostream
+typedef struct _ostream {
     ostream_core _ostream_core;
     ios _ios;
-} ostream;
+} _ostream;
 
 // Structure: streambuf
 typedef struct streambuf {

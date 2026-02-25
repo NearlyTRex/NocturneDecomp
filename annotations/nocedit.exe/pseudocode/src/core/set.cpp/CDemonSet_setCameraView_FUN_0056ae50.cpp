@@ -20,17 +20,16 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(CDemonSet *this_p
   CDemonSet *pCVar7;
   CRect *rect;
   int iVar8;
-  CMatrix3x3i *pCVar9;
+  CMatrix3x3f *pCVar9;
   float *pfVar10;
   uint corner_index;
   SFog *pSVar11;
   int iVar12;
   int *piVar13;
-  CMatrix3x3f *pCVar14;
-  int *piVar15;
+  int *piVar14;
   C3DSCamera *this_ptr_02;
-  int *piVar16;
-  byte bVar17;
+  int *piVar15;
+  byte bVar16;
   int local_184 [24];
   char local_124 [80];
   float local_d4 [10];
@@ -48,7 +47,7 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(CDemonSet *this_p
   CDemonSet *local_18;
   int local_14;
   
-  bVar17 = 0;
+  bVar16 = 0;
   if ((index < 0) || (this_ptr->camera_count <= index)) {
     g_CurrentFilename = "..\\core\\set.cpp";
     g_CurrentLineNumber = 0x416;
@@ -65,31 +64,31 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(CDemonSet *this_p
     } while (iVar6 < g_DynamicLightCount);
   }
   iVar6 = 0;
-  if (0 < g_ActiveLightCount) {
+  if (0 < g_SpotLightCount) {
     iVar8 = 0;
     do {
-      puVar1 = (uint *)((int)g_ActiveLightList + iVar8);
+      puVar1 = (uint *)((int)g_SpotLightList + iVar8);
       iVar8 = iVar8 + 4;
       iVar6 = iVar6 + 1;
       core_dlight_cpp_CDemonLight_restoreDirtyRegions_FUN_00472f80((CDemonLight *)*puVar1);
-    } while (iVar6 < g_ActiveLightCount);
+    } while (iVar6 < g_SpotLightCount);
   }
   iVar6 = 0;
-  if (0 < g_ActiveLightCount) {
+  if (0 < g_SpotLightCount) {
     iVar8 = 0;
     do {
-      puVar1 = (uint *)((int)g_ActiveLightList + iVar8);
+      puVar1 = (uint *)((int)g_SpotLightList + iVar8);
       iVar8 = iVar8 + 4;
       iVar6 = iVar6 + 1;
       core_dlight_cpp_CDemonLight_freeMasterZBuffer_FUN_00472a50((CDemonLight *)*puVar1);
-    } while (iVar6 < g_ActiveLightCount);
+    } while (iVar6 < g_SpotLightCount);
   }
   core_dlight_cpp_resetRestoreMemoryAllocator_FUN_004729c0();
   this_ptr->previous_best_camera_timer = 3.0;
   this_ptr->lighting_quality_mode = 1;
   iVar6 = 0;
   this_ptr->directional_light_ratio_enabled = 1;
-  g_ActiveLightCount = 0;
+  g_SpotLightCount = 0;
   this_ptr->previous_best_camera_index = this_ptr->selected_camera_index;
   g_OmniLightCount = 0;
   this_ptr->selected_camera_index = index;
@@ -126,7 +125,7 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(CDemonSet *this_p
     }
     (this_ptr->active_fog).height_threshold = pSVar11->height_threshold;
     (this_ptr->active_fog).density_multiplier = pSVar11->density_multiplier;
-    (this_ptr->active_fog).reserved = pSVar11->reserved;
+    (this_ptr->active_fog).temperature = pSVar11->temperature;
     core_dcamera_cpp_CDemonCamera_initCameraFog_FUN_00453640
               (&g_CDemonCameraInstance,&this_ptr->active_fog);
     g_CDemonRaytraceInstance.rendering_mode = 0;
@@ -173,20 +172,20 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(CDemonSet *this_p
             core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonSet::setCameraView - Too many omni lights");
           }
         }
-        iVar4 = g_ActiveLightCount;
+        iVar4 = g_SpotLightCount;
         iVar12 = iVar8;
         if ((pCVar7->lights[0].light_type == 0) &&
            (iVar12 = iVar8 + 1, pCVar7->lights[0].visible_flags[index] != '\0')) {
-          g_ActiveLightList[g_ActiveLightCount] = g_MasterLightList[iVar8];
-          piVar15 = (int *)((int)&pCVar7->lights[0].camera_light_bounds[0].left + local_20);
-          piVar16 = (int *)(iVar4 * 0x10 + 0x32770b8 + (uint)bVar17 * -8);
-          piVar13 = piVar15 + (uint)bVar17 * -2 + 1;
-          g_ActiveLightBounds[iVar4].left = *piVar15;
-          piVar15 = piVar16 + (uint)bVar17 * -2 + 1;
-          *piVar16 = *piVar13;
-          *piVar15 = piVar13[(uint)bVar17 * -2 + 1];
-          piVar15[(uint)bVar17 * -2 + 1] = (piVar13 + (uint)bVar17 * -2 + 1)[(uint)bVar17 * -2 + 1];
-          g_ActiveLightCount = g_ActiveLightCount + 1;
+          g_SpotLightList[g_SpotLightCount] = g_MasterLightList[iVar8];
+          piVar14 = (int *)((int)&pCVar7->lights[0].camera_light_bounds[0].left + local_20);
+          piVar15 = (int *)(iVar4 * 0x10 + 0x32770b8 + (uint)bVar16 * -8);
+          piVar13 = piVar14 + (uint)bVar16 * -2 + 1;
+          g_SpotLightBounds[iVar4].left = *piVar14;
+          piVar14 = piVar15 + (uint)bVar16 * -2 + 1;
+          *piVar15 = *piVar13;
+          *piVar14 = piVar13[(uint)bVar16 * -2 + 1];
+          piVar14[(uint)bVar16 * -2 + 1] = (piVar13 + (uint)bVar16 * -2 + 1)[(uint)bVar16 * -2 + 1];
+          g_SpotLightCount = g_SpotLightCount + 1;
         }
         iVar6 = iVar6 + 1;
         pCVar7 = (CDemonSet *)&pCVar7->cameras[0xe].vdir_zone;
@@ -195,12 +194,12 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(CDemonSet *this_p
     }
     iVar6 = 0;
     core_set_cpp_CDemonSet_process_FUN_0056f940(this_ptr);
-    if (0 < g_ActiveLightCount) {
-      rect = g_ActiveLightBounds;
+    if (0 < g_SpotLightCount) {
+      rect = g_SpotLightBounds;
       local_1c = &this_ptr->cameras[index + -1].enabled;
       iVar8 = 0;
       do {
-        this_ptr_01 = *(CDemonLight **)((int)g_ActiveLightList + iVar8);
+        this_ptr_01 = *(CDemonLight **)((int)g_SpotLightList + iVar8);
         core_dlight_cpp_CDemonLight_allocMasterZBuffer_FUN_004729d0(this_ptr_01);
         core_dlight_cpp_CDemonLight_beginScene_FUN_00472a80(this_ptr_01,1);
         core_dlight_cpp_CDemonLight_beginBackgroundScene_FUN_00472e40(this_ptr_01);
@@ -215,7 +214,7 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(CDemonSet *this_p
         iVar8 = iVar8 + 4;
         iVar6 = iVar6 + 1;
         rect = rect + 1;
-      } while (iVar6 < g_ActiveLightCount);
+      } while (iVar6 < g_SpotLightCount);
     }
   }
   this_ptr->lighting_quality_mode = 0;
@@ -257,16 +256,16 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(CDemonSet *this_p
   pCVar9 = &g_CDemonCameraInstance.base.rotation_matrix;
   pfVar10 = local_d4;
   for (iVar6 = 10; iVar6 != 0; iVar6 = iVar6 + -1) {
-    *pfVar10 = (float)pCVar9->m[0].x;
-    pCVar9 = (CMatrix3x3i *)((int)pCVar9 + ((uint)bVar17 * -2 + 1) * 4);
-    pfVar10 = pfVar10 + (uint)bVar17 * -2 + 1;
+    *pfVar10 = pCVar9->m[0].x;
+    pCVar9 = (CMatrix3x3f *)((int)pCVar9 + ((uint)bVar16 * -2 + 1) * 4);
+    pfVar10 = pfVar10 + (uint)bVar16 * -2 + 1;
   }
   pfVar10 = local_d4;
-  pCVar14 = &local_ac;
+  pCVar9 = &local_ac;
   for (iVar6 = 10; iVar6 != 0; iVar6 = iVar6 + -1) {
-    pCVar14->m[0].x = *pfVar10;
-    pfVar10 = pfVar10 + (uint)bVar17 * -2 + 1;
-    pCVar14 = (CMatrix3x3f *)((int)pCVar14 + ((uint)bVar17 * -2 + 1) * 4);
+    pCVar9->m[0].x = *pfVar10;
+    pfVar10 = pfVar10 + (uint)bVar16 * -2 + 1;
+    pCVar9 = (CMatrix3x3f *)((int)pCVar9 + ((uint)bVar16 * -2 + 1) * 4);
   }
   pCVar5 = core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160(&local_ac,&local_60);
   if (&local_3c != pCVar5) {
@@ -292,16 +291,16 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(CDemonSet *this_p
       if ((this_ptr_00->is_transparent != 0) || (this_ptr_00->is_renderable != 0)) {
         corner_index = 0;
         (*((this_ptr_00->vtable)._ub)->getBoundingBox)(this_ptr_00,&local_84);
-        piVar15 = local_184;
+        piVar14 = local_184;
         do {
           pCVar5 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0
                              (&local_84,&CStack_6c,corner_index);
           core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(this_ptr_00,&CStack_54,pCVar5);
           corner_index = corner_index + 1;
-          *piVar15 = (int)ROUND(CStack_54.x * 256.0f);
-          piVar15[1] = (int)ROUND(CStack_54.y * 256.0f);
-          piVar15[2] = (int)ROUND(CStack_54.z * 256.0f);
-          piVar15 = piVar15 + 3;
+          *piVar14 = (int)ROUND(CStack_54.x * 256.0f);
+          piVar14[1] = (int)ROUND(CStack_54.y * 256.0f);
+          piVar14[2] = (int)ROUND(CStack_54.z * 256.0f);
+          piVar14 = piVar14 + 3;
         } while ((int)corner_index < 8);
       }
       local_18 = (CDemonSet *)local_18->cameras;

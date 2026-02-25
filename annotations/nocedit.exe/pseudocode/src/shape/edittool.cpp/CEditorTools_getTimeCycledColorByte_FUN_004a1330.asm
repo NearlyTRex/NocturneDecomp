@@ -15,8 +15,8 @@
 ;   core_manpuz.cpp_CMansionPuzzleCircle_FUN_00509d50 at 00509dcd
 ;   core_morph.cpp_CMorph_editMorph_FUN_0052bcb0 at 0052c301
 ;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 005396e0
-;   core_setedit.cpp_CDemonSet_FUN_00581aa0 at 00581d63
-;   core_setedit.cpp_CDemonSet_FUN_00583170 at 00583523
+;   core_setedit.cpp_CDemonSet_showRoomEditor_FUN_00581aa0 at 00581d63
+;   core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170 at 00583523
 ;   ... and 4 more
 ;
 ; Referenced Globals:

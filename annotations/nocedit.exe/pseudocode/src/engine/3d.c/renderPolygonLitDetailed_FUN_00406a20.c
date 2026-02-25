@@ -2,11 +2,11 @@
 // Address: 00406a20
 // Address Range: [[00406a20, 00406b37]]
 // Convention: __cdecl
-// Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLitDetailed_FUN_00406a20(SMRGLHeaderPrimitive *polygon_info)
+// Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLitDetailed_FUN_00406a20(SMRGLHeaderPrimitive *prim)
 
 #include "nocturne.h"
 
-SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLitDetailed_FUN_00406a20(SMRGLHeaderPrimitive *polygon_info)
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLitDetailed_FUN_00406a20(SMRGLHeaderPrimitive *prim)
 
 {
   int iVar1;
@@ -15,7 +15,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLitDetailed_FUN_00406a20(
   int iVar4;
   int vertex_count;
   
-  iVar2 = engine_3d_c_isVisiblePlane_FUN_00403950(&polygon_info->surface_normal);
+  iVar2 = engine_3d_c_isVisiblePlane_FUN_00403950(&prim->surface_normal);
   if (iVar2 != 0) {
     if (g_MMXSupported == 0) {
       if (g_BitsPerPixel == 0x20) {
@@ -32,15 +32,15 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLitDetailed_FUN_00406a20(
       g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
     }
     g_RenderStateFlags.dword = RENDER_LIT_DETAILED;
-    engine_3d_c_calculatePolygonLighting_FUN_00403a00(polygon_info);
+    engine_3d_c_calculatePolygonLighting_FUN_00403a00(prim);
     if (g_CurrentAlphaValue < 0xff) {
       g_RenderStateFlags.dword = g_RenderStateFlags.dword | RENDER_ALPHA_CHANNEL;
     }
     vertex_count = 0;
     iVar4 = 0;
     g_RenderStateFlag2 = PREPROCESS_NONE;
-    pSVar3 = polygon_info + 1;
-    for (iVar2 = 0; iVar2 < (polygon_info->base).count * 3; iVar2 = iVar2 + 3) {
+    pSVar3 = prim + 1;
+    for (iVar2 = 0; iVar2 < (prim->base).count * 3; iVar2 = iVar2 + 3) {
       iVar1 = (pSVar3->base).type;
       *(int *)((int)g_ProcessedVertexIndices + iVar4) = iVar1;
       g_RenderVertexBuffer[iVar1].u = (pSVar3->base).count;
@@ -51,5 +51,5 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLitDetailed_FUN_00406a20(
     }
     engine_clipper_c_clipAndRasterize_FUN_004371b0(vertex_count,g_ProcessedVertexIndices);
   }
-  return (SMRGLHeaderExtended *)((int)&polygon_info[1].base + (polygon_info->base).count * 0xc);
+  return (SMRGLHeaderExtended *)((int)&prim[1].base + (prim->base).count * 0xc);
 }

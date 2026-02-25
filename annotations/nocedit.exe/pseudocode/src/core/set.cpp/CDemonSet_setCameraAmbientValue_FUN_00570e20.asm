@@ -11,7 +11,7 @@
 ; XREF[3]:
 ;   core_event.cpp_CEventList_executeCommand_FUN_004aacc0 at 004ac765
 ;   core_game.cpp_CGame_processHotkeys_FUN_004dcee0 at 004dd7c5
-;   core_set.cpp_CDemonSet_setCameraAmbientValueById_FUN_00570e60 at 00570e96
+;   core_set.cpp_CDemonSet_setCameraAmbientValueByGroup_FUN_00570e60 at 00570e96
 ;
 ; Referenced Globals:
 ;   CDemonCamera g_CDemonCameraInstance

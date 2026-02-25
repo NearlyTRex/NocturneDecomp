@@ -2,11 +2,11 @@
 // Address: 00570040
 // Address Range: [[00570040, 005702ab]]
 // Convention: __cdecl
-// Signature: void __cdecl core_set_cpp_CDemonSet_renderEnvMapPrimitives_FUN_00570040(CDemonSet *this_ptr,void *param_2,int count,int alpha,int stride)
+// Signature: void __cdecl core_set_cpp_CDemonSet_renderEnvMapPrimitives_FUN_00570040(CDemonSet *this_ptr,SMRGLHeaderPrimitive *prims,int count,int alpha,int stride)
 
 #include "nocturne.h"
 
-void __cdecl core_set_cpp_CDemonSet_renderEnvMapPrimitives_FUN_00570040(CDemonSet *this_ptr,void *param_2,int count,int alpha,int stride)
+void __cdecl core_set_cpp_CDemonSet_renderEnvMapPrimitives_FUN_00570040(CDemonSet *this_ptr,SMRGLHeaderPrimitive *prims,int count,int alpha,int stride)
 
 {
   short *psVar1;
@@ -15,7 +15,7 @@ void __cdecl core_set_cpp_CDemonSet_renderEnvMapPrimitives_FUN_00570040(CDemonSe
   longlong lVar4;
   int iVar5;
   int iVar6;
-  uint *puVar7;
+  SMRGLHeaderPrimitive *pSVar7;
   int iVar8;
   SMRGLHeaderPrimitive *pSVar9;
   byte bVar10;
@@ -33,7 +33,7 @@ void __cdecl core_set_cpp_CDemonSet_renderEnvMapPrimitives_FUN_00570040(CDemonSe
   
   bVar10 = 0;
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-            (g_CDemonRendererPtr2,&SMRGLTextureBasic_006813e4);
+            (g_CDemonRendererPtr2,&g_EnvMapTexture);
   if (g_CGamePtr->render_mode == 2) {
     alpha = g_CurrentAlphaValue << 8;
   }
@@ -48,11 +48,11 @@ void __cdecl core_set_cpp_CDemonSet_renderEnvMapPrimitives_FUN_00570040(CDemonSe
   local_14 = 0;
   if (0 < count) {
     do {
-      puVar7 = param_2;
+      pSVar7 = prims;
       pSVar9 = &SStack_f4;
       for (iVar5 = 0x12; iVar5 != 0; iVar5 = iVar5 + -1) {
-        *(uint *)pSVar9 = *puVar7;
-        puVar7 = puVar7 + (uint)bVar10 * -2 + 1;
+        *(int *)pSVar9 = (pSVar7->base).type;
+        pSVar7 = (SMRGLHeaderPrimitive *)((int)pSVar7 + (uint)bVar10 * -8 + 4);
         pSVar9 = (SMRGLHeaderPrimitive *)((int)pSVar9 + ((uint)bVar10 * -2 + 1) * 4);
       }
       iVar5 = 0;
@@ -113,7 +113,7 @@ void __cdecl core_set_cpp_CDemonSet_renderEnvMapPrimitives_FUN_00570040(CDemonSe
                   (g_CDemonRendererPtr2,&SStack_f4);
       }
       local_14 = local_14 + 1;
-      param_2 = (void *)((int)param_2 + stride);
+      prims = (SMRGLHeaderPrimitive *)((int)&(prims->base).type + stride);
     } while (local_14 < count);
   }
   return;

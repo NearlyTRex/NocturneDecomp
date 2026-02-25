@@ -12,7 +12,7 @@
 ; XREF[3]:
 ;   core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470 at 004094b3
 ;   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0 at 005719c5
-;   core_setcolid.cpp_CDemonSet_testCapsuleCollision_FUN_00573470 at 00573776
+;   core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00573470 at 00573776
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80

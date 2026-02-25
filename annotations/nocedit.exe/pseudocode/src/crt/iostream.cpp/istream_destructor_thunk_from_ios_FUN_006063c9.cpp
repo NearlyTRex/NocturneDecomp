@@ -10,6 +10,6 @@ void __cdecl crt_iostream_cpp_istream_destructor_thunk_from_ios_FUN_006063c9(ios
 
 {
   crt_iostream_cpp_istream_dtor_FUN_006063e1
-            ((istream *)((int)this_ptr - (int)this_ptr[-1].cleanup_vtable),dtor_flags);
+            ((_istream *)((int)this_ptr - (int)this_ptr[-1].cleanup_vtable),dtor_flags);
   return;
 }

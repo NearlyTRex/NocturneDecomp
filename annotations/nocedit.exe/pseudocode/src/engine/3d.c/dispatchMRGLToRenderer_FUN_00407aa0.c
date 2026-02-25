@@ -2,11 +2,11 @@
 // Address: 00407aa0
 // Address Range: [[00407aa0, 00407ce9]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_3d_c_dispatchMRGLToRenderer_FUN_00407aa0(SVertexBatch *cmd)
+// Signature: void __cdecl engine_3d_c_dispatchMRGLToRenderer_FUN_00407aa0(SMRGLHeaderExtended *mrgl)
 
 #include "nocturne.h"
 
-void __cdecl engine_3d_c_dispatchMRGLToRenderer_FUN_00407aa0(SVertexBatch *cmd)
+void __cdecl engine_3d_c_dispatchMRGLToRenderer_FUN_00407aa0(SMRGLHeaderExtended *mrgl)
 
 {
   uint *puVar1;
@@ -14,9 +14,9 @@ void __cdecl engine_3d_c_dispatchMRGLToRenderer_FUN_00407aa0(SVertexBatch *cmd)
   byte bVar3;
   int iVar4;
   int iVar5;
-  SVertexBatch *in_stack_fffffef0;
+  char local_110 [256];
   
-  cVar2 = (char)cmd->primitive_type;
+  cVar2 = (char)(mrgl->base).type;
   g_RenderFaceCount = 0;
   do {
     if (cVar2 == '\0') {
@@ -43,28 +43,28 @@ void __cdecl engine_3d_c_dispatchMRGLToRenderer_FUN_00407aa0(SVertexBatch *cmd)
       g_VertexProcessingEnabled = 1;
       return;
     }
-    bVar3 = (byte)cmd->primitive_type;
+    bVar3 = (byte)(((SMRGLHeaderPrimitive *)mrgl)->base).type;
     if (bVar3 < 0x14) {
       if (bVar3 < 3) {
         if (bVar3 == 2) {
-          engine_3d_c_transformAndBufferVertices_FUN_00403840(cmd,in_stack_fffffef0);
+          engine_3d_c_transformAndBufferVertices_FUN_00403840(mrgl);
           if (g_VertexProcessingEnabled != 0) {
-            engine_3d_c_dispatchMRGLBlockChain_FUN_00407890((SMRGLHeaderExtended *)cmd);
+            engine_3d_c_dispatchMRGLBlockChain_FUN_00407890(mrgl);
             return;
           }
         }
         else {
 LAB_00407c82:
           _sprintf
-                    (&stack0xfffffef0,"Unknown primitive : %d",(uint)(byte)cmd->primitive_type
-                    );
+                    (local_110,"Unknown primitive : %d",
+                     (uint)(byte)(((SMRGLHeaderPrimitive *)mrgl)->base).type);
           g_CurrentLineNumber = 0xcf1;
           g_CurrentFilename = "..\\engine\\3d.c";
-          core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xfffffef0);
+          core_main_c_displayErrorAndQuit_FUN_00506f10(local_110);
         }
       }
       else if (bVar3 < 4) {
-        engine_3d_c_processVertexLighting_FUN_00403a20(cmd);
+        engine_3d_c_processVertexLighting_FUN_00403a20(mrgl);
       }
       else {
         if (bVar3 != 0xd) goto LAB_00407c82;
@@ -88,34 +88,35 @@ LAB_00407c82:
           }
           g_RenderFaceCount = 0;
         }
-        engine_texture_cpp_ensureTextureLoaded_FUN_005dd800((SMRGLTextureBasic *)cmd);
+        engine_texture_cpp_ensureTextureLoaded_FUN_005dd800((SMRGLTextureBasic *)mrgl);
       }
     }
     else if (0x14 < bVar3) {
       if (bVar3 < 0x29) {
         if (bVar3 != 0x18) goto LAB_00407c82;
-        engine_3d_c_renderPrimitivePlaneMaskedComplex_FUN_004046c0((SMRGLHeaderPrimitive *)cmd);
+        engine_3d_c_renderPrimitivePlaneMaskedComplex_FUN_004046c0((SMRGLHeaderPrimitive *)mrgl);
       }
       else if (bVar3 < 0x2a) {
-        iVar4 = engine_3d_c_isVisiblePlane_FUN_00403950((SClipPlane *)&cmd->vertex_count);
+        iVar4 = engine_3d_c_isVisiblePlane_FUN_00403950
+                          (&((SMRGLHeaderPrimitive *)mrgl)->surface_normal);
         if (iVar4 != 0) {
           if (1999 < g_RenderFaceCount) {
             g_CurrentFilename = "..\\engine\\3d.c";
             g_CurrentLineNumber = 0xca7;
             core_main_c_displayErrorAndQuit_FUN_00506f10("renderFaceList - too many faces");
           }
-          g_RenderFaceArray[g_RenderFaceCount] = (SMRGLHeaderPrimitive *)cmd;
+          g_RenderFaceArray[g_RenderFaceCount] = (SMRGLHeaderPrimitive *)mrgl;
           g_RenderFaceCount = g_RenderFaceCount + 1;
         }
       }
       else {
         if (bVar3 != 0x41) goto LAB_00407c82;
         engine_3d_c_renderPolygonEngineAPIPremiumMultiState_FUN_00407290
-                  ((SMRGLHeaderPrimitive *)cmd);
+                  ((SMRGLHeaderPrimitive *)mrgl);
       }
     }
-    iVar4 = engine_model_c_getMRGLSize_FUN_00528700((SMRGLHeaderExtended *)cmd);
-    cmd = (SVertexBatch *)((int)&cmd->primitive_type + iVar4);
-    cVar2 = (char)cmd->primitive_type;
+    iVar4 = engine_model_c_getMRGLSize_FUN_00528700(mrgl);
+    mrgl = (SMRGLHeaderExtended *)((int)&(((SMRGLHeaderPrimitive *)mrgl)->base).type + iVar4);
+    cVar2 = (char)(((SMRGLHeaderPrimitive *)mrgl)->base).type;
   } while( true );
 }

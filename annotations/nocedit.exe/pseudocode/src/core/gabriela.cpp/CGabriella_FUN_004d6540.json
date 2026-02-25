@@ -1,49 +1,22 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 84,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 26,
-        "line": 84,
-        "message": "expected expression"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 31,
-        "line": 87,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 38,
-        "line": 87,
-        "message": "expected expression"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 420,
-    "complexity_score": 331,
+    "complexity_score": 278,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 13,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 176,
-    "suspect_count": 14,
+    "pseudocode_lines": 163,
+    "suspect_count": 11,
     "suspect_types": [
-      "pointer_cast",
-      "stack_param",
-      "unresolved_funcptr"
+      "stack_param"
     ],
-    "total_lines": 596
+    "total_lines": 583
   },
   "cross_references": [
     {
@@ -397,48 +370,24 @@
       "type": "stack_param"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 52,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uVar1 = *(uint *)((int)g_CDemonSetPtr->actors + iVar5);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 69,
+      "line": 66,
       "match": "in_stack_00000008",
       "severity": "moderate",
-      "text": "fVar2 = in_stack_00000008 / (0.3f * (float)0.5) + (float)this_ptr->unk3;",
+      "text": "fVar2 = in_stack_00000008 / (0.3f * (float)0.5) + this_ptr->aim_weight;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 73,
+      "line": 70,
       "match": "in_stack_00000008",
       "severity": "moderate",
-      "text": "fVar2 = (float)this_ptr->unk3 - in_stack_00000008 / 0.3f;",
+      "text": "fVar2 = this_ptr->aim_weight - in_stack_00000008 / 0.3f;",
       "type": "stack_param"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 77,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar5 = (**(code **)(*(int *)(*(int *)(this_ptr->unk1 + 8) + 0x154) + 0x4c))",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 80,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "pfVar7 = (float *)(**(code **)(*(int *)(*(int *)(this_ptr->unk1 + 8) + 0x154) + 0x14))",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 113,
+      "line": 110,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "fVar2 = in_stack_00000008 / 0.3f;",
@@ -446,23 +395,23 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 121,
+      "line": 118,
       "match": "in_stack_00000008",
       "severity": "moderate",
-      "text": "(float)2 * in_stack_00000008 + *(float *)(this_ptr->unk1 + 0xc);",
+      "text": "(float)2 * in_stack_00000008 + this_ptr->target_aim_pitch;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 136,
+      "line": 127,
       "match": "in_stack_00000008",
       "severity": "moderate",
-      "text": "fVar2 = in_stack_00000008 / 0.3f + (float)this_ptr->unk3;",
+      "text": "fVar2 = in_stack_00000008 / 0.3f + this_ptr->aim_weight;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 158,
+      "line": 146,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "fVar2 = in_stack_00000008 * (float)3.1415926535000001 * (float)1.5;",

@@ -46,19 +46,19 @@ void __cdecl core_set_cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990(CDemonSe
   local_20.x = local_38.x + (float)0.261799387791667;
   g_CDemonLightInstance.volumetric_enabled = 0;
   local_20.y = local_38.y + (this_ptr_00->base).base.orient.vec.y;
-  if ((int *)&stack0x00000000 != &g_CDemonLightInstance.base.base.rotation_matrix.m[2].z) {
+  if ((float *)&stack0x00000000 != &g_CDemonLightInstance.base.base.rotation_matrix.m[2].z) {
     g_CDemonLightInstance.base.base.position.x = (int)local_2c.x;
     g_CDemonLightInstance.base.base.position.y = (int)local_2c.y;
     g_CDemonLightInstance.base.base.position.z = (int)local_2c.z;
   }
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
-            ((CMatrix3x3f *)&(local_14->base).base.rotation_matrix,&local_20);
+            (&(local_14->base).base.rotation_matrix,&local_20);
   (local_14->base).max_distance = 32.0;
-  (local_14->base).base.projection_scale = 32.0;
+  (local_14->base).base.focal_length = 32.0;
   core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0(local_14,1.0);
   this_ptr_01 = local_14;
   iVar3 = g_UseExternalRenderer;
-  if ((int *)&stack0x00000000 != &g_CDemonCameraInstance.base.rotation_matrix.m[2].z) {
+  if ((float *)&stack0x00000000 != &g_CDemonCameraInstance.base.rotation_matrix.m[2].z) {
     g_CDemonCameraInstance.base.position.x = (int)local_2c.x;
     g_CDemonCameraInstance.base.position.y = (int)local_2c.y;
     g_CDemonCameraInstance.base.position.z = (int)local_2c.z;

@@ -5,15 +5,15 @@
 
 // Original: crt_iostream.cpp_istream_get_FUN_005ff245
 // Address: 005ff245
-istream * __cdecl istream::get(istream *this_ptr,char *c);
+_istream * __cdecl istream::get(_istream *this_ptr,char *c);
 
 // Original: crt_iostream.cpp_ostream_put_FUN_005ff2d7
 // Address: 005ff2d7
-ostream * __cdecl ostream::put(ostream *this_ptr,int character);
+_ostream * __cdecl ostream::put(_ostream *this_ptr,int character);
 
 // Original: crt_iostream.cpp_ostream_ctor_FUN_006061a2
 // Address: 006061a2
-ostream * __cdecl ostream::ctor(ostream *this_ptr,uint c1);
+_ostream * __cdecl ostream::ctor(_ostream *this_ptr,uint c1);
 
 // Original: crt_iostream.cpp_ostream_destructor_thunk_FUN_006061e4
 // Address: 006061e4
@@ -25,7 +25,7 @@ ios * __cdecl ios::ctor(ios *this_ptr);
 
 // Original: crt_iostream.cpp_ostream_dtor_FUN_00606231
 // Address: 00606231
-ostream * __cdecl ostream::dtor(ostream *this_ptr,uint flags);
+_ostream * __cdecl ostream::dtor(_ostream *this_ptr,uint flags);
 
 // Original: crt_iostream.cpp_ios_dtor_FUN_0060632c
 // Address: 0060632c
@@ -33,7 +33,7 @@ ios * __cdecl ios::dtor(ios *this_ptr,uint flags);
 
 // Original: crt_iostream.cpp_istream_ctor_FUN_00606376
 // Address: 00606376
-istream * __cdecl istream::ctor(istream *this_ptr,uint c1);
+_istream * __cdecl istream::ctor(_istream *this_ptr,uint c1);
 
 // Original: crt_iostream.cpp_istream_destructor_thunk_from_ios_FUN_006063c9
 // Address: 006063c9
@@ -41,15 +41,15 @@ void __cdecl istream::destructor_thunk_from_ios(ios *this_ptr,int dtor_flags);
 
 // Original: crt_iostream.cpp_istream_dtor_FUN_006063e1
 // Address: 006063e1
-istream * __cdecl istream::dtor(istream *this_ptr,uint flags);
+_istream * __cdecl istream::dtor(_istream *this_ptr,uint flags);
 
 // Original: crt_iostream.cpp_streambuf_do_sputn_FUN_00606780
 // Address: 00606780
 int __watcallStack streambuf::do_sputn(streambuf *buffer,void *input_buffer,SIZE_T bytes_to_write);
 
-// Original: crt_iostream.cpp_streambuf_constructor_FUN_0060b7c2
+// Original: crt_iostream.cpp_streambuf_ctor_FUN_0060b7c2
 // Address: 0060b7c2
-streambuf * __watcallStack streambuf::constructor(streambuf *this_ptr);
+streambuf * __cdecl streambuf::ctor(streambuf *this_ptr);
 
 // Original: crt_iostream.cpp_streambuf_initBuffer_FUN_0060b815
 // Address: 0060b8da

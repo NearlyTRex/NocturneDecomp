@@ -336,7 +336,7 @@ section .text
     PUSH EAX                            ; 004cc69b | g_CDemonRendererInstance
     MOV word ptr [EBX + 0x76],CX        ; 004cc69c
     CALL engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0 ; 004cc6a0
-        ;   XREF to: 0048aeb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info, int render_flags)
+        ;   XREF to: 0048aeb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, int render_flags)
     ADD ESP,0xc                         ; 004cc6a5
     JMP 0x004cc58d                      ; 004cc6a8
         ;   XREF to: 004cc58d (UNCONDITIONAL_JUMP)  ; LAB_004cc58d

@@ -15,9 +15,9 @@ struct SScriptXRef;
 typedef struct CScript {
     int script_pause_flag; // 0x0
     struct CDemonActor* who_is_speaking; // 0x4
-    int unk1; // 0x8
+    struct CDemonActor* last_speaker; // 0x8
     struct CDemonActor* focus_actor; // 0xc
-    int unk2; // 0x10
+    int focus_actor_changed; // 0x10
     int focus_actor_locked; // 0x14
     int script_state; // 0x18
     int dialog_entry_count; // 0x1c

@@ -121,13 +121,13 @@
   },
   "complexity": {
     "assembly_lines": 1095,
-    "complexity_score": 1045,
+    "complexity_score": 1025,
     "cross_reference_count": 2,
     "function_call_count": 21,
     "global_count": 97,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 410,
-    "suspect_count": 62,
+    "suspect_count": 60,
     "suspect_types": [
       "stack_param",
       "stack_ref",
@@ -805,26 +805,26 @@
     },
     {
       "addr": "02d830a8",
-      "name": "DAT_02d830a8",
-      "type": "undefined1",
+      "name": "g_ChapterDisplayName",
+      "type": "char[256]",
       "value": null
     },
     {
       "addr": "02d830a9",
       "name": "DAT_02d830a9",
-      "type": "undefined1",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "02d830aa",
       "name": "DAT_02d830aa",
-      "type": "undefined1",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "02d830ab",
       "name": "DAT_02d830ab",
-      "type": "undefined1",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -1045,14 +1045,6 @@
       "severity": "moderate",
       "text": "char *in_stack_fffff914;",
       "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 80,
-      "match": "DAT_02d830a8",
-      "severity": "mild",
-      "text": "DAT_02d830a8 = 0;",
-      "type": "undefined_data"
     },
     {
       "description": "Direct stack address reference",
@@ -1509,14 +1501,6 @@
       "severity": "moderate",
       "text": "shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffff914,0);",
       "type": "stack_ref"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 367,
-      "match": "DAT_02d830a8",
-      "severity": "mild",
-      "text": "pcVar4 = &DAT_02d830a8;",
-      "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",

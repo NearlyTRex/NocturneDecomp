@@ -47,14 +47,14 @@ void __cdecl core_dcamera_cpp_renderCoronaProjectedTextureScanline_FUN_004507a0(
                           (local_3c >> 0x10) * g_CurrentLightForCorona->shadow_map_width],
           (int)uVar1 < g_CoronaMaxDepth && (local_38 < (int)(uVar1 + 0x80))))) {
         auStack_30[2] =
-             g_CurrentLightForCorona->teture_coord_mask &
+             g_CurrentLightForCorona->texture_coord_mask &
              (int)in_stack_ffffffc0 >> ((byte)g_CurrentLightForCorona->shadow_x_shift & 0x1f);
         *local_18 = *local_18 +
                     (char)((int)((g_CoronaMaxDepth - uVar1) *
                                 (uint)g_CurrentLightForCorona->precomputed_lighting_textures
                                       [((local_3c >>
                                          ((byte)g_CurrentLightForCorona->shadow_y_shift & 0x1f) &
-                                        g_CurrentLightForCorona->teture_coord_mask) <<
+                                        g_CurrentLightForCorona->texture_coord_mask) <<
                                        ((byte)g_CurrentLightForCorona->texture_row_shift & 0x1f)) +
                                        auStack_30[2]]) >> ((byte)g_CoronaDepthShift & 0x1f));
       }

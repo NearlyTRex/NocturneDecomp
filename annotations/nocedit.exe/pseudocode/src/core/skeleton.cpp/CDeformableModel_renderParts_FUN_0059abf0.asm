@@ -599,7 +599,7 @@ section .text
     MOV EDX,dword ptr [0x006703ec]      ; 0059b37a | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EDX                            ; 0059b380 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_renderBasicTexturedVariant_FUN_0048a8a0 ; 0059b381
-        ;   XREF to: 0048a8a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderBasicTexturedVariant_FUN_0048a8a0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info)
+        ;   XREF to: 0048a8a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderBasicTexturedVariant_FUN_0048a8a0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD ESP,0x8                         ; 0059b386
     MOV ECX,dword ptr [ESP + 0xec]      ; 0059b389
     ADD ECX,0x12                        ; 0059b390

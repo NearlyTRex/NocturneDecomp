@@ -2,11 +2,11 @@
 // Address: 00405a00
 // Address Range: [[00405a00, 00405a9c]]
 // Convention: __cdecl
-// Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonUVTextureEnable_FUN_00405a00(SMRGLHeaderPrimitive *polygon_info)
+// Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonUVTextureEnable_FUN_00405a00(SMRGLHeaderPrimitive *prim)
 
 #include "nocturne.h"
 
-SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonUVTextureEnable_FUN_00405a00(SMRGLHeaderPrimitive *polygon_info)
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonUVTextureEnable_FUN_00405a00(SMRGLHeaderPrimitive *prim)
 
 {
   if (g_MMXSupported == 0) {
@@ -26,11 +26,9 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonUVTextureEnable_FUN_00405
   g_RenderStateFlag2 = PREPROCESS_NONE;
   g_RenderStateFlags.dword = RENDER_TEXTURE_ENABLE;
   if (g_BypassClipping != 0) {
-    engine_3d_c_rasterizePolygon_FUN_004d1340
-              ((SRenderVertex **)(polygon_info + 1),(polygon_info->base).count);
+    engine_3d_c_rasterizePolygon_FUN_004d1340((SRenderVertex **)(prim + 1),(prim->base).count);
     return (SMRGLHeaderExtended *)&g_RenderResult;
   }
-  engine_clipper_c_clipAndRasterize_FUN_004371b0
-            ((polygon_info->base).count,(int *)(polygon_info + 1));
+  engine_clipper_c_clipAndRasterize_FUN_004371b0((prim->base).count,(int *)(prim + 1));
   return (SMRGLHeaderExtended *)&g_RenderResult;
 }

@@ -22,7 +22,7 @@
 ;   SFace[5000] g_CapturedFaces
 ;   undefined4 g_CapturedFaces[0].render_flags
 ;   undefined4 g_CapturedFaces[0].depth
-;   undefined4 g_CapturedFaces[0].indices.vertex_index_0
+;   undefined4 g_CapturedFaces[0].face_data.vertex_indices.vertex_index_0
 ;   undefined4 DAT_02c6d604
 ;   undefined4 DAT_02c6d608
 ;   undefined4 DAT_02c6d60c
@@ -93,9 +93,9 @@ section .text
         ;   Label: LAB_0048d93f
     SHL EDX,0x5                         ; 0048d945
     MOV ESI,EBX                         ; 0048d948
-    LEA EDI,[EDX + 0x2c6d600]           ; 0048d94a | g_CapturedFaces[0].indices.vertex_index_0
+    LEA EDI,[EDX + 0x2c6d600]           ; 0048d94a | g_CapturedFaces[0].face_data.vertex_indices.vertex_index_0
     MOV EAX,[0x02c6d5f0]                ; 0048d950 | g_CaptureTextureCount
-    MOVSD ES:EDI,ESI                    ; 0048d955 | g_CapturedFaces[0].indices.vertex_index_0
+    MOVSD ES:EDI,ESI                    ; 0048d955 | g_CapturedFaces[0].face_data.vertex_indices.vertex_index_0
     MOVSD ES:EDI,ESI                    ; 0048d956 | DAT_02c6d604
     MOVSD ES:EDI,ESI                    ; 0048d957 | DAT_02c6d608
     MOVSD ES:EDI,ESI                    ; 0048d958 | DAT_02c6d60c

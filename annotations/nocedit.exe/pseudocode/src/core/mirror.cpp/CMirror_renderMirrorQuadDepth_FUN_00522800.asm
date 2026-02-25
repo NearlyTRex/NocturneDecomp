@@ -167,7 +167,7 @@ section .text
     MOV dword ptr [ESP + 0x44],ECX      ; 00522986
     MOV dword ptr [ESP + 0x2c],EBP      ; 0052298a
     CALL engine_drender.cpp_CDemonRenderer_renderAlternativeDepth_FUN_0048a950 ; 0052298e
-        ;   XREF to: 0048a950 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderAlternativeDepth_FUN_0048a950(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info)
+        ;   XREF to: 0048a950 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderAlternativeDepth_FUN_0048a950(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
     MOV ESI,dword ptr [0x006703ec]      ; 00522993 | g_CDemonRendererPtr2
     ADD ESP,0x8                         ; 00522999
     ADD ESP,0x78                        ; 0052299c

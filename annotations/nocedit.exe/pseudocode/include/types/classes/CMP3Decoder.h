@@ -16,7 +16,7 @@ typedef struct CMP3Decoder {
     short decode_buffer[2304]; // 0x110
     CMemoryBitStream memory_bitstream; // 0x1310
     CFileBitStream file_bitstream; // 0x5320
-    int unk1; // 0x534c
+    int main_data_offset; // 0x534c
     float synthesis_v_buffer[2][1024]; // 0x5350
     int synthesis_buffer_index[2]; // 0x7350
     int layer3_scalefactors[45]; // 0x7358

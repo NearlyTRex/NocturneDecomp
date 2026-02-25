@@ -30,7 +30,7 @@ void __cdecl core_setedit_cpp_FUN_00577330(void)
     iVar2 = local_14 * 0x100 + in_stack_00000004 * 0x3000;
     do {
       puVar1 = puVar1 + 1;
-      uVar5 = *(uint *)(&DAT_03365cc0 + iVar2);
+      uVar5 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar2);
       uVar4 = uVar5 >> 8 & 0xff;
       uVar3 = uVar5 >> 0x10 & 0xff;
       if (g_BitsPerPixel == 0x20) {

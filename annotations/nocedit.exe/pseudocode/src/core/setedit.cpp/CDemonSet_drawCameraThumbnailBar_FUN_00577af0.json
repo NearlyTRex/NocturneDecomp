@@ -1,0 +1,581 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 541,
+    "complexity_score": 271,
+    "cross_reference_count": 4,
+    "function_call_count": 9,
+    "global_count": 18,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 206,
+    "suspect_count": 6,
+    "suspect_types": [
+      "pointer_cast"
+    ],
+    "total_lines": 747
+  },
+  "cross_references": [
+    {
+      "addr": "005390f0",
+      "from_addr": "0053956e",
+      "name": "core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0057ae50",
+      "from_addr": "0057b0aa",
+      "name": "core_setedit.cpp_CDemonSet_positionLight_FUN_0057ae50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0057e7c0",
+      "from_addr": "0057ea20",
+      "name": "core_setedit.cpp_CDemonSet_showCameraEditor_FUN_0057e7c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00580730",
+      "from_addr": "00580a39",
+      "name": "core_setedit.cpp_CDemonSet_showFogEditor_FUN_00580730",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00577af0",
+    "address_range": [
+      [
+        "00577af0",
+        "00578193"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_setedit.cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0",
+    "signature": "int __cdecl core_setedit_cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0(CDemonSet *this_ptr,int *camera_flags)"
+  },
+  "function_calls": [
+    {
+      "addr": "005ff060",
+      "is_variadic": false,
+      "name": "crt_stdlib.c__atexit_FUN_005ff060"
+    },
+    {
+      "addr": "00403120",
+      "is_variadic": false,
+      "name": "engine_2d.c_drawRect_FUN_00403120"
+    },
+    {
+      "addr": "00402130",
+      "is_variadic": false,
+      "name": "engine_2d.c_drawTextXY_FUN_00402130"
+    },
+    {
+      "addr": "004d1170",
+      "is_variadic": false,
+      "name": "engine_font.cpp_packPixelNative_FUN_004d1170"
+    },
+    {
+      "addr": "004d1110",
+      "is_variadic": false,
+      "name": "engine_font.cpp_packPixelScaled_FUN_004d1110"
+    },
+    {
+      "addr": "004a5ae0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEdScrollBar_ctor_FUN_004a5ae0"
+    },
+    {
+      "addr": "004a5fc0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEdScrollBar_handleInput_FUN_004a5fc0"
+    },
+    {
+      "addr": "004a5c10",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEdScrollBar_render_FUN_004a5c10"
+    },
+    {
+      "addr": "004a5b60",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEdScrollBar_setPosition_FUN_004a5b60"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00679394",
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
+    },
+    {
+      "addr": "00679398",
+      "name": "g_WindowHeight",
+      "type": "int",
+      "value": "0xc8"
+    },
+    {
+      "addr": "0067939c",
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
+    },
+    {
+      "addr": "006816b0",
+      "name": "g_ThumbnailScrollBarDestructorNode",
+      "type": "WatcomStaticDestructorNode",
+      "value": null
+    },
+    {
+      "addr": "02cf6a8c",
+      "name": "g_MouseX",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02cf6a90",
+      "name": "g_MouseY",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02cf6a94",
+      "name": "g_MouseButtonFlags",
+      "type": "_BIT_INTEGER32",
+      "value": null
+    },
+    {
+      "addr": "02cf6a9c",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1200]",
+      "value": null
+    },
+    {
+      "addr": "02cf6aa0",
+      "name": "g_ScreenBufferArray[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf9020",
+      "name": "g_ColorCubeLookup",
+      "type": "uchar[32768]",
+      "value": null
+    },
+    {
+      "addr": "02d02570",
+      "name": "g_ActiveRenderColor",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03364ce0",
+      "name": "g_ThumbnailScrollBar",
+      "type": "CEdScrollBar",
+      "value": null
+    },
+    {
+      "addr": "03364ce4",
+      "name": "g_ThumbnailScrollBar.current_value",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03364ce8",
+      "name": "g_ThumbnailScrollBar.max_value",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03364d14",
+      "name": "g_ThumbnailScrollBarInitFlag",
+      "type": "uchar",
+      "value": null
+    },
+    {
+      "addr": "03365cc0",
+      "name": "g_ThumbnailImageBuffer",
+      "type": "uint[250][3072]",
+      "value": null
+    },
+    {
+      "addr": "03365cc4",
+      "name": "DAT_03365cc4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03365dc0",
+      "name": "DAT_03365dc0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.1946902654867255,
+    "instruction_count": 452,
+    "opcode_distribution": {
+      "BOOL_AND": 2,
+      "BOOL_NEGATE": 125,
+      "BOOL_OR": 8,
+      "BOOL_XOR": 2,
+      "BRANCH": 7,
+      "CALL": 9,
+      "CBRANCH": 40,
+      "COPY": 364,
+      "INT_ADD": 232,
+      "INT_AND": 576,
+      "INT_CARRY": 43,
+      "INT_EQUAL": 324,
+      "INT_LEFT": 18,
+      "INT_LESS": 41,
+      "INT_MULT": 8,
+      "INT_NOTEQUAL": 80,
+      "INT_OR": 112,
+      "INT_RIGHT": 18,
+      "INT_SBORROW": 45,
+      "INT_SCARRY": 53,
+      "INT_SDIV": 2,
+      "INT_SEXT": 8,
+      "INT_SLESS": 173,
+      "INT_SREM": 2,
+      "INT_SRIGHT": 12,
+      "INT_SUB": 103,
+      "INT_XOR": 18,
+      "INT_ZEXT": 6,
+      "LOAD": 112,
+      "POPCOUNT": 148,
+      "RETURN": 2,
+      "STORE": 99,
+      "SUBPIECE": 8
+    },
+    "pcode_op_count": 2800
+  },
+  "stack_frame": {
+    "frame_size": 172,
+    "local_size": 164,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_a0",
+        "offset": -160,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_9c",
+        "offset": -156,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_98",
+        "offset": -152,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_94",
+        "offset": -148,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_90",
+        "offset": -144,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8c",
+        "offset": -140,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_88",
+        "offset": -136,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_84",
+        "offset": -132,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_80",
+        "offset": -128,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_7c",
+        "offset": -124,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_78",
+        "offset": -120,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_74",
+        "offset": -116,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_70",
+        "offset": -112,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_6c",
+        "offset": -108,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_68",
+        "offset": -104,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_64",
+        "offset": -100,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      },
+      {
+        "is_param": true,
+        "name": "camera_flags",
+        "offset": 8,
+        "size": 4,
+        "type": "int *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 112,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "puVar8 = (uchar *)(*(int *)((int)g_ScreenBufferArray + local_20) + iVar9);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 116,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "uVar4 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar10);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 133,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "(*(int *)((int)g_ScreenBufferArray + local_2c) + iVar9 * 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 137,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "uVar4 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar10);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 152,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "puVar5 = (uint *)(*(int *)((int)g_ScreenBufferArray + local_24) + iVar9 * 4)",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 157,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "uVar4 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar10);",
+      "type": "pointer_cast"
+    }
+  ]
+}

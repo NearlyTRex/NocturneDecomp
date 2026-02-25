@@ -29,7 +29,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_drender.cpp_CDemonRenderer_renderPremiumVariant_FUN_0048b320",
-    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_renderPremiumVariant_FUN_0048b320(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info)"
+    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_renderPremiumVariant_FUN_0048b320(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim)"
   },
   "function_calls": [
     {
@@ -137,7 +137,7 @@
       },
       {
         "is_param": true,
-        "name": "polygon_info",
+        "name": "prim",
         "offset": 8,
         "size": 4,
         "type": "SMRGLHeaderPrimitive *"
@@ -166,7 +166,7 @@
       "line": 17,
       "match": "(SMRGLHeaderPrimitive *)((int)",
       "severity": "mild",
-      "text": "} while (pSVar3 != (SMRGLHeaderPrimitive *)((int)&(polygon_info->base).count + 2));",
+      "text": "} while (pSVar3 != (SMRGLHeaderPrimitive *)((int)&(prim->base).count + 2));",
       "type": "pointer_cast"
     },
     {
@@ -174,7 +174,7 @@
       "line": 20,
       "match": "(ushort *)((int)",
       "severity": "mild",
-      "text": "g_VertexIndexBuffer[1] = (int)*(ushort *)((int)&(polygon_info->base).type + 2);",
+      "text": "g_VertexIndexBuffer[1] = (int)*(ushort *)((int)&(prim->base).type + 2);",
       "type": "pointer_cast"
     }
   ]

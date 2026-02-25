@@ -21,8 +21,8 @@
 ;   CEventList* g_CEventListPtr = 02d05310
 ;   CEventList g_CEventListInstance
 ;   CDemonLight*[96] g_MasterLightList
-;   int g_ActiveLightCount
-;   CDemonLight*[96] g_ActiveLightList
+;   int g_SpotLightCount
+;   CDemonLight*[96] g_SpotLightList
 ;   undefined4 DAT_03276f38
 ;
 ; Called Functions:
@@ -76,13 +76,13 @@ section .text
     TEST EBX,EBX                        ; 0056f9a2
     JZ 0x0056f98a                       ; 0056f9a4
         ;   XREF to: 0056f98a (CONDITIONAL_JUMP)  ; LAB_0056f98a
-    MOV ECX,dword ptr [0x03276f30]      ; 0056f9a6 | g_ActiveLightCount
+    MOV ECX,dword ptr [0x03276f30]      ; 0056f9a6 | g_SpotLightCount
     MOV dword ptr [ESP + 0x100],EAX     ; 0056f9ac
     TEST ECX,ECX                        ; 0056f9b3
     JLE 0x0056f9d5                      ; 0056f9b5
         ;   XREF to: 0056f9d5 (CONDITIONAL_JUMP)  ; LAB_0056f9d5
     LEA EDX,[ECX*0x4 + 0x0]             ; 0056f9b7
-    CMP EBX,dword ptr [EAX + 0x3276f34] ; 0056f9be | g_ActiveLightList | DAT_03276f38
+    CMP EBX,dword ptr [EAX + 0x3276f34] ; 0056f9be | g_SpotLightList | DAT_03276f38
         ;   Label: LAB_0056f9be
     JNZ 0x0056fa91                      ; 0056f9c4
         ;   XREF to: 0056fa91 (CONDITIONAL_JUMP)  ; LAB_0056fa91

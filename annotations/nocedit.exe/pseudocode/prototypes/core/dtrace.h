@@ -99,13 +99,13 @@ float __cdecl CDemonRaytrace::getGroundHeight(CDemonRaytrace *this_ptr,CVector3f
 // Address: 00496950
 float __cdecl CDemonRaytrace::cylinderGroundCheck(CDemonRaytrace *this_ptr,CVector3f *pos,float radius,int *hit_flag,CVector3f *normal_out);
 
-// Original: core_dtrace.cpp_initCapsuleCollisionData_FUN_00496b90
+// Original: core_dtrace.cpp_initIntersectionCylinder_FUN_00496b90
 // Address: 00496b90
-void __cdecl initCapsuleCollisionData(SCapsuleCollision *out_data,float start_x,float start_z,float dir_x,float dir_z,float radius,void *user_data1,void *user_data2);
+void __cdecl initIntersectionCylinder(SIntersectXZCylinder *this_ptr,float start_x,float start_z,float dir_x,float dir_z,float radius,float bottom_y,float top_y);
 
-// Original: core_dtrace.cpp_CDemonRaytrace_testCapsuleCollision_FUN_00496c60
+// Original: core_dtrace.cpp_CDemonRaytrace_testCylinderCollision_FUN_00496c60
 // Address: 00496c60
-void __cdecl CDemonRaytrace::testCapsuleCollision(CDemonRaytrace *this_ptr,SCapsuleCollision *capsule_data);
+void __cdecl CDemonRaytrace::testCylinderCollision(CDemonRaytrace *this_ptr,SIntersectXZCylinder *cylinder);
 
 // Original: core_dtrace.cpp_CDemonRaytrace_renderGridCube_FUN_00496e70
 // Address: 00496e70

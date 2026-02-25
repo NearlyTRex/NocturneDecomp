@@ -49,10 +49,10 @@ void __cdecl core_box_cpp_CBox_updateTransform_FUN_0041e0e0(CBox *this_ptr,CVect
   fVar5 = (this_ptr->extents).z;
   fVar6 = (this_ptr->extents).z;
   fVar7 = (this_ptr->extents).y;
-  this_ptr->mass = (int)(speed * fVar11);
+  this_ptr->mass = speed * fVar11;
   fVar10 = (float)0.083333333333333301;
-  fVar8 = (float)this_ptr->mass;
-  fVar9 = (float)this_ptr->mass;
+  fVar8 = this_ptr->mass;
+  fVar9 = this_ptr->mass;
   (this_ptr->moment_of_inertia).x = speed * fVar11 * fVar10 * (fVar5 * fVar5 + fVar1 * fVar1);
   (this_ptr->moment_of_inertia).y = fVar8 * fVar10 * (fVar6 * fVar6 + fVar2 * fVar2);
   (this_ptr->moment_of_inertia).z = fVar9 * fVar10 * (fVar7 * fVar7 + fVar3 * fVar4);

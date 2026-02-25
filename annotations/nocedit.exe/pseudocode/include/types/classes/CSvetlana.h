@@ -17,7 +17,6 @@ typedef struct CSvetlana {
     uint sfx_handle; // 0x9f8bc
     CVector3f head_euler_angles; // 0x9f8c0
     float head_blend_weight; // 0x9f8cc
-    int part_l_blade; // 0x9f8d0
-    int part_r_blade; // 0x9f8d4
+    int part_indices[2]; // 0x9f8d0
 } CSvetlana;
 

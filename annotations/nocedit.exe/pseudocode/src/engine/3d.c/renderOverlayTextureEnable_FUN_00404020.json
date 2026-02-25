@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 52,
+    "complexity_score": 51,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 10,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 37,
+    "pseudocode_lines": 36,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 124
+    "total_lines": 123
   },
   "cross_references": [],
   "function": {
@@ -29,7 +29,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_3d.c_renderOverlayTextureEnable_FUN_00404020",
-    "signature": "void * __cdecl engine_3d_c_renderOverlayTextureEnable_FUN_00404020(SMRGLHeaderPrimitive *polygon_info)"
+    "signature": "void * __cdecl engine_3d_c_renderOverlayTextureEnable_FUN_00404020(SMRGLHeaderPrimitive *prim)"
   },
   "function_calls": [
     {
@@ -153,7 +153,7 @@
     "variables": [
       {
         "is_param": true,
-        "name": "polygon_info",
+        "name": "prim",
         "offset": 4,
         "size": 4,
         "type": "SMRGLHeaderPrimitive *"
@@ -163,10 +163,10 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 39,
+      "line": 38,
       "match": "(void *)((int)",
       "severity": "mild",
-      "text": "return (void *)((int)&polygon_info[1].base + (polygon_info->base).count * 0xc);",
+      "text": "return (void *)((int)&prim[1].base + (prim->base).count * 0xc);",
       "type": "pointer_cast"
     }
   ]

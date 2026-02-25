@@ -2,11 +2,11 @@
 // Address: 0043e530
 // Address Range: [[0043e530, 0043e6b8]]
 // Convention: __cdecl
-// Signature: int __cdecl support_codec_cpp_readBitsFromStream_FUN_0043e530(SBitBuffer *bit_buffer,int bit_count,_FILE *file_stream,int *bytes_remaining)
+// Signature: int __cdecl support_codec_cpp_readBitsFromStream_FUN_0043e530(SBitBuffer *bit_buffer,int bit_count,_istream *istream,int *bytes_remaining)
 
 #include "nocturne.h"
 
-int __cdecl support_codec_cpp_readBitsFromStream_FUN_0043e530(SBitBuffer *bit_buffer,int bit_count,_FILE *file_stream,int *bytes_remaining)
+int __cdecl support_codec_cpp_readBitsFromStream_FUN_0043e530(SBitBuffer *bit_buffer,int bit_count,_istream *istream,int *bytes_remaining)
 
 {
   int iVar1;
@@ -40,8 +40,9 @@ int __cdecl support_codec_cpp_readBitsFromStream_FUN_0043e530(SBitBuffer *bit_bu
       if (iVar3 < 8) {
         if (0 < iVar3) {
           if ((*bytes_remaining < 1) ||
-             (crt_iostream_cpp_istream_get_FUN_005ff245((istream *)file_stream,(char *)local_18),
-             *(int *)((int)&file_stream->_handle + *(int *)(file_stream->_ptr + 4)) != 0)) {
+             (crt_iostream_cpp_istream_get_FUN_005ff245(istream,(char *)local_18),
+             *(int *)((istream->_ios).padding +
+                     ((istream->_istream_core).layout_info)->offset_to_base + -0x21) != 0)) {
             uVar2 = 0xffffffff;
           }
           else {
@@ -57,15 +58,15 @@ int __cdecl support_codec_cpp_readBitsFromStream_FUN_0043e530(SBitBuffer *bit_bu
           bit_count._0_1_ = (byte)iVar3;
           uVar5 = uVar5 | (~(-1 << ((byte)bit_count & 0x1f)) & bit_buffer->accumulated_bits) <<
                           ((byte)iVar4 & 0x1f);
-          bit_buffer->accumulated_bits =
-               (uint)bit_buffer->accumulated_bits >> ((byte)bit_count & 0x1f);
+          bit_buffer->accumulated_bits = bit_buffer->accumulated_bits >> ((byte)bit_count & 0x1f);
           bit_buffer->bits_available = 8 - iVar3;
         }
         return uVar5;
       }
       if ((*bytes_remaining < 1) ||
-         (crt_iostream_cpp_istream_get_FUN_005ff245((istream *)file_stream,(char *)local_14),
-         *(int *)((int)&file_stream->_handle + *(int *)(file_stream->_ptr + 4)) != 0)) break;
+         (crt_iostream_cpp_istream_get_FUN_005ff245(istream,(char *)local_14),
+         *(int *)((istream->_ios).padding +
+                 ((istream->_istream_core).layout_info)->offset_to_base + -0x21) != 0)) break;
       *bytes_remaining = *bytes_remaining + -1;
       uVar5 = uVar5 | (uint)local_14[0] << ((byte)iVar4 & 0x1f);
       iVar3 = iVar3 + -8;

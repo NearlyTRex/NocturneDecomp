@@ -17,10 +17,10 @@
 ;   int g_DefaultStreamBufferSize = 0x1a4
 ;
 ; Called Functions:
+;   crt_fstream.cpp_istream_seekg_FUN_00600ee4
 ;   crt_fstream.cpp_openFile_FUN_00600e85
 ;   crt_stdio.c_clear_and_preserve_state_FUN_00600e64
 ;   crt_stdio.c_fflush_FUN_00600e29
-;   crt_unknown.c_FUN_00600ee4
 ;   crt_watcom.c__mkdir_FUN_00600e10
 ;   engine_dosio.c_findFile_FUN_00481760
 ;   engine_dosio.c_getRelativeFilePath_FUN_004816c0
@@ -75,7 +75,7 @@ section .text
     PUSH EAX                            ; 00481bc1
     PUSH EBX                            ; 00481bc2
     CALL crt_fstream.cpp_openFile_FUN_00600e85 ; 00481bc3
-        ;   XREF to: 00600e85 (UNCONDITIONAL_CALL)  ; void crt_fstream.cpp_openFile_FUN_00600e85(ifstream * stream_obj, char * filename, int open_mode, SIZE_T buffer_size)
+        ;   XREF to: 00600e85 (UNCONDITIONAL_CALL)  ; void crt_fstream.cpp_openFile_FUN_00600e85(void * stream_obj, char * filename, int open_mode, SIZE_T buffer_size)
     ADD ESP,0x10                        ; 00481bc8
     ADD ESP,0x214                       ; 00481bcb
         ;   Label: LAB_00481bcb
@@ -100,7 +100,7 @@ section .text
     PUSH EAX                            ; 00481bf9
     PUSH EBX                            ; 00481bfa
     CALL crt_fstream.cpp_openFile_FUN_00600e85 ; 00481bfb
-        ;   XREF to: 00600e85 (UNCONDITIONAL_CALL)  ; void crt_fstream.cpp_openFile_FUN_00600e85(ifstream * stream_obj, char * filename, int open_mode, SIZE_T buffer_size)
+        ;   XREF to: 00600e85 (UNCONDITIONAL_CALL)  ; void crt_fstream.cpp_openFile_FUN_00600e85(void * stream_obj, char * filename, int open_mode, SIZE_T buffer_size)
     ADD ESP,0x10                        ; 00481c00
     MOV ESI,dword ptr [ESP + 0x200]     ; 00481c03
     TEST ESI,ESI                        ; 00481c0a
@@ -109,8 +109,8 @@ section .text
     PUSH ESI                            ; 00481c0e
     ADD EBX,0x44                        ; 00481c0f
     PUSH EBX                            ; 00481c12
-    CALL crt_unknown.c_FUN_00600ee4     ; 00481c13
-        ;   XREF to: 00600ee4 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00600ee4()
+    CALL crt_fstream.cpp_istream_seekg_FUN_00600ee4 ; 00481c13
+        ;   XREF to: 00600ee4 (UNCONDITIONAL_CALL)  ; _istream * crt_fstream.cpp_istream_seekg_FUN_00600ee4(void * this_ptr, int offset)
     ADD ESP,0x8                         ; 00481c18
     ADD ESP,0x214                       ; 00481c1b
     POP EBP                             ; 00481c21

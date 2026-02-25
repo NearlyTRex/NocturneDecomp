@@ -21,7 +21,7 @@
 ;   int g_TextureQualityLevel
 ;
 ; Called Functions:
-;   shape_design.c_initializeCramConfig_FUN_0046b6e0
+;   shape_design.c_initializeCram_FUN_0046b6e0
 ;
 ; *****************************************************************************
 
@@ -40,8 +40,8 @@ section .text
     MOV dword ptr [EBP + -0x8],EAX      ; 0046a8f7
     LEA EAX,[EBP + -0x7c]               ; 0046a8fa
     PUSH EAX                            ; 0046a8fd
-    CALL shape_design.c_initializeCramConfig_FUN_0046b6e0 ; 0046a8fe
-        ;   XREF to: 0046b6e0 (UNCONDITIONAL_CALL)  ; void shape_design.c_initializeCramConfig_FUN_0046b6e0(SCramConfig * cram_config)
+    CALL shape_design.c_initializeCram_FUN_0046b6e0 ; 0046a8fe
+        ;   XREF to: 0046b6e0 (UNCONDITIONAL_CALL)  ; void shape_design.c_initializeCram_FUN_0046b6e0(SCram * cram)
     ADD ESP,0x4                         ; 0046a903
     LEA EAX,[EBP + -0x7c]               ; 0046a906
     MOV dword ptr [EBP + -0x4],EAX      ; 0046a909

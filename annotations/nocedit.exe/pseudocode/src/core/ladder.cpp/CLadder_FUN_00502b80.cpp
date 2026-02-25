@@ -17,11 +17,11 @@ void __cdecl core_ladder_cpp_CLadder_FUN_00502b80(CLadder *this_ptr)
   CMatrix3x4f local_e4;
   CMatrix3x4f local_b4;
   CMatrix3x3f local_84;
-  uint local_58;
+  float local_58;
   CMatrix3x4f local_54;
   float local_24;
   float local_20;
-  uint local_1c;
+  float local_1c;
   CVector3f local_18;
   
   bVar5 = 0;
@@ -42,10 +42,10 @@ void __cdecl core_ladder_cpp_CLadder_FUN_00502b80(CLadder *this_ptr)
     local_24 = local_84.m[1].x;
     local_20 = local_84.m[2].y;
     local_1c = local_58;
-    if (&this_ptr->unk1 != &local_24) {
-      this_ptr->unk1 = local_84.m[1].x;
-      this_ptr->unk2 = local_84.m[2].y;
-      this_ptr->unk3 = local_58;
+    if (&this_ptr->relative_position != (CVector3f *)&local_24) {
+      (this_ptr->relative_position).x = local_84.m[1].x;
+      (this_ptr->relative_position).y = local_84.m[2].y;
+      (this_ptr->relative_position).z = local_58;
     }
     pCVar1 = core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&local_84,&local_18);
     if (&this_ptr->cached_euler_angles != pCVar1) {

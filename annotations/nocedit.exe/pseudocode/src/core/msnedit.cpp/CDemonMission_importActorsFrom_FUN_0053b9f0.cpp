@@ -76,8 +76,9 @@ void __cdecl core_msnedit_cpp_CDemonMission_importActorsFrom_FUN_0053b9f0(CDemon
           if (actor != (CDemonActor *)0x0) {
             (*((actor->vtable)._ub)->dtor)
                       (actor,2,local_448.base.item_count,local_448.base.capacity,
-                       (uint)local_448.base.data_array,(uint)local_448.base.vtable,local_448.unk1,
-                       local_448.unk3._0_4_,local_448.unk3._4_4_);
+                       (uint)local_448.base.data_array,(uint)local_448.base.vtable,
+                       local_448.tab_column_widths[0],local_448.tab_column_widths[1],
+                       local_448.tab_column_widths[2]);
           }
           goto LAB_0053bc0f;
         }
@@ -102,8 +103,9 @@ void __cdecl core_msnedit_cpp_CDemonMission_importActorsFrom_FUN_0053b9f0(CDemon
       g_CurrentDebugFilename = "..\\core\\msnedit.cpp";
       (*((actor->vtable)._ub)->dtor)
                 (actor,2,local_448.base.capacity,(uint)local_448.base.data_array,
-                 (uint)local_448.base.vtable,local_448.unk1,local_448.unk3._0_4_,
-                 local_448.unk3._4_4_,local_448.unk3._8_4_);
+                 (uint)local_448.base.vtable,local_448.tab_column_widths[0],
+                 local_448.tab_column_widths[1],local_448.tab_column_widths[2],
+                 local_448.tab_column_widths[3]);
     }
     else {
       local_448.base.item_count = (int)actor;
@@ -118,15 +120,9 @@ void __cdecl core_msnedit_cpp_CDemonMission_importActorsFrom_FUN_0053b9f0(CDemon
     }
   }
 LAB_0053bc0f:
-  local_448.unk3._12_4_ = local_448.unk3 + 0x14;
-  local_448.unk3[0x10] = '\0';
-  local_448.unk3[0x11] = '\0';
-  local_448.unk3[0x12] = '\0';
-  local_448.unk3[0x13] = '\0';
-  local_448.unk3[8] = '\x1b';
-  local_448.unk3[9] = -0x44;
-  local_448.unk3[10] = 'S';
-  local_448.unk3[0xb] = '\0';
-  shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)(local_448.unk3 + 0x14),0);
+  local_448.tab_column_widths[4] = (int)(local_448.tab_column_widths + 6);
+  local_448.tab_column_widths[5] = 0;
+  local_448.tab_column_widths[3] = 0x53bc1b;
+  shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)(local_448.tab_column_widths + 6),0);
   return;
 }

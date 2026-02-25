@@ -18,7 +18,7 @@ typedef struct CScat {
     struct CDemonActor* weapon_actor; // 0x1fbe8
     float aim_pitch; // 0x1fbec
     float aim_yaw; // 0x1fbf0
-    int unk; // 0x1fbf4
+    int dead; // 0x1fbf4
     struct CDemonActor* aim_target; // 0x1fbf8
     int aim_converged; // 0x1fbfc
 } CScat;

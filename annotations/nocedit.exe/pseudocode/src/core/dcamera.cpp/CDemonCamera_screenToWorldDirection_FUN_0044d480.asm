@@ -17,7 +17,7 @@
 ;
 ; XREF[2]:
 ;   core_msnedit.cpp_CDemonMission_FUN_0053c340 at 0053c3a5
-;   core_setedit.cpp_CDemonSet_FUN_00583170 at 00583fa6
+;   core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170 at 00583fa6
 ;
 ; *****************************************************************************
 

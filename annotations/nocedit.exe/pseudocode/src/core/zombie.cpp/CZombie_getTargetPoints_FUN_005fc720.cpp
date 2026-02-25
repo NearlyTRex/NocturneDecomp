@@ -25,7 +25,7 @@ int __cdecl core_zombie_cpp_CZombie_getTargetPoints_FUN_005fc720(CZombie *this_p
   int local_18;
   
   core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
-            (&(this_ptr->base).base.model,&local_30,this_ptr->bone_index_spine);
+            (&(this_ptr->base).base.model,&local_30,this_ptr->bone_indices[9]);
   if (&local_30 != out_points_array) {
     out_points_array->x = local_30.x;
     out_points_array->y = local_30.y;
@@ -37,8 +37,8 @@ int __cdecl core_zombie_cpp_CZombie_getTargetPoints_FUN_005fc720(CZombie *this_p
   do {
     switch((local_18 + (this_ptr->base).base.base.direction_hint) % 4) {
     case 0:
-      if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_index_larm] != 0) {
-        bone_index = this_ptr->bone_index_lupperarm;
+      if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[0]] != 0) {
+        bone_index = this_ptr->bone_indices[5];
         pCVar1 = &local_24;
 LAB_005fc7ac:
         pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
@@ -61,16 +61,16 @@ LAB_005fc82e:
       }
       break;
     case 1:
-      if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_index_rarm] != 0) {
-        bone_index = this_ptr->bone_index_rupperarm;
+      if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[2]] != 0) {
+        bone_index = this_ptr->bone_indices[6];
         pCVar1 = &local_54;
         goto LAB_005fc7ac;
       }
       break;
     case 2:
-      if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_index_head] != 0) {
+      if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[6]] != 0) {
         pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
-                           (this_ptr_00,&local_3c,this_ptr->bone_index_head);
+                           (this_ptr_00,&local_3c,this_ptr->bone_indices[0]);
         pCVar2 = out_points_array + iVar3;
         if (pCVar2 != pCVar1) {
           pCVar2->x = pCVar1->x;
@@ -81,9 +81,9 @@ LAB_005fc82e:
       }
       break;
     case 3:
-      if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_index_torso] != 0) {
+      if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[5]] != 0) {
         pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
-                           (this_ptr_00,&local_60,this_ptr->bone_index_spine2);
+                           (this_ptr_00,&local_60,this_ptr->bone_indices[10]);
         pCVar2 = out_points_array + iVar3;
         if (pCVar2 != pCVar1) {
           pCVar2->x = pCVar1->x;

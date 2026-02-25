@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void * __cdecl engine_3d_c_oldFunction_FUN_00403740(SMRGLHeaderPrimitive *primitive)
+; void * __cdecl engine_3d_c_oldFunction_FUN_00403740(SMRGLHeaderPrimitive *prim)
 ;
 ; Parameters:
-; SMRGLHeaderPrimitive * Stack[0x4]:4   primitive
+; SMRGLHeaderPrimitive * Stack[0x4]:4   prim
 ; Local Variables:
 ; undefined        Stack[-0x54]:1  local_54
 ;

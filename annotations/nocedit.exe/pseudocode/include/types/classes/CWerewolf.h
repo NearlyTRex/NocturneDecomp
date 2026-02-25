@@ -13,16 +13,11 @@ struct CDemonActor;
 typedef struct CWerewolf {
     CEnemy base; // 0x0
     EWerewolfType type; // 0xbebc
-    int bone_index; // 0xbec0
-    int bone_l_finger; // 0xbec4
-    int bone_r_finger; // 0xbec8
-    int bone_jaw; // 0xbecc
-    int bone_head; // 0xbed0
+    int bone_indices[5]; // 0xbec0
     int light_up_eyes; // 0xbed4
     uint sfx_handle; // 0xbed8
     float howl_cooldown; // 0xbedc
-    uint pain_sfx_handle; // 0xbee0
-    uint eat_sfx_handle; // 0xbee4
+    uint sfx_handles[2]; // 0xbee0
     struct CDemonActor* chain_anchor; // 0xbee8
     float chain_length; // 0xbeec
     struct CDemonActor* alpha1; // 0xbef0

@@ -7,5 +7,5 @@
 struct CCodec;
 
 // Function Definition: CCodec_processBuffer
-typedef int CCodec_processBuffer(struct CCodec* this_ptr, byte* param, int* param1, byte* param2, int* param3, int param4);
+typedef int CCodec_processBuffer(struct CCodec* this_ptr, char* input, int* input_length, char* output, int* output_length, int enable_callback);
 

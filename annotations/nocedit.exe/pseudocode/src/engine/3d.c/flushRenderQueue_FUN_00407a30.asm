@@ -42,7 +42,7 @@ section .text
     ADD EBX,0x4                         ; 00407a56
     INC ESI                             ; 00407a59
     CALL engine_3d.c_renderPolygonTextureWrappedPlaneMasked_FUN_00405b50 ; 00407a5a
-        ;   XREF to: 00405b50 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonTextureWrappedPlaneMasked_FUN_00405b50(SMRGLHeaderPrimitive * polygon_info)
+        ;   XREF to: 00405b50 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonTextureWrappedPlaneMasked_FUN_00405b50(SMRGLHeaderPrimitive * prim)
     MOV EBP,dword ptr [0x00820070]      ; 00407a5f | g_RenderFaceCount
     ADD ESP,0x4                         ; 00407a65
     CMP ESI,EBP                         ; 00407a68

@@ -1,31 +1,12 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 30,
-        "line": 47,
-        "message": "use of undeclared identifier 'DAT_03365cc0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 30,
-        "line": 67,
-        "message": "use of undeclared identifier 'DAT_03365cc0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 30,
-        "line": 90,
-        "message": "use of undeclared identifier 'DAT_03365cc0'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 246,
-    "complexity_score": 296,
+    "complexity_score": 291,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 14,
@@ -34,8 +15,7 @@
     "suspect_count": 18,
     "suspect_types": [
       "pointer_cast",
-      "stack_param",
-      "undefined_data"
+      "stack_param"
     ],
     "total_lines": 347
   },
@@ -128,8 +108,8 @@
     },
     {
       "addr": "03365cc0",
-      "name": "DAT_03365cc0",
-      "type": "undefined4",
+      "name": "g_ThumbnailImageBuffer",
+      "type": "uint[250][3072]",
       "value": null
     },
     {
@@ -406,12 +386,12 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Complex pointer cast",
       "line": 40,
-      "match": "DAT_03365cc0",
+      "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uVar1 = *(uint *)(&DAT_03365cc0 + iVar5);",
-      "type": "undefined_data"
+      "text": "uVar1 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar5);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
@@ -430,12 +410,12 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Complex pointer cast",
       "line": 60,
-      "match": "DAT_03365cc0",
+      "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uVar1 = *(uint *)(&DAT_03365cc0 + iVar5);",
-      "type": "undefined_data"
+      "text": "uVar1 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar5);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
@@ -454,12 +434,12 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Complex pointer cast",
       "line": 83,
-      "match": "DAT_03365cc0",
+      "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uVar1 = *(uint *)(&DAT_03365cc0 + iVar5);",
-      "type": "undefined_data"
+      "text": "uVar1 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar5);",
+      "type": "pointer_cast"
     }
   ]
 }

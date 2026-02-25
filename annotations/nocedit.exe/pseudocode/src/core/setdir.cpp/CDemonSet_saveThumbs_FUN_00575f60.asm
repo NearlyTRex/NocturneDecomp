@@ -8,8 +8,8 @@
 ;
 ; XREF[4]:
 ;   core_setdir.cpp_CDemonSet_refreshThumbs_FUN_00575b40 at 00575b64
-;   core_setedit.cpp_CDemonSet_FUN_00576da0 at 0057702e
 ;   core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80 at 00579421
+;   core_setedit.cpp_CDemonSet_loadOrBuildThumbnails_FUN_00576da0 at 0057702e
 ;   core_setedit.cpp_CDemonSet_save_FUN_0057a2a0 at 0057a8a1
 ;
 ; Called Functions:

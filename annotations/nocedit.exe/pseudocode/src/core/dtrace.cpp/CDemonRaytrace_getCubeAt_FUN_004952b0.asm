@@ -19,7 +19,7 @@
 ;   core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70 at 00495f6d
 ;   core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500 at 00497569
 ;   core_dtrace.cpp_CDemonRaytrace_setVoxelShadowBit_FUN_0049a160 at 0049a215
-;   core_dtrace.cpp_CDemonRaytrace_testCapsuleCollision_FUN_00496c60 at 00496dcc
+;   core_dtrace.cpp_CDemonRaytrace_testCylinderCollision_FUN_00496c60 at 00496dcc
 ;   ... and 2 more
 ;
 ; *****************************************************************************

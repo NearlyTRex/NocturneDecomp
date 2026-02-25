@@ -13,7 +13,7 @@ int __cdecl core_werewolf_cpp_CWerewolf_getTargetPoints_FUN_005f1df0(CWerewolf *
   CVector3f local_10;
   
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
-                     (&(this_ptr->base).base.model,&local_10,this_ptr->bone_index);
+                     (&(this_ptr->base).base.model,&local_10,this_ptr->bone_indices[0]);
   if (out_points_array == pCVar1) {
     return 1;
   }

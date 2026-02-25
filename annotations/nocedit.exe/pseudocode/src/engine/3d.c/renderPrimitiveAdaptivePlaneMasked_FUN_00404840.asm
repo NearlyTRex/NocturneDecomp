@@ -120,7 +120,7 @@ section .text
     MOV dword ptr [0x02d052a0],EDI      ; 00404939 | g_RenderStateFlags
     MOV [0x02d052a4],EAX                ; 0040493f | g_RenderStateFlag2
     CALL engine_3d.c_calculatePolygonLighting_FUN_00403a00 ; 00404944
-        ;   XREF to: 00403a00 (UNCONDITIONAL_CALL)  ; void engine_3d.c_calculatePolygonLighting_FUN_00403a00(SMRGLHeaderPrimitive * polygon_info)
+        ;   XREF to: 00403a00 (UNCONDITIONAL_CALL)  ; void engine_3d.c_calculatePolygonLighting_FUN_00403a00(SMRGLHeaderPrimitive * prim)
     ADD ESP,0x4                         ; 00404949
     JMP 0x00404896                      ; 0040494c
         ;   XREF to: 00404896 (UNCONDITIONAL_JUMP)  ; LAB_00404896

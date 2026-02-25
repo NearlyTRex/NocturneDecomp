@@ -16,7 +16,7 @@ typedef struct CFireball {
     int spawn_timer; // 0x48
     int rotation_angle1; // 0x4c
     int rotation_angle2; // 0x50
-    int padding; // 0x54
+    int dead; // 0x54
     uint sfx_handle; // 0x58
     CDemonGlobe light_globe; // 0x5c
 } CFireball;

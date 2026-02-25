@@ -9,7 +9,7 @@
 int __cdecl core_glass_cpp_CGlass_renderTransparent_FUN_004e9af0(CGlass *this_ptr)
 
 {
-  CVector3i *vertex_positions;
+  CVector3i *input_vertices;
   longlong lVar1;
   CDemonRenderer *this_ptr_00;
   int iVar2;
@@ -17,7 +17,7 @@ int __cdecl core_glass_cpp_CGlass_renderTransparent_FUN_004e9af0(CGlass *this_pt
   CVector3i *pCVar3;
   CVector3f *pCVar4;
   CGlass *pCVar5;
-  SMRGLHeaderPrimitive *polygon_info;
+  SMRGLHeaderPrimitive *prim;
   CBoundingBox3D local_24;
   int iStack_c;
   
@@ -31,8 +31,8 @@ int __cdecl core_glass_cpp_CGlass_renderTransparent_FUN_004e9af0(CGlass *this_pt
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
               (g_CDemonRendererPtr2,&this_ptr->glass_texture);
     pCVar4 = this_ptr->broken_vertices;
-    vertex_positions = this_ptr->render_vertices;
-    pCVar3 = vertex_positions;
+    input_vertices = this_ptr->render_vertices;
+    pCVar3 = input_vertices;
     if (0 < this_ptr->broken_vertex_count) {
       do {
         pCVar3->x = (int)ROUND(pCVar4->x * 256.0f);
@@ -43,15 +43,15 @@ int __cdecl core_glass_cpp_CGlass_renderTransparent_FUN_004e9af0(CGlass *this_pt
         pCVar3 = pCVar3 + 1;
       } while (iVar2 < this_ptr->broken_vertex_count);
     }
-    core_set_cpp_CDemonSet_rotateVertices_FUN_0056e7c0
-              (g_CDemonSetPtr,this_ptr->broken_vertex_count,&vertex_positions->x);
+    core_set_cpp_CDemonSet_rotateVerticies_FUN_0056e7c0
+              (g_CDemonSetPtr,this_ptr->broken_vertex_count,input_vertices);
     lVar1 = (longlong)(0xffff - (int)g_PerspectiveReciprocal) * (longlong)this_ptr->opacity;
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
               (g_CDemonRendererPtr2,(uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-    polygon_info = &this_ptr->broken_quads[0].base;
+    prim = &this_ptr->broken_quads[0].base;
     core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0
-              (g_CDemonSetPtr,this_ptr->broken_vertex_count,this_ptr->broken_polygon_count,
-               polygon_info,vertex_positions,4,(CVector3i *)0x0);
+              (g_CDemonSetPtr,this_ptr->broken_vertex_count,this_ptr->broken_polygon_count,prim,
+               input_vertices,4,(CVector3i *)0x0);
     iVar2 = 0;
     pCVar5 = this_ptr;
     if (0 < this_ptr->broken_polygon_count) {
@@ -63,8 +63,8 @@ int __cdecl core_glass_cpp_CGlass_renderTransparent_FUN_004e9af0(CGlass *this_pt
         pCVar5->broken_quads[0].base.surface_normal.C = 0;
         pCVar5->broken_quads[0].base.surface_normal.D = 0;
         engine_drender_cpp_CDemonRenderer_renderEnhancedQualityVariant_FUN_0048bdc0
-                  (this_ptr_00,polygon_info);
-        polygon_info = polygon_info + 3;
+                  (this_ptr_00,prim);
+        prim = prim + 3;
         pCVar5 = (CGlass *)((pCVar5->base).orient_matrix.m + 1);
       } while (iVar2 < this_ptr->broken_polygon_count);
     }

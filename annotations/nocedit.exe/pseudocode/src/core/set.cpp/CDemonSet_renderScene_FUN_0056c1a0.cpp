@@ -57,16 +57,16 @@ void __cdecl core_set_cpp_CDemonSet_renderScene_FUN_0056c1a0(CDemonSet *this_ptr
     iVar7 = 0;
     g_RenderingShadows = 0;
     core_dcamera_cpp_CDemonCamera_processCorona_FUN_00451130(&g_CDemonCameraInstance);
-    if (0 < g_ActiveLightCount) {
+    if (0 < g_SpotLightCount) {
       iVar8 = 0;
       do {
-        if ((*(CDemonLight **)((int)g_ActiveLightList + iVar8))->light_enabled_flag != 0) {
+        if ((*(CDemonLight **)((int)g_SpotLightList + iVar8))->light_enabled_flag != 0) {
           core_dcamera_cpp_CDemonCamera_addLightmapToCorona_FUN_00450e30
-                    (&g_CDemonCameraInstance,*(CDemonLight **)((int)g_ActiveLightList + iVar8));
+                    (&g_CDemonCameraInstance,*(CDemonLight **)((int)g_SpotLightList + iVar8));
         }
         iVar7 = iVar7 + 1;
         iVar8 = iVar8 + 4;
-      } while (iVar7 < g_ActiveLightCount);
+      } while (iVar7 < g_SpotLightCount);
     }
     local_28 = 0;
     if (0 < g_DynamicLightCount) {
@@ -255,14 +255,14 @@ void __cdecl core_set_cpp_CDemonSet_renderScene_FUN_0056c1a0(CDemonSet *this_ptr
   }
   iVar7 = 0;
   core_dcamera_cpp_CDemonCamera_endScene_FUN_0044cb80(&g_CDemonCameraInstance,0);
-  if (0 < g_ActiveLightCount) {
+  if (0 < g_SpotLightCount) {
     iVar8 = 0;
     do {
-      puVar1 = (uint *)((int)g_ActiveLightList + iVar8);
+      puVar1 = (uint *)((int)g_SpotLightList + iVar8);
       iVar8 = iVar8 + 4;
       iVar7 = iVar7 + 1;
       core_dlight_cpp_CDemonLight_restoreDirtyRegions_FUN_00472f80((CDemonLight *)*puVar1);
-    } while (iVar7 < g_ActiveLightCount);
+    } while (iVar7 < g_SpotLightCount);
   }
   iVar7 = local_3c;
   if (g_CGamePtr->profile_mode != 0) {

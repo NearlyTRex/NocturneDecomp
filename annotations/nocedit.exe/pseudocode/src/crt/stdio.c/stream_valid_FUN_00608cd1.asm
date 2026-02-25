@@ -8,8 +8,8 @@
 ; int              Stack[0x8]:4   operation_type
 ;
 ; XREF[3]:
+;   crt_fstream.cpp_istream_seekg_FUN_00600ee4 at 00600eec
 ;   crt_stdio.c_fgetc_buffered_FUN_0060d510 at 0060d519
-;   crt_unknown.c_FUN_00600ee4 at 00600eec
 ;   crt_unknown.c_FUN_0060d576 at 0060d584
 ;
 ; Called Functions:

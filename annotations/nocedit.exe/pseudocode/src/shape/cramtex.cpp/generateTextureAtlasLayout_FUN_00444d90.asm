@@ -76,9 +76,9 @@ section .text
     MOV EAX,dword ptr [ESP + 0x44]      ; 00444d97
     MOV [0x0084a854],EAX                ; 00444d9b | g_CramTextureCount
     MOV EAX,dword ptr [ESP + 0x4c]      ; 00444da0
-    MOV [0x0084a878],EAX                ; 00444da4 | g_CramAtlasWidth
+    MOV [0x0084a878],EAX                ; 00444da4 | g_CramAtlasDimension
     MOV EAX,dword ptr [ESP + 0x50]      ; 00444da9
-    MOV [0x0084a87c],EAX                ; 00444dad | g_CramAtlasHeight
+    MOV [0x0084a87c],EAX                ; 00444dad | g_CramPaddingSize
     MOV EAX,dword ptr [ESP + 0x58]      ; 00444db2
     MOV [0x0084a874],EAX                ; 00444db6 | g_CramAcceptableSize
     MOV EAX,dword ptr [ESP + 0x64]      ; 00444dbb
@@ -182,13 +182,13 @@ section .text
     INC dword ptr [0x0084a874]          ; 00444ef5 | g_CramAcceptableSize
     JMP 0x00444ee6                      ; 00444efb
         ;   XREF to: 00444ee6 (UNCONDITIONAL_JUMP)  ; LAB_00444ee6
-    MOV EAX,[0x0084a87c]                ; 00444efd | g_CramAtlasHeight
+    MOV EAX,[0x0084a87c]                ; 00444efd | g_CramPaddingSize
         ;   Label: LAB_00444efd
     IMUL EAX,dword ptr [0x0084a874]     ; 00444f02 | g_CramAcceptableSize
-    MOV EDX,dword ptr [0x0084a878]      ; 00444f09 | g_CramAtlasWidth
+    MOV EDX,dword ptr [0x0084a878]      ; 00444f09 | g_CramAtlasDimension
     DEC EDX                             ; 00444f0f
     ADD EDX,EAX                         ; 00444f10
-    MOV ECX,dword ptr [0x0084a878]      ; 00444f12 | g_CramAtlasWidth
+    MOV ECX,dword ptr [0x0084a878]      ; 00444f12 | g_CramAtlasDimension
     MOV EAX,EDX                         ; 00444f18
     SAR EDX,0x1f                        ; 00444f1a
     IDIV ECX                            ; 00444f1d
@@ -209,10 +209,10 @@ section .text
         ;   Label: LAB_00444f4c
     MOV EBP,dword ptr [ESP + 0x4]       ; 00444f54
         ;   Label: LAB_00444f54
-    MOV EDX,0x84a8b0                    ; 00444f58 | DAT_0084a8b0
+    MOV EDX,0x84a8b0                    ; 00444f58 | g_CramCandidateRectangles
     XOR EDI,EDI                         ; 00444f5d
     INC EBP                             ; 00444f5f
-    MOV dword ptr [0x00887940],EDX      ; 00444f60 | g_CramAlgorithmState
+    MOV dword ptr [0x00887940],EDX      ; 00444f60 | g_CramCandidateWriteCursor
     MOV EBX,dword ptr [0x0084a854]      ; 00444f66 | g_CramTextureCount
         ;   Label: LAB_00444f66
     INC EDI                             ; 00444f6c
@@ -255,11 +255,11 @@ section .text
     SHL EDX,0x2                         ; 00444fcb
     SBB EAX,EDX                         ; 00444fce
     SAR EAX,0x2                         ; 00444fd0
-    IMUL EAX,dword ptr [0x0084a87c]     ; 00444fd3 | g_CramAtlasHeight
-    MOV EDX,dword ptr [0x0084a878]      ; 00444fda | g_CramAtlasWidth
+    IMUL EAX,dword ptr [0x0084a87c]     ; 00444fd3 | g_CramPaddingSize
+    MOV EDX,dword ptr [0x0084a878]      ; 00444fda | g_CramAtlasDimension
     DEC EDX                             ; 00444fe0
     ADD EDX,EAX                         ; 00444fe1
-    MOV ECX,dword ptr [0x0084a878]      ; 00444fe3 | g_CramAtlasWidth
+    MOV ECX,dword ptr [0x0084a878]      ; 00444fe3 | g_CramAtlasDimension
     MOV EAX,EDX                         ; 00444fe9
     SAR EDX,0x1f                        ; 00444feb
     IDIV ECX                            ; 00444fee
@@ -465,13 +465,13 @@ section .text
     PUSH EAX                            ; 00445271 | DAT_0083c228
     CALL shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160 ; 00445272
         ;   XREF to: 00446160 (UNCONDITIONAL_CALL)  ; int shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160(CCramTex * this_ptr)
-    MOV EAX,[0x0084a87c]                ; 00445277 | g_CramAtlasHeight
+    MOV EAX,[0x0084a87c]                ; 00445277 | g_CramPaddingSize
     MOV ESI,dword ptr [0x0084a884]      ; 0044527c | g_CramCurrentAcceptableSize
     IMUL EAX,ESI                        ; 00445282
-    MOV EDX,dword ptr [0x0084a878]      ; 00445285 | g_CramAtlasWidth
+    MOV EDX,dword ptr [0x0084a878]      ; 00445285 | g_CramAtlasDimension
     DEC EDX                             ; 0044528b
     ADD EDX,EAX                         ; 0044528c
-    MOV EDI,dword ptr [0x0084a878]      ; 0044528e | g_CramAtlasWidth
+    MOV EDI,dword ptr [0x0084a878]      ; 0044528e | g_CramAtlasDimension
     MOV EAX,EDX                         ; 00445294
     SAR EDX,0x1f                        ; 00445296
     IDIV EDI                            ; 00445299

@@ -13,8 +13,9 @@ void __cdecl core_hostage_cpp_CHostage_processDamage_FUN_004f6450(CHostage *this
   float fVar1;
   CDemonActor *pCVar2;
   int iVar3;
+  uint uVar4;
   
-  if (*(int *)this_ptr->unk2 == 0) {
+  if (this_ptr->hostage_type == 0) {
     damage_info->damage_amount = 0.0;
   }
   fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
@@ -33,14 +34,14 @@ void __cdecl core_hostage_cpp_CHostage_processDamage_FUN_004f6450(CHostage *this
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                 (&this_ptr_00->motion_controller,4,1);
       pCVar2 = g_CurrentProcessingActor;
-      this_ptr->unk6 = 3.0;
+      this_ptr->grabber_flee_timer = 3.0;
       this_ptr->grabber = pCVar2;
     }
-    iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->unk1);
+    iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handle);
     if (iVar3 == 0) {
-      iVar3 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
+      uVar4 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                         ((CDemonActor *)this_ptr,this_ptr->damage_sound);
-      this_ptr->unk1 = iVar3;
+      this_ptr->sfx_handle = uVar4;
       core_npc_cpp_CNPC_processDamage_FUN_00544d30(&this_ptr->base,damage_info);
       return;
     }

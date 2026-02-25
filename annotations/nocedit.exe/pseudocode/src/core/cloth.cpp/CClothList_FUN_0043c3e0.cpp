@@ -19,10 +19,10 @@ void __cdecl core_cloth_cpp_CClothList_FUN_0043c3e0(CClothList *this_ptr,CVector
     do {
       while( true ) {
         pCVar1 = pCVar2->cloths[0];
-        if (&pCVar1->unk == param_2) break;
-        (pCVar1->unk).x = param_2->x;
-        (pCVar1->unk).y = param_2->y;
-        (pCVar1->unk).z = param_2->z;
+        if (&pCVar1->wind_velocity == param_2) break;
+        (pCVar1->wind_velocity).x = param_2->x;
+        (pCVar1->wind_velocity).y = param_2->y;
+        (pCVar1->wind_velocity).z = param_2->z;
         iVar3 = iVar3 + 1;
         pCVar2 = (CClothList *)pCVar2->filenames;
         if (this_ptr->count <= iVar3) {

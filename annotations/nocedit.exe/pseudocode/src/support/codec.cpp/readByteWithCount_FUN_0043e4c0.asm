@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl support_codec_cpp_readByteWithCount_FUN_0043e4c0(_FILE *file,int *remaining_count)
+; int __cdecl support_codec_cpp_readByteWithCount_FUN_0043e4c0(_istream *istream,int *remaining_count)
 ;
 ; Parameters:
-; _FILE *          Stack[0x4]:4   file
+; _istream *       Stack[0x4]:4   istream
 ; int *            Stack[0x8]:4   remaining_count
 ; Local Variables:
 ; undefined1       Stack[-0x14]:1  local_14
@@ -40,7 +40,7 @@ section .text
     PUSH EAX                            ; 0043e4e3
     PUSH ESI                            ; 0043e4e4
     CALL crt_iostream.cpp_istream_get_FUN_005ff245 ; 0043e4e5
-        ;   XREF to: 005ff245 (UNCONDITIONAL_CALL)  ; istream * crt_iostream.cpp_istream_get_FUN_005ff245(istream * this_ptr, char * c)
+        ;   XREF to: 005ff245 (UNCONDITIONAL_CALL)  ; _istream * crt_iostream.cpp_istream_get_FUN_005ff245(_istream * this_ptr, char * c)
     MOV EAX,dword ptr [ESI]             ; 0043e4ea
     ADD ESI,dword ptr [EAX + 0x4]       ; 0043e4ec
     MOV EDI,dword ptr [ESI + 0x10]      ; 0043e4ef

@@ -135,8 +135,8 @@ void __edi_esi_ebx wincore_windll_cpp_renderScanline_FUN_005b5710(void *left_dat
 void __cdecl wincore_windll_cpp_renderScanlineSaved_FUN_005b5716(void *scanline_data,int scanline_y,int render_flags);
 void __cdecl wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex *output,CVector3i *input);
 int __cdecl wincore_windll_cpp_transformPoint_FUN_005b5a25(SProjectedVertex *output,CVector3i *input);
-void __cdecl wincore_windll_cpp_CExternalRenderer_setProcessingDataAndValidate_FUN_005b5cf0(CExternalRenderer *this_ptr,char *data);
-void __cdecl wincore_windll_cpp_CExternalRenderer_setProcessingData_FUN_005b5d10(CExternalRenderer *this_ptr,char *other);
+void __cdecl wincore_windll_cpp_CExternalRenderer_initValidate_FUN_005b5cf0(CExternalRenderer *this_ptr,char *buffer_ptr);
+void __cdecl wincore_windll_cpp_CExternalRenderer_init_FUN_005b5d10(CExternalRenderer *this_ptr,char *buffer_ptr);
 void __cdecl wincore_windll_cpp_shutdownExternalRenderer_FUN_005b5d20(void);
 int __cdecl wincore_windll_cpp_initializeExternalRenderer_FUN_005b5ec0(void);
 int __cdecl wincore_windll_cpp_loadExternalRenderer_FUN_005b6750(HWND window_handle);

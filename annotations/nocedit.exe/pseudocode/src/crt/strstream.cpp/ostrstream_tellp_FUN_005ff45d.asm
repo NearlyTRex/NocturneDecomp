@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl crt_strstream_cpp_ostrstream_tellp_FUN_005ff45d(ostrstream *this_ptr)
+; int __cdecl crt_strstream_cpp_ostrstream_tellp_FUN_005ff45d(void *this_ptr)
 ;
 ; Parameters:
-; ostrstream *     Stack[0x4]:4   this_ptr
+; void *           Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   support_codec.cpp_CCodec_finalizeBuffer_FUN_0043ed50 at 0043ed9f

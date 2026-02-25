@@ -16,7 +16,7 @@
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
-;   core_set.cpp_CDemonSet_rotateVertices_FUN_0056e7c0
+;   core_set.cpp_CDemonSet_rotateVerticies_FUN_0056e7c0
 ;
 ; *****************************************************************************
 
@@ -35,8 +35,8 @@ section .text
     PUSH EBX                            ; 0059ab37
     MOV ESI,dword ptr [0x006810c8]      ; 0059ab38 | g_CDemonSetPtr
     PUSH ESI                            ; 0059ab3e | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_rotateVertices_FUN_0056e7c0 ; 0059ab3f
-        ;   XREF to: 0056e7c0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_rotateVertices_FUN_0056e7c0(CDemonSet * this_ptr, int vertex_count, int * input_vertices)
+    CALL core_set.cpp_CDemonSet_rotateVerticies_FUN_0056e7c0 ; 0059ab3f
+        ;   XREF to: 0056e7c0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_rotateVerticies_FUN_0056e7c0(CDemonSet * this_ptr, int vertex_count, CVector3i * input_vertices)
     ADD ESP,0xc                         ; 0059ab44
     POP ESI                             ; 0059ab47
     POP EBX                             ; 0059ab48

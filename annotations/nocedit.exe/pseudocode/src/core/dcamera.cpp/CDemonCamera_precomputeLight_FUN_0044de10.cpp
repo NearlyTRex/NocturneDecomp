@@ -149,9 +149,9 @@ void * __cdecl core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_0044de10(CDemon
                (iVar9 = (int)local_2c * this_ptr->scale_factor,
                iVar1 = this_ptr->framebuffer_height + -2, iVar9 - iVar1 != 0 && iVar1 <= iVar9))))
              || ((local_3c == 0 &&
-                 (local_28[2] * (float)(light_source->base).base.rotation_matrix.m[2].z +
-                  *local_28 * (float)(light_source->base).base.rotation_matrix.m[0].z +
-                  local_28[1] * (float)(light_source->base).base.rotation_matrix.m[1].z < 0.0)))) {
+                 (local_28[2] * (light_source->base).base.rotation_matrix.m[2].z +
+                  *local_28 * (light_source->base).base.rotation_matrix.m[0].z +
+                  local_28[1] * (light_source->base).base.rotation_matrix.m[1].z < 0.0)))) {
 LAB_0044e06f:
             *local_20 = 0;
             *local_1c = 0;
@@ -176,10 +176,10 @@ LAB_0044e087:
               goto LAB_0044e087;
             }
             *local_24 = ((local_64.y >> ((byte)light_source->shadow_y_shift & 0x1f) &
-                         light_source->teture_coord_mask) <<
+                         light_source->texture_coord_mask) <<
                         ((byte)light_source->texture_row_shift & 0x1f)) +
                         (local_64.x >> ((byte)light_source->shadow_x_shift & 0x1f) &
-                        light_source->teture_coord_mask);
+                        light_source->texture_coord_mask);
             if ((int)local_38 < (int)local_18) {
               local_38 = local_18;
             }

@@ -19,7 +19,7 @@
     {
       "addr": "005ff664",
       "from_addr": "005ff692",
-      "name": "crt_fstream.cpp_ifstream_constructor_FUN_005ff664",
+      "name": "crt_fstream.cpp_ifstream_ctor_FUN_005ff664",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -31,7 +31,7 @@
     {
       "addr": "005ff524",
       "from_addr": "005ff54c",
-      "name": "crt_strstream.cpp_istrstream_constructor_FUN_005ff524",
+      "name": "crt_strstream.cpp_istrstream_ctor_FUN_005ff524",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -45,7 +45,7 @@
     ],
     "convention": "__cdecl",
     "name": "crt_iostream.cpp_istream_ctor_FUN_00606376",
-    "signature": "istream * __cdecl crt_iostream_cpp_istream_ctor_FUN_00606376(istream *this_ptr,uint c1)"
+    "signature": "_istream * __cdecl crt_iostream_cpp_istream_ctor_FUN_00606376(_istream *this_ptr,uint c1)"
   },
   "function_calls": [
     {
@@ -80,7 +80,7 @@
       {
         "call_addr": "005ff54c",
         "call_type": "direct",
-        "caller": "crt_strstream.cpp_istrstream_constructor_FUN_005ff524",
+        "caller": "crt_strstream.cpp_istrstream_ctor_FUN_005ff524",
         "estimated_params": 2,
         "instructions_analyzed": 5,
         "reg_params": [],
@@ -98,7 +98,7 @@
       {
         "call_addr": "005ff692",
         "call_type": "direct",
-        "caller": "crt_fstream.cpp_ifstream_constructor_FUN_005ff664",
+        "caller": "crt_fstream.cpp_ifstream_ctor_FUN_005ff664",
         "estimated_params": 2,
         "instructions_analyzed": 5,
         "reg_params": [],
@@ -147,7 +147,7 @@
         "name": "this_ptr",
         "offset": 4,
         "size": 4,
-        "type": "istream *"
+        "type": "_istream *"
       },
       {
         "is_param": true,
@@ -172,7 +172,7 @@
       "line": 12,
       "match": "piVar3[-1].",
       "severity": "mild",
-      "text": "this_ptr = (istream *)&piVar3[-1].__xalloc_list;",
+      "text": "this_ptr = (_istream *)&piVar3[-1].__xalloc_list;",
       "type": "negative_offset"
     },
     {

@@ -72,6 +72,7 @@ extern int INT_02db873c;
 extern int INT_02db8740;
 extern int g_HeroCount;
 extern int g_LocalHeroIndex;
+extern int INT_02db8888;
 extern int INT_02db88c8;
 extern int INT_02db88cc;
 extern int INT_02db88d0;
@@ -116,7 +117,4 @@ extern int INT_02db8a1c;
 extern int INT_02db8a20;
 extern int g_SkipIntroVideo;
 extern int g_ItemDefinitionCount;
-
-// undefined4
-extern undefined4 DAT_02db8888;
 

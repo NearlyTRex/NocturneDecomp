@@ -7,6 +7,7 @@
 #include "types/classes/C3DSLight.h"
 #include "types/classes/CBoundingBox3D.h"
 #include "types/classes/CDemonActor.h"
+#include "types/classes/CDemonLight.h"
 #include "types/classes/CDemonSet.h"
 #include "types/classes/CMatrix3x3f.h"
 #include "types/classes/CVector3f.h"
@@ -27,9 +28,9 @@
 // FUNCTION PROTOTYPES - Range 0x570000
 // =============================================================================
 
-void __cdecl core_set_cpp_CDemonSet_renderEnvMapBatchQuad_FUN_00570010(CDemonSet *this_ptr,void *param_2,int count,int alpha);
-void __cdecl core_set_cpp_CDemonSet_renderEnvMapPrimitives_FUN_00570040(CDemonSet *this_ptr,void *param_2,int count,int alpha,int stride);
-void __cdecl core_set_cpp_CDemonSet_renderEnvMapTriangles_FUN_005702b0(CDemonSet *this_ptr,void *param_2,int count,int alpha);
+void __cdecl core_set_cpp_CDemonSet_renderEnvMapBatchQuad_FUN_00570010(CDemonSet *this_ptr,SMRGLHeaderPrimitive *prims,int count,int alpha);
+void __cdecl core_set_cpp_CDemonSet_renderEnvMapPrimitives_FUN_00570040(CDemonSet *this_ptr,SMRGLHeaderPrimitive *prims,int count,int alpha,int stride);
+void __cdecl core_set_cpp_CDemonSet_renderEnvMapTriangles_FUN_005702b0(CDemonSet *this_ptr,SInputFace *face_data,int count,int alpha);
 void __cdecl core_set_cpp_CDemonSet_renderFaceBatchOrEnvMap_FUN_00570700(CDemonSet *this_ptr,SMRGLHeaderPrimitive *prims,int count,int flags);
 void __cdecl core_set_cpp_CDemonSet_renderPrimitiveBatch_FUN_00570770(CDemonSet *this_ptr,SMRGLPrimitiveQuad *primitive_array,int primitive_count, int render_flags);
 void __cdecl core_set_cpp_CDemonSet_renderFaceListOrEnvMap_FUN_00570870(CDemonSet *this_ptr,SInputFace *faces,int count,int flags);
@@ -45,16 +46,16 @@ void __cdecl core_set_cpp_CDemonSet_cacheMirrorLighting_FUN_00570cd0(CDemonSet *
 void __cdecl core_set_cpp_CDemonSet_setGamma_FUN_00570d60(CDemonSet *this_ptr,int gamma);
 int __cdecl core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_00570df0(CDemonSet *this_ptr,SMRGLHeaderPrimitive *prim);
 void __cdecl core_set_cpp_CDemonSet_setCameraAmbientValue_FUN_00570e20(CDemonSet *this_ptr,int index,float value);
-void __cdecl core_set_cpp_CDemonSet_setCameraAmbientValueById_FUN_00570e60(CDemonSet *this_ptr,int id,float value);
+void __cdecl core_set_cpp_CDemonSet_setCameraAmbientValueByGroup_FUN_00570e60(CDemonSet *this_ptr,int group_id,float value);
 void __cdecl core_set_cpp_CDemonSet_setCameraEnabled_FUN_00570ea0(CDemonSet *this_ptr,int camera_index,int enabled);
 void __cdecl core_set_cpp_CDemonSet_setCameraEnabledByGroup_FUN_00570ec0(CDemonSet *this_ptr,int group_id,int enabled);
-void __cdecl core_set_cpp_CDemonSet_addLightFilter_FUN_00570f10(CDemonSet *this_ptr);
+void __cdecl core_set_cpp_CDemonSet_addLightFilter_FUN_00570f10(CDemonSet *this_ptr,char *light_name,C3DSLight **out_light, CDemonLight **out_master_light);
 void __cdecl core_set_cpp_CDemonSet_initCameraShake_FUN_00570fa0(CDemonSet *this_ptr,float peak,float attack,float sustain,float decay);
 void __cdecl core_set_cpp_CDemonSet_buildActorTypeLists_FUN_00570fc0(CDemonSet *this_ptr);
-void __cdecl core_set_cpp_CDemonSet_restoreLightState_FUN_00571130(CDemonSet *this_ptr,void *param_2);
-int __cdecl core_set_cpp_CDemonSet_saveLightState_FUN_00571170(CDemonSet *this_ptr,void *param_2);
-void __cdecl core_set_cpp_CDemonSet_SetStateVersionCameraCountInStrings_FUN_005711b0(CDemonSet *this_ptr);
-void __cdecl core_set_cpp_CDemonSet_saveStateInfo_FUN_00571230(CDemonSet *this_ptr);
+void __cdecl core_set_cpp_CDemonSet_loadMasterLightStates_FUN_00571130(CDemonSet *this_ptr,int *light_state_buffer);
+int __cdecl core_set_cpp_CDemonSet_saveMasterLightStates_FUN_00571170(CDemonSet *this_ptr,int *light_state_buffer);
+void __cdecl core_set_cpp_CDemonSet_saveStateInfo_FUN_005711b0(CDemonSet *this_ptr,_FILE *file_handle);
+void __cdecl core_set_cpp_CDemonSet_loadStateInfo_FUN_00571230(CDemonSet *this_ptr,_FILE *file_handle);
 int __cdecl core_set_cpp_CDemonSet_isCameraPanning_FUN_00571320(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_expireDecals_FUN_00571380(CDemonSet *this_ptr,int expire_flag);
 void __cdecl core_set_cpp_CDemonSet_renderDecals_FUN_005713c0(CDemonSet *this_ptr);
@@ -83,10 +84,10 @@ float __cdecl core_setcolid_cpp_CDemonSet_refinedRaycast_FUN_005726c0(CDemonSet 
 float __cdecl core_setcolid_cpp_CDemonSet_iterativeRaycast_FUN_00572800(CDemonSet *this_ptr,CVector3f *start_pos,CVector3f *direction);
 float __cdecl core_setcolid_cpp_CDemonSet_raycastAgainstActors_FUN_00572a10(CDemonSet *this_ptr,float min_t,CVector3f *ray_origin,CVector3f *ray_target, float max_t);
 int __cdecl core_setcolid_cpp_CDemonSet_isActorIgnored_FUN_00572e20(CDemonSet *this_ptr,CDemonActor *actor);
-int __cdecl core_setcolid_cpp_intersectXZCylinder_FUN_00572e80(SIntersectXZCylinder *cylinder,float ray_x,float ray_z,void *bounds_struct);
+int __cdecl core_setcolid_cpp_intersectXZCylinder_FUN_00572e80(SIntersectXZCylinder *cylinder,float obstacle_x,float obstacle_y, SCollisionInfo *collision_info);
 void __cdecl core_setcolid_cpp_testCylinderQuadCollision_FUN_005730d0(SIntersectXZCylinder *cylinder,CVector3f *vertex1,CVector3f *vertex2, CVector3f *vertex3,CVector3f *vertex4);
-int __cdecl core_setcolid_cpp_CDemonSet_testOBBCylinderCollision_FUN_00573140(CDemonSet *this_ptr,CBoundingBox3D *bounding_box,CMatrix3x3f *orientation_matrix, SIntersectXZCylinder *cylinder1,SIntersectXZCylinder *cylinder2);
-float __cdecl core_setcolid_cpp_CDemonSet_testCapsuleCollision_FUN_00573470(CDemonSet *this_ptr,float start_x,float start_z,float dir_x,float dir_z, float radius,void *user_data1,void *user_data2);
+int __cdecl core_setcolid_cpp_CDemonSet_testOBBCylinderCollision_FUN_00573140(CDemonSet *this_ptr,SIntersectXZCylinder *cylinder,CBoundingBox3D *bounding_box, CVector3f *position,CMatrix3x3f *orientation_matrix);
+float __cdecl core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_00573470(CDemonSet *this_ptr,float start_x,float start_z,float dir_x,float dir_z, float radius,float bottom_y,float top_y);
 void __cdecl core_setcolid_cpp_CDemonSet_pushRaytraceState_FUN_00573e10(CDemonSet *this_ptr);
 void __cdecl core_setcolid_cpp_CDemonSet_popRaytraceState_FUN_00573fc0(CDemonSet *this_ptr);
 void __cdecl core_setcolid_cpp_CDemonSet_FUN_00574170(CDemonSet *this_ptr);
@@ -137,10 +138,10 @@ void __cdecl core_setdir_cpp_CDemonSet_saveThumbs_FUN_00575f60(CDemonSet *this_p
 void __cdecl core_setdir_cpp_CDemonSet_renderVirtualDirectors_FUN_00575f70(CDemonSet *this_ptr);
 void __cdecl core_setdir_cpp_CDemonSet_skipDeprecatedVirtualDirectorData_FUN_00576200(CDemonSet *this_ptr,_FILE *file_handle);
 int __cdecl core_setdir_cpp_CDemonSet_FUN_005762a0(CDemonSet *this_ptr);
-int __cdecl core_setdir_cpp_CDemonSet_FUN_00576340(CDemonSet *this_ptr);
-int __cdecl core_setdir_cpp_FUN_005763a0(void);
-int __cdecl core_setdir_cpp_CDemonSet_FUN_00576710(CDemonSet *this_ptr);
-int __cdecl core_setdir_cpp_CDemonSet_FUN_00576820(CDemonSet *this_ptr);
+int __cdecl core_setdir_cpp_CDemonSet_isPointInVdirGroup_FUN_00576340(CDemonSet *this_ptr,int box_index,CVector3f *point);
+int __cdecl core_setdir_cpp_testOBBIntersection_FUN_005763a0(SVDBox *obb_a,SVDBox *obb_b);
+int __cdecl core_setdir_cpp_CDemonSet_buildVdirBoxGroups_FUN_00576710(CDemonSet *this_ptr);
+int __cdecl core_setdir_cpp_CDemonSet_findVdirBoxRoot_FUN_00576820(CDemonSet *this_ptr,int box_index);
 int __cdecl core_setdir_cpp_CDemonSet_FUN_00576870(CDemonSet *this_ptr);
 CDemonSet * __cdecl core_setdir_cpp_copySet_FUN_005768c0(CDemonSet **set1,CDemonSet **set2);
 CDemonSet * __cdecl core_setdir_cpp_copySet_FUN_005768d0(CDemonSet **set1,CDemonSet **set2);
@@ -149,41 +150,41 @@ CBoundingBox3D * __cdecl core_setdir_cpp_CBoundingBox3D_arrdtor_FUN_005768f0(CBo
 CZThumb * __cdecl core_setdir_cpp_CZThumb_arrdtor_FUN_00576910(CZThumb *objs,uint flags);
 void __cdecl core_setedit_cpp_staticInit_FUN_00576930(void);
 void __cdecl core_setedit_cpp_FUN_00576950(void);
-void __cdecl core_setedit_cpp_C3DSCamera_FUN_005769a0(C3DSCamera *this_ptr);
-void __cdecl core_setedit_cpp_CDemonSet_FUN_00576da0(CDemonSet *this_ptr);
+void __cdecl core_setedit_cpp_loadCameraThumbnail_FUN_005769a0(char *prefix,char *name,int thumbnail_index);
+void __cdecl core_setedit_cpp_CDemonSet_loadOrBuildThumbnails_FUN_00576da0(CDemonSet *this_ptr,int force_rebuild);
 void __cdecl core_setedit_cpp_FUN_00577120(void);
 void __cdecl core_setedit_cpp_FUN_00577200(void);
 void __cdecl core_setedit_cpp_FUN_00577330(void);
 void __cdecl core_setedit_cpp_FUN_00577430(void);
 int __cdecl core_setedit_cpp_FUN_00577730(void);
-int __cdecl core_setedit_cpp_CDemonSet_FUN_00577af0(CDemonSet *this_ptr);
-int __cdecl core_setedit_cpp_FUN_005781a0(void);
-int __cdecl core_setedit_cpp_FUN_00578210(void);
-void __cdecl core_setedit_cpp_FUN_00578290(void);
-void __cdecl core_setedit_cpp_FUN_00578420(void);
-void __cdecl core_setedit_cpp_FUN_00578630(void);
-void __cdecl core_setedit_cpp_FUN_00578a00(void);
-void __cdecl core_setedit_cpp_CDemonSet_FUN_00578a20(CDemonSet *this_ptr);
-void __cdecl core_setedit_cpp_CDemonSet_FUN_00578c60(CDemonSet *this_ptr);
-int __cdecl core_setedit_cpp_FUN_00578c90(void);
-void __cdecl core_setedit_cpp_CDemonSet_importS3D_FUN_00578d80(CDemonSet *this_ptr);
-void __cdecl core_setedit_cpp_CDemonSet_FUN_0057a0c0(CDemonSet *this_ptr);
-void __cdecl core_setedit_cpp_FUN_0057a270(void);
+int __cdecl core_setedit_cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0(CDemonSet *this_ptr,int *camera_flags);
+int __cdecl core_setedit_cpp_findGroundTextureIndex_FUN_005781a0(char *filename);
+int __cdecl core_setedit_cpp_getGroundTypeForTexture_FUN_00578210(char *filename);
+void __cdecl core_setedit_cpp_addGroundType_FUN_00578290(char *filename,int ground_type);
+void __cdecl core_setedit_cpp_loadGroundTypes_FUN_00578420(char *filename);
+void __cdecl core_setedit_cpp_editGroundTypes_FUN_00578630(char *filename);
+void __cdecl core_setedit_cpp_skipLine_FUN_00578a00(_FILE *file_handle);
+void __cdecl core_setedit_cpp_CDemonSet_importSet_FUN_00578a20(CDemonSet *this_ptr);
+void __cdecl core_setedit_cpp_CDemonSet_importA3D_FUN_00578c60(CDemonSet *this_ptr,_FILE *file_handle);
+int __cdecl core_setedit_cpp_promptYesNo_FUN_00578c90(int screen_y,char *prompt,int default_yes);
+void __cdecl core_setedit_cpp_CDemonSet_importS3D_FUN_00578d80(CDemonSet *this_ptr,_FILE *file_handle);
+void __cdecl core_setedit_cpp_CDemonSet_exportLightsAndCameras_FUN_0057a0c0(CDemonSet *this_ptr);
+void __cdecl core_setedit_cpp_CDemonSet_importDemonPart_FUN_0057a270(CDemonSet *this_ptr,_FILE *file_handle);
 void __cdecl core_setedit_cpp_CDemonSet_save_FUN_0057a2a0(CDemonSet *this_ptr,char *filename);
-void __cdecl core_setedit_cpp_CDemonSet_FUN_0057a940(CDemonSet *this_ptr);
-int __cdecl core_setedit_cpp_CDemonSet_FUN_0057ae50(CDemonSet *this_ptr);
-void __cdecl core_setedit_cpp_CDemonSet_FUN_0057b410(CDemonSet *this_ptr);
-void __cdecl core_setedit_cpp_CDemonSet_FUN_0057b500(CDemonSet *this_ptr);
-void __cdecl core_setedit_cpp_CDemonSet_FUN_0057b600(CDemonSet *this_ptr);
-void __cdecl core_setedit_cpp_FUN_0057b910(void);
-void __cdecl core_setedit_cpp_CDemonSet_FUN_0057bbe0(CDemonSet *this_ptr);
-int __cdecl core_setedit_cpp_CDemonSet_FUN_0057c550(CDemonSet *this_ptr);
+void __cdecl core_setedit_cpp_CDemonSet_showScenePreview_FUN_0057a940(CDemonSet *this_ptr);
+int __cdecl core_setedit_cpp_CDemonSet_positionLight_FUN_0057ae50(CDemonSet *this_ptr,C3DSLight *light);
+void __cdecl core_setedit_cpp_CDemonSet_addSpotLight_FUN_0057b410(CDemonSet *this_ptr);
+void __cdecl core_setedit_cpp_CDemonSet_editSpotLight_FUN_0057b500(CDemonSet *this_ptr,int light_index);
+void __cdecl core_setedit_cpp_CDemonSet_cloneLight_FUN_0057b600(CDemonSet *this_ptr,int light_index);
+void __cdecl core_setedit_cpp_CDemonSet_deleteLight_FUN_0057b910(CDemonSet *this_ptr,int light_index);
+void __cdecl core_setedit_cpp_CDemonSet_showLightFilterEditor_FUN_0057bbe0(CDemonSet *this_ptr,int light_index);
+int __cdecl core_setedit_cpp_CDemonSet_findLightByMasterIndex_FUN_0057c550(CDemonSet *this_ptr,int master_light_index);
 void __cdecl core_setedit_cpp_CDemonSet_showLightEditor_FUN_0057c5d0(CDemonSet *this_ptr);
-void __cdecl core_setedit_cpp_FUN_0057ce80(void);
-void __cdecl core_setedit_cpp_CDemonSet_FUN_0057d340(CDemonSet *this_ptr);
-int __cdecl core_setedit_cpp_CDemonSet_FUN_0057d660(CDemonSet *this_ptr);
-void __cdecl core_setedit_cpp_CDemonSet_FUN_0057e430(CDemonSet *this_ptr);
-void __cdecl core_setedit_cpp_CDemonSet_FUN_0057e7c0(CDemonSet *this_ptr);
-void __cdecl core_setedit_cpp_CDemonSet_FUN_0057fd00(CDemonSet *this_ptr);
-void __cdecl core_setedit_cpp_CDemonSet_FUN_0057ff70(CDemonSet *this_ptr);
+void __cdecl core_setedit_cpp_renderBackdropImage_FUN_0057ce80(CVector3i *position,CVector3f *orientation,char *name,int output_width, int output_height,int render_width,int render_height,float projection_scale);
+void __cdecl core_setedit_cpp_CDemonSet_renderCameraBackdrop_FUN_0057d340(CDemonSet *this_ptr,C3DSCamera *camera);
+int __cdecl core_setedit_cpp_CDemonSet_editCameraPosition_FUN_0057d660(CDemonSet *this_ptr,int camera_index);
+void __cdecl core_setedit_cpp_CDemonSet_deleteCamera_FUN_0057e430(CDemonSet *this_ptr,int camera_index);
+void __cdecl core_setedit_cpp_CDemonSet_showCameraEditor_FUN_0057e7c0(CDemonSet *this_ptr);
+void __cdecl core_setedit_cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00(CDemonSet *this_ptr,char *coverage_map,int exclude_camera_index);
+void __cdecl core_setedit_cpp_CDemonSet_drawCameraCoverageMap_FUN_0057ff70(CDemonSet *this_ptr,char *coverage_map);
 

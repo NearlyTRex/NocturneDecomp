@@ -107,21 +107,21 @@ void __cdecl CDemonSet::skipDeprecatedVirtualDirectorData(CDemonSet *this_ptr,_F
 // Address: 005762a0
 int __cdecl CDemonSet(CDemonSet *this_ptr);
 
-// Original: core_setdir.cpp_CDemonSet_FUN_00576340
+// Original: core_setdir.cpp_CDemonSet_isPointInVdirGroup_FUN_00576340
 // Address: 00576340
-int __cdecl CDemonSet(CDemonSet *this_ptr);
+int __cdecl CDemonSet::isPointInVdirGroup(CDemonSet *this_ptr,int box_index,CVector3f *point);
 
-// Original: core_setdir.cpp_FUN_005763a0
+// Original: core_setdir.cpp_testOBBIntersection_FUN_005763a0
 // Address: 005763a0
-int __cdecl FUN_005763a0(void);
+int __cdecl testOBBIntersection(SVDBox *obb_a,SVDBox *obb_b);
 
-// Original: core_setdir.cpp_CDemonSet_FUN_00576710
+// Original: core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_00576710
 // Address: 00576710
-int __cdecl CDemonSet(CDemonSet *this_ptr);
+int __cdecl CDemonSet::buildVdirBoxGroups(CDemonSet *this_ptr);
 
-// Original: core_setdir.cpp_CDemonSet_FUN_00576820
+// Original: core_setdir.cpp_CDemonSet_findVdirBoxRoot_FUN_00576820
 // Address: 00576820
-int __cdecl CDemonSet(CDemonSet *this_ptr);
+int __cdecl CDemonSet::findVdirBoxRoot(CDemonSet *this_ptr,int box_index);
 
 // Original: core_setdir.cpp_CDemonSet_FUN_00576870
 // Address: 00576870

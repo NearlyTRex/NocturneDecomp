@@ -10,7 +10,7 @@
 ; char *           Stack[0x10]:4   put_start
 ;
 ; XREF[2]:
-;   crt_strstream.cpp_strstreambase_constructor_FUN_006060fe at 00606133
+;   crt_strstream.cpp_strstreambase_ctor_FUN_006060fe at 00606133
 ;   crt_strstream.cpp_strstreambuf_ctor_FUN_0060bbf8 at 0060bc16
 ;
 ; Called Functions:

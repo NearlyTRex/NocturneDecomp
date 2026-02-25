@@ -6,19 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 340,
-    "complexity_score": 678,
+    "complexity_score": 463,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 17,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 143,
-    "suspect_count": 51,
+    "suspect_count": 30,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_few",
       "pointer_cast",
-      "stack_alignment_array",
-      "unnamed_param"
+      "stack_alignment_array"
     ],
     "total_lines": 483
   },
@@ -41,7 +40,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_set.cpp_CDemonSet_renderEnvMapTriangles_FUN_005702b0",
-    "signature": "void __cdecl core_set_cpp_CDemonSet_renderEnvMapTriangles_FUN_005702b0(CDemonSet *this_ptr,void *param_2,int count,int alpha)"
+    "signature": "void __cdecl core_set_cpp_CDemonSet_renderEnvMapTriangles_FUN_005702b0(CDemonSet *this_ptr,SInputFace *face_data,int count,int alpha)"
   },
   "function_calls": [
     {
@@ -112,7 +111,7 @@
     },
     {
       "addr": "006813e4",
-      "name": "SMRGLTextureBasic_006813e4",
+      "name": "g_EnvMapTexture",
       "type": "SMRGLTextureBasic",
       "value": null
     },
@@ -463,10 +462,10 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "face_data",
         "offset": 8,
         "size": 4,
-        "type": "void *"
+        "type": "SInputFace *"
       },
       {
         "is_param": true,
@@ -503,156 +502,12 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_set_cpp_CDemonSet_renderEnvMapTriangles_FUN_005702b0(CDemonSet *this_ptr,void *param_2,int count,int alpha)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 11,
       "match": "aiStackY_1020",
       "severity": "moderate",
       "text": "int aiStackY_1020 [960];",
       "type": "stack_alignment_array"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 45,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "SStack_118.vertices[0].vertex_index = (uint)*(ushort *)param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 46,
-      "match": "(ushort *)((int)",
-      "severity": "mild",
-      "text": "SStack_118.vertices[1].vertex_index = (uint)*(ushort *)((int)param_2 + 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 46,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "SStack_118.vertices[1].vertex_index = (uint)*(ushort *)((int)param_2 + 2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 47,
-      "match": "(ushort *)((int)",
-      "severity": "mild",
-      "text": "SStack_118.vertices[2].vertex_index = (uint)*(ushort *)((int)param_2 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 47,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "SStack_118.vertices[2].vertex_index = (uint)*(ushort *)((int)param_2 + 4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 48,
-      "match": "(ushort *)((int)",
-      "severity": "mild",
-      "text": "SStack_118.vertices[0].texture_u = (uint)*(ushort *)((int)param_2 + 6) << 8;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 48,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "SStack_118.vertices[0].texture_u = (uint)*(ushort *)((int)param_2 + 6) << 8;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 49,
-      "match": "(ushort *)((int)",
-      "severity": "mild",
-      "text": "SStack_118.vertices[1].texture_u = (uint)*(ushort *)((int)param_2 + 8) << 8;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 49,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "SStack_118.vertices[1].texture_u = (uint)*(ushort *)((int)param_2 + 8) << 8;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 50,
-      "match": "(ushort *)((int)",
-      "severity": "mild",
-      "text": "SStack_118.vertices[2].texture_u = (uint)*(ushort *)((int)param_2 + 10) << 8;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 50,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "SStack_118.vertices[2].texture_u = (uint)*(ushort *)((int)param_2 + 10) << 8;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 51,
-      "match": "(ushort *)((int)",
-      "severity": "mild",
-      "text": "SStack_118.vertices[0].texture_v = (uint)*(ushort *)((int)param_2 + 0xc) << 8;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 51,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "SStack_118.vertices[0].texture_v = (uint)*(ushort *)((int)param_2 + 0xc) << 8;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 52,
-      "match": "(ushort *)((int)",
-      "severity": "mild",
-      "text": "SStack_118.vertices[1].texture_v = (uint)*(ushort *)((int)param_2 + 0xe) << 8;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 52,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "SStack_118.vertices[1].texture_v = (uint)*(ushort *)((int)param_2 + 0xe) << 8;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 53,
-      "match": "(ushort *)((int)",
-      "severity": "mild",
-      "text": "SStack_118.vertices[2].texture_v = (uint)*(ushort *)((int)param_2 + 0x10) << 8;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 53,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "SStack_118.vertices[2].texture_v = (uint)*(ushort *)((int)param_2 + 0x10) << 8;",
-      "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
@@ -877,30 +732,6 @@
       "severity": "mild",
       "text": "*(int *)((int)&local_90 + iVar4) << 8;",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 141,
-      "match": "(void *)((int)",
-      "severity": "mild",
-      "text": "param_2 = (void *)((int)param_2 + 0x12);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 141,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = (void *)((int)param_2 + 0x12);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 141,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = (void *)((int)param_2 + 0x12);",
-      "type": "unnamed_param"
     },
     {
       "call_site_count": 1,

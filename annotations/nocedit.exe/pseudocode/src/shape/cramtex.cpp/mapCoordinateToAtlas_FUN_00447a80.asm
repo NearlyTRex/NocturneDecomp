@@ -4,9 +4,9 @@
 ; int __cdecl shape_cramtex_cpp_mapCoordinateToAtlas_FUN_00447a80(int min_coord,int max_coord,int pixel_offset)
 ;
 ; Parameters:
-; int              Stack[0xc]:4   min_coord
-; int              Stack[0x10]:4   max_coord
-; int              Stack[0x14]:4   pixel_offset
+; int              Stack[0x4]:4   min_coord
+; int              Stack[0x8]:4   max_coord
+; int              Stack[0xc]:4   pixel_offset
 ;
 ; Referenced Globals:
 ;   int g_CramCurrentAcceptableSize

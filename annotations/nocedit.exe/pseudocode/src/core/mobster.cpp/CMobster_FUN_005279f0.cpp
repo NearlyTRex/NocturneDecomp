@@ -41,7 +41,7 @@ void __cdecl core_mobster_cpp_CMobster_FUN_005279f0(CMobster *this_ptr,int taunt
     } while (iVar5 < 3);
     if (0.0 < this_ptr->taunt_timer) {
       this_ptr->taunt_timer = this_ptr->taunt_timer + 5.0f;
-      iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handle_2);
+      iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handle);
       if (iVar5 == 0) {
         iVar6 = 0;
         iVar5 = 0;
@@ -50,7 +50,7 @@ void __cdecl core_mobster_cpp_CMobster_FUN_005279f0(CMobster *this_ptr,int taunt
           if (g_CDemonSetPtr->enemy_count <= iVar6) {
             uVar4 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                               ((CDemonActor *)this_ptr,local_80);
-            this_ptr->sfx_handle_1 = uVar4;
+            this_ptr->sfx_handles[1] = uVar4;
             return;
           }
           pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c790

@@ -20,7 +20,7 @@ CDeformableModelInstance * __cdecl core_skeleton_cpp_CDeformableModelInstance_ct
   ADJ(pvVar2)->model_ptr = (CDeformableModel *)0x0;
   ADJ(pvVar2)->skinned_vertices_buffer = (CVector3i *)0x0;
   ADJ(pvVar2)->cached_skinned_lod_index = -1;
-  ADJ(pvVar2)->unk = 0;
+  ADJ(pvVar2)->bone_update_mode = 0;
   (ADJ(pvVar2)->accumulated_root_motion).z = 0.0;
   (ADJ(pvVar2)->accumulated_root_motion).y = (ADJ(pvVar2)->accumulated_root_motion).z;
   (ADJ(pvVar2)->accumulated_root_motion).x = (ADJ(pvVar2)->accumulated_root_motion).y;

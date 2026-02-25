@@ -116,7 +116,7 @@ int __cdecl core_script_cpp_CScript_step_FUN_0055a810(CScript *this_ptr,float *t
   char local_700 [100];
   char local_69c [100];
   char local_638 [100];
-  byte local_5d4 [100];
+  char local_5d4 [100];
   char local_570 [100];
   char local_50c [100];
   char local_4a8 [100];
@@ -142,6 +142,7 @@ int __cdecl core_script_cpp_CScript_step_FUN_0055a810(CScript *this_ptr,float *t
   int local_10c;
   int local_108;
   char *local_104;
+  CDemonLight *local_100;
   int local_fc;
   char *local_f8;
   char *local_f4;
@@ -411,7 +412,8 @@ int __cdecl core_script_cpp_CScript_step_FUN_0055a810(CScript *this_ptr,float *t
                 return -1;
               }
               local_11c = local_11c + local_e0;
-              core_set_cpp_CDemonSet_addLightFilter_FUN_00570f10(g_CDemonSetPtr);
+              core_set_cpp_CDemonSet_addLightFilter_FUN_00570f10
+                        (g_CDemonSetPtr,local_5d4,&local_118,&local_100);
               if (local_118 == (C3DSLight *)0x0) {
                 _sprintf
                           (g_ScriptErrorBuffer,"Light \"%s\" does not exist",local_5d4);
@@ -1678,7 +1680,7 @@ LAB_0055d708:
                                                             (g_CDemonSetPtr,
                                                              g_CScriptPtr->focus_actor,1);
                                                   pCVar5 = g_CDemonSetPtr;
-                                                  g_CScriptPtr->unk2 = 0;
+                                                  g_CScriptPtr->focus_actor_changed = 0;
                                                   iVar18 = 
                                                   core_event_cpp_getSelectedCameraIndex_FUN_004b1970
                                                             (pCVar5);
@@ -2510,7 +2512,7 @@ LAB_0055e656:
                                                   if (pCVar14 == (CDemonActor *)0x0)
                                                   goto joined_r0x0055c026;
                                                   if (pCVar14 != this_ptr->focus_actor) {
-                                                    this_ptr->unk2 = 1;
+                                                    this_ptr->focus_actor_changed = 1;
                                                     this_ptr->focus_actor = pCVar14;
                                                   }
                                                   }
@@ -2717,11 +2719,12 @@ LAB_0055f0a8:
                                                     if (pCVar14 == (CDemonActor *)0x0)
                                                     goto joined_r0x0055c026;
                                                   }
-                                                  this_ptr->unk1 = (int)this_ptr->who_is_speaking;
+                                                  this_ptr->last_speaker = this_ptr->who_is_speaking
+                                                  ;
                                                   if ((this_ptr->focus_actor_locked == 0) &&
                                                      (this_ptr->who_is_speaking !=
                                                       this_ptr->focus_actor)) {
-                                                    this_ptr->unk2 = 1;
+                                                    this_ptr->focus_actor_changed = 1;
                                                     this_ptr->focus_actor =
                                                          this_ptr->who_is_speaking;
                                                   }

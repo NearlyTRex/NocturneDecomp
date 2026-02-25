@@ -175,8 +175,8 @@ section .text
     PUSH EBX                            ; 0053918c
     MOV EAX,[0x006810c8]                ; 0053918d | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH EAX                            ; 00539192 | g_CDemonSetInstance
-    CALL core_setedit.cpp_CDemonSet_FUN_00576da0 ; 00539193
-        ;   XREF to: 00576da0 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_CDemonSet_FUN_00576da0(CDemonSet * this_ptr)
+    CALL core_setedit.cpp_CDemonSet_loadOrBuildThumbnails_FUN_00576da0 ; 00539193
+        ;   XREF to: 00576da0 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_CDemonSet_loadOrBuildThumbnails_FUN_00576da0(CDemonSet * this_ptr, int force_rebuild)
     ADD ESP,0x8                         ; 00539198
     MOV EDX,dword ptr [0x006810c8]      ; 0053919b | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH EDX                            ; 005391a1 | g_CDemonSetInstance
@@ -402,7 +402,7 @@ section .text
     MOV dword ptr [EBP + 0xffffff2e],EAX ; 00539476
     MOV EAX,dword ptr [EBX + 0x8]       ; 0053947c
     MOV dword ptr [EBP + 0xffffff32],EAX ; 0053947f
-    MOV EAX,[0x0327591c]                ; 00539485 | g_CDemonCameraInstance.base.projection_scale
+    MOV EAX,[0x0327591c]                ; 00539485 | g_CDemonCameraInstance.base.focal_length
         ;   Label: LAB_00539485
     MOV dword ptr [EBP + 0xffffff36],EAX ; 0053948a
     MOV EDI,dword ptr [EBP + 0x92]      ; 00539490
@@ -470,8 +470,8 @@ section .text
     PUSH EDI                            ; 00539567
     MOV EAX,[0x006810c8]                ; 00539568 | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH EAX                            ; 0053956d | g_CDemonSetInstance
-    CALL core_setedit.cpp_CDemonSet_FUN_00577af0 ; 0053956e
-        ;   XREF to: 00577af0 (UNCONDITIONAL_CALL)  ; int core_setedit.cpp_CDemonSet_FUN_00577af0(CDemonSet * this_ptr)
+    CALL core_setedit.cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0 ; 0053956e
+        ;   XREF to: 00577af0 (UNCONDITIONAL_CALL)  ; int core_setedit.cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0(CDemonSet * this_ptr, int * camera_flags)
     MOV EBX,EAX                         ; 00539573
     ADD ESP,0x8                         ; 00539575
     MOV dword ptr [EBP + 0x56],EAX      ; 00539578
@@ -1389,7 +1389,7 @@ section .text
         ;   XREF to: 00471d30 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     MOV EAX,dword ptr [EBP + 0xffffff36] ; 00539efb
     ADD ESP,0x8                         ; 00539f01
-    MOV [0x0327591c],EAX                ; 00539f04 | g_CDemonCameraInstance.base.projection_scale
+    MOV [0x0327591c],EAX                ; 00539f04 | g_CDemonCameraInstance.base.focal_length
     JMP 0x00539490                      ; 00539f09
         ;   XREF to: 00539490 (UNCONDITIONAL_JUMP)  ; LAB_00539490
     PUSH 0x63c3c3                       ; 00539f0e | = "Slew cam (actor fixed, slew the camera)"
@@ -1417,7 +1417,7 @@ section .text
         ;   XREF to: 00471d30 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     MOV EAX,dword ptr [EBP + 0xffffff36] ; 00539f61
     ADD ESP,0x8                         ; 00539f67
-    MOV [0x0327591c],EAX                ; 00539f6a | g_CDemonCameraInstance.base.projection_scale
+    MOV [0x0327591c],EAX                ; 00539f6a | g_CDemonCameraInstance.base.focal_length
     JMP 0x00539490                      ; 00539f6f
         ;   XREF to: 00539490 (UNCONDITIONAL_JUMP)  ; LAB_00539490
     PUSH 0x63c3eb                       ; 00539f74 | = "1st person cam"
@@ -1519,7 +1519,7 @@ section .text
         ;   XREF to: 00471d30 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     MOV EAX,dword ptr [EBP + 0xffffff36] ; 0053a0b1
     ADD ESP,0x8                         ; 0053a0b7
-    MOV [0x0327591c],EAX                ; 0053a0ba | g_CDemonCameraInstance.base.projection_scale
+    MOV [0x0327591c],EAX                ; 0053a0ba | g_CDemonCameraInstance.base.focal_length
     JMP 0x00539490                      ; 0053a0bf
         ;   XREF to: 00539490 (UNCONDITIONAL_JUMP)  ; LAB_00539490
     PUSH 0x63c3fa                       ; 0053a0c4 | = "Chase/spot cam"
@@ -1663,7 +1663,7 @@ section .text
         ;   XREF to: 00471d30 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     MOV EAX,dword ptr [EBP + 0xffffff36] ; 0053a27f
     ADD ESP,0x8                         ; 0053a285
-    MOV [0x0327591c],EAX                ; 0053a288 | g_CDemonCameraInstance.base.projection_scale
+    MOV [0x0327591c],EAX                ; 0053a288 | g_CDemonCameraInstance.base.focal_length
     JMP 0x00539490                      ; 0053a28d
         ;   XREF to: 00539490 (UNCONDITIONAL_JUMP)  ; LAB_00539490
     MOV EDX,0x63c409                    ; 0053a292 | = "..\\core\\msnedit.cpp"

@@ -19,7 +19,7 @@
 ;   undefined4 DAT_0083c1b0
 ;   undefined4 DAT_0083c1b4
 ;   undefined4 DAT_0083c1b8
-;   CCramTex[1] g_CramSortedTextureEntries
+;   CCramTex[250] g_CramSortedTextureEntries
 ;   undefined4 g_CramSortedTextureEntries[0].assigned_map_number
 ;   undefined4 g_CramSortedTextureEntries[0].placement_bottom
 ;   undefined4 g_CramSortedTextureEntries[0].working_right

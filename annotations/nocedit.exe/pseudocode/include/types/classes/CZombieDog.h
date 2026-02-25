@@ -8,8 +8,7 @@
 // Ghidra size: 0xbec8 (48840 bytes)
 typedef struct CZombieDog {
     CEnemy base; // 0x0
-    int bone_index_spine; // 0xbebc
-    int bone_index_head; // 0xbec0
+    int bone_indices[2]; // 0xbebc
     uint sfx_handle; // 0xbec4
 } CZombieDog;
 

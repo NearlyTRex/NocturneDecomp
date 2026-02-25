@@ -1,14 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl support_codec_cpp_CLZWDictionary_init_FUN_0043ee60(CLZWDictionary *this_ptr,int new_dict_size,int new_num_bits,int normal_code_width,int fallback_code_width)
+; void __cdecl support_codec_cpp_CLZWDictionary_init_FUN_0043ee60(CLZWDictionary *this_ptr,int new_dict_size,int new_num_bits)
 ;
 ; Parameters:
 ; CLZWDictionary * Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   new_dict_size
 ; int              Stack[0xc]:4   new_num_bits
-; int              Stack[0x10]:4   normal_code_width
-; int              Stack[0x14]:4   fallback_code_width
 ;
 ; XREF[2]:
 ;   support_codec.cpp_CLZWCompress_init_FUN_0043f320 at 0043f335

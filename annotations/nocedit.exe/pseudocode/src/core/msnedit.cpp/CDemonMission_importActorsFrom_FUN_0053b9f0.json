@@ -1,62 +1,24 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 38,
-        "line": 80,
-        "message": "member reference base type 'char[40]' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 59,
-        "line": 80,
-        "message": "member reference base type 'char[40]' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 75,
-        "line": 105,
-        "message": "member reference base type 'char[40]' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 32,
-        "line": 106,
-        "message": "member reference base type 'char[40]' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 53,
-        "line": 106,
-        "message": "member reference base type 'char[40]' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 17,
-        "line": 121,
-        "message": "member reference base type 'char[40]' is not a structure or union"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 254,
-    "complexity_score": 261,
+    "complexity_score": 192,
     "cross_reference_count": 1,
     "function_call_count": 17,
     "global_count": 17,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 121,
-    "suspect_count": 12,
+    "pseudocode_lines": 117,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
       "stack_param",
-      "unknown_field",
       "warning_unmapped_variable"
     ],
-    "total_lines": 375
+    "total_lines": 371
   },
   "cross_references": [
     {
@@ -393,48 +355,8 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 73,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "local_448.unk3._0_4_,local_448.unk3._4_4_);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 73,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "local_448.unk3._0_4_,local_448.unk3._4_4_);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 98,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "(uint)local_448.base.vtable,local_448.unk1,local_448.unk3._0_4_,",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 99,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "local_448.unk3._4_4_,local_448.unk3._8_4_);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 99,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "local_448.unk3._4_4_,local_448.unk3._8_4_);",
-      "type": "unknown_field"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 108,
+      "line": 110,
       "match": "in_stack_0000000c",
       "severity": "moderate",
       "text": "local_448.base.item_count = (int)in_stack_0000000c;",
@@ -442,19 +364,11 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 110,
+      "line": 112,
       "match": "in_stack_0000000c",
       "severity": "moderate",
       "text": "core_msnedit_cpp_CDemonMission_FUN_0053c140(in_stack_0000000c,(int)actor);",
       "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 114,
-      "match": "._12_4_",
-      "severity": "mild",
-      "text": "local_448.unk3._12_4_ = local_448.unk3 + 0x14;",
-      "type": "unknown_field"
     }
   ]
 }

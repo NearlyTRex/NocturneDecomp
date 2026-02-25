@@ -468,7 +468,7 @@ section .text
     MOV EDI,dword ptr [0x006810c8]      ; 004aaf01 | g_CDemonSetPtr
     PUSH EDI                            ; 004aaf07 | g_CDemonSetInstance
     CALL core_set.cpp_CDemonSet_addLightFilter_FUN_00570f10 ; 004aaf08
-        ;   XREF to: 00570f10 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_addLightFilter_FUN_00570f10(CDemonSet * this_ptr)
+        ;   XREF to: 00570f10 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_addLightFilter_FUN_00570f10(CDemonSet * this_ptr, char * light_name, C3DSLight * * out_light, CDemonLight * * out_master_light)
     MOV EAX,dword ptr [EBP + -0x5a]     ; 004aaf0d
     ADD ESP,0x10                        ; 004aaf10
     TEST EAX,EAX                        ; 004aaf13
@@ -3367,8 +3367,8 @@ section .text
     PUSH EDX                            ; 004aca2b
     MOV ECX,dword ptr [0x006810c8]      ; 004aca2c | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH ECX                            ; 004aca32 | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_setCameraAmbientValueById_FUN_00570e60 ; 004aca33
-        ;   XREF to: 00570e60 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setCameraAmbientValueById_FUN_00570e60(CDemonSet * this_ptr, int id, float value)
+    CALL core_set.cpp_CDemonSet_setCameraAmbientValueByGroup_FUN_00570e60 ; 004aca33
+        ;   XREF to: 00570e60 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setCameraAmbientValueByGroup_FUN_00570e60(CDemonSet * this_ptr, int group_id, float value)
     ADD ESP,0xc                         ; 004aca38
     JMP 0x004aaf1d                      ; 004aca3b
         ;   XREF to: 004aaf1d (UNCONDITIONAL_JUMP)  ; LAB_004aaf1d
@@ -3460,7 +3460,7 @@ section .text
     PUSH EAX                            ; 004acb13 | g_CDemonSetInstance
     MOV dword ptr [EBP + -0x5e],EDI     ; 004acb14
     CALL core_set.cpp_CDemonSet_addLightFilter_FUN_00570f10 ; 004acb17
-        ;   XREF to: 00570f10 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_addLightFilter_FUN_00570f10(CDemonSet * this_ptr)
+        ;   XREF to: 00570f10 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_addLightFilter_FUN_00570f10(CDemonSet * this_ptr, char * light_name, C3DSLight * * out_light, CDemonLight * * out_master_light)
     MOV EDX,dword ptr [EBP + 0x3e]      ; 004acb1c
     ADD ESP,0x10                        ; 004acb1f
     TEST EDX,EDX                        ; 004acb22

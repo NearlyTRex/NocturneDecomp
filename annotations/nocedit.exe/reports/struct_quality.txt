@@ -4,18 +4,18 @@ STRUCT QUALITY REPORT
 
 SUMMARY
 ----------------------------------------------------------------------
-Total structs:              483
-Fully clean structs:        406
-Structs with issues:        77
+Total structs:              480
+Fully clean structs:        470
+Structs with issues:        10
 Unreferenced structs:       7
 
-Total fields:               4132
-Clean fields:               4000
-Unknown (unk*) fields:      96
-Padding (pad*) fields:      16
-Reserved (reserved*) fields:15
-Default (field_*) fields:   5
-Overall field quality:      96.8%
+Total fields:               3974
+Clean fields:               3956
+Unknown (unk*) fields:      11
+Padding (pad*) fields:      5
+Reserved (reserved*) fields:2
+Default (field_*) fields:   0
+Overall field quality:      99.5%
 
 ======================================================================
 UNREFERENCED STRUCTS (7)
@@ -31,298 +31,42 @@ These structs are not referenced in any source or header file.
   SConditionVariable                        /Nocturne/Struct/Game
 
 ======================================================================
-STRUCTS WITH PROBLEMATIC FIELDS (77)
+STRUCTS WITH PROBLEMATIC FIELDS (10)
 ----------------------------------------------------------------------
 
 COptimize                                  25.0% complete  (2/8 fields clean)
   Issues: 6 unknown
   Fields: unk1, unk2, unk3, unk4, unk5, unk6
 
-SCollisionReturnInfo                       50.0% complete  (1/2 fields clean)
-  Issues: 1 reserved
-  Fields: reserved
-
 SMpegScalefactorBandData                   50.0% complete  (1/2 fields clean)
   Issues: 1 reserved
   Fields: reserved
-
-CLadder                                    66.7% complete  (6/9 fields clean)
-  Issues: 3 unknown
-  Fields: unk1, unk2, unk3
-
-CMorph                                     66.7% complete  (2/3 fields clean)
-  Issues: 1 reserved
-  Fields: reserved
-
-CPodDependencyRecord                       66.7% complete  (2/3 fields clean)
-  Issues: 1 unknown
-  Fields: unknown
-
-SHuffmanTableSource                        66.7% complete  (4/6 fields clean)
-  Issues: 2 unknown
-  Fields: unk1, unk2
 
 SNetworkAddr                               66.7% complete  (2/3 fields clean)
   Issues: 1 padding
   Fields: padding
 
-SCramRectangle                             70.0% complete  (7/10 fields clean)
-  Issues: 3 unknown
-  Fields: unk1, unk2, unk3
-
-CActorDestination                          71.4% complete  (5/7 fields clean)
-  Issues: 2 unknown
-  Fields: unk1, unk4
-
-CGargoyle                                  71.4% complete  (5/7 fields clean)
-  Issues: 2 unknown
-  Fields: unk, unk2
-
-CMelee                                     71.4% complete  (10/14 fields clean)
-  Issues: 4 unknown
-  Fields: unk1, unk2, unk3, unk4
-
-SVoxelCubeMetadata                         71.4% complete  (5/7 fields clean)
-  Issues: 2 unknown
-  Fields: unk1, unk2
-
-CExternalRenderer                          72.7% complete  (8/11 fields clean)
-  Issues: 1 padding, 2 default
-  Fields: padding_206, field_592, field_7592
-
-CHostage                                   75.0% complete  (18/24 fields clean)
-  Issues: 6 unknown
-  Fields: unk1, unk2, unk3, unk4, unk5, unk6
-
-CHotDemon                                  75.0% complete  (3/4 fields clean)
-  Issues: 1 unknown
-  Fields: unk
-
-CLarva                                     75.0% complete  (3/4 fields clean)
-  Issues: 1 unknown
-  Fields: unk
-
-CMarquee                                   75.0% complete  (6/8 fields clean)
+CMP3Decoder                                86.7% complete  (13/15 fields clean)
   Issues: 2 unknown
   Fields: unk2, unk3
 
-CMirror                                    75.0% complete  (3/4 fields clean)
-  Issues: 1 reserved
-  Fields: reserved
-
-CMoloch                                    75.0% complete  (6/8 fields clean)
+SMpegLayer3Granule                         88.9% complete  (16/18 fields clean)
   Issues: 2 unknown
-  Fields: unk1, unk2
-
-SAlphaEntry                                75.0% complete  (3/4 fields clean)
-  Issues: 1 padding
-  Fields: pad
-
-SCorona                                    75.0% complete  (3/4 fields clean)
-  Issues: 1 unknown
-  Fields: unknown
-
-SVersionControlSession                     75.0% complete  (6/8 fields clean)
-  Issues: 2 unknown
-  Fields: unk1, unk2
-
-SMpegLayer3Granule                         77.8% complete  (14/18 fields clean)
-  Issues: 4 unknown
-  Fields: unk1, unk2, unk3, unk4
-
-STimestampRecord                           77.8% complete  (7/9 fields clean)
-  Issues: 2 unknown
-  Fields: unk1, unk2
-
-CColonel                                   80.0% complete  (4/5 fields clean)
-  Issues: 1 unknown
-  Fields: unk
-
-CDrip                                      80.0% complete  (12/15 fields clean)
-  Issues: 3 unknown
-  Fields: unk1, unk2, unk3
-
-CGabriella                                 80.0% complete  (12/15 fields clean)
-  Issues: 3 unknown
-  Fields: unk1, unk2, unk3
-
-CMP3Decoder                                80.0% complete  (12/15 fields clean)
-  Issues: 3 unknown
-  Fields: unk1, unk2, unk3
-
-SBoneData                                  80.0% complete  (4/5 fields clean)
-  Issues: 1 padding
-  Fields: padding
-
-SDirectSoundDeviceInfo                     80.0% complete  (4/5 fields clean)
-  Issues: 1 default
-  Fields: field_4
-
-SFace                                      80.0% complete  (4/5 fields clean)
-  Issues: 1 unknown
-  Fields: unk
-
-SFog                                       80.0% complete  (4/5 fields clean)
-  Issues: 1 reserved
-  Fields: reserved
-
-SHuffmanTable                              80.0% complete  (8/10 fields clean)
-  Issues: 2 unknown
-  Fields: unk1, unk2
-
-SPolygonScreenData                         80.0% complete  (4/5 fields clean)
-  Issues: 1 reserved
-  Fields: reserved1
-
-SRoom                                      80.0% complete  (4/5 fields clean)
-  Issues: 1 reserved
-  Fields: reserved
-
-SVDBox                                     80.0% complete  (4/5 fields clean)
-  Issues: 1 reserved
-  Fields: reserved
-
-SVertexBatch                               80.0% complete  (4/5 fields clean)
-  Issues: 1 unknown
-  Fields: unk
-
-CPodAuditRecord                            81.8% complete  (9/11 fields clean)
-  Issues: 1 padding, 1 reserved
-  Fields: padding, reserved
-
-CCameraView                                83.3% complete  (5/6 fields clean)
-  Issues: 1 reserved
-  Fields: reserved
-
-SAnimatedTexture                           83.3% complete  (5/6 fields clean)
-  Issues: 1 unknown
-  Fields: unk
-
-STextureLoadConfig                         83.3% complete  (15/18 fields clean)
-  Issues: 3 unknown
-  Fields: unk1, unk2, unk3
-
-CTrash                                     84.6% complete  (11/13 fields clean)
-  Issues: 1 unknown, 1 default
-  Fields: unk, field_740
-
-CDrone                                     85.7% complete  (6/7 fields clean)
-  Issues: 1 unknown
-  Fields: unk
-
-CLZWCompress                               85.7% complete  (6/7 fields clean)
-  Issues: 1 unknown
-  Fields: unk
-
-SReflector                                 87.5% complete  (7/8 fields clean)
-  Issues: 1 default
-  Fields: field_88
-
-CPickList                                  88.5% complete  (23/26 fields clean)
-  Issues: 3 unknown
-  Fields: unk1, unk3, unk2
-
-SPanel                                     88.9% complete  (8/9 fields clean)
-  Issues: 1 unknown
-  Fields: unk
+  Fields: unk, unk4
 
 CCramTex                                   89.5% complete  (17/19 fields clean)
   Issues: 2 padding
   Fields: padded_width, padded_height
 
-CSpike                                     89.5% complete  (17/19 fields clean)
-  Issues: 2 unknown
-  Fields: unk1, unk6
-
-CFlies                                     90.0% complete  (9/10 fields clean)
-  Issues: 1 reserved
-  Fields: reserved
-
-CGround                                    90.0% complete  (18/20 fields clean)
-  Issues: 2 reserved
-  Fields: reserved1, reserved2
-
-CScat                                      90.0% complete  (9/10 fields clean)
-  Issues: 1 unknown
-  Fields: unk
-
-CFireball                                  90.9% complete  (10/11 fields clean)
+SCram                                      90.0% complete  (9/10 fields clean)
   Issues: 1 padding
-  Fields: padding
+  Fields: padding_size
 
-CLevelLoader                               90.9% complete  (10/11 fields clean)
+CGargoyle                                  90.9% complete  (10/11 fields clean)
   Issues: 1 unknown
-  Fields: unk
-
-CScript                                    91.3% complete  (21/23 fields clean)
-  Issues: 2 unknown
-  Fields: unk1, unk2
-
-CCloth                                     91.7% complete  (22/24 fields clean)
-  Issues: 1 unknown, 1 reserved
-  Fields: reserved, unk
+  Fields: unk2
 
 SMpegFrameHeader                           91.7% complete  (11/12 fields clean)
-  Issues: 1 padding
-  Fields: padding
-
-CVehicle                                   92.3% complete  (24/26 fields clean)
-  Issues: 2 unknown
-  Fields: unk1, unk2
-
-CStranger                                  92.5% complete  (37/40 fields clean)
-  Issues: 3 unknown
-  Fields: unk1, unk2, unk3
-
-CDeformableModelInstance                   92.9% complete  (13/14 fields clean)
-  Issues: 1 unknown
-  Fields: unk
-
-SClothBone                                 92.9% complete  (13/14 fields clean)
-  Issues: 1 padding
-  Fields: padding
-
-CDoor                                      93.1% complete  (27/29 fields clean)
-  Issues: 2 unknown
-  Fields: unk3, unk4
-
-CDemonActor                                93.3% complete  (28/30 fields clean)
-  Issues: 2 unknown
-  Fields: unk1, unk2
-
-CSfxOptions                                93.3% complete  (14/15 fields clean)
-  Issues: 1 unknown
-  Fields: unk
-
-CMobster                                   93.5% complete  (29/31 fields clean)
-  Issues: 2 unknown
-  Fields: unk1, unk2
-
-CLever                                     93.8% complete  (15/16 fields clean)
-  Issues: 1 unknown
-  Fields: unk1
-
-CBox                                       94.1% complete  (16/17 fields clean)
-  Issues: 1 padding
-  Fields: padding
-
-C3DSCamera                                 94.4% complete  (17/18 fields clean)
-  Issues: 1 padding
-  Fields: padding
-
-CMansionPuzzleCircle                       94.7% complete  (18/19 fields clean)
-  Issues: 1 unknown
-  Fields: unk
-
-CTurret                                    95.5% complete  (21/22 fields clean)
-  Issues: 1 unknown
-  Fields: unk
-
-CKeyFramedModel                            95.7% complete  (22/23 fields clean)
-  Issues: 1 padding
-  Fields: padding
-
-CDeformableModel                           95.8% complete  (23/24 fields clean)
   Issues: 1 padding
   Fields: padding
 
@@ -330,21 +74,12 @@ CLodMesh                                   95.8% complete  (23/24 fields clean)
   Issues: 1 reserved
   Fields: reserved_attribute_count
 
-CBoxActor                                  96.0% complete  (24/25 fields clean)
-  Issues: 1 padding
-  Fields: padding
-
-C3DSLight                                  96.7% complete  (29/30 fields clean)
-  Issues: 1 padding
-  Fields: padding
-
-CDemonSet                                  97.8% complete  (91/93 fields clean)
-  Issues: 2 unknown
-  Fields: unk1, unk2
-
 ======================================================================
-FULLY CLEAN STRUCTS (406)
+FULLY CLEAN STRUCTS (470)
 ----------------------------------------------------------------------
+  C3DSCamera
+  C3DSLight
+  CActorDestination
   CActorProperty
   CActorPropertyList
   CAlphaBitmap
@@ -372,11 +107,14 @@ FULLY CLEAN STRUCTS (406)
   CBoneGuy
   CBoneStructure
   CBoundingBox3D
+  CBox
+  CBoxActor
   CBride
   CBugs
   CBulletHole
   CBulletTrail
   CCameraTransformState
+  CCameraView
   CCameraView_vtable
   CChain
   CCharacter
@@ -385,11 +123,13 @@ FULLY CLEAN STRUCTS (406)
   CCheckOutItem
   CCheckOutList
   CClippedPoly
+  CCloth
   CClothList
   CCmdParm
   CCmdParse
   CCodec
   CCodec_vtable
+  CColonel
   CColor3f
   CColor3i
   CColor4f
@@ -404,6 +144,9 @@ FULLY CLEAN STRUCTS (406)
   CCryptVessel
   CCurtain
   CDSEModel
+  CDeformableModel
+  CDeformableModelInstance
+  CDemonActor
   CDemonActorTransformState
   CDemonActorType
   CDemonActor_vtable
@@ -421,10 +164,14 @@ FULLY CLEAN STRUCTS (406)
   CDemonPod_vtable
   CDemonRaytrace
   CDemonRenderer
+  CDemonSet
   CDemonTriangle
   CDirectSoundDevice
+  CDoor
   CDraculaBride
   CDrawSurface
+  CDrip
+  CDrone
   CDrummer
   CDynamite
   CEdButton
@@ -438,6 +185,7 @@ FULLY CLEAN STRUCTS (406)
   CEnemy_vtable
   CEventList
   CExplosion
+  CExternalRenderer
   CExternalRendererBridge
   CFileBitStream
   CFileFinder
@@ -448,14 +196,17 @@ FULLY CLEAN STRUCTS (406)
   CFilterCache
   CFilterFx
   CFireEffect
+  CFireball
   CFlame
   CFlameCan
   CFlameThrower
   CFlashlight
+  CFlies
   CFont
   CFont_vtable
   CFootstep
   CFrankenstienMachine
+  CGabriella
   CGame
   CGasMask
   CGhoul
@@ -463,6 +214,7 @@ FULLY CLEAN STRUCTS (406)
   CGlassParticle
   CGore
   CGrave
+  CGround
   CGun
   CGunFlame
   CHaystack
@@ -473,6 +225,8 @@ FULLY CLEAN STRUCTS (406)
   CHero_vtable
   CHighPriestOfGardath
   CHiram
+  CHostage
+  CHotDemon
   CIcePick
   CImp
   CIni
@@ -480,15 +234,21 @@ FULLY CLEAN STRUCTS (406)
   CInputString
   CInventory
   CKeyActor
+  CKeyFramedModel
   CKeyFramedModelInstance
   CKeyFramedModelPart
   CKeys
   CKeys_vtable
+  CLZWCompress
   CLZWDecompress
   CLZWDictionary
   CLZWDictionaryNode
+  CLadder
+  CLarva
   CLaserBeam
   CLeakChecker
+  CLevelLoader
+  CLever
   CLightActor
   CLightCone
   CLightGun
@@ -497,16 +257,23 @@ FULLY CLEAN STRUCTS (406)
   CLodEdge
   CLodFace
   CLodVert
+  CMansionPuzzleCircle
+  CMarquee
   CMatrix3x3d
   CMatrix3x3f
   CMatrix3x3i
   CMatrix3x4f
+  CMelee
   CMemoryBitStream
   CMimic
   CMineCar
+  CMirror
   CMirrorHack
   CMirrorReflection
+  CMobster
+  CMoloch
   CMoon
+  CMorph
   CMorphModel
   CMotionController
   CMotionController_vtable
@@ -531,8 +298,11 @@ FULLY CLEAN STRUCTS (406)
   CPathMap
   CPathQueueNode
   CPendulum
+  CPickList
   CPlatform
   CPod
+  CPodAuditRecord
+  CPodDependencyRecord
   CPodDirectoryEntry
   CPodFile
   CPodSearchContext
@@ -549,7 +319,10 @@ FULLY CLEAN STRUCTS (406)
   CRock
   CRuleList
   CSampleInfo
+  CScat
+  CScript
   CSentinel
+  CSfxOptions
   CSfxSample
   CSfxSlot
   CShell
@@ -565,11 +338,13 @@ FULLY CLEAN STRUCTS (406)
   CSoundDeviceBasic_vtable
   CSoundDeviceFull_vtable
   CSpark
+  CSpike
   CSpotView
   CStairs
   CStake
   CStrList
   CStrList_vtable
+  CStranger
   CSuccubus
   CSvetlana
   CTVBat
@@ -585,7 +360,9 @@ FULLY CLEAN STRUCTS (406)
   CToss
   CTrail
   CTrap
+  CTrash
   CTrigger
+  CTurret
   CVampireBoss
   CVec
   CVector2d
@@ -596,6 +373,7 @@ FULLY CLEAN STRUCTS (406)
   CVector3i
   CVector4f
   CVector4i
+  CVehicle
   CVert
   CWater
   CWaterActor
@@ -614,6 +392,7 @@ FULLY CLEAN STRUCTS (406)
   CZombieDog
   SActionKeyBindings
   SActorVarBlock
+  SAlphaEntry
   SArmAimData
   SAudioFormatDescriptor
   SBat
@@ -622,26 +401,30 @@ FULLY CLEAN STRUCTS (406)
   SBodyPartFire
   SBodyPartModel
   SBone
+  SBoneData
   SBoneGuyBox
   SBug
   SCPUInfo
   SCameraViewportState
-  SCapsuleCollision
   SCarryHand
   SChainVertex
   SChatHistory
   SClipPlane
+  SClothBone
   SClothVertex
   SCollisionInfo
+  SCollisionReturnInfo
   SColorBox
   SConditionVariable
+  SCorona
   SCounterBlock
-  SCramConfig
+  SCramRectangle
   SCurtainMeshData
   SCurtainVertex
   SDamageDecal
   SDamageInfo
   SDialogEntry
+  SDirectSoundDeviceInfo
   SDisplayListSortEntry
   SEdge
   SEdgeData
@@ -649,8 +432,10 @@ FULLY CLEAN STRUCTS (406)
   SEdgeTableEntry
   SEnumPair
   SEventNameBlock
+  SFace
   SFire
   SFly
+  SFog
   SFogGrid
   SFogGridPlane
   SFogImagePlane
@@ -659,6 +444,8 @@ FULLY CLEAN STRUCTS (406)
   SFreaky
   SGem
   SHardwareEdge
+  SHuffmanTable
+  SHuffmanTableSource
   SInputFace
   SInteractionInfo
   SIntersectXZCylinder
@@ -668,6 +455,7 @@ FULLY CLEAN STRUCTS (406)
   SLineStrip
   SLod
   SLodSamplePoint
+  SMRGLAnimatedTexture
   SMRGLHeaderBasic
   SMRGLHeaderBasicTypeOnly
   SMRGLHeaderExtended
@@ -702,12 +490,14 @@ FULLY CLEAN STRUCTS (406)
   SMpegSubbandScalefactors
   SNetPlayer
   SPaletteEntry
+  SPanel
   SPart
   SPartInstanceData
   SPlatformAttachment
   SPlayer
   SPlayerControl
   SPoint2i
+  SPolygonScreenData
   SPose
   SPoseData
   SProjectedVertex
@@ -717,9 +507,11 @@ FULLY CLEAN STRUCTS (406)
   SRGBColorPalette
   SRaytraceState
   SRecordingDeviceInfo
+  SReflector
   SRenderBufferEntry
   SRenderVertex
   SResolutionEntry
+  SRoom
   SScrape
   SScreenCoord
   SScriptLine
@@ -739,14 +531,18 @@ FULLY CLEAN STRUCTS (406)
   STextureAtlasEntry
   STextureSet
   STimerBlock
+  STimestampRecord
   STrainNoise
   STreeNode
   STrianglePackedIndices
   STriangleRef
   STriangleVertices
+  SVDBox
+  SVersionControlSession
   SVert
   SVertexData
   SVertexPair
+  SVoxelCubeMetadata
   SVoxelGrid
   SWaterVertex
   SWayPointAdjacency

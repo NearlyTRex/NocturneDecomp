@@ -54,17 +54,11 @@ void __cdecl core_door_cpp_CDoor_reposition_FUN_0047fd20(CDoor *this_ptr)
     else {
       local_c8.min.x = local_c8.min.x + (float)0.29999999999999999;
     }
-    *(float *)this_ptr->unk3 = local_c8.min.x;
-    this_ptr->unk3[4] = '\0';
-    this_ptr->unk3[5] = '\0';
-    this_ptr->unk3[6] = '`';
-    this_ptr->unk3[7] = '@';
-    this_ptr->unk3[8] = '\0';
-    this_ptr->unk3[9] = '\0';
-    this_ptr->unk3[10] = '\0';
-    this_ptr->unk3[0xb] = '\0';
+    (this_ptr->open_position).x = local_c8.min.x;
+    (this_ptr->open_position).y = 3.5;
+    (this_ptr->open_position).z = 0.0;
     pCVar3 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                       (&this_ptr->base,&CStack_50,(CVector3f *)this_ptr->unk3);
+                       (&this_ptr->base,&CStack_50,&this_ptr->open_position);
     break;
   case 1:
     (this_ptr->base).location.position.y = (this_ptr->orig_pos).y + this_ptr->param;
@@ -115,19 +109,19 @@ void __cdecl core_door_cpp_CDoor_reposition_FUN_0047fd20(CDoor *this_ptr)
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDoor::reposition - Unknown type");
     goto LAB_0047fe19;
   }
-  if ((CVector3f *)this_ptr->unk3 != pCVar3) {
-    *(float *)this_ptr->unk3 = pCVar3->x;
-    *(float *)(this_ptr->unk3 + 4) = pCVar3->y;
-    *(float *)(this_ptr->unk3 + 8) = pCVar3->z;
+  if (&this_ptr->open_position != pCVar3) {
+    (this_ptr->open_position).x = pCVar3->x;
+    (this_ptr->open_position).y = pCVar3->y;
+    (this_ptr->open_position).z = pCVar3->z;
   }
 LAB_0047fe19:
-  if (0.0 < *(float *)this_ptr->unk4) {
+  if (0.0 < this_ptr->swing_range) {
     CStack_20.x = core_actor_cpp_getRandomFloat_FUN_0040cc10
-                            (-*(float *)this_ptr->unk4,*(float *)this_ptr->unk4);
+                            (-this_ptr->swing_range,this_ptr->swing_range);
     CStack_20.y = 0.0;
     fStack_14 = CStack_20.x;
     CStack_20.z = core_actor_cpp_getRandomFloat_FUN_0040cc10
-                            (-*(float *)this_ptr->unk4,*(float *)this_ptr->unk4);
+                            (-this_ptr->swing_range,this_ptr->swing_range);
     fStack_14 = CStack_20.z;
     pCVar3 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
                        (&this_ptr->base,&CStack_98,&CStack_20);
@@ -135,10 +129,7 @@ LAB_0047fe19:
     (pCVar1->position).x = pCVar3->x + (pCVar1->position).x;
     (this_ptr->base).location.position.y = pCVar3->y + (this_ptr->base).location.position.y;
     (this_ptr->base).location.position.z = pCVar3->z + (this_ptr->base).location.position.z;
-    this_ptr->unk4[0] = '\0';
-    this_ptr->unk4[1] = '\0';
-    this_ptr->unk4[2] = '\0';
-    this_ptr->unk4[3] = '\0';
+    this_ptr->swing_range = 0.0;
     return;
   }
   return;

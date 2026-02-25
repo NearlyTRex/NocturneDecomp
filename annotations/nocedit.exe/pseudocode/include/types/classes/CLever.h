@@ -12,7 +12,7 @@
 typedef struct CLever {
     CDemonActor base; // 0x0
     CKeyFramedModelInstance model; // 0x158
-    int unk1; // 0x2d4
+    int dead; // 0x2d4
     ELeverType lever_type; // 0x2d8
     float param; // 0x2dc
     char on_event[100]; // 0x2e0
@@ -20,8 +20,8 @@ typedef struct CLever {
     char sound[100]; // 0x3a8
     int momentary_flag; // 0x40c
     int linked_lever; // 0x410
-    undefined4 end_vertex_index; // 0x414
-    undefined4 moving; // 0x418
+    int end_vertex_index; // 0x414
+    int moving; // 0x418
     float move_to_pct; // 0x41c
     CRuleList rule; // 0x420
     int allowed_sides; // 0x80c

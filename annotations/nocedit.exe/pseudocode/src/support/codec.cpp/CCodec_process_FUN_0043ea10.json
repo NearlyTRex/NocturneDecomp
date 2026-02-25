@@ -6,17 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 57,
-    "complexity_score": 37,
+    "complexity_score": 23,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 22,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
-    "total_lines": 79
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 23,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 80
   },
   "cross_references": [],
   "function": {
@@ -29,7 +27,7 @@
     ],
     "convention": "__cdecl",
     "name": "support_codec.cpp_CCodec_process_FUN_0043ea10",
-    "signature": "int __cdecl support_codec_cpp_CCodec_process_FUN_0043ea10(CCodec *this_ptr,_FILE *input_file,int byte_count,_FILE *output_file)"
+    "signature": "int __cdecl support_codec_cpp_CCodec_process_FUN_0043ea10(CCodec *this_ptr,_istream *istream,int byte_count,_ostream *ostream)"
   },
   "function_calls": [
     {
@@ -131,10 +129,10 @@
       },
       {
         "is_param": true,
-        "name": "input_file",
+        "name": "istream",
         "offset": 8,
         "size": 4,
-        "type": "_FILE *"
+        "type": "_istream *"
       },
       {
         "is_param": true,
@@ -145,23 +143,14 @@
       },
       {
         "is_param": true,
-        "name": "output_file",
+        "name": "ostream",
         "offset": 16,
         "size": 4,
-        "type": "_FILE *"
+        "type": "_ostream *"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 15,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "if (*(int *)((int)&input_file->_handle + *(int *)(input_file->_ptr + 4)) != 0)",
-      "type": "pointer_cast"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

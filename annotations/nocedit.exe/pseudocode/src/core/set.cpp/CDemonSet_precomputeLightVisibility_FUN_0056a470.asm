@@ -34,9 +34,9 @@
 ;
 ; XREF[6]:
 ;   core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0 at 00538762
-;   core_setedit.cpp_CDemonSet_FUN_0057b410 at 0057b4c8
-;   core_setedit.cpp_CDemonSet_FUN_0057b500 at 0057b5dd
-;   core_setedit.cpp_CDemonSet_FUN_0057b600 at 0057b8e8
+;   core_setedit.cpp_CDemonSet_addSpotLight_FUN_0057b410 at 0057b4c8
+;   core_setedit.cpp_CDemonSet_cloneLight_FUN_0057b600 at 0057b8e8
+;   core_setedit.cpp_CDemonSet_editSpotLight_FUN_0057b500 at 0057b5dd
 ;   core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80 at 005793f0
 ;   core_setedit.cpp_CDemonSet_showLightEditor_FUN_0057c5d0 at 0057cb12
 ;
@@ -52,7 +52,7 @@
 ;   int g_MasterLightCount
 ;   CDemonLight*[96] g_MasterLightList
 ;   undefined4 DAT_03276db4
-;   int g_ActiveLightCount
+;   int g_SpotLightCount
 ;   int g_DynamicLightCount
 ;   CDemonRaytrace g_CDemonRaytraceInstance
 ;   int g_OmniLightCount
@@ -98,7 +98,7 @@ section .text
     MOV dword ptr [0x03277d80],EDI      ; 0056a4a0 | g_OmniLightCount
     MOV dword ptr [ESP + 0x154],EDI     ; 0056a4a6
     MOV ECX,dword ptr [EAX]             ; 0056a4ad
-    MOV dword ptr [0x03276f30],EDI      ; 0056a4af | g_ActiveLightCount
+    MOV dword ptr [0x03276f30],EDI      ; 0056a4af | g_SpotLightCount
     TEST ECX,ECX                        ; 0056a4b5
     JLE 0x0056a70e                      ; 0056a4b7
         ;   XREF to: 0056a70e (CONDITIONAL_JUMP)  ; LAB_0056a70e

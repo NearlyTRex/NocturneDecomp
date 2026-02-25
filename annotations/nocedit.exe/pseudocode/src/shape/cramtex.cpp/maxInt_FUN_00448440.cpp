@@ -9,12 +9,9 @@
 int __cdecl shape_cramtex_cpp_maxInt_FUN_00448440(int a,int b)
 
 {
-  int in_stack_00000004;
-  int in_stack_00000008;
-  
   __STK();
-  if (in_stack_00000008 < in_stack_00000004) {
-    return in_stack_00000004;
+  if (b < a) {
+    return a;
   }
-  return in_stack_00000008;
+  return b;
 }

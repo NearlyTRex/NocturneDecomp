@@ -28,11 +28,10 @@ void __cdecl core_melee_cpp_CMelee_getPropertyList_FUN_0050ecf0(CMelee *this_ptr
   core_actor_cpp_CActorPropertyList_addEnumPair_FUN_0040e640
             (property_list,"Damage type",9,g_MeleeDamageTypePairs,&this_ptr->damage_type);
   core_actor_cpp_CActorPropertyList_addSound_FUN_0040e2d0
-            (property_list,"thrustHitCharacterSound",&this_ptr->thrust_hit_character_sound)
-  ;
+            (property_list,"thrustHitCharacterSound",this_ptr->thrust_hit_character_sound);
   core_actor_cpp_CActorPropertyList_addSound_FUN_0040e2d0
-            (property_list,"swingHitCharacterSound",&this_ptr->swing_hit_character_sound);
+            (property_list,"swingHitCharacterSound",this_ptr->swing_hit_character_sound);
   core_actor_cpp_CActorPropertyList_addSound_FUN_0040e2d0
-            (property_list,"hitOtherSound",&this_ptr->hit_other_sound);
+            (property_list,"hitOtherSound",this_ptr->hit_other_sound);
   return;
 }

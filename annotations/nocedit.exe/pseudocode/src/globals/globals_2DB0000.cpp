@@ -63,6 +63,7 @@ int INT_02db873c = {};
 int INT_02db8740 = {};
 int g_HeroCount = {};
 int g_LocalHeroIndex = {};
+int INT_02db8888 = {};
 int INT_02db88c8 = {};
 int INT_02db88cc = {};
 int INT_02db88d0 = {};
@@ -107,7 +108,4 @@ int INT_02db8a1c = {};
 int INT_02db8a20 = {};
 int g_SkipIntroVideo = {};
 int g_ItemDefinitionCount = {};
-
-// undefined4
-undefined4 DAT_02db8888 = {};
 

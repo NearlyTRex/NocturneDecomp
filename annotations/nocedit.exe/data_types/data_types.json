@@ -361,6 +361,10 @@
       "type":"function_definition"
     },
     {
+      "name":"CCodec_finalizeBuffer",
+      "type":"function_definition"
+    },
+    {
       "name":"CCodec_init",
       "type":"function_definition"
     },
@@ -370,6 +374,18 @@
     },
     {
       "name":"CCodec_processBuffer",
+      "type":"function_definition"
+    },
+    {
+      "name":"CCodec_processFiles",
+      "type":"function_definition"
+    },
+    {
+      "name":"CCodec_processFromBuffer",
+      "type":"function_definition"
+    },
+    {
+      "name":"CCodec_processToBuffer",
       "type":"function_definition"
     },
     {
@@ -1717,15 +1733,15 @@
       "type":"struct"
     },
     {
+      "name":"CCameraView",
+      "type":"struct"
+    },
+    {
       "name":"CMatrix3x3i",
       "type":"struct"
     },
     {
       "name":"CCameraTransformState",
-      "type":"struct"
-    },
-    {
-      "name":"CCameraView",
       "type":"struct"
     },
     {
@@ -3325,10 +3341,6 @@
       "type":"struct"
     },
     {
-      "name":"SAnimatedTexture",
-      "type":"struct"
-    },
-    {
       "name":"SAudioFormatDescriptor",
       "type":"struct"
     },
@@ -3346,10 +3358,6 @@
     },
     {
       "name":"CLZWDictionary",
-      "type":"struct"
-    },
-    {
-      "name":"CLZWCompress",
       "type":"struct"
     },
     {
@@ -3393,10 +3401,6 @@
       "type":"struct"
     },
     {
-      "name":"SCapsuleCollision",
-      "type":"struct"
-    },
-    {
       "name":"SChainVertex",
       "type":"struct"
     },
@@ -3429,15 +3433,11 @@
       "type":"struct"
     },
     {
-      "name":"SCorona",
-      "type":"struct"
-    },
-    {
       "name":"SCounterBlock",
       "type":"struct"
     },
     {
-      "name":"SCramConfig",
+      "name":"SCram",
       "type":"struct"
     },
     {
@@ -3454,10 +3454,6 @@
     },
     {
       "name":"SDialogEntry",
-      "type":"struct"
-    },
-    {
-      "name":"SDirectSoundDeviceInfo",
       "type":"struct"
     },
     {
@@ -3690,6 +3686,10 @@
     },
     {
       "name":"SMRGLHeaderBasic",
+      "type":"struct"
+    },
+    {
+      "name":"SMRGLAnimatedTexture",
       "type":"struct"
     },
     {
@@ -4321,10 +4321,6 @@
       "type":"struct"
     },
     {
-      "name":"STextureLoadConfig",
-      "type":"struct"
-    },
-    {
       "name":"STextureSet",
       "type":"struct"
     },
@@ -4353,11 +4349,11 @@
       "type":"struct"
     },
     {
-      "name":"SFace",
+      "name":"SInputFace",
       "type":"struct"
     },
     {
-      "name":"SInputFace",
+      "name":"SFace",
       "type":"struct"
     },
     {
@@ -4463,10 +4459,6 @@
     {
       "name":"SVert_ptr_16",
       "type":"typedef"
-    },
-    {
-      "name":"SVertexBatch",
-      "type":"struct"
     },
     {
       "name":"SVertexData",
@@ -4593,6 +4585,10 @@
       "type":"union"
     },
     {
+      "name":"UFloatInteger",
+      "type":"union"
+    },
+    {
       "name":"UINT",
       "type":"typedef"
     },
@@ -4689,6 +4685,10 @@
       "type":"typedef"
     },
     {
+      "name":"UIntegerFloat",
+      "type":"union"
+    },
+    {
       "name":"ULONG_PTR",
       "type":"typedef"
     },
@@ -4723,6 +4723,10 @@
     {
       "name":"UPDATE_WINDOW_FUNC",
       "type":"function_definition"
+    },
+    {
+      "name":"UVector3",
+      "type":"union"
     },
     {
       "name":"VIRTUAL_ALLOC_FUNC",
@@ -4929,6 +4933,10 @@
       "type":"struct"
     },
     {
+      "name":"CLZWCompress",
+      "type":"struct"
+    },
+    {
       "name":"CLightActor",
       "type":"struct"
     },
@@ -4938,6 +4946,10 @@
     },
     {
       "name":"CMuzzleFlash",
+      "type":"struct"
+    },
+    {
+      "name":"SCorona",
       "type":"struct"
     },
     {
@@ -5139,6 +5151,10 @@
     {
       "name":"DIRECT_SOUND_ENUMERATE_A_FUNC",
       "type":"function_definition"
+    },
+    {
+      "name":"SDirectSoundDeviceInfo",
+      "type":"struct"
     },
     {
       "name":"_LIST_ENTRY",
@@ -5489,6 +5505,10 @@
       "type":"struct"
     },
     {
+      "name":"_istream",
+      "type":"struct"
+    },
+    {
       "name":"joyinfo_tag",
       "type":"struct"
     },
@@ -5502,6 +5522,10 @@
     },
     {
       "name":"ostream_core",
+      "type":"struct"
+    },
+    {
+      "name":"_ostream",
       "type":"struct"
     },
     {
@@ -5565,6 +5589,10 @@
       "type":"struct"
     },
     {
+      "name":"ios",
+      "type":"struct"
+    },
+    {
       "name":"fstreambase",
       "type":"struct"
     },
@@ -5573,19 +5601,7 @@
       "type":"struct"
     },
     {
-      "name":"ios",
-      "type":"struct"
-    },
-    {
-      "name":"istream",
-      "type":"struct"
-    },
-    {
       "name":"ofstream",
-      "type":"struct"
-    },
-    {
-      "name":"ostream",
       "type":"struct"
     },
     {
@@ -5605,11 +5621,11 @@
       "type":"struct"
     },
     {
-      "name":"istrstream",
+      "name":"_istrstream",
       "type":"struct"
     },
     {
-      "name":"ostrstream",
+      "name":"_ostrstream",
       "type":"struct"
     },
     {
@@ -9223,19 +9239,7 @@
           "type":"CCodec*"
         },
         {
-          "name":"d1",
-          "type":"uint"
-        },
-        {
-          "name":"d2",
-          "type":"uint"
-        },
-        {
-          "name":"d3",
-          "type":"uint"
-        },
-        {
-          "name":"d4",
+          "name":"flags",
           "type":"uint"
         }
       ],
@@ -9253,8 +9257,30 @@
           "type":"CCodec*"
         },
         {
-          "name":"file_handle",
-          "type":"_FILE*"
+          "name":"ostream",
+          "type":"void*"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CCodec_finalizeBuffer",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CCodec*"
+        },
+        {
+          "name":"buffer_ptr",
+          "type":"char*"
+        },
+        {
+          "name":"buffer_size_ptr",
+          "type":"int*"
         }
       ],
       "return_type":"int",
@@ -9285,16 +9311,16 @@
           "type":"CCodec*"
         },
         {
-          "name":"param1",
-          "type":"_FILE*"
+          "name":"istream",
+          "type":"void*"
         },
         {
-          "name":"param2",
-          "type":"int"
+          "name":"byte_count",
+          "type":"int*"
         },
         {
-          "name":"param3",
-          "type":"_FILE*"
+          "name":"ostream",
+          "type":"void*"
         }
       ],
       "return_type":"int",
@@ -9311,23 +9337,109 @@
           "type":"CCodec*"
         },
         {
-          "name":"param1",
-          "type":"byte*"
+          "name":"input",
+          "type":"char*"
         },
         {
-          "name":"param2",
+          "name":"input_length",
           "type":"int*"
         },
         {
-          "name":"param3",
-          "type":"byte*"
+          "name":"output",
+          "type":"char*"
         },
         {
-          "name":"param4",
+          "name":"output_length",
           "type":"int*"
         },
         {
-          "name":"param5",
+          "name":"enable_callback",
+          "type":"int"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CCodec_processFiles",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CCodec*"
+        },
+        {
+          "name":"input_file_path",
+          "type":"char*"
+        },
+        {
+          "name":"output_file_path",
+          "type":"char*"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CCodec_processFromBuffer",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CCodec*"
+        },
+        {
+          "name":"input",
+          "type":"char*"
+        },
+        {
+          "name":"input_length",
+          "type":"int*"
+        },
+        {
+          "name":"output",
+          "type":"char*"
+        },
+        {
+          "name":"output_length",
+          "type":"int*"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CCodec_processToBuffer",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CCodec*"
+        },
+        {
+          "name":"istream",
+          "type":"void*"
+        },
+        {
+          "name":"byte_count",
+          "type":"int*"
+        },
+        {
+          "name":"output_buffer",
+          "type":"char*"
+        },
+        {
+          "name":"output_size",
+          "type":"int*"
+        },
+        {
+          "name":"enable_finalize",
           "type":"int"
         }
       ],
@@ -21325,6 +21437,66 @@
     },
     {
       "alig":4,
+      "cat":"/Nocturne/Class/System/iostream.h",
+      "desc":"",
+      "fields":[
+        {
+          "len":16,
+          "name":"_istream_core",
+          "offset":0,
+          "type":"istream_core"
+        },
+        {
+          "len":44,
+          "name":"_ios",
+          "offset":16,
+          "type":"ios"
+        }
+      ],
+      "importable":true,
+      "len":60,
+      "name":"_istream",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":4,
+      "cat":"/Nocturne/Class/System/strstream.h",
+      "desc":"",
+      "fields":[
+        {
+          "len":68,
+          "name":"_strstreambase_core",
+          "offset":0,
+          "type":"strstreambase_core"
+        },
+        {
+          "len":16,
+          "name":"_istream_core",
+          "offset":68,
+          "type":"istream_core"
+        },
+        {
+          "len":4,
+          "name":"padding",
+          "offset":84,
+          "type":"char[4]"
+        },
+        {
+          "len":44,
+          "name":"_ios",
+          "offset":88,
+          "type":"ios"
+        }
+      ],
+      "importable":true,
+      "len":132,
+      "name":"_istrstream",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":4,
       "cat":"/Nocturne/Struct/System/wincon.h",
       "desc":"",
       "fields":[
@@ -21561,6 +21733,66 @@
       "len":16,
       "name":"_MOUSE_EVENT_RECORD",
       "pack":true,
+      "type":"struct"
+    },
+    {
+      "alig":4,
+      "cat":"/Nocturne/Class/System/iostream.h",
+      "desc":"",
+      "fields":[
+        {
+          "len":12,
+          "name":"_ostream_core",
+          "offset":0,
+          "type":"ostream_core"
+        },
+        {
+          "len":44,
+          "name":"_ios",
+          "offset":12,
+          "type":"ios"
+        }
+      ],
+      "importable":true,
+      "len":56,
+      "name":"_ostream",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":4,
+      "cat":"/Nocturne/Class/System/strstream.h",
+      "desc":"",
+      "fields":[
+        {
+          "len":68,
+          "name":"_strstreambase_core",
+          "offset":0,
+          "type":"strstreambase_core"
+        },
+        {
+          "len":12,
+          "name":"_ostream_core",
+          "offset":68,
+          "type":"ostream_core"
+        },
+        {
+          "len":44,
+          "name":"_ios",
+          "offset":80,
+          "type":"ios"
+        },
+        {
+          "len":4,
+          "name":"padding",
+          "offset":124,
+          "type":"char[4]"
+        }
+      ],
+      "importable":true,
+      "len":128,
+      "name":"_ostrstream",
+      "pack":false,
       "type":"struct"
     },
     {
@@ -22392,7 +22624,7 @@
         },
         {
           "len":4,
-          "name":"padding",
+          "name":"dead",
           "offset":316,
           "type":"int"
         },
@@ -22536,9 +22768,9 @@
         },
         {
           "len":2,
-          "name":"padding",
+          "name":"dead",
           "offset":546,
-          "type":"char[2]"
+          "type":"short"
         },
         {
           "len":4000,
@@ -22698,7 +22930,7 @@
         },
         {
           "len":4,
-          "name":"unk1",
+          "name":"triggered",
           "offset":388,
           "type":"int"
         },
@@ -22716,7 +22948,7 @@
         },
         {
           "len":4,
-          "name":"unk4",
+          "name":"needs_actor_search",
           "offset":496,
           "type":"int"
         }
@@ -23303,16 +23535,10 @@
           "type":"CNPC"
         },
         {
-          "len":4,
-          "name":"left_hand_bone_index",
+          "len":8,
+          "name":"bone_indices",
           "offset":128776,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"right_hand_bone_index",
-          "offset":128780,
-          "type":"int"
+          "type":"int[2]"
         }
       ],
       "importable":true,
@@ -23429,106 +23655,16 @@
           "type":"CEnemy"
         },
         {
-          "len":4,
-          "name":"part_head",
+          "len":56,
+          "name":"part_indices",
           "offset":48828,
-          "type":"int"
+          "type":"int[14]"
         },
         {
-          "len":4,
-          "name":"part_torso",
-          "offset":48832,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_pelvis",
-          "offset":48836,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_tail",
-          "offset":48840,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_lthigh",
-          "offset":48844,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_lshin",
-          "offset":48848,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_rthigh",
-          "offset":48852,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_rshin",
-          "offset":48856,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_larm",
-          "offset":48860,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_lforearm",
-          "offset":48864,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_rarm",
-          "offset":48868,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_rforearm",
-          "offset":48872,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_lwing",
-          "offset":48876,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_rwing",
-          "offset":48880,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"alert_sound_handle",
+          "len":12,
+          "name":"sfx_handles",
           "offset":48884,
-          "type":"uint"
-        },
-        {
-          "len":4,
-          "name":"voice_sound_handle",
-          "offset":48888,
-          "type":"uint"
-        },
-        {
-          "len":4,
-          "name":"attack_sound_handle",
-          "offset":48892,
-          "type":"uint"
+          "type":"uint[3]"
         },
         {
           "len":4,
@@ -23561,88 +23697,10 @@
           "type":"char[100]"
         },
         {
-          "len":4,
-          "name":"part_head",
+          "len":56,
+          "name":"part_indices",
           "offset":48928,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_torso",
-          "offset":48932,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_larm",
-          "offset":48936,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_lforearm",
-          "offset":48940,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_rarm",
-          "offset":48944,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_rforearm",
-          "offset":48948,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_pelvis",
-          "offset":48952,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_tail",
-          "offset":48956,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_lthigh",
-          "offset":48960,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_lshin",
-          "offset":48964,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_rthigh",
-          "offset":48968,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_rshin",
-          "offset":48972,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_lfoot",
-          "offset":48976,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_rfoot",
-          "offset":48980,
-          "type":"int"
+          "type":"int[14]"
         },
         {
           "len":4,
@@ -23663,22 +23721,10 @@
           "type":"CVector3f"
         },
         {
-          "len":4,
-          "name":"alert_sound_handle",
+          "len":12,
+          "name":"sfx_handles",
           "offset":49004,
-          "type":"uint"
-        },
-        {
-          "len":4,
-          "name":"voice_sound_handle",
-          "offset":49008,
-          "type":"uint"
-        },
-        {
-          "len":4,
-          "name":"attack_sound_handle",
-          "offset":49012,
-          "type":"uint"
+          "type":"uint[3]"
         }
       ],
       "importable":true,
@@ -24504,7 +24550,7 @@
         },
         {
           "len":4,
-          "name":"padding",
+          "name":"dead",
           "offset":60,
           "type":"int"
         },
@@ -24554,7 +24600,7 @@
           "len":4,
           "name":"mass",
           "offset":148,
-          "type":"int"
+          "type":"float"
         },
         {
           "len":12,
@@ -24678,7 +24724,7 @@
         },
         {
           "len":4,
-          "name":"padding",
+          "name":"dead",
           "offset":808,
           "type":"int"
         },
@@ -24767,58 +24813,10 @@
           "type":"CEnemy"
         },
         {
-          "len":4,
-          "name":"part_index_lshoulder",
+          "len":36,
+          "name":"part_indices",
           "offset":48828,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_index_lforearm",
-          "offset":48832,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_index_rshoulder",
-          "offset":48836,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_index_rforearm",
-          "offset":48840,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_index_lshin",
-          "offset":48844,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_index_rshin",
-          "offset":48848,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_index_torso",
-          "offset":48852,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_index_lowerbody",
-          "offset":48856,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_index_head",
-          "offset":48860,
-          "type":"int"
+          "type":"int[9]"
         },
         {
           "len":4,
@@ -24827,16 +24825,10 @@
           "type":"float"
         },
         {
-          "len":4,
-          "name":"sfx_handle",
+          "len":8,
+          "name":"sfx_handles",
           "offset":48868,
-          "type":"uint"
-        },
-        {
-          "len":4,
-          "name":"attack_sfx_handle",
-          "offset":48872,
-          "type":"uint"
+          "type":"uint[2]"
         }
       ],
       "importable":true,
@@ -25148,17 +25140,17 @@
           "len":36,
           "name":"rotation_matrix",
           "offset":16,
-          "type":"CMatrix3x3i"
+          "type":"CMatrix3x3f"
         },
         {
           "len":4,
-          "name":"reserved",
+          "name":"dead",
           "offset":52,
           "type":"int"
         },
         {
           "len":4,
-          "name":"projection_scale",
+          "name":"focal_length",
           "offset":56,
           "type":"float"
         },
@@ -26179,7 +26171,7 @@
         },
         {
           "len":12,
-          "name":"reserved",
+          "name":"dead",
           "offset":249464,
           "type":"char[12]"
         },
@@ -26257,7 +26249,7 @@
         },
         {
           "len":12,
-          "name":"unk",
+          "name":"wind_velocity",
           "offset":261732,
           "type":"CVector3f"
         }
@@ -26445,13 +26437,13 @@
           "len":4,
           "name":"processToBuffer",
           "offset":16,
-          "type":"void*"
+          "type":"CCodec_processToBuffer*"
         },
         {
           "len":4,
           "name":"processFromBuffer",
           "offset":20,
-          "type":"void*"
+          "type":"CCodec_processFromBuffer*"
         },
         {
           "len":4,
@@ -26463,13 +26455,13 @@
           "len":4,
           "name":"processFiles",
           "offset":28,
-          "type":"void*"
+          "type":"CCodec_processFiles*"
         },
         {
           "len":4,
           "name":"finalizeBuffer",
           "offset":32,
-          "type":"void*"
+          "type":"CCodec_finalizeBuffer*"
         }
       ],
       "importable":true,
@@ -26497,7 +26489,7 @@
         },
         {
           "len":4,
-          "name":"unk",
+          "name":"dead",
           "offset":130008,
           "type":"int"
         },
@@ -27595,7 +27587,7 @@
         },
         {
           "len":12,
-          "name":"padding",
+          "name":"dead",
           "offset":35488,
           "type":"char[12]"
         },
@@ -27708,8 +27700,9 @@
           "type":"CBoundingBox3D"
         },
         {
+          "comment":"0=simple_flat,1=hierarchical_accum,2=hierarchical_restpose",
           "len":4,
-          "name":"unk",
+          "name":"bone_update_mode",
           "offset":8784,
           "type":"int"
         },
@@ -27877,13 +27870,13 @@
         },
         {
           "len":4,
-          "name":"unk1",
+          "name":"dead1",
           "offset":288,
           "type":"int"
         },
         {
           "len":4,
-          "name":"unk2",
+          "name":"dead2",
           "offset":292,
           "type":"int"
         },
@@ -28885,7 +28878,7 @@
         },
         {
           "len":4,
-          "name":"teture_coord_mask",
+          "name":"texture_coord_mask",
           "offset":7272,
           "type":"uint"
         },
@@ -28976,9 +28969,9 @@
         },
         {
           "len":4,
-          "name":"restore_memory_size",
+          "name":"master_zbuffer",
           "offset":12188,
-          "type":"int"
+          "type":"void*"
         },
         {
           "len":4,
@@ -29859,13 +29852,13 @@
         },
         {
           "len":4,
-          "name":"unk1",
+          "name":"dead1",
           "offset":1420952,
           "type":"int"
         },
         {
           "len":4,
-          "name":"unk2",
+          "name":"dead2",
           "offset":1420956,
           "type":"int"
         },
@@ -29907,7 +29900,7 @@
         },
         {
           "len":4,
-          "name":"room_reverb_type",
+          "name":"default_room_size",
           "offset":1420984,
           "type":"int"
         },
@@ -30297,9 +30290,9 @@
         },
         {
           "len":12,
-          "name":"unk3",
+          "name":"open_position",
           "offset":2492,
-          "type":"char[12]"
+          "type":"CVector3f"
         },
         {
           "len":4,
@@ -30309,9 +30302,9 @@
         },
         {
           "len":4,
-          "name":"unk4",
+          "name":"swing_range",
           "offset":2508,
-          "type":"char[4]"
+          "type":"float"
         },
         {
           "len":4,
@@ -30356,58 +30349,10 @@
           "type":"CEnemy"
         },
         {
-          "len":4,
-          "name":"part_index_larm",
+          "len":36,
+          "name":"part_indices",
           "offset":48828,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_index_lforearm",
-          "offset":48832,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_index_rarm",
-          "offset":48836,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_index_rforearm",
-          "offset":48840,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_index_lshin",
-          "offset":48844,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_index_rshin",
-          "offset":48848,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_index_torso",
-          "offset":48852,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_index_waist",
-          "offset":48856,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_index_head",
-          "offset":48860,
-          "type":"int"
+          "type":"int[9]"
         },
         {
           "len":100,
@@ -30579,9 +30524,9 @@
         },
         {
           "len":4,
-          "name":"unk1",
+          "name":"drip_timer",
           "offset":732,
-          "type":"char[4]"
+          "type":"float"
         },
         {
           "len":4,
@@ -30602,10 +30547,22 @@
           "type":"float"
         },
         {
-          "len":12,
-          "name":"unk2",
+          "len":4,
+          "name":"is_ground_cached",
           "offset":748,
-          "type":"char[12]"
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"ground_y",
+          "offset":752,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"dead",
+          "offset":756,
+          "type":"int"
         },
         {
           "len":12,
@@ -30639,7 +30596,7 @@
         },
         {
           "len":4,
-          "name":"unk3",
+          "name":"is_visible",
           "offset":824,
           "type":"int"
         }
@@ -30663,39 +30620,21 @@
         },
         {
           "len":4,
-          "name":"unk",
+          "name":"dead",
           "offset":48828,
           "type":"int"
         },
         {
-          "len":4,
-          "name":"bone_index_attack1",
+          "len":8,
+          "name":"bone_indices",
           "offset":48832,
-          "type":"int"
+          "type":"int[2]"
         },
         {
-          "len":4,
-          "name":"bone_index_attack2",
-          "offset":48836,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"hurt_sfx_handle",
+          "len":12,
+          "name":"sfx_handles",
           "offset":48840,
-          "type":"uint"
-        },
-        {
-          "len":4,
-          "name":"move_sfx_handle",
-          "offset":48844,
-          "type":"uint"
-        },
-        {
-          "len":4,
-          "name":"attack_sfx_handle",
-          "offset":48848,
-          "type":"uint"
+          "type":"uint[3]"
         }
       ],
       "importable":true,
@@ -30716,16 +30655,10 @@
           "type":"CNPC"
         },
         {
-          "len":4,
-          "name":"left_hand_bone_index",
+          "len":8,
+          "name":"bone_indices",
           "offset":128776,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"right_hand_bone_index",
-          "offset":128780,
-          "type":"int"
+          "type":"int[2]"
         }
       ],
       "importable":true,
@@ -31515,10 +31448,16 @@
       "desc":"",
       "fields":[
         {
-          "len":256,
-          "name":"processing_data",
+          "len":4,
+          "name":"buffer_ptr",
           "offset":0,
-          "type":"char[256]"
+          "type":"void*"
+        },
+        {
+          "len":252,
+          "name":"dead1",
+          "offset":4,
+          "type":"char[252]"
         },
         {
           "len":256,
@@ -31540,7 +31479,7 @@
         },
         {
           "len":2,
-          "name":"padding_206",
+          "name":"dead2",
           "offset":518,
           "type":"ushort"
         },
@@ -31563,16 +31502,10 @@
           "type":"uint[16]"
         },
         {
-          "len":7000,
-          "name":"field_592",
+          "len":7032,
+          "name":"dead3",
           "offset":592,
-          "type":"char[7000]"
-        },
-        {
-          "len":32,
-          "name":"field_7592",
-          "offset":7592,
-          "type":"char[32]"
+          "type":"char[7032]"
         },
         {
           "len":32,
@@ -32218,7 +32151,7 @@
         },
         {
           "len":4,
-          "name":"padding",
+          "name":"dead",
           "offset":84,
           "type":"int"
         },
@@ -32554,7 +32487,7 @@
         },
         {
           "len":4,
-          "name":"reserved",
+          "name":"dead",
           "offset":10776,
           "type":"int"
         },
@@ -32805,22 +32738,46 @@
           "type":"int"
         },
         {
-          "len":20,
-          "name":"unk1",
+          "len":4,
+          "name":"left_clavicle_blend",
           "offset":130032,
-          "type":"char[20]"
+          "type":"float"
         },
         {
           "len":4,
-          "name":"dynamite_throw_angle",
+          "name":"right_clavicle_blend",
+          "offset":130036,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"aim_target",
+          "offset":130040,
+          "type":"CDemonActor*"
+        },
+        {
+          "len":4,
+          "name":"target_aim_pitch",
+          "offset":130044,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"target_aim_yaw",
+          "offset":130048,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"aim_pitch",
           "offset":130052,
           "type":"float"
         },
         {
           "len":4,
-          "name":"unk2",
+          "name":"aim_yaw",
           "offset":130056,
-          "type":"int"
+          "type":"float"
         },
         {
           "len":4,
@@ -32830,13 +32787,13 @@
         },
         {
           "len":4,
-          "name":"unk3",
+          "name":"aim_weight",
           "offset":130064,
-          "type":"int"
+          "type":"float"
         },
         {
           "len":261744,
-          "name":"coat",
+          "name":"coat_cloth",
           "offset":130068,
           "type":"CCloth"
         },
@@ -33550,9 +33507,9 @@
         },
         {
           "len":48,
-          "name":"unk",
+          "name":"part_indices",
           "offset":48828,
-          "type":"char[48]"
+          "type":"int[12]"
         },
         {
           "len":4,
@@ -33579,10 +33536,34 @@
           "type":"CDemonActor*"
         },
         {
-          "len":28,
+          "len":4,
           "name":"unk2",
           "offset":48892,
-          "type":"char[28]"
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"sfx_handle",
+          "offset":48896,
+          "type":"uint"
+        },
+        {
+          "len":12,
+          "name":"target_scale",
+          "offset":48900,
+          "type":"CVector3i"
+        },
+        {
+          "len":4,
+          "name":"returning_home",
+          "offset":48912,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"petrify_timer",
+          "offset":48916,
+          "type":"float"
         }
       ],
       "importable":true,
@@ -33634,7 +33615,7 @@
         },
         {
           "len":4,
-          "name":"walk_sfx_handle",
+          "name":"sfx_handle",
           "offset":48828,
           "type":"uint"
         },
@@ -33687,88 +33668,16 @@
           "type":"int"
         },
         {
-          "len":4,
-          "name":"part_r_upper_arm",
+          "len":44,
+          "name":"part_indices",
           "offset":48864,
-          "type":"int"
+          "type":"int[11]"
         },
         {
-          "len":4,
-          "name":"part_r_lower_arm",
-          "offset":48868,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_l_upper_arm",
-          "offset":48872,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_l_lower_arm",
-          "offset":48876,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_r_thigh",
-          "offset":48880,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_r_shin",
-          "offset":48884,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_l_thigh",
-          "offset":48888,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_l_shin",
-          "offset":48892,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_lower_torso",
-          "offset":48896,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_upper_torso",
-          "offset":48900,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_head",
-          "offset":48904,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"alert_sfx_handle",
+          "len":12,
+          "name":"sfx_handles",
           "offset":48908,
-          "type":"uint"
-        },
-        {
-          "len":4,
-          "name":"pain_sfx_handle",
-          "offset":48912,
-          "type":"uint"
-        },
-        {
-          "len":4,
-          "name":"death_sfx_handle",
-          "offset":48916,
-          "type":"uint"
+          "type":"uint[3]"
         },
         {
           "len":4,
@@ -34174,13 +34083,13 @@
         },
         {
           "len":4,
-          "name":"reserved1",
+          "name":"dead1",
           "offset":52,
           "type":"int"
         },
         {
           "len":4,
-          "name":"reserved2",
+          "name":"dead2",
           "offset":56,
           "type":"int"
         },
@@ -34696,9 +34605,9 @@
         },
         {
           "len":4,
-          "name":"unk1",
+          "name":"sfx_handle",
           "offset":129712,
-          "type":"int"
+          "type":"uint"
         },
         {
           "len":4,
@@ -34708,9 +34617,9 @@
         },
         {
           "len":4,
-          "name":"unk2",
+          "name":"hostage_type",
           "offset":129720,
-          "type":"char[4]"
+          "type":"int"
         },
         {
           "len":4,
@@ -34731,10 +34640,16 @@
           "type":"CDemonActor*"
         },
         {
-          "len":20,
-          "name":"unk3",
+          "len":4,
+          "name":"next_way_point",
           "offset":129736,
-          "type":"char[20]"
+          "type":"CDemonActor*"
+        },
+        {
+          "len":16,
+          "name":"bone_indices",
+          "offset":129740,
+          "type":"int[4]"
         },
         {
           "len":4,
@@ -34744,15 +34659,15 @@
         },
         {
           "len":4,
-          "name":"unk4",
+          "name":"gun_raise_progress",
           "offset":129760,
-          "type":"int"
+          "type":"float"
         },
         {
           "len":4,
-          "name":"unk5",
+          "name":"gun_blend_weight",
           "offset":129764,
-          "type":"int"
+          "type":"float"
         },
         {
           "len":4,
@@ -34762,7 +34677,7 @@
         },
         {
           "len":4,
-          "name":"unk6",
+          "name":"grabber_flee_timer",
           "offset":129772,
           "type":"float"
         }
@@ -34785,20 +34700,14 @@
           "type":"CEnemy"
         },
         {
-          "len":4,
-          "name":"attack_sfx_handle",
+          "len":8,
+          "name":"sfx_handles",
           "offset":48828,
-          "type":"uint"
-        },
-        {
-          "len":4,
-          "name":"pain_sfx_handle",
-          "offset":48832,
-          "type":"uint"
+          "type":"uint[2]"
         },
         {
           "len":44,
-          "name":"unk",
+          "name":"dead",
           "offset":48836,
           "type":"char[44]"
         }
@@ -34833,16 +34742,10 @@
           "type":"int"
         },
         {
-          "len":4,
-          "name":"swing_sfx_handle",
+          "len":8,
+          "name":"sfx_handles",
           "offset":130012,
-          "type":"uint"
-        },
-        {
-          "len":4,
-          "name":"injured_sfx_handle",
-          "offset":130016,
-          "type":"uint"
+          "type":"uint[2]"
         },
         {
           "len":12,
@@ -34899,16 +34802,10 @@
           "type":"CEnemy"
         },
         {
-          "len":4,
-          "name":"sfx_handle",
+          "len":8,
+          "name":"sfx_handles",
           "offset":48828,
-          "type":"uint"
-        },
-        {
-          "len":4,
-          "name":"hurt_sfx_handle",
-          "offset":48832,
-          "type":"uint"
+          "type":"uint[2]"
         },
         {
           "len":4,
@@ -34917,70 +34814,10 @@
           "type":"float"
         },
         {
-          "len":4,
-          "name":"part_index_larm",
+          "len":44,
+          "name":"part_indices",
           "offset":48840,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_index_lforearm",
-          "offset":48844,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_index_rarm",
-          "offset":48848,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_index_rforearm",
-          "offset":48852,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_index_rthigh",
-          "offset":48856,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_index_rshin",
-          "offset":48860,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_index_lthigh",
-          "offset":48864,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_index_lshin",
-          "offset":48868,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_index_ass",
-          "offset":48872,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_index_torso",
-          "offset":48876,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_index_head",
-          "offset":48880,
-          "type":"int"
+          "type":"int[11]"
         }
       ],
       "importable":true,
@@ -35390,7 +35227,7 @@
         },
         {
           "len":4,
-          "name":"padding",
+          "name":"dead",
           "offset":22228,
           "type":"int"
         }
@@ -35533,22 +35370,10 @@
           "type":"CDemonActor*"
         },
         {
-          "len":4,
-          "name":"unk1",
+          "len":12,
+          "name":"relative_position",
           "offset":740,
-          "type":"float"
-        },
-        {
-          "len":4,
-          "name":"unk2",
-          "offset":744,
-          "type":"float"
-        },
-        {
-          "len":4,
-          "name":"unk3",
-          "offset":748,
-          "type":"uint"
+          "type":"CVector3f"
         },
         {
           "len":12,
@@ -35582,21 +35407,15 @@
         },
         {
           "len":4,
-          "name":"unk",
+          "name":"dead",
           "offset":48828,
           "type":"int"
         },
         {
-          "len":4,
-          "name":"sfx_handle",
+          "len":8,
+          "name":"sfx_handles",
           "offset":48832,
-          "type":"uint"
-        },
-        {
-          "len":4,
-          "name":"slime_sfx_handle",
-          "offset":48836,
-          "type":"uint"
+          "type":"uint[2]"
         }
       ],
       "importable":true,
@@ -35714,7 +35533,7 @@
         },
         {
           "len":256,
-          "name":"unk",
+          "name":"dead",
           "offset":16,
           "type":"char[256]"
         },
@@ -35780,7 +35599,7 @@
         },
         {
           "len":4,
-          "name":"unk1",
+          "name":"dead",
           "offset":724,
           "type":"int"
         },
@@ -35830,13 +35649,13 @@
           "len":4,
           "name":"end_vertex_index",
           "offset":1044,
-          "type":"undefined4"
+          "type":"int"
         },
         {
           "len":4,
           "name":"moving",
           "offset":1048,
-          "type":"undefined4"
+          "type":"int"
         },
         {
           "len":4,
@@ -36517,16 +36336,22 @@
           "type":"CLZWDictionary"
         },
         {
-          "len":8,
-          "name":"unk",
+          "len":4,
+          "name":"buffer_size",
           "offset":32,
-          "type":"char[8]"
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"num_bits",
+          "offset":36,
+          "type":"int"
         },
         {
           "len":4,
           "name":"char_mask",
           "offset":40,
-          "type":"int"
+          "type":"_BIT_INTEGER32"
         },
         {
           "len":4,
@@ -36608,7 +36433,7 @@
       "fields":[
         {
           "len":4,
-          "name":"dict_size",
+          "name":"table_capacity",
           "offset":0,
           "type":"int"
         },
@@ -36626,7 +36451,7 @@
         },
         {
           "len":4,
-          "name":"max_entries",
+          "name":"entry_count",
           "offset":12,
           "type":"int"
         },
@@ -36662,19 +36487,19 @@
         },
         {
           "len":4,
-          "name":"prefix_code",
+          "name":"parent_index",
           "offset":4,
           "type":"int"
         },
         {
           "len":4,
-          "name":"suffix_char",
+          "name":"first_child",
           "offset":8,
           "type":"int"
         },
         {
           "len":4,
-          "name":"next_link",
+          "name":"next_sibling",
           "offset":12,
           "type":"int"
         }
@@ -36775,16 +36600,10 @@
           "type":"int[12]"
         },
         {
-          "len":24,
+          "len":72,
           "name":"light_texture",
           "offset":5312,
-          "type":"SMRGLTextureBasic"
-        },
-        {
-          "len":48,
-          "name":"unk",
-          "offset":5336,
-          "type":"CVector3f[4]"
+          "type":"SMRGLTextureLod"
         },
         {
           "len":4,
@@ -36847,10 +36666,16 @@
           "type":"int"
         },
         {
-          "len":28,
-          "name":"unk2",
+          "len":24,
+          "name":"bounding_box",
           "offset":388,
-          "type":"char[28]"
+          "type":"CBoundingBox3D"
+        },
+        {
+          "len":4,
+          "name":"is_visible",
+          "offset":412,
+          "type":"int"
         },
         {
           "len":4,
@@ -36859,10 +36684,16 @@
           "type":"int"
         },
         {
-          "len":24,
-          "name":"unk3",
+          "len":12,
+          "name":"course",
           "offset":420,
-          "type":"char[24]"
+          "type":"CCourse"
+        },
+        {
+          "len":12,
+          "name":"dead",
+          "offset":432,
+          "type":"char[12]"
         }
       ],
       "importable":true,
@@ -36985,10 +36816,28 @@
           "type":"int"
         },
         {
-          "len":16,
-          "name":"unk1",
+          "len":4,
+          "name":"blood_gore_type",
           "offset":1420,
-          "type":"char[16]"
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"blood_spurt_count",
+          "offset":1424,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"blood_spurt_timer",
+          "offset":1428,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"blood_spurt_interval",
+          "offset":1432,
+          "type":"float"
         },
         {
           "len":4,
@@ -36997,40 +36846,22 @@
           "type":"int"
         },
         {
-          "len":4,
+          "len":100,
           "name":"thrust_hit_character_sound",
           "offset":1440,
-          "type":"char*"
+          "type":"char[100]"
         },
         {
-          "len":96,
-          "name":"unk2",
-          "offset":1444,
-          "type":"char[96]"
-        },
-        {
-          "len":4,
+          "len":100,
           "name":"swing_hit_character_sound",
           "offset":1540,
-          "type":"char*"
+          "type":"char[100]"
         },
         {
-          "len":96,
-          "name":"unk3",
-          "offset":1544,
-          "type":"char[96]"
-        },
-        {
-          "len":4,
+          "len":100,
           "name":"hit_other_sound",
           "offset":1640,
-          "type":"char*"
-        },
-        {
-          "len":96,
-          "name":"unk4",
-          "offset":1644,
-          "type":"char[96]"
+          "type":"char[100]"
         }
       ],
       "importable":true,
@@ -37190,7 +37021,7 @@
         },
         {
           "len":4,
-          "name":"reserved",
+          "name":"dead",
           "offset":148,
           "type":"int"
         },
@@ -37393,94 +37224,28 @@
           "type":"char[100]"
         },
         {
-          "len":4,
-          "name":"unk1",
+          "len":8,
+          "name":"sfx_handles",
           "offset":48976,
-          "type":"int"
+          "type":"uint[2]"
         },
         {
           "len":4,
-          "name":"sfx_handle_1",
-          "offset":48980,
-          "type":"uint"
-        },
-        {
-          "len":4,
-          "name":"unk2",
+          "name":"death_sound_played",
           "offset":48984,
           "type":"int"
         },
         {
           "len":4,
-          "name":"sfx_handle_2",
+          "name":"sfx_handle",
           "offset":48988,
           "type":"uint"
         },
         {
-          "len":4,
-          "name":"part_larm",
+          "len":44,
+          "name":"part_indices",
           "offset":48992,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_l4arm",
-          "offset":48996,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_rarm",
-          "offset":49000,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_r4arm",
-          "offset":49004,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_rthigh",
-          "offset":49008,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_rshin",
-          "offset":49012,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_lthigh",
-          "offset":49016,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_lshin",
-          "offset":49020,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_waist",
-          "offset":49024,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_torso",
-          "offset":49028,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_head",
-          "offset":49032,
-          "type":"int"
+          "type":"int[11]"
         },
         {
           "len":4,
@@ -37514,9 +37279,9 @@
         },
         {
           "len":8884,
-          "name":"unk1",
+          "name":"model",
           "offset":130004,
-          "type":"char[8884]"
+          "type":"CDeformableModelInstance"
         },
         {
           "len":4,
@@ -37549,10 +37314,34 @@
           "type":"char[100]"
         },
         {
-          "len":3132,
-          "name":"unk2",
+          "len":3116,
+          "name":"morph",
           "offset":139100,
-          "type":"char[3132]"
+          "type":"CMorph"
+        },
+        {
+          "len":4,
+          "name":"dead1",
+          "offset":142216,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"aim_yaw",
+          "offset":142220,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"dead2",
+          "offset":142224,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"dead3",
+          "offset":142228,
+          "type":"int"
         }
       ],
       "importable":true,
@@ -37604,7 +37393,7 @@
         },
         {
           "len":24,
-          "name":"reserved",
+          "name":"dead",
           "offset":3088,
           "type":"char[24]"
         },
@@ -37940,7 +37729,7 @@
         },
         {
           "len":4,
-          "name":"unk1",
+          "name":"main_data_offset",
           "offset":21324,
           "type":"int"
         },
@@ -39333,16 +39122,16 @@
           "type":"CStrList"
         },
         {
-          "len":4,
-          "name":"unk1",
+          "len":40,
+          "name":"tab_column_widths",
           "offset":16,
-          "type":"int"
+          "type":"int[10]"
         },
         {
-          "len":40,
-          "name":"unk3",
-          "offset":20,
-          "type":"char[40]"
+          "len":4,
+          "name":"tab_column_count",
+          "offset":56,
+          "type":"int"
         },
         {
           "len":4,
@@ -39388,7 +39177,7 @@
         },
         {
           "len":4,
-          "name":"unk2",
+          "name":"column_padding",
           "offset":376,
           "type":"int"
         },
@@ -39783,70 +39572,52 @@
       "desc":"",
       "fields":[
         {
-          "len":4,
-          "name":"day",
+          "len":32,
+          "name":"user_path",
           "offset":0,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"month",
-          "offset":4,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"year",
-          "offset":8,
-          "type":"int"
+          "type":"char[32]"
         },
         {
           "len":4,
           "name":"timestamp",
-          "offset":12,
+          "offset":32,
           "type":"uint"
         },
         {
-          "len":8,
-          "name":"status",
-          "offset":16,
-          "type":"char[8]"
-        },
-        {
           "len":4,
-          "name":"user_id",
-          "offset":24,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"file_size",
-          "offset":28,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"checksum",
-          "offset":32,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"padding",
+          "name":"operation_type",
           "offset":36,
           "type":"int"
         },
         {
           "len":256,
-          "name":"filename_path",
+          "name":"filename",
           "offset":40,
           "type":"char[256]"
         },
         {
-          "len":16,
-          "name":"reserved",
+          "len":4,
+          "name":"original_timestamp",
           "offset":296,
-          "type":"char[16]"
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"original_file_size",
+          "offset":300,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"file_offset",
+          "offset":304,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"compressed_size",
+          "offset":308,
+          "type":"int"
         }
       ],
       "importable":true,
@@ -39868,15 +39639,15 @@
         },
         {
           "len":4,
-          "name":"has_dependencies",
+          "name":"mount_order",
           "offset":256,
           "type":"int"
         },
         {
           "len":4,
-          "name":"unknown",
+          "name":"is_required",
           "offset":260,
-          "type":"char[4]"
+          "type":"int"
         }
       ],
       "importable":true,
@@ -40750,7 +40521,7 @@
         },
         {
           "len":4,
-          "name":"unk",
+          "name":"dead",
           "offset":130036,
           "type":"int"
         },
@@ -40792,9 +40563,9 @@
         },
         {
           "len":4,
-          "name":"unk1",
+          "name":"last_speaker",
           "offset":8,
-          "type":"int"
+          "type":"CDemonActor*"
         },
         {
           "len":4,
@@ -40804,7 +40575,7 @@
         },
         {
           "len":4,
-          "name":"unk2",
+          "name":"focus_actor_changed",
           "offset":16,
           "type":"int"
         },
@@ -41044,7 +40815,7 @@
         },
         {
           "len":4,
-          "name":"unk",
+          "name":"dead",
           "offset":108,
           "type":"int"
         }
@@ -41619,70 +41390,10 @@
           "type":"float"
         },
         {
-          "len":4,
-          "name":"part_index_larm",
+          "len":44,
+          "name":"part_indices",
           "offset":48836,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_index_lforearm",
-          "offset":48840,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_index_rarm",
-          "offset":48844,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_index_rforearm",
-          "offset":48848,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_index_rthigh",
-          "offset":48852,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_index_rshin",
-          "offset":48856,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_index_lthigh",
-          "offset":48860,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_index_lshin",
-          "offset":48864,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_index_ass",
-          "offset":48868,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_index_torso",
-          "offset":48872,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_index_head",
-          "offset":48876,
-          "type":"int"
+          "type":"int[11]"
         },
         {
           "len":4,
@@ -42070,9 +41781,9 @@
         },
         {
           "len":12,
-          "name":"unk1",
+          "name":"base_position",
           "offset":736,
-          "type":"char[12]"
+          "type":"CVector3f"
         },
         {
           "len":4,
@@ -42118,9 +41829,9 @@
         },
         {
           "len":4,
-          "name":"unk6",
+          "name":"wait_timer",
           "offset":1160,
-          "type":"char[4]"
+          "type":"float"
         },
         {
           "len":100,
@@ -42376,7 +42087,7 @@
         },
         {
           "len":4,
-          "name":"unk1",
+          "name":"aim_pitch",
           "offset":130016,
           "type":"float"
         },
@@ -42447,16 +42158,10 @@
           "type":"float"
         },
         {
-          "len":4,
-          "name":"goggle_loop_sfx_handle",
+          "len":8,
+          "name":"goggle_sfx_handles",
           "offset":130120,
-          "type":"uint"
-        },
-        {
-          "len":4,
-          "name":"goggle_on_sfx_handle",
-          "offset":130124,
-          "type":"uint"
+          "type":"uint[2]"
         },
         {
           "len":4,
@@ -42484,7 +42189,7 @@
         },
         {
           "len":24,
-          "name":"unk2",
+          "name":"dead",
           "offset":130144,
           "type":"char[24]"
         },
@@ -42502,7 +42207,7 @@
         },
         {
           "len":4,
-          "name":"unk3",
+          "name":"pickup_facing_reversed",
           "offset":130184,
           "type":"int"
         },
@@ -42580,7 +42285,7 @@
         },
         {
           "len":4,
-          "name":"hurt_sfx_handle",
+          "name":"sfx_handle",
           "offset":130664,
           "type":"uint"
         },
@@ -42801,16 +42506,10 @@
           "type":"float"
         },
         {
-          "len":4,
-          "name":"part_l_blade",
+          "len":8,
+          "name":"part_indices",
           "offset":653520,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_r_blade",
-          "offset":653524,
-          "type":"int"
+          "type":"int[2]"
         }
       ],
       "importable":true,
@@ -43149,16 +42848,10 @@
           "type":"int"
         },
         {
-          "len":4,
-          "name":"sfx_handle",
+          "len":8,
+          "name":"sfx_handles",
           "offset":1404,
-          "type":"uint"
-        },
-        {
-          "len":4,
-          "name":"sfx_handle_tail",
-          "offset":1408,
-          "type":"uint"
+          "type":"uint[2]"
         }
       ],
       "importable":true,
@@ -43330,15 +43023,15 @@
         },
         {
           "len":4,
-          "name":"unk",
+          "name":"collision_bottom_y",
           "offset":736,
-          "type":"void*"
+          "type":"float"
         },
         {
           "len":4,
-          "name":"field_740",
+          "name":"collision_top_y",
           "offset":740,
-          "type":"void*"
+          "type":"float"
         },
         {
           "len":12,
@@ -43378,13 +43071,13 @@
         },
         {
           "len":12,
-          "name":"fog_target",
+          "name":"drift_target",
           "offset":792,
           "type":"CVector3f"
         },
         {
           "len":4,
-          "name":"rotation_y",
+          "name":"gravity",
           "offset":804,
           "type":"float"
         }
@@ -43660,7 +43353,7 @@
         },
         {
           "len":64,
-          "name":"unk",
+          "name":"dead",
           "offset":2160,
           "type":"char[64]"
         },
@@ -43671,16 +43364,10 @@
           "type":"int"
         },
         {
-          "len":4,
-          "name":"loop_sfx_handle",
+          "len":8,
+          "name":"sfx_handles",
           "offset":2228,
-          "type":"uint"
-        },
-        {
-          "len":4,
-          "name":"anim_sfx_handle",
-          "offset":2232,
-          "type":"uint"
+          "type":"uint[2]"
         }
       ],
       "importable":true,
@@ -44242,7 +43929,7 @@
         },
         {
           "len":60,
-          "name":"unk1",
+          "name":"unused_physics_vectors",
           "offset":2268,
           "type":"CVector3f[5]"
         },
@@ -44295,10 +43982,22 @@
           "type":"CTire[4]"
         },
         {
-          "len":20,
-          "name":"unk2",
+          "len":12,
+          "name":"ground_normal",
           "offset":4108,
-          "type":"float[5]"
+          "type":"CVector3f"
+        },
+        {
+          "len":4,
+          "name":"ground_offset",
+          "offset":4120,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"dead",
+          "offset":4124,
+          "type":"int"
         },
         {
           "len":12,
@@ -44325,22 +44024,10 @@
           "type":"char[32]"
         },
         {
-          "len":4,
-          "name":"sfx_horn_handle",
+          "len":12,
+          "name":"sfx_handles",
           "offset":4180,
-          "type":"uint"
-        },
-        {
-          "len":4,
-          "name":"sfx_engine_handle",
-          "offset":4184,
-          "type":"uint"
-        },
-        {
-          "len":4,
-          "name":"sfx_screech_handle",
-          "offset":4188,
-          "type":"uint"
+          "type":"uint[3]"
         },
         {
           "len":12,
@@ -44985,34 +44672,10 @@
           "type":"EWerewolfType"
         },
         {
-          "len":4,
-          "name":"bone_index",
+          "len":20,
+          "name":"bone_indices",
           "offset":48832,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"bone_l_finger",
-          "offset":48836,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"bone_r_finger",
-          "offset":48840,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"bone_jaw",
-          "offset":48844,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"bone_head",
-          "offset":48848,
-          "type":"int"
+          "type":"int[5]"
         },
         {
           "len":4,
@@ -45033,16 +44696,10 @@
           "type":"float"
         },
         {
-          "len":4,
-          "name":"pain_sfx_handle",
+          "len":8,
+          "name":"sfx_handles",
           "offset":48864,
-          "type":"uint"
-        },
-        {
-          "len":4,
-          "name":"eat_sfx_handle",
-          "offset":48868,
-          "type":"uint"
+          "type":"uint[2]"
         },
         {
           "len":4,
@@ -45285,116 +44942,20 @@
           "type":"int"
         },
         {
-          "len":4,
-          "name":"bone_index_head",
+          "len":44,
+          "name":"bone_indices",
           "offset":48972,
-          "type":"int"
+          "type":"int[11]"
         },
         {
-          "len":4,
-          "name":"bone_index_lhand",
-          "offset":48976,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"bone_index_rhand",
-          "offset":48980,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"bone_index_lforearm",
-          "offset":48984,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"bone_index_rforearm",
-          "offset":48988,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"bone_index_lupperarm",
-          "offset":48992,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"bone_index_rupperarm",
-          "offset":48996,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"bone_index_lfoot",
-          "offset":49000,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"bone_index_rfoot",
-          "offset":49004,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"bone_index_spine",
-          "offset":49008,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"bone_index_spine2",
-          "offset":49012,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_index_larm",
+          "len":28,
+          "name":"part_indices",
           "offset":49016,
-          "type":"int"
+          "type":"int[7]"
         },
         {
           "len":4,
-          "name":"part_index_lforearm",
-          "offset":49020,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_index_rarm",
-          "offset":49024,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_index_rforearm",
-          "offset":49028,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_index_waist",
-          "offset":49032,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_index_torso",
-          "offset":49036,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_index_head",
-          "offset":49040,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"pain_sfx_cooldown",
+          "name":"pain_cooldown",
           "offset":49044,
           "type":"float"
         },
@@ -45405,16 +44966,10 @@
           "type":"float"
         },
         {
-          "len":4,
-          "name":"pain_sfx_handle",
+          "len":8,
+          "name":"sfx_handles",
           "offset":49052,
-          "type":"uint"
-        },
-        {
-          "len":4,
-          "name":"alert_sfx_handle",
-          "offset":49056,
-          "type":"uint"
+          "type":"uint[2]"
         },
         {
           "len":4,
@@ -45465,64 +45020,10 @@
           "type":"uint"
         },
         {
-          "len":4,
-          "name":"part_index_head",
+          "len":40,
+          "name":"part_indices",
           "offset":48840,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_index_neck",
-          "offset":48844,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_index_lfrontleg",
-          "offset":48848,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_index_rfrontleg",
-          "offset":48852,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_index_rbackleg",
-          "offset":48856,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_index_lbackleg",
-          "offset":48860,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_index_torso",
-          "offset":48864,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_index_udder",
-          "offset":48868,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_index_back",
-          "offset":48872,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"part_index_tail",
-          "offset":48876,
-          "type":"int"
+          "type":"int[10]"
         }
       ],
       "importable":true,
@@ -45543,16 +45044,10 @@
           "type":"CEnemy"
         },
         {
-          "len":4,
-          "name":"bone_index_spine",
+          "len":8,
+          "name":"bone_indices",
           "offset":48828,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"bone_index_head",
-          "offset":48832,
-          "type":"int"
+          "type":"int[2]"
         },
         {
           "len":4,
@@ -49443,7 +48938,7 @@
           "len":4,
           "name":"__tied_stream",
           "offset":4,
-          "type":"ostream*"
+          "type":"_ostream*"
         },
         {
           "len":4,
@@ -49518,30 +49013,6 @@
       "desc":"",
       "fields":[
         {
-          "len":16,
-          "name":"_istream_core",
-          "offset":0,
-          "type":"istream_core"
-        },
-        {
-          "len":44,
-          "name":"_ios",
-          "offset":16,
-          "type":"ios"
-        }
-      ],
-      "importable":true,
-      "len":60,
-      "name":"istream",
-      "pack":false,
-      "type":"struct"
-    },
-    {
-      "alig":4,
-      "cat":"/Nocturne/Class/System/iostream.h",
-      "desc":"",
-      "fields":[
-        {
           "len":4,
           "name":"layout_info",
           "offset":0,
@@ -49569,42 +49040,6 @@
       "importable":true,
       "len":16,
       "name":"istream_core",
-      "pack":false,
-      "type":"struct"
-    },
-    {
-      "alig":4,
-      "cat":"/Nocturne/Class/System/strstream.h",
-      "desc":"",
-      "fields":[
-        {
-          "len":68,
-          "name":"_strstreambase_core",
-          "offset":0,
-          "type":"strstreambase_core"
-        },
-        {
-          "len":16,
-          "name":"_istream_core",
-          "offset":68,
-          "type":"istream_core"
-        },
-        {
-          "len":4,
-          "name":"padding",
-          "offset":84,
-          "type":"char[4]"
-        },
-        {
-          "len":44,
-          "name":"_ios",
-          "offset":88,
-          "type":"ios"
-        }
-      ],
-      "importable":true,
-      "len":132,
-      "name":"istrstream",
       "pack":false,
       "type":"struct"
     },
@@ -49860,30 +49295,6 @@
       "desc":"",
       "fields":[
         {
-          "len":12,
-          "name":"_ostream_core",
-          "offset":0,
-          "type":"ostream_core"
-        },
-        {
-          "len":44,
-          "name":"_ios",
-          "offset":12,
-          "type":"ios"
-        }
-      ],
-      "importable":true,
-      "len":56,
-      "name":"ostream",
-      "pack":false,
-      "type":"struct"
-    },
-    {
-      "alig":4,
-      "cat":"/Nocturne/Class/System/iostream.h",
-      "desc":"",
-      "fields":[
-        {
           "len":4,
           "name":"layout_info",
           "offset":0,
@@ -49905,42 +49316,6 @@
       "importable":true,
       "len":12,
       "name":"ostream_core",
-      "pack":false,
-      "type":"struct"
-    },
-    {
-      "alig":4,
-      "cat":"/Nocturne/Class/System/strstream.h",
-      "desc":"",
-      "fields":[
-        {
-          "len":68,
-          "name":"_strstreambase_core",
-          "offset":0,
-          "type":"strstreambase_core"
-        },
-        {
-          "len":12,
-          "name":"_ostream_core",
-          "offset":68,
-          "type":"ostream_core"
-        },
-        {
-          "len":44,
-          "name":"_ios",
-          "offset":80,
-          "type":"ios"
-        },
-        {
-          "len":4,
-          "name":"padding",
-          "offset":124,
-          "type":"char[4]"
-        }
-      ],
-      "importable":true,
-      "len":128,
-      "name":"ostrstream",
       "pack":false,
       "type":"struct"
     },
@@ -50191,7 +49566,7 @@
         },
         {
           "len":2,
-          "name":"pad",
+          "name":"alignment",
           "offset":6,
           "type":"ushort"
         }
@@ -50199,54 +49574,6 @@
       "importable":true,
       "len":8,
       "name":"SAlphaEntry",
-      "pack":false,
-      "type":"struct"
-    },
-    {
-      "alig":1,
-      "cat":"/Nocturne/Struct/Game",
-      "desc":"",
-      "fields":[
-        {
-          "len":8,
-          "name":"unk",
-          "offset":0,
-          "type":"char[8]"
-        },
-        {
-          "len":4,
-          "name":"frame_count",
-          "offset":8,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"current_frame",
-          "offset":12,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"frame_duration",
-          "offset":16,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"accumulated_time",
-          "offset":20,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"dirty_flag",
-          "offset":24,
-          "type":"int"
-        }
-      ],
-      "importable":true,
-      "len":28,
-      "name":"SAnimatedTexture",
       "pack":false,
       "type":"struct"
     },
@@ -50451,7 +49778,7 @@
           "len":4,
           "name":"accumulated_bits",
           "offset":4,
-          "type":"int"
+          "type":"uint"
         }
       ],
       "importable":true,
@@ -50551,7 +49878,7 @@
         },
         {
           "len":2,
-          "name":"padding",
+          "name":"dead",
           "offset":30,
           "type":"short"
         },
@@ -50953,96 +50280,6 @@
       "fields":[
         {
           "len":4,
-          "name":"closest_t",
-          "offset":0,
-          "type":"float"
-        },
-        {
-          "len":12,
-          "name":"push_normal",
-          "offset":4,
-          "type":"CVector3f"
-        },
-        {
-          "len":4,
-          "name":"start_x",
-          "offset":16,
-          "type":"float"
-        },
-        {
-          "len":4,
-          "name":"start_z",
-          "offset":20,
-          "type":"float"
-        },
-        {
-          "len":4,
-          "name":"dir_x",
-          "offset":24,
-          "type":"float"
-        },
-        {
-          "len":4,
-          "name":"dir_z",
-          "offset":28,
-          "type":"float"
-        },
-        {
-          "len":4,
-          "name":"radius",
-          "offset":32,
-          "type":"float"
-        },
-        {
-          "len":4,
-          "name":"top_y",
-          "offset":36,
-          "type":"float"
-        },
-        {
-          "len":4,
-          "name":"bottom_y",
-          "offset":40,
-          "type":"float"
-        },
-        {
-          "len":4,
-          "name":"sweep_slab_near",
-          "offset":44,
-          "type":"float"
-        },
-        {
-          "len":4,
-          "name":"sweep_slab_far",
-          "offset":48,
-          "type":"float"
-        },
-        {
-          "len":4,
-          "name":"normal_x",
-          "offset":52,
-          "type":"float"
-        },
-        {
-          "len":4,
-          "name":"normal_z",
-          "offset":56,
-          "type":"float"
-        }
-      ],
-      "importable":true,
-      "len":60,
-      "name":"SCapsuleCollision",
-      "pack":false,
-      "type":"struct"
-    },
-    {
-      "alig":1,
-      "cat":"/Nocturne/Struct/Game",
-      "desc":"",
-      "fields":[
-        {
-          "len":4,
           "name":"bone_index",
           "offset":0,
           "type":"int"
@@ -51265,9 +50502,9 @@
         },
         {
           "len":4,
-          "name":"padding",
+          "name":"dead",
           "offset":156,
-          "type":"char[4]"
+          "type":"int"
         },
         {
           "len":12,
@@ -51469,7 +50706,7 @@
         },
         {
           "len":16,
-          "name":"reserved",
+          "name":"dead",
           "offset":12,
           "type":"char[16]"
         }
@@ -51595,9 +50832,9 @@
       "fields":[
         {
           "len":4,
-          "name":"unknown",
+          "name":"globe",
           "offset":0,
-          "type":"int"
+          "type":"CDemonGlobe*"
         },
         {
           "len":960,
@@ -51709,13 +50946,13 @@
         },
         {
           "len":4,
-          "name":"initial_value",
+          "name":"atlas_dimension",
           "offset":80,
           "type":"int"
         },
         {
           "len":4,
-          "name":"algorithm_mode",
+          "name":"padding_size",
           "offset":84,
           "type":"int"
         },
@@ -51727,44 +50964,44 @@
         },
         {
           "len":4,
-          "name":"enable_optimization",
+          "name":"min_atlas_size",
           "offset":92,
           "type":"int"
         },
         {
           "len":4,
-          "name":"enable_gap_filling",
+          "name":"num_maps",
           "offset":96,
           "type":"int"
         },
         {
           "len":4,
-          "name":"enable_rotation",
+          "name":"fill_gaps",
           "offset":100,
           "type":"int"
         },
         {
           "len":4,
-          "name":"enable_flipping",
+          "name":"enable_visualization",
           "offset":104,
           "type":"int"
         },
         {
           "len":4,
-          "name":"enable_scaling",
+          "name":"paint_borders",
           "offset":108,
           "type":"int"
         },
         {
           "len":4,
-          "name":"final_mode",
+          "name":"max_iterations",
           "offset":112,
           "type":"int"
         }
       ],
       "importable":true,
       "len":116,
-      "name":"SCramConfig",
+      "name":"SCram",
       "pack":false,
       "type":"struct"
     },
@@ -51775,31 +51012,31 @@
       "fields":[
         {
           "len":4,
-          "name":"left",
+          "name":"map_id",
           "offset":0,
           "type":"int"
         },
         {
           "len":4,
-          "name":"top",
+          "name":"start_x",
           "offset":4,
           "type":"int"
         },
         {
           "len":4,
-          "name":"right",
+          "name":"start_y",
           "offset":8,
           "type":"int"
         },
         {
           "len":4,
-          "name":"bottom",
+          "name":"end_x",
           "offset":12,
           "type":"int"
         },
         {
           "len":4,
-          "name":"max_dimension",
+          "name":"end_y",
           "offset":16,
           "type":"int"
         },
@@ -51811,19 +51048,19 @@
         },
         {
           "len":4,
-          "name":"unk1",
+          "name":"occupant",
           "offset":24,
           "type":"int"
         },
         {
           "len":4,
-          "name":"unk2",
+          "name":"candidate_end_x",
           "offset":28,
           "type":"int"
         },
         {
           "len":4,
-          "name":"unk3",
+          "name":"candidate_end_y",
           "offset":32,
           "type":"int"
         },
@@ -52111,15 +51348,15 @@
       "fields":[
         {
           "len":4,
-          "name":"device_id_part",
+          "name":"is_primary_device",
           "offset":0,
           "type":"DWORD"
         },
         {
           "len":16,
-          "name":"field_4",
+          "name":"device_guid",
           "offset":4,
-          "type":"char[16]"
+          "type":"_GUID"
         },
         {
           "len":256,
@@ -52129,13 +51366,13 @@
         },
         {
           "len":4,
-          "name":"value2",
+          "name":"is_emulated",
           "offset":276,
           "type":"DWORD"
         },
         {
           "len":4,
-          "name":"value1",
+          "name":"has_hardware_mixing",
           "offset":280,
           "type":"DWORD"
         }
@@ -52494,16 +51731,16 @@
           "type":"int"
         },
         {
-          "len":6,
-          "name":"indices",
+          "len":18,
+          "name":"face_data",
           "offset":12,
-          "type":"STrianglePackedIndices"
+          "type":"SInputFace"
         },
         {
-          "len":14,
-          "name":"unk",
-          "offset":18,
-          "type":"char[14]"
+          "len":2,
+          "name":"dead",
+          "offset":30,
+          "type":"short"
         }
       ],
       "importable":true,
@@ -52603,7 +51840,7 @@
         },
         {
           "len":4,
-          "name":"reserved",
+          "name":"temperature",
           "offset":32,
           "type":"float"
         }
@@ -53017,13 +52254,13 @@
         },
         {
           "len":4,
-          "name":"unk1",
+          "name":"xlen2",
           "offset":24,
           "type":"int"
         },
         {
           "len":4,
-          "name":"unk2",
+          "name":"ylen2",
           "offset":28,
           "type":"int"
         },
@@ -53059,13 +52296,13 @@
         },
         {
           "len":4,
-          "name":"unk1",
+          "name":"xlen",
           "offset":4,
           "type":"int"
         },
         {
           "len":4,
-          "name":"unk2",
+          "name":"ylen",
           "offset":8,
           "type":"int"
         },
@@ -53281,13 +52518,13 @@
         },
         {
           "len":4,
-          "name":"bottom_y",
+          "name":"top_y",
           "offset":36,
           "type":"float"
         },
         {
           "len":4,
-          "name":"top_y",
+          "name":"bottom_y",
           "offset":40,
           "type":"float"
         },
@@ -54217,19 +53454,19 @@
       "fields":[
         {
           "len":4,
-          "name":"unk1",
+          "name":"main_data_begin",
           "offset":0,
           "type":"int"
         },
         {
           "len":4,
-          "name":"unk2",
+          "name":"private_bits",
           "offset":4,
           "type":"int"
         },
         {
           "len":16,
-          "name":"unk3",
+          "name":"unk",
           "offset":8,
           "type":"char[16]"
         },
@@ -54459,6 +53696,54 @@
       "importable":true,
       "len":128,
       "name":"SMpegSubbandSCFSI",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":8,
+          "name":"base",
+          "offset":0,
+          "type":"SMRGLHeaderBasic"
+        },
+        {
+          "len":4,
+          "name":"frame_count",
+          "offset":8,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"current_frame",
+          "offset":12,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"frame_duration",
+          "offset":16,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"accumulated_time",
+          "offset":20,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"dirty_flag",
+          "offset":24,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":28,
+      "name":"SMRGLAnimatedTexture",
       "pack":false,
       "type":"struct"
     },
@@ -55135,7 +54420,7 @@
         },
         {
           "len":4,
-          "name":"unk",
+          "name":"dead",
           "offset":72,
           "type":"int"
         },
@@ -55357,7 +54642,7 @@
         },
         {
           "len":4,
-          "name":"reserved1",
+          "name":"dead",
           "offset":12,
           "type":"int"
         },
@@ -55717,7 +55002,7 @@
         },
         {
           "len":4,
-          "name":"field_88",
+          "name":"dead",
           "offset":88,
           "type":"int"
         },
@@ -55933,13 +55218,13 @@
         },
         {
           "len":4,
-          "name":"reserved",
+          "name":"dead",
           "offset":60,
           "type":"int"
         },
         {
           "len":4,
-          "name":"reverb_preset",
+          "name":"reverb_size",
           "offset":64,
           "type":"int"
         }
@@ -56378,7 +55663,7 @@
         },
         {
           "len":4,
-          "name":"device_value1",
+          "name":"has_hardware_mixing",
           "offset":264,
           "type":"DWORD"
         },
@@ -56390,13 +55675,13 @@
         },
         {
           "len":4,
-          "name":"device_guid",
+          "name":"is_primary_device",
           "offset":272,
           "type":"DWORD"
         },
         {
           "len":4,
-          "name":"device_value2",
+          "name":"is_emulated",
           "offset":276,
           "type":"DWORD"
         }
@@ -56785,126 +56070,6 @@
       "desc":"",
       "fields":[
         {
-          "len":512,
-          "name":"unk1",
-          "offset":0,
-          "type":"char[512]"
-        },
-        {
-          "len":4,
-          "name":"source_width",
-          "offset":512,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"source_height",
-          "offset":516,
-          "type":"int"
-        },
-        {
-          "len":12,
-          "name":"unk2",
-          "offset":520,
-          "type":"char[12]"
-        },
-        {
-          "len":4,
-          "name":"processing_mode",
-          "offset":532,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"src_x1",
-          "offset":536,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"src_y1",
-          "offset":540,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"src_x2",
-          "offset":544,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"src_y2",
-          "offset":548,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"dest_x",
-          "offset":552,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"dest_y",
-          "offset":556,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"scaled_dest_x",
-          "offset":560,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"scaled_dest_y",
-          "offset":564,
-          "type":"int"
-        },
-        {
-          "len":8,
-          "name":"unk3",
-          "offset":568,
-          "type":"char[8]"
-        },
-        {
-          "len":4,
-          "name":"atlas_x1",
-          "offset":576,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"atlas_y1",
-          "offset":580,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"atlas_x2",
-          "offset":584,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"atlas_y2",
-          "offset":588,
-          "type":"int"
-        }
-      ],
-      "importable":true,
-      "len":592,
-      "name":"STextureLoadConfig",
-      "pack":false,
-      "type":"struct"
-    },
-    {
-      "alig":1,
-      "cat":"/Nocturne/Struct/Game",
-      "desc":"",
-      "fields":[
-        {
           "len":5760,
           "name":"textures",
           "offset":0,
@@ -56953,38 +56118,38 @@
       "desc":"",
       "fields":[
         {
-          "len":4,
-          "name":"record_start",
-          "offset":0,
-          "type":"int"
-        },
-        {
           "len":256,
-          "name":"unk1",
-          "offset":4,
+          "name":"filename",
+          "offset":0,
           "type":"char[256]"
         },
         {
           "len":4,
-          "name":"chars_read",
+          "name":"record_number",
+          "offset":256,
+          "type":"uint"
+        },
+        {
+          "len":4,
+          "name":"second",
           "offset":260,
           "type":"int"
         },
         {
           "len":4,
-          "name":"time_1",
+          "name":"minute",
           "offset":264,
           "type":"int"
         },
         {
           "len":4,
-          "name":"time_2",
+          "name":"hour",
           "offset":268,
           "type":"int"
         },
         {
           "len":4,
-          "name":"time_3",
+          "name":"day",
           "offset":272,
           "type":"int"
         },
@@ -57001,10 +56166,16 @@
           "type":"int"
         },
         {
-          "len":44,
-          "name":"unk2",
+          "len":12,
+          "name":"dead",
           "offset":284,
-          "type":"char[44]"
+          "type":"char[12]"
+        },
+        {
+          "len":32,
+          "name":"username",
+          "offset":296,
+          "type":"char[32]"
         }
       ],
       "importable":true,
@@ -57674,7 +56845,7 @@
         },
         {
           "len":4,
-          "name":"reserved",
+          "name":"dead",
           "offset":60,
           "type":"int"
         },
@@ -57703,22 +56874,22 @@
           "type":"char[32]"
         },
         {
-          "len":8,
-          "name":"unk1",
+          "len":4,
+          "name":"overwrite_own_choice",
           "offset":32,
-          "type":"char[8]"
+          "type":"int"
         },
         {
-          "len":40,
+          "len":4,
+          "name":"overwrite_writeable_choice",
+          "offset":36,
+          "type":"int"
+        },
+        {
+          "len":104,
           "name":"network_username",
           "offset":40,
-          "type":"char[40]"
-        },
-        {
-          "len":64,
-          "name":"unk2",
-          "offset":80,
-          "type":"char[64]"
+          "type":"char[104]"
         },
         {
           "len":104,
@@ -57805,48 +56976,6 @@
       "desc":"",
       "fields":[
         {
-          "len":4,
-          "name":"primitive_type",
-          "offset":0,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"render_queue_index",
-          "offset":4,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"vertex_count",
-          "offset":8,
-          "type":"int"
-        },
-        {
-          "len":12,
-          "name":"vertex_buffer",
-          "offset":12,
-          "type":"CVector3i"
-        },
-        {
-          "len":4,
-          "name":"unk",
-          "offset":24,
-          "type":"void**"
-        }
-      ],
-      "importable":true,
-      "len":28,
-      "name":"SVertexBatch",
-      "pack":false,
-      "type":"struct"
-    },
-    {
-      "alig":1,
-      "cat":"/Nocturne/Struct/Game",
-      "desc":"",
-      "fields":[
-        {
           "len":12,
           "name":"vertex",
           "offset":0,
@@ -57914,7 +57043,7 @@
         },
         {
           "len":4,
-          "name":"unk1",
+          "name":"dead1",
           "offset":8,
           "type":"int"
         },
@@ -57926,7 +57055,7 @@
         },
         {
           "len":4,
-          "name":"unk2",
+          "name":"dead2",
           "offset":16,
           "type":"int"
         },
@@ -62285,6 +61414,54 @@
       "desc":"",
       "fields":[
         {
+          "len":4,
+          "name":"f",
+          "offset":0,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"i",
+          "offset":0,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":4,
+      "name":"UFloatInteger",
+      "pack":false,
+      "type":"union"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Union/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"i",
+          "offset":0,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"f",
+          "offset":0,
+          "type":"float"
+        }
+      ],
+      "importable":true,
+      "len":4,
+      "name":"UIntegerFloat",
+      "pack":false,
+      "type":"union"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Union/Game",
+      "desc":"",
+      "fields":[
+        {
           "len":12,
           "name":"vec",
           "offset":0,
@@ -62300,6 +61477,30 @@
       "importable":true,
       "len":12,
       "name":"UOrientationVector",
+      "pack":false,
+      "type":"union"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Union/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":12,
+          "name":"f",
+          "offset":0,
+          "type":"CVector3f"
+        },
+        {
+          "len":12,
+          "name":"i",
+          "offset":0,
+          "type":"CVector3i"
+        }
+      ],
+      "importable":true,
+      "len":12,
+      "name":"UVector3",
       "pack":false,
       "type":"union"
     }

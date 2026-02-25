@@ -12,11 +12,11 @@
 ;   core_manpuz.cpp_CMansionPuzzleCircle_processInEditor_FUN_0050b440 at 0050b643
 ;   core_msnedit.cpp_CDemonMission_FUN_0053e220 at 0053e344
 ;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 005392de
-;   core_setedit.cpp_CDemonSet_FUN_0057a940 at 0057a97c
-;   core_setedit.cpp_CDemonSet_FUN_0057ae50 at 0057aecb
-;   core_setedit.cpp_CDemonSet_FUN_0057d660 at 0057d707
-;   core_setedit.cpp_CDemonSet_FUN_00581aa0 at 00581af2
-;   core_setedit.cpp_CDemonSet_FUN_00583170 at 005831c5
+;   core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660 at 0057d707
+;   core_setedit.cpp_CDemonSet_positionLight_FUN_0057ae50 at 0057aecb
+;   core_setedit.cpp_CDemonSet_showRoomEditor_FUN_00581aa0 at 00581af2
+;   core_setedit.cpp_CDemonSet_showScenePreview_FUN_0057a940 at 0057a97c
+;   core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170 at 005831c5
 ;   ... and 1 more
 ;
 ; *****************************************************************************

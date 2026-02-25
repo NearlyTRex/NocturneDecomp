@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl support_codec_cpp_CLZWDecompress_processBuffer_FUN_0043f5d0(CLZWDecompress *this_ptr,byte *input,int *input_length,byte *output,int *output_length,int enable_callback)
+; int __cdecl support_codec_cpp_CLZWDecompress_processBuffer_FUN_0043f5d0(CLZWDecompress *this_ptr,char *input,int *input_length,char *output,int *output_length,int enable_callback)
 ;
 ; Parameters:
 ; CLZWDecompress * Stack[0x4]:4   this_ptr
-; byte *           Stack[0x8]:4   input
+; char *           Stack[0x8]:4   input
 ; int *            Stack[0xc]:4   input_length
-; byte *           Stack[0x10]:4   output
+; char *           Stack[0x10]:4   output
 ; int *            Stack[0x14]:4   output_length
 ; int              Stack[0x18]:4   enable_callback
 ; Local Variables:
@@ -20,7 +20,7 @@
 ; Called Functions:
 ;   support_codec.cpp_CLZWDictionary_addNode_FUN_0043ef90
 ;   support_codec.cpp_CLZWDictionary_decodeCodeToBuffer_FUN_0043f270
-;   support_codec.cpp_CLZWDictionary_writeCodeToStream_FUN_0043f0d0
+;   support_codec.cpp_CLZWDictionary_readCodeFromBuffer_FUN_0043f0d0
 ;
 ; *****************************************************************************
 
@@ -78,8 +78,8 @@ section .text
     PUSH EAX                            ; 0043f640
     LEA EAX,[EBX + 0x4]                 ; 0043f641
     PUSH EAX                            ; 0043f644
-    CALL support_codec.cpp_CLZWDictionary_writeCodeToStream_FUN_0043f0d0 ; 0043f645
-        ;   XREF to: 0043f0d0 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_CLZWDictionary_writeCodeToStream_FUN_0043f0d0(CLZWDictionary * this_ptr, SBitBuffer * bit_buffer, byte * output_stream, int * bytes_remaining, ...)
+    CALL support_codec.cpp_CLZWDictionary_readCodeFromBuffer_FUN_0043f0d0 ; 0043f645
+        ;   XREF to: 0043f0d0 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_CLZWDictionary_readCodeFromBuffer_FUN_0043f0d0(CLZWDictionary * this_ptr, SBitBuffer * bit_buffer, char * * input_buffer, int * bytes_remaining)
     ADD ESP,0x10                        ; 0043f64a
     MOV dword ptr [EBX + 0x2c],EAX      ; 0043f64d
     TEST EAX,EAX                        ; 0043f650

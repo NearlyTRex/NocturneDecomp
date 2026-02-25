@@ -98,12 +98,13 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
   g_CDemonLightInstance.light_enabled_flag = 0;
   g_CDemonLightInstance.base.max_distance = 64.0;
   core_set_cpp_CDemonSet_initScene_FUN_0056aa10(g_CDemonSetPtr);
-  if (DAT_02d82d80 == 0) {
+  if (g_HasSavedLightState == 0) {
     core_fire_cpp_CFireEffect_init_FUN_004c6c80(g_CFireEffectPtr);
   }
   else {
-    DAT_02d82d80 = 0;
-    core_set_cpp_CDemonSet_restoreLightState_FUN_00571130(g_CDemonSetPtr,&DAT_02d82d84);
+    g_HasSavedLightState = 0;
+    core_set_cpp_CDemonSet_loadMasterLightStates_FUN_00571130
+              (g_CDemonSetPtr,g_MasterLightStateSaveBuffer);
   }
   if (this_ptr->gamma < 0x8000) {
     this_ptr->gamma = 0x8000;
@@ -146,11 +147,12 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
       if ((((this_ptr->is_game_active != 0) && (this_ptr->cutscene_skippable == 0)) &&
           (g_CNetGamePtr->has_pending_sim_frame == 0)) && (this_ptr->block_auto_save == 0)) {
         iVar3 = core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0
-                          (g_CDemonSetPtr,g_CScriptPtr->focus_actor,g_CScriptPtr->unk2);
+                          (g_CDemonSetPtr,g_CScriptPtr->focus_actor,
+                           g_CScriptPtr->focus_actor_changed);
         if (iVar3 != 0) {
           core_game_cpp_CGame_saveClockTime_FUN_004d7d80(this_ptr);
         }
-        g_CScriptPtr->unk2 = 0;
+        g_CScriptPtr->focus_actor_changed = 0;
       }
       iVar3 = 0;
       core_game_cpp_CGame_processFrame_FUN_004da100(this_ptr);

@@ -252,7 +252,7 @@ LAB_005c17d2:
                           &(this_ptr->base).base.base.location.position);
       fVar2 = (this_ptr->carry_object_world_center).y;
       pCVar1 = &(this_ptr->base).base.model;
-      this_ptr->unk3 = (uint)(0.0 < pCVar7->z);
+      this_ptr->pickup_facing_reversed = (uint)(0.0 < pCVar7->z);
       if ((float)2.5 < fVar2) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&pCVar1->motion_controller,0x18,1);

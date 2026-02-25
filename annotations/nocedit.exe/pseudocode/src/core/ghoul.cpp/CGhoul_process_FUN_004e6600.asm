@@ -1300,8 +1300,8 @@ section .text
     MOV EDX,dword ptr [0x006810c8]      ; 004e72f7 | g_CDemonSetPtr | g_CDemonSetInstance
     PUSH dword ptr [EBX + 0x20]         ; 004e72fd
     PUSH EDX                            ; 004e7300 | g_CDemonSetInstance
-    CALL core_setcolid.cpp_CDemonSet_testCapsuleCollision_FUN_00573470 ; 004e7301
-        ;   XREF to: 00573470 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_testCapsuleCollision_FUN_00573470(CDemonSet * this_ptr, float start_x, float start_z, float dir_x, ...)
+    CALL core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00573470 ; 004e7301
+        ;   XREF to: 00573470 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00573470(CDemonSet * this_ptr, float start_x, float start_z, float dir_x, ...)
     MOV ECX,dword ptr [0x006810c8]      ; 004e7306 | g_CDemonSetPtr | g_CDemonSetInstance
     MOV dword ptr [EBP + 0x76],EAX      ; 004e730c
     ADD ESP,0x20                        ; 004e730f

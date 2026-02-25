@@ -1,10 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CLZWCompress * __cdecl support_codec_cpp_CLZWCompress_ctor_FUN_0043f2d0(CLZWCompress *this_ptr)
+; CLZWCompress * __cdecl support_codec_cpp_CLZWCompress_ctor_FUN_0043f2d0(CLZWCompress *this_ptr,int buffer_size,int num_bits)
 ;
 ; Parameters:
 ; CLZWCompress *   Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   buffer_size
+; int              Stack[0xc]:4   num_bits
 ;
 ; XREF[2]:
 ;   core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_004529b0 at 00452b56

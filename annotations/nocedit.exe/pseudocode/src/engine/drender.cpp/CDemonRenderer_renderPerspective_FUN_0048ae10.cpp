@@ -2,11 +2,11 @@
 // Address: 0048ae10
 // Address Range: [[0048ae10, 0048aea8]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info,int render_flags)
+// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim,int render_flags)
 
 #include "nocturne.h"
 
-void __cdecl engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info,int render_flags)
+void __cdecl engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim,int render_flags)
 
 {
   int iVar1;
@@ -15,7 +15,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10(CD
     render_flags = RENDER_ENGINE_CORE_PREMIUM;
   }
   if ((this_ptr->plane_culling_enabled == 0) ||
-     (iVar1 = engine_3d_c_isVisiblePlane_FUN_00403950(&polygon_info->surface_normal), iVar1 != 0)) {
+     (iVar1 = engine_3d_c_isVisiblePlane_FUN_00403950(&prim->surface_normal), iVar1 != 0)) {
     if (this_ptr->face_count == 0) {
       if (g_BitsPerPixel == 0x20) {
         g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031;
@@ -32,7 +32,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10(CD
       g_ScanlineRenderFunc = (RenderScanlineFunc *)core_dstrender_cpp_renderDepthOnlyStandard_FUN_0049072f;
     }
     engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740
-              (this_ptr,(polygon_info->base).count,(int *)(polygon_info + 1));
+              (this_ptr,(prim->base).count,(int *)(prim + 1));
   }
   return;
 }

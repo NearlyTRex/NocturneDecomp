@@ -363,10 +363,10 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this
           pCVar23 = this_ptr;
           sound_mp3_cpp_CMP3Decoder_readBits_FUN_0052f170(this_ptr,(uint)num_bits);
         }
-        local_70 = (this_ptr->unk1 - uVar9) - _local_4d8;
+        local_70 = (this_ptr->main_data_offset - uVar9) - _local_4d8;
         if (0x1000 < uVar9) {
           num_bits = (CMP3Decoder *)0x1000;
-          this_ptr->unk1 = this_ptr->unk1 + -0x1000;
+          this_ptr->main_data_offset = this_ptr->main_data_offset + -0x1000;
           uVar19 = 0xda;
           uVar20 = 0x56;
           uVar21 = 0x53;
@@ -394,7 +394,7 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this
         frame_info_00.js_bound._2_2_ = (short)((uint)pCVar23 >> 0x10);
         frame_info_00.sblimit = (int)num_bits;
         iVar7 = sound_mp3_cpp_calculateMainDataSize_FUN_00533c50(frame_info_00);
-        this_ptr->unk1 = this_ptr->unk1 + iVar7;
+        this_ptr->main_data_offset = this_ptr->main_data_offset + iVar7;
         if (local_70 < 0) {
           g_CurrentFilename = "..\\sound\\mp3.cpp";
           g_CurrentLineNumber = 0xf9a;
@@ -411,7 +411,7 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this
             iVar7 = 0;
             if (0 < local_e0.original) {
               local_58 = local_4ec8.channels;
-              pSVar14 = (SMpegLayer3Granule *)(local_4c0.unk3 + local_34 + -8);
+              pSVar14 = (SMpegLayer3Granule *)(local_4c0.unk + local_34 + -8);
               do {
                 local_68 = (SMpegFrame *)
                            sound_mp3_cpp_CMP3Decoder_getTotalBitsRead_FUN_0052f160(this_ptr);
@@ -441,7 +441,7 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this
                        (SMpegLayer3Granule **)&local_e0);
             local_1c = 0;
             if (0 < local_e0.original) {
-              local_4c = (SMpegFrame *)(local_4c0.unk3 + local_34 + -8);
+              local_4c = (SMpegFrame *)(local_4c0.unk + local_34 + -8);
               local_48 = local_60c8.channels;
               local_40 = local_33c8;
               local_44 = local_4c;

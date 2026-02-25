@@ -520,7 +520,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
                   pcVar12 = pCVar15->model_filename;
                   pCVar15 = pCVar14;
                 } while (*pcVar12 != '\0');
-                pcVar12 = (char *)((int)&pCVar14[-1].padding + 3);
+                pcVar12 = (char *)((int)&pCVar14[-1].dead + 3);
                 do {
                   cVar2 = *pcVar10;
                   *pcVar12 = cVar2;

@@ -9,58 +9,62 @@
 void __cdecl core_set_cpp_CDemonSet_renderOpaqueActors_FUN_0056cd60(CDemonSet *this_ptr)
 
 {
-  int iVar1;
-  CVector3f *pCVar2;
+  int *piVar1;
+  CDemonActor *this_ptr_00;
+  CBoundingBox3D *pCVar2;
   int iVar3;
   int iVar4;
   int iVar5;
-  byte auStack_44 [24];
-  CVector3f CStack_2c;
-  CVector3f CStack_20;
-  char *local_14;
+  CBoundingBox3D CStack_44;
+  CBoundingBox3D CStack_2c;
+  CDemonSet *local_14;
   
   iVar5 = this_ptr->sorted_render_actor_count + -1;
   if (-1 < iVar5) {
-    local_14 = this_ptr->cameras[0].name + this_ptr->sorted_render_actor_count * 4 + -8;
+    local_14 = (CDemonSet *)
+               (this_ptr->cameras[0].name + this_ptr->sorted_render_actor_count * 4 + -8);
     do {
-      iVar1 = *(int *)(local_14 + 0x15f6e8);
-      if (*(int *)(iVar1 + 0xf8) == 0) {
-        *(byte *)(iVar1 + 0x140) = *(byte *)(iVar1 + 0x140) & 0xfb;
+      this_ptr_00 = local_14->sorted_render_actors[0];
+      if (this_ptr_00->is_renderable == 0) {
+        piVar1 = &(this_ptr_00->previous_transform_state).dirty_flags;
+        *(byte *)piVar1 = (byte)*piVar1 & 0xfb;
       }
       else {
-        pCVar2 = (CVector3f *)(**(code **)(*(int *)(iVar1 + 0x154) + 0x14))(iVar1,auStack_44);
+        pCVar2 = (*((this_ptr_00->vtable)._ub)->getBoundingBox)(this_ptr_00,&CStack_44);
         if (&CStack_2c != pCVar2) {
-          CStack_2c.x = pCVar2->x;
-          CStack_2c.y = pCVar2->y;
-          CStack_2c.z = pCVar2->z;
+          CStack_2c.min.x = (pCVar2->min).x;
+          CStack_2c.min.y = (pCVar2->min).y;
+          CStack_2c.min.z = (pCVar2->min).z;
         }
-        if (&CStack_20 != pCVar2 + 1) {
-          CStack_20.x = pCVar2[1].x;
-          CStack_20.y = pCVar2[1].y;
-          CStack_20.z = pCVar2[1].z;
+        if (&CStack_2c.max != &pCVar2->max) {
+          CStack_2c.max.x = (pCVar2->max).x;
+          CStack_2c.max.y = (pCVar2->max).y;
+          CStack_2c.max.z = (pCVar2->max).z;
         }
         core_set_cpp_CDemonSet_setLightingParameters_FUN_0056d380
-                  (this_ptr,(CVector3f *)(iVar1 + 0x20),(UOrientationVector *)(iVar1 + 0x30),
-                   &CStack_2c,&CStack_20,(CMatrix3x3f *)(iVar1 + 0x3c));
+                  (this_ptr,&(this_ptr_00->location).position,&this_ptr_00->orient,&CStack_2c.min,
+                   &CStack_2c.max,&this_ptr_00->orient_matrix);
         core_set_cpp_CDemonSet_setScaleFactors_FUN_00570ca0
-                  (this_ptr,*(int *)(iVar1 + 0x108),*(int *)(iVar1 + 0x10c),*(int *)(iVar1 + 0x110))
-        ;
+                  (this_ptr,(this_ptr_00->scale).x,(this_ptr_00->scale).y,(this_ptr_00->scale).z);
         engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,0xffff);
-        iVar3 = (**(code **)(*(int *)(iVar1 + 0x154) + 8))(iVar1);
+        iVar3 = (*((this_ptr_00->vtable)._ub)->renderOpaque)(this_ptr_00);
         if (iVar3 == 0) {
-          *(byte *)(iVar1 + 0x140) = *(byte *)(iVar1 + 0x140) & 0xfb;
+          piVar1 = &(this_ptr_00->previous_transform_state).dirty_flags;
+          *(byte *)piVar1 = (byte)*piVar1 & 0xfb;
         }
         else {
-          *(byte *)(iVar1 + 0x140) = *(byte *)(iVar1 + 0x140) | 4;
+          piVar1 = &(this_ptr_00->previous_transform_state).dirty_flags;
+          *(byte *)piVar1 = (byte)*piVar1 | 4;
         }
         engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr2,1);
         iVar3 = 0;
         if (0 < this_ptr->mirror_glass_actor_count) {
           do {
             core_set_cpp_CDemonSet_setupMirrorRendering_FUN_005709e0(this_ptr,iVar3,0);
-            iVar4 = (**(code **)(*(int *)(iVar1 + 0x154) + 8))(iVar1);
+            iVar4 = (*((this_ptr_00->vtable)._ub)->renderOpaque)(this_ptr_00);
             if (iVar4 != 0) {
-              *(byte *)(iVar1 + 0x140) = *(byte *)(iVar1 + 0x140) | 4;
+              piVar1 = &(this_ptr_00->previous_transform_state).dirty_flags;
+              *(byte *)piVar1 = (byte)*piVar1 | 4;
             }
             engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr2,1)
             ;
@@ -70,7 +74,7 @@ void __cdecl core_set_cpp_CDemonSet_renderOpaqueActors_FUN_0056cd60(CDemonSet *t
         }
         core_set_cpp_CDemonSet_setScaleFactors_FUN_00570ca0(this_ptr,0x10000,0x10000,0x10000);
       }
-      local_14 = local_14 + -4;
+      local_14 = (CDemonSet *)&local_14[-1].weather_type;
       iVar5 = iVar5 + -1;
     } while (-1 < iVar5);
   }

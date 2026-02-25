@@ -204,7 +204,7 @@ section .text
     MOV EAX,ESP                         ; 005dc972
     PUSH EAX                            ; 005dc974
     CALL engine_3d.c_renderPolygonTextureEnable_FUN_00403cc0 ; 005dc975
-        ;   XREF to: 00403cc0 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonTextureEnable_FUN_00403cc0(SMRGLHeaderPrimitive * polygon_info)
+        ;   XREF to: 00403cc0 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonTextureEnable_FUN_00403cc0(SMRGLHeaderPrimitive * prim)
     MOV DL,byte ptr [0x02d03eb3]        ; 005dc97a | CHAR_ARRAY_02d03eb3
     ADD ESP,0x4                         ; 005dc980
     TEST DL,DL                          ; 005dc983

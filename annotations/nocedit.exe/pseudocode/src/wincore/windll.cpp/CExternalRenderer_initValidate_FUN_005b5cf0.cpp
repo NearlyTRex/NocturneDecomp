@@ -1,0 +1,18 @@
+// Name: wincore_windll.cpp_CExternalRenderer_initValidate_FUN_005b5cf0
+// Address: 005b5cf0
+// Address Range: [[005b5cf0, 005b5d09]]
+// Convention: __cdecl
+// Signature: void __cdecl wincore_windll_cpp_CExternalRenderer_initValidate_FUN_005b5cf0(CExternalRenderer *this_ptr,char *buffer_ptr)
+
+#include "nocturne.h"
+
+void __cdecl wincore_windll_cpp_CExternalRenderer_initValidate_FUN_005b5cf0(CExternalRenderer *this_ptr,char *buffer_ptr)
+
+{
+  this_ptr->buffer_ptr = buffer_ptr;
+  if (buffer_ptr != (char *)0x0) {
+    return;
+  }
+  g_DLLFunctionsMissing = 1;
+  return;
+}

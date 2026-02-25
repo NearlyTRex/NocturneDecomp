@@ -197,8 +197,8 @@ LAB_0044f4fd:
           support_codec_cpp_CLZWDecompress_init_FUN_0043f4d0(&g_CLZWDecompressInstance);
           local_98 = g_ImageBytesPerPixel * 0x12c00;
           iVar6 = support_codec_cpp_CLZWDecompress_processBuffer_FUN_0043f5d0
-                            (&g_CLZWDecompressInstance,(byte *)g_CameraLoadImageReadBuffer,
-                             (int *)&local_9c,(byte *)g_CameraImageDecompressBuffer,&local_98,1);
+                            (&g_CLZWDecompressInstance,g_CameraLoadImageReadBuffer,(int *)&local_9c,
+                             (char *)g_CameraImageDecompressBuffer,&local_98,1);
           if (iVar6 == 0) {
             g_CurrentFilename = "..\\core\\dcamera.cpp";
             g_CurrentLineNumber = 0x9d0;

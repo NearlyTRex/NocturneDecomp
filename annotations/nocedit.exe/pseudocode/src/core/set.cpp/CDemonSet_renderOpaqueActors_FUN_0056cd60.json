@@ -1,59 +1,22 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 35,
-        "line": 31,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 42,
-        "line": 31,
-        "message": "expected expression"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 49,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 28,
-        "line": 49,
-        "message": "expected expression"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 25,
-        "line": 61,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 32,
-        "line": 61,
-        "message": "expected expression"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 164,
-    "complexity_score": 103,
+    "complexity_score": 87,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 2,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 68,
-    "suspect_count": 3,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 72,
+    "suspect_count": 1,
     "suspect_types": [
-      "unresolved_funcptr"
+      "negative_offset"
     ],
-    "total_lines": 232
+    "total_lines": 236
   },
   "cross_references": [
     {
@@ -196,7 +159,7 @@
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "CDemonSet *"
       },
       {
         "is_param": true,
@@ -226,28 +189,12 @@
   },
   "suspects": [
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 24,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "pCVar2 = (CVector3f *)(**(code **)(*(int *)(iVar1 + 0x154) + 0x14))(iVar1,auStack_44);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 42,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar3 = (**(code **)(*(int *)(iVar1 + 0x154) + 8))(iVar1);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 54,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar4 = (**(code **)(*(int *)(iVar1 + 0x154) + 8))(iVar1);",
-      "type": "unresolved_funcptr"
+      "description": "Negative struct offset (wrong base type)",
+      "line": 70,
+      "match": "local_14[-1].",
+      "severity": "mild",
+      "text": "local_14 = (CDemonSet *)&local_14[-1].weather_type;",
+      "type": "negative_offset"
     }
   ]
 }

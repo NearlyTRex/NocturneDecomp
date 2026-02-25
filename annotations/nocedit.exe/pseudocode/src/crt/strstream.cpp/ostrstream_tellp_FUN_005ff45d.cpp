@@ -2,20 +2,19 @@
 // Address: 005ff45d
 // Address Range: [[005ff45d, 005ff489]]
 // Convention: __cdecl
-// Signature: int __cdecl crt_strstream_cpp_ostrstream_tellp_FUN_005ff45d(ostrstream *this_ptr)
+// Signature: int __cdecl crt_strstream_cpp_ostrstream_tellp_FUN_005ff45d(void *this_ptr)
 
 #include "nocturne.h"
 
-int __cdecl crt_strstream_cpp_ostrstream_tellp_FUN_005ff45d(ostrstream *this_ptr)
+int __cdecl crt_strstream_cpp_ostrstream_tellp_FUN_005ff45d(void *this_ptr)
 
 {
   int iVar1;
   
-  iVar1 = ((this_ptr->_strstreambase_core).layout_info)->offset_to_vbase;
-  if ((*(uint *)((this_ptr->_ios).padding + iVar1 + -0x61) & 3) != 0) {
+  if ((*(uint *)((int)this_ptr + *(int *)(*(int *)this_ptr + 4) + 0x10) & 3) != 0) {
     return -1;
   }
-  iVar1 = *(int *)((this_ptr->_ios).padding + iVar1 + -0x6d);
+  iVar1 = *(int *)((int)this_ptr + *(int *)(*(int *)this_ptr + 4) + 4);
   iVar1 = (**(code **)(*(int *)(iVar1 + 0x28) + 0x18))(iVar1,0,1,2);
   return iVar1;
 }

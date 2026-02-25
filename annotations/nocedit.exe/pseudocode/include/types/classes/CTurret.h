@@ -31,9 +31,8 @@ typedef struct CTurret {
     struct CDemonActor* user; // 0x85c
     CVector3f barrel_tip_pos; // 0x860
     float fire_sound_timer; // 0x86c
-    char unk[64]; // 0x870
+    char dead[64]; // 0x870
     int fire_sound_frames; // 0x8b0
-    uint loop_sfx_handle; // 0x8b4
-    uint anim_sfx_handle; // 0x8b8
+    uint sfx_handles[2]; // 0x8b4
 } CTurret;
 

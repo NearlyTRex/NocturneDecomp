@@ -14,7 +14,6 @@
 #include "types/classes/CStrList.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
-#include "types/structs/SCapsuleCollision.h"
 #include "types/structs/SEdgeData.h"
 #include "types/structs/SIntersectXZCylinder.h"
 #include "types/structs/SMRGLTextureBasic.h"
@@ -84,8 +83,8 @@ float __cdecl core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70(C
 int __cdecl core_dtrace_cpp_CDemonRaytrace_rayVoxelGridTest_FUN_00496220(CDemonRaytrace *this_ptr,CVector3f *start_pos,CVector3f *end_pos);
 float __cdecl core_dtrace_cpp_CDemonRaytrace_getGroundHeight_FUN_004966f0(CDemonRaytrace *this_ptr,CVector3f *pos,int *hit_flag,CVector3f *normal_out);
 float __cdecl core_dtrace_cpp_CDemonRaytrace_cylinderGroundCheck_FUN_00496950(CDemonRaytrace *this_ptr,CVector3f *pos,float radius,int *hit_flag, CVector3f *normal_out);
-void __cdecl core_dtrace_cpp_initCapsuleCollisionData_FUN_00496b90(SCapsuleCollision *out_data,float start_x,float start_z,float dir_x,float dir_z, float radius,void *user_data1,void *user_data2);
-void __cdecl core_dtrace_cpp_CDemonRaytrace_testCapsuleCollision_FUN_00496c60(CDemonRaytrace *this_ptr,SCapsuleCollision *capsule_data);
+void __cdecl core_dtrace_cpp_initIntersectionCylinder_FUN_00496b90(SIntersectXZCylinder *this_ptr,float start_x,float start_z,float dir_x,float dir_z, float radius,float bottom_y,float top_y);
+void __cdecl core_dtrace_cpp_CDemonRaytrace_testCylinderCollision_FUN_00496c60(CDemonRaytrace *this_ptr,SIntersectXZCylinder *cylinder);
 void __cdecl core_dtrace_cpp_CDemonRaytrace_renderGridCube_FUN_00496e70(CDemonRaytrace *this_ptr,CVector3f *world_pos);
 void __cdecl core_dtrace_cpp_CDemonRaytrace_renderVoxelGrid_FUN_004973b0(CDemonRaytrace *this_ptr,uchar *voxel_data,int grid_x,int grid_y,int grid_z);
 void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500(CDemonRaytrace *this_ptr,int grid_x,int grid_y,int grid_z,int render_mode);

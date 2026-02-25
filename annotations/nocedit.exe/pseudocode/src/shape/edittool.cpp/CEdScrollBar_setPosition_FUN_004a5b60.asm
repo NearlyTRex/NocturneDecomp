@@ -16,7 +16,7 @@
 ;   core_msnedit.cpp_CDemonMission_FUN_0053c4f0 at 0053c5bd
 ;   core_msnedit.cpp_FUN_00535e70 at 00536a3d
 ;   core_script.cpp_CScript_initEditorLayout_FUN_00566660 at 0056674e
-;   core_setedit.cpp_CDemonSet_FUN_00577af0 at 00577ba6
+;   core_setedit.cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0 at 00577ba6
 ;   shape_edittool.cpp_CPickList_calculateLayoutAndCreateComponents_FUN_004a45d0 at 004a4af4
 ;
 ; Referenced Globals:

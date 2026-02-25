@@ -39,7 +39,7 @@ void __cdecl core_set_cpp_CDemonSet_initScene_FUN_0056aa10(CDemonSet *this_ptr)
   }
   (this_ptr->active_fog).height_threshold = (this_ptr->scene_fog).height_threshold;
   (this_ptr->active_fog).density_multiplier = (this_ptr->scene_fog).density_multiplier;
-  (this_ptr->active_fog).reserved = (this_ptr->scene_fog).reserved;
+  (this_ptr->active_fog).temperature = (this_ptr->scene_fog).temperature;
   iVar6 = 0;
   core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_004528e0
             (&g_CDemonCameraInstance,this_ptr->min_ambient_value);
@@ -87,12 +87,12 @@ void __cdecl core_set_cpp_CDemonSet_initScene_FUN_0056aa10(CDemonSet *this_ptr)
   this_ptr->selected_camera_index = -1;
   this_ptr->previous_best_camera_index = -1;
   iVar6 = 0;
-  g_ActiveLightCount = 0;
+  g_SpotLightCount = 0;
   g_OmniLightCount = 0;
   g_CoronaGlobeCount = 0;
   g_QueuedCoronaGlobeCount = 0;
   this_ptr->previous_best_camera_timer = 0.0;
-  core_setdir_cpp_CDemonSet_FUN_00576710(this_ptr);
+  core_setdir_cpp_CDemonSet_buildVdirBoxGroups_FUN_00576710(this_ptr);
   pCVar5 = this_ptr;
   if (0 < this_ptr->camera_count) {
     do {

@@ -46,7 +46,7 @@ void __cdecl core_mission_cpp_CDemonMission_process_FUN_00524250(CDemonMission *
                 (this_ptr,(this_ptr->pending_teleport).area_id);
       core_set_cpp_CDemonSet_clearLights_FUN_0056d2d0(g_CDemonSetPtr);
       core_set_cpp_CDemonSet_initScene_FUN_0056aa10(g_CDemonSetPtr);
-      g_CScriptPtr->unk2 = 2;
+      g_CScriptPtr->focus_actor_changed = 2;
     }
     (this_ptr->pending_teleport).area_id = -1;
     (this_ptr->pending_teleport).position.z = 0.0;

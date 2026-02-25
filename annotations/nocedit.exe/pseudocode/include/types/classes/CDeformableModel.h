@@ -33,7 +33,7 @@ typedef struct CDeformableModel {
     CVector3f model_scale; // 0x7c84
     CVector3f vertex_pool[100]; // 0x7c90
     CBoundingBox3D bbox_pool[100]; // 0x8140
-    char padding[12]; // 0x8aa0
+    char dead[12]; // 0x8aa0
     int bone_flags[100]; // 0x8aac
     int bone_to_part_map[100]; // 0x8c3c
     int farthest_child_bone[100]; // 0x8dcc

@@ -15,8 +15,8 @@
 // CConsole
 extern CConsole g_CConsoleInstance;
 
-// CCramTex[1]
-extern CCramTex g_CramSortedTextureEntries[1];
+// CCramTex[250]
+extern CCramTex g_CramSortedTextureEntries[250];
 
 // CDeformableModelInstance
 extern CDeformableModelInstance g_CDeformableModelInstanceInstance;
@@ -52,6 +52,4 @@ extern int g_CramVisualizationUpdateCounter;
 
 // undefined4
 extern undefined4 DAT_0083b10c;
-extern undefined4 DAT_0083c298;
-extern undefined4 DAT_0083c29c;
 

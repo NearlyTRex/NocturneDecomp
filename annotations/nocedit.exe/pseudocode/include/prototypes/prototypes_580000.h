@@ -23,31 +23,32 @@
 #include "types/classes/CSkeleton.h"
 #include "types/classes/CSlew.h"
 #include "types/classes/CVector3f.h"
+#include "types/classes/CVector3i.h"
 #include "types/structs/SCollisionInfo.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x580000
 // =============================================================================
 
-int __cdecl core_setedit_cpp_CDemonSet_FUN_005800d0(CDemonSet *this_ptr);
-int __cdecl core_setedit_cpp_FUN_005801b0(void);
-void __cdecl core_setedit_cpp_CDemonSet_FUN_00580310(CDemonSet *this_ptr);
-void __cdecl core_setedit_cpp_CDemonSet_FUN_00580560(CDemonSet *this_ptr);
-void __cdecl core_setedit_cpp_CDemonSet_FUN_005805a0(CDemonSet *this_ptr);
-void __cdecl core_setedit_cpp_CDemonSet_FUN_00580730(CDemonSet *this_ptr);
-void __cdecl core_setedit_cpp_CDemonSet_FUN_00581320(CDemonSet *this_ptr);
+int __cdecl core_setedit_cpp_CDemonSet_findVisibleCamerasAtScreenPoint_FUN_005800d0(CDemonSet *this_ptr,int screen_x,int screen_y,int *result_cameras, int exclude_camera_index);
+int __cdecl core_setedit_cpp_CDemonSet_isPointVisibleFromCamera_FUN_005801b0(CDemonSet *this_ptr,CVector3i *point,int camera_index);
+void __cdecl core_setedit_cpp_CDemonSet_buildCameraDepthData_FUN_00580310(CDemonSet *this_ptr);
+void __cdecl core_setedit_cpp_CDemonSet_clearCameraDepthData_FUN_00580560(CDemonSet *this_ptr);
+void __cdecl core_setedit_cpp_CDemonSet_rebuildAllFogAndPVS_FUN_005805a0(CDemonSet *this_ptr);
+void __cdecl core_setedit_cpp_CDemonSet_showFogEditor_FUN_00580730(CDemonSet *this_ptr);
+void __cdecl core_setedit_cpp_CDemonSet_computeCameraFog_FUN_00581320(CDemonSet *this_ptr,int camera_index);
 int __cdecl core_setedit_cpp_FUN_00581450(void);
 void __cdecl core_setedit_cpp_FUN_00581520(void);
 void __cdecl core_setedit_cpp_FUN_00581590(void);
-void __cdecl core_setedit_cpp_FUN_005817d0(void *unk);
-void __cdecl core_setedit_cpp_CDemonSet_FUN_00581aa0(CDemonSet *this_ptr);
-void __cdecl core_setedit_cpp_FUN_00582930(void);
+void __cdecl core_setedit_cpp_renderColoredBox_FUN_005817d0(CVector3f *corner_a,CVector3f *corner_b,float opacity,int r,int g,int b);
+void __cdecl core_setedit_cpp_CDemonSet_showRoomEditor_FUN_00581aa0(CDemonSet *this_ptr);
+void __cdecl core_setedit_cpp_drawCameraFrustum_FUN_00582930(int color,int use_3d_lines);
 void __cdecl core_setedit_cpp_FUN_00582f30(void);
-void __cdecl core_setedit_cpp_CDemonSet_FUN_00583170(CDemonSet *this_ptr);
+void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet *this_ptr);
 void __cdecl core_setedit_cpp_CDemonSet_readIni_FUN_00584900(CDemonSet *set_ptr,CIniFile *ini_file);
 void __cdecl core_setedit_cpp_CDemonSet_writeIni_FUN_00584920(CDemonSet *set,CIniFile *ini_file);
 void __cdecl core_setedit_cpp_CDemonSet_showEditorMenu_FUN_00584940(CDemonSet *this_ptr);
-void __cdecl core_setedit_cpp_CDemonSet_FUN_00584e70(CDemonSet *this_ptr);
+void __cdecl core_setedit_cpp_CDemonSet_writeFileDependencies_FUN_00584e70(CDemonSet *this_ptr,_FILE *file_handle);
 void __cdecl core_setutil_cpp_FUN_005851a0(void);
 void __cdecl core_setutil_cpp_FUN_005851d0(void);
 float __cdecl core_setutil_cpp_C3DSCamera_getProjectionScale_FUN_005851f0(C3DSCamera *this_ptr);

@@ -9,7 +9,7 @@
 // =============================================================================
 
 // CEdScrollBar
-extern CEdScrollBar CEdScrollBar_03364ce0;
+extern CEdScrollBar g_ThumbnailScrollBar;
 
 // int
 extern int g_SavedWindowWidth;
@@ -19,11 +19,14 @@ extern int g_VDIsActorAreaInvalid;
 // int[250]
 extern int g_VDCameraSortIndices[250];
 
+// uchar
+extern uchar g_ThumbnailScrollBarInitFlag;
+
 // uint*[1200]
 extern uint* g_ZBufferScanlineArrayBackup[1200];
 
-// undefined1
-extern undefined1 DAT_03364d14;
+// uint[250][3072]
+extern uint g_ThumbnailImageBuffer[250][3072];
 
 // undefined4
 extern undefined4 DAT_03364d18;

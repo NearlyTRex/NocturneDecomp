@@ -205,7 +205,7 @@ section .text
     MOV ESI,dword ptr [0x006703ec]      ; 004c20c6 | g_CDemonRendererPtr2
     PUSH ESI                            ; 004c20cc | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0 ; 004c20cd
-        ;   XREF to: 0048bcf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info)
+        ;   XREF to: 0048bcf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD ESP,0x8                         ; 004c20d2
     MOV EDI,dword ptr [0x006703ec]      ; 004c20d5 | g_CDemonRendererPtr2
     PUSH EDI                            ; 004c20db | g_CDemonRendererInstance

@@ -1,5 +1,8 @@
 #pragma once
 
+// Forward declarations
+struct CDemonActor;
+
 // Dependencies
 #include "system/basetypes.h"
 #include "types/classes/CCloth.h"
@@ -16,12 +19,16 @@ typedef struct CGabriella {
     float light_aim_blend; // 0x1fbe4
     float flashlight_angle; // 0x1fbe8
     int fire_state; // 0x1fbec
-    char unk1[20]; // 0x1fbf0
-    float dynamite_throw_angle; // 0x1fc04
-    int unk2; // 0x1fc08
+    float left_clavicle_blend; // 0x1fbf0
+    float right_clavicle_blend; // 0x1fbf4
+    struct CDemonActor* aim_target; // 0x1fbf8
+    float target_aim_pitch; // 0x1fbfc
+    float target_aim_yaw; // 0x1fc00
+    float aim_pitch; // 0x1fc04
+    float aim_yaw; // 0x1fc08
     float fire_cooldown_timer; // 0x1fc0c
-    int unk3; // 0x1fc10
-    CCloth coat; // 0x1fc14
+    float aim_weight; // 0x1fc10
+    CCloth coat_cloth; // 0x1fc14
     float dynamite_charge_power; // 0x5fa84
 } CGabriella;
 

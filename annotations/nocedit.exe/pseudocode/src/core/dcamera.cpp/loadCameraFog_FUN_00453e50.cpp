@@ -17,9 +17,9 @@ void __cdecl core_dcamera_cpp_loadCameraFog_FUN_00453e50(SFog *fog,_FILE *file_h
   _fscanf(file_handle,"%f,%f,%f\n",&fog->scroll,&(fog->scroll).y,&(fog->scroll).z);
   _fscanf(file_handle,"%f,%f\n",&fog->height_threshold,&fog->density_multiplier);
   if (file_version < 0x1a) {
-    fog->reserved = 50.0;
+    fog->temperature = 50.0;
     return;
   }
-  _fscanf(file_handle,"%f\n",&fog->reserved);
+  _fscanf(file_handle,"%f\n",&fog->temperature);
   return;
 }

@@ -17,7 +17,7 @@ CDemonLight * __cdecl core_dlight_cpp_CDemonLight_ctor_FUN_004726a0(CDemonLight 
   pCVar1->shadow_bounds_mode = 1;
   pCVar1->shadow_depth_buffer = (ushort *)0x0;
   pCVar1->shadow_buffer_raw = (void *)0x0;
-  pCVar1->restore_memory_size = 0;
+  pCVar1->master_zbuffer = (void *)0x0;
   (pCVar1->base).zbuffer_raw = (void *)0x0;
   (pCVar1->base).max_distance = 255.0;
   pCVar1->lightmap_visibility_bits = (uchar *)0x0;

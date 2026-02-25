@@ -28,15 +28,15 @@ void __cdecl core_set_cpp_CDemonSet_process_FUN_0056f940(CDemonSet *this_ptr)
           return;
         }
         local_18 = 0;
-        if (0 < g_ActiveLightCount) {
+        if (0 < g_SpotLightCount) {
           iVar1 = 0;
           do {
-            if (light == *(CDemonLight **)((int)g_ActiveLightList + iVar1)) {
+            if (light == *(CDemonLight **)((int)g_SpotLightList + iVar1)) {
               local_18 = 1;
               break;
             }
             iVar1 = iVar1 + 4;
-          } while (iVar1 < g_ActiveLightCount * 4);
+          } while (iVar1 < g_SpotLightCount * 4);
         }
         core_setutil_cpp_C3DSLight_process_FUN_00586cb0(this_ptr_00,light,local_18);
         _sprintf(local_118,"%son",this_ptr_00->name);

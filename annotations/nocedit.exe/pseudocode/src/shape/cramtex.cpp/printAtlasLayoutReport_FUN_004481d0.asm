@@ -9,7 +9,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_s_2d_5dx_5d_Page_d_5d_5d_00619753
 ;   TerminatedCString s_ux_u_square_found_using__00619790
-;   CCramTex[1] g_CramSortedTextureEntries
+;   CCramTex[250] g_CramSortedTextureEntries
 ;   undefined4 DAT_0083c1e0
 ;   undefined4 DAT_0083c208
 ;   undefined4 DAT_0083c20c

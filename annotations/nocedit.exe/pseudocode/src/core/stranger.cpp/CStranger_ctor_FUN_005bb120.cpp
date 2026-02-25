@@ -22,7 +22,7 @@ CStranger * __cdecl core_stranger_cpp_CStranger_ctor_FUN_005bb120(CStranger *thi
   ADJ(pCVar6)->guns_drawn = 0;
   ADJ(pCVar6)->guns_drawn_blend = 0.0;
   ADJ(pCVar6)->frame_cleared = 0.0;
-  ADJ(pCVar6)->unk1 = -0.5235988;
+  ADJ(pCVar6)->aim_pitch = -0.5235988;
   (ADJ(pCVar6)->right_arm_aim).aim_target = (CDemonActor *)0x0;
   (ADJ(pCVar6)->right_arm_aim).recoil_timer = 0.0;
   (ADJ(pCVar6)->right_arm_aim).target_pitch = 0.0;
@@ -65,7 +65,7 @@ CStranger * __cdecl core_stranger_cpp_CStranger_ctor_FUN_005bb120(CStranger *thi
   ADJ(pCVar6)->turn_blend_timer = 0.0;
   ADJ(pCVar6)->turn_elapsed = 0.0;
   ADJ(pCVar6)->action_pending = 0;
-  ADJ(pCVar6)->unk3 = 0;
+  ADJ(pCVar6)->pickup_facing_reversed = 0;
   ADJ(pCVar6)->airborne_timer = 0.0;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (&(ADJ(pCVar6)->base.inventory.selected_weapon)->model,"gat.kfm");

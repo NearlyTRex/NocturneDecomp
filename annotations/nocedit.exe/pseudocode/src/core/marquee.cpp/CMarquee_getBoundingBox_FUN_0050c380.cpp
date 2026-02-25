@@ -9,21 +9,21 @@
 CBoundingBox3D * __cdecl core_marquee_cpp_CMarquee_getBoundingBox_FUN_0050c380(CMarquee *this_ptr,CBoundingBox3D *out_box)
 
 {
-  if (out_box == (CBoundingBox3D *)this_ptr->unk2) {
-    if (&out_box->max == (CVector3f *)(this_ptr->unk2 + 0xc)) {
+  if (out_box == &this_ptr->bounding_box) {
+    if (&out_box->max == &(this_ptr->bounding_box).max) {
       return out_box;
     }
   }
   else {
-    (out_box->min).x = *(float *)this_ptr->unk2;
-    (out_box->min).y = *(float *)(this_ptr->unk2 + 4);
-    (out_box->min).z = *(float *)(this_ptr->unk2 + 8);
-    if (&out_box->max == (CVector3f *)(this_ptr->unk2 + 0xc)) {
+    (out_box->min).x = (this_ptr->bounding_box).min.x;
+    (out_box->min).y = (this_ptr->bounding_box).min.y;
+    (out_box->min).z = (this_ptr->bounding_box).min.z;
+    if (&out_box->max == &(this_ptr->bounding_box).max) {
       return out_box;
     }
   }
-  (out_box->max).x = *(float *)(this_ptr->unk2 + 0xc);
-  (out_box->max).y = *(float *)(this_ptr->unk2 + 0x10);
-  (out_box->max).z = *(float *)(this_ptr->unk2 + 0x14);
+  (out_box->max).x = (this_ptr->bounding_box).max.x;
+  (out_box->max).y = (this_ptr->bounding_box).max.y;
+  (out_box->max).z = (this_ptr->bounding_box).max.z;
   return out_box;
 }

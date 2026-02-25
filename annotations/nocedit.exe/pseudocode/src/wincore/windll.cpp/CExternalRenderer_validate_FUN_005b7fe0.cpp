@@ -55,8 +55,8 @@ int __cdecl wincore_windll_cpp_CExternalRenderer_validate_FUN_005b7fe0(CExternal
         }
         puVar1 = this_ptr->function_table;
         puVar2 = capabilities->function_table;
-        this_ptr = (CExternalRenderer *)(this_ptr->processing_data + 4);
-        capabilities = (CExternalRenderer *)(capabilities->processing_data + 4);
+        this_ptr = (CExternalRenderer *)this_ptr->dead1;
+        capabilities = (CExternalRenderer *)capabilities->dead1;
         uVar5 = (uint)(*puVar2 == *puVar1);
         iVar4 = iVar4 + 1;
       } while (iVar4 < 0x10);

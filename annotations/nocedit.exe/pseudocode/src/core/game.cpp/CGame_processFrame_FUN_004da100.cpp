@@ -158,9 +158,9 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
       if (((this_ptr->velocity_debug_enabled != 0) ||
           (pcVar15 = getenv("SPOOKHOUSE"), pcVar15 != (char *)0x0))
          && (iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_F4), iVar5 != 0)) {
-        DAT_02d82568 = DAT_02d82568 + 1;
-        _sprintf(&DAT_02d82570,"demon%d.pcx");
-        engine_pcx_c_saveScreenshotGeneral_FUN_005490c0(&DAT_02d82570);
+        INT_02d82568 = INT_02d82568 + 1;
+        _sprintf(g_ScreenshotFilename,"demon%d.pcx");
+        engine_pcx_c_saveScreenshotGeneral_FUN_005490c0(g_ScreenshotFilename);
       }
       core_inv_cpp_CInventory_renderAllItems_FUN_00500690
                 (&g_HeroActors[g_LocalHeroIndex]->inventory);

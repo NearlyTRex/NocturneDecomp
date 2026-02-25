@@ -15,7 +15,7 @@ int __cdecl core_stone_cpp_CTempleStone_canPickup_FUN_005bad70(CTempleStone *thi
   pCVar1 = (CActorDestination *)
            core_actor_cpp_castToClassHash_FUN_0040c790
                      (this_ptr->dest_actor,g_CActorDestinationClassInfo.name_hash);
-  if ((pCVar1 != (CActorDestination *)0x0) && (pCVar1->unk1 != 0)) {
+  if ((pCVar1 != (CActorDestination *)0x0) && (pCVar1->triggered != 0)) {
     return 0;
   }
   if ((this_ptr->base).pickup_type != 3) {

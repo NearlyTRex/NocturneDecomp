@@ -29,6 +29,9 @@ CProceduralTexture* g_CProceduralTexturePtr = (CProceduralTexture*)&g_CProcedura
 // CScript*
 CScript* g_CScriptPtr = (CScript*)&g_CScriptInstance;
 
+// CSlew*
+CSlew* g_CSlewPtr = (CSlew*)&g_CSlewInstance;
+
 // CSound*
 CSound* g_CSoundPtr = (CSound*)&g_CSoundInstance;
 
@@ -962,1537 +965,1537 @@ SAlphaEntry g_AlphaTable[256] = {
         .red = 0x0000,
         .green = 0x0000,
         .blue = 0x0000,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0001,
         .green = 0x0001,
         .blue = 0x0001,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0002,
         .green = 0x0002,
         .blue = 0x0002,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0003,
         .green = 0x0003,
         .blue = 0x0003,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0004,
         .green = 0x0004,
         .blue = 0x0004,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0005,
         .green = 0x0005,
         .blue = 0x0005,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0006,
         .green = 0x0006,
         .blue = 0x0006,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0007,
         .green = 0x0007,
         .blue = 0x0007,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0008,
         .green = 0x0008,
         .blue = 0x0008,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0009,
         .green = 0x0009,
         .blue = 0x0009,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x000A,
         .green = 0x000A,
         .blue = 0x000A,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x000B,
         .green = 0x000B,
         .blue = 0x000B,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x000C,
         .green = 0x000C,
         .blue = 0x000C,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x000D,
         .green = 0x000D,
         .blue = 0x000D,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x000E,
         .green = 0x000E,
         .blue = 0x000E,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x000F,
         .green = 0x000F,
         .blue = 0x000F,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0010,
         .green = 0x0010,
         .blue = 0x0010,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0011,
         .green = 0x0011,
         .blue = 0x0011,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0012,
         .green = 0x0012,
         .blue = 0x0012,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0013,
         .green = 0x0013,
         .blue = 0x0013,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0014,
         .green = 0x0014,
         .blue = 0x0014,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0015,
         .green = 0x0015,
         .blue = 0x0015,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0016,
         .green = 0x0016,
         .blue = 0x0016,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0017,
         .green = 0x0017,
         .blue = 0x0017,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0018,
         .green = 0x0018,
         .blue = 0x0018,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0019,
         .green = 0x0019,
         .blue = 0x0019,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x001A,
         .green = 0x001A,
         .blue = 0x001A,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x001B,
         .green = 0x001B,
         .blue = 0x001B,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x001C,
         .green = 0x001C,
         .blue = 0x001C,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x001D,
         .green = 0x001D,
         .blue = 0x001D,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x001E,
         .green = 0x001E,
         .blue = 0x001E,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x001F,
         .green = 0x001F,
         .blue = 0x001F,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0020,
         .green = 0x0020,
         .blue = 0x0020,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0021,
         .green = 0x0021,
         .blue = 0x0021,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0022,
         .green = 0x0022,
         .blue = 0x0022,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0023,
         .green = 0x0023,
         .blue = 0x0023,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0024,
         .green = 0x0024,
         .blue = 0x0024,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0025,
         .green = 0x0025,
         .blue = 0x0025,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0026,
         .green = 0x0026,
         .blue = 0x0026,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0027,
         .green = 0x0027,
         .blue = 0x0027,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0028,
         .green = 0x0028,
         .blue = 0x0028,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0029,
         .green = 0x0029,
         .blue = 0x0029,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x002A,
         .green = 0x002A,
         .blue = 0x002A,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x002B,
         .green = 0x002B,
         .blue = 0x002B,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x002C,
         .green = 0x002C,
         .blue = 0x002C,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x002D,
         .green = 0x002D,
         .blue = 0x002D,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x002E,
         .green = 0x002E,
         .blue = 0x002E,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x002F,
         .green = 0x002F,
         .blue = 0x002F,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0030,
         .green = 0x0030,
         .blue = 0x0030,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0031,
         .green = 0x0031,
         .blue = 0x0031,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0032,
         .green = 0x0032,
         .blue = 0x0032,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0033,
         .green = 0x0033,
         .blue = 0x0033,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0034,
         .green = 0x0034,
         .blue = 0x0034,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0035,
         .green = 0x0035,
         .blue = 0x0035,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0036,
         .green = 0x0036,
         .blue = 0x0036,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0037,
         .green = 0x0037,
         .blue = 0x0037,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0038,
         .green = 0x0038,
         .blue = 0x0038,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0039,
         .green = 0x0039,
         .blue = 0x0039,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x003A,
         .green = 0x003A,
         .blue = 0x003A,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x003B,
         .green = 0x003B,
         .blue = 0x003B,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x003C,
         .green = 0x003C,
         .blue = 0x003C,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x003D,
         .green = 0x003D,
         .blue = 0x003D,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x003E,
         .green = 0x003E,
         .blue = 0x003E,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x003F,
         .green = 0x003F,
         .blue = 0x003F,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0040,
         .green = 0x0040,
         .blue = 0x0040,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0041,
         .green = 0x0041,
         .blue = 0x0041,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0042,
         .green = 0x0042,
         .blue = 0x0042,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0043,
         .green = 0x0043,
         .blue = 0x0043,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0044,
         .green = 0x0044,
         .blue = 0x0044,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0045,
         .green = 0x0045,
         .blue = 0x0045,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0046,
         .green = 0x0046,
         .blue = 0x0046,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0047,
         .green = 0x0047,
         .blue = 0x0047,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0048,
         .green = 0x0048,
         .blue = 0x0048,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0049,
         .green = 0x0049,
         .blue = 0x0049,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x004A,
         .green = 0x004A,
         .blue = 0x004A,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x004B,
         .green = 0x004B,
         .blue = 0x004B,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x004C,
         .green = 0x004C,
         .blue = 0x004C,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x004D,
         .green = 0x004D,
         .blue = 0x004D,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x004E,
         .green = 0x004E,
         .blue = 0x004E,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x004F,
         .green = 0x004F,
         .blue = 0x004F,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0050,
         .green = 0x0050,
         .blue = 0x0050,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0051,
         .green = 0x0051,
         .blue = 0x0051,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0052,
         .green = 0x0052,
         .blue = 0x0052,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0053,
         .green = 0x0053,
         .blue = 0x0053,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0054,
         .green = 0x0054,
         .blue = 0x0054,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0055,
         .green = 0x0055,
         .blue = 0x0055,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0056,
         .green = 0x0056,
         .blue = 0x0056,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0057,
         .green = 0x0057,
         .blue = 0x0057,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0058,
         .green = 0x0058,
         .blue = 0x0058,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0059,
         .green = 0x0059,
         .blue = 0x0059,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x005A,
         .green = 0x005A,
         .blue = 0x005A,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x005B,
         .green = 0x005B,
         .blue = 0x005B,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x005C,
         .green = 0x005C,
         .blue = 0x005C,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x005D,
         .green = 0x005D,
         .blue = 0x005D,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x005E,
         .green = 0x005E,
         .blue = 0x005E,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x005F,
         .green = 0x005F,
         .blue = 0x005F,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0060,
         .green = 0x0060,
         .blue = 0x0060,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0061,
         .green = 0x0061,
         .blue = 0x0061,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0062,
         .green = 0x0062,
         .blue = 0x0062,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0063,
         .green = 0x0063,
         .blue = 0x0063,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0064,
         .green = 0x0064,
         .blue = 0x0064,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0065,
         .green = 0x0065,
         .blue = 0x0065,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0066,
         .green = 0x0066,
         .blue = 0x0066,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0067,
         .green = 0x0067,
         .blue = 0x0067,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0068,
         .green = 0x0068,
         .blue = 0x0068,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0069,
         .green = 0x0069,
         .blue = 0x0069,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x006A,
         .green = 0x006A,
         .blue = 0x006A,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x006B,
         .green = 0x006B,
         .blue = 0x006B,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x006C,
         .green = 0x006C,
         .blue = 0x006C,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x006D,
         .green = 0x006D,
         .blue = 0x006D,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x006E,
         .green = 0x006E,
         .blue = 0x006E,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x006F,
         .green = 0x006F,
         .blue = 0x006F,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0070,
         .green = 0x0070,
         .blue = 0x0070,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0071,
         .green = 0x0071,
         .blue = 0x0071,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0072,
         .green = 0x0072,
         .blue = 0x0072,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0073,
         .green = 0x0073,
         .blue = 0x0073,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0074,
         .green = 0x0074,
         .blue = 0x0074,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0075,
         .green = 0x0075,
         .blue = 0x0075,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0076,
         .green = 0x0076,
         .blue = 0x0076,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0077,
         .green = 0x0077,
         .blue = 0x0077,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0078,
         .green = 0x0078,
         .blue = 0x0078,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0079,
         .green = 0x0079,
         .blue = 0x0079,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x007A,
         .green = 0x007A,
         .blue = 0x007A,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x007B,
         .green = 0x007B,
         .blue = 0x007B,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x007C,
         .green = 0x007C,
         .blue = 0x007C,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x007D,
         .green = 0x007D,
         .blue = 0x007D,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x007E,
         .green = 0x007E,
         .blue = 0x007E,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x007F,
         .green = 0x007F,
         .blue = 0x007F,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0080,
         .green = 0x0080,
         .blue = 0x0080,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0081,
         .green = 0x0081,
         .blue = 0x0081,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0082,
         .green = 0x0082,
         .blue = 0x0082,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0083,
         .green = 0x0083,
         .blue = 0x0083,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0084,
         .green = 0x0084,
         .blue = 0x0084,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0085,
         .green = 0x0085,
         .blue = 0x0085,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0086,
         .green = 0x0086,
         .blue = 0x0086,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0087,
         .green = 0x0087,
         .blue = 0x0087,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0088,
         .green = 0x0088,
         .blue = 0x0088,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0089,
         .green = 0x0089,
         .blue = 0x0089,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x008A,
         .green = 0x008A,
         .blue = 0x008A,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x008B,
         .green = 0x008B,
         .blue = 0x008B,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x008C,
         .green = 0x008C,
         .blue = 0x008C,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x008D,
         .green = 0x008D,
         .blue = 0x008D,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x008E,
         .green = 0x008E,
         .blue = 0x008E,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x008F,
         .green = 0x008F,
         .blue = 0x008F,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0090,
         .green = 0x0090,
         .blue = 0x0090,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0091,
         .green = 0x0091,
         .blue = 0x0091,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0092,
         .green = 0x0092,
         .blue = 0x0092,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0093,
         .green = 0x0093,
         .blue = 0x0093,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0094,
         .green = 0x0094,
         .blue = 0x0094,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0095,
         .green = 0x0095,
         .blue = 0x0095,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0096,
         .green = 0x0096,
         .blue = 0x0096,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0097,
         .green = 0x0097,
         .blue = 0x0097,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0098,
         .green = 0x0098,
         .blue = 0x0098,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x0099,
         .green = 0x0099,
         .blue = 0x0099,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x009A,
         .green = 0x009A,
         .blue = 0x009A,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x009B,
         .green = 0x009B,
         .blue = 0x009B,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x009C,
         .green = 0x009C,
         .blue = 0x009C,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x009D,
         .green = 0x009D,
         .blue = 0x009D,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x009E,
         .green = 0x009E,
         .blue = 0x009E,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x009F,
         .green = 0x009F,
         .blue = 0x009F,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00A0,
         .green = 0x00A0,
         .blue = 0x00A0,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00A1,
         .green = 0x00A1,
         .blue = 0x00A1,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00A2,
         .green = 0x00A2,
         .blue = 0x00A2,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00A3,
         .green = 0x00A3,
         .blue = 0x00A3,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00A4,
         .green = 0x00A4,
         .blue = 0x00A4,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00A5,
         .green = 0x00A5,
         .blue = 0x00A5,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00A6,
         .green = 0x00A6,
         .blue = 0x00A6,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00A7,
         .green = 0x00A7,
         .blue = 0x00A7,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00A8,
         .green = 0x00A8,
         .blue = 0x00A8,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00A9,
         .green = 0x00A9,
         .blue = 0x00A9,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00AA,
         .green = 0x00AA,
         .blue = 0x00AA,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00AB,
         .green = 0x00AB,
         .blue = 0x00AB,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00AC,
         .green = 0x00AC,
         .blue = 0x00AC,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00AD,
         .green = 0x00AD,
         .blue = 0x00AD,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00AE,
         .green = 0x00AE,
         .blue = 0x00AE,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00AF,
         .green = 0x00AF,
         .blue = 0x00AF,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00B0,
         .green = 0x00B0,
         .blue = 0x00B0,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00B1,
         .green = 0x00B1,
         .blue = 0x00B1,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00B2,
         .green = 0x00B2,
         .blue = 0x00B2,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00B3,
         .green = 0x00B3,
         .blue = 0x00B3,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00B4,
         .green = 0x00B4,
         .blue = 0x00B4,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00B5,
         .green = 0x00B5,
         .blue = 0x00B5,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00B6,
         .green = 0x00B6,
         .blue = 0x00B6,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00B7,
         .green = 0x00B7,
         .blue = 0x00B7,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00B8,
         .green = 0x00B8,
         .blue = 0x00B8,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00B9,
         .green = 0x00B9,
         .blue = 0x00B9,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00BA,
         .green = 0x00BA,
         .blue = 0x00BA,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00BB,
         .green = 0x00BB,
         .blue = 0x00BB,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00BC,
         .green = 0x00BC,
         .blue = 0x00BC,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00BD,
         .green = 0x00BD,
         .blue = 0x00BD,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00BE,
         .green = 0x00BE,
         .blue = 0x00BE,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00BF,
         .green = 0x00BF,
         .blue = 0x00BF,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00C0,
         .green = 0x00C0,
         .blue = 0x00C0,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00C1,
         .green = 0x00C1,
         .blue = 0x00C1,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00C2,
         .green = 0x00C2,
         .blue = 0x00C2,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00C3,
         .green = 0x00C3,
         .blue = 0x00C3,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00C4,
         .green = 0x00C4,
         .blue = 0x00C4,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00C5,
         .green = 0x00C5,
         .blue = 0x00C5,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00C6,
         .green = 0x00C6,
         .blue = 0x00C6,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00C7,
         .green = 0x00C7,
         .blue = 0x00C7,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00C8,
         .green = 0x00C8,
         .blue = 0x00C8,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00C9,
         .green = 0x00C9,
         .blue = 0x00C9,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00CA,
         .green = 0x00CA,
         .blue = 0x00CA,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00CB,
         .green = 0x00CB,
         .blue = 0x00CB,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00CC,
         .green = 0x00CC,
         .blue = 0x00CC,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00CD,
         .green = 0x00CD,
         .blue = 0x00CD,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00CE,
         .green = 0x00CE,
         .blue = 0x00CE,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00CF,
         .green = 0x00CF,
         .blue = 0x00CF,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00D0,
         .green = 0x00D0,
         .blue = 0x00D0,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00D1,
         .green = 0x00D1,
         .blue = 0x00D1,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00D2,
         .green = 0x00D2,
         .blue = 0x00D2,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00D3,
         .green = 0x00D3,
         .blue = 0x00D3,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00D4,
         .green = 0x00D4,
         .blue = 0x00D4,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00D5,
         .green = 0x00D5,
         .blue = 0x00D5,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00D6,
         .green = 0x00D6,
         .blue = 0x00D6,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00D7,
         .green = 0x00D7,
         .blue = 0x00D7,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00D8,
         .green = 0x00D8,
         .blue = 0x00D8,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00D9,
         .green = 0x00D9,
         .blue = 0x00D9,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00DA,
         .green = 0x00DA,
         .blue = 0x00DA,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00DB,
         .green = 0x00DB,
         .blue = 0x00DB,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00DC,
         .green = 0x00DC,
         .blue = 0x00DC,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00DD,
         .green = 0x00DD,
         .blue = 0x00DD,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00DE,
         .green = 0x00DE,
         .blue = 0x00DE,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00DF,
         .green = 0x00DF,
         .blue = 0x00DF,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00E0,
         .green = 0x00E0,
         .blue = 0x00E0,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00E1,
         .green = 0x00E1,
         .blue = 0x00E1,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00E2,
         .green = 0x00E2,
         .blue = 0x00E2,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00E3,
         .green = 0x00E3,
         .blue = 0x00E3,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00E4,
         .green = 0x00E4,
         .blue = 0x00E4,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00E5,
         .green = 0x00E5,
         .blue = 0x00E5,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00E6,
         .green = 0x00E6,
         .blue = 0x00E6,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00E7,
         .green = 0x00E7,
         .blue = 0x00E7,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00E8,
         .green = 0x00E8,
         .blue = 0x00E8,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00E9,
         .green = 0x00E9,
         .blue = 0x00E9,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00EA,
         .green = 0x00EA,
         .blue = 0x00EA,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00EB,
         .green = 0x00EB,
         .blue = 0x00EB,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00EC,
         .green = 0x00EC,
         .blue = 0x00EC,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00ED,
         .green = 0x00ED,
         .blue = 0x00ED,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00EE,
         .green = 0x00EE,
         .blue = 0x00EE,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00EF,
         .green = 0x00EF,
         .blue = 0x00EF,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00F0,
         .green = 0x00F0,
         .blue = 0x00F0,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00F1,
         .green = 0x00F1,
         .blue = 0x00F1,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00F2,
         .green = 0x00F2,
         .blue = 0x00F2,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00F3,
         .green = 0x00F3,
         .blue = 0x00F3,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00F4,
         .green = 0x00F4,
         .blue = 0x00F4,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00F5,
         .green = 0x00F5,
         .blue = 0x00F5,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00F6,
         .green = 0x00F6,
         .blue = 0x00F6,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00F7,
         .green = 0x00F7,
         .blue = 0x00F7,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00F8,
         .green = 0x00F8,
         .blue = 0x00F8,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00F9,
         .green = 0x00F9,
         .blue = 0x00F9,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00FA,
         .green = 0x00FA,
         .blue = 0x00FA,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00FB,
         .green = 0x00FB,
         .blue = 0x00FB,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00FC,
         .green = 0x00FC,
         .blue = 0x00FC,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00FD,
         .green = 0x00FD,
         .blue = 0x00FD,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00FE,
         .green = 0x00FE,
         .blue = 0x00FE,
-        .pad = 0x0000
+        .alignment = 0x0000
     },
     {
         .red = 0x00FF,
         .green = 0x00FF,
         .blue = 0x00FF,
-        .pad = 0x0000
+        .alignment = 0x0000
     }
 };
 
@@ -2643,272 +2646,272 @@ SEnumPair g_TurretStateTypePairs[5] = {
 SHuffmanTableSource g_HuffmanTableSources[34] = {
     {
         .table_size = 0x00000000,
-        .unk1 = 0x00000000,
-        .unk2 = 0x00000000,
+        .xlen = 0x00000000,
+        .ylen = 0x00000000,
         .bits = 0x00000000,
         .reference_index = -1,
         .huffman_data_ptr = nullptr
     },
     {
         .table_size = 0x00000007,
-        .unk1 = 0x00000002,
-        .unk2 = 0x00000002,
+        .xlen = 0x00000002,
+        .ylen = 0x00000002,
         .bits = 0x00000000,
         .reference_index = -1,
         .huffman_data_ptr = (char *)0x0067EB60
     },
     {
         .table_size = 0x00000011,
-        .unk1 = 0x00000003,
-        .unk2 = 0x00000003,
+        .xlen = 0x00000003,
+        .ylen = 0x00000003,
         .bits = 0x00000000,
         .reference_index = -1,
         .huffman_data_ptr = (char *)0x0067EB70
     },
     {
         .table_size = 0x00000011,
-        .unk1 = 0x00000003,
-        .unk2 = 0x00000003,
+        .xlen = 0x00000003,
+        .ylen = 0x00000003,
         .bits = 0x00000000,
         .reference_index = -1,
         .huffman_data_ptr = (char *)0x0067EB98
     },
     {
         .table_size = 0x00000000,
-        .unk1 = 0x00000000,
-        .unk2 = 0x00000000,
+        .xlen = 0x00000000,
+        .ylen = 0x00000000,
         .bits = 0x00000000,
         .reference_index = -1,
         .huffman_data_ptr = nullptr
     },
     {
         .table_size = 0x0000001F,
-        .unk1 = 0x00000004,
-        .unk2 = 0x00000004,
+        .xlen = 0x00000004,
+        .ylen = 0x00000004,
         .bits = 0x00000000,
         .reference_index = -1,
         .huffman_data_ptr = (char *)0x0067EBC0
     },
     {
         .table_size = 0x0000001F,
-        .unk1 = 0x00000004,
-        .unk2 = 0x00000004,
+        .xlen = 0x00000004,
+        .ylen = 0x00000004,
         .bits = 0x00000000,
         .reference_index = -1,
         .huffman_data_ptr = (char *)0x0067EC00
     },
     {
         .table_size = 0x00000047,
-        .unk1 = 0x00000006,
-        .unk2 = 0x00000006,
+        .xlen = 0x00000006,
+        .ylen = 0x00000006,
         .bits = 0x00000000,
         .reference_index = -1,
         .huffman_data_ptr = (char *)0x0067EC40
     },
     {
         .table_size = 0x00000047,
-        .unk1 = 0x00000006,
-        .unk2 = 0x00000006,
+        .xlen = 0x00000006,
+        .ylen = 0x00000006,
         .bits = 0x00000000,
         .reference_index = -1,
         .huffman_data_ptr = (char *)0x0067ECD0
     },
     {
         .table_size = 0x00000047,
-        .unk1 = 0x00000006,
-        .unk2 = 0x00000006,
+        .xlen = 0x00000006,
+        .ylen = 0x00000006,
         .bits = 0x00000000,
         .reference_index = -1,
         .huffman_data_ptr = (char *)0x0067ED60
     },
     {
         .table_size = 0x0000007F,
-        .unk1 = 0x00000008,
-        .unk2 = 0x00000008,
+        .xlen = 0x00000008,
+        .ylen = 0x00000008,
         .bits = 0x00000000,
         .reference_index = -1,
         .huffman_data_ptr = (char *)0x0067EDF0
     },
     {
         .table_size = 0x0000007F,
-        .unk1 = 0x00000008,
-        .unk2 = 0x00000008,
+        .xlen = 0x00000008,
+        .ylen = 0x00000008,
         .bits = 0x00000000,
         .reference_index = -1,
         .huffman_data_ptr = (char *)0x0067EEF0
     },
     {
         .table_size = 0x0000007F,
-        .unk1 = 0x00000008,
-        .unk2 = 0x00000008,
+        .xlen = 0x00000008,
+        .ylen = 0x00000008,
         .bits = 0x00000000,
         .reference_index = -1,
         .huffman_data_ptr = (char *)0x0067EFF0
     },
     {
         .table_size = 0x000001FF,
-        .unk1 = 0x00000010,
-        .unk2 = 0x00000010,
+        .xlen = 0x00000010,
+        .ylen = 0x00000010,
         .bits = 0x00000000,
         .reference_index = -1,
         .huffman_data_ptr = (char *)0x0067F0F0
     },
     {
         .table_size = 0x00000000,
-        .unk1 = 0x00000000,
-        .unk2 = 0x00000000,
+        .xlen = 0x00000000,
+        .ylen = 0x00000000,
         .bits = 0x00000000,
         .reference_index = -1,
         .huffman_data_ptr = nullptr
     },
     {
         .table_size = 0x000001FF,
-        .unk1 = 0x00000010,
-        .unk2 = 0x00000010,
+        .xlen = 0x00000010,
+        .ylen = 0x00000010,
         .bits = 0x00000000,
         .reference_index = -1,
         .huffman_data_ptr = (char *)0x0067F4F0
     },
     {
         .table_size = 0x000001FF,
-        .unk1 = 0x00000010,
-        .unk2 = 0x00000010,
+        .xlen = 0x00000010,
+        .ylen = 0x00000010,
         .bits = 0x00000001,
         .reference_index = -1,
         .huffman_data_ptr = (char *)0x0067F8F0
     },
     {
         .table_size = 0x000001FF,
-        .unk1 = 0x00000010,
-        .unk2 = 0x00000010,
+        .xlen = 0x00000010,
+        .ylen = 0x00000010,
         .bits = 0x00000002,
         .reference_index = 0x00000010,
         .huffman_data_ptr = nullptr
     },
     {
         .table_size = 0x000001FF,
-        .unk1 = 0x00000010,
-        .unk2 = 0x00000010,
+        .xlen = 0x00000010,
+        .ylen = 0x00000010,
         .bits = 0x00000003,
         .reference_index = 0x00000010,
         .huffman_data_ptr = nullptr
     },
     {
         .table_size = 0x000001FF,
-        .unk1 = 0x00000010,
-        .unk2 = 0x00000010,
+        .xlen = 0x00000010,
+        .ylen = 0x00000010,
         .bits = 0x00000004,
         .reference_index = 0x00000010,
         .huffman_data_ptr = nullptr
     },
     {
         .table_size = 0x000001FF,
-        .unk1 = 0x00000010,
-        .unk2 = 0x00000010,
+        .xlen = 0x00000010,
+        .ylen = 0x00000010,
         .bits = 0x00000006,
         .reference_index = 0x00000010,
         .huffman_data_ptr = nullptr
     },
     {
         .table_size = 0x000001FF,
-        .unk1 = 0x00000010,
-        .unk2 = 0x00000010,
+        .xlen = 0x00000010,
+        .ylen = 0x00000010,
         .bits = 0x00000008,
         .reference_index = 0x00000010,
         .huffman_data_ptr = nullptr
     },
     {
         .table_size = 0x000001FF,
-        .unk1 = 0x00000010,
-        .unk2 = 0x00000010,
+        .xlen = 0x00000010,
+        .ylen = 0x00000010,
         .bits = 0x0000000A,
         .reference_index = 0x00000010,
         .huffman_data_ptr = nullptr
     },
     {
         .table_size = 0x000001FF,
-        .unk1 = 0x00000010,
-        .unk2 = 0x00000010,
+        .xlen = 0x00000010,
+        .ylen = 0x00000010,
         .bits = 0x0000000D,
         .reference_index = 0x00000010,
         .huffman_data_ptr = nullptr
     },
     {
         .table_size = 0x00000200,
-        .unk1 = 0x00000010,
-        .unk2 = 0x00000010,
+        .xlen = 0x00000010,
+        .ylen = 0x00000010,
         .bits = 0x00000004,
         .reference_index = -1,
         .huffman_data_ptr = (char *)0x0067FCF0
     },
     {
         .table_size = 0x00000200,
-        .unk1 = 0x00000010,
-        .unk2 = 0x00000010,
+        .xlen = 0x00000010,
+        .ylen = 0x00000010,
         .bits = 0x00000005,
         .reference_index = 0x00000018,
         .huffman_data_ptr = nullptr
     },
     {
         .table_size = 0x00000200,
-        .unk1 = 0x00000010,
-        .unk2 = 0x00000010,
+        .xlen = 0x00000010,
+        .ylen = 0x00000010,
         .bits = 0x00000006,
         .reference_index = 0x00000018,
         .huffman_data_ptr = nullptr
     },
     {
         .table_size = 0x00000200,
-        .unk1 = 0x00000010,
-        .unk2 = 0x00000010,
+        .xlen = 0x00000010,
+        .ylen = 0x00000010,
         .bits = 0x00000007,
         .reference_index = 0x00000018,
         .huffman_data_ptr = nullptr
     },
     {
         .table_size = 0x00000200,
-        .unk1 = 0x00000010,
-        .unk2 = 0x00000010,
+        .xlen = 0x00000010,
+        .ylen = 0x00000010,
         .bits = 0x00000008,
         .reference_index = 0x00000018,
         .huffman_data_ptr = nullptr
     },
     {
         .table_size = 0x00000200,
-        .unk1 = 0x00000010,
-        .unk2 = 0x00000010,
+        .xlen = 0x00000010,
+        .ylen = 0x00000010,
         .bits = 0x00000009,
         .reference_index = 0x00000018,
         .huffman_data_ptr = nullptr
     },
     {
         .table_size = 0x00000200,
-        .unk1 = 0x00000010,
-        .unk2 = 0x00000010,
+        .xlen = 0x00000010,
+        .ylen = 0x00000010,
         .bits = 0x0000000B,
         .reference_index = 0x00000018,
         .huffman_data_ptr = nullptr
     },
     {
         .table_size = 0x00000200,
-        .unk1 = 0x00000010,
-        .unk2 = 0x00000010,
+        .xlen = 0x00000010,
+        .ylen = 0x00000010,
         .bits = 0x0000000D,
         .reference_index = 0x00000018,
         .huffman_data_ptr = nullptr
     },
     {
         .table_size = 0x0000001F,
-        .unk1 = 0x00000001,
-        .unk2 = 0x00000010,
+        .xlen = 0x00000001,
+        .ylen = 0x00000010,
         .bits = 0x00000000,
         .reference_index = -1,
         .huffman_data_ptr = (char *)0x006800F0
     },
     {
         .table_size = 0x0000001F,
-        .unk1 = 0x00000001,
-        .unk2 = 0x00000010,
+        .xlen = 0x00000001,
+        .ylen = 0x00000010,
         .bits = 0x00000000,
         .reference_index = -1,
         .huffman_data_ptr = (char *)0x00680130
@@ -3106,11 +3109,11 @@ SMRGLTextureBasic SMRGLTextureBasic_00680bb0 = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "HEADLITE.RAW"
 };
-SMRGLTextureBasic SMRGLTextureBasic_006813e4 = {
+SMRGLTextureBasic g_EnvMapTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "BACKGND.RAW"
 };
-SMRGLTextureBasic SMRGLTextureBasic_006816c0 = {
+SMRGLTextureBasic g_SolidWhiteTexture = {
     .base = {.type = 0x00000000, .count = 0x00000000},
     .texture_name = "bbwhite.raw"
 };
@@ -3641,17 +3644,17 @@ WatcomStaticDestructorNode g_CZThumbPoolDestructorNode = {
     .registration_type = 0x00000001,
     .object_instance = (void *)&g_CZThumbPool
 };
-WatcomStaticDestructorNode WatcomStaticDestructorNode_006816a0 = {
+WatcomStaticDestructorNode g_MissingBackdropFilesDestructorNode = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&WatcomDestructorCall_00662a10,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&CPickList_03653fc0
+    .object_instance = (void *)&g_MissingBackdropFiles
 };
-WatcomStaticDestructorNode WatcomStaticDestructorNode_006816b0 = {
+WatcomStaticDestructorNode g_ThumbnailScrollBarDestructorNode = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&WatcomDestructorCall_00662a1c,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&CEdScrollBar_03364ce0
+    .object_instance = (void *)&g_ThumbnailScrollBar
 };
 WatcomStaticDestructorNode WatcomStaticDestructorNode_00681850 = {
     .next = nullptr,

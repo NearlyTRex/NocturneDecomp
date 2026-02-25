@@ -1,23 +1,22 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl support_codec_cpp_CCodec_processFromBuffer_FUN_0043eb30(CCodec *this_ptr,byte *input,int *input_length,byte *output,int *output_length)
+; int __cdecl support_codec_cpp_CCodec_processFromBuffer_FUN_0043eb30(CCodec *this_ptr,char *input,int *input_length,char *output,int *output_length)
 ;
 ; Parameters:
 ; CCodec *         Stack[0x4]:4   this_ptr
-; byte *           Stack[0x8]:4   input
+; char *           Stack[0x8]:4   input
 ; int *            Stack[0xc]:4   input_length
-; byte *           Stack[0x10]:4   output
+; char *           Stack[0x10]:4   output
 ; int *            Stack[0x14]:4   output_length
 ; Local Variables:
-; undefined1       Stack[-0x90]:1  local_90
-; undefined1       Stack[-0x48]:1  local_48
+; _istrstream      Stack[-0x90]:132  local_90
 ;
 ; XREF[1]:
 ;   core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_004529b0 at 00452e86
 ;
 ; Called Functions:
-;   crt_strstream.cpp_istrstream_constructor_FUN_005ff524
+;   crt_strstream.cpp_istrstream_ctor_FUN_005ff524
 ;   crt_strstream.cpp_istrstream_dtor_FUN_005ff5ca
 ;
 ; *****************************************************************************
@@ -37,8 +36,8 @@ section .text
     PUSH 0x0                            ; 0043eb4b
     LEA EAX,[ESP + 0xc]                 ; 0043eb4d
     PUSH EAX                            ; 0043eb51
-    CALL crt_strstream.cpp_istrstream_constructor_FUN_005ff524 ; 0043eb52
-        ;   XREF to: 005ff524 (UNCONDITIONAL_CALL)  ; istrstream * crt_strstream.cpp_istrstream_constructor_FUN_005ff524(istrstream * this_ptr, int ctor_flags, char * buffer, int size)
+    CALL crt_strstream.cpp_istrstream_ctor_FUN_005ff524 ; 0043eb52
+        ;   XREF to: 005ff524 (UNCONDITIONAL_CALL)  ; _istrstream * crt_strstream.cpp_istrstream_ctor_FUN_005ff524(void * this_ptr, int ctor_flags, char * buffer, int size)
     ADD ESP,0x10                        ; 0043eb57
     MOV ESI,dword ptr [ESP + 0xa0]      ; 0043eb5a
     PUSH ESI                            ; 0043eb61
@@ -56,7 +55,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 0043eb83
     PUSH EAX                            ; 0043eb87
     CALL crt_strstream.cpp_istrstream_dtor_FUN_005ff5ca ; 0043eb88
-        ;   XREF to: 005ff5ca (UNCONDITIONAL_CALL)  ; istrstream * crt_strstream.cpp_istrstream_dtor_FUN_005ff5ca(istrstream * this_ptr, uint flags)
+        ;   XREF to: 005ff5ca (UNCONDITIONAL_CALL)  ; _istrstream * crt_strstream.cpp_istrstream_dtor_FUN_005ff5ca(void * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0043eb8d
     MOV EAX,EBX                         ; 0043eb90
     ADD ESP,0x84                        ; 0043eb92

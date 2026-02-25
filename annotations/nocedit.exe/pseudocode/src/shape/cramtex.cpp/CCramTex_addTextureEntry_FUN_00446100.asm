@@ -7,7 +7,7 @@
 ; CCramTex *       Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   CCramTex[1] g_CramSortedTextureEntries
+;   CCramTex[250] g_CramSortedTextureEntries
 ;   int g_CramPlacedTextureCount
 ;
 ; Called Functions:

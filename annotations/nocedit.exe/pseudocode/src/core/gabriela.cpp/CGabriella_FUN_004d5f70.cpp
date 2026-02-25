@@ -14,7 +14,7 @@ int __cdecl core_gabriela_cpp_CGabriella_FUN_004d5f70(CGabriella *this_ptr)
   CDemonActor *unaff_retaddr;
   
   if (((((this_ptr->weapon_state_flags & 2) != 0) && (1.0 <= this_ptr->draw_blend)) &&
-      (1.0 <= (float)this_ptr->unk3)) &&
+      (1.0 <= this_ptr->aim_weight)) &&
      ((this_ptr->fire_cooldown_timer <= 0.0 &&
       (this_ptr_00 = (CCharacter *)(this_ptr->base).inventory.selected_weapon,
       iVar1 = (*(((this_ptr_00->base).vtable._uc)->_uc).canBeGrabbed)

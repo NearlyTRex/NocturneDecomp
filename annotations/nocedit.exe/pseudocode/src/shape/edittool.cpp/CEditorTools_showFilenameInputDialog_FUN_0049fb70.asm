@@ -26,9 +26,9 @@
 ;   core_fileman.cpp_CDemonFileManager_createPodFromDirectory_FUN_004bda20 at 004bdac7
 ;   core_game.cpp_CGame_saveGame_FUN_004e0cd0 at 004e11bf
 ;   core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0 at 005387b2
-;   core_setedit.cpp_CDemonSet_FUN_0057e7c0 at 0057ed25
-;   core_setedit.cpp_CDemonSet_FUN_00580730 at 00580e38
+;   core_setedit.cpp_CDemonSet_showCameraEditor_FUN_0057e7c0 at 0057ed25
 ;   core_setedit.cpp_CDemonSet_showEditorMenu_FUN_00584940 at 00584e48
+;   core_setedit.cpp_CDemonSet_showFogEditor_FUN_00580730 at 00580e38
 ;   core_setedit.cpp_CDemonSet_showLightEditor_FUN_0057c5d0 at 0057cd53
 ;   ... and 2 more
 ;

@@ -21,8 +21,8 @@ int __cdecl core_hostage_cpp_CHostage_FUN_004f5ff0(CHostage *this_ptr,float delt
   if (this_ptr->grabber == (CDemonActor *)0x0) {
     return 0;
   }
-  fVar1 = this_ptr->unk6 - delta_time;
-  this_ptr->unk6 = fVar1;
+  fVar1 = this_ptr->grabber_flee_timer - delta_time;
+  this_ptr->grabber_flee_timer = fVar1;
   if ((0.0 < fVar1) && ((this_ptr->base).base.walk_stuck_timer <= (float)1.5)) {
     pCVar2 = this_ptr->grabber;
     local_20.x = (this_ptr->base).base.base.location.position.x - (pCVar2->location).position.x;

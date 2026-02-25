@@ -24,17 +24,17 @@ CGabriella * __cdecl core_gabriela_cpp_CGabriella_ctor_FUN_004d2b20(CGabriella *
   pCVar3[-1].last_euler.x = 0.0;
   pCVar3[-1].inv_delta_time = 0.0;
   pCVar3[-1].floor_y = -0.5235988;
-  pCVar3[-1].unk.y = 0.0;
+  pCVar3[-1].wind_velocity.y = 0.0;
   pCVar3[-1].version_num = 0;
   pCVar3[-1].last_euler.y = 0.0;
-  pCVar3[-1].unk.z = 0.0;
+  pCVar3[-1].wind_velocity.z = 0.0;
   fVar1 = 10.0f;
   pCVar3[-1].last_position.x = 0.0;
   *(float *)pCVar3[1].model.model_filename = fVar1;
   pCVar3[-1].last_position.y = 0.0;
   pCVar3[-1].last_position.z = 0.0;
   fVar1 = pCVar3[-1].last_euler.y;
-  pCVar3[-1].unk.x = (float)pCVar3[-1].version_num;
+  pCVar3[-1].wind_velocity.x = (float)pCVar3[-1].version_num;
   pCVar3[-1].last_euler.z = fVar1;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             ((CDeformableModelInstance *)(pCVar3[-1].vertices[0x182].rest_lengths + 0xb),

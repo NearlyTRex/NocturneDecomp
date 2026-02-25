@@ -51,9 +51,10 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr,floa
       this_ptr->timer = 0.0;
       break;
     }
+    uVar6 = this_ptr->sfx_handles[1];
     this_ptr->state = 1;
     this_ptr->timer = this_ptr->charge_time;
-    sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->anim_sfx_handle);
+    sound_sndmain_cpp_killSfx_FUN_005a9c40(uVar6);
     sound_name = "turret-ani?.wav";
     goto LAB_005e24c7;
   case 1:
@@ -100,13 +101,14 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr,floa
       core_turret_cpp_CTurret_FUN_005e3560(this_ptr);
       break;
     }
+    uVar6 = this_ptr->sfx_handles[1];
     this_ptr->state = 4;
     this_ptr->timer = this_ptr->power_down_time;
-    sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->anim_sfx_handle);
+    sound_sndmain_cpp_killSfx_FUN_005a9c40(uVar6);
     sound_name = "turret-ani?.wav";
 LAB_005e24c7:
     uVar6 = (*((this_ptr->base).base.vtable._ub)->playSound)((CDemonActor *)this_ptr,sound_name);
-    this_ptr->anim_sfx_handle = uVar6;
+    this_ptr->sfx_handles[1] = uVar6;
     break;
   case 4:
     local_1c = (CVector3f *)&this_ptr->home_orient;
@@ -177,19 +179,19 @@ LAB_005e24c7:
     this_ptr->fire_sound_frames = this_ptr->fire_sound_frames + -1;
     fVar3 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.9,1.1111112);
     local_14 = fVar3;
-    iVar4 = sound_sndmain_cpp_setSfxBaseFrequency_FUN_005a9b40(this_ptr->loop_sfx_handle,fVar3);
+    iVar4 = sound_sndmain_cpp_setSfxBaseFrequency_FUN_005a9b40(this_ptr->sfx_handles[0],fVar3);
     if (iVar4 == 0) {
       _sprintf(local_f4,"turret-loop.wav * %f",(double)fVar3);
       uVar6 = (*((this_ptr->base).base.vtable._ub)->playAmbientSound)
                         ((CDemonActor *)this_ptr,local_f4);
-      this_ptr->loop_sfx_handle = uVar6;
+      this_ptr->sfx_handles[0] = uVar6;
       return;
     }
   }
   else {
     local_30._12_8_ = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(2,in_stack_ffffff08);
     if (0.0 <= (double)local_30._12_8_) {
-      sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->loop_sfx_handle);
+      sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handles[0]);
       (*((this_ptr->base).base.vtable._ub)->playSound)
                 ((CDemonActor *)this_ptr,"turret-tail.wav");
       return;

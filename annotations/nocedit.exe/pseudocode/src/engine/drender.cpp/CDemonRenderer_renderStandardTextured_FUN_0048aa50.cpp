@@ -2,11 +2,11 @@
 // Address: 0048aa50
 // Address Range: [[0048aa50, 0048ab40]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_drender_cpp_CDemonRenderer_renderStandardTextured_FUN_0048aa50(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info)
+// Signature: int __cdecl engine_drender_cpp_CDemonRenderer_renderStandardTextured_FUN_0048aa50(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim)
 
 #include "nocturne.h"
 
-int __cdecl engine_drender_cpp_CDemonRenderer_renderStandardTextured_FUN_0048aa50(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info)
+int __cdecl engine_drender_cpp_CDemonRenderer_renderStandardTextured_FUN_0048aa50(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim)
 
 {
   int iVar1;
@@ -17,14 +17,14 @@ int __cdecl engine_drender_cpp_CDemonRenderer_renderStandardTextured_FUN_0048aa5
   
   g_RenderPixelCounter = 0;
   if ((this_ptr->plane_culling_enabled != 0) &&
-     (iVar2 = engine_3d_c_isVisiblePlane_FUN_00403950(&polygon_info->surface_normal), iVar2 == 0)) {
+     (iVar2 = engine_3d_c_isVisiblePlane_FUN_00403950(&prim->surface_normal), iVar2 == 0)) {
     return 0;
   }
   iVar2 = 0;
   local_14 = 0xffffffff;
-  if (0 < (polygon_info->base).count) {
+  if (0 < (prim->base).count) {
     iVar3 = 0;
-    pSVar4 = polygon_info;
+    pSVar4 = prim;
     do {
       iVar1 = pSVar4[1].base.type;
       *(int *)((int)g_VertexIndexBuffer + iVar3) = iVar1;
@@ -32,7 +32,7 @@ int __cdecl engine_drender_cpp_CDemonRenderer_renderStandardTextured_FUN_0048aa5
       pSVar4 = (SMRGLHeaderPrimitive *)&(pSVar4->surface_normal).B;
       iVar2 = iVar2 + 1;
       local_14 = local_14 & this_ptr->vertex_buffer_ptr[iVar1].projected_vertex.screen_x;
-    } while (iVar2 < (polygon_info->base).count);
+    } while (iVar2 < (prim->base).count);
   }
   if (((local_14 & 0x80000000) == 0) || ((local_14 & 0x1f) == 0)) {
     if (this_ptr->face_count == 0) {
@@ -46,7 +46,7 @@ int __cdecl engine_drender_cpp_CDemonRenderer_renderStandardTextured_FUN_0048aa5
       core_main_c_displayErrorAndQuit_FUN_00506f10("Can't use demonZFacetCount in shadow mode!");
     }
     engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740
-              (this_ptr,(polygon_info->base).count,g_VertexIndexBuffer);
+              (this_ptr,(prim->base).count,g_VertexIndexBuffer);
     iVar2 = g_RenderPixelCounter;
   }
   else {

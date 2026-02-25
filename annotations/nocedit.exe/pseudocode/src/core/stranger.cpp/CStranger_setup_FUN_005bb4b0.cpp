@@ -95,8 +95,8 @@ void __cdecl core_stranger_cpp_CStranger_setup_FUN_005bb4b0(CStranger *this_ptr)
             (&this_ptr->model,"stranger-hat.kfm");
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(&this_ptr->model);
   this_ptr->fall_velocity_snapshot = 0.0;
-  this_ptr->goggle_loop_sfx_handle = 0;
-  this_ptr->goggle_on_sfx_handle = 0;
+  this_ptr->goggle_sfx_handles[0] = 0;
+  this_ptr->goggle_sfx_handles[1] = 0;
   this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
                           (&(this_ptr->base).base.model);
   DAT_03f6bb24 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240

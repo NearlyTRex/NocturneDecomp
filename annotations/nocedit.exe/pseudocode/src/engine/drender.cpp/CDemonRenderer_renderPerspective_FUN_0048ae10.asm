@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info,int render_flags)
+; void __cdecl engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim,int render_flags)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr
-; SMRGLHeaderPrimitive * Stack[0x8]:4   polygon_info
+; SMRGLHeaderPrimitive * Stack[0x8]:4   prim
 ; int              Stack[0xc]:4   render_flags
 ;
 ; XREF[10]:

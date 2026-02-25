@@ -36,7 +36,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showLightEditor_FUN_0057c5d0(CDemonSet *
   char *pcVar10;
   
   bVar11 = 0;
-  core_setedit_cpp_CDemonSet_FUN_00576da0(this_ptr);
+  core_setedit_cpp_CDemonSet_loadOrBuildThumbnails_FUN_00576da0(this_ptr,0);
   core_game_cpp_CGame_setGameRes_FUN_004dade0(g_CGamePtr);
   core_set_cpp_CDemonSet_initScene_FUN_0056aa10(this_ptr);
   local_2c = this_ptr->geometry_filename;
@@ -138,7 +138,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showLightEditor_FUN_0057c5d0(CDemonSet *
       if (local_28 < 0x34) {
         if (local_28 < 0x32) {
           if (local_28 == 0x31) {
-            core_setedit_cpp_CDemonSet_FUN_0057b410(this_ptr);
+            core_setedit_cpp_CDemonSet_addSpotLight_FUN_0057b410(this_ptr);
           }
         }
         else if (local_28 < 0x33) {
@@ -157,8 +157,8 @@ void __cdecl core_setedit_cpp_CDemonSet_showLightEditor_FUN_0057c5d0(CDemonSet *
           iVar5 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                             (&local_4dc,"Position spot light",-1,0);
           if (-1 < iVar5) {
-            core_setedit_cpp_CDemonSet_FUN_0057c550(this_ptr);
-            core_setedit_cpp_CDemonSet_FUN_0057b500(this_ptr);
+            iVar5 = core_setedit_cpp_CDemonSet_findLightByMasterIndex_FUN_0057c550(this_ptr,iVar5);
+            core_setedit_cpp_CDemonSet_editSpotLight_FUN_0057b500(this_ptr,iVar5);
           }
           shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_4dc,0);
         }
@@ -178,9 +178,9 @@ void __cdecl core_setedit_cpp_CDemonSet_showLightEditor_FUN_0057c5d0(CDemonSet *
           iVar5 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                             (&local_884,"Delete spot light",-1,0);
           if (-1 < iVar5) {
-            iVar5 = core_setedit_cpp_CDemonSet_FUN_0057c550(this_ptr);
-            iVar5 = this_ptr->lights[iVar5].light_type;
-            core_setedit_cpp_FUN_0057b910();
+            iVar7 = core_setedit_cpp_CDemonSet_findLightByMasterIndex_FUN_0057c550(this_ptr,iVar5);
+            iVar5 = this_ptr->lights[iVar7].light_type;
+            core_setedit_cpp_CDemonSet_deleteLight_FUN_0057b910(this_ptr,iVar7);
             if (iVar5 == 0) {
               core_set_cpp_CDemonSet_clearLights_FUN_0056d2d0(this_ptr);
               core_set_cpp_CDemonSet_initScene_FUN_0056aa10(this_ptr);
@@ -231,8 +231,8 @@ void __cdecl core_setedit_cpp_CDemonSet_showLightEditor_FUN_0057c5d0(CDemonSet *
         iVar5 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                           (&local_c2c,"Edit spot light properties",-1,0);
         if (-1 < iVar5) {
-          core_setedit_cpp_CDemonSet_FUN_0057c550(this_ptr);
-          core_setedit_cpp_CDemonSet_FUN_0057bbe0(this_ptr);
+          iVar5 = core_setedit_cpp_CDemonSet_findLightByMasterIndex_FUN_0057c550(this_ptr,iVar5);
+          core_setedit_cpp_CDemonSet_showLightFilterEditor_FUN_0057bbe0(this_ptr,iVar5);
         }
         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_c2c,0);
       }
@@ -251,8 +251,8 @@ void __cdecl core_setedit_cpp_CDemonSet_showLightEditor_FUN_0057c5d0(CDemonSet *
         iVar5 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                           (&local_fd4,"Clone which light",-1,0);
         if (-1 < iVar5) {
-          core_setedit_cpp_CDemonSet_FUN_0057c550(this_ptr);
-          core_setedit_cpp_CDemonSet_FUN_0057b600(this_ptr);
+          iVar5 = core_setedit_cpp_CDemonSet_findLightByMasterIndex_FUN_0057c550(this_ptr,iVar5);
+          core_setedit_cpp_CDemonSet_cloneLight_FUN_0057b600(this_ptr,iVar5);
         }
         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_fd4,0);
       }
@@ -295,8 +295,8 @@ void __cdecl core_setedit_cpp_CDemonSet_showLightEditor_FUN_0057c5d0(CDemonSet *
       }
     }
     if (((g_MouseButtonFlags.bytes[0] & 1) != 0) && (local_24 != -1)) {
-      core_setedit_cpp_CDemonSet_FUN_0057c550(this_ptr);
-      core_setedit_cpp_CDemonSet_FUN_0057b500(this_ptr);
+      iVar5 = core_setedit_cpp_CDemonSet_findLightByMasterIndex_FUN_0057c550(this_ptr,local_24);
+      core_setedit_cpp_CDemonSet_editSpotLight_FUN_0057b500(this_ptr,iVar5);
     }
     if (local_28 == 0x1b) {
       engine_2d_c_clearInputAndWait_FUN_00403260();

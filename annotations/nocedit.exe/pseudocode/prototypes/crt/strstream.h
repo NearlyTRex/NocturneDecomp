@@ -5,11 +5,11 @@
 
 // Original: crt_strstream.cpp_ostrstream_ctor_FUN_005ff384
 // Address: 005ff384
-ostrstream * __cdecl ostrstream::ctor(ostrstream *this_ptr,int flags,char *buffer,int buffer_size,int mode);
+_ostrstream * __cdecl ostrstream::ctor(void *this_ptr,int flags,char *buffer,int buffer_size,int mode);
 
 // Original: crt_strstream.cpp_ostrstream_destructor_thunk_from_ostream_FUN_005ff42f
 // Address: 005ff42f
-void __cdecl ostrstream::destructor_thunk_from_ostream(ostream *this_ptr,int dtor_flags);
+void __cdecl ostrstream::destructor_thunk_from_ostream(_ostream *this_ptr,int dtor_flags);
 
 // Original: crt_strstream.cpp_ostrstream_destructor_thunk_from_ios_FUN_005ff445
 // Address: 005ff445
@@ -17,19 +17,19 @@ void __cdecl ostrstream::destructor_thunk_from_ios(ios *this_ptr,int dtor_flags)
 
 // Original: crt_strstream.cpp_ostrstream_tellp_FUN_005ff45d
 // Address: 005ff45d
-int __cdecl ostrstream::tellp(ostrstream *this_ptr);
+int __cdecl ostrstream::tellp(void *this_ptr);
 
 // Original: crt_strstream.cpp_ostrstream_dtor_FUN_005ff48a
 // Address: 005ff48a
-ostrstream * __cdecl ostrstream::dtor(ostrstream *this_ptr,uint flags);
+_ostrstream * __cdecl ostrstream::dtor(void * this_ptr,uint flags);
 
-// Original: crt_strstream.cpp_istrstream_constructor_FUN_005ff524
+// Original: crt_strstream.cpp_istrstream_ctor_FUN_005ff524
 // Address: 005ff524
-istrstream * __cdecl istrstream::constructor(istrstream *this_ptr,int ctor_flags,char *buffer,int size);
+_istrstream * __cdecl istrstream::ctor(void *this_ptr,int ctor_flags,char *buffer,int size);
 
 // Original: crt_strstream.cpp_istrstream_destructor_thunk_from_istream_FUN_005ff59c
 // Address: 005ff59c
-void __cdecl istrstream::destructor_thunk_from_istream(istream *this_ptr,int dtor_flags);
+void __cdecl istrstream::destructor_thunk_from_istream(_istream *this_ptr,int dtor_flags);
 
 // Original: crt_strstream.cpp_istrstream_destructor_thunk_from_ios_FUN_005ff5b2
 // Address: 005ff5b2
@@ -37,11 +37,11 @@ void __cdecl istrstream::destructor_thunk_from_ios(ios *this_ptr,int dtor_flags)
 
 // Original: crt_strstream.cpp_istrstream_dtor_FUN_005ff5ca
 // Address: 005ff5ca
-istrstream * __cdecl istrstream::dtor(istrstream *this_ptr,uint flags);
+_istrstream * __cdecl istrstream::dtor(void * this_ptr,uint flags);
 
-// Original: crt_strstream.cpp_strstreambase_constructor_FUN_006060fe
+// Original: crt_strstream.cpp_strstreambase_ctor_FUN_006060fe
 // Address: 006060fe
-strstreambase * __cdecl strstreambase::constructor(strstreambase *this_ptr,int ctor_flags,char *buffer,int size,char *pstart);
+strstreambase * __cdecl strstreambase::ctor(strstreambase *this_ptr,int ctor_flags,char *buffer,int size,char *pstart);
 
 // Original: crt_strstream.cpp_strstreambase_destructor_thunk_FUN_0060618a
 // Address: 0060618a

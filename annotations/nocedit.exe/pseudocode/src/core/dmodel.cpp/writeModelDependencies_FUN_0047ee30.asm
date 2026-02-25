@@ -9,7 +9,7 @@
 ;
 ; XREF[2]:
 ;   core_fileman.cpp_CDemonFileManager_addKeyframeModelToExtractList_FUN_004be230 at 004be257
-;   core_setedit.cpp_CDemonSet_FUN_00584e70 at 00585093
+;   core_setedit.cpp_CDemonSet_writeFileDependencies_FUN_00584e70 at 00585093
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_models_s_00620f2e

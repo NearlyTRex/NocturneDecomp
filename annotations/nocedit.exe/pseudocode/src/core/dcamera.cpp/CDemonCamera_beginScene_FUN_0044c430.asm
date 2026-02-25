@@ -14,10 +14,10 @@
 ;   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470 at 0056a76d
 ;   core_set.cpp_CDemonSet_renderScene_FUN_0056c1a0 at 0056c221
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50 at 0056b385
-;   core_setedit.cpp_CDemonSet_FUN_0057a940 at 0057aaa2
-;   core_setedit.cpp_CDemonSet_FUN_0057d660 at 0057dd1d
-;   core_setedit.cpp_CDemonSet_FUN_0057fd00 at 0057fe18
-;   core_setedit.cpp_CDemonSet_FUN_00581aa0 at 00581c8f
+;   core_setedit.cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00 at 0057fe18
+;   core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660 at 0057dd1d
+;   core_setedit.cpp_CDemonSet_showRoomEditor_FUN_00581aa0 at 00581c8f
+;   core_setedit.cpp_CDemonSet_showScenePreview_FUN_0057a940 at 0057aaa2
 ;   ... and 1 more
 ;
 ; Referenced Globals:

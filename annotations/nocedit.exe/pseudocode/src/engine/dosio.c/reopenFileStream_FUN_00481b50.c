@@ -25,7 +25,8 @@ void __cdecl engine_dosio_c_reopenFileStream_FUN_00481b50(char *directory_path,c
       crt_fstream_cpp_openFile_FUN_00600e85
                 (file_stream,local_220.target_path,_file_mode_flags,g_DefaultStreamBufferSize);
       if (local_220.file_offset != 0) {
-        FUN_00600ee4(&file_stream->_istream_core,local_220.file_offset);
+        crt_fstream_cpp_istream_seekg_FUN_00600ee4
+                  (&file_stream->_istream_core,local_220.file_offset);
         return;
       }
     }

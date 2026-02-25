@@ -1285,7 +1285,7 @@ section .text
     MOV EAX,[0x006703ec]                ; 00597532 | g_CDemonRendererPtr2
     PUSH EAX                            ; 00597537 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_renderTexturedLitNearPlane_FUN_0048ac40 ; 00597538
-        ;   XREF to: 0048ac40 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderTexturedLitNearPlane_FUN_0048ac40(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info)
+        ;   XREF to: 0048ac40 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderTexturedLitNearPlane_FUN_0048ac40(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD ESP,0x8                         ; 0059753d
     MOV EDX,dword ptr [0x006703ec]      ; 00597540 | g_CDemonRendererPtr2
     PUSH EDX                            ; 00597546 | g_CDemonRendererInstance

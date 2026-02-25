@@ -20,16 +20,16 @@
         "message": "use of undeclared identifier 'stack0xfffffd8c'; did you mean 'in_stack_fffffd8c'?"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 73,
-        "message": "use of undeclared identifier 'stream_write_internal'"
+        "category": "missing_member",
+        "column": 22,
+        "line": 66,
+        "message": "no member named '__enabled_exceptions' in 'ios'; did you mean '_enabled_exceptions'?"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 80,
-        "message": "use of undeclared identifier 'stream_write_internal'"
+        "category": "missing_member",
+        "column": 28,
+        "line": 190,
+        "message": "no member named '__enabled_exceptions' in 'ios'; did you mean '_enabled_exceptions'?"
       }
     ],
     "success": false,
@@ -37,20 +37,20 @@
   },
   "complexity": {
     "assembly_lines": 445,
-    "complexity_score": 359,
+    "complexity_score": 346,
     "cross_reference_count": 1,
     "function_call_count": 18,
     "global_count": 41,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 199,
-    "suspect_count": 14,
+    "pseudocode_lines": 196,
+    "suspect_count": 13,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "stack_param",
       "stack_ref"
     ],
-    "total_lines": 644
+    "total_lines": 641
   },
   "cross_references": [
     {
@@ -101,12 +101,17 @@
     {
       "addr": "005ff710",
       "is_variadic": false,
-      "name": "crt_fstream.cpp_ofstream_constructor_FUN_005ff710"
+      "name": "crt_fstream.cpp_ofstream_ctor_FUN_005ff710"
     },
     {
       "addr": "005ff7bc",
       "is_variadic": false,
       "name": "crt_fstream.cpp_ofstream_dtor_FUN_005ff7bc"
+    },
+    {
+      "addr": "005ffcb3",
+      "is_variadic": false,
+      "name": "crt_fstream.cpp_ostream_write_FUN_005ffcb3"
     },
     {
       "addr": "005fe6b0",
@@ -117,11 +122,6 @@
       "addr": "005fdbd0",
       "is_variadic": true,
       "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
-    },
-    {
-      "addr": "005ffcb3",
-      "is_variadic": false,
-      "name": "crt_stdio.c_stream_write_internal_FUN_005ffcb3"
     },
     {
       "addr": "00481a50",
@@ -683,16 +683,8 @@
       "type": "stack_ref"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 60,
-      "match": "in_stack_fffffd8c",
-      "severity": "moderate",
-      "text": "(SIZE_T)in_stack_fffffd8c);",
-      "type": "stack_param"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 74,
+      "line": 71,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_5c.x = (int)ROUND(ROUND((double)(float)(this_ptr->base).position.x *",
@@ -700,7 +692,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 74,
+      "line": 71,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_5c.x = (int)ROUND(ROUND((double)(float)(this_ptr->base).position.x *",
@@ -708,7 +700,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 76,
+      "line": 73,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_5c.y = (int)ROUND(ROUND((double)(float)(this_ptr->base).position.y *",
@@ -716,7 +708,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 76,
+      "line": 73,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_5c.y = (int)ROUND(ROUND((double)(float)(this_ptr->base).position.y *",
@@ -724,7 +716,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 78,
+      "line": 75,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_5c.z = (int)ROUND(ROUND(256 *",
@@ -732,7 +724,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 78,
+      "line": 75,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_5c.z = (int)ROUND(ROUND(256 *",
@@ -740,7 +732,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 94,
+      "line": 91,
       "match": "(CVector3i *)((int)",
       "severity": "mild",
       "text": "end_pos = (CVector3i *)((int)&g_PrecomputedWorldPositions[0].x + local_34);",
@@ -748,7 +740,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 95,
+      "line": 92,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "piVar5 = (int *)((int)g_PrecomputedDepthBuffer + local_30);",
@@ -756,10 +748,10 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 174,
+      "line": 171,
       "match": "in_stack_fffffd8c",
       "severity": "moderate",
-      "text": "local_174 + 0x44,in_stack_fffffd8c);",
+      "text": "(char *)&local_130,in_stack_fffffd8c);",
       "type": "stack_param"
     }
   ]

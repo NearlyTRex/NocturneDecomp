@@ -15,8 +15,8 @@ void __cdecl core_bodypart_cpp_CBodyPart_renderGeometry_FUN_00419340(CBodyPart *
   int local_18;
   int local_14;
   
-  core_set_cpp_CDemonSet_rotateVertices_FUN_0056e7c0
-            (g_CDemonSetPtr,this_ptr->vertex_count,&this_ptr->vertices->x);
+  core_set_cpp_CDemonSet_rotateVerticies_FUN_0056e7c0
+            (g_CDemonSetPtr,this_ptr->vertex_count,this_ptr->vertices);
   core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0
             (g_CDemonSetPtr,this_ptr->vertex_count,this_ptr->tri_count,this_ptr->faces,
              this_ptr->vertices,3,this_ptr->normals);

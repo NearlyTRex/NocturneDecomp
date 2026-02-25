@@ -19,7 +19,7 @@
 ;   int g_CaptureFaceCount
 ;   SFace[5000] g_CapturedFaces
 ;   undefined4 g_CapturedFaces[0].render_flags
-;   undefined4 g_CapturedFaces[0].indices.vertex_index_0
+;   undefined4 g_CapturedFaces[0].face_data.vertex_indices.vertex_index_0
 ;   undefined4 DAT_02c6d614
 ;   SFace*[5000] g_CapturedFacePointers
 ;   undefined4 DAT_02c946f8
@@ -108,8 +108,8 @@ section .text
         ;   Label: LAB_0048db31
     MOV ECX,dword ptr [EAX + 0x4]       ; 0048db37 | g_CapturedFaces[0].render_flags
     PUSH ECX                            ; 0048db3a
-    ADD EAX,0xc                         ; 0048db3b | g_CapturedFaces[0].indices.vertex_index_0
-    PUSH EAX                            ; 0048db3e | g_CapturedFaces[0].indices.vertex_index_0
+    ADD EAX,0xc                         ; 0048db3b | g_CapturedFaces[0].face_data.vertex_indices.vertex_index_0
+    PUSH EAX                            ; 0048db3e | g_CapturedFaces[0].face_data.vertex_indices.vertex_index_0
     PUSH EBP                            ; 0048db3f
     ADD EBX,0x4                         ; 0048db40
     INC ESI                             ; 0048db43

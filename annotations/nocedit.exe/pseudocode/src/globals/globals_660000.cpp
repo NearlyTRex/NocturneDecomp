@@ -6619,12 +6619,12 @@ WatcomDestructorCall WatcomDestructorCall_006629b0 = {
 WatcomDestructorCall WatcomDestructorCall_00662a10 = {
     .delete_flags = 0x00000004,
     .destructor_func = (void *)shape_edittool_cpp_CPickList_dtor_FUN_004a3c80,
-    .object_instance = (void *)&CPickList_03653fc0
+    .object_instance = (void *)&g_MissingBackdropFiles
 };
 WatcomDestructorCall WatcomDestructorCall_00662a1c = {
     .delete_flags = 0x00000004,
     .destructor_func = (void *)shape_edittool_cpp_CEdScrollBar_dtor_FUN_004a5b20,
-    .object_instance = (void *)&CEdScrollBar_03364ce0
+    .object_instance = (void *)&g_ThumbnailScrollBar
 };
 WatcomDestructorCall WatcomDestructorCall_00662e30 = {
     .delete_flags = 0x00000004,

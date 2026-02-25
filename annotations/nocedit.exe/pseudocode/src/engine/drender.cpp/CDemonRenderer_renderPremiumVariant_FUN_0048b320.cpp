@@ -2,11 +2,11 @@
 // Address: 0048b320
 // Address Range: [[0048b320, 0048b414]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_renderPremiumVariant_FUN_0048b320(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info)
+// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_renderPremiumVariant_FUN_0048b320(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim)
 
 #include "nocturne.h"
 
-void __cdecl engine_drender_cpp_CDemonRenderer_renderPremiumVariant_FUN_0048b320(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info)
+void __cdecl engine_drender_cpp_CDemonRenderer_renderPremiumVariant_FUN_0048b320(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim)
 
 {
   ushort uVar1;
@@ -14,18 +14,18 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderPremiumVariant_FUN_0048b320
   SMRGLHeaderPrimitive *pSVar3;
   
   if ((this_ptr->face_count == 0) && (this_ptr->skip_uv_extraction == 0)) {
-    pSVar3 = polygon_info;
+    pSVar3 = prim;
     do {
       uVar1 = (ushort)(pSVar3->base).type;
       this_ptr->vertex_buffer_ptr[uVar1].u = (uint)*(ushort *)((int)&(pSVar3->base).count + 2) << 8;
       pSVar2 = &pSVar3->surface_normal;
       pSVar3 = (SMRGLHeaderPrimitive *)((int)&(pSVar3->base).type + 2);
       this_ptr->vertex_buffer_ptr[uVar1].v = (uint)(ushort)pSVar2->B << 8;
-    } while (pSVar3 != (SMRGLHeaderPrimitive *)((int)&(polygon_info->base).count + 2));
+    } while (pSVar3 != (SMRGLHeaderPrimitive *)((int)&(prim->base).count + 2));
   }
-  g_VertexIndexBuffer[0] = (int)(ushort)(polygon_info->base).type;
-  g_VertexIndexBuffer[1] = (int)*(ushort *)((int)&(polygon_info->base).type + 2);
-  g_VertexIndexBuffer[2] = (int)(ushort)(polygon_info->base).count;
+  g_VertexIndexBuffer[0] = (int)(ushort)(prim->base).type;
+  g_VertexIndexBuffer[1] = (int)*(ushort *)((int)&(prim->base).type + 2);
+  g_VertexIndexBuffer[2] = (int)(ushort)(prim->base).count;
   if (this_ptr->face_count == 0) {
     if (g_BitsPerPixel == 0x20) {
       g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031;

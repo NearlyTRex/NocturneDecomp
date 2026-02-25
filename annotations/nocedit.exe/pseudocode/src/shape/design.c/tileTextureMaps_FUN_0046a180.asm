@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_design_c_tileTextureMaps_FUN_0046a180(char *model_name,int prompt_for_model)
+; void __cdecl shape_design_c_tileTextureMaps_FUN_0046a180(SCram *cram,int prompt_for_model)
 ;
 ; Parameters:
-; char *           Stack[0x4]:4   model_name
+; SCram *          Stack[0x4]:4   cram
 ; int              Stack[0x8]:4   prompt_for_model
 ; Local Variables:
 ; undefined4       Stack[-0x1cc]:4  local_1cc
@@ -321,7 +321,7 @@ section .text
         ;   Label: LAB_0046a494
     PUSH EAX                            ; 0046a497
     CALL shape_design.c_cramTextureList_FUN_0046bb80 ; 0046a498
-        ;   XREF to: 0046bb80 (UNCONDITIONAL_CALL)  ; int shape_design.c_cramTextureList_FUN_0046bb80(SCramConfig * cram_config)
+        ;   XREF to: 0046bb80 (UNCONDITIONAL_CALL)  ; int shape_design.c_cramTextureList_FUN_0046bb80(SCram * cram)
     ADD ESP,0x4                         ; 0046a49d
     TEST EAX,EAX                        ; 0046a4a0
     JNZ 0x0046a4a9                      ; 0046a4a2

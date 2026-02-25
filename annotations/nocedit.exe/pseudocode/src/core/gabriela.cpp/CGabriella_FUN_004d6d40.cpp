@@ -10,10 +10,9 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d6d40(CGabriella *this_ptr)
 
 {
   CDeformableModelInstance *this_ptr_00;
-  float fVar1;
-  CDemonActor *pCVar2;
-  float fVar3;
-  CBoundingBox3D *pCVar4;
+  CDemonActor *pCVar1;
+  float fVar2;
+  CBoundingBox3D *pCVar3;
   float in_stack_00000008;
   int in_stack_0000000c;
   CBoundingBox3D CStack_68;
@@ -28,57 +27,50 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d6d40(CGabriella *this_ptr)
   float fStack_1c;
   float fStack_18;
   
-  fVar1 = *(float *)(this_ptr->unk1 + 4);
-  fVar3 = in_stack_00000008 / 0.5f;
-  *(float *)this_ptr->unk1 = *(float *)this_ptr->unk1 - fVar3;
-  *(float *)(this_ptr->unk1 + 4) = fVar1 - fVar3;
-  if (*(float *)this_ptr->unk1 < 0.0) {
-    this_ptr->unk1[0] = '\0';
-    this_ptr->unk1[1] = '\0';
-    this_ptr->unk1[2] = '\0';
-    this_ptr->unk1[3] = '\0';
+  fVar2 = in_stack_00000008 / 0.5f;
+  this_ptr->left_clavicle_blend = this_ptr->left_clavicle_blend - fVar2;
+  this_ptr->right_clavicle_blend = this_ptr->right_clavicle_blend - fVar2;
+  if (this_ptr->left_clavicle_blend < 0.0) {
+    this_ptr->left_clavicle_blend = 0.0;
   }
-  if (*(float *)(this_ptr->unk1 + 4) < 0.0) {
-    this_ptr->unk1[4] = '\0';
-    this_ptr->unk1[5] = '\0';
-    this_ptr->unk1[6] = '\0';
-    this_ptr->unk1[7] = '\0';
+  if (this_ptr->right_clavicle_blend < 0.0) {
+    this_ptr->right_clavicle_blend = 0.0;
   }
   if (in_stack_0000000c != 0) {
     core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,(CDemonActor *)this_ptr);
-    pCVar2 = (this_ptr->base).base.carry_hands[0].carry_actor;
-    if (pCVar2 != (CDemonActor *)0x0) {
-      core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,pCVar2);
+    pCVar1 = (this_ptr->base).base.carry_hands[0].carry_actor;
+    if (pCVar1 != (CDemonActor *)0x0) {
+      core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,pCVar1);
     }
-    pCVar2 = (this_ptr->base).base.carry_hands[1].carry_actor;
-    if (pCVar2 != (CDemonActor *)0x0) {
-      core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,pCVar2);
+    pCVar1 = (this_ptr->base).base.carry_hands[1].carry_actor;
+    if (pCVar1 != (CDemonActor *)0x0) {
+      core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,pCVar1);
     }
     core_setcolid_cpp_CDemonSet_disableIgnore_FUN_00574210(g_CDemonSetPtr);
     local_24 = 0;
     local_28 = 0;
     local_2c = 0.0;
-    pCVar2 = (this_ptr->base).base.carry_hands[0].carry_actor;
-    if (pCVar2 == (CDemonActor *)0x0) {
+    pCVar1 = (this_ptr->base).base.carry_hands[0].carry_actor;
+    if (pCVar1 == (CDemonActor *)0x0) {
       local_2c = -0.5;
     }
     else {
-      pCVar4 = (*((pCVar2->vtable)._ub)->getBoundingBox)(pCVar2,&local_50);
-      fStack_38 = (pCVar4->max).x - (pCVar4->min).x;
-      fStack_34 = (pCVar4->max).y - (pCVar4->min).y;
-      fStack_30 = (pCVar4->max).z - (pCVar4->min).z;
+      pCVar3 = (*((pCVar1->vtable)._ub)->getBoundingBox)(pCVar1,&local_50);
+      fStack_38 = (pCVar3->max).x - (pCVar3->min).x;
+      fStack_34 = (pCVar3->max).y - (pCVar3->min).y;
+      fStack_30 = (pCVar3->max).z - (pCVar3->min).z;
       local_2c = -fStack_30;
     }
     core_gabriela_cpp_CGabriella_FUN_004d6f80(this_ptr);
-    pCVar2 = (this_ptr->base).base.carry_hands[1].carry_actor;
-    if (pCVar2 == (CDemonActor *)0x0) {
+    pCVar1 = (this_ptr->base).base.carry_hands[1].carry_actor;
+    if (pCVar1 == (CDemonActor *)0x0) {
       local_2c = 0.5;
     }
     else {
-      pCVar4 = (*((pCVar2->vtable)._ub)->getBoundingBox)(pCVar2,&CStack_68);
-      fStack_20 = (pCVar4->max).x - (pCVar4->min).x;
-      fStack_1c = (pCVar4->max).y - (pCVar4->min).y;
-      local_2c = (pCVar4->max).z - (pCVar4->min).z;
+      pCVar3 = (*((pCVar1->vtable)._ub)->getBoundingBox)(pCVar1,&CStack_68);
+      fStack_20 = (pCVar3->max).x - (pCVar3->min).x;
+      fStack_1c = (pCVar3->max).y - (pCVar3->min).y;
+      local_2c = (pCVar3->max).z - (pCVar3->min).z;
       fStack_18 = local_2c;
     }
     core_gabriela_cpp_CGabriella_FUN_004d6f80(this_ptr);
@@ -87,10 +79,10 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d6d40(CGabriella *this_ptr)
   }
   this_ptr_00 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
-            (this_ptr_00,0,0.0,*(float *)this_ptr->unk1,INT_02d7b84c,
+            (this_ptr_00,0,0.0,this_ptr->left_clavicle_blend,INT_02d7b84c,
              core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0);
   core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
-            (this_ptr_00,0,0.0,*(float *)(this_ptr->unk1 + 4),INT_02d7b850,
+            (this_ptr_00,0,0.0,this_ptr->right_clavicle_blend,INT_02d7b850,
              core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0);
   return;
 }

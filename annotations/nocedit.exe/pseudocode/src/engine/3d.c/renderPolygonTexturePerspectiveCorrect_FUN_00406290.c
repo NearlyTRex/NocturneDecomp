@@ -2,11 +2,11 @@
 // Address: 00406290
 // Address Range: [[00406290, 00406422]]
 // Convention: __cdecl
-// Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTexturePerspectiveCorrect_FUN_00406290(SMRGLHeaderPrimitive *polygon_info)
+// Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTexturePerspectiveCorrect_FUN_00406290(SMRGLHeaderPrimitive *prim)
 
 #include "nocturne.h"
 
-SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTexturePerspectiveCorrect_FUN_00406290(SMRGLHeaderPrimitive *polygon_info)
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTexturePerspectiveCorrect_FUN_00406290(SMRGLHeaderPrimitive *prim)
 
 {
   SMRGLHeaderBasic *pSVar1;
@@ -17,8 +17,8 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTexturePerspectiveCorrect
   int iVar6;
   int vertex_count;
   
-  pSVar4 = polygon_info + 1;
-  iVar2 = engine_3d_c_isVisiblePlane_FUN_00403950(&polygon_info->surface_normal);
+  pSVar4 = prim + 1;
+  iVar2 = engine_3d_c_isVisiblePlane_FUN_00403950(&prim->surface_normal);
   if (iVar2 != 0) {
     if (g_MMXSupported == 0) {
       if (g_BitsPerPixel == 0x20) {
@@ -39,7 +39,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTexturePerspectiveCorrect
     engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
     g_RenderStateFlag2 = PREPROCESS_DEPTH_BUFFER_PREP;
     iVar2 = 0;
-    for (iVar6 = 0; iVar6 < (polygon_info->base).count * 3; iVar6 = iVar6 + 3) {
+    for (iVar6 = 0; iVar6 < (prim->base).count * 3; iVar6 = iVar6 + 3) {
       *(int *)((int)g_ProcessedVertexIndices + iVar2) = (pSVar4->base).type;
       iVar3 = (pSVar4->base).count;
       iVar5 = (pSVar4->surface_normal).A;
@@ -80,5 +80,5 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTexturePerspectiveCorrect
     }
     engine_clipper_c_clipAndRasterize_FUN_004371b0(vertex_count,g_ProcessedVertexIndices);
   }
-  return (SMRGLHeaderExtended *)((int)&polygon_info[1].base + (polygon_info->base).count * 0xc);
+  return (SMRGLHeaderExtended *)((int)&prim[1].base + (prim->base).count * 0xc);
 }

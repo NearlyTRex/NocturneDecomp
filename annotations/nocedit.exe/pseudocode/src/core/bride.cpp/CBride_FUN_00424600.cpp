@@ -20,19 +20,19 @@ void __cdecl core_bride_cpp_CBride_FUN_00424600(CBride *this_ptr)
     iVar1 = rand();
     switch(iVar1 % 5) {
     case 0:
-      iVar1 = this_ptr->part_index_lshoulder;
+      iVar1 = this_ptr->part_indices[0];
       break;
     case 1:
-      iVar1 = this_ptr->part_index_lforearm;
+      iVar1 = this_ptr->part_indices[1];
       break;
     case 2:
-      iVar1 = this_ptr->part_index_rshoulder;
+      iVar1 = this_ptr->part_indices[2];
       break;
     case 3:
-      iVar1 = this_ptr->part_index_rforearm;
+      iVar1 = this_ptr->part_indices[3];
       break;
     case 4:
-      iVar1 = this_ptr->part_index_head;
+      iVar1 = this_ptr->part_indices[8];
       break;
     default:
       goto switchD_00424639_default;
@@ -41,11 +41,11 @@ void __cdecl core_bride_cpp_CBride_FUN_00424600(CBride *this_ptr)
   }
 switchD_00424639_default:
   iVar1 = *in_stack_00000008;
-  if ((((iVar1 == this_ptr->part_index_lshoulder) || (iVar1 == this_ptr->part_index_lforearm)) ||
-      (iVar1 == this_ptr->part_index_rshoulder)) ||
-     ((iVar1 == this_ptr->part_index_rforearm || (iVar1 == this_ptr->part_index_head)))) {
+  if ((((iVar1 == this_ptr->part_indices[0]) || (iVar1 == this_ptr->part_indices[1])) ||
+      (iVar1 == this_ptr->part_indices[2])) ||
+     ((iVar1 == this_ptr->part_indices[3] || (iVar1 == this_ptr->part_indices[8])))) {
     local_20 = (float)in_stack_00000008[0xb];
-    if (this_ptr->part_index_head == *in_stack_00000008) {
+    if (this_ptr->part_indices[8] == *in_stack_00000008) {
       local_20 = local_20 * (float)0.33300000000000002;
     }
     if (g_CGamePtr->gratuitous_dismemberment != 0) {
@@ -59,29 +59,29 @@ switchD_00424639_default:
       body_part = core_bodypart_cpp_createBodyPart_FUN_00418e10();
       core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30
                 ((CCharacter *)this_ptr,body_part,*in_stack_00000008,0);
-      if (*in_stack_00000008 == this_ptr->part_index_lshoulder) {
+      if (*in_stack_00000008 == this_ptr->part_indices[0]) {
         core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30
-                  ((CCharacter *)this_ptr,body_part,this_ptr->part_index_lforearm,0);
+                  ((CCharacter *)this_ptr,body_part,this_ptr->part_indices[1],0);
       }
-      if (this_ptr->part_index_rshoulder == *in_stack_00000008) {
+      if (this_ptr->part_indices[2] == *in_stack_00000008) {
         core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30
-                  ((CCharacter *)this_ptr,body_part,this_ptr->part_index_rforearm,0);
+                  ((CCharacter *)this_ptr,body_part,this_ptr->part_indices[3],0);
       }
       core_charactr_cpp_CCharacter_playSoundWithCooldown_FUN_0042f300
                 ((CCharacter *)this_ptr,"limb?.wav");
       core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_0041a050(body_part);
-      if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_index_head] == 0) {
+      if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[8]] == 0) {
         in_stack_00000008[1] = 0x461c3c00;
       }
       in_stack_00000008[2] = (int)((float)in_stack_00000008[2] * (float)7);
     }
   }
   iVar1 = *in_stack_00000008;
-  if (iVar1 == this_ptr->part_index_head) {
+  if (iVar1 == this_ptr->part_indices[8]) {
     in_stack_00000008[1] = (int)((float)in_stack_00000008[1] * (float)2.5);
     return;
   }
-  if ((iVar1 != this_ptr->part_index_lowerbody) && (iVar1 != this_ptr->part_index_torso)) {
+  if ((iVar1 != this_ptr->part_indices[7]) && (iVar1 != this_ptr->part_indices[6])) {
     in_stack_00000008[1] = (int)((float)in_stack_00000008[1] * (float)0.5);
     return;
   }

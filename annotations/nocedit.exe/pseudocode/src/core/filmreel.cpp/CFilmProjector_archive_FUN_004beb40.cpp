@@ -15,7 +15,7 @@ void __cdecl core_filmreel_cpp_CFilmProjector_archive_FUN_004beb40(CFilmProjecto
   uint uVar4;
   float in_stack_00000008;
   
-  if ((this_ptr->base).unk1 == 0) {
+  if ((this_ptr->base).triggered == 0) {
     if (this_ptr->prev_dest_state != 0) {
       core_dfilter_cpp_CFilterFX_openMovie_FUN_00470730(g_CFilterFXPtr,(char *)0x0);
       sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handle);
@@ -56,7 +56,7 @@ void __cdecl core_filmreel_cpp_CFilmProjector_archive_FUN_004beb40(CFilmProjecto
       core_event_cpp_CEventList_executeCommands_FUN_004aabe0(g_CEventListPtr,this_ptr->key_event);
     }
   }
-  this_ptr->prev_dest_state = (this_ptr->base).unk1;
+  this_ptr->prev_dest_state = (this_ptr->base).triggered;
   core_dest_cpp_CActorDestination_process_FUN_0046f9b0(&this_ptr->base,in_stack_00000008);
   return;
 }

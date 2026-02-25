@@ -6,17 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 43,
-    "complexity_score": 27,
+    "complexity_score": 13,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 12,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
-    "total_lines": 55
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 13,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 56
   },
   "cross_references": [],
   "function": {
@@ -29,7 +27,7 @@
     ],
     "convention": "__cdecl",
     "name": "support_codec.cpp_readByteWithCount_FUN_0043e4c0",
-    "signature": "int __cdecl support_codec_cpp_readByteWithCount_FUN_0043e4c0(_FILE *file,int *remaining_count)"
+    "signature": "int __cdecl support_codec_cpp_readByteWithCount_FUN_0043e4c0(_istream *istream,int *remaining_count)"
   },
   "function_calls": [
     {
@@ -87,10 +85,10 @@
       },
       {
         "is_param": true,
-        "name": "file",
+        "name": "istream",
         "offset": 4,
         "size": 4,
-        "type": "_FILE *"
+        "type": "_istream *"
       },
       {
         "is_param": true,
@@ -101,14 +99,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 9,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "if (*(int *)((int)&file->_handle + *(int *)(file->_ptr + 4)) == 0) {",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

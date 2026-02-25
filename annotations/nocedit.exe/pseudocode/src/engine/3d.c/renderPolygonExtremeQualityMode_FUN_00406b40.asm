@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonExtremeQualityMode_FUN_00406b40(SMRGLHeaderPrimitive *polygon_info)
+; SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonExtremeQualityMode_FUN_00406b40(SMRGLHeaderPrimitive *prim)
 ;
 ; Parameters:
-; SMRGLHeaderPrimitive * Stack[0x4]:4   polygon_info
+; SMRGLHeaderPrimitive * Stack[0x4]:4   prim
 ;
 ; Referenced Globals:
 ;   int g_BitsPerPixel = 0x8
@@ -51,7 +51,7 @@ section .text
     MOV dword ptr [0x02d052a0],EDI      ; 00406b82 | g_RenderStateFlags
     MOV dword ptr [0x02d052a4],EBP      ; 00406b88 | g_RenderStateFlag2
     CALL engine_3d.c_calculatePolygonLighting_FUN_00403a00 ; 00406b8e
-        ;   XREF to: 00403a00 (UNCONDITIONAL_CALL)  ; void engine_3d.c_calculatePolygonLighting_FUN_00403a00(SMRGLHeaderPrimitive * polygon_info)
+        ;   XREF to: 00403a00 (UNCONDITIONAL_CALL)  ; void engine_3d.c_calculatePolygonLighting_FUN_00403a00(SMRGLHeaderPrimitive * prim)
     ADD ESP,0x4                         ; 00406b93
     PUSH ESI                            ; 00406b96
     MOV EAX,dword ptr [EBX + 0x4]       ; 00406b97

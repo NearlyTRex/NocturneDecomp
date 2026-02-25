@@ -243,7 +243,7 @@ section .text
     MOV ESI,dword ptr [0x006703ec]      ; 00429d11 | g_CDemonRendererPtr2
     PUSH ESI                            ; 00429d17 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10 ; 00429d18
-        ;   XREF to: 0048ae10 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info, int render_flags)
+        ;   XREF to: 0048ae10 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, int render_flags)
     ADD ESP,0xc                         ; 00429d1d
     MOV EDI,dword ptr [ESP + 0xd8]      ; 00429d20
     MOV EAX,dword ptr [ESP + 0xc8]      ; 00429d27
@@ -336,7 +336,7 @@ section .text
     MOV ECX,dword ptr [0x006703ec]      ; 00429e63 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH ECX                            ; 00429e69 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10 ; 00429e6a
-        ;   XREF to: 0048ae10 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info, int render_flags)
+        ;   XREF to: 0048ae10 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, int render_flags)
     ADD ESP,0xc                         ; 00429e6f
     MOV EBX,dword ptr [ESP + 0xd4]      ; 00429e72
     MOV ESI,dword ptr [ESP + 0xd0]      ; 00429e79
@@ -493,7 +493,7 @@ section .text
     MOV EAX,[0x006703ec]                ; 0042a0c8 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EAX                            ; 0042a0cd | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10 ; 0042a0ce
-        ;   XREF to: 0048ae10 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info, int render_flags)
+        ;   XREF to: 0048ae10 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, int render_flags)
     ADD ESP,0xc                         ; 0042a0d3
     MOV EDX,dword ptr [ESP + 0xdc]      ; 0042a0d6
         ;   Label: LAB_0042a0d6
@@ -604,7 +604,7 @@ section .text
     MOV EAX,[0x006703ec]                ; 0042a253 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EAX                            ; 0042a258 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10 ; 0042a259
-        ;   XREF to: 0048ae10 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info, int render_flags)
+        ;   XREF to: 0048ae10 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, int render_flags)
     ADD ESP,0xc                         ; 0042a25e
     MOV EDX,dword ptr [ESP + 0x8]       ; 0042a261
         ;   Label: LAB_0042a261

@@ -17,7 +17,7 @@
 ;   undefined4 g_CDemonLightInstance.base.base.position.y
 ;   undefined4 g_CDemonLightInstance.base.base.position.z
 ;   undefined4 DAT_02d7eb00
-;   undefined4 g_CDemonLightInstance.base.base.projection_scale
+;   undefined4 g_CDemonLightInstance.base.base.focal_length
 ;   undefined4 g_CDemonLightInstance.base.max_distance
 ;   undefined4 g_CDemonLightInstance.light_enabled_flag
 ;   undefined4 g_CDemonLightInstance.volumetric_enabled
@@ -97,7 +97,7 @@ section .text
     MOV dword ptr [ESP + 0x2c],EAX      ; 005ee55a
     PUSH EBX                            ; 005ee55e
     MOV EAX,dword ptr [EBX + 0x154]     ; 005ee55f
-    MOV dword ptr [0x02d7eb28],ESI      ; 005ee565 | g_CDemonLightInstance.base.base.projection_scale
+    MOV dword ptr [0x02d7eb28],ESI      ; 005ee565 | g_CDemonLightInstance.base.base.focal_length
     MOV dword ptr [0x02d807c0],EBP      ; 005ee56b | g_CDemonLightInstance.antialiasing_enabled
     CALL dword ptr [EAX + 0x8c]         ; 005ee571
     ADD ESP,0x4                         ; 005ee577

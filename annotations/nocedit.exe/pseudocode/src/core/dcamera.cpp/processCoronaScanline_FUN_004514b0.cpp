@@ -2,11 +2,11 @@
 // Address: 004514b0
 // Address Range: [[004514b0, 004517e2]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dcamera_cpp_processCoronaScanline_FUN_004514b0(int row,int x_start,int x_end,SCorona *corona_buffer)
+// Signature: void __cdecl core_dcamera_cpp_processCoronaScanline_FUN_004514b0(int row,int x_start,int x_end,SCorona *corona)
 
 #include "nocturne.h"
 
-void __cdecl core_dcamera_cpp_processCoronaScanline_FUN_004514b0(int row,int x_start,int x_end,SCorona *corona_buffer)
+void __cdecl core_dcamera_cpp_processCoronaScanline_FUN_004514b0(int row,int x_start,int x_end,SCorona *corona)
 
 {
   byte uVar1;
@@ -29,23 +29,23 @@ void __cdecl core_dcamera_cpp_processCoronaScanline_FUN_004514b0(int row,int x_s
   piVar14 = g_CoronaDepthBuffer[row] + x_start;
   puVar13 = g_ZBufferScanlineArray[row << (g_CameraDownscaleIterations.bytes[0] & 0x1f)] +
             (x_start << (g_CameraDownscaleIterations.bytes[0] & 0x1f));
-  pcVar7 = corona_buffer->intensity[row] + x_start;
+  pcVar7 = corona->intensity[row] + x_start;
   uVar1 = g_CameraDownscaleIterations.bytes[0];
   do {
     g_CameraDownscaleIterations.bytes[0] = uVar1;
     if (x_end <= x_start) {
-      iVar3 = corona_buffer->row_min_x[row];
-      iVar4 = corona_buffer->row_max_x[row];
-      for (pcVar7 = corona_buffer->intensity[row] + iVar3; (iVar3 < iVar4 && (*pcVar7 == '\0'));
+      iVar3 = corona->row_min_x[row];
+      iVar4 = corona->row_max_x[row];
+      for (pcVar7 = corona->intensity[row] + iVar3; (iVar3 < iVar4 && (*pcVar7 == '\0'));
           pcVar7 = pcVar7 + 1) {
         iVar3 = iVar3 + 1;
       }
-      pcVar7 = corona_buffer->intensity[row] + iVar4;
+      pcVar7 = corona->intensity[row] + iVar4;
       while ((iVar3 < iVar4 && (pcVar7 = pcVar7 + -1, *pcVar7 == '\0'))) {
         iVar4 = iVar4 + -1;
       }
-      corona_buffer->row_min_x[row] = iVar3;
-      corona_buffer->row_max_x[row] = iVar4;
+      corona->row_min_x[row] = iVar3;
+      corona->row_max_x[row] = iVar4;
       return;
     }
     local_14 = '\0';

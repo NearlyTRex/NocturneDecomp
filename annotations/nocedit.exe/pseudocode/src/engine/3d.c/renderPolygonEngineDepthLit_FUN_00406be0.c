@@ -2,16 +2,16 @@
 // Address: 00406be0
 // Address Range: [[00406be0, 00406c7f]]
 // Convention: __cdecl
-// Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonEngineDepthLit_FUN_00406be0(SMRGLHeaderPrimitive *polygon_info)
+// Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonEngineDepthLit_FUN_00406be0(SMRGLHeaderPrimitive *prim)
 
 #include "nocturne.h"
 
-SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonEngineDepthLit_FUN_00406be0(SMRGLHeaderPrimitive *polygon_info)
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonEngineDepthLit_FUN_00406be0(SMRGLHeaderPrimitive *prim)
 
 {
   int iVar1;
   
-  iVar1 = engine_3d_c_isVisiblePlane_FUN_00403950(&polygon_info->surface_normal);
+  iVar1 = engine_3d_c_isVisiblePlane_FUN_00403950(&prim->surface_normal);
   if (iVar1 != 0) {
     if (g_MMXSupported == 0) {
       if (g_BitsPerPixel == 0x20) {
@@ -29,9 +29,8 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonEngineDepthLit_FUN_00406b
     }
     g_RenderStateFlags.dword = RENDER_ENGINE_HIGH_QUALITY;
     g_RenderStateFlag2 = PREPROCESS_DEPTH_BUFFER_PREP;
-    engine_3d_c_calculatePolygonLighting_FUN_00403a00(polygon_info);
-    engine_clipper_c_clipAndRasterize_FUN_004371b0
-              ((polygon_info->base).count,(int *)(polygon_info + 1));
+    engine_3d_c_calculatePolygonLighting_FUN_00403a00(prim);
+    engine_clipper_c_clipAndRasterize_FUN_004371b0((prim->base).count,(int *)(prim + 1));
   }
-  return (SMRGLHeaderExtended *)(&polygon_info[1].base.type + (polygon_info->base).count);
+  return (SMRGLHeaderExtended *)(&prim[1].base.type + (prim->base).count);
 }

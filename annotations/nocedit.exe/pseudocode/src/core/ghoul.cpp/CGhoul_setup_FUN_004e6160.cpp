@@ -42,45 +42,45 @@ void __cdecl core_ghoul_cpp_CGhoul_setup_FUN_004e6160(CGhoul *this_ptr)
   this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr_00);
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"r high arm01",1);
-  this_ptr->part_r_upper_arm = iVar1;
+  this_ptr->part_indices[0] = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"r lo arm01",1);
-  this_ptr->part_r_lower_arm = iVar1;
+  this_ptr->part_indices[1] = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"l high arm01",1);
-  this_ptr->part_l_upper_arm = iVar1;
+  this_ptr->part_indices[2] = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"l lo arm01",1);
-  this_ptr->part_l_lower_arm = iVar1;
+  this_ptr->part_indices[3] = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"r thigh01",1);
-  this_ptr->part_r_thigh = iVar1;
+  this_ptr->part_indices[4] = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"r shin01",1);
-  this_ptr->part_r_shin = iVar1;
+  this_ptr->part_indices[5] = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"l thigh01",1);
-  this_ptr->part_l_thigh = iVar1;
+  this_ptr->part_indices[6] = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"l shin01",1);
-  this_ptr->part_l_shin = iVar1;
+  this_ptr->part_indices[7] = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"lo torso01",1);
-  this_ptr->part_lower_torso = iVar1;
+  this_ptr->part_indices[8] = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"high torso01",1);
-  this_ptr->part_upper_torso = iVar1;
+  this_ptr->part_indices[9] = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"head01",1);
-  this_ptr->part_head = iVar1;
+  this_ptr->part_indices[10] = iVar1;
   core_enemy_cpp_CEnemy_setup_FUN_004a9650(&this_ptr->base);
   this_ptr->stun_timer = 0.0;
   this_ptr->dark_waypoint = (CDemonActor *)0x0;
   this_ptr->heal_timer = 0.0;
   this_ptr->is_berserk = 0;
   this_ptr->stuck_timer = 0.0;
-  this_ptr->alert_sfx_handle = 0;
-  this_ptr->pain_sfx_handle = 0;
-  this_ptr->death_sfx_handle = 0;
+  this_ptr->sfx_handles[0] = 0;
+  this_ptr->sfx_handles[1] = 0;
+  this_ptr->sfx_handles[2] = 0;
   return;
 }

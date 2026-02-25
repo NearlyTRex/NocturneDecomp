@@ -17,14 +17,11 @@ int __cdecl core_marquee_cpp_CMarquee_renderOpaque_FUN_0050be50(CMarquee *this_p
   if (iVar1 != 0) {
     return 0;
   }
-  this_ptr->unk2[0x18] = '\0';
-  this_ptr->unk2[0x19] = '\0';
-  this_ptr->unk2[0x1a] = '\0';
-  this_ptr->unk2[0x1b] = '\0';
+  this_ptr->is_visible = 0;
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base);
   this_ptr_00 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&CStack_1c);
   iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
-  *(int *)(this_ptr->unk2 + 0x18) = iVar1;
+  this_ptr->is_visible = iVar1;
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(&this_ptr->base);
-  return *(int *)(this_ptr->unk2 + 0x18);
+  return this_ptr->is_visible;
 }

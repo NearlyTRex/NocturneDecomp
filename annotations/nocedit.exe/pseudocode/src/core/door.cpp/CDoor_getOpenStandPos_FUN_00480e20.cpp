@@ -47,12 +47,12 @@ float * __cdecl core_door_cpp_CDoor_getOpenStandPos_FUN_00480e20(CDoor *this_ptr
     if (pCVar5->z <= 0.0) {
       pCVar5 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
                          (&this_ptr->base,&local_20,&local_5c);
-      fVar1 = *(float *)(this_ptr->unk3 + 4);
+      fVar1 = (this_ptr->open_position).y;
       fVar2 = pCVar5->y;
-      fVar3 = *(float *)(this_ptr->unk3 + 8);
+      fVar3 = (this_ptr->open_position).z;
       fVar4 = pCVar5->z;
       if (in_stack_00000008 != local_50) {
-        *in_stack_00000008 = *(float *)this_ptr->unk3 - pCVar5->x;
+        *in_stack_00000008 = (this_ptr->open_position).x - pCVar5->x;
         in_stack_00000008[1] = fVar1 - fVar2;
         in_stack_00000008[2] = fVar3 - fVar4;
         in_stack_00000008[1] = (this_ptr->base).location.position.y;
@@ -62,12 +62,12 @@ float * __cdecl core_door_cpp_CDoor_getOpenStandPos_FUN_00480e20(CDoor *this_ptr
     else {
       pCVar5 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
                          (&this_ptr->base,&local_68,&local_5c);
-      fVar1 = *(float *)(this_ptr->unk3 + 4);
+      fVar1 = (this_ptr->open_position).y;
       fVar2 = pCVar5->y;
-      fVar3 = *(float *)(this_ptr->unk3 + 8);
+      fVar3 = (this_ptr->open_position).z;
       fVar4 = pCVar5->z;
       if (in_stack_00000008 != local_44) {
-        *in_stack_00000008 = *(float *)this_ptr->unk3 + pCVar5->x;
+        *in_stack_00000008 = (this_ptr->open_position).x + pCVar5->x;
         in_stack_00000008[1] = fVar1 + fVar2;
         in_stack_00000008[2] = fVar3 + fVar4;
         in_stack_00000008[1] = (this_ptr->base).location.position.y;
@@ -76,10 +76,10 @@ float * __cdecl core_door_cpp_CDoor_getOpenStandPos_FUN_00480e20(CDoor *this_ptr
     }
     break;
   case 3:
-    if (in_stack_00000008 != (float *)this_ptr->unk3) {
-      *in_stack_00000008 = *(float *)this_ptr->unk3;
-      in_stack_00000008[1] = *(float *)(this_ptr->unk3 + 4);
-      in_stack_00000008[2] = *(float *)(this_ptr->unk3 + 8);
+    if ((CVector3f *)in_stack_00000008 != &this_ptr->open_position) {
+      *in_stack_00000008 = (this_ptr->open_position).x;
+      in_stack_00000008[1] = (this_ptr->open_position).y;
+      in_stack_00000008[2] = (this_ptr->open_position).z;
       in_stack_00000008[1] = (this_ptr->base).location.position.y;
       return in_stack_00000008;
     }

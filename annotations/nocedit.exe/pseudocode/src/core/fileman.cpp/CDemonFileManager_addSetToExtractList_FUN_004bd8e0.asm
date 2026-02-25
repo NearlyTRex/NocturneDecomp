@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fileman_cpp_CDemonFileManager_addSetToExtractList_FUN_004bd8e0(CDemonFileManager *file_manager_ptr,char *set_filename)
+; void __cdecl core_fileman_cpp_CDemonFileManager_addSetToExtractList_FUN_004bd8e0(CDemonFileManager *this_ptr,char *set_filename)
 ;
 ; Parameters:
-; CDemonFileManager * Stack[0x4]:4   file_manager_ptr
+; CDemonFileManager * Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   set_filename
 ;
 ; XREF[2]:
@@ -18,7 +18,7 @@
 ;
 ; Called Functions:
 ;   core_set.cpp_CDemonSet_load_FUN_00569410
-;   core_setedit.cpp_CDemonSet_FUN_00584e70
+;   core_setedit.cpp_CDemonSet_writeFileDependencies_FUN_00584e70
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
 ;
 ; *****************************************************************************
@@ -51,8 +51,8 @@ section .text
     PUSH EDI                            ; 004bd917
     MOV EBP,dword ptr [0x006810c8]      ; 004bd918 | g_CDemonSetPtr
     PUSH EBP                            ; 004bd91e | g_CDemonSetInstance
-    CALL core_setedit.cpp_CDemonSet_FUN_00584e70 ; 004bd91f
-        ;   XREF to: 00584e70 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_CDemonSet_FUN_00584e70(CDemonSet * this_ptr)
+    CALL core_setedit.cpp_CDemonSet_writeFileDependencies_FUN_00584e70 ; 004bd91f
+        ;   XREF to: 00584e70 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_CDemonSet_writeFileDependencies_FUN_00584e70(CDemonSet * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 004bd924
     POP EBP                             ; 004bd927
     POP EDI                             ; 004bd928

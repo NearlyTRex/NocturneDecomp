@@ -27,7 +27,7 @@
 ;   core_box.cpp_CBoundingBox3D_render_FUN_004210b0
 ;   core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0
 ;   core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_00570770
-;   core_set.cpp_CDemonSet_rotateVertices_FUN_0056e7c0
+;   core_set.cpp_CDemonSet_rotateVerticies_FUN_0056e7c0
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
 ;   engine_drender.cpp_CDemonRenderer_renderEnhancedQualityVariant_FUN_0048bdc0
@@ -128,8 +128,8 @@ section .text
     PUSH EDX                            ; 0044b157
     MOV ECX,dword ptr [0x006810c8]      ; 0044b158 | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH ECX                            ; 0044b15e | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_rotateVertices_FUN_0056e7c0 ; 0044b15f
-        ;   XREF to: 0056e7c0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_rotateVertices_FUN_0056e7c0(CDemonSet * this_ptr, int vertex_count, int * input_vertices)
+    CALL core_set.cpp_CDemonSet_rotateVerticies_FUN_0056e7c0 ; 0044b15f
+        ;   XREF to: 0056e7c0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_rotateVerticies_FUN_0056e7c0(CDemonSet * this_ptr, int vertex_count, CVector3i * input_vertices)
     ADD ESP,0xc                         ; 0044b164
     PUSH 0x1                            ; 0044b167
     MOV EBX,dword ptr [0x006703ec]      ; 0044b169 | g_CDemonRendererInstance | g_CDemonRendererPtr2
@@ -187,7 +187,7 @@ section .text
     PUSH EDX                            ; 0044b208 | g_CDemonRendererInstance
     INC EDI                             ; 0044b209
     CALL engine_drender.cpp_CDemonRenderer_renderEnhancedQualityVariant_FUN_0048bdc0 ; 0044b20a
-        ;   XREF to: 0048bdc0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderEnhancedQualityVariant_FUN_0048bdc0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info)
+        ;   XREF to: 0048bdc0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderEnhancedQualityVariant_FUN_0048bdc0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD EBX,0x48                        ; 0044b20f
     ADD ESP,0x8                         ; 0044b212
     JMP 0x0044b1ec                      ; 0044b215
@@ -267,7 +267,7 @@ section .text
     PUSH EAX                            ; 0044b2dc | g_CDemonRendererInstance
     INC EBX                             ; 0044b2dd
     CALL engine_drender.cpp_CDemonRenderer_renderEnhancedQualityVariant_FUN_0048bdc0 ; 0044b2de
-        ;   XREF to: 0048bdc0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderEnhancedQualityVariant_FUN_0048bdc0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info)
+        ;   XREF to: 0048bdc0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderEnhancedQualityVariant_FUN_0048bdc0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD EDI,0x48                        ; 0044b2e3
     ADD ESP,0x8                         ; 0044b2e6
     JMP 0x0044b2c1                      ; 0044b2e9

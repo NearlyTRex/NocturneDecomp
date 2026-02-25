@@ -130,7 +130,7 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d5550(CGabriella *this_ptr)
     if (iVar5 != 0) {
       core_xform_cpp_getTranslation_FUN_005f6110(&local_2ec,&local_40);
       core_xform_cpp_matrixToEulerAngles_FUN_005f5690((CMatrix3x3f *)&local_2ec,&local_34);
-      local_34.z = (1.0 - (float)this_ptr->unk3) * local_34.z;
+      local_34.z = (1.0 - this_ptr->aim_weight) * local_34.z;
       core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
                 (&local_2ec,&local_40,&local_34);
     }

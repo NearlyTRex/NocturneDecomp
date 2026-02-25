@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_setcolid_cpp_intersectXZCylinder_FUN_00572e80(SIntersectXZCylinder *cylinder,float ray_x,float ray_z,void *bounds_struct)
+; int __cdecl core_setcolid_cpp_intersectXZCylinder_FUN_00572e80(SIntersectXZCylinder *cylinder,float obstacle_x,float obstacle_y,SCollisionInfo *collision_info)
 ;
 ; Parameters:
 ; SIntersectXZCylinder * Stack[0x4]:4   cylinder
-; float            Stack[0x8]:4   ray_x
-; float            Stack[0xc]:4   ray_z
-; void *           Stack[0x10]:4   bounds_struct
+; float            Stack[0x8]:4   obstacle_x
+; float            Stack[0xc]:4   obstacle_y
+; SCollisionInfo * Stack[0x10]:4   collision_info
 ; Local Variables:
 ; undefined8       Stack[-0xc8]:8  local_c8
 ; undefined8       Stack[-0xc0]:8  local_c0

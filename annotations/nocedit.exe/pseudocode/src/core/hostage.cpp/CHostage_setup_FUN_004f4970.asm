@@ -21,7 +21,7 @@
 ;   TerminatedCString s_Bip01_L_Hand_0062eecb
 ;   TerminatedCString s_Bip01_Spine1_0062eed8
 ;   TerminatedCString s_gunup_0062eee5
-;   undefined4 DAT_02db8888
+;   int INT_02db8888
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0
@@ -198,7 +198,7 @@ section .text
     CALL core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460 ; 004f4b2a
         ;   XREF to: 0052d460 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460(CMotionList * this_ptr)
     ADD ESP,0xc                         ; 004f4b2f
-    MOV [0x02db8888],EAX                ; 004f4b32 | DAT_02db8888
+    MOV [0x02db8888],EAX                ; 004f4b32 | INT_02db8888
     JMP 0x004f4b0b                      ; 004f4b37
         ;   XREF to: 004f4b0b (UNCONDITIONAL_JUMP)  ; LAB_004f4b0b
 

@@ -14,7 +14,7 @@ void __cdecl core_setutil_cpp_C3DSCamera_apply_FUN_00585870(C3DSCamera *this_ptr
   int iVar3;
   CMatrix3x3f *pCVar4;
   C3DSCamera *pCVar5;
-  CMatrix3x3i *pCVar6;
+  CMatrix3x3f *pCVar6;
   char *pcVar7;
   byte bVar8;
   
@@ -33,12 +33,12 @@ void __cdecl core_setutil_cpp_C3DSCamera_apply_FUN_00585870(C3DSCamera *this_ptr
   pCVar4 = &this_ptr->rotation_matrix;
   pCVar6 = &(camera->base).rotation_matrix;
   for (iVar3 = 10; iVar3 != 0; iVar3 = iVar3 + -1) {
-    pCVar6->m[0].x = (int)pCVar4->m[0].x;
+    pCVar6->m[0].x = pCVar4->m[0].x;
     pCVar4 = (CMatrix3x3f *)((int)pCVar4 + (uint)bVar8 * -8 + 4);
-    pCVar6 = (CMatrix3x3i *)((int)pCVar6 + (uint)bVar8 * -8 + 4);
+    pCVar6 = (CMatrix3x3f *)((int)pCVar6 + (uint)bVar8 * -8 + 4);
   }
   pcVar7 = camera->camera_name;
-  (camera->base).projection_scale = this_ptr->projection_scale;
+  (camera->base).focal_length = this_ptr->projection_scale;
   pCVar5 = this_ptr;
   do {
     cVar2 = pCVar5->name[0];

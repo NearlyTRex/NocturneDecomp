@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   support_codec.cpp_CLZWDictionary_init_FUN_0043ee60
-;   support_codec.cpp_resetDictionary_FUN_0043e510
+;   support_codec.cpp_resetBitBuffer_FUN_0043e510
 ;
 ; *****************************************************************************
 
@@ -30,12 +30,12 @@ section .text
     LEA EAX,[EBX + 0x4]                 ; 0043f4e1
     PUSH EAX                            ; 0043f4e4
     CALL support_codec.cpp_CLZWDictionary_init_FUN_0043ee60 ; 0043f4e5
-        ;   XREF to: 0043ee60 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_CLZWDictionary_init_FUN_0043ee60(CLZWDictionary * this_ptr, int new_dict_size, int new_num_bits, int normal_code_width, ...)
+        ;   XREF to: 0043ee60 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_CLZWDictionary_init_FUN_0043ee60(CLZWDictionary * this_ptr, int new_dict_size, int new_num_bits)
     ADD ESP,0xc                         ; 0043f4ea
     LEA EAX,[EBX + 0x18]                ; 0043f4ed
     PUSH EAX                            ; 0043f4f0
-    CALL support_codec.cpp_resetDictionary_FUN_0043e510 ; 0043f4f1
-        ;   XREF to: 0043e510 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_resetDictionary_FUN_0043e510(CLZWDictionary * dict)
+    CALL support_codec.cpp_resetBitBuffer_FUN_0043e510 ; 0043f4f1
+        ;   XREF to: 0043e510 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_resetBitBuffer_FUN_0043e510(SBitBuffer * bit_buffer)
     MOV dword ptr [EBX + 0x2c],0xffffffff ; 0043f4f6
     ADD ESP,0x4                         ; 0043f4fd
     MOV dword ptr [EBX + 0x28],0xffffffff ; 0043f500

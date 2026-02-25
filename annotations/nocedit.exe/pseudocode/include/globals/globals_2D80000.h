@@ -48,6 +48,10 @@ extern char* g_CurrentDisplayText;
 // char[20]
 extern char g_InputHistory[20];
 
+// char[256]
+extern char g_ScreenshotFilename[256];
+extern char g_ChapterDisplayName[256];
+
 // char[600]
 extern char g_PrevKeyboardState[600];
 
@@ -56,9 +60,11 @@ extern float g_OverlayDisplayTimer;
 extern float FLOAT_02d831bc;
 
 // int
+extern int INT_02d82568;
 extern int g_InputResetFlag;
 extern int g_StoredCameraValue;
 extern int g_CheatSystemEnabled;
+extern int g_HasSavedLightState;
 extern int g_CheatFlags;
 extern int g_DebugRecording;
 extern int g_DebugRecordingParams;
@@ -107,23 +113,17 @@ extern int g_BloodParticleIndex;
 extern int g_BloodSplatIndex;
 extern int g_BloodSplatCount;
 
+// int[201]
+extern int g_MasterLightStateSaveBuffer[201];
+
 // undefined1
 extern undefined1 DAT_02d82c81;
 extern undefined1 DAT_02d82c82;
 extern undefined1 DAT_02d82c83;
-extern undefined1 DAT_02d830a8;
-extern undefined1 DAT_02d830a9;
-extern undefined1 DAT_02d830aa;
-extern undefined1 DAT_02d830ab;
 extern undefined1 DAT_02d831d6;
 extern undefined1 DAT_02d831eb;
 
 // undefined4
-extern undefined4 DAT_02d82568;
-extern undefined4 DAT_02d82d80;
-extern undefined4 DAT_02d82d84;
-extern undefined4 DAT_02d82d88;
-extern undefined4 DAT_02d82d8c;
 extern undefined4 DAT_02d831ec;
 extern undefined4 DAT_02d831f0;
 extern undefined4 DAT_02d831f4;

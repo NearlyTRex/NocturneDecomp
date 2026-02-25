@@ -15,7 +15,7 @@ typedef struct SPanel {
     CVector3f local_position; // 0xc
     CVector3f rotation; // 0x18
     CMatrix3x3f rotation_matrix; // 0x24
-    int unk; // 0x48
+    int dead; // 0x48
     CColor3i color; // 0x4c
     CVector3f world_position; // 0x58
 } SPanel;

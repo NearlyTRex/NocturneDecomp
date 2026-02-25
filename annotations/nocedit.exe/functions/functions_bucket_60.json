@@ -780,7 +780,7 @@
     "vars":{
       "params":[
         {
-          "name":"polygon_info",
+          "name":"prim",
           "storage":{
             "offset":4,
             "size":4,
@@ -824,7 +824,7 @@
     "vars":{
       "params":[
         {
-          "name":"polygon_info",
+          "name":"prim",
           "storage":{
             "offset":4,
             "size":4,
@@ -864,11 +864,11 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"engine_3d.c_renderPolygonTextureNearPlane_FUN_00404ee0",
-    "ret":"void*",
+    "ret":"SMRGLHeaderExtended*",
     "vars":{
       "params":[
         {
-          "name":"polygon_info",
+          "name":"prim",
           "storage":{
             "offset":4,
             "size":4,
@@ -912,7 +912,7 @@
     "vars":{
       "params":[
         {
-          "name":"polygon_info",
+          "name":"prim",
           "storage":{
             "offset":4,
             "size":4,
@@ -956,7 +956,7 @@
     "vars":{
       "params":[
         {
-          "name":"polygon_info",
+          "name":"prim",
           "storage":{
             "offset":4,
             "size":4,
@@ -1000,7 +1000,7 @@
     "vars":{
       "params":[
         {
-          "name":"polygon_info",
+          "name":"prim",
           "storage":{
             "offset":4,
             "size":4,
@@ -1044,7 +1044,7 @@
     "vars":{
       "params":[
         {
-          "name":"polygon_info",
+          "name":"prim",
           "storage":{
             "offset":4,
             "size":4,
@@ -1088,7 +1088,7 @@
     "vars":{
       "params":[
         {
-          "name":"polygon_info",
+          "name":"prim",
           "storage":{
             "offset":4,
             "size":4,
@@ -1176,7 +1176,7 @@
     "vars":{
       "params":[
         {
-          "name":"polygon_info",
+          "name":"prim",
           "storage":{
             "offset":4,
             "size":4,
@@ -13146,7 +13146,7 @@
           "type":"SBitBuffer*"
         },
         {
-          "name":"output_stream",
+          "name":"ostream",
           "storage":{
             "offset":8,
             "size":4,
@@ -13159,7 +13159,7 @@
               }
             ]
           },
-          "type":"_FILE*"
+          "type":"_ostream*"
         }
       ]
     }
@@ -13221,38 +13221,6 @@
               {
                 "addr":"Stack[0xc]",
                 "offset":12,
-                "size":4
-              }
-            ]
-          },
-          "type":"int"
-        },
-        {
-          "name":"normal_code_width",
-          "storage":{
-            "offset":16,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x10]",
-                "offset":16,
-                "size":4
-              }
-            ]
-          },
-          "type":"int"
-        },
-        {
-          "name":"fallback_code_width",
-          "storage":{
-            "offset":20,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x14]",
-                "offset":20,
                 "size":4
               }
             ]
@@ -13328,7 +13296,7 @@
           "type":"CLZWCompress*"
         },
         {
-          "name":"input_file",
+          "name":"istream",
           "storage":{
             "offset":8,
             "size":4,
@@ -13341,7 +13309,7 @@
               }
             ]
           },
-          "type":"_FILE*"
+          "type":"_istream*"
         },
         {
           "name":"byte_count",
@@ -13360,7 +13328,7 @@
           "type":"int"
         },
         {
-          "name":"output_file",
+          "name":"ostream",
           "storage":{
             "offset":16,
             "size":4,
@@ -13373,7 +13341,7 @@
               }
             ]
           },
-          "type":"_FILE*"
+          "type":"_ostream*"
         }
       ],
       "ret_storage":{
@@ -21833,7 +21801,7 @@
       ],
       "params":[
         {
-          "name":"config_ptr",
+          "name":"entry",
           "storage":{
             "offset":4,
             "size":4,
@@ -21846,7 +21814,7 @@
               }
             ]
           },
-          "type":"STextureLoadConfig*"
+          "type":"STextureAtlasEntry*"
         },
         {
           "name":"rgb_buffer",
@@ -21862,7 +21830,7 @@
               }
             ]
           },
-          "type":"void*"
+          "type":"uchar*"
         },
         {
           "name":"alpha_buffer",
@@ -21878,7 +21846,7 @@
               }
             ]
           },
-          "type":"void*"
+          "type":"uchar*"
         },
         {
           "name":"atlas_width",
@@ -21926,12 +21894,12 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_design.c_initializeCramConfig_FUN_0046b6e0",
+    "name":"shape_design.c_initializeCram_FUN_0046b6e0",
     "ret":"void",
     "vars":{
       "params":[
         {
-          "name":"cram_config",
+          "name":"cram",
           "storage":{
             "offset":4,
             "size":4,
@@ -21944,7 +21912,7 @@
               }
             ]
           },
-          "type":"SCramConfig*"
+          "type":"SCram*"
         }
       ]
     }
@@ -26430,7 +26398,7 @@
           "type":"CDemonRenderer*"
         },
         {
-          "name":"polygon_info",
+          "name":"prim",
           "storage":{
             "offset":8,
             "size":4,
@@ -27415,7 +27383,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_dtrace.cpp_CDemonRaytrace_testCapsuleCollision_FUN_00496c60",
+    "name":"core_dtrace.cpp_CDemonRaytrace_testCylinderCollision_FUN_00496c60",
     "ret":"void",
     "vars":{
       "locals":[
@@ -27534,7 +27502,7 @@
           "type":"CDemonRaytrace*"
         },
         {
-          "name":"capsule_data",
+          "name":"cylinder",
           "storage":{
             "offset":8,
             "size":4,
@@ -27547,7 +27515,7 @@
               }
             ]
           },
-          "type":"SCapsuleCollision*"
+          "type":"SIntersectXZCylinder*"
         }
       ]
     }
@@ -31922,7 +31890,7 @@
     "vars":{
       "params":[
         {
-          "name":"file_manager_ptr",
+          "name":"this_ptr",
           "storage":{
             "offset":4,
             "size":4,
@@ -47268,7 +47236,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"shape_multicrm.cpp_CMultiCram_setModelCount_FUN_0053ee60",
-    "ret":"int*",
+    "ret":"CMultiCram*",
     "vars":{
       "params":[
         {
@@ -52049,7 +52017,7 @@
               }
             ]
           },
-          "type":"undefined4"
+          "type":"CDemonSet*"
         }
       ],
       "params":[
@@ -52296,6 +52264,54 @@
             ]
           },
           "type":"CDemonSet*"
+        },
+        {
+          "name":"vertex_position",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"position_offset",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"vertex_index",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }
@@ -52309,10 +52325,10 @@
         "start":"0056e960"
       }
     ],
-    "conv":"__cdecl",
+    "conv":"__stack_esi",
     "importable":true,
     "name":"core_set.cpp_transformNormalFixedPoint_FUN_0056e960",
-    "ret":"void",
+    "ret":"CVector3i*",
     "vars":{
       "locals":[
         {
@@ -52411,7 +52427,50 @@
           },
           "type":"undefined4"
         }
-      ]
+      ],
+      "params":[
+        {
+          "name":"input",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3i*"
+        },
+        {
+          "name":"output",
+          "storage":{
+            "reg":"ESI",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000018",
+                "offset":24,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3i*"
+        }
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -52446,7 +52505,7 @@
           "type":"CDemonSet*"
         },
         {
-          "name":"param_2",
+          "name":"prims",
           "storage":{
             "offset":8,
             "size":4,
@@ -52459,7 +52518,7 @@
               }
             ]
           },
-          "type":"void*"
+          "type":"SMRGLHeaderPrimitive*"
         },
         {
           "name":"count",
@@ -52873,7 +52932,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_set.cpp_CDemonSet_setCameraAmbientValueById_FUN_00570e60",
+    "name":"core_set.cpp_CDemonSet_setCameraAmbientValueByGroup_FUN_00570e60",
     "ret":"void",
     "vars":{
       "params":[
@@ -52894,7 +52953,7 @@
           "type":"CDemonSet*"
         },
         {
-          "name":"id",
+          "name":"group_id",
           "storage":{
             "offset":8,
             "size":4,
@@ -53365,7 +53424,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setedit.cpp_CDemonSet_FUN_00578c60",
+    "name":"core_setedit.cpp_CDemonSet_importA3D_FUN_00578c60",
     "ret":"void",
     "vars":{
       "params":[
@@ -53384,6 +53443,22 @@
             ]
           },
           "type":"CDemonSet*"
+        },
+        {
+          "name":"file_handle",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"_FILE*"
         }
       ]
     }
@@ -53399,7 +53474,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setedit.cpp_CDemonSet_FUN_0057bbe0",
+    "name":"core_setedit.cpp_CDemonSet_showLightFilterEditor_FUN_0057bbe0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -53740,6 +53815,22 @@
             ]
           },
           "type":"CDemonSet*"
+        },
+        {
+          "name":"light_index",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }
@@ -53755,7 +53846,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setedit.cpp_CDemonSet_FUN_0057d660",
+    "name":"core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660",
     "ret":"int",
     "vars":{
       "locals":[
@@ -53904,6 +53995,22 @@
             ]
           },
           "type":"CDemonSet*"
+        },
+        {
+          "name":"camera_index",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ],
       "ret_storage":{
@@ -53929,7 +54036,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setedit.cpp_CDemonSet_FUN_00580560",
+    "name":"core_setedit.cpp_CDemonSet_clearCameraDepthData_FUN_00580560",
     "ret":"void",
     "vars":{
       "params":[

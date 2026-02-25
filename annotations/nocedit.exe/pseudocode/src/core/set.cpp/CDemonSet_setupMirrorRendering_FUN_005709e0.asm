@@ -22,9 +22,9 @@
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonCamera* g_CurrentSceneCamera
 ;   CDemonRenderer g_CDemonRendererInstance
-;   CVector3f g_SavedCameraOrigin
-;   undefined4 g_SavedCameraOrigin.y
-;   undefined4 g_SavedCameraOrigin.z
+;   UVector3 g_SavedCameraOrigin
+;   undefined4 g_SavedCameraOrigin+4
+;   undefined4 g_SavedCameraOrigin+8
 ;   CVector3f g_SavedCameraRotation
 ;   undefined4 g_SavedCameraRotation.y
 ;   undefined4 g_SavedCameraRotation.z
@@ -62,8 +62,8 @@ section .text
     FLD float ptr [EAX]                 ; 00570a06
     FLD float ptr [EAX + 0x8]           ; 00570a08
     MOV EDX,dword ptr [EAX + 0x4]       ; 00570a0b
-    MOV dword ptr [0x033469d4],EDX      ; 00570a0e | g_SavedCameraOrigin.y
-    FSTP float ptr [0x033469d8]         ; 00570a14 | g_SavedCameraOrigin.z
+    MOV dword ptr [0x033469d4],EDX      ; 00570a0e | g_SavedCameraOrigin+4
+    FSTP float ptr [0x033469d8]         ; 00570a14 | g_SavedCameraOrigin+8
     FSTP float ptr [0x033469d0]         ; 00570a1a | g_SavedCameraOrigin
     MOV EAX,ESP                         ; 00570a20
         ;   Label: LAB_00570a20

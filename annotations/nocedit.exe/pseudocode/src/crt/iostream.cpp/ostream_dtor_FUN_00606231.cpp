@@ -2,11 +2,11 @@
 // Address: 00606231
 // Address Range: [[00606231, 006062a5]]
 // Convention: __cdecl
-// Signature: ostream * __cdecl crt_iostream_cpp_ostream_dtor_FUN_00606231(ostream *this_ptr,uint flags)
+// Signature: _ostream * __cdecl crt_iostream_cpp_ostream_dtor_FUN_00606231(_ostream *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-ostream * __cdecl crt_iostream_cpp_ostream_dtor_FUN_00606231(ostream *this_ptr,uint flags)
+_ostream * __cdecl crt_iostream_cpp_ostream_dtor_FUN_00606231(_ostream *this_ptr,uint flags)
 
 {
   int iVar1;
@@ -22,7 +22,7 @@ ostream * __cdecl crt_iostream_cpp_ostream_dtor_FUN_00606231(ostream *this_ptr,u
          &g_OStream_IOSDestructor;
     if ((flags & 1) == 0) {
       piVar2 = crt_iostream_cpp_ios_dtor_FUN_0060632c(&this_ptr->_ios,1);
-      this_ptr = (ostream *)&piVar2[-1].__fill_character;
+      this_ptr = (_ostream *)&piVar2[-1].__fill_character;
     }
     if ((flags & 2) == 0) {
       return this_ptr;

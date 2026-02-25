@@ -20,10 +20,10 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0(
   int iVar7;
   int iVar8;
   int max_u;
-  SCramConfig *pSVar9;
+  SCram *pSVar9;
   char *pcVar10;
   float fStack_bc;
-  SCramConfig local_b8;
+  SCram local_b8;
   int iStack_40;
   SMRGLTextureLod *local_3c;
   int iStack_34;
@@ -83,7 +83,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0(
       local_24 = local_24 + 1;
     } while (local_24 < model_ptr->texture_count);
   }
-  shape_design_c_initializeCramConfig_FUN_0046b6e0(&local_b8);
+  shape_design_c_initializeCram_FUN_0046b6e0(&local_b8);
   pSVar9 = &local_b8;
   do {
     cVar1 = *atlas_filename;
@@ -92,16 +92,16 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0(
     cVar1 = atlas_filename[1];
     atlas_filename = atlas_filename + 2;
     pSVar9->filename[1] = cVar1;
-    pSVar9 = (SCramConfig *)(pSVar9->filename + 2);
+    pSVar9 = (SCram *)(pSVar9->filename + 2);
   } while (cVar1 != '\0');
-  local_b8.initial_value = pack_parameter;
-  local_b8.enable_optimization = 1;
+  local_b8.atlas_dimension = pack_parameter;
+  local_b8.min_atlas_size = 1;
   local_b8.coverage_threshold = 0x5f;
-  local_b8.algorithm_mode = 2;
-  local_b8.enable_gap_filling = quality_parameter;
-  local_b8.enable_scaling = 1;
-  local_b8.enable_rotation = 1;
-  local_b8.enable_flipping = 1;
+  local_b8.padding_size = 2;
+  local_b8.num_maps = quality_parameter;
+  local_b8.paint_borders = 1;
+  local_b8.fill_gaps = 1;
+  local_b8.enable_visualization = 1;
   shape_design_c_cramTextureList_FUN_0046bb80(&local_b8);
   iStack_2c = 0;
   if (0 < model_ptr->poly_count) {

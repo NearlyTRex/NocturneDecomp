@@ -336,7 +336,7 @@
       "line": 48,
       "match": "in_stack_00000008",
       "severity": "moderate",
-      "text": "*in_stack_00000008 = *(float *)this_ptr->unk3 - pCVar5->x;",
+      "text": "*in_stack_00000008 = (this_ptr->open_position).x - pCVar5->x;",
       "type": "stack_param"
     },
     {
@@ -384,7 +384,7 @@
       "line": 63,
       "match": "in_stack_00000008",
       "severity": "moderate",
-      "text": "*in_stack_00000008 = *(float *)this_ptr->unk3 + pCVar5->x;",
+      "text": "*in_stack_00000008 = (this_ptr->open_position).x + pCVar5->x;",
       "type": "stack_param"
     },
     {
@@ -424,7 +424,7 @@
       "line": 72,
       "match": "in_stack_00000008",
       "severity": "moderate",
-      "text": "if (in_stack_00000008 != (float *)this_ptr->unk3) {",
+      "text": "if ((CVector3f *)in_stack_00000008 != &this_ptr->open_position) {",
       "type": "stack_param"
     },
     {
@@ -432,7 +432,7 @@
       "line": 73,
       "match": "in_stack_00000008",
       "severity": "moderate",
-      "text": "*in_stack_00000008 = *(float *)this_ptr->unk3;",
+      "text": "*in_stack_00000008 = (this_ptr->open_position).x;",
       "type": "stack_param"
     },
     {
@@ -440,7 +440,7 @@
       "line": 74,
       "match": "in_stack_00000008",
       "severity": "moderate",
-      "text": "in_stack_00000008[1] = *(float *)(this_ptr->unk3 + 4);",
+      "text": "in_stack_00000008[1] = (this_ptr->open_position).y;",
       "type": "stack_param"
     },
     {
@@ -448,7 +448,7 @@
       "line": 75,
       "match": "in_stack_00000008",
       "severity": "moderate",
-      "text": "in_stack_00000008[2] = *(float *)(this_ptr->unk3 + 8);",
+      "text": "in_stack_00000008[2] = (this_ptr->open_position).z;",
       "type": "stack_param"
     },
     {

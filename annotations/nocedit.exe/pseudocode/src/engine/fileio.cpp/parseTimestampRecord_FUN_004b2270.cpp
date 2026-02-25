@@ -29,16 +29,16 @@ int __cdecl engine_fileio_cpp_parseTimestampRecord_FUN_004b2270(char *input_stri
   if (local_8 < 0) {
     return 0;
   }
-  *(byte *)&output_record->record_start = 0;
-  *(uint *)(output_record->unk1 + 0xfc) = local_24;
+  output_record->filename[0] = '\0';
+  output_record->record_number = local_24;
   output_record->year = local_18 + -0x76c;
   output_record->month = local_20 + -1;
-  output_record->time_3 = local_1c;
-  output_record->time_2 = local_14;
-  output_record->time_1 = local_10;
+  output_record->day = local_1c;
+  output_record->hour = local_14;
+  output_record->minute = local_10;
   pcVar2 = local_224;
-  pcVar3 = output_record->unk2 + 0xc;
-  output_record->chars_read = local_c;
+  pcVar3 = output_record->username;
+  output_record->second = local_c;
   do {
     cVar1 = *pcVar2;
     *pcVar3 = cVar1;

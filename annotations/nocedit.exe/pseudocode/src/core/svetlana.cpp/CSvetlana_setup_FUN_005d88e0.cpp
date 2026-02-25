@@ -77,10 +77,10 @@ void __cdecl core_svetlana_cpp_CSvetlana_setup_FUN_005d88e0(CSvetlana *this_ptr)
   this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr_00);
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"lblade01",1);
-  this_ptr->part_l_blade = iVar1;
+  this_ptr->part_indices[0] = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"rblade02",1);
   this_ptr->sfx_handle = 0;
-  this_ptr->part_r_blade = iVar1;
+  this_ptr->part_indices[1] = iVar1;
   return;
 }

@@ -1,0 +1,133 @@
+{
+  "complexity": {
+    "assembly_lines": 41,
+    "complexity_score": 60,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 15,
+    "suspect_count": 3,
+    "suspect_types": [
+      "pointer_cast",
+      "special_crt_function",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 56
+  },
+  "cross_references": [
+    {
+      "addr": "004e12b0",
+      "from_addr": "004e1591",
+      "name": "core_game.cpp_CGame_loadGame_FUN_004e12b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00481b50",
+      "from_addr": "00481c13",
+      "name": "engine_dosio.c_reopenFileStream_FUN_00481b50",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00600ee4",
+    "address_range": [
+      [
+        "00600ee4",
+        "00600f32"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_fstream.cpp_istream_seekg_FUN_00600ee4",
+    "signature": "_istream * __cdecl crt_fstream_cpp_istream_seekg_FUN_00600ee4(void *this_ptr,int offset)"
+  },
+  "function_calls": [
+    {
+      "addr": "00606020",
+      "is_variadic": false,
+      "name": "crt_stdio.c_reportStreamError_FUN_00606020"
+    },
+    {
+      "addr": "00608cd1",
+      "is_variadic": false,
+      "name": "crt_stdio.c_stream_valid_FUN_00608cd1"
+    }
+  ],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.0588235294117645,
+    "instruction_count": 34,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CALL": 2,
+      "CALLIND": 1,
+      "CBRANCH": 2,
+      "COPY": 27,
+      "INT_ADD": 16,
+      "INT_AND": 13,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 12,
+      "INT_LESS": 1,
+      "INT_MULT": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 6,
+      "INT_SUB": 13,
+      "LOAD": 13,
+      "POPCOUNT": 6,
+      "RETURN": 2,
+      "STORE": 12
+    },
+    "pcode_op_count": 138
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "offset",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 9,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "iVar1 = *(int *)((int)this_ptr + *(int *)(*(int *)this_ptr + 4) + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 10,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*(int *)(iVar1 + 0x28) + 0x18))(iVar1,offset,0,1);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "address": "00600ee4",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_fstream.cpp_istream_seekg_FUN_00600ee4",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 00600ee4",
+      "type": "special_crt_function"
+    }
+  ]
+}

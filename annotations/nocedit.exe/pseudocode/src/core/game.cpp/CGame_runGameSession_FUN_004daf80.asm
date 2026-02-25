@@ -208,17 +208,17 @@ section .text
     MOV dword ptr [0x02d7ec30],EDI      ; 004db1eb | g_CDemonLightInstance.base.max_distance
     CALL core_set.cpp_CDemonSet_initScene_FUN_0056aa10 ; 004db1f1
         ;   XREF to: 0056aa10 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_initScene_FUN_0056aa10(CDemonSet * this_ptr)
-    MOV EDX,dword ptr [0x02d82d80]      ; 004db1f6 | DAT_02d82d80
+    MOV EDX,dword ptr [0x02d82d80]      ; 004db1f6 | g_HasSavedLightState
     ADD ESP,0x4                         ; 004db1fc
     TEST EDX,EDX                        ; 004db1ff
     JZ 0x004db5a7                       ; 004db201
         ;   XREF to: 004db5a7 (CONDITIONAL_JUMP)  ; LAB_004db5a7
-    PUSH 0x2d82d84                      ; 004db207 | DAT_02d82d84
-    MOV dword ptr [0x02d82d80],ESI      ; 004db20c | DAT_02d82d80
+    PUSH 0x2d82d84                      ; 004db207 | g_MasterLightStateSaveBuffer
+    MOV dword ptr [0x02d82d80],ESI      ; 004db20c | g_HasSavedLightState
     MOV ESI,dword ptr [0x006810c8]      ; 004db212 | g_CDemonSetPtr
     PUSH ESI                            ; 004db218 | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_restoreLightState_FUN_00571130 ; 004db219
-        ;   XREF to: 00571130 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_restoreLightState_FUN_00571130(CDemonSet * this_ptr, void * param_2)
+    CALL core_set.cpp_CDemonSet_loadMasterLightStates_FUN_00571130 ; 004db219
+        ;   XREF to: 00571130 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_loadMasterLightStates_FUN_00571130(CDemonSet * this_ptr, int * light_state_buffer)
     ADD ESP,0x8                         ; 004db21e
     MOV EAX,dword ptr [EBP + 0x14]      ; 004db221
         ;   Label: LAB_004db221

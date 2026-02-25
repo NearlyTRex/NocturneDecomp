@@ -109,35 +109,35 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_005decf0(CTrash *this_ptr,float d
   pCVar4 = g_CDemonSetPtr;
   if (fVar6 <= 0.0) {
     pCVar8 = &(g_CDemonSetPtr->active_fog).scroll;
-    if (&this_ptr->fog_target != pCVar8) {
-      (this_ptr->fog_target).x = pCVar8->x;
-      (this_ptr->fog_target).y = (pCVar4->active_fog).scroll.y;
-      (this_ptr->fog_target).z = (pCVar4->active_fog).scroll.z;
+    if (&this_ptr->drift_target != pCVar8) {
+      (this_ptr->drift_target).x = pCVar8->x;
+      (this_ptr->drift_target).y = (pCVar4->active_fog).scroll.y;
+      (this_ptr->drift_target).z = (pCVar4->active_fog).scroll.z;
     }
     local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-10.0,10.0);
-    (this_ptr->fog_target).x = local_14 + (this_ptr->fog_target).x;
+    (this_ptr->drift_target).x = local_14 + (this_ptr->drift_target).x;
     local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(15.0,25.0);
-    (this_ptr->fog_target).y = local_14 + (this_ptr->fog_target).y;
+    (this_ptr->drift_target).y = local_14 + (this_ptr->drift_target).y;
     local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-10.0,10.0);
-    (this_ptr->fog_target).z = local_14 + (this_ptr->fog_target).z;
+    (this_ptr->drift_target).z = local_14 + (this_ptr->drift_target).z;
     fVar6 = core_actor_cpp_getRandomFloat_FUN_0040cc10(6.0,20.0);
     this_ptr->animation_timer = fVar6;
   }
-  pCVar8 = &this_ptr->fog_target;
+  pCVar8 = &this_ptr->drift_target;
   local_28 = (g_CDemonSetPtr->active_fog).scroll.x - pCVar8->x;
-  local_24 = (g_CDemonSetPtr->active_fog).scroll.y - (this_ptr->fog_target).y;
+  local_24 = (g_CDemonSetPtr->active_fog).scroll.y - (this_ptr->drift_target).y;
   local_ac = local_28 * 0.05f;
-  local_20 = (g_CDemonSetPtr->active_fog).scroll.z - (this_ptr->fog_target).z;
+  local_20 = (g_CDemonSetPtr->active_fog).scroll.z - (this_ptr->drift_target).z;
   local_a8 = local_24 * 0.05f;
   local_a4 = local_20 * 0.05f;
   pCVar7 = &this_ptr->drift;
   pCVar8->x = pCVar8->x + local_ac;
-  (this_ptr->fog_target).y = (this_ptr->fog_target).y + local_a8;
-  (this_ptr->fog_target).z = (this_ptr->fog_target).z + local_a4;
+  (this_ptr->drift_target).y = (this_ptr->drift_target).y + local_a8;
+  (this_ptr->drift_target).z = (this_ptr->drift_target).z + local_a4;
   local_94 = pCVar8->x - pCVar7->x;
-  local_90 = (this_ptr->fog_target).y - (this_ptr->drift).y;
+  local_90 = (this_ptr->drift_target).y - (this_ptr->drift).y;
   local_40 = local_94 * 0.07f;
-  local_8c = (this_ptr->fog_target).z - (this_ptr->drift).z;
+  local_8c = (this_ptr->drift_target).z - (this_ptr->drift).z;
   local_3c = local_90 * 0.07f;
   local_38 = local_8c * 0.07f;
   pCVar7->x = pCVar7->x + local_40;
@@ -146,7 +146,7 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_005decf0(CTrash *this_ptr,float d
   local_c4 = (this_ptr->base).location.position.x;
   local_c0 = (this_ptr->base).location.position.y;
   local_bc = (this_ptr->base).location.position.z;
-  local_14 = -this_ptr->rotation_y;
+  local_14 = -this_ptr->gravity;
   pCVar8 = &this_ptr->velocity;
   local_e8 = pCVar7->x - pCVar8->x;
   local_e4 = (this_ptr->drift).y - (this_ptr->velocity).y;
@@ -193,10 +193,11 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_005decf0(CTrash *this_ptr,float d
   local_34.x = (this_ptr->acceleration).x * delta_time;
   local_34.y = (this_ptr->acceleration).y * delta_time;
   local_34.z = delta_time * (this_ptr->acceleration).z;
-  local_14 = core_setcolid_cpp_CDemonSet_testCapsuleCollision_FUN_00573470
+  local_14 = core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_00573470
                        (g_CDemonSetPtr,(this_ptr->base).location.position.x,
                         (this_ptr->base).location.position.z,local_58,local_50,
-                        this_ptr->collision_radius,this_ptr->unk,this_ptr->field4_0x2e4);
+                        this_ptr->collision_radius,this_ptr->collision_bottom_y,
+                        this_ptr->collision_top_y);
   bVar3 = false;
   if ((0.0 <= local_14) && (local_14 < 1.0)) {
     local_58 = local_58 * local_14;

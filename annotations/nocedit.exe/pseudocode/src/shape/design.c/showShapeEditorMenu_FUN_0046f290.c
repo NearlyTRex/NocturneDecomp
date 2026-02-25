@@ -159,7 +159,7 @@ void __cdecl shape_design_c_showShapeEditorMenu_FUN_0046f290(void)
       shape_design_c_combineTextureMaps_FUN_00469ee0();
       break;
     case 0x51:
-      shape_design_c_tileTextureMaps_FUN_0046a180((char *)0x0,1);
+      shape_design_c_tileTextureMaps_FUN_0046a180((SCram *)0x0,1);
       break;
     case 0x52:
       shape_design_c_multicramTextures_FUN_0046eb80();

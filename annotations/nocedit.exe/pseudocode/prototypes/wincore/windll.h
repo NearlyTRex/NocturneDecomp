@@ -59,13 +59,13 @@ void __cdecl transformAndProjectPoint(SProjectedVertex *output,CVector3i *input)
 // Address: 005b5a25
 int __cdecl transformPoint(SProjectedVertex *output,CVector3i *input);
 
-// Original: wincore_windll.cpp_CExternalRenderer_setProcessingDataAndValidate_FUN_005b5cf0
+// Original: wincore_windll.cpp_CExternalRenderer_initValidate_FUN_005b5cf0
 // Address: 005b5cf0
-void __cdecl CExternalRenderer::setProcessingDataAndValidate(CExternalRenderer *this_ptr,char *data);
+void __cdecl CExternalRenderer::initValidate(CExternalRenderer *this_ptr,char *buffer_ptr);
 
-// Original: wincore_windll.cpp_CExternalRenderer_setProcessingData_FUN_005b5d10
+// Original: wincore_windll.cpp_CExternalRenderer_init_FUN_005b5d10
 // Address: 005b5d10
-void __cdecl CExternalRenderer::setProcessingData(CExternalRenderer *this_ptr,char *other);
+void __cdecl CExternalRenderer::init(CExternalRenderer *this_ptr,char *buffer_ptr);
 
 // Original: wincore_windll.cpp_shutdownExternalRenderer_FUN_005b5d20
 // Address: 005b5d20

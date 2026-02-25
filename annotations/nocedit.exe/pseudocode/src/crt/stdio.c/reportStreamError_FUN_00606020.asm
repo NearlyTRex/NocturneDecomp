@@ -10,16 +10,16 @@
 ; undefined1       Stack[-0x8]:1  local_8
 ;
 ; XREF[12]:
-;   crt_fstream.cpp_fstreambase_constructor_FUN_00606456 at 006064e7
+;   crt_fstream.cpp_fstreambase_ctor_FUN_00606456 at 006064e7
+;   crt_fstream.cpp_istream_seekg_FUN_00600ee4 at 00600f27
 ;   crt_fstream.cpp_openFile_FUN_00600e85 at 00600ec1
+;   crt_fstream.cpp_ostream_write_FUN_005ffcb3 at 005ffd2c
 ;   crt_iostream.cpp_ostream_put_FUN_005ff2d7 at 005ff33f
 ;   crt_stdio.c_clear_and_preserve_state_FUN_00600e64 at 00600e79
 ;   crt_stdio.c_fflush_FUN_00600e29 at 00600e4e
 ;   crt_stdio.c_fgetcInternal_FUN_00605fad at 0060600c
 ;   crt_stdio.c_fgetc_buffered_FUN_0060d510 at 0060d55f
 ;   crt_stdio.c_stream_flush_FUN_006060bb at 006060f2
-;   crt_stdio.c_stream_setup_FUN_00605f20 at 00605f71
-;   crt_stdio.c_stream_write_internal_FUN_005ffcb3 at 005ffd2c
 ;   ... and 2 more
 ;
 ; Called Functions:

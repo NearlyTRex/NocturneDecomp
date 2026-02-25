@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl crt_fstream_cpp_ofstream_destructor_thunk_from_ostream_FUN_005ff78e(ostream *this_ptr,int dtor_flags)
+; void __cdecl crt_fstream_cpp_ofstream_destructor_thunk_from_ostream_FUN_005ff78e(_ostream *this_ptr,int dtor_flags)
 ;
 ; Parameters:
-; ostream *        Stack[0x4]:4   this_ptr
+; _ostream *       Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   dtor_flags
 ;
 ; Called Functions:
@@ -21,7 +21,7 @@ section .text
     SUB EAX,0x44                        ; 005ff797
     PUSH EAX                            ; 005ff79a
     CALL crt_fstream.cpp_ofstream_dtor_FUN_005ff7bc ; 005ff79b
-        ;   XREF to: 005ff7bc (UNCONDITIONAL_CALL)  ; ofstream * crt_fstream.cpp_ofstream_dtor_FUN_005ff7bc(ofstream * this_ptr, uint flags)
+        ;   XREF to: 005ff7bc (UNCONDITIONAL_CALL)  ; ofstream * crt_fstream.cpp_ofstream_dtor_FUN_005ff7bc(void * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005ff7a0
     RET                                 ; 005ff7a3
 

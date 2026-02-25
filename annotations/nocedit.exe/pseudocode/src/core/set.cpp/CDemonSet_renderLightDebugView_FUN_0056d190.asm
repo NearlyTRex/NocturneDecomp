@@ -20,8 +20,8 @@
 ;   int[96] g_LightDebugScreenY
 ;   undefined4 DAT_00681260
 ;   undefined4 DAT_00681264
-;   int g_ActiveLightCount
-;   CDemonLight*[96] g_ActiveLightList
+;   int g_SpotLightCount
+;   CDemonLight*[96] g_SpotLightList
 ;   undefined4 DAT_03276f38
 ;   int g_DynamicLightCount
 ;   CDemonLight*[4] g_DynamicLights
@@ -43,7 +43,7 @@ section .text
     PUSH EDI                            ; 0056d192
     PUSH EBP                            ; 0056d193
     SUB ESP,0x100                       ; 0056d194
-    MOV EDX,dword ptr [0x03276f30]      ; 0056d19a | g_ActiveLightCount
+    MOV EDX,dword ptr [0x03276f30]      ; 0056d19a | g_SpotLightCount
     XOR ESI,ESI                         ; 0056d1a0
     TEST EDX,EDX                        ; 0056d1a2
     JLE 0x0056d1e0                      ; 0056d1a4
@@ -55,13 +55,13 @@ section .text
     PUSH ECX                            ; 0056d1b3
     MOV EDI,dword ptr [EBX + 0x6810dc]  ; 0056d1b4 | g_LightDebugScreenX | DAT_006810e0
     PUSH EDI                            ; 0056d1ba
-    MOV EBP,dword ptr [EBX + 0x3276f34] ; 0056d1bb | g_ActiveLightList | DAT_03276f38
+    MOV EBP,dword ptr [EBX + 0x3276f34] ; 0056d1bb | g_SpotLightList | DAT_03276f38
     PUSH EBP                            ; 0056d1c1
     ADD EBX,0x4                         ; 0056d1c2
     INC ESI                             ; 0056d1c5
     CALL core_dlight.cpp_CDemonLight_renderShadowMapDebugView_FUN_00473390 ; 0056d1c6
         ;   XREF to: 00473390 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_renderShadowMapDebugView_FUN_00473390(CDemonLight * this_ptr, int screen_x, int screen_y, int display_size)
-    MOV EAX,[0x03276f30]                ; 0056d1cb | g_ActiveLightCount
+    MOV EAX,[0x03276f30]                ; 0056d1cb | g_SpotLightCount
     ADD ESP,0x10                        ; 0056d1d0
     CMP ESI,EAX                         ; 0056d1d3
     JL 0x0056d1a8                       ; 0056d1d5
@@ -99,7 +99,7 @@ section .text
     MOV ESI,dword ptr [0x03277d80]      ; 0056d230 | g_OmniLightCount
         ;   Label: LAB_0056d230
     PUSH ESI                            ; 0056d236
-    MOV EBX,dword ptr [0x03276f30]      ; 0056d237 | g_ActiveLightCount
+    MOV EBX,dword ptr [0x03276f30]      ; 0056d237 | g_SpotLightCount
     PUSH 0x645dec                       ; 0056d23d | = "%d omni lights"
     LEA ESI,[ESP + 0x8]                 ; 0056d242
     MOV ECX,dword ptr [0x032776b4]      ; 0056d246 | g_DynamicLightCount
@@ -117,7 +117,7 @@ section .text
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0056d26c
         ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0056d271
-    MOV EAX,[0x03276f30]                ; 0056d274 | g_ActiveLightCount
+    MOV EAX,[0x03276f30]                ; 0056d274 | g_SpotLightCount
     PUSH EAX                            ; 0056d279
     PUSH 0x645dfb                       ; 0056d27a | = "%d spot lights"
     LEA ESI,[ESP + 0x8]                 ; 0056d27f

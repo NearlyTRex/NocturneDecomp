@@ -16,7 +16,7 @@
 ;   undefined4 g_CDemonLightInstance.base.base.position.y
 ;   undefined4 g_CDemonLightInstance.base.base.position.z
 ;   undefined4 DAT_02d7eb00
-;   undefined4 g_CDemonLightInstance.base.base.projection_scale
+;   undefined4 g_CDemonLightInstance.base.base.focal_length
 ;   undefined4 g_CDemonLightInstance.base.max_distance
 ;   undefined4 g_CDemonLightInstance.light_enabled_flag
 ;   undefined4 g_CDemonLightInstance.volumetric_enabled
@@ -95,7 +95,7 @@ section .text
     FLD float ptr [EBX + 0x580]         ; 00588019
     PUSH 0x2d7eaf0                      ; 0058801f | g_CDemonLightInstance
     FSTP float ptr [0x02d7ec30]         ; 00588024 | g_CDemonLightInstance.base.max_distance
-    MOV dword ptr [0x02d7eb28],EDI      ; 0058802a | g_CDemonLightInstance.base.base.projection_scale
+    MOV dword ptr [0x02d7eb28],EDI      ; 0058802a | g_CDemonLightInstance.base.base.focal_length
     CALL core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0 ; 00588030
         ;   XREF to: 004765e0 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0(CDemonLight * this_ptr, float intensity)
     ADD ESP,0x8                         ; 00588035

@@ -83,7 +83,7 @@ section .text
     MOV ECX,dword ptr [0x006810c8]      ; 005097a5 | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH ECX                            ; 005097ab | g_CDemonSetInstance
     CALL core_setcolid.cpp_CDemonSet_testOBBCylinderCollision_FUN_00573140 ; 005097ac
-        ;   XREF to: 00573140 (UNCONDITIONAL_CALL)  ; int core_setcolid.cpp_CDemonSet_testOBBCylinderCollision_FUN_00573140(CDemonSet * this_ptr, CBoundingBox3D * bounding_box, CMatrix3x3f * orientation_matrix, SIntersectXZCylinder * cylinder1, ...)
+        ;   XREF to: 00573140 (UNCONDITIONAL_CALL)  ; int core_setcolid.cpp_CDemonSet_testOBBCylinderCollision_FUN_00573140(CDemonSet * this_ptr, SIntersectXZCylinder * cylinder, CBoundingBox3D * bounding_box, CVector3f * position, ...)
     ADD ESP,0x14                        ; 005097b1
     ADD EBX,0x64                        ; 005097b4
     CMP EBX,ESI                         ; 005097b7

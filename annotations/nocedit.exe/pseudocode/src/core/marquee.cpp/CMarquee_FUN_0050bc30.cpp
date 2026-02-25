@@ -9,66 +9,47 @@
 void __cdecl core_marquee_cpp_CMarquee_FUN_0050bc30(CMarquee *this_ptr)
 
 {
-  char *this_ptr_00;
+  CCourse *this_ptr_00;
   int iVar1;
   CVector3f CStack_2c;
   CVector3f local_20;
   float local_14;
   int local_10;
   
-  this_ptr->unk2[4] = -0x66;
-  this_ptr->unk2[5] = '?';
-  this_ptr->unk2[6] = '\x1c';
-  this_ptr->unk2[7] = 'F';
-  this_ptr->unk2[8] = -0x66;
-  this_ptr->unk2[9] = '?';
-  this_ptr->unk2[10] = '\x1c';
-  this_ptr->unk2[0xb] = 'F';
-  this_ptr->unk2[0xc] = -0x66;
-  this_ptr->unk2[0xd] = '?';
-  this_ptr->unk2[0xe] = '\x1c';
-  this_ptr->unk2[0xf] = -0x3a;
-  this_ptr->unk2[0x10] = -0x66;
-  this_ptr->unk2[0x11] = '?';
-  this_ptr->unk2[0x12] = '\x1c';
-  this_ptr->unk2[0x13] = -0x3a;
-  this_ptr->unk2[0x14] = -0x66;
-  this_ptr->unk2[0x15] = '?';
-  this_ptr->unk2[0x16] = '\x1c';
-  this_ptr->unk2[0x17] = -0x3a;
-  this_ptr_00 = this_ptr->unk3;
-  this_ptr->unk2[0] = -0x66;
-  this_ptr->unk2[1] = '?';
-  this_ptr->unk2[2] = '\x1c';
-  this_ptr->unk2[3] = 'F';
+  (this_ptr->bounding_box).min.y = 9999.9;
+  (this_ptr->bounding_box).min.z = 9999.9;
+  (this_ptr->bounding_box).max.x = -9999.9;
+  (this_ptr->bounding_box).max.y = -9999.9;
+  (this_ptr->bounding_box).max.z = -9999.9;
+  this_ptr_00 = &this_ptr->course;
+  (this_ptr->bounding_box).min.x = 9999.9;
   iVar1 = 0;
-  if (*(int *)this_ptr_00 < 1) {
+  if (this_ptr_00->len < 1) {
     return;
   }
   do {
     local_14 = (float)iVar1;
     local_10 = iVar1;
-    core_course_cpp_CCourse_evaluate_FUN_00442710
-              ((CCourse *)this_ptr_00,local_14,&local_20,&CStack_2c);
-    if (local_20.x < *(float *)this_ptr->unk2) {
-      *(float *)this_ptr->unk2 = local_20.x;
+    core_course_cpp_CCourse_evaluate_FUN_00442710(this_ptr_00,local_14,&local_20,&CStack_2c);
+    if (local_20.x < (this_ptr->bounding_box).min.x) {
+      (this_ptr->bounding_box).min.x = local_20.x;
     }
-    if (*(float *)(this_ptr->unk2 + 0xc) < local_20.x) {
-      *(float *)(this_ptr->unk2 + 0xc) = local_20.x;
+    if ((this_ptr->bounding_box).max.x < local_20.x) {
+      (this_ptr->bounding_box).max.x = local_20.x;
     }
-    if (local_20.y < *(float *)(this_ptr->unk2 + 4)) {
-      *(float *)(this_ptr->unk2 + 4) = local_20.y;
+    if (local_20.y < (this_ptr->bounding_box).min.y) {
+      (this_ptr->bounding_box).min.y = local_20.y;
     }
-    if (*(float *)(this_ptr->unk2 + 0x10) < local_20.y) {
-      *(float *)(this_ptr->unk2 + 0x10) = local_20.y;
+    if ((this_ptr->bounding_box).max.y < local_20.y) {
+      (this_ptr->bounding_box).max.y = local_20.y;
     }
-    if (local_20.z < *(float *)(this_ptr->unk2 + 8)) {
-      *(float *)(this_ptr->unk2 + 8) = local_20.z;
+    if (local_20.z < (this_ptr->bounding_box).min.z) {
+      (this_ptr->bounding_box).min.z = local_20.z;
     }
-    if (*(float *)(this_ptr->unk2 + 0x14) < local_20.z) {
-      *(float *)(this_ptr->unk2 + 0x14) = local_20.z;
+    if ((this_ptr->bounding_box).max.z < local_20.z) {
+      (this_ptr->bounding_box).max.z = local_20.z;
     }
     iVar1 = iVar1 + 1;
-  } while (iVar1 < *(int *)this_ptr_00);
+  } while (iVar1 < this_ptr_00->len);
   return;
 }

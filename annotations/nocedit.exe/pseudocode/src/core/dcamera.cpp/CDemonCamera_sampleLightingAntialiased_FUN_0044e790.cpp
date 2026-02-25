@@ -128,9 +128,9 @@ int __cdecl core_dcamera_cpp_CDemonCamera_sampleLightingAntialiased_FUN_0044e790
     lVar2 = (longlong)
             (int)((uint)light_source->precomputed_lighting_textures
                         [((pCVar7->y >> ((byte)light_source->shadow_y_shift & 0x1f) &
-                          light_source->teture_coord_mask) <<
+                          light_source->texture_coord_mask) <<
                          ((byte)light_source->texture_row_shift & 0x1f)) +
-                         (light_source->teture_coord_mask &
+                         (light_source->texture_coord_mask &
                          pCVar7->x >> ((byte)light_source->shadow_x_shift & 0x1f))] << 10) *
             (longlong)intensity;
     uVar10 = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
@@ -144,10 +144,10 @@ int __cdecl core_dcamera_cpp_CDemonCamera_sampleLightingAntialiased_FUN_0044e790
               [iVar6 + (pCVar7->y >> 0x10) * light_source->shadow_map_width] + 0x90)) {
       lVar2 = (longlong)
               (int)((uint)light_source->precomputed_lighting_textures
-                          [(light_source->teture_coord_mask &
+                          [(light_source->texture_coord_mask &
                            pCVar7->x >> ((byte)light_source->shadow_x_shift & 0x1f)) +
                            ((pCVar7->y >> ((byte)light_source->shadow_y_shift & 0x1f) &
-                            light_source->teture_coord_mask) <<
+                            light_source->texture_coord_mask) <<
                            ((byte)light_source->texture_row_shift & 0x1f))] << 10) *
               (longlong)intensity;
       uVar10 = uVar10 + ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
@@ -164,9 +164,9 @@ int __cdecl core_dcamera_cpp_CDemonCamera_sampleLightingAntialiased_FUN_0044e790
       lVar2 = (longlong)
               (int)((uint)light_source->precomputed_lighting_textures
                           [((pCVar7->y >> ((byte)light_source->shadow_y_shift & 0x1f) &
-                            light_source->teture_coord_mask) <<
+                            light_source->texture_coord_mask) <<
                            ((byte)light_source->texture_row_shift & 0x1f)) +
-                           (light_source->teture_coord_mask &
+                           (light_source->texture_coord_mask &
                            pCVar7->x >> ((byte)light_source->shadow_x_shift & 0x1f))] << 10) *
               (longlong)intensity;
       uVar10 = uVar10 + ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
@@ -183,9 +183,9 @@ int __cdecl core_dcamera_cpp_CDemonCamera_sampleLightingAntialiased_FUN_0044e790
       lVar2 = (longlong)
               (int)((uint)light_source->precomputed_lighting_textures
                           [((pCVar7->y >> ((byte)light_source->shadow_y_shift & 0x1f) &
-                            light_source->teture_coord_mask) <<
+                            light_source->texture_coord_mask) <<
                            ((byte)light_source->texture_row_shift & 0x1f)) +
-                           (light_source->teture_coord_mask &
+                           (light_source->texture_coord_mask &
                            pCVar7->x >> ((byte)light_source->shadow_x_shift & 0x1f))] << 10) *
               (longlong)intensity;
       uVar10 = uVar10 + ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
@@ -200,10 +200,10 @@ int __cdecl core_dcamera_cpp_CDemonCamera_sampleLightingAntialiased_FUN_0044e790
               [(pCVar7->x >> 0x10) + (iVar6 >> 0x10) * light_source->shadow_map_width] + 0x90)) {
       lVar2 = (longlong)
               (int)((uint)light_source->precomputed_lighting_textures
-                          [(light_source->teture_coord_mask &
+                          [(light_source->texture_coord_mask &
                            pCVar7->x >> ((byte)light_source->shadow_x_shift & 0x1f)) +
                            ((pCVar7->y >> ((byte)light_source->shadow_y_shift & 0x1f) &
-                            light_source->teture_coord_mask) <<
+                            light_source->texture_coord_mask) <<
                            ((byte)light_source->texture_row_shift & 0x1f))] << 10) *
               (longlong)intensity;
       uVar10 = uVar10 + ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);

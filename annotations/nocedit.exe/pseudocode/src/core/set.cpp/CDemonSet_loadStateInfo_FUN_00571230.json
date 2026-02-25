@@ -1,0 +1,203 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 97,
+    "complexity_score": 34,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 12,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 34,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 131
+  },
+  "cross_references": [
+    {
+      "addr": "004e12b0",
+      "from_addr": "004e1b50",
+      "name": "core_game.cpp_CGame_loadGame_FUN_004e12b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00571230",
+    "address_range": [
+      [
+        "00571230",
+        "00571319"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_set.cpp_CDemonSet_loadStateInfo_FUN_00571230",
+    "signature": "void __cdecl core_set_cpp_CDemonSet_loadStateInfo_FUN_00571230(CDemonSet *this_ptr,_FILE *file_handle)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "is_variadic": true,
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "005fe7c0",
+      "is_variadic": true,
+      "name": "crt_stdio.c_fscanf_FUN_005fe7c0"
+    },
+    {
+      "addr": "0049e6f0",
+      "is_variadic": true,
+      "name": "shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006460bb",
+      "name": "s_anon_006460bb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006460c3",
+      "name": "s_d_006460c3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006460c7",
+      "name": "s_core_set_cpp_006460c7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006460d7",
+      "name": "s_Set_saveState_info_is_in_006460d7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00646100",
+      "name": "s_anon_00646100",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00646108",
+      "name": "s_d_00646108",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064610c",
+      "name": "s_The_set_has_changed_sinc_0064610c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00646172",
+      "name": "s_d_00646172",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00678a60",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "02cf1cd4"
+    },
+    {
+      "addr": "02cf1cd4",
+      "name": "g_CEditorToolsInstance",
+      "type": "CEditorTools",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.1066666666666665,
+    "instruction_count": 75,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "BRANCH": 2,
+      "CALL": 7,
+      "CBRANCH": 5,
+      "COPY": 55,
+      "INT_ADD": 24,
+      "INT_AND": 35,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 34,
+      "INT_LESS": 5,
+      "INT_NOTEQUAL": 3,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 10,
+      "INT_SLESS": 17,
+      "INT_SUB": 33,
+      "INT_XOR": 1,
+      "LOAD": 14,
+      "POPCOUNT": 17,
+      "RETURN": 1,
+      "STORE": 29
+    },
+    "pcode_op_count": 308
+  },
+  "stack_frame": {
+    "frame_size": 40,
+    "local_size": 32,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      },
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "_FILE *"
+      }
+    ]
+  },
+  "suspects": []
+}

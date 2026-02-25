@@ -31,19 +31,16 @@ void __cdecl core_drip_cpp_CDrip_process_FUN_0048e2a0(CDrip *this_ptr,float delt
   float fStack_18;
   float fStack_14;
   
-  if (*(int *)this_ptr->unk2 == 0) {
+  if (this_ptr->is_ground_cached == 0) {
     local_48.x = (this_ptr->home_pos).x;
     local_48.z = (this_ptr->home_pos).z;
     local_48.y = (this_ptr->home_pos).y + -5000.0f;
     core_dtrace_cpp_CDemonRaytrace_rayIntersection_FUN_00495aa0
               (&g_CDemonRaytraceInstance,&local_54,&this_ptr->home_pos,&local_48);
-    this_ptr->unk2[0] = '\x01';
-    this_ptr->unk2[1] = '\0';
-    this_ptr->unk2[2] = '\0';
-    this_ptr->unk2[3] = '\0';
-    *(float *)(this_ptr->unk2 + 4) = local_54.y;
+    this_ptr->is_ground_cached = 1;
+    this_ptr->ground_y = local_54.y;
   }
-  if ((*(uint *)this_ptr->unk1 & 0x7fffffff) == 0) {
+  if (ABS(this_ptr->drip_timer) == 0.0) {
     fVar3 = (this_ptr->vel).y - delta_time * (float)32;
     (this_ptr->vel).y = fVar3;
     pCVar1 = (this_ptr->base).vtable._ub;
@@ -51,14 +48,13 @@ void __cdecl core_drip_cpp_CDrip_process_FUN_0048e2a0(CDrip *this_ptr,float delt
     ;
     (*pCVar1->getBoundingBox)(&this_ptr->base,&local_78);
     if ((this_ptr->base).location.position.y <
-        *(float *)(this_ptr->unk2 + 4) - (local_78.max.y - local_78.min.y) * (float)0.84999999999999998)
-    {
-      if (this_ptr->unk3 != 0) {
+        this_ptr->ground_y - (local_78.max.y - local_78.min.y) * (float)0.84999999999999998) {
+      if (this_ptr->is_visible != 0) {
         core_set_cpp_CDemonSet_initCameraShake_FUN_00570fa0(g_CDemonSetPtr,100.0,0.0,0.0,1.0);
         (*((this_ptr->base).vtable._ub)->playSound)(&this_ptr->base,this_ptr->hit_sound);
       }
       iVar4 = this_ptr->no_rock_flag;
-      (this_ptr->base).location.position.y = *(float *)(this_ptr->unk2 + 4);
+      (this_ptr->base).location.position.y = this_ptr->ground_y;
       if (iVar4 == 0) {
         iVar4 = 0;
         do {
@@ -101,7 +97,7 @@ void __cdecl core_drip_cpp_CDrip_process_FUN_0048e2a0(CDrip *this_ptr,float delt
       (this_ptr->vel).x = (this_ptr->vel).y;
       fStack_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10
                             (this_ptr->min_auto_drip_time,this_ptr->max_auto_drip_time);
-      *(float *)this_ptr->unk1 = fStack_14;
+      this_ptr->drip_timer = fStack_14;
     }
     pCStack_20 = &(this_ptr->base).location;
     iVar5 = 0;
@@ -119,12 +115,8 @@ void __cdecl core_drip_cpp_CDrip_process_FUN_0048e2a0(CDrip *this_ptr,float delt
     }
   }
   else if ((this_ptr->auto_drop != 0) &&
-          (fVar3 = *(float *)this_ptr->unk1 - delta_time, *(float *)this_ptr->unk1 = fVar3,
-          fVar3 < 0.0)) {
-    this_ptr->unk1[0] = '\0';
-    this_ptr->unk1[1] = '\0';
-    this_ptr->unk1[2] = '\0';
-    this_ptr->unk1[3] = '\0';
+          (fVar3 = this_ptr->drip_timer - delta_time, this_ptr->drip_timer = fVar3, fVar3 < 0.0)) {
+    this_ptr->drip_timer = 0.0;
     return;
   }
   return;

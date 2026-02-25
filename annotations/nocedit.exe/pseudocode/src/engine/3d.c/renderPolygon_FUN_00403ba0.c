@@ -2,16 +2,16 @@
 // Address: 00403ba0
 // Address Range: [[00403ba0, 00403cb4]]
 // Convention: __cdecl
-// Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygon_FUN_00403ba0(SMRGLHeaderPrimitive *polygon_info)
+// Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygon_FUN_00403ba0(SMRGLHeaderPrimitive *prim)
 
 #include "nocturne.h"
 
-SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygon_FUN_00403ba0(SMRGLHeaderPrimitive *polygon_info)
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygon_FUN_00403ba0(SMRGLHeaderPrimitive *prim)
 
 {
   int iVar1;
   
-  iVar1 = engine_3d_c_isVisiblePlane_FUN_00403950(&polygon_info->surface_normal);
+  iVar1 = engine_3d_c_isVisiblePlane_FUN_00403950(&prim->surface_normal);
   if (iVar1 != 0) {
     if (g_AdvancedClippingEnabled == 0) {
       if (g_MMXSupported == 0) {
@@ -30,9 +30,8 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygon_FUN_00403ba0(SMRGLHeader
       }
       g_RenderStateFlags.dword = 0x204;
       g_RenderStateFlag2 = 0;
-      engine_clipper_c_clipPolygonToViewport_FUN_00438420
-                ((polygon_info->base).count,(int *)(polygon_info + 1));
-      return (SMRGLHeaderExtended *)(&polygon_info[1].base.type + (polygon_info->base).count);
+      engine_clipper_c_clipPolygonToViewport_FUN_00438420((prim->base).count,(int *)(prim + 1));
+      return (SMRGLHeaderExtended *)(&prim[1].base.type + (prim->base).count);
     }
     if (g_MMXSupported == 0) {
       if (g_BitsPerPixel == 0x20) {
@@ -50,8 +49,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygon_FUN_00403ba0(SMRGLHeader
     }
     g_RenderStateFlags.dword = 4;
     g_RenderStateFlag2 = 0;
-    engine_clipper_c_clipAndRasterize_FUN_004371b0
-              ((polygon_info->base).count,(int *)(polygon_info + 1));
+    engine_clipper_c_clipAndRasterize_FUN_004371b0((prim->base).count,(int *)(prim + 1));
   }
-  return (SMRGLHeaderExtended *)(&polygon_info[1].base.type + (polygon_info->base).count);
+  return (SMRGLHeaderExtended *)(&prim[1].base.type + (prim->base).count);
 }

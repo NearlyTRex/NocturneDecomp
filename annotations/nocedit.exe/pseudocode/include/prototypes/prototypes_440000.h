@@ -115,7 +115,7 @@ void __cdecl core_cow_cpp_CZombieCow_addFilesToExtract_FUN_00444ca0(CZombieCow *
 CZombieCow * __cdecl core_cow_cpp_CZombieCow_dtor_FUN_00444cd0(CZombieCow *this_ptr,uint flags);
 int __cdecl shape_cramtex_cpp_generateTextureAtlasLayout_FUN_00444d90(int texture_count,STextureAtlasEntry *texture_entries,int atlas_width, int atlas_height,int acceptable_coverage_threshold,int acceptable_size, int *output_atlas_width,int *output_atlas_height,int padding_size,int fill_gaps, int visualize,int max_iterations);
 int __cdecl shape_cramtex_cpp_qsortByLargestDimension_FUN_004457f0(CCramTex *entry_a,CCramTex *entry_b);
-void __cdecl shape_cramtex_cpp_generateTextureAtlas_FUN_00445820(void);
+void __cdecl shape_cramtex_cpp_generateTextureAtlas_FUN_00445820(int acceptable_coverage);
 int __cdecl shape_cramtex_cpp_CCramTex_addTextureEntry_FUN_00446100(CCramTex *this_ptr);
 int __cdecl shape_cramtex_cpp_qsortRectanglesByActiveFlag_FUN_00446140(SCramRectangle **rect_a,SCramRectangle **rect_b);
 int __cdecl shape_cramtex_cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160(CCramTex *this_ptr);

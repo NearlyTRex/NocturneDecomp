@@ -12,15 +12,15 @@
 ;
 ; XREF[33]:
 ;   core_msnedit.cpp_CDemonMission_saveWithNewName_FUN_00537f60 at 00537fa1
-;   core_setedit.cpp_CDemonSet_FUN_00578a20 at 00578acb
-;   core_setedit.cpp_CDemonSet_FUN_0057a0c0 at 0057a0e6
-;   core_setedit.cpp_CDemonSet_FUN_0057e7c0 at 0057ecbf
-;   core_setedit.cpp_CDemonSet_FUN_00580730 at 00580e77
+;   core_setedit.cpp_CDemonSet_exportLightsAndCameras_FUN_0057a0c0 at 0057a0e6
 ;   core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80 at 005796b0
+;   core_setedit.cpp_CDemonSet_importSet_FUN_00578a20 at 00578acb
+;   core_setedit.cpp_CDemonSet_showCameraEditor_FUN_0057e7c0 at 0057ecbf
 ;   core_setedit.cpp_CDemonSet_showEditorMenu_FUN_00584940 at 00584de3
+;   core_setedit.cpp_CDemonSet_showFogEditor_FUN_00580730 at 00580e77
 ;   core_setedit.cpp_CDemonSet_showLightEditor_FUN_0057c5d0 at 0057cced
-;   core_setedit.cpp_FUN_005781a0 at 005781be
-;   core_setedit.cpp_FUN_00578210 at 0057822e
+;   core_setedit.cpp_addGroundType_FUN_00578290 at 005782ae
+;   core_setedit.cpp_editGroundTypes_FUN_00578630 at 00578743
 ;   ... and 23 more
 ;
 ; Called Functions:

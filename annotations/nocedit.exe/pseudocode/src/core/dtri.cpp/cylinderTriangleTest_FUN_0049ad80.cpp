@@ -74,18 +74,18 @@ void __cdecl core_dtri_cpp_cylinderTriangleTest_FUN_0049ad80(CDemonTriangle *tri
   if (cylinder->sweep_slab_far < local_3c) {
     return;
   }
-  bVar5 = cylinder->bottom_y <= (triangle->vertex1).y;
-  if ((triangle->vertex1).y <= cylinder->top_y) {
+  bVar5 = cylinder->top_y <= (triangle->vertex1).y;
+  if ((triangle->vertex1).y <= cylinder->bottom_y) {
     bVar5 = bVar5 | 2;
   }
   local_38 = (uint)bVar5;
-  bVar6 = cylinder->bottom_y <= (triangle->vertex2).y;
-  if ((triangle->vertex2).y <= cylinder->top_y) {
+  bVar6 = cylinder->top_y <= (triangle->vertex2).y;
+  if ((triangle->vertex2).y <= cylinder->bottom_y) {
     bVar6 = bVar6 | 2;
   }
   local_30 = (uint)bVar6;
-  bVar7 = cylinder->bottom_y <= (triangle->vertex3).y;
-  if ((triangle->vertex3).y <= cylinder->top_y) {
+  bVar7 = cylinder->top_y <= (triangle->vertex3).y;
+  if ((triangle->vertex3).y <= cylinder->bottom_y) {
     bVar7 = bVar7 | 2;
   }
   local_34 = (uint)bVar7;
@@ -95,7 +95,7 @@ void __cdecl core_dtri_cpp_cylinderTriangleTest_FUN_0049ad80(CDemonTriangle *tri
   if (0.0 <= (triangle->normal).y) {
     bVar13 = ((bVar5 ^ bVar6) & 1) != 0;
     if (bVar13) {
-      fVar1 = (cylinder->bottom_y - (triangle->vertex1).y) /
+      fVar1 = (cylinder->top_y - (triangle->vertex1).y) /
               ((triangle->vertex2).y - (triangle->vertex1).y);
       local_7c[0] = ((triangle->vertex2).x - (triangle->vertex1).x) * fVar1 + (triangle->vertex1).x;
       local_58[0] = ((triangle->vertex2).z - (triangle->vertex1).z) * fVar1 + (triangle->vertex1).z;
@@ -103,7 +103,7 @@ void __cdecl core_dtri_cpp_cylinderTriangleTest_FUN_0049ad80(CDemonTriangle *tri
     uVar9 = (uint)bVar13;
     uVar8 = uVar9;
     if (((bVar6 ^ bVar7) & 1) != 0) {
-      fVar1 = (cylinder->bottom_y - (triangle->vertex2).y) /
+      fVar1 = (cylinder->top_y - (triangle->vertex2).y) /
               ((triangle->vertex3).y - (triangle->vertex2).y);
       local_7c[uVar9] =
            ((triangle->vertex3).x - (triangle->vertex2).x) * fVar1 + (triangle->vertex2).x;
@@ -113,7 +113,7 @@ void __cdecl core_dtri_cpp_cylinderTriangleTest_FUN_0049ad80(CDemonTriangle *tri
     }
     uVar9 = uVar8;
     if (((bVar7 ^ bVar5) & 1) != 0) {
-      fVar1 = (cylinder->bottom_y - (triangle->vertex3).y) /
+      fVar1 = (cylinder->top_y - (triangle->vertex3).y) /
               ((triangle->vertex1).y - (triangle->vertex3).y);
       local_7c[uVar8] =
            ((triangle->vertex1).x - (triangle->vertex3).x) * fVar1 + (triangle->vertex3).x;
@@ -133,7 +133,7 @@ void __cdecl core_dtri_cpp_cylinderTriangleTest_FUN_0049ad80(CDemonTriangle *tri
   if ((triangle->normal).y <= 0.0) {
     bVar13 = ((local_38 ^ local_30) & 2) != 0;
     if (bVar13) {
-      fVar1 = (cylinder->top_y - (triangle->vertex1).y) /
+      fVar1 = (cylinder->bottom_y - (triangle->vertex1).y) /
               ((triangle->vertex2).y - (triangle->vertex1).y);
       local_7c[3] = ((triangle->vertex2).x - (triangle->vertex1).x) * fVar1 + (triangle->vertex1).x;
       local_64[0] = ((triangle->vertex2).z - (triangle->vertex1).z) * fVar1 + (triangle->vertex1).z;
@@ -141,7 +141,7 @@ void __cdecl core_dtri_cpp_cylinderTriangleTest_FUN_0049ad80(CDemonTriangle *tri
     uVar9 = (uint)bVar13;
     uVar8 = uVar9;
     if (((local_30 ^ local_34) & 2) != 0) {
-      fVar1 = (cylinder->top_y - (triangle->vertex2).y) /
+      fVar1 = (cylinder->bottom_y - (triangle->vertex2).y) /
               ((triangle->vertex3).y - (triangle->vertex2).y);
       local_7c[uVar9 + 3] =
            ((triangle->vertex3).x - (triangle->vertex2).x) * fVar1 + (triangle->vertex2).x;
@@ -151,7 +151,7 @@ void __cdecl core_dtri_cpp_cylinderTriangleTest_FUN_0049ad80(CDemonTriangle *tri
     }
     uVar9 = uVar8;
     if (((local_34 ^ local_38) & 2) != 0) {
-      fVar1 = (cylinder->top_y - (triangle->vertex3).y) /
+      fVar1 = (cylinder->bottom_y - (triangle->vertex3).y) /
               ((triangle->vertex1).y - (triangle->vertex3).y);
       local_7c[uVar8 + 3] =
            ((triangle->vertex1).x - (triangle->vertex3).x) * fVar1 + (triangle->vertex3).x;

@@ -8,8 +8,8 @@
 ; _FILE *          Stack[0x8]:4   file_handle
 ;
 ; XREF[2]:
-;   core_setedit.cpp_CDemonSet_FUN_0057e7c0 at 0057f739
 ;   core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80 at 00579ced
+;   core_setedit.cpp_CDemonSet_showCameraEditor_FUN_0057e7c0 at 0057f739
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_d_f_f_f_f_f_f_0064999f

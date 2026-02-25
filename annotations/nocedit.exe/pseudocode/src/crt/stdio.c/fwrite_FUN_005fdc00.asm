@@ -19,7 +19,7 @@
 ;   core_dtri.cpp_CDemonTriangle_writeDataBinary_FUN_0049a5f0 at 0049a600
 ;   core_procedur.cpp_CProceduralTexture_createWaterFrames_FUN_005542b0 at 005544cd
 ;   core_setdir.cpp_CZThumb_write_FUN_00574b20 at 00574b37
-;   core_setedit.cpp_CDemonSet_FUN_00576da0 at 00577007
+;   core_setedit.cpp_CDemonSet_loadOrBuildThumbnails_FUN_00576da0 at 00577007
 ;   ... and 13 more
 ;
 ; Referenced Globals:

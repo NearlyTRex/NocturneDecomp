@@ -33,8 +33,8 @@ void __cdecl core_werewolf_cpp_CWerewolf_FUN_005f1e40(CWerewolf *this_ptr)
     local_50.z = 0.0;
     core_xform_cpp_transformVector3x4_FUN_005f4dc0
               (&local_5c,&local_50,
-               (this_ptr->base).base.model.bone_transform.bone_world_matrices + this_ptr->bone_head)
-    ;
+               (this_ptr->base).base.model.bone_transform.bone_world_matrices +
+               this_ptr->bone_indices[4]);
     core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
               ((CDemonActor *)this_ptr,&local_68,&(this_ptr->chain_anchor->location).position);
     if (local_68.y < (float)2) {

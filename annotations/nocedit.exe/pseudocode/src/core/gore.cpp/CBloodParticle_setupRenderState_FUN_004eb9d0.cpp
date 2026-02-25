@@ -12,15 +12,16 @@ void __cdecl core_gore_cpp_CBloodParticle_setupRenderState_FUN_004eb9d0(CBloodPa
 
 {
   int iVar1;
-  CMatrix3x3i *pCVar2;
-  int *piVar3;
-  int *piVar4;
+  CMatrix3x3f *pCVar2;
+  float *pfVar3;
+  float *pfVar4;
   byte bVar5;
   int aiStackY_1000 [997];
+  float afStack_68 [2];
   float local_60;
   float local_54;
   float local_48;
-  int local_40 [10];
+  float local_40 [10];
   CVector3i local_18;
   
   bVar5 = 0;
@@ -41,18 +42,18 @@ void __cdecl core_gore_cpp_CBloodParticle_setupRenderState_FUN_004eb9d0(CBloodPa
        *(int *)((int)&local_18 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
   INT_02d83394 = 0;
   pCVar2 = &(g_CurrentSceneCamera->base).rotation_matrix;
-  piVar3 = local_40;
+  pfVar3 = local_40;
   for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *piVar3 = pCVar2->m[0].x;
-    pCVar2 = (CMatrix3x3i *)((int)pCVar2 + (uint)bVar5 * -8 + 4);
-    piVar3 = piVar3 + (uint)bVar5 * -2 + 1;
+    *pfVar3 = pCVar2->m[0].x;
+    pCVar2 = (CMatrix3x3f *)((int)pCVar2 + (uint)bVar5 * -8 + 4);
+    pfVar3 = pfVar3 + (uint)bVar5 * -2 + 1;
   }
-  piVar3 = local_40;
-  piVar4 = (int *)&stack0xffffff98;
+  pfVar3 = local_40;
+  pfVar4 = afStack_68;
   for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *piVar4 = *piVar3;
-    piVar3 = piVar3 + (uint)bVar5 * -2 + 1;
-    piVar4 = piVar4 + (uint)bVar5 * -2 + 1;
+    *pfVar4 = *pfVar3;
+    pfVar3 = pfVar3 + (uint)bVar5 * -2 + 1;
+    pfVar4 = pfVar4 + (uint)bVar5 * -2 + 1;
   }
   INT_02d8339c = (int)ROUND(ROUND((double)local_60 * -65536));
   INT_02d833a0 = (int)ROUND(ROUND((double)local_54 * -65536));

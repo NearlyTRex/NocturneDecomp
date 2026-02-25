@@ -60,11 +60,11 @@
 ;   core_dcamera.cpp_sampleFogAlongRay_FUN_0044bdd0
 ;   core_dcamera.cpp_updateFogScrollOffset_FUN_0044bfb0
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   crt_fstream.cpp_ofstream_constructor_FUN_005ff710
+;   crt_fstream.cpp_ofstream_ctor_FUN_005ff710
 ;   crt_fstream.cpp_ofstream_dtor_FUN_005ff7bc
+;   crt_fstream.cpp_ostream_write_FUN_005ffcb3
 ;   crt_math.c_round_FUN_005fe6b0
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
-;   crt_stdio.c_stream_write_internal_FUN_005ffcb3
 ;   engine_dosio.c_getFile_FUN_00481a50
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;   support_codec.cpp_CCodec_dtor_FUN_0043e9b0
@@ -137,8 +137,8 @@ section .text
     PUSH 0x0                            ; 00452a74
     LEA EAX,[ESP + 0x110]               ; 00452a76
     PUSH EAX                            ; 00452a7d
-    CALL crt_fstream.cpp_ofstream_constructor_FUN_005ff710 ; 00452a7e
-        ;   XREF to: 005ff710 (UNCONDITIONAL_CALL)  ; void crt_fstream.cpp_ofstream_constructor_FUN_005ff710(ofstream * this_ptr, int ctor_flags, int fd, int mode, ...)
+    CALL crt_fstream.cpp_ofstream_ctor_FUN_005ff710 ; 00452a7e
+        ;   XREF to: 005ff710 (UNCONDITIONAL_CALL)  ; void crt_fstream.cpp_ofstream_ctor_FUN_005ff710(void * this_ptr, int ctor_flags, char * filename, int open_mode, ...)
     ADD ESP,0x14                        ; 00452a83
     CMP dword ptr [ESP + 0x160],0x0     ; 00452a86
     JZ 0x00452abb                       ; 00452a8e
@@ -158,8 +158,8 @@ section .text
     PUSH 0x1519384                      ; 00452ac0 | g_CameraFogGrid
     LEA EAX,[ESP + 0x14c]               ; 00452ac5
     PUSH EAX                            ; 00452acc
-    CALL crt_stdio.c_stream_write_internal_FUN_005ffcb3 ; 00452acd
-        ;   XREF to: 005ffcb3 (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_stream_write_internal_FUN_005ffcb3(_FILE * stream, void * buffer, SIZE_T count)
+    CALL crt_fstream.cpp_ostream_write_FUN_005ffcb3 ; 00452acd
+        ;   XREF to: 005ffcb3 (UNCONDITIONAL_CALL)  ; _ostream * crt_fstream.cpp_ostream_write_FUN_005ffcb3(_ostream * stream, void * buffer, SIZE_T count)
     MOV EDI,dword ptr [0x0151a3a0]      ; 00452ad2 | g_CameraFogGrid.density_multiplier
     ADD ESP,0xc                         ; 00452ad8
     TEST EDI,EDI                        ; 00452adb
@@ -172,8 +172,8 @@ section .text
     PUSH EAX                            ; 00452af8
     LEA EAX,[ESP + 0x14c]               ; 00452af9
     PUSH EAX                            ; 00452b00
-    CALL crt_stdio.c_stream_write_internal_FUN_005ffcb3 ; 00452b01
-        ;   XREF to: 005ffcb3 (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_stream_write_internal_FUN_005ffcb3(_FILE * stream, void * buffer, SIZE_T count)
+    CALL crt_fstream.cpp_ostream_write_FUN_005ffcb3 ; 00452b01
+        ;   XREF to: 005ffcb3 (UNCONDITIONAL_CALL)  ; _ostream * crt_fstream.cpp_ostream_write_FUN_005ffcb3(_ostream * stream, void * buffer, SIZE_T count)
     ADD ESP,0xc                         ; 00452b06
     MOV EAX,dword ptr [ESP + 0x278]     ; 00452b09
     FLD double ptr [0x0061a43a]         ; 00452b10 | g_BackdropColorMultiplier
@@ -196,7 +196,7 @@ section .text
     PUSH EAX                            ; 00452b4e
     FISTP dword ptr [ESP + 0x22c]       ; 00452b4f
     CALL support_codec.cpp_CLZWCompress_ctor_FUN_0043f2d0 ; 00452b56
-        ;   XREF to: 0043f2d0 (UNCONDITIONAL_CALL)  ; CLZWCompress * support_codec.cpp_CLZWCompress_ctor_FUN_0043f2d0(CLZWCompress * this_ptr)
+        ;   XREF to: 0043f2d0 (UNCONDITIONAL_CALL)  ; CLZWCompress * support_codec.cpp_CLZWCompress_ctor_FUN_0043f2d0(CLZWCompress * this_ptr, int buffer_size, int num_bits)
     ADD ESP,0xc                         ; 00452b5b
     LEA EAX,[ESP + 0x1e0]               ; 00452b5e
     PUSH EAX                            ; 00452b65
@@ -398,7 +398,7 @@ section .text
     PUSH EAX                            ; 00452e7e
     MOV dword ptr [ESP + 0x238],EBP     ; 00452e7f
     CALL support_codec.cpp_CCodec_processFromBuffer_FUN_0043eb30 ; 00452e86
-        ;   XREF to: 0043eb30 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_CCodec_processFromBuffer_FUN_0043eb30(CCodec * this_ptr, byte * input, int * input_length, byte * output, ...)
+        ;   XREF to: 0043eb30 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_CCodec_processFromBuffer_FUN_0043eb30(CCodec * this_ptr, char * input, int * input_length, char * output, ...)
     ADD ESP,0x10                        ; 00452e8b
     TEST EAX,EAX                        ; 00452e8e
     JZ 0x00452fb3                       ; 00452e90
@@ -441,7 +441,7 @@ section .text
     LEA EAX,[ESP + 0x1e4]               ; 00452f26
     PUSH EAX                            ; 00452f2d
     CALL support_codec.cpp_CLZWCompress_finalize_FUN_0043f440 ; 00452f2e
-        ;   XREF to: 0043f440 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_CLZWCompress_finalize_FUN_0043f440(CLZWCompress * this_ptr, _FILE * output_file)
+        ;   XREF to: 0043f440 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_CLZWCompress_finalize_FUN_0043f440(CLZWCompress * this_ptr, _ostream * ostream)
     ADD ESP,0x8                         ; 00452f33
     PUSH 0x0                            ; 00452f36
     LEA EAX,[ESP + 0x1e8]               ; 00452f38
@@ -460,7 +460,7 @@ section .text
         ;   Label: LAB_00452f5c
     PUSH EAX                            ; 00452f63
     CALL crt_fstream.cpp_ofstream_dtor_FUN_005ff7bc ; 00452f64
-        ;   XREF to: 005ff7bc (UNCONDITIONAL_CALL)  ; ofstream * crt_fstream.cpp_ofstream_dtor_FUN_005ff7bc(ofstream * this_ptr, uint flags)
+        ;   XREF to: 005ff7bc (UNCONDITIONAL_CALL)  ; ofstream * crt_fstream.cpp_ofstream_dtor_FUN_005ff7bc(void * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00452f69
     ADD ESP,0x264                       ; 00452f6c
     POP EBP                             ; 00452f72

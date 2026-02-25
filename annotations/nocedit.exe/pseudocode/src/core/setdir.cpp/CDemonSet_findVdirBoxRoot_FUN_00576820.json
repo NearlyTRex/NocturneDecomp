@@ -1,0 +1,108 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 33,
+    "complexity_score": 16,
+    "cross_reference_count": 3,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 16,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 49
+  },
+  "cross_references": [
+    {
+      "addr": "00576870",
+      "from_addr": "005768aa",
+      "name": "core_setdir.cpp_CDemonSet_FUN_00576870",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00576710",
+      "from_addr": "005767e0",
+      "name": "core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_00576710",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00576340",
+      "from_addr": "0057636a",
+      "name": "core_setdir.cpp_CDemonSet_isPointInVdirGroup_FUN_00576340",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00576820",
+    "address_range": [
+      [
+        "00576820",
+        "00576861"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_setdir.cpp_CDemonSet_findVdirBoxRoot_FUN_00576820",
+    "signature": "int __cdecl core_setdir_cpp_CDemonSet_findVdirBoxRoot_FUN_00576820(CDemonSet *this_ptr,int box_index)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.56,
+    "instruction_count": 25,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 10,
+      "BRANCH": 2,
+      "CBRANCH": 2,
+      "COPY": 21,
+      "INT_ADD": 12,
+      "INT_AND": 35,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 14,
+      "INT_LEFT": 4,
+      "INT_LESS": 1,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 6,
+      "INT_OR": 10,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 2,
+      "INT_SEXT": 3,
+      "INT_SLESS": 10,
+      "INT_SUB": 5,
+      "INT_XOR": 2,
+      "LOAD": 7,
+      "POPCOUNT": 6,
+      "RETURN": 1,
+      "STORE": 3,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 164
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      },
+      {
+        "is_param": true,
+        "name": "box_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

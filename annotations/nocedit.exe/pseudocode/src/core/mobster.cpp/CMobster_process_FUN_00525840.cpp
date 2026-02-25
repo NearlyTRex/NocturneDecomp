@@ -81,7 +81,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_00525840(CMobster *this_ptr,f
     }
     return;
   }
-  if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_head] == 0) {
+  if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[10]] == 0) {
     core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffe64);
     (*(((this_ptr->base).base.base.vtable._uc)->_uc).processDamage)
               ((CCharacter *)this_ptr,(SDamageInfo *)&stack0xfffffe64);
@@ -96,19 +96,19 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_00525840(CMobster *this_ptr,f
     in_stack_fffffe70 = (CMobster *)0x0;
     (*(((this_ptr->base).base.base.vtable._uc)->_uc).dropCarriedObject)
               ((CCharacter *)this_ptr,0,(CVector3f *)0x0);
-    sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handle_1);
+    sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handles[1]);
     iVar5 = (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)this_ptr);
     if (iVar5 == 0) {
-      in_stack_fffffe84 = (char *)this_ptr->sfx_handle_2;
+      in_stack_fffffe84 = (char *)this_ptr->sfx_handle;
       iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660((uint)in_stack_fffffe84);
       if (iVar5 == 0) {
-        in_stack_fffffe84 = (char *)this_ptr->unk1;
+        in_stack_fffffe84 = (char *)this_ptr->sfx_handles[0];
         iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660((uint)in_stack_fffffe84);
         if (iVar5 == 0) {
           in_stack_fffffe84 = "mob-scream?.wav";
           uVar6 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                             ((CDemonActor *)this_ptr,"mob-scream?.wav");
-          this_ptr->sfx_handle_2 = uVar6;
+          this_ptr->sfx_handle = uVar6;
         }
       }
     }
@@ -123,11 +123,11 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_00525840(CMobster *this_ptr,f
   if (fVar14 < 0.0) {
     this_ptr->taunt_timer = 0.0;
   }
-  if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_r4arm] == 0) {
+  if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[3]] == 0) {
     (*(((this_ptr->base).base.base.vtable._uc)->_uc).dropCarriedObject)
               ((CCharacter *)this_ptr,1,(CVector3f *)0x0);
   }
-  if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_l4arm] == 0) {
+  if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[1]] == 0) {
     (*(((this_ptr->base).base.base.vtable._uc)->_uc).dropCarriedObject)
               ((CCharacter *)this_ptr,0,(CVector3f *)0x0);
   }
@@ -502,7 +502,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_00525840(CMobster *this_ptr,f
       local_160.attacker = (CDemonActor *)this_ptr;
       local_160.wielder = (CDemonActor *)this_ptr;
       local_14 = local_160.damage_amount;
-      if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_l4arm] != 0) {
+      if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[1]] != 0) {
         pCVar11 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                             (&local_118,&g_ZeroVector,
                              (CMatrix3x4f *)
@@ -514,7 +514,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_00525840(CMobster *this_ptr,f
       }
       local_160.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
       local_14 = local_160.damage_amount;
-      if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_r4arm] != 0) {
+      if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[3]] != 0) {
         pCVar11 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                             (&local_94,&g_ZeroVector,
                              (CMatrix3x4f *)

@@ -45,7 +45,7 @@
 ;   shape_design.c_getAtlasMapIndex_FUN_0046e030
 ;   shape_design.c_getLastTextureProcessIndex_FUN_0046a860
 ;   shape_design.c_getTextureName_FUN_0046e060
-;   shape_design.c_initializeCramConfig_FUN_0046b6e0
+;   shape_design.c_initializeCram_FUN_0046b6e0
 ;   shape_design.c_initializeTextureManager_FUN_0046a880
 ;   shape_design.c_setTextureQualityParameter_FUN_0046a8e0
 ;
@@ -180,8 +180,8 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 0047a554
         ;   Label: LAB_0047a554
     PUSH EAX                            ; 0047a558
-    CALL shape_design.c_initializeCramConfig_FUN_0046b6e0 ; 0047a559
-        ;   XREF to: 0046b6e0 (UNCONDITIONAL_CALL)  ; void shape_design.c_initializeCramConfig_FUN_0046b6e0(SCramConfig * cram_config)
+    CALL shape_design.c_initializeCram_FUN_0046b6e0 ; 0047a559
+        ;   XREF to: 0046b6e0 (UNCONDITIONAL_CALL)  ; void shape_design.c_initializeCram_FUN_0046b6e0(SCram * cram)
     ADD ESP,0x4                         ; 0047a55e
     LEA EDI,[ESP + 0x8]                 ; 0047a561
     MOV ESI,dword ptr [EBP + 0x18]      ; 0047a565
@@ -217,7 +217,7 @@ section .text
     MOV dword ptr [ESP + 0x70],EDX      ; 0047a5b4
     MOV dword ptr [ESP + 0x74],EDX      ; 0047a5b8
     CALL shape_design.c_cramTextureList_FUN_0046bb80 ; 0047a5bc
-        ;   XREF to: 0046bb80 (UNCONDITIONAL_CALL)  ; int shape_design.c_cramTextureList_FUN_0046bb80(SCramConfig * cram_config)
+        ;   XREF to: 0046bb80 (UNCONDITIONAL_CALL)  ; int shape_design.c_cramTextureList_FUN_0046bb80(SCram * cram)
     ADD ESP,0x4                         ; 0047a5c1
     XOR EAX,EAX                         ; 0047a5c4
     MOV dword ptr [ESP + 0x90],EAX      ; 0047a5c6

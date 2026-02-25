@@ -7,15 +7,15 @@
 ; ios *            Stack[0x4]:4   this_ptr
 ;
 ; XREF[11]:
-;   crt_fstream.cpp_fstreambase_constructor_FUN_00606456 at 0060646e
+;   crt_fstream.cpp_fstreambase_ctor_FUN_00606456 at 0060646e
 ;   crt_fstream.cpp_fstreambase_ctor_FUN_0060658f at 006065eb
-;   crt_fstream.cpp_ifstream_constructor_FUN_005ff664 at 005ff6d5
+;   crt_fstream.cpp_ifstream_ctor_FUN_005ff664 at 005ff6d5
 ;   crt_fstream.cpp_ifstream_ctor_FUN_005ff8f0 at 005ff94f
-;   crt_fstream.cpp_ofstream_constructor_FUN_005ff710 at 005ff781
+;   crt_fstream.cpp_ofstream_ctor_FUN_005ff710 at 005ff781
 ;   crt_fstream.cpp_ofstream_ctor_FUN_005ff95c at 005ff9bb
 ;   crt_iostream.cpp_istream_ctor_FUN_00606376 at 006063bc
 ;   crt_iostream.cpp_ostream_ctor_FUN_006061a2 at 006061d7
-;   crt_strstream.cpp_istrstream_constructor_FUN_005ff524 at 005ff58f
+;   crt_strstream.cpp_istrstream_ctor_FUN_005ff524 at 005ff58f
 ;   crt_strstream.cpp_ostrstream_ctor_FUN_005ff384 at 005ff417
 ;   ... and 1 more
 ;

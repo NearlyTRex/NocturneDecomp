@@ -50,7 +50,7 @@ int __cdecl core_event_cpp_CEventList_executeCommand_FUN_004aacc0(CEventList *th
   char local_a4d [200];
   char local_985 [200];
   char local_8bd [201];
-  byte local_7f4 [199];
+  char local_7f4 [199];
   char local_72d [200];
   char local_665 [200];
   char local_59d [200];
@@ -228,7 +228,8 @@ LAB_004aad41:
       }
       pcVar16 = core_event_cpp_extractParenArg_FUN_004aa6c0((char **)&local_ec,local_fc4,200);
       if (pcVar16 != (char *)0x0) goto LAB_004aaf38;
-      core_set_cpp_CDemonSet_addLightFilter_FUN_00570f10(g_CDemonSetPtr);
+      core_set_cpp_CDemonSet_addLightFilter_FUN_00570f10
+                (g_CDemonSetPtr,local_fc4,&local_e8,&local_44);
       if (local_e8 == (C3DSLight *)0x0) {
         iVar2 = core_event_cpp_formatEventError_FUN_004aa2a0("SpotLight %s doesn't exist.");
         return iVar2;
@@ -1295,7 +1296,7 @@ LAB_004aaf38:
                                               return 0;
                                             }
                                             if (local_f0 != 0) {
-                                              core_set_cpp_CDemonSet_setCameraAmbientValueById_FUN_00570e60
+                                              core_set_cpp_CDemonSet_setCameraAmbientValueByGroup_FUN_00570e60
                                                         (g_CDemonSetPtr,local_64,
                                                          local_60 * (float)0.01);
                                             }
@@ -1324,7 +1325,8 @@ LAB_004aaf38:
                                               }
                                               local_ec = local_ec + local_58;
                                               core_set_cpp_CDemonSet_addLightFilter_FUN_00570f10
-                                                        (g_CDemonSetPtr);
+                                                        (g_CDemonSetPtr,local_7f4,&local_50,
+                                                         &local_4c);
                                               if (local_50 == (C3DSLight *)0x0) {
                                                 iVar2 = core_event_cpp_formatEventError_FUN_004aa2a0
                                                                   (
@@ -2140,7 +2142,7 @@ LAB_004aaf38:
                                                     setPositionAndOrientation)
                                                             (pCVar4,&local_11c,&local_134);
                                                   if (pCVar4 == g_CScriptPtr->focus_actor) {
-                                                    g_CScriptPtr->unk2 = 1;
+                                                    g_CScriptPtr->focus_actor_changed = 1;
                                                   }
                                                   }
                                                   }

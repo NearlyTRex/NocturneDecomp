@@ -2,11 +2,11 @@
 // Address: 00578d80
 // Address Range: [[00578d80, 0057a0b4]]
 // Convention: __cdecl
-// Signature: void __cdecl core_setedit_cpp_CDemonSet_importS3D_FUN_00578d80(CDemonSet *this_ptr)
+// Signature: void __cdecl core_setedit_cpp_CDemonSet_importS3D_FUN_00578d80(CDemonSet *this_ptr,_FILE *file_handle)
 
 #include "nocturne.h"
 
-void __cdecl core_setedit_cpp_CDemonSet_importS3D_FUN_00578d80(CDemonSet *this_ptr)
+void __cdecl core_setedit_cpp_CDemonSet_importS3D_FUN_00578d80(CDemonSet *this_ptr,_FILE *file_handle)
 
 {
   CEditorTools *this_ptr_00;
@@ -23,8 +23,8 @@ void __cdecl core_setedit_cpp_CDemonSet_importS3D_FUN_00578d80(CDemonSet *this_p
   C3DSLight *pCVar9;
   char *pcVar10;
   char *pcVar11;
-  uint *puVar12;
-  char (*pacVar13) [40];
+  char (*pacVar12) [40];
+  uint *puVar13;
   float *pfVar14;
   CDemonFilter **ppCVar15;
   C3DSLight *dest;
@@ -35,7 +35,6 @@ void __cdecl core_setedit_cpp_CDemonSet_importS3D_FUN_00578d80(CDemonSet *this_p
   int *piVar20;
   CDemonFilter **ppCVar21;
   byte bVar22;
-  _FILE *in_stack_00000008;
   int aiStackY_3a30 [1378];
   C3DSLight local_2478;
   CPickList local_be0;
@@ -85,10 +84,16 @@ void __cdecl core_setedit_cpp_CDemonSet_importS3D_FUN_00578d80(CDemonSet *this_p
   
   bVar22 = 0;
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
-  local_78 = core_setedit_cpp_FUN_00578c90();
-  if ((((local_78 < 0) || (iVar1 = core_setedit_cpp_FUN_00578c90(), iVar1 < 0)) ||
-      (local_74 = iVar1, iVar2 = core_setedit_cpp_FUN_00578c90(), iVar2 < 0)) ||
-     (local_70 = iVar2, local_6c = core_setedit_cpp_FUN_00578c90(), local_6c < 0)) {
+  local_78 = core_setedit_cpp_promptYesNo_FUN_00578c90(0,"Import geometry",1);
+  if ((((local_78 < 0) ||
+       (iVar1 = core_setedit_cpp_promptYesNo_FUN_00578c90(0xb,"Import omni lights",1),
+       iVar1 < 0)) ||
+      (local_74 = iVar1,
+      iVar2 = core_setedit_cpp_promptYesNo_FUN_00578c90(0x16,"Import spot lights",1),
+      iVar2 < 0)) ||
+     (local_70 = iVar2,
+     local_6c = core_setedit_cpp_promptYesNo_FUN_00578c90(0x21,"Import cameras",1),
+     local_6c < 0)) {
     return;
   }
   if ((iVar1 == 0) && (iVar2 == 0)) {
@@ -119,21 +124,21 @@ void __cdecl core_setedit_cpp_CDemonSet_importS3D_FUN_00578d80(CDemonSet *this_p
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Reading S3D header, parts, and materials");
   do {
-    iVar1 = _fgetc(in_stack_00000008);
+    iVar1 = _fgetc(file_handle);
     if (iVar1 < 0) break;
   } while (iVar1 != 10);
-  _fscanf(in_stack_00000008,"%d\n",&local_5c);
+  _fscanf(file_handle,"%d\n",&local_5c);
   if (local_5c != 0x67) {
     g_CurrentFilename = "..\\core\\setedit.cpp";
     g_CurrentLineNumber = 0x490;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't import S3D file version %d, I can only do version %d.",local_5c,0x67);
   }
   do {
-    iVar1 = _fgetc(in_stack_00000008);
+    iVar1 = _fgetc(file_handle);
     if (iVar1 < 0) break;
   } while (iVar1 != 10);
-  _fscanf(in_stack_00000008,"%d,%d,%d,%d,%d,%d,%d\n",&local_58,&local_54,&local_50,&local_48,
-             &local_4c,&local_44,&local_40);
+  _fscanf(file_handle,"%d,%d,%d,%d,%d,%d,%d\n",&local_58,&local_54,&local_50,&local_48,&local_4c,
+             &local_44,&local_40);
   if (local_4c != 1) {
     g_CurrentFilename = "..\\core\\setedit.cpp";
     g_CurrentLineNumber = 0x49a;
@@ -147,14 +152,14 @@ void __cdecl core_setedit_cpp_CDemonSet_importS3D_FUN_00578d80(CDemonSet *this_p
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Skipping part list");
   do {
-    iVar1 = _fgetc(in_stack_00000008);
+    iVar1 = _fgetc(file_handle);
     if (iVar1 < 0) break;
   } while (iVar1 != 10);
   iVar1 = 0;
   if (0 < local_48) {
 LAB_00578fc0:
     do {
-      iVar2 = _fgetc(in_stack_00000008);
+      iVar2 = _fgetc(file_handle);
       if (-1 < iVar2) {
         if (iVar2 != 10) goto LAB_00578fc0;
       }
@@ -162,18 +167,18 @@ LAB_00578fc0:
     } while (iVar1 < local_48);
   }
   do {
-    iVar1 = _fgetc(in_stack_00000008);
+    iVar1 = _fgetc(file_handle);
     if (iVar1 < 0) break;
   } while (iVar1 != 10);
   if (local_78 != 0) {
-    local_34 = _ftell(in_stack_00000008);
+    local_34 = _ftell(file_handle);
     local_28 = this_ptr->geometry_filename;
     do {
-      DAT_03654368 = 0;
+      g_GroundTextureCount = 0;
       engine_dosio_c_ensureTrailingSlash_FUN_00481f80(".\\GroundTypes",local_14,local_1a0);
       engine_dosio_c_splitPath_FUN_00481f20(local_28,(char *)0x0,(char *)0x0,local_3a0,(char *)0x0);
       engine_dosio_c_makePath_FUN_00481f50(local_6a8,local_14,local_1a0,local_3a0,".txt");
-      core_setedit_cpp_FUN_00578420();
+      core_setedit_cpp_loadGroundTypes_FUN_00578420(local_6a8);
       shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                 (g_CEditorToolsPtr,"Reading textures");
       if (1000 < local_58) {
@@ -187,7 +192,7 @@ LAB_00578fc0:
       if (0 < local_58) {
         iVar2 = 0;
         do {
-          _fgets(local_5a4,0x104,in_stack_00000008);
+          _fgets(local_5a4,0x104,file_handle);
           pcVar11 = local_5a4;
           do {
             pcVar10 = pcVar11;
@@ -216,20 +221,20 @@ LAB_005797bd:
           iVar8 = 0;
           engine_dosio_c_splitPath_FUN_00481f20
                     (local_5a4,(char *)0x0,(char *)0x0,local_4a0,(char *)0x0);
-          if (0 < DAT_03654368) {
-            pcVar11 = &DAT_03654370;
+          if (0 < g_GroundTextureCount) {
+            pacVar12 = g_GroundTextureNames;
             do {
-              iVar3 = stricmp(pcVar11,local_4a0);
+              iVar3 = stricmp(*pacVar12,local_4a0);
               if (iVar3 == 0) {
                 if (-1 < iVar8) {
-                  uVar4 = (uint)(byte)(&DAT_03659190)[iVar8];
+                  uVar4 = (uint)(byte)g_GroundTextureTypes[iVar8];
                   goto LAB_0057981a;
                 }
                 break;
               }
               iVar8 = iVar8 + 1;
-              pcVar11 = pcVar11 + 0x28;
-            } while (iVar8 < DAT_03654368);
+              pacVar12 = pacVar12 + 1;
+            } while (iVar8 < g_GroundTextureCount);
           }
           uVar4 = 0xffffffff;
 LAB_0057981a:
@@ -253,7 +258,7 @@ LAB_0057981a:
               shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\setedit.cpp",0x4eb);
             }
             *(uint *)((int)&DAT_03364d18 + iVar2) = 0;
-            core_setedit_cpp_FUN_00578290();
+            core_setedit_cpp_addGroundType_FUN_00578290(local_5a4,0);
             local_30 = 1;
           }
           else if (uVar4 == 0) {
@@ -278,14 +283,13 @@ LAB_0057981a:
       iVar1 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                         (&local_be0,local_838,-1,0);
       if (iVar1 < 0) {
-        shape_memdbg_cpp_closeFile_FUN_0050f9b0(in_stack_00000008,"..\\core\\setedit.cpp",0x516)
-        ;
+        shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\core\\setedit.cpp",0x516);
         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_be0,0);
         return;
       }
       if (iVar1 != 0) goto LAB_00579a7e;
-      core_setedit_cpp_FUN_00578630();
-      _fseek(in_stack_00000008,local_34,0);
+      core_setedit_cpp_editGroundTypes_FUN_00578630(local_6a8);
+      _fseek(file_handle,local_34,0);
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_be0,0);
     } while( true );
   }
@@ -295,7 +299,7 @@ LAB_0057981a:
   if (0 < local_58) {
 LAB_0057902d:
     do {
-      iVar2 = _fgetc(in_stack_00000008);
+      iVar2 = _fgetc(file_handle);
       if (-1 < iVar2) {
         if (iVar2 != 10) goto LAB_0057902d;
       }
@@ -306,15 +310,15 @@ LAB_0057904b:
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Skipping polygons");
   do {
-    iVar1 = _fgetc(in_stack_00000008);
+    iVar1 = _fgetc(file_handle);
     if (iVar1 < 0) break;
   } while (iVar1 != 10);
-  local_3c = _ftell(in_stack_00000008);
+  local_3c = _ftell(file_handle);
   iVar1 = 0;
   if (0 < local_54) {
 LAB_005790a3:
     do {
-      iVar2 = _fgetc(in_stack_00000008);
+      iVar2 = _fgetc(file_handle);
       if (-1 < iVar2) {
         if (iVar2 != 10) goto LAB_005790a3;
       }
@@ -326,14 +330,14 @@ LAB_005790a3:
     shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
               (g_CEditorToolsPtr,"Locating lights");
     do {
-      iVar1 = _fgetc(in_stack_00000008);
+      iVar1 = _fgetc(file_handle);
       if (iVar1 < 0) break;
     } while (iVar1 != 10);
     iVar1 = 0;
     if (0 < local_50) {
 LAB_0057911a:
       do {
-        iVar2 = _fgetc(in_stack_00000008);
+        iVar2 = _fgetc(file_handle);
         if (-1 < iVar2) {
           if (iVar2 != 10) goto LAB_0057911a;
         }
@@ -361,7 +365,7 @@ LAB_0057911a:
       core_main_c_displayErrorAndQuit_FUN_00506f10("Can't allocate memory for %d vertices",local_50);
     }
     do {
-      iVar1 = _fgetc(in_stack_00000008);
+      iVar1 = _fgetc(file_handle);
       if (iVar1 < 0) break;
     } while (iVar1 != 10);
     iVar1 = 0;
@@ -369,7 +373,7 @@ LAB_0057911a:
       piVar5 = local_38 + 2;
       piVar20 = local_38 + 1;
       do {
-        iVar2 = _fscanf(in_stack_00000008,"%f,%f,%f\n",local_38 + iVar1 * 3,piVar20,piVar5);
+        iVar2 = _fscanf(file_handle,"%f,%f,%f\n",local_38 + iVar1 * 3,piVar20,piVar5);
         if (iVar2 != 3) {
           g_CurrentFilename = "..\\core\\setedit.cpp";
           g_CurrentLineNumber = 0x54f;
@@ -384,14 +388,14 @@ LAB_0057911a:
   }
   if (local_68 == 0) {
     do {
-      iVar1 = _fgetc(in_stack_00000008);
+      iVar1 = _fgetc(file_handle);
       if (iVar1 < 0) break;
     } while (iVar1 != 10);
     iVar1 = 0;
     if (0 < local_44) {
 LAB_00579173:
       do {
-        iVar2 = _fgetc(in_stack_00000008);
+        iVar2 = _fgetc(file_handle);
         if (-1 < iVar2) {
           if (iVar2 != 10) goto LAB_00579173;
         }
@@ -432,7 +436,7 @@ LAB_00579173:
     shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
               (g_CEditorToolsPtr,"Reading lights");
     do {
-      iVar1 = _fgetc(in_stack_00000008);
+      iVar1 = _fgetc(file_handle);
       if (iVar1 < 0) break;
     } while (iVar1 != 10);
     local_7c = 0;
@@ -440,7 +444,7 @@ LAB_00579173:
       local_1c = this_ptr->lights;
       do {
         core_setutil_cpp_C3DSLight_ctor_FUN_005862f0(&local_2478);
-        core_setutil_cpp_C3DSLight_importS3D_FUN_00587710(&local_2478,in_stack_00000008);
+        core_setutil_cpp_C3DSLight_importS3D_FUN_00587710(&local_2478,file_handle);
         iVar1 = local_70;
         if ((local_2478.light_type == 0) || (iVar1 = local_74, local_2478.light_type == 1)) {
           local_20 = iVar1;
@@ -490,11 +494,11 @@ LAB_00579173:
           puVar16 = (uint *)((int)pCVar9 + (uint)bVar22 * -8 + 0x228);
           pCVar9->camera_light_bounds[0].left = local_2478.camera_light_bounds[0].left;
           puVar17 = puVar16 + (uint)bVar22 * -2 + 1;
-          puVar12 = (uint *)((int)&local_2478 + (uint)bVar22 * -8 + (uint)bVar22 * -8 + 0x22c)
+          puVar13 = (uint *)((int)&local_2478 + (uint)bVar22 * -8 + (uint)bVar22 * -8 + 0x22c)
           ;
           *puVar16 = *(uint *)((int)&local_2478 + (uint)bVar22 * -8 + 0x228);
-          *puVar17 = *puVar12;
-          puVar17[(uint)bVar22 * -2 + 1] = puVar12[(uint)bVar22 * -2 + 1];
+          *puVar17 = *puVar13;
+          puVar17[(uint)bVar22 * -2 + 1] = puVar13[(uint)bVar22 * -2 + 1];
           (pCVar9->color).r = local_2478.color.r;
           (pCVar9->color).g = local_2478.color.g;
           (pCVar9->color).b = local_2478.color.b;
@@ -507,11 +511,11 @@ LAB_00579173:
           pCVar9->cycle_elapsed = local_2478.cycle_elapsed;
           pCVar9->filter_count = local_2478.filter_count;
           pCVar9->blend_filter = local_2478.blend_filter;
-          pacVar13 = local_2478.filter_names;
+          pacVar12 = local_2478.filter_names;
           pacVar18 = pCVar9->filter_names;
           for (iVar1 = 0x140; iVar1 != 0; iVar1 = iVar1 + -1) {
-            *(uint *)*pacVar18 = *(uint *)*pacVar13;
-            pacVar13 = (char (*) [40])((int)pacVar13 + ((uint)bVar22 * -2 + 1) * 4);
+            *(uint *)*pacVar18 = *(uint *)*pacVar12;
+            pacVar12 = (char (*) [40])((int)pacVar12 + ((uint)bVar22 * -2 + 1) * 4);
             pacVar18 = (char (*) [40])((int)pacVar18 + (uint)bVar22 * -8 + 4);
           }
           pfVar14 = local_2478.filter_durations;
@@ -552,14 +556,14 @@ LAB_00579173:
   }
   if (local_6c == 0) {
     do {
-      iVar1 = _fgetc(in_stack_00000008);
+      iVar1 = _fgetc(file_handle);
       if (iVar1 < 0) break;
     } while (iVar1 != 10);
     iVar1 = 0;
     if (0 < local_40) {
 LAB_0057a07e:
       do {
-        iVar2 = _fgetc(in_stack_00000008);
+        iVar2 = _fgetc(file_handle);
         if (-1 < iVar2) {
           if (iVar2 != 10) goto LAB_0057a07e;
         }
@@ -571,14 +575,14 @@ LAB_0057a07e:
     shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
               (g_CEditorToolsPtr,"Reading cameras");
     do {
-      iVar1 = _fgetc(in_stack_00000008);
+      iVar1 = _fgetc(file_handle);
       if (iVar1 < 0) break;
     } while (iVar1 != 10);
     iVar1 = 0;
     if (0 < local_40) {
       pCVar6 = this_ptr->cameras;
       do {
-        core_setutil_cpp_C3DSCamera_importS3D_FUN_00585ff0(pCVar6,in_stack_00000008);
+        core_setutil_cpp_C3DSCamera_importS3D_FUN_00585ff0(pCVar6,file_handle);
         iVar1 = iVar1 + 1;
         pCVar6 = pCVar6 + 1;
       } while (iVar1 < local_40);
@@ -588,13 +592,12 @@ LAB_0057a07e:
   if (local_78 != 0) {
     shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
               (g_CEditorToolsPtr,"Reading polygons");
-    _fseek(in_stack_00000008,local_3c,0);
+    _fseek(file_handle,local_3c,0);
     iVar1 = 0;
     if (0 < local_54) {
       do {
-        iVar2 = _fscanf(in_stack_00000008,"%d, %d,%f,%f, %d,%f,%f, %d,%f,%f\n",&local_18,&local_88,
-                           local_94,local_a0,&local_84,local_90,local_9c,&local_80,local_8c,local_98
-                          );
+        iVar2 = _fscanf(file_handle,"%d, %d,%f,%f, %d,%f,%f, %d,%f,%f\n",&local_18,&local_88,local_94,
+                           local_a0,&local_84,local_90,local_9c,&local_80,local_8c,local_98);
         if (iVar2 != 10) {
           g_CurrentFilename = "..\\core\\setedit.cpp";
           g_CurrentLineNumber = 0x5ed;
@@ -656,7 +659,7 @@ LAB_0057a07e:
     }
   }
   if (local_60 != 0) {
-    core_setedit_cpp_CDemonSet_FUN_005805a0(this_ptr);
+    core_setedit_cpp_CDemonSet_rebuildAllFogAndPVS_FUN_005805a0(this_ptr);
   }
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"CDemonSet::importS3D completed OK");

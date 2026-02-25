@@ -50,16 +50,10 @@
         "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 19,
+        "category": "other",
+        "column": 46,
         "line": 162,
-        "message": "use of undeclared identifier 'DAT_02d82570'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 58,
-        "line": 163,
-        "message": "use of undeclared identifier 'DAT_02d82570'"
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
@@ -114,6 +108,12 @@
         "column": 20,
         "line": 269,
         "message": "format specifies type 'double' but the argument has type 'int' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 52,
+        "line": 269,
+        "message": "format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]"
       }
     ],
     "success": false,
@@ -121,13 +121,13 @@
   },
   "complexity": {
     "assembly_lines": 1136,
-    "complexity_score": 763,
+    "complexity_score": 718,
     "cross_reference_count": 1,
     "function_call_count": 53,
     "global_count": 77,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 368,
-    "suspect_count": 35,
+    "suspect_count": 31,
     "suspect_types": [
       "decompiler_intrinsic",
       "format_string_mismatch",
@@ -135,7 +135,6 @@
       "stack_alignment_array",
       "stack_ref",
       "sub84_truncation",
-      "undefined_data",
       "unknown_field",
       "warning_deadcode_restart"
     ],
@@ -762,14 +761,14 @@
     },
     {
       "addr": "02d82568",
-      "name": "DAT_02d82568",
-      "type": "undefined4",
+      "name": "INT_02d82568",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02d82570",
-      "name": "DAT_02d82570",
-      "type": "undefined4",
+      "name": "g_ScreenshotFilename",
+      "type": "char[256]",
       "value": null
     },
     {
@@ -1385,38 +1384,6 @@
       "severity": "mild",
       "text": "*(uint *)((int)&local_94 + (uint)bVar16 * -8 + (uint)bVar16 * -8 + 8);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 154,
-      "match": "DAT_02d82568",
-      "severity": "mild",
-      "text": "DAT_02d82568 = DAT_02d82568 + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 154,
-      "match": "DAT_02d82568",
-      "severity": "mild",
-      "text": "DAT_02d82568 = DAT_02d82568 + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 155,
-      "match": "DAT_02d82570",
-      "severity": "mild",
-      "text": "_sprintf(&DAT_02d82570,\"demon%d.pcx\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 156,
-      "match": "DAT_02d82570",
-      "severity": "mild",
-      "text": "engine_pcx_c_saveScreenshotGeneral_FUN_005490c0(&DAT_02d82570);",
-      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",

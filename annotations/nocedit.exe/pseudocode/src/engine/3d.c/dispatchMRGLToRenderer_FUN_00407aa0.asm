@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_3d_c_dispatchMRGLToRenderer_FUN_00407aa0(SVertexBatch *cmd)
+; void __cdecl engine_3d_c_dispatchMRGLToRenderer_FUN_00407aa0(SMRGLHeaderExtended *mrgl)
 ;
 ; Parameters:
-; SVertexBatch *   Stack[0x4]:4   cmd
+; SMRGLHeaderExtended * Stack[0x4]:4   mrgl
 ; Local Variables:
 ; undefined        Stack[-0x110]:1  local_110
 ;
@@ -66,7 +66,7 @@ section .text
         ;   XREF to: 00407c82 (CONDITIONAL_JUMP)  ; LAB_00407c82
     PUSH EDI                            ; 00407adc
     CALL engine_3d.c_transformAndBufferVertices_FUN_00403840 ; 00407add
-        ;   XREF to: 00403840 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_transformAndBufferVertices_FUN_00403840(SVertexBatch * vertex_source, SVertexBatch * processing_params)
+        ;   XREF to: 00403840 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_transformAndBufferVertices_FUN_00403840(SMRGLHeaderExtended * mrgl)
     MOV ESI,dword ptr [0x006793bc]      ; 00407ae2 | g_VertexProcessingEnabled
     ADD ESP,0x4                         ; 00407ae8
     TEST ESI,ESI                        ; 00407aeb
@@ -123,7 +123,7 @@ section .text
     PUSH EDI                            ; 00407b61
         ;   Label: LAB_00407b61
     CALL engine_3d.c_processVertexLighting_FUN_00403a20 ; 00407b62
-        ;   XREF to: 00403a20 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_processVertexLighting_FUN_00403a20(SVertexBatch * vertex_batch)
+        ;   XREF to: 00403a20 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_processVertexLighting_FUN_00403a20(SMRGLHeaderExtended * mrgl)
     ADD ESP,0x4                         ; 00407b67
     JMP 0x00407aef                      ; 00407b6a
         ;   XREF to: 00407aef (UNCONDITIONAL_JUMP)  ; LAB_00407aef
@@ -167,7 +167,7 @@ section .text
     ADD ESI,0x4                         ; 00407bc3
     INC EBX                             ; 00407bc6
     CALL engine_3d.c_renderPolygonTextureWrappedPlaneMasked_FUN_00405b50 ; 00407bc7
-        ;   XREF to: 00405b50 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonTextureWrappedPlaneMasked_FUN_00405b50(SMRGLHeaderPrimitive * polygon_info)
+        ;   XREF to: 00405b50 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonTextureWrappedPlaneMasked_FUN_00405b50(SMRGLHeaderPrimitive * prim)
     MOV EAX,[0x00820070]                ; 00407bcc | g_RenderFaceCount
     ADD ESP,0x4                         ; 00407bd1
     CMP EBX,EAX                         ; 00407bd4
@@ -213,7 +213,7 @@ section .text
     PUSH EDI                            ; 00407c46
         ;   Label: LAB_00407c46
     CALL engine_3d.c_renderPolygonEngineAPIPremiumMultiState_FUN_00407290 ; 00407c47
-        ;   XREF to: 00407290 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonEngineAPIPremiumMultiState_FUN_00407290(SMRGLHeaderPrimitive * polygon_info)
+        ;   XREF to: 00407290 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonEngineAPIPremiumMultiState_FUN_00407290(SMRGLHeaderPrimitive * prim)
     ADD ESP,0x4                         ; 00407c4c
     JMP 0x00407aef                      ; 00407c4f
         ;   XREF to: 00407aef (UNCONDITIONAL_JUMP)  ; LAB_00407aef
@@ -274,7 +274,7 @@ section .text
     ADD EBX,0x4                         ; 00407cd0
     INC EDI                             ; 00407cd3
     CALL engine_3d.c_renderPolygonTextureWrappedPlaneMasked_FUN_00405b50 ; 00407cd4
-        ;   XREF to: 00405b50 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonTextureWrappedPlaneMasked_FUN_00405b50(SMRGLHeaderPrimitive * polygon_info)
+        ;   XREF to: 00405b50 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonTextureWrappedPlaneMasked_FUN_00405b50(SMRGLHeaderPrimitive * prim)
     MOV EAX,[0x00820070]                ; 00407cd9 | g_RenderFaceCount
     ADD ESP,0x4                         ; 00407cde
     CMP EDI,EAX                         ; 00407ce1

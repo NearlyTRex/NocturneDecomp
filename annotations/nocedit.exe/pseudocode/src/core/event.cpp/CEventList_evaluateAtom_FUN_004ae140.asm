@@ -2668,7 +2668,7 @@ section .text
     MOV EBX,dword ptr [0x006810c8]      ; 004af991 | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH EBX                            ; 004af997 | g_CDemonSetInstance
     CALL core_set.cpp_CDemonSet_addLightFilter_FUN_00570f10 ; 004af998
-        ;   XREF to: 00570f10 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_addLightFilter_FUN_00570f10(CDemonSet * this_ptr)
+        ;   XREF to: 00570f10 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_addLightFilter_FUN_00570f10(CDemonSet * this_ptr, char * light_name, C3DSLight * * out_light, CDemonLight * * out_master_light)
     ADD ESP,0x10                        ; 004af99d
     CMP dword ptr [ESP + 0xa44],0x0     ; 004af9a0
     JZ 0x004afa09                       ; 004af9a8

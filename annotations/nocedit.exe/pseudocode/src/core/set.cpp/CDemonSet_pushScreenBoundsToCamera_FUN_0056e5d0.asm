@@ -17,7 +17,7 @@
 ;
 ; XREF[2]:
 ;   core_morph.cpp_CMorphModel_rotatePoints_FUN_0052af70 at 0052b109
-;   core_set.cpp_CDemonSet_rotateVertices_FUN_0056e7c0 at 0056e83a
+;   core_set.cpp_CDemonSet_rotateVerticies_FUN_0056e7c0 at 0056e83a
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578

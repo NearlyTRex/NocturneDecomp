@@ -99,7 +99,7 @@ void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0(SMpegStereoSubba
   else {
     local_ac = 0;
   }
-  local_e0 = (uint)((*granule_array)->unk1 == 0);
+  local_e0 = (uint)((*granule_array)->main_data_begin == 0);
   if ((frame_info->table_index & 1U) == 1) {
     pfVar14 = (float *)0x667f6ee7;
     local_207c = 0x3fe6a09e;
@@ -108,7 +108,7 @@ void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0(SMpegStereoSubba
     pfVar14 = (float *)0x995b2417;
     local_207c = 0x3feae89f;
   }
-  local_f4 = *(int *)((*granule_array)->unk3 + 8) + (*granule_array)->unk1 * 3;
+  local_f4 = *(int *)((*granule_array)->unk + 8) + (*granule_array)->main_data_begin * 3;
   iVar9 = 0;
   do {
     iVar6 = iVar9 + 2;

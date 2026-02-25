@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 150,
-    "complexity_score": 93,
+    "complexity_score": 91,
     "cross_reference_count": 7,
     "function_call_count": 3,
     "global_count": 6,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 68,
+    "pseudocode_lines": 66,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 218
+    "total_lines": 216
   },
   "cross_references": [
     {
@@ -72,7 +72,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0",
-    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info,int render_flags)"
+    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim,int render_flags)"
   },
   "function_calls": [
     {
@@ -183,7 +183,7 @@
       },
       {
         "is_param": true,
-        "name": "polygon_info",
+        "name": "prim",
         "offset": 8,
         "size": 4,
         "type": "SMRGLHeaderPrimitive *"
@@ -200,7 +200,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 28,
+      "line": 27,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)g_VertexIndexBuffer + iVar4) = iVar1;",
@@ -208,7 +208,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 41,
+      "line": 40,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)g_VertexIndexBuffer + iVar4) = pSVar2[1].base.type;",

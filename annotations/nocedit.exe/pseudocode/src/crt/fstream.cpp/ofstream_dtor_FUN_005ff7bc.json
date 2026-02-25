@@ -1,19 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 69,
-    "complexity_score": 99,
+    "complexity_score": 16,
     "cross_reference_count": 6,
     "function_call_count": 6,
     "global_count": 4,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 34,
-    "suspect_count": 5,
+    "pseudocode_lines": 1,
+    "suspect_count": 1,
     "suspect_types": [
-      "negative_offset",
-      "pointer_cast",
       "special_crt_function"
     ],
-    "total_lines": 103
+    "total_lines": 70
   },
   "cross_references": [
     {
@@ -63,7 +61,7 @@
     ],
     "convention": "__cdecl",
     "name": "crt_fstream.cpp_ofstream_dtor_FUN_005ff7bc",
-    "signature": "ofstream * __cdecl crt_fstream_cpp_ofstream_dtor_FUN_005ff7bc(ofstream *this_ptr,uint flags)"
+    "signature": "ofstream * __cdecl crt_fstream.cpp_ofstream_dtor_FUN_005ff7bc(void * this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -257,7 +255,7 @@
         "name": "this_ptr",
         "offset": 4,
         "size": 4,
-        "type": "ofstream *"
+        "type": "void *"
       },
       {
         "is_param": true,
@@ -269,38 +267,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 11,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)((int)(this_ptr->_fstreambase_core).layout_info + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 18,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "*(int *)((int)pvVar3 + 4) + -0x10) = &g_OFStream_IOS;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 22,
-      "match": "poVar2[-2].",
-      "severity": "mild",
-      "text": "((fstreambase *)&poVar2[-2]._ios.__fill_character,1);",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 25,
-      "match": "piVar4[-2].",
-      "severity": "mild",
-      "text": "this_ptr = (ofstream *)&piVar4[-2].__format_flags;",
-      "type": "negative_offset"
-    },
     {
       "address": "005ff7bc",
       "crt_type": "runtime support",

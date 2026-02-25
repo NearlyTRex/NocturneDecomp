@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   hotkey_code
 ;
 ; XREF[2]:
-;   core_setedit.cpp_FUN_00578630 at 00578889
+;   core_setedit.cpp_editGroundTypes_FUN_00578630 at 00578889
 ;   engine_fileio.cpp_showOverwriteConfirmationDialog_FUN_004b2f90 at 004b3048
 ;
 ; Referenced Globals:

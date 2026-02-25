@@ -10,38 +10,33 @@ int __cdecl support_codec_cpp_CCodec_processFiles_FUN_0043ec30(CCodec *this_ptr,
 
 {
   int iVar1;
-  void *in_stack_fffffef0;
-  _FILE _Stack_cc;
-  int local_ac;
-  byte local_90 [96];
-  int local_30;
-  uint uStack_14;
+  ifstream local_110;
+  ofstream local_90;
+  int iStack_14;
   
-  crt_fstream_cpp_ifstream_constructor_FUN_005ff664
-            ((ifstream *)&stack0xfffffef0,0,(int)input_file_path,(char *)0x101,
-             g_DefaultStreamBufferSize);
-  if (local_ac == 0) {
-    crt_fstream_cpp_ofstream_constructor_FUN_005ff710
-              ((ofstream *)local_90,0,(int)output_file_path,0x112,(char *)g_DefaultStreamBufferSize,
-               (SIZE_T)in_stack_fffffef0);
-    if (local_30 == 0) {
+  crt_fstream_cpp_ifstream_ctor_FUN_005ff664
+            (&local_110,0,input_file_path,0x101,g_DefaultStreamBufferSize);
+  if (local_110._ios.__enabled_exceptions == 0) {
+    crt_fstream_cpp_ofstream_ctor_FUN_005ff710
+              (&local_90,0,output_file_path,0x112,g_DefaultStreamBufferSize);
+    if (local_90._ios.__enabled_exceptions == 0) {
       (*this_ptr->vtable->init)(this_ptr);
-      uStack_14 = 0x7fffffff;
+      iStack_14 = 0x7fffffff;
       iVar1 = (*this_ptr->vtable->process)
-                        (this_ptr,&_Stack_cc,(int)&uStack_14,(_FILE *)(local_90 + 0x44));
+                        (this_ptr,&local_110._istream_core,&iStack_14,&local_90._ostream_core);
       if (iVar1 != 0) {
-        (*this_ptr->vtable->finalize)(this_ptr,(_FILE *)(local_90 + 0x44));
+        (*this_ptr->vtable->finalize)(this_ptr,&local_90._ostream_core);
       }
-      crt_fstream_cpp_ofstream_dtor_FUN_005ff7bc((ofstream *)local_90,0);
+      crt_fstream_cpp_ofstream_dtor_FUN_005ff7bc(&local_90,0);
     }
     else {
-      crt_fstream_cpp_ofstream_dtor_FUN_005ff7bc((ofstream *)local_90,0);
+      crt_fstream_cpp_ofstream_dtor_FUN_005ff7bc(&local_90,0);
       iVar1 = 0;
     }
   }
   else {
     iVar1 = 0;
   }
-  crt_fstream_cpp_ifstream_dtor_FUN_005ff856((ifstream *)&stack0xfffffef0,0);
+  crt_fstream_cpp_ifstream_dtor_FUN_005ff856(&local_110,0);
   return iVar1;
 }

@@ -16,6 +16,7 @@ int __cdecl core_wateract_cpp_CWaterActor_renderTransparent_FUN_005eb280(CWaterA
   int *piVar4;
   SWaterVertex *pSVar5;
   SMRGLHeaderPrimitive *primitive_array;
+  CVector3f *vertex_position;
   int iVar6;
   CBoundingBox3D CStack_24;
   int iStack_c;
@@ -45,12 +46,14 @@ int __cdecl core_wateract_cpp_CWaterActor_renderTransparent_FUN_005eb280(CWaterA
         } while (iVar3 < this_ptr->vertex_count);
       }
       iVar3 = 0;
-      core_set_cpp_CDemonSet_rotateVertices_FUN_0056e7c0
-                (g_CDemonSetPtr,this_ptr->vertex_count,&DAT_03f90a88);
+      core_set_cpp_CDemonSet_rotateVerticies_FUN_0056e7c0
+                (g_CDemonSetPtr,this_ptr->vertex_count,(CVector3i *)&DAT_03f90a88);
       if (0 < this_ptr->vertex_count) {
+        vertex_position = &this_ptr->vertices[0].world_position;
         iVar6 = 0;
         do {
-          core_set_cpp_CDemonSet_computeVertexOmniLighting_FUN_0056e3e0(g_CDemonSetPtr);
+          core_set_cpp_CDemonSet_computeVertexOmniLighting_FUN_0056e3e0
+                    (g_CDemonSetPtr,vertex_position,&g_ZeroVector,iVar3);
           pSVar1 = g_CDemonRendererPtr2->vertex_buffer_ptr;
           lVar2 = (longlong)((this_ptr->color).r << 8) * (longlong)*(int *)((int)&pSVar1->z + iVar6)
           ;
@@ -65,6 +68,7 @@ int __cdecl core_wateract_cpp_CWaterActor_renderTransparent_FUN_005eb280(CWaterA
           *(uint *)((int)&pSVar1->g + iVar6) =
                (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
           iVar3 = iVar3 + 1;
+          vertex_position = (CVector3f *)&vertex_position[2].z;
           iVar6 = iVar6 + 0x30;
         } while (iVar3 < this_ptr->vertex_count);
       }

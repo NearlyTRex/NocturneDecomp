@@ -22,9 +22,9 @@ CTommyGun * __cdecl core_tommygun_cpp_CTommyGun_ctor_FUN_005dda90(CTommyGun *thi
   (pCVar2->base).can_penetrate = 1;
   (pCVar2->base).bolt_velocity = 100.0;
   (pCVar2->base).fire_cooldown = 1.4013e-45;
-  pCVar2->sfx_handle = 0;
+  pCVar2->sfx_handles[0] = 0;
   fVar1 = 8.0f;
-  pCVar2->sfx_handle_tail = 0;
+  pCVar2->sfx_handles[1] = 0;
   pCVar2->fire_frames_remaining = 0;
   (pCVar2->base).weight = fVar1;
   return pCVar2;

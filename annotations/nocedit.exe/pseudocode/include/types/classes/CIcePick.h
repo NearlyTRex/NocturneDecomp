@@ -14,8 +14,7 @@ typedef struct CIcePick {
     CHero base; // 0x0
     int guns_drawn; // 0x1fbd4
     int attack_count; // 0x1fbd8
-    uint swing_sfx_handle; // 0x1fbdc
-    uint injured_sfx_handle; // 0x1fbe0
+    uint sfx_handles[2]; // 0x1fbdc
     CVector3f head_look_euler; // 0x1fbe4
     float head_look_blend_weight; // 0x1fbf0
     int is_armed; // 0x1fbf4

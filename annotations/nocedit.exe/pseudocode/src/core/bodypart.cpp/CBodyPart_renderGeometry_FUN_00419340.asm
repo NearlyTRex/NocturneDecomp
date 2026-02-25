@@ -24,7 +24,7 @@
 ;
 ; Called Functions:
 ;   core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0
-;   core_set.cpp_CDemonSet_rotateVertices_FUN_0056e7c0
+;   core_set.cpp_CDemonSet_rotateVerticies_FUN_0056e7c0
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
 ;   engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
@@ -48,8 +48,8 @@ section .text
     PUSH ECX                            ; 00419358
     MOV EBX,dword ptr [0x006810c8]      ; 00419359 | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH EBX                            ; 0041935f | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_rotateVertices_FUN_0056e7c0 ; 00419360
-        ;   XREF to: 0056e7c0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_rotateVertices_FUN_0056e7c0(CDemonSet * this_ptr, int vertex_count, int * input_vertices)
+    CALL core_set.cpp_CDemonSet_rotateVerticies_FUN_0056e7c0 ; 00419360
+        ;   XREF to: 0056e7c0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_rotateVerticies_FUN_0056e7c0(CDemonSet * this_ptr, int vertex_count, CVector3i * input_vertices)
     ADD ESP,0xc                         ; 00419365
     MOV EDI,dword ptr [ESI + 0x17c]     ; 00419368
     PUSH EDI                            ; 0041936e
@@ -158,7 +158,7 @@ section .text
     MOV EBX,dword ptr [0x006703ec]      ; 0041947e | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EBX                            ; 00419484 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0 ; 00419485
-        ;   XREF to: 0048aeb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info, int render_flags)
+        ;   XREF to: 0048aeb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, int render_flags)
     ADD ESP,0xc                         ; 0041948a
     INC EBP                             ; 0041948d
     MOV EAX,dword ptr [ESP + 0x8]       ; 0041948e

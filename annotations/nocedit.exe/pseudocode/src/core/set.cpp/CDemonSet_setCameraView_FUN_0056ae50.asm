@@ -40,7 +40,7 @@
 ;   core_set.cpp_CDemonSet_reinitCamera_FUN_0056b7e0 at 0056b7fe
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_00570c70 at 00570c84
 ;   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0 at 00575209
-;   core_setedit.cpp_CDemonSet_FUN_0057ae50 at 0057aeb7
+;   core_setedit.cpp_CDemonSet_computeCameraFog_FUN_00581320 at 005813ad
 ;   ... and 3 more
 ;
 ; Referenced Globals:
@@ -130,42 +130,42 @@ section .text
         ;   XREF to: 0056aeab (CONDITIONAL_JUMP)  ; LAB_0056aeab
     LEA EAX,[EAX]                       ; 0056aec8
     MOV EDX,EDX                         ; 0056aece
-    MOV ECX,dword ptr [0x03276f30]      ; 0056aed0 | g_ActiveLightCount
+    MOV ECX,dword ptr [0x03276f30]      ; 0056aed0 | g_SpotLightCount
         ;   Label: LAB_0056aed0
     XOR EBX,EBX                         ; 0056aed6
     TEST ECX,ECX                        ; 0056aed8
     JLE 0x0056af00                      ; 0056aeda
         ;   XREF to: 0056af00 (CONDITIONAL_JUMP)  ; LAB_0056af00
     XOR ESI,ESI                         ; 0056aedc
-    MOV EDI,dword ptr [ESI + 0x3276f34] ; 0056aede | g_ActiveLightList | DAT_03276f38
+    MOV EDI,dword ptr [ESI + 0x3276f34] ; 0056aede | g_SpotLightList | DAT_03276f38
         ;   Label: LAB_0056aede
     PUSH EDI                            ; 0056aee4
     ADD ESI,0x4                         ; 0056aee5
     INC EBX                             ; 0056aee8
     CALL core_dlight.cpp_CDemonLight_restoreDirtyRegions_FUN_00472f80 ; 0056aee9
         ;   XREF to: 00472f80 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_restoreDirtyRegions_FUN_00472f80(CDemonLight * this_ptr)
-    MOV EBP,dword ptr [0x03276f30]      ; 0056aeee | g_ActiveLightCount
+    MOV EBP,dword ptr [0x03276f30]      ; 0056aeee | g_SpotLightCount
     ADD ESP,0x4                         ; 0056aef4
     CMP EBX,EBP                         ; 0056aef7
     JL 0x0056aede                       ; 0056aef9
         ;   XREF to: 0056aede (CONDITIONAL_JUMP)  ; LAB_0056aede
     LEA EAX,[EAX]                       ; 0056aefb
     MOV ECX,ECX                         ; 0056aefe
-    MOV EAX,[0x03276f30]                ; 0056af00 | g_ActiveLightCount
+    MOV EAX,[0x03276f30]                ; 0056af00 | g_SpotLightCount
         ;   Label: LAB_0056af00
     XOR EBX,EBX                         ; 0056af05
     TEST EAX,EAX                        ; 0056af07
     JLE 0x0056af30                      ; 0056af09
         ;   XREF to: 0056af30 (CONDITIONAL_JUMP)  ; LAB_0056af30
     XOR ESI,ESI                         ; 0056af0b
-    MOV EDX,dword ptr [ESI + 0x3276f34] ; 0056af0d | g_ActiveLightList | DAT_03276f38
+    MOV EDX,dword ptr [ESI + 0x3276f34] ; 0056af0d | g_SpotLightList | DAT_03276f38
         ;   Label: LAB_0056af0d
     PUSH EDX                            ; 0056af13
     ADD ESI,0x4                         ; 0056af14
     INC EBX                             ; 0056af17
     CALL core_dlight.cpp_CDemonLight_freeMasterZBuffer_FUN_00472a50 ; 0056af18
         ;   XREF to: 00472a50 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_freeMasterZBuffer_FUN_00472a50(CDemonLight * this_ptr)
-    MOV ECX,dword ptr [0x03276f30]      ; 0056af1d | g_ActiveLightCount
+    MOV ECX,dword ptr [0x03276f30]      ; 0056af1d | g_SpotLightCount
     ADD ESP,0x4                         ; 0056af23
     CMP EBX,ECX                         ; 0056af26
     JL 0x0056af0d                       ; 0056af28
@@ -181,7 +181,7 @@ section .text
     MOV dword ptr [EDX + 0x15ac80],0x1  ; 0056af53
     XOR EBX,EBX                         ; 0056af5d
     MOV dword ptr [EDX + 0x15f6e0],0x1  ; 0056af5f
-    MOV dword ptr [0x03276f30],EBX      ; 0056af69 | g_ActiveLightCount
+    MOV dword ptr [0x03276f30],EBX      ; 0056af69 | g_SpotLightCount
     MOV dword ptr [EDX + 0x15aea8],EAX  ; 0056af6f
     MOV EAX,dword ptr [ESP + 0x18c]     ; 0056af75
     MOV dword ptr [0x03277d80],EBX      ; 0056af7c | g_OmniLightCount
@@ -636,18 +636,18 @@ section .text
     XOR EDI,EDI                         ; 0056b599
     CALL core_set.cpp_CDemonSet_process_FUN_0056f940 ; 0056b59b
         ;   XREF to: 0056f940 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_process_FUN_0056f940(CDemonSet * this_ptr)
-    MOV EBX,dword ptr [0x03276f30]      ; 0056b5a0 | g_ActiveLightCount
+    MOV EBX,dword ptr [0x03276f30]      ; 0056b5a0 | g_SpotLightCount
     ADD ESP,0x4                         ; 0056b5a6
     TEST EBX,EBX                        ; 0056b5a9
     JLE 0x0056b005                      ; 0056b5ab
         ;   XREF to: 0056b005 (CONDITIONAL_JUMP)  ; LAB_0056b005
     IMUL EAX,dword ptr [ESP + 0x18c],0x1a4 ; 0056b5b1
     MOV EDX,dword ptr [ESP + 0x188]     ; 0056b5bc
-    MOV EBP,0x32770b4                   ; 0056b5c3 | g_ActiveLightBounds
+    MOV EBP,0x32770b4                   ; 0056b5c3 | g_SpotLightBounds
     ADD EDX,EAX                         ; 0056b5c8
     XOR EBX,EBX                         ; 0056b5ca
     MOV dword ptr [ESP + 0x168],EDX     ; 0056b5cc
-    MOV ESI,dword ptr [EBX + 0x3276f34] ; 0056b5d3 | g_ActiveLightList | DAT_03276f38
+    MOV ESI,dword ptr [EBX + 0x3276f34] ; 0056b5d3 | g_SpotLightList | DAT_03276f38
         ;   Label: LAB_0056b5d3
     PUSH ESI                            ; 0056b5d9
     CALL core_dlight.cpp_CDemonLight_allocMasterZBuffer_FUN_004729d0 ; 0056b5da
@@ -685,7 +685,7 @@ section .text
     CMP dword ptr [EAX + 0x144],0x0     ; 0056b62c
     JZ 0x0056b6aa                       ; 0056b633
         ;   XREF to: 0056b6aa (CONDITIONAL_JUMP)  ; LAB_0056b6aa
-    MOV EAX,[0x03276f30]                ; 0056b635 | g_ActiveLightCount
+    MOV EAX,[0x03276f30]                ; 0056b635 | g_SpotLightCount
         ;   Label: LAB_0056b635
     ADD EBX,0x4                         ; 0056b63a
     INC EDI                             ; 0056b63d
@@ -705,25 +705,25 @@ section .text
     MOV ESI,EAX                         ; 0056b660
     JMP 0x0056b575                      ; 0056b662
         ;   XREF to: 0056b575 (UNCONDITIONAL_JUMP)  ; LAB_0056b575
-    MOV EDI,dword ptr [0x03276f30]      ; 0056b667 | g_ActiveLightCount
+    MOV EDI,dword ptr [0x03276f30]      ; 0056b667 | g_SpotLightCount
         ;   Label: LAB_0056b667
     MOV ESI,dword ptr [ESI*0x4 + 0x3276db0] ; 0056b66d | g_MasterLightList
-    MOV dword ptr [EDI*0x4 + 0x3276f34],ESI ; 0056b674 | g_ActiveLightList
+    MOV dword ptr [EDI*0x4 + 0x3276f34],ESI ; 0056b674 | g_SpotLightList
     SHL EDI,0x4                         ; 0056b67b
     MOV ESI,dword ptr [ESP + 0x164]     ; 0056b67e
-    LEA EDI,[EDI + 0x32770b4]           ; 0056b685 | g_ActiveLightBounds
+    LEA EDI,[EDI + 0x32770b4]           ; 0056b685 | g_SpotLightBounds
     LEA ESI,[ESI + EBP*0x1 + 0x19c54]   ; 0056b68b
-    MOVSD ES:EDI,ESI                    ; 0056b692 | g_ActiveLightBounds
+    MOVSD ES:EDI,ESI                    ; 0056b692 | g_SpotLightBounds
     MOVSD ES:EDI,ESI                    ; 0056b693 | DAT_032770b8
     MOVSD ES:EDI,ESI                    ; 0056b694 | DAT_032770bc
     MOVSD ES:EDI,ESI                    ; 0056b695 | DAT_032770c0
-    MOV EDI,dword ptr [0x03276f30]      ; 0056b696 | g_ActiveLightCount
+    MOV EDI,dword ptr [0x03276f30]      ; 0056b696 | g_SpotLightCount
     INC EDI                             ; 0056b69c
     MOV ESI,EAX                         ; 0056b69d
-    MOV dword ptr [0x03276f30],EDI      ; 0056b69f | g_ActiveLightCount
+    MOV dword ptr [0x03276f30],EDI      ; 0056b69f | g_SpotLightCount
     JMP 0x0056b575                      ; 0056b6a5
         ;   XREF to: 0056b575 (UNCONDITIONAL_JUMP)  ; LAB_0056b575
-    PUSH EBP                            ; 0056b6aa | g_ActiveLightBounds
+    PUSH EBP                            ; 0056b6aa | g_SpotLightBounds
         ;   Label: LAB_0056b6aa
     PUSH ESI                            ; 0056b6ab
     PUSH 0x32758e4                      ; 0056b6ac | g_CDemonCameraInstance

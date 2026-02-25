@@ -13,7 +13,7 @@
 ;
 ; XREF[13]:
 ;   core_cloth.cpp_CCloth_addCollisionBone_FUN_0043c430 at 0043c589
-;   core_setedit.cpp_CDemonSet_FUN_00580730 at 00580da3
+;   core_setedit.cpp_CDemonSet_showFogEditor_FUN_00580730 at 00580da3
 ;   shape_design.c_centerVerticesAroundPoint_FUN_0045ea90 at 0045eb48
 ;   shape_design.c_configureFullPassPolygonReduction_FUN_00465810 at 00465870
 ;   shape_design.c_configureSinglePassPolygonReduction_FUN_00465560 at 004655c0

@@ -59,17 +59,17 @@ void __cdecl CDemonCubeTriangle::init(CDemonCubeTriangle *this_ptr,CVector3f *ve
 // Address: 00455460
 float __cdecl CDemonCubeTriangle::rayTriangleIntersection(CDemonCubeTriangle *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction);
 
-// Original: core_dcube.cpp_intersectXZCapsule_FUN_004556b0
+// Original: core_dcube.cpp_intersectXZCylinder_FUN_004556b0
 // Address: 004556b0
-int __cdecl intersectXZCapsule(SIntersectXZCylinder *cylinder);
+int __cdecl intersectXZCylinder(SIntersectXZCylinder *cylinder);
 
-// Original: core_dcube.cpp_intersectXZCapsuleWithHeight_FUN_00455990
+// Original: core_dcube.cpp_intersectXZCylinderWithHeight_FUN_00455990
 // Address: 00455990
-int __cdecl intersectXZCapsuleWithHeight(SIntersectXZCylinder *cylinder,CVector3f *segment_start,CVector3f *segment_end);
+int __cdecl intersectXZCylinderWithHeight(SIntersectXZCylinder *cylinder,CVector3f *segment_start,CVector3f *segment_end);
 
-// Original: core_dcube.cpp_intersectTriangleWithXZCapsule_FUN_00455a30
+// Original: core_dcube.cpp_intersectTriangleWithXZCylinder_FUN_00455a30
 // Address: 00455a30
-uint __cdecl intersectTriangleWithXZCapsule(CVector3f **triangle_vertices,SIntersectXZCylinder *cylinder);
+uint __cdecl intersectTriangleWithXZCylinder(STriangleRef *triangle,SIntersectXZCylinder *cylinder);
 
 // Original: core_dcube.cpp_intersectVerticalCylinderSegment_FUN_00455ed0
 // Address: 00455ed0
@@ -139,9 +139,9 @@ void __cdecl CDemonCube::rotateVertices(CDemonCube *this_ptr,uint rendering_mode
 // Address: 004578f0
 float __cdecl CDemonCube::rayIntersectTriangles(CDemonCube *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *hit_normal,uint *hit_material);
 
-// Original: core_dcube.cpp_CDemonCube_testCapsuleCollision_FUN_00457a90
+// Original: core_dcube.cpp_CDemonCube_testCylinderCollision_FUN_00457a90
 // Address: 00457a90
-void __cdecl CDemonCube::testCapsuleCollision(CDemonCube *this_ptr,SIntersectXZCylinder *capsule_data);
+void __cdecl CDemonCube::testCylinderCollision(CDemonCube *this_ptr,SIntersectXZCylinder *cylinder);
 
 // Original: core_dcube.cpp_CDemonCube_testCylinderGroundCollision_FUN_00457b60
 // Address: 00457b60

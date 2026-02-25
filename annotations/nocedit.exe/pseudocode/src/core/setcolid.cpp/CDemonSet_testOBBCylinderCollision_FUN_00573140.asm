@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_setcolid_cpp_CDemonSet_testOBBCylinderCollision_FUN_00573140(CDemonSet *this_ptr,CBoundingBox3D *bounding_box,CMatrix3x3f *orientation_matrix,SIntersectXZCylinder *cylinder1,SIntersectXZCylinder *cylinder2)
+; int __cdecl core_setcolid_cpp_CDemonSet_testOBBCylinderCollision_FUN_00573140(CDemonSet *this_ptr,SIntersectXZCylinder *cylinder,CBoundingBox3D *bounding_box,CVector3f *position,CMatrix3x3f *orientation_matrix)
 ;
 ; Parameters:
 ; CDemonSet *      Stack[0x4]:4   this_ptr
-; CBoundingBox3D * Stack[0x8]:4   bounding_box
-; CMatrix3x3f *    Stack[0xc]:4   orientation_matrix
-; SIntersectXZCylinder * Stack[0x10]:4   cylinder1
-; SIntersectXZCylinder * Stack[0x14]:4   cylinder2
+; SIntersectXZCylinder * Stack[0x8]:4   cylinder
+; CBoundingBox3D * Stack[0xc]:4   bounding_box
+; CVector3f *      Stack[0x10]:4   position
+; CMatrix3x3f *    Stack[0x14]:4   orientation_matrix
 ; Local Variables:
 ; undefined4       Stack[-0x1e8]:4  local_1e8
 ; undefined4       Stack[-0x1e4]:4  local_1e4
@@ -35,7 +35,7 @@
 ;
 ; XREF[2]:
 ;   core_manpuz.cpp_CMansionPuzzleCircle_customIntersectCylinderXZ_FUN_00509720 at 005097ac
-;   core_setcolid.cpp_CDemonSet_testCapsuleCollision_FUN_00573470 at 005738f2
+;   core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00573470 at 005738f2
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CVectorTypeInfo

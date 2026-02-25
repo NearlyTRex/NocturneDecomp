@@ -23,7 +23,7 @@ CBox * __cdecl core_box_cpp_CBox_ctor_FUN_0041dc50(CBox *this_ptr)
   (ADJ(pvVar1)->extents).z = 0.0;
   (ADJ(pvVar1)->extents).y = (ADJ(pvVar1)->extents).z;
   (ADJ(pvVar1)->extents).x = (ADJ(pvVar1)->extents).y;
-  ADJ(pvVar1)->mass = 0;
+  ADJ(pvVar1)->mass = 0.0;
   (ADJ(pvVar1)->linear_velocity_local).z = 0.0;
   (ADJ(pvVar1)->linear_velocity_local).y = (ADJ(pvVar1)->linear_velocity_local).z;
   (ADJ(pvVar1)->linear_velocity_local).x = (ADJ(pvVar1)->linear_velocity_local).y;

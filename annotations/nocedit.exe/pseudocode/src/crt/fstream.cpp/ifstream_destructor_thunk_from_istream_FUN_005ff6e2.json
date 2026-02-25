@@ -25,7 +25,7 @@
     ],
     "convention": "__cdecl",
     "name": "crt_fstream.cpp_ifstream_destructor_thunk_from_istream_FUN_005ff6e2",
-    "signature": "void __cdecl crt_fstream_cpp_ifstream_destructor_thunk_from_istream_FUN_005ff6e2(istream *this_ptr,int dtor_flags)"
+    "signature": "void __cdecl crt_fstream_cpp_ifstream_destructor_thunk_from_istream_FUN_005ff6e2(_istream *this_ptr,int dtor_flags)"
   },
   "function_calls": [
     {
@@ -76,7 +76,7 @@
         "name": "this_ptr",
         "offset": 4,
         "size": 4,
-        "type": "istream *"
+        "type": "_istream *"
       },
       {
         "is_param": true,
@@ -93,7 +93,7 @@
       "line": 5,
       "match": "this_ptr[-2].",
       "severity": "mild",
-      "text": "crt_fstream_cpp_ifstream_dtor_FUN_005ff856((ifstream *)&this_ptr[-2]._ios.__i_lock,dtor_flags);",
+      "text": "crt_fstream_cpp_ifstream_dtor_FUN_005ff856(&this_ptr[-2]._ios.__i_lock,dtor_flags);",
       "type": "negative_offset"
     },
     {

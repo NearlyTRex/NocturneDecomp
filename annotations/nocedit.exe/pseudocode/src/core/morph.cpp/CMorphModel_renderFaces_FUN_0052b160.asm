@@ -110,7 +110,7 @@ section .text
     INC EBP                             ; 0052b225
     ADD EBX,0x3c                        ; 0052b226
     CALL engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0 ; 0052b229
-        ;   XREF to: 0048aeb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info, int render_flags)
+        ;   XREF to: 0048aeb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, int render_flags)
     MOV ECX,dword ptr [EDI + 0x5c]      ; 0052b22e
     ADD ESP,0xc                         ; 0052b231
     CMP EBP,ECX                         ; 0052b234

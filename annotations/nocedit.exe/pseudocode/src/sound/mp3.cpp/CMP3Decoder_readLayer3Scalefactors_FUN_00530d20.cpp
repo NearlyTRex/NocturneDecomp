@@ -120,7 +120,7 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3Scalefactors_FUN_00530d20(CMP3D
   local_50 = granule_info + granule_index;
   local_44 = 0;
   do {
-    if ((*(int *)local_50->unk3 == 0) || (channel == 0)) {
+    if ((*(int *)local_50->unk == 0) || (channel == 0)) {
       iVar3 = *(int *)((int)g_Layer3LongBandBoundaries + local_38);
       puVar7 = (uint *)(scalefactor_dest + granule_index * 0x3e + iVar3);
       if (iVar3 < *(int *)((int)g_Layer3LongBandBoundaries + local_38 + 4)) {
@@ -138,7 +138,7 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3Scalefactors_FUN_00530d20(CMP3D
     }
     local_38 = local_38 + 4;
     local_44 = local_44 + 1;
-    local_50 = (SMpegLayer3Granule *)&local_50->unk2;
+    local_50 = (SMpegLayer3Granule *)&local_50->private_bits;
   } while (local_44 < 4);
   scalefactor_dest[granule_index * 0x3e + 0x16] = 0;
   return;

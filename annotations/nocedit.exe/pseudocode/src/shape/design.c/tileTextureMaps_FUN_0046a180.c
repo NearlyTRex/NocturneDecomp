@@ -2,13 +2,13 @@
 // Address: 0046a180
 // Address Range: [[0046a180, 0046a850]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_design_c_tileTextureMaps_FUN_0046a180(char *model_name,int prompt_for_model)
+// Signature: void __cdecl shape_design_c_tileTextureMaps_FUN_0046a180(SCram *cram,int prompt_for_model)
 
 #include "nocturne.h"
 
 /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
-void __cdecl shape_design_c_tileTextureMaps_FUN_0046a180(char *model_name,int prompt_for_model)
+void __cdecl shape_design_c_tileTextureMaps_FUN_0046a180(SCram *cram,int prompt_for_model)
 
 {
   char cVar1;
@@ -28,7 +28,7 @@ void __cdecl shape_design_c_tileTextureMaps_FUN_0046a180(char *model_name,int pr
   int local_14;
   
   bVar7 = 0;
-  if (model_name == (char *)0x0) {
+  if (cram == (SCram *)0x0) {
     if (prompt_for_model == 0) {
       pcVar4 = "?";
       pcVar5 = g_LoadedModelName;
@@ -98,9 +98,9 @@ void __cdecl shape_design_c_tileTextureMaps_FUN_0046a180(char *model_name,int pr
     wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
   }
   else {
-    iVar2 = shape_design_c_cramTextureList_FUN_0046bb80((SCramConfig *)model_name);
+    iVar2 = shape_design_c_cramTextureList_FUN_0046bb80(cram);
     if (iVar2 != 0) {
-      if (model_name == (char *)0x0) {
+      if (cram == (SCram *)0x0) {
         engine_2d_c_drawText_FUN_00401fd0("Hit a key...",0,0x6e);
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
         wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
@@ -140,7 +140,7 @@ void __cdecl shape_design_c_tileTextureMaps_FUN_0046a180(char *model_name,int pr
           } while (cVar1 != '\0');
         }
       }
-      if (model_name == (char *)0x0) {
+      if (cram == (SCram *)0x0) {
         wincore_windll_cpp_clearScreen_FUN_005b3e70();
         pcVar5 = g_CurrentModelFilename;
         pcVar4 = local_e4;
@@ -298,11 +298,11 @@ LAB_0046a75f:
       else {
         pcVar4 = g_LoadedModelName;
         do {
-          cVar1 = *model_name;
+          cVar1 = cram->filename[0];
           *pcVar4 = cVar1;
           if (cVar1 == '\0') break;
-          cVar1 = model_name[1];
-          model_name = model_name + 2;
+          cVar1 = cram->filename[1];
+          cram = (SCram *)(cram->filename + 2);
           pcVar4[1] = cVar1;
           pcVar4 = pcVar4 + 2;
         } while (cVar1 != '\0');

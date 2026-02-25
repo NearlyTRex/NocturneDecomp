@@ -736,8 +736,8 @@ section .text
     MOV dword ptr [ESP + 0x2318],ESI    ; 004b8e91
     MOV dword ptr [EAX + 0x13880c],0x1  ; 004b8e98
     MOV EAX,dword ptr [ESP + 0x22f0]    ; 004b8ea2
-    MOV dword ptr [0x02d12bf0],ESI      ; 004b8ea9 | g_VersionControlSession.unk1[0]
-    MOV dword ptr [0x02d12bf4],ESI      ; 004b8eaf | g_VersionControlSession.unk1[4]
+    MOV dword ptr [0x02d12bf0],ESI      ; 004b8ea9 | g_VersionControlSession.overwrite_own_choice
+    MOV dword ptr [0x02d12bf4],ESI      ; 004b8eaf | g_VersionControlSession.overwrite_writeable_choice
     TEST EAX,EAX                        ; 004b8eb5
     JLE 0x004b8f64                      ; 004b8eb7
         ;   XREF to: 004b8f64 (CONDITIONAL_JUMP)  ; LAB_004b8f64
@@ -1778,7 +1778,7 @@ section .text
     CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b9ac9
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004b9ace
-    PUSH 0x2d12bf0                      ; 004b9ad1 | g_VersionControlSession.unk1[0]
+    PUSH 0x2d12bf0                      ; 004b9ad1 | g_VersionControlSession.overwrite_own_choice
     LEA EAX,[ESP + 0x1bb0]              ; 004b9ad6
     PUSH EAX                            ; 004b9add
         ;   Label: LAB_004b9add
@@ -1884,7 +1884,7 @@ section .text
     CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b9bf6
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004b9bfb
-    PUSH 0x2d12bf4                      ; 004b9bfe | g_VersionControlSession.unk1[4]
+    PUSH 0x2d12bf4                      ; 004b9bfe | g_VersionControlSession.overwrite_writeable_choice
     LEA EAX,[ESP + 0x19bc]              ; 004b9c03
     JMP 0x004b9add                      ; 004b9c0a
         ;   XREF to: 004b9add (UNCONDITIONAL_JUMP)  ; LAB_004b9add

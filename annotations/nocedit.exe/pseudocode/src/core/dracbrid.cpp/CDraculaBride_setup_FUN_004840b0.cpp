@@ -70,31 +70,31 @@ LAB_00484145:
   this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(pCVar1);
   iVar2 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_01,"larm01",1);
-  this_ptr->part_index_larm = iVar2;
+  this_ptr->part_indices[0] = iVar2;
   iVar2 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_01,"l4arm01",1);
-  this_ptr->part_index_lforearm = iVar2;
+  this_ptr->part_indices[1] = iVar2;
   iVar2 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_01,"rarm01",1);
-  this_ptr->part_index_rarm = iVar2;
+  this_ptr->part_indices[2] = iVar2;
   iVar2 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_01,"r4arm01",1);
-  this_ptr->part_index_rforearm = iVar2;
+  this_ptr->part_indices[3] = iVar2;
   iVar2 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_01,"lshin01",1);
-  this_ptr->part_index_lshin = iVar2;
+  this_ptr->part_indices[4] = iVar2;
   iVar2 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_01,"rshin01",1);
-  this_ptr->part_index_rshin = iVar2;
+  this_ptr->part_indices[5] = iVar2;
   iVar2 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_01,"torso01",1);
-  this_ptr->part_index_torso = iVar2;
+  this_ptr->part_indices[6] = iVar2;
   iVar2 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_01,"waist01",1);
-  this_ptr->part_index_waist = iVar2;
+  this_ptr->part_indices[7] = iVar2;
   iVar2 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_01,"head01",1);
-  this_ptr->part_index_head = iVar2;
+  this_ptr->part_indices[8] = iVar2;
   this_ptr->attack_landed = 0;
   fVar3 = core_actor_cpp_getRandomFloat_FUN_0040cc10(5.0,10.0);
   this_ptr->freaky_timer = fVar3;

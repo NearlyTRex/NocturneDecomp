@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_set_cpp_CDemonSet_renderEnvMapBatchTri_FUN_0056ffe0(CDemonSet *this_ptr,void *param_2,int count,int alpha)
+; void __cdecl core_set_cpp_CDemonSet_renderEnvMapBatchTri_FUN_0056ffe0(CDemonSet *this_ptr,SMRGLHeaderPrimitive *prims,int count,int alpha)
 ;
 ; Parameters:
 ; CDemonSet *      Stack[0x4]:4   this_ptr
-; void *           Stack[0x8]:4   param_2
+; SMRGLHeaderPrimitive * Stack[0x8]:4   prims
 ; int              Stack[0xc]:4   count
 ; int              Stack[0x10]:4   alpha
 ;
@@ -32,7 +32,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x1c]      ; 0056fff3
     PUSH ESI                            ; 0056fff7
     CALL core_set.cpp_CDemonSet_renderEnvMapPrimitives_FUN_00570040 ; 0056fff8
-        ;   XREF to: 00570040 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderEnvMapPrimitives_FUN_00570040(CDemonSet * this_ptr, void * param_2, int count, int alpha, ...)
+        ;   XREF to: 00570040 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderEnvMapPrimitives_FUN_00570040(CDemonSet * this_ptr, SMRGLHeaderPrimitive * prims, int count, int alpha, ...)
     ADD ESP,0x14                        ; 0056fffd
     POP ESI                             ; 00570000
     POP EBX                             ; 00570001

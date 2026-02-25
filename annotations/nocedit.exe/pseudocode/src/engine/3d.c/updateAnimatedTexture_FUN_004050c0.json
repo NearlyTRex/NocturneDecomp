@@ -29,7 +29,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_3d.c_updateAnimatedTexture_FUN_004050c0",
-    "signature": "SMRGLHeaderExtended * __cdecl engine_3d_c_updateAnimatedTexture_FUN_004050c0(SAnimatedTexture *anim_texture)"
+    "signature": "SMRGLHeaderExtended * __cdecl engine_3d_c_updateAnimatedTexture_FUN_004050c0(SMRGLAnimatedTexture *texture)"
   },
   "function_calls": [
     {
@@ -117,10 +117,10 @@
       },
       {
         "is_param": true,
-        "name": "anim_texture",
+        "name": "texture",
         "offset": 4,
         "size": 4,
-        "type": "SAnimatedTexture *"
+        "type": "SMRGLAnimatedTexture *"
       }
     ]
   },
@@ -130,7 +130,7 @@
       "line": 20,
       "match": "(char *)((int)",
       "severity": "mild",
-      "text": "pcVar3 = (char *)((int)anim_texture + anim_texture->current_frame * 0x20 + 0x1c);",
+      "text": "pcVar3 = (char *)((int)texture + texture->current_frame * 0x20 + 0x1c);",
       "type": "pointer_cast"
     },
     {
@@ -138,7 +138,7 @@
       "line": 32,
       "match": "(SMRGLHeaderExtended *)((int)",
       "severity": "mild",
-      "text": "return (SMRGLHeaderExtended *)((int)anim_texture + anim_texture->frame_count * 0x20 + 0x1c);",
+      "text": "return (SMRGLHeaderExtended *)((int)texture + texture->frame_count * 0x20 + 0x1c);",
       "type": "pointer_cast"
     },
     {
@@ -146,7 +146,7 @@
       "line": 35,
       "match": "(SMRGLHeaderExtended *)((int)",
       "severity": "mild",
-      "text": "return (SMRGLHeaderExtended *)((int)anim_texture + anim_texture->frame_count * 0x20 + 0x1c);",
+      "text": "return (SMRGLHeaderExtended *)((int)texture + texture->frame_count * 0x20 + 0x1c);",
       "type": "pointer_cast"
     }
   ],

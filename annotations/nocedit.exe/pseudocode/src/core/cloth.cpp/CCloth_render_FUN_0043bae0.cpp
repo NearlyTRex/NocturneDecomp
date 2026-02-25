@@ -26,8 +26,8 @@ void __cdecl core_cloth_cpp_CCloth_render_FUN_0043bae0(CCloth *this_ptr,int use_
   SMRGLPrimitiveQuad *local_14;
   
   bVar7 = 0;
-  core_set_cpp_CDemonSet_rotateVertices_FUN_0056e7c0
-            (g_CDemonSetPtr,(this_ptr->model).vertex_count,&((this_ptr->model).vertex_list)->x);
+  core_set_cpp_CDemonSet_rotateVerticies_FUN_0056e7c0
+            (g_CDemonSetPtr,(this_ptr->model).vertex_count,(this_ptr->model).vertex_list);
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2,1);
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,0xffff);
   engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);

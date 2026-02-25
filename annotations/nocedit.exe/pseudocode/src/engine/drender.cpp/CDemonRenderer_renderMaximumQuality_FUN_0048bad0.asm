@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info)
+; void __cdecl engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr
-; SMRGLHeaderPrimitive * Stack[0x8]:4   polygon_info
+; SMRGLHeaderPrimitive * Stack[0x8]:4   prim
 ;
 ; XREF[15]:
 ;   core_actor.cpp_CDemonActor_FUN_0040dec0 at 0040e020

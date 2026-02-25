@@ -56,7 +56,7 @@ int __cdecl core_zombie_cpp_CZombie_FUN_005fb530(CZombie *this_ptr)
   int local_18;
   float local_14;
   
-  if (this_ptr->part_index_waist < 0) {
+  if (this_ptr->part_indices[4] < 0) {
     return 0;
   }
   fVar3 = this_ptr->pickup_scan_timer - in_stack_00000008;

@@ -10,19 +10,27 @@ CDemonActorType g_CShovelClassInfo = {};
 CDemonActorType g_CSimBoxClassInfo = {};
 
 // CPickList
-CPickList CPickList_03653fc0 = {};
+CPickList g_MissingBackdropFiles = {};
 
 // char[100][30]
 char g_BoneNameBuffer[100][30] = {};
 
-// undefined1
-undefined1 DAT_0365918f = {};
-undefined1 DAT_03659190 = {};
-undefined1 DAT_03659191 = {};
+// char[500]
+char g_GroundTextureTypes[500] = {};
+
+// char[500][40]
+char g_GroundTextureNames[500][40] = {};
+
+// char[768]
+char g_ThumbnailPalette[768] = {};
+
+// int
+int g_GroundTextureCount = {};
 
 // undefined4
-undefined4 DAT_03654368 = {};
-undefined4 DAT_03659384 = {};
 undefined4 DAT_03659388 = {};
 undefined4 DAT_0365938c = {};
+
+// void*
+void* g_CameraDepthData = {};
 

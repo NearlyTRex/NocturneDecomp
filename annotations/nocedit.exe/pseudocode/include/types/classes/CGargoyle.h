@@ -6,16 +6,21 @@ struct CDemonActor;
 // Dependencies
 #include "system/basetypes.h"
 #include "types/classes/CEnemy.h"
+#include "types/classes/CVector3i.h"
 
 // Structure: CGargoyle
 // Ghidra size: 0xbf18 (48920 bytes)
 typedef struct CGargoyle {
     CEnemy base; // 0x0
-    char unk[48]; // 0xbebc
+    int part_indices[12]; // 0xbebc
     int stone_red; // 0xbeec
     int stone_green; // 0xbef0
     int stone_blue; // 0xbef4
     struct CDemonActor* home_base; // 0xbef8
-    char unk2[28]; // 0xbefc
+    int unk2; // 0xbefc
+    uint sfx_handle; // 0xbf00
+    CVector3i target_scale; // 0xbf04
+    int returning_home; // 0xbf10
+    float petrify_timer; // 0xbf14
 } CGargoyle;
 

@@ -9,7 +9,7 @@ void __cdecl preprocessMusicFiles(char *source_directory);
 
 // Original: core_fileman.cpp_CDemonFileManager_addSetToExtractList_FUN_004bd8e0
 // Address: 004bd8e0
-void __cdecl CDemonFileManager::addSetToExtractList(CDemonFileManager *file_manager_ptr,char *set_filename);
+void __cdecl CDemonFileManager::addSetToExtractList(CDemonFileManager *this_ptr,char *set_filename);
 
 // Original: core_fileman.cpp_CDemonFileManager_moveSetIntoPod_FUN_004bd930
 // Address: 004bd930

@@ -221,13 +221,13 @@ void __cdecl core_cloth_cpp_CCloth_step_FUN_0043abb0(CCloth *this_ptr,CVector3f 
   local_d8.z = (g_CDemonSetPtr->active_fog).scroll.z * local_d8.z;
   pCVar4 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
                      (&local_1d8,&local_a8,&local_d8);
-  local_198 = pCVar4->x + (this_ptr->unk).x;
-  local_194 = pCVar4->y + (this_ptr->unk).y;
-  local_190 = pCVar4->z + (this_ptr->unk).z;
-  (this_ptr->unk).z = 0.0;
+  local_198 = pCVar4->x + (this_ptr->wind_velocity).x;
+  local_194 = pCVar4->y + (this_ptr->wind_velocity).y;
+  local_190 = pCVar4->z + (this_ptr->wind_velocity).z;
+  (this_ptr->wind_velocity).z = 0.0;
   pCVar4 = &this_ptr->last_position;
-  (this_ptr->unk).y = (this_ptr->unk).z;
-  (this_ptr->unk).x = (this_ptr->unk).y;
+  (this_ptr->wind_velocity).y = (this_ptr->wind_velocity).z;
+  (this_ptr->wind_velocity).x = (this_ptr->wind_velocity).y;
   local_150.x = position->x - pCVar4->x;
   local_150.y = position->y - (this_ptr->last_position).y;
   local_150.z = position->z - (this_ptr->last_position).z;

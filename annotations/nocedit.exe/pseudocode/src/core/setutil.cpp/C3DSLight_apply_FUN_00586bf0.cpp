@@ -23,8 +23,8 @@ void __cdecl core_setutil_cpp_C3DSLight_apply_FUN_00586bf0(C3DSLight *this_ptr,C
     (light->base).base.position.z = (int)(this_ptr->pos).z;
   }
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
-            ((CMatrix3x3f *)&(light->base).base.rotation_matrix,&this_ptr->orient);
-  (light->base).base.projection_scale = this_ptr->fov;
+            (&(light->base).base.rotation_matrix,&this_ptr->orient);
+  (light->base).base.focal_length = this_ptr->fov;
   light->transform_scale_factor = (int)ROUND(ROUND(this_ptr->aspect * (float)65536))
   ;
   pcVar3 = this_ptr->name;

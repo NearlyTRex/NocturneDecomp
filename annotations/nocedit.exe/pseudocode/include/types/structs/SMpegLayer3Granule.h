@@ -6,9 +6,9 @@
 // Structure: SMpegLayer3Granule
 // Ghidra size: 0xa0 (160 bytes)
 typedef struct SMpegLayer3Granule {
-    int unk1; // 0x0
-    int unk2; // 0x4
-    char unk3[16]; // 0x8
+    int main_data_begin; // 0x0
+    int private_bits; // 0x4
+    char unk[16]; // 0x8
     int part_2_3_length_maybe; // 0x18
     int big_value_pair_count; // 0x1c
     int global_gain; // 0x20

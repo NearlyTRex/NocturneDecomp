@@ -6,15 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 34,
-    "complexity_score": 7,
+    "complexity_score": 8,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 3,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 7,
+    "pseudocode_lines": 8,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 41
+    "total_lines": 42
   },
   "cross_references": [
     {
@@ -40,7 +40,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_fileman.cpp_CDemonFileManager_addSetToExtractList_FUN_004bd8e0",
-    "signature": "void __cdecl core_fileman_cpp_CDemonFileManager_addSetToExtractList_FUN_004bd8e0(CDemonFileManager *file_manager_ptr,char *set_filename)"
+    "signature": "void __cdecl core_fileman_cpp_CDemonFileManager_addSetToExtractList_FUN_004bd8e0(CDemonFileManager *this_ptr,char *set_filename)"
   },
   "function_calls": [
     {
@@ -51,7 +51,7 @@
     {
       "addr": "00584e70",
       "is_variadic": false,
-      "name": "core_setedit.cpp_CDemonSet_FUN_00584e70"
+      "name": "core_setedit.cpp_CDemonSet_writeFileDependencies_FUN_00584e70"
     },
     {
       "addr": "005fe6d0",
@@ -108,7 +108,7 @@
     "variables": [
       {
         "is_param": true,
-        "name": "file_manager_ptr",
+        "name": "this_ptr",
         "offset": 4,
         "size": 4,
         "type": "CDemonFileManager *"

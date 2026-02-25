@@ -7,7 +7,7 @@
 ; C3DSCamera *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_setedit.cpp_CDemonSet_FUN_0057e7c0 at 0057f77e
+;   core_setedit.cpp_CDemonSet_showCameraEditor_FUN_0057e7c0 at 0057f77e
 ;
 ; *****************************************************************************
 

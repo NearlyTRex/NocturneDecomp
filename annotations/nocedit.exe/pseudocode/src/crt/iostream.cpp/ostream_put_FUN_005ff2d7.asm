@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; ostream * __cdecl crt_iostream_cpp_ostream_put_FUN_005ff2d7(ostream *this_ptr,int character)
+; _ostream * __cdecl crt_iostream_cpp_ostream_put_FUN_005ff2d7(_ostream *this_ptr,int character)
 ;
 ; Parameters:
-; ostream *        Stack[0x4]:4   this_ptr
+; _ostream *       Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   character
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c

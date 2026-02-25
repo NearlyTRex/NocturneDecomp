@@ -6,18 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 112,
-    "complexity_score": 306,
+    "complexity_score": 51,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 18,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 66,
-    "suspect_count": 23,
-    "suspect_types": [
-      "stack_param",
-      "unaffected_reg"
-    ],
-    "total_lines": 178
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 51,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 163
   },
   "cross_references": [],
   "function": {
@@ -28,9 +25,9 @@
         "0056eab0"
       ]
     ],
-    "convention": "__cdecl",
+    "convention": "__stack_esi",
     "name": "core_set.cpp_transformNormalFixedPoint_FUN_0056e960",
-    "signature": "void __cdecl core_set_cpp_transformNormalFixedPoint_FUN_0056e960(void)"
+    "signature": "CVector3i * __stack_esi core_set_cpp_transformNormalFixedPoint_FUN_0056e960(CVector3i *input,CVector3i *output)"
   },
   "function_calls": [],
   "globals": [
@@ -147,8 +144,8 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "estimated_params": 0
+    "declared_params": 2,
+    "estimated_params": 2
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 10.585585585585585,
@@ -182,10 +179,10 @@
     "pcode_op_count": 1175
   },
   "stack_frame": {
-    "frame_size": 36,
+    "frame_size": 40,
     "local_size": 36,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -229,6 +226,13 @@
         "offset": -12,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "input",
+        "offset": 4,
+        "size": 4,
+        "type": "CVector3i *"
       }
     ]
   },
@@ -249,190 +253,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 11,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "int *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "int *in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "iVar7 = ((uint)((longlong)g_TransformMatrix.m[0].x * (longlong)*in_stack_00000004) >> 0x10 |",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "(int)((ulonglong)((longlong)g_TransformMatrix.m[0].x * (longlong)*in_stack_00000004) >>",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "((uint)((longlong)g_TransformMatrix.m[1].x * (longlong)in_stack_00000004[1]) >> 0x10 |",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "(int)((ulonglong)((longlong)g_TransformMatrix.m[1].x * (longlong)in_stack_00000004[1]) >>",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 23,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "((uint)((longlong)g_TransformMatrix.m[2].x * (longlong)in_stack_00000004[2]) >> 0x10 |",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 24,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "(int)((ulonglong)((longlong)g_TransformMatrix.m[2].x * (longlong)in_stack_00000004[2]) >>",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 26,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "iVar8 = ((uint)((longlong)g_TransformMatrix.m[0].y * (longlong)*in_stack_00000004) >> 0x10 |",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "(int)((ulonglong)((longlong)g_TransformMatrix.m[0].y * (longlong)*in_stack_00000004) >>",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 29,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "((uint)((longlong)g_TransformMatrix.m[1].y * (longlong)in_stack_00000004[1]) >> 0x10 |",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 30,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "(int)((ulonglong)((longlong)g_TransformMatrix.m[1].y * (longlong)in_stack_00000004[1]) >>",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "((uint)((longlong)g_TransformMatrix.m[2].y * (longlong)in_stack_00000004[2]) >> 0x10 |",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 33,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "(int)((ulonglong)((longlong)g_TransformMatrix.m[2].y * (longlong)in_stack_00000004[2]) >>",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 35,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "iVar9 = ((uint)((longlong)g_TransformMatrix.m[0].z * (longlong)*in_stack_00000004) >> 0x10 |",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 36,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "(int)((ulonglong)((longlong)g_TransformMatrix.m[0].z * (longlong)*in_stack_00000004) >>",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 38,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "((uint)((longlong)g_TransformMatrix.m[1].z * (longlong)in_stack_00000004[1]) >> 0x10 |",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 39,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "(int)((ulonglong)((longlong)g_TransformMatrix.m[1].z * (longlong)in_stack_00000004[1]) >>",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 41,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "((uint)((longlong)g_TransformMatrix.m[2].z * (longlong)in_stack_00000004[2]) >> 0x10 |",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 42,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "(int)((ulonglong)((longlong)g_TransformMatrix.m[2].z * (longlong)in_stack_00000004[2]) >>",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 50,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "*unaff_ESI = ((uint)((longlong)g_InverseMatrix.m[0].x * (longlong)iVar7) >> 0x10 |",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 58,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI[1] = ((uint)(lVar1 * iVar7) >> 0x10 | (int)((ulonglong)(lVar1 * iVar7) >> 0x20) << 0x10)",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 63,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI[2] = ((uint)(lVar4 * iVar7) >> 0x10 | (int)((ulonglong)(lVar4 * iVar7) >> 0x20) << 0x10)",
-      "type": "unaffected_reg"
-    }
-  ]
+  "suspects": []
 }

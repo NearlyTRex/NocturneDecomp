@@ -7,7 +7,7 @@
 ; XREF[13]:
 ;   core_game.cpp_CGame_rollCredits_FUN_004e4010 at 004e40f4
 ;   core_menu.cpp_configureSoundOptions_FUN_00511e50 at 00512b66
-;   core_setedit.cpp_CDemonSet_FUN_00580730 at 00581161
+;   core_setedit.cpp_CDemonSet_showFogEditor_FUN_00580730 at 00581161
 ;   core_skeledit.cpp_CDeformableModel_FUN_0058c190 at 0058d25c
 ;   core_skeledit.cpp_CLodMesh_FUN_00589c20 at 00589eb2
 ;   core_skeledit.cpp_FUN_00589b10 at 00589b8e

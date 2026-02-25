@@ -1,0 +1,237 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 150,
+    "complexity_score": 71,
+    "cross_reference_count": 2,
+    "function_call_count": 3,
+    "global_count": 16,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 71,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 221
+  },
+  "cross_references": [
+    {
+      "addr": "00578d80",
+      "from_addr": "00579987",
+      "name": "core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00578420",
+      "from_addr": "00578583",
+      "name": "core_setedit.cpp_loadGroundTypes_FUN_00578420",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00578290",
+    "address_range": [
+      [
+        "00578290",
+        "0057841d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_setedit.cpp_addGroundType_FUN_00578290",
+    "signature": "void __cdecl core_setedit_cpp_addGroundType_FUN_00578290(char *filename,int ground_type)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "is_variadic": true,
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "005fe7f0",
+      "is_variadic": false,
+      "name": "crt_string.c_stricmp_FUN_005fe7f0"
+    },
+    {
+      "addr": "00481f20",
+      "is_variadic": false,
+      "name": "engine_dosio.c_splitPath_FUN_00481f20"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0064679f",
+      "name": "s_core_setedit_cpp_0064679f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006467b3",
+      "name": "s_Tried_to_define_texture__006467b3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00646802",
+      "name": "s_core_setedit_cpp_00646802",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00646816",
+      "name": "s_Ground_type_list_is_full_00646816",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064683d",
+      "name": "s_core_setedit_cpp_0064683d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00646851",
+      "name": "s_Texture_filename_s_is_to_00646851",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03654368",
+      "name": "g_GroundTextureCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03654370",
+      "name": "g_GroundTextureNames",
+      "type": "char[500][40]",
+      "value": null
+    },
+    {
+      "addr": "03654371",
+      "name": "DAT_03654371",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03654372",
+      "name": "DAT_03654372",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03654373",
+      "name": "DAT_03654373",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03654398",
+      "name": "DAT_03654398",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0365918f",
+      "name": "DAT_0365918f",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03659190",
+      "name": "g_GroundTextureTypes",
+      "type": "char[500]",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.56,
+    "instruction_count": 125,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 9,
+      "BOOL_OR": 1,
+      "CALL": 6,
+      "CBRANCH": 12,
+      "COPY": 100,
+      "INT_ADD": 43,
+      "INT_AND": 83,
+      "INT_CARRY": 14,
+      "INT_EQUAL": 70,
+      "INT_LEFT": 2,
+      "INT_LESS": 9,
+      "INT_MULT": 2,
+      "INT_NEGATE": 1,
+      "INT_NOTEQUAL": 7,
+      "INT_OR": 5,
+      "INT_SBORROW": 11,
+      "INT_SCARRY": 16,
+      "INT_SLESS": 36,
+      "INT_SUB": 45,
+      "INT_XOR": 3,
+      "INT_ZEXT": 1,
+      "LOAD": 23,
+      "POPCOUNT": 34,
+      "RETURN": 3,
+      "STORE": 34
+    },
+    "pcode_op_count": 570
+  },
+  "stack_frame": {
+    "frame_size": 536,
+    "local_size": 528,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_20c",
+        "offset": -524,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_10c",
+        "offset": -268,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_10b",
+        "offset": -267,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "ground_type",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

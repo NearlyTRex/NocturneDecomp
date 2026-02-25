@@ -58,7 +58,7 @@ LAB_005b5640:
       if (g_BlendMode == 1) {
         uVar22 = psllw((ulonglong)CONCAT52((int5)((uint7)uVar5 >> 0x10),uVar9) & 0xffffffffffff00ff,
                        8);
-        uVar22 = paddusw(CONCAT26(sVar18 * SVar1.pad,
+        uVar22 = paddusw(CONCAT26(sVar18 * SVar1.alignment,
                                   CONCAT24(sVar15 * SVar1.blue,
                                            CONCAT22(uVar12 * SVar1.green,
                                                     (ushort)(byte)uVar2 * SVar1.red))),uVar22);
@@ -80,7 +80,7 @@ LAB_005b5640:
         uVar9 = (ushort)(byte)uVar2 * SVar1.red + (uVar9 & 0xff) * (short)uVar11;
         uVar12 = uVar12 * SVar1.green + (short)((uint7)uVar5 >> 0x10) * (short)(uVar11 >> 0x10);
         uVar16 = sVar15 * SVar1.blue + (short)uVar6 * (short)(uVar11 >> 0x20);
-        uVar19 = sVar18 * SVar1.pad + (uVar10 >> 8) * (short)(uVar11 >> 0x30);
+        uVar19 = sVar18 * SVar1.alignment + (uVar10 >> 8) * (short)(uVar11 >> 0x30);
         uVar10 = uVar9 >> 8;
         uVar13 = uVar12 >> 8;
         uVar17 = uVar16 >> 8;

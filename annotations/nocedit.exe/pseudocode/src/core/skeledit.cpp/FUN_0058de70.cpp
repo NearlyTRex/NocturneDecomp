@@ -16,11 +16,11 @@ void __cdecl core_skeledit_cpp_FUN_0058de70(void)
   int iVar5;
   uint uVar6;
   uint uVar7;
-  SCramConfig *pSVar8;
+  SCram *pSVar8;
   int in_stack_00000004;
   char *in_stack_00000008;
   int in_stack_00000014;
-  SCramConfig local_98;
+  SCram local_98;
   char *local_24;
   int local_20;
   int local_1c;
@@ -74,7 +74,7 @@ void __cdecl core_skeledit_cpp_FUN_0058de70(void)
       local_20 = local_20 + 1;
     } while (local_20 < *(int *)(in_stack_00000004 + 0xbc));
   }
-  shape_design_c_initializeCramConfig_FUN_0046b6e0(&local_98);
+  shape_design_c_initializeCram_FUN_0046b6e0(&local_98);
   do {
     cVar1 = *in_stack_00000008;
     pSVar8->filename[0] = cVar1;
@@ -82,14 +82,14 @@ void __cdecl core_skeledit_cpp_FUN_0058de70(void)
     cVar1 = in_stack_00000008[1];
     in_stack_00000008 = in_stack_00000008 + 2;
     *(char *)((int)pSVar8 + 1) = cVar1;
-    pSVar8 = (SCramConfig *)((int)pSVar8 + 2);
+    pSVar8 = (SCram *)((int)pSVar8 + 2);
   } while (cVar1 != '\0');
   local_98.coverage_threshold = 0x5f;
-  local_98.enable_optimization = 1;
-  local_98.enable_scaling = 1;
-  local_98.enable_rotation = 1;
-  local_98.enable_flipping = 1;
-  local_98.algorithm_mode = 2;
+  local_98.min_atlas_size = 1;
+  local_98.paint_borders = 1;
+  local_98.fill_gaps = 1;
+  local_98.enable_visualization = 1;
+  local_98.padding_size = 2;
   shape_design_c_cramTextureList_FUN_0046bb80(&local_98);
   local_98.filename[0] = -0x60;
   local_98.filename[1] = -0x20;

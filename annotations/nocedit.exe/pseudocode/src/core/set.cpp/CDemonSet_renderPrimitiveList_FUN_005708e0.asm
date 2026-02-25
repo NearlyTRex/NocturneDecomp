@@ -79,7 +79,7 @@ section .text
     PUSH ECX                            ; 00570944 | g_CDemonRendererInstance
     INC ESI                             ; 00570945
     CALL engine_drender.cpp_CDemonRenderer_renderBasicTextured_FUN_0048a820 ; 00570946
-        ;   XREF to: 0048a820 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderBasicTextured_FUN_0048a820(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info)
+        ;   XREF to: 0048a820 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderBasicTextured_FUN_0048a820(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD EBX,0x28                        ; 0057094b
     ADD ESP,0x8                         ; 0057094e
     CMP ESI,EDI                         ; 00570951

@@ -951,7 +951,7 @@
     "vars":{
       "params":[
         {
-          "name":"primitive",
+          "name":"prim",
           "storage":{
             "offset":4,
             "size":4,
@@ -995,7 +995,7 @@
     "vars":{
       "params":[
         {
-          "name":"polygon_info",
+          "name":"prim",
           "storage":{
             "offset":4,
             "size":4,
@@ -1039,7 +1039,7 @@
     "vars":{
       "params":[
         {
-          "name":"polygon_info",
+          "name":"prim",
           "storage":{
             "offset":4,
             "size":4,
@@ -1149,7 +1149,7 @@
       ],
       "params":[
         {
-          "name":"polygon_info",
+          "name":"prim",
           "storage":{
             "offset":4,
             "size":4,
@@ -1259,7 +1259,7 @@
       ],
       "params":[
         {
-          "name":"polygon_info",
+          "name":"prim",
           "storage":{
             "offset":4,
             "size":4,
@@ -1303,7 +1303,7 @@
     "vars":{
       "params":[
         {
-          "name":"polygon_info",
+          "name":"prim",
           "storage":{
             "offset":4,
             "size":4,
@@ -1347,7 +1347,7 @@
     "vars":{
       "params":[
         {
-          "name":"polygon_info",
+          "name":"prim",
           "storage":{
             "offset":4,
             "size":4,
@@ -13051,7 +13051,7 @@
           "type":"int"
         },
         {
-          "name":"file_stream",
+          "name":"istream",
           "storage":{
             "offset":12,
             "size":4,
@@ -13064,7 +13064,7 @@
               }
             ]
           },
-          "type":"_FILE*"
+          "type":"_istream*"
         },
         {
           "name":"bytes_remaining",
@@ -13176,36 +13176,20 @@
     "vars":{
       "locals":[
         {
-          "name":"local_48",
-          "storage":{
-            "offset":-72,
-            "size":1,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x48]",
-                "offset":-72,
-                "size":1
-              }
-            ]
-          },
-          "type":"undefined1"
-        },
-        {
           "name":"local_90",
           "storage":{
             "offset":-144,
-            "size":1,
+            "size":132,
             "stack":true,
             "varnodes":[
               {
                 "addr":"Stack[-0x90]",
                 "offset":-144,
-                "size":1
+                "size":132
               }
             ]
           },
-          "type":"undefined1"
+          "type":"_istrstream"
         }
       ],
       "params":[
@@ -13239,7 +13223,7 @@
               }
             ]
           },
-          "type":"byte*"
+          "type":"char*"
         },
         {
           "name":"input_length",
@@ -13271,7 +13255,7 @@
               }
             ]
           },
-          "type":"byte*"
+          "type":"char*"
         },
         {
           "name":"output_length",
@@ -13318,68 +13302,36 @@
     "vars":{
       "locals":[
         {
-          "name":"local_30",
-          "storage":{
-            "offset":-48,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x30]",
-                "offset":-48,
-                "size":4
-              }
-            ]
-          },
-          "type":"undefined4"
-        },
-        {
           "name":"local_90",
           "storage":{
             "offset":-144,
-            "size":1,
+            "size":124,
             "stack":true,
             "varnodes":[
               {
                 "addr":"Stack[-0x90]",
                 "offset":-144,
-                "size":1
+                "size":124
               }
             ]
           },
-          "type":"undefined1"
-        },
-        {
-          "name":"local_ac",
-          "storage":{
-            "offset":-172,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0xac]",
-                "offset":-172,
-                "size":4
-              }
-            ]
-          },
-          "type":"undefined4"
+          "type":"ofstream"
         },
         {
           "name":"local_110",
           "storage":{
             "offset":-272,
-            "size":1,
+            "size":128,
             "stack":true,
             "varnodes":[
               {
                 "addr":"Stack[-0x110]",
                 "offset":-272,
-                "size":1
+                "size":128
               }
             ]
           },
-          "type":"undefined1"
+          "type":"ifstream"
         }
       ],
       "params":[
@@ -13510,7 +13462,7 @@
           "type":"SBitBuffer*"
         },
         {
-          "name":"input_file",
+          "name":"istream",
           "storage":{
             "offset":12,
             "size":4,
@@ -13523,7 +13475,7 @@
               }
             ]
           },
-          "type":"_FILE*"
+          "type":"_istream*"
         },
         {
           "name":"bytes_remaining",
@@ -15440,7 +15392,7 @@
           "type":"int"
         },
         {
-          "name":"corona_buffer",
+          "name":"corona",
           "storage":{
             "offset":16,
             "size":4,
@@ -16359,7 +16311,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_dcube.cpp_intersectXZCapsule_FUN_004556b0",
+    "name":"core_dcube.cpp_intersectXZCylinder_FUN_004556b0",
     "ret":"int",
     "vars":{
       "locals":[
@@ -16645,7 +16597,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_dcube.cpp_intersectTriangleWithXZCapsule_FUN_00455a30",
+    "name":"core_dcube.cpp_intersectTriangleWithXZCylinder_FUN_00455a30",
     "ret":"uint",
     "vars":{
       "locals":[
@@ -16956,7 +16908,7 @@
       ],
       "params":[
         {
-          "name":"triangle_vertices",
+          "name":"triangle",
           "storage":{
             "offset":4,
             "size":4,
@@ -16969,7 +16921,7 @@
               }
             ]
           },
-          "type":"CVector3f**"
+          "type":"STriangleRef*"
         },
         {
           "name":"cylinder",
@@ -24291,7 +24243,7 @@
           "type":"CDemonRenderer*"
         },
         {
-          "name":"polygon_info",
+          "name":"prim",
           "storage":{
             "offset":8,
             "size":4,
@@ -62822,6 +62774,56 @@
           },
           "type":"undefined4"
         }
+      ],
+      "params":[
+        {
+          "name":"vertex_array",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3i*"
+        },
+        {
+          "name":"triangle_indices",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"ushort*"
+        },
+        {
+          "name":"out_normal",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        }
       ]
     }
   },
@@ -63307,7 +63309,7 @@
           "type":"CDemonSet*"
         },
         {
-          "name":"param_2",
+          "name":"face_data",
           "storage":{
             "offset":8,
             "size":4,
@@ -63320,7 +63322,7 @@
               }
             ]
           },
-          "type":"void*"
+          "type":"SInputFace*"
         },
         {
           "name":"count",
@@ -63368,7 +63370,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_set.cpp_CDemonSet_restoreLightState_FUN_00571130",
+    "name":"core_set.cpp_CDemonSet_loadMasterLightStates_FUN_00571130",
     "ret":"void",
     "vars":{
       "params":[
@@ -63389,7 +63391,7 @@
           "type":"CDemonSet*"
         },
         {
-          "name":"param_2",
+          "name":"light_state_buffer",
           "storage":{
             "offset":8,
             "size":4,
@@ -63402,7 +63404,7 @@
               }
             ]
           },
-          "type":"void*"
+          "type":"int*"
         }
       ]
     }
@@ -63418,7 +63420,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_set.cpp_CDemonSet_SetStateVersionCameraCountInStrings_FUN_005711b0",
+    "name":"core_set.cpp_CDemonSet_saveStateInfo_FUN_005711b0",
     "ret":"void",
     "vars":{
       "params":[
@@ -63437,6 +63439,22 @@
             ]
           },
           "type":"CDemonSet*"
+        },
+        {
+          "name":"file_handle",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"_FILE*"
         }
       ]
     }
@@ -63452,7 +63470,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_set.cpp_CDemonSet_saveStateInfo_FUN_00571230",
+    "name":"core_set.cpp_CDemonSet_loadStateInfo_FUN_00571230",
     "ret":"void",
     "vars":{
       "locals":[
@@ -63521,6 +63539,22 @@
             ]
           },
           "type":"CDemonSet*"
+        },
+        {
+          "name":"file_handle",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"_FILE*"
         }
       ]
     }
@@ -63674,6 +63708,21 @@
     "ret":"float",
     "vars":{
       "locals":[
+        {
+          "name":"pCVar4",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CSpike*",
+          "use":710
+        },
         {
           "name":"local_14",
           "storage":{
@@ -65672,7 +65721,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setedit.cpp_FUN_00578630",
+    "name":"core_setedit.cpp_editGroundTypes_FUN_00578630",
     "ret":"void",
     "vars":{
       "locals":[
@@ -65772,6 +65821,24 @@
           },
           "type":"undefined1"
         }
+      ],
+      "params":[
+        {
+          "name":"filename",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        }
       ]
     }
   },
@@ -65786,7 +65853,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setedit.cpp_CDemonSet_FUN_0057e430",
+    "name":"core_setedit.cpp_CDemonSet_deleteCamera_FUN_0057e430",
     "ret":"void",
     "vars":{
       "locals":[
@@ -65919,6 +65986,22 @@
             ]
           },
           "type":"CDemonSet*"
+        },
+        {
+          "name":"camera_index",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }
@@ -65934,7 +66017,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setedit.cpp_FUN_005801b0",
+    "name":"core_setedit.cpp_CDemonSet_isPointVisibleFromCamera_FUN_005801b0",
     "ret":"int",
     "vars":{
       "locals":[
@@ -65971,6 +66054,56 @@
           "type":"undefined4"
         }
       ],
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonSet*"
+        },
+        {
+          "name":"point",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3i*"
+        },
+        {
+          "name":"camera_index",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ],
       "ret_storage":{
         "reg":"EAX",
         "size":4,
@@ -65994,7 +66127,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setedit.cpp_CDemonSet_FUN_00580730",
+    "name":"core_setedit.cpp_CDemonSet_showFogEditor_FUN_00580730",
     "ret":"void",
     "vars":{
       "locals":[
@@ -66302,7 +66435,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setedit.cpp_FUN_00582930",
+    "name":"core_setedit.cpp_drawCameraFrustum_FUN_00582930",
     "ret":"void",
     "vars":{
       "locals":[
@@ -66737,6 +66870,40 @@
             ]
           },
           "type":"undefined4"
+        }
+      ],
+      "params":[
+        {
+          "name":"color",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"use_3d_lines",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }

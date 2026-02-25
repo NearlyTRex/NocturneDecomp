@@ -213,15 +213,15 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
             if (ABS(local_14) < (float)0.52359877558333301) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                         (&pCVar3->motion_controller,3,1);
-              uVar11 = this_ptr->voice_sound_handle;
+              uVar11 = this_ptr->sfx_handles[1];
               (this_ptr->base).attack_cooldown = 1.0;
               iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(uVar11);
               if ((iVar8 == 0) &&
-                 (iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->attack_sound_handle)
-                 , iVar8 == 0)) {
+                 (iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handles[2]),
+                 iVar8 == 0)) {
                 uVar11 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                                    ((CDemonActor *)this_ptr,"batman-attack?.wav");
-                this_ptr->attack_sound_handle = uVar11;
+                this_ptr->sfx_handles[2] = uVar11;
               }
             }
           }
@@ -261,15 +261,15 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
                             (g_CEventListPtr,this_ptr->fall_event), iVar8 != 0)) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&(this_ptr->base).base.model.motion_controller,0xb,1);
-        iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->voice_sound_handle);
+        iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handles[1]);
         if ((iVar8 == 0) &&
-           ((iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->attack_sound_handle),
+           ((iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handles[2]),
             iVar8 == 0 &&
-            (iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->alert_sound_handle),
+            (iVar8 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handles[0]),
             iVar8 == 0)))) {
           uVar11 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                              ((CDemonActor *)this_ptr,"batman-alert.wav");
-          this_ptr->alert_sound_handle = uVar11;
+          this_ptr->sfx_handles[0] = uVar11;
         }
       }
       break;

@@ -77,15 +77,15 @@ typedef struct CDemonSet {
     int color_scale_factor; // 0x15ae8c
     int fog_scale_factor; // 0x15ae90
     float set_scale_factor; // 0x15ae94
-    int unk1; // 0x15ae98
-    int unk2; // 0x15ae9c
+    int dead1; // 0x15ae98
+    int dead2; // 0x15ae9c
     int camera_enabled_flag; // 0x15aea0
     int selected_camera_index; // 0x15aea4
     int previous_best_camera_index; // 0x15aea8
     float previous_best_camera_timer; // 0x15aeac
     int pending_camera_index; // 0x15aeb0
     float camera_switch_cooldown; // 0x15aeb4
-    int room_reverb_type; // 0x15aeb8
+    int default_room_size; // 0x15aeb8
     int room_count; // 0x15aebc
     SRoom rooms[20]; // 0x15aec0
     int vdir_box_count; // 0x15b410

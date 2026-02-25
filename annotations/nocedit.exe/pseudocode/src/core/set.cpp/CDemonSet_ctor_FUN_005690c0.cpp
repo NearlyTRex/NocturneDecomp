@@ -25,8 +25,8 @@ CDemonSet * __cdecl core_set_cpp_CDemonSet_ctor_FUN_005690c0(CDemonSet *this_ptr
   this_ptr_00 = ADJ(pvVar5);
   this_ptr_00->camera_count = 0;
   ADJ(pvVar5)->light_count = 0;
-  ADJ(pvVar5)->unk1 = -1;
-  ADJ(pvVar5)->unk2 = -1;
+  ADJ(pvVar5)->dead1 = -1;
+  ADJ(pvVar5)->dead2 = -1;
   ADJ(pvVar5)->geometry_filename[0] = '\0';
   ADJ(pvVar5)->actor_count = 0;
   ADJ(pvVar5)->character_count = 0;
@@ -40,7 +40,7 @@ CDemonSet * __cdecl core_set_cpp_CDemonSet_ctor_FUN_005690c0(CDemonSet *this_ptr
   ADJ(pvVar5)->selected_camera_index = -1;
   ADJ(pvVar5)->previous_best_camera_index = -1;
   ADJ(pvVar5)->previous_best_camera_timer = 0.0;
-  ADJ(pvVar5)->room_reverb_type = 0;
+  ADJ(pvVar5)->default_room_size = 0;
   ADJ(pvVar5)->room_count = 0;
   ADJ(pvVar5)->lighting_quality_mode = 0;
   ADJ(pvVar5)->disable_spotlight_shadows = 0;

@@ -88,7 +88,7 @@ section .text
         ;   XREF to: 0056fd3b (CONDITIONAL_JUMP)  ; LAB_0056fd3b
     OR byte ptr [ESP + 0x60],0x1        ; 0056fc2f
         ;   Label: LAB_0056fc2f
-    CMP dword ptr [0x03276f30],0x0      ; 0056fc34 | g_ActiveLightCount
+    CMP dword ptr [0x03276f30],0x0      ; 0056fc34 | g_SpotLightCount
         ;   Label: LAB_0056fc34
     JZ 0x0056fc42                       ; 0056fc3b
         ;   XREF to: 0056fc42 (CONDITIONAL_JUMP)  ; LAB_0056fc42

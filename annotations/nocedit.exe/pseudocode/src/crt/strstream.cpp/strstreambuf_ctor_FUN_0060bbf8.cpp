@@ -11,8 +11,7 @@ strstreambuf * __cdecl crt_strstream_cpp_strstreambuf_ctor_FUN_0060bbf8(strstrea
 {
   strstreambuf *this_ptr_00;
   
-  this_ptr_00 = (strstreambuf *)
-                crt_iostream_cpp_streambuf_constructor_FUN_0060b7c2(&this_ptr->_streambuf);
+  this_ptr_00 = (strstreambuf *)crt_iostream_cpp_streambuf_ctor_FUN_0060b7c2(&this_ptr->_streambuf);
   this_ptr_00->__vtable = &g_StrstreambufVTable;
   crt_strstream_cpp_strstreambuf_init_FUN_0060b815(this_ptr_00,(char *)0x0,0,(char *)0x0);
   return this_ptr_00;

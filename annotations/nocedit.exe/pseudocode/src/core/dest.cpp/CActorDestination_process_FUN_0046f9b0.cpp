@@ -23,7 +23,7 @@ void __cdecl core_dest_cpp_CActorDestination_process_FUN_0046f9b0(CActorDestinat
   float local_1c;
   float local_18;
   
-  if ((this_ptr->unk4 != 0) && (this_ptr->dest_actor == (CDemonActor *)0x0)) {
+  if ((this_ptr->needs_actor_search != 0) && (this_ptr->dest_actor == (CDemonActor *)0x0)) {
     iVar3 = 0;
     for (iVar4 = 0; iVar4 < g_CDemonSetPtr->actor_count; iVar4 = iVar4 + 1) {
       iVar2 = *(int *)((int)g_CDemonSetPtr->actors + iVar3);
@@ -48,16 +48,16 @@ void __cdecl core_dest_cpp_CActorDestination_process_FUN_0046f9b0(CActorDestinat
     }
     if ((((float)0.25 <= ABS(local_20)) || ((float)0.25 <= ABS(local_1c))) ||
        ((float)0.25 <= ABS(local_18))) {
-      this_ptr->unk1 = 0;
-      this_ptr->unk4 = 0;
+      this_ptr->triggered = 0;
+      this_ptr->needs_actor_search = 0;
       return;
     }
-    if ((this_ptr->persistent_event_flag != 0) || ((this_ptr->unk1 == 0 && (this_ptr->unk4 == 0))))
-    {
+    if ((this_ptr->persistent_event_flag != 0) ||
+       ((this_ptr->triggered == 0 && (this_ptr->needs_actor_search == 0)))) {
       core_event_cpp_CEventList_executeCommands_FUN_004aabe0(g_CEventListPtr,this_ptr->what_event);
     }
-    this_ptr->unk1 = 1;
+    this_ptr->triggered = 1;
   }
-  this_ptr->unk4 = 0;
+  this_ptr->needs_actor_search = 0;
   return;
 }

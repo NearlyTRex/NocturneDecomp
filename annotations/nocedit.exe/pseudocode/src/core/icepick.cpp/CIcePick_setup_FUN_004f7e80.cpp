@@ -61,8 +61,8 @@ void __cdecl core_icepick_cpp_CIcePick_setup_FUN_004f7e80(CIcePick *this_ptr)
   if (this_ptr == (CIcePick *)g_HeroActors[iVar1]) {
     (((CIcePick *)g_HeroActors[iVar1])->base).base.collision_cylinder_radius = 1.5;
   }
-  this_ptr->injured_sfx_handle = 0;
-  this_ptr->swing_sfx_handle = 0;
+  this_ptr->sfx_handles[1] = 0;
+  this_ptr->sfx_handles[0] = 0;
   this_ptr->aim_pitch = 0.0;
   return;
 }

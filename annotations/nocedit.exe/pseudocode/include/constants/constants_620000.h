@@ -2,7 +2,6 @@
 
 // Dependencies
 #include "system/basetypes.h"
-#include "system/misc.h"
 
 // =============================================================================
 // CONSTANTS
@@ -3074,6 +3073,7 @@ const char s_EmptyStr_006295ed = '\0';
 const char s_BackspaceChar_0062a766 = 0x08;
 const char s_FormFeedChar_0062a76c = 0x0C;
 const char s_CharMax_0062a8ad = '\0';
+const char s_EmptyChar_0062ca5b = '\0';
 
 // char[11] constants
 const char s_0062a892[] = " ";

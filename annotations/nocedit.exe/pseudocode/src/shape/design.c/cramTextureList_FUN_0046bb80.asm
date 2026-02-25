@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl shape_design_c_cramTextureList_FUN_0046bb80(SCramConfig *cram_config)
+; int __cdecl shape_design_c_cramTextureList_FUN_0046bb80(SCram *cram)
 ;
 ; Parameters:
-; SCramConfig *    Stack[0x4]:4   cram_config
+; SCram *          Stack[0x4]:4   cram
 ; Local Variables:
 ; undefined8       Stack[-0xb60]:8  local_b60
 ; undefined1       Stack[-0xb58]:1  local_b58
@@ -20,8 +20,7 @@
 ; undefined4       Stack[-0xa30]:4  local_a30
 ; undefined4       Stack[-0xa2c]:4  local_a2c
 ; undefined4       Stack[-0xa28]:4  local_a28
-; undefined1       Stack[-0xa24]:1  local_a24
-; undefined1       Stack[-0xa23]:1  local_a23
+; char[80]         Stack[-0xa24]:80  local_a24
 ; undefined4       Stack[-0x9d4]:4  local_9d4
 ; undefined1       Stack[-0x9d0]:1  local_9d0
 ; undefined4       Stack[-0x980]:4  local_980
@@ -37,7 +36,7 @@
 ; undefined1       Stack[-0x258]:1  local_258
 ; undefined1       Stack[-0x257]:1  local_257
 ; undefined1       Stack[-0x255]:1  local_255
-; undefined1       Stack[-0x154]:1  local_154
+; char[200]        Stack[-0x154]:200  local_154
 ; undefined1       Stack[-0x8c]:1  local_8c
 ; undefined4       Stack[-0x80]:4  local_80
 ; undefined4       Stack[-0x7c]:4  local_7c
@@ -2268,7 +2267,7 @@ section .text
     ADD EAX,EDX                         ; 0046d2a9
     PUSH EAX                            ; 0046d2ab
     CALL shape_design.c_loadTextureData_FUN_0046b060 ; 0046d2ac
-        ;   XREF to: 0046b060 (UNCONDITIONAL_CALL)  ; void shape_design.c_loadTextureData_FUN_0046b060(STextureLoadConfig * config_ptr, void * rgb_buffer, void * alpha_buffer, int atlas_width, ...)
+        ;   XREF to: 0046b060 (UNCONDITIONAL_CALL)  ; void shape_design.c_loadTextureData_FUN_0046b060(STextureAtlasEntry * entry, uchar * rgb_buffer, uchar * alpha_buffer, int atlas_width, ...)
     ADD ESP,0x18                        ; 0046d2b1
     JMP 0x0046d25b                      ; 0046d2b4
         ;   XREF to: 0046d25b (UNCONDITIONAL_JUMP)  ; LAB_0046d25b

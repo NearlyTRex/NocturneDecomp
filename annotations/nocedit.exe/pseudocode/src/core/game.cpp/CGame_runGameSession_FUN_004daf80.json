@@ -16,12 +16,6 @@
       {
         "category": "undeclared_identifier",
         "column": 74,
-        "line": 195,
-        "message": "use of undeclared identifier 'stack0xfffff790'; did you mean 'in_stack_fffff790'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 71,
         "line": 197,
         "message": "use of undeclared identifier 'stack0xfffff790'; did you mean 'in_stack_fffff790'?"
       },
@@ -51,32 +45,38 @@
       },
       {
         "category": "undeclared_identifier",
+        "column": 71,
+        "line": 207,
+        "message": "use of undeclared identifier 'stack0xfffff790'; did you mean 'in_stack_fffff790'?"
+      },
+      {
+        "category": "undeclared_identifier",
         "column": 73,
-        "line": 209,
+        "line": 211,
         "message": "use of undeclared identifier 'stack0xfffff790'; did you mean 'in_stack_fffff790'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 40,
-        "line": 213,
+        "line": 215,
         "message": "use of undeclared identifier 'stack0xfffff790'; did you mean 'in_stack_fffff790'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 46,
-        "line": 219,
+        "line": 221,
         "message": "use of undeclared identifier 'stack0xfffff790'; did you mean 'in_stack_fffff790'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 78,
-        "line": 245,
+        "line": 247,
         "message": "use of undeclared identifier 'stack0xfffff790'; did you mean 'in_stack_fffff790'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 74,
-        "line": 258,
+        "line": 260,
         "message": "use of undeclared identifier 'stack0xfffff790'; did you mean 'in_stack_fffff790'?"
       }
     ],
@@ -85,19 +85,18 @@
   },
   "complexity": {
     "assembly_lines": 1026,
-    "complexity_score": 573,
+    "complexity_score": 540,
     "cross_reference_count": 2,
     "function_call_count": 57,
     "global_count": 80,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 358,
-    "suspect_count": 20,
+    "pseudocode_lines": 360,
+    "suspect_count": 17,
     "suspect_types": [
       "stack_param",
-      "stack_ref",
-      "undefined_data"
+      "stack_ref"
     ],
-    "total_lines": 1384
+    "total_lines": 1386
   },
   "cross_references": [
     {
@@ -275,7 +274,7 @@
     {
       "addr": "00571130",
       "is_variadic": false,
-      "name": "core_set.cpp_CDemonSet_restoreLightState_FUN_00571130"
+      "name": "core_set.cpp_CDemonSet_loadMasterLightStates_FUN_00571130"
     },
     {
       "addr": "0056ae50",
@@ -782,14 +781,14 @@
     },
     {
       "addr": "02d82d80",
-      "name": "DAT_02d82d80",
-      "type": "undefined4",
+      "name": "g_HasSavedLightState",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02d82d84",
-      "name": "DAT_02d82d84",
-      "type": "undefined4",
+      "name": "g_MasterLightStateSaveBuffer",
+      "type": "int[201]",
       "value": null
     },
     {
@@ -1060,32 +1059,8 @@
       "type": "stack_ref"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 94,
-      "match": "DAT_02d82d80",
-      "severity": "mild",
-      "text": "if (DAT_02d82d80 == 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 98,
-      "match": "DAT_02d82d80",
-      "severity": "mild",
-      "text": "DAT_02d82d80 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 99,
-      "match": "DAT_02d82d84",
-      "severity": "mild",
-      "text": "core_set_cpp_CDemonSet_restoreLightState_FUN_00571130(g_CDemonSetPtr,&DAT_02d82d84);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 137,
+      "line": 138,
       "match": "in_stack_fffff790",
       "severity": "moderate",
       "text": "core_game_cpp_CGame_processFudge_FUN_004d8750(this_ptr,in_stack_fffff790,in_stack_fffff794);",
@@ -1093,7 +1068,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 137,
+      "line": 138,
       "match": "in_stack_fffff794",
       "severity": "moderate",
       "text": "core_game_cpp_CGame_processFudge_FUN_004d8750(this_ptr,in_stack_fffff790,in_stack_fffff794);",
@@ -1101,18 +1076,10 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 188,
-      "match": "&stack0xfffff790",
-      "severity": "moderate",
-      "text": "shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff790);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
       "line": 190,
       "match": "&stack0xfffff790",
       "severity": "moderate",
-      "text": "shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff790,pcVar2);",
+      "text": "shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff790);",
       "type": "stack_ref"
     },
     {
@@ -1149,7 +1116,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 202,
+      "line": 200,
       "match": "&stack0xfffff790",
       "severity": "moderate",
       "text": "shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff790,pcVar2);",
@@ -1157,7 +1124,15 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 206,
+      "line": 204,
+      "match": "&stack0xfffff790",
+      "severity": "moderate",
+      "text": "shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff790,pcVar2);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 208,
       "match": "&stack0xfffff790",
       "severity": "moderate",
       "text": "((CPickList *)&stack0xfffff790,3,0);",
@@ -1165,7 +1140,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 212,
+      "line": 214,
       "match": "&stack0xfffff790",
       "severity": "moderate",
       "text": "((CPickList *)&stack0xfffff790,pcVar2,iVar3,iVar4);",
@@ -1173,7 +1148,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 238,
+      "line": 240,
       "match": "&stack0xfffff790",
       "severity": "moderate",
       "text": "shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffff790,0);",
@@ -1181,7 +1156,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 251,
+      "line": 253,
       "match": "&stack0xfffff790",
       "severity": "moderate",
       "text": "shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffff790,0);",

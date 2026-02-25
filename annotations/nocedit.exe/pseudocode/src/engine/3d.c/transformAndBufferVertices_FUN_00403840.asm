@@ -1,11 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SMRGLHeaderExtended * __cdecl engine_3d_c_transformAndBufferVertices_FUN_00403840(SVertexBatch *vertex_source,SVertexBatch *processing_params)
+; SMRGLHeaderExtended * __cdecl engine_3d_c_transformAndBufferVertices_FUN_00403840(SMRGLHeaderExtended *mrgl)
 ;
 ; Parameters:
-; SVertexBatch *   Stack[0x4]:4   vertex_source
-; SVertexBatch *   Stack[0x8]:4   processing_params
+; SMRGLHeaderExtended * Stack[0x4]:4   mrgl
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;

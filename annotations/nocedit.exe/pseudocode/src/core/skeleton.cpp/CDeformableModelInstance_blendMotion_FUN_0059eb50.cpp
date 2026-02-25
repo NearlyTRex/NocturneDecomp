@@ -76,7 +76,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
               (&this_ptr->motion_controller,target_motion_index,target_frame_number,local_58,
                &local_5c,&stack0xfffff6c8);
     this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
-    if (this_ptr->unk == 0) {
+    if (this_ptr->bone_update_mode == 0) {
       if (0 < this_ptr_00->bone_count) {
         local_2c = (this_ptr->bone_transform).bone_rotations;
         local_34 = this_ptr;
@@ -114,7 +114,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
         } while (local_1c < this_ptr_00->bone_count);
       }
     }
-    else if (this_ptr->unk == 1) {
+    else if (this_ptr->bone_update_mode == 1) {
       local_20 = 0;
       if (0 < this_ptr_00->bone_count) {
         local_44 = 0;

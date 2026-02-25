@@ -105,7 +105,7 @@ section .text
         ;   XREF to: 0056bec1 (CONDITIONAL_JUMP)  ; LAB_0056bec1
     XOR EBX,EBX                         ; 0056befb
         ;   Label: LAB_0056befb
-    MOV EDI,dword ptr [0x03276f30]      ; 0056befd | g_ActiveLightCount
+    MOV EDI,dword ptr [0x03276f30]      ; 0056befd | g_SpotLightCount
     MOV dword ptr [ESP + 0x1c],EBX      ; 0056bf03
     TEST EDI,EDI                        ; 0056bf07
     JLE 0x0056bf49                      ; 0056bf09
@@ -113,7 +113,7 @@ section .text
     MOV dword ptr [ESP + 0x14],EBX      ; 0056bf0b
     MOV EAX,dword ptr [ESP + 0x14]      ; 0056bf0f
         ;   Label: LAB_0056bf0f
-    MOV EAX,dword ptr [EAX + 0x3276f34] ; 0056bf13 | g_ActiveLightList | DAT_03276f38
+    MOV EAX,dword ptr [EAX + 0x3276f34] ; 0056bf13 | g_SpotLightList | DAT_03276f38
     MOV EDX,dword ptr [EAX + 0x1cb4]    ; 0056bf19
     MOV dword ptr [ESP + 0x20],EAX      ; 0056bf1f
     TEST EDX,EDX                        ; 0056bf23
@@ -122,7 +122,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x14]      ; 0056bf2b
         ;   Label: LAB_0056bf2b
     MOV ECX,dword ptr [ESP + 0x1c]      ; 0056bf2f
-    MOV EBX,dword ptr [0x03276f30]      ; 0056bf33 | g_ActiveLightCount
+    MOV EBX,dword ptr [0x03276f30]      ; 0056bf33 | g_SpotLightCount
     ADD EDX,0x4                         ; 0056bf39
     INC ECX                             ; 0056bf3c
     MOV dword ptr [ESP + 0x14],EDX      ; 0056bf3d

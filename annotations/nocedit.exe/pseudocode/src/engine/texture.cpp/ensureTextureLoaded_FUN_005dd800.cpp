@@ -10,7 +10,6 @@ SMRGLHeaderExtended * __cdecl engine_texture_cpp_ensureTextureLoaded_FUN_005dd80
 
 {
   int texture_index;
-  int extraout_EAX;
   bool bVar1;
   
   if ((g_TexturesDisabled == 0) && (texture->texture_name[0] != '\0')) {
@@ -19,9 +18,9 @@ SMRGLHeaderExtended * __cdecl engine_texture_cpp_ensureTextureLoaded_FUN_005dd80
                    (g_TextureCacheInstance,(texture->base).count & 0xffff,texture->texture_name);
     bVar1 = texture_index == -1;
     if (bVar1) {
-      engine_texture_cpp_CTextureCache_loadTexture_FUN_005dcc00
-                (g_TextureCacheInstance,texture->texture_name);
-      texture_index = extraout_EAX;
+      texture_index =
+           engine_texture_cpp_CTextureCache_loadTexture_FUN_005dcc00
+                     (g_TextureCacheInstance,texture->texture_name);
     }
     (texture->base).count = texture_index;
     g_CurrentTextureIndex = texture_index;

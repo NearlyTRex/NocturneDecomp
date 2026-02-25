@@ -59,7 +59,7 @@ section .text
     PUSH EAX                            ; 004bd97a
     PUSH EBX                            ; 004bd97b
     CALL core_fileman.cpp_CDemonFileManager_addSetToExtractList_FUN_004bd8e0 ; 004bd97c
-        ;   XREF to: 004bd8e0 (UNCONDITIONAL_CALL)  ; void core_fileman.cpp_CDemonFileManager_addSetToExtractList_FUN_004bd8e0(CDemonFileManager * file_manager_ptr, char * set_filename)
+        ;   XREF to: 004bd8e0 (UNCONDITIONAL_CALL)  ; void core_fileman.cpp_CDemonFileManager_addSetToExtractList_FUN_004bd8e0(CDemonFileManager * this_ptr, char * set_filename)
     ADD ESP,0x8                         ; 004bd981
     PUSH EBX                            ; 004bd984
     CALL engine_fileio.cpp_CFileManager_closeExtractFile_FUN_004b7c60 ; 004bd985

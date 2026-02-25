@@ -46,8 +46,8 @@ CDemonLight * __cdecl core_setutil_cpp_C3DSLight_create_FUN_00586a90(C3DSLight *
     (pCVar2->base).base.position.z = (int)(this_ptr->pos).z;
   }
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
-            ((CMatrix3x3f *)&(pCVar2->base).base.rotation_matrix,&this_ptr->orient);
-  (pCVar2->base).base.projection_scale = this_ptr->fov;
+            (&(pCVar2->base).base.rotation_matrix,&this_ptr->orient);
+  (pCVar2->base).base.focal_length = this_ptr->fov;
   iVar6 = 0;
   if (0 < this_ptr->filter_count) {
     filter_name = this_ptr->filter_names;

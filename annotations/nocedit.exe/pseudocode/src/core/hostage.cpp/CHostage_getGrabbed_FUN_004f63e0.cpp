@@ -17,7 +17,7 @@ int __cdecl core_hostage_cpp_CHostage_getGrabbed_FUN_004f63e0(CHostage *this_ptr
     core_event_cpp_CEventList_executeCommands_FUN_004aabe0
               (g_CEventListPtr,this_ptr->get_eaten_event);
   }
-  this_ptr->unk6 = 3.0;
+  this_ptr->grabber_flee_timer = 3.0;
   this_ptr->grabber = grabber;
   return 1;
 }

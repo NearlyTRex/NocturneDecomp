@@ -19,7 +19,7 @@
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
 ;   core_glass.cpp_CGlass_renderBrokenGlass_FUN_004e9ca0
-;   core_set.cpp_CDemonSet_rotateVertices_FUN_0056e7c0
+;   core_set.cpp_CDemonSet_rotateVerticies_FUN_0056e7c0
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
 ;   engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0
 ;
@@ -107,8 +107,8 @@ section .text
     MOV ECX,dword ptr [0x006810c8]      ; 004e9f68 | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH ECX                            ; 004e9f6e | g_CDemonSetInstance
     XOR EDI,EDI                         ; 004e9f6f
-    CALL core_set.cpp_CDemonSet_rotateVertices_FUN_0056e7c0 ; 004e9f71
-        ;   XREF to: 0056e7c0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_rotateVertices_FUN_0056e7c0(CDemonSet * this_ptr, int vertex_count, int * input_vertices)
+    CALL core_set.cpp_CDemonSet_rotateVerticies_FUN_0056e7c0 ; 004e9f71
+        ;   XREF to: 0056e7c0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_rotateVerticies_FUN_0056e7c0(CDemonSet * this_ptr, int vertex_count, CVector3i * input_vertices)
     MOV EBX,dword ptr [EBP + 0xb38]     ; 004e9f76
     ADD ESP,0xc                         ; 004e9f7c
     TEST EBX,EBX                        ; 004e9f7f
@@ -128,7 +128,7 @@ section .text
     MOV dword ptr [EBX + 0x6c0],0x0     ; 004e9fb6
     ADD EBX,0x48                        ; 004e9fc0
     CALL engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0 ; 004e9fc3
-        ;   XREF to: 0048aeb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info, int render_flags)
+        ;   XREF to: 0048aeb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, int render_flags)
     ADD ESI,0x48                        ; 004e9fc8
     MOV EDX,dword ptr [EBP + 0xb38]     ; 004e9fcb
     ADD ESP,0xc                         ; 004e9fd1

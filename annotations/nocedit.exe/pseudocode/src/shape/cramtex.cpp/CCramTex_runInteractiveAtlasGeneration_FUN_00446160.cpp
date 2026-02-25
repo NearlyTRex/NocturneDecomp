@@ -16,13 +16,13 @@ int __cdecl shape_cramtex_cpp_CCramTex_runInteractiveAtlasGeneration_FUN_0044616
   int *piVar5;
   int *piVar6;
   int *piVar7;
-  void *pvVar8;
+  int *piVar8;
   CCramTex *pCVar9;
   _FILE *p_Var10;
   int iVar11;
   int iVar12;
   uint uVar13;
-  int *piVar14;
+  SCramRectangle **ppSVar14;
   int iVar15;
   int iVar16;
   int iVar17;
@@ -30,7 +30,7 @@ int __cdecl shape_cramtex_cpp_CCramTex_runInteractiveAtlasGeneration_FUN_0044616
   int iVar19;
   int iVar20;
   bool bVar21;
-  uint *puVar22;
+  SCramRectangle **ppSVar22;
   float in_stack_ffffff50;
   SIZE_T local_a8;
   int local_a4;
@@ -51,56 +51,56 @@ int __cdecl shape_cramtex_cpp_CCramTex_runInteractiveAtlasGeneration_FUN_0044616
   SCramRectangle *local_48;
   CCramTex *local_44;
   SCramRectangle *local_40;
-  int *local_3c;
+  SCramRectangle **local_3c;
   uint local_38;
   int local_30;
   int local_24;
   
   __STK();
-  local_3c = g_CramAlgorithmState;
+  local_3c = g_CramCandidateWriteCursor;
   local_a8 = 0;
   local_a4 = 0;
   if (0 < g_CramRectangleCount) {
     pSVar18 = g_CramRectangles;
-    puVar22 = g_CramAlgorithmState;
+    ppSVar22 = g_CramCandidateWriteCursor;
     do {
       pSVar18->active_flag = 0;
       iVar19 = g_CramBestSolutionMetric1;
-      if ((pSVar18->unk1 == 0) &&
+      if ((pSVar18->occupant == 0) &&
          ((this_ptr->padded_height != this_ptr->padded_width || (pSVar18->orientation == 0)))) {
         if (pSVar18->orientation == 0) {
-          iVar17 = pSVar18->top + this_ptr->padded_width;
-          pSVar18->unk2 = iVar17;
+          iVar17 = pSVar18->start_x + this_ptr->padded_width;
+          pSVar18->candidate_end_x = iVar17;
           if (iVar17 < iVar19) {
-            iVar19 = pSVar18->right + this_ptr->padded_height;
+            iVar19 = pSVar18->start_y + this_ptr->padded_height;
             goto LAB_00446547;
           }
         }
         else {
-          iVar17 = pSVar18->top + this_ptr->padded_height;
-          pSVar18->unk2 = iVar17;
+          iVar17 = pSVar18->start_x + this_ptr->padded_height;
+          pSVar18->candidate_end_x = iVar17;
           if (iVar17 < iVar19) {
-            iVar19 = pSVar18->right + this_ptr->padded_width;
+            iVar19 = pSVar18->start_y + this_ptr->padded_width;
 LAB_00446547:
             iVar17 = g_CramBestSolutionMetric1;
-            pSVar18->unk3 = iVar19;
+            pSVar18->candidate_end_y = iVar19;
             if (iVar19 < iVar17) {
               iVar19 = g_CramPlacedTextureCount + -1;
               if (-1 < iVar19) {
                 pCVar9 = g_CramSortedTextureEntries + iVar19;
                 do {
-                  if ((((pSVar18->left == pCVar9->assigned_map_number) &&
-                       (pSVar18->top < pCVar9->working_top)) &&
-                      (pSVar18->right < pCVar9->working_width)) &&
-                     ((pCVar9->placement_bottom < pSVar18->unk2 &&
-                      (pCVar9->working_right < pSVar18->unk3)))) goto LAB_004461b1;
+                  if ((((pSVar18->map_id == pCVar9->assigned_map_number) &&
+                       (pSVar18->start_x < pCVar9->working_top)) &&
+                      (pSVar18->start_y < pCVar9->working_width)) &&
+                     ((pCVar9->placement_bottom < pSVar18->candidate_end_x &&
+                      (pCVar9->working_right < pSVar18->candidate_end_y)))) goto LAB_004461b1;
                   iVar19 = iVar19 + -1;
                   pCVar9 = pCVar9 + -1;
                 } while (-1 < iVar19);
               }
               local_a8 = local_a8 + 1;
-              *puVar22 = pSVar18;
-              puVar22 = puVar22 + 1;
+              *ppSVar22 = pSVar18;
+              ppSVar22 = ppSVar22 + 1;
             }
           }
         }
@@ -110,50 +110,50 @@ LAB_004461b1:
       pSVar18 = pSVar18 + 1;
     } while (local_a4 < g_CramRectangleCount);
   }
-  pvVar8 = g_CramAlgorithmState;
+  ppSVar22 = g_CramCandidateWriteCursor;
   if (0 < (int)local_a8) {
     g_CramPlacedTextureCount = g_CramPlacedTextureCount + 1;
-    g_CramAlgorithmState = (void *)((int)g_CramAlgorithmState + local_a8 * 4);
+    g_CramCandidateWriteCursor = g_CramCandidateWriteCursor + local_a8;
     if (1 < (int)local_a8) {
       iVar19 = 0;
-      piVar14 = local_3c;
+      ppSVar14 = local_3c;
       if (0 < (int)local_a8) {
         do {
-          iVar17 = *piVar14;
-          *(int *)(iVar17 + 0x24) = *(int *)(iVar17 + 4) + *(int *)(iVar17 + 8);
-          iVar20 = *(int *)(iVar17 + 0x1c);
-          if (*(int *)(iVar17 + 0x1c) <= *(int *)(iVar17 + 0x20)) {
-            iVar20 = *(int *)(iVar17 + 0x20);
+          pSVar18 = *ppSVar14;
+          pSVar18->active_flag = pSVar18->start_x + pSVar18->start_y;
+          iVar17 = pSVar18->candidate_end_x;
+          if (pSVar18->candidate_end_x <= pSVar18->candidate_end_y) {
+            iVar17 = pSVar18->candidate_end_y;
           }
           iVar19 = iVar19 + 1;
-          *(int *)(iVar17 + 0x24) =
-               *(int *)(iVar17 + 0x24) +
-               *(int *)(iVar17 + 0x20) + iVar20 * 5 + *(int *)(iVar17 + 0x1c);
-          piVar14 = piVar14 + 1;
+          pSVar18->active_flag =
+               pSVar18->active_flag +
+               pSVar18->candidate_end_y + iVar17 * 5 + pSVar18->candidate_end_x;
+          ppSVar14 = ppSVar14 + 1;
         } while (iVar19 < (int)local_a8);
       }
       _qsort
                 (local_3c,local_a8,4,shape_cramtex_cpp_qsortRectanglesByActiveFlag_FUN_00446140);
     }
     iVar19 = 0;
-    piVar14 = local_3c;
+    ppSVar14 = local_3c;
     if (0 < (int)local_a8) {
       do {
         iVar17 = iVar19 + 5;
         iVar19 = iVar19 + 1;
-        *(int *)(*piVar14 + 0x24) = iVar17;
-        piVar14 = piVar14 + 1;
+        (*ppSVar14)->active_flag = iVar17;
+        ppSVar14 = ppSVar14 + 1;
       } while (iVar19 < (int)local_a8);
     }
     if (g_CramPlacedTextureCount < g_CramTextureCount) {
       local_88 = 0;
       if (0 < (int)local_a8) {
         do {
-          piVar14 = (int *)*local_3c;
-          this_ptr->assigned_map_number = *piVar14;
-          this_ptr->placement_flags = piVar14[5];
-          this_ptr->placement_bottom = piVar14[1];
-          this_ptr->working_right = piVar14[2];
+          pSVar18 = *local_3c;
+          this_ptr->assigned_map_number = pSVar18->map_id;
+          this_ptr->placement_flags = pSVar18->orientation;
+          this_ptr->placement_bottom = pSVar18->start_x;
+          this_ptr->working_right = pSVar18->start_y;
           if (this_ptr->placement_flags == 0) {
             this_ptr->effective_width = this_ptr->padded_width;
             iVar19 = this_ptr->padded_height;
@@ -171,12 +171,12 @@ LAB_004461b1:
             if (0 < g_CramRectangleCount) {
               pSVar18 = g_CramRectangles;
               do {
-                if ((((pSVar18->unk1 == 0) && (pSVar18->left == this_ptr->assigned_map_number)) &&
-                    (this_ptr->placement_bottom < pSVar18->bottom)) &&
-                   (((this_ptr->working_right < pSVar18->max_dimension &&
-                     (pSVar18->top < this_ptr->working_top)) &&
-                    (pSVar18->right < this_ptr->working_width)))) {
-                  pSVar18->unk1 = (int)this_ptr;
+                if ((((pSVar18->occupant == 0) && (pSVar18->map_id == this_ptr->assigned_map_number)
+                     ) && (this_ptr->placement_bottom < pSVar18->end_x)) &&
+                   (((this_ptr->working_right < pSVar18->end_y &&
+                     (pSVar18->start_x < this_ptr->working_top)) &&
+                    (pSVar18->start_y < this_ptr->working_width)))) {
+                  pSVar18->occupant = (int)this_ptr;
                 }
                 iVar19 = iVar19 + 1;
                 pSVar18 = pSVar18 + 1;
@@ -215,9 +215,9 @@ LAB_004461b1:
                       if (0 < g_CramRectangleCount) {
                         iVar12 = 0;
                         do {
-                          if (((iVar17 == *(int *)((int)&g_CramRectangles[0].left + iVar12)) &&
-                              (iVar11 == *(int *)((int)&g_CramRectangles[0].top + iVar12))) &&
-                             (iVar20 == *(int *)((int)&g_CramRectangles[0].right + iVar12)))
+                          if (((iVar17 == *(int *)((int)&g_CramRectangles[0].map_id + iVar12)) &&
+                              (iVar11 == *(int *)((int)&g_CramRectangles[0].start_x + iVar12))) &&
+                             (iVar20 == *(int *)((int)&g_CramRectangles[0].start_y + iVar12)))
                           goto LAB_00446d87;
                           iVar12 = iVar12 + 0x28;
                         } while (iVar12 < g_CramRectangleCount * 0x28);
@@ -245,14 +245,14 @@ LAB_004461b1:
                           } while (-1 < iVar15);
                         }
                         if (iVar15 < 0) {
-                          local_54->unk1 = 0;
+                          local_54->occupant = 0;
                           local_54->active_flag = 1;
-                          local_54->left = iVar17;
-                          local_54->top = iVar11;
-                          local_54->right = iVar20;
-                          local_54->bottom = iVar12 + iVar11;
+                          local_54->map_id = iVar17;
+                          local_54->start_x = iVar11;
+                          local_54->start_y = iVar20;
+                          local_54->end_x = iVar12 + iVar11;
                           local_54->orientation = local_78;
-                          local_54->max_dimension = iVar16 + iVar20;
+                          local_54->end_y = iVar16 + iVar20;
                           g_CramRectangleCount = g_CramRectangleCount + 1;
                           local_54 = local_54 + 1;
                         }
@@ -269,9 +269,9 @@ LAB_00446d87:
                 if (0 < g_CramRectangleCount) {
                   iVar11 = 0;
                   do {
-                    if (((iVar17 == *(int *)((int)&g_CramRectangles[0].left + iVar11)) &&
-                        (local_80 == *(int *)((int)&g_CramRectangles[0].top + iVar11))) &&
-                       (iVar20 == *(int *)((int)&g_CramRectangles[0].right + iVar11)))
+                    if (((iVar17 == *(int *)((int)&g_CramRectangles[0].map_id + iVar11)) &&
+                        (local_80 == *(int *)((int)&g_CramRectangles[0].start_x + iVar11))) &&
+                       (iVar20 == *(int *)((int)&g_CramRectangles[0].start_y + iVar11)))
                     goto LAB_00446df8;
                     iVar11 = iVar11 + 0x28;
                   } while (iVar11 < g_CramRectangleCount * 0x28);
@@ -299,14 +299,14 @@ LAB_00446d87:
                     } while (-1 < iVar16);
                   }
                   if (iVar16 < 0) {
-                    local_4c->unk1 = 0;
+                    local_4c->occupant = 0;
                     local_4c->active_flag = 1;
-                    local_4c->left = iVar17;
-                    local_4c->top = local_80;
-                    local_4c->right = iVar20;
-                    local_4c->max_dimension = iVar11 + iVar20;
+                    local_4c->map_id = iVar17;
+                    local_4c->start_x = local_80;
+                    local_4c->start_y = iVar20;
+                    local_4c->end_y = iVar11 + iVar20;
                     local_4c->orientation = local_70;
-                    local_4c->bottom = iVar12 + local_80;
+                    local_4c->end_x = iVar12 + local_80;
                     g_CramRectangleCount = g_CramRectangleCount + 1;
                     local_4c = local_4c + 1;
                   }
@@ -347,9 +347,9 @@ LAB_00446df8:
                       if (0 < g_CramRectangleCount) {
                         iVar12 = 0;
                         do {
-                          if (((iVar17 == *(int *)((int)&g_CramRectangles[0].left + iVar12)) &&
-                              (iVar20 == *(int *)((int)&g_CramRectangles[0].top + iVar12))) &&
-                             (iVar11 == *(int *)((int)&g_CramRectangles[0].right + iVar12)))
+                          if (((iVar17 == *(int *)((int)&g_CramRectangles[0].map_id + iVar12)) &&
+                              (iVar20 == *(int *)((int)&g_CramRectangles[0].start_x + iVar12))) &&
+                             (iVar11 == *(int *)((int)&g_CramRectangles[0].start_y + iVar12)))
                           goto LAB_00446f25;
                           iVar12 = iVar12 + 0x28;
                         } while (iVar12 < g_CramRectangleCount * 0x28);
@@ -377,14 +377,14 @@ LAB_00446df8:
                           } while (-1 < iVar15);
                         }
                         if (iVar15 < 0) {
-                          local_48->unk1 = 0;
+                          local_48->occupant = 0;
                           local_48->active_flag = 1;
-                          local_48->left = iVar17;
-                          local_48->top = iVar20;
-                          local_48->right = iVar11;
-                          local_48->bottom = iVar12 + iVar20;
+                          local_48->map_id = iVar17;
+                          local_48->start_x = iVar20;
+                          local_48->start_y = iVar11;
+                          local_48->end_x = iVar12 + iVar20;
                           local_48->orientation = local_64;
-                          local_48->max_dimension = iVar16 + iVar11;
+                          local_48->end_y = iVar16 + iVar11;
                           g_CramRectangleCount = g_CramRectangleCount + 1;
                           local_48 = local_48 + 1;
                         }
@@ -401,9 +401,9 @@ LAB_00446f25:
                 if (0 < g_CramRectangleCount) {
                   iVar11 = 0;
                   do {
-                    if (((iVar17 == *(int *)((int)&g_CramRectangles[0].left + iVar11)) &&
-                        (iVar20 == *(int *)((int)&g_CramRectangles[0].top + iVar11))) &&
-                       (local_6c == *(int *)((int)&g_CramRectangles[0].right + iVar11)))
+                    if (((iVar17 == *(int *)((int)&g_CramRectangles[0].map_id + iVar11)) &&
+                        (iVar20 == *(int *)((int)&g_CramRectangles[0].start_x + iVar11))) &&
+                       (local_6c == *(int *)((int)&g_CramRectangles[0].start_y + iVar11)))
                     goto LAB_00446f96;
                     iVar11 = iVar11 + 0x28;
                   } while (iVar11 < g_CramRectangleCount * 0x28);
@@ -430,14 +430,14 @@ LAB_00446f25:
                     } while (-1 < iVar16);
                   }
                   if (iVar16 < 0) {
-                    local_40->unk1 = 0;
+                    local_40->occupant = 0;
                     local_40->active_flag = 1;
-                    local_40->left = iVar17;
-                    local_40->top = iVar20;
-                    local_40->right = local_6c;
-                    local_40->max_dimension = iVar11 + local_6c;
+                    local_40->map_id = iVar17;
+                    local_40->start_x = iVar20;
+                    local_40->start_y = local_6c;
+                    local_40->end_y = iVar11 + local_6c;
                     local_40->orientation = local_5c;
-                    local_40->bottom = iVar12 + iVar20;
+                    local_40->end_x = iVar12 + iVar20;
                     g_CramRectangleCount = g_CramRectangleCount + 1;
                     local_40 = local_40 + 1;
                   }
@@ -459,8 +459,8 @@ LAB_00446f96:
             if (0 < iVar19) {
               iVar20 = 0;
               do {
-                if (this_ptr == *(CCramTex **)((int)&g_CramRectangles[0].unk1 + iVar20)) {
-                  *(uint *)((int)&g_CramRectangles[0].unk1 + iVar20) = 0;
+                if (this_ptr == *(CCramTex **)((int)&g_CramRectangles[0].occupant + iVar20)) {
+                  *(uint *)((int)&g_CramRectangles[0].occupant + iVar20) = 0;
                 }
                 iVar20 = iVar20 + 0x28;
               } while (iVar20 < iVar19 * 0x28);
@@ -506,14 +506,14 @@ LAB_00446f96:
                  ((float)g_CramMaxIterationsLimit < (float)g_CramIterationCount)) {
 LAB_00447500:
                 engine_2d_c_clearInputAndWait_FUN_00403260();
-                g_CramAlgorithmState = pvVar8;
+                g_CramCandidateWriteCursor = ppSVar22;
                 g_CramPlacedTextureCount = g_CramPlacedTextureCount + -1;
                 return 999999;
               }
               g_CramVisualizationUpdateCounter = 0;
             }
             if (iVar17 != 0) {
-              g_CramAlgorithmState = pvVar8;
+              g_CramCandidateWriteCursor = ppSVar22;
               g_CramPlacedTextureCount = g_CramPlacedTextureCount + -1;
               return iVar17;
             }
@@ -524,11 +524,11 @@ LAB_00447500:
       }
     }
     else {
-      local_3c = (int *)*local_3c;
-      this_ptr->assigned_map_number = *local_3c;
-      this_ptr->placement_flags = local_3c[5];
-      this_ptr->placement_bottom = local_3c[1];
-      this_ptr->working_right = local_3c[2];
+      pSVar18 = *local_3c;
+      this_ptr->assigned_map_number = pSVar18->map_id;
+      this_ptr->placement_flags = pSVar18->orientation;
+      this_ptr->placement_bottom = pSVar18->start_x;
+      this_ptr->working_right = pSVar18->start_y;
       if (this_ptr->placement_flags == 0) {
         this_ptr->effective_width = this_ptr->padded_width;
         iVar19 = this_ptr->padded_height;
@@ -714,7 +714,7 @@ LAB_00447500:
           shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var10,"..\\shape\\cramtex.cpp",0x35d);
         }
         if (g_CramCurrentAcceptableSize <= g_CramAcceptableSize) {
-          g_CramAlgorithmState = pvVar8;
+          g_CramCandidateWriteCursor = ppSVar22;
           g_CramPlacedTextureCount = g_CramPlacedTextureCount + -1;
           return 999999;
         }
@@ -727,17 +727,17 @@ LAB_00447500:
           pSVar18 = g_CramRectangles;
           do {
             if (pSVar18->orientation == 0) {
-              if (pSVar18->top + g_CramMinPlacementX < g_CramBestSolutionMetric1) {
-                iVar17 = pSVar18->right + g_CramMinPlacementY;
+              if (pSVar18->start_x + g_CramMinPlacementX < g_CramBestSolutionMetric1) {
+                iVar17 = pSVar18->start_y + g_CramMinPlacementY;
                 goto joined_r0x00446b0b;
               }
 LAB_00446a27:
-              pSVar18->unk1 = g_CramInvalidMarker;
+              pSVar18->occupant = g_CramInvalidMarker;
             }
             else {
-              if (g_CramBestSolutionMetric1 <= pSVar18->top + g_CramMinPlacementY)
+              if (g_CramBestSolutionMetric1 <= pSVar18->start_x + g_CramMinPlacementY)
               goto LAB_00446a27;
-              iVar17 = pSVar18->right + g_CramMinPlacementX;
+              iVar17 = pSVar18->start_y + g_CramMinPlacementX;
 joined_r0x00446b0b:
               if (g_CramBestSolutionMetric1 <= iVar17) goto LAB_00446a27;
             }
@@ -753,7 +753,7 @@ joined_r0x00446b0b:
                  *(int *)((int)&g_CramSortedTextureEntries[0].working_top + iVar17)) ||
                (g_CramBestSolutionMetric1 <=
                 *(int *)((int)&g_CramSortedTextureEntries[0].working_width + iVar17))) {
-              g_CramAlgorithmState = pvVar8;
+              g_CramCandidateWriteCursor = ppSVar22;
               g_CramPlacedTextureCount = g_CramPlacedTextureCount + -1;
               return g_CramPlacedTextureCount - iVar19;
             }
@@ -772,25 +772,25 @@ joined_r0x00446b0b:
                      g_CramBestSolutionMetric1);
           _fprintf(p_Var10,"acceptableSize = %d\n",g_CramAcceptableSize)
           ;
-          _fprintf(p_Var10,"targetPadSize = %d\n",g_CramAtlasHeight);
+          _fprintf(p_Var10,"targetPadSize = %d\n",g_CramPaddingSize);
           _fprintf(p_Var10,"pad = %d\n",g_CramPaddingCalculation);
           _fprintf(p_Var10,"Best:\n");
           if (0 < g_CramTextureCount) {
             pCVar9 = g_CramSortedTextureEntries;
             iVar19 = 0;
             do {
-              piVar14 = &pCVar9->rotation_applied;
-              piVar1 = &pCVar9->final_bottom;
-              piVar2 = &pCVar9->final_right;
-              piVar3 = &pCVar9->final_top;
-              piVar4 = &pCVar9->final_left;
-              piVar5 = &pCVar9->working_map_id;
-              piVar6 = &pCVar9->height;
-              piVar7 = &pCVar9->width;
+              piVar1 = &pCVar9->rotation_applied;
+              piVar2 = &pCVar9->final_bottom;
+              piVar3 = &pCVar9->final_right;
+              piVar4 = &pCVar9->final_top;
+              piVar5 = &pCVar9->final_left;
+              piVar6 = &pCVar9->working_map_id;
+              piVar7 = &pCVar9->height;
+              piVar8 = &pCVar9->width;
               pCVar9 = pCVar9 + 1;
               iVar17 = iVar19 + 1;
-              _fprintf(p_Var10,"%3d: %5dx%-5d  Map %d (%5d,%-5d)-(%5d,%-5d)    Rotated: %d\n",iVar19,*piVar7,*piVar6,*piVar5,
-                         *piVar4,*piVar3,*piVar2,*piVar1,*piVar14);
+              _fprintf(p_Var10,"%3d: %5dx%-5d  Map %d (%5d,%-5d)-(%5d,%-5d)    Rotated: %d\n",iVar19,*piVar8,*piVar7,*piVar6,
+                         *piVar5,*piVar4,*piVar3,*piVar2,*piVar1);
               iVar19 = iVar17;
             } while (iVar17 < g_CramTextureCount);
           }
@@ -799,18 +799,18 @@ joined_r0x00446b0b:
             pCVar9 = g_CramSortedTextureEntries;
             iVar19 = 0;
             do {
-              piVar14 = &pCVar9->rotation_applied;
-              piVar1 = &pCVar9->working_width;
-              piVar2 = &pCVar9->working_top;
-              piVar3 = &pCVar9->working_right;
-              piVar4 = &pCVar9->placement_bottom;
-              piVar5 = &pCVar9->assigned_map_number;
-              piVar6 = &pCVar9->height;
-              piVar7 = &pCVar9->width;
+              piVar1 = &pCVar9->rotation_applied;
+              piVar2 = &pCVar9->working_width;
+              piVar3 = &pCVar9->working_top;
+              piVar4 = &pCVar9->working_right;
+              piVar5 = &pCVar9->placement_bottom;
+              piVar6 = &pCVar9->assigned_map_number;
+              piVar7 = &pCVar9->height;
+              piVar8 = &pCVar9->width;
               pCVar9 = pCVar9 + 1;
               iVar17 = iVar19 + 1;
-              _fprintf(p_Var10,"%3d: %5dx%-5d  Map %d (%5d,%-5d)-(%5d,%-5d)    Rotated: %d\n",iVar19,*piVar7,*piVar6,*piVar5,
-                         *piVar4,*piVar3,*piVar2,*piVar1,*piVar14);
+              _fprintf(p_Var10,"%3d: %5dx%-5d  Map %d (%5d,%-5d)-(%5d,%-5d)    Rotated: %d\n",iVar19,*piVar8,*piVar7,*piVar6,
+                         *piVar5,*piVar4,*piVar3,*piVar2,*piVar1);
               iVar19 = iVar17;
             } while (iVar17 < g_CramTextureCount);
           }
@@ -820,6 +820,6 @@ joined_r0x00446b0b:
     }
     g_CramPlacedTextureCount = g_CramPlacedTextureCount + -1;
   }
-  g_CramAlgorithmState = pvVar8;
+  g_CramCandidateWriteCursor = ppSVar22;
   return 0;
 }

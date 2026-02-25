@@ -125,19 +125,19 @@ void __cdecl computeTriangleNormal(int *vertex_array,void *param_2);
 
 // Original: core_set.cpp_computeTriangleNormalIndexed_FUN_0056e2b0
 // Address: 0056e2b0
-void __cdecl computeTriangleNormalIndexed(void);
+void __cdecl computeTriangleNormalIndexed(CVector3i *vertex_array,ushort *triangle_indices,CVector3f *out_normal);
 
 // Original: core_set.cpp_CDemonSet_computeVertexOmniLighting_FUN_0056e3e0
 // Address: 0056e3e0
-void __cdecl CDemonSet::computeVertexOmniLighting(CDemonSet *this_ptr);
+void __cdecl CDemonSet::computeVertexOmniLighting(CDemonSet *this_ptr,CVector3f *vertex_position,CVector3f *position_offset,int vertex_index);
 
 // Original: core_set.cpp_CDemonSet_pushScreenBoundsToCamera_FUN_0056e5d0
 // Address: 0056e5d0
 void __cdecl CDemonSet::pushScreenBoundsToCamera(CDemonSet *this_ptr,int vertex_count);
 
-// Original: core_set.cpp_CDemonSet_rotateVertices_FUN_0056e7c0
+// Original: core_set.cpp_CDemonSet_rotateVerticies_FUN_0056e7c0
 // Address: 0056e7c0
-void __cdecl CDemonSet::rotateVertices(CDemonSet *this_ptr,int vertex_count,int *input_vertices);
+void __cdecl CDemonSet::rotateVerticies(CDemonSet *this_ptr,int vertex_count,CVector3i *input_vertices);
 
 // Original: core_set.cpp_transformToWorldSpace_FUN_0056e890
 // Address: 0056e890
@@ -145,7 +145,7 @@ CVector3i * __stack_esi transformToWorldSpace(CVector3i *input,CVector3i *output
 
 // Original: core_set.cpp_transformNormalFixedPoint_FUN_0056e960
 // Address: 0056e960
-void __cdecl transformNormalFixedPoint(void);
+CVector3i * __stack_esi transformNormalFixedPoint(CVector3i *input,CVector3i *output);
 
 // Original: core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0
 // Address: 0056eac0
@@ -157,7 +157,7 @@ void __cdecl CDemonSet::process(CDemonSet *this_ptr);
 
 // Original: core_set.cpp_CDemonSet_getReverbPresetAtPosition_FUN_0056fac0
 // Address: 0056fac0
-float __cdecl CDemonSet::getReverbPresetAtPosition(CDemonSet *this_ptr);
+float __cdecl CDemonSet::getReverbPresetAtPosition(CDemonSet *this_ptr,CVector3f *position);
 
 // Original: core_set.cpp_CDemonSet_loadAssets_FUN_0056fb80
 // Address: 0056fb80
@@ -173,19 +173,19 @@ void __cdecl CDemonSet::buildDisplayList(CDemonSet *this_ptr,uint dirty_flags_ma
 
 // Original: core_set.cpp_CDemonSet_renderEnvMapBatchTri_FUN_0056ffe0
 // Address: 0056ffe0
-void __cdecl CDemonSet::renderEnvMapBatchTri(CDemonSet *this_ptr,void *param_2,int count,int alpha);
+void __cdecl CDemonSet::renderEnvMapBatchTri(CDemonSet *this_ptr,SMRGLHeaderPrimitive *prims,int count,int alpha);
 
 // Original: core_set.cpp_CDemonSet_renderEnvMapBatchQuad_FUN_00570010
 // Address: 00570010
-void __cdecl CDemonSet::renderEnvMapBatchQuad(CDemonSet *this_ptr,void *param_2,int count,int alpha);
+void __cdecl CDemonSet::renderEnvMapBatchQuad(CDemonSet *this_ptr,SMRGLHeaderPrimitive *prims,int count,int alpha);
 
 // Original: core_set.cpp_CDemonSet_renderEnvMapPrimitives_FUN_00570040
 // Address: 00570040
-void __cdecl CDemonSet::renderEnvMapPrimitives(CDemonSet *this_ptr,void *param_2,int count,int alpha,int stride);
+void __cdecl CDemonSet::renderEnvMapPrimitives(CDemonSet *this_ptr,SMRGLHeaderPrimitive *prims,int count,int alpha,int stride);
 
 // Original: core_set.cpp_CDemonSet_renderEnvMapTriangles_FUN_005702b0
 // Address: 005702b0
-void __cdecl CDemonSet::renderEnvMapTriangles(CDemonSet *this_ptr,void *param_2,int count,int alpha);
+void __cdecl CDemonSet::renderEnvMapTriangles(CDemonSet *this_ptr,SInputFace *face_data,int count,int alpha);
 
 // Original: core_set.cpp_CDemonSet_renderFaceBatchOrEnvMap_FUN_00570700
 // Address: 00570700
@@ -247,9 +247,9 @@ int __cdecl CDemonSet::renderSinglePrimitive(CDemonSet *this_ptr,SMRGLHeaderPrim
 // Address: 00570e20
 void __cdecl CDemonSet::setCameraAmbientValue(CDemonSet *this_ptr,int index,float value);
 
-// Original: core_set.cpp_CDemonSet_setCameraAmbientValueById_FUN_00570e60
+// Original: core_set.cpp_CDemonSet_setCameraAmbientValueByGroup_FUN_00570e60
 // Address: 00570e60
-void __cdecl CDemonSet::setCameraAmbientValueById(CDemonSet *this_ptr,int id,float value);
+void __cdecl CDemonSet::setCameraAmbientValueByGroup(CDemonSet *this_ptr,int group_id,float value);
 
 // Original: core_set.cpp_CDemonSet_setCameraEnabled_FUN_00570ea0
 // Address: 00570ea0
@@ -261,7 +261,7 @@ void __cdecl CDemonSet::setCameraEnabledByGroup(CDemonSet *this_ptr,int group_id
 
 // Original: core_set.cpp_CDemonSet_addLightFilter_FUN_00570f10
 // Address: 00570f10
-void __cdecl CDemonSet::addLightFilter(CDemonSet *this_ptr);
+void __cdecl CDemonSet::addLightFilter(CDemonSet *this_ptr,char *light_name,C3DSLight **out_light,CDemonLight **out_master_light);
 
 // Original: core_set.cpp_CDemonSet_initCameraShake_FUN_00570fa0
 // Address: 00570fa0
@@ -271,21 +271,21 @@ void __cdecl CDemonSet::initCameraShake(CDemonSet *this_ptr,float peak,float att
 // Address: 00570fc0
 void __cdecl CDemonSet::buildActorTypeLists(CDemonSet *this_ptr);
 
-// Original: core_set.cpp_CDemonSet_restoreLightState_FUN_00571130
+// Original: core_set.cpp_CDemonSet_loadMasterLightStates_FUN_00571130
 // Address: 00571130
-void __cdecl CDemonSet::restoreLightState(CDemonSet *this_ptr,void *param_2);
+void __cdecl CDemonSet::loadMasterLightStates(CDemonSet *this_ptr,int *light_state_buffer);
 
-// Original: core_set.cpp_CDemonSet_saveLightState_FUN_00571170
+// Original: core_set.cpp_CDemonSet_saveMasterLightStates_FUN_00571170
 // Address: 00571170
-int __cdecl CDemonSet::saveLightState(CDemonSet *this_ptr,void *param_2);
+int __cdecl CDemonSet::saveMasterLightStates(CDemonSet *this_ptr,int *light_state_buffer);
 
-// Original: core_set.cpp_CDemonSet_SetStateVersionCameraCountInStrings_FUN_005711b0
+// Original: core_set.cpp_CDemonSet_saveStateInfo_FUN_005711b0
 // Address: 005711b0
-void __cdecl CDemonSet::SetStateVersionCameraCountInStrings(CDemonSet *this_ptr);
+void __cdecl CDemonSet::saveStateInfo(CDemonSet *this_ptr,_FILE *file_handle);
 
-// Original: core_set.cpp_CDemonSet_saveStateInfo_FUN_00571230
+// Original: core_set.cpp_CDemonSet_loadStateInfo_FUN_00571230
 // Address: 00571230
-void __cdecl CDemonSet::saveStateInfo(CDemonSet *this_ptr);
+void __cdecl CDemonSet::loadStateInfo(CDemonSet *this_ptr,_FILE *file_handle);
 
 // Original: core_set.cpp_CDemonSet_isCameraPanning_FUN_00571320
 // Address: 00571320

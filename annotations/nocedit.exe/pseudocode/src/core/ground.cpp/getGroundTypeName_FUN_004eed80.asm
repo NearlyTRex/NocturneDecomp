@@ -11,8 +11,8 @@
 ;   core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50 at 0040ec06
 ;   core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80 at 005799e3
 ;   core_setedit.cpp_CDemonSet_showEditorMenu_FUN_00584940 at 00584a23
-;   core_setedit.cpp_FUN_00578420 at 005785a1
-;   core_setedit.cpp_FUN_00578630 at 005786a6
+;   core_setedit.cpp_editGroundTypes_FUN_00578630 at 005786a6
+;   core_setedit.cpp_loadGroundTypes_FUN_00578420 at 005785a1
 ;
 ; Referenced Globals:
 ;   void* switchdataD_004eed48 = 004eed91

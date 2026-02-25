@@ -74,7 +74,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x20]      ; 005708ce
     PUSH EBP                            ; 005708d2
     CALL core_set.cpp_CDemonSet_renderEnvMapTriangles_FUN_005702b0 ; 005708d3
-        ;   XREF to: 005702b0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderEnvMapTriangles_FUN_005702b0(CDemonSet * this_ptr, void * param_2, int count, int alpha)
+        ;   XREF to: 005702b0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderEnvMapTriangles_FUN_005702b0(CDemonSet * this_ptr, SInputFace * face_data, int count, int alpha)
     ADD ESP,0x10                        ; 005708d8
     POP ESI                             ; 005708db
     POP EDI                             ; 005708dc

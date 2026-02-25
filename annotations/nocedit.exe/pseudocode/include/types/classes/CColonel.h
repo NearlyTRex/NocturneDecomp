@@ -10,7 +10,7 @@
 typedef struct CColonel {
     CHero base; // 0x0
     int guns_drawn; // 0x1fbd4
-    int unk; // 0x1fbd8
+    int dead; // 0x1fbd8
     CVector3f head_look_euler; // 0x1fbdc
     float head_look_blend_weight; // 0x1fbe8
 } CColonel;

@@ -26,7 +26,7 @@ void __cdecl core_ghoul_cpp_CGhoul_processDamage_FUN_004e87e0(CGhoul *this_ptr,S
   char local_78 [100];
   float local_14;
   
-  sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->alert_sfx_handle);
+  sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handles[0]);
   if ((this_ptr->dark_waypoint != (CDemonActor *)0x0) &&
      (pSVar6 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                          (&(this_ptr->base).base.model.motion_controller), pSVar6->state_index == 0)
@@ -54,7 +54,7 @@ void __cdecl core_ghoul_cpp_CGhoul_processDamage_FUN_004e87e0(CGhoul *this_ptr,S
     pCVar2 = (CCharacter *)(this_ptr->base).victim;
     (*(((pCVar2->base).vtable._uc)->_uc).releaseFromGrab)(pCVar2);
   }
-  iVar9 = this_ptr->part_head;
+  iVar9 = this_ptr->part_indices[10];
   (this_ptr->base).base.hit_points = (this_ptr->base).base.hit_points - damage_info->damage_amount;
   if ((this_ptr->base).base.model.part_data.visibility_flags[iVar9] == 0) {
     (this_ptr->base).base.hit_points = 0.0;
@@ -71,7 +71,7 @@ void __cdecl core_ghoul_cpp_CGhoul_processDamage_FUN_004e87e0(CGhoul *this_ptr,S
     pSVar6 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                        (&this_ptr_00->motion_controller);
     if ((pSVar6->state_index != 10) && (pSVar6->state_index != 9)) {
-      if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_head] == 0) {
+      if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[10]] == 0) {
         this_ptr->lives_left = 0;
       }
       else {
@@ -89,7 +89,7 @@ void __cdecl core_ghoul_cpp_CGhoul_processDamage_FUN_004e87e0(CGhoul *this_ptr,S
         pCVar5 = this_ptr;
         if (0 < (this_ptr->base).base.damage_decal_count) {
           do {
-            if ((pCVar5->base).base.damage_decals[0].part_index == this_ptr->part_upper_torso) {
+            if ((pCVar5->base).base.damage_decals[0].part_index == this_ptr->part_indices[9]) {
               iVar9 = 8;
               break;
             }
@@ -100,11 +100,11 @@ void __cdecl core_ghoul_cpp_CGhoul_processDamage_FUN_004e87e0(CGhoul *this_ptr,S
       }
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                 (&(this_ptr->base).base.model.motion_controller,iVar9,1);
-      iVar9 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->death_sfx_handle);
+      iVar9 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handles[2]);
       if (iVar9 == 0) {
         uVar8 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                           ((CDemonActor *)this_ptr,"ghoul-die-!-?.wav @1.6");
-        this_ptr->death_sfx_handle = uVar8;
+        this_ptr->sfx_handles[2] = uVar8;
       }
       local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(4.0,10.0);
       fVar4 = (float)65536;
@@ -134,11 +134,11 @@ void __cdecl core_ghoul_cpp_CGhoul_processDamage_FUN_004e87e0(CGhoul *this_ptr,S
       this_ptr->flinch_blend_weight = 1.0;
       this_ptr->flinch_motion_index = iVar9;
     }
-    iVar9 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->pain_sfx_handle);
+    iVar9 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handles[1]);
     if (iVar9 == 0) {
       uVar8 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                         ((CDemonActor *)this_ptr,"ghoul-mad-!-?.wav");
-      this_ptr->pain_sfx_handle = uVar8;
+      this_ptr->sfx_handles[1] = uVar8;
       core_enemy_cpp_CEnemy_processDamage_FUN_004a9f10(&this_ptr->base,damage_info);
       return;
     }

@@ -408,7 +408,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c07b0(CStranger *this_ptr)
     local_2ac.m[0].z = local_108;
     local_2ac.m[1].z = local_104;
     local_2ac.m[2].z = local_100;
-    if (this_ptr->unk3 != 0) {
+    if (this_ptr->pickup_facing_reversed != 0) {
       pCVar7 = &local_2ac;
       core_xform_cpp_buildRotationY_FUN_005f6cc0(3.1415927,&local_93c);
       pCVar11 = &local_93c;

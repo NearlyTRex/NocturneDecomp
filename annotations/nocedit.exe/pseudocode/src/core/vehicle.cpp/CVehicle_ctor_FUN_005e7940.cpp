@@ -63,10 +63,10 @@ CVehicle * __cdecl core_vehicle_cpp_CVehicle_ctor_FUN_005e7940(CVehicle *this_pt
   (ADJ(pCVar4)->world_velocity).z = 0.0;
   (ADJ(pCVar4)->world_velocity).y = (ADJ(pCVar4)->world_velocity).z;
   (ADJ(pCVar4)->world_velocity).x = (ADJ(pCVar4)->world_velocity).y;
-  ADJ(pCVar4)->unk1[2].z = 0.0;
+  ADJ(pCVar4)->unused_physics_vectors[2].z = 0.0;
   pcVar2 = "chicpath.pth";
-  ADJ(pCVar4)->unk1[2].y = ADJ(pCVar4)->unk1[2].z;
-  ADJ(pCVar4)->unk1[2].x = ADJ(pCVar4)->unk1[2].y;
+  ADJ(pCVar4)->unused_physics_vectors[2].y = ADJ(pCVar4)->unused_physics_vectors[2].z;
+  ADJ(pCVar4)->unused_physics_vectors[2].x = ADJ(pCVar4)->unused_physics_vectors[2].y;
   ADJ(pCVar4)->cur_time = 0.0;
   pcVar3 = ADJ(pCVar4)->course_name;
   ADJ(pCVar4)->total_time = 100.0;

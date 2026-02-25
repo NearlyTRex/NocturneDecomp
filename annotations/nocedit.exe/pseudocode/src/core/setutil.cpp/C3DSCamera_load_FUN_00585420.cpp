@@ -56,7 +56,7 @@ void __cdecl core_setutil_cpp_C3DSCamera_load_FUN_00585420(C3DSCamera *this_ptr,
     }
     (this_ptr->fog).height_threshold = (pCVar1->scene_fog).height_threshold;
     (this_ptr->fog).density_multiplier = (pCVar1->scene_fog).density_multiplier;
-    (this_ptr->fog).reserved = (pCVar1->scene_fog).reserved;
+    (this_ptr->fog).temperature = (pCVar1->scene_fog).temperature;
   }
   else {
     _fscanf(file_handle,"%d\n",&this_ptr->fog_enabled);

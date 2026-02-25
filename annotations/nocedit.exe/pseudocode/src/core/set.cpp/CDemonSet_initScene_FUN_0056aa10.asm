@@ -14,11 +14,11 @@
 ;   core_msnedit.cpp_CDemonMission_FUN_0053e220 at 0053e292
 ;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 00539184
 ;   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470 at 0056a73c
-;   core_setedit.cpp_CDemonSet_FUN_0057a940 at 0057a963
-;   core_setedit.cpp_CDemonSet_FUN_0057b410 at 0057b4d1
-;   core_setedit.cpp_CDemonSet_FUN_0057b500 at 0057b5ea
-;   core_setedit.cpp_CDemonSet_FUN_0057b600 at 0057b8f1
-;   core_setedit.cpp_CDemonSet_FUN_0057bbe0 at 0057c07c
+;   core_setedit.cpp_CDemonSet_addSpotLight_FUN_0057b410 at 0057b4d1
+;   core_setedit.cpp_CDemonSet_cloneLight_FUN_0057b600 at 0057b8f1
+;   core_setedit.cpp_CDemonSet_computeCameraFog_FUN_00581320 at 00581364
+;   core_setedit.cpp_CDemonSet_editSpotLight_FUN_0057b500 at 0057b5ea
+;   core_setedit.cpp_CDemonSet_rebuildAllFogAndPVS_FUN_005805a0 at 0058065a
 ;   ... and 6 more
 ;
 ; Referenced Globals:
@@ -51,7 +51,7 @@
 ;   core_level.cpp_CLevelLoader_update_FUN_00504160
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0056a190
-;   core_setdir.cpp_CDemonSet_FUN_00576710
+;   core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_00576710
 ;   core_setdir.cpp_CDemonSet_FUN_00576870
 ;   core_setutil.cpp_C3DSLight_apply_FUN_00586bf0
 ;   core_setutil.cpp_C3DSLight_create_FUN_00586a90
@@ -215,13 +215,13 @@ section .text
     MOV dword ptr [EBX + 0x15aea8],0xffffffff ; 0056abbb
     XOR ECX,ECX                         ; 0056abc5
     XOR ESI,ESI                         ; 0056abc7
-    MOV dword ptr [0x03276f30],ECX      ; 0056abc9 | g_ActiveLightCount
+    MOV dword ptr [0x03276f30],ECX      ; 0056abc9 | g_SpotLightCount
     MOV dword ptr [0x03277d80],ECX      ; 0056abcf | g_OmniLightCount
     MOV dword ptr [0x032776c8],ECX      ; 0056abd5 | g_CoronaGlobeCount
     MOV dword ptr [0x0327785c],ECX      ; 0056abdb | g_QueuedCoronaGlobeCount
     MOV dword ptr [EBX + 0x15aeac],ECX  ; 0056abe1
-    CALL core_setdir.cpp_CDemonSet_FUN_00576710 ; 0056abe7
-        ;   XREF to: 00576710 (UNCONDITIONAL_CALL)  ; int core_setdir.cpp_CDemonSet_FUN_00576710(CDemonSet * this_ptr)
+    CALL core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_00576710 ; 0056abe7
+        ;   XREF to: 00576710 (UNCONDITIONAL_CALL)  ; int core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_00576710(CDemonSet * this_ptr)
     MOV EAX,dword ptr [EBX]             ; 0056abec
     ADD ESP,0x4                         ; 0056abee
     TEST EAX,EAX                        ; 0056abf1

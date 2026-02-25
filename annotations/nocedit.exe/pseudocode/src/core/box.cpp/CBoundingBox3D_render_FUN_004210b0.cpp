@@ -12,8 +12,8 @@ void __cdecl core_box_cpp_CBoundingBox3D_render_FUN_004210b0(CBoundingBox3D *thi
   CDemonRenderer *pCVar1;
   void *pvVar2;
   uint corner_index;
-  int *piVar3;
-  int local_b0 [24];
+  CVector3i *pCVar3;
+  CVector3i local_b0 [8];
   SMRGLHeaderPrimitive local_50;
   uint local_38;
   uint local_34;
@@ -28,16 +28,16 @@ void __cdecl core_box_cpp_CBoundingBox3D_render_FUN_004210b0(CBoundingBox3D *thi
   int local_8;
   
   corner_index = 0;
-  piVar3 = local_b0;
+  pCVar3 = local_b0;
   do {
     core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0(this_ptr,&local_1c,corner_index);
     corner_index = corner_index + 1;
-    *piVar3 = (int)ROUND(local_1c.x * 256.0f);
-    piVar3[1] = (int)ROUND(local_1c.y * 256.0f);
-    piVar3[2] = (int)ROUND(local_1c.z * 256.0f);
-    piVar3 = piVar3 + 3;
+    pCVar3->x = (int)ROUND(local_1c.x * 256.0f);
+    pCVar3->y = (int)ROUND(local_1c.y * 256.0f);
+    pCVar3->z = (int)ROUND(local_1c.z * 256.0f);
+    pCVar3 = pCVar3 + 1;
   } while ((int)corner_index < 8);
-  core_set_cpp_CDemonSet_rotateVertices_FUN_0056e7c0(g_CDemonSetPtr,8,local_b0);
+  core_set_cpp_CDemonSet_rotateVerticies_FUN_0056e7c0(g_CDemonSetPtr,8,local_b0);
   local_50.base.count = 4;
   engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0(g_CDemonRendererPtr2,1);
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2,0);

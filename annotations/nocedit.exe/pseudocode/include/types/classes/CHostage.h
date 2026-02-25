@@ -22,17 +22,18 @@ typedef struct CHostage {
     char sit_down_event[100]; // 0x1f984
     char damage_sound[100]; // 0x1f9e8
     char die_sound[100]; // 0x1fa4c
-    int unk1; // 0x1fab0
+    uint sfx_handle; // 0x1fab0
     int follow_state; // 0x1fab4
-    char unk2[4]; // 0x1fab8
+    int hostage_type; // 0x1fab8
     int hostage_state; // 0x1fabc
     struct CDemonActor* goal_way_point; // 0x1fac0
     struct CDemonActor* sit_down_way_point; // 0x1fac4
-    char unk3[20]; // 0x1fac8
+    struct CDemonActor* next_way_point; // 0x1fac8
+    int bone_indices[4]; // 0x1facc
     int no_shadows_when_saved; // 0x1fadc
-    int unk4; // 0x1fae0
-    int unk5; // 0x1fae4
+    float gun_raise_progress; // 0x1fae0
+    float gun_blend_weight; // 0x1fae4
     struct CDemonActor* grabber; // 0x1fae8
-    float unk6; // 0x1faec
+    float grabber_flee_timer; // 0x1faec
 } CHostage;
 

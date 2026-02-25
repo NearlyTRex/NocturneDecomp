@@ -4,13 +4,13 @@
       {
         "category": "undeclared_identifier",
         "column": 11,
-        "line": 118,
+        "line": 114,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 18,
-        "line": 118,
+        "line": 114,
         "message": "expected expression"
       }
     ],
@@ -19,19 +19,19 @@
   },
   "complexity": {
     "assembly_lines": 166,
-    "complexity_score": 196,
+    "complexity_score": 198,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 9,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 121,
-    "suspect_count": 6,
+    "pseudocode_lines": 113,
+    "suspect_count": 7,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "unresolved_funcptr"
     ],
-    "total_lines": 287
+    "total_lines": 279
   },
   "cross_references": [],
   "function": {
@@ -248,7 +248,15 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 71,
+      "line": 36,
+      "match": "ABS",
+      "severity": "mild",
+      "text": "if (ABS(this_ptr->drip_timer) == 0.0) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 67,
       "match": "fcos",
       "severity": "mild",
       "text": "fVar6 = (float10)fcos((float10)fStack_14);",
@@ -256,7 +264,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 72,
+      "line": 68,
       "match": "fcos",
       "severity": "mild",
       "text": "fVar7 = (float10)fcos((float10)fStack_1c);",
@@ -264,7 +272,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 73,
+      "line": 69,
       "match": "fsin",
       "severity": "mild",
       "text": "fVar8 = (float10)fsin((float10)fStack_14);",
@@ -272,7 +280,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 74,
+      "line": 70,
       "match": "fsin",
       "severity": "mild",
       "text": "fVar9 = (float10)fsin((float10)fStack_1c);",
@@ -280,7 +288,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 104,
+      "line": 100,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "iVar2 = *(int *)((int)g_CDemonSetPtr->characters + iVar4);",
@@ -288,7 +296,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 111,
+      "line": 107,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(iVar2 + 0x154) + 0x114))(iVar2,pCStack_20,0x3f800000,&SStack_b4);",

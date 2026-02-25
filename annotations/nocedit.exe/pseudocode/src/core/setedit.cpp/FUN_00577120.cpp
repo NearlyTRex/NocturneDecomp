@@ -28,7 +28,7 @@ void __cdecl core_setedit_cpp_FUN_00577120(void)
     iVar2 = local_14 * 0x100 + in_stack_00000004 * 0x3000;
     do {
       puVar3 = puVar3 + 1;
-      uVar1 = *(uint *)(&DAT_03365cc0 + iVar2);
+      uVar1 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar2);
       iVar2 = iVar2 + 4;
       *puVar3 = g_ColorCubeLookup
                 [((uVar1 >> 0x10 & 0xff) >> 3) +

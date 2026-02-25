@@ -4,13 +4,13 @@
       {
         "category": "other",
         "column": 4,
-        "line": 40,
+        "line": 41,
         "message": "indirection not permitted on operand of type 'void *'"
       },
       {
         "category": "other",
         "column": 13,
-        "line": 41,
+        "line": 42,
         "message": "called object type 'void' is not a function or function pointer"
       }
     ],
@@ -19,15 +19,17 @@
   },
   "complexity": {
     "assembly_lines": 89,
-    "complexity_score": 36,
+    "complexity_score": 62,
     "cross_reference_count": 5,
     "function_call_count": 6,
     "global_count": 10,
-    "max_suspect_severity": "clean",
-    "pseudocode_lines": 36,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 125
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 37,
+    "suspect_count": 2,
+    "suspect_types": [
+      "pointer_cast"
+    ],
+    "total_lines": 126
   },
   "cross_references": [
     {
@@ -127,18 +129,18 @@
     {
       "addr": "033469d0",
       "name": "g_SavedCameraOrigin",
-      "type": "CVector3f",
+      "type": "UVector3",
       "value": null
     },
     {
       "addr": "033469d4",
-      "name": "g_SavedCameraOrigin.y",
+      "name": "g_SavedCameraOrigin+4",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "033469d8",
-      "name": "g_SavedCameraOrigin.z",
+      "name": "g_SavedCameraOrigin+8",
       "type": "undefined4",
       "value": null
     },
@@ -237,5 +239,22 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 16,
+      "match": "(float *)((int)",
+      "severity": "mild",
+      "text": "g_SavedCameraOrigin.f.z = *(float *)((int)pUVar1 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 17,
+      "match": "(float *)((int)",
+      "severity": "mild",
+      "text": "g_SavedCameraOrigin.f.y = *(float *)((int)pUVar1 + 4);",
+      "type": "pointer_cast"
+    }
+  ]
 }

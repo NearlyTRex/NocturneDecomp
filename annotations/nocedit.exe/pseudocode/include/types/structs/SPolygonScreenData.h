@@ -9,7 +9,7 @@ typedef struct SPolygonScreenData {
     int center_x; // 0x0
     int center_y; // 0x4
     int distance_squared; // 0x8
-    int reserved1; // 0xc
+    int dead; // 0xc
     int view_mode; // 0x10
 } SPolygonScreenData;
 

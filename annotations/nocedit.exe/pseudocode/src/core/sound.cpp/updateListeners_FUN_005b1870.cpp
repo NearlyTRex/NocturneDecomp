@@ -14,7 +14,7 @@ void __cdecl core_sound_cpp_updateListeners_FUN_005b1870(void)
   int iVar3;
   int iVar4;
   int iVar5;
-  CMatrix3x3i *pCVar6;
+  CMatrix3x3f *pCVar6;
   float *pfVar7;
   float *pfVar8;
   byte bVar9;
@@ -74,8 +74,8 @@ void __cdecl core_sound_cpp_updateListeners_FUN_005b1870(void)
     pCVar6 = &g_CDemonCameraInstance.base.rotation_matrix;
     pfVar8 = local_10c;
     for (iVar3 = 10; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *pfVar8 = (float)pCVar6->m[0].x;
-      pCVar6 = (CMatrix3x3i *)&pCVar6->m[0].y;
+      *pfVar8 = pCVar6->m[0].x;
+      pCVar6 = (CMatrix3x3f *)&pCVar6->m[0].y;
       pfVar8 = pfVar8 + 1;
     }
     iVar3 = 10;
@@ -94,8 +94,8 @@ void __cdecl core_sound_cpp_updateListeners_FUN_005b1870(void)
     pCVar6 = &g_CDemonLightInstance.base.base.rotation_matrix;
     pfVar8 = local_134;
     for (iVar3 = 10; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *pfVar8 = (float)pCVar6->m[0].x;
-      pCVar6 = (CMatrix3x3i *)&pCVar6->m[0].y;
+      *pfVar8 = pCVar6->m[0].x;
+      pCVar6 = (CMatrix3x3f *)&pCVar6->m[0].y;
       pfVar8 = pfVar8 + 1;
     }
     iVar3 = 10;

@@ -2,11 +2,11 @@
 // Address: 0043f030
 // Address Range: [[0043f030, 0043f0cc]]
 // Convention: __cdecl
-// Signature: int __cdecl support_codec_cpp_CLZWDictionary_readCodeFromStream_FUN_0043f030(CLZWDictionary *this_ptr,SBitBuffer *bit_buffer,_FILE *input_file,int *bytes_remaining)
+// Signature: int __cdecl support_codec_cpp_CLZWDictionary_readCodeFromStream_FUN_0043f030(CLZWDictionary *this_ptr,SBitBuffer *bit_buffer,_istream *istream,int *bytes_remaining)
 
 #include "nocturne.h"
 
-int __cdecl support_codec_cpp_CLZWDictionary_readCodeFromStream_FUN_0043f030(CLZWDictionary *this_ptr,SBitBuffer *bit_buffer,_FILE *input_file,int *bytes_remaining)
+int __cdecl support_codec_cpp_CLZWDictionary_readCodeFromStream_FUN_0043f030(CLZWDictionary *this_ptr,SBitBuffer *bit_buffer,_istream *istream,int *bytes_remaining)
 
 {
   int iVar1;
@@ -15,13 +15,13 @@ int __cdecl support_codec_cpp_CLZWDictionary_readCodeFromStream_FUN_0043f030(CLZ
   uint uVar4;
   
   uVar4 = 0;
-  iVar2 = this_ptr->max_entries;
+  iVar2 = this_ptr->entry_count;
   uVar3 = 1 << ((char)this_ptr->current_num_bits - 1U & 0x1f);
   if (uVar3 == 0) goto LAB_0043f079;
   do {
     if ((iVar2 - 1U & uVar3) != 0) {
       iVar1 = support_codec_cpp_readBitsFromStream_FUN_0043e530
-                        (bit_buffer,1,input_file,bytes_remaining);
+                        (bit_buffer,1,istream,bytes_remaining);
       if (iVar1 < 0) {
         return -1;
       }
@@ -32,7 +32,7 @@ LAB_0043f079:
           if (uVar3 == 0) break;
           while( true ) {
             iVar2 = support_codec_cpp_readBitsFromStream_FUN_0043e530
-                              (bit_buffer,1,input_file,bytes_remaining);
+                              (bit_buffer,1,istream,bytes_remaining);
             if (iVar2 < 0) {
               return -1;
             }

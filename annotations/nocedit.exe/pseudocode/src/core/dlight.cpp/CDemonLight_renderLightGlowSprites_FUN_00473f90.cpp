@@ -69,7 +69,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90(CDe
     local_74.y = local_74.y - (float)(this_ptr->base).base.position.y;
     local_74.z = local_74.z - (float)(this_ptr->base).base.position.z;
     pCVar3 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
-                       ((CMatrix3x3f *)&(this_ptr->base).base.rotation_matrix,&local_b0,&local_74);
+                       (&(this_ptr->base).base.rotation_matrix,&local_b0,&local_74);
     if (&local_74 != pCVar3) {
       local_74.x = pCVar3->x;
       local_74.y = pCVar3->y;
@@ -77,7 +77,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90(CDe
     }
     if (local_74.z <= (this_ptr->base).max_distance) {
       local_30 = local_74.y * local_74.y;
-      local_24 = ((local_74.z * (float)18) / (this_ptr->base).base.projection_scale) *
+      local_24 = ((local_74.z * (float)18) / (this_ptr->base).base.focal_length) *
                  (float)2;
       local_28 = local_74.x * local_74.x + local_30;
       local_2c = local_24 * local_24;
@@ -106,8 +106,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90(CDe
           local_8c.z = 1.0;
           local_14 = (float)(0xffff - (int)g_PerspectiveReciprocal);
           pCVar3 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
-                             ((CMatrix3x3f *)&(this_ptr->base).base.rotation_matrix,&local_c8,
-                              &local_8c);
+                             (&(this_ptr->base).base.rotation_matrix,&local_c8,&local_8c);
           if (0.0 < (local_78 * pCVar3->z + local_80 * pCVar3->x + local_7c * pCVar3->y) * local_14
                     * 1.525902e-05f) {
             local_1c = (int)ROUND(ROUND((1.0 - fVar1) * (float)65535));
@@ -119,15 +118,15 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90(CDe
               texture = texture + 2;
               local_14 = (float)local_18;
               fVar1 = (float)local_18 * 0.1111111f * (this_ptr->base).max_distance;
-              local_110 = (float)(this_ptr->base).base.rotation_matrix.m[0].z;
+              local_110 = (this_ptr->base).base.rotation_matrix.m[0].z;
               local_fc = fVar1 * (float)0.25;
-              local_10c = (float)(this_ptr->base).base.rotation_matrix.m[1].z;
+              local_10c = (this_ptr->base).base.rotation_matrix.m[1].z;
               local_104 = local_110 * local_fc;
               local_100 = local_10c * local_fc;
-              local_108 = (float)(this_ptr->base).base.rotation_matrix.m[2].z;
+              local_108 = (this_ptr->base).base.rotation_matrix.m[2].z;
               local_fc = local_108 * local_fc;
               fVar1 = (float)texture[1].base.count * (float)0.5 *
-                      ((fVar1 * (float)18) / (this_ptr->base).base.projection_scale) *
+                      ((fVar1 * (float)18) / (this_ptr->base).base.focal_length) *
                       (float)2;
               local_68.x = (float)local_20->x + local_104;
               local_68.y = (float)local_20->y + local_100;

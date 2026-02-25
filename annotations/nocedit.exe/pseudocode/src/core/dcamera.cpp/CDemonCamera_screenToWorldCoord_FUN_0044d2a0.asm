@@ -19,8 +19,8 @@
 ;   core_game.cpp_CGame_processFrame_FUN_004da100 at 004da2ea
 ;   core_msnedit.cpp_CDemonMission_FUN_0053e220 at 0053e5e6
 ;   core_msnedit.cpp_FUN_00535c60 at 00535c82
-;   core_setedit.cpp_CDemonSet_FUN_0057fd00 at 0057fdc5
-;   core_setedit.cpp_CDemonSet_FUN_005800d0 at 0058011a
+;   core_setedit.cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00 at 0057fdc5
+;   core_setedit.cpp_CDemonSet_findVisibleCamerasAtScreenPoint_FUN_005800d0 at 0058011a
 ;   core_sound.cpp_updateListeners_FUN_005b1870 at 005b1c1b
 ;
 ; Referenced Globals:

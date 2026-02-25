@@ -20,22 +20,22 @@ void __cdecl core_mobster_cpp_CMobster_FUN_00527380(CMobster *this_ptr,SDamageIn
     iVar1 = rand();
     switch(iVar1 % 6) {
     case 0:
-      iVar1 = this_ptr->part_larm;
+      iVar1 = this_ptr->part_indices[0];
       break;
     case 1:
-      iVar1 = this_ptr->part_l4arm;
+      iVar1 = this_ptr->part_indices[1];
       break;
     case 2:
-      iVar1 = this_ptr->part_rarm;
+      iVar1 = this_ptr->part_indices[2];
       break;
     case 3:
-      iVar1 = this_ptr->part_r4arm;
+      iVar1 = this_ptr->part_indices[3];
       break;
     case 4:
-      iVar1 = this_ptr->part_head;
+      iVar1 = this_ptr->part_indices[10];
       break;
     case 5:
-      iVar1 = this_ptr->part_torso;
+      iVar1 = this_ptr->part_indices[9];
       break;
     default:
       goto switchD_005273b9_default;
@@ -44,27 +44,27 @@ void __cdecl core_mobster_cpp_CMobster_FUN_00527380(CMobster *this_ptr,SDamageIn
   }
 switchD_005273b9_default:
   iVar1 = damage_info->fire_type;
-  if (((((iVar1 != this_ptr->part_larm) && (iVar1 != this_ptr->part_l4arm)) &&
-       (iVar1 != this_ptr->part_rarm)) &&
-      ((iVar1 != this_ptr->part_r4arm && (iVar1 != this_ptr->part_torso)))) &&
-     (iVar1 != this_ptr->part_head)) goto LAB_0052761a;
-  if (this_ptr->part_torso == damage_info->fire_type) {
+  if (((((iVar1 != this_ptr->part_indices[0]) && (iVar1 != this_ptr->part_indices[1])) &&
+       (iVar1 != this_ptr->part_indices[2])) &&
+      ((iVar1 != this_ptr->part_indices[3] && (iVar1 != this_ptr->part_indices[9])))) &&
+     (iVar1 != this_ptr->part_indices[10])) goto LAB_0052761a;
+  if (this_ptr->part_indices[9] == damage_info->fire_type) {
     fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,1.0);
     if ((float)0.33300000000000002 <= fVar2) {
       if (0.66600000000000004 <= (double)fVar2) goto LAB_00527413;
-      iVar1 = this_ptr->part_rarm;
+      iVar1 = this_ptr->part_indices[2];
     }
     else {
-      iVar1 = this_ptr->part_larm;
+      iVar1 = this_ptr->part_indices[0];
     }
     damage_info->fire_type = iVar1;
   }
 LAB_00527413:
   local_1c = damage_info->weapon_damage_modifier;
-  if (this_ptr->part_head == damage_info->fire_type) {
+  if (this_ptr->part_indices[10] == damage_info->fire_type) {
     local_1c = 0.05;
   }
-  if (this_ptr->part_torso == damage_info->fire_type) {
+  if (this_ptr->part_indices[9] == damage_info->fire_type) {
     local_1c = 0.06;
   }
   if (g_CGamePtr->gratuitous_dismemberment != 0) {
@@ -78,25 +78,25 @@ LAB_00527413:
     body_part = core_bodypart_cpp_createBodyPart_FUN_00418e10();
     core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30
               ((CCharacter *)this_ptr,body_part,damage_info->fire_type,0);
-    if (damage_info->fire_type == this_ptr->part_larm) {
+    if (damage_info->fire_type == this_ptr->part_indices[0]) {
       core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30
-                ((CCharacter *)this_ptr,body_part,this_ptr->part_l4arm,0);
+                ((CCharacter *)this_ptr,body_part,this_ptr->part_indices[1],0);
     }
-    if (this_ptr->part_rarm == damage_info->fire_type) {
+    if (this_ptr->part_indices[2] == damage_info->fire_type) {
       core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30
-                ((CCharacter *)this_ptr,body_part,this_ptr->part_r4arm,0);
+                ((CCharacter *)this_ptr,body_part,this_ptr->part_indices[3],0);
     }
-    if (this_ptr->part_torso == damage_info->fire_type) {
+    if (this_ptr->part_indices[9] == damage_info->fire_type) {
       core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0
-                ((CCharacter *)this_ptr,this_ptr->part_rarm);
+                ((CCharacter *)this_ptr,this_ptr->part_indices[2]);
       core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0
-                ((CCharacter *)this_ptr,this_ptr->part_r4arm);
+                ((CCharacter *)this_ptr,this_ptr->part_indices[3]);
       core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0
-                ((CCharacter *)this_ptr,this_ptr->part_larm);
+                ((CCharacter *)this_ptr,this_ptr->part_indices[0]);
       core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0
-                ((CCharacter *)this_ptr,this_ptr->part_l4arm);
+                ((CCharacter *)this_ptr,this_ptr->part_indices[1]);
       core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0
-                ((CCharacter *)this_ptr,this_ptr->part_head);
+                ((CCharacter *)this_ptr,this_ptr->part_indices[10]);
       (*(((this_ptr->base).base.base.vtable._uc)->_uc).dropCarriedObject)
                 ((CCharacter *)this_ptr,1,(CVector3f *)0x0);
       (*(((this_ptr->base).base.base.vtable._uc)->_uc).dropCarriedObject)
@@ -105,30 +105,30 @@ LAB_00527413:
     core_charactr_cpp_CCharacter_playSoundWithCooldown_FUN_0042f300
               ((CCharacter *)this_ptr,"limb?.wav");
     core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_0041a050(body_part);
-    if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_head] == 0) {
+    if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[10]] == 0) {
       damage_info->damage_amount = 9999.0;
     }
     damage_info->damage_flags = (int)((float)damage_info->damage_flags * (float)7);
-    if ((damage_info->fire_type == this_ptr->part_rarm) ||
-       (damage_info->fire_type == this_ptr->part_r4arm)) {
+    if ((damage_info->fire_type == this_ptr->part_indices[2]) ||
+       (damage_info->fire_type == this_ptr->part_indices[3])) {
       (*(((this_ptr->base).base.base.vtable._uc)->_uc).dropCarriedObject)
                 ((CCharacter *)this_ptr,1,(CVector3f *)0x0);
       (*(((this_ptr->base).base.base.vtable._uc)->_uc).dropCarriedObject)
                 ((CCharacter *)this_ptr,0,(CVector3f *)0x0);
     }
-    if ((damage_info->fire_type == this_ptr->part_larm) ||
-       (damage_info->fire_type == this_ptr->part_l4arm)) {
+    if ((damage_info->fire_type == this_ptr->part_indices[0]) ||
+       (damage_info->fire_type == this_ptr->part_indices[1])) {
       (*(((this_ptr->base).base.base.vtable._uc)->_uc).dropCarriedObject)
                 ((CCharacter *)this_ptr,0,(CVector3f *)0x0);
     }
   }
 LAB_0052761a:
   iVar1 = damage_info->fire_type;
-  if (iVar1 == this_ptr->part_head) {
+  if (iVar1 == this_ptr->part_indices[10]) {
     damage_info->damage_amount = damage_info->damage_amount * (float)2.5;
     return;
   }
-  if ((iVar1 != this_ptr->part_waist) && (iVar1 != this_ptr->part_torso)) {
+  if ((iVar1 != this_ptr->part_indices[8]) && (iVar1 != this_ptr->part_indices[9])) {
     damage_info->damage_amount = damage_info->damage_amount * (float)0.5;
     return;
   }

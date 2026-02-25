@@ -16,7 +16,7 @@
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
-;   CVector3f g_SavedCameraOrigin
+;   UVector3 g_SavedCameraOrigin
 ;   CVector3f g_SavedCameraRotation
 ;   float g_SavedProjectionFactor
 ;

@@ -10,7 +10,7 @@
 ; XREF[3]:
 ;   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0 at 005718dd
 ;   core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_00572a10 at 00572bc5
-;   core_setcolid.cpp_CDemonSet_testCapsuleCollision_FUN_00573470 at 0057364a
+;   core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00573470 at 0057364a
 ;
 ; Referenced Globals:
 ;   undefined4 g_CCharacterClassInfo.name_hash

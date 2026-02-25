@@ -20,7 +20,7 @@ CDemonLight* g_DynamicLights[4] = {};
 
 // CDemonLight*[96]
 CDemonLight* g_MasterLightList[96] = {};
-CDemonLight* g_ActiveLightList[96] = {};
+CDemonLight* g_SpotLightList[96] = {};
 
 // CDemonRaytrace
 CDemonRaytrace g_CDemonRaytraceInstance = {};
@@ -29,11 +29,11 @@ CDemonRaytrace g_CDemonRaytraceInstance = {};
 CKeyFramedModel g_CKeyFramedModelInstance = {};
 
 // CRect[96]
-CRect g_ActiveLightBounds[96] = {};
+CRect g_SpotLightBounds[96] = {};
 
 // int
 int g_MasterLightCount = {};
-int g_ActiveLightCount = {};
+int g_SpotLightCount = {};
 int g_DynamicLightCount = {};
 int g_CoronaGlobeCount = {};
 int g_QueuedCoronaGlobeCount = {};

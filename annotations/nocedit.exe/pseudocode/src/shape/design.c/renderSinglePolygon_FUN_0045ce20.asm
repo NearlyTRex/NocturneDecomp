@@ -281,7 +281,7 @@ section .text
     LEA EAX,[EBP + 0xffffff4c]          ; 0045d0c1
     PUSH EAX                            ; 0045d0c7
     CALL engine_3d.c_renderPolygonTextureWrappedStandard_FUN_00405ce0 ; 0045d0c8
-        ;   XREF to: 00405ce0 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonTextureWrappedStandard_FUN_00405ce0(SMRGLHeaderPrimitive * polygon_info)
+        ;   XREF to: 00405ce0 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonTextureWrappedStandard_FUN_00405ce0(SMRGLHeaderPrimitive * prim)
     ADD ESP,0x4                         ; 0045d0cd
     JMP 0x0045d0e1                      ; 0045d0d0
         ;   XREF to: 0045d0e1 (UNCONDITIONAL_JUMP)  ; LAB_0045d0e1
@@ -289,7 +289,7 @@ section .text
         ;   Label: LAB_0045d0d2
     PUSH EAX                            ; 0045d0d8
     CALL engine_3d.c_renderPolygonPlaneMaskedComplex_FUN_00404c60 ; 0045d0d9
-        ;   XREF to: 00404c60 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonPlaneMaskedComplex_FUN_00404c60(SMRGLHeaderPrimitive * polygon_info)
+        ;   XREF to: 00404c60 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonPlaneMaskedComplex_FUN_00404c60(SMRGLHeaderPrimitive * prim)
     ADD ESP,0x4                         ; 0045d0de
     JMP 0x0045d0f2                      ; 0045d0e1
         ;   XREF to: 0045d0f2 (UNCONDITIONAL_JUMP)  ; LAB_0045d0f2
@@ -298,7 +298,7 @@ section .text
         ;   Label: LAB_0045d0e3
     PUSH EAX                            ; 0045d0e9
     CALL engine_3d.c_renderPolygonPlaneMaskedNearPlane_FUN_00404a40 ; 0045d0ea
-        ;   XREF to: 00404a40 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonPlaneMaskedNearPlane_FUN_00404a40(SMRGLHeaderPrimitive * polygon_info)
+        ;   XREF to: 00404a40 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonPlaneMaskedNearPlane_FUN_00404a40(SMRGLHeaderPrimitive * prim)
     ADD ESP,0x4                         ; 0045d0ef
     JMP 0x0045d1c8                      ; 0045d0f2
         ;   XREF to: 0045d1c8 (UNCONDITIONAL_JUMP)  ; LAB_0045d1c8
@@ -313,7 +313,7 @@ section .text
     LEA EAX,[EBP + -0x14]               ; 0045d108
     PUSH EAX                            ; 0045d10b
     CALL engine_3d.c_processPolygonColor_FUN_00403e30 ; 0045d10c
-        ;   XREF to: 00403e30 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_processPolygonColor_FUN_00403e30(SMRGLHeaderPrimitive * polygon_info)
+        ;   XREF to: 00403e30 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_processPolygonColor_FUN_00403e30(SMRGLHeaderPrimitive * prim)
     ADD ESP,0x4                         ; 0045d111
     CMP dword ptr [0x0066ee00],0x0      ; 0045d114 | g_ZBufferEnabled
     JZ 0x0045d12e                       ; 0045d11b
@@ -321,7 +321,7 @@ section .text
     LEA EAX,[EBP + 0xffffff4c]          ; 0045d11d
     PUSH EAX                            ; 0045d123
     CALL engine_3d.c_renderPolygonAdaptiveDepthMode_FUN_00404ae0 ; 0045d124
-        ;   XREF to: 00404ae0 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonAdaptiveDepthMode_FUN_00404ae0(SMRGLHeaderPrimitive * polygon_info)
+        ;   XREF to: 00404ae0 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonAdaptiveDepthMode_FUN_00404ae0(SMRGLHeaderPrimitive * prim)
     ADD ESP,0x4                         ; 0045d129
     JMP 0x0045d13d                      ; 0045d12c
         ;   XREF to: 0045d13d (UNCONDITIONAL_JUMP)  ; LAB_0045d13d
@@ -344,7 +344,7 @@ section .text
     LEA EAX,[EBP + -0x14]               ; 0045d15f
     PUSH EAX                            ; 0045d162
     CALL engine_3d.c_processPolygonColor_FUN_00403e30 ; 0045d163
-        ;   XREF to: 00403e30 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_processPolygonColor_FUN_00403e30(SMRGLHeaderPrimitive * polygon_info)
+        ;   XREF to: 00403e30 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_processPolygonColor_FUN_00403e30(SMRGLHeaderPrimitive * prim)
     ADD ESP,0x4                         ; 0045d168
     CMP dword ptr [0x01e528c0],0x0      ; 0045d16b | g_GouraudShadingEnabled
     JZ 0x0045d19f                       ; 0045d172
@@ -355,7 +355,7 @@ section .text
     LEA EAX,[EBP + 0xffffff4c]          ; 0045d17d
     PUSH EAX                            ; 0045d183
     CALL engine_3d.c_renderPolygonUVMappedComplex_FUN_00404d50 ; 0045d184
-        ;   XREF to: 00404d50 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonUVMappedComplex_FUN_00404d50(SMRGLHeaderPrimitive * polygon_info)
+        ;   XREF to: 00404d50 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonUVMappedComplex_FUN_00404d50(SMRGLHeaderPrimitive * prim)
     ADD ESP,0x4                         ; 0045d189
     JMP 0x0045d19d                      ; 0045d18c
         ;   XREF to: 0045d19d (UNCONDITIONAL_JUMP)  ; LAB_0045d19d
@@ -363,7 +363,7 @@ section .text
         ;   Label: LAB_0045d18e
     PUSH EAX                            ; 0045d194
     CALL engine_3d.c_renderPolygon_FUN_00403ba0 ; 0045d195
-        ;   XREF to: 00403ba0 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygon_FUN_00403ba0(SMRGLHeaderPrimitive * polygon_info)
+        ;   XREF to: 00403ba0 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygon_FUN_00403ba0(SMRGLHeaderPrimitive * prim)
     ADD ESP,0x4                         ; 0045d19a
     JMP 0x0045d1c8                      ; 0045d19d
         ;   XREF to: 0045d1c8 (UNCONDITIONAL_JUMP)  ; LAB_0045d1c8
@@ -375,7 +375,7 @@ section .text
     LEA EAX,[EBP + 0xffffff4c]          ; 0045d1a8
     PUSH EAX                            ; 0045d1ae
     CALL engine_3d.c_renderPolygonAdaptiveDepthMode_FUN_00404ae0 ; 0045d1af
-        ;   XREF to: 00404ae0 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonAdaptiveDepthMode_FUN_00404ae0(SMRGLHeaderPrimitive * polygon_info)
+        ;   XREF to: 00404ae0 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonAdaptiveDepthMode_FUN_00404ae0(SMRGLHeaderPrimitive * prim)
     ADD ESP,0x4                         ; 0045d1b4
     JMP 0x0045d1c8                      ; 0045d1b7
         ;   XREF to: 0045d1c8 (UNCONDITIONAL_JUMP)  ; LAB_0045d1c8

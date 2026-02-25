@@ -11,7 +11,7 @@
 ;   shape_cramtex.cpp_performGapFillingOptimization_FUN_00447590 at 004476b4
 ;
 ; Referenced Globals:
-;   CCramTex[1] g_CramSortedTextureEntries
+;   CCramTex[250] g_CramSortedTextureEntries
 ;   undefined4 g_CramSortedTextureEntries[0].assigned_map_number
 ;   undefined4 DAT_0083c20c
 ;   undefined4 DAT_0083c210

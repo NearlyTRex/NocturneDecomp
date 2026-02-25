@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonSpecialEffectsPlaneMasked_FUN_00406de0(SMRGLHeaderPrimitive *polygon_info)
+; SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonSpecialEffectsPlaneMasked_FUN_00406de0(SMRGLHeaderPrimitive *prim)
 ;
 ; Parameters:
-; SMRGLHeaderPrimitive * Stack[0x4]:4   polygon_info
+; SMRGLHeaderPrimitive * Stack[0x4]:4   prim
 ;
 ; Referenced Globals:
 ;   int g_BitsPerPixel = 0x8
@@ -130,11 +130,11 @@ section .text
     PUSH EBX                            ; 00406f02
         ;   Label: LAB_00406f02
     CALL engine_3d.c_renderPolygonDepthWriteTextured_FUN_00405960 ; 00406f03
-        ;   XREF to: 00405960 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonDepthWriteTextured_FUN_00405960(SMRGLHeaderPrimitive * polygon_info)
+        ;   XREF to: 00405960 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonDepthWriteTextured_FUN_00405960(SMRGLHeaderPrimitive * prim)
     ADD ESP,0x4                         ; 00406f08
     PUSH EBX                            ; 00406f0b
     CALL engine_3d.c_renderPolygonEnginePlaneMaskedEffect_FUN_00405690 ; 00406f0c
-        ;   XREF to: 00405690 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonEnginePlaneMaskedEffect_FUN_00405690(SMRGLHeaderPrimitive * polygon_info)
+        ;   XREF to: 00405690 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonEnginePlaneMaskedEffect_FUN_00405690(SMRGLHeaderPrimitive * prim)
     ADD ESP,0x4                         ; 00406f11
     POP EBX                             ; 00406f14
     RET                                 ; 00406f15

@@ -15,7 +15,7 @@
 ; double           Stack[0x44]:8   right_z
 ;
 ; XREF[5]:
-;   core_setedit.cpp_CDemonSet_FUN_00580730 at 00580fce
+;   core_setedit.cpp_CDemonSet_showFogEditor_FUN_00580730 at 00580fce
 ;   core_sound.cpp_CSound_configure_FUN_005b3830 at 005b3917
 ;   core_sound.cpp_updateListeners_FUN_005b1870 at 005b1acf
 ;   sound_sndmain.cpp_resetSoundSystemDefaults_FUN_005aae00 at 005aae72

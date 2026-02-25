@@ -1,13 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 74,
-    "complexity_score": 185,
+    "complexity_score": 194,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 5,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 50,
-    "suspect_count": 11,
+    "pseudocode_lines": 49,
+    "suspect_count": 12,
     "suspect_types": [
       "negative_offset",
       "param_count_too_few",
@@ -15,7 +15,7 @@
       "special_crt_function",
       "undefined_data"
     ],
-    "total_lines": 124
+    "total_lines": 123
   },
   "cross_references": [
     {
@@ -41,7 +41,7 @@
     ],
     "convention": "__cdecl",
     "name": "crt_strstream.cpp_ostrstream_ctor_FUN_005ff384",
-    "signature": "ostrstream * __cdecl crt_strstream_cpp_ostrstream_ctor_FUN_005ff384(ostrstream *this_ptr,int flags,char *buffer,int buffer_size,int mode)"
+    "signature": "_ostrstream * __cdecl crt_strstream_cpp_ostrstream_ctor_FUN_005ff384(void *this_ptr,int flags,char *buffer,int buffer_size,int mode)"
   },
   "function_calls": [
     {
@@ -57,7 +57,7 @@
     {
       "addr": "006060fe",
       "is_variadic": false,
-      "name": "crt_strstream.cpp_strstreambase_constructor_FUN_006060fe"
+      "name": "crt_strstream.cpp_strstreambase_ctor_FUN_006060fe"
     }
   ],
   "globals": [
@@ -159,7 +159,7 @@
         "name": "this_ptr",
         "offset": 4,
         "size": 4,
-        "type": "ostrstream *"
+        "type": "void *"
       },
       {
         "is_param": true,
@@ -197,7 +197,7 @@
       "line": 18,
       "match": "DAT_00665b68",
       "severity": "mild",
-      "text": "(this_ptr->_strstreambase_core).layout_info = &DAT_00665b68;",
+      "text": "*(WatcomVirtualBaseDescriptor **)this_ptr = &DAT_00665b68;",
       "type": "undefined_data"
     },
     {
@@ -205,28 +205,36 @@
       "line": 19,
       "match": "DAT_00665b70",
       "severity": "mild",
-      "text": "(this_ptr->_ostream_core).destructor_vtable = &DAT_00665b70;",
+      "text": "*(WatcomThunkedDestructor **)((int)this_ptr + 0x48) = &DAT_00665b70;",
       "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 20,
+      "match": "(ios *)((int)",
+      "severity": "mild",
+      "text": "piVar7 = crt_iostream_cpp_ios_ctor_FUN_006061fc((ios *)((int)this_ptr + 0x54));",
+      "type": "pointer_cast"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 21,
       "match": "piVar7[-2].",
       "severity": "mild",
-      "text": "this_ptr = (ostrstream *)&piVar7[-2].__tied_stream;",
+      "text": "this_ptr = &piVar7[-2].__tied_stream;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
+      "line": 45,
+      "match": "p_Var6[-2].",
+      "severity": "mild",
+      "text": "ppvVar1 = &p_Var6[-2]._ios.__xalloc_list;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 46,
-      "match": "poVar6[-2].",
-      "severity": "mild",
-      "text": "ppvVar1 = &poVar6[-2]._ios.__xalloc_list;",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 47,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)ppvVar1 + *(int *)((int)*ppvVar1 + 4) + -4) = *(int *)((int)*ppvVar1 + 4);",
@@ -234,7 +242,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 47,
+      "line": 46,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)ppvVar1 + *(int *)((int)*ppvVar1 + 4) + -4) = *(int *)((int)*ppvVar1 + 4);",
@@ -242,7 +250,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 47,
+      "line": 46,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)ppvVar1 + *(int *)((int)*ppvVar1 + 4) + -4) = *(int *)((int)*ppvVar1 + 4);",
@@ -250,18 +258,18 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 48,
-      "match": "poVar6[-1].",
+      "line": 47,
+      "match": "p_Var6[-1].",
       "severity": "mild",
-      "text": "poVar6[-1]._ios.cleanup_vtable = &PTR_FUN_00665b7c;",
+      "text": "p_Var6[-1]._ios.cleanup_vtable = &PTR_FUN_00665b7c;",
       "type": "negative_offset"
     },
     {
       "description": "Complex pointer cast",
-      "line": 51,
+      "line": 50,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(void ***)((int)(&poVar6->_ios + -1) + *(int *)((int)pvVar3 + 4)) = &PTR_FUN_00665b8c;",
+      "text": "*(void ***)((int)(&p_Var6->_ios + -1) + *(int *)((int)pvVar3 + 4)) = &PTR_FUN_00665b8c;",
       "type": "pointer_cast"
     },
     {

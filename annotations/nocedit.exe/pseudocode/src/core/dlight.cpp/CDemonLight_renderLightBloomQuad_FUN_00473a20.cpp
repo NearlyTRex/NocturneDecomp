@@ -80,9 +80,9 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20(CDemo
     local_54 = local_9c;
     local_50 = local_98;
   }
-  local_4c = (float)(this_ptr->base).base.rotation_matrix.m[0].z;
-  local_48 = (float)(this_ptr->base).base.rotation_matrix.m[1].z;
-  local_44 = (float)(this_ptr->base).base.rotation_matrix.m[2].z;
+  local_4c = (this_ptr->base).base.rotation_matrix.m[0].z;
+  local_48 = (this_ptr->base).base.rotation_matrix.m[1].z;
+  local_44 = (this_ptr->base).base.rotation_matrix.m[2].z;
   fVar2 = SQRT(local_50 * local_50 + local_58 * local_58 + local_54 * local_54);
   if (fVar2 <= 0.0) {
     local_54 = 0.0;

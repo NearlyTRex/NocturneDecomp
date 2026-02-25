@@ -10,5 +10,8 @@
 #include "types/unions/UActorPropertyParam.h"
 #include "types/unions/UActorVTable.h"
 #include "types/unions/UCodeCommandData.h"
+#include "types/unions/UFloatInteger.h"
+#include "types/unions/UIntegerFloat.h"
 #include "types/unions/UOrientationVector.h"
+#include "types/unions/UVector3.h"
 

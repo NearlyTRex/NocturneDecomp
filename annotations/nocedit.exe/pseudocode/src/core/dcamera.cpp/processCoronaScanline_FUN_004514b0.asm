@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dcamera_cpp_processCoronaScanline_FUN_004514b0(int row,int x_start,int x_end,SCorona *corona_buffer)
+; void __cdecl core_dcamera_cpp_processCoronaScanline_FUN_004514b0(int row,int x_start,int x_end,SCorona *corona)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   row
 ; int              Stack[0x8]:4   x_start
 ; int              Stack[0xc]:4   x_end
-; SCorona *        Stack[0x10]:4   corona_buffer
+; SCorona *        Stack[0x10]:4   corona
 ; Local Variables:
 ; undefined4       Stack[-0x3c]:4  local_3c
 ; undefined4       Stack[-0x38]:4  local_38

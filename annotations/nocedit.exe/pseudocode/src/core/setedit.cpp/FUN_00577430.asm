@@ -36,7 +36,7 @@
 ;   int g_GreenScaleFactor
 ;   _BIT_INTEGER32 g_BlueBitPosition
 ;   int g_BlueScaleFactor
-;   undefined4 DAT_03365cc0
+;   uint[250][3072] g_ThumbnailImageBuffer
 ;   undefined4 DAT_03365cc4
 ;
 ; *****************************************************************************
@@ -100,7 +100,7 @@ section .text
     ADD EBX,EAX                         ; 005774dc
     MOV EAX,dword ptr [ESP + 0x24]      ; 005774de
     MOV dword ptr [ESP + 0x40],EAX      ; 005774e2
-    MOV ESI,dword ptr [EBX + 0x3365cc0] ; 005774e6 | DAT_03365cc0 | DAT_03365cc4
+    MOV ESI,dword ptr [EBX + 0x3365cc0] ; 005774e6 | g_ThumbnailImageBuffer | DAT_03365cc4
         ;   Label: LAB_005774e6
     XOR EDX,EDX                         ; 005774ec
     MOV EAX,ESI                         ; 005774ee
@@ -179,7 +179,7 @@ section .text
     SHL EAX,0x8                         ; 005775d3
     ADD EAX,EDX                         ; 005775d6
     MOV EDX,dword ptr [ESP + 0x4]       ; 005775d8
-    MOV ECX,dword ptr [EAX + 0x3365cc0] ; 005775dc | DAT_03365cc0 | DAT_03365cc4
+    MOV ECX,dword ptr [EAX + 0x3365cc0] ; 005775dc | g_ThumbnailImageBuffer | DAT_03365cc4
         ;   Label: LAB_005775dc
     MOV EDI,ECX                         ; 005775e2
     MOV ESI,ECX                         ; 005775e4
@@ -237,7 +237,7 @@ section .text
     SHL EAX,0x8                         ; 0057768e
     MOV EDX,dword ptr [ESP + 0x2c]      ; 00577691
     ADD EAX,EDI                         ; 00577695
-    MOV ECX,dword ptr [EAX + 0x3365cc0] ; 00577697 | DAT_03365cc0 | DAT_03365cc4
+    MOV ECX,dword ptr [EAX + 0x3365cc0] ; 00577697 | g_ThumbnailImageBuffer | DAT_03365cc4
         ;   Label: LAB_00577697
     MOV EDI,ECX                         ; 0057769d
     MOV ESI,ECX                         ; 0057769f

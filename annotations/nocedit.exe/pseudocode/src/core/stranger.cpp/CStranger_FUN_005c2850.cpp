@@ -201,9 +201,8 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c2850(CStranger *this_ptr)
   local_54.z = 1.5;
   core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
             ((CDemonActor *)this_ptr,&local_78,&local_54);
-  fVar9 = core_setcolid_cpp_CDemonSet_testCapsuleCollision_FUN_00573470
-                    (g_CDemonSetPtr,local_6c,fStack_64,local_78.x,local_78.z,1.0,(void *)0x3dcccccd,
-                     (void *)0x40400000);
+  fVar9 = core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_00573470
+                    (g_CDemonSetPtr,local_6c,fStack_64,local_78.x,local_78.z,1.0,0.1,3.0);
   if (fVar9 < 1.0) {
     core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
     return 0;

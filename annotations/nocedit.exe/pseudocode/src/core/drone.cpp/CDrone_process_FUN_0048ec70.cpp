@@ -48,7 +48,7 @@ void __cdecl core_drone_cpp_CDrone_process_FUN_0048ec70(CDrone *this_ptr,float d
   
   iVar4 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
   if (iVar4 == 0) {
-    sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->move_sfx_handle);
+    sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handles[1]);
     return;
   }
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
@@ -128,13 +128,13 @@ void __cdecl core_drone_cpp_CDrone_process_FUN_0048ec70(CDrone *this_ptr,float d
         else if ((0 < iVar4) && ((this_ptr->base).attack_cooldown <= 0.0)) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&this_ptr_00->motion_controller,2,1);
-          uVar9 = this_ptr->attack_sfx_handle;
+          uVar9 = this_ptr->sfx_handles[2];
           (this_ptr->base).attack_cooldown = 1.0;
           iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(uVar9);
           if (iVar4 == 0) {
             uVar9 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                               ((CDemonActor *)this_ptr,"drone-attack?.wav");
-            this_ptr->attack_sfx_handle = uVar9;
+            this_ptr->sfx_handles[2] = uVar9;
           }
         }
       }
@@ -145,7 +145,7 @@ void __cdecl core_drone_cpp_CDrone_process_FUN_0048ec70(CDrone *this_ptr,float d
       pCVar8 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                          (&local_88,&g_ZeroVector,
                           (this_ptr->base).base.model.bone_transform.bone_world_matrices +
-                          this_ptr->bone_index_attack1);
+                          this_ptr->bone_indices[0]);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                 ((CDemonActor *)this_ptr,&local_58,pCVar8);
       core_enemy_cpp_CEnemy_FUN_004a9880(&this_ptr->base);
@@ -153,7 +153,7 @@ void __cdecl core_drone_cpp_CDrone_process_FUN_0048ec70(CDrone *this_ptr,float d
       pCVar8 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                          (&local_4c,&g_ZeroVector,
                           (this_ptr->base).base.model.bone_transform.bone_world_matrices +
-                          this_ptr->bone_index_attack2);
+                          this_ptr->bone_indices[1]);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                 ((CDemonActor *)this_ptr,&local_34,pCVar8);
       core_enemy_cpp_CEnemy_FUN_004a9880(&this_ptr->base);
@@ -213,7 +213,7 @@ switchD_0048f284_caseD_3:
                          (double)(this_ptr->base).base.base.location.position.y,
                          (double)(this_ptr->base).base.base.location.position.z,50.0), iVar4 != 0))
   {
-    iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->move_sfx_handle);
+    iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handles[1]);
     if (iVar4 == 0) {
       sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
       iVar4 = 2;
@@ -221,12 +221,12 @@ switchD_0048f284_caseD_3:
       sound_sndmain_cpp_setNextSfxTriggerTime_FUN_005a8be0((double)local_14,iVar4);
       uVar9 = (*((this_ptr->base).base.base.vtable._ub)->playAmbientSound)
                         ((CDemonActor *)this_ptr,"slime.wav");
-      this_ptr->move_sfx_handle = uVar9;
+      this_ptr->sfx_handles[1] = uVar9;
       sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
     }
   }
   else {
-    sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->move_sfx_handle);
+    sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handles[1]);
   }
   iVar4 = core_charactr_cpp_CCharacter_isOnGround_FUN_004297e0((CCharacter *)this_ptr);
   if (iVar4 != 0) {

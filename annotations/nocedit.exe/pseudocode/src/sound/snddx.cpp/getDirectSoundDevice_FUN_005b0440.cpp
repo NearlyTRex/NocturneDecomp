@@ -25,8 +25,8 @@ CDirectSoundDevice * __cdecl sound_snddx_cpp_getDirectSoundDevice_FUN_005b0440(U
     iVar1 = sound_snddx_cpp_enumerateDirectSoundDevice_FUN_005b0390(device_id,&local_138);
     if (iVar1 != 0) {
       lpGuid = (LPGUID)0x0;
-      if (g_DirectSoundDevices[device_id].device_id_part == 0) {
-        lpGuid = (LPGUID)g_DirectSoundDevices[device_id].field_4;
+      if (g_DirectSoundDevices[device_id].is_primary_device == 0) {
+        lpGuid = &g_DirectSoundDevices[device_id].device_guid;
       }
       uVar2 = DirectSoundCreate(lpGuid,&g_DirectSound,(LPUNKNOWN)0x0);
       if (uVar2 == 0) {
@@ -56,7 +56,7 @@ CDirectSoundDevice * __cdecl sound_snddx_cpp_getDirectSoundDevice_FUN_005b0440(U
             }
           }
           iVar1 = sound_sndmain_cpp_isHardwareMixingEnabled_FUN_005ab590();
-          if ((iVar1 != 0) && (g_DirectSoundDevices[device_id].value1 != 0)) {
+          if ((iVar1 != 0) && (g_DirectSoundDevices[device_id].has_hardware_mixing != 0)) {
             (*g_DirectSoundPrimaryBuffer->vtable->QueryInterface)
                       ((IUnknown *)g_DirectSoundPrimaryBuffer,&DAT_00686d58,&g_DirectSound3DListener
                       );

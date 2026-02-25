@@ -9,8 +9,8 @@
 void __cdecl core_door_cpp_CDoor_FUN_00480de0(CDoor *this_ptr)
 
 {
-  uint in_stack_00000008;
+  float in_stack_00000008;
   
-  *(uint *)this_ptr->unk4 = in_stack_00000008;
+  this_ptr->swing_range = in_stack_00000008;
   return;
 }

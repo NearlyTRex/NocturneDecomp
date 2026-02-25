@@ -54,8 +54,8 @@
 ;   double DOUBLE_00645e23 = 2
 ;   float FLOAT_00662850 = 256
 ;   int INT_02d7a7b8
-;   int g_ActiveLightCount
-;   CDemonLight*[96] g_ActiveLightList
+;   int g_SpotLightCount
+;   CDemonLight*[96] g_SpotLightList
 ;   undefined4 DAT_03276f38
 ;   int g_DynamicLightCount
 ;   CDemonLight*[4] g_DynamicLights
@@ -115,7 +115,7 @@ section .text
         ;   XREF to: 0056d4d8 (CONDITIONAL_JUMP)  ; LAB_0056d4d8
     XOR EBX,EBX                         ; 0056d504
         ;   Label: LAB_0056d504
-    MOV ESI,dword ptr [0x03276f30]      ; 0056d506 | g_ActiveLightCount
+    MOV ESI,dword ptr [0x03276f30]      ; 0056d506 | g_SpotLightCount
     MOV dword ptr [0x032c1614],EBX      ; 0056d50c | g_SecondaryDirectionalLightCount
     TEST ESI,ESI                        ; 0056d512
     JLE 0x0056d549                      ; 0056d514
@@ -123,7 +123,7 @@ section .text
     SHL ESI,0x2                         ; 0056d516
     XOR EDX,EDX                         ; 0056d519
     XOR EAX,EAX                         ; 0056d51b
-    MOV EBX,dword ptr [EAX + 0x3276f34] ; 0056d51d | g_ActiveLightList | DAT_03276f38
+    MOV EBX,dword ptr [EAX + 0x3276f34] ; 0056d51d | g_SpotLightList | DAT_03276f38
         ;   Label: LAB_0056d51d
     CMP dword ptr [EBX + 0x1cb4],0x0    ; 0056d523
     JZ 0x0056d542                       ; 0056d52a
@@ -224,14 +224,14 @@ section .text
         ;   XREF to: 0056d5d2 (CONDITIONAL_JUMP)  ; LAB_0056d5d2
     XOR ECX,ECX                         ; 0056d630
         ;   Label: LAB_0056d630
-    MOV EAX,[0x03276f30]                ; 0056d632 | g_ActiveLightCount
+    MOV EAX,[0x03276f30]                ; 0056d632 | g_SpotLightCount
     MOV dword ptr [ESP + 0x98],ECX      ; 0056d637
     MOV dword ptr [0x032c1614],ECX      ; 0056d63e | g_SecondaryDirectionalLightCount
     TEST EAX,EAX                        ; 0056d644
     JLE 0x0056d6a7                      ; 0056d646
         ;   XREF to: 0056d6a7 (CONDITIONAL_JUMP)  ; LAB_0056d6a7
     XOR EBX,EBX                         ; 0056d648
-    MOV EAX,dword ptr [EBX + 0x3276f34] ; 0056d64a | g_ActiveLightList | DAT_03276f38
+    MOV EAX,dword ptr [EBX + 0x3276f34] ; 0056d64a | g_SpotLightList | DAT_03276f38
         ;   Label: LAB_0056d64a
     CMP dword ptr [EAX + 0x1cb4],0x0    ; 0056d650
     JZ 0x0056d68b                       ; 0056d657
@@ -250,13 +250,13 @@ section .text
     JZ 0x0056d68b                       ; 0056d66e
         ;   XREF to: 0056d68b (CONDITIONAL_JUMP)  ; LAB_0056d68b
     MOV EAX,[0x032c1614]                ; 0056d670 | g_SecondaryDirectionalLightCount
-    MOV EDX,dword ptr [EBX + 0x3276f34] ; 0056d675 | g_ActiveLightList
+    MOV EDX,dword ptr [EBX + 0x3276f34] ; 0056d675 | g_SpotLightList
     LEA ECX,[EAX + 0x1]                 ; 0056d67b
     MOV dword ptr [EAX*0x4 + 0x32c1618],EDX ; 0056d67e | g_SecondaryDirectionalLights
     MOV dword ptr [0x032c1614],ECX      ; 0056d685 | g_SecondaryDirectionalLightCount
     MOV EAX,dword ptr [ESP + 0x98]      ; 0056d68b
         ;   Label: LAB_0056d68b
-    MOV EDX,dword ptr [0x03276f30]      ; 0056d692 | g_ActiveLightCount
+    MOV EDX,dword ptr [0x03276f30]      ; 0056d692 | g_SpotLightCount
     INC EAX                             ; 0056d698
     ADD EBX,0x4                         ; 0056d699
     MOV dword ptr [ESP + 0x98],EAX      ; 0056d69c

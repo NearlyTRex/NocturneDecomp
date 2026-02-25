@@ -42,10 +42,10 @@ void __cdecl core_dlight_cpp_CDemonLight_renderCoronaGeometry_FUN_004736c0(CDemo
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
             (g_CDemonRendererPtr2,(CVector3f *)&(this_ptr->base).base.position);
   core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
-            ((CMatrix3x3f *)&(this_ptr->base).base.rotation_matrix,&local_4c);
+            (&(this_ptr->base).base.rotation_matrix,&local_4c);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
             (g_CDemonRendererPtr2,(CVector3i *)&local_4c,(CVector3i *)0x0);
-  fVar1 = (this_ptr->base).base.projection_scale;
+  fVar1 = (this_ptr->base).base.focal_length;
   fVar3 = (float)18;
   fVar2 = (this_ptr->base).max_distance;
   iVar9 = 0;
@@ -86,14 +86,14 @@ void __cdecl core_dlight_cpp_CDemonLight_renderCoronaGeometry_FUN_004736c0(CDemo
   bVar7 = false;
   local_34[0].z = pfVar5[2] - (float)(this_ptr->base).base.position.z;
   pCVar6 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
-                     ((CMatrix3x3f *)&(this_ptr->base).base.rotation_matrix,&local_70,local_34);
+                     (&(this_ptr->base).base.rotation_matrix,&local_70,local_34);
   if (local_34 != pCVar6) {
     local_34[0].x = pCVar6->x;
     local_34[0].y = pCVar6->y;
     local_34[0].z = pCVar6->z;
   }
-  local_34[0].x = (this_ptr->base).base.projection_scale * (float)0.055555555555555601 * local_34[0].x;
-  local_34[0].y = (float)0.055555555555555601 * (this_ptr->base).base.projection_scale * local_34[0].y;
+  local_34[0].x = (this_ptr->base).base.focal_length * (float)0.055555555555555601 * local_34[0].x;
+  local_34[0].y = (float)0.055555555555555601 * (this_ptr->base).base.focal_length * local_34[0].y;
   if ((((local_34[0].x < local_34[0].z) && (local_18 = -local_34[0].z, local_18 < local_34[0].x)) &&
       (local_34[0].y < local_34[0].z)) &&
      ((local_18 < local_34[0].y && (local_34[0].z < (this_ptr->base).max_distance)))) {

@@ -13,7 +13,7 @@ int __cdecl qsortByLargestDimension(CCramTex *entry_a,CCramTex *entry_b);
 
 // Original: shape_cramtex.cpp_generateTextureAtlas_FUN_00445820
 // Address: 00445820
-void __cdecl generateTextureAtlas(void);
+void __cdecl generateTextureAtlas(int acceptable_coverage);
 
 // Original: shape_cramtex.cpp_CCramTex_addTextureEntry_FUN_00446100
 // Address: 00446100

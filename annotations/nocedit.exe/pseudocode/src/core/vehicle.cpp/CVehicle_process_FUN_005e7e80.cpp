@@ -156,10 +156,10 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr,f
           (*(((pCVar7->base).vtable._uc)->_uc).processDamage)(pCVar7,&SStack_104);
         }
         else if ((CStack_64.z - SStack_c8.cylinder_radius < local_a0.max.z + (float)30)
-                && (iVar12 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_horn_handle),
+                && (iVar12 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handles[0]),
                    iVar12 == 0)) {
           uVar13 = core_vehicle_cpp_CVehicle_FUN_005e8b50(this_ptr);
-          this_ptr->sfx_horn_handle = uVar13;
+          this_ptr->sfx_handles[0] = uVar13;
         }
       }
     }
@@ -274,17 +274,17 @@ joined_r0x005e8664:
   core_mission_cpp_CDemonMission_addActorToList_FUN_00523b70
             (g_CDemonMissionPtr,(CDemonActor *)actor);
 LAB_005e82f4:
-  iVar14 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_engine_handle);
+  iVar14 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handles[1]);
   if (iVar14 == 0) {
     uVar13 = core_vehicle_cpp_CVehicle_FUN_005e8b50(this_ptr);
-    this_ptr->sfx_engine_handle = uVar13;
+    this_ptr->sfx_handles[1] = uVar13;
   }
-  sound_sndmain_cpp_setSfxBaseFrequency_FUN_005a9b40(this_ptr->sfx_engine_handle,1.0);
+  sound_sndmain_cpp_setSfxBaseFrequency_FUN_005a9b40(this_ptr->sfx_handles[1],1.0);
   if (((float)0.20000000000000001 < ABS((this_ptr->local_velocity).x)) &&
-     (iVar14 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_screech_handle),
-     iVar14 == 0)) {
+     (iVar14 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handles[2]), iVar14 == 0))
+  {
     uVar13 = core_vehicle_cpp_CVehicle_FUN_005e8b50(this_ptr);
-    this_ptr->sfx_screech_handle = uVar13;
+    this_ptr->sfx_handles[2] = uVar13;
     return;
   }
   return;

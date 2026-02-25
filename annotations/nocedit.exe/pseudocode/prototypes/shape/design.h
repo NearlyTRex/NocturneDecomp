@@ -529,7 +529,7 @@ void __cdecl combineTextureMaps(void);
 
 // Original: shape_design.c_tileTextureMaps_FUN_0046a180
 // Address: 0046a180
-void __cdecl tileTextureMaps(char *model_name,int prompt_for_model);
+void __cdecl tileTextureMaps(SCram *cram,int prompt_for_model);
 
 // Original: shape_design.c_getLastTextureProcessIndex_FUN_0046a860
 // Address: 0046a860
@@ -577,11 +577,11 @@ void __cdecl sampleAndFilterPixel(void *rgb_buffer,void *alpha_buffer,int col_co
 
 // Original: shape_design.c_loadTextureData_FUN_0046b060
 // Address: 0046b060
-void __cdecl loadTextureData(STextureLoadConfig *config_ptr,void *rgb_buffer,void *alpha_buffer,int atlas_width,int atlas_height);
+void __cdecl loadTextureData(STextureAtlasEntry *entry,uchar *rgb_buffer,uchar *alpha_buffer,int atlas_width,int atlas_height);
 
-// Original: shape_design.c_initializeCramConfig_FUN_0046b6e0
+// Original: shape_design.c_initializeCram_FUN_0046b6e0
 // Address: 0046b6e0
-void __cdecl initializeCramConfig(SCramConfig *cram_config);
+void __cdecl initializeCram(SCram *cram);
 
 // Original: shape_design.c_quantizePaletteColors_FUN_0046b770
 // Address: 0046b770
@@ -593,7 +593,7 @@ void __cdecl embedCopyrightWatermark(void *image_buffer,char *output_filename,in
 
 // Original: shape_design.c_cramTextureList_FUN_0046bb80
 // Address: 0046bb80
-int __cdecl cramTextureList(SCramConfig *cram_config);
+int __cdecl cramTextureList(SCram *cram);
 
 // Original: shape_design.c_findTextureByFilename_FUN_0046dfc0
 // Address: 0046dfc0

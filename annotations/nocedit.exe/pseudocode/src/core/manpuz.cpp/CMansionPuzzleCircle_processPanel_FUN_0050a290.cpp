@@ -54,7 +54,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_processPanel_FUN_0050a290(CMan
       (pSVar4->rotation_matrix).m[2].x = (pSVar3->rotation_matrix).m[2].x;
       (pSVar4->rotation_matrix).m[2].y = (pSVar3->rotation_matrix).m[2].y;
       (pSVar4->rotation_matrix).m[2].z = (pSVar3->rotation_matrix).m[2].z;
-      pSVar4->unk = pSVar3->unk;
+      pSVar4->dead = pSVar3->dead;
       (pSVar4->color).r = (pSVar3->color).r;
       (pSVar4->color).g = (pSVar3->color).g;
       (pSVar4->color).b = (pSVar3->color).b;

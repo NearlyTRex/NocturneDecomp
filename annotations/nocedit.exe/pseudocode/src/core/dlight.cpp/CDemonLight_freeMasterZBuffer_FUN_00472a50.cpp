@@ -9,10 +9,10 @@
 void __cdecl core_dlight_cpp_CDemonLight_freeMasterZBuffer_FUN_00472a50(CDemonLight *this_ptr)
 
 {
-  if (this_ptr->restore_memory_size == 0) {
+  if (this_ptr->master_zbuffer == (void *)0x0) {
     return;
   }
   (this_ptr->base).zbuffer_raw = (void *)0x0;
-  this_ptr->restore_memory_size = 0;
+  this_ptr->master_zbuffer = (void *)0x0;
   return;
 }

@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 100,
+    "complexity_score": 97,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 15,
+    "pseudocode_lines": 12,
     "suspect_count": 8,
     "suspect_types": [
       "unresolved_funcptr"
     ],
-    "total_lines": 66
+    "total_lines": 63
   },
   "cross_references": [
     {
@@ -42,7 +42,7 @@
     ],
     "convention": "__cdecl",
     "name": "support_codec.cpp_CLZWDictionary_writeCodeSequence_FUN_0043f200",
-    "signature": "int __cdecl support_codec_cpp_CLZWDictionary_writeCodeSequence_FUN_0043f200(CLZWDictionary *this_ptr,int code,_FILE *output_file)"
+    "signature": "int __cdecl support_codec_cpp_CLZWDictionary_writeCodeSequence_FUN_0043f200(CLZWDictionary *this_ptr,int code,_ostream *ostream)"
   },
   "function_calls": [
     {
@@ -102,10 +102,10 @@
       },
       {
         "is_param": true,
-        "name": "output_file",
+        "name": "ostream",
         "offset": 12,
         "size": 4,
-        "type": "_FILE *"
+        "type": "_ostream *"
       }
     ]
   },
@@ -115,7 +115,7 @@
       "line": 2,
       "match": "code",
       "severity": "moderate",
-      "text": "int __cdecl support_codec_cpp_CLZWDictionary_writeCodeSequence_FUN_0043f200(CLZWDictionary *this_ptr,int code,_FILE *output_file)",
+      "text": "int __cdecl support_codec_cpp_CLZWDictionary_writeCodeSequence_FUN_0043f200(CLZWDictionary *this_ptr,int code,_ostream *ostream)",
       "type": "unresolved_funcptr"
     },
     {
@@ -123,44 +123,44 @@
       "line": 7,
       "match": "code",
       "severity": "moderate",
-      "text": "iVar1 = this_ptr->node_table[code].prefix_code;",
+      "text": "iVar1 = this_ptr->node_table[code].parent_index;",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 12,
+      "line": 10,
       "match": "code",
       "severity": "moderate",
-      "text": "((ostream *)output_file,(uint)(byte)this_ptr->node_table[code].code);",
+      "text": "crt_iostream_cpp_ostream_put_FUN_005ff2d7(ostream,(uint)(byte)this_ptr->node_table[code].code);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 12,
+      "line": 10,
       "match": "code",
       "severity": "moderate",
-      "text": "((ostream *)output_file,(uint)(byte)this_ptr->node_table[code].code);",
+      "text": "crt_iostream_cpp_ostream_put_FUN_005ff2d7(ostream,(uint)(byte)this_ptr->node_table[code].code);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 16,
+      "line": 13,
       "match": "code",
       "severity": "moderate",
-      "text": "((ostream *)output_file,(uint)(byte)this_ptr->node_table[code].code);",
+      "text": "crt_iostream_cpp_ostream_put_FUN_005ff2d7(ostream,(uint)(byte)this_ptr->node_table[code].code);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 16,
+      "line": 13,
       "match": "code",
       "severity": "moderate",
-      "text": "((ostream *)output_file,(uint)(byte)this_ptr->node_table[code].code);",
+      "text": "crt_iostream_cpp_ostream_put_FUN_005ff2d7(ostream,(uint)(byte)this_ptr->node_table[code].code);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 17,
+      "line": 14,
       "match": "code",
       "severity": "moderate",
       "text": "return this_ptr->node_table[code].code;",
@@ -168,7 +168,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 17,
+      "line": 14,
       "match": "code",
       "severity": "moderate",
       "text": "return this_ptr->node_table[code].code;",

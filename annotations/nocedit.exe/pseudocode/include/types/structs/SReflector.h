@@ -14,7 +14,7 @@ typedef struct SReflector {
     CVector3f position; // 0x1c
     CVector3f rotation; // 0x28
     CMatrix3x3f rotation_matrix; // 0x34
-    int field6_0x58; // 0x58
+    int dead; // 0x58
     int panel_index; // 0x5c
 } SReflector;
 

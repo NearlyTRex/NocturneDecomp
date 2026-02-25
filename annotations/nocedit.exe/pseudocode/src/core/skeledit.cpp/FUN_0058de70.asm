@@ -29,7 +29,7 @@
 ;   engine_texture.cpp_clearTextureCache_FUN_005dd8e0
 ;   shape_design.c_cramTextureList_FUN_0046bb80
 ;   shape_design.c_cramTextures_FUN_0046a970
-;   shape_design.c_initializeCramConfig_FUN_0046b6e0
+;   shape_design.c_initializeCram_FUN_0046b6e0
 ;   shape_design.c_initializeTextureManager_FUN_0046a880
 ;   shape_design.c_setTextureQualityParameter_FUN_0046a8e0
 ;
@@ -188,8 +188,8 @@ section .text
         ;   Label: LAB_0058e018
     PUSH EAX                            ; 0058e01a
     LEA EDI,[ESP + 0x4]                 ; 0058e01b
-    CALL shape_design.c_initializeCramConfig_FUN_0046b6e0 ; 0058e01f
-        ;   XREF to: 0046b6e0 (UNCONDITIONAL_CALL)  ; void shape_design.c_initializeCramConfig_FUN_0046b6e0(SCramConfig * cram_config)
+    CALL shape_design.c_initializeCram_FUN_0046b6e0 ; 0058e01f
+        ;   XREF to: 0046b6e0 (UNCONDITIONAL_CALL)  ; void shape_design.c_initializeCram_FUN_0046b6e0(SCram * cram)
     ADD ESP,0x4                         ; 0058e024
     MOV EBX,0x1                         ; 0058e027
     MOV ESI,dword ptr [ESP + 0xa0]      ; 0058e02c
@@ -226,7 +226,7 @@ section .text
     MOV dword ptr [ESP + 0x6c],EBX      ; 0058e08b
     MOV dword ptr [ESP + 0x58],ESI      ; 0058e08f
     CALL shape_design.c_cramTextureList_FUN_0046bb80 ; 0058e093
-        ;   XREF to: 0046bb80 (UNCONDITIONAL_CALL)  ; int shape_design.c_cramTextureList_FUN_0046bb80(SCramConfig * cram_config)
+        ;   XREF to: 0046bb80 (UNCONDITIONAL_CALL)  ; int shape_design.c_cramTextureList_FUN_0046bb80(SCram * cram)
     ADD ESP,0x4                         ; 0058e098
     CALL engine_texture.cpp_clearTextureCache_FUN_005dd8e0 ; 0058e09b
         ;   XREF to: 005dd8e0 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_clearTextureCache_FUN_005dd8e0()

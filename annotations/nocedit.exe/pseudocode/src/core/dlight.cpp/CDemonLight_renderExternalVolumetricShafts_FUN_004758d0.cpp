@@ -15,7 +15,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0047
   float fVar2;
   CDemonRenderer *this_ptr_00;
   CVector3f *pCVar3;
-  CMatrix3x3i *this_ptr_01;
+  CMatrix3x3f *this_ptr_01;
   int iVar4;
   byte bVar5;
   float10 fVar6;
@@ -103,21 +103,20 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0047
       local_120.z = 1.0;
       this_ptr_01 = &(this_ptr->base).base.rotation_matrix;
       local_dc = local_dc * fVar1;
-      core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
-                ((CMatrix3x3f *)this_ptr_01,&local_108,&local_120);
+      core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0(this_ptr_01,&local_108,&local_120);
       engine_drender_cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
                 (g_CDemonRendererPtr2,&local_138.x);
       local_138.x = local_138.x - (float)(this_ptr->base).base.position.x;
       local_138.y = local_138.y - (float)(this_ptr->base).base.position.y;
       local_138.z = local_138.z - (float)(this_ptr->base).base.position.z;
       pCVar3 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
-                         ((CMatrix3x3f *)this_ptr_01,&local_cc,&local_138);
+                         (this_ptr_01,&local_cc,&local_138);
       if (&local_138 != pCVar3) {
         local_138.x = pCVar3->x;
         local_138.y = pCVar3->y;
         local_138.z = pCVar3->z;
       }
-      fVar1 = ((local_138.z * (float)18) / (this_ptr->base).base.projection_scale) *
+      fVar1 = ((local_138.z * (float)18) / (this_ptr->base).base.focal_length) *
               (float)2;
       fVar2 = local_138.x * local_138.x + local_138.y * local_138.y;
       fVar1 = fVar1 * fVar1;
@@ -126,13 +125,13 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0047
         engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
                   (g_CDemonRendererPtr2,(CVector3f *)&(this_ptr->base).base.position);
         core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
-                  ((CMatrix3x3f *)&(this_ptr->base).base.rotation_matrix,&local_b4);
+                  (&(this_ptr->base).base.rotation_matrix,&local_b4);
         local_50 = 1;
         engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
                   (g_CDemonRendererPtr2,(CVector3i *)&local_b4,(CVector3i *)0x0);
         do {
           fVar6 = (float10)local_50 *
-                  ((float10)18 / (float10)(this_ptr->base).base.projection_scale) *
+                  ((float10)18 / (float10)(this_ptr->base).base.focal_length) *
                   (float10)0.0625;
           local_4c = (float)fVar6;
           Var10 = fpatan(fVar6,(float10)1);

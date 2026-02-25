@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_drender_cpp_CDemonRenderer_renderBasicTexturedVariant_FUN_0048a8a0(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info)
+; void __cdecl engine_drender_cpp_CDemonRenderer_renderBasicTexturedVariant_FUN_0048a8a0(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr
-; SMRGLHeaderPrimitive * Stack[0x8]:4   polygon_info
+; SMRGLHeaderPrimitive * Stack[0x8]:4   prim
 ;
 ; XREF[6]:
 ;   core_dtrace.cpp_CDemonRaytrace_renderGridCube_FUN_00496e70 at 00497296

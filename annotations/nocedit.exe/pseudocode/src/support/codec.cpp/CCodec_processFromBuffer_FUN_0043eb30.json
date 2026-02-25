@@ -1,20 +1,27 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "missing_member",
+        "column": 55,
+        "line": 17,
+        "message": "no member named '__last_read_length' in 'istream_core'; did you mean '_last_read_length'?"
+      }
+    ],
+    "success": false,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 40,
-    "complexity_score": 11,
+    "complexity_score": 10,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 11,
+    "pseudocode_lines": 10,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 51
+    "total_lines": 50
   },
   "cross_references": [
     {
@@ -34,13 +41,13 @@
     ],
     "convention": "__cdecl",
     "name": "support_codec.cpp_CCodec_processFromBuffer_FUN_0043eb30",
-    "signature": "int __cdecl support_codec_cpp_CCodec_processFromBuffer_FUN_0043eb30(CCodec *this_ptr,byte *input,int *input_length,byte *output,int *output_length)"
+    "signature": "int __cdecl support_codec_cpp_CCodec_processFromBuffer_FUN_0043eb30(CCodec *this_ptr,char *input,int *input_length,char *output,int *output_length)"
   },
   "function_calls": [
     {
       "addr": "005ff524",
       "is_variadic": false,
-      "name": "crt_strstream.cpp_istrstream_constructor_FUN_005ff524"
+      "name": "crt_strstream.cpp_istrstream_ctor_FUN_005ff524"
     },
     {
       "addr": "005ff5ca",
@@ -83,15 +90,8 @@
         "is_param": false,
         "name": "local_90",
         "offset": -144,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_48",
-        "offset": -72,
-        "size": 1,
-        "type": "undefined1"
+        "size": 132,
+        "type": "_istrstream"
       },
       {
         "is_param": true,
@@ -105,7 +105,7 @@
         "name": "input",
         "offset": 8,
         "size": 4,
-        "type": "byte *"
+        "type": "char *"
       },
       {
         "is_param": true,
@@ -119,7 +119,7 @@
         "name": "output",
         "offset": 16,
         "size": 4,
-        "type": "byte *"
+        "type": "char *"
       },
       {
         "is_param": true,

@@ -6,17 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 104,
-    "complexity_score": 62,
+    "complexity_score": 48,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 47,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
-    "total_lines": 151
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 48,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 152
   },
   "cross_references": [
     {
@@ -36,7 +34,7 @@
     ],
     "convention": "__cdecl",
     "name": "support_codec.cpp_CLZWCompress_process_FUN_0043f360",
-    "signature": "int __cdecl support_codec_cpp_CLZWCompress_process_FUN_0043f360(CLZWCompress *this_ptr,_FILE *input_file,int byte_count,_FILE *output_file)"
+    "signature": "int __cdecl support_codec_cpp_CLZWCompress_process_FUN_0043f360(CLZWCompress *this_ptr,_istream *istream,int byte_count,_ostream *ostream)"
   },
   "function_calls": [
     {
@@ -136,10 +134,10 @@
       },
       {
         "is_param": true,
-        "name": "input_file",
+        "name": "istream",
         "offset": 8,
         "size": 4,
-        "type": "_FILE *"
+        "type": "_istream *"
       },
       {
         "is_param": true,
@@ -150,23 +148,14 @@
       },
       {
         "is_param": true,
-        "name": "output_file",
+        "name": "ostream",
         "offset": 16,
         "size": 4,
-        "type": "_FILE *"
+        "type": "_ostream *"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 19,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "if (*(int *)((int)&input_file->_handle + *(int *)(input_file->_ptr + 4)) != 0)",
-      "type": "pointer_cast"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

@@ -20,9 +20,9 @@
 ;   core_msnedit.cpp_CDemonMission_FUN_0053e220 at 0053e57e
 ;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 00539c90
 ;   core_platfrm.cpp_CPlatform_processInEditor_FUN_0054ea00 at 0054ed90
-;   core_setedit.cpp_CDemonSet_FUN_0057a940 at 0057aa44
-;   core_setedit.cpp_CDemonSet_FUN_0057ae50 at 0057af8c
-;   core_setedit.cpp_CDemonSet_FUN_0057d660 at 0057dcc4
+;   core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660 at 0057dcc4
+;   core_setedit.cpp_CDemonSet_positionLight_FUN_0057ae50 at 0057af8c
+;   core_setedit.cpp_CDemonSet_showRoomEditor_FUN_00581aa0 at 00581e57
 ;   ... and 3 more
 ;
 ; Referenced Globals:

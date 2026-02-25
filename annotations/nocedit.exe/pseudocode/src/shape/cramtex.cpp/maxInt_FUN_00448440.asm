@@ -4,8 +4,8 @@
 ; int __cdecl shape_cramtex_cpp_maxInt_FUN_00448440(int a,int b)
 ;
 ; Parameters:
-; int              Stack[0xc]:4   a
-; int              Stack[0x10]:4   b
+; int              Stack[0x4]:4   a
+; int              Stack[0x8]:4   b
 ;
 ; Called Functions:
 ;   crt_stack.c___STK_FUN_005ff9f3

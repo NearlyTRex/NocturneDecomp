@@ -66,7 +66,7 @@ section .text
     MOV ECX,dword ptr [0x006703ec]      ; 00522655 | g_CDemonRendererPtr2
     PUSH ECX                            ; 0052265b | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_renderBasicTextured_FUN_0048a820 ; 0052265c
-        ;   XREF to: 0048a820 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderBasicTextured_FUN_0048a820(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info)
+        ;   XREF to: 0048a820 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderBasicTextured_FUN_0048a820(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD ESP,0x8                         ; 00522661
     RET                                 ; 00522664
 

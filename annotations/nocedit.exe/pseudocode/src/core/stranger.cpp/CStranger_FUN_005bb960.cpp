@@ -1113,25 +1113,25 @@ LAB_005bc1a6:
   if ((this_ptr->weapon != (CDemonActor *)0x0) && (this_ptr->weapon->is_transparent != 0)) {
     (this_ptr->base).base.base.is_transparent = 1;
   }
-  iVar20 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->goggle_loop_sfx_handle);
+  iVar20 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->goggle_sfx_handles[0]);
   if (iVar20 == 0) {
     if (g_CGamePtr->block_auto_save != 0) {
-      sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->goggle_on_sfx_handle);
+      sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->goggle_sfx_handles[1]);
       sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
       sound_sndmain_cpp_setNextSfxFlagBits_FUN_005a8b90(1);
       uVar22 = sound_sndmain_cpp_startSfx_FUN_005a8e90("goggle-on.wav");
-      this_ptr->goggle_on_sfx_handle = uVar22;
+      this_ptr->goggle_sfx_handles[1] = uVar22;
       sound_sndmain_cpp_setNextSfxVolume_FUN_005a8a60(0.0);
       uVar22 = sound_sndmain_cpp_startSfx_FUN_005a8e90("goggle-loop.wav");
-      this_ptr->goggle_loop_sfx_handle = uVar22;
+      this_ptr->goggle_sfx_handles[0] = uVar22;
       sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
-      sound_sndmain_cpp_setSfxFade_FUN_005a9c70(this_ptr->goggle_loop_sfx_handle,1.0,1.0,0);
+      sound_sndmain_cpp_setSfxFade_FUN_005a9c70(this_ptr->goggle_sfx_handles[0],1.0,1.0,0);
       return;
     }
   }
   else if (g_CGamePtr->block_auto_save == 0) {
-    sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->goggle_on_sfx_handle);
-    sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->goggle_loop_sfx_handle);
+    sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->goggle_sfx_handles[1]);
+    sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->goggle_sfx_handles[0]);
     sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
     sound_sndmain_cpp_setNextSfxFlagBits_FUN_005a8b90(1);
     sound_sndmain_cpp_startSfx_FUN_005a8e90("goggle-off.wav");

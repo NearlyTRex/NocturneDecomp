@@ -1,0 +1,100 @@
+{
+  "complexity": {
+    "assembly_lines": 16,
+    "complexity_score": 30,
+    "cross_reference_count": 3,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 15,
+    "suspect_count": 1,
+    "suspect_types": [
+      "special_crt_function"
+    ],
+    "total_lines": 31
+  },
+  "cross_references": [
+    {
+      "addr": "0060bddd",
+      "from_addr": "0060bde2",
+      "name": "crt_fstream.cpp_filebuf_ctor_FUN_0060bddd",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "006060fe",
+      "from_addr": "0060610f",
+      "name": "crt_strstream.cpp_strstreambase_ctor_FUN_006060fe",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0060bbf8",
+      "from_addr": "0060bbfe",
+      "name": "crt_strstream.cpp_strstreambuf_ctor_FUN_0060bbf8",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0060b7c2",
+    "address_range": [
+      [
+        "0060b7c2",
+        "0060b814"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_iostream.cpp_streambuf_ctor_FUN_0060b7c2",
+    "signature": "streambuf * __cdecl crt_iostream_cpp_streambuf_ctor_FUN_0060b7c2(streambuf *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "00665f70",
+      "name": "g_StreambufVTable",
+      "type": "streambuf_vtable",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.3333333333333335,
+    "instruction_count": 15,
+    "opcode_distribution": {
+      "COPY": 15,
+      "INT_ADD": 13,
+      "INT_AND": 3,
+      "INT_EQUAL": 2,
+      "INT_SLESS": 1,
+      "LOAD": 3,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 11
+    },
+    "pcode_op_count": 50
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "streambuf *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "address": "0060b7c2",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_iostream.cpp_streambuf_ctor_FUN_0060b7c2",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 0060b7c2",
+      "type": "special_crt_function"
+    }
+  ]
+}

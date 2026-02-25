@@ -6,18 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 81,
-    "complexity_score": 101,
+    "complexity_score": 100,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 41,
+    "pseudocode_lines": 40,
     "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
       "stack_alignment_array"
     ],
-    "total_lines": 122
+    "total_lines": 121
   },
   "cross_references": [],
   "function": {
@@ -30,7 +30,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_3d.c_renderPolygonUVTextureNormalized_FUN_00405430",
-    "signature": "SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonUVTextureNormalized_FUN_00405430(SMRGLHeaderPrimitive *polygon_info)"
+    "signature": "SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonUVTextureNormalized_FUN_00405430(SMRGLHeaderPrimitive *prim)"
   },
   "function_calls": [
     {
@@ -161,7 +161,7 @@
       },
       {
         "is_param": true,
-        "name": "polygon_info",
+        "name": "prim",
         "offset": 4,
         "size": 4,
         "type": "SMRGLHeaderPrimitive *"

@@ -15,7 +15,7 @@ void __cdecl core_glass_cpp_CGlass_renderBrokenGlass_FUN_004e9ca0(CGlass *this_p
   int iVar3;
   CGlass *pCVar4;
   CVector3f *pCVar5;
-  SMRGLHeaderPrimitive *polygon_info;
+  SMRGLHeaderPrimitive *prim;
   CBoundingBox3D CStack_28;
   CVector3i CStack_10;
   
@@ -62,7 +62,7 @@ void __cdecl core_glass_cpp_CGlass_renderBrokenGlass_FUN_004e9ca0(CGlass *this_p
             (g_CDemonRendererPtr2,this_ptr->opacity);
   iVar2 = 0;
   if (0 < this_ptr->broken_polygon_count) {
-    polygon_info = &this_ptr->broken_quads[0].base;
+    prim = &this_ptr->broken_quads[0].base;
     pCVar4 = this_ptr;
     do {
       pCVar4->broken_quads[0].base.surface_normal.A = 0;
@@ -70,10 +70,10 @@ void __cdecl core_glass_cpp_CGlass_renderBrokenGlass_FUN_004e9ca0(CGlass *this_p
       pCVar1 = g_CDemonRendererPtr2;
       pCVar4->broken_quads[0].base.surface_normal.C = 0;
       pCVar4->broken_quads[0].base.surface_normal.D = 0;
-      engine_drender_cpp_CDemonRenderer_renderPerspectiveLit_FUN_0048b550(pCVar1,polygon_info);
+      engine_drender_cpp_CDemonRenderer_renderPerspectiveLit_FUN_0048b550(pCVar1,prim);
       pCVar4 = (CGlass *)((pCVar4->base).orient_matrix.m + 1);
       iVar2 = iVar2 + 1;
-      polygon_info = polygon_info + 3;
+      prim = prim + 3;
     } while (iVar2 < this_ptr->broken_polygon_count);
   }
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(&this_ptr->base);

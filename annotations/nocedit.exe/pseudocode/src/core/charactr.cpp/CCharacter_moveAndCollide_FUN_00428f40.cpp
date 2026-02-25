@@ -169,13 +169,13 @@ void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40(CCharacter
     if (local_34 < fVar3) {
       local_34 = this_ptr->size_scale * (float)0.5 + fVar3;
     }
-    local_14 = core_setcolid_cpp_CDemonSet_testCapsuleCollision_FUN_00573470
+    local_14 = core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_00573470
                          (g_CDemonSetPtr,(this_ptr->base).location.position.x,
                           (this_ptr->base).location.position.z,local_a8.x,local_a8.z,
                           this_ptr->collision_cylinder_radius * this_ptr->size_scale,
-                          (void *)(this_ptr->collision_cylinder_bottom * this_ptr->size_scale +
-                                  (this_ptr->base).location.position.y),
-                          (void *)((this_ptr->base).location.position.y + local_34));
+                          this_ptr->collision_cylinder_bottom * this_ptr->size_scale +
+                          (this_ptr->base).location.position.y,
+                          (this_ptr->base).location.position.y + local_34);
     if (PTR_00823c50 == (CDemonActor *)0x0) {
       PTR_00823c50 = g_CDemonSetPtr->collision_actor;
     }

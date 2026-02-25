@@ -83,10 +83,6 @@ int __cdecl seek::within_buffer(_FILE *file);
 // Address: 005ffacc
 int __cdecl fseek(_FILE *file,long offset,int whence);
 
-// Original: crt_stdio.c_stream_write_internal_FUN_005ffcb3
-// Address: 005ffcb3
-_FILE * __cdecl stream::write_internal(_FILE *stream,void *buffer,SIZE_T count);
-
 // Original: crt_stdio.c_string_getc_FUN_006000d0
 // Address: 006000d0
 int __cdecl string::getc(scanf_state_t *state);

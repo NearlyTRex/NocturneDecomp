@@ -1,0 +1,152 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 166,
+    "complexity_score": 151,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 126,
+    "suspect_count": 2,
+    "suspect_types": [
+      "pointer_cast"
+    ],
+    "total_lines": 292
+  },
+  "cross_references": [
+    {
+      "addr": "0057c5d0",
+      "from_addr": "0057ce3a",
+      "name": "core_setedit.cpp_CDemonSet_showLightEditor_FUN_0057c5d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0057b910",
+    "address_range": [
+      [
+        "0057b910",
+        "0057bbac"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_setedit.cpp_CDemonSet_deleteLight_FUN_0057b910",
+    "signature": "void __cdecl core_setedit_cpp_CDemonSet_deleteLight_FUN_0057b910(CDemonSet *this_ptr,int light_index)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0057ce3a",
+        "call_type": "direct",
+        "caller": "core_setedit.cpp_CDemonSet_showLightEditor_FUN_0057c5d0",
+        "estimated_params": 2,
+        "instructions_analyzed": 8,
+        "reg_params": [],
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.618421052631579,
+    "instruction_count": 152,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 7,
+      "CBRANCH": 12,
+      "COPY": 190,
+      "FLOAT2FLOAT": 4,
+      "INT_ADD": 131,
+      "INT_AND": 37,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 44,
+      "INT_LESS": 5,
+      "INT_MULT": 23,
+      "INT_NOTEQUAL": 3,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 11,
+      "INT_SEXT": 3,
+      "INT_SLESS": 18,
+      "INT_SUB": 38,
+      "INT_ZEXT": 22,
+      "LOAD": 63,
+      "POPCOUNT": 18,
+      "RETURN": 1,
+      "STORE": 53,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 702
+  },
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 20,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      },
+      {
+        "is_param": true,
+        "name": "light_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 109,
+      "match": "(CVector3f *)((int)",
+      "severity": "mild",
+      "text": "pCVar3 = (CVector3f *)((int)(pCVar3 + 0x20c) + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 117,
+      "match": "(CVector3f *)((int)",
+      "severity": "mild",
+      "text": "pCVar2 = (CVector3f *)((int)(pCVar2 + 0x20c) + 8);",
+      "type": "pointer_cast"
+    }
+  ]
+}

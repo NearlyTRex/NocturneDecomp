@@ -19,10 +19,6 @@ uint FUN_00600a64(byte *param_1);
 // Address: 00600c80
 void __cdecl FUN_00600c80(int param_1,int param_2,SIZE_T param_3);
 
-// Original: crt_unknown.c_FUN_00600ee4
-// Address: 00600ee4
-_FILE * FUN_00600ee4(_FILE *param_1,undefined4 param_2);
-
 // Original: crt_unknown.c_AnotherFunctorCall2_FUN_00601258
 // Address: 00601258
 void AnotherFunctorCall2(void *param_1,int param_2,WatcomTypeInfo *param_3);

@@ -8,18 +8,6 @@
         "message": "no matching function for call to 'wincore_windll_cpp_drawPolyList_FUN_005b7640'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 23,
-        "line": 59,
-        "message": "use of undeclared identifier 'stack0xfffffef0'; did you mean 'in_stack_fffffef0'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 57,
-        "line": 63,
-        "message": "use of undeclared identifier 'stack0xfffffef0'"
-      },
-      {
         "category": "incompatible_types",
         "column": 13,
         "line": 86,
@@ -31,19 +19,17 @@
   },
   "complexity": {
     "assembly_lines": 242,
-    "complexity_score": 196,
+    "complexity_score": 147,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 12,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 111,
-    "suspect_count": 7,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 112,
+    "suspect_count": 3,
     "suspect_types": [
-      "pointer_cast",
-      "stack_param",
-      "stack_ref"
+      "pointer_cast"
     ],
-    "total_lines": 353
+    "total_lines": 354
   },
   "cross_references": [],
   "function": {
@@ -56,7 +42,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_3d.c_dispatchMRGLToRenderer_FUN_00407aa0",
-    "signature": "void __cdecl engine_3d_c_dispatchMRGLToRenderer_FUN_00407aa0(SVertexBatch *cmd)"
+    "signature": "void __cdecl engine_3d_c_dispatchMRGLToRenderer_FUN_00407aa0(SMRGLHeaderExtended *mrgl)"
   },
   "function_calls": [
     {
@@ -246,22 +232,14 @@
       },
       {
         "is_param": true,
-        "name": "cmd",
+        "name": "mrgl",
         "offset": 4,
         "size": 4,
-        "type": "SVertexBatch *"
+        "type": "SMRGLHeaderExtended *"
       }
     ]
   },
   "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_fffffef0",
-      "severity": "moderate",
-      "text": "SVertexBatch *in_stack_fffffef0;",
-      "type": "stack_param"
-    },
     {
       "description": "Complex pointer cast",
       "line": 22,
@@ -269,30 +247,6 @@
       "severity": "mild",
       "text": "puVar1 = (uint *)((int)g_RenderFaceArray + iVar4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 43,
-      "match": "in_stack_fffffef0",
-      "severity": "moderate",
-      "text": "engine_3d_c_transformAndBufferVertices_FUN_00403840(cmd,in_stack_fffffef0);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 52,
-      "match": "&stack0xfffffef0",
-      "severity": "moderate",
-      "text": "(&stack0xfffffef0,\"Unknown primitive : %d\",(uint)(byte)cmd->primitive_type",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 56,
-      "match": "&stack0xfffffef0",
-      "severity": "moderate",
-      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xfffffef0);",
-      "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
@@ -304,10 +258,10 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 111,
-      "match": "(SVertexBatch *)((int)",
+      "line": 112,
+      "match": "(SMRGLHeaderExtended *)((int)",
       "severity": "mild",
-      "text": "cmd = (SVertexBatch *)((int)&cmd->primitive_type + iVar4);",
+      "text": "mrgl = (SMRGLHeaderExtended *)((int)&(((SMRGLHeaderPrimitive *)mrgl)->base).type + iVar4);",
       "type": "pointer_cast"
     }
   ]

@@ -43,7 +43,7 @@
 ; Called Functions:
 ;   core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0
 ;   core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_00570770
-;   core_set.cpp_CDemonSet_rotateVertices_FUN_0056e7c0
+;   core_set.cpp_CDemonSet_rotateVerticies_FUN_0056e7c0
 ;   crt_math.c_round_FUN_005fe6b0
 ;   engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
@@ -69,8 +69,8 @@ section .text
     PUSH ECX                            ; 0043bafc
     MOV ESI,dword ptr [0x006810c8]      ; 0043bafd | g_CDemonSetPtr
     PUSH ESI                            ; 0043bb03 | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_rotateVertices_FUN_0056e7c0 ; 0043bb04
-        ;   XREF to: 0056e7c0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_rotateVertices_FUN_0056e7c0(CDemonSet * this_ptr, int vertex_count, int * input_vertices)
+    CALL core_set.cpp_CDemonSet_rotateVerticies_FUN_0056e7c0 ; 0043bb04
+        ;   XREF to: 0056e7c0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_rotateVerticies_FUN_0056e7c0(CDemonSet * this_ptr, int vertex_count, CVector3i * input_vertices)
     ADD ESP,0xc                         ; 0043bb09
     PUSH 0x1                            ; 0043bb0c
     MOV EDI,dword ptr [0x006703ec]      ; 0043bb0e | g_CDemonRendererPtr2

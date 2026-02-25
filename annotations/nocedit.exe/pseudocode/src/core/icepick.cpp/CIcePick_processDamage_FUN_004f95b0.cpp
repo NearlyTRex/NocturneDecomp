@@ -15,7 +15,7 @@ void __cdecl core_icepick_cpp_CIcePick_processDamage_FUN_004f95b0(CIcePick *this
   uint uVar3;
   int iVar4;
   
-  sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->swing_sfx_handle);
+  sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handles[0]);
   if (((this_ptr->base).no_collision_flag & 0x7fffffffU) != 0) {
     damage_info->damage_amount = 0.0;
   }
@@ -44,7 +44,7 @@ void __cdecl core_icepick_cpp_CIcePick_processDamage_FUN_004f95b0(CIcePick *this
                   ((CCharacter *)this_ptr,1,(CVector3f *)0x0);
         core_gore_cpp_CGore_spawnFliesOnActor_FUN_004ee030
                   (g_CGorePtr,(CDemonActor *)this_ptr,0x32,50.0,(CVector3f *)0x0);
-        sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->injured_sfx_handle);
+        sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handles[1]);
         (*((this_ptr->base).base.base.vtable._ub)->playSound)
                   ((CDemonActor *)this_ptr,"icepick_die01.wav");
         core_charactr_cpp_CCharacter_processDamage_FUN_0042c3c0((CCharacter *)this_ptr,damage_info);
@@ -61,11 +61,11 @@ void __cdecl core_icepick_cpp_CIcePick_processDamage_FUN_004f95b0(CIcePick *this
     }
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
               (&this_ptr_00->motion_controller,iVar4,1);
-    iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->injured_sfx_handle);
+    iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handles[1]);
     if (iVar4 == 0) {
       uVar3 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                         ((CDemonActor *)this_ptr,"icepick_injured??.wav");
-      this_ptr->injured_sfx_handle = uVar3;
+      this_ptr->sfx_handles[1] = uVar3;
       core_charactr_cpp_CCharacter_processDamage_FUN_0042c3c0((CCharacter *)this_ptr,damage_info);
       return;
     }

@@ -23,7 +23,7 @@ void __cdecl core_weapon_cpp_CWeapon_updateLighting_FUN_005ee4a0(CWeapon *this_p
             (&this_ptr->base,&CStack_18,input_local_point);
   g_CDemonLightInstance.light_enabled_flag = 1;
   g_CDemonLightInstance.volumetric_enabled = 1;
-  if ((CVector3i *)&stack0x00000000 != g_CDemonLightInstance.base.base.rotation_matrix.m + 1) {
+  if ((CVector3f *)&stack0x00000000 != g_CDemonLightInstance.base.base.rotation_matrix.m + 1) {
     g_CDemonLightInstance.base.base.position.x = (int)CStack_18.x;
     g_CDemonLightInstance.base.base.position.y = (int)CStack_18.y;
     g_CDemonLightInstance.base.base.position.z = (int)CStack_18.z;
@@ -32,9 +32,9 @@ void __cdecl core_weapon_cpp_CWeapon_updateLighting_FUN_005ee4a0(CWeapon *this_p
   CStack_24.z = (this_ptr->base).orient.vec.z;
   CStack_24.x = (this_ptr->base).orient.vec.x + 0.3490658f;
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
-            ((CMatrix3x3f *)&g_CDemonLightInstance.base.base.rotation_matrix,&CStack_24);
+            (&g_CDemonLightInstance.base.base.rotation_matrix,&CStack_24);
   g_CDemonLightInstance.base.max_distance = 32.0;
-  g_CDemonLightInstance.base.base.projection_scale = 32.0;
+  g_CDemonLightInstance.base.base.focal_length = 32.0;
   g_CDemonLightInstance.antialiasing_enabled = 1;
   pCVar1 = (*((this_ptr->base).vtable._ub)->getCarrier)(&this_ptr->base);
   pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c790(pCVar1,(uint)in_stack_ffffffd0);

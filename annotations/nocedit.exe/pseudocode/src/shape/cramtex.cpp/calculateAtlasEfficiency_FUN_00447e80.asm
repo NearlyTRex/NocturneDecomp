@@ -10,7 +10,7 @@
 ;
 ; Referenced Globals:
 ;   double g_CramPercentMultiplier = 100
-;   CCramTex[1] g_CramSortedTextureEntries
+;   CCramTex[250] g_CramSortedTextureEntries
 ;   undefined4 DAT_0083c20c
 ;   undefined4 DAT_0083c210
 ;   undefined4 DAT_0083c214

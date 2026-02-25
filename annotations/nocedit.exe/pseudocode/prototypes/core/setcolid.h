@@ -53,7 +53,7 @@ int __cdecl CDemonSet::isActorIgnored(CDemonSet *this_ptr,CDemonActor *actor);
 
 // Original: core_setcolid.cpp_intersectXZCylinder_FUN_00572e80
 // Address: 00572e80
-int __cdecl intersectXZCylinder(SIntersectXZCylinder *cylinder,float ray_x,float ray_z,void *bounds_struct);
+int __cdecl intersectXZCylinder(SIntersectXZCylinder *cylinder,float obstacle_x,float obstacle_y,SCollisionInfo *collision_info);
 
 // Original: core_setcolid.cpp_testCylinderQuadCollision_FUN_005730d0
 // Address: 005730d0
@@ -61,11 +61,11 @@ void __cdecl testCylinderQuadCollision(SIntersectXZCylinder *cylinder,CVector3f 
 
 // Original: core_setcolid.cpp_CDemonSet_testOBBCylinderCollision_FUN_00573140
 // Address: 00573140
-int __cdecl CDemonSet::testOBBCylinderCollision(CDemonSet *this_ptr,CBoundingBox3D *bounding_box,CMatrix3x3f *orientation_matrix,SIntersectXZCylinder *cylinder1,SIntersectXZCylinder *cylinder2);
+int __cdecl CDemonSet::testOBBCylinderCollision(CDemonSet *this_ptr,SIntersectXZCylinder *cylinder,CBoundingBox3D *bounding_box,CVector3f *position,CMatrix3x3f *orientation_matrix);
 
-// Original: core_setcolid.cpp_CDemonSet_testCapsuleCollision_FUN_00573470
+// Original: core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00573470
 // Address: 00573470
-float __cdecl CDemonSet::testCapsuleCollision(CDemonSet *this_ptr,float start_x,float start_z,float dir_x,float dir_z,float radius,void *user_data1,void *user_data2);
+float __cdecl CDemonSet::testCylinderCollision(CDemonSet *this_ptr,float start_x,float start_z,float dir_x,float dir_z,float radius,float bottom_y,float top_y);
 
 // Original: core_setcolid.cpp_CDemonSet_pushRaytraceState_FUN_00573e10
 // Address: 00573e10

@@ -14,7 +14,7 @@ int __cdecl core_trigger_cpp_CTrigger_containsActor_FUN_005e0cd0(CTrigger *this_
   float fVar3;
   CBoundingBox3D *pCVar4;
   CVector3f *pCVar5;
-  CDemonActor *pCVar6;
+  CCharacter *pCVar6;
   CBoundingBox3D CStack_94;
   CBoundingBox3D local_7c;
   CBoundingBox3D CStack_64;
@@ -35,8 +35,9 @@ int __cdecl core_trigger_cpp_CTrigger_containsActor_FUN_005e0cd0(CTrigger *this_
     CStack_4c.z = fStack_2c * 0.5f;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(actor,&CStack_40,&CStack_4c);
     if (this_ptr->pressure_plate != 0) {
-      pCVar6 = (CCharacter *)core_actor_cpp_castToClassHash_FUN_0040c790(actor,g_CCharacterClassInfo.name_hash);
-      if ((pCVar6 != (CDemonActor *)0x0) && (pCVar6[0x1a].unk1 == 0)) {
+      pCVar6 = (CCharacter *)
+               core_actor_cpp_castToClassHash_FUN_0040c790(actor,g_CCharacterClassInfo.name_hash);
+      if ((pCVar6 != (CCharacter *)0x0) && (pCVar6->is_on_ground == 0)) {
         return 0;
       }
       CStack_40.y = (actor->location).position.y;

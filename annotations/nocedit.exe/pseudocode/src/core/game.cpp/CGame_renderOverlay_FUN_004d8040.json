@@ -3,8 +3,8 @@
     "errors": [
       {
         "category": "format_error",
-        "column": 34,
-        "line": 97,
+        "column": 36,
+        "line": 98,
         "message": "format specifies type 'int' but the argument has type 'char *' [-Werror,-Wformat]"
       }
     ],
@@ -13,18 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 405,
-    "complexity_score": 213,
+    "complexity_score": 199,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 18,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 143,
-    "suspect_count": 6,
+    "pseudocode_lines": 144,
+    "suspect_count": 5,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "undefined_data"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 548
+    "total_lines": 549
   },
   "cross_references": [
     {
@@ -185,8 +184,8 @@
     },
     {
       "addr": "02d830a8",
-      "name": "DAT_02d830a8",
-      "type": "undefined1",
+      "name": "g_ChapterDisplayName",
+      "type": "char[256]",
       "value": null
     },
     {
@@ -505,16 +504,8 @@
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 90,
-      "match": "DAT_02d830a8",
-      "severity": "mild",
-      "text": "_sprintf(local_164,\"%d - %s\",g_CurrentDisplayText,&DAT_02d830a8);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 133,
+      "line": 134,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_2c = (int)ROUND(ROUND((float)local_14 * fVar1));",
@@ -522,7 +513,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 133,
+      "line": 134,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_2c = (int)ROUND(ROUND((float)local_14 * fVar1));",

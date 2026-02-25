@@ -1,0 +1,165 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 137,
+    "complexity_score": 60,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 45,
+    "suspect_count": 1,
+    "suspect_types": [
+      "pointer_cast"
+    ],
+    "total_lines": 182
+  },
+  "cross_references": [
+    {
+      "addr": "005800d0",
+      "from_addr": "00580180",
+      "name": "core_setedit.cpp_CDemonSet_findVisibleCamerasAtScreenPoint_FUN_005800d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005801b0",
+    "address_range": [
+      [
+        "005801b0",
+        "00580309"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_setedit.cpp_CDemonSet_isPointVisibleFromCamera_FUN_005801b0",
+    "signature": "int __cdecl core_setedit_cpp_CDemonSet_isPointVisibleFromCamera_FUN_005801b0(CDemonSet *this_ptr,CVector3i *point,int camera_index)"
+  },
+  "function_calls": [
+    {
+      "addr": "00580310",
+      "is_variadic": false,
+      "name": "core_setedit.cpp_CDemonSet_buildCameraDepthData_FUN_00580310"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "03659384",
+      "name": "g_CameraDepthData",
+      "type": "void*",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00580180",
+        "call_type": "direct",
+        "caller": "core_setedit.cpp_CDemonSet_findVisibleCamerasAtScreenPoint_FUN_005800d0",
+        "estimated_params": 3,
+        "instructions_analyzed": 5,
+        "reg_params": [],
+        "stack_params": 3
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 3,
+    "estimated_params": 3
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 8.169354838709678,
+    "instruction_count": 124,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 56,
+      "BOOL_OR": 2,
+      "CALL": 1,
+      "CBRANCH": 9,
+      "COPY": 104,
+      "INT_2COMP": 1,
+      "INT_ADD": 45,
+      "INT_AND": 212,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 96,
+      "INT_LEFT": 15,
+      "INT_LESS": 15,
+      "INT_MULT": 14,
+      "INT_NOTEQUAL": 49,
+      "INT_OR": 66,
+      "INT_RIGHT": 18,
+      "INT_SBORROW": 16,
+      "INT_SCARRY": 10,
+      "INT_SDIV": 2,
+      "INT_SEXT": 38,
+      "INT_SLESS": 62,
+      "INT_SREM": 2,
+      "INT_SUB": 41,
+      "INT_XOR": 12,
+      "INT_ZEXT": 4,
+      "LOAD": 33,
+      "POPCOUNT": 40,
+      "RETURN": 2,
+      "STORE": 9,
+      "SUBPIECE": 28
+    },
+    "pcode_op_count": 1013
+  },
+  "stack_frame": {
+    "frame_size": 40,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      },
+      {
+        "is_param": true,
+        "name": "point",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3i *"
+      },
+      {
+        "is_param": true,
+        "name": "camera_index",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 13,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "piVar2 = (int *)((int)g_CameraDepthData + camera_index * 0x4b030);",
+      "type": "pointer_cast"
+    }
+  ]
+}

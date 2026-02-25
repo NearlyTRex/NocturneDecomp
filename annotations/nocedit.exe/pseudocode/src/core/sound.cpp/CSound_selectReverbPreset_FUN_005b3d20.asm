@@ -11,7 +11,7 @@
 ; undefined1       Stack[-0x3ac]:1  local_3ac
 ;
 ; XREF[1]:
-;   core_setedit.cpp_CDemonSet_FUN_00580730 at 00580f40
+;   core_setedit.cpp_CDemonSet_showFogEditor_FUN_00580730 at 00580f40
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_OFF_00652855

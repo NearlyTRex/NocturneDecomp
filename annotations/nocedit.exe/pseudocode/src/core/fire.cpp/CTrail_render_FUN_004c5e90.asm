@@ -269,7 +269,7 @@ section .text
     MOV dword ptr [0x006880c8],EBX      ; 004c612a | g_RenderVertexBuffer[3].r
     MOV dword ptr [0x006880cc],EBX      ; 004c6130 | g_RenderVertexBuffer[3].g
     CALL engine_drender.cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0 ; 004c6136
-        ;   XREF to: 0048bcf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info)
+        ;   XREF to: 0048bcf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD ESP,0x8                         ; 004c613b
     MOV ECX,dword ptr [0x006703ec]      ; 004c613e | g_CDemonRendererPtr2
     PUSH ECX                            ; 004c6144 | g_CDemonRendererInstance

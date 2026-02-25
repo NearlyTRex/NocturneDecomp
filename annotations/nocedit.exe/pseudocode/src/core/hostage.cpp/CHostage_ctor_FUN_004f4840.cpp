@@ -34,13 +34,10 @@ CHostage * __cdecl core_hostage_cpp_CHostage_ctor_FUN_004f4840(CHostage *this_pt
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  pCVar2->unk3[0] = '\0';
-  pCVar2->unk3[1] = '\0';
-  pCVar2->unk3[2] = '\0';
-  pCVar2->unk3[3] = '\0';
+  pCVar2->next_way_point = (CDemonActor *)0x0;
   (pCVar2->base).base.grabbed_by = (CDemonActor *)0x0;
-  pCVar2->unk4 = 0;
-  pCVar2->unk5 = 0;
+  pCVar2->gun_raise_progress = 0.0;
+  pCVar2->gun_blend_weight = 0.0;
   pCVar2->rescue_event[0] = '\0';
   pCVar2->hero_found_me_event[0] = '\0';
   pCVar2->hero_left_me_event[0] = '\0';
@@ -49,7 +46,7 @@ CHostage * __cdecl core_hostage_cpp_CHostage_ctor_FUN_004f4840(CHostage *this_pt
   pCVar2->going_to_sit_down_event[0] = '\0';
   pCVar2->sit_down_event[0] = '\0';
   pCVar2->grabber = (CDemonActor *)0x0;
-  pCVar2->unk6 = 0.0;
+  pCVar2->grabber_flee_timer = 0.0;
   pCVar2->no_shadows_when_saved = 0;
   (pCVar2->base).base.descriptive_name[0] = '\0';
   pCVar2->damage_sound[0] = '\0';

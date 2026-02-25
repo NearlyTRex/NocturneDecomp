@@ -18,7 +18,7 @@
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_getFrameVertices_FUN_00477890
 ;   core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0
-;   core_set.cpp_CDemonSet_rotateVertices_FUN_0056e7c0
+;   core_set.cpp_CDemonSet_rotateVerticies_FUN_0056e7c0
 ;
 ; *****************************************************************************
 
@@ -51,8 +51,8 @@ section .text
     MOV EBP,dword ptr [0x006810c8]      ; 004778fc | g_CDemonSetPtr
     PUSH EBP                            ; 00477902 | g_CDemonSetInstance
     MOV ESI,EAX                         ; 00477903
-    CALL core_set.cpp_CDemonSet_rotateVertices_FUN_0056e7c0 ; 00477905
-        ;   XREF to: 0056e7c0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_rotateVertices_FUN_0056e7c0(CDemonSet * this_ptr, int vertex_count, int * input_vertices)
+    CALL core_set.cpp_CDemonSet_rotateVerticies_FUN_0056e7c0 ; 00477905
+        ;   XREF to: 0056e7c0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_rotateVerticies_FUN_0056e7c0(CDemonSet * this_ptr, int vertex_count, CVector3i * input_vertices)
     MOV EAX,dword ptr [EBX + 0x108]     ; 0047790a
     ADD ESP,0xc                         ; 00477910
     TEST EAX,EAX                        ; 00477913

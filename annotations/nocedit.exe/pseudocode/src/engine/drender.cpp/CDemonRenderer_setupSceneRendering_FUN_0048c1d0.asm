@@ -18,7 +18,7 @@
 ;   core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990 at 0056ccd4
 ;   core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_00570af0 at 00570b28
 ;   core_setdir.cpp_CZThumb_pushRenderingContext_FUN_00574e70 at 00574ee3
-;   core_setedit.cpp_CDemonSet_FUN_00580310 at 0058041b
+;   core_setedit.cpp_CDemonSet_buildCameraDepthData_FUN_00580310 at 0058041b
 ;   ... and 1 more
 ;
 ; Called Functions:

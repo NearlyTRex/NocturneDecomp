@@ -27,14 +27,8 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 9,
-        "line": 28,
-        "message": "use of undeclared identifier 'FUN_00600ee4'"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 49,
-        "line": 38,
+        "line": 39,
         "message": "use of undeclared identifier '_file_mode_flags'; did you mean 'file_mode_flags'?"
       }
     ],
@@ -43,19 +37,19 @@
   },
   "complexity": {
     "assembly_lines": 88,
-    "complexity_score": 76,
+    "complexity_score": 77,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 31,
+    "pseudocode_lines": 32,
     "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
       "stack_param",
       "undefined_type"
     ],
-    "total_lines": 119
+    "total_lines": 120
   },
   "cross_references": [],
   "function": {
@@ -72,6 +66,11 @@
   },
   "function_calls": [
     {
+      "addr": "00600ee4",
+      "is_variadic": false,
+      "name": "crt_fstream.cpp_istream_seekg_FUN_00600ee4"
+    },
+    {
       "addr": "00600e85",
       "is_variadic": false,
       "name": "crt_fstream.cpp_openFile_FUN_00600e85"
@@ -85,11 +84,6 @@
       "addr": "00600e29",
       "is_variadic": false,
       "name": "crt_stdio.c_fflush_FUN_00600e29"
-    },
-    {
-      "addr": "00600ee4",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_00600ee4"
     },
     {
       "addr": "00600e10",

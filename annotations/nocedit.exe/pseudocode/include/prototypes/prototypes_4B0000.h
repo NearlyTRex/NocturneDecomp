@@ -147,7 +147,7 @@ void __cdecl engine_fileio_cpp_CFileManager_removeAuditRecords_FUN_004bd190(CFil
 CCheckOutList * __cdecl engine_fileio_cpp_CCheckOutList_ctor_FUN_004bd710(CCheckOutList *this_ptr);
 CCheckOutList * __cdecl engine_fileio_cpp_CCheckOutList_dtor_FUN_004bd730(CCheckOutList *this_ptr,uint flags);
 void __cdecl core_fileman_cpp_preprocessMusicFiles_FUN_004bd750(char *source_directory);
-void __cdecl core_fileman_cpp_CDemonFileManager_addSetToExtractList_FUN_004bd8e0(CDemonFileManager *file_manager_ptr,char *set_filename);
+void __cdecl core_fileman_cpp_CDemonFileManager_addSetToExtractList_FUN_004bd8e0(CDemonFileManager *this_ptr,char *set_filename);
 void __cdecl core_fileman_cpp_CDemonFileManager_moveSetIntoPod_FUN_004bd930(CDemonFileManager *this_ptr);
 void __cdecl core_fileman_cpp_trimWhitespace_FUN_004bd9b0(char *str);
 void __cdecl core_fileman_cpp_CDemonFileManager_createPodFromDirectory_FUN_004bda20(CDemonFileManager *this_ptr);

@@ -57,17 +57,17 @@ int __cdecl core_set_cpp_CDemonSet_gatherVisibleLights_FUN_0056d4a0(CDemonSet *t
       } while (iVar5 < iVar9);
     }
     g_SecondaryDirectionalLightCount = 0;
-    if (0 < g_ActiveLightCount) {
-      iVar5 = g_ActiveLightCount * 4;
+    if (0 < g_SpotLightCount) {
+      iVar5 = g_SpotLightCount * 4;
       iVar6 = 0;
       iVar9 = 0;
       do {
         iVar8 = iVar9;
-        if (*(int *)(*(int *)((int)g_ActiveLightList + iVar6) + 0x1cb4) != 0) {
+        if (*(int *)(*(int *)((int)g_SpotLightList + iVar6) + 0x1cb4) != 0) {
           iVar8 = iVar9 + 4;
           g_SecondaryDirectionalLightCount = g_SecondaryDirectionalLightCount + 1;
           *(int *)((int)g_SecondaryDirectionalLights + iVar9) =
-               *(int *)((int)g_ActiveLightList + iVar6);
+               *(int *)((int)g_SpotLightList + iVar6);
         }
         iVar6 = iVar6 + 4;
         iVar9 = iVar8;
@@ -116,20 +116,20 @@ int __cdecl core_set_cpp_CDemonSet_gatherVisibleLights_FUN_0056d4a0(CDemonSet *t
     }
     local_20 = 0;
     g_SecondaryDirectionalLightCount = 0;
-    if (0 < g_ActiveLightCount) {
+    if (0 < g_SpotLightCount) {
       iVar9 = 0;
       do {
-        if (((*(CDemonCamera **)((int)g_ActiveLightList + iVar9))[1].rect_array[0x61].right != 0) &&
+        if (((*(CDemonCamera **)((int)g_SpotLightList + iVar9))[1].rect_array[0x61].right != 0) &&
            (iVar6 = core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180
-                              (*(CDemonCamera **)((int)g_ActiveLightList + iVar9),position,
-                               orientation,aabb_min), iVar6 != 0)) {
+                              (*(CDemonCamera **)((int)g_SpotLightList + iVar9),position,orientation
+                               ,aabb_min), iVar6 != 0)) {
           g_SecondaryDirectionalLights[g_SecondaryDirectionalLightCount] =
-               *(CDemonLight **)((int)g_ActiveLightList + iVar9);
+               *(CDemonLight **)((int)g_SpotLightList + iVar9);
           g_SecondaryDirectionalLightCount = g_SecondaryDirectionalLightCount + 1;
         }
         local_20 = local_20 + 1;
         iVar9 = iVar9 + 4;
-      } while (local_20 < g_ActiveLightCount);
+      } while (local_20 < g_SpotLightCount);
     }
     local_1c = 0;
     g_ColorCorrectionCount = 0;

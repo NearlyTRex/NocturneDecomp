@@ -240,7 +240,7 @@ section .text
     PUSH ECX                            ; 00574d90 | g_CDemonRendererInstance
     ADD ESI,0x4                         ; 00574d91
     CALL engine_drender.cpp_CDemonRenderer_renderStandardTextured_FUN_0048aa50 ; 00574d94
-        ;   XREF to: 0048aa50 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_renderStandardTextured_FUN_0048aa50(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info)
+        ;   XREF to: 0048aa50 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_renderStandardTextured_FUN_0048aa50(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD ESP,0x8                         ; 00574d99
     ADD EBX,EAX                         ; 00574d9c
     CMP ESI,EDI                         ; 00574d9e

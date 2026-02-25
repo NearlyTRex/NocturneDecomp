@@ -22,7 +22,7 @@ void __cdecl core_dtri_cpp_cylinderEdgeTestWithHeight_FUN_0049ace0(SIntersectXZC
   iVar5 = core_dtri_cpp_cylinderEdgeIntersection_FUN_0049aa00(cylinder);
   if (((iVar5 != 0) &&
       (fVar1 = (vertex2->y - vertex1->y) * cylinder->param_clamped + vertex1->y,
-      cylinder->top_y < fVar1)) && (fVar1 < cylinder->bottom_y)) {
+      cylinder->bottom_y < fVar1)) && (fVar1 < cylinder->top_y)) {
     (cylinder->push_normal).y = 0.0;
     fVar1 = cylinder->dir_x;
     fVar2 = cylinder->param_t;

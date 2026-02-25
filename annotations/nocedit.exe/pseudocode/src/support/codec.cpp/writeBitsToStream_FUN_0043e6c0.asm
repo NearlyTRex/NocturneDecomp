@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl support_codec_cpp_writeBitsToStream_FUN_0043e6c0(SBitBuffer *bit_buffer,int bit_count,int bit_value,_FILE *output_stream)
+; void __cdecl support_codec_cpp_writeBitsToStream_FUN_0043e6c0(SBitBuffer *bit_buffer,int bit_count,int bit_value,_ostream *ostream)
 ;
 ; Parameters:
 ; SBitBuffer *     Stack[0x4]:4   bit_buffer
 ; int              Stack[0x8]:4   bit_count
 ; int              Stack[0xc]:4   bit_value
-; _FILE *          Stack[0x10]:4   output_stream
+; _ostream *       Stack[0x10]:4   ostream
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
@@ -40,7 +40,7 @@ section .text
     PUSH EAX                            ; 0043e6df
     PUSH EDI                            ; 0043e6e0
     CALL crt_iostream.cpp_ostream_put_FUN_005ff2d7 ; 0043e6e1
-        ;   XREF to: 005ff2d7 (UNCONDITIONAL_CALL)  ; ostream * crt_iostream.cpp_ostream_put_FUN_005ff2d7(ostream * this_ptr, int character)
+        ;   XREF to: 005ff2d7 (UNCONDITIONAL_CALL)  ; _ostream * crt_iostream.cpp_ostream_put_FUN_005ff2d7(_ostream * this_ptr, int character)
     MOV ECX,dword ptr [EBX + 0x4]       ; 0043e6e6
     MOV EBP,dword ptr [EBX]             ; 0043e6e9
     SHR ECX,0x8                         ; 0043e6eb
@@ -73,7 +73,7 @@ section .text
     PUSH EAX                            ; 0043e72a
     PUSH EDI                            ; 0043e72b
     CALL crt_iostream.cpp_ostream_put_FUN_005ff2d7 ; 0043e72c
-        ;   XREF to: 005ff2d7 (UNCONDITIONAL_CALL)  ; ostream * crt_iostream.cpp_ostream_put_FUN_005ff2d7(ostream * this_ptr, int character)
+        ;   XREF to: 005ff2d7 (UNCONDITIONAL_CALL)  ; _ostream * crt_iostream.cpp_ostream_put_FUN_005ff2d7(_ostream * this_ptr, int character)
     ADD ESP,0x8                         ; 0043e731
     MOV dword ptr [EBX],0x0             ; 0043e734
     MOV CL,byte ptr [ESP]               ; 0043e73a
@@ -92,7 +92,7 @@ section .text
     PUSH EAX                            ; 0043e75e
     PUSH EDI                            ; 0043e75f
     CALL crt_iostream.cpp_ostream_put_FUN_005ff2d7 ; 0043e760
-        ;   XREF to: 005ff2d7 (UNCONDITIONAL_CALL)  ; ostream * crt_iostream.cpp_ostream_put_FUN_005ff2d7(ostream * this_ptr, int character)
+        ;   XREF to: 005ff2d7 (UNCONDITIONAL_CALL)  ; _ostream * crt_iostream.cpp_ostream_put_FUN_005ff2d7(_ostream * this_ptr, int character)
     ADD ESP,0x8                         ; 0043e765
     MOV EAX,dword ptr [ESP + 0x20]      ; 0043e768
     SHR EAX,0x8                         ; 0043e76c
@@ -129,7 +129,7 @@ section .text
     PUSH EAX                            ; 0043e7ab
     PUSH EDI                            ; 0043e7ac
     CALL crt_iostream.cpp_ostream_put_FUN_005ff2d7 ; 0043e7ad
-        ;   XREF to: 005ff2d7 (UNCONDITIONAL_CALL)  ; ostream * crt_iostream.cpp_ostream_put_FUN_005ff2d7(ostream * this_ptr, int character)
+        ;   XREF to: 005ff2d7 (UNCONDITIONAL_CALL)  ; _ostream * crt_iostream.cpp_ostream_put_FUN_005ff2d7(_ostream * this_ptr, int character)
     MOV dword ptr [EBX],0x0             ; 0043e7b2
     ADD ESP,0x8                         ; 0043e7b8
     MOV dword ptr [EBX + 0x4],0x0       ; 0043e7bb

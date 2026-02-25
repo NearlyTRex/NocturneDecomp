@@ -6,19 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 24,
-    "complexity_score": 96,
+    "complexity_score": 34,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 1,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 21,
-    "suspect_count": 6,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 19,
+    "suspect_count": 1,
     "suspect_types": [
-      "negative_offset",
-      "param_count_too_few",
-      "stack_param"
+      "negative_offset"
     ],
-    "total_lines": 45
+    "total_lines": 43
   },
   "cross_references": [
     {
@@ -44,7 +42,7 @@
     ],
     "convention": "__cdecl",
     "name": "support_codec.cpp_CLZWCompress_ctor_FUN_0043f2d0",
-    "signature": "CLZWCompress * __cdecl support_codec_cpp_CLZWCompress_ctor_FUN_0043f2d0(CLZWCompress *this_ptr)"
+    "signature": "CLZWCompress * __cdecl support_codec_cpp_CLZWCompress_ctor_FUN_0043f2d0(CLZWCompress *this_ptr,int buffer_size,int num_bits)"
   },
   "function_calls": [
     {
@@ -88,8 +86,8 @@
         "stack_params": 1
       }
     ],
-    "confidence": "low",
-    "declared_params": 1,
+    "confidence": "medium",
+    "declared_params": 3,
     "estimated_params": 3
   },
   "pcode_summary": {
@@ -121,10 +119,10 @@
     "pcode_op_count": 116
   },
   "stack_frame": {
-    "frame_size": 8,
+    "frame_size": 16,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -133,60 +131,31 @@
         "offset": 4,
         "size": 4,
         "type": "CLZWCompress *"
+      },
+      {
+        "is_param": true,
+        "name": "buffer_size",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "num_bits",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "int in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "int in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
-      "line": 15,
+      "line": 13,
       "match": "pCVar3[-1].",
       "severity": "mild",
-      "text": "piVar4 = &pCVar3[-1].bit_state.accumulated_bits;",
+      "text": "puVar4 = &pCVar3[-1].bit_state.accumulated_bits;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "pCVar3[1].dict_size = in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "pCVar3[1].num_bits = in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 1,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
-      "fix_type": "add_params",
-      "match": "declared:1 vs estimated:3",
-      "param_delta": 2,
-      "text": "Function declares 1 params but call sites push 3 (2 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

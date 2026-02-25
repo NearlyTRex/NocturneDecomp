@@ -34,12 +34,9 @@ void __cdecl shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN
   int local_14;
   
   this_ptr->character_width = g_FontCharacterWidth + 1;
-  this_ptr->unk2 = 8;
-  this_ptr->unk3[0x24] = '\x01';
-  this_ptr->unk3[0x25] = '\0';
-  this_ptr->unk3[0x26] = '\0';
-  this_ptr->unk3[0x27] = '\0';
-  memset(&this_ptr->unk1,0,0x28);
+  this_ptr->column_padding = 8;
+  this_ptr->tab_column_count = 1;
+  memset(this_ptr->tab_column_widths,0,0x28);
   local_14 = 0;
   if (0 < (this_ptr->base).item_count) {
     do {
@@ -58,8 +55,8 @@ void __cdecl shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN
         }
         *pcVar8 = '\0';
         iVar4 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(g_EditorFont,local_160);
-        if (pCVar5->unk1 < iVar4) {
-          pCVar5->unk1 = iVar4;
+        if (pCVar5->tab_column_widths[0] < iVar4) {
+          pCVar5->tab_column_widths[0] = iVar4;
         }
         iVar10 = iVar10 + 1;
         pCVar5 = (CPickList *)&(pCVar5->base).capacity;
@@ -70,30 +67,28 @@ void __cdecl shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN
           core_main_c_displayErrorAndQuit_FUN_00506f10("Too many picklist columns!");
         }
       }
-      if (*(int *)(this_ptr->unk3 + 0x24) < iVar10) {
-        *(int *)(this_ptr->unk3 + 0x24) = iVar10;
+      if (this_ptr->tab_column_count < iVar10) {
+        this_ptr->tab_column_count = iVar10;
       }
       local_14 = local_14 + 1;
     } while (local_14 < (this_ptr->base).item_count);
   }
   pCVar5 = this_ptr;
-  for (iVar10 = 0; iVar10 < *(int *)(this_ptr->unk3 + 0x24) + -1; iVar10 = iVar10 + 1) {
-    pCVar5->unk1 = pCVar5->unk1 + g_WindowWidth / 0x28;
+  for (iVar10 = 0; iVar10 < this_ptr->tab_column_count + -1; iVar10 = iVar10 + 1) {
+    pCVar5->tab_column_widths[0] = pCVar5->tab_column_widths[0] + g_WindowWidth / 0x28;
     pCVar5 = (CPickList *)&(pCVar5->base).capacity;
   }
-  iVar4 = 0;
-  iVar10 = *(int *)(this_ptr->unk3 + 0x24);
+  iVar10 = 0;
   this_ptr->total_content_width = 0;
   pCVar5 = this_ptr;
-  if (0 < iVar10) {
+  if (0 < this_ptr->tab_column_count) {
     do {
-      iVar4 = iVar4 + 1;
-      iVar10 = *(int *)(this_ptr->unk3 + 0x24);
-      this_ptr->total_content_width = this_ptr->total_content_width + pCVar5->unk1;
+      iVar10 = iVar10 + 1;
+      this_ptr->total_content_width = this_ptr->total_content_width + pCVar5->tab_column_widths[0];
       pCVar5 = (CPickList *)&(pCVar5->base).capacity;
-    } while (iVar4 < iVar10);
+    } while (iVar10 < this_ptr->tab_column_count);
   }
-  this_ptr->total_content_width = this_ptr->total_content_width + this_ptr->unk2 * 2;
+  this_ptr->total_content_width = this_ptr->total_content_width + this_ptr->column_padding * 2;
   iVar10 = (g_WindowHeight + g_FontCharacterWidth * -4) / this_ptr->character_width;
   this_ptr->vertical_page_size = iVar10;
   if (iVar10 < 1) {

@@ -50,8 +50,8 @@ void __cdecl engine_drender_cpp_CDemonRenderer_captureFace_FUN_0048d8a0(CDemonRe
   puVar11 = (uint *)(g_CaptureFaceCount * 0x20 + 0x2c6d604 + (uint)bVar13 * -8);
   puVar9 = (uint *)((int)triangle_indices + (uint)bVar13 * -8 + 4);
   uVar5 = triangle_indices->vertex_index_1;
-  (pSVar4->indices).vertex_index_0 = triangle_indices->vertex_index_0;
-  (pSVar4->indices).vertex_index_1 = uVar5;
+  (pSVar4->face_data).vertex_indices.vertex_index_0 = triangle_indices->vertex_index_0;
+  (pSVar4->face_data).vertex_indices.vertex_index_1 = uVar5;
   puVar12 = puVar11 + (uint)bVar13 * -2 + 1;
   puVar10 = puVar9 + (uint)bVar13 * -2 + 1;
   *puVar11 = *puVar9;

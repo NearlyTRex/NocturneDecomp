@@ -158,7 +158,7 @@ section .text
     PUSH 0x3f800000                     ; 0056ca7e
     MOV dword ptr [EAX + 0x140],0x42000000 ; 0056ca83 | g_CDemonLightInstance.base.max_distance
     PUSH EAX                            ; 0056ca8d | g_CDemonLightInstance
-    MOV dword ptr [EAX + 0x38],0x42000000 ; 0056ca8e | g_CDemonLightInstance.base.base.projection_scale
+    MOV dword ptr [EAX + 0x38],0x42000000 ; 0056ca8e | g_CDemonLightInstance.base.base.focal_length
     CALL core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0 ; 0056ca95
         ;   XREF to: 004765e0 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0(CDemonLight * this_ptr, float intensity)
     LEA EAX,[EBP + -0x1c]               ; 0056ca9a

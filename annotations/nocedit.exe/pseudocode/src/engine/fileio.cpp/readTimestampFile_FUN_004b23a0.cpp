@@ -68,12 +68,12 @@ LAB_004b246f:
     piVar5 = count;
     do {
       iVar3 = *piVar5;
-      *(char *)&pSVar4->record_start = (char)iVar3;
+      pSVar4->filename[0] = (char)iVar3;
       if ((char)iVar3 == '\0') break;
       cVar1 = *(char *)((int)piVar5 + 1);
       piVar5 = (int *)((int)piVar5 + 2);
-      *(char *)((int)&pSVar4->record_start + 1) = cVar1;
-      pSVar4 = (STimestampRecord *)((int)&pSVar4->record_start + 2);
+      pSVar4->filename[1] = cVar1;
+      pSVar4 = (STimestampRecord *)(pSVar4->filename + 2);
     } while (cVar1 != '\0');
     pSVar4 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
                        (*records,new_size,"..\\engine\\fileio.cpp",0x1c2);
@@ -90,9 +90,9 @@ LAB_004b246f:
     }
     new_size = new_size + 0x148;
     pSVar6 = &local_160;
-    pcVar2 = pSVar4->unk1 + local_14 + -4;
+    pcVar2 = pSVar4->filename + local_14;
     for (iVar3 = 0x52; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *(int *)pcVar2 = pSVar6->record_start;
+      *(uint *)pcVar2 = *(uint *)pSVar6->filename;
       pSVar6 = (STimestampRecord *)((int)pSVar6 + ((uint)bVar7 * -2 + 1) * 4);
       pcVar2 = pcVar2 + ((uint)bVar7 * -2 + 1) * 4;
     }

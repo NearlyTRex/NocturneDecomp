@@ -161,8 +161,8 @@ void __cdecl core_zombie_cpp_CZombie_process_FUN_005f9470(CZombie *this_ptr,floa
     (this_ptr->base).base.grabbed_by = (CDemonActor *)0x0;
     return;
   }
-  if (0.0 < this_ptr->pain_sfx_cooldown) {
-    this_ptr->pain_sfx_cooldown = this_ptr->pain_sfx_cooldown - delta_time;
+  if (0.0 < this_ptr->pain_cooldown) {
+    this_ptr->pain_cooldown = this_ptr->pain_cooldown - delta_time;
   }
   local_20 = &(this_ptr->base).base.model;
   local_7c = delta_time * (this_ptr->base).speed;
@@ -239,10 +239,10 @@ LAB_005f9541:
       }
       if ((this_ptr->base).victim != (CDemonActor *)0x0) {
         pCVar10 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
-                            (local_20,&local_29c,this_ptr->bone_index_head);
+                            (local_20,&local_29c,this_ptr->bone_indices[0]);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                   ((CDemonActor *)this_ptr,&local_248,pCVar10);
-        if (this_ptr->part_index_waist < 0) {
+        if (this_ptr->part_indices[4] < 0) {
           pCVar16 = (this_ptr->base).victim;
           fVar24 = local_248.x - (pCVar16->location).position.x;
           fVar25 = local_248.z - (pCVar16->location).position.z;
@@ -383,7 +383,7 @@ LAB_005f9541:
       }
       else if (uVar8 == 0x29a) {
         pCVar10 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
-                            (pCVar2,&local_11c,this_ptr->bone_index_head);
+                            (pCVar2,&local_11c,this_ptr->bone_indices[0]);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                   ((CDemonActor *)this_ptr,&local_104,pCVar10);
         core_gore_cpp_CGore_spawnBloodBurst_FUN_004edbb0(g_CGorePtr,&local_104,(CVector3f *)0x0,3,0)
@@ -416,15 +416,15 @@ LAB_005f9541:
   fVar24 = (this_ptr->base).speed;
   fVar23 = (float)3.1415926535000001;
   fVar25 = (float)0.5;
-  iVar6 = this_ptr->part_index_rforearm;
+  iVar6 = this_ptr->part_indices[3];
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
   (this_ptr->base).base.turn_speed = delta_time * fVar23 * fVar24 * fVar25;
   if (((((this_ptr->base).base.model.part_data.visibility_flags[iVar6] == 0) &&
-       ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_index_lforearm] == 0))
-      || ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_index_head] == 0))
-     && ((0.0 <= this_ptr->bleedout_timer &&
-         (fVar24 = this_ptr->bleedout_timer + delta_time, this_ptr->bleedout_timer = fVar24,
-         (float)6 <= fVar24)))) {
+       ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[1]] == 0)) ||
+      ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[6]] == 0)) &&
+     ((0.0 <= this_ptr->bleedout_timer &&
+      (fVar24 = this_ptr->bleedout_timer + delta_time, this_ptr->bleedout_timer = fVar24,
+      (float)6 <= fVar24)))) {
     core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_370);
     local_370.damage_amount = 9999.9;
     local_370.attacker = (CDemonActor *)this_ptr;
@@ -473,17 +473,17 @@ LAB_005f9541:
         }
         if ((this_ptr->base).victim != (CDemonActor *)0x0) {
           core_zombie_cpp_CZombie_FUN_005fca10(this_ptr);
-          iVar6 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->alert_sfx_handle);
+          iVar6 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handles[1]);
           if (iVar6 == 0) {
             if (this_ptr->is_female == 0) {
               uVar8 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                                 ((CDemonActor *)this_ptr,"zom-a0?.wav");
-              this_ptr->alert_sfx_handle = uVar8;
+              this_ptr->sfx_handles[1] = uVar8;
             }
             else {
               uVar8 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                                 ((CDemonActor *)this_ptr,"f-zombie-alert?.wav");
-              this_ptr->alert_sfx_handle = uVar8;
+              this_ptr->sfx_handles[1] = uVar8;
             }
           }
         }
@@ -505,7 +505,7 @@ LAB_005f9541:
           }
         }
         else if (pCVar16 == (CDemonActor *)0x0) {
-          iVar6 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->alert_sfx_handle);
+          iVar6 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handles[1]);
           if (iVar6 == 0) {
             if (this_ptr->is_female == 0) {
               pcVar17 = "zom-a0?.wav";
@@ -515,16 +515,16 @@ LAB_005f9541:
             }
             uVar8 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                               ((CDemonActor *)this_ptr,pcVar17);
-            this_ptr->alert_sfx_handle = uVar8;
+            this_ptr->sfx_handles[1] = uVar8;
           }
 LAB_005fa85e:
           core_zombie_cpp_CZombie_FUN_005fca10(this_ptr);
         }
         else {
-          cVar20 = (this_ptr->base).base.model.part_data.visibility_flags
-                   [this_ptr->part_index_lforearm] != 0;
-          if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_index_rforearm]
-              != 0) {
+          cVar20 = (this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[1]]
+                   != 0;
+          if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[3]] != 0
+             ) {
             cVar20 = cVar20 + '\x01';
           }
           (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
@@ -815,16 +815,15 @@ LAB_005fa279:
               fVar21 = (float10)fcos((float10)local_78);
               fVar22 = (float10)fsin((float10)local_78);
               local_18 = (CVector3f *)
-                         core_setcolid_cpp_CDemonSet_testCapsuleCollision_FUN_00573470
+                         core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_00573470
                                    (g_CDemonSetPtr,(this_ptr->base).base.base.location.position.x,
                                     (this_ptr->base).base.base.location.position.z,
                                     (float)(fVar22 * (float10)0.050000000000000003),
                                     (float)(fVar21 * (float10)0.050000000000000003),
                                     (this_ptr->base).base.collision_cylinder_radius,
-                                    (void *)((this_ptr->base).base.base.location.position.y +
-                                            (this_ptr->base).base.collision_cylinder_bottom),
-                                    (void *)((this_ptr->base).base.base.location.position.y +
-                                            local_30));
+                                    (this_ptr->base).base.base.location.position.y +
+                                    (this_ptr->base).base.collision_cylinder_bottom,
+                                    (this_ptr->base).base.base.location.position.y + local_30);
               local_14 = local_18;
               core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
               if ((float)local_18 < 1.0) break;
@@ -986,40 +985,36 @@ LAB_005f9f22:
               ((CCharacter *)this_ptr,delta_time,in_stack_fffffc54);
   }
   if ((this_ptr->base).pool_me == 0) {
-    iVar6 = this_ptr->part_index_torso;
+    iVar6 = this_ptr->part_indices[5];
     if ((this_ptr->base).base.model.part_data.visibility_flags[iVar6] == 0) {
-      iVar9 = this_ptr->bone_index_spine2;
+      iVar9 = this_ptr->bone_indices[10];
       fVar24 = 0.5;
     }
     else {
       core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_0042b760
-                ((CCharacter *)this_ptr,this_ptr->part_index_larm,this_ptr->bone_index_lupperarm,0.2
-                );
-      if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_index_larm] != 0) {
+                ((CCharacter *)this_ptr,this_ptr->part_indices[0],this_ptr->bone_indices[5],0.2);
+      if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[0]] != 0) {
         core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_0042b760
-                  ((CCharacter *)this_ptr,this_ptr->part_index_lforearm,
-                   this_ptr->bone_index_lforearm,0.2);
+                  ((CCharacter *)this_ptr,this_ptr->part_indices[1],this_ptr->bone_indices[3],0.2);
       }
       core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_0042b760
-                ((CCharacter *)this_ptr,this_ptr->part_index_rarm,this_ptr->bone_index_rupperarm,0.2
-                );
-      if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_index_rarm] != 0) {
+                ((CCharacter *)this_ptr,this_ptr->part_indices[2],this_ptr->bone_indices[6],0.2);
+      if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[2]] != 0) {
         core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_0042b760
-                  ((CCharacter *)this_ptr,this_ptr->part_index_rforearm,
-                   this_ptr->bone_index_rforearm,0.2);
+                  ((CCharacter *)this_ptr,this_ptr->part_indices[3],this_ptr->bone_indices[4],0.2);
       }
-      iVar9 = this_ptr->bone_index_head;
+      iVar9 = this_ptr->bone_indices[0];
       fVar24 = 0.7;
-      iVar6 = this_ptr->part_index_head;
+      iVar6 = this_ptr->part_indices[6];
     }
     core_charactr_cpp_CCharacter_spawnBloodAtBone_FUN_0042b810
               ((CCharacter *)this_ptr,iVar6,iVar9,fVar24);
-    if ((this_ptr->part_index_waist < 0) &&
-       ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_index_torso] != 0)) {
-      (this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_index_torso] = 0;
+    if ((this_ptr->part_indices[4] < 0) &&
+       ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[5]] != 0)) {
+      (this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[5]] = 0;
       core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_0042b760
-                ((CCharacter *)this_ptr,this_ptr->part_index_torso,this_ptr->bone_index_spine2,0.2);
-      (this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_index_torso] = 1;
+                ((CCharacter *)this_ptr,this_ptr->part_indices[5],this_ptr->bone_indices[10],0.2);
+      (this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[5]] = 1;
     }
     core_charactr_cpp_CCharacter_processDamageDecals_FUN_0042b670((CCharacter *)this_ptr);
   }

@@ -17,7 +17,7 @@ int __cdecl core_setdir_cpp_CDemonSet_FUN_00576870(CDemonSet *this_ptr)
     do {
       iVar1 = core_setdir_cpp_CDemonSet_FUN_005762a0(this_ptr);
       if (iVar1 != 0) {
-        iVar2 = core_setdir_cpp_CDemonSet_FUN_00576820(this_ptr);
+        iVar2 = core_setdir_cpp_CDemonSet_findVdirBoxRoot_FUN_00576820(this_ptr,iVar2);
         return iVar2;
       }
       iVar2 = iVar2 + 1;

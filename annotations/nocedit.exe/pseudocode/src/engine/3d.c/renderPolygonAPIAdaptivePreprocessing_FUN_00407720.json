@@ -6,19 +6,19 @@
   },
   "complexity": {
     "assembly_lines": 122,
-    "complexity_score": 204,
+    "complexity_score": 202,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 11,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 69,
+    "pseudocode_lines": 67,
     "suspect_count": 12,
     "suspect_types": [
       "extra_output",
       "pointer_cast",
       "stack_param"
     ],
-    "total_lines": 191
+    "total_lines": 189
   },
   "cross_references": [],
   "function": {
@@ -31,7 +31,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_3d.c_renderPolygonAPIAdaptivePreprocessing_FUN_00407720",
-    "signature": "SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAPIAdaptivePreprocessing_FUN_00407720(SMRGLHeaderPrimitive *polygon_info)"
+    "signature": "SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAPIAdaptivePreprocessing_FUN_00407720(SMRGLHeaderPrimitive *prim)"
   },
   "function_calls": [
     {
@@ -170,7 +170,7 @@
     "variables": [
       {
         "is_param": true,
-        "name": "polygon_info",
+        "name": "prim",
         "offset": 4,
         "size": 4,
         "type": "SMRGLHeaderPrimitive *"
@@ -228,7 +228,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 39,
+      "line": 38,
       "match": "in_stack_0000000c",
       "severity": "moderate",
       "text": "g_RenderStateFlag2 = in_stack_0000000c;",
@@ -236,7 +236,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 40,
+      "line": 39,
       "match": "in_stack_0000000c",
       "severity": "moderate",
       "text": "if (in_stack_0000000c == 0) {",
@@ -244,7 +244,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 41,
+      "line": 40,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "if ((in_stack_00000008 & 0xc0) != 0) {",
@@ -252,7 +252,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 54,
+      "line": 53,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)g_ProcessedVertexIndices + iVar5) = iVar1;",
@@ -260,7 +260,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 65,
+      "line": 64,
       "match": "extraout_EAX_00",
       "severity": "moderate",
       "text": "return extraout_EAX_00;",
@@ -268,7 +268,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 69,
+      "line": 67,
       "match": "extraout_EAX",
       "severity": "moderate",
       "text": "pSVar4 = extraout_EAX;",

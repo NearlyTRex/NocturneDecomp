@@ -59,7 +59,7 @@ void __cdecl core_game_cpp_CGame_process_FUN_004e3190(CGame *this_ptr)
       core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0
                 (g_CDemonSetPtr,g_CScriptPtr->focus_actor,2);
       core_game_cpp_CGame_saveClockTime_FUN_004d7d80(this_ptr);
-      g_CScriptPtr->unk2 = 0;
+      g_CScriptPtr->focus_actor_changed = 0;
     }
     else {
       engine_2d_c_clearInputAndWait_FUN_00403260();

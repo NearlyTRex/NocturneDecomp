@@ -27,15 +27,12 @@ CDrip * __cdecl core_drip_cpp_CDrip_ctor_FUN_0048e000(CDrip *this_ptr)
   (ADJ(this_ptr_00)->vel).x = (ADJ(this_ptr_00)->vel).y;
   ADJ(this_ptr_00)->min_auto_drip_time = 5.0;
   ADJ(this_ptr_00)->max_auto_drip_time = 10.0;
-  *(char *)(this_ptr_00[1].part_visibility_flags + 2) = '\0';
-  *(char *)((int)(this_ptr_00[1].part_visibility_flags + 2) + 1) = '\0';
-  *(char *)((int)(this_ptr_00[1].part_visibility_flags + 2) + 2) = '\0';
-  *(char *)((int)(this_ptr_00[1].part_visibility_flags + 2) + 3) = '\0';
+  ADJ(this_ptr_00)->drip_timer = 0.0;
   pcVar2 = "rock-x.wav";
   ADJ(this_ptr_00)->drip_radius = 0.0;
   ADJ(this_ptr_00)->damage = 10.0;
   pcVar3 = ADJ(this_ptr_00)->hit_sound;
-  ADJ(this_ptr_00)->unk3 = 0;
+  ADJ(this_ptr_00)->is_visible = 0;
   do {
     cVar1 = *pcVar2;
     *pcVar3 = cVar1;

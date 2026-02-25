@@ -173,7 +173,7 @@ section .text
     MOV ECX,dword ptr [0x006703ec]      ; 004ed59a | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH ECX                            ; 004ed5a0 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0 ; 004ed5a1
-        ;   XREF to: 0048bcf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info)
+        ;   XREF to: 0048bcf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD ESP,0x8                         ; 004ed5a6
     CMP dword ptr [ESP + 0x24],0x0      ; 004ed5a9
     JNZ 0x004ed714                      ; 004ed5ae

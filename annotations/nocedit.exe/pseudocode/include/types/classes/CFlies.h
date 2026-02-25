@@ -17,7 +17,7 @@ typedef struct CFlies {
     int gather_count; // 0x2a0c
     float gather_timer; // 0x2a10
     float gather_time; // 0x2a14
-    int reserved; // 0x2a18
+    int dead; // 0x2a18
     int is_visible; // 0x2a1c
 } CFlies;
 

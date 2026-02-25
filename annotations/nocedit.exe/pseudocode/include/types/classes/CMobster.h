@@ -25,21 +25,10 @@ typedef struct CMobster {
     int side_of_car; // 0xbee4
     int hold_pos_flag; // 0xbee8
     char hold_pos_condition[100]; // 0xbeec
-    int unk1; // 0xbf50
-    uint sfx_handle_1; // 0xbf54
-    int unk2; // 0xbf58
-    uint sfx_handle_2; // 0xbf5c
-    int part_larm; // 0xbf60
-    int part_l4arm; // 0xbf64
-    int part_rarm; // 0xbf68
-    int part_r4arm; // 0xbf6c
-    int part_rthigh; // 0xbf70
-    int part_rshin; // 0xbf74
-    int part_lthigh; // 0xbf78
-    int part_lshin; // 0xbf7c
-    int part_waist; // 0xbf80
-    int part_torso; // 0xbf84
-    int part_head; // 0xbf88
+    uint sfx_handles[2]; // 0xbf50
+    int death_sound_played; // 0xbf58
+    uint sfx_handle; // 0xbf5c
+    int part_indices[11]; // 0xbf60
     float firing_blend; // 0xbf8c
     float firing_cooldown; // 0xbf90
 } CMobster;

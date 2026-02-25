@@ -318,7 +318,7 @@ section .text
     MOV dword ptr [ESP + 0xc],EDI       ; 00443ab2
     MOV dword ptr [ESP + 0x10],EBP      ; 00443ab6
     CALL engine_3d.c_processPolygonColor_FUN_00403e30 ; 00443aba
-        ;   XREF to: 00403e30 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_processPolygonColor_FUN_00403e30(SMRGLHeaderPrimitive * polygon_info)
+        ;   XREF to: 00403e30 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_processPolygonColor_FUN_00403e30(SMRGLHeaderPrimitive * prim)
     ADD ESP,0x4                         ; 00443abf
     MOV EAX,ESP                         ; 00443ac2
     PUSH EAX                            ; 00443ac4

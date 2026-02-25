@@ -13,14 +13,16 @@
   },
   "complexity": {
     "assembly_lines": 56,
-    "complexity_score": 22,
+    "complexity_score": 37,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 5,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 22,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "param_count_too_few"
+    ],
     "total_lines": 78
   },
   "cross_references": [
@@ -47,7 +49,7 @@
     ],
     "convention": "__cdecl",
     "name": "support_codec.cpp_CLZWDictionary_init_FUN_0043ee60",
-    "signature": "void __cdecl support_codec_cpp_CLZWDictionary_init_FUN_0043ee60(CLZWDictionary *this_ptr,int new_dict_size,int new_num_bits,int normal_code_width,int fallback_code_width)"
+    "signature": "void __cdecl support_codec_cpp_CLZWDictionary_init_FUN_0043ee60(CLZWDictionary *this_ptr,int new_dict_size,int new_num_bits)"
   },
   "function_calls": [
     {
@@ -120,8 +122,8 @@
         "stack_params": 5
       }
     ],
-    "confidence": "high",
-    "declared_params": 5,
+    "confidence": "medium",
+    "declared_params": 3,
     "estimated_params": 5
   },
   "pcode_summary": {
@@ -153,10 +155,10 @@
     "pcode_op_count": 212
   },
   "stack_frame": {
-    "frame_size": 24,
+    "frame_size": 16,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 20,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -179,22 +181,20 @@
         "offset": 12,
         "size": 4,
         "type": "int"
-      },
-      {
-        "is_param": true,
-        "name": "normal_code_width",
-        "offset": 16,
-        "size": 4,
-        "type": "int"
-      },
-      {
-        "is_param": true,
-        "name": "fallback_code_width",
-        "offset": 20,
-        "size": 4,
-        "type": "int"
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "call_site_count": 2,
+      "declared_params": 3,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 5,
+      "fix_type": "add_params",
+      "match": "declared:3 vs estimated:5",
+      "param_delta": 2,
+      "text": "Function declares 3 params but call sites push 5 (2 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
 }

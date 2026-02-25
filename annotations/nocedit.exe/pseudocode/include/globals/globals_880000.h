@@ -5,6 +5,7 @@
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CVector3f.h"
 #include "types/structs/SCollisionInfo.h"
+#include "types/structs/SCramRectangle.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x880000
@@ -21,12 +22,12 @@ extern CVector3f CVector3f_ARRAY_008879c0[100];
 // SCollisionInfo[100]
 extern SCollisionInfo SCollisionInfo_ARRAY_00887e70[100];
 
+// SCramRectangle**
+extern SCramRectangle** g_CramCandidateWriteCursor;
+
 // char[500000]
 extern char g_CameraLoadImageReadBuffer[500000];
 
 // int
 extern int INT_008879bc;
-
-// void*
-extern void* g_CramAlgorithmState;
 

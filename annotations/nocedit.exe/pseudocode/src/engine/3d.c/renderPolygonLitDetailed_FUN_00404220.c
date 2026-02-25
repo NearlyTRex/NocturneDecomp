@@ -2,11 +2,11 @@
 // Address: 00404220
 // Address Range: [[00404220, 0040441e]]
 // Convention: __cdecl
-// Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLitDetailed_FUN_00404220(SMRGLHeaderPrimitive *polygon_info)
+// Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLitDetailed_FUN_00404220(SMRGLHeaderPrimitive *prim)
 
 #include "nocturne.h"
 
-SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLitDetailed_FUN_00404220(SMRGLHeaderPrimitive *polygon_info)
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLitDetailed_FUN_00404220(SMRGLHeaderPrimitive *prim)
 
 {
   SMRGLHeaderBasic *pSVar1;
@@ -17,8 +17,8 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLitDetailed_FUN_00404220(
   int iVar6;
   int vertex_count;
   
-  pSVar4 = polygon_info + 1;
-  iVar2 = engine_3d_c_isVisiblePlane_FUN_00403950(&polygon_info->surface_normal);
+  pSVar4 = prim + 1;
+  iVar2 = engine_3d_c_isVisiblePlane_FUN_00403950(&prim->surface_normal);
   if (iVar2 == 0) goto LAB_004043ff;
   if (DAT_00772a78 == 0) {
     if (g_MMXSupported == 0) {
@@ -46,7 +46,7 @@ LAB_00404350:
     if (g_BitsPerPixel != 0x20) goto LAB_00404350;
     g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031;
   }
-  engine_3d_c_calculatePolygonLighting_FUN_00403a00(polygon_info);
+  engine_3d_c_calculatePolygonLighting_FUN_00403a00(prim);
   g_RenderStateFlags.dword = RENDER_LIT_DETAILED;
   if (g_CurrentAlphaValue < 0xff) {
     g_RenderStateFlags.dword = RENDER_ALPHA_DETAILED;
@@ -54,7 +54,7 @@ LAB_00404350:
   vertex_count = 0;
   iVar6 = 0;
   g_RenderStateFlag2 = PREPROCESS_NONE;
-  for (iVar2 = 0; iVar2 < (polygon_info->base).count * 3; iVar2 = iVar2 + 3) {
+  for (iVar2 = 0; iVar2 < (prim->base).count * 3; iVar2 = iVar2 + 3) {
     *(int *)((int)g_ProcessedVertexIndices + iVar6) = (pSVar4->base).type;
     iVar3 = (pSVar4->base).count;
     iVar5 = (pSVar4->surface_normal).A;
@@ -95,5 +95,5 @@ LAB_00404350:
   }
   engine_clipper_c_clipAndRasterize_FUN_004371b0(vertex_count,g_ProcessedVertexIndices);
 LAB_004043ff:
-  return (SMRGLHeaderExtended *)((int)&polygon_info[1].base + (polygon_info->base).count * 0xc);
+  return (SMRGLHeaderExtended *)((int)&prim[1].base + (prim->base).count * 0xc);
 }

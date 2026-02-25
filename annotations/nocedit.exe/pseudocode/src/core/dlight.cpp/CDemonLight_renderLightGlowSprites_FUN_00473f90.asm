@@ -604,7 +604,7 @@ section .text
     PUSH EAX                            ; 004746ce
     PUSH EDX                            ; 004746cf | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_renderComplexMultiFeature_FUN_0048bf10 ; 004746d0
-        ;   XREF to: 0048bf10 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderComplexMultiFeature_FUN_0048bf10(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info)
+        ;   XREF to: 0048bf10 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderComplexMultiFeature_FUN_0048bf10(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD ESP,0x8                         ; 004746d5
     MOV EBX,dword ptr [0x006703ec]      ; 004746d8 | g_CDemonRendererPtr2
     PUSH EBX                            ; 004746de | g_CDemonRendererInstance

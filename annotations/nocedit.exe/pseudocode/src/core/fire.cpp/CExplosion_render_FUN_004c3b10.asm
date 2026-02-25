@@ -306,7 +306,7 @@ section .text
     MOV EAX,[0x006703ec]                ; 004c3e57 | g_CDemonRendererPtr2
     PUSH EAX                            ; 004c3e5c | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10 ; 004c3e5d
-        ;   XREF to: 0048ae10 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info, int render_flags)
+        ;   XREF to: 0048ae10 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, int render_flags)
     ADD ESP,0xc                         ; 004c3e62
     XOR EBX,EBX                         ; 004c3e65
     PUSH EBX                            ; 004c3e67

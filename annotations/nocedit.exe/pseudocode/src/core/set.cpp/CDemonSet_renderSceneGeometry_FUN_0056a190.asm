@@ -19,8 +19,8 @@
 ;   core_set.cpp_CDemonSet_renderStaticLights_FUN_0056be80 at 0056bfae
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50 at 0056b46c
 ;   core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00574910 at 00574a69
-;   core_setedit.cpp_CDemonSet_FUN_0057a940 at 0057aac9
-;   core_setedit.cpp_CDemonSet_FUN_0057d660 at 0057dd5b
+;   core_setedit.cpp_CDemonSet_buildCameraDepthData_FUN_00580310 at 005804a6
+;   core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660 at 0057dd5b
 ;   ... and 4 more
 ;
 ; Referenced Globals:

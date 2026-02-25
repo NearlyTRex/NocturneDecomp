@@ -2,14 +2,15 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "system/winnt.h"
 
 // Structure: SDirectSoundDeviceInfo
 // Ghidra size: 0x11c (284 bytes)
 typedef struct SDirectSoundDeviceInfo {
-    DWORD device_id_part; // 0x0
-    char field_4[16]; // 0x4
+    DWORD is_primary_device; // 0x0
+    _GUID device_guid; // 0x4
     char device_description[256]; // 0x14
-    DWORD value2; // 0x114
-    DWORD value1; // 0x118
+    DWORD is_emulated; // 0x114
+    DWORD has_hardware_mixing; // 0x118
 } SDirectSoundDeviceInfo;
 

@@ -84,7 +84,7 @@ int __cdecl core_charactr_cpp_CCharacter_processWalking_FUN_0042ca70(CCharacter 
     return 1;
   }
   pCVar6 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-                     (&this_ptr->base,&CStack_30,(CVector3f *)this_ptr->door_target->unk3);
+                     (&this_ptr->base,&CStack_30,&this_ptr->door_target->open_position);
   pCVar6 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&CStack_48,pCVar6);
   fVar7 = pCVar6->y;
   this_ptr->turn_angle_accumulator = fVar7;

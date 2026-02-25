@@ -10,7 +10,7 @@
 ; int              Stack[0x10]:4   permissions
 ;
 ; XREF[2]:
-;   crt_fstream.cpp_fstreambase_constructor_FUN_00606456 at 006064cb
+;   crt_fstream.cpp_fstreambase_ctor_FUN_00606456 at 006064cb
 ;   crt_fstream.cpp_openFile_FUN_00600e85 at 00600eab
 ;
 ; Called Functions:

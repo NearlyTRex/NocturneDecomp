@@ -34,10 +34,9 @@ void __cdecl core_melee_cpp_CMelee_archive_FUN_0050e920(CMelee *this_ptr)
     return;
   }
   core_actor_cpp_archiveString_FUN_0040b5c0
-            ((char *)&this_ptr->thrust_hit_character_sound,"thrustHitCharacterSound");
+            (this_ptr->thrust_hit_character_sound,"thrustHitCharacterSound");
   core_actor_cpp_archiveString_FUN_0040b5c0
-            ((char *)&this_ptr->swing_hit_character_sound,"swingHitCharacterSound");
-  core_actor_cpp_archiveString_FUN_0040b5c0
-            ((char *)&this_ptr->hit_other_sound,"hitOtherSound");
+            (this_ptr->swing_hit_character_sound,"swingHitCharacterSound");
+  core_actor_cpp_archiveString_FUN_0040b5c0(this_ptr->hit_other_sound,"hitOtherSound");
   return;
 }

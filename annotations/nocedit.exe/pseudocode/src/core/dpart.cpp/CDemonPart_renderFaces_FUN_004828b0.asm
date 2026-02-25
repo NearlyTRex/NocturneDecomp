@@ -26,7 +26,7 @@
 ;
 ; Called Functions:
 ;   core_set.cpp_CDemonSet_renderTexturedPrimitiveListVariant_FUN_00570960
-;   core_set.cpp_CDemonSet_rotateVertices_FUN_0056e7c0
+;   core_set.cpp_CDemonSet_rotateVerticies_FUN_0056e7c0
 ;   engine_3d.c_isVisiblePlane_FUN_00403950
 ;   engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0
 ;   engine_drender.cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960
@@ -73,8 +73,8 @@ section .text
     PUSH EDX                            ; 00482907
     MOV ESI,dword ptr [0x006810c8]      ; 00482908 | g_CDemonSetPtr
     PUSH ESI                            ; 0048290e | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_rotateVertices_FUN_0056e7c0 ; 0048290f
-        ;   XREF to: 0056e7c0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_rotateVertices_FUN_0056e7c0(CDemonSet * this_ptr, int vertex_count, int * input_vertices)
+    CALL core_set.cpp_CDemonSet_rotateVerticies_FUN_0056e7c0 ; 0048290f
+        ;   XREF to: 0056e7c0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_rotateVerticies_FUN_0056e7c0(CDemonSet * this_ptr, int vertex_count, CVector3i * input_vertices)
     MOV EAX,[0x006703ec]                ; 00482914 | g_CDemonRendererPtr2
     MOV EDX,dword ptr [EAX + 0x18]      ; 00482919 | DAT_02c6d590
     ADD ESP,0xc                         ; 0048291c

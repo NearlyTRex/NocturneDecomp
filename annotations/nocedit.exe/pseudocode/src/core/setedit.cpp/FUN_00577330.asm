@@ -17,7 +17,7 @@
 ;   _BIT_INTEGER32 g_RedBitPosition
 ;   _BIT_INTEGER32 g_GreenBitPosition
 ;   _BIT_INTEGER32 g_BlueBitPosition
-;   undefined4 DAT_03365cc0
+;   uint[250][3072] g_ThumbnailImageBuffer
 ;   undefined4 DAT_03365cc4
 ;
 ; *****************************************************************************
@@ -56,7 +56,7 @@ section .text
     SHL EAX,0x8                         ; 00577389
     MOV EBP,dword ptr [ESP + 0xc]       ; 0057738c
     ADD EAX,ESI                         ; 00577390
-    MOV EDX,dword ptr [EAX + 0x3365cc0] ; 00577392 | DAT_03365cc0 | DAT_03365cc4
+    MOV EDX,dword ptr [EAX + 0x3365cc0] ; 00577392 | g_ThumbnailImageBuffer | DAT_03365cc4
         ;   Label: LAB_00577392
     MOV ECX,dword ptr [0x0067939c]      ; 00577398 | g_BitsPerPixel
     MOV EDI,EDX                         ; 0057739e

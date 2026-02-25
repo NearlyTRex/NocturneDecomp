@@ -411,7 +411,7 @@ section .text
     MOV EAX,[0x006703ec]                ; 005ef5d7 | g_CDemonRendererPtr2
     PUSH EAX                            ; 005ef5dc | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0 ; 005ef5dd
-        ;   XREF to: 0048bcf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info)
+        ;   XREF to: 0048bcf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD ESP,0x8                         ; 005ef5e2
     MOV EDX,dword ptr [0x006703ec]      ; 005ef5e5 | g_CDemonRendererPtr2
     PUSH EDX                            ; 005ef5eb | g_CDemonRendererInstance
@@ -617,7 +617,7 @@ section .text
     MOV ECX,dword ptr [0x006703ec]      ; 005ef89c | g_CDemonRendererPtr2
     PUSH ECX                            ; 005ef8a2 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0 ; 005ef8a3
-        ;   XREF to: 0048bcf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info)
+        ;   XREF to: 0048bcf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD ESP,0x8                         ; 005ef8a8
     MOV EBX,dword ptr [0x006703ec]      ; 005ef8ab | g_CDemonRendererPtr2
     PUSH EBX                            ; 005ef8b1 | g_CDemonRendererInstance

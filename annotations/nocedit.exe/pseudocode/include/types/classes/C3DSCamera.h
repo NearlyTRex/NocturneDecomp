@@ -13,7 +13,7 @@ typedef struct C3DSCamera {
     CVector3f position; // 0x100
     CVector3f orientation; // 0x10c
     CMatrix3x3f rotation_matrix; // 0x118
-    int padding; // 0x13c
+    int dead; // 0x13c
     int is_panning; // 0x140
     float projection_scale; // 0x144
     float ambient_value; // 0x148

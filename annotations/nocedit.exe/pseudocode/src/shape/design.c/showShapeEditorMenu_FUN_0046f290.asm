@@ -494,7 +494,7 @@ section .text
         ;   Label: caseD_51
     PUSH 0x0                            ; 0046f77e
     CALL shape_design.c_tileTextureMaps_FUN_0046a180 ; 0046f780
-        ;   XREF to: 0046a180 (UNCONDITIONAL_CALL)  ; void shape_design.c_tileTextureMaps_FUN_0046a180(char * model_name, int prompt_for_model)
+        ;   XREF to: 0046a180 (UNCONDITIONAL_CALL)  ; void shape_design.c_tileTextureMaps_FUN_0046a180(SCram * cram, int prompt_for_model)
     ADD ESP,0x8                         ; 0046f785
     JMP 0x0046f86f                      ; 0046f788
         ;   XREF to: 0046f86f (UNCONDITIONAL_JUMP)  ; LAB_0046f86f

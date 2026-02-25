@@ -10,15 +10,7 @@
 // Ghidra size: 0xbfec (49132 bytes)
 typedef struct CDraculaBride {
     CEnemy base; // 0x0
-    int part_index_larm; // 0xbebc
-    int part_index_lforearm; // 0xbec0
-    int part_index_rarm; // 0xbec4
-    int part_index_rforearm; // 0xbec8
-    int part_index_lshin; // 0xbecc
-    int part_index_rshin; // 0xbed0
-    int part_index_torso; // 0xbed4
-    int part_index_waist; // 0xbed8
-    int part_index_head; // 0xbedc
+    int part_indices[9]; // 0xbebc
     char rise_event[100]; // 0xbee0
     int freaky_voice_number; // 0xbf44
     int mist_state; // 0xbf48

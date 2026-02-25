@@ -44,7 +44,7 @@
     ],
     "convention": "__cdecl",
     "name": "crt_iostream.cpp_ostream_dtor_FUN_00606231",
-    "signature": "ostream * __cdecl crt_iostream_cpp_ostream_dtor_FUN_00606231(ostream *this_ptr,uint flags)"
+    "signature": "_ostream * __cdecl crt_iostream_cpp_ostream_dtor_FUN_00606231(_ostream *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -124,7 +124,7 @@
         "name": "this_ptr",
         "offset": 4,
         "size": 4,
-        "type": "ostream *"
+        "type": "_ostream *"
       },
       {
         "is_param": true,
@@ -141,7 +141,7 @@
       "line": 18,
       "match": "piVar2[-1].",
       "severity": "mild",
-      "text": "this_ptr = (ostream *)&piVar2[-1].__fill_character;",
+      "text": "this_ptr = (_ostream *)&piVar2[-1].__fill_character;",
       "type": "negative_offset"
     },
     {

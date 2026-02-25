@@ -15,8 +15,8 @@
 ;
 ; XREF[42]:
 ;   core_cloth.cpp_CCloth_addCollisionBone_FUN_0043c430 at 0043c579
-;   core_setedit.cpp_CDemonSet_FUN_0057e7c0 at 0057eacd
-;   core_setedit.cpp_CDemonSet_FUN_00580730 at 00580cae
+;   core_setedit.cpp_CDemonSet_showCameraEditor_FUN_0057e7c0 at 0057eacd
+;   core_setedit.cpp_CDemonSet_showFogEditor_FUN_00580730 at 00580cae
 ;   shape_design.c_centerKeyframeModels_FUN_004681a0 at 004681c1
 ;   shape_design.c_centerObject_FUN_00466610 at 0046675c
 ;   shape_design.c_centerVerticesAroundPoint_FUN_0045ea90 at 0045eab1

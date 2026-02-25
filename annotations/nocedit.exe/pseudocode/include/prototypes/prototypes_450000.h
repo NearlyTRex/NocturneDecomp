@@ -19,6 +19,7 @@
 #include "types/structs/SScreenCoord.h"
 #include "types/structs/SShapeEditorPolygon.h"
 #include "types/structs/STreeNode.h"
+#include "types/structs/STriangleRef.h"
 #include "types/structs/SVertexData.h"
 
 // =============================================================================
@@ -40,7 +41,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_processCorona_FUN_00451130(CDemonCame
 int __cdecl core_dcamera_cpp_CDemonCamera_lockAndRenderToBuffer_FUN_004511c0(CDemonCamera *this_ptr);
 int __cdecl core_dcamera_cpp_testCoronaVisibility_FUN_00451250(int start_x,int start_y,int depth_reciprocal);
 void __cdecl core_dcamera_cpp_renderCoronaScanlineSegment_FUN_00451340(int row_index,int column_start,int column_end);
-void __cdecl core_dcamera_cpp_processCoronaScanline_FUN_004514b0(int row,int x_start,int x_end,SCorona *corona_buffer);
+void __cdecl core_dcamera_cpp_processCoronaScanline_FUN_004514b0(int row,int x_start,int x_end,SCorona *corona);
 void __cdecl core_dcamera_cpp_blendCoronaTextureSpan_FUN_004517f0(int scanline_y,int x_start,int x_end,int source_buffer_offset);
 void __cdecl core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_004518f0(CDemonCamera *this_ptr,void *p1,int p2);
 void __cdecl core_dcamera_cpp_transformAndStoreVertex_FUN_00452110(int vertex_index,float x,float y,float z);
@@ -85,9 +86,9 @@ void __cdecl core_dcube_cpp_CDemonCubeTriangle_writeToFile_FUN_00455250(CDemonCu
 void __cdecl core_dcube_cpp_CDemonCubeTriangle_calculateNormalAndPlane_FUN_004552c0(CDemonCubeTriangle *this_ptr);
 void __cdecl core_dcube_cpp_CDemonCubeTriangle_init_FUN_00455430(CDemonCubeTriangle *this_ptr,CVector3f *vertex0,CVector3f *vertex1, CVector3f *vertex2);
 float __cdecl core_dcube_cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_00455460(CDemonCubeTriangle *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction);
-int __cdecl core_dcube_cpp_intersectXZCapsule_FUN_004556b0(SIntersectXZCylinder *cylinder);
-int __cdecl core_dcube_cpp_intersectXZCapsuleWithHeight_FUN_00455990(SIntersectXZCylinder *cylinder,CVector3f *segment_start,CVector3f *segment_end);
-uint __cdecl core_dcube_cpp_intersectTriangleWithXZCapsule_FUN_00455a30(CVector3f **triangle_vertices,SIntersectXZCylinder *cylinder);
+int __cdecl core_dcube_cpp_intersectXZCylinder_FUN_004556b0(SIntersectXZCylinder *cylinder);
+int __cdecl core_dcube_cpp_intersectXZCylinderWithHeight_FUN_00455990(SIntersectXZCylinder *cylinder,CVector3f *segment_start,CVector3f *segment_end);
+uint __cdecl core_dcube_cpp_intersectTriangleWithXZCylinder_FUN_00455a30(STriangleRef *triangle,SIntersectXZCylinder *cylinder);
 uint __cdecl core_dcube_cpp_intersectVerticalCylinderSegment_FUN_00455ed0(CVector3f *segment_start,CVector3f *segment_end,float radius,float *out_height);
 uint __cdecl core_dcube_cpp_triangleCylinderCollision_FUN_00456040(CDemonCubeTriangle *triangle,CVector3f *cylinder_center,float cylinder_radius, float *out_height);
 uint __cdecl core_dcube_cpp_clipTriangleToAABB_FUN_00456400(CVector3f **triangle_vertices,CVector3f *aabb_min,CVector3f *aabb_max);
@@ -105,7 +106,7 @@ void __cdecl core_dcube_cpp_CDemonCube_save_FUN_00457430(CDemonCube *this_ptr,_F
 void __cdecl core_dcube_cpp_CDemonCube_load_FUN_00457530(CDemonCube *this_ptr,_FILE *file_handle);
 void __cdecl core_dcube_cpp_CDemonCube_rotateVertices_FUN_00457650(CDemonCube *this_ptr,uint rendering_mode);
 float __cdecl core_dcube_cpp_CDemonCube_rayIntersectTriangles_FUN_004578f0(CDemonCube *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction, CVector3f *hit_normal,uint *hit_material);
-void __cdecl core_dcube_cpp_CDemonCube_testCapsuleCollision_FUN_00457a90(CDemonCube *this_ptr,SIntersectXZCylinder *capsule_data);
+void __cdecl core_dcube_cpp_CDemonCube_testCylinderCollision_FUN_00457a90(CDemonCube *this_ptr,SIntersectXZCylinder *cylinder);
 int __cdecl core_dcube_cpp_CDemonCube_testCylinderGroundCollision_FUN_00457b60(CDemonCube *this_ptr,CVector3f *cylinder_position,float cylinder_radius, CVector3f *output_height,CVector3f *output_normal,uint *output_material);
 int __cdecl core_dcube_cpp_CDemonCube_testAABBIntersection_FUN_00457ca0(CDemonCube *this_ptr,CVector3f *aabb_min,CVector3f *aabb_max);
 void __cdecl core_dcube_cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0(CDemonCube *this_ptr);

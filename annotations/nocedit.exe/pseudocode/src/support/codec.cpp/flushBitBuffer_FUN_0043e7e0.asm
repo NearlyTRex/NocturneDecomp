@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl support_codec_cpp_flushBitBuffer_FUN_0043e7e0(SBitBuffer *bit_buffer,_FILE *output_stream)
+; void __cdecl support_codec_cpp_flushBitBuffer_FUN_0043e7e0(SBitBuffer *bit_buffer,_ostream *ostream)
 ;
 ; Parameters:
 ; SBitBuffer *     Stack[0x4]:4   bit_buffer
-; _FILE *          Stack[0x8]:4   output_stream
+; _ostream *       Stack[0x8]:4   ostream
 ;
 ; XREF[1]:
 ;   support_codec.cpp_CLZWCompress_finalize_FUN_0043f440 at 0043f456
@@ -33,7 +33,7 @@ section .text
     PUSH EAX                            ; 0043e7f7
     PUSH ESI                            ; 0043e7f8
     CALL crt_iostream.cpp_ostream_put_FUN_005ff2d7 ; 0043e7f9
-        ;   XREF to: 005ff2d7 (UNCONDITIONAL_CALL)  ; ostream * crt_iostream.cpp_ostream_put_FUN_005ff2d7(ostream * this_ptr, int character)
+        ;   XREF to: 005ff2d7 (UNCONDITIONAL_CALL)  ; _ostream * crt_iostream.cpp_ostream_put_FUN_005ff2d7(_ostream * this_ptr, int character)
     MOV ECX,dword ptr [EBX + 0x4]       ; 0043e7fe
     MOV EDI,dword ptr [EBX]             ; 0043e801
     SHR ECX,0x8                         ; 0043e803
@@ -58,7 +58,7 @@ section .text
     PUSH EAX                            ; 0043e824
     PUSH ESI                            ; 0043e825
     CALL crt_iostream.cpp_ostream_put_FUN_005ff2d7 ; 0043e826
-        ;   XREF to: 005ff2d7 (UNCONDITIONAL_CALL)  ; ostream * crt_iostream.cpp_ostream_put_FUN_005ff2d7(ostream * this_ptr, int character)
+        ;   XREF to: 005ff2d7 (UNCONDITIONAL_CALL)  ; _ostream * crt_iostream.cpp_ostream_put_FUN_005ff2d7(_ostream * this_ptr, int character)
     MOV dword ptr [EBX + 0x4],0x0       ; 0043e82b
     ADD ESP,0x8                         ; 0043e832
     MOV dword ptr [EBX],0x0             ; 0043e835

@@ -9,17 +9,12 @@
 void __cdecl core_melee_cpp_CMelee_FUN_0050ebe0(CMelee *this_ptr)
 
 {
-  uint uVar1;
-  uint in_stack_00000008;
-  uint in_stack_0000000c;
+  int in_stack_00000008;
+  int in_stack_0000000c;
   
-  this_ptr->unk1[0xc] = '\0';
-  this_ptr->unk1[0xd] = '\0';
-  this_ptr->unk1[0xe] = -0x80;
-  this_ptr->unk1[0xf] = '?';
-  uVar1 = *(uint *)(this_ptr->unk1 + 0xc);
-  *(uint *)this_ptr->unk1 = in_stack_0000000c;
-  *(uint *)(this_ptr->unk1 + 8) = uVar1;
-  *(uint *)(this_ptr->unk1 + 4) = in_stack_00000008;
+  this_ptr->blood_spurt_interval = 1.0;
+  this_ptr->blood_gore_type = in_stack_0000000c;
+  this_ptr->blood_spurt_timer = this_ptr->blood_spurt_interval;
+  this_ptr->blood_spurt_count = in_stack_00000008;
   return;
 }

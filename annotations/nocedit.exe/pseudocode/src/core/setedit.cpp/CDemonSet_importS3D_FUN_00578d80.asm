@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_setedit_cpp_CDemonSet_importS3D_FUN_00578d80(CDemonSet *this_ptr)
+; void __cdecl core_setedit_cpp_CDemonSet_importS3D_FUN_00578d80(CDemonSet *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CDemonSet *      Stack[0x4]:4   this_ptr
+; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
 ; undefined4       Stack[-0x2478]:4  local_2478
 ; undefined1       Stack[-0x2474]:1  local_2474
@@ -92,7 +93,7 @@
 ; undefined1       Stack[-0x14]:1  local_14
 ;
 ; XREF[1]:
-;   core_setedit.cpp_CDemonSet_FUN_00578a20 at 00578c0d
+;   core_setedit.cpp_CDemonSet_importSet_FUN_00578a20 at 00578c0d
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Import_geometry_00646bd8
@@ -123,11 +124,11 @@
 ;   core_set.cpp_CDemonSet_clear_FUN_005693c0
 ;   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470
 ;   core_setdir.cpp_CDemonSet_saveThumbs_FUN_00575f60
-;   core_setedit.cpp_CDemonSet_FUN_005805a0
-;   core_setedit.cpp_FUN_00578290
-;   core_setedit.cpp_FUN_00578420
-;   core_setedit.cpp_FUN_00578630
-;   core_setedit.cpp_FUN_00578c90
+;   core_setedit.cpp_addGroundType_FUN_00578290
+;   core_setedit.cpp_CDemonSet_rebuildAllFogAndPVS_FUN_005805a0
+;   core_setedit.cpp_editGroundTypes_FUN_00578630
+;   core_setedit.cpp_loadGroundTypes_FUN_00578420
+;   core_setedit.cpp_promptYesNo_FUN_00578c90
 ;   ... and 30 more
 ;
 ; *****************************************************************************
@@ -145,8 +146,8 @@ section .text
     PUSH 0x1                            ; 00578d8f
     PUSH 0x646bd8                       ; 00578d91 | = "Import geometry"
     PUSH 0x0                            ; 00578d96
-    CALL core_setedit.cpp_FUN_00578c90  ; 00578d98
-        ;   XREF to: 00578c90 (UNCONDITIONAL_CALL)  ; int core_setedit.cpp_FUN_00578c90()
+    CALL core_setedit.cpp_promptYesNo_FUN_00578c90 ; 00578d98
+        ;   XREF to: 00578c90 (UNCONDITIONAL_CALL)  ; int core_setedit.cpp_promptYesNo_FUN_00578c90(int screen_y, char * prompt, int default_yes)
     ADD ESP,0xc                         ; 00578d9d
     MOV dword ptr [ESP + 0x2400],EAX    ; 00578da0
     TEST EAX,EAX                        ; 00578da7
@@ -163,8 +164,8 @@ section .text
         ;   Label: LAB_00578db6
     PUSH 0x646be8                       ; 00578db8 | = "Import omni lights"
     PUSH 0xb                            ; 00578dbd
-    CALL core_setedit.cpp_FUN_00578c90  ; 00578dbf
-        ;   XREF to: 00578c90 (UNCONDITIONAL_CALL)  ; int core_setedit.cpp_FUN_00578c90()
+    CALL core_setedit.cpp_promptYesNo_FUN_00578c90 ; 00578dbf
+        ;   XREF to: 00578c90 (UNCONDITIONAL_CALL)  ; int core_setedit.cpp_promptYesNo_FUN_00578c90(int screen_y, char * prompt, int default_yes)
     ADD ESP,0xc                         ; 00578dc4
     MOV EBX,EAX                         ; 00578dc7
     MOV dword ptr [ESP + 0x2404],EAX    ; 00578dc9
@@ -174,8 +175,8 @@ section .text
     PUSH 0x1                            ; 00578dd4
     PUSH 0x646bfb                       ; 00578dd6 | = "Import spot lights"
     PUSH 0x16                           ; 00578ddb
-    CALL core_setedit.cpp_FUN_00578c90  ; 00578ddd
-        ;   XREF to: 00578c90 (UNCONDITIONAL_CALL)  ; int core_setedit.cpp_FUN_00578c90()
+    CALL core_setedit.cpp_promptYesNo_FUN_00578c90 ; 00578ddd
+        ;   XREF to: 00578c90 (UNCONDITIONAL_CALL)  ; int core_setedit.cpp_promptYesNo_FUN_00578c90(int screen_y, char * prompt, int default_yes)
     ADD ESP,0xc                         ; 00578de2
     MOV ESI,EAX                         ; 00578de5
     MOV dword ptr [ESP + 0x2408],EAX    ; 00578de7
@@ -185,8 +186,8 @@ section .text
     PUSH 0x1                            ; 00578df2
     PUSH 0x646c0e                       ; 00578df4 | = "Import cameras"
     PUSH 0x21                           ; 00578df9
-    CALL core_setedit.cpp_FUN_00578c90  ; 00578dfb
-        ;   XREF to: 00578c90 (UNCONDITIONAL_CALL)  ; int core_setedit.cpp_FUN_00578c90()
+    CALL core_setedit.cpp_promptYesNo_FUN_00578c90 ; 00578dfb
+        ;   XREF to: 00578c90 (UNCONDITIONAL_CALL)  ; int core_setedit.cpp_promptYesNo_FUN_00578c90(int screen_y, char * prompt, int default_yes)
     ADD ESP,0xc                         ; 00578e00
     MOV dword ptr [ESP + 0x240c],EAX    ; 00578e03
     TEST EAX,EAX                        ; 00578e0a
@@ -809,8 +810,8 @@ section .text
         ;   XREF to: 0057950a (CONDITIONAL_JUMP)  ; LAB_0057950a
     MOV EBX,dword ptr [ESP + 0x247c]    ; 005794fa
     PUSH EBX                            ; 00579501
-    CALL core_setedit.cpp_CDemonSet_FUN_005805a0 ; 00579502
-        ;   XREF to: 005805a0 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_CDemonSet_FUN_005805a0(CDemonSet * this_ptr)
+    CALL core_setedit.cpp_CDemonSet_rebuildAllFogAndPVS_FUN_005805a0 ; 00579502
+        ;   XREF to: 005805a0 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_CDemonSet_rebuildAllFogAndPVS_FUN_005805a0(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 00579507
     PUSH 0x6472ed                       ; 0057950a | = "CDemonSet::importS3D completed OK"
         ;   Label: LAB_0057950a
@@ -938,7 +939,7 @@ section .text
     PUSH EAX                            ; 00579684
     XOR EDX,EDX                         ; 00579685
     PUSH 0x6816d8                       ; 00579687 | = ".\\GroundTypes"
-    MOV dword ptr [0x03654368],EDX      ; 0057968c | DAT_03654368
+    MOV dword ptr [0x03654368],EDX      ; 0057968c | g_GroundTextureCount
     CALL engine_dosio.c_ensureTrailingSlash_FUN_00481f80 ; 00579692
         ;   XREF to: 00481f80 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_ensureTrailingSlash_FUN_00481f80(char * input_path, char * drive, char * output_path)
     ADD ESP,0xc                         ; 00579697
@@ -966,8 +967,8 @@ section .text
     ADD ESP,0x14                        ; 005796e2
     LEA EAX,[ESP + 0x1dd0]              ; 005796e5
     PUSH EAX                            ; 005796ec
-    CALL core_setedit.cpp_FUN_00578420  ; 005796ed
-        ;   XREF to: 00578420 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_FUN_00578420()
+    CALL core_setedit.cpp_loadGroundTypes_FUN_00578420 ; 005796ed
+        ;   XREF to: 00578420 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_loadGroundTypes_FUN_00578420(char * filename)
     ADD ESP,0x4                         ; 005796f2
     PUSH 0x646e83                       ; 005796f5 | = "Reading textures"
     MOV EBX,dword ptr [0x00678a60]      ; 005796fa | g_CEditorToolsInstance | g_CEditorToolsPtr
@@ -1063,16 +1064,16 @@ section .text
     XOR EBX,EBX                         ; 005797d6
     CALL engine_dosio.c_splitPath_FUN_00481f20 ; 005797d8
         ;   XREF to: 00481f20 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_splitPath_FUN_00481f20(char * full_path, char * drive, char * directory, char * filename, ...)
-    MOV ESI,dword ptr [0x03654368]      ; 005797dd | DAT_03654368
+    MOV ESI,dword ptr [0x03654368]      ; 005797dd | g_GroundTextureCount
     ADD ESP,0x14                        ; 005797e3
     TEST ESI,ESI                        ; 005797e6
     JLE 0x00579937                      ; 005797e8
         ;   XREF to: 00579937 (CONDITIONAL_JUMP)  ; LAB_00579937
-    MOV ESI,0x3654370                   ; 005797ee | DAT_03654370
+    MOV ESI,0x3654370                   ; 005797ee | g_GroundTextureNames
     LEA EAX,[ESP + 0x1fd8]              ; 005797f3
         ;   Label: LAB_005797f3
     PUSH EAX                            ; 005797fa
-    PUSH ESI                            ; 005797fb | DAT_03654370 | DAT_03654398
+    PUSH ESI                            ; 005797fb | g_GroundTextureNames | DAT_03654398
     CALL crt_string.c_stricmp_FUN_005fe7f0 ; 005797fc
         ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 00579801
@@ -1082,7 +1083,7 @@ section .text
     TEST EBX,EBX                        ; 0057980c
     JL 0x00579937                       ; 0057980e
         ;   XREF to: 00579937 (CONDITIONAL_JUMP)  ; LAB_00579937
-    MOV AL,byte ptr [EBX + 0x3659190]   ; 00579814 | DAT_03659190
+    MOV AL,byte ptr [EBX + 0x3659190]   ; 00579814 | g_GroundTextureTypes
     MOV dword ptr [EDI + 0x3364d18],EAX ; 0057981a | DAT_03364d18
         ;   Label: LAB_0057981a
     TEST EAX,EAX                        ; 00579820
@@ -1148,8 +1149,8 @@ section .text
         ;   XREF to: 00579a7e (CONDITIONAL_JUMP)  ; LAB_00579a7e
     LEA EAX,[ESP + 0x1dd0]              ; 005798e5
     PUSH EAX                            ; 005798ec
-    CALL core_setedit.cpp_FUN_00578630  ; 005798ed
-        ;   XREF to: 00578630 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_FUN_00578630()
+    CALL core_setedit.cpp_editGroundTypes_FUN_00578630 ; 005798ed
+        ;   XREF to: 00578630 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_editGroundTypes_FUN_00578630(char * filename)
     ADD ESP,0x4                         ; 005798f2
     PUSH 0x0                            ; 005798f5
     MOV EAX,dword ptr [ESP + 0x2448]    ; 005798f7
@@ -1167,7 +1168,7 @@ section .text
     ADD ESP,0x8                         ; 0057991e
     JMP 0x00579675                      ; 00579921
         ;   XREF to: 00579675 (UNCONDITIONAL_JUMP)  ; LAB_00579675
-    MOV EAX,[0x03654368]                ; 00579926 | DAT_03654368
+    MOV EAX,[0x03654368]                ; 00579926 | g_GroundTextureCount
         ;   Label: LAB_00579926
     INC EBX                             ; 0057992b
     ADD ESI,0x28                        ; 0057992c
@@ -1202,8 +1203,8 @@ section .text
     PUSH EAX                            ; 0057997b
     MOV ESI,0x1                         ; 0057997c
     MOV dword ptr [EDI + 0x3364d18],ECX ; 00579981 | DAT_03364d18
-    CALL core_setedit.cpp_FUN_00578290  ; 00579987
-        ;   XREF to: 00578290 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_FUN_00578290()
+    CALL core_setedit.cpp_addGroundType_FUN_00578290 ; 00579987
+        ;   XREF to: 00578290 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_addGroundType_FUN_00578290(char * filename, int ground_type)
     ADD ESP,0x8                         ; 0057998c
     MOV dword ptr [ESP + 0x2448],ESI    ; 0057998f
     JMP 0x00579835                      ; 00579996

@@ -277,7 +277,8 @@ void __cdecl wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823(SEdg
                      (short)(uVar34 >> 0x10) + (ushort)(byte)uVar44 * SVar1.green;
             uVar27 = (short)(uVar25 >> 8) * (short)(uVar34 >> 0x20) +
                      (short)CONCAT21(uVar38,(char)uVar35) * SVar1.blue;
-            uVar31 = (short)(uVar25 >> 0x18) * (short)(uVar34 >> 0x30) + (uVar38 >> 8) * SVar1.pad;
+            uVar31 = (short)(uVar25 >> 0x18) * (short)(uVar34 >> 0x30) +
+                     (uVar38 >> 8) * SVar1.alignment;
             uVar26 = uVar24 >> 8;
             uVar30 = uVar29 >> 8;
             uVar28 = uVar27 >> 8;
@@ -379,7 +380,7 @@ void __cdecl wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823(SEdg
                 ;
                 uVar29 = uVar29 >> 8;
                 if (g_BlendMode == 0) {
-                  uVar23 = paddusw(CONCAT26(uVar29 * SVar1.pad,
+                  uVar23 = paddusw(CONCAT26(uVar29 * SVar1.alignment,
                                             CONCAT24(sVar37 * SVar1.blue,
                                                      CONCAT22(uVar30 * SVar1.green,
                                                               uVar26 * SVar1.red))),
@@ -406,7 +407,7 @@ void __cdecl wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823(SEdg
                 }
                 else {
                   uVar23 = psllw((ulonglong)CONCAT52(uVar8,(ushort)(byte)uVar36),8);
-                  uVar23 = paddusw(CONCAT26(uVar29 * SVar1.pad,
+                  uVar23 = paddusw(CONCAT26(uVar29 * SVar1.alignment,
                                             CONCAT24(sVar37 * SVar1.blue,
                                                      CONCAT22(uVar30 * SVar1.green,
                                                               uVar26 * SVar1.red))),uVar23);
@@ -522,7 +523,7 @@ void __cdecl wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823(SEdg
                                           (char)((ulonglong)uVar23 >> 0x20) - (0xff < sVar41));
           uVar24 = uVar24 >> 8;
           if (g_BlendMode == 0) {
-            uVar23 = paddusw(CONCAT26(uVar24 * SVar1.pad,
+            uVar23 = paddusw(CONCAT26(uVar24 * SVar1.alignment,
                                       CONCAT24(sVar37 * SVar1.blue,
                                                CONCAT22(uVar26 * SVar1.green,uVar21 * SVar1.red))),
                              CONCAT26((short)(uVar44 >> 0x30) * (short)(uVar35 >> 0x30),
@@ -545,7 +546,7 @@ void __cdecl wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823(SEdg
           }
           else {
             uVar23 = psllw(uVar44,8);
-            uVar23 = paddusw(CONCAT26(uVar24 * SVar1.pad,
+            uVar23 = paddusw(CONCAT26(uVar24 * SVar1.alignment,
                                       CONCAT24(sVar37 * SVar1.blue,
                                                CONCAT22(uVar26 * SVar1.green,uVar21 * SVar1.red))),
                              uVar23);

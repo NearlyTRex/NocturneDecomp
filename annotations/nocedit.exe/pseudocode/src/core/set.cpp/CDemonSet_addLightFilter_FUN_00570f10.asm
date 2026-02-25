@@ -1,10 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_set_cpp_CDemonSet_addLightFilter_FUN_00570f10(CDemonSet *this_ptr)
+; void __cdecl core_set_cpp_CDemonSet_addLightFilter_FUN_00570f10(CDemonSet *this_ptr,char *light_name,C3DSLight **out_light,CDemonLight **out_master_light)
 ;
 ; Parameters:
 ; CDemonSet *      Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   light_name
+; C3DSLight * *    Stack[0xc]:4   out_light
+; CDemonLight * *  Stack[0x10]:4   out_master_light
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;

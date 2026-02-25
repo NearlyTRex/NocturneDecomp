@@ -12,18 +12,17 @@ void __cdecl core_gargoyle_cpp_CGargoyle_processDamage_FUN_004e57d0(CGargoyle *t
   CDeformableModelInstance *this_ptr_00;
   float fVar1;
   SMotion *pSVar2;
-  uint uVar3;
-  int iVar4;
+  int iVar3;
   CVector3f local_1c;
   
-  iVar4 = 0;
+  iVar3 = 0;
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
             ((CDemonActor *)this_ptr,&local_1c,&damage_info->impact_direction);
   do {
-    iVar4 = iVar4 + 1;
+    iVar3 = iVar3 + 1;
     core_fire_cpp_CFireEffect_createSpark_FUN_004c79d0
               (g_CFireEffectPtr,&local_1c,(CVector3f *)0x0,0x10000,0x8000,0,0xffff);
-  } while (iVar4 < 3);
+  } while (iVar3 < 3);
   this_ptr_00 = &(this_ptr->base).base.model;
   pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                      (&this_ptr_00->motion_controller);
@@ -32,17 +31,17 @@ void __cdecl core_gargoyle_cpp_CGargoyle_processDamage_FUN_004e57d0(CGargoyle *t
     fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
     (this_ptr->base).base.hit_points = fVar1;
     if (0.0 < fVar1) {
-      iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)this_ptr->unk2);
-      if (iVar4 == 0) {
-        uVar3 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
+      iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->unk2);
+      if (iVar3 == 0) {
+        iVar3 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                           ((CDemonActor *)this_ptr,"gargoyle-hurt?.wav");
-        *(uint *)this_ptr->unk2 = uVar3;
+        this_ptr->unk2 = iVar3;
         core_enemy_cpp_CEnemy_processDamage_FUN_004a9f10(&this_ptr->base,damage_info);
         return;
       }
     }
     else {
-      sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)this_ptr->unk2);
+      sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->unk2);
       (this_ptr->base).base.hit_points = 0.0;
       pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                          (&this_ptr_00->motion_controller);

@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl support_codec_cpp_CLZWCompress_process_FUN_0043f360(CLZWCompress *this_ptr,_FILE *input_file,int byte_count,_FILE *output_file)
+; int __cdecl support_codec_cpp_CLZWCompress_process_FUN_0043f360(CLZWCompress *this_ptr,_istream *istream,int byte_count,_ostream *ostream)
 ;
 ; Parameters:
 ; CLZWCompress *   Stack[0x4]:4   this_ptr
-; _FILE *          Stack[0x8]:4   input_file
+; _istream *       Stack[0x8]:4   istream
 ; int              Stack[0xc]:4   byte_count
-; _FILE *          Stack[0x10]:4   output_file
+; _ostream *       Stack[0x10]:4   ostream
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined1       Stack[-0x14]:1  local_14
@@ -67,7 +67,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x24]      ; 0043f3ac
     PUSH ECX                            ; 0043f3b0
     CALL crt_iostream.cpp_istream_get_FUN_005ff245 ; 0043f3b1
-        ;   XREF to: 005ff245 (UNCONDITIONAL_CALL)  ; istream * crt_iostream.cpp_istream_get_FUN_005ff245(istream * this_ptr, char * c)
+        ;   XREF to: 005ff245 (UNCONDITIONAL_CALL)  ; _istream * crt_iostream.cpp_istream_get_FUN_005ff245(_istream * this_ptr, char * c)
     ADD ESP,0x8                         ; 0043f3b6
     MOV EAX,dword ptr [ESP + 0x20]      ; 0043f3b9
     MOV EAX,dword ptr [EAX]             ; 0043f3bd
@@ -93,7 +93,7 @@ section .text
     PUSH EAX                            ; 0043f3eb
     PUSH EDI                            ; 0043f3ec
     CALL support_codec.cpp_CLZWDictionary_writeCodeBits_FUN_0043f170 ; 0043f3ed
-        ;   XREF to: 0043f170 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_CLZWDictionary_writeCodeBits_FUN_0043f170(CLZWDictionary * this_ptr, int code_value, SBitBuffer * bit_buffer, _FILE * output_stream)
+        ;   XREF to: 0043f170 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_CLZWDictionary_writeCodeBits_FUN_0043f170(CLZWDictionary * this_ptr, int code_value, SBitBuffer * bit_buffer, _ostream * ostream)
     MOV EDX,dword ptr [EBX + 0x34]      ; 0043f3f2
     ADD ESP,0x10                        ; 0043f3f5
     TEST EDX,EDX                        ; 0043f3f8

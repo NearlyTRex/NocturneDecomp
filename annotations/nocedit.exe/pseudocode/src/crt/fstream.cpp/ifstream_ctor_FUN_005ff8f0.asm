@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; ifstream * __cdecl crt_fstream_cpp_ifstream_ctor_FUN_005ff8f0(ifstream *this_ptr,int c1)
+; ifstream * __cdecl crt_fstream_cpp_ifstream_ctor_FUN_005ff8f0(void *this_ptr,int c1)
 ;
 ; Parameters:
-; ifstream *       Stack[0x4]:4   this_ptr
+; void *           Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   c1
 ;
 ; XREF[2]:
@@ -42,7 +42,7 @@ section .text
     ADD EAX,0x44                        ; 005ff908
     PUSH EAX                            ; 005ff90b
     CALL crt_iostream.cpp_istream_ctor_FUN_00606376 ; 005ff90c
-        ;   XREF to: 00606376 (UNCONDITIONAL_CALL)  ; istream * crt_iostream.cpp_istream_ctor_FUN_00606376(istream * this_ptr, uint c1)
+        ;   XREF to: 00606376 (UNCONDITIONAL_CALL)  ; _istream * crt_iostream.cpp_istream_ctor_FUN_00606376(_istream * this_ptr, uint c1)
     SUB EAX,0x44                        ; 005ff911
     MOV EDX,dword ptr [EAX]             ; 005ff914
     MOV EDX,dword ptr [EDX + 0x4]       ; 005ff916

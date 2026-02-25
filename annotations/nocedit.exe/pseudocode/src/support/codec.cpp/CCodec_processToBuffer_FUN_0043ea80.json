@@ -1,14 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 31,
-        "line": 19,
-        "message": "cannot initialize a parameter of type 'struct _FILE *' with an lvalue of type 'void *'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
@@ -34,7 +27,7 @@
     ],
     "convention": "__cdecl",
     "name": "support_codec.cpp_CCodec_processToBuffer_FUN_0043ea80",
-    "signature": "int __cdecl support_codec_cpp_CCodec_processToBuffer_FUN_0043ea80(CCodec *this_ptr,void *input_param,void *context_param,char *output_buffer,int *output_size,int enable_finalize)"
+    "signature": "int __cdecl support_codec_cpp_CCodec_processToBuffer_FUN_0043ea80(CCodec *this_ptr,_istream *ifstream,int byte_count,char *output_buffer,int *output_size,int enable_finalize)"
   },
   "function_calls": [
     {
@@ -116,15 +109,8 @@
         "is_param": false,
         "name": "local_90",
         "offset": -144,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_48",
-        "offset": -72,
-        "size": 1,
-        "type": "undefined1"
+        "size": 128,
+        "type": "_ostrstream"
       },
       {
         "is_param": true,
@@ -135,17 +121,17 @@
       },
       {
         "is_param": true,
-        "name": "input_param",
+        "name": "ifstream",
         "offset": 8,
         "size": 4,
-        "type": "void *"
+        "type": "_istream *"
       },
       {
         "is_param": true,
-        "name": "context_param",
+        "name": "byte_count",
         "offset": 12,
         "size": 4,
-        "type": "void *"
+        "type": "int"
       },
       {
         "is_param": true,

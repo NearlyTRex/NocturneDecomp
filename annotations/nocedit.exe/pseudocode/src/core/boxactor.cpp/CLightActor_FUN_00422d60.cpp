@@ -48,7 +48,7 @@ void __cdecl core_boxactor_cpp_CLightActor_FUN_00422d60(CLightActor *this_ptr)
       (this_ptr->light_orient).vec.y = (this_ptr->light_orient).vec.z;
       (this_ptr->light_orient).vec.x = (this_ptr->light_orient).vec.y;
       (this_ptr->light).light_enabled_flag = 0;
-      (local_18->base).base.projection_scale = 56.0;
+      (local_18->base).base.focal_length = 56.0;
       (this_ptr->light).base.max_distance = 32.0;
       (this_ptr->base).pickup_type = 3;
       return;
@@ -79,7 +79,7 @@ void __cdecl core_boxactor_cpp_CLightActor_FUN_00422d60(CLightActor *this_ptr)
       (this_ptr->light_orient).vec.x = (this_ptr->light_orient).vec.y;
       (this_ptr->light_orient).vec.x = 0.2617994;
       (this_ptr->light).light_enabled_flag = 0;
-      (local_18->base).base.projection_scale = 56.0;
+      (local_18->base).base.focal_length = 56.0;
       (this_ptr->light).base.max_distance = 32.0;
       iVar3 = DAT_008229ac;
       (this_ptr->base).pickup_type = 3;

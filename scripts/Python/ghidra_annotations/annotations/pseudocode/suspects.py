@@ -38,6 +38,7 @@ SUSPECT_SEVERITY = {
     'badspacebase': 'severe',
     'warning_spacebase': 'severe',
     'warning_max_restarts': 'severe',
+    'decompilation_failed': 'severe',
     # Moderate: significant artifacts, partially readable
     'double_reconstruction': 'moderate',
     'sub84_truncation': 'moderate',
@@ -100,6 +101,8 @@ def has_only_safe_suspects(suspects):
 # Patterns that indicate potential issues in decompiled code
 # Format: (pattern_string, issue_type, description)
 _SUSPECT_PATTERN_DEFS = [
+    # Decompilation failed or timed out - no usable output
+    (r'Decompilation failed or timed out', 'decompilation_failed', 'Decompilation failed or timed out'),
     # BADSPACEBASE - Ghidra couldn't resolve the stack frame
     (r'\bBADSPACEBASE\b', 'badspacebase', 'Ghidra failed to resolve stack frame'),
     # in_stack_XXXX - Stack parameters that Ghidra couldn't properly identify

@@ -36,7 +36,7 @@ void __cdecl core_dlight_cpp_CDemonLight_beginBackgroundScene_FUN_00472e40(CDemo
       ppvVar4 = (void **)((int)ppvVar4 + (uint)bVar6 * -2 + 1);
       ppvVar5 = (void **)((int)ppvVar5 + (uint)bVar6 * -2 + 1);
     }
-    if (this_ptr->restore_memory_size == 0) {
+    if (this_ptr->master_zbuffer == (void *)0x0) {
       g_CurrentFilename = "..\\core\\dlight.cpp";
       g_CurrentLineNumber = 0x1bc;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonLight::beginBackgroundScene - No master Z buffer");
@@ -45,8 +45,8 @@ void __cdecl core_dlight_cpp_CDemonLight_beginBackgroundScene_FUN_00472e40(CDemo
     if (0 < this_ptr->shadow_map_height) {
       iVar3 = 0;
       do {
-        *(int *)((int)g_ScreenBufferArray + iVar3) =
-             this_ptr->restore_memory_size + this_ptr->shadow_map_width * iVar2 * 2;
+        *(void **)((int)g_ScreenBufferArray + iVar3) =
+             (void *)((int)this_ptr->master_zbuffer + this_ptr->shadow_map_width * iVar2 * 2);
         iVar2 = iVar2 + 1;
         iVar3 = iVar3 + 4;
       } while (iVar2 < this_ptr->shadow_map_height);

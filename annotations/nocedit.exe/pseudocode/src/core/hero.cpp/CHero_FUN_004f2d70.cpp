@@ -32,10 +32,10 @@ int __cdecl core_hero_cpp_CHero_FUN_004f2d70(CHero *this_ptr)
                                      (*(CDemonActor **)((int)g_CDemonSetPtr->actors + local_14),
                                       g_CDoorClassInfo.name_hash);
     if ((this_ptr_00 != (CDoor *)0x0) && (this_ptr_00->door_state == 0)) {
-      fVar3 = (this_ptr->base).base.location.position.x - *(float *)this_ptr_00->unk3;
+      fVar3 = (this_ptr->base).base.location.position.x - (this_ptr_00->open_position).x;
       fVar1 = (this_ptr->base).base.location.position.y;
-      fVar2 = *(float *)(this_ptr_00->unk3 + 4);
-      fVar4 = (this_ptr->base).base.location.position.z - *(float *)(this_ptr_00->unk3 + 8);
+      fVar2 = (this_ptr_00->open_position).y;
+      fVar4 = (this_ptr->base).base.location.position.z - (this_ptr_00->open_position).z;
       pCVar5 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                          ((CDemonActor *)this_ptr,&local_24,&(this_ptr_00->base).location.position);
       if ((0.0 < pCVar5->z) &&

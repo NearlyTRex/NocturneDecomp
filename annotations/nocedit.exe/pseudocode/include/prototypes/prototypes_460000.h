@@ -11,12 +11,12 @@
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
 #include "types/structs/SCollisionInfo.h"
-#include "types/structs/SCramConfig.h"
+#include "types/structs/SCram.h"
 #include "types/structs/SMRGLHeaderExtended.h"
 #include "types/structs/SMRGLKeyframeModel.h"
 #include "types/structs/SShapeEditorPolygon.h"
 #include "types/structs/SSpatialTreeNode.h"
-#include "types/structs/STextureLoadConfig.h"
+#include "types/structs/STextureAtlasEntry.h"
 #include "types/structs/STreeNode.h"
 #include "types/structs/SVertexPair.h"
 
@@ -101,7 +101,7 @@ void __cdecl shape_design_c_sizeModelInOneDimension_FUN_00469850(void);
 void __cdecl shape_design_c_crushModel_FUN_00469bd0(void);
 void __cdecl shape_design_c_sizeForStadium_FUN_00469c70(void);
 void __cdecl shape_design_c_combineTextureMaps_FUN_00469ee0(void);
-void __cdecl shape_design_c_tileTextureMaps_FUN_0046a180(char *model_name,int prompt_for_model);
+void __cdecl shape_design_c_tileTextureMaps_FUN_0046a180(SCram *cram,int prompt_for_model);
 int __cdecl shape_design_c_getLastTextureProcessIndex_FUN_0046a860(void);
 void __cdecl shape_design_c_initializeTextureManager_FUN_0046a880(int initialization_mode);
 void __cdecl shape_design_c_setTextureQualityParameter_FUN_0046a8e0(int texture_quality_param);
@@ -113,11 +113,11 @@ int __cdecl shape_design_c_wrapCoordinate_FUN_0046acc0(int coordinate,int dimens
 void __cdecl shape_design_c_samplePixelAndAccumulate_FUN_0046ad00(void *rgb_buffer,void *alpha_buffer,int atlas_width,int atlas_height,int pixel_x, int pixel_y,double weight,double *red_accumulator,double *green_accumulator, double *blue_accumulator,double *alpha_accumulator);
 double __cdecl shape_design_c_calculateSamplingWeight_FUN_0046adc0(double current_pos,double start_coord,double end_coord);
 void __cdecl shape_design_c_sampleAndFilterPixel_FUN_0046ae20(void *rgb_buffer,void *alpha_buffer,int col_coord,int row_coord,double coord_x1, double coord_y1,double coord_x2,double coord_y2,int atlas_width,int atlas_height, byte *red_out,byte *green_out,byte *blue_out,byte *alpha_out);
-void __cdecl shape_design_c_loadTextureData_FUN_0046b060(STextureLoadConfig *config_ptr,void *rgb_buffer,void *alpha_buffer,int atlas_width, int atlas_height);
-void __cdecl shape_design_c_initializeCramConfig_FUN_0046b6e0(SCramConfig *cram_config);
+void __cdecl shape_design_c_loadTextureData_FUN_0046b060(STextureAtlasEntry *entry,uchar *rgb_buffer,uchar *alpha_buffer,int atlas_width, int atlas_height);
+void __cdecl shape_design_c_initializeCram_FUN_0046b6e0(SCram *cram);
 void __cdecl shape_design_c_quantizePaletteColors_FUN_0046b770(byte *image_data,int pixel_count,int stride,byte *palette_data,int mode_flag, char *bit_mask);
 void __cdecl shape_design_c_embedCopyrightWatermark_FUN_0046b9a0(void *image_buffer,char *output_filename,int texture_size);
-int __cdecl shape_design_c_cramTextureList_FUN_0046bb80(SCramConfig *cram_config);
+int __cdecl shape_design_c_cramTextureList_FUN_0046bb80(SCram *cram);
 int __cdecl shape_design_c_findTextureByFilename_FUN_0046dfc0(char *filename);
 int __cdecl shape_design_c_getAtlasMapIndex_FUN_0046e030(int texture_entry_index);
 char * __cdecl shape_design_c_getTextureName_FUN_0046e060(int texture_index);

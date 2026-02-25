@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   blue
 ;
 ; XREF[1]:
-;   core_setedit.cpp_CDemonSet_FUN_00577af0 at 00578135
+;   core_setedit.cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0 at 00578135
 ;
 ; Referenced Globals:
 ;   int g_BitsPerPixel = 0x8

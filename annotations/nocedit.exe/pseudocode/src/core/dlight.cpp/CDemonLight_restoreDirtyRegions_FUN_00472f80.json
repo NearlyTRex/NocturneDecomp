@@ -6,13 +6,13 @@
   },
   "complexity": {
     "assembly_lines": 280,
-    "complexity_score": 270,
+    "complexity_score": 280,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 9,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 135,
-    "suspect_count": 13,
+    "suspect_count": 14,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -331,6 +331,14 @@
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "piVar2 = (int *)((int)g_DirtySpanEnds + iVar7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 128,
+      "match": "(void *)((int)",
+      "severity": "mild",
+      "text": "(void *)((int)this_ptr->master_zbuffer + iVar5 * 2),",
       "type": "pointer_cast"
     }
   ]

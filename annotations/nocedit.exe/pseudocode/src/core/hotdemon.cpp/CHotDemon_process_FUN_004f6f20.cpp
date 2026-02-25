@@ -128,11 +128,11 @@ LAB_004f7178:
           }
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&(this_ptr->base).base.model.motion_controller,iVar5,1);
-          iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->attack_sfx_handle);
+          iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handles[0]);
           if (iVar5 == 0) {
             uVar8 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                               ((CDemonActor *)this_ptr,"hotdemon-attack.wav");
-            this_ptr->attack_sfx_handle = uVar8;
+            this_ptr->sfx_handles[0] = uVar8;
           }
         }
       }
@@ -210,11 +210,11 @@ LAB_004f7178:
             }
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                       (&(this_ptr->base).base.model.motion_controller,iVar7,1);
-            iVar7 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->attack_sfx_handle);
+            iVar7 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handles[0]);
             if (iVar7 == 0) {
               uVar8 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                                 ((CDemonActor *)this_ptr,"hotdemon-attack.wav");
-              this_ptr->attack_sfx_handle = uVar8;
+              this_ptr->sfx_handles[0] = uVar8;
             }
             (this_ptr->base).attack_cooldown = 2.0;
           }

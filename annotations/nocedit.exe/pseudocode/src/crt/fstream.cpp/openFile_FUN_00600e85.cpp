@@ -2,34 +2,26 @@
 // Address: 00600e85
 // Address Range: [[00600e85, 00600ee3]]
 // Convention: __cdecl
-// Signature: void __cdecl crt_fstream_cpp_openFile_FUN_00600e85(ifstream *stream_obj,char *filename,int open_mode,SIZE_T buffer_size)
+// Signature: void __cdecl crt_fstream_cpp_openFile_FUN_00600e85(void *stream_obj,char *filename,int open_mode,SIZE_T buffer_size)
 
 #include "nocturne.h"
 
-void __cdecl crt_fstream_cpp_openFile_FUN_00600e85(ifstream *stream_obj,char *filename,int open_mode,SIZE_T buffer_size)
+void __cdecl crt_fstream_cpp_openFile_FUN_00600e85(void *stream_obj,char *filename,int open_mode,SIZE_T buffer_size)
 
 {
-  int iVar1;
   FileEmbeddedData *embedded_data;
+  int iVar1;
   
-  embedded_data =
-       (FileEmbeddedData *)
-       ((stream_obj->_fstreambase_core)._filebuf.__unbuffered_get_area +
-       *(int *)((int)(stream_obj->_fstreambase_core).layout_info + 4) + -0x38);
+  embedded_data = (FileEmbeddedData *)(*(int *)(*(int *)stream_obj + 4) + (int)stream_obj);
   if ((filebuf *)embedded_data->stream != (filebuf *)0x0) {
     iVar1 = crt_fstream_cpp_filebuf_open_FUN_00608c15
                       ((filebuf *)embedded_data->stream,filename,open_mode,buffer_size);
     if (iVar1 != 0) {
       clear_and_preserve_state
-                ((FileEmbeddedData *)
-                 ((stream_obj->_fstreambase_core)._filebuf.__unbuffered_get_area +
-                 *(int *)((int)(stream_obj->_fstreambase_core).layout_info + 4) + -0x38),0);
+                ((FileEmbeddedData *)((int)stream_obj + *(int *)(*(int *)stream_obj + 4)),0);
       return;
     }
-    embedded_data =
-         (FileEmbeddedData *)
-         ((stream_obj->_fstreambase_core)._filebuf.__unbuffered_get_area +
-         *(int *)((int)(stream_obj->_fstreambase_core).layout_info + 4) + -0x38);
+    embedded_data = (FileEmbeddedData *)((int)stream_obj + *(int *)(*(int *)stream_obj + 4));
   }
   reportStreamError(embedded_data,2);
   return;

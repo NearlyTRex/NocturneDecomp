@@ -8,9 +8,9 @@
 // Ghidra size: 0x160 (352 bytes)
 typedef struct SVersionControlSession {
     char primary_username[32]; // 0x0
-    char unk1[8]; // 0x20
-    char network_username[40]; // 0x28
-    char unk2[64]; // 0x50
+    int overwrite_own_choice; // 0x20
+    int overwrite_writeable_choice; // 0x24
+    char network_username[104]; // 0x28
     char password[104]; // 0x90
     char domain[80]; // 0xf8
     char source_path[20]; // 0x148

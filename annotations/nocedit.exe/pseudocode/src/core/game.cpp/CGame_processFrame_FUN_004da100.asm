@@ -391,16 +391,16 @@ section .text
     TEST EAX,EAX                        ; 004da472
     JZ 0x004da4a3                       ; 004da474
         ;   XREF to: 004da4a3 (CONDITIONAL_JUMP)  ; LAB_004da4a3
-    MOV ECX,dword ptr [0x02d82568]      ; 004da476 | DAT_02d82568
+    MOV ECX,dword ptr [0x02d82568]      ; 004da476 | INT_02d82568
     INC ECX                             ; 004da47c
     PUSH ECX                            ; 004da47d
     PUSH 0x62b486                       ; 004da47e | = "demon%d.pcx"
-    PUSH 0x2d82570                      ; 004da483 | DAT_02d82570
-    MOV dword ptr [0x02d82568],ECX      ; 004da488 | DAT_02d82568
+    PUSH 0x2d82570                      ; 004da483 | g_ScreenshotFilename
+    MOV dword ptr [0x02d82568],ECX      ; 004da488 | INT_02d82568
     CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004da48e
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004da493
-    PUSH 0x2d82570                      ; 004da496 | DAT_02d82570
+    PUSH 0x2d82570                      ; 004da496 | g_ScreenshotFilename
     CALL engine_pcx.c_saveScreenshotGeneral_FUN_005490c0 ; 004da49b
         ;   XREF to: 005490c0 (UNCONDITIONAL_CALL)  ; void engine_pcx.c_saveScreenshotGeneral_FUN_005490c0(char * filename)
     ADD ESP,0x4                         ; 004da4a0

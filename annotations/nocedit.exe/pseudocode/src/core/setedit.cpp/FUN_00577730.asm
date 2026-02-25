@@ -42,7 +42,7 @@
 ;   int g_GreenScaleFactor
 ;   _BIT_INTEGER32 g_BlueBitPosition
 ;   int g_BlueScaleFactor
-;   undefined4 DAT_03365cc0
+;   uint[250][3072] g_ThumbnailImageBuffer
 ;   ... and 2 more
 ;
 ; Called Functions:
@@ -163,7 +163,7 @@ section .text
     ADD EAX,EBP                         ; 0057786d
     MOV EBP,dword ptr [ESP + 0x38]      ; 0057786f
     LEA EDX,[EAX + 0x1]                 ; 00577873
-    MOV EAX,dword ptr [EBX + 0x3365cc0] ; 00577876 | DAT_03365cc0 | DAT_03365cc4 | DAT_03365dc0
+    MOV EAX,dword ptr [EBX + 0x3365cc0] ; 00577876 | g_ThumbnailImageBuffer | DAT_03365cc4 | DAT_03365dc0
         ;   Label: LAB_00577876
     MOV ECX,EAX                         ; 0057787c
     MOV EDI,EAX                         ; 0057787e
@@ -223,7 +223,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x3c]      ; 0057792f
     MOV EBX,dword ptr [ESP + 0x44]      ; 00577933
     MOV dword ptr [ESP + 0x50],EAX      ; 00577937
-    MOV EDX,dword ptr [EBX + 0x3365cc0] ; 0057793b | DAT_03365cc0 | DAT_03365cc4 | DAT_03365dc0
+    MOV EDX,dword ptr [EBX + 0x3365cc0] ; 0057793b | g_ThumbnailImageBuffer | DAT_03365cc4 | DAT_03365dc0
         ;   Label: LAB_0057793b
     MOV ESI,dword ptr [0x02d01f28]      ; 00577941 | g_RedScaleFactor
     MOV EAX,EDX                         ; 00577947
@@ -298,7 +298,7 @@ section .text
     ADD EAX,EDX                         ; 00577a32
     MOV EBP,dword ptr [ESP + 0x34]      ; 00577a34
     LEA EDX,[EAX + 0x4]                 ; 00577a38
-    MOV EAX,dword ptr [EBX + 0x3365cc0] ; 00577a3b | DAT_03365cc0 | DAT_03365cc4 | DAT_03365dc0
+    MOV EAX,dword ptr [EBX + 0x3365cc0] ; 00577a3b | g_ThumbnailImageBuffer | DAT_03365cc4 | DAT_03365dc0
         ;   Label: LAB_00577a3b
     MOV ECX,dword ptr [0x0067939c]      ; 00577a41 | g_BitsPerPixel
     MOV ESI,EAX                         ; 00577a47

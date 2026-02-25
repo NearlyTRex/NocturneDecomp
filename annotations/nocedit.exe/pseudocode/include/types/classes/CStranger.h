@@ -18,7 +18,7 @@ typedef struct CStranger {
     int guns_drawn; // 0x1fbd4
     float guns_drawn_blend; // 0x1fbd8
     float frame_cleared; // 0x1fbdc
-    float unk1; // 0x1fbe0
+    float aim_pitch; // 0x1fbe0
     float aim_speed_factor; // 0x1fbe4
     SArmAimData right_arm_aim; // 0x1fbe8
     SArmAimData left_arm_aim; // 0x1fc08
@@ -30,16 +30,15 @@ typedef struct CStranger {
     int melee_attack_index; // 0x1fc3c
     float action_timer; // 0x1fc40
     float interact_blend; // 0x1fc44
-    uint goggle_loop_sfx_handle; // 0x1fc48
-    uint goggle_on_sfx_handle; // 0x1fc4c
+    uint goggle_sfx_handles[2]; // 0x1fc48
     float turn_angle; // 0x1fc50
     float turn_blend_weight; // 0x1fc54
     float turn_blend_timer; // 0x1fc58
     float turn_elapsed; // 0x1fc5c
-    char unk2[24]; // 0x1fc60
+    char dead[24]; // 0x1fc60
     CVector3f pending_velocity; // 0x1fc78
     int turn_motion_index; // 0x1fc84
-    int unk3; // 0x1fc88
+    int pickup_facing_reversed; // 0x1fc88
     float arm_recoil_blend; // 0x1fc8c
     float airborne_timer; // 0x1fc90
     float jump_speed; // 0x1fc94
@@ -52,7 +51,7 @@ typedef struct CStranger {
     CVector3f ladder_offset; // 0x1fe54
     float ladder_facing_angle; // 0x1fe60
     float ladder_blend_time; // 0x1fe64
-    uint hurt_sfx_handle; // 0x1fe68
+    uint sfx_handle; // 0x1fe68
     float fall_velocity_snapshot; // 0x1fe6c
 } CStranger;
 

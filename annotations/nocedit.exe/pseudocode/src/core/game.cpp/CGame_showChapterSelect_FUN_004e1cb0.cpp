@@ -84,7 +84,7 @@ void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004e1cb0(CGame *this_ptr,
     }
     g_CurrentDisplayText = (char *)0x0;
     g_OverlayDisplayTimer = 0.0;
-    DAT_02d830a8 = 0;
+    g_ChapterDisplayName[0] = '\0';
   }
   else {
     while (iVar6 < 0) {
@@ -371,7 +371,7 @@ LAB_004e2376:
       g_EditorFont = local_1c;
       return;
     }
-    pcVar4 = &DAT_02d830a8;
+    pcVar4 = g_ChapterDisplayName;
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\core\\game.cpp",0xf77);
     g_CurrentDisplayText = *(char **)(&DAT_0067b854 + iVar3 * 4);
     pcVar7 = local_40[iVar3];

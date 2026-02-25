@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_design_c_loadTextureData_FUN_0046b060(STextureLoadConfig *config_ptr,void *rgb_buffer,void *alpha_buffer,int atlas_width,int atlas_height)
+; void __cdecl shape_design_c_loadTextureData_FUN_0046b060(STextureAtlasEntry *entry,uchar *rgb_buffer,uchar *alpha_buffer,int atlas_width,int atlas_height)
 ;
 ; Parameters:
-; STextureLoadConfig * Stack[0x4]:4   config_ptr
-; void *           Stack[0x8]:4   rgb_buffer
-; void *           Stack[0xc]:4   alpha_buffer
+; STextureAtlasEntry * Stack[0x4]:4   entry
+; uchar *          Stack[0x8]:4   rgb_buffer
+; uchar *          Stack[0xc]:4   alpha_buffer
 ; int              Stack[0x10]:4   atlas_width
 ; int              Stack[0x14]:4   atlas_height
 ; Local Variables:

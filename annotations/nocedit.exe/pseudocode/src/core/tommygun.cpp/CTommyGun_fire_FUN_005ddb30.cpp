@@ -65,8 +65,8 @@ int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_005ddb30(CTommyGun *this_ptr)
     this_ptr->fire_frames_remaining = 0;
     (*((this_ptr->base).base.vtable._ub)->playSound)
               ((CDemonActor *)this_ptr,"45-dry-!.wav @2.0");
-    sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handle);
-    this_ptr->sfx_handle = 0;
+    sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handles[0]);
+    this_ptr->sfx_handles[0] = 0;
     return 0;
   }
   CStack_bc.z = (this_ptr->base).bolt_velocity;

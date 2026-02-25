@@ -59,14 +59,8 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3
     engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860(&local_24);
     return 0;
   }
-  g_VersionControlSession.unk1[0] = '\0';
-  g_VersionControlSession.unk1[1] = '\0';
-  g_VersionControlSession.unk1[2] = '\0';
-  g_VersionControlSession.unk1[3] = '\0';
-  g_VersionControlSession.unk1[4] = '\0';
-  g_VersionControlSession.unk1[5] = '\0';
-  g_VersionControlSession.unk1[6] = '\0';
-  g_VersionControlSession.unk1[7] = '\0';
+  g_VersionControlSession.overwrite_own_choice = 0;
+  g_VersionControlSession.overwrite_writeable_choice = 0;
   uVar3 = engine_dosio_c_getFileTimestamp_FUN_00481960((char *)0x0,filename);
   if (((int)uVar3 < 0) || ((uVar3 & 8) != 0)) {
     iVar2 = 1;
@@ -75,7 +69,7 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3
     _sprintf
               ((char *)local_584,"A writable copy of %s exists.  Replace it?",filename);
     iVar2 = engine_fileio_cpp_showOverwriteConfirmationDialog_FUN_004b2f90
-                      (local_584,g_VersionControlSession.unk1 + 4);
+                      (local_584,(char *)&g_VersionControlSession.overwrite_writeable_choice);
   }
   if (iVar2 < 1) {
     engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860(&local_24);

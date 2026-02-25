@@ -2,11 +2,11 @@
 // Address: 005ff2d7
 // Address Range: [[005ff2d7, 005ff383]]
 // Convention: __cdecl
-// Signature: ostream * __cdecl crt_iostream_cpp_ostream_put_FUN_005ff2d7(ostream *this_ptr,int character)
+// Signature: _ostream * __cdecl crt_iostream_cpp_ostream_put_FUN_005ff2d7(_ostream *this_ptr,int character)
 
 #include "nocturne.h"
 
-ostream * __cdecl crt_iostream_cpp_ostream_put_FUN_005ff2d7(ostream *this_ptr,int character)
+_ostream * __cdecl crt_iostream_cpp_ostream_put_FUN_005ff2d7(_ostream *this_ptr,int character)
 
 {
   int iVar1;

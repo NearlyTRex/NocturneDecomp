@@ -4,6 +4,9 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x840000
 // =============================================================================
 
+// SCramRectangle*[62500]
+SCramRectangle* g_CramCandidateRectangles[62500] = {};
+
 // SCramRectangle[50]
 SCramRectangle g_CramRectangles[50] = {};
 
@@ -17,8 +20,8 @@ int g_CramMinPlacementX = {};
 int g_CramMinPlacementY = {};
 int g_CramOptimalPlacement = {};
 int g_CramAcceptableSize = {};
-int g_CramAtlasWidth = {};
-int g_CramAtlasHeight = {};
+int g_CramAtlasDimension = {};
+int g_CramPaddingSize = {};
 int g_CramPaddingCalculation = {};
 int g_CramCurrentAcceptableSize = {};
 int g_CramBestSolutionMetric1 = {};

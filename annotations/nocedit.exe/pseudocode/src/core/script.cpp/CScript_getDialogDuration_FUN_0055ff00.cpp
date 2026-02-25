@@ -59,9 +59,9 @@ float __cdecl core_script_cpp_CScript_getDialogDuration_FUN_0055ff00(CScript *th
     }
     return -1.0;
   }
-  this_ptr->unk1 = (int)pCVar2;
+  this_ptr->last_speaker = pCVar2;
   if ((this_ptr->focus_actor_locked == 0) && (this_ptr->who_is_speaking != this_ptr->focus_actor)) {
-    this_ptr->unk2 = 1;
+    this_ptr->focus_actor_changed = 1;
     this_ptr->focus_actor = this_ptr->who_is_speaking;
   }
   if (g_ScriptEventsEnabled == 0) {

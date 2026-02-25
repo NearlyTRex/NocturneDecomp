@@ -8,8 +8,7 @@
 // Ghidra size: 0xbec8 (48840 bytes)
 typedef struct CLarva {
     CEnemy base; // 0x0
-    int unk; // 0xbebc
-    uint sfx_handle; // 0xbec0
-    uint slime_sfx_handle; // 0xbec4
+    int dead; // 0xbebc
+    uint sfx_handles[2]; // 0xbec0
 } CLarva;
 

@@ -102,9 +102,9 @@ switchD_0044c448_caseD_3:
   engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
             (this_ptr_00,&(this_ptr->base).position);
   engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0048c650
-            (g_CDemonRendererPtr2,(this_ptr->base).projection_scale);
+            (g_CDemonRendererPtr2,(this_ptr->base).focal_length);
   engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200
-            (g_CDemonRendererPtr2,(CMatrix3x3f *)&(this_ptr->base).rotation_matrix);
+            (g_CDemonRendererPtr2,&(this_ptr->base).rotation_matrix);
   if (skip_clear_buffers == 0) {
     if (g_FullscreenMode != 0) {
       wincore_windll_cpp_beginScene_FUN_005b7280();

@@ -1,0 +1,187 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 213,
+    "complexity_score": 134,
+    "cross_reference_count": 1,
+    "function_call_count": 7,
+    "global_count": 5,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 134,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 347
+  },
+  "cross_references": [
+    {
+      "addr": "0057c5d0",
+      "from_addr": "0057ccaa",
+      "name": "core_setedit.cpp_CDemonSet_showLightEditor_FUN_0057c5d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0057b600",
+    "address_range": [
+      [
+        "0057b600",
+        "0057b900"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_setedit.cpp_CDemonSet_cloneLight_FUN_0057b600",
+    "signature": "void __cdecl core_setedit_cpp_CDemonSet_cloneLight_FUN_0057b600(CDemonSet *this_ptr,int light_index)"
+  },
+  "function_calls": [
+    {
+      "addr": "0056d2d0",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0"
+    },
+    {
+      "addr": "0056aa10",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_initScene_FUN_0056aa10"
+    },
+    {
+      "addr": "0056a470",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470"
+    },
+    {
+      "addr": "0057ae50",
+      "is_variadic": false,
+      "name": "core_setedit.cpp_CDemonSet_positionLight_FUN_0057ae50"
+    },
+    {
+      "addr": "0049e740",
+      "is_variadic": true,
+      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740"
+    },
+    {
+      "addr": "004a03d0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0"
+    },
+    {
+      "addr": "0049f0f0",
+      "is_variadic": true,
+      "name": "shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00647814",
+      "name": "s_Too_many_lights_already_00647814",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064782d",
+      "name": "s_Enter_new_name_for_clone_0064782d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064784d",
+      "name": "s_Precompute_light_visibil_0064784d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00678a60",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "02cf1cd4"
+    },
+    {
+      "addr": "02cf1cd4",
+      "name": "g_CEditorToolsInstance",
+      "type": "CEditorTools",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0057ccaa",
+        "call_type": "direct",
+        "caller": "core_setedit.cpp_CDemonSet_showLightEditor_FUN_0057c5d0",
+        "estimated_params": 2,
+        "instructions_analyzed": 5,
+        "reg_params": [],
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.419354838709677,
+    "instruction_count": 186,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BRANCH": 9,
+      "CALL": 7,
+      "CBRANCH": 13,
+      "COPY": 200,
+      "FLOAT2FLOAT": 2,
+      "INT_ADD": 134,
+      "INT_AND": 49,
+      "INT_CARRY": 13,
+      "INT_EQUAL": 53,
+      "INT_LESS": 5,
+      "INT_MULT": 28,
+      "INT_NOTEQUAL": 4,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 14,
+      "INT_SEXT": 12,
+      "INT_SLESS": 23,
+      "INT_SUB": 60,
+      "INT_ZEXT": 22,
+      "LOAD": 62,
+      "POPCOUNT": 23,
+      "RETURN": 2,
+      "STORE": 70,
+      "SUBPIECE": 8
+    },
+    "pcode_op_count": 822
+  },
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      },
+      {
+        "is_param": true,
+        "name": "light_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

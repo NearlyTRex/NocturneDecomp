@@ -21,7 +21,7 @@
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
 ;   core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0
-;   core_set.cpp_CDemonSet_rotateVertices_FUN_0056e7c0
+;   core_set.cpp_CDemonSet_rotateVerticies_FUN_0056e7c0
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
 ;   engine_drender.cpp_CDemonRenderer_renderEnhancedQualityVariant_FUN_0048bdc0
@@ -123,8 +123,8 @@ section .text
     PUSH EDX                            ; 004e9a17
     MOV ECX,dword ptr [0x006810c8]      ; 004e9a18 | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH ECX                            ; 004e9a1e | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_rotateVertices_FUN_0056e7c0 ; 004e9a1f
-        ;   XREF to: 0056e7c0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_rotateVertices_FUN_0056e7c0(CDemonSet * this_ptr, int vertex_count, int * input_vertices)
+    CALL core_set.cpp_CDemonSet_rotateVerticies_FUN_0056e7c0 ; 004e9a1f
+        ;   XREF to: 0056e7c0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_rotateVerticies_FUN_0056e7c0(CDemonSet * this_ptr, int vertex_count, CVector3i * input_vertices)
     MOV EAX,0xffff                      ; 004e9a24
     MOV EBX,dword ptr [0x02d051f4]      ; 004e9a29 | g_PerspectiveReciprocal
     ADD ESP,0xc                         ; 004e9a2f
@@ -169,7 +169,7 @@ section .text
     MOV dword ptr [EBX + 0x6c0],0x0     ; 004e9aad
     ADD EBX,0x48                        ; 004e9ab7
     CALL engine_drender.cpp_CDemonRenderer_renderEnhancedQualityVariant_FUN_0048bdc0 ; 004e9aba
-        ;   XREF to: 0048bdc0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderEnhancedQualityVariant_FUN_0048bdc0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info)
+        ;   XREF to: 0048bdc0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderEnhancedQualityVariant_FUN_0048bdc0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD EDI,0x48                        ; 004e9abf
     MOV EDX,dword ptr [EBP + 0xb38]     ; 004e9ac2
     ADD ESP,0x8                         ; 004e9ac8

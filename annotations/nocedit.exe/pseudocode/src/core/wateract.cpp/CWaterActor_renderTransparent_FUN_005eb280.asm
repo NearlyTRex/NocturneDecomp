@@ -27,7 +27,7 @@
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
 ;   core_set.cpp_CDemonSet_computeVertexOmniLighting_FUN_0056e3e0
 ;   core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_00570770
-;   core_set.cpp_CDemonSet_rotateVertices_FUN_0056e7c0
+;   core_set.cpp_CDemonSet_rotateVerticies_FUN_0056e7c0
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
 ;   engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0
@@ -135,8 +135,8 @@ section .text
     MOV EBP,dword ptr [0x006810c8]      ; 005eb37c | g_CDemonSetPtr
     PUSH EBP                            ; 005eb382 | g_CDemonSetInstance
     XOR EBX,EBX                         ; 005eb383
-    CALL core_set.cpp_CDemonSet_rotateVertices_FUN_0056e7c0 ; 005eb385
-        ;   XREF to: 0056e7c0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_rotateVertices_FUN_0056e7c0(CDemonSet * this_ptr, int vertex_count, int * input_vertices)
+    CALL core_set.cpp_CDemonSet_rotateVerticies_FUN_0056e7c0 ; 005eb385
+        ;   XREF to: 0056e7c0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_rotateVerticies_FUN_0056e7c0(CDemonSet * this_ptr, int vertex_count, CVector3i * input_vertices)
     MOV EAX,dword ptr [ESI + 0x298]     ; 005eb38a
     ADD ESP,0xc                         ; 005eb390
     TEST EAX,EAX                        ; 005eb393
@@ -151,7 +151,7 @@ section .text
     MOV EDX,dword ptr [0x006810c8]      ; 005eb3aa | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH EDX                            ; 005eb3b0 | g_CDemonSetInstance
     CALL core_set.cpp_CDemonSet_computeVertexOmniLighting_FUN_0056e3e0 ; 005eb3b1
-        ;   XREF to: 0056e3e0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_computeVertexOmniLighting_FUN_0056e3e0(CDemonSet * this_ptr)
+        ;   XREF to: 0056e3e0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_computeVertexOmniLighting_FUN_0056e3e0(CDemonSet * this_ptr, CVector3f * vertex_position, CVector3f * position_offset, int vertex_index)
     MOV ECX,dword ptr [0x006703ec]      ; 005eb3b6 | g_CDemonRendererPtr2
     ADD ESP,0x10                        ; 005eb3bc
     MOV EAX,dword ptr [ESI + 0x28c]     ; 005eb3bf
@@ -230,7 +230,7 @@ section .text
     PUSH ECX                            ; 005eb48d | g_CDemonRendererInstance
     INC EDI                             ; 005eb48e
     CALL engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0 ; 005eb48f
-        ;   XREF to: 0048aeb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info, int render_flags)
+        ;   XREF to: 0048aeb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, int render_flags)
     ADD EBX,0x48                        ; 005eb494
     MOV EBP,dword ptr [ESI + 0x2b234]   ; 005eb497
     ADD ESP,0xc                         ; 005eb49d

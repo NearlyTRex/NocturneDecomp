@@ -12,11 +12,11 @@
 ;   core_msnedit.cpp_CDemonMission_FUN_0053e220 at 0053e98a
 ;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 00539e07
 ;   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470 at 0056a9e6
-;   core_setedit.cpp_CDemonSet_FUN_0057a940 at 0057ae29
-;   core_setedit.cpp_CDemonSet_FUN_0057b410 at 0057b4a5
-;   core_setedit.cpp_CDemonSet_FUN_0057b500 at 0057b5b7
-;   core_setedit.cpp_CDemonSet_FUN_0057b600 at 0057b8bf
-;   core_setedit.cpp_CDemonSet_FUN_0057bbe0 at 0057c070
+;   core_setedit.cpp_CDemonSet_addSpotLight_FUN_0057b410 at 0057b4a5
+;   core_setedit.cpp_CDemonSet_cloneLight_FUN_0057b600 at 0057b8bf
+;   core_setedit.cpp_CDemonSet_computeCameraFog_FUN_00581320 at 00581426
+;   core_setedit.cpp_CDemonSet_editSpotLight_FUN_0057b500 at 0057b5b7
+;   core_setedit.cpp_CDemonSet_rebuildAllFogAndPVS_FUN_005805a0 at 005806f2
 ;   ... and 6 more
 ;
 ; Referenced Globals:

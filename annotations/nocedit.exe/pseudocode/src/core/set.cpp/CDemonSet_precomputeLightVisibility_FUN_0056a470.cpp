@@ -52,7 +52,7 @@ void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemo
   g_DynamicLightCount = 0;
   g_OmniLightCount = 0;
   local_20 = 0;
-  g_ActiveLightCount = 0;
+  g_SpotLightCount = 0;
   if (0 < this_ptr->camera_count) {
     local_38 = this_ptr->lights;
     local_48 = param_2 + 1;

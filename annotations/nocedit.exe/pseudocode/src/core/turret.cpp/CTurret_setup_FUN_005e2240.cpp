@@ -32,8 +32,8 @@ void __cdecl core_turret_cpp_CTurret_setup_FUN_005e2240(CTurret *this_ptr)
     }
     pCVar2 = pCVar2 + 1;
   }
-  this_ptr->loop_sfx_handle = 0;
-  this_ptr->anim_sfx_handle = 0;
+  this_ptr->sfx_handles[0] = 0;
+  this_ptr->sfx_handles[1] = 0;
   this_ptr->fire_sound_frames = 0;
   return;
 }

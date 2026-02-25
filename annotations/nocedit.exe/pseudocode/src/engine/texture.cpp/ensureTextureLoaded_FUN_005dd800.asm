@@ -76,7 +76,7 @@ section .text
     MOV ESI,dword ptr [0x03f87358]      ; 005dd845 | g_TextureCacheInstance
     PUSH ESI                            ; 005dd84b
     CALL engine_texture.cpp_CTextureCache_loadTexture_FUN_005dcc00 ; 005dd84c
-        ;   XREF to: 005dcc00 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_CTextureCache_loadTexture_FUN_005dcc00(CTextureCache * cache, char * texture_name)
+        ;   XREF to: 005dcc00 (UNCONDITIONAL_CALL)  ; int engine_texture.cpp_CTextureCache_loadTexture_FUN_005dcc00(CTextureCache * cache, char * texture_name)
     MOV ESI,0x1                         ; 005dd851
     ADD ESP,0x8                         ; 005dd856
     MOV dword ptr [EBX + 0x4],EAX       ; 005dd859

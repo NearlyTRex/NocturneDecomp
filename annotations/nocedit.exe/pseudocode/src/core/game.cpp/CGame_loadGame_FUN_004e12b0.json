@@ -2,15 +2,27 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 160,
-        "message": "use of undeclared identifier 'FUN_00600ee4'"
+        "category": "missing_member",
+        "column": 26,
+        "line": 159,
+        "message": "no member named '__enabled_exceptions' in 'ios'; did you mean '_enabled_exceptions'?"
+      },
+      {
+        "category": "missing_member",
+        "column": 25,
+        "line": 170,
+        "message": "no member named '__enabled_exceptions' in 'ios'; did you mean '_enabled_exceptions'?"
+      },
+      {
+        "category": "format_error",
+        "column": 42,
+        "line": 300,
+        "message": "format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 65,
-        "line": 311,
+        "line": 308,
         "message": "format specifies type 'int *' but the argument has type 'float *' [-Werror,-Wformat]"
       }
     ],
@@ -19,17 +31,15 @@
   },
   "complexity": {
     "assembly_lines": 810,
-    "complexity_score": 382,
+    "complexity_score": 314,
     "cross_reference_count": 3,
     "function_call_count": 46,
     "global_count": 72,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 317,
-    "suspect_count": 6,
-    "suspect_types": [
-      "undefined_data"
-    ],
-    "total_lines": 1127
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 314,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 1124
   },
   "cross_references": [
     {
@@ -137,7 +147,7 @@
     {
       "addr": "00571230",
       "is_variadic": false,
-      "name": "core_set.cpp_CDemonSet_saveStateInfo_FUN_00571230"
+      "name": "core_set.cpp_CDemonSet_loadStateInfo_FUN_00571230"
     },
     {
       "addr": "005ff8f0",
@@ -148,6 +158,11 @@
       "addr": "005ff856",
       "is_variadic": false,
       "name": "crt_fstream.cpp_ifstream_dtor_FUN_005ff856"
+    },
+    {
+      "addr": "00600ee4",
+      "is_variadic": false,
+      "name": "crt_fstream.cpp_istream_seekg_FUN_00600ee4"
     },
     {
       "addr": "005ff95c",
@@ -218,11 +233,6 @@
       "addr": "005ff070",
       "is_variadic": false,
       "name": "crt_string.c_strnicmp_FUN_005ff070"
-    },
-    {
-      "addr": "00600ee4",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_00600ee4"
     },
     {
       "addr": "00481a50",
@@ -640,14 +650,14 @@
     },
     {
       "addr": "02d82d80",
-      "name": "DAT_02d82d80",
-      "type": "undefined4",
+      "name": "g_HasSavedLightState",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02d82d84",
-      "name": "DAT_02d82d84",
-      "type": "undefined4",
+      "name": "g_MasterLightStateSaveBuffer",
+      "type": "int[201]",
       "value": null
     },
     {
@@ -1003,54 +1013,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 286,
-      "match": "DAT_02d82d80",
-      "severity": "mild",
-      "text": "DAT_02d82d80 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 291,
-      "match": "DAT_02d82d84",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,\"%d\\n\",&DAT_02d82d84);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 292,
-      "match": "DAT_02d82d84",
-      "severity": "mild",
-      "text": "if (0 < DAT_02d82d84) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 293,
-      "match": "DAT_02d82d88",
-      "severity": "mild",
-      "text": "puVar7 = &DAT_02d82d88;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 298,
-      "match": "DAT_02d82d84",
-      "severity": "mild",
-      "text": "} while (iVar2 <= DAT_02d82d84);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 300,
-      "match": "DAT_02d82d80",
-      "severity": "mild",
-      "text": "DAT_02d82d80 = 1;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

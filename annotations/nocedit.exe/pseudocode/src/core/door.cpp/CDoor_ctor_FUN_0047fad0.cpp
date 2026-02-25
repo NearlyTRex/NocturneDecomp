@@ -76,10 +76,7 @@ CDoor * __cdecl core_door_cpp_CDoor_ctor_FUN_0047fad0(CDoor *this_ptr)
   ADJ(this_ptr_00)->on_open_trigger_event[0] = '\0';
   ADJ(this_ptr_00)->on_close_trigger_event[0] = '\0';
   ADJ(this_ptr_00)->one_shot = 0;
-  this_ptr_00[5].model_name[0x90] = '\0';
-  this_ptr_00[5].model_name[0x91] = '\0';
-  this_ptr_00[5].model_name[0x92] = '\0';
-  this_ptr_00[5].model_name[0x93] = '\0';
+  ADJ(this_ptr_00)->swing_range = 0.0;
   ADJ(this_ptr_00)->block_virtual_director_flag = 1;
   ADJ(this_ptr_00)->plot_as_box_in_shadow = 0;
   ADJ(this_ptr_00)->allowed_sides = 3;

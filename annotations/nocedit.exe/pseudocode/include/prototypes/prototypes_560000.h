@@ -24,6 +24,7 @@
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SDisplayListSortEntry.h"
+#include "types/structs/SMRGLHeaderPrimitive.h"
 #include "types/structs/SScriptXRef.h"
 #include "types/unions/UOrientationVector.h"
 
@@ -146,17 +147,17 @@ int __cdecl core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80(CDemonS
 void __cdecl core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0(CDemonSet *this_ptr,CVector3i *world_position,CVector3i *surface_normal, int vertex_index,int skip_lighting_calculation);
 int __cdecl core_set_cpp_CDemonSet_computeLighting_FUN_0056e110(CDemonSet *this_ptr,CVector3i *world_position,CVector3i *surface_normal, int start_vertex_index,int vertex_count);
 void __cdecl core_set_cpp_computeTriangleNormal_FUN_0056e180(int *vertex_array,void *param_2);
-void __cdecl core_set_cpp_computeTriangleNormalIndexed_FUN_0056e2b0(void);
-void __cdecl core_set_cpp_CDemonSet_computeVertexOmniLighting_FUN_0056e3e0(CDemonSet *this_ptr);
+void __cdecl core_set_cpp_computeTriangleNormalIndexed_FUN_0056e2b0(CVector3i *vertex_array,ushort *triangle_indices,CVector3f *out_normal);
+void __cdecl core_set_cpp_CDemonSet_computeVertexOmniLighting_FUN_0056e3e0(CDemonSet *this_ptr,CVector3f *vertex_position,CVector3f *position_offset, int vertex_index);
 void __cdecl core_set_cpp_CDemonSet_pushScreenBoundsToCamera_FUN_0056e5d0(CDemonSet *this_ptr,int vertex_count);
-void __cdecl core_set_cpp_CDemonSet_rotateVertices_FUN_0056e7c0(CDemonSet *this_ptr,int vertex_count,int *input_vertices);
+void __cdecl core_set_cpp_CDemonSet_rotateVerticies_FUN_0056e7c0(CDemonSet *this_ptr,int vertex_count,CVector3i *input_vertices);
 CVector3i * __stack_esi core_set_cpp_transformToWorldSpace_FUN_0056e890(CVector3i *input,CVector3i *output);
-void __cdecl core_set_cpp_transformNormalFixedPoint_FUN_0056e960(void);
+CVector3i * __stack_esi core_set_cpp_transformNormalFixedPoint_FUN_0056e960(CVector3i *input,CVector3i *output);
 void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_ptr,int vertex_count,int tri_count,void *face_data, CVector3i *vertex_positions,int vertices_per_face,CVector3i *vertex_normals);
 void __cdecl core_set_cpp_CDemonSet_process_FUN_0056f940(CDemonSet *this_ptr);
-float __cdecl core_set_cpp_CDemonSet_getReverbPresetAtPosition_FUN_0056fac0(CDemonSet *this_ptr);
+float __cdecl core_set_cpp_CDemonSet_getReverbPresetAtPosition_FUN_0056fac0(CDemonSet *this_ptr,CVector3f *position);
 void __cdecl core_set_cpp_CDemonSet_loadAssets_FUN_0056fb80(CDemonSet *this_ptr);
 int __cdecl core_set_cpp_qsortByDisplayListEntry_FUN_0056fba0(SDisplayListSortEntry *a,SDisplayListSortEntry *b);
 void __cdecl core_set_cpp_CDemonSet_buildDisplayList_FUN_0056fbd0(CDemonSet *this_ptr,uint dirty_flags_mask);
-void __cdecl core_set_cpp_CDemonSet_renderEnvMapBatchTri_FUN_0056ffe0(CDemonSet *this_ptr,void *param_2,int count,int alpha);
+void __cdecl core_set_cpp_CDemonSet_renderEnvMapBatchTri_FUN_0056ffe0(CDemonSet *this_ptr,SMRGLHeaderPrimitive *prims,int count,int alpha);
 

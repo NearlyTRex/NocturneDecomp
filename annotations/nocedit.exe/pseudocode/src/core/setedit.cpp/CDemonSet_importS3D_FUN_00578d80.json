@@ -2,81 +2,75 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 24,
-        "line": 220,
-        "message": "use of undeclared identifier 'DAT_03654370'"
-      },
-      {
         "category": "incompatible_types",
         "column": 14,
-        "line": 351,
+        "line": 355,
         "message": "assigning to 'int *' from incompatible type 'void *'"
       },
       {
         "category": "format_error",
-        "column": 56,
-        "line": 372,
+        "column": 50,
+        "line": 376,
         "message": "format specifies type 'float *' but the argument has type 'int *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 77,
-        "line": 372,
+        "column": 71,
+        "line": 376,
         "message": "format specifies type 'float *' but the argument has type 'int *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 85,
-        "line": 372,
+        "column": 79,
+        "line": 376,
         "message": "format specifies type 'float *' but the argument has type 'int *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 94,
+        "line": 599,
+        "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 28,
-        "line": 596,
+        "line": 600,
         "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 37,
-        "line": 596,
+        "column": 47,
+        "line": 600,
         "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 56,
-        "line": 596,
+        "line": 600,
         "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 65,
-        "line": 596,
+        "column": 75,
+        "line": 600,
         "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 84,
-        "line": 596,
-        "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 93,
-        "line": 596,
+        "line": 600,
         "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 47,
-        "line": 642,
+        "line": 645,
         "message": "format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 47,
-        "line": 644,
+        "line": 647,
         "message": "format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror,-Wformat]"
       }
     ],
@@ -85,26 +79,25 @@
   },
   "complexity": {
     "assembly_lines": 1595,
-    "complexity_score": 1137,
+    "complexity_score": 785,
     "cross_reference_count": 1,
     "function_call_count": 45,
     "global_count": 77,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 657,
-    "suspect_count": 46,
+    "pseudocode_lines": 660,
+    "suspect_count": 11,
     "suspect_types": [
       "pointer_cast",
       "stack_alignment_array",
-      "stack_param",
       "undefined_data"
     ],
-    "total_lines": 2252
+    "total_lines": 2255
   },
   "cross_references": [
     {
       "addr": "00578a20",
       "from_addr": "00578c0d",
-      "name": "core_setedit.cpp_CDemonSet_FUN_00578a20",
+      "name": "core_setedit.cpp_CDemonSet_importSet_FUN_00578a20",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -118,7 +111,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80",
-    "signature": "void __cdecl core_setedit_cpp_CDemonSet_importS3D_FUN_00578d80(CDemonSet *this_ptr)"
+    "signature": "void __cdecl core_setedit_cpp_CDemonSet_importS3D_FUN_00578d80(CDemonSet *this_ptr,_FILE *file_handle)"
   },
   "function_calls": [
     {
@@ -172,29 +165,29 @@
       "name": "core_setdir.cpp_CDemonSet_saveThumbs_FUN_00575f60"
     },
     {
-      "addr": "005805a0",
-      "is_variadic": false,
-      "name": "core_setedit.cpp_CDemonSet_FUN_005805a0"
-    },
-    {
       "addr": "00578290",
       "is_variadic": false,
-      "name": "core_setedit.cpp_FUN_00578290"
+      "name": "core_setedit.cpp_addGroundType_FUN_00578290"
     },
     {
-      "addr": "00578420",
+      "addr": "005805a0",
       "is_variadic": false,
-      "name": "core_setedit.cpp_FUN_00578420"
+      "name": "core_setedit.cpp_CDemonSet_rebuildAllFogAndPVS_FUN_005805a0"
     },
     {
       "addr": "00578630",
       "is_variadic": false,
-      "name": "core_setedit.cpp_FUN_00578630"
+      "name": "core_setedit.cpp_editGroundTypes_FUN_00578630"
+    },
+    {
+      "addr": "00578420",
+      "is_variadic": false,
+      "name": "core_setedit.cpp_loadGroundTypes_FUN_00578420"
     },
     {
       "addr": "00578c90",
       "is_variadic": false,
-      "name": "core_setedit.cpp_FUN_00578c90"
+      "name": "core_setedit.cpp_promptYesNo_FUN_00578c90"
     },
     {
       "addr": "00585ff0",
@@ -788,14 +781,14 @@
     },
     {
       "addr": "03654368",
-      "name": "DAT_03654368",
-      "type": "undefined4",
+      "name": "g_GroundTextureCount",
+      "type": "int",
       "value": null
     },
     {
       "addr": "03654370",
-      "name": "DAT_03654370",
-      "type": "undefined4",
+      "name": "g_GroundTextureNames",
+      "type": "char[500][40]",
       "value": null
     },
     {
@@ -806,8 +799,8 @@
     },
     {
       "addr": "03659190",
-      "name": "DAT_03659190",
-      "type": "undefined1",
+      "name": "g_GroundTextureTypes",
+      "type": "char[500]",
       "value": null
     }
   ],
@@ -846,10 +839,10 @@
     "pcode_op_count": 5348
   },
   "stack_frame": {
-    "frame_size": 9344,
+    "frame_size": 9348,
     "local_size": 9340,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -1446,141 +1439,28 @@
         "offset": 4,
         "size": 4,
         "type": "CDemonSet *"
+      },
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "_FILE *"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 31,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "_FILE *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 32,
+      "line": 31,
       "match": "aiStackY_3a30",
       "severity": "moderate",
       "text": "int aiStackY_3a30 [1378];",
       "type": "stack_alignment_array"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 115,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "iVar1 = _fgetc(in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 118,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "_fscanf(in_stack_00000008,\"%d\\n\",&local_5c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 125,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "iVar1 = _fgetc(in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 128,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "_fscanf(in_stack_00000008,\"%d,%d,%d,%d,%d,%d,%d\\n\",&local_58,&local_54,&local_50,&local_48,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 143,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "iVar1 = _fgetc(in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 150,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "iVar2 = _fgetc(in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 158,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "iVar1 = _fgetc(in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 162,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "local_34 = _ftell(in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 165,
-      "match": "DAT_03654368",
-      "severity": "mild",
-      "text": "DAT_03654368 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 183,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "_fgets(local_5a4,0x104,in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 212,
-      "match": "DAT_03654368",
-      "severity": "mild",
-      "text": "if (0 < DAT_03654368) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 213,
-      "match": "DAT_03654370",
-      "severity": "mild",
-      "text": "pcVar11 = &DAT_03654370;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 218,
-      "match": "DAT_03659190",
-      "severity": "mild",
-      "text": "uVar4 = (uint)(byte)(&DAT_03659190)[iVar8];",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 225,
-      "match": "DAT_03654368",
-      "severity": "mild",
-      "text": "} while (iVar8 < DAT_03654368);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 229,
+      "line": 234,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&DAT_03364d18 + iVar2) = uVar4;",
@@ -1588,7 +1468,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 229,
+      "line": 234,
       "match": "DAT_03364d18",
       "severity": "mild",
       "text": "*(uint *)((int)&DAT_03364d18 + iVar2) = uVar4;",
@@ -1596,7 +1476,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 235,
+      "line": 240,
       "match": "DAT_03365cb8",
       "severity": "mild",
       "text": "if (DAT_03365cb8 == 0) {",
@@ -1604,7 +1484,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 238,
+      "line": 243,
       "match": "DAT_03365cb8",
       "severity": "mild",
       "text": "DAT_03365cb8 = 1;",
@@ -1612,7 +1492,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 248,
+      "line": 253,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&DAT_03364d18 + iVar2) = 0;",
@@ -1620,127 +1500,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 248,
+      "line": 253,
       "match": "DAT_03364d18",
       "severity": "mild",
       "text": "*(uint *)((int)&DAT_03364d18 + iVar2) = 0;",
       "type": "undefined_data"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 274,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "shape_memdbg_cpp_closeFile_FUN_0050f9b0(in_stack_00000008,\"..\\\\core\\\\setedit.cpp\",0x516)",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 281,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "_fseek(in_stack_00000008,local_34,0);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 291,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "iVar2 = _fgetc(in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 302,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "iVar1 = _fgetc(in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 305,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "local_3c = _ftell(in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 310,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "iVar2 = _fgetc(in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 322,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "iVar1 = _fgetc(in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 329,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "iVar2 = _fgetc(in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 357,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "iVar1 = _fgetc(in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 365,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "iVar2 = _fscanf(in_stack_00000008,\"%f,%f,%f\\n\",local_38 + iVar1 * 3,piVar20,piVar5);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 380,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "iVar1 = _fgetc(in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 387,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "iVar2 = _fgetc(in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 428,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "iVar1 = _fgetc(in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 436,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "core_setutil_cpp_C3DSLight_importS3D_FUN_00587710(&local_2478,in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 483,
+      "line": 487,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar16 = (uint *)((int)pCVar9 + (uint)bVar22 * -8 + 0x228);",
@@ -1748,71 +1516,23 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 486,
+      "line": 490,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "puVar12 = (uint *)((int)&local_2478 + (uint)bVar22 * -8 + (uint)bVar22 * -8 + 0x22c)",
+      "text": "puVar13 = (uint *)((int)&local_2478 + (uint)bVar22 * -8 + (uint)bVar22 * -8 + 0x22c)",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 488,
+      "line": 492,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*puVar16 = *(uint *)((int)&local_2478 + (uint)bVar22 * -8 + 0x228);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 548,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "iVar1 = _fgetc(in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 555,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "iVar2 = _fgetc(in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 567,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "iVar1 = _fgetc(in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 574,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "core_setutil_cpp_C3DSCamera_importS3D_FUN_00585ff0(pCVar6,in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 584,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "_fseek(in_stack_00000008,local_3c,0);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 588,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "iVar2 = _fscanf(in_stack_00000008,\"%d, %d,%f,%f, %d,%f,%f, %d,%f,%f\\n\",&local_18,&local_88,",
-      "type": "stack_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 599,
+      "line": 602,
       "match": "DAT_03364d18",
       "severity": "mild",
       "text": "triangle_flags = (uchar)(&DAT_03364d18)[local_18];",

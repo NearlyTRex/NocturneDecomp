@@ -1,18 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 56,
-    "complexity_score": 76,
+    "complexity_score": 58,
     "cross_reference_count": 3,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 26,
-    "suspect_count": 4,
+    "pseudocode_lines": 18,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
       "special_crt_function"
     ],
-    "total_lines": 82
+    "total_lines": 74
   },
   "cross_references": [
     {
@@ -44,7 +44,7 @@
     ],
     "convention": "__cdecl",
     "name": "crt_fstream.cpp_openFile_FUN_00600e85",
-    "signature": "void __cdecl crt_fstream_cpp_openFile_FUN_00600e85(ifstream *stream_obj,char *filename,int open_mode,SIZE_T buffer_size)"
+    "signature": "void __cdecl crt_fstream_cpp_openFile_FUN_00600e85(void *stream_obj,char *filename,int open_mode,SIZE_T buffer_size)"
   },
   "function_calls": [
     {
@@ -99,7 +99,7 @@
         "name": "stream_obj",
         "offset": 4,
         "size": 4,
-        "type": "ifstream *"
+        "type": "void *"
       },
       {
         "is_param": true,
@@ -127,26 +127,18 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 11,
-      "match": "(int *)((int)",
+      "line": 14,
+      "match": "(FileEmbeddedData *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)(stream_obj->_fstreambase_core).layout_info + 4) + -0x38);",
+      "text": "((FileEmbeddedData *)((int)stream_obj + *(int *)(*(int *)stream_obj + 4)),0);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 19,
-      "match": "(int *)((int)",
+      "line": 17,
+      "match": "(FileEmbeddedData *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)(stream_obj->_fstreambase_core).layout_info + 4) + -0x38),0);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 25,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "*(int *)((int)(stream_obj->_fstreambase_core).layout_info + 4) + -0x38);",
+      "text": "embedded_data = (FileEmbeddedData *)((int)stream_obj + *(int *)(*(int *)stream_obj + 4));",
       "type": "pointer_cast"
     },
     {

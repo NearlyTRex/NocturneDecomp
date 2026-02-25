@@ -2,7 +2,6 @@
 
 // Type dependencies
 #include "system/basetypes.h"
-#include "system/misc.h"
 #include "system/watcom.h"
 #include "system/winnt.h"
 #include "types/classes/CDemonMission.h"

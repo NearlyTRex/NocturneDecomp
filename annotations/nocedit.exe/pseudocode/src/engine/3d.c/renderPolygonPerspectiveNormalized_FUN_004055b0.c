@@ -2,11 +2,11 @@
 // Address: 004055b0
 // Address Range: [[004055b0, 00405683]]
 // Convention: __cdecl
-// Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonPerspectiveNormalized_FUN_004055b0(SMRGLHeaderPrimitive *polygon_info)
+// Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonPerspectiveNormalized_FUN_004055b0(SMRGLHeaderPrimitive *prim)
 
 #include "nocturne.h"
 
-SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonPerspectiveNormalized_FUN_004055b0(SMRGLHeaderPrimitive *polygon_info)
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonPerspectiveNormalized_FUN_004055b0(SMRGLHeaderPrimitive *prim)
 
 {
   int iVar1;
@@ -16,16 +16,16 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonPerspectiveNormalized_FUN
   CVector3i local_1c;
   
   bVar2 = 0;
-  local_28.x = (polygon_info->surface_normal).A;
-  local_28.y = (polygon_info->surface_normal).B;
-  local_28.z = (polygon_info->surface_normal).C;
+  local_28.x = (prim->surface_normal).A;
+  local_28.y = (prim->surface_normal).B;
+  local_28.z = (prim->surface_normal).C;
   engine_matrix_c_normalizeVector3DFixed_FUN_0050d970(&local_28,&local_1c);
   local_28.x = local_1c.x;
   *(uint *)((int)&local_28 + (uint)bVar2 * -8 + 4) =
        *(uint *)((int)&local_1c + (uint)bVar2 * -8 + 4);
   *(uint *)((int)&local_28 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
        *(uint *)((int)&local_1c + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
-  iVar1 = engine_3d_c_isVisiblePlane_FUN_00403950(&polygon_info->surface_normal);
+  iVar1 = engine_3d_c_isVisiblePlane_FUN_00403950(&prim->surface_normal);
   if (iVar1 != 0) {
     if (g_MMXSupported == 0) {
       if (g_BitsPerPixel == 0x20) {
@@ -43,9 +43,8 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonPerspectiveNormalized_FUN
     }
     g_RenderStateFlags.dword = RENDER_TEXTURE_ENABLE;
     g_RenderStateFlag2 = PREPROCESS_TEXTURE_COORD_NORMALIZE;
-    engine_3d_c_calculatePolygonLighting_FUN_00403a00(polygon_info);
-    engine_clipper_c_clipAndRasterize_FUN_004371b0
-              ((polygon_info->base).count,(int *)(polygon_info + 1));
+    engine_3d_c_calculatePolygonLighting_FUN_00403a00(prim);
+    engine_clipper_c_clipAndRasterize_FUN_004371b0((prim->base).count,(int *)(prim + 1));
   }
-  return (SMRGLHeaderExtended *)(&polygon_info[1].base.type + (polygon_info->base).count);
+  return (SMRGLHeaderExtended *)(&prim[1].base.type + (prim->base).count);
 }

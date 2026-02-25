@@ -3,25 +3,25 @@
 // Function prototypes for crt/fstream.cpp
 // Generated from Ghidra function signatures
 
-// Original: crt_fstream.cpp_ifstream_constructor_FUN_005ff664
+// Original: crt_fstream.cpp_ifstream_ctor_FUN_005ff664
 // Address: 005ff664
-void __cdecl ifstream::constructor(ifstream *this_ptr,int ctor_flags,int fd,char *buffer,int buffer_len);
+void __cdecl ifstream::ctor(void *this_ptr,int ctor_flags,char *filename,int open_mode,int buffer_size);
 
 // Original: crt_fstream.cpp_ifstream_destructor_thunk_from_istream_FUN_005ff6e2
 // Address: 005ff6e2
-void __cdecl ifstream::destructor_thunk_from_istream(istream *this_ptr,int dtor_flags);
+void __cdecl ifstream::destructor_thunk_from_istream(_istream *this_ptr,int dtor_flags);
 
 // Original: crt_fstream.cpp_ifstream_destructor_thunk_from_ios_FUN_005ff6f8
 // Address: 005ff6f8
 void __cdecl ifstream::destructor_thunk_from_ios(ios *this_ptr,int dtor_flags);
 
-// Original: crt_fstream.cpp_ofstream_constructor_FUN_005ff710
+// Original: crt_fstream.cpp_ofstream_ctor_FUN_005ff710
 // Address: 005ff710
-void __cdecl ofstream::constructor(ofstream *this_ptr,int ctor_flags,int fd,int mode,char *buffer,SIZE_T buffer_size);
+void __cdecl ofstream::ctor(void *this_ptr,int ctor_flags,char *filename,int open_mode,int buffer_size);
 
 // Original: crt_fstream.cpp_ofstream_destructor_thunk_from_ostream_FUN_005ff78e
 // Address: 005ff78e
-void __cdecl ofstream::destructor_thunk_from_ostream(ostream *this_ptr,int dtor_flags);
+void __cdecl ofstream::destructor_thunk_from_ostream(_ostream *this_ptr,int dtor_flags);
 
 // Original: crt_fstream.cpp_ofstream_destructor_thunk_from_ios_FUN_005ff7a4
 // Address: 005ff7a4
@@ -29,27 +29,35 @@ void __cdecl ofstream::destructor_thunk_from_ios(ios *this_ptr,int dtor_flags);
 
 // Original: crt_fstream.cpp_ofstream_dtor_FUN_005ff7bc
 // Address: 005ff7bc
-ofstream * __cdecl ofstream::dtor(ofstream *this_ptr,uint flags);
+ofstream * __cdecl ofstream::dtor(void * this_ptr,uint flags);
 
 // Original: crt_fstream.cpp_ifstream_dtor_FUN_005ff856
 // Address: 005ff856
-ifstream * __cdecl ifstream::dtor(ifstream *this_ptr,uint flags);
+ifstream * __cdecl ifstream::dtor(void * this_ptr,uint flags);
 
 // Original: crt_fstream.cpp_ifstream_ctor_FUN_005ff8f0
 // Address: 005ff8f0
-ifstream * __cdecl ifstream::ctor(ifstream *this_ptr,int c1);
+ifstream * __cdecl ifstream::ctor(void *this_ptr,int c1);
 
 // Original: crt_fstream.cpp_ofstream_ctor_FUN_005ff95c
 // Address: 005ff95c
-ofstream * __cdecl ofstream::ctor(ofstream *this_ptr,int c1);
+ofstream * __cdecl ofstream::ctor(void *this_ptr,int c1);
+
+// Original: crt_fstream.cpp_ostream_write_FUN_005ffcb3
+// Address: 005ffcb3
+_ostream * __cdecl ostream::write(_ostream *stream,void *buffer,SIZE_T count);
 
 // Original: crt_fstream.cpp_openFile_FUN_00600e85
 // Address: 00600e85
-void __cdecl openFile(ifstream *stream_obj,char *filename,int open_mode,SIZE_T buffer_size);
+void __cdecl openFile(void *stream_obj,char *filename,int open_mode,SIZE_T buffer_size);
 
-// Original: crt_fstream.cpp_fstreambase_constructor_FUN_00606456
+// Original: crt_fstream.cpp_istream_seekg_FUN_00600ee4
+// Address: 00600ee4
+_istream * __cdecl istream::seekg(void *this_ptr,int offset);
+
+// Original: crt_fstream.cpp_fstreambase_ctor_FUN_00606456
 // Address: 00606456
-void __cdecl fstreambase::constructor(fstreambase *this_ptr,int ctor_flags,int fd,int mode,char *buffer,SIZE_T buffer_size);
+void __cdecl fstreambase::ctor(fstreambase *this_ptr,int ctor_flags,int fd,int mode,char *buffer,SIZE_T buffer_size);
 
 // Original: crt_fstream.cpp_fstream_destructor_thunk_from_ios_FUN_006064f1
 // Address: 006064f1

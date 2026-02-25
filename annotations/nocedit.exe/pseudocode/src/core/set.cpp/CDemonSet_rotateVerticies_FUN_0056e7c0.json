@@ -1,0 +1,226 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 87,
+    "complexity_score": 33,
+    "cross_reference_count": 11,
+    "function_call_count": 4,
+    "global_count": 6,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 33,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 120
+  },
+  "cross_references": [
+    {
+      "addr": "00419340",
+      "from_addr": "00419360",
+      "name": "core_bodypart.cpp_CBodyPart_renderGeometry_FUN_00419340",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004210b0",
+      "from_addr": "0042111b",
+      "name": "core_box.cpp_CBoundingBox3D_render_FUN_004210b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0043bae0",
+      "from_addr": "0043bb04",
+      "name": "core_cloth.cpp_CCloth_render_FUN_0043bae0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0044b060",
+      "from_addr": "0044b15f",
+      "name": "core_curtain.cpp_CCurtain_renderMesh_FUN_0044b060",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004778d0",
+      "from_addr": "00477905",
+      "name": "core_dmodel.cpp_CKeyFramedModel_rotateAndLightVertices_FUN_004778d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004828b0",
+      "from_addr": "0048290f",
+      "name": "core_dpart.cpp_CDemonPart_renderFaces_FUN_004828b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e9e90",
+      "from_addr": "004e9f71",
+      "name": "core_glass.cpp_CGlass_renderBackground_FUN_004e9e90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e9930",
+      "from_addr": "004e9a1f",
+      "name": "core_glass.cpp_CGlass_renderOpaque_FUN_004e9930",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e9af0",
+      "from_addr": "004e9bce",
+      "name": "core_glass.cpp_CGlass_renderTransparent_FUN_004e9af0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059ab20",
+      "from_addr": "0059ab3f",
+      "name": "core_skeleton.cpp_CDeformableModel_rotateVertices_FUN_0059ab20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005eb280",
+      "from_addr": "005eb385",
+      "name": "core_wateract.cpp_CWaterActor_renderTransparent_FUN_005eb280",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0056e7c0",
+    "address_range": [
+      [
+        "0056e7c0",
+        "0056e88a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_set.cpp_CDemonSet_rotateVerticies_FUN_0056e7c0",
+    "signature": "void __cdecl core_set_cpp_CDemonSet_rotateVerticies_FUN_0056e7c0(CDemonSet *this_ptr,int vertex_count,CVector3i *input_vertices)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "is_variadic": true,
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "0056e5d0",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_pushScreenBoundsToCamera_FUN_0056e5d0"
+    },
+    {
+      "addr": "0048caa0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0"
+    },
+    {
+      "addr": "005b575c",
+      "is_variadic": false,
+      "name": "wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00645e93",
+      "name": "s_core_set_cpp_00645e93",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00645ea3",
+      "name": "s_CDemonSet_rotateVerticie_00645ea3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr2",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.447761194029851,
+    "instruction_count": 67,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 1,
+      "BRANCH": 2,
+      "CALL": 5,
+      "CBRANCH": 5,
+      "COPY": 51,
+      "INT_ADD": 23,
+      "INT_AND": 38,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 37,
+      "INT_LESS": 4,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 10,
+      "INT_SLESS": 18,
+      "INT_SUB": 24,
+      "INT_XOR": 2,
+      "LOAD": 20,
+      "POPCOUNT": 18,
+      "RETURN": 1,
+      "STORE": 22
+    },
+    "pcode_op_count": 298
+  },
+  "stack_frame": {
+    "frame_size": 36,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_count",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "input_vertices",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3i *"
+      }
+    ]
+  },
+  "suspects": []
+}

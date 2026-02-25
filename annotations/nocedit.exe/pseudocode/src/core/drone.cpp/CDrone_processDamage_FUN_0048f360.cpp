@@ -15,17 +15,17 @@ void __cdecl core_drone_cpp_CDrone_processDamage_FUN_0048f360(CDrone *this_ptr,S
   uint uVar3;
   int iVar4;
   
-  sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->attack_sfx_handle);
-  sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->move_sfx_handle);
+  sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handles[2]);
+  sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handles[1]);
   fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
   (this_ptr->base).base.hit_points = fVar1;
   if (0.0 < fVar1) {
-    sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->move_sfx_handle);
-    iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->hurt_sfx_handle);
+    sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handles[1]);
+    iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handles[0]);
     if (iVar4 == 0) {
       uVar3 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                         ((CDemonActor *)this_ptr,"drone-hurt?.wav");
-      this_ptr->hurt_sfx_handle = uVar3;
+      this_ptr->sfx_handles[0] = uVar3;
     }
     iVar4 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,2);
     if (iVar4 == 0) {
@@ -52,11 +52,11 @@ void __cdecl core_drone_cpp_CDrone_processDamage_FUN_0048f360(CDrone *this_ptr,S
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                 (&this_ptr_00->motion_controller,7,1);
     }
-    sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->hurt_sfx_handle);
-    sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->move_sfx_handle);
+    sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handles[0]);
+    sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handles[1]);
     uVar3 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                       ((CDemonActor *)this_ptr,"drone-die?.wav");
-    this_ptr->hurt_sfx_handle = uVar3;
+    this_ptr->sfx_handles[0] = uVar3;
   }
   core_enemy_cpp_CEnemy_processDamage_FUN_004a9f10(&this_ptr->base,damage_info);
   return;

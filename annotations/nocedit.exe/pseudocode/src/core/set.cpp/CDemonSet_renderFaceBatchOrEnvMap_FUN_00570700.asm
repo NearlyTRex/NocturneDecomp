@@ -71,7 +71,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x20]      ; 0057075e
     PUSH EBP                            ; 00570762
     CALL core_set.cpp_CDemonSet_renderEnvMapBatchTri_FUN_0056ffe0 ; 00570763
-        ;   XREF to: 0056ffe0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderEnvMapBatchTri_FUN_0056ffe0(CDemonSet * this_ptr, void * param_2, int count, int alpha)
+        ;   XREF to: 0056ffe0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderEnvMapBatchTri_FUN_0056ffe0(CDemonSet * this_ptr, SMRGLHeaderPrimitive * prims, int count, int alpha)
     ADD ESP,0x10                        ; 00570768
     POP ESI                             ; 0057076b
     POP EDI                             ; 0057076c

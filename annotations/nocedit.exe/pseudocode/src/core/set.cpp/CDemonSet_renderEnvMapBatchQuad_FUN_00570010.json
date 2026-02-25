@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 18,
-    "complexity_score": 30,
+    "complexity_score": 5,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 5,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unnamed_param"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 23
   },
   "cross_references": [
@@ -36,7 +34,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_set.cpp_CDemonSet_renderEnvMapBatchQuad_FUN_00570010",
-    "signature": "void __cdecl core_set_cpp_CDemonSet_renderEnvMapBatchQuad_FUN_00570010(CDemonSet *this_ptr,void *param_2,int count,int alpha)"
+    "signature": "void __cdecl core_set_cpp_CDemonSet_renderEnvMapBatchQuad_FUN_00570010(CDemonSet *this_ptr,SMRGLHeaderPrimitive *prims,int count,int alpha)"
   },
   "function_calls": [
     {
@@ -82,10 +80,10 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "prims",
         "offset": 8,
         "size": 4,
-        "type": "void *"
+        "type": "SMRGLHeaderPrimitive *"
       },
       {
         "is_param": true,
@@ -103,22 +101,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_set_cpp_CDemonSet_renderEnvMapBatchQuad_FUN_00570010(CDemonSet *this_ptr,void *param_2,int count,int alpha)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 5,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_set_cpp_CDemonSet_renderEnvMapPrimitives_FUN_00570040(this_ptr,param_2,count,alpha,0x48);",
-      "type": "unnamed_param"
-    }
-  ]
+  "suspects": []
 }

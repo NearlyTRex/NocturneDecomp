@@ -12,7 +12,7 @@ CMelee * __cdecl core_melee_cpp_CMelee_ctor_FUN_0050e7d0(CMelee *this_ptr)
   char cVar1;
   CMelee *pCVar2;
   char *pcVar3;
-  char **ppcVar4;
+  char *pcVar4;
   
   pCVar2 = (CMelee *)core_weapon_cpp_CWeapon_ctor_FUN_005ede70(&this_ptr->base);
   (pCVar2->base).base.vtable._ub = &g_CMeleeVTable;
@@ -33,48 +33,42 @@ CMelee * __cdecl core_melee_cpp_CMelee_ctor_FUN_0050e7d0(CMelee *this_ptr)
   pCVar2->dismember_prob = 0.5;
   pCVar2->can_go_in_inventory = 0;
   pcVar3 = "shovel?.wav";
-  pCVar2->unk1[4] = '\0';
-  pCVar2->unk1[5] = '\0';
-  pCVar2->unk1[6] = '\0';
-  pCVar2->unk1[7] = '\0';
-  pCVar2->unk1[8] = '\0';
-  pCVar2->unk1[9] = '\0';
-  pCVar2->unk1[10] = '\0';
-  pCVar2->unk1[0xb] = '\0';
-  ppcVar4 = &pCVar2->thrust_hit_character_sound;
+  pCVar2->blood_spurt_count = 0;
+  pCVar2->blood_spurt_timer = 0.0;
+  pcVar4 = pCVar2->thrust_hit_character_sound;
   pCVar2->damage_type = 0;
   do {
     cVar1 = *pcVar3;
-    *(char *)ppcVar4 = cVar1;
+    *pcVar4 = cVar1;
     if (cVar1 == '\0') break;
     cVar1 = pcVar3[1];
     pcVar3 = pcVar3 + 2;
-    *(char *)((int)ppcVar4 + 1) = cVar1;
-    ppcVar4 = (char **)((int)ppcVar4 + 2);
+    pcVar4[1] = cVar1;
+    pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
   pcVar3 = "shvl-f?.wav";
-  ppcVar4 = &pCVar2->swing_hit_character_sound;
+  pcVar4 = pCVar2->swing_hit_character_sound;
   do {
     cVar1 = *pcVar3;
-    *(char *)ppcVar4 = cVar1;
+    *pcVar4 = cVar1;
     if (cVar1 == '\0') break;
     cVar1 = pcVar3[1];
     pcVar3 = pcVar3 + 2;
-    *(char *)((int)ppcVar4 + 1) = cVar1;
-    ppcVar4 = (char **)((int)ppcVar4 + 2);
+    pcVar4[1] = cVar1;
+    pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
   pcVar3 = "shvl-s?.wav";
-  ppcVar4 = &pCVar2->hit_other_sound;
+  pcVar4 = pCVar2->hit_other_sound;
   do {
     cVar1 = *pcVar3;
-    *(char *)ppcVar4 = cVar1;
+    *pcVar4 = cVar1;
     if (cVar1 == '\0') {
       return pCVar2;
     }
     cVar1 = pcVar3[1];
     pcVar3 = pcVar3 + 2;
-    *(char *)((int)ppcVar4 + 1) = cVar1;
-    ppcVar4 = (char **)((int)ppcVar4 + 2);
+    pcVar4[1] = cVar1;
+    pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
   return pCVar2;
 }

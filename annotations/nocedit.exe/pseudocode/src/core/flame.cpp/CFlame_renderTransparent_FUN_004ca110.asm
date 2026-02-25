@@ -418,7 +418,7 @@ section .text
     MOV dword ptr [ESP + 0x50],EBX      ; 004ca5fb
     MOV dword ptr [ESP + 0x58],EDX      ; 004ca5ff
     CALL engine_drender.cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0 ; 004ca603
-        ;   XREF to: 0048bad0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info)
+        ;   XREF to: 0048bad0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD ESP,0x8                         ; 004ca608
     PUSH 0x0                            ; 004ca60b
     MOV EBX,dword ptr [0x006703ec]      ; 004ca60d | g_CDemonRendererPtr2

@@ -10,7 +10,7 @@
 ; XREF[3]:
 ;   core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470 at 0040966c
 ;   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0 at 005719d6
-;   core_setcolid.cpp_CDemonSet_testCapsuleCollision_FUN_00573470 at 00573787
+;   core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00573470 at 00573787
 ;
 ; *****************************************************************************
 

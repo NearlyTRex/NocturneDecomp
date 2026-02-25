@@ -2,11 +2,11 @@
 // Address: 0048b420
 // Address Range: [[0048b420, 0048b548]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_renderSpecialDepth_FUN_0048b420(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info)
+// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_renderSpecialDepth_FUN_0048b420(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim)
 
 #include "nocturne.h"
 
-void __cdecl engine_drender_cpp_CDemonRenderer_renderSpecialDepth_FUN_0048b420(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info)
+void __cdecl engine_drender_cpp_CDemonRenderer_renderSpecialDepth_FUN_0048b420(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim)
 
 {
   int iVar1;
@@ -15,12 +15,12 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderSpecialDepth_FUN_0048b420(C
   int iVar4;
   
   if ((this_ptr->plane_culling_enabled == 0) ||
-     (iVar2 = engine_3d_c_isVisiblePlane_FUN_00403950(&polygon_info->surface_normal), iVar2 != 0)) {
+     (iVar2 = engine_3d_c_isVisiblePlane_FUN_00403950(&prim->surface_normal), iVar2 != 0)) {
     if (this_ptr->face_count == 0) {
-      if (0 < (polygon_info->base).count) {
+      if (0 < (prim->base).count) {
         iVar4 = 0;
         iVar2 = 0;
-        pSVar3 = polygon_info;
+        pSVar3 = prim;
         do {
           iVar1 = pSVar3[1].base.type;
           if (this_ptr->skip_uv_extraction == 0) {
@@ -31,20 +31,20 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderSpecialDepth_FUN_0048b420(C
           pSVar3 = (SMRGLHeaderPrimitive *)&(pSVar3->surface_normal).B;
           iVar2 = iVar2 + 1;
           iVar4 = iVar4 + 4;
-        } while (iVar2 < (polygon_info->base).count);
+        } while (iVar2 < (prim->base).count);
       }
     }
     else {
       iVar2 = 0;
-      if (0 < (polygon_info->base).count) {
+      if (0 < (prim->base).count) {
         iVar4 = 0;
-        pSVar3 = polygon_info;
+        pSVar3 = prim;
         do {
           *(int *)((int)g_VertexIndexBuffer + iVar4) = pSVar3[1].base.type;
           iVar4 = iVar4 + 4;
           iVar2 = iVar2 + 1;
           pSVar3 = (SMRGLHeaderPrimitive *)&(pSVar3->surface_normal).B;
-        } while (iVar2 < (polygon_info->base).count);
+        } while (iVar2 < (prim->base).count);
       }
     }
     if (this_ptr->face_count == 0) {
@@ -58,7 +58,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderSpecialDepth_FUN_0048b420(C
       g_ScanlineRenderFunc = (RenderScanlineFunc *)core_dstrender_cpp_renderDepthOnlyStandard_FUN_0049072f;
     }
     engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740
-              (this_ptr,(polygon_info->base).count,g_VertexIndexBuffer);
+              (this_ptr,(prim->base).count,g_VertexIndexBuffer);
   }
   return;
 }

@@ -9,7 +9,7 @@
 ;
 ; XREF[4]:
 ;   core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0 at 005388e0
-;   core_setedit.cpp_CDemonSet_FUN_00576da0 at 00576f8f
+;   core_setedit.cpp_CDemonSet_loadOrBuildThumbnails_FUN_00576da0 at 00576f8f
 ;   engine_fileio.cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40 at 004ba4a3
 ;   engine_fileio.cpp_CFileManager_managePodMounts_FUN_004bcec0 at 004bcf87
 ;

@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; ostrstream * __cdecl crt_strstream_cpp_ostrstream_ctor_FUN_005ff384(ostrstream *this_ptr,int flags,char *buffer,int buffer_size,int mode)
+; _ostrstream * __cdecl crt_strstream_cpp_ostrstream_ctor_FUN_005ff384(void *this_ptr,int flags,char *buffer,int buffer_size,int mode)
 ;
 ; Parameters:
-; ostrstream *     Stack[0x4]:4   this_ptr
+; void *           Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   flags
 ; char *           Stack[0xc]:4   buffer
 ; int              Stack[0x10]:4   buffer_size
@@ -24,7 +24,7 @@
 ; Called Functions:
 ;   crt_iostream.cpp_ios_ctor_FUN_006061fc
 ;   crt_iostream.cpp_ostream_ctor_FUN_006061a2
-;   crt_strstream.cpp_strstreambase_constructor_FUN_006060fe
+;   crt_strstream.cpp_strstreambase_ctor_FUN_006060fe
 ;
 ; *****************************************************************************
 
@@ -63,14 +63,14 @@ section .text
     PUSH EBX                            ; 005ff3bf
     PUSH 0x1                            ; 005ff3c0
     PUSH EDX                            ; 005ff3c2
-    CALL crt_strstream.cpp_strstreambase_constructor_FUN_006060fe ; 005ff3c3
-        ;   XREF to: 006060fe (UNCONDITIONAL_CALL)  ; strstreambase * crt_strstream.cpp_strstreambase_constructor_FUN_006060fe(strstreambase * this_ptr, int ctor_flags, char * buffer, int size, ...)
+    CALL crt_strstream.cpp_strstreambase_ctor_FUN_006060fe ; 005ff3c3
+        ;   XREF to: 006060fe (UNCONDITIONAL_CALL)  ; strstreambase * crt_strstream.cpp_strstreambase_ctor_FUN_006060fe(strstreambase * this_ptr, int ctor_flags, char * buffer, int size, ...)
     ADD ESP,0x14                        ; 005ff3c8
     PUSH 0x1                            ; 005ff3cb
     ADD EAX,0x48                        ; 005ff3cd
     PUSH EAX                            ; 005ff3d0
     CALL crt_iostream.cpp_ostream_ctor_FUN_006061a2 ; 005ff3d1
-        ;   XREF to: 006061a2 (UNCONDITIONAL_CALL)  ; ostream * crt_iostream.cpp_ostream_ctor_FUN_006061a2(ostream * this_ptr, uint c1)
+        ;   XREF to: 006061a2 (UNCONDITIONAL_CALL)  ; _ostream * crt_iostream.cpp_ostream_ctor_FUN_006061a2(_ostream * this_ptr, uint c1)
     LEA EDX,[EAX + -0x48]               ; 005ff3d6
     MOV EAX,dword ptr [EDX]             ; 005ff3d9
     MOV EAX,dword ptr [EAX + 0x4]       ; 005ff3db

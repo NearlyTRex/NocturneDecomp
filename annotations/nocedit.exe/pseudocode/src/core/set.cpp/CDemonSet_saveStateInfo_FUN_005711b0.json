@@ -1,0 +1,145 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 55,
+    "complexity_score": 19,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 5,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 19,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 74
+  },
+  "cross_references": [
+    {
+      "addr": "004e0cd0",
+      "from_addr": "004e0f3a",
+      "name": "core_game.cpp_CGame_saveGame_FUN_004e0cd0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005711b0",
+    "address_range": [
+      [
+        "005711b0",
+        "0057122a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_set.cpp_CDemonSet_saveStateInfo_FUN_005711b0",
+    "signature": "void __cdecl core_set_cpp_CDemonSet_saveStateInfo_FUN_005711b0(CDemonSet *this_ptr,_FILE *file_handle)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fe6d0",
+      "is_variadic": true,
+      "name": "crt_stdio.c_fprintf_FUN_005fe6d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0064607b",
+      "name": "s_Set_state_version_0064607b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00646091",
+      "name": "s_s_1_00646091",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00646094",
+      "name": "s_Camera_count_enabled_lis_00646094",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006460b3",
+      "name": "s_d_006460b3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006460b7",
+      "name": "s_d_006460b7",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004e0f3a",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_saveGame_FUN_004e0cd0",
+        "estimated_params": 2,
+        "instructions_analyzed": 5,
+        "reg_params": [],
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.288888888888889,
+    "instruction_count": 45,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "CALL": 5,
+      "CBRANCH": 2,
+      "COPY": 36,
+      "INT_ADD": 15,
+      "INT_AND": 21,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 20,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 10,
+      "INT_SUB": 22,
+      "INT_XOR": 1,
+      "LOAD": 11,
+      "POPCOUNT": 10,
+      "RETURN": 1,
+      "STORE": 21
+    },
+    "pcode_op_count": 193
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      },
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "_FILE *"
+      }
+    ]
+  },
+  "suspects": []
+}

@@ -28,21 +28,21 @@ typedef struct strstreambase_core {
     struct WatcomThunkedDestructor* destructor_vtable;
 } strstreambase_core;
 
-// Structure: istrstream
-typedef struct istrstream {
+// Structure: _istrstream
+typedef struct _istrstream {
     strstreambase_core _strstreambase_core;
     istream_core _istream_core;
     char padding[4];
     ios _ios;
-} istrstream;
+} _istrstream;
 
-// Structure: ostrstream
-typedef struct ostrstream {
+// Structure: _ostrstream
+typedef struct _ostrstream {
     strstreambase_core _strstreambase_core;
     ostream_core _ostream_core;
     ios _ios;
     char padding[4];
-} ostrstream;
+} _ostrstream;
 
 // Structure: strstreambase
 typedef struct strstreambase {

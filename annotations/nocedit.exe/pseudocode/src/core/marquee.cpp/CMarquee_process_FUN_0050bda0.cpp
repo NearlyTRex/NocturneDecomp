@@ -12,7 +12,7 @@ void __cdecl core_marquee_cpp_CMarquee_process_FUN_0050bda0(CMarquee *this_ptr,f
   float fVar1;
   float fVar2;
   
-  fVar1 = (float)*(int *)this_ptr->unk3;
+  fVar1 = (float)(this_ptr->course).len;
   if (this_ptr->type == 1) {
     fVar2 = (delta_time * fVar1) / this_ptr->total_time + this_ptr->param;
     this_ptr->param = fVar2;

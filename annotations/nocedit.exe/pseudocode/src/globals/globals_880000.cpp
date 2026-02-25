@@ -15,12 +15,12 @@ CVector3f CVector3f_ARRAY_008879c0[100] = {};
 // SCollisionInfo[100]
 SCollisionInfo SCollisionInfo_ARRAY_00887e70[100] = {};
 
+// SCramRectangle**
+SCramRectangle** g_CramCandidateWriteCursor = {};
+
 // char[500000]
 char g_CameraLoadImageReadBuffer[500000] = {};
 
 // int
 int INT_008879bc = {};
-
-// void*
-void* g_CramAlgorithmState = {};
 

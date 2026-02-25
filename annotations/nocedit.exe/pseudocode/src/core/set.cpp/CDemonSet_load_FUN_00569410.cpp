@@ -70,7 +70,7 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00569410(CDemonSet *this_ptr,char *
                ,&(this_ptr->scene_fog).scroll.z);
     _fscanf(p_Var4,"%f,%f,%f,%f\n",&(this_ptr->scene_fog).height_threshold,
                &(this_ptr->scene_fog).density_multiplier,local_48,local_48);
-    (this_ptr->scene_fog).reserved = 50.0;
+    (this_ptr->scene_fog).temperature = 50.0;
   }
   else {
     core_dcamera_cpp_loadCameraFog_FUN_00453e50
@@ -180,37 +180,37 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00569410(CDemonSet *this_ptr,char *
     } while (iVar10 < this_ptr->camera_count);
   }
   if (this_ptr->set_file_version < 1) {
-    this_ptr->room_reverb_type = 0;
+    this_ptr->default_room_size = 0;
     iVar10 = strnicmp(local_128,"mauso",5);
     if (iVar10 == 0) {
-      this_ptr->room_reverb_type = 2;
+      this_ptr->default_room_size = 2;
     }
     iVar10 = strnicmp(local_128,"h109",4);
     if (iVar10 == 0) {
-      this_ptr->room_reverb_type = 0;
+      this_ptr->default_room_size = 0;
     }
     iVar10 = strnicmp(local_128,"smill",5);
     if (iVar10 == 0) {
-      this_ptr->room_reverb_type = 3;
+      this_ptr->default_room_size = 3;
     }
     iVar10 = strnicmp(local_128,"pier59",6);
     if (iVar10 == 0) {
-      this_ptr->room_reverb_type = 0;
+      this_ptr->default_room_size = 0;
     }
     iVar10 = strnicmp(local_128,"ndun",4);
     if (iVar10 == 0) {
-      this_ptr->room_reverb_type = 3;
+      this_ptr->default_room_size = 3;
     }
     this_ptr->room_count = 0;
   }
   else {
     _fgets(local_228,0xff,p_Var4);
-    _fscanf(p_Var4,"%d\n",&this_ptr->room_reverb_type);
+    _fscanf(p_Var4,"%d\n",&this_ptr->default_room_size);
     iVar10 = 0;
     _fscanf(p_Var4,"%d\n",&this_ptr->room_count);
     if (0 < this_ptr->room_count) {
       local_38 = this_ptr->rooms;
-      local_40 = &this_ptr->rooms[0].reverb_preset;
+      local_40 = &this_ptr->rooms[0].reverb_size;
       pCVar8 = &this_ptr->rooms[0].rotation_matrix;
       local_18 = &this_ptr->rooms[0].extents;
       local_2c = &this_ptr->rooms[0].extents.y;
@@ -306,7 +306,7 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00569410(CDemonSet *this_ptr,char *
         local_14 = local_14 + 0x11;
       } while (iVar10 < this_ptr->vdir_box_count);
     }
-    core_setdir_cpp_CDemonSet_FUN_00576710(this_ptr);
+    core_setdir_cpp_CDemonSet_buildVdirBoxGroups_FUN_00576710(this_ptr);
   }
   if (this_ptr->set_file_version == 0xe) {
     _fgets(local_228,0xff,p_Var4);

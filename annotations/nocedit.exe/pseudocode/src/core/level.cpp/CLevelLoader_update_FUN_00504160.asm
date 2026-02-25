@@ -388,7 +388,7 @@ section .text
     MOV ECX,dword ptr [0x006703ec]      ; 00504551 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH ECX                            ; 00504557 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10 ; 00504558
-        ;   XREF to: 0048ae10 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info, int render_flags)
+        ;   XREF to: 0048ae10 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, int render_flags)
     ADD ESP,0xc                         ; 0050455d
     XOR EBX,EBX                         ; 00504560
     PUSH EBX                            ; 00504562

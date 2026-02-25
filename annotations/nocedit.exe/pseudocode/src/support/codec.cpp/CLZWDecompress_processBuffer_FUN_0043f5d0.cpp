@@ -2,21 +2,23 @@
 // Address: 0043f5d0
 // Address Range: [[0043f5d0, 0043f68f]]
 // Convention: __cdecl
-// Signature: int __cdecl support_codec_cpp_CLZWDecompress_processBuffer_FUN_0043f5d0(CLZWDecompress *this_ptr,byte *input,int *input_length,byte *output,int *output_length,int enable_callback)
+// Signature: int __cdecl support_codec_cpp_CLZWDecompress_processBuffer_FUN_0043f5d0(CLZWDecompress *this_ptr,char *input,int *input_length,char *output,int *output_length,int enable_callback)
 
 #include "nocturne.h"
 
-int __cdecl support_codec_cpp_CLZWDecompress_processBuffer_FUN_0043f5d0(CLZWDecompress *this_ptr,byte *input,int *input_length,byte *output,int *output_length,int enable_callback)
+int __cdecl support_codec_cpp_CLZWDecompress_processBuffer_FUN_0043f5d0(CLZWDecompress *this_ptr,char *input,int *input_length,char *output,int *output_length,int enable_callback)
 
 {
   int iVar1;
-  byte *local_14;
+  char *local_18;
+  char *local_14;
   
   local_14 = output;
+  local_18 = input;
   if (this_ptr->current_code < 0) goto LAB_0043f633;
   do {
     iVar1 = support_codec_cpp_CLZWDictionary_decodeCodeToBuffer_FUN_0043f270
-                      (&this_ptr->lzw_dict,this_ptr->current_code,(char **)&local_14);
+                      (&this_ptr->lzw_dict,this_ptr->current_code,&local_14);
     if (-1 < this_ptr->previous_code) {
       iVar1 = support_codec_cpp_CLZWDictionary_addNode_FUN_0043ef90
                         (&this_ptr->lzw_dict,iVar1,this_ptr->previous_code);
@@ -28,14 +30,13 @@ int __cdecl support_codec_cpp_CLZWDecompress_processBuffer_FUN_0043f5d0(CLZWDeco
     this_ptr->current_code = -1;
     this_ptr->previous_code = iVar1;
 LAB_0043f633:
-    iVar1 = support_codec_cpp_CLZWDictionary_writeCodeToStream_FUN_0043f0d0
-                      (&this_ptr->lzw_dict,&(this_ptr->lzw_dict).bit_state,&stack0xffffffe8,
-                       input_length,(int)input);
+    iVar1 = support_codec_cpp_CLZWDictionary_readCodeFromBuffer_FUN_0043f0d0
+                      (&this_ptr->lzw_dict,&(this_ptr->lzw_dict).bit_state,&local_18,input_length);
     this_ptr->current_code = iVar1;
   } while (-1 < iVar1);
   *output_length = *output_length - ((int)local_14 - (int)output);
   if (enable_callback != 0) {
-    iVar1 = (*((this_ptr->base).vtable)->finalizeBuffer)(this_ptr,local_14,output_length);
+    iVar1 = (*((this_ptr->base).vtable)->finalizeBuffer)(&this_ptr->base,local_14,output_length);
     if (iVar1 == 0) {
       return 0;
     }

@@ -40,16 +40,16 @@
 ; Called Functions:
 ;   core_ground.cpp_getGroundTypeName_FUN_004eed80
 ;   core_set.cpp_CDemonSet_load_FUN_00569410
-;   core_setedit.cpp_CDemonSet_FUN_00576da0
-;   core_setedit.cpp_CDemonSet_FUN_00578a20
-;   core_setedit.cpp_CDemonSet_FUN_0057a0c0
-;   core_setedit.cpp_CDemonSet_FUN_0057a940
-;   core_setedit.cpp_CDemonSet_FUN_0057e7c0
-;   core_setedit.cpp_CDemonSet_FUN_00580730
-;   core_setedit.cpp_CDemonSet_FUN_00583170
+;   core_setedit.cpp_CDemonSet_exportLightsAndCameras_FUN_0057a0c0
+;   core_setedit.cpp_CDemonSet_importSet_FUN_00578a20
+;   core_setedit.cpp_CDemonSet_loadOrBuildThumbnails_FUN_00576da0
 ;   core_setedit.cpp_CDemonSet_save_FUN_0057a2a0
+;   core_setedit.cpp_CDemonSet_showCameraEditor_FUN_0057e7c0
+;   core_setedit.cpp_CDemonSet_showFogEditor_FUN_00580730
 ;   core_setedit.cpp_CDemonSet_showLightEditor_FUN_0057c5d0
-;   core_setedit.cpp_FUN_00578630
+;   core_setedit.cpp_CDemonSet_showScenePreview_FUN_0057a940
+;   core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170
+;   core_setedit.cpp_editGroundTypes_FUN_00578630
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_string.c_strupr_FUN_00600770
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
@@ -246,15 +246,15 @@ section .text
         ;   XREF to: 00584e29 (UNCONDITIONAL_JUMP)  ; LAB_00584e29
     PUSH EBP                            ; 00584b6b
         ;   Label: LAB_00584b6b
-    CALL core_setedit.cpp_CDemonSet_FUN_00578a20 ; 00584b6c
-        ;   XREF to: 00578a20 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_CDemonSet_FUN_00578a20(CDemonSet * this_ptr)
+    CALL core_setedit.cpp_CDemonSet_importSet_FUN_00578a20 ; 00584b6c
+        ;   XREF to: 00578a20 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_CDemonSet_importSet_FUN_00578a20(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 00584b71
     JMP 0x00584b04                      ; 00584b74
         ;   XREF to: 00584b04 (UNCONDITIONAL_JUMP)  ; LAB_00584b04
     PUSH EBP                            ; 00584b76
         ;   Label: LAB_00584b76
-    CALL core_setedit.cpp_CDemonSet_FUN_0057a940 ; 00584b77
-        ;   XREF to: 0057a940 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_CDemonSet_FUN_0057a940(CDemonSet * this_ptr)
+    CALL core_setedit.cpp_CDemonSet_showScenePreview_FUN_0057a940 ; 00584b77
+        ;   XREF to: 0057a940 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_CDemonSet_showScenePreview_FUN_0057a940(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 00584b7c
     JMP 0x00584b04                      ; 00584b7f
         ;   XREF to: 00584b04 (UNCONDITIONAL_JUMP)  ; LAB_00584b04
@@ -267,23 +267,23 @@ section .text
         ;   XREF to: 00584b04 (UNCONDITIONAL_JUMP)  ; LAB_00584b04
     PUSH EBP                            ; 00584b8f
         ;   Label: LAB_00584b8f
-    CALL core_setedit.cpp_CDemonSet_FUN_0057e7c0 ; 00584b90
-        ;   XREF to: 0057e7c0 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_CDemonSet_FUN_0057e7c0(CDemonSet * this_ptr)
+    CALL core_setedit.cpp_CDemonSet_showCameraEditor_FUN_0057e7c0 ; 00584b90
+        ;   XREF to: 0057e7c0 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_CDemonSet_showCameraEditor_FUN_0057e7c0(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 00584b95
     JMP 0x00584b04                      ; 00584b98
         ;   XREF to: 00584b04 (UNCONDITIONAL_JUMP)  ; LAB_00584b04
     PUSH EBP                            ; 00584b9d
         ;   Label: LAB_00584b9d
-    CALL core_setedit.cpp_CDemonSet_FUN_00580730 ; 00584b9e
-        ;   XREF to: 00580730 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_CDemonSet_FUN_00580730(CDemonSet * this_ptr)
+    CALL core_setedit.cpp_CDemonSet_showFogEditor_FUN_00580730 ; 00584b9e
+        ;   XREF to: 00580730 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_CDemonSet_showFogEditor_FUN_00580730(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 00584ba3
     JMP 0x00584b04                      ; 00584ba6
         ;   XREF to: 00584b04 (UNCONDITIONAL_JUMP)  ; LAB_00584b04
     PUSH 0x1                            ; 00584bab
         ;   Label: LAB_00584bab
     PUSH EBP                            ; 00584bad
-    CALL core_setedit.cpp_CDemonSet_FUN_00576da0 ; 00584bae
-        ;   XREF to: 00576da0 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_CDemonSet_FUN_00576da0(CDemonSet * this_ptr)
+    CALL core_setedit.cpp_CDemonSet_loadOrBuildThumbnails_FUN_00576da0 ; 00584bae
+        ;   XREF to: 00576da0 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_CDemonSet_loadOrBuildThumbnails_FUN_00576da0(CDemonSet * this_ptr, int force_rebuild)
     ADD ESP,0x8                         ; 00584bb3
     JMP 0x00584b04                      ; 00584bb6
         ;   XREF to: 00584b04 (UNCONDITIONAL_JUMP)  ; LAB_00584b04
@@ -336,15 +336,15 @@ section .text
         ;   XREF to: 00584b04 (UNCONDITIONAL_JUMP)  ; LAB_00584b04
     PUSH EBP                            ; 00584c29
         ;   Label: LAB_00584c29
-    CALL core_setedit.cpp_CDemonSet_FUN_0057a0c0 ; 00584c2a
-        ;   XREF to: 0057a0c0 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_CDemonSet_FUN_0057a0c0(CDemonSet * this_ptr)
+    CALL core_setedit.cpp_CDemonSet_exportLightsAndCameras_FUN_0057a0c0 ; 00584c2a
+        ;   XREF to: 0057a0c0 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_CDemonSet_exportLightsAndCameras_FUN_0057a0c0(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 00584c2f
     JMP 0x00584b04                      ; 00584c32
         ;   XREF to: 00584b04 (UNCONDITIONAL_JUMP)  ; LAB_00584b04
     PUSH EBP                            ; 00584c37
         ;   Label: LAB_00584c37
-    CALL core_setedit.cpp_CDemonSet_FUN_00583170 ; 00584c38
-        ;   XREF to: 00583170 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_CDemonSet_FUN_00583170(CDemonSet * this_ptr)
+    CALL core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170 ; 00584c38
+        ;   XREF to: 00583170 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 00584c3d
     JMP 0x00584b04                      ; 00584c40
         ;   XREF to: 00584b04 (UNCONDITIONAL_JUMP)  ; LAB_00584b04
@@ -426,8 +426,8 @@ section .text
         ;   XREF to: 00584b04 (CONDITIONAL_JUMP)  ; LAB_00584b04
     LEA EAX,[ESP + 0x3a8]               ; 00584d2c
     PUSH EAX                            ; 00584d33
-    CALL core_setedit.cpp_FUN_00578630  ; 00584d34
-        ;   XREF to: 00578630 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_FUN_00578630()
+    CALL core_setedit.cpp_editGroundTypes_FUN_00578630 ; 00584d34
+        ;   XREF to: 00578630 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_editGroundTypes_FUN_00578630(char * filename)
     ADD ESP,0x4                         ; 00584d39
     JMP 0x00584b04                      ; 00584d3c
         ;   XREF to: 00584b04 (UNCONDITIONAL_JUMP)  ; LAB_00584b04

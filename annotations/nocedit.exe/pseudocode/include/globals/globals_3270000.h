@@ -30,7 +30,7 @@ extern CDemonLight* g_DynamicLights[4];
 
 // CDemonLight*[96]
 extern CDemonLight* g_MasterLightList[96];
-extern CDemonLight* g_ActiveLightList[96];
+extern CDemonLight* g_SpotLightList[96];
 
 // CDemonRaytrace
 extern CDemonRaytrace g_CDemonRaytraceInstance;
@@ -39,11 +39,11 @@ extern CDemonRaytrace g_CDemonRaytraceInstance;
 extern CKeyFramedModel g_CKeyFramedModelInstance;
 
 // CRect[96]
-extern CRect g_ActiveLightBounds[96];
+extern CRect g_SpotLightBounds[96];
 
 // int
 extern int g_MasterLightCount;
-extern int g_ActiveLightCount;
+extern int g_SpotLightCount;
 extern int g_DynamicLightCount;
 extern int g_CoronaGlobeCount;
 extern int g_QueuedCoronaGlobeCount;

@@ -9,7 +9,7 @@
 int __cdecl core_moloch_cpp_CMoloch_renderOpaque_FUN_00529750(CMoloch *this_ptr)
 
 {
-  char *this_ptr_00;
+  CMorph *this_ptr_00;
   int iVar1;
   CBoundingBox3D *this_ptr_01;
   int iVar2;
@@ -31,13 +31,13 @@ int __cdecl core_moloch_cpp_CMoloch_renderOpaque_FUN_00529750(CMoloch *this_ptr)
         core_charactr_cpp_CCharacter_renderCharacter_FUN_00429aa0((CCharacter *)this_ptr);
       }
       else {
-        this_ptr_00 = this_ptr->unk2;
+        this_ptr_00 = &this_ptr->morph;
         core_morph_cpp_CMorph_updateModelFromDeformable_FUN_0052b600
-                  ((CMorph *)this_ptr_00,0,&(this_ptr->base).base.model,0);
+                  (this_ptr_00,0,&(this_ptr->base).base.model,0);
         core_morph_cpp_CMorph_updateModelFromDeformable_FUN_0052b600
-                  ((CMorph *)this_ptr_00,1,(CDeformableModelInstance *)this_ptr->unk1,0);
+                  (this_ptr_00,1,&this_ptr->model,0);
         core_morph_cpp_CMorph_render_FUN_0052bae0
-                  ((CMorph *)this_ptr_00,this_ptr->morph_timer / 2.0f);
+                  (this_ptr_00,this_ptr->morph_timer / 2.0f);
       }
       if (DAT_02f43978 != 0) {
         iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);

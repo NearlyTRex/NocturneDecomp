@@ -16,7 +16,7 @@ void __cdecl core_hotdemon_cpp_CHotDemon_processDamage_FUN_004f7720(CHotDemon *t
   int iVar4;
   CVector3f local_24;
   
-  sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->attack_sfx_handle);
+  sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handles[0]);
   if (damage_info->ammo_type == 8) {
     iVar4 = 0;
     damage_info->damage_amount = damage_info->damage_amount * (float)2;
@@ -45,10 +45,10 @@ void __cdecl core_hotdemon_cpp_CHotDemon_processDamage_FUN_004f7720(CHotDemon *t
       }
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                 (&this_ptr_00->motion_controller,iVar4,1);
-      sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->pain_sfx_handle);
+      sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handles[1]);
       uVar3 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                         ((CDemonActor *)this_ptr,"hotdemon-die.wav");
-      this_ptr->pain_sfx_handle = uVar3;
+      this_ptr->sfx_handles[1] = uVar3;
       core_enemy_cpp_CEnemy_processDamage_FUN_004a9f10(&this_ptr->base,damage_info);
       return;
     }
@@ -64,11 +64,11 @@ void __cdecl core_hotdemon_cpp_CHotDemon_processDamage_FUN_004f7720(CHotDemon *t
     }
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
               (&(this_ptr->base).base.model.motion_controller,iVar4,1);
-    iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->pain_sfx_handle);
+    iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handles[1]);
     if (iVar4 == 0) {
       uVar3 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                         ((CDemonActor *)this_ptr,"hotdemon-hurt?.wav");
-      this_ptr->pain_sfx_handle = uVar3;
+      this_ptr->sfx_handles[1] = uVar3;
       core_enemy_cpp_CEnemy_processDamage_FUN_004a9f10(&this_ptr->base,damage_info);
       return;
     }

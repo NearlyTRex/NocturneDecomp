@@ -101,7 +101,7 @@ section .text
     MOV EBP,ESP                         ; 0044616e
     SUB ESP,0x9c                        ; 00446170
     AND ESP,0xfffffff8                  ; 00446176
-    MOV EAX,[0x00887940]                ; 00446179 | g_CramAlgorithmState
+    MOV EAX,[0x00887940]                ; 00446179 | g_CramCandidateWriteCursor
     XOR EDX,EDX                         ; 0044617e
     MOV EBX,dword ptr [0x0084a860]      ; 00446180 | g_CramRectangleCount
     MOV dword ptr [ESP + 0x8],EDX       ; 00446186
@@ -133,7 +133,7 @@ section .text
     CMP ECX,0x1                         ; 004461cb
     JL 0x004464f9                       ; 004461ce
         ;   XREF to: 004464f9 (CONDITIONAL_JUMP)  ; LAB_004464f9
-    MOV EAX,[0x00887940]                ; 004461d4 | g_CramAlgorithmState
+    MOV EAX,[0x00887940]                ; 004461d4 | g_CramCandidateWriteCursor
     MOV dword ptr [ESP + 0x10],EAX      ; 004461d9
     MOV EBX,dword ptr [0x0084a85c]      ; 004461dd | g_CramPlacedTextureCount
     MOV EDX,dword ptr [ESP + 0x10]      ; 004461e3
@@ -141,7 +141,7 @@ section .text
     INC EBX                             ; 004461ee
     ADD EDX,EAX                         ; 004461ef
     MOV dword ptr [0x0084a85c],EBX      ; 004461f1 | g_CramPlacedTextureCount
-    MOV dword ptr [0x00887940],EDX      ; 004461f7 | g_CramAlgorithmState
+    MOV dword ptr [0x00887940],EDX      ; 004461f7 | g_CramCandidateWriteCursor
     CMP ECX,0x1                         ; 004461fd
     JLE 0x00446262                      ; 00446200
         ;   XREF to: 00446262 (CONDITIONAL_JUMP)  ; LAB_00446262
@@ -330,7 +330,7 @@ section .text
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 004463d7
         ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 004463dc
-    MOV EDX,dword ptr [0x0084a87c]      ; 004463df | g_CramAtlasHeight
+    MOV EDX,dword ptr [0x0084a87c]      ; 004463df | g_CramPaddingSize
     PUSH EDX                            ; 004463e5
     PUSH 0x6198d1                       ; 004463e6 | = "targetPadSize = %d\n"
     PUSH ESI                            ; 004463eb
@@ -440,7 +440,7 @@ section .text
         ;   Label: LAB_004464e3
     MOV EAX,dword ptr [ESP + 0x10]      ; 004464e9
     DEC ESI                             ; 004464ed
-    MOV [0x00887940],EAX                ; 004464ee | g_CramAlgorithmState
+    MOV [0x00887940],EAX                ; 004464ee | g_CramCandidateWriteCursor
     MOV dword ptr [0x0084a85c],ESI      ; 004464f3 | g_CramPlacedTextureCount
     XOR EAX,EAX                         ; 004464f9
         ;   Label: LAB_004464f9
@@ -1020,7 +1020,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x10]      ; 00446ac3
         ;   Label: LAB_00446ac3
     MOV ESI,dword ptr [0x0084a85c]      ; 00446ac7 | g_CramPlacedTextureCount
-    MOV [0x00887940],EAX                ; 00446acd | g_CramAlgorithmState
+    MOV [0x00887940],EAX                ; 00446acd | g_CramCandidateWriteCursor
     DEC ESI                             ; 00446ad2
     MOV EAX,0xf423f                     ; 00446ad3
     MOV dword ptr [0x0084a85c],ESI      ; 00446ad8 | g_CramPlacedTextureCount
@@ -1057,7 +1057,7 @@ section .text
         ;   XREF to: 00446a30 (UNCONDITIONAL_JUMP)  ; LAB_00446a30
     MOV EAX,dword ptr [ESP + 0x10]      ; 00446b2e
         ;   Label: LAB_00446b2e
-    MOV [0x00887940],EAX                ; 00446b32 | g_CramAlgorithmState
+    MOV [0x00887940],EAX                ; 00446b32 | g_CramCandidateWriteCursor
     MOV EAX,[0x0084a85c]                ; 00446b37 | g_CramPlacedTextureCount
     DEC EAX                             ; 00446b3c
     MOV [0x0084a85c],EAX                ; 00446b3d | g_CramPlacedTextureCount
@@ -1521,7 +1521,7 @@ section .text
     JZ 0x00446bbc                       ; 00447016
         ;   XREF to: 00446bbc (CONDITIONAL_JUMP)  ; LAB_00446bbc
     MOV EAX,dword ptr [ESP + 0x10]      ; 0044701c
-    MOV [0x00887940],EAX                ; 00447020 | g_CramAlgorithmState
+    MOV [0x00887940],EAX                ; 00447020 | g_CramCandidateWriteCursor
     MOV EAX,EBX                         ; 00447025
     DEC dword ptr [0x0084a85c]          ; 00447027 | g_CramPlacedTextureCount
     MOV ESP,EBP                         ; 0044702d
@@ -2000,7 +2000,7 @@ section .text
         ;   Label: LAB_00447500
     MOV EAX,dword ptr [ESP + 0x10]      ; 00447505
     MOV ECX,dword ptr [0x0084a85c]      ; 00447509 | g_CramPlacedTextureCount
-    MOV [0x00887940],EAX                ; 0044750f | g_CramAlgorithmState
+    MOV [0x00887940],EAX                ; 0044750f | g_CramCandidateWriteCursor
     DEC ECX                             ; 00447514
     MOV EAX,0xf423f                     ; 00447515
     MOV dword ptr [0x0084a85c],ECX      ; 0044751a | g_CramPlacedTextureCount

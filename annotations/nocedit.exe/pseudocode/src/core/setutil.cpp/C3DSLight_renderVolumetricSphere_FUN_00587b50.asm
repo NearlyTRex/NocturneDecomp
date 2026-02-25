@@ -237,7 +237,7 @@ section .text
     PUSH EBP                            ; 00587d98 | g_CDemonRendererInstance
     MOV dword ptr [ESP + 0x38],ECX      ; 00587d99
     CALL engine_drender.cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0 ; 00587d9d
-        ;   XREF to: 0048bcf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info)
+        ;   XREF to: 0048bcf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD ESP,0x8                         ; 00587da2
     CMP ESI,0x4                         ; 00587da5
     JL 0x00587d74                       ; 00587da8

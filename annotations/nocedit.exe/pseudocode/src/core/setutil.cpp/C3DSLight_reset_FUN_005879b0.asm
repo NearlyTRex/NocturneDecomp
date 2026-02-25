@@ -7,7 +7,7 @@
 ; C3DSLight *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
-;   core_setedit.cpp_CDemonSet_FUN_0057b410 at 0057b448
+;   core_setedit.cpp_CDemonSet_addSpotLight_FUN_0057b410 at 0057b448
 ;   core_setutil.cpp_C3DSLight_ctor_FUN_005862f0 at 005862f6
 ;   core_setutil.cpp_C3DSLight_importS3D_FUN_00587710 at 0058771c
 ;

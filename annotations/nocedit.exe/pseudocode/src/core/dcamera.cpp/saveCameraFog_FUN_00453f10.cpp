@@ -16,6 +16,6 @@ void __cdecl core_dcamera_cpp_saveCameraFog_FUN_00453f10(SFog *fog,_FILE *file_h
              (double)(fog->scroll).z);
   _fprintf(file_handle,"%f,%f\n",(double)fog->height_threshold,
              (double)fog->density_multiplier);
-  _fprintf(file_handle,"%f\n",(double)fog->reserved);
+  _fprintf(file_handle,"%f\n",(double)fog->temperature);
   return;
 }

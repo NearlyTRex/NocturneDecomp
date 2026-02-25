@@ -36,8 +36,8 @@ int __cdecl shape_cramtex_cpp_generateTextureAtlasLayout_FUN_00444d90(int textur
   int local_14;
   
   g_CramTextureCount = texture_count;
-  g_CramAtlasWidth = atlas_width;
-  g_CramAtlasHeight = atlas_height;
+  g_CramAtlasDimension = atlas_width;
+  g_CramPaddingSize = atlas_height;
   g_CramAcceptableSize = acceptable_size;
   g_CramTotalMaps = padding_size;
   g_CramVisualizationFlag = visualize;
@@ -82,7 +82,8 @@ int __cdecl shape_cramtex_cpp_generateTextureAtlasLayout_FUN_00444d90(int textur
       iVar10 - iVar13 == 0 || iVar10 < iVar13; g_CramAcceptableSize = g_CramAcceptableSize + 1) {
   }
   g_CramPaddingCalculation =
-       (g_CramAtlasWidth + -1 + g_CramAtlasHeight * g_CramAcceptableSize) / g_CramAtlasWidth;
+       (g_CramAtlasDimension + -1 + g_CramPaddingSize * g_CramAcceptableSize) / g_CramAtlasDimension
+  ;
   p_Var12 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                       ("..\\shape\\cramlog.txt",(char *)0x0,"at",
                        "..\\shape\\cramtex.cpp",0x1e3);
@@ -93,7 +94,7 @@ int __cdecl shape_cramtex_cpp_generateTextureAtlasLayout_FUN_00444d90(int textur
   local_3c = -1;
   do {
     iVar13 = 0;
-    g_CramAlgorithmState = &DAT_0084a8b0;
+    g_CramCandidateWriteCursor = g_CramCandidateRectangles;
     do {
       iVar13 = iVar13 + 1;
       iVar10 = 0;
@@ -113,9 +114,9 @@ int __cdecl shape_cramtex_cpp_generateTextureAtlasLayout_FUN_00444d90(int textur
         } while (iVar10 < g_CramTextureCount);
       }
       iVar10 = g_CramAcceptableSize * 5 >> 0x1f;
-      iVar10 = (g_CramAtlasWidth + -1 +
+      iVar10 = (g_CramAtlasDimension + -1 +
                ((int)((g_CramAcceptableSize * 5 + iVar10 * -4) - (uint)(iVar10 << 1 < 0)) >> 2) *
-               g_CramAtlasHeight) / g_CramAtlasWidth;
+               g_CramPaddingSize) / g_CramAtlasDimension;
       if (iVar10 <= local_3c) {
         iVar10 = local_3c + 1;
       }
@@ -171,10 +172,10 @@ int __cdecl shape_cramtex_cpp_generateTextureAtlasLayout_FUN_00444d90(int textur
     if (0 < g_CramRectangleCount) {
       iVar10 = 0;
       do {
-        if (((*(int *)((int)&g_CramRectangles[0].left + iVar10) == 0) &&
-            (*(int *)((int)&g_CramRectangles[0].top + iVar10) == 0)) &&
+        if (((*(int *)((int)&g_CramRectangles[0].map_id + iVar10) == 0) &&
+            (*(int *)((int)&g_CramRectangles[0].start_x + iVar10) == 0)) &&
            (g_CramSortedTextureEntries[0].padded_height ==
-            *(int *)((int)&g_CramRectangles[0].right + iVar10))) goto LAB_004451a8;
+            *(int *)((int)&g_CramRectangles[0].start_y + iVar10))) goto LAB_004451a8;
         iVar10 = iVar10 + 0x28;
       } while (iVar10 < g_CramRectangleCount * 0x28);
     }
@@ -200,14 +201,14 @@ int __cdecl shape_cramtex_cpp_generateTextureAtlasLayout_FUN_00444d90(int textur
         } while (-1 < iVar15);
       }
       if (iVar15 < 0) {
-        local_20->unk1 = 0;
+        local_20->occupant = 0;
         local_20->active_flag = 1;
-        local_20->left = 0;
-        local_20->top = 0;
-        local_20->right = iVar13;
-        local_20->bottom = iVar10;
+        local_20->map_id = 0;
+        local_20->start_x = 0;
+        local_20->start_y = iVar13;
+        local_20->end_x = iVar10;
         local_20->orientation = local_34;
-        local_20->max_dimension = iVar14 + iVar13;
+        local_20->end_y = iVar14 + iVar13;
         g_CramRectangleCount = g_CramRectangleCount + 1;
         local_20 = local_20 + 1;
       }
@@ -219,11 +220,11 @@ LAB_004451a8:
     if (0 < g_CramRectangleCount) {
       iVar14 = 0;
       do {
-        if (((*(int *)((int)&g_CramRectangles[0].left + iVar14) == 0) &&
+        if (((*(int *)((int)&g_CramRectangles[0].map_id + iVar14) == 0) &&
             (g_CramSortedTextureEntries[0].working_top ==
-             *(int *)((int)&g_CramRectangles[0].top + iVar14))) &&
+             *(int *)((int)&g_CramRectangles[0].start_x + iVar14))) &&
            (g_CramSortedTextureEntries[0].working_right ==
-            *(int *)((int)&g_CramRectangles[0].right + iVar14))) goto LAB_004451f7;
+            *(int *)((int)&g_CramRectangles[0].start_y + iVar14))) goto LAB_004451f7;
         iVar14 = iVar14 + 0x28;
       } while (iVar14 < g_CramRectangleCount * 0x28);
     }
@@ -249,14 +250,14 @@ LAB_004451a8:
         } while (-1 < iVar16);
       }
       if (iVar16 < 0) {
-        local_1c->unk1 = 0;
+        local_1c->occupant = 0;
         local_1c->active_flag = 1;
-        local_1c->left = 0;
-        local_1c->top = iVar10;
-        local_1c->right = iVar13;
-        local_1c->bottom = iVar15 + iVar10;
+        local_1c->map_id = 0;
+        local_1c->start_x = iVar10;
+        local_1c->start_y = iVar13;
+        local_1c->end_x = iVar15 + iVar10;
         local_1c->orientation = local_2c;
-        local_1c->max_dimension = iVar14 + iVar13;
+        local_1c->end_y = iVar14 + iVar13;
         g_CramRectangleCount = g_CramRectangleCount + 1;
         local_1c = local_1c + 1;
       }
@@ -269,9 +270,9 @@ LAB_004451f7:
         if (0 < g_CramRectangleCount) {
           iVar13 = 0;
           do {
-            if (((local_14 == *(int *)((int)&g_CramRectangles[0].left + iVar13)) &&
-                (*(int *)((int)&g_CramRectangles[0].top + iVar13) == 0)) &&
-               (*(int *)((int)&g_CramRectangles[0].right + iVar13) == 0)) goto LAB_00445252;
+            if (((local_14 == *(int *)((int)&g_CramRectangles[0].map_id + iVar13)) &&
+                (*(int *)((int)&g_CramRectangles[0].start_x + iVar13) == 0)) &&
+               (*(int *)((int)&g_CramRectangles[0].start_y + iVar13) == 0)) goto LAB_00445252;
             iVar13 = iVar13 + 0x28;
           } while (iVar13 < g_CramRectangleCount * 0x28);
         }
@@ -297,14 +298,14 @@ LAB_004451f7:
             } while (-1 < iVar14);
           }
           if (iVar14 < 0) {
-            local_18->unk1 = 0;
+            local_18->occupant = 0;
             local_18->active_flag = 1;
-            local_18->left = local_14;
-            local_18->top = 0;
-            local_18->right = 0;
-            local_18->bottom = iVar13;
+            local_18->map_id = local_14;
+            local_18->start_x = 0;
+            local_18->start_y = 0;
+            local_18->end_x = iVar13;
             local_18->orientation = local_24;
-            local_18->max_dimension = iVar10;
+            local_18->end_y = iVar10;
             g_CramRectangleCount = g_CramRectangleCount + 1;
             local_18 = local_18 + 1;
           }
@@ -316,8 +317,8 @@ LAB_00445252:
     }
     shape_cramtex_cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160
               (g_CramSortedTextureEntries + g_CramPlacedTextureCount);
-    if ((g_CramAtlasWidth + -1 + g_CramAtlasHeight * g_CramCurrentAcceptableSize) / g_CramAtlasWidth
-        <= g_CramPaddingCalculation) {
+    if ((g_CramAtlasDimension + -1 + g_CramPaddingSize * g_CramCurrentAcceptableSize) /
+        g_CramAtlasDimension <= g_CramPaddingCalculation) {
       iVar13 = 0;
       shape_cramtex_cpp_CCramTex_visualizeTextureAtlas_FUN_00447f20((CCramTex *)0x1,1,0,seed);
       if (0 < g_CramTextureCount) {

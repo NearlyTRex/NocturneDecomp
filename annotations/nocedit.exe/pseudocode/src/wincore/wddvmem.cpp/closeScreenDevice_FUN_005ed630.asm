@@ -7,7 +7,7 @@
 ; XREF[8]:
 ;   core_game.cpp_CGame_processFrame_FUN_004da100 at 004dab22
 ;   core_game.cpp_CGame_showFullscreenBitmap_FUN_004e2910 at 004e2af2
-;   core_setedit.cpp_CDemonSet_FUN_0057a940 at 0057ac9f
+;   core_setedit.cpp_CDemonSet_showScenePreview_FUN_0057a940 at 0057ac9f
 ;   engine_texture.cpp_renderTextureAtlas_FUN_005dd990 at 005dd9b4
 ;   shape_design.c_mouseWheelPolygonReducer_FUN_004648e0 at 00464be7
 ;   shape_design.c_polygonToolModeManager_FUN_00464c90 at 00464e86

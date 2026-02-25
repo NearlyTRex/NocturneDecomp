@@ -9,9 +9,6 @@
 void __cdecl core_drip_cpp_CDrip_FUN_0048e6b0(CDrip *this_ptr)
 
 {
-  this_ptr->unk1[0] = '\0';
-  this_ptr->unk1[1] = '\0';
-  this_ptr->unk1[2] = '\0';
-  this_ptr->unk1[3] = '\0';
+  this_ptr->drip_timer = 0.0;
   return;
 }

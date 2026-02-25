@@ -12,7 +12,7 @@ int __cdecl core_dest_cpp_CActorDestination_FUN_0046fd50(CActorDestination *this
   int iVar1;
   CDemonActor *in_stack_00000008;
   
-  if (this_ptr->unk1 == 0) {
+  if (this_ptr->triggered == 0) {
     if (this_ptr->dest_class[0] == '\0') {
       if (in_stack_00000008 == this_ptr->dest_actor) {
         return 1;

@@ -15,19 +15,19 @@ void __cdecl engine_fileio_cpp_CFileManager_removeAuditRecords_FUN_004bd190(CFil
   int iVar4;
   int record_index;
   _FILE *file;
-  int *piVar5;
+  uint *puVar5;
   char *pcVar6;
-  int *piVar7;
+  uint *puVar7;
   CPodAuditRecord *pCVar8;
   char *pcVar9;
   byte bVar10;
   uint in_stack_0000000c;
   CPodFile local_9d8;
-  int local_5ac [8];
+  uint local_5ac [8];
   uint local_58c;
-  int local_474 [10];
+  uint local_474 [10];
   char local_44c [272];
-  int local_33c [78];
+  uint local_33c [78];
   char local_204 [256];
   char local_104 [100];
   byte local_a0 [92];
@@ -82,23 +82,23 @@ LAB_004bd3c3:
     if (0 < local_9d8.audit_count) {
       do {
         engine_pod_cpp_CPodFile_getAuditRecord_FUN_00550590(&local_9d8,record_index,local_33c);
-        piVar5 = local_33c;
-        piVar7 = local_5ac;
+        puVar5 = local_33c;
+        puVar7 = local_5ac;
         for (iVar4 = 0x4e; iVar4 != 0; iVar4 = iVar4 + -1) {
-          *piVar7 = *piVar5;
-          piVar5 = piVar5 + (uint)bVar10 * -2 + 1;
-          piVar7 = piVar7 + (uint)bVar10 * -2 + 1;
+          *puVar7 = *puVar5;
+          puVar5 = puVar5 + (uint)bVar10 * -2 + 1;
+          puVar7 = puVar7 + (uint)bVar10 * -2 + 1;
         }
         if (local_58c < in_stack_0000000c) {
           iVar2 = iVar2 + 1;
         }
         else {
-          piVar5 = local_33c;
-          piVar7 = local_474;
+          puVar5 = local_33c;
+          puVar7 = local_474;
           for (iVar4 = 0x4e; iVar4 != 0; iVar4 = iVar4 + -1) {
-            *piVar7 = *piVar5;
-            piVar5 = piVar5 + (uint)bVar10 * -2 + 1;
-            piVar7 = piVar7 + (uint)bVar10 * -2 + 1;
+            *puVar7 = *puVar5;
+            puVar5 = puVar5 + (uint)bVar10 * -2 + 1;
+            puVar7 = puVar7 + (uint)bVar10 * -2 + 1;
           }
           g_AuditRecordCount = g_AuditRecordCount + 1;
           g_AuditRecordsArray =
@@ -111,16 +111,16 @@ LAB_004bd3c3:
             core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory for pod audit list.");
           }
           pCVar3 = g_AuditRecordsArray + g_AuditRecordCount + -1;
-          piVar5 = local_474;
+          puVar5 = local_474;
           pCVar8 = pCVar3;
           for (iVar4 = 0x4e; iVar4 != 0; iVar4 = iVar4 + -1) {
-            pCVar8->day = *piVar5;
-            piVar5 = piVar5 + (uint)bVar10 * -2 + 1;
+            *(uint *)pCVar8->user_path = *puVar5;
+            puVar5 = puVar5 + (uint)bVar10 * -2 + 1;
             pCVar8 = (CPodAuditRecord *)((int)pCVar8 + (uint)bVar10 * -8 + 4);
           }
-          memset(pCVar3->filename_path,0,0x100);
+          memset(pCVar3->filename,0,0x100);
           pcVar6 = local_44c;
-          pcVar9 = g_AuditRecordsArray[g_AuditRecordCount + -1].filename_path;
+          pcVar9 = g_AuditRecordsArray[g_AuditRecordCount + -1].filename;
           do {
             cVar1 = *pcVar6;
             *pcVar9 = cVar1;

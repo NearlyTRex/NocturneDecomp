@@ -95,22 +95,22 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c6220(CStranger *this_ptr)
       core_cloth_cpp_CCloth_resetState_FUN_0043e170(this_ptr_00,0x2f);
       core_cloth_cpp_CCloth_resetState_FUN_0043e170(this_ptr_00,0x32);
     }
-    pCVar6 = &this_ptr_00->unk;
+    pCVar6 = &this_ptr_00->wind_velocity;
     pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                        (&(this_ptr->base).base.model.motion_controller);
     if (pSVar5->state_index == 0x2a) {
       if (pCVar6 != (CVector3f *)auStack_28) {
-        (this_ptr_00->unk).y = 0.0;
+        (this_ptr_00->wind_velocity).y = 0.0;
         pCVar6->x = 0.0;
-        (this_ptr_00->unk).z = -20.0;
+        (this_ptr_00->wind_velocity).z = -20.0;
         return;
       }
     }
     else if (pSVar5->state_index == 0x2b) {
       if (pCVar6 != (CVector3f *)auStack_1c) {
-        (this_ptr_00->unk).y = 0.0;
+        (this_ptr_00->wind_velocity).y = 0.0;
         pCVar6->x = 0.0;
-        (this_ptr_00->unk).z = 20.0;
+        (this_ptr_00->wind_velocity).z = 20.0;
         return;
       }
     }

@@ -29,19 +29,19 @@ void __cdecl CDemonRenderer::clipAndFillPoly(CDemonRenderer *this_ptr,int vertex
 
 // Original: engine_drender.cpp_CDemonRenderer_renderBasicTextured_FUN_0048a820
 // Address: 0048a820
-void __cdecl CDemonRenderer::renderBasicTextured(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info);
+void __cdecl CDemonRenderer::renderBasicTextured(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim);
 
 // Original: engine_drender.cpp_CDemonRenderer_renderBasicTexturedVariant_FUN_0048a8a0
 // Address: 0048a8a0
-void __cdecl CDemonRenderer::renderBasicTexturedVariant(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info);
+void __cdecl CDemonRenderer::renderBasicTexturedVariant(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim);
 
 // Original: engine_drender.cpp_CDemonRenderer_renderAlternativeDepth_FUN_0048a950
 // Address: 0048a950
-void __cdecl CDemonRenderer::renderAlternativeDepth(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info);
+void __cdecl CDemonRenderer::renderAlternativeDepth(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim);
 
 // Original: engine_drender.cpp_CDemonRenderer_renderStandardTextured_FUN_0048aa50
 // Address: 0048aa50
-int __cdecl CDemonRenderer::renderStandardTextured(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info);
+int __cdecl CDemonRenderer::renderStandardTextured(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim);
 
 // Original: engine_drender.cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50
 // Address: 0048ab50
@@ -49,7 +49,7 @@ int __cdecl CDemonRenderer::renderTexturedBasic(CDemonRenderer *this_ptr,SMRGLHe
 
 // Original: engine_drender.cpp_CDemonRenderer_renderTexturedLitNearPlane_FUN_0048ac40
 // Address: 0048ac40
-void __cdecl CDemonRenderer::renderTexturedLitNearPlane(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info);
+void __cdecl CDemonRenderer::renderTexturedLitNearPlane(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim);
 
 // Original: engine_drender.cpp_CDemonRenderer_renderPerspectiveTextured_FUN_0048ad90
 // Address: 0048ad90
@@ -57,11 +57,11 @@ void __cdecl CDemonRenderer::renderPerspectiveTextured(CDemonRenderer *this_ptr,
 
 // Original: engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
 // Address: 0048ae10
-void __cdecl CDemonRenderer::renderPerspective(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info,int render_flags);
+void __cdecl CDemonRenderer::renderPerspective(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim,int render_flags);
 
 // Original: engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0
 // Address: 0048aeb0
-void __cdecl CDemonRenderer::renderWireframeVariant(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info,int render_flags);
+void __cdecl CDemonRenderer::renderWireframeVariant(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim,int render_flags);
 
 // Original: engine_drender.cpp_CDemonRenderer_renderWireframeAdvanced_FUN_0048b030
 // Address: 0048b030
@@ -73,19 +73,19 @@ void __cdecl CDemonRenderer::renderPremiumDirect(CDemonRenderer *this_ptr,SMRGLH
 
 // Original: engine_drender.cpp_CDemonRenderer_renderPremium_FUN_0048b1e0
 // Address: 0048b1e0
-void __cdecl CDemonRenderer::renderPremium(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info);
+void __cdecl CDemonRenderer::renderPremium(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim);
 
 // Original: engine_drender.cpp_CDemonRenderer_renderPremiumVariant_FUN_0048b320
 // Address: 0048b320
-void __cdecl CDemonRenderer::renderPremiumVariant(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info);
+void __cdecl CDemonRenderer::renderPremiumVariant(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim);
 
 // Original: engine_drender.cpp_CDemonRenderer_renderSpecialDepth_FUN_0048b420
 // Address: 0048b420
-void __cdecl CDemonRenderer::renderSpecialDepth(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info);
+void __cdecl CDemonRenderer::renderSpecialDepth(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim);
 
 // Original: engine_drender.cpp_CDemonRenderer_renderPerspectiveLit_FUN_0048b550
 // Address: 0048b550
-void __cdecl CDemonRenderer::renderPerspectiveLit(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info);
+void __cdecl CDemonRenderer::renderPerspectiveLit(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim);
 
 // Original: engine_drender.cpp_CDemonRenderer_renderEnhancedQualityDirect_FUN_0048b650
 // Address: 0048b650
@@ -101,27 +101,27 @@ void __cdecl CDemonRenderer::renderUltraPremiumDirect(CDemonRenderer *this_ptr,S
 
 // Original: engine_drender.cpp_CDemonRenderer_renderUltraPremium_FUN_0048b970
 // Address: 0048b970
-void __cdecl CDemonRenderer::renderUltraPremium(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info);
+void __cdecl CDemonRenderer::renderUltraPremium(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim);
 
 // Original: engine_drender.cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
 // Address: 0048bad0
-void __cdecl CDemonRenderer::renderMaximumQuality(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info);
+void __cdecl CDemonRenderer::renderMaximumQuality(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim);
 
 // Original: engine_drender.cpp_CDemonRenderer_renderMaximumQualityVariant_FUN_0048bba0
 // Address: 0048bba0
-void __cdecl CDemonRenderer::renderMaximumQualityVariant(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info);
+void __cdecl CDemonRenderer::renderMaximumQualityVariant(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim);
 
 // Original: engine_drender.cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
 // Address: 0048bcf0
-void __cdecl CDemonRenderer::renderEnhancedQuality(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info);
+void __cdecl CDemonRenderer::renderEnhancedQuality(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim);
 
 // Original: engine_drender.cpp_CDemonRenderer_renderEnhancedQualityVariant_FUN_0048bdc0
 // Address: 0048bdc0
-void __cdecl CDemonRenderer::renderEnhancedQualityVariant(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info);
+void __cdecl CDemonRenderer::renderEnhancedQualityVariant(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim);
 
 // Original: engine_drender.cpp_CDemonRenderer_renderComplexMultiFeature_FUN_0048bf10
 // Address: 0048bf10
-void __cdecl CDemonRenderer::renderComplexMultiFeature(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info);
+void __cdecl CDemonRenderer::renderComplexMultiFeature(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim);
 
 // Original: engine_drender.cpp_CDemonRenderer_renderComplexMultiFeatureWithIndices_FUN_0048bfe0
 // Address: 0048bfe0

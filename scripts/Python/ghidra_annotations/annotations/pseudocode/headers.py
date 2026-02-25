@@ -2800,19 +2800,20 @@ def export_header_files(currentProgram, pseudocode_dir):
         if dt_name in get_primitive_data_types().keys():
             continue
 
+        # Get the original category path
+        original_cat_path = dt.getCategoryPath().getPath()
+
+        # Skip standard Ghidra categories (including root "/")
+        if is_standard_ghidra_category(original_cat_path):
+            continue
+
         # Skip duplicate types (same name in multiple categories)
+        # NOTE: This must be AFTER the standard category filter, otherwise a
+        # built-in Ghidra type (e.g. GUID in /winnt.h) marks the name as seen
+        # and then our Nocturne version gets skipped.
         if dt_name in seen_type_names:
             continue
         seen_type_names.add(dt_name)
-
-        # Get the original category path
-        original_cat_path = dt.getCategoryPath().getPath()
-        if original_cat_path == "/":
-            original_cat_path = ""
-
-        # Skip standard Ghidra categories
-        if is_standard_ghidra_category(original_cat_path):
-            continue
 
         # Determine the export path using new mapping
         export_path, is_individual = get_new_export_path(original_cat_path, dt)

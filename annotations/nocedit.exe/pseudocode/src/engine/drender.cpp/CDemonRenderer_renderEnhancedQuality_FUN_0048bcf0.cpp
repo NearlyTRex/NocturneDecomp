@@ -2,11 +2,11 @@
 // Address: 0048bcf0
 // Address Range: [[0048bcf0, 0048bdb9]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info)
+// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim)
 
 #include "nocturne.h"
 
-void __cdecl engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *polygon_info)
+void __cdecl engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim)
 
 {
   SMRGLHeaderPrimitive *pSVar1;
@@ -14,16 +14,16 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf
   int iVar3;
   
   if ((this_ptr->plane_culling_enabled == 0) ||
-     (iVar3 = engine_3d_c_isVisiblePlane_FUN_00403950(&polygon_info->surface_normal), iVar3 != 0)) {
+     (iVar3 = engine_3d_c_isVisiblePlane_FUN_00403950(&prim->surface_normal), iVar3 != 0)) {
     uVar2 = 0xffffffff;
     iVar3 = 0;
-    if (0 < (polygon_info->base).count) {
-      pSVar1 = polygon_info;
+    if (0 < (prim->base).count) {
+      pSVar1 = prim;
       do {
         iVar3 = iVar3 + 1;
         uVar2 = uVar2 & this_ptr->vertex_buffer_ptr[pSVar1[1].base.type].projected_vertex.screen_x;
         pSVar1 = (SMRGLHeaderPrimitive *)&(pSVar1->base).count;
-      } while (iVar3 < (polygon_info->base).count);
+      } while (iVar3 < (prim->base).count);
     }
     if (((uVar2 & 0x80000000) == 0) || ((uVar2 & 0x1f) == 0)) {
       if (this_ptr->face_count == 0) {
@@ -42,7 +42,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf
         g_ScanlineRenderFunc = (RenderScanlineFunc *)core_dstrender_cpp_renderDepthOnlyStandard_FUN_0049072f;
       }
       engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740
-                (this_ptr,(polygon_info->base).count,(int *)(polygon_info + 1));
+                (this_ptr,(prim->base).count,(int *)(prim + 1));
     }
   }
   return;

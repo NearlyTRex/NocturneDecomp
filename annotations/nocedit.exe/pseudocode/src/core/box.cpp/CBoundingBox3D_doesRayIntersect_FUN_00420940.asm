@@ -34,8 +34,8 @@
 ;   core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_004781d0 at 0047821d
 ;   core_manpuz.cpp_CMansionPuzzleCircle_customRayIntersect_FUN_00509330 at 005096a4
 ;   core_msnedit.cpp_CDemonMission_FUN_0053c340 at 0053c493
-;   core_setdir.cpp_FUN_005763a0 at 005765ab
-;   core_setedit.cpp_CDemonSet_FUN_00583170 at 005840f5
+;   core_setdir.cpp_testOBBIntersection_FUN_005763a0 at 005765ab
+;   core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170 at 005840f5
 ;   core_wateract.cpp_CWaterActor_customRayIntersect_FUN_005eb740 at 005eb76f
 ;
 ; *****************************************************************************

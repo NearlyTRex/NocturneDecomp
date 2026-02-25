@@ -28,7 +28,7 @@ void __cdecl core_script_cpp_CScript_initRuntime_FUN_0055a540(CScript *this_ptr)
   this_ptr->who_is_speaking = (CDemonActor *)0x0;
   this_ptr->focus_actor = (CDemonActor *)g_HeroActors[iVar3];
   pCVar2 = g_CGamePtr;
-  this_ptr->unk2 = 1;
+  this_ptr->focus_actor_changed = 1;
   pCVar2->allow_damage_flag = 1;
   pCVar2->allow_enemy_attack_flag = 1;
   pCVar2->letterbox_mode = 0;

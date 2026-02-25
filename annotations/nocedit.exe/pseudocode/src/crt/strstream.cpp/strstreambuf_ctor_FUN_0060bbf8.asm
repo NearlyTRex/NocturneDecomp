@@ -10,7 +10,7 @@
 ;   strstreambuf_vtable g_StrstreambufVTable
 ;
 ; Called Functions:
-;   crt_iostream.cpp_streambuf_constructor_FUN_0060b7c2
+;   crt_iostream.cpp_streambuf_ctor_FUN_0060b7c2
 ;   crt_strstream.cpp_strstreambuf_init_FUN_0060b815
 ;
 ; *****************************************************************************
@@ -21,8 +21,8 @@ section .text
         ;   Label: crt_strstream.cpp_strstreambuf_ctor_FUN_0060bbf8
     MOV EDX,dword ptr [ESP + 0x8]       ; 0060bbf9
     PUSH EDX                            ; 0060bbfd
-    CALL crt_iostream.cpp_streambuf_constructor_FUN_0060b7c2 ; 0060bbfe
-        ;   XREF to: 0060b7c2 (UNCONDITIONAL_CALL)  ; streambuf * crt_iostream.cpp_streambuf_constructor_FUN_0060b7c2(streambuf * this_ptr)
+    CALL crt_iostream.cpp_streambuf_ctor_FUN_0060b7c2 ; 0060bbfe
+        ;   XREF to: 0060b7c2 (UNCONDITIONAL_CALL)  ; streambuf * crt_iostream.cpp_streambuf_ctor_FUN_0060b7c2(streambuf * this_ptr)
     ADD ESP,0x4                         ; 0060bc03
     PUSH 0x0                            ; 0060bc06
     PUSH 0x0                            ; 0060bc08

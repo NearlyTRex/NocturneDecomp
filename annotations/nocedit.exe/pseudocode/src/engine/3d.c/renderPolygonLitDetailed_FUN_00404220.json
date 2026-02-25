@@ -30,7 +30,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_3d.c_renderPolygonLitDetailed_FUN_00404220",
-    "signature": "SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLitDetailed_FUN_00404220(SMRGLHeaderPrimitive *polygon_info)"
+    "signature": "SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLitDetailed_FUN_00404220(SMRGLHeaderPrimitive *prim)"
   },
   "function_calls": [
     {
@@ -185,7 +185,7 @@
     "variables": [
       {
         "is_param": true,
-        "name": "polygon_info",
+        "name": "prim",
         "offset": 4,
         "size": 4,
         "type": "SMRGLHeaderPrimitive *"
@@ -214,7 +214,7 @@
       "line": 91,
       "match": "(SMRGLHeaderExtended *)((int)",
       "severity": "mild",
-      "text": "return (SMRGLHeaderExtended *)((int)&polygon_info[1].base + (polygon_info->base).count * 0xc);",
+      "text": "return (SMRGLHeaderExtended *)((int)&prim[1].base + (prim->base).count * 0xc);",
       "type": "pointer_cast"
     }
   ],

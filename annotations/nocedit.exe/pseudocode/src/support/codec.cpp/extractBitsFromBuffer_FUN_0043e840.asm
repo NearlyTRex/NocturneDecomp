@@ -1,18 +1,18 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl support_codec_cpp_extractBitsFromBuffer_FUN_0043e840(SBitBuffer *bit_state,int bit_count,byte **output_pos,int *bytes_remaining)
+; int __cdecl support_codec_cpp_extractBitsFromBuffer_FUN_0043e840(SBitBuffer *bit_state,int bit_count,char **output_pos,int *bytes_remaining)
 ;
 ; Parameters:
 ; SBitBuffer *     Stack[0x4]:4   bit_state
 ; int              Stack[0x8]:4   bit_count
-; byte * *         Stack[0xc]:4   output_pos
+; char * *         Stack[0xc]:4   output_pos
 ; int *            Stack[0x10]:4   bytes_remaining
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   support_codec.cpp_CLZWDictionary_writeCodeToStream_FUN_0043f0d0 at 0043f109
+;   support_codec.cpp_CLZWDictionary_readCodeFromBuffer_FUN_0043f0d0 at 0043f109
 ;
 ; *****************************************************************************
 

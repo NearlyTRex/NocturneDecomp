@@ -12,11 +12,11 @@
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 at 004ddbb3
 ;   core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0 at 00538473
 ;   core_msnedit.cpp_CDemonMission_showOptionsMenu_FUN_00537680 at 00537883
-;   core_setedit.cpp_CDemonSet_FUN_0057bbe0 at 0057c01d
-;   core_setedit.cpp_CDemonSet_FUN_0057d660 at 0057e233
-;   core_setedit.cpp_CDemonSet_FUN_0057e7c0 at 0057ea6a
-;   core_setedit.cpp_CDemonSet_FUN_00580730 at 00581172
+;   core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660 at 0057e233
+;   core_setedit.cpp_CDemonSet_showCameraEditor_FUN_0057e7c0 at 0057ea6a
 ;   core_setedit.cpp_CDemonSet_showEditorMenu_FUN_00584940 at 00584adf
+;   core_setedit.cpp_CDemonSet_showFogEditor_FUN_00580730 at 00581172
+;   core_setedit.cpp_CDemonSet_showLightEditor_FUN_0057c5d0 at 0057c9b0
 ;   ... and 5 more
 ;
 ; Called Functions:

@@ -13,7 +13,7 @@ int __cdecl engine_fileio_cpp_findMaxFieldInTimestampFile_FUN_004b2640(char *fil
   STimestampRecord *pSVar2;
   int iVar3;
   int iVar4;
-  int iVar5;
+  uint uVar5;
   char *in_stack_00000008;
   _FILE *local_18;
   STimestampRecord *local_14;
@@ -44,15 +44,15 @@ LAB_004b2681:
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_18,"..\\engine\\fileio.cpp",0xc4);
     local_18 = (_FILE *)0x0;
   }
-  iVar5 = -1;
+  uVar5 = 0xffffffff;
   if (-1 < iVar4) {
     iVar3 = 0;
-    iVar5 = 0;
+    uVar5 = 0;
     pSVar2 = local_14;
     if (0 < iVar4) {
       do {
-        if (iVar5 < *(int *)(pSVar2->unk1 + 0xfc)) {
-          iVar5 = *(int *)(pSVar2->unk1 + 0xfc);
+        if ((int)uVar5 < (int)pSVar2->record_number) {
+          uVar5 = pSVar2->record_number;
         }
         iVar3 = iVar3 + 1;
         pSVar2 = pSVar2 + 1;
@@ -62,5 +62,5 @@ LAB_004b2681:
   if (local_14 != (STimestampRecord *)0x0) {
     shape_memdbg_cpp_debugFree_FUN_0050f460(local_14,"..\\engine\\fileio.cpp",0x201);
   }
-  return iVar5;
+  return uVar5;
 }

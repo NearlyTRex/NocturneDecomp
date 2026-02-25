@@ -21,6 +21,6 @@ typedef struct CSfxOptions {
     uint flags; // 0x5c
     double trigger_time; // 0x60
     int trigger_id; // 0x68
-    int unk; // 0x6c
+    int dead; // 0x6c
 } CSfxOptions;
 

@@ -14,8 +14,8 @@
 ;   TerminatedCString s_You_currently_have_s_che_00626502
 ;   TerminatedCString s_A_writable_copy_of_s_exi_0062654c
 ;   SVersionControlSession g_VersionControlSession
-;   undefined4 g_VersionControlSession.unk1[0]
-;   undefined4 g_VersionControlSession.unk1[4]
+;   undefined4 g_VersionControlSession.overwrite_own_choice
+;   undefined4 g_VersionControlSession.overwrite_writeable_choice
 ;
 ; Called Functions:
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
@@ -77,7 +77,7 @@ section .text
     CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b3182
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004b3187
-    PUSH 0x2d12bf0                      ; 004b318a | g_VersionControlSession.unk1[0]
+    PUSH 0x2d12bf0                      ; 004b318a | g_VersionControlSession.overwrite_own_choice
     LEA EAX,[ESP + 0x4]                 ; 004b318f
     PUSH EAX                            ; 004b3193
     CALL engine_fileio.cpp_showOverwriteConfirmationDialog_FUN_004b2f90 ; 004b3194
@@ -93,7 +93,7 @@ section .text
     CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b31ac
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004b31b1
-    PUSH 0x2d12bf4                      ; 004b31b4 | g_VersionControlSession.unk1[4]
+    PUSH 0x2d12bf4                      ; 004b31b4 | g_VersionControlSession.overwrite_writeable_choice
     LEA EAX,[ESP + 0x1f8]               ; 004b31b9
     PUSH EAX                            ; 004b31c0
     CALL engine_fileio.cpp_showOverwriteConfirmationDialog_FUN_004b2f90 ; 004b31c1

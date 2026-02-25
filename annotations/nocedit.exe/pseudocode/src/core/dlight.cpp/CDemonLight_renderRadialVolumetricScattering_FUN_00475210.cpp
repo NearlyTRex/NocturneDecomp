@@ -57,7 +57,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
               (g_CDemonRendererPtr2,(CVector3f *)&(this_ptr->base).base.position);
     core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
-              ((CMatrix3x3f *)&(this_ptr->base).base.rotation_matrix,&local_94);
+              (&(this_ptr->base).base.rotation_matrix,&local_94);
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
               (g_CDemonRendererPtr2,(CVector3i *)&local_94,(CVector3i *)0x0);
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
@@ -66,7 +66,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00
     local_e8 = 1;
     do {
       fVar3 = (float10)local_e8 *
-              ((float10)18 / (float10)(this_ptr->base).base.projection_scale) *
+              ((float10)18 / (float10)(this_ptr->base).base.focal_length) *
               (float10)0.0625;
       Var8 = fpatan(fVar3,(float10)1);
       fVar4 = (float10)fcos(Var8);

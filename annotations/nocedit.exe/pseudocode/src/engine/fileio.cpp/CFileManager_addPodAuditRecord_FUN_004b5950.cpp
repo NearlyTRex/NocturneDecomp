@@ -33,13 +33,13 @@ void __cdecl engine_fileio_cpp_CFileManager_addPodAuditRecord_FUN_004b5950(CFile
   ppCVar4 = &this_ptr;
   pCVar6 = pCVar2;
   for (iVar3 = 0x4e; iVar3 != 0; iVar3 = iVar3 + -1) {
-    pCVar6->day = (int)*ppCVar4;
+    *(CFileManager **)pCVar6->user_path = *ppCVar4;
     ppCVar4 = ppCVar4 + (uint)bVar8 * -2 + 1;
     pCVar6 = (CPodAuditRecord *)((int)pCVar6 + (uint)bVar8 * -8 + 4);
   }
-  memset(pCVar2->filename_path,0,0x100);
+  memset(pCVar2->filename,0,0x100);
   pcVar5 = &stack0x0000002c;
-  pcVar7 = g_AuditRecordsArray[g_AuditRecordCount + -1].filename_path;
+  pcVar7 = g_AuditRecordsArray[g_AuditRecordCount + -1].filename;
   do {
     cVar1 = *pcVar5;
     *pcVar7 = cVar1;

@@ -18,7 +18,7 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_004a4d40(CPickList *t
   char *pcVar7;
   int iVar8;
   char *pcVar9;
-  char *pcVar10;
+  int *piVar10;
   char local_15c [300];
   int local_30;
   int local_2c;
@@ -58,13 +58,13 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_004a4d40(CPickList *t
           iVar8 = local_24;
           local_18 = 0;
           pcVar7 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&this_ptr->base,local_24);
-          local_14 = local_28 + this_ptr->unk2;
+          local_14 = local_28 + this_ptr->column_padding;
           local_20 = g_EnabledTextColor;
           iVar8 = shape_edittool_cpp_CPickList_isItemEnabled_FUN_004a54e0(this_ptr,iVar8);
           if (iVar8 == 0) {
             local_20 = g_BackgroundColor1;
           }
-          pcVar10 = this_ptr->unk3 + local_18 * 4 + -0x14;
+          piVar10 = this_ptr->tab_column_widths + local_18 + -4;
           do {
             cVar1 = *pcVar7;
             pcVar2 = pcVar7;
@@ -80,8 +80,8 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_004a4d40(CPickList *t
             engine_font_cpp_CBitFont_drawText_FUN_004cda80
                       (g_EditorFont,local_15c,local_14,local_1c,local_20,-1);
             local_18 = local_18 + 1;
-            local_14 = local_14 + *(int *)(pcVar10 + 0x10);
-            pcVar10 = pcVar10 + 4;
+            local_14 = local_14 + piVar10[4];
+            piVar10 = piVar10 + 1;
           } while (*pcVar7 != '\0');
           local_1c = local_1c + this_ptr->character_width;
           local_24 = local_24 + 1;

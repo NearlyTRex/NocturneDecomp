@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_set_cpp_computeTriangleNormalIndexed_FUN_0056e2b0(void)
+; void __cdecl core_set_cpp_computeTriangleNormalIndexed_FUN_0056e2b0(CVector3i *vertex_array,ushort *triangle_indices,CVector3f *out_normal)
 ;
+; Parameters:
+; CVector3i *      Stack[0x4]:4   vertex_array
+; ushort *         Stack[0x8]:4   triangle_indices
+; CVector3f *      Stack[0xc]:4   out_normal
 ; Local Variables:
 ; undefined4       Stack[-0x44]:4  local_44
 ; undefined4       Stack[-0x38]:4  local_38

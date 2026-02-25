@@ -50,14 +50,14 @@
 ;   core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0
 ;   core_set.cpp_CDemonSet_initScene_FUN_0056aa10
 ;   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470
-;   core_setedit.cpp_CDemonSet_FUN_00576da0
-;   core_setedit.cpp_CDemonSet_FUN_0057b410
-;   core_setedit.cpp_CDemonSet_FUN_0057b500
-;   core_setedit.cpp_CDemonSet_FUN_0057b600
-;   core_setedit.cpp_CDemonSet_FUN_0057bbe0
-;   core_setedit.cpp_CDemonSet_FUN_0057c550
+;   core_setedit.cpp_CDemonSet_addSpotLight_FUN_0057b410
+;   core_setedit.cpp_CDemonSet_cloneLight_FUN_0057b600
+;   core_setedit.cpp_CDemonSet_deleteLight_FUN_0057b910
+;   core_setedit.cpp_CDemonSet_editSpotLight_FUN_0057b500
+;   core_setedit.cpp_CDemonSet_findLightByMasterIndex_FUN_0057c550
+;   core_setedit.cpp_CDemonSet_loadOrBuildThumbnails_FUN_00576da0
 ;   core_setedit.cpp_CDemonSet_save_FUN_0057a2a0
-;   core_setedit.cpp_FUN_0057b910
+;   core_setedit.cpp_CDemonSet_showLightFilterEditor_FUN_0057bbe0
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   ... and 17 more
 ;
@@ -76,8 +76,8 @@ section .text
     PUSH 0x0                            ; 0057c5df
     MOV EDX,dword ptr [EBP + 0x14]      ; 0057c5e1
     PUSH EDX                            ; 0057c5e4
-    CALL core_setedit.cpp_CDemonSet_FUN_00576da0 ; 0057c5e5
-        ;   XREF to: 00576da0 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_CDemonSet_FUN_00576da0(CDemonSet * this_ptr)
+    CALL core_setedit.cpp_CDemonSet_loadOrBuildThumbnails_FUN_00576da0 ; 0057c5e5
+        ;   XREF to: 00576da0 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_CDemonSet_loadOrBuildThumbnails_FUN_00576da0(CDemonSet * this_ptr, int force_rebuild)
     ADD ESP,0x8                         ; 0057c5ea
     MOV ECX,dword ptr [0x0067b654]      ; 0057c5ed | g_CGameInstance | g_CGamePtr
     PUSH ECX                            ; 0057c5f3 | g_CGameInstance
@@ -416,8 +416,8 @@ section .text
         ;   XREF to: 0057c9e2 (CONDITIONAL_JUMP)  ; LAB_0057c9e2
     MOV EBX,dword ptr [EBP + 0x14]      ; 0057c9d6
     PUSH EBX                            ; 0057c9d9
-    CALL core_setedit.cpp_CDemonSet_FUN_0057b410 ; 0057c9da
-        ;   XREF to: 0057b410 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_CDemonSet_FUN_0057b410(CDemonSet * this_ptr)
+    CALL core_setedit.cpp_CDemonSet_addSpotLight_FUN_0057b410 ; 0057c9da
+        ;   XREF to: 0057b410 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_CDemonSet_addSpotLight_FUN_0057b410(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 0057c9df
         ;   Label: LAB_0057c9df
     TEST byte ptr [0x02cf6a94],0x1      ; 0057c9e2 | g_MouseButtonFlags
@@ -431,14 +431,14 @@ section .text
     PUSH ESI                            ; 0057c9f7
     MOV EAX,dword ptr [EBP + 0x14]      ; 0057c9f8
     PUSH EAX                            ; 0057c9fb
-    CALL core_setedit.cpp_CDemonSet_FUN_0057c550 ; 0057c9fc
-        ;   XREF to: 0057c550 (UNCONDITIONAL_CALL)  ; int core_setedit.cpp_CDemonSet_FUN_0057c550(CDemonSet * this_ptr)
+    CALL core_setedit.cpp_CDemonSet_findLightByMasterIndex_FUN_0057c550 ; 0057c9fc
+        ;   XREF to: 0057c550 (UNCONDITIONAL_CALL)  ; int core_setedit.cpp_CDemonSet_findLightByMasterIndex_FUN_0057c550(CDemonSet * this_ptr, int master_light_index)
     ADD ESP,0x8                         ; 0057ca01
     PUSH EAX                            ; 0057ca04
     MOV EDX,dword ptr [EBP + 0x14]      ; 0057ca05
     PUSH EDX                            ; 0057ca08
-    CALL core_setedit.cpp_CDemonSet_FUN_0057b500 ; 0057ca09
-        ;   XREF to: 0057b500 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_CDemonSet_FUN_0057b500(CDemonSet * this_ptr)
+    CALL core_setedit.cpp_CDemonSet_editSpotLight_FUN_0057b500 ; 0057ca09
+        ;   XREF to: 0057b500 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_CDemonSet_editSpotLight_FUN_0057b500(CDemonSet * this_ptr, int light_index)
     ADD ESP,0x8                         ; 0057ca0e
     CMP dword ptr [ESP + 0xfb0],0x1b    ; 0057ca11
         ;   Label: LAB_0057ca11
@@ -510,14 +510,14 @@ section .text
     PUSH EAX                            ; 0057caba
     MOV ECX,dword ptr [EBP + 0x14]      ; 0057cabb
     PUSH ECX                            ; 0057cabe
-    CALL core_setedit.cpp_CDemonSet_FUN_0057c550 ; 0057cabf
-        ;   XREF to: 0057c550 (UNCONDITIONAL_CALL)  ; int core_setedit.cpp_CDemonSet_FUN_0057c550(CDemonSet * this_ptr)
+    CALL core_setedit.cpp_CDemonSet_findLightByMasterIndex_FUN_0057c550 ; 0057cabf
+        ;   XREF to: 0057c550 (UNCONDITIONAL_CALL)  ; int core_setedit.cpp_CDemonSet_findLightByMasterIndex_FUN_0057c550(CDemonSet * this_ptr, int master_light_index)
     ADD ESP,0x8                         ; 0057cac4
     PUSH EAX                            ; 0057cac7
     MOV EBX,dword ptr [EBP + 0x14]      ; 0057cac8
     PUSH EBX                            ; 0057cacb
-    CALL core_setedit.cpp_CDemonSet_FUN_0057b500 ; 0057cacc
-        ;   XREF to: 0057b500 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_CDemonSet_FUN_0057b500(CDemonSet * this_ptr)
+    CALL core_setedit.cpp_CDemonSet_editSpotLight_FUN_0057b500 ; 0057cacc
+        ;   XREF to: 0057b500 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_CDemonSet_editSpotLight_FUN_0057b500(CDemonSet * this_ptr, int light_index)
     ADD ESP,0x8                         ; 0057cad1
     PUSH 0x0                            ; 0057cad4
         ;   Label: LAB_0057cad4
@@ -640,14 +640,14 @@ section .text
     PUSH EAX                            ; 0057cc0d
     MOV EAX,dword ptr [EBP + 0x14]      ; 0057cc0e
     PUSH EAX                            ; 0057cc11
-    CALL core_setedit.cpp_CDemonSet_FUN_0057c550 ; 0057cc12
-        ;   XREF to: 0057c550 (UNCONDITIONAL_CALL)  ; int core_setedit.cpp_CDemonSet_FUN_0057c550(CDemonSet * this_ptr)
+    CALL core_setedit.cpp_CDemonSet_findLightByMasterIndex_FUN_0057c550 ; 0057cc12
+        ;   XREF to: 0057c550 (UNCONDITIONAL_CALL)  ; int core_setedit.cpp_CDemonSet_findLightByMasterIndex_FUN_0057c550(CDemonSet * this_ptr, int master_light_index)
     ADD ESP,0x8                         ; 0057cc17
     PUSH EAX                            ; 0057cc1a
     MOV EDX,dword ptr [EBP + 0x14]      ; 0057cc1b
     PUSH EDX                            ; 0057cc1e
-    CALL core_setedit.cpp_CDemonSet_FUN_0057bbe0 ; 0057cc1f
-        ;   XREF to: 0057bbe0 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_CDemonSet_FUN_0057bbe0(CDemonSet * this_ptr)
+    CALL core_setedit.cpp_CDemonSet_showLightFilterEditor_FUN_0057bbe0 ; 0057cc1f
+        ;   XREF to: 0057bbe0 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_CDemonSet_showLightFilterEditor_FUN_0057bbe0(CDemonSet * this_ptr, int light_index)
     ADD ESP,0x8                         ; 0057cc24
     PUSH 0x0                            ; 0057cc27
         ;   Label: LAB_0057cc27
@@ -700,14 +700,14 @@ section .text
     PUSH EAX                            ; 0057cc98
     MOV ECX,dword ptr [EBP + 0x14]      ; 0057cc99
     PUSH ECX                            ; 0057cc9c
-    CALL core_setedit.cpp_CDemonSet_FUN_0057c550 ; 0057cc9d
-        ;   XREF to: 0057c550 (UNCONDITIONAL_CALL)  ; int core_setedit.cpp_CDemonSet_FUN_0057c550(CDemonSet * this_ptr)
+    CALL core_setedit.cpp_CDemonSet_findLightByMasterIndex_FUN_0057c550 ; 0057cc9d
+        ;   XREF to: 0057c550 (UNCONDITIONAL_CALL)  ; int core_setedit.cpp_CDemonSet_findLightByMasterIndex_FUN_0057c550(CDemonSet * this_ptr, int master_light_index)
     ADD ESP,0x8                         ; 0057cca2
     PUSH EAX                            ; 0057cca5
     MOV EBX,dword ptr [EBP + 0x14]      ; 0057cca6
     PUSH EBX                            ; 0057cca9
-    CALL core_setedit.cpp_CDemonSet_FUN_0057b600 ; 0057ccaa
-        ;   XREF to: 0057b600 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_CDemonSet_FUN_0057b600(CDemonSet * this_ptr)
+    CALL core_setedit.cpp_CDemonSet_cloneLight_FUN_0057b600 ; 0057ccaa
+        ;   XREF to: 0057b600 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_CDemonSet_cloneLight_FUN_0057b600(CDemonSet * this_ptr, int light_index)
     ADD ESP,0x8                         ; 0057ccaf
     PUSH 0x0                            ; 0057ccb2
         ;   Label: LAB_0057ccb2
@@ -850,8 +850,8 @@ section .text
     PUSH EAX                            ; 0057ce1a
     MOV EAX,dword ptr [EBP + 0x14]      ; 0057ce1b
     PUSH EAX                            ; 0057ce1e
-    CALL core_setedit.cpp_CDemonSet_FUN_0057c550 ; 0057ce1f
-        ;   XREF to: 0057c550 (UNCONDITIONAL_CALL)  ; int core_setedit.cpp_CDemonSet_FUN_0057c550(CDemonSet * this_ptr)
+    CALL core_setedit.cpp_CDemonSet_findLightByMasterIndex_FUN_0057c550 ; 0057ce1f
+        ;   XREF to: 0057c550 (UNCONDITIONAL_CALL)  ; int core_setedit.cpp_CDemonSet_findLightByMasterIndex_FUN_0057c550(CDemonSet * this_ptr, int master_light_index)
     IMUL EDX,EAX,0x1898                 ; 0057ce24
     ADD ESP,0x8                         ; 0057ce2a
     MOV ECX,dword ptr [EBP + 0x14]      ; 0057ce2d
@@ -859,8 +859,8 @@ section .text
     ADD EDX,ECX                         ; 0057ce31
     PUSH ECX                            ; 0057ce33
     MOV EBX,dword ptr [EDX + 0x19a30]   ; 0057ce34
-    CALL core_setedit.cpp_FUN_0057b910  ; 0057ce3a
-        ;   XREF to: 0057b910 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_FUN_0057b910()
+    CALL core_setedit.cpp_CDemonSet_deleteLight_FUN_0057b910 ; 0057ce3a
+        ;   XREF to: 0057b910 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_CDemonSet_deleteLight_FUN_0057b910(CDemonSet * this_ptr, int light_index)
     ADD ESP,0x8                         ; 0057ce3f
     TEST EBX,EBX                        ; 0057ce42
     JNZ 0x0057ce5b                      ; 0057ce44

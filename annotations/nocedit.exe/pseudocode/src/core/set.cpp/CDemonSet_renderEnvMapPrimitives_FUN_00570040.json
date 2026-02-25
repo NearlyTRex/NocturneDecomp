@@ -1,30 +1,22 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 16,
-        "line": 51,
-        "message": "assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 199,
-    "complexity_score": 420,
+    "complexity_score": 385,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 10,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 110,
-    "suspect_count": 29,
+    "suspect_count": 26,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_few",
-      "pointer_cast",
-      "unnamed_param"
+      "pointer_cast"
     ],
     "total_lines": 309
   },
@@ -52,7 +44,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_set.cpp_CDemonSet_renderEnvMapPrimitives_FUN_00570040",
-    "signature": "void __cdecl core_set_cpp_CDemonSet_renderEnvMapPrimitives_FUN_00570040(CDemonSet *this_ptr,void *param_2,int count,int alpha,int stride)"
+    "signature": "void __cdecl core_set_cpp_CDemonSet_renderEnvMapPrimitives_FUN_00570040(CDemonSet *this_ptr,SMRGLHeaderPrimitive *prims,int count,int alpha,int stride)"
   },
   "function_calls": [
     {
@@ -107,7 +99,7 @@
     },
     {
       "addr": "006813e4",
-      "name": "SMRGLTextureBasic_006813e4",
+      "name": "g_EnvMapTexture",
       "type": "SMRGLTextureBasic",
       "value": null
     },
@@ -285,10 +277,10 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "prims",
         "offset": 8,
         "size": 4,
-        "type": "void *"
+        "type": "SMRGLHeaderPrimitive *"
       },
       {
         "is_param": true,
@@ -332,20 +324,12 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
+      "description": "Complex pointer cast",
+      "line": 48,
+      "match": "(SMRGLHeaderPrimitive *)((int)",
       "severity": "mild",
-      "text": "void __cdecl core_set_cpp_CDemonSet_renderEnvMapPrimitives_FUN_00570040(CDemonSet *this_ptr,void *param_2,int count,int alpha,int stride)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "puVar7 = param_2;",
-      "type": "unnamed_param"
+      "text": "pSVar7 = (SMRGLHeaderPrimitive *)((int)pSVar7 + (uint)bVar10 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
@@ -534,26 +518,10 @@
     {
       "description": "Complex pointer cast",
       "line": 109,
-      "match": "(void *)((int)",
+      "match": "(SMRGLHeaderPrimitive *)((int)",
       "severity": "mild",
-      "text": "param_2 = (void *)((int)param_2 + stride);",
+      "text": "prims = (SMRGLHeaderPrimitive *)((int)&(prims->base).type + stride);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 109,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = (void *)((int)param_2 + stride);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 109,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = (void *)((int)param_2 + stride);",
-      "type": "unnamed_param"
     },
     {
       "call_site_count": 2,
