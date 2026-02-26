@@ -32,7 +32,7 @@ int __cdecl core_netgame_cpp_CNetGame_initializeNetworkToHost_FUN_0053f860(CNetG
   if (iVar2 == 0) {
     return 0;
   }
-  this_ptr->network_mode = 1;
-  this_ptr->connection_type = 1;
+  this_ptr->network_mode = NET_MODE_LOBBY;
+  this_ptr->connection_type = CONNECTION_HOST;
   return 1;
 }

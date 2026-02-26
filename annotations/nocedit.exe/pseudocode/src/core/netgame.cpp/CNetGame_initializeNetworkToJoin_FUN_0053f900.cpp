@@ -48,9 +48,9 @@ int __cdecl core_netgame_cpp_CNetGame_initializeNetworkToJoin_FUN_0053f900(CNetG
   iVar3 = core_netgame_cpp_CNetGame_addPlayer_FUN_005412b0
                     (this_ptr,&local_28,"TheServer",0,0);
   uVar5 = g_CurrentGameTime;
-  this_ptr->connection_type = 2;
+  this_ptr->connection_type = CONNECTION_CLIENT;
   this_ptr_00 = g_CEditorToolsPtr;
-  this_ptr->network_mode = 1;
+  this_ptr->network_mode = NET_MODE_LOBBY;
   this_ptr->server_player_index = iVar3;
   uVar5 = uVar5 - 0x50000;
   g_ConnectionStatus = CONNECTION_STATUS_WAITING;

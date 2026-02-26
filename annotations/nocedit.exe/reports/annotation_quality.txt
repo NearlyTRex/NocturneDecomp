@@ -12,9 +12,9 @@ SUMMARY STATISTICS
 ====================================================================================================
 
   Total functions analyzed:          6,494
-  Unnamed functions (FUN_):          227 ( 3.5%)
-  Functions with unnamed params:     58 ( 0.9%)
-  Functions with type issues:        2,510 (38.7%)
+  Unnamed functions (FUN_):          215 ( 3.3%)
+  Functions with unnamed params:     56 ( 0.9%)
+  Functions with type issues:        2,506 (38.6%)
 
   Type issue breakdown:
     Wrong return type (void):          4
@@ -22,7 +22,7 @@ SUMMARY STATISTICS
     Missing register params:           18
     Wrong calling convention:          71
     Undefined types in variables:      2275
-    Unresolved stack params:           585
+    Unresolved stack params:           575
 
 ====================================================================================================
 UNNAMED FUNCTIONS (still using FUN_XXXXXXXX)
@@ -50,10 +50,6 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x00440b40  __cdecl       1 callers
     0x00440c80  __cdecl       1 callers
     0x004406c0  __cdecl       1 callers
-
-  core/hero.cpp (2 unnamed)
-    0x004f2220  __cdecl       5 callers
-    0x004f22a0  __cdecl       1 callers
 
   shape/superopt.cpp (55 unnamed)
     0x005c9aa0  __cdecl       4 callers
@@ -203,10 +199,6 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x005374b0  __cdecl       0 callers
     0x00535df0  __cdecl       0 callers
 
-  core/boxactor.cpp (2 unnamed)
-    0x00423110  __cdecl       2 callers
-    0x0042307e  __cdecl       0 callers
-
   core/zombie.cpp (8 unnamed)
     0x005f8e50  __cdecl       1 callers
     0x005f8da0  __cdecl       0 callers
@@ -217,16 +209,10 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x005fcf80  __cdecl       0 callers
     0x005fcd20  __cdecl       0 callers
 
-  core/baron.cpp (1 unnamed)
-    0x00413470  __cdecl       1 callers
-
   core/manpuz.cpp (3 unnamed)
     0x0050a4f0  __cdecl       1 callers
     0x0050b9a0  __cdecl       0 callers
     0x0050a490  __cdecl       0 callers
-
-  core/vessel.cpp (1 unnamed)
-    0x005e9180  __cdecl       1 callers
 
   core/charactr.cpp (5 unnamed)
     0x0042f9c0  __cdecl       1 callers
@@ -235,23 +221,11 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x0042f930  __cdecl       0 callers
     0x0042f990  __cdecl       0 callers
 
-  cockpit/ckptutil.c (1 unnamed)
-    0x004338f0  __cdecl       0 callers
-
-  core/netgame.cpp (1 unnamed)
-    0x00543db0  __cdecl       0 callers
-
-  core/dracbrid.cpp (1 unnamed)
-    0x00486430  __cdecl       0 callers
-
   core/icepick.cpp (1 unnamed)
     0x004f8b00  __cdecl       0 callers
 
   core/pendulum.cpp (1 unnamed)
     0x00549aa0  __cdecl       0 callers
-
-  core/door.cpp (1 unnamed)
-    0x00481650  __cdecl       0 callers
 
   core/setedit.cpp (4 unnamed)
     0x00582f30  __cdecl       0 callers
@@ -283,9 +257,6 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x004423f0  __cdecl       0 callers
     0x00442400  __cdecl       0 callers
 
-  core/larva.cpp (1 unnamed)
-    0x005039d0  __cdecl       0 callers
-
   core/colonel.cpp (1 unnamed)
     0x00440650  __cdecl       0 callers
 
@@ -314,9 +285,6 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x00431340  __cdecl       0 callers
     0x00431350  __cdecl       0 callers
     0x00431330  __cdecl       0 callers
-
-  core/mission.cpp (1 unnamed)
-    0x00522c60  __cdecl       0 callers
 
   core/mimic.cpp (2 unnamed)
     0x0051f130  __cdecl       0 callers
@@ -400,10 +368,6 @@ Sorted by number of unnamed parameters (most unnamed first).
     Unnamed: param_2 (int), param_3 (int), param_4 (int)
     Named:   this_ptr (CBitmap *)
 
-  FUN_00413470
-    Address: 0x00413470  File: core/baron.cpp
-    Unnamed: param_1 (int), param_2 (CDemonActor *)
-
   CDemonMission_createOneHero
     Address: 0x00524920  File: core/mission.cpp
     Unnamed: param_3 (int), param_4 (void *)
@@ -461,10 +425,6 @@ Sorted by number of unnamed parameters (most unnamed first).
     Address: 0x0041ae50  File: core/bodypart.cpp
     Unnamed: param_2 (CVector3f *)
     Named:   this_ptr (CBodyPart *)
-
-  FUN_0042307e
-    Address: 0x0042307e  File: core/boxactor.cpp
-    Unnamed: param_1 (int)
 
   CCharacter_applyGestureLookAt
     Address: 0x0042dfc0  File: core/charactr.cpp
@@ -1219,7 +1179,7 @@ Wrong calling convention (unaffected register usage) (71)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
 --------------------------------------------------------------------------------
-Unresolved stack parameters (missing from signature) (585)
+Unresolved stack parameters (missing from signature) (575)
 --------------------------------------------------------------------------------
 
   CPackedBitmapSet_reload
@@ -1280,12 +1240,6 @@ Unresolved stack parameters (missing from signature) (585)
     Address: 0x00434af0  File: cockpit/ckptutil.c
     Evidence: in_stack_00000020, in_stack_00000024, in_stack_00000024, in_stack_00000020, in_stack_00000024
     Signature: void * __cdecl cockpit_ckptutil_c_traceConnectedEdges_FUN_00434af0(SEdgeList *edge_lists,void *output_buffer,int *output_count,int max_x,int max_y,int gap_tolerance_x,int gap_tolerance_y)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_004338f0
-    Address: 0x004338f0  File: cockpit/ckptutil.c
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000014, in_stack_00000004, in_stack_0000000c, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000010, in_stack_00000014, in_stack_00000010, in_stack_00000014, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_0000000c
-    Signature: void __cdecl cockpit_ckptutil_c_FUN_004338f0(void)
     Suggested: Signature is missing stack parameters entirely
 
   copyBitmapRegion
@@ -1636,18 +1590,6 @@ Unresolved stack parameters (missing from signature) (585)
     Signature: void __cdecl core_netgame_cpp_CNetGame_send_FUN_005411c0(CNetGame *this_ptr,int player_index)
     Suggested: Signature is missing stack parameters entirely
 
-  FUN_00543db0
-    Address: 0x00543db0  File: core/netgame.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008
-    Signature: void __cdecl core_netgame_cpp_FUN_00543db0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  CNetGame
-    Address: 0x00543bb0  File: core/netgame.cpp
-    Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_netgame_cpp_CNetGame_FUN_00543bb0(CNetGame *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
   CDemonCamera_saveBackdrop
     Address: 0x004529b0  File: core/dcamera.cpp
     Evidence: in_stack_fffffd8c, in_stack_fffffd8c
@@ -1718,12 +1660,6 @@ Unresolved stack parameters (missing from signature) (585)
     Address: 0x004864c0  File: core/dracbrid.cpp
     Evidence: in_stack_00000008, in_stack_0000000c, in_stack_0000000c, in_stack_00000008
     Signature: void __cdecl core_dracbrid_cpp_CDraculaBride_FUN_004864c0(CDraculaBride *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_00486430
-    Address: 0x00486430  File: core/dracbrid.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004
-    Signature: float * __cdecl core_dracbrid_cpp_FUN_00486430(void)
     Suggested: Signature is missing stack parameters entirely
 
   CDraculaBride
@@ -2086,12 +2022,6 @@ Unresolved stack parameters (missing from signature) (585)
     Signature: int __cdecl core_door_cpp_CDoor_getMoveType_FUN_00481070(CDoor *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
-  FUN_00481650
-    Address: 0x00481650  File: core/door.cpp
-    Evidence: in_stack_00000004, in_stack_00000004, in_stack_00000004
-    Signature: int __cdecl core_door_cpp_FUN_00481650(void)
-    Suggested: Signature is missing stack parameters entirely
-
   CVehicle_renderOpaque
     Address: 0x005e88c0  File: core/vehicle.cpp
     Evidence: in_stack_ffffff88, in_stack_ffffff8c, in_stack_ffffff90, in_stack_ffffff88, in_stack_ffffff8c, in_stack_ffffff90
@@ -2332,12 +2262,6 @@ Unresolved stack parameters (missing from signature) (585)
     Signature: void __cdecl core_hero_cpp_CHero_FUN_004f3910(CHero *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
-  FUN_004f2220
-    Address: 0x004f2220  File: core/hero.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000008, in_stack_00000008
-    Signature: int __cdecl core_hero_cpp_FUN_004f2220(void)
-    Suggested: Signature is missing stack parameters entirely
-
   CHero
     Address: 0x004f3930  File: core/hero.cpp
     Evidence: in_stack_00000008, in_stack_00000008
@@ -2348,12 +2272,6 @@ Unresolved stack parameters (missing from signature) (585)
     Address: 0x004f3960  File: core/hero.cpp
     Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
     Signature: float __cdecl core_hero_cpp_CHero_FUN_004f3960(CHero *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_004f22a0
-    Address: 0x004f22a0  File: core/hero.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_0000000c, in_stack_00000008, in_stack_00000008
-    Signature: int __cdecl core_hero_cpp_FUN_004f22a0(void)
     Suggested: Signature is missing stack parameters entirely
 
   CHero
@@ -2426,12 +2344,6 @@ Unresolved stack parameters (missing from signature) (585)
     Address: 0x004fa900  File: core/imp.cpp
     Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_0000000c, in_stack_00000004, in_stack_00000010
     Signature: void __cdecl core_imp_cpp_FUN_004fa900(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005e9180
-    Address: 0x005e9180  File: core/vessel.cpp
-    Evidence: in_stack_00000004, in_stack_00000004
-    Signature: int __cdecl core_vessel_cpp_FUN_005e9180(void)
     Suggested: Signature is missing stack parameters entirely
 
   CAmmoBox
@@ -3250,12 +3162,6 @@ Unresolved stack parameters (missing from signature) (585)
     Signature: void __cdecl core_weapon_cpp_CWeapon_onDropped_FUN_005ee3f0(CWeapon *this_ptr,CVector3f *drop_position)
     Suggested: Signature is missing stack parameters entirely
 
-  FUN_005039d0
-    Address: 0x005039d0  File: core/larva.cpp
-    Evidence: in_stack_00000004, in_stack_00000004, in_stack_00000004
-    Signature: char * __cdecl core_larva_cpp_FUN_005039d0(void)
-    Suggested: Signature is missing stack parameters entirely
-
   CLarva_process
     Address: 0x00503080  File: core/larva.cpp
     Evidence: in_stack_fffffe10, in_stack_fffffe18, in_stack_fffffe10, in_stack_fffffe10, in_stack_fffffe10, in_stack_fffffe10, in_stack_fffffe10, in_stack_fffffe10, in_stack_fffffe10, in_stack_fffffe10, in_stack_fffffe10, in_stack_fffffe18, in_stack_fffffe10, in_stack_fffffe10, in_stack_fffffe10, in_stack_fffffe10, in_stack_fffffe10, in_stack_fffffe10, in_stack_fffffe10
@@ -3560,12 +3466,6 @@ Unresolved stack parameters (missing from signature) (585)
     Address: 0x004235c0  File: core/boxactor.cpp
     Evidence: in_stack_00000008, in_stack_00000008
     Signature: void __cdecl core_boxactor_cpp_CLightActor_FUN_004235c0(CLightActor *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_00423110
-    Address: 0x00423110  File: core/boxactor.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_0000000c, in_stack_00000008, in_stack_00000004
-    Signature: int __cdecl core_boxactor_cpp_FUN_00423110(void)
     Suggested: Signature is missing stack parameters entirely
 
   CFrankenstienMachine_process
@@ -5526,7 +5426,7 @@ Undefined types in variables (2275)
     Locals:  local_e0 (undefined1), local_dc (undefined4), local_ac (undefined4), local_a8 (undefined4), local_a4 (undefined4), local_a0 (undefined4), local_9c (undefined4), local_98 (undefined1), local_8c (undefined1), local_80 (undefined4), local_7c (undefined4), local_78 (undefined4), local_74 (undefined4), local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined1), local_44 (undefined1), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined1)
     Suggested: Resolve undefined types to concrete types
 
-  CNetGame_allocSimFrame
+  CNetGame_processPacket
     Address: 0x005406a0  File: core/netgame.cpp
     Locals:  local_f0 (undefined4), local_ec (undefined4), local_e8 (undefined4), local_e4 (undefined4), local_e0 (undefined1), local_df (undefined1), local_de (undefined1), local_cb (undefined1), local_ca (undefined1), local_7b (undefined1), local_70 (undefined4), local_6c (undefined1), local_6b (undefined4), local_64 (undefined4), local_60 (undefined1), local_5f (undefined4), local_58 (undefined4), local_54 (undefined1), local_4c (undefined4), local_48 (undefined1), local_47 (undefined4), local_40 (undefined4), local_3c (undefined1), local_3b (undefined4), local_34 (undefined1), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -5841,7 +5741,7 @@ Undefined types in variables (2275)
     Locals:  local_638 (undefined1), local_637 (undefined1), local_534 (undefined1), local_430 (undefined1), local_330 (undefined1), local_230 (undefined1), local_168 (undefined1), local_124 (undefined1), local_104 (undefined4), local_e8 (undefined1), local_a4 (undefined1), local_88 (undefined4), local_6c (undefined1), local_68 (undefined1), local_3c (undefined4), local_38 (undefined1), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CNetGame
+  CNetGame_swapPlayerData
     Address: 0x00543bb0  File: core/netgame.cpp
     Locals:  local_74 (undefined4), local_70 (undefined4), local_6c (undefined), local_68 (undefined2), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -8681,7 +8581,7 @@ Undefined types in variables (2275)
     Locals:  local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined1), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_00413470
+  CBaron_engageTarget
     Address: 0x00413470  File: core/baron.cpp
     Locals:  local_34 (undefined1), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -10401,7 +10301,7 @@ Undefined types in variables (2275)
     Locals:  local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_004f22a0
+  isAnyHeroWithinCylinder
     Address: 0x004f22a0  File: core/hero.cpp
     Locals:  local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -10961,14 +10861,14 @@ Undefined types in variables (2275)
     Locals:  local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_004338f0
-    Address: 0x004338f0  File: cockpit/ckptutil.c
-    Locals:  local_14 (undefined4), local_10 (undefined4), local_c (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
   blitVerticalColumn
     Address: 0x00432a10  File: cockpit/ckptutil.c
     Locals:  local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  drawLineListFromBitmap
+    Address: 0x004338f0  File: cockpit/ckptutil.c
+    Locals:  local_14 (undefined4), local_10 (undefined4), local_c (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   loadEdgeListFile
@@ -13737,7 +13637,7 @@ Undefined types in variables (2275)
     Locals:  local_c (undefined8)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_00423110
+  pickLightActorType
     Address: 0x00423110  File: core/boxactor.cpp
     Locals:  local_3b0 (undefined)
     Suggested: Resolve undefined types to concrete types
@@ -14037,7 +13937,7 @@ Undefined types in variables (2275)
     Locals:  local_8 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_00486430
+  randomizePosition
     Address: 0x00486430  File: core/dracbrid.cpp
     Locals:  local_c (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -14482,7 +14382,7 @@ Undefined types in variables (2275)
     Locals:  local_c (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_005039d0
+  getSizeCategory
     Address: 0x005039d0  File: core/larva.cpp
     Locals:  local_10 (undefined8)
     Suggested: Resolve undefined types to concrete types

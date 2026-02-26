@@ -2138,7 +2138,8 @@ joined_r0x0055c026:
                                                     return -1;
                                                   }
                                                   local_11c = local_11c + local_90;
-                                                  if (g_CNetGamePtr->connection_type != 0) {
+                                                  if (g_CNetGamePtr->connection_type !=
+                                                      CONNECTION_NONE) {
                                                     _sprintf
                                                               (g_ScriptErrorBuffer,
                                                                "Can't use removeKeys command in multi-player");

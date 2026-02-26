@@ -31,10 +31,10 @@ int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_005401e0(CNetGame *this_pt
     g_CurrentLineNumber = 0x337;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CNetGame::syncPlayers - don't use 0!");
   }
-  if (this_ptr->connection_type == 0) {
+  if (this_ptr->connection_type == CONNECTION_NONE) {
     return 1;
   }
-  this_ptr->network_mode = 2;
+  this_ptr->network_mode = NET_MODE_SYNCING;
   iVar2 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
   iVar3 = iVar2 / 0x12 - g_LastPingTime;
   if (iVar3 < 0) {
@@ -46,7 +46,7 @@ int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_005401e0(CNetGame *this_pt
   g_CurrentGameTime = g_CurrentGameTime + iVar3;
   g_LastPingTime = iVar2 / 0x12;
   this_ptr->players[this_ptr->local_player_index].local_sync_stage = sync_stage;
-  if (this_ptr->connection_type == 1) {
+  if (this_ptr->connection_type == CONNECTION_HOST) {
     local_24 = g_CurrentGameTime - 0x1e0000;
     local_20 = this_ptr->players;
     while( true ) {
@@ -111,7 +111,7 @@ int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_005401e0(CNetGame *this_pt
       }
     }
   }
-  else if (this_ptr->connection_type == 2) {
+  else if (this_ptr->connection_type == CONNECTION_CLIENT) {
     if (3 < sync_stage) {
       return 1;
     }

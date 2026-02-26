@@ -11,10 +11,10 @@
 ; int              Stack[0x14]:4   aim_mode
 ;
 ; XREF[4]:
-;   core_netgame.cpp_CNetGame_allocSimFrame_FUN_005406a0 at 00540888
 ;   core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470 at 00542abf
 ;   core_netgame.cpp_CNetGame_initializeNetworkToHost_FUN_0053f860 at 0053f8bf
 ;   core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_0053f900 at 0053f951
+;   core_netgame.cpp_CNetGame_processPacket_FUN_005406a0 at 00540888
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_0063d947

@@ -6,9 +6,9 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 214
 Total functions: 6494
-Clean functions: 4402 (67.8%)
+Clean functions: 4410 (67.9%)
 Files at 100%: 20
-Files at 90%+: 41
+Files at 90%+: 42
 Files at 50%+: 195
 
 ====================================================================================================
@@ -124,11 +124,16 @@ FILES AT 90-99% (ALMOST COMPLETE)
          9/10 clean, 1 remaining
            - core_hiram.cpp_CHiram_dtor_FUN_004f4450 (35 lines) [negative_offset]
 
+   90.0% | core/vessel.cpp
+         18/20 clean, 2 remaining
+           - core_vessel.cpp_CCryptVessel_process_FUN_005e91a0 (200 lines) [decompiler_intrinsic, warning_type_propagation]
+           - core_vessel.cpp_CCryptVessel_dtor_FUN_005e9d30 (20 lines) [negative_offset]
+
    90.0% | engine/light.cpp
          9/10 clean, 1 remaining
            - engine_light.cpp_calculatePhongLighting_FUN_00505530 (97 lines) [param_count_too_few, pointer_cast, stack_alignment_array]
 
-Total: 21 files
+Total: 22 files
 
 ====================================================================================================
 FILES AT 50-89%
@@ -175,7 +180,7 @@ FILES AT 50-89%
            - core_stone.cpp_CTempleStone_dtor_FUN_005bae10 (20 lines) [negative_offset]
    86.7% | core/trash.cpp
          13/15 clean, 2 remaining
-           - core_trash.cpp_CTrash_process_FUN_005decf0 (260 lines) [decompiler_intrinsic, pointer_cast]
+           - core_trash.cpp_CTrash_process_FUN_005decf0 (261 lines) [decompiler_intrinsic, pointer_cast]
            - core_trash.cpp_FUN_005decc0 (8 lines) [stack_param]
    85.7% | core/biggs.cpp
          12/14 clean, 2 remaining
@@ -184,6 +189,12 @@ FILES AT 50-89%
    85.7% | core/dirmat.cpp
          6/7 clean, 1 remaining
            - core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_00472160 (129 lines) [decompiler_intrinsic, double_reconstruction, sub84_truncation]
+   85.7% | core/door.cpp
+         24/28 clean, 4 remaining
+           - core_door.cpp_CDoor_process_FUN_004800c0 (188 lines) [decompiler_intrinsic, pointer_cast, unresolved_funcptr]
+           - core_door.cpp_CDoor_renderOpaque_FUN_004807d0 (79 lines) [stack_param, stack_ref]
+           - core_door.cpp_CDoor_getOpenStandPos_FUN_00480e20 (86 lines) [stack_param]
+           - core_door.cpp_CDoor_getMoveType_FUN_00481070 (65 lines) [param_count_too_few, stack_param]
    85.7% | core/gun.cpp
          6/7 clean, 1 remaining
            - core_gun.cpp_CGun_fire_FUN_004f0350 (217 lines) [decompiler_intrinsic, stack_param, stack_ref, sub84_truncation, suspect_float, unknown_field]
@@ -207,11 +218,15 @@ FILES AT 50-89%
            - core_setutil.cpp_C3DSLight_save_FUN_00587090 (61 lines) [pointer_cast]
            - core_setutil.cpp_C3DSCamera_apply_FUN_00585870 (53 lines) [pointer_cast]
            - core_setutil.cpp_C3DSLight_load_FUN_00586310 (185 lines) [pointer_cast]
-   85.0% | core/vessel.cpp
-         17/20 clean, 3 remaining
-           - core_vessel.cpp_CCryptVessel_process_FUN_005e91a0 (195 lines) [decompiler_intrinsic, suspect_float, warning_type_propagation]
-           - core_vessel.cpp_FUN_005e9180 (5 lines) [stack_param]
-           - core_vessel.cpp_CCryptVessel_dtor_FUN_005e9d30 (20 lines) [negative_offset]
+   84.8% | core/boxactor.cpp
+         39/46 clean, 7 remaining
+           - core_boxactor.cpp_CLightActor_FUN_00422d60 (93 lines) [param_count_too_few, undefined_data]
+           - core_boxactor.cpp_CBoxActor_FUN_00422390 (42 lines) [stack_param]
+           - core_boxactor.cpp_CLightActor_dtor_FUN_004235f0 (23 lines) [negative_offset]
+           - core_boxactor.cpp_CLightActor_process_FUN_00422a50 (78 lines) [pointer_cast]
+           - core_boxactor.cpp_CLightActor_FUN_004235c0 (6 lines) [stack_param]
+           - core_boxactor.cpp_CBoxActor_dtor_FUN_00423670 (20 lines) [negative_offset]
+           - core_boxactor.cpp_CBoxActor_process_FUN_004219e0 (128 lines) [decompiler_intrinsic, unknown_field]
    84.6% | core/dog.cpp
          11/13 clean, 2 remaining
            - core_dog.cpp_CZombieDog_process_FUN_0047f140 (264 lines) [decompiler_intrinsic, stack_param, stack_ref, warning_type_propagation]
@@ -220,6 +235,10 @@ FILES AT 50-89%
          11/13 clean, 2 remaining
            - core_drone.cpp_CDrone_dtor_FUN_0048f5a0 (31 lines) [negative_offset]
            - core_drone.cpp_CDrone_process_FUN_0048ec70 (256 lines) [stack_param, stack_ref, warning_type_propagation]
+   84.6% | core/larva.cpp
+         11/13 clean, 2 remaining
+           - core_larva.cpp_CLarva_dtor_FUN_00503cc0 (30 lines) [negative_offset]
+           - core_larva.cpp_CLarva_process_FUN_00503080 (356 lines) [decompiler_intrinsic, stack_param, stack_ref, unknown_type, warning_unreachable]
    84.6% | shape/memdbg.cpp
          22/26 clean, 4 remaining
            - shape_memdbg.cpp_debugRealloc_FUN_0050f540 (55 lines) [pointer_cast]
@@ -249,13 +268,6 @@ FILES AT 50-89%
            - engine_pod.cpp_CPodFile_verifyChecksum_FUN_00550230 (114 lines) [pointer_cast]
            - engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650 (378 lines) [decompiler_intrinsic, pointer_cast]
            - engine_pod.cpp_findFilesByExtension_FUN_00550ce0 (110 lines) [pointer_cast]
-   82.1% | core/door.cpp
-         23/28 clean, 5 remaining
-           - core_door.cpp_CDoor_process_FUN_004800c0 (188 lines) [decompiler_intrinsic, pointer_cast, unresolved_funcptr]
-           - core_door.cpp_CDoor_renderOpaque_FUN_004807d0 (79 lines) [stack_param, stack_ref]
-           - core_door.cpp_CDoor_getOpenStandPos_FUN_00480e20 (86 lines) [stack_param]
-           - core_door.cpp_CDoor_getMoveType_FUN_00481070 (65 lines) [param_count_too_few, stack_param]
-           - core_door.cpp_FUN_00481650 (6 lines) [stack_param]
    81.8% | core/lever.cpp
          18/22 clean, 4 remaining
            - core_lever.cpp_CLever_FUN_00505080 (16 lines) [stack_param]
@@ -315,17 +327,6 @@ FILES AT 50-89%
            - core_inv.cpp_CInventory_updateInventory_FUN_004ffad0 (103 lines) [suspect_float]
            - core_inv.cpp_CInventory_load_FUN_004ff400 (106 lines) [extra_output, stack_param, undefined_data]
            - core_inv.cpp_CInventory_renderAllItems_FUN_00500690 (357 lines) [decompiler_intrinsic, undefined_data]
-   80.4% | core/boxactor.cpp
-         37/46 clean, 9 remaining
-           - core_boxactor.cpp_CLightActor_FUN_00422d60 (93 lines) [param_count_too_few, undefined_data]
-           - core_boxactor.cpp_CBoxActor_FUN_00422390 (42 lines) [stack_param]
-           - core_boxactor.cpp_CLightActor_dtor_FUN_004235f0 (23 lines) [negative_offset]
-           - core_boxactor.cpp_FUN_0042307e (15 lines) [unnamed_param]
-           - core_boxactor.cpp_CLightActor_process_FUN_00422a50 (78 lines) [pointer_cast]
-           - core_boxactor.cpp_CLightActor_FUN_004235c0 (6 lines) [stack_param]
-           - core_boxactor.cpp_FUN_00423110 (42 lines) [param_count_too_few, stack_param]
-           - core_boxactor.cpp_CBoxActor_dtor_FUN_00423670 (20 lines) [negative_offset]
-           - core_boxactor.cpp_CBoxActor_process_FUN_004219e0 (128 lines) [decompiler_intrinsic, unknown_field]
    80.0% | core/conveyor.cpp
          16/20 clean, 4 remaining
            - core_conveyor.cpp_FUN_004424a0 (12 lines) [stack_param]
@@ -466,21 +467,16 @@ FILES AT 50-89%
    77.1% | core/hero.cpp
          37/48 clean, 11 remaining
            - core_hero.cpp_CHero_FUN_004f3910 (6 lines) [stack_param]
-           - core_hero.cpp_FUN_004f2220 (26 lines) [pointer_cast, stack_param]
            - core_hero.cpp_CHero_FUN_004f3930 (7 lines) [stack_param]
            - core_hero.cpp_CHero_dtor_FUN_004f2470 (35 lines) [negative_offset, pointer_cast]
            - core_hero.cpp_CHero_FUN_004f3960 (57 lines) [decompiler_intrinsic, stack_param]
            - core_hero.cpp_closestHeroToPoint_FUN_004f2170 (34 lines) [pointer_cast]
+           - core_hero.cpp_isAnyHeroWithinRadius_FUN_004f2220 (24 lines) [pointer_cast]
            - core_hero.cpp_CHero_ctor_FUN_004f2340 (36 lines) [negative_offset, param_count_too_few, pointer_cast, suspect_float]
-           - core_hero.cpp_FUN_004f22a0 (27 lines) [decompiler_intrinsic, param_count_too_few, pointer_cast, stack_param]
            - core_hero.cpp_CHeroPlaceholder_createHero_FUN_004f3d80 (64 lines) [unnamed_param]
            - core_hero.cpp_CHero_FUN_004f38d0 (12 lines) [stack_param]
            - core_hero.cpp_CHero_FUN_004f2af0 (51 lines) [pointer_cast, unresolved_funcptr]
-   76.9% | core/larva.cpp
-         10/13 clean, 3 remaining
-           - core_larva.cpp_CLarva_dtor_FUN_00503cc0 (30 lines) [negative_offset]
-           - core_larva.cpp_FUN_005039d0 (11 lines) [stack_param]
-           - core_larva.cpp_CLarva_process_FUN_00503080 (356 lines) [decompiler_intrinsic, stack_param, stack_ref, unknown_type, warning_unreachable]
+           - core_hero.cpp_isAnyHeroWithinCylinder_FUN_004f22a0 (24 lines) [decompiler_intrinsic, pointer_cast]
    76.8% | core/event.cpp
          43/56 clean, 13 remaining
            - core_event.cpp_CEventList_updateSfxEntries_FUN_004b0db0 (53 lines) [decompiler_intrinsic, pointer_cast, stack_param, stack_ref, sub84_truncation]
@@ -589,11 +585,11 @@ FILES AT 50-89%
            - core_baron.cpp_CBaron_FUN_00414090 (6 lines) [stack_param]
            - core_baron.cpp_CBaron_process_FUN_00412e80 (234 lines) [pointer_cast, stack_alignment_array, unaffected_reg, unresolved_funcptr, warning_type_propagation]
            - core_baron.cpp_CBaron_FUN_004136b0 (92 lines) [warning_type_propagation]
+           - core_baron.cpp_CBaron_engageTarget_FUN_00413470 (50 lines) [warning_type_propagation]
            - core_baron.cpp_CBaron_FUN_00413a00 (19 lines) [unnamed_param]
            - core_baron.cpp_CBaron_renderTransparent_FUN_00413ae0 (73 lines) [decompiler_intrinsic, undefined_data]
            - core_baron.cpp_CBaron_FUN_004135e0 (37 lines) [param_count_too_few]
            - core_baron.cpp_CBaronWeapon_setWeaponState_FUN_00413e90 (21 lines) [stack_param]
-           - core_baron.cpp_FUN_00413470 (44 lines) [unnamed_param]
            - core_baron.cpp_CBaron_FUN_004135a0 (11 lines) [unnamed_param]
    74.1% | core/fire.cpp
          137/185 clean, 48 remaining
@@ -686,7 +682,7 @@ FILES AT 50-89%
            - core_script.cpp_CCmdParse_bestParse_FUN_00561db0 (75 lines) [param_count_too_many, pointer_cast]
            - core_script.cpp_getDeformableModelFilename_FUN_00567d30 (4 lines) [param_count_too_few]
            - core_script.cpp_parseCommandWithDefaultTemplates_FUN_00561c70 (8 lines) [param_count_too_many]
-           - core_script.cpp_CScript_step_FUN_0055a810 (3365 lines) [decompiler_intrinsic, double_reconstruction, pointer_cast, sub84_truncation, warning_type_propagation]
+           - core_script.cpp_CScript_step_FUN_0055a810 (3366 lines) [decompiler_intrinsic, double_reconstruction, pointer_cast, sub84_truncation, warning_type_propagation]
            - core_script.cpp_CScript_rebuildEventXRefs_FUN_00567630 (26 lines) [pointer_cast]
            - core_script.cpp_readActorReference_FUN_00560760 (27 lines) [pointer_cast]
            - core_script.cpp_CScript_browseEventXRefs_FUN_005677a0 (169 lines) [pointer_cast]
@@ -1289,6 +1285,30 @@ FILES AT 50-89%
            - engine_2d.c_drawTextRightAligned_FUN_004021c0 (7 lines) [param_count_too_few]
            - engine_2d.c_drawTextCenteredAtColorFormatted_FUN_00402650 (10 lines) [stack_ref]
            - engine_2d.c_initGraphicsSystem_FUN_00401010 (34 lines) [pointer_cast]
+   65.6% | core/netgame.cpp
+         42/64 clean, 22 remaining
+           - core_netgame.cpp_CNetGame_processChatOut_FUN_00541e40 (60 lines) [pointer_cast]
+           - core_netgame.cpp_CNetGame_processClientFrame_FUN_005435a0 (92 lines) [pointer_cast]
+           - core_netgame.cpp_allocSimFrame_FUN_0053f5a0 (32 lines) [pointer_cast, stack_param]
+           - core_netgame.cpp_CNetGame_findPlayerByAddr_FUN_00541260 (17 lines) [param_count_too_few]
+           - core_netgame.cpp_CNetGame_applySimFrameHistory_FUN_00543800 (39 lines) [pointer_cast, stack_param]
+           - core_netgame.cpp_CNetGame_processServerFrame_FUN_00543150 (202 lines) [pointer_cast]
+           - core_netgame.cpp_CNetGame_syncPlayers_FUN_005401e0 (127 lines) [suspect_float, unresolved_funcptr]
+           - core_netgame.cpp_CNetGame_send_FUN_005411c0 (12 lines) [stack_param]
+           - core_netgame.cpp_findSimFrame_FUN_0053f550 (18 lines) [pointer_cast]
+           - core_netgame.cpp_CNetGame_removePlayer_FUN_00542b00 (53 lines) [pointer_cast]
+           - core_netgame.cpp_CNetGame_getMyControls_FUN_005438c0 (12 lines) [param_count_too_few]
+           - core_netgame.cpp_CNetGame_runLobby_FUN_00541390 (278 lines) [decompiler_intrinsic, undefined_data]
+           - core_netgame.cpp_purgeOldSimFrames_FUN_0053f650 (27 lines) [pointer_cast]
+           - core_netgame.cpp_CNetGame_sendSimFrameAck_FUN_00543970 (39 lines) [pointer_cast]
+           - core_netgame.cpp_copyInteger_FUN_00543e30 (5 lines) [param_count_too_few]
+           - core_netgame.cpp_CNetGame_swapPlayerData_FUN_00543bb0 (82 lines) [pointer_cast, unknown_field]
+           - core_netgame.cpp_CNetGame_sendGameSetting_FUN_00542dd0 (86 lines) [pointer_cast]
+           - core_netgame.cpp_CNetGame_addPlayer_FUN_005412b0 (47 lines) [pointer_cast]
+           - core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470 (269 lines) [pointer_cast, stack_alignment_array, stack_ref]
+           - core_netgame.cpp_CNetGame_processPacket_FUN_005406a0 (417 lines) [pointer_cast, warning_unreachable]
+           - core_netgame.cpp_CNetGame_initializeNetworkToHost_FUN_0053f860 (28 lines) [param_count_too_few]
+           - core_netgame.cpp_CNetGame_removeChatOut_FUN_00541ff0 (121 lines) [pointer_cast]
    65.2% | core/icepick.cpp
          15/23 clean, 8 remaining
            - core_icepick.cpp_CIcePick_process_FUN_004f80b0 (314 lines) [pointer_cast, stack_alignment_array, stack_param, unresolved_funcptr, warning_unreachable]
@@ -1314,31 +1334,6 @@ FILES AT 50-89%
            - core_lightgun.cpp_CLightGun_process_FUN_00506450 (57 lines) [decompiler_intrinsic, unaffected_reg]
            - core_lightgun.cpp_CLightGun_fire_FUN_00505c70 (217 lines) [decompiler_intrinsic, sub84_truncation, suspect_float, unknown_field, unresolved_funcptr]
            - core_lightgun.cpp_CLightGun_FUN_00505b70 (39 lines) [stack_param, stack_ref]
-   64.1% | core/netgame.cpp
-         41/64 clean, 23 remaining
-           - core_netgame.cpp_CNetGame_processChatOut_FUN_00541e40 (60 lines) [pointer_cast]
-           - core_netgame.cpp_CNetGame_processClientFrame_FUN_005435a0 (90 lines) [pointer_cast, undefined_data]
-           - core_netgame.cpp_allocSimFrame_FUN_0053f5a0 (31 lines) [pointer_cast, stack_param]
-           - core_netgame.cpp_CNetGame_findPlayerByAddr_FUN_00541260 (17 lines) [param_count_too_few]
-           - core_netgame.cpp_CNetGame_applySimFrameHistory_FUN_00543800 (39 lines) [pointer_cast, stack_param]
-           - core_netgame.cpp_CNetGame_processServerFrame_FUN_00543150 (198 lines) [pointer_cast, undefined_data]
-           - core_netgame.cpp_CNetGame_syncPlayers_FUN_005401e0 (127 lines) [suspect_float, unresolved_funcptr]
-           - core_netgame.cpp_CNetGame_send_FUN_005411c0 (12 lines) [stack_param]
-           - core_netgame.cpp_findSimFrame_FUN_0053f550 (17 lines) [pointer_cast]
-           - core_netgame.cpp_CNetGame_removePlayer_FUN_00542b00 (53 lines) [pointer_cast]
-           - core_netgame.cpp_CNetGame_allocSimFrame_FUN_005406a0 (410 lines) [pointer_cast, warning_unreachable]
-           - core_netgame.cpp_CNetGame_getMyControls_FUN_005438c0 (12 lines) [param_count_too_few]
-           - core_netgame.cpp_CNetGame_runLobby_FUN_00541390 (277 lines) [decompiler_intrinsic, undefined_data]
-           - core_netgame.cpp_purgeOldSimFrames_FUN_0053f650 (25 lines) [pointer_cast, undefined_data]
-           - core_netgame.cpp_CNetGame_sendSimFrameAck_FUN_00543970 (39 lines) [pointer_cast]
-           - core_netgame.cpp_FUN_00543db0 (17 lines) [stack_param]
-           - core_netgame.cpp_copyInteger_FUN_00543e30 (5 lines) [param_count_too_few]
-           - core_netgame.cpp_CNetGame_sendGameSetting_FUN_00542dd0 (85 lines) [pointer_cast]
-           - core_netgame.cpp_CNetGame_addPlayer_FUN_005412b0 (47 lines) [pointer_cast]
-           - core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470 (268 lines) [pointer_cast, stack_alignment_array, stack_ref]
-           - core_netgame.cpp_CNetGame_FUN_00543bb0 (82 lines) [pointer_cast, stack_param, unknown_field]
-           - core_netgame.cpp_CNetGame_initializeNetworkToHost_FUN_0053f860 (28 lines) [param_count_too_few]
-           - core_netgame.cpp_CNetGame_removeChatOut_FUN_00541ff0 (121 lines) [pointer_cast]
    63.6% | engine/palette.cpp
          7/11 clean, 4 remaining
            - engine_palette.cpp_CPaletteManager_addTexture_FUN_00544fc0 (42 lines) [stack_param]
@@ -1574,6 +1569,18 @@ FILES AT 50-89%
            - core_xform.cpp_clipInterpolateRightPlane_FUN_005f7bc0 (47 lines) [decompiler_intrinsic]
            - core_xform.cpp_clipInterpolateTopPlane_FUN_005f7d40 (47 lines) [decompiler_intrinsic]
            - core_xform.cpp_eulerToQuaternion_FUN_005f7b20 (26 lines) [pointer_cast, stack_alignment_array]
+   60.0% | core/dracbrid.cpp
+         15/25 clean, 10 remaining
+           - core_dracbrid.cpp_SFreaky_dtor_FUN_00486d50 (6 lines) [negative_offset]
+           - core_dracbrid.cpp_CDraculaBride_FUN_00485b20 (21 lines) [stack_param, warning_type_propagation]
+           - core_dracbrid.cpp_CDraculaBride_FUN_004864c0 (141 lines) [stack_param]
+           - core_dracbrid.cpp_CDraculaBride_FUN_004869a0 (111 lines) [stack_param]
+           - core_dracbrid.cpp_CDraculaBride_FUN_004858f0 (75 lines) [decompiler_intrinsic, param_count_too_few, stack_param]
+           - core_dracbrid.cpp_CDraculaBride_dtor_FUN_00486d70 (31 lines) [negative_offset]
+           - core_dracbrid.cpp_CDraculaBride_FUN_00486020 (13 lines) [param_count_too_few, stack_param]
+           - core_dracbrid.cpp_SFreaky_ctor_FUN_00486d30 (6 lines) [pointer_cast]
+           - core_dracbrid.cpp_CDraculaBride_process_FUN_00484410 (730 lines) [decompiler_intrinsic, stack_param, stack_ref, warning_type_propagation]
+           - core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_00485be0 (71 lines) [undefined_data]
    60.0% | core/ground.cpp
          12/20 clean, 8 remaining
            - core_ground.cpp_CGround_init_FUN_004eef00 (28 lines) [param_count_too_few]
@@ -1716,19 +1723,6 @@ FILES AT 50-89%
            - engine_font.cpp_CBitFont_printF_FUN_004cdd20 (8 lines) [stack_ref]
            - engine_font.cpp_CBitFont_remapPalette_FUN_004d02a0 (56 lines) [pointer_cast, warning_unreachable]
            - engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_004cd550 (151 lines) [param_count_too_many]
-   56.0% | core/dracbrid.cpp
-         14/25 clean, 11 remaining
-           - core_dracbrid.cpp_SFreaky_dtor_FUN_00486d50 (6 lines) [negative_offset]
-           - core_dracbrid.cpp_CDraculaBride_FUN_00485b20 (21 lines) [stack_param, warning_type_propagation]
-           - core_dracbrid.cpp_CDraculaBride_FUN_004864c0 (141 lines) [stack_param]
-           - core_dracbrid.cpp_FUN_00486430 (16 lines) [stack_param]
-           - core_dracbrid.cpp_CDraculaBride_FUN_004869a0 (111 lines) [stack_param]
-           - core_dracbrid.cpp_CDraculaBride_FUN_004858f0 (75 lines) [decompiler_intrinsic, param_count_too_few, stack_param]
-           - core_dracbrid.cpp_CDraculaBride_dtor_FUN_00486d70 (31 lines) [negative_offset]
-           - core_dracbrid.cpp_CDraculaBride_FUN_00486020 (13 lines) [param_count_too_few, stack_param]
-           - core_dracbrid.cpp_SFreaky_ctor_FUN_00486d30 (6 lines) [pointer_cast]
-           - core_dracbrid.cpp_CDraculaBride_process_FUN_00484410 (730 lines) [decompiler_intrinsic, stack_param, stack_ref, warning_type_propagation]
-           - core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_00485be0 (71 lines) [undefined_data]
    55.6% | core/ghoul.cpp
          10/18 clean, 8 remaining
            - core_ghoul.cpp_CGhoul_canBeAttracted_FUN_004e82d0 (68 lines) [unnamed_param]
@@ -1894,7 +1888,7 @@ FILES AT 50-89%
            - core_manpuz.cpp_CMansionPuzzleCircle_processInEditor_FUN_0050b440 (165 lines) [warning_deadcode_restart]
            - core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050aef0 (8 lines) [stack_param]
            - core_manpuz.cpp_FUN_0050a490 (19 lines) [stack_param]
-           - core_manpuz.cpp_CMansionPuzzleCircle_process_FUN_005091d0 (55 lines) [pointer_cast]
+           - core_manpuz.cpp_CMansionPuzzleCircle_process_FUN_005091d0 (56 lines) [pointer_cast]
            - core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050af00 (25 lines) [stack_param]
            - core_manpuz.cpp_CMansionPuzzleCircle_panelOccupied_FUN_0050b040 (17 lines) [decompiler_intrinsic, format_string_mismatch, param_count_too_few, stack_param]
            - core_manpuz.cpp_SGem_dtor_FUN_0050b960 (6 lines) [negative_offset]
@@ -2022,7 +2016,7 @@ FILES AT 50-89%
            - engine_pcx.c_writePCXScanline_FUN_00548c50 (50 lines) [pointer_cast]
            - engine_pcx.c_saveScreenshotGeneral_FUN_005490c0 (104 lines) [pointer_cast]
 
-Total: 154 files
+Total: 153 files
 
 ====================================================================================================
 FILES BELOW 50%
@@ -2133,8 +2127,8 @@ FILES BELOW 50%
            - core_stranger.cpp_CStranger_FUN_005c5e80 (18 lines) [suspect_float]
            - core_stranger.cpp_CStranger_FUN_005c51c0 (16 lines) [stack_param]
            - core_stranger.cpp_CStranger_FUN_005c5f10 (136 lines) [param_count_too_few, suspect_float, unaffected_reg]
-   41.8% | cockpit/ckptutil.c
-         23/55 clean, 32 remaining
+   43.6% | cockpit/ckptutil.c
+         24/55 clean, 31 remaining
            - cockpit_ckptutil.c_blitSimpleSprite_FUN_00432540 (55 lines) [pointer_cast]
            - cockpit_ckptutil.c_mirrorBitmapHorizontally_FUN_00433160 (32 lines) [pointer_cast, stack_param]
            - cockpit_ckptutil.c_saveEdgeListFile_FUN_00433480 (56 lines) [pointer_cast]
@@ -2156,7 +2150,6 @@ FILES BELOW 50%
            - cockpit_ckptutil.c_expandIndexedToRGB_FUN_004314fa (16 lines) [pointer_cast]
            - cockpit_ckptutil.c_blitWithTransparencyFallback_FUN_00432d00 (27 lines) [pointer_cast]
            - cockpit_ckptutil.c_loadACTPaletteFile_FUN_00431ac0 (84 lines) [param_count_too_few]
-           - cockpit_ckptutil.c_FUN_004338f0 (34 lines) [stack_param]
            - cockpit_ckptutil.c_blendPixelWithSourcePalette_FUN_004342f0 (58 lines) [decompiler_intrinsic, pointer_cast]
            - cockpit_ckptutil.c_isLineClippingDisabled_FUN_00434660 (4 lines) [param_count_too_few]
            - cockpit_ckptutil.c_buildHardwarePalettes_FUN_00431c00 (41 lines) [pointer_cast, warning_unreachable]

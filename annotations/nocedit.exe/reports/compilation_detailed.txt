@@ -5,12 +5,12 @@ FUNCTION COMPILATION DETAILED ERRORS
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6494
-Successful: 5618 (86.5%)
-Failed: 876
+Successful: 5620 (86.5%)
+Failed: 874
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                           1593
+  other                           1591
   undeclared_identifier            747
   format_error                     590
   incompatible_types               575
@@ -21,7 +21,7 @@ ERROR CATEGORIES
   pointer_precision                  2
 
 ====================================================================================================
-CATEGORY: other (1593 errors)
+CATEGORY: other (1591 errors)
 ====================================================================================================
 
   core_hero.cpp_CHero_FUN_004f3960
@@ -104,6 +104,8 @@ CATEGORY: other (1593 errors)
     Line 19: assigning to 'char *' from 'const char *' discards qualifiers
   core_mmx.c_detectIntelProcessor_FUN_00524f4c
     Line 67: assigning to 'char *' from 'const char *' discards qualifiers
+  core_netgame.cpp_CNetGame_processPacket_FUN_005406a0
+    Line 345: assigning to 'char *' from 'const char *' discards qualifiers
   core_script.cpp_CCmdParm_setTemplateText_FUN_00560de0
     Line 47: assigning to 'char *' from 'const char *' discards qualifiers
   core_script.cpp_CScript_editorAction_FUN_00564820
@@ -138,14 +140,8 @@ CATEGORY: other (1593 errors)
     Line 70: assigning to 'int *' from 'uint *' (aka 'unsigned int *') converts between pointers to integer types with different sign
   engine_fileio.cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50
     Line 88: assigning to 'int *' from 'uint *' (aka 'unsigned int *') converts between pointers to integer types with different sign
-  core_netgame.cpp_CNetGame_processServerFrame_FUN_00543150
-    Line 122: assigning to 'int *' from 'undefined4 *' (aka 'unsigned int *') converts between pointers to integer types with different sign
-  core_netgame.cpp_allocSimFrame_FUN_0053f5a0
-    Line 36: assigning to 'int *' from 'undefined4 *' (aka 'unsigned int *') converts between pointers to integer types with different sign
   core_wateract.cpp_CWaterActor_renderTransparent_FUN_005eb280
     Line 37: assigning to 'int *' from 'undefined4 *' (aka 'unsigned int *') converts between pointers to integer types with different sign
-  core_netgame.cpp_CNetGame_allocSimFrame_FUN_005406a0
-    Line 341: assigning to 'uchar *' (aka 'unsigned char *') from 'const uchar *' (aka 'const unsigned char *') discards qualifiers
   core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0
     Line 140: assigning to 'uint *' (aka 'unsigned int *') from 'int *' converts between pointers to integer types with different sign
   core_colonel.cpp_CColonel_FUN_00440430
@@ -468,7 +464,7 @@ CATEGORY: other (1593 errors)
     Line 99: member reference base type 'longlong' (aka 'long long') is not a structure or union
   core_dskybox.cpp_renderSkyDome_FUN_004901f0
     Line 191: member reference base type 'uint' (aka 'unsigned int') is not a structure or union
-  core_netgame.cpp_CNetGame_FUN_00543bb0
+  core_netgame.cpp_CNetGame_swapPlayerData_FUN_00543bb0
     Line 64: member reference base type 'uint' (aka 'unsigned int') is not a structure or union
   engine_drender.cpp_CDemonRenderer_renderPerspectiveTextured_FUN_0048ad90
     Line 25: member reference base type 'uint' (aka 'unsigned int') is not a structure or union
@@ -758,7 +754,7 @@ CATEGORY: undeclared_identifier (747 errors)
   core_msnedit.cpp_FUN_00536e20
     Line 28: use of undeclared identifier 'DAT_02f7a02c'
   core_netgame.cpp_CNetGame_runLobby_FUN_00541390
-    Line 271: use of undeclared identifier 'DAT_02f7c640'
+    Line 272: use of undeclared identifier 'DAT_02f7c640'
   core_path.cpp_CPathMap_queuePop_FUN_005487a0
     Line 105: use of undeclared identifier 'DAT_030d2857'
   core_skeledit.cpp_FUN_0058afe0
@@ -1094,7 +1090,7 @@ CATEGORY: undeclared_identifier (747 errors)
   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0
     Line 98: use of undeclared identifier 'stack0xfffffe8c'
   core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470
-    Line 77: use of undeclared identifier 'stack0xfffffe90'
+    Line 78: use of undeclared identifier 'stack0xfffffe90'
   core_setedit.cpp_CDemonSet_positionLight_FUN_0057ae50
     Line 126: use of undeclared identifier 'stack0xfffffe90'
   core_event.cpp_CEventList_updateSfxEntries_FUN_004b0db0

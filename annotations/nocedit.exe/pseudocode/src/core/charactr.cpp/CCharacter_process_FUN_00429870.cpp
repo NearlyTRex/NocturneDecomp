@@ -69,7 +69,9 @@ int __cdecl core_charactr_cpp_CCharacter_process_FUN_00429870(CCharacter *this_p
     pCVar2 = (this_ptr->base).standing_platform;
     this_ptr->turn_angle_accumulator = 0.0;
     if (((pCVar2 == (CPlatform *)0x0) && (this_ptr->walk_to_target == (CDemonActor *)0x0)) &&
-       (iVar4 = core_hero_cpp_FUN_004f22a0(), iVar4 == 0)) {
+       (iVar4 = core_hero_cpp_isAnyHeroWithinCylinder_FUN_004f22a0
+                          (&(this_ptr->base).location.position,this_ptr->ai_detection_range_max,
+                           this_ptr->ai_detection_range_min), iVar4 == 0)) {
       sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handle);
       return 0;
     }

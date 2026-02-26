@@ -81,8 +81,8 @@ void __cdecl core_health_cpp_CHealthItem_addFilesToExtract_FUN_004f20b0(CHealthI
 CHealthItem * __cdecl core_health_cpp_CHealthItem_dtor_FUN_004f20d0(CHealthItem *this_ptr,uint flags);
 void __cdecl core_hero_cpp_staticInit_FUN_004f2120(void);
 int __cdecl core_hero_cpp_closestHeroToPoint_FUN_004f2170(CLocation *location);
-int __cdecl core_hero_cpp_FUN_004f2220(void);
-int __cdecl core_hero_cpp_FUN_004f22a0(void);
+int __cdecl core_hero_cpp_isAnyHeroWithinRadius_FUN_004f2220(CVector3f *point,float radius);
+int __cdecl core_hero_cpp_isAnyHeroWithinCylinder_FUN_004f22a0(CVector3f *point,float horizontal_radius,float vertical_tolerance);
 CHero * __cdecl core_hero_cpp_CHero_ctor_FUN_004f2340(CHero *this_ptr);
 CHero * __cdecl core_hero_cpp_CHero_dtor_FUN_004f2470(CHero *this_ptr,uint flags);
 void __cdecl core_hero_cpp_CHero_setup_FUN_004f2540(CHero *this_ptr);

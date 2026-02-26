@@ -8,7 +8,7 @@
 ; SNetworkAddr *   Stack[0x8]:4   addr
 ;
 ; XREF[1]:
-;   core_netgame.cpp_CNetGame_allocSimFrame_FUN_005406a0 at 005406bc
+;   core_netgame.cpp_CNetGame_processPacket_FUN_005406a0 at 005406bc
 ;
 ; *****************************************************************************
 

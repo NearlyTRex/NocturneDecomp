@@ -63,9 +63,9 @@ int __cdecl CDraculaBride::getDeathState(CDraculaBride *this_ptr);
 // Address: 00486360
 int __cdecl CDraculaBride::getTargetPoints(CDraculaBride *this_ptr,CVector3f *out_points_array);
 
-// Original: core_dracbrid.cpp_FUN_00486430
+// Original: core_dracbrid.cpp_randomizePosition_FUN_00486430
 // Address: 00486430
-float * __cdecl FUN_00486430(void);
+CVector3f * __cdecl randomizePosition(CVector3f *dest,CVector3f *src);
 
 // Original: core_dracbrid.cpp_CDraculaBride_FUN_004864c0
 // Address: 004864c0

@@ -35,7 +35,7 @@
 ;   core_charactr.cpp_CCharacter_computePickup_FUN_0042ce80
 ;   core_charactr.cpp_CCharacter_processFire_FUN_0042a830
 ;   core_game.cpp_CGame_setStatusDisplay_FUN_004e0bf0
-;   core_hero.cpp_FUN_004f22a0
+;   core_hero.cpp_isAnyHeroWithinCylinder_FUN_004f22a0
 ;   core_script.cpp_CScript_setSpeaker_FUN_00560140
 ;   sound_sndmain.cpp_killSfx_FUN_005a9c40
 ;
@@ -226,8 +226,8 @@ section .text
     LEA EAX,[ESI + 0x20]                ; 00429a67
     PUSH dword ptr [ESI + 0x2de8]       ; 00429a6a
     PUSH EAX                            ; 00429a70
-    CALL core_hero.cpp_FUN_004f22a0     ; 00429a71
-        ;   XREF to: 004f22a0 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004f22a0()
+    CALL core_hero.cpp_isAnyHeroWithinCylinder_FUN_004f22a0 ; 00429a71
+        ;   XREF to: 004f22a0 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_isAnyHeroWithinCylinder_FUN_004f22a0(CVector3f * point, float horizontal_radius, float vertical_tolerance)
     ADD ESP,0xc                         ; 00429a76
     TEST EAX,EAX                        ; 00429a79
     JNZ 0x00429a23                      ; 00429a7b

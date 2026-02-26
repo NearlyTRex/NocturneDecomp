@@ -13,9 +13,9 @@
 ;   int g_CurrentLineNumber
 ;
 ; Called Functions:
+;   core_baron.cpp_CBaron_engageTarget_FUN_00413470
 ;   core_baron.cpp_CBaron_FUN_004135a0
 ;   core_baron.cpp_CBaronWeapon_FUN_00413f20
-;   core_baron.cpp_FUN_00413470
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_weapon.cpp_CWeapon_setWeaponState_FUN_005ee640
 ;
@@ -62,8 +62,8 @@ section .text
     PUSH ESI                            ; 00413ef1
     MOV EDX,dword ptr [EBX + 0x578]     ; 00413ef2
     PUSH EDX                            ; 00413ef8
-    CALL core_baron.cpp_FUN_00413470    ; 00413ef9
-        ;   XREF to: 00413470 (UNCONDITIONAL_CALL)  ; void core_baron.cpp_FUN_00413470(int param_1, CDemonActor * param_2)
+    CALL core_baron.cpp_CBaron_engageTarget_FUN_00413470 ; 00413ef9
+        ;   XREF to: 00413470 (UNCONDITIONAL_CALL)  ; void core_baron.cpp_CBaron_engageTarget_FUN_00413470(CBaron * this_ptr, CDemonActor * target)
     ADD ESP,0x8                         ; 00413efe
     POP EBP                             ; 00413f01
         ;   Label: LAB_00413f01

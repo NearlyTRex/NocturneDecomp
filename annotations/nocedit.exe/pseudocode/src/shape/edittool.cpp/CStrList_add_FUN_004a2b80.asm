@@ -10,7 +10,7 @@
 ; XREF[91]:
 ;   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 at 0040f3b9
 ;   core_bodypart.cpp_CBodyPart_initializeInEditor_FUN_0041b280 at 0041b3c6
-;   core_boxactor.cpp_FUN_00423110 at 00423156
+;   core_boxactor.cpp_pickLightActorType_FUN_00423110 at 00423156
 ;   core_charactr.cpp_CCharacter_propertyActionCallback_FUN_0042f3e0 at 0042f544
 ;   core_cloth.cpp_CCloth_addCollisionBone_FUN_0043c430 at 0043c498
 ;   core_dmodel.cpp_CKeyFramedModel_importFromS3D_FUN_00479330 at 00479605

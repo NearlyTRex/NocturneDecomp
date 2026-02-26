@@ -1,30 +1,22 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 31,
-        "line": 122,
-        "message": "assigning to 'int *' from 'undefined4 *' (aka 'unsigned int *') converts between pointers to integer types with different sign"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 413,
-    "complexity_score": 278,
+    "complexity_score": 277,
     "cross_reference_count": 2,
     "function_call_count": 10,
     "global_count": 30,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 198,
+    "pseudocode_lines": 202,
     "suspect_count": 7,
     "suspect_types": [
-      "pointer_cast",
-      "undefined_data"
+      "pointer_cast"
     ],
-    "total_lines": 611
+    "total_lines": 615
   },
   "cross_references": [
     {
@@ -228,7 +220,7 @@
     {
       "addr": "02f9c0c4",
       "name": "g_SimFrameHistory",
-      "type": "undefined4",
+      "type": "SSimFrame[512]",
       "value": null
     },
     {
@@ -453,19 +445,11 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 79,
-      "match": "DAT_02f9c128",
-      "severity": "mild",
-      "text": "puVar9 = &DAT_02f9c128;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 81,
+      "line": 80,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "if (*(int *)((int)&g_SimFrameHistory + iVar3) < local_18) {",
+      "text": "if (*(int *)((int)g_SimFrameHistory[0].player_controls[0].action_states + iVar3 + -0xc) <",
       "type": "pointer_cast"
     },
     {
@@ -473,7 +457,7 @@
       "line": 84,
       "match": "(void *)((int)",
       "severity": "mild",
-      "text": "((void *)((int)&g_SimFrameHistory + iVar3),puVar9,",
+      "text": "((void *)((int)g_SimFrameHistory[0].player_controls[0].action_states +",
       "type": "pointer_cast"
     },
     {
@@ -481,31 +465,39 @@
       "line": 99,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "if (iVar2 == *(int *)((int)&g_SimFrameHistory + iVar4)) {",
+      "text": "if (iVar2 == *(int *)((int)g_SimFrameHistory[0].player_controls[0].action_states +",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 101,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "dest = (int *)((int)&g_SimFrameHistory + iVar4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 132,
+      "line": 134,
       "match": "(SPlayerControl *)((int)",
       "severity": "mild",
-      "text": "pSVar7 = (SPlayerControl *)((int)pSVar7 + (uint)bVar12 * -8 + 4);",
+      "text": "pSVar9 = (SPlayerControl *)((int)pSVar9 + (uint)bVar12 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 164,
+      "line": 135,
+      "match": "(SPlayerControl *)((int)",
+      "severity": "mild",
+      "text": "pSVar10 = (SPlayerControl *)((int)pSVar10 + ((uint)bVar12 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 167,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "if (local_20 == *(int *)((int)&g_SimFrameHistory + iVar4)) goto LAB_005434de;",
+      "text": "*(int *)((int)g_SimFrameHistory[0].player_controls[0].action_states +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 188,
+      "match": "(SPlayerControl *)((int)",
+      "severity": "mild",
+      "text": "pSVar9 = (SPlayerControl *)((int)pSVar9 + ((uint)bVar12 * -2 + 1) * 4);",
       "type": "pointer_cast"
     }
   ]

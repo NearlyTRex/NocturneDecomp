@@ -9,7 +9,7 @@
 ; SNetPacketHeader * Stack[0xc]:4   packet
 ;
 ; XREF[4]:
-;   core_netgame.cpp_CNetGame_allocSimFrame_FUN_005406a0 at 00540863
+;   core_netgame.cpp_CNetGame_processPacket_FUN_005406a0 at 00540863
 ;   core_netgame.cpp_CNetGame_removeChatOut_FUN_00541ff0 at 00542333
 ;   core_netgame.cpp_CNetGame_sendDisconnectNotify_FUN_00543930 at 00543957
 ;   core_netgame.cpp_CNetGame_send_FUN_005411c0 at 005411f1

@@ -30,13 +30,13 @@ int __cdecl core_netgame_cpp_CNetGame_runLobby_FUN_00541390(CNetGame *this_ptr)
   char *local_1c;
   int local_18;
   
-  if (this_ptr->connection_type != 0) {
+  if (this_ptr->connection_type != CONNECTION_NONE) {
     local_30 = g_ForceMessagePump;
     this_ptr->players[this_ptr->local_player_index].local_sync_stage = 1;
     this_ptr->players[this_ptr->local_player_index].ready_flag = 0;
     g_ForceMessagePump = 0;
-    this_ptr->network_mode = 1;
-    if (this_ptr->connection_type == 1) {
+    this_ptr->network_mode = NET_MODE_LOBBY;
+    if (this_ptr->connection_type == CONNECTION_HOST) {
       uVar3 = rand();
       this_ptr->random_seed = uVar3;
       core_netgame_cpp_CNetGame_gameSettingsChanged_FUN_00542cf0(this_ptr);
@@ -45,7 +45,7 @@ int __cdecl core_netgame_cpp_CNetGame_runLobby_FUN_00541390(CNetGame *this_ptr)
       core_netgame_cpp_CNetGame_sendMyStateChanged_FUN_00542ff0(this_ptr);
     }
     local_2c = this_ptr->mission_name;
-    while (this_ptr->connection_type != 0) {
+    while (this_ptr->connection_type != CONNECTION_NONE) {
       wincore_windll_cpp_clearScreen_FUN_005b3e70();
       _sprintf((char *)local_130,"Mission: %s",local_2c);
       engine_2d_c_drawText_FUN_00401fd0((char *)local_130,0,0xb);
@@ -124,7 +124,7 @@ LAB_005415cb:
         engine_2d_c_drawText_FUN_00401fd0((char *)local_130,300,iVar4);
         _sprintf((char *)local_130,"%d",*(int *)(local_1c + 0x14));
         engine_2d_c_drawText_FUN_00401fd0((char *)local_130,400,iVar4);
-        if (this_ptr->connection_type == 1) {
+        if (this_ptr->connection_type == CONNECTION_HOST) {
           _sprintf
                     ((char *)local_130,"%d",*(int *)(local_1c + 0x34));
           engine_2d_c_drawText_FUN_00401fd0((char *)local_130,500,iVar4);
@@ -158,7 +158,7 @@ LAB_005415cb:
         } while (iVar4 < this_ptr->player_count);
       }
       this_ptr->has_pending_sim_frame = 0;
-      if (this_ptr->connection_type == 1) {
+      if (this_ptr->connection_type == CONNECTION_HOST) {
         this_ptr->players[this_ptr->local_player_index].player_id = INT_02f7c8c4;
         iVar4 = 0;
         bVar2 = true;
@@ -187,7 +187,7 @@ LAB_005415cb:
           } while (iVar4 < this_ptr->player_count);
         }
         if ((bVar2) && (1 < this_ptr->player_count)) {
-          this_ptr->network_mode = 2;
+          this_ptr->network_mode = NET_MODE_SYNCING;
           engine_2d_c_clearInputAndWait_FUN_00403260();
           iVar4 = core_netgame_cpp_CNetGame_syncPlayers_FUN_005401e0(this_ptr,1);
           pcVar6 = local_2c;
@@ -206,10 +206,11 @@ LAB_005415cb:
               }
             }
           }
-          this_ptr->network_mode = 1;
+          this_ptr->network_mode = NET_MODE_LOBBY;
         }
       }
-      if ((this_ptr->connection_type == 2) && (this_ptr->network_mode == 2)) {
+      if ((this_ptr->connection_type == CONNECTION_CLIENT) &&
+         (this_ptr->network_mode == NET_MODE_SYNCING)) {
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                   (g_CEditorToolsPtr,"Loading %s");
         srand(this_ptr->random_seed);
@@ -235,10 +236,10 @@ LAB_005415cb:
             return 1;
           }
         }
-        this_ptr->network_mode = 1;
+        this_ptr->network_mode = NET_MODE_LOBBY;
         goto LAB_005416d1;
       }
-      if ((this_ptr->connection_type == 2) && (INT_00680a04 != 0)) {
+      if ((this_ptr->connection_type == CONNECTION_CLIENT) && (INT_00680a04 != 0)) {
         local_18 = g_CurrentGameTime -
                    this_ptr->players[this_ptr->local_player_index].state_change_time;
         local_134 = (float)local_18 * (float)1.52587890625e-05;
@@ -258,7 +259,7 @@ LAB_005415cb:
       if (iVar4 != 0) {
         this_ptr->players[this_ptr->local_player_index].ready_flag =
              (uint)(this_ptr->players[this_ptr->local_player_index].ready_flag == 0);
-        if (this_ptr->connection_type == 1) {
+        if (this_ptr->connection_type == CONNECTION_HOST) {
           core_netgame_cpp_CNetGame_gameSettingsChanged_FUN_00542cf0(this_ptr);
         }
         else {

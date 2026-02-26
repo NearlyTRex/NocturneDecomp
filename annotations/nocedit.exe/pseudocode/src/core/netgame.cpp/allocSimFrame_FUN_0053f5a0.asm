@@ -10,7 +10,7 @@
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   int g_SimFrameCount
-;   undefined4 g_SimFrameHistory
+;   SSimFrame[512] g_SimFrameHistory
 ;   undefined4 DAT_02f9c128
 ;
 ; Called Functions:

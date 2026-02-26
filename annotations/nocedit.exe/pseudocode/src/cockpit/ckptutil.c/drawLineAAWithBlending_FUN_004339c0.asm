@@ -28,7 +28,7 @@
 ; undefined1       Stack[-0x18]:1  local_18
 ;
 ; XREF[2]:
-;   cockpit_ckptutil.c_FUN_004338f0 at 00433997
+;   cockpit_ckptutil.c_drawLineListFromBitmap_FUN_004338f0 at 00433997
 ;   cockpit_ckptutil.c_renderEdgeArrayWithBufferLookup_FUN_00433820 at 004338c5
 ;
 ; Referenced Globals:

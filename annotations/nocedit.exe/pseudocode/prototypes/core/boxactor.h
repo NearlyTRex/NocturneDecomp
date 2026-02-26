@@ -135,13 +135,13 @@ void __cdecl CLightActor::archive(CLightActor *this_ptr);
 // Address: 00422d60
 void __cdecl CLightActor(CLightActor *this_ptr);
 
-// Original: core_boxactor.cpp_FUN_0042307e
+// Original: core_boxactor.cpp_getLightActorTypeName_FUN_0042307e
 // Address: 0042307e
-char * __cdecl FUN_0042307e(int param_1);
+char * __cdecl getLightActorTypeName(ELightActorType type);
 
-// Original: core_boxactor.cpp_FUN_00423110
+// Original: core_boxactor.cpp_pickLightActorType_FUN_00423110
 // Address: 00423110
-int __cdecl FUN_00423110(void);
+ELightActorType __cdecl pickLightActorType(char *prompt_text,int allow_custom,uint current_type);
 
 // Original: core_boxactor.cpp_CLightActor_propertyDisplayTypeCallback_FUN_00423310
 // Address: 00423310

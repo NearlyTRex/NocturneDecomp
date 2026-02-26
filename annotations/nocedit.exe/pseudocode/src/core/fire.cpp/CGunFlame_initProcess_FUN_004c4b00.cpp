@@ -21,7 +21,8 @@ void __cdecl core_fire_cpp_CGunFlame_initProcess_FUN_004c4b00(CGunFlame *this_pt
     this_ptr_00 = *(CCharacter **)((int)g_CDemonSetPtr->characters + iVar3);
     iVar1 = (*(((this_ptr_00->base).vtable._uc)->_uc).getDeathState)(this_ptr_00);
     if (iVar1 == 0) {
-      iVar1 = core_hero_cpp_FUN_004f2220();
+      iVar1 = core_hero_cpp_isAnyHeroWithinRadius_FUN_004f2220
+                        (&(this_ptr_00->base).location.position,50.0);
       if (iVar1 != 0) {
         if (0x31 < g_CharactersOnFireCount) {
           g_CurrentFilename = "..\\core\\fire.cpp";

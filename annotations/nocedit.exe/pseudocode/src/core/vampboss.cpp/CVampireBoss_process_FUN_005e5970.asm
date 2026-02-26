@@ -1387,8 +1387,8 @@ section .text
     LEA ESI,[EBX + 0x20]                ; 005e68f9
     PUSH 0x41400000                     ; 005e68fc
     PUSH ESI                            ; 005e6901
-    CALL core_hero.cpp_FUN_004f2220     ; 005e6902
-        ;   XREF to: 004f2220 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004f2220()
+    CALL core_hero.cpp_isAnyHeroWithinRadius_FUN_004f2220 ; 005e6902
+        ;   XREF to: 004f2220 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_isAnyHeroWithinRadius_FUN_004f2220(CVector3f * point, float radius)
     ADD ESP,0x8                         ; 005e6907
     TEST EAX,EAX                        ; 005e690a
     JNZ 0x005e6ab9                      ; 005e690c

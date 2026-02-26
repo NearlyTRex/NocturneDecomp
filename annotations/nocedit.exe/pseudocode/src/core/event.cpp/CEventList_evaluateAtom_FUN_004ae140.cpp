@@ -261,7 +261,7 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
     else {
       iVar7 = stricmp(local_150,"hasItem");
       if (iVar7 == 0) {
-        if (g_CNetGamePtr->connection_type != 0) {
+        if (g_CNetGamePtr->connection_type != CONNECTION_NONE) {
           pcVar16 = "Can't use hasItem condition in multi-player";
           pcVar17 = g_EventErrorMessageBuffer;
           do {
@@ -420,7 +420,7 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
         }
         iVar7 = stricmp(local_150,"hasKeyMask");
         if (iVar7 == 0) {
-          if (g_CNetGamePtr->connection_type != 0) {
+          if (g_CNetGamePtr->connection_type != CONNECTION_NONE) {
             pcVar16 = "Can't use hasKeyMask condition in multi-player";
             pcVar17 = g_EventErrorMessageBuffer;
             do {

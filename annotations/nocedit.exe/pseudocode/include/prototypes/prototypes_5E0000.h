@@ -192,7 +192,7 @@ int __cdecl core_vessel_cpp_CCryptVessel_canPickup_FUN_005e9100(CCryptVessel *th
 void __cdecl core_vessel_cpp_CCryptVessel_pickup_FUN_005e9140(CCryptVessel *this_ptr,CDemonActor *carrier);
 void __cdecl core_vessel_cpp_CCryptVessel_onDropped_FUN_005e9150(CCryptVessel *this_ptr,CVector3f *drop_position);
 CDemonActor * __cdecl core_vessel_cpp_CCryptVessel_getCarrier_FUN_005e9170(CCryptVessel *this_ptr);
-int __cdecl core_vessel_cpp_FUN_005e9180(void);
+int __cdecl core_vessel_cpp_isStartLocTriggered_FUN_005e9180(CCryptVessel *actor);
 void __cdecl core_vessel_cpp_CCryptVessel_process_FUN_005e91a0(CCryptVessel *this_ptr,float delta_time);
 int __cdecl core_vessel_cpp_CCryptVessel_renderOpaque_FUN_005e9750(CCryptVessel *this_ptr);
 int __cdecl core_vessel_cpp_CCryptVessel_renderTransparent_FUN_005e98b0(CCryptVessel *this_ptr);

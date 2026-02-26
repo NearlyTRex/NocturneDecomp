@@ -55,7 +55,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_netgame.cpp_CNetGame_allocSimFrame_FUN_005406a0 at 00540e56
+;   core_netgame.cpp_CNetGame_processPacket_FUN_005406a0 at 00540e56
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_0063db4d

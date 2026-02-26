@@ -16,12 +16,12 @@ void __cdecl core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_00543970(CNetGame *th
   int local_3f [11];
   
   bVar4 = 0;
-  if (this_ptr->connection_type != 2) {
+  if (this_ptr->connection_type != CONNECTION_CLIENT) {
     g_CurrentFilename = "..\\core\\netgame.cpp";
     g_CurrentLineNumber = 0xa29;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CNetGame::sendSimFrameAck - should only be called in client mode");
   }
-  if (this_ptr->network_mode != 3) {
+  if (this_ptr->network_mode != NET_MODE_PLAYING) {
     g_CurrentFilename = "..\\core\\netgame.cpp";
     g_CurrentLineNumber = 0xa2a;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CNetGame::sendSimFrameAck - should only be called in the game loop");

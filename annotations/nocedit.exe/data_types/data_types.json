@@ -1965,6 +1965,10 @@
       "type":"enum"
     },
     {
+      "name":"EConnectionType",
+      "type":"enum"
+    },
+    {
       "name":"EDripType",
       "type":"enum"
     },
@@ -2014,6 +2018,10 @@
     },
     {
       "name":"ENetPacketType",
+      "type":"enum"
+    },
+    {
+      "name":"ENetworkMode",
       "type":"enum"
     },
     {
@@ -4141,10 +4149,6 @@
       "type":"struct"
     },
     {
-      "name":"SNetPacket_SimFrame",
-      "type":"struct"
-    },
-    {
       "name":"SNetPlayer",
       "type":"struct"
     },
@@ -4302,6 +4306,14 @@
     },
     {
       "name":"SShapeEditorPolygon",
+      "type":"struct"
+    },
+    {
+      "name":"SSimFrame",
+      "type":"struct"
+    },
+    {
+      "name":"SNetPacket_SimFrame",
       "type":"struct"
     },
     {
@@ -6949,6 +6961,26 @@
     {
       "cat":"/Nocturne/Enum/Game",
       "importable":true,
+      "name":"EConnectionType",
+      "type":"enum",
+      "values":[
+        {
+          "name":"CONNECTION_NONE",
+          "val":0
+        },
+        {
+          "name":"CONNECTION_HOST",
+          "val":1
+        },
+        {
+          "name":"CONNECTION_CLIENT",
+          "val":2
+        }
+      ]
+    },
+    {
+      "cat":"/Nocturne/Enum/Game",
+      "importable":true,
       "name":"EDripType",
       "type":"enum",
       "values":[
@@ -7659,6 +7691,30 @@
         {
           "name":"PACKET_PLAYER_CONTROL",
           "val":16
+        }
+      ]
+    },
+    {
+      "cat":"/Nocturne/Enum/Game",
+      "importable":true,
+      "name":"ENetworkMode",
+      "type":"enum",
+      "values":[
+        {
+          "name":"NET_MODE_DISCONNECTED",
+          "val":0
+        },
+        {
+          "name":"NET_MODE_LOBBY",
+          "val":1
+        },
+        {
+          "name":"NET_MODE_SYNCING",
+          "val":2
+        },
+        {
+          "name":"NET_MODE_PLAYING",
+          "val":3
         }
       ]
     },
@@ -27371,13 +27427,13 @@
           "len":4,
           "name":"prey",
           "offset":728,
-          "type":"CDemonActor*"
+          "type":"CCryptVessel*"
         },
         {
           "len":4,
           "name":"neutral",
           "offset":732,
-          "type":"CDemonActor*"
+          "type":"CCryptVessel*"
         },
         {
           "len":100,
@@ -27395,13 +27451,13 @@
           "len":4,
           "name":"start_loc",
           "offset":936,
-          "type":"CDemonActor*"
+          "type":"CActorDestination*"
         },
         {
           "len":4,
           "name":"end_loc",
           "offset":940,
-          "type":"CDemonActor*"
+          "type":"CActorDestination*"
         },
         {
           "len":4,
@@ -38006,14 +38062,14 @@
           "len":4,
           "name":"connection_type",
           "offset":0,
-          "type":"int"
+          "type":"EConnectionType"
         },
         {
           "comment":"0=disconnected,1=lobby,2=syncing,3=in-game",
           "len":4,
           "name":"network_mode",
           "offset":4,
-          "type":"int"
+          "type":"ENetworkMode"
         },
         {
           "len":20,
@@ -54669,28 +54725,10 @@
           "type":"SNetPacketHeader"
         },
         {
-          "len":4,
-          "name":"sequence",
+          "len":100,
+          "name":"frame",
           "offset":5,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"frame_time",
-          "offset":9,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"frame_flags",
-          "offset":13,
-          "type":"int"
-        },
-        {
-          "len":88,
-          "name":"player_data",
-          "offset":17,
-          "type":"SPlayerControl[2]"
+          "type":"SSimFrame"
         }
       ],
       "importable":true,
@@ -56125,6 +56163,42 @@
       "importable":true,
       "len":388,
       "name":"SShapeEditorPolygon",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"sequence_number",
+          "offset":0,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"timestamp",
+          "offset":4,
+          "type":"uint"
+        },
+        {
+          "len":4,
+          "name":"frame_flags",
+          "offset":8,
+          "type":"uint"
+        },
+        {
+          "len":88,
+          "name":"player_controls",
+          "offset":12,
+          "type":"SPlayerControl[2]"
+        }
+      ],
+      "importable":true,
+      "len":100,
+      "name":"SSimFrame",
       "pack":false,
       "type":"struct"
     },
@@ -61356,6 +61430,12 @@
           "name":"bytes",
           "offset":0,
           "type":"uchar[4]"
+        },
+        {
+          "len":4,
+          "name":"nibs",
+          "offset":0,
+          "type":"byte[4]"
         }
       ],
       "importable":true,

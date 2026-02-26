@@ -70,6 +70,7 @@ typedef union _BIT_INTEGER32 {
     uint dword;
     ushort words[2];
     uchar bytes[4];
+    byte nibs[4];
 } _BIT_INTEGER32;
 
 // Structure: _EXCEPTION_RECORD

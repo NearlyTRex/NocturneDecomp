@@ -11,13 +11,13 @@ void __cdecl staticInit(void);
 // Address: 004f2170
 int __cdecl closestHeroToPoint(CLocation *location);
 
-// Original: core_hero.cpp_FUN_004f2220
+// Original: core_hero.cpp_isAnyHeroWithinRadius_FUN_004f2220
 // Address: 004f2220
-int __cdecl FUN_004f2220(void);
+int __cdecl isAnyHeroWithinRadius(CVector3f *point,float radius);
 
-// Original: core_hero.cpp_FUN_004f22a0
+// Original: core_hero.cpp_isAnyHeroWithinCylinder_FUN_004f22a0
 // Address: 004f22a0
-int __cdecl FUN_004f22a0(void);
+int __cdecl isAnyHeroWithinCylinder(CVector3f *point,float horizontal_radius,float vertical_tolerance);
 
 // Original: core_hero.cpp_CHero_ctor_FUN_004f2340
 // Address: 004f2340

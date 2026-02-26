@@ -3,13 +3,15 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "system/winsock.h"
+#include "types/enums/EConnectionType.h"
+#include "types/enums/ENetworkMode.h"
 #include "types/structs/SNetPlayer.h"
 
 // Structure: CNetGame
 // Ghidra size: 0x174 (372 bytes)
 typedef struct CNetGame {
-    int connection_type; // 0x0, 0=none,1=server,2=client
-    int network_mode; // 0x4, 0=disconnected,1=lobby,2=syncing,3=in-game
+    EConnectionType connection_type; // 0x0, 0=none,1=server,2=client
+    ENetworkMode network_mode; // 0x4, 0=disconnected,1=lobby,2=syncing,3=in-game
     char player_name[20]; // 0x8
     int player_count; // 0x1c
     SNetPlayer players[2]; // 0x20

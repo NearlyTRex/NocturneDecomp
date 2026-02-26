@@ -107,9 +107,9 @@ void __cdecl CDoor::processInEditor(CDoor *this_ptr);
 // Address: 00481630
 void __cdecl CDoor::addFilesToExtract(CDoor *this_ptr,_FILE *file_handle);
 
-// Original: core_door.cpp_FUN_00481650
+// Original: core_door.cpp_clearRuleList_FUN_00481650
 // Address: 00481650
-int __cdecl FUN_00481650(void);
+CRuleList * __cdecl clearRuleList(CRuleList *rule_list);
 
 // Original: core_door.cpp_CDoor_dtor_FUN_00481670
 // Address: 00481670

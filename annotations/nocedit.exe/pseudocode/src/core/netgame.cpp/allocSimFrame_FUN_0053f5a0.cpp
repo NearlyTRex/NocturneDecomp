@@ -11,16 +11,17 @@ int * __cdecl core_netgame_cpp_allocSimFrame_FUN_0053f5a0(void)
 {
   int iVar1;
   int iVar2;
-  int *dest;
+  SSimFrame *dest;
   int in_stack_00000004;
   
   iVar2 = 0;
   if (0 < g_SimFrameCount) {
     iVar1 = 0;
     do {
-      if (in_stack_00000004 == *(int *)((int)&g_SimFrameHistory + iVar1)) {
+      if (in_stack_00000004 ==
+          *(int *)((int)g_SimFrameHistory[0].player_controls[0].action_states + iVar1 + -0xc)) {
         if (-1 < iVar2) {
-          return (int *)((int)&g_SimFrameHistory + iVar1);
+          return (int *)((int)g_SimFrameHistory[0].player_controls[0].action_states + iVar1 + -0xc);
         }
         break;
       }
@@ -33,9 +34,9 @@ int * __cdecl core_netgame_cpp_allocSimFrame_FUN_0053f5a0(void)
     g_CurrentLineNumber = 299;
     core_main_c_displayErrorAndQuit_FUN_00506f10("allocSimFrame - sim history list full");
   }
-  dest = &g_SimFrameHistory + g_SimFrameCount * 0x19;
+  dest = g_SimFrameHistory + g_SimFrameCount;
   g_SimFrameCount = g_SimFrameCount + 1;
   memset(dest,0,100);
-  *dest = in_stack_00000004;
-  return dest;
+  dest->sequence_number = in_stack_00000004;
+  return &dest->sequence_number;
 }

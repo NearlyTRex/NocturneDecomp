@@ -21,7 +21,7 @@ int __cdecl core_mission_cpp_CDemonMission_createHeros_FUN_00524a80(CDemonMissio
     *(uint *)((int)g_HeroActors + iVar4) = 0;
     iVar4 = iVar2;
   } while (iVar2 != 0x10);
-  if (g_CNetGamePtr->connection_type == 0) {
+  if (g_CNetGamePtr->connection_type == CONNECTION_NONE) {
     g_HeroCount = 1;
     g_LocalHeroIndex = g_CNetGamePtr->connection_type;
     iVar4 = core_mission_cpp_CDemonMission_createOneHero_FUN_00524920

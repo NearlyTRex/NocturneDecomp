@@ -829,7 +829,7 @@ LAB_004aaf38:
                                        != 0) {
                                   local_ec = local_ec + 1;
                                 }
-                                if (g_CNetGamePtr->connection_type != 0) {
+                                if (g_CNetGamePtr->connection_type != CONNECTION_NONE) {
                                   iVar2 = core_event_cpp_formatEventError_FUN_004aa2a0
                                                     ("Can't use killHero command in multi-player");
                                   return iVar2;

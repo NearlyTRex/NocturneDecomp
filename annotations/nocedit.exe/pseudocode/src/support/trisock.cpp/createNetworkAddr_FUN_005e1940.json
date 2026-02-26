@@ -20,12 +20,6 @@
   },
   "cross_references": [
     {
-      "addr": "005406a0",
-      "from_addr": "00540f66",
-      "name": "core_netgame.cpp_CNetGame_allocSimFrame_FUN_005406a0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0053f860",
       "from_addr": "0053f8b5",
       "name": "core_netgame.cpp_CNetGame_initializeNetworkToHost_FUN_0053f860",
@@ -35,6 +29,12 @@
       "addr": "0053f900",
       "from_addr": "0053f947",
       "name": "core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_0053f900",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005406a0",
+      "from_addr": "00540f66",
+      "name": "core_netgame.cpp_CNetGame_processPacket_FUN_005406a0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -58,7 +58,7 @@
       {
         "call_addr": "00540f66",
         "call_type": "direct",
-        "caller": "core_netgame.cpp_CNetGame_allocSimFrame_FUN_005406a0",
+        "caller": "core_netgame.cpp_CNetGame_processPacket_FUN_005406a0",
         "estimated_params": 6,
         "instructions_analyzed": 9,
         "reg_params": [],

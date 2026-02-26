@@ -23,7 +23,7 @@
 ;   undefined4 g_NetworkReceivePacket+4
 ;
 ; Called Functions:
-;   core_netgame.cpp_CNetGame_allocSimFrame_FUN_005406a0
+;   core_netgame.cpp_CNetGame_processPacket_FUN_005406a0
 ;   core_netgame.cpp_CNetGame_removeChatOut_FUN_00541ff0
 ;   support_trisock.cpp_isSocketValid_FUN_005e1b70
 ;   support_trisock.cpp_receiveSocketData_FUN_005e1c20
@@ -95,8 +95,8 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 00540634
     PUSH EAX                            ; 00540638
     PUSH ESI                            ; 00540639
-    CALL core_netgame.cpp_CNetGame_allocSimFrame_FUN_005406a0 ; 0054063a
-        ;   XREF to: 005406a0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_allocSimFrame_FUN_005406a0(CNetGame * this_ptr, SNetworkAddr * source_addr, UNetPacket * packet)
+    CALL core_netgame.cpp_CNetGame_processPacket_FUN_005406a0 ; 0054063a
+        ;   XREF to: 005406a0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_processPacket_FUN_005406a0(CNetGame * this_ptr, SNetworkAddr * source_addr, UNetPacket * packet)
     ADD ESP,0xc                         ; 0054063f
     JMP 0x005405f1                      ; 00540642
         ;   XREF to: 005405f1 (UNCONDITIONAL_JUMP)  ; LAB_005405f1

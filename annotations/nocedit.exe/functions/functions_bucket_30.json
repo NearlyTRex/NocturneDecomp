@@ -22436,8 +22436,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_dracbrid.cpp_FUN_00486430",
-    "ret":"float*",
+    "name":"core_dracbrid.cpp_randomizePosition_FUN_00486430",
+    "ret":"CVector3f*",
     "vars":{
       "locals":[
         {
@@ -22455,6 +22455,40 @@
             ]
           },
           "type":"undefined4"
+        }
+      ],
+      "params":[
+        {
+          "name":"dest",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"src",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
         }
       ],
       "ret_storage":{
@@ -55698,9 +55732,27 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_netgame.cpp_CNetGame_FUN_00543b30",
+    "name":"core_netgame.cpp_CNetGame_setModePlaying_FUN_00543b30",
     "ret":"void",
     "vars":{
+      "locals":[
+        {
+          "name":"unionfacet4_543b34",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:4061ea56ddd4",
+                "offset":70789287566804,
+                "size":4
+              }
+            ]
+          },
+          "type":"_BIT_INTEGER32*",
+          "use":4
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",
@@ -55732,7 +55784,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_netgame.cpp_CNetGame_FUN_00543bb0",
+    "name":"core_netgame.cpp_CNetGame_swapPlayerData_FUN_00543bb0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -56153,6 +56205,22 @@
             ]
           },
           "type":"CNetGame*"
+        },
+        {
+          "name":"other",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"SNetPlayer*"
         }
       ]
     }
@@ -56212,8 +56280,44 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_netgame.cpp_FUN_00543db0",
-    "ret":"void"
+    "name":"core_netgame.cpp_copyPlayerControls_FUN_00543db0",
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"dest",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"SPlayerControl*"
+        },
+        {
+          "name":"src",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"SPlayerControl*"
+        }
+      ]
+    }
   },
   {
     "addr":"00543e30",

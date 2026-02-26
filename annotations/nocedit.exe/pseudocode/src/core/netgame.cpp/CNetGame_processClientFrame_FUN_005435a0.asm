@@ -25,7 +25,7 @@
 ;   uint g_CurrentGameTime
 ;   uint UINT_02f7c8c8
 ;   int g_SimFrameCount
-;   undefined4 g_SimFrameHistory
+;   SSimFrame[512] g_SimFrameHistory
 ;   undefined4 DAT_02f9c128
 ;   undefined4 DAT_02f9c18c
 ;

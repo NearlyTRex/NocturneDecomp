@@ -4,31 +4,31 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 4109 functions
-  1 suspects: 809 functions
+  0 suspects: 4117 functions
+  1 suspects: 811 functions
   2 suspects: 465 functions
-  3 suspects: 246 functions
-  4 suspects: 208 functions
+  3 suspects: 243 functions
+  4 suspects: 210 functions
   5 suspects: 174 functions
-  6 suspects: 136 functions
-  7 suspects: 101 functions
-  8 suspects: 96 functions
+  6 suspects: 135 functions
+  7 suspects: 100 functions
+  8 suspects: 94 functions
   9 suspects: 76 functions
   10 suspects: 66 functions
   11 suspects: 56 functions
-  12 suspects: 52 functions
+  12 suspects: 51 functions
   13 suspects: 53 functions
   14 suspects: 52 functions
-  15 suspects: 32 functions
+  15 suspects: 31 functions
   16 suspects: 33 functions
   17 suspects: 28 functions
   18 suspects: 33 functions
   19 suspects: 21 functions
   20 suspects: 22 functions
-  21 suspects: 15 functions
+  21 suspects: 14 functions
   22 suspects: 18 functions
-  23 suspects: 25 functions
-  24 suspects: 18 functions
+  23 suspects: 24 functions
+  24 suspects: 17 functions
   25 suspects: 15 functions
   26 suspects: 11 functions
   27 suspects: 11 functions
@@ -187,7 +187,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       Function declares 4 params but call sites push 6 (2 missing)...
     ... and 131 more
 
-  [pointer_cast] (119 functions)
+  [pointer_cast] (120 functions)
   ------------------------------------------------------------
     core_dlight.cpp_drawGrayscalePixel_FUN_00473360    (  5 lines)
       *(int *)((int)g_ScreenBufferArray[y] + x * 4) = grayscale_va...
@@ -227,9 +227,9 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       iVar1 = *(int *)((int)&g_MuzzleFlashPool[1].frames_remaining...
     core_stranger.cpp_CStranger_getCarryObjToBodyXForm ( 16 lines)
       out_matrix = (CMatrix3x4f *)((int)out_matrix + ((uint)bVar3 ...
-    core_netgame.cpp_findSimFrame_FUN_0053f550         ( 17 lines)
-      if (sequence_number == *(int *)((int)&g_SimFrameHistory + iV...
-    ... and 99 more
+    core_actor.cpp_syncActorTypeIDs_FUN_0040c7c0       ( 17 lines)
+      piVar1 = (int *)((int)g_ActorClassRegistrations + iVar3);...
+    ... and 100 more
 
   [decompiler_intrinsic] (48 functions)
   ------------------------------------------------------------
@@ -319,7 +319,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       puVar4 = &pCVar3[-1].bit_state.accumulated_bits;...
     ... and 20 more
 
-  [warning_type_propagation] (32 functions)
+  [warning_type_propagation] (33 functions)
   ------------------------------------------------------------
     core_zombie.cpp_CZombie_FUN_005fbda0               ( 11 lines)
       /* WARNING: Type propagation algorithm not settling */...
@@ -351,6 +351,8 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       /* WARNING: Type propagation algorithm not settling */...
     core_mission.cpp_CDemonMission_process_FUN_0052425 ( 46 lines)
       /* WARNING: Type propagation algorithm not settling */...
+    core_baron.cpp_CBaron_engageTarget_FUN_00413470    ( 50 lines)
+      /* WARNING: Type propagation algorithm not settling */...
     core_bugs.cpp_CBugs_renderOpaque_FUN_004251b0      ( 59 lines)
       /* WARNING: Type propagation algorithm not settling */...
     core_tvbat.cpp_CTVBat_processInEditor_FUN_005e5260 ( 59 lines)
@@ -359,9 +361,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       /* WARNING: Type propagation algorithm not settling */...
     core_gargoyle.cpp_CGargoyle_getTargetPoints_FUN_00 ( 64 lines)
       /* WARNING: Type propagation algorithm not settling */...
-    core_mobster.cpp_CMobster_processDamage_FUN_005277 ( 64 lines)
-      /* WARNING: Type propagation algorithm not settling */...
-    ... and 12 more
+    ... and 13 more
 
   [param_count_too_many] (31 functions)
   ------------------------------------------------------------
@@ -675,8 +675,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/bugs.cpp, Lines: 5, Types: ['stack_param']
   core_bugs.cpp_FUN_00427b70
     File: core/bugs.cpp, Lines: 5, Types: ['stack_param']
-  core_vessel.cpp_FUN_005e9180
-    File: core/vessel.cpp, Lines: 5, Types: ['stack_param']
   core_fire.cpp_FUN_004c9450
     File: core/fire.cpp, Lines: 5, Types: ['stack_param']
   core_stranger.cpp_FUN_005c695e
@@ -741,5 +739,7 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/set.cpp, Lines: 6, Types: ['unnamed_param']
   core_tvbat.cpp_FUN_005e3ec0
     File: core/tvbat.cpp, Lines: 6, Types: ['unnamed_param']
+  core_boxactor.cpp_CLightActor_FUN_004235c0
+    File: core/boxactor.cpp, Lines: 6, Types: ['stack_param']
 
-  ... and 661 more
+  ... and 658 more

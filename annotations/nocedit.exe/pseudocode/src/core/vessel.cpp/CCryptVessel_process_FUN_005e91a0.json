@@ -6,19 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 460,
-    "complexity_score": 270,
+    "complexity_score": 250,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 11,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 195,
-    "suspect_count": 6,
+    "pseudocode_lines": 200,
+    "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic",
-      "suspect_float",
       "warning_type_propagation"
     ],
-    "total_lines": 655
+    "total_lines": 660
   },
   "cross_references": [],
   "function": {
@@ -52,7 +51,7 @@
     {
       "addr": "005e9180",
       "is_variadic": false,
-      "name": "core_vessel.cpp_FUN_005e9180"
+      "name": "core_vessel.cpp_isStartLocTriggered_FUN_005e9180"
     }
   ],
   "globals": [
@@ -289,7 +288,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 167,
+      "line": 172,
       "match": "SQRT",
       "severity": "mild",
       "text": "local_18 = SQRT(fVar11 * fVar11 + fVar9 * fVar9 + fVar10 * fVar10);",
@@ -297,7 +296,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 174,
+      "line": 179,
       "match": "SQRT",
       "severity": "mild",
       "text": "local_14 = SQRT(fVar11 * fVar11 + fVar9 * fVar9 + fVar10 * fVar10);",
@@ -305,27 +304,11 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 177,
+      "line": 182,
       "match": "SQRT",
       "severity": "mild",
       "text": "(this_ptr->eat_distance < SQRT(fVar8 * fVar8 + fVar6 * fVar6 + fVar7 * fVar7))) &&",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 191,
-      "match": "1.4013e-45",
-      "severity": "mild",
-      "text": "this_ptr->prey[5].previous_transform_state.orientation.vec.y = 1.4013e-45;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 192,
-      "match": "1.4013e-45",
-      "severity": "mild",
-      "text": "this_ptr->neutral[5].previous_transform_state.orientation.vec.y = 1.4013e-45;",
-      "type": "suspect_float"
     }
   ],
   "vtable_info": {

@@ -14,7 +14,7 @@
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
 ;   core_game.cpp_CGame_setFudgeTarget_FUN_004d8730
-;   core_hero.cpp_FUN_004f2220
+;   core_hero.cpp_isAnyHeroWithinRadius_FUN_004f2220
 ;   core_manpuz.cpp_CMansionPuzzleCircle_FUN_00509b20
 ;   core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050a610
 ;   core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050a8d0
@@ -32,8 +32,8 @@ section .text
     LEA EAX,[EBX + 0x20]                ; 005091d5
     PUSH 0x41f00000                     ; 005091d8
     PUSH EAX                            ; 005091dd
-    CALL core_hero.cpp_FUN_004f2220     ; 005091de
-        ;   XREF to: 004f2220 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004f2220()
+    CALL core_hero.cpp_isAnyHeroWithinRadius_FUN_004f2220 ; 005091de
+        ;   XREF to: 004f2220 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_isAnyHeroWithinRadius_FUN_004f2220(CVector3f * point, float radius)
     ADD ESP,0x8                         ; 005091e3
     TEST EAX,EAX                        ; 005091e6
     JZ 0x005092dc                       ; 005091e8

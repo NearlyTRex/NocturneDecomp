@@ -17,6 +17,7 @@
 #include "types/classes/CLZWCompress.h"
 #include "types/classes/CLZWDecompress.h"
 #include "types/classes/CLZWDictionary.h"
+#include "types/classes/CPackedBitmap.h"
 #include "types/classes/CVector3f.h"
 #include "types/funcdefs/ColorConversionFunc.h"
 #include "types/funcdefs/OptimizedMemcpyFunc.h"
@@ -86,7 +87,7 @@ void __cdecl cockpit_ckptutil_c_saveEdgeListFile_FUN_00433480(char *filename,SEd
 void __cdecl cockpit_ckptutil_c_drawClippedEdges_FUN_004335f0(SEdge *edges,int count,int x_offset,int y_offset);
 void __cdecl cockpit_ckptutil_c_rasterizeEdgeEndpoints_FUN_004336e0(void *bitmap_buffer,SEdge *edge_list,int edge_count,int buffer_width, int buffer_height);
 void __cdecl cockpit_ckptutil_c_renderEdgeArrayWithBufferLookup_FUN_00433820(uchar *color_buffer,SEdge *edge_array,int edge_count,int offset_x,int offset_y, int buffer_width);
-void __cdecl cockpit_ckptutil_c_FUN_004338f0(void);
+void __cdecl cockpit_ckptutil_c_drawLineListFromBitmap_FUN_004338f0(CPackedBitmap *bitmap,short *line_data,int line_count,int offset_x,int offset_y);
 void __cdecl cockpit_ckptutil_c_drawLineAAWithBlending_FUN_004339c0(int x0,int y0,int x1,int y1,int base_color,uchar blend_color,int blend_mode);
 void __cdecl cockpit_ckptutil_c_drawLineAA_FUN_00433c90(int x0,int y0,int x1,int y1,int color);
 void __cdecl cockpit_ckptutil_c_blendPixelWithHardwarePalette_FUN_00433f50(int x,int y,float alpha,int color);

@@ -4,7 +4,7 @@
       {
         "category": "undeclared_identifier",
         "column": 20,
-        "line": 77,
+        "line": 78,
         "message": "use of undeclared identifier 'stack0xfffffe90'"
       }
     ],
@@ -13,25 +13,25 @@
   },
   "complexity": {
     "assembly_lines": 481,
-    "complexity_score": 453,
+    "complexity_score": 454,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 268,
+    "pseudocode_lines": 269,
     "suspect_count": 17,
     "suspect_types": [
       "pointer_cast",
       "stack_alignment_array",
       "stack_ref"
     ],
-    "total_lines": 749
+    "total_lines": 750
   },
   "cross_references": [
     {
       "addr": "005406a0",
       "from_addr": "00540e56",
-      "name": "core_netgame.cpp_CNetGame_allocSimFrame_FUN_005406a0",
+      "name": "core_netgame.cpp_CNetGame_processPacket_FUN_005406a0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -530,7 +530,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 70,
+      "line": 71,
       "match": "&stack0xfffffe90",
       "severity": "moderate",
       "text": "piVar8 = (int *)&stack0xfffffe90;",
@@ -538,7 +538,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 73,
+      "line": 74,
       "match": "(UNetPacket *)((int)",
       "severity": "mild",
       "text": "packet = (UNetPacket *)((int)packet + (uint)bVar16 * -8 + 4);",
@@ -546,7 +546,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 136,
+      "line": 137,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)local_44 + local_44[2]) = iVar5;",
@@ -554,7 +554,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 183,
+      "line": 184,
       "match": "(SNetworkAddr *)((int)",
       "severity": "mild",
       "text": "(this_ptr,(SNetworkAddr *)((int)&local_fb.ip_address + iVar12),",
@@ -562,7 +562,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 184,
+      "line": 185,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "local_10f + iVar12,*(int *)((int)aiStack_f3 + iVar12),",
@@ -570,7 +570,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 185,
+      "line": 186,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)aiStack_f3 + iVar12 + 4));",
@@ -578,7 +578,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 186,
+      "line": 187,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "this_ptr->players[iVar4].ready_flag = *(int *)((int)aiStack_f3 + iVar12 + 8);",
@@ -586,15 +586,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 205,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "if (*(int *)((int)local_44 + local_44[4] + 4) < *(int *)((int)local_44 + local_44[4])) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 205,
+      "line": 206,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (*(int *)((int)local_44 + local_44[4] + 4) < *(int *)((int)local_44 + local_44[4])) {",
@@ -603,9 +595,9 @@
     {
       "description": "Complex pointer cast",
       "line": 206,
-      "match": "(uint *)((int)",
+      "match": "(int *)((int)",
       "severity": "mild",
-      "text": "puVar11 = (uint *)((int)local_44 + local_44[4] + 4);",
+      "text": "if (*(int *)((int)local_44 + local_44[4] + 4) < *(int *)((int)local_44 + local_44[4])) {",
       "type": "pointer_cast"
     },
     {
@@ -613,7 +605,7 @@
       "line": 207,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uVar2 = *(uint *)((int)local_44 + local_44[4]);",
+      "text": "puVar11 = (uint *)((int)local_44 + local_44[4] + 4);",
       "type": "pointer_cast"
     },
     {
@@ -621,12 +613,20 @@
       "line": 208,
       "match": "(uint *)((int)",
       "severity": "mild",
+      "text": "uVar2 = *(uint *)((int)local_44 + local_44[4]);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 209,
+      "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)local_44 + local_44[4]) = *puVar11;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 212,
+      "line": 213,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "piVar8 = (int *)((int)pSVar15 + (uint)bVar16 * -8 + 4);",
@@ -634,7 +634,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 250,
+      "line": 251,
       "match": "(SNetPlayer *)((int)",
       "severity": "mild",
       "text": "pSVar10 = (SNetPlayer *)((int)pSVar10 + (uint)bVar16 * -8 + 4);",
@@ -642,7 +642,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 251,
+      "line": 252,
       "match": "(SNetPlayer *)((int)",
       "severity": "mild",
       "text": "pSVar15 = (SNetPlayer *)((int)pSVar15 + (uint)bVar16 * -8 + 4);",
@@ -650,7 +650,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 258,
+      "line": 259,
       "match": "(SNetPlayer *)((int)",
       "severity": "mild",
       "text": "pSVar10 = (SNetPlayer *)((int)pSVar10 + (uint)bVar16 * -8 + 4);",

@@ -87,9 +87,9 @@ void __cdecl CNetGame::flushIncomingPackets(CNetGame *this_ptr);
 // Address: 005405b0
 void __cdecl CNetGame::receivePackets(CNetGame *this_ptr);
 
-// Original: core_netgame.cpp_CNetGame_allocSimFrame_FUN_005406a0
+// Original: core_netgame.cpp_CNetGame_processPacket_FUN_005406a0
 // Address: 005406a0
-void __cdecl CNetGame::allocSimFrame(CNetGame *this_ptr,SNetworkAddr *source_addr,UNetPacket *packet);
+void __cdecl CNetGame::processPacket(CNetGame *this_ptr,SNetworkAddr *source_addr,UNetPacket *packet);
 
 // Original: core_netgame.cpp_CNetGame_send_FUN_005411c0
 // Address: 005411c0
@@ -183,45 +183,45 @@ int __cdecl matchPacketHeader(SNetPacketHeader *a,SNetPacketHeader *b);
 // Address: 00543b00
 void __cdecl initNetPacket(SNetPacketHeader *packet,int packet_size,uchar packet_type);
 
-// Original: core_netgame.cpp_CNetGame_FUN_00543b20
+// Original: core_netgame.cpp_CNetGame_setModeSyncing_FUN_00543b20
 // Address: 00543b20
-void __cdecl CNetGame(CNetGame *this_ptr);
+void __cdecl CNetGame::setModeSyncing(CNetGame *this_ptr);
 
-// Original: core_netgame.cpp_CNetGame_FUN_00543b30
+// Original: core_netgame.cpp_CNetGame_setModePlaying_FUN_00543b30
 // Address: 00543b30
-void __cdecl CNetGame(CNetGame *this_ptr);
+void __cdecl CNetGame::setModePlaying(CNetGame *this_ptr);
 
-// Original: core_netgame.cpp_CNetGame_FUN_00543b40
+// Original: core_netgame.cpp_CNetGame_setMode5_FUN_00543b40
 // Address: 00543b40
-void __cdecl CNetGame(CNetGame *this_ptr);
+void __cdecl CNetGame::setMode5(CNetGame *this_ptr);
 
-// Original: core_netgame.cpp_CNetGame_FUN_00543b50
+// Original: core_netgame.cpp_CNetGame_setMode6_FUN_00543b50
 // Address: 00543b50
-void __cdecl CNetGame(CNetGame *this_ptr);
+void __cdecl CNetGame::setMode6(CNetGame *this_ptr);
 
-// Original: core_netgame.cpp_CNetGame_FUN_00543b60
+// Original: core_netgame.cpp_CNetGame_setMode7_FUN_00543b60
 // Address: 00543b60
-void __cdecl CNetGame(CNetGame *this_ptr);
+void __cdecl CNetGame::setMode7(CNetGame *this_ptr);
 
-// Original: core_netgame.cpp_CNetGame_FUN_00543b70
+// Original: core_netgame.cpp_CNetGame_setMode9_FUN_00543b70
 // Address: 00543b70
-void __cdecl CNetGame(CNetGame *this_ptr);
+void __cdecl CNetGame::setMode9(CNetGame *this_ptr);
 
-// Original: core_netgame.cpp_CNetGame_FUN_00543b80
+// Original: core_netgame.cpp_CNetGame_setMode10_FUN_00543b80
 // Address: 00543b80
-void __cdecl CNetGame(CNetGame *this_ptr);
+void __cdecl CNetGame::setMode10(CNetGame *this_ptr);
 
-// Original: core_netgame.cpp_CNetGame_FUN_00543b90
+// Original: core_netgame.cpp_CNetGame_setMode12_FUN_00543b90
 // Address: 00543b90
-void __cdecl CNetGame(CNetGame *this_ptr);
+void __cdecl CNetGame::setMode12(CNetGame *this_ptr);
 
-// Original: core_netgame.cpp_CNetGame_FUN_00543ba0
+// Original: core_netgame.cpp_CNetGame_setMode13_FUN_00543ba0
 // Address: 00543ba0
-void __cdecl CNetGame(CNetGame *this_ptr);
+void __cdecl CNetGame::setMode13(CNetGame *this_ptr);
 
-// Original: core_netgame.cpp_CNetGame_FUN_00543bb0
+// Original: core_netgame.cpp_CNetGame_swapPlayerData_FUN_00543bb0
 // Address: 00543bb0
-void __cdecl CNetGame(CNetGame *this_ptr);
+void __cdecl CNetGame::swapPlayerData(CNetGame *this_ptr,SNetPlayer *other);
 
 // Original: core_netgame.cpp_SPlayer_ctor_FUN_00543cb0
 // Address: 00543cb0
@@ -243,9 +243,9 @@ SNetPlayer * __cdecl SNetPlayer::ctor(SNetPlayer *this_ptr);
 // Address: 00543cf0
 void __cdecl SNetPlayer::copy(SNetPlayer *this_ptr,SNetPlayer *other);
 
-// Original: core_netgame.cpp_FUN_00543db0
+// Original: core_netgame.cpp_copyPlayerControls_FUN_00543db0
 // Address: 00543db0
-void __cdecl FUN_00543db0(void);
+void __cdecl copyPlayerControls(SPlayerControl *dest,SPlayerControl *src);
 
 // Original: core_netgame.cpp_copyNetAddr_FUN_00543e00
 // Address: 00543e00

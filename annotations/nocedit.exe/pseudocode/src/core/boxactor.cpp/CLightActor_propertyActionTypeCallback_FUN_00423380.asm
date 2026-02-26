@@ -19,7 +19,7 @@
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
 ;   core_boxactor.cpp_CLightActor_FUN_00422d60
-;   core_boxactor.cpp_FUN_00423110
+;   core_boxactor.cpp_pickLightActorType_FUN_00423110
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;
 ; *****************************************************************************
@@ -52,8 +52,8 @@ section .text
     PUSH 0x1                            ; 004233c3
     LEA EAX,[ESP + 0x8]                 ; 004233c5
     PUSH EAX                            ; 004233c9
-    CALL core_boxactor.cpp_FUN_00423110 ; 004233ca
-        ;   XREF to: 00423110 (UNCONDITIONAL_CALL)  ; int core_boxactor.cpp_FUN_00423110()
+    CALL core_boxactor.cpp_pickLightActorType_FUN_00423110 ; 004233ca
+        ;   XREF to: 00423110 (UNCONDITIONAL_CALL)  ; ELightActorType core_boxactor.cpp_pickLightActorType_FUN_00423110(char * prompt_text, int allow_custom, uint current_type)
     ADD ESP,0xc                         ; 004233cf
     TEST EAX,EAX                        ; 004233d2
     JGE 0x004233e2                      ; 004233d4

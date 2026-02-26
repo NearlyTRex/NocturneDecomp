@@ -13,8 +13,8 @@
 ; undefined4       Stack[-0xb]:4  local_b
 ;
 ; XREF[2]:
-;   core_netgame.cpp_CNetGame_allocSimFrame_FUN_005406a0 at 00540d22
 ;   core_netgame.cpp_CNetGame_disconnect_FUN_0053fd00 at 00540191
+;   core_netgame.cpp_CNetGame_processPacket_FUN_005406a0 at 00540d22
 ;
 ; Called Functions:
 ;   core_netgame.cpp_CNetGame_sendPacket_FUN_00541230

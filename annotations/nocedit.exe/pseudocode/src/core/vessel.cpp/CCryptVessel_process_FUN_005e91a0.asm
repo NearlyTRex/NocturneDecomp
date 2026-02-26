@@ -37,7 +37,7 @@
 ;   core_event.cpp_CEventList_executeCommands_FUN_004aabe0
 ;   core_fire.cpp_CFireEffect_createExplosion_FUN_004c8c10
 ;   core_flame.cpp_CFlame_process_FUN_004c9c00
-;   core_vessel.cpp_FUN_005e9180
+;   core_vessel.cpp_isStartLocTriggered_FUN_005e9180
 ;
 ; *****************************************************************************
 
@@ -91,8 +91,8 @@ section .text
         ;   XREF to: 005e94fa (CONDITIONAL_JUMP)  ; LAB_005e94fa
     MOV EAX,dword ptr [EBX + 0x2dc]     ; 005e923d
     PUSH EAX                            ; 005e9243
-    CALL core_vessel.cpp_FUN_005e9180   ; 005e9244
-        ;   XREF to: 005e9180 (UNCONDITIONAL_CALL)  ; int core_vessel.cpp_FUN_005e9180()
+    CALL core_vessel.cpp_isStartLocTriggered_FUN_005e9180 ; 005e9244
+        ;   XREF to: 005e9180 (UNCONDITIONAL_CALL)  ; int core_vessel.cpp_isStartLocTriggered_FUN_005e9180(CCryptVessel * actor)
     ADD ESP,0x4                         ; 005e9249
     TEST EAX,EAX                        ; 005e924c
     JZ 0x005e9294                       ; 005e924e
@@ -321,16 +321,16 @@ section .text
     RET                                 ; 005e94f9
     PUSH EDX                            ; 005e94fa
         ;   Label: LAB_005e94fa
-    CALL core_vessel.cpp_FUN_005e9180   ; 005e94fb
-        ;   XREF to: 005e9180 (UNCONDITIONAL_CALL)  ; int core_vessel.cpp_FUN_005e9180()
+    CALL core_vessel.cpp_isStartLocTriggered_FUN_005e9180 ; 005e94fb
+        ;   XREF to: 005e9180 (UNCONDITIONAL_CALL)  ; int core_vessel.cpp_isStartLocTriggered_FUN_005e9180(CCryptVessel * actor)
     ADD ESP,0x4                         ; 005e9500
     TEST EAX,EAX                        ; 005e9503
     JZ 0x005e956d                       ; 005e9505
         ;   XREF to: 005e956d (CONDITIONAL_JUMP)  ; LAB_005e956d
     MOV ESI,dword ptr [EBX + 0x2dc]     ; 005e9507
     PUSH ESI                            ; 005e950d
-    CALL core_vessel.cpp_FUN_005e9180   ; 005e950e
-        ;   XREF to: 005e9180 (UNCONDITIONAL_CALL)  ; int core_vessel.cpp_FUN_005e9180()
+    CALL core_vessel.cpp_isStartLocTriggered_FUN_005e9180 ; 005e950e
+        ;   XREF to: 005e9180 (UNCONDITIONAL_CALL)  ; int core_vessel.cpp_isStartLocTriggered_FUN_005e9180(CCryptVessel * actor)
     ADD ESP,0x4                         ; 005e9513
     TEST EAX,EAX                        ; 005e9516
     JZ 0x005e956d                       ; 005e9518
@@ -364,8 +364,8 @@ section .text
     MOV EDI,dword ptr [EBX + 0x2d8]     ; 005e956d
         ;   Label: LAB_005e956d
     PUSH EDI                            ; 005e9573
-    CALL core_vessel.cpp_FUN_005e9180   ; 005e9574
-        ;   XREF to: 005e9180 (UNCONDITIONAL_CALL)  ; int core_vessel.cpp_FUN_005e9180()
+    CALL core_vessel.cpp_isStartLocTriggered_FUN_005e9180 ; 005e9574
+        ;   XREF to: 005e9180 (UNCONDITIONAL_CALL)  ; int core_vessel.cpp_isStartLocTriggered_FUN_005e9180(CCryptVessel * actor)
     ADD ESP,0x4                         ; 005e9579
     TEST EAX,EAX                        ; 005e957c
     JZ 0x005e959a                       ; 005e957e
@@ -379,8 +379,8 @@ section .text
     MOV EBP,dword ptr [EBX + 0x2dc]     ; 005e959a
         ;   Label: LAB_005e959a
     PUSH EBP                            ; 005e95a0
-    CALL core_vessel.cpp_FUN_005e9180   ; 005e95a1
-        ;   XREF to: 005e9180 (UNCONDITIONAL_CALL)  ; int core_vessel.cpp_FUN_005e9180()
+    CALL core_vessel.cpp_isStartLocTriggered_FUN_005e9180 ; 005e95a1
+        ;   XREF to: 005e9180 (UNCONDITIONAL_CALL)  ; int core_vessel.cpp_isStartLocTriggered_FUN_005e9180(CCryptVessel * actor)
     ADD ESP,0x4                         ; 005e95a6
     TEST EAX,EAX                        ; 005e95a9
     JNZ 0x005e9580                      ; 005e95ab

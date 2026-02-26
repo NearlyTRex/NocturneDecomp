@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   row_index
 ;
 ; XREF[1]:
-;   cockpit_ckptutil.c_FUN_004338f0 at 00433943
+;   cockpit_ckptutil.c_drawLineListFromBitmap_FUN_004338f0 at 00433943
 ;
 ; *****************************************************************************
 

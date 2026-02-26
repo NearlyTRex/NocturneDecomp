@@ -112,7 +112,7 @@ CLarva * __cdecl core_larva_cpp_CLarva_ctor_FUN_00502f90(CLarva *this_ptr);
 void __cdecl core_larva_cpp_CLarva_setup_FUN_00503020(CLarva *this_ptr);
 void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float delta_time);
 void __cdecl core_larva_cpp_CLarva_archive_FUN_00503960(CLarva *this_ptr);
-char * __cdecl core_larva_cpp_FUN_005039d0(void);
+char * __cdecl core_larva_cpp_getSizeCategory_FUN_005039d0(float scale);
 void __cdecl core_larva_cpp_CLarva_processDamage_FUN_00503a20(CLarva *this_ptr,SDamageInfo *damage_info);
 int __cdecl core_larva_cpp_CLarva_getTargetPoints_FUN_00503c00(CLarva *this_ptr,CVector3f *out_points_array);
 void __cdecl core_larva_cpp_CLarva_getPropertyList_FUN_00503c50(CLarva *this_ptr,CActorPropertyList *property_list);

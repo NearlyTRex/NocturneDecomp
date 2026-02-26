@@ -14,7 +14,7 @@ void __cdecl core_netgame_cpp_CNetGame_gameSettingsChanged_FUN_00542cf0(CNetGame
   int iVar3;
   CNetGame *pCVar4;
   
-  if (this_ptr->connection_type != 1) {
+  if (this_ptr->connection_type != CONNECTION_HOST) {
     g_CurrentFilename = "..\\core\\netgame.cpp";
     g_CurrentLineNumber = 0x88c;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CNetGame::gameSettingsChanged - should only call this in server mode");

@@ -127,7 +127,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
   iVar3 = core_netgame_cpp_CNetGame_syncPlayers_FUN_005401e0(g_CNetGamePtr,3);
   if ((iVar3 != 0) &&
      (iVar3 = core_netgame_cpp_CNetGame_syncPlayers_FUN_005401e0(g_CNetGamePtr,4), iVar3 != 0)) {
-    g_CNetGamePtr->network_mode = 3;
+    g_CNetGamePtr->network_mode = NET_MODE_PLAYING;
     core_game_cpp_CGame_saveClockTime_FUN_004d7d80(this_ptr);
     core_game_cpp_CGame_resetInputAndCenterCursor_FUN_004dce70(this_ptr);
     core_netgame_cpp_CNetGame_processServerFrame_FUN_00543150(g_CNetGamePtr);
@@ -164,7 +164,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
           iVar4 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).getDeathState)
                             (&g_HeroActors[g_LocalHeroIndex]->base);
           if (1 < iVar4) goto LAB_004db434;
-          if (g_CNetGamePtr->connection_type == 2) {
+          if (g_CNetGamePtr->connection_type == CONNECTION_CLIENT) {
             pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                                ("Leave network game");
             shape_edittool_cpp_CStrList_add_FUN_004a2b80(&g_CPickList.base,pcVar2);
@@ -178,7 +178,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
                       (&g_CPickList,pcVar2,iVar4,iVar8);
             g_CheatSystemEnabled = 1;
           }
-          else if (g_CNetGamePtr->connection_type == 1) {
+          else if (g_CNetGamePtr->connection_type == CONNECTION_HOST) {
             pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                                ("Abort network game");
             shape_edittool_cpp_CStrList_add_FUN_004a2b80(&g_CPickList.base,pcVar2);

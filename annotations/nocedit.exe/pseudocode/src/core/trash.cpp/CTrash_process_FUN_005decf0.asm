@@ -68,7 +68,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10
-;   core_hero.cpp_FUN_004f2220
+;   core_hero.cpp_isAnyHeroWithinRadius_FUN_004f2220
 ;
 ; *****************************************************************************
 
@@ -86,8 +86,8 @@ section .text
     LEA ESI,[EBX + 0x20]                ; 005ded02
     PUSH 0x42c80000                     ; 005ded05
     PUSH ESI                            ; 005ded0a
-    CALL core_hero.cpp_FUN_004f2220     ; 005ded0b
-        ;   XREF to: 004f2220 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004f2220()
+    CALL core_hero.cpp_isAnyHeroWithinRadius_FUN_004f2220 ; 005ded0b
+        ;   XREF to: 004f2220 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_isAnyHeroWithinRadius_FUN_004f2220(CVector3f * point, float radius)
     ADD ESP,0x8                         ; 005ded10
     TEST EAX,EAX                        ; 005ded13
     JZ 0x005df505                       ; 005ded15
@@ -107,8 +107,8 @@ section .text
         ;   Label: LAB_005df505
     PUSH 0x42c80000                     ; 005df50b
     PUSH EBX                            ; 005df510
-    CALL core_hero.cpp_FUN_004f2220     ; 005df511
-        ;   XREF to: 004f2220 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004f2220()
+    CALL core_hero.cpp_isAnyHeroWithinRadius_FUN_004f2220 ; 005df511
+        ;   XREF to: 004f2220 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_isAnyHeroWithinRadius_FUN_004f2220(CVector3f * point, float radius)
     ADD ESP,0x8                         ; 005df516
     TEST EAX,EAX                        ; 005df519
     JNZ 0x005df4fe                      ; 005df51b

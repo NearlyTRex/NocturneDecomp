@@ -26,9 +26,9 @@ CCryptVessel * __cdecl core_vessel_cpp_CCryptVessel_ctor_FUN_005e8e60(CCryptVess
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (&ADJ(this_ptr_00)->model,"vsslbase.kfm");
   ADJ(this_ptr_00)->carrier = (CDemonActor *)0x0;
-  ADJ(this_ptr_00)->prey = (CDemonActor *)0x0;
+  ADJ(this_ptr_00)->prey = (CCryptVessel *)0x0;
   pcVar3 = ADJ(this_ptr_00)->destroyed_event;
-  ADJ(this_ptr_00)->neutral = (CDemonActor *)0x0;
+  ADJ(this_ptr_00)->neutral = (CCryptVessel *)0x0;
   do {
     cVar1 = *pcVar2;
     *pcVar3 = cVar1;
@@ -38,8 +38,8 @@ CCryptVessel * __cdecl core_vessel_cpp_CCryptVessel_ctor_FUN_005e8e60(CCryptVess
     pcVar3[1] = cVar1;
     pcVar3 = pcVar3 + 2;
   } while (cVar1 != '\0');
-  ADJ(this_ptr_00)->start_loc = (CDemonActor *)0x0;
-  ADJ(this_ptr_00)->end_loc = (CDemonActor *)0x0;
+  ADJ(this_ptr_00)->start_loc = (CActorDestination *)0x0;
+  ADJ(this_ptr_00)->end_loc = (CActorDestination *)0x0;
   pcVar2 = "none";
   ADJ(this_ptr_00)->timer = 0.0;
   pcVar3 = ADJ(this_ptr_00)->win_event;

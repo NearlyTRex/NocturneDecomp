@@ -13,19 +13,19 @@ void __cdecl core_vessel_cpp_CCryptVessel_getPropertyList_FUN_005e9c00(CCryptVes
   core_actor_cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0
             (property_list,"Model file (.kfm)",&this_ptr->model,0);
   core_actor_cpp_CActorPropertyList_addChoice_FUN_0040e350
-            (property_list,"Prey",&this_ptr->prey,1,"CCryptVessel",
-             (CActorPropertyValidatorFunc *)0x0);
+            (property_list,"Prey",(CDemonActor **)&this_ptr->prey,1,"CCryptVessel"
+             ,(CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addChoice_FUN_0040e350
-            (property_list,"Neutral",&this_ptr->neutral,1,"CCryptVessel",
-             (CActorPropertyValidatorFunc *)0x0);
+            (property_list,"Neutral",(CDemonActor **)&this_ptr->neutral,1,
+             "CCryptVessel",(CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addEvent_FUN_0040e460
             (property_list,"Destroyed event (momentary)",this_ptr->destroyed_event);
   core_actor_cpp_CActorPropertyList_addChoice_FUN_0040e350
-            (property_list,"Start loc",&this_ptr->start_loc,1,"CActorDestination",
-             (CActorPropertyValidatorFunc *)0x0);
+            (property_list,"Start loc",(CDemonActor **)&this_ptr->start_loc,1,
+             "CActorDestination",(CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addChoice_FUN_0040e350
-            (property_list,"End loc",&this_ptr->end_loc,1,"CActorDestination",
-             (CActorPropertyValidatorFunc *)0x0);
+            (property_list,"End loc",(CDemonActor **)&this_ptr->end_loc,1,
+             "CActorDestination",(CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addEvent_FUN_0040e460
             (property_list,"Win event (persistant)",this_ptr->win_event);
   core_actor_cpp_CActorPropertyList_addFloat_FUN_0040e160

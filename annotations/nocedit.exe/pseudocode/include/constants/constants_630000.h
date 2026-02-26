@@ -2452,6 +2452,7 @@ const TerminatedCString s_it_to_start_out_not_worr_0063ffd6 = "it to start out (
 // char constants
 const char s_EmptyChar_006304c1 = '\0';
 const char s_EmptyChar_0063564e = '\0';
+const char s_EmptyChar_0063d87c = '\0';
 const char s_empty_0063e145 = '\0';
 const char s_empty_0063e149 = '\0';
 const char s_EmptyChar_0063e5a6 = '\0';
@@ -4033,9 +4034,6 @@ const float FLOAT_0063ecb1 = -1.0f;
 const float FLOAT_0063ecb5 = 0.5f;
 const float FLOAT_0063ece9 = -1.0f;
 const float FLOAT_0063f986 = -1.0f;
-
-// uchar constants
-const uchar s_EmptyChar_0063d87c = '\0';
 
 // undefined1 constants
 const undefined1 DAT_00635428 = 0x0A;

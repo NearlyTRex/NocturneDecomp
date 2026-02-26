@@ -7632,8 +7632,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_boxactor.cpp_FUN_00423110",
-    "ret":"int",
+    "name":"core_boxactor.cpp_pickLightActorType_FUN_00423110",
+    "ret":"ELightActorType",
     "vars":{
       "locals":[
         {
@@ -7651,6 +7651,56 @@
             ]
           },
           "type":"undefined1"
+        }
+      ],
+      "params":[
+        {
+          "name":"prompt_text",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        },
+        {
+          "name":"allow_custom",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"current_type",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint"
         }
       ],
       "ret_storage":{
@@ -54716,9 +54766,27 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_netgame.cpp_CNetGame_FUN_00543b90",
+    "name":"core_netgame.cpp_CNetGame_setMode12_FUN_00543b90",
     "ret":"void",
     "vars":{
+      "locals":[
+        {
+          "name":"unionfacet4_543b94",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:4061a73dc4d1",
+                "offset":70788161848529,
+                "size":4
+              }
+            ]
+          },
+          "type":"_BIT_INTEGER32*",
+          "use":4
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",

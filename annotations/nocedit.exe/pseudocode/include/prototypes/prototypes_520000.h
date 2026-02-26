@@ -101,7 +101,7 @@ SClipPlane * __cdecl core_mirror_cpp_SClipPlane_dtor_FUN_00522c00(SClipPlane *th
 SClipPlane * __cdecl core_mirror_cpp_SClipPlane_arrdtor_FUN_00522c10(SClipPlane *objs,uint flags);
 CVector3f * __cdecl core_mirror_cpp_CVector3f_arrdtor_FUN_00522c30(CVector3f *objs,uint flags);
 void __cdecl core_mission_cpp_staticInit_FUN_00522c50(void);
-void __cdecl core_mission_cpp_FUN_00522c60(_FILE *file_handle);
+void __cdecl core_mission_cpp_skipLine_FUN_00522c60(_FILE *file_handle);
 void __cdecl core_mission_cpp_CDemonMission_reset_FUN_00522c80(CDemonMission *this_ptr);
 void __cdecl core_mission_cpp_CDemonMission_checkMemory_FUN_00522d20(CDemonMission *this_ptr);
 void __cdecl core_mission_cpp_CDemonMission_checkMemory2_FUN_00522d30(CDemonMission *this_ptr);

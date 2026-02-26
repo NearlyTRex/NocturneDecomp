@@ -31,9 +31,9 @@ void __cdecl CBaron::setup(CBaron *this_ptr);
 // Address: 00412e80
 void __cdecl CBaron::process(CBaron *this_ptr,float delta_time);
 
-// Original: core_baron.cpp_FUN_00413470
+// Original: core_baron.cpp_CBaron_engageTarget_FUN_00413470
 // Address: 00413470
-void __cdecl FUN_00413470(int param_1,CDemonActor *param_2);
+void __cdecl CBaron::engageTarget(CBaron *this_ptr,CDemonActor *target);
 
 // Original: core_baron.cpp_CBaron_FUN_004135a0
 // Address: 004135a0

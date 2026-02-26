@@ -24,6 +24,7 @@
 #include "types/classes/CPathMap.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
+#include "types/enums/ELightActorType.h"
 #include "types/structs/SBug.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
@@ -91,8 +92,8 @@ void __cdecl core_boxactor_cpp_CLightActor_setup_FUN_00422a20(CLightActor *this_
 void __cdecl core_boxactor_cpp_CLightActor_process_FUN_00422a50(CLightActor *this_ptr,float delta_time);
 void __cdecl core_boxactor_cpp_CLightActor_archive_FUN_00422c80(CLightActor *this_ptr);
 void __cdecl core_boxactor_cpp_CLightActor_FUN_00422d60(CLightActor *this_ptr);
-char * __cdecl core_boxactor_cpp_FUN_0042307e(int param_1);
-int __cdecl core_boxactor_cpp_FUN_00423110(void);
+char * __cdecl core_boxactor_cpp_getLightActorTypeName_FUN_0042307e(ELightActorType type);
+ELightActorType __cdecl core_boxactor_cpp_pickLightActorType_FUN_00423110(char *prompt_text,int allow_custom,uint current_type);
 void __cdecl core_boxactor_cpp_CLightActor_propertyDisplayTypeCallback_FUN_00423310(CLightActor *this_ptr,CActorProperty *property,char *output_buffer);
 int __cdecl core_boxactor_cpp_CLightActor_propertyActionTypeCallback_FUN_00423380(CLightActor *this_ptr,CActorProperty *property);
 void __cdecl core_boxactor_cpp_CLightActor_propertyDisplayFOVCallback_FUN_00423400(CLightActor *this_ptr,CActorProperty *property,char *output_buffer);

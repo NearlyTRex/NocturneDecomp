@@ -43728,9 +43728,43 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_hero.cpp_FUN_004f2220",
+    "name":"core_hero.cpp_isAnyHeroWithinRadius_FUN_004f2220",
     "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"point",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"radius",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        }
+      ],
       "ret_storage":{
         "reg":"EAX",
         "size":4,
@@ -43754,7 +43788,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_hero.cpp_FUN_004f22a0",
+    "name":"core_hero.cpp_isAnyHeroWithinCylinder_FUN_004f22a0",
     "ret":"int",
     "vars":{
       "locals":[
@@ -43821,6 +43855,56 @@
             ]
           },
           "type":"undefined4"
+        }
+      ],
+      "params":[
+        {
+          "name":"point",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"horizontal_radius",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"vertical_tolerance",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
         }
       ],
       "ret_storage":{
@@ -55910,7 +55994,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_netgame.cpp_CNetGame_allocSimFrame_FUN_005406a0",
+    "name":"core_netgame.cpp_CNetGame_processPacket_FUN_005406a0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -56622,9 +56706,27 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_netgame.cpp_CNetGame_FUN_00543b20",
+    "name":"core_netgame.cpp_CNetGame_setModeSyncing_FUN_00543b20",
     "ret":"void",
     "vars":{
+      "locals":[
+        {
+          "name":"unionfacet4_543b24",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:4061ba4f8a4b",
+                "offset":70788481780299,
+                "size":4
+              }
+            ]
+          },
+          "type":"_BIT_INTEGER32*",
+          "use":4
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",
@@ -56656,9 +56758,27 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_netgame.cpp_CNetGame_FUN_00543ba0",
+    "name":"core_netgame.cpp_CNetGame_setMode13_FUN_00543ba0",
     "ret":"void",
     "vars":{
+      "locals":[
+        {
+          "name":"unionfacet4_543ba4",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:406157163c70",
+                "offset":70786817080432,
+                "size":4
+              }
+            ]
+          },
+          "type":"_BIT_INTEGER32*",
+          "use":4
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",

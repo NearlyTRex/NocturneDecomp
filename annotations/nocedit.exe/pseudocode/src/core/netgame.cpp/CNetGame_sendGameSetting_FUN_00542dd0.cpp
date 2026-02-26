@@ -24,7 +24,8 @@ void __cdecl core_netgame_cpp_CNetGame_sendGameSetting_FUN_00542dd0(CNetGame *th
   SNetPlayer *local_14;
   
   bVar8 = 0;
-  if ((this_ptr->connection_type != 1) || (this_ptr->network_mode != 1)) {
+  if ((this_ptr->connection_type != CONNECTION_HOST) || (this_ptr->network_mode != NET_MODE_LOBBY))
+  {
     g_CurrentFilename = "..\\core\\netgame.cpp";
     g_CurrentLineNumber = 0x8a8;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CNetGame::sendGameSettingsPacket - should only call this in server lobby mode");

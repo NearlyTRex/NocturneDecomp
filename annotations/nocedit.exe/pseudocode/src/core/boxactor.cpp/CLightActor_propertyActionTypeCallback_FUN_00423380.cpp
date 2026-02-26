@@ -17,7 +17,8 @@ int __cdecl core_boxactor_cpp_CLightActor_propertyActionTypeCallback_FUN_0042338
                 core_actor_cpp_castToClassHash_FUN_0040c790
                           ((CDemonActor *)this_ptr,g_CLightActorClassInfo.name_hash);
   _sprintf(local_138,"Select light type for CLightActor %s",this_ptr);
-  EVar1 = core_boxactor_cpp_FUN_00423110();
+  EVar1 = core_boxactor_cpp_pickLightActorType_FUN_00423110
+                    (local_138,1,this_ptr_00->light_actor_type);
   if ((int)EVar1 < 0) {
     return 0;
   }

@@ -150,6 +150,7 @@
 #include "types/structs/SSfxBlock.h"
 #include "types/structs/SSfxEntry.h"
 #include "types/structs/SShapeEditorPolygon.h"
+#include "types/structs/SSimFrame.h"
 #include "types/structs/SSoftwareEdge.h"
 #include "types/structs/SSoundDeviceInfo.h"
 #include "types/structs/SSoundModeEntry.h"

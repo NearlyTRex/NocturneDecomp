@@ -9,16 +9,17 @@
 void __cdecl core_trigger_cpp_CTrigger_process_FUN_005dfac0(CTrigger *this_ptr,float delta_time)
 
 {
-  float fVar1;
+  CLocation *pCVar1;
   float fVar2;
   float fVar3;
+  float fVar4;
   CTrigger *actor_ptr;
-  int iVar4;
-  CDemonActor *pCVar5;
-  CBoundingBox3D *pCVar6;
-  CVector3f *pCVar7;
-  int iVar8;
+  int iVar5;
+  CDemonActor *pCVar6;
+  CBoundingBox3D *pCVar7;
+  CVector3f *pCVar8;
   int iVar9;
+  int iVar10;
   CBoundingBox3D local_b8;
   CBoundingBox3D local_a0;
   float fStack_88;
@@ -41,66 +42,68 @@ void __cdecl core_trigger_cpp_CTrigger_process_FUN_005dfac0(CTrigger *this_ptr,f
   this_ptr->triggering_actor = (CDemonActor *)0x0;
   switch(this_ptr->hero_triggers_me) {
   case 0:
-    iVar8 = core_hero_cpp_FUN_004f2220();
-    if (iVar8 != 0) {
-      iVar8 = 0;
+    iVar9 = core_hero_cpp_isAnyHeroWithinRadius_FUN_004f2220
+                      (&(this_ptr->base).location.position,this_ptr->test_radius);
+    if (iVar9 != 0) {
+      iVar9 = 0;
       (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&local_a0);
       if (0 < g_HeroCount) {
-        iVar9 = 0;
+        iVar10 = 0;
         do {
-          iVar4 = core_trigger_cpp_CTrigger_containsActor_FUN_005e0cd0
-                            (this_ptr,*(CDemonActor **)((int)g_HeroActors + iVar9));
-          if (iVar4 != 0) {
-            pCVar5 = *(CDemonActor **)((int)g_HeroActors + iVar9);
+          iVar5 = core_trigger_cpp_CTrigger_containsActor_FUN_005e0cd0
+                            (this_ptr,*(CDemonActor **)((int)g_HeroActors + iVar10));
+          if (iVar5 != 0) {
+            pCVar6 = *(CDemonActor **)((int)g_HeroActors + iVar10);
             goto LAB_005dfb52;
           }
-          iVar8 = iVar8 + 1;
-          iVar9 = iVar9 + 4;
-        } while (iVar8 < g_HeroCount);
+          iVar9 = iVar9 + 1;
+          iVar10 = iVar10 + 4;
+        } while (iVar9 < g_HeroCount);
       }
     }
     break;
   case 1:
     if (this_ptr->cached_actor == (CDemonActor *)0x0) {
-      pCVar5 = core_mission_cpp_CDemonMission_findActorByName_FUN_00524030
+      pCVar6 = core_mission_cpp_CDemonMission_findActorByName_FUN_00524030
                          (g_CDemonMissionPtr,this_ptr->actor_name);
-      this_ptr->cached_actor = pCVar5;
+      this_ptr->cached_actor = pCVar6;
     }
     if (this_ptr->cached_actor != (CDemonActor *)0x0) {
       core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
                 (this_ptr->cached_actor,"..\\core\\trigger.cpp",0xee);
-      pCVar5 = this_ptr->cached_actor;
-      if (((pCVar5->was_created == 1) &&
-          (fVar1 = (this_ptr->base).location.position.x - (pCVar5->location).position.x,
-          fVar3 = (this_ptr->base).location.position.y - (pCVar5->location).position.y,
-          fVar2 = (this_ptr->base).location.position.z - (pCVar5->location).position.z,
-          fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1 <=
+      pCVar6 = this_ptr->cached_actor;
+      if (((pCVar6->was_created == 1) &&
+          (fVar2 = (this_ptr->base).location.position.x - (pCVar6->location).position.x,
+          fVar4 = (this_ptr->base).location.position.y - (pCVar6->location).position.y,
+          fVar3 = (this_ptr->base).location.position.z - (pCVar6->location).position.z,
+          fVar3 * fVar3 + fVar4 * fVar4 + fVar2 * fVar2 <=
           this_ptr->test_radius * this_ptr->test_radius)) &&
-         (iVar8 = core_trigger_cpp_CTrigger_containsActor_FUN_005e0cd0(this_ptr,pCVar5), iVar8 != 0)
+         (iVar9 = core_trigger_cpp_CTrigger_containsActor_FUN_005e0cd0(this_ptr,pCVar6), iVar9 != 0)
          ) {
-        pCVar5 = this_ptr->cached_actor;
+        pCVar6 = this_ptr->cached_actor;
 LAB_005dfb52:
         local_34 = 1;
-        this_ptr->triggering_actor = pCVar5;
+        this_ptr->triggering_actor = pCVar6;
       }
     }
     break;
   case 2:
-    iVar8 = core_hero_cpp_FUN_004f2220();
-    if (iVar8 != 0) {
-      pCVar6 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&local_b8);
-      fStack_88 = (pCVar6->min).x + (pCVar6->max).x;
-      fStack_84 = (pCVar6->min).y + (pCVar6->max).y;
+    iVar9 = core_hero_cpp_isAnyHeroWithinRadius_FUN_004f2220
+                      (&(this_ptr->base).location.position,this_ptr->test_radius);
+    if (iVar9 != 0) {
+      pCVar7 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&local_b8);
+      fStack_88 = (pCVar7->min).x + (pCVar7->max).x;
+      fStack_84 = (pCVar7->min).y + (pCVar7->max).y;
       CStack_70.x = fStack_88 * 0.5f;
       CStack_70.y = fStack_84 * 0.5f;
-      fStack_80 = (pCVar6->min).z + (pCVar6->max).z;
+      fStack_80 = (pCVar7->min).z + (pCVar7->max).z;
       CStack_70.z = fStack_80 * 0.5f;
-      pCVar7 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+      pCVar8 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                          (&this_ptr->base,&CStack_64,&CStack_70);
-      if (aCStack_58 != pCVar7) {
-        aCStack_58[0].x = pCVar7->x;
-        aCStack_58[0].y = pCVar7->y;
-        aCStack_58[0].z = pCVar7->z;
+      if (aCStack_58 != pCVar8) {
+        aCStack_58[0].x = pCVar8->x;
+        aCStack_58[0].y = pCVar8->y;
+        aCStack_58[0].z = pCVar8->z;
       }
       CStack_7c.x = (int)ROUND(aCStack_58[0].x * 256.0f);
       CStack_7c.y = (int)ROUND(aCStack_58[0].y * 256.0f);
@@ -120,22 +123,24 @@ LAB_005dfb52:
     this_ptr->event_flag = 0;
     break;
   case 6:
-    iVar8 = core_hero_cpp_FUN_004f2220();
-    if (iVar8 != 0) {
-      fVar1 = (this_ptr->trigger_size).x;
-      fVar2 = (this_ptr->trigger_size).y;
-      fVar3 = (this_ptr->trigger_size).z;
-      local_1c = fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1;
+    pCVar1 = &(this_ptr->base).location;
+    iVar9 = core_hero_cpp_isAnyHeroWithinRadius_FUN_004f2220
+                      (&pCVar1->position,this_ptr->test_radius);
+    if (iVar9 != 0) {
+      fVar2 = (this_ptr->trigger_size).x;
+      fVar3 = (this_ptr->trigger_size).y;
+      fVar4 = (this_ptr->trigger_size).z;
+      local_1c = fVar4 * fVar4 + fVar3 * fVar3 + fVar2 * fVar2;
       local_34 = core_fire_cpp_CFireEffect_checkExplosionDamage_FUN_004c8c90
-                           (g_CFireEffectPtr,&(this_ptr->base).location.position,
+                           (g_CFireEffectPtr,&pCVar1->position,
                             (float)(((int)local_1c >> 1) + INT_02d7a7b8),(CVector3f *)0x0,(int *)0x0
                            );
     }
     break;
   case 7:
-    fVar1 = this_ptr->damage_cooldown - delta_time;
-    this_ptr->damage_cooldown = fVar1;
-    if (fVar1 < 0.0) {
+    fVar2 = this_ptr->damage_cooldown - delta_time;
+    this_ptr->damage_cooldown = fVar2;
+    if (fVar2 < 0.0) {
       this_ptr->damage_cooldown = 0.0;
     }
     if (0.0 < this_ptr->hit_points) {
@@ -146,16 +151,17 @@ LAB_005dfb52:
     }
     break;
   case 8:
-    iVar8 = core_hero_cpp_FUN_004f2220();
-    if (iVar8 != 0) {
+    iVar9 = core_hero_cpp_isAnyHeroWithinRadius_FUN_004f2220
+                      (&(this_ptr->base).location.position,this_ptr->test_radius);
+    if (iVar9 != 0) {
       local_28 = 0;
-      for (iVar8 = 0; iVar8 < g_CDemonSetPtr->actor_count; iVar8 = iVar8 + 1) {
-        pCVar5 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + local_28);
-        iVar9 = (*((pCVar5->vtable)._ub)->canLookAt)(pCVar5);
-        if ((iVar9 != 0) &&
-           (iVar9 = core_trigger_cpp_CTrigger_containsActor_FUN_005e0cd0(this_ptr,pCVar5),
-           iVar9 != 0)) {
-          this_ptr->triggering_actor = pCVar5;
+      for (iVar9 = 0; iVar9 < g_CDemonSetPtr->actor_count; iVar9 = iVar9 + 1) {
+        pCVar6 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + local_28);
+        iVar10 = (*((pCVar6->vtable)._ub)->canLookAt)(pCVar6);
+        if ((iVar10 != 0) &&
+           (iVar10 = core_trigger_cpp_CTrigger_containsActor_FUN_005e0cd0(this_ptr,pCVar6),
+           iVar10 != 0)) {
+          this_ptr->triggering_actor = pCVar6;
           local_34 = 1;
           break;
         }
@@ -164,24 +170,26 @@ LAB_005dfb52:
     }
     break;
   case 9:
-    iVar8 = core_hero_cpp_FUN_004f2220();
-    if (iVar8 != 0) {
+    pCVar1 = &(this_ptr->base).location;
+    iVar9 = core_hero_cpp_isAnyHeroWithinRadius_FUN_004f2220
+                      (&pCVar1->position,this_ptr->test_radius);
+    if (iVar9 != 0) {
       local_30 = this_ptr->actor_name;
       local_2c = this_ptr->actor_type;
       local_24 = 0;
-      local_20 = &(this_ptr->base).location;
-      for (iVar8 = 0; iVar8 < g_CDemonSetPtr->actor_count; iVar8 = iVar8 + 1) {
+      local_20 = pCVar1;
+      for (iVar9 = 0; iVar9 < g_CDemonSetPtr->actor_count; iVar9 = iVar9 + 1) {
         actor_ptr = *(CTrigger **)((int)g_CDemonSetPtr->actors + local_24);
-        fVar1 = (actor_ptr->base).location.position.x - (local_20->position).x;
-        fVar3 = (actor_ptr->base).location.position.y - (local_20->position).y;
-        fVar2 = (actor_ptr->base).location.position.z - (local_20->position).z;
-        if ((((fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1 <=
+        fVar2 = (actor_ptr->base).location.position.x - (local_20->position).x;
+        fVar4 = (actor_ptr->base).location.position.y - (local_20->position).y;
+        fVar3 = (actor_ptr->base).location.position.z - (local_20->position).z;
+        if ((((fVar3 * fVar3 + fVar4 * fVar4 + fVar2 * fVar2 <=
                this_ptr->test_radius * this_ptr->test_radius) && (actor_ptr != this_ptr)) &&
-            (iVar9 = core_actor_cpp_isOfClass_FUN_0040c6d0(&actor_ptr->base,local_2c), iVar9 != 0))
-           && ((iVar9 = shape_edittool_cpp_wildcardStringMatch_FUN_004a6e20
-                                  (local_30,(char *)actor_ptr,0), iVar9 != 0 &&
-               (iVar9 = core_trigger_cpp_CTrigger_containsActor_FUN_005e0cd0
-                                  (this_ptr,&actor_ptr->base), iVar9 != 0)))) {
+            (iVar10 = core_actor_cpp_isOfClass_FUN_0040c6d0(&actor_ptr->base,local_2c), iVar10 != 0)
+            ) && ((iVar10 = shape_edittool_cpp_wildcardStringMatch_FUN_004a6e20
+                                      (local_30,(char *)actor_ptr,0), iVar10 != 0 &&
+                  (iVar10 = core_trigger_cpp_CTrigger_containsActor_FUN_005e0cd0
+                                      (this_ptr,&actor_ptr->base), iVar10 != 0)))) {
           this_ptr->triggering_actor = &actor_ptr->base;
           local_34 = 1;
           break;

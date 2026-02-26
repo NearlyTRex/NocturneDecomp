@@ -7,9 +7,9 @@
 // Address: 00522c50
 void __cdecl staticInit(void);
 
-// Original: core_mission.cpp_FUN_00522c60
+// Original: core_mission.cpp_skipLine_FUN_00522c60
 // Address: 00522c60
-void __cdecl FUN_00522c60(_FILE *file_handle);
+void __cdecl skipLine(_FILE *file_handle);
 
 // Original: core_mission.cpp_CDemonMission_reset_FUN_00522c80
 // Address: 00522c80

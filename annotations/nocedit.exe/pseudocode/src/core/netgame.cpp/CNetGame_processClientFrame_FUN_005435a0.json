@@ -6,18 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 222,
-    "complexity_score": 150,
+    "complexity_score": 137,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 13,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 90,
-    "suspect_count": 5,
+    "pseudocode_lines": 92,
+    "suspect_count": 4,
     "suspect_types": [
-      "pointer_cast",
-      "undefined_data"
+      "pointer_cast"
     ],
-    "total_lines": 312
+    "total_lines": 314
   },
   "cross_references": [
     {
@@ -136,7 +135,7 @@
     {
       "addr": "02f9c0c4",
       "name": "g_SimFrameHistory",
-      "type": "undefined4",
+      "type": "SSimFrame[512]",
       "value": null
     },
     {
@@ -259,39 +258,31 @@
       "line": 27,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)&g_SimFrameHistory + iVar1)) {",
+      "text": "*(int *)((int)g_SimFrameHistory[0].player_controls[0].action_states + iVar1 + -0xc)) {",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 35,
-      "match": "DAT_02f9c128",
-      "severity": "mild",
-      "text": "local_18 = &DAT_02f9c128;",
-      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
       "line": 37,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "if (*(int *)((int)&g_SimFrameHistory + iVar3) < iVar2) {",
+      "text": "if (*(int *)((int)g_SimFrameHistory[0].player_controls[0].action_states +",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 40,
+      "line": 41,
       "match": "(void *)((int)",
       "severity": "mild",
-      "text": "((void *)((int)&g_SimFrameHistory + iVar3),local_18,",
+      "text": "((void *)((int)g_SimFrameHistory[0].player_controls[0].action_states +",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 57,
+      "line": 58,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)&g_SimFrameHistory + iVar1)) {",
+      "text": "*(int *)((int)g_SimFrameHistory[0].player_controls[0].action_states +",
       "type": "pointer_cast"
     }
   ]

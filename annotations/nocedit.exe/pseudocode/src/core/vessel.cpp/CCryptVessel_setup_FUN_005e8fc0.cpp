@@ -11,7 +11,8 @@ void __cdecl core_vessel_cpp_CCryptVessel_setup_FUN_005e8fc0(CCryptVessel *this_
 {
   CLocation *pCVar1;
   UOrientationVector *pUVar2;
-  CDemonActor *pCVar3;
+  CActorDestination *pCVar3;
+  UOrientationVector *pUVar4;
   CBoundingBox3D CStack_28;
   float fStack_10;
   float fStack_c;
@@ -23,24 +24,25 @@ void __cdecl core_vessel_cpp_CCryptVessel_setup_FUN_005e8fc0(CCryptVessel *this_
   (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&CStack_28);
   pCVar3 = this_ptr->start_loc;
   this_ptr->carrier = (CDemonActor *)0x0;
-  if (pCVar3 != (CDemonActor *)0x0) {
+  if (pCVar3 != (CActorDestination *)0x0) {
     pCVar1 = &(this_ptr->base).location;
-    fStack_10 = (pCVar3->location).position.x - (pCVar1->position).x;
-    fStack_c = (pCVar3->location).position.y - (this_ptr->base).location.position.y;
-    fStack_8 = (pCVar3->location).position.z - (this_ptr->base).location.position.z;
+    fStack_10 = (pCVar3->base).location.position.x - (pCVar1->position).x;
+    fStack_c = (pCVar3->base).location.position.y - (this_ptr->base).location.position.y;
+    fStack_8 = (pCVar3->base).location.position.z - (this_ptr->base).location.position.z;
     if (SQRT(fStack_8 * fStack_8 + fStack_10 * fStack_10 + fStack_c * fStack_c) <
         (float)0.5) {
       pCVar3 = this_ptr->start_loc;
-      (pCVar1->position).x = (pCVar3->location).position.x;
-      (this_ptr->base).location.position.y = (pCVar3->location).position.y;
-      (this_ptr->base).location.position.z = (pCVar3->location).position.z;
-      (this_ptr->base).location.area_id = (pCVar3->location).area_id;
+      (pCVar1->position).x = (pCVar3->base).location.position.x;
+      (this_ptr->base).location.position.y = (pCVar3->base).location.position.y;
+      (this_ptr->base).location.position.z = (pCVar3->base).location.position.z;
+      (this_ptr->base).location.area_id = (pCVar3->base).location.area_id;
       pCVar3 = this_ptr->start_loc;
       pUVar2 = &(this_ptr->base).orient;
-      if (pUVar2 != &pCVar3->orient) {
-        (pUVar2->vec).x = (pCVar3->orient).vec.x;
-        (this_ptr->base).orient.vec.y = (pCVar3->orient).vec.y;
-        (this_ptr->base).orient.vec.z = (pCVar3->orient).vec.z;
+      pUVar4 = &(pCVar3->base).orient;
+      if (pUVar2 != pUVar4) {
+        (pUVar2->vec).x = (pUVar4->vec).x;
+        (this_ptr->base).orient.vec.y = (pCVar3->base).orient.vec.y;
+        (this_ptr->base).orient.vec.z = (pCVar3->base).orient.vec.z;
       }
     }
   }

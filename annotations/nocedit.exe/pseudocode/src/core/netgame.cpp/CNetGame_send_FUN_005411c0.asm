@@ -8,8 +8,8 @@
 ; int              Stack[0x8]:4   player_index
 ;
 ; XREF[8]:
-;   core_netgame.cpp_CNetGame_allocSimFrame_FUN_005406a0 at 00540cc0
 ;   core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_0053f900 at 0053faac
+;   core_netgame.cpp_CNetGame_processPacket_FUN_005406a0 at 00540cc0
 ;   core_netgame.cpp_CNetGame_processServerFrame_FUN_00543150 at 00543541
 ;   core_netgame.cpp_CNetGame_sendGameSetting_FUN_00542dd0 at 00542f73
 ;   core_netgame.cpp_CNetGame_sendMyStateChanged_FUN_00542ff0 at 00543109

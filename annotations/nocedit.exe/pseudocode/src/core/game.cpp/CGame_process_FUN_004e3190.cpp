@@ -21,7 +21,7 @@ void __cdecl core_game_cpp_CGame_process_FUN_004e3190(CGame *this_ptr)
   }
   pCVar2 = g_CNetGamePtr;
   this_ptr->is_processing = 1;
-  if (pCVar2->connection_type == 0) {
+  if (pCVar2->connection_type == CONNECTION_NONE) {
     seed_value = rand();
   }
   else {

@@ -480,11 +480,11 @@ LAB_005e648e:
                  (this_ptr->base).base.hit_points;
         (this_ptr->base).base.hit_points = fVar22;
         if ((float)50 < fVar22) goto LAB_005e6560;
-        iVar13 = core_hero_cpp_FUN_004f2220();
+        pCVar14 = &(this_ptr->base).base.base.location;
+        iVar13 = core_hero_cpp_isAnyHeroWithinRadius_FUN_004f2220(&pCVar14->position,12.0);
         if (iVar13 == 0) {
           pCVar3 = g_HeroActors[g_LocalHeroIndex];
-          local_d0.x = (pCVar3->base).base.location.position.x -
-                       (this_ptr->base).base.base.location.position.x;
+          local_d0.x = (pCVar3->base).base.location.position.x - (pCVar14->position).x;
           local_d0.y = (pCVar3->base).base.location.position.y -
                        (this_ptr->base).base.base.location.position.y;
           local_d0.z = (pCVar3->base).base.location.position.z -

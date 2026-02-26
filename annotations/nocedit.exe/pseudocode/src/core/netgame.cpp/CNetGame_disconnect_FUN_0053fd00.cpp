@@ -20,7 +20,7 @@ void __cdecl core_netgame_cpp_CNetGame_disconnect_FUN_0053fd00(CNetGame *this_pt
   float local_24;
   
   if (perform_handshake != 0) {
-    if (this_ptr->connection_type == 2) {
+    if (this_ptr->connection_type == CONNECTION_CLIENT) {
       shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
                 (g_CEditorToolsPtr,"Disconnecting from server...");
       iVar1 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
@@ -92,7 +92,7 @@ LAB_0053fe74:
         shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
       }
     }
-    if (this_ptr->connection_type == 1) {
+    if (this_ptr->connection_type == CONNECTION_HOST) {
       shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
                 (g_CEditorToolsPtr,"Disconnecting...");
       iVar1 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
@@ -174,11 +174,11 @@ LAB_00540097:
       }
     }
   }
-  this_ptr->network_mode = 0;
+  this_ptr->network_mode = NET_MODE_DISCONNECTED;
   this_ptr->local_player_index = -1;
   this_ptr->server_player_index = -1;
   this_ptr->mission_name[0] = '\0';
-  this_ptr->connection_type = 0;
+  this_ptr->connection_type = CONNECTION_NONE;
   g_ChatHistoryCount = 0;
   g_ChatOutCount = 0;
   g_RemoteSyncStage = 0;

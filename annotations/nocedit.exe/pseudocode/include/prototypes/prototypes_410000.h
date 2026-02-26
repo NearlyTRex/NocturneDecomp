@@ -161,7 +161,7 @@ CDemonActorType * __cdecl core_baron_cpp_CBaron_getActorType_FUN_00412bb0(CBaron
 CBaron * __cdecl core_baron_cpp_CBaron_ctor_FUN_00412bc0(CBaron *this_ptr);
 void __cdecl core_baron_cpp_CBaron_setup_FUN_00412cb0(CBaron *this_ptr);
 void __cdecl core_baron_cpp_CBaron_process_FUN_00412e80(CBaron *this_ptr,float delta_time);
-void __cdecl core_baron_cpp_FUN_00413470(int param_1,CDemonActor *param_2);
+void __cdecl core_baron_cpp_CBaron_engageTarget_FUN_00413470(CBaron *this_ptr,CDemonActor *target);
 void __cdecl core_baron_cpp_CBaron_FUN_004135a0(CBaron *this_ptr,int param_2);
 void __cdecl core_baron_cpp_CBaron_FUN_004135e0(CBaron *this_ptr);
 void __cdecl core_baron_cpp_CBaron_FUN_004136b0(CBaron *this_ptr);

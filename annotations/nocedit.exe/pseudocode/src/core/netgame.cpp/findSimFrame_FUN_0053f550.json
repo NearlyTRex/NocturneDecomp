@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 32,
+    "complexity_score": 33,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 3,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 17,
+    "pseudocode_lines": 18,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 53
+    "total_lines": 54
   },
   "cross_references": [],
   "function": {
@@ -42,7 +42,7 @@
     {
       "addr": "02f9c0c4",
       "name": "g_SimFrameHistory",
-      "type": "undefined4",
+      "type": "SSimFrame[512]",
       "value": null
     },
     {
@@ -106,10 +106,10 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 12,
+      "line": 13,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "if (sequence_number == *(int *)((int)&g_SimFrameHistory + iVar1)) {",
+      "text": "*(int *)((int)g_SimFrameHistory[0].player_controls[0].action_states + iVar1 + -0xc)) {",
       "type": "pointer_cast"
     }
   ]

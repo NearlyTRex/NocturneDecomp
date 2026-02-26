@@ -41,7 +41,7 @@
 ;   core_actor.cpp_isOfClass_FUN_0040c6d0
 ;   core_event.cpp_CEventList_executeCommands_FUN_004aabe0
 ;   core_fire.cpp_CFireEffect_checkExplosionDamage_FUN_004c8c90
-;   core_hero.cpp_FUN_004f2220
+;   core_hero.cpp_isAnyHeroWithinRadius_FUN_004f2220
 ;   core_mission.cpp_CDemonMission_findActorByName_FUN_00524030
 ;   core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80
 ;   core_trigger.cpp_CTrigger_containsActor_FUN_005e0cd0
@@ -73,8 +73,8 @@ section .text
         ;   Label: caseD_0
     PUSH dword ptr [ESI + 0x158]        ; 005dfaf6
     PUSH EAX                            ; 005dfafc
-    CALL core_hero.cpp_FUN_004f2220     ; 005dfafd
-        ;   XREF to: 004f2220 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004f2220()
+    CALL core_hero.cpp_isAnyHeroWithinRadius_FUN_004f2220 ; 005dfafd
+        ;   XREF to: 004f2220 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_isAnyHeroWithinRadius_FUN_004f2220(CVector3f * point, float radius)
     ADD ESP,0x8                         ; 005dfb02
     TEST EAX,EAX                        ; 005dfb05
     JZ 0x005dfb58                       ; 005dfb07
@@ -217,8 +217,8 @@ section .text
         ;   Label: caseD_2
     PUSH dword ptr [ESI + 0x158]        ; 005dfc8f
     PUSH EAX                            ; 005dfc95
-    CALL core_hero.cpp_FUN_004f2220     ; 005dfc96
-        ;   XREF to: 004f2220 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004f2220()
+    CALL core_hero.cpp_isAnyHeroWithinRadius_FUN_004f2220 ; 005dfc96
+        ;   XREF to: 004f2220 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_isAnyHeroWithinRadius_FUN_004f2220(CVector3f * point, float radius)
     ADD ESP,0x8                         ; 005dfc9b
     TEST EAX,EAX                        ; 005dfc9e
     JZ 0x005dfb58                       ; 005dfca0
@@ -348,8 +348,8 @@ section .text
         ;   Label: caseD_6
     PUSH dword ptr [ESI + 0x158]        ; 005dfe26
     PUSH EBX                            ; 005dfe2c
-    CALL core_hero.cpp_FUN_004f2220     ; 005dfe2d
-        ;   XREF to: 004f2220 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004f2220()
+    CALL core_hero.cpp_isAnyHeroWithinRadius_FUN_004f2220 ; 005dfe2d
+        ;   XREF to: 004f2220 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_isAnyHeroWithinRadius_FUN_004f2220(CVector3f * point, float radius)
     ADD ESP,0x8                         ; 005dfe32
     TEST EAX,EAX                        ; 005dfe35
     JZ 0x005dfb58                       ; 005dfe37
@@ -383,8 +383,8 @@ section .text
         ;   Label: caseD_8
     PUSH dword ptr [ESI + 0x158]        ; 005dfe94
     PUSH EAX                            ; 005dfe9a
-    CALL core_hero.cpp_FUN_004f2220     ; 005dfe9b
-        ;   XREF to: 004f2220 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004f2220()
+    CALL core_hero.cpp_isAnyHeroWithinRadius_FUN_004f2220 ; 005dfe9b
+        ;   XREF to: 004f2220 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_isAnyHeroWithinRadius_FUN_004f2220(CVector3f * point, float radius)
     ADD ESP,0x8                         ; 005dfea0
     TEST EAX,EAX                        ; 005dfea3
     JZ 0x005dfb58                       ; 005dfea5
@@ -430,8 +430,8 @@ section .text
         ;   Label: caseD_9
     PUSH dword ptr [ESI + 0x158]        ; 005dff1f
     PUSH EBX                            ; 005dff25
-    CALL core_hero.cpp_FUN_004f2220     ; 005dff26
-        ;   XREF to: 004f2220 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004f2220()
+    CALL core_hero.cpp_isAnyHeroWithinRadius_FUN_004f2220 ; 005dff26
+        ;   XREF to: 004f2220 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_isAnyHeroWithinRadius_FUN_004f2220(CVector3f * point, float radius)
     ADD ESP,0x8                         ; 005dff2b
     TEST EAX,EAX                        ; 005dff2e
     JZ 0x005dfb58                       ; 005dff30

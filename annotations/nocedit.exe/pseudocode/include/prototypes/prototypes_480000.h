@@ -22,6 +22,7 @@
 #include "types/classes/CFileFinder.h"
 #include "types/classes/CMatrix3x3f.h"
 #include "types/classes/CPackedBitmap.h"
+#include "types/classes/CRuleList.h"
 #include "types/classes/CVector2i.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
@@ -66,7 +67,7 @@ int __cdecl core_door_cpp_CDoor_propertyActionCallback_FUN_004812b0(CDoor *this_
 void __cdecl core_door_cpp_CDoor_getPropertyList_FUN_00481320(CDoor *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_door_cpp_CDoor_processInEditor_FUN_00481590(CDoor *this_ptr);
 void __cdecl core_door_cpp_CDoor_addFilesToExtract_FUN_00481630(CDoor *this_ptr,_FILE *file_handle);
-int __cdecl core_door_cpp_FUN_00481650(void);
+CRuleList * __cdecl core_door_cpp_clearRuleList_FUN_00481650(CRuleList *rule_list);
 CDoor * __cdecl core_door_cpp_CDoor_dtor_FUN_00481670(CDoor *this_ptr,uint flags);
 void __cdecl engine_dosio_c_getRelativeFilePath_FUN_004816c0(char *dest_path,char *directory,char *filename);
 template<typename T_func0>
@@ -128,7 +129,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_FUN_00486020(CDraculaBride *this_pt
 void __cdecl core_dracbrid_cpp_CDraculaBride_processDamage_FUN_00486070(CDraculaBride *this_ptr,SDamageInfo *damage_info);
 int __cdecl core_dracbrid_cpp_CDraculaBride_getDeathState_FUN_00486320(CDraculaBride *this_ptr);
 int __cdecl core_dracbrid_cpp_CDraculaBride_getTargetPoints_FUN_00486360(CDraculaBride *this_ptr,CVector3f *out_points_array);
-float * __cdecl core_dracbrid_cpp_FUN_00486430(void);
+CVector3f * __cdecl core_dracbrid_cpp_randomizePosition_FUN_00486430(CVector3f *dest,CVector3f *src);
 void __cdecl core_dracbrid_cpp_CDraculaBride_FUN_004864c0(CDraculaBride *this_ptr);
 void __cdecl core_dracbrid_cpp_CDraculaBride_FUN_004869a0(CDraculaBride *this_ptr);
 void __cdecl core_dracbrid_cpp_CDraculaBride_getPropertyList_FUN_00486c90(CDraculaBride *this_ptr,CActorPropertyList *property_list);

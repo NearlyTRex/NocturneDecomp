@@ -6,18 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 300,
+    "complexity_score": 301,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 260,
+    "pseudocode_lines": 261,
     "suspect_count": 3,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 311
+    "total_lines": 312
   },
   "cross_references": [],
   "function": {
@@ -46,7 +46,7 @@
     {
       "addr": "004f2220",
       "is_variadic": false,
-      "name": "core_hero.cpp_FUN_004f2220"
+      "name": "core_hero.cpp_isAnyHeroWithinRadius_FUN_004f2220"
     }
   ],
   "globals": [],
@@ -530,26 +530,26 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 176,
+      "line": 177,
       "match": "SQRT",
       "severity": "mild",
-      "text": "fVar6 = SQRT(fVar2 * fVar2 + pCVar7->x * pCVar7->x + fVar6 * fVar6) * (float)0.15915494309644401;",
+      "text": "fVar7 = SQRT(fVar3 * fVar3 + pCVar8->x * pCVar8->x + fVar7 * fVar7) * (float)0.15915494309644401;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 252,
+      "line": 253,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar9 = (CMatrix3x4f *)((int)pCVar9 + ((uint)bVar11 * -2 + 1) * 4);",
+      "text": "pCVar10 = (CMatrix3x4f *)((int)pCVar10 + ((uint)bVar12 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 253,
+      "line": 254,
       "match": "(CMatrix3x3f *)((int)",
       "severity": "mild",
-      "text": "pCVar10 = (CMatrix3x3f *)((int)pCVar10 + ((uint)bVar11 * -2 + 1) * 4);",
+      "text": "pCVar11 = (CMatrix3x3f *)((int)pCVar11 + ((uint)bVar12 * -2 + 1) * 4);",
       "type": "pointer_cast"
     }
   ],

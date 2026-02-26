@@ -9,7 +9,7 @@
 SPlayerControl * __cdecl core_netgame_cpp_CNetGame_getMyControls_FUN_005438c0(CNetGame *this_ptr)
 
 {
-  if (this_ptr->connection_type != 0) {
+  if (this_ptr->connection_type != CONNECTION_NONE) {
     if (this_ptr->local_player_index < 0) {
       g_CurrentFilename = "..\\core\\netgame.cpp";
       g_CurrentLineNumber = 0xa0f;

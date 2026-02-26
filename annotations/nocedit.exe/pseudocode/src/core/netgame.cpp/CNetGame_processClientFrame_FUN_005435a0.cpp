@@ -13,10 +13,10 @@ void __cdecl core_netgame_cpp_CNetGame_processClientFrame_FUN_005435a0(CNetGame 
   int iVar2;
   int iVar3;
   float local_20;
-  uint *local_18;
+  SSimFrame *local_18;
   
-  if (((this_ptr->connection_type == 2) && (this_ptr->network_mode == 3)) &&
-     (-1 < this_ptr->server_player_index)) {
+  if (((this_ptr->connection_type == CONNECTION_CLIENT) &&
+      (this_ptr->network_mode == NET_MODE_PLAYING)) && (-1 < this_ptr->server_player_index)) {
     if (this_ptr->local_player_index < 0) {
       g_CurrentFilename = "..\\core\\netgame.cpp";
       g_CurrentLineNumber = 0x97c;
@@ -24,14 +24,14 @@ void __cdecl core_netgame_cpp_CNetGame_processClientFrame_FUN_005435a0(CNetGame 
     }
     core_netgame_cpp_CNetGame_updatePing_FUN_00541c80(this_ptr,this_ptr->server_player_index,10.0);
     core_netgame_cpp_CNetGame_receivePackets_FUN_005405b0(this_ptr);
-    if (this_ptr->connection_type == 2) {
+    if (this_ptr->connection_type == CONNECTION_CLIENT) {
 LAB_00543605:
       iVar2 = 0;
       if (0 < g_SimFrameCount) {
         iVar1 = 0;
         do {
           if (this_ptr->players[this_ptr->local_player_index].sim_frame_index ==
-              *(int *)((int)&g_SimFrameHistory + iVar1)) {
+              *(int *)((int)g_SimFrameHistory[0].player_controls[0].action_states + iVar1 + -0xc)) {
             if (-1 < iVar2) {
               core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_00543800(this_ptr);
               core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_00543970(this_ptr);
@@ -39,17 +39,18 @@ LAB_00543605:
               iVar2 = this_ptr->players[this_ptr->local_player_index].sim_frame_index;
               if (0 < g_SimFrameCount) {
                 iVar3 = 0;
-                local_18 = &DAT_02f9c128;
+                local_18 = g_SimFrameHistory + 1;
                 do {
-                  if (*(int *)((int)&g_SimFrameHistory + iVar3) < iVar2) {
+                  if (*(int *)((int)g_SimFrameHistory[0].player_controls[0].action_states +
+                              iVar3 + -0xc) < iVar2) {
                     g_SimFrameCount = g_SimFrameCount + -1;
                     memmove
-                              ((void *)((int)&g_SimFrameHistory + iVar3),local_18,
-                               (g_SimFrameCount - iVar1) * 100);
+                              ((void *)((int)g_SimFrameHistory[0].player_controls[0].action_states +
+                                       iVar3 + -0xc),local_18,(g_SimFrameCount - iVar1) * 100);
                   }
                   else {
                     iVar1 = iVar1 + 1;
-                    local_18 = local_18 + 0x19;
+                    local_18 = local_18 + 1;
                     iVar3 = iVar3 + 100;
                   }
                 } while (iVar1 < g_SimFrameCount);
@@ -61,7 +62,8 @@ LAB_00543605:
               }
               iVar1 = 0;
               while (this_ptr->players[this_ptr->local_player_index].sim_frame_index !=
-                     *(int *)((int)&g_SimFrameHistory + iVar1)) {
+                     *(int *)((int)g_SimFrameHistory[0].player_controls[0].action_states +
+                             iVar1 + -0xc)) {
                 iVar1 = iVar1 + 100;
                 iVar2 = iVar2 + 1;
                 if (g_SimFrameCount * 100 <= iVar1) {
@@ -81,7 +83,7 @@ LAB_00543605:
         } while (iVar1 < g_SimFrameCount * 100);
       }
       core_netgame_cpp_CNetGame_receivePackets_FUN_005405b0(this_ptr);
-      if (this_ptr->connection_type == 2) {
+      if (this_ptr->connection_type == CONNECTION_CLIENT) {
         local_20 = (float)(int)(g_CurrentGameTime - UINT_02f7c8c8) * (float)1.52587890625e-05;
         if (local_20 < 0.0) {
           local_20 = 0.0;

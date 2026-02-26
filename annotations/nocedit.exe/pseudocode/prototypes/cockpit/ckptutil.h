@@ -159,9 +159,9 @@ void __cdecl rasterizeEdgeEndpoints(void *bitmap_buffer,SEdge *edge_list,int edg
 // Address: 00433820
 void __cdecl renderEdgeArrayWithBufferLookup(uchar *color_buffer,SEdge *edge_array,int edge_count,int offset_x,int offset_y,int buffer_width);
 
-// Original: cockpit_ckptutil.c_FUN_004338f0
+// Original: cockpit_ckptutil.c_drawLineListFromBitmap_FUN_004338f0
 // Address: 004338f0
-void __cdecl FUN_004338f0(void);
+void __cdecl drawLineListFromBitmap(CPackedBitmap *bitmap,short *line_data,int line_count,int offset_x,int offset_y);
 
 // Original: cockpit_ckptutil.c_drawLineAAWithBlending_FUN_004339c0
 // Address: 004339c0

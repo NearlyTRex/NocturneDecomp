@@ -7,7 +7,7 @@
 ; CNetGame *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_netgame.cpp_CNetGame_allocSimFrame_FUN_005406a0 at 00540de9
+;   core_netgame.cpp_CNetGame_processPacket_FUN_005406a0 at 00540de9
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_00541390 at 005416b3
 ;
 ; Referenced Globals:
