@@ -809,7 +809,7 @@
       ],
       "params":[
         {
-          "name":"palette_filename",
+          "name":"filename",
           "storage":{
             "offset":4,
             "size":4,
@@ -55262,7 +55262,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_netgame.cpp_CNetGame_FUN_0053f830",
+    "name":"core_netgame.cpp_CNetGame_shutdown_FUN_0053f830",
     "ret":"void",
     "vars":{
       "params":[
@@ -55348,7 +55348,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_netgame.cpp_CNetGame_FUN_00541230",
+    "name":"core_netgame.cpp_CNetGame_sendPacket_FUN_00541230",
     "ret":"void",
     "vars":{
       "params":[
@@ -55367,6 +55367,38 @@
             ]
           },
           "type":"CNetGame*"
+        },
+        {
+          "name":"dest_addr",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"SNetworkAddr*"
+        },
+        {
+          "name":"packet",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"SNetPacketHeader*"
         }
       ]
     }
@@ -55401,6 +55433,70 @@
             ]
           },
           "type":"CNetGame*"
+        },
+        {
+          "name":"addr",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"SNetworkAddr*"
+        },
+        {
+          "name":"name",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        },
+        {
+          "name":"hero_number",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"aim_mode",
+          "storage":{
+            "offset":20,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x14]",
+                "offset":20,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ],
       "ret_storage":{
@@ -55426,7 +55522,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_netgame.cpp_CNetGame_FUN_00543930",
+    "name":"core_netgame.cpp_CNetGame_sendDisconnectNotify_FUN_00543930",
     "ret":"void",
     "vars":{
       "locals":[
@@ -55495,6 +55591,38 @@
             ]
           },
           "type":"CNetGame*"
+        },
+        {
+          "name":"dest_addr",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"SNetworkAddr*"
+        },
+        {
+          "name":"payload",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }
@@ -55510,12 +55638,12 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_netgame.cpp_CNetGame_FUN_00543ab0",
+    "name":"core_netgame.cpp_matchPacketSize_FUN_00543ab0",
     "ret":"int",
     "vars":{
       "params":[
         {
-          "name":"this_ptr",
+          "name":"a",
           "storage":{
             "offset":4,
             "size":4,
@@ -55528,7 +55656,23 @@
               }
             ]
           },
-          "type":"CNetGame*"
+          "type":"SNetPacketHeader*"
+        },
+        {
+          "name":"b",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"SNetPacketHeader*"
         }
       ],
       "ret_storage":{
@@ -56082,9 +56226,43 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_netgame.cpp_FUN_00543e30",
-    "ret":"int",
+    "name":"core_netgame.cpp_copyInteger_FUN_00543e30",
+    "ret":"int*",
     "vars":{
+      "params":[
+        {
+          "name":"dest",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int*"
+        },
+        {
+          "name":"src",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int*"
+        }
+      ],
       "ret_storage":{
         "reg":"EAX",
         "size":4,

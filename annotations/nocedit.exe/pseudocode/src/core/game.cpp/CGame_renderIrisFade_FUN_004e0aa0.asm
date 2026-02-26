@@ -17,10 +17,10 @@
 ;   int g_BitsPerPixel = 0x8
 ;   void*[1200] g_ScreenBufferArray
 ;   undefined4 g_ScreenBufferArray[1]
-;   undefined4 DAT_02d831ec
-;   undefined4 DAT_02d831f0
-;   undefined4 DAT_02d831f4
-;   undefined4 DAT_02d831f8
+;   int g_IrisFadeType
+;   float g_IrisFadeRadius
+;   int g_IrisFadeCenterX
+;   int g_IrisFadeCenterY
 ;
 ; Called Functions:
 ;   core_game.cpp_CGame_calculateIrisFadeCenter_FUN_004e09a0
@@ -38,7 +38,7 @@ section .text
     PUSH EBP                            ; 004e0aa3
     SUB ESP,0x4                         ; 004e0aa4
     MOV EDI,dword ptr [0x00679394]      ; 004e0aa7 | g_WindowWidth
-    MOV EDX,dword ptr [0x02d831ec]      ; 004e0aad | DAT_02d831ec
+    MOV EDX,dword ptr [0x02d831ec]      ; 004e0aad | g_IrisFadeType
     TEST EDX,EDX                        ; 004e0ab3
     JZ 0x004e0b53                       ; 004e0ab5
         ;   XREF to: 004e0b53 (CONDITIONAL_JUMP)  ; LAB_004e0b53
@@ -48,7 +48,7 @@ section .text
     CMP EDX,0x1                         ; 004e0ac4
     JZ 0x004e0b61                       ; 004e0ac7
         ;   XREF to: 004e0b61 (CONDITIONAL_JUMP)  ; LAB_004e0b61
-    CMP dword ptr [0x02d831f0],0x3f800000 ; 004e0acd | DAT_02d831f0
+    CMP dword ptr [0x02d831f0],0x3f800000 ; 004e0acd | g_IrisFadeRadius
     JL 0x004e0b61                       ; 004e0ad7
         ;   XREF to: 004e0b61 (CONDITIONAL_JUMP)  ; LAB_004e0b61
     CALL core_game.cpp_CGame_calculateIrisFadeCenter_FUN_004e09a0 ; 004e0add
@@ -56,7 +56,7 @@ section .text
     CMP dword ptr [0x0067939c],0x20     ; 004e0ae2 | g_BitsPerPixel
     JNZ 0x004e0b53                      ; 004e0ae9
         ;   XREF to: 004e0b53 (CONDITIONAL_JUMP)  ; LAB_004e0b53
-    FLD float ptr [0x02d831f0]          ; 004e0aeb | DAT_02d831f0
+    FLD float ptr [0x02d831f0]          ; 004e0aeb | g_IrisFadeRadius
     FMUL ST0                            ; 004e0af1
     MOV EAX,[0x00679398]                ; 004e0af3 | g_WindowHeight
     XOR ESI,ESI                         ; 004e0af8
@@ -74,11 +74,11 @@ section .text
     TEST EDI,EDI                        ; 004e0b16
     JLE 0x004e0b3f                      ; 004e0b18
         ;   XREF to: 004e0b3f (CONDITIONAL_JUMP)  ; LAB_004e0b3f
-    MOV EBX,dword ptr [0x02d831f4]      ; 004e0b1a | DAT_02d831f4
+    MOV EBX,dword ptr [0x02d831f4]      ; 004e0b1a | g_IrisFadeCenterX
         ;   Label: LAB_004e0b1a
     SUB EBX,EAX                         ; 004e0b20
     IMUL EBX,EBX                        ; 004e0b22
-    MOV ECX,dword ptr [0x02d831f8]      ; 004e0b25 | DAT_02d831f8
+    MOV ECX,dword ptr [0x02d831f8]      ; 004e0b25 | g_IrisFadeCenterY
     SUB ECX,ESI                         ; 004e0b2b
     IMUL ECX,ECX                        ; 004e0b2d
     ADD ECX,EBX                         ; 004e0b30

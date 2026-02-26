@@ -277,16 +277,16 @@ section .text
     FMULP ST2                           ; 005d79e1
     XOR EBX,EBX                         ; 005d79e3
     MOV EDI,dword ptr [ESP + 0x13c]     ; 005d79e5
-    MOV EAX,[0x03f6bbe8]                ; 005d79ec | DAT_03f6bbe8
+    MOV EAX,[0x03f6bbe8]                ; 005d79ec | g_TriListTextureCount
     FSTP double ptr [ESP + 0x10]        ; 005d79f1
     FSTP double ptr [ESP + 0x18]        ; 005d79f5
     TEST EAX,EAX                        ; 005d79f9
     JLE 0x005d7d69                      ; 005d79fb
         ;   XREF to: 005d7d69 (CONDITIONAL_JUMP)  ; LAB_005d7d69
-    MOV ESI,0x3f6bbf0                   ; 005d7a01 | DAT_03f6bbf0
+    MOV ESI,0x3f6bbf0                   ; 005d7a01 | g_TriListTextureNames
     PUSH EDI                            ; 005d7a06 | DAT_016e9914
         ;   Label: LAB_005d7a06
-    PUSH ESI                            ; 005d7a07 | DAT_03f6bbf0 | DAT_03f6bc40
+    PUSH ESI                            ; 005d7a07 | g_TriListTextureNames | DAT_03f6bc40
     CALL crt_string.c_stricmp_FUN_005fe7f0 ; 005d7a08
         ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 005d7a0d
@@ -537,7 +537,7 @@ section .text
     POP ESI                             ; 005d7d54
     POP EBX                             ; 005d7d55
     RET                                 ; 005d7d56
-    MOV EDX,dword ptr [0x03f6bbe8]      ; 005d7d57 | DAT_03f6bbe8
+    MOV EDX,dword ptr [0x03f6bbe8]      ; 005d7d57 | g_TriListTextureCount
         ;   Label: LAB_005d7d57
     INC EBX                             ; 005d7d5d
     ADD ESI,0x50                        ; 005d7d5e
@@ -548,7 +548,7 @@ section .text
         ;   Label: LAB_005d7d69
     JMP 0x005d7a1a                      ; 005d7d6e
         ;   XREF to: 005d7a1a (UNCONDITIONAL_JUMP)  ; LAB_005d7a1a
-    CMP dword ptr [0x03f6bbe8],0x32     ; 005d7d73 | DAT_03f6bbe8
+    CMP dword ptr [0x03f6bbe8],0x32     ; 005d7d73 | g_TriListTextureCount
         ;   Label: LAB_005d7d73
     JL 0x005d7d9f                       ; 005d7d7a
         ;   XREF to: 005d7d9f (CONDITIONAL_JUMP)  ; LAB_005d7d9f
@@ -560,15 +560,15 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 005d7d97
         ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 005d7d9c
-    MOV EDX,dword ptr [0x03f6bbe8]      ; 005d7d9f | DAT_03f6bbe8
+    MOV EDX,dword ptr [0x03f6bbe8]      ; 005d7d9f | g_TriListTextureCount
         ;   Label: LAB_005d7d9f
     IMUL EDI,EDX,0x50                   ; 005d7da5
     MOV ESI,dword ptr [ESP + 0x13c]     ; 005d7da8
-    ADD EDI,0x3f6bbf0                   ; 005d7daf | DAT_03f6bbf0
+    ADD EDI,0x3f6bbf0                   ; 005d7daf | g_TriListTextureNames
     PUSH EDI                            ; 005d7db5
     MOV AL,byte ptr [ESI]               ; 005d7db6 | DAT_016e9914 | DAT_016e9916
         ;   Label: LAB_005d7db6
-    MOV byte ptr [EDI],AL               ; 005d7db8 | DAT_03f6bbf0 | DAT_03f6bbf2
+    MOV byte ptr [EDI],AL               ; 005d7db8 | g_TriListTextureNames | DAT_03f6bbf2
     CMP AL,0x0                          ; 005d7dba
     JZ 0x005d7dce                       ; 005d7dbc
         ;   XREF to: 005d7dce (CONDITIONAL_JUMP)  ; LAB_005d7dce
@@ -581,7 +581,7 @@ section .text
         ;   XREF to: 005d7db6 (CONDITIONAL_JUMP)  ; LAB_005d7db6
     POP EDI                             ; 005d7dce
         ;   Label: LAB_005d7dce
-    INC dword ptr [0x03f6bbe8]          ; 005d7dcf | DAT_03f6bbe8
+    INC dword ptr [0x03f6bbe8]          ; 005d7dcf | g_TriListTextureCount
     JMP 0x005d7a24                      ; 005d7dd5
         ;   XREF to: 005d7a24 (UNCONDITIONAL_JUMP)  ; LAB_005d7a24
     PUSH -0x1                           ; 005d7dda

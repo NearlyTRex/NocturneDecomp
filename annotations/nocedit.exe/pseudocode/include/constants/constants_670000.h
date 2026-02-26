@@ -291,6 +291,12 @@ const TerminatedCString s_SBat_0067d7d8 = "$SBat$$";
 const TerminatedCString s_SMorphControlPoint_0067d7e4 = "$SMorphControlPoint$$";
 const TerminatedCString s_CMorphModel_0067d7fe = "$CMorphModel$$";
 
+// char*[5] constants
+const char* g_ChapterDisplayTexts[5] = {
+    (char*)0x00000787, (char*)0x0000078B, (char*)0x0000078D, (char*)0x0000078F,
+    (char*)0x00000796
+};
+
 // char*[8] constants
 const char* g_MenuBitmapFilenames[8] = {
     "f0100", "f0300", "f0500", "f0700",

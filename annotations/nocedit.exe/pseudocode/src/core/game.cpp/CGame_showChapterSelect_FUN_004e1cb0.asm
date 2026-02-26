@@ -261,7 +261,7 @@ section .text
         ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     MOV ECX,0x41000000                  ; 004e1f70
     ADD ESP,0xc                         ; 004e1f75
-    MOV EBX,dword ptr [EBP*0x4 + 0x67b854] ; 004e1f78 | DAT_0067b850 | DAT_0067b854
+    MOV EBX,dword ptr [EBP*0x4 + 0x67b854] ; 004e1f78 | DAT_0067b850 | g_ChapterDisplayTexts
     MOV ESI,dword ptr [ESP + EBP*0x4 + 0x6ac] ; 004e1f7f
     MOV dword ptr [0x02d831a8],EBX      ; 004e1f86 | g_CurrentDisplayText
     PUSH EDI                            ; 004e1f8c | g_ChapterDisplayName

@@ -30,7 +30,8 @@ int __cdecl core_fire_cpp_CShell_onCollision_FUN_004c6380(CShell *this_ptr,CVect
     iVar4 = 0;
     iVar3 = 0;
     do {
-      iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)(&DAT_02d141dc + iVar3));
+      iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660
+                        (*(uint *)((int)g_ShellBounceSoundHandles + iVar3));
       if (iVar2 == 0) break;
       iVar3 = iVar3 + 4;
       iVar4 = iVar4 + 1;
@@ -42,14 +43,14 @@ int __cdecl core_fire_cpp_CShell_onCollision_FUN_004c6380(CShell *this_ptr,CVect
         core_sound_cpp_CSound_playActorSound_FUN_005b3a40
                   (g_CSoundPtr,(CDemonActor *)g_CFireEffectPtr,"sh-sh?c @ .15",
                    (CVector3f *)this_ptr);
-        *(uint *)(&DAT_02d141dc + iVar4 * 4) = extraout_EAX;
+        g_ShellBounceSoundHandles[iVar4] = extraout_EAX;
         this_ptr->bounce_count = this_ptr->bounce_count + 1;
         return 0;
       }
       core_sound_cpp_CSound_playActorSound_FUN_005b3a40
                 (g_CSoundPtr,(CDemonActor *)g_CFireEffectPtr,"44-sh?c @ .2",
                  (CVector3f *)this_ptr);
-      *(uint *)(&DAT_02d141dc + iVar4 * 4) = extraout_EAX_00;
+      g_ShellBounceSoundHandles[iVar4] = extraout_EAX_00;
       this_ptr->bounce_count = this_ptr->bounce_count + 1;
       return 0;
     }

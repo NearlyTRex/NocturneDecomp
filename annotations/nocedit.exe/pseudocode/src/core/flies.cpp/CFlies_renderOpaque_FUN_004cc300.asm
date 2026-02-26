@@ -22,8 +22,8 @@
 ;   int g_UseExternalRenderer
 ;   float g_PerspectiveReciprocal
 ;   int INT_02d7a7c0
-;   undefined4 DAT_02d7a800
-;   undefined4 DAT_02d7a804
+;   uint g_FlyBlendColor
+;   uint g_FlyInvBlendColor
 ;   ... and 3 more
 ;
 ; Called Functions:
@@ -96,7 +96,7 @@ section .text
     TEST ESI,ESI                        ; 004cc37e
     JNZ 0x004cc3c7                      ; 004cc380
         ;   XREF to: 004cc3c7 (CONDITIONAL_JUMP)  ; LAB_004cc3c7
-    MOV ESI,0x2d7a808                   ; 004cc382 | DAT_02d7a808
+    MOV ESI,0x2d7a808                   ; 004cc382 | g_SplineBasisTable
     XOR EBX,EBX                         ; 004cc387
     MOV dword ptr [ESP + 0x88],EBX      ; 004cc389
         ;   Label: LAB_004cc389
@@ -106,7 +106,7 @@ section .text
     PUSH 0x0                            ; 004cc3a3
     SUB ESP,0x4                         ; 004cc3a5
     FSTP float ptr [ESP]                ; 004cc3a8
-    PUSH ESI                            ; 004cc3ab | DAT_02d7a808 | DAT_02d7a828
+    PUSH ESI                            ; 004cc3ab | g_SplineBasisTable | DAT_02d7a828
     INC EBX                             ; 004cc3ac
     CALL core_spline.cpp_computeSplineBasis_FUN_005b90a0 ; 004cc3ad
         ;   XREF to: 005b90a0 (UNCONDITIONAL_CALL)  ; void core_spline.cpp_computeSplineBasis_FUN_005b90a0(float * out_basis, float t, float tension)
@@ -210,7 +210,7 @@ section .text
     PUSH EAX                            ; 004cc51e
     MOV EAX,dword ptr [ESP + 0x98]      ; 004cc51f
     SHL EAX,0x5                         ; 004cc526
-    ADD EAX,0x2d7a808                   ; 004cc529 | DAT_02d7afe8 | DAT_02d7a808
+    ADD EAX,0x2d7a808                   ; 004cc529 | DAT_02d7afe8 | g_SplineBasisTable
     PUSH EAX                            ; 004cc52e | DAT_02d7afe8
     LEA EBX,[ESP + 0x84]                ; 004cc52f
     CALL core_spline.cpp_evaluateSplinePoint3D_FUN_005b92d0 ; 004cc536
@@ -275,18 +275,18 @@ section .text
         ;   XREF to: 0048c970 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_0048c970(CDemonRenderer * this_ptr, int red_component, int green_component, int blue_component)
     MOV EAX,[0x02d051f4]                ; 004cc5de | g_PerspectiveReciprocal
     SAR EAX,0x8                         ; 004cc5e3
-    MOV [0x02d7a800],EAX                ; 004cc5e6 | DAT_02d7a800
-    MOV EDX,dword ptr [0x02d7a800]      ; 004cc5eb | DAT_02d7a800
+    MOV [0x02d7a800],EAX                ; 004cc5e6 | g_FlyBlendColor
+    MOV EDX,dword ptr [0x02d7a800]      ; 004cc5eb | g_FlyBlendColor
     SHL EAX,0x8                         ; 004cc5f1
     OR EDX,EAX                          ; 004cc5f4
-    MOV EAX,[0x02d7a800]                ; 004cc5f6 | DAT_02d7a800
+    MOV EAX,[0x02d7a800]                ; 004cc5f6 | g_FlyBlendColor
     SHL EAX,0x10                        ; 004cc5fb
     OR EDX,EAX                          ; 004cc5fe
     MOV EAX,EDX                         ; 004cc600
     ADD ESP,0x10                        ; 004cc602
     XOR EAX,0xffffff                    ; 004cc605
-    MOV dword ptr [0x02d7a800],EDX      ; 004cc60a | DAT_02d7a800
-    MOV [0x02d7a804],EAX                ; 004cc610 | DAT_02d7a804
+    MOV dword ptr [0x02d7a800],EDX      ; 004cc60a | g_FlyBlendColor
+    MOV [0x02d7a804],EAX                ; 004cc610 | g_FlyInvBlendColor
     JMP 0x004cc4ad                      ; 004cc615
         ;   XREF to: 004cc4ad (UNCONDITIONAL_JUMP)  ; LAB_004cc4ad
     XOR EBX,EBX                         ; 004cc61a

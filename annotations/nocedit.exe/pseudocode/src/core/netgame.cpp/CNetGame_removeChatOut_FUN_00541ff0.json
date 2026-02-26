@@ -1,30 +1,22 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 16,
-        "line": 48,
-        "message": "assigning to 'int *' from 'undefined4 *' (aka 'unsigned int *') converts between pointers to integer types with different sign"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 272,
-    "complexity_score": 246,
+    "complexity_score": 136,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 26,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 116,
-    "suspect_count": 12,
+    "pseudocode_lines": 121,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
-      "undefined_data"
+      "pointer_cast"
     ],
-    "total_lines": 388
+    "total_lines": 393
   },
   "cross_references": [
     {
@@ -56,7 +48,7 @@
     {
       "addr": "00541230",
       "is_variadic": false,
-      "name": "core_netgame.cpp_CNetGame_FUN_00541230"
+      "name": "core_netgame.cpp_CNetGame_sendPacket_FUN_00541230"
     },
     {
       "addr": "005fe5e0",
@@ -144,14 +136,14 @@
     },
     {
       "addr": "02f98ad0",
-      "name": "DAT_02f98ad0",
-      "type": "undefined4",
+      "name": "g_ChatOutCount",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02f98ad4",
-      "name": "DAT_02f98ad4",
-      "type": "undefined4",
+      "name": "g_ChatOutMessages",
+      "type": "SChatOutMessage[50]",
       "value": null
     },
     {
@@ -174,14 +166,14 @@
     },
     {
       "addr": "02f98adc",
-      "name": "DAT_02f98adc",
-      "type": "undefined1",
+      "name": "g_ChatOutMessages[0].ack_flags",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "02f98add",
       "name": "DAT_02f98add",
-      "type": "undefined1",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -199,25 +191,25 @@
     {
       "addr": "02f98ae8",
       "name": "DAT_02f98ae8",
-      "type": "undefined1",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "02f98ae9",
       "name": "DAT_02f98ae9",
-      "type": "undefined1",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "02f98aea",
       "name": "DAT_02f98aea",
-      "type": "undefined1",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "02f98aeb",
       "name": "DAT_02f98aeb",
-      "type": "undefined1",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -455,100 +447,12 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 39,
-      "match": "DAT_02f98ad0",
-      "severity": "mild",
-      "text": "if (0 < DAT_02f98ad0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 41,
-      "match": "DAT_02f98ad4",
-      "severity": "mild",
-      "text": "local_3c = &DAT_02f98ad4;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 84,
-      "match": "(char *)((int)",
+      "line": 99,
+      "match": "(SChatOutMessage *)((int)",
       "severity": "mild",
-      "text": "cVar1 = *(char *)((int)piVar5 + 1);",
+      "text": "local_20 = (SChatOutMessage *)((int)&local_20->timestamp + 1);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 85,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "piVar5 = (int *)((int)piVar5 + 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 94,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "local_20 = (int *)((int)local_20 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 106,
-      "match": "DAT_02f98ad0",
-      "severity": "mild",
-      "text": "if ((local_38 < 0) || (DAT_02f98ad0 <= local_38)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 111,
-      "match": "DAT_02f98ad0",
-      "severity": "mild",
-      "text": "DAT_02f98ad0 = DAT_02f98ad0 + -1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 111,
-      "match": "DAT_02f98ad0",
-      "severity": "mild",
-      "text": "DAT_02f98ad0 = DAT_02f98ad0 + -1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 113,
-      "match": "DAT_02f98ad4",
-      "severity": "mild",
-      "text": "(&DAT_02f98ad4 + iVar2 * 0x45,&DAT_02f98ad4 + (iVar2 + 1) * 0x45,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 113,
-      "match": "DAT_02f98ad4",
-      "severity": "mild",
-      "text": "(&DAT_02f98ad4 + iVar2 * 0x45,&DAT_02f98ad4 + (iVar2 + 1) * 0x45,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 114,
-      "match": "DAT_02f98ad0",
-      "severity": "mild",
-      "text": "(DAT_02f98ad0 - iVar2) * 0x114);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 116,
-      "match": "DAT_02f98ad0",
-      "severity": "mild",
-      "text": "} while (local_38 < DAT_02f98ad0);",
-      "type": "undefined_data"
     }
   ]
 }

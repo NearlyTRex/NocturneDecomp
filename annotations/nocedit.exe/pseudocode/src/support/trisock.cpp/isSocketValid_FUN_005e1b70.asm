@@ -7,7 +7,7 @@
 ; _SOCKET *        Stack[0x4]:4   socket_handle
 ;
 ; XREF[3]:
-;   core_netgame.cpp_CNetGame_FUN_00540550 at 0054055d
+;   core_netgame.cpp_CNetGame_flushIncomingPackets_FUN_00540550 at 0054055d
 ;   core_netgame.cpp_CNetGame_receivePackets_FUN_005405b0 at 005405f2
 ;   support_trisock.cpp_bindAndInvalidateSocket_FUN_005e1d20 at 005e1d26
 ;

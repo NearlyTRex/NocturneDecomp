@@ -63306,7 +63306,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_netgame.cpp_CNetGame_FUN_00542370",
+    "name":"core_netgame.cpp_CNetGame_addChatHistory_FUN_00542370",
     "ret":"void",
     "vars":{
       "params":[
@@ -63325,6 +63325,70 @@
             ]
           },
           "type":"CNetGame*"
+        },
+        {
+          "name":"sender_addr",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"SNetworkAddr*"
+        },
+        {
+          "name":"message_id",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"sender_name",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        },
+        {
+          "name":"message",
+          "storage":{
+            "offset":20,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x14]",
+                "offset":20,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
         }
       ]
     }
@@ -64097,6 +64161,22 @@
             ]
           },
           "type":"CNetGame*"
+        },
+        {
+          "name":"packet",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"UNetPacket*"
         }
       ],
       "ret_storage":{
@@ -87920,7 +88000,27 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"engine_texture.cpp_doNothing_FUN_005dd8f0",
-    "ret":"void"
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"detail_level",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ]
+    }
   },
   {
     "addr":"005dd970",

@@ -79,17 +79,17 @@ section .text
     MOV EAX,0x61e0f6                    ; 0046f2c4 | = "vga.lte"
     PUSH EAX                            ; 0046f2c9 | = "vga.lte"
     CALL engine_2d.c_doNothing_FUN_00402860 ; 0046f2ca
-        ;   XREF to: 00402860 (UNCONDITIONAL_CALL)  ; void engine_2d.c_doNothing_FUN_00402860()
+        ;   XREF to: 00402860 (UNCONDITIONAL_CALL)  ; void engine_2d.c_doNothing_FUN_00402860(char * filename)
     ADD ESP,0x4                         ; 0046f2cf
     MOV EAX,0x61e0fe                    ; 0046f2d2 | = "vga.act"
     PUSH EAX                            ; 0046f2d7 | = "vga.act"
     CALL engine_2d.c_loadOrBuildColorMap_FUN_00402930 ; 0046f2d8
-        ;   XREF to: 00402930 (UNCONDITIONAL_CALL)  ; void engine_2d.c_loadOrBuildColorMap_FUN_00402930(char * palette_filename)
+        ;   XREF to: 00402930 (UNCONDITIONAL_CALL)  ; void engine_2d.c_loadOrBuildColorMap_FUN_00402930(char * filename)
     ADD ESP,0x4                         ; 0046f2dd
     MOV EAX,0x61e106                    ; 0046f2e0 | = "vga.act"
     PUSH EAX                            ; 0046f2e5 | = "vga.act"
     CALL engine_2d.c_doNothing_FUN_00401590 ; 0046f2e6
-        ;   XREF to: 00401590 (UNCONDITIONAL_CALL)  ; void engine_2d.c_doNothing_FUN_00401590()
+        ;   XREF to: 00401590 (UNCONDITIONAL_CALL)  ; void engine_2d.c_doNothing_FUN_00401590(char * filename)
     ADD ESP,0x4                         ; 0046f2eb
     CALL wincore_wddvmem.cpp_setupColorPalette_FUN_005ed8f0 ; 0046f2ee
         ;   XREF to: 005ed8f0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_setupColorPalette_FUN_005ed8f0()

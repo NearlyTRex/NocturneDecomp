@@ -15,6 +15,9 @@ CPickList g_MissingBackdropFiles = {};
 // char[100][30]
 char g_BoneNameBuffer[100][30] = {};
 
+// char[200][50]
+char g_SkeletonBoneNames[200][50] = {};
+
 // char[500]
 char g_GroundTextureTypes[500] = {};
 

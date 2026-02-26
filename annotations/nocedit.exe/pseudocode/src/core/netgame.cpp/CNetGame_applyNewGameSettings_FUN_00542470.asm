@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_netgame_cpp_CNetGame_applyNewGameSettings_FUN_00542470(CNetGame *this_ptr)
+; int __cdecl core_netgame_cpp_CNetGame_applyNewGameSettings_FUN_00542470(CNetGame *this_ptr,UNetPacket *packet)
 ;
 ; Parameters:
 ; CNetGame *       Stack[0x4]:4   this_ptr
+; UNetPacket *     Stack[0x8]:4   packet
 ; Local Variables:
 ; undefined4       Stack[-0x167]:4  local_167
 ; undefined1       Stack[-0x163]:1  local_163
@@ -61,7 +62,7 @@
 ;   TerminatedCString s_CNetGame_applyNewGameSet_0063db61
 ;   TerminatedCString s_core_netgame_cpp_0063dbad
 ;   TerminatedCString s_Hell_froze_0063dbc1
-;   undefined4 DAT_00680a04
+;   int INT_00680a04 = 0x1
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -70,7 +71,7 @@
 ;   core_netgame.cpp_CNetGame_addPlayer_FUN_005412b0
 ;   core_netgame.cpp_CNetGame_removePlayer_FUN_00542b00
 ;   core_netgame.cpp_CNetGame_sendMyStateChanged_FUN_00542ff0
-;   core_netgame.cpp_FUN_00543e20
+;   core_netgame.cpp_copyInteger_FUN_00543e20
 ;   crt_string.c_strcmp_FUN_005fef20
 ;
 ; *****************************************************************************
@@ -332,8 +333,8 @@ section .text
     MOV dword ptr [ESP + 0xd0],EAX      ; 005427bb
     LEA EAX,[ESP + 0xd4]                ; 005427c2
     PUSH EAX                            ; 005427c9
-    CALL core_netgame.cpp_FUN_00543e20  ; 005427ca
-        ;   XREF to: 00543e20 (UNCONDITIONAL_CALL)  ; int core_netgame.cpp_FUN_00543e20()
+    CALL core_netgame.cpp_copyInteger_FUN_00543e20 ; 005427ca
+        ;   XREF to: 00543e20 (UNCONDITIONAL_CALL)  ; int * core_netgame.cpp_copyInteger_FUN_00543e20(int * dest, int * src)
     ADD ESP,0x8                         ; 005427cf
     MOV AX,word ptr [EDI + 0x4]         ; 005427d2
     MOV word ptr [ESP + 0xd4],AX        ; 005427d6
@@ -454,14 +455,14 @@ section .text
     MOV EDX,dword ptr [ESP + 0x150]     ; 00542998
     XOR EAX,EBP                         ; 0054299f
     PUSH EDX                            ; 005429a1
-    MOV [0x00680a04],EAX                ; 005429a2 | DAT_00680a04
+    MOV [0x00680a04],EAX                ; 005429a2 | INT_00680a04
     CALL crt_string.c_strcmp_FUN_005fef20 ; 005429a7
         ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 005429ac
     TEST EAX,EAX                        ; 005429af
     JZ 0x005429bd                       ; 005429b1
         ;   XREF to: 005429bd (CONDITIONAL_JUMP)  ; LAB_005429bd
-    MOV dword ptr [0x00680a04],0x1      ; 005429b3 | DAT_00680a04
+    MOV dword ptr [0x00680a04],0x1      ; 005429b3 | INT_00680a04
     IMUL EAX,EBX,0x28                   ; 005429bd
         ;   Label: LAB_005429bd
     MOV EDX,dword ptr [ESP + 0x148]     ; 005429c0
@@ -469,7 +470,7 @@ section .text
     CMP EDX,dword ptr [ESP + EAX*0x1 + 0x85] ; 005429ca
     JZ 0x00542a4e                       ; 005429d1
         ;   XREF to: 00542a4e (CONDITIONAL_JUMP)  ; LAB_00542a4e
-    MOV dword ptr [0x00680a04],0x1      ; 005429d3 | DAT_00680a04
+    MOV dword ptr [0x00680a04],0x1      ; 005429d3 | INT_00680a04
     MOV EAX,dword ptr [ESP + 0x174]     ; 005429dd
         ;   Label: LAB_005429dd
     PUSH EAX                            ; 005429e4
@@ -497,7 +498,7 @@ section .text
     MOV dword ptr [ESP + 0x134],EBX     ; 00542a42
     JMP 0x0054267d                      ; 00542a49
         ;   XREF to: 0054267d (UNCONDITIONAL_JUMP)  ; LAB_0054267d
-    CMP dword ptr [0x00680a04],0x0      ; 00542a4e | DAT_00680a04
+    CMP dword ptr [0x00680a04],0x0      ; 00542a4e | INT_00680a04
         ;   Label: LAB_00542a4e
     JNZ 0x005429dd                      ; 00542a55
         ;   XREF to: 005429dd (CONDITIONAL_JUMP)  ; LAB_005429dd
@@ -543,7 +544,7 @@ section .text
     PUSH EAX                            ; 00542abd
     PUSH EDI                            ; 00542abe
     CALL core_netgame.cpp_CNetGame_addPlayer_FUN_005412b0 ; 00542abf
-        ;   XREF to: 005412b0 (UNCONDITIONAL_CALL)  ; int core_netgame.cpp_CNetGame_addPlayer_FUN_005412b0(CNetGame * this_ptr)
+        ;   XREF to: 005412b0 (UNCONDITIONAL_CALL)  ; int core_netgame.cpp_CNetGame_addPlayer_FUN_005412b0(CNetGame * this_ptr, SNetworkAddr * addr, char * name, int hero_number, ...)
     IMUL ECX,EAX,0x78                   ; 00542ac4
     ADD ESP,0x14                        ; 00542ac7
     ADD ECX,EDI                         ; 00542aca

@@ -49,17 +49,16 @@
   },
   "complexity": {
     "assembly_lines": 96,
-    "complexity_score": 321,
+    "complexity_score": 256,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 8,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 141,
-    "suspect_count": 16,
+    "suspect_count": 10,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
-      "undefined_data",
       "unresolved_funcptr"
     ],
     "total_lines": 237
@@ -347,80 +346,32 @@
       "line": 69,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)&DAT_02cf2bf4 + local_20) = iVar9;",
+      "text": "*(int *)((int)g_EnemyVictimCandidates + local_20) = iVar9;",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 69,
-      "match": "DAT_02cf2bf4",
-      "severity": "mild",
-      "text": "*(int *)((int)&DAT_02cf2bf4 + local_20) = iVar9;",
-      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
       "line": 70,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "*(float *)((int)&DAT_02cf4b34 + local_20) = fStack_30;",
+      "text": "*(float *)((int)g_EnemyVictimCandidateDistances + local_20) = fStack_30;",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 70,
-      "match": "DAT_02cf4b34",
-      "severity": "mild",
-      "text": "*(float *)((int)&DAT_02cf4b34 + local_20) = fStack_30;",
-      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
       "line": 87,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "if (*(float *)((int)&DAT_02cf4b34 + iVar7) < local_18) {",
+      "text": "if (*(float *)((int)g_EnemyVictimCandidateDistances + iVar7) < local_18) {",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 87,
-      "match": "DAT_02cf4b34",
-      "severity": "mild",
-      "text": "if (*(float *)((int)&DAT_02cf4b34 + iVar7) < local_18) {",
-      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
       "line": 88,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "local_18 = *(float *)((int)&DAT_02cf4b34 + iVar7);",
+      "text": "local_18 = *(float *)((int)g_EnemyVictimCandidateDistances + iVar7);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 88,
-      "match": "DAT_02cf4b34",
-      "severity": "mild",
-      "text": "local_18 = *(float *)((int)&DAT_02cf4b34 + iVar7);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 96,
-      "match": "DAT_02cf2bf4",
-      "severity": "mild",
-      "text": "local_1c = (CDemonActor *)(&DAT_02cf2bf4)[iVar9];",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 115,
-      "match": "DAT_02cf4b34",
-      "severity": "mild",
-      "text": "(&DAT_02cf4b34)[iVar9] = 0x7149f2ca;",
-      "type": "undefined_data"
     },
     {
       "description": "Decompiler intrinsic (not real C)",

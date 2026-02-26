@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_netgame.cpp_CNetGame_FUN_0053f780 at 0053f7b0
+;   core_netgame.cpp_CNetGame_init_FUN_0053f780 at 0053f7b0
 ;
 ; Called Functions:
 ;   crt_wsock32.c_WSAStartup

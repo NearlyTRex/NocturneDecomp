@@ -10,31 +10,28 @@ int __cdecl support_trisock_cpp_receiveSocketData_FUN_005e1c20(_SOCKET *socket_h
 
 {
   uint uVar1;
-  SNetworkAddr *pSVar2;
-  int iVar3;
-  SOCKADDR_IN *pSVar4;
-  byte bVar5;
+  int iVar2;
+  SOCKADDR_IN *pSVar3;
+  byte bVar4;
   SOCKADDR local_2c;
   int local_14;
   
-  bVar5 = 0;
+  bVar4 = 0;
   if (source_addr == (SNetworkAddr *)0x0) {
-    iVar3 = recv(*socket_handle,buffer,length,0);
+    iVar2 = recv(*socket_handle,buffer,length,0);
   }
   else {
     local_14 = 0x10;
-    iVar3 = recvfrom(*socket_handle,buffer,length,0,&local_2c,&local_14);
-    if (0 < iVar3) {
-      pSVar4 = support_trisock_cpp_convertSockAddr_FUN_005e1960
+    iVar2 = recvfrom(*socket_handle,buffer,length,0,&local_2c,&local_14);
+    if (0 < iVar2) {
+      pSVar3 = support_trisock_cpp_convertSockAddr_FUN_005e1960
                          ((SOCKADDR_IN *)&stack0xffffffe4,&local_2c);
-      pSVar2 = source_addr + -(uint)bVar5;
-      source_addr->ip_address = *(uint *)pSVar4;
-      uVar1 = *(uint *)((int)pSVar4 + (uint)bVar5 * -8 + 4);
-      pSVar2->port = (short)uVar1;
-      pSVar2->padding[0] = (char)((uint)uVar1 >> 0x10);
-      pSVar2->padding[1] = (char)((uint)uVar1 >> 0x18);
-      return iVar3;
+      source_addr->ip_address = *(uint *)pSVar3;
+      uVar1 = *(uint *)((int)pSVar3 + (uint)bVar4 * -8 + 4);
+      source_addr[-(uint)bVar4].port = (short)uVar1;
+      source_addr[-(uint)bVar4].other = (short)((uint)uVar1 >> 0x10);
+      return iVar2;
     }
   }
-  return iVar3;
+  return iVar2;
 }

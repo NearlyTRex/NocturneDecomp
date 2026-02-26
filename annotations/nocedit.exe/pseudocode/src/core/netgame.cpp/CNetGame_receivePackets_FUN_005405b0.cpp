@@ -29,11 +29,11 @@ void __cdecl core_netgame_cpp_CNetGame_receivePackets_FUN_005405b0(CNetGame *thi
       return;
     }
     iVar1 = support_trisock_cpp_receiveSocketData_FUN_005e1c20
-                      (&this_ptr->socket,g_NetworkReceiveBuffer,0x404,&local_10);
+                      (&this_ptr->socket,g_NetworkReceivePacket.raw + 4,0x404,&local_10);
     if (iVar1 < 1) break;
-    g_NetworkPacketSize = iVar1 + 1;
-    core_netgame_cpp_CNetGame_allocSimFrame_FUN_005406a0
-              (this_ptr,&local_10,(char *)&g_NetworkPacketSize);
+    g_NetworkReceivePacket.header.size = iVar1 + 1;
+    core_netgame_cpp_CNetGame_allocSimFrame_FUN_005406a0(this_ptr,&local_10,&g_NetworkReceivePacket)
+    ;
   }
   core_netgame_cpp_CNetGame_removeChatOut_FUN_00541ff0(this_ptr);
   return;

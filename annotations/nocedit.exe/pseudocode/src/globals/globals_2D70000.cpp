@@ -22,6 +22,9 @@ CLightningBolt g_LightningBoltPool[10] = {};
 // CPopcorn[256]
 CPopcorn g_PopcornPool[256] = {};
 
+// CQuaternion4f
+CQuaternion4f CQuaternion4f_02d7b7f4 = {};
+
 // CRainDrop[256]
 CRainDrop g_RainDropPool[256] = {};
 
@@ -62,6 +65,9 @@ float FLOAT_02d7b83c = {};
 float FLOAT_02d7b840 = {};
 float FLOAT_02d7b844 = {};
 float FLOAT_02d7c2e8 = {};
+
+// float[64][8]
+float g_SplineBasisTable[64][8] = {};
 
 // int
 int g_LightningBoltAllocIndex = {};
@@ -105,16 +111,12 @@ int INT_02d7b894 = {};
 // uchar
 uchar g_ShadowColor8 = {};
 
+// uint
+uint g_FlyBlendColor = {};
+uint g_FlyInvBlendColor = {};
+
 // undefined1
 undefined1 DAT_02d7b804 = {};
-
-// undefined4
-undefined4 DAT_02d7a800 = {};
-undefined4 DAT_02d7a804 = {};
-undefined4 DAT_02d7b7f4 = {};
-undefined4 DAT_02d7b7f8 = {};
-undefined4 DAT_02d7b7fc = {};
-undefined4 DAT_02d7b800 = {};
 
 // ushort
 ushort g_ShadowColor16 = {};

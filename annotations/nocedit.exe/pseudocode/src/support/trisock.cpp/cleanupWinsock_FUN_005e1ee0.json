@@ -6,23 +6,21 @@
   },
   "complexity": {
     "assembly_lines": 3,
-    "complexity_score": 21,
+    "complexity_score": 6,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 6,
-    "suspect_count": 1,
-    "suspect_types": [
-      "param_count_too_many"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 9
   },
   "cross_references": [
     {
       "addr": "0053f830",
       "from_addr": "0053f851",
-      "name": "core_netgame.cpp_CNetGame_FUN_0053f830",
+      "name": "core_netgame.cpp_CNetGame_shutdown_FUN_0053f830",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -36,7 +34,7 @@
     ],
     "convention": "__cdecl",
     "name": "support_trisock.cpp_cleanupWinsock_FUN_005e1ee0",
-    "signature": "int __cdecl support_trisock_cpp_cleanupWinsock_FUN_005e1ee0(WORD wVersionRequested,LPWSADATA lpWSAData)"
+    "signature": "int __cdecl support_trisock_cpp_cleanupWinsock_FUN_005e1ee0(void)"
   },
   "function_calls": [],
   "globals": [],
@@ -46,15 +44,15 @@
       {
         "call_addr": "0053f851",
         "call_type": "direct",
-        "caller": "core_netgame.cpp_CNetGame_FUN_0053f830",
+        "caller": "core_netgame.cpp_CNetGame_shutdown_FUN_0053f830",
         "estimated_params": 0,
         "instructions_analyzed": 2,
         "reg_params": [],
         "stack_params": 0
       }
     ],
-    "confidence": "low",
-    "declared_params": 2,
+    "confidence": "medium",
+    "declared_params": 0,
     "estimated_params": 0
   },
   "pcode_summary": {
@@ -66,39 +64,12 @@
     "pcode_op_count": 1
   },
   "stack_frame": {
-    "frame_size": 12,
+    "frame_size": 4,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 8,
+    "param_size": 0,
     "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": true,
-        "name": "wVersionRequested",
-        "offset": 4,
-        "size": 2,
-        "type": "WORD"
-      },
-      {
-        "is_param": true,
-        "name": "lpWSAData",
-        "offset": 8,
-        "size": 4,
-        "type": "LPWSADATA"
-      }
-    ]
+    "variables": []
   },
-  "suspects": [
-    {
-      "call_site_count": 1,
-      "declared_params": 2,
-      "description": "Signature has too many params - likely wrong calling convention",
-      "estimated_params": 0,
-      "fix_type": "remove_params",
-      "match": "declared:2 vs estimated:0",
-      "param_delta": -2,
-      "text": "Function declares 2 params but call sites push 0 (2 extra)",
-      "type": "param_count_too_many"
-    }
-  ]
+  "suspects": []
 }

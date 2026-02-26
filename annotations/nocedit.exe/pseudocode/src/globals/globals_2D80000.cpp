@@ -48,6 +48,7 @@ char g_PrevKeyboardState[600] = {};
 // float
 float g_OverlayDisplayTimer = {};
 float FLOAT_02d831bc = {};
+float g_IrisFadeRadius = {};
 
 // int
 int INT_02d82568 = {};
@@ -63,6 +64,9 @@ int INT_02d831c4 = {};
 int INT_02d831c8 = {};
 int INT_02d831cc = {};
 int INT_02d831d0 = {};
+int g_IrisFadeType = {};
+int g_IrisFadeCenterX = {};
+int g_IrisFadeCenterY = {};
 int g_ProfileStartTime = {};
 int INT_02d83200 = {};
 int INT_02d83204 = {};
@@ -112,10 +116,4 @@ undefined1 DAT_02d82c82 = {};
 undefined1 DAT_02d82c83 = {};
 undefined1 DAT_02d831d6 = {};
 undefined1 DAT_02d831eb = {};
-
-// undefined4
-undefined4 DAT_02d831ec = {};
-undefined4 DAT_02d831f0 = {};
-undefined4 DAT_02d831f4 = {};
-undefined4 DAT_02d831f8 = {};
 

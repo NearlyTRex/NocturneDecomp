@@ -7,6 +7,9 @@
 // CBitFont*
 CBitFont* g_EditorFont = {};
 
+// CDemonActor*[2000]
+CDemonActor* g_EnemyVictimCandidates[2000] = {};
+
 // CDemonActorType
 CDemonActorType g_CElephantGunClassInfo = {};
 CDemonActorType g_CEmitterClassInfo = {};
@@ -40,6 +43,9 @@ char g_TempStringBuffer[1024] = {};
 
 // char[200]
 char g_TextWrapBuffer[200] = {};
+
+// float[2000]
+float g_EnemyVictimCandidateDistances[2000] = {};
 
 // int
 int g_WindowStackCount = {};
@@ -97,13 +103,6 @@ uchar g_ColorCubeLookup[32768] = {};
 
 // uint*[1200]
 uint* g_ZBufferScanlineArray[1200] = {};
-
-// undefined4
-undefined4 DAT_02cf2bf4 = {};
-undefined4 DAT_02cf2bf8 = {};
-undefined4 DAT_02cf4b30 = {};
-undefined4 DAT_02cf4b34 = {};
-undefined4 DAT_02cf4b38 = {};
 
 // void*
 void* g_ActiveControl = {};

@@ -1,37 +1,28 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 16,
-        "line": 62,
-        "message": "use of undeclared identifier 'DAT_02f98ae0'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 146,
-    "complexity_score": 354,
+    "complexity_score": 95,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 14,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 59,
-    "suspect_count": 28,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 60,
+    "suspect_count": 3,
     "suspect_types": [
-      "pointer_cast",
-      "stack_param",
-      "undefined_data"
+      "pointer_cast"
     ],
-    "total_lines": 205
+    "total_lines": 206
   },
   "cross_references": [
     {
       "addr": "00541390",
       "from_addr": "00541c6b",
-      "name": "core_netgame.cpp_CNetGame_FUN_00541390",
+      "name": "core_netgame.cpp_CNetGame_runLobby_FUN_00541390",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -45,7 +36,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_netgame.cpp_CNetGame_processChatOut_FUN_00541e40",
-    "signature": "void __cdecl core_netgame_cpp_CNetGame_processChatOut_FUN_00541e40(void)"
+    "signature": "void __cdecl core_netgame_cpp_CNetGame_processChatOut_FUN_00541e40(CNetGame *this_ptr,char *message,int target_player)"
   },
   "function_calls": [
     {
@@ -56,7 +47,7 @@
     {
       "addr": "00542370",
       "is_variadic": false,
-      "name": "core_netgame.cpp_CNetGame_FUN_00542370"
+      "name": "core_netgame.cpp_CNetGame_addChatHistory_FUN_00542370"
     },
     {
       "addr": "005fde40",
@@ -113,14 +104,14 @@
     },
     {
       "addr": "02f98ad0",
-      "name": "DAT_02f98ad0",
-      "type": "undefined4",
+      "name": "g_ChatOutCount",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02f98ad4",
-      "name": "DAT_02f98ad4",
-      "type": "undefined4",
+      "name": "g_ChatOutMessages",
+      "type": "SChatOutMessage[50]",
       "value": null
     },
     {
@@ -131,14 +122,14 @@
     },
     {
       "addr": "02f98adc",
-      "name": "DAT_02f98adc",
-      "type": "undefined1",
+      "name": "g_ChatOutMessages[0].ack_flags",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "02f98add",
       "name": "DAT_02f98add",
-      "type": "undefined1",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -155,8 +146,8 @@
     },
     {
       "addr": "02f9c0bc",
-      "name": "DAT_02f9c0bc",
-      "type": "undefined4",
+      "name": "INT_02f9c0bc",
+      "type": "int",
       "value": null
     }
   ],
@@ -198,237 +189,59 @@
     "pcode_op_count": 657
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 16,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CNetGame *"
+      },
+      {
+        "is_param": true,
+        "name": "message",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "target_player",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "CNetGame *in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "char *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "int in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 16,
-      "match": "DAT_02f98ad0",
-      "severity": "mild",
-      "text": "if (0x31 < DAT_02f98ad0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_02f98ad0",
-      "severity": "mild",
-      "text": "iVar4 = DAT_02f98ad0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_02f98ad0",
-      "severity": "mild",
-      "text": "iVar1 = DAT_02f98ad0 * 0x114;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 23,
-      "match": "DAT_02f98ad4",
-      "severity": "mild",
-      "text": "puVar7 = &DAT_02f98ad4 + DAT_02f98ad0 * 0x45;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 23,
-      "match": "DAT_02f98ad0",
-      "severity": "mild",
-      "text": "puVar7 = &DAT_02f98ad4 + DAT_02f98ad0 * 0x45;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_02f98ad0",
-      "severity": "mild",
-      "text": "DAT_02f98ad0 = DAT_02f98ad0 + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_02f98ad0",
-      "severity": "mild",
-      "text": "DAT_02f98ad0 = DAT_02f98ad0 + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 34,
-      "match": "DAT_02f9c0bc",
-      "severity": "mild",
-      "text": "DAT_02f9c0bc = DAT_02f9c0bc + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 34,
-      "match": "DAT_02f9c0bc",
-      "severity": "mild",
-      "text": "DAT_02f9c0bc = DAT_02f9c0bc + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_02f98ad8",
-      "severity": "mild",
-      "text": "(&DAT_02f98ad8)[iVar4 * 0x45] = DAT_02f9c0bc;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_02f9c0bc",
-      "severity": "mild",
-      "text": "(&DAT_02f98ad8)[iVar4 * 0x45] = DAT_02f9c0bc;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_02f98adc",
-      "severity": "mild",
-      "text": "memset(&DAT_02f98adc + iVar1,1,2);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 39,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "if (in_stack_0000000c < 0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 43,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "if (0 < in_stack_00000004->player_count) {",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 49,
-      "match": "(uint *)((int)",
+      "line": 47,
+      "match": "(SChatOutMessage *)((int)",
       "severity": "mild",
-      "text": "puVar6 = (uint *)((int)puVar6 + 1);",
+      "text": "pSVar6 = (SChatOutMessage *)((int)&pSVar6->timestamp + 1);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 50,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "} while (iVar4 < in_stack_00000004->player_count);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 54,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "*(byte *)((int)puVar7 + in_stack_0000000c + 8) = 0;",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 54,
+      "line": 52,
       "match": "(byte *)((int)",
       "severity": "mild",
-      "text": "*(byte *)((int)puVar7 + in_stack_0000000c + 8) = 0;",
+      "text": "*(byte *)((int)pSVar7->player_timestamps + target_player + -4) = 0;",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 55,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "*(uint *)(&DAT_02f98ae0 + in_stack_0000000c * 4 + iVar1) = g_CurrentGameTime - 0x3c0000;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 55,
-      "match": "DAT_02f98ae0",
+      "description": "Complex pointer cast",
+      "line": 56,
+      "match": "(byte *)((int)",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_02f98ae0 + in_stack_0000000c * 4 + iVar1) = g_CurrentGameTime - 0x3c0000;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 57,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "*(byte *)(in_stack_00000004->local_player_index + 8 + (int)puVar7) = 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 58,
-      "match": "DAT_02f98ae8",
-      "severity": "mild",
-      "text": "memset(&DAT_02f98ae8 + iVar1,0,0x100);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 59,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "_strncpy(&DAT_02f98ae8 + iVar1,in_stack_00000008,0xff);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 59,
-      "match": "DAT_02f98ae8",
-      "severity": "mild",
-      "text": "_strncpy(&DAT_02f98ae8 + iVar1,in_stack_00000008,0xff);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 60,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "core_netgame_cpp_CNetGame_FUN_00542370(in_stack_00000004);",
-      "type": "stack_param"
+      "text": "*(byte *)((int)pSVar7->player_timestamps + this_ptr->local_player_index + -4) = 1;",
+      "type": "pointer_cast"
     }
   ]
 }

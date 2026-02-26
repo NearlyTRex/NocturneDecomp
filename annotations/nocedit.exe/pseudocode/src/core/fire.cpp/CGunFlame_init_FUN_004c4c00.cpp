@@ -21,10 +21,10 @@ void __cdecl core_fire_cpp_CGunFlame_init_FUN_004c4c00(CGunFlame *this_ptr)
   int local_20;
   
   iVar4 = 0;
-  if (0 < DAT_02d13eb4) {
+  if (0 < g_CharactersOnFireCount) {
     local_20 = 0;
     do {
-      this_ptr_00 = *(CCharacter **)((int)&DAT_02d13eb8 + local_20);
+      this_ptr_00 = *(CCharacter **)((int)g_CharactersOnFire + local_20);
       if (((this_ptr->flame_type == 2) || (this_ptr_00->show_in_editor != 0)) &&
          (fVar1 = (this_ptr_00->base).location.position.x - (this_ptr->position).x,
          fVar3 = (this_ptr_00->base).location.position.y - (this_ptr->position).y,
@@ -38,14 +38,14 @@ void __cdecl core_fire_cpp_CGunFlame_init_FUN_004c4c00(CGunFlame *this_ptr)
       }
       local_20 = local_20 + 4;
       iVar4 = iVar4 + 1;
-    } while (iVar4 < DAT_02d13eb4);
+    } while (iVar4 < g_CharactersOnFireCount);
   }
   iVar4 = 0;
-  if (0 < DAT_02d13f80) {
+  if (0 < g_FlameCanCount) {
     local_24 = &this_ptr->position;
     iVar5 = 0;
     do {
-      this_ptr_01 = *(CFlameCan **)((int)&DAT_02d13f84 + iVar5);
+      this_ptr_01 = *(CFlameCan **)((int)g_FlameCans + iVar5);
       fVar1 = (this_ptr_01->base).location.position.x - local_24->x;
       fVar3 = (this_ptr_01->base).location.position.y - local_24->y;
       fVar2 = (this_ptr_01->base).location.position.z - local_24->z;
@@ -54,7 +54,7 @@ void __cdecl core_fire_cpp_CGunFlame_init_FUN_004c4c00(CGunFlame *this_ptr)
       }
       iVar4 = iVar4 + 1;
       iVar5 = iVar5 + 4;
-    } while (iVar4 < DAT_02d13f80);
+    } while (iVar4 < g_FlameCanCount);
   }
   return;
 }

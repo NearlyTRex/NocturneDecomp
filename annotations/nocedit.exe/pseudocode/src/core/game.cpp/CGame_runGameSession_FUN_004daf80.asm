@@ -398,8 +398,8 @@ section .text
     PUSH 0x1                            ; 004db423
     MOV EDI,dword ptr [0x00680a00]      ; 004db425 | g_CNetGamePtr
     PUSH EDI                            ; 004db42b | g_CNetGameInstance
-    CALL core_netgame.cpp_CNetGame_FUN_0053fd00 ; 004db42c
-        ;   XREF to: 0053fd00 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_FUN_0053fd00(CNetGame * this_ptr)
+    CALL core_netgame.cpp_CNetGame_disconnect_FUN_0053fd00 ; 004db42c
+        ;   XREF to: 0053fd00 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_disconnect_FUN_0053fd00(CNetGame * this_ptr, int perform_handshake)
     ADD ESP,0x8                         ; 004db431
         ;   Label: LAB_004db431
     MOV EAX,[0x02db87d0]                ; 004db434 | g_LocalHeroIndex

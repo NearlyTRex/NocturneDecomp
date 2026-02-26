@@ -9,6 +9,7 @@
 void __cdecl core_game_cpp_joinNetworkGame_FUN_004e2fc0(void)
 
 {
+  uint32_t *server_ip;
   int iVar1;
   char *pcVar2;
   char *pcVar3;
@@ -27,18 +28,18 @@ void __cdecl core_game_cpp_joinNetworkGame_FUN_004e2fc0(void)
   if (iVar1 == 0) {
     return;
   }
-  support_trisock_cpp_parseIPAddress_FUN_005e1700(&local_10,local_74);
-  iVar1 = core_netgame_cpp_CNetGame_initializeNetworkToJoin_FUN_0053f900(g_CNetGamePtr);
+  server_ip = (uint32_t *)support_trisock_cpp_parseIPAddress_FUN_005e1700(&local_10,local_74);
+  iVar1 = core_netgame_cpp_CNetGame_initializeNetworkToJoin_FUN_0053f900(g_CNetGamePtr,server_ip);
   if (iVar1 != 0) {
     g_CurrentSaveFile = '\0';
     while( true ) {
-      iVar1 = core_netgame_cpp_CNetGame_FUN_00541390(g_CNetGamePtr);
+      iVar1 = core_netgame_cpp_CNetGame_runLobby_FUN_00541390(g_CNetGamePtr);
       if (iVar1 == 0) break;
       core_mission_cpp_CDemonMission_run_FUN_00524420(g_CDemonMissionPtr);
     }
-    core_netgame_cpp_CNetGame_FUN_0053fd00(g_CNetGamePtr);
+    core_netgame_cpp_CNetGame_disconnect_FUN_0053fd00(g_CNetGamePtr,1);
     return;
   }
-  core_netgame_cpp_CNetGame_FUN_0053fd00(g_CNetGamePtr);
+  core_netgame_cpp_CNetGame_disconnect_FUN_0053fd00(g_CNetGamePtr,0);
   return;
 }

@@ -1,0 +1,15 @@
+// Name: core_netgame.cpp_CNetGame_sendPacket_FUN_00541230
+// Address: 00541230
+// Address Range: [[00541230, 00541255]]
+// Convention: __cdecl
+// Signature: void __cdecl core_netgame_cpp_CNetGame_sendPacket_FUN_00541230(CNetGame *this_ptr,SNetworkAddr *dest_addr,SNetPacketHeader *packet)
+
+#include "nocturne.h"
+
+void __cdecl core_netgame_cpp_CNetGame_sendPacket_FUN_00541230(CNetGame *this_ptr,SNetworkAddr *dest_addr,SNetPacketHeader *packet)
+
+{
+  support_trisock_cpp_performSocketOperation_FUN_005e1ca0
+            (&this_ptr->socket,(char *)&packet->type,packet->size + -4,dest_addr);
+  return;
+}

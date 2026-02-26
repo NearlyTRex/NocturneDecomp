@@ -17,9 +17,9 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[4]:
-;   core_netgame.cpp_CNetGame_FUN_00541390 at 00541b1d
 ;   core_netgame.cpp_CNetGame_processClientFrame_FUN_005435a0 at 005435e9
 ;   core_netgame.cpp_CNetGame_processServerFrame_FUN_00543150 at 0054320e
+;   core_netgame.cpp_CNetGame_runLobby_FUN_00541390 at 00541b1d
 ;   core_netgame.cpp_CNetGame_syncPlayers_FUN_005401e0 at 00540495
 ;
 ; Referenced Globals:

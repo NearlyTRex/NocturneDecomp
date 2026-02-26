@@ -4,12 +4,18 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x2D10000
 // =============================================================================
 
+// CCharacter*[50]
+CCharacter* g_CharactersOnFire[50] = {};
+
 // CDemonActorType
 CDemonActorType g_CFilmReelClassInfo = {};
 CDemonActorType g_CFilmProjectorClassInfo = {};
 
 // CFireEffect
 CFireEffect g_CFireEffectInstance = {};
+
+// CFlameCan*[150]
+CFlameCan* g_FlameCans[150] = {};
 
 // CKeyFramedModelInstance
 CKeyFramedModelInstance g_FireEffectFlamingStakeModel = {};
@@ -58,16 +64,13 @@ int g_CurrentFileCompressedSize = {};
 int g_AuditRecordCount = {};
 int g_TextureAnimCounter2 = {};
 int g_TextureAnimCounter1 = {};
+int g_CharactersOnFireCount = {};
+int g_FlameCanCount = {};
 int g_SmokeParticleAllocIndex = {};
 
 // time_t
 time_t g_PodCreationTime = {};
 
-// undefined4
-undefined4 DAT_02d13eb4 = {};
-undefined4 DAT_02d13eb8 = {};
-undefined4 DAT_02d13f80 = {};
-undefined4 DAT_02d13f84 = {};
-undefined4 DAT_02d13f88 = {};
-undefined4 DAT_02d141e0 = {};
+// uint[3]
+uint g_ShellBounceSoundHandles[3] = {};
 

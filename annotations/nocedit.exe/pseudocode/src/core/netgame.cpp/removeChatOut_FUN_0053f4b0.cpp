@@ -9,14 +9,14 @@
 void __cdecl core_netgame_cpp_removeChatOut_FUN_0053f4b0(int index)
 
 {
-  if ((index < 0) || (DAT_02f98ad0 <= index)) {
+  if ((index < 0) || (g_ChatOutCount <= index)) {
     g_CurrentFilename = "..\\core\\netgame.cpp";
     g_CurrentLineNumber = 0x107;
     core_main_c_displayErrorAndQuit_FUN_00506f10("removeChatOut - invalid index");
   }
-  DAT_02f98ad0 = DAT_02f98ad0 + -1;
+  g_ChatOutCount = g_ChatOutCount + -1;
   memmove
-            (&DAT_02f98ad4 + index * 0x45,&DAT_02f98ad4 + (index + 1) * 0x45,
-             (DAT_02f98ad0 - index) * 0x114);
+            (g_ChatOutMessages + index,g_ChatOutMessages + index + 1,
+             (g_ChatOutCount - index) * 0x114);
   return;
 }

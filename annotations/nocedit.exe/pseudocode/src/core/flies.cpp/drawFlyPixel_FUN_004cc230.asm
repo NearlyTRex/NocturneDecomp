@@ -19,8 +19,8 @@
 ;   void*[1200] g_ScreenBufferArray
 ;   uint*[1200] g_ZBufferScanlineArray
 ;   int g_ActiveRenderColor
-;   undefined4 DAT_02d7a800
-;   undefined4 DAT_02d7a804
+;   uint g_FlyBlendColor
+;   uint g_FlyInvBlendColor
 ;
 ; *****************************************************************************
 
@@ -60,8 +60,8 @@ section .text
     MOVD MM0,dword ptr [0x02d02570]     ; 004cc274 | g_ActiveRenderColor
     PXOR MM7,MM7                        ; 004cc27b
     MOVD MM1,dword ptr [EDI]            ; 004cc27e
-    MOVD MM2,dword ptr [0x02d7a800]     ; 004cc281 | DAT_02d7a800
-    MOVD MM3,dword ptr [0x02d7a804]     ; 004cc288 | DAT_02d7a804
+    MOVD MM2,dword ptr [0x02d7a800]     ; 004cc281 | g_FlyBlendColor
+    MOVD MM3,dword ptr [0x02d7a804]     ; 004cc288 | g_FlyInvBlendColor
     PUNPCKLBW MM0,MM7                   ; 004cc28f
     PUNPCKLBW MM1,MM7                   ; 004cc292
     PUNPCKLBW MM2,MM7                   ; 004cc295

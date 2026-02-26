@@ -209,7 +209,7 @@ section .text
     PUSH ESI                            ; 005452e3
     PUSH 0x1                            ; 005452e4
     PUSH 0x300                          ; 005452e6
-    PUSH 0x2fd8d20                      ; 005452eb | DAT_02fd8d20
+    PUSH 0x2fd8d20                      ; 005452eb | g_PaletteData
     CALL crt_stdio.c_fread_FUN_005fd990 ; 005452f0
         ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 005452f5
@@ -451,14 +451,14 @@ section .text
     MOV ECX,0x300                       ; 00545523
         ;   Label: LAB_00545523
     MOV ESI,0x2d02248                   ; 00545528 | g_DefaultPalette
-    MOV EDI,0x2fd8d20                   ; 0054552d | DAT_02fd8d20
-    PUSH EDI                            ; 00545532 | DAT_02fd8d20
+    MOV EDI,0x2fd8d20                   ; 0054552d | g_PaletteData
+    PUSH EDI                            ; 00545532 | g_PaletteData
     MOV EAX,ECX                         ; 00545533
     SHR ECX,0x2                         ; 00545535
-    MOVSD.REP ES:EDI,ESI                ; 00545538 | g_DefaultPalette | DAT_02fd8d20 | UCHAR_ARRAY_02d0224c
+    MOVSD.REP ES:EDI,ESI                ; 00545538 | g_DefaultPalette | g_PaletteData | UCHAR_ARRAY_02d0224c
     MOV CL,AL                           ; 0054553a
     AND CL,0x3                          ; 0054553c
-    MOVSB.REP ES:EDI,ESI                ; 0054553f | UCHAR_ARRAY_02d0224c | DAT_02fd8d24 | UCHAR_ARRAY_02d0224d
+    MOVSB.REP ES:EDI,ESI                ; 0054553f | UCHAR_ARRAY_02d0224c | UCHAR_ARRAY_02fd8d24 | UCHAR_ARRAY_02d0224d
     POP EDI                             ; 00545541
     JMP 0x0054530b                      ; 00545542
         ;   XREF to: 0054530b (UNCONDITIONAL_JUMP)  ; LAB_0054530b
@@ -504,10 +504,10 @@ section .text
         ;   Label: LAB_005455b5
     XOR ECX,ECX                         ; 005455b8
     XOR EDX,EDX                         ; 005455ba
-    MOV CL,byte ptr [EAX + 0x2fd8d21]   ; 005455bc | DAT_02fd8d20+1
-    MOV DL,byte ptr [EAX + 0x2fd8d20]   ; 005455c2 | DAT_02fd8d20
+    MOV CL,byte ptr [EAX + 0x2fd8d21]   ; 005455bc | UCHAR_ARRAY_02fd8d21
+    MOV DL,byte ptr [EAX + 0x2fd8d20]   ; 005455c2 | g_PaletteData
     MOV dword ptr [ESP + 0x68],ECX      ; 005455c8
-    MOV AL,byte ptr [EAX + 0x2fd8d22]   ; 005455cc | DAT_02fd8d20+2
+    MOV AL,byte ptr [EAX + 0x2fd8d22]   ; 005455cc | UCHAR_ARRAY_02fd8d22
     AND EAX,0xff                        ; 005455d2
     TEST EDX,EDX                        ; 005455d7
     JZ 0x00545623                       ; 005455d9

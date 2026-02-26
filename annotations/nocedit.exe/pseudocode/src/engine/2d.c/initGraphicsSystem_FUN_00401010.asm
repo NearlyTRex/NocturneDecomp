@@ -71,7 +71,7 @@ section .text
     ADD ESP,0x4                         ; 00401061
     PUSH 0x61304f                       ; 00401064 | = "vga.map"
     CALL engine_2d.c_loadOrBuildColorMap_FUN_00402930 ; 00401069
-        ;   XREF to: 00402930 (UNCONDITIONAL_CALL)  ; void engine_2d.c_loadOrBuildColorMap_FUN_00402930(char * palette_filename)
+        ;   XREF to: 00402930 (UNCONDITIONAL_CALL)  ; void engine_2d.c_loadOrBuildColorMap_FUN_00402930(char * filename)
     ADD ESP,0x4                         ; 0040106e
     PUSH 0x613057                       ; 00401071 | = "vga.act"
     ADD ESP,0x4                         ; 00401076

@@ -73,7 +73,7 @@
 ;   float FLOAT_0065e7b0 = 0.2000000
 ;   float FLOAT_0065e7b4 = 0.6400000
 ;   float FLOAT_0065e7b8 = 0.8200000
-;   undefined4 DAT_02d7b7f4
+;   CQuaternion4f CQuaternion4f_02d7b7f4
 ;   undefined4 DAT_02d7b7f8
 ;   undefined4 DAT_02d7b7fc
 ;   undefined4 DAT_02d7b800
@@ -447,7 +447,7 @@ section .text
     LEA EAX,[EBP + 0xfffffeea]          ; 004d5150
         ;   Label: LAB_004d5150
     PUSH EAX                            ; 004d5156
-    PUSH 0x2d7b7f4                      ; 004d5157 | DAT_02d7b7f4
+    PUSH 0x2d7b7f4                      ; 004d5157 | CQuaternion4f_02d7b7f4
     LEA ESI,[EBP + 0xfffffeba]          ; 004d515c
     CALL core_xform.cpp_multiplyQuaternion_FUN_005f7640 ; 004d5162
         ;   XREF to: 005f7640 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_multiplyQuaternion_FUN_005f7640(CQuaternion4f * quat1_in, CQuaternion4f * quat2_in, CQuaternion4f * quat_out)
@@ -537,12 +537,12 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004d5264
     PUSH EAX                            ; 004d5265
     LEA ESI,[EBP + 0xfffffeaa]          ; 004d5266
-    MOV EDI,0x2d7b7f4                   ; 004d526c | DAT_02d7b7f4
+    MOV EDI,0x2d7b7f4                   ; 004d526c | CQuaternion4f_02d7b7f4
     CALL core_xform.cpp_multiplyQuaternion_FUN_005f7640 ; 004d5271
         ;   XREF to: 005f7640 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_multiplyQuaternion_FUN_005f7640(CQuaternion4f * quat1_in, CQuaternion4f * quat2_in, CQuaternion4f * quat_out)
     LEA ESI,[EBP + 0xfffffeaa]          ; 004d5276
     ADD ESP,0x8                         ; 004d527c
-    MOVSD ES:EDI,ESI                    ; 004d527f | DAT_02d7b7f4
+    MOVSD ES:EDI,ESI                    ; 004d527f | CQuaternion4f_02d7b7f4
     MOVSD ES:EDI,ESI                    ; 004d5280 | DAT_02d7b7f8
     MOVSD ES:EDI,ESI                    ; 004d5281 | DAT_02d7b7fc
     MOVSD ES:EDI,ESI                    ; 004d5282 | DAT_02d7b800

@@ -4034,6 +4034,9 @@ const float FLOAT_0063ecb5 = 0.5f;
 const float FLOAT_0063ece9 = -1.0f;
 const float FLOAT_0063f986 = -1.0f;
 
+// uchar constants
+const uchar s_EmptyChar_0063d87c = '\0';
+
 // undefined1 constants
 const undefined1 DAT_00635428 = 0x0A;
 const undefined1 DAT_00635459 = 0x0A;

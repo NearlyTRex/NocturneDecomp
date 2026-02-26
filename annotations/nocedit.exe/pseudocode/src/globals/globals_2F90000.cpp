@@ -4,28 +4,15 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x2F90000
 // =============================================================================
 
+// SChatOutMessage[50]
+SChatOutMessage g_ChatOutMessages[50] = {};
+
 // int
+int g_ChatOutCount = {};
+int INT_02f9c0bc = {};
 int g_SimFrameCount = {};
 
-// undefined1
-undefined1 DAT_02f98adc = {};
-undefined1 DAT_02f98add = {};
-undefined1 DAT_02f98ae8 = {};
-undefined1 DAT_02f98ae9 = {};
-undefined1 DAT_02f98aea = {};
-undefined1 DAT_02f98aeb = {};
-
 // undefined4
-undefined4 DAT_02f98ad0 = {};
-undefined4 DAT_02f98ad4 = {};
-undefined4 DAT_02f98ad8 = {};
-undefined4 DAT_02f98ae4 = {};
-undefined4 DAT_02f98bec = {};
-undefined4 DAT_02f98d00 = {};
-undefined4 DAT_02f9c060 = {};
-undefined4 DAT_02f9c064 = {};
-undefined4 DAT_02f9c068 = {};
-undefined4 DAT_02f9c0bc = {};
 undefined4 g_SimFrameHistory = {};
 undefined4 DAT_02f9c0c8 = {};
 undefined4 DAT_02f9c0cc = {};

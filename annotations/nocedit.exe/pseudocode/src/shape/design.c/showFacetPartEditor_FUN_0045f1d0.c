@@ -223,7 +223,7 @@ void __cdecl shape_design_c_showFacetPartEditor_FUN_0045f1d0(void)
         if (0xffff < g_EditorDetailLevel) {
           g_EditorDetailLevel = 0xffff;
         }
-        engine_texture_cpp_doNothing_FUN_005dd8f0();
+        engine_texture_cpp_doNothing_FUN_005dd8f0(g_EditorDetailLevel);
         g_KeyboardState[0x4e] = '\0';
       }
       if (g_KeyboardState[0x4a] != '\0') {
@@ -231,7 +231,7 @@ void __cdecl shape_design_c_showFacetPartEditor_FUN_0045f1d0(void)
         if (g_EditorDetailLevel < 0) {
           g_EditorDetailLevel = 0;
         }
-        engine_texture_cpp_doNothing_FUN_005dd8f0();
+        engine_texture_cpp_doNothing_FUN_005dd8f0(g_EditorDetailLevel);
         g_KeyboardState[0x4a] = '\0';
       }
       if (g_EditorDetailLevel < 0xffff) {

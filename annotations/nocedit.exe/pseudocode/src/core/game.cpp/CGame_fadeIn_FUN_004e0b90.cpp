@@ -9,7 +9,7 @@
 uint __cdecl core_game_cpp_CGame_fadeIn_FUN_004e0b90(CGame *this_ptr)
 
 {
-  if ((DAT_02d831ec != 0) && (DAT_02d831ec != 5)) {
+  if ((g_IrisFadeType != 0) && (g_IrisFadeType != 5)) {
     return 0;
   }
   return 1;

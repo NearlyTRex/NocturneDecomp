@@ -15,9 +15,9 @@ void __cdecl shape_design_c_showShapeEditorMenu_FUN_0046f290(void)
   
   engine_2d_c_setupViewportAndClipping_FUN_00401800(0,0,g_WindowWidth + -1,g_WindowHeight + -1);
   engine_2d_c_loadPaletteFile_FUN_004015a0("vga.act");
-  engine_2d_c_doNothing_FUN_00402860();
+  engine_2d_c_doNothing_FUN_00402860("vga.lte");
   engine_2d_c_loadOrBuildColorMap_FUN_00402930("vga.act");
-  engine_2d_c_doNothing_FUN_00401590();
+  engine_2d_c_doNothing_FUN_00401590("vga.act");
   wincore_wddvmem_cpp_setupColorPalette_FUN_005ed8f0();
   g_ModelCount = 8;
   g_EditorBackgroundColors = (int *)0x0;

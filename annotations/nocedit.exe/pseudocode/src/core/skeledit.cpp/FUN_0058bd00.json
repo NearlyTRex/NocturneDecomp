@@ -1,35 +1,21 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 71,
-        "message": "use of undeclared identifier 'DAT_0365a3e8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 108,
-        "line": 111,
-        "message": "use of undeclared identifier 'DAT_0365a3e8'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 356,
-    "complexity_score": 309,
+    "complexity_score": 284,
     "cross_reference_count": 0,
     "function_call_count": 11,
     "global_count": 16,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 154,
-    "suspect_count": 14,
+    "suspect_count": 12,
     "suspect_types": [
       "pointer_cast",
-      "stack_param",
-      "undefined_data"
+      "stack_param"
     ],
     "total_lines": 510
   },
@@ -197,8 +183,8 @@
     },
     {
       "addr": "0365a3e8",
-      "name": "DAT_0365a3e8",
-      "type": "undefined4",
+      "name": "g_SkeletonBoneNames",
+      "type": "char[200][50]",
       "value": null
     }
   ],
@@ -482,14 +468,6 @@
       "type": "stack_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 64,
-      "match": "DAT_0365a3e8",
-      "severity": "mild",
-      "text": "dest = &DAT_0365a3e8;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 71,
       "match": "(int *)((int)",
@@ -512,14 +490,6 @@
       "severity": "moderate",
       "text": "local_20 = (byte *)(local_30 + *(int *)(in_stack_00000004 + 0x40));",
       "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 104,
-      "match": "DAT_0365a3e8",
-      "severity": "mild",
-      "text": "(\"vertex %d is influenced by bone %s, but this bone isn't in the .BON file!\",local_2c,&DAT_0365a3e8 + iVar5 * 0x32);",
-      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",

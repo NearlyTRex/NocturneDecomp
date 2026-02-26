@@ -11,8 +11,8 @@
 ;   TerminatedCString s_removeChatOut_invalid_in_0063d259
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 DAT_02f98ad0
-;   undefined4 DAT_02f98ad4
+;   int g_ChatOutCount
+;   SChatOutMessage[50] g_ChatOutMessages
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
@@ -29,10 +29,10 @@ section .text
     TEST EBX,EBX                        ; 0053f4b6
     JL 0x0053f51b                       ; 0053f4b8
         ;   XREF to: 0053f51b (CONDITIONAL_JUMP)  ; LAB_0053f51b
-    CMP EBX,dword ptr [0x02f98ad0]      ; 0053f4ba | DAT_02f98ad0
+    CMP EBX,dword ptr [0x02f98ad0]      ; 0053f4ba | g_ChatOutCount
     JGE 0x0053f51b                      ; 0053f4c0
         ;   XREF to: 0053f51b (CONDITIONAL_JUMP)  ; LAB_0053f51b
-    MOV EDI,dword ptr [0x02f98ad0]      ; 0053f4c2 | DAT_02f98ad0
+    MOV EDI,dword ptr [0x02f98ad0]      ; 0053f4c2 | g_ChatOutCount
         ;   Label: LAB_0053f4c2
     DEC EDI                             ; 0053f4c8
     MOV EDX,EDI                         ; 0053f4c9
@@ -51,7 +51,7 @@ section .text
     SHL EAX,0x2                         ; 0053f4e7
     ADD EAX,EDX                         ; 0053f4ea
     SHL EAX,0x2                         ; 0053f4ec
-    ADD EAX,0x2f98ad4                   ; 0053f4ef | DAT_02f98ad4
+    ADD EAX,0x2f98ad4                   ; 0053f4ef | g_ChatOutMessages
     PUSH EAX                            ; 0053f4f4
     MOV EAX,EBX                         ; 0053f4f5
     SHL EAX,0x4                         ; 0053f4f7
@@ -59,9 +59,9 @@ section .text
     SHL EAX,0x2                         ; 0053f4fc
     ADD EAX,EBX                         ; 0053f4ff
     SHL EAX,0x2                         ; 0053f501
-    ADD EAX,0x2f98ad4                   ; 0053f504 | DAT_02f98ad4
+    ADD EAX,0x2f98ad4                   ; 0053f504 | g_ChatOutMessages
     PUSH EAX                            ; 0053f509
-    MOV dword ptr [0x02f98ad0],EDI      ; 0053f50a | DAT_02f98ad0
+    MOV dword ptr [0x02f98ad0],EDI      ; 0053f50a | g_ChatOutCount
     CALL crt_string.c_memmove_FUN_005fe5e0 ; 0053f510
         ;   XREF to: 005fe5e0 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_005fe5e0(void * dest, void * src, SIZE_T n)
     ADD ESP,0xc                         ; 0053f515

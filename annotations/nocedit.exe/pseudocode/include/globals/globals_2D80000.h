@@ -58,6 +58,7 @@ extern char g_PrevKeyboardState[600];
 // float
 extern float g_OverlayDisplayTimer;
 extern float FLOAT_02d831bc;
+extern float g_IrisFadeRadius;
 
 // int
 extern int INT_02d82568;
@@ -73,6 +74,9 @@ extern int INT_02d831c4;
 extern int INT_02d831c8;
 extern int INT_02d831cc;
 extern int INT_02d831d0;
+extern int g_IrisFadeType;
+extern int g_IrisFadeCenterX;
+extern int g_IrisFadeCenterY;
 extern int g_ProfileStartTime;
 extern int INT_02d83200;
 extern int INT_02d83204;
@@ -122,10 +126,4 @@ extern undefined1 DAT_02d82c82;
 extern undefined1 DAT_02d82c83;
 extern undefined1 DAT_02d831d6;
 extern undefined1 DAT_02d831eb;
-
-// undefined4
-extern undefined4 DAT_02d831ec;
-extern undefined4 DAT_02d831f0;
-extern undefined4 DAT_02d831f4;
-extern undefined4 DAT_02d831f8;
 

@@ -25,7 +25,7 @@
 ;   undefined4 DAT_00ba8db8
 ;   undefined4 DAT_00ba8db9
 ;   undefined4 DAT_00ba8ef8
-;   undefined4 DAT_015c2eac
+;   char* g_CoronaLightingTextureData
 ;
 ; *****************************************************************************
 
@@ -117,7 +117,7 @@ section .text
     MOV dword ptr [EBP + -0x18],EAX     ; 00450f16
     MOV EAX,dword ptr [EBP + 0x18]      ; 00450f19
     MOV EAX,dword ptr [EAX + 0x1c54]    ; 00450f1c
-    MOV [0x015c2eac],EAX                ; 00450f22 | DAT_015c2eac
+    MOV [0x015c2eac],EAX                ; 00450f22 | g_CoronaLightingTextureData
     MOV ECX,dword ptr [EBP + 0xffffffec] ; 00450f27
     MOV EBX,dword ptr [EBP + 0xffffffdc] ; 00450f2d
     MOV EAX,dword ptr [EBX]             ; 00450f33
@@ -158,7 +158,7 @@ section .text
     CMP EAX,dword ptr [EBX]             ; 00450f95
     JC 0x00450fa6                       ; 00450f97
         ;   XREF to: 00450fa6 (CONDITIONAL_JUMP)  ; LAB_00450fa6
-    MOV EBP,dword ptr [0x015c2eac]      ; 00450f99 | DAT_015c2eac
+    MOV EBP,dword ptr [0x015c2eac]      ; 00450f99 | g_CoronaLightingTextureData
     ADD EBP,dword ptr [EDX]             ; 00450f9f
     MOV AL,byte ptr [EBP]               ; 00450fa1
     ADD byte ptr [EDI],AL               ; 00450fa4 | DAT_00ba8db8 | DAT_00ba8db9

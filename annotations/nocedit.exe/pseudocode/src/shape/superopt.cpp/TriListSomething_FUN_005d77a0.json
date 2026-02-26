@@ -4,38 +4,20 @@
       {
         "category": "other",
         "column": 38,
-        "line": 41,
+        "line": 42,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 28,
-        "line": 55,
+        "line": 56,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 103,
-        "message": "use of undeclared identifier 'DAT_03f6bbf0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 120,
-        "message": "use of undeclared identifier 'DAT_03f6bbf0'"
       },
       {
         "category": "other",
         "column": 33,
-        "line": 152,
+        "line": 153,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "other",
-        "column": 46,
-        "line": 164,
-        "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "other",
@@ -66,6 +48,12 @@
         "column": 46,
         "line": 169,
         "message": "member reference base type 'double' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 46,
+        "line": 170,
+        "message": "member reference base type 'double' is not a structure or union"
       }
     ],
     "success": false,
@@ -73,13 +61,13 @@
   },
   "complexity": {
     "assembly_lines": 511,
-    "complexity_score": 670,
+    "complexity_score": 581,
     "cross_reference_count": 1,
     "function_call_count": 27,
     "global_count": 51,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 200,
-    "suspect_count": 44,
+    "pseudocode_lines": 201,
+    "suspect_count": 35,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_few",
@@ -88,7 +76,7 @@
       "undefined_data",
       "unknown_field"
     ],
-    "total_lines": 711
+    "total_lines": 712
   },
   "cross_references": [
     {
@@ -521,14 +509,14 @@
     },
     {
       "addr": "03f6bbe8",
-      "name": "DAT_03f6bbe8",
-      "type": "undefined4",
+      "name": "g_TriListTextureCount",
+      "type": "int",
       "value": null
     },
     {
       "addr": "03f6bbf0",
-      "name": "DAT_03f6bbf0",
-      "type": "undefined4",
+      "name": "g_TriListTextureNames",
+      "type": "char[50][80]",
       "value": null
     },
     {
@@ -900,7 +888,7 @@
   "suspects": [
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 13,
+      "line": 14,
       "match": "aiStackY_114c",
       "severity": "moderate",
       "text": "int aiStackY_114c [1009];",
@@ -908,15 +896,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 43,
+      "line": 44,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "iVar6 = iVar6 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar3) + -2;",
+      "text": "iVar5 = iVar5 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar3) + -2;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 60,
+      "line": 61,
       "match": "(double *)((int)",
       "severity": "mild",
       "text": "*(double *)((int)&((local_58.vertex_data)->position).x + iVar3) =",
@@ -924,7 +912,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 61,
+      "line": 62,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "(double)*(float *)((int)&g_LoadedVertices[0].vertex.x + iVar2);",
@@ -932,7 +920,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 62,
+      "line": 63,
       "match": "(double *)((int)",
       "severity": "mild",
       "text": "*(double *)((int)&((local_58.vertex_data)->position).y + iVar3) =",
@@ -940,7 +928,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 63,
+      "line": 64,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "(double)*(float *)((int)&g_LoadedVertices[0].vertex.y + iVar2);",
@@ -948,7 +936,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 64,
+      "line": 65,
       "match": "(double *)((int)",
       "severity": "mild",
       "text": "*(double *)((int)&((local_58.vertex_data)->position).z + iVar3) =",
@@ -956,7 +944,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 65,
+      "line": 66,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "(double)*(float *)((int)&g_LoadedVertices[0].vertex.z + iVar2);",
@@ -964,7 +952,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 68,
+      "line": 69,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "(double)*(float *)((int)&g_LoadedVertices[0].vertex.x + iVar2),",
@@ -972,7 +960,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 69,
+      "line": 70,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "(double)*(float *)((int)&g_LoadedVertices[0].vertex.y + iVar2),",
@@ -980,7 +968,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 70,
+      "line": 71,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "(double)*(float *)((int)&g_LoadedVertices[0].vertex.z + iVar2));",
@@ -988,7 +976,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 89,
+      "line": 90,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "local_168.vertex_idx_0 = *(int *)((int)g_ModelPolygonData[0].vertex_indices + local_28);",
@@ -996,7 +984,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 91,
+      "line": 92,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "(double)*(float *)((int)g_ModelPolygonData[0].uv_u + local_28) * 0.00390625;",
@@ -1004,87 +992,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 93,
+      "line": 94,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "(double)*(float *)((int)g_ModelPolygonData[0].uv_v + local_28) * 0.00390625;",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 95,
-      "match": "DAT_03f6bbe8",
-      "severity": "mild",
-      "text": "if (0 < DAT_03f6bbe8) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 96,
-      "match": "DAT_03f6bbf0",
-      "severity": "mild",
-      "text": "pcVar4 = &DAT_03f6bbf0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 102,
-      "match": "DAT_03f6bbe8",
-      "severity": "mild",
-      "text": "} while (iVar6 < DAT_03f6bbe8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 107,
-      "match": "DAT_03f6bbe8",
-      "severity": "mild",
-      "text": "if (0x31 < DAT_03f6bbe8) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 112,
-      "match": "DAT_03f6bbe8",
-      "severity": "mild",
-      "text": "iVar6 = DAT_03f6bbe8;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 113,
-      "match": "DAT_03f6bbf0",
-      "severity": "mild",
-      "text": "pcVar4 = &DAT_03f6bbf0 + DAT_03f6bbe8 * 0x50;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 113,
-      "match": "DAT_03f6bbe8",
-      "severity": "mild",
-      "text": "pcVar4 = &DAT_03f6bbf0 + DAT_03f6bbe8 * 0x50;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 124,
-      "match": "DAT_03f6bbe8",
-      "severity": "mild",
-      "text": "DAT_03f6bbe8 = DAT_03f6bbe8 + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 124,
-      "match": "DAT_03f6bbe8",
-      "severity": "mild",
-      "text": "DAT_03f6bbe8 = DAT_03f6bbe8 + 1;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 131,
+      "line": 132,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (2 < *(int *)((int)g_ModelPolygonData[0].vertex_indices + local_28 + -0x14)) {",
@@ -1092,7 +1008,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 134,
+      "line": 135,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "(double)*(float *)((int)g_ModelPolygonData[0].vertex_indices + iVar2 + 0x3c) *",
@@ -1100,7 +1016,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 137,
+      "line": 138,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "(double)*(float *)((int)g_ModelPolygonData[0].uv_u + iVar2 + 0x3c) * 0.00390625;",
@@ -1108,7 +1024,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 139,
+      "line": 140,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "(double)*(float *)((int)g_ModelPolygonData[0].uv_u + iVar2) * 0.00390625;",
@@ -1116,7 +1032,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 141,
+      "line": 142,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "(double)*(float *)((int)g_ModelPolygonData[0].uv_v + iVar2) * 0.00390625;",
@@ -1124,7 +1040,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 142,
+      "line": 143,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "local_168.vertex_idx_1 = *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar2 + -4);",
@@ -1132,7 +1048,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 143,
+      "line": 144,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "local_168.vertex_idx_2 = *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar2);",
@@ -1140,7 +1056,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 148,
+      "line": 149,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "local_34 = (int *)((int)&((CPoly *)((local_58.poly_array)->uv_coords + -1))->parent_obj +",
@@ -1148,7 +1064,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 152,
+      "line": 153,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "local_34[(uint)bVar7 * -2 + 2] = *(int *)((int)&local_168 + (uint)bVar7 * -8 + 8);",
@@ -1156,7 +1072,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 154,
+      "line": 155,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&local_168 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 0xc);",
@@ -1164,7 +1080,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 157,
+      "line": 158,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_34[0x10] = local_168.normal.x._0_4_;",
@@ -1172,7 +1088,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 158,
+      "line": 159,
       "match": "._4_4_",
       "severity": "mild",
       "text": "local_34[0x11] = local_168.normal.x._4_4_;",
@@ -1180,7 +1096,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 159,
+      "line": 160,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_34[0x12] = local_168.normal.y._0_4_;",
@@ -1188,7 +1104,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 160,
+      "line": 161,
       "match": "._4_4_",
       "severity": "mild",
       "text": "local_34[0x13] = local_168.normal.y._4_4_;",
@@ -1196,7 +1112,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 161,
+      "line": 162,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_34[0x14] = local_168.normal.z._0_4_;",
@@ -1204,7 +1120,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 162,
+      "line": 163,
       "match": "._4_4_",
       "severity": "mild",
       "text": "local_34[0x15] = local_168.normal.z._4_4_;",
@@ -1212,7 +1128,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 170,
+      "line": 171,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "} while (local_18 < *(int *)((int)g_ModelPolygonData[0].vertex_indices + local_24 + -0x14));",
@@ -1220,7 +1136,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 182,
+      "line": 183,
       "match": "fcos",
       "severity": "mild",
       "text": "fVar8 = (float10)fcos((float10)0.069813169999999994);",
@@ -1228,7 +1144,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 192,
+      "line": 193,
       "match": "DAT_03f6bbe4",
       "severity": "mild",
       "text": "DAT_03f6bbe4 = DAT_03f6bbe4 + 1;",
@@ -1236,7 +1152,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 192,
+      "line": 193,
       "match": "DAT_03f6bbe4",
       "severity": "mild",
       "text": "DAT_03f6bbe4 = DAT_03f6bbe4 + 1;",

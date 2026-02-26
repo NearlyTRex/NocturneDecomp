@@ -16,7 +16,7 @@
 ;   core_inv.cpp_CInventory_addItem_FUN_004fd600 at 004fe196
 ;   core_inv.cpp_CInventory_checkHasMatchingKey_FUN_005013d0 at 00501489
 ;   core_inv.cpp_CInventory_select_FUN_004ff800 at 004ff9cd
-;   core_netgame.cpp_CNetGame_FUN_00542370 at 00542429
+;   core_netgame.cpp_CNetGame_addChatHistory_FUN_00542370 at 00542429
 ;   core_script.cpp_CScript_step_FUN_0055a810 at 0055c13a
 ;
 ; *****************************************************************************

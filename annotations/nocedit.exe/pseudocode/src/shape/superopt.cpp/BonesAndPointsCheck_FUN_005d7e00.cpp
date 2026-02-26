@@ -82,7 +82,7 @@ LAB_005d7e9e:
           g_ModelPolygonData[g_PolygonCount].polygon_type = 1;
           g_ModelPolygonData[iVar10].part_assignment = 0;
           pcVar14 = g_ModelPolygonData[iVar10].texture_name;
-          pcVar13 = &DAT_03f6bbf0 + iVar7 * 0x50;
+          pcVar13 = g_TriListTextureNames[iVar7];
           do {
             cVar2 = *pcVar13;
             *pcVar14 = cVar2;
@@ -93,7 +93,7 @@ LAB_005d7e9e:
             pcVar14 = pcVar14 + 2;
           } while (cVar2 != '\0');
           pcVar14 = g_ModelPolygonData[g_PolygonCount].lightmap_name;
-          pcVar13 = &DAT_03f6bbf0 + iVar7 * 0x50;
+          pcVar13 = g_TriListTextureNames[iVar7];
           do {
             cVar2 = *pcVar13;
             *pcVar14 = cVar2;

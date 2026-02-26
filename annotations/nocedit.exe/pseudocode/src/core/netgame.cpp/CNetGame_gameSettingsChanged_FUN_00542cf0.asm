@@ -7,8 +7,8 @@
 ; CNetGame *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_netgame.cpp_CNetGame_FUN_00541390 at 005416b3
 ;   core_netgame.cpp_CNetGame_allocSimFrame_FUN_005406a0 at 00540de9
+;   core_netgame.cpp_CNetGame_runLobby_FUN_00541390 at 005416b3
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_0063dc53
@@ -17,7 +17,7 @@
 ;   int g_CurrentLineNumber
 ;   int g_LastPingTime
 ;   uint g_CurrentGameTime
-;   undefined4 DAT_02f7c8c4
+;   int INT_02f7c8c4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
@@ -33,22 +33,22 @@ section .text
     PUSH EDI                            ; 00542cf2
     PUSH EBP                            ; 00542cf3
     MOV ESI,dword ptr [0x02f7c8b8]      ; 00542cf4 | g_CurrentGameTime
-    MOV EDI,dword ptr [0x02f7c8c4]      ; 00542cfa | DAT_02f7c8c4
+    MOV EDI,dword ptr [0x02f7c8c4]      ; 00542cfa | INT_02f7c8c4
     MOV EBX,dword ptr [ESP + 0x14]      ; 00542d00
     CMP dword ptr [EBX],0x1             ; 00542d04
     JNZ 0x00542d95                      ; 00542d07
         ;   XREF to: 00542d95 (CONDITIONAL_JUMP)  ; LAB_00542d95
-    MOV EDI,dword ptr [0x02f7c8c4]      ; 00542d0d | DAT_02f7c8c4
+    MOV EDI,dword ptr [0x02f7c8c4]      ; 00542d0d | INT_02f7c8c4
         ;   Label: LAB_00542d0d
     INC EDI                             ; 00542d13
-    MOV dword ptr [0x02f7c8c4],EDI      ; 00542d14 | DAT_02f7c8c4
+    MOV dword ptr [0x02f7c8c4],EDI      ; 00542d14 | INT_02f7c8c4
     CALL wincore_winrun.cpp_getTime_FUN_005f2dc0 ; 00542d1a
         ;   XREF to: 005f2dc0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005f2dc0()
     MOV EDX,EAX                         ; 00542d1f
     MOV ECX,0x12                        ; 00542d21
     SAR EDX,0x1f                        ; 00542d26
     IDIV ECX                            ; 00542d29
-    MOV EDI,dword ptr [0x02f7c8c4]      ; 00542d2b | DAT_02f7c8c4
+    MOV EDI,dword ptr [0x02f7c8c4]      ; 00542d2b | INT_02f7c8c4
     MOV ECX,dword ptr [0x02f7c8b4]      ; 00542d31 | g_LastPingTime
     MOV EDX,EAX                         ; 00542d37
     SUB EAX,ECX                         ; 00542d39
@@ -82,7 +82,7 @@ section .text
     CMP EAX,ECX                         ; 00542d80
     JL 0x00542d68                       ; 00542d82
         ;   XREF to: 00542d68 (CONDITIONAL_JUMP)  ; LAB_00542d68
-    MOV dword ptr [0x02f7c8c4],EDI      ; 00542d84 | DAT_02f7c8c4
+    MOV dword ptr [0x02f7c8c4],EDI      ; 00542d84 | INT_02f7c8c4
         ;   Label: LAB_00542d84
     MOV dword ptr [0x02f7c8b8],ESI      ; 00542d8a | g_CurrentGameTime
     POP EBP                             ; 00542d90

@@ -16,11 +16,11 @@
 ; Referenced Globals:
 ;   float FLOAT_00629f23 = 25
 ;   double DOUBLE_00629f2b = 25
-;   undefined4 DAT_02d13eb4
-;   undefined4 DAT_02d13eb8
+;   int g_CharactersOnFireCount
+;   CCharacter*[50] g_CharactersOnFire
 ;   undefined4 DAT_02d13ebc
-;   undefined4 DAT_02d13f80
-;   undefined4 DAT_02d13f84
+;   int g_FlameCanCount
+;   CFlameCan*[150] g_FlameCans
 ;   undefined4 DAT_02d13f88
 ;
 ; Called Functions:
@@ -41,7 +41,7 @@ section .text
     MOV EBP,ESP                         ; 004c4c04
     SUB ESP,0x2c                        ; 004c4c06
     AND ESP,0xfffffff8                  ; 004c4c09
-    MOV EDX,dword ptr [0x02d13eb4]      ; 004c4c0c | DAT_02d13eb4
+    MOV EDX,dword ptr [0x02d13eb4]      ; 004c4c0c | g_CharactersOnFireCount
     XOR EDI,EDI                         ; 004c4c12
     TEST EDX,EDX                        ; 004c4c14
     JLE 0x004c4c5e                      ; 004c4c16
@@ -53,7 +53,7 @@ section .text
         ;   Label: LAB_004c4c22
     MOV EBX,dword ptr [ESP + 0x20]      ; 004c4c25
     MOV EDX,dword ptr [EAX + 0x20]      ; 004c4c29
-    MOV EBX,dword ptr [EBX + 0x2d13eb8] ; 004c4c2c | DAT_02d13eb8 | DAT_02d13ebc
+    MOV EBX,dword ptr [EBX + 0x2d13eb8] ; 004c4c2c | g_CharactersOnFire | DAT_02d13ebc
     CMP EDX,0x2                         ; 004c4c32
     JZ 0x004c4cc3                       ; 004c4c35
         ;   XREF to: 004c4cc3 (CONDITIONAL_JUMP)  ; LAB_004c4cc3
@@ -62,7 +62,7 @@ section .text
         ;   XREF to: 004c4cc3 (CONDITIONAL_JUMP)  ; LAB_004c4cc3
     MOV ECX,dword ptr [ESP + 0x20]      ; 004c4c48
         ;   Label: LAB_004c4c48
-    MOV EBX,dword ptr [0x02d13eb4]      ; 004c4c4c | DAT_02d13eb4
+    MOV EBX,dword ptr [0x02d13eb4]      ; 004c4c4c | g_CharactersOnFireCount
         ;   Label: LAB_004c4c4c
     ADD ECX,0x4                         ; 004c4c52
     INC EDI                             ; 004c4c55
@@ -70,7 +70,7 @@ section .text
     CMP EDI,EBX                         ; 004c4c5a
     JL 0x004c4c22                       ; 004c4c5c
         ;   XREF to: 004c4c22 (CONDITIONAL_JUMP)  ; LAB_004c4c22
-    MOV EDI,dword ptr [0x02d13f80]      ; 004c4c5e | DAT_02d13f80
+    MOV EDI,dword ptr [0x02d13f80]      ; 004c4c5e | g_FlameCanCount
         ;   Label: LAB_004c4c5e
     XOR ESI,ESI                         ; 004c4c64
     TEST EDI,EDI                        ; 004c4c66
@@ -80,7 +80,7 @@ section .text
     ADD EAX,0x4                         ; 004c4c6d
     XOR EDI,EDI                         ; 004c4c70
     MOV dword ptr [ESP + 0x1c],EAX      ; 004c4c72
-    MOV EDX,dword ptr [EDI + 0x2d13f84] ; 004c4c76 | DAT_02d13f84 | DAT_02d13f88
+    MOV EDX,dword ptr [EDI + 0x2d13f84] ; 004c4c76 | g_FlameCans | DAT_02d13f88
         ;   Label: LAB_004c4c76
     LEA EBX,[EDX + 0x20]                ; 004c4c7c
     MOV EAX,dword ptr [ESP + 0x1c]      ; 004c4c7f
@@ -101,7 +101,7 @@ section .text
     SAHF                                ; 004c4ca7
     JBE 0x004c4d3b                      ; 004c4ca8
         ;   XREF to: 004c4d3b (CONDITIONAL_JUMP)  ; LAB_004c4d3b
-    MOV ECX,dword ptr [0x02d13f80]      ; 004c4cae | DAT_02d13f80
+    MOV ECX,dword ptr [0x02d13f80]      ; 004c4cae | g_FlameCanCount
         ;   Label: LAB_004c4cae
     INC ESI                             ; 004c4cb4
     ADD EDI,0x4                         ; 004c4cb5

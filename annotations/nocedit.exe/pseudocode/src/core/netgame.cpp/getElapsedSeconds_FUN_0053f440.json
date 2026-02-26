@@ -1,0 +1,143 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 40,
+    "complexity_score": 12,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 3,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 12,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 52
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0053f440",
+    "address_range": [
+      [
+        "0053f440",
+        "0053f496"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_netgame.cpp_getElapsedSeconds_FUN_0053f440",
+    "signature": "float __cdecl core_netgame_cpp_getElapsedSeconds_FUN_0053f440(uint timestamp)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "0063d235",
+      "name": "DOUBLE_0063d235",
+      "type": "double",
+      "value": "0.0000152587890625"
+    },
+    {
+      "addr": "0063d23d",
+      "name": "DOUBLE_0063d23d",
+      "type": "double",
+      "value": "30"
+    },
+    {
+      "addr": "02f7c8b8",
+      "name": "g_CurrentGameTime",
+      "type": "uint",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.151515151515151,
+    "instruction_count": 33,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 4,
+      "BRANCH": 1,
+      "CBRANCH": 2,
+      "COPY": 77,
+      "FLOAT2FLOAT": 4,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_MULT": 1,
+      "FLOAT_NAN": 4,
+      "INT2FLOAT": 2,
+      "INT_ADD": 7,
+      "INT_AND": 19,
+      "INT_EQUAL": 8,
+      "INT_LEFT": 8,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 10,
+      "INT_OR": 10,
+      "INT_SBORROW": 2,
+      "INT_SLESS": 4,
+      "INT_SUB": 3,
+      "INT_XOR": 1,
+      "INT_ZEXT": 8,
+      "LOAD": 9,
+      "POPCOUNT": 4,
+      "RETURN": 2,
+      "STORE": 5
+    },
+    "pcode_op_count": 203
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 20,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "timestamp",
+        "offset": 4,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0053f446",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": []
+}

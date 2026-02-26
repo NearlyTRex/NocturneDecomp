@@ -10,6 +10,7 @@
 # - stack_pattern_analysis.txt - Stack pattern correlation
 # - param_mismatch_analysis.txt - Parameter count mismatch analysis
 # - pass_by_value_report.txt - Pass-by-value struct argument detection
+# - annotation_quality.txt - Annotation quality issues (unnamed funcs/params, type issues)
 # - virtual_files.csv - CSV for graphing
 # - functions.csv - CSV for analysis
 # - completion_pie.svg - Overall completion pie chart
@@ -2407,6 +2408,425 @@ def generate_pass_by_value_report(functions, output_path):
     return report_text
 
 
+def _get_function_display_name(func):
+    """Extract the meaningful part of a function name (without file prefix and address suffix).
+
+    Names follow the pattern: {file_prefix}_{name}_FUN_{hex_addr}
+    Returns the {name} part, or 'FUN_{hex_addr}' if there is no meaningful name.
+    """
+    name = func.get('function', {}).get('name', '')
+    # Strip trailing _FUN_XXXXXXXX
+    import re
+    m = re.match(r'^(.+?)(_FUN_[0-9a-fA-F]+)$', name)
+    if not m:
+        return name
+    prefix_and_name = m.group(1)
+    fun_suffix = m.group(2)
+
+    # Try to strip the virtual file prefix
+    vfile = func.get('_virtual_file', '')
+    if vfile:
+        file_prefix = vfile.replace(os.sep, '_')
+        if prefix_and_name == file_prefix:
+            # Unnamed function: name is just file_prefix + _FUN_XXXX
+            return fun_suffix[1:]  # Strip leading underscore -> 'FUN_XXXX'
+        expected = file_prefix + '_'
+        if prefix_and_name.startswith(expected):
+            remainder = prefix_and_name[len(expected):]
+            return remainder if remainder else fun_suffix[1:]
+    return prefix_and_name
+
+
+def _is_unnamed_function(func):
+    """Check if a function still has a Ghidra auto-generated name (FUN_XXXXXXXX)."""
+    import re
+    name = func.get('function', {}).get('name', '')
+    vfile = func.get('_virtual_file', '')
+    if not vfile:
+        return bool(re.match(r'^FUN_[0-9a-fA-F]+$', name))
+
+    file_prefix = vfile.replace(os.sep, '_')
+    expected_unnamed = file_prefix + '_FUN_'
+    if name.startswith(expected_unnamed):
+        rest = name[len(expected_unnamed):]
+        return bool(re.match(r'^[0-9a-fA-F]+$', rest))
+    return False
+
+
+def _build_caller_counts(functions):
+    """Build a map of function address -> number of callers by inverting function_calls."""
+    caller_counts = defaultdict(int)
+    for func in functions:
+        seen_addrs = set()
+        for call in func.get('function_calls', []):
+            addr = call.get('addr', '')
+            if addr and addr not in seen_addrs:
+                caller_counts[addr] += 1
+                seen_addrs.add(addr)
+    return caller_counts
+
+
+def generate_annotation_quality_report(functions, output_path):
+    """Generate report on annotation quality issues to prioritize manual annotation work.
+
+    Identifies unnamed functions, unnamed parameters, and type correctness issues
+    based on heuristic analysis of suspects and stack frame data.
+
+    Args:
+        functions: List of function data dicts (from load_function_data)
+        output_path: Directory to write report
+    """
+    import re
+
+    # Filter out CRT/entry functions
+    non_crt = [f for f in functions if not _is_crt_or_entry(f.get('_virtual_file', ''))]
+
+    # Build caller count index for prioritization
+    caller_counts = _build_caller_counts(functions)
+
+    # =========================================================================
+    # Collect data for all sections
+    # =========================================================================
+
+    # 1. Unnamed functions (FUN_XXXXXXXX auto-names)
+    unnamed_functions = []
+    for func in non_crt:
+        if _is_unnamed_function(func):
+            func_info = func.get('function', {})
+            addr = func_info.get('address', '')
+            unnamed_functions.append({
+                'func': func,
+                'name': func_info.get('name', ''),
+                'addr': addr,
+                'convention': func_info.get('convention', '?'),
+                'vfile': func.get('_virtual_file', ''),
+                'callers': caller_counts.get(addr, 0),
+            })
+
+    # 2. Unnamed parameters (param_N pattern)
+    unnamed_params = []
+    for func in non_crt:
+        sf = func.get('stack_frame', {})
+        params = [v for v in sf.get('variables', []) if v.get('is_param')]
+        unnamed = [p for p in params if re.match(r'^param_\d+$', p.get('name', ''))]
+        if unnamed:
+            named = [p for p in params if not re.match(r'^param_\d+$', p.get('name', ''))]
+            func_info = func.get('function', {})
+            unnamed_params.append({
+                'func': func,
+                'name': func_info.get('name', ''),
+                'display_name': _get_function_display_name(func),
+                'addr': func_info.get('address', ''),
+                'vfile': func.get('_virtual_file', ''),
+                'unnamed': [(p.get('name', ''), p.get('type', '')) for p in unnamed],
+                'named': [(p.get('name', ''), p.get('type', '')) for p in named],
+                'unnamed_count': len(unnamed),
+                'total_params': len(params),
+            })
+
+    # 3. Type correctness issues
+    wrong_return_void = []       # void + extraout_EAX
+    wrong_return_wide = []       # non-void + extraout_EDX (64-bit return)
+    missing_params_reg = []      # in_EAX, in_ECX, in_EDX
+    wrong_convention = []        # unaff_*
+    undefined_types = []         # undefined4/2/1 in variables
+    missing_params_stack = []    # in_stack_*
+
+    for func in non_crt:
+        func_info = func.get('function', {})
+        suspects = func.get('suspects', [])
+        sig = func_info.get('signature', '')
+
+        suspect_types = defaultdict(list)
+        for s in suspects:
+            suspect_types[s.get('type', '')].append(s.get('match', ''))
+
+        display_name = _get_function_display_name(func)
+        addr = func_info.get('address', '')
+        vfile = func.get('_virtual_file', '')
+
+        # Wrong return type: void function with extraout_EAX/EDX/EAX_EAX
+        if 'extra_output' in suspect_types:
+            matches = suspect_types['extra_output']
+            eax_matches = [m for m in matches if 'EAX' in m]
+            is_void = sig.startswith('void ')
+            if is_void and eax_matches:
+                suggested = 'int' if any('EAX_EAX' not in m for m in eax_matches) else 'longlong'
+                wrong_return_void.append({
+                    'name': func_info.get('name', ''),
+                    'display_name': display_name,
+                    'addr': addr,
+                    'vfile': vfile,
+                    'matches': eax_matches,
+                    'signature': sig,
+                    'suggested': 'Likely returns %s or void*' % suggested,
+                })
+            # Wide return: non-void + extraout_EDX suggests EDX:EAX 64-bit return
+            edx_matches = [m for m in matches if m.startswith('extraout_EDX')]
+            if not is_void and edx_matches:
+                wrong_return_wide.append({
+                    'name': func_info.get('name', ''),
+                    'display_name': display_name,
+                    'addr': addr,
+                    'vfile': vfile,
+                    'matches': edx_matches,
+                    'signature': sig,
+                    'suggested': 'Likely returns 64-bit value (longlong) via EDX:EAX',
+                })
+
+        # Missing register params: in_EAX, in_ECX, in_EDX
+        if 'register_param' in suspect_types:
+            matches = suspect_types['register_param']
+            # Suggest calling convention based on which registers
+            has_ecx = any('ECX' in m for m in matches)
+            has_edx = any('EDX' in m for m in matches)
+            if has_ecx and not has_edx:
+                conv_hint = '__thiscall (ECX = this pointer)'
+            elif has_ecx and has_edx:
+                conv_hint = '__fastcall (ECX, EDX params)'
+            else:
+                conv_hint = 'register-based calling convention'
+            missing_params_reg.append({
+                'name': func_info.get('name', ''),
+                'display_name': display_name,
+                'addr': addr,
+                'vfile': vfile,
+                'matches': matches,
+                'signature': sig,
+                'suggested': 'Likely %s' % conv_hint,
+            })
+
+        # Wrong calling convention: unaff_*
+        if 'unaffected_reg' in suspect_types:
+            matches = suspect_types['unaffected_reg']
+            wrong_convention.append({
+                'name': func_info.get('name', ''),
+                'display_name': display_name,
+                'addr': addr,
+                'vfile': vfile,
+                'matches': matches,
+                'signature': sig,
+                'suggested': 'Calling convention may be wrong (preserved registers being used)',
+            })
+
+        # Missing stack params: in_stack_*
+        if 'stack_param' in suspect_types:
+            matches = suspect_types['stack_param']
+            missing_params_stack.append({
+                'name': func_info.get('name', ''),
+                'display_name': display_name,
+                'addr': addr,
+                'vfile': vfile,
+                'matches': matches,
+                'signature': sig,
+                'suggested': 'Signature is missing stack parameters entirely',
+            })
+
+        # Undefined types in stack variables
+        sf = func.get('stack_frame', {})
+        undef_vars = []
+        for v in sf.get('variables', []):
+            vtype = v.get('type', '')
+            if re.search(r'\bundefined\d*\b', vtype):
+                undef_vars.append((v.get('name', ''), vtype, v.get('is_param', False)))
+        if undef_vars:
+            param_undefs = [(n, t) for n, t, ip in undef_vars if ip]
+            local_undefs = [(n, t) for n, t, ip in undef_vars if not ip]
+            undefined_types.append({
+                'name': func_info.get('name', ''),
+                'display_name': display_name,
+                'addr': addr,
+                'vfile': vfile,
+                'param_undefs': param_undefs,
+                'local_undefs': local_undefs,
+                'total_undefs': len(undef_vars),
+            })
+
+    # Count functions with any type issue (deduplicate by address)
+    type_issue_addrs = set()
+    for lst in [wrong_return_void, wrong_return_wide, missing_params_reg,
+                wrong_convention, undefined_types, missing_params_stack]:
+        for entry in lst:
+            type_issue_addrs.add(entry['addr'])
+
+    # =========================================================================
+    # Build report
+    # =========================================================================
+    lines = []
+    lines.append("=" * 100)
+    lines.append("ANNOTATION QUALITY REPORT")
+    lines.append("=" * 100)
+    lines.append("")
+    lines.append("This report identifies functions, parameters, and types that still use Ghidra")
+    lines.append("default names or show signs of incorrect type assignments. Use it to prioritize")
+    lines.append("manual annotation work.")
+    lines.append("(CRT/entry functions are excluded)")
+    lines.append("")
+
+    # ---- Section 1: Summary Statistics ----
+    total = len(non_crt)
+    unnamed_func_count = len(unnamed_functions)
+    unnamed_param_count = len(unnamed_params)
+    type_issue_count = len(type_issue_addrs)
+
+    lines.append("=" * 100)
+    lines.append("SUMMARY STATISTICS")
+    lines.append("=" * 100)
+    lines.append("")
+    lines.append("  Total functions analyzed:          %s" % fmt_num(total))
+    lines.append("  Unnamed functions (FUN_):          %s (%4.1f%%)" % (
+        fmt_num(unnamed_func_count),
+        unnamed_func_count * 100.0 / total if total else 0))
+    lines.append("  Functions with unnamed params:     %s (%4.1f%%)" % (
+        fmt_num(unnamed_param_count),
+        unnamed_param_count * 100.0 / total if total else 0))
+    lines.append("  Functions with type issues:        %s (%4.1f%%)" % (
+        fmt_num(type_issue_count),
+        type_issue_count * 100.0 / total if total else 0))
+    lines.append("")
+    lines.append("  Type issue breakdown:")
+    lines.append("    Wrong return type (void):          %d" % len(wrong_return_void))
+    lines.append("    Wrong return type (wide/64-bit):   %d" % len(wrong_return_wide))
+    lines.append("    Missing register params:           %d" % len(missing_params_reg))
+    lines.append("    Wrong calling convention:          %d" % len(wrong_convention))
+    lines.append("    Undefined types in variables:      %d" % len(undefined_types))
+    lines.append("    Unresolved stack params:           %d" % len(missing_params_stack))
+    lines.append("")
+
+    # ---- Section 2: Unnamed Functions ----
+    lines.append("=" * 100)
+    lines.append("UNNAMED FUNCTIONS (still using FUN_XXXXXXXX)")
+    lines.append("=" * 100)
+    lines.append("")
+    lines.append("Sorted by caller count (most-referenced first = highest priority to name).")
+    lines.append("")
+
+    # Group by virtual file, sorted by max callers in group
+    by_vfile = defaultdict(list)
+    for entry in unnamed_functions:
+        by_vfile[entry['vfile']].append(entry)
+
+    # Sort groups by max caller count descending
+    sorted_vfiles = sorted(by_vfile.keys(),
+                           key=lambda vf: max(e['callers'] for e in by_vfile[vf]),
+                           reverse=True)
+
+    for vfile in sorted_vfiles:
+        entries = sorted(by_vfile[vfile], key=lambda e: -e['callers'])
+        lines.append("  %s (%d unnamed)" % (vfile, len(entries)))
+        for entry in entries:
+            lines.append("    0x%-8s  %-12s  %d callers" % (
+                entry['addr'], entry['convention'], entry['callers']))
+        lines.append("")
+
+    if not unnamed_functions:
+        lines.append("  (none)")
+        lines.append("")
+
+    # ---- Section 3: Unnamed Parameters ----
+    lines.append("=" * 100)
+    lines.append("UNNAMED PARAMETERS (still using param_N)")
+    lines.append("=" * 100)
+    lines.append("")
+    lines.append("Sorted by number of unnamed parameters (most unnamed first).")
+    lines.append("")
+
+    unnamed_params.sort(key=lambda e: (-e['unnamed_count'], e['name']))
+
+    for entry in unnamed_params:
+        lines.append("  %s" % entry['display_name'])
+        lines.append("    Address: 0x%s  File: %s" % (entry['addr'], entry['vfile']))
+        unnamed_str = ', '.join('%s (%s)' % (n, t) for n, t in entry['unnamed'])
+        lines.append("    Unnamed: %s" % unnamed_str)
+        if entry['named']:
+            named_str = ', '.join('%s (%s)' % (n, t) for n, t in entry['named'])
+            lines.append("    Named:   %s" % named_str)
+        lines.append("")
+
+    if not unnamed_params:
+        lines.append("  (none)")
+        lines.append("")
+
+    # ---- Section 4: Type Correctness Issues ----
+    lines.append("=" * 100)
+    lines.append("TYPE CORRECTNESS ISSUES (heuristic-based)")
+    lines.append("=" * 100)
+    lines.append("")
+
+    def _write_type_issue_section(title, entries, lines):
+        """Write a subsection of type correctness issues."""
+        lines.append("-" * 80)
+        lines.append("%s (%d)" % (title, len(entries)))
+        lines.append("-" * 80)
+        lines.append("")
+        if not entries:
+            lines.append("  (none)")
+            lines.append("")
+            return
+        for entry in entries:
+            lines.append("  %s" % entry['display_name'])
+            lines.append("    Address: 0x%s  File: %s" % (entry['addr'], entry['vfile']))
+            lines.append("    Evidence: %s" % ', '.join(entry.get('matches', [])))
+            lines.append("    Signature: %s" % entry.get('signature', '?'))
+            lines.append("    Suggested: %s" % entry.get('suggested', ''))
+            lines.append("")
+
+    _write_type_issue_section(
+        "Wrong return type (void function with extra output)",
+        wrong_return_void, lines)
+
+    _write_type_issue_section(
+        "Wrong return type (64-bit return via EDX:EAX)",
+        wrong_return_wide, lines)
+
+    _write_type_issue_section(
+        "Missing register parameters (likely wrong calling convention)",
+        missing_params_reg, lines)
+
+    _write_type_issue_section(
+        "Wrong calling convention (unaffected register usage)",
+        wrong_convention, lines)
+
+    _write_type_issue_section(
+        "Unresolved stack parameters (missing from signature)",
+        missing_params_stack, lines)
+
+    # Undefined types section is slightly different (no matches/signature)
+    lines.append("-" * 80)
+    lines.append("Undefined types in variables (%d)" % len(undefined_types))
+    lines.append("-" * 80)
+    lines.append("")
+
+    if not undefined_types:
+        lines.append("  (none)")
+        lines.append("")
+    else:
+        undefined_types.sort(key=lambda e: (-e['total_undefs'], e['name']))
+        for entry in undefined_types:
+            lines.append("  %s" % entry['display_name'])
+            lines.append("    Address: 0x%s  File: %s" % (entry['addr'], entry['vfile']))
+            if entry['param_undefs']:
+                lines.append("    Params:  %s" % ', '.join(
+                    '%s (%s)' % (n, t) for n, t in entry['param_undefs']))
+            if entry['local_undefs']:
+                lines.append("    Locals:  %s" % ', '.join(
+                    '%s (%s)' % (n, t) for n, t in entry['local_undefs']))
+            lines.append("    Suggested: Resolve undefined types to concrete types")
+            lines.append("")
+
+    report_text = "\n".join(lines)
+
+    report_path = os.path.join(output_path, "annotation_quality.txt")
+    try:
+        with open(report_path, 'w') as f:
+            f.write(report_text)
+        log_info("Wrote annotation quality report: %s" % report_path)
+    except Exception as e:
+        log_info("Failed to write annotation quality report: %s" % str(e))
+
+    return report_text
+
+
 def generate_analysis_report(pseudocode_src_dir, output_path):
     """Generate all analysis reports from exported function JSON files.
 
@@ -2439,6 +2859,7 @@ def generate_analysis_report(pseudocode_src_dir, output_path):
     generate_compilation_summary_report(functions, output_path)
     generate_compilation_detailed_report(functions, output_path)
     generate_pass_by_value_report(functions, output_path)
+    generate_annotation_quality_report(functions, output_path)
     generate_csv_data(functions, files, output_path)
 
     # Generate struct quality report

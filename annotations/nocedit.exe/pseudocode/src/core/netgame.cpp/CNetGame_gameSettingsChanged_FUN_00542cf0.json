@@ -6,29 +6,27 @@
   },
   "complexity": {
     "assembly_lines": 83,
-    "complexity_score": 74,
+    "complexity_score": 39,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 7,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 39,
-    "suspect_count": 3,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 122
   },
   "cross_references": [
     {
-      "addr": "00541390",
-      "from_addr": "005416b3",
-      "name": "core_netgame.cpp_CNetGame_FUN_00541390",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "005406a0",
       "from_addr": "00540de9",
       "name": "core_netgame.cpp_CNetGame_allocSimFrame_FUN_005406a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00541390",
+      "from_addr": "005416b3",
+      "name": "core_netgame.cpp_CNetGame_runLobby_FUN_00541390",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -95,8 +93,8 @@
     },
     {
       "addr": "02f7c8c4",
-      "name": "DAT_02f7c8c4",
-      "type": "undefined4",
+      "name": "INT_02f7c8c4",
+      "type": "int",
       "value": null
     }
   ],
@@ -152,30 +150,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_02f7c8c4",
-      "severity": "mild",
-      "text": "DAT_02f7c8c4 = DAT_02f7c8c4 + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_02f7c8c4",
-      "severity": "mild",
-      "text": "DAT_02f7c8c4 = DAT_02f7c8c4 + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 31,
-      "match": "DAT_02f7c8c4",
-      "severity": "mild",
-      "text": "pCVar4->players[0].player_id = DAT_02f7c8c4;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

@@ -1,0 +1,225 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 91,
+    "complexity_score": 44,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 15,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 44,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 135
+  },
+  "cross_references": [
+    {
+      "addr": "005406a0",
+      "from_addr": "00540b6a",
+      "name": "core_netgame.cpp_CNetGame_allocSimFrame_FUN_005406a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00541e40",
+      "from_addr": "00541f6c",
+      "name": "core_netgame.cpp_CNetGame_processChatOut_FUN_00541e40",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00542370",
+    "address_range": [
+      [
+        "00542370",
+        "00542461"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_netgame.cpp_CNetGame_addChatHistory_FUN_00542370",
+    "signature": "void __cdecl core_netgame_cpp_CNetGame_addChatHistory_FUN_00542370(CNetGame *this_ptr,SNetworkAddr *sender_addr,int message_id,char *sender_name,char *message)"
+  },
+  "function_calls": [
+    {
+      "addr": "004d7f20",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_displayMessage_FUN_004d7f20"
+    },
+    {
+      "addr": "005fe5e0",
+      "is_variadic": false,
+      "name": "crt_string.c_memmove_FUN_005fe5e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0067b654",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "02d81a9c"
+    },
+    {
+      "addr": "02d81a9c",
+      "name": "g_CGameInstance",
+      "type": "CGame",
+      "value": null
+    },
+    {
+      "addr": "02f7c8cc",
+      "name": "g_ChatHistoryCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02f7c8d0",
+      "name": "g_ChatHistory",
+      "type": "SChatHistory[400]",
+      "value": null
+    },
+    {
+      "addr": "02f7c8d4",
+      "name": "DAT_02f7c8d4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f7c8d8",
+      "name": "DAT_02f7c8d8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f7c8dc",
+      "name": "DAT_02f7c8dc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f7c8dd",
+      "name": "DAT_02f7c8dd",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f7c8de",
+      "name": "DAT_02f7c8de",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f7c8df",
+      "name": "DAT_02f7c8df",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f7c8f0",
+      "name": "DAT_02f7c8f0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f7c8f1",
+      "name": "DAT_02f7c8f1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f7c8f2",
+      "name": "DAT_02f7c8f2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f7c8f3",
+      "name": "DAT_02f7c8f3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f7c9f0",
+      "name": "DAT_02f7c9f0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.644736842105263,
+    "instruction_count": 76,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 17,
+      "BRANCH": 1,
+      "CALL": 2,
+      "CBRANCH": 5,
+      "COPY": 59,
+      "INT_ADD": 38,
+      "INT_AND": 75,
+      "INT_CARRY": 12,
+      "INT_EQUAL": 46,
+      "INT_LEFT": 6,
+      "INT_LESS": 5,
+      "INT_MULT": 7,
+      "INT_NOTEQUAL": 6,
+      "INT_OR": 15,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 13,
+      "INT_SLESS": 27,
+      "INT_SUB": 25,
+      "INT_XOR": 3,
+      "INT_ZEXT": 4,
+      "LOAD": 16,
+      "POPCOUNT": 21,
+      "RETURN": 1,
+      "STORE": 20
+    },
+    "pcode_op_count": 429
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CNetGame *"
+      },
+      {
+        "is_param": true,
+        "name": "sender_addr",
+        "offset": 8,
+        "size": 4,
+        "type": "SNetworkAddr *"
+      },
+      {
+        "is_param": true,
+        "name": "message_id",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "sender_name",
+        "offset": 16,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "message",
+        "offset": 20,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
+}

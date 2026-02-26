@@ -15,13 +15,13 @@ SUMMARY
 --------------------------------------------------
 Functions with parameter estimates: 5101
 Functions with no callers: 3242
-Parameter mismatches detected: 516
-Signature accuracy rate: 72.2%
+Parameter mismatches detected: 510
+Signature accuracy rate: 72.6%
 
 Mismatches by confidence:
-  High confidence:   25 (multiple call sites agree)
+  High confidence:   23 (multiple call sites agree)
   Medium confidence: 70 (some agreement)
-  Low confidence:    421 (limited data)
+  Low confidence:    417 (limited data)
 
 ====================================================================================================
 HIGH CONFIDENCE MISMATCHES - Likely signature issues
@@ -217,26 +217,6 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       shape_cramtex.cpp_qsortRectang at 00446145: 0 reg [], 1 stack
       shape_cramtex.cpp_CCramTex_fin at 004478c5: 0 reg [], 1 stack
 
-  engine_2d.c_doNothing_FUN_00401590
-    Declared: 0 params, Estimated: 1 params (+1)
-    Call sites: 3, Confidence: high
-    File: engine/2d.c
-    Signature: void __cdecl engine_2d_c_doNothing_FUN_00401590(void)
-    Sample call sites:
-      shape_design.c_showShapeEditor at 0046f2e6: 0 reg [], 1 stack
-      shape_design.c_loadPalette_FUN at 0046e9f7: 0 reg [], 1 stack
-      shape_design.c_loadPalette_FUN at 0046eb24: 0 reg [], 1 stack
-
-  engine_2d.c_doNothing_FUN_00402860
-    Declared: 0 params, Estimated: 1 params (+1)
-    Call sites: 3, Confidence: high
-    File: engine/2d.c
-    Signature: void __cdecl engine_2d_c_doNothing_FUN_00402860(void)
-    Sample call sites:
-      shape_design.c_showShapeEditor at 0046f2ca: 0 reg [], 1 stack
-      shape_design.c_loadPalette_FUN at 0046e9df: 0 reg [], 1 stack
-      shape_design.c_loadPalette_FUN at 0046eb08: 0 reg [], 1 stack
-
   engine_3d.c_makeGrayscaleColor_FUN_004039c0
     Declared: 1 params, Estimated: 2 params (+1)
     Call sites: 5, Confidence: high
@@ -338,7 +318,7 @@ MEDIUM CONFIDENCE MISMATCHES
 LOW CONFIDENCE MISMATCHES (limited data)
 ====================================================================================================
 
-  421 functions with low-confidence mismatches
+  417 functions with low-confidence mismatches
   Sample:
     cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_F declared:1 est:5 (+4)
     cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_ declared:1 est:3 (+2)
@@ -355,10 +335,10 @@ LOW CONFIDENCE MISMATCHES (limited data)
 MISMATCH DIRECTION ANALYSIS
 ====================================================================================================
 
-Functions where declaration has MORE params than estimated: 87
+Functions where declaration has MORE params than estimated: 86
   (May indicate: extra params not being passed, or params in globals)
 
-Functions where declaration has FEWER params than estimated: 429
+Functions where declaration has FEWER params than estimated: 424
   (May indicate: missing params in signature, or calling convention issue)
 
 Distribution of differences (estimated - declared):
@@ -369,14 +349,14 @@ Distribution of differences (estimated - declared):
   -5 params: 2 functions
   -4 params: 3 functions
   -3 params: 9 functions
-  -2 params: 17 functions
+  -2 params: 16 functions
   -1 params: 51 functions
-  +1 params: 191 functions
-  +2 params: 95 functions
+  +1 params: 188 functions
+  +2 params: 94 functions
   +3 params: 53 functions
-  +4 params: 73 functions
-  +5 params: 6 functions
-  +6 params: 4 functions
+  +4 params: 74 functions
+  +5 params: 5 functions
+  +6 params: 3 functions
   +7 params: 4 functions
   +8 params: 1 functions
   +9 params: 2 functions

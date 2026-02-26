@@ -274,7 +274,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
           g_CheatSystemEnabled = 0;
         }
         if (iVar4 == 0) {
-          core_netgame_cpp_CNetGame_FUN_0053fd00(g_CNetGamePtr);
+          core_netgame_cpp_CNetGame_disconnect_FUN_0053fd00(g_CNetGamePtr,1);
           goto LAB_004db434;
         }
       }

@@ -373,7 +373,7 @@ LAB_004e2376:
     }
     pcVar4 = g_ChapterDisplayName;
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\core\\game.cpp",0xf77);
-    g_CurrentDisplayText = *(char **)(&DAT_0067b854 + iVar3 * 4);
+    g_CurrentDisplayText = g_ChapterDisplayTexts[iVar3];
     pcVar7 = local_40[iVar3];
     do {
       cVar1 = *pcVar7;

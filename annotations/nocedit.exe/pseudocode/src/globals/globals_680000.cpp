@@ -3825,6 +3825,7 @@ int INT_00680648 = 0x2D;
 int g_DynamicRenderMode = 0x1;
 int g_ConfirmNewActorNames = 0x1;
 int INT_00680818 = 0x501502f9;
+int INT_00680a04 = 0x1;
 int g_CNPCClassVersion = 0x4;
 int g_CPassengerClassVersion = 0x6;
 int g_CPendulumClassVersion = 0x8;
@@ -3940,6 +3941,12 @@ int g_HeapFlags = 0x10000;
 int* g_CurrentScreenPtr = nullptr;
 int* g_CurrentZBufferPtr = nullptr;
 
+// int[12]
+int g_PathMapLRUCounters[12] = {
+    -1, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000,
+    0x00000000, 0x00000000, 0x00000000, 0x00000000
+};
+
 // int[96]
 int g_LightDebugScreenX[96] = {
     0x00000180, 0x00000200, 0x00000180, 0x00000200, 0x00000000, 0x00000080, 0x00000000, 0x00000000,
@@ -4001,9 +4008,6 @@ undefined4 DAT_00680834 = 0;
 undefined4 DAT_00680908 = 0;
 undefined4 DAT_0068090c = 0;
 undefined4 DAT_00680974 = 0;
-undefined4 DAT_00680a04 = 0x00000001;
-undefined4 DAT_00680bd8 = 0xFFFFFFFF;
-undefined4 DAT_00680bdc = 0;
 undefined4 DAT_00684edc = 0;
 undefined4 DAT_00684fd0 = 0;
 undefined4 DAT_00685094 = 0;

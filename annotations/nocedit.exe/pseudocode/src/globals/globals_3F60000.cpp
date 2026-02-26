@@ -281,6 +281,9 @@ char g_SoundAmbientSoundName[40] = {};
 // char[40][40]
 char g_SoundMatchedFilenames[40][40] = {};
 
+// char[50][80]
+char g_TriListTextureNames[50][80] = {};
+
 // double
 double g_AudioLatencySeconds = {};
 
@@ -410,6 +413,7 @@ int INT_03f6bb8c = {};
 int INT_03f6bb90 = {};
 int INT_03f6bb94 = {};
 int g_LogInitialized = {};
+int g_TriListTextureCount = {};
 int INT_03f6cb90 = {};
 int INT_03f6cb94 = {};
 int INT_03f6cb98 = {};
@@ -452,7 +456,6 @@ undefined4 DAT_03f6bb1c = {};
 undefined4 DAT_03f6bb20 = {};
 undefined4 DAT_03f6bb24 = {};
 undefined4 DAT_03f6bbe4 = {};
-undefined4 DAT_03f6bbe8 = {};
 
 // void*
 void* g_PrimaryMixBuffer = {};

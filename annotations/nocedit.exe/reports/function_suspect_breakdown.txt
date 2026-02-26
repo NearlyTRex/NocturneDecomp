@@ -4,42 +4,42 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 4084 functions
-  1 suspects: 808 functions
-  2 suspects: 469 functions
+  0 suspects: 4109 functions
+  1 suspects: 809 functions
+  2 suspects: 465 functions
   3 suspects: 246 functions
-  4 suspects: 211 functions
-  5 suspects: 177 functions
-  6 suspects: 143 functions
-  7 suspects: 100 functions
+  4 suspects: 208 functions
+  5 suspects: 174 functions
+  6 suspects: 136 functions
+  7 suspects: 101 functions
   8 suspects: 96 functions
-  9 suspects: 77 functions
-  10 suspects: 65 functions
-  11 suspects: 54 functions
-  12 suspects: 51 functions
-  13 suspects: 56 functions
-  14 suspects: 55 functions
-  15 suspects: 33 functions
+  9 suspects: 76 functions
+  10 suspects: 66 functions
+  11 suspects: 56 functions
+  12 suspects: 52 functions
+  13 suspects: 53 functions
+  14 suspects: 52 functions
+  15 suspects: 32 functions
   16 suspects: 33 functions
-  17 suspects: 30 functions
+  17 suspects: 28 functions
   18 suspects: 33 functions
   19 suspects: 21 functions
-  20 suspects: 21 functions
+  20 suspects: 22 functions
   21 suspects: 15 functions
-  22 suspects: 19 functions
+  22 suspects: 18 functions
   23 suspects: 25 functions
   24 suspects: 18 functions
-  25 suspects: 16 functions
-  26 suspects: 12 functions
+  25 suspects: 15 functions
+  26 suspects: 11 functions
   27 suspects: 11 functions
-  28 suspects: 12 functions
+  28 suspects: 10 functions
   29 suspects: 10 functions
   30 suspects: 5 functions
   31 suspects: 5 functions
   32 suspects: 5 functions
   33 suspects: 6 functions
   34 suspects: 4 functions
-  35 suspects: 8 functions
+  35 suspects: 9 functions
   36 suspects: 10 functions
   37 suspects: 3 functions
   38 suspects: 1 functions
@@ -48,7 +48,7 @@ SUSPECT COUNT DISTRIBUTION
   41 suspects: 8 functions
   42 suspects: 1 functions
   43 suspects: 2 functions
-  44 suspects: 5 functions
+  44 suspects: 4 functions
   45 suspects: 2 functions
   46 suspects: 2 functions
   47 suspects: 3 functions
@@ -59,12 +59,12 @@ SUSPECT COUNT DISTRIBUTION
   52 suspects: 3 functions
   53 suspects: 3 functions
   54 suspects: 2 functions
-  55 suspects: 2 functions
+  55 suspects: 3 functions
   56 suspects: 3 functions
   57 suspects: 1 functions
   58 suspects: 3 functions
   59 suspects: 4 functions
-  60 suspects: 2 functions
+  60 suspects: 1 functions
   62 suspects: 2 functions
   63 suspects: 1 functions
   64 suspects: 2 functions
@@ -149,10 +149,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       Function declares 0 params but call sites push 4 (4 missing)...
     engine_2d.c_getTextWrapEnabled_FUN_004027f0        (  4 lines)
       Function declares 0 params but call sites push 4 (4 missing)...
-    engine_2d.c_doNothing_FUN_00401590                 (  4 lines)
-      Function declares 0 params but call sites push 1 (1 missing)...
-    engine_2d.c_doNothing_FUN_00402860                 (  4 lines)
-      Function declares 0 params but call sites push 1 (1 missing)...
     engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN (  4 lines)
       Function declares 1 params but call sites push 3 (2 missing)...
     sound_sndmain.cpp_isRecordingSystemActive_FUN_005a (  4 lines)
@@ -168,6 +164,8 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     engine_drender.cpp_CDemonRenderer_matrixPush_FUN_0 (  5 lines)
       Function declares 0 params but call sites push 5 (5 missing)...
     engine_drender.cpp_CDemonRenderer_setLightDirectio (  5 lines)
+      Function declares 2 params but call sites push 6 (4 missing)...
+    core_netgame.cpp_copyInteger_FUN_00543e30          (  5 lines)
       Function declares 2 params but call sites push 6 (4 missing)...
     core_bugs.cpp_CBugs_FUN_00426410                   (  5 lines)
       Function declares 1 params but call sites push 2 (1 missing)...
@@ -185,9 +183,11 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       Function declares 3 params but call sites push 4 (1 missing)...
     cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAli (  6 lines)
       Function declares 4 params but call sites push 6 (2 missing)...
+    cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAli (  6 lines)
+      Function declares 4 params but call sites push 6 (2 missing)...
     ... and 131 more
 
-  [pointer_cast] (115 functions)
+  [pointer_cast] (119 functions)
   ------------------------------------------------------------
     core_dlight.cpp_drawGrayscalePixel_FUN_00473360    (  5 lines)
       *(int *)((int)g_ScreenBufferArray[y] + x * 4) = grayscale_va...
@@ -227,9 +227,9 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       iVar1 = *(int *)((int)&g_MuzzleFlashPool[1].frames_remaining...
     core_stranger.cpp_CStranger_getCarryObjToBodyXForm ( 16 lines)
       out_matrix = (CMatrix3x4f *)((int)out_matrix + ((uint)bVar3 ...
-    core_actor.cpp_syncActorTypeIDs_FUN_0040c7c0       ( 17 lines)
-      piVar1 = (int *)((int)g_ActorClassRegistrations + iVar3);...
-    ... and 95 more
+    core_netgame.cpp_findSimFrame_FUN_0053f550         ( 17 lines)
+      if (sequence_number == *(int *)((int)&g_SimFrameHistory + iV...
+    ... and 99 more
 
   [decompiler_intrinsic] (48 functions)
   ------------------------------------------------------------
@@ -319,50 +319,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       puVar4 = &pCVar3[-1].bit_state.accumulated_bits;...
     ... and 20 more
 
-  [param_count_too_many] (32 functions)
-  ------------------------------------------------------------
-    sound_sndmain.cpp_setNextSfxDelay_FUN_005a8b40     (  5 lines)
-      Function declares 1 params but call sites push 0 (1 extra)...
-    support_trisock.cpp_cleanupWinsock_FUN_005e1ee0    (  6 lines)
-      Function declares 2 params but call sites push 0 (2 extra)...
-    engine_texture.cpp_loadAndUpdateTexture_FUN_005dd9 (  6 lines)
-      Function declares 3 params but call sites push 2 (1 extra)...
-    engine_font.cpp_CBitFont_drawTextWrapper_FUN_004cd (  6 lines)
-      Function declares 6 params but call sites push 2 (4 extra)...
-    core_skeleton.cpp_CDeformableModel_rotateVertices_ (  6 lines)
-      Function declares 3 params but call sites push 1 (2 extra)...
-    engine_texture.cpp_updateTextureWithPalette_FUN_00 (  7 lines)
-      Function declares 2 params but call sites push 1 (1 extra)...
-    core_morph.cpp_CMorph_setupModelFromKeyframed_FUN_ (  7 lines)
-      Function declares 4 params but call sites push 3 (1 extra)...
-    core_skeleton.cpp_CDeformableModel_lightVertices_F (  7 lines)
-      Function declares 3 params but call sites push 1 (2 extra)...
-    core_bodypart.cpp_scaleVector_FUN_0041b4e0         (  7 lines)
-      Function declares 3 params but call sites push 1 (2 extra)...
-    shape_edittool.cpp_CEditorTools_showCheatInputDial (  7 lines)
-      Function declares 5 params but call sites push 2 (3 extra)...
-    engine_ini.cpp_CIniFile_setFloatValue_FUN_004fbd30 (  8 lines)
-      Function declares 3 params but call sites push 2 (1 extra)...
-    core_script.cpp_parseCommandWithDefaultTemplates_F (  8 lines)
-      Function declares 7 params but call sites push 1 (6 extra)...
-    engine_dosio.c_changeFileExtension_FUN_00482050    (  9 lines)
-      Function declares 3 params but call sites push 2 (1 extra)...
-    core_procedur.cpp_CProceduralTexture_calculateWave (  9 lines)
-      Function declares 3 params but call sites push 2 (1 extra)...
-    core_dmodel.cpp_CKeyFramedModel_scaleUniform_FUN_0 (  9 lines)
-      Function declares 2 params but call sites push 1 (1 extra)...
-    core_box.cpp_CBoundingBox3D_doesSphereIntersect_FU ( 10 lines)
-      Function declares 3 params but call sites push 1 (2 extra)...
-    sound_sndmain.cpp_setNextSfxStaticPosition_FUN_005 ( 11 lines)
-      Function declares 3 params but call sites push 0 (3 extra)...
-    shape_design.c_polygonMergerSelectAndProcess_FUN_0 ( 12 lines)
-      Function declares 2 params but call sites push 1 (1 extra)...
-    sound_mp3.cpp_CMP3Decoder_putByte_FUN_0052f260     ( 14 lines)
-      Function declares 3 params but call sites push 2 (1 extra)...
-    cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitma ( 16 lines)
-      Function declares 7 params but call sites push 6 (1 extra)...
-    ... and 12 more
-
   [warning_type_propagation] (32 functions)
   ------------------------------------------------------------
     core_zombie.cpp_CZombie_FUN_005fbda0               ( 11 lines)
@@ -406,6 +362,50 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     core_mobster.cpp_CMobster_processDamage_FUN_005277 ( 64 lines)
       /* WARNING: Type propagation algorithm not settling */...
     ... and 12 more
+
+  [param_count_too_many] (31 functions)
+  ------------------------------------------------------------
+    sound_sndmain.cpp_setNextSfxDelay_FUN_005a8b40     (  5 lines)
+      Function declares 1 params but call sites push 0 (1 extra)...
+    engine_texture.cpp_loadAndUpdateTexture_FUN_005dd9 (  6 lines)
+      Function declares 3 params but call sites push 2 (1 extra)...
+    engine_font.cpp_CBitFont_drawTextWrapper_FUN_004cd (  6 lines)
+      Function declares 6 params but call sites push 2 (4 extra)...
+    core_skeleton.cpp_CDeformableModel_rotateVertices_ (  6 lines)
+      Function declares 3 params but call sites push 1 (2 extra)...
+    engine_texture.cpp_updateTextureWithPalette_FUN_00 (  7 lines)
+      Function declares 2 params but call sites push 1 (1 extra)...
+    core_morph.cpp_CMorph_setupModelFromKeyframed_FUN_ (  7 lines)
+      Function declares 4 params but call sites push 3 (1 extra)...
+    core_skeleton.cpp_CDeformableModel_lightVertices_F (  7 lines)
+      Function declares 3 params but call sites push 1 (2 extra)...
+    core_bodypart.cpp_scaleVector_FUN_0041b4e0         (  7 lines)
+      Function declares 3 params but call sites push 1 (2 extra)...
+    shape_edittool.cpp_CEditorTools_showCheatInputDial (  7 lines)
+      Function declares 5 params but call sites push 2 (3 extra)...
+    engine_ini.cpp_CIniFile_setFloatValue_FUN_004fbd30 (  8 lines)
+      Function declares 3 params but call sites push 2 (1 extra)...
+    core_script.cpp_parseCommandWithDefaultTemplates_F (  8 lines)
+      Function declares 7 params but call sites push 1 (6 extra)...
+    engine_dosio.c_changeFileExtension_FUN_00482050    (  9 lines)
+      Function declares 3 params but call sites push 2 (1 extra)...
+    core_procedur.cpp_CProceduralTexture_calculateWave (  9 lines)
+      Function declares 3 params but call sites push 2 (1 extra)...
+    core_dmodel.cpp_CKeyFramedModel_scaleUniform_FUN_0 (  9 lines)
+      Function declares 2 params but call sites push 1 (1 extra)...
+    core_box.cpp_CBoundingBox3D_doesSphereIntersect_FU ( 10 lines)
+      Function declares 3 params but call sites push 1 (2 extra)...
+    sound_sndmain.cpp_setNextSfxStaticPosition_FUN_005 ( 11 lines)
+      Function declares 3 params but call sites push 0 (3 extra)...
+    shape_design.c_polygonMergerSelectAndProcess_FUN_0 ( 12 lines)
+      Function declares 2 params but call sites push 1 (1 extra)...
+    sound_mp3.cpp_CMP3Decoder_putByte_FUN_0052f260     ( 14 lines)
+      Function declares 3 params but call sites push 2 (1 extra)...
+    cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitma ( 16 lines)
+      Function declares 7 params but call sites push 6 (1 extra)...
+    shape_dsemodel.cpp_CDSEModel_scaleX_FUN_0048fd70   ( 23 lines)
+      Function declares 2 params but call sites push 1 (1 extra)...
+    ... and 11 more
 
   [stack_ref] (31 functions)
   ------------------------------------------------------------
@@ -451,7 +451,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       local_8.value[0] = (char * [1])&stack0x0000000c;...
     ... and 11 more
 
-  [undefined_data] (19 functions)
+  [undefined_data] (17 functions)
   ------------------------------------------------------------
     core_msnedit.cpp_FUN_0053d3a0                      (  4 lines)
       return (int *)&DAT_0063cbe7;...
@@ -465,14 +465,10 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       ((HKEY)&DAT_80000002,key_path,0,"suck",0,0x20006,...
     core_charactr.cpp_CCharacter_renderOpaque_FUN_0042 ( 31 lines)
       if (DAT_02f43978 != 0) {...
-    core_netgame.cpp_CNetGame_FUN_0053f780             ( 33 lines)
-      DAT_02f98ad0 = 0;...
     engine_matrix.c_projectTransformedPoint_FUN_0050cd ( 38 lines)
       point->screen_x = (int)&DAT_80000010;...
     core_script.cpp_CScript_loadLineToBuffer_FUN_00566 ( 44 lines)
       pcVar5 = &DAT_00643f94;...
-    core_netgame.cpp_CNetGame_sendMyStateChanged_FUN_0 ( 45 lines)
-      DAT_00680a04 = 1;...
     core_moloch.cpp_CMoloch_renderOpaque_FUN_00529750  ( 45 lines)
       if (DAT_02f43978 != 0) {...
     core_biggs.cpp_CBiggs_renderOpaque_FUN_004189b0    ( 46 lines)
@@ -533,7 +529,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       /* WARNING: Removing unreachable block (ram,0x0045be1d) */...
     shape_design.c_setupViewMatrix_FUN_0045ba60        ( 42 lines)
       /* WARNING: Removing unreachable block (ram,0x0045bb46) */...
-    core_game.cpp_CGame_playerControls_FUN_004dbd80    ( 50 lines)
+    core_game.cpp_CGame_playerControls_FUN_004dbd80    ( 49 lines)
       /* WARNING: Removing unreachable block (ram,0x004dbe2e) */...
     cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_004 ( 53 lines)
       /* WARNING: Removing unreachable block (ram,0x004871be) */...
@@ -673,8 +669,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: crt/strstream.cpp, Lines: 5, Types: ['negative_offset', 'special_crt_function']
   crt_strstream.cpp_ostrstream_destructor_thunk_from_ostream_F
     File: crt/strstream.cpp, Lines: 5, Types: ['negative_offset', 'special_crt_function']
-  core_netgame.cpp_CNetGame_FUN_00543ab0
-    File: core/netgame.cpp, Lines: 5, Types: ['stack_param']
   core_dcamera.cpp_log2Custom_FUN_00450a90
     File: core/dcamera.cpp, Lines: 5, Types: ['stack_param']
   core_bugs.cpp_FUN_00427b60
@@ -745,5 +739,7 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/msnedit.cpp, Lines: 6, Types: ['stack_param']
   core_set.cpp_CDemonSet_reinitCamera_FUN_0056b7e0
     File: core/set.cpp, Lines: 6, Types: ['unnamed_param']
+  core_tvbat.cpp_FUN_005e3ec0
+    File: core/tvbat.cpp, Lines: 6, Types: ['unnamed_param']
 
-  ... and 665 more
+  ... and 661 more

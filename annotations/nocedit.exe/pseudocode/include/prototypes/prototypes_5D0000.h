@@ -274,7 +274,7 @@ void __cdecl engine_texture_cpp_freeTextureCache_FUN_005dd7a0(void);
 SMRGLHeaderExtended * __cdecl engine_texture_cpp_ensureTextureLoaded_FUN_005dd800(SMRGLTextureBasic *texture);
 SMRGLHeaderExtended * __cdecl engine_texture_cpp_loadTextureAndGetData_FUN_005dd8c0(SMRGLTextureBasic *texture_info);
 void __cdecl engine_texture_cpp_clearTextureCache_FUN_005dd8e0(void);
-void __cdecl engine_texture_cpp_doNothing_FUN_005dd8f0(void);
+void __cdecl engine_texture_cpp_doNothing_FUN_005dd8f0(int detail_level);
 void __cdecl engine_texture_cpp_updateTextureWithPalette_FUN_005dd900(SMRGLTextureBasic *texture_to_load,SMRGLTextureBasic *texture_to_update);
 void __cdecl engine_texture_cpp_loadAndUpdateTexture_FUN_005dd930(SMRGLTextureBasic *tex_to_load,SMRGLTextureBasic *tex_to_update, SRGBColorPalette *palette_data);
 void __cdecl engine_texture_cpp_enableTextureFiltering_FUN_005dd960(int enabled);

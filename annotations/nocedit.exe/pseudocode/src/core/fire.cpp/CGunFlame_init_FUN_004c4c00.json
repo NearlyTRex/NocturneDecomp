@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 136,
-    "complexity_score": 115,
+    "complexity_score": 50,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 8,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 50,
-    "suspect_count": 6,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 186
   },
   "cross_references": [
@@ -76,14 +74,14 @@
     },
     {
       "addr": "02d13eb4",
-      "name": "DAT_02d13eb4",
-      "type": "undefined4",
+      "name": "g_CharactersOnFireCount",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02d13eb8",
-      "name": "DAT_02d13eb8",
-      "type": "undefined4",
+      "name": "g_CharactersOnFire",
+      "type": "CCharacter*[50]",
       "value": null
     },
     {
@@ -94,14 +92,14 @@
     },
     {
       "addr": "02d13f80",
-      "name": "DAT_02d13f80",
-      "type": "undefined4",
+      "name": "g_FlameCanCount",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02d13f84",
-      "name": "DAT_02d13f84",
-      "type": "undefined4",
+      "name": "g_FlameCans",
+      "type": "CFlameCan*[150]",
       "value": null
     },
     {
@@ -203,54 +201,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_02d13eb4",
-      "severity": "mild",
-      "text": "if (0 < DAT_02d13eb4) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_02d13eb8",
-      "severity": "mild",
-      "text": "this_ptr_00 = *(CCharacter **)((int)&DAT_02d13eb8 + local_20);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 34,
-      "match": "DAT_02d13eb4",
-      "severity": "mild",
-      "text": "} while (iVar4 < DAT_02d13eb4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 37,
-      "match": "DAT_02d13f80",
-      "severity": "mild",
-      "text": "if (0 < DAT_02d13f80) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 41,
-      "match": "DAT_02d13f84",
-      "severity": "mild",
-      "text": "this_ptr_01 = *(CFlameCan **)((int)&DAT_02d13f84 + iVar5);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 50,
-      "match": "DAT_02d13f80",
-      "severity": "mild",
-      "text": "} while (iVar4 < DAT_02d13f80);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

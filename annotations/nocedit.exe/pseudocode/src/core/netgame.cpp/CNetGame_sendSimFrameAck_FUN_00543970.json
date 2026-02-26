@@ -6,16 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 101,
-    "complexity_score": 69,
+    "complexity_score": 54,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 12,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 39,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
-      "undefined_data"
+      "pointer_cast"
     ],
     "total_lines": 140
   },
@@ -120,8 +119,8 @@
     },
     {
       "addr": "02f7c8c8",
-      "name": "DAT_02f7c8c8",
-      "type": "undefined4",
+      "name": "UINT_02f7c8c8",
+      "type": "uint",
       "value": null
     }
   ],
@@ -208,14 +207,6 @@
       "severity": "mild",
       "text": "pSVar2 = (SPlayerControl *)((int)pSVar2 + ((uint)bVar4 * -2 + 1) * 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 40,
-      "match": "DAT_02f7c8c8",
-      "severity": "mild",
-      "text": "DAT_02f7c8c8 = g_CurrentGameTime;",
-      "type": "undefined_data"
     }
   ]
 }

@@ -4,7 +4,7 @@
       {
         "category": "undeclared_identifier",
         "column": 39,
-        "line": 27,
+        "line": 26,
         "message": "use of undeclared identifier 'stack0xfffffff4'"
       }
     ],
@@ -13,19 +13,19 @@
   },
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 90,
+    "complexity_score": 97,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 25,
-    "suspect_count": 5,
+    "pseudocode_lines": 22,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
       "stack_ref",
       "unnamed_param"
     ],
-    "total_lines": 63
+    "total_lines": 60
   },
   "cross_references": [
     {
@@ -134,7 +134,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 20,
+      "line": 19,
       "match": "&stack0xfffffff4",
       "severity": "moderate",
       "text": "((SOCKADDR_IN *)&stack0xfffffff4,&local_1c);",
@@ -142,27 +142,35 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 20,
       "match": "param_2",
       "severity": "mild",
-      "text": "pSVar2 = param_2 + -(uint)bVar5;",
+      "text": "param_2->ip_address = *(uint *)pSVar3;",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 21,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "uVar1 = *(uint *)((int)pSVar3 + (uint)bVar4 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
       "line": 22,
       "match": "param_2",
       "severity": "mild",
-      "text": "param_2->ip_address = *(uint *)pSVar4;",
+      "text": "param_2[-(uint)bVar4].port = (short)uVar1;",
       "type": "unnamed_param"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Unnamed function parameter",
       "line": 23,
-      "match": "(uint *)((int)",
+      "match": "param_2",
       "severity": "mild",
-      "text": "uVar1 = *(uint *)((int)pSVar4 + (uint)bVar5 * -8 + 4);",
-      "type": "pointer_cast"
+      "text": "param_2[-(uint)bVar4].other = (short)((uint)uVar1 >> 0x10);",
+      "type": "unnamed_param"
     }
   ]
 }

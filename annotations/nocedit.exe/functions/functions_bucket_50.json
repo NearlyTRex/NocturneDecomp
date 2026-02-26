@@ -61893,9 +61893,27 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_netgame.cpp_FUN_0053f550",
+    "name":"core_netgame.cpp_findSimFrame_FUN_0053f550",
     "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"sequence_number",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ],
       "ret_storage":{
         "reg":"EAX",
         "size":4,
@@ -61919,8 +61937,28 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_netgame.cpp_FUN_0053f650",
-    "ret":"void"
+    "name":"core_netgame.cpp_purgeOldSimFrames_FUN_0053f650",
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"min_sequence",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ]
+    }
   },
   {
     "addr":"0053f6d0",
@@ -62009,7 +62047,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_netgame.cpp_CNetGame_FUN_00540550",
+    "name":"core_netgame.cpp_CNetGame_flushIncomingPackets_FUN_00540550",
     "ret":"void",
     "vars":{
       "params":[
@@ -62483,12 +62521,12 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_netgame.cpp_CNetGame_FUN_00543ad0",
+    "name":"core_netgame.cpp_matchPacketHeader_FUN_00543ad0",
     "ret":"int",
     "vars":{
       "params":[
         {
-          "name":"this_ptr",
+          "name":"a",
           "storage":{
             "offset":4,
             "size":4,
@@ -62501,7 +62539,23 @@
               }
             ]
           },
-          "type":"CNetGame*"
+          "type":"SNetPacketHeader*"
+        },
+        {
+          "name":"b",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"SNetPacketHeader*"
         }
       ],
       "ret_storage":{

@@ -6,23 +6,23 @@
   },
   "complexity": {
     "assembly_lines": 181,
-    "complexity_score": 99,
+    "complexity_score": 100,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 10,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 84,
+    "pseudocode_lines": 85,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 265
+    "total_lines": 266
   },
   "cross_references": [
     {
       "addr": "00541390",
       "from_addr": "00541916",
-      "name": "core_netgame.cpp_CNetGame_FUN_00541390",
+      "name": "core_netgame.cpp_CNetGame_runLobby_FUN_00541390",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -117,8 +117,8 @@
     },
     {
       "addr": "02f7c8c4",
-      "name": "DAT_02f7c8c4",
-      "type": "undefined4",
+      "name": "INT_02f7c8c4",
+      "type": "int",
       "value": null
     }
   ],
@@ -263,9 +263,9 @@
     {
       "description": "Complex pointer cast",
       "line": 62,
-      "match": "(int *)((int)",
+      "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "local_53[iVar4 * 10 + (uint)bVar8 * -2 + 1] = *(int *)((int)pCVar2 + (uint)bVar8 * -8 + 0x40);",
+      "text": "local_53[iVar4 * 10 + (uint)bVar8 * -2 + 1] = *(uint *)((int)pCVar2 + (uint)bVar8 * -8 + 0x40)",
       "type": "pointer_cast"
     }
   ]

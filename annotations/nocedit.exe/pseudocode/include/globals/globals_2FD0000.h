@@ -20,10 +20,6 @@ extern CMouse g_CMouseInstance;
 // CPathMap[12]
 extern CPathMap CPathMap_ARRAY_02fd9060[12];
 
-// undefined1
-extern undefined1 DAT_02fd8d24;
-extern undefined1 DAT_02fd8d25;
-
-// undefined4
-extern undefined4 DAT_02fd8d20;
+// uchar[768]
+extern uchar g_PaletteData[768];
 

@@ -6,13 +6,13 @@
   },
   "complexity": {
     "assembly_lines": 222,
-    "complexity_score": 160,
+    "complexity_score": 150,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 13,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 90,
-    "suspect_count": 6,
+    "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
       "undefined_data"
@@ -123,8 +123,8 @@
     },
     {
       "addr": "02f7c8c8",
-      "name": "DAT_02f7c8c8",
-      "type": "undefined4",
+      "name": "UINT_02f7c8c8",
+      "type": "uint",
       "value": null
     },
     {
@@ -293,14 +293,6 @@
       "severity": "mild",
       "text": "*(int *)((int)&g_SimFrameHistory + iVar1)) {",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 78,
-      "match": "DAT_02f7c8c8",
-      "severity": "mild",
-      "text": "local_20 = (float)(int)(g_CurrentGameTime - DAT_02f7c8c8) * (float)1.52587890625e-05;",
-      "type": "undefined_data"
     }
   ]
 }

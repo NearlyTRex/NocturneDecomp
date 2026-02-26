@@ -23,7 +23,7 @@
 ;   uint g_CurrentGameTime
 ;
 ; Called Functions:
-;   core_netgame.cpp_CNetGame_FUN_00540550
+;   core_netgame.cpp_CNetGame_flushIncomingPackets_FUN_00540550
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
 ;   support_trisock.cpp_bindAndInvalidateSocket_FUN_005e1d20
@@ -71,7 +71,7 @@ section .text
     PUSH 0x1ddf                         ; 0053fc0e
     PUSH EBX                            ; 0053fc13
     CALL support_trisock.cpp_bindSocket_FUN_005e1b80 ; 0053fc14
-        ;   XREF to: 005e1b80 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_bindSocket_FUN_005e1b80(uint16_t port, _SOCKET * socket_handle)
+        ;   XREF to: 005e1b80 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_bindSocket_FUN_005e1b80(_SOCKET * socket_handle, uint16_t port)
     ADD ESP,0x8                         ; 0053fc19
     TEST EAX,EAX                        ; 0053fc1c
     JZ 0x0053fcc5                       ; 0053fc1e
@@ -94,8 +94,8 @@ section .text
         ;   XREF to: 0053fcdf (CONDITIONAL_JUMP)  ; LAB_0053fcdf
     PUSH ESI                            ; 0053fc4e
     MOV EBP,0x1                         ; 0053fc4f
-    CALL core_netgame.cpp_CNetGame_FUN_00540550 ; 0053fc54
-        ;   XREF to: 00540550 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_FUN_00540550(CNetGame * this_ptr)
+    CALL core_netgame.cpp_CNetGame_flushIncomingPackets_FUN_00540550 ; 0053fc54
+        ;   XREF to: 00540550 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_flushIncomingPackets_FUN_00540550(CNetGame * this_ptr)
     ADD ESP,0x4                         ; 0053fc59
     MOV dword ptr [0x02f7c8b8],EBP      ; 0053fc5c | g_CurrentGameTime
     CALL wincore_winrun.cpp_getTime_FUN_005f2dc0 ; 0053fc62

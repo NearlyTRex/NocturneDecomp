@@ -32,7 +32,7 @@
 ;   core_dmodel.cpp_freeAllModels_FUN_00478cb0
 ;   core_inivar.cpp_writeIniData_FUN_004fc510
 ;   core_mission.cpp_CDemonMission_checkMemory_FUN_00522d20
-;   core_netgame.cpp_CNetGame_FUN_0053f830
+;   core_netgame.cpp_CNetGame_shutdown_FUN_0053f830
 ;   core_skeleton.cpp_freeAllModels_FUN_005a1dc0
 ;   core_skeleton.cpp_freeAllSkeletons_FUN_005a1ea0
 ;   core_sound.cpp_CSound_dtor_FUN_005aaeb0
@@ -261,8 +261,8 @@ section .text
     MOV EBX,dword ptr [0x00680a00]      ; 005087aa | g_CNetGameInstance | g_CNetGamePtr
         ;   Label: LAB_005087aa
     PUSH EBX                            ; 005087b0 | g_CNetGameInstance
-    CALL core_netgame.cpp_CNetGame_FUN_0053f830 ; 005087b1
-        ;   XREF to: 0053f830 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_FUN_0053f830(CNetGame * this_ptr)
+    CALL core_netgame.cpp_CNetGame_shutdown_FUN_0053f830 ; 005087b1
+        ;   XREF to: 0053f830 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_shutdown_FUN_0053f830(CNetGame * this_ptr)
     ADD ESP,0x4                         ; 005087b6
     MOV ESI,dword ptr [0x00680b80]      ; 005087b9 | g_CMousePtr
     PUSH ESI                            ; 005087bf | g_CMouseInstance

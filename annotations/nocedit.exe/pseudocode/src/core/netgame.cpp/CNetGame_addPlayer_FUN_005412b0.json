@@ -6,20 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 83,
-    "complexity_score": 221,
+    "complexity_score": 62,
     "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 6,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 51,
-    "suspect_count": 15,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 47,
+    "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_few",
-      "pointer_cast",
-      "stack_param",
-      "undefined_data"
+      "pointer_cast"
     ],
-    "total_lines": 134
+    "total_lines": 130
   },
   "cross_references": [
     {
@@ -57,7 +54,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_netgame.cpp_CNetGame_addPlayer_FUN_005412b0",
-    "signature": "int __cdecl core_netgame_cpp_CNetGame_addPlayer_FUN_005412b0(CNetGame *this_ptr)"
+    "signature": "int __cdecl core_netgame_cpp_CNetGame_addPlayer_FUN_005412b0(CNetGame *this_ptr,SNetworkAddr *addr,char *name,int hero_number,int aim_mode)"
   },
   "function_calls": [
     {
@@ -104,8 +101,8 @@
     },
     {
       "addr": "02f7c8c4",
-      "name": "DAT_02f7c8c4",
-      "type": "undefined4",
+      "name": "INT_02f7c8c4",
+      "type": "int",
       "value": null
     }
   ],
@@ -158,8 +155,8 @@
         "stack_params": 5
       }
     ],
-    "confidence": "low",
-    "declared_params": 1,
+    "confidence": "medium",
+    "declared_params": 5,
     "estimated_params": 5
   },
   "pcode_summary": {
@@ -194,10 +191,10 @@
     "pcode_op_count": 310
   },
   "stack_frame": {
-    "frame_size": 8,
+    "frame_size": 24,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 20,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -206,132 +203,45 @@
         "offset": 4,
         "size": 4,
         "type": "CNetGame *"
+      },
+      {
+        "is_param": true,
+        "name": "addr",
+        "offset": 8,
+        "size": 4,
+        "type": "SNetworkAddr *"
+      },
+      {
+        "is_param": true,
+        "name": "name",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "hero_number",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "aim_mode",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "uint *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "char *in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000010",
-      "severity": "moderate",
-      "text": "uint in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_00000014",
-      "severity": "moderate",
-      "text": "uint in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 29,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "cVar1 = *in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "cVar1 = in_stack_0000000c[1];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 33,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "in_stack_0000000c = in_stack_0000000c + 2;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 33,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "in_stack_0000000c = in_stack_0000000c + 2;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 37,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "*(uint *)(dest->name + 0x1c) = *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 38,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "*(uint *)((int)dest + (uint)bVar6 * -8 + 0x20) = in_stack_00000008[(uint)bVar6 * -2 + 1];",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 38,
+      "line": 34,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)dest + (uint)bVar6 * -8 + 0x20) = in_stack_00000008[(uint)bVar6 * -2 + 1];",
+      "text": "*(uint *)((int)dest + (uint)bVar6 * -8 + 0x20) = *(uint *)&addr[-(uint)bVar6].port;",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 43,
-      "match": "in_stack_00000010",
-      "severity": "moderate",
-      "text": "*(uint *)(dest->name + 0x14) = in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 44,
-      "match": "in_stack_00000014",
-      "severity": "moderate",
-      "text": "*(uint *)(dest->name + 0x18) = in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 50,
-      "match": "DAT_02f7c8c4",
-      "severity": "mild",
-      "text": "iVar3 = DAT_02f7c8c4;",
-      "type": "undefined_data"
-    },
-    {
-      "call_site_count": 5,
-      "declared_params": 1,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 5,
-      "fix_type": "add_params",
-      "match": "declared:1 vs estimated:5",
-      "param_delta": 4,
-      "text": "Function declares 1 params but call sites push 5 (4 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

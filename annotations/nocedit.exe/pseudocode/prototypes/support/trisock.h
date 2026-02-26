@@ -85,7 +85,7 @@ int __cdecl isSocketValid(_SOCKET *socket_handle);
 
 // Original: support_trisock.cpp_bindSocket_FUN_005e1b80
 // Address: 005e1b80
-int __cdecl bindSocket(uint16_t port,_SOCKET *socket_handle);
+int __cdecl bindSocket(_SOCKET *socket_handle,uint16_t port);
 
 // Original: support_trisock.cpp_connectSocket_FUN_005e1bd0
 // Address: 005e1bd0
@@ -129,4 +129,4 @@ int __cdecl startupWinsock(void);
 
 // Original: support_trisock.cpp_cleanupWinsock_FUN_005e1ee0
 // Address: 005e1ee0
-int __cdecl cleanupWinsock(WORD wVersionRequested,LPWSADATA lpWSAData);
+int __cdecl cleanupWinsock(void);

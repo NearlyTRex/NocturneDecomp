@@ -40,7 +40,7 @@ section .text
     MOV EDX,dword ptr [0x00680a00]      ; 004dce74 | g_CNetGameInstance | g_CNetGamePtr
     PUSH EDX                            ; 004dce7a | g_CNetGameInstance
     CALL core_netgame.cpp_CNetGame_getMyControls_FUN_005438c0 ; 004dce7b
-        ;   XREF to: 005438c0 (UNCONDITIONAL_CALL)  ; void * * core_netgame.cpp_CNetGame_getMyControls_FUN_005438c0(CNetGame * this_ptr)
+        ;   XREF to: 005438c0 (UNCONDITIONAL_CALL)  ; SPlayerControl * core_netgame.cpp_CNetGame_getMyControls_FUN_005438c0(CNetGame * this_ptr)
     ADD ESP,0x4                         ; 004dce80
     PUSH EAX                            ; 004dce83
     CALL crt_memory.c_memset_FUN_005fde40 ; 004dce84

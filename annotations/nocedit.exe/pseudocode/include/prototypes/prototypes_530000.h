@@ -2,6 +2,7 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "system/stdint.h"
 #include "system/stdio.h"
 #include "types/classes/CDSEModel.h"
 #include "types/classes/CDemonActor.h"
@@ -126,21 +127,21 @@ CMultiCram * __cdecl shape_multicrm_cpp_CMultiCram_setModelCount_FUN_0053ee50(CM
 CMultiCram * __cdecl shape_multicrm_cpp_CMultiCram_setModelCount_FUN_0053ee60(CMultiCram *this_ptr,int *model_count);
 void __cdecl shape_multicrm_cpp_CMultiCram_run_FUN_0053ee70(CMultiCram *this_ptr);
 void __cdecl core_netgame_cpp_staticInit_FUN_0053f310(void);
-void __cdecl core_netgame_cpp_FUN_0053f360(void);
-void __cdecl core_netgame_cpp_FUN_0053f390(void);
-float __cdecl core_netgame_cpp_FUN_0053f3e0(void);
-float __cdecl core_netgame_cpp_FUN_0053f440(void);
-void __cdecl core_netgame_cpp_FUN_0053f4a2(void);
+void __cdecl core_netgame_cpp_resetGameTime_FUN_0053f360(void);
+void __cdecl core_netgame_cpp_updateGameTime_FUN_0053f390(void);
+float __cdecl core_netgame_cpp_computeTimeDelta_FUN_0053f3e0(int start_time,int end_time);
+float __cdecl core_netgame_cpp_getElapsedSeconds_FUN_0053f440(uint timestamp);
+void __cdecl core_netgame_cpp_resetChatCounts_FUN_0053f4a2(int count);
 void __cdecl core_netgame_cpp_removeChatOut_FUN_0053f4b0(int index);
-int __cdecl core_netgame_cpp_FUN_0053f550(void);
+int __cdecl core_netgame_cpp_findSimFrame_FUN_0053f550(int sequence_number);
 int * __cdecl core_netgame_cpp_allocSimFrame_FUN_0053f5a0(void);
-void __cdecl core_netgame_cpp_FUN_0053f650(void);
+void __cdecl core_netgame_cpp_purgeOldSimFrames_FUN_0053f650(int min_sequence);
 CNetGame * __cdecl core_netgame_cpp_CNetGame_ctor_FUN_0053f6d0(CNetGame *this_ptr);
 CNetGame * __cdecl core_netgame_cpp_CNetGame_dtor_FUN_0053f760(CNetGame *this_ptr,uint flags);
-void __cdecl core_netgame_cpp_CNetGame_FUN_0053f780(CNetGame *this_ptr);
-void __cdecl core_netgame_cpp_CNetGame_FUN_0053f830(CNetGame *this_ptr);
+void __cdecl core_netgame_cpp_CNetGame_init_FUN_0053f780(CNetGame *this_ptr);
+void __cdecl core_netgame_cpp_CNetGame_shutdown_FUN_0053f830(CNetGame *this_ptr);
 int __cdecl core_netgame_cpp_CNetGame_initializeNetworkToHost_FUN_0053f860(CNetGame *this_ptr);
-int __cdecl core_netgame_cpp_CNetGame_initializeNetworkToJoin_FUN_0053f900(CNetGame *this_ptr);
+int __cdecl core_netgame_cpp_CNetGame_initializeNetworkToJoin_FUN_0053f900(CNetGame *this_ptr,uint32_t *server_ip);
 int __cdecl core_netgame_cpp_CNetGame_initializeNetwork_FUN_0053fbc0(CNetGame *this_ptr);
-void __cdecl core_netgame_cpp_CNetGame_FUN_0053fd00(CNetGame *this_ptr);
+void __cdecl core_netgame_cpp_CNetGame_disconnect_FUN_0053fd00(CNetGame *this_ptr,int perform_handshake);
 

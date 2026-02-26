@@ -27,11 +27,11 @@ CPathMap * __cdecl core_path_cpp_FUN_00548390(CLocation *location)
     __arrinit(CPathMap_ARRAY_02fd9060,0xc,&g_CPathMapTypeInfo);
     _atexit(&WatcomStaticDestructorNode_00680bc8);
   }
-  if (DAT_00680bd8 < 0) {
+  if (g_PathMapLRUCounters[0] < 0) {
     iVar2 = 0;
     iVar1 = 0;
     do {
-      *(int *)((int)&DAT_00680bd8 + iVar2) = iVar1;
+      *(int *)((int)g_PathMapLRUCounters + iVar2) = iVar1;
       iVar1 = iVar1 + 1;
       iVar2 = iVar2 + 4;
     } while (iVar1 < 0xc);
@@ -54,7 +54,7 @@ CPathMap * __cdecl core_path_cpp_FUN_00548390(CLocation *location)
           local_18[1] == *(int *)((int)&CPathMap_ARRAY_02fd9060[0].cached_voxel_coords.z + iVar3)))
     break;
     iVar5 = iVar1;
-    if ((&DAT_00680bd8)[iVar1] < *(int *)((int)&DAT_00680bd8 + iVar4)) {
+    if (g_PathMapLRUCounters[iVar1] < *(int *)((int)g_PathMapLRUCounters + iVar4)) {
       iVar5 = iVar2;
     }
     iVar4 = iVar4 + 4;
@@ -64,12 +64,12 @@ CPathMap * __cdecl core_path_cpp_FUN_00548390(CLocation *location)
   } while (iVar2 < 0xc);
   iVar1 = 0;
   do {
-    if (*(int *)((int)&DAT_00680bd8 + iVar1) < (&DAT_00680bd8)[iVar5]) {
-      *(int *)((int)&DAT_00680bd8 + iVar1) = *(int *)((int)&DAT_00680bd8 + iVar1) + 1;
+    if (*(int *)((int)g_PathMapLRUCounters + iVar1) < g_PathMapLRUCounters[iVar5]) {
+      *(int *)((int)g_PathMapLRUCounters + iVar1) = *(int *)((int)g_PathMapLRUCounters + iVar1) + 1;
     }
     iVar1 = iVar1 + 4;
   } while (iVar1 != 0x30);
-  (&DAT_00680bd8)[iVar5] = 0;
+  g_PathMapLRUCounters[iVar5] = 0;
   local_28.x = (location->position).x;
   local_28.y = (location->position).y;
   local_28.z = (location->position).z;

@@ -20,9 +20,9 @@
 ;
 ; Called Functions:
 ;   core_mission.cpp_CDemonMission_run_FUN_00524420
-;   core_netgame.cpp_CNetGame_FUN_0053fd00
-;   core_netgame.cpp_CNetGame_FUN_00541390
+;   core_netgame.cpp_CNetGame_disconnect_FUN_0053fd00
 ;   core_netgame.cpp_CNetGame_initializeNetworkToHost_FUN_0053f860
+;   core_netgame.cpp_CNetGame_runLobby_FUN_00541390
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
 ;   shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
 ;
@@ -62,8 +62,8 @@ section .text
     MOV EDI,dword ptr [0x00680a00]      ; 004e2f5d | g_CNetGamePtr
         ;   Label: LAB_004e2f5d
     PUSH EDI                            ; 004e2f63 | g_CNetGameInstance
-    CALL core_netgame.cpp_CNetGame_FUN_00541390 ; 004e2f64
-        ;   XREF to: 00541390 (UNCONDITIONAL_CALL)  ; int core_netgame.cpp_CNetGame_FUN_00541390(CNetGame * this_ptr)
+    CALL core_netgame.cpp_CNetGame_runLobby_FUN_00541390 ; 004e2f64
+        ;   XREF to: 00541390 (UNCONDITIONAL_CALL)  ; int core_netgame.cpp_CNetGame_runLobby_FUN_00541390(CNetGame * this_ptr)
     ADD ESP,0x4                         ; 004e2f69
     TEST EAX,EAX                        ; 004e2f6c
     JZ 0x004e2fab                       ; 004e2f6e
@@ -80,8 +80,8 @@ section .text
     PUSH EAX                            ; 004e2f82
     MOV ECX,dword ptr [0x00680a00]      ; 004e2f83 | g_CNetGamePtr
     PUSH ECX                            ; 004e2f89 | g_CNetGameInstance
-    CALL core_netgame.cpp_CNetGame_FUN_0053fd00 ; 004e2f8a
-        ;   XREF to: 0053fd00 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_FUN_0053fd00(CNetGame * this_ptr)
+    CALL core_netgame.cpp_CNetGame_disconnect_FUN_0053fd00 ; 004e2f8a
+        ;   XREF to: 0053fd00 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_disconnect_FUN_0053fd00(CNetGame * this_ptr, int perform_handshake)
     ADD ESP,0x8                         ; 004e2f8f
     PUSH 0x62d363                       ; 004e2f92 | = "Can't init network to host game."
     MOV EBX,dword ptr [0x00678a60]      ; 004e2f97 | g_CEditorToolsPtr
@@ -98,8 +98,8 @@ section .text
         ;   Label: LAB_004e2fab
     MOV EAX,[0x00680a00]                ; 004e2fad | g_CNetGamePtr
     PUSH EAX                            ; 004e2fb2 | g_CNetGameInstance
-    CALL core_netgame.cpp_CNetGame_FUN_0053fd00 ; 004e2fb3
-        ;   XREF to: 0053fd00 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_FUN_0053fd00(CNetGame * this_ptr)
+    CALL core_netgame.cpp_CNetGame_disconnect_FUN_0053fd00 ; 004e2fb3
+        ;   XREF to: 0053fd00 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_disconnect_FUN_0053fd00(CNetGame * this_ptr, int perform_handshake)
     ADD ESP,0x8                         ; 004e2fb8
     POP EBP                             ; 004e2fbb
     POP EDI                             ; 004e2fbc

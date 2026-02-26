@@ -46,13 +46,15 @@ void __cdecl core_game_cpp_CGame_calculateIrisFadeCenter_FUN_004e09a0(CGame *thi
     aiStack_2c[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
          aiStack_2c[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 4];
     if (aiStack_2c[1] != 0) {
-      DAT_02d831f4 = (int)((iStack_30 + (iStack_30 >> 0x1f) * -0x10000) -
-                          (uint)((iStack_30 >> 0x1f) << 0xf < 0)) >> 0x10;
-      DAT_02d831f8 = (int)((aiStack_2c[0] + (aiStack_2c[0] >> 0x1f) * -0x10000) -
-                          (uint)((aiStack_2c[0] >> 0x1f) << 0xf < 0)) >> 0x10;
+      g_IrisFadeCenterX =
+           (int)((iStack_30 + (iStack_30 >> 0x1f) * -0x10000) -
+                (uint)((iStack_30 >> 0x1f) << 0xf < 0)) >> 0x10;
+      g_IrisFadeCenterY =
+           (int)((aiStack_2c[0] + (aiStack_2c[0] >> 0x1f) * -0x10000) -
+                (uint)((aiStack_2c[0] >> 0x1f) << 0xf < 0)) >> 0x10;
       if (0x1e0 < g_WindowHeight) {
-        DAT_02d831f4 = (DAT_02d831f4 * g_WindowWidth) / 0x280;
-        DAT_02d831f8 = (DAT_02d831f8 * g_WindowHeight) / 0x1e0;
+        g_IrisFadeCenterX = (g_IrisFadeCenterX * g_WindowWidth) / 0x280;
+        g_IrisFadeCenterY = (g_IrisFadeCenterY * g_WindowHeight) / 0x1e0;
         return;
       }
     }

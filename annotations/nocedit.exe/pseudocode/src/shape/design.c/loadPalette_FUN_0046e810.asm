@@ -269,17 +269,17 @@ section .text
     LEA EAX,[EBP + -0x58]               ; 0046e9db
     PUSH EAX                            ; 0046e9de
     CALL engine_2d.c_doNothing_FUN_00402860 ; 0046e9df
-        ;   XREF to: 00402860 (UNCONDITIONAL_CALL)  ; void engine_2d.c_doNothing_FUN_00402860()
+        ;   XREF to: 00402860 (UNCONDITIONAL_CALL)  ; void engine_2d.c_doNothing_FUN_00402860(char * filename)
     ADD ESP,0x4                         ; 0046e9e4
     LEA EAX,[EBP + -0x58]               ; 0046e9e7
     PUSH EAX                            ; 0046e9ea
     CALL engine_2d.c_loadOrBuildColorMap_FUN_00402930 ; 0046e9eb
-        ;   XREF to: 00402930 (UNCONDITIONAL_CALL)  ; void engine_2d.c_loadOrBuildColorMap_FUN_00402930(char * palette_filename)
+        ;   XREF to: 00402930 (UNCONDITIONAL_CALL)  ; void engine_2d.c_loadOrBuildColorMap_FUN_00402930(char * filename)
     ADD ESP,0x4                         ; 0046e9f0
     LEA EAX,[EBP + -0x58]               ; 0046e9f3
     PUSH EAX                            ; 0046e9f6
     CALL engine_2d.c_doNothing_FUN_00401590 ; 0046e9f7
-        ;   XREF to: 00401590 (UNCONDITIONAL_CALL)  ; void engine_2d.c_doNothing_FUN_00401590()
+        ;   XREF to: 00401590 (UNCONDITIONAL_CALL)  ; void engine_2d.c_doNothing_FUN_00401590(char * filename)
     ADD ESP,0x4                         ; 0046e9fc
     JMP 0x0046eb51                      ; 0046e9ff
         ;   XREF to: 0046eb51 (UNCONDITIONAL_JUMP)  ; LAB_0046eb51
@@ -418,17 +418,17 @@ section .text
     MOV EAX,0x61e025                    ; 0046eb02 | = "vga.lte"
     PUSH EAX                            ; 0046eb07 | = "vga.lte"
     CALL engine_2d.c_doNothing_FUN_00402860 ; 0046eb08
-        ;   XREF to: 00402860 (UNCONDITIONAL_CALL)  ; void engine_2d.c_doNothing_FUN_00402860()
+        ;   XREF to: 00402860 (UNCONDITIONAL_CALL)  ; void engine_2d.c_doNothing_FUN_00402860(char * filename)
     ADD ESP,0x4                         ; 0046eb0d
     MOV EAX,0x61e02d                    ; 0046eb10 | = "vga.act"
     PUSH EAX                            ; 0046eb15 | = "vga.act"
     CALL engine_2d.c_loadOrBuildColorMap_FUN_00402930 ; 0046eb16
-        ;   XREF to: 00402930 (UNCONDITIONAL_CALL)  ; void engine_2d.c_loadOrBuildColorMap_FUN_00402930(char * palette_filename)
+        ;   XREF to: 00402930 (UNCONDITIONAL_CALL)  ; void engine_2d.c_loadOrBuildColorMap_FUN_00402930(char * filename)
     ADD ESP,0x4                         ; 0046eb1b
     MOV EAX,0x61e035                    ; 0046eb1e | = "vga.act"
     PUSH EAX                            ; 0046eb23 | = "vga.act"
     CALL engine_2d.c_doNothing_FUN_00401590 ; 0046eb24
-        ;   XREF to: 00401590 (UNCONDITIONAL_CALL)  ; void engine_2d.c_doNothing_FUN_00401590()
+        ;   XREF to: 00401590 (UNCONDITIONAL_CALL)  ; void engine_2d.c_doNothing_FUN_00401590(char * filename)
     ADD ESP,0x4                         ; 0046eb29
     JMP 0x0046eb51                      ; 0046eb2c
         ;   XREF to: 0046eb51 (UNCONDITIONAL_JUMP)  ; LAB_0046eb51

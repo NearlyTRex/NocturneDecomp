@@ -519,7 +519,7 @@ section .text
     PUSH dword ptr [0x0066eda0]         ; 0045f7c3 | g_EditorDetailLevel
         ;   Label: LAB_0045f7c3
     CALL engine_texture.cpp_doNothing_FUN_005dd8f0 ; 0045f7c9
-        ;   XREF to: 005dd8f0 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_doNothing_FUN_005dd8f0()
+        ;   XREF to: 005dd8f0 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_doNothing_FUN_005dd8f0(int detail_level)
     ADD ESP,0x4                         ; 0045f7ce
     MOV byte ptr [0x02d03ee6],0x0       ; 0045f7d1 | CHAR_ARRAY_02d03ee6
     CMP byte ptr [0x02d03ee2],0x0       ; 0045f7d8 | CHAR_ARRAY_02d03ee2
@@ -534,7 +534,7 @@ section .text
     PUSH dword ptr [0x0066eda0]         ; 0045f7fe | g_EditorDetailLevel
         ;   Label: LAB_0045f7fe
     CALL engine_texture.cpp_doNothing_FUN_005dd8f0 ; 0045f804
-        ;   XREF to: 005dd8f0 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_doNothing_FUN_005dd8f0()
+        ;   XREF to: 005dd8f0 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_doNothing_FUN_005dd8f0(int detail_level)
     ADD ESP,0x4                         ; 0045f809
     MOV byte ptr [0x02d03ee2],0x0       ; 0045f80c | CHAR_ARRAY_02d03ee2
     CMP dword ptr [0x0066eda0],0xffff   ; 0045f813 | g_EditorDetailLevel

@@ -21,7 +21,7 @@
 ;
 ; XREF[2]:
 ;   core_game.cpp_CGame_runGameSession_FUN_004daf80 at 004db2d1
-;   core_netgame.cpp_CNetGame_FUN_00541390 at 00541959
+;   core_netgame.cpp_CNetGame_runLobby_FUN_00541390 at 00541959
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_0063d54d

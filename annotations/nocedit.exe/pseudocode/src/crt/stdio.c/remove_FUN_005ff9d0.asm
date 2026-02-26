@@ -14,7 +14,7 @@
 ;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 00539104
 ;   core_msnedit.cpp_CDemonMission_playMission_FUN_00538ba0 at 00538d1f
 ;   core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0 at 0053850e
-;   core_netgame.cpp_CNetGame_FUN_0053f780 at 0053f787
+;   core_netgame.cpp_CNetGame_init_FUN_0053f780 at 0053f787
 ;   core_setedit.cpp_CDemonSet_computeCameraFog_FUN_00581320 at 005813a1
 ;   core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80 at 00579473
 ;   ... and 24 more

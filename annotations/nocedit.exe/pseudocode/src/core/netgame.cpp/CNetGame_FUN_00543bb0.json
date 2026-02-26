@@ -1,23 +1,37 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "other",
+        "column": 11,
+        "line": 64,
+        "message": "member reference base type 'uint' (aka 'unsigned int') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 11,
+        "line": 65,
+        "message": "member reference base type 'uint' (aka 'unsigned int') is not a structure or union"
+      }
+    ],
+    "success": false,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 85,
-    "complexity_score": 150,
+    "complexity_score": 177,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 80,
-    "suspect_count": 6,
+    "pseudocode_lines": 82,
+    "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
-      "stack_param"
+      "stack_param",
+      "unknown_field"
     ],
-    "total_lines": 165
+    "total_lines": 167
   },
   "cross_references": [],
   "function": {
@@ -36,7 +50,7 @@
     {
       "addr": "00543e30",
       "is_variadic": false,
-      "name": "core_netgame.cpp_FUN_00543e30"
+      "name": "core_netgame.cpp_copyInteger_FUN_00543e30"
     }
   ],
   "globals": [],
@@ -298,8 +312,24 @@
       "type": "stack_param"
     },
     {
+      "description": "Unknown/mangled field access",
+      "line": 57,
+      "match": "._0_2_",
+      "severity": "mild",
+      "text": "local_48._0_2_ = this_ptr->players[0].addr.port;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 58,
+      "match": "._2_2_",
+      "severity": "mild",
+      "text": "local_48._2_2_ = this_ptr->players[0].addr.other;",
+      "type": "unknown_field"
+    },
+    {
       "description": "Unresolved stack parameter",
-      "line": 70,
+      "line": 72,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "piVar2 = in_stack_00000008;",
@@ -307,7 +337,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 74,
+      "line": 76,
       "match": "(CNetGame *)((int)",
       "severity": "mild",
       "text": "this_ptr = (CNetGame *)((int)this_ptr + (uint)bVar3 * -8 + 4);",
@@ -315,7 +345,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 78,
+      "line": 80,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "*in_stack_00000008 = *piVar2;",
@@ -323,7 +353,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 80,
+      "line": 82,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "in_stack_00000008 = in_stack_00000008 + (uint)bVar3 * -2 + 1;",
@@ -331,7 +361,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 80,
+      "line": 82,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "in_stack_00000008 = in_stack_00000008 + (uint)bVar3 * -2 + 1;",

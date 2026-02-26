@@ -111,7 +111,7 @@ section .text
     MOV EDI,dword ptr [0x00680a00]      ; 004dbe0e | g_CNetGamePtr
     PUSH EDI                            ; 004dbe14 | g_CNetGameInstance
     CALL core_netgame.cpp_CNetGame_getMyControls_FUN_005438c0 ; 004dbe15
-        ;   XREF to: 005438c0 (UNCONDITIONAL_CALL)  ; void * * core_netgame.cpp_CNetGame_getMyControls_FUN_005438c0(CNetGame * this_ptr)
+        ;   XREF to: 005438c0 (UNCONDITIONAL_CALL)  ; SPlayerControl * core_netgame.cpp_CNetGame_getMyControls_FUN_005438c0(CNetGame * this_ptr)
     MOV EDX,EAX                         ; 004dbe1a
     MOV EAX,dword ptr [ESI + 0xbc]      ; 004dbe1c
     ADD ESP,0x4                         ; 004dbe22

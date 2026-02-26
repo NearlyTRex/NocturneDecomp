@@ -19,15 +19,15 @@ void __cdecl core_game_cpp_hostNetworkGame_FUN_004e2f10(void)
     if (iVar1 != 0) {
       g_CurrentSaveFile = '\0';
       while( true ) {
-        iVar1 = core_netgame_cpp_CNetGame_FUN_00541390(g_CNetGamePtr);
+        iVar1 = core_netgame_cpp_CNetGame_runLobby_FUN_00541390(g_CNetGamePtr);
         if (iVar1 == 0) break;
         core_mission_cpp_CDemonMission_run_FUN_00524420(g_CDemonMissionPtr);
       }
     }
-    core_netgame_cpp_CNetGame_FUN_0053fd00(g_CNetGamePtr);
+    core_netgame_cpp_CNetGame_disconnect_FUN_0053fd00(g_CNetGamePtr,1);
     return;
   }
-  core_netgame_cpp_CNetGame_FUN_0053fd00(g_CNetGamePtr);
+  core_netgame_cpp_CNetGame_disconnect_FUN_0053fd00(g_CNetGamePtr,0);
   shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
             (g_CEditorToolsPtr,"Can't init network to host game.");
   return;

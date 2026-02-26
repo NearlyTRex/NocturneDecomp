@@ -2,12 +2,17 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/structs/SNetworkAddr.h"
 #include "types/structs/SPlayerControl.h"
 
 // Structure: SNetPlayer
 // Ghidra size: 0x78 (120 bytes)
 typedef struct SNetPlayer {
-    char name[40]; // 0x0
+    char name[20]; // 0x0
+    int hero_number; // 0x14
+    int aim_mode; // 0x18
+    SNetworkAddr addr; // 0x1c
+    uint last_arrival_time; // 0x24
     float ping_quality; // 0x28
     uint last_ping_sent; // 0x2c
     uint last_ping_response; // 0x30

@@ -73,8 +73,8 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_004a9b00(CEnemy *this_ptr,fl
           if ((ABS(fVar4) <= fVar1) &&
              (fVar4 = fVar4 * 3.0f,
              fStack_30 = fVar5 * fVar5 + fVar3 * fVar3 + fVar4 * fVar4, fStack_30 <= local_38)) {
-            *(int *)((int)&DAT_02cf2bf4 + local_20) = iVar9;
-            *(float *)((int)&DAT_02cf4b34 + local_20) = fStack_30;
+            *(int *)((int)g_EnemyVictimCandidates + local_20) = iVar9;
+            *(float *)((int)g_EnemyVictimCandidateDistances + local_20) = fStack_30;
             local_20 = local_20 + 4;
             iVar6 = iVar6 + 1;
           }
@@ -91,8 +91,8 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_004a9b00(CEnemy *this_ptr,fl
         if (0 < iVar6) {
           iVar7 = 0;
           do {
-            if (*(float *)((int)&DAT_02cf4b34 + iVar7) < local_18) {
-              local_18 = *(float *)((int)&DAT_02cf4b34 + iVar7);
+            if (*(float *)((int)g_EnemyVictimCandidateDistances + iVar7) < local_18) {
+              local_18 = *(float *)((int)g_EnemyVictimCandidateDistances + iVar7);
               iVar9 = iVar8;
             }
             iVar8 = iVar8 + 1;
@@ -100,7 +100,7 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_004a9b00(CEnemy *this_ptr,fl
           } while (iVar8 < iVar6);
         }
         if (iVar9 < 0) break;
-        local_1c = (CDemonActor *)(&DAT_02cf2bf4)[iVar9];
+        local_1c = g_EnemyVictimCandidates[iVar9];
         iVar8 = core_enemy_cpp_CEnemy_FUN_004a9a50(this_ptr,local_1c);
         this_ptr_01 = g_CConsolePtr;
         if (iVar8 != 0) {
@@ -119,7 +119,7 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_004a9b00(CEnemy *this_ptr,fl
           this_ptr->victim = local_1c;
           return;
         }
-        (&DAT_02cf4b34)[iVar9] = 0x7149f2ca;
+        g_EnemyVictimCandidateDistances[iVar9] = 1e+30;
         if (local_34 == local_1c) {
           this_ptr->victim = local_1c;
         }

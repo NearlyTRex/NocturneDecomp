@@ -3,9 +3,9 @@
     "errors": [
       {
         "category": "other",
-        "column": 33,
-        "line": 365,
-        "message": "assigning to 'int *' from 'undefined4 *' (aka 'unsigned int *') converts between pointers to integer types with different sign"
+        "column": 21,
+        "line": 341,
+        "message": "assigning to 'uchar *' (aka 'unsigned char *') from 'const uchar *' (aka 'const unsigned char *') discards qualifiers"
       }
     ],
     "success": false,
@@ -13,19 +13,18 @@
   },
   "complexity": {
     "assembly_lines": 1085,
-    "complexity_score": 586,
+    "complexity_score": 530,
     "cross_reference_count": 1,
     "function_call_count": 14,
     "global_count": 43,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 401,
-    "suspect_count": 17,
+    "pseudocode_lines": 410,
+    "suspect_count": 11,
     "suspect_types": [
       "pointer_cast",
-      "undefined_data",
       "warning_unreachable"
     ],
-    "total_lines": 1486
+    "total_lines": 1495
   },
   "cross_references": [
     {
@@ -46,13 +45,18 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_netgame.cpp_CNetGame_allocSimFrame_FUN_005406a0",
-    "signature": "void __cdecl core_netgame_cpp_CNetGame_allocSimFrame_FUN_005406a0(CNetGame *this_ptr,SNetworkAddr *source_addr,char *packet_data)"
+    "signature": "void __cdecl core_netgame_cpp_CNetGame_allocSimFrame_FUN_005406a0(CNetGame *this_ptr,SNetworkAddr *source_addr,UNetPacket *packet)"
   },
   "function_calls": [
     {
       "addr": "00506f10",
       "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "00542370",
+      "is_variadic": false,
+      "name": "core_netgame.cpp_CNetGame_addChatHistory_FUN_00542370"
     },
     {
       "addr": "005412b0",
@@ -67,27 +71,12 @@
     {
       "addr": "0053fd00",
       "is_variadic": false,
-      "name": "core_netgame.cpp_CNetGame_FUN_0053fd00"
-    },
-    {
-      "addr": "00541230",
-      "is_variadic": false,
-      "name": "core_netgame.cpp_CNetGame_FUN_00541230"
+      "name": "core_netgame.cpp_CNetGame_disconnect_FUN_0053fd00"
     },
     {
       "addr": "00541260",
       "is_variadic": false,
-      "name": "core_netgame.cpp_CNetGame_FUN_00541260"
-    },
-    {
-      "addr": "00542370",
-      "is_variadic": false,
-      "name": "core_netgame.cpp_CNetGame_FUN_00542370"
-    },
-    {
-      "addr": "00543930",
-      "is_variadic": false,
-      "name": "core_netgame.cpp_CNetGame_FUN_00543930"
+      "name": "core_netgame.cpp_CNetGame_findPlayerByAddr_FUN_00541260"
     },
     {
       "addr": "00542cf0",
@@ -103,6 +92,16 @@
       "addr": "005411c0",
       "is_variadic": false,
       "name": "core_netgame.cpp_CNetGame_send_FUN_005411c0"
+    },
+    {
+      "addr": "00543930",
+      "is_variadic": false,
+      "name": "core_netgame.cpp_CNetGame_sendDisconnectNotify_FUN_00543930"
+    },
+    {
+      "addr": "00541230",
+      "is_variadic": false,
+      "name": "core_netgame.cpp_CNetGame_sendPacket_FUN_00541230"
     },
     {
       "addr": "005fde40",
@@ -153,9 +152,9 @@
     },
     {
       "addr": "0063d87c",
-      "name": "DAT_0063d87c",
-      "type": "undefined4",
-      "value": null
+      "name": "s_EmptyChar_0063d87c",
+      "type": "uchar",
+      "value": "\u0000"
     },
     {
       "addr": "0063d87d",
@@ -219,8 +218,8 @@
     },
     {
       "addr": "02f7c8bc",
-      "name": "DAT_02f7c8bc",
-      "type": "undefined4",
+      "name": "g_ConnectionStatus",
+      "type": "EConnectionStatus",
       "value": null
     },
     {
@@ -231,8 +230,8 @@
     },
     {
       "addr": "02f7c8c4",
-      "name": "DAT_02f7c8c4",
-      "type": "undefined4",
+      "name": "INT_02f7c8c4",
+      "type": "int",
       "value": null
     },
     {
@@ -279,8 +278,8 @@
     },
     {
       "addr": "02f98ad0",
-      "name": "DAT_02f98ad0",
-      "type": "undefined4",
+      "name": "g_ChatOutCount",
+      "type": "int",
       "value": null
     },
     {
@@ -291,8 +290,8 @@
     },
     {
       "addr": "02f98adc",
-      "name": "DAT_02f98adc",
-      "type": "undefined1",
+      "name": "g_ChatOutMessages[0].ack_flags",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -668,10 +667,10 @@
       },
       {
         "is_param": true,
-        "name": "packet_data",
+        "name": "packet",
         "offset": 12,
         "size": 4,
-        "type": "char *"
+        "type": "UNetPacket *"
       }
     ]
   },
@@ -703,130 +702,82 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 113,
+      "line": 115,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)this_ptr + (uint)bVar12 * -8 + iVar5 * 0x78 + 0x40) =",
+      "text": "*(uint *)((int)this_ptr + (uint)bVar11 * -8 + iVar5 * 0x78 + 0x40) =",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 125,
-      "match": "DAT_02f7c8bc",
-      "severity": "mild",
-      "text": "DAT_02f7c8bc = 1;",
-      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 137,
+      "line": 116,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)this_ptr + (uint)bVar12 * -8 + iVar5 * 0x78 + 0x40) =",
+      "text": "*(uint *)((int)local_28 + (uint)bVar11 * -8 + 9);",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Complex pointer cast",
       "line": 139,
-      "match": "DAT_02f7c8c4",
+      "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "DAT_02f7c8c4 = 0xffffffff;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 146,
-      "match": "DAT_02f7c8bc",
-      "severity": "mild",
-      "text": "DAT_02f7c8bc = *(uint *)(packet_data + 5);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 212,
-      "match": "DAT_02f98ad0",
-      "severity": "mild",
-      "text": "if (((this_ptr->connection_type != 0) && (-1 < (int)uVar2)) && (0 < DAT_02f98ad0)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 214,
-      "match": "DAT_02f98ad0",
-      "severity": "mild",
-      "text": "iVar4 = DAT_02f98ad0 * 0x114;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 216,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "while (*(int *)((int)&DAT_02f98ad8 + iVar5) == *(int *)(packet_data + 5)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 216,
-      "match": "DAT_02f98ad8",
-      "severity": "mild",
-      "text": "while (*(int *)((int)&DAT_02f98ad8 + iVar5) == *(int *)(packet_data + 5)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 217,
-      "match": "DAT_02f98adc",
-      "severity": "mild",
-      "text": "(&DAT_02f98adc)[iVar5 + uVar2] = 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 294,
-      "match": "DAT_02f7c8c4",
-      "severity": "mild",
-      "text": "if (DAT_02f7c8c4 < *(int *)(packet_data + 5)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 299,
-      "match": "DAT_02f7c8c4",
-      "severity": "mild",
-      "text": "DAT_02f7c8c4 = *(int *)(packet_data + 5);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 303,
-      "match": "DAT_02f7c8c4",
-      "severity": "mild",
-      "text": "local_5f = DAT_02f7c8c4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 342,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "if (local_2c == *(int *)((int)&g_SimFrameHistory + iVar5)) {",
+      "text": "*(uint *)((int)this_ptr + (uint)bVar11 * -8 + iVar5 * 0x78 + 0x40) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 344,
-      "match": "(int *)((int)",
+      "line": 140,
+      "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "piVar3 = (int *)((int)&g_SimFrameHistory + iVar5);",
+      "text": "*(uint *)((int)packet + (uint)bVar11 * -8 + 0x6d);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 399,
+      "line": 221,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "while (*(uint *)((int)g_ChatOutMessages[0].player_timestamps + iVar5 + -8) ==",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 223,
+      "match": "(byte *)((int)",
+      "severity": "mild",
+      "text": "*(byte *)((int)g_ChatOutMessages[0].player_timestamps + iVar5 + uVar2 + -4) = 1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 351,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "if (local_2c == *(uint *)((int)&g_SimFrameHistory + iVar5)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 353,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "puVar3 = (uint *)((int)&g_SimFrameHistory + iVar5);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 388,
       "match": "(SPlayerControl *)((int)",
       "severity": "mild",
-      "text": "pSVar11 = (SPlayerControl *)((int)pSVar11 + (uint)bVar12 * -8 + 4);",
+      "text": "pSVar8 = (SPlayerControl *)((int)pSVar8 + (uint)bVar11 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 408,
+      "match": "(SPlayerControl *)((int)",
+      "severity": "mild",
+      "text": "pSVar8 = (SPlayerControl *)((int)pSVar8 + (uint)bVar11 * -8 + 4);",
       "type": "pointer_cast"
     }
   ]

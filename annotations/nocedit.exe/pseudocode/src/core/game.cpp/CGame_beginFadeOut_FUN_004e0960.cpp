@@ -24,10 +24,10 @@ void __cdecl core_game_cpp_CGame_beginFadeOut_FUN_004e0960(CGame *this_ptr)
   float fStack_10;
   
   bVar2 = 0;
-  DAT_02d831ec = 3;
-  DAT_02d831f4 = g_WindowWidth / 2;
-  DAT_02d831f8 = g_WindowHeight / 2;
-  DAT_02d831f0 = (float)g_WindowWidth;
+  g_IrisFadeType = 3;
+  g_IrisFadeCenterX = g_WindowWidth / 2;
+  g_IrisFadeCenterY = g_WindowHeight / 2;
+  g_IrisFadeRadius = (float)g_WindowWidth;
   this_ptr_00 = g_CScriptPtr->focus_actor;
   if (this_ptr_00 != (CDemonActor *)0x0) {
     pCVar1 = (*((this_ptr_00->vtable)._ub)->getBoundingBox)
@@ -50,13 +50,15 @@ void __cdecl core_game_cpp_CGame_beginFadeOut_FUN_004e0960(CGame *this_ptr)
     aiStack_2c[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
          aiStack_2c[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 4];
     if (aiStack_2c[1] != 0) {
-      DAT_02d831f4 = (int)((iStack_30 + (iStack_30 >> 0x1f) * -0x10000) -
-                          (uint)((iStack_30 >> 0x1f) << 0xf < 0)) >> 0x10;
-      DAT_02d831f8 = (int)((aiStack_2c[0] + (aiStack_2c[0] >> 0x1f) * -0x10000) -
-                          (uint)((aiStack_2c[0] >> 0x1f) << 0xf < 0)) >> 0x10;
+      g_IrisFadeCenterX =
+           (int)((iStack_30 + (iStack_30 >> 0x1f) * -0x10000) -
+                (uint)((iStack_30 >> 0x1f) << 0xf < 0)) >> 0x10;
+      g_IrisFadeCenterY =
+           (int)((aiStack_2c[0] + (aiStack_2c[0] >> 0x1f) * -0x10000) -
+                (uint)((aiStack_2c[0] >> 0x1f) << 0xf < 0)) >> 0x10;
       if (0x1e0 < g_WindowHeight) {
-        DAT_02d831f4 = (DAT_02d831f4 * g_WindowWidth) / 0x280;
-        DAT_02d831f8 = (DAT_02d831f8 * g_WindowHeight) / 0x1e0;
+        g_IrisFadeCenterX = (g_IrisFadeCenterX * g_WindowWidth) / 0x280;
+        g_IrisFadeCenterY = (g_IrisFadeCenterY * g_WindowHeight) / 0x1e0;
         return;
       }
     }

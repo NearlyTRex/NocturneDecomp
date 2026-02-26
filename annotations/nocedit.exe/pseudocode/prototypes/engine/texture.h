@@ -65,7 +65,7 @@ void __cdecl clearTextureCache(void);
 
 // Original: engine_texture.cpp_doNothing_FUN_005dd8f0
 // Address: 005dd8f0
-void __cdecl doNothing(void);
+void __cdecl doNothing(int detail_level);
 
 // Original: engine_texture.cpp_updateTextureWithPalette_FUN_005dd900
 // Address: 005dd900

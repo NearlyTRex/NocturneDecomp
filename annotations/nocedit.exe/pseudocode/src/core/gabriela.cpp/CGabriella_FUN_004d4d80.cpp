@@ -243,16 +243,16 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d4d80(CGabriella *this_ptr)
             *puVar5 = *puVar3;
             puVar5[(uint)bVar6 * -2 + 1] = puVar3[(uint)bVar6 * -2 + 1];
             core_xform_cpp_multiplyQuaternion_FUN_005f7640(&local_b4,pCVar8,&local_1e4);
-            DAT_02d7b7f4 = local_1e4.w;
+            CQuaternion4f_02d7b7f4.w = local_1e4.w;
+            puVar5 = (uint *)((uint)bVar6 * -8 + 0x2d7b7fc + (uint)bVar6 * -8);
             puVar3 = (uint *)((int)&local_1e4 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
-            (&DAT_02d7b7f8)[(uint)bVar6 * -2] =
+            *(uint *)((int)&CQuaternion4f_02d7b7f4 + (uint)bVar6 * -8 + 4) =
                  *(uint *)((int)&local_1e4 + (uint)bVar6 * -8 + 4);
-            (&DAT_02d7b7fc)[(uint)bVar6 * -2 + (uint)bVar6 * -2] = *puVar3;
-            (&DAT_02d7b7fc + (uint)bVar6 * -2 + (uint)bVar6 * -2)[(uint)bVar6 * -2 + 1] =
-                 puVar3[(uint)bVar6 * -2 + 1];
+            *puVar5 = *puVar3;
+            puVar5[(uint)bVar6 * -2 + 1] = puVar3[(uint)bVar6 * -2 + 1];
           }
           core_xform_cpp_multiplyQuaternion_FUN_005f7640
-                    ((CQuaternion4f *)&DAT_02d7b7f4,&local_1a4,&local_1d4);
+                    (&CQuaternion4f_02d7b7f4,&local_1a4,&local_1d4);
           fVar9 = local_40;
           pcVar10 = core_gabriela_cpp_FUN_004d29f0;
           pCVar8 = &local_114;

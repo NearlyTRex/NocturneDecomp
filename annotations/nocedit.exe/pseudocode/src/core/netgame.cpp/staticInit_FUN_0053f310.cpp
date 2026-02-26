@@ -12,7 +12,7 @@ void __cdecl core_netgame_cpp_staticInit_FUN_0053f310(void)
   core_netgame_cpp_CNetGame_ctor_FUN_0053f6d0(&g_CNetGameInstance);
   _atexit(&g_CNetGameInstanceDestructorNode);
   __arrinit(g_ChatHistory,400,&g_SChatHistoryTypeInfo);
-  g_NetworkPacketSize = 0x405;
-  g_NetworkReceiveBuffer[0] = '\0';
+  g_NetworkReceivePacket.header.size = 0x405;
+  g_NetworkReceivePacket.header.type = PACKET_NONE;
   return;
 }

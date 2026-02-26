@@ -1,11 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_netgame_cpp_CNetGame_processChatOut_FUN_00541e40(void)
+; void __cdecl core_netgame_cpp_CNetGame_processChatOut_FUN_00541e40(CNetGame *this_ptr,char *message,int target_player)
 ;
+; Parameters:
+; CNetGame *       Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   message
+; int              Stack[0xc]:4   target_player
 ;
 ; XREF[1]:
-;   core_netgame.cpp_CNetGame_FUN_00541390 at 00541c6b
+;   core_netgame.cpp_CNetGame_runLobby_FUN_00541390 at 00541c6b
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_0063dac5
@@ -14,18 +18,18 @@
 ;   int g_CurrentLineNumber
 ;   int g_LastPingTime
 ;   uint g_CurrentGameTime
-;   undefined4 DAT_02f98ad0
-;   undefined4 DAT_02f98ad4
+;   int g_ChatOutCount
+;   SChatOutMessage[50] g_ChatOutMessages
 ;   undefined4 DAT_02f98ad8
-;   undefined1 DAT_02f98adc
-;   undefined1 DAT_02f98add
+;   undefined4 g_ChatOutMessages[0].ack_flags
+;   undefined4 DAT_02f98add
 ;   undefined4 DAT_02f98ae0
 ;   undefined4 DAT_02f98ae4
-;   undefined4 DAT_02f9c0bc
+;   int INT_02f9c0bc
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   core_netgame.cpp_CNetGame_FUN_00542370
+;   core_netgame.cpp_CNetGame_addChatHistory_FUN_00542370
 ;   crt_memory.c_memset_FUN_005fde40
 ;   crt_string.c__strncpy_FUN_00600f40
 ;   wincore_winrun.cpp_getTime_FUN_005f2dc0
@@ -42,21 +46,21 @@ section .text
     MOV EDI,dword ptr [0x02f7c8b8]      ; 00541e44 | g_CurrentGameTime
     MOV ESI,dword ptr [ESP + 0x14]      ; 00541e4a
     MOV EBX,dword ptr [ESP + 0x1c]      ; 00541e4e
-    CMP dword ptr [0x02f98ad0],0x32     ; 00541e52 | DAT_02f98ad0
+    CMP dword ptr [0x02f98ad0],0x32     ; 00541e52 | g_ChatOutCount
     JGE 0x00541f7f                      ; 00541e59
         ;   XREF to: 00541f7f (CONDITIONAL_JUMP)  ; LAB_00541f7f
-    MOV EDX,dword ptr [0x02f98ad0]      ; 00541e5f | DAT_02f98ad0
+    MOV EDX,dword ptr [0x02f98ad0]      ; 00541e5f | g_ChatOutCount
         ;   Label: LAB_00541e5f
     MOV EAX,EDX                         ; 00541e65
     SHL EAX,0x4                         ; 00541e67
     ADD EAX,EDX                         ; 00541e6a
     SHL EAX,0x2                         ; 00541e6c
     ADD EAX,EDX                         ; 00541e6f
-    MOV EBP,0x2f98ad4                   ; 00541e71 | DAT_02f98ad4
+    MOV EBP,0x2f98ad4                   ; 00541e71 | g_ChatOutMessages
     SHL EAX,0x2                         ; 00541e76
     ADD EBP,EAX                         ; 00541e79
     LEA EAX,[EDX + 0x1]                 ; 00541e7b
-    MOV [0x02f98ad0],EAX                ; 00541e7e | DAT_02f98ad0
+    MOV [0x02f98ad0],EAX                ; 00541e7e | g_ChatOutCount
     CALL wincore_winrun.cpp_getTime_FUN_005f2dc0 ; 00541e83
         ;   XREF to: 005f2dc0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005f2dc0()
     MOV EDX,EAX                         ; 00541e88
@@ -77,16 +81,16 @@ section .text
     MOV EAX,0x20000                     ; 00541eb9
     ADD EDI,EAX                         ; 00541ebe
         ;   Label: LAB_00541ebe
-    MOV EAX,[0x02f9c0bc]                ; 00541ec0 | DAT_02f9c0bc
+    MOV EAX,[0x02f9c0bc]                ; 00541ec0 | INT_02f9c0bc
     PUSH 0x2                            ; 00541ec5
     INC EAX                             ; 00541ec7
     PUSH 0x1                            ; 00541ec8
-    MOV [0x02f9c0bc],EAX                ; 00541eca | DAT_02f9c0bc
+    MOV [0x02f9c0bc],EAX                ; 00541eca | INT_02f9c0bc
     MOV dword ptr [EBP + 0x4],EAX       ; 00541ecf | DAT_02f98ad8
     LEA EAX,[EBP + 0x8]                 ; 00541ed2
     PUSH EAX                            ; 00541ed5
     MOV dword ptr [0x02f7c8b8],EDI      ; 00541ed6 | g_CurrentGameTime
-    MOV dword ptr [EBP],EDI             ; 00541edc | DAT_02f98ad4
+    MOV dword ptr [EBP],EDI             ; 00541edc | g_ChatOutMessages
     CALL crt_memory.c_memset_FUN_005fde40 ; 00541edf
         ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
     MOV EDI,dword ptr [0x02f7c8b8]      ; 00541ee4 | g_CurrentGameTime
@@ -134,8 +138,8 @@ section .text
     ADD EAX,0x1c                        ; 00541f67
     PUSH EAX                            ; 00541f6a
     PUSH ESI                            ; 00541f6b
-    CALL core_netgame.cpp_CNetGame_FUN_00542370 ; 00541f6c
-        ;   XREF to: 00542370 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_FUN_00542370(CNetGame * this_ptr)
+    CALL core_netgame.cpp_CNetGame_addChatHistory_FUN_00542370 ; 00541f6c
+        ;   XREF to: 00542370 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_addChatHistory_FUN_00542370(CNetGame * this_ptr, SNetworkAddr * sender_addr, int message_id, char * sender_name, ...)
     MOV EDI,dword ptr [0x02f7c8b8]      ; 00541f71 | g_CurrentGameTime
     ADD ESP,0x14                        ; 00541f77
     POP EBP                             ; 00541f7a
@@ -170,7 +174,7 @@ section .text
     ADD ECX,0x4                         ; 00541fc5
         ;   Label: LAB_00541fc5
     LEA EBX,[EDI + 0xffc40000]          ; 00541fc8
-    MOV byte ptr [EDX + 0x8],0x0        ; 00541fce | DAT_02f98adc | DAT_02f98add
+    MOV byte ptr [EDX + 0x8],0x0        ; 00541fce | g_ChatOutMessages[0].ack_flags | DAT_02f98add
     MOV dword ptr [ECX + 0x8],EBX       ; 00541fd2 | DAT_02f98ae0 | DAT_02f98ae4
     INC EAX                             ; 00541fd5
     MOV EBX,dword ptr [ESI + 0x1c]      ; 00541fd6

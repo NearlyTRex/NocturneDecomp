@@ -5,6 +5,7 @@
 #include "system/winnt.h"
 #include "system/winuser.h"
 #include "types/classes/CBitFont.h"
+#include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CEditorTools.h"
 #include "types/classes/CVector3f.h"
@@ -17,6 +18,9 @@
 
 // CBitFont*
 extern CBitFont* g_EditorFont;
+
+// CDemonActor*[2000]
+extern CDemonActor* g_EnemyVictimCandidates[2000];
 
 // CDemonActorType
 extern CDemonActorType g_CElephantGunClassInfo;
@@ -51,6 +55,9 @@ extern char g_TempStringBuffer[1024];
 
 // char[200]
 extern char g_TextWrapBuffer[200];
+
+// float[2000]
+extern float g_EnemyVictimCandidateDistances[2000];
 
 // int
 extern int g_WindowStackCount;
@@ -108,13 +115,6 @@ extern uchar g_ColorCubeLookup[32768];
 
 // uint*[1200]
 extern uint* g_ZBufferScanlineArray[1200];
-
-// undefined4
-extern undefined4 DAT_02cf2bf4;
-extern undefined4 DAT_02cf2bf8;
-extern undefined4 DAT_02cf4b30;
-extern undefined4 DAT_02cf4b34;
-extern undefined4 DAT_02cf4b38;
 
 // void*
 extern void* g_ActiveControl;

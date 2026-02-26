@@ -21,8 +21,8 @@
 ;   TerminatedCString s_CNetGame_removePlayer_tr_0063dc22
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 DAT_02f98ad0
-;   undefined4 DAT_02f98ad4
+;   int g_ChatOutCount
+;   SChatOutMessage[50] g_ChatOutMessages
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
@@ -116,7 +116,7 @@ section .text
     CALL crt_string.c_memmove_FUN_005fe5e0 ; 00542beb
         ;   XREF to: 005fe5e0 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_005fe5e0(void * dest, void * src, SIZE_T n)
     XOR ESI,ESI                         ; 00542bf0
-    MOV EDI,dword ptr [0x02f98ad0]      ; 00542bf2 | DAT_02f98ad0
+    MOV EDI,dword ptr [0x02f98ad0]      ; 00542bf2 | g_ChatOutCount
     ADD ESP,0xc                         ; 00542bf8
     TEST EDI,EDI                        ; 00542bfb
     JLE 0x00542ca0                      ; 00542bfd
@@ -128,11 +128,11 @@ section .text
     ADD EDI,0x8                         ; 00542c11
     ADD EBX,0x8                         ; 00542c14
     LEA EBP,[EAX + 0xc]                 ; 00542c17
-    ADD EDI,0x2f98ad4                   ; 00542c1a | DAT_02f98ad4
+    ADD EDI,0x2f98ad4                   ; 00542c1a | g_ChatOutMessages
     ADD EAX,0x10                        ; 00542c20
-    ADD EBX,0x2f98ad4                   ; 00542c23 | DAT_02f98ad4
-    ADD EAX,0x2f98ad4                   ; 00542c29 | DAT_02f98ad4
-    ADD EBP,0x2f98ad4                   ; 00542c2e | DAT_02f98ad4
+    ADD EBX,0x2f98ad4                   ; 00542c23 | g_ChatOutMessages
+    ADD EAX,0x2f98ad4                   ; 00542c29 | g_ChatOutMessages
+    ADD EBP,0x2f98ad4                   ; 00542c2e | g_ChatOutMessages
     MOV dword ptr [ESP + 0x4],EAX       ; 00542c34
     MOV EAX,dword ptr [ESP + 0x1c]      ; 00542c38
         ;   Label: LAB_00542c38
@@ -161,7 +161,7 @@ section .text
     ADD ESP,0xc                         ; 00542c73
     ADD EDI,0x114                       ; 00542c76
     MOV EDX,dword ptr [ESP + 0x4]       ; 00542c7c
-    MOV ECX,dword ptr [0x02f98ad0]      ; 00542c80 | DAT_02f98ad0
+    MOV ECX,dword ptr [0x02f98ad0]      ; 00542c80 | g_ChatOutCount
     ADD EDX,0x114                       ; 00542c86
     ADD EBP,0x114                       ; 00542c8c
     MOV dword ptr [ESP + 0x4],EDX       ; 00542c92

@@ -12,9 +12,10 @@ void __cdecl shape_superopt_cpp_TriListSomething_FUN_005d77a0(void)
   char cVar1;
   int iVar2;
   int iVar3;
+  char (*str1) [80];
   char *pcVar4;
-  char *pcVar5;
-  int iVar6;
+  int iVar5;
+  char *pcVar6;
   byte bVar7;
   float10 fVar8;
   int aiStackY_114c [1009];
@@ -39,7 +40,7 @@ void __cdecl shape_superopt_cpp_TriListSomething_FUN_005d77a0(void)
     return;
   }
   _sprintf(local_100,"reduce\\cube%04d.txt");
-  iVar6 = 0;
+  iVar5 = 0;
   local_1c = shape_memdbg_cpp_openFile_FUN_0050f7a0
                        (local_100,(char *)0x0,"wt","..\\shape\\superopt.cpp",0x252f);
   if (0 < g_PolygonCount) {
@@ -47,7 +48,7 @@ void __cdecl shape_superopt_cpp_TriListSomething_FUN_005d77a0(void)
     do {
       iVar3 = iVar2 + -0x14;
       iVar2 = iVar2 + 0x184;
-      iVar6 = iVar6 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar3) + -2;
+      iVar5 = iVar5 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar3) + -2;
     } while (iVar2 < g_PolygonCount * 0x184);
   }
   if (local_1c != (_FILE *)0x0) {
@@ -55,11 +56,11 @@ void __cdecl shape_superopt_cpp_TriListSomething_FUN_005d77a0(void)
     _fprintf(local_1c,"%d %d\n",g_VertexCount);
   }
   shape_superopt_cpp_CObj_ctor_FUN_005d2230(&local_58,0,0);
-  shape_superopt_cpp_CObj_init_FUN_005d22d0(&local_58,iVar6,g_VertexCount);
+  shape_superopt_cpp_CObj_init_FUN_005d22d0(&local_58,iVar5,g_VertexCount);
   if (local_1c != (_FILE *)0x0) {
     _fprintf(local_1c,"// pointList\n");
   }
-  iVar6 = 0;
+  iVar5 = 0;
   if (0 < g_VertexCount) {
     iVar2 = 0;
     iVar3 = 0;
@@ -77,9 +78,9 @@ void __cdecl shape_superopt_cpp_TriListSomething_FUN_005d77a0(void)
                    (double)*(float *)((int)&g_LoadedVertices[0].vertex.z + iVar2));
       }
       iVar3 = iVar3 + 0x38;
-      iVar6 = iVar6 + 1;
+      iVar5 = iVar5 + 1;
       iVar2 = iVar2 + 0x14;
-    } while (iVar6 < g_VertexCount);
+    } while (iVar5 < g_VertexCount);
   }
   if (local_1c != (_FILE *)0x0) {
     _fprintf(local_1c,"// triList\n");
@@ -91,50 +92,50 @@ void __cdecl shape_superopt_cpp_TriListSomething_FUN_005d77a0(void)
     local_2c = g_ModelPolygonData[0].texture_name;
     do {
       shape_superopt_cpp_CPoly_ctor_FUN_005cc620(&local_168);
-      pcVar5 = local_2c;
+      pcVar4 = local_2c;
       local_168.parent_obj = &local_58;
       local_168.vertex_idx_0 = *(int *)((int)g_ModelPolygonData[0].vertex_indices + local_28);
       local_168.uv_coords[0].x =
            (double)*(float *)((int)g_ModelPolygonData[0].uv_u + local_28) * 0.00390625;
       local_168.uv_coords[0].y =
            (double)*(float *)((int)g_ModelPolygonData[0].uv_v + local_28) * 0.00390625;
-      iVar6 = 0;
-      if (0 < DAT_03f6bbe8) {
-        pcVar4 = &DAT_03f6bbf0;
+      iVar5 = 0;
+      if (0 < g_TriListTextureCount) {
+        str1 = g_TriListTextureNames;
         do {
-          iVar2 = stricmp(pcVar4,pcVar5);
+          iVar2 = stricmp(*str1,pcVar4);
           if (iVar2 == 0) goto LAB_005d7a1a;
-          iVar6 = iVar6 + 1;
-          pcVar4 = pcVar4 + 0x50;
-        } while (iVar6 < DAT_03f6bbe8);
+          iVar5 = iVar5 + 1;
+          str1 = str1 + 1;
+        } while (iVar5 < g_TriListTextureCount);
       }
-      iVar6 = -1;
+      iVar5 = -1;
 LAB_005d7a1a:
-      if (iVar6 < 0) {
-        if (0x31 < DAT_03f6bbe8) {
+      if (iVar5 < 0) {
+        if (0x31 < g_TriListTextureCount) {
           g_CurrentFilename = "..\\shape\\superopt.cpp";
           g_CurrentLineNumber = 0x255b;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Too many textures!");
         }
-        iVar6 = DAT_03f6bbe8;
-        pcVar4 = &DAT_03f6bbf0 + DAT_03f6bbe8 * 0x50;
-        pcVar5 = local_2c;
+        iVar5 = g_TriListTextureCount;
+        pcVar6 = g_TriListTextureNames[g_TriListTextureCount];
+        pcVar4 = local_2c;
         do {
-          cVar1 = *pcVar5;
-          *pcVar4 = cVar1;
+          cVar1 = *pcVar4;
+          *pcVar6 = cVar1;
           if (cVar1 == '\0') break;
-          cVar1 = pcVar5[1];
-          pcVar5 = pcVar5 + 2;
-          pcVar4[1] = cVar1;
+          cVar1 = pcVar4[1];
           pcVar4 = pcVar4 + 2;
+          pcVar6[1] = cVar1;
+          pcVar6 = pcVar6 + 2;
         } while (cVar1 != '\0');
-        DAT_03f6bbe8 = DAT_03f6bbe8 + 1;
+        g_TriListTextureCount = g_TriListTextureCount + 1;
       }
       local_18 = 2;
       local_24 = local_28;
       iVar2 = local_28 + 8;
       local_14 = local_20 * 0x68;
-      local_168.material_id = iVar6;
+      local_168.material_id = iVar5;
       if (2 < *(int *)((int)g_ModelPolygonData[0].vertex_indices + local_28 + -0x14)) {
         do {
           local_168.uv_coords[1].x =
@@ -193,8 +194,8 @@ LAB_005d7a1a:
   shape_superopt_cpp_COptimize_FUN_005d7170(&local_9c);
   shape_superopt_cpp_COptimize_FUN_005d71c0(&local_9c);
   shape_superopt_cpp_COptimize_FUN_005d71e0(&local_9c);
-  iVar6 = shape_superopt_cpp_COptimize_FUN_005d7290(&local_9c);
-  if (iVar6 == 0) {
+  iVar5 = shape_superopt_cpp_COptimize_FUN_005d7290(&local_9c);
+  if (iVar5 == 0) {
     shape_design_c_optimizePolygonMesh_FUN_004658e0(1.0,0,-1);
     DAT_03f6bbe4 = DAT_03f6bbe4 + 1;
   }

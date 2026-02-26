@@ -16,10 +16,10 @@
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
 ;   CScript* g_CScriptPtr = 0310f858
-;   undefined4 DAT_02d831ec
-;   undefined4 DAT_02d831f0
-;   undefined4 DAT_02d831f4
-;   undefined4 DAT_02d831f8
+;   int g_IrisFadeType
+;   float g_IrisFadeRadius
+;   int g_IrisFadeCenterX
+;   int g_IrisFadeCenterY
 ;   CDemonCamera g_CDemonCameraInstance
 ;
 ; Called Functions:
@@ -105,7 +105,7 @@ section .text
     SHL EDX,0x10                        ; 004e08a6
     SBB EAX,EDX                         ; 004e08a9
     SAR EAX,0x10                        ; 004e08ab
-    MOV [0x02d831f4],EAX                ; 004e08ae | DAT_02d831f4
+    MOV [0x02d831f4],EAX                ; 004e08ae | g_IrisFadeCenterX
     MOV EAX,dword ptr [ESP + 0x40]      ; 004e08b3
     MOV EDX,EAX                         ; 004e08b7
     SAR EDX,0x1f                        ; 004e08b9
@@ -113,31 +113,31 @@ section .text
     SBB EAX,EDX                         ; 004e08bf
     SAR EAX,0x10                        ; 004e08c1
     MOV ESI,dword ptr [0x00679398]      ; 004e08c4 | g_WindowHeight
-    MOV [0x02d831f8],EAX                ; 004e08ca | DAT_02d831f8
+    MOV [0x02d831f8],EAX                ; 004e08ca | g_IrisFadeCenterY
     CMP ESI,0x1e0                       ; 004e08cf
     JLE 0x004e09b6                      ; 004e08d5
         ;   XREF to: 004e09b6 (CONDITIONAL_JUMP)  ; LAB_004e09b6
     MOV EDI,dword ptr [0x00679394]      ; 004e08db | g_WindowWidth
-    MOV EDX,dword ptr [0x02d831f4]      ; 004e08e1 | DAT_02d831f4
+    MOV EDX,dword ptr [0x02d831f4]      ; 004e08e1 | g_IrisFadeCenterX
     IMUL EDX,EDI                        ; 004e08e7
     MOV EBX,0x280                       ; 004e08ea
     MOV EAX,EDX                         ; 004e08ef
     SAR EDX,0x1f                        ; 004e08f1
     IDIV EBX                            ; 004e08f4
-    MOV EDX,dword ptr [0x02d831f8]      ; 004e08f6 | DAT_02d831f8
+    MOV EDX,dword ptr [0x02d831f8]      ; 004e08f6 | g_IrisFadeCenterY
     IMUL EDX,ESI                        ; 004e08fc
     MOV EBX,0x1e0                       ; 004e08ff
-    MOV [0x02d831f4],EAX                ; 004e0904 | DAT_02d831f4
+    MOV [0x02d831f4],EAX                ; 004e0904 | g_IrisFadeCenterX
     MOV EAX,EDX                         ; 004e0909
     SAR EDX,0x1f                        ; 004e090b
     IDIV EBX                            ; 004e090e
-    MOV [0x02d831f8],EAX                ; 004e0910 | DAT_02d831f8
+    MOV [0x02d831f8],EAX                ; 004e0910 | g_IrisFadeCenterY
     ADD ESP,0x60                        ; 004e0915
     POP EDI                             ; 004e0918
     POP ESI                             ; 004e0919
     POP EBX                             ; 004e091a
     RET                                 ; 004e091b
-    MOV dword ptr [0x02d831ec],0x1      ; 004e0920 | DAT_02d831ec
+    MOV dword ptr [0x02d831ec],0x1      ; 004e0920 | g_IrisFadeType
         ;   Label: core_game.cpp_CGame_beginFadeIn_FUN_004e0920
     MOV EDX,dword ptr [0x00679394]      ; 004e092a | g_WindowWidth
     MOV EAX,EDX                         ; 004e0930
@@ -145,14 +145,14 @@ section .text
     SUB EAX,EDX                         ; 004e0935
     SAR EAX,0x1                         ; 004e0937
     MOV EDX,dword ptr [0x00679398]      ; 004e0939 | g_WindowHeight
-    MOV [0x02d831f4],EAX                ; 004e093f | DAT_02d831f4
+    MOV [0x02d831f4],EAX                ; 004e093f | g_IrisFadeCenterX
     MOV EAX,EDX                         ; 004e0944
     SAR EDX,0x1f                        ; 004e0946
     SUB EAX,EDX                         ; 004e0949
     SAR EAX,0x1                         ; 004e094b
     XOR ECX,ECX                         ; 004e094d
-    MOV dword ptr [0x02d831f0],ECX      ; 004e094f | DAT_02d831f0
-    MOV [0x02d831f8],EAX                ; 004e0955 | DAT_02d831f8
+    MOV dword ptr [0x02d831f0],ECX      ; 004e094f | g_IrisFadeRadius
+    MOV [0x02d831f8],EAX                ; 004e0955 | g_IrisFadeCenterY
     JMP 0x004e09a0                      ; 004e095a
         ;   XREF to: 004e09a0 (UNCONDITIONAL_CALL)
 

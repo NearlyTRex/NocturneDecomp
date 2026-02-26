@@ -3,8 +3,10 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "system/time.h"
+#include "types/classes/CCharacter.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CFireEffect.h"
+#include "types/classes/CFlameCan.h"
 #include "types/classes/CKeyFramedModelInstance.h"
 #include "types/classes/CPodAuditRecord.h"
 #include "types/classes/CSmokeParticle.h"
@@ -17,12 +19,18 @@
 // GLOBAL VARIABLES - Range 0x2D10000
 // =============================================================================
 
+// CCharacter*[50]
+extern CCharacter* g_CharactersOnFire[50];
+
 // CDemonActorType
 extern CDemonActorType g_CFilmReelClassInfo;
 extern CDemonActorType g_CFilmProjectorClassInfo;
 
 // CFireEffect
 extern CFireEffect g_CFireEffectInstance;
+
+// CFlameCan*[150]
+extern CFlameCan* g_FlameCans[150];
 
 // CKeyFramedModelInstance
 extern CKeyFramedModelInstance g_FireEffectFlamingStakeModel;
@@ -71,16 +79,13 @@ extern int g_CurrentFileCompressedSize;
 extern int g_AuditRecordCount;
 extern int g_TextureAnimCounter2;
 extern int g_TextureAnimCounter1;
+extern int g_CharactersOnFireCount;
+extern int g_FlameCanCount;
 extern int g_SmokeParticleAllocIndex;
 
 // time_t
 extern time_t g_PodCreationTime;
 
-// undefined4
-extern undefined4 DAT_02d13eb4;
-extern undefined4 DAT_02d13eb8;
-extern undefined4 DAT_02d13f80;
-extern undefined4 DAT_02d13f84;
-extern undefined4 DAT_02d13f88;
-extern undefined4 DAT_02d141e0;
+// uint[3]
+extern uint g_ShellBounceSoundHandles[3];
 

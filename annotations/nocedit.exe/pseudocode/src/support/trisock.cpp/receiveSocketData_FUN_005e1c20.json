@@ -4,7 +4,7 @@
       {
         "category": "undeclared_identifier",
         "column": 43,
-        "line": 29,
+        "line": 28,
         "message": "use of undeclared identifier 'stack0xffffffe4'"
       }
     ],
@@ -13,24 +13,24 @@
   },
   "complexity": {
     "assembly_lines": 66,
-    "complexity_score": 60,
+    "complexity_score": 57,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 30,
+    "pseudocode_lines": 27,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast",
       "stack_ref"
     ],
-    "total_lines": 96
+    "total_lines": 93
   },
   "cross_references": [
     {
       "addr": "00540550",
       "from_addr": "0054058e",
-      "name": "core_netgame.cpp_CNetGame_FUN_00540550",
+      "name": "core_netgame.cpp_CNetGame_flushIncomingPackets_FUN_00540550",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -85,7 +85,7 @@
       {
         "call_addr": "0054058e",
         "call_type": "direct",
-        "caller": "core_netgame.cpp_CNetGame_FUN_00540550",
+        "caller": "core_netgame.cpp_CNetGame_flushIncomingPackets_FUN_00540550",
         "estimated_params": 4,
         "instructions_analyzed": 6,
         "reg_params": [],
@@ -178,7 +178,7 @@
   "suspects": [
     {
       "description": "Direct stack address reference",
-      "line": 22,
+      "line": 21,
       "match": "&stack0xffffffe4",
       "severity": "moderate",
       "text": "((SOCKADDR_IN *)&stack0xffffffe4,&local_2c);",
@@ -186,10 +186,10 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 25,
+      "line": 23,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uVar1 = *(uint *)((int)pSVar4 + (uint)bVar5 * -8 + 4);",
+      "text": "uVar1 = *(uint *)((int)pSVar3 + (uint)bVar4 * -8 + 4);",
       "type": "pointer_cast"
     }
   ]

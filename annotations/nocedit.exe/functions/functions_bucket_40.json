@@ -63572,7 +63572,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_netgame.cpp_FUN_0053f440",
+    "name":"core_netgame.cpp_getElapsedSeconds_FUN_0053f440",
     "ret":"float",
     "vars":{
       "locals":[
@@ -63607,6 +63607,24 @@
             ]
           },
           "type":"undefined4"
+        }
+      ],
+      "params":[
+        {
+          "name":"timestamp",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint"
         }
       ],
       "ret_storage":{
@@ -63727,7 +63745,59 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"core_netgame.cpp_CNetGame_processChatOut_FUN_00541e40",
-    "ret":"void"
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CNetGame*"
+        },
+        {
+          "name":"message",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        },
+        {
+          "name":"target_player",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ]
+    }
   },
   {
     "addr":"005438c0",
@@ -63741,7 +63811,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"core_netgame.cpp_CNetGame_getMyControls_FUN_005438c0",
-    "ret":"void**",
+    "ret":"SPlayerControl*",
     "vars":{
       "params":[
         {

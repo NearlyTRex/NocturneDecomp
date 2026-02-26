@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_2d_c_loadOrBuildColorMap_FUN_00402930(char *palette_filename)
+; void __cdecl engine_2d_c_loadOrBuildColorMap_FUN_00402930(char *filename)
 ;
 ; Parameters:
-; char *           Stack[0x4]:4   palette_filename
+; char *           Stack[0x4]:4   filename
 ; Local Variables:
 ; undefined1       Stack[-0x5c]:1  local_5c
 ; undefined1       Stack[-0x5b]:1  local_5b

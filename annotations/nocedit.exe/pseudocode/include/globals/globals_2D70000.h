@@ -6,6 +6,7 @@
 #include "types/classes/CDemonLight.h"
 #include "types/classes/CLightningBolt.h"
 #include "types/classes/CPopcorn.h"
+#include "types/classes/CQuaternion4f.h"
 #include "types/classes/CRainDrop.h"
 #include "types/classes/CShell.h"
 #include "types/classes/CTrail.h"
@@ -32,6 +33,9 @@ extern CLightningBolt g_LightningBoltPool[10];
 
 // CPopcorn[256]
 extern CPopcorn g_PopcornPool[256];
+
+// CQuaternion4f
+extern CQuaternion4f CQuaternion4f_02d7b7f4;
 
 // CRainDrop[256]
 extern CRainDrop g_RainDropPool[256];
@@ -73,6 +77,9 @@ extern float FLOAT_02d7b83c;
 extern float FLOAT_02d7b840;
 extern float FLOAT_02d7b844;
 extern float FLOAT_02d7c2e8;
+
+// float[64][8]
+extern float g_SplineBasisTable[64][8];
 
 // int
 extern int g_LightningBoltAllocIndex;
@@ -116,16 +123,12 @@ extern int INT_02d7b894;
 // uchar
 extern uchar g_ShadowColor8;
 
+// uint
+extern uint g_FlyBlendColor;
+extern uint g_FlyInvBlendColor;
+
 // undefined1
 extern undefined1 DAT_02d7b804;
-
-// undefined4
-extern undefined4 DAT_02d7a800;
-extern undefined4 DAT_02d7a804;
-extern undefined4 DAT_02d7b7f4;
-extern undefined4 DAT_02d7b7f8;
-extern undefined4 DAT_02d7b7fc;
-extern undefined4 DAT_02d7b800;
 
 // ushort
 extern ushort g_ShadowColor16;

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_2d_c_doNothing_FUN_00401590(void)
+; void __cdecl engine_2d_c_doNothing_FUN_00401590(char *filename)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   filename
 ;
 ; XREF[2]:
 ;   shape_design.c_loadPalette_FUN_0046e810 at 0046e9f7

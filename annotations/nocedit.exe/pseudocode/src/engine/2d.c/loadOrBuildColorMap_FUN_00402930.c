@@ -2,11 +2,11 @@
 // Address: 00402930
 // Address Range: [[00402930, 00402a68]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_2d_c_loadOrBuildColorMap_FUN_00402930(char *palette_filename)
+// Signature: void __cdecl engine_2d_c_loadOrBuildColorMap_FUN_00402930(char *filename)
 
 #include "nocturne.h"
 
-void __cdecl engine_2d_c_loadOrBuildColorMap_FUN_00402930(char *palette_filename)
+void __cdecl engine_2d_c_loadOrBuildColorMap_FUN_00402930(char *filename)
 
 {
   char cVar1;
@@ -17,12 +17,12 @@ void __cdecl engine_2d_c_loadOrBuildColorMap_FUN_00402930(char *palette_filename
   
   pcVar4 = local_5c;
   do {
-    cVar1 = *palette_filename;
+    cVar1 = *filename;
     *pcVar4 = cVar1;
     pcVar3 = local_5c;
     if (cVar1 == '\0') break;
-    cVar1 = palette_filename[1];
-    palette_filename = palette_filename + 2;
+    cVar1 = filename[1];
+    filename = filename + 2;
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
     pcVar3 = local_5c;

@@ -40,7 +40,7 @@
 ;   core_menu.cpp_showCalibrationTest_FUN_00510ba0
 ;   core_mission.cpp_CDemonMission_reset_FUN_00522c80
 ;   core_mmx.c_detectCPUFeatures_FUN_00524f10
-;   core_netgame.cpp_CNetGame_FUN_0053f780
+;   core_netgame.cpp_CNetGame_init_FUN_0053f780
 ;   core_sound.cpp_CSound_findAllSoundFiles_FUN_005b2d00
 ;   crt_env.c_getenv_FUN_006013f0
 ;   crt_stdio.c__freopen_FUN_00601b14
@@ -814,8 +814,8 @@ section .text
     ADD ESP,0x4                         ; 005081c1
     MOV ECX,dword ptr [0x00680a00]      ; 005081c4 | g_CNetGameInstance | g_CNetGamePtr
     PUSH ECX                            ; 005081ca | g_CNetGameInstance
-    CALL core_netgame.cpp_CNetGame_FUN_0053f780 ; 005081cb
-        ;   XREF to: 0053f780 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_FUN_0053f780(CNetGame * this_ptr)
+    CALL core_netgame.cpp_CNetGame_init_FUN_0053f780 ; 005081cb
+        ;   XREF to: 0053f780 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_init_FUN_0053f780(CNetGame * this_ptr)
     ADD ESP,0x4                         ; 005081d0
     PUSH 0x635580                       ; 005081d3 | = "0"
     PUSH 0x635582                       ; 005081d8 | = "Flip on VBlank"

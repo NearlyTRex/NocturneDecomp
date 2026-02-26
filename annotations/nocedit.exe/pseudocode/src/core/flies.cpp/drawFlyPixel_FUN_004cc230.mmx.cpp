@@ -36,8 +36,8 @@ __asm {
         movd MM0,dword ptr [g_ActiveRenderColor]
         pxor MM7,MM7
         movd MM1,dword ptr [EDI]
-        movd MM2,dword ptr [DAT_02d7a800]
-        movd MM3,dword ptr [DAT_02d7a804]
+        movd MM2,dword ptr [g_FlyBlendColor]
+        movd MM3,dword ptr [g_FlyInvBlendColor]
         punpcklbw MM0,MM7
         punpcklbw MM1,MM7
         punpcklbw MM2,MM7

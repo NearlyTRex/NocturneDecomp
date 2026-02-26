@@ -56425,6 +56425,38 @@
             ]
           },
           "type":"undefined4"
+        },
+        {
+          "name":"unionfacet3_54092b",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:526034599732",
+                "offset":90573148624690,
+                "size":4
+              }
+            ]
+          },
+          "type":"UNetPacket*",
+          "use":651
+        },
+        {
+          "name":"unionfacet4_5409cb",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:5260d5c4db7b",
+                "offset":90575856786299,
+                "size":4
+              }
+            ]
+          },
+          "type":"UNetPacket*",
+          "use":811
         }
       ],
       "params":[
@@ -56461,7 +56493,7 @@
           "type":"SNetworkAddr*"
         },
         {
-          "name":"packet_data",
+          "name":"packet",
           "storage":{
             "offset":12,
             "size":4,
@@ -56474,7 +56506,7 @@
               }
             ]
           },
-          "type":"char*"
+          "type":"UNetPacket*"
         }
       ]
     }
@@ -56658,9 +56690,43 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_netgame.cpp_FUN_00543e20",
-    "ret":"int",
+    "name":"core_netgame.cpp_copyInteger_FUN_00543e20",
+    "ret":"int*",
     "vars":{
+      "params":[
+        {
+          "name":"dest",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int*"
+        },
+        {
+          "name":"src",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int*"
+        }
+      ],
       "ret_storage":{
         "reg":"EAX",
         "size":4,

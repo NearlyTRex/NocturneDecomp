@@ -13,7 +13,7 @@
 ; undefined1       Stack[-0x1c]:1  local_1c
 ;
 ; XREF[1]:
-;   core_netgame.cpp_CNetGame_FUN_00541230 at 0054124d
+;   core_netgame.cpp_CNetGame_sendPacket_FUN_00541230 at 0054124d
 ;
 ; Called Functions:
 ;   crt_wsock32.c_send

@@ -11,7 +11,7 @@
 ;   core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0 at 004e2049
 ;   core_mission.cpp_CDemonMission_run_FUN_00524420 at 00524587
 ;   core_msnedit.cpp_CDemonMission_playMission_FUN_00538ba0 at 00538c88
-;   core_netgame.cpp_CNetGame_FUN_00541390 at 005419cf
+;   core_netgame.cpp_CNetGame_runLobby_FUN_00541390 at 005419cf
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Can_t_run_mission_no_her_00639346

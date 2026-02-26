@@ -1961,6 +1961,10 @@
       "type":"struct"
     },
     {
+      "name":"EConnectionStatus",
+      "type":"enum"
+    },
+    {
       "name":"EDripType",
       "type":"enum"
     },
@@ -2007,6 +2011,10 @@
     {
       "name":"ENTER_THREAD_CRITICAL_SECTION_FUNC",
       "type":"function_definition"
+    },
+    {
+      "name":"ENetPacketType",
+      "type":"enum"
     },
     {
       "name":"EPlatformStateType",
@@ -4017,11 +4025,43 @@
       "type":"struct"
     },
     {
+      "name":"SNetPacketHeader",
+      "type":"struct"
+    },
+    {
+      "name":"SNetPacket_ChatMessage",
+      "type":"struct"
+    },
+    {
+      "name":"SNetPacket_PlayerState",
+      "type":"struct"
+    },
+    {
+      "name":"SNetPacket_ServerAccept",
+      "type":"struct"
+    },
+    {
+      "name":"SNetPacket_Simple",
+      "type":"struct"
+    },
+    {
       "name":"SNetworkAddr",
       "type":"struct"
     },
     {
       "name":"SChatHistory",
+      "type":"struct"
+    },
+    {
+      "name":"SGameSettingsPlayer",
+      "type":"struct"
+    },
+    {
+      "name":"SNetPacket_GameSettings",
+      "type":"struct"
+    },
+    {
+      "name":"SNetPacket_PlayerAnnounce",
       "type":"struct"
     },
     {
@@ -4094,6 +4134,14 @@
     },
     {
       "name":"SPlayerControl",
+      "type":"struct"
+    },
+    {
+      "name":"SNetPacket_PlayerControl",
+      "type":"struct"
+    },
+    {
+      "name":"SNetPacket_SimFrame",
       "type":"struct"
     },
     {
@@ -4637,6 +4685,10 @@
       "type":"function_definition"
     },
     {
+      "name":"UNetPacket",
+      "type":"union"
+    },
+    {
       "name":"UOrientationVector",
       "type":"union"
     },
@@ -4878,6 +4930,10 @@
     },
     {
       "name":"CMuzzleFlash",
+      "type":"struct"
+    },
+    {
+      "name":"SChatOutMessage",
       "type":"struct"
     },
     {
@@ -6865,6 +6921,34 @@
     {
       "cat":"/Nocturne/Enum/Game",
       "importable":true,
+      "name":"EConnectionStatus",
+      "type":"enum",
+      "values":[
+        {
+          "name":"CONNECTION_STATUS_WAITING",
+          "val":0
+        },
+        {
+          "name":"CONNECTION_STATUS_ACCEPTED_BY_SERVER",
+          "val":1
+        },
+        {
+          "name":"CONNECTION_STATUS_REJECTED_NOT_SERVER",
+          "val":2
+        },
+        {
+          "name":"CONNECTION_STATUS_REJECTED_GAME_FULL",
+          "val":3
+        },
+        {
+          "name":"CONNECTION_STATUS_REJECTED_ALREADY_IN_GAME",
+          "val":4
+        }
+      ]
+    },
+    {
+      "cat":"/Nocturne/Enum/Game",
+      "importable":true,
       "name":"EDripType",
       "type":"enum",
       "values":[
@@ -7499,6 +7583,82 @@
         {
           "name":"LIGHT_TYPE_UNKNOWN",
           "val":4
+        }
+      ]
+    },
+    {
+      "cat":"/Nocturne/Enum/Game",
+      "importable":true,
+      "name":"ENetPacketType",
+      "type":"enum",
+      "values":[
+        {
+          "name":"PACKET_NONE",
+          "val":0
+        },
+        {
+          "name":"PACKET_PLAYER_ANNOUNCE",
+          "val":1
+        },
+        {
+          "name":"PACKET_SERVER_ACCEPT",
+          "val":2
+        },
+        {
+          "name":"PACKET_GAME_START",
+          "val":3
+        },
+        {
+          "name":"PACKET_PING",
+          "val":4
+        },
+        {
+          "name":"PACKET_PING_RESPONSE",
+          "val":5
+        },
+        {
+          "name":"PACKET_CHAT_MESSAGE",
+          "val":6
+        },
+        {
+          "name":"PACKET_CHAT_ACK",
+          "val":7
+        },
+        {
+          "name":"PACKET_SYNC_STAGE_REQ",
+          "val":8
+        },
+        {
+          "name":"PACKET_SYNC_STAGE_RESP",
+          "val":9
+        },
+        {
+          "name":"PACKET_PLAYER_STATE",
+          "val":10
+        },
+        {
+          "name":"PACKET_GAME_SETTINGS",
+          "val":11
+        },
+        {
+          "name":"PACKET_SETTINGS_ACK",
+          "val":12
+        },
+        {
+          "name":"PACKET_DISCONNECT",
+          "val":13
+        },
+        {
+          "name":"PACKET_UNUSED",
+          "val":14
+        },
+        {
+          "name":"PACKET_SIM_FRAME",
+          "val":15
+        },
+        {
+          "name":"PACKET_PLAYER_CONTROL",
+          "val":16
         }
       ]
     },
@@ -50394,6 +50554,48 @@
       "fields":[
         {
           "len":4,
+          "name":"timestamp",
+          "offset":0,
+          "type":"uint"
+        },
+        {
+          "len":4,
+          "name":"sequence_number",
+          "offset":4,
+          "type":"uint"
+        },
+        {
+          "len":4,
+          "name":"ack_flags",
+          "offset":8,
+          "type":"_BIT_INTEGER32"
+        },
+        {
+          "len":8,
+          "name":"player_timestamps",
+          "offset":12,
+          "type":"uint[2]"
+        },
+        {
+          "len":256,
+          "name":"message",
+          "offset":20,
+          "type":"char[256]"
+        }
+      ],
+      "importable":true,
+      "len":276,
+      "name":"SChatOutMessage",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
           "name":"A",
           "offset":0,
           "type":"int"
@@ -52052,6 +52254,48 @@
       "importable":true,
       "len":84,
       "name":"SFreaky",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":20,
+          "name":"name",
+          "offset":0,
+          "type":"char[20]"
+        },
+        {
+          "len":8,
+          "name":"addr",
+          "offset":20,
+          "type":"SNetworkAddr"
+        },
+        {
+          "len":4,
+          "name":"hero_number",
+          "offset":28,
+          "type":"uint"
+        },
+        {
+          "len":4,
+          "name":"aim_mode",
+          "offset":32,
+          "type":"uint"
+        },
+        {
+          "len":4,
+          "name":"ready_flag",
+          "offset":36,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":40,
+      "name":"SGameSettingsPlayer",
       "pack":false,
       "type":"struct"
     },
@@ -54179,10 +54423,364 @@
       "desc":"",
       "fields":[
         {
-          "len":40,
+          "len":5,
+          "name":"header",
+          "offset":0,
+          "type":"SNetPacketHeader"
+        },
+        {
+          "len":4,
+          "name":"message_id",
+          "offset":5,
+          "type":"int"
+        },
+        {
+          "len":256,
+          "name":"message",
+          "offset":9,
+          "type":"char[256]"
+        }
+      ],
+      "importable":true,
+      "len":265,
+      "name":"SNetPacket_ChatMessage",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":5,
+          "name":"header",
+          "offset":0,
+          "type":"SNetPacketHeader"
+        },
+        {
+          "len":4,
+          "name":"settings_version",
+          "offset":5,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"random_seed",
+          "offset":9,
+          "type":"int"
+        },
+        {
+          "len":80,
+          "name":"mission_name",
+          "offset":13,
+          "type":"char[80]"
+        },
+        {
+          "len":4,
+          "name":"player_count",
+          "offset":93,
+          "type":"int"
+        },
+        {
+          "len":80,
+          "name":"players",
+          "offset":97,
+          "type":"SGameSettingsPlayer[2]"
+        }
+      ],
+      "importable":true,
+      "len":177,
+      "name":"SNetPacket_GameSettings",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":5,
+          "name":"header",
+          "offset":0,
+          "type":"SNetPacketHeader"
+        },
+        {
+          "len":8,
+          "name":"addr",
+          "offset":5,
+          "type":"SNetworkAddr"
+        },
+        {
+          "len":20,
+          "name":"name",
+          "offset":13,
+          "type":"char[20]"
+        },
+        {
+          "len":4,
+          "name":"hero_number",
+          "offset":33,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"aim_mode",
+          "offset":37,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":41,
+      "name":"SNetPacket_PlayerAnnounce",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":5,
+          "name":"header",
+          "offset":0,
+          "type":"SNetPacketHeader"
+        },
+        {
+          "len":4,
+          "name":"sim_frame_index",
+          "offset":5,
+          "type":"int"
+        },
+        {
+          "len":44,
+          "name":"controls",
+          "offset":9,
+          "type":"SPlayerControl"
+        }
+      ],
+      "importable":true,
+      "len":53,
+      "name":"SNetPacket_PlayerControl",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":5,
+          "name":"header",
+          "offset":0,
+          "type":"SNetPacketHeader"
+        },
+        {
+          "len":4,
+          "name":"timestamp",
+          "offset":5,
+          "type":"int"
+        },
+        {
+          "len":20,
+          "name":"name",
+          "offset":9,
+          "type":"char[20]"
+        },
+        {
+          "len":4,
+          "name":"ready_flag",
+          "offset":29,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"hero_number",
+          "offset":33,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"aim_mode",
+          "offset":37,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":41,
+      "name":"SNetPacket_PlayerState",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":5,
+          "name":"header",
+          "offset":0,
+          "type":"SNetPacketHeader"
+        },
+        {
+          "len":20,
+          "name":"player_name",
+          "offset":5,
+          "type":"char[20]"
+        },
+        {
+          "len":80,
+          "name":"mission_name",
+          "offset":25,
+          "type":"char[80]"
+        },
+        {
+          "len":4,
+          "name":"client_addr_ip",
+          "offset":105,
+          "type":"uint"
+        },
+        {
+          "len":4,
+          "name":"client_addr_port",
+          "offset":109,
+          "type":"uint"
+        }
+      ],
+      "importable":true,
+      "len":113,
+      "name":"SNetPacket_ServerAccept",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":5,
+          "name":"header",
+          "offset":0,
+          "type":"SNetPacketHeader"
+        },
+        {
+          "len":4,
+          "name":"sequence",
+          "offset":5,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"frame_time",
+          "offset":9,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"frame_flags",
+          "offset":13,
+          "type":"int"
+        },
+        {
+          "len":88,
+          "name":"player_data",
+          "offset":17,
+          "type":"SPlayerControl[2]"
+        }
+      ],
+      "importable":true,
+      "len":105,
+      "name":"SNetPacket_SimFrame",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":5,
+          "name":"header",
+          "offset":0,
+          "type":"SNetPacketHeader"
+        },
+        {
+          "len":4,
+          "name":"value",
+          "offset":5,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":9,
+      "name":"SNetPacket_Simple",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"size",
+          "offset":0,
+          "type":"int"
+        },
+        {
+          "len":1,
+          "name":"type",
+          "offset":4,
+          "type":"ENetPacketType"
+        }
+      ],
+      "importable":true,
+      "len":5,
+      "name":"SNetPacketHeader",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":20,
           "name":"name",
           "offset":0,
-          "type":"char[40]"
+          "type":"char[20]"
+        },
+        {
+          "len":4,
+          "name":"hero_number",
+          "offset":20,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"aim_mode",
+          "offset":24,
+          "type":"int"
+        },
+        {
+          "len":8,
+          "name":"addr",
+          "offset":28,
+          "type":"SNetworkAddr"
+        },
+        {
+          "len":4,
+          "name":"last_arrival_time",
+          "offset":36,
+          "type":"uint"
         },
         {
           "len":4,
@@ -54270,9 +54868,9 @@
         },
         {
           "len":2,
-          "name":"padding",
+          "name":"other",
           "offset":6,
-          "type":"char[2]"
+          "type":"ushort"
         }
       ],
       "importable":true,
@@ -54288,15 +54886,27 @@
       "fields":[
         {
           "len":2,
-          "name":"sa_family",
+          "name":"sin_family",
           "offset":0,
+          "type":"short"
+        },
+        {
+          "len":2,
+          "name":"sin_port",
+          "offset":2,
           "type":"ushort"
         },
         {
-          "len":14,
-          "name":"sa_data",
-          "offset":2,
-          "type":"char[14]"
+          "len":4,
+          "name":"sin_addr",
+          "offset":4,
+          "type":"int"
+        },
+        {
+          "len":8,
+          "name":"zero",
+          "offset":8,
+          "type":"char[8]"
         }
       ],
       "importable":true,
@@ -61453,6 +62063,78 @@
       "importable":true,
       "len":4,
       "name":"UIntegerFloat",
+      "pack":false,
+      "type":"union"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Union/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":5,
+          "name":"header",
+          "offset":0,
+          "type":"SNetPacketHeader"
+        },
+        {
+          "len":41,
+          "name":"player_announce",
+          "offset":0,
+          "type":"SNetPacket_PlayerAnnounce"
+        },
+        {
+          "len":113,
+          "name":"server_accept",
+          "offset":0,
+          "type":"SNetPacket_ServerAccept"
+        },
+        {
+          "len":9,
+          "name":"simple",
+          "offset":0,
+          "type":"SNetPacket_Simple"
+        },
+        {
+          "len":265,
+          "name":"chat_message",
+          "offset":0,
+          "type":"SNetPacket_ChatMessage"
+        },
+        {
+          "len":41,
+          "name":"player_state",
+          "offset":0,
+          "type":"SNetPacket_PlayerState"
+        },
+        {
+          "len":177,
+          "name":"game_settings",
+          "offset":0,
+          "type":"SNetPacket_GameSettings"
+        },
+        {
+          "len":105,
+          "name":"sim_frame",
+          "offset":0,
+          "type":"SNetPacket_SimFrame"
+        },
+        {
+          "len":53,
+          "name":"player_control",
+          "offset":0,
+          "type":"SNetPacket_PlayerControl"
+        },
+        {
+          "len":1032,
+          "name":"raw",
+          "offset":0,
+          "type":"char[1032]"
+        }
+      ],
+      "importable":true,
+      "len":1032,
+      "name":"UNetPacket",
       "pack":false,
       "type":"union"
     },

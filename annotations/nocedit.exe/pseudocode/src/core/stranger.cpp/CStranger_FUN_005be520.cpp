@@ -573,7 +573,7 @@ LAB_005be795:
       fStack_c8 = (pCVar5->min).z + (pCVar5->max).z;
       fStack_174 = fStack_cc * 0.5f;
       fStack_170 = fStack_c8 * 0.5f;
-      if (&stack0x00000000 != (byte *)0x3f6bc14) {
+      if (&stack0x00000000 != g_TriListTextureNames[0] + 0x24) {
         FLOAT_03f6ba9c = fStack_178;
         FLOAT_03f6baa0 = fStack_174;
         FLOAT_03f6baa4 = fStack_170;

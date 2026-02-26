@@ -20,7 +20,7 @@ void __cdecl core_netgame_cpp_CNetGame_sendGameSetting_FUN_00542dd0(CNetGame *th
   char local_bb [80];
   int local_6b;
   char local_67 [20];
-  int local_53 [15];
+  uint local_53 [15];
   SNetPlayer *local_14;
   
   bVar8 = 0;
@@ -65,12 +65,13 @@ LAB_00542ef5:
         pcVar7 = pcVar7 + 2;
         if (cVar1 != '\0') goto LAB_00542ef5;
       }
-      local_53[iVar4 * 10] = *(int *)(pCVar2->players[0].name + 0x1c);
-      local_53[iVar4 * 10 + (uint)bVar8 * -2 + 1] = *(int *)((int)pCVar2 + (uint)bVar8 * -8 + 0x40);
+      local_53[iVar4 * 10] = pCVar2->players[0].addr.ip_address;
+      local_53[iVar4 * 10 + (uint)bVar8 * -2 + 1] = *(uint *)((int)pCVar2 + (uint)bVar8 * -8 + 0x40)
+      ;
       local_53[iVar4 * 10 + 4] = pCVar2->players[0].ready_flag;
-      local_53[iVar4 * 10 + 2] = *(int *)(pCVar2->players[0].name + 0x14);
+      local_53[iVar4 * 10 + 2] = pCVar2->players[0].hero_number;
       pcVar7 = pcVar5 + 0x28;
-      local_53[iVar4 * 10 + 3] = *(int *)(pCVar2->players[0].name + 0x18);
+      local_53[iVar4 * 10 + 3] = pCVar2->players[0].aim_mode;
       iVar4 = iVar4 + 1;
       pSVar6 = local_14 + 1;
       local_14 = pSVar6;

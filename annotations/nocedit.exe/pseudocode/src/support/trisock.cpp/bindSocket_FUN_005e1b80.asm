@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl support_trisock_cpp_bindSocket_FUN_005e1b80(uint16_t port,_SOCKET *socket_handle)
+; int __cdecl support_trisock_cpp_bindSocket_FUN_005e1b80(_SOCKET *socket_handle,uint16_t port)
 ;
 ; Parameters:
-; uint16_t         Stack[0x4]:2   port
-; _SOCKET *        Stack[0x8]:4   socket_handle
+; _SOCKET *        Stack[0x4]:4   socket_handle
+; uint16_t         Stack[0x8]:2   port
 ; Local Variables:
 ; undefined2       Stack[-0x10]:2  local_10
 ;

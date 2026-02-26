@@ -78,7 +78,7 @@ _SOCKET * __cdecl support_trisock_cpp_bindSocketWrapper_FUN_005e1af0(_SOCKET *so
 int __cdecl support_trisock_cpp_createSocket_FUN_005e1b10(_SOCKET *socket_handle);
 int __cdecl support_trisock_cpp_createUDPSocket_FUN_005e1b40(_SOCKET *socket_handle);
 int __cdecl support_trisock_cpp_isSocketValid_FUN_005e1b70(_SOCKET *socket_handle);
-int __cdecl support_trisock_cpp_bindSocket_FUN_005e1b80(uint16_t port,_SOCKET *socket_handle);
+int __cdecl support_trisock_cpp_bindSocket_FUN_005e1b80(_SOCKET *socket_handle,uint16_t port);
 int __cdecl support_trisock_cpp_connectSocket_FUN_005e1bd0(_SOCKET *socket_handle,SNetworkAddr *dest_addr);
 int __cdecl support_trisock_cpp_receiveSocketData_FUN_005e1c20(_SOCKET *socket_handle,char *buffer,int length,SNetworkAddr *source_addr);
 int __cdecl support_trisock_cpp_performSocketOperation_FUN_005e1ca0(_SOCKET *socket_handle,char *buffer,int length,SNetworkAddr *dest_addr);
@@ -89,7 +89,7 @@ int __cdecl support_trisock_cpp_getSocketName_FUN_005e1df0(_SOCKET *socket_handl
 int __cdecl support_trisock_cpp_setSocketBlocking_FUN_005e1e50(_SOCKET *socket_handle,int blocking_mode);
 int __cdecl support_trisock_cpp_setSocketBroadcast_FUN_005e1e90(_SOCKET *socket_handle,int broadcast_flag);
 int __cdecl support_trisock_cpp_startupWinsock_FUN_005e1ec0(void);
-int __cdecl support_trisock_cpp_cleanupWinsock_FUN_005e1ee0(WORD wVersionRequested,LPWSADATA lpWSAData);
+int __cdecl support_trisock_cpp_cleanupWinsock_FUN_005e1ee0(void);
 void __cdecl core_terrain_cpp_CTerrain_init_FUN_005e1ef0(CTerrain *this_ptr);
 void __cdecl core_terrain_cpp_CTerrain_free_FUN_005e1f30(CTerrain *this_ptr);
 void __cdecl core_terrain_cpp_CTerrain_render_FUN_005e1f50(CTerrain *this_ptr);

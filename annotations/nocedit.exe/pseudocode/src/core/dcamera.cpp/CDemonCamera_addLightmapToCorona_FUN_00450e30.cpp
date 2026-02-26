@@ -40,7 +40,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_addLightmapToCorona_FUN_00450e30(CDem
         piVar4 = (int *)((int)light_source->corona_lightmap_indices +
                         local_14->left_extent[0] * 4 + local_18);
         pcVar9 = *local_20 + local_14->left_extent[0];
-        DAT_015c2eac = light_source->precomputed_lighting_textures;
+        g_CoronaLightingTextureData = (char *)light_source->precomputed_lighting_textures;
         iVar7 = iVar2;
         do {
           iVar5 = iVar7 + -8;
@@ -61,7 +61,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_addLightmapToCorona_FUN_00450e30(CDem
         } while (iVar6 != 0 && bVar1);
         do {
           if ((*puVar3 != 0) && (*puVar3 <= (uint)*(ushort *)*puVar8)) {
-            *pcVar9 = *pcVar9 + DAT_015c2eac[*piVar4];
+            *pcVar9 = *pcVar9 + g_CoronaLightingTextureData[*piVar4];
           }
           puVar3 = puVar3 + 1;
           puVar8 = puVar8 + 1;

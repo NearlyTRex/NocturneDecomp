@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 78,
+    "complexity_score": 13,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 6,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 13,
-    "suspect_count": 6,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 72
   },
   "cross_references": [],
@@ -70,14 +68,14 @@
     },
     {
       "addr": "02f98ad0",
-      "name": "DAT_02f98ad0",
-      "type": "undefined4",
+      "name": "g_ChatOutCount",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02f98ad4",
-      "name": "DAT_02f98ad4",
-      "type": "undefined4",
+      "name": "g_ChatOutMessages",
+      "type": "SChatOutMessage[50]",
       "value": null
     }
   ],
@@ -133,54 +131,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 5,
-      "match": "DAT_02f98ad0",
-      "severity": "mild",
-      "text": "if ((index < 0) || (DAT_02f98ad0 <= index)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 10,
-      "match": "DAT_02f98ad0",
-      "severity": "mild",
-      "text": "DAT_02f98ad0 = DAT_02f98ad0 + -1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 10,
-      "match": "DAT_02f98ad0",
-      "severity": "mild",
-      "text": "DAT_02f98ad0 = DAT_02f98ad0 + -1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_02f98ad4",
-      "severity": "mild",
-      "text": "(&DAT_02f98ad4 + index * 0x45,&DAT_02f98ad4 + (index + 1) * 0x45,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_02f98ad4",
-      "severity": "mild",
-      "text": "(&DAT_02f98ad4 + index * 0x45,&DAT_02f98ad4 + (index + 1) * 0x45,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_02f98ad0",
-      "severity": "mild",
-      "text": "(DAT_02f98ad0 - index) * 0x114);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

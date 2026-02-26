@@ -342,6 +342,7 @@ extern int INT_00680648;
 extern int g_DynamicRenderMode;
 extern int g_ConfirmNewActorNames;
 extern int INT_00680818;
+extern int INT_00680a04;
 extern int g_CNPCClassVersion;
 extern int g_CPassengerClassVersion;
 extern int g_CPendulumClassVersion;
@@ -457,6 +458,9 @@ extern int g_HeapFlags;
 extern int* g_CurrentScreenPtr;
 extern int* g_CurrentZBufferPtr;
 
+// int[12]
+extern int g_PathMapLRUCounters[12];
+
 // int[96]
 extern int g_LightDebugScreenX[96];
 extern int g_LightDebugScreenY[96];
@@ -486,9 +490,6 @@ extern undefined4 DAT_00680834;
 extern undefined4 DAT_00680908;
 extern undefined4 DAT_0068090c;
 extern undefined4 DAT_00680974;
-extern undefined4 DAT_00680a04;
-extern undefined4 DAT_00680bd8;
-extern undefined4 DAT_00680bdc;
 extern undefined4 DAT_00684edc;
 extern undefined4 DAT_00684fd0;
 extern undefined4 DAT_00685094;

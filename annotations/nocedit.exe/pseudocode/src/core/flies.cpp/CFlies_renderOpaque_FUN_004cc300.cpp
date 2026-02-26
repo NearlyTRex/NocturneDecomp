@@ -18,7 +18,7 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_004cc300(CFlies *this_ptr)
   CBoundingBox3D *this_ptr_00;
   uint uVar5;
   int iVar6;
-  float *out_basis;
+  float (*out_basis) [8];
   SRenderVertex *pSVar7;
   SRenderVertex *vertices;
   SRenderVertex *pSVar8;
@@ -55,14 +55,14 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_004cc300(CFlies *this_ptr)
   if (iStack_28 != 0) {
     this_ptr->is_visible = 1;
     if (iVar4 == 0) {
-      out_basis = (float *)&DAT_02d7a808;
+      out_basis = g_SplineBasisTable;
       iVar4 = 0;
       do {
         iVar6 = iVar4 + 1;
         iStack_18 = iVar4;
         core_spline_cpp_computeSplineBasis_FUN_005b90a0
-                  (out_basis,((float)iVar4 + (float)0.5) * (float)0.015625,0.0);
-        out_basis = out_basis + 8;
+                  (*out_basis,((float)iVar4 + (float)0.5) * (float)0.015625,0.0);
+        out_basis = out_basis + 1;
         iVar4 = iVar6;
       } while (iVar6 < 0x40);
       INT_02d7a7c0 = 1;
@@ -71,8 +71,8 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_004cc300(CFlies *this_ptr)
     if (g_UseExternalRenderer == 0) {
       engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_0048c970(g_CDemonRendererPtr2,0,0,0);
       uVar5 = (int)g_PerspectiveReciprocal >> 8;
-      DAT_02d7a800 = uVar5 | uVar5 << 8 | uVar5 << 0x10;
-      DAT_02d7a804 = DAT_02d7a800 ^ 0xffffff;
+      g_FlyBlendColor = uVar5 | uVar5 << 8 | uVar5 << 0x10;
+      g_FlyInvBlendColor = g_FlyBlendColor ^ 0xffffff;
     }
     else {
       SStack_a0.base.count = 3;
@@ -117,8 +117,8 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_004cc300(CFlies *this_ptr)
           iStack_1c = 0x3f;
         }
         core_spline_cpp_evaluateSplinePoint3D_FUN_005b92d0
-                  ((float *)(&DAT_02d7a808 + iStack_1c * 0x20),&CStack_40,pSStack_20->control_points
-                   ,pSStack_20->control_points + 1,pSStack_20->control_points + 2,
+                  (g_SplineBasisTable[iStack_1c],&CStack_40,pSStack_20->control_points,
+                   pSStack_20->control_points + 1,pSStack_20->control_points + 2,
                    pSStack_20->control_points + 3);
         CStack_34.x = (int)ROUND(CStack_40.x * 256.0f);
         CStack_34.y = (int)ROUND(CStack_40.y * 256.0f);

@@ -1,10 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_netgame_cpp_CNetGame_addPlayer_FUN_005412b0(CNetGame *this_ptr)
+; int __cdecl core_netgame_cpp_CNetGame_addPlayer_FUN_005412b0(CNetGame *this_ptr,SNetworkAddr *addr,char *name,int hero_number,int aim_mode)
 ;
 ; Parameters:
 ; CNetGame *       Stack[0x4]:4   this_ptr
+; SNetworkAddr *   Stack[0x8]:4   addr
+; char *           Stack[0xc]:4   name
+; int              Stack[0x10]:4   hero_number
+; int              Stack[0x14]:4   aim_mode
 ;
 ; XREF[4]:
 ;   core_netgame.cpp_CNetGame_allocSimFrame_FUN_005406a0 at 00540888
@@ -18,7 +22,7 @@
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   uint g_CurrentGameTime
-;   undefined4 DAT_02f7c8c4
+;   int INT_02f7c8c4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
@@ -90,7 +94,7 @@ section .text
     MOV dword ptr [EBX + 0x2c],EAX      ; 0054134d
     MOV EDX,EAX                         ; 00541350
     MOV dword ptr [EBX + 0x30],EAX      ; 00541352
-    MOV EAX,[0x02f7c8c4]                ; 00541355 | DAT_02f7c8c4
+    MOV EAX,[0x02f7c8c4]                ; 00541355 | INT_02f7c8c4
     MOV dword ptr [EBX + 0x38],EDX      ; 0054135a
     DEC EAX                             ; 0054135d
     MOV dword ptr [EBX + 0x34],EAX      ; 0054135e

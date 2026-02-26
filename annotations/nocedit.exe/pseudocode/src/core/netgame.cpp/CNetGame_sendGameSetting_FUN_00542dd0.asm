@@ -20,7 +20,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_netgame.cpp_CNetGame_FUN_00541390 at 00541916
+;   core_netgame.cpp_CNetGame_runLobby_FUN_00541390 at 00541916
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_0063dcac
@@ -32,7 +32,7 @@
 ;   int g_CurrentLineNumber
 ;   int g_LastPingTime
 ;   uint g_CurrentGameTime
-;   undefined4 DAT_02f7c8c4
+;   int INT_02f7c8c4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
@@ -100,7 +100,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0xcc]      ; 00542e6c
     MOV EAX,dword ptr [EAX + 0x16c]     ; 00542e73
     MOV dword ptr [ESP + 0x9],EAX       ; 00542e79
-    MOV EAX,[0x02f7c8c4]                ; 00542e7d | DAT_02f7c8c4
+    MOV EAX,[0x02f7c8c4]                ; 00542e7d | INT_02f7c8c4
     MOV dword ptr [ESP + 0x5],EAX       ; 00542e82
     MOV EAX,dword ptr [ESP + 0xcc]      ; 00542e86
     LEA EDI,[ESP + 0xd]                 ; 00542e8d

@@ -67,8 +67,10 @@ typedef struct SERVENT {
 
 // Structure: SOCKADDR
 typedef struct SOCKADDR {
-    ushort sa_family;
-    char sa_data[14];
+    short sin_family;
+    ushort sin_port;
+    int sin_addr;
+    char zero[8];
 } SOCKADDR;
 
 // Structure: SOCKADDR_IN

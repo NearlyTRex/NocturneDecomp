@@ -6,19 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 53,
-    "complexity_score": 352,
+    "complexity_score": 267,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 6,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 47,
-    "suspect_count": 28,
+    "suspect_count": 20,
     "suspect_types": [
       "decompiler_intrinsic",
       "mmx_assembly",
       "nonstandard_int",
-      "pointer_cast",
-      "undefined_data"
+      "pointer_cast"
     ],
     "total_lines": 100
   },
@@ -77,14 +76,14 @@
     },
     {
       "addr": "02d7a800",
-      "name": "DAT_02d7a800",
-      "type": "undefined4",
+      "name": "g_FlyBlendColor",
+      "type": "uint",
       "value": null
     },
     {
       "addr": "02d7a804",
-      "name": "DAT_02d7a804",
-      "type": "undefined4",
+      "name": "g_FlyInvBlendColor",
+      "type": "uint",
       "value": null
     }
   ],
@@ -236,56 +235,16 @@
       "line": 26,
       "match": "uint7",
       "severity": "mild",
-      "text": "uVar5 = (ushort)(((uint7)(byte)((uint)DAT_02d7a800 >> 0x18) << 0x30) >> 0x28);",
+      "text": "uVar5 = (ushort)(((uint7)(byte)(g_FlyBlendColor >> 0x18) << 0x30) >> 0x28);",
       "type": "nonstandard_int"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 26,
-      "match": "DAT_02d7a800",
-      "severity": "mild",
-      "text": "uVar5 = (ushort)(((uint7)(byte)((uint)DAT_02d7a800 >> 0x18) << 0x30) >> 0x28);",
-      "type": "undefined_data"
     },
     {
       "description": "Non-standard integer size (decompiler artifact)",
       "line": 27,
       "match": "uint7",
       "severity": "mild",
-      "text": "uVar7 = (ushort)(((uint7)(byte)((uint)DAT_02d7a804 >> 0x18) << 0x30) >> 0x28);",
+      "text": "uVar7 = (ushort)(((uint7)(byte)(g_FlyInvBlendColor >> 0x18) << 0x30) >> 0x28);",
       "type": "nonstandard_int"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_02d7a804",
-      "severity": "mild",
-      "text": "uVar7 = (ushort)(((uint7)(byte)((uint)DAT_02d7a804 >> 0x18) << 0x30) >> 0x28);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 28,
-      "match": "DAT_02d7a804",
-      "severity": "mild",
-      "text": "uVar4 = (ushort)(byte)g_ActiveRenderColor * ((ushort)DAT_02d7a804 & 0xff) +",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 29,
-      "match": "DAT_02d7a800",
-      "severity": "mild",
-      "text": "((ushort)uVar1 & 0xff) * (ushort)(byte)DAT_02d7a800;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 30,
-      "match": "DAT_02d7a804",
-      "severity": "mild",
-      "text": "uVar6 = (ushort)(byte)((uint)g_ActiveRenderColor >> 8) * (ushort)(byte)((uint)DAT_02d7a804 >> 8)",
-      "type": "undefined_data"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
@@ -304,14 +263,6 @@
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_02d7a800",
-      "severity": "mild",
-      "text": "0xff) * (ushort)(byte)((uint)DAT_02d7a800 >> 8);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 33,
       "match": "CONCAT21",
@@ -324,32 +275,16 @@
       "line": 34,
       "match": "CONCAT21",
       "severity": "mild",
-      "text": "(short)CONCAT21(uVar7,(char)((uint)DAT_02d7a804 >> 0x10)) +",
+      "text": "(short)CONCAT21(uVar7,(char)(g_FlyInvBlendColor >> 0x10)) +",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 34,
-      "match": "DAT_02d7a804",
-      "severity": "mild",
-      "text": "(short)CONCAT21(uVar7,(char)((uint)DAT_02d7a804 >> 0x10)) +",
-      "type": "undefined_data"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 35,
       "match": "CONCAT21",
       "severity": "mild",
-      "text": "(short)(uVar12 >> 8) * (short)CONCAT21(uVar5,(char)((uint)DAT_02d7a800 >> 0x10));",
+      "text": "(short)(uVar12 >> 8) * (short)CONCAT21(uVar5,(char)(g_FlyBlendColor >> 0x10));",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 35,
-      "match": "DAT_02d7a800",
-      "severity": "mild",
-      "text": "(short)(uVar12 >> 8) * (short)CONCAT21(uVar5,(char)((uint)DAT_02d7a800 >> 0x10));",
-      "type": "undefined_data"
     },
     {
       "description": "Decompiler intrinsic (not real C)",

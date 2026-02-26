@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 2,
-    "complexity_score": 19,
+    "complexity_score": 4,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 4,
-    "suspect_count": 1,
-    "suspect_types": [
-      "param_count_too_few"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 6
   },
   "cross_references": [
@@ -42,7 +40,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_2d.c_doNothing_FUN_00401590",
-    "signature": "void __cdecl engine_2d_c_doNothing_FUN_00401590(void)"
+    "signature": "void __cdecl engine_2d_c_doNothing_FUN_00401590(char *filename)"
   },
   "function_calls": [],
   "globals": [],
@@ -78,7 +76,7 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 0,
+    "declared_params": 1,
     "estimated_params": 1
   },
   "pcode_summary": {
@@ -92,24 +90,20 @@
     "pcode_op_count": 3
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
   },
-  "suspects": [
-    {
-      "call_site_count": 3,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 1,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:1",
-      "param_delta": 1,
-      "text": "Function declares 0 params but call sites push 1 (1 missing)",
-      "type": "param_count_too_few"
-    }
-  ]
+  "suspects": []
 }

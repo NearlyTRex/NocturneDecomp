@@ -13,6 +13,9 @@ CEdScrollBar DAT_02f797e4 = {};
 // CNetGame
 CNetGame g_CNetGameInstance = {};
 
+// EConnectionStatus
+EConnectionStatus g_ConnectionStatus = {};
+
 // SChatHistory[400]
 SChatHistory g_ChatHistory[400] = {};
 
@@ -29,10 +32,12 @@ int INT_02f7c530 = {};
 int INT_02f7c634 = {};
 int g_LastPingTime = {};
 int g_RemoteSyncStage = {};
+int INT_02f7c8c4 = {};
 int g_ChatHistoryCount = {};
 
 // uint
 uint g_CurrentGameTime = {};
+uint UINT_02f7c8c8 = {};
 
 // undefined1
 undefined1 DAT_02f79818 = {};
@@ -42,7 +47,4 @@ undefined4 DAT_02f797e0 = {};
 undefined4 DAT_02f7c528 = {};
 undefined4 DAT_02f7c538 = {};
 undefined4 DAT_02f7c53c = {};
-undefined4 DAT_02f7c8bc = {};
-undefined4 DAT_02f7c8c4 = {};
-undefined4 DAT_02f7c8c8 = {};
 

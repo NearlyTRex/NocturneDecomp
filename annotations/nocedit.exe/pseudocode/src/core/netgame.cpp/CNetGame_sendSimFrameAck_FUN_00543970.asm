@@ -26,7 +26,7 @@
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   uint g_CurrentGameTime
-;   undefined4 DAT_02f7c8c8
+;   uint UINT_02f7c8c8
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
@@ -97,7 +97,7 @@ section .text
         ;   XREF to: 005411c0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_send_FUN_005411c0(CNetGame * this_ptr, int player_index)
     MOV EAX,[0x02f7c8b8]                ; 00543a1d | g_CurrentGameTime
     ADD ESP,0xc                         ; 00543a22
-    MOV [0x02f7c8c8],EAX                ; 00543a25 | DAT_02f7c8c8
+    MOV [0x02f7c8c8],EAX                ; 00543a25 | UINT_02f7c8c8
     ADD ESP,0x38                        ; 00543a2a
     POP EBP                             ; 00543a2d
     POP EDI                             ; 00543a2e

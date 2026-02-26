@@ -25,7 +25,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   core_netgame.cpp_CNetGame_FUN_00541230
+;   core_netgame.cpp_CNetGame_sendPacket_FUN_00541230
 ;
 ; *****************************************************************************
 
@@ -55,8 +55,8 @@ section .text
     ADD EAX,0x1c                        ; 005411ec
     PUSH EAX                            ; 005411ef
     PUSH ESI                            ; 005411f0
-    CALL core_netgame.cpp_CNetGame_FUN_00541230 ; 005411f1
-        ;   XREF to: 00541230 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_FUN_00541230(CNetGame * this_ptr)
+    CALL core_netgame.cpp_CNetGame_sendPacket_FUN_00541230 ; 005411f1
+        ;   XREF to: 00541230 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_sendPacket_FUN_00541230(CNetGame * this_ptr, SNetworkAddr * dest_addr, SNetPacketHeader * packet)
     ADD ESP,0xc                         ; 005411f6
     POP EBP                             ; 005411f9
     POP ESI                             ; 005411fa

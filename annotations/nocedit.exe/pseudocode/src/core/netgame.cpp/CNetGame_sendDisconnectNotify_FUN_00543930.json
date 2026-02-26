@@ -1,0 +1,127 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 20,
+    "complexity_score": 10,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 30
+  },
+  "cross_references": [
+    {
+      "addr": "005406a0",
+      "from_addr": "00540d22",
+      "name": "core_netgame.cpp_CNetGame_allocSimFrame_FUN_005406a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053fd00",
+      "from_addr": "00540191",
+      "name": "core_netgame.cpp_CNetGame_disconnect_FUN_0053fd00",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00543930",
+    "address_range": [
+      [
+        "00543930",
+        "00543963"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_netgame.cpp_CNetGame_sendDisconnectNotify_FUN_00543930",
+    "signature": "void __cdecl core_netgame_cpp_CNetGame_sendDisconnectNotify_FUN_00543930(CNetGame *this_ptr,SNetworkAddr *dest_addr,int payload)"
+  },
+  "function_calls": [
+    {
+      "addr": "00541230",
+      "is_variadic": false,
+      "name": "core_netgame.cpp_CNetGame_sendPacket_FUN_00541230"
+    }
+  ],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.8333333333333335,
+    "instruction_count": 18,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 14,
+      "INT_ADD": 10,
+      "INT_AND": 6,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 6,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 3,
+      "INT_SUB": 6,
+      "LOAD": 5,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 8
+    },
+    "pcode_op_count": 69
+  },
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 20,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_b",
+        "offset": -11,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CNetGame *"
+      },
+      {
+        "is_param": true,
+        "name": "dest_addr",
+        "offset": 8,
+        "size": 4,
+        "type": "SNetworkAddr *"
+      },
+      {
+        "is_param": true,
+        "name": "payload",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

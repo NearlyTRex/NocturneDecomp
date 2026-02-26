@@ -96,7 +96,7 @@ section .text
     IMUL EAX,EAX,0x50                   ; 005d7e78
     XOR EDI,EDI                         ; 005d7e7b
     ADD ESP,0x4                         ; 005d7e7d
-    MOV EDX,0x3f6bbf0                   ; 005d7e80 | DAT_03f6bbf0
+    MOV EDX,0x3f6bbf0                   ; 005d7e80 | g_TriListTextureNames
     MOV EBP,dword ptr [ESP]             ; 005d7e85
     ADD EDX,EAX                         ; 005d7e88
     MOV dword ptr [ESP + 0xc],EDI       ; 005d7e8a
@@ -185,7 +185,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x18]      ; 005d7f9e
     LEA EDI,[EAX + 0x4]                 ; 005d7fa2 | DAT_016e9914
     PUSH EDI                            ; 005d7fa5 | DAT_016e9914 | DAT_016e9a98
-    MOV AL,byte ptr [ESI]               ; 005d7fa6 | DAT_03f6bbf0 | DAT_03f6bbf2
+    MOV AL,byte ptr [ESI]               ; 005d7fa6 | g_TriListTextureNames | DAT_03f6bbf2
         ;   Label: LAB_005d7fa6
     MOV byte ptr [EDI],AL               ; 005d7fa8 | DAT_016e9914 | DAT_016e9916 | DAT_016e9a98
     CMP AL,0x0                          ; 005d7faa
@@ -205,7 +205,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x18]      ; 005d7fce
     LEA EDI,[EAX + 0x54]                ; 005d7fd2 | DAT_016e9964
     PUSH EDI                            ; 005d7fd5 | DAT_016e9964 | DAT_016e9ae8
-    MOV AL,byte ptr [ESI]               ; 005d7fd6 | DAT_03f6bbf0 | DAT_03f6bbf2
+    MOV AL,byte ptr [ESI]               ; 005d7fd6 | g_TriListTextureNames | DAT_03f6bbf2
         ;   Label: LAB_005d7fd6
     MOV byte ptr [EDI],AL               ; 005d7fd8 | DAT_016e9964 | DAT_016e9966
     CMP AL,0x0                          ; 005d7fda

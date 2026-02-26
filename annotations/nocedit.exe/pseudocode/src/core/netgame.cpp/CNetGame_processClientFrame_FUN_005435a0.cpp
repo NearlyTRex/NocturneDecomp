@@ -82,7 +82,7 @@ LAB_00543605:
       }
       core_netgame_cpp_CNetGame_receivePackets_FUN_005405b0(this_ptr);
       if (this_ptr->connection_type == 2) {
-        local_20 = (float)(int)(g_CurrentGameTime - DAT_02f7c8c8) * (float)1.52587890625e-05;
+        local_20 = (float)(int)(g_CurrentGameTime - UINT_02f7c8c8) * (float)1.52587890625e-05;
         if (local_20 < 0.0) {
           local_20 = 0.0;
         }

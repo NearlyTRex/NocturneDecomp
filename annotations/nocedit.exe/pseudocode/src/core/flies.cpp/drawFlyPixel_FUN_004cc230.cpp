@@ -30,16 +30,16 @@ void __cdecl core_flies_cpp_drawFlyPixel_FUN_004cc230(int screen_x,int screen_y,
                                                    0x28),CONCAT14((char)((uint)uVar1 >> 0x10),uVar1)
                                            ) >> 0x20),uVar1) >> 0x18);
     uVar12 = (uint5)uVar2 & 0xffffffff00;
-    uVar5 = (ushort)(((uint7)(byte)((uint)DAT_02d7a800 >> 0x18) << 0x30) >> 0x28);
-    uVar7 = (ushort)(((uint7)(byte)((uint)DAT_02d7a804 >> 0x18) << 0x30) >> 0x28);
-    uVar4 = (ushort)(byte)g_ActiveRenderColor * ((ushort)DAT_02d7a804 & 0xff) +
-            ((ushort)uVar1 & 0xff) * (ushort)(byte)DAT_02d7a800;
-    uVar6 = (ushort)(byte)((uint)g_ActiveRenderColor >> 8) * (ushort)(byte)((uint)DAT_02d7a804 >> 8)
+    uVar5 = (ushort)(((uint7)(byte)(g_FlyBlendColor >> 0x18) << 0x30) >> 0x28);
+    uVar7 = (ushort)(((uint7)(byte)(g_FlyInvBlendColor >> 0x18) << 0x30) >> 0x28);
+    uVar4 = (ushort)(byte)g_ActiveRenderColor * ((ushort)g_FlyInvBlendColor & 0xff) +
+            ((ushort)uVar1 & 0xff) * (ushort)(byte)g_FlyBlendColor;
+    uVar6 = (ushort)(byte)((uint)g_ActiveRenderColor >> 8) * (ushort)(byte)(g_FlyInvBlendColor >> 8)
             + ((ushort)(CONCAT43(uVar2,CONCAT12((char)((uint)uVar1 >> 8),(ushort)uVar1)) >> 0x10) &
-              0xff) * (ushort)(byte)((uint)DAT_02d7a800 >> 8);
+              0xff) * (ushort)(byte)(g_FlyBlendColor >> 8);
     uVar8 = (short)CONCAT21(uVar9,(char)((uint)g_ActiveRenderColor >> 0x10)) *
-            (short)CONCAT21(uVar7,(char)((uint)DAT_02d7a804 >> 0x10)) +
-            (short)(uVar12 >> 8) * (short)CONCAT21(uVar5,(char)((uint)DAT_02d7a800 >> 0x10));
+            (short)CONCAT21(uVar7,(char)(g_FlyInvBlendColor >> 0x10)) +
+            (short)(uVar12 >> 8) * (short)CONCAT21(uVar5,(char)(g_FlyBlendColor >> 0x10));
     uVar10 = (uVar9 >> 8) * (uVar7 >> 8) + (short)(uVar12 >> 0x18) * (uVar5 >> 8);
     uVar5 = uVar4 >> 8;
     uVar7 = uVar6 >> 8;

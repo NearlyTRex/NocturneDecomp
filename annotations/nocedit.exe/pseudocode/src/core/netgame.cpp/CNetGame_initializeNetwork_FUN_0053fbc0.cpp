@@ -28,17 +28,16 @@ int __cdecl core_netgame_cpp_CNetGame_initializeNetwork_FUN_0053fbc0(CNetGame *t
               (g_CEditorToolsPtr,"Can't turn off blocking mode for socket");
     return 0;
   }
-  iVar1 = support_trisock_cpp_bindSocket_FUN_005e1b80((uint16_t)socket_handle,(_SOCKET *)0x1ddf);
+  iVar1 = support_trisock_cpp_bindSocket_FUN_005e1b80(socket_handle,0x1ddf);
   if (iVar1 == 0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"Can't bind UDP socket");
     return 0;
   }
   iVar1 = support_trisock_cpp_getSocketName_FUN_005e1df0
-                    (socket_handle,
-                     (SNetworkAddr *)(this_ptr->players[this_ptr->local_player_index].name + 0x1c));
+                    (socket_handle,&this_ptr->players[this_ptr->local_player_index].addr);
   if (iVar1 != 0) {
-    core_netgame_cpp_CNetGame_FUN_00540550(this_ptr);
+    core_netgame_cpp_CNetGame_flushIncomingPackets_FUN_00540550(this_ptr);
     g_CurrentGameTime = 1;
     iVar1 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
     g_LastPingTime = iVar1 / 0x12;

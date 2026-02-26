@@ -19,13 +19,13 @@
   },
   "complexity": {
     "assembly_lines": 132,
-    "complexity_score": 343,
+    "complexity_score": 253,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 13,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 68,
-    "suspect_count": 25,
+    "suspect_count": 16,
     "suspect_types": [
       "pointer_cast",
       "stack_alignment_array",
@@ -92,8 +92,8 @@
     },
     {
       "addr": "00680bd8",
-      "name": "DAT_00680bd8",
-      "type": "undefined4",
+      "name": "g_PathMapLRUCounters",
+      "type": "int[12]",
       "value": null
     },
     {
@@ -314,28 +314,12 @@
       "type": "undefined_data"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 23,
-      "match": "DAT_00680bd8",
-      "severity": "mild",
-      "text": "if (DAT_00680bd8 < 0) {",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 27,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)&DAT_00680bd8 + iVar2) = iVar1;",
+      "text": "*(int *)((int)g_PathMapLRUCounters + iVar2) = iVar1;",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_00680bd8",
-      "severity": "mild",
-      "text": "*(int *)((int)&DAT_00680bd8 + iVar2) = iVar1;",
-      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",
@@ -390,55 +374,15 @@
       "line": 50,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "if ((&DAT_00680bd8)[iVar1] < *(int *)((int)&DAT_00680bd8 + iVar4)) {",
+      "text": "if (g_PathMapLRUCounters[iVar1] < *(int *)((int)g_PathMapLRUCounters + iVar4)) {",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 50,
-      "match": "DAT_00680bd8",
-      "severity": "mild",
-      "text": "if ((&DAT_00680bd8)[iVar1] < *(int *)((int)&DAT_00680bd8 + iVar4)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 50,
-      "match": "DAT_00680bd8",
-      "severity": "mild",
-      "text": "if ((&DAT_00680bd8)[iVar1] < *(int *)((int)&DAT_00680bd8 + iVar4)) {",
-      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
       "line": 60,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "if (*(int *)((int)&DAT_00680bd8 + iVar1) < (&DAT_00680bd8)[iVar5]) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 60,
-      "match": "DAT_00680bd8",
-      "severity": "mild",
-      "text": "if (*(int *)((int)&DAT_00680bd8 + iVar1) < (&DAT_00680bd8)[iVar5]) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 60,
-      "match": "DAT_00680bd8",
-      "severity": "mild",
-      "text": "if (*(int *)((int)&DAT_00680bd8 + iVar1) < (&DAT_00680bd8)[iVar5]) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 61,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "*(int *)((int)&DAT_00680bd8 + iVar1) = *(int *)((int)&DAT_00680bd8 + iVar1) + 1;",
+      "text": "if (*(int *)((int)g_PathMapLRUCounters + iVar1) < g_PathMapLRUCounters[iVar5]) {",
       "type": "pointer_cast"
     },
     {
@@ -446,32 +390,16 @@
       "line": 61,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)&DAT_00680bd8 + iVar1) = *(int *)((int)&DAT_00680bd8 + iVar1) + 1;",
+      "text": "*(int *)((int)g_PathMapLRUCounters + iVar1) = *(int *)((int)g_PathMapLRUCounters + iVar1) + 1;",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Complex pointer cast",
       "line": 61,
-      "match": "DAT_00680bd8",
+      "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)&DAT_00680bd8 + iVar1) = *(int *)((int)&DAT_00680bd8 + iVar1) + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 61,
-      "match": "DAT_00680bd8",
-      "severity": "mild",
-      "text": "*(int *)((int)&DAT_00680bd8 + iVar1) = *(int *)((int)&DAT_00680bd8 + iVar1) + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 65,
-      "match": "DAT_00680bd8",
-      "severity": "mild",
-      "text": "(&DAT_00680bd8)[iVar5] = 0;",
-      "type": "undefined_data"
+      "text": "*(int *)((int)g_PathMapLRUCounters + iVar1) = *(int *)((int)g_PathMapLRUCounters + iVar1) + 1;",
+      "type": "pointer_cast"
     }
   ]
 }

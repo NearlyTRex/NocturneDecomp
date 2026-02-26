@@ -4,21 +4,21 @@ STRUCT QUALITY REPORT
 
 SUMMARY
 ----------------------------------------------------------------------
-Total structs:              480
-Fully clean structs:        470
-Structs with issues:        10
-Unreferenced structs:       7
+Total structs:              491
+Fully clean structs:        482
+Structs with issues:        9
+Unreferenced structs:       15
 
-Total fields:               3974
-Clean fields:               3956
+Total fields:               4025
+Clean fields:               4008
 Unknown (unk*) fields:      11
-Padding (pad*) fields:      5
+Padding (pad*) fields:      4
 Reserved (reserved*) fields:2
 Default (field_*) fields:   0
-Overall field quality:      99.5%
+Overall field quality:      99.6%
 
 ======================================================================
-UNREFERENCED STRUCTS (7)
+UNREFERENCED STRUCTS (15)
 ----------------------------------------------------------------------
 These structs are not referenced in any source or header file.
 
@@ -29,9 +29,17 @@ These structs are not referenced in any source or header file.
   CVector4f                                 /Nocturne/Class/Game
   CWeapon_full_vtable                       /Nocturne/Class/Game
   SConditionVariable                        /Nocturne/Struct/Game
+  SNetPacket_ChatMessage                    /Nocturne/Struct/Game
+  SNetPacket_GameSettings                   /Nocturne/Struct/Game
+  SNetPacket_PlayerAnnounce                 /Nocturne/Struct/Game
+  SNetPacket_PlayerControl                  /Nocturne/Struct/Game
+  SNetPacket_PlayerState                    /Nocturne/Struct/Game
+  SNetPacket_ServerAccept                   /Nocturne/Struct/Game
+  SNetPacket_SimFrame                       /Nocturne/Struct/Game
+  SNetPacket_Simple                         /Nocturne/Struct/Game
 
 ======================================================================
-STRUCTS WITH PROBLEMATIC FIELDS (10)
+STRUCTS WITH PROBLEMATIC FIELDS (9)
 ----------------------------------------------------------------------
 
 COptimize                                  25.0% complete  (2/8 fields clean)
@@ -41,10 +49,6 @@ COptimize                                  25.0% complete  (2/8 fields clean)
 SMpegScalefactorBandData                   50.0% complete  (1/2 fields clean)
   Issues: 1 reserved
   Fields: reserved
-
-SNetworkAddr                               66.7% complete  (2/3 fields clean)
-  Issues: 1 padding
-  Fields: padding
 
 CMP3Decoder                                86.7% complete  (13/15 fields clean)
   Issues: 2 unknown
@@ -75,7 +79,7 @@ CLodMesh                                   95.8% complete  (23/24 fields clean)
   Fields: reserved_attribute_count
 
 ======================================================================
-FULLY CLEAN STRUCTS (470)
+FULLY CLEAN STRUCTS (482)
 ----------------------------------------------------------------------
   C3DSCamera
   C3DSLight
@@ -409,6 +413,7 @@ FULLY CLEAN STRUCTS (470)
   SCarryHand
   SChainVertex
   SChatHistory
+  SChatOutMessage
   SClipPlane
   SClothBone
   SClothVertex
@@ -442,6 +447,7 @@ FULLY CLEAN STRUCTS (470)
   SFontGlyph
   SFoundFileInfo
   SFreaky
+  SGameSettingsPlayer
   SGem
   SHardwareEdge
   SHuffmanTable
@@ -488,7 +494,17 @@ FULLY CLEAN STRUCTS (470)
   SMpegSubbandSCFSI
   SMpegSubbandSamples
   SMpegSubbandScalefactors
+  SNetPacketHeader
+  SNetPacket_ChatMessage
+  SNetPacket_GameSettings
+  SNetPacket_PlayerAnnounce
+  SNetPacket_PlayerControl
+  SNetPacket_PlayerState
+  SNetPacket_ServerAccept
+  SNetPacket_SimFrame
+  SNetPacket_Simple
   SNetPlayer
+  SNetworkAddr
   SPaletteEntry
   SPanel
   SPart

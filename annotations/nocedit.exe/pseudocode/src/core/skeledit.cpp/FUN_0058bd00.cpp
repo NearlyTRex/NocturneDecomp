@@ -13,7 +13,7 @@ void __cdecl core_skeledit_cpp_FUN_0058bd00(void)
   _FILE *file;
   int iVar2;
   CVector3f *pCVar3;
-  byte *dest;
+  char (*dest) [50];
   CVector3f *pCVar4;
   int iVar5;
   CMatrix3x4f *pCVar6;
@@ -68,7 +68,7 @@ void __cdecl core_skeledit_cpp_FUN_0058bd00(void)
   }
   iVar5 = 0;
   if (0 < local_10e) {
-    dest = &DAT_0365a3e8;
+    dest = g_SkeletonBoneNames;
     iVar7 = 0;
     do {
       _fread(&local_14,4,1,local_28);
@@ -79,7 +79,7 @@ void __cdecl core_skeledit_cpp_FUN_0058bd00(void)
       iVar7 = iVar7 + 4;
       _fseek(local_28,0x102,1);
       iVar5 = iVar5 + 1;
-      dest = dest + 0x32;
+      dest = dest + 1;
     } while (iVar5 < local_10e);
   }
   _fread(local_40,4,1,local_28);
@@ -108,7 +108,7 @@ void __cdecl core_skeledit_cpp_FUN_0058bd00(void)
           g_CurrentFilename = "..\\core\\skeledit.cpp";
           g_CurrentLineNumber = 0x5cc;
           core_main_c_displayErrorAndQuit_FUN_00506f10
-                    ("vertex %d is influenced by bone %s, but this bone isn't in the .BON file!",local_2c,&DAT_0365a3e8 + iVar5 * 0x32);
+                    ("vertex %d is influenced by bone %s, but this bone isn't in the .BON file!",local_2c,g_SkeletonBoneNames + iVar5);
         }
       }
       iVar5 = iVar7 * 0x84 + in_stack_0000000c;

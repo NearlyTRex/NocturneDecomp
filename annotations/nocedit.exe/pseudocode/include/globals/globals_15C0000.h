@@ -44,6 +44,9 @@ extern SShapeEditorPolygon* g_BackupPolygons;
 // SVertexData*
 extern SVertexData* g_BackupVertices;
 
+// char*
+extern char* g_CoronaLightingTextureData;
+
 // char[40]
 extern char g_BackupModelName[40];
 extern char g_SavedModelName[40];
@@ -86,7 +89,4 @@ extern uint g_CubeClippedTriangleCount;
 
 // uint[3]
 extern uint g_TempTriangleIndices[3];
-
-// undefined4
-extern undefined4 DAT_015c2eac;
 

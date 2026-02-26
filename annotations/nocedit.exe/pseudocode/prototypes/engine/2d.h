@@ -33,7 +33,7 @@ int __cdecl findBestPaletteMatch(int red,int green,int blue,int start_index,int 
 
 // Original: engine_2d.c_doNothing_FUN_00401590
 // Address: 00401590
-void __cdecl doNothing(void);
+void __cdecl doNothing(char *filename);
 
 // Original: engine_2d.c_loadPaletteFile_FUN_004015a0
 // Address: 004015a0
@@ -229,7 +229,7 @@ void __cdecl setTextColor(int color);
 
 // Original: engine_2d.c_doNothing_FUN_00402860
 // Address: 00402860
-void __cdecl doNothing(void);
+void __cdecl doNothing(char *filename);
 
 // Original: engine_2d.c_buildColorLookupTable_FUN_00402870
 // Address: 00402870
@@ -237,7 +237,7 @@ void __cdecl buildColorLookupTable(void);
 
 // Original: engine_2d.c_loadOrBuildColorMap_FUN_00402930
 // Address: 00402930
-void __cdecl loadOrBuildColorMap(char *palette_filename);
+void __cdecl loadOrBuildColorMap(char *filename);
 
 // Original: engine_2d.c_resetGraphicsSystem_FUN_005ed2a0
 // Address: 00402a70

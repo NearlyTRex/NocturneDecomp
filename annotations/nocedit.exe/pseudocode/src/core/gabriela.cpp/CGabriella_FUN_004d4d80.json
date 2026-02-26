@@ -73,13 +73,13 @@
   },
   "complexity": {
     "assembly_lines": 685,
-    "complexity_score": 963,
+    "complexity_score": 923,
     "cross_reference_count": 1,
     "function_call_count": 15,
     "global_count": 30,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 348,
-    "suspect_count": 59,
+    "suspect_count": 55,
     "suspect_types": [
       "pointer_cast",
       "stack_alignment_array",
@@ -256,8 +256,8 @@
     },
     {
       "addr": "02d7b7f4",
-      "name": "DAT_02d7b7f4",
-      "type": "undefined4",
+      "name": "CQuaternion4f_02d7b7f4",
+      "type": "CQuaternion4f",
       "value": null
     },
     {
@@ -1040,60 +1040,28 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 239,
-      "match": "DAT_02d7b7f4",
-      "severity": "mild",
-      "text": "DAT_02d7b7f4 = local_1e4.w;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 240,
+      "line": 241,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar3 = (uint *)((int)&local_1e4 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 241,
-      "match": "DAT_02d7b7f8",
-      "severity": "mild",
-      "text": "(&DAT_02d7b7f8)[(uint)bVar6 * -2] =",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 242,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&local_1e4 + (uint)bVar6 * -8 + 4);",
+      "text": "*(uint *)((int)&CQuaternion4f_02d7b7f4 + (uint)bVar6 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Complex pointer cast",
       "line": 243,
-      "match": "DAT_02d7b7fc",
+      "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "(&DAT_02d7b7fc)[(uint)bVar6 * -2 + (uint)bVar6 * -2] = *puVar3;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 244,
-      "match": "DAT_02d7b7fc",
-      "severity": "mild",
-      "text": "(&DAT_02d7b7fc + (uint)bVar6 * -2 + (uint)bVar6 * -2)[(uint)bVar6 * -2 + 1] =",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 248,
-      "match": "DAT_02d7b7f4",
-      "severity": "mild",
-      "text": "((CQuaternion4f *)&DAT_02d7b7f4,&local_1a4,&local_1d4);",
-      "type": "undefined_data"
+      "text": "*(uint *)((int)&local_1e4 + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",

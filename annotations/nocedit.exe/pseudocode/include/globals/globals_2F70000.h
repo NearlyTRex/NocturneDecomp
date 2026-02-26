@@ -5,6 +5,7 @@
 #include "types/classes/CEdCheck.h"
 #include "types/classes/CEdScrollBar.h"
 #include "types/classes/CNetGame.h"
+#include "types/enums/EConnectionStatus.h"
 #include "types/structs/SChatHistory.h"
 
 // =============================================================================
@@ -19,6 +20,9 @@ extern CEdScrollBar DAT_02f797e4;
 
 // CNetGame
 extern CNetGame g_CNetGameInstance;
+
+// EConnectionStatus
+extern EConnectionStatus g_ConnectionStatus;
 
 // SChatHistory[400]
 extern SChatHistory g_ChatHistory[400];
@@ -36,10 +40,12 @@ extern int INT_02f7c530;
 extern int INT_02f7c634;
 extern int g_LastPingTime;
 extern int g_RemoteSyncStage;
+extern int INT_02f7c8c4;
 extern int g_ChatHistoryCount;
 
 // uint
 extern uint g_CurrentGameTime;
+extern uint UINT_02f7c8c8;
 
 // undefined1
 extern undefined1 DAT_02f79818;
@@ -49,7 +55,4 @@ extern undefined4 DAT_02f797e0;
 extern undefined4 DAT_02f7c528;
 extern undefined4 DAT_02f7c538;
 extern undefined4 DAT_02f7c53c;
-extern undefined4 DAT_02f7c8bc;
-extern undefined4 DAT_02f7c8c4;
-extern undefined4 DAT_02f7c8c8;
 

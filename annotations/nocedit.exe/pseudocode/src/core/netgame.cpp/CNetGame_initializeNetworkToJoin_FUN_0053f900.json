@@ -6,19 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 278,
-    "complexity_score": 215,
+    "complexity_score": 117,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 19,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 110,
-    "suspect_count": 9,
-    "suspect_types": [
-      "param_count_too_few",
-      "stack_param",
-      "undefined_data"
-    ],
-    "total_lines": 388
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 117,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 395
   },
   "cross_references": [
     {
@@ -39,7 +35,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_0053f900",
-    "signature": "int __cdecl core_netgame_cpp_CNetGame_initializeNetworkToJoin_FUN_0053f900(CNetGame *this_ptr)"
+    "signature": "int __cdecl core_netgame_cpp_CNetGame_initializeNetworkToJoin_FUN_0053f900(CNetGame *this_ptr,uint32_t *server_ip)"
   },
   "function_calls": [
     {
@@ -50,7 +46,7 @@
     {
       "addr": "0053fd00",
       "is_variadic": false,
-      "name": "core_netgame.cpp_CNetGame_FUN_0053fd00"
+      "name": "core_netgame.cpp_CNetGame_disconnect_FUN_0053fd00"
     },
     {
       "addr": "0053fbc0",
@@ -193,8 +189,8 @@
     },
     {
       "addr": "02f7c8bc",
-      "name": "DAT_02f7c8bc",
-      "type": "undefined4",
+      "name": "g_ConnectionStatus",
+      "type": "EConnectionStatus",
       "value": null
     },
     {
@@ -217,8 +213,8 @@
         "stack_params": 2
       }
     ],
-    "confidence": "low",
-    "declared_params": 1,
+    "confidence": "medium",
+    "declared_params": 2,
     "estimated_params": 2
   },
   "pcode_summary": {
@@ -263,10 +259,10 @@
     "pcode_op_count": 1052
   },
   "stack_frame": {
-    "frame_size": 104,
+    "frame_size": 108,
     "local_size": 100,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -366,6 +362,13 @@
         "offset": 4,
         "size": 4,
         "type": "CNetGame *"
+      },
+      {
+        "is_param": true,
+        "name": "server_ip",
+        "offset": 8,
+        "size": 4,
+        "type": "uint32_t *"
       }
     ]
   },
@@ -386,81 +389,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "uint32_t *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 34,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "support_trisock_cpp_createNetworkAddr_FUN_005e1940(&local_28,in_stack_00000008,0x1ddf);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 42,
-      "match": "DAT_02f7c8bc",
-      "severity": "mild",
-      "text": "DAT_02f7c8bc = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 78,
-      "match": "DAT_02f7c8bc",
-      "severity": "mild",
-      "text": "if (DAT_02f7c8bc == 1) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 82,
-      "match": "DAT_02f7c8bc",
-      "severity": "mild",
-      "text": "if (DAT_02f7c8bc < 3) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 83,
-      "match": "DAT_02f7c8bc",
-      "severity": "mild",
-      "text": "if (DAT_02f7c8bc == 2) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 91,
-      "match": "DAT_02f7c8bc",
-      "severity": "mild",
-      "text": "if (DAT_02f7c8bc < 4) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 97,
-      "match": "DAT_02f7c8bc",
-      "severity": "mild",
-      "text": "if (DAT_02f7c8bc == 4) {",
-      "type": "undefined_data"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 1,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:1 vs estimated:2",
-      "param_delta": 1,
-      "text": "Function declares 1 params but call sites push 2 (1 missing)",
-      "type": "param_count_too_few"
-    }
-  ]
+  "suspects": []
 }

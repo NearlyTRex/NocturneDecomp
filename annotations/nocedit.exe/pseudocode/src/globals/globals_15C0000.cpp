@@ -35,6 +35,9 @@ SShapeEditorPolygon* g_BackupPolygons = {};
 // SVertexData*
 SVertexData* g_BackupVertices = {};
 
+// char*
+char* g_CoronaLightingTextureData = {};
+
 // char[40]
 char g_BackupModelName[40] = {};
 char g_SavedModelName[40] = {};
@@ -77,7 +80,4 @@ uint g_CubeClippedTriangleCount = {};
 
 // uint[3]
 uint g_TempTriangleIndices[3] = {};
-
-// undefined4
-undefined4 DAT_015c2eac = {};
 

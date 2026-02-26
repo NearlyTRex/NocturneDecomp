@@ -9,8 +9,8 @@
 ;   WatcomStaticDestructorNode g_CNetGameInstanceDestructorNode
 ;   CNetGame g_CNetGameInstance
 ;   SChatHistory[400] g_ChatHistory
-;   int g_NetworkPacketSize
-;   char[1028] g_NetworkReceiveBuffer
+;   UNetPacket g_NetworkReceivePacket
+;   undefined4 g_NetworkReceivePacket+4
 ;
 ; Called Functions:
 ;   core_netgame.cpp_CNetGame_ctor_FUN_0053f6d0
@@ -38,7 +38,7 @@ section .text
     MOV EDX,0x405                       ; 0053f33e
     ADD ESP,0xc                         ; 0053f343
     XOR AH,AH                           ; 0053f346
-    MOV dword ptr [0x02fa88c8],EDX      ; 0053f348 | g_NetworkPacketSize
-    MOV byte ptr [0x02fa88cc],AH        ; 0053f34e | g_NetworkReceiveBuffer
+    MOV dword ptr [0x02fa88c8],EDX      ; 0053f348 | g_NetworkReceivePacket
+    MOV byte ptr [0x02fa88cc],AH        ; 0053f34e | g_NetworkReceivePacket+4
     RET                                 ; 0053f354
 

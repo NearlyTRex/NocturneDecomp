@@ -5,23 +5,23 @@ FUNCTION COMPILATION SUMMARY
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6494
-Successful: 5606 (86.3%)
-Failed: 888
+Successful: 5618 (86.5%)
+Failed: 876
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                           1595
-  undeclared_identifier            762
+  other                           1593
+  undeclared_identifier            747
   format_error                     590
   incompatible_types               575
-  syntax_error                      73
+  syntax_error                      72
   lvalue_required                   23
   missing_member                    21
   type_error                        18
   pointer_precision                  2
 
 ====================================================================================================
-CATEGORY: other (1595 errors)
+CATEGORY: other (1593 errors)
 ====================================================================================================
 
   core_hero.cpp_CHero_FUN_004f3960
@@ -85,10 +85,10 @@ CATEGORY: other (1595 errors)
   core_hero.cpp_CHero_FUN_004f33b0
     Line 57: C-style cast from 'struct CDemonActor *' to 'float' is not allowed...
 
-  ... and 316 more errors
+  ... and 314 more errors
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (762 errors)
+CATEGORY: undeclared_identifier (747 errors)
 ====================================================================================================
 
   core_msnedit.cpp_FUN_0053d3a0
@@ -117,10 +117,6 @@ CATEGORY: undeclared_identifier (762 errors)
     Line 165: use of undeclared identifier 'DAT_0083b110'; did you mean 'DAT_0083b10c'?...
   core_inv.cpp_drawWeaponIconBackground_FUN_00500050
     Line 31: use of undeclared identifier 'DAT_00a00000'; did you mean 'DAT_00400080'?...
-  core_fire.cpp_CShell_onCollision_FUN_004c6380
-    Line 33: use of undeclared identifier 'DAT_02d141dc'; did you mean 'DAT_02d141e0'?...
-  core_flies.cpp_CFlies_renderOpaque_FUN_004cc300
-    Line 58: use of undeclared identifier 'DAT_02d7a808'...
   core_game.cpp_CGame_displayActStats_FUN_004e3800
     Line 194: use of undeclared identifier 'DAT_02d7c2f0'...
   core_game.cpp_CGame_finishAct_FUN_004e3b90
@@ -135,24 +131,28 @@ CATEGORY: undeclared_identifier (762 errors)
     Line 12: use of undeclared identifier 'DAT_02f7a024'...
   core_msnedit.cpp_FUN_00536e20
     Line 28: use of undeclared identifier 'DAT_02f7a02c'...
-  core_netgame.cpp_CNetGame_FUN_00541390
-    Line 272: use of undeclared identifier 'DAT_02f7c640'...
-  core_netgame.cpp_CNetGame_processChatOut_FUN_00541e40
-    Line 62: use of undeclared identifier 'DAT_02f98ae0'...
-  core_netgame.cpp_CNetGame_removePlayer_FUN_00542b00
-    Line 44: use of undeclared identifier 'DAT_02f98ae0'...
+  core_netgame.cpp_CNetGame_runLobby_FUN_00541390
+    Line 271: use of undeclared identifier 'DAT_02f7c640'...
   core_path.cpp_CPathMap_queuePop_FUN_005487a0
     Line 105: use of undeclared identifier 'DAT_030d2857'...
-  core_skeledit.cpp_FUN_0058bd00
-    Line 71: use of undeclared identifier 'DAT_0365a3e8'...
   core_skeledit.cpp_FUN_0058afe0
     Line 50: use of undeclared identifier 'DAT_0366b650'; did you mean 'DAT_0366b64c'?...
   core_skeledit.cpp_CDeformableModel_FUN_0058c190
     Line 106: use of undeclared identifier 'DAT_03670650'...
   core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810
     Line 294: use of undeclared identifier 'DAT_03670650'...
+  core_skeledit.cpp_FUN_005897b0
+    Line 43: use of undeclared identifier 'DAT_03670848'...
+  core_skeledit.cpp_FUN_00589a40
+    Line 24: use of undeclared identifier 'DAT_03670848'...
+  core_skeledit.cpp_viewModel_FUN_00598fc0
+    Line 47: use of undeclared identifier 'DAT_03670848'...
+  wincore_winrun.cpp_getRegistryStringValue_FUN_005f4210
+    Line 19: use of undeclared identifier 'DAT_80000002'...
+  wincore_winrun.cpp_setRegistryStringValue_FUN_005f4290
+    Line 22: use of undeclared identifier 'DAT_80000002'...
 
-  ... and 257 more errors
+  ... and 247 more errors
 
 ====================================================================================================
 CATEGORY: format_error (590 errors)
@@ -286,10 +286,10 @@ CATEGORY: incompatible_types (575 errors)
   shape_superopt.cpp_CObj_addPolygons_FUN_005d2410
     Line 22: assigning to 'CPoly *' from incompatible type 'void *'...
 
-  ... and 320 more errors
+  ... and 319 more errors
 
 ====================================================================================================
-CATEGORY: syntax_error (73 errors)
+CATEGORY: syntax_error (72 errors)
 ====================================================================================================
 
   core_dskybox.cpp_renderSkyDome_FUN_004901f0
@@ -314,8 +314,6 @@ CATEGORY: syntax_error (73 errors)
     Line 1184: expected expression...
   core_fire.cpp_CFireball_process_FUN_004c0b30
     Line 94: expected expression...
-  core_fire.cpp_CGunFlame_initProcess_FUN_004c4b00
-    Line 22: expected expression...
   core_ghoul.cpp_CGhoul_process_FUN_004e6600
     Line 151: expected expression...
   core_hero.cpp_CHero_FUN_004f2af0
@@ -352,8 +350,10 @@ CATEGORY: syntax_error (73 errors)
     Line 726: expected expression...
   core_zombie.cpp_FUN_005f8cc0
     Line 18: expected expression...
+  core_zombie.cpp_FUN_005f8d30
+    Line 21: expected expression...
 
-  ... and 19 more errors
+  ... and 18 more errors
 
 ====================================================================================================
 CATEGORY: lvalue_required (23 errors)
@@ -447,8 +447,8 @@ CATEGORY: pointer_precision (2 errors)
 COMPILATION VS SUSPECT PATTERNS
 ====================================================================================================
 
-Average suspects in successfully compiled functions: 2.27
-Average suspects in failed compilations: 11.17
+Average suspects in successfully compiled functions: 2.25
+Average suspects in failed compilations: 11.11
 
-Functions that compile but have suspect patterns: 1763
+Functions that compile but have suspect patterns: 1749
 (These may have runtime issues even though syntax is valid)

@@ -127,7 +127,7 @@ section .text
     TEST EDX,EDX                        ; 0058bdbe
     JLE 0x0058be50                      ; 0058bdc0
         ;   XREF to: 0058be50 (CONDITIONAL_JUMP)  ; LAB_0058be50
-    MOV EBX,0x365a3e8                   ; 0058bdc6 | DAT_0365a3e8
+    MOV EBX,0x365a3e8                   ; 0058bdc6 | g_SkeletonBoneNames
     XOR EDI,EDI                         ; 0058bdcb
     MOV ECX,dword ptr [ESP + 0x408]     ; 0058bdcd
         ;   Label: LAB_0058bdcd
@@ -141,7 +141,7 @@ section .text
     ADD ESP,0x10                        ; 0058bde6
     PUSH 0x32                           ; 0058bde9
     PUSH 0x0                            ; 0058bdeb
-    PUSH EBX                            ; 0058bded | DAT_0365a3e8
+    PUSH EBX                            ; 0058bded | g_SkeletonBoneNames
     CALL crt_memory.c_memset_FUN_005fde40 ; 0058bdee
         ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 0058bdf3
@@ -150,11 +150,11 @@ section .text
     PUSH 0x1                            ; 0058bdfe
     MOV EDX,dword ptr [ESP + 0x424]     ; 0058be00
     PUSH EDX                            ; 0058be07
-    PUSH EBX                            ; 0058be08 | DAT_0365a3e8
+    PUSH EBX                            ; 0058be08 | g_SkeletonBoneNames
     CALL crt_stdio.c_fread_FUN_005fd990 ; 0058be09
         ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 0058be0e
-    PUSH EBX                            ; 0058be11 | DAT_0365a3e8
+    PUSH EBX                            ; 0058be11 | g_SkeletonBoneNames
     MOV ECX,dword ptr [EBP + 0x1c]      ; 0058be12
     PUSH ECX                            ; 0058be15
     CALL core_skeledit.cpp_FUN_0058ac30 ; 0058be16
@@ -385,7 +385,7 @@ section .text
     JGE 0x0058bf2c                      ; 0058c113
         ;   XREF to: 0058bf2c (CONDITIONAL_JUMP)  ; LAB_0058bf2c
     IMUL EAX,EAX,0x32                   ; 0058c119
-    ADD EAX,0x365a3e8                   ; 0058c11c | DAT_0365a3e8
+    ADD EAX,0x365a3e8                   ; 0058c11c | g_SkeletonBoneNames
     PUSH EAX                            ; 0058c121
     MOV ESI,dword ptr [ESP + 0x408]     ; 0058c122
     PUSH ESI                            ; 0058c129

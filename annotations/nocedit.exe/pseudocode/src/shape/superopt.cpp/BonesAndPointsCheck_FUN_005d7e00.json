@@ -1,35 +1,21 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 22,
-        "line": 85,
-        "message": "use of undeclared identifier 'DAT_03f6bbf0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 22,
-        "line": 96,
-        "message": "use of undeclared identifier 'DAT_03f6bbf0'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 270,
-    "complexity_score": 285,
+    "complexity_score": 260,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 45,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 140,
-    "suspect_count": 13,
+    "suspect_count": 11,
     "suspect_types": [
       "pointer_cast",
-      "stack_param",
-      "undefined_data"
+      "stack_param"
     ],
     "total_lines": 410
   },
@@ -329,8 +315,8 @@
     },
     {
       "addr": "03f6bbf0",
-      "name": "DAT_03f6bbf0",
-      "type": "undefined4",
+      "name": "g_TriListTextureNames",
+      "type": "char[50][80]",
       "value": null
     },
     {
@@ -520,22 +506,6 @@
       "severity": "moderate",
       "text": "uVar9 = *(int *)(in_stack_00000004 + 0x34) - 1;",
       "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 78,
-      "match": "DAT_03f6bbf0",
-      "severity": "mild",
-      "text": "pcVar13 = &DAT_03f6bbf0 + iVar7 * 0x50;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 89,
-      "match": "DAT_03f6bbf0",
-      "severity": "mild",
-      "text": "pcVar13 = &DAT_03f6bbf0 + iVar7 * 0x50;",
-      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",

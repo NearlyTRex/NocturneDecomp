@@ -1,42 +1,20 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 19,
-        "line": 17,
-        "message": "member reference base type 'char[14]' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 34,
-        "line": 17,
-        "message": "cast from pointer to smaller type 'ushort' (aka 'unsigned short') loses information"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 17,
-        "line": 22,
-        "message": "use of undeclared identifier '_port'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 25,
-    "complexity_score": 44,
+    "complexity_score": 10,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 14,
-    "suspect_count": 2,
-    "suspect_types": [
-      "stack_param",
-      "unknown_field"
-    ],
-    "total_lines": 39
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 35
   },
   "cross_references": [
     {
@@ -56,7 +34,7 @@
     ],
     "convention": "__cdecl",
     "name": "support_trisock.cpp_bindSocket_FUN_005e1b80",
-    "signature": "int __cdecl support_trisock_cpp_bindSocket_FUN_005e1b80(uint16_t port,_SOCKET *socket_handle)"
+    "signature": "int __cdecl support_trisock_cpp_bindSocket_FUN_005e1b80(_SOCKET *socket_handle,uint16_t port)"
   },
   "function_calls": [
     {
@@ -95,10 +73,10 @@
     "pcode_op_count": 96
   },
   "stack_frame": {
-    "frame_size": 28,
+    "frame_size": 26,
     "local_size": 20,
     "param_offset": 4,
-    "param_size": 8,
+    "param_size": 6,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -110,36 +88,19 @@
       },
       {
         "is_param": true,
-        "name": "port",
+        "name": "socket_handle",
         "offset": 4,
-        "size": 2,
-        "type": "uint16_t"
+        "size": 4,
+        "type": "_SOCKET *"
       },
       {
         "is_param": true,
-        "name": "socket_handle",
+        "name": "port",
         "offset": 8,
-        "size": 4,
-        "type": "_SOCKET *"
+        "size": 2,
+        "type": "uint16_t"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 6,
-      "match": "in_stack_00000006",
-      "severity": "moderate",
-      "text": "ushort in_stack_00000006;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 10,
-      "match": "._0_2_",
-      "severity": "mild",
-      "text": "local_10.sa_data._0_2_ = htons((ushort)socket_handle);",
-      "type": "unknown_field"
-    }
-  ]
+  "suspects": []
 }
