@@ -25,7 +25,8 @@ void __cdecl core_crate_cpp_CCrate_FUN_00448a70(CCrate *this_ptr)
     CStack_10.z = (this_ptr->base).location.position.z;
   }
   CStack_10.y = (CStack_28.max.y - CStack_28.min.y) + CStack_10.y;
-  core_fire_cpp_CFireEffect_createExplosion_FUN_004c8c10(g_CFireEffectPtr,&CStack_10);
+  core_fire_cpp_CFireEffect_createExplosion_FUN_004c8c10
+            (g_CFireEffectPtr,&CStack_10,32.0,0x44bb8000);
   core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0
             (g_CDemonMissionPtr,&this_ptr->base,1);
   (this_ptr->base).was_created = 2;

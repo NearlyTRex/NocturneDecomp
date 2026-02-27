@@ -61114,7 +61114,7 @@
           "type":"int*"
         },
         {
-          "name":"granule_info",
+          "name":"side_info",
           "storage":{
             "offset":16,
             "size":4,
@@ -61127,7 +61127,7 @@
               }
             ]
           },
-          "type":"SMpegLayer3Granule*"
+          "type":"SMpegLayer3SideInfo*"
         },
         {
           "name":"channel_index",
@@ -61146,7 +61146,7 @@
           "type":"int"
         },
         {
-          "name":"granule_array",
+          "name":"frame",
           "storage":{
             "offset":24,
             "size":4,
@@ -61159,7 +61159,7 @@
               }
             ]
           },
-          "type":"SMpegLayer3Granule**"
+          "type":"SMpegFrame*"
         }
       ]
     }
@@ -63079,8 +63079,76 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_path.cpp_FUN_00546350",
-    "ret":"void"
+    "name":"core_path.cpp_queuePush_FUN_00546350",
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"grid_x",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"cost",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"grid_z",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"direction",
+          "storage":{
+            "offset":16,
+            "size":1,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":1
+              }
+            ]
+          },
+          "type":"char"
+        }
+      ]
+    }
   },
   {
     "addr":"005463d0",
@@ -63093,8 +63161,60 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_path.cpp_FUN_005463d0",
-    "ret":"void"
+    "name":"core_path.cpp_queuePop_FUN_005463d0",
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"out_x",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int*"
+        },
+        {
+          "name":"out_cost",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int*"
+        },
+        {
+          "name":"out_z",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int*"
+        }
+      ]
+    }
   },
   {
     "addr":"00546450",
@@ -63211,7 +63331,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_path.cpp_debugRenderGridQuad_FUN_00547dd0",
+    "name":"core_path.cpp_renderGridQuad_FUN_00547dd0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -63439,7 +63559,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_path.cpp_CPathMap_FUN_00548750",
+    "name":"core_path.cpp_CPathMap_setupPathSearch_FUN_00548750",
     "ret":"void",
     "vars":{
       "params":[

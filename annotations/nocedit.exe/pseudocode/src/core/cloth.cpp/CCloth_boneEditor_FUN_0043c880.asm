@@ -260,16 +260,16 @@ section .text
     TEST EAX,EAX                        ; 0043cb11
     JZ 0x0043cb42                       ; 0043cb13
         ;   XREF to: 0043cb42 (CONDITIONAL_JUMP)  ; LAB_0043cb42
-    MOV EBX,dword ptr [0x0083b10c]      ; 0043cb15 | DAT_0083b10c
+    MOV EBX,dword ptr [0x0083b10c]      ; 0043cb15 | g_ClothBoneScreenshotCounter
     INC EBX                             ; 0043cb1b
     PUSH EBX                            ; 0043cb1c
     PUSH 0x618693                       ; 0043cb1d | = "noc%d.pcx"
-    PUSH 0x83b110                       ; 0043cb22 | DAT_0083b110
-    MOV dword ptr [0x0083b10c],EBX      ; 0043cb27 | DAT_0083b10c
+    PUSH 0x83b110                       ; 0043cb22 | g_ClothBoneScreenshotFilename
+    MOV dword ptr [0x0083b10c],EBX      ; 0043cb27 | g_ClothBoneScreenshotCounter
     CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0043cb2d
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0043cb32
-    PUSH 0x83b110                       ; 0043cb35 | DAT_0083b110
+    PUSH 0x83b110                       ; 0043cb35 | g_ClothBoneScreenshotFilename
     CALL engine_pcx.c_saveScreenshotGeneral_FUN_005490c0 ; 0043cb3a
         ;   XREF to: 005490c0 (UNCONDITIONAL_CALL)  ; void engine_pcx.c_saveScreenshotGeneral_FUN_005490c0(char * filename)
     ADD ESP,0x4                         ; 0043cb3f

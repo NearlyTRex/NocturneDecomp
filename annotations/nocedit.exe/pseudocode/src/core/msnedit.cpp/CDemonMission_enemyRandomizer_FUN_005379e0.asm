@@ -155,7 +155,7 @@ section .text
     PUSH EDI                            ; 00537af5
         ;   Label: LAB_00537af5
     PUSH 0xc8                           ; 00537af6
-    PUSH 0x680580                       ; 00537afb | DAT_00680580
+    PUSH 0x680580                       ; 00537afb | g_ActorWildcardBuffer
     PUSH 0x63bb29                       ; 00537b00 | = "Enter actor name wildcard"
     MOV ESI,dword ptr [0x00678a60]      ; 00537b05 | g_CEditorToolsPtr
     PUSH ESI                            ; 00537b0b | g_CEditorToolsInstance
@@ -331,7 +331,7 @@ section .text
         ;   XREF to: 00537c3c (CONDITIONAL_JUMP)  ; LAB_00537c3c
     PUSH 0x0                            ; 00537cd7
     PUSH EBX                            ; 00537cd9
-    PUSH 0x680580                       ; 00537cda | DAT_00680580
+    PUSH 0x680580                       ; 00537cda | g_ActorWildcardBuffer
     CALL shape_edittool.cpp_wildcardStringMatch_FUN_004a6e20 ; 00537cdf
         ;   XREF to: 004a6e20 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_wildcardStringMatch_FUN_004a6e20(char * pattern, char * target_string, int case_sensitive)
     ADD ESP,0xc                         ; 00537ce4

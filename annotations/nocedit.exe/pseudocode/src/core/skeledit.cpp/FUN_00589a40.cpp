@@ -21,7 +21,7 @@ void __cdecl core_skeledit_cpp_FUN_00589a40(void)
   _fprintf(file,"// version\n");
   _fprintf(file,"%d\n",1);
   _fprintf(file,"// lastPOSimported\n");
-  _fprintf(file,"\"%s\"\n",&DAT_03670848);
+  _fprintf(file,"\"%s\"\n",g_SkeleditLastPOSImported);
   _fprintf(file,"// lastMOTimported\n");
   _fprintf(file,"\"%s\"\n",&DAT_03670950);
   _fprintf(file,"// lastTestSkeletonDir\n");

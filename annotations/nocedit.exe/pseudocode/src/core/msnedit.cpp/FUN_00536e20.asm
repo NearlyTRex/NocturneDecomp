@@ -71,7 +71,7 @@ section .text
     TEST EBX,EBX                        ; 00536e4e
     JL 0x005371ef                       ; 00536e50
         ;   XREF to: 005371ef (CONDITIONAL_JUMP)  ; LAB_005371ef
-    CMP EBX,dword ptr [0x02f7a028]      ; 00536e56 | INT_02f7a028
+    CMP EBX,dword ptr [0x02f7a028]      ; 00536e56 | g_MsnEditPropertyList.count
     JGE 0x005371ef                      ; 00536e5c
         ;   XREF to: 005371ef (CONDITIONAL_JUMP)  ; LAB_005371ef
     MOV EAX,EBX                         ; 00536e62

@@ -2,30 +2,6 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "incompatible_types",
-        "column": 21,
-        "line": 113,
-        "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 17,
-        "line": 156,
-        "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 25,
-        "line": 223,
-        "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 25,
-        "line": 249,
-        "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 71,
         "line": 263,
@@ -37,18 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 805,
-    "complexity_score": 490,
+    "complexity_score": 475,
     "cross_reference_count": 0,
     "function_call_count": 25,
     "global_count": 19,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 335,
-    "suspect_count": 13,
+    "suspect_count": 12,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_param",
       "stack_ref",
-      "undefined_data",
       "warning_type_propagation"
     ],
     "total_lines": 1140
@@ -287,8 +262,8 @@
     },
     {
       "addr": "00822754",
-      "name": "DAT_00822754",
-      "type": "undefined4",
+      "name": "INT_00822754",
+      "type": "int",
       "value": null
     },
     {
@@ -829,14 +804,6 @@
       "severity": "moderate",
       "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffec4);",
       "type": "stack_ref"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 261,
-      "match": "DAT_00822754",
-      "severity": "mild",
-      "text": "DAT_00822754);",
-      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",

@@ -20,7 +20,7 @@ int __cdecl core_boneguy_cpp_CBoneGuy_getTargetPoints_FUN_0041d550(CBoneGuy *thi
     return 0;
   }
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
-                     (&(this_ptr->base).base.model,&local_30,DAT_00822944);
+                     (&(this_ptr->base).base.model,&local_30,INT_00822944);
   if (out_points_array != pCVar1) {
     out_points_array->x = pCVar1->x;
     out_points_array->y = pCVar1->y;
@@ -41,14 +41,14 @@ int __cdecl core_boneguy_cpp_CBoneGuy_getTargetPoints_FUN_0041d550(CBoneGuy *thi
     out_points_array[2].z = pCVar1->z;
   }
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
-                     (&(this_ptr->base).base.model,&local_3c,DAT_00822968);
+                     (&(this_ptr->base).base.model,&local_3c,INT_00822968);
   if (out_points_array + 3 != pCVar1) {
     out_points_array[3].x = pCVar1->x;
     out_points_array[3].y = pCVar1->y;
     out_points_array[3].z = pCVar1->z;
   }
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
-                     (&(this_ptr->base).base.model,&local_48,DAT_0082296c);
+                     (&(this_ptr->base).base.model,&local_48,INT_0082296c);
   if (out_points_array + 4 != pCVar1) {
     out_points_array[4].x = pCVar1->x;
     out_points_array[4].y = pCVar1->y;

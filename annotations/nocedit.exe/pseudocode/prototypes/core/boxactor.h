@@ -57,7 +57,7 @@ int __cdecl CBoxActor::hasCollision(CBoxActor *this_ptr,SCollisionInfo *collisio
 
 // Original: core_boxactor.cpp_CBoxActor_FUN_00422390
 // Address: 00422390
-void __cdecl CBoxActor(CBoxActor *this_ptr);
+void __cdecl CBoxActor(CBoxActor *this_ptr,CVector3f *param_2,CVector3f *param_3);
 
 // Original: core_boxactor.cpp_CBoxActor_canPickup_FUN_004224b0
 // Address: 004224b0

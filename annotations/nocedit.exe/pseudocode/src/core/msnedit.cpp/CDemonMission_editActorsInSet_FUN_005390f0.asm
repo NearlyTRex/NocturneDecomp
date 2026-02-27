@@ -140,7 +140,7 @@ section .text
         ;   XREF to: 005ff9d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_remove_FUN_005ff9d0(char * filename)
     ADD ESP,0x4                         ; 00539109
     MOV EAX,dword ptr [EBP + 0x92]      ; 0053910c
-    PUSH 0x2f7a024                      ; 00539112 | DAT_02f7a024
+    PUSH 0x2f7a024                      ; 00539112 | g_MsnEditPropertyList
     MOV dword ptr [EAX + 0x4],0x1       ; 00539117
     CALL core_actor.cpp_CActorPropertyList_resetSelection_FUN_0040e150 ; 0053911e
         ;   XREF to: 0040e150 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_resetSelection_FUN_0040e150(CActorPropertyList * this_ptr)

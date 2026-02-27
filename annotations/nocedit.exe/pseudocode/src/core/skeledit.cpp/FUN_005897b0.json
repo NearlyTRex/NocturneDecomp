@@ -4,37 +4,25 @@
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 43,
-        "message": "use of undeclared identifier 'DAT_03670848'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 47,
-        "message": "use of undeclared identifier 'DAT_03670848'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 82,
+        "line": 83,
         "message": "use of undeclared identifier 'DAT_03670950'"
       },
       {
         "category": "undeclared_identifier",
         "column": 15,
-        "line": 86,
+        "line": 87,
         "message": "use of undeclared identifier 'DAT_03670950'; did you mean 'DAT_03f9b850'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 103,
+        "line": 104,
         "message": "use of undeclared identifier 'DAT_03670a58'"
       },
       {
         "category": "undeclared_identifier",
         "column": 15,
-        "line": 107,
+        "line": 108,
         "message": "use of undeclared identifier 'DAT_03670a58'"
       }
     ],
@@ -43,17 +31,17 @@
   },
   "complexity": {
     "assembly_lines": 310,
-    "complexity_score": 176,
+    "complexity_score": 157,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 15,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 111,
-    "suspect_count": 6,
+    "pseudocode_lines": 112,
+    "suspect_count": 4,
     "suspect_types": [
       "undefined_data"
     ],
-    "total_lines": 421
+    "total_lines": 422
   },
   "cross_references": [],
   "function": {
@@ -162,8 +150,8 @@
     },
     {
       "addr": "03670848",
-      "name": "DAT_03670848",
-      "type": "undefined4",
+      "name": "g_SkeleditLastPOSImported",
+      "type": "char[264]",
       "value": null
     },
     {
@@ -251,23 +239,7 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_03670848",
-      "severity": "mild",
-      "text": "DAT_03670848 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 40,
-      "match": "DAT_03670848",
-      "severity": "mild",
-      "text": "puVar3 = &DAT_03670848;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 75,
+      "line": 76,
       "match": "DAT_03670950",
       "severity": "mild",
       "text": "DAT_03670950 = 0;",
@@ -275,7 +247,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 79,
+      "line": 80,
       "match": "DAT_03670950",
       "severity": "mild",
       "text": "puVar3 = &DAT_03670950;",
@@ -283,7 +255,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 96,
+      "line": 97,
       "match": "DAT_03670a58",
       "severity": "mild",
       "text": "DAT_03670a58 = 0;",
@@ -291,7 +263,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 100,
+      "line": 101,
       "match": "DAT_03670a58",
       "severity": "mild",
       "text": "puVar3 = &DAT_03670a58;",

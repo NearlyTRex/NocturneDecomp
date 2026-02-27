@@ -119,7 +119,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_archive_FUN_00419880(CBodyPart *this_pt
     }
   }
   if (1 < g_CBodyPartClassVersion) {
-    core_actor_cpp_archiveSimBox_FUN_0040bd70((CSimBox *)&this_ptr->physics_box,"simBox");
+    core_actor_cpp_archiveBox_FUN_0040bd70(&this_ptr->physics_box,"simBox");
     core_actor_cpp_archiveActor_FUN_0040b870
               ((CDemonActor *)&this_ptr->carried_by_actor,"carriedByActor");
   }

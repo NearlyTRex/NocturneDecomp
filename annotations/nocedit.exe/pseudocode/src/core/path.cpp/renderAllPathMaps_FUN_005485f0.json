@@ -1,0 +1,171 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 59,
+    "complexity_score": 39,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 7,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 24,
+    "suspect_count": 1,
+    "suspect_types": [
+      "pointer_cast"
+    ],
+    "total_lines": 83
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005485f0",
+    "address_range": [
+      [
+        "005485f0",
+        "00548673"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_path.cpp_renderAllPathMaps_FUN_005485f0",
+    "signature": "void __cdecl core_path_cpp_renderAllPathMaps_FUN_005485f0(int depth,int red,int green,int fog)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "is_variadic": true,
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "00547fc0",
+      "is_variadic": false,
+      "name": "core_path.cpp_CPathMap_renderPathMap_FUN_00547fc0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063ea78",
+      "name": "s_core_path_cpp_0063ea78",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063ea89",
+      "name": "s_Global_pathmap_list_corr_0063ea89",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "030c3ab8",
+      "name": "g_PathMapCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "030c3abc",
+      "name": "g_PathMapList",
+      "type": "CPathMap*[200]",
+      "value": null
+    },
+    {
+      "addr": "030c3ac0",
+      "name": "DAT_030c3ac0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 4,
+    "estimated_params": 4
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.159090909090909,
+    "instruction_count": 44,
+    "opcode_distribution": {
+      "BOOL_OR": 2,
+      "BRANCH": 2,
+      "CALL": 2,
+      "CBRANCH": 4,
+      "COPY": 38,
+      "INT_ADD": 16,
+      "INT_AND": 21,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 20,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 10,
+      "INT_SUB": 15,
+      "INT_XOR": 2,
+      "LOAD": 12,
+      "POPCOUNT": 10,
+      "RETURN": 1,
+      "STORE": 12
+    },
+    "pcode_op_count": 183
+  },
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "depth",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "red",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "green",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "fog",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 12,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "if (*(int *)((int)g_PathMapList + iVar1) == 0) {",
+      "type": "pointer_cast"
+    }
+  ]
+}

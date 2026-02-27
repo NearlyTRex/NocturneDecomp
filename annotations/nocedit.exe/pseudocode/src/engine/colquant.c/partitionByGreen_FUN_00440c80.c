@@ -1,0 +1,52 @@
+// Name: engine_colquant.c_partitionByGreen_FUN_00440c80
+// Address: 00440c80
+// Address Range: [[00440c80, 00440db3]]
+// Convention: __cdecl
+// Signature: void __cdecl engine_colquant_c_partitionByGreen_FUN_00440c80(SColorQuantWorkspace *workspace,int box_index,int new_box_index)
+
+#include "nocturne.h"
+
+void __cdecl engine_colquant_c_partitionByGreen_FUN_00440c80(SColorQuantWorkspace *workspace,int box_index,int new_box_index)
+
+{
+  uint uVar1;
+  int iVar2;
+  int iVar3;
+  char *pcVar4;
+  int iVar5;
+  int local_18;
+  int local_14;
+  
+  local_14 = workspace->boxes[box_index].start_index;
+  iVar2._0_2_ = workspace->boxes[box_index].avg_red;
+  iVar2._2_2_ = workspace->boxes[box_index].avg_green;
+  iVar5 = local_14 + workspace->boxes[box_index].count + -1;
+  if (local_14 < iVar5) {
+    local_18 = local_14 << 2;
+    do {
+      if (iVar2 >> 0x10 < (int)(uint)(byte)workspace->color_data[local_18 + 1]) {
+        iVar3 = iVar5 * 4;
+        while ((local_14 * 4 < iVar3 &&
+               (iVar2 >> 0x10 < (int)(uint)(byte)workspace->color_data[iVar3 + 1]))) {
+          iVar5 = iVar5 + -1;
+          iVar3 = iVar3 + -4;
+        }
+        pcVar4 = workspace->color_data + local_18;
+        uVar1 = *(uint *)pcVar4;
+        *(uint *)pcVar4 = *(uint *)(workspace->color_data + iVar5 * 4);
+        *(uint *)(workspace->color_data + iVar5 * 4) = uVar1;
+      }
+      local_18 = local_18 + 4;
+      local_14 = local_14 + 1;
+    } while (local_14 < iVar5);
+  }
+  workspace->boxes[new_box_index].start_index = iVar5;
+  iVar2 = workspace->boxes[box_index].count;
+  workspace->boxes[new_box_index].count = iVar2 - (iVar5 - workspace->boxes[box_index].start_index);
+  workspace->boxes[box_index].count = iVar5 - workspace->boxes[box_index].start_index;
+  engine_colquant_c_computeBoxStatistics_FUN_00441260(workspace,box_index);
+  engine_colquant_c_computeBoxStatistics_FUN_00441260(workspace,new_box_index);
+  workspace->boxes[box_index].count = iVar2;
+  engine_colquant_c_refinePartitionByDistance_FUN_00441110(workspace,box_index,new_box_index);
+  return;
+}

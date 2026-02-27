@@ -68,7 +68,7 @@ int __cdecl core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0(CCharacte
         if (uStack_28 != 0) {
           uVar7 = uStack_1c ^ 1;
         }
-        CStack_80.y = local_24 + *(float *)(&DAT_0066e740 + uVar7 * 4);
+        CStack_80.y = local_24 + g_MoveAwayAngleOffsets[uVar7];
         CStack_80.x = 0.0;
         CStack_80.z = 0.0;
         fStack_14 = CStack_80.y;

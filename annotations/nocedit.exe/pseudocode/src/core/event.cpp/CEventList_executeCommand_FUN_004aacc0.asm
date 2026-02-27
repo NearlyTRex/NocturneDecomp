@@ -782,7 +782,7 @@ section .text
     MOV ECX,dword ptr [0x0067a3d0]      ; 004ab1f0 | g_CFireEffectInstance | g_CFireEffectPtr
     PUSH ECX                            ; 004ab1f6 | g_CFireEffectInstance
     CALL core_fire.cpp_CFireEffect_createExplosion_FUN_004c8c10 ; 004ab1f7
-        ;   XREF to: 004c8c10 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createExplosion_FUN_004c8c10(CFireEffect * this_ptr, CVector3f * position)
+        ;   XREF to: 004c8c10 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createExplosion_FUN_004c8c10(CFireEffect * this_ptr, CVector3f * position, float scale, int damage_amount)
     ADD ESP,0x14                        ; 004ab1fc
     JMP 0x004aaf1d                      ; 004ab1ff
         ;   XREF to: 004aaf1d (UNCONDITIONAL_JUMP)  ; LAB_004aaf1d
@@ -2868,7 +2868,7 @@ section .text
     MOV EDI,dword ptr [0x00681ef8]      ; 004ac576 | g_CSoundPtr
     PUSH EDI                            ; 004ac57c | g_CSoundInstance
     CALL core_sound.cpp_CSound_playSound_FUN_005b3a20 ; 004ac57d
-        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
+        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
     ADD ESP,0xc                         ; 004ac582
     MOV EBX,EAX                         ; 004ac585
     CALL sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0 ; 004ac587
@@ -2906,7 +2906,7 @@ section .text
     MOV ECX,dword ptr [0x00681ef8]      ; 004ac5d9 | g_CSoundInstance | g_CSoundPtr
     PUSH ECX                            ; 004ac5df | g_CSoundInstance
     CALL core_sound.cpp_CSound_playSound_FUN_005b3a20 ; 004ac5e0
-        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
+        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
     MOV BL,byte ptr [EBP + 0xfffff57a]  ; 004ac5e5
     ADD ESP,0xc                         ; 004ac5eb
     TEST BL,BL                          ; 004ac5ee

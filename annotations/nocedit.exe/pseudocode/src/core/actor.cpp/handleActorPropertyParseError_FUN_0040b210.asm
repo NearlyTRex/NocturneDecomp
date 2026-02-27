@@ -8,6 +8,7 @@
 ; char *           Stack[0x8]:4   property_type
 ;
 ; XREF[13]:
+;   core_actor.cpp_archiveBox_FUN_0040bd70 at 0040bde5
 ;   core_actor.cpp_archiveClothList_FUN_0040be60 at 0040bf44
 ;   core_actor.cpp_archiveDescription_FUN_0040b290 at 0040b2d0
 ;   core_actor.cpp_archiveFloat_FUN_0040b770 at 0040b7b9
@@ -17,7 +18,6 @@
 ;   core_actor.cpp_archiveOrientation_FUN_0040b3e0 at 0040b431
 ;   core_actor.cpp_archivePartStatus_FUN_0040bae0 at 0040bb6d
 ;   core_actor.cpp_archiveQuaternion_FUN_0040b520 at 0040b575
-;   core_actor.cpp_archiveRules_FUN_0040c000 at 0040c0e0
 ;   ... and 3 more
 ;
 ; Referenced Globals:

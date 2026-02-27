@@ -121,13 +121,13 @@
   },
   "complexity": {
     "assembly_lines": 3337,
-    "complexity_score": 1617,
+    "complexity_score": 1557,
     "cross_reference_count": 2,
     "function_call_count": 91,
     "global_count": 146,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 1142,
-    "suspect_count": 44,
+    "suspect_count": 38,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
@@ -1372,7 +1372,7 @@
     },
     {
       "addr": "00681850",
-      "name": "WatcomStaticDestructorNode_00681850",
+      "name": "g_SkeleditViewModelDestructorNode",
       "type": "WatcomStaticDestructorNode",
       "value": null
     },
@@ -1462,20 +1462,20 @@
     },
     {
       "addr": "03665f74",
-      "name": "CKeyFramedModel_03665f74",
+      "name": "g_SkeleditViewModel",
       "type": "CKeyFramedModel",
       "value": null
     },
     {
       "addr": "03666084",
-      "name": "CKeyFramedModel_03665f74.poly_count",
+      "name": "g_SkeleditViewModel.poly_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0366b64c",
-      "name": "DAT_0366b64c",
-      "type": "undefined1",
+      "name": "g_SkeleditViewModelInitFlag",
+      "type": "uchar",
       "value": null
     },
     {
@@ -2726,30 +2726,6 @@
       "type": "warning_deadcode_restart"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 204,
-      "match": "DAT_0366b64c",
-      "severity": "mild",
-      "text": "if ((DAT_0366b64c & 1) == 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 205,
-      "match": "DAT_0366b64c",
-      "severity": "mild",
-      "text": "DAT_0366b64c = DAT_0366b64c | 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 205,
-      "match": "DAT_0366b64c",
-      "severity": "mild",
-      "text": "DAT_0366b64c = DAT_0366b64c | 1;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unknown/mangled field access",
       "line": 211,
       "match": "._8_4_",
@@ -2780,30 +2756,6 @@
       "severity": "mild",
       "text": "local_200._12_4_ = 0.0;",
       "type": "unknown_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 218,
-      "match": "DAT_0366b64c",
-      "severity": "mild",
-      "text": "if ((DAT_0366b64c & 2) == 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 219,
-      "match": "DAT_0366b64c",
-      "severity": "mild",
-      "text": "DAT_0366b64c = DAT_0366b64c | 2;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 219,
-      "match": "DAT_0366b64c",
-      "severity": "mild",
-      "text": "DAT_0366b64c = DAT_0366b64c | 2;",
-      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",

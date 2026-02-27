@@ -22,7 +22,11 @@ CDemonActorType g_CZombieCowClassInfo = {};
 CVector3f CVector3f_00838e40 = {};
 CVector3f CVector3f_00838e4c = {};
 
+// char[20]
+char g_ClothBoneScreenshotFilename[20] = {};
+
 // int
+int g_ClothBoneScreenshotCounter = {};
 int INT_0083b124 = {};
 int INT_0083b128 = {};
 int INT_0083b12c = {};
@@ -41,7 +45,4 @@ int INT_0083b15c = {};
 int INT_0083b160 = {};
 int INT_0083b164 = {};
 int g_CramVisualizationUpdateCounter = {};
-
-// undefined4
-undefined4 DAT_0083b10c = {};
 

@@ -7,6 +7,7 @@
 #include "types/classes/CActorProperty.h"
 #include "types/classes/CActorPropertyList.h"
 #include "types/classes/CBoundingBox3D.h"
+#include "types/classes/CBox.h"
 #include "types/classes/CClothList.h"
 #include "types/classes/CDeformableModelInstance.h"
 #include "types/classes/CDemonActor.h"
@@ -19,7 +20,6 @@
 #include "types/classes/CPathMap.h"
 #include "types/classes/CQuaternion4f.h"
 #include "types/classes/CRuleList.h"
-#include "types/classes/CSimBox.h"
 #include "types/classes/CTextureCache.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
@@ -252,9 +252,9 @@ CVector3f * __cdecl core_actor_cpp_CDemonActor_transformVector_FUN_00408e80(CDem
 CVector3f * __cdecl core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0(CDemonActor *this_ptr,CVector3f *output_vector,CVector3f *input_vector);
 CVector3f * __cdecl core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(CDemonActor *this_ptr,CVector3f *output_world_point,CVector3f *input_local_point);
 CVector3f * __cdecl core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10(CDemonActor *this_ptr,CVector3f *output_local_point,CVector3f *input_world_point);
-void __cdecl core_actor_cpp_CDemonActor_playSound_FUN_00408f60(CDemonActor *this_ptr,char *sound_name);
+uint __cdecl core_actor_cpp_CDemonActor_playSound_FUN_00408f60(CDemonActor *this_ptr,char *sound_name);
 void __cdecl core_actor_cpp_CDemonActor_playAmbientSound_FUN_00408f80(CDemonActor *this_ptr,char *sound_name);
-void __cdecl core_actor_cpp_CDemonActor_playSoundWithVolume_FUN_00408fa0(CDemonActor *this_ptr,char *sound_name,float volume);
+uint __cdecl core_actor_cpp_CDemonActor_playSoundWithDelay_FUN_00408fa0(CDemonActor *this_ptr,char *sound_name,float delay);
 void __cdecl core_actor_cpp_CDemonActor_playAmbientSoundWithVolume_FUN_00408fd0(CDemonActor *this_ptr,char *sound_name,float volume);
 int __cdecl core_actor_cpp_CDemonActor_canPickup_FUN_00409000(CDemonActor *this_ptr,CDemonActor *picker);
 void __cdecl core_actor_cpp_CDemonActor_pickup_FUN_00409020(CDemonActor *this_ptr,CDemonActor *carrier);
@@ -310,7 +310,7 @@ void __cdecl core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b8f0(CKeyFrame
 void __cdecl core_actor_cpp_archiveDeformableModelInstance_FUN_0040b970(CDeformableModelInstance *model_ptr,char *property_name);
 void __cdecl core_actor_cpp_archiveMotionState_FUN_0040b9f0(CMotionController *motion_controller,char *property_name);
 void __cdecl core_actor_cpp_archivePartStatus_FUN_0040bae0(CDeformableModelInstance *model_ptr,char *property_name);
-void __cdecl core_actor_cpp_archiveSimBox_FUN_0040bd70(CSimBox *simbox_ptr,char *property_name);
+void __cdecl core_actor_cpp_archiveBox_FUN_0040bd70(CBox *box_ptr,char *property_name);
 void __cdecl core_actor_cpp_archiveClothList_FUN_0040be60(CClothList *cloth_list,char *property_name);
 void __cdecl core_actor_cpp_archiveRules_FUN_0040c000(CRuleList *rules,char *property_name);
 void __cdecl core_actor_cpp_CDemonActor_archive_FUN_0040c1c0(CDemonActor *this_ptr);

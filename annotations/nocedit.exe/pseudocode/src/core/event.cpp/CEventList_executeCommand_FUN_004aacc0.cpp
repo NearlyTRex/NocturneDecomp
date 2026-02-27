@@ -75,8 +75,7 @@ int __cdecl core_event_cpp_CEventList_executeCommand_FUN_004aacc0(CEventList *th
   byte *local_ec;
   C3DSLight *local_e8;
   int local_e4;
-  byte local_e0 [4];
-  uint local_dc;
+  float local_e0 [2];
   int local_d8;
   int local_d4;
   int local_d0;
@@ -309,10 +308,10 @@ LAB_004aad41:
         while ((g_CharacterClassificationTable[(byte)(*local_ec + 1)] & 2) != 0) {
           local_ec = local_ec + 1;
         }
-        local_dc = 0x40800000;
+        local_e0[1] = 4.0;
         if (*local_ec == 0x2c) {
           local_e4 = -1;
-          sscanf((char *)local_ec,", %f %n",&local_dc);
+          sscanf((char *)local_ec,", %f %n",local_e0 + 1);
           if (local_e4 < 0) {
             iVar2 = core_event_cpp_formatEventError_FUN_004aa2a0
                               ("Error parsing createExplosion() parms");
@@ -329,7 +328,8 @@ LAB_004aad41:
         }
         local_ec = local_ec + 1;
         if (local_f0 != 0) {
-          core_fire_cpp_CFireEffect_createExplosion_FUN_004c8c10(g_CFireEffectPtr,&local_128);
+          core_fire_cpp_CFireEffect_createExplosion_FUN_004c8c10
+                    (g_CFireEffectPtr,&local_128,local_e0[0],0x44bb8000);
         }
       }
       else {

@@ -30,7 +30,7 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this
   SMpegSubbandScalefactors *subband_samples;
   SMpegFrameHeader *pSVar12;
   SMpegFrameHeader *pSVar13;
-  SMpegLayer3Granule *pSVar14;
+  SMpegLayer3SideInfo *pSVar14;
   short *psVar15;
   byte bVar16;
   ushort *in_stack_00000008;
@@ -58,15 +58,11 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this
   SMpegSubbandScalefactors local_9c8 [2];
   SMpegScalefactorBandData local_6c8;
   char local_4d8;
-  SMpegLayer3Granule local_4c0;
+  SMpegLayer3SideInfo local_4c0;
   SMpegSubbandSCFSI local_390 [2];
   SMpegSubbandAllocation local_290 [2];
   float local_190 [32];
-  int local_110;
-  uint local_10c;
-  int local_104;
-  int local_100;
-  int local_fc;
+  SMpegFrameHeader local_110;
   SMpegFrameHeader local_e0;
   int local_b0;
   int local_ac;
@@ -86,7 +82,7 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this
   int local_74;
   int local_70;
   CFileBitStream *local_6c;
-  SMpegFrame *local_68;
+  uint local_68;
   SMpegFrame *local_64;
   int local_60;
   int local_5c;
@@ -98,7 +94,7 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this
   SMpegFrame *local_44;
   short *local_40;
   int local_3c;
-  SMpegLayer3Granule *local_38;
+  SMpegLayer3SideInfo *local_38;
   int local_34;
   short *local_30;
   int local_2c;
@@ -188,8 +184,8 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this
       local_e0.original = local_e0.sampling_rate_index;
       local_ac = (*(int *)local_e0.mpeg_version != 0) + 1;
       pCVar2 = &this_ptr->file_bitstream;
-      if (local_10c < 2) {
-        if (local_10c == 1) {
+      if ((uint)local_110.layer < 2) {
+        if (local_110.layer == 1) {
           local_60d0 = 0x20;
           local_60cc = 0x180;
           sound_mp3_cpp_CFileBitStream_readAllocationTable_FUN_0052f7a0
@@ -237,7 +233,7 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this
           } while (local_20 < 0xc);
         }
       }
-      else if (local_10c < 3) {
+      else if ((uint)local_110.layer < 3) {
         local_60cc = 0x480;
         local_60d0 = 8;
         sound_mp3_cpp_CFileBitStream_readAllocationValues_FUN_0052f670
@@ -298,7 +294,7 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this
           local_e0.copyright = local_e0.copyright + 1;
         } while (local_e0.copyright < 0xc);
       }
-      else if (local_10c == 3) {
+      else if (local_110.layer == 3) {
         local_60d0 = 8;
         if (*(int *)local_e0.mpeg_version == 0) {
           local_60cc = 0x240;
@@ -307,7 +303,7 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this
           local_60cc = 0x480;
         }
         pSVar13 = &local_e0;
-        pSVar14 = (SMpegLayer3Granule *)&local_4d8;
+        pSVar14 = (SMpegLayer3SideInfo *)&local_4d8;
         local_6c = &this_ptr->file_bitstream;
         uVar19 = SUB41(local_6c,0);
         uVar20 = (byte)((uint)local_6c >> 8);
@@ -411,44 +407,43 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this
             iVar7 = 0;
             if (0 < local_e0.original) {
               local_58 = local_4ec8.channels;
-              pSVar14 = (SMpegLayer3Granule *)(local_4c0.unk + local_34 + -8);
+              pSVar14 = (SMpegLayer3SideInfo *)((int)local_4c0.scfsi + local_34 + -8);
               do {
-                local_68 = (SMpegFrame *)
-                           sound_mp3_cpp_CMP3Decoder_getTotalBitsRead_FUN_0052f160(this_ptr);
+                local_68 = sound_mp3_cpp_CMP3Decoder_getTotalBitsRead_FUN_0052f160(this_ptr);
                 if (*(int *)local_e0.mpeg_version == 0) {
                   sound_mp3_cpp_CMP3Decoder_readLayer3ScalefactorsLSF_FUN_00531480
-                            (this_ptr,local_6c8.reserved,(SMpegLayer3Granule *)&local_4d8,local_74,
+                            (this_ptr,(int *)&local_6c8,(SMpegLayer3SideInfo *)&local_4d8,local_74,
                              iVar7,(SMpegFrame *)&local_e0);
                 }
                 else {
                   sound_mp3_cpp_CMP3Decoder_readLayer3Scalefactors_FUN_00530d20
-                            (this_ptr,local_6c8.reserved,(SMpegLayer3Granule *)&local_4d8,local_74,
+                            (this_ptr,(int *)&local_6c8,(SMpegLayer3SideInfo *)&local_4d8,local_74,
                              iVar7,(SMpegFrame *)&local_e0);
                 }
                 sound_mp3_cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00531680
-                          (this_ptr,(float *)&local_3cc8,(SMpegLayer3Granule *)&local_4d8,iVar7,
-                           local_74,local_68,(int)&local_e0);
+                          (this_ptr,&local_3cc8,(SMpegLayer3SideInfo *)&local_4d8,iVar7,local_74,
+                           local_68,(SMpegFrame *)&local_e0);
                 sound_mp3_cpp_requantizeLayer3Samples_FUN_00531d50
-                          (&local_3cc8,local_58,local_6c8.reserved,pSVar14,iVar7,
-                           (SMpegLayer3Granule **)&local_e0);
+                          (&local_3cc8,local_58,(int *)&local_6c8,pSVar14,iVar7,
+                           (SMpegFrame *)&local_e0);
                 iVar7 = iVar7 + 1;
-                pSVar14 = pSVar14 + 1;
+                pSVar14 = (SMpegLayer3SideInfo *)&pSVar14->granules[1].scalefac_scale;
                 local_58 = local_58 + 1;
               } while (iVar7 < local_e0.original);
             }
             sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0
                       (&local_4ec8,&local_60c8,&local_6c8,(SMpegFrame *)local_38,
-                       (SMpegLayer3Granule **)&local_e0);
+                       (SMpegFrame *)&local_e0);
             local_1c = 0;
             if (0 < local_e0.original) {
-              local_4c = (SMpegFrame *)(local_4c0.unk + local_34 + -8);
+              local_4c = (SMpegFrame *)((int)local_4c0.scfsi + local_34 + -8);
               local_48 = local_60c8.channels;
               local_40 = local_33c8;
               local_44 = local_4c;
               do {
                 frame_info_01 = local_44;
                 sound_mp3_cpp_reorderShortBlockSamples_FUN_00532200
-                          (local_48,&local_21c8,local_44,(SMpegLayer3Granule **)&local_e0);
+                          (local_48,&local_21c8,local_44,(SMpegFrame *)&local_e0);
                 sound_mp3_cpp_antiAliasingButterfly_FUN_005334b0
                           ((float *)&local_21c8,local_2ac8,frame_info_01,&local_e0);
                 pfVar5 = local_18c8;
@@ -521,20 +516,22 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this
               } while (iVar7 != 0x40);
               local_3c = local_3c + 0x40;
             } while (local_3c != 0x480);
-            local_38 = (SMpegLayer3Granule *)(local_38->subblock_gain + 2);
+            local_38 = (SMpegLayer3SideInfo *)(local_38->granules[0].subblock_gain + 2);
             local_34 = local_34 + 0x48;
             local_74 = local_74 + 1;
           } while (local_74 < local_ac);
         }
       }
-      if (0 < local_104) {
+      if (0 < local_110.bitrate_index) {
         local_e0.mode_extension = 0;
         local_e0.channel_mode = local_60d0;
         local_60 = (int)ROUND(ROUND((((double)local_60cc /
-                                     g_MpegSampleRateTable[local_110][local_100]) *
-                                    (double)g_MpegBitrateTable[local_110 + -1][local_10c + 2]
-                                            [local_104]) / (double)local_60d0));
-        if (local_fc != 0) {
+                                     g_MpegSampleRateTable[local_110.mpeg_version]
+                                     [local_110.sampling_rate_index]) *
+                                    (double)g_MpegBitrateTable[local_110.mpeg_version + -1]
+                                            [local_110.layer + 2][local_110.bitrate_index]) /
+                                    (double)local_60d0));
+        if (local_110.padding != 0) {
           local_60 = local_60 + 1;
         }
         local_60 = local_60 * local_60d0 -

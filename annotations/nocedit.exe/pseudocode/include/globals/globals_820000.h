@@ -11,6 +11,7 @@
 #include "types/structs/SEdge.h"
 #include "types/structs/SMRGLHeaderPrimitive.h"
 #include "types/structs/SMRGLPrimitiveQuad.h"
+#include "types/structs/SMRGLTextureBasic.h"
 #include "types/structs/SRenderVertex.h"
 
 // =============================================================================
@@ -68,6 +69,9 @@ extern SMRGLHeaderPrimitive* g_RenderFaceArray[2000];
 // SMRGLPrimitiveQuad[1000]
 extern SMRGLPrimitiveQuad g_ClothBackfaceBuffer[1000];
 
+// SMRGLTextureBasic
+extern SMRGLTextureBasic g_CollisionTexture;
+
 // SRenderVertex*[16]
 extern SRenderVertex* g_ClipperCullingPointers[16];
 
@@ -121,6 +125,7 @@ extern int INT_008224d4;
 extern int INT_008224d8;
 extern int INT_0082274c;
 extern int INT_00822750;
+extern int INT_00822754;
 extern int INT_00822758;
 extern int INT_0082275c;
 extern int INT_00822760;
@@ -142,12 +147,18 @@ extern int INT_008227d8;
 extern int INT_008227dc;
 extern int INT_008227e0;
 extern int INT_008227e4;
+extern int INT_00822944;
+extern int INT_00822948;
+extern int INT_0082294c;
 extern int INT_00822950;
 extern int INT_00822954;
 extern int INT_00822958;
 extern int INT_0082295c;
 extern int INT_00822960;
 extern int INT_00822964;
+extern int INT_00822968;
+extern int INT_0082296c;
+extern int INT_008229ac;
 extern int INT_00822cdc;
 extern int INT_00822ce0;
 extern int INT_00822ce4;
@@ -176,19 +187,8 @@ extern uint g_RandomSeedValue;
 
 // undefined1
 extern undefined1 DAT_00822d0c;
-extern undefined1 DAT_00823a80;
-extern undefined1 DAT_00823a81;
-extern undefined1 DAT_00823a82;
-extern undefined1 DAT_00823a83;
 
 // undefined4
-extern undefined4 DAT_00822754;
-extern undefined4 DAT_00822944;
-extern undefined4 DAT_00822948;
-extern undefined4 DAT_0082294c;
-extern undefined4 DAT_00822968;
-extern undefined4 DAT_0082296c;
-extern undefined4 DAT_008229ac;
 extern undefined4 DAT_00822f48;
 extern undefined4 DAT_00822f4c;
 extern undefined4 DAT_00822f50;

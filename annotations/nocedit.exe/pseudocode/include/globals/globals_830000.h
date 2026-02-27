@@ -30,7 +30,11 @@ extern CDemonActorType g_CZombieCowClassInfo;
 extern CVector3f CVector3f_00838e40;
 extern CVector3f CVector3f_00838e4c;
 
+// char[20]
+extern char g_ClothBoneScreenshotFilename[20];
+
 // int
+extern int g_ClothBoneScreenshotCounter;
 extern int INT_0083b124;
 extern int INT_0083b128;
 extern int INT_0083b12c;
@@ -49,7 +53,4 @@ extern int INT_0083b15c;
 extern int INT_0083b160;
 extern int INT_0083b164;
 extern int g_CramVisualizationUpdateCounter;
-
-// undefined4
-extern undefined4 DAT_0083b10c;
 

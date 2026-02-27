@@ -19,9 +19,7 @@ typedef struct CMP3Decoder {
     int main_data_offset; // 0x534c
     float synthesis_v_buffer[2][1024]; // 0x5350
     int synthesis_buffer_index[2]; // 0x7350
-    int layer3_scalefactors[45]; // 0x7358
-    char unk2[36]; // 0x740c
-    float synthesis_history[2][16][18]; // 0x7430
-    char unk3[2304]; // 0x7d30
+    int layer3_scalefactors[54]; // 0x7358
+    float synthesis_history[2][32][18]; // 0x7430
 } CMP3Decoder;
 

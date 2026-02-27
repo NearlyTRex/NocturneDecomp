@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_skeledit_cpp_CSkeleton_FUN_00592690(CSkeleton *this_ptr,char *filename)
 
@@ -310,7 +309,7 @@ int __cdecl core_skeledit_cpp_CSkeleton_FUN_00592690(CSkeleton *this_ptr,char *f
     shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
               (this_ptr_00,"Pass 1: Building list of animation files and getting total frame count");
     local_104 = 0;
-    _DAT_03670b5c = 0;
+    g_SkeleditBiasEntryCount = 0;
     local_100 = 99999;
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)(local_748c + 0x47e4));
     local_108 = 0;
@@ -385,7 +384,7 @@ LAB_00592a67:
                                ((CPickList *)(local_748c + 0x47e4),local_2360,iVar13,0);
             if (iVar13 < 0) break;
             if (iVar13 == local_2ca8.base.item_count + -1) {
-              pcVar11 = &DAT_0366b650;
+              pcVar11 = g_SkeleditClipboardBuffer;
               for (iVar3 = 0; iVar3 < local_2ca8.base.item_count + -1; iVar3 = iVar3 + 1) {
                 shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70
                           ((CStrList *)(local_748c + 0x47e4),iVar3);
@@ -393,7 +392,7 @@ LAB_00592a67:
                 pcVar11 = pcVar11 + iVar4;
               }
               shape_edittool_cpp_CEditorTools_setClipboardText_FUN_004a1bc0
-                        (g_CEditorToolsPtr,&DAT_0366b650);
+                        (g_CEditorToolsPtr,g_SkeleditClipboardBuffer);
             }
             else {
               pcVar11 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70
@@ -1012,7 +1011,7 @@ LAB_005949a6:
                                             ((CPickList *)(local_748c + 0x47e4),0);
                                   goto LAB_005927ee;
                                 }
-                                iVar3 = _DAT_03670b5c * 0x10;
+                                iVar3 = g_SkeleditBiasEntryCount * 0x10;
                                 *(int *)(&DAT_03670b60 + iVar3) = local_38;
                                 iVar13 = core_skeledit_cpp_FUN_00592520(local_530);
                                 if (iVar13 == 0) {
@@ -1051,7 +1050,7 @@ LAB_005949a6:
                                             ((CPickList *)(local_748c + 0x47e4),0);
                                   goto LAB_005927ee;
                                 }
-                                _DAT_03670b5c = _DAT_03670b5c + 1;
+                                g_SkeleditBiasEntryCount = g_SkeleditBiasEntryCount + 1;
                               }
                               else {
                                 iVar13 = strnicmp
@@ -1683,16 +1682,16 @@ LAB_00595723:
         local_118 = 0;
         local_11c = (_FILE *)0x0;
         memset(local_2540,0,0x1e0);
-        if (0 < _DAT_03670b5c) {
+        if (0 < g_SkeleditBiasEntryCount) {
           iVar13 = 0;
           do {
             piVar18 = (int *)(&DAT_03670b60 + iVar13);
             iVar13 = iVar13 + 0x10;
             local_2540[*piVar18] = 1;
-          } while (iVar13 < _DAT_03670b5c * 0x10);
+          } while (iVar13 < g_SkeleditBiasEntryCount * 0x10);
         }
         iVar13 = 0;
-        if (_DAT_03670b5c < 1) {
+        if (g_SkeleditBiasEntryCount < 1) {
 LAB_00595eb8:
           shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                     (g_CEditorToolsPtr,"Finished processing %s OK!");
@@ -1701,16 +1700,16 @@ LAB_00595eb8:
         }
         do {
           iVar3 = 0;
-          if (0 < _DAT_03670b5c) {
+          if (0 < g_SkeleditBiasEntryCount) {
             iVar4 = 0;
             do {
               if ((-1 < *(int *)(&DAT_03670b60 + iVar4)) &&
                  (local_2540[*(int *)(&DAT_03670b68 + iVar4)] == 0)) break;
               iVar4 = iVar4 + 0x10;
               iVar3 = iVar3 + 1;
-            } while (iVar4 < _DAT_03670b5c * 0x10);
+            } while (iVar4 < g_SkeleditBiasEntryCount * 0x10);
           }
-          if (_DAT_03670b5c <= iVar3) {
+          if (g_SkeleditBiasEntryCount <= iVar3) {
             shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                       (g_CEditorToolsPtr,"Cyclic bias detected in %s");
             shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)(local_748c + 0x47e4),0);
@@ -1726,7 +1725,7 @@ LAB_00595eb8:
           local_1d4 = pCVar7[iVar3].x - pCVar7[iVar4].x;
           local_1d0 = pCVar7[iVar3].y - pCVar7[iVar4].y;
           local_1cc = pCVar7[iVar3].z - pCVar7[iVar4].z;
-          for (iVar3 = 0; iVar4 = _DAT_03670b5c,
+          for (iVar3 = 0; iVar4 = g_SkeleditBiasEntryCount,
               iVar3 < (this_ptr->motion_list).motions[*piVar18].frame_count; iVar3 = iVar3 + 1) {
             iVar4 = (this_ptr->motion_list).motions[*piVar18].frame_start + iVar3;
             pCVar7 = this_ptr->frame_positions_1;

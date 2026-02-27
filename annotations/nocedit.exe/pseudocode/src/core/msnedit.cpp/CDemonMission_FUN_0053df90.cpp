@@ -54,14 +54,14 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053df90(CDemonMission *this_ptr
     }
     if ((local_14 == 1) &&
        (iVar4 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
-                          (g_CEditorToolsPtr,"Delete actors by name using wildcard",&DAT_00680730,100,1
-                          ), iVar4 != 0)) {
+                          (g_CEditorToolsPtr,"Delete actors by name using wildcard",
+                           g_DeleteActorsWildcardBuffer,100,1), iVar4 != 0)) {
       iVar4 = 0;
       pCVar2 = this_ptr->first_actor;
       while (pCVar1 = pCVar2, pCVar1 != (CDemonActor *)0x0) {
         pCVar2 = pCVar1->next_actor;
         iVar3 = shape_edittool_cpp_wildcardStringMatch_FUN_004a6e20
-                          (&DAT_00680730,pCVar1->actor_name,0);
+                          (g_DeleteActorsWildcardBuffer,pCVar1->actor_name,0);
         if (iVar3 != 0) {
           iVar4 = iVar4 + 1;
           core_msnedit_cpp_CDemonMission_FUN_0053bc80(this_ptr,(int)pCVar1,1);

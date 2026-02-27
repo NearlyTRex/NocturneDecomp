@@ -13,6 +13,7 @@ void __cdecl core_skeledit_cpp_FUN_005897b0(void)
   int iVar1;
   int iVar2;
   byte *puVar3;
+  char *pcVar4;
   int local_10;
   
   __STK();
@@ -40,20 +41,20 @@ void __cdecl core_skeledit_cpp_FUN_005897b0(void)
     iVar1 = _fgetc(file);
     if (iVar1 < 0) break;
   } while ((iVar1 != 10) || (iVar2 = iVar2 + -1, 0 < iVar2));
-  DAT_03670848 = 0;
+  g_SkeleditLastPOSImported[0] = '\0';
   do {
     iVar2 = _fgetc(file);
     if ((iVar2 < 0) || (iVar2 == 10)) goto LAB_00589863;
-    puVar3 = &DAT_03670848;
+    pcVar4 = g_SkeleditLastPOSImported;
   } while (iVar2 != 0x22);
   while ((iVar2 = _fgetc(file), -1 < iVar2 && (iVar2 != 10))) {
     if (iVar2 == 0x22) {
       iVar2 = 1;
       goto LAB_005899ac;
     }
-    *puVar3 = (char)iVar2;
-    puVar3[1] = 0;
-    puVar3 = puVar3 + 1;
+    *pcVar4 = (char)iVar2;
+    pcVar4[1] = '\0';
+    pcVar4 = pcVar4 + 1;
   }
   goto LAB_00589863;
   while ((iVar1 != 10 || (iVar2 = iVar2 + -1, 0 < iVar2))) {

@@ -26,7 +26,7 @@
 ;   TerminatedCString s_Delete_actors_by_type_0063cf3c
 ;   TerminatedCString s_d_actors_deleted_0063cf52
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   undefined4 DAT_00680730
+;   char[104] g_DeleteActorsWildcardBuffer
 ;   undefined4 DAT_00680798
 ;   CEditorTools g_CEditorToolsInstance
 ;   ... and 2 more
@@ -195,7 +195,7 @@ section .text
         ;   XREF to: 0053e16e (CONDITIONAL_JUMP)  ; LAB_0053e16e
     PUSH ECX                            ; 0053e100
     PUSH 0x64                           ; 0053e101
-    PUSH 0x680730                       ; 0053e103 | DAT_00680730
+    PUSH 0x680730                       ; 0053e103 | g_DeleteActorsWildcardBuffer
     PUSH 0x63cf05                       ; 0053e108 | = "Delete actors by name using wildcard"
     MOV ESI,dword ptr [0x00678a60]      ; 0053e10d | g_CEditorToolsPtr
     PUSH ESI                            ; 0053e113 | g_CEditorToolsInstance
@@ -213,7 +213,7 @@ section .text
     PUSH 0x0                            ; 0053e12c
         ;   Label: LAB_0053e12c
     PUSH ESI                            ; 0053e12e
-    PUSH 0x680730                       ; 0053e12f | DAT_00680730
+    PUSH 0x680730                       ; 0053e12f | g_DeleteActorsWildcardBuffer
     MOV EDI,dword ptr [ESI + 0x14c]     ; 0053e134
     CALL shape_edittool.cpp_wildcardStringMatch_FUN_004a6e20 ; 0053e13a
         ;   XREF to: 004a6e20 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_wildcardStringMatch_FUN_004a6e20(char * pattern, char * target_string, int case_sensitive)

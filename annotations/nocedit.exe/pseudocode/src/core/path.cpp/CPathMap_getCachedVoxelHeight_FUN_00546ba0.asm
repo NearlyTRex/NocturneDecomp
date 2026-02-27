@@ -17,7 +17,7 @@
 ;   core_path.cpp_CPathMap_checkAxisAlignedPath_FUN_00546e90 at 00547060
 ;   core_path.cpp_CPathMap_findPathToDestination_FUN_00547320 at 00547688
 ;   core_path.cpp_CPathMap_isLineWalkable_FUN_00546c40 at 00546dc2
-;   core_path.cpp_CPathMap_queuePop_FUN_005487a0 at 005488fc
+;   core_path.cpp_CPathMap_searchGrid_FUN_005487a0 at 005488fc
 ;
 ; Referenced Globals:
 ;   CDemonRaytrace g_CDemonRaytraceInstance

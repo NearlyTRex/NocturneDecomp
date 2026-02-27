@@ -24,9 +24,9 @@ void __cdecl core_msnedit_cpp_FUN_00536e20(void)
   
   DAT_02f7c538 = 0;
   if ((((g_CDemonMissionPtr->selected_actor != (CDemonActor *)0x0) && (-1 < INT_02f7c52c)) &&
-      (INT_02f7c52c < INT_02f7a028)) &&
-     ((*(int *)(&DAT_02f7a02c + INT_02f7c52c * 0xec) == 0xd &&
-      (this_ptr = *(CDeformableModelInstance **)(&DAT_02f7a094 + INT_02f7c52c * 0xec),
+      (INT_02f7c52c < g_MsnEditPropertyList.count)) &&
+     ((g_MsnEditPropertyList.properties[INT_02f7c52c].type == PROP_MOTION &&
+      (this_ptr = g_MsnEditPropertyList.properties[INT_02f7c52c].data.v_dfm_ptr,
       this_ptr != (CDeformableModelInstance *)0x0)))) {
     local_14 = 0x9b;
     iVar2 = (g_CDemonMissionPtr->viewport).bottom + -0x38;
@@ -46,8 +46,8 @@ void __cdecl core_msnedit_cpp_FUN_00536e20(void)
     iVar1 = core_msnedit_cpp_FUN_00536cd0(local_f4,local_24,local_20,1,0);
     if (iVar1 != 0) {
       core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
-                ((CActorProperty *)(&DAT_02f7a02c + INT_02f7c52c * 0xec),
-                 g_CDemonMissionPtr->selected_actor);
+                (g_MsnEditPropertyList.properties + INT_02f7c52c,g_CDemonMissionPtr->selected_actor)
+      ;
     }
     iVar1 = core_msnedit_cpp_FUN_00536cd0(" X ",local_14 + -0x11,local_20,1,0);
     if (iVar1 != 0) {

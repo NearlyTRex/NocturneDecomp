@@ -35,7 +35,7 @@
 ;   crt_stdio.c_fgetc_FUN_005fe840
 ;   crt_stdio.c_fread_FUN_005fd990
 ;   crt_stdio.c_fwrite_FUN_005fdc00
-;   engine_colquant.c_FUN_004406c0
+;   engine_colquant.c_quantizeColors_FUN_004406c0
 ;   engine_dosio.c_getFile_FUN_00481a50
 ;   engine_dosio.c_getFileSize_FUN_00481880
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
@@ -354,8 +354,8 @@ section .text
     PUSH ESI                            ; 0054542b
     MOV EDI,dword ptr [ESP + 0x68]      ; 0054542c
     PUSH EDI                            ; 00545430
-    CALL engine_colquant.c_FUN_004406c0 ; 00545431
-        ;   XREF to: 004406c0 (UNCONDITIONAL_CALL)  ; int * engine_colquant.c_FUN_004406c0()
+    CALL engine_colquant.c_quantizeColors_FUN_004406c0 ; 00545431
+        ;   XREF to: 004406c0 (UNCONDITIONAL_CALL)  ; char * engine_colquant.c_quantizeColors_FUN_004406c0(SColorQuantWorkspace * workspace, char * color_data, int color_count, int num_palette_entries)
     ADD ESP,0x10                        ; 00545436
     MOV DL,0x5c                         ; 00545439
     MOV ESI,dword ptr [ESP + 0x7c]      ; 0054543b
@@ -549,7 +549,7 @@ section .text
         ;   Label: LAB_0054562d
     MOV EBP,dword ptr [ESP + 0x80]      ; 00545632
     PUSH EBP                            ; 00545639
-    PUSH 0x63e68c                       ; 0054563a | DAT_0063e68c
+    PUSH 0x63e68c                       ; 0054563a | s_EmptyChar_0063e68c
     JMP 0x00545473                      ; 0054563f
         ;   XREF to: 00545473 (UNCONDITIONAL_JUMP)  ; LAB_00545473
 

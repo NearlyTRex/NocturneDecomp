@@ -69,7 +69,8 @@ LAB_00537aa5:
       goto LAB_005379f3;
     }
     iVar3 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
-                      (g_CEditorToolsPtr,"Enter actor name wildcard",&DAT_00680580,200,1);
+                      (g_CEditorToolsPtr,"Enter actor name wildcard",g_ActorWildcardBuffer,
+                       200,1);
     if (iVar3 == 0) {
       in_stack_fffff2fc = ZEXT48(string_data) << 0x20;
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_5b0,0);
@@ -110,7 +111,7 @@ LAB_00537aa5:
                    (iVar3 = core_actor_cpp_isOfClass_FUN_0040c6d0(actor_ptr,"CEnemy"),
                    iVar3 != 0)))) &&
                  (iVar3 = shape_edittool_cpp_wildcardStringMatch_FUN_004a6e20
-                                    (&DAT_00680580,actor_ptr->actor_name,0), iVar3 != 0)) {
+                                    (g_ActorWildcardBuffer,actor_ptr->actor_name,0), iVar3 != 0)) {
                 fStack_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10
                                       (0.9f,1.1f);
                 pCVar2 = (actor_ptr->vtable)._ub;

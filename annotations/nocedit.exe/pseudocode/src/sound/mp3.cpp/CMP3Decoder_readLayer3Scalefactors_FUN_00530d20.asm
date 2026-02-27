@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3Scalefactors_FUN_00530d20(CMP3Decoder *this_ptr,int *scalefactor_dest,SMpegLayer3Granule *granule_info,int channel,int granule_index,SMpegFrame *frame)
+; void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3Scalefactors_FUN_00530d20(CMP3Decoder *this_ptr,int *scalefactor_dest,SMpegLayer3SideInfo *granule_info,int channel,int granule_index,SMpegFrame *frame)
 ;
 ; Parameters:
 ; CMP3Decoder *    Stack[0x4]:4   this_ptr
 ; int *            Stack[0x8]:4   scalefactor_dest
-; SMpegLayer3Granule * Stack[0xc]:4   granule_info
+; SMpegLayer3SideInfo * Stack[0xc]:4   granule_info
 ; int              Stack[0x10]:4   channel
 ; int              Stack[0x14]:4   granule_index
 ; SMpegFrame *     Stack[0x18]:4   frame
@@ -38,10 +38,10 @@
 ;   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40 at 00535823
 ;
 ; Referenced Globals:
-;   int[5] g_Layer3LongBandBoundaries
+;   int[5] g_Layer3LongBandGroupCounts
 ;   undefined4 DAT_0067e62c
 ;   undefined4 DAT_0067e630
-;   int[3] g_Layer3ShortBandBoundaries
+;   int[3] g_Layer3ShortBandGroupCounts
 ;   undefined4 DAT_0067e640
 ;   undefined4 DAT_0067e644
 ;   int[16] g_Layer3ScalefacLengths1
@@ -109,7 +109,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x24]      ; 00530db8
     MOV ECX,dword ptr [ESP + 0x4]       ; 00530dbc
     MOV dword ptr [ESP + 0x38],EAX      ; 00530dc0
-    MOV EBX,dword ptr [EBX + 0x67e628]  ; 00530dc4 | g_Layer3LongBandBoundaries | DAT_0067e62c
+    MOV EBX,dword ptr [EBX + 0x67e628]  ; 00530dc4 | g_Layer3LongBandGroupCounts | DAT_0067e62c
     CMP EDX,0x2                         ; 00530dca
     SETGE byte ptr [ESP + 0x54]         ; 00530dcd
     LEA EBP,[EBX*0x4 + 0x0]             ; 00530dd2
@@ -305,7 +305,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x34]      ; 00530fdc
         ;   Label: LAB_00530fdc
     MOV EBP,dword ptr [ESP + 0x34]      ; 00530fe0
-    MOV EAX,dword ptr [EAX + 0x67e63c]  ; 00530fe4 | g_Layer3ShortBandBoundaries | DAT_0067e640
+    MOV EAX,dword ptr [EAX + 0x67e63c]  ; 00530fe4 | g_Layer3ShortBandGroupCounts | DAT_0067e640
     MOV ECX,dword ptr [EBP + 0x67e640]  ; 00530fea | DAT_0067e640 | DAT_0067e644
     MOV dword ptr [ESP + 0x4c],EAX      ; 00530ff0
     MOV EAX,dword ptr [ESP + 0x20]      ; 00530ff4

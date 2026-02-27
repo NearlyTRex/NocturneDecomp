@@ -749,7 +749,7 @@ section .text
     PUSH EAX                            ; 004d35e2
     PUSH ESI                            ; 004d35e3
     CALL core_boxactor.cpp_CBoxActor_FUN_00422390 ; 004d35e4
-        ;   XREF to: 00422390 (UNCONDITIONAL_CALL)  ; void core_boxactor.cpp_CBoxActor_FUN_00422390(CBoxActor * this_ptr)
+        ;   XREF to: 00422390 (UNCONDITIONAL_CALL)  ; void core_boxactor.cpp_CBoxActor_FUN_00422390(CBoxActor * this_ptr, CVector3f * param_2, CVector3f * param_3)
     ADD ESP,0xc                         ; 004d35e9
     PUSH dword ptr [EBP + 0x92]         ; 004d35ec
         ;   Label: LAB_004d35ec

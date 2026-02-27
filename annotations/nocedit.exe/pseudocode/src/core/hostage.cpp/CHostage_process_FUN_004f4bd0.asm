@@ -188,7 +188,7 @@ section .text
     PUSH ESI                            ; 004f4ca1
     PUSH EBX                            ; 004f4ca2
     CALL core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40 ; 004f4ca3
-        ;   XREF to: 0042ec40 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40(CCharacter * this_ptr, uint event_id)
+        ;   XREF to: 0042ec40 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40(CCharacter * this_ptr, int bone_index)
     ADD ESP,0x8                         ; 004f4ca8
     JMP 0x004f4c6b                      ; 004f4cab
         ;   XREF to: 004f4c6b (UNCONDITIONAL_JUMP)  ; LAB_004f4c6b
@@ -362,7 +362,7 @@ section .text
     PUSH ESI                            ; 004f4ee0
     PUSH EBX                            ; 004f4ee1
     CALL core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40 ; 004f4ee2
-        ;   XREF to: 0042ec40 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40(CCharacter * this_ptr, uint event_id)
+        ;   XREF to: 0042ec40 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40(CCharacter * this_ptr, int bone_index)
     ADD ESP,0x8                         ; 004f4ee7
     JMP 0x004f4c6b                      ; 004f4eea
         ;   XREF to: 004f4c6b (UNCONDITIONAL_JUMP)  ; LAB_004f4c6b

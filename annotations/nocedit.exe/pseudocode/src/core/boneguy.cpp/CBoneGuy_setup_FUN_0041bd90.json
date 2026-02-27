@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 161,
-    "complexity_score": 160,
+    "complexity_score": 55,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 31,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 55,
-    "suspect_count": 10,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 216
   },
   "cross_references": [],
@@ -174,20 +172,20 @@
     },
     {
       "addr": "00822944",
-      "name": "DAT_00822944",
-      "type": "undefined4",
+      "name": "INT_00822944",
+      "type": "int",
       "value": null
     },
     {
       "addr": "00822948",
-      "name": "DAT_00822948",
-      "type": "undefined4",
+      "name": "INT_00822948",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0082294c",
-      "name": "DAT_0082294c",
-      "type": "undefined4",
+      "name": "INT_0082294c",
+      "type": "int",
       "value": null
     },
     {
@@ -228,14 +226,14 @@
     },
     {
       "addr": "00822968",
-      "name": "DAT_00822968",
-      "type": "undefined4",
+      "name": "INT_00822968",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0082296c",
-      "name": "DAT_0082296c",
-      "type": "undefined4",
+      "name": "INT_0082296c",
+      "type": "int",
       "value": null
     },
     {
@@ -300,88 +298,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_00822944",
-      "severity": "mild",
-      "text": "DAT_00822944 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_00822948",
-      "severity": "mild",
-      "text": "DAT_00822948 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 29,
-      "match": "DAT_0082294c",
-      "severity": "mild",
-      "text": "DAT_0082294c = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 31,
-      "match": "DAT_00822968",
-      "severity": "mild",
-      "text": "DAT_00822968 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 33,
-      "match": "DAT_0082296c",
-      "severity": "mild",
-      "text": "DAT_0082296c = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 35,
-      "match": "DAT_00822944",
-      "severity": "mild",
-      "text": "DAT_00822944 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 41,
-      "match": "DAT_00822968",
-      "severity": "mild",
-      "text": "DAT_00822968 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 43,
-      "match": "DAT_0082296c",
-      "severity": "mild",
-      "text": "DAT_0082296c = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 53,
-      "match": "DAT_00822948",
-      "severity": "mild",
-      "text": "(this_ptr->base).base.carry_hands[0].bone_index = DAT_00822948;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 54,
-      "match": "DAT_0082294c",
-      "severity": "mild",
-      "text": "(this_ptr->base).base.carry_hands[1].bone_index = DAT_0082294c;",
-      "type": "undefined_data"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

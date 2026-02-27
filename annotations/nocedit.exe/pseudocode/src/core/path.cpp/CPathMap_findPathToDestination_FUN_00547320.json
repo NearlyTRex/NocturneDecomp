@@ -4,7 +4,7 @@
       {
         "category": "undeclared_identifier",
         "column": 56,
-        "line": 222,
+        "line": 223,
         "message": "use of undeclared identifier 'stack0xfffffee8'; did you mean 'in_stack_fffffee8'?"
       }
     ],
@@ -13,13 +13,13 @@
   },
   "complexity": {
     "assembly_lines": 714,
-    "complexity_score": 398,
+    "complexity_score": 409,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 22,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 293,
-    "suspect_count": 8,
+    "pseudocode_lines": 294,
+    "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
@@ -27,7 +27,7 @@
       "stack_param",
       "stack_ref"
     ],
-    "total_lines": 1007
+    "total_lines": 1008
   },
   "cross_references": [
     {
@@ -83,7 +83,7 @@
     {
       "addr": "005487a0",
       "is_variadic": false,
-      "name": "core_path.cpp_CPathMap_queuePop_FUN_005487a0"
+      "name": "core_path.cpp_CPathMap_searchGrid_FUN_005487a0"
     },
     {
       "addr": "005e7830",
@@ -646,9 +646,9 @@
     {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 15,
-      "match": "afStackY_1040",
+      "match": "auStackY_1040",
       "severity": "moderate",
-      "text": "float afStackY_1040 [963];",
+      "text": "uint auStackY_1040 [963];",
       "type": "stack_alignment_array"
     },
     {
@@ -656,23 +656,31 @@
       "line": 17,
       "match": "in_stack_fffffee8",
       "severity": "moderate",
-      "text": "CVector3i *in_stack_fffffee8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 52,
-      "match": "in_stack_fffffee8",
-      "severity": "moderate",
-      "text": "(&g_CDemonRaytraceInstance,dest_position,in_stack_fffffee8);",
+      "text": "float in_stack_fffffee8;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 53,
-      "match": "(float *)((int)",
+      "line": 52,
+      "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "pfVar7 = (float *)((int)this_ptr + (uint)bVar8 * -8 + 0x1c);",
+      "text": "puVar7 = (uint *)((int)this_ptr + (uint)bVar8 * -8 + 0x1c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 54,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*puVar7 = *(uint *)((int)&local_58 + (uint)bVar8 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 56,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&local_58 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
@@ -701,7 +709,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 215,
+      "line": 216,
       "match": "&stack0xfffffee8",
       "severity": "moderate",
       "text": "(&local_10c,(CVector3f *)&stack0xfffffee8);",

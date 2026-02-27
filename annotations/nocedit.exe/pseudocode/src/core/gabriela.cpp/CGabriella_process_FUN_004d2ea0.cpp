@@ -634,7 +634,7 @@ LAB_004d344b:
       pCVar16 = core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
                           ((CDemonActor *)this_ptr,&local_154,&local_190);
       if (0.0 < pCVar16->z) {
-        core_boxactor_cpp_CBoxActor_FUN_00422390(this_ptr_01);
+        core_boxactor_cpp_CBoxActor_FUN_00422390(this_ptr_01,&local_184,&local_190);
       }
     }
   }

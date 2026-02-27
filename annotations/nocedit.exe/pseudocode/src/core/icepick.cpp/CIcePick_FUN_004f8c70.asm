@@ -35,7 +35,7 @@
 ;   core_hero.cpp_CHero_FUN_004f3960
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 ;   core_path.cpp_CPathMap_findPathWithRetry_FUN_00547d00
-;   core_path.cpp_FUN_00548500
+;   core_path.cpp_getPathMap_FUN_00548500
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
 ;   crt_memory.c_memset_FUN_005fde40
 ;
@@ -481,8 +481,8 @@ section .text
         ;   XREF to: 004f9216 (CONDITIONAL_JUMP)  ; LAB_004f9216
     LEA EAX,[EDI + 0x20]                ; 004f9203
     PUSH EAX                            ; 004f9206
-    CALL core_path.cpp_FUN_00548500     ; 004f9207
-        ;   XREF to: 00548500 (UNCONDITIONAL_CALL)  ; CPathMap * core_path.cpp_FUN_00548500(CLocation * location)
+    CALL core_path.cpp_getPathMap_FUN_00548500 ; 004f9207
+        ;   XREF to: 00548500 (UNCONDITIONAL_CALL)  ; CPathMap * core_path.cpp_getPathMap_FUN_00548500(CLocation * location)
     ADD ESP,0x4                         ; 004f920c
     MOV dword ptr [ESP + 0x98],EAX      ; 004f920f
     MOV ECX,dword ptr [EBX + 0x6c]      ; 004f9216

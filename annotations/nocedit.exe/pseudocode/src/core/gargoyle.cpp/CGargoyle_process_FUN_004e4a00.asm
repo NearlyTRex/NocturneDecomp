@@ -136,7 +136,7 @@ section .text
     PUSH EAX                            ; 004e4a6e
     PUSH EBX                            ; 004e4a6f
     CALL core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40 ; 004e4a70
-        ;   XREF to: 0042ec40 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40(CCharacter * this_ptr, uint event_id)
+        ;   XREF to: 0042ec40 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40(CCharacter * this_ptr, int bone_index)
     ADD ESP,0x8                         ; 004e4a75
     JMP 0x004e4a55                      ; 004e4a78
         ;   XREF to: 004e4a55 (UNCONDITIONAL_JUMP)  ; LAB_004e4a55

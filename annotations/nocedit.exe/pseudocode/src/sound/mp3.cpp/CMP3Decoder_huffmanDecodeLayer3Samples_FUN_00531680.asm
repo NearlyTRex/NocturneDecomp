@@ -1,16 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00531680(CMP3Decoder *this_ptr,float *spectral_dest,SMpegLayer3Granule *granule_info,int channel,int granule,SMpegFrame *frame,int bit_budget)
+; void __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00531680(CMP3Decoder *this_ptr,SMpegSubbandQuantizedSamples *quantized_dest,SMpegLayer3SideInfo *side_info,int channel,int granule,int frame_bit_offset,SMpegFrame *frame)
 ;
 ; Parameters:
 ; CMP3Decoder *    Stack[0x4]:4   this_ptr
-; float *          Stack[0x8]:4   spectral_dest
-; SMpegLayer3Granule * Stack[0xc]:4   granule_info
+; SMpegSubbandQuantizedSamples * Stack[0x8]:4   quantized_dest
+; SMpegLayer3SideInfo * Stack[0xc]:4   side_info
 ; int              Stack[0x10]:4   channel
 ; int              Stack[0x14]:4   granule
-; SMpegFrame *     Stack[0x18]:4   frame
-; int              Stack[0x1c]:4   bit_budget
+; int              Stack[0x18]:4   frame_bit_offset
+; SMpegFrame *     Stack[0x1c]:4   frame
 ; Local Variables:
 ; undefined4       Stack[-0x48]:4  local_48
 ; undefined4       Stack[-0x44]:4  local_44
@@ -43,8 +43,8 @@
 ;   TerminatedCString s_huffman_decodertable_err_0063afda
 ;   TerminatedCString s_sound_mp3_cpp_0063b00c
 ;   TerminatedCString s_decoder_table_read_error_0063b01d
-;   int INT_0067e6cc = 0x6
-;   int INT_0067e6d0 = 0xc
+;   undefined4 g_Layer3BandIndex[0].l[1]
+;   undefined4 g_Layer3BandIndex[0].l[2]
 ;   SHuffmanTableSource[34] g_HuffmanTableSources
 ;   ... and 23 more
 ;
@@ -455,11 +455,11 @@ section .text
     ADD EAX,EDX                         ; 00531b7c
     MOV EBX,dword ptr [ECX + 0x4c]      ; 00531b7e
     SHL EAX,0x2                         ; 00531b81
-    MOV EDX,dword ptr [EAX + EBX*0x4 + 0x67e6cc] ; 00531b84 | INT_0067e6cc
+    MOV EDX,dword ptr [EAX + EBX*0x4 + 0x67e6cc] ; 00531b84 | g_Layer3BandIndex[0].l[1]
     MOV dword ptr [ESP + 0x28],EDX      ; 00531b8b
     MOV EDX,dword ptr [ECX + 0x50]      ; 00531b8f
     ADD EDX,EBX                         ; 00531b92
-    MOV EBP,dword ptr [EAX + EDX*0x4 + 0x67e6d0] ; 00531b94 | INT_0067e6d0
+    MOV EBP,dword ptr [EAX + EDX*0x4 + 0x67e6d0] ; 00531b94 | g_Layer3BandIndex[0].l[2]
     JMP 0x005316f9                      ; 00531b9b
         ;   XREF to: 005316f9 (UNCONDITIONAL_JUMP)  ; LAB_005316f9
     CMP ESI,dword ptr [ESP + 0x28]      ; 00531ba0

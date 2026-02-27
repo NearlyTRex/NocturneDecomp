@@ -451,7 +451,7 @@ section .text
         ;   Label: default
     PUSH EBX                            ; 00568402
     CALL core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40 ; 00568403
-        ;   XREF to: 0042ec40 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40(CCharacter * this_ptr, uint event_id)
+        ;   XREF to: 0042ec40 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40(CCharacter * this_ptr, int bone_index)
     ADD ESP,0x8                         ; 00568408
     JMP 0x00568089                      ; 0056840b
         ;   XREF to: 00568089 (UNCONDITIONAL_JUMP)  ; LAB_00568089

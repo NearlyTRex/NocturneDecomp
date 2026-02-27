@@ -12,8 +12,8 @@
 ; XREF[4]:
 ;   core_fire.cpp_CLaserBeam_render_FUN_004c25c0 at 004c337e
 ;   core_manpuz.cpp_CMansionPuzzleCircle_FUN_00509d50 at 0050a184
-;   core_path.cpp_CPathMap_FUN_00547fc0 at 0054837e
-;   core_path.cpp_debugRenderGridQuad_FUN_00547dd0 at 00547fab
+;   core_path.cpp_CPathMap_renderPathMap_FUN_00547fc0 at 0054837e
+;   core_path.cpp_renderGridQuad_FUN_00547dd0 at 00547fab
 ;
 ; Referenced Globals:
 ;   int g_BitsPerPixel = 0x8

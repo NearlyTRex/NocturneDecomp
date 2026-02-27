@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_script_cpp_writeActorReference_FUN_005607e0(_FILE *file_handle,CDemonActor *actor)
+; void __cdecl core_script_cpp_writeActorReference_FUN_005607e0(_FILE *file_handle,CDemonActor **actor)
 ;
 ; Parameters:
 ; _FILE *          Stack[0x4]:4   file_handle
-; CDemonActor *    Stack[0x8]:4   actor
+; CDemonActor * *  Stack[0x8]:4   actor
 ;
 ; XREF[1]:
 ;   core_script.cpp_CScript_saveState_FUN_00560b50 at 00560cd2

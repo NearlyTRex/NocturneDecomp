@@ -17,7 +17,7 @@
 ;   TerminatedCString s_s_00649dda
 ;   TerminatedCString s_core_skeledit_cpp_00649de0
 ;   TerminatedCString s_skeledit_ini_00681868
-;   undefined4 DAT_03670848
+;   char[264] g_SkeleditLastPOSImported
 ;   undefined4 DAT_03670950
 ;   undefined4 DAT_03670a58
 ;
@@ -67,7 +67,7 @@ section .text
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 00589a95
         ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0x8                         ; 00589a9a
-    PUSH 0x3670848                      ; 00589a9d | DAT_03670848
+    PUSH 0x3670848                      ; 00589a9d | g_SkeleditLastPOSImported
     PUSH 0x649da2                       ; 00589aa2 | = "\"%s\"\n"
     PUSH EBX                            ; 00589aa7
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 00589aa8

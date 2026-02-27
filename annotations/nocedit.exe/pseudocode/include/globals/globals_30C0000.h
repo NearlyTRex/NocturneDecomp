@@ -23,6 +23,6 @@ extern int g_PathfindingCurrentZ;
 extern int g_PathfindingDestX;
 extern int g_PathfindingDestZ;
 
-// undefined1
-extern undefined1 DAT_030c3ab0;
+// uchar
+extern uchar g_PathMapCacheInitFlag;
 

@@ -4,12 +4,6 @@
       {
         "category": "undeclared_identifier",
         "column": 29,
-        "line": 24,
-        "message": "use of undeclared identifier 'DAT_03670848'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 29,
         "line": 26,
         "message": "use of undeclared identifier 'DAT_03670950'"
       },
@@ -25,13 +19,13 @@
   },
   "complexity": {
     "assembly_lines": 72,
-    "complexity_score": 56,
+    "complexity_score": 46,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 15,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 21,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
       "undefined_data"
     ],
@@ -147,8 +141,8 @@
     },
     {
       "addr": "03670848",
-      "name": "DAT_03670848",
-      "type": "undefined4",
+      "name": "g_SkeleditLastPOSImported",
+      "type": "char[264]",
       "value": null
     },
     {
@@ -202,14 +196,6 @@
     "variables": []
   },
   "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_03670848",
-      "severity": "mild",
-      "text": "_fprintf(file,\"\\\"%s\\\"\\n\",&DAT_03670848);",
-      "type": "undefined_data"
-    },
     {
       "description": "Undefined global data reference",
       "line": 19,

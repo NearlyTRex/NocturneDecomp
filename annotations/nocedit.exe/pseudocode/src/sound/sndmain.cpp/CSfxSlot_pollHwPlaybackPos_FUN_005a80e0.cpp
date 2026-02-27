@@ -9,21 +9,18 @@
 int __cdecl sound_sndmain_cpp_CSfxSlot_pollHwPlaybackPos_FUN_005a80e0(CSfxSlot *this_ptr)
 
 {
-  double *pdVar1;
-  uint extraout_EDX;
-  CSfxSlot *in_stack_ffffffe0;
+  double hardware_playback_pos;
   
   if (((this_ptr->hardware_buffer_handle != 0) && (g_CSoundDevicePtr != (CSoundDevice *)0x0)) &&
      (this_ptr->sample != (CSfxSample *)0x0)) {
-    pdVar1 = (*g_CSoundDevicePtr->vtable->getSfxPlaybackPos)
-                       ((double *)g_CSoundDevicePtr,(CSoundDevice *)this_ptr,in_stack_ffffffe0);
-    if ((double)CONCAT44(extraout_EDX,pdVar1) < 0.0) {
+    hardware_playback_pos =
+         (*g_CSoundDevicePtr->vtable->getSfxPlaybackPos)(g_CSoundDevicePtr,this_ptr);
+    if (hardware_playback_pos < 0.0) {
       sound_sndmain_cpp_logSoundError_FUN_005adba0
                 ("Error polling hw playback pos %s\n",this_ptr->sample);
       return 0;
     }
-    sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170
-              (this_ptr,(double)CONCAT44(extraout_EDX,pdVar1));
+    sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170(this_ptr,hardware_playback_pos);
     return 1;
   }
   return 0;

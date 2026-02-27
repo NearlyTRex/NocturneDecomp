@@ -7,5 +7,5 @@
 struct CDemonActor;
 
 // Function Definition: CDemonActor_playSound
-typedef void CDemonActor_playSound(struct CDemonActor* this_ptr, char* sound_name);
+typedef uint CDemonActor_playSound(struct CDemonActor* this_ptr, char* sound_name);
 

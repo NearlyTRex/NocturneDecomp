@@ -593,7 +593,7 @@ section .text
     LEA EAX,[EBP + 0xffffd3e2]          ; 00592a3b
     MOV dword ptr [EBP + -0x7a],EDI     ; 00592a41
     PUSH EAX                            ; 00592a44
-    MOV dword ptr [0x03670b5c],EDI      ; 00592a45 | DAT_03670b5c
+    MOV dword ptr [0x03670b5c],EDI      ; 00592a45 | g_SkeleditBiasEntryCount
     MOV dword ptr [EBP + -0x76],ECX     ; 00592a4b
     CALL shape_edittool.cpp_CPickList_ctor_FUN_004a3b90 ; 00592a4e
         ;   XREF to: 004a3b90 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_ctor_FUN_004a3b90(CPickList * this_ptr)
@@ -1789,7 +1789,7 @@ section .text
     CMP EAX,EDX                         ; 005937f3
     JNZ 0x00593843                      ; 005937f5
         ;   XREF to: 00593843 (CONDITIONAL_JUMP)  ; LAB_00593843
-    MOV ESI,0x366b650                   ; 005937f7 | DAT_0366b650
+    MOV ESI,0x366b650                   ; 005937f7 | g_SkeleditClipboardBuffer
     XOR EBX,EBX                         ; 005937fc
     MOV EAX,dword ptr [EBP + 0xffffd3e2] ; 005937fe
         ;   Label: LAB_005937fe
@@ -1805,7 +1805,7 @@ section .text
     ADD ESP,0x8                         ; 00593816
     PUSH EAX                            ; 00593819
     PUSH 0x64c611                       ; 0059381a | = "%s\r\n"
-    PUSH ESI                            ; 0059381f | DAT_0366b650
+    PUSH ESI                            ; 0059381f | g_SkeleditClipboardBuffer
     INC EBX                             ; 00593820
     CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00593821
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
@@ -1813,7 +1813,7 @@ section .text
     ADD ESI,EAX                         ; 00593829
     JMP 0x005937fe                      ; 0059382b
         ;   XREF to: 005937fe (UNCONDITIONAL_JUMP)  ; LAB_005937fe
-    PUSH 0x366b650                      ; 0059382d | DAT_0366b650
+    PUSH 0x366b650                      ; 0059382d | g_SkeleditClipboardBuffer
         ;   Label: LAB_0059382d
     MOV ECX,dword ptr [0x00678a60]      ; 00593832 | g_CEditorToolsPtr
     PUSH ECX                            ; 00593838 | g_CEditorToolsInstance
@@ -1903,7 +1903,7 @@ section .text
     MOV dword ptr [EBP + 0xffffff6e],ESI ; 00593920
     CALL crt_memory.c_memset_FUN_005fde40 ; 00593926
         ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
-    MOV ECX,dword ptr [0x03670b5c]      ; 0059392b | DAT_03670b5c
+    MOV ECX,dword ptr [0x03670b5c]      ; 0059392b | g_SkeleditBiasEntryCount
     ADD ESP,0xc                         ; 00593931
     TEST ECX,ECX                        ; 00593934
     JLE 0x00593960                      ; 00593936
@@ -1920,19 +1920,19 @@ section .text
         ;   XREF to: 00593942 (CONDITIONAL_JUMP)  ; LAB_00593942
     LEA EAX,[EAX]                       ; 00593956
     LEA EDX,[EDX]                       ; 0059395c
-    MOV ESI,dword ptr [0x03670b5c]      ; 00593960 | DAT_03670b5c
+    MOV ESI,dword ptr [0x03670b5c]      ; 00593960 | g_SkeleditBiasEntryCount
         ;   Label: LAB_00593960
     XOR EDI,EDI                         ; 00593966
     TEST ESI,ESI                        ; 00593968
     JLE 0x00595eb8                      ; 0059396a
         ;   XREF to: 00595eb8 (CONDITIONAL_JUMP)  ; LAB_00595eb8
-    MOV EAX,[0x03670b5c]                ; 00593970 | DAT_03670b5c
+    MOV EAX,[0x03670b5c]                ; 00593970 | g_SkeleditBiasEntryCount
         ;   Label: LAB_00593970
     XOR EBX,EBX                         ; 00593975
     TEST EAX,EAX                        ; 00593977
     JLE 0x005939a7                      ; 00593979
         ;   XREF to: 005939a7 (CONDITIONAL_JUMP)  ; LAB_005939a7
-    MOV ESI,dword ptr [0x03670b5c]      ; 0059397b | DAT_03670b5c
+    MOV ESI,dword ptr [0x03670b5c]      ; 0059397b | g_SkeleditBiasEntryCount
     XOR EAX,EAX                         ; 00593981
     SHL ESI,0x4                         ; 00593983
     CMP dword ptr [EAX + 0x3670b60],0x0 ; 00593986 | DAT_03670b60 | DAT_03670b70
@@ -1949,7 +1949,7 @@ section .text
     CMP EAX,ESI                         ; 005939a3
     JL 0x00593986                       ; 005939a5
         ;   XREF to: 00593986 (CONDITIONAL_JUMP)  ; LAB_00593986
-    CMP EBX,dword ptr [0x03670b5c]      ; 005939a7 | DAT_03670b5c
+    CMP EBX,dword ptr [0x03670b5c]      ; 005939a7 | g_SkeleditBiasEntryCount
         ;   Label: LAB_005939a7
     JGE 0x00595ef3                      ; 005939ad
         ;   XREF to: 00595ef3 (CONDITIONAL_JUMP)  ; LAB_00595ef3
@@ -3565,7 +3565,7 @@ section .text
     ADD ESP,0x8                         ; 00594a8e
     JMP 0x005927ee                      ; 00594a91
         ;   XREF to: 005927ee (UNCONDITIONAL_JUMP)  ; LAB_005927ee
-    MOV EBX,dword ptr [0x03670b5c]      ; 00594a96 | DAT_03670b5c
+    MOV EBX,dword ptr [0x03670b5c]      ; 00594a96 | g_SkeleditBiasEntryCount
         ;   Label: LAB_00594a96
     SHL EBX,0x4                         ; 00594a9c
     ADD EBX,0x3670b60                   ; 00594a9f | DAT_03670b60
@@ -3680,7 +3680,7 @@ section .text
     TEST EAX,EAX                        ; 00594bd4
     JZ 0x00594be3                       ; 00594bd6
         ;   XREF to: 00594be3 (CONDITIONAL_JUMP)  ; LAB_00594be3
-    INC dword ptr [0x03670b5c]          ; 00594bd8 | DAT_03670b5c
+    INC dword ptr [0x03670b5c]          ; 00594bd8 | g_SkeleditBiasEntryCount
     JMP 0x00595356                      ; 00594bde
         ;   XREF to: 00595356 (UNCONDITIONAL_JUMP)  ; LAB_00595356
     LEA EAX,[EBP + 0xffffdfe6]          ; 00594be3
@@ -5290,7 +5290,7 @@ section .text
     MOV EAX,dword ptr [ESI]             ; 00595e98 | DAT_03670b60
         ;   Label: LAB_00595e98
     XOR EDX,EDX                         ; 00595e9a
-    MOV ECX,dword ptr [0x03670b5c]      ; 00595e9c | DAT_03670b5c
+    MOV ECX,dword ptr [0x03670b5c]      ; 00595e9c | g_SkeleditBiasEntryCount
     MOV dword ptr [EBP + EAX*0x4 + 0xffffdb4a],EDX ; 00595ea2
     INC EDI                             ; 00595ea9
     MOV dword ptr [ESI],0xffffffff      ; 00595eaa | DAT_03670b60

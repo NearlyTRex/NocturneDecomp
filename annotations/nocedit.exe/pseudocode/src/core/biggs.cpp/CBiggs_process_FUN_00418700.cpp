@@ -13,17 +13,17 @@ void __cdecl core_biggs_cpp_CBiggs_process_FUN_00418700(CBiggs *this_ptr,float d
   CVector3f *pCVar1;
   CVector3f *pCVar2;
   float fVar3;
-  float fVar4;
-  int iVar5;
-  uint uVar6;
+  uint uVar4;
+  float fVar5;
+  int iVar6;
   float fVar7;
   CVector3f local_30;
   float local_24;
   float local_20;
   float local_1c;
   
-  iVar5 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
-  if (iVar5 == 0) {
+  iVar6 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
+  if (iVar6 == 0) {
     return;
   }
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
@@ -34,33 +34,33 @@ void __cdecl core_biggs_cpp_CBiggs_process_FUN_00418700(CBiggs *this_ptr,float d
   fVar7 = delta_time * (this_ptr->base).speed;
   this_ptr_00 = &(this_ptr->base).base.model;
   while (0.0 < fVar7) {
-    uVar6 = core_motion_cpp_CMotionController_advance_FUN_0052d610(&this_ptr_00->motion_controller);
-    core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,uVar6);
+    iVar6 = core_motion_cpp_CMotionController_advance_FUN_0052d610(&this_ptr_00->motion_controller);
+    core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,iVar6);
   }
   fVar3 = (this_ptr->base).speed;
-  fVar4 = (float)3.1415926535000001;
+  fVar5 = (float)3.1415926535000001;
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
-  (this_ptr->base).base.turn_speed = delta_time * fVar4 * fVar3;
+  (this_ptr->base).base.turn_speed = delta_time * fVar5 * fVar3;
   core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(&this_ptr_00->motion_controller);
-  iVar5 = core_charactr_cpp_CCharacter_processWalking_FUN_0042ca70
+  iVar6 = core_charactr_cpp_CCharacter_processWalking_FUN_0042ca70
                     ((CCharacter *)this_ptr,delta_time);
-  if (iVar5 == 0) goto LAB_004187db;
-  uVar6 = (this_ptr->base).base.is_walking;
-  if (uVar6 < 2) {
-    if (uVar6 == 1) {
+  if (iVar6 == 0) goto LAB_004187db;
+  uVar4 = (this_ptr->base).base.is_walking;
+  if (uVar4 < 2) {
+    if (uVar4 == 1) {
 LAB_004187b0:
-      iVar5 = 1;
+      iVar6 = 1;
     }
     else {
 LAB_00418994:
-      iVar5 = 0;
+      iVar6 = 0;
     }
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              (&(this_ptr->base).base.model.motion_controller,iVar5,1);
+              (&(this_ptr->base).base.model.motion_controller,iVar6,1);
   }
   else {
-    if (uVar6 < 3) goto LAB_004187b0;
-    if (uVar6 != 3) goto LAB_00418994;
+    if (uVar4 < 3) goto LAB_004187b0;
+    if (uVar4 != 3) goto LAB_00418994;
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
               (&this_ptr_00->motion_controller,0,1);
     engine_console_cpp_CConsole_printf_FUN_00441890
@@ -75,8 +75,8 @@ LAB_004187db:
   if (0.0 < (this_ptr->base).attack_cooldown) {
     (this_ptr->base).attack_cooldown = (this_ptr->base).attack_cooldown - delta_time;
   }
-  iVar5 = core_charactr_cpp_CCharacter_isOnGround_FUN_004297e0((CCharacter *)this_ptr);
-  if (iVar5 != 0) {
+  iVar6 = core_charactr_cpp_CCharacter_isOnGround_FUN_004297e0((CCharacter *)this_ptr);
+  if (iVar6 != 0) {
     (this_ptr->base).base.velocity.y =
          (this_ptr->base).base.velocity.y - delta_time * (float)32;
     pCVar1 = &(this_ptr->base).base.position_delta;
@@ -103,9 +103,9 @@ LAB_004187db:
             (&(this_ptr->base).base.model);
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
             ((CCharacter *)this_ptr,delta_time,fVar7);
-  iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
+  iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                     (g_CEventListPtr,this_ptr->morph_event);
-  if (iVar5 != 0) {
+  if (iVar6 != 0) {
     this_ptr->morph_timer = 0.0;
     this_ptr->morphing = 1;
   }

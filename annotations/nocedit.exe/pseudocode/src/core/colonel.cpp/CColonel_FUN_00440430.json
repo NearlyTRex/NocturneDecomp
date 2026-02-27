@@ -150,9 +150,9 @@
     {
       "description": "FNSTSW flag reconstruction (floating-point comparison artifact)",
       "line": 20,
-      "match": "CONCAT22((short)(event_id >> 0x10",
+      "match": "CONCAT22((short)(bone_index >> 0x10",
       "severity": "severe",
-      "text": "return CONCAT22((short)(event_id >> 0x10),",
+      "text": "return CONCAT22((short)(bone_index >> 0x10),",
       "type": "fnstsw_flag_artifact"
     },
     {
@@ -160,7 +160,7 @@
       "line": 20,
       "match": "CONCAT22",
       "severity": "mild",
-      "text": "return CONCAT22((short)(event_id >> 0x10),",
+      "text": "return CONCAT22((short)(bone_index >> 0x10),",
       "type": "decompiler_intrinsic"
     },
     {

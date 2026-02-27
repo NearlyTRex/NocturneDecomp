@@ -4,6 +4,9 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x2F70000
 // =============================================================================
 
+// CActorPropertyList
+CActorPropertyList g_MsnEditPropertyList = {};
+
 // CEdCheck
 CEdCheck g_CEdCheckInstance = {};
 
@@ -19,14 +22,15 @@ EConnectionStatus g_ConnectionStatus = {};
 // SChatHistory[400]
 SChatHistory g_ChatHistory[400] = {};
 
+// char[256]
+char g_ChatMessageBuffer[256] = {};
+
 // float
 float FLOAT_02f7c540 = {};
 float FLOAT_02f7c630 = {};
 
 // int
 int g_DisableMouseHitOnBarrier = {};
-int INT_02f7a028 = {};
-int INT_02f7c510 = {};
 int INT_02f7c52c = {};
 int INT_02f7c530 = {};
 int INT_02f7c634 = {};

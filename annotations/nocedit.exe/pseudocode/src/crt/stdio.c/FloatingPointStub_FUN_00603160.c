@@ -10,6 +10,6 @@ void __cdecl FloatingPointStub(char *buffer,va_list_t *args,FormatSpec *spec_inf
 
 {
   (*PTR_crt_stdio_c_ReportFloatingPointNotLoaded_FUN_0060ad30_0068540c)
-            ((double *)buffer,(double *)args,spec_info->unknown_0x00);
+            ((double *)buffer,(char *)args);
   return;
 }

@@ -4,18 +4,6 @@
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 47,
-        "message": "use of undeclared identifier 'DAT_03670848'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 51,
-        "message": "use of undeclared identifier 'DAT_03670848'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
         "line": 86,
         "message": "use of undeclared identifier 'DAT_03670950'"
       },
@@ -46,12 +34,6 @@
       {
         "category": "undeclared_identifier",
         "column": 33,
-        "line": 178,
-        "message": "use of undeclared identifier 'DAT_03670848'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 33,
         "line": 180,
         "message": "use of undeclared identifier 'DAT_03670950'"
       },
@@ -67,13 +49,13 @@
   },
   "complexity": {
     "assembly_lines": 507,
-    "complexity_score": 272,
+    "complexity_score": 242,
     "cross_reference_count": 1,
     "function_call_count": 22,
     "global_count": 49,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 177,
-    "suspect_count": 9,
+    "suspect_count": 6,
     "suspect_types": [
       "undefined_data"
     ],
@@ -472,8 +454,8 @@
     },
     {
       "addr": "03670848",
-      "name": "DAT_03670848",
-      "type": "undefined4",
+      "name": "g_SkeleditLastPOSImported",
+      "type": "char[264]",
       "value": null
     },
     {
@@ -579,22 +561,6 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 40,
-      "match": "DAT_03670848",
-      "severity": "mild",
-      "text": "DAT_03670848 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 44,
-      "match": "DAT_03670848",
-      "severity": "mild",
-      "text": "puVar5 = &DAT_03670848;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 79,
       "match": "DAT_03670950",
       "severity": "mild",
@@ -623,14 +589,6 @@
       "match": "DAT_03670a58",
       "severity": "mild",
       "text": "puVar5 = &DAT_03670a58;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 171,
-      "match": "DAT_03670848",
-      "severity": "mild",
-      "text": "_fprintf(p_Var2,\"\\\"%s\\\"\\n\",&DAT_03670848);",
       "type": "undefined_data"
     },
     {

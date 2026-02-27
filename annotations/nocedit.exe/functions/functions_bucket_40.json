@@ -11291,7 +11291,7 @@
           "type":"CCharacter*"
         },
         {
-          "name":"event_id",
+          "name":"bone_index",
           "storage":{
             "offset":8,
             "size":4,
@@ -11304,7 +11304,7 @@
               }
             ]
           },
-          "type":"uint"
+          "type":"int"
         }
       ],
       "ret_storage":{
@@ -13696,8 +13696,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_colquant.c_FUN_004406c0",
-    "ret":"int*",
+    "name":"engine_colquant.c_quantizeColors_FUN_004406c0",
+    "ret":"char*",
     "vars":{
       "locals":[
         {
@@ -13829,6 +13829,72 @@
           "type":"undefined8"
         }
       ],
+      "params":[
+        {
+          "name":"workspace",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"SColorQuantWorkspace*"
+        },
+        {
+          "name":"color_data",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        },
+        {
+          "name":"color_count",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"num_palette_entries",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ],
       "ret_storage":{
         "reg":"EAX",
         "size":4,
@@ -13852,7 +13918,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_colquant.c_FUN_00440b40",
+    "name":"engine_colquant.c_partitionByRed_FUN_00440b40",
     "ret":"void",
     "vars":{
       "locals":[
@@ -13887,6 +13953,56 @@
             ]
           },
           "type":"undefined4"
+        }
+      ],
+      "params":[
+        {
+          "name":"workspace",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"SColorQuantWorkspace*"
+        },
+        {
+          "name":"box_index",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"new_box_index",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }
@@ -13902,7 +14018,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_colquant.c_FUN_00440dc0",
+    "name":"engine_colquant.c_partitionByBlue_FUN_00440dc0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -13938,6 +14054,56 @@
           },
           "type":"undefined4"
         }
+      ],
+      "params":[
+        {
+          "name":"workspace",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"SColorQuantWorkspace*"
+        },
+        {
+          "name":"box_index",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"new_box_index",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
       ]
     }
   },
@@ -13952,8 +14118,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_colquant.c_FUN_00441040",
-    "ret":"int",
+    "name":"engine_colquant.c_computeWeightedColorDistance_FUN_00441040",
+    "ret":"double",
     "vars":{
       "locals":[
         {
@@ -14005,10 +14171,65 @@
           "type":"undefined8"
         }
       ],
+      "params":[
+        {
+          "name":"workspace",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"SColorQuantWorkspace*"
+        },
+        {
+          "name":"box_index",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"color_index",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ],
       "ret_storage":{
-        "reg":"EAX",
-        "size":4,
+        "compound":true,
+        "size":8,
         "varnodes":[
+          {
+            "addr":"register:00000008",
+            "offset":8,
+            "size":4
+          },
           {
             "addr":"register:00000000",
             "size":4
@@ -61663,7 +61884,7 @@
           "type":"double"
         },
         {
-          "name":"unused_param3",
+          "name":"sample_index",
           "storage":{
             "offset":16,
             "size":4,
@@ -61679,7 +61900,7 @@
           "type":"int"
         },
         {
-          "name":"sample_index",
+          "name":"ratio_buffer",
           "storage":{
             "offset":20,
             "size":4,
@@ -61688,22 +61909,6 @@
               {
                 "addr":"Stack[0x14]",
                 "offset":20,
-                "size":4
-              }
-            ]
-          },
-          "type":"int"
-        },
-        {
-          "name":"output_buffer",
-          "storage":{
-            "offset":24,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x18]",
-                "offset":24,
                 "size":4
               }
             ]
@@ -64694,7 +64899,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_path.cpp_CPathMap_FUN_00547fc0",
+    "name":"core_path.cpp_CPathMap_renderPathMap_FUN_00547fc0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -65067,6 +65272,70 @@
             ]
           },
           "type":"CPathMap*"
+        },
+        {
+          "name":"depth",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"red",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"green",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"fog",
+          "storage":{
+            "offset":20,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x14]",
+                "offset":20,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }
@@ -81135,7 +81404,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"core_sound.cpp_CSound_playActorSound_FUN_005b3a40",
-    "ret":"void",
+    "ret":"uint",
     "vars":{
       "params":[
         {
@@ -81202,7 +81471,17 @@
           },
           "type":"CVector3f*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {

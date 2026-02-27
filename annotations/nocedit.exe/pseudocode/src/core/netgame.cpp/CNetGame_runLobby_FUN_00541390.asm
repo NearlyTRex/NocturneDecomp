@@ -880,7 +880,7 @@ section .text
     PUSH 0x1                            ; 00541c39
         ;   Label: LAB_00541c39
     PUSH 0x100                          ; 00541c3b
-    PUSH 0x2f7c640                      ; 00541c40 | DAT_02f7c640
+    PUSH 0x2f7c640                      ; 00541c40 | g_ChatMessageBuffer
     PUSH 0x63da3b                       ; 00541c45 | = "Send chat"
     MOV EAX,[0x00678a60]                ; 00541c4a | g_CEditorToolsPtr
     PUSH EAX                            ; 00541c4f | g_CEditorToolsInstance
@@ -891,7 +891,7 @@ section .text
     JZ 0x00541b03                       ; 00541c5a
         ;   XREF to: 00541b03 (CONDITIONAL_JUMP)  ; LAB_00541b03
     PUSH -0x1                           ; 00541c60
-    PUSH 0x2f7c640                      ; 00541c62 | DAT_02f7c640
+    PUSH 0x2f7c640                      ; 00541c62 | g_ChatMessageBuffer
     MOV EDX,dword ptr [EBP + 0x14]      ; 00541c67
     PUSH EDX                            ; 00541c6a
     CALL core_netgame.cpp_CNetGame_processChatOut_FUN_00541e40 ; 00541c6b

@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3ScalefactorsLSF_FUN_00531480(CMP3Decoder *this_ptr,int *scalefactor_dest,SMpegLayer3Granule *granule_info,int channel,int granule,SMpegFrame *frame)
+; void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3ScalefactorsLSF_FUN_00531480(CMP3Decoder *this_ptr,int *scalefactor_dest,SMpegLayer3SideInfo *granule_info,int channel,int granule,SMpegFrame *frame)
 ;
 ; Parameters:
 ; CMP3Decoder *    Stack[0x4]:4   this_ptr
 ; int *            Stack[0x8]:4   scalefactor_dest
-; SMpegLayer3Granule * Stack[0xc]:4   granule_info
+; SMpegLayer3SideInfo * Stack[0xc]:4   granule_info
 ; int              Stack[0x10]:4   channel
 ; int              Stack[0x14]:4   granule
 ; SMpegFrame *     Stack[0x18]:4   frame
@@ -57,7 +57,7 @@ section .text
     PUSH EDX                            ; 005314cb
     XOR EBX,EBX                         ; 005314cc
     CALL sound_mp3.cpp_CMP3Decoder_decodeScalefacCompress_FUN_005310f0 ; 005314ce
-        ;   XREF to: 005310f0 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_CMP3Decoder_decodeScalefacCompress_FUN_005310f0(CMP3Decoder * this_ptr, int * scalefactor_dest, SMpegLayer3Granule * granule_info, int channel, ...)
+        ;   XREF to: 005310f0 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_CMP3Decoder_decodeScalefacCompress_FUN_005310f0(CMP3Decoder * this_ptr, int * scalefactor_dest, SMpegLayer3SideInfo * granule_info, int channel, ...)
     MOV ECX,dword ptr [EDI + 0x10]      ; 005314d3
     ADD ESP,0x18                        ; 005314d6
     TEST ECX,ECX                        ; 005314d9

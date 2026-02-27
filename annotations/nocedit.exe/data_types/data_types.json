@@ -589,7 +589,7 @@
       "type":"function_definition"
     },
     {
-      "name":"CDemonActor_playSoundWithVolume",
+      "name":"CDemonActor_playSoundWithDelay",
       "type":"function_definition"
     },
     {
@@ -3445,6 +3445,18 @@
       "type":"struct"
     },
     {
+      "name":"SColorQuantBox",
+      "type":"struct"
+    },
+    {
+      "name":"SColorQuantCentroid",
+      "type":"struct"
+    },
+    {
+      "name":"SColorQuantWorkspace",
+      "type":"struct"
+    },
+    {
       "name":"SConditionVariable",
       "type":"struct"
     },
@@ -4001,7 +4013,19 @@
       "type":"struct"
     },
     {
-      "name":"SMpegLayer3Granule",
+      "name":"SMpegLayer3BandIndex",
+      "type":"struct"
+    },
+    {
+      "name":"SMpegLayer3GranuleInfo",
+      "type":"struct"
+    },
+    {
+      "name":"SMpegLayer3ScalefactorGranule",
+      "type":"struct"
+    },
+    {
+      "name":"SMpegLayer3SideInfo",
       "type":"struct"
     },
     {
@@ -10440,14 +10464,14 @@
           "type":"char*"
         }
       ],
-      "return_type":"void",
+      "return_type":"uint",
       "type":"function_definition"
     },
     {
       "calling_convention":"__cdecl",
       "cat":"/Nocturne/FunctionDefinition/Game",
       "importable":true,
-      "name":"CDemonActor_playSoundWithVolume",
+      "name":"CDemonActor_playSoundWithDelay",
       "parameters":[
         {
           "name":"this_ptr",
@@ -28212,9 +28236,9 @@
         },
         {
           "len":4,
-          "name":"playSoundWithVolume",
+          "name":"playSoundWithDelay",
           "offset":44,
-          "type":"CDemonActor_playSoundWithVolume*"
+          "type":"CDemonActor_playSoundWithDelay*"
         },
         {
           "len":4,
@@ -37962,28 +37986,16 @@
           "type":"int[2]"
         },
         {
-          "len":180,
+          "len":216,
           "name":"layer3_scalefactors",
           "offset":29528,
-          "type":"int[45]"
+          "type":"int[54]"
         },
         {
-          "len":36,
-          "name":"unk2",
-          "offset":29708,
-          "type":"char[36]"
-        },
-        {
-          "len":2304,
+          "len":4608,
           "name":"synthesis_history",
           "offset":29744,
-          "type":"float[2][16][18]"
-        },
-        {
-          "len":2304,
-          "name":"unk3",
-          "offset":32048,
-          "type":"char[2304]"
+          "type":"float[2][32][18]"
         }
       ],
       "importable":true,
@@ -51065,6 +51077,174 @@
       "desc":"",
       "fields":[
         {
+          "len":2,
+          "name":"avg_red",
+          "offset":0,
+          "type":"short"
+        },
+        {
+          "len":2,
+          "name":"avg_green",
+          "offset":2,
+          "type":"short"
+        },
+        {
+          "len":2,
+          "name":"avg_blue",
+          "offset":4,
+          "type":"short"
+        },
+        {
+          "len":2,
+          "name":"avg_intensity",
+          "offset":6,
+          "type":"short"
+        },
+        {
+          "len":8,
+          "name":"total_weighted_error",
+          "offset":8,
+          "type":"double"
+        },
+        {
+          "len":8,
+          "name":"spread_red",
+          "offset":16,
+          "type":"double"
+        },
+        {
+          "len":8,
+          "name":"spread_green",
+          "offset":24,
+          "type":"double"
+        },
+        {
+          "len":8,
+          "name":"spread_blue",
+          "offset":32,
+          "type":"double"
+        },
+        {
+          "len":8,
+          "name":"spread_intensity",
+          "offset":40,
+          "type":"double"
+        },
+        {
+          "len":8,
+          "name":"max_spread",
+          "offset":48,
+          "type":"double"
+        },
+        {
+          "len":4,
+          "name":"start_index",
+          "offset":56,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"count",
+          "offset":60,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":64,
+      "name":"SColorQuantBox",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":8,
+          "name":"red",
+          "offset":0,
+          "type":"double"
+        },
+        {
+          "len":8,
+          "name":"green",
+          "offset":8,
+          "type":"double"
+        },
+        {
+          "len":8,
+          "name":"blue",
+          "offset":16,
+          "type":"double"
+        },
+        {
+          "len":8,
+          "name":"weighted_intensity",
+          "offset":24,
+          "type":"double"
+        }
+      ],
+      "importable":true,
+      "len":32,
+      "name":"SColorQuantCentroid",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"num_palette_entries",
+          "offset":0,
+          "type":"int"
+        },
+        {
+          "len":8192,
+          "name":"sort_keys",
+          "offset":4,
+          "type":"double[256][4]"
+        },
+        {
+          "len":4,
+          "name":"color_data",
+          "offset":8196,
+          "type":"char*"
+        },
+        {
+          "len":8192,
+          "name":"centroids",
+          "offset":8200,
+          "type":"SColorQuantCentroid[256]"
+        },
+        {
+          "len":16384,
+          "name":"boxes",
+          "offset":16392,
+          "type":"SColorQuantBox[256]"
+        },
+        {
+          "len":768,
+          "name":"output_palette",
+          "offset":32776,
+          "type":"char[768]"
+        }
+      ],
+      "importable":true,
+      "len":33544,
+      "name":"SColorQuantWorkspace",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
           "len":4,
           "name":"next",
           "offset":0,
@@ -53753,6 +53933,156 @@
       "desc":"",
       "fields":[
         {
+          "len":92,
+          "name":"l",
+          "offset":0,
+          "type":"int[23]"
+        },
+        {
+          "len":56,
+          "name":"s",
+          "offset":92,
+          "type":"int[14]"
+        }
+      ],
+      "importable":true,
+      "len":148,
+      "name":"SMpegLayer3BandIndex",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"part_2_3_length",
+          "offset":0,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"big_value_pair_count",
+          "offset":4,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"global_gain",
+          "offset":8,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"scalefac_compress",
+          "offset":12,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"window_switching_flag",
+          "offset":16,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"block_type",
+          "offset":20,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"mixed_block_flag",
+          "offset":24,
+          "type":"int"
+        },
+        {
+          "len":12,
+          "name":"table_select",
+          "offset":28,
+          "type":"int[3]"
+        },
+        {
+          "len":12,
+          "name":"subblock_gain",
+          "offset":40,
+          "type":"int[3]"
+        },
+        {
+          "len":4,
+          "name":"region0_count",
+          "offset":52,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"region1_count",
+          "offset":56,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"preflag",
+          "offset":60,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"scalefac_scale",
+          "offset":64,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"count_1_table_select",
+          "offset":68,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":72,
+      "name":"SMpegLayer3GranuleInfo",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":88,
+          "name":"long_scalefactors",
+          "offset":0,
+          "type":"int[22]"
+        },
+        {
+          "len":4,
+          "name":"long_sentinel",
+          "offset":88,
+          "type":"int"
+        },
+        {
+          "len":156,
+          "name":"short_scalefactors",
+          "offset":92,
+          "type":"int[3][13]"
+        }
+      ],
+      "importable":true,
+      "len":248,
+      "name":"SMpegLayer3ScalefactorGranule",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
           "len":4,
           "name":"main_data_begin",
           "offset":0,
@@ -53766,104 +54096,20 @@
         },
         {
           "len":16,
-          "name":"unk",
+          "name":"scfsi",
           "offset":8,
-          "type":"char[16]"
+          "type":"int[4]"
         },
         {
-          "len":4,
-          "name":"part_2_3_length_maybe",
+          "len":144,
+          "name":"granules",
           "offset":24,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"big_value_pair_count",
-          "offset":28,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"global_gain",
-          "offset":32,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"scalefac_compress",
-          "offset":36,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"window_switching_flag",
-          "offset":40,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"block_type",
-          "offset":44,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"mixed_block_flag",
-          "offset":48,
-          "type":"int"
-        },
-        {
-          "len":12,
-          "name":"table_select",
-          "offset":52,
-          "type":"int[3]"
-        },
-        {
-          "len":12,
-          "name":"subblock_gain",
-          "offset":64,
-          "type":"int[3]"
-        },
-        {
-          "len":4,
-          "name":"region0_count",
-          "offset":76,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"region1_count",
-          "offset":80,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"preflag",
-          "offset":84,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"scalefac_scale",
-          "offset":88,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"count_1_table_select",
-          "offset":92,
-          "type":"int"
-        },
-        {
-          "len":64,
-          "name":"unk4",
-          "offset":96,
-          "type":"char[64]"
+          "type":"SMpegLayer3GranuleInfo[2]"
         }
       ],
       "importable":true,
-      "len":160,
-      "name":"SMpegLayer3Granule",
+      "len":168,
+      "name":"SMpegLayer3SideInfo",
       "pack":false,
       "type":"struct"
     },
@@ -53873,20 +54119,14 @@
       "desc":"",
       "fields":[
         {
-          "len":248,
-          "name":"reserved",
+          "len":496,
+          "name":"granules",
           "offset":0,
-          "type":"int[62]"
-        },
-        {
-          "len":42,
-          "name":"intensity_stereo_pos",
-          "offset":248,
-          "type":"short[21]"
+          "type":"SMpegLayer3ScalefactorGranule[2]"
         }
       ],
       "importable":true,
-      "len":290,
+      "len":496,
       "name":"SMpegScalefactorBandData",
       "pack":false,
       "type":"struct"

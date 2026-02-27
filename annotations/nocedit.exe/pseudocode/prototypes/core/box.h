@@ -37,7 +37,7 @@ void __cdecl CBox::loadFromFile(CBox *this_ptr,_FILE *file_handle);
 
 // Original: core_box.cpp_CBox_saveToFile_FUN_00420020
 // Address: 00420020
-void __cdecl CBox::saveToFile(CBox *this_ptr,_FILE *file_handle);
+void __cdecl CBox::saveToFile(CBox *this_ptr,_FILE *file_handle,char *indent_prefix);
 
 // Original: core_box.cpp_CBox_setupVelocities_FUN_00420180
 // Address: 00420180

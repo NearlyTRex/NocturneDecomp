@@ -120,7 +120,7 @@ section .text
     PUSH 0x1                            ; 00415232
     PUSH 0x6154f9                       ; 00415234 | = "Bip01 Spine"
     PUSH ESI                            ; 00415239
-    MOV [0x00822754],EAX                ; 0041523a | DAT_00822754
+    MOV [0x00822754],EAX                ; 0041523a | INT_00822754
     CALL core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0 ; 0041523f
         ;   XREF to: 00599fc0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 00415244

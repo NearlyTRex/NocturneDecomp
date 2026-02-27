@@ -1,16 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_mp3_cpp_CMP3Decoder_synthesisPoly_FUN_00533ba0(CMP3Decoder *this_ptr,void *unknown_param2,float *output_buffer,int subband_index,int channel,SMpegFrame *frame_info,void *unknown_param7)
+; void __cdecl sound_mp3_cpp_CMP3Decoder_synthesisPoly_FUN_00533ba0(CMP3Decoder *this_ptr,float *input_samples,float *output_buffer,int subband_index,int channel,SMpegFrame *frame_info,SMpegFrameHeader *header)
 ;
 ; Parameters:
 ; CMP3Decoder *    Stack[0x4]:4   this_ptr
-; void *           Stack[0x8]:4   unknown_param2
+; float *          Stack[0x8]:4   input_samples
 ; float *          Stack[0xc]:4   output_buffer
 ; int              Stack[0x10]:4   subband_index
 ; int              Stack[0x14]:4   channel
 ; SMpegFrame *     Stack[0x18]:4   frame_info
-; void *           Stack[0x1c]:4   unknown_param7
+; SMpegFrameHeader * Stack[0x1c]:4   header
 ; Local Variables:
 ; undefined4       Stack[-0x94]:4  local_94
 ; undefined4       Stack[-0x4c]:4  local_4c

@@ -11,18 +11,18 @@ void __cdecl core_icepick_cpp_CIcePick_FUN_004f93a0(CIcePick *this_ptr)
 {
   CDeformableModelInstance *this_ptr_00;
   CDemonActor *object;
-  uint uVar1;
-  int iVar2;
+  int iVar1;
+  uint uVar2;
   float in_stack_00000008;
   
   this_ptr_00 = &(this_ptr->base).base.model;
   do {
-    uVar1 = core_motion_cpp_CMotionController_advance_FUN_0052d610(&this_ptr_00->motion_controller);
-    switch(uVar1) {
+    iVar1 = core_motion_cpp_CMotionController_advance_FUN_0052d610(&this_ptr_00->motion_controller);
+    switch(iVar1) {
     case 100:
-      iVar2 = this_ptr->attack_count + 1;
-      this_ptr->attack_count = iVar2;
-      if (4 < iVar2) {
+      iVar1 = this_ptr->attack_count + 1;
+      this_ptr->attack_count = iVar1;
+      if (4 < iVar1) {
         this_ptr->attack_count = 0;
       }
       break;
@@ -33,8 +33,8 @@ void __cdecl core_icepick_cpp_CIcePick_FUN_004f93a0(CIcePick *this_ptr)
       core_icepick_cpp_CIcePick_FUN_004f9490(this_ptr);
       break;
     case 0x67:
-      uVar1 = rand();
-      if ((uVar1 & 3) == 0) {
+      uVar2 = rand();
+      if ((uVar2 & 3) == 0) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&this_ptr_00->motion_controller,0x15,1);
       }
@@ -52,7 +52,7 @@ void __cdecl core_icepick_cpp_CIcePick_FUN_004f93a0(CIcePick *this_ptr)
                 ((CCharacter *)this_ptr,1,(CVector3f *)0x0);
       break;
     default:
-      core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,uVar1);
+      core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,iVar1);
     }
   } while (0.0 < in_stack_00000008);
   return;

@@ -1,0 +1,363 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 162,
+    "complexity_score": 211,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 9,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 61,
+    "suspect_count": 14,
+    "suspect_types": [
+      "decompiler_intrinsic",
+      "stack_param"
+    ],
+    "total_lines": 223
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00547dd0",
+    "address_range": [
+      [
+        "00547dd0",
+        "00547fb9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_path.cpp_renderGridQuad_FUN_00547dd0",
+    "signature": "void __cdecl core_path_cpp_renderGridQuad_FUN_00547dd0(int grid_x,int grid_y,int grid_z,int color,int fog,float w_recip)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fe6b0",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    },
+    {
+      "addr": "0048bba0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_renderMaximumQualityVariant_FUN_0048bba0"
+    },
+    {
+      "addr": "005b575c",
+      "is_variadic": false,
+      "name": "wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063ea28",
+      "name": "FLOAT_0063ea28",
+      "type": "float",
+      "value": "256"
+    },
+    {
+      "addr": "0063ea30",
+      "name": "DOUBLE_0063ea30",
+      "type": "double",
+      "value": "256"
+    },
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr2",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "030d4fd0",
+      "name": "SMRGLPrimitiveQuad_030d4fd0",
+      "type": "SMRGLPrimitiveQuad",
+      "value": null
+    },
+    {
+      "addr": "03277d28",
+      "name": "g_CDemonRaytraceInstance.bbox_min.y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03277d48",
+      "name": "g_CDemonRaytraceInstance.adjusted_size.x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03277d4c",
+      "name": "g_CDemonRaytraceInstance.adjusted_size.y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03277d50",
+      "name": "g_CDemonRaytraceInstance.adjusted_size.z",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 6,
+    "estimated_params": 6
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.833333333333333,
+    "instruction_count": 150,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 20,
+      "CALL": 11,
+      "COPY": 402,
+      "FLOAT2FLOAT": 15,
+      "FLOAT_ADD": 4,
+      "FLOAT_MULT": 7,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 6,
+      "INT_ADD": 67,
+      "INT_AND": 72,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 32,
+      "INT_LEFT": 8,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 8,
+      "INT_OR": 20,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 9,
+      "INT_SLESS": 22,
+      "INT_SUB": 30,
+      "INT_XOR": 4,
+      "LOAD": 45,
+      "POPCOUNT": 14,
+      "RETURN": 1,
+      "ROUND": 6,
+      "STORE": 54,
+      "TRUNC": 6
+    },
+    "pcode_op_count": 875
+  },
+  "stack_frame": {
+    "frame_size": 76,
+    "local_size": 52,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "grid_x",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "grid_y",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "grid_z",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "color",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "fog",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "w_recip",
+        "offset": 24,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_0000001c",
+      "severity": "moderate",
+      "text": "int in_stack_0000001c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_0000001c",
+      "severity": "moderate",
+      "text": "iVar1 = in_stack_0000001c << 8;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 23,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_30.x = (int)ROUND(ROUND((float)grid_x * local_24));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 23,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_30.x = (int)ROUND(ROUND((float)grid_x * local_24));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 24,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_30.z = (int)ROUND(ROUND((float)grid_z * local_1c));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 24,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_30.z = (int)ROUND(ROUND((float)grid_z * local_1c));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 25,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_30.y = (int)ROUND(ROUND(256 +",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 25,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_30.y = (int)ROUND(ROUND(256 +",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 31,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_30.x = (int)ROUND(ROUND((float)local_30.x + local_24));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 31,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_30.x = (int)ROUND(ROUND((float)local_30.x + local_24));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 35,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_30.z = (int)ROUND(ROUND((float)local_30.z + local_1c));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 35,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_30.z = (int)ROUND(ROUND((float)local_30.z + local_1c));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 39,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_30.x = (int)ROUND(ROUND((float)local_30.x - local_24));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 39,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_30.x = (int)ROUND(ROUND((float)local_30.x - local_24));",
+      "type": "decompiler_intrinsic"
+    }
+  ]
+}

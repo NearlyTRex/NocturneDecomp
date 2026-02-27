@@ -70,11 +70,11 @@
 ;   float FLOAT_0065b810 = 256
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   undefined4 DAT_00800000
-;   undefined4 DAT_00823a78
-;   undefined1 DAT_00823a80
-;   undefined1 DAT_00823a81
-;   undefined1 DAT_00823a82
-;   undefined1 DAT_00823a83
+;   SMRGLTextureBasic g_CollisionTexture
+;   undefined4 DAT_00823a80
+;   undefined4 DAT_00823a81
+;   undefined4 DAT_00823a82
+;   undefined4 DAT_00823a83
 ;   ... and 4 more
 ;
 ; Called Functions:
@@ -134,7 +134,7 @@ section .text
         ;   XREF to: 00429b84 (CONDITIONAL_JUMP)  ; LAB_00429b84
     POP EDI                             ; 00429b9c
         ;   Label: LAB_00429b9c
-    PUSH 0x823a78                       ; 00429b9d | DAT_00823a78
+    PUSH 0x823a78                       ; 00429b9d | g_CollisionTexture
     MOV EAX,[0x006703ec]                ; 00429ba2 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EAX                            ; 00429ba7 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80 ; 00429ba8

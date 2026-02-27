@@ -18,6 +18,6 @@ int g_PathfindingCurrentZ = {};
 int g_PathfindingDestX = {};
 int g_PathfindingDestZ = {};
 
-// undefined1
-undefined1 DAT_030c3ab0 = {};
+// uchar
+uchar g_PathMapCacheInitFlag = {};
 

@@ -81,7 +81,7 @@ void __cdecl core_boxactor_cpp_CLightActor_FUN_00422d60(CLightActor *this_ptr)
       (this_ptr->light).light_enabled_flag = 0;
       (local_18->base).base.focal_length = 56.0;
       (this_ptr->light).base.max_distance = 32.0;
-      iVar3 = DAT_008229ac;
+      iVar3 = INT_008229ac;
       (this_ptr->base).pickup_type = 3;
       if (iVar3 == 0) {
         this_ptr_01 = CDemonFilter_ARRAY_008229ec;
@@ -92,7 +92,7 @@ void __cdecl core_boxactor_cpp_CLightActor_FUN_00422d60(CLightActor *this_ptr)
           core_dfilter_cpp_CDemonFilter_load_FUN_004702f0(this_ptr_01,acStack_d0);
           this_ptr_01 = this_ptr_01 + 1;
         } while (iVar3 < 8);
-        DAT_008229ac = 1;
+        INT_008229ac = 1;
       }
       core_dlight_cpp_CDemonLight_applyFilter_FUN_00474770
                 (&this_ptr->light,CDemonFilter_ARRAY_008229ec,0,0,0);

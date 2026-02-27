@@ -18,9 +18,9 @@ void __cdecl core_hotdemon_cpp_CHotDemon_process_FUN_004f6f20(CHotDemon *this_pt
   int iVar5;
   SMotion *pSVar6;
   int iVar7;
-  uint uVar8;
-  CVector3f *pCVar9;
+  CVector3f *pCVar8;
   CPathMap *path_map;
+  uint uVar9;
   float fVar10;
   float max_distance;
   float in_stack_fffffef4;
@@ -63,8 +63,8 @@ void __cdecl core_hotdemon_cpp_CHotDemon_process_FUN_004f6f20(CHotDemon *this_pt
   local_2c = delta_time * (this_ptr->base).speed;
   pCVar1 = &(this_ptr->base).base.model;
   while (0.0 < local_2c) {
-    uVar8 = core_motion_cpp_CMotionController_advance_FUN_0052d610(&pCVar1->motion_controller);
-    core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,uVar8);
+    iVar5 = core_motion_cpp_CMotionController_advance_FUN_0052d610(&pCVar1->motion_controller);
+    core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,iVar5);
   }
   fVar3 = (this_ptr->base).speed;
   fVar10 = (float)3.1415926535000001;
@@ -76,9 +76,9 @@ void __cdecl core_hotdemon_cpp_CHotDemon_process_FUN_004f6f20(CHotDemon *this_pt
   iVar7 = core_charactr_cpp_CCharacter_processWalking_FUN_0042ca70
                     ((CCharacter *)this_ptr,delta_time);
   if (iVar7 != 0) {
-    uVar8 = (this_ptr->base).base.is_walking;
-    if (uVar8 < 2) {
-      if (uVar8 == 1) {
+    uVar9 = (this_ptr->base).base.is_walking;
+    if (uVar9 < 2) {
+      if (uVar9 == 1) {
 LAB_004f6fec:
         iVar5 = 1;
       }
@@ -90,8 +90,8 @@ LAB_004f7178:
                 (&(this_ptr->base).base.model.motion_controller,iVar5,1);
     }
     else {
-      if (uVar8 < 3) goto LAB_004f6fec;
-      if (uVar8 != 3) goto LAB_004f7178;
+      if (uVar9 < 3) goto LAB_004f6fec;
+      if (uVar9 != 3) goto LAB_004f7178;
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&pCVar1->motion_controller,0,1)
       ;
       engine_console_cpp_CConsole_printf_FUN_00441890
@@ -130,9 +130,9 @@ LAB_004f7178:
                     (&(this_ptr->base).base.model.motion_controller,iVar5,1);
           iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handles[0]);
           if (iVar5 == 0) {
-            uVar8 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
+            uVar9 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                               ((CDemonActor *)this_ptr,"hotdemon-attack.wav");
-            this_ptr->sfx_handles[0] = uVar8;
+            this_ptr->sfx_handles[0] = uVar9;
           }
         }
       }
@@ -171,13 +171,13 @@ LAB_004f7178:
            (this_ptr->base).base.model.accumulated_root_motion.y;
       local_64.x = 0.0;
       local_64.z = fVar3;
-      pCVar9 = &local_64;
+      pCVar8 = &local_64;
       local_64.y = 0.0;
       pCVar4 = (this_ptr->base).victim;
       path_map = (*((pCVar4->vtable)._ub)->getPathMap)(pCVar4);
       iVar7 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
                         ((CCharacter *)this_ptr,&(((this_ptr->base).victim)->location).position,
-                         path_map,pCVar9,fVar10,max_distance);
+                         path_map,pCVar8,fVar10,max_distance);
       if (-1 < iVar7) {
         pCVar4 = (this_ptr->base).victim;
         local_94 = (this_ptr->base).base.base.location.position.x - (pCVar4->location).position.x;
@@ -212,9 +212,9 @@ LAB_004f7178:
                       (&(this_ptr->base).base.model.motion_controller,iVar7,1);
             iVar7 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handles[0]);
             if (iVar7 == 0) {
-              uVar8 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
+              uVar9 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                                 ((CDemonActor *)this_ptr,"hotdemon-attack.wav");
-              this_ptr->sfx_handles[0] = uVar8;
+              this_ptr->sfx_handles[0] = uVar9;
             }
             (this_ptr->base).attack_cooldown = 2.0;
           }
@@ -255,22 +255,22 @@ LAB_004f73d5:
   case 8:
     core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffef4);
     local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
-    pCVar9 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
+    pCVar8 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                        (&local_4c,&g_ZeroVector,
                         (this_ptr->base).base.model.bone_transform.bone_world_matrices +
                         INT_02db88d0);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-              ((CDemonActor *)this_ptr,&local_d0,pCVar9);
+              ((CDemonActor *)this_ptr,&local_d0,pCVar8);
     core_enemy_cpp_CEnemy_FUN_004a9880(&this_ptr->base);
     break;
   case 5:
   case 0xb:
     if (((this_ptr->base).pool_me == 0) &&
        ((this_ptr->base).base.base.standing_platform == (CPlatform *)0x0)) {
-      pCVar9 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+      pCVar8 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
                          (&(this_ptr->base).base.model,&local_ac,0);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                ((CDemonActor *)this_ptr,&local_b8,pCVar9);
+                ((CDemonActor *)this_ptr,&local_b8,pCVar8);
       core_gore_cpp_CGore_createBloodPool_FUN_004ede30(g_CGorePtr,&local_b8,0);
       (this_ptr->base).pool_me = 1;
     }
@@ -285,10 +285,10 @@ switchD_004f7654_caseD_e:
          (this_ptr->base).base.velocity.y - delta_time * (float)32;
     local_58 = (this_ptr->base).base.velocity.x * delta_time;
     local_54 = (this_ptr->base).base.velocity.y * delta_time;
-    pCVar9 = &(this_ptr->base).base.position_delta;
+    pCVar8 = &(this_ptr->base).base.position_delta;
     local_50 = delta_time * (this_ptr->base).base.velocity.z;
     pCVar2 = &(this_ptr->base).base.model.accumulated_root_motion;
-    local_7c = local_58 + pCVar9->x;
+    local_7c = local_58 + pCVar8->x;
     local_78 = local_54 + (this_ptr->base).base.position_delta.y;
     local_74 = local_50 + (this_ptr->base).base.position_delta.z;
     local_a0.x = local_7c + pCVar2->x;
@@ -296,7 +296,7 @@ switchD_004f7654_caseD_e:
     local_a0.z = local_74 + (this_ptr->base).base.model.accumulated_root_motion.z;
     (this_ptr->base).base.position_delta.z = 0.0;
     (this_ptr->base).base.position_delta.y = (this_ptr->base).base.position_delta.z;
-    pCVar9->x = (this_ptr->base).base.position_delta.y;
+    pCVar8->x = (this_ptr->base).base.position_delta.y;
     (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
     fVar3 = (this_ptr->base).base.model.accumulated_root_motion.z;
     (this_ptr->base).base.model.accumulated_root_motion.y = fVar3;

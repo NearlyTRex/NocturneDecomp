@@ -8,11 +8,11 @@
 ;
 ; XREF[7]:
 ;   core_actor.cpp_CDemonActor_save_FUN_0040af30 at 0040afd8
+;   core_actor.cpp_archiveBox_FUN_0040bd70 at 0040be13
 ;   core_actor.cpp_archiveClothList_FUN_0040be60 at 0040bf72
 ;   core_actor.cpp_archiveMotionState_FUN_0040b9f0 at 0040ba93
 ;   core_actor.cpp_archivePartStatus_FUN_0040bae0 at 0040bc63
 ;   core_actor.cpp_archiveRules_FUN_0040c000 at 0040c121
-;   core_actor.cpp_archiveSimBox_FUN_0040bd70 at 0040be13
 ;   core_inv.cpp_CInventory_save_FUN_004ff210 at 004ff372
 ;
 ; Referenced Globals:

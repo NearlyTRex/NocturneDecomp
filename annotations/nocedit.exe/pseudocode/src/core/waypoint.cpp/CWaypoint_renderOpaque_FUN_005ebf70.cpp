@@ -29,8 +29,8 @@ int __cdecl core_waypoint_cpp_CWaypoint_renderOpaque_FUN_005ebf70(CWayPoint *thi
   float fStack_30;
   float fStack_2c;
   CVector3f CStack_28;
-  uint uStack_1c;
-  uint uStack_18;
+  int iStack_1c;
+  int iStack_18;
   CWayPoint *local_14;
   
   if (((g_CDemonMissionPtr->is_in_editor != 0) &&
@@ -98,15 +98,17 @@ int __cdecl core_waypoint_cpp_CWaypoint_renderOpaque_FUN_005ebf70(CWayPoint *thi
       if ((this_ptr != local_14) && (g_CDemonMissionPtr->show_waypoint_coverage != 2)) {
         return 0;
       }
-      uStack_1c = 0xff;
-      uStack_18 = 0xff;
+      iStack_1c = 0xff;
+      iStack_18 = 0xff;
+      iVar1 = 0x40;
       if (this_ptr == local_14) {
-        uStack_1c = 0;
-        uStack_18 = 0;
+        iVar1 = 0x80;
+        iStack_1c = 0;
+        iStack_18 = 0;
       }
-      this_ptr_01 = core_path_cpp_FUN_00548500(&(this_ptr->base).base.location);
-      core_path_cpp_CPathMap_FUN_00548750(this_ptr_01);
-      core_path_cpp_CPathMap_FUN_00547fc0(this_ptr_01);
+      this_ptr_01 = core_path_cpp_getPathMap_FUN_00548500(&(this_ptr->base).base.location);
+      core_path_cpp_CPathMap_setupPathSearch_FUN_00548750(this_ptr_01);
+      core_path_cpp_CPathMap_renderPathMap_FUN_00547fc0(this_ptr_01,iStack_18,0xff,iStack_1c,iVar1);
       return 0;
     }
   }

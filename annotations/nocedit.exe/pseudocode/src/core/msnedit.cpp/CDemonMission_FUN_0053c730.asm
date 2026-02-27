@@ -18,8 +18,8 @@
 ;   undefined4 DAT_0068090c
 ;   undefined4 DAT_02f79820
 ;   undefined4 DAT_02f79c20
-;   undefined4 DAT_02f7a024
-;   int INT_02f7a028
+;   CActorPropertyList g_MsnEditPropertyList
+;   undefined4 g_MsnEditPropertyList.count
 ;   undefined4 DAT_02f7a02c
 ;   undefined4 DAT_02f7a030
 ;   undefined4 DAT_02f7a031
@@ -48,7 +48,7 @@ section .text
     PUSH EBP                            ; 0053c731
     SUB ESP,0x538                       ; 0053c732
     MOV EBX,dword ptr [ESP + 0x544]     ; 0053c738
-    PUSH 0x2f7a024                      ; 0053c73f | DAT_02f7a024
+    PUSH 0x2f7a024                      ; 0053c73f | g_MsnEditPropertyList
     CALL core_actor.cpp_CActorPropertyList_resetSelection_FUN_0040e150 ; 0053c744
         ;   XREF to: 0040e150 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_resetSelection_FUN_0040e150(CActorPropertyList * this_ptr)
     MOV EDX,dword ptr [EBX + 0x28]      ; 0053c749
@@ -63,13 +63,13 @@ section .text
     MOV ESI,0x680908                    ; 0053c765 | DAT_00680908
     MOVSD.REP ES:EDI,ESI                ; 0053c76a | DAT_00680908 | DAT_0068090c
     MOV EBP,0x2f79820                   ; 0053c76c | DAT_02f79820
-    PUSH 0x2f7a024                      ; 0053c771 | DAT_02f7a024
+    PUSH 0x2f7a024                      ; 0053c771 | g_MsnEditPropertyList
         ;   Label: LAB_0053c771
     CALL core_actor.cpp_CActorPropertyList_resetSelection_FUN_0040e150 ; 0053c776
         ;   XREF to: 0040e150 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_resetSelection_FUN_0040e150(CActorPropertyList * this_ptr)
     ADD ESP,0x4                         ; 0053c77b
     MOV EAX,dword ptr [EBX + 0x28]      ; 0053c77e
-    PUSH 0x2f7a024                      ; 0053c781 | DAT_02f7a024
+    PUSH 0x2f7a024                      ; 0053c781 | g_MsnEditPropertyList
     MOV EDX,dword ptr [EAX + 0x154]     ; 0053c786
     PUSH EAX                            ; 0053c78c
     CALL dword ptr [EDX + 0xd4]         ; 0053c78d
@@ -79,7 +79,7 @@ section .text
     XOR ESI,ESI                         ; 0053c79b
     CALL shape_edittool.cpp_CPickList_ctor_FUN_004a3b90 ; 0053c79d
         ;   XREF to: 004a3b90 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_ctor_FUN_004a3b90(CPickList * this_ptr)
-    MOV ECX,dword ptr [0x02f7a028]      ; 0053c7a2 | INT_02f7a028
+    MOV ECX,dword ptr [0x02f7a028]      ; 0053c7a2 | g_MsnEditPropertyList.count
     ADD ESP,0x4                         ; 0053c7a8
     TEST ECX,ECX                        ; 0053c7ab
     JLE 0x0053c807                      ; 0053c7ad
@@ -110,7 +110,7 @@ section .text
     ADD EDI,0xec                        ; 0053c7ef
     CALL shape_edittool.cpp_CStrList_add_FUN_004a2b80 ; 0053c7f5
         ;   XREF to: 004a2b80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_add_FUN_004a2b80(CStrList * this_ptr, char * string_data)
-    MOV EDX,dword ptr [0x02f7a028]      ; 0053c7fa | INT_02f7a028
+    MOV EDX,dword ptr [0x02f7a028]      ; 0053c7fa | g_MsnEditPropertyList.count
     ADD ESP,0x8                         ; 0053c800
     CMP ESI,EDX                         ; 0053c803
     JL 0x0053c7b7                       ; 0053c805

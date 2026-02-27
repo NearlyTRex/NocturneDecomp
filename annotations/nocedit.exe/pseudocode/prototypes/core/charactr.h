@@ -353,7 +353,7 @@ void __cdecl CCharacter::processSmoking(CCharacter *this_ptr,float delta_time);
 
 // Original: core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40
 // Address: 0042ec40
-int __cdecl CCharacter::processMotion(CCharacter *this_ptr,uint event_id);
+int __cdecl CCharacter::processMotion(CCharacter *this_ptr,int bone_index);
 
 // Original: core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0
 // Address: 0042ede0

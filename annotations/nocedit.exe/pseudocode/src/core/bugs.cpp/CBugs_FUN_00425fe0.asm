@@ -37,7 +37,7 @@
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
 ;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0
 ;   core_path.cpp_CPathMap_findPathWithRetry_FUN_00547d00
-;   core_path.cpp_FUN_00548500
+;   core_path.cpp_getPathMap_FUN_00548500
 ;   core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0
 ;   core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
 ;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
@@ -280,8 +280,8 @@ section .text
     MOV EAX,dword ptr [EBX + 0x12af8]   ; 00426283
     ADD EAX,0x20                        ; 00426289
     PUSH EAX                            ; 0042628c
-    CALL core_path.cpp_FUN_00548500     ; 0042628d
-        ;   XREF to: 00548500 (UNCONDITIONAL_CALL)  ; CPathMap * core_path.cpp_FUN_00548500(CLocation * location)
+    CALL core_path.cpp_getPathMap_FUN_00548500 ; 0042628d
+        ;   XREF to: 00548500 (UNCONDITIONAL_CALL)  ; CPathMap * core_path.cpp_getPathMap_FUN_00548500(CLocation * location)
     ADD ESP,0x4                         ; 00426292
     MOV EDX,EAX                         ; 00426295
     MOV ESI,dword ptr [EBX + 0x6c]      ; 00426297

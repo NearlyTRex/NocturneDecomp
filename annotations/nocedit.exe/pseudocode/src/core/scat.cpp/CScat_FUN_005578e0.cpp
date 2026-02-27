@@ -108,7 +108,7 @@ LAB_00557a94:
   }
   this_ptr_00 = (*((this_ptr_01->base).base.vtable._ub)->getPathMap)((CDemonActor *)this_ptr_01);
   if (this_ptr_00 == (CPathMap *)0x0) {
-    this_ptr_00 = core_path_cpp_FUN_00548500(&(this_ptr_01->base).base.location);
+    this_ptr_00 = core_path_cpp_getPathMap_FUN_00548500(&(this_ptr_01->base).base.location);
   }
   iVar5 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00
                     (this_ptr_00,&(this_ptr->base).base.base.location.position,&CStack_54,

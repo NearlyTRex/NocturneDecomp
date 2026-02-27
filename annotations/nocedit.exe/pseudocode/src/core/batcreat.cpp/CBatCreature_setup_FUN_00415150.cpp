@@ -34,7 +34,7 @@ void __cdecl core_batcreat_cpp_CBatCreature_setup_FUN_00415150(CBatCreature *thi
                            (this_ptr_01,"Bip01 R Foot",1);
   INT_00822750 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
                            (this_ptr_01,"Bip01 L Hand",1);
-  DAT_00822754 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
+  INT_00822754 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
                            (this_ptr_01,"Bip01 R Hand",1);
   INT_00822770 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
                            (this_ptr_01,"Bip01 Spine",1);

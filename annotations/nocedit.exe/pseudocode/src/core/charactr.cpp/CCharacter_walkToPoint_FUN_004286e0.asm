@@ -97,7 +97,7 @@
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 ;   core_path.cpp_CPathMap_findPathWithRetry_FUN_00547d00
-;   core_path.cpp_FUN_00548500
+;   core_path.cpp_getPathMap_FUN_00548500
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
 ;   engine_console.cpp_CConsole_printf_FUN_00441890
 ;
@@ -232,8 +232,8 @@ section .text
     JNZ 0x00428854                      ; 00428846
         ;   XREF to: 00428854 (CONDITIONAL_JUMP)  ; LAB_00428854
     PUSH EDI                            ; 00428848
-    CALL core_path.cpp_FUN_00548500     ; 00428849
-        ;   XREF to: 00548500 (UNCONDITIONAL_CALL)  ; CPathMap * core_path.cpp_FUN_00548500(CLocation * location)
+    CALL core_path.cpp_getPathMap_FUN_00548500 ; 00428849
+        ;   XREF to: 00548500 (UNCONDITIONAL_CALL)  ; CPathMap * core_path.cpp_getPathMap_FUN_00548500(CLocation * location)
     ADD ESP,0x4                         ; 0042884e
     MOV dword ptr [EBP + 0x1c],EAX      ; 00428851
     MOV ESI,dword ptr [EBX + 0x6c]      ; 00428854

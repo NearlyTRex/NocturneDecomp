@@ -149,7 +149,7 @@ void __cdecl CDemonRaytrace::worldPositionToGridCoords(CDemonRaytrace *this_ptr,
 
 // Original: core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00499880
 // Address: 00499880
-void __cdecl CDemonRaytrace::worldPositionToVoxelCoords(CDemonRaytrace *this_ptr,CVector3f *world_position,CVector3i *output_voxel_coords);
+void __stack2_esi CDemonRaytrace::worldPositionToVoxelCoords(CDemonRaytrace *this_ptr,CVector3f *world_position,CVector3i *output_voxel_coords);
 
 // Original: core_dtrace.cpp_CDemonRaytrace_voxelCoordsToWorldPosition_FUN_00499930
 // Address: 00499930

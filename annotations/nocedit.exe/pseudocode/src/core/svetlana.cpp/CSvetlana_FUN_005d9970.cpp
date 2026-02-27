@@ -10,23 +10,24 @@ void __cdecl core_svetlana_cpp_CSvetlana_FUN_005d9970(CSvetlana *this_ptr)
 
 {
   int iVar1;
-  uint event_id;
+  uint bone_index;
   float in_stack_00000008;
   
   do {
-    event_id = core_motion_cpp_CMotionController_advance_FUN_0052d610
-                         (&(this_ptr->base).base.model.motion_controller);
-    if (event_id < 100) {
-      core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,event_id);
+    bone_index = core_motion_cpp_CMotionController_advance_FUN_0052d610
+                           (&(this_ptr->base).base.model.motion_controller);
+    if (bone_index < 100) {
+      core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,bone_index);
     }
     else {
-      if (event_id < 0x65) {
+      if (bone_index < 0x65) {
         core_svetlana_cpp_CSvetlana_FUN_005d9a10(this_ptr);
         iVar1 = this_ptr->attack_hand;
       }
       else {
-        if (event_id != 0x65) {
-          core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,event_id);
+        if (bone_index != 0x65) {
+          core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,bone_index)
+          ;
           goto LAB_005d99be;
         }
         core_svetlana_cpp_CSvetlana_FUN_005d9a10(this_ptr);

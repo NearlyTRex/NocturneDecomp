@@ -25,7 +25,7 @@
 ;   core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0 at 0053883c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0063cbe7
+;   char s_EmptyChar_0063cbe7 = \x00
 ;   TerminatedCString s_none_0063cbe8
 ;   TerminatedCString s_true_0063cbed
 ;   TerminatedCString s_s_g_hp_x_i_g_hp_0063cbf2
@@ -170,7 +170,7 @@ section .text
         ;   XREF to: 0053d52b (CONDITIONAL_JUMP)  ; LAB_0053d52b
     MOV EAX,dword ptr [EAX + 0x314]     ; 0053d4e1
     PUSH EAX                            ; 0053d4e7
-    PUSH 0x63cbe7                       ; 0053d4e8 | DAT_0063cbe7
+    PUSH 0x63cbe7                       ; 0053d4e8 | s_EmptyChar_0063cbe7
     LEA EAX,[EBX + 0x2d4]               ; 0053d4ed
     PUSH EAX                            ; 0053d4f3
     PUSH EBX                            ; 0053d4f4

@@ -233,7 +233,7 @@ section .text
     PUSH EAX                            ; 0044918e | g_CSoundInstance
     FSTP float ptr [ESP + 0x60]         ; 0044918f
     CALL core_sound.cpp_CSound_playActorSound_FUN_005b3a40 ; 00449193
-        ;   XREF to: 005b3a40 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_playActorSound_FUN_005b3a40(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
+        ;   XREF to: 005b3a40 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_005b3a40(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
     MOV EAX,0x1                         ; 00449198
     ADD ESP,0x10                        ; 0044919d
     MOV dword ptr [EBX + 0x300],0x3f2a7efa ; 004491a0

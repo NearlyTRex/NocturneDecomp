@@ -2035,8 +2035,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_actor.cpp_CDemonActor_playSoundWithVolume_FUN_00408fa0",
-    "ret":"void",
+    "name":"core_actor.cpp_CDemonActor_playSoundWithDelay_FUN_00408fa0",
+    "ret":"uint",
     "vars":{
       "params":[
         {
@@ -2072,7 +2072,7 @@
           "type":"char*"
         },
         {
-          "name":"volume",
+          "name":"delay",
           "storage":{
             "offset":12,
             "size":4,
@@ -2087,7 +2087,17 @@
           },
           "type":"float"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -5232,6 +5242,22 @@
             ]
           },
           "type":"_FILE*"
+        },
+        {
+          "name":"indent_prefix",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
         }
       ]
     }
@@ -54810,7 +54836,7 @@
               }
             ]
           },
-          "type":"SMpegLayer3Granule*"
+          "type":"SMpegLayer3SideInfo*"
         },
         {
           "name":"frame",
@@ -55246,7 +55272,7 @@
               }
             ]
           },
-          "type":"SMpegLayer3Granule*"
+          "type":"SMpegLayer3SideInfo*"
         },
         {
           "name":"channel",
@@ -55365,7 +55391,7 @@
           "type":"CMP3Decoder*"
         },
         {
-          "name":"unknown_param2",
+          "name":"input_samples",
           "storage":{
             "offset":8,
             "size":4,
@@ -55378,7 +55404,7 @@
               }
             ]
           },
-          "type":"void*"
+          "type":"float*"
         },
         {
           "name":"output_buffer",
@@ -55445,7 +55471,7 @@
           "type":"SMpegFrame*"
         },
         {
-          "name":"unknown_param7",
+          "name":"header",
           "storage":{
             "offset":28,
             "size":4,
@@ -55458,7 +55484,7 @@
               }
             ]
           },
-          "type":"void*"
+          "type":"SMpegFrameHeader*"
         }
       ]
     }
@@ -58080,7 +58106,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_path.cpp_CPathMap_queuePop_FUN_005487a0",
+    "name":"core_path.cpp_CPathMap_searchGrid_FUN_005487a0",
     "ret":"uint",
     "vars":{
       "locals":[
@@ -77483,7 +77509,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"core_sound.cpp_CSound_playSound_FUN_005b3a20",
-    "ret":"int",
+    "ret":"uint",
     "vars":{
       "params":[
         {

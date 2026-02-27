@@ -46,7 +46,7 @@ void __cdecl core_boxactor_cpp_CBoxActor_archive_FUN_00422060(CBoxActor *this_pt
     (this_ptr->physics_box).is_valid = -1;
   }
   else {
-    core_actor_cpp_archiveSimBox_FUN_0040bd70((CSimBox *)&this_ptr->physics_box,"simBox");
+    core_actor_cpp_archiveBox_FUN_0040bd70(&this_ptr->physics_box,"simBox");
   }
   if (g_CBoxActorClassVersion < 5) {
     this_ptr->plot_in_shadow_flag = 1;

@@ -21,7 +21,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_restoreShadowBitFromBuffer_FUN_0049a
   int local_30;
   int local_2c;
   int local_28;
-  int local_1c;
+  CVector3i local_1c;
   
   bVar3 = 0;
   core_dtrace_cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_004997d0
@@ -35,12 +35,12 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_restoreShadowBitFromBuffer_FUN_0049a
      (((local_34 < (this_ptr->grid_coord).x && (local_30 < (this_ptr->grid_coord).y)) &&
       (local_2c < (this_ptr->grid_coord).z)))) {
     core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00499880
-              (this_ptr,world_position,in_stack_ffffffc0);
+              (this_ptr,world_position,&local_1c);
     *(uint *)((int)&stack0xffffffc4 + (uint)bVar3 * -8) =
-         *(uint *)(&stack0xffffffe8 + (uint)bVar3 * -8);
+         *(uint *)((int)&local_1c + (uint)bVar3 * -8 + 4);
     *(uint *)((int)&stack0xffffffc8 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =
-         *(uint *)(&stack0xffffffec + (uint)bVar3 * -8 + (uint)bVar3 * -8);
-    iVar1 = local_1c % 8;
+         *(uint *)((int)&local_1c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
+    iVar1 = local_1c.x % 8;
     local_3c = local_3c % 8;
     local_38 = local_38 % 8;
     this_ptr_00 = core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_004952b0

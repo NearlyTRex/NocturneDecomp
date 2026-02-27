@@ -1300,7 +1300,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"core_actor.cpp_CDemonActor_playSound_FUN_00408f60",
-    "ret":"void",
+    "ret":"uint",
     "vars":{
       "params":[
         {
@@ -1335,7 +1335,17 @@
           },
           "type":"char*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -13481,7 +13491,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_colquant.c_FUN_00441260",
+    "name":"engine_colquant.c_computeBoxStatistics_FUN_00441260",
     "ret":"void",
     "vars":{
       "locals":[
@@ -13772,6 +13782,40 @@
             ]
           },
           "type":"undefined8"
+        }
+      ],
+      "params":[
+        {
+          "name":"workspace",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"SColorQuantWorkspace*"
+        },
+        {
+          "name":"box_index",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }
@@ -46295,7 +46339,7 @@
           "type":"SMpegFrame*"
         },
         {
-          "name":"granule_array",
+          "name":"frame",
           "storage":{
             "offset":20,
             "size":4,
@@ -46308,7 +46352,7 @@
               }
             ]
           },
-          "type":"SMpegLayer3Granule**"
+          "type":"SMpegFrame*"
         }
       ]
     }
@@ -51299,7 +51343,7 @@
               }
             ]
           },
-          "type":"CDemonActor*"
+          "type":"CDemonActor**"
         }
       ]
     }

@@ -129,7 +129,7 @@
 #include "types/funcdefs/CDemonActor_playAmbientSoundWithVolume.h"
 #include "types/funcdefs/CDemonActor_playAttackHitEffects.h"
 #include "types/funcdefs/CDemonActor_playSound.h"
-#include "types/funcdefs/CDemonActor_playSoundWithVolume.h"
+#include "types/funcdefs/CDemonActor_playSoundWithDelay.h"
 #include "types/funcdefs/CDemonActor_process.h"
 #include "types/funcdefs/CDemonActor_processActionButton.h"
 #include "types/funcdefs/CDemonActor_processFootstep.h"

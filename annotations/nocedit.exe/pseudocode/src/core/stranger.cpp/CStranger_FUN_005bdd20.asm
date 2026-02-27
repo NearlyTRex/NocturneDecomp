@@ -614,7 +614,7 @@ section .text
     PUSH EDI                            ; 005be3de
     PUSH EBX                            ; 005be3df
     CALL core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40 ; 005be3e0
-        ;   XREF to: 0042ec40 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40(CCharacter * this_ptr, uint event_id)
+        ;   XREF to: 0042ec40 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40(CCharacter * this_ptr, int bone_index)
     ADD ESP,0x8                         ; 005be3e5
     JMP 0x005bddf2                      ; 005be3e8
         ;   XREF to: 005bddf2 (UNCONDITIONAL_JUMP)  ; LAB_005bddf2
@@ -627,7 +627,7 @@ section .text
     PUSH EDI                            ; 005be3fc
     PUSH EBX                            ; 005be3fd
     CALL core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40 ; 005be3fe
-        ;   XREF to: 0042ec40 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40(CCharacter * this_ptr, uint event_id)
+        ;   XREF to: 0042ec40 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40(CCharacter * this_ptr, int bone_index)
     ADD ESP,0x8                         ; 005be403
     JMP 0x005bddf2                      ; 005be406
         ;   XREF to: 005bddf2 (UNCONDITIONAL_JUMP)  ; LAB_005bddf2
@@ -641,7 +641,7 @@ section .text
         ;   Label: LAB_005be41a
     PUSH EBX                            ; 005be41b
     CALL core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40 ; 005be41c
-        ;   XREF to: 0042ec40 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40(CCharacter * this_ptr, uint event_id)
+        ;   XREF to: 0042ec40 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40(CCharacter * this_ptr, int bone_index)
     ADD ESP,0x8                         ; 005be421
     JMP 0x005bddf2                      ; 005be424
         ;   XREF to: 005bddf2 (UNCONDITIONAL_JUMP)  ; LAB_005bddf2

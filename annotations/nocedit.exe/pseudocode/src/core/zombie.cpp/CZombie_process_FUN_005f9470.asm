@@ -277,7 +277,7 @@ section .text
         ;   Label: LAB_005f9541
     PUSH EBX                            ; 005f9542
     CALL core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40 ; 005f9543
-        ;   XREF to: 0042ec40 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40(CCharacter * this_ptr, uint event_id)
+        ;   XREF to: 0042ec40 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40(CCharacter * this_ptr, int bone_index)
     ADD ESP,0x8                         ; 005f9548
     JMP 0x005f9504                      ; 005f954b
         ;   XREF to: 005f9504 (UNCONDITIONAL_JUMP)  ; LAB_005f9504
@@ -943,7 +943,7 @@ section .text
     PUSH EDX                            ; 005f9ddf
     PUSH EBX                            ; 005f9de0
     CALL core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40 ; 005f9de1
-        ;   XREF to: 0042ec40 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40(CCharacter * this_ptr, uint event_id)
+        ;   XREF to: 0042ec40 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40(CCharacter * this_ptr, int bone_index)
     ADD ESP,0x8                         ; 005f9de6
     JMP 0x005f9504                      ; 005f9de9
         ;   XREF to: 005f9504 (UNCONDITIONAL_JUMP)  ; LAB_005f9504
@@ -956,7 +956,7 @@ section .text
     PUSH EDX                            ; 005f9dfd
     PUSH EBX                            ; 005f9dfe
     CALL core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40 ; 005f9dff
-        ;   XREF to: 0042ec40 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40(CCharacter * this_ptr, uint event_id)
+        ;   XREF to: 0042ec40 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40(CCharacter * this_ptr, int bone_index)
     ADD ESP,0x8                         ; 005f9e04
     JMP 0x005f9504                      ; 005f9e07
         ;   XREF to: 005f9504 (UNCONDITIONAL_JUMP)  ; LAB_005f9504

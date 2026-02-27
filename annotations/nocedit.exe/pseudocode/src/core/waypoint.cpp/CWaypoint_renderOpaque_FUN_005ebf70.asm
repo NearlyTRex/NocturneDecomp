@@ -29,9 +29,9 @@
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-;   core_path.cpp_CPathMap_FUN_00547fc0
-;   core_path.cpp_CPathMap_FUN_00548750
-;   core_path.cpp_FUN_00548500
+;   core_path.cpp_CPathMap_renderPathMap_FUN_00547fc0
+;   core_path.cpp_CPathMap_setupPathSearch_FUN_00548750
+;   core_path.cpp_getPathMap_FUN_00548500
 ;   engine_3d.c_drawLine2DFromIndices_FUN_00407cf0
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
 ;   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
@@ -191,13 +191,13 @@ section .text
     ADD ESI,0x20                        ; 005ec10e
         ;   Label: LAB_005ec10e
     PUSH ESI                            ; 005ec111
-    CALL core_path.cpp_FUN_00548500     ; 005ec112
-        ;   XREF to: 00548500 (UNCONDITIONAL_CALL)  ; CPathMap * core_path.cpp_FUN_00548500(CLocation * location)
+    CALL core_path.cpp_getPathMap_FUN_00548500 ; 005ec112
+        ;   XREF to: 00548500 (UNCONDITIONAL_CALL)  ; CPathMap * core_path.cpp_getPathMap_FUN_00548500(CLocation * location)
     ADD ESP,0x4                         ; 005ec117
     PUSH EAX                            ; 005ec11a
     MOV EBX,EAX                         ; 005ec11b
-    CALL core_path.cpp_CPathMap_FUN_00548750 ; 005ec11d
-        ;   XREF to: 00548750 (UNCONDITIONAL_CALL)  ; void core_path.cpp_CPathMap_FUN_00548750(CPathMap * this_ptr)
+    CALL core_path.cpp_CPathMap_setupPathSearch_FUN_00548750 ; 005ec11d
+        ;   XREF to: 00548750 (UNCONDITIONAL_CALL)  ; void core_path.cpp_CPathMap_setupPathSearch_FUN_00548750(CPathMap * this_ptr)
     ADD ESP,0x4                         ; 005ec122
     PUSH EBP                            ; 005ec125
     MOV ESI,dword ptr [ESP + 0x94]      ; 005ec126
@@ -206,8 +206,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0xa0]      ; 005ec12f
     PUSH EDI                            ; 005ec136
     PUSH EBX                            ; 005ec137
-    CALL core_path.cpp_CPathMap_FUN_00547fc0 ; 005ec138
-        ;   XREF to: 00547fc0 (UNCONDITIONAL_CALL)  ; void core_path.cpp_CPathMap_FUN_00547fc0(CPathMap * this_ptr)
+    CALL core_path.cpp_CPathMap_renderPathMap_FUN_00547fc0 ; 005ec138
+        ;   XREF to: 00547fc0 (UNCONDITIONAL_CALL)  ; void core_path.cpp_CPathMap_renderPathMap_FUN_00547fc0(CPathMap * this_ptr, int depth, int red, int green, ...)
     ADD ESP,0x14                        ; 005ec13d
     XOR EAX,EAX                         ; 005ec140
     ADD ESP,0x9c                        ; 005ec142

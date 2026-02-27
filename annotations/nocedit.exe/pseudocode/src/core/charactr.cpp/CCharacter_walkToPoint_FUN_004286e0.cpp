@@ -74,7 +74,7 @@ int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0(CCharacter *th
        ABS(fVar7) * (float)0.31830988619288902 * (float)2 <= fVar3) ||
      (1.0 < ABS(local_bc.y))) {
     if (path_map == (CPathMap *)0x0) {
-      path_map = core_path_cpp_FUN_00548500((CLocation *)target_pos);
+      path_map = core_path_cpp_getPathMap_FUN_00548500((CLocation *)target_pos);
     }
     iVar5 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00
                       (path_map,&(this_ptr->base).location.position,&local_74,

@@ -1,63 +1,24 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 27,
-        "line": 29,
-        "message": "cannot cast from type 'float' to pointer type 'CVector3i *'"
-      },
-      {
-        "category": "other",
-        "column": 17,
-        "line": 30,
-        "message": "C-style cast from 'CVector3i *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 17,
-        "line": 30,
-        "message": "C-style cast from 'CVector3i *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 17,
-        "line": 30,
-        "message": "C-style cast from 'CVector3i *' to 'float' is not allowed"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 24,
-        "line": 52,
-        "message": "use of undeclared identifier 'stack0xffffffe8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 54,
-        "message": "use of undeclared identifier 'stack0xffffffec'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 131,
-    "complexity_score": 216,
+    "complexity_score": 163,
     "cross_reference_count": 3,
     "function_call_count": 3,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 61,
-    "suspect_count": 13,
+    "pseudocode_lines": 58,
+    "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
-      "stack_alignment_array",
-      "stack_param",
-      "stack_ref"
+      "stack_alignment_array"
     ],
-    "total_lines": 192
+    "total_lines": 189
   },
   "cross_references": [
     {
@@ -69,7 +30,7 @@
     {
       "addr": "00548390",
       "from_addr": "00548477",
-      "name": "core_path.cpp_FUN_00548390",
+      "name": "core_path.cpp_getOrCreatePathMap_FUN_00548390",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -251,40 +212,16 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_ffffffd8",
-      "severity": "moderate",
-      "text": "CVector3i *in_stack_ffffffd8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_ffffffd8",
-      "severity": "moderate",
-      "text": "in_stack_ffffffd8 = (CVector3i *)(source_position->x - (this_ptr->cached_world_position).x);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 23,
-      "match": "in_stack_ffffffd8",
-      "severity": "moderate",
-      "text": "if (((ABS((float)in_stack_ffffffd8) < (float)4) &&",
-      "type": "stack_param"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 23,
+      "line": 20,
       "match": "ABS",
       "severity": "mild",
-      "text": "if (((ABS((float)in_stack_ffffffd8) < (float)4) &&",
+      "text": "else if (((ABS(source_position->x - (this_ptr->cached_world_position).x) <",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 24,
+      "line": 22,
       "match": "ABS",
       "severity": "mild",
       "text": "(ABS(source_position->y - (this_ptr->cached_world_position).y) <",
@@ -292,47 +229,39 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 26,
+      "line": 24,
       "match": "ABS",
       "severity": "mild",
       "text": "(ABS(source_position->z - (this_ptr->cached_world_position).z) <",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 42,
-      "match": "in_stack_ffffffd8",
-      "severity": "moderate",
-      "text": "(&g_CDemonRaytraceInstance,&this_ptr->current_position,in_stack_ffffffd8);",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 43,
+      "line": 40,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar3 = (uint *)((int)this_ptr + (uint)bVar5 * -8 + 0x10);",
       "type": "pointer_cast"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 45,
-      "match": "&stack0xffffffe8",
-      "severity": "moderate",
-      "text": "*puVar3 = *(uint *)(&stack0xffffffe8 + (uint)bVar5 * -8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 47,
-      "match": "&stack0xffffffec",
-      "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffffec + (uint)bVar5 * -8 + (uint)bVar5 * -8);",
-      "type": "stack_ref"
+      "description": "Complex pointer cast",
+      "line": 42,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*puVar3 = *(uint *)((int)&local_1c + (uint)bVar5 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 53,
+      "line": 44,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&local_1c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 50,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar4 = (uint *)((int)this_ptr + (uint)bVar5 * -8 + 0x138b4);",
@@ -340,7 +269,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 54,
+      "line": 51,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar3 = (uint *)((int)this_ptr + (uint)bVar5 * -8 + 0x10);",

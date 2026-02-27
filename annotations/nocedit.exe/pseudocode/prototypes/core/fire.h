@@ -437,7 +437,7 @@ void __cdecl CFireEffect::traceLaser(CFireEffect *this_ptr,CVector3f *origin,CVe
 
 // Original: core_fire.cpp_CFireEffect_createExplosion_FUN_004c8c10
 // Address: 004c8c10
-void __cdecl CFireEffect::createExplosion(CFireEffect *this_ptr,CVector3f *position);
+void __cdecl CFireEffect::createExplosion(CFireEffect *this_ptr,CVector3f *position,float scale,int damage_amount);
 
 // Original: core_fire.cpp_CFireEffect_checkExplosionDamage_FUN_004c8c90
 // Address: 004c8c90

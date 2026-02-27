@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 116,
-    "complexity_score": 117,
+    "complexity_score": 113,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 1,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 42,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 38,
     "suspect_count": 7,
     "suspect_types": [
-      "stack_param"
+      "unnamed_param"
     ],
-    "total_lines": 158
+    "total_lines": 154
   },
   "cross_references": [
     {
@@ -43,7 +43,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_boxactor.cpp_CBoxActor_FUN_00422390",
-    "signature": "void __cdecl core_boxactor_cpp_CBoxActor_FUN_00422390(CBoxActor *this_ptr)"
+    "signature": "void __cdecl core_boxactor_cpp_CBoxActor_FUN_00422390(CBoxActor *this_ptr,CVector3f *param_2,CVector3f *param_3)"
   },
   "function_calls": [
     {
@@ -119,10 +119,10 @@
     "pcode_op_count": 679
   },
   "stack_frame": {
-    "frame_size": 104,
+    "frame_size": 112,
     "local_size": 100,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -180,6 +180,20 @@
         "offset": 4,
         "size": 4,
         "type": "CBoxActor *"
+      },
+      {
+        "is_param": true,
+        "name": "param_2",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "param_3",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
       }
     ]
   },
@@ -202,60 +216,60 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "CVector3f *in_stack_00000008;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void __cdecl core_boxactor_cpp_CBoxActor_FUN_00422390(CBoxActor *this_ptr,CVector3f *param_2,CVector3f *param_3)",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "CVector3f *in_stack_0000000c;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "void __cdecl core_boxactor_cpp_CBoxActor_FUN_00422390(CBoxActor *this_ptr,CVector3f *param_2,CVector3f *param_3)",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "(&this_ptr->base,&local_48,in_stack_00000008);",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10(&this_ptr->base,&local_48,param_2);",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 23,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "(&this_ptr->base,&local_24,in_stack_0000000c);",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0(&this_ptr->base,&local_24,param_3);",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 30,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "fStack_30 = in_stack_0000000c->x * fStack_18;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "fStack_30 = param_3->x * fStack_18;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 31,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "fStack_2c = in_stack_0000000c->y * fStack_18;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 27,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "fStack_2c = param_3->y * fStack_18;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "fStack_28 = in_stack_0000000c->z * fStack_18;",
-      "type": "stack_param"
+      "description": "Unnamed function parameter",
+      "line": 28,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "fStack_28 = param_3->z * fStack_18;",
+      "type": "unnamed_param"
     }
   ]
 }

@@ -1,10 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_boxactor_cpp_CBoxActor_FUN_00422390(CBoxActor *this_ptr)
+; void __cdecl core_boxactor_cpp_CBoxActor_FUN_00422390(CBoxActor *this_ptr,CVector3f *param_2,CVector3f *param_3)
 ;
 ; Parameters:
 ; CBoxActor *      Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   param_2
+; CVector3f *      Stack[0xc]:4   param_3
 ; Local Variables:
 ; undefined1       Stack[-0x60]:1  local_60
 ; undefined4       Stack[-0x48]:4  local_48

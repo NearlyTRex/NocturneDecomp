@@ -17,11 +17,11 @@ int __cdecl core_path_cpp_CPathMap_findPathToDestination_FUN_00547320(CPathMap *
   float fVar4;
   uint uVar5;
   uint uVar6;
-  float *pfVar7;
+  uint *puVar7;
   byte bVar8;
-  float afStackY_1040 [963];
+  uint auStackY_1040 [963];
   CVector3f *in_direction_vector;
-  CVector3i *in_stack_fffffee8;
+  float in_stack_fffffee8;
   CVector3f local_10c;
   CVector3f local_100;
   CVector3f local_f4;
@@ -42,8 +42,7 @@ int __cdecl core_path_cpp_CPathMap_findPathToDestination_FUN_00547320(CPathMap *
   float local_74;
   CVector3f local_70;
   CVector3f local_64;
-  int local_58;
-  float afStack_54 [2];
+  CVector3i local_58;
   CVector3f local_4c;
   CVector3f local_40;
   float local_34;
@@ -56,11 +55,12 @@ int __cdecl core_path_cpp_CPathMap_findPathToDestination_FUN_00547320(CPathMap *
   
   bVar8 = 0;
   core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00499880
-            (&g_CDemonRaytraceInstance,dest_position,in_stack_fffffee8);
-  pfVar7 = (float *)((int)this_ptr + (uint)bVar8 * -8 + 0x1c);
-  (this_ptr->dest_voxel_coords).x = local_58;
-  *pfVar7 = afStack_54[(uint)bVar8 * -2];
-  pfVar7[(uint)bVar8 * -2 + 1] = afStack_54[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];
+            (&g_CDemonRaytraceInstance,dest_position,&local_58);
+  puVar7 = (uint *)((int)this_ptr + (uint)bVar8 * -8 + 0x1c);
+  (this_ptr->dest_voxel_coords).x = local_58.x;
+  *puVar7 = *(uint *)((int)&local_58 + (uint)bVar8 * -8 + 4);
+  puVar7[(uint)bVar8 * -2 + 1] =
+       *(uint *)((int)&local_58 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
   local_a0 = 0;
   local_9c = 0;
   local_98 = 0;
@@ -190,7 +190,8 @@ LAB_005473e0:
                     (this_ptr,g_PathfindingDestX,g_PathfindingDestZ,g_PathfindingCurrentX,
                      g_PathfindingCurrentZ,(int)in_stack_fffffee8);
   if (iVar2 == 0) {
-    uVar5 = core_path_cpp_CPathMap_queuePop_FUN_005487a0(this_ptr,(this_ptr->dest_voxel_coords).y);
+    uVar5 = core_path_cpp_CPathMap_searchGrid_FUN_005487a0(this_ptr,(this_ptr->dest_voxel_coords).y)
+    ;
     if (uVar5 != 0) {
       uVar5 = this_ptr->height_cache[g_PathfindingDestZ][g_PathfindingDestX] -
               (this_ptr->voxel_coords).y;

@@ -14,22 +14,10 @@
         "message": "format specifies type 'char *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 25,
+        "category": "format_error",
+        "column": 77,
         "line": 50,
-        "message": "use of undeclared identifier 'DAT_0366b650'; did you mean 'DAT_0366b64c'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 51,
-        "message": "use of undeclared identifier 'DAT_0366b650'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 86,
-        "line": 60,
-        "message": "use of undeclared identifier 'DAT_0366b650'"
+        "message": "format specifies type 'char *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
       }
     ],
     "success": false,
@@ -37,19 +25,18 @@
   },
   "complexity": {
     "assembly_lines": 144,
-    "complexity_score": 149,
+    "complexity_score": 115,
     "cross_reference_count": 2,
     "function_call_count": 8,
     "global_count": 9,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 54,
-    "suspect_count": 8,
+    "pseudocode_lines": 55,
+    "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
-      "stack_param",
-      "undefined_data"
+      "stack_param"
     ],
-    "total_lines": 198
+    "total_lines": 199
   },
   "cross_references": [
     {
@@ -170,8 +157,8 @@
     },
     {
       "addr": "0366b650",
-      "name": "DAT_0366b650",
-      "type": "undefined4",
+      "name": "g_SkeleditClipboardBuffer",
+      "type": "char[20480]",
       "value": null
     }
   ],
@@ -280,32 +267,8 @@
       "line": 43,
       "match": "in_stack_00000008",
       "severity": "moderate",
-      "text": "(&DAT_0366b650,\"Heirarchy for %s\\r\\n\\r\\n\",in_stack_00000008);",
+      "text": "(g_SkeleditClipboardBuffer,\"Heirarchy for %s\\r\\n\\r\\n\",in_stack_00000008);",
       "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 43,
-      "match": "DAT_0366b650",
-      "severity": "mild",
-      "text": "(&DAT_0366b650,\"Heirarchy for %s\\r\\n\\r\\n\",in_stack_00000008);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 44,
-      "match": "DAT_0366b650",
-      "severity": "mild",
-      "text": "pcVar3 = &DAT_0366b650 + iVar4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 53,
-      "match": "DAT_0366b650",
-      "severity": "mild",
-      "text": "shape_edittool_cpp_CEditorTools_setClipboardText_FUN_004a1bc0(g_CEditorToolsPtr,&DAT_0366b650);",
-      "type": "undefined_data"
     }
   ]
 }

@@ -262,7 +262,7 @@ section .text
     MOV EAX,[0x00681ef8]                ; 005e7240 | g_CSoundInstance | g_CSoundPtr
     PUSH EAX                            ; 005e7245 | g_CSoundInstance
     CALL core_sound.cpp_CSound_playSound_FUN_005b3a20 ; 005e7246
-        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
+        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
     ADD ESP,0xc                         ; 005e724b
     MOV dword ptr [ESI + 0x243c],0x0    ; 005e724e
     ADD ESP,0x14                        ; 005e7258

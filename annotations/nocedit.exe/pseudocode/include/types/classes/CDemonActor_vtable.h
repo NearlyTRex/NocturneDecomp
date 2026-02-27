@@ -56,7 +56,7 @@ union UOrientationVector;
 #include "types/funcdefs/CDemonActor_playAmbientSoundWithVolume.h"
 #include "types/funcdefs/CDemonActor_playAttackHitEffects.h"
 #include "types/funcdefs/CDemonActor_playSound.h"
-#include "types/funcdefs/CDemonActor_playSoundWithVolume.h"
+#include "types/funcdefs/CDemonActor_playSoundWithDelay.h"
 #include "types/funcdefs/CDemonActor_process.h"
 #include "types/funcdefs/CDemonActor_processActionButton.h"
 #include "types/funcdefs/CDemonActor_processFootstep.h"
@@ -93,7 +93,7 @@ typedef struct CDemonActor_vtable {
     CDemonActor_handleFootstep* handleFootstep; // 0x20
     CDemonActor_playSound* playSound; // 0x24
     CDemonActor_playAmbientSound* playAmbientSound; // 0x28
-    CDemonActor_playSoundWithVolume* playSoundWithVolume; // 0x2c
+    CDemonActor_playSoundWithDelay* playSoundWithDelay; // 0x2c
     CDemonActor_playAmbientSoundWithVolume* playAmbientSoundWithVolume; // 0x30
     CDemonActor_hasCollision* hasCollision; // 0x34
     CDemonActor_cylinderGroundCheck* cylinderGroundCheck; // 0x38

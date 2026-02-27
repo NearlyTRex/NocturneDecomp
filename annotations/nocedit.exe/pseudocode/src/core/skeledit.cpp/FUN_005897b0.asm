@@ -16,7 +16,7 @@
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   TerminatedCString s_skeledit_ini_00681868
 ;   CEditorTools g_CEditorToolsInstance
-;   undefined4 DAT_03670848
+;   char[264] g_SkeleditLastPOSImported
 ;   undefined4 DAT_03670849
 ;   undefined4 DAT_03670950
 ;   undefined4 DAT_03670951
@@ -102,11 +102,11 @@ section .text
     TEST EBX,EBX                        ; 0058983a
     JG 0x00589827                       ; 0058983c
         ;   XREF to: 00589827 (CONDITIONAL_JUMP)  ; LAB_00589827
-    MOV EBX,0x3670848                   ; 0058983e | DAT_03670848
+    MOV EBX,0x3670848                   ; 0058983e | g_SkeleditLastPOSImported
         ;   Label: LAB_0058983e
     XOR AH,AH                           ; 00589843
     MOV ESI,EDI                         ; 00589845
-    MOV byte ptr [0x03670848],AH        ; 00589847 | DAT_03670848
+    MOV byte ptr [0x03670848],AH        ; 00589847 | g_SkeleditLastPOSImported
     PUSH ESI                            ; 0058984d
         ;   Label: LAB_0058984d
     CALL crt_stdio.c_fgetc_FUN_005fe840 ; 0058984e
@@ -295,7 +295,7 @@ section .text
         ;   XREF to: 00589863 (UNCONDITIONAL_JUMP)  ; LAB_00589863
     INC EBX                             ; 005899cc
         ;   Label: LAB_005899cc
-    MOV byte ptr [EBX + -0x1],DL        ; 005899cd | DAT_03670848
+    MOV byte ptr [EBX + -0x1],DL        ; 005899cd | g_SkeleditLastPOSImported
     MOV byte ptr [EBX],0x0              ; 005899d0 | DAT_03670849
     JMP 0x00589986                      ; 005899d3
         ;   XREF to: 00589986 (UNCONDITIONAL_JUMP)  ; LAB_00589986

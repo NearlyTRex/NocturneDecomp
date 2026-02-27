@@ -14,7 +14,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005bdd20(CStranger *this_ptr)
   CDeformableModelInstance *this_ptr_00;
   CDemonActor *pCVar1;
   CDemonActor_vtable *pCVar2;
-  uint event_id;
+  uint bone_index;
   int iVar3;
   CVector3f *pCVar4;
   int iVar5;
@@ -41,15 +41,15 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005bdd20(CStranger *this_ptr)
   local_1c = (CVector3f *)&(this_ptr->base).target_orientation;
   CStack_28.z = (float)&(this_ptr->base).target_position;
   do {
-    event_id = core_motion_cpp_CMotionController_advance_FUN_0052d610
-                         (&this_ptr_00->motion_controller);
-    if (event_id < 0x12) {
-      if (event_id < 6) {
-        if (event_id < 2) {
-          if (event_id == 1) {
+    bone_index = core_motion_cpp_CMotionController_advance_FUN_0052d610
+                           (&this_ptr_00->motion_controller);
+    if (bone_index < 0x12) {
+      if (bone_index < 6) {
+        if (bone_index < 2) {
+          if (bone_index == 1) {
 LAB_005bdd85:
             iVar3 = INT_03f6bae8;
-            if (event_id == 7) {
+            if (bone_index == 7) {
               iVar3 = INT_03f6baec;
             }
             core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
@@ -107,11 +107,11 @@ LAB_005bdd85:
           }
           else {
 LAB_005be41a:
-            core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,event_id)
-            ;
+            core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40
+                      ((CCharacter *)this_ptr,bone_index);
           }
         }
-        else if (event_id < 3) {
+        else if (bone_index < 3) {
           if (this_ptr->action_pending == 4) {
             this_ptr->action_pending = 0;
           }
@@ -152,7 +152,7 @@ LAB_005be41a:
           }
         }
         else {
-          if (event_id != 3) goto LAB_005be41a;
+          if (bone_index != 3) goto LAB_005be41a;
           pCVar1 = (this_ptr->base).base.carry_hands[1].carry_actor;
           core_stranger_cpp_CStranger_FUN_005c1f80(this_ptr);
           iVar3 = this_ptr->action_pending;
@@ -180,7 +180,7 @@ LAB_005bde44:
           }
         }
       }
-      else if (event_id < 7) {
+      else if (bone_index < 7) {
         this_ptr_01 = (CCharacter *)
                       core_actor_cpp_castToClassHash_FUN_0040c790
                                 ((this_ptr->base).base.grabbed_by,g_CEnemyClassInfo.name_hash);
@@ -215,11 +215,11 @@ LAB_005bde44:
         }
         (this_ptr->base).base.grabbed_by = (CDemonActor *)0x0;
       }
-      else if (event_id < 0xf) {
-        if (event_id == 7) goto LAB_005bdd85;
-        core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,event_id);
+      else if (bone_index < 0xf) {
+        if (bone_index == 7) goto LAB_005bdd85;
+        core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,bone_index);
       }
-      else if (event_id < 0x10) {
+      else if (bone_index < 0x10) {
         pCVar1 = (this_ptr->base).base.grabbed_by;
         if ((pCVar1 != (CDemonActor *)0x0) &&
            (pCVar4 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
@@ -229,21 +229,21 @@ LAB_005bde44:
                     ((CDemonActor *)this_ptr,"hit-gh[4,7].wav");
         }
       }
-      else if (event_id == 0x11) {
+      else if (bone_index == 0x11) {
         (*((this_ptr->base).base.base.vtable._ub)->playSound)
                   ((CDemonActor *)this_ptr,"fall-1.wav");
       }
       else {
-        core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,event_id);
+        core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,bone_index);
       }
     }
-    else if (0x12 < event_id) {
-      if (event_id < 0x17) {
-        if (event_id < 0x15) {
-          if (event_id != 0x13) goto LAB_005be41a;
+    else if (0x12 < bone_index) {
+      if (bone_index < 0x17) {
+        if (bone_index < 0x15) {
+          if (bone_index != 0x13) goto LAB_005be41a;
           core_stranger_cpp_CStranger_FUN_005c1f00(this_ptr);
         }
-        else if (event_id < 0x16) {
+        else if (bone_index < 0x16) {
           if ((this_ptr->base).base.carry_hands[1].carry_actor == this_ptr->weapon) {
             this_ptr->weapon = (CDemonActor *)0x0;
           }
@@ -277,17 +277,17 @@ LAB_005bde44:
           }
         }
       }
-      else if (event_id < 0x18) {
+      else if (bone_index < 0x18) {
         core_hero_cpp_CHero_FUN_004f30f0(&this_ptr->base);
       }
-      else if (event_id < 0x29a) {
-        if (event_id != 0x18) goto LAB_005be41a;
+      else if (bone_index < 0x29a) {
+        if (bone_index != 0x18) goto LAB_005be41a;
       }
-      else if (event_id < 0x29b) {
+      else if (bone_index < 0x29b) {
         (this_ptr->base).base.velocity.y = 10.0f;
       }
       else {
-        if (event_id != 0x29b) goto LAB_005be41a;
+        if (bone_index != 0x29b) goto LAB_005be41a;
         (this_ptr->base).base.velocity.y = 8.0f;
       }
     }

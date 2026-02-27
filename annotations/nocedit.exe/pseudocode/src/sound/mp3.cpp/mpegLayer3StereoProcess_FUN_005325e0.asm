@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0(SMpegStereoSubbandSamples *input_lr_samples,SMpegStereoSubbandSamples *output_samples,SMpegScalefactorBandData *scalefactor_data,SMpegFrame *frame_info,SMpegLayer3Granule **granule_array)
+; void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0(SMpegStereoSubbandSamples *input_lr_samples,SMpegStereoSubbandSamples *output_samples,SMpegScalefactorBandData *scalefactor_data,SMpegFrame *frame_info,SMpegFrame *frame)
 ;
 ; Parameters:
 ; SMpegStereoSubbandSamples * Stack[0x4]:4   input_lr_samples
 ; SMpegStereoSubbandSamples * Stack[0x8]:4   output_samples
 ; SMpegScalefactorBandData * Stack[0xc]:4   scalefactor_data
 ; SMpegFrame *     Stack[0x10]:4   frame_info
-; SMpegLayer3Granule * * Stack[0x14]:4   granule_array
+; SMpegFrame *     Stack[0x14]:4   frame
 ; Local Variables:
 ; undefined4       Stack[-0x2080]:4  local_2080
 ; undefined4       Stack[-0x207c]:4  local_207c
@@ -79,10 +79,10 @@
 ;   TerminatedCString s_Error_in_streo_processin_0063b06b
 ;   double DOUBLE_0063b092 = 0.261799387799149
 ;   double DOUBLE_0063b09a = 0.707106782373095
-;   undefined4 DAT_0067e6c8
-;   int INT_0067e6cc = 0x6
-;   int INT_0067e6d0 = 0xc
-;   undefined4 DAT_0067e6d4
+;   SMpegLayer3BandIndex[6] g_Layer3BandIndex
+;   undefined4 g_Layer3BandIndex[0].l[1]
+;   undefined4 g_Layer3BandIndex[0].l[2]
+;   undefined4 g_Layer3BandIndex[0].l[3]
 ;   undefined4 DAT_0067e6f8
 ;   undefined4 DAT_0067e6fc
 ;   undefined4 DAT_0067e718
@@ -325,14 +325,14 @@ section .text
     ADD EDX,EAX                         ; 005328f2
     SHL EDX,0x2                         ; 005328f4
     XOR ESI,ESI                         ; 005328f7
-    MOV ECX,dword ptr [EDX + 0x67e6c8]  ; 005328f9 | DAT_0067e6c8
+    MOV ECX,dword ptr [EDX + 0x67e6c8]  ; 005328f9 | g_Layer3BandIndex
     MOV EAX,EDX                         ; 005328ff
     CMP EDI,ECX                         ; 00532901
     JL 0x00532920                       ; 00532903
         ;   XREF to: 00532920 (CONDITIONAL_JUMP)  ; LAB_00532920
     INC ESI                             ; 00532905
         ;   Label: LAB_00532905
-    MOV EBX,dword ptr [EAX + 0x67e6cc]  ; 00532906 | INT_0067e6cc | INT_0067e6d0
+    MOV EBX,dword ptr [EAX + 0x67e6cc]  ; 00532906 | g_Layer3BandIndex[0].l[1] | g_Layer3BandIndex[0].l[2]
     ADD EAX,0x4                         ; 0053290c
     CMP EDI,EBX                         ; 0053290f
     JGE 0x00532905                      ; 00532911
@@ -343,7 +343,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x1f8c]    ; 00532920
         ;   Label: LAB_00532920
     MOV dword ptr [ESP + 0x1f98],ESI    ; 00532927
-    MOV ESI,dword ptr [EAX + 0x67e6c8]  ; 0053292e | DAT_0067e6c8 | INT_0067e6cc | INT_0067e6d0
+    MOV ESI,dword ptr [EAX + 0x67e6c8]  ; 0053292e | g_Layer3BandIndex | g_Layer3BandIndex[0].l[1] | g_Layer3BandIndex[0].l[2]
     LEA EAX,[EDX*0x8 + 0x0]             ; 00532934
     ADD EAX,EDX                         ; 0053293b
     SHL EAX,0x2                         ; 0053293d
@@ -361,8 +361,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x1ff4]    ; 00532974
         ;   Label: LAB_00532974
     MOV EDI,dword ptr [ESP + 0x1ff4]    ; 0053297b
-    MOV EBX,dword ptr [EAX + 0x67e6c8]  ; 00532982 | INT_0067e6cc | INT_0067e6d0
-    MOV EDI,dword ptr [EDI + 0x67e6cc]  ; 00532988 | INT_0067e6d0 | DAT_0067e6d4
+    MOV EBX,dword ptr [EAX + 0x67e6c8]  ; 00532982 | g_Layer3BandIndex[0].l[1] | g_Layer3BandIndex[0].l[2]
+    MOV EDI,dword ptr [EDI + 0x67e6cc]  ; 00532988 | g_Layer3BandIndex[0].l[2] | g_Layer3BandIndex[0].l[3]
     SUB EDI,EBX                         ; 0053298e
     TEST EDI,EDI                        ; 00532990
     JLE 0x00532a21                      ; 00532992
@@ -394,7 +394,7 @@ section .text
     SAR EAX,0x10                        ; 005329fb
     PUSH EAX                            ; 005329fe
     CALL sound_mp3.cpp_calculateIntensityStereoRatio_FUN_00532540 ; 005329ff
-        ;   XREF to: 00532540 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_calculateIntensityStereoRatio_FUN_00532540(int intensity_position, double ratio, int unused_param3, int sample_index, ...)
+        ;   XREF to: 00532540 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_calculateIntensityStereoRatio_FUN_00532540(int intensity_position, double ratio, int sample_index, float * ratio_buffer)
     ADD ESP,0x14                        ; 00532a04
     MOV EAX,dword ptr [ESP + 0x1ff0]    ; 00532a07
         ;   Label: LAB_00532a07
@@ -590,7 +590,7 @@ section .text
     SAR EAX,0x10                        ; 00532cf0
     PUSH EAX                            ; 00532cf3
     CALL sound_mp3.cpp_calculateIntensityStereoRatio_FUN_00532540 ; 00532cf4
-        ;   XREF to: 00532540 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_calculateIntensityStereoRatio_FUN_00532540(int intensity_position, double ratio, int unused_param3, int sample_index, ...)
+        ;   XREF to: 00532540 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_calculateIntensityStereoRatio_FUN_00532540(int intensity_position, double ratio, int sample_index, float * ratio_buffer)
     ADD ESP,0x14                        ; 00532cf9
     MOV EAX,dword ptr [ESP + 0x2010]    ; 00532cfc
         ;   Label: LAB_00532cfc
@@ -649,7 +649,7 @@ section .text
     SHL EDX,0x2                         ; 00532dcd
     MOV EDI,dword ptr [ESP + 0x2064]    ; 00532dd0
     MOV EAX,EDX                         ; 00532dd7
-    MOV EDX,dword ptr [EDX + 0x67e6c8]  ; 00532dd9 | DAT_0067e6c8
+    MOV EDX,dword ptr [EDX + 0x67e6c8]  ; 00532dd9 | g_Layer3BandIndex
     XOR ESI,ESI                         ; 00532ddf
     CMP EDX,EDI                         ; 00532de1
     JG 0x00532e00                       ; 00532de3
@@ -657,7 +657,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x2064]    ; 00532de5
     INC ESI                             ; 00532dec
         ;   Label: LAB_00532dec
-    MOV EDX,dword ptr [EAX + 0x67e6cc]  ; 00532ded | INT_0067e6cc | INT_0067e6d0
+    MOV EDX,dword ptr [EAX + 0x67e6cc]  ; 00532ded | g_Layer3BandIndex[0].l[1] | g_Layer3BandIndex[0].l[2]
     ADD EAX,0x4                         ; 00532df3
     CMP EDX,ECX                         ; 00532df6
     JLE 0x00532dec                      ; 00532df8
@@ -666,7 +666,7 @@ section .text
     MOV dword ptr [ESP + 0x2048],ESI    ; 00532e00
         ;   Label: LAB_00532e00
     MOV EBX,dword ptr [ESP + 0x2048]    ; 00532e07
-    MOV ESI,dword ptr [EAX + 0x67e6c8]  ; 00532e0e | DAT_0067e6c8 | INT_0067e6cc | INT_0067e6d0
+    MOV ESI,dword ptr [EAX + 0x67e6c8]  ; 00532e0e | g_Layer3BandIndex | g_Layer3BandIndex[0].l[1] | g_Layer3BandIndex[0].l[2]
     CMP EBX,0x8                         ; 00532e14
     JGE 0x005326c0                      ; 00532e17
         ;   XREF to: 005326c0 (CONDITIONAL_JUMP)  ; LAB_005326c0
@@ -682,8 +682,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x2020]    ; 00532e45
         ;   Label: LAB_00532e45
     MOV EDX,dword ptr [ESP + 0x2020]    ; 00532e4c
-    MOV EDI,dword ptr [EDI + 0x67e6cc]  ; 00532e53 | INT_0067e6cc | INT_0067e6d0 | DAT_0067e6d4
-    MOV ECX,dword ptr [EDX + 0x67e6c8]  ; 00532e59 | INT_0067e6cc | INT_0067e6d0
+    MOV EDI,dword ptr [EDI + 0x67e6cc]  ; 00532e53 | g_Layer3BandIndex[0].l[1] | g_Layer3BandIndex[0].l[2] | g_Layer3BandIndex[0].l[3]
+    MOV ECX,dword ptr [EDX + 0x67e6c8]  ; 00532e59 | g_Layer3BandIndex[0].l[1] | g_Layer3BandIndex[0].l[2]
     MOV EAX,dword ptr [ESP + 0x2048]    ; 00532e5f
     SUB EDI,ECX                         ; 00532e66
     SHL EAX,0x2                         ; 00532e68
@@ -717,7 +717,7 @@ section .text
     SAR EAX,0x10                        ; 00532ed1
     PUSH EAX                            ; 00532ed4
     CALL sound_mp3.cpp_calculateIntensityStereoRatio_FUN_00532540 ; 00532ed5
-        ;   XREF to: 00532540 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_calculateIntensityStereoRatio_FUN_00532540(int intensity_position, double ratio, int unused_param3, int sample_index, ...)
+        ;   XREF to: 00532540 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_calculateIntensityStereoRatio_FUN_00532540(int intensity_position, double ratio, int sample_index, float * ratio_buffer)
     ADD ESP,0x14                        ; 00532eda
     MOV EAX,dword ptr [ESP + 0x201c]    ; 00532edd
         ;   Label: LAB_00532edd
@@ -937,7 +937,7 @@ section .text
     SAR EAX,0x10                        ; 0053320b
     PUSH EAX                            ; 0053320e
     CALL sound_mp3.cpp_calculateIntensityStereoRatio_FUN_00532540 ; 0053320f
-        ;   XREF to: 00532540 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_calculateIntensityStereoRatio_FUN_00532540(int intensity_position, double ratio, int unused_param3, int sample_index, ...)
+        ;   XREF to: 00532540 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_calculateIntensityStereoRatio_FUN_00532540(int intensity_position, double ratio, int sample_index, float * ratio_buffer)
     ADD ESP,0x14                        ; 00533214
     MOV EDX,dword ptr [ESP + 0x2000]    ; 00533217
         ;   Label: LAB_00533217

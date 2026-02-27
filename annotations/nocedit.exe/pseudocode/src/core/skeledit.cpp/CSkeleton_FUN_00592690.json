@@ -4,115 +4,115 @@
       {
         "category": "other",
         "column": 23,
-        "line": 236,
+        "line": 235,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 27,
-        "line": 252,
+        "line": 251,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 34,
-        "line": 283,
+        "line": 282,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "undeclared_identifier",
-        "column": 5,
-        "line": 313,
-        "message": "use of undeclared identifier '_DAT_03670b5c'"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 21,
-        "line": 325,
+        "line": 324,
         "message": "use of undeclared identifier 'DAT_0365caf8'"
       },
       {
         "category": "other",
         "column": 26,
-        "line": 339,
+        "line": 338,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 121,
-        "line": 383,
+        "line": 382,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 26,
-        "line": 388,
-        "message": "use of undeclared identifier 'DAT_0366b650'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 392,
+        "line": 391,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "undeclared_identifier",
         "column": 45,
-        "line": 396,
-        "message": "use of undeclared identifier 'DAT_0366b650'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 45,
-        "line": 402,
+        "line": 401,
         "message": "use of undeclared identifier 'stack0xfffeec08'; did you mean 'in_stack_fffeec08'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 47,
-        "line": 403,
+        "line": 402,
         "message": "use of undeclared identifier 'stack0xfffeec08'; did you mean 'in_stack_fffeec08'?"
       },
       {
         "category": "other",
         "column": 81,
-        "line": 409,
+        "line": 408,
         "message": "member reference base type 'byte[27208]' (aka 'unsigned char[27208]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 32,
-        "line": 412,
+        "line": 411,
         "message": "assigning to 'char *' from 'byte *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not"
       },
       {
         "category": "undeclared_identifier",
         "column": 23,
-        "line": 441,
+        "line": 440,
         "message": "use of undeclared identifier 'DAT_0365caf8'"
       },
       {
         "category": "lvalue_required",
         "column": 23,
-        "line": 491,
+        "line": 490,
         "message": "cannot take the address of an rvalue of type 'float'"
       },
       {
         "category": "other",
         "column": 45,
-        "line": 509,
+        "line": 508,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 535,
+        "line": 534,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 48,
-        "line": 588,
+        "line": 587,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "other",
+        "column": 49,
+        "line": 615,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "other",
+        "column": 47,
+        "line": 652,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 728,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
@@ -121,13 +121,13 @@
   },
   "complexity": {
     "assembly_lines": 5080,
-    "complexity_score": 2395,
+    "complexity_score": 2359,
     "cross_reference_count": 0,
     "function_call_count": 58,
     "global_count": 186,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 1905,
-    "suspect_count": 45,
+    "pseudocode_lines": 1904,
+    "suspect_count": 42,
     "suspect_types": [
       "decompiler_intrinsic",
       "format_string_mismatch",
@@ -135,10 +135,9 @@
       "stack_param",
       "stack_ref",
       "undefined_data",
-      "unknown_field",
-      "warning_overlapping_globals"
+      "unknown_field"
     ],
-    "total_lines": 6985
+    "total_lines": 6984
   },
   "cross_references": [],
   "function": {
@@ -1511,14 +1510,14 @@
     },
     {
       "addr": "0366b650",
-      "name": "DAT_0366b650",
-      "type": "undefined4",
+      "name": "g_SkeleditClipboardBuffer",
+      "type": "char[20480]",
       "value": null
     },
     {
       "addr": "03670b5c",
-      "name": "DAT_03670b5c",
-      "type": "undefined4",
+      "name": "g_SkeleditBiasEntryCount",
+      "type": "int",
       "value": null
     },
     {
@@ -3108,16 +3107,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 3,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 40,
+      "line": 39,
       "match": "in_stack_fffeec08",
       "severity": "moderate",
       "text": "int in_stack_fffeec08;",
@@ -3125,31 +3116,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 318,
+      "line": 317,
       "match": "DAT_0365caf8",
       "severity": "mild",
       "text": "local_fc = &DAT_0365caf8 + (this_ptr->motion_list).motion_count * 0x104;",
       "type": "undefined_data"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 381,
-      "match": "DAT_0366b650",
-      "severity": "mild",
-      "text": "pcVar11 = &DAT_0366b650;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 389,
-      "match": "DAT_0366b650",
-      "severity": "mild",
-      "text": "(g_CEditorToolsPtr,&DAT_0366b650);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 395,
+      "line": 394,
       "match": "&stack0xfffeec08",
       "severity": "moderate",
       "text": "((CBoneStructure *)&stack0xfffeec08,pcVar11);",
@@ -3157,7 +3132,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 396,
+      "line": 395,
       "match": "&stack0xfffeec08",
       "severity": "moderate",
       "text": "core_skeledit_cpp_FUN_0058afe0(&stack0xfffeec08);",
@@ -3165,7 +3140,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 402,
+      "line": 401,
       "match": "._0_4_",
       "severity": "mild",
       "text": "core_skeleton_cpp_CSkeleton_allocMemory_FUN_00599910(this_ptr,local_ded4._0_4_,local_10c);",
@@ -3173,7 +3148,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 434,
+      "line": 433,
       "match": "DAT_0365caf8",
       "severity": "mild",
       "text": "local_44 = &DAT_0365caf8;",
@@ -3181,7 +3156,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 489,
+      "line": 488,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
       "text": "pCVar20 = (CMatrix3x4f *)((int)pCVar20 + ((uint)bVar26 * -2 + 1) * 4);",
@@ -3189,7 +3164,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 493,
+      "line": 492,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (0 < *(int *)((int)aiStack_2720 + iVar13)) {",
@@ -3197,7 +3172,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 840,
+      "line": 839,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND((float)local_ec->frame_count -",
@@ -3205,7 +3180,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 840,
+      "line": 839,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND((float)local_ec->frame_count -",
@@ -3213,7 +3188,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1009,
+      "line": 1008,
       "match": "DAT_03670b60",
       "severity": "mild",
       "text": "*(int *)(&DAT_03670b60 + iVar3) = local_38;",
@@ -3221,7 +3196,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1021,
+      "line": 1020,
       "match": "DAT_03670b68",
       "severity": "mild",
       "text": "*(int *)(&DAT_03670b68 + iVar3) = iVar13;",
@@ -3229,7 +3204,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 1308,
+      "line": 1307,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "} while (local_f0 < *(int *)((int)aiStack_2720 + local_ac));",
@@ -3237,7 +3212,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 1333,
+      "line": 1332,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (0 < *(int *)((int)aiStack_2900 + iVar13)) {",
@@ -3245,7 +3220,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 1339,
+      "line": 1338,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "} while (iVar3 < *(int *)((int)aiStack_2900 + iVar13));",
@@ -3253,7 +3228,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 1360,
+      "line": 1359,
       "match": "in_stack_fffeec08",
       "severity": "moderate",
       "text": "(local_c0,local_d8,in_stack_fffeec08);",
@@ -3261,7 +3236,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 1366,
+      "line": 1365,
       "match": "._0_4_",
       "severity": "mild",
       "text": "if (0 < (int)local_748c._0_4_) {",
@@ -3269,7 +3244,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 1373,
+      "line": 1372,
       "match": "._0_4_",
       "severity": "mild",
       "text": "} while (iVar13 < (int)local_748c._0_4_);",
@@ -3277,7 +3252,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 1438,
+      "line": 1437,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar21 = (uint *)((int)pCVar16 + (uint)bVar26 * -8 + 4);",
@@ -3285,7 +3260,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 1443,
+      "line": 1442,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*puVar21 = *(uint *)((int)&local_214 + (uint)bVar26 * -8 + 4);",
@@ -3293,7 +3268,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 1447,
+      "line": 1446,
       "match": "(CMatrix3x3f *)((int)",
       "severity": "mild",
       "text": "local_48 = ((CMatrix3x3f *)((int)local_48 + 0x6c))->m + 2;",
@@ -3301,7 +3276,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 1475,
+      "line": 1474,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
       "text": "pCVar20 = (CMatrix3x4f *)((int)pCVar20 + ((uint)bVar26 * -2 + 1) * 4);",
@@ -3309,10 +3284,18 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 1476,
+      "line": 1475,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
       "text": "pCVar23 = (CMatrix3x4f *)((int)pCVar23 + ((uint)bVar26 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1482,
+      "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
+      "text": "pCVar20 = (CMatrix3x4f *)((int)pCVar20 + ((uint)bVar26 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
@@ -3320,20 +3303,12 @@
       "line": 1483,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar20 = (CMatrix3x4f *)((int)pCVar20 + ((uint)bVar26 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 1484,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "mild",
       "text": "pCVar23 = (CMatrix3x4f *)((int)pCVar23 + ((uint)bVar26 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 1497,
+      "line": 1496,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
       "text": "pCVar20 = (CMatrix3x4f *)((int)pCVar20 + ((uint)bVar26 * -2 + 1) * 4);",
@@ -3341,7 +3316,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 1498,
+      "line": 1497,
       "match": "(CMatrix3x3f *)((int)",
       "severity": "mild",
       "text": "pCVar24 = (CMatrix3x3f *)((int)pCVar24 + ((uint)bVar26 * -2 + 1) * 4);",
@@ -3349,7 +3324,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 1501,
+      "line": 1500,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar21 = (uint *)((int)pCVar16 + (uint)bVar26 * -8 + 4);",
@@ -3357,7 +3332,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 1506,
+      "line": 1505,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*puVar21 = *(uint *)((int)&local_224 + (uint)bVar26 * -8 + 4);",
@@ -3365,7 +3340,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 1510,
+      "line": 1509,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
       "text": "local_4c = &((CMatrix3x4f *)((int)local_4c + 0x60))->m[2].x;",
@@ -3373,7 +3348,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 1645,
+      "line": 1644,
       "match": "SQRT",
       "severity": "mild",
       "text": "if (0.0 < SQRT(local_1e4 * local_1e4 + local_1ec * local_1ec + local_1e8 * local_1e8)) {",
@@ -3381,7 +3356,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 1655,
+      "line": 1654,
       "match": "SBORROW4",
       "severity": "mild",
       "text": "while (bVar25 || SBORROW4(iVar3,local_94) != iVar13 < 0) {",
@@ -3389,7 +3364,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1682,
+      "line": 1681,
       "match": "DAT_03670b60",
       "severity": "mild",
       "text": "piVar18 = (int *)(&DAT_03670b60 + iVar13);",
@@ -3397,7 +3372,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1700,
+      "line": 1699,
       "match": "DAT_03670b60",
       "severity": "mild",
       "text": "if ((-1 < *(int *)(&DAT_03670b60 + iVar4)) &&",
@@ -3405,7 +3380,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1701,
+      "line": 1700,
       "match": "DAT_03670b68",
       "severity": "mild",
       "text": "(local_2540[*(int *)(&DAT_03670b68 + iVar4)] == 0)) break;",
@@ -3413,7 +3388,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1713,
+      "line": 1712,
       "match": "DAT_03670b60",
       "severity": "mild",
       "text": "piVar18 = (int *)(&DAT_03670b60 + iVar3);",
@@ -3421,7 +3396,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1715,
+      "line": 1714,
       "match": "DAT_03670b64",
       "severity": "mild",
       "text": "*(int *)(&DAT_03670b64 + iVar3);",
@@ -3429,7 +3404,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1716,
+      "line": 1715,
       "match": "DAT_03670b68",
       "severity": "mild",
       "text": "iVar3 = (this_ptr->motion_list).motions[*(int *)(&DAT_03670b68 + iVar3)].frame_start +",
@@ -3437,7 +3412,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1717,
+      "line": 1716,
       "match": "DAT_03670b6c",
       "severity": "mild",
       "text": "*(int *)(&DAT_03670b6c + iVar3);",
@@ -3445,7 +3420,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1785,
+      "line": 1784,
       "match": "DAT_0365caf8",
       "severity": "mild",
       "text": "pcVar11 = &DAT_0365caf8 + iVar13 * 0x104;",
@@ -3453,7 +3428,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1880,
+      "line": 1879,
       "match": "DAT_0365caf8",
       "severity": "mild",
       "text": "pcVar17 = &DAT_0365caf8 + (this_ptr->motion_list).motion_count * 0x104;",
@@ -3465,7 +3440,7 @@
       "expected_args": 1,
       "format_string": "No motions defined in %s",
       "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 367,
+      "line_number": 366,
       "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"No motions defined in %s\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"

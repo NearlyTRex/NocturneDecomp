@@ -288,7 +288,7 @@ section .text
     PUSH EAX                            ; 00415691
     PUSH EBX                            ; 00415692
     CALL core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40 ; 00415693
-        ;   XREF to: 0042ec40 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40(CCharacter * this_ptr, uint event_id)
+        ;   XREF to: 0042ec40 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40(CCharacter * this_ptr, int bone_index)
     ADD ESP,0x8                         ; 00415698
     JMP 0x004154c9                      ; 0041569b
         ;   XREF to: 004154c9 (UNCONDITIONAL_JUMP)  ; LAB_004154c9
@@ -365,7 +365,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 00415757
     ADD ESP,0x8                         ; 0041575a
     LEA EAX,[EBP + 0xffffff4e]          ; 0041575d
-    MOV EDX,dword ptr [0x00822754]      ; 00415763 | DAT_00822754
+    MOV EDX,dword ptr [0x00822754]      ; 00415763 | INT_00822754
     PUSH EAX                            ; 00415769
     LEA EAX,[EDX*0x4 + 0x0]             ; 0041576a
     MOV dword ptr [EBP + -0x7e],EBX     ; 00415771

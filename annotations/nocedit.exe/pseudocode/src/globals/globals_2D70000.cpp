@@ -43,6 +43,10 @@ char* g_WrappedTextBuffer = {};
 // char[256]
 char g_TempTextBuffer[256] = {};
 
+// char[5120]
+char g_ActStatsTextBuffer1[5120] = {};
+char g_ActStatsTextBuffer2[5120] = {};
+
 // double
 double DOUBLE_02d7c2e0 = {};
 

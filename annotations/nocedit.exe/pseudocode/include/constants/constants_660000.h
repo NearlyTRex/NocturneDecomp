@@ -240,6 +240,12 @@ const float FLOAT_006659c8 = 1.3f;
 const float FLOAT_006659cc = 50.0f;
 const float FLOAT_006659d0 = 100.0f;
 
+// float[6] constants
+const float g_MoveAwayAngleOffsets[6] = {
+    2.3561945f, 3.9269907f, 1.5707964f, 4.712389f,
+    0.78539819f, 5.497787f
+};
+
 // int constants
 const int DAT_0066eea8 = 0x2;
 

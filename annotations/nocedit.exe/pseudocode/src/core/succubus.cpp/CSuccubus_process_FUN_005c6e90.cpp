@@ -61,9 +61,9 @@ void __cdecl core_succubus_cpp_CSuccubus_process_FUN_005c6e90(CSuccubus *this_pt
        (this_ptr->base).base.model.accumulated_root_motion.y;
   local_24 = delta_time * (this_ptr->base).speed;
   while (0.0 < local_24) {
-    uVar11 = core_motion_cpp_CMotionController_advance_FUN_0052d610
-                       (&(this_ptr->base).base.model.motion_controller);
-    core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,uVar11);
+    iVar8 = core_motion_cpp_CMotionController_advance_FUN_0052d610
+                      (&(this_ptr->base).base.model.motion_controller);
+    core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,iVar8);
   }
   (this_ptr->hotdemon_model).accumulated_root_motion.z = 0.0;
   (this_ptr->hotdemon_model).accumulated_root_motion.y =

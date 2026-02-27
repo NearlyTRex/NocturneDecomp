@@ -1,24 +1,102 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "other",
+        "column": 26,
+        "line": 48,
+        "message": "member reference base type 'byte[52]' (aka 'unsigned char[52]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 17,
+        "line": 60,
+        "message": "member reference base type 'byte[52]' (aka 'unsigned char[52]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 17,
+        "line": 61,
+        "message": "member reference base type 'byte[52]' (aka 'unsigned char[52]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 17,
+        "line": 62,
+        "message": "member reference base type 'byte[52]' (aka 'unsigned char[52]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 17,
+        "line": 63,
+        "message": "member reference base type 'byte[52]' (aka 'unsigned char[52]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 53,
+        "line": 63,
+        "message": "member reference base type 'byte[52]' (aka 'unsigned char[52]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 17,
+        "line": 64,
+        "message": "member reference base type 'byte[52]' (aka 'unsigned char[52]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 63,
+        "line": 65,
+        "message": "member reference base type 'byte[52]' (aka 'unsigned char[52]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 17,
+        "line": 66,
+        "message": "member reference base type 'byte[52]' (aka 'unsigned char[52]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 63,
+        "line": 67,
+        "message": "member reference base type 'byte[52]' (aka 'unsigned char[52]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 69,
+        "message": "member reference base type 'byte[52]' (aka 'unsigned char[52]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 70,
+        "message": "member reference base type 'byte[52]' (aka 'unsigned char[52]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 71,
+        "message": "member reference base type 'byte[52]' (aka 'unsigned char[52]') is not a structure or union"
+      }
+    ],
+    "success": false,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 268,
-    "complexity_score": 188,
+    "complexity_score": 245,
     "cross_reference_count": 5,
     "function_call_count": 3,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 113,
-    "suspect_count": 6,
+    "pseudocode_lines": 95,
+    "suspect_count": 14,
     "suspect_types": [
-      "pointer_cast",
       "stack_alignment_array",
-      "stack_param"
+      "unknown_field"
     ],
-    "total_lines": 381
+    "total_lines": 363
   },
   "cross_references": [
     {
@@ -364,44 +442,108 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_ffffff50",
-      "severity": "moderate",
-      "text": "CVector3i *in_stack_ffffff50;",
-      "type": "stack_param"
+      "description": "Unknown/mangled field access",
+      "line": 41,
+      "match": "._48_4_",
+      "severity": "mild",
+      "text": "local_74.x = local_68._48_4_;",
+      "type": "unknown_field"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 50,
-      "match": "in_stack_ffffff50",
-      "severity": "moderate",
-      "text": "(&g_CDemonRaytraceInstance,&this_ptr->position,in_stack_ffffff50);",
-      "type": "stack_param"
+      "description": "Unknown/mangled field access",
+      "line": 53,
+      "match": "._24_4_",
+      "severity": "mild",
+      "text": "local_68._24_4_ = (this_ptr->position).x - pCVar1->x;",
+      "type": "unknown_field"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Unknown/mangled field access",
       "line": 54,
-      "match": "(uint *)((int)",
+      "match": "._28_4_",
       "severity": "mild",
-      "text": "*(uint *)((int)&local_74 + (uint)bVar5 * -8 + 4) =",
-      "type": "pointer_cast"
+      "text": "local_68._28_4_ = (this_ptr->position).y - (this_ptr->previous_position).y;",
+      "type": "unknown_field"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Unknown/mangled field access",
       "line": 55,
-      "match": "(uint *)((int)",
+      "match": "._32_4_",
       "severity": "mild",
-      "text": "*(uint *)((int)&local_68 + (uint)bVar5 * -8 + 0x34);",
-      "type": "pointer_cast"
+      "text": "local_68._32_4_ = (this_ptr->position).z - (this_ptr->previous_position).z;",
+      "type": "unknown_field"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Unknown/mangled field access",
       "line": 56,
-      "match": "(float *)((int)",
+      "match": "._0_4_",
       "severity": "mild",
-      "text": "*(float *)((int)&local_74 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =",
-      "type": "pointer_cast"
+      "text": "local_68._0_4_ = pCVar1->x + (float)local_68._24_4_ * local_14 * 0.8f;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 56,
+      "match": "._24_4_",
+      "severity": "mild",
+      "text": "local_68._0_4_ = pCVar1->x + (float)local_68._24_4_ * local_14 * 0.8f;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 57,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_68._4_4_ =",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 58,
+      "match": "._28_4_",
+      "severity": "mild",
+      "text": "(this_ptr->previous_position).y + (float)local_68._28_4_ * local_14 * 0.8f;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 59,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "local_68._8_4_ =",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 60,
+      "match": "._32_4_",
+      "severity": "mild",
+      "text": "(this_ptr->previous_position).z + (float)local_68._32_4_ * local_14 * 0.8f;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 62,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "(this_ptr->position).x = (float)local_68._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 63,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "(this_ptr->position).y = (float)local_68._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 64,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "(this_ptr->position).z = (float)local_68._8_4_;",
+      "type": "unknown_field"
     }
   ]
 }

@@ -143,7 +143,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 0060583b: MOV ESI,ESP
 
   crt_stdio.c_scanf_float_FUN_00605178
-    File: crt/stdio.c, Suspects: 36
+    File: crt/stdio.c, Suspects: 18
     - [alt_frame_pointer] at 00605189: MOV ESI,ESP
 
   crt_stdio.c_FormatWideString_FUN_006031c0
@@ -214,17 +214,17 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 005dcf3d: MOV EDI,ESP
     - [alt_frame_pointer] at 005dcf5b: MOV ESI,ESP
 
-  engine_colquant.c_FUN_00441260
-    File: engine/colquant.c, Suspects: 47
+  engine_colquant.c_computeBoxStatistics_FUN_00441260
+    File: engine/colquant.c, Suspects: 39
     - [stack_alignment] at 00441269: AND ESP,0xfffffff8
 
-  engine_colquant.c_FUN_00441790
-    File: engine/colquant.c, Suspects: 15
-    - [stack_alignment] at 00441796: AND ESP,0xfffffff8
-
-  engine_colquant.c_FUN_004406c0
-    File: engine/colquant.c, Suspects: 66
+  engine_colquant.c_quantizeColors_FUN_004406c0
+    File: engine/colquant.c, Suspects: 41
     - [stack_alignment] at 004406cc: AND ESP,0xfffffff8
+
+  engine_colquant.c_doubleMax_FUN_00441790
+    File: engine/colquant.c, Suspects: 8
+    - [stack_alignment] at 00441796: AND ESP,0xfffffff8
 
   engine_2d.c_loadOrBuildColorMap_FUN_00402930
     File: engine/2d.c, Suspects: 0
@@ -294,5 +294,5 @@ CORRELATION: Stack patterns vs suspect counts
 
 Functions with stack patterns tend to have more suspects:
 
-  With stack patterns:    avg 12.8 suspects/function
+  With stack patterns:    avg 12.6 suspects/function
   Without stack patterns: avg 2.6 suspects/function

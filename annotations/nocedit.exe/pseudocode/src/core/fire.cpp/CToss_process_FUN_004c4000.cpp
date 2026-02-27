@@ -51,7 +51,7 @@ void __cdecl core_fire_cpp_CToss_process_FUN_004c4000(CToss *this_ptr)
     }
     if (this_ptr->toss_type == 0) {
       core_fire_cpp_CFireEffect_createExplosion_FUN_004c8c10
-                (g_CFireEffectPtr,&this_ptr_00->position);
+                (g_CFireEffectPtr,&this_ptr_00->position,16.0,0x42c80000);
       sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handle);
       return;
     }

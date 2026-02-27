@@ -116,8 +116,7 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
   bVar13 = 0;
   remove("$$UNDO$$.TMP");
   this_ptr->is_in_editor = 1;
-  core_actor_cpp_CActorPropertyList_resetSelection_FUN_0040e150((CActorPropertyList *)&DAT_02f7a024)
-  ;
+  core_actor_cpp_CActorPropertyList_resetSelection_FUN_0040e150(&g_MsnEditPropertyList);
   this_ptr_00 = g_CGamePtr;
   this_ptr->selected_actor = (CDemonActor *)0x0;
   this_ptr->hovered_actor = (CDemonActor *)0x0;
@@ -971,6 +970,7 @@ LAB_0053a88c:
       FLOAT_02f7c540 = 5.0f;
       in_stack_fffff694 = pCVar16;
     }
+    iVar11 = DAT_02f7c528;
     if (((((g_MouseButtonFlags.dword & 1) == 0) && ((local_30.dword & 1) != 0)) &&
         (DAT_02f7c538 == 0)) && (g_ActiveControl == (void *)0x0)) {
       if ((this_ptr->selected_actor == (CDemonActor *)0x0) || (DAT_02f7c528 < 0)) {
@@ -1000,16 +1000,15 @@ LAB_0053aea7:
         }
       }
       else {
-        iVar6 = DAT_02f7c528 * 0xec;
-        this_ptr_01 = (CActorProperty *)(&DAT_02f7a02c + iVar6);
+        this_ptr_01 = g_MsnEditPropertyList.properties + DAT_02f7c528;
         in_stack_fffff694 = (CDemonSet *)g_CKeysPtr;
-        iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
-        if (iVar11 == 0) {
-          iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LMENU);
-          if (iVar11 == 0) {
-            iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);
-            if (iVar11 == 0) {
-              if (*(int *)(&DAT_02f7a080 + iVar6) == 0) goto LAB_0053ad72;
+        iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
+        if (iVar6 == 0) {
+          iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LMENU);
+          if (iVar6 == 0) {
+            iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);
+            if (iVar6 == 0) {
+              if (g_MsnEditPropertyList.properties[iVar11].enabled_flag == 0) goto LAB_0053ad72;
               core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
                         (this_ptr_01,this_ptr->selected_actor);
               engine_2d_c_clearInputAndWait_FUN_00403260();

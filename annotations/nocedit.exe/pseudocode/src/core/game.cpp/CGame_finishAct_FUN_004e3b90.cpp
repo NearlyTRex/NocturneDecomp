@@ -213,13 +213,13 @@ void __cdecl core_game_cpp_CGame_finishAct_FUN_004e3b90(CGame *this_ptr)
   engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
   pCVar9 = local_1c;
   iVar3 = engine_font_cpp_CBitFont_wrapText_FUN_004d0010
-                    (local_1c,local_54c,&DAT_02d7d6f0,0x14,0x100,0xc0);
+                    (local_1c,local_54c,g_ActStatsTextBuffer2,0x14,0x100,0xc0);
   iVar11 = 0;
   local_24 = iVar3;
   local_20 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(pCVar9,0x58);
   iVar6 = 0xf0;
   if (0 < iVar3) {
-    pcVar4 = &DAT_02d7d6f0;
+    pcVar4 = g_ActStatsTextBuffer2;
     do {
       iVar11 = iVar11 + 1;
       engine_font_cpp_CBitFont_drawTextCenterInBounds_FUN_004cdee0

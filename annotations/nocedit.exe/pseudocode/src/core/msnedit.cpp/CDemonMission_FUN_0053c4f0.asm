@@ -23,8 +23,8 @@
 ;   undefined4 DAT_02f797e4.max_value
 ;   undefined4 DAT_02f797e4.scroll_increment
 ;   undefined1 DAT_02f79818
-;   undefined4 DAT_02f7a024
-;   int INT_02f7a028
+;   CActorPropertyList g_MsnEditPropertyList
+;   undefined4 g_MsnEditPropertyList.count
 ;   ... and 3 more
 ;
 ; Called Functions:
@@ -55,7 +55,7 @@ section .text
     PUSH EBP                            ; 0053c4f2
     SUB ESP,0x130                       ; 0053c4f3
     MOV EBX,dword ptr [ESP + 0x140]     ; 0053c4f9
-    PUSH 0x2f7a024                      ; 0053c500 | DAT_02f7a024
+    PUSH 0x2f7a024                      ; 0053c500 | g_MsnEditPropertyList
     CALL core_actor.cpp_CActorPropertyList_resetSelection_FUN_0040e150 ; 0053c505
         ;   XREF to: 0040e150 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_resetSelection_FUN_0040e150(CActorPropertyList * this_ptr)
     MOV EDX,0xffffffff                  ; 0053c50a
@@ -72,7 +72,7 @@ section .text
     POP ESI                             ; 0053c52e
     POP EBX                             ; 0053c52f
     RET                                 ; 0053c530
-    PUSH 0x2f7a024                      ; 0053c531 | DAT_02f7a024
+    PUSH 0x2f7a024                      ; 0053c531 | g_MsnEditPropertyList
         ;   Label: LAB_0053c531
     MOV EDX,dword ptr [ESI + 0x154]     ; 0053c536
     PUSH ESI                            ; 0053c53c
@@ -104,7 +104,7 @@ section .text
     PUSH EBX                            ; 0053c595
     PUSH EDI                            ; 0053c596
     PUSH 0x141                          ; 0053c597
-    PUSH 0x2f7a024                      ; 0053c59c | DAT_02f7a024
+    PUSH 0x2f7a024                      ; 0053c59c | g_MsnEditPropertyList
     CALL core_actor.cpp_CActorPropertyList_calculateLayout_FUN_0040e770 ; 0053c5a1
         ;   XREF to: 0040e770 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_calculateLayout_FUN_0040e770(CActorPropertyList * this_ptr, int x, int y, int width)
     ADD ESP,0x10                        ; 0053c5a6
@@ -118,10 +118,10 @@ section .text
     CALL shape_edittool.cpp_CEdScrollBar_setPosition_FUN_004a5b60 ; 0053c5bd
         ;   XREF to: 004a5b60 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEdScrollBar_setPosition_FUN_004a5b60(CEdScrollBar * this_ptr, int left_pos, int top_pos, int right_pos, ...)
     MOV EDX,0xf0                        ; 0053c5c2
-    MOV EAX,[0x02f7c510]                ; 0053c5c7 | INT_02f7c510
+    MOV EAX,[0x02f7c510]                ; 0053c5c7 | g_MsnEditPropertyList.total_height
     MOV dword ptr [0x02f797ec],EDX      ; 0053c5cc | DAT_02f797e4.max_value
     MOV EDX,EAX                         ; 0053c5d2
-    MOV ECX,dword ptr [0x02f7a028]      ; 0053c5d4 | INT_02f7a028
+    MOV ECX,dword ptr [0x02f7a028]      ; 0053c5d4 | g_MsnEditPropertyList.count
     SAR EDX,0x1f                        ; 0053c5da
     MOV [0x02f797e8],EAX                ; 0053c5dd | DAT_02f797e4.current_value
     IDIV ECX                            ; 0053c5e2
@@ -136,7 +136,7 @@ section .text
     NEG EAX                             ; 0053c5ff
     PUSH EAX                            ; 0053c601
     PUSH 0x141                          ; 0053c602
-    PUSH 0x2f7a024                      ; 0053c607 | DAT_02f7a024
+    PUSH 0x2f7a024                      ; 0053c607 | g_MsnEditPropertyList
     MOV EBP,0xef                        ; 0053c60c
     CALL core_actor.cpp_CActorPropertyList_calculateLayout_FUN_0040e770 ; 0053c611
         ;   XREF to: 0040e770 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_calculateLayout_FUN_0040e770(CActorPropertyList * this_ptr, int x, int y, int width)
@@ -161,7 +161,7 @@ section .text
         ;   XREF to: 0053c656 (CONDITIONAL_JUMP)  ; LAB_0053c656
     PUSH EBX                            ; 0053c642
     PUSH EDX                            ; 0053c643
-    PUSH 0x2f7a024                      ; 0053c644 | DAT_02f7a024
+    PUSH 0x2f7a024                      ; 0053c644 | g_MsnEditPropertyList
     CALL core_actor.cpp_CActorPropertyList_hitTest_FUN_0040e9c0 ; 0053c649
         ;   XREF to: 0040e9c0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_CActorPropertyList_hitTest_FUN_0040e9c0(CActorPropertyList * this_ptr, int x, int y)
     ADD ESP,0xc                         ; 0053c64e
@@ -169,7 +169,7 @@ section .text
     MOV EBX,dword ptr [0x02f7c528]      ; 0053c656 | DAT_02f7c528
         ;   Label: LAB_0053c656
     PUSH EBX                            ; 0053c65c
-    PUSH 0x2f7a024                      ; 0053c65d | DAT_02f7a024
+    PUSH 0x2f7a024                      ; 0053c65d | g_MsnEditPropertyList
     CALL core_actor.cpp_CActorPropertyList_render_FUN_0040e850 ; 0053c662
         ;   XREF to: 0040e850 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_render_FUN_0040e850(CActorPropertyList * this_ptr, int selected_index)
     ADD ESP,0x8                         ; 0053c667

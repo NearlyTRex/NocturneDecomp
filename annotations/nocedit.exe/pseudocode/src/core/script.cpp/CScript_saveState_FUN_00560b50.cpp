@@ -30,11 +30,9 @@ void __cdecl core_script_cpp_CScript_saveState_FUN_00560b50(CScript *this_ptr,_F
   _fprintf(file_handle,"// dialogWavTime\n");
   _fprintf(file_handle,"%g\n",(double)this_ptr->dialog_wav_time);
   _fprintf(file_handle,"// whoIsSpeaking\n");
-  core_script_cpp_writeActorReference_FUN_005607e0
-            (file_handle,(CDemonActor *)&this_ptr->who_is_speaking);
+  core_script_cpp_writeActorReference_FUN_005607e0(file_handle,&this_ptr->who_is_speaking);
   _fprintf(file_handle,"// focusActor\n");
-  core_script_cpp_writeActorReference_FUN_005607e0
-            (file_handle,(CDemonActor *)&this_ptr->focus_actor);
+  core_script_cpp_writeActorReference_FUN_005607e0(file_handle,&this_ptr->focus_actor);
   _fprintf(file_handle,"// focusActorLocked\n");
   _fprintf(file_handle,"%d\n");
   _fprintf(file_handle,"// callStack count, list\n");

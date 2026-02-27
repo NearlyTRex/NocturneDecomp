@@ -269,9 +269,9 @@ LAB_005415cb:
       iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_S);
       if ((iVar4 != 0) &&
          (iVar4 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
-                            (g_CEditorToolsPtr,"Send chat",&DAT_02f7c640,0x100,1),
+                            (g_CEditorToolsPtr,"Send chat",g_ChatMessageBuffer,0x100,1),
          iVar4 != 0)) {
-        core_netgame_cpp_CNetGame_processChatOut_FUN_00541e40(this_ptr,&DAT_02f7c640,-1);
+        core_netgame_cpp_CNetGame_processChatOut_FUN_00541e40(this_ptr,g_ChatMessageBuffer,-1);
       }
       for (iVar4 = 0; iVar4 < g_CNetGamePtr->player_count; iVar4 = iVar4 + 1) {
         core_netgame_cpp_CNetGame_updatePing_FUN_00541c80(this_ptr,iVar4,2.0);

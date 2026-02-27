@@ -20,8 +20,8 @@ void __cdecl core_cow_cpp_CZombieCow_process_FUN_00444310(CZombieCow *this_ptr,f
   SMotion *pSVar4;
   int iVar5;
   CZombieCow *pCVar6;
-  uint uVar7;
-  CVector3f *pCVar8;
+  CVector3f *pCVar7;
+  uint uVar8;
   CPathMap *path_map;
   float fVar9;
   float fVar10;
@@ -54,8 +54,8 @@ void __cdecl core_cow_cpp_CZombieCow_process_FUN_00444310(CZombieCow *this_ptr,f
   local_1c = delta_time * (this_ptr->base).speed;
   this_ptr_00 = &(this_ptr->base).base.model;
   while (0.0 < local_1c) {
-    uVar7 = core_motion_cpp_CMotionController_advance_FUN_0052d610(&this_ptr_00->motion_controller);
-    core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,uVar7);
+    iVar3 = core_motion_cpp_CMotionController_advance_FUN_0052d610(&this_ptr_00->motion_controller);
+    core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,iVar3);
   }
   fVar9 = (this_ptr->base).speed;
   fVar2 = (float)3.1415926535000001;
@@ -77,9 +77,9 @@ void __cdecl core_cow_cpp_CZombieCow_process_FUN_00444310(CZombieCow *this_ptr,f
           iVar3 = core_sound_cpp_CSound_isSoundPlaying_FUN_005b3b80
                             (g_CSoundPtr,this_ptr->sfx_handle);
           if (iVar3 == 0) {
-            uVar7 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
+            uVar8 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                               ((CDemonActor *)this_ptr,"cow?.wav");
-            this_ptr->sfx_handle = uVar7;
+            this_ptr->sfx_handle = uVar8;
           }
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&(this_ptr->base).base.model.motion_controller,1,1);
@@ -111,13 +111,13 @@ void __cdecl core_cow_cpp_CZombieCow_process_FUN_00444310(CZombieCow *this_ptr,f
         local_54.y = 0.0;
         fVar10 = 0.17453292;
         local_54.z = fVar9;
-        pCVar8 = &local_54;
+        pCVar7 = &local_54;
         fVar9 = 0.5;
         this_ptr_02 = (this_ptr->base).victim;
         path_map = (*((this_ptr_02->vtable)._ub)->getPathMap)(this_ptr_02);
         iVar3 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
                           ((CCharacter *)this_ptr,&(((this_ptr->base).victim)->location).position,
-                           path_map,pCVar8,fVar9,fVar10);
+                           path_map,pCVar7,fVar9,fVar10);
         if (iVar3 < 0) {
           engine_console_cpp_CConsole_printf_FUN_00441890
                     (g_CConsolePtr,"%s gave up chase - I'm confused\n",this_ptr);
@@ -134,30 +134,30 @@ void __cdecl core_cow_cpp_CZombieCow_process_FUN_00444310(CZombieCow *this_ptr,f
     case 2:
       core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xffffff40);
       local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
-      pCVar8 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
+      pCVar7 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                          (&local_3c,&g_ZeroVector,
                           (this_ptr->base).base.model.bone_transform.bone_world_matrices +
                           this_ptr->bone_head);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                ((CDemonActor *)this_ptr,&local_30,pCVar8);
+                ((CDemonActor *)this_ptr,&local_30,pCVar7);
       core_enemy_cpp_CEnemy_FUN_004a9880(&this_ptr->base);
       break;
     case 5:
       if (((this_ptr->base).pool_me == 0) &&
          ((this_ptr->base).base.base.standing_platform == (CPlatform *)0x0)) {
-        pCVar8 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+        pCVar7 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
                            (this_ptr_00,&local_78,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                  ((CDemonActor *)this_ptr,&local_84,pCVar8);
+                  ((CDemonActor *)this_ptr,&local_84,pCVar7);
         core_gore_cpp_CGore_createBloodPool_FUN_004ede30(g_CGorePtr,&local_84,0);
         (this_ptr->base).pool_me = 1;
       }
     }
     goto switchD_0044482d_caseD_3;
   }
-  uVar7 = (this_ptr->base).base.is_walking;
-  if (uVar7 < 2) {
-    if (uVar7 == 1) {
+  uVar8 = (this_ptr->base).base.is_walking;
+  if (uVar8 < 2) {
+    if (uVar8 == 1) {
 LAB_004443e0:
       iVar3 = 1;
     }
@@ -169,8 +169,8 @@ LAB_004445a0:
               (&(this_ptr->base).base.model.motion_controller,iVar3,1);
   }
   else {
-    if (uVar7 < 3) goto LAB_004443e0;
-    if (uVar7 != 3) goto LAB_004445a0;
+    if (uVar8 < 3) goto LAB_004443e0;
+    if (uVar8 != 3) goto LAB_004445a0;
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
               (&this_ptr_00->motion_controller,0,1);
     engine_console_cpp_CConsole_printf_FUN_00441890
@@ -197,10 +197,10 @@ switchD_0044482d_caseD_3:
          (this_ptr->base).base.velocity.y - delta_time * (float)32;
     local_48 = (this_ptr->base).base.velocity.x * delta_time;
     local_44 = (this_ptr->base).base.velocity.y * delta_time;
-    pCVar8 = &(this_ptr->base).base.position_delta;
+    pCVar7 = &(this_ptr->base).base.position_delta;
     local_40 = delta_time * (this_ptr->base).base.velocity.z;
     pCVar1 = &(this_ptr->base).base.model.accumulated_root_motion;
-    local_60 = local_48 + pCVar8->x;
+    local_60 = local_48 + pCVar7->x;
     local_5c = local_44 + (this_ptr->base).base.position_delta.y;
     local_58 = local_40 + (this_ptr->base).base.position_delta.z;
     local_6c.x = local_60 + pCVar1->x;
@@ -208,7 +208,7 @@ switchD_0044482d_caseD_3:
     local_6c.z = local_58 + (this_ptr->base).base.model.accumulated_root_motion.z;
     (this_ptr->base).base.position_delta.z = 0.0;
     (this_ptr->base).base.position_delta.y = (this_ptr->base).base.position_delta.z;
-    pCVar8->x = (this_ptr->base).base.position_delta.y;
+    pCVar7->x = (this_ptr->base).base.position_delta.y;
     (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
     fVar9 = (this_ptr->base).base.model.accumulated_root_motion.z;
     (this_ptr->base).base.model.accumulated_root_motion.y = fVar9;

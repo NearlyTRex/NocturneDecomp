@@ -161,9 +161,9 @@ void __cdecl core_cloth_cpp_CCloth_boneEditor_FUN_0043c880(CCloth *this_ptr)
     }
     iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_F4);
     if (iVar2 != 0) {
-      DAT_0083b10c = DAT_0083b10c + 1;
-      _sprintf(&DAT_0083b110,"noc%d.pcx");
-      engine_pcx_c_saveScreenshotGeneral_FUN_005490c0(&DAT_0083b110);
+      g_ClothBoneScreenshotCounter = g_ClothBoneScreenshotCounter + 1;
+      _sprintf(g_ClothBoneScreenshotFilename,"noc%d.pcx");
+      engine_pcx_c_saveScreenshotGeneral_FUN_005490c0(g_ClothBoneScreenshotFilename);
     }
     if ((CVector3f *)local_50.roll != (CVector3f *)0x0) {
       g_ActiveRenderColor =

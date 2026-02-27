@@ -25,7 +25,7 @@
 ;   TerminatedCString s_Hide_actors_by_type_0063ce40
 ;   TerminatedCString s_d_actors_hidden_0063ce54
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   undefined4 DAT_00680660
+;   char[104] g_HideActorsWildcardBuffer
 ;   undefined4 DAT_006806c8
 ;   CEditorTools g_CEditorToolsInstance
 ;   ... and 2 more
@@ -191,7 +191,7 @@ section .text
         ;   XREF to: 0053deb2 (CONDITIONAL_JUMP)  ; LAB_0053deb2
     PUSH EBP                            ; 0053de5d
     PUSH 0x64                           ; 0053de5e
-    PUSH 0x680660                       ; 0053de60 | DAT_00680660
+    PUSH 0x680660                       ; 0053de60 | g_HideActorsWildcardBuffer
     PUSH 0x63ce0c                       ; 0053de65 | = "Hide actors by name using wildcard"
     MOV EDX,dword ptr [0x00678a60]      ; 0053de6a | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH EDX                            ; 0053de70 | g_CEditorToolsInstance
@@ -240,7 +240,7 @@ section .text
     PUSH EAX                            ; 0053decb
         ;   Label: LAB_0053decb
     PUSH EBX                            ; 0053decc
-    PUSH 0x680660                       ; 0053decd | DAT_00680660
+    PUSH 0x680660                       ; 0053decd | g_HideActorsWildcardBuffer
     CALL shape_edittool.cpp_wildcardStringMatch_FUN_004a6e20 ; 0053ded2
         ;   XREF to: 004a6e20 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_wildcardStringMatch_FUN_004a6e20(char * pattern, char * target_string, int case_sensitive)
     ADD ESP,0xc                         ; 0053ded7

@@ -85,7 +85,7 @@
 ;   core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0
 ;   core_path.cpp_CPathMap_getDirection_FUN_005465b0
 ;   core_path.cpp_CPathMap_isLineWalkable_FUN_00546c40
-;   core_path.cpp_CPathMap_queuePop_FUN_005487a0
+;   core_path.cpp_CPathMap_searchGrid_FUN_005487a0
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
 ;   crt_math.c_round_FUN_005fe6b0
 ;
@@ -595,8 +595,8 @@ section .text
         ;   Label: LAB_0054793d
     PUSH EDX                            ; 00547940
     PUSH EBP                            ; 00547941
-    CALL core_path.cpp_CPathMap_queuePop_FUN_005487a0 ; 00547942
-        ;   XREF to: 005487a0 (UNCONDITIONAL_CALL)  ; uint core_path.cpp_CPathMap_queuePop_FUN_005487a0(CPathMap * this_ptr, int start_height)
+    CALL core_path.cpp_CPathMap_searchGrid_FUN_005487a0 ; 00547942
+        ;   XREF to: 005487a0 (UNCONDITIONAL_CALL)  ; uint core_path.cpp_CPathMap_searchGrid_FUN_005487a0(CPathMap * this_ptr, int start_height)
     ADD ESP,0x8                         ; 00547947
     TEST EAX,EAX                        ; 0054794a
     JNZ 0x00547981                      ; 0054794c

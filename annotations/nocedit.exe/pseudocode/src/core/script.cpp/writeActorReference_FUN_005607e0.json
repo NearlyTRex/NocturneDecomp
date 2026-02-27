@@ -5,7 +5,7 @@
         "category": "format_error",
         "column": 35,
         "line": 16,
-        "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
+        "message": "format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]"
       }
     ],
     "success": false,
@@ -41,7 +41,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_script.cpp_writeActorReference_FUN_005607e0",
-    "signature": "void __cdecl core_script_cpp_writeActorReference_FUN_005607e0(_FILE *file_handle,CDemonActor *actor)"
+    "signature": "void __cdecl core_script_cpp_writeActorReference_FUN_005607e0(_FILE *file_handle,CDemonActor **actor)"
   },
   "function_calls": [
     {
@@ -137,7 +137,7 @@
         "name": "actor",
         "offset": 8,
         "size": 4,
-        "type": "CDemonActor *"
+        "type": "CDemonActor * *"
       }
     ]
   },

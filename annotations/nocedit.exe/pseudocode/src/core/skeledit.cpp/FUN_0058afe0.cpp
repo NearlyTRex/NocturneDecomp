@@ -47,8 +47,8 @@ void __cdecl core_skeledit_cpp_FUN_0058afe0(void *ptr)
   if (iVar4 == local_484.base.item_count + -1) {
     iVar5 = 0;
     iVar4 = _sprintf
-                      (&DAT_0366b650,"Heirarchy for %s\r\n\r\n",in_stack_00000008);
-    pcVar3 = &DAT_0366b650 + iVar4;
+                      (g_SkeleditClipboardBuffer,"Heirarchy for %s\r\n\r\n",in_stack_00000008);
+    pcVar3 = g_SkeleditClipboardBuffer + iVar4;
     if (0 < *(int *)ptr) {
       do {
         pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_484.base,iVar5);
@@ -57,7 +57,8 @@ void __cdecl core_skeledit_cpp_FUN_0058afe0(void *ptr)
         pcVar3 = pcVar3 + iVar4;
       } while (iVar5 < *(int *)ptr);
     }
-    shape_edittool_cpp_CEditorTools_setClipboardText_FUN_004a1bc0(g_CEditorToolsPtr,&DAT_0366b650);
+    shape_edittool_cpp_CEditorTools_setClipboardText_FUN_004a1bc0
+              (g_CEditorToolsPtr,g_SkeleditClipboardBuffer);
   }
   shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_484,0);
   return;

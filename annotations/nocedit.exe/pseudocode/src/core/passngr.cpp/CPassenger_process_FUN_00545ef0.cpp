@@ -18,7 +18,6 @@ void __cdecl core_passngr_cpp_CPassenger_process_FUN_00545ef0(CPassenger *this_p
   CDemonMission *this_ptr_01;
   SMotion *pSVar4;
   int iVar5;
-  uint event_id;
   CVector3f *pCVar6;
   float fVar7;
   CVector3f local_1c;
@@ -62,9 +61,9 @@ void __cdecl core_passngr_cpp_CPassenger_process_FUN_00545ef0(CPassenger *this_p
        (this_ptr->base).base.model.accumulated_root_motion.y;
   fVar7 = delta_time;
   while (0.0 < fVar7) {
-    event_id = core_motion_cpp_CMotionController_advance_FUN_0052d610
-                         (&(this_ptr->base).base.model.motion_controller);
-    core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,event_id);
+    iVar5 = core_motion_cpp_CMotionController_advance_FUN_0052d610
+                      (&(this_ptr->base).base.model.motion_controller);
+    core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,iVar5);
   }
   if (iVar2 != 0) {
     pCVar6 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80

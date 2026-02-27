@@ -36,7 +36,7 @@ LAB_005ebde7:
     local_18.x = *(float *)(this_ptr->base).base.actor_name;
     local_18.y = *(float *)((this_ptr->base).base.actor_name + 4);
     local_18.z = *(float *)((this_ptr->base).base.actor_name + 8);
-    this_ptr_00 = core_path_cpp_FUN_00548500(in_stack_00000008);
+    this_ptr_00 = core_path_cpp_getPathMap_FUN_00548500(in_stack_00000008);
     iVar1 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00(this_ptr_00,&local_18,&local_30,0)
     ;
     return (uint)(iVar1 == 1);

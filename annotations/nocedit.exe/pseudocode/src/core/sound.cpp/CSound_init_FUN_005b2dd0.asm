@@ -141,7 +141,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x28]      ; 005b2ec0
     PUSH EDI                            ; 005b2ec4
     CALL core_sound.cpp_CSound_playSound_FUN_005b3a20 ; 005b2ec5
-        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
+        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
     ADD ESP,0xc                         ; 005b2eca
     MOV [0x03f6b7a8],EAX                ; 005b2ecd | g_SoundAmbientSfxHandle
     CALL sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0 ; 005b2ed2

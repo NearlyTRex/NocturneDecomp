@@ -1,0 +1,636 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 19,
+        "line": 148,
+        "message": "member reference base type 'int' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 150,
+        "message": "member reference base type 'int' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 152,
+        "message": "member reference base type 'int' is not a structure or union"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 388,
+    "complexity_score": 622,
+    "cross_reference_count": 1,
+    "function_call_count": 10,
+    "global_count": 6,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 192,
+    "suspect_count": 41,
+    "suspect_types": [
+      "decompiler_intrinsic",
+      "double_reconstruction",
+      "pointer_cast",
+      "unknown_field"
+    ],
+    "total_lines": 580
+  },
+  "cross_references": [
+    {
+      "addr": "00545180",
+      "from_addr": "00545431",
+      "name": "engine_palette.cpp_CPaletteManager_createOutputPalette_FUN_00545180",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004406c0",
+    "address_range": [
+      [
+        "004406c0",
+        "00440b32"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "engine_colquant.c_quantizeColors_FUN_004406c0",
+    "signature": "char * __cdecl engine_colquant_c_quantizeColors_FUN_004406c0(SColorQuantWorkspace *workspace,char *color_data,int color_count,int num_palette_entries)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fe6b0",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    },
+    {
+      "addr": "005fde40",
+      "is_variadic": false,
+      "name": "crt_memory.c_memset_FUN_005fde40"
+    },
+    {
+      "addr": "005fdbd0",
+      "is_variadic": true,
+      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
+    },
+    {
+      "addr": "00401fd0",
+      "is_variadic": false,
+      "name": "engine_2d.c_drawText_FUN_00401fd0"
+    },
+    {
+      "addr": "00441260",
+      "is_variadic": false,
+      "name": "engine_colquant.c_computeBoxStatistics_FUN_00441260"
+    },
+    {
+      "addr": "00440dc0",
+      "is_variadic": false,
+      "name": "engine_colquant.c_partitionByBlue_FUN_00440dc0"
+    },
+    {
+      "addr": "00440c80",
+      "is_variadic": false,
+      "name": "engine_colquant.c_partitionByGreen_FUN_00440c80"
+    },
+    {
+      "addr": "00440f00",
+      "is_variadic": false,
+      "name": "engine_colquant.c_partitionByIntensity_FUN_00440f00"
+    },
+    {
+      "addr": "00440b40",
+      "is_variadic": false,
+      "name": "engine_colquant.c_partitionByRed_FUN_00440b40"
+    },
+    {
+      "addr": "005eda20",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00618d41",
+      "name": "s_Subdividing_histogram_ar_00618d41",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00618d79",
+      "name": "s_s_6_6d_00618d79",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00618d81",
+      "name": "DOUBLE_00618d81",
+      "type": "double",
+      "value": "0.577350270000000"
+    },
+    {
+      "addr": "00618d89",
+      "name": "DOUBLE_00618d89",
+      "type": "double",
+      "value": "0.590000000000000"
+    },
+    {
+      "addr": "00618d91",
+      "name": "DOUBLE_00618d91",
+      "type": "double",
+      "value": "0.300000000000000"
+    },
+    {
+      "addr": "00618d99",
+      "name": "DOUBLE_00618d99",
+      "type": "double",
+      "value": "0.110000000000000"
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.681114551083591,
+    "instruction_count": 323,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 8,
+      "BOOL_OR": 12,
+      "BRANCH": 10,
+      "CALL": 18,
+      "CBRANCH": 21,
+      "COPY": 608,
+      "FLOAT2FLOAT": 25,
+      "FLOAT_ADD": 4,
+      "FLOAT_EQUAL": 6,
+      "FLOAT_LESS": 6,
+      "FLOAT_MULT": 7,
+      "FLOAT_NAN": 12,
+      "FLOAT_SQRT": 1,
+      "INT2FLOAT": 6,
+      "INT_ADD": 163,
+      "INT_AND": 168,
+      "INT_CARRY": 28,
+      "INT_EQUAL": 128,
+      "INT_LEFT": 26,
+      "INT_LESS": 9,
+      "INT_MULT": 11,
+      "INT_NOTEQUAL": 40,
+      "INT_OR": 35,
+      "INT_SBORROW": 11,
+      "INT_SCARRY": 35,
+      "INT_SLESS": 63,
+      "INT_SUB": 81,
+      "INT_XOR": 10,
+      "INT_ZEXT": 30,
+      "LOAD": 83,
+      "POPCOUNT": 61,
+      "RETURN": 1,
+      "ROUND": 4,
+      "STORE": 100,
+      "TRUNC": 4
+    },
+    "pcode_op_count": 1835
+  },
+  "stack_frame": {
+    "frame_size": 372,
+    "local_size": 356,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_160",
+        "offset": -352,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_158",
+        "offset": -344,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_150",
+        "offset": -336,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "workspace",
+        "offset": 4,
+        "size": 4,
+        "type": "SColorQuantWorkspace *"
+      },
+      {
+        "is_param": true,
+        "name": "color_data",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "color_count",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "num_palette_entries",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004406cc",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 51,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_20 = (int)ROUND(ROUND(SQRT(dVar6 * dVar6 +",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 51,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_20 = (int)ROUND(ROUND(SQRT(dVar6 * dVar6 +",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 51,
+      "match": "SQRT",
+      "severity": "mild",
+      "text": "local_20 = (int)ROUND(ROUND(SQRT(dVar6 * dVar6 +",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 77,
+      "match": "(SColorQuantWorkspace *)((int)",
+      "severity": "mild",
+      "text": "pSVar10 = (SColorQuantWorkspace *)((int)pSVar9->sort_keys[0] + 0x1c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 81,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)pSVar9->sort_keys[0] + 4) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 83,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)pSVar9->sort_keys[0] + 0xc) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 86,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)pSVar9->sort_keys[0] + 0x14) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 94,
+      "match": "(SColorQuantWorkspace *)((int)",
+      "severity": "mild",
+      "text": "pSVar8 = (SColorQuantWorkspace *)((int)pSVar8->sort_keys[1] + 0x1c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 110,
+      "match": "(SColorQuantCentroid *)((int)",
+      "severity": "mild",
+      "text": "pSVar14 = (SColorQuantCentroid *)((int)pSVar14 + (uint)bVar17 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 117,
+      "match": "(SColorQuantCentroid *)((int)",
+      "severity": "mild",
+      "text": "pSVar14 = (SColorQuantCentroid *)((int)pSVar14 + (uint)bVar17 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 118,
+      "match": "(SColorQuantCentroid *)((int)",
+      "severity": "mild",
+      "text": "pSVar16 = (SColorQuantCentroid *)((int)pSVar16 + (uint)bVar17 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 125,
+      "match": "(SColorQuantCentroid *)((int)",
+      "severity": "mild",
+      "text": "pSVar14 = (SColorQuantCentroid *)((int)pSVar14 + (uint)bVar17 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 128,
+      "match": "(SColorQuantWorkspace *)((int)",
+      "severity": "mild",
+      "text": "pSVar8 = (SColorQuantWorkspace *)((int)pSVar8->sort_keys[0] + 0x1c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 132,
+      "match": "(SColorQuantWorkspace *)((int)",
+      "severity": "mild",
+      "text": "pSVar8 = (SColorQuantWorkspace *)((int)pSVar8->sort_keys[0] + 0x1c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 141,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "local_20._0_1_ = (char)(int)ROUND(ROUND(pSVar8->centroids[0].red));",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 141,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_20._0_1_ = (char)(int)ROUND(ROUND(pSVar8->centroids[0].red));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 141,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_20._0_1_ = (char)(int)ROUND(ROUND(pSVar8->centroids[0].red));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 143,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "local_20._0_1_ = (char)(int)ROUND(ROUND(pSVar8->centroids[0].green));",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 143,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_20._0_1_ = (char)(int)ROUND(ROUND(pSVar8->centroids[0].green));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 143,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_20._0_1_ = (char)(int)ROUND(ROUND(pSVar8->centroids[0].green));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 145,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "local_20._0_1_ = (char)(int)ROUND(ROUND(pSVar8->centroids[0].blue));",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 145,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_20._0_1_ = (char)(int)ROUND(ROUND(pSVar8->centroids[0].blue));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 145,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_20._0_1_ = (char)(int)ROUND(ROUND(pSVar8->centroids[0].blue));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 146,
+      "match": "(SColorQuantWorkspace *)((int)",
+      "severity": "mild",
+      "text": "pSVar8 = (SColorQuantWorkspace *)((int)pSVar8->sort_keys[0] + 0x1c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 148,
+      "match": "(SColorQuantWorkspace *)((int)",
+      "severity": "mild",
+      "text": "pSVar9 = (SColorQuantWorkspace *)((int)&pSVar9->num_palette_entries + 3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 149,
+      "match": "(SColorQuantWorkspace *)((int)",
+      "severity": "mild",
+      "text": "} while (pSVar8 != (SColorQuantWorkspace *)((int)workspace->sort_keys[0xff] + 0x1c));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 158,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "uStack_15c = *(uint *)((int)&workspace->boxes[0].total_weighted_error + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 161,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "uStack_154 = *(uint *)((int)&workspace->boxes[0].max_spread + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 166,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "if ((double)CONCAT44(uStack_15c,local_160) < pSVar8->boxes[1].total_weighted_error) {",
+      "type": "double_reconstruction"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 166,
+      "match": "CONCAT44",
+      "severity": "mild",
+      "text": "if ((double)CONCAT44(uStack_15c,local_160) < pSVar8->boxes[1].total_weighted_error) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 168,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "uStack_15c = *(uint *)((int)&pSVar8->boxes[1].total_weighted_error + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 170,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "uStack_154 = *(uint *)((int)&pSVar8->boxes[1].max_spread + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 174,
+      "match": "(SColorQuantWorkspace *)((int)",
+      "severity": "mild",
+      "text": "pSVar8 = (SColorQuantWorkspace *)((int)pSVar8->sort_keys[1] + 0x1c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 178,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "if ((double)CONCAT44(uStack_154,local_158) != workspace->boxes[iVar13].spread_red) break;",
+      "type": "double_reconstruction"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 178,
+      "match": "CONCAT44",
+      "severity": "mild",
+      "text": "if ((double)CONCAT44(uStack_154,local_158) != workspace->boxes[iVar13].spread_red) break;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 183,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "if ((double)CONCAT44(uStack_154,local_158) == workspace->boxes[iVar13].spread_green) {",
+      "type": "double_reconstruction"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 183,
+      "match": "CONCAT44",
+      "severity": "mild",
+      "text": "if ((double)CONCAT44(uStack_154,local_158) == workspace->boxes[iVar13].spread_green) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 187,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "if ((double)CONCAT44(uStack_154,local_158) == workspace->boxes[iVar13].spread_blue) {",
+      "type": "double_reconstruction"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 187,
+      "match": "CONCAT44",
+      "severity": "mild",
+      "text": "if ((double)CONCAT44(uStack_154,local_158) == workspace->boxes[iVar13].spread_blue) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
+      "line": 191,
+      "match": "(double)CONCAT44(",
+      "severity": "moderate",
+      "text": "if ((double)CONCAT44(uStack_154,local_158) != workspace->boxes[iVar13].spread_intensity)",
+      "type": "double_reconstruction"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 191,
+      "match": "CONCAT44",
+      "severity": "mild",
+      "text": "if ((double)CONCAT44(uStack_154,local_158) != workspace->boxes[iVar13].spread_intensity)",
+      "type": "decompiler_intrinsic"
+    }
+  ]
+}

@@ -141,8 +141,8 @@ void __cdecl core_ghoul_cpp_CGhoul_process_FUN_004e6600(CGhoul *this_ptr,float d
 switchD_004e6f9a_caseD_e:
   pCVar11 = local_18;
   if (0.0 < local_64) {
-    uVar14 = core_motion_cpp_CMotionController_advance_FUN_0052d610((CMotionController *)local_18);
-    switch(uVar14) {
+    iVar7 = core_motion_cpp_CMotionController_advance_FUN_0052d610((CMotionController *)local_18);
+    switch(iVar7) {
     case 5:
       pCVar3 = (CCharacter *)(this_ptr->base).victim;
       if ((pCVar3 != (CCharacter *)0x0) &&
@@ -188,7 +188,7 @@ LAB_004e6a5f:
                 ((CMotionController *)local_18,1,1);
       break;
     default:
-      core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,uVar14);
+      core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,iVar7);
       break;
     case 10:
       pCVar3 = (CCharacter *)(this_ptr->base).victim;
@@ -268,12 +268,12 @@ LAB_004e6a5f:
     case 0xc:
       core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
                 ((CDeformableModelInstance *)local_18);
-      iVar7 = INT_02d83300;
-      if (uVar14 == 0xc) {
-        iVar7 = INT_02d83304;
+      iVar9 = INT_02d83300;
+      if (iVar7 == 0xc) {
+        iVar9 = INT_02d83304;
       }
       pCVar12 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
-                          ((CDeformableModelInstance *)local_18,&local_1e0,iVar7);
+                          ((CDeformableModelInstance *)local_18,&local_1e0,iVar9);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                 ((CDemonActor *)this_ptr,&local_1d4,pCVar12);
       local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(8.0,12.0);
@@ -611,7 +611,7 @@ LAB_004e7a33:
                     pCVar4 = (this_ptr->base).base.base.vtable._ub;
                     local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.5,1.2);
                     in_stack_fffffc88 = (char *)this_ptr;
-                    (*pCVar4->playSoundWithVolume)
+                    (*pCVar4->playSoundWithDelay)
                               ((CDemonActor *)this_ptr,"ghoul-scream-!-?.wav",local_14);
                   }
                 }

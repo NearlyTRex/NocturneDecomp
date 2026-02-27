@@ -26,7 +26,7 @@
 ;
 ; Called Functions:
 ;   core_path.cpp_CPathMap_findPathWithRetry_FUN_00547d00
-;   core_path.cpp_FUN_00548500
+;   core_path.cpp_getPathMap_FUN_00548500
 ;
 ; *****************************************************************************
 
@@ -117,8 +117,8 @@ section .text
     MOV EAX,dword ptr [EAX]             ; 005ebdf9
     PUSH ECX                            ; 005ebdfb
     MOV dword ptr [ESP + 0x24],EAX      ; 005ebdfc
-    CALL core_path.cpp_FUN_00548500     ; 005ebe00
-        ;   XREF to: 00548500 (UNCONDITIONAL_CALL)  ; CPathMap * core_path.cpp_FUN_00548500(CLocation * location)
+    CALL core_path.cpp_getPathMap_FUN_00548500 ; 005ebe00
+        ;   XREF to: 00548500 (UNCONDITIONAL_CALL)  ; CPathMap * core_path.cpp_getPathMap_FUN_00548500(CLocation * location)
     ADD ESP,0x4                         ; 005ebe05
     PUSH 0x0                            ; 005ebe08
     LEA EDX,[ESP + 0x4]                 ; 005ebe0a

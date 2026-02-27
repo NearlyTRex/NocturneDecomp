@@ -177,7 +177,7 @@ char * FUN_0060ade0(uint *param_1,char *param_2,int param_3);
 
 // Original: crt_unknown.c_FUN_0060af5d
 // Address: 0060af5d
-int FUN_0060af5d(int param_1,int *param_2,int param_3);
+undefined8 FUN_0060af5d(int param_1,int *param_2,int param_3);
 
 // Original: crt_unknown.c_FUN_0060b07a
 // Address: 0060b07a
@@ -305,15 +305,15 @@ uint ReadFileBytesMaybe(uint param_1,char *param_2,DWORD param_3,undefined4 para
 
 // Original: crt_unknown.c_FUN_0060eb3a
 // Address: 0060eb3a
-undefined4 FUN_0060eb3a(void);
+undefined8 FUN_0060eb3a(void);
 
 // Original: crt_unknown.c_FUN_0060eb4b
 // Address: 0060eb4b
-undefined4 FUN_0060eb4b(void);
+ulonglong FUN_0060eb4b(void);
 
 // Original: crt_unknown.c_FUN_0060eb57
 // Address: 0060eb57
-undefined4 FUN_0060eb57(void);
+ulonglong FUN_0060eb57(void);
 
 // Original: crt_unknown.c_FUN_0060fa80
 // Address: 0060fa80

@@ -117,7 +117,7 @@ section .text
     MOV ECX,dword ptr [0x00681ef8]      ; 00588373 | g_CSoundPtr | g_CSoundInstance
     PUSH ECX                            ; 00588379 | g_CSoundInstance
     CALL core_sound.cpp_CSound_playActorSound_FUN_005b3a40 ; 0058837a
-        ;   XREF to: 005b3a40 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_playActorSound_FUN_005b3a40(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
+        ;   XREF to: 005b3a40 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_005b3a40(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
     MOV EAX,0x1                         ; 0058837f
     ADD ESP,0x10                        ; 00588384
     MOV dword ptr [EBX + 0x300],0x3f2a7efa ; 00588387
@@ -135,7 +135,7 @@ section .text
     MOV EDX,dword ptr [0x00681ef8]      ; 005883a3 | g_CSoundPtr | g_CSoundInstance
     PUSH EDX                            ; 005883a9 | g_CSoundInstance
     CALL core_sound.cpp_CSound_playActorSound_FUN_005b3a40 ; 005883aa
-        ;   XREF to: 005b3a40 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_playActorSound_FUN_005b3a40(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
+        ;   XREF to: 005b3a40 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_005b3a40(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
     ADD ESP,0x10                        ; 005883af
     XOR EAX,EAX                         ; 005883b2
     MOV ESP,EBP                         ; 005883b4

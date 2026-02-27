@@ -327,7 +327,7 @@ section .text
     MOV ESI,dword ptr [0x00681ef8]      ; 005eee94 | g_CSoundPtr
     PUSH ESI                            ; 005eee9a | g_CSoundInstance
     CALL core_sound.cpp_CSound_playSound_FUN_005b3a20 ; 005eee9b
-        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
+        ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
     ADD ESP,0xc                         ; 005eeea0
     MOV [0x03f96b40],EAX                ; 005eeea3 | UINT_03f96b40
     MOV ESP,EBP                         ; 005eeea8

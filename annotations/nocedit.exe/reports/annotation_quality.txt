@@ -12,44 +12,23 @@ SUMMARY STATISTICS
 ====================================================================================================
 
   Total functions analyzed:          6,494
-  Unnamed functions (FUN_):          215 ( 3.3%)
-  Functions with unnamed params:     56 ( 0.9%)
-  Functions with type issues:        2,506 (38.6%)
+  Unnamed functions (FUN_):          198 ( 3.0%)
+  Functions with unnamed params:     57 ( 0.9%)
+  Functions with type issues:        2,502 (38.5%)
 
   Type issue breakdown:
     Wrong return type (void):          4
-    Wrong return type (wide/64-bit):   3
+    Wrong return type (wide/64-bit):   2
     Missing register params:           18
-    Wrong calling convention:          71
+    Wrong calling convention:          70
     Undefined types in variables:      2275
-    Unresolved stack params:           575
+    Unresolved stack params:           556
 
 ====================================================================================================
 UNNAMED FUNCTIONS (still using FUN_XXXXXXXX)
 ====================================================================================================
 
 Sorted by caller count (most-referenced first = highest priority to name).
-
-  core/path.cpp (8 unnamed)
-    0x00548500  __cdecl       10 callers
-    0x00548390  __cdecl       1 callers
-    0x00546310  __cdecl       0 callers
-    0x005485f0  __cdecl       0 callers
-    0x00546330  __cdecl       0 callers
-    0x005463d0  __cdecl       0 callers
-    0x00548680  __cdecl       0 callers
-    0x00546350  __cdecl       0 callers
-
-  engine/colquant.c (9 unnamed)
-    0x00441260  __cdecl       6 callers
-    0x00441110  __cdecl       4 callers
-    0x00440dc0  __cdecl       1 callers
-    0x00440f00  __cdecl       1 callers
-    0x00441040  __cdecl       1 callers
-    0x00441790  __cdecl       1 callers
-    0x00440b40  __cdecl       1 callers
-    0x00440c80  __cdecl       1 callers
-    0x004406c0  __cdecl       1 callers
 
   shape/superopt.cpp (55 unnamed)
     0x005c9aa0  __cdecl       4 callers
@@ -368,6 +347,11 @@ Sorted by number of unnamed parameters (most unnamed first).
     Unnamed: param_2 (int), param_3 (int), param_4 (int)
     Named:   this_ptr (CBitmap *)
 
+  CBoxActor
+    Address: 0x00422390  File: core/boxactor.cpp
+    Unnamed: param_2 (CVector3f *), param_3 (CVector3f *)
+    Named:   this_ptr (CBoxActor *)
+
   CDemonMission_createOneHero
     Address: 0x00524920  File: core/mission.cpp
     Unnamed: param_3 (int), param_4 (void *)
@@ -615,14 +599,8 @@ Wrong return type (void function with extra output) (4)
     Suggested: Likely returns int or void*
 
 --------------------------------------------------------------------------------
-Wrong return type (64-bit return via EDX:EAX) (3)
+Wrong return type (64-bit return via EDX:EAX) (2)
 --------------------------------------------------------------------------------
-
-  CSfxSlot_pollHwPlaybackPos
-    Address: 0x005a80e0  File: sound/sndmain.cpp
-    Evidence: extraout_EDX, extraout_EDX, extraout_EDX
-    Signature: int __cdecl sound_sndmain_cpp_CSfxSlot_pollHwPlaybackPos_FUN_005a80e0(CSfxSlot *this_ptr)
-    Suggested: Likely returns 64-bit value (longlong) via EDX:EAX
 
   FUN_005c8b50
     Address: 0x005c8b50  File: shape/superopt.cpp
@@ -749,7 +727,7 @@ Missing register parameters (likely wrong calling convention) (18)
     Suggested: Likely __fastcall (ECX, EDX params)
 
 --------------------------------------------------------------------------------
-Wrong calling convention (unaffected register usage) (71)
+Wrong calling convention (unaffected register usage) (70)
 --------------------------------------------------------------------------------
 
   CPackedBitmapSet_reloadStoredPBGFile
@@ -1052,12 +1030,6 @@ Wrong calling convention (unaffected register usage) (71)
     Signature: void __cdecl core_dtrace_cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_004997d0(CDemonRaytrace *this_ptr,CVector3f *world_position,CVector3i *output_grid_coords)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
-  CDemonRaytrace_worldPositionToVoxelCoords
-    Address: 0x00499880  File: core/dtrace.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void __cdecl core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00499880(CDemonRaytrace *this_ptr,CVector3f *world_position,CVector3i *output_voxel_coords)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
   CDemonMission_loadActor
     Address: 0x00523990  File: core/mission.cpp
     Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
@@ -1179,7 +1151,7 @@ Wrong calling convention (unaffected register usage) (71)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
 --------------------------------------------------------------------------------
-Unresolved stack parameters (missing from signature) (575)
+Unresolved stack parameters (missing from signature) (556)
 --------------------------------------------------------------------------------
 
   CPackedBitmapSet_reload
@@ -1260,60 +1232,6 @@ Unresolved stack parameters (missing from signature) (575)
     Signature: void __cdecl engine_dosio_c_reopenFileStream_FUN_00481b50(char *directory_path,char *filename,byte file_mode_flags,ifstream *file_stream)
     Suggested: Signature is missing stack parameters entirely
 
-  FUN_00440dc0
-    Address: 0x00440dc0  File: engine/colquant.c
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_0000000c, in_stack_00000004, in_stack_00000004, in_stack_0000000c, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004
-    Signature: void __cdecl engine_colquant_c_FUN_00440dc0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_00441260
-    Address: 0x00441260  File: engine/colquant.c
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004
-    Signature: void __cdecl engine_colquant_c_FUN_00441260(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_00440f00
-    Address: 0x00440f00  File: engine/colquant.c
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_0000000c, in_stack_00000004, in_stack_00000004, in_stack_0000000c, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004
-    Signature: void __cdecl engine_colquant_c_FUN_00440f00(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_00441040
-    Address: 0x00441040  File: engine/colquant.c
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_0000000c, in_stack_00000004, in_stack_00000008, in_stack_00000004
-    Signature: int __cdecl engine_colquant_c_FUN_00441040(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_00441790
-    Address: 0x00441790  File: engine/colquant.c
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000008, in_stack_00000004, in_stack_00000010, in_stack_0000000c, in_stack_0000000c, in_stack_00000004
-    Signature: int __cdecl engine_colquant_c_FUN_00441790(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_00440b40
-    Address: 0x00440b40  File: engine/colquant.c
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_0000000c, in_stack_00000004, in_stack_00000004, in_stack_0000000c, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004
-    Signature: void __cdecl engine_colquant_c_FUN_00440b40(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_00440c80
-    Address: 0x00440c80  File: engine/colquant.c
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_0000000c, in_stack_00000004, in_stack_00000004, in_stack_0000000c, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004
-    Signature: void __cdecl engine_colquant_c_FUN_00440c80(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_004406c0
-    Address: 0x004406c0  File: engine/colquant.c
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000010, in_stack_0000000c, in_stack_00000004, in_stack_0000000c, in_stack_00000004, in_stack_00000004, in_stack_0000000c, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004
-    Signature: int * __cdecl engine_colquant_c_FUN_004406c0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_00441110
-    Address: 0x00441110  File: engine/colquant.c
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000004, in_stack_0000000c, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004
-    Signature: void __cdecl engine_colquant_c_FUN_00441110(void)
-    Suggested: Signature is missing stack parameters entirely
-
   CPaletteManager_addTexture
     Address: 0x00544fc0  File: engine/palette.cpp
     Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000004, in_stack_00000004
@@ -1322,7 +1240,7 @@ Unresolved stack parameters (missing from signature) (575)
 
   CPaletteManager_createOutputPalette
     Address: 0x00545180  File: engine/palette.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000008, in_stack_00000008
+    Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_0000000c, in_stack_00000008, in_stack_00000008
     Signature: int __cdecl engine_palette_cpp_CPaletteManager_createOutputPalette_FUN_00545180(void)
     Suggested: Signature is missing stack parameters entirely
 
@@ -1540,12 +1458,6 @@ Unresolved stack parameters (missing from signature) (575)
     Address: 0x005a59c0  File: sound/sndmain.cpp
     Evidence: in_stack_ffffff94, in_stack_ffffffb0, in_stack_ffffffb0, in_stack_ffffffb0, in_stack_ffffff94, in_stack_ffffff94, in_stack_ffffff94, in_stack_ffffff94, in_stack_ffffff94, in_stack_ffffff94, in_stack_ffffff94
     Signature: void __cdecl sound_sndmain_cpp_nextMixingBuffer_FUN_005a59c0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  CSfxSlot_pollHwPlaybackPos
-    Address: 0x005a80e0  File: sound/sndmain.cpp
-    Evidence: in_stack_ffffffe0, in_stack_ffffffe0
-    Signature: int __cdecl sound_sndmain_cpp_CSfxSlot_pollHwPlaybackPos_FUN_005a80e0(CSfxSlot *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
   mixResampleStereoToStereo
@@ -2358,12 +2270,6 @@ Unresolved stack parameters (missing from signature) (575)
     Signature: CPassenger * __cdecl core_passngr_cpp_CPassenger_dtor_FUN_00545c10(CPassenger *this_ptr,uint flags)
     Suggested: Signature is missing stack parameters entirely
 
-  CParticle_process
-    Address: 0x00545760  File: core/particle.cpp
-    Evidence: in_stack_ffffff50, in_stack_ffffff50
-    Signature: void __cdecl core_particle_cpp_CParticle_process_FUN_00545760(CParticle *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
   CDemonActor_processMeleeHit
     Address: 0x0040a210  File: core/actor.cpp
     Evidence: in_stack_fffffd6c, in_stack_fffffd70, in_stack_fffffd6c, in_stack_fffffd70, in_stack_fffffd6c, in_stack_fffffd6c, in_stack_fffffd70, in_stack_fffffd6c, in_stack_fffffd70, in_stack_fffffd6c, in_stack_fffffd70, in_stack_fffffd6c, in_stack_fffffd70, in_stack_fffffd6c, in_stack_fffffd70
@@ -2464,12 +2370,6 @@ Unresolved stack parameters (missing from signature) (575)
     Address: 0x004c9470  File: core/fire.cpp
     Evidence: in_stack_00000004, in_stack_00000004
     Signature: void __cdecl core_fire_cpp_FUN_004c9470(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  CFireEffect_createExplosion
-    Address: 0x004c8c10  File: core/fire.cpp
-    Evidence: in_stack_0000000c, in_stack_00000010, in_stack_0000000c, in_stack_00000010
-    Signature: void __cdecl core_fire_cpp_CFireEffect_createExplosion_FUN_004c8c10(CFireEffect *this_ptr,CVector3f *position)
     Suggested: Signature is missing stack parameters entirely
 
   CFireEffect_createCrater
@@ -3456,12 +3356,6 @@ Unresolved stack parameters (missing from signature) (575)
     Signature: void __cdecl core_course_cpp_CCourse_preview_FUN_00443bc0(CCourse *this_ptr,CKeyFramedModel *model_ptr)
     Suggested: Signature is missing stack parameters entirely
 
-  CBoxActor
-    Address: 0x00422390  File: core/boxactor.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c
-    Signature: void __cdecl core_boxactor_cpp_CBoxActor_FUN_00422390(CBoxActor *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
   CLightActor
     Address: 0x004235c0  File: core/boxactor.cpp
     Evidence: in_stack_00000008, in_stack_00000008
@@ -3546,52 +3440,16 @@ Unresolved stack parameters (missing from signature) (575)
     Signature: void __cdecl core_svetlana_cpp_CSvetlana_FUN_005d9ee0(CSvetlana *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
-  CPathMap_updateIfNeeded
-    Address: 0x00546a60  File: core/path.cpp
-    Evidence: in_stack_ffffffd8, in_stack_ffffffd8, in_stack_ffffffd8, in_stack_ffffffd8
-    Signature: void __cdecl core_path_cpp_CPathMap_updateIfNeeded_FUN_00546a60(CPathMap *this_ptr,CVector3f *source_position,int force_update)
-    Suggested: Signature is missing stack parameters entirely
-
-  CPathMap
-    Address: 0x00547fc0  File: core/path.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000014, in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000014
-    Signature: void __cdecl core_path_cpp_CPathMap_FUN_00547fc0(CPathMap *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
   CPathMap_findPathToDestination
     Address: 0x00547320  File: core/path.cpp
-    Evidence: in_stack_fffffee8, in_stack_fffffee8, in_stack_fffffee8
+    Evidence: in_stack_fffffee8, in_stack_fffffee8
     Signature: int __cdecl core_path_cpp_CPathMap_findPathToDestination_FUN_00547320(CPathMap *this_ptr,CVector3f *dest_position,CVector3f *out_euler_angles,int direction_hint)
     Suggested: Signature is missing stack parameters entirely
 
-  FUN_005463d0
-    Address: 0x005463d0  File: core/path.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000004, in_stack_00000008, in_stack_0000000c
-    Signature: void __cdecl core_path_cpp_FUN_005463d0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_00548390
-    Address: 0x00548390  File: core/path.cpp
-    Evidence: in_stack_ffffffcc, in_stack_ffffffcc, in_stack_ffffffcc
-    Signature: CPathMap * __cdecl core_path_cpp_FUN_00548390(CLocation *location)
-    Suggested: Signature is missing stack parameters entirely
-
-  debugRenderGridQuad
+  renderGridQuad
     Address: 0x00547dd0  File: core/path.cpp
     Evidence: in_stack_0000001c, in_stack_0000001c
-    Signature: void __cdecl core_path_cpp_debugRenderGridQuad_FUN_00547dd0(int grid_x,int grid_y,int grid_z,int color,int fog,float w_recip)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_00548680
-    Address: 0x00548680  File: core/path.cpp
-    Evidence: in_stack_00000004, in_stack_0000000c, in_stack_ffffffd8, in_stack_00000004, in_stack_ffffffd8, in_stack_0000000c
-    Signature: void __cdecl core_path_cpp_FUN_00548680(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_00546350
-    Address: 0x00546350  File: core/path.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_0000000c, in_stack_00000004, in_stack_00000010, in_stack_00000004, in_stack_00000008, in_stack_0000000c
-    Signature: void __cdecl core_path_cpp_FUN_00546350(void)
+    Signature: void __cdecl core_path_cpp_renderGridQuad_FUN_00547dd0(int grid_x,int grid_y,int grid_z,int color,int fog,float w_recip)
     Suggested: Signature is missing stack parameters entirely
 
   CMelee_setWeaponState
@@ -3662,7 +3520,7 @@ Unresolved stack parameters (missing from signature) (575)
 
   CDemonRaytrace_restoreShadowBitFromBuffer
     Address: 0x0049a280  File: core/dtrace.cpp
-    Evidence: in_stack_ffffffc0, in_stack_ffffffc0, in_stack_ffffffc0
+    Evidence: in_stack_ffffffc0, in_stack_ffffffc0
     Signature: void __cdecl core_dtrace_cpp_CDemonRaytrace_restoreShadowBitFromBuffer_FUN_0049a280(CDemonRaytrace *this_ptr,CVector3f *world_position)
     Suggested: Signature is missing stack parameters entirely
 
@@ -5961,7 +5819,7 @@ Undefined types in variables (2275)
     Locals:  local_64 (undefined), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CPathMap
+  CPathMap_renderPathMap
     Address: 0x00547fc0  File: core/path.cpp
     Locals:  local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -6341,7 +6199,7 @@ Undefined types in variables (2275)
     Locals:  local_a0 (undefined1), local_88 (undefined4), local_84 (undefined4), local_80 (undefined4), local_7c (undefined1), local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined1), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_00441260
+  computeBoxStatistics
     Address: 0x00441260  File: engine/colquant.c
     Locals:  local_90 (undefined8), local_88 (undefined8), local_80 (undefined8), local_78 (undefined8), local_70 (undefined8), local_68 (undefined8), local_60 (undefined8), local_58 (undefined8), local_50 (undefined8), local_48 (undefined8), local_40 (undefined8), local_38 (undefined8), local_30 (undefined8), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -8421,7 +8279,7 @@ Undefined types in variables (2275)
     Locals:  local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_004406c0
+  quantizeColors
     Address: 0x004406c0  File: engine/colquant.c
     Locals:  local_160 (undefined8), local_158 (undefined8), local_150 (undefined), local_50 (undefined), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -8731,12 +8589,12 @@ Undefined types in variables (2275)
     Locals:  local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined1), local_1f (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_00548390
+  getOrCreatePathMap
     Address: 0x00548390  File: core/path.cpp
     Locals:  local_34 (undefined1), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  debugRenderGridQuad
+  renderGridQuad
     Address: 0x00547dd0  File: core/path.cpp
     Locals:  local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_10 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -9241,7 +9099,7 @@ Undefined types in variables (2275)
     Locals:  local_420 (undefined1), local_31c (undefined1), local_218 (undefined1), local_118 (undefined1), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CPathMap_queuePop
+  CPathMap_searchGrid
     Address: 0x005487a0  File: core/path.cpp
     Locals:  local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -10376,7 +10234,7 @@ Undefined types in variables (2275)
     Locals:  local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined1)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_00548680
+  renderPathMapsAtPosition
     Address: 0x00548680  File: core/path.cpp
     Locals:  local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined)
     Suggested: Resolve undefined types to concrete types
@@ -10576,14 +10434,14 @@ Undefined types in variables (2275)
     Locals:  local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_00441110
-    Address: 0x00441110  File: engine/colquant.c
-    Locals:  local_28 (undefined8), local_20 (undefined8), local_18 (undefined4), local_14 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  FUN_00441790
+  doubleMax
     Address: 0x00441790  File: engine/colquant.c
     Locals:  local_18 (undefined4), local_14 (undefined4), local_10 (undefined4), local_c (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  refinePartitionByDistance
+    Address: 0x00441110  File: engine/colquant.c
+    Locals:  local_28 (undefined8), local_20 (undefined8), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   getFile
@@ -11601,7 +11459,7 @@ Undefined types in variables (2275)
     Locals:  local_24 (undefined4), local_20 (undefined1), local_1f (undefined1)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_00441040
+  computeWeightedColorDistance
     Address: 0x00441040  File: engine/colquant.c
     Locals:  local_24 (undefined8), local_c (undefined4), local_8 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -12842,23 +12700,23 @@ Undefined types in variables (2275)
     Locals:  local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_00440b40
-    Address: 0x00440b40  File: engine/colquant.c
-    Locals:  local_18 (undefined4), local_14 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  FUN_00440c80
-    Address: 0x00440c80  File: engine/colquant.c
-    Locals:  local_18 (undefined4), local_14 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  FUN_00440dc0
+  partitionByBlue
     Address: 0x00440dc0  File: engine/colquant.c
     Locals:  local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_00440f00
+  partitionByGreen
+    Address: 0x00440c80  File: engine/colquant.c
+    Locals:  local_18 (undefined4), local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  partitionByIntensity
     Address: 0x00440f00  File: engine/colquant.c
+    Locals:  local_18 (undefined4), local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  partitionByRed
+    Address: 0x00440b40  File: engine/colquant.c
     Locals:  local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 

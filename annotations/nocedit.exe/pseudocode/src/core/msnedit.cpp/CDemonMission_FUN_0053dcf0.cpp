@@ -55,14 +55,14 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053dcf0(CDemonMission *this_ptr
     }
     if ((config_param1 == 1) &&
        (iVar3 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
-                          (g_CEditorToolsPtr,"Hide actors by name using wildcard",&DAT_00680660,100,1
-                          ), iVar3 != 0)) {
+                          (g_CEditorToolsPtr,"Hide actors by name using wildcard",
+                           g_HideActorsWildcardBuffer,100,1), iVar3 != 0)) {
       iVar3 = 0;
       for (pCVar1 = this_ptr->first_actor; pCVar1 != (CDemonActor *)0x0; pCVar1 = pCVar1->next_actor
           ) {
         if ((pCVar1->is_editor_hidden == 0) &&
            (iVar2 = shape_edittool_cpp_wildcardStringMatch_FUN_004a6e20
-                              (&DAT_00680660,pCVar1->actor_name,0), iVar2 != 0)) {
+                              (g_HideActorsWildcardBuffer,pCVar1->actor_name,0), iVar2 != 0)) {
           iVar3 = iVar3 + 1;
           pCVar1->is_editor_hidden = 1;
         }

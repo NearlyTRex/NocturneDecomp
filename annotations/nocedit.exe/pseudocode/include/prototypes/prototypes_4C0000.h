@@ -145,7 +145,7 @@ void __cdecl core_fire_cpp_CFireEffect_createLaserSegment2_FUN_004c7f20(CFireEff
 void __cdecl core_fire_cpp_CFireEffect_createLaserBeamPath_FUN_004c7f80(CFireEffect *this_ptr,CVector3f *start_position,CVector3f *velocity,float beam_width ,float reticle_intensity,CVector3f *reflection_normal,float total_time,int red, int green,int blue);
 SLaserInfo * __cdecl core_fire_cpp_SLaserInfo_ctor_FUN_004c81f0(SLaserInfo *this_ptr);
 void __cdecl core_fire_cpp_CFireEffect_traceLaser_FUN_004c8230(CFireEffect *this_ptr,CVector3f *origin,CVector3f *direction,SLaserInfo *laser_info, int recursion_depth);
-void __cdecl core_fire_cpp_CFireEffect_createExplosion_FUN_004c8c10(CFireEffect *this_ptr,CVector3f *position);
+void __cdecl core_fire_cpp_CFireEffect_createExplosion_FUN_004c8c10(CFireEffect *this_ptr,CVector3f *position,float scale,int damage_amount);
 int __cdecl core_fire_cpp_CFireEffect_checkExplosionDamage_FUN_004c8c90(CFireEffect *this_ptr,CVector3f *position,float radius,CVector3f *out_force_dir, int *out_damage);
 void __cdecl core_fire_cpp_CFireEffect_createToss_FUN_004c8dd0(CFireEffect *this_ptr,CVector3f *position,UOrientationVector *orientation, CVector3f *velocity,float fuse_time,uint sfx_handle);
 int __cdecl core_fire_cpp_CFireEffect_allocateToss_FUN_004c8e40(CFireEffect *this_ptr,int toss_type,CVector3f *position, UOrientationVector *orientation,CVector3f *velocity,float fuse_time);

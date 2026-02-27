@@ -190,7 +190,7 @@ section .text
     PUSH EDI                            ; 005efe66
     PUSH EBX                            ; 005efe67
     CALL core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40 ; 005efe68
-        ;   XREF to: 0042ec40 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40(CCharacter * this_ptr, uint event_id)
+        ;   XREF to: 0042ec40 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40(CCharacter * this_ptr, int bone_index)
     ADD ESP,0x8                         ; 005efe6d
     JMP 0x005efe3e                      ; 005efe70
         ;   XREF to: 005efe3e (UNCONDITIONAL_JUMP)  ; LAB_005efe3e
@@ -258,7 +258,7 @@ section .text
     PUSH EDI                            ; 005eff42
     PUSH EBX                            ; 005eff43
     CALL core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40 ; 005eff44
-        ;   XREF to: 0042ec40 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40(CCharacter * this_ptr, uint event_id)
+        ;   XREF to: 0042ec40 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40(CCharacter * this_ptr, int bone_index)
     ADD ESP,0x8                         ; 005eff49
     JMP 0x005efe3e                      ; 005eff4c
         ;   XREF to: 005efe3e (UNCONDITIONAL_JUMP)  ; LAB_005efe3e

@@ -2,11 +2,11 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/structs/SMpegLayer3ScalefactorGranule.h"
 
 // Structure: SMpegScalefactorBandData
-// Ghidra size: 0x122 (290 bytes)
+// Ghidra size: 0x1f0 (496 bytes)
 typedef struct SMpegScalefactorBandData {
-    int reserved[62]; // 0x0
-    short intensity_stereo_pos[21]; // 0xf8
+    SMpegLayer3ScalefactorGranule granules[2]; // 0x0
 } SMpegScalefactorBandData;
 

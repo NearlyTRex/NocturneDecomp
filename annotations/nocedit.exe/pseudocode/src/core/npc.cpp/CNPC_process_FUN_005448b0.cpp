@@ -11,10 +11,10 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_005448b0(CNPC *this_ptr,float delta_t
 {
   CDeformableModelInstance *pCVar1;
   CVector3f *pCVar2;
-  float fVar3;
+  uint uVar3;
   float fVar4;
-  int iVar5;
-  uint uVar6;
+  float fVar5;
+  int iVar6;
   CVector3f *pCVar7;
   CMotionList *this_ptr_00;
   char *state_name;
@@ -29,8 +29,8 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_005448b0(CNPC *this_ptr,float delta_t
   float fStack_20;
   float fStack_1c;
   
-  iVar5 = core_charactr_cpp_CCharacter_process_FUN_00429870(&this_ptr->base,delta_time);
-  if (iVar5 == 0) {
+  iVar6 = core_charactr_cpp_CCharacter_process_FUN_00429870(&this_ptr->base,delta_time);
+  if (iVar6 == 0) {
     return;
   }
   core_charactr_cpp_CCharacter_processSmoking_FUN_0042ea40(&this_ptr->base,delta_time);
@@ -42,11 +42,11 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_005448b0(CNPC *this_ptr,float delta_t
   pCVar1 = &(this_ptr->base).model;
   fVar8 = delta_time;
   while (0.0 < fVar8) {
-    uVar6 = core_motion_cpp_CMotionController_advance_FUN_0052d610(&pCVar1->motion_controller);
-    core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40(&this_ptr->base,uVar6);
+    iVar6 = core_motion_cpp_CMotionController_advance_FUN_0052d610(&pCVar1->motion_controller);
+    core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40(&this_ptr->base,iVar6);
   }
-  iVar5 = (*(((this_ptr->base).base.vtable._uc)->_uc).getDeathState)(&this_ptr->base);
-  if ((((1 < iVar5) && ((this_ptr->base).base.was_created == 1)) && (this_ptr->pool_me == 0)) &&
+  iVar6 = (*(((this_ptr->base).base.vtable._uc)->_uc).getDeathState)(&this_ptr->base);
+  if ((((1 < iVar6) && ((this_ptr->base).base.was_created == 1)) && (this_ptr->pool_me == 0)) &&
      ((this_ptr->base).base.standing_platform == (CPlatform *)0x0)) {
     pCVar7 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
                        (pCVar1,&CStack_48,0);
@@ -55,15 +55,15 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_005448b0(CNPC *this_ptr,float delta_t
     core_gore_cpp_CGore_createBloodPool_FUN_004ede30(g_CGorePtr,&CStack_30,0);
     this_ptr->pool_me = 1;
   }
-  fVar4 = (float)3.1415926535000001;
-  fVar3 = (float)0.5;
+  fVar5 = (float)3.1415926535000001;
+  fVar4 = (float)0.5;
   (this_ptr->base).walk_step_speed = (this_ptr->base).model.accumulated_root_motion.z;
-  (this_ptr->base).turn_speed = delta_time * fVar4 * fVar3;
-  iVar5 = core_charactr_cpp_CCharacter_processWalking_FUN_0042ca70(&this_ptr->base,delta_time);
-  if (iVar5 == 0) goto LAB_00544a0c;
-  uVar6 = (this_ptr->base).is_walking;
-  if (uVar6 < 2) {
-    if (uVar6 == 1) {
+  (this_ptr->base).turn_speed = delta_time * fVar5 * fVar4;
+  iVar6 = core_charactr_cpp_CCharacter_processWalking_FUN_0042ca70(&this_ptr->base,delta_time);
+  if (iVar6 == 0) goto LAB_00544a0c;
+  uVar3 = (this_ptr->base).is_walking;
+  if (uVar3 < 2) {
+    if (uVar3 == 1) {
 LAB_005449de:
       state_name = "WALK";
     }
@@ -76,16 +76,16 @@ LAB_00544b62:
   }
   else {
     pCVar1 = &(this_ptr->base).model;
-    if (uVar6 < 3) {
+    if (uVar3 < 3) {
       this_ptr_00 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                               (&pCVar1->motion_controller);
-      iVar5 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(this_ptr_00);
-      if (iVar5 < 0) goto LAB_005449de;
+      iVar6 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(this_ptr_00);
+      if (iVar6 < 0) goto LAB_005449de;
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                (&pCVar1->motion_controller,iVar5,1);
+                (&pCVar1->motion_controller,iVar6,1);
     }
     else {
-      if (uVar6 != 3) goto LAB_00544b62;
+      if (uVar3 != 3) goto LAB_00544b62;
       core_motion_cpp_CMotionController_setDesiredStateByName_FUN_0052db90
                 (&pCVar1->motion_controller,"STAND",1);
       engine_console_cpp_CConsole_printf_FUN_00441890

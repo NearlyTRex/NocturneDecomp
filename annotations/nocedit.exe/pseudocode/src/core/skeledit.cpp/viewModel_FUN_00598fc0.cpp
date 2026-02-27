@@ -44,20 +44,20 @@ void __cdecl core_skeledit_cpp_viewModel_FUN_00598fc0(void)
     iVar3 = _fgetc(p_Var2);
     if (iVar3 < 0) break;
   } while ((iVar3 != 10) || (iVar4 = iVar4 + -1, 0 < iVar4));
-  DAT_03670848 = 0;
+  g_SkeleditLastPOSImported[0] = '\0';
   do {
     iVar4 = _fgetc(p_Var2);
     if ((iVar4 < 0) || (iVar4 == 10)) goto LAB_00599080;
-    puVar5 = &DAT_03670848;
+    pcVar6 = g_SkeleditLastPOSImported;
   } while (iVar4 != 0x22);
   while ((iVar4 = _fgetc(p_Var2), -1 < iVar4 && (iVar4 != 10))) {
     if (iVar4 == 0x22) {
       iVar4 = 1;
       goto LAB_005992fc;
     }
-    *puVar5 = (char)iVar4;
-    puVar5[1] = 0;
-    puVar5 = puVar5 + 1;
+    *pcVar6 = (char)iVar4;
+    pcVar6[1] = '\0';
+    pcVar6 = pcVar6 + 1;
   }
   goto LAB_00599080;
   while ((iVar3 != 10 || (iVar4 = iVar4 + -1, 0 < iVar4))) {
@@ -175,7 +175,7 @@ LAB_00599119:
     _fprintf(p_Var2,"// version\n");
     _fprintf(p_Var2,"%d\n",1);
     _fprintf(p_Var2,"// lastPOSimported\n");
-    _fprintf(p_Var2,"\"%s\"\n",&DAT_03670848);
+    _fprintf(p_Var2,"\"%s\"\n",g_SkeleditLastPOSImported);
     _fprintf(p_Var2,"// lastMOTimported\n");
     _fprintf(p_Var2,"\"%s\"\n",&DAT_03670950);
     _fprintf(p_Var2,"// lastTestSkeletonDir\n");

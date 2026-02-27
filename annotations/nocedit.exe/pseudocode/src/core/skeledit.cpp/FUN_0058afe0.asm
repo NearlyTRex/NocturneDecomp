@@ -23,7 +23,7 @@
 ;   TerminatedCString s_s_0064a5c9
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   CEditorTools g_CEditorToolsInstance
-;   undefined4 DAT_0366b650
+;   char[20480] g_SkeleditClipboardBuffer
 ;
 ; Called Functions:
 ;   crt_stack.c___STK_FUN_005ff9f3
@@ -142,9 +142,9 @@ section .text
         ;   Label: LAB_0058b0e3
     PUSH ESI                            ; 0058b0ea
     PUSH 0x64a5b4                       ; 0058b0eb | = "Heirarchy for %s\r\n\r\n"
-    PUSH 0x366b650                      ; 0058b0f0 | DAT_0366b650
+    PUSH 0x366b650                      ; 0058b0f0 | g_SkeleditClipboardBuffer
     XOR EBX,EBX                         ; 0058b0f5
-    MOV ESI,0x366b650                   ; 0058b0f7 | DAT_0366b650
+    MOV ESI,0x366b650                   ; 0058b0f7 | g_SkeleditClipboardBuffer
     CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0058b0fc
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0058b101
@@ -174,7 +174,7 @@ section .text
         ;   XREF to: 0058b10d (CONDITIONAL_JUMP)  ; LAB_0058b10d
     LEA EAX,[EAX]                       ; 0058b134
     LEA EDX,[EDX]                       ; 0058b13a
-    PUSH 0x366b650                      ; 0058b140 | DAT_0366b650
+    PUSH 0x366b650                      ; 0058b140 | g_SkeleditClipboardBuffer
         ;   Label: LAB_0058b140
     MOV EBP,dword ptr [0x00678a60]      ; 0058b145 | g_CEditorToolsPtr
     PUSH EBP                            ; 0058b14b | g_CEditorToolsInstance

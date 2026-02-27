@@ -17,6 +17,7 @@
 #include "types/structs/SEnumPair.h"
 #include "types/structs/SInputFace.h"
 #include "types/structs/SMRGLTextureBasic.h"
+#include "types/structs/SMpegLayer3BandIndex.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x670000
@@ -128,6 +129,9 @@ extern SMRGLTextureBasic g_FireEffectLightningBoltTextures[6];
 
 // SMRGLTextureBasic[8]
 extern SMRGLTextureBasic g_AudioSpectrumTextures[8];
+
+// SMpegLayer3BandIndex[6]
+extern SMpegLayer3BandIndex g_Layer3BandIndex[6];
 
 // TerminatedCString
 extern TerminatedCString s_meshlod_0067d3a0;
@@ -315,12 +319,13 @@ extern int g_MoonBatsEnabled;
 extern int g_MpegSynthesisTableInitialized;
 extern int g_Mp3AntiAliasInitialized;
 extern int g_Mp3SynthesisTablesInitialized;
-extern int INT_0067e6cc;
-extern int INT_0067e6d0;
 
 // int[16]
 extern int g_Layer3ScalefacLengths1[16];
 extern int g_Layer3ScalefacLengths2[16];
+
+// int[22]
+extern int g_Layer3Pretab[22];
 
 // int[2][3][15]
 extern int g_MpegBitrateTable[2][3][15];
@@ -328,10 +333,10 @@ extern int g_MpegBitrateTable[2][3][15];
 // int[3]
 extern int g_TriangleMatchTableA[3];
 extern int g_TriangleMatchTableB[3];
-extern int g_Layer3ShortBandBoundaries[3];
+extern int g_Layer3ShortBandGroupCounts[3];
 
 // int[5]
-extern int g_Layer3LongBandBoundaries[5];
+extern int g_Layer3LongBandGroupCounts[5];
 
 // int[6][3][4]
 extern int g_Layer3ScalefactorBandCounts[6][3][4];
@@ -410,7 +415,6 @@ extern undefined4 DAT_0067d5c0;
 extern undefined4 DAT_0067d5c4;
 extern undefined4 DAT_0067d628;
 extern undefined4 DAT_0067d62c;
-extern undefined4 DAT_0067e184;
 
 // ushort[384]
 extern ushort g_LightmapData[384];

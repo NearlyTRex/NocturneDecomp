@@ -35,7 +35,7 @@
 ;   double DOUBLE_0061769a = 0.25
 ;   double DOUBLE_006176a2 = 2.40000000000000
 ;   float FLOAT_006176aa = -1
-;   undefined4 DAT_0066e740
+;   float[6] g_MoveAwayAngleOffsets
 ;   CConsole* g_CConsolePtr = 0083b1a4
 ;   CConsole g_CConsoleInstance
 ;   CVector3f g_ZeroVector
@@ -193,7 +193,7 @@ section .text
         ;   XREF to: 0042f203 (CONDITIONAL_JUMP)  ; LAB_0042f203
     FLD float ptr [ESP + 0xf4]          ; 0042ef65
         ;   Label: LAB_0042ef65
-    FADD float ptr [EAX*0x4 + 0x66e740] ; 0042ef6c | DAT_0066e740
+    FADD float ptr [EAX*0x4 + 0x66e740] ; 0042ef6c | g_MoveAwayAngleOffsets
     XOR EAX,EAX                         ; 0042ef73
     FSTP float ptr [ESP + 0x104]        ; 0042ef75
     MOV dword ptr [ESP + 0x98],EAX      ; 0042ef7c

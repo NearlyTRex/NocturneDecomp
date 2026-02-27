@@ -1,12 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00499880(CDemonRaytrace *this_ptr,CVector3f *world_position,CVector3i *output_voxel_coords)
+; void __stack2_esi core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00499880(CDemonRaytrace *this_ptr,CVector3f *world_position,CVector3i *output_voxel_coords)
 ;
 ; Parameters:
 ; CDemonRaytrace * Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   world_position
-; CVector3i *      Stack[0xc]:4   output_voxel_coords
 ; Local Variables:
 ; undefined8       Stack[-0x24]:8  local_24
 ; undefined4       Stack[-0x1c]:4  local_1c
@@ -20,8 +19,8 @@
 ;   core_particle.cpp_CParticle_process_FUN_00545760 at 0054581e
 ;   core_path.cpp_CPathMap_findPathToDestination_FUN_00547320 at 0054734c
 ;   core_path.cpp_CPathMap_updateIfNeeded_FUN_00546a60 at 00546b0e
-;   core_path.cpp_FUN_00548390 at 005483d0
-;   core_path.cpp_FUN_00548680 at 0054869d
+;   core_path.cpp_getOrCreatePathMap_FUN_00548390 at 005483d0
+;   core_path.cpp_renderPathMapsAtPosition_FUN_00548680 at 0054869d
 ;
 ; Called Functions:
 ;   crt_math.c_floor_FUN_005feb90

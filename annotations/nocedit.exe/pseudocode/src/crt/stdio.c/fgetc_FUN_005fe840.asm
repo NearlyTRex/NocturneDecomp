@@ -8,12 +8,12 @@
 ;
 ; XREF[66]:
 ;   cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690 at 004346fb
+;   core_actor.cpp_archiveBox_FUN_0040bd70 at 0040bd8b
 ;   core_actor.cpp_archiveClothList_FUN_0040be60 at 0040be80
 ;   core_actor.cpp_archiveDescription_FUN_0040b290 at 0040b2ab
 ;   core_actor.cpp_archiveMotionState_FUN_0040b9f0 at 0040ba0b
 ;   core_actor.cpp_archivePartStatus_FUN_0040bae0 at 0040bb03
 ;   core_actor.cpp_archiveRules_FUN_0040c000 at 0040c0c2
-;   core_actor.cpp_archiveSimBox_FUN_0040bd70 at 0040bd8b
 ;   core_actor.cpp_archiveString_FUN_0040b5c0 at 0040b5e0
 ;   core_conveyor.cpp_FUN_004424a0 at 004424a6
 ;   core_course.cpp_CCourse_importBON_FUN_00442bc0 at 00442c22

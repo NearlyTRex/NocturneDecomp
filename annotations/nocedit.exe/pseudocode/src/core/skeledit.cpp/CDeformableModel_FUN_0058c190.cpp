@@ -103,13 +103,13 @@ int __cdecl core_skeledit_cpp_CDeformableModel_FUN_0058c190(CDeformableModel *th
   
   bVar22 = 0;
   __STK();
-  DAT_03670650 = 0;
+  g_SkeleditStatusMessage[0] = '\0';
   pCVar5 = (CBoneStructure *)
            shape_memdbg_cpp_openFile_FUN_0050f7a0
                      (filename,(char *)0x0,"rt","..\\core\\skeledit.cpp",0x60a);
   local_24 = pCVar5;
   if (pCVar5 == (CBoneStructure *)0x0) {
-    _sprintf(&DAT_03670650,"Can't open %s",filename);
+    _sprintf(g_SkeleditStatusMessage,"Can't open %s",filename);
     return 0;
   }
   iVar12 = 1;
@@ -129,7 +129,8 @@ int __cdecl core_skeledit_cpp_CDeformableModel_FUN_0058c190(CDeformableModel *th
   iVar12 = core_skeledit_cpp_FUN_0058b200();
   if (iVar12 == 0) {
     _sprintf
-              (&DAT_03670650,"Heirarchy in %s does not match that in skeleton %s",filename,this_ptr->model_name);
+              (g_SkeleditStatusMessage,"Heirarchy in %s does not match that in skeleton %s",filename,
+               this_ptr->model_name);
     if (*(int *)(filename + 0x308) != 2) {
       shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_1260);
       _sprintf(local_418,"Display %s",filename);
@@ -139,7 +140,7 @@ int __cdecl core_skeledit_cpp_CDeformableModel_FUN_0058c190(CDeformableModel *th
       iVar12 = 0;
       while( true ) {
         iVar12 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                           (&local_1260,&DAT_03670650,iVar12,0);
+                           (&local_1260,g_SkeleditStatusMessage,iVar12,0);
         if (iVar12 < 0) break;
         if (iVar12 == 0) {
           core_skeledit_cpp_FUN_0058afe0(&stack0xffff5dd8);
@@ -160,7 +161,7 @@ int __cdecl core_skeledit_cpp_CDeformableModel_FUN_0058c190(CDeformableModel *th
   iVar12 = _fscanf((_FILE *)local_24,"%d,%d,%d\n",&local_b0,&local_ac,&local_a8);
   if (iVar12 != 3) {
 LAB_0058c613:
-    _sprintf(&DAT_03670650,"%s is corrupt!",filename);
+    _sprintf(g_SkeleditStatusMessage,"%s is corrupt!",filename);
     shape_memdbg_cpp_closeFile_FUN_0050f9b0((_FILE *)local_24,"..\\core\\skeledit.cpp",0x647);
     return 0;
   }

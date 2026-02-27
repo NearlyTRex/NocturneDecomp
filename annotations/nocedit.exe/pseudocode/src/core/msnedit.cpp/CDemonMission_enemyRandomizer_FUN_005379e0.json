@@ -2,57 +2,57 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 71,
-        "line": 72,
-        "message": "use of undeclared identifier 'DAT_00680580'"
+        "category": "incompatible_types",
+        "column": 13,
+        "line": 71,
+        "message": "no matching function for call to 'shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0'"
       },
       {
         "category": "lvalue_required",
         "column": 73,
-        "line": 79,
+        "line": 80,
         "message": "cannot take the address of an rvalue of type 'float'"
       },
       {
         "category": "lvalue_required",
         "column": 75,
-        "line": 87,
+        "line": 88,
         "message": "cannot take the address of an rvalue of type 'float'"
       },
       {
         "category": "undeclared_identifier",
         "column": 74,
-        "line": 103,
+        "line": 104,
         "message": "use of undeclared identifier 'stack0xfffff300'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 39,
+        "category": "incompatible_types",
+        "column": 27,
         "line": 113,
-        "message": "use of undeclared identifier 'DAT_00680580'"
+        "message": "no matching function for call to 'shape_edittool_cpp_wildcardStringMatch_FUN_004a6e20'"
       },
       {
         "category": "format_error",
         "column": 52,
-        "line": 120,
+        "line": 121,
         "message": "format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 66,
-        "line": 132,
+        "line": 133,
         "message": "format specifies type 'int' but the argument has type 'CEnemy *' [-Werror,-Wformat]"
       },
       {
         "category": "undeclared_identifier",
         "column": 40,
-        "line": 134,
+        "line": 135,
         "message": "use of undeclared identifier 'stack0xfffff300'"
       },
       {
         "category": "undeclared_identifier",
         "column": 74,
-        "line": 136,
+        "line": 137,
         "message": "use of undeclared identifier 'stack0xfffff300'"
       }
     ],
@@ -61,19 +61,19 @@
   },
   "complexity": {
     "assembly_lines": 333,
-    "complexity_score": 313,
+    "complexity_score": 294,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 20,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 138,
-    "suspect_count": 16,
+    "pseudocode_lines": 139,
+    "suspect_count": 14,
     "suspect_types": [
       "stack_param",
       "stack_ref",
       "undefined_data"
     ],
-    "total_lines": 471
+    "total_lines": 472
   },
   "cross_references": [
     {
@@ -260,8 +260,8 @@
     },
     {
       "addr": "00680580",
-      "name": "DAT_00680580",
-      "type": "undefined4",
+      "name": "g_ActorWildcardBuffer",
+      "type": "char[200]",
       "value": null
     },
     {
@@ -385,16 +385,8 @@
       "type": "stack_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 65,
-      "match": "DAT_00680580",
-      "severity": "mild",
-      "text": "(g_CEditorToolsPtr,\"Enter actor name wildcard\",&DAT_00680580,200,1);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 67,
+      "line": 68,
       "match": "in_stack_fffff2fc",
       "severity": "moderate",
       "text": "in_stack_fffff2fc = ZEXT48(string_data) << 0x20;",
@@ -402,7 +394,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 75,
+      "line": 76,
       "match": "in_stack_fffff2fc",
       "severity": "moderate",
       "text": "in_stack_fffff2fc = ZEXT48(string_data) << 0x20;",
@@ -410,7 +402,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 83,
+      "line": 84,
       "match": "in_stack_fffff2fc",
       "severity": "moderate",
       "text": "in_stack_fffff2fc = ZEXT48(string_data) << 0x20;",
@@ -418,7 +410,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 93,
+      "line": 94,
       "match": "DAT_02f797e0",
       "severity": "mild",
       "text": "(&CStack_958,\"Randomize speeds\",DAT_02f797e0,0);",
@@ -426,7 +418,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 95,
+      "line": 96,
       "match": "DAT_02f797e0",
       "severity": "mild",
       "text": "DAT_02f797e0 = iVar3;",
@@ -434,7 +426,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 96,
+      "line": 97,
       "match": "&stack0xfffff300",
       "severity": "moderate",
       "text": "shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff300);",
@@ -442,23 +434,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 102,
+      "line": 103,
       "match": "DAT_02f797e0",
       "severity": "mild",
       "text": "(((DAT_02f797e0 != 0 || (*(int *)(actor_ptr[0x8d].create_event + 0x3c) != 0)) &&",
       "type": "undefined_data"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 106,
-      "match": "DAT_00680580",
-      "severity": "mild",
-      "text": "(&DAT_00680580,actor_ptr->actor_name,0), iVar3 != 0)) {",
-      "type": "undefined_data"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 127,
+      "line": 128,
       "match": "&stack0xfffff300",
       "severity": "moderate",
       "text": "((CPickList *)&stack0xfffff300,acStack_dc,-1,0);",
@@ -466,7 +450,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 129,
+      "line": 130,
       "match": "&stack0xfffff300",
       "severity": "moderate",
       "text": "shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffff300,0);",
@@ -474,7 +458,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 135,
+      "line": 136,
       "match": "in_stack_fffff2fc",
       "severity": "moderate",
       "text": "in_stack_fffff2fc = uVar4 & 0xffffffff00000000;",

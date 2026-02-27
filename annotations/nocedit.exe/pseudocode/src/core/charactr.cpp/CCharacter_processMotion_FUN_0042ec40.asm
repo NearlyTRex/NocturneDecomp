@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40(CCharacter *this_ptr,uint event_id)
+; int __cdecl core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40(CCharacter *this_ptr,int bone_index)
 ;
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr
-; uint             Stack[0x8]:4   event_id
+; int              Stack[0x8]:4   bone_index
 ; Local Variables:
 ; undefined1       Stack[-0x3c]:1  local_3c
 ; undefined1       Stack[-0x30]:1  local_30

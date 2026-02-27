@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 570,
-    "complexity_score": 341,
+    "complexity_score": 429,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 38,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 206,
-    "suspect_count": 13,
+    "pseudocode_lines": 204,
+    "suspect_count": 22,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 776
+    "total_lines": 774
   },
   "cross_references": [
     {
@@ -36,7 +36,7 @@
     ],
     "convention": "__cdecl",
     "name": "sound_mp3.cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00531680",
-    "signature": "uint __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00531680(CMP3Decoder *this_ptr,float *spectral_dest,SMpegLayer3Granule *granule_info,int channel,int granule,SMpegFrame *frame,int bit_budget)"
+    "signature": "void __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00531680(CMP3Decoder *this_ptr,SMpegSubbandQuantizedSamples *quantized_dest,SMpegLayer3SideInfo *side_info,int channel,int granule,int frame_bit_offset,SMpegFrame *frame)"
   },
   "function_calls": [
     {
@@ -150,15 +150,15 @@
     },
     {
       "addr": "0067e6cc",
-      "name": "INT_0067e6cc",
-      "type": "int",
-      "value": "0x6"
+      "name": "g_Layer3BandIndex[0].l[1]",
+      "type": "undefined4",
+      "value": null
     },
     {
       "addr": "0067e6d0",
-      "name": "INT_0067e6d0",
-      "type": "int",
-      "value": "0xc"
+      "name": "g_Layer3BandIndex[0].l[2]",
+      "type": "undefined4",
+      "value": null
     },
     {
       "addr": "00680170",
@@ -474,17 +474,17 @@
       },
       {
         "is_param": true,
-        "name": "spectral_dest",
+        "name": "quantized_dest",
         "offset": 8,
         "size": 4,
-        "type": "float *"
+        "type": "SMpegSubbandQuantizedSamples *"
       },
       {
         "is_param": true,
-        "name": "granule_info",
+        "name": "side_info",
         "offset": 12,
         "size": 4,
-        "type": "SMpegLayer3Granule *"
+        "type": "SMpegLayer3SideInfo *"
       },
       {
         "is_param": true,
@@ -502,17 +502,17 @@
       },
       {
         "is_param": true,
-        "name": "frame",
+        "name": "frame_bit_offset",
         "offset": 24,
         "size": 4,
-        "type": "SMpegFrame *"
+        "type": "int"
       },
       {
         "is_param": true,
-        "name": "bit_budget",
+        "name": "frame",
         "offset": 28,
         "size": 4,
-        "type": "int"
+        "type": "SMpegFrame *"
       }
     ]
   },
@@ -599,10 +599,50 @@
     },
     {
       "description": "Complex pointer cast",
+      "line": 130,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "if ((*(int *)((int)side_info->granules + iVar8 + 0x10) == 0) ||",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 131,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "(*(int *)((int)side_info->granules + iVar8 + 0x14) != 2)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 133,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "iVar8 = *(int *)((int)side_info->granules + iVar6 + 0x34);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 136,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "(*(int *)((int)side_info->granules + iVar6 + 0x38) + iVar8) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 147,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "uVar9 < (uint)(*(int *)((int)local_24 + local_30 + 0x1c) * 2); uVar9 = uVar9 + 2) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 149,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "pSVar4 = g_HuffmanTables + *(int *)((int)local_24->table_select + local_30);",
+      "text": "pSVar4 = g_HuffmanTables + *(int *)((int)local_24 + local_30 + 0x34);",
       "type": "pointer_cast"
     },
     {
@@ -610,7 +650,7 @@
       "line": 152,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "pSVar4 = g_HuffmanTables + *(int *)((int)local_24->table_select + local_30 + 4);",
+      "text": "pSVar4 = g_HuffmanTables + *(int *)((int)local_24 + local_30 + 0x38);",
       "type": "pointer_cast"
     },
     {
@@ -618,7 +658,39 @@
       "line": 155,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "pSVar4 = g_HuffmanTables + *(int *)((int)local_24->table_select + local_30 + 8);",
+      "text": "pSVar4 = g_HuffmanTables + *(int *)((int)local_24 + local_30 + 0x3c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 166,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "local_28 = g_HuffmanTables + *(int *)((int)piVar1 + iVar7 + 0x5c) + 0x20;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 190,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "iVar8 = *(int *)((int)side_info->granules + iVar6);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 196,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "(this_ptr,(uVar2 - frame_bit_offset) - *(int *)((int)side_info->granules + iVar6));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 198,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "iVar8 = frame_bit_offset + *(int *)((int)side_info->granules + granule * 0x48 + channel * 0xa0);",
       "type": "pointer_cast"
     }
   ]

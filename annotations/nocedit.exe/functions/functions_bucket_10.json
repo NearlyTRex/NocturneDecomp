@@ -7427,6 +7427,38 @@
             ]
           },
           "type":"CBoxActor*"
+        },
+        {
+          "name":"param_2",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"param_3",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
         }
       ]
     }
@@ -13459,7 +13491,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_colquant.c_FUN_00441110",
+    "name":"engine_colquant.c_refinePartitionByDistance_FUN_00441110",
     "ret":"void",
     "vars":{
       "locals":[
@@ -13527,6 +13559,56 @@
           },
           "type":"undefined8"
         }
+      ],
+      "params":[
+        {
+          "name":"workspace",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"SColorQuantWorkspace*"
+        },
+        {
+          "name":"box_index",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"new_box_index",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
       ]
     }
   },
@@ -13541,8 +13623,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_colquant.c_FUN_00441790",
-    "ret":"int",
+    "name":"engine_colquant.c_doubleMax_FUN_00441790",
+    "ret":"double",
     "vars":{
       "locals":[
         {
@@ -13610,10 +13692,49 @@
           "type":"undefined4"
         }
       ],
+      "params":[
+        {
+          "name":"a",
+          "storage":{
+            "offset":4,
+            "size":8,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":8
+              }
+            ]
+          },
+          "type":"double"
+        },
+        {
+          "name":"b",
+          "storage":{
+            "offset":12,
+            "size":8,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":8
+              }
+            ]
+          },
+          "type":"double"
+        }
+      ],
       "ret_storage":{
-        "reg":"EAX",
-        "size":4,
+        "compound":true,
+        "size":8,
         "varnodes":[
+          {
+            "addr":"register:00000008",
+            "offset":8,
+            "size":4
+          },
           {
             "addr":"register:00000000",
             "size":4
@@ -37731,6 +37852,38 @@
             ]
           },
           "type":"CVector3f*"
+        },
+        {
+          "name":"scale",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"damage_amount",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }
@@ -55076,7 +55229,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_path.cpp_FUN_00546310",
+    "name":"core_path.cpp_resetPathfindingQueue_FUN_00546310",
     "ret":"void"
   },
   {
@@ -55584,7 +55737,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_path.cpp_FUN_00548390",
+    "name":"core_path.cpp_getOrCreatePathMap_FUN_00548390",
     "ret":"CPathMap*",
     "vars":{
       "locals":[

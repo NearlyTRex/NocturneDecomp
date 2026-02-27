@@ -15,13 +15,13 @@ SUMMARY
 --------------------------------------------------
 Functions with parameter estimates: 5101
 Functions with no callers: 3242
-Parameter mismatches detected: 508
-Signature accuracy rate: 72.7%
+Parameter mismatches detected: 502
+Signature accuracy rate: 73.0%
 
 Mismatches by confidence:
-  High confidence:   23 (multiple call sites agree)
+  High confidence:   22 (multiple call sites agree)
   Medium confidence: 69 (some agreement)
-  Low confidence:    416 (limited data)
+  Low confidence:    411 (limited data)
 
 ====================================================================================================
 HIGH CONFIDENCE MISMATCHES - Likely signature issues
@@ -46,16 +46,6 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       core_manpuz.cpp_CMansionPuzzle at 0050a6a3: 0 reg [], 6 stack
       core_manpuz.cpp_CMansionPuzzle at 0050a6c7: 0 reg [], 6 stack
       core_manpuz.cpp_CMansionPuzzle at 0050a67c: 0 reg [], 6 stack
-
-  engine_colquant.c_FUN_00441790
-    Declared: 0 params, Estimated: 4 params (+4)
-    Call sites: 7, Confidence: high
-    File: engine/colquant.c
-    Signature: int __cdecl engine_colquant_c_FUN_00441790(void)
-    Sample call sites:
-      engine_colquant.c_FUN_00441260 at 00441526: 0 reg [], 4 stack
-      engine_colquant.c_FUN_00441260 at 004416e9: 0 reg [], 4 stack
-      engine_colquant.c_FUN_00441260 at 004414f0: 0 reg [], 4 stack
 
   core_box.cpp_CBoundingBox3D_render_FUN_004210b0
     Declared: 4 params, Estimated: 1 params (-3)
@@ -86,16 +76,6 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       core_stranger.cpp_CStranger_FU at 005c088e: 2 reg [EAX, EDX], 3 stack
       core_gabriela.cpp_CGabriella_F at 004d5610: 2 reg [EAX, EDX], 3 stack
       core_stranger.cpp_CStranger_FU at 005c0edc: 2 reg [EAX, EDX], 3 stack
-
-  engine_colquant.c_FUN_00441110
-    Declared: 0 params, Estimated: 3 params (+3)
-    Call sites: 4, Confidence: high
-    File: engine/colquant.c
-    Signature: void __cdecl engine_colquant_c_FUN_00441110(void)
-    Sample call sites:
-      engine_colquant.c_FUN_00440b40 at 00440c62: 0 reg [], 3 stack
-      engine_colquant.c_FUN_00440c80 at 00440da4: 0 reg [], 3 stack
-      engine_colquant.c_FUN_00440dc0 at 00440ee4: 0 reg [], 3 stack
 
   core_bodypart.cpp_addVector_FUN_0041b540
     Declared: 3 params, Estimated: 5 params (+2)
@@ -166,6 +146,16 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       core_dtrace.cpp_CDemonRaytrace at 004943c0: 0 reg [], 1 stack
       cockpit_pkbmpset.cpp_CPackedBi at 0054be02: 0 reg [], 1 stack
       shape_edittool.cpp_showMultiCh at 0049ea6c: 0 reg [], 1 stack
+
+  engine_colquant.c_doubleMax_FUN_00441790
+    Declared: 2 params, Estimated: 4 params (+2)
+    Call sites: 7, Confidence: high
+    File: engine/colquant.c
+    Signature: double __cdecl engine_colquant_c_doubleMax_FUN_00441790(double a,double b)
+    Sample call sites:
+      engine_colquant.c_computeBoxSt at 00441526: 0 reg [], 4 stack
+      engine_colquant.c_computeBoxSt at 004416e9: 0 reg [], 4 stack
+      engine_colquant.c_computeBoxSt at 004414f0: 0 reg [], 4 stack
 
   core_dlight.cpp_CDemonLight_endScene_FUN_00472d30
     Declared: 1 params, Estimated: 2 params (+1)
@@ -318,7 +308,7 @@ MEDIUM CONFIDENCE MISMATCHES
 LOW CONFIDENCE MISMATCHES (limited data)
 ====================================================================================================
 
-  416 functions with low-confidence mismatches
+  411 functions with low-confidence mismatches
   Sample:
     cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_F declared:1 est:5 (+4)
     cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_ declared:1 est:3 (+2)
@@ -338,7 +328,7 @@ MISMATCH DIRECTION ANALYSIS
 Functions where declaration has MORE params than estimated: 86
   (May indicate: extra params not being passed, or params in globals)
 
-Functions where declaration has FEWER params than estimated: 422
+Functions where declaration has FEWER params than estimated: 416
   (May indicate: missing params in signature, or calling convention issue)
 
 Distribution of differences (estimated - declared):
@@ -351,10 +341,10 @@ Distribution of differences (estimated - declared):
   -3 params: 9 functions
   -2 params: 16 functions
   -1 params: 51 functions
-  +1 params: 188 functions
-  +2 params: 94 functions
-  +3 params: 51 functions
-  +4 params: 74 functions
+  +1 params: 187 functions
+  +2 params: 95 functions
+  +3 params: 46 functions
+  +4 params: 73 functions
   +5 params: 5 functions
   +6 params: 3 functions
   +7 params: 4 functions

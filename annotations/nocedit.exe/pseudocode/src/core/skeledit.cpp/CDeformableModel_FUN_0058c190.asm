@@ -156,7 +156,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xa240]    ; 0058c1bc
     XOR AH,AH                           ; 0058c1c3
     PUSH EDX                            ; 0058c1c5
-    MOV byte ptr [0x03670650],AH        ; 0058c1c6 | DAT_03670650
+    MOV byte ptr [0x03670650],AH        ; 0058c1c6 | g_SkeleditStatusMessage
     CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 0058c1cc
         ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; _FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     ADD ESP,0x14                        ; 0058c1d1
@@ -544,7 +544,7 @@ section .text
         ;   Label: LAB_0058c613
     PUSH EBX                            ; 0058c61a
     PUSH 0x64aaed                       ; 0058c61b | = "%s is corrupt!"
-    PUSH 0x3670650                      ; 0058c620 | DAT_03670650
+    PUSH 0x3670650                      ; 0058c620 | g_SkeleditStatusMessage
     CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0058c625
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0058c62a
@@ -568,7 +568,7 @@ section .text
         ;   Label: LAB_0058c656
     PUSH ECX                            ; 0058c65d
     PUSH 0x64aa88                       ; 0058c65e | = "Can't open %s"
-    PUSH 0x3670650                      ; 0058c663 | DAT_03670650
+    PUSH 0x3670650                      ; 0058c663 | g_SkeleditStatusMessage
     XOR EBX,EBX                         ; 0058c668
     CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0058c66a
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
@@ -586,7 +586,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0xa234]    ; 0058c686
     PUSH EBP                            ; 0058c68d
     PUSH 0x64aa9a                       ; 0058c68e | = "Heirarchy in %s does not match that i..."
-    PUSH 0x3670650                      ; 0058c693 | DAT_03670650
+    PUSH 0x3670650                      ; 0058c693 | g_SkeleditStatusMessage
     CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0058c698
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EDX,dword ptr [EBP + 0x308]     ; 0058c69d
@@ -632,7 +632,7 @@ section .text
     PUSH 0x0                            ; 0058c724
         ;   Label: LAB_0058c724
     PUSH EBX                            ; 0058c726
-    PUSH 0x3670650                      ; 0058c727 | DAT_03670650
+    PUSH 0x3670650                      ; 0058c727 | g_SkeleditStatusMessage
     LEA EAX,[ESP + 0x8fd4]              ; 0058c72c
     PUSH EAX                            ; 0058c733
     CALL shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20 ; 0058c734

@@ -1,11 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fire_cpp_CFireEffect_createExplosion_FUN_004c8c10(CFireEffect *this_ptr,CVector3f *position)
+; void __cdecl core_fire_cpp_CFireEffect_createExplosion_FUN_004c8c10(CFireEffect *this_ptr,CVector3f *position,float scale,int damage_amount)
 ;
 ; Parameters:
 ; CFireEffect *    Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   position
+; float            Stack[0xc]:4   scale
+; int              Stack[0x10]:4   damage_amount
 ;
 ; XREF[6]:
 ;   core_charactr.cpp_CCharacter_explode_FUN_0042b930 at 0042b9b7
@@ -67,7 +69,7 @@ section .text
     MOV EBP,dword ptr [0x00681ef8]      ; 004c8c64 | g_CSoundPtr
     PUSH EBP                            ; 004c8c6a | g_CSoundInstance
     CALL core_sound.cpp_CSound_playActorSound_FUN_005b3a40 ; 004c8c6b
-        ;   XREF to: 005b3a40 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_playActorSound_FUN_005b3a40(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
+        ;   XREF to: 005b3a40 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_005b3a40(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
     ADD ESP,0x10                        ; 004c8c70
     PUSH dword ptr [ESP + 0x20]         ; 004c8c73
     PUSH EBX                            ; 004c8c77

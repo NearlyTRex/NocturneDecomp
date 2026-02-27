@@ -57,7 +57,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_00429b40(CCharacte
     return;
   }
   pcVar8 = "headlite.raw";
-  pcVar10 = &DAT_00823a80;
+  pcVar10 = g_CollisionTexture.texture_name;
   do {
     cVar3 = *pcVar8;
     *pcVar10 = cVar3;
@@ -71,7 +71,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_00429b40(CCharacte
   local_e8.surface_normal.C = local_e8.surface_normal.A;
   local_e8.surface_normal.D = local_e8.surface_normal.A;
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-            (g_CDemonRendererPtr2,(SMRGLTextureBasic *)&DAT_00823a78);
+            (g_CDemonRendererPtr2,&g_CollisionTexture);
   iVar9 = 0;
   do {
     pCVar5 = g_CDemonRendererPtr2;

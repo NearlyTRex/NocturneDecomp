@@ -1100,7 +1100,7 @@ LAB_005bc1a6:
       pCVar17 = core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
                           ((CDemonActor *)this_ptr,aCStack_1f4,&CStack_200);
       if (0.0 < pCVar17->z) {
-        core_boxactor_cpp_CBoxActor_FUN_00422390(this_ptr_01);
+        core_boxactor_cpp_CBoxActor_FUN_00422390(this_ptr_01,&CStack_230,&CStack_200);
       }
     }
   }

@@ -54,6 +54,6 @@ void __cdecl core_flamecan_cpp_CFlameCan_process_FUN_004cb390(CFlameCan *this_pt
   fStack_24 = (this_ptr->base).location.position.y + fStack_18;
   fStack_20 = (this_ptr->base).location.position.z + fStack_14;
   core_fire_cpp_CFireEffect_createExplosion_FUN_004c8c10
-            (g_CFireEffectPtr,&(this_ptr->flame).base.location.position);
+            (g_CFireEffectPtr,&(this_ptr->flame).base.location.position,16.0,0x44bb8000);
   return;
 }

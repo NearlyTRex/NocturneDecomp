@@ -2,18 +2,6 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 18,
-        "line": 28,
-        "message": "use of undeclared identifier 'DAT_02f7a02c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 51,
-        "line": 29,
-        "message": "use of undeclared identifier 'DAT_02f7a094'"
-      },
-      {
         "category": "format_error",
         "column": 33,
         "line": 45,
@@ -24,12 +12,6 @@
         "column": 29,
         "line": 45,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 38,
-        "line": 49,
-        "message": "use of undeclared identifier 'DAT_02f7a02c'"
       },
       {
         "category": "undeclared_identifier",
@@ -73,13 +55,13 @@
   },
   "complexity": {
     "assembly_lines": 359,
-    "complexity_score": 219,
+    "complexity_score": 189,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 26,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 104,
-    "suspect_count": 11,
+    "suspect_count": 8,
     "suspect_types": [
       "undefined_data"
     ],
@@ -286,8 +268,8 @@
     },
     {
       "addr": "02f7a028",
-      "name": "INT_02f7a028",
-      "type": "int",
+      "name": "g_MsnEditPropertyList.count",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -486,34 +468,10 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_02f7a02c",
-      "severity": "mild",
-      "text": "((*(int *)(&DAT_02f7a02c + INT_02f7c52c * 0xec) == 0xd &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_02f7a094",
-      "severity": "mild",
-      "text": "(this_ptr = *(CDeformableModelInstance **)(&DAT_02f7a094 + INT_02f7c52c * 0xec),",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 30,
       "match": "DAT_02f7c538",
       "severity": "mild",
       "text": "DAT_02f7c538 = 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 42,
-      "match": "DAT_02f7a02c",
-      "severity": "mild",
-      "text": "((CActorProperty *)(&DAT_02f7a02c + INT_02f7c52c * 0xec),",
       "type": "undefined_data"
     },
     {

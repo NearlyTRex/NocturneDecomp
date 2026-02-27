@@ -117,15 +117,15 @@ CVector3f * __cdecl CDemonActor::worldToLocalPoint(CDemonActor *this_ptr,CVector
 
 // Original: core_actor.cpp_CDemonActor_playSound_FUN_00408f60
 // Address: 00408f60
-void __cdecl CDemonActor::playSound(CDemonActor *this_ptr,char *sound_name);
+uint __cdecl CDemonActor::playSound(CDemonActor *this_ptr,char *sound_name);
 
 // Original: core_actor.cpp_CDemonActor_playAmbientSound_FUN_00408f80
 // Address: 00408f80
 void __cdecl CDemonActor::playAmbientSound(CDemonActor *this_ptr,char *sound_name);
 
-// Original: core_actor.cpp_CDemonActor_playSoundWithVolume_FUN_00408fa0
+// Original: core_actor.cpp_CDemonActor_playSoundWithDelay_FUN_00408fa0
 // Address: 00408fa0
-void __cdecl CDemonActor::playSoundWithVolume(CDemonActor *this_ptr,char *sound_name,float volume);
+uint __cdecl CDemonActor::playSoundWithDelay(CDemonActor *this_ptr,char *sound_name,float delay);
 
 // Original: core_actor.cpp_CDemonActor_playAmbientSoundWithVolume_FUN_00408fd0
 // Address: 00408fd0
@@ -347,9 +347,9 @@ void __cdecl archiveMotionState(CMotionController *motion_controller,char *prope
 // Address: 0040bae0
 void __cdecl archivePartStatus(CDeformableModelInstance *model_ptr,char *property_name);
 
-// Original: core_actor.cpp_archiveSimBox_FUN_0040bd70
+// Original: core_actor.cpp_archiveBox_FUN_0040bd70
 // Address: 0040bd70
-void __cdecl archiveSimBox(CSimBox *simbox_ptr,char *property_name);
+void __cdecl archiveBox(CBox *box_ptr,char *property_name);
 
 // Original: core_actor.cpp_archiveClothList_FUN_0040be60
 // Address: 0040be60

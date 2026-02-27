@@ -2658,7 +2658,7 @@ SHuffmanTableSource g_HuffmanTableSources[34] = {
         .ylen = 0x00000002,
         .bits = 0x00000000,
         .reference_index = -1,
-        .huffman_data_ptr = (char *)0x0067EB60
+        .huffman_data_ptr = (char *)&g_HuffmanData01
     },
     {
         .table_size = 0x00000011,
@@ -2666,7 +2666,7 @@ SHuffmanTableSource g_HuffmanTableSources[34] = {
         .ylen = 0x00000003,
         .bits = 0x00000000,
         .reference_index = -1,
-        .huffman_data_ptr = (char *)0x0067EB70
+        .huffman_data_ptr = (char *)&g_HuffmanData02
     },
     {
         .table_size = 0x00000011,
@@ -2674,7 +2674,7 @@ SHuffmanTableSource g_HuffmanTableSources[34] = {
         .ylen = 0x00000003,
         .bits = 0x00000000,
         .reference_index = -1,
-        .huffman_data_ptr = (char *)0x0067EB98
+        .huffman_data_ptr = (char *)&g_HuffmanData03
     },
     {
         .table_size = 0x00000000,
@@ -2690,7 +2690,7 @@ SHuffmanTableSource g_HuffmanTableSources[34] = {
         .ylen = 0x00000004,
         .bits = 0x00000000,
         .reference_index = -1,
-        .huffman_data_ptr = (char *)0x0067EBC0
+        .huffman_data_ptr = (char *)&g_HuffmanData04
     },
     {
         .table_size = 0x0000001F,
@@ -2698,7 +2698,7 @@ SHuffmanTableSource g_HuffmanTableSources[34] = {
         .ylen = 0x00000004,
         .bits = 0x00000000,
         .reference_index = -1,
-        .huffman_data_ptr = (char *)0x0067EC00
+        .huffman_data_ptr = (char *)&g_HuffmanData05
     },
     {
         .table_size = 0x00000047,
@@ -2706,7 +2706,7 @@ SHuffmanTableSource g_HuffmanTableSources[34] = {
         .ylen = 0x00000006,
         .bits = 0x00000000,
         .reference_index = -1,
-        .huffman_data_ptr = (char *)0x0067EC40
+        .huffman_data_ptr = (char *)&g_HuffmanData06
     },
     {
         .table_size = 0x00000047,
@@ -2714,7 +2714,7 @@ SHuffmanTableSource g_HuffmanTableSources[34] = {
         .ylen = 0x00000006,
         .bits = 0x00000000,
         .reference_index = -1,
-        .huffman_data_ptr = (char *)0x0067ECD0
+        .huffman_data_ptr = (char *)&g_HuffmanData07
     },
     {
         .table_size = 0x00000047,
@@ -2722,7 +2722,7 @@ SHuffmanTableSource g_HuffmanTableSources[34] = {
         .ylen = 0x00000006,
         .bits = 0x00000000,
         .reference_index = -1,
-        .huffman_data_ptr = (char *)0x0067ED60
+        .huffman_data_ptr = (char *)&g_HuffmanData08
     },
     {
         .table_size = 0x0000007F,
@@ -2730,7 +2730,7 @@ SHuffmanTableSource g_HuffmanTableSources[34] = {
         .ylen = 0x00000008,
         .bits = 0x00000000,
         .reference_index = -1,
-        .huffman_data_ptr = (char *)0x0067EDF0
+        .huffman_data_ptr = (char *)&g_HuffmanData09
     },
     {
         .table_size = 0x0000007F,
@@ -2738,7 +2738,7 @@ SHuffmanTableSource g_HuffmanTableSources[34] = {
         .ylen = 0x00000008,
         .bits = 0x00000000,
         .reference_index = -1,
-        .huffman_data_ptr = (char *)0x0067EEF0
+        .huffman_data_ptr = (char *)&g_HuffmanData10
     },
     {
         .table_size = 0x0000007F,
@@ -2746,7 +2746,7 @@ SHuffmanTableSource g_HuffmanTableSources[34] = {
         .ylen = 0x00000008,
         .bits = 0x00000000,
         .reference_index = -1,
-        .huffman_data_ptr = (char *)0x0067EFF0
+        .huffman_data_ptr = (char *)&g_HuffmanData11
     },
     {
         .table_size = 0x000001FF,
@@ -2754,7 +2754,7 @@ SHuffmanTableSource g_HuffmanTableSources[34] = {
         .ylen = 0x00000010,
         .bits = 0x00000000,
         .reference_index = -1,
-        .huffman_data_ptr = (char *)0x0067F0F0
+        .huffman_data_ptr = (char *)&g_HuffmanData12
     },
     {
         .table_size = 0x00000000,
@@ -2770,7 +2770,7 @@ SHuffmanTableSource g_HuffmanTableSources[34] = {
         .ylen = 0x00000010,
         .bits = 0x00000000,
         .reference_index = -1,
-        .huffman_data_ptr = (char *)0x0067F4F0
+        .huffman_data_ptr = (char *)&g_HuffmanData13
     },
     {
         .table_size = 0x000001FF,
@@ -2778,7 +2778,7 @@ SHuffmanTableSource g_HuffmanTableSources[34] = {
         .ylen = 0x00000010,
         .bits = 0x00000001,
         .reference_index = -1,
-        .huffman_data_ptr = (char *)0x0067F8F0
+        .huffman_data_ptr = (char *)&g_HuffmanData14
     },
     {
         .table_size = 0x000001FF,
@@ -2842,7 +2842,7 @@ SHuffmanTableSource g_HuffmanTableSources[34] = {
         .ylen = 0x00000010,
         .bits = 0x00000004,
         .reference_index = -1,
-        .huffman_data_ptr = (char *)0x0067FCF0
+        .huffman_data_ptr = (char *)&g_HuffmanData15
     },
     {
         .table_size = 0x00000200,
@@ -2906,7 +2906,7 @@ SHuffmanTableSource g_HuffmanTableSources[34] = {
         .ylen = 0x00000010,
         .bits = 0x00000000,
         .reference_index = -1,
-        .huffman_data_ptr = (char *)0x006800F0
+        .huffman_data_ptr = (char *)&g_HuffmanData16
     },
     {
         .table_size = 0x0000001F,
@@ -2914,7 +2914,7 @@ SHuffmanTableSource g_HuffmanTableSources[34] = {
         .ylen = 0x00000010,
         .bits = 0x00000000,
         .reference_index = -1,
-        .huffman_data_ptr = (char *)0x00680130
+        .huffman_data_ptr = (char *)&g_HuffmanData17
     }
 };
 
@@ -3578,11 +3578,11 @@ WatcomStaticDestructorNode g_CMouseDestructorNode = {
     .registration_type = 0x00000001,
     .object_instance = (void *)&g_CMouseInstance
 };
-WatcomStaticDestructorNode WatcomStaticDestructorNode_00680bc8 = {
+WatcomStaticDestructorNode g_PathMapCacheDestructorNode = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&WatcomDestructorCall_006620e0,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&CPathMap_ARRAY_02fd9060
+    .object_instance = (void *)&g_PathMapCache
 };
 WatcomStaticDestructorNode g_CDemonPodMainDestructorNode = {
     .next = nullptr,
@@ -3656,11 +3656,11 @@ WatcomStaticDestructorNode g_ThumbnailScrollBarDestructorNode = {
     .registration_type = 0x00000001,
     .object_instance = (void *)&g_ThumbnailScrollBar
 };
-WatcomStaticDestructorNode WatcomStaticDestructorNode_00681850 = {
+WatcomStaticDestructorNode g_SkeleditViewModelDestructorNode = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&WatcomDestructorCall_00662e30,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&CKeyFramedModel_03665f74
+    .object_instance = (void *)&g_SkeleditViewModel
 };
 WatcomStaticDestructorNode g_DeformableModelPoolDestructorNode = {
     .next = nullptr,

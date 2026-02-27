@@ -1,18 +1,22 @@
 {
   "complexity": {
     "assembly_lines": 127,
-    "complexity_score": 263,
+    "complexity_score": 360,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 33,
-    "suspect_count": 22,
+    "max_suspect_severity": "severe",
+    "pseudocode_lines": 40,
+    "suspect_count": 29,
     "suspect_types": [
+      "decompiler_intrinsic",
+      "extra_output",
+      "fnstsw_flag_artifact",
+      "register_param",
       "special_crt_function",
       "unnamed_param"
     ],
-    "total_lines": 160
+    "total_lines": 167
   },
   "cross_references": [
     {
@@ -33,7 +37,7 @@
     "convention": "unknown",
     "is_ebp_frame": true,
     "name": "crt_unknown.c_FUN_0060af5d",
-    "signature": "int crt_unknown_c_FUN_0060af5d(int param_1,int *param_2,int param_3)"
+    "signature": "undefined8 crt_unknown_c_FUN_0060af5d(int param_1,int *param_2,int param_3)"
   },
   "function_calls": [
     {
@@ -185,7 +189,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "int FUN_0060af5d(int param_1,int *param_2,int param_3)",
+      "text": "ulonglong FUN_0060af5d(int param_1,int *param_2,int param_3)",
       "type": "unnamed_param"
     },
     {
@@ -193,7 +197,7 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "int FUN_0060af5d(int param_1,int *param_2,int param_3)",
+      "text": "ulonglong FUN_0060af5d(int param_1,int *param_2,int param_3)",
       "type": "unnamed_param"
     },
     {
@@ -201,47 +205,39 @@
       "line": 2,
       "match": "param_3",
       "severity": "mild",
-      "text": "int FUN_0060af5d(int param_1,int *param_2,int param_3)",
+      "text": "ulonglong FUN_0060af5d(int param_1,int *param_2,int param_3)",
       "type": "unnamed_param"
     },
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 6,
+      "match": "extraout_EDX",
+      "severity": "moderate",
+      "text": "int extraout_EDX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 8,
+      "match": "in_DS",
+      "severity": "mild",
+      "text": "ushort in_DS;",
+      "type": "register_param"
+    },
+    {
       "description": "Unnamed function parameter",
-      "line": 12,
+      "line": 15,
       "match": "param_2",
       "severity": "mild",
       "text": "*param_2 = *param_2 + 8;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*param_2 = *param_2 + 8;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "*(uint *)(param_3 + 0x28) = local_34;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 15,
-      "match": "param_3",
+      "match": "param_2",
       "severity": "mild",
-      "text": "*(uint *)(param_3 + 0x2c) = local_30;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "*(uint *)(param_3 + 0x30) = local_2c;",
+      "text": "*param_2 = *param_2 + 8;",
       "type": "unnamed_param"
     },
     {
@@ -249,7 +245,15 @@
       "line": 17,
       "match": "param_3",
       "severity": "mild",
-      "text": "*(uint *)(param_3 + 0x34) = local_28;",
+      "text": "*(uint *)(param_3 + 0x28) = local_34;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "*(uint *)(param_3 + 0x2c) = local_30;",
       "type": "unnamed_param"
     },
     {
@@ -257,7 +261,7 @@
       "line": 19,
       "match": "param_3",
       "severity": "mild",
-      "text": "iVar1 = *(int *)(param_3 + 0x20);",
+      "text": "*(uint *)(param_3 + 0x30) = local_2c;",
       "type": "unnamed_param"
     },
     {
@@ -265,36 +269,12 @@
       "line": 20,
       "match": "param_3",
       "severity": "mild",
-      "text": "*(int *)(param_3 + 0x20) = iVar1 + 1;",
+      "text": "*(uint *)(param_3 + 0x34) = local_28;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(byte *)(param_1 + iVar1) = 0x2d;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "else if ((*(byte *)(param_3 + 0x1e) & 4) == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "if ((*(byte *)(param_3 + 0x1e) & 2) != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 22,
       "match": "param_3",
       "severity": "mild",
       "text": "iVar1 = *(int *)(param_3 + 0x20);",
@@ -302,23 +282,47 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 24,
       "match": "param_3",
       "severity": "mild",
-      "text": "*(int *)(param_3 + 0x20) = iVar1 + 1;",
+      "text": "*(int *)(param_3 + 0x20) = iVar2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(byte *)(param_1 + iVar1) = 0x2d;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 27,
-      "match": "param_1",
+      "match": "param_3",
       "severity": "mild",
-      "text": "*(byte *)(param_1 + iVar1) = 0x20;",
+      "text": "else if ((*(byte *)(param_3 + 0x1e) & 4) == 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 28,
+      "match": "extraout_EDX",
+      "severity": "moderate",
+      "text": "iVar2 = extraout_EDX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "if ((*(byte *)(param_3 + 0x1e) & 2) != 0) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 30,
       "match": "param_3",
       "severity": "mild",
       "text": "iVar1 = *(int *)(param_3 + 0x20);",
@@ -329,7 +333,7 @@
       "line": 32,
       "match": "param_3",
       "severity": "mild",
-      "text": "*(int *)(param_3 + 0x20) = iVar1 + 1;",
+      "text": "*(int *)(param_3 + 0x20) = iVar2;",
       "type": "unnamed_param"
     },
     {
@@ -337,16 +341,72 @@
       "line": 33,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(byte *)(param_1 + iVar1) = 0x2b;",
+      "text": "*(byte *)(param_1 + iVar1) = 0x20;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 35,
+      "line": 37,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "iVar1 = *(int *)(param_3 + 0x20);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 39,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "*(int *)(param_3 + 0x20) = iVar2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 40,
       "match": "param_1",
       "severity": "mild",
-      "text": "return param_1;",
+      "text": "*(byte *)(param_1 + iVar1) = 0x2b;",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 42,
+      "match": "in_DS",
+      "severity": "mild",
+      "text": "return CONCAT44(CONCAT22((short)((uint)iVar2 >> 0x10),in_DS),param_1);",
+      "type": "register_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 42,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "return CONCAT44(CONCAT22((short)((uint)iVar2 >> 0x10),in_DS),param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "FNSTSW flag reconstruction (floating-point comparison artifact)",
+      "line": 42,
+      "match": "CONCAT22((short)((uint)iVar2 >> 0x10",
+      "severity": "severe",
+      "text": "return CONCAT44(CONCAT22((short)((uint)iVar2 >> 0x10),in_DS),param_1);",
+      "type": "fnstsw_flag_artifact"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 42,
+      "match": "CONCAT44",
+      "severity": "mild",
+      "text": "return CONCAT44(CONCAT22((short)((uint)iVar2 >> 0x10),in_DS),param_1);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 42,
+      "match": "CONCAT22",
+      "severity": "mild",
+      "text": "return CONCAT44(CONCAT22((short)((uint)iVar2 >> 0x10),in_DS),param_1);",
+      "type": "decompiler_intrinsic"
     },
     {
       "address": "0060af5d",

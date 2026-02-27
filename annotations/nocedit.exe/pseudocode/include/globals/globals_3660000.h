@@ -9,8 +9,11 @@
 // =============================================================================
 
 // CKeyFramedModel
-extern CKeyFramedModel CKeyFramedModel_03665f74;
+extern CKeyFramedModel g_SkeleditViewModel;
 
-// undefined1
-extern undefined1 DAT_0366b64c;
+// char[20480]
+extern char g_SkeleditClipboardBuffer[20480];
+
+// uchar
+extern uchar g_SkeleditViewModelInitFlag;
 

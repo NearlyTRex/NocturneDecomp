@@ -29,8 +29,8 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveActor_FUN_0040b870
+;   core_actor.cpp_archiveBox_FUN_0040bd70
 ;   core_actor.cpp_archiveInteger_FUN_0040b7f0
-;   core_actor.cpp_archiveSimBox_FUN_0040bd70
 ;   core_actor.cpp_CDemonActor_archive_FUN_0040c1c0
 ;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0041a050
 ;   core_bodypart.cpp_CBodyPart_setCounts_FUN_004191d0
@@ -184,8 +184,8 @@ section .text
     PUSH 0x615d88                       ; 004199f9 | = "simBox"
     LEA EAX,[EBX + 0xccc]               ; 004199fe
     PUSH EAX                            ; 00419a04
-    CALL core_actor.cpp_archiveSimBox_FUN_0040bd70 ; 00419a05
-        ;   XREF to: 0040bd70 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveSimBox_FUN_0040bd70(CSimBox * simbox_ptr, char * property_name)
+    CALL core_actor.cpp_archiveBox_FUN_0040bd70 ; 00419a05
+        ;   XREF to: 0040bd70 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveBox_FUN_0040bd70(CBox * box_ptr, char * property_name)
     ADD ESP,0x8                         ; 00419a0a
     PUSH 0x615d8f                       ; 00419a0d | = "carriedByActor"
     LEA EAX,[EBX + 0xf28]               ; 00419a12

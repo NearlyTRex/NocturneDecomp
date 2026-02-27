@@ -55,6 +55,9 @@ SMRGLHeaderPrimitive* g_RenderFaceArray[2000] = {};
 // SMRGLPrimitiveQuad[1000]
 SMRGLPrimitiveQuad g_ClothBackfaceBuffer[1000] = {};
 
+// SMRGLTextureBasic
+SMRGLTextureBasic g_CollisionTexture = {};
+
 // SRenderVertex*[16]
 SRenderVertex* g_ClipperCullingPointers[16] = {};
 
@@ -108,6 +111,7 @@ int INT_008224d4 = {};
 int INT_008224d8 = {};
 int INT_0082274c = {};
 int INT_00822750 = {};
+int INT_00822754 = {};
 int INT_00822758 = {};
 int INT_0082275c = {};
 int INT_00822760 = {};
@@ -129,12 +133,18 @@ int INT_008227d8 = {};
 int INT_008227dc = {};
 int INT_008227e0 = {};
 int INT_008227e4 = {};
+int INT_00822944 = {};
+int INT_00822948 = {};
+int INT_0082294c = {};
 int INT_00822950 = {};
 int INT_00822954 = {};
 int INT_00822958 = {};
 int INT_0082295c = {};
 int INT_00822960 = {};
 int INT_00822964 = {};
+int INT_00822968 = {};
+int INT_0082296c = {};
+int INT_008229ac = {};
 int INT_00822cdc = {};
 int INT_00822ce0 = {};
 int INT_00822ce4 = {};
@@ -163,19 +173,8 @@ uint g_RandomSeedValue = {};
 
 // undefined1
 undefined1 DAT_00822d0c = {};
-undefined1 DAT_00823a80 = {};
-undefined1 DAT_00823a81 = {};
-undefined1 DAT_00823a82 = {};
-undefined1 DAT_00823a83 = {};
 
 // undefined4
-undefined4 DAT_00822754 = {};
-undefined4 DAT_00822944 = {};
-undefined4 DAT_00822948 = {};
-undefined4 DAT_0082294c = {};
-undefined4 DAT_00822968 = {};
-undefined4 DAT_0082296c = {};
-undefined4 DAT_008229ac = {};
 undefined4 DAT_00822f48 = {};
 undefined4 DAT_00822f4c = {};
 undefined4 DAT_00822f50 = {};

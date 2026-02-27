@@ -25,7 +25,7 @@
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
 ;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0
 ;   core_path.cpp_CPathMap_findPathWithRetry_FUN_00547d00
-;   core_path.cpp_FUN_00548500
+;   core_path.cpp_getPathMap_FUN_00548500
 ;
 ; *****************************************************************************
 
@@ -156,8 +156,8 @@ section .text
     MOV EAX,dword ptr [EBX + 0xbe3c]    ; 00425e05
     ADD EAX,0x20                        ; 00425e0b
     PUSH EAX                            ; 00425e0e
-    CALL core_path.cpp_FUN_00548500     ; 00425e0f
-        ;   XREF to: 00548500 (UNCONDITIONAL_CALL)  ; CPathMap * core_path.cpp_FUN_00548500(CLocation * location)
+    CALL core_path.cpp_getPathMap_FUN_00548500 ; 00425e0f
+        ;   XREF to: 00548500 (UNCONDITIONAL_CALL)  ; CPathMap * core_path.cpp_getPathMap_FUN_00548500(CLocation * location)
     ADD ESP,0x4                         ; 00425e14
     MOV EDI,EAX                         ; 00425e17
     MOV EAX,dword ptr [EBX + 0x6c]      ; 00425e19

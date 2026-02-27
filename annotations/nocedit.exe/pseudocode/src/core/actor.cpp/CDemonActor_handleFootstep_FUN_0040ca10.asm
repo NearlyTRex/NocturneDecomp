@@ -150,7 +150,7 @@ section .text
     MOV ECX,dword ptr [0x00681ef8]      ; 0040cb3e | g_CSoundInstance | g_CSoundPtr
     PUSH ECX                            ; 0040cb44 | g_CSoundInstance
     CALL core_sound.cpp_CSound_playActorSound_FUN_005b3a40 ; 0040cb45
-        ;   XREF to: 005b3a40 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_playActorSound_FUN_005b3a40(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
+        ;   XREF to: 005b3a40 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorSound_FUN_005b3a40(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
     ADD ESP,0x10                        ; 0040cb4a
     ADD ESP,0x7c                        ; 0040cb4d
     POP EBP                             ; 0040cb50

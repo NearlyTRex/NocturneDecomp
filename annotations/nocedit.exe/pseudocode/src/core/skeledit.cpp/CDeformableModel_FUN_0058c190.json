@@ -2,18 +2,6 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 106,
-        "message": "use of undeclared identifier 'DAT_03670650'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 112,
-        "message": "use of undeclared identifier 'DAT_03670650'"
-      },
-      {
         "category": "format_error",
         "column": 36,
         "line": 122,
@@ -27,27 +15,9 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 17,
-        "line": 132,
-        "message": "use of undeclared identifier 'DAT_03670650'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 42,
-        "line": 142,
-        "message": "use of undeclared identifier 'DAT_03670650'"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 43,
-        "line": 145,
+        "line": 146,
         "message": "use of undeclared identifier 'stack0xffff5dd8'; did you mean 'in_stack_ffff5dd8'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 163,
-        "message": "use of undeclared identifier 'DAT_03670650'"
       }
     ],
     "success": false,
@@ -55,20 +25,19 @@
   },
   "complexity": {
     "assembly_lines": 1765,
-    "complexity_score": 957,
+    "complexity_score": 903,
     "cross_reference_count": 0,
     "function_call_count": 65,
     "global_count": 65,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 687,
-    "suspect_count": 25,
+    "pseudocode_lines": 688,
+    "suspect_count": 20,
     "suspect_types": [
       "pointer_cast",
       "stack_param",
-      "stack_ref",
-      "undefined_data"
+      "stack_ref"
     ],
-    "total_lines": 2452
+    "total_lines": 2453
   },
   "cross_references": [],
   "function": {
@@ -797,8 +766,8 @@
     },
     {
       "addr": "03670650",
-      "name": "DAT_03670650",
-      "type": "undefined4",
+      "name": "g_SkeleditStatusMessage",
+      "type": "char[504]",
       "value": null
     }
   ],
@@ -1516,22 +1485,6 @@
       "type": "stack_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 99,
-      "match": "DAT_03670650",
-      "severity": "mild",
-      "text": "DAT_03670650 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 105,
-      "match": "DAT_03670650",
-      "severity": "mild",
-      "text": "_sprintf(&DAT_03670650,\"Can't open %s\",filename);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Direct stack address reference",
       "line": 117,
       "match": "&stack0xffff5dd8",
@@ -1548,40 +1501,16 @@
       "type": "stack_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 125,
-      "match": "DAT_03670650",
-      "severity": "mild",
-      "text": "(&DAT_03670650,\"Heirarchy in %s does not match that in skeleton %s\",filename,this_ptr->model_name);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 135,
-      "match": "DAT_03670650",
-      "severity": "mild",
-      "text": "(&local_1260,&DAT_03670650,iVar12,0);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 138,
+      "line": 139,
       "match": "&stack0xffff5dd8",
       "severity": "moderate",
       "text": "core_skeledit_cpp_FUN_0058afe0(&stack0xffff5dd8);",
       "type": "stack_ref"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 156,
-      "match": "DAT_03670650",
-      "severity": "mild",
-      "text": "_sprintf(&DAT_03670650,\"%s is corrupt!\",filename);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 183,
+      "line": 184,
       "match": "in_stack_ffff5dd8",
       "severity": "moderate",
       "text": "if (0 < in_stack_ffff5dd8) {",
@@ -1589,7 +1518,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 188,
+      "line": 189,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "pfVar19 = (float *)((int)local_2520 + iVar12);",
@@ -1597,7 +1526,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 193,
+      "line": 194,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
       "text": "pCVar14 = (CMatrix3x4f *)((int)pCVar14 + ((uint)bVar22 * -2 + 1) * 4);",
@@ -1605,7 +1534,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 197,
+      "line": 198,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
       "text": "local_70 = &((CMatrix3x4f *)((int)local_70 + 0x60))->m[2].x;",
@@ -1613,7 +1542,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 198,
+      "line": 199,
       "match": "in_stack_ffff5dd8",
       "severity": "moderate",
       "text": "} while (local_28 < in_stack_ffff5dd8);",
@@ -1621,7 +1550,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 347,
+      "line": 348,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)pcVar20 = *(uint *)((int)pSVar2->bone_weights + local_68 + 0xc);",
@@ -1629,7 +1558,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 348,
+      "line": 349,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)(pcVar20 + 4) = *(uint *)((int)pSVar2->bone_weights + local_68 + 0x10);",
@@ -1637,7 +1566,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 349,
+      "line": 350,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)(pcVar20 + 8) = *(uint *)((int)pSVar2->bone_weights + local_68 + 0x14);",
@@ -1645,7 +1574,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 360,
+      "line": 361,
       "match": "in_stack_ffff5dd8",
       "severity": "moderate",
       "text": "if (((iVar6 != 1) || (local_94 < 1)) || (in_stack_ffff5dd8 < local_94)) {",
@@ -1653,7 +1582,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 393,
+      "line": 394,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar13 = (uint *)((int)(local_1f4.tri_data)->attribute_indices + local_58);",
@@ -1661,7 +1590,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 397,
+      "line": 398,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uVar3 = *(uint *)((int)this_ptr->index_data_ptr[0] + local_60);",
@@ -1669,7 +1598,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 435,
+      "line": 436,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar13 = (uint *)((int)(local_1f4.tri_data)->attribute_indices + local_48);",
@@ -1677,7 +1606,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 439,
+      "line": 440,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uVar3 = *(uint *)((int)this_ptr->index_data_ptr[0] + local_50);",
@@ -1685,7 +1614,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 480,
+      "line": 481,
       "match": "(STextureSet *)((int)",
       "severity": "mild",
       "text": "pSVar17 = (STextureSet *)((int)pSVar17 + (uint)bVar22 * -8 + 4);",
@@ -1693,7 +1622,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 481,
+      "line": 482,
       "match": "(SMRGLTextureLod *)((int)",
       "severity": "mild",
       "text": "pSVar21 = (SMRGLTextureLod *)((int)pSVar21 + ((uint)bVar22 * -2 + 1) * 4);",
@@ -1701,7 +1630,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 564,
+      "line": 565,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "iVar7 = *(int *)((int)local_d8 + iVar12);",

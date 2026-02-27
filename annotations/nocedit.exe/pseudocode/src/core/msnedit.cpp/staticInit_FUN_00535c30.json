@@ -1,28 +1,19 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 78,
-        "line": 12,
-        "message": "use of undeclared identifier 'DAT_02f7a024'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 14,
-    "complexity_score": 22,
+    "complexity_score": 7,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 3,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 7,
-    "suspect_count": 1,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 21
   },
   "cross_references": [],
@@ -64,8 +55,8 @@
     },
     {
       "addr": "02f7a024",
-      "name": "DAT_02f7a024",
-      "type": "undefined4",
+      "name": "g_MsnEditPropertyList",
+      "type": "CActorPropertyList",
       "value": null
     },
     {
@@ -110,14 +101,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 5,
-      "match": "DAT_02f7a024",
-      "severity": "mild",
-      "text": "core_actor_cpp_CActorPropertyList_init_FUN_0040e130((CActorPropertyList *)&DAT_02f7a024);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

@@ -2,11 +2,11 @@
 // Address: 005334b0
 // Address Range: [[005334b0, 00533684]]
 // Convention: __cdecl
-// Signature: void __cdecl sound_mp3_cpp_antiAliasingButterfly_FUN_005334b0(float *input_samples,float *output_samples,SMpegFrame *frame_info,void *unused_param4)
+// Signature: void __cdecl sound_mp3_cpp_antiAliasingButterfly_FUN_005334b0(float *input_samples,float *output_samples,SMpegFrame *frame_info,SMpegFrameHeader *header)
 
 #include "nocturne.h"
 
-void __cdecl sound_mp3_cpp_antiAliasingButterfly_FUN_005334b0(float *input_samples,float *output_samples,SMpegFrame *frame_info,void *unused_param4)
+void __cdecl sound_mp3_cpp_antiAliasingButterfly_FUN_005334b0(float *input_samples,float *output_samples,SMpegFrame *frame_info,SMpegFrameHeader *header)
 
 {
   double *pdVar1;

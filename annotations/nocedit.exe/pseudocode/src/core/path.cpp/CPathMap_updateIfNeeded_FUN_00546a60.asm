@@ -15,7 +15,7 @@
 ;
 ; XREF[3]:
 ;   core_actor.cpp_CDemonActor_setup_FUN_00408bb0 at 00408bf8
-;   core_path.cpp_FUN_00548390 at 00548477
+;   core_path.cpp_getOrCreatePathMap_FUN_00548390 at 00548477
 ;   core_set.cpp_CDemonSet_processActors_FUN_0056b810 at 0056ba45
 ;
 ; Referenced Globals:

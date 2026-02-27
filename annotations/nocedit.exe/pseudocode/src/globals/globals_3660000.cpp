@@ -5,8 +5,11 @@
 // =============================================================================
 
 // CKeyFramedModel
-CKeyFramedModel CKeyFramedModel_03665f74 = {};
+CKeyFramedModel g_SkeleditViewModel = {};
 
-// undefined1
-undefined1 DAT_0366b64c = {};
+// char[20480]
+char g_SkeleditClipboardBuffer[20480] = {};
+
+// uchar
+uchar g_SkeleditViewModelInitFlag = {};
 

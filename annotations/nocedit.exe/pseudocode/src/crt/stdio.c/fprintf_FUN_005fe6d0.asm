@@ -13,13 +13,13 @@
 ;   cockpit_ckptutil.c_saveEdgeListFile_FUN_00433480 at 004334ed
 ;   core_actor.cpp_CDemonActor_save_FUN_0040af30 at 0040af86
 ;   core_actor.cpp_archiveActor_FUN_0040b870 at 0040b8ba
+;   core_actor.cpp_archiveBox_FUN_0040bd70 at 0040be09
 ;   core_actor.cpp_archiveClothList_FUN_0040be60 at 0040bf68
 ;   core_actor.cpp_archiveDescription_FUN_0040b290 at 0040b2f4
 ;   core_actor.cpp_archiveFloat_FUN_0040b770 at 0040b7dd
 ;   core_actor.cpp_archiveInteger_FUN_0040b7f0 at 0040b859
 ;   core_actor.cpp_archiveLocation_FUN_0040b480 at 0040b510
 ;   core_actor.cpp_archiveMotionState_FUN_0040b9f0 at 0040ba89
-;   core_actor.cpp_archiveOrientation_FUN_0040b3e0 at 0040b467
 ;   ... and 107 more
 ;
 ; Called Functions:

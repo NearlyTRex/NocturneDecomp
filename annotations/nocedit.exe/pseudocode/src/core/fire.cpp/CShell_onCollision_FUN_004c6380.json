@@ -6,18 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 28,
-    "complexity_score": 110,
+    "complexity_score": 64,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 50,
-    "suspect_count": 5,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 49,
+    "suspect_count": 1,
     "suspect_types": [
-      "extra_output",
       "pointer_cast"
     ],
-    "total_lines": 78
+    "total_lines": 77
   },
   "cross_references": [],
   "function": {
@@ -126,44 +125,12 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 7,
-      "match": "extraout_EAX",
-      "severity": "moderate",
-      "text": "uint extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 8,
-      "match": "extraout_EAX_00",
-      "severity": "moderate",
-      "text": "uint extraout_EAX_00;",
-      "type": "extra_output"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 27,
+      "line": 26,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "(*(uint *)((int)g_ShellBounceSoundHandles + iVar3));",
+      "text": "(*(uint *)((int)g_ShellBounceSoundHandles + iVar4));",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 39,
-      "match": "extraout_EAX",
-      "severity": "moderate",
-      "text": "g_ShellBounceSoundHandles[iVar4] = extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 46,
-      "match": "extraout_EAX_00",
-      "severity": "moderate",
-      "text": "g_ShellBounceSoundHandles[iVar4] = extraout_EAX_00;",
-      "type": "extra_output"
     }
   ],
   "vtable_info": {

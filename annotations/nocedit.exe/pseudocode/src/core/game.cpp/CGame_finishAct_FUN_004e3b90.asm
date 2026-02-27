@@ -424,7 +424,7 @@ section .text
     PUSH 0xc0                           ; 004e3f4f
     PUSH 0x100                          ; 004e3f54
     PUSH 0x14                           ; 004e3f59
-    PUSH 0x2d7d6f0                      ; 004e3f5b | DAT_02d7d6f0
+    PUSH 0x2d7d6f0                      ; 004e3f5b | g_ActStatsTextBuffer2
     LEA EAX,[ESP + 0x14]                ; 004e3f60
     PUSH EAX                            ; 004e3f64
     MOV ESI,dword ptr [ESP + 0x548]     ; 004e3f65
@@ -445,8 +445,8 @@ section .text
     TEST EBX,EBX                        ; 004e3f97
     JLE 0x004e3fe0                      ; 004e3f99
         ;   XREF to: 004e3fe0 (CONDITIONAL_JUMP)  ; LAB_004e3fe0
-    MOV EBX,0x2d7d6f0                   ; 004e3f9b | DAT_02d7d6f0
-    PUSH EBX                            ; 004e3fa0 | DAT_02d7d6f0 | DAT_02d7d7f0
+    MOV EBX,0x2d7d6f0                   ; 004e3f9b | g_ActStatsTextBuffer2
+    PUSH EBX                            ; 004e3fa0 | g_ActStatsTextBuffer2 | DAT_02d7d7f0
         ;   Label: LAB_004e3fa0
     PUSH 0x0                            ; 004e3fa1
     PUSH 0xf8                           ; 004e3fa3

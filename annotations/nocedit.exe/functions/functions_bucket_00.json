@@ -10892,7 +10892,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_colquant.c_FUN_00440c80",
+    "name":"engine_colquant.c_partitionByGreen_FUN_00440c80",
     "ret":"void",
     "vars":{
       "locals":[
@@ -10928,6 +10928,56 @@
           },
           "type":"undefined4"
         }
+      ],
+      "params":[
+        {
+          "name":"workspace",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"SColorQuantWorkspace*"
+        },
+        {
+          "name":"box_index",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"new_box_index",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
       ]
     }
   },
@@ -10942,7 +10992,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_colquant.c_FUN_00440f00",
+    "name":"engine_colquant.c_partitionByIntensity_FUN_00440f00",
     "ret":"void",
     "vars":{
       "locals":[
@@ -10977,6 +11027,56 @@
             ]
           },
           "type":"undefined4"
+        }
+      ],
+      "params":[
+        {
+          "name":"workspace",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"SColorQuantWorkspace*"
+        },
+        {
+          "name":"box_index",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"new_box_index",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }
@@ -22917,7 +23017,7 @@
         "start":"00499880"
       }
     ],
-    "conv":"__cdecl",
+    "conv":"__stack2_esi",
     "importable":true,
     "name":"core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00499880",
     "ret":"void",
@@ -23040,13 +23140,12 @@
         {
           "name":"output_voxel_coords",
           "storage":{
-            "offset":12,
+            "reg":"ESI",
             "size":4,
-            "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0xc]",
-                "offset":12,
+                "addr":"register:00000018",
+                "offset":24,
                 "size":4
               }
             ]
@@ -53112,7 +53211,7 @@
               }
             ]
           },
-          "type":"SMpegLayer3Granule*"
+          "type":"SMpegLayer3SideInfo*"
         },
         {
           "name":"channel",
@@ -53177,7 +53276,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"sound_mp3.cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00531680",
-    "ret":"uint",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -53423,7 +53522,7 @@
           "type":"CMP3Decoder*"
         },
         {
-          "name":"spectral_dest",
+          "name":"quantized_dest",
           "storage":{
             "offset":8,
             "size":4,
@@ -53436,10 +53535,10 @@
               }
             ]
           },
-          "type":"float*"
+          "type":"SMpegSubbandQuantizedSamples*"
         },
         {
-          "name":"granule_info",
+          "name":"side_info",
           "storage":{
             "offset":12,
             "size":4,
@@ -53452,7 +53551,7 @@
               }
             ]
           },
-          "type":"SMpegLayer3Granule*"
+          "type":"SMpegLayer3SideInfo*"
         },
         {
           "name":"channel",
@@ -53487,7 +53586,7 @@
           "type":"int"
         },
         {
-          "name":"frame",
+          "name":"frame_bit_offset",
           "storage":{
             "offset":24,
             "size":4,
@@ -53500,10 +53599,10 @@
               }
             ]
           },
-          "type":"SMpegFrame*"
+          "type":"int"
         },
         {
-          "name":"bit_budget",
+          "name":"frame",
           "storage":{
             "offset":28,
             "size":4,
@@ -53516,19 +53615,9 @@
               }
             ]
           },
-          "type":"int"
+          "type":"SMpegFrame*"
         }
-      ],
-      "ret_storage":{
-        "reg":"EAX",
-        "size":4,
-        "varnodes":[
-          {
-            "addr":"register:00000000",
-            "size":4
-          }
-        ]
-      }
+      ]
     }
   },
   {
@@ -53949,7 +54038,7 @@
           "type":"SMpegFrame*"
         },
         {
-          "name":"granule_array",
+          "name":"frame",
           "storage":{
             "offset":16,
             "size":4,
@@ -53962,7 +54051,7 @@
               }
             ]
           },
-          "type":"SMpegLayer3Granule**"
+          "type":"SMpegFrame*"
         }
       ]
     }
@@ -56197,7 +56286,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_path.cpp_FUN_00548500",
+    "name":"core_path.cpp_getPathMap_FUN_00548500",
     "ret":"CPathMap*",
     "vars":{
       "params":[
@@ -56241,7 +56330,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_path.cpp_FUN_00548680",
+    "name":"core_path.cpp_renderPathMapsAtPosition_FUN_00548680",
     "ret":"void",
     "vars":{
       "locals":[
@@ -56308,6 +56397,88 @@
             ]
           },
           "type":"undefined4"
+        }
+      ],
+      "params":[
+        {
+          "name":"position",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"depth",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"red",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"green",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"fog",
+          "storage":{
+            "offset":20,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x14]",
+                "offset":20,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }

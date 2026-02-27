@@ -2452,12 +2452,14 @@ const TerminatedCString s_it_to_start_out_not_worr_0063ffd6 = "it to start out (
 // char constants
 const char s_EmptyChar_006304c1 = '\0';
 const char s_EmptyChar_0063564e = '\0';
+const char s_EmptyChar_0063cbe7 = '\0';
 const char s_EmptyChar_0063d87c = '\0';
 const char s_empty_0063e145 = '\0';
 const char s_empty_0063e149 = '\0';
 const char s_EmptyChar_0063e5a6 = '\0';
 const char s_EmptyChar_0063e5c1 = '\0';
 const char s_EmptyChar_0063e5cc = '\0';
+const char s_EmptyChar_0063e68c = '\0';
 
 // char[14616] constants
 const char g_LicenseAgreement[14616] = {

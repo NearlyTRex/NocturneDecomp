@@ -3,74 +3,74 @@
     "errors": [
       {
         "category": "undeclared_identifier",
-        "column": 23,
-        "line": 42,
+        "column": 31,
+        "line": 39,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
-        "column": 30,
-        "line": 42,
+        "column": 38,
+        "line": 39,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
-        "column": 29,
-        "line": 54,
+        "column": 41,
+        "line": 51,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
-        "column": 36,
-        "line": 54,
+        "column": 48,
+        "line": 51,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 33,
-        "line": 61,
+        "line": 57,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 40,
-        "line": 61,
+        "line": 57,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 40,
-        "line": 69,
+        "line": 65,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 47,
+        "line": 65,
+        "message": "expected expression"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 41,
+        "line": 67,
+        "message": "use of undeclared identifier 'code'"
+      },
+      {
+        "category": "syntax_error",
+        "column": 48,
+        "line": 67,
+        "message": "expected expression"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 41,
         "line": 69,
-        "message": "expected expression"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 41,
-        "line": 71,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 48,
-        "line": 71,
-        "message": "expected expression"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 41,
-        "line": 73,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 48,
-        "line": 73,
+        "line": 69,
         "message": "expected expression"
       }
     ],
@@ -79,21 +79,18 @@
   },
   "complexity": {
     "assembly_lines": 232,
-    "complexity_score": 393,
+    "complexity_score": 294,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 88,
-    "suspect_count": 28,
+    "pseudocode_lines": 84,
+    "suspect_count": 20,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "double_reconstruction",
-      "extra_output",
       "stack_param",
       "unresolved_funcptr"
     ],
-    "total_lines": 320
+    "total_lines": 316
   },
   "cross_references": [],
   "function": {
@@ -228,24 +225,8 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 11,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "uint extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 12,
-      "match": "extraout_EDX_00",
-      "severity": "moderate",
-      "text": "uint extraout_EDX_00;",
-      "type": "extra_output"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 13,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "int in_stack_00000008;",
@@ -253,7 +234,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 14,
       "match": "in_stack_0000000c",
       "severity": "moderate",
       "text": "int in_stack_0000000c;",
@@ -261,7 +242,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 25,
+      "line": 22,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "*(byte *)(in_stack_00000008 + 0x61) = *(byte *)(in_stack_00000008 + 0x61) | 0x20;",
@@ -269,10 +250,18 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 25,
+      "line": 22,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "*(byte *)(in_stack_00000008 + 0x61) = *(byte *)(in_stack_00000008 + 0x61) | 0x20;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 27,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "if (*(int *)(in_stack_0000000c + 8) != 0) {",
       "type": "stack_param"
     },
     {
@@ -280,108 +269,52 @@
       "line": 30,
       "match": "in_stack_0000000c",
       "severity": "moderate",
-      "text": "if (*(int *)(in_stack_0000000c + 8) != 0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 33,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "iVar7 = local_2c + *(int *)(in_stack_0000000c + 0xc);",
+      "text": "iVar6 = local_2c + *(int *)(in_stack_0000000c + 0xc);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 35,
+      "line": 32,
       "match": "code *",
       "severity": "moderate",
-      "text": "uVar3 = (**(code **)(*(int *)(iVar7 + 100) + 0x84))(iVar7);",
+      "text": "dVar2 = (double)(**(code **)(*(int *)(iVar6 + 100) + 0x84))(iVar6);",
       "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 34,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "if (*(int *)(in_stack_0000000c + 8) != 0) {",
+      "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 37,
       "match": "in_stack_0000000c",
       "severity": "moderate",
-      "text": "if (*(int *)(in_stack_0000000c + 8) != 0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 40,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "iVar8 = *(int *)(in_stack_0000000c + 0xc) + iStack_1c;",
+      "text": "iVar7 = *(int *)(in_stack_0000000c + 0xc) + iStack_1c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 47,
+      "line": 44,
       "match": "code *",
       "severity": "moderate",
-      "text": "uVar4 = (**(code **)(*(int *)(iVar8 + 100) + 0x84))(iVar8);",
+      "text": "dStack_40 = (double)(**(code **)(*(int *)(iVar7 + 100) + 0x84))(iVar7);",
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 48,
-      "match": "extraout_EDX_00",
-      "severity": "moderate",
-      "text": "dStack_40 = (double)CONCAT44(extraout_EDX_00,uVar4) -",
-      "type": "extra_output"
-    },
-    {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 48,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "dStack_40 = (double)CONCAT44(extraout_EDX_00,uVar4) -",
-      "type": "double_reconstruction"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 48,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "dStack_40 = (double)CONCAT44(extraout_EDX_00,uVar4) -",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 49,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "(double)CONCAT44(extraout_EDX,uVar3);",
-      "type": "extra_output"
-    },
-    {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 49,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "(double)CONCAT44(extraout_EDX,uVar3);",
-      "type": "double_reconstruction"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 49,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "(double)CONCAT44(extraout_EDX,uVar3);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 54,
+      "line": 50,
       "match": "code *",
       "severity": "moderate",
-      "text": "(iVar5 = (**(code **)(*(int *)(iVar7 + 100) + 0x74))(iVar7,iVar8), iVar5 != 0)) {",
+      "text": "(iVar4 = (**(code **)(*(int *)(iVar6 + 100) + 0x74))(iVar6,iVar7), iVar4 != 0)) {",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 56,
+      "line": 52,
       "match": "in_stack_0000000c",
       "severity": "moderate",
       "text": "if (*(int *)(in_stack_0000000c + 8) != 0) {",
@@ -389,55 +322,55 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 59,
+      "line": 55,
       "match": "in_stack_0000000c",
       "severity": "moderate",
-      "text": "iVar5 = *(int *)(in_stack_0000000c + 0xc) + iStack_14;",
+      "text": "iVar4 = *(int *)(in_stack_0000000c + 0xc) + iStack_14;",
       "type": "stack_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 58,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "((iVar5 = (**(code **)(*(int *)(iVar7 + 100) + 0x7c))(iVar7,iVar4),",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 60,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "((iVar5 = (**(code **)(*(int *)(iVar7 + 100) + 0x78))(iVar7,iVar4),",
+      "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 62,
       "match": "code *",
       "severity": "moderate",
-      "text": "((iVar6 = (**(code **)(*(int *)(iVar8 + 100) + 0x7c))(iVar8,iVar5),",
+      "text": "(iVar4 = (**(code **)(*(int *)(iVar7 + 100) + 0x80))(iVar7,iVar4),",
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 64,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "((iVar6 = (**(code **)(*(int *)(iVar8 + 100) + 0x78))(iVar8,iVar5),",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
+      "description": "Unresolved stack parameter",
       "line": 66,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(iVar5 = (**(code **)(*(int *)(iVar8 + 100) + 0x80))(iVar8,iVar5),",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 70,
       "match": "in_stack_0000000c",
       "severity": "moderate",
-      "text": "} while (uVar9 < *(uint *)(in_stack_0000000c + 8));",
+      "text": "} while (uVar8 < *(uint *)(in_stack_0000000c + 8));",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 72,
+      "line": 68,
       "match": "in_stack_0000000c",
       "severity": "moderate",
-      "text": "if (uVar9 == *(uint *)(in_stack_0000000c + 8)) {",
+      "text": "if (uVar8 == *(uint *)(in_stack_0000000c + 8)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 80,
+      "line": 76,
       "match": "in_stack_0000000c",
       "severity": "moderate",
       "text": "} while (uStack_24 < *(uint *)(in_stack_0000000c + 8));",
@@ -445,7 +378,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 85,
+      "line": 81,
       "match": "in_stack_0000000c",
       "severity": "moderate",
       "text": "} while (local_30 < *(uint *)(in_stack_0000000c + 8));",

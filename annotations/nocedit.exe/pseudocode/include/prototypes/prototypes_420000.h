@@ -37,7 +37,7 @@
 // FUNCTION PROTOTYPES - Range 0x420000
 // =============================================================================
 
-void __cdecl core_box_cpp_CBox_saveToFile_FUN_00420020(CBox *this_ptr,_FILE *file_handle);
+void __cdecl core_box_cpp_CBox_saveToFile_FUN_00420020(CBox *this_ptr,_FILE *file_handle,char *indent_prefix);
 void __cdecl core_box_cpp_CBox_setupVelocities_FUN_00420180(CBox *this_ptr,CVector3f *linear_velocity,CVector3f *angular_velocity);
 SScrape * __cdecl core_box_cpp_SScrape_ctor_FUN_00420200(SScrape *this_ptr);
 SScrape * __cdecl core_box_cpp_SScrape_dtor_FUN_00420210(SScrape *this_ptr,uint flags);
@@ -72,7 +72,7 @@ CBoundingBox3D * __cdecl core_boxactor_cpp_CBoxActor_getBoundingBox_FUN_00421fe0
 void __cdecl core_boxactor_cpp_CBoxActor_archive_FUN_00422060(CBoxActor *this_ptr);
 int __cdecl core_boxactor_cpp_CBoxActor_getBlockVirtualDirectorFlag_FUN_00422330(CBoxActor *this_ptr);
 int __cdecl core_boxactor_cpp_CBoxActor_hasCollision_FUN_00422340(CBoxActor *this_ptr,SCollisionInfo *collision_info);
-void __cdecl core_boxactor_cpp_CBoxActor_FUN_00422390(CBoxActor *this_ptr);
+void __cdecl core_boxactor_cpp_CBoxActor_FUN_00422390(CBoxActor *this_ptr,CVector3f *param_2,CVector3f *param_3);
 int __cdecl core_boxactor_cpp_CBoxActor_canPickup_FUN_004224b0(CBoxActor *this_ptr,CDemonActor *picker);
 void __cdecl core_boxactor_cpp_CBoxActor_pickup_FUN_004224e0(CBoxActor *this_ptr,CDemonActor *carrier);
 void __cdecl core_boxactor_cpp_CBoxActor_onDropped_FUN_004224f0(CBoxActor *this_ptr,CVector3f *drop_position);
@@ -257,7 +257,7 @@ void __cdecl core_charactr_cpp_CCharacter_buildLayerActionTransitionCosts_FUN_00
 float __cdecl core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840(CCharacter *this_ptr,int state_index);
 void __cdecl core_charactr_cpp_CCharacter_chooseNextLayerAction_FUN_0042e8c0(CCharacter *this_ptr,int layer_action_index);
 void __cdecl core_charactr_cpp_CCharacter_processSmoking_FUN_0042ea40(CCharacter *this_ptr,float delta_time);
-int __cdecl core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40(CCharacter *this_ptr,uint event_id);
+int __cdecl core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40(CCharacter *this_ptr,int bone_index);
 int __cdecl core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0(CCharacter *this_ptr,float delta_time);
 void __cdecl core_charactr_cpp_CCharacter_playSoundWithCooldown_FUN_0042f300(CCharacter *this_ptr,char *sound_name);
 void __cdecl core_charactr_cpp_CCharacter_propertyDisplayCallback_FUN_0042f340(CCharacter *this_ptr,CActorProperty *property,char *output_buffer);

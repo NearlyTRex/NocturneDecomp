@@ -6,13 +6,13 @@
   },
   "complexity": {
     "assembly_lines": 1125,
-    "complexity_score": 1093,
+    "complexity_score": 1110,
     "cross_reference_count": 3,
     "function_call_count": 29,
     "global_count": 13,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 543,
-    "suspect_count": 51,
+    "pseudocode_lines": 540,
+    "suspect_count": 53,
     "suspect_types": [
       "byvalue_struct_passing",
       "decompiler_intrinsic",
@@ -23,7 +23,7 @@
       "unknown_field",
       "warning_deadcode_restart"
     ],
-    "total_lines": 1668
+    "total_lines": 1665
   },
   "cross_references": [
     {
@@ -955,7 +955,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 138,
+      "line": 134,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_90 = (int)ROUND(ROUND(g_MpegSampleRateTable[local_8c]",
@@ -963,7 +963,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 138,
+      "line": 134,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_90 = (int)ROUND(ROUND(g_MpegSampleRateTable[local_8c]",
@@ -971,7 +971,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 204,
+      "line": 200,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "piVar10 = (int *)((int)local_7c->codes[0] + local_5c);",
@@ -979,7 +979,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 205,
+      "line": 201,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "pfVar5 = (float *)((int)local_80->codes[0] + local_5c);",
@@ -987,7 +987,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 250,
+      "line": 246,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "if (in_stack_00000008 != (ushort *)0x0) {",
@@ -995,7 +995,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 256,
+      "line": 252,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "pfVar5 = (float *)((int)local_9c8[0].codes[0] + local_2c);",
@@ -1003,7 +1003,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 257,
+      "line": 253,
       "match": "(short *)((int)",
       "severity": "mild",
       "text": "local_30 = (short *)((int)local_33c8 + local_28);",
@@ -1011,7 +1011,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 277,
+      "line": 273,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "puVar11 = in_stack_00000008;",
@@ -1019,7 +1019,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 279,
+      "line": 275,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "in_stack_00000008 = puVar11 + 1;",
@@ -1027,7 +1027,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 281,
+      "line": 277,
       "match": "(ushort *)((int)",
       "severity": "mild",
       "text": "*puVar11 = *(ushort *)((int)local_33c8 + iVar8);",
@@ -1035,7 +1035,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 283,
+      "line": 279,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "puVar11 = in_stack_00000008;",
@@ -1043,7 +1043,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 305,
+      "line": 301,
       "match": "SUB41",
       "severity": "mild",
       "text": "uVar19 = SUB41(local_6c,0);",
@@ -1051,7 +1051,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 314,
+      "line": 310,
       "match": "&stack0xffff9f14",
       "severity": "moderate",
       "text": "piVar10 = (int *)&stack0xffff9f14;",
@@ -1059,7 +1059,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 319,
+      "line": 315,
       "match": "(SMpegFrameHeader *)((int)",
       "severity": "mild",
       "text": "pSVar12 = (SMpegFrameHeader *)((int)pSVar12 + ((uint)bVar16 * -2 + 1) * 4);",
@@ -1067,7 +1067,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 322,
+      "line": 318,
       "match": "in_stack_ffff9f18",
       "severity": "moderate",
       "text": "frame_info.channel_mode = in_stack_ffff9f18;",
@@ -1075,7 +1075,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 323,
+      "line": 319,
       "match": "in_stack_ffff9f14",
       "severity": "moderate",
       "text": "frame_info.header = (SMpegFrameHeader *)in_stack_ffff9f14;",
@@ -1083,7 +1083,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 326,
+      "line": 322,
       "match": "._0_1_",
       "severity": "mild",
       "text": "frame_info.samples_per_granule._0_1_ = uVar19;",
@@ -1091,7 +1091,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 327,
+      "line": 323,
       "match": "._1_1_",
       "severity": "mild",
       "text": "frame_info.samples_per_granule._1_1_ = uVar20;",
@@ -1099,7 +1099,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 328,
+      "line": 324,
       "match": "._2_2_",
       "severity": "mild",
       "text": "frame_info.samples_per_granule._2_2_ = uVar21;",
@@ -1107,7 +1107,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 329,
+      "line": 325,
       "match": "._0_2_",
       "severity": "mild",
       "text": "frame_info.js_bound._0_2_ = (short)pSVar14;",
@@ -1115,7 +1115,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 330,
+      "line": 326,
       "match": "._2_2_",
       "severity": "mild",
       "text": "frame_info.js_bound._2_2_ = (short)((uint)pSVar14 >> 0x10);",
@@ -1123,7 +1123,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 337,
+      "line": 333,
       "match": "SUB41",
       "severity": "mild",
       "text": "uVar19 = SUB41(this_ptr,0);",
@@ -1131,7 +1131,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 348,
+      "line": 344,
       "match": "CONCAT22",
       "severity": "mild",
       "text": "pCVar23 = (CMP3Decoder *)CONCAT22(uVar24,uVar22);",
@@ -1139,7 +1139,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 371,
+      "line": 367,
       "match": "&stack0xffff9f14",
       "severity": "moderate",
       "text": "piVar10 = (int *)&stack0xffff9f14;",
@@ -1147,7 +1147,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 376,
+      "line": 372,
       "match": "(SMpegFrameHeader *)((int)",
       "severity": "mild",
       "text": "pSVar13 = (SMpegFrameHeader *)((int)pSVar13 + ((uint)bVar16 * -2 + 1) * 4);",
@@ -1155,7 +1155,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 379,
+      "line": 375,
       "match": "in_stack_ffff9f18",
       "severity": "moderate",
       "text": "frame_info_00.channel_mode = in_stack_ffff9f18;",
@@ -1163,7 +1163,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 380,
+      "line": 376,
       "match": "in_stack_ffff9f14",
       "severity": "moderate",
       "text": "frame_info_00.header = (SMpegFrameHeader *)in_stack_ffff9f14;",
@@ -1171,7 +1171,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 383,
+      "line": 379,
       "match": "._0_1_",
       "severity": "mild",
       "text": "frame_info_00.samples_per_granule._0_1_ = uVar19;",
@@ -1179,7 +1179,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 384,
+      "line": 380,
       "match": "._1_1_",
       "severity": "mild",
       "text": "frame_info_00.samples_per_granule._1_1_ = uVar20;",
@@ -1187,7 +1187,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 385,
+      "line": 381,
       "match": "._2_2_",
       "severity": "mild",
       "text": "frame_info_00.samples_per_granule._2_2_ = uVar21;",
@@ -1195,7 +1195,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 386,
+      "line": 382,
       "match": "._0_2_",
       "severity": "mild",
       "text": "frame_info_00.js_bound._0_2_ = (short)pCVar23;",
@@ -1203,7 +1203,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 387,
+      "line": 383,
       "match": "._2_2_",
       "severity": "mild",
       "text": "frame_info_00.js_bound._2_2_ = (short)((uint)pCVar23 >> 0x10);",
@@ -1211,7 +1211,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 400,
+      "line": 396,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "if ((in_stack_00000008 != (ushort *)0x0) && (local_74 = 0, 0 < local_ac)) {",
@@ -1219,7 +1219,23 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 465,
+      "line": 403,
+      "match": "(SMpegLayer3SideInfo *)((int)",
+      "severity": "mild",
+      "text": "pSVar14 = (SMpegLayer3SideInfo *)((int)local_4c0.scfsi + local_34 + -8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 432,
+      "match": "(SMpegFrame *)((int)",
+      "severity": "mild",
+      "text": "local_4c = (SMpegFrame *)((int)local_4c0.scfsi + local_34 + -8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 460,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)local_18c8 + iVar7) = -*(float *)((int)local_18c8 + iVar7);",
@@ -1227,7 +1243,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 465,
+      "line": 460,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)local_18c8 + iVar7) = -*(float *)((int)local_18c8 + iVar7);",
@@ -1235,7 +1251,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 480,
+      "line": 475,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar1 = (uint *)((int)local_18c8 + iVar8);",
@@ -1243,7 +1259,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 482,
+      "line": 477,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)local_190 + iVar4) = *puVar1;",
@@ -1251,7 +1267,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 504,
+      "line": 499,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "puVar11 = in_stack_00000008;",
@@ -1259,7 +1275,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 506,
+      "line": 501,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "in_stack_00000008 = puVar11 + 1;",
@@ -1267,7 +1283,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 508,
+      "line": 503,
       "match": "(ushort *)((int)",
       "severity": "mild",
       "text": "*puVar11 = *(ushort *)((int)local_33c8 + iVar8);",
@@ -1275,7 +1291,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 510,
+      "line": 505,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "puVar11 = in_stack_00000008;",
@@ -1283,7 +1299,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 526,
+      "line": 521,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_60 = (int)ROUND(ROUND((((double)local_60cc /",
@@ -1291,7 +1307,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 526,
+      "line": 521,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_60 = (int)ROUND(ROUND((((double)local_60cc /",
@@ -1310,7 +1326,7 @@
       "expected_args": 1,
       "format_string": "MPEG Layer 2 - pick_table - can't load tables!  File: %s",
       "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 163,
+      "line_number": 159,
       "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"MPEG Layer 2 - pick_table - can't load tables!  File: ",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
@@ -1321,7 +1337,7 @@
       "expected_args": 3,
       "format_string": "js_bound bad layer/modext (%d/%d)  File: %s",
       "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 177,
+      "line_number": 173,
       "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"js_bound bad layer/modext (%d/%d)  File: %s\");",
       "text": "Format string expects 3 args but got 0",
       "type": "format_string_mismatch"
@@ -1332,7 +1348,7 @@
       "expected_args": 1,
       "format_string": "Not enough main data to decode frame %d.",
       "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 394,
+      "line_number": 390,
       "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Not enough main data to decode frame %d.\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"

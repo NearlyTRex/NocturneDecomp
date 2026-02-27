@@ -2,45 +2,9 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 88,
-        "line": 18,
-        "message": "use of undeclared identifier 'DAT_02f7a024'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 86,
-        "line": 26,
-        "message": "use of undeclared identifier 'DAT_02f7a024'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 39,
-        "line": 38,
-        "message": "use of undeclared identifier 'DAT_02f7a024'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 39,
-        "line": 46,
-        "message": "use of undeclared identifier 'DAT_02f7a024'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 56,
-        "line": 50,
-        "message": "use of undeclared identifier 'DAT_02f7a024'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 39,
-        "line": 53,
-        "message": "use of undeclared identifier 'DAT_02f7a024'"
-      },
-      {
         "category": "format_error",
         "column": 39,
-        "line": 63,
+        "line": 62,
         "message": "format specifies type 'char *' but the argument has type 'struct CDemonActor *' [-Werror,-Wformat]"
       }
     ],
@@ -49,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 199,
-    "complexity_score": 283,
+    "complexity_score": 222,
     "cross_reference_count": 1,
     "function_call_count": 17,
     "global_count": 18,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 58,
-    "suspect_count": 22,
+    "pseudocode_lines": 57,
+    "suspect_count": 16,
     "suspect_types": [
       "undefined_data"
     ],
-    "total_lines": 257
+    "total_lines": 256
   },
   "cross_references": [
     {
@@ -249,20 +213,20 @@
     },
     {
       "addr": "02f7a024",
-      "name": "DAT_02f7a024",
-      "type": "undefined4",
+      "name": "g_MsnEditPropertyList",
+      "type": "CActorPropertyList",
       "value": null
     },
     {
       "addr": "02f7a028",
-      "name": "INT_02f7a028",
-      "type": "int",
+      "name": "g_MsnEditPropertyList.count",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "02f7c510",
-      "name": "INT_02f7c510",
-      "type": "int",
+      "name": "g_MsnEditPropertyList.total_height",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -352,15 +316,7 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_02f7a024",
-      "severity": "mild",
-      "text": "core_actor_cpp_CActorPropertyList_resetSelection_FUN_0040e150((CActorPropertyList *)&DAT_02f7a024)",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
+      "line": 13,
       "match": "DAT_02f7c528",
       "severity": "mild",
       "text": "DAT_02f7c528 = -1;",
@@ -368,7 +324,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 15,
+      "line": 14,
       "match": "DAT_02f7c538",
       "severity": "mild",
       "text": "DAT_02f7c538 = 0;",
@@ -377,14 +333,6 @@
     {
       "description": "Undefined global data reference",
       "line": 19,
-      "match": "DAT_02f7a024",
-      "severity": "mild",
-      "text": "(*((this_ptr_00->vtable)._ub)->getPropertyList)(this_ptr_00,(CActorPropertyList *)&DAT_02f7a024);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 20,
       "match": "DAT_02f79818",
       "severity": "mild",
       "text": "if ((DAT_02f79818 & 1) == 0) {",
@@ -392,7 +340,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 21,
+      "line": 20,
+      "match": "DAT_02f79818",
+      "severity": "mild",
+      "text": "DAT_02f79818 = DAT_02f79818 | 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 20,
       "match": "DAT_02f79818",
       "severity": "mild",
       "text": "DAT_02f79818 = DAT_02f79818 | 1;",
@@ -401,14 +357,6 @@
     {
       "description": "Undefined global data reference",
       "line": 21,
-      "match": "DAT_02f79818",
-      "severity": "mild",
-      "text": "DAT_02f79818 = DAT_02f79818 | 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
       "match": "DAT_02f797e4",
       "severity": "mild",
       "text": "shape_edittool_cpp_CEdScrollBar_ctor_FUN_004a5ae0(&DAT_02f797e4);",
@@ -416,15 +364,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 31,
-      "match": "DAT_02f7a024",
-      "severity": "mild",
-      "text": "((CActorPropertyList *)&DAT_02f7a024,0x141,0,iVar2);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 33,
+      "line": 32,
       "match": "DAT_02f797e4",
       "severity": "mild",
       "text": "(&DAT_02f797e4,iVar1 + -0xb,1,iVar1 + -1,0xee);",
@@ -432,7 +372,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 34,
+      "line": 33,
       "match": "DAT_02f797e4",
       "severity": "mild",
       "text": "DAT_02f797e4.max_value = 0xf0;",
@@ -440,18 +380,18 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 35,
+      "line": 34,
       "match": "DAT_02f797e4",
       "severity": "mild",
-      "text": "DAT_02f797e4.current_value = INT_02f7c510;",
+      "text": "DAT_02f797e4.current_value = g_MsnEditPropertyList.total_height;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 36,
+      "line": 35,
       "match": "DAT_02f797e4",
       "severity": "mild",
-      "text": "DAT_02f797e4.scroll_increment = INT_02f7c510 / INT_02f7a028;",
+      "text": "DAT_02f797e4.scroll_increment = g_MsnEditPropertyList.total_height / g_MsnEditPropertyList.count",
       "type": "undefined_data"
     },
     {
@@ -465,17 +405,9 @@
     {
       "description": "Undefined global data reference",
       "line": 39,
-      "match": "DAT_02f7a024",
-      "severity": "mild",
-      "text": "((CActorPropertyList *)&DAT_02f7a024,0x141,-DAT_02f797e4.scroll_position,iVar2);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 39,
       "match": "DAT_02f797e4",
       "severity": "mild",
-      "text": "((CActorPropertyList *)&DAT_02f7a024,0x141,-DAT_02f797e4.scroll_position,iVar2);",
+      "text": "(&g_MsnEditPropertyList,0x141,-DAT_02f797e4.scroll_position,iVar2);",
       "type": "undefined_data"
     },
     {
@@ -488,31 +420,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 43,
-      "match": "DAT_02f7a024",
-      "severity": "mild",
-      "text": "((CActorPropertyList *)&DAT_02f7a024,g_MouseX,g_MouseY);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 46,
-      "match": "DAT_02f7a024",
-      "severity": "mild",
-      "text": "((CActorPropertyList *)&DAT_02f7a024,DAT_02f7c528);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 46,
+      "line": 45,
       "match": "DAT_02f7c528",
       "severity": "mild",
-      "text": "((CActorPropertyList *)&DAT_02f7a024,DAT_02f7c528);",
+      "text": "core_actor_cpp_CActorPropertyList_render_FUN_0040e850(&g_MsnEditPropertyList,DAT_02f7c528);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 48,
+      "line": 47,
       "match": "DAT_02f797e4",
       "severity": "mild",
       "text": "shape_edittool_cpp_CEdScrollBar_render_FUN_004a5c10(&DAT_02f797e4);",
@@ -520,7 +436,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 58,
+      "line": 57,
       "match": "DAT_02f797e4",
       "severity": "mild",
       "text": "shape_edittool_cpp_CEdScrollBar_clearActiveButtonIfMatch_FUN_004a5b40(&DAT_02f797e4);",

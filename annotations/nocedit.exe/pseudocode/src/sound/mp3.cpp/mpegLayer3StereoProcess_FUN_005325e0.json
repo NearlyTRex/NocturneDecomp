@@ -1,140 +1,24 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 25,
-        "line": 138,
-        "message": "use of undeclared identifier 'DAT_0067e6c8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 25,
-        "line": 145,
-        "message": "use of undeclared identifier 'DAT_0067e6c8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 71,
-        "line": 151,
-        "message": "use of undeclared identifier 'DAT_0067e6c8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 34,
-        "line": 182,
-        "message": "use of undeclared identifier 'DAT_0067e71c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 25,
-        "line": 183,
-        "message": "use of undeclared identifier 'DAT_0067e718'; did you mean 'DAT_0067b718'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 32,
-        "line": 217,
-        "message": "use of undeclared identifier 'DAT_0067e728'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 33,
-        "line": 236,
-        "message": "use of undeclared identifier 'DAT_0067e728'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 29,
-        "line": 269,
-        "message": "use of undeclared identifier 'DAT_0067e758'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 66,
-        "line": 269,
-        "message": "use of undeclared identifier 'DAT_0067e754'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 32,
-        "line": 270,
-        "message": "use of undeclared identifier 'DAT_0067e750'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 30,
-        "line": 272,
-        "message": "use of undeclared identifier 'DAT_0067e754'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 67,
-        "line": 272,
-        "message": "use of undeclared identifier 'DAT_0067e750'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 32,
-        "line": 308,
-        "message": "use of undeclared identifier 'DAT_0067e728'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 31,
-        "line": 328,
-        "message": "use of undeclared identifier 'DAT_0067e728'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 29,
-        "line": 357,
-        "message": "use of undeclared identifier 'DAT_0067e758'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 66,
-        "line": 357,
-        "message": "use of undeclared identifier 'DAT_0067e754'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 32,
-        "line": 358,
-        "message": "use of undeclared identifier 'DAT_0067e750'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 30,
-        "line": 360,
-        "message": "use of undeclared identifier 'DAT_0067e754'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 67,
-        "line": 360,
-        "message": "use of undeclared identifier 'DAT_0067e750'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 1031,
-    "complexity_score": 1318,
+    "complexity_score": 1315,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 20,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 528,
+    "pseudocode_lines": 530,
     "suspect_count": 77,
     "suspect_types": [
       "decompiler_intrinsic",
       "double_reconstruction",
-      "pointer_cast",
-      "undefined_data"
+      "pointer_cast"
     ],
-    "total_lines": 1559
+    "total_lines": 1561
   },
   "cross_references": [
     {
@@ -155,7 +39,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0",
-    "signature": "void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0(SMpegStereoSubbandSamples *input_lr_samples,SMpegStereoSubbandSamples *output_samples,SMpegScalefactorBandData *scalefactor_data,SMpegFrame *frame_info,SMpegLayer3Granule **granule_array)"
+    "signature": "void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0(SMpegStereoSubbandSamples *input_lr_samples,SMpegStereoSubbandSamples *output_samples,SMpegScalefactorBandData *scalefactor_data,SMpegFrame *frame_info,SMpegFrame *frame)"
   },
   "function_calls": [
     {
@@ -196,25 +80,25 @@
     },
     {
       "addr": "0067e6c8",
-      "name": "DAT_0067e6c8",
-      "type": "undefined4",
+      "name": "g_Layer3BandIndex",
+      "type": "SMpegLayer3BandIndex[6]",
       "value": null
     },
     {
       "addr": "0067e6cc",
-      "name": "INT_0067e6cc",
-      "type": "int",
-      "value": "0x6"
+      "name": "g_Layer3BandIndex[0].l[1]",
+      "type": "undefined4",
+      "value": null
     },
     {
       "addr": "0067e6d0",
-      "name": "INT_0067e6d0",
-      "type": "int",
-      "value": "0xc"
+      "name": "g_Layer3BandIndex[0].l[2]",
+      "type": "undefined4",
+      "value": null
     },
     {
       "addr": "0067e6d4",
-      "name": "DAT_0067e6d4",
+      "name": "g_Layer3BandIndex[0].l[3]",
       "type": "undefined4",
       "value": null
     },
@@ -793,10 +677,10 @@
       },
       {
         "is_param": true,
-        "name": "granule_array",
+        "name": "frame",
         "offset": 20,
         "size": 4,
-        "type": "SMpegLayer3Granule * *"
+        "type": "SMpegFrame *"
       }
     ]
   },
@@ -823,7 +707,7 @@
       "line": 108,
       "match": "(ushort *)((int)",
       "severity": "mild",
-      "text": "*(ushort *)((int)&uStack_57a + iVar9 + 2) = 7;",
+      "text": "*(ushort *)((int)&uStack_57a + iVar8 + 2) = 7;",
       "type": "pointer_cast"
     },
     {
@@ -831,55 +715,47 @@
       "line": 118,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "if ((*(uint *)((int)(pafVar12 + 0x20) + iVar11 * 4) & 0x7fffffff) != 0) {",
+      "text": "if ((*(uint *)((int)(pafVar12 + 0x20) + iVar10 * 4) & 0x7fffffff) != 0) {",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 131,
-      "match": "DAT_0067e6c8",
-      "severity": "mild",
-      "text": "iVar6 = *(int *)(&DAT_0067e6c8 + iVar11);",
-      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 134,
+      "line": 132,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar1 = (int *)((int)&INT_0067e6cc + iVar11);",
+      "text": "iVar5 = *(int *)((int)g_Layer3BandIndex[0].l + iVar5)) {",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 138,
-      "match": "DAT_0067e6c8",
+      "description": "Complex pointer cast",
+      "line": 137,
+      "match": "(int *)((int)",
       "severity": "mild",
-      "text": "iVar9 = *(int *)(&DAT_0067e6c8 + iVar11);",
-      "type": "undefined_data"
+      "text": "iVar8 = *(int *)((int)g_Layer3BandIndex[0].l + iVar10);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 143,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "iVar5 = *(int *)((int)g_Layer3BandIndex[0].l + local_8c + 4) -",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 144,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "iVar6 = *(int *)((int)&INT_0067e6cc + local_8c) - *(int *)(&DAT_0067e6c8 + local_8c);",
+      "text": "*(int *)((int)g_Layer3BandIndex[0].l + local_8c);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 144,
-      "match": "DAT_0067e6c8",
-      "severity": "mild",
-      "text": "iVar6 = *(int *)((int)&INT_0067e6cc + local_8c) - *(int *)(&DAT_0067e6c8 + local_8c);",
-      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
       "line": 151,
       "match": "(short *)((int)",
       "severity": "mild",
-      "text": "*(short *)((int)&uStack_57a + iVar11 + 2) = sVar3;",
+      "text": "*(short *)((int)&uStack_57a + iVar10 + 2) = sVar2;",
       "type": "pointer_cast"
     },
     {
@@ -887,7 +763,7 @@
       "line": 154,
       "match": "(short *)((int)",
       "severity": "mild",
-      "text": "fVar13 = (float10)fptan((float10)*(short *)((int)&uStack_57a + iVar11 + 2) *",
+      "text": "fVar13 = (float10)fptan((float10)*(short *)((int)&uStack_57a + iVar10 + 2) *",
       "type": "pointer_cast"
     },
     {
@@ -895,7 +771,7 @@
       "line": 154,
       "match": "fptan",
       "severity": "mild",
-      "text": "fVar13 = (float10)fptan((float10)*(short *)((int)&uStack_57a + iVar11 + 2) *",
+      "text": "fVar13 = (float10)fptan((float10)*(short *)((int)&uStack_57a + iVar10 + 2) *",
       "type": "decompiler_intrinsic"
     },
     {
@@ -911,7 +787,7 @@
       "line": 160,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "(*(int *)((int)&uStack_57a + iVar11) >> 0x10,",
+      "text": "(*(int *)((int)&uStack_57a + iVar10) >> 0x10,",
       "type": "pointer_cast"
     },
     {
@@ -919,7 +795,7 @@
       "line": 161,
       "match": "(double)CONCAT44(",
       "severity": "moderate",
-      "text": "(double)CONCAT44(local_207c,pfVar14),iVar9,(int)local_2078,pfVar14);",
+      "text": "(double)CONCAT44(local_207c,local_2080),iVar8,local_2078);",
       "type": "double_reconstruction"
     },
     {
@@ -927,31 +803,31 @@
       "line": 161,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "(double)CONCAT44(local_207c,pfVar14),iVar9,(int)local_2078,pfVar14);",
+      "text": "(double)CONCAT44(local_207c,local_2080),iVar8,local_2078);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Complex pointer cast",
       "line": 175,
-      "match": "DAT_0067e71c",
+      "match": "(int *)((int)",
       "severity": "mild",
-      "text": "iVar11 = 0x240 - *(int *)(&DAT_0067e71c + local_94);",
-      "type": "undefined_data"
+      "text": "iVar10 = 0x240 - *(int *)((int)g_Layer3BandIndex[0].l + local_94 + 0x54);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Complex pointer cast",
       "line": 176,
-      "match": "DAT_0067e718",
+      "match": "(int *)((int)",
       "severity": "mild",
-      "text": "iVar6 = *(int *)(&DAT_0067e718 + local_94);",
-      "type": "undefined_data"
+      "text": "iVar5 = *(int *)((int)g_Layer3BandIndex[0].l + local_94 + 0x50);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 186,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "*(float *)((int)local_2078 + iVar9) = local_2078[iVar6];",
+      "text": "*(float *)((int)local_2078 + iVar8) = local_2078[iVar5];",
       "type": "pointer_cast"
     },
     {
@@ -959,7 +835,7 @@
       "line": 187,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "*(float *)((int)afStack_e78 + iVar9) = fVar2;",
+      "text": "*(float *)((int)afStack_e78 + iVar8) = fVar1;",
       "type": "pointer_cast"
     },
     {
@@ -967,7 +843,7 @@
       "line": 188,
       "match": "(ushort *)((int)",
       "severity": "mild",
-      "text": "uVar4 = *(ushort *)((int)&uStack_57a + iVar8 + 2);",
+      "text": "uVar3 = *(ushort *)((int)&uStack_57a + iVar7 + 2);",
       "type": "pointer_cast"
     },
     {
@@ -975,7 +851,7 @@
       "line": 189,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "*(float *)((int)afStack_1778 + iVar9) = afStack_1778[iVar6];",
+      "text": "*(float *)((int)afStack_1778 + iVar8) = afStack_1778[iVar5];",
       "type": "pointer_cast"
     },
     {
@@ -983,60 +859,76 @@
       "line": 191,
       "match": "(ushort *)((int)",
       "severity": "mild",
-      "text": "*(ushort *)((int)&uStack_57a + iVar5 + 2) = uVar4;",
+      "text": "*(ushort *)((int)&uStack_57a + iVar4 + 2) = uVar3;",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 210,
-      "match": "DAT_0067e728",
+      "description": "Complex pointer cast",
+      "line": 209,
+      "match": "(int *)((int)",
       "severity": "mild",
-      "text": "iVar11 = *(int *)(&DAT_0067e728 + iVar11) - iVar6;",
-      "type": "undefined_data"
+      "text": "iVar5 = *(int *)((int)g_Layer3BandIndex[0].s + iVar10);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 210,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "iVar10 = *(int *)((int)g_Layer3BandIndex[0].s + iVar10 + 4) - iVar5;",
+      "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 215,
       "match": "ABS",
       "severity": "mild",
-      "text": "if (ABS(input_lr_samples->channels[1].samples[iVar6 / 0x12][iVar6 % 0x12]) != 0.0) {",
+      "text": "if (ABS(input_lr_samples->channels[1].samples[iVar5 / 0x12][iVar5 % 0x12]) != 0.0) {",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 229,
-      "match": "DAT_0067e728",
-      "severity": "mild",
-      "text": "iVar9 = *(int *)(&DAT_0067e728 + local_7c) - *(int *)(local_7c + 0x67e724);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 237,
-      "match": "(short *)((int)",
+      "line": 229,
+      "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(short *)((int)&uStack_57a + iVar11 + 2) = sVar3;",
+      "text": "iVar8 = *(int *)((int)g_Layer3BandIndex[0].s + local_7c);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 240,
+      "line": 230,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "iVar5 = *(int *)((int)g_Layer3BandIndex[0].s + local_7c + 4) - iVar8;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 238,
       "match": "(short *)((int)",
       "severity": "mild",
-      "text": "fVar13 = (float10)fptan((float10)*(short *)((int)&uStack_57a + iVar11 + 2) *",
+      "text": "*(short *)((int)&uStack_57a + iVar10 + 2) = sVar2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 241,
+      "match": "(short *)((int)",
+      "severity": "mild",
+      "text": "fVar13 = (float10)fptan((float10)*(short *)((int)&uStack_57a + iVar10 + 2) *",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 240,
+      "line": 241,
       "match": "fptan",
       "severity": "mild",
-      "text": "fVar13 = (float10)fptan((float10)*(short *)((int)&uStack_57a + iVar11 + 2) *",
+      "text": "fVar13 = (float10)fptan((float10)*(short *)((int)&uStack_57a + iVar10 + 2) *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 242,
+      "line": 243,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)afStack_e78 + local_80) = (float)fVar13;",
@@ -1044,82 +936,66 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 246,
+      "line": 247,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "(*(int *)((int)&uStack_57a + iVar11) >> 0x10,",
+      "text": "(*(int *)((int)&uStack_57a + iVar10) >> 0x10,",
       "type": "pointer_cast"
     },
     {
       "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 247,
+      "line": 248,
       "match": "(double)CONCAT44(",
       "severity": "moderate",
-      "text": "(double)CONCAT44(local_207c,pfVar14),iVar6,(int)local_2078,pfVar14)",
+      "text": "(double)CONCAT44(local_207c,local_2080),iVar8,local_2078);",
       "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 247,
+      "line": 248,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "(double)CONCAT44(local_207c,pfVar14),iVar6,(int)local_2078,pfVar14)",
+      "text": "(double)CONCAT44(local_207c,local_2080),iVar8,local_2078);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Complex pointer cast",
       "line": 262,
-      "match": "DAT_0067e758",
+      "match": "(int *)((int)",
       "severity": "mild",
-      "text": "iVar6 = *(int *)(&DAT_0067e758 + local_9c) - *(int *)(&DAT_0067e754 + local_9c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 262,
-      "match": "DAT_0067e754",
-      "severity": "mild",
-      "text": "iVar6 = *(int *)(&DAT_0067e758 + local_9c) - *(int *)(&DAT_0067e754 + local_9c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 263,
-      "match": "DAT_0067e750",
-      "severity": "mild",
-      "text": "local_28 = *(int *)(&DAT_0067e750 + local_9c) * 3;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 265,
-      "match": "DAT_0067e754",
-      "severity": "mild",
-      "text": "(*(int *)(&DAT_0067e754 + local_9c) - *(int *)(&DAT_0067e750 + local_9c)) +",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 265,
-      "match": "DAT_0067e750",
-      "severity": "mild",
-      "text": "(*(int *)(&DAT_0067e754 + local_9c) - *(int *)(&DAT_0067e750 + local_9c)) +",
-      "type": "undefined_data"
+      "text": "iVar8 = *(int *)((int)g_Layer3BandIndex[0].s + local_9c + 0x2c);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 274,
-      "match": "(ushort *)((int)",
+      "line": 263,
+      "match": "(int *)((int)",
       "severity": "mild",
-      "text": "uVar4 = *(ushort *)((int)&uStack_57a + iVar9 * 2 + 2);",
+      "text": "iVar5 = *(int *)((int)g_Layer3BandIndex[0].s + local_9c + 0x34) -",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 264,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "*(int *)((int)g_Layer3BandIndex[0].s + local_9c + 0x30);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 266,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "iVar8 = local_e4 * (*(int *)((int)g_Layer3BandIndex[0].s + local_9c + 0x30) - iVar8) +",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 275,
-      "match": "(float *)((int)",
+      "match": "(ushort *)((int)",
       "severity": "mild",
-      "text": "*(float *)((int)local_2078 + iVar11) = local_2078[iVar9];",
+      "text": "uVar3 = *(ushort *)((int)&uStack_57a + iVar8 * 2 + 2);",
       "type": "pointer_cast"
     },
     {
@@ -1127,76 +1003,100 @@
       "line": 276,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "*(float *)((int)afStack_e78 + iVar11) = fVar2;",
+      "text": "*(float *)((int)local_2078 + iVar10) = local_2078[iVar8];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 277,
-      "match": "(ushort *)((int)",
+      "match": "(float *)((int)",
       "severity": "mild",
-      "text": "*(ushort *)((int)&uStack_57a + iVar8 + 2) = uVar4;",
+      "text": "*(float *)((int)afStack_e78 + iVar10) = fVar1;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 278,
+      "match": "(ushort *)((int)",
+      "severity": "mild",
+      "text": "*(ushort *)((int)&uStack_57a + iVar7 + 2) = uVar3;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 279,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "*(float *)((int)afStack_1778 + iVar11) = afStack_1778[iVar9];",
+      "text": "*(float *)((int)afStack_1778 + iVar10) = afStack_1778[iVar8];",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Complex pointer cast",
       "line": 301,
-      "match": "DAT_0067e728",
+      "match": "(int *)((int)",
       "severity": "mild",
-      "text": "iVar11 = *(int *)(&DAT_0067e728 + iVar11) - iVar6;",
-      "type": "undefined_data"
+      "text": "iVar5 = *(int *)((int)g_Layer3BandIndex[0].s + iVar10);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 302,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "iVar10 = *(int *)((int)g_Layer3BandIndex[0].s + iVar10 + 4) - iVar5;",
+      "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 306,
+      "line": 307,
       "match": "ABS",
       "severity": "mild",
-      "text": "if (ABS(input_lr_samples->channels[1].samples[iVar6 / 0x12][iVar6 % 0x12]) != 0.0) {",
+      "text": "if (ABS(input_lr_samples->channels[1].samples[iVar5 / 0x12][iVar5 % 0x12]) != 0.0) {",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 321,
-      "match": "DAT_0067e728",
-      "severity": "mild",
-      "text": "iVar9 = *(int *)(&DAT_0067e728 + local_6c) - *(int *)(local_6c + 0x67e724);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 329,
-      "match": "(short *)((int)",
+      "line": 322,
+      "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(short *)((int)&uStack_57a + iVar11 + 2) = sVar3;",
+      "text": "iVar8 = *(int *)((int)g_Layer3BandIndex[0].s + local_6c);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 332,
-      "match": "(short *)((int)",
+      "line": 323,
+      "match": "(int *)((int)",
       "severity": "mild",
-      "text": "fVar13 = (float10)fptan((float10)*(short *)((int)&uStack_57a + iVar11 + 2) *",
+      "text": "iVar5 = *(int *)((int)g_Layer3BandIndex[0].s + local_6c + 4) - iVar8;",
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 332,
-      "match": "fptan",
+      "description": "Complex pointer cast",
+      "line": 331,
+      "match": "(short *)((int)",
       "severity": "mild",
-      "text": "fVar13 = (float10)fptan((float10)*(short *)((int)&uStack_57a + iVar11 + 2) *",
-      "type": "decompiler_intrinsic"
+      "text": "*(short *)((int)&uStack_57a + iVar10 + 2) = sVar2;",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 334,
+      "match": "(short *)((int)",
+      "severity": "mild",
+      "text": "fVar13 = (float10)fptan((float10)*(short *)((int)&uStack_57a + iVar10 + 2) *",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 334,
+      "match": "fptan",
+      "severity": "mild",
+      "text": "fVar13 = (float10)fptan((float10)*(short *)((int)&uStack_57a + iVar10 + 2) *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 336,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)afStack_e78 + local_70) = (float)fVar13;",
@@ -1204,90 +1104,58 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 338,
+      "line": 340,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "(*(int *)((int)&uStack_57a + iVar11) >> 0x10,",
+      "text": "(*(int *)((int)&uStack_57a + iVar10) >> 0x10,",
       "type": "pointer_cast"
     },
     {
       "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 339,
+      "line": 341,
       "match": "(double)CONCAT44(",
       "severity": "moderate",
-      "text": "(double)CONCAT44(local_207c,pfVar14),iVar6,(int)local_2078,pfVar14);",
+      "text": "(double)CONCAT44(local_207c,local_2080),iVar8,local_2078);",
       "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 339,
+      "line": 341,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "(double)CONCAT44(local_207c,pfVar14),iVar6,(int)local_2078,pfVar14);",
+      "text": "(double)CONCAT44(local_207c,local_2080),iVar8,local_2078);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 350,
-      "match": "DAT_0067e758",
-      "severity": "mild",
-      "text": "iVar6 = *(int *)(&DAT_0067e758 + local_98) - *(int *)(&DAT_0067e754 + local_98);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 350,
-      "match": "DAT_0067e754",
-      "severity": "mild",
-      "text": "iVar6 = *(int *)(&DAT_0067e758 + local_98) - *(int *)(&DAT_0067e754 + local_98);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 351,
-      "match": "DAT_0067e750",
-      "severity": "mild",
-      "text": "local_2c = *(int *)(&DAT_0067e750 + local_98) * 3;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 353,
-      "match": "DAT_0067e754",
-      "severity": "mild",
-      "text": "(*(int *)(&DAT_0067e754 + local_98) - *(int *)(&DAT_0067e750 + local_98)) +",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 353,
-      "match": "DAT_0067e750",
-      "severity": "mild",
-      "text": "(*(int *)(&DAT_0067e754 + local_98) - *(int *)(&DAT_0067e750 + local_98)) +",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 362,
-      "match": "(ushort *)((int)",
+      "line": 352,
+      "match": "(int *)((int)",
       "severity": "mild",
-      "text": "uVar4 = *(ushort *)((int)&uStack_57a + iVar9 * 2 + 2);",
+      "text": "iVar8 = *(int *)((int)g_Layer3BandIndex[0].s + local_98 + 0x2c);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 363,
-      "match": "(float *)((int)",
+      "line": 353,
+      "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(float *)((int)local_2078 + iVar11) = local_2078[iVar9];",
+      "text": "iVar5 = *(int *)((int)g_Layer3BandIndex[0].s + local_98 + 0x34) -",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 364,
-      "match": "(float *)((int)",
+      "line": 354,
+      "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(float *)((int)afStack_e78 + iVar11) = fVar2;",
+      "text": "*(int *)((int)g_Layer3BandIndex[0].s + local_98 + 0x30);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 356,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "iVar8 = local_24 * (*(int *)((int)g_Layer3BandIndex[0].s + local_98 + 0x30) - iVar8) +",
       "type": "pointer_cast"
     },
     {
@@ -1295,7 +1163,7 @@
       "line": 365,
       "match": "(ushort *)((int)",
       "severity": "mild",
-      "text": "*(ushort *)((int)&uStack_57a + iVar8 + 2) = uVar4;",
+      "text": "uVar3 = *(ushort *)((int)&uStack_57a + iVar8 * 2 + 2);",
       "type": "pointer_cast"
     },
     {
@@ -1303,63 +1171,71 @@
       "line": 366,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "*(float *)((int)afStack_1778 + iVar11) = afStack_1778[iVar9];",
+      "text": "*(float *)((int)local_2078 + iVar10) = local_2078[iVar8];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 381,
+      "line": 367,
+      "match": "(float *)((int)",
+      "severity": "mild",
+      "text": "*(float *)((int)afStack_e78 + iVar10) = fVar1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 368,
+      "match": "(ushort *)((int)",
+      "severity": "mild",
+      "text": "*(ushort *)((int)&uStack_57a + iVar7 + 2) = uVar3;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 369,
+      "match": "(float *)((int)",
+      "severity": "mild",
+      "text": "*(float *)((int)afStack_1778 + iVar10) = afStack_1778[iVar8];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 384,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "if ((*(uint *)((int)(pafVar12 + 0x20) + iVar6 * 4) & 0x7fffffff) != 0) {",
+      "text": "if ((*(uint *)((int)(pafVar12 + 0x20) + iVar5 * 4) & 0x7fffffff) != 0) {",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 394,
-      "match": "DAT_0067e6c8",
-      "severity": "mild",
-      "text": "iVar9 = *(int *)(&DAT_0067e6c8 + iVar6);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 397,
+      "line": 398,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar1 = (int *)((int)&INT_0067e6cc + iVar6);",
+      "text": "iVar8 = *(int *)((int)g_Layer3BandIndex[0].l + iVar8)) {",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 401,
-      "match": "DAT_0067e6c8",
-      "severity": "mild",
-      "text": "iVar9 = *(int *)(&DAT_0067e6c8 + iVar6);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 405,
+      "line": 403,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "iVar6 = *(int *)((int)&INT_0067e6cc + local_60) - *(int *)(&DAT_0067e6c8 + local_60);",
+      "text": "iVar8 = *(int *)((int)g_Layer3BandIndex[0].l + iVar5);",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 405,
-      "match": "DAT_0067e6c8",
+      "description": "Complex pointer cast",
+      "line": 407,
+      "match": "(int *)((int)",
       "severity": "mild",
-      "text": "iVar6 = *(int *)((int)&INT_0067e6cc + local_60) - *(int *)(&DAT_0067e6c8 + local_60);",
-      "type": "undefined_data"
+      "text": "iVar5 = *(int *)((int)g_Layer3BandIndex[0].l + local_60 + 4) -",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 412,
-      "match": "(short *)((int)",
+      "line": 408,
+      "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(short *)((int)&uStack_57a + iVar11 + 2) = sVar3;",
+      "text": "*(int *)((int)g_Layer3BandIndex[0].l + local_60);",
       "type": "pointer_cast"
     },
     {
@@ -1367,20 +1243,28 @@
       "line": 415,
       "match": "(short *)((int)",
       "severity": "mild",
-      "text": "fVar13 = (float10)fptan((float10)*(short *)((int)&uStack_57a + iVar11 + 2) *",
+      "text": "*(short *)((int)&uStack_57a + iVar10 + 2) = sVar2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 418,
+      "match": "(short *)((int)",
+      "severity": "mild",
+      "text": "fVar13 = (float10)fptan((float10)*(short *)((int)&uStack_57a + iVar10 + 2) *",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 415,
+      "line": 418,
       "match": "fptan",
       "severity": "mild",
-      "text": "fVar13 = (float10)fptan((float10)*(short *)((int)&uStack_57a + iVar11 + 2) *",
+      "text": "fVar13 = (float10)fptan((float10)*(short *)((int)&uStack_57a + iVar10 + 2) *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 417,
+      "line": 420,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)afStack_e78 + local_64) = (float)fVar13;",
@@ -1388,47 +1272,47 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 421,
+      "line": 424,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "(*(int *)((int)&uStack_57a + iVar11) >> 0x10,",
+      "text": "(*(int *)((int)&uStack_57a + iVar10) >> 0x10,",
       "type": "pointer_cast"
     },
     {
       "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 422,
+      "line": 425,
       "match": "(double)CONCAT44(",
       "severity": "moderate",
-      "text": "(double)CONCAT44(local_207c,pfVar14),iVar9,(int)local_2078,pfVar14)",
+      "text": "(double)CONCAT44(local_207c,local_2080),iVar8,local_2078);",
       "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 422,
+      "line": 425,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "(double)CONCAT44(local_207c,pfVar14),iVar9,(int)local_2078,pfVar14)",
+      "text": "(double)CONCAT44(local_207c,local_2080),iVar8,local_2078);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 470,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "pfVar10 = (float *)((int)*local_4c + iVar6);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 471,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "pfVar14 = (float *)((int)*local_48 + iVar6);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 472,
+      "match": "(float *)((int)",
+      "severity": "mild",
+      "text": "pfVar9 = (float *)((int)*local_4c + iVar5);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 473,
+      "match": "(float *)((int)",
+      "severity": "mild",
+      "text": "pfVar11 = (float *)((int)*local_48 + iVar5);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 474,
       "match": "(short *)((int)",
       "severity": "mild",
       "text": "if (*(short *)((int)&uStack_57a + local_50 + 2) == 7) {",

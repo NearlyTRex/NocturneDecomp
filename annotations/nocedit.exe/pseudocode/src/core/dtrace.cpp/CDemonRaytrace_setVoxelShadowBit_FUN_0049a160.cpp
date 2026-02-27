@@ -19,29 +19,31 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_setVoxelShadowBit_FUN_0049a160(CDemo
   int local_34;
   int local_30;
   int local_2c;
-  CVector3i *local_28;
-  int aiStack_24 [5];
+  int local_28;
+  CVector3i local_1c;
   
   bVar2 = 0;
   core_dtrace_cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_004997d0
             (this_ptr,world_position,in_stack_ffffffc0);
-  *(int *)((int)&stack0xffffffc4 + (uint)bVar2 * -8) = aiStack_24[(uint)bVar2 * -2];
-  *(int *)((int)&stack0xffffffc8 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
-       aiStack_24[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1];
-  if ((((-1 < (int)local_28) && (-1 < local_3c)) && (-1 < local_38)) &&
-     ((((int)local_28 < (this_ptr->grid_coord).x && (local_3c < (this_ptr->grid_coord).y)) &&
+  *(uint *)((int)&stack0xffffffc4 + (uint)bVar2 * -8) =
+       *(uint *)(&stack0xffffffdc + (uint)bVar2 * -8);
+  *(uint *)((int)&stack0xffffffc8 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
+       *(uint *)(&stack0xffffffe0 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
+  if ((((-1 < local_28) && (-1 < local_3c)) && (-1 < local_38)) &&
+     (((local_28 < (this_ptr->grid_coord).x && (local_3c < (this_ptr->grid_coord).y)) &&
       (local_38 < (this_ptr->grid_coord).z)))) {
     core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00499880
-              (this_ptr,world_position,local_28);
-    local_34 = aiStack_24[2];
-    *(int *)((int)&stack0xffffffd0 + (uint)bVar2 * -8) = aiStack_24[(uint)bVar2 * -2 + 3];
-    *(int *)((int)&stack0xffffffd4 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
-         aiStack_24[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 4];
+              (this_ptr,world_position,&local_1c);
+    local_34 = local_1c.x;
+    *(uint *)((int)&stack0xffffffd0 + (uint)bVar2 * -8) =
+         *(uint *)((int)&local_1c + (uint)bVar2 * -8 + 4);
+    *(uint *)((int)&stack0xffffffd4 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
+         *(uint *)((int)&local_1c + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
     local_34 = local_34 % 8;
     local_30 = local_30 % 8;
     local_2c = local_2c % 8;
     this_ptr_00 = core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_004952b0
-                            (this_ptr,(int)local_28,local_3c,local_38);
+                            (this_ptr,local_28,local_3c,local_38);
     if (this_ptr_00 == (CDemonCube *)0x0) {
       g_CurrentFilename = "..\\core\\dtrace.cpp";
       g_CurrentLineNumber = 0xb19;

@@ -6,17 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 48,
-    "complexity_score": 60,
+    "complexity_score": 13,
     "cross_reference_count": 6,
     "function_call_count": 3,
     "global_count": 5,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 15,
-    "suspect_count": 4,
-    "suspect_types": [
-      "stack_param"
-    ],
-    "total_lines": 63
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 13,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 61
   },
   "cross_references": [
     {
@@ -66,7 +64,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_fire.cpp_CFireEffect_createExplosion_FUN_004c8c10",
-    "signature": "void __cdecl core_fire_cpp_CFireEffect_createExplosion_FUN_004c8c10(CFireEffect *this_ptr,CVector3f *position)"
+    "signature": "void __cdecl core_fire_cpp_CFireEffect_createExplosion_FUN_004c8c10(CFireEffect *this_ptr,CVector3f *position,float scale,int damage_amount)"
   },
   "function_calls": [
     {
@@ -146,10 +144,10 @@
     "pcode_op_count": 239
   },
   "stack_frame": {
-    "frame_size": 12,
+    "frame_size": 20,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 8,
+    "param_size": 16,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -165,41 +163,22 @@
         "offset": 8,
         "size": 4,
         "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "scale",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "damage_amount",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 5,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "float in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 6,
-      "match": "in_stack_00000010",
-      "severity": "moderate",
-      "text": "int in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "(g_ExplosionPool + g_ExplosionPoolIndex,position,in_stack_0000000c,in_stack_00000010);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000010",
-      "severity": "moderate",
-      "text": "(g_ExplosionPool + g_ExplosionPoolIndex,position,in_stack_0000000c,in_stack_00000010);",
-      "type": "stack_param"
-    }
-  ]
+  "suspects": []
 }

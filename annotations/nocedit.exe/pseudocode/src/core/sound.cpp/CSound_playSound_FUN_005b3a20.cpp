@@ -2,11 +2,11 @@
 // Address: 005b3a20
 // Address Range: [[005b3a20, 005b3a3c]]
 // Convention: __cdecl
-// Signature: int __cdecl core_sound_cpp_CSound_playSound_FUN_005b3a20(CSound *this_ptr,void *user_data,char *sound_name)
+// Signature: uint __cdecl core_sound_cpp_CSound_playSound_FUN_005b3a20(CSound *this_ptr,void *user_data,char *sound_name)
 
 #include "nocturne.h"
 
-int __cdecl core_sound_cpp_CSound_playSound_FUN_005b3a20(CSound *this_ptr,void *user_data,char *sound_name)
+uint __cdecl core_sound_cpp_CSound_playSound_FUN_005b3a20(CSound *this_ptr,void *user_data,char *sound_name)
 
 {
   uint uVar1;

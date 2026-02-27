@@ -81,11 +81,11 @@ void __cdecl CSound::playAmbientSound(CSound *this_ptr,char *sound_name);
 
 // Original: core_sound.cpp_CSound_playSound_FUN_005b3a20
 // Address: 005b3a20
-int __cdecl CSound::playSound(CSound *this_ptr,void *user_data,char *sound_name);
+uint __cdecl CSound::playSound(CSound *this_ptr,void *user_data,char *sound_name);
 
 // Original: core_sound.cpp_CSound_playActorSound_FUN_005b3a40
 // Address: 005b3a40
-void __cdecl CSound::playActorSound(CSound *this_ptr,CDemonActor *actor,char *sound_name,CVector3f *position);
+uint __cdecl CSound::playActorSound(CSound *this_ptr,CDemonActor *actor,char *sound_name,CVector3f *position);
 
 // Original: core_sound.cpp_CSound_playTrackedActorSound_FUN_005b3a70
 // Address: 005b3a70

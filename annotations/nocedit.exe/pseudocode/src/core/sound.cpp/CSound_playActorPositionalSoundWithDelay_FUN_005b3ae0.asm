@@ -13,7 +13,7 @@
 ; undefined8       Stack[-0xc]:8  local_c
 ;
 ; XREF[3]:
-;   core_actor.cpp_CDemonActor_playSoundWithVolume_FUN_00408fa0 at 00408fba
+;   core_actor.cpp_CDemonActor_playSoundWithDelay_FUN_00408fa0 at 00408fba
 ;   core_fire.cpp_CFireEffect_createBulletImpact_FUN_004c76a0 at 004c79b3
 ;   core_fire.cpp_CFireEffect_createStake_FUN_004c7bb0 at 004c7cb3
 ;

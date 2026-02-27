@@ -7,6 +7,15 @@
 // CVector3f[5000]
 CVector3f g_FloatVertexArray[5000] = {};
 
+// char[264]
+char g_SkeleditLastPOSImported[264] = {};
+
+// char[504]
+char g_SkeleditStatusMessage[504] = {};
+
+// int
+int g_SkeleditBiasEntryCount = {};
+
 // int[4000]
 int g_VertexRemapTable[4000] = {};
 

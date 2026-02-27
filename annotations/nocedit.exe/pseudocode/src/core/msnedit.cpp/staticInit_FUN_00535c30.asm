@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   WatcomStaticDestructorNode g_CEdCheckDestructorNode
-;   undefined4 DAT_02f7a024
+;   CActorPropertyList g_MsnEditPropertyList
 ;   CEdCheck g_CEdCheckInstance
 ;
 ; Called Functions:
@@ -18,7 +18,7 @@
 
 section .text
 
-    PUSH 0x2f7a024                      ; 00535c30 | DAT_02f7a024
+    PUSH 0x2f7a024                      ; 00535c30 | g_MsnEditPropertyList
         ;   Label: core_msnedit.cpp_staticInit_FUN_00535c30
     CALL core_actor.cpp_CActorPropertyList_init_FUN_0040e130 ; 00535c35
         ;   XREF to: 0040e130 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_init_FUN_0040e130(CActorPropertyList * this_ptr)

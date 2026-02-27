@@ -3,14 +3,14 @@
     "errors": [
       {
         "category": "undeclared_identifier",
-        "column": 52,
-        "line": 36,
+        "column": 29,
+        "line": 37,
         "message": "use of undeclared identifier 'stack0xffffffe8'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 23,
-        "line": 38,
+        "column": 24,
+        "line": 39,
         "message": "use of undeclared identifier 'stack0xffffffec'"
       }
     ],
@@ -19,21 +19,20 @@
   },
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 204,
+    "complexity_score": 170,
     "cross_reference_count": 7,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 29,
-    "suspect_count": 15,
+    "pseudocode_lines": 30,
+    "suspect_count": 12,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "stack_alignment_array",
-      "stack_ref",
-      "unaffected_reg"
+      "stack_ref"
     ],
-    "total_lines": 88
+    "total_lines": 89
   },
   "cross_references": [
     {
@@ -69,13 +68,13 @@
     {
       "addr": "00548390",
       "from_addr": "005483d0",
-      "name": "core_path.cpp_FUN_00548390",
+      "name": "core_path.cpp_getOrCreatePathMap_FUN_00548390",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00548680",
       "from_addr": "0054869d",
-      "name": "core_path.cpp_FUN_00548680",
+      "name": "core_path.cpp_renderPathMapsAtPosition_FUN_00548680",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -87,9 +86,9 @@
         "00499921"
       ]
     ],
-    "convention": "__cdecl",
+    "convention": "__stack2_esi",
     "name": "core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00499880",
-    "signature": "void __cdecl core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00499880(CDemonRaytrace *this_ptr,CVector3f *world_position,CVector3i *output_voxel_coords)"
+    "signature": "void __stack2_esi core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00499880(CDemonRaytrace *this_ptr,CVector3f *world_position,CVector3i *output_voxel_coords)"
   },
   "function_calls": [
     {
@@ -134,10 +133,10 @@
     "pcode_op_count": 347
   },
   "stack_frame": {
-    "frame_size": 52,
+    "frame_size": 48,
     "local_size": 40,
     "param_offset": 4,
-    "param_size": 12,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -188,25 +187,10 @@
         "offset": 8,
         "size": 4,
         "type": "CVector3f *"
-      },
-      {
-        "is_param": true,
-        "name": "output_voxel_coords",
-        "offset": 12,
-        "size": 4,
-        "type": "CVector3i *"
       }
     ]
   },
   "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 8,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "int *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
     {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 10,
@@ -256,67 +240,51 @@
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unaffected register variable",
+      "description": "Complex pointer cast",
       "line": 28,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "*unaff_ESI = (int)ROUND(dVar1);",
-      "type": "unaffected_reg"
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "puVar2 = (uint *)((int)output_voxel_coords + (uint)bVar3 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 28,
+      "line": 29,
       "match": "ROUND",
       "severity": "mild",
-      "text": "*unaff_ESI = (int)ROUND(dVar1);",
+      "text": "output_voxel_coords->x = (int)ROUND(dVar1);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Direct stack address reference",
-      "line": 29,
+      "line": 30,
       "match": "&stack0xffffffe8",
       "severity": "moderate",
-      "text": "unaff_ESI[(uint)bVar2 * -2 + 1] = *(int *)((int)&stack0xffffffe8 + (uint)bVar2 * -8);",
+      "text": "*puVar2 = *(uint *)((int)&stack0xffffffe8 + (uint)bVar3 * -8);",
       "type": "stack_ref"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 29,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI[(uint)bVar2 * -2 + 1] = *(int *)((int)&stack0xffffffe8 + (uint)bVar2 * -8);",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 29,
-      "match": "(int *)((int)",
+      "line": 30,
+      "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "unaff_ESI[(uint)bVar2 * -2 + 1] = *(int *)((int)&stack0xffffffe8 + (uint)bVar2 * -8);",
+      "text": "*puVar2 = *(uint *)((int)&stack0xffffffe8 + (uint)bVar3 * -8);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 30,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "(unaff_ESI + (uint)bVar2 * -2 + 1)[(uint)bVar2 * -2 + 1] =",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 31,
+      "line": 32,
       "match": "&stack0xffffffec",
       "severity": "moderate",
-      "text": "*(int *)((int)&stack0xffffffec + (uint)bVar2 * -8 + (uint)bVar2 * -8);",
+      "text": "*(uint *)((int)&stack0xffffffec + (uint)bVar3 * -8 + (uint)bVar3 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 31,
-      "match": "(int *)((int)",
+      "line": 32,
+      "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)&stack0xffffffec + (uint)bVar2 * -8 + (uint)bVar2 * -8);",
+      "text": "*(uint *)((int)&stack0xffffffec + (uint)bVar3 * -8 + (uint)bVar3 * -8);",
       "type": "pointer_cast"
     }
   ]

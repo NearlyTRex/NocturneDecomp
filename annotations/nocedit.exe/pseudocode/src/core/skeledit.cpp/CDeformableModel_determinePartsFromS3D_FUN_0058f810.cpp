@@ -291,7 +291,7 @@ int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f81
     _fscanf(local_ec,"%d\n");
     if ((local_e8 < 0x65) || (0x67 < local_e8)) {
       _sprintf
-                (&DAT_03670650,"%s has incorrect S3D version %d",filename + 0x200);
+                (g_SkeleditStatusMessage,"%s has incorrect S3D version %d",filename + 0x200);
       goto LAB_0058f8e7;
     }
     iVar22 = 1;
@@ -387,7 +387,8 @@ int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f81
           }
           if (this_ptr->num_textures <= iVar22) {
             if (0x4f < this_ptr->num_textures) {
-              _sprintf(&DAT_03670650,"Texture list full determining parts");
+              _sprintf
+                        (g_SkeleditStatusMessage,"Texture list full determining parts");
               goto LAB_0058f8e7;
             }
             _sprintf
@@ -1306,7 +1307,7 @@ LAB_00591f48:
                       }
                       if ((float)0.20000000000000001 < local_a1f0) {
                         _sprintf
-                                  (&DAT_03670650,"Can't find good match for capped face vertex, probably because there was a new vertex created only for a capped face");
+                                  (g_SkeleditStatusMessage,"Can't find good match for capped face vertex, probably because there was a new vertex created only for a capped face");
                         goto LAB_0058f8e7;
                       }
                       iVar22 = *(int *)((int)pvVar37 + 0x1c) >> 8;
@@ -1375,7 +1376,7 @@ LAB_00591f48:
                     }
                     if (local_ac < 0) {
                       _sprintf
-                                (&DAT_03670650,"Can't find opposing part for capped face!");
+                                (g_SkeleditStatusMessage,"Can't find opposing part for capped face!");
                       goto LAB_0058f8e7;
                     }
                     this_ptr->cap_index_ptr[0][this_ptr->cap_tri_count[0]] = local_ac;
@@ -1423,7 +1424,8 @@ LAB_00591835:
                     (g_CEditorToolsPtr,"Determined parts using %s OK!");
           return 1;
         }
-        _sprintf(&DAT_03670650,"Deformable model has more faces than segmented model!");
+        _sprintf
+                  (g_SkeleditStatusMessage,"Deformable model has more faces than segmented model!");
         goto LAB_0058f8e7;
       }
       pcVar23 = "Too many parts in %s";
@@ -1434,7 +1436,7 @@ LAB_00590a70:
     }
   }
 LAB_0058f8da:
-  _sprintf(&DAT_03670650,pcVar23);
+  _sprintf(g_SkeleditStatusMessage,pcVar23);
 LAB_0058f8e7:
   if (local_ec != (_FILE *)0x0) {
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_ec,"..\\core\\skeledit.cpp",0xbe2);

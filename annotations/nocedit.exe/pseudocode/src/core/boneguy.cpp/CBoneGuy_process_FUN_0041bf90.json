@@ -9,7 +9,7 @@
       },
       {
         "category": "incompatible_types",
-        "column": 13,
+        "column": 14,
         "line": 435,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
       }
@@ -19,20 +19,19 @@
   },
   "complexity": {
     "assembly_lines": 952,
-    "complexity_score": 578,
+    "complexity_score": 563,
     "cross_reference_count": 0,
     "function_call_count": 37,
     "global_count": 26,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 433,
-    "suspect_count": 11,
+    "suspect_count": 10,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "stack_alignment_array",
       "stack_param",
       "stack_ref",
-      "undefined_data",
       "warning_type_propagation"
     ],
     "total_lines": 1385
@@ -361,8 +360,8 @@
     },
     {
       "addr": "00822944",
-      "name": "DAT_00822944",
-      "type": "undefined4",
+      "name": "INT_00822944",
+      "type": "int",
       "value": null
     },
     {
@@ -1012,14 +1011,6 @@
       "severity": "mild",
       "text": "if ((SQRT(fVar17 * fVar17 + fVar16 * fVar16) <= local_30 + (float)0.5) &&",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 296,
-      "match": "DAT_00822944",
-      "severity": "mild",
-      "text": "DAT_00822944);",
-      "type": "undefined_data"
     },
     {
       "description": "Direct stack address reference",

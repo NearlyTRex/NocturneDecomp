@@ -1,25 +1,25 @@
 // Name: core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00499880
 // Address: 00499880
 // Address Range: [[00499880, 00499921]]
-// Convention: __cdecl
-// Signature: void __cdecl core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00499880(CDemonRaytrace *this_ptr,CVector3f *world_position,CVector3i *output_voxel_coords)
+// Convention: __stack2_esi
+// Signature: void __stack2_esi core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00499880(CDemonRaytrace *this_ptr,CVector3f *world_position,CVector3i *output_voxel_coords)
 
 #include "nocturne.h"
 
 /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
-void __cdecl core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00499880(CDemonRaytrace *this_ptr,CVector3f *world_position,CVector3i *output_voxel_coords)
+void __stack2_esi core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00499880(CDemonRaytrace *this_ptr,CVector3f *world_position,CVector3i *output_voxel_coords)
 
 {
   double dVar1;
-  int *unaff_ESI;
-  byte bVar2;
+  uint *puVar2;
+  byte bVar3;
   int aiStackY_1004 [1016];
   int local_18;
   int local_14;
   double local_10;
   
-  bVar2 = 0;
+  bVar3 = 0;
   local_10 = floor
                        ((double)((world_position->x - (this_ptr->bbox_min).x) /
                                 (this_ptr->adjusted_size).x));
@@ -32,9 +32,10 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00499
                        ((double)((world_position->z - (this_ptr->bbox_min).z) /
                                 (this_ptr->adjusted_size).z));
   local_14 = (int)ROUND(ROUND(local_10));
-  *unaff_ESI = (int)ROUND(dVar1);
-  unaff_ESI[(uint)bVar2 * -2 + 1] = *(int *)((int)&stack0xffffffe8 + (uint)bVar2 * -8);
-  (unaff_ESI + (uint)bVar2 * -2 + 1)[(uint)bVar2 * -2 + 1] =
-       *(int *)((int)&stack0xffffffec + (uint)bVar2 * -8 + (uint)bVar2 * -8);
+  puVar2 = (uint *)((int)output_voxel_coords + (uint)bVar3 * -8 + 4);
+  output_voxel_coords->x = (int)ROUND(dVar1);
+  *puVar2 = *(uint *)((int)&stack0xffffffe8 + (uint)bVar3 * -8);
+  puVar2[(uint)bVar3 * -2 + 1] =
+       *(uint *)((int)&stack0xffffffec + (uint)bVar3 * -8 + (uint)bVar3 * -8);
   return;
 }

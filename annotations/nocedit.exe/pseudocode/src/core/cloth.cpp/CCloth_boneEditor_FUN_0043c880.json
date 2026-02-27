@@ -50,16 +50,10 @@
         "message": "cannot cast from type 'float' to pointer type 'char *'"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 17,
+        "category": "other",
+        "column": 51,
         "line": 165,
-        "message": "use of undeclared identifier 'DAT_0083b110'; did you mean 'DAT_0083b10c'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 56,
-        "line": 166,
-        "message": "use of undeclared identifier 'DAT_0083b110'"
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
@@ -114,6 +108,12 @@
         "column": 47,
         "line": 279,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 293,
+        "message": "cannot cast from type 'float' to pointer type 'char *'"
       }
     ],
     "success": false,
@@ -121,13 +121,13 @@
   },
   "complexity": {
     "assembly_lines": 395,
-    "complexity_score": 1052,
+    "complexity_score": 1007,
     "cross_reference_count": 1,
     "function_call_count": 28,
     "global_count": 32,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 372,
-    "suspect_count": 64,
+    "suspect_count": 60,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
@@ -135,7 +135,6 @@
       "stack_ref",
       "suspect_float",
       "unaffected_reg",
-      "undefined_data",
       "warning_deadcode_restart"
     ],
     "total_lines": 767
@@ -436,14 +435,14 @@
     },
     {
       "addr": "0083b10c",
-      "name": "DAT_0083b10c",
-      "type": "undefined4",
+      "name": "g_ClothBoneScreenshotCounter",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0083b110",
-      "name": "DAT_0083b110",
-      "type": "undefined4",
+      "name": "g_ClothBoneScreenshotFilename",
+      "type": "char[20]",
       "value": null
     },
     {
@@ -895,38 +894,6 @@
       "severity": "mild",
       "text": "pCVar8 = (CVector3f *)((int)(pCVar8 + 0x17) + 8);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 157,
-      "match": "DAT_0083b10c",
-      "severity": "mild",
-      "text": "DAT_0083b10c = DAT_0083b10c + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 157,
-      "match": "DAT_0083b10c",
-      "severity": "mild",
-      "text": "DAT_0083b10c = DAT_0083b10c + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 158,
-      "match": "DAT_0083b110",
-      "severity": "mild",
-      "text": "_sprintf(&DAT_0083b110,\"noc%d.pcx\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 159,
-      "match": "DAT_0083b110",
-      "severity": "mild",
-      "text": "engine_pcx_c_saveScreenshotGeneral_FUN_005490c0(&DAT_0083b110);",
-      "type": "undefined_data"
     },
     {
       "description": "Unaffected register variable",

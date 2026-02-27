@@ -208,8 +208,8 @@ void __cdecl core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(C
   local_94 = 0;
   local_84 = 0;
   local_4c = 1;
-  if ((DAT_0366b64c & 1) == 0) {
-    DAT_0366b64c = DAT_0366b64c | 1;
+  if ((g_SkeleditViewModelInitFlag & 1) == 0) {
+    g_SkeleditViewModelInitFlag = g_SkeleditViewModelInitFlag | 1;
   }
   local_64 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(local_bc,"bip01 r hand",0);
   if (local_64 < 0) {
@@ -222,12 +222,12 @@ void __cdecl core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(C
   local_1f0 = 0.0;
   local_200._12_4_ = 0.0;
   fStack_1e8 = 28.0;
-  if ((DAT_0366b64c & 2) == 0) {
-    DAT_0366b64c = DAT_0366b64c | 2;
-    core_dmodel_cpp_CKeyFramedModel_ctor_FUN_00476cf0(&CKeyFramedModel_03665f74);
-    _atexit(&WatcomStaticDestructorNode_00681850);
+  if ((g_SkeleditViewModelInitFlag & 2) == 0) {
+    g_SkeleditViewModelInitFlag = g_SkeleditViewModelInitFlag | 2;
+    core_dmodel_cpp_CKeyFramedModel_ctor_FUN_00476cf0(&g_SkeleditViewModel);
+    _atexit(&g_SkeleditViewModelDestructorNode);
   }
-  core_dmodel_cpp_CKeyFramedModel_free_FUN_00477690(&CKeyFramedModel_03665f74);
+  core_dmodel_cpp_CKeyFramedModel_free_FUN_00477690(&g_SkeleditViewModel);
   local_184.x = g_ZeroVector.x;
   local_184.y = g_ZeroVector.y;
   local_184.z = g_ZeroVector.z;
@@ -487,7 +487,7 @@ LAB_0059722b:
       }
     }
     iVar7 = local_64;
-    if (0 < CKeyFramedModel_03665f74.poly_count) {
+    if (0 < g_SkeleditViewModel.poly_count) {
       core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
                 (&local_2c0,&local_184,&local_19c);
       core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_2c0,local_54 + iVar7,&local_320);
@@ -514,7 +514,7 @@ LAB_0059722b:
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
                 (g_CDemonRendererPtr2,(CVector3i *)(local_200 + 0xc),(CVector3i *)local_200);
       core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850
-                (&CKeyFramedModel_03665f74,0,(CKeyFramedModelInstance *)0x0,-1);
+                (&g_SkeleditViewModel,0,(CKeyFramedModelInstance *)0x0,-1);
       engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
     }
     if (0 < local_88) {
@@ -636,7 +636,7 @@ LAB_005975b4:
     engine_2d_c_drawText_FUN_00401fd0(local_46c,0,0x4d);
     _sprintf(local_46c," Current texture set: %d");
     engine_2d_c_drawText_FUN_00401fd0(local_46c,0,0x58);
-    if (0 < CKeyFramedModel_03665f74.poly_count) {
+    if (0 < g_SkeleditViewModel.poly_count) {
       _sprintf(local_46c," Item pos: X: %5.3f Y: %5.3f Z: %5.3f");
       engine_2d_c_drawText_FUN_00401fd0(local_46c,0,99);
       _sprintf(local_46c," Item orient: P: %5.3f B: %5.3f H: %5.3f");
@@ -661,7 +661,7 @@ LAB_005975b4:
         pCVar13 = pCVar13 + 1;
       } while (iVar7 < local_bc->bone_count);
     }
-    if (((CKeyFramedModel_03665f74.poly_count < 1) ||
+    if (((g_SkeleditViewModel.poly_count < 1) ||
         (iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL), iVar7 == 0)) ||
        (local_a0 == 0)) {
       if (local_98 == 0) {
@@ -918,7 +918,7 @@ LAB_005975b4:
     if (iVar7 != 0) {
       while( true ) {
         local_2c = 0;
-        if (0 < CKeyFramedModel_03665f74.poly_count) {
+        if (0 < g_SkeleditViewModel.poly_count) {
           shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_e08);
           _sprintf(local_46c,"Model:\t%s");
           shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_e08.base,local_46c);
@@ -942,10 +942,10 @@ LAB_005975b4:
                             (g_CEditorToolsPtr,"Select model to position","models"
                              ,"*.kfm",(int)local_408,0);
           if (iVar7 == 0) {
-            if (CKeyFramedModel_03665f74.poly_count < 1) break;
+            if (g_SkeleditViewModel.poly_count < 1) break;
           }
           else {
-            core_dmodel_cpp_CKeyFramedModel_load_FUN_00476db0(&CKeyFramedModel_03665f74,local_408);
+            core_dmodel_cpp_CKeyFramedModel_load_FUN_00476db0(&g_SkeleditViewModel,local_408);
           }
         }
         if (local_2c == 1) {
@@ -1148,6 +1148,6 @@ LAB_005975b4:
     }
   }
   g_CDemonSetPtr->lighting_quality_mode = 0;
-  core_dmodel_cpp_CKeyFramedModel_free_FUN_00477690(&CKeyFramedModel_03665f74);
+  core_dmodel_cpp_CKeyFramedModel_free_FUN_00477690(&g_SkeleditViewModel);
   return;
 }

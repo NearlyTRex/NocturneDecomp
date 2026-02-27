@@ -141,7 +141,7 @@ void __cdecl readActorReference(_FILE *file_handle,CDemonActor *actor_out);
 
 // Original: core_script.cpp_writeActorReference_FUN_005607e0
 // Address: 005607e0
-void __cdecl writeActorReference(_FILE *file_handle,CDemonActor *actor);
+void __cdecl writeActorReference(_FILE *file_handle,CDemonActor **actor);
 
 // Original: core_script.cpp_CScript_loadState_FUN_00560820
 // Address: 00560820

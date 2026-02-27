@@ -1,35 +1,21 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 13,
-        "line": 60,
-        "message": "assigning to 'char *' from 'undefined1 *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 57,
-        "line": 74,
-        "message": "use of undeclared identifier 'DAT_00823a78'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 547,
-    "complexity_score": 684,
+    "complexity_score": 659,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 19,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 259,
-    "suspect_count": 41,
+    "suspect_count": 39,
     "suspect_types": [
       "decompiler_intrinsic",
-      "pointer_cast",
-      "undefined_data"
+      "pointer_cast"
     ],
     "total_lines": 806
   },
@@ -149,32 +135,32 @@
     },
     {
       "addr": "00823a78",
-      "name": "DAT_00823a78",
-      "type": "undefined4",
+      "name": "g_CollisionTexture",
+      "type": "SMRGLTextureBasic",
       "value": null
     },
     {
       "addr": "00823a80",
       "name": "DAT_00823a80",
-      "type": "undefined1",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "00823a81",
       "name": "DAT_00823a81",
-      "type": "undefined1",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "00823a82",
       "name": "DAT_00823a82",
-      "type": "undefined1",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "00823a83",
       "name": "DAT_00823a83",
-      "type": "undefined1",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -643,22 +629,6 @@
     "severity": "medium"
   },
   "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 53,
-      "match": "DAT_00823a80",
-      "severity": "mild",
-      "text": "pcVar10 = &DAT_00823a80;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 67,
-      "match": "DAT_00823a78",
-      "severity": "mild",
-      "text": "(g_CDemonRendererPtr2,(SMRGLTextureBasic *)&DAT_00823a78);",
-      "type": "undefined_data"
-    },
     {
       "description": "Complex pointer cast",
       "line": 71,

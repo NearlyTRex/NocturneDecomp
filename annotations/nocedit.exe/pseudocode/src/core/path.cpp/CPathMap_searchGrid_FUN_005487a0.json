@@ -1,0 +1,401 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 30,
+        "line": 105,
+        "message": "use of undeclared identifier 'DAT_030d2857'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 11,
+        "line": 108,
+        "message": "use of undeclared identifier 'DAT_030d2857'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 358,
+    "complexity_score": 138,
+    "cross_reference_count": 2,
+    "function_call_count": 3,
+    "global_count": 30,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 113,
+    "suspect_count": 2,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 471
+  },
+  "cross_references": [
+    {
+      "addr": "00547320",
+      "from_addr": "00547942",
+      "name": "core_path.cpp_CPathMap_findPathToDestination_FUN_00547320",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00548750",
+      "from_addr": "0054878e",
+      "name": "core_path.cpp_CPathMap_setupPathSearch_FUN_00548750",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005487a0",
+    "address_range": [
+      [
+        "005487a0",
+        "00548c28"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_path.cpp_CPathMap_searchGrid_FUN_005487a0",
+    "signature": "uint __cdecl core_path_cpp_CPathMap_searchGrid_FUN_005487a0(CPathMap *this_ptr,int start_height)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "is_variadic": true,
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "00546ba0",
+      "is_variadic": false,
+      "name": "core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0"
+    },
+    {
+      "addr": "005fde40",
+      "is_variadic": false,
+      "name": "crt_memory.c_memset_FUN_005fde40"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063e878",
+      "name": "s_core_path_cpp_0063e878",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063e889",
+      "name": "s_queuePop_empty_queue_0063e889",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "030c3ab4",
+      "name": "g_PathfindingMaxClimbHeight",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "030c3ddc",
+      "name": "g_PathfindingCurrentX",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "030c3de0",
+      "name": "g_PathfindingCurrentZ",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "030c3de4",
+      "name": "g_PathfindingDestX",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "030c3de8",
+      "name": "g_PathfindingDestZ",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "030c3dec",
+      "name": "g_PathfindingQueue",
+      "type": "CPathQueueNode[5000]",
+      "value": null
+    },
+    {
+      "addr": "030c3df0",
+      "name": "g_PathfindingQueue[0].cost",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "030c3df4",
+      "name": "g_PathfindingQueue[0].z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "030c3df8",
+      "name": "DAT_030c3df8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "030c3dfc",
+      "name": "DAT_030c3dfc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "030c3e00",
+      "name": "DAT_030c3e00",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "030c3e04",
+      "name": "DAT_030c3e04",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "030c3e08",
+      "name": "DAT_030c3e08",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "030c3e0c",
+      "name": "DAT_030c3e0c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "030c3e10",
+      "name": "DAT_030c3e10",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "030c3e14",
+      "name": "DAT_030c3e14",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "030c3e18",
+      "name": "DAT_030c3e18",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "030c3e1c",
+      "name": "DAT_030c3e1c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "030c3e20",
+      "name": "DAT_030c3e20",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "030c3e24",
+      "name": "DAT_030c3e24",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "030d284c",
+      "name": "g_PathfindingQueueHead",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "030d2850",
+      "name": "g_PathfindingQueueTail",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "030d2857",
+      "name": "DAT_030d2857",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "030d2858",
+      "name": "g_PathfindingVisited",
+      "type": "char[101][100]",
+      "value": null
+    },
+    {
+      "addr": "030d2859",
+      "name": "DAT_030d2859",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "030d4fcc",
+      "name": "g_PathfindingNodesExpanded",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00547942",
+        "call_type": "direct",
+        "caller": "core_path.cpp_CPathMap_findPathToDestination_FUN_00547320",
+        "estimated_params": 2,
+        "instructions_analyzed": 4,
+        "reg_params": [],
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0054878e",
+        "call_type": "direct",
+        "caller": "core_path.cpp_CPathMap_setupPathSearch_FUN_00548750",
+        "estimated_params": 5,
+        "instructions_analyzed": 16,
+        "reg_params": [],
+        "stack_params": 5
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.701986754966887,
+    "instruction_count": 302,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 13,
+      "BOOL_OR": 2,
+      "BRANCH": 5,
+      "CALL": 6,
+      "CBRANCH": 28,
+      "COPY": 228,
+      "INT_ADD": 120,
+      "INT_AND": 187,
+      "INT_CARRY": 15,
+      "INT_EQUAL": 184,
+      "INT_LEFT": 2,
+      "INT_LESS": 40,
+      "INT_MULT": 18,
+      "INT_NOTEQUAL": 24,
+      "INT_OR": 5,
+      "INT_SBORROW": 44,
+      "INT_SCARRY": 29,
+      "INT_SEXT": 46,
+      "INT_SLESS": 89,
+      "INT_SUB": 75,
+      "INT_XOR": 12,
+      "LOAD": 75,
+      "POPCOUNT": 87,
+      "RETURN": 1,
+      "STORE": 53,
+      "SUBPIECE": 32
+    },
+    "pcode_op_count": 1420
+  },
+  "stack_frame": {
+    "frame_size": 52,
+    "local_size": 44,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPathMap *"
+      },
+      {
+        "is_param": true,
+        "name": "start_height",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 98,
+      "match": "DAT_030d2857",
+      "severity": "mild",
+      "text": "if (((0 < iVar8) && ((&DAT_030d2857)[grid_z * 100 + iVar8] == '\\0')) &&",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 101,
+      "match": "DAT_030d2857",
+      "severity": "mild",
+      "text": "(&DAT_030d2857)[iVar8 + grid_z * 100] = 4;",
+      "type": "undefined_data"
+    }
+  ]
+}
