@@ -14,9 +14,9 @@
 ;   core_mission.cpp_CDemonMission_createHeros_FUN_00524a80 at 00524b68
 ;   core_mission.cpp_CDemonMission_process_FUN_00524250 at 00524296
 ;   core_mission.cpp_CDemonMission_run_FUN_00524420 at 005244e6
-;   core_msnedit.cpp_CDemonMission_FUN_0053bc80 at 0053bcb1
-;   core_msnedit.cpp_CDemonMission_FUN_0053d8b0 at 0053dbc4
-;   core_msnedit.cpp_CDemonMission_FUN_0053e220 at 0053e973
+;   core_msnedit.cpp_CDemonMission_changeActorType_FUN_0053d8b0 at 0053dbc4
+;   core_msnedit.cpp_CDemonMission_deleteActorWithConfirm_FUN_0053bc80 at 0053bcb1
+;   core_msnedit.cpp_CDemonMission_editGore_FUN_0053e220 at 0053e973
 ;   core_msnedit.cpp_CDemonMission_removeSet_FUN_00538df0 at 00538e35
 ;
 ; Called Functions:

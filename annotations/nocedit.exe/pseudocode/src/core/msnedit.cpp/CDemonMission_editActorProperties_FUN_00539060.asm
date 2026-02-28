@@ -9,7 +9,7 @@
 ;
 ; XREF[2]:
 ;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 0053aa25
-;   core_msnedit.cpp_FUN_005374b0 at 005374ef
+;   core_msnedit.cpp_setEditorLayoutMode_FUN_005374b0 at 005374ef
 ;
 ; Referenced Globals:
 ;   int g_WindowWidth = 0x140

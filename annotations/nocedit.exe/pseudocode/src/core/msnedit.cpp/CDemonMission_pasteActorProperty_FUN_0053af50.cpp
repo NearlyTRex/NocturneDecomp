@@ -13,8 +13,9 @@ void __cdecl core_msnedit_cpp_CDemonMission_pasteActorProperty_FUN_0053af50(CDem
   
   switch(*(uint *)property) {
   case 5:
-    if (**(int **)(property + 0x68) != 0) {
-      core_msnedit_cpp_CDemonMission_FUN_0053c140(this_ptr,**(int **)(property + 0x68));
+    if ((CDemonActor *)**(uint **)(property + 0x68) != (CDemonActor *)0x0) {
+      core_msnedit_cpp_CDemonMission_selectActor_FUN_0053c140
+                (this_ptr,(CDemonActor *)**(uint **)(property + 0x68));
       return;
     }
     break;
@@ -28,7 +29,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_pasteActorProperty_FUN_0053af50(CDem
     core_mission_cpp_CDemonMission_prepareAllActors_FUN_00523cf0(this_ptr);
     return;
   case 8:
-    core_msnedit_cpp_CDemonMission_FUN_0053eb40(this_ptr,*(char **)(property + 0x68));
+    core_msnedit_cpp_CDemonMission_playSound_FUN_0053eb40(this_ptr,*(char **)(property + 0x68));
     return;
   case 0xb:
     core_msnedit_cpp_CDemonMission_editActorAtIndex_FUN_0053b030(this_ptr,(int)property);

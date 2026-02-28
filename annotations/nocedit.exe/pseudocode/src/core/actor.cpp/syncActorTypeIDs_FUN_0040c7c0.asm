@@ -7,9 +7,9 @@
 ; XREF[5]:
 ;   core_actor.cpp_CDemonActor_save_FUN_0040af30 at 0040af3f
 ;   core_mission.cpp_CDemonMission_writeFile_FUN_00523600 at 0052371b
-;   core_msnedit.cpp_CDemonMission_FUN_0053bd80 at 0053bdb2
-;   core_msnedit.cpp_CDemonMission_FUN_0053c0b0 at 0053c0bf
-;   core_msnedit.cpp_CDemonMission_FUN_0053c140 at 0053c1db
+;   core_msnedit.cpp_CDemonMission_replicateActor_FUN_0053bd80 at 0053bdb2
+;   core_msnedit.cpp_CDemonMission_selectActor_FUN_0053c140 at 0053c1db
+;   core_msnedit.cpp_CDemonMission_undoActorChanges_FUN_0053c0b0 at 0053c0bf
 ;
 ; Referenced Globals:
 ;   int g_NumActorClassTypes

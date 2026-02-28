@@ -10,7 +10,7 @@
 ;   core_game.cpp_CGame_loadGame_FUN_004e12b0 at 004e1bf6
 ;   core_gore.cpp_CGore_ctor_FUN_004ed730 at 004ed736
 ;   core_mission.cpp_CDemonMission_readMissionFile_FUN_00522eb0 at 00523399
-;   core_msnedit.cpp_CDemonMission_FUN_0053e220 at 0053e8d9
+;   core_msnedit.cpp_CDemonMission_editGore_FUN_0053e220 at 0053e8d9
 ;
 ; Referenced Globals:
 ;   int g_BloodParticleIndex

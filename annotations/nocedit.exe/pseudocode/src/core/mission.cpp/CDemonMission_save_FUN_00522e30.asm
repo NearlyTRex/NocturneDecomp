@@ -11,7 +11,7 @@
 ;   core_msnedit.cpp_CDemonMission_playMission_FUN_00538ba0 at 00538bf3
 ;   core_msnedit.cpp_CDemonMission_saveMissionAndScript_FUN_0053d190 at 0053d1c3
 ;   core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0 at 005389f0
-;   core_msnedit.cpp_FUN_00537230 at 005372d2
+;   core_msnedit.cpp_convertAllMissionFiles_FUN_00537230 at 005372d2
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_mission_cpp_00638a30

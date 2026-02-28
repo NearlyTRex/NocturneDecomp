@@ -11,7 +11,7 @@ CActorPropertyList g_MsnEditPropertyList = {};
 CEdCheck g_CEdCheckInstance = {};
 
 // CEdScrollBar
-CEdScrollBar DAT_02f797e4 = {};
+CEdScrollBar CEdScrollBar_02f797e4 = {};
 
 // CNetGame
 CNetGame g_CNetGameInstance = {};
@@ -31,8 +31,11 @@ float FLOAT_02f7c630 = {};
 
 // int
 int g_DisableMouseHitOnBarrier = {};
+int INT_02f7c528 = {};
 int INT_02f7c52c = {};
 int INT_02f7c530 = {};
+int INT_02f7c538 = {};
+int INT_02f7c53c = {};
 int INT_02f7c634 = {};
 int g_LastPingTime = {};
 int g_RemoteSyncStage = {};
@@ -48,7 +51,4 @@ undefined1 DAT_02f79818 = {};
 
 // undefined4
 undefined4 DAT_02f797e0 = {};
-undefined4 DAT_02f7c528 = {};
-undefined4 DAT_02f7c538 = {};
-undefined4 DAT_02f7c53c = {};
 

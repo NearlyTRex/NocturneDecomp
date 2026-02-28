@@ -172,12 +172,12 @@ section .text
         ;   XREF to: 00523cf0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 0053ce50
     XOR ECX,ECX                         ; 0053ce53
-    MOV ESI,0x680970                    ; 0053ce55 | DAT_00680970
+    MOV ESI,0x680970                    ; 0053ce55 | g_MsnEditImportWildcardPattern
     MOV dword ptr [ESP + 0x438],ECX     ; 0053ce5a
     MOV ECX,0x19                        ; 0053ce61
     MOV dword ptr [EBP + 0x3c],0x0      ; 0053ce66
     MOV dword ptr [0x0067d550],EBP      ; 0053ce6d | g_CDemonMissionPtr
-    MOVSD.REP ES:EDI,ESI                ; 0053ce73 | DAT_00680970 | DAT_00680974
+    MOVSD.REP ES:EDI,ESI                ; 0053ce73 | g_MsnEditImportWildcardPattern | DAT_00680974
     MOV EBX,dword ptr [ESP + 0x43c]     ; 0053ce75
         ;   Label: LAB_0053ce75
     PUSH EBX                            ; 0053ce7c

@@ -1,0 +1,228 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "format_error",
+        "column": 57,
+        "line": 40,
+        "message": "format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 138,
+    "complexity_score": 46,
+    "cross_reference_count": 1,
+    "function_call_count": 11,
+    "global_count": 9,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 46,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 184
+  },
+  "cross_references": [
+    {
+      "addr": "005381e0",
+      "from_addr": "00538910",
+      "name": "core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0053ec80",
+    "address_range": [
+      [
+        "0053ec80",
+        "0053edfe"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_msnedit.cpp_CDemonMission_showSoundFilesInMission_FUN_0053ec80",
+    "signature": "void __cdecl core_msnedit_cpp_CDemonMission_showSoundFilesInMission_FUN_0053ec80(CDemonMission *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040ea50",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50"
+    },
+    {
+      "addr": "0040e130",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CActorPropertyList_init_FUN_0040e130"
+    },
+    {
+      "addr": "00523cf0",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0"
+    },
+    {
+      "addr": "00567bc0",
+      "is_variadic": false,
+      "name": "core_script.cpp_CScript_collectSoundReferences_FUN_00567bc0"
+    },
+    {
+      "addr": "005fdbd0",
+      "is_variadic": true,
+      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
+    },
+    {
+      "addr": "0049e790",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790"
+    },
+    {
+      "addr": "004a3b90",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_ctor_FUN_004a3b90"
+    },
+    {
+      "addr": "004a3e20",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20"
+    },
+    {
+      "addr": "004a3c80",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_dtor_FUN_004a3c80"
+    },
+    {
+      "addr": "004a2b80",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_add_FUN_004a2b80"
+    },
+    {
+      "addr": "004a2ec0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_sort_FUN_004a2ec0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063d07f",
+      "name": "s_Setting_up_actors_0063d07f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063d094",
+      "name": "s_Finding_sound_files_in_m_0063d094",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063d0b6",
+      "name": "s_s_s_s_0063d0b6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063d0bf",
+      "name": "s_Finding_sound_files_in_s_0063d0bf",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063d0e0",
+      "name": "s_Sound_files_used_0063d0e0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00678a60",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "02cf1cd4"
+    },
+    {
+      "addr": "00680d50",
+      "name": "g_CScriptPtr",
+      "type": "CScript*",
+      "value": "0310f858"
+    },
+    {
+      "addr": "02cf1cd4",
+      "name": "g_CEditorToolsInstance",
+      "type": "CEditorTools",
+      "value": null
+    },
+    {
+      "addr": "0310f858",
+      "name": "g_CScriptInstance",
+      "type": "CScript",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00538910",
+        "call_type": "direct",
+        "caller": "core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "reg_params": [],
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.225225225225225,
+    "instruction_count": 111,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BOOL_OR": 1,
+      "CALL": 13,
+      "CALLIND": 1,
+      "CBRANCH": 7,
+      "COPY": 81,
+      "INT_ADD": 43,
+      "INT_AND": 56,
+      "INT_CARRY": 16,
+      "INT_EQUAL": 52,
+      "INT_LESS": 4,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 17,
+      "INT_SLESS": 26,
+      "INT_SUB": 52,
+      "INT_XOR": 1,
+      "LOAD": 15,
+      "POPCOUNT": 26,
+      "RETURN": 1,
+      "STORE": 48
+    },
+    "pcode_op_count": 469
+  },
+  "stack_frame": {
+    "frame_size": 1460,
+    "local_size": 1456,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_5ac",
+        "offset": -1452,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonMission *"
+      }
+    ]
+  },
+  "suspects": []
+}

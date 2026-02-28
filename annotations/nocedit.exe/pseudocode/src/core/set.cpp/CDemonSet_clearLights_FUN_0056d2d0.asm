@@ -9,8 +9,8 @@
 ; XREF[16]:
 ;   core_game.cpp_CGame_runGameSession_FUN_004daf80 at 004db564
 ;   core_mission.cpp_CDemonMission_process_FUN_00524250 at 00524374
-;   core_msnedit.cpp_CDemonMission_FUN_0053e220 at 0053e98a
 ;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 00539e07
+;   core_msnedit.cpp_CDemonMission_editGore_FUN_0053e220 at 0053e98a
 ;   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470 at 0056a9e6
 ;   core_setedit.cpp_CDemonSet_addSpotLight_FUN_0057b410 at 0057b4a5
 ;   core_setedit.cpp_CDemonSet_cloneLight_FUN_0057b600 at 0057b8bf

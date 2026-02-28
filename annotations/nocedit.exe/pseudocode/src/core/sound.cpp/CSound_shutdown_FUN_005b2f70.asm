@@ -9,7 +9,7 @@
 ; XREF[3]:
 ;   core_game.cpp_CGame_processHotkeys_FUN_004dcee0 at 004dcf63
 ;   core_game.cpp_CGame_runGameSession_FUN_004daf80 at 004db754
-;   core_msnedit.cpp_CDemonMission_FUN_0053eb40 at 0053ec32
+;   core_msnedit.cpp_CDemonMission_playSound_FUN_0053eb40 at 0053ec32
 ;
 ; Referenced Globals:
 ;   int g_SoundAudioInitialized

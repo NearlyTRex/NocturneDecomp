@@ -8,7 +8,7 @@
 ;
 ; XREF[9]:
 ;   core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0 at 00538a00
-;   core_msnedit.cpp_FUN_00537230 at 005372dd
+;   core_msnedit.cpp_convertAllMissionFiles_FUN_00537230 at 005372dd
 ;   core_podmain.cpp_CDemonPod_load_FUN_005519c0 at 00551a2a
 ;   engine_fileio.cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030 at 004b51c6
 ;   engine_fileio.cpp_CFileManager_createPodConfigWizard_FUN_004bccf0 at 004bcdee

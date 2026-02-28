@@ -3,63 +3,39 @@
     "errors": [
       {
         "category": "other",
-        "column": 20,
-        "line": 75,
-        "message": "C-style cast from 'SClothBone *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 78,
-        "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 24,
-        "line": 79,
-        "message": "C-style cast from 'SClothVertex *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 9,
-        "line": 85,
-        "message": "cannot cast from type 'float' to pointer type 'SMotion *'"
-      },
-      {
-        "category": "other",
-        "column": 6,
-        "line": 106,
-        "message": "cannot cast from type 'float' to pointer type 'float *'"
+        "column": 11,
+        "line": 59,
+        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 11,
-        "line": 107,
-        "message": "cannot cast from type 'float' to pointer type 'float *'"
+        "line": 60,
+        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
       },
       {
         "category": "other",
-        "column": 9,
-        "line": 155,
-        "message": "cannot cast from type 'float' to pointer type 'SMotion *'"
+        "column": 28,
+        "line": 89,
+        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
       },
       {
         "category": "other",
-        "column": 9,
-        "line": 159,
-        "message": "cannot cast from type 'float' to pointer type 'char *'"
+        "column": 28,
+        "line": 154,
+        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 158,
+        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 165,
+        "line": 164,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "other",
-        "column": 9,
-        "line": 168,
-        "message": "cannot cast from type 'float' to pointer type 'CVector3f *'"
       },
       {
         "category": "format_error",
@@ -75,9 +51,9 @@
       },
       {
         "category": "other",
-        "column": 21,
+        "column": 37,
         "line": 216,
-        "message": "cannot cast from type 'float' to pointer type 'char *'"
+        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
       },
       {
         "category": "undeclared_identifier",
@@ -101,19 +77,43 @@
         "category": "other",
         "column": 48,
         "line": 240,
-        "message": "C-style cast from 'CKeys *' to 'float' is not allowed"
+        "message": "C-style cast from 'char *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 47,
-        "line": 279,
+        "line": 280,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 20,
+        "line": 288,
+        "message": "cannot cast from type 'float' to pointer type 'SMotion *'"
+      },
+      {
+        "category": "other",
+        "column": 22,
+        "line": 290,
+        "message": "cannot cast from type 'float' to pointer type 'SClothBone *'"
+      },
+      {
+        "category": "other",
+        "column": 19,
         "line": 293,
-        "message": "cannot cast from type 'float' to pointer type 'char *'"
+        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 303,
+        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 305,
+        "message": "C-style cast from 'SClothBone *' to 'float' is not allowed"
       }
     ],
     "success": false,
@@ -121,13 +121,13 @@
   },
   "complexity": {
     "assembly_lines": 395,
-    "complexity_score": 1007,
+    "complexity_score": 1054,
     "cross_reference_count": 1,
     "function_call_count": 28,
     "global_count": 32,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 372,
-    "suspect_count": 60,
+    "pseudocode_lines": 379,
+    "suspect_count": 64,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
@@ -135,9 +135,9 @@
       "stack_ref",
       "suspect_float",
       "unaffected_reg",
-      "warning_deadcode_restart"
+      "unknown_field"
     ],
-    "total_lines": 767
+    "total_lines": 774
   },
   "cross_references": [
     {
@@ -712,16 +712,8 @@
   },
   "suspects": [
     {
-      "description": "Deadcode elimination delayed",
-      "line": 3,
-      "match": "WARNING: Restarted to delay deadcode elimination",
-      "severity": "mild",
-      "text": "/* WARNING: Restarted to delay deadcode elimination for space: stack */",
-      "type": "warning_deadcode_restart"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 16,
+      "line": 14,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "char *unaff_EBP;",
@@ -729,7 +721,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 17,
+      "line": 15,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "int unaff_ESI;",
@@ -737,7 +729,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 19,
       "match": "in_stack_00000010",
       "severity": "moderate",
       "text": "int in_stack_00000010;",
@@ -745,15 +737,15 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_00000020",
+      "line": 20,
+      "match": "in_stack_0000001c",
       "severity": "moderate",
-      "text": "int in_stack_00000020;",
+      "text": "int in_stack_0000001c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 22,
+      "line": 21,
       "match": "in_stack_00000028",
       "severity": "moderate",
       "text": "int in_stack_00000028;",
@@ -761,7 +753,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 22,
       "match": "in_stack_0000002c",
       "severity": "moderate",
       "text": "int in_stack_0000002c;",
@@ -769,7 +761,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 24,
+      "line": 23,
       "match": "in_stack_00000034",
       "severity": "moderate",
       "text": "int in_stack_00000034;",
@@ -778,30 +770,14 @@
     {
       "description": "Unresolved stack parameter",
       "line": 25,
-      "match": "in_stack_0000003c",
-      "severity": "moderate",
-      "text": "int in_stack_0000003c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 26,
-      "match": "in_stack_00000054",
-      "severity": "moderate",
-      "text": "int in_stack_00000054;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 27,
       "match": "in_stack_fffffac4",
       "severity": "moderate",
-      "text": "CKeys *in_stack_fffffac4;",
+      "text": "char *in_stack_fffffac4;",
       "type": "stack_param"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 45,
+      "line": 49,
       "match": "1.4013e-45",
       "severity": "mild",
       "text": "local_2c = 1.4013e-45;",
@@ -809,66 +785,58 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 46,
+      "line": 50,
       "match": "1.4013e-45",
       "severity": "mild",
-      "text": "local_50.yaw = 1.4013e-45;",
+      "text": "local_40 = 1.4013e-45;",
       "type": "suspect_float"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 48,
-      "match": "1.4013e-45",
+      "description": "Unknown/mangled field access",
+      "line": 52,
+      "match": "._0_4_",
       "severity": "mild",
-      "text": "local_50.position.x = 1.4013e-45;",
-      "type": "suspect_float"
+      "text": "local_50._0_4_ = (char *)0x1;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 53,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_50._4_4_ = (SMotion *)0x0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 82,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "if ((SMotion *)local_50._4_4_ == (SMotion *)0x0) {",
+      "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 101,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "*(float *)((int)local_50.roll + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 102,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "*(float *)((int)local_50.roll + 4) -",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 104,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "*(float *)((int)local_50.roll + 8) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 105,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "*(float *)((int)local_50.roll + 8) -",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 121,
+      "line": 120,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar6 = (int *)((int)&((this_ptr->model).vertex_list)->x + iVar5);",
+      "text": "piVar5 = (int *)((int)&((this_ptr_00->model).vertex_list)->x + iVar4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 122,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "*piVar5 = (int)ROUND(pCVar8->x * 256.0f);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 123,
       "match": "ROUND",
       "severity": "mild",
-      "text": "*piVar6 = (int)ROUND(pCVar8->x * 256.0f);",
+      "text": "piVar5[1] = (int)ROUND(pCVar8->y * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -876,28 +844,36 @@
       "line": 124,
       "match": "ROUND",
       "severity": "mild",
-      "text": "piVar6[1] = (int)ROUND(pCVar8->y * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 125,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "piVar6[2] = (int)ROUND(pCVar8->z * 256.0f);",
+      "text": "piVar5[2] = (int)ROUND(pCVar8->z * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 126,
+      "line": 125,
       "match": "(CVector3f *)((int)",
       "severity": "mild",
       "text": "pCVar8 = (CVector3f *)((int)(pCVar8 + 0x17) + 8);",
       "type": "pointer_cast"
     },
     {
+      "description": "Unknown/mangled field access",
+      "line": 147,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "if ((SMotion *)local_50._4_4_ != (SMotion *)0x0) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 151,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "if ((char *)local_50._0_4_ != (char *)0x0) {",
+      "type": "unknown_field"
+    },
+    {
       "description": "Unaffected register variable",
-      "line": 164,
+      "line": 163,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "unaff_EBP = (char *)0x0;",
@@ -905,7 +881,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 169,
+      "line": 168,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_6c.x = (int)ROUND(*pfVar3 * 256.0f);",
@@ -913,7 +889,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 170,
+      "line": 169,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_6c.y = (int)ROUND(pfVar3[1] * 256.0f);",
@@ -921,7 +897,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 171,
+      "line": 170,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_6c.z = (int)ROUND(pfVar3[2] * 256.0f);",
@@ -929,7 +905,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 175,
+      "line": 174,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "unaff_EBP = unaff_EBP + 1;",
@@ -937,7 +913,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 175,
+      "line": 174,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "unaff_EBP = unaff_EBP + 1;",
@@ -945,10 +921,10 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 177,
+      "line": 176,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "} while ((int)unaff_EBP < this_ptr->locked_vertex_count);",
+      "text": "} while ((int)unaff_EBP < this_ptr_00->locked_vertex_count);",
       "type": "unaffected_reg"
     },
     {
@@ -956,7 +932,7 @@
       "line": 182,
       "match": "2.8026e-45",
       "severity": "mild",
-      "text": "if ((local_20 == 2.8026e-45) && (fVar4 == fStack_1c)) {",
+      "text": "if ((local_20 == 2.8026e-45) && ((SClothBone *)bone_index == pSStack_1c)) {",
       "type": "suspect_float"
     },
     {
@@ -968,12 +944,12 @@
       "type": "stack_ref"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 207,
-      "match": "NAN",
+      "description": "Unknown/mangled field access",
+      "line": 209,
+      "match": "._0_4_",
       "severity": "mild",
-      "text": "fStack_1c = -NAN;",
-      "type": "decompiler_intrinsic"
+      "text": "string_data = (char *)local_50._0_4_;",
+      "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
@@ -1004,7 +980,7 @@
       "line": 218,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "} while ((int)fVar4 < *(int *)((int)local_20 + 0x964));",
+      "text": "} while ((int)pSVar7 < *(int *)((int)local_20 + 0x964));",
       "type": "pointer_cast"
     },
     {
@@ -1012,7 +988,7 @@
       "line": 221,
       "match": "&stack0xfffffac0",
       "severity": "moderate",
-      "text": "((CPickList *)&stack0xfffffac0,\"Select motion\",(int)fStack_1c,0);",
+      "text": "((CPickList *)&stack0xfffffac0,\"Select motion\",(int)pSStack_1c,0);",
       "type": "stack_ref"
     },
     {
@@ -1068,21 +1044,13 @@
       "line": 249,
       "match": "in_stack_fffffac4",
       "severity": "moderate",
-      "text": "in_stack_fffffac4 = g_CKeysPtr;",
+      "text": "in_stack_fffffac4 = (char *)g_CKeysPtr;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 262,
+      "line": 263,
       "match": "in_stack_00000028",
-      "severity": "moderate",
-      "text": "if (((in_stack_00000028 == 2) && (-1 < in_stack_0000002c)) &&",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 262,
-      "match": "in_stack_0000002c",
       "severity": "moderate",
       "text": "if (((in_stack_00000028 == 2) && (-1 < in_stack_0000002c)) &&",
       "type": "stack_param"
@@ -1092,76 +1060,140 @@
       "line": 263,
       "match": "in_stack_0000002c",
       "severity": "moderate",
-      "text": "(in_stack_0000002c < this_ptr->collide_bone_count)) {",
+      "text": "if (((in_stack_00000028 == 2) && (-1 < in_stack_0000002c)) &&",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 271,
+      "line": 264,
       "match": "in_stack_0000002c",
       "severity": "moderate",
-      "text": "iVar5 = in_stack_0000002c * 0xac + in_stack_00000010;",
+      "text": "(in_stack_0000002c < this_ptr_00->collide_bone_count)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 271,
+      "line": 272,
+      "match": "in_stack_0000002c",
+      "severity": "moderate",
+      "text": "iVar4 = in_stack_0000002c * 0xac + in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 272,
       "match": "in_stack_00000010",
       "severity": "moderate",
-      "text": "iVar5 = in_stack_0000002c * 0xac + in_stack_00000010;",
+      "text": "iVar4 = in_stack_0000002c * 0xac + in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 286,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_50._4_4_ = local_24;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 296,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "fStack_30 = (float)local_50._4_4_ * 0.1;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 310,
+      "match": "in_stack_fffffac4",
+      "severity": "moderate",
+      "text": "in_stack_fffffac4 = (char *)g_CKeysPtr;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 321,
-      "match": "in_stack_0000003c",
+      "line": 317,
+      "match": "in_stack_fffffac4",
       "severity": "moderate",
-      "text": "((void *)(in_stack_0000003c * 0xac + in_stack_00000020),",
+      "text": "in_stack_fffffac4 = (char *)0x43d272;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 319,
+      "match": "(void *)((int)",
+      "severity": "mild",
+      "text": "((void *)((int)this_ptr * 0xac + (int)local_18),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 320,
+      "match": "(void *)((int)",
+      "severity": "mild",
+      "text": "(void *)((int)((this_ptr->model).model_filename + 1) * 0xac + (int)local_18),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 325,
+      "match": "in_stack_fffffac4",
+      "severity": "moderate",
+      "text": "in_stack_fffffac4 = \"Enter X radius\";",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 321,
-      "match": "in_stack_00000020",
+      "line": 332,
+      "match": "in_stack_fffffac4",
       "severity": "moderate",
-      "text": "((void *)(in_stack_0000003c * 0xac + in_stack_00000020),",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 322,
-      "match": "in_stack_0000003c",
-      "severity": "moderate",
-      "text": "(void *)((in_stack_0000003c + 1) * 0xac + in_stack_00000020),",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 322,
-      "match": "in_stack_00000020",
-      "severity": "moderate",
-      "text": "(void *)((in_stack_0000003c + 1) * 0xac + in_stack_00000020),",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 323,
-      "match": "in_stack_0000003c",
-      "severity": "moderate",
-      "text": "(iVar2 - in_stack_0000003c) * 0xac);",
+      "text": "in_stack_fffffac4 = (char *)0x43d2e0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 348,
-      "match": "in_stack_00000054",
+      "match": "in_stack_0000001c",
       "severity": "moderate",
-      "text": "(this_ptr,in_stack_00000054,&g_CDeformableModelInstanceInstance);",
+      "text": "(this_ptr_00,in_stack_0000001c,&g_CDeformableModelInstanceInstance);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 363,
+      "line": 353,
+      "match": "in_stack_0000002c",
+      "severity": "moderate",
+      "text": "in_stack_0000002c = in_stack_0000002c + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 353,
+      "match": "in_stack_0000002c",
+      "severity": "moderate",
+      "text": "in_stack_0000002c = in_stack_0000002c + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 356,
+      "match": "in_stack_0000002c",
+      "severity": "moderate",
+      "text": "in_stack_0000002c = in_stack_0000002c + -1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 356,
+      "match": "in_stack_0000002c",
+      "severity": "moderate",
+      "text": "in_stack_0000002c = in_stack_0000002c + -1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 369,
       "match": "in_stack_00000034",
       "severity": "moderate",
       "text": "if (in_stack_00000034 < 0) {",
@@ -1169,23 +1201,23 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 364,
+      "line": 370,
       "match": "in_stack_00000034",
       "severity": "moderate",
-      "text": "in_stack_00000034 = this_ptr->collide_bone_count + -1;",
+      "text": "in_stack_00000034 = this_ptr_00->collide_bone_count + -1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 366,
+      "line": 372,
       "match": "in_stack_00000034",
       "severity": "moderate",
-      "text": "if (this_ptr->collide_bone_count <= in_stack_00000034) {",
+      "text": "if (this_ptr_00->collide_bone_count <= in_stack_00000034) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 367,
+      "line": 373,
       "match": "in_stack_00000034",
       "severity": "moderate",
       "text": "in_stack_00000034 = 0;",

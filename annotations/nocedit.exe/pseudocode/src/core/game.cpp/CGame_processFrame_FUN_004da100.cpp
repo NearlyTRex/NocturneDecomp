@@ -6,9 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Inlined function: core_slew.cpp_CSlew_init_FUN_005a2060 */
-/* WARNING: Restarted to delay deadcode elimination for space: stack */
-
 void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
 
 {
@@ -29,7 +26,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
   int iVar14;
   char *pcVar15;
   byte bVar16;
-  uint auStackY_107c [651];
+  uint auStackY_107c [652];
   CVector3i *input_ptr;
   char local_4dc [256];
   char local_3dc [256];
@@ -39,7 +36,6 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
   byte local_b0 [16];
   float local_a0;
   float local_9c;
-  float fStack_98;
   CVector3i local_94;
   CVector3i local_88;
   CVector3f local_7c;
@@ -88,13 +84,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
       core_sound_cpp_CSound_process_FUN_005b2fd0(g_CSoundPtr);
     }
     else {
-      local_b0._8_4_ = 0.0;
-      local_b0._4_4_ = 0.0;
-      local_b0._0_4_ = 0.0;
-      local_9c = 0.0;
-      local_a0 = 0.0;
-      local_b0._12_4_ = 0.0;
-      fStack_98 = 28.0;
+      core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)local_b0);
       pCVar4 = g_HeroActors[g_LocalHeroIndex];
       pCVar10 = &(pCVar4->base).base.location;
       if ((CLocation *)local_b0 != pCVar10) {
@@ -266,16 +256,12 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
         _sprintf
                   (local_3dc,"Hero : %4.2f,%4.2f,%4.2f xyz and %3.2f,%3.2f,%3.2f pbh",
                    (double)(pCVar4->base).base.location.position.x,SUB84(__BITCAST_UINT64(dVar2),0),
-                   (int)((ulonglong)dVar2 >> 0x20),SUB84(__BITCAST_UINT64(dVar1),0),(int)((ulonglong)dVar1 >> 0x20),
-                   SUB84(__BITCAST_UINT64(180 *
-                         (double)(pCVar4->base).base.orient.vec.x * 0.31830988619288902),0));
+                   (int)((ulonglong)dVar2 >> 0x20),SUB84(__BITCAST_UINT64(dVar1),0),(int)((ulonglong)dVar1 >> 0x20));
         engine_2d_c_drawText_FUN_00401fd0(local_3dc,0,0);
         _sprintf(local_3dc,"Slew : %s, Virtual Director : %s");
         engine_2d_c_drawText_FUN_00401fd0(local_3dc,0,0xb);
         if (this_ptr->debug_fudge_target != (CVector3f *)0x0) {
-          _sprintf
-                    (local_3dc,"Fudge: %g,%g,%g",
-                     SUB84(__BITCAST_UINT64((double)this_ptr->debug_fudge_target->x),0));
+          _sprintf(local_3dc,"Fudge: %g,%g,%g");
           engine_2d_c_drawText_FUN_00401fd0(local_3dc,0,g_WindowHeight + -0x4d);
         }
         sound_sndmain_cpp_getSoundMemoryStats_FUN_005aa6a0
@@ -295,8 +281,8 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
           wincore_windll_cpp_getTextureInfo_FUN_005b7e70(0x100);
           wincore_windll_cpp_getTextureInfo_FUN_005b7e70(0x80);
           wincore_windll_cpp_getTextureInfo_FUN_005b7e70(0x40);
-          iVar5 = wincore_windll_cpp_getTextureInfo_FUN_005b7e70(0x20);
-          _sprintf(local_3dc,"32:%d,64:%d,128:%d,256:%d,512:%d,1024:%d",iVar5);
+          wincore_windll_cpp_getTextureInfo_FUN_005b7e70(0x20);
+          _sprintf(local_3dc,"32:%d,64:%d,128:%d,256:%d,512:%d,1024:%d");
           engine_2d_c_drawText_FUN_00401fd0(local_3dc,0,0x2c);
         }
       }

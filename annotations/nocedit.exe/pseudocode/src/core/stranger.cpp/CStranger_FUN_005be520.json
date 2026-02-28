@@ -121,20 +121,21 @@
   },
   "complexity": {
     "assembly_lines": 1325,
-    "complexity_score": 1400,
+    "complexity_score": 1415,
     "cross_reference_count": 2,
     "function_call_count": 24,
     "global_count": 33,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 660,
-    "suspect_count": 71,
+    "suspect_count": 72,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "stack_ref",
       "undefined_data",
       "unknown_field",
-      "unresolved_funcptr"
+      "unresolved_funcptr",
+      "warning_inlined_function"
     ],
     "total_lines": 1985
   },
@@ -1469,6 +1470,14 @@
     "severity": "medium"
   },
   "suspects": [
+    {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_atan2_FUN_006013b1 */",
+      "type": "warning_inlined_function"
+    },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 27,

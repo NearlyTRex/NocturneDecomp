@@ -264,8 +264,6 @@ static uchar g_LightBitMaskLookup[8] = {0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40
 
 // undefined4 constants
 static undefined4 DAT_00665f3a = 0x003B001F;
-static undefined4 DAT_0066e30c = 0x00000001;
-static undefined4 DAT_0066e314 = 0x00000002;
 static undefined4 DAT_0066eeac = 0x00000003;
 
 // void* constants

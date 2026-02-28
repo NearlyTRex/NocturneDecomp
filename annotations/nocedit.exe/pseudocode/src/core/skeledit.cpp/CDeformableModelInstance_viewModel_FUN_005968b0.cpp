@@ -6,9 +6,7 @@
 
 #include "nocturne.h"
 
-/* WARNING: Inlined function: core_slew.cpp_CSlew_init_FUN_005a2060 */
 /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-/* WARNING: Restarted to delay deadcode elimination for space: stack */
 
 void __cdecl core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(CDeformableModelInstance *this_ptr)
 
@@ -74,7 +72,6 @@ void __cdecl core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(C
   byte local_200 [16];
   float local_1f0;
   float local_1ec;
-  float fStack_1e8;
   CBoundingBox3D local_1e4;
   float local_1cc;
   float local_1c8;
@@ -215,13 +212,7 @@ void __cdecl core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(C
   if (local_64 < 0) {
     local_64 = 0;
   }
-  local_200._8_4_ = 0.0;
-  local_200._4_4_ = 0.0;
-  local_200._0_4_ = 0.0;
-  local_1ec = 0.0;
-  local_1f0 = 0.0;
-  local_200._12_4_ = 0.0;
-  fStack_1e8 = 28.0;
+  core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)local_200);
   if ((g_SkeleditViewModelInitFlag & 2) == 0) {
     g_SkeleditViewModelInitFlag = g_SkeleditViewModelInitFlag | 2;
     core_dmodel_cpp_CKeyFramedModel_ctor_FUN_00476cf0(&g_SkeleditViewModel);

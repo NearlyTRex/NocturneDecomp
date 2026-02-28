@@ -40,7 +40,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CActorPropertyList_init_FUN_0040e130
-;   core_msnedit.cpp_CDemonMission_FUN_0053c140
+;   core_msnedit.cpp_CDemonMission_selectActor_FUN_0053c140
 ;   core_script.cpp_clearSelections_FUN_005644e0
 ;   core_script.cpp_CScript_updateCursorBounds_FUN_00566910
 ;   core_script.cpp_CScript_updateScrollPosition_FUN_005669a0
@@ -421,8 +421,8 @@ section .text
         ;   Label: LAB_00567ba6
     MOV EDI,dword ptr [0x0067d550]      ; 00567ba7 | g_CDemonMissionPtr
     PUSH EDI                            ; 00567bad | g_CDemonMissionInstance
-    CALL core_msnedit.cpp_CDemonMission_FUN_0053c140 ; 00567bae
-        ;   XREF to: 0053c140 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_FUN_0053c140(CDemonMission * this_ptr, int param_2)
+    CALL core_msnedit.cpp_CDemonMission_selectActor_FUN_0053c140 ; 00567bae
+        ;   XREF to: 0053c140 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_selectActor_FUN_0053c140(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 00567bb3
     JMP 0x005679f6                      ; 00567bb6
         ;   XREF to: 005679f6 (UNCONDITIONAL_JUMP)  ; LAB_005679f6

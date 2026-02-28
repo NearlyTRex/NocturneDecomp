@@ -17,7 +17,7 @@
 ;   CDemonMission g_CDemonMissionInstance
 ;
 ; Called Functions:
-;   core_msnedit.cpp_CDemonMission_FUN_0053ea30
+;   core_msnedit.cpp_CDemonMission_buildScriptCrossReferences_FUN_0053ea30
 ;   core_script.cpp_CScript_buildParsedLines_FUN_0055a370
 ;   core_script.cpp_CScript_parseCommand_FUN_00567080
 ;   crt_stdlib.c__qsort_FUN_005fdf38
@@ -71,8 +71,8 @@ section .text
     MOV EDX,dword ptr [0x0067d550]      ; 005676a0 | g_CDemonMissionInstance | g_CDemonMissionPtr
         ;   Label: LAB_005676a0
     PUSH EDX                            ; 005676a6 | g_CDemonMissionInstance
-    CALL core_msnedit.cpp_CDemonMission_FUN_0053ea30 ; 005676a7
-        ;   XREF to: 0053ea30 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_FUN_0053ea30(CDemonMission * this_ptr)
+    CALL core_msnedit.cpp_CDemonMission_buildScriptCrossReferences_FUN_0053ea30 ; 005676a7
+        ;   XREF to: 0053ea30 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_buildScriptCrossReferences_FUN_0053ea30(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 005676ac
     PUSH 0x5675a0                       ; 005676af
     PUSH 0x114                          ; 005676b4

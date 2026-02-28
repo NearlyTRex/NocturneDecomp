@@ -6,9 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Inlined function: core_slew.cpp_CSlew_init_FUN_005a2060 */
-/* WARNING: Restarted to delay deadcode elimination for space: stack */
-
 void __cdecl core_course_cpp_CCourse_preview_FUN_00443bc0(CCourse *this_ptr,CKeyFramedModel *model_ptr)
 {
 __asm {

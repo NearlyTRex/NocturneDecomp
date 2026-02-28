@@ -2,58 +2,46 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
-        "column": 12,
-        "line": 218,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 12,
-        "line": 219,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 12,
-        "line": 220,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 12,
-        "line": 223,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
         "category": "incompatible_types",
         "column": 11,
-        "line": 477,
+        "line": 468,
         "message": "no matching function for call to '_sprintf'"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 503,
+        "line": 494,
         "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 504,
+        "line": 495,
         "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 505,
+        "line": 496,
         "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 510,
+        "line": 501,
         "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 37,
+        "line": 513,
+        "message": "use of undeclared identifier 'stack0xffffcc64'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 37,
+        "line": 515,
+        "message": "use of undeclared identifier 'DAT_036644d8'"
       },
       {
         "category": "undeclared_identifier",
@@ -63,56 +51,68 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 37,
-        "line": 524,
-        "message": "use of undeclared identifier 'DAT_036644d8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 37,
-        "line": 531,
-        "message": "use of undeclared identifier 'stack0xffffcc64'"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 17,
-        "line": 536,
+        "line": 527,
         "message": "use of undeclared identifier 'DAT_036712e8'; did you mean 'DAT_036712e0'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 56,
-        "line": 537,
+        "line": 528,
         "message": "use of undeclared identifier 'DAT_036712e8'"
       },
       {
         "category": "lvalue_required",
         "column": 13,
-        "line": 548,
+        "line": 539,
         "message": "cannot take the address of an rvalue of type 'float'"
       },
       {
         "category": "incompatible_types",
         "column": 18,
-        "line": 599,
+        "line": 590,
         "message": "invalid operands to binary expression ('CEditorTools *' and 'int')"
       },
       {
         "category": "incompatible_types",
         "column": 16,
-        "line": 607,
+        "line": 598,
         "message": "invalid operands to binary expression ('CEditorTools *' and 'int')"
       },
       {
         "category": "incompatible_types",
         "column": 5,
-        "line": 613,
+        "line": 604,
         "message": "no matching function for call to '_sprintf'"
       },
       {
         "category": "incompatible_types",
         "column": 5,
-        "line": 616,
+        "line": 607,
+        "message": "no matching function for call to '_sprintf'"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 611,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "other",
+        "column": 42,
+        "line": 613,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "other",
+        "column": 45,
+        "line": 615,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 5,
+        "line": 620,
         "message": "no matching function for call to '_sprintf'"
       }
     ],
@@ -121,13 +121,13 @@
   },
   "complexity": {
     "assembly_lines": 3337,
-    "complexity_score": 1557,
+    "complexity_score": 1508,
     "cross_reference_count": 2,
     "function_call_count": 91,
     "global_count": 146,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 1142,
-    "suspect_count": 38,
+    "pseudocode_lines": 1133,
+    "suspect_count": 34,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
@@ -135,9 +135,9 @@
       "suspect_float",
       "undefined_data",
       "unknown_field",
-      "warning_deadcode_restart"
+      "warning_inlined_function"
     ],
-    "total_lines": 4479
+    "total_lines": 4470
   },
   "cross_references": [
     {
@@ -2718,48 +2718,16 @@
   },
   "suspects": [
     {
-      "description": "Deadcode elimination delayed",
-      "line": 4,
-      "match": "WARNING: Restarted to delay deadcode elimination",
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
       "severity": "mild",
-      "text": "/* WARNING: Restarted to delay deadcode elimination for space: stack */",
-      "type": "warning_deadcode_restart"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 211,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "local_200._8_4_ = 0.0;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 212,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "local_200._4_4_ = 0.0;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 213,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "local_200._0_4_ = 0.0;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 216,
-      "match": "._12_4_",
-      "severity": "mild",
-      "text": "local_200._12_4_ = 0.0;",
-      "type": "unknown_field"
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
     },
     {
       "description": "Complex pointer cast",
-      "line": 466,
+      "line": 457,
       "match": "(byte *)((int)",
       "severity": "mild",
       "text": "if ((*(byte *)((int)&(pSVar3->projected_vertex).screen_x + iVar15 + 3) & 0x80) == 0) {",
@@ -2767,7 +2735,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 467,
+      "line": 458,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "iVar4 = *(int *)((int)&(pSVar3->projected_vertex).screen_x + iVar15);",
@@ -2775,7 +2743,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 468,
+      "line": 459,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "local_68 = *(int *)((int)&(pSVar3->projected_vertex).screen_y + iVar15) >> 0x10;",
@@ -2783,7 +2751,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 491,
+      "line": 482,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
       "text": "pCVar16 = (CMatrix3x4f *)((int)pCVar16 + ((uint)bVar20 * -2 + 1) * 4);",
@@ -2791,7 +2759,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 492,
+      "line": 483,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
       "text": "pCVar18 = (CMatrix3x4f *)((int)pCVar18 + ((uint)bVar20 * -2 + 1) * 4);",
@@ -2799,7 +2767,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 496,
+      "line": 487,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_200._0_4_ = pCVar12->x;",
@@ -2807,7 +2775,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 497,
+      "line": 488,
       "match": "._4_4_",
       "severity": "mild",
       "text": "local_200._4_4_ = pCVar12->y;",
@@ -2815,7 +2783,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 498,
+      "line": 489,
       "match": "._8_4_",
       "severity": "mild",
       "text": "local_200._8_4_ = pCVar12->z;",
@@ -2823,11 +2791,27 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 503,
+      "line": 494,
       "match": "._12_4_",
       "severity": "mild",
       "text": "local_200._12_4_ = pCVar12->x;",
       "type": "unknown_field"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 506,
+      "match": "&stack0xffffcc64",
+      "severity": "moderate",
+      "text": "(this_ptr,(SPose *)&stack0xffffcc64);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 508,
+      "match": "DAT_036644d8",
+      "severity": "mild",
+      "text": "(this_ptr,(SPose *)&DAT_036644d8);",
+      "type": "undefined_data"
     },
     {
       "description": "Direct stack address reference",
@@ -2839,23 +2823,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 517,
-      "match": "DAT_036644d8",
-      "severity": "mild",
-      "text": "(this_ptr,(SPose *)&DAT_036644d8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 524,
-      "match": "&stack0xffffcc64",
-      "severity": "moderate",
-      "text": "(this_ptr,(SPose *)&stack0xffffcc64);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 528,
+      "line": 519,
       "match": "DAT_036712e0",
       "severity": "mild",
       "text": "DAT_036712e0 = DAT_036712e0 + 1;",
@@ -2863,7 +2831,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 528,
+      "line": 519,
       "match": "DAT_036712e0",
       "severity": "mild",
       "text": "DAT_036712e0 = DAT_036712e0 + 1;",
@@ -2871,7 +2839,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 529,
+      "line": 520,
       "match": "DAT_036712e8",
       "severity": "mild",
       "text": "_sprintf(&DAT_036712e8,\"noc%d.pcx\");",
@@ -2879,7 +2847,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 530,
+      "line": 521,
       "match": "DAT_036712e8",
       "severity": "mild",
       "text": "engine_pcx_c_saveScreenshotGeneral_FUN_005490c0(&DAT_036712e8);",
@@ -2887,7 +2855,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 538,
+      "line": 529,
       "match": "NAN",
       "severity": "mild",
       "text": "local_154.x = (int)NAN;",
@@ -2895,7 +2863,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 539,
+      "line": 530,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)&local_154 + (uint)bVar20 * -8 + 4) = (&FLOAT_00681a00)[(uint)bVar20 * -2];",
@@ -2903,7 +2871,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 540,
+      "line": 531,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)&local_154 + (uint)bVar20 * -8 + (uint)bVar20 * -8 + 8) =",
@@ -2911,7 +2879,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 541,
+      "line": 532,
       "match": "NAN",
       "severity": "mild",
       "text": "(&NAN)[(uint)bVar20 * -2 + (uint)bVar20 * -2];",
@@ -2919,7 +2887,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 591,
+      "line": 582,
       "match": "3.57331e-43",
       "severity": "mild",
       "text": "fVar9 = 3.57331e-43;",
@@ -2927,7 +2895,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 592,
+      "line": 583,
       "match": "SUB42",
       "severity": "mild",
       "text": "uVar21 = SUB42(g_CEditorToolsPtr,0);",
@@ -2935,7 +2903,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 600,
+      "line": 591,
       "match": "SUB42",
       "severity": "mild",
       "text": "uVar21 = SUB42(g_CEditorToolsPtr,0);",
@@ -2943,7 +2911,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 604,
+      "line": 595,
       "match": "CONCAT22",
       "severity": "mild",
       "text": "((CEditorTools *)CONCAT22(uVar22,uVar21),2.0,(int)fVar9);",
@@ -2951,7 +2919,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 627,
+      "line": 618,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_18 = (float)(int)ROUND(ROUND(fVar9));",
@@ -2959,7 +2927,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 627,
+      "line": 618,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_18 = (float)(int)ROUND(ROUND(fVar9));",
@@ -2967,7 +2935,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 701,
+      "line": 692,
       "match": "SQRT",
       "severity": "mild",
       "text": "if (0.0 < SQRT(local_110 * local_110 + local_118 * local_118 + local_114 * local_114)) {",
@@ -2975,7 +2943,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 716,
+      "line": 707,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
       "text": "pCVar16 = (CMatrix3x4f *)((int)pCVar16 + ((uint)bVar20 * -2 + 1) * 4);",
@@ -2983,7 +2951,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 717,
+      "line": 708,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
       "text": "pCVar18 = (CMatrix3x4f *)((int)pCVar18 + ((uint)bVar20 * -2 + 1) * 4);",
@@ -2991,7 +2959,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 752,
+      "line": 743,
       "match": "SQRT",
       "severity": "mild",
       "text": "(0.0 < SQRT(local_13c.z * local_13c.z +",
@@ -2999,7 +2967,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 854,
+      "line": 845,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_38 = (float)(int)ROUND(ROUND(pSVar10->exit_forward_to_frame));",
@@ -3007,7 +2975,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 854,
+      "line": 845,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_38 = (float)(int)ROUND(ROUND(pSVar10->exit_forward_to_frame));",
@@ -3015,7 +2983,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1048,
+      "line": 1039,
       "match": "DAT_036644d8",
       "severity": "mild",
       "text": "(this_ptr,(SPose *)&DAT_036644d8);",

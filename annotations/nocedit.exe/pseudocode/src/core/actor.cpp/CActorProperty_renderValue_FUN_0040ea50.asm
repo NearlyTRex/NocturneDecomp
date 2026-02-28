@@ -15,10 +15,10 @@
 ; XREF[6]:
 ;   core_actor.cpp_CActorPropertyList_render_FUN_0040e850 at 0040e8b2
 ;   core_actor.cpp_CActorProperty_getValueWidth_FUN_0040ee50 at 0040ee69
-;   core_msnedit.cpp_CDemonMission_FUN_0053c730 at 0053c7c8
-;   core_msnedit.cpp_CDemonMission_FUN_0053ea30 at 0053ea8c
-;   core_msnedit.cpp_CDemonMission_FUN_0053ec80 at 0053ed25
+;   core_msnedit.cpp_CDemonMission_buildScriptCrossReferences_FUN_0053ea30 at 0053ea8c
+;   core_msnedit.cpp_CDemonMission_editActorPropertiesDialog_FUN_0053c730 at 0053c7c8
 ;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 0053adaf
+;   core_msnedit.cpp_CDemonMission_showSoundFilesInMission_FUN_0053ec80 at 0053ed25
 ;
 ; Referenced Globals:
 ;   void* switchdataD_0040ea00 = 0040ea6e
@@ -547,7 +547,7 @@ section .text
     XOR EDI,EBP                         ; 0040eda7
     MOV EAX,dword ptr [EBX + 0x68]      ; 0040eda9
         ;   Label: LAB_0040eda9
-    MOV EDX,dword ptr [EDI + 0x66e30c]  ; 0040edac | DAT_0066e30c | DAT_0066e314
+    MOV EDX,dword ptr [EDI + 0x66e30c]  ; 0040edac | SPropertyFlag_ARRAY_0066e30c | DAT_0066e314
     TEST dword ptr [EAX],EDX            ; 0040edb2
     JZ 0x0040ede1                       ; 0040edb4
         ;   XREF to: 0040ede1 (CONDITIONAL_JUMP)  ; LAB_0040ede1
@@ -560,7 +560,7 @@ section .text
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0040edc5
     ADD ESI,EAX                         ; 0040edc8
-    MOV ECX,dword ptr [EDI + 0x66e310]  ; 0040edca | PTR_s_thrust_0066e310 | PTR_s_swing_0066e318
+    MOV ECX,dword ptr [EDI + 0x66e310]  ; 0040edca | SPropertyFlag_ARRAY_0066e30c[0].name | PTR_s_swing_0066e318
         ;   Label: LAB_0040edca
     PUSH ECX                            ; 0040edd0
     PUSH 0x61452b                       ; 0040edd1 | = "%s"

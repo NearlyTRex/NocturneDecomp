@@ -97,7 +97,7 @@ void __cdecl CInventory::saveItems(CInventory *this_ptr,_FILE *file_handle);
 
 // Original: core_inv.cpp_CInventory_load_FUN_004ff400
 // Address: 004ff400
-void __cdecl CInventory::load(CInventory *this_ptr);
+void __cdecl CInventory::load(CInventory *this_ptr,_FILE *file_handle);
 
 // Original: core_inv.cpp_CInventory_loadItems_FUN_004ff740
 // Address: 004ff740

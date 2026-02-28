@@ -15,7 +15,7 @@
 ;   core_msnedit.cpp_CDemonMission_importActors_FUN_0053ccf0 at 0053cf3b
 ;   core_msnedit.cpp_CDemonMission_playMission_FUN_00538ba0 at 00538cf8
 ;   core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0 at 005384d9
-;   core_msnedit.cpp_FUN_00537230 at 005372a9
+;   core_msnedit.cpp_convertAllMissionFiles_FUN_00537230 at 005372a9
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_00541390 at 005419ac
 ;
 ; Referenced Globals:

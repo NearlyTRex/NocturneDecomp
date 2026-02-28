@@ -17,7 +17,7 @@
 ;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004edbb0 at 004edbe0
 ;   core_hostage.cpp_CHostage_process_FUN_004f4bd0 at 004f5093
 ;   core_melee.cpp_CMelee_process_FUN_0050ec10 at 0050ecb4
-;   core_msnedit.cpp_CDemonMission_FUN_0053e220 at 0053e6ce
+;   core_msnedit.cpp_CDemonMission_editGore_FUN_0053e220 at 0053e6ce
 ;
 ; Referenced Globals:
 ;   int g_BloodParticleIndex

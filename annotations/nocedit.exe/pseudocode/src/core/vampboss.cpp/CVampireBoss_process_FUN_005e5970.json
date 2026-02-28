@@ -97,17 +97,18 @@
   },
   "complexity": {
     "assembly_lines": 1467,
-    "complexity_score": 802,
+    "complexity_score": 817,
     "cross_reference_count": 0,
     "function_call_count": 35,
     "global_count": 37,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 612,
-    "suspect_count": 17,
+    "suspect_count": 18,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "stack_param",
+      "warning_inlined_function",
       "warning_type_propagation"
     ],
     "total_lines": 2079
@@ -1084,6 +1085,14 @@
     "severity": "medium"
   },
   "suspects": [
+    {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_atan2_FUN_006013b1 */",
+      "type": "warning_inlined_function"
+    },
     {
       "description": "Type propagation did not converge",
       "line": 3,

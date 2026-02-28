@@ -49,17 +49,18 @@
   },
   "complexity": {
     "assembly_lines": 271,
-    "complexity_score": 317,
+    "complexity_score": 332,
     "cross_reference_count": 5,
     "function_call_count": 16,
     "global_count": 35,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 122,
-    "suspect_count": 18,
+    "suspect_count": 19,
     "suspect_types": [
       "decompiler_intrinsic",
       "mmx_assembly",
-      "pointer_cast"
+      "pointer_cast",
+      "warning_inlined_function"
     ],
     "total_lines": 393
   },
@@ -640,6 +641,14 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
+    },
     {
       "description": "Complex pointer cast",
       "line": 57,

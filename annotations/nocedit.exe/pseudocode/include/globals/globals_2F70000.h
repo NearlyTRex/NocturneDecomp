@@ -20,7 +20,7 @@ extern CActorPropertyList g_MsnEditPropertyList;
 extern CEdCheck g_CEdCheckInstance;
 
 // CEdScrollBar
-extern CEdScrollBar DAT_02f797e4;
+extern CEdScrollBar CEdScrollBar_02f797e4;
 
 // CNetGame
 extern CNetGame g_CNetGameInstance;
@@ -40,8 +40,11 @@ extern float FLOAT_02f7c630;
 
 // int
 extern int g_DisableMouseHitOnBarrier;
+extern int INT_02f7c528;
 extern int INT_02f7c52c;
 extern int INT_02f7c530;
+extern int INT_02f7c538;
+extern int INT_02f7c53c;
 extern int INT_02f7c634;
 extern int g_LastPingTime;
 extern int g_RemoteSyncStage;
@@ -57,7 +60,4 @@ extern undefined1 DAT_02f79818;
 
 // undefined4
 extern undefined4 DAT_02f797e0;
-extern undefined4 DAT_02f7c528;
-extern undefined4 DAT_02f7c538;
-extern undefined4 DAT_02f7c53c;
 

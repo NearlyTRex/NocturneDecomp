@@ -1,0 +1,682 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "format_error",
+        "column": 83,
+        "line": 171,
+        "message": "format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 1011,
+    "complexity_score": 214,
+    "cross_reference_count": 1,
+    "function_call_count": 14,
+    "global_count": 82,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 214,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 1225
+  },
+  "cross_references": [
+    {
+      "addr": "005390f0",
+      "from_addr": "0053a9cb",
+      "name": "core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00535e70",
+    "address_range": [
+      [
+        "00535e70",
+        "00536bbc"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_msnedit.cpp_showEditorHelpScreen_FUN_00535e70",
+    "signature": "void __cdecl core_msnedit_cpp_showEditorHelpScreen_FUN_00535e70(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408b90",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_getActorClassName_FUN_00408b90"
+    },
+    {
+      "addr": "005fdbd0",
+      "is_variadic": true,
+      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
+    },
+    {
+      "addr": "00403260",
+      "is_variadic": false,
+      "name": "engine_2d.c_clearInputAndWait_FUN_00403260"
+    },
+    {
+      "addr": "004011b0",
+      "is_variadic": false,
+      "name": "engine_2d.c_drawLine_FUN_004011b0"
+    },
+    {
+      "addr": "00401fd0",
+      "is_variadic": false,
+      "name": "engine_2d.c_drawText_FUN_00401fd0"
+    },
+    {
+      "addr": "004a6490",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_calculateGridWidth_FUN_004a6490"
+    },
+    {
+      "addr": "004a1380",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380"
+    },
+    {
+      "addr": "004a5ae0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEdScrollBar_ctor_FUN_004a5ae0"
+    },
+    {
+      "addr": "004a5b20",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEdScrollBar_dtor_FUN_004a5b20"
+    },
+    {
+      "addr": "004a5fc0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEdScrollBar_handleInput_FUN_004a5fc0"
+    },
+    {
+      "addr": "004a5c10",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEdScrollBar_render_FUN_004a5c10"
+    },
+    {
+      "addr": "004a5b60",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEdScrollBar_setPosition_FUN_004a5b60"
+    },
+    {
+      "addr": "005eda20",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20"
+    },
+    {
+      "addr": "005b3e70",
+      "is_variadic": false,
+      "name": "wincore_windll.cpp_clearScreen_FUN_005b3e70"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063b2f7",
+      "name": "s_Master_editor_keys_0063b2f7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b30b",
+      "name": "s_Show_this_help_screen_0063b30b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b321",
+      "name": "s_F1_0063b321",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b324",
+      "name": "s_Next_camera_0063b324",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b330",
+      "name": "s_C_0063b330",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b332",
+      "name": "s_Prev_camera_0063b332",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b33e",
+      "name": "s_SHIFT_C_0063b33e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b346",
+      "name": "s_Toggle_virtual_director_0063b346",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b35e",
+      "name": "s_E_0063b35e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b360",
+      "name": "s_Next_View_0063b360",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b36a",
+      "name": "s_V_0063b36a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b36c",
+      "name": "s_Previous_View_0063b36c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b37a",
+      "name": "s_SHIFT_V_0063b37a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b382",
+      "name": "s_Next_actor_0063b382",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b38d",
+      "name": "s_TAB_0063b38d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b391",
+      "name": "s_Previous_actor_0063b391",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b3a0",
+      "name": "s_SHIFT_TAB_0063b3a0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b3aa",
+      "name": "s_Select_actor_by_name_0063b3aa",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b3bf",
+      "name": "s_N_0063b3bf",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b3c1",
+      "name": "s_Insert_actor_0063b3c1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b3ce",
+      "name": "s_I_0063b3ce",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b3d0",
+      "name": "s_Delete_actor_0063b3d0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b3dd",
+      "name": "s_D_0063b3dd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b3df",
+      "name": "s_Delete_multiple_actors_0063b3df",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b3f6",
+      "name": "s_Shift_D_0063b3f6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b3fe",
+      "name": "s_Replicate_actor_0063b3fe",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b40e",
+      "name": "s_R_0063b40e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b410",
+      "name": "s_Change_Type_of_selected__0063b410",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b42e",
+      "name": "s_T_0063b42e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b430",
+      "name": "s_Mission_editor_Options_0063b430",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b447",
+      "name": "s_O_0063b447",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b449",
+      "name": "s_Save_mission_0063b449",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b456",
+      "name": "s_CTRL_S_0063b456",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b45d",
+      "name": "s_Full_screen_toggle_0063b45d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b470",
+      "name": "s_W_0063b470",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b472",
+      "name": "s_Undo_actor_changes_made__0063b472",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b4a8",
+      "name": "s_BackSpc_0063b4a8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b4b0",
+      "name": "s_Hide_selected_actor_0063b4b0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b4c4",
+      "name": "s_H_0063b4c4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b4c6",
+      "name": "s_Hide_multiple_actors_0063b4c6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b4db",
+      "name": "s_Shift_H_0063b4db",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b4e3",
+      "name": "s_Unhide_actors_by_name_0063b4e3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b4f9",
+      "name": "s_U_0063b4f9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b4fb",
+      "name": "s_Unhide_all_actors_0063b4fb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b50d",
+      "name": "s_Shift_U_0063b50d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b515",
+      "name": "s_Mouse_controls_0063b515",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b525",
+      "name": "s_Type_actor_name_or_hilit_0063b525",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b555",
+      "name": "s_Alt_Click_0063b555",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b55f",
+      "name": "s_Copy_actor_property_text_0063b55f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b585",
+      "name": "s_Ctrl_Click_0063b585",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b590",
+      "name": "s_Envoke_alternate_editing_0063b590",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b5d5",
+      "name": "s_Shift_Click_0063b5d5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b5e1",
+      "name": "s_Script_editor_keys_0063b5e1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b5f5",
+      "name": "s_Toggle_script_editor_0063b5f5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b60a",
+      "name": "s_F2_0063b60a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b60d",
+      "name": "s_Goto_line_number_0063b60d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b61e",
+      "name": "s_CTRL_G_0063b61e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b625",
+      "name": "s_Find_0063b625",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b62a",
+      "name": "s_CTRL_F_0063b62a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b631",
+      "name": "s_Find_next_0063b631",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b63b",
+      "name": "s_F3_0063b63b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b63e",
+      "name": "s_Find_prev_0063b63e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b648",
+      "name": "s_Shift_F3_0063b648",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b651",
+      "name": "s_Context_sensative_select_0063b651",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b66d",
+      "name": "s_F4_0063b66d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b670",
+      "name": "s_Jump_to_actor_label_came_0063b670",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b698",
+      "name": "s_F6_0063b698",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b69b",
+      "name": "s_Syntax_check_0063b69b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b6a8",
+      "name": "s_F7_0063b6a8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b6ab",
+      "name": "s_Actor_specific_help_for__0063b6ab",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00678a60",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "02cf1cd4"
+    },
+    {
+      "addr": "00679394",
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
+    },
+    {
+      "addr": "0067cf44",
+      "name": "g_CKeysPtr",
+      "type": "CKeys*",
+      "value": "02dcd7d4"
+    },
+    {
+      "addr": "0067d550",
+      "name": "g_CDemonMissionPtr",
+      "type": "CDemonMission*",
+      "value": "02f33740"
+    },
+    {
+      "addr": "02cf1cd4",
+      "name": "g_CEditorToolsInstance",
+      "type": "CEditorTools",
+      "value": null
+    },
+    {
+      "addr": "02d02558",
+      "name": "g_ClipLeft",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d0255c",
+      "name": "g_ClipTop",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02560",
+      "name": "g_ClipRight",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02564",
+      "name": "g_ClipBottom",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02570",
+      "name": "g_ActiveRenderColor",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02dcd7d4",
+      "name": "g_CKeysInstance",
+      "type": "CKeys",
+      "value": null
+    },
+    {
+      "addr": "02f33768",
+      "name": "DAT_02f33768",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.289678135405105,
+    "instruction_count": 901,
+    "opcode_distribution": {
+      "BOOL_AND": 3,
+      "BOOL_NEGATE": 169,
+      "BRANCH": 2,
+      "CALL": 84,
+      "CALLIND": 7,
+      "CBRANCH": 11,
+      "COPY": 611,
+      "INT_2COMP": 1,
+      "INT_ADD": 322,
+      "INT_AND": 802,
+      "INT_CARRY": 163,
+      "INT_EQUAL": 469,
+      "INT_LEFT": 33,
+      "INT_LESS": 10,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 100,
+      "INT_OR": 165,
+      "INT_SBORROW": 12,
+      "INT_SCARRY": 163,
+      "INT_SDIV": 33,
+      "INT_SEXT": 33,
+      "INT_SLESS": 216,
+      "INT_SREM": 33,
+      "INT_SRIGHT": 66,
+      "INT_SUB": 385,
+      "INT_XOR": 1,
+      "INT_ZEXT": 66,
+      "LOAD": 130,
+      "POPCOUNT": 216,
+      "RETURN": 1,
+      "STORE": 392,
+      "SUBPIECE": 66
+    },
+    "pcode_op_count": 4766
+  },
+  "stack_frame": {
+    "frame_size": 276,
+    "local_size": 276,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_110",
+        "offset": -272,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": []
+}

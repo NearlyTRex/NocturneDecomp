@@ -15,11 +15,11 @@
 ;   core_game.cpp_PleaseEnterValidInteger_FUN_004d7730 at 004d77f5
 ;   core_main.c_showDeveloperToolsMenu_FUN_005073a0 at 005079b8
 ;   core_mission.cpp_CDemonMission_FUN_00524c20 at 00524d83
-;   core_msnedit.cpp_CDemonMission_FUN_0053dcf0 at 0053deaa
-;   core_msnedit.cpp_CDemonMission_FUN_0053df90 at 0053e166
+;   core_msnedit.cpp_CDemonMission_deleteMultipleActorsMenu_FUN_0053df90 at 0053e166
 ;   core_msnedit.cpp_CDemonMission_editActorAtIndex_FUN_0053b030 at 0053b4fe
 ;   core_msnedit.cpp_CDemonMission_editActorDetailed_FUN_0053b510 at 0053b9de
 ;   core_msnedit.cpp_CDemonMission_enemyRandomizer_FUN_005379e0 at 00537c5d
+;   core_msnedit.cpp_CDemonMission_hideActorsMenu_FUN_0053dcf0 at 0053deaa
 ;   ... and 25 more
 ;
 ; Referenced Globals:

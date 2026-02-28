@@ -53,6 +53,9 @@ SUSPECT_SEVERITY = {
     'unresolved_funcptr': 'moderate',
     'warning_unmapped_variable': 'moderate',
     'warning_type_propagation': 'moderate',
+    'warning_partial_indirect': 'moderate',
+    'warning_inlined_function': 'mild',
+    'warning_is_inlined': 'mild',
     # Mild: minor issues, code is readable
     'unnamed_param': 'mild',
     'unnamed_local': 'mild',
@@ -179,6 +182,15 @@ _SUSPECT_PATTERN_DEFS = [
     # WARNING: Variable defined which should be unmapped
     (r'WARNING:\s*Variable defined which should be unmapped', 'warning_unmapped_variable',
      'Variable defined which should be unmapped'),
+    # WARNING: Ignoring partial resolution of indirect
+    (r'WARNING:\s*Ignoring partial resolution of indirect', 'warning_partial_indirect',
+     'Partial indirect resolution ignored'),
+    # WARNING: Inlined function: <name>
+    (r'WARNING:\s*Inlined function:', 'warning_inlined_function',
+     'Decompiler inlined a function call'),
+    # WARNING: This is an inlined function
+    (r'WARNING:\s*This is an inlined function', 'warning_is_inlined',
+     'Function body is an inlined copy'),
     # Decompiler intrinsics - pseudo-functions and artifacts (not real C)
     # Includes: ROUND(), SQRT(), CONCAT44, SUB84, SBORROW, CARRY4, NAN(), fsin, fcos, fptan, ADJ(), etc.
     (r'\b(ROUND|SQRT|TRUNC|FLOOR|CEIL|ABS|ZEXT|SEXT|CARRY\d*|SCARRY\d*|SBORROW\d*|CONCAT\d+|SUB\d+|NAN|fsin|fcos|fptan|fpatan|fsqrt|fabs|ADJ)\b', 'decompiler_intrinsic', 'Decompiler intrinsic (not real C)'),

@@ -8,8 +8,8 @@
 ; int              Stack[0x8]:4   param_2
 ;
 ; XREF[4]:
-;   core_msnedit.cpp_CDemonMission_FUN_0053bc80 at 0053bca5
-;   core_msnedit.cpp_CDemonMission_FUN_0053d8b0 at 0053dbb8
+;   core_msnedit.cpp_CDemonMission_changeActorType_FUN_0053d8b0 at 0053dbb8
+;   core_msnedit.cpp_CDemonMission_deleteActorWithConfirm_FUN_0053bc80 at 0053bca5
 ;   core_msnedit.cpp_CDemonMission_importActors_FUN_0053ccf0 at 0053cec8
 ;   core_msnedit.cpp_CDemonMission_removeSet_FUN_00538df0 at 00538e29
 ;

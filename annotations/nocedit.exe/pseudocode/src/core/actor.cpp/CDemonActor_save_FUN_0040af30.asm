@@ -13,8 +13,8 @@
 ; XREF[4]:
 ;   core_inv.cpp_CInventory_save_FUN_004ff210 at 004ff353
 ;   core_mission.cpp_CDemonMission_writeFile_FUN_00523600 at 00523910
-;   core_msnedit.cpp_CDemonMission_FUN_0053bd80 at 0053bdee
-;   core_msnedit.cpp_CDemonMission_FUN_0053c140 at 0053c1e5
+;   core_msnedit.cpp_CDemonMission_replicateActor_FUN_0053bd80 at 0053bdee
+;   core_msnedit.cpp_CDemonMission_selectActor_FUN_0053c140 at 0053c1e5
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_actor_cpp_00613c80

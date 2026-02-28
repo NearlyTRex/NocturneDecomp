@@ -32,7 +32,7 @@
 ;   core_actor.cpp_CActorPropertyList_init_FUN_0040e130
 ;   core_mission.cpp_CDemonMission_countActors_FUN_00523cc0
 ;   core_mission.cpp_CDemonMission_findActorByName_FUN_00524030
-;   core_msnedit.cpp_CDemonMission_FUN_0053c140
+;   core_msnedit.cpp_CDemonMission_selectActor_FUN_0053c140
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_string.c__stricmp_FUN_005fe7f0
 ;   shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0
@@ -273,8 +273,8 @@ section .text
     ADD ESP,0x8                         ; 0053b2eb
     PUSH EAX                            ; 0053b2ee
     PUSH EDI                            ; 0053b2ef
-    CALL core_msnedit.cpp_CDemonMission_FUN_0053c140 ; 0053b2f0
-        ;   XREF to: 0053c140 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_FUN_0053c140(CDemonMission * this_ptr, int param_2)
+    CALL core_msnedit.cpp_CDemonMission_selectActor_FUN_0053c140 ; 0053b2f0
+        ;   XREF to: 0053c140 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_selectActor_FUN_0053c140(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 0053b2f5
         ;   Label: LAB_0053b2f5
     PUSH 0x0                            ; 0053b2f8

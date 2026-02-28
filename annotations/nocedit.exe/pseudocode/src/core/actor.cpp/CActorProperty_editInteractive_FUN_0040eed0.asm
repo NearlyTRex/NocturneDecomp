@@ -63,9 +63,9 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   core_msnedit.cpp_CDemonMission_FUN_0053c730 at 0053c8a4
+;   core_msnedit.cpp_CDemonMission_editActorPropertiesDialog_FUN_0053c730 at 0053c8a4
 ;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 0053ae03
-;   core_msnedit.cpp_FUN_00536e20 at 00536f7b
+;   core_msnedit.cpp_drawMotionBar_FUN_00536e20 at 00536f7b
 ;
 ; Referenced Globals:
 ;   void* switchdataD_0040ee84 = 0040ef01
@@ -98,7 +98,7 @@
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 ;   core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0
 ;   core_motion.cpp_CMotionController_jumpToMotion_FUN_0052dde0
-;   core_msnedit.cpp_CDemonMission_FUN_0053cad0
+;   core_msnedit.cpp_CDemonMission_pickActorDialog_FUN_0053cad0
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 ;   core_sound.cpp_editSoundName_FUN_005b3de0
 ;   ... and 16 more
@@ -435,8 +435,8 @@ section .text
     PUSH EBP                            ; 0040f22b
     MOV ESI,dword ptr [0x0067d550]      ; 0040f22c | g_CDemonMissionPtr
     PUSH ESI                            ; 0040f232 | g_CDemonMissionInstance
-    CALL core_msnedit.cpp_CDemonMission_FUN_0053cad0 ; 0040f233
-        ;   XREF to: 0053cad0 (UNCONDITIONAL_CALL)  ; int core_msnedit.cpp_CDemonMission_FUN_0053cad0(CDemonMission * this_ptr, int param_2, char * param_3, int * param_4, ...)
+    CALL core_msnedit.cpp_CDemonMission_pickActorDialog_FUN_0053cad0 ; 0040f233
+        ;   XREF to: 0053cad0 (UNCONDITIONAL_CALL)  ; int core_msnedit.cpp_CDemonMission_pickActorDialog_FUN_0053cad0(CDemonMission * this_ptr, CDemonActor * class_type, char * title, CDemonActor * * out_actor, ...)
     ADD ESP,0x20                        ; 0040f238
     TEST EAX,EAX                        ; 0040f23b
     JZ 0x0040eef2                       ; 0040f23d
@@ -2030,14 +2030,14 @@ section .text
     ADD ESP,0x4                         ; 004101c1
     MOV EAX,dword ptr [EBX + 0x68]      ; 004101c4
         ;   Label: LAB_004101c4
-    MOV EDX,dword ptr [EDI + 0x66e30c]  ; 004101c7 | DAT_0066e30c | DAT_0066e314
+    MOV EDX,dword ptr [EDI + 0x66e30c]  ; 004101c7 | SPropertyFlag_ARRAY_0066e30c | DAT_0066e314
     TEST dword ptr [EAX],EDX            ; 004101cd
     JZ 0x00410265                       ; 004101cf
         ;   XREF to: 00410265 (CONDITIONAL_JUMP)  ; LAB_00410265
     MOV EAX,0x6146ad                    ; 004101d5 | = "enable"
     PUSH EAX                            ; 004101da | = "enable" | s_disabled_006146b4
         ;   Label: LAB_004101da
-    MOV ECX,dword ptr [EDI + 0x66e310]  ; 004101db | PTR_s_thrust_0066e310 | PTR_s_swing_0066e318
+    MOV ECX,dword ptr [EDI + 0x66e310]  ; 004101db | SPropertyFlag_ARRAY_0066e30c[0].name | PTR_s_swing_0066e318
     PUSH ECX                            ; 004101e1 | = "thrust" | s_swing_006146fc
     PUSH 0x6146bd                       ; 004101e2 | = "%s\t%s"
     LEA EAX,[ESP + 0x3490]              ; 004101e7
@@ -2071,7 +2071,7 @@ section .text
         ;   XREF to: 0041026c (CONDITIONAL_JUMP)  ; LAB_0041026c
     LEA EDX,[EAX*0x8 + 0x0]             ; 00410238
     MOV EAX,dword ptr [EBX + 0x68]      ; 0041023f
-    MOV EDX,dword ptr [EDX + 0x66e30c]  ; 00410242 | DAT_0066e30c
+    MOV EDX,dword ptr [EDX + 0x66e30c]  ; 00410242 | SPropertyFlag_ARRAY_0066e30c
     MOV EDI,dword ptr [EAX]             ; 00410248
     XOR EDI,EDX                         ; 0041024a
     PUSH 0x0                            ; 0041024c

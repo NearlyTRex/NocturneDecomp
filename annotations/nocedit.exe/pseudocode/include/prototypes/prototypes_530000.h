@@ -13,6 +13,8 @@
 #include "types/classes/CMultiCram.h"
 #include "types/classes/CNetGame.h"
 #include "types/classes/CStrList.h"
+#include "types/classes/CVector3f.h"
+#include "types/funcdefs/CActorPropertyFilterFunc.h"
 #include "types/structs/SMpegFrame.h"
 #include "types/structs/SMpegFrameHeader.h"
 #include "types/structs/SMpegLayer3SideInfo.h"
@@ -58,23 +60,23 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_seek_FUN_00534ba0(CMP3Decoder *this_ptr,in
 int __cdecl sound_mp3_cpp_CMP3Decoder_getTotalSamples_FUN_00534d10(CMP3Decoder *this_ptr);
 int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this_ptr,short *pcm_output);
 void __cdecl core_msnedit_cpp_staticInit_FUN_00535c30(void);
-float * __cdecl core_msnedit_cpp_FUN_00535c60(float *param_1,int param_2,int param_3);
-char * __cdecl core_msnedit_cpp_FUN_00535df0(int param_1);
-void __cdecl core_msnedit_cpp_FUN_00535e10(int *param_1,char *param_2,char *param_3);
-void __cdecl core_msnedit_cpp_FUN_00535e70(void);
-int __cdecl core_msnedit_cpp_FUN_00536bc0(int param_1);
-void __cdecl core_msnedit_cpp_FUN_00536bf0(char *param_1,CStrList *param_2);
-int __cdecl core_msnedit_cpp_FUN_00536cd0(char *param_1,int param_2,int param_3,int param_4,int param_5);
-void __cdecl core_msnedit_cpp_FUN_00536e20(void);
-void __cdecl core_msnedit_cpp_FUN_00537230(void);
-void __cdecl core_msnedit_cpp_FUN_00537330(CStrList *param_1,int param_2,int param_3);
-int __cdecl core_msnedit_cpp_FUN_00537410(char *param_1);
-void __cdecl core_msnedit_cpp_FUN_005374b0(int unk);
+CVector3f * __cdecl core_msnedit_cpp_screenToWorldPosition_FUN_00535c60(CVector3f *out_world_pos,int screen_x,int screen_y);
+char * __cdecl core_msnedit_cpp_getOnOffString_FUN_00535df0(int value);
+void __cdecl core_msnedit_cpp_drawPropertyRow_FUN_00535e10(int *y_pos,char *label,char *value);
+void __cdecl core_msnedit_cpp_showEditorHelpScreen_FUN_00535e70(void);
+int __cdecl core_msnedit_cpp_isWordSeparator_FUN_00536bc0(int ch);
+void __cdecl core_msnedit_cpp_tokenizeWords_FUN_00536bf0(char *str,CStrList *word_list);
+int __cdecl core_msnedit_cpp_drawClickableButton_FUN_00536cd0(char *text,int x,int y,int consume_click,int highlighted);
+void __cdecl core_msnedit_cpp_drawMotionBar_FUN_00536e20(void);
+void __cdecl core_msnedit_cpp_convertAllMissionFiles_FUN_00537230(void);
+void __cdecl core_msnedit_cpp_buildActorClassHierarchy_FUN_00537330(CStrList *class_list,CDemonActor *parent_class,int indent_level);
+int __cdecl core_msnedit_cpp_confirmNewActorName_FUN_00537410(char *name);
+void __cdecl core_msnedit_cpp_setEditorLayoutMode_FUN_005374b0(int layout_mode);
 void __cdecl core_msnedit_cpp_CDemonMission_readIni_FUN_00537530(CDemonMission *this_ptr,CIniFile *ini_file);
 void __cdecl core_msnedit_cpp_CDemonMission_writeIni_FUN_005375d0(CDemonMission *this_ptr,CIniFile *ini_file);
 void __cdecl core_msnedit_cpp_CDemonMission_showOptionsMenu_FUN_00537680(CDemonMission *this_ptr);
 void __cdecl core_msnedit_cpp_CDemonMission_enemyRandomizer_FUN_005379e0(CDemonMission *this_ptr);
-void __cdecl core_msnedit_cpp_FUN_00537dd0(char *param_1,char *param_2,char *param_3);
+void __cdecl core_msnedit_cpp_copyFile_FUN_00537dd0(char *src_filename,char *dest_filename,char *directory);
 void __cdecl core_msnedit_cpp_CDemonMission_saveWithNewName_FUN_00537f60(CDemonMission *this_ptr,char *name);
 void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMission *this_ptr);
 void __cdecl core_msnedit_cpp_CDemonMission_playMission_FUN_00538ba0(CDemonMission *this_ptr);
@@ -82,44 +84,50 @@ void __cdecl core_msnedit_cpp_CDemonMission_addSet_FUN_00538d60(CDemonMission *t
 void __cdecl core_msnedit_cpp_CDemonMission_removeSet_FUN_00538df0(CDemonMission *this_ptr,int param_2);
 void __cdecl core_msnedit_cpp_CDemonMission_deleteActor_FUN_00538ea0(CDemonMission *this_ptr,int param_2);
 int __cdecl core_msnedit_cpp_CDemonMission_findSetByName_FUN_00538f40(CDemonMission *this_ptr,char *set_name);
-int __cdecl core_msnedit_cpp_CDemonMission_FUN_00538f90(CDemonMission *this_ptr,char *param_2,int param_3);
+int __cdecl core_msnedit_cpp_CDemonMission_pickSet_FUN_00538f90(CDemonMission *this_ptr,char *title,int selected_index);
 void __cdecl core_msnedit_cpp_CDemonMission_editActorProperties_FUN_00539060(CDemonMission *this_ptr,int param_2);
 int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMission *this_ptr,int param_2);
 void __cdecl core_msnedit_cpp_CDemonMission_pasteActorProperty_FUN_0053af50(CDemonMission *this_ptr,char *property);
 void __cdecl core_msnedit_cpp_CDemonMission_editActorAtIndex_FUN_0053b030(CDemonMission *this_ptr,int param_2);
 void __cdecl core_msnedit_cpp_CDemonMission_editActorDetailed_FUN_0053b510(CDemonMission *this_ptr,int param_2);
 void __cdecl core_msnedit_cpp_CDemonMission_importActorsFrom_FUN_0053b9f0(CDemonMission *this_ptr,CDemonMission *other);
-void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053bc80(CDemonMission *this_ptr,int param_2,int param_3);
-void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053bcf0(CDemonMission *this_ptr);
-void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053bd80(CDemonMission *this_ptr,int param_2,int param_3,CDemonMission *param_4);
-void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053c0b0(CDemonMission *this_ptr);
-void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053c140(CDemonMission *this_ptr,int param_2);
-char * __cdecl core_msnedit_cpp_CDemonMission_FUN_0053c210(CDemonMission *this_ptr,char *param_2,char *param_3);
-CDemonActor * __cdecl core_msnedit_cpp_CDemonMission_FUN_0053c340(CDemonMission *this_ptr,int param_2,int param_3);
-void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053c4f0(CDemonMission *this_ptr);
-void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053c730(CDemonMission *this_ptr);
-void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053c8d0(CDemonMission *this_ptr);
-void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053c930(CDemonMission *this_ptr,int param_2);
-void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053c970(CDemonMission *this_ptr,int param_2,int param_3,int param_4);
-void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053ca00(CDemonMission *this_ptr);
-void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053ca30(CDemonMission *this_ptr,int param_2);
-void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053ca80(CDemonMission *this_ptr,int param_2);
-int __cdecl core_msnedit_cpp_CDemonMission_FUN_0053cad0(CDemonMission *this_ptr,int param_2,char *param_3,int *param_4,int param_5, int param_6,int param_7,int param_8);
-void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053cc30(CDemonMission *this_ptr,CStrList *param_2,uint param_3,char *param_4,int param_5);
+void __cdecl core_msnedit_cpp_CDemonMission_deleteActorWithConfirm_FUN_0053bc80(CDemonMission *this_ptr,CDemonActor *actor,int skip_confirmation);
+void __cdecl core_msnedit_cpp_CDemonMission_selectNearestActor_FUN_0053bcf0(CDemonMission *this_ptr);
+void __cdecl core_msnedit_cpp_CDemonMission_replicateActor_FUN_0053bd80(CDemonMission *this_ptr);
+void __cdecl core_msnedit_cpp_CDemonMission_undoActorChanges_FUN_0053c0b0(CDemonMission *this_ptr);
+void __cdecl core_msnedit_cpp_CDemonMission_selectActor_FUN_0053c140(CDemonMission *this_ptr,CDemonActor *actor);
+char * __cdecl core_msnedit_cpp_CDemonMission_pickActorByName_FUN_0053c210(CDemonMission *this_ptr,char *title,char *current_name);
+CDemonActor * __cdecl core_msnedit_cpp_CDemonMission_raycastPickActor_FUN_0053c340(CDemonMission *this_ptr,int screen_x,int screen_y);
+void __cdecl core_msnedit_cpp_CDemonMission_drawPropertyPanel_FUN_0053c4f0(CDemonMission *this_ptr);
+void __cdecl core_msnedit_cpp_CDemonMission_editActorPropertiesDialog_FUN_0053c730(CDemonMission *this_ptr);
+void __cdecl core_msnedit_cpp_CDemonMission_dropActorToGround_FUN_0053c8d0(CDemonMission *this_ptr,CDemonActor *actor);
+void __cdecl core_msnedit_cpp_CDemonMission_moveActorToViewportCenter_FUN_0053c930(CDemonMission *this_ptr,CDemonActor *actor);
+void __cdecl core_msnedit_cpp_CDemonMission_moveActorToScreenPos_FUN_0053c970(CDemonMission *this_ptr,CDemonActor *actor,int screen_x,int screen_y);
+void __cdecl core_msnedit_cpp_CDemonMission_moveActorToMousePos_FUN_0053ca00(CDemonMission *this_ptr,CDemonActor *actor);
+void __cdecl core_msnedit_cpp_CDemonMission_findNextVisibleActor_FUN_0053ca30(CDemonMission *this_ptr,CDemonActor *actor);
+void __cdecl core_msnedit_cpp_CDemonMission_findPrevVisibleActor_FUN_0053ca80(CDemonMission *this_ptr,CDemonActor *actor);
+template<typename T_func0>
+inline int core_msnedit_cpp_CDemonMission_pickActorDialog_FUN_0053cad0(CDemonMission *this_ptr,CDemonActor *class_type,char *title,CDemonActor **out_actor,int allow_none,char *class_name,T_func0 filter_func,int preselect) {
+    (void)this_ptr; (void)class_type; (void)title; (void)out_actor; (void)allow_none; (void)class_name; (void)filter_func; (void)preselect; return (int)0;
+}
+template<typename T_func0>
+inline void core_msnedit_cpp_CDemonMission_buildFilteredActorList_FUN_0053cc30(CDemonMission *this_ptr,CStrList *name_list,CDemonActor *class_type,char *class_name,T_func0 filter_func) {
+    (void)this_ptr; (void)name_list; (void)class_type; (void)class_name; (void)filter_func;
+}
 void __cdecl core_msnedit_cpp_CDemonMission_makeOptimizedPalette_FUN_0053ccc0(CDemonMission *this_ptr);
 void __cdecl core_msnedit_cpp_CDemonMission_importActors_FUN_0053ccf0(CDemonMission *this_ptr);
 void __cdecl core_msnedit_cpp_CDemonMission_saveMissionAndScript_FUN_0053d190(CDemonMission *this_ptr,char *filename);
-int __cdecl core_msnedit_cpp_CDemonMission_FUN_0053d220(CDemonMission *this_ptr);
-int * __cdecl core_msnedit_cpp_FUN_0053d3a0(void);
-void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053d3b0(CDemonMission *this_ptr);
-void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053d7b0(CDemonMission *this_ptr);
-void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053d8b0(CDemonMission *this_ptr,int param_2,CDemonMission *param_3,int param_4);
-void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053dcf0(CDemonMission *this_ptr);
-void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053df90(CDemonMission *this_ptr);
-void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053e220(CDemonMission *this_ptr);
-void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053ea30(CDemonMission *this_ptr);
-void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053eb40(CDemonMission *this_ptr,char *param_2);
-void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053ec80(CDemonMission *this_ptr);
+int __cdecl core_msnedit_cpp_CDemonMission_validateNewActorName_FUN_0053d220(CDemonMission *this_ptr,char *orig_name,char *new_name);
+char * __cdecl core_msnedit_cpp_getEmptyString_FUN_0053d3a0(void);
+void __cdecl core_msnedit_cpp_CDemonMission_showDifficultyStats_FUN_0053d3b0(CDemonMission *this_ptr);
+void __cdecl core_msnedit_cpp_CDemonMission_rebuildWaypointConnectivity_FUN_0053d7b0(CDemonMission *this_ptr);
+void __cdecl core_msnedit_cpp_CDemonMission_changeActorType_FUN_0053d8b0(CDemonMission *this_ptr);
+void __cdecl core_msnedit_cpp_CDemonMission_hideActorsMenu_FUN_0053dcf0(CDemonMission *this_ptr);
+void __cdecl core_msnedit_cpp_CDemonMission_deleteMultipleActorsMenu_FUN_0053df90(CDemonMission *this_ptr);
+void __cdecl core_msnedit_cpp_CDemonMission_editGore_FUN_0053e220(CDemonMission *this_ptr);
+void __cdecl core_msnedit_cpp_CDemonMission_buildScriptCrossReferences_FUN_0053ea30(CDemonMission *this_ptr);
+void __cdecl core_msnedit_cpp_CDemonMission_playSound_FUN_0053eb40(CDemonMission *this_ptr,char *filename);
+void __cdecl core_msnedit_cpp_CDemonMission_showSoundFilesInMission_FUN_0053ec80(CDemonMission *this_ptr);
 void * __cdecl shape_multicrm_cpp_CMultiCram_getModels_FUN_0053ee00(CMultiCram *this_ptr,CDSEModel **dest_array);
 CDSEModel * __cdecl shape_multicrm_cpp_CMultiCram_getSecondModel_FUN_0053ee30(CMultiCram *this_ptr);
 CMultiCram * __cdecl shape_multicrm_cpp_CMultiCram_getModelCount_FUN_0053ee40(CMultiCram *this_ptr,int *model_count_ptr);

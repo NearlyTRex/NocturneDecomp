@@ -6,13 +6,13 @@
   },
   "complexity": {
     "assembly_lines": 1125,
-    "complexity_score": 1019,
+    "complexity_score": 1034,
     "cross_reference_count": 3,
     "function_call_count": 29,
     "global_count": 13,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 539,
-    "suspect_count": 44,
+    "suspect_count": 45,
     "suspect_types": [
       "byvalue_struct_passing",
       "decompiler_intrinsic",
@@ -21,7 +21,8 @@
       "stack_param",
       "stack_ref",
       "unknown_field",
-      "warning_deadcode_restart"
+      "warning_deadcode_restart",
+      "warning_inlined_function"
     ],
     "total_lines": 1664
   },
@@ -928,6 +929,14 @@
     "severity": "medium"
   },
   "suspects": [
+    {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
+    },
     {
       "description": "Deadcode elimination delayed",
       "line": 3,

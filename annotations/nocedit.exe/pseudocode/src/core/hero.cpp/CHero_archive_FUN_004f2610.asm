@@ -252,7 +252,7 @@ section .text
     PUSH EBX                            ; 004f283e
     PUSH EAX                            ; 004f283f
     CALL core_inv.cpp_CInventory_load_FUN_004ff400 ; 004f2840
-        ;   XREF to: 004ff400 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_load_FUN_004ff400(CInventory * this_ptr)
+        ;   XREF to: 004ff400 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_load_FUN_004ff400(CInventory * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 004f2845
     ADD ESP,0xcc                        ; 004f2848
     POP ESI                             ; 004f284e

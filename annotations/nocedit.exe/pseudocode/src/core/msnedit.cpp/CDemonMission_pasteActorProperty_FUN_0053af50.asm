@@ -26,8 +26,8 @@
 ;   core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0
 ;   core_msnedit.cpp_CDemonMission_editActorAtIndex_FUN_0053b030
 ;   core_msnedit.cpp_CDemonMission_editActorDetailed_FUN_0053b510
-;   core_msnedit.cpp_CDemonMission_FUN_0053c140
-;   core_msnedit.cpp_CDemonMission_FUN_0053eb40
+;   core_msnedit.cpp_CDemonMission_playSound_FUN_0053eb40
+;   core_msnedit.cpp_CDemonMission_selectActor_FUN_0053c140
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
 ;
 ; *****************************************************************************
@@ -61,8 +61,8 @@ section .text
     PUSH EDX                            ; 0053af79
         ;   Label: LAB_0053af79
     PUSH EBX                            ; 0053af7a
-    CALL core_msnedit.cpp_CDemonMission_FUN_0053c140 ; 0053af7b
-        ;   XREF to: 0053c140 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_FUN_0053c140(CDemonMission * this_ptr, int param_2)
+    CALL core_msnedit.cpp_CDemonMission_selectActor_FUN_0053c140 ; 0053af7b
+        ;   XREF to: 0053c140 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_selectActor_FUN_0053c140(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 0053af80
     POP EBP                             ; 0053af83
     POP EDI                             ; 0053af84
@@ -119,8 +119,8 @@ section .text
     MOV ESI,dword ptr [EAX + 0x68]      ; 0053afdf
     PUSH ESI                            ; 0053afe2
     PUSH EBX                            ; 0053afe3
-    CALL core_msnedit.cpp_CDemonMission_FUN_0053eb40 ; 0053afe4
-        ;   XREF to: 0053eb40 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_FUN_0053eb40(CDemonMission * this_ptr, char * param_2)
+    CALL core_msnedit.cpp_CDemonMission_playSound_FUN_0053eb40 ; 0053afe4
+        ;   XREF to: 0053eb40 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_playSound_FUN_0053eb40(CDemonMission * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0053afe9
     POP ESI                             ; 0053afec
     POP EBP                             ; 0053afed

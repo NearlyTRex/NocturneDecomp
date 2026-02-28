@@ -16,8 +16,8 @@ void __cdecl core_msnedit_cpp_CDemonMission_importActors_FUN_0053ccf0(CDemonMiss
   CDemonActor *pCVar5;
   CDemonActor *pCVar6;
   CDemonActor *pCVar7;
-  uint *puVar8;
   char *unaff_EDI;
+  char *pcVar8;
   byte bVar9;
   CPickList local_448;
   char local_a0 [100];
@@ -65,12 +65,12 @@ void __cdecl core_msnedit_cpp_CDemonMission_importActors_FUN_0053ccf0(CDemonMiss
   local_14 = 0;
   this_ptr->skip_gore_load_flag = 0;
   g_CDemonMissionPtr = this_ptr;
-  puVar8 = &0x0000002A;
-  pcVar4 = local_a0;
+  pcVar4 = g_MsnEditImportWildcardPattern;
+  pcVar8 = local_a0;
   for (iVar2 = 0x19; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *(uint *)pcVar4 = *puVar8;
-    puVar8 = puVar8 + (uint)bVar9 * -2 + 1;
+    *(uint *)pcVar8 = *(uint *)pcVar4;
     pcVar4 = pcVar4 + ((uint)bVar9 * -2 + 1) * 4;
+    pcVar8 = pcVar8 + ((uint)bVar9 * -2 + 1) * 4;
   }
   do {
     pCVar1 = local_10;

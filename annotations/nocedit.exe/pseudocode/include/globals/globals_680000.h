@@ -309,12 +309,16 @@ extern char* g_EnvironmentStrings;
 extern char** g_TempEnvVarNames;
 
 // char[104]
+extern char g_MsnEditHideByTypeBuffer[104];
+extern char g_MsnEditDeleteByTypePattern[104];
+extern char g_MsnEditLastSelectedPropertyName[104];
 extern char g_SoundResultBufferTemplate[104];
 
 // char[108]
 extern char g_TrainSoundFilenameTemplate[108];
 
 // char[200]
+extern char g_MsnEditCameraStatusBuffer[200];
 extern char g_ActorRefDefaultBuffer[200];
 
 // char[256]
@@ -334,6 +338,7 @@ extern double g_ClearColor;
 extern dst_rule g_DstStartRule;
 
 // float
+extern float FLOAT_00680818;
 extern float FLOAT_00681a00;
 extern float g_MaxSoftwareLatency;
 
@@ -341,7 +346,6 @@ extern float g_MaxSoftwareLatency;
 extern int INT_00680648;
 extern int g_DynamicRenderMode;
 extern int g_ConfirmNewActorNames;
-extern int INT_00680818;
 extern int INT_00680a04;
 extern int g_CNPCClassVersion;
 extern int g_CPassengerClassVersion;
@@ -485,11 +489,6 @@ extern undefined1 DAT_0068500c;
 extern undefined1 DAT_006852db;
 
 // undefined4
-extern undefined4 DAT_00680830;
-extern undefined4 DAT_00680834;
-extern undefined4 DAT_00680908;
-extern undefined4 DAT_0068090c;
-extern undefined4 DAT_00680974;
 extern undefined4 DAT_00684edc;
 extern undefined4 DAT_00684fd0;
 extern undefined4 DAT_00685094;

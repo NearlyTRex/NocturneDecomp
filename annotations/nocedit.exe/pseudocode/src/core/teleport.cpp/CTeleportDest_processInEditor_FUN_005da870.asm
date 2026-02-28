@@ -20,8 +20,8 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_processInEditor_FUN_0040d040
 ;   core_mission.cpp_CDemonMission_findActorByName_FUN_00524030
-;   core_msnedit.cpp_CDemonMission_FUN_0053c140
-;   core_msnedit.cpp_CDemonMission_FUN_0053cc30
+;   core_msnedit.cpp_CDemonMission_buildFilteredActorList_FUN_0053cc30
+;   core_msnedit.cpp_CDemonMission_selectActor_FUN_0053c140
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
 ;   shape_edittool.cpp_CPickList_ctor_FUN_004a3b90
@@ -59,8 +59,8 @@ section .text
     PUSH EAX                            ; 005da8b3
     MOV EDX,dword ptr [0x0067d550]      ; 005da8b4 | g_CDemonMissionInstance | g_CDemonMissionPtr
     PUSH EDX                            ; 005da8ba | g_CDemonMissionInstance
-    CALL core_msnedit.cpp_CDemonMission_FUN_0053cc30 ; 005da8bb
-        ;   XREF to: 0053cc30 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_FUN_0053cc30(CDemonMission * this_ptr, CStrList * param_2, uint param_3, char * param_4, ...)
+    CALL core_msnedit.cpp_CDemonMission_buildFilteredActorList_FUN_0053cc30 ; 005da8bb
+        ;   XREF to: 0053cc30 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_buildFilteredActorList_FUN_0053cc30(CDemonMission * this_ptr, CStrList * name_list, CDemonActor * class_type, char * class_name, ...)
     ADD ESP,0x14                        ; 005da8c0
     CMP dword ptr [ESP + 0x4],0x1       ; 005da8c3
     JGE 0x005da8f7                      ; 005da8c8
@@ -119,8 +119,8 @@ section .text
     PUSH EAX                            ; 005da949
     MOV ESI,dword ptr [0x0067d550]      ; 005da94a | g_CDemonMissionPtr
     PUSH ESI                            ; 005da950 | g_CDemonMissionInstance
-    CALL core_msnedit.cpp_CDemonMission_FUN_0053c140 ; 005da951
-        ;   XREF to: 0053c140 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_FUN_0053c140(CDemonMission * this_ptr, int param_2)
+    CALL core_msnedit.cpp_CDemonMission_selectActor_FUN_0053c140 ; 005da951
+        ;   XREF to: 0053c140 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_selectActor_FUN_0053c140(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 005da956
     POP ESI                             ; 005da959
     JMP 0x005da8df                      ; 005da95a

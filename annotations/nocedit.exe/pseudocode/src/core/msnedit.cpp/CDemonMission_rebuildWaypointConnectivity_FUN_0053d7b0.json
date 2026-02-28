@@ -1,0 +1,196 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 73,
+    "complexity_score": 42,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 8,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 27,
+    "suspect_count": 1,
+    "suspect_types": [
+      "pointer_cast"
+    ],
+    "total_lines": 100
+  },
+  "cross_references": [
+    {
+      "addr": "005381e0",
+      "from_addr": "00538a49",
+      "name": "core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0053d7b0",
+    "address_range": [
+      [
+        "0053d7b0",
+        "0053d85a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_msnedit.cpp_CDemonMission_rebuildWaypointConnectivity_FUN_0053d7b0",
+    "signature": "void __cdecl core_msnedit_cpp_CDemonMission_rebuildWaypointConnectivity_FUN_0053d7b0(CDemonMission *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00523e60",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_buildSetActorList_FUN_00523e60"
+    },
+    {
+      "addr": "00523fb0",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_loadSet_FUN_00523fb0"
+    },
+    {
+      "addr": "00523cf0",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0"
+    },
+    {
+      "addr": "005ec4f0",
+      "is_variadic": false,
+      "name": "core_waypoint.cpp_CWayPoint_FUN_005ec4f0"
+    },
+    {
+      "addr": "0049e790",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063ccf4",
+      "name": "s_Preparing_actors_0063ccf4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063cd06",
+      "name": "s_Rebuilding_waypoint_conn_0063cd06",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00678a60",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "02cf1cd4"
+    },
+    {
+      "addr": "006810c8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "03114278"
+    },
+    {
+      "addr": "02cf1cd4",
+      "name": "g_CEditorToolsInstance",
+      "type": "CEditorTools",
+      "value": null
+    },
+    {
+      "addr": "03114278",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    },
+    {
+      "addr": "032690dc",
+      "name": "DAT_032690dc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "032690e0",
+      "name": "DAT_032690e0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00538a49",
+        "call_type": "direct",
+        "caller": "core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "reg_params": [],
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.637931034482759,
+    "instruction_count": 58,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 6,
+      "CBRANCH": 3,
+      "COPY": 44,
+      "INT_ADD": 22,
+      "INT_AND": 35,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 34,
+      "INT_LESS": 3,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 10,
+      "INT_SLESS": 17,
+      "INT_SUB": 23,
+      "INT_XOR": 3,
+      "LOAD": 12,
+      "POPCOUNT": 17,
+      "RETURN": 1,
+      "STORE": 22
+    },
+    "pcode_op_count": 269
+  },
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonMission *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 22,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "puVar1 = (uint *)((int)g_CDemonSetPtr->waypoints + iVar2);",
+      "type": "pointer_cast"
+    }
+  ]
+}

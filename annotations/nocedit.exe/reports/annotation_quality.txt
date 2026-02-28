@@ -12,17 +12,17 @@ SUMMARY STATISTICS
 ====================================================================================================
 
   Total functions analyzed:          6,494
-  Unnamed functions (FUN_):          198 ( 3.0%)
-  Functions with unnamed params:     57 ( 0.9%)
-  Functions with type issues:        2,499 (38.5%)
+  Unnamed functions (FUN_):          184 ( 2.8%)
+  Functions with unnamed params:     34 ( 0.5%)
+  Functions with type issues:        2,497 (38.5%)
 
   Type issue breakdown:
     Wrong return type (void):          4
     Wrong return type (wide/64-bit):   2
     Missing register params:           17
-    Wrong calling convention:          71
+    Wrong calling convention:          70
     Undefined types in variables:      2275
-    Unresolved stack params:           553
+    Unresolved stack params:           548
 
 ====================================================================================================
 UNNAMED FUNCTIONS (still using FUN_XXXXXXXX)
@@ -162,22 +162,6 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x00427a20  __cdecl       0 callers
     0x00427b00  __cdecl       0 callers
 
-  core/msnedit.cpp (14 unnamed)
-    0x00535c60  __cdecl       2 callers
-    0x00536cd0  __cdecl       2 callers
-    0x00536e20  __cdecl       1 callers
-    0x00537330  __cdecl       1 callers
-    0x00535e70  __cdecl       1 callers
-    0x00537230  __cdecl       0 callers
-    0x0053d3a0  __cdecl       0 callers
-    0x00537dd0  __cdecl       0 callers
-    0x00535e10  __cdecl       0 callers
-    0x00536bc0  __cdecl       0 callers
-    0x00536bf0  __cdecl       0 callers
-    0x00537410  __cdecl       0 callers
-    0x005374b0  __cdecl       0 callers
-    0x00535df0  __cdecl       0 callers
-
   core/zombie.cpp (8 unnamed)
     0x005f8e50  __cdecl       1 callers
     0x005f8da0  __cdecl       0 callers
@@ -292,51 +276,6 @@ UNNAMED PARAMETERS (still using param_N)
 
 Sorted by number of unnamed parameters (most unnamed first).
 
-  CDemonMission
-    Address: 0x0053cad0  File: core/msnedit.cpp
-    Unnamed: param_2 (int), param_3 (char *), param_4 (int *), param_5 (int), param_6 (int), param_7 (int), param_8 (int)
-    Named:   this_ptr (CDemonMission *)
-
-  FUN_00536cd0
-    Address: 0x00536cd0  File: core/msnedit.cpp
-    Unnamed: param_1 (char *), param_2 (int), param_3 (int), param_4 (int), param_5 (int)
-
-  CDemonMission
-    Address: 0x0053cc30  File: core/msnedit.cpp
-    Unnamed: param_2 (CStrList *), param_3 (uint), param_4 (char *), param_5 (int)
-    Named:   this_ptr (CDemonMission *)
-
-  CDemonMission
-    Address: 0x0053bd80  File: core/msnedit.cpp
-    Unnamed: param_2 (int), param_3 (int), param_4 (CDemonMission *)
-    Named:   this_ptr (CDemonMission *)
-
-  CDemonMission
-    Address: 0x0053c970  File: core/msnedit.cpp
-    Unnamed: param_2 (int), param_3 (int), param_4 (int)
-    Named:   this_ptr (CDemonMission *)
-
-  CDemonMission
-    Address: 0x0053d8b0  File: core/msnedit.cpp
-    Unnamed: param_2 (int), param_3 (CDemonMission *), param_4 (int)
-    Named:   this_ptr (CDemonMission *)
-
-  FUN_00535c60
-    Address: 0x00535c60  File: core/msnedit.cpp
-    Unnamed: param_1 (float *), param_2 (int), param_3 (int)
-
-  FUN_00535e10
-    Address: 0x00535e10  File: core/msnedit.cpp
-    Unnamed: param_1 (int *), param_2 (char *), param_3 (char *)
-
-  FUN_00537330
-    Address: 0x00537330  File: core/msnedit.cpp
-    Unnamed: param_1 (CStrList *), param_2 (int), param_3 (int)
-
-  FUN_00537dd0
-    Address: 0x00537dd0  File: core/msnedit.cpp
-    Unnamed: param_1 (char *), param_2 (char *), param_3 (char *)
-
   CScript_getDialogDuration
     Address: 0x0055ff00  File: core/script.cpp
     Unnamed: param_2 (int), param_3 (char *), param_4 (char *)
@@ -356,30 +295,6 @@ Sorted by number of unnamed parameters (most unnamed first).
     Address: 0x00524920  File: core/mission.cpp
     Unnamed: param_3 (int), param_4 (void *)
     Named:   this_ptr (CDemonMission *), index (int)
-
-  CDemonMission
-    Address: 0x00538f90  File: core/msnedit.cpp
-    Unnamed: param_2 (char *), param_3 (int)
-    Named:   this_ptr (CDemonMission *)
-
-  CDemonMission
-    Address: 0x0053bc80  File: core/msnedit.cpp
-    Unnamed: param_2 (int), param_3 (int)
-    Named:   this_ptr (CDemonMission *)
-
-  CDemonMission
-    Address: 0x0053c210  File: core/msnedit.cpp
-    Unnamed: param_2 (char *), param_3 (char *)
-    Named:   this_ptr (CDemonMission *)
-
-  CDemonMission
-    Address: 0x0053c340  File: core/msnedit.cpp
-    Unnamed: param_2 (int), param_3 (int)
-    Named:   this_ptr (CDemonMission *)
-
-  FUN_00536bf0
-    Address: 0x00536bf0  File: core/msnedit.cpp
-    Unnamed: param_1 (char *), param_2 (CStrList *)
 
   CDemonSet_reinitCamera
     Address: 0x0056b7e0  File: core/set.cpp
@@ -455,31 +370,6 @@ Sorted by number of unnamed parameters (most unnamed first).
     Unnamed: param_2 (int)
     Named:   this_ptr (CDemonMission *)
 
-  CDemonMission
-    Address: 0x0053c140  File: core/msnedit.cpp
-    Unnamed: param_2 (int)
-    Named:   this_ptr (CDemonMission *)
-
-  CDemonMission
-    Address: 0x0053c930  File: core/msnedit.cpp
-    Unnamed: param_2 (int)
-    Named:   this_ptr (CDemonMission *)
-
-  CDemonMission
-    Address: 0x0053ca30  File: core/msnedit.cpp
-    Unnamed: param_2 (int)
-    Named:   this_ptr (CDemonMission *)
-
-  CDemonMission
-    Address: 0x0053ca80  File: core/msnedit.cpp
-    Unnamed: param_2 (int)
-    Named:   this_ptr (CDemonMission *)
-
-  CDemonMission
-    Address: 0x0053eb40  File: core/msnedit.cpp
-    Unnamed: param_2 (char *)
-    Named:   this_ptr (CDemonMission *)
-
   CDemonMission_addSet
     Address: 0x00538d60  File: core/msnedit.cpp
     Unnamed: param_2 (char *)
@@ -514,18 +404,6 @@ Sorted by number of unnamed parameters (most unnamed first).
     Address: 0x00538df0  File: core/msnedit.cpp
     Unnamed: param_2 (int)
     Named:   this_ptr (CDemonMission *)
-
-  FUN_00535df0
-    Address: 0x00535df0  File: core/msnedit.cpp
-    Unnamed: param_1 (int)
-
-  FUN_00536bc0
-    Address: 0x00536bc0  File: core/msnedit.cpp
-    Unnamed: param_1 (int)
-
-  FUN_00537410
-    Address: 0x00537410  File: core/msnedit.cpp
-    Unnamed: param_1 (char *)
 
   CDemonSet_precomputeLightVisibility
     Address: 0x0056a470  File: core/set.cpp
@@ -577,7 +455,7 @@ Wrong return type (void function with extra output) (4)
   CInventory_load
     Address: 0x004ff400  File: core/inv.cpp
     Evidence: extraout_EAX, extraout_EAX
-    Signature: void __cdecl core_inv_cpp_CInventory_load_FUN_004ff400(CInventory *this_ptr)
+    Signature: void __cdecl core_inv_cpp_CInventory_load_FUN_004ff400(CInventory *this_ptr,_FILE *file_handle)
     Suggested: Likely returns int or void*
 
   CFrankenstienMachine_process
@@ -721,7 +599,7 @@ Missing register parameters (likely wrong calling convention) (17)
     Suggested: Likely __fastcall (ECX, EDX params)
 
 --------------------------------------------------------------------------------
-Wrong calling convention (unaffected register usage) (71)
+Wrong calling convention (unaffected register usage) (70)
 --------------------------------------------------------------------------------
 
   CPackedBitmapSet_reloadStoredPBGFile
@@ -828,19 +706,19 @@ Wrong calling convention (unaffected register usage) (71)
 
   CDemonSet_positionLight
     Address: 0x0057ae50  File: core/setedit.cpp
-    Evidence: unaff_EBX, unaff_ESI, unaff_EDI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_EDI, unaff_EBX, unaff_EBX, unaff_EBX
+    Evidence: unaff_EBX, unaff_EBP, unaff_ESI, unaff_EBP, unaff_EBX, unaff_EBX, unaff_EBX, unaff_EBX, unaff_EBX, unaff_ESI
     Signature: int __cdecl core_setedit_cpp_CDemonSet_positionLight_FUN_0057ae50(CDemonSet *this_ptr,C3DSLight *light)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
   CDemonSet_editCameraPosition
     Address: 0x0057d660  File: core/setedit.cpp
-    Evidence: unaff_EBX, unaff_ESI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_ESI, unaff_ESI, unaff_EBX, unaff_EBX, unaff_ESI, unaff_EBX, unaff_ESI, unaff_EDI
+    Evidence: unaff_EBX, unaff_ESI, unaff_ESI, unaff_ESI, unaff_EBX, unaff_EBX, unaff_EBX, unaff_EBX, unaff_ESI
     Signature: int __cdecl core_setedit_cpp_CDemonSet_editCameraPosition_FUN_0057d660(CDemonSet *this_ptr,int camera_index)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
   CDemonSet_showScenePreview
     Address: 0x0057a940  File: core/setedit.cpp
-    Evidence: unaff_EBP, unaff_EBP
+    Evidence: unaff_EDI, unaff_EDI
     Signature: void __cdecl core_setedit_cpp_CDemonSet_showScenePreview_FUN_0057a940(CDemonSet *this_ptr)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
@@ -878,12 +756,6 @@ Wrong calling convention (unaffected register usage) (71)
     Address: 0x0053ccf0  File: core/msnedit.cpp
     Evidence: unaff_EDI, unaff_EDI
     Signature: void __cdecl core_msnedit_cpp_CDemonMission_importActors_FUN_0053ccf0(CDemonMission *this_ptr)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  CDemonMission
-    Address: 0x0053e220  File: core/msnedit.cpp
-    Evidence: unaff_EBP, unaff_EBP
-    Signature: void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053e220(CDemonMission *this_ptr)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
   renderPerspectiveTexturedScanline
@@ -1151,7 +1023,7 @@ Wrong calling convention (unaffected register usage) (71)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
 --------------------------------------------------------------------------------
-Unresolved stack parameters (missing from signature) (553)
+Unresolved stack parameters (missing from signature) (548)
 --------------------------------------------------------------------------------
 
   CPackedBitmapSet_reload
@@ -1582,7 +1454,7 @@ Unresolved stack parameters (missing from signature) (553)
 
   CCloth_boneEditor
     Address: 0x0043c880  File: core/cloth.cpp
-    Evidence: in_stack_00000010, in_stack_00000020, in_stack_00000028, in_stack_0000002c, in_stack_00000034, in_stack_0000003c, in_stack_00000054, in_stack_fffffac4, in_stack_fffffac4, in_stack_fffffac4, in_stack_00000028, in_stack_0000002c, in_stack_0000002c, in_stack_0000002c, in_stack_00000010, in_stack_0000003c, in_stack_00000020, in_stack_0000003c, in_stack_00000020, in_stack_0000003c, in_stack_00000054, in_stack_00000034, in_stack_00000034, in_stack_00000034, in_stack_00000034
+    Evidence: in_stack_00000010, in_stack_0000001c, in_stack_00000028, in_stack_0000002c, in_stack_00000034, in_stack_fffffac4, in_stack_fffffac4, in_stack_fffffac4, in_stack_00000028, in_stack_0000002c, in_stack_0000002c, in_stack_0000002c, in_stack_00000010, in_stack_fffffac4, in_stack_fffffac4, in_stack_fffffac4, in_stack_fffffac4, in_stack_0000001c, in_stack_0000002c, in_stack_0000002c, in_stack_0000002c, in_stack_0000002c, in_stack_00000034, in_stack_00000034, in_stack_00000034, in_stack_00000034
     Signature: void __cdecl core_cloth_cpp_CCloth_boneEditor_FUN_0043c880(CCloth *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
@@ -1608,12 +1480,6 @@ Unresolved stack parameters (missing from signature) (553)
     Address: 0x004fd0e0  File: core/inv.cpp
     Evidence: in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000008, in_stack_0000000c, in_stack_00000010
     Signature: void __cdecl core_inv_cpp_CInventory_clear_FUN_004fd0e0(CInventory *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CInventory_load
-    Address: 0x004ff400  File: core/inv.cpp
-    Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_inv_cpp_CInventory_load_FUN_004ff400(CInventory *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
   FUN_005f8da0
@@ -2080,13 +1946,13 @@ Unresolved stack parameters (missing from signature) (553)
 
   CDemonSet_positionLight
     Address: 0x0057ae50  File: core/setedit.cpp
-    Evidence: in_stack_0000000c, in_stack_00000010, in_stack_00000010, in_stack_0000000c, in_stack_00000010
+    Evidence: in_stack_00000010, in_stack_00000014, in_stack_00000014, in_stack_00000010, in_stack_00000014
     Signature: int __cdecl core_setedit_cpp_CDemonSet_positionLight_FUN_0057ae50(CDemonSet *this_ptr,C3DSLight *light)
     Suggested: Signature is missing stack parameters entirely
 
   CDemonSet_showVdirBoxEditor
     Address: 0x00583170  File: core/setedit.cpp
-    Evidence: in_stack_fffffd34, in_stack_fffffd64, in_stack_fffffd78, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd7c, in_stack_fffffd78, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd80, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd78, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd80, in_stack_fffffd80, in_stack_fffffd80, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd78, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd78, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd34, in_stack_fffffd78, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd34, in_stack_fffffd78, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd34, in_stack_fffffd78, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd34, in_stack_fffffd78, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd34, in_stack_fffffd78, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd34, in_stack_fffffd78, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd34, in_stack_fffffd78, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd34, in_stack_fffffd78, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd34, in_stack_fffffd78, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd34, in_stack_fffffd78, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd34, in_stack_fffffd78, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd34
+    Evidence: in_stack_fffffd38, in_stack_fffffd68, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd84, in_stack_fffffdbc, in_stack_fffffdc0, in_stack_fffffdc4, in_stack_fffffdcc, in_stack_fffffdcc, in_stack_fffffdcc, in_stack_fffffdcc, in_stack_fffffdbc, in_stack_fffffdc0, in_stack_fffffdc4, in_stack_fffffdbc, in_stack_fffffdc0, in_stack_fffffdc4, in_stack_fffffd80, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd84, in_stack_fffffd84, in_stack_fffffd80, in_stack_fffffd84, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd84, in_stack_fffffd84, in_stack_fffffd84, in_stack_fffffd84, in_stack_fffffd80, in_stack_fffffd84, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd84, in_stack_fffffd7c, in_stack_fffffd68, in_stack_fffffd68, in_stack_fffffd68, in_stack_fffffd68, in_stack_fffffd68, in_stack_fffffd80, in_stack_fffffd84, in_stack_fffffd38, in_stack_fffffd7c, in_stack_fffffd68, in_stack_fffffd68, in_stack_fffffd68, in_stack_fffffd68, in_stack_fffffd68, in_stack_fffffd80, in_stack_fffffd84, in_stack_fffffd38, in_stack_fffffd7c, in_stack_fffffd68, in_stack_fffffd68, in_stack_fffffd68, in_stack_fffffd68, in_stack_fffffd68, in_stack_fffffd80, in_stack_fffffd84, in_stack_fffffd38, in_stack_fffffd7c, in_stack_fffffd68, in_stack_fffffd68, in_stack_fffffd68, in_stack_fffffd68, in_stack_fffffd68, in_stack_fffffd80, in_stack_fffffd84, in_stack_fffffd38, in_stack_fffffd7c, in_stack_fffffd68, in_stack_fffffd68, in_stack_fffffd68, in_stack_fffffd68, in_stack_fffffd68, in_stack_fffffd80, in_stack_fffffd84, in_stack_fffffd38, in_stack_fffffd7c, in_stack_fffffd68, in_stack_fffffd68, in_stack_fffffd68, in_stack_fffffd68, in_stack_fffffd68, in_stack_fffffd80, in_stack_fffffd84, in_stack_fffffd38, in_stack_fffffd7c, in_stack_fffffd68, in_stack_fffffd68, in_stack_fffffd68, in_stack_fffffd68, in_stack_fffffd68, in_stack_fffffd80, in_stack_fffffd84, in_stack_fffffd38, in_stack_fffffd7c, in_stack_fffffd68, in_stack_fffffd68, in_stack_fffffd68, in_stack_fffffd68, in_stack_fffffd68, in_stack_fffffd80, in_stack_fffffd84, in_stack_fffffd38, in_stack_fffffd7c, in_stack_fffffd68, in_stack_fffffd68, in_stack_fffffd68, in_stack_fffffd68, in_stack_fffffd68, in_stack_fffffd80, in_stack_fffffd84, in_stack_fffffd38, in_stack_fffffd7c, in_stack_fffffd68, in_stack_fffffd68, in_stack_fffffd68, in_stack_fffffd68, in_stack_fffffd68, in_stack_fffffd80, in_stack_fffffd84, in_stack_fffffd38, in_stack_fffffd7c, in_stack_fffffd68, in_stack_fffffd68, in_stack_fffffd68, in_stack_fffffd68, in_stack_fffffd68, in_stack_fffffd80, in_stack_fffffd84, in_stack_fffffd38, in_stack_fffffd7c, in_stack_fffffd68, in_stack_fffffd68, in_stack_fffffd68, in_stack_fffffd68, in_stack_fffffd68, in_stack_fffffd80, in_stack_fffffd84, in_stack_fffffd38, in_stack_fffffdbc, in_stack_fffffdc0, in_stack_fffffdc4, in_stack_fffffdcc, in_stack_fffffdbc, in_stack_fffffdc0, in_stack_fffffdc4, in_stack_fffffdcc
     Signature: void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
@@ -2378,22 +2244,16 @@ Unresolved stack parameters (missing from signature) (553)
     Signature: void __cdecl core_msnedit_cpp_CDemonMission_importActorsFrom_FUN_0053b9f0(CDemonMission *this_ptr,CDemonMission *other)
     Suggested: Signature is missing stack parameters entirely
 
-  CDemonMission
-    Address: 0x0053ca00  File: core/msnedit.cpp
-    Evidence: in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053ca00(CDemonMission *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CDemonMission
+  CDemonMission_replicateActor
     Address: 0x0053bd80  File: core/msnedit.cpp
-    Evidence: in_stack_ffffff5c, in_stack_ffffff60, in_stack_ffffff64, in_stack_ffffff68, in_stack_ffffff6c, in_stack_ffffff70, in_stack_ffffff74, in_stack_ffffff5c, in_stack_ffffff60, in_stack_ffffff64, in_stack_ffffff68, in_stack_ffffff6c, in_stack_ffffff70, in_stack_ffffff74
-    Signature: void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053bd80(CDemonMission *this_ptr,int param_2,int param_3,CDemonMission *param_4)
+    Evidence: in_stack_00000010, in_stack_ffffff5c, in_stack_ffffff60, in_stack_ffffff64, in_stack_ffffff68, in_stack_ffffff6c, in_stack_ffffff70, in_stack_ffffff74, in_stack_ffffff5c, in_stack_ffffff60, in_stack_ffffff64, in_stack_ffffff68, in_stack_ffffff6c, in_stack_ffffff70, in_stack_ffffff74, in_stack_00000010
+    Signature: void __cdecl core_msnedit_cpp_CDemonMission_replicateActor_FUN_0053bd80(CDemonMission *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
-  CDemonMission
-    Address: 0x0053e220  File: core/msnedit.cpp
-    Evidence: in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff54
-    Signature: void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053e220(CDemonMission *this_ptr)
+  CDemonMission_playSound
+    Address: 0x0053eb40  File: core/msnedit.cpp
+    Evidence: in_stack_fffffeb8, in_stack_fffffeb8, in_stack_fffffeb8, in_stack_fffffeb8, in_stack_fffffeb8
+    Signature: void __cdecl core_msnedit_cpp_CDemonMission_playSound_FUN_0053eb40(CDemonMission *this_ptr,char *filename)
     Suggested: Signature is missing stack parameters entirely
 
   CDemonMission_enemyRandomizer
@@ -2402,28 +2262,10 @@ Unresolved stack parameters (missing from signature) (553)
     Signature: void __cdecl core_msnedit_cpp_CDemonMission_enemyRandomizer_FUN_005379e0(CDemonMission *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
-  CDemonMission
-    Address: 0x0053c8d0  File: core/msnedit.cpp
-    Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053c8d0(CDemonMission *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
   CDemonMission_editActorsInSet
     Address: 0x005390f0  File: core/msnedit.cpp
-    Evidence: in_stack_fffff61c, in_stack_fffff620, in_stack_fffff624, in_stack_fffff62c, in_stack_fffff630, in_stack_fffff634, in_stack_fffff694, in_stack_fffff634, in_stack_fffff61c, in_stack_fffff620, in_stack_fffff624, in_stack_fffff62c, in_stack_fffff630, in_stack_fffff634, in_stack_fffff694, in_stack_fffff694, in_stack_fffff694, in_stack_fffff61c, in_stack_fffff620, in_stack_fffff624, in_stack_fffff61c, in_stack_fffff62c, in_stack_fffff630, in_stack_fffff634, in_stack_fffff620, in_stack_fffff624, in_stack_fffff62c, in_stack_fffff630, in_stack_fffff634, in_stack_fffff694, in_stack_fffff694, in_stack_fffff694, in_stack_fffff694, in_stack_fffff694, in_stack_fffff694
+    Evidence: in_stack_fffff698, in_stack_fffff698, in_stack_fffff698, in_stack_fffff698, in_stack_fffff698, in_stack_fffff698, in_stack_fffff698, in_stack_fffff698, in_stack_fffff698, in_stack_fffff698
     Signature: int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMission *this_ptr,int param_2)
-    Suggested: Signature is missing stack parameters entirely
-
-  CDemonMission
-    Address: 0x0053d220  File: core/msnedit.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_00000008, in_stack_0000000c, in_stack_0000000c
-    Signature: int __cdecl core_msnedit_cpp_CDemonMission_FUN_0053d220(CDemonMission *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CDemonMission
-    Address: 0x0053eb40  File: core/msnedit.cpp
-    Evidence: in_stack_fffffeb8, in_stack_fffffeb8, in_stack_fffffeb8, in_stack_fffffeb8, in_stack_fffffeb8
-    Signature: void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053eb40(CDemonMission *this_ptr,char *param_2)
     Suggested: Signature is missing stack parameters entirely
 
   CSmiley_process
@@ -3334,7 +3176,7 @@ Unresolved stack parameters (missing from signature) (553)
 
   CCourse_preview
     Address: 0x00443bc0  File: core/course.cpp
-    Evidence: in_stack_fffffe70, in_stack_fffffe8c, in_stack_fffffe90, in_stack_fffffe94, in_stack_fffffe98, in_stack_fffffea0, in_stack_fffffea8, in_stack_fffffeb0, in_stack_fffffeb8, in_stack_fffffeb8, in_stack_fffffe8c, in_stack_fffffe70, in_stack_fffffe70, in_stack_fffffe90, in_stack_fffffe94, in_stack_fffffe98, in_stack_fffffea8, in_stack_fffffea0, in_stack_fffffeb0, in_stack_fffffeb0, in_stack_fffffea8, in_stack_fffffea0, in_stack_fffffe98, in_stack_fffffe94, in_stack_fffffe90, in_stack_fffffe8c, in_stack_fffffe90
+    Evidence: in_stack_fffffe74, in_stack_fffffe90, in_stack_fffffe94, in_stack_fffffe98, in_stack_fffffe9c, in_stack_fffffea4, in_stack_fffffeac, in_stack_fffffeb4, in_stack_fffffebc, in_stack_fffffe90, in_stack_fffffe74, in_stack_fffffe74, in_stack_fffffe94, in_stack_fffffe98, in_stack_fffffe9c, in_stack_fffffeac, in_stack_fffffea4, in_stack_fffffeb4, in_stack_fffffebc, in_stack_fffffeb4, in_stack_fffffeac, in_stack_fffffea4, in_stack_fffffe9c, in_stack_fffffe98, in_stack_fffffe94, in_stack_fffffe90, in_stack_fffffe94, in_stack_fffffebc, in_stack_fffffebc
     Signature: void __cdecl core_course_cpp_CCourse_preview_FUN_00443bc0(CCourse *this_ptr,CKeyFramedModel *model_ptr)
     Suggested: Signature is missing stack parameters entirely
 
@@ -6511,7 +6353,7 @@ Undefined types in variables (2275)
     Locals:  local_54 (undefined4), local_50 (undefined8), local_48 (undefined4), local_44 (undefined4), local_40 (undefined1), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_00535c60
+  screenToWorldPosition
     Address: 0x00535c60  File: core/msnedit.cpp
     Locals:  local_5c (undefined1), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined1), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -6646,7 +6488,7 @@ Undefined types in variables (2275)
     Locals:  local_48 (undefined1), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CDemonMission
+  CDemonMission_showDifficultyStats
     Address: 0x0053d3b0  File: core/msnedit.cpp
     Locals:  local_10d8 (undefined8), local_10cc (undefined8), local_10c4 (undefined1), local_d1c (undefined1), local_974 (undefined1), local_5cc (undefined1), local_224 (undefined1), local_30 (undefined8), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -7846,7 +7688,7 @@ Undefined types in variables (2275)
     Locals:  local_144 (undefined4), local_140 (undefined1), local_13f (undefined1), local_40 (undefined1), local_3f (undefined1), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CDemonMission
+  CDemonMission_raycastPickActor
     Address: 0x0053c340  File: core/msnedit.cpp
     Locals:  local_64 (undefined1), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -7856,7 +7698,7 @@ Undefined types in variables (2275)
     Locals:  local_7dc (undefined1), local_434 (undefined1), local_320 (undefined1), local_21c (undefined1), local_21b (undefined1), local_11c (undefined1), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_00536e20
+  drawMotionBar
     Address: 0x00536e20  File: core/msnedit.cpp
     Locals:  local_100 (undefined8), local_f8 (undefined4), local_f4 (undefined1), local_2c (undefined8), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -9631,17 +9473,17 @@ Undefined types in variables (2275)
     Locals:  local_28 (undefined8), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CDemonMission
-    Address: 0x0053bd80  File: core/msnedit.cpp
-    Locals:  local_a4 (undefined1), local_a3 (undefined1), local_40 (undefined1), local_3f (undefined1), local_20 (undefined1)
-    Suggested: Resolve undefined types to concrete types
-
   CDemonMission_importActors
     Address: 0x0053ccf0  File: core/msnedit.cpp
     Locals:  local_448 (undefined4), local_a0 (undefined1), local_3c (undefined1), local_14 (undefined4), local_10 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_00537330
+  CDemonMission_replicateActor
+    Address: 0x0053bd80  File: core/msnedit.cpp
+    Locals:  local_a4 (undefined1), local_a3 (undefined1), local_40 (undefined1), local_3f (undefined1), local_20 (undefined1)
+    Suggested: Resolve undefined types to concrete types
+
+  buildActorClassHierarchy
     Address: 0x00537330  File: core/msnedit.cpp
     Locals:  local_80 (undefined1), local_7f (undefined1), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -10181,7 +10023,7 @@ Undefined types in variables (2275)
     Locals:  local_2c (undefined8), local_20 (undefined8), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CDemonMission
+  CDemonMission_changeActorType
     Address: 0x0053d8b0  File: core/msnedit.cpp
     Locals:  local_624 (undefined1), local_27c (undefined1), local_88 (undefined1), local_20 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -10191,7 +10033,7 @@ Undefined types in variables (2275)
     Locals:  local_a0 (undefined1), local_3c (undefined1), local_3b (undefined1), local_1c (undefined1)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_00536cd0
+  drawClickableButton
     Address: 0x00536cd0  File: core/msnedit.cpp
     Locals:  local_28 (undefined8), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -11171,17 +11013,17 @@ Undefined types in variables (2275)
     Locals:  local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CDemonMission
+  CDemonMission_deleteMultipleActorsMenu
     Address: 0x0053df90  File: core/msnedit.cpp
     Locals:  local_764 (undefined1), local_3bc (undefined1), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CDemonMission
+  CDemonMission_editGore
     Address: 0x0053e220  File: core/msnedit.cpp
     Locals:  local_c8 (undefined4), local_c0 (undefined4), local_bc (undefined1)
     Suggested: Resolve undefined types to concrete types
 
-  CDemonMission
+  CDemonMission_playSound
     Address: 0x0053eb40  File: core/msnedit.cpp
     Locals:  local_148 (undefined4), local_144 (undefined1), local_18 (undefined8)
     Suggested: Resolve undefined types to concrete types
@@ -11191,12 +11033,12 @@ Undefined types in variables (2275)
     Locals:  local_114 (undefined1), local_113 (undefined1), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_00535e70
+  showEditorHelpScreen
     Address: 0x00535e70  File: core/msnedit.cpp
     Locals:  local_110 (undefined1), local_48 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_00536bf0
+  tokenizeWords
     Address: 0x00536bf0  File: core/msnedit.cpp
     Locals:  local_d8 (undefined1), local_d7 (undefined1), local_10 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -12302,17 +12144,17 @@ Undefined types in variables (2275)
     Locals:  local_18 (undefined8), local_10 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CDemonMission
-    Address: 0x0053bcf0  File: core/msnedit.cpp
-    Locals:  local_10 (undefined4), local_c (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  CDemonMission
+  CDemonMission_hideActorsMenu
     Address: 0x0053dcf0  File: core/msnedit.cpp
     Locals:  local_760 (undefined1), local_3b8 (undefined1)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_00537410
+  CDemonMission_selectNearestActor
+    Address: 0x0053bcf0  File: core/msnedit.cpp
+    Locals:  local_10 (undefined4), local_c (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  confirmNewActorName
     Address: 0x00537410  File: core/msnedit.cpp
     Locals:  local_2c (undefined1), local_2b (undefined1)
     Suggested: Resolve undefined types to concrete types
@@ -14397,54 +14239,24 @@ Undefined types in variables (2275)
     Locals:  local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CDemonMission
-    Address: 0x00538f90  File: core/msnedit.cpp
-    Locals:  local_3b8 (undefined1)
-    Suggested: Resolve undefined types to concrete types
-
-  CDemonMission
-    Address: 0x0053c210  File: core/msnedit.cpp
-    Locals:  local_3b4 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  CDemonMission
-    Address: 0x0053c730  File: core/msnedit.cpp
-    Locals:  local_6c (undefined1)
-    Suggested: Resolve undefined types to concrete types
-
-  CDemonMission
-    Address: 0x0053c8d0  File: core/msnedit.cpp
-    Locals:  local_8 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  CDemonMission
-    Address: 0x0053c970  File: core/msnedit.cpp
-    Locals:  local_14 (undefined1)
-    Suggested: Resolve undefined types to concrete types
-
-  CDemonMission
-    Address: 0x0053cad0  File: core/msnedit.cpp
-    Locals:  local_3b8 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  CDemonMission
+  CDemonMission_buildFilteredActorList
     Address: 0x0053cc30  File: core/msnedit.cpp
     Locals:  local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CDemonMission
-    Address: 0x0053d7b0  File: core/msnedit.cpp
-    Locals:  local_14 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  CDemonMission
+  CDemonMission_buildScriptCrossReferences
     Address: 0x0053ea30  File: core/msnedit.cpp
     Locals:  local_20 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CDemonMission
-    Address: 0x0053ec80  File: core/msnedit.cpp
-    Locals:  local_5ac (undefined1)
+  CDemonMission_dropActorToGround
+    Address: 0x0053c8d0  File: core/msnedit.cpp
+    Locals:  local_8 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CDemonMission_editActorPropertiesDialog
+    Address: 0x0053c730  File: core/msnedit.cpp
+    Locals:  local_6c (undefined1)
     Suggested: Resolve undefined types to concrete types
 
   CDemonMission_enemyRandomizer
@@ -14452,7 +14264,37 @@ Undefined types in variables (2275)
     Locals:  local_5b0 (undefined1)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_00537230
+  CDemonMission_moveActorToScreenPos
+    Address: 0x0053c970  File: core/msnedit.cpp
+    Locals:  local_14 (undefined1)
+    Suggested: Resolve undefined types to concrete types
+
+  CDemonMission_pickActorByName
+    Address: 0x0053c210  File: core/msnedit.cpp
+    Locals:  local_3b4 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CDemonMission_pickActorDialog
+    Address: 0x0053cad0  File: core/msnedit.cpp
+    Locals:  local_3b8 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CDemonMission_pickSet
+    Address: 0x00538f90  File: core/msnedit.cpp
+    Locals:  local_3b8 (undefined1)
+    Suggested: Resolve undefined types to concrete types
+
+  CDemonMission_rebuildWaypointConnectivity
+    Address: 0x0053d7b0  File: core/msnedit.cpp
+    Locals:  local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CDemonMission_showSoundFilesInMission
+    Address: 0x0053ec80  File: core/msnedit.cpp
+    Locals:  local_5ac (undefined1)
+    Suggested: Resolve undefined types to concrete types
+
+  convertAllMissionFiles
     Address: 0x00537230  File: core/msnedit.cpp
     Locals:  local_124 (undefined)
     Suggested: Resolve undefined types to concrete types

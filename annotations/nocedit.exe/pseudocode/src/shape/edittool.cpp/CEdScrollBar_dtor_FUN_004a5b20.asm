@@ -10,7 +10,7 @@
 ; XREF[4]:
 ;   core_main.c_showDeveloperToolsMenu_FUN_005073a0 at 005076a0
 ;   core_main.c_showLicenseAgreement_FUN_005070f0 at 00507324
-;   core_msnedit.cpp_FUN_00535e70 at 00536baa
+;   core_msnedit.cpp_showEditorHelpScreen_FUN_00535e70 at 00536baa
 ;   shape_edittool.cpp_CPickList_dtor_FUN_004a3c80 at 004a3cc3
 ;
 ; Called Functions:

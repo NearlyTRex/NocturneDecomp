@@ -27,8 +27,8 @@
 ;   CDemonMission g_CDemonMissionInstance
 ;
 ; Called Functions:
-;   core_msnedit.cpp_CDemonMission_FUN_0053c8d0
-;   core_msnedit.cpp_CDemonMission_FUN_0053ca00
+;   core_msnedit.cpp_CDemonMission_dropActorToGround_FUN_0053c8d0
+;   core_msnedit.cpp_CDemonMission_moveActorToMousePos_FUN_0053ca00
 ;   core_slew.cpp_CSlew_processInput_FUN_005a20b0
 ;
 ; *****************************************************************************
@@ -74,8 +74,8 @@ section .text
     PUSH EBX                            ; 0040d08f
     MOV EDX,dword ptr [0x0067d550]      ; 0040d090 | g_CDemonMissionInstance | g_CDemonMissionPtr
     PUSH EDX                            ; 0040d096 | g_CDemonMissionInstance
-    CALL core_msnedit.cpp_CDemonMission_FUN_0053c8d0 ; 0040d097
-        ;   XREF to: 0053c8d0 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_FUN_0053c8d0(CDemonMission * this_ptr)
+    CALL core_msnedit.cpp_CDemonMission_dropActorToGround_FUN_0053c8d0 ; 0040d097
+        ;   XREF to: 0053c8d0 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_dropActorToGround_FUN_0053c8d0(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 0040d09c
     TEST byte ptr [0x02cf6a94],0x2      ; 0040d09f | g_MouseButtonFlags
         ;   Label: LAB_0040d09f
@@ -84,8 +84,8 @@ section .text
     PUSH EBX                            ; 0040d0a8
     MOV ECX,dword ptr [0x0067d550]      ; 0040d0a9 | g_CDemonMissionInstance | g_CDemonMissionPtr
     PUSH ECX                            ; 0040d0af | g_CDemonMissionInstance
-    CALL core_msnedit.cpp_CDemonMission_FUN_0053ca00 ; 0040d0b0
-        ;   XREF to: 0053ca00 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_FUN_0053ca00(CDemonMission * this_ptr)
+    CALL core_msnedit.cpp_CDemonMission_moveActorToMousePos_FUN_0053ca00 ; 0040d0b0
+        ;   XREF to: 0053ca00 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_moveActorToMousePos_FUN_0053ca00(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 0040d0b5
     ADD ESP,0x1c                        ; 0040d0b8
     POP EBX                             ; 0040d0bb

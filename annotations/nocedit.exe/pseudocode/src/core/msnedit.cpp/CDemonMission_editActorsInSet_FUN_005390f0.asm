@@ -206,7 +206,7 @@ section .text
         ;   XREF to: 00539205 (CONDITIONAL_JUMP)  ; LAB_00539205
     XOR EAX,EAX                         ; 005391eb
     MOV EDX,0x1                         ; 005391ed
-    MOV [0x02f7c53c],EAX                ; 005391f2 | DAT_02f7c53c
+    MOV [0x02f7c53c],EAX                ; 005391f2 | INT_02f7c53c
     MOV dword ptr [EBX + 0x10],EAX      ; 005391f7
     MOV [0x02f7c634],EAX                ; 005391fa | INT_02f7c634
     MOV dword ptr [0x02f7c548],EDX      ; 005391ff | g_CEdCheckInstance.checked_state
@@ -261,8 +261,8 @@ section .text
     PUSH EBX                            ; 005392a5
     MOV ESI,dword ptr [EBP + 0x92]      ; 005392a6
     PUSH ESI                            ; 005392ac
-    CALL core_msnedit.cpp_CDemonMission_FUN_0053c140 ; 005392ad
-        ;   XREF to: 0053c140 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_FUN_0053c140(CDemonMission * this_ptr, int param_2)
+    CALL core_msnedit.cpp_CDemonMission_selectActor_FUN_0053c140 ; 005392ad
+        ;   XREF to: 0053c140 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_selectActor_FUN_0053c140(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 005392b2
     MOV EDI,dword ptr [0x0067a3d0]      ; 005392b5 | g_CFireEffectPtr
     PUSH EDI                            ; 005392bb | g_CFireEffectInstance
@@ -303,7 +303,7 @@ section .text
     MOV EAX,0x32758e8                   ; 0053932c | DAT_032758e8
     MOV EDX,0x60ad78ec                  ; 00539331
     ADD EAX,0x8                         ; 00539336
-    MOV dword ptr [0x00680818],EDX      ; 00539339 | INT_00680818
+    MOV dword ptr [0x00680818],EDX      ; 00539339 | FLOAT_00680818
     MOV dword ptr [EBP + 0x36],EAX      ; 0053933f | g_CDemonCameraInstance.base.position.z
     MOV EAX,[0x006810c8]                ; 00539342 | g_CDemonSetPtr
         ;   Label: LAB_00539342
@@ -324,9 +324,9 @@ section .text
         ;   XREF to: 0053991f (CONDITIONAL_JUMP)  ; LAB_0053991f
     MOV ECX,0x32                        ; 0053937b
     LEA EDI,[EBP + 0xfffffdde]          ; 00539380
-    MOV ESI,0x680830                    ; 00539386 | DAT_00680830
-    MOV EAX,[0x02f7c53c]                ; 0053938b | DAT_02f7c53c
-    MOVSD.REP ES:EDI,ESI                ; 00539390 | DAT_00680830 | DAT_00680834
+    MOV ESI,0x680830                    ; 00539386 | g_MsnEditCameraStatusBuffer
+    MOV EAX,[0x02f7c53c]                ; 0053938b | INT_02f7c53c
+    MOVSD.REP ES:EDI,ESI                ; 00539390 | g_MsnEditCameraStatusBuffer | DAT_00680834
     CMP EAX,0x4                         ; 00539392
     JA 0x0053a292                       ; 00539395
         ;   XREF to: 0053a292 (CONDITIONAL_JUMP)  ; default
@@ -417,7 +417,7 @@ section .text
         ;   XREF to: 005394ab (CONDITIONAL_JUMP)  ; LAB_005394ab
     CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 005394a6
         ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
-    MOV ECX,dword ptr [0x02f7c53c]      ; 005394ab | DAT_02f7c53c
+    MOV ECX,dword ptr [0x02f7c53c]      ; 005394ab | INT_02f7c53c
         ;   Label: LAB_005394ab
     TEST ECX,ECX                        ; 005394b1
     JNZ 0x0053a2d8                      ; 005394b3
@@ -527,7 +527,7 @@ section .text
     PUSH 0x32758e4                      ; 00539607 | g_CDemonCameraInstance
     CALL core_dcamera.cpp_CDemonCamera_beginScene_FUN_0044c430 ; 0053960c
         ;   XREF to: 0044c430 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_beginScene_FUN_0044c430(CDemonCamera * this_ptr, int skip_clear_buffers)
-    MOV ECX,dword ptr [0x02f7c538]      ; 00539611 | DAT_02f7c538
+    MOV ECX,dword ptr [0x02f7c538]      ; 00539611 | INT_02f7c538
     ADD ESP,0x8                         ; 00539617
     TEST ECX,ECX                        ; 0053961a
     JZ 0x0053a3b9                       ; 0053961c
@@ -624,8 +624,8 @@ section .text
     ADD ESP,0x10                        ; 00539721
     MOV EDI,dword ptr [EBP + 0x92]      ; 00539724
     PUSH EDI                            ; 0053972a
-    CALL core_msnedit.cpp_CDemonMission_FUN_0053c4f0 ; 0053972b
-        ;   XREF to: 0053c4f0 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_FUN_0053c4f0(CDemonMission * this_ptr)
+    CALL core_msnedit.cpp_CDemonMission_drawPropertyPanel_FUN_0053c4f0 ; 0053972b
+        ;   XREF to: 0053c4f0 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_drawPropertyPanel_FUN_0053c4f0(CDemonMission * this_ptr)
     MOV EDX,dword ptr [EDI + 0x2c]      ; 00539730
     ADD ESP,0x4                         ; 00539733
     TEST EDX,EDX                        ; 00539736
@@ -653,7 +653,7 @@ section .text
     PUSH EAX                            ; 0053976a
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0053976b
         ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
-    MOV EDI,dword ptr [0x02f7c53c]      ; 00539770 | DAT_02f7c53c
+    MOV EDI,dword ptr [0x02f7c53c]      ; 00539770 | INT_02f7c53c
     ADD ESP,0xc                         ; 00539776
     TEST EDI,EDI                        ; 00539779
     JNZ 0x0053979a                      ; 0053977b
@@ -687,7 +687,7 @@ section .text
     JZ 0x0053991f                       ; 005397cc
         ;   XREF to: 0053991f (CONDITIONAL_JUMP)  ; LAB_0053991f
     MOV EBX,0x3                         ; 005397d2
-    MOV EDI,dword ptr [0x02f7c53c]      ; 005397d7 | DAT_02f7c53c
+    MOV EDI,dword ptr [0x02f7c53c]      ; 005397d7 | INT_02f7c53c
     MOV ESI,0xf3                        ; 005397dd
     TEST EDI,EDI                        ; 005397e2
     SETZ AL                             ; 005397e4
@@ -697,8 +697,8 @@ section .text
     PUSH ESI                            ; 005397ef
     PUSH EBX                            ; 005397f0
     PUSH 0x63c464                       ; 005397f1 | = " StaticCam "
-    CALL core_msnedit.cpp_FUN_00536cd0  ; 005397f6
-        ;   XREF to: 00536cd0 (UNCONDITIONAL_CALL)  ; int core_msnedit.cpp_FUN_00536cd0(char * param_1, int param_2, int param_3, int param_4, ...)
+    CALL core_msnedit.cpp_drawClickableButton_FUN_00536cd0 ; 005397f6
+        ;   XREF to: 00536cd0 (UNCONDITIONAL_CALL)  ; int core_msnedit.cpp_drawClickableButton_FUN_00536cd0(char * text, int x, int y, int consume_click, ...)
     ADD ESP,0x14                        ; 005397fb
     TEST EAX,EAX                        ; 005397fe
     JZ 0x0053980f                       ; 00539800
@@ -707,7 +707,7 @@ section .text
     XOR EAX,EAX                         ; 00539807
     MOV dword ptr [EBP + 0x2a],EDX      ; 00539809
     MOV dword ptr [EBP + 0x7a],EAX      ; 0053980c
-    MOV ECX,dword ptr [0x02f7c53c]      ; 0053980f | DAT_02f7c53c
+    MOV ECX,dword ptr [0x02f7c53c]      ; 0053980f | INT_02f7c53c
         ;   Label: LAB_0053980f
     ADD EBX,0x46                        ; 00539815
     CMP ECX,0x1                         ; 00539818
@@ -718,14 +718,14 @@ section .text
     PUSH ESI                            ; 00539826
     PUSH EBX                            ; 00539827
     PUSH 0x63c470                       ; 00539828 | = " CustomCam "
-    CALL core_msnedit.cpp_FUN_00536cd0  ; 0053982d
-        ;   XREF to: 00536cd0 (UNCONDITIONAL_CALL)  ; int core_msnedit.cpp_FUN_00536cd0(char * param_1, int param_2, int param_3, int param_4, ...)
+    CALL core_msnedit.cpp_drawClickableButton_FUN_00536cd0 ; 0053982d
+        ;   XREF to: 00536cd0 (UNCONDITIONAL_CALL)  ; int core_msnedit.cpp_drawClickableButton_FUN_00536cd0(char * text, int x, int y, int consume_click, ...)
     ADD ESP,0x14                        ; 00539832
     TEST EAX,EAX                        ; 00539835
     JZ 0x00539840                       ; 00539837
         ;   XREF to: 00539840 (CONDITIONAL_JUMP)  ; LAB_00539840
     MOV dword ptr [EBP + 0x7a],0x1      ; 00539839
-    MOV EDX,dword ptr [0x02f7c53c]      ; 00539840 | DAT_02f7c53c
+    MOV EDX,dword ptr [0x02f7c53c]      ; 00539840 | INT_02f7c53c
         ;   Label: LAB_00539840
     ADD EBX,0x46                        ; 00539846
     CMP EDX,0x2                         ; 00539849
@@ -736,14 +736,14 @@ section .text
     PUSH ESI                            ; 00539857
     PUSH EBX                            ; 00539858
     PUSH 0x63c47c                       ; 00539859 | = " SlewCam "
-    CALL core_msnedit.cpp_FUN_00536cd0  ; 0053985e
-        ;   XREF to: 00536cd0 (UNCONDITIONAL_CALL)  ; int core_msnedit.cpp_FUN_00536cd0(char * param_1, int param_2, int param_3, int param_4, ...)
+    CALL core_msnedit.cpp_drawClickableButton_FUN_00536cd0 ; 0053985e
+        ;   XREF to: 00536cd0 (UNCONDITIONAL_CALL)  ; int core_msnedit.cpp_drawClickableButton_FUN_00536cd0(char * text, int x, int y, int consume_click, ...)
     ADD ESP,0x14                        ; 00539863
     TEST EAX,EAX                        ; 00539866
     JZ 0x00539871                       ; 00539868
         ;   XREF to: 00539871 (CONDITIONAL_JUMP)  ; LAB_00539871
     MOV dword ptr [EBP + 0x7a],0x2      ; 0053986a
-    MOV EDI,dword ptr [0x02f7c53c]      ; 00539871 | DAT_02f7c53c
+    MOV EDI,dword ptr [0x02f7c53c]      ; 00539871 | INT_02f7c53c
         ;   Label: LAB_00539871
     ADD EBX,0x38                        ; 00539877
     CMP EDI,0x3                         ; 0053987a
@@ -754,14 +754,14 @@ section .text
     PUSH ESI                            ; 00539888
     PUSH EBX                            ; 00539889
     PUSH 0x63c486                       ; 0053988a | = " 1stPersonCam "
-    CALL core_msnedit.cpp_FUN_00536cd0  ; 0053988f
-        ;   XREF to: 00536cd0 (UNCONDITIONAL_CALL)  ; int core_msnedit.cpp_FUN_00536cd0(char * param_1, int param_2, int param_3, int param_4, ...)
+    CALL core_msnedit.cpp_drawClickableButton_FUN_00536cd0 ; 0053988f
+        ;   XREF to: 00536cd0 (UNCONDITIONAL_CALL)  ; int core_msnedit.cpp_drawClickableButton_FUN_00536cd0(char * text, int x, int y, int consume_click, ...)
     ADD ESP,0x14                        ; 00539894
     TEST EAX,EAX                        ; 00539897
     JZ 0x005398a2                       ; 00539899
         ;   XREF to: 005398a2 (CONDITIONAL_JUMP)  ; LAB_005398a2
     MOV dword ptr [EBP + 0x7a],0x3      ; 0053989b
-    MOV EDX,dword ptr [0x02f7c53c]      ; 005398a2 | DAT_02f7c53c
+    MOV EDX,dword ptr [0x02f7c53c]      ; 005398a2 | INT_02f7c53c
         ;   Label: LAB_005398a2
     ADD EBX,0x5b                        ; 005398a8
     CMP EDX,0x4                         ; 005398ab
@@ -772,14 +772,14 @@ section .text
     PUSH ESI                            ; 005398b9
     PUSH EBX                            ; 005398ba
     PUSH 0x63c495                       ; 005398bb | = " SpotCam "
-    CALL core_msnedit.cpp_FUN_00536cd0  ; 005398c0
-        ;   XREF to: 00536cd0 (UNCONDITIONAL_CALL)  ; int core_msnedit.cpp_FUN_00536cd0(char * param_1, int param_2, int param_3, int param_4, ...)
+    CALL core_msnedit.cpp_drawClickableButton_FUN_00536cd0 ; 005398c0
+        ;   XREF to: 00536cd0 (UNCONDITIONAL_CALL)  ; int core_msnedit.cpp_drawClickableButton_FUN_00536cd0(char * text, int x, int y, int consume_click, ...)
     ADD ESP,0x14                        ; 005398c5
     TEST EAX,EAX                        ; 005398c8
     JZ 0x005398d3                       ; 005398ca
         ;   XREF to: 005398d3 (CONDITIONAL_JUMP)  ; LAB_005398d3
     MOV dword ptr [EBP + 0x7a],0x4      ; 005398cc
-    CMP dword ptr [0x02f7c53c],0x0      ; 005398d3 | DAT_02f7c53c
+    CMP dword ptr [0x02f7c53c],0x0      ; 005398d3 | INT_02f7c53c
         ;   Label: LAB_005398d3
     JNZ 0x0053991f                      ; 005398da
         ;   XREF to: 0053991f (CONDITIONAL_JUMP)  ; LAB_0053991f
@@ -889,7 +889,7 @@ section .text
         ;   Label: LAB_005399fb
     JNZ 0x0053a4cf                      ; 00539a02
         ;   XREF to: 0053a4cf (CONDITIONAL_JUMP)  ; LAB_0053a4cf
-    CMP dword ptr [0x02f7c53c],0x4      ; 00539a08 | DAT_02f7c53c
+    CMP dword ptr [0x02f7c53c],0x4      ; 00539a08 | INT_02f7c53c
     JNZ 0x00539c7c                      ; 00539a0f
         ;   XREF to: 00539c7c (CONDITIONAL_JUMP)  ; LAB_00539c7c
     MOV EAX,[0x0067b654]                ; 00539a15 | g_CGamePtr
@@ -1152,7 +1152,7 @@ section .text
     JNC 0x00539c7c                      ; 00539c73
         ;   XREF to: 00539c7c (CONDITIONAL_JUMP)  ; LAB_00539c7c
     MOV dword ptr [EBP + 0x76],0x3f000000 ; 00539c75
-    CMP dword ptr [0x02f7c53c],0x2      ; 00539c7c | DAT_02f7c53c
+    CMP dword ptr [0x02f7c53c],0x2      ; 00539c7c | INT_02f7c53c
         ;   Label: LAB_00539c7c
     JNZ 0x0053a44b                      ; 00539c83
         ;   XREF to: 0053a44b (CONDITIONAL_JUMP)  ; LAB_0053a44b
@@ -1174,8 +1174,8 @@ section .text
         ;   XREF to: 00539cbb (CONDITIONAL_JUMP)  ; LAB_00539cbb
     MOV EAX,dword ptr [EBP + 0x92]      ; 00539cac
     PUSH EAX                            ; 00539cb2
-    CALL core_msnedit.cpp_CDemonMission_FUN_0053c0b0 ; 00539cb3
-        ;   XREF to: 0053c0b0 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_FUN_0053c0b0(CDemonMission * this_ptr)
+    CALL core_msnedit.cpp_CDemonMission_undoActorChanges_FUN_0053c0b0 ; 00539cb3
+        ;   XREF to: 0053c0b0 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_undoActorChanges_FUN_0053c0b0(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 00539cb8
     PUSH 0xf                            ; 00539cbb
         ;   Label: LAB_00539cbb
@@ -1201,14 +1201,14 @@ section .text
     PUSH ESI                            ; 00539cef
     PUSH EAX                            ; 00539cf0
     MOV EDI,EAX                         ; 00539cf1
-    CALL core_msnedit.cpp_CDemonMission_FUN_0053ca80 ; 00539cf3
-        ;   XREF to: 0053ca80 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_FUN_0053ca80(CDemonMission * this_ptr, int param_2)
+    CALL core_msnedit.cpp_CDemonMission_findPrevVisibleActor_FUN_0053ca80 ; 00539cf3
+        ;   XREF to: 0053ca80 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_findPrevVisibleActor_FUN_0053ca80(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 00539cf8
     PUSH EAX                            ; 00539cfb
     MOV EAX,EDI                         ; 00539cfc
     PUSH EAX                            ; 00539cfe
-    CALL core_msnedit.cpp_CDemonMission_FUN_0053c140 ; 00539cff
-        ;   XREF to: 0053c140 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_FUN_0053c140(CDemonMission * this_ptr, int param_2)
+    CALL core_msnedit.cpp_CDemonMission_selectActor_FUN_0053c140 ; 00539cff
+        ;   XREF to: 0053c140 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_selectActor_FUN_0053c140(CDemonMission * this_ptr, CDemonActor * actor)
         ;   Label: LAB_00539cff
     ADD ESP,0x8                         ; 00539d04
     PUSH 0x3c                           ; 00539d07
@@ -1767,8 +1767,8 @@ section .text
     MOV EAX,dword ptr [EBP + 0x92]      ; 0053a3d4
     PUSH EAX                            ; 0053a3da
     MOV EBX,dword ptr [EBP + 0x92]      ; 0053a3db
-    CALL core_msnedit.cpp_CDemonMission_FUN_0053c340 ; 0053a3e1
-        ;   XREF to: 0053c340 (UNCONDITIONAL_CALL)  ; CDemonActor * core_msnedit.cpp_CDemonMission_FUN_0053c340(CDemonMission * this_ptr, int param_2, int param_3)
+    CALL core_msnedit.cpp_CDemonMission_raycastPickActor_FUN_0053c340 ; 0053a3e1
+        ;   XREF to: 0053c340 (UNCONDITIONAL_CALL)  ; CDemonActor * core_msnedit.cpp_CDemonMission_raycastPickActor_FUN_0053c340(CDemonMission * this_ptr, int screen_x, int screen_y)
     ADD ESP,0xc                         ; 0053a3e6
     MOV dword ptr [EBX + 0x2c],EAX      ; 0053a3e9
     TEST EAX,EAX                        ; 0053a3ec
@@ -1831,8 +1831,8 @@ section .text
     MOV EDX,dword ptr [EAX + 0x28]      ; 0053a486
     PUSH EDX                            ; 0053a489
     PUSH EAX                            ; 0053a48a
-    CALL core_msnedit.cpp_CDemonMission_FUN_0053ca30 ; 0053a48b
-        ;   XREF to: 0053ca30 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_FUN_0053ca30(CDemonMission * this_ptr, int param_2)
+    CALL core_msnedit.cpp_CDemonMission_findNextVisibleActor_FUN_0053ca30 ; 0053a48b
+        ;   XREF to: 0053ca30 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_findNextVisibleActor_FUN_0053ca30(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 0053a490
     PUSH EAX                            ; 0053a493
     MOV EBX,dword ptr [EBP + 0x92]      ; 0053a494
@@ -2058,8 +2058,8 @@ section .text
         ;   XREF to: 0053ab58 (CONDITIONAL_JUMP)  ; LAB_0053ab58
     MOV EDX,dword ptr [EBP + 0x92]      ; 0053a6e6
     PUSH EDX                            ; 0053a6ec
-    CALL core_msnedit.cpp_CDemonMission_FUN_0053df90 ; 0053a6ed
-        ;   XREF to: 0053df90 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_FUN_0053df90(CDemonMission * this_ptr)
+    CALL core_msnedit.cpp_CDemonMission_deleteMultipleActorsMenu_FUN_0053df90 ; 0053a6ed
+        ;   XREF to: 0053df90 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_deleteMultipleActorsMenu_FUN_0053df90(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 0053a6f2
     PUSH 0x13                           ; 0053a6f5
         ;   Label: LAB_0053a6f5
@@ -2073,8 +2073,8 @@ section .text
         ;   XREF to: 0053a718 (CONDITIONAL_JUMP)  ; LAB_0053a718
     MOV ECX,dword ptr [EBP + 0x92]      ; 0053a709
     PUSH ECX                            ; 0053a70f
-    CALL core_msnedit.cpp_CDemonMission_FUN_0053bd80 ; 0053a710
-        ;   XREF to: 0053bd80 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_FUN_0053bd80(CDemonMission * this_ptr, int param_2, int param_3, CDemonMission * param_4)
+    CALL core_msnedit.cpp_CDemonMission_replicateActor_FUN_0053bd80 ; 0053a710
+        ;   XREF to: 0053bd80 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_replicateActor_FUN_0053bd80(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 0053a715
     PUSH 0x18                           ; 0053a718
         ;   Label: LAB_0053a718
@@ -2103,8 +2103,8 @@ section .text
         ;   XREF to: 0053a75e (CONDITIONAL_JUMP)  ; LAB_0053a75e
     MOV ESI,dword ptr [EBP + 0x92]      ; 0053a74f
     PUSH ESI                            ; 0053a755
-    CALL core_msnedit.cpp_CDemonMission_FUN_0053d8b0 ; 0053a756
-        ;   XREF to: 0053d8b0 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_FUN_0053d8b0(CDemonMission * this_ptr, int param_2, CDemonMission * param_3, int param_4)
+    CALL core_msnedit.cpp_CDemonMission_changeActorType_FUN_0053d8b0 ; 0053a756
+        ;   XREF to: 0053d8b0 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_changeActorType_FUN_0053d8b0(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 0053a75b
     PUSH 0x2e                           ; 0053a75e
         ;   Label: LAB_0053a75e
@@ -2167,8 +2167,8 @@ section .text
         ;   XREF to: 0053aba9 (CONDITIONAL_JUMP)  ; LAB_0053aba9
     MOV EDI,dword ptr [EBP + 0x92]      ; 0053a7f1
     PUSH EDI                            ; 0053a7f7
-    CALL core_msnedit.cpp_CDemonMission_FUN_0053dcf0 ; 0053a7f8
-        ;   XREF to: 0053dcf0 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_FUN_0053dcf0(CDemonMission * this_ptr)
+    CALL core_msnedit.cpp_CDemonMission_hideActorsMenu_FUN_0053dcf0 ; 0053a7f8
+        ;   XREF to: 0053dcf0 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_hideActorsMenu_FUN_0053dcf0(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 0053a7fd
         ;   Label: LAB_0053a7fd
     PUSH 0x16                           ; 0053a800
@@ -2251,7 +2251,7 @@ section .text
     TEST EAX,EAX                        ; 0053a8c0
     JZ 0x0053acb1                       ; 0053a8c2
         ;   XREF to: 0053acb1 (CONDITIONAL_JUMP)  ; LAB_0053acb1
-    MOV EAX,[0x02f7c53c]                ; 0053a8c8 | DAT_02f7c53c
+    MOV EAX,[0x02f7c53c]                ; 0053a8c8 | INT_02f7c53c
     DEC EAX                             ; 0053a8cd
     MOV dword ptr [EBP + 0x7a],EAX      ; 0053a8ce
     TEST EAX,EAX                        ; 0053a8d1
@@ -2274,8 +2274,8 @@ section .text
     PUSH ECX                            ; 0053a8fd
     PUSH 0x63c535                       ; 0053a8fe | = "Select actor by name"
     PUSH EAX                            ; 0053a903
-    CALL core_msnedit.cpp_CDemonMission_FUN_0053c210 ; 0053a904
-        ;   XREF to: 0053c210 (UNCONDITIONAL_CALL)  ; char * core_msnedit.cpp_CDemonMission_FUN_0053c210(CDemonMission * this_ptr, char * param_2, char * param_3)
+    CALL core_msnedit.cpp_CDemonMission_pickActorByName_FUN_0053c210 ; 0053a904
+        ;   XREF to: 0053c210 (UNCONDITIONAL_CALL)  ; char * core_msnedit.cpp_CDemonMission_pickActorByName_FUN_0053c210(CDemonMission * this_ptr, char * title, char * current_name)
     ADD ESP,0xc                         ; 0053a909
     TEST EAX,EAX                        ; 0053a90c
     JZ 0x0053a920                       ; 0053a90e
@@ -2283,8 +2283,8 @@ section .text
     PUSH EAX                            ; 0053a910
     MOV ESI,dword ptr [EBP + 0x92]      ; 0053a911
     PUSH ESI                            ; 0053a917
-    CALL core_msnedit.cpp_CDemonMission_FUN_0053c140 ; 0053a918
-        ;   XREF to: 0053c140 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_FUN_0053c140(CDemonMission * this_ptr, int param_2)
+    CALL core_msnedit.cpp_CDemonMission_selectActor_FUN_0053c140 ; 0053a918
+        ;   XREF to: 0053c140 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_selectActor_FUN_0053c140(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 0053a91d
     PUSH 0x11                           ; 0053a920
         ;   Label: LAB_0053a920
@@ -2318,8 +2318,8 @@ section .text
         ;   XREF to: 0053a979 (CONDITIONAL_JUMP)  ; LAB_0053a979
     MOV EDX,dword ptr [EBP + 0x92]      ; 0053a96a
     PUSH EDX                            ; 0053a970
-    CALL core_msnedit.cpp_CDemonMission_FUN_0053c730 ; 0053a971
-        ;   XREF to: 0053c730 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_FUN_0053c730(CDemonMission * this_ptr)
+    CALL core_msnedit.cpp_CDemonMission_editActorPropertiesDialog_FUN_0053c730 ; 0053a971
+        ;   XREF to: 0053c730 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_editActorPropertiesDialog_FUN_0053c730(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 0053a976
     PUSH 0x19                           ; 0053a979
         ;   Label: LAB_0053a979
@@ -2354,8 +2354,8 @@ section .text
     TEST EAX,EAX                        ; 0053a9c7
     JZ 0x0053a9d0                       ; 0053a9c9
         ;   XREF to: 0053a9d0 (CONDITIONAL_JUMP)  ; LAB_0053a9d0
-    CALL core_msnedit.cpp_FUN_00535e70  ; 0053a9cb
-        ;   XREF to: 00535e70 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_FUN_00535e70()
+    CALL core_msnedit.cpp_showEditorHelpScreen_FUN_00535e70 ; 0053a9cb
+        ;   XREF to: 00535e70 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_showEditorHelpScreen_FUN_00535e70()
     PUSH 0x41                           ; 0053a9d0
         ;   Label: LAB_0053a9d0
     MOV EAX,[0x0067cf44]                ; 0053a9d2 | g_CKeysPtr
@@ -2404,7 +2404,7 @@ section .text
     TEST EAX,EAX                        ; 0053aa44
     JL 0x0053aa9b                       ; 0053aa46
         ;   XREF to: 0053aa9b (CONDITIONAL_JUMP)  ; LAB_0053aa9b
-    MOV [0x02f7c53c],EAX                ; 0053aa48 | DAT_02f7c53c
+    MOV [0x02f7c53c],EAX                ; 0053aa48 | INT_02f7c53c
     CMP EAX,0x4                         ; 0053aa4d
     JA 0x0053acda                       ; 0053aa50
         ;   XREF to: 0053acda (CONDITIONAL_JUMP)  ; default
@@ -2458,8 +2458,8 @@ section .text
     MOV EAX,[0x0067b654]                ; 0053aadb | g_CGamePtr
         ;   Label: LAB_0053aadb
     FLD float ptr [EAX + 0x264]         ; 0053aae0 | g_CGameInstance.delta_time_float
-    FADD float ptr [0x00680818]         ; 0053aae6 | INT_00680818
-    FSTP float ptr [0x00680818]         ; 0053aaec | INT_00680818
+    FADD float ptr [0x00680818]         ; 0053aae6 | FLOAT_00680818
+    FSTP float ptr [0x00680818]         ; 0053aaec | FLOAT_00680818
     TEST byte ptr [0x02cf6a94],0x1      ; 0053aaf2 | g_MouseButtonFlags
         ;   Label: LAB_0053aaf2
     JZ 0x0053af0c                       ; 0053aaf9
@@ -2498,8 +2498,8 @@ section .text
     MOV EDI,dword ptr [EAX + 0x28]      ; 0053ab5f
     PUSH EDI                            ; 0053ab62
     PUSH EAX                            ; 0053ab63
-    CALL core_msnedit.cpp_CDemonMission_FUN_0053bc80 ; 0053ab64
-        ;   XREF to: 0053bc80 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_FUN_0053bc80(CDemonMission * this_ptr, int param_2, int param_3)
+    CALL core_msnedit.cpp_CDemonMission_deleteActorWithConfirm_FUN_0053bc80 ; 0053ab64
+        ;   XREF to: 0053bc80 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_deleteActorWithConfirm_FUN_0053bc80(CDemonMission * this_ptr, CDemonActor * actor, int skip_confirmation)
     ADD ESP,0xc                         ; 0053ab69
     JMP 0x0053a6f5                      ; 0053ab6c
         ;   XREF to: 0053a6f5 (UNCONDITIONAL_JUMP)  ; LAB_0053a6f5
@@ -2531,8 +2531,8 @@ section .text
         ;   XREF to: 0053a800 (CONDITIONAL_JUMP)  ; LAB_0053a800
     PUSH EAX                            ; 0053abba
     MOV dword ptr [EBX + 0x148],0x1     ; 0053abbb
-    CALL core_msnedit.cpp_CDemonMission_FUN_0053bcf0 ; 0053abc5
-        ;   XREF to: 0053bcf0 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_FUN_0053bcf0(CDemonMission * this_ptr)
+    CALL core_msnedit.cpp_CDemonMission_selectNearestActor_FUN_0053bcf0 ; 0053abc5
+        ;   XREF to: 0053bcf0 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_selectNearestActor_FUN_0053bcf0(CDemonMission * this_ptr)
     JMP 0x0053a7fd                      ; 0053abca
         ;   XREF to: 0053a7fd (UNCONDITIONAL_JUMP)  ; LAB_0053a7fd
     MOV EAX,dword ptr [EBP + 0x92]      ; 0053abcf
@@ -2615,7 +2615,7 @@ section .text
         ;   Label: LAB_0053aca5
     JMP 0x0053a8d9                      ; 0053acac
         ;   XREF to: 0053a8d9 (UNCONDITIONAL_JUMP)  ; LAB_0053a8d9
-    MOV EAX,[0x02f7c53c]                ; 0053acb1 | DAT_02f7c53c
+    MOV EAX,[0x02f7c53c]                ; 0053acb1 | INT_02f7c53c
         ;   Label: LAB_0053acb1
     INC EAX                             ; 0053acb6
     MOV dword ptr [EBP + 0x7a],EAX      ; 0053acb7
@@ -2647,7 +2647,7 @@ section .text
         ;   Label: LAB_0053ad02
     JZ 0x0053aadb                       ; 0053ad06
         ;   XREF to: 0053aadb (CONDITIONAL_JUMP)  ; LAB_0053aadb
-    CMP dword ptr [0x02f7c538],0x0      ; 0053ad0c | DAT_02f7c538
+    CMP dword ptr [0x02f7c538],0x0      ; 0053ad0c | INT_02f7c538
     JNZ 0x0053aadb                      ; 0053ad13
         ;   XREF to: 0053aadb (CONDITIONAL_JUMP)  ; LAB_0053aadb
     CMP dword ptr [0x02cf2b00],0x0      ; 0053ad19 | g_ActiveControl
@@ -2657,7 +2657,7 @@ section .text
     CMP dword ptr [EAX + 0x28],0x0      ; 0053ad2c
     JZ 0x0053ae63                       ; 0053ad30
         ;   XREF to: 0053ae63 (CONDITIONAL_JUMP)  ; LAB_0053ae63
-    MOV EAX,[0x02f7c528]                ; 0053ad36 | DAT_02f7c528
+    MOV EAX,[0x02f7c528]                ; 0053ad36 | INT_02f7c528
     TEST EAX,EAX                        ; 0053ad3b
     JL 0x0053ae63                       ; 0053ad3d
         ;   XREF to: 0053ae63 (CONDITIONAL_JUMP)  ; LAB_0053ae63
@@ -2678,7 +2678,7 @@ section .text
     CALL core_msnedit.cpp_CDemonMission_pasteActorProperty_FUN_0053af50 ; 0053ad6a
         ;   XREF to: 0053af50 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_pasteActorProperty_FUN_0053af50(CDemonMission * this_ptr, char * property)
     ADD ESP,0x8                         ; 0053ad6f
-    MOV dword ptr [0x00680818],0x501502f9 ; 0053ad72 | INT_00680818
+    MOV dword ptr [0x00680818],0x501502f9 ; 0053ad72 | FLOAT_00680818
         ;   Label: LAB_0053ad72
     JMP 0x0053aaf2                      ; 0053ad7c
         ;   XREF to: 0053aaf2 (UNCONDITIONAL_JUMP)  ; LAB_0053aaf2
@@ -2711,7 +2711,7 @@ section .text
     CALL core_script.cpp_CScript_setParameterValue_FUN_00565f70 ; 0053adc4
         ;   XREF to: 00565f70 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_setParameterValue_FUN_00565f70(CScript * this_ptr, char * value)
     ADD ESP,0x8                         ; 0053adc9
-    MOV dword ptr [0x00680818],0x501502f9 ; 0053adcc | INT_00680818
+    MOV dword ptr [0x00680818],0x501502f9 ; 0053adcc | FLOAT_00680818
     JMP 0x0053aaf2                      ; 0053add6
         ;   XREF to: 0053aaf2 (UNCONDITIONAL_JUMP)  ; LAB_0053aaf2
     PUSH 0x1d                           ; 0053addb
@@ -2738,7 +2738,7 @@ section .text
         ;   XREF to: 00403260 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403260()
     XOR EAX,EAX                         ; 0053ae10
     MOV dword ptr [EBP + 0x5e],EAX      ; 0053ae12
-    MOV dword ptr [0x00680818],0x501502f9 ; 0053ae15 | INT_00680818
+    MOV dword ptr [0x00680818],0x501502f9 ; 0053ae15 | FLOAT_00680818
     JMP 0x0053aaf2                      ; 0053ae1f
         ;   XREF to: 0053aaf2 (UNCONDITIONAL_JUMP)  ; LAB_0053aaf2
     LEA EAX,[EBP + 0xfffffbae]          ; 0053ae24
@@ -2758,7 +2758,7 @@ section .text
     CALL shape_edittool.cpp_CEditorTools_setClipboardText_FUN_004a1bc0 ; 0053ae4c
         ;   XREF to: 004a1bc0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_setClipboardText_FUN_004a1bc0(CEditorTools * this_ptr, char * text_data)
     ADD ESP,0x8                         ; 0053ae51
-    MOV dword ptr [0x00680818],0x501502f9 ; 0053ae54 | INT_00680818
+    MOV dword ptr [0x00680818],0x501502f9 ; 0053ae54 | FLOAT_00680818
     JMP 0x0053aaf2                      ; 0053ae5e
         ;   XREF to: 0053aaf2 (UNCONDITIONAL_JUMP)  ; LAB_0053aaf2
     MOV EAX,dword ptr [EBP + 0x92]      ; 0053ae63
@@ -2788,7 +2788,7 @@ section .text
     ADD ESP,0x8                         ; 0053aea4
     XOR EDX,EDX                         ; 0053aea7
         ;   Label: LAB_0053aea7
-    MOV dword ptr [0x00680818],EDX      ; 0053aea9 | INT_00680818
+    MOV dword ptr [0x00680818],EDX      ; 0053aea9 | FLOAT_00680818
     JMP 0x0053aaf2                      ; 0053aeaf
         ;   XREF to: 0053aaf2 (UNCONDITIONAL_JUMP)  ; LAB_0053aaf2
     MOV EBX,dword ptr [EBP + 0x92]      ; 0053aeb4
@@ -2801,27 +2801,27 @@ section .text
     CMP dword ptr [EBP + 0x5e],0x0      ; 0053aec8
     JNZ 0x0053aea7                      ; 0053aecc
         ;   XREF to: 0053aea7 (CONDITIONAL_JUMP)  ; LAB_0053aea7
-    CMP dword ptr [0x00680818],0x3e99999a ; 0053aece | INT_00680818
+    CMP dword ptr [0x00680818],0x3e99999a ; 0053aece | FLOAT_00680818
     JGE 0x0053aea7                      ; 0053aed8
         ;   XREF to: 0053aea7 (CONDITIONAL_JUMP)  ; LAB_0053aea7
     PUSH EBX                            ; 0053aeda
-    CALL core_msnedit.cpp_CDemonMission_FUN_0053c730 ; 0053aedb
-        ;   XREF to: 0053c730 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_FUN_0053c730(CDemonMission * this_ptr)
+    CALL core_msnedit.cpp_CDemonMission_editActorPropertiesDialog_FUN_0053c730 ; 0053aedb
+        ;   XREF to: 0053c730 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_editActorPropertiesDialog_FUN_0053c730(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 0053aee0
     CALL engine_2d.c_clearInputAndWait_FUN_00403260 ; 0053aee3
         ;   XREF to: 00403260 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403260()
     XOR EDX,EDX                         ; 0053aee8
-    MOV dword ptr [0x00680818],EDX      ; 0053aeea | INT_00680818
+    MOV dword ptr [0x00680818],EDX      ; 0053aeea | FLOAT_00680818
     JMP 0x0053aaf2                      ; 0053aef0
         ;   XREF to: 0053aaf2 (UNCONDITIONAL_JUMP)  ; LAB_0053aaf2
     PUSH ECX                            ; 0053aef5
         ;   Label: LAB_0053aef5
     PUSH EBX                            ; 0053aef6
-    CALL core_msnedit.cpp_CDemonMission_FUN_0053c140 ; 0053aef7
-        ;   XREF to: 0053c140 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_FUN_0053c140(CDemonMission * this_ptr, int param_2)
+    CALL core_msnedit.cpp_CDemonMission_selectActor_FUN_0053c140 ; 0053aef7
+        ;   XREF to: 0053c140 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_selectActor_FUN_0053c140(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 0053aefc
     XOR EDX,EDX                         ; 0053aeff
-    MOV dword ptr [0x00680818],EDX      ; 0053af01 | INT_00680818
+    MOV dword ptr [0x00680818],EDX      ; 0053af01 | FLOAT_00680818
     JMP 0x0053aaf2                      ; 0053af07
         ;   XREF to: 0053aaf2 (UNCONDITIONAL_JUMP)  ; LAB_0053aaf2
     XOR EBX,EBX                         ; 0053af0c

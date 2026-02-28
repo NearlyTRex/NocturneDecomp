@@ -1,22 +1,138 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "other",
+        "column": 17,
+        "line": 33,
+        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 17,
+        "line": 34,
+        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 17,
+        "line": 35,
+        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 15,
+        "line": 37,
+        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 15,
+        "line": 38,
+        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 15,
+        "line": 39,
+        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 42,
+        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 43,
+        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 44,
+        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 53,
+        "line": 72,
+        "message": "use of undeclared identifier 'stack0xffffff88'"
+      },
+      {
+        "category": "other",
+        "column": 17,
+        "line": 74,
+        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 17,
+        "line": 75,
+        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 17,
+        "line": 76,
+        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 17,
+        "line": 80,
+        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 17,
+        "line": 81,
+        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 17,
+        "line": 82,
+        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 67,
+        "line": 86,
+        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 67,
+        "line": 87,
+        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 67,
+        "line": 88,
+        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
+      }
+    ],
+    "success": false,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 297,
-    "complexity_score": 180,
+    "complexity_score": 497,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 1,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 165,
-    "suspect_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 147,
+    "suspect_count": 34,
     "suspect_types": [
-      "warning_deadcode_restart"
+      "stack_ref",
+      "unknown_field"
     ],
-    "total_lines": 462
+    "total_lines": 444
   },
   "cross_references": [],
   "function": {
@@ -136,12 +252,276 @@
   },
   "suspects": [
     {
-      "description": "Deadcode elimination delayed",
-      "line": 3,
-      "match": "WARNING: Restarted to delay deadcode elimination",
+      "description": "Unknown/mangled field access",
+      "line": 26,
+      "match": "._0_4_",
       "severity": "mild",
-      "text": "/* WARNING: Restarted to delay deadcode elimination for space: stack */",
-      "type": "warning_deadcode_restart"
+      "text": "auStack_3c._0_4_ = (this_ptr->emitter_pos).x;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 27,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "auStack_3c._4_4_ = (this_ptr->emitter_pos).y;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 28,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "auStack_3c._8_4_ = (this_ptr->emitter_pos).z;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 30,
+      "match": "._20_4_",
+      "severity": "mild",
+      "text": "auStack_3c._20_4_ = 0.0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 31,
+      "match": "._16_4_",
+      "severity": "mild",
+      "text": "auStack_3c._16_4_ = 0.0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 32,
+      "match": "._12_4_",
+      "severity": "mild",
+      "text": "auStack_3c._12_4_ = 0.0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 35,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "(this_ptr->emitter_pos).x = (float)auStack_3c._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 36,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "(this_ptr->emitter_pos).y = (float)auStack_3c._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 37,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "(this_ptr->emitter_pos).z = (float)auStack_3c._8_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 65,
+      "match": "&stack0xffffff88",
+      "severity": "moderate",
+      "text": "core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)&stack0xffffff88);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 67,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "auStack_74._0_4_ = this_ptr->reflectors[0].start_position.x;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 68,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "auStack_74._4_4_ = this_ptr->reflectors[0].start_position.y;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 69,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "auStack_74._8_4_ = this_ptr->reflectors[0].start_position.z;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 73,
+      "match": "._12_4_",
+      "severity": "mild",
+      "text": "auStack_74._12_4_ = pCVar1->x;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 74,
+      "match": "._16_4_",
+      "severity": "mild",
+      "text": "auStack_74._16_4_ = this_ptr->reflectors[0].rotation.y;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 75,
+      "match": "._20_4_",
+      "severity": "mild",
+      "text": "auStack_74._20_4_ = this_ptr->reflectors[0].rotation.z;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 79,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "this_ptr->reflectors[0].start_position.x = (float)auStack_74._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 80,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "this_ptr->reflectors[0].start_position.y = (float)auStack_74._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 81,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "this_ptr->reflectors[0].start_position.z = (float)auStack_74._8_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 85,
+      "match": "._12_4_",
+      "severity": "mild",
+      "text": "pCVar1->x = (float)auStack_74._12_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 86,
+      "match": "._16_4_",
+      "severity": "mild",
+      "text": "this_ptr->reflectors[0].rotation.y = (float)auStack_74._16_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 87,
+      "match": "._20_4_",
+      "severity": "mild",
+      "text": "this_ptr->reflectors[0].rotation.z = (float)auStack_74._20_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 98,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "auStack_58._0_4_ = pCVar1->x;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 99,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "auStack_58._4_4_ = this_ptr->reflectors[0].target_position.y;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 100,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "auStack_58._8_4_ = this_ptr->reflectors[0].target_position.z;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 104,
+      "match": "._12_4_",
+      "severity": "mild",
+      "text": "auStack_58._12_4_ = pCVar1->x;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 105,
+      "match": "._16_4_",
+      "severity": "mild",
+      "text": "auStack_58._16_4_ = this_ptr->reflectors[0].rotation.y;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 106,
+      "match": "._20_4_",
+      "severity": "mild",
+      "text": "auStack_58._20_4_ = this_ptr->reflectors[0].rotation.z;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 111,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "pCVar1->x = (float)auStack_58._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 112,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "this_ptr->reflectors[0].target_position.y = (float)auStack_58._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 113,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "this_ptr->reflectors[0].target_position.z = (float)auStack_58._8_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 117,
+      "match": "._12_4_",
+      "severity": "mild",
+      "text": "pCVar1->x = (float)auStack_58._12_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 118,
+      "match": "._16_4_",
+      "severity": "mild",
+      "text": "this_ptr->reflectors[0].rotation.y = (float)auStack_58._16_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 119,
+      "match": "._20_4_",
+      "severity": "mild",
+      "text": "this_ptr->reflectors[0].rotation.z = (float)auStack_58._20_4_;",
+      "type": "unknown_field"
     }
   ],
   "vtable_info": {

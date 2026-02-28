@@ -142,7 +142,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
         }
       }
       else if (uVar2 < 0x36) {
-        iVar4 = core_msnedit_cpp_CDemonMission_FUN_00538f90
+        iVar4 = core_msnedit_cpp_CDemonMission_pickSet_FUN_00538f90
                           (this_ptr,"Select set to delete.",this_ptr->current_set_index);
         if ((-1 < iVar4) &&
            (iVar7 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
@@ -152,7 +152,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
         }
       }
       else if (uVar2 < 0x37) {
-        iVar4 = core_msnedit_cpp_CDemonMission_FUN_00538f90
+        iVar4 = core_msnedit_cpp_CDemonMission_pickSet_FUN_00538f90
                           (this_ptr,"Edit actors in which set?",this_ptr->current_set_index)
         ;
         if (-1 < iVar4) {
@@ -203,10 +203,10 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
         core_msnedit_cpp_CDemonMission_importActors_FUN_0053ccf0(this_ptr);
       }
       else if (uVar2 < 0x45) {
-        core_msnedit_cpp_CDemonMission_FUN_0053d3b0(this_ptr);
+        core_msnedit_cpp_CDemonMission_showDifficultyStats_FUN_0053d3b0(this_ptr);
       }
       else if ((uVar2 == 0x47) &&
-              (iVar4 = core_msnedit_cpp_CDemonMission_FUN_00538f90
+              (iVar4 = core_msnedit_cpp_CDemonMission_pickSet_FUN_00538f90
                                  (this_ptr,"Edit gore in which set?",
                                   this_ptr->current_set_index), -1 < iVar4)) {
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
@@ -215,12 +215,12 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                   (g_CEditorToolsPtr,"Loading set.");
         core_mission_cpp_CDemonMission_loadSet_FUN_00523fb0(this_ptr,iVar4);
-        core_msnedit_cpp_CDemonMission_FUN_0053e220(this_ptr);
+        core_msnedit_cpp_CDemonMission_editGore_FUN_0053e220(this_ptr);
       }
     }
     else if (uVar2 < 0x49) {
       shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_7dc);
-      core_msnedit_cpp_FUN_00537330(&local_7dc.base,0,0);
+      core_msnedit_cpp_buildActorClassHierarchy_FUN_00537330(&local_7dc.base,(CDemonActor *)0x0,0);
       shape_edittool_cpp_CPickList_setSelectedResult_FUN_004a3e10(&local_7dc,1);
       shape_edittool_cpp_CPickList_setCancelButtonText_FUN_004a3d90(&local_7dc,(char *)0x0);
       shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
@@ -229,7 +229,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
     }
     else if (uVar2 < 0x55) {
       if (uVar2 == 0x53) {
-        core_msnedit_cpp_CDemonMission_FUN_0053ec80(this_ptr);
+        core_msnedit_cpp_CDemonMission_showSoundFilesInMission_FUN_0053ec80(this_ptr);
       }
     }
     else if (uVar2 < 0x56) {
@@ -262,7 +262,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
     }
     else if (0x56 < uVar2) {
       if (uVar2 < 0x58) {
-        core_msnedit_cpp_CDemonMission_FUN_0053d7b0(this_ptr);
+        core_msnedit_cpp_CDemonMission_rebuildWaypointConnectivity_FUN_0053d7b0(this_ptr);
       }
       else if (uVar2 == 0x5a) {
         shape_edittool_cpp_CEditorTools_displayMemoryDiagnostics_FUN_004a2590

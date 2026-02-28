@@ -11,6 +11,7 @@ int __cdecl core_actor_cpp_CDemonActor_propertyValidatorCallback_FUN_0040d270(CD
 {
   int iVar1;
   
-  iVar1 = core_msnedit_cpp_CDemonMission_FUN_0053d220(g_CDemonMissionPtr);
+  iVar1 = core_msnedit_cpp_CDemonMission_validateNewActorName_FUN_0053d220
+                    (g_CDemonMissionPtr,this_ptr->actor_name,(char *)new_value);
   return iVar1;
 }

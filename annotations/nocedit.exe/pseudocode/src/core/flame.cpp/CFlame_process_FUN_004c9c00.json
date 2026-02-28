@@ -43,16 +43,17 @@
   },
   "complexity": {
     "assembly_lines": 346,
-    "complexity_score": 247,
+    "complexity_score": 262,
     "cross_reference_count": 4,
     "function_call_count": 10,
     "global_count": 17,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 137,
-    "suspect_count": 10,
+    "suspect_count": 11,
     "suspect_types": [
       "decompiler_intrinsic",
-      "sub84_truncation"
+      "sub84_truncation",
+      "warning_inlined_function"
     ],
     "total_lines": 483
   },
@@ -369,6 +370,14 @@
     "severity": "medium"
   },
   "suspects": [
+    {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
+    },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
       "line": 68,

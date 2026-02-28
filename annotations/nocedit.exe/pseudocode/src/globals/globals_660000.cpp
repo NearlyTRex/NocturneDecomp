@@ -6367,6 +6367,12 @@ SMRGLTextureBasic SMRGLTextureBasic_ARRAY_0066e6b0[6] = {
     }
 };
 
+// SPropertyFlag[2]
+SPropertyFlag SPropertyFlag_ARRAY_0066e30c[2] = {
+    {.mask = 0x00000001, .name = (char *)s_thrust_006146f5},
+    {.mask = 0x00000002, .name = (char *)s_swing_006146fc}
+};
+
 // SResolutionEntry[9]
 SResolutionEntry g_ResolutionTable[9] = {
     {.width = 0x00000140, .height = 0x000000C8},
@@ -6549,7 +6555,7 @@ WatcomDestructorCall WatcomDestructorCall_00661c10 = {
 WatcomDestructorCall WatcomDestructorCall_00661c1c = {
     .delete_flags = 0x00000004,
     .destructor_func = (void *)shape_edittool_cpp_CEdScrollBar_dtor_FUN_004a5b20,
-    .object_instance = (void *)0x02F797E4
+    .object_instance = (void *)&CEdScrollBar_02f797e4
 };
 WatcomDestructorCall WatcomDestructorCall_00661c70 = {
     .delete_flags = 0x00000004,

@@ -9,7 +9,7 @@
 ; XREF[4]:
 ;   core_boxactor.cpp_CLightActor_ctor_FUN_00422990 at 00422995
 ;   core_boxactor.cpp_factoryFunc_FUN_004216c0 at 004216da
-;   core_msnedit.cpp_CDemonMission_FUN_0053e220 at 0053e8fc
+;   core_msnedit.cpp_CDemonMission_editGore_FUN_0053e220 at 0053e8fc
 ;   core_stone.cpp_CTempleStone_ctor_FUN_005bad10 at 005bad15
 ;
 ; Referenced Globals:

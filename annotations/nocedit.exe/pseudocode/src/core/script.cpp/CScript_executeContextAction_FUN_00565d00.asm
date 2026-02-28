@@ -28,8 +28,8 @@
 ;
 ; Called Functions:
 ;   core_mission.cpp_CDemonMission_findActorByName_FUN_00524030
-;   core_msnedit.cpp_CDemonMission_FUN_0053c140
-;   core_msnedit.cpp_CDemonMission_FUN_0053eb40
+;   core_msnedit.cpp_CDemonMission_playSound_FUN_0053eb40
+;   core_msnedit.cpp_CDemonMission_selectActor_FUN_0053c140
 ;   core_script.cpp_CCmdParse_bestParse_FUN_00561db0
 ;   core_script.cpp_clearSelections_FUN_005644e0
 ;   core_script.cpp_CScript_buildParsedLines_FUN_0055a370
@@ -135,8 +135,8 @@ section .text
         ;   Label: LAB_00565dbc
     MOV EAX,[0x0067d550]                ; 00565dbd | g_CDemonMissionInstance | g_CDemonMissionPtr
     PUSH EAX                            ; 00565dc2 | g_CDemonMissionInstance
-    CALL core_msnedit.cpp_CDemonMission_FUN_0053c140 ; 00565dc3
-        ;   XREF to: 0053c140 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_FUN_0053c140(CDemonMission * this_ptr, int param_2)
+    CALL core_msnedit.cpp_CDemonMission_selectActor_FUN_0053c140 ; 00565dc3
+        ;   XREF to: 0053c140 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_selectActor_FUN_0053c140(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 00565dc8
     POP EBP                             ; 00565dcb
     POP EDI                             ; 00565dcc
@@ -204,8 +204,8 @@ section .text
     PUSH ESI                            ; 00565e5b
     MOV ECX,dword ptr [0x0067d550]      ; 00565e5c | g_CDemonMissionInstance | g_CDemonMissionPtr
     PUSH ECX                            ; 00565e62 | g_CDemonMissionInstance
-    CALL core_msnedit.cpp_CDemonMission_FUN_0053eb40 ; 00565e63
-        ;   XREF to: 0053eb40 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_FUN_0053eb40(CDemonMission * this_ptr, char * param_2)
+    CALL core_msnedit.cpp_CDemonMission_playSound_FUN_0053eb40 ; 00565e63
+        ;   XREF to: 0053eb40 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_playSound_FUN_0053eb40(CDemonMission * this_ptr, char * filename)
     ADD ESP,0x8                         ; 00565e68
     POP EBP                             ; 00565e6b
     POP EDI                             ; 00565e6c

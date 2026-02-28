@@ -3564,7 +3564,7 @@ WatcomStaticDestructorNode WatcomStaticDestructorNode_0068064c = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&WatcomDestructorCall_00661c1c,
     .registration_type = 0x00000001,
-    .object_instance = (void *)0x02F797E4
+    .object_instance = (void *)&CEdScrollBar_02f797e4
 };
 WatcomStaticDestructorNode g_CNetGameInstanceDestructorNode = {
     .next = nullptr,
@@ -3783,12 +3783,16 @@ char* g_EnvironmentStrings = nullptr;
 char** g_TempEnvVarNames = (char**)0x006590A4; // DAT_006590a4
 
 // char[104]
+char g_MsnEditHideByTypeBuffer[] = "";
+char g_MsnEditDeleteByTypePattern[] = "";
+char g_MsnEditLastSelectedPropertyName[] = "";
 char g_SoundResultBufferTemplate[] = "";
 
 // char[108]
 char g_TrainSoundFilenameTemplate[] = "";
 
 // char[200]
+char g_MsnEditCameraStatusBuffer[] = "";
 char g_ActorRefDefaultBuffer[] = "";
 
 // char[256]
@@ -3817,6 +3821,7 @@ dst_rule g_DstStartRule = {
 };
 
 // float
+float FLOAT_00680818 = 1e+10f;
 float FLOAT_00681a00 = 0.0f;
 float g_MaxSoftwareLatency = 0.5f;
 
@@ -3824,7 +3829,6 @@ float g_MaxSoftwareLatency = 0.5f;
 int INT_00680648 = 0x2D;
 int g_DynamicRenderMode = 0x1;
 int g_ConfirmNewActorNames = 0x1;
-int INT_00680818 = 0x501502f9;
 int INT_00680a04 = 0x1;
 int g_CNPCClassVersion = 0x4;
 int g_CPassengerClassVersion = 0x6;
@@ -4003,11 +4007,6 @@ undefined1 DAT_0068500c = 0;
 undefined1 DAT_006852db = 0;
 
 // undefined4
-undefined4 DAT_00680830 = 0;
-undefined4 DAT_00680834 = 0;
-undefined4 DAT_00680908 = 0;
-undefined4 DAT_0068090c = 0;
-undefined4 DAT_00680974 = 0;
 undefined4 DAT_00684edc = 0;
 undefined4 DAT_00684fd0 = 0;
 undefined4 DAT_00685094 = 0;

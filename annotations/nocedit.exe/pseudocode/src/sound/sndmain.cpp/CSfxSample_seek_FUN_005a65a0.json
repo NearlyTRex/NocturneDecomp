@@ -13,17 +13,18 @@
   },
   "complexity": {
     "assembly_lines": 137,
-    "complexity_score": 135,
+    "complexity_score": 150,
     "cross_reference_count": 4,
     "function_call_count": 6,
     "global_count": 10,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 50,
-    "suspect_count": 7,
+    "suspect_count": 8,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_param",
-      "sub84_truncation"
+      "sub84_truncation",
+      "warning_inlined_function"
     ],
     "total_lines": 187
   },
@@ -244,6 +245,14 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
+    },
     {
       "description": "Unresolved stack parameter",
       "line": 10,

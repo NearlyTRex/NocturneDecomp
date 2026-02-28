@@ -11,8 +11,8 @@
 ; XREF[6]:
 ;   core_boxactor.cpp_CLightActor_setup_FUN_00422a20 at 00422a3e
 ;   core_game.cpp_CGame_runGameSession_FUN_004daf80 at 004db1ac
-;   core_msnedit.cpp_CDemonMission_FUN_0053e220 at 0053e271
 ;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 00539167
+;   core_msnedit.cpp_CDemonMission_editGore_FUN_0053e220 at 0053e271
 ;   core_setedit.cpp_CDemonSet_positionLight_FUN_0057ae50 at 0057ae9d
 ;   core_setutil.cpp_C3DSLight_create_FUN_00586a90 at 00586ae8
 ;

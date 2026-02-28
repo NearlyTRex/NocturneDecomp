@@ -6,16 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 395,
-    "complexity_score": 203,
+    "complexity_score": 218,
     "cross_reference_count": 7,
     "function_call_count": 9,
     "global_count": 16,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 143,
-    "suspect_count": 5,
+    "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic",
-      "pointer_cast"
+      "pointer_cast",
+      "warning_inlined_function"
     ],
     "total_lines": 538
   },
@@ -318,6 +319,14 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
+    },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 27,

@@ -201,6 +201,10 @@
       "type":"function_definition"
     },
     {
+      "name":"CActorPropertyFilterFunc",
+      "type":"function_definition"
+    },
+    {
       "name":"CActorPropertyValidatorFunc",
       "type":"function_definition"
     },
@@ -4194,6 +4198,10 @@
     },
     {
       "name":"SProjectedVertex",
+      "type":"struct"
+    },
+    {
+      "name":"SPropertyFlag",
       "type":"struct"
     },
     {
@@ -8960,6 +8968,24 @@
         }
       ],
       "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CActorPropertyFilterFunc",
+      "parameters":[
+        {
+          "name":"source_actor",
+          "type":"CDemonActor*"
+        },
+        {
+          "name":"candidate_actor",
+          "type":"CDemonActor*"
+        }
+      ],
+      "return_type":"int",
       "type":"function_definition"
     },
     {
@@ -55657,6 +55683,30 @@
       "desc":"",
       "fields":[
         {
+          "len":4,
+          "name":"mask",
+          "offset":0,
+          "type":"uint"
+        },
+        {
+          "len":4,
+          "name":"name",
+          "offset":4,
+          "type":"char*"
+        }
+      ],
+      "importable":true,
+      "len":8,
+      "name":"SPropertyFlag",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
           "len":48,
           "name":"vertices",
           "offset":0,
@@ -62146,6 +62196,12 @@
           "name":"v_validator_func",
           "offset":0,
           "type":"CActorPropertyValidatorFunc*"
+        },
+        {
+          "len":4,
+          "name":"v_filter_func",
+          "offset":0,
+          "type":"CActorPropertyFilterFunc*"
         }
       ],
       "importable":true,
@@ -62224,6 +62280,30 @@
           "name":"v_callback_ptr",
           "offset":0,
           "type":"UActorPropertyCallback"
+        },
+        {
+          "len":4,
+          "name":"v_action_func_ptr",
+          "offset":0,
+          "type":"CActorPropertyActionFunc*"
+        },
+        {
+          "len":4,
+          "name":"v_display_func_ptr",
+          "offset":0,
+          "type":"CActorPropertyDisplayFunc*"
+        },
+        {
+          "len":4,
+          "name":"v_validator_func_ptr",
+          "offset":0,
+          "type":"CActorPropertyValidatorFunc*"
+        },
+        {
+          "len":4,
+          "name":"v_filter_func_ptr",
+          "offset":0,
+          "type":"CActorPropertyFilterFunc*"
         },
         {
           "len":4,

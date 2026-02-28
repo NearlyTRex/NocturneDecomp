@@ -1,0 +1,187 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 63,
+    "complexity_score": 32,
+    "cross_reference_count": 2,
+    "function_call_count": 3,
+    "global_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 17,
+    "suspect_count": 1,
+    "suspect_types": [
+      "param_count_too_few"
+    ],
+    "total_lines": 80
+  },
+  "cross_references": [
+    {
+      "addr": "0053ca00",
+      "from_addr": "0053ca1a",
+      "name": "core_msnedit.cpp_CDemonMission_moveActorToMousePos_FUN_0053ca00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053c930",
+      "from_addr": "0053c961",
+      "name": "core_msnedit.cpp_CDemonMission_moveActorToViewportCenter_FUN_0053c930",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0053c970",
+    "address_range": [
+      [
+        "0053c970",
+        "0053c9f9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_msnedit.cpp_CDemonMission_moveActorToScreenPos_FUN_0053c970",
+    "signature": "void __cdecl core_msnedit_cpp_CDemonMission_moveActorToScreenPos_FUN_0053c970(CDemonMission *this_ptr,CDemonActor *actor,int screen_x,int screen_y)"
+  },
+  "function_calls": [
+    {
+      "addr": "0044c430",
+      "is_variadic": false,
+      "name": "core_dcamera.cpp_CDemonCamera_beginScene_FUN_0044c430"
+    },
+    {
+      "addr": "0044cb80",
+      "is_variadic": false,
+      "name": "core_dcamera.cpp_CDemonCamera_endScene_FUN_0044cb80"
+    },
+    {
+      "addr": "00535c60",
+      "is_variadic": false,
+      "name": "core_msnedit.cpp_screenToWorldPosition_FUN_00535c60"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "02f7c53c",
+      "name": "INT_02f7c53c",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "032758e4",
+      "name": "g_CDemonCameraInstance",
+      "type": "CDemonCamera",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0053ca1a",
+        "call_type": "direct",
+        "caller": "core_msnedit.cpp_CDemonMission_moveActorToMousePos_FUN_0053ca00",
+        "estimated_params": 6,
+        "instructions_analyzed": 10,
+        "reg_params": [],
+        "stack_params": 6
+      },
+      {
+        "call_addr": "0053c961",
+        "call_type": "direct",
+        "caller": "core_msnedit.cpp_CDemonMission_moveActorToViewportCenter_FUN_0053c930",
+        "estimated_params": 7,
+        "instructions_analyzed": 23,
+        "reg_params": [],
+        "stack_params": 7
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 4,
+    "estimated_params": 6
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.1,
+    "instruction_count": 50,
+    "opcode_distribution": {
+      "BOOL_OR": 2,
+      "CALL": 3,
+      "CBRANCH": 7,
+      "COPY": 52,
+      "FLOAT2FLOAT": 2,
+      "INT_ADD": 26,
+      "INT_AND": 26,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 27,
+      "INT_LESS": 8,
+      "INT_NOTEQUAL": 3,
+      "INT_SBORROW": 8,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 13,
+      "INT_SUB": 20,
+      "LOAD": 18,
+      "POPCOUNT": 13,
+      "RETURN": 2,
+      "STORE": 15
+    },
+    "pcode_op_count": 255
+  },
+  "stack_frame": {
+    "frame_size": 40,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonMission *"
+      },
+      {
+        "is_param": true,
+        "name": "actor",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonActor *"
+      },
+      {
+        "is_param": true,
+        "name": "screen_x",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "screen_y",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "call_site_count": 2,
+      "declared_params": 4,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 6,
+      "fix_type": "add_params",
+      "match": "declared:4 vs estimated:6",
+      "param_delta": 2,
+      "text": "Function declares 4 params but call sites push 6 (2 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

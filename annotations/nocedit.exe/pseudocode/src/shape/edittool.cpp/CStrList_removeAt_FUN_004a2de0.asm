@@ -8,8 +8,8 @@
 ; int              Stack[0x8]:4   index
 ;
 ; XREF[8]:
-;   core_msnedit.cpp_CDemonMission_FUN_0053dcf0 at 0053de02
-;   core_msnedit.cpp_CDemonMission_FUN_0053df90 at 0053e0b3
+;   core_msnedit.cpp_CDemonMission_deleteMultipleActorsMenu_FUN_0053df90 at 0053e0b3
+;   core_msnedit.cpp_CDemonMission_hideActorsMenu_FUN_0053dcf0 at 0053de02
 ;   core_script.cpp_CScript_editorAction_FUN_00564820 at 00564fd9
 ;   engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740 at 004bae7d
 ;   engine_fileio.cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0 at 004b79ac

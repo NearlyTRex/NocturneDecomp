@@ -6,15 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 303,
-    "complexity_score": 190,
+    "complexity_score": 205,
     "cross_reference_count": 25,
     "function_call_count": 11,
     "global_count": 26,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 85,
-    "suspect_count": 10,
+    "suspect_count": 11,
     "suspect_types": [
-      "decompiler_intrinsic"
+      "decompiler_intrinsic",
+      "warning_inlined_function"
     ],
     "total_lines": 388
   },
@@ -58,7 +59,7 @@
     {
       "addr": "0053eb40",
       "from_addr": "0053ec01",
-      "name": "core_msnedit.cpp_CDemonMission_FUN_0053eb40",
+      "name": "core_msnedit.cpp_CDemonMission_playSound_FUN_0053eb40",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -571,6 +572,14 @@
     "severity": "medium"
   },
   "suspects": [
+    {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
+    },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 35,

@@ -2,11 +2,11 @@
 // Address: 004ff400
 // Address Range: [[004ff400, 004ff735]]
 // Convention: __cdecl
-// Signature: void __cdecl core_inv_cpp_CInventory_load_FUN_004ff400(CInventory *this_ptr)
+// Signature: void __cdecl core_inv_cpp_CInventory_load_FUN_004ff400(CInventory *this_ptr,_FILE *file_handle)
 
 #include "nocturne.h"
 
-void __cdecl core_inv_cpp_CInventory_load_FUN_004ff400(CInventory *this_ptr)
+void __cdecl core_inv_cpp_CInventory_load_FUN_004ff400(CInventory *this_ptr,_FILE *file_handle)
 
 {
   char cVar1;
@@ -20,7 +20,6 @@ void __cdecl core_inv_cpp_CInventory_load_FUN_004ff400(CInventory *this_ptr)
   char *pcVar8;
   CDemonActor *pCVar9;
   byte bVar10;
-  _FILE *in_stack_00000008;
   char local_1dc [256];
   char local_dc [100];
   char local_78 [100];
@@ -29,18 +28,18 @@ void __cdecl core_inv_cpp_CInventory_load_FUN_004ff400(CInventory *this_ptr)
   bVar10 = 0;
   core_inv_cpp_CInventory_clear_FUN_004fd0e0(this_ptr);
   core_inv_cpp_CInventory_initialize_FUN_004fd190(this_ptr);
-  _fgets(local_1dc,0xff,in_stack_00000008);
-  _fgets(local_1dc,0xff,in_stack_00000008);
-  _fscanf(in_stack_00000008,"%d\n",&this_ptr->save_version);
-  _fgets(local_1dc,0xff,in_stack_00000008);
-  _fscanf(in_stack_00000008,"%d\n",&this_ptr->item_count);
-  _fgets(local_1dc,0xff,in_stack_00000008);
-  _fscanf(in_stack_00000008,"%d\n",&local_14);
+  _fgets(local_1dc,0xff,file_handle);
+  _fgets(local_1dc,0xff,file_handle);
+  _fscanf(file_handle,"%d\n",&this_ptr->save_version);
+  _fgets(local_1dc,0xff,file_handle);
+  _fscanf(file_handle,"%d\n",&this_ptr->item_count);
+  _fgets(local_1dc,0xff,file_handle);
+  _fscanf(file_handle,"%d\n",&local_14);
   if (0 < this_ptr->save_version) {
-    _fgets(local_1dc,0xff,in_stack_00000008);
-    _fscanf(in_stack_00000008,"%f\n",this_ptr);
+    _fgets(local_1dc,0xff,file_handle);
+    _fscanf(file_handle,"%f\n",this_ptr);
   }
-  _fgets(local_1dc,0xff,in_stack_00000008);
+  _fgets(local_1dc,0xff,file_handle);
   iVar6 = 0;
   pCVar5 = this_ptr;
   if (0 < this_ptr->item_count) {
@@ -59,7 +58,7 @@ void __cdecl core_inv_cpp_CInventory_load_FUN_004ff400(CInventory *this_ptr)
         puVar7 = puVar7 + (uint)bVar10 * -2 + 1;
         pcVar8 = pcVar8 + ((uint)bVar10 * -2 + 1) * 4;
       }
-      _fscanf(in_stack_00000008," %s \"%[^\"]\"\n",local_dc,local_78);
+      _fscanf(file_handle," %s \"%[^\"]\"\n",local_dc,local_78);
       if (g_CDemonMissionPtr->has_inventory_actors == 0) {
         pcVar8 = local_78;
         pCVar2 = core_actor_cpp_createActorByName_FUN_0040c430(local_dc);
@@ -84,18 +83,18 @@ void __cdecl core_inv_cpp_CInventory_load_FUN_004ff400(CInventory *this_ptr)
       pCVar5 = (CInventory *)&pCVar5->owner;
     } while (iVar6 < this_ptr->item_count);
   }
-  _fgets(local_1dc,0xff,in_stack_00000008);
+  _fgets(local_1dc,0xff,file_handle);
   iVar6 = 0;
   pCVar5 = this_ptr;
   if (0 < this_ptr->item_count) {
     do {
-      core_actor_cpp_CDemonActor_load_FUN_0040b050(pCVar5->items[0],in_stack_00000008);
+      core_actor_cpp_CDemonActor_load_FUN_0040b050(pCVar5->items[0],file_handle);
       iVar6 = iVar6 + 1;
       pCVar5 = (CInventory *)&pCVar5->owner;
     } while (iVar6 < this_ptr->item_count);
   }
   if (1 < this_ptr->save_version) {
-    _fgets(local_1dc,0xff,in_stack_00000008);
+    _fgets(local_1dc,0xff,file_handle);
   }
   iVar6 = g_CDemonMissionPtr->has_inventory_actors;
   this_ptr->selected_weapon = (CWeapon *)0x0;

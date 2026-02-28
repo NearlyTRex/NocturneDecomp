@@ -68,7 +68,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 00433112: MOV ESI,ESP
 
   cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00433f50
-    File: cockpit/ckptutil.c, Suspects: 15
+    File: cockpit/ckptutil.c, Suspects: 16
     - [stack_alignment] at 00433f59: AND ESP,0xfffffff8
 
   cockpit_ckptutil.c_loadACTPaletteFile_FUN_00431ac0
@@ -78,7 +78,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 00431b15: MOV ESI,ESP
 
   cockpit_ckptutil.c_blendPixelWithSourcePalette_FUN_004342f0
-    File: cockpit/ckptutil.c, Suspects: 8
+    File: cockpit/ckptutil.c, Suspects: 9
     - [stack_alignment] at 004342f9: AND ESP,0xfffffff8
 
   cockpit_ckptutil.c_drawLineAAWithBlending_FUN_004339c0
@@ -167,11 +167,11 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 0050e311: MOV ESI,ESP
 
   engine_matrix.c_initializeTrigTables_FUN_0050c530
-    File: engine/matrix.c, Suspects: 8
+    File: engine/matrix.c, Suspects: 9
     - [stack_alignment] at 0050c536: AND ESP,0xfffffff8
 
   engine_matrix.c_projectToScreen_FUN_0050e5b0
-    File: engine/matrix.c, Suspects: 7
+    File: engine/matrix.c, Suspects: 8
     - [stack_alignment] at 0050e5b9: AND ESP,0xfffffff8
     - [alt_frame_pointer] at 0050e5c3: MOV EDI,ESP
 
@@ -180,7 +180,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 0050ccff: MOV ESI,ESP
 
   engine_matrix.c_invertTransformMatrix_FUN_0050c640
-    File: engine/matrix.c, Suspects: 18
+    File: engine/matrix.c, Suspects: 19
     - [stack_alignment] at 0050c646: AND ESP,0xfffffff8
 
   engine_pcx.c_saveScreenRaw32_FUN_00548f00
@@ -215,11 +215,11 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 005dcf5b: MOV ESI,ESP
 
   engine_colquant.c_computeBoxStatistics_FUN_00441260
-    File: engine/colquant.c, Suspects: 39
+    File: engine/colquant.c, Suspects: 40
     - [stack_alignment] at 00441269: AND ESP,0xfffffff8
 
   engine_colquant.c_quantizeColors_FUN_004406c0
-    File: engine/colquant.c, Suspects: 36
+    File: engine/colquant.c, Suspects: 37
     - [stack_alignment] at 004406cc: AND ESP,0xfffffff8
 
   engine_colquant.c_doubleMax_FUN_00441790
@@ -273,7 +273,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 00408051: MOV EDI,ESP
 
   engine_keyframe.c_interpolateCubicKeyframes_FUN_00501f30
-    File: engine/keyframe.c, Suspects: 8
+    File: engine/keyframe.c, Suspects: 9
     - [stack_alignment] at 00501f39: AND ESP,0xfffffff8
 
   engine_drender.cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760
@@ -294,5 +294,5 @@ CORRELATION: Stack patterns vs suspect counts
 
 Functions with stack patterns tend to have more suspects:
 
-  With stack patterns:    avg 12.2 suspects/function
+  With stack patterns:    avg 12.3 suspects/function
   Without stack patterns: avg 2.5 suspects/function

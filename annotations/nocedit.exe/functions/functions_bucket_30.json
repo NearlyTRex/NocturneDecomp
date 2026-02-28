@@ -53990,7 +53990,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_msnedit.cpp_FUN_00537230",
+    "name":"core_msnedit.cpp_convertAllMissionFiles_FUN_00537230",
     "ret":"void",
     "vars":{
       "locals":[
@@ -54024,7 +54024,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_msnedit.cpp_FUN_00537330",
+    "name":"core_msnedit.cpp_buildActorClassHierarchy_FUN_00537330",
     "ret":"void",
     "vars":{
       "locals":[
@@ -54111,7 +54111,7 @@
       ],
       "params":[
         {
-          "name":"param_1",
+          "name":"class_list",
           "storage":{
             "offset":4,
             "size":4,
@@ -54127,7 +54127,7 @@
           "type":"CStrList*"
         },
         {
-          "name":"param_2",
+          "name":"parent_class",
           "storage":{
             "offset":8,
             "size":4,
@@ -54140,10 +54140,10 @@
               }
             ]
           },
-          "type":"int"
+          "type":"CDemonActor*"
         },
         {
-          "name":"param_3",
+          "name":"indent_level",
           "storage":{
             "offset":12,
             "size":4,
@@ -54172,12 +54172,12 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_msnedit.cpp_FUN_005374b0",
+    "name":"core_msnedit.cpp_setEditorLayoutMode_FUN_005374b0",
     "ret":"void",
     "vars":{
       "params":[
         {
-          "name":"unk",
+          "name":"layout_mode",
           "storage":{
             "offset":4,
             "size":4,
@@ -54404,7 +54404,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_msnedit.cpp_CDemonMission_FUN_0053c0b0",
+    "name":"core_msnedit.cpp_CDemonMission_undoActorChanges_FUN_0053c0b0",
     "ret":"void",
     "vars":{
       "params":[
@@ -54438,7 +54438,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_msnedit.cpp_CDemonMission_FUN_0053c730",
+    "name":"core_msnedit.cpp_CDemonMission_editActorPropertiesDialog_FUN_0053c730",
     "ret":"void",
     "vars":{
       "locals":[
@@ -54490,7 +54490,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_msnedit.cpp_CDemonMission_FUN_0053c930",
+    "name":"core_msnedit.cpp_CDemonMission_moveActorToViewportCenter_FUN_0053c930",
     "ret":"void",
     "vars":{
       "params":[
@@ -54511,7 +54511,7 @@
           "type":"CDemonMission*"
         },
         {
-          "name":"param_2",
+          "name":"actor",
           "storage":{
             "offset":8,
             "size":4,
@@ -54524,7 +54524,7 @@
               }
             ]
           },
-          "type":"int"
+          "type":"CDemonActor*"
         }
       ]
     }
@@ -54540,7 +54540,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_msnedit.cpp_CDemonMission_FUN_0053ca30",
+    "name":"core_msnedit.cpp_CDemonMission_findNextVisibleActor_FUN_0053ca30",
     "ret":"void",
     "vars":{
       "params":[
@@ -54561,7 +54561,7 @@
           "type":"CDemonMission*"
         },
         {
-          "name":"param_2",
+          "name":"actor",
           "storage":{
             "offset":8,
             "size":4,
@@ -54574,7 +54574,7 @@
               }
             ]
           },
-          "type":"int"
+          "type":"CDemonActor*"
         }
       ]
     }
@@ -54590,7 +54590,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_msnedit.cpp_CDemonMission_FUN_0053cc30",
+    "name":"core_msnedit.cpp_CDemonMission_buildFilteredActorList_FUN_0053cc30",
     "ret":"void",
     "vars":{
       "locals":[
@@ -54629,7 +54629,7 @@
           "type":"CDemonMission*"
         },
         {
-          "name":"param_2",
+          "name":"name_list",
           "storage":{
             "offset":8,
             "size":4,
@@ -54645,7 +54645,7 @@
           "type":"CStrList*"
         },
         {
-          "name":"param_3",
+          "name":"class_type",
           "storage":{
             "offset":12,
             "size":4,
@@ -54658,10 +54658,10 @@
               }
             ]
           },
-          "type":"uint"
+          "type":"CDemonActor*"
         },
         {
-          "name":"param_4",
+          "name":"class_name",
           "storage":{
             "offset":16,
             "size":4,
@@ -54677,7 +54677,7 @@
           "type":"char*"
         },
         {
-          "name":"param_5",
+          "name":"filter_func",
           "storage":{
             "offset":20,
             "size":4,
@@ -54690,7 +54690,7 @@
               }
             ]
           },
-          "type":"int"
+          "type":"CActorPropertyFilterFunc*"
         }
       ]
     }
@@ -54706,7 +54706,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_msnedit.cpp_CDemonMission_FUN_0053d3b0",
+    "name":"core_msnedit.cpp_CDemonMission_showDifficultyStats_FUN_0053d3b0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -54966,7 +54966,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_msnedit.cpp_CDemonMission_FUN_0053d7b0",
+    "name":"core_msnedit.cpp_CDemonMission_rebuildWaypointConnectivity_FUN_0053d7b0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -55018,7 +55018,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_msnedit.cpp_CDemonMission_FUN_0053d8b0",
+    "name":"core_msnedit.cpp_CDemonMission_changeActorType_FUN_0053d8b0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -55103,54 +55103,6 @@
             ]
           },
           "type":"CDemonMission*"
-        },
-        {
-          "name":"param_2",
-          "storage":{
-            "offset":8,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x8]",
-                "offset":8,
-                "size":4
-              }
-            ]
-          },
-          "type":"int"
-        },
-        {
-          "name":"param_3",
-          "storage":{
-            "offset":12,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0xc]",
-                "offset":12,
-                "size":4
-              }
-            ]
-          },
-          "type":"CDemonMission*"
-        },
-        {
-          "name":"param_4",
-          "storage":{
-            "offset":16,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x10]",
-                "offset":16,
-                "size":4
-              }
-            ]
-          },
-          "type":"int"
         }
       ]
     }
@@ -55166,7 +55118,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_msnedit.cpp_CDemonMission_FUN_0053ea30",
+    "name":"core_msnedit.cpp_CDemonMission_buildScriptCrossReferences_FUN_0053ea30",
     "ret":"void",
     "vars":{
       "locals":[

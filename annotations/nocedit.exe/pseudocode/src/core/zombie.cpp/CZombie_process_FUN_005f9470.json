@@ -73,19 +73,20 @@
   },
   "complexity": {
     "assembly_lines": 2463,
-    "complexity_score": 1273,
+    "complexity_score": 1288,
     "cross_reference_count": 0,
     "function_call_count": 48,
     "global_count": 72,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 1018,
-    "suspect_count": 22,
+    "suspect_count": 23,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "stack_param",
       "stack_ref",
       "unresolved_funcptr",
+      "warning_inlined_function",
       "warning_type_propagation",
       "warning_unreachable"
     ],
@@ -1845,6 +1846,14 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
+    },
     {
       "description": "Unreachable code block removed",
       "line": 3,

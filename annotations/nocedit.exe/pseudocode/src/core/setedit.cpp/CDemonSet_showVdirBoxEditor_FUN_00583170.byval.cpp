@@ -6,9 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Inlined function: core_slew.cpp_CSlew_init_FUN_005a2060 */
-/* WARNING: Restarted to delay deadcode elimination for space: stack */
-
 void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet *this_ptr)
 {
 __asm {

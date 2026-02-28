@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   y
 ;
 ; XREF[1]:
-;   core_msnedit.cpp_CDemonMission_FUN_0053c4f0 at 0053c649
+;   core_msnedit.cpp_CDemonMission_drawPropertyPanel_FUN_0053c4f0 at 0053c649
 ;
 ; *****************************************************************************
 

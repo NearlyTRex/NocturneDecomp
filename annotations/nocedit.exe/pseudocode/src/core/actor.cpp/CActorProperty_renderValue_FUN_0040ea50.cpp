@@ -9,17 +9,19 @@
 void __cdecl core_actor_cpp_CActorProperty_renderValue_FUN_0040ea50(CActorProperty *this_ptr,CDemonActor *actor,char *output_buffer)
 
 {
-  char cVar1;
-  CVector3f *pCVar2;
-  CRuleList *pCVar3;
-  CMotionList *pCVar4;
-  SMotion *pSVar5;
-  int iVar6;
-  int *piVar7;
-  uint *puVar8;
-  char *pcVar9;
-  char *pcVar10;
-  int iVar11;
+  code cVar1;
+  char cVar2;
+  CVector3f *pCVar3;
+  CRuleList *pCVar4;
+  CMotionList *pCVar5;
+  SMotion *pSVar6;
+  int iVar7;
+  CActorPropertyActionFunc *pCVar8;
+  int *piVar9;
+  uint *puVar10;
+  char *pcVar11;
+  char *pcVar12;
+  int iVar13;
   
   switch(this_ptr->type) {
   case PROP_INT:
@@ -30,248 +32,249 @@ void __cdecl core_actor_cpp_CActorProperty_renderValue_FUN_0040ea50(CActorProper
               (output_buffer,"%g",(double)*(this_ptr->data).v_float_ptr);
     return;
   case PROP_VECTOR:
-    pCVar2 = (this_ptr->data).v_vector_ptr;
+    pCVar3 = (this_ptr->data).v_vector_ptr;
     _sprintf
-              (output_buffer,"%g,%g,%g",(double)pCVar2->x,(double)pCVar2->y,(double)pCVar2->z)
+              (output_buffer,"%g,%g,%g",(double)pCVar3->x,(double)pCVar3->y,(double)pCVar3->z)
     ;
     return;
   case PROP_STRING:
   case PROP_SOUND:
   case PROP_EVENT:
   case PROP_BUTTON:
-    pcVar10 = (this_ptr->data).v_string_ptr;
+    pCVar8 = (this_ptr->data).v_action_func_ptr;
     do {
-      cVar1 = *pcVar10;
-      *output_buffer = cVar1;
-      if (cVar1 == '\0') {
+      cVar2 = (char)*pCVar8;
+      *output_buffer = cVar2;
+      if (cVar2 == '\0') {
         return;
       }
-      cVar1 = pcVar10[1];
-      pcVar10 = pcVar10 + 2;
-      output_buffer[1] = cVar1;
+      cVar1 = pCVar8[1];
+      pCVar8 = pCVar8 + 2;
+      output_buffer[1] = (char)cVar1;
       output_buffer = output_buffer + 2;
-    } while (cVar1 != '\0');
+    } while (cVar1 != (code)0x0);
     return;
   case PROP_BOOL:
     if (*(this_ptr->data).v_int_ptr == 0) {
-      pcVar10 = "FALSE";
+      pcVar12 = "FALSE";
     }
     else {
-      pcVar10 = "TRUE";
+      pcVar12 = "TRUE";
     }
     do {
-      cVar1 = *pcVar10;
-      *output_buffer = cVar1;
-      if (cVar1 == '\0') {
+      cVar2 = *pcVar12;
+      *output_buffer = cVar2;
+      if (cVar2 == '\0') {
         return;
       }
-      cVar1 = pcVar10[1];
-      pcVar10 = pcVar10 + 2;
-      output_buffer[1] = cVar1;
+      cVar2 = pcVar12[1];
+      pcVar12 = pcVar12 + 2;
+      output_buffer[1] = cVar2;
       output_buffer = output_buffer + 2;
-    } while (cVar1 != '\0');
+    } while (cVar2 != '\0');
     return;
   case PROP_CHOICE:
-    pCVar4 = (((this_ptr->data).v_dfm_ptr)->motion_controller).motion_list_ptr;
-    if (pCVar4 != (CMotionList *)0x0) {
+    pCVar5 = (((this_ptr->data).v_dfm_ptr)->motion_controller).motion_list_ptr;
+    if (pCVar5 != (CMotionList *)0x0) {
       do {
-        cVar1 = (char)pCVar4->state_count;
-        *output_buffer = cVar1;
-        if (cVar1 == '\0') {
+        cVar2 = (char)pCVar5->state_count;
+        *output_buffer = cVar2;
+        if (cVar2 == '\0') {
           return;
         }
-        cVar1 = *(char *)((int)&pCVar4->state_count + 1);
-        pCVar4 = (CMotionList *)((int)&pCVar4->state_count + 2);
-        output_buffer[1] = cVar1;
+        cVar2 = *(char *)((int)&pCVar5->state_count + 1);
+        pCVar5 = (CMotionList *)((int)&pCVar5->state_count + 2);
+        output_buffer[1] = cVar2;
         output_buffer = output_buffer + 2;
-      } while (cVar1 != '\0');
+      } while (cVar2 != '\0');
       return;
     }
-    pcVar10 = "(none)";
+    pcVar12 = "(none)";
     do {
-      cVar1 = *pcVar10;
-      *output_buffer = cVar1;
-      if (cVar1 == '\0') {
+      cVar2 = *pcVar12;
+      *output_buffer = cVar2;
+      if (cVar2 == '\0') {
         return;
       }
-      cVar1 = pcVar10[1];
-      pcVar10 = pcVar10 + 2;
-      output_buffer[1] = cVar1;
+      cVar2 = pcVar12[1];
+      pcVar12 = pcVar12 + 2;
+      output_buffer[1] = cVar2;
       output_buffer = output_buffer + 2;
-    } while (cVar1 != '\0');
+    } while (cVar2 != '\0');
     return;
   case PROP_MODEL_KFM:
-    pcVar10 = ((this_ptr->data).v_clothlist_ptr)->filenames[2] + 0x24;
+    pcVar12 = ((this_ptr->data).v_clothlist_ptr)->filenames[2] + 0x24;
     do {
-      cVar1 = *pcVar10;
-      *output_buffer = cVar1;
-      if (cVar1 == '\0') {
+      cVar2 = *pcVar12;
+      *output_buffer = cVar2;
+      if (cVar2 == '\0') {
         return;
       }
-      cVar1 = pcVar10[1];
-      pcVar10 = pcVar10 + 2;
-      output_buffer[1] = cVar1;
+      cVar2 = pcVar12[1];
+      pcVar12 = pcVar12 + 2;
+      output_buffer[1] = cVar2;
       output_buffer = output_buffer + 2;
-    } while (cVar1 != '\0');
+    } while (cVar2 != '\0');
     return;
   case PROP_MODEL_DFM:
-    pcVar10 = ((this_ptr->data).v_dfm_ptr)->model_name;
+    pcVar12 = ((this_ptr->data).v_dfm_ptr)->model_name;
     do {
-      cVar1 = *pcVar10;
-      *output_buffer = cVar1;
-      if (cVar1 == '\0') {
+      cVar2 = *pcVar12;
+      *output_buffer = cVar2;
+      if (cVar2 == '\0') {
         return;
       }
-      cVar1 = pcVar10[1];
-      pcVar10 = pcVar10 + 2;
-      output_buffer[1] = cVar1;
+      cVar2 = pcVar12[1];
+      pcVar12 = pcVar12 + 2;
+      output_buffer[1] = cVar2;
       output_buffer = output_buffer + 2;
-    } while (cVar1 != '\0');
+    } while (cVar2 != '\0');
     return;
   case PROP_GROUND_TYPE:
-    pcVar10 = core_ground_cpp_getGroundTypeName_FUN_004eed80(*(this_ptr->data).v_int_ptr);
+    pcVar12 = core_ground_cpp_getGroundTypeName_FUN_004eed80(*(this_ptr->data).v_int_ptr);
     do {
-      cVar1 = *pcVar10;
-      *output_buffer = cVar1;
-      if (cVar1 == '\0') {
+      cVar2 = *pcVar12;
+      *output_buffer = cVar2;
+      if (cVar2 == '\0') {
         return;
       }
-      cVar1 = pcVar10[1];
-      pcVar10 = pcVar10 + 2;
-      output_buffer[1] = cVar1;
+      cVar2 = pcVar12[1];
+      pcVar12 = pcVar12 + 2;
+      output_buffer[1] = cVar2;
       output_buffer = output_buffer + 2;
-    } while (cVar1 != '\0');
+    } while (cVar2 != '\0');
     return;
   case PROP_FILE:
-    pcVar10 = (this_ptr->data).v_string_ptr;
-    if (*pcVar10 == '\0') {
-      pcVar10 = "(none)";
+    pcVar12 = (char *)(this_ptr->data).v_action_func_ptr;
+    if (*pcVar12 == '\0') {
+      pcVar12 = "(none)";
     }
     do {
-      cVar1 = *pcVar10;
-      *output_buffer = cVar1;
-      if (cVar1 == '\0') {
+      cVar2 = *pcVar12;
+      *output_buffer = cVar2;
+      if (cVar2 == '\0') {
         return;
       }
-      cVar1 = pcVar10[1];
-      pcVar10 = pcVar10 + 2;
-      output_buffer[1] = cVar1;
+      cVar1 = ((CActorPropertyActionFunc *)pcVar12)[1];
+      pcVar12 = (char *)((CActorPropertyActionFunc *)pcVar12 + 2);
+      output_buffer[1] = (char)cVar1;
       output_buffer = output_buffer + 2;
-    } while (cVar1 != '\0');
+    } while (cVar1 != (code)0x0);
     return;
   case PROP_MOTION:
-    pCVar4 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
+    pCVar5 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                        ((this_ptr->data).v_motion_ptr);
-    pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+    pSVar6 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                        ((this_ptr->data).v_motion_ptr);
     _sprintf
-              (output_buffer,"%s (%s)",pSVar5,pCVar4->state_names + pSVar5->state_index);
+              (output_buffer,"%s (%s)",pSVar6,pCVar5->state_names + pSVar6->state_index);
     return;
   case PROP_CLOTH:
     if ((this_ptr->param1).v_int < ((this_ptr->data).v_kfm_ptr)->part_visibility_flags[0]) {
-      piVar7 = ((this_ptr->data).v_kfm_ptr)->part_visibility_flags +
+      piVar9 = ((this_ptr->data).v_kfm_ptr)->part_visibility_flags +
                (this_ptr->param1).v_int * 10 + 1;
       do {
-        iVar11 = *piVar7;
-        *output_buffer = (char)iVar11;
-        if ((char)iVar11 == '\0') {
+        iVar13 = *piVar9;
+        *output_buffer = (char)iVar13;
+        if ((char)iVar13 == '\0') {
           return;
         }
-        cVar1 = *(char *)((int)piVar7 + 1);
-        piVar7 = (int *)((int)piVar7 + 2);
-        output_buffer[1] = cVar1;
+        cVar2 = *(char *)((int)piVar9 + 1);
+        piVar9 = (int *)((int)piVar9 + 2);
+        output_buffer[1] = cVar2;
         output_buffer = output_buffer + 2;
-      } while (cVar1 != '\0');
+      } while (cVar2 != '\0');
       return;
     }
-    pcVar10 = "(add a new cloth)";
+    pcVar12 = "(add a new cloth)";
     do {
-      cVar1 = *pcVar10;
-      *output_buffer = cVar1;
-      if (cVar1 == '\0') {
+      cVar2 = *pcVar12;
+      *output_buffer = cVar2;
+      if (cVar2 == '\0') {
         return;
       }
-      cVar1 = pcVar10[1];
-      pcVar10 = pcVar10 + 2;
-      output_buffer[1] = cVar1;
+      cVar2 = pcVar12[1];
+      pcVar12 = pcVar12 + 2;
+      output_buffer[1] = cVar2;
       output_buffer = output_buffer + 2;
-    } while (cVar1 != '\0');
+    } while (cVar2 != '\0');
     return;
   case PROP_ENUM_PAIR:
-    pcVar10 = "??????";
-    iVar11 = 0;
+    pcVar12 = "??????";
+    iVar13 = 0;
     if (0 < (this_ptr->param1).v_int) {
-      puVar8 = (this_ptr->param2).v_ptr;
+      puVar10 = (this_ptr->param2).v_ptr;
       do {
-        if (*(this_ptr->data).v_int_ptr == puVar8[1]) {
-          pcVar10 = (char *)*puVar8;
+        if (*(this_ptr->data).v_int_ptr == puVar10[1]) {
+          pcVar12 = (char *)*puVar10;
           break;
         }
-        iVar11 = iVar11 + 1;
-        puVar8 = puVar8 + 2;
-      } while (iVar11 < (this_ptr->param1).v_int);
+        iVar13 = iVar13 + 1;
+        puVar10 = puVar10 + 2;
+      } while (iVar13 < (this_ptr->param1).v_int);
     }
     do {
-      cVar1 = *pcVar10;
-      *output_buffer = cVar1;
-      if (cVar1 == '\0') {
+      cVar2 = *pcVar12;
+      *output_buffer = cVar2;
+      if (cVar2 == '\0') {
         return;
       }
-      cVar1 = pcVar10[1];
-      pcVar10 = pcVar10 + 2;
-      output_buffer[1] = cVar1;
+      cVar2 = pcVar12[1];
+      pcVar12 = pcVar12 + 2;
+      output_buffer[1] = cVar2;
       output_buffer = output_buffer + 2;
-    } while (cVar1 != '\0');
+    } while (cVar2 != '\0');
     return;
   case PROP_RULE:
-    pCVar3 = (this_ptr->data).v_rulelist_ptr;
-    iVar11 = (this_ptr->param1).v_int;
-    if (iVar11 < pCVar3->list_size) {
+    pCVar4 = (this_ptr->data).v_rulelist_ptr;
+    iVar13 = (this_ptr->param1).v_int;
+    if (iVar13 < pCVar4->list_size) {
       _sprintf
-                (output_buffer,"%s => %s",pCVar3->conditions + iVar11,pCVar3->events + iVar11);
+                (output_buffer,"%s => %s",pCVar4->conditions + iVar13,pCVar4->events + iVar13);
       return;
     }
-    pcVar10 = "(add a rule)";
+    pcVar12 = "(add a rule)";
     do {
-      cVar1 = *pcVar10;
-      *output_buffer = cVar1;
-      if (cVar1 == '\0') {
+      cVar2 = *pcVar12;
+      *output_buffer = cVar2;
+      if (cVar2 == '\0') {
         return;
       }
-      cVar1 = pcVar10[1];
-      pcVar10 = pcVar10 + 2;
-      output_buffer[1] = cVar1;
+      cVar2 = pcVar12[1];
+      pcVar12 = pcVar12 + 2;
+      output_buffer[1] = cVar2;
       output_buffer = output_buffer + 2;
-    } while (cVar1 != '\0');
+    } while (cVar2 != '\0');
     return;
   case PROP_ACTION:
-    (*(code *)this_ptr->data)();
+    (*(this_ptr->data).v_action_func_ptr)(actor,this_ptr);
     return;
   case PROP_FLAGS:
-    pcVar9 = "(none)";
-    pcVar10 = output_buffer;
+    pcVar11 = "(none)";
+    pcVar12 = output_buffer;
     do {
-      cVar1 = *pcVar9;
-      *pcVar10 = cVar1;
-      if (cVar1 == '\0') break;
-      cVar1 = pcVar9[1];
-      pcVar9 = pcVar9 + 2;
-      pcVar10[1] = cVar1;
-      pcVar10 = pcVar10 + 2;
-    } while (cVar1 != '\0');
-    iVar11 = 0;
-    pcVar10 = output_buffer;
+      cVar2 = *pcVar11;
+      *pcVar12 = cVar2;
+      if (cVar2 == '\0') break;
+      cVar2 = pcVar11[1];
+      pcVar11 = pcVar11 + 2;
+      pcVar12[1] = cVar2;
+      pcVar12 = pcVar12 + 2;
+    } while (cVar2 != '\0');
+    iVar13 = 0;
+    pcVar12 = output_buffer;
     do {
-      if ((*(this_ptr->data).v_uint_ptr & *(uint *)((int)&0x00000001 + iVar11)) != 0) {
-        if (output_buffer < pcVar10) {
-          iVar6 = _sprintf(pcVar10,", ");
-          pcVar10 = pcVar10 + iVar6;
+      if ((*(this_ptr->data).v_uint_ptr &
+          *(uint *)((int)&SPropertyFlag_ARRAY_0066e30c[0].mask + iVar13)) != 0) {
+        if (output_buffer < pcVar12) {
+          iVar7 = _sprintf(pcVar12,", ");
+          pcVar12 = pcVar12 + iVar7;
         }
-        iVar6 = _sprintf(pcVar10,"%s");
-        pcVar10 = pcVar10 + iVar6;
+        iVar7 = _sprintf(pcVar12,"%s");
+        pcVar12 = pcVar12 + iVar7;
       }
-      iVar11 = iVar11 + 8;
-    } while (iVar11 != 0x10);
+      iVar13 = iVar13 + 8;
+    } while (iVar13 != 0x10);
     break;
   default:
     g_CurrentFilename = "..\\core\\actor.cpp";

@@ -14,7 +14,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_importActorsFrom_FUN_0053b9f0(CDemon
   char cVar1;
   char *pcVar2;
   CDemonActor *actor;
-  float *pfVar3;
+  CVector3f *pCVar3;
   int iVar4;
   CDemonActor *pCVar5;
   int iVar6;
@@ -22,7 +22,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_importActorsFrom_FUN_0053b9f0(CDemon
   CPickList local_448;
   char local_a0 [100];
   char local_3c [32];
-  float local_1c [3];
+  CVector3f local_1c;
   
   iVar4 = 0;
   shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_448);
@@ -48,12 +48,12 @@ void __cdecl core_msnedit_cpp_CDemonMission_importActorsFrom_FUN_0053b9f0(CDemon
     core_mission_cpp_CDemonMission_generateActorName_FUN_00524700(this_ptr,actor);
     core_dcamera_cpp_CDemonCamera_beginScene_FUN_0044c430(&g_CDemonCameraInstance,1);
     (actor->location).area_id = this_ptr->current_set_index;
-    pfVar3 = core_msnedit_cpp_FUN_00535c60
-                       (local_1c,((this_ptr->viewport).left + (this_ptr->viewport).right) / 2,
+    pCVar3 = core_msnedit_cpp_screenToWorldPosition_FUN_00535c60
+                       (&local_1c,((this_ptr->viewport).left + (this_ptr->viewport).right) / 2,
                         ((this_ptr->viewport).top + (this_ptr->viewport).bottom) / 2);
-    (actor->location).position.x = *pfVar3;
-    (actor->location).position.y = pfVar3[1];
-    (actor->location).position.z = pfVar3[2];
+    (actor->location).position.x = pCVar3->x;
+    (actor->location).position.y = pCVar3->y;
+    (actor->location).position.z = pCVar3->z;
     core_dcamera_cpp_CDemonCamera_endScene_FUN_0044cb80(&g_CDemonCameraInstance,0);
     if (g_ConfirmNewActorNames != 0) {
       pcVar2 = local_3c;
@@ -82,7 +82,8 @@ void __cdecl core_msnedit_cpp_CDemonMission_importActorsFrom_FUN_0053b9f0(CDemon
           }
           goto LAB_0053bc0f;
         }
-        iVar4 = core_msnedit_cpp_CDemonMission_FUN_0053d220(g_CDemonMissionPtr);
+        iVar4 = core_msnedit_cpp_CDemonMission_validateNewActorName_FUN_0053d220
+                          (g_CDemonMissionPtr,actor->actor_name,local_3c);
       } while (iVar4 == 0);
       pcVar2 = local_3c;
       pCVar5 = actor;
@@ -116,7 +117,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_importActorsFrom_FUN_0053b9f0(CDemon
       (*((actor->vtable)._ub)->setup)(actor);
       local_448.base.item_count = (int)in_stack_0000000c;
       local_448.base.capacity = (int)actor;
-      core_msnedit_cpp_CDemonMission_FUN_0053c140(in_stack_0000000c,(int)actor);
+      core_msnedit_cpp_CDemonMission_selectActor_FUN_0053c140(in_stack_0000000c,actor);
     }
   }
 LAB_0053bc0f:

@@ -21,7 +21,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_processInEditor_FUN_0040d040
-;   core_msnedit.cpp_CDemonMission_FUN_0053c140
+;   core_msnedit.cpp_CDemonMission_selectActor_FUN_0053c140
 ;   shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
 ;
@@ -192,8 +192,8 @@ section .text
     PUSH EDI                            ; 005dad7a
     MOV EBP,dword ptr [0x0067d550]      ; 005dad7b | g_CDemonMissionPtr
     PUSH EBP                            ; 005dad81 | g_CDemonMissionInstance
-    CALL core_msnedit.cpp_CDemonMission_FUN_0053c140 ; 005dad82
-        ;   XREF to: 0053c140 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_FUN_0053c140(CDemonMission * this_ptr, int param_2)
+    CALL core_msnedit.cpp_CDemonMission_selectActor_FUN_0053c140 ; 005dad82
+        ;   XREF to: 0053c140 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_selectActor_FUN_0053c140(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 005dad87
     POP EDI                             ; 005dad8a
     ADD ESP,0x8                         ; 005dad8b

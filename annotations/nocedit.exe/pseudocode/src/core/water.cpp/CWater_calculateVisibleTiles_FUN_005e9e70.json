@@ -6,17 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 347,
-    "complexity_score": 389,
+    "complexity_score": 404,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 28,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 154,
-    "suspect_count": 22,
+    "suspect_count": 23,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
-      "undefined_data"
+      "undefined_data",
+      "warning_inlined_function"
     ],
     "total_lines": 501
   },
@@ -621,6 +622,14 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
+    },
     {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 10,

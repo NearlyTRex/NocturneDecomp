@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   core_msnedit.cpp_CDemonMission_FUN_0053d7b0 at 0053d854
+;   core_msnedit.cpp_CDemonMission_rebuildWaypointConnectivity_FUN_0053d7b0 at 0053d854
 ;   core_waypoint.cpp_CWayPoint_processInEditor_FUN_005ec5e0 at 005ec5e6
 ;
 ; Referenced Globals:

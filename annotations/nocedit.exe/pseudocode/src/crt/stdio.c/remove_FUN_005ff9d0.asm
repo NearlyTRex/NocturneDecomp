@@ -9,10 +9,10 @@
 ; XREF[34]:
 ;   core_game.cpp_CGame_loadGame_FUN_004e12b0 at 004e17ce
 ;   core_game.cpp_CGame_saveGame_FUN_004e0cd0 at 004e1116
-;   core_msnedit.cpp_CDemonMission_FUN_0053bd80 at 0053be9e
-;   core_msnedit.cpp_CDemonMission_FUN_0053c140 at 0053c14c
 ;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 00539104
 ;   core_msnedit.cpp_CDemonMission_playMission_FUN_00538ba0 at 00538d1f
+;   core_msnedit.cpp_CDemonMission_replicateActor_FUN_0053bd80 at 0053be9e
+;   core_msnedit.cpp_CDemonMission_selectActor_FUN_0053c140 at 0053c14c
 ;   core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0 at 0053850e
 ;   core_netgame.cpp_CNetGame_init_FUN_0053f780 at 0053f787
 ;   core_setedit.cpp_CDemonSet_computeCameraFog_FUN_00581320 at 005813a1

@@ -34,19 +34,19 @@
     {
       "addr": "0053bd80",
       "from_addr": "0053bdb2",
-      "name": "core_msnedit.cpp_CDemonMission_FUN_0053bd80",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0053c0b0",
-      "from_addr": "0053c0bf",
-      "name": "core_msnedit.cpp_CDemonMission_FUN_0053c0b0",
+      "name": "core_msnedit.cpp_CDemonMission_replicateActor_FUN_0053bd80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0053c140",
       "from_addr": "0053c1db",
-      "name": "core_msnedit.cpp_CDemonMission_FUN_0053c140",
+      "name": "core_msnedit.cpp_CDemonMission_selectActor_FUN_0053c140",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053c0b0",
+      "from_addr": "0053c0bf",
+      "name": "core_msnedit.cpp_CDemonMission_undoActorChanges_FUN_0053c0b0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -89,7 +89,7 @@
       {
         "call_addr": "0053bdb2",
         "call_type": "direct",
-        "caller": "core_msnedit.cpp_CDemonMission_FUN_0053bd80",
+        "caller": "core_msnedit.cpp_CDemonMission_replicateActor_FUN_0053bd80",
         "estimated_params": 0,
         "instructions_analyzed": 7,
         "reg_params": [],
@@ -107,7 +107,7 @@
       {
         "call_addr": "0053c1db",
         "call_type": "direct",
-        "caller": "core_msnedit.cpp_CDemonMission_FUN_0053c140",
+        "caller": "core_msnedit.cpp_CDemonMission_selectActor_FUN_0053c140",
         "estimated_params": 0,
         "instructions_analyzed": 1,
         "reg_params": [],
@@ -125,7 +125,7 @@
       {
         "call_addr": "0053c0bf",
         "call_type": "direct",
-        "caller": "core_msnedit.cpp_CDemonMission_FUN_0053c0b0",
+        "caller": "core_msnedit.cpp_CDemonMission_undoActorChanges_FUN_0053c0b0",
         "estimated_params": 0,
         "instructions_analyzed": 1,
         "reg_params": [],

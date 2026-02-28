@@ -17,7 +17,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_msnedit.cpp_CDemonMission_FUN_0053ec80 at 0053edb1
+;   core_msnedit.cpp_CDemonMission_showSoundFilesInMission_FUN_0053ec80 at 0053edb1
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_Script_line_d_006441ae

@@ -14,11 +14,11 @@
 ;   core_mission.cpp_CDemonMission_createFromSingleSet_FUN_005243a0 at 005243f4
 ;   core_mission.cpp_CDemonMission_loadSet_FUN_00523fb0 at 0052401f
 ;   core_mission.cpp_CDemonMission_writeFile_FUN_00523600 at 0052363c
-;   core_msnedit.cpp_CDemonMission_FUN_0053d7b0 at 0053d7d2
-;   core_msnedit.cpp_CDemonMission_FUN_0053e220 at 0053e2d3
-;   core_msnedit.cpp_CDemonMission_FUN_0053ec80 at 0053ecc0
 ;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 005391c5
+;   core_msnedit.cpp_CDemonMission_editGore_FUN_0053e220 at 0053e2d3
 ;   core_msnedit.cpp_CDemonMission_importActors_FUN_0053ccf0 at 0053ce4b
+;   core_msnedit.cpp_CDemonMission_pasteActorProperty_FUN_0053af50 at 0053afb6
+;   core_msnedit.cpp_CDemonMission_playMission_FUN_00538ba0 at 00538c2a
 ;   ... and 3 more
 ;
 ; Referenced Globals:

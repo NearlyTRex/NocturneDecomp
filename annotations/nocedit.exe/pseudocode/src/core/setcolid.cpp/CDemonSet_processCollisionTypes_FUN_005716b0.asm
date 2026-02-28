@@ -31,7 +31,7 @@
 ;   core_actor.cpp_CDemonActor_processFootstep_FUN_0040c830 at 0040c8ab
 ;   core_fire.cpp_CCrater_activate_FUN_004c4200 at 004c4255
 ;   core_gore.cpp_CBloodPool_init_FUN_004ed0d0 at 004ed0fb
-;   core_msnedit.cpp_CDemonMission_FUN_0053c8d0 at 0053c8fe
+;   core_msnedit.cpp_CDemonMission_dropActorToGround_FUN_0053c8d0 at 0053c8fe
 ;   core_stranger.cpp_CStranger_FUN_005c2850 at 005c2e86
 ;
 ; Referenced Globals:

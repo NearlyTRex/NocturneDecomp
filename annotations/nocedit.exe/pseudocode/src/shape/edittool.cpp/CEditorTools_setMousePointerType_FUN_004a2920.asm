@@ -10,8 +10,8 @@
 ; int              Stack[0x10]:4   height
 ;
 ; XREF[3]:
-;   core_msnedit.cpp_CDemonMission_FUN_0053e220 at 0053e42b
 ;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 005399a0
+;   core_msnedit.cpp_CDemonMission_editGore_FUN_0053e220 at 0053e42b
 ;   core_script.cpp_CScript_updateMouseCursor_FUN_00566bc0 at 00566c06
 ;
 ; Referenced Globals:

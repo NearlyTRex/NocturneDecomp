@@ -6,9 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Inlined function: core_slew.cpp_CSlew_init_FUN_005a2060 */
-/* WARNING: Restarted to delay deadcode elimination for space: stack */
-
 void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet *this_ptr)
 
 {
@@ -38,35 +35,35 @@ void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet
   SVDBox *pSVar10;
   int *piVar11;
   byte bVar12;
-  SRenderVertex in_stack_fffffd34;
-  byte in_stack_fffffd64 [20];
-  uint in_stack_fffffd78;
-  CVector3f *in_stack_fffffd7c;
+  SRenderVertex in_stack_fffffd38;
+  byte in_stack_fffffd68 [20];
+  uint in_stack_fffffd7c;
   CVector3f *in_stack_fffffd80;
+  CVector3f *in_stack_fffffd84;
   uint uVar13;
   uint uVar14;
   SRenderVertex *output;
   CVector3i *pCVar15;
+  float in_stack_fffffdbc;
+  CKeys *in_stack_fffffdc0;
+  float in_stack_fffffdc4;
+  float in_stack_fffffdcc;
   CKeys *pCVar16;
   float fVar17;
-  CKeys *pCVar18;
-  CKeys *pCVar19;
-  float fVar20;
-  float fVar21;
-  CSlew *this_ptr_00;
+  float fVar18;
   char *format;
   CVector3f local_1dc;
   CVector3f local_1d0;
-  CKeys *local_1c4;
-  float local_1c0;
-  CKeys *local_1bc;
+  float local_1c4;
+  CKeys *local_1c0;
+  float local_1bc;
   CVector3i local_1b8;
   CVector3f local_1ac;
   CVector3i local_1a0;
   CVector3f local_194;
   int local_188;
   int local_184;
-  float local_180;
+  int local_180;
   CVector3f local_17c;
   CVector3i local_170;
   float local_164;
@@ -87,7 +84,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet
   CVector3i local_e0;
   CVector3f local_d4;
   float local_c8;
-  CKeys *local_c4;
+  float local_c4;
   uint local_c0;
   CVector3f local_bc;
   CVector3i local_b0;
@@ -127,12 +124,9 @@ void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet
   this_ptr->actor_count = 0;
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_clearInputAndWait_FUN_00403260();
-  pCVar18 = (CKeys *)0x0;
-  fVar17 = 0.0;
-  pCVar16 = (CKeys *)0x0;
-  pCVar19 = (CKeys *)0x0;
+  core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)&stack0xfffffdbc);
   local_c8 = 0.0;
-  local_c4 = (CKeys *)0x0;
+  local_c4 = 0.0;
   local_c0 = 0;
   local_4c = 40.0;
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr);
@@ -159,11 +153,11 @@ void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet
     wincore_windll_cpp_clearZBuffer_FUN_005b3ed4();
     if (pSVar6 != (SVDBox *)0x0) {
       if ((float *)&stack0xfffffdc8 != &local_c8) {
-        pCVar19 = local_c4;
+        in_stack_fffffdcc = local_c4;
       }
       pCVar3 = core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
                          (&local_3c->rotation_matrix,&local_1dc);
-      pCVar19 = (CKeys *)((float)pCVar19 + pCVar3->y);
+      in_stack_fffffdcc = in_stack_fffffdcc + pCVar3->y;
       core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
                 ((CMatrix3x3f *)&stack0xfffffd94,(CVector3f *)&stack0xfffffdc8);
       local_1d0.z = -local_4c;
@@ -172,24 +166,24 @@ void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet
       local_14 = local_1d0.z;
       pCVar3 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
                          ((CMatrix3x3f *)&stack0xfffffd94,&local_134,&local_1d0);
-      local_1c4 = (CKeys *)(pCVar3->x + (local_3c->position).x);
-      local_1c0 = pCVar3->y + (local_3c->position).y;
-      local_1bc = (CKeys *)(pCVar3->z + (local_3c->position).z);
-      if ((CKeys **)&stack0xfffffdbc != &local_1c4) {
-        pCVar16 = local_1c4;
-        fVar17 = local_1c0;
-        pCVar18 = local_1bc;
+      local_1c4 = pCVar3->x + (local_3c->position).x;
+      local_1c0 = (CKeys *)(pCVar3->y + (local_3c->position).y);
+      local_1bc = pCVar3->z + (local_3c->position).z;
+      if ((float *)&stack0xfffffdbc != &local_1c4) {
+        in_stack_fffffdbc = local_1c4;
+        in_stack_fffffdc0 = local_1c0;
+        in_stack_fffffdc4 = local_1bc;
       }
     }
     if ((int *)&stack0x00000000 != &g_CDemonCameraInstance.rect_array[7].top) {
-      g_CDemonCameraInstance.base.position.x = (int)pCVar16;
-      g_CDemonCameraInstance.base.position.y = (int)fVar17;
-      g_CDemonCameraInstance.base.position.z = (int)pCVar18;
+      g_CDemonCameraInstance.base.position.x = (int)in_stack_fffffdbc;
+      g_CDemonCameraInstance.base.position.y = (int)in_stack_fffffdc0;
+      g_CDemonCameraInstance.base.position.z = (int)in_stack_fffffdc4;
     }
-    fVar20 = 28.0;
+    fVar17 = 28.0;
     core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
               (&g_CDemonCameraInstance.base.rotation_matrix,(CVector3f *)&stack0xfffffdc8);
-    g_CDemonCameraInstance.base.focal_length = fVar20;
+    g_CDemonCameraInstance.base.focal_length = fVar17;
     core_dcamera_cpp_CDemonCamera_beginScene_FUN_0044c430(&g_CDemonCameraInstance,1);
     core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0056a190(this_ptr,150.0,0);
     iVar7 = local_18;
@@ -214,12 +208,12 @@ void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet
         iVar4 = iVar7;
         if (iVar7 == local_18) {
           corner_b = pCVar3 + 1;
-          in_stack_fffffd7c = &local_158;
+          in_stack_fffffd80 = &local_158;
           local_158.x = -corner_b->x;
           local_158.y = -pCVar3[1].y;
           local_158.z = -pCVar3[1].z;
-          in_stack_fffffd78 = 0x583519;
-          core_setedit_cpp_renderColoredBox_FUN_005817d0(in_stack_fffffd7c,corner_b,0.5,0,0xff,0);
+          in_stack_fffffd7c = 0x583519;
+          core_setedit_cpp_renderColoredBox_FUN_005817d0(in_stack_fffffd80,corner_b,0.5,0,0xff,0);
           text_color = shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330
                                  (g_CEditorToolsPtr);
           shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0
@@ -227,7 +221,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet
           local_128.x = -corner_b->x;
           local_128.y = -pCVar3[1].y;
           local_128.z = -pCVar3[1].z;
-          in_stack_fffffd80 = (CVector3f *)0x583576;
+          in_stack_fffffd84 = (CVector3f *)0x583576;
           shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050
                     (g_CEditorToolsPtr,&local_128,corner_b,text_color);
         }
@@ -236,31 +230,31 @@ void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet
             iVar5 = iVar4;
             iVar4 = this_ptr->vdir_boxes[iVar5].parent_index;
           } while (-1 < iVar4);
-          in_stack_fffffd80 = pCVar3 + 1;
+          in_stack_fffffd84 = pCVar3 + 1;
           if (iVar5 == local_28) {
-            in_stack_fffffd7c = &local_f8;
-            local_f8.x = -in_stack_fffffd80->x;
+            in_stack_fffffd80 = &local_f8;
+            local_f8.x = -in_stack_fffffd84->x;
             local_f8.y = -pCVar3[1].y;
             local_f8.z = -pCVar3[1].z;
-            in_stack_fffffd78 = 0x5835b5;
+            in_stack_fffffd7c = 0x5835b5;
             core_setedit_cpp_renderColoredBox_FUN_005817d0
-                      (in_stack_fffffd7c,in_stack_fffffd80,0.3,0,0x80,0);
-            local_8c.x = -in_stack_fffffd80->x;
+                      (in_stack_fffffd80,in_stack_fffffd84,0.3,0,0x80,0);
+            local_8c.x = -in_stack_fffffd84->x;
             local_8c.y = -pCVar3[1].y;
             local_8c.z = -pCVar3[1].z;
             pCVar3 = (CVector3f *)0x5835e1;
             shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050
-                      (g_CEditorToolsPtr,&local_8c,in_stack_fffffd80,2);
-            in_stack_fffffd80 = pCVar3;
+                      (g_CEditorToolsPtr,&local_8c,in_stack_fffffd84,2);
+            in_stack_fffffd84 = pCVar3;
           }
           else {
-            in_stack_fffffd7c = &local_140;
-            local_140.x = -in_stack_fffffd80->x;
+            in_stack_fffffd80 = &local_140;
+            local_140.x = -in_stack_fffffd84->x;
             local_140.y = -pCVar3[1].y;
             local_140.z = -pCVar3[1].z;
-            in_stack_fffffd78 = 0x583621;
+            in_stack_fffffd7c = 0x583621;
             core_setedit_cpp_renderColoredBox_FUN_005817d0
-                      (in_stack_fffffd7c,in_stack_fffffd80,0.2,0,0,0xff);
+                      (in_stack_fffffd80,in_stack_fffffd84,0.2,0,0,0xff);
           }
         }
         pCVar2 = local_34;
@@ -376,339 +370,339 @@ void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet
         else {
           pSVar9 = g_CDemonRendererPtr2->vertex_buffer_ptr;
           pSVar8 = pSVar9 + 1;
-          piVar11 = (int *)&stack0xfffffd64;
+          piVar11 = (int *)&stack0xfffffd68;
           for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
             *piVar11 = (pSVar8->projected_vertex).transformed_x;
             pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar12 * -2 + 1) * 4);
             piVar11 = piVar11 + (uint)bVar12 * -2 + 1;
           }
-          piVar11 = (int *)&stack0xfffffd34;
+          piVar11 = (int *)&stack0xfffffd38;
           for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
             *piVar11 = (pSVar9->projected_vertex).transformed_x;
             pSVar9 = (SRenderVertex *)((int)pSVar9 + ((uint)bVar12 * -2 + 1) * 4);
             piVar11 = piVar11 + (uint)bVar12 * -2 + 1;
           }
-          vertex2.projected_vertex.screen_y = in_stack_fffffd78;
-          vertex2.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;
-          vertex2.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;
-          vertex2.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;
-          vertex2.projected_vertex.inv_z = in_stack_fffffd64._12_4_;
-          vertex2.projected_vertex.screen_x = in_stack_fffffd64._16_4_;
-          vertex2.u = (int)in_stack_fffffd7c;
-          vertex2.v = (int)in_stack_fffffd80;
+          vertex2.projected_vertex.screen_y = in_stack_fffffd7c;
+          vertex2.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;
+          vertex2.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;
+          vertex2.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;
+          vertex2.projected_vertex.inv_z = in_stack_fffffd68._12_4_;
+          vertex2.projected_vertex.screen_x = in_stack_fffffd68._16_4_;
+          vertex2.u = (int)in_stack_fffffd80;
+          vertex2.v = (int)in_stack_fffffd84;
           vertex2.z = uVar13;
           vertex2.r = uVar14;
           vertex2.g = (int)output;
           vertex2.fog = (int)pCVar15;
           g_ActiveRenderColor = iVar7;
-          engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd34,vertex2);
+          engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd38,vertex2);
           pSVar9 = g_CDemonRendererPtr2->vertex_buffer_ptr;
           pSVar8 = pSVar9 + 2;
-          piVar11 = (int *)&stack0xfffffd64;
+          piVar11 = (int *)&stack0xfffffd68;
           for (iVar7 = 0xc; iVar7 != 0; iVar7 = iVar7 + -1) {
             *piVar11 = (pSVar8->projected_vertex).transformed_x;
             pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar12 * -2 + 1) * 4);
             piVar11 = piVar11 + (uint)bVar12 * -2 + 1;
           }
           pSVar9 = pSVar9 + 1;
-          piVar11 = (int *)&stack0xfffffd34;
+          piVar11 = (int *)&stack0xfffffd38;
           for (iVar7 = 0xc; iVar7 != 0; iVar7 = iVar7 + -1) {
             *piVar11 = (pSVar9->projected_vertex).transformed_x;
             pSVar9 = (SRenderVertex *)((int)pSVar9 + ((uint)bVar12 * -2 + 1) * 4);
             piVar11 = piVar11 + (uint)bVar12 * -2 + 1;
           }
-          vertex2_00.projected_vertex.screen_y = in_stack_fffffd78;
-          vertex2_00.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;
-          vertex2_00.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;
-          vertex2_00.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;
-          vertex2_00.projected_vertex.inv_z = in_stack_fffffd64._12_4_;
-          vertex2_00.projected_vertex.screen_x = in_stack_fffffd64._16_4_;
-          vertex2_00.u = (int)in_stack_fffffd7c;
-          vertex2_00.v = (int)in_stack_fffffd80;
+          vertex2_00.projected_vertex.screen_y = in_stack_fffffd7c;
+          vertex2_00.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;
+          vertex2_00.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;
+          vertex2_00.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;
+          vertex2_00.projected_vertex.inv_z = in_stack_fffffd68._12_4_;
+          vertex2_00.projected_vertex.screen_x = in_stack_fffffd68._16_4_;
+          vertex2_00.u = (int)in_stack_fffffd80;
+          vertex2_00.v = (int)in_stack_fffffd84;
           vertex2_00.z = uVar13;
           vertex2_00.r = uVar14;
           vertex2_00.g = (int)output;
           vertex2_00.fog = (int)pCVar15;
-          engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd34,vertex2_00);
+          engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd38,vertex2_00);
           pSVar9 = g_CDemonRendererPtr2->vertex_buffer_ptr;
           pSVar8 = pSVar9 + 3;
-          piVar11 = (int *)&stack0xfffffd64;
+          piVar11 = (int *)&stack0xfffffd68;
           for (iVar7 = 0xc; iVar7 != 0; iVar7 = iVar7 + -1) {
             *piVar11 = (pSVar8->projected_vertex).transformed_x;
             pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar12 * -2 + 1) * 4);
             piVar11 = piVar11 + (uint)bVar12 * -2 + 1;
           }
           pSVar9 = pSVar9 + 2;
-          piVar11 = (int *)&stack0xfffffd34;
+          piVar11 = (int *)&stack0xfffffd38;
           for (iVar7 = 0xc; iVar7 != 0; iVar7 = iVar7 + -1) {
             *piVar11 = (pSVar9->projected_vertex).transformed_x;
             pSVar9 = (SRenderVertex *)((int)pSVar9 + ((uint)bVar12 * -2 + 1) * 4);
             piVar11 = piVar11 + (uint)bVar12 * -2 + 1;
           }
-          vertex2_01.projected_vertex.screen_y = in_stack_fffffd78;
-          vertex2_01.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;
-          vertex2_01.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;
-          vertex2_01.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;
-          vertex2_01.projected_vertex.inv_z = in_stack_fffffd64._12_4_;
-          vertex2_01.projected_vertex.screen_x = in_stack_fffffd64._16_4_;
-          vertex2_01.u = (int)in_stack_fffffd7c;
-          vertex2_01.v = (int)in_stack_fffffd80;
+          vertex2_01.projected_vertex.screen_y = in_stack_fffffd7c;
+          vertex2_01.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;
+          vertex2_01.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;
+          vertex2_01.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;
+          vertex2_01.projected_vertex.inv_z = in_stack_fffffd68._12_4_;
+          vertex2_01.projected_vertex.screen_x = in_stack_fffffd68._16_4_;
+          vertex2_01.u = (int)in_stack_fffffd80;
+          vertex2_01.v = (int)in_stack_fffffd84;
           vertex2_01.z = uVar13;
           vertex2_01.r = uVar14;
           vertex2_01.g = (int)output;
           vertex2_01.fog = (int)pCVar15;
-          engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd34,vertex2_01);
+          engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd38,vertex2_01);
           pSVar9 = g_CDemonRendererPtr2->vertex_buffer_ptr;
           pSVar8 = pSVar9;
-          piVar11 = (int *)&stack0xfffffd64;
+          piVar11 = (int *)&stack0xfffffd68;
           for (iVar7 = 0xc; iVar7 != 0; iVar7 = iVar7 + -1) {
             *piVar11 = (pSVar8->projected_vertex).transformed_x;
             pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar12 * -2 + 1) * 4);
             piVar11 = piVar11 + (uint)bVar12 * -2 + 1;
           }
           pSVar9 = pSVar9 + 3;
-          piVar11 = (int *)&stack0xfffffd34;
+          piVar11 = (int *)&stack0xfffffd38;
           for (iVar7 = 0xc; iVar7 != 0; iVar7 = iVar7 + -1) {
             *piVar11 = (pSVar9->projected_vertex).transformed_x;
             pSVar9 = (SRenderVertex *)((int)pSVar9 + ((uint)bVar12 * -2 + 1) * 4);
             piVar11 = piVar11 + (uint)bVar12 * -2 + 1;
           }
-          vertex2_02.projected_vertex.screen_y = in_stack_fffffd78;
-          vertex2_02.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;
-          vertex2_02.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;
-          vertex2_02.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;
-          vertex2_02.projected_vertex.inv_z = in_stack_fffffd64._12_4_;
-          vertex2_02.projected_vertex.screen_x = in_stack_fffffd64._16_4_;
-          vertex2_02.u = (int)in_stack_fffffd7c;
-          vertex2_02.v = (int)in_stack_fffffd80;
+          vertex2_02.projected_vertex.screen_y = in_stack_fffffd7c;
+          vertex2_02.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;
+          vertex2_02.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;
+          vertex2_02.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;
+          vertex2_02.projected_vertex.inv_z = in_stack_fffffd68._12_4_;
+          vertex2_02.projected_vertex.screen_x = in_stack_fffffd68._16_4_;
+          vertex2_02.u = (int)in_stack_fffffd80;
+          vertex2_02.v = (int)in_stack_fffffd84;
           vertex2_02.z = uVar13;
           vertex2_02.r = uVar14;
           vertex2_02.g = (int)output;
           vertex2_02.fog = (int)pCVar15;
-          engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd34,vertex2_02);
+          engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd38,vertex2_02);
           pSVar9 = g_CDemonRendererPtr2->vertex_buffer_ptr;
           pSVar8 = pSVar9 + 5;
-          piVar11 = (int *)&stack0xfffffd64;
+          piVar11 = (int *)&stack0xfffffd68;
           for (iVar7 = 0xc; iVar7 != 0; iVar7 = iVar7 + -1) {
             *piVar11 = (pSVar8->projected_vertex).transformed_x;
             pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar12 * -2 + 1) * 4);
             piVar11 = piVar11 + (uint)bVar12 * -2 + 1;
           }
           pSVar9 = pSVar9 + 4;
-          piVar11 = (int *)&stack0xfffffd34;
+          piVar11 = (int *)&stack0xfffffd38;
           for (iVar7 = 0xc; iVar7 != 0; iVar7 = iVar7 + -1) {
             *piVar11 = (pSVar9->projected_vertex).transformed_x;
             pSVar9 = (SRenderVertex *)((int)pSVar9 + ((uint)bVar12 * -2 + 1) * 4);
             piVar11 = piVar11 + (uint)bVar12 * -2 + 1;
           }
-          vertex2_03.projected_vertex.screen_y = in_stack_fffffd78;
-          vertex2_03.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;
-          vertex2_03.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;
-          vertex2_03.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;
-          vertex2_03.projected_vertex.inv_z = in_stack_fffffd64._12_4_;
-          vertex2_03.projected_vertex.screen_x = in_stack_fffffd64._16_4_;
-          vertex2_03.u = (int)in_stack_fffffd7c;
-          vertex2_03.v = (int)in_stack_fffffd80;
+          vertex2_03.projected_vertex.screen_y = in_stack_fffffd7c;
+          vertex2_03.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;
+          vertex2_03.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;
+          vertex2_03.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;
+          vertex2_03.projected_vertex.inv_z = in_stack_fffffd68._12_4_;
+          vertex2_03.projected_vertex.screen_x = in_stack_fffffd68._16_4_;
+          vertex2_03.u = (int)in_stack_fffffd80;
+          vertex2_03.v = (int)in_stack_fffffd84;
           vertex2_03.z = uVar13;
           vertex2_03.r = uVar14;
           vertex2_03.g = (int)output;
           vertex2_03.fog = (int)pCVar15;
-          engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd34,vertex2_03);
+          engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd38,vertex2_03);
           pSVar9 = g_CDemonRendererPtr2->vertex_buffer_ptr;
           pSVar8 = pSVar9 + 6;
-          piVar11 = (int *)&stack0xfffffd64;
+          piVar11 = (int *)&stack0xfffffd68;
           for (iVar7 = 0xc; iVar7 != 0; iVar7 = iVar7 + -1) {
             *piVar11 = (pSVar8->projected_vertex).transformed_x;
             pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar12 * -2 + 1) * 4);
             piVar11 = piVar11 + (uint)bVar12 * -2 + 1;
           }
           pSVar9 = pSVar9 + 5;
-          piVar11 = (int *)&stack0xfffffd34;
+          piVar11 = (int *)&stack0xfffffd38;
           for (iVar7 = 0xc; iVar7 != 0; iVar7 = iVar7 + -1) {
             *piVar11 = (pSVar9->projected_vertex).transformed_x;
             pSVar9 = (SRenderVertex *)((int)pSVar9 + ((uint)bVar12 * -2 + 1) * 4);
             piVar11 = piVar11 + (uint)bVar12 * -2 + 1;
           }
-          vertex2_04.projected_vertex.screen_y = in_stack_fffffd78;
-          vertex2_04.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;
-          vertex2_04.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;
-          vertex2_04.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;
-          vertex2_04.projected_vertex.inv_z = in_stack_fffffd64._12_4_;
-          vertex2_04.projected_vertex.screen_x = in_stack_fffffd64._16_4_;
-          vertex2_04.u = (int)in_stack_fffffd7c;
-          vertex2_04.v = (int)in_stack_fffffd80;
+          vertex2_04.projected_vertex.screen_y = in_stack_fffffd7c;
+          vertex2_04.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;
+          vertex2_04.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;
+          vertex2_04.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;
+          vertex2_04.projected_vertex.inv_z = in_stack_fffffd68._12_4_;
+          vertex2_04.projected_vertex.screen_x = in_stack_fffffd68._16_4_;
+          vertex2_04.u = (int)in_stack_fffffd80;
+          vertex2_04.v = (int)in_stack_fffffd84;
           vertex2_04.z = uVar13;
           vertex2_04.r = uVar14;
           vertex2_04.g = (int)output;
           vertex2_04.fog = (int)pCVar15;
-          engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd34,vertex2_04);
+          engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd38,vertex2_04);
           pSVar9 = g_CDemonRendererPtr2->vertex_buffer_ptr;
           pSVar8 = pSVar9 + 7;
-          piVar11 = (int *)&stack0xfffffd64;
+          piVar11 = (int *)&stack0xfffffd68;
           for (iVar7 = 0xc; iVar7 != 0; iVar7 = iVar7 + -1) {
             *piVar11 = (pSVar8->projected_vertex).transformed_x;
             pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar12 * -2 + 1) * 4);
             piVar11 = piVar11 + (uint)bVar12 * -2 + 1;
           }
           pSVar9 = pSVar9 + 6;
-          piVar11 = (int *)&stack0xfffffd34;
+          piVar11 = (int *)&stack0xfffffd38;
           for (iVar7 = 0xc; iVar7 != 0; iVar7 = iVar7 + -1) {
             *piVar11 = (pSVar9->projected_vertex).transformed_x;
             pSVar9 = (SRenderVertex *)((int)pSVar9 + ((uint)bVar12 * -2 + 1) * 4);
             piVar11 = piVar11 + (uint)bVar12 * -2 + 1;
           }
-          vertex2_05.projected_vertex.screen_y = in_stack_fffffd78;
-          vertex2_05.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;
-          vertex2_05.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;
-          vertex2_05.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;
-          vertex2_05.projected_vertex.inv_z = in_stack_fffffd64._12_4_;
-          vertex2_05.projected_vertex.screen_x = in_stack_fffffd64._16_4_;
-          vertex2_05.u = (int)in_stack_fffffd7c;
-          vertex2_05.v = (int)in_stack_fffffd80;
+          vertex2_05.projected_vertex.screen_y = in_stack_fffffd7c;
+          vertex2_05.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;
+          vertex2_05.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;
+          vertex2_05.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;
+          vertex2_05.projected_vertex.inv_z = in_stack_fffffd68._12_4_;
+          vertex2_05.projected_vertex.screen_x = in_stack_fffffd68._16_4_;
+          vertex2_05.u = (int)in_stack_fffffd80;
+          vertex2_05.v = (int)in_stack_fffffd84;
           vertex2_05.z = uVar13;
           vertex2_05.r = uVar14;
           vertex2_05.g = (int)output;
           vertex2_05.fog = (int)pCVar15;
-          engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd34,vertex2_05);
+          engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd38,vertex2_05);
           pSVar9 = g_CDemonRendererPtr2->vertex_buffer_ptr;
           pSVar8 = pSVar9 + 4;
-          piVar11 = (int *)&stack0xfffffd64;
+          piVar11 = (int *)&stack0xfffffd68;
           for (iVar7 = 0xc; iVar7 != 0; iVar7 = iVar7 + -1) {
             *piVar11 = (pSVar8->projected_vertex).transformed_x;
             pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar12 * -2 + 1) * 4);
             piVar11 = piVar11 + (uint)bVar12 * -2 + 1;
           }
           pSVar9 = pSVar9 + 7;
-          piVar11 = (int *)&stack0xfffffd34;
+          piVar11 = (int *)&stack0xfffffd38;
           for (iVar7 = 0xc; iVar7 != 0; iVar7 = iVar7 + -1) {
             *piVar11 = (pSVar9->projected_vertex).transformed_x;
             pSVar9 = (SRenderVertex *)((int)pSVar9 + ((uint)bVar12 * -2 + 1) * 4);
             piVar11 = piVar11 + (uint)bVar12 * -2 + 1;
           }
-          vertex2_06.projected_vertex.screen_y = in_stack_fffffd78;
-          vertex2_06.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;
-          vertex2_06.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;
-          vertex2_06.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;
-          vertex2_06.projected_vertex.inv_z = in_stack_fffffd64._12_4_;
-          vertex2_06.projected_vertex.screen_x = in_stack_fffffd64._16_4_;
-          vertex2_06.u = (int)in_stack_fffffd7c;
-          vertex2_06.v = (int)in_stack_fffffd80;
+          vertex2_06.projected_vertex.screen_y = in_stack_fffffd7c;
+          vertex2_06.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;
+          vertex2_06.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;
+          vertex2_06.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;
+          vertex2_06.projected_vertex.inv_z = in_stack_fffffd68._12_4_;
+          vertex2_06.projected_vertex.screen_x = in_stack_fffffd68._16_4_;
+          vertex2_06.u = (int)in_stack_fffffd80;
+          vertex2_06.v = (int)in_stack_fffffd84;
           vertex2_06.z = uVar13;
           vertex2_06.r = uVar14;
           vertex2_06.g = (int)output;
           vertex2_06.fog = (int)pCVar15;
-          engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd34,vertex2_06);
+          engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd38,vertex2_06);
           pSVar9 = g_CDemonRendererPtr2->vertex_buffer_ptr;
           pSVar8 = pSVar9 + 4;
-          piVar11 = (int *)&stack0xfffffd64;
+          piVar11 = (int *)&stack0xfffffd68;
           for (iVar7 = 0xc; iVar7 != 0; iVar7 = iVar7 + -1) {
             *piVar11 = (pSVar8->projected_vertex).transformed_x;
             pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar12 * -2 + 1) * 4);
             piVar11 = piVar11 + (uint)bVar12 * -2 + 1;
           }
-          piVar11 = (int *)&stack0xfffffd34;
+          piVar11 = (int *)&stack0xfffffd38;
           for (iVar7 = 0xc; iVar7 != 0; iVar7 = iVar7 + -1) {
             *piVar11 = (pSVar9->projected_vertex).transformed_x;
             pSVar9 = (SRenderVertex *)((int)pSVar9 + ((uint)bVar12 * -2 + 1) * 4);
             piVar11 = piVar11 + (uint)bVar12 * -2 + 1;
           }
-          vertex2_07.projected_vertex.screen_y = in_stack_fffffd78;
-          vertex2_07.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;
-          vertex2_07.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;
-          vertex2_07.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;
-          vertex2_07.projected_vertex.inv_z = in_stack_fffffd64._12_4_;
-          vertex2_07.projected_vertex.screen_x = in_stack_fffffd64._16_4_;
-          vertex2_07.u = (int)in_stack_fffffd7c;
-          vertex2_07.v = (int)in_stack_fffffd80;
+          vertex2_07.projected_vertex.screen_y = in_stack_fffffd7c;
+          vertex2_07.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;
+          vertex2_07.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;
+          vertex2_07.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;
+          vertex2_07.projected_vertex.inv_z = in_stack_fffffd68._12_4_;
+          vertex2_07.projected_vertex.screen_x = in_stack_fffffd68._16_4_;
+          vertex2_07.u = (int)in_stack_fffffd80;
+          vertex2_07.v = (int)in_stack_fffffd84;
           vertex2_07.z = uVar13;
           vertex2_07.r = uVar14;
           vertex2_07.g = (int)output;
           vertex2_07.fog = (int)pCVar15;
-          engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd34,vertex2_07);
+          engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd38,vertex2_07);
           pSVar9 = g_CDemonRendererPtr2->vertex_buffer_ptr;
           pSVar8 = pSVar9 + 5;
-          piVar11 = (int *)&stack0xfffffd64;
+          piVar11 = (int *)&stack0xfffffd68;
           for (iVar7 = 0xc; iVar7 != 0; iVar7 = iVar7 + -1) {
             *piVar11 = (pSVar8->projected_vertex).transformed_x;
             pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar12 * -2 + 1) * 4);
             piVar11 = piVar11 + (uint)bVar12 * -2 + 1;
           }
           pSVar9 = pSVar9 + 1;
-          piVar11 = (int *)&stack0xfffffd34;
+          piVar11 = (int *)&stack0xfffffd38;
           for (iVar7 = 0xc; iVar7 != 0; iVar7 = iVar7 + -1) {
             *piVar11 = (pSVar9->projected_vertex).transformed_x;
             pSVar9 = (SRenderVertex *)((int)pSVar9 + ((uint)bVar12 * -2 + 1) * 4);
             piVar11 = piVar11 + (uint)bVar12 * -2 + 1;
           }
-          vertex2_08.projected_vertex.screen_y = in_stack_fffffd78;
-          vertex2_08.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;
-          vertex2_08.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;
-          vertex2_08.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;
-          vertex2_08.projected_vertex.inv_z = in_stack_fffffd64._12_4_;
-          vertex2_08.projected_vertex.screen_x = in_stack_fffffd64._16_4_;
-          vertex2_08.u = (int)in_stack_fffffd7c;
-          vertex2_08.v = (int)in_stack_fffffd80;
+          vertex2_08.projected_vertex.screen_y = in_stack_fffffd7c;
+          vertex2_08.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;
+          vertex2_08.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;
+          vertex2_08.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;
+          vertex2_08.projected_vertex.inv_z = in_stack_fffffd68._12_4_;
+          vertex2_08.projected_vertex.screen_x = in_stack_fffffd68._16_4_;
+          vertex2_08.u = (int)in_stack_fffffd80;
+          vertex2_08.v = (int)in_stack_fffffd84;
           vertex2_08.z = uVar13;
           vertex2_08.r = uVar14;
           vertex2_08.g = (int)output;
           vertex2_08.fog = (int)pCVar15;
-          engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd34,vertex2_08);
+          engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd38,vertex2_08);
           pSVar9 = g_CDemonRendererPtr2->vertex_buffer_ptr;
           pSVar8 = pSVar9 + 6;
-          piVar11 = (int *)&stack0xfffffd64;
+          piVar11 = (int *)&stack0xfffffd68;
           for (iVar7 = 0xc; iVar7 != 0; iVar7 = iVar7 + -1) {
             *piVar11 = (pSVar8->projected_vertex).transformed_x;
             pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar12 * -2 + 1) * 4);
             piVar11 = piVar11 + (uint)bVar12 * -2 + 1;
           }
           pSVar9 = pSVar9 + 2;
-          piVar11 = (int *)&stack0xfffffd34;
+          piVar11 = (int *)&stack0xfffffd38;
           for (iVar7 = 0xc; iVar7 != 0; iVar7 = iVar7 + -1) {
             *piVar11 = (pSVar9->projected_vertex).transformed_x;
             pSVar9 = (SRenderVertex *)((int)pSVar9 + ((uint)bVar12 * -2 + 1) * 4);
             piVar11 = piVar11 + (uint)bVar12 * -2 + 1;
           }
-          vertex2_09.projected_vertex.screen_y = in_stack_fffffd78;
-          vertex2_09.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;
-          vertex2_09.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;
-          vertex2_09.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;
-          vertex2_09.projected_vertex.inv_z = in_stack_fffffd64._12_4_;
-          vertex2_09.projected_vertex.screen_x = in_stack_fffffd64._16_4_;
-          vertex2_09.u = (int)in_stack_fffffd7c;
-          vertex2_09.v = (int)in_stack_fffffd80;
+          vertex2_09.projected_vertex.screen_y = in_stack_fffffd7c;
+          vertex2_09.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;
+          vertex2_09.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;
+          vertex2_09.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;
+          vertex2_09.projected_vertex.inv_z = in_stack_fffffd68._12_4_;
+          vertex2_09.projected_vertex.screen_x = in_stack_fffffd68._16_4_;
+          vertex2_09.u = (int)in_stack_fffffd80;
+          vertex2_09.v = (int)in_stack_fffffd84;
           vertex2_09.z = uVar13;
           vertex2_09.r = uVar14;
           vertex2_09.g = (int)output;
           vertex2_09.fog = (int)pCVar15;
-          engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd34,vertex2_09);
+          engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd38,vertex2_09);
           pSVar9 = g_CDemonRendererPtr2->vertex_buffer_ptr;
           pSVar8 = pSVar9 + 7;
-          piVar11 = (int *)&stack0xfffffd64;
+          piVar11 = (int *)&stack0xfffffd68;
           for (iVar7 = 0xc; iVar7 != 0; iVar7 = iVar7 + -1) {
             *piVar11 = (pSVar8->projected_vertex).transformed_x;
             pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar12 * -2 + 1) * 4);
             piVar11 = piVar11 + (uint)bVar12 * -2 + 1;
           }
           pSVar9 = pSVar9 + 3;
-          piVar11 = (int *)&stack0xfffffd34;
+          piVar11 = (int *)&stack0xfffffd38;
           for (iVar7 = 0xc; iVar7 != 0; iVar7 = iVar7 + -1) {
             *piVar11 = (pSVar9->projected_vertex).transformed_x;
             pSVar9 = (SRenderVertex *)((int)pSVar9 + ((uint)bVar12 * -2 + 1) * 4);
             piVar11 = piVar11 + (uint)bVar12 * -2 + 1;
           }
-          vertex2_10.projected_vertex.screen_y = in_stack_fffffd78;
-          vertex2_10.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;
-          vertex2_10.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;
-          vertex2_10.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;
-          vertex2_10.projected_vertex.inv_z = in_stack_fffffd64._12_4_;
-          vertex2_10.projected_vertex.screen_x = in_stack_fffffd64._16_4_;
-          vertex2_10.u = (int)in_stack_fffffd7c;
-          vertex2_10.v = (int)in_stack_fffffd80;
+          vertex2_10.projected_vertex.screen_y = in_stack_fffffd7c;
+          vertex2_10.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;
+          vertex2_10.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;
+          vertex2_10.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;
+          vertex2_10.projected_vertex.inv_z = in_stack_fffffd68._12_4_;
+          vertex2_10.projected_vertex.screen_x = in_stack_fffffd68._16_4_;
+          vertex2_10.u = (int)in_stack_fffffd80;
+          vertex2_10.v = (int)in_stack_fffffd84;
           vertex2_10.z = uVar13;
           vertex2_10.r = uVar14;
           vertex2_10.g = (int)output;
           vertex2_10.fog = (int)pCVar15;
-          engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd34,vertex2_10);
+          engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd38,vertex2_10);
         }
         pCVar3 = local_20;
         pCVar15 = local_2c;
@@ -760,20 +754,20 @@ void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet
       }
       iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD0);
       if (iVar7 != 0) {
-        local_c4 = (CKeys *)((float)local_c4 + local_50);
+        local_c4 = local_c4 + local_50;
       }
-      pCVar16 = g_CKeysPtr;
+      in_stack_fffffdbc = 8.10605e-39;
+      in_stack_fffffdc0 = g_CKeysPtr;
       iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_DECIMAL);
       if (iVar7 != 0) {
-        local_c4 = (CKeys *)((float)local_c4 - local_50);
+        local_c4 = local_c4 - local_50;
       }
-      fVar17 = 8.106091e-39;
-      pCVar18 = g_CKeysPtr;
+      in_stack_fffffdc4 = 8.106091e-39;
       iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_EQUALS);
       if (iVar7 != 0) {
         local_4c = local_4c - local_60;
       }
-      pCVar19 = g_CKeysPtr;
+      in_stack_fffffdcc = 8.106132e-39;
       iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_MINUS);
       if (iVar7 != 0) {
         local_4c = local_4c + local_60;
@@ -784,28 +778,34 @@ void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet
       if ((float)1.57079632675 < local_c8) {
         local_c8 = 1.5707964;
       }
-      if ((float)local_c4 < (float)-1.57079632675) {
-        local_c4 = (CKeys *)((float)local_c4 + 6.283185f);
+      if (local_c4 < (float)-1.57079632675) {
+        local_c4 = local_c4 + 6.283185f;
       }
-      if ((float)1.57079632675 < (float)local_c4) {
-        local_c4 = (CKeys *)((float)local_c4 + -6.283185f);
+      if ((float)1.57079632675 < local_c4) {
+        local_c4 = local_c4 + -6.283185f;
       }
       if (local_4c < (float)0.5) {
         local_4c = 0.5;
       }
+      fVar17 = 4.06377e-44;
+      pCVar16 = g_CKeysPtr;
       iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);
+      pSVar6 = local_3c;
       if (iVar7 == 0) {
-        fVar20 = 8.106946e-39;
+        core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)&stack0xfffffdd8);
+        if ((SVDBox *)&stack0xfffffdd8 != pSVar6) {
+          pCVar16 = (CKeys *)(pSVar6->position).x;
+          fVar17 = (pSVar6->position).y;
+        }
+        fVar18 = 8.106946e-39;
         core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
                   (&local_3c->rotation_matrix,&local_17c);
         pSVar6 = local_3c;
-        this_ptr_00 = (CSlew *)&stack0xfffffdd8;
-        fVar21 = 8.107024e-39;
-        core_slew_cpp_CSlew_processInput_FUN_005a20b0(this_ptr_00);
+        core_slew_cpp_CSlew_processInput_FUN_005a20b0((CSlew *)&stack0xfffffdd8);
         if ((SVDBox *)&stack0xfffffdd8 != pSVar6) {
-          (pSVar6->position).x = fVar20;
-          (pSVar6->position).y = fVar21;
-          (pSVar6->position).z = (float)this_ptr_00;
+          (pSVar6->position).x = (float)pCVar16;
+          (pSVar6->position).y = fVar17;
+          (pSVar6->position).z = fVar18;
         }
         core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
                   (&local_3c->rotation_matrix,(CVector3f *)&stack0xfffffde4);
@@ -874,13 +874,13 @@ void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet
       if (iVar7 < 0xfa) {
         pSVar6 = local_40 + iVar7;
         if (pSVar6 != (SVDBox *)&stack0xfffffdbc) {
-          (pSVar6->position).x = (float)pCVar16;
-          (pSVar6->position).y = fVar17;
-          (pSVar6->position).z = (float)pCVar18;
+          (pSVar6->position).x = in_stack_fffffdbc;
+          (pSVar6->position).y = (float)in_stack_fffffdc0;
+          (pSVar6->position).z = in_stack_fffffdc4;
         }
         local_bc.z = 0.0;
         local_bc.x = 0.0;
-        local_bc.y = (float)pCVar19;
+        local_bc.y = in_stack_fffffdcc;
         local_18 = iVar7;
         core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
                   (&pSVar6->rotation_matrix,&local_bc);
@@ -987,7 +987,7 @@ LAB_00583c6f:
     if (((local_68.dword & 1) != 0) && ((g_MouseButtonFlags.dword & 1) == 0)) {
       local_188 = g_CDemonCameraInstance.base.position.x;
       local_184 = *local_6c;
-      local_180 = (float)*local_70;
+      local_180 = *local_70;
       core_dcamera_cpp_CDemonCamera_screenToWorldDirection_FUN_0044d480
                 (&g_CDemonCameraInstance,&local_d4,g_MouseX,g_MouseY);
       iVar7 = 0;
@@ -997,8 +997,7 @@ LAB_00583c6f:
         pCVar3 = &local_40->extents;
         do {
           core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
-                    (local_1c,(CVector3f *)(local_180 - local_40[iVar7].position.z),
-                     (CVector3f *)&stack0xfffffe0c);
+                    (local_1c,&local_110,(CVector3f *)&stack0xfffffe0c);
           core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
                     (local_1c,&local_98,(CVector3f *)&stack0xfffffe18);
           local_11c = -pCVar3->x;

@@ -8,7 +8,7 @@
 ; SScriptXRef *    Stack[0x8]:4   xref_data
 ;
 ; XREF[4]:
-;   core_msnedit.cpp_CDemonMission_FUN_0053ea30 at 0053eaf1
+;   core_msnedit.cpp_CDemonMission_buildScriptCrossReferences_FUN_0053ea30 at 0053eaf1
 ;   core_script.cpp_CCmdParse_applyActorParameters_FUN_00564090 at 00564131
 ;   core_script.cpp_CScript_extractCrossReferences_FUN_005671a0 at 005672fe
 ;   core_script.cpp_CScript_parseCommand_FUN_00567080 at 00567188

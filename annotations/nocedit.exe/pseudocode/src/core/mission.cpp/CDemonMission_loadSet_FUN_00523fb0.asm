@@ -12,9 +12,9 @@
 ;   core_mission.cpp_CDemonMission_createFromSingleSet_FUN_005243a0 at 00524405
 ;   core_mission.cpp_CDemonMission_process_FUN_00524250 at 00524366
 ;   core_mission.cpp_CDemonMission_run_FUN_00524420 at 0052447b
-;   core_msnedit.cpp_CDemonMission_FUN_0053c140 at 0053c1d1
-;   core_msnedit.cpp_CDemonMission_FUN_0053d7b0 at 0053d807
 ;   core_msnedit.cpp_CDemonMission_playMission_FUN_00538ba0 at 00538c5d
+;   core_msnedit.cpp_CDemonMission_rebuildWaypointConnectivity_FUN_0053d7b0 at 0053d807
+;   core_msnedit.cpp_CDemonMission_selectActor_FUN_0053c140 at 0053c1d1
 ;   core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0 at 00538898
 ;
 ; Referenced Globals:

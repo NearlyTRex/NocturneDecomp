@@ -13,18 +13,19 @@
   },
   "complexity": {
     "assembly_lines": 505,
-    "complexity_score": 731,
+    "complexity_score": 746,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 10,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 241,
-    "suspect_count": 47,
+    "suspect_count": 48,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "stack_param",
-      "unnamed_param"
+      "unnamed_param",
+      "warning_inlined_function"
     ],
     "total_lines": 746
   },
@@ -449,6 +450,14 @@
     "severity": "medium"
   },
   "suspects": [
+    {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
+    },
     {
       "description": "Unnamed function parameter",
       "line": 4,

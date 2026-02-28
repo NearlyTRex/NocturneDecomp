@@ -138,6 +138,7 @@
 #include "types/structs/SPose.h"
 #include "types/structs/SPoseData.h"
 #include "types/structs/SProjectedVertex.h"
+#include "types/structs/SPropertyFlag.h"
 #include "types/structs/SQuadVertices.h"
 #include "types/structs/SRA4HQPoint.h"
 #include "types/structs/SRGBColor.h"

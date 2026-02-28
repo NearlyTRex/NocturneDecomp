@@ -1,0 +1,60 @@
+// Name: core_msnedit.cpp_screenToWorldPosition_FUN_00535c60
+// Address: 00535c60
+// Address Range: [[00535c60, 00535de8]]
+// Convention: __cdecl
+// Signature: CVector3f * __cdecl core_msnedit_cpp_screenToWorldPosition_FUN_00535c60(CVector3f *out_world_pos,int screen_x,int screen_y)
+
+#include "nocturne.h"
+
+CVector3f * __cdecl core_msnedit_cpp_screenToWorldPosition_FUN_00535c60(CVector3f *out_world_pos,int screen_x,int screen_y)
+
+{
+  float fVar1;
+  float fVar2;
+  float fVar3;
+  float fVar4;
+  byte bVar5;
+  int aiStackY_1044 [1015];
+  CVector3i *input_ptr;
+  CVector3i local_5c [3];
+  CVector3i local_38;
+  CVector3f local_2c;
+  CVector3i local_20;
+  
+  bVar5 = 0;
+  core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0
+            (&g_CDemonCameraInstance,screen_x,screen_y,local_5c);
+  input_ptr = &local_38;
+  local_38.x = local_5c[0].x;
+  *(uint *)((int)&local_38 + (uint)bVar5 * -8 + 4) =
+       *(uint *)((int)local_5c + (uint)bVar5 * -8 + 4);
+  *(uint *)((int)&local_38 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
+       *(uint *)((int)local_5c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
+  core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370
+            (&g_CDemonCameraInstance,input_ptr,&local_20);
+  local_38.x = local_20.x;
+  *(uint *)((int)&local_38 + (uint)bVar5 * -8 + 4) =
+       *(uint *)((int)&local_20 + (uint)bVar5 * -8 + 4);
+  *(uint *)((int)&local_38 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
+       *(uint *)((int)&local_20 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
+  out_world_pos->x = (float)local_38.x * 0.00390625f;
+  out_world_pos->y = (float)local_38.y * 0.00390625f;
+  out_world_pos->z = (float)local_38.z * 0.00390625f;
+  if (10000.0f <
+      SQRT(out_world_pos->z * out_world_pos->z +
+           out_world_pos->x * out_world_pos->x + out_world_pos->y * out_world_pos->y)) {
+    fVar1 = out_world_pos->x - (float)g_CDemonCameraInstance.base.position.x;
+    fVar2 = out_world_pos->y - (float)g_CDemonCameraInstance.base.position.y;
+    fVar3 = out_world_pos->z - (float)g_CDemonCameraInstance.base.position.z;
+    fVar4 = 10000.0f / SQRT(fVar3 * fVar3 + fVar1 * fVar1 + fVar2 * fVar2);
+    fVar2 = (float)g_CDemonCameraInstance.base.position.y + fVar2 * fVar4;
+    fVar3 = (float)g_CDemonCameraInstance.base.position.z + fVar3 * fVar4;
+    if (out_world_pos != &local_2c) {
+      out_world_pos->x = (float)g_CDemonCameraInstance.base.position.x + fVar1 * fVar4;
+      out_world_pos->y = fVar2;
+      out_world_pos->z = fVar3;
+      return out_world_pos;
+    }
+  }
+  return out_world_pos;
+}

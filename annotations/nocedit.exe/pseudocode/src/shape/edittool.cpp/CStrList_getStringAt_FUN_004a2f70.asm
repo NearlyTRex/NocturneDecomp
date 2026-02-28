@@ -13,11 +13,11 @@
 ;   core_fileman.cpp_preprocessMusicFiles_FUN_004bd750 at 004bd7a6
 ;   core_mission.cpp_CDemonMission_FUN_00524c20 at 00524cb6
 ;   core_morph.cpp_CMorph_editMorph_FUN_0052bcb0 at 0052c9f3
-;   core_msnedit.cpp_CDemonMission_FUN_0053c210 at 0053c2e4
-;   core_msnedit.cpp_CDemonMission_FUN_0053cad0 at 0053cb66
-;   core_msnedit.cpp_CDemonMission_FUN_0053d8b0 at 0053d9ba
-;   core_msnedit.cpp_CDemonMission_FUN_0053dcf0 at 0053ddd7
-;   core_msnedit.cpp_CDemonMission_FUN_0053df90 at 0053e089
+;   core_msnedit.cpp_CDemonMission_changeActorType_FUN_0053d8b0 at 0053d9ba
+;   core_msnedit.cpp_CDemonMission_deleteMultipleActorsMenu_FUN_0053df90 at 0053e089
+;   core_msnedit.cpp_CDemonMission_editActorAtIndex_FUN_0053b030 at 0053b427
+;   core_msnedit.cpp_CDemonMission_editActorDetailed_FUN_0053b510 at 0053b907
+;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 0053ac4a
 ;   ... and 51 more
 ;
 ; *****************************************************************************

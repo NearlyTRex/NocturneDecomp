@@ -3,117 +3,117 @@
     "errors": [
       {
         "category": "other",
-        "column": 15,
+        "column": 17,
         "line": 91,
         "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
       },
       {
         "category": "other",
-        "column": 15,
+        "column": 17,
         "line": 92,
         "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
       },
       {
         "category": "other",
-        "column": 15,
+        "column": 17,
         "line": 93,
         "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
       },
       {
         "category": "other",
-        "column": 15,
-        "line": 96,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
-        "category": "other",
         "column": 17,
-        "line": 101,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 17,
-        "line": 102,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 17,
-        "line": 103,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 17,
-        "line": 108,
+        "line": 98,
         "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 46,
-        "line": 162,
+        "line": 152,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 39,
-        "line": 186,
+        "line": 176,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 65,
-        "line": 187,
+        "line": 177,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 257,
+        "line": 247,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 34,
-        "line": 261,
+        "line": 251,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 68,
-        "line": 268,
+        "line": 258,
         "message": "format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 20,
-        "line": 269,
+        "line": 259,
         "message": "format specifies type 'double' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 52,
-        "line": 269,
+        "line": 259,
         "message": "format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 85,
-        "line": 269,
+        "line": 259,
         "message": "format specifies type 'double' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
-        "category": "format_error",
-        "column": 20,
-        "line": 270,
-        "message": "format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]"
+        "category": "other",
+        "column": 80,
+        "line": 257,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 37,
-        "line": 273,
+        "line": 261,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "other",
+        "column": 39,
+        "line": 264,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 271,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 285,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 73,
+        "line": 293,
+        "message": "use of undeclared identifier 'stack0xfffff9d4'"
       }
     ],
     "success": false,
@@ -121,13 +121,13 @@
   },
   "complexity": {
     "assembly_lines": 1136,
-    "complexity_score": 718,
+    "complexity_score": 610,
     "cross_reference_count": 1,
     "function_call_count": 53,
     "global_count": 77,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 368,
-    "suspect_count": 31,
+    "pseudocode_lines": 355,
+    "suspect_count": 22,
     "suspect_types": [
       "decompiler_intrinsic",
       "format_string_mismatch",
@@ -135,10 +135,9 @@
       "stack_alignment_array",
       "stack_ref",
       "sub84_truncation",
-      "unknown_field",
-      "warning_deadcode_restart"
+      "unknown_field"
     ],
-    "total_lines": 1504
+    "total_lines": 1491
   },
   "cross_references": [
     {
@@ -1242,56 +1241,16 @@
   },
   "suspects": [
     {
-      "description": "Deadcode elimination delayed",
-      "line": 3,
-      "match": "WARNING: Restarted to delay deadcode elimination",
-      "severity": "mild",
-      "text": "/* WARNING: Restarted to delay deadcode elimination for space: stack */",
-      "type": "warning_deadcode_restart"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 25,
+      "line": 22,
       "match": "auStackY_107c",
       "severity": "moderate",
-      "text": "uint auStackY_107c [651];",
+      "text": "uint auStackY_107c [652];",
       "type": "stack_alignment_array"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 84,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "local_b0._8_4_ = 0.0;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 85,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "local_b0._4_4_ = 0.0;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 86,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "local_b0._0_4_ = 0.0;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 89,
-      "match": "._12_4_",
-      "severity": "mild",
-      "text": "local_b0._12_4_ = 0.0;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 94,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_b0._0_4_ = (pCVar10->position).x;",
@@ -1299,7 +1258,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 95,
+      "line": 85,
       "match": "._4_4_",
       "severity": "mild",
       "text": "local_b0._4_4_ = (pCVar4->base).base.location.position.y;",
@@ -1307,7 +1266,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 96,
+      "line": 86,
       "match": "._8_4_",
       "severity": "mild",
       "text": "local_b0._8_4_ = (pCVar4->base).base.location.position.z;",
@@ -1315,7 +1274,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 101,
+      "line": 91,
       "match": "._12_4_",
       "severity": "mild",
       "text": "local_b0._12_4_ = (pUVar11->vec).x;",
@@ -1323,7 +1282,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 114,
+      "line": 104,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_70 + ((uint)bVar16 * -2 + -1) * 4 + 8) =",
@@ -1331,7 +1290,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 115,
+      "line": 105,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_88 + (uint)bVar16 * -8 + 4);",
@@ -1339,7 +1298,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 116,
+      "line": 106,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_70 + ((uint)bVar16 * -2 + (uint)bVar16 * -2) * 4 + 8) =",
@@ -1347,7 +1306,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 117,
+      "line": 107,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_88 + (uint)bVar16 * -8 + (uint)bVar16 * -8 + 8);",
@@ -1355,7 +1314,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 121,
+      "line": 111,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_70 + ((uint)bVar16 * -2 + -1) * 4 + 8) =",
@@ -1363,7 +1322,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 122,
+      "line": 112,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_94 + (uint)bVar16 * -8 + 4);",
@@ -1371,7 +1330,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 123,
+      "line": 113,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_70 + ((uint)bVar16 * -2 + (uint)bVar16 * -2) * 4 + 8) =",
@@ -1379,7 +1338,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 124,
+      "line": 114,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_94 + (uint)bVar16 * -8 + (uint)bVar16 * -8 + 8);",
@@ -1387,7 +1346,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 205,
+      "line": 195,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)g_ScreenBufferArray + local_24));",
@@ -1395,7 +1354,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 261,
+      "line": 251,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "(double)(pCVar4->base).base.location.position.x,SUB84(__BITCAST_UINT64(dVar2),0),",
@@ -1403,7 +1362,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 261,
+      "line": 251,
       "match": "SUB84",
       "severity": "mild",
       "text": "(double)(pCVar4->base).base.location.position.x,SUB84(__BITCAST_UINT64(dVar2),0),",
@@ -1411,55 +1370,23 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 262,
+      "line": 252,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "(int)((ulonglong)dVar2 >> 0x20),SUB84(__BITCAST_UINT64(dVar1),0),(int)((ulonglong)dVar1 >> 0x20),",
+      "text": "(int)((ulonglong)dVar2 >> 0x20),SUB84(__BITCAST_UINT64(dVar1),0),(int)((ulonglong)dVar1 >> 0x20));",
       "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 262,
+      "line": 252,
       "match": "SUB84",
       "severity": "mild",
-      "text": "(int)((ulonglong)dVar2 >> 0x20),SUB84(__BITCAST_UINT64(dVar1),0),(int)((ulonglong)dVar1 >> 0x20),",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 263,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "SUB84(__BITCAST_UINT64(180 *",
-      "type": "sub84_truncation"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 263,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "SUB84(__BITCAST_UINT64(180 *",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 271,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "SUB84(__BITCAST_UINT64((double)this_ptr->debug_fudge_target->x),0));",
-      "type": "sub84_truncation"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 271,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "SUB84(__BITCAST_UINT64((double)this_ptr->debug_fudge_target->x),0));",
+      "text": "(int)((ulonglong)dVar2 >> 0x20),SUB84(__BITCAST_UINT64(dVar1),0),(int)((ulonglong)dVar1 >> 0x20));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Direct stack address reference",
-      "line": 300,
+      "line": 286,
       "match": "&stack0xfffff9d4",
       "severity": "moderate",
       "text": "sound_sndmain_cpp_CSfxSample_init_FUN_005a8480((CSfxSample *)&stack0xfffff9d4);",
@@ -1467,7 +1394,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 302,
+      "line": 288,
       "match": "&stack0xfffff9d4",
       "severity": "moderate",
       "text": "(uVar6,(CSfxSample *)&stack0xfffff9d4);",
@@ -1475,7 +1402,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 304,
+      "line": 290,
       "match": "&stack0xfffff9d4",
       "severity": "moderate",
       "text": "engine_2d_c_drawTextXY_FUN_00402130(0,iVar5,&stack0xfffff9d4);",
@@ -1487,7 +1414,7 @@
       "expected_args": 1,
       "format_string": "screen paint : %3.2f ms\\n",
       "function_name": "engine_console_cpp_CConsole_printf_FUN_00441890",
-      "line_number": 143,
+      "line_number": 133,
       "match": "engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,\"screen paint : %3.2f ms\\n\")",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"

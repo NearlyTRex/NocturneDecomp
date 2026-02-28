@@ -41,9 +41,9 @@
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_00523b70
 ;   core_mission.cpp_CDemonMission_buildSetActorList_FUN_00523e60
 ;   core_mission.cpp_CDemonMission_generateActorName_FUN_00524700
-;   core_msnedit.cpp_CDemonMission_FUN_0053c140
-;   core_msnedit.cpp_CDemonMission_FUN_0053d220
-;   core_msnedit.cpp_FUN_00535c60
+;   core_msnedit.cpp_CDemonMission_selectActor_FUN_0053c140
+;   core_msnedit.cpp_CDemonMission_validateNewActorName_FUN_0053d220
+;   core_msnedit.cpp_screenToWorldPosition_FUN_00535c60
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
 ;   shape_edittool.cpp_CPickList_ctor_FUN_004a3b90
@@ -162,8 +162,8 @@ section .text
     PUSH EAX                            ; 0053baef
     LEA EAX,[ESP + 0x434]               ; 0053baf0
     PUSH EAX                            ; 0053baf7
-    CALL core_msnedit.cpp_FUN_00535c60  ; 0053baf8
-        ;   XREF to: 00535c60 (UNCONDITIONAL_CALL)  ; float * core_msnedit.cpp_FUN_00535c60(float * param_1, int param_2, int param_3)
+    CALL core_msnedit.cpp_screenToWorldPosition_FUN_00535c60 ; 0053baf8
+        ;   XREF to: 00535c60 (UNCONDITIONAL_CALL)  ; CVector3f * core_msnedit.cpp_screenToWorldPosition_FUN_00535c60(CVector3f * out_world_pos, int screen_x, int screen_y)
     LEA EDX,[ESI + 0x20]                ; 0053bafd
     FLD float ptr [EAX]                 ; 0053bb00
     ADD ESP,0xc                         ; 0053bb02
@@ -218,8 +218,8 @@ section .text
     PUSH EBX                            ; 0053bb82
     MOV ESI,dword ptr [0x0067d550]      ; 0053bb83 | g_CDemonMissionPtr
     PUSH ESI                            ; 0053bb89 | g_CDemonMissionInstance
-    CALL core_msnedit.cpp_CDemonMission_FUN_0053d220 ; 0053bb8a
-        ;   XREF to: 0053d220 (UNCONDITIONAL_CALL)  ; int core_msnedit.cpp_CDemonMission_FUN_0053d220(CDemonMission * this_ptr)
+    CALL core_msnedit.cpp_CDemonMission_validateNewActorName_FUN_0053d220 ; 0053bb8a
+        ;   XREF to: 0053d220 (UNCONDITIONAL_CALL)  ; int core_msnedit.cpp_CDemonMission_validateNewActorName_FUN_0053d220(CDemonMission * this_ptr, char * orig_name, char * new_name)
     ADD ESP,0xc                         ; 0053bb8f
     TEST EAX,EAX                        ; 0053bb92
     JZ 0x0053bb53                       ; 0053bb94
@@ -268,8 +268,8 @@ section .text
     PUSH EBP                            ; 0053bbfe
     MOV EBX,dword ptr [ESP + 0x450]     ; 0053bbff
     PUSH EBX                            ; 0053bc06
-    CALL core_msnedit.cpp_CDemonMission_FUN_0053c140 ; 0053bc07
-        ;   XREF to: 0053c140 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_FUN_0053c140(CDemonMission * this_ptr, int param_2)
+    CALL core_msnedit.cpp_CDemonMission_selectActor_FUN_0053c140 ; 0053bc07
+        ;   XREF to: 0053c140 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_selectActor_FUN_0053c140(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 0053bc0c
         ;   Label: LAB_0053bc0c
     PUSH 0x0                            ; 0053bc0f

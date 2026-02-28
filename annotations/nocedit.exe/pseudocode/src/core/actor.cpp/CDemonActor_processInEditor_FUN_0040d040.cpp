@@ -40,10 +40,10 @@ void __cdecl core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(CDemonActor
     }
     iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_G);
     if (iVar2 != 0) {
-      core_msnedit_cpp_CDemonMission_FUN_0053c8d0(g_CDemonMissionPtr);
+      core_msnedit_cpp_CDemonMission_dropActorToGround_FUN_0053c8d0(g_CDemonMissionPtr,this_ptr);
     }
     if ((g_MouseButtonFlags.bytes[0] & 2) != 0) {
-      core_msnedit_cpp_CDemonMission_FUN_0053ca00(g_CDemonMissionPtr);
+      core_msnedit_cpp_CDemonMission_moveActorToMousePos_FUN_0053ca00(g_CDemonMissionPtr,this_ptr);
       return;
     }
   }

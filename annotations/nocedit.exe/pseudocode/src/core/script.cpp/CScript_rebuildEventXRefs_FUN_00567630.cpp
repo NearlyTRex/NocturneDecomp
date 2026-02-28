@@ -28,7 +28,7 @@ void __cdecl core_script_cpp_CScript_rebuildEventXRefs_FUN_00567630(CScript *thi
       core_script_cpp_CScript_parseCommand_FUN_00567080(this_ptr,(char *)*puVar1,&SStack_124);
     } while (iVar3 < this_ptr->parsed_line_count);
   }
-  core_msnedit_cpp_CDemonMission_FUN_0053ea30(g_CDemonMissionPtr);
+  core_msnedit_cpp_CDemonMission_buildScriptCrossReferences_FUN_0053ea30(g_CDemonMissionPtr);
   _qsort
             (this_ptr->xref_entries,this_ptr->xref_count,0x114,
              core_script_cpp_compareEventXRefs_FUN_005675a0);

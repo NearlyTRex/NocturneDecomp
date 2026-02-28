@@ -18,9 +18,9 @@
 ;   core_main.c_showDeveloperToolsMenu_FUN_005073a0 at 0050770d
 ;   core_main.c_showLicenseAgreement_FUN_005070f0 at 005072d2
 ;   core_morph.cpp_CMorph_editMorph_FUN_0052bcb0 at 0052c9be
-;   core_msnedit.cpp_CDemonMission_FUN_0053e220 at 0053e536
 ;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 0053998b
-;   core_msnedit.cpp_FUN_00535e70 at 00536a97
+;   core_msnedit.cpp_CDemonMission_editGore_FUN_0053e220 at 0053e536
+;   core_msnedit.cpp_showEditorHelpScreen_FUN_00535e70 at 00536a97
 ;   core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660 at 0057e03b
 ;   core_setedit.cpp_CDemonSet_showScenePreview_FUN_0057a940 at 0057ab94
 ;   ... and 5 more

@@ -77,7 +77,7 @@ void __cdecl core_hero_cpp_CHero_archive_FUN_004f2610(CHero *this_ptr)
         core_inv_cpp_CInventory_save_FUN_004ff210(&this_ptr->inventory,g_ActorDataFile);
         return;
       }
-      core_inv_cpp_CInventory_load_FUN_004ff400(&this_ptr->inventory);
+      core_inv_cpp_CInventory_load_FUN_004ff400(&this_ptr->inventory,g_ActorDataFile);
       return;
     }
   }

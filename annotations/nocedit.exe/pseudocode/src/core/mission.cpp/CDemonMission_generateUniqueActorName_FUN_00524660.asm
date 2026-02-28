@@ -12,7 +12,7 @@
 ;
 ; XREF[2]:
 ;   core_mission.cpp_CDemonMission_generateActorName_FUN_00524700 at 0052472d
-;   core_msnedit.cpp_CDemonMission_FUN_0053bd80 at 0053bf11
+;   core_msnedit.cpp_CDemonMission_replicateActor_FUN_0053bd80 at 0053bf11
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_d_0063933e

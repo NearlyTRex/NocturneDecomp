@@ -33,6 +33,7 @@
 #include "types/structs/SFontGlyph.h"
 #include "types/structs/SMRGLLightPrimitive.h"
 #include "types/structs/SMRGLTextureBasic.h"
+#include "types/structs/SPropertyFlag.h"
 #include "types/structs/SResolutionEntry.h"
 
 // =============================================================================
@@ -227,6 +228,9 @@ extern SMRGLTextureBasic g_LightTextures[20];
 
 // SMRGLTextureBasic[6]
 extern SMRGLTextureBasic SMRGLTextureBasic_ARRAY_0066e6b0[6];
+
+// SPropertyFlag[2]
+extern SPropertyFlag SPropertyFlag_ARRAY_0066e30c[2];
 
 // SResolutionEntry[9]
 extern SResolutionEntry g_ResolutionTable[9];

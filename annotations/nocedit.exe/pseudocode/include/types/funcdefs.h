@@ -52,6 +52,7 @@
 #include "types/funcdefs/APIDLL_updateTextureBGRA.h"
 #include "types/funcdefs/CActorPropertyActionFunc.h"
 #include "types/funcdefs/CActorPropertyDisplayFunc.h"
+#include "types/funcdefs/CActorPropertyFilterFunc.h"
 #include "types/funcdefs/CActorPropertyValidatorFunc.h"
 #include "types/funcdefs/CCharacter_applyDamage.h"
 #include "types/funcdefs/CCharacter_attractActorToward.h"

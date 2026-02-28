@@ -8,8 +8,8 @@
 ;
 ; XREF[3]:
 ;   core_game.cpp_CGame_process_FUN_004e3190 at 004e3451
-;   core_msnedit.cpp_CDemonMission_FUN_0053e220 at 0053e516
 ;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 00539925
+;   core_msnedit.cpp_CDemonMission_editGore_FUN_0053e220 at 0053e516
 ;
 ; Referenced Globals:
 ;   CSmokeParticle[2048] g_SmokeParticlePool

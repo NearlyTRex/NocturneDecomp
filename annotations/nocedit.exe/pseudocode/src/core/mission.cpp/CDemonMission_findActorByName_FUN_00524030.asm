@@ -15,9 +15,9 @@
 ;   core_mission.cpp_CDemonMission_FUN_00524c20 at 00524cc0
 ;   core_mission.cpp_CDemonMission_generateUniqueActorName_FUN_00524660 at 005246c4
 ;   core_mission.cpp_CDemonMission_loadActor_FUN_00523990 at 00523a8f
-;   core_msnedit.cpp_CDemonMission_FUN_0053c210 at 0053c2f5
-;   core_msnedit.cpp_CDemonMission_FUN_0053cad0 at 0053cb77
-;   core_msnedit.cpp_CDemonMission_FUN_0053d220 at 0053d373
+;   core_msnedit.cpp_CDemonMission_deleteMultipleActorsMenu_FUN_0053df90 at 0053e093
+;   core_msnedit.cpp_CDemonMission_editActorAtIndex_FUN_0053b030 at 0053b2e6
+;   core_msnedit.cpp_CDemonMission_editActorDetailed_FUN_0053b510 at 0053b7c6
 ;   ... and 11 more
 ;
 ; Called Functions:

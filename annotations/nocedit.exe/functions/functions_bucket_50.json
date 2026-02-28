@@ -61303,7 +61303,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_msnedit.cpp_FUN_00536cd0",
+    "name":"core_msnedit.cpp_drawClickableButton_FUN_00536cd0",
     "ret":"int",
     "vars":{
       "locals":[
@@ -61374,7 +61374,7 @@
       ],
       "params":[
         {
-          "name":"param_1",
+          "name":"text",
           "storage":{
             "offset":4,
             "size":4,
@@ -61390,7 +61390,7 @@
           "type":"char*"
         },
         {
-          "name":"param_2",
+          "name":"x",
           "storage":{
             "offset":8,
             "size":4,
@@ -61406,7 +61406,7 @@
           "type":"int"
         },
         {
-          "name":"param_3",
+          "name":"y",
           "storage":{
             "offset":12,
             "size":4,
@@ -61422,7 +61422,7 @@
           "type":"int"
         },
         {
-          "name":"param_4",
+          "name":"consume_click",
           "storage":{
             "offset":16,
             "size":4,
@@ -61438,7 +61438,7 @@
           "type":"int"
         },
         {
-          "name":"param_5",
+          "name":"highlighted",
           "storage":{
             "offset":20,
             "size":4,
@@ -61527,12 +61527,12 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_msnedit.cpp_FUN_00537dd0",
+    "name":"core_msnedit.cpp_copyFile_FUN_00537dd0",
     "ret":"void",
     "vars":{
       "params":[
         {
-          "name":"param_1",
+          "name":"src_filename",
           "storage":{
             "offset":4,
             "size":4,
@@ -61548,7 +61548,7 @@
           "type":"char*"
         },
         {
-          "name":"param_2",
+          "name":"dest_filename",
           "storage":{
             "offset":8,
             "size":4,
@@ -61564,7 +61564,7 @@
           "type":"char*"
         },
         {
-          "name":"param_3",
+          "name":"directory",
           "storage":{
             "offset":12,
             "size":4,
@@ -61643,7 +61643,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_msnedit.cpp_CDemonMission_FUN_0053c8d0",
+    "name":"core_msnedit.cpp_CDemonMission_dropActorToGround_FUN_0053c8d0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -61680,6 +61680,22 @@
             ]
           },
           "type":"CDemonMission*"
+        },
+        {
+          "name":"actor",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonActor*"
         }
       ]
     }
@@ -61695,7 +61711,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_msnedit.cpp_CDemonMission_FUN_0053cad0",
+    "name":"core_msnedit.cpp_CDemonMission_pickActorDialog_FUN_0053cad0",
     "ret":"int",
     "vars":{
       "locals":[
@@ -61734,7 +61750,7 @@
           "type":"CDemonMission*"
         },
         {
-          "name":"param_2",
+          "name":"class_type",
           "storage":{
             "offset":8,
             "size":4,
@@ -61747,10 +61763,10 @@
               }
             ]
           },
-          "type":"int"
+          "type":"CDemonActor*"
         },
         {
-          "name":"param_3",
+          "name":"title",
           "storage":{
             "offset":12,
             "size":4,
@@ -61766,7 +61782,7 @@
           "type":"char*"
         },
         {
-          "name":"param_4",
+          "name":"out_actor",
           "storage":{
             "offset":16,
             "size":4,
@@ -61779,10 +61795,10 @@
               }
             ]
           },
-          "type":"int*"
+          "type":"CDemonActor**"
         },
         {
-          "name":"param_5",
+          "name":"allow_none",
           "storage":{
             "offset":20,
             "size":4,
@@ -61798,7 +61814,7 @@
           "type":"int"
         },
         {
-          "name":"param_6",
+          "name":"class_name",
           "storage":{
             "offset":24,
             "size":4,
@@ -61811,10 +61827,10 @@
               }
             ]
           },
-          "type":"int"
+          "type":"char*"
         },
         {
-          "name":"param_7",
+          "name":"filter_func",
           "storage":{
             "offset":28,
             "size":4,
@@ -61827,10 +61843,10 @@
               }
             ]
           },
-          "type":"int"
+          "type":"CActorPropertyFilterFunc*"
         },
         {
-          "name":"param_8",
+          "name":"preselect",
           "storage":{
             "offset":32,
             "size":4,

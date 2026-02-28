@@ -6,7 +6,7 @@
 ;
 ; XREF[8]:
 ;   core_menu.cpp_configureSoundOptions_FUN_00511e50 at 0051251d
-;   core_msnedit.cpp_CDemonMission_FUN_0053eb40 at 0053eb66
+;   core_msnedit.cpp_CDemonMission_playSound_FUN_0053eb40 at 0053eb66
 ;   core_sound.cpp_CSound_init_FUN_005b2dd0 at 005b2e38
 ;   sound_sndmain.cpp_enableSoundSystem_FUN_005aaef0 at 005aaf0b
 ;   sound_sndmain.cpp_setMaxSwSoundLatency_FUN_005abeb0 at 005abeb0

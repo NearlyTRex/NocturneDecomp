@@ -1,0 +1,533 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "incompatible_types",
+        "column": 14,
+        "line": 39,
+        "message": "incompatible pointer types assigning to 'CDemonActor *' from 'CEnemy *'"
+      },
+      {
+        "category": "other",
+        "column": 74,
+        "line": 52,
+        "message": "C-style cast from 'struct CDemonActor *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 53,
+        "message": "C-style cast from 'struct CDemonActor *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 18,
+        "line": 55,
+        "message": "C-style cast from 'struct CDemonActor *' to 'float' is not allowed"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 14,
+        "line": 57,
+        "message": "incompatible pointer types assigning to 'CDemonActor *' from 'CAmmo *'"
+      },
+      {
+        "category": "other",
+        "column": 28,
+        "line": 59,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 14,
+        "line": 63,
+        "message": "incompatible pointer types assigning to 'CDemonActor *' from 'CHealthItem *'"
+      },
+      {
+        "category": "format_error",
+        "column": 62,
+        "line": 67,
+        "message": "format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 56,
+        "line": 68,
+        "message": "format specifies type 'int' but the argument has type 'float' [-Werror,-Wformat]"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 78,
+        "message": "member reference base type 'double' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 79,
+        "message": "member reference base type 'double' is not a structure or union"
+      },
+      {
+        "category": "format_error",
+        "column": 45,
+        "line": 81,
+        "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 83,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 85,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 88,
+        "message": "member reference base type 'double' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 55,
+        "line": 89,
+        "message": "member reference base type 'double' is not a structure or union"
+      },
+      {
+        "category": "format_error",
+        "column": 45,
+        "line": 91,
+        "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 364,
+    "complexity_score": 190,
+    "cross_reference_count": 1,
+    "function_call_count": 8,
+    "global_count": 20,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 105,
+    "suspect_count": 7,
+    "suspect_types": [
+      "decompiler_intrinsic",
+      "unknown_field",
+      "warning_inlined_function"
+    ],
+    "total_lines": 469
+  },
+  "cross_references": [
+    {
+      "addr": "005381e0",
+      "from_addr": "0053883c",
+      "name": "core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0053d3b0",
+    "address_range": [
+      [
+        "0053d3b0",
+        "0053d7a3"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_msnedit.cpp_CDemonMission_showDifficultyStats_FUN_0053d3b0",
+    "signature": "void __cdecl core_msnedit_cpp_CDemonMission_showDifficultyStats_FUN_0053d3b0(CDemonMission *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c790",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790"
+    },
+    {
+      "addr": "005fe6b0",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    },
+    {
+      "addr": "005fdbd0",
+      "is_variadic": true,
+      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
+    },
+    {
+      "addr": "005fe7f0",
+      "is_variadic": false,
+      "name": "crt_string.c__stricmp_FUN_005fe7f0"
+    },
+    {
+      "addr": "004a3b90",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_ctor_FUN_004a3b90"
+    },
+    {
+      "addr": "004a3e20",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20"
+    },
+    {
+      "addr": "004a3c80",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_dtor_FUN_004a3c80"
+    },
+    {
+      "addr": "004a2b80",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_add_FUN_004a2b80"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063cbe7",
+      "name": "s_EmptyChar_0063cbe7",
+      "type": "char",
+      "value": "\u0000"
+    },
+    {
+      "addr": "0063cbe8",
+      "name": "s_none_0063cbe8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063cbed",
+      "name": "s_true_0063cbed",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063cbf2",
+      "name": "s_s_g_hp_x_i_g_hp_0063cbf2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063cc0a",
+      "name": "s_s_s_s_d_0063cc0a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063cc16",
+      "name": "s_s_g_hp_x_d_uses_g_hp_0063cc16",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063cc31",
+      "name": "s_Total_enemy_HP_g_0063cc31",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063cc43",
+      "name": "s_Total_g_hp_0063cc43",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063cc53",
+      "name": "s_Total_ammo_d_0063cc53",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063cc61",
+      "name": "s_Total_d_0063cc61",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063cc6c",
+      "name": "s_Total_health_items_g_0063cc6c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063cc82",
+      "name": "s_Total_g_hp_0063cc82",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063cc92",
+      "name": "s_Mission_difficulty_stats_0063cc92",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063ccc8",
+      "name": "s_Enemy_detail_0063ccc8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063ccd5",
+      "name": "s_Ammo_detail_0063ccd5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063cce1",
+      "name": "s_Health_detail_0063cce1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063ccf0",
+      "name": "FLOAT_0063ccf0",
+      "type": "float",
+      "value": "100"
+    },
+    {
+      "addr": "008223a4",
+      "name": "g_CAmmoClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf2bf0",
+      "name": "g_CEnemyClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02db87b8",
+      "name": "DAT_02db8780.name_hash",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0053883c",
+        "call_type": "direct",
+        "caller": "core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "reg_params": [],
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.4144736842105265,
+    "instruction_count": 304,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BRANCH": 1,
+      "CALL": 36,
+      "CBRANCH": 12,
+      "COPY": 372,
+      "FLOAT2FLOAT": 22,
+      "FLOAT_ADD": 2,
+      "FLOAT_MULT": 5,
+      "INT2FLOAT": 2,
+      "INT_ADD": 126,
+      "INT_AND": 118,
+      "INT_CARRY": 36,
+      "INT_EQUAL": 110,
+      "INT_LESS": 8,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 8,
+      "INT_SCARRY": 36,
+      "INT_SLESS": 55,
+      "INT_SUB": 140,
+      "INT_XOR": 3,
+      "LOAD": 39,
+      "POPCOUNT": 55,
+      "RETURN": 1,
+      "ROUND": 1,
+      "STORE": 148,
+      "TRUNC": 1
+    },
+    "pcode_op_count": 1342
+  },
+  "stack_frame": {
+    "frame_size": 4320,
+    "local_size": 4316,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_10d8",
+        "offset": -4312,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_10cc",
+        "offset": -4300,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_10c4",
+        "offset": -4292,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_d1c",
+        "offset": -3356,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_974",
+        "offset": -2420,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_5cc",
+        "offset": -1484,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_224",
+        "offset": -548,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonMission *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 43,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_28 = (int)ROUND(ROUND(local_14 * 100.0f));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 43,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_28 = (int)ROUND(ROUND(local_14 * 100.0f));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 71,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "uVar1 = local_30._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 72,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "_sprintf(local_224,\"Total enemy HP\\t%g\",local_30._0_4_);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 81,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "uVar1 = local_30._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 82,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "_sprintf(local_224,\"Total health items\\t%g\",local_30._0_4_);",
+      "type": "unknown_field"
+    }
+  ]
+}

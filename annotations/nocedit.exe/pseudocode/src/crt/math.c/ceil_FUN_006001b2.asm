@@ -10,7 +10,7 @@
 ; undefined8       Stack[-0xc]:8  local_c
 ;
 ; XREF[5]:
-;   core_msnedit.cpp_FUN_00536e20 at 00537096
+;   core_msnedit.cpp_drawMotionBar_FUN_00536e20 at 00537096
 ;   core_skeleton.cpp_CDeformableModelInstance_getRootMotionDelta_FUN_005a0d10 at 005a0d8c
 ;   core_trigger.cpp_CTrigger_calculateTestRadius_FUN_005e0ba0 at 005e0c0b
 ;   shape_design.c_sampleAndFilterPixel_FUN_0046ae20 at 0046aee1

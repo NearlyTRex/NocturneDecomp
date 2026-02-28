@@ -14,7 +14,7 @@
 ;
 ; XREF[5]:
 ;   core_event.cpp_CEventList_updateSfxEntries_FUN_004b0db0 at 004b0df3
-;   core_msnedit.cpp_CDemonMission_FUN_0053eb40 at 0053ebc9
+;   core_msnedit.cpp_CDemonMission_playSound_FUN_0053eb40 at 0053ebc9
 ;   core_tommygun.cpp_CTommyGun_process_FUN_005de360 at 005de43f
 ;   core_turret.cpp_CTurret_process_FUN_005e2430 at 005e28bb
 ;   sound_sndmain.cpp_testSoundFile_FUN_005ad3b0 at 005ad560

@@ -27,7 +27,8 @@ void __cdecl core_teleport_cpp_CTeleport_processInEditor_FUN_005dabe0(CTeleport 
     iVar2 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
                       (g_CEditorToolsPtr,"Switch to destination %s",this_ptr->destination);
     if (iVar2 != 0) {
-      core_msnedit_cpp_CDemonMission_FUN_0053c140(g_CDemonMissionPtr,(int)this_ptr->destination);
+      core_msnedit_cpp_CDemonMission_selectActor_FUN_0053c140
+                (g_CDemonMissionPtr,this_ptr->destination);
       return;
     }
   }

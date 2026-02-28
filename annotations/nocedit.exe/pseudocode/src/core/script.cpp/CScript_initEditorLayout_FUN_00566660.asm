@@ -12,7 +12,7 @@
 ;
 ; XREF[2]:
 ;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 0053aa0a
-;   core_msnedit.cpp_FUN_005374b0 at 005374d8
+;   core_msnedit.cpp_setEditorLayoutMode_FUN_005374b0 at 005374d8
 ;
 ; Referenced Globals:
 ;   CBitFont* g_ConsoleFont

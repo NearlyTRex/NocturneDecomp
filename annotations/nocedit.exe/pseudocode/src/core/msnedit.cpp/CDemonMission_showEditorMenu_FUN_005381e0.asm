@@ -47,12 +47,12 @@
 ;   core_mission.cpp_CDemonMission_loadSet_FUN_00523fb0
 ;   core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0
 ;   core_mission.cpp_CDemonMission_save_FUN_00522e30
+;   core_msnedit.cpp_buildActorClassHierarchy_FUN_00537330
 ;   core_msnedit.cpp_CDemonMission_addSet_FUN_00538d60
 ;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0
+;   core_msnedit.cpp_CDemonMission_editGore_FUN_0053e220
 ;   core_msnedit.cpp_CDemonMission_enemyRandomizer_FUN_005379e0
-;   core_msnedit.cpp_CDemonMission_FUN_00538f90
-;   core_msnedit.cpp_CDemonMission_FUN_0053d3b0
-;   core_msnedit.cpp_CDemonMission_FUN_0053d7b0
+;   core_msnedit.cpp_CDemonMission_importActors_FUN_0053ccf0
 ;   ... and 36 more
 ;
 ; *****************************************************************************
@@ -461,8 +461,8 @@ section .text
     MOV EAX,0x63c080                    ; 0053865e | = "Select set to delete."
     PUSH EAX                            ; 00538663 | = "Select set to delete."
     PUSH EBP                            ; 00538664
-    CALL core_msnedit.cpp_CDemonMission_FUN_00538f90 ; 00538665
-        ;   XREF to: 00538f90 (UNCONDITIONAL_CALL)  ; int core_msnedit.cpp_CDemonMission_FUN_00538f90(CDemonMission * this_ptr, char * param_2, int param_3)
+    CALL core_msnedit.cpp_CDemonMission_pickSet_FUN_00538f90 ; 00538665
+        ;   XREF to: 00538f90 (UNCONDITIONAL_CALL)  ; int core_msnedit.cpp_CDemonMission_pickSet_FUN_00538f90(CDemonMission * this_ptr, char * title, int selected_index)
     ADD ESP,0xc                         ; 0053866a
     MOV EBX,EAX                         ; 0053866d
     TEST EAX,EAX                        ; 0053866f
@@ -494,8 +494,8 @@ section .text
     MOV EAX,0x63c0ec                    ; 005386b1 | = "Edit actors in which set?"
     PUSH EAX                            ; 005386b6 | = "Edit actors in which set?"
     PUSH EBP                            ; 005386b7
-    CALL core_msnedit.cpp_CDemonMission_FUN_00538f90 ; 005386b8
-        ;   XREF to: 00538f90 (UNCONDITIONAL_CALL)  ; int core_msnedit.cpp_CDemonMission_FUN_00538f90(CDemonMission * this_ptr, char * param_2, int param_3)
+    CALL core_msnedit.cpp_CDemonMission_pickSet_FUN_00538f90 ; 005386b8
+        ;   XREF to: 00538f90 (UNCONDITIONAL_CALL)  ; int core_msnedit.cpp_CDemonMission_pickSet_FUN_00538f90(CDemonMission * this_ptr, char * title, int selected_index)
     ADD ESP,0xc                         ; 005386bd
     MOV EBX,EAX                         ; 005386c0
     TEST EAX,EAX                        ; 005386c2
@@ -646,8 +646,8 @@ section .text
         ;   XREF to: 005384ec (UNCONDITIONAL_JUMP)  ; LAB_005384ec
     PUSH EBP                            ; 0053883b
         ;   Label: LAB_0053883b
-    CALL core_msnedit.cpp_CDemonMission_FUN_0053d3b0 ; 0053883c
-        ;   XREF to: 0053d3b0 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_FUN_0053d3b0(CDemonMission * this_ptr)
+    CALL core_msnedit.cpp_CDemonMission_showDifficultyStats_FUN_0053d3b0 ; 0053883c
+        ;   XREF to: 0053d3b0 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_showDifficultyStats_FUN_0053d3b0(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 00538841
     JMP 0x005384ec                      ; 00538844
         ;   XREF to: 005384ec (UNCONDITIONAL_JUMP)  ; LAB_005384ec
@@ -656,8 +656,8 @@ section .text
     PUSH EDX                            ; 0053884c
     PUSH 0x63c18c                       ; 0053884d | = "Edit gore in which set?"
     PUSH EBP                            ; 00538852
-    CALL core_msnedit.cpp_CDemonMission_FUN_00538f90 ; 00538853
-        ;   XREF to: 00538f90 (UNCONDITIONAL_CALL)  ; int core_msnedit.cpp_CDemonMission_FUN_00538f90(CDemonMission * this_ptr, char * param_2, int param_3)
+    CALL core_msnedit.cpp_CDemonMission_pickSet_FUN_00538f90 ; 00538853
+        ;   XREF to: 00538f90 (UNCONDITIONAL_CALL)  ; int core_msnedit.cpp_CDemonMission_pickSet_FUN_00538f90(CDemonMission * this_ptr, char * title, int selected_index)
     MOV EBX,EAX                         ; 00538858
     ADD ESP,0xc                         ; 0053885a
     TEST EAX,EAX                        ; 0053885d
@@ -685,8 +685,8 @@ section .text
         ;   XREF to: 00523fb0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_loadSet_FUN_00523fb0(CDemonMission * this_ptr, int set_index)
     ADD ESP,0x8                         ; 0053889d
     PUSH EBP                            ; 005388a0
-    CALL core_msnedit.cpp_CDemonMission_FUN_0053e220 ; 005388a1
-        ;   XREF to: 0053e220 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_FUN_0053e220(CDemonMission * this_ptr)
+    CALL core_msnedit.cpp_CDemonMission_editGore_FUN_0053e220 ; 005388a1
+        ;   XREF to: 0053e220 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_editGore_FUN_0053e220(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 005388a6
     JMP 0x005384ec                      ; 005388a9
         ;   XREF to: 005384ec (UNCONDITIONAL_JUMP)  ; LAB_005384ec
@@ -700,8 +700,8 @@ section .text
     PUSH 0x0                            ; 005388bb
     LEA EAX,[ESP + 0x8]                 ; 005388bd
     PUSH EAX                            ; 005388c1
-    CALL core_msnedit.cpp_FUN_00537330  ; 005388c2
-        ;   XREF to: 00537330 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_FUN_00537330(CStrList * param_1, int param_2, int param_3)
+    CALL core_msnedit.cpp_buildActorClassHierarchy_FUN_00537330 ; 005388c2
+        ;   XREF to: 00537330 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_buildActorClassHierarchy_FUN_00537330(CStrList * class_list, CDemonActor * parent_class, int indent_level)
     ADD ESP,0xc                         ; 005388c7
     PUSH 0x1                            ; 005388ca
     LEA EAX,[ESP + 0x4]                 ; 005388cc
@@ -732,8 +732,8 @@ section .text
         ;   XREF to: 005384e9 (UNCONDITIONAL_JUMP)  ; LAB_005384e9
     PUSH EBP                            ; 0053890f
         ;   Label: LAB_0053890f
-    CALL core_msnedit.cpp_CDemonMission_FUN_0053ec80 ; 00538910
-        ;   XREF to: 0053ec80 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_FUN_0053ec80(CDemonMission * this_ptr)
+    CALL core_msnedit.cpp_CDemonMission_showSoundFilesInMission_FUN_0053ec80 ; 00538910
+        ;   XREF to: 0053ec80 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_showSoundFilesInMission_FUN_0053ec80(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 00538915
     JMP 0x005384ec                      ; 00538918
         ;   XREF to: 005384ec (UNCONDITIONAL_JUMP)  ; LAB_005384ec
@@ -835,8 +835,8 @@ section .text
         ;   XREF to: 005389f8 (UNCONDITIONAL_JUMP)  ; LAB_005389f8
     PUSH EBP                            ; 00538a48
         ;   Label: LAB_00538a48
-    CALL core_msnedit.cpp_CDemonMission_FUN_0053d7b0 ; 00538a49
-        ;   XREF to: 0053d7b0 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_FUN_0053d7b0(CDemonMission * this_ptr)
+    CALL core_msnedit.cpp_CDemonMission_rebuildWaypointConnectivity_FUN_0053d7b0 ; 00538a49
+        ;   XREF to: 0053d7b0 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_rebuildWaypointConnectivity_FUN_0053d7b0(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 00538a4e
     JMP 0x005384ec                      ; 00538a51
         ;   XREF to: 005384ec (UNCONDITIONAL_JUMP)  ; LAB_005384ec

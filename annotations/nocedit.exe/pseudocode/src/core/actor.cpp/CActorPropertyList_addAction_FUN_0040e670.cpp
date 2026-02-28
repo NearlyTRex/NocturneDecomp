@@ -14,7 +14,7 @@ CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addAction_FUN_0040e67
   pCVar1 = core_actor_cpp_CActorPropertyList_snag_FUN_0040e6c0
                      (this_ptr,PROP_ACTION,property_name,(void *)0x0,
                       (CActorPropertyValidatorFunc *)0x0);
-  (pCVar1->data).v_string_ptr = (char *)display_callback;
+  (pCVar1->data).v_display_func_ptr = display_callback;
   (pCVar1->callback).v_action_func = action_callback;
   return pCVar1;
 }

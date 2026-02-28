@@ -14,8 +14,8 @@
 ; XREF[7]:
 ;   core_main.c_showDeveloperToolsMenu_FUN_005073a0 at 005075f5
 ;   core_main.c_showLicenseAgreement_FUN_005070f0 at 0050720a
-;   core_msnedit.cpp_CDemonMission_FUN_0053c4f0 at 0053c674
-;   core_msnedit.cpp_FUN_00535e70 at 00536a77
+;   core_msnedit.cpp_CDemonMission_drawPropertyPanel_FUN_0053c4f0 at 0053c674
+;   core_msnedit.cpp_showEditorHelpScreen_FUN_00535e70 at 00536a77
 ;   core_script.cpp_CScript_drawEditor_FUN_005645d0 at 00564660
 ;   core_setedit.cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0 at 00577bde
 ;   shape_edittool.cpp_CPickList_renderDialog_FUN_004a4d40 at 004a4f11

@@ -19,17 +19,18 @@
   },
   "complexity": {
     "assembly_lines": 266,
-    "complexity_score": 385,
+    "complexity_score": 400,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 26,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 120,
-    "suspect_count": 25,
+    "suspect_count": 26,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
-      "stack_alignment_array"
+      "stack_alignment_array",
+      "warning_inlined_function"
     ],
     "total_lines": 386
   },
@@ -463,6 +464,14 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
+    },
     {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 10,

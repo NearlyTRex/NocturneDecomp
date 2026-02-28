@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[5]:
-;   core_msnedit.cpp_CDemonMission_FUN_0053c4f0 at 0053c66a
+;   core_msnedit.cpp_CDemonMission_drawPropertyPanel_FUN_0053c4f0 at 0053c66a
 ;   core_script.cpp_CScript_drawEditor_FUN_005645d0 at 00564725
 ;   core_texlist.cpp_CTextureList_previewTexture_FUN_005dc760 at 005dca18
 ;   engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480 at 0048c8c0

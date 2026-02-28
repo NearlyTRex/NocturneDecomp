@@ -265,7 +265,7 @@ void __cdecl core_inv_cpp_CInventory_cycleWeaponOfSameClass_FUN_004fed10(CInvent
 void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004fee00(CInventory *this_ptr,CDemonActor *item,int viewport_x,int viewport_y, int viewport_size,int rotation_y,int alpha);
 void __cdecl core_inv_cpp_CInventory_save_FUN_004ff210(CInventory *this_ptr,_FILE *file_handle);
 void __cdecl core_inv_cpp_CInventory_saveItems_FUN_004ff3b0(CInventory *this_ptr,_FILE *file_handle);
-void __cdecl core_inv_cpp_CInventory_load_FUN_004ff400(CInventory *this_ptr);
+void __cdecl core_inv_cpp_CInventory_load_FUN_004ff400(CInventory *this_ptr,_FILE *file_handle);
 void __cdecl core_inv_cpp_CInventory_loadItems_FUN_004ff740(CInventory *this_ptr);
 void __cdecl core_inv_cpp_CInventory_setupItems_FUN_004ff780(CInventory *this_ptr);
 int __cdecl core_inv_cpp_CInventory_select_FUN_004ff800(CInventory *this_ptr,CDemonActor *actor_ptr);

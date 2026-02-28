@@ -4,26 +4,26 @@
       {
         "category": "undeclared_identifier",
         "column": 15,
-        "line": 126,
-        "message": "use of undeclared identifier 'stack0xfffffe90'"
+        "line": 119,
+        "message": "use of undeclared identifier 'stack0xfffffe94'"
       },
       {
         "category": "undeclared_identifier",
         "column": 38,
-        "line": 127,
-        "message": "use of undeclared identifier 'stack0xfffffe90'"
+        "line": 120,
+        "message": "use of undeclared identifier 'stack0xfffffe94'"
       },
       {
         "category": "undeclared_identifier",
         "column": 15,
-        "line": 129,
-        "message": "use of undeclared identifier 'stack0xfffffe90'"
+        "line": 122,
+        "message": "use of undeclared identifier 'stack0xfffffe94'"
       },
       {
         "category": "undeclared_identifier",
         "column": 38,
-        "line": 135,
-        "message": "use of undeclared identifier 'stack0xfffffe90'"
+        "line": 128,
+        "message": "use of undeclared identifier 'stack0xfffffe94'"
       }
     ],
     "success": false,
@@ -31,20 +31,21 @@
   },
   "complexity": {
     "assembly_lines": 511,
-    "complexity_score": 432,
+    "complexity_score": 420,
     "cross_reference_count": 3,
     "function_call_count": 23,
     "global_count": 35,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 182,
-    "suspect_count": 23,
+    "pseudocode_lines": 175,
+    "suspect_count": 22,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_param",
       "stack_ref",
-      "unaffected_reg"
+      "unaffected_reg",
+      "warning_inlined_function"
     ],
-    "total_lines": 693
+    "total_lines": 686
   },
   "cross_references": [
     {
@@ -513,11 +514,27 @@
   },
   "suspects": [
     {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
+    },
+    {
       "description": "Unaffected register variable",
-      "line": 11,
+      "line": 10,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "int unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 11,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "int unaff_EBP;",
       "type": "unaffected_reg"
     },
     {
@@ -529,32 +546,32 @@
       "type": "unaffected_reg"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 14,
-      "match": "unaff_EDI",
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000010",
       "severity": "moderate",
-      "text": "int unaff_EDI;",
-      "type": "unaffected_reg"
+      "text": "float in_stack_00000010;",
+      "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 17,
-      "match": "in_stack_0000000c",
+      "match": "in_stack_00000014",
       "severity": "moderate",
-      "text": "float in_stack_0000000c;",
+      "text": "int in_stack_00000014;",
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_00000010",
+      "description": "Unaffected register variable",
+      "line": 72,
+      "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "int in_stack_00000010;",
-      "type": "stack_param"
+      "text": "if (unaff_EBP != 0) {",
+      "type": "unaffected_reg"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 89,
+      "line": 82,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND(light->aspect * (float)65536));",
@@ -562,7 +579,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 89,
+      "line": 82,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND(light->aspect * (float)65536));",
@@ -570,130 +587,106 @@
     },
     {
       "description": "Unaffected register variable",
+      "line": 90,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "unaff_EBX = unaff_EBX + 1;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 90,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "unaff_EBX = unaff_EBX + 1;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 91,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "if (this_ptr->camera_count <= unaff_EBX) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 92,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "unaff_EBX = 0;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 94,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(this_ptr,unaff_EBX);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
       "line": 97,
       "match": "unaff_ESI",
       "severity": "moderate",
-      "text": "unaff_ESI = unaff_ESI + 1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 97,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI = unaff_ESI + 1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 98,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "if (this_ptr->camera_count <= unaff_ESI) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 99,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI = 0;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 101,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(this_ptr,unaff_ESI);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 104,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "if ((unaff_EDI == 0) || (0xf0 < g_WindowHeight)) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 113,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "if ((iVar3 != 0) && (unaff_EBX = 1 - unaff_EBX, unaff_EBX != 0)) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 113,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "if ((iVar3 != 0) && (unaff_EBX = 1 - unaff_EBX, unaff_EBX != 0)) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 113,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "if ((iVar3 != 0) && (unaff_EBX = 1 - unaff_EBX, unaff_EBX != 0)) {",
+      "text": "if ((unaff_ESI == 0) || (0xf0 < g_WindowHeight)) {",
       "type": "unaffected_reg"
     },
     {
       "description": "Direct stack address reference",
-      "line": 119,
-      "match": "&stack0xfffffe90",
+      "line": 112,
+      "match": "&stack0xfffffe94",
       "severity": "moderate",
-      "text": "(&stack0xfffffe90,\"%f\",(double)(1.0 / g_CGamePtr->delta_time_float));",
+      "text": "(&stack0xfffffe94,\"%f\",(double)(1.0 / g_CGamePtr->delta_time_float));",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 120,
-      "match": "&stack0xfffffe90",
+      "line": 113,
+      "match": "&stack0xfffffe94",
       "severity": "moderate",
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffe90,0,g_WindowHeight + -0xb);",
+      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffe94,0,g_WindowHeight + -0xb);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 122,
-      "match": "&stack0xfffffe90",
+      "line": 115,
+      "match": "&stack0xfffffe94",
       "severity": "moderate",
-      "text": "(&stack0xfffffe90,\"pos: %4.1f %4.1f %4.1f   pbh: %3.1f %3.1f %6.3f   fov : %2.1f\",(double)(g_CSlewPtr->position).x,",
+      "text": "(&stack0xfffffe94,\"pos: %4.1f %4.1f %4.1f   pbh: %3.1f %3.1f %6.3f   fov : %2.1f\",(double)(g_CSlewPtr->position).x,",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 128,
-      "match": "&stack0xfffffe90",
+      "line": 121,
+      "match": "&stack0xfffffe94",
       "severity": "moderate",
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffe90,0,0x16);",
+      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffe94,0,0x16);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 168,
-      "match": "in_stack_00000010",
+      "line": 161,
+      "match": "in_stack_00000014",
       "severity": "moderate",
-      "text": "in_stack_00000010 = 1;",
+      "text": "in_stack_00000014 = 1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 184,
-      "match": "in_stack_0000000c",
+      "line": 177,
+      "match": "in_stack_00000010",
       "severity": "moderate",
-      "text": "light->on_time = in_stack_0000000c;",
+      "text": "light->on_time = in_stack_00000010;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 185,
-      "match": "in_stack_00000010",
+      "line": 178,
+      "match": "in_stack_00000014",
       "severity": "moderate",
-      "text": "return in_stack_00000010;",
+      "text": "return in_stack_00000014;",
       "type": "stack_param"
     }
   ]

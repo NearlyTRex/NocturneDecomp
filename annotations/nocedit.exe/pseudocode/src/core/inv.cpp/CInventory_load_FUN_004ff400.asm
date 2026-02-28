@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_inv_cpp_CInventory_load_FUN_004ff400(CInventory *this_ptr)
+; void __cdecl core_inv_cpp_CInventory_load_FUN_004ff400(CInventory *this_ptr,_FILE *file_handle)
 ;
 ; Parameters:
 ; CInventory *     Stack[0x4]:4   this_ptr
+; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
 ; undefined1       Stack[-0x1dc]:1  local_1dc
 ; undefined1       Stack[-0xdc]:1  local_dc
