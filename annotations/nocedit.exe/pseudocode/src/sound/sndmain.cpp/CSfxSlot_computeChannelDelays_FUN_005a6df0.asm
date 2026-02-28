@@ -18,7 +18,7 @@
 ;   double DOUBLE_00663140 = 1116.40000000000
 ;   int g_AudioChannelCount = 0x2
 ;   int g_AudioSampleRate = 0x5622
-;   double DOUBLE_00681b30 = 1
+;   double g_Cached3DDistanceFactor = 1
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   int g_SoundLockCount
@@ -89,7 +89,7 @@ section .text
         ;   Label: LAB_005a6e72
     JMP 0x005a6e40                      ; 005a6e7c
         ;   XREF to: 005a6e40 (UNCONDITIONAL_JUMP)  ; LAB_005a6e40
-    FLD double ptr [0x00681b30]         ; 005a6e7e | DOUBLE_00681b30
+    FLD double ptr [0x00681b30]         ; 005a6e7e | g_Cached3DDistanceFactor
         ;   Label: LAB_005a6e7e
     FDIV double ptr [0x00663140]        ; 005a6e84 | DOUBLE_00663140
     FILD dword ptr [0x00681b1c]         ; 005a6e8a | g_AudioSampleRate

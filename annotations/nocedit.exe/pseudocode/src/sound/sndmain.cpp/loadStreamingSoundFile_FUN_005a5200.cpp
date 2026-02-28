@@ -43,9 +43,9 @@ LAB_005a5242:
     return (CSfxSample *)0x0;
   }
   engine_dosio_c_splitPath_FUN_00481f20(filename,(char *)0x0,(char *)0x0,(char *)0x0,local_114);
-  iVar6 = stricmp(local_114,"mp3");
+  iVar6 = _stricmp(local_114,"mp3");
   if ((iVar6 == 0) ||
-     (iVar6 = stricmp(local_114,".mp3"), iVar6 == 0)) {
+     (iVar6 = _stricmp(local_114,".mp3"), iVar6 == 0)) {
     iVar6 = engine_dosio_c_getFileSize_FUN_00481880("sound",filename);
     if (iVar6 < 1) goto LAB_005a5505;
     this_ptr = (CMP3Decoder *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x8630,"..\\sound\\sndmain.cpp",0x3c5);

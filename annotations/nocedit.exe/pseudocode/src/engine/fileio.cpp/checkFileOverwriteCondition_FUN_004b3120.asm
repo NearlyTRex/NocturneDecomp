@@ -19,7 +19,7 @@
 ;
 ; Called Functions:
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;   engine_dosio.c_getFileTimestamp_FUN_00481960
 ;   engine_fileio.cpp_showOverwriteConfirmationDialog_FUN_004b2f90
 ;
@@ -51,8 +51,8 @@ section .text
         ;   XREF to: 004b3163 (CONDITIONAL_JUMP)  ; LAB_004b3163
     PUSH 0x2d12bd0                      ; 004b3151 | g_VersionControlSession
     PUSH EDI                            ; 004b3156
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 004b3157
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 004b3157
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004b315c
     TEST EAX,EAX                        ; 004b315f
     JZ 0x004b3177                       ; 004b3161

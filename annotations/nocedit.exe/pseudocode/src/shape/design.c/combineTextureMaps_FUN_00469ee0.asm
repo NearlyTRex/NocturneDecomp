@@ -46,7 +46,7 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_stdio.c_fscanf_FUN_005fe7c0
-;   crt_string.c_strcmp_FUN_005fef20
+;   crt_string.c__strcmp_FUN_005fef20
 ;   engine_2d.c_getInputWithPrompt_FUN_004032c0
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;   shape_memdbg.cpp_openFile_FUN_0050f7a0
@@ -193,8 +193,8 @@ section .text
     ADD EAX,EDX                         ; 0046a042
     ADD EAX,0x4                         ; 0046a044
     PUSH EAX                            ; 0046a047
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 0046a048
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 0046a048
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 0046a04d
     TEST EAX,EAX                        ; 0046a050
     JNZ 0x0046a155                      ; 0046a052

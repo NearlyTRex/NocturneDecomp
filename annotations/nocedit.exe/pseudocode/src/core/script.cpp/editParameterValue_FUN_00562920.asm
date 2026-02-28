@@ -1726,8 +1726,8 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 005638ac
     PUSH EAX                            ; 005638af
     PUSH EBX                            ; 005638b0
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 005638b1
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 005638b1
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 005638b6
     TEST EAX,EAX                        ; 005638b9
     JNZ 0x005638c4                      ; 005638bb

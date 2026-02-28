@@ -38,7 +38,7 @@ void __cdecl core_mission_cpp_CDemonMission_run_FUN_00524420(CDemonMission *this
     (*(((this_ptr_00->base).base.vtable._uh)->_uh).reset)(this_ptr_00);
     core_mission_cpp_CDemonMission_checkMemory2_FUN_00522d30(this_ptr);
     if ((iVar1 == 0) || (g_PendingMissionName[0] == '\0')) break;
-    iVar1 = stricmp(g_CDemonSetPtr->geometry_filename,"hq.geo");
+    iVar1 = _stricmp(g_CDemonSetPtr->geometry_filename,"hq.geo");
     bVar2 = iVar1 != 0;
     if (bVar2) {
       core_game_cpp_CGame_displayActStats_FUN_004e3800(g_CGamePtr);

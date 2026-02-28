@@ -153,14 +153,14 @@ LAB_004bdb2c:
           memmove(local_3a5 + 1,local_3a5 + 2,SVar5);
           SVar5 = SVar5 - 1;
         }
-        iVar2 = stricmp(local_2a5 + 1,"sounds");
+        iVar2 = _stricmp(local_2a5 + 1,"sounds");
         if (iVar2 != 0) {
-          iVar2 = stricmp(local_2a5 + 1,"file");
+          iVar2 = _stricmp(local_2a5 + 1,"file");
           if (iVar2 == 0) {
             _fprintf((this_ptr->base).file_ptr,"%s\n",local_3a5 + 1);
           }
           else {
-            iVar2 = stricmp(local_2a5 + 1,"msn");
+            iVar2 = _stricmp(local_2a5 + 1,"msn");
             if (iVar2 == 0) {
               shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                         (g_CEditorToolsPtr,"Loading %s");
@@ -228,25 +228,25 @@ LAB_004bdb2c:
                         (g_CDemonMissionPtr,(this_ptr->base).file_ptr,0);
             }
             else {
-              iVar2 = stricmp(local_2a5 + 1,"kfm");
+              iVar2 = _stricmp(local_2a5 + 1,"kfm");
               if (iVar2 == 0) {
                 core_fileman_cpp_CDemonFileManager_addKeyframeModelToExtractList_FUN_004be230
                           (this_ptr,local_3a5 + 1);
               }
               else {
-                iVar2 = stricmp(local_2a5 + 1,"cth");
+                iVar2 = _stricmp(local_2a5 + 1,"cth");
                 if (iVar2 == 0) {
                   core_fileman_cpp_CDemonFileManager_addClothFileToExtractList_FUN_004be150
                             (this_ptr,local_3a5 + 1);
                 }
                 else {
-                  iVar2 = stricmp(local_2a5 + 1,"dfm");
+                  iVar2 = _stricmp(local_2a5 + 1,"dfm");
                   if (iVar2 == 0) {
                     core_fileman_cpp_CDemonFileManager_addDeformableModelToExtractList_FUN_004be070
                               (this_ptr,local_3a5 + 1);
                   }
                   else {
-                    iVar2 = stricmp(local_2a5 + 1,"set");
+                    iVar2 = _stricmp(local_2a5 + 1,"set");
                     if (iVar2 != 0) {
                       shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                                 (g_CEditorToolsPtr,"Invalid tag \"%s\"",local_2a5 + 1);

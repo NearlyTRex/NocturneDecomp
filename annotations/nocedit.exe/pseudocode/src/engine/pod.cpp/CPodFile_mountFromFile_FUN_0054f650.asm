@@ -96,7 +96,7 @@
 ;   crt_stdio.c_fseek_FUN_005ffacc
 ;   crt_stdio.c_ftell_FUN_00601560
 ;   crt_stdlib.c__qsort_FUN_005fdf38
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;   engine_dosio.c_findFileNormally_FUN_004817c0
 ;   engine_dosio.c_getRelativeFilePath_FUN_004816c0
 ;   engine_dosio.c_splitPath_FUN_00481f20
@@ -217,8 +217,8 @@ section .text
     PUSH 0x6401ad                       ; 0054f750 | = "epd"
     LEA EAX,[ESP + 0x448]               ; 0054f755
     PUSH EAX                            ; 0054f75c
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 0054f75d
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 0054f75d
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0054f762
     TEST EAX,EAX                        ; 0054f765
     JZ 0x0054f786                       ; 0054f767
@@ -226,8 +226,8 @@ section .text
     PUSH 0x6401b1                       ; 0054f769 | = ".epd"
     LEA EAX,[ESP + 0x448]               ; 0054f76e
     PUSH EAX                            ; 0054f775
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 0054f776
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 0054f776
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0054f77b
     TEST EAX,EAX                        ; 0054f77e
     JNZ 0x0054fa82                      ; 0054f780

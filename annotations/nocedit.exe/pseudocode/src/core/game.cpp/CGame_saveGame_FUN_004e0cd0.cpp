@@ -40,9 +40,9 @@ void __cdecl core_game_cpp_CGame_saveGame_FUN_004e0cd0(CGame *this_ptr,char *sav
   remove("save\\$$SAVE$$.TMP");
   splitpath
             (&g_CurrentSaveFile,(char *)0x0,(char *)0x0,(char *)0x0,local_24c);
-  iVar3 = stricmp(local_24c,"noc");
+  iVar3 = _stricmp(local_24c,"noc");
   if ((iVar3 == 0) ||
-     (iVar3 = stricmp(local_24c,".noc"), iVar3 == 0)) {
+     (iVar3 = _stricmp(local_24c,".noc"), iVar3 == 0)) {
     pcVar6 = local_558;
     pcVar5 = &g_CurrentSaveFile;
     do {

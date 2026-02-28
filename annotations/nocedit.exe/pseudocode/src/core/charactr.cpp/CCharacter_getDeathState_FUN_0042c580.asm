@@ -15,8 +15,8 @@
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_getCurrentStateName_FUN_0052dcf0
-;   crt_string.c_stricmp_FUN_005fe7f0
-;   crt_string.c_strnicmp_FUN_005ff070
+;   crt_string.c__stricmp_FUN_005fe7f0
+;   crt_string.c__strnicmp_FUN_005ff070
 ;
 ; *****************************************************************************
 
@@ -41,8 +41,8 @@ section .text
         ;   XREF to: 0052dcf0 (UNCONDITIONAL_CALL)  ; char * core_motion.cpp_CMotionController_getCurrentStateName_FUN_0052dcf0(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 0042c5a4
     PUSH EAX                            ; 0042c5a7
-    CALL crt_string.c_strnicmp_FUN_005ff070 ; 0042c5a8
-        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)
+    CALL crt_string.c__strnicmp_FUN_005ff070 ; 0042c5a8
+        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 0042c5ad
     TEST EAX,EAX                        ; 0042c5b0
     JNZ 0x0042c5bb                      ; 0042c5b2
@@ -57,8 +57,8 @@ section .text
         ;   XREF to: 0052dcf0 (UNCONDITIONAL_CALL)  ; char * core_motion.cpp_CMotionController_getCurrentStateName_FUN_0052dcf0(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 0042c5c6
     PUSH EAX                            ; 0042c5c9
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 0042c5ca
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 0042c5ca
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0042c5cf
     TEST EAX,EAX                        ; 0042c5d2
     JNZ 0x0042c5dd                      ; 0042c5d4

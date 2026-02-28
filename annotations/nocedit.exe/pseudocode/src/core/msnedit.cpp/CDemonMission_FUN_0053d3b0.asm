@@ -46,7 +46,7 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
 ;   crt_math.c_round_FUN_005fe6b0
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;   shape_edittool.cpp_CPickList_ctor_FUN_004a3b90
 ;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
 ;   shape_edittool.cpp_CPickList_dtor_FUN_004a3c80
@@ -107,8 +107,8 @@ section .text
     LEA EAX,[EBX + 0x78]                ; 0053d433
     PUSH EAX                            ; 0053d436
     MOV dword ptr [EBP + -0x8],EAX      ; 0053d437
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 0053d43a
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 0053d43a
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0053d43f
     TEST EAX,EAX                        ; 0053d442
     JZ 0x0053d461                       ; 0053d444
@@ -116,8 +116,8 @@ section .text
     PUSH 0x63cbed                       ; 0053d446 | = "true"
     MOV ECX,dword ptr [EBP + -0x8]      ; 0053d44b
     PUSH ECX                            ; 0053d44e
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 0053d44f
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 0053d44f
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0053d454
     TEST EAX,EAX                        ; 0053d457
     JZ 0x0053d461                       ; 0053d459

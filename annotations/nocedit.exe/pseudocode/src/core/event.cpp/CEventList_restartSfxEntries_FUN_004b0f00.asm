@@ -49,7 +49,7 @@ section .text
     MOV EDX,dword ptr [ESI + 0x118]     ; 004b0f3f
     PUSH EDX                            ; 004b0f45
     CALL sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005a8be0 ; 004b0f46
-        ;   XREF to: 005a8be0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005a8be0(double trigger_time, int trigger_id)
+        ;   XREF to: 005a8be0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005a8be0(double trigger_time, int trigger_id)
     ADD ESP,0xc                         ; 004b0f4b
     PUSH 0x1                            ; 004b0f4e
     CALL sound_sndmain.cpp_setNextSfxFlagBits_FUN_005a8b90 ; 004b0f50

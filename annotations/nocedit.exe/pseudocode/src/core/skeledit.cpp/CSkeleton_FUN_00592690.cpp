@@ -319,8 +319,8 @@ LAB_00592a67:
       iVar13 = local_108;
       local_c8 = core_skeledit_cpp_readNonEmptyLine_FUN_005895f0(local_21d0,local_11c,0);
       if (((local_c8 == 0) ||
-          (iVar3 = strnicmp(local_21d0,"animation",9), iVar3 == 0
-          )) && (iVar13 != 0)) {
+          (iVar3 = _strnicmp(local_21d0,"animation",9),
+          iVar3 == 0)) && (iVar13 != 0)) {
         local_fc = &DAT_0365caf8 + (this_ptr->motion_list).motion_count * 0x104;
         p_Var2 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                            (local_fc,(char *)0x0,"rt","..\\core\\skeledit.cpp",0x10a4);
@@ -453,7 +453,7 @@ LAB_00592a67:
                 g_CurrentLineNumber = 0x11a5;
                 core_main_c_displayErrorAndQuit_FUN_00506f10("Error parsing file!");
               }
-              iVar3 = strnicmp(local_20a4,"animation",9);
+              iVar3 = _strnicmp(local_20a4,"animation",9);
               iVar13 = local_3c;
             } while (iVar3 != 0);
             local_ec->transition_count = 0;
@@ -499,7 +499,7 @@ LAB_00592a67:
             if (0 < *(int *)((int)aiStack_2720 + iVar13)) {
               do {
                 core_skeledit_cpp_readNonEmptyLine_FUN_005895f0(local_20a4,local_11c,1);
-                iVar13 = strnicmp(local_20a4,"fps",3);
+                iVar13 = _strnicmp(local_20a4,"fps",3);
                 if (iVar13 == 0) {
                   pcVar11 = local_20a2;
                   do {
@@ -516,7 +516,7 @@ LAB_00592a67:
                   }
                 }
                 else {
-                  iVar13 = strnicmp(local_20a4,"if",2);
+                  iVar13 = _strnicmp(local_20a4,"if",2);
                   if (iVar13 == 0) {
                     if (0x2c < local_ec->transition_count) {
                       shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
@@ -646,7 +646,7 @@ LAB_00592a67:
                     case 4:
                     case 5:
                     case 6:
-                      iVar13 = strnicmp(pcVar11,"over",4);
+                      iVar13 = _strnicmp(pcVar11,"over",4);
                       if (iVar13 == 0) {
                         local_a0 = -1;
                         sscanf(pcVar11,"%*s%f%n",&dest->tween_time);
@@ -673,7 +673,7 @@ LAB_00592a67:
                         }
                       }
                     }
-                    iVar13 = strnicmp(pcVar11,"keepState",9);
+                    iVar13 = _strnicmp(pcVar11,"keepState",9);
                     if (iVar13 == 0) {
                       pcVar11 = pcVar11 + 9;
                       dest->set_new_state_as_desired = 1;
@@ -698,13 +698,13 @@ LAB_00592a67:
                     local_ec->transition_count = local_ec->transition_count + 1;
                   }
                   else {
-                    iVar13 = strnicmp(local_20a4,"->",2);
+                    iVar13 = _strnicmp(local_20a4,"->",2);
                     if (iVar13 == 0) {
                       pcVar11 = local_20a2;
                       while ((g_CharacterClassificationTable[(byte)(*pcVar11 + 1)] & 2) != 0) {
                         pcVar11 = pcVar11 + 1;
                       }
-                      iVar13 = strnicmp(pcVar11,"(loop)",6);
+                      iVar13 = _strnicmp(pcVar11,"(loop)",6);
                       pcVar17 = pcVar11 + 6;
                       if (iVar13 == 0) {
                         local_ec->exit_forward_to_frame = 0.0;
@@ -714,7 +714,7 @@ LAB_00592a67:
                         }
                       }
                       else {
-                        iVar13 = strnicmp(pcVar11,"(stop)",6);
+                        iVar13 = _strnicmp(pcVar11,"(stop)",6);
                         if (iVar13 == 0) {
                           local_ec->exit_forward_to_motion = local_38;
                           local_2c = local_ec->frame_count + -1;
@@ -812,7 +812,7 @@ LAB_00592a67:
                               case 4:
                               case 5:
                               case 6:
-                                iVar13 = strnicmp
+                                iVar13 = _strnicmp
                                                    (pcVar17,"over",4);
                                 if (iVar13 == 0) {
                                   local_64 = -1;
@@ -857,7 +857,7 @@ LAB_00592a67:
                                 }
                               }
                             }
-                            iVar13 = strnicmp
+                            iVar13 = _strnicmp
                                                (pcVar17,"keepState",9);
                             if (iVar13 == 0) {
                               local_ec->exit_forward_set_new_state = 1;
@@ -886,7 +886,7 @@ LAB_00592a67:
                       }
                     }
                     else {
-                      iVar13 = strnicmp(local_20a4,"signal",6);
+                      iVar13 = _strnicmp(local_20a4,"signal",6);
                       if (iVar13 == 0) {
                         pcVar11 = local_20a2 + 4;
                         while ((g_CharacterClassificationTable[(byte)(*pcVar11 + 1)] & 2) != 0) {
@@ -932,18 +932,18 @@ LAB_00592a67:
                         local_ec->signal_count = local_ec->signal_count + 1;
                       }
                       else {
-                        iVar13 = strnicmp(local_20a4,"reverse",7)
-                        ;
+                        iVar13 = _strnicmp
+                                           (local_20a4,"reverse",7);
                         if (iVar13 == 0) {
                           local_e4 = 1;
                         }
                         else {
-                          iVar13 = strnicmp
+                          iVar13 = _strnicmp
                                              (local_20a4,"filename",5);
                           if ((iVar13 != 0) &&
-                             (iVar13 = strnicmp
+                             (iVar13 = _strnicmp
                                                  (local_20a4,"frames",6), iVar13 != 0)) {
-                            iVar13 = strnicmp
+                            iVar13 = _strnicmp
                                                (local_20a4,"cancel",6);
                             if (iVar13 == 0) {
                               pbVar5 = (byte *)(local_20a2 + 4);
@@ -991,7 +991,7 @@ LAB_005949a6:
                               }
                             }
                             else {
-                              iVar13 = strnicmp
+                              iVar13 = _strnicmp
                                                  (local_20a4,"bias",4);
                               if (iVar13 == 0) {
                                 pcVar11 = local_20a2 + 2;
@@ -1053,7 +1053,7 @@ LAB_005949a6:
                                 g_SkeleditBiasEntryCount = g_SkeleditBiasEntryCount + 1;
                               }
                               else {
-                                iVar13 = strnicmp
+                                iVar13 = _strnicmp
                                                    (local_20a4,"markers",7);
                                 if (iVar13 == 0) {
                                   if (0 < local_ec->marker_count) {
@@ -1123,7 +1123,7 @@ LAB_005949a6:
                                   }
                                 }
                                 else {
-                                  iVar13 = strnicmp
+                                  iVar13 = _strnicmp
                                                      (local_20a4,"displace",8);
                                   if (iVar13 == 0) {
                                     pcVar11 = local_20a2 + 6;
@@ -1145,7 +1145,7 @@ LAB_005949a6:
                                     }
                                   }
                                   else {
-                                    iVar13 = strnicmp
+                                    iVar13 = _strnicmp
                                                        (local_20a4,"totaldisplacement",0x11
                                                        );
                                     if (iVar13 == 0) {
@@ -1168,7 +1168,7 @@ LAB_0059507b:
                                             if (*pbVar5 == 0x3d) {
                                               pbVar5 = pbVar5 + 1;
                                             }
-                                            iVar13 = strnicmp
+                                            iVar13 = _strnicmp
                                                                ((char *)pbVar5,"display",7)
                                             ;
                                             if (iVar13 == 0) {
@@ -1250,13 +1250,13 @@ LAB_0059518b:
                                       ;
                                     }
                                     else {
-                                      iVar13 = strnicmp
+                                      iVar13 = _strnicmp
                                                          (local_20a4,"flipXZ",6);
                                       if (iVar13 == 0) {
                                         local_d8 = (_FILE *)0x1;
                                       }
                                       else {
-                                        iVar13 = strnicmp
+                                        iVar13 = _strnicmp
                                                            (local_20a4,"rotate",6);
                                         if (iVar13 != 0) {
                                           shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
@@ -1739,9 +1739,9 @@ LAB_00595eb8:
           if (iVar4 <= iVar13) goto LAB_00595eb8;
         } while( true );
       }
-      iVar13 = strnicmp(local_21d0,"animation",9);
+      iVar13 = _strnicmp(local_21d0,"animation",9);
       if (iVar13 != 0) {
-        iVar13 = strnicmp(local_21d0,"checkout",8);
+        iVar13 = _strnicmp(local_21d0,"checkout",8);
         if (iVar13 == 0) {
           sscanf(local_21ca + 2,"%s");
           uVar6 = 0xffffffff;
@@ -1768,10 +1768,10 @@ LAB_00595eb8:
           }
           pcVar11 = getenv("USERNAME");
           if (((pcVar11 == (char *)0x0) ||
-              (iVar13 = stricmp(pcVar11,acStack_851 + 1), iVar13 != 0)) &&
-             (iVar13 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
-                                 (g_CEditorToolsPtr,"User \"%s\" is currently working on this file.  Continue anyway?"),
-             iVar13 == 0)) {
+              (iVar13 = _stricmp(pcVar11,acStack_851 + 1), iVar13 != 0))
+             && (iVar13 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
+                                    (g_CEditorToolsPtr,"User \"%s\" is currently working on this file.  Continue anyway?"),
+                iVar13 == 0)) {
             shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)(local_748c + 0x47e4),0);
             goto LAB_005927ee;
           }
@@ -1787,7 +1787,7 @@ LAB_00595eb8:
                aiStack_2720[(this_ptr->motion_list).motion_count] + 1;
           pSVar14 = local_f8 + (this_ptr->motion_list).motion_count;
           iVar13 = (this_ptr->motion_list).motion_count;
-          iVar3 = strnicmp(local_21d0,"filename",8);
+          iVar3 = _strnicmp(local_21d0,"filename",8);
           pcVar11 = &DAT_0365caf8 + iVar13 * 0x104;
           if (iVar3 == 0) {
             pcVar17 = local_21ca + 2;
@@ -1824,7 +1824,7 @@ LAB_00595eb8:
             shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\core\\skeledit.cpp",0x113e);
           }
           else {
-            iVar13 = strnicmp(local_21d0,"frames",6);
+            iVar13 = _strnicmp(local_21d0,"frames",6);
             if (iVar13 == 0) {
               pcVar11 = local_21ca;
               while ((g_CharacterClassificationTable[(byte)(*pcVar11 + 1)] & 2) != 0) {

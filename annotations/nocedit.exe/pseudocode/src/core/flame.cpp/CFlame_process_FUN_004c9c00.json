@@ -2,12 +2,6 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "incompatible_types",
-        "column": 55,
-        "line": 75,
-        "message": "invalid operands to binary expression ('double' and 'int')"
-      },
-      {
         "category": "format_error",
         "column": 55,
         "line": 75,
@@ -380,7 +374,7 @@
       "line": 68,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "((char *)&local_f8,\"torch.wav * %f\",SUB84((double)local_14,0),",
+      "text": "((char *)&local_f8,\"torch.wav * %f\",SUB84(__BITCAST_UINT64((double)local_14),0),",
       "type": "sub84_truncation"
     },
     {
@@ -388,7 +382,7 @@
       "line": 68,
       "match": "SUB84",
       "severity": "mild",
-      "text": "((char *)&local_f8,\"torch.wav * %f\",SUB84((double)local_14,0),",
+      "text": "((char *)&local_f8,\"torch.wav * %f\",SUB84(__BITCAST_UINT64((double)local_14),0),",
       "type": "decompiler_intrinsic"
     },
     {

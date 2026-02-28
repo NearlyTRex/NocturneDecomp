@@ -23,7 +23,7 @@ void __cdecl core_actor_cpp_CDemonActor_load_FUN_0040b050(CDemonActor *this_ptr,
   local_dc[0] = '\0';
   local_78[0] = '\0';
   _fscanf(file_handle," { %s \"%[^\"]\"\n",local_dc,local_78);
-  iVar2 = stricmp(str1,local_dc);
+  iVar2 = _stricmp(str1,local_dc);
   if (iVar2 != 0) {
     g_CurrentFilename = "..\\core\\actor.cpp";
     g_CurrentLineNumber = 0x7b7;
@@ -52,9 +52,9 @@ void __cdecl core_actor_cpp_CDemonActor_load_FUN_0040b050(CDemonActor *this_ptr,
   local_dc[0] = '\0';
   local_78[0] = '\0';
   _fscanf(file_handle," } %s \"%[^\"]\"\n",local_dc,local_78);
-  iVar3 = stricmp(str1,local_dc);
+  iVar3 = _stricmp(str1,local_dc);
   if ((iVar3 != 0) ||
-     (iVar3 = stricmp(this_ptr->actor_name,local_78), iVar3 != 0)) {
+     (iVar3 = _stricmp(this_ptr->actor_name,local_78), iVar3 != 0)) {
     g_CurrentFilename = "..\\core\\actor.cpp";
     g_CurrentLineNumber = 0x7d4;
     core_main_c_displayErrorAndQuit_FUN_00506f10("End of actor file tag mismatch for class %s name \"%s\"",str1,this_ptr);

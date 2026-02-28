@@ -69,12 +69,12 @@ LAB_005784e7:
           while( true ) {
             pcVar2 = local_d4;
             pcVar5 = core_ground_cpp_getGroundTypeCode_FUN_004eece0(iVar3);
-            iVar4 = stricmp(pcVar5,pcVar2);
+            iVar4 = _stricmp(pcVar5,pcVar2);
             iVar1 = iVar3;
             if (iVar4 == 0) break;
             pcVar2 = local_d4;
             pcVar5 = core_ground_cpp_getGroundTypeName_FUN_004eed80(iVar3);
-            iVar4 = stricmp(pcVar5,pcVar2);
+            iVar4 = _stricmp(pcVar5,pcVar2);
             if ((iVar4 == 0) || (iVar3 = iVar3 + 1, iVar1 = local_c, 0xd < iVar3)) break;
           }
         }

@@ -55,7 +55,7 @@ void __cdecl core_script_cpp_CScript_dbLoad_FUN_005603c0(CScript *this_ptr,char 
     core_script_cpp_trimString_FUN_00559360(local_334);
     core_script_cpp_trimString_FUN_00559360(local_2bc);
     core_script_cpp_trimString_FUN_00559360(local_29e);
-    iVar3 = stricmp(local_2bc,"stranger");
+    iVar3 = _stricmp(local_2bc,"stranger");
     if (iVar3 == 0) {
       pcVar5 = "$";
       pcVar6 = local_2bc;

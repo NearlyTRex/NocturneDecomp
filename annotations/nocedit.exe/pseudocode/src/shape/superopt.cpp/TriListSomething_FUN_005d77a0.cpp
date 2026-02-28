@@ -103,7 +103,7 @@ void __cdecl shape_superopt_cpp_TriListSomething_FUN_005d77a0(void)
       if (0 < g_TriListTextureCount) {
         str1 = g_TriListTextureNames;
         do {
-          iVar2 = stricmp(*str1,pcVar4);
+          iVar2 = _stricmp(*str1,pcVar4);
           if (iVar2 == 0) goto LAB_005d7a1a;
           iVar5 = iVar5 + 1;
           str1 = str1 + 1;

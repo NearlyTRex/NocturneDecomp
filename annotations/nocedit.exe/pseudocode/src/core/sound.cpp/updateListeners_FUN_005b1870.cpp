@@ -127,7 +127,7 @@ void __cdecl core_sound_cpp_updateListeners_FUN_005b1870(void)
              (double)local_78.z);
   CVector3f_03f6af7c.x = 0.0;
   if (g_CGamePtr->block_auto_save == 0) {
-    iVar3 = strnicmp
+    iVar3 = _strnicmp
                       (g_CDemonSetPtr->geometry_filename,"castle",6);
     if (iVar3 == 0) {
       local_1c = 1;

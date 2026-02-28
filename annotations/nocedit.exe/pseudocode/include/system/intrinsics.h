@@ -14,6 +14,7 @@
 // - MMX SIMD operations (paddb, pmulhw, psllw, etc.)
 
 #include <stdint.h>
+#include <string.h>
 #include <math.h>
 
 // =============================================================================
@@ -110,6 +111,42 @@
 #define CONCAT19(hi, lo) (((uint64_t)(hi) << 72) | ((uint64_t)(lo)))
 #define CONCAT28(hi, lo) (((uint64_t)(hi) << 64) | ((uint64_t)(lo)))
 #define CONCAT64(hi, lo) (((uint64_t)(hi) << 32) | ((uint32_t)(lo)))
+
+// =============================================================================
+// Bitcast Helpers (FPU double/float reconstruction)
+// =============================================================================
+// Ghidra splits x87 FSTP operations into two 32-bit stack writes, then
+// reconstructs them as (double)CONCAT44(hi, lo). A C (double) cast does a
+// numeric conversion (int->float), not a bit reinterpretation. These helpers
+// use memcpy to correctly reinterpret the assembled bit pattern.
+
+static inline double __BITCAST_DOUBLE(uint64_t bits) {
+    double result;
+    memcpy(&result, &bits, sizeof(result));
+    return result;
+}
+
+static inline float __BITCAST_FLOAT(uint32_t bits) {
+    float result;
+    memcpy(&result, &bits, sizeof(result));
+    return result;
+}
+
+// Reverse bitcast: float/double -> integer bit pattern
+// Used when Ghidra emits SUBxx(dVar, offset) where dVar is a double/float.
+// The SUB macro uses >> which is invalid on floating-point types.
+
+static inline uint64_t __BITCAST_UINT64(double val) {
+    uint64_t bits;
+    memcpy(&bits, &val, sizeof(bits));
+    return bits;
+}
+
+static inline uint32_t __BITCAST_UINT32(float val) {
+    uint32_t bits;
+    memcpy(&bits, &val, sizeof(bits));
+    return bits;
+}
 
 // =============================================================================
 // SUB - Subpiece/Truncation (extract bytes from larger value)

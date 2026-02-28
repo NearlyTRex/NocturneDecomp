@@ -81,7 +81,7 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00569410(CDemonSet *this_ptr,char *
   _fgets(local_228,0xff,p_Var4);
   _fscanf(p_Var4,"%d,%s\n",&this_ptr->use_enviro_model,this_ptr->enviro_model_name);
   if (this_ptr->set_file_version < 5) {
-    iVar10 = strnicmp(local_128,"ndun",4);
+    iVar10 = _strnicmp(local_128,"ndun",4);
     if (iVar10 == 0) {
       g_CWaterPtr->wave_animation_enabled = 1;
     }
@@ -143,7 +143,7 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00569410(CDemonSet *this_ptr,char *
     _fgets(local_228,0xff,p_Var4);
     _fscanf(p_Var4,"%d\n",&this_ptr->weather_type);
   }
-  iVar10 = strnicmp(local_128,"train",5);
+  iVar10 = _strnicmp(local_128,"train",5);
   this_ptr_00 = g_CTerrainPtr;
   if (iVar10 == 0) {
     this_ptr->player_on_train = 1;
@@ -181,23 +181,23 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00569410(CDemonSet *this_ptr,char *
   }
   if (this_ptr->set_file_version < 1) {
     this_ptr->default_room_size = 0;
-    iVar10 = strnicmp(local_128,"mauso",5);
+    iVar10 = _strnicmp(local_128,"mauso",5);
     if (iVar10 == 0) {
       this_ptr->default_room_size = 2;
     }
-    iVar10 = strnicmp(local_128,"h109",4);
+    iVar10 = _strnicmp(local_128,"h109",4);
     if (iVar10 == 0) {
       this_ptr->default_room_size = 0;
     }
-    iVar10 = strnicmp(local_128,"smill",5);
+    iVar10 = _strnicmp(local_128,"smill",5);
     if (iVar10 == 0) {
       this_ptr->default_room_size = 3;
     }
-    iVar10 = strnicmp(local_128,"pier59",6);
+    iVar10 = _strnicmp(local_128,"pier59",6);
     if (iVar10 == 0) {
       this_ptr->default_room_size = 0;
     }
-    iVar10 = strnicmp(local_128,"ndun",4);
+    iVar10 = _strnicmp(local_128,"ndun",4);
     if (iVar10 == 0) {
       this_ptr->default_room_size = 3;
     }
@@ -237,27 +237,27 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00569410(CDemonSet *this_ptr,char *
   }
   if (this_ptr->set_file_version < 3) {
     this_ptr->default_ground_type = 2;
-    iVar10 = strnicmp(local_128,"mauso",5);
+    iVar10 = _strnicmp(local_128,"mauso",5);
     if (iVar10 == 0) {
       this_ptr->default_ground_type = 8;
     }
-    iVar10 = strnicmp(local_128,"h109",4);
+    iVar10 = _strnicmp(local_128,"h109",4);
     if (iVar10 == 0) {
       this_ptr->default_ground_type = 3;
     }
-    iVar10 = strnicmp(local_128,"smill",5);
+    iVar10 = _strnicmp(local_128,"smill",5);
     if (iVar10 == 0) {
       this_ptr->default_ground_type = 2;
     }
-    iVar10 = strnicmp(local_128,"pier59",6);
+    iVar10 = _strnicmp(local_128,"pier59",6);
     if (iVar10 == 0) {
       this_ptr->default_ground_type = 7;
     }
-    iVar10 = strnicmp(local_128,"castle",6);
+    iVar10 = _strnicmp(local_128,"castle",6);
     if (iVar10 == 0) {
       this_ptr->default_ground_type = 2;
     }
-    iVar10 = strnicmp(local_128,"ndun",4);
+    iVar10 = _strnicmp(local_128,"ndun",4);
     if (iVar10 == 0) {
       this_ptr->default_ground_type = 8;
     }
@@ -329,7 +329,7 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00569410(CDemonSet *this_ptr,char *
   pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Loading set geometry");
   core_level_cpp_CLevelLoader_update_FUN_00504160(g_CLevelLoaderPtr,pcVar3,iVar10);
   pcVar3 = this_ptr->geometry_filename;
-  iVar10 = stricmp(pcVar3,local_128);
+  iVar10 = _stricmp(pcVar3,local_128);
   if (iVar10 == 0) {
     core_setcolid_cpp_CDemonSet_commitVoxelBuffer_FUN_00574560(this_ptr);
   }

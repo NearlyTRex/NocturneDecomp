@@ -658,7 +658,7 @@ section .text
     FLD float ptr [EBP + 0x76]          ; 0041c5aa
     FSTP double ptr [ESP]               ; 0041c5ad
     CALL sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005a8be0 ; 0041c5b0
-        ;   XREF to: 005a8be0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005a8be0(double trigger_time, int trigger_id)
+        ;   XREF to: 005a8be0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005a8be0(double trigger_time, int trigger_id)
     ADD ESP,0xc                         ; 0041c5b5
     PUSH 0x616115                       ; 0041c5b8 | = "boneGuy-walkloop.wav"
     MOV EAX,dword ptr [EBX + 0x154]     ; 0041c5bd

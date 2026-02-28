@@ -17,7 +17,7 @@ int __cdecl core_event_cpp_CEventList_findTimer_FUN_004b0900(CEventList *this_pt
   if (0 < (this_ptr->timers).count) {
     str1 = (this_ptr->timers).names;
     do {
-      iVar1 = stricmp(*str1,name);
+      iVar1 = _stricmp(*str1,name);
       if (iVar1 == 0) {
         return iVar2;
       }

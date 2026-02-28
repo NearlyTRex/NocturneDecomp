@@ -49,7 +49,7 @@ void __cdecl shape_design_c_optimizePolygonMesh_FUN_004658e0(float angle_toleran
                                    ((int *)g_ModelPolygonData[local_20].vertex_indices,
                                     (int *)g_ModelPolygonData[local_1c].vertex_indices,3,3),
                 iVar3 = local_1c, iVar2 != 0)) &&
-               (iVar2 = strcmp
+               (iVar2 = _strcmp
                                   (g_ModelPolygonData[local_20].lightmap_name,
                                    g_ModelPolygonData[local_1c].lightmap_name), iVar3 = local_1c,
                iVar2 == 0)))) &&

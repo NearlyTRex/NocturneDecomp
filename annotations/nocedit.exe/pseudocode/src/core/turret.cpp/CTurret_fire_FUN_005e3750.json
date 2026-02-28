@@ -2,10 +2,10 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "incompatible_types",
+        "category": "other",
         "column": 62,
         "line": 94,
-        "message": "invalid operands to binary expression ('double' and 'int')"
+        "message": "cannot initialize a parameter of type 'struct CDemonActor *' with an rvalue of type 'uint32_t' (aka 'unsigned int')"
       },
       {
         "category": "undeclared_identifier",
@@ -20,10 +20,10 @@
         "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
       },
       {
-        "category": "incompatible_types",
+        "category": "other",
         "column": 46,
         "line": 126,
-        "message": "invalid operands to binary expression ('double' and 'int')"
+        "message": "cannot initialize a parameter of type 'struct CDemonActor *' with an rvalue of type 'uint32_t' (aka 'unsigned int')"
       },
       {
         "category": "other",
@@ -431,7 +431,7 @@
       "line": 87,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "((CCharacter *)this_ptr,SUB84(dVar4,0),",
+      "text": "((CCharacter *)this_ptr,SUB84(__BITCAST_UINT64(dVar4),0),",
       "type": "sub84_truncation"
     },
     {
@@ -439,7 +439,7 @@
       "line": 87,
       "match": "SUB84",
       "severity": "mild",
-      "text": "((CCharacter *)this_ptr,SUB84(dVar4,0),",
+      "text": "((CCharacter *)this_ptr,SUB84(__BITCAST_UINT64(dVar4),0),",
       "type": "decompiler_intrinsic"
     },
     {
@@ -463,7 +463,7 @@
       "line": 119,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "((CCharacter *)this_ptr,SUB84(dVar4,0),(int)((ulonglong)dVar4 >> 0x20));",
+      "text": "((CCharacter *)this_ptr,SUB84(__BITCAST_UINT64(dVar4),0),(int)((ulonglong)dVar4 >> 0x20));",
       "type": "sub84_truncation"
     },
     {
@@ -471,7 +471,7 @@
       "line": 119,
       "match": "SUB84",
       "severity": "mild",
-      "text": "((CCharacter *)this_ptr,SUB84(dVar4,0),(int)((ulonglong)dVar4 >> 0x20));",
+      "text": "((CCharacter *)this_ptr,SUB84(__BITCAST_UINT64(dVar4),0),(int)((ulonglong)dVar4 >> 0x20));",
       "type": "decompiler_intrinsic"
     },
     {

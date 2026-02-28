@@ -74,7 +74,7 @@ void __cdecl support_newmsg_cpp_readMessageFile_FUN_00543e40(char *message_file)
         if (iVar11 < g_LocalizedStringCount) {
           iVar8 = iVar11 * 4;
           do {
-            iVar5 = strcmp
+            iVar5 = _strcmp
                               (*(char **)((int)g_MessageKeys + iVar7),
                                *(char **)((int)g_MessageKeys + iVar8));
             if (0 < iVar5) {

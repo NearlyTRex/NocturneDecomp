@@ -91,7 +91,7 @@ int __cdecl core_turret_cpp_CTurret_fire_FUN_005e3750(CTurret *this_ptr)
           actor = pCStack_28;
           if (iVar2 != 0) {
             fVar3 = (float)(*(((this_ptr->base).base.vtable._uc)->_uc).getGrabbed)
-                                     ((CCharacter *)this_ptr,SUB84(dVar4,0),
+                                     ((CCharacter *)this_ptr,SUB84(__BITCAST_UINT64(dVar4),0),
                                       (int)((ulonglong)dVar4 >> 0x20));
             core_trigger_cpp_CTrigger_applyDamage_FUN_005e0b00(this_ptr_01,fVar3);
             actor = pCStack_28;
@@ -123,7 +123,7 @@ int __cdecl core_turret_cpp_CTurret_fire_FUN_005e3750(CTurret *this_ptr)
       core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xffffff24);
       auStack_cc._0_4_ =
            (*(((this_ptr->base).base.vtable._uc)->_uc).getGrabbed)
-                     ((CCharacter *)this_ptr,SUB84(dVar4,0),(int)((ulonglong)dVar4 >> 0x20));
+                     ((CCharacter *)this_ptr,SUB84(__BITCAST_UINT64(dVar4),0),(int)((ulonglong)dVar4 >> 0x20));
       auStack_cc._4_4_ = 0.4;
       fStack_7c = (g_CDemonSetPtr->ray_target).x - (g_CDemonSetPtr->ray_origin).x;
       fStack_78 = (g_CDemonSetPtr->ray_target).y - (g_CDemonSetPtr->ray_origin).y;

@@ -38,7 +38,7 @@ void __cdecl shape_design_c_writePolygonModel_FUN_0045a320(int polygon_index,_FI
     _fprintf(output_file,"\n");
   }
   else {
-    iVar5 = strcmp
+    iVar5 = _strcmp
                       (g_TempTextureName,g_ModelPolygonData[polygon_index].texture_name);
     if (iVar5 != 0) {
       pcVar6 = g_ModelPolygonData[polygon_index].texture_name;

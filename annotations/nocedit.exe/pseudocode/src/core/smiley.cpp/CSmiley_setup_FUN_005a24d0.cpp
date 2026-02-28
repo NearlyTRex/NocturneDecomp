@@ -89,12 +89,12 @@ void __cdecl core_smiley_cpp_CSmiley_setup_FUN_005a24d0(CSmiley *this_ptr)
   this_ptr->part_indices[10] = iVar1;
   this_ptr->dismember_hit_count = 0;
   this_ptr->model_variant = 1;
-  iVar1 = stricmp
+  iVar1 = _stricmp
                     ((this_ptr->base).base.model.model_name,"smiley2.dfm");
   if (iVar1 == 0) {
     this_ptr->model_variant = 2;
   }
-  iVar1 = stricmp
+  iVar1 = _stricmp
                     ((this_ptr->base).base.model.model_name,"smiley3.dfm");
   if (iVar1 != 0) {
     return;

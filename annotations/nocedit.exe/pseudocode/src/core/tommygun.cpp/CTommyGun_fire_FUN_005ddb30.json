@@ -26,10 +26,10 @@
         "message": "cannot cast from type 'float' to pointer type 'CCrate *'"
       },
       {
-        "category": "incompatible_types",
+        "category": "other",
         "column": 59,
         "line": 143,
-        "message": "invalid operands to binary expression ('double' and 'int')"
+        "message": "cannot initialize a parameter of type 'struct CDemonActor *' with an rvalue of type 'uint32_t' (aka 'unsigned int')"
       },
       {
         "category": "other",
@@ -508,7 +508,7 @@
       "line": 136,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "((CCharacter *)this_ptr,SUB84(dVar6,0),",
+      "text": "((CCharacter *)this_ptr,SUB84(__BITCAST_UINT64(dVar6),0),",
       "type": "sub84_truncation"
     },
     {
@@ -516,7 +516,7 @@
       "line": 136,
       "match": "SUB84",
       "severity": "mild",
-      "text": "((CCharacter *)this_ptr,SUB84(dVar6,0),",
+      "text": "((CCharacter *)this_ptr,SUB84(__BITCAST_UINT64(dVar6),0),",
       "type": "decompiler_intrinsic"
     },
     {

@@ -21,7 +21,7 @@ void __cdecl engine_palette_cpp_CPaletteManager_addTexture_FUN_00544fc0(void)
   if (0 < *in_stack_00000004) {
     iVar3 = 0;
     do {
-      iVar2 = strcmp
+      iVar2 = _strcmp
                         ((char *)(in_stack_00000004[1] + iVar3),in_stack_00000008);
       if (iVar2 == 0) {
         return;

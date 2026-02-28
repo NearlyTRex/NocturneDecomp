@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; time_t __cdecl crt_time_c__time_FUN_006001f0(time_t *optional_output)
+; time_t __cdecl crt_time_c__time_FUN_006001f0(int *time)
 ;
 ; Parameters:
-; time_t *         Stack[0x4]:4   optional_output
+; int *            Stack[0x4]:4   time
 ; Local Variables:
 ; undefined4       Stack[-0x28]:4  local_28
 ;

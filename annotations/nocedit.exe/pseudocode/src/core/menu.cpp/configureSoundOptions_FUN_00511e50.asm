@@ -852,7 +852,7 @@ section .text
     FSTP float ptr [ESP]                ; 005125fb
     PUSH ESI                            ; 005125fe
     CALL sound_sndmain.cpp_analyzeFrequencyBand_FUN_005ac400 ; 005125ff
-        ;   XREF to: 005ac400 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_analyzeFrequencyBand_FUN_005ac400(int channel, float freq_start_hz, float freq_end_hz)
+        ;   XREF to: 005ac400 (UNCONDITIONAL_CALL)  ; float sound_sndmain.cpp_analyzeFrequencyBand_FUN_005ac400(int channel, float freq_start_hz, float freq_end_hz)
     MOV dword ptr [ESP + 0xa40],EAX     ; 00512604
     FLD float ptr [ESP + 0xa40]         ; 0051260b
     ADD ESP,0xc                         ; 00512612

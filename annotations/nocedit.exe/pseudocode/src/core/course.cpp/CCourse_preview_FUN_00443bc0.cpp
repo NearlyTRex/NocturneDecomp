@@ -86,7 +86,7 @@ void __cdecl core_course_cpp_CCourse_preview_FUN_00443bc0(CCourse *this_ptr,CKey
     local_20 = (float)local_14;
     if (local_3c < 0.0) {
       local_44 = floor((double)(-local_18 / local_20));
-      uVar8 = SUB84(dVar9,0);
+      uVar8 = SUB84(__BITCAST_UINT64(dVar9),0);
       local_1c = (float)local_44 * local_20 + (float)local_3c;
       if (local_1c < 0.0) {
         local_1c = local_1c + local_20;
@@ -97,7 +97,7 @@ void __cdecl core_course_cpp_CCourse_preview_FUN_00443bc0(CCourse *this_ptr,CKey
       local_44 = floor((double)(local_18 / local_20));
       local_1c = (float)local_3c - (float)local_44 * local_20;
 LAB_00443c68:
-      uVar8 = SUB84(dVar9,0);
+      uVar8 = SUB84(__BITCAST_UINT64(dVar9),0);
     }
     uVar1 = local_24;
     local_18 = local_1c;

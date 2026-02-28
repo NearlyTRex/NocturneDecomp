@@ -24,7 +24,7 @@
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;
 ; *****************************************************************************
 
@@ -37,8 +37,8 @@ section .text
     PUSH 0x617906                       ; 0043125e | = "CHAINLINK.RAW"
     ADD ESI,0x174                       ; 00431263
     PUSH ESI                            ; 00431269
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 0043126a
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 0043126a
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0043126f
     TEST EAX,EAX                        ; 00431272
     JNZ 0x0043127e                      ; 00431274

@@ -45,7 +45,7 @@ CSfxSample * __cdecl getSfxSample(char *filename);
 
 // Original: sound_sndmain.cpp_isStreamableFile_FUN_005a5180
 // Address: 005a5180
-int __cdecl isStreamableFile(char *filename,char *filepath);
+int __cdecl isStreamableFile(char *filename);
 
 // Original: sound_sndmain.cpp_loadStreamingSoundFile_FUN_005a5200
 // Address: 005a5200
@@ -145,7 +145,7 @@ void __cdecl CSfxSlot::updateBoundPositionAndVelocity(CSfxSlot *this_ptr);
 
 // Original: sound_sndmain.cpp_CSfxSlot_computeDistancesToSpeakers_FUN_005a6d80
 // Address: 005a6d80
-int __cdecl CSfxSlot::computeDistancesToSpeakers(CSfxSlot *this_ptr);
+void __cdecl CSfxSlot::computeDistancesToSpeakers(CSfxSlot *this_ptr);
 
 // Original: sound_sndmain.cpp_CSfxSlot_computeChannelDelays_FUN_005a6df0
 // Address: 005a6df0
@@ -153,7 +153,7 @@ void __cdecl CSfxSlot::computeChannelDelays(CSfxSlot *this_ptr);
 
 // Original: sound_sndmain.cpp_CSfxSlot_computeChannelVolumes_FUN_005a6f00
 // Address: 005a6f00
-float __cdecl CSfxSlot::computeChannelVolumes(CSfxSlot *this_ptr);
+void __cdecl CSfxSlot::computeChannelVolumes(CSfxSlot *this_ptr);
 
 // Original: sound_sndmain.cpp_CSfxSlot_autoCalcDelayRemaining_FUN_005a7070
 // Address: 005a7070
@@ -281,7 +281,7 @@ void __cdecl clearNextSfxFlagBits(uint flag_mask);
 
 // Original: sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005a8be0
 // Address: 005a8be0
-int __cdecl setNextSfxTriggerTime(double trigger_time,int trigger_id);
+void __cdecl setNextSfxTriggerTime(double trigger_time,int trigger_id);
 
 // Original: sound_sndmain.cpp_resetCurrentSfxOptions_FUN_005a8c10
 // Address: 005a8c10
@@ -647,9 +647,9 @@ void __cdecl getRecordingFormat(int *out_bits_per_sample,int *out_channels,int *
 // Address: 005aba90
 int __cdecl startRecording(void);
 
-// Original: sound_sndmain.cpp_getRecordingDeviceCaps_FUN_005abb10
+// Original: sound_sndmain.cpp_pollRecordingDevice_FUN_005abb10
 // Address: 005abb10
-HRESULT __cdecl getRecordingDeviceCaps(LPDSCCAPS pDSCCaps);
+int __cdecl pollRecordingDevice(short *output_buffer,int num_samples);
 
 // Original: sound_sndmain.cpp_stopRecordingDevice_FUN_005abb60
 // Address: 005abb60
@@ -661,7 +661,7 @@ DWORD __stdcall audioThreadProc(LPVOID lpThreadParam);
 
 // Original: sound_sndmain.cpp_startSoundThread_FUN_005abc00
 // Address: 005abc00
-HANDLE __cdecl startSoundThread(double latency_seconds);
+int __cdecl startSoundThread(double latency_seconds);
 
 // Original: sound_sndmain.cpp_killSoundThread_FUN_005abcb0
 // Address: 005abcb0
@@ -697,7 +697,7 @@ void __cdecl writeIni(CIniFile *ini_file);
 
 // Original: sound_sndmain.cpp_analyzeFrequencyBand_FUN_005ac400
 // Address: 005ac400
-int __cdecl analyzeFrequencyBand(int channel,float freq_start_hz,float freq_end_hz);
+float __cdecl analyzeFrequencyBand(int channel,float freq_start_hz,float freq_end_hz);
 
 // Original: sound_sndmain.cpp_getChannelLevels_FUN_005ac990
 // Address: 005ac990

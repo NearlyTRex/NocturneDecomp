@@ -26,7 +26,7 @@
 ;   core_set.cpp_CDemonSet_initScene_FUN_0056aa10
 ;   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470
 ;   core_setedit.cpp_CDemonSet_positionLight_FUN_0057ae50
-;   crt_string.c_strcmp_FUN_005fef20
+;   crt_string.c__strcmp_FUN_005fef20
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
 ;   shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
 ;
@@ -70,8 +70,8 @@ section .text
     LEA EAX,[EDI + 0x40]                ; 0057b552
     PUSH EAX                            ; 0057b555
     PUSH EBP                            ; 0057b556
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 0057b557
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 0057b557
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 0057b55c
     TEST EAX,EAX                        ; 0057b55f
     JNZ 0x0057b5a6                      ; 0057b561

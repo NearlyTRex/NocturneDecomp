@@ -16,7 +16,7 @@ int __cdecl core_script_cpp_compareEventXRefs_FUN_005675a0(SScriptXRef *a,SScrip
   bool bVar5;
   bool bVar6;
   
-  iVar4 = stricmp(a->name,b->name);
+  iVar4 = _stricmp(a->name,b->name);
   if (iVar4 == 0) {
     if (a->type < b->type) {
       return -1;

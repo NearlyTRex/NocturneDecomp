@@ -14,7 +14,7 @@ void __cdecl core_zombie_cpp_CZombie_randomize_FUN_005fcb70(CZombie *this_ptr)
   
   core_enemy_cpp_CEnemy_randomize_FUN_004aa250(&this_ptr->base);
   this_ptr_00 = &(this_ptr->base).base.model;
-  iVar1 = stricmp
+  iVar1 = _stricmp
                     ((this_ptr->base).base.model.model_name,"jeff.dfm");
   if (iVar1 != 0) {
     iVar1 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,4);

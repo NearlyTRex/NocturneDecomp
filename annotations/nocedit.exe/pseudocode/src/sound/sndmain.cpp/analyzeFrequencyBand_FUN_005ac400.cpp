@@ -2,14 +2,14 @@
 // Address: 005ac400
 // Address Range: [[005ac400, 005ac985]]
 // Convention: __cdecl
-// Signature: int __cdecl sound_sndmain_cpp_analyzeFrequencyBand_FUN_005ac400(int channel,float freq_start_hz,float freq_end_hz)
+// Signature: float __cdecl sound_sndmain_cpp_analyzeFrequencyBand_FUN_005ac400(int channel,float freq_start_hz,float freq_end_hz)
 
 #include "nocturne.h"
 
 /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 /* WARNING: Removing unreachable block (ram,0x005ac957) */
 
-int __cdecl sound_sndmain_cpp_analyzeFrequencyBand_FUN_005ac400(int channel,float freq_start_hz,float freq_end_hz)
+float __cdecl sound_sndmain_cpp_analyzeFrequencyBand_FUN_005ac400(int channel,float freq_start_hz,float freq_end_hz)
 
 {
   float fVar1;
@@ -50,7 +50,7 @@ int __cdecl sound_sndmain_cpp_analyzeFrequencyBand_FUN_005ac400(int channel,floa
   if ((((g_ChannelPrimaryBuffers[channel] == (void *)0x0) ||
        (g_ChannelSecondaryBuffersA[channel] == (float *)0x0)) ||
       (g_ChannelSecondaryBuffersB[channel] == (float *)0x0)) || (g_MixBufferSize < 1)) {
-    return 0;
+    return 0.0;
   }
   iVar10 = sound_sndmain_cpp_getMixBufferCount_FUN_005ab6d0();
   iVar13 = g_MixBufferSize;
@@ -168,7 +168,7 @@ int __cdecl sound_sndmain_cpp_analyzeFrequencyBand_FUN_005ac400(int channel,floa
         fVar5 = SQRT(fVar2 * fVar2 + fVar1 * fVar1) + fVar5;
       } while (iVar10 < iVar21);
     }
-    return (int)(SQRT((fVar5 / (float)iVar21) / (float)iVar13) * (float)2);
+    return SQRT((fVar5 / (float)iVar21) / (float)iVar13) * (float)2;
   }
-  return 0;
+  return 0.0;
 }

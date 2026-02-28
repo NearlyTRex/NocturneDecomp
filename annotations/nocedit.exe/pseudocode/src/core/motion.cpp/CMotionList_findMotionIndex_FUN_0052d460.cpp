@@ -19,7 +19,7 @@ int __cdecl core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(CMotionList
   if (0 < this_ptr->motion_count) {
     str1 = this_ptr->motions;
     do {
-      iVar1 = stricmp(str1->motion_name,in_stack_00000008);
+      iVar1 = _stricmp(str1->motion_name,in_stack_00000008);
       if (iVar1 == 0) {
         return iVar2;
       }

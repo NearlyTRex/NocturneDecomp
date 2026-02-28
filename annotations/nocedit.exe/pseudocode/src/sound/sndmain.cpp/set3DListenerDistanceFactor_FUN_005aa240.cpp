@@ -9,8 +9,8 @@
 void __cdecl sound_sndmain_cpp_set3DListenerDistanceFactor_FUN_005aa240(double distance_in_feet)
 
 {
-  DOUBLE_00681b38 = 1.0 / distance_in_feet;
-  DOUBLE_00681b30 = distance_in_feet;
+  g_Cached3DDistanceFactorInverse = 1.0 / distance_in_feet;
+  g_Cached3DDistanceFactor = distance_in_feet;
   if (g_CSoundDevicePtr == (CSoundDevice *)0x0) {
     return;
   }

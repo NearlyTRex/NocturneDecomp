@@ -87,7 +87,7 @@ int __cdecl engine_pod_cpp_findFilesByExtension_FUN_00550ce0(CPod **pod_array,ch
           pcVar10[1] = cVar1;
           pcVar10 = pcVar10 + 2;
         } while (cVar1 != '\0');
-        iVar3 = strcmp(local_50,local_44);
+        iVar3 = _strcmp(local_50,local_44);
         if (iVar3 == 0) {
           iVar3 = 0;
           ppCVar8 = pod_array;

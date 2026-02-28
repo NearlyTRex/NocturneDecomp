@@ -146,7 +146,7 @@ int __cdecl core_netgame_cpp_CNetGame_applyNewGameSettings_FUN_00542470(CNetGame
         pSVar10 = local_24;
         if (local_44[3] == this_ptr->local_player_index) {
           INT_00680a04 = local_44[3] ^ this_ptr->local_player_index;
-          iVar12 = strcmp(local_24->name,pcVar7);
+          iVar12 = _strcmp(local_24->name,pcVar7);
           if (iVar12 != 0) {
             INT_00680a04 = 1;
           }

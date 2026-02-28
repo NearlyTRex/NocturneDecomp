@@ -29,7 +29,7 @@ double __cdecl shape_superopt_cpp_distancePointToSegmentXY_FUN_005d64a0(CVector3
        *(uint *)
         ((int)(&stack0xffffffc0 + (uint)bVar2 * -8 + (uint)bVar2 * -8) + ((uint)bVar2 * -2 + 1) * 4)
   ;
-  dVar1 = segEnd->x - (double)CONCAT44(uStack_34,local_38);
+  dVar1 = segEnd->x - __BITCAST_DOUBLE(CONCAT44(uStack_34,local_38));
   local_30[0] = segEnd->y - local_30[0];
   return SQRT(local_30[0] * local_30[0] + dVar1 * dVar1);
 }

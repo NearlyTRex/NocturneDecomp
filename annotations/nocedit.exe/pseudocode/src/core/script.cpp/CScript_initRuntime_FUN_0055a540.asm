@@ -34,8 +34,8 @@
 ;
 ; Called Functions:
 ;   core_sound.cpp_CSound_playAmbientSound_FUN_005b39b0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;   crt_string.c_splitpath_FUN_005ff178
-;   crt_string.c_stricmp_FUN_005fe7f0
 ;
 ; *****************************************************************************
 
@@ -105,8 +105,8 @@ section .text
     PUSH 0x641a7a                       ; 0055a614 | = "smill.wav"
     LEA EAX,[ESP + 0x4]                 ; 0055a619
     PUSH EAX                            ; 0055a61d
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 0055a61e
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 0055a61e
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0055a623
     TEST EAX,EAX                        ; 0055a626
     JNZ 0x0055a653                      ; 0055a628
@@ -138,8 +138,8 @@ section .text
         ;   Label: LAB_0055a653
     LEA EAX,[ESP + 0x4]                 ; 0055a658
     PUSH EAX                            ; 0055a65c
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 0055a65d
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 0055a65d
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0055a662
     TEST EAX,EAX                        ; 0055a665
     JZ 0x0055a689                       ; 0055a667

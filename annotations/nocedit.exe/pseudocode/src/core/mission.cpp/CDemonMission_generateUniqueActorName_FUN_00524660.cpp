@@ -27,7 +27,7 @@ void __cdecl core_mission_cpp_CDemonMission_generateUniqueActorName_FUN_00524660
     pcVar6 = pcVar6 + 1;
   } while (cVar1 != '\0');
   for (pCVar3 = this_ptr->first_actor; pCVar3 != (CDemonActor *)0x0; pCVar3 = pCVar3->next_actor) {
-    iVar2 = strnicmp(pCVar3->actor_name,base_name,~uVar4 - 1);
+    iVar2 = _strnicmp(pCVar3->actor_name,base_name,~uVar4 - 1);
     if (((iVar2 == 0) &&
         (iVar2 = sscanf
                            (pCVar3->actor_name + (~uVar4 - 1),"%d",&local_14), iVar2 == 1))

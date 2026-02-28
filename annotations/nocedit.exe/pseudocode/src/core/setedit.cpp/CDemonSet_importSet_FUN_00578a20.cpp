@@ -48,12 +48,12 @@ void __cdecl core_setedit_cpp_CDemonSet_importSet_FUN_00578a20(CDemonSet *this_p
     if (local_4d8 == '.') {
       str1 = acStack_4d7;
     }
-    iVar2 = stricmp(str1,"a3d");
+    iVar2 = _stricmp(str1,"a3d");
     if (iVar2 == 0) {
       core_setedit_cpp_CDemonSet_importA3D_FUN_00578c60(this_ptr,file_ptr);
     }
     else {
-      iVar2 = stricmp(str1,"s3d");
+      iVar2 = _stricmp(str1,"s3d");
       if (iVar2 != 0) {
         shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\core\\setedit.cpp",0x38f);
         wincore_windll_cpp_clearScreen_FUN_005b3e70();

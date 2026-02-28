@@ -17,7 +17,7 @@ int __cdecl core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240(CDefo
   if (0 < this_ptr->num_parts) {
     str2 = this_ptr->parts;
     do {
-      iVar1 = stricmp(part_name,str2->part_name);
+      iVar1 = _stricmp(part_name,str2->part_name);
       if (iVar1 == 0) {
         return iVar2;
       }

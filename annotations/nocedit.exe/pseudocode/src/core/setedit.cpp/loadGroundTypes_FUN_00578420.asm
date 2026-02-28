@@ -40,7 +40,7 @@
 ;   core_setedit.cpp_addGroundType_FUN_00578290
 ;   crt_stdio.c_fgets_FUN_005fefd0
 ;   crt_stdio.c_sscanf_FUN_0060013c
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;   shape_memdbg.cpp_openFile_FUN_0050f7a0
@@ -189,8 +189,8 @@ section .text
         ;   XREF to: 004eece0 (UNCONDITIONAL_CALL)  ; char * core_ground.cpp_getGroundTypeCode_FUN_004eece0(int type)
     ADD ESP,0x4                         ; 00578552
     PUSH EAX                            ; 00578555
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 00578556
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 00578556
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0057855b
     TEST EAX,EAX                        ; 0057855e
     JNZ 0x00578598                      ; 00578560
@@ -226,8 +226,8 @@ section .text
         ;   XREF to: 004eed80 (UNCONDITIONAL_CALL)  ; char * core_ground.cpp_getGroundTypeName_FUN_004eed80(int type)
     ADD ESP,0x4                         ; 005785a6
     PUSH EAX                            ; 005785a9
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 005785aa
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 005785aa
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 005785af
     TEST EAX,EAX                        ; 005785b2
     JNZ 0x00578590                      ; 005785b4

@@ -19,7 +19,7 @@ void __cdecl engine_palette_cpp_CPaletteManager_addTexture_FUN_00544fbe(CPalette
   if (0 < this_ptr->texture_count) {
     iVar3 = 0;
     do {
-      iVar2 = strcmp(this_ptr->texture_names + iVar3,filename);
+      iVar2 = _strcmp(this_ptr->texture_names + iVar3,filename);
       if (iVar2 == 0) {
         return;
       }

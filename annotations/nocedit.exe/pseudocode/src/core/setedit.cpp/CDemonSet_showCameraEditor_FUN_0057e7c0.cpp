@@ -330,7 +330,7 @@ LAB_0057eb3b:
           iVar9 = 0;
           if (0 < this_ptr->camera_count) {
             do {
-              iVar13 = strcmp
+              iVar13 = _strcmp
                                  (local_44[iVar9].name,(char *)(abStack_4be + 2));
               if (iVar13 == 0) {
                 pbVar16 = abStack_4be;

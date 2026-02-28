@@ -1,16 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 264,
-    "complexity_score": 887,
+    "complexity_score": 842,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 187,
-    "suspect_count": 67,
+    "suspect_count": 63,
     "suspect_types": [
       "decompiler_intrinsic",
-      "double_reconstruction",
       "register_param",
       "special_crt_function",
       "sub84_truncation",
@@ -564,7 +563,7 @@
       "line": 178,
       "match": "in_EDX",
       "severity": "mild",
-      "text": "fVar22 = (float10)(double)CONCAT44(in_EDX,in_EAX) / (float10)(double)CONCAT44(in_ECX,unaff_EBX);",
+      "text": "fVar22 = (float10)__BITCAST_DOUBLE(CONCAT44(in_EDX,in_EAX)) / (float10)__BITCAST_DOUBLE(CONCAT44(in_ECX,unaff_EBX));",
       "type": "register_param"
     },
     {
@@ -572,7 +571,7 @@
       "line": 178,
       "match": "in_EAX",
       "severity": "mild",
-      "text": "fVar22 = (float10)(double)CONCAT44(in_EDX,in_EAX) / (float10)(double)CONCAT44(in_ECX,unaff_EBX);",
+      "text": "fVar22 = (float10)__BITCAST_DOUBLE(CONCAT44(in_EDX,in_EAX)) / (float10)__BITCAST_DOUBLE(CONCAT44(in_ECX,unaff_EBX));",
       "type": "register_param"
     },
     {
@@ -580,7 +579,7 @@
       "line": 178,
       "match": "in_ECX",
       "severity": "mild",
-      "text": "fVar22 = (float10)(double)CONCAT44(in_EDX,in_EAX) / (float10)(double)CONCAT44(in_ECX,unaff_EBX);",
+      "text": "fVar22 = (float10)__BITCAST_DOUBLE(CONCAT44(in_EDX,in_EAX)) / (float10)__BITCAST_DOUBLE(CONCAT44(in_ECX,unaff_EBX));",
       "type": "register_param"
     },
     {
@@ -588,31 +587,15 @@
       "line": 178,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "fVar22 = (float10)(double)CONCAT44(in_EDX,in_EAX) / (float10)(double)CONCAT44(in_ECX,unaff_EBX);",
+      "text": "fVar22 = (float10)__BITCAST_DOUBLE(CONCAT44(in_EDX,in_EAX)) / (float10)__BITCAST_DOUBLE(CONCAT44(in_ECX,unaff_EBX));",
       "type": "unaffected_reg"
-    },
-    {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 178,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "fVar22 = (float10)(double)CONCAT44(in_EDX,in_EAX) / (float10)(double)CONCAT44(in_ECX,unaff_EBX);",
-      "type": "double_reconstruction"
-    },
-    {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 178,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "fVar22 = (float10)(double)CONCAT44(in_EDX,in_EAX) / (float10)(double)CONCAT44(in_ECX,unaff_EBX);",
-      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 178,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "fVar22 = (float10)(double)CONCAT44(in_EDX,in_EAX) / (float10)(double)CONCAT44(in_ECX,unaff_EBX);",
+      "text": "fVar22 = (float10)__BITCAST_DOUBLE(CONCAT44(in_EDX,in_EAX)) / (float10)__BITCAST_DOUBLE(CONCAT44(in_ECX,unaff_EBX));",
       "type": "decompiler_intrinsic"
     },
     {
@@ -620,7 +603,7 @@
       "line": 178,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "fVar22 = (float10)(double)CONCAT44(in_EDX,in_EAX) / (float10)(double)CONCAT44(in_ECX,unaff_EBX);",
+      "text": "fVar22 = (float10)__BITCAST_DOUBLE(CONCAT44(in_EDX,in_EAX)) / (float10)__BITCAST_DOUBLE(CONCAT44(in_ECX,unaff_EBX));",
       "type": "decompiler_intrinsic"
     },
     {
@@ -628,7 +611,7 @@
       "line": 182,
       "match": "in_EDX",
       "severity": "mild",
-      "text": "((float10)(double)CONCAT44(in_EDX,in_EAX),(double)CONCAT44(in_ECX,unaff_EBX))",
+      "text": "((float10)__BITCAST_DOUBLE(CONCAT44(in_EDX,in_EAX)),__BITCAST_DOUBLE(CONCAT44(in_ECX,unaff_EBX)))",
       "type": "register_param"
     },
     {
@@ -636,7 +619,7 @@
       "line": 182,
       "match": "in_EAX",
       "severity": "mild",
-      "text": "((float10)(double)CONCAT44(in_EDX,in_EAX),(double)CONCAT44(in_ECX,unaff_EBX))",
+      "text": "((float10)__BITCAST_DOUBLE(CONCAT44(in_EDX,in_EAX)),__BITCAST_DOUBLE(CONCAT44(in_ECX,unaff_EBX)))",
       "type": "register_param"
     },
     {
@@ -644,7 +627,7 @@
       "line": 182,
       "match": "in_ECX",
       "severity": "mild",
-      "text": "((float10)(double)CONCAT44(in_EDX,in_EAX),(double)CONCAT44(in_ECX,unaff_EBX))",
+      "text": "((float10)__BITCAST_DOUBLE(CONCAT44(in_EDX,in_EAX)),__BITCAST_DOUBLE(CONCAT44(in_ECX,unaff_EBX)))",
       "type": "register_param"
     },
     {
@@ -652,31 +635,15 @@
       "line": 182,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "((float10)(double)CONCAT44(in_EDX,in_EAX),(double)CONCAT44(in_ECX,unaff_EBX))",
+      "text": "((float10)__BITCAST_DOUBLE(CONCAT44(in_EDX,in_EAX)),__BITCAST_DOUBLE(CONCAT44(in_ECX,unaff_EBX)))",
       "type": "unaffected_reg"
-    },
-    {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 182,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "((float10)(double)CONCAT44(in_EDX,in_EAX),(double)CONCAT44(in_ECX,unaff_EBX))",
-      "type": "double_reconstruction"
-    },
-    {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 182,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "((float10)(double)CONCAT44(in_EDX,in_EAX),(double)CONCAT44(in_ECX,unaff_EBX))",
-      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 182,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "((float10)(double)CONCAT44(in_EDX,in_EAX),(double)CONCAT44(in_ECX,unaff_EBX))",
+      "text": "((float10)__BITCAST_DOUBLE(CONCAT44(in_EDX,in_EAX)),__BITCAST_DOUBLE(CONCAT44(in_ECX,unaff_EBX)))",
       "type": "decompiler_intrinsic"
     },
     {
@@ -684,7 +651,7 @@
       "line": 182,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "((float10)(double)CONCAT44(in_EDX,in_EAX),(double)CONCAT44(in_ECX,unaff_EBX))",
+      "text": "((float10)__BITCAST_DOUBLE(CONCAT44(in_EDX,in_EAX)),__BITCAST_DOUBLE(CONCAT44(in_ECX,unaff_EBX)))",
       "type": "decompiler_intrinsic"
     },
     {
@@ -692,7 +659,7 @@
       "line": 185,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "uVar4 = SUB84((double)fVar22,0);",
+      "text": "uVar4 = SUB84(__BITCAST_UINT64((double)fVar22),0);",
       "type": "sub84_truncation"
     },
     {
@@ -700,7 +667,7 @@
       "line": 185,
       "match": "SUB84",
       "severity": "mild",
-      "text": "uVar4 = SUB84((double)fVar22,0);",
+      "text": "uVar4 = SUB84(__BITCAST_UINT64((double)fVar22),0);",
       "type": "decompiler_intrinsic"
     },
     {

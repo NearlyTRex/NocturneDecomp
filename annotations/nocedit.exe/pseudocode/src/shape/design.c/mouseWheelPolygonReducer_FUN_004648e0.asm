@@ -32,7 +32,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   crt_string.c_strcmp_FUN_005fef20
+;   crt_string.c__strcmp_FUN_005fef20
 ;   engine_2d.c_drawTextColor_FUN_00402430
 ;   shape_design.c_complexPolygonReduction_FUN_00463b30
 ;   shape_design.c_detectMouseButtonClick_FUN_00464870
@@ -60,8 +60,8 @@ section .text
     PUSH EAX                            ; 004648f8 | s_EmptyChar_0061c2ba
     MOV EAX,0x66eda8                    ; 004648f9 | g_LoadedModelName
     PUSH EAX                            ; 004648fe | g_LoadedModelName
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 004648ff
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 004648ff
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 00464904
     TEST EAX,EAX                        ; 00464907
     JNZ 0x00464917                      ; 00464909
@@ -189,8 +189,8 @@ section .text
     PUSH EAX                            ; 00464a9a | g_LoadedModelName
     MOV EAX,0x15c4858                   ; 00464a9b | g_BackupModelName
     PUSH EAX                            ; 00464aa0 | g_BackupModelName
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 00464aa1
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 00464aa1
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 00464aa6
     TEST EAX,EAX                        ; 00464aa9
     JNZ 0x00464aba                      ; 00464aab

@@ -27,7 +27,7 @@
       },
       {
         "category": "other",
-        "column": 28,
+        "column": 37,
         "line": 21,
         "message": "member reference base type 'double' is not a structure or union"
       }
@@ -37,16 +37,15 @@
   },
   "complexity": {
     "assembly_lines": 31,
-    "complexity_score": 112,
+    "complexity_score": 97,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 12,
-    "suspect_count": 8,
+    "suspect_count": 7,
     "suspect_types": [
       "decompiler_intrinsic",
-      "double_reconstruction",
       "param_count_too_few",
       "unknown_field"
     ],
@@ -282,23 +281,15 @@
       "line": 14,
       "match": "._4_4_",
       "severity": "mild",
-      "text": "return (double)CONCAT44(a._4_4_,local_18);",
+      "text": "return __BITCAST_DOUBLE(CONCAT44(a._4_4_,local_18));",
       "type": "unknown_field"
-    },
-    {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 14,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "return (double)CONCAT44(a._4_4_,local_18);",
-      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 14,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "return (double)CONCAT44(a._4_4_,local_18);",
+      "text": "return __BITCAST_DOUBLE(CONCAT44(a._4_4_,local_18));",
       "type": "decompiler_intrinsic"
     },
     {

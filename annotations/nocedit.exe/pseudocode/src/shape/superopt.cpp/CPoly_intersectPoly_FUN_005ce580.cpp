@@ -343,14 +343,14 @@ int __cdecl shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580(CPoly *this_ptr,
     dStack_3b0 = dStack_320 * pCVar1->x;
     dStack_3a8 = dStack_318 * *pdVar11;
     dStack_3a0 = dStack_310 * *pdVar13;
-    dStack_4e8 = pCVar1->x * (double)CONCAT44(uStack_5e0._4_4_,(uint)uStack_5e0);
-    dStack_4e0 = *pdVar11 * (double)CONCAT44(uStack_5d8._4_4_,(uint)uStack_5d8);
-    dStack_4d8 = *pdVar13 * (double)CONCAT44(uStack_5d0._4_4_,(uint)uStack_5d0);
-    dStack_2d8 = pCVar1->x * (double)CONCAT44(uStack_5c4,uStack_5c8);
-    dStack_2d0 = *pdVar11 * (double)CONCAT44(uStack_5bc,uStack_5c0);
-    dStack_2c8 = *pdVar13 * (double)CONCAT44(uStack_5b4,uStack_5b8);
-    dStack_2c0 = pCVar1->x * (double)CONCAT44(uStack_5ac,uStack_5b0);
-    dStack_2b8 = *pdVar11 * (double)CONCAT44(uStack_5a4,uStack_5a8);
+    dStack_4e8 = pCVar1->x * __BITCAST_DOUBLE(CONCAT44(uStack_5e0._4_4_,(uint)uStack_5e0));
+    dStack_4e0 = *pdVar11 * __BITCAST_DOUBLE(CONCAT44(uStack_5d8._4_4_,(uint)uStack_5d8));
+    dStack_4d8 = *pdVar13 * __BITCAST_DOUBLE(CONCAT44(uStack_5d0._4_4_,(uint)uStack_5d0));
+    dStack_2d8 = pCVar1->x * __BITCAST_DOUBLE(CONCAT44(uStack_5c4,uStack_5c8));
+    dStack_2d0 = *pdVar11 * __BITCAST_DOUBLE(CONCAT44(uStack_5bc,uStack_5c0));
+    dStack_2c8 = *pdVar13 * __BITCAST_DOUBLE(CONCAT44(uStack_5b4,uStack_5b8));
+    dStack_2c0 = pCVar1->x * __BITCAST_DOUBLE(CONCAT44(uStack_5ac,uStack_5b0));
+    dStack_2b8 = *pdVar11 * __BITCAST_DOUBLE(CONCAT44(uStack_5a4,uStack_5a8));
     pdVar11 = &dStack_3b0;
     pdVar13 = &dStack_248;
     for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -358,7 +358,7 @@ int __cdecl shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580(CPoly *this_ptr,
       pdVar11 = (double *)((int)pdVar11 + (uint)bVar15 * -8 + 4);
       pdVar13 = (double *)((int)pdVar13 + (uint)bVar15 * -8 + 4);
     }
-    dStack_2b0 = dVar3 * (double)CONCAT44(uStack_59c,uStack_5a0);
+    dStack_2b0 = dVar3 * __BITCAST_DOUBLE(CONCAT44(uStack_59c,uStack_5a0));
     pdVar11 = &dStack_4e8;
     pdVar13 = &dStack_398;
     for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -478,7 +478,7 @@ int __cdecl shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580(CPoly *this_ptr,
          ((int)(&dStack_1b0 + (-(uint)bVar15 - (uint)bVar15)) + ((uint)bVar15 * -2 + 1) * 4) =
              *(uint *)
               ((int)(&dStack_180 + (-(uint)bVar15 - (uint)bVar15)) + ((uint)bVar15 * -2 + 1) * 4);
-        uStack_118 = (double)CONCAT44(uStack_1b4,uStack_1b8) * dVar3;
+        uStack_118 = __BITCAST_DOUBLE(CONCAT44(uStack_1b4,uStack_1b8)) * dVar3;
         pdStack_20 = pdVar11;
         dStack_110 = dStack_1b0 * dVar3;
         uStack_1c8 = (uint)uStack_118;
@@ -490,7 +490,7 @@ int __cdecl shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580(CPoly *this_ptr,
          ((int)(&dStack_1c0 + (-(uint)bVar15 - (uint)bVar15)) + ((uint)bVar15 * -2 + 1) * 4) =
              *(uint *)
               ((int)(&dStack_110 + (-(uint)bVar15 - (uint)bVar15)) + ((uint)bVar15 * -2 + 1) * 4);
-        uStack_148 = *pdVar11 - (double)CONCAT44(uStack_1c4,uStack_1c8);
+        uStack_148 = *pdVar11 - __BITCAST_DOUBLE(CONCAT44(uStack_1c4,uStack_1c8));
         dStack_140 = (double)(&uStack_560)[aiStack_d4[3] * 2] - dStack_1c0;
         pdStack_b4 = (double *)(&uStack_568 + iStack_ac * 2);
         auStack_134[3] = (uint)uStack_148;
@@ -560,7 +560,7 @@ int __cdecl shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580(CPoly *this_ptr,
          ((int)(&dStack_170 + (-(uint)bVar15 - (uint)bVar15)) + ((uint)bVar15 * -2 + 1) * 4) =
              *(uint *)
               ((int)(&dStack_160 + (-(uint)bVar15 - (uint)bVar15)) + ((uint)bVar15 * -2 + 1) * 4);
-        uStack_158 = (double)CONCAT44(uStack_174,uStack_178) * dVar3;
+        uStack_158 = __BITCAST_DOUBLE(CONCAT44(uStack_174,uStack_178)) * dVar3;
         dStack_150 = dStack_170 * dVar3;
         uStack_1a8 = (uint)uStack_158;
         (&uStack_1a4)[(uint)bVar15 * -2] = *(uint *)((int)&uStack_158 + (uint)bVar15 * -8 + 4)
@@ -571,7 +571,7 @@ int __cdecl shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580(CPoly *this_ptr,
          ((int)(&dStack_1a0 + (-(uint)bVar15 - (uint)bVar15)) + ((uint)bVar15 * -2 + 1) * 4) =
              *(uint *)
               ((int)(&dStack_150 + (-(uint)bVar15 - (uint)bVar15)) + ((uint)bVar15 * -2 + 1) * 4);
-        uStack_1e8 = *pdVar11 - (double)CONCAT44(uStack_1a4,uStack_1a8);
+        uStack_1e8 = *pdVar11 - __BITCAST_DOUBLE(CONCAT44(uStack_1a4,uStack_1a8));
         dStack_1e0 = pdVar11[1] - dStack_1a0;
         uStack_d8 = (uint)uStack_1e8;
         aiStack_d4[(uint)bVar15 * -2] = *(int *)((int)&uStack_1e8 + (uint)bVar15 * -8 + 4);
@@ -785,7 +785,7 @@ int __cdecl shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580(CPoly *this_ptr,
        ((int)(&dStack_100 + (-(uint)bVar15 - (uint)bVar15)) + ((uint)bVar15 * -2 + 1) * 4) =
            *(uint *)
             ((int)(&dStack_1d0 + (-(uint)bVar15 - (uint)bVar15)) + ((uint)bVar15 * -2 + 1) * 4);
-      uStack_e8 = (double)CONCAT44(uStack_104,uStack_108) * dVar3;
+      uStack_e8 = __BITCAST_DOUBLE(CONCAT44(uStack_104,uStack_108)) * dVar3;
       dStack_e0 = dStack_100 * dVar3;
       uStack_198 = (uint)uStack_e8;
       (&uStack_194)[(uint)bVar15 * -2] = *(uint *)((int)&uStack_e8 + (uint)bVar15 * -8 + 4);
@@ -795,7 +795,7 @@ int __cdecl shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580(CPoly *this_ptr,
        ((int)(&dStack_190 + (-(uint)bVar15 - (uint)bVar15)) + ((uint)bVar15 * -2 + 1) * 4) =
            *(uint *)
             ((int)(&dStack_e0 + (-(uint)bVar15 - (uint)bVar15)) + ((uint)bVar15 * -2 + 1) * 4);
-      uStack_f8 = *pdVar11 - (double)CONCAT44(uStack_194,uStack_198);
+      uStack_f8 = *pdVar11 - __BITCAST_DOUBLE(CONCAT44(uStack_194,uStack_198));
       dStack_f0 = pdVar11[1] - dStack_190;
       uStack_138 = (uint)uStack_f8;
       auStack_134[(uint)bVar15 * -2] = *(uint *)((int)&uStack_f8 + (uint)bVar15 * -8 + 4);

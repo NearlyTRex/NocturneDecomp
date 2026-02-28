@@ -28,8 +28,8 @@
 ;   undefined1 DAT_02d82c83
 ;
 ; Called Functions:
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;   crt_string.c_splitpath_FUN_005ff178
-;   crt_string.c_stricmp_FUN_005fe7f0
 ;   shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
 ;   support_newmsg.cpp_getLocalizedString_FUN_005441f0
 ;
@@ -57,8 +57,8 @@ section .text
     PUSH 0x62d4c5                       ; 004e372c | = "noc"
     LEA EAX,[ESP + 0x108]               ; 004e3731
     PUSH EAX                            ; 004e3738
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 004e3739
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 004e3739
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004e373e
     TEST EAX,EAX                        ; 004e3741
     JZ 0x004e375e                       ; 004e3743
@@ -66,8 +66,8 @@ section .text
     PUSH 0x62d4c9                       ; 004e3745 | = ".noc"
     LEA EAX,[ESP + 0x108]               ; 004e374a
     PUSH EAX                            ; 004e3751
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 004e3752
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 004e3752
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004e3757
     TEST EAX,EAX                        ; 004e375a
     JNZ 0x004e37bb                      ; 004e375c

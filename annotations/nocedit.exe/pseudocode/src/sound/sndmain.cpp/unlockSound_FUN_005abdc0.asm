@@ -12,9 +12,9 @@
 ;   sound_sndmain.cpp_freeAllSamples_FUN_005aa660 at 005aa68a
 ;   sound_sndmain.cpp_freeSampleByName_FUN_005aa360 at 005aa3aa
 ;   sound_sndmain.cpp_getChannelLevels_FUN_005ac990 at 005aca20
-;   sound_sndmain.cpp_getRecordingDeviceCaps_FUN_005abb10 at 005abb28
 ;   sound_sndmain.cpp_getRecordingDeviceCount_FUN_005ab720 at 005ab73b
 ;   sound_sndmain.cpp_getSampleInfo_FUN_005aa3f0 at 005aa463
+;   sound_sndmain.cpp_getSfxOptions_FUN_005a97e0 at 005a980f
 ;   ... and 26 more
 ;
 ; Referenced Globals:

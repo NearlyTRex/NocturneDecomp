@@ -24,7 +24,7 @@ uint __watcallStack analyze_file_type(uint open_flags,char *filename)
     uVar1 = 0x40;
   }
   if ((open_flags & uVar1) != 0) {
-    iVar2 = stricmp(filename,"con");
+    iVar2 = _stricmp(filename,"con");
     pcVar5 = filename;
     if (iVar2 == 0) {
       pcVar5 = "conin$";
@@ -61,7 +61,7 @@ uint __watcallStack analyze_file_type(uint open_flags,char *filename)
       pcVar5 = (char *)0x0;
 LAB_00607e31:
       if ((pcVar5 != (char *)0x0) &&
-         (iVar2 = strcmp(pcVar5 + 1,"EXE"), iVar2 == 0)) {
+         (iVar2 = _strcmp(pcVar5 + 1,"EXE"), iVar2 == 0)) {
         uVar1 = uVar4 | 0x8049;
       }
     }

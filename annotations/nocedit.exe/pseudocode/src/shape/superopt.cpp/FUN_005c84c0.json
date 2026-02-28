@@ -19,16 +19,15 @@
   },
   "complexity": {
     "assembly_lines": 662,
-    "complexity_score": 653,
+    "complexity_score": 588,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 263,
-    "suspect_count": 37,
+    "suspect_count": 31,
     "suspect_types": [
       "decompiler_intrinsic",
-      "double_reconstruction",
       "pointer_cast",
       "stack_param"
     ],
@@ -565,99 +564,51 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 102,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "local_cc = (double)CONCAT44(uStack_78,local_7c) * local_1c[2] -",
-      "type": "double_reconstruction"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 102,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "local_cc = (double)CONCAT44(uStack_78,local_7c) * local_1c[2] -",
+      "text": "local_cc = __BITCAST_DOUBLE(CONCAT44(uStack_78,local_7c)) * local_1c[2] -",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 103,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "(double)CONCAT44(uStack_70,local_74) * local_1c[1];",
-      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 103,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "(double)CONCAT44(uStack_70,local_74) * local_1c[1];",
+      "text": "__BITCAST_DOUBLE(CONCAT44(uStack_70,local_74)) * local_1c[1];",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 104,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "local_c4 = (double)CONCAT44(uStack_70,local_74) * *local_1c -",
-      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 104,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "local_c4 = (double)CONCAT44(uStack_70,local_74) * *local_1c -",
+      "text": "local_c4 = __BITCAST_DOUBLE(CONCAT44(uStack_70,local_74)) * *local_1c -",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 105,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "(double)CONCAT44(uStack_80,local_84) * local_1c[2];",
-      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 105,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "(double)CONCAT44(uStack_80,local_84) * local_1c[2];",
+      "text": "__BITCAST_DOUBLE(CONCAT44(uStack_80,local_84)) * local_1c[2];",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 106,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "local_bc = (double)CONCAT44(uStack_80,local_84) * local_1c[1] -",
-      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 106,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "local_bc = (double)CONCAT44(uStack_80,local_84) * local_1c[1] -",
+      "text": "local_bc = __BITCAST_DOUBLE(CONCAT44(uStack_80,local_84)) * local_1c[1] -",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 107,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "(double)CONCAT44(uStack_78,local_7c) * *local_1c;",
-      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 107,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "(double)CONCAT44(uStack_78,local_7c) * *local_1c;",
+      "text": "__BITCAST_DOUBLE(CONCAT44(uStack_78,local_7c)) * *local_1c;",
       "type": "decompiler_intrinsic"
     },
     {

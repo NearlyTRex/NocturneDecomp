@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[3]:
-;   sound_sndmain.cpp_getRecordingDeviceCaps_FUN_005abb10 at 005abb15
+;   sound_sndmain.cpp_pollRecordingDevice_FUN_005abb10 at 005abb15
 ;   sound_sndmain.cpp_setRecordingFormat_FUN_005ab9a0 at 005ab9a4
 ;   sound_sndmain.cpp_startRecording_FUN_005aba90 at 005aba9e
 ;

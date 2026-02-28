@@ -2076,6 +2076,14 @@ int g_TriangleMatchTableA[3] = {0x00000001, 0x00000002, 0x00000000};
 int g_TriangleMatchTableB[3] = {0x00000002, 0x00000000, 0x00000001};
 int g_Layer3ShortBandGroupCounts[3] = {0x00000000, 0x00000006, 0x0000000C};
 
+// int[4][4]
+int g_MpegLayer2AllocationTables[4][4] = {
+    {0x2472656C, 0x00000024, 0x00000000, 0x00000000},
+    {0x00000004, 0x00000008, 0x0000000C, 0x00000010},
+    {0x00000004, 0x00000008, 0x0000000C, 0x00000010},
+    {0x00000000, 0x00000004, 0x00000008, 0x00000010}
+};
+
 // int[5]
 int g_Layer3LongBandGroupCounts[5] = {0x00000000, 0x00000006, 0x0000000B, 0x00000010, 0x00000015};
 
@@ -2224,12 +2232,4 @@ ushort g_LightmapData[384] = {
 void* g_PerspectiveScanlineColorPtr = nullptr;
 void* switchdataD_00679d10 = (void*)0x004B1A0C; // caseD_0
 void* switchdataD_00679d54 = (void*)0x004B1A9B; // caseD_0
-
-// void*[4][4]
-void* g_MpegLayer2AllocationTables[4][4] = {
-    {(void*)0x2472656C, (void*)0x00000024, nullptr, nullptr},
-    {(void*)0x00000004, (void*)0x00000008, (void*)0x0000000C, (void*)0x00000010},
-    {(void*)0x00000004, (void*)0x00000008, (void*)0x0000000C, (void*)0x00000010},
-    {nullptr, (void*)0x00000004, (void*)0x00000008, (void*)0x00000010}
-};
 

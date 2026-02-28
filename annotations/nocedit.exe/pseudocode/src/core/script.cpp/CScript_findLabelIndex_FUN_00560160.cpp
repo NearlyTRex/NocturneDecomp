@@ -23,7 +23,7 @@ int __cdecl core_script_cpp_CScript_findLabelIndex_FUN_00560160(CScript *this_pt
       if (*pcVar1 == ':') {
         str2 = label_name;
         pcVar1 = core_script_cpp_skipWhitespace_FUN_005593d0(pcVar1 + 1);
-        iVar2 = stricmp(pcVar1,str2);
+        iVar2 = _stricmp(pcVar1,str2);
         if (iVar2 == 0) {
           return iVar3;
         }

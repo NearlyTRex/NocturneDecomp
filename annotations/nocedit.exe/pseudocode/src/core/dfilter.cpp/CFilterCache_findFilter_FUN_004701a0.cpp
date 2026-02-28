@@ -17,7 +17,7 @@ CDemonFilter * __cdecl core_dfilter_cpp_CFilterCache_findFilter_FUN_004701a0(CFi
   if (0 < this_ptr->filter_count) {
     str1 = this_ptr->filter_names;
     do {
-      iVar1 = strcmp(*str1,filter_name);
+      iVar1 = _strcmp(*str1,filter_name);
       if (iVar1 == 0) {
         return this_ptr->filters[iVar2];
       }

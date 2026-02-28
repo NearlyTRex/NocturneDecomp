@@ -20,7 +20,7 @@
 ;   int g_RecordingSampleRate = 0x2b11
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   IDirectSoundCapture* g_RecordingDeviceInterface
+;   CSoundDevice* g_RecordingDeviceInterface
 ;   int g_RecordingSamplesSigned
 ;
 ; Called Functions:

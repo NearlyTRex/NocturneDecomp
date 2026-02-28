@@ -80,7 +80,7 @@ LAB_004b5706:
       if (pcVar5 != (char *)0x0) {
         *pcVar5 = '\0';
       }
-      iVar2 = strcmp(local_64,local_b4);
+      iVar2 = _strcmp(local_64,local_b4);
       if (iVar2 == 0) {
         return;
       }
@@ -106,14 +106,14 @@ LAB_004b5706:
     core_main_c_displayErrorAndQuit_FUN_00506f10("Too many files - get Mark");
   }
   engine_dosio_c_splitPath_FUN_00481f20(local_64,(char *)0x0,local_47c,local_27c,local_37c);
-  iVar4 = stricmp(local_47c,"art");
+  iVar4 = _stricmp(local_47c,"art");
   if ((iVar4 != 0) &&
-     (iVar4 = stricmp(local_47c,"art\\"), iVar4 != 0)) {
+     (iVar4 = _stricmp(local_47c,"art\\"), iVar4 != 0)) {
     return;
   }
-  iVar4 = stricmp(local_37c,"raw");
+  iVar4 = _stricmp(local_37c,"raw");
   if ((iVar4 != 0) &&
-     (iVar4 = stricmp(local_37c,".raw"), iVar4 != 0)) {
+     (iVar4 = _stricmp(local_37c,".raw"), iVar4 != 0)) {
     return;
   }
   engine_dosio_c_makePath_FUN_00481f50(local_580,(char *)0x0,local_47c,local_27c,"OPA");

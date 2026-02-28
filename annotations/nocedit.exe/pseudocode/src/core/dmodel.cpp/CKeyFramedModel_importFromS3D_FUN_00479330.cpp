@@ -357,7 +357,7 @@ LAB_00479c73:
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_c84,0);
       return;
     }
-    iVar10 = stricmp(local_a0,"matProp");
+    iVar10 = _stricmp(local_a0,"matProp");
     p_Var8 = local_20;
     if (iVar10 != 0) {
       for (uVar11 = (uint)local_14[0]; 0 < (int)uVar11; uVar11 = uVar11 - 1) {

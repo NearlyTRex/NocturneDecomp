@@ -19,7 +19,7 @@ void __cdecl core_game_cpp_CGame_setStatusDisplay_FUN_004e0bf0(CGame *this_ptr,c
     pacVar4 = this_ptr->status_bar_names;
     if (0 < this_ptr->status_display_count) {
       do {
-        iVar2 = stricmp(*pacVar4,name);
+        iVar2 = _stricmp(*pacVar4,name);
         if (iVar2 == 0) {
           this_ptr->status_bar_values[iVar3] = (float)value;
           this_ptr->status_bar_timers[iVar3] = duration;

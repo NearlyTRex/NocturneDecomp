@@ -12,7 +12,7 @@
 ; undefined1       Stack[-0x124]:1  local_124
 ;
 ; Called Functions:
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;   engine_dosio.c_findFileNormally_FUN_004817c0
 ;   engine_pod.cpp_CPod_dismountPod_FUN_005518c0
 ;
@@ -65,8 +65,8 @@ section .text
     MOV EAX,dword ptr [ESI + 0x4]       ; 00550be6
     ADD EAX,0x4                         ; 00550be9
     PUSH EAX                            ; 00550bec
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 00550bed
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 00550bed
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 00550bf2
     TEST EAX,EAX                        ; 00550bf5
     JZ 0x00550c0d                       ; 00550bf7

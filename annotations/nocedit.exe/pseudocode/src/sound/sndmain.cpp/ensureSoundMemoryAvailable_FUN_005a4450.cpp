@@ -17,10 +17,10 @@ int __cdecl sound_sndmain_cpp_ensureSoundMemoryAvailable_FUN_005a4450(int reques
   iVar2 = 0;
   iVar4 = 0;
   do {
-    if (*(int *)((int)g_SfxSamples[0].loop_markers + iVar2 + -0x1c) != 0) {
+    if (*(int *)((int)g_SfxSamples[0].loop_endpoints + iVar2 + -8) != 0) {
       iVar3 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_005a8550
                         ((CSfxSample *)(g_SfxSamples[0].sample_info.name + iVar2));
-      iVar4 = iVar4 + iVar3 * *(int *)((int)g_SfxSamples[0].loop_markers + iVar2 + 0x24);
+      iVar4 = iVar4 + iVar3 * *(int *)((int)g_SfxSamples[0].loop_destinations + iVar2 + 0x24);
     }
     iVar2 = iVar2 + 0x180;
   } while (iVar2 != 0x6000);

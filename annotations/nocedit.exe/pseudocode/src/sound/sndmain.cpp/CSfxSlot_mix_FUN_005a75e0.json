@@ -5,17 +5,17 @@
         "category": "incompatible_types",
         "column": 25,
         "line": 147,
-        "message": "invalid operands to binary expression ('double' and 'int')"
+        "message": "incompatible integer to pointer conversion assigning to 'SStereoBuffers *' from 'uint32_t' (aka 'unsigned int')"
       },
       {
         "category": "incompatible_types",
-        "column": 52,
+        "column": 61,
         "line": 216,
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "incompatible_types",
-        "column": 50,
+        "column": 59,
         "line": 249,
         "message": "invalid operands to binary expression ('double' and 'int')"
       }
@@ -25,16 +25,15 @@
   },
   "complexity": {
     "assembly_lines": 705,
-    "complexity_score": 972,
+    "complexity_score": 907,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 332,
-    "suspect_count": 62,
+    "suspect_count": 56,
     "suspect_types": [
       "decompiler_intrinsic",
-      "double_reconstruction",
       "pointer_cast",
       "sub84_truncation"
     ],
@@ -492,19 +491,11 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 128,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "hardware_playback_pos = (double)CONCAT44(uVar13,uVar12);",
-      "type": "double_reconstruction"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 128,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "hardware_playback_pos = (double)CONCAT44(uVar13,uVar12);",
+      "text": "hardware_playback_pos = __BITCAST_DOUBLE(CONCAT44(uVar13,uVar12));",
       "type": "decompiler_intrinsic"
     },
     {
@@ -540,19 +531,11 @@
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 131,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "hardware_playback_pos = (double)CONCAT44(uVar13,uVar12) - dVar5;",
-      "type": "double_reconstruction"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 131,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "hardware_playback_pos = (double)CONCAT44(uVar13,uVar12) - dVar5;",
+      "text": "hardware_playback_pos = __BITCAST_DOUBLE(CONCAT44(uVar13,uVar12)) - dVar5;",
       "type": "decompiler_intrinsic"
     },
     {
@@ -576,7 +559,7 @@
       "line": 140,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "channel_buffers = SUB84(dVar14,0);",
+      "text": "channel_buffers = SUB84(__BITCAST_UINT64(dVar14),0);",
       "type": "sub84_truncation"
     },
     {
@@ -584,7 +567,7 @@
       "line": 140,
       "match": "SUB84",
       "severity": "mild",
-      "text": "channel_buffers = SUB84(dVar14,0);",
+      "text": "channel_buffers = SUB84(__BITCAST_UINT64(dVar14),0);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -692,19 +675,11 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 209,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "(double)CONCAT44(SUB84(hardware_playback_pos,0),local_a8),",
-      "type": "double_reconstruction"
-    },
-    {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
       "line": 209,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "(double)CONCAT44(SUB84(hardware_playback_pos,0),local_a8),",
+      "text": "__BITCAST_DOUBLE(CONCAT44(SUB84(hardware_playback_pos,0),local_a8)),",
       "type": "sub84_truncation"
     },
     {
@@ -712,7 +687,7 @@
       "line": 209,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "(double)CONCAT44(SUB84(hardware_playback_pos,0),local_a8),",
+      "text": "__BITCAST_DOUBLE(CONCAT44(SUB84(hardware_playback_pos,0),local_a8)),",
       "type": "decompiler_intrinsic"
     },
     {
@@ -720,23 +695,15 @@
       "line": 209,
       "match": "SUB84",
       "severity": "mild",
-      "text": "(double)CONCAT44(SUB84(hardware_playback_pos,0),local_a8),",
+      "text": "__BITCAST_DOUBLE(CONCAT44(SUB84(hardware_playback_pos,0),local_a8)),",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 210,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "(double)CONCAT44(channel_buffers,sample_data),(int)channel_gains);",
-      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 210,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "(double)CONCAT44(channel_buffers,sample_data),(int)channel_gains);",
+      "text": "__BITCAST_DOUBLE(CONCAT44(channel_buffers,sample_data)),(int)channel_gains);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -788,19 +755,11 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 242,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "(double)CONCAT44(SUB84(hardware_playback_pos,0),local_a8),",
-      "type": "double_reconstruction"
-    },
-    {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
       "line": 242,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "(double)CONCAT44(SUB84(hardware_playback_pos,0),local_a8),",
+      "text": "__BITCAST_DOUBLE(CONCAT44(SUB84(hardware_playback_pos,0),local_a8)),",
       "type": "sub84_truncation"
     },
     {
@@ -808,7 +767,7 @@
       "line": 242,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "(double)CONCAT44(SUB84(hardware_playback_pos,0),local_a8),",
+      "text": "__BITCAST_DOUBLE(CONCAT44(SUB84(hardware_playback_pos,0),local_a8)),",
       "type": "decompiler_intrinsic"
     },
     {
@@ -816,23 +775,15 @@
       "line": 242,
       "match": "SUB84",
       "severity": "mild",
-      "text": "(double)CONCAT44(SUB84(hardware_playback_pos,0),local_a8),",
+      "text": "__BITCAST_DOUBLE(CONCAT44(SUB84(hardware_playback_pos,0),local_a8)),",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 243,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "(double)CONCAT44(channel_buffers,sample_data),(int)channel_gains);",
-      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 243,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "(double)CONCAT44(channel_buffers,sample_data),(int)channel_gains);",
+      "text": "__BITCAST_DOUBLE(CONCAT44(channel_buffers,sample_data)),(int)channel_gains);",
       "type": "decompiler_intrinsic"
     },
     {

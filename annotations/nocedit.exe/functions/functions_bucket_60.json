@@ -60841,7 +60841,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005a8be0",
-    "ret":"int",
+    "ret":"void",
     "vars":{
       "params":[
         {
@@ -60876,17 +60876,7 @@
           },
           "type":"int"
         }
-      ],
-      "ret_storage":{
-        "reg":"EAX",
-        "size":4,
-        "varnodes":[
-          {
-            "addr":"register:00000000",
-            "size":4
-          }
-        ]
-      }
+      ]
     }
   },
   {
@@ -61842,6 +61832,38 @@
             ]
           },
           "type":"CWavInDevice*"
+        },
+        {
+          "name":"output_buffer",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"short*"
+        },
+        {
+          "name":"num_samples",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ],
       "ret_storage":{

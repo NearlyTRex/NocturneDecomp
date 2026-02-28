@@ -16,7 +16,7 @@ void __cdecl core_main_c_displayErrorAndQuit_FUN_00506f10(char *format,...)
   char *pcVar4;
   char *pcVar5;
   byte *local_14;
-  time_t local_10;
+  int local_10;
   
   if (g_RecursiveCallFlag != 0) {
     p_Var1 = shape_memdbg_cpp_openFile_FUN_0050f7a0

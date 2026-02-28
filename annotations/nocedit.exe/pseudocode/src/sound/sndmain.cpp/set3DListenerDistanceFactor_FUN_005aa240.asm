@@ -10,9 +10,9 @@
 ;   sound_sndmain.cpp_resetSoundSystemDefaults_FUN_005aae00 at 005aae29
 ;
 ; Referenced Globals:
-;   double DOUBLE_00681b30 = 1
-;   undefined4 DOUBLE_00681b30+4
-;   double DOUBLE_00681b38 = 1
+;   double g_Cached3DDistanceFactor = 1
+;   undefined4 g_Cached3DDistanceFactor+4
+;   double g_Cached3DDistanceFactorInverse = 1
 ;   CSoundDevice* g_CSoundDevicePtr
 ;
 ; *****************************************************************************
@@ -23,11 +23,11 @@ section .text
         ;   Label: sound_sndmain.cpp_set3DListenerDistanceFactor_FUN_005aa240
     FDIV double ptr [ESP + 0x4]         ; 005aa242
     MOV EAX,dword ptr [ESP + 0x4]       ; 005aa246
-    MOV [0x00681b30],EAX                ; 005aa24a | DOUBLE_00681b30
+    MOV [0x00681b30],EAX                ; 005aa24a | g_Cached3DDistanceFactor
     MOV EAX,dword ptr [ESP + 0x8]       ; 005aa24f
     MOV EDX,dword ptr [0x03f69268]      ; 005aa253 | g_CSoundDevicePtr
-    MOV [0x00681b34],EAX                ; 005aa259 | DOUBLE_00681b30+4
-    FSTP double ptr [0x00681b38]        ; 005aa25e | DOUBLE_00681b38
+    MOV [0x00681b34],EAX                ; 005aa259 | g_Cached3DDistanceFactor+4
+    FSTP double ptr [0x00681b38]        ; 005aa25e | g_Cached3DDistanceFactorInverse
     TEST EDX,EDX                        ; 005aa264
     JNZ 0x005aa269                      ; 005aa266
         ;   XREF to: 005aa269 (CONDITIONAL_JUMP)  ; LAB_005aa269

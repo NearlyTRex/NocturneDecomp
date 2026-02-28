@@ -40,12 +40,12 @@ double __watcallRegister dadd(double a,double b)
   }
   if (uVar13 == 0) {
     if (((ulonglong)a & 0x7fffffff00000000) == 0) {
-      return (double)CONCAT44(uVar5,uVar12);
+      return __BITCAST_DOUBLE(CONCAT44(uVar5,uVar12));
     }
     uVar8 = uVar8 & 0x7fffffff | (uint)CARRY4(uVar8,uVar8) << 0x1f;
   }
   if (BYTE_00684acd != 0) {
-    dVar17 = (double)CONCAT44(uVar8,uVar13) + (double)CONCAT44(uVar5,uVar12);
+    dVar17 = __BITCAST_DOUBLE(CONCAT44(uVar8,uVar13)) + __BITCAST_DOUBLE(CONCAT44(uVar5,uVar12));
     if ((int)((ulonglong)dVar17 >> 0x20) == -0x80000000) {
       dVar17 = 0.0;
     }
@@ -82,8 +82,8 @@ double __watcallRegister dadd(double a,double b)
       uVar9 = uVar10;
     }
     if (0x36 < (ushort)iVar7) {
-      return (double)CONCAT44(uVar9 >> 1 & 0x800fffff | (uint)CARRY4(uVar6,uVar6) << 0x1f |
-                              uVar6 << 0x14,uVar13 >> 1 | (uint)((uVar9 & 1) != 0) << 0x1f);
+      return __BITCAST_DOUBLE(CONCAT44(uVar9 >> 1 & 0x800fffff | (uint)CARRY4(uVar6,uVar6) << 0x1f |
+                              uVar6 << 0x14,uVar13 >> 1 | (uint)((uVar9 & 1) != 0) << 0x1f));
     }
   }
   if (iVar7 < 0) {
@@ -122,8 +122,8 @@ double __watcallRegister dadd(double a,double b)
   if (uVar11 != 0 || uVar13 != 0) {
     if ((short)uVar6 == 0) {
 LAB_0060e0a5:
-      return (double)CONCAT44(uVar13 >> 1 | (uint)CARRY4(uVar6,uVar6) << 0x1f,
-                              uVar11 >> 1 | (uint)((uVar13 & 1) != 0) << 0x1f);
+      return __BITCAST_DOUBLE(CONCAT44(uVar13 >> 1 | (uint)CARRY4(uVar6,uVar6) << 0x1f,
+                              uVar11 >> 1 | (uint)((uVar13 & 1) != 0) << 0x1f));
     }
     while( true ) {
       uVar14 = (ushort)(uVar6 >> 0x10);
@@ -169,5 +169,5 @@ LAB_0060e0af:
     }
     uVar13 = uVar9 & 0xfffff | (uVar6 << 0x15) >> 1 | (uint)CARRY4(uVar6,uVar6) << 0x1f;
   }
-  return (double)CONCAT44(uVar13,uVar11);
+  return __BITCAST_DOUBLE(CONCAT44(uVar13,uVar11));
 }

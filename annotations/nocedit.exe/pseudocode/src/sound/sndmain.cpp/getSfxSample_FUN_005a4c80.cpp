@@ -32,7 +32,7 @@ CSfxSample * __cdecl sound_sndmain_cpp_getSfxSample_FUN_005a4c80(char *filename)
   pCVar6 = g_SfxSamples;
   iVar7 = 0;
   do {
-    iVar2 = stricmp((char *)pCVar6,filename);
+    iVar2 = _stricmp((char *)pCVar6,filename);
     if (iVar2 == 0) {
       return pCVar6;
     }
@@ -91,7 +91,7 @@ LAB_005a4cea:
     } while (cVar1 != '\0');
     memmove(&local_114,local_113,~uVar5 - 1);
   }
-  iVar7 = stricmp(&local_114,"wav");
+  iVar7 = _stricmp(&local_114,"wav");
   if (iVar7 == 0) {
     local_14 = engine_dosio_c_getFile_FUN_00481a50("sound",filename,"rb");
     if (local_14 == (_FILE *)0x0) {
@@ -134,7 +134,7 @@ LAB_005a4cea:
     }
   }
   else {
-    iVar7 = stricmp(&local_114,"mp3");
+    iVar7 = _stricmp(&local_114,"mp3");
     if (iVar7 != 0) {
       g_CurrentFilename = "..\\sound\\sndmain.cpp";
       g_CurrentLineNumber = 0x37b;

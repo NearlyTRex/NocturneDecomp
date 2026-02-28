@@ -13,6 +13,6 @@ void __cdecl sound_sndmain_cpp_setNextSfxTrackedVelocity_FUN_005a8a00(CVector3f 
   
   iVar1 = g_SfxLastSlot;
   g_SfxOptions[g_SfxLastSlot].velocity_format = 1;
-  g_SfxOptions[iVar1].velocity_source_ptr = (CVector3d *)velocity_source_ptr;
+  g_SfxOptions[iVar1].velocity_source_ptr = velocity_source_ptr;
   return;
 }

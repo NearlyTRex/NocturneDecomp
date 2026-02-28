@@ -66,7 +66,7 @@ LAB_0046a9eb:
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
   for (local_14 = 0; local_14 < g_TextureProcessedCount; local_14 = local_14 + 1) {
-    iVar2 = stricmp
+    iVar2 = _stricmp
                       (g_TextureAtlasEntries[local_14].tga_filename,local_11c);
     if (iVar2 == 0) {
       if (min_u < g_TextureAtlasEntries[local_14].min_u) {

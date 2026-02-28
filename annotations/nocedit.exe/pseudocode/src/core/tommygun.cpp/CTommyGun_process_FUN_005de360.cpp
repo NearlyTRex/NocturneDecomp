@@ -64,7 +64,7 @@ void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_005de360(CTommyGun *this_pt
   }
   sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handles[0]);
   _sprintf
-            ((char *)&local_1dc.taken,"m-gun1.wav @ 2.3 * %f",0xe9,SUB82((double)fVar2,0),
+            ((char *)&local_1dc.taken,"m-gun1.wav @ 2.3 * %f",0xe9,SUB82(__BITCAST_UINT64((double)fVar2),0),
              (int)((ulonglong)(double)fVar2 >> 0x20));
   sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handles[1]);
   uVar4 = (*((this_ptr->base).base.vtable._ub)->playAmbientSound)

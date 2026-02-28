@@ -88,7 +88,7 @@ int __cdecl engine_pod_cpp_CPodFile_mountFromFile_FUN_0054f650(CPodFile *this_pt
   local_20 = p_Var3;
   if (p_Var3 == (_FILE *)0x0) goto LAB_0054f6fe;
   engine_dosio_c_splitPath_FUN_00481f20(pod_filename,(char *)0x0,(char *)0x0,(char *)0x0,local_260);
-  iVar2 = stricmp(local_260,"epd");
+  iVar2 = _stricmp(local_260,"epd");
   if (iVar2 == 0) {
 LAB_0054f786:
     _fread(local_370,1,0x110,local_20);
@@ -167,7 +167,7 @@ LAB_0054f6fe:
     iVar2 = size - local_2c;
   }
   else {
-    iVar2 = stricmp(local_260,".epd");
+    iVar2 = _stricmp(local_260,".epd");
     if (iVar2 == 0) goto LAB_0054f786;
     _fread(&local_30,1,4,p_Var3);
     _fseek(p_Var3,0,0);

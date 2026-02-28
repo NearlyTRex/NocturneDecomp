@@ -14,15 +14,15 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,494
   Unnamed functions (FUN_):          198 ( 3.0%)
   Functions with unnamed params:     57 ( 0.9%)
-  Functions with type issues:        2,502 (38.5%)
+  Functions with type issues:        2,499 (38.5%)
 
   Type issue breakdown:
     Wrong return type (void):          4
     Wrong return type (wide/64-bit):   2
-    Missing register params:           18
-    Wrong calling convention:          70
+    Missing register params:           17
+    Wrong calling convention:          71
     Undefined types in variables:      2275
-    Unresolved stack params:           556
+    Unresolved stack params:           553
 
 ====================================================================================================
 UNNAMED FUNCTIONS (still using FUN_XXXXXXXX)
@@ -615,7 +615,7 @@ Wrong return type (64-bit return via EDX:EAX) (2)
     Suggested: Likely returns 64-bit value (longlong) via EDX:EAX
 
 --------------------------------------------------------------------------------
-Missing register parameters (likely wrong calling convention) (18)
+Missing register parameters (likely wrong calling convention) (17)
 --------------------------------------------------------------------------------
 
   CDrawSurface_clipLine
@@ -652,12 +652,6 @@ Missing register parameters (likely wrong calling convention) (18)
     Address: 0x0048ce90  File: engine/drender.cpp
     Evidence: in_EAX, in_EAX, in_EAX
     Signature: int __cdecl engine_drender_cpp_CDemonRenderer_renderPrimitiveBatch_FUN_0048ce90(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *primitive_array,int primitive_count,int render_flags)
-    Suggested: Likely register-based calling convention
-
-  CSfxSlot_computeDistancesToSpeakers
-    Address: 0x005a6d80  File: sound/sndmain.cpp
-    Evidence: in_EAX, in_EAX
-    Signature: int __cdecl sound_sndmain_cpp_CSfxSlot_computeDistancesToSpeakers_FUN_005a6d80(CSfxSlot *this_ptr)
     Suggested: Likely register-based calling convention
 
   CDemonCamera_endBackgroundScene
@@ -727,7 +721,7 @@ Missing register parameters (likely wrong calling convention) (18)
     Suggested: Likely __fastcall (ECX, EDX params)
 
 --------------------------------------------------------------------------------
-Wrong calling convention (unaffected register usage) (70)
+Wrong calling convention (unaffected register usage) (71)
 --------------------------------------------------------------------------------
 
   CPackedBitmapSet_reloadStoredPBGFile
@@ -788,6 +782,12 @@ Wrong calling convention (unaffected register usage) (70)
     Address: 0x004b76d0  File: engine/fileio.cpp
     Evidence: unaff_EBX, unaff_EBX
     Signature: void __cdecl engine_fileio_cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0(CFileManager *this_ptr)
+    Suggested: Calling convention may be wrong (preserved registers being used)
+
+  processAudio
+    Address: 0x005abe20  File: sound/sndmain.cpp
+    Evidence: unaff_EBX, unaff_ESI, unaff_EBX, unaff_ESI
+    Signature: void __cdecl sound_sndmain_cpp_processAudio_FUN_005abe20(void)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
   CDemonCamera_worldToScreenWithFrustumCull
@@ -1151,7 +1151,7 @@ Wrong calling convention (unaffected register usage) (70)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
 --------------------------------------------------------------------------------
-Unresolved stack parameters (missing from signature) (556)
+Unresolved stack parameters (missing from signature) (553)
 --------------------------------------------------------------------------------
 
   CPackedBitmapSet_reload
@@ -1378,20 +1378,14 @@ Unresolved stack parameters (missing from signature) (556)
 
   CMP3Decoder_decodeFrame
     Address: 0x00534d40  File: sound/mp3.cpp
-    Evidence: in_stack_00000008, in_stack_ffff9f14, in_stack_ffff9f18, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_ffff9f18, in_stack_ffff9f14, in_stack_ffff9f18, in_stack_ffff9f14, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this_ptr)
+    Evidence: in_stack_ffff9f14, in_stack_ffff9f18, in_stack_ffff9f18, in_stack_ffff9f14, in_stack_ffff9f18, in_stack_ffff9f14
+    Signature: int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this_ptr,short *pcm_output)
     Suggested: Signature is missing stack parameters entirely
 
   CWavInDevice_setMode
     Address: 0x005b0f70  File: sound/sndwav.cpp
     Evidence: in_stack_00000018, in_stack_00000018
     Signature: int __cdecl sound_sndwav_cpp_CWavInDevice_setMode_FUN_005b0f70(CWavInDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_samples_per_block)
-    Suggested: Signature is missing stack parameters entirely
-
-  CWavInDevice_poll
-    Address: 0x005b12e0  File: sound/sndwav.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c
-    Signature: int __cdecl sound_sndwav_cpp_CWavInDevice_poll_FUN_005b12e0(CWavInDevice *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
   CWavOutDevice_setMode
@@ -1422,12 +1416,6 @@ Unresolved stack parameters (missing from signature) (556)
     Address: 0x005a86f0  File: sound/sndmain.cpp
     Evidence: in_stack_00000004, in_stack_ffffffe0, in_stack_ffffffe0, in_stack_00000004, in_stack_ffffffe0
     Signature: double __cdecl sound_sndmain_cpp_CSampleInfo_normalizePlaybackPos_FUN_005a86f0(CSampleInfo *this_ptr,double position,uint input_type,uint output_type)
-    Suggested: Signature is missing stack parameters entirely
-
-  getRecordingDeviceCaps
-    Address: 0x005abb10  File: sound/sndmain.cpp
-    Evidence: in_stack_00000004, in_stack_00000004
-    Signature: HRESULT __cdecl sound_sndmain_cpp_getRecordingDeviceCaps_FUN_005abb10(LPDSCCAPS pDSCCaps)
     Suggested: Signature is missing stack parameters entirely
 
   testSoundFile
@@ -1464,12 +1452,6 @@ Unresolved stack parameters (missing from signature) (556)
     Address: 0x005a5fb0  File: sound/sndmain.cpp
     Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000010, in_stack_0000000c, in_stack_0000000c, in_stack_00000008, in_stack_00000008, in_stack_00000004, in_stack_00000004
     Signature: double __cdecl sound_sndmain_cpp_mixResampleStereoToStereo_FUN_005a5fb0(short *sample_data,SStereoBuffers *channel_buffers,SStereoGains *channel_gains,double resample_position,double resample_delta,int samples_to_process)
-    Suggested: Signature is missing stack parameters entirely
-
-  releaseRecordingDevice
-    Address: 0x005ab930  File: sound/sndmain.cpp
-    Evidence: in_stack_00000004, in_stack_00000004
-    Signature: int __cdecl sound_sndmain_cpp_releaseRecordingDevice_FUN_005ab930(void)
     Suggested: Signature is missing stack parameters entirely
 
   readIni

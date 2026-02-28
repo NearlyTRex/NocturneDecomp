@@ -19,7 +19,7 @@ int __cdecl shape_edittool_cpp_CStrList_findString_FUN_004a3030(CStrList *this_p
     do {
       str2 = search_string;
       str1 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(this_ptr,index);
-      iVar1 = stricmp(str1,str2);
+      iVar1 = _stricmp(str1,str2);
       if (iVar1 == 0) {
         return index;
       }

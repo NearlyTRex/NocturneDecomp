@@ -32,7 +32,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_findClosestFaceToSamplePoint_FUN_0051830
                           (this_ptr_00,sample_point,face);
         local_28 = dVar2;
         if (dVar2 < *(double *)&this_ptr_00->lod_texture_count) {
-          face = SUB84(dVar2,0);
+          face = SUB84(__BITCAST_UINT64(dVar2),0);
           this_ptr_00->tri_data = pCVar1;
           this_ptr_00->lod_texture_count = (int)face;
           pSStack_24 = (SMRGLTextureLod *)((ulonglong)dVar2 >> 0x20);

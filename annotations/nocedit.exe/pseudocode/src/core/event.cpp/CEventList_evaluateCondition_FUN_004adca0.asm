@@ -30,7 +30,7 @@
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_evaluateExpression_FUN_004add80
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;   engine_console.cpp_CConsole_printf_FUN_00441890
 ;
 ; *****************************************************************************
@@ -54,8 +54,8 @@ section .text
     PUSH 0x6252ae                       ; 004adcb2 | = "none"
         ;   Label: LAB_004adcb2
     PUSH EBX                            ; 004adcb7
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 004adcb8
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 004adcb8
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004adcbd
     TEST EAX,EAX                        ; 004adcc0
     JZ 0x004adcb0                       ; 004adcc2

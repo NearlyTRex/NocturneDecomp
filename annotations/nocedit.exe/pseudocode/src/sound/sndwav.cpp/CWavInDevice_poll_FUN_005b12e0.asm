@@ -1,10 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl sound_sndwav_cpp_CWavInDevice_poll_FUN_005b12e0(CWavInDevice *this_ptr)
+; int __cdecl sound_sndwav_cpp_CWavInDevice_poll_FUN_005b12e0(CWavInDevice *this_ptr,short *output_buffer,int num_samples)
 ;
 ; Parameters:
 ; CWavInDevice *   Stack[0x4]:4   this_ptr
+; short *          Stack[0x8]:4   output_buffer
+; int              Stack[0xc]:4   num_samples
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18

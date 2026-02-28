@@ -12,27 +12,27 @@ int __cdecl core_skeledit_cpp_FUN_005925c0(void *ptr)
   int iVar1;
   
   __STK();
-  iVar1 = stricmp(ptr,"skipTo");
+  iVar1 = _stricmp(ptr,"skipTo");
   if (iVar1 == 0) {
     return 1;
   }
-  iVar1 = stricmp(ptr,"flowTo");
+  iVar1 = _stricmp(ptr,"flowTo");
   if (iVar1 == 0) {
     return 2;
   }
-  iVar1 = stricmp(ptr,"tweenPoseToPose");
+  iVar1 = _stricmp(ptr,"tweenPoseToPose");
   if (iVar1 == 0) {
     return 3;
   }
-  iVar1 = stricmp(ptr,"tweenPoseToMotion");
+  iVar1 = _stricmp(ptr,"tweenPoseToMotion");
   if (iVar1 == 0) {
     return 4;
   }
-  iVar1 = stricmp(ptr,"tweenMotionToPose");
+  iVar1 = _stricmp(ptr,"tweenMotionToPose");
   if (iVar1 == 0) {
     return 5;
   }
-  iVar1 = stricmp(ptr,"tweenMotionToMotion");
+  iVar1 = _stricmp(ptr,"tweenMotionToMotion");
   if (iVar1 == 0) {
     return 6;
   }

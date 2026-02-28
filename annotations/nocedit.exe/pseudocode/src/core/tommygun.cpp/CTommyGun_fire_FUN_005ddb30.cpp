@@ -140,7 +140,7 @@ int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_005ddb30(CTommyGun *this_ptr)
           if (iVar4 != 0) {
             in_stack_fffffebc =
                  (float)(*(((this_ptr->base).base.vtable._uc)->_uc).getGrabbed)
-                                  ((CCharacter *)this_ptr,SUB84(dVar6,0),
+                                  ((CCharacter *)this_ptr,SUB84(__BITCAST_UINT64(dVar6),0),
                                    (int)((ulonglong)dVar6 >> 0x20));
             core_trigger_cpp_CTrigger_applyDamage_FUN_005e0b00(this_ptr_02,in_stack_fffffebc);
           }

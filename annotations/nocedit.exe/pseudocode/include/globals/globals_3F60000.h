@@ -236,6 +236,7 @@ extern CSound g_CSoundInstance;
 
 // CSoundDevice*
 extern CSoundDevice* g_CSoundDevicePtr;
+extern CSoundDevice* g_RecordingDeviceInterface;
 
 // CSpotView
 extern CSpotView g_CSpotViewInstance;
@@ -311,9 +312,6 @@ extern IDirectSoundBuffer* g_DirectSoundHardwareSfxBuffers[31];
 
 // IDirectSoundBufferMetadata[25]
 extern IDirectSoundBufferMetadata g_DirectSoundBufferMetadata[25];
-
-// IDirectSoundCapture*
-extern IDirectSoundCapture* g_RecordingDeviceInterface;
 
 // IKsPropertySet*
 extern IKsPropertySet* g_DirectSoundPropertySet;

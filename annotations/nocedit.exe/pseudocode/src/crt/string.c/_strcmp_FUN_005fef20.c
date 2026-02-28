@@ -1,12 +1,12 @@
-// Name: crt_string.c_strcmp_FUN_005fef20
+// Name: crt_string.c__strcmp_FUN_005fef20
 // Address: 005fef20
 // Address Range: [[005fef20, 005fefcb]]
 // Convention: __cdecl
-// Signature: int __cdecl crt_string_c_strcmp_FUN_005fef20(char *str1,char *str2)
+// Signature: int __cdecl crt_string_c__strcmp_FUN_005fef20(char *str1,char *str2)
 
 #include "nocturne.h"
 
-int __cdecl strcmp(char *str1,char *str2)
+int __cdecl _strcmp(char *str1,char *str2)
 
 {
   byte bVar1;

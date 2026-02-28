@@ -11,6 +11,6 @@ int __cdecl shape_edittool_cpp_CStrList_qsortByString_FUN_004a2ee0(char *a,char 
 {
   int iVar1;
   
-  iVar1 = stricmp(*(char **)a,*(char **)b);
+  iVar1 = _stricmp(*(char **)a,*(char **)b);
   return iVar1;
 }

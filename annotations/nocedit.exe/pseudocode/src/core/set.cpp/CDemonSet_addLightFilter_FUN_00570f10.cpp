@@ -23,7 +23,7 @@ void __cdecl core_set_cpp_CDemonSet_addLightFilter_FUN_00570f10(CDemonSet *this_
       pCVar1 = (C3DSLight *)(this_ptr->lights[0].name + iVar4 + -4);
       *out_light = pCVar1;
       if (pCVar1->light_type == 0) {
-        iVar2 = stricmp(pCVar1->name,light_name);
+        iVar2 = _stricmp(pCVar1->name,light_name);
         if (iVar2 == 0) {
           *out_master_light = g_MasterLightList[iVar5];
           return;

@@ -52,7 +52,7 @@
       {
         "category": "other",
         "column": 36,
-        "line": 532,
+        "line": 531,
         "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       }
     ],
@@ -61,20 +61,19 @@
   },
   "complexity": {
     "assembly_lines": 1482,
-    "complexity_score": 910,
+    "complexity_score": 884,
     "cross_reference_count": 1,
     "function_call_count": 45,
     "global_count": 63,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 750,
-    "suspect_count": 14,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 749,
+    "suspect_count": 12,
     "suspect_types": [
       "decompiler_intrinsic",
-      "double_reconstruction",
       "pointer_cast",
       "unknown_field"
     ],
-    "total_lines": 2232
+    "total_lines": 2231
   },
   "cross_references": [
     {
@@ -1094,40 +1093,24 @@
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 515,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "fVar16 = (float10)(double)CONCAT44(local_a40,uStack_a44) * (float10)dVar17;",
-      "type": "double_reconstruction"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 515,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "fVar16 = (float10)(double)CONCAT44(local_a40,uStack_a44) * (float10)dVar17;",
+      "text": "fVar16 = (float10)__BITCAST_DOUBLE(CONCAT44(local_a40,uStack_a44)) * (float10)dVar17;",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 518,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "(iVar7,(float)(double)CONCAT44(local_a40,uStack_a44),",
-      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 518,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "(iVar7,(float)(double)CONCAT44(local_a40,uStack_a44),",
+      "text": "(iVar7,(float)__BITCAST_DOUBLE(CONCAT44(local_a40,uStack_a44)),(float)fVar16);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 520,
+      "line": 519,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_18 = (int)ROUND(ROUND((float)g_WindowHeight -",
@@ -1135,7 +1118,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 520,
+      "line": 519,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_18 = (int)ROUND(ROUND((float)g_WindowHeight -",
@@ -1143,7 +1126,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 525,
+      "line": 524,
       "match": "._4_4_",
       "severity": "mild",
       "text": "local_a40 = uStack_4c._4_4_;",

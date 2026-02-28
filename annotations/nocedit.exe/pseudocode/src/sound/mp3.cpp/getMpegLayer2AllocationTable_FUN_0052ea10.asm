@@ -10,7 +10,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_mp3_cpp_0063aca4
 ;   TerminatedCString s_js_bound_bad_layer_modex_0063acb5
-;   void*[4][4] g_MpegLayer2AllocationTables
+;   int[4][4] g_MpegLayer2AllocationTables
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   char[256] g_CurrentMp3Filename

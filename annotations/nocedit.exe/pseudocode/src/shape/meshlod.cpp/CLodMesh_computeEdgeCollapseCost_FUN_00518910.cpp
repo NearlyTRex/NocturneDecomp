@@ -345,7 +345,7 @@ LAB_0051919d:
                         local_8c = shape_meshlod_cpp_CLodMesh_computePointToFaceDistance_FUN_0051a400
                                              (local_34,(SLodSamplePoint *)pCVar11,
                                               SUB84(in_stack_fffffed8,0));
-                        if (local_8c < (double)CONCAT44(uStack_114,local_118)) {
+                        if (local_8c < __BITCAST_DOUBLE(CONCAT44(uStack_114,local_118))) {
                           local_108 = SUB84(local_8c,0);
                           local_118 = local_108;
                           uStack_104 = (uint)((ulonglong)local_8c >> 0x20);
@@ -357,7 +357,7 @@ LAB_0051919d:
                     }
                     local_100 = local_100 + 1;
                     fVar2 = (float)local_34->active_attribute_count *
-                            (float)(double)CONCAT44(uStack_114,local_118) + fVar2;
+                            (float)__BITCAST_DOUBLE(CONCAT44(uStack_114,local_118)) + fVar2;
                   }
                   local_4c = local_4c + 0x1c;
                   local_40 = local_40 + 1;

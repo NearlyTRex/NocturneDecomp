@@ -308,7 +308,7 @@ void __cdecl engine_fileio_cpp_CFileManager_managePodFiles_FUN_004b86b0(CFileMan
           filename[0x37b] = '\0';
           *(char **)(filename + 0x36c) = "(Cannot recommend action)";
           if ((filename[0x308] == '\0') ||
-             (iVar2 = stricmp
+             (iVar2 = _stricmp
                                 (filename + 0x308,g_VersionControlSession.primary_username),
              iVar2 != 0)) {
             if ((*(int *)(filename + 0x370) == 4) &&
@@ -404,7 +404,7 @@ LAB_004b8c1d:
           if (0 < local_48) {
             pcVar12 = (char *)((int)local_44 + 0x100);
             do {
-              iVar4 = stricmp(local_3c,pcVar12);
+              iVar4 = _stricmp(local_3c,pcVar12);
               if (iVar4 == 0) break;
               iVar9 = iVar9 + 1;
               pcVar12 = pcVar12 + 0x39c;
@@ -594,7 +594,7 @@ LAB_004b9590:
           pcVar12 = pcVar12 + iVar9;
           if (*(char *)((int)pvVar10 + iVar2 * 0x39c + 0x308) != '\0') {
             pcVar13 = (char *)((int)pvVar10 + iVar2 * 0x39c + 0x308);
-            iVar9 = stricmp
+            iVar9 = _stricmp
                               (pcVar13,g_VersionControlSession.primary_username);
             if (iVar9 == 0) {
               iVar9 = _sprintf(pcVar12,"You currently have this pod checked out\n")
@@ -643,7 +643,7 @@ LAB_004b9590:
                                  (&local_1364,local_2338,iVar9,0), -1 < iVar9) {
           pcVar13 = "Show local file differences";
           pcVar12 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_1364.base,iVar9);
-          iVar4 = stricmp(pcVar12,pcVar13);
+          iVar4 = _stricmp(pcVar12,pcVar13);
           if (iVar4 != 0) {
             iVar4 = 0;
             iVar6 = 0;
@@ -718,7 +718,7 @@ LAB_004b9590:
                 pcVar13 = (char *)((int)pvVar10 + iVar9 * 0x39c + 0x308);
                 if (-1 < (int)local_38) {
                   if (((pcVar13 == (char *)0x0) || (*pcVar13 == '\0')) ||
-                     (iVar2 = stricmp
+                     (iVar2 = _stricmp
                                         (pcVar13,g_VersionControlSession.primary_username),
                      iVar2 != 0)) {
                     if ((local_38 & 8) != 0) goto LAB_004b9af4;
@@ -788,7 +788,7 @@ LAB_004b9af4:
                                   (g_CEditorToolsPtr,"WARNING: Error setting date/time on %s.\n(Most likely reason: Tried to set the file time to a time\nnewer than the current system time on your computer)",pcVar12);
                       }
                       if ((g_VersionControlDirectory[0] != '\0') &&
-                         (iVar2 = stricmp
+                         (iVar2 = _stricmp
                                             ((char *)((int)pvVar10 + iVar9 * 0x39c + 0x308),
                                              g_VersionControlSession.primary_username), iVar2 != 0))
                       {
@@ -910,7 +910,7 @@ LAB_004b901b:
 LAB_004b994d:
     pcVar12 = *(char **)((int)PTR_ARRAY_00679da0 + iVar4);
     pcVar13 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_1364.base,iVar9);
-    iVar7 = stricmp(pcVar13,pcVar12);
+    iVar7 = _stricmp(pcVar13,pcVar12);
     if (iVar7 == 0) {
       *(int *)((int)pvVar10 + iVar2 * 0x39c + 0x378) = iVar6;
       break;

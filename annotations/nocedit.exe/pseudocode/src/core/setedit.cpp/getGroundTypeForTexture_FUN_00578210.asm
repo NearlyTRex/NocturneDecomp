@@ -15,7 +15,7 @@
 ;   char[500] g_GroundTextureTypes
 ;
 ; Called Functions:
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;   engine_dosio.c_splitPath_FUN_00481f20
 ;
 ; *****************************************************************************
@@ -47,8 +47,8 @@ section .text
         ;   Label: LAB_00578245
     PUSH EAX                            ; 00578247
     PUSH ESI                            ; 00578248 | g_GroundTextureNames | DAT_03654398
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 00578249
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 00578249
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0057824e
     TEST EAX,EAX                        ; 00578251
     JNZ 0x00578269                      ; 00578253

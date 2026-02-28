@@ -27,7 +27,7 @@
 // FUNCTION PROTOTYPES - Range 0x530000
 // =============================================================================
 
-void __cdecl sound_mp3_cpp_requantizeSamples_FUN_005301b0(SMpegSubbandScalefactors *quantized_samples, SMpegSubbandScalefactors *dequantized_samples,SMpegSubbandAllocation *allocation, SMpegFrameHeader *header);
+void __cdecl sound_mp3_cpp_requantizeSamples_FUN_005301b0(SMpegSubbandScalefactors *quantized_samples, SMpegSubbandScalefactors *dequantized_samples,SMpegSubbandAllocation *allocation, SMpegFrame *frame);
 void __cdecl sound_mp3_cpp_applyScalefactorsToSubbands_FUN_005302f0(float *spectral_samples,int *scalefactor_band_indices,SMpegFrame *frame_info, int channel_or_granule_index);
 void __cdecl sound_mp3_cpp_applyScalefactorsToLayer2Samples_FUN_005303a0(float *sample_array,int *scalefactor_indices,SMpegFrame *frame_info);
 void __cdecl sound_mp3_cpp_initializeSynthesisDctTable_FUN_00530400(float *output_dct_table);
@@ -56,7 +56,7 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_free_FUN_005349e0(CMP3Decoder *this_ptr);
 int __cdecl sound_mp3_cpp_CMP3Decoder_read_FUN_00534a60(CMP3Decoder *this_ptr,short *output_buffer,int samples_requested);
 int __cdecl sound_mp3_cpp_CMP3Decoder_seek_FUN_00534ba0(CMP3Decoder *this_ptr,int sample_offset);
 int __cdecl sound_mp3_cpp_CMP3Decoder_getTotalSamples_FUN_00534d10(CMP3Decoder *this_ptr);
-int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this_ptr);
+int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this_ptr,short *pcm_output);
 void __cdecl core_msnedit_cpp_staticInit_FUN_00535c30(void);
 float * __cdecl core_msnedit_cpp_FUN_00535c60(float *param_1,int param_2,int param_3);
 char * __cdecl core_msnedit_cpp_FUN_00535df0(int param_1);

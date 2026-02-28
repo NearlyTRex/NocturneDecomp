@@ -82,7 +82,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_importFromDSE_FUN_0047ea10(CKeyFram
       if (0 < this_ptr->texture_count) {
         pcVar7 = this_ptr->texture_list[0].textures[0].texture_name;
         do {
-          iVar4 = stricmp(pcVar7,local_18);
+          iVar4 = _stricmp(pcVar7,local_18);
           if (iVar4 == 0) break;
           iVar6 = iVar6 + 1;
           pcVar7 = pcVar7 + 0x48;

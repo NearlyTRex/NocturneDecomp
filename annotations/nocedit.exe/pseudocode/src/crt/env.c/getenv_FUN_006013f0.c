@@ -28,7 +28,7 @@ char * __cdecl getenv(char *name)
     count = ~uVar3 - 1;
     for (ppcVar4 = g_EnvironmentBlock; pcVar5 = *ppcVar4, pcVar5 != (char *)0x0;
         ppcVar4 = ppcVar4 + 1) {
-      iVar2 = mbstrnicmp(pcVar5,name,count);
+      iVar2 = _mbstrnicmp(pcVar5,name,count);
       if ((iVar2 == 0) && (pcVar5[count] == '=')) {
         return pcVar5 + ~uVar3;
       }

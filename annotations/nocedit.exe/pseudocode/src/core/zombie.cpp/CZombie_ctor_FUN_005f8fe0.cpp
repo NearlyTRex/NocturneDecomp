@@ -50,7 +50,7 @@ CZombie * __cdecl core_zombie_cpp_CZombie_ctor_FUN_005f8fe0(CZombie *this_ptr)
   pcVar7 = g_CDemonSetPtr->geometry_filename;
   pCVar3->is_miner_zombie = 0;
   pCVar3->pain_cooldown = 0.0;
-  iVar5 = stricmp(pcVar7,"mine.geo");
+  iVar5 = _stricmp(pcVar7,"mine.geo");
   pCVar3->always_chase_fast = 0;
   pCVar3->rise_delay = 0.0;
   pCVar3->buried_timer = 0.0;

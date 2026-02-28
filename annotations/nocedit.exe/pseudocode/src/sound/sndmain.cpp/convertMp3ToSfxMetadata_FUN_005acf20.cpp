@@ -130,7 +130,7 @@ joined_r0x005ad2dc:
         } while (cVar1 != '\0');
         memmove(local_45c,local_45c + 1,~uVar7 - 1);
       }
-      iVar5 = strnicmp(local_45c,"length",5);
+      iVar5 = _strnicmp(local_45c,"length",5);
       if (iVar5 == 0) {
         if (-1 < iVar2) {
           g_CurrentFilename = "..\\sound\\sndmain.cpp";

@@ -5,7 +5,7 @@
         "category": "incompatible_types",
         "column": 22,
         "line": 45,
-        "message": "invalid operands to binary expression ('double' and 'int')"
+        "message": "incompatible integer to pointer conversion assigning to 'CLodFace *' from 'uint32_t' (aka 'unsigned int')"
       }
     ],
     "success": false,
@@ -248,7 +248,7 @@
       "line": 38,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "face = SUB84(dVar7,0);",
+      "text": "face = SUB84(__BITCAST_UINT64(dVar7),0);",
       "type": "sub84_truncation"
     },
     {
@@ -256,7 +256,7 @@
       "line": 38,
       "match": "SUB84",
       "severity": "mild",
-      "text": "face = SUB84(dVar7,0);",
+      "text": "face = SUB84(__BITCAST_UINT64(dVar7),0);",
       "type": "decompiler_intrinsic"
     },
     {

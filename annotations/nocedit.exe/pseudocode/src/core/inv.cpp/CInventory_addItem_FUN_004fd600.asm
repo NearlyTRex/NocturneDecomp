@@ -1590,8 +1590,8 @@ section .text
     PUSH EAX                            ; 004fe3ac
     MOV EDX,dword ptr [ESP + 0x30c]     ; 004fe3ad
     PUSH EDX                            ; 004fe3b4
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 004fe3b5
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 004fe3b5
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 004fe3ba
     TEST EAX,EAX                        ; 004fe3bd
     JNZ 0x004fe24f                      ; 004fe3bf
@@ -1634,8 +1634,8 @@ section .text
     ADD ESP,0x4                         ; 004fe43b
     PUSH EAX                            ; 004fe43e
     PUSH ESI                            ; 004fe43f
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 004fe440
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 004fe440
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004fe445
     TEST EAX,EAX                        ; 004fe448
     JNZ 0x004fe296                      ; 004fe44a
@@ -1650,8 +1650,8 @@ section .text
     PUSH EAX                            ; 004fe45e
     MOV ECX,dword ptr [ESP + 0x310]     ; 004fe45f
     PUSH ECX                            ; 004fe466
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 004fe467
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 004fe467
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004fe46c
     TEST EAX,EAX                        ; 004fe46f
     JNZ 0x004fe2e9                      ; 004fe471
@@ -1703,8 +1703,8 @@ section .text
     PUSH 0x630750                       ; 004fe50b | = "CDynamite"
         ;   Label: LAB_004fe50b
     PUSH ESI                            ; 004fe510
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 004fe511
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 004fe511
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 004fe516
     TEST EAX,EAX                        ; 004fe519
     JZ 0x004fe5a7                       ; 004fe51b
@@ -1939,8 +1939,8 @@ section .text
         ;   XREF to: 00408b90 (UNCONDITIONAL_CALL)  ; char * core_actor.cpp_CDemonActor_getActorClassName_FUN_00408b90(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004fe785
     PUSH EAX                            ; 004fe788
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 004fe789
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 004fe789
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 004fe78e
     TEST EAX,EAX                        ; 004fe791
     JNZ 0x004fe684                      ; 004fe793
@@ -1996,8 +1996,8 @@ section .text
     PUSH EAX                            ; 004fe82e
     LEA EAX,[ESI + 0x2d4]               ; 004fe82f
     PUSH EAX                            ; 004fe835
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 004fe836
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 004fe836
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 004fe83b
     TEST EAX,EAX                        ; 004fe83e
     JNZ 0x004fe6d8                      ; 004fe840

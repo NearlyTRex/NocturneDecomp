@@ -17,7 +17,7 @@
 ;   TerminatedCString s_MPEG_Layer_2_pick_table__0063ac6b
 ;   TerminatedCString s_sound_mp3_cpp_0063aca4
 ;   TerminatedCString s_js_bound_bad_layer_modex_0063acb5
-;   void*[4][4] g_MpegLayer2AllocationTables
+;   int[4][4] g_MpegLayer2AllocationTables
 ;   double[2][4] g_MpegSampleRateTable
 ;   int[2][3][15] g_MpegBitrateTable
 ;   char* g_CurrentFilename

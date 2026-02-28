@@ -19,7 +19,7 @@
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_loadByFileExtension_FUN_0054b4b0
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_0054c1e0
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_reloadStoredPBGFile_FUN_0054c4d0
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;
 ; *****************************************************************************
 
@@ -110,16 +110,16 @@ section .text
         ;   XREF to: 0054c540 (CONDITIONAL_JUMP)  ; LAB_0054c540
     PUSH 0x63f74c                       ; 0054c586 | = ".raw"
     PUSH ESI                            ; 0054c58b
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 0054c58c
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 0054c58c
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0054c591
     TEST EAX,EAX                        ; 0054c594
     JZ 0x0054c5ba                       ; 0054c596
         ;   XREF to: 0054c5ba (CONDITIONAL_JUMP)  ; LAB_0054c5ba
     PUSH 0x63f751                       ; 0054c598 | = ".pbg"
     PUSH ESI                            ; 0054c59d
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 0054c59e
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 0054c59e
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0054c5a3
     TEST EAX,EAX                        ; 0054c5a6
     JNZ 0x0054c540                      ; 0054c5a8

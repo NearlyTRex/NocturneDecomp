@@ -9,7 +9,7 @@
 ;   sound_sndmain.cpp_shutdownSoundSystem_FUN_005aaeb0 at 005aaece
 ;
 ; Referenced Globals:
-;   IDirectSoundCapture* g_RecordingDeviceInterface
+;   CSoundDevice* g_RecordingDeviceInterface
 ;   int isRecordingStarted
 ;
 ; Called Functions:

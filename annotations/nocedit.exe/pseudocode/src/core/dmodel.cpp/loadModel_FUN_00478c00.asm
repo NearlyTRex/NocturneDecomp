@@ -24,7 +24,7 @@
 ;   core_dmodel.cpp_CKeyFramedModel_captureTextures_FUN_00478190
 ;   core_dmodel.cpp_CKeyFramedModel_load_FUN_00476db0
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;
 ; *****************************************************************************
 
@@ -46,8 +46,8 @@ section .text
     PUSH EDI                            ; 00478c1a
         ;   Label: LAB_00478c1a
     PUSH EBX                            ; 00478c1b | g_CKeyFramedModelPool | DAT_026acb5c
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 00478c1c
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 00478c1c
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 00478c21
     TEST EAX,EAX                        ; 00478c24
     JZ 0x00478c9b                       ; 00478c26

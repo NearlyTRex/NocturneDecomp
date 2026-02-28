@@ -76,7 +76,7 @@ void __cdecl shape_design_c_configureSinglePassPolygonReduction_FUN_00465560(int
        (((iVar2 = shape_design_c_findVertexMatches_FUN_00461ae0
                             ((int *)g_ModelPolygonData[local_18].vertex_indices,
                              (int *)g_ModelPolygonData[local_24].vertex_indices,3,3), iVar2 != 0 &&
-         (iVar2 = strcmp
+         (iVar2 = _strcmp
                             (g_ModelPolygonData[local_18].lightmap_name,
                              g_ModelPolygonData[local_24].lightmap_name), iVar2 == 0)) &&
         ((local_1c == 0 ||

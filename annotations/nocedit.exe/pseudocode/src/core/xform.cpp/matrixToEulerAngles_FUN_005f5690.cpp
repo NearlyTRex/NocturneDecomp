@@ -39,7 +39,7 @@ CVector3f * __cdecl core_xform_cpp_matrixToEulerAngles_FUN_005f5690(CMatrix3x3f 
   if (0.0 < dVar9) {
     dVar9 = 1.0 / dVar9;
   }
-  local_98 = SUB84(dVar9,0);
+  local_98 = SUB84(__BITCAST_UINT64(dVar9),0);
   fVar1 = matrix_in->m[1].y;
   fVar2 = matrix_in->m[1].z;
   fVar3 = matrix_in->m[2].x;
@@ -54,7 +54,7 @@ CVector3f * __cdecl core_xform_cpp_matrixToEulerAngles_FUN_005f5690(CMatrix3x3f 
   if (0.0 < dVar9) {
     dVar9 = 1.0 / dVar9;
   }
-  local_88 = SUB84(dVar9,0);
+  local_88 = SUB84(__BITCAST_UINT64(dVar9),0);
   fVar1 = -matrix_in->m[2].x * fVar1;
   uStack_8c = (uint)((ulonglong)(double)fVar1 >> 0x20);
   if ((float)-1 < fVar1) {
@@ -68,28 +68,28 @@ CVector3f * __cdecl core_xform_cpp_matrixToEulerAngles_FUN_005f5690(CMatrix3x3f 
       }
       if (0.0 < dVar8) {
         dVar8 = 1.0 / dVar8;
-        uStack_3c = SUB84(dVar8,0);
-        fVar1 = matrix_in->m[0].z * (float)(double)CONCAT44(local_98,uStack_9c) * (float)dVar8;
+        uStack_3c = SUB84(__BITCAST_UINT64(dVar8),0);
+        fVar1 = matrix_in->m[0].z * (float)__BITCAST_DOUBLE(CONCAT44(local_98,uStack_9c)) * (float)dVar8;
         dVar5 = (double)fVar1;
-        uStack_34 = SUB84(dVar5,0);
+        uStack_34 = SUB84(__BITCAST_UINT64(dVar5),0);
         local_30 = (uint)((ulonglong)dVar5 >> 0x20);
-        dVar8 = (double)(matrix_in[1].m[0].y * (float)(double)CONCAT44(local_88,uStack_8c) *
+        dVar8 = (double)(matrix_in[1].m[0].y * (float)__BITCAST_DOUBLE(CONCAT44(local_88,uStack_8c)) *
                         (float)dVar8);
-        uStack_64 = SUB84(dVar8,0);
+        uStack_64 = SUB84(__BITCAST_UINT64(dVar8),0);
         if ((0.70699999999999996 <= dVar5) ||
            (dVar5 <= -0.70699999999999996)) {
           if ((-1 < dVar8) && (dVar8 < 1.0)) {
             dVar8 = acos(dVar8);
             local_18 = (float)dVar8;
           }
-          if ((double)CONCAT44(uStack_34,local_30) < 0.0) {
+          if (__BITCAST_DOUBLE(CONCAT44(uStack_34,local_30)) < 0.0) {
             local_18 = -local_18;
           }
         }
         else {
           fVar6 = asin((float10)fVar1);
           local_18 = (float)fVar6;
-          if ((double)CONCAT44(uStack_64,local_68) < 0.0) {
+          if (__BITCAST_DOUBLE(CONCAT44(uStack_64,local_68)) < 0.0) {
             local_18 = (float)3.1415926535900001 - local_18;
           }
         }
@@ -100,15 +100,15 @@ CVector3f * __cdecl core_xform_cpp_matrixToEulerAngles_FUN_005f5690(CMatrix3x3f 
           local_18 = local_18 + -6.283185f;
         }
         euler_out->y = local_18;
-        dVar8 = (double)matrix_in->m[1].y * dVar9 * (double)CONCAT44(uStack_3c,local_40);
-        dVar9 = (double)matrix_in->m[1].z * dVar9 * (double)CONCAT44(uStack_3c,local_40);
-        local_b0 = SUB84(dVar8,0);
+        dVar8 = (double)matrix_in->m[1].y * dVar9 * __BITCAST_DOUBLE(CONCAT44(uStack_3c,local_40));
+        dVar9 = (double)matrix_in->m[1].z * dVar9 * __BITCAST_DOUBLE(CONCAT44(uStack_3c,local_40));
+        local_b0 = SUB84(__BITCAST_UINT64(dVar8),0);
         if ((0.70699999999999996 <= dVar8) ||
            (dVar8 <= -0.70699999999999996)) {
           if (-1 < dVar9) {
             if (dVar9 < 1.0) {
               dVar9 = acos(dVar9);
-              dVar8 = (double)CONCAT44((float)dVar9,local_b0);
+              dVar8 = __BITCAST_DOUBLE(CONCAT44((float)dVar9,local_b0));
             }
             else {
               local_20 = 0.0;
@@ -142,9 +142,9 @@ CVector3f * __cdecl core_xform_cpp_matrixToEulerAngles_FUN_005f5690(CMatrix3x3f 
     euler_out->x = -1.5707964;
   }
   euler_out->z = 0.0;
-  fVar1 = -matrix_in->m[2].z * (float)(double)CONCAT44(local_88,uStack_8c);
+  fVar1 = -matrix_in->m[2].z * (float)__BITCAST_DOUBLE(CONCAT44(local_88,uStack_8c));
   dVar9 = (double)fVar1;
-  dVar8 = (double)(matrix_in->m[0].x * (float)(double)CONCAT44(local_98,uStack_9c));
+  dVar8 = (double)(matrix_in->m[0].x * (float)__BITCAST_DOUBLE(CONCAT44(local_98,uStack_9c)));
   if ((0.70699999999999996 <= dVar9) ||
      (dVar9 <= -0.70699999999999996)) {
     if (-1 < dVar8) {

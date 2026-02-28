@@ -41,7 +41,7 @@
 ;   crt_io.c_IsSpecialDevice_FUN_0060c270
 ;   crt_io.c_register_handler_wrapper_FUN_00602438
 ;   crt_io.c_setFileDescriptorFlags_FUN_00608908
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;
 ; *****************************************************************************
 
@@ -101,8 +101,8 @@ section .text
     PUSH 0x6590a0                       ; 00609125 | = "con"
     MOV EDX,dword ptr [ESP + 0x30]      ; 0060912a
     PUSH EDX                            ; 0060912e
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 0060912f
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 0060912f
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 00609134
     TEST EAX,EAX                        ; 00609137
     JNZ 0x00609164                      ; 00609139

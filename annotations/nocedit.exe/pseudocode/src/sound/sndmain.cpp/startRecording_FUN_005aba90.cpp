@@ -10,7 +10,6 @@ int __cdecl sound_sndmain_cpp_startRecording_FUN_005aba90(void)
 
 {
   int iVar1;
-  DWORD DVar2;
   
   iVar1 = sound_sndmain_cpp_isRecordingSystemActive_FUN_005ab970();
   if (iVar1 == 0) {
@@ -25,8 +24,8 @@ int __cdecl sound_sndmain_cpp_startRecording_FUN_005aba90(void)
                     (g_RecordingBitsPerSample,g_RecordingChannelCount,g_RecordingSampleRate,
                      g_RecordingSamplesSigned);
   if (iVar1 != 0) {
-    DVar2 = (*g_RecordingDeviceInterface->vtable->AddRef)((IUnknown *)g_RecordingDeviceInterface);
-    if (DVar2 != 0) {
+    iVar1 = (*g_RecordingDeviceInterface->vtable->start)(g_RecordingDeviceInterface);
+    if (iVar1 != 0) {
       isRecordingStarted = 1;
       sound_sndmain_cpp_unlockSound_FUN_005abdc0();
       return 1;

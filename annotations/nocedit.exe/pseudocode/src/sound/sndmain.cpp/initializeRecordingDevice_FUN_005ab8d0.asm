@@ -8,7 +8,7 @@
 ;   int g_CurrentRecordingDevice = -0x1
 ;   int g_SoundLockCount
 ;   int g_SoundStartTime
-;   IDirectSoundCapture* g_RecordingDeviceInterface
+;   CSoundDevice* g_RecordingDeviceInterface
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_releaseRecordingDevice_FUN_005ab930

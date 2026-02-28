@@ -1,28 +1,20 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 25,
-        "line": 85,
-        "message": "invalid operands to binary expression ('double' and 'int')"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 127,
-    "complexity_score": 185,
+    "complexity_score": 170,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 80,
-    "suspect_count": 8,
+    "suspect_count": 7,
     "suspect_types": [
       "decompiler_intrinsic",
-      "double_reconstruction",
       "stack_alignment_array",
       "stack_param",
       "sub84_truncation"
@@ -372,23 +364,15 @@
       "line": 74,
       "match": "in_stack_ffffff64",
       "severity": "moderate",
-      "text": "((double)CONCAT44(in_stack_ffffff64,",
+      "text": "(__BITCAST_DOUBLE(CONCAT44(in_stack_ffffff64,",
       "type": "stack_param"
-    },
-    {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 74,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "((double)CONCAT44(in_stack_ffffff64,",
-      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 74,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "((double)CONCAT44(in_stack_ffffff64,",
+      "text": "(__BITCAST_DOUBLE(CONCAT44(in_stack_ffffff64,",
       "type": "decompiler_intrinsic"
     },
     {
@@ -396,7 +380,7 @@
       "line": 78,
       "match": "in_stack_ffffff64",
       "severity": "moderate",
-      "text": "in_stack_ffffff64 = SUB84(dVar5,0);",
+      "text": "in_stack_ffffff64 = SUB84(__BITCAST_UINT64(dVar5),0);",
       "type": "stack_param"
     },
     {
@@ -404,7 +388,7 @@
       "line": 78,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "in_stack_ffffff64 = SUB84(dVar5,0);",
+      "text": "in_stack_ffffff64 = SUB84(__BITCAST_UINT64(dVar5),0);",
       "type": "sub84_truncation"
     },
     {
@@ -412,7 +396,7 @@
       "line": 78,
       "match": "SUB84",
       "severity": "mild",
-      "text": "in_stack_ffffff64 = SUB84(dVar5,0);",
+      "text": "in_stack_ffffff64 = SUB84(__BITCAST_UINT64(dVar5),0);",
       "type": "decompiler_intrinsic"
     }
   ]

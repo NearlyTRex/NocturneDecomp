@@ -22,7 +22,7 @@ void __cdecl shape_design_c_mergePolygonsWithValidation_FUN_00465b40(int polygon
                           (int *)g_ModelPolygonData[polygon2_index].vertex_indices,
                           g_ModelPolygonData[polygon1_index].vertex_indices_count,
                           g_ModelPolygonData[polygon2_index].vertex_indices_count), iVar1 != 0)) &&
-     (iVar1 = strcmp
+     (iVar1 = _strcmp
                         (g_ModelPolygonData[polygon1_index].lightmap_name,
                          g_ModelPolygonData[polygon2_index].lightmap_name), iVar1 == 0)) {
     if ((enforce_part_match != 0) &&

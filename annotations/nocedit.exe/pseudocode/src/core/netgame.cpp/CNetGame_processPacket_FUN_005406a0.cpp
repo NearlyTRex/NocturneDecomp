@@ -73,7 +73,7 @@ void __cdecl core_netgame_cpp_CNetGame_processPacket_FUN_005406a0(CNetGame *this
                          (local_28->player_announce).aim_mode);
     }
     else {
-      iVar4 = strcmp(local_1c->name,(local_28->player_announce).name);
+      iVar4 = _strcmp(local_1c->name,(local_28->player_announce).name);
       if (((iVar4 != 0) || ((local_28->player_announce).hero_number != local_1c->hero_number)) ||
          ((local_28->player_announce).aim_mode != local_1c->aim_mode)) {
         pcVar11 = local_28->raw + 0xd;

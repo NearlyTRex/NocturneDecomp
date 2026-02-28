@@ -374,8 +374,8 @@ section .text
         ;   XREF to: 0060f687 (CONDITIONAL_JUMP)  ; LAB_0060f687
     PUSH 0x659758                       ; 0060f632 | = ".bat"
     PUSH EAX                            ; 0060f637
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 0060f638
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 0060f638
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0060f63d
     TEST EAX,EAX                        ; 0060f640
     JNZ 0x0060f65c                      ; 0060f642

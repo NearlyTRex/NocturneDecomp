@@ -18,7 +18,7 @@ int __cdecl core_morph_cpp_CMorphModel_findOrAddTexture_FUN_0052ae60(CMorphModel
   if (0 < this_ptr->num_textures) {
     pcVar4 = this_ptr->textures[0].textures[0].texture_name;
     do {
-      iVar2 = stricmp(pcVar4,filename);
+      iVar2 = _stricmp(pcVar4,filename);
       if (iVar2 == 0) {
         return iVar3;
       }

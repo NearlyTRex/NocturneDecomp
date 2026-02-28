@@ -63,9 +63,9 @@ void __cdecl shape_superopt_cpp_CObj_scaleMasked_FUN_005d2ac0(CObj *this_ptr,uin
           pdVar5 = (double *)((int)pdVar5 + 4);
         }
         uStack_4c = uVar1;
-        local_90 = local_a8 * (double)CONCAT44(uStack_5c,local_60);
-        local_88 = local_a0 * (double)CONCAT44(uStack_54,local_58);
-        local_80 = local_98 * (double)CONCAT44(uVar1,local_50);
+        local_90 = local_a8 * __BITCAST_DOUBLE(CONCAT44(uStack_5c,local_60));
+        local_88 = local_a0 * __BITCAST_DOUBLE(CONCAT44(uStack_54,local_58));
+        local_80 = local_98 * __BITCAST_DOUBLE(CONCAT44(uVar1,local_50));
         pdVar4 = &local_90;
         pdVar5 = &local_78;
         for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {

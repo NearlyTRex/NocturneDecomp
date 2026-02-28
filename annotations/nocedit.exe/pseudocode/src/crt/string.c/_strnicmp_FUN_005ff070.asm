@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl crt_string_c_strnicmp_FUN_005ff070(char *str1,char *str2,int count)
+; int __cdecl crt_string_c__strnicmp_FUN_005ff070(char *str1,char *str2,int count)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   str1
@@ -26,7 +26,7 @@
 section .text
 
     PUSH EBX                            ; 005ff070
-        ;   Label: crt_string.c_strnicmp_FUN_005ff070
+        ;   Label: crt_string.c__strnicmp_FUN_005ff070
     PUSH ESI                            ; 005ff071
     MOV EBX,dword ptr [ESP + 0xc]       ; 005ff072
     MOV EDX,dword ptr [ESP + 0x14]      ; 005ff076

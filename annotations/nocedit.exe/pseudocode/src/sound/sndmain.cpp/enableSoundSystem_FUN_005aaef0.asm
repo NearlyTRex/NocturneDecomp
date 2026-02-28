@@ -19,8 +19,8 @@
 ;   int g_AudioBitsPerSample = 0x10
 ;   int g_AudioChannelCount = 0x2
 ;   int g_AudioSampleRate = 0x5622
-;   double DOUBLE_00681b30 = 1
-;   undefined4 DOUBLE_00681b30+4
+;   double g_Cached3DDistanceFactor = 1
+;   undefined4 g_Cached3DDistanceFactor+4
 ;   CVector3d g_Cached3DListenerPos
 ;   undefined4 g_Cached3DListenerPos.x+4
 ;   undefined4 g_Cached3DListenerPos.y
@@ -210,9 +210,9 @@ section .text
     PUSH EAX                            ; 005ab0a3
     CALL dword ptr [EBX + 0x20]         ; 005ab0a4
     ADD ESP,0x1c                        ; 005ab0a7
-    MOV ESI,dword ptr [0x00681b34]      ; 005ab0aa | DOUBLE_00681b30+4
+    MOV ESI,dword ptr [0x00681b34]      ; 005ab0aa | g_Cached3DDistanceFactor+4
     PUSH ESI                            ; 005ab0b0
-    MOV EDI,dword ptr [0x00681b30]      ; 005ab0b1 | DOUBLE_00681b30
+    MOV EDI,dword ptr [0x00681b30]      ; 005ab0b1 | g_Cached3DDistanceFactor
     MOV EAX,[0x03f69268]                ; 005ab0b7 | g_CSoundDevicePtr
     PUSH EDI                            ; 005ab0bc
     MOV EBX,dword ptr [EAX]             ; 005ab0bd

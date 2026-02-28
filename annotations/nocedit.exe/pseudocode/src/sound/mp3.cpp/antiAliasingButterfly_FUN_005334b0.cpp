@@ -37,7 +37,7 @@ void __cdecl sound_mp3_cpp_antiAliasingButterfly_FUN_005334b0(float *input_sampl
       dVar5 = 1.0 / SQRT(*(double *)((int)g_Mp3AntiAliasCSSource + iVar11) *
                          *(double *)((int)g_Mp3AntiAliasCSSource + iVar11) + 1.0);
       iVar7 = iVar11 + 8;
-      local_48 = SUB84(dVar5,0);
+      local_48 = SUB84(__BITCAST_UINT64(dVar5),0);
       *(uint *)((int)g_Mp3AntiAliasCA + iVar11) = local_48;
       uStack_44 = (uint)((ulonglong)dVar5 >> 0x20);
       *(double *)((int)g_Mp3AntiAliasCS + iVar11) =

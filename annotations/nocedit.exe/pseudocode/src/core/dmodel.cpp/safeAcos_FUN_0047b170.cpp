@@ -27,5 +27,5 @@ double __cdecl core_dmodel_cpp_safeAcos_FUN_0047b170(float value)
     local_10 = 0x54411744;
     local_c = 0x400921fb;
   }
-  return (double)CONCAT44(local_c,local_10);
+  return __BITCAST_DOUBLE(CONCAT44(local_c,local_10));
 }

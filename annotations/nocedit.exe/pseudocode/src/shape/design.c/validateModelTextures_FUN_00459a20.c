@@ -101,7 +101,7 @@ LAB_00459b94:
       if ((local_30 == 0xffffffff) || (local_2c != 0)) {
         local_24 = 0;
         for (local_34 = 0; local_34 < local_14; local_34 = local_34 + 1) {
-          iVar2 = strcmp(local_84,local_3fcc + local_34 * 0x50);
+          iVar2 = _strcmp(local_84,local_3fcc + local_34 * 0x50);
           if (iVar2 == 0) {
             local_24 = 1;
             break;

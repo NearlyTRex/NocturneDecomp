@@ -84,7 +84,7 @@
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_005741b0
 ;   core_setcolid.cpp_CDemonSet_init_FUN_00574180
 ;   core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00573470
-;   crt_string.c_strnicmp_FUN_005ff070
+;   crt_string.c__strnicmp_FUN_005ff070
 ;
 ; *****************************************************************************
 
@@ -501,8 +501,8 @@ section .text
     LEA EAX,[ESP + 0x50]                ; 004294bd
     PUSH EAX                            ; 004294c1
     PUSH ESI                            ; 004294c2
-    CALL crt_string.c_strnicmp_FUN_005ff070 ; 004294c3
-        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)
+    CALL crt_string.c__strnicmp_FUN_005ff070 ; 004294c3
+        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 004294c8
     TEST EAX,EAX                        ; 004294cb
     JZ 0x004294e1                       ; 004294cd

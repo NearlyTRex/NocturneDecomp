@@ -200,7 +200,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 0050704a
     PUSH EAX                            ; 0050704e
     CALL crt_time.c__time_FUN_006001f0  ; 0050704f
-        ;   XREF to: 006001f0 (UNCONDITIONAL_CALL)  ; time_t crt_time.c__time_FUN_006001f0(time_t * optional_output)
+        ;   XREF to: 006001f0 (UNCONDITIONAL_CALL)  ; time_t crt_time.c__time_FUN_006001f0(int * time)
     ADD ESP,0x4                         ; 00507054
     PUSH 0x2dd3130                      ; 00507057 | g_ErrorMessageBuffer_02dd3130
     PUSH 0x631656                       ; 0050705c | = "Msg: %s\n"

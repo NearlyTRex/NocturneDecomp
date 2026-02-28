@@ -318,15 +318,15 @@ extern char g_TrainSoundFilenameTemplate[108];
 extern char g_ActorRefDefaultBuffer[200];
 
 // char[256]
-extern char g_DefaultRecordingDeviceName[256];
+extern char g_DefaultSoundDeviceName[256];
 extern char g_DefaultDeviceName[256];
 
 // char[260]
 extern char g_TempDirectoryBuffer[260];
 
 // double
-extern double DOUBLE_00681b30;
-extern double DOUBLE_00681b38;
+extern double g_Cached3DDistanceFactor;
+extern double g_Cached3DDistanceFactorInverse;
 extern double g_SelectedClearColor;
 extern double g_ClearColor;
 

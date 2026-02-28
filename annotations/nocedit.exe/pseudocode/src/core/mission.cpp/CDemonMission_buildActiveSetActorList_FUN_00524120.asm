@@ -32,7 +32,7 @@
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_set.cpp_CDemonSet_buildActorTypeLists_FUN_00570fc0
 ;   core_setcolid.cpp_CDemonSet_buildCollidableActorList_FUN_005743e0
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;
 ; *****************************************************************************
 
@@ -121,8 +121,8 @@ section .text
         ;   Label: LAB_00524202
     LEA ESI,[EBX + 0x78]                ; 00524207
     PUSH ESI                            ; 0052420a
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 0052420b
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 0052420b
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 00524210
     TEST EAX,EAX                        ; 00524213
     JZ 0x00524197                       ; 00524215

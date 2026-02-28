@@ -12,7 +12,7 @@
 ;   core_event.cpp_CEventList_setSfxHandle_FUN_004b0c80 at 004b0c97
 ;
 ; Called Functions:
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;
 ; *****************************************************************************
 
@@ -34,8 +34,8 @@ section .text
     PUSH EBP                            ; 004b0d7e
         ;   Label: LAB_004b0d7e
     PUSH ESI                            ; 004b0d7f
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 004b0d80
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 004b0d80
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004b0d85
     TEST EAX,EAX                        ; 004b0d88
     JZ 0x004b0da7                       ; 004b0d8a

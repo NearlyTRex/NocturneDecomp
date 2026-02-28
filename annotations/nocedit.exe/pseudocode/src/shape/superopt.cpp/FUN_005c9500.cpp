@@ -115,27 +115,27 @@ int __cdecl shape_superopt_cpp_FUN_005c9500(void)
     if (*(int *)(in_stack_00000004 + 0x2c) != 0) {
       pdVar6 = (double *)(iVar7 + 0x10);
       do {
-        if (*pdVar6 < (double)CONCAT44(local_e0[1],local_e0[0])) {
+        if (*pdVar6 < __BITCAST_DOUBLE(CONCAT44(local_e0[1],local_e0[0]))) {
           local_e0[0] = *(uint *)pdVar6;
           local_e0[1] = *(uint *)((int)pdVar6 + 4);
         }
-        if (pdVar6[1] < (double)CONCAT44(local_e0[3],local_e0[2])) {
+        if (pdVar6[1] < __BITCAST_DOUBLE(CONCAT44(local_e0[3],local_e0[2]))) {
           local_e0[2] = *(uint *)(pdVar6 + 1);
           local_e0[3] = *(uint *)((int)pdVar6 + 0xc);
         }
-        if (pdVar6[2] < (double)CONCAT44(uStack_cc,local_d0)) {
+        if (pdVar6[2] < __BITCAST_DOUBLE(CONCAT44(uStack_cc,local_d0))) {
           local_d0 = *(uint *)(pdVar6 + 2);
           uStack_cc = *(uint *)((int)pdVar6 + 0x14);
         }
-        if ((double)CONCAT44(local_188[1],local_188[0]) < *pdVar6) {
+        if (__BITCAST_DOUBLE(CONCAT44(local_188[1],local_188[0])) < *pdVar6) {
           local_188[0] = *(uint *)pdVar6;
           local_188[1] = *(uint *)((int)pdVar6 + 4);
         }
-        if ((double)CONCAT44(local_188[3],local_188[2]) < pdVar6[1]) {
+        if (__BITCAST_DOUBLE(CONCAT44(local_188[3],local_188[2])) < pdVar6[1]) {
           local_188[2] = *(uint *)(pdVar6 + 1);
           local_188[3] = *(uint *)((int)pdVar6 + 0xc);
         }
-        if ((double)CONCAT44(uStack_174,local_178) < pdVar6[2]) {
+        if (__BITCAST_DOUBLE(CONCAT44(uStack_174,local_178)) < pdVar6[2]) {
           local_178 = *(uint *)(pdVar6 + 2);
           uStack_174 = *(uint *)((int)pdVar6 + 0x14);
         }
@@ -155,7 +155,7 @@ int __cdecl shape_superopt_cpp_FUN_005c9500(void)
         return 0;
       }
       if (*in_stack_00000008 + 0.5 <
-          (double)CONCAT44(local_188[1],local_188[0]) - (double)CONCAT44(local_e0[1],local_e0[0])) {
+          __BITCAST_DOUBLE(CONCAT44(local_188[1],local_188[0])) - __BITCAST_DOUBLE(CONCAT44(local_e0[1],local_e0[0]))) {
         local_80 = 0;
         local_78 = 0;
         local_74 = 0;
@@ -168,7 +168,7 @@ int __cdecl shape_superopt_cpp_FUN_005c9500(void)
         local_e8 = local_d0;
         local_24 = 0;
         local_e4 = uStack_cc;
-        local_f8 = *in_stack_00000008 + (double)CONCAT44(local_e0[1],local_e0[0]);
+        local_f8 = *in_stack_00000008 + __BITCAST_DOUBLE(CONCAT44(local_e0[1],local_e0[0]));
         pdVar6 = &local_f8;
         puVar9 = local_158;
         for (iVar7 = 6; iVar7 != 0; iVar7 = iVar7 + -1) {
@@ -184,8 +184,8 @@ int __cdecl shape_superopt_cpp_FUN_005c9500(void)
         local_12c = 0;
       }
       else if (in_stack_00000008[1] + 0.5 <
-               (double)CONCAT44(local_188[3],local_188[2]) -
-               (double)CONCAT44(local_e0[3],local_e0[2])) {
+               __BITCAST_DOUBLE(CONCAT44(local_188[3],local_188[2])) -
+               __BITCAST_DOUBLE(CONCAT44(local_e0[3],local_e0[2]))) {
         local_50 = 0;
         local_4c = 0;
         local_48 = 0;
@@ -199,7 +199,7 @@ int __cdecl shape_superopt_cpp_FUN_005c9500(void)
         local_b8 = local_d0;
         local_b4 = uStack_cc;
         local_28 = 0;
-        local_c0 = (double)CONCAT44(local_e0[3],local_e0[2]) + in_stack_00000008[1];
+        local_c0 = __BITCAST_DOUBLE(CONCAT44(local_e0[3],local_e0[2])) + in_stack_00000008[1];
         puVar9 = &local_c8;
         puVar10 = local_170;
         for (iVar7 = 6; iVar7 != 0; iVar7 = iVar7 + -1) {
@@ -215,7 +215,7 @@ int __cdecl shape_superopt_cpp_FUN_005c9500(void)
         local_11c = 0x3ff00000;
       }
       else {
-        if ((double)CONCAT44(uStack_174,local_178) - (double)CONCAT44(uStack_cc,local_d0) <=
+        if (__BITCAST_DOUBLE(CONCAT44(uStack_174,local_178)) - __BITCAST_DOUBLE(CONCAT44(uStack_cc,local_d0)) <=
             in_stack_00000008[2] + 0.5) {
           shape_memdbg_cpp_free_FUN_005fe659(local_18);
           shape_memdbg_cpp_free_FUN_005fe659(local_20);
@@ -233,7 +233,7 @@ int __cdecl shape_superopt_cpp_FUN_005c9500(void)
         local_10c = local_e0[1];
         local_108 = local_e0[2];
         local_104 = local_e0[3];
-        local_100 = (double)CONCAT44(uStack_cc,local_d0) + in_stack_00000008[2];
+        local_100 = __BITCAST_DOUBLE(CONCAT44(uStack_cc,local_d0)) + in_stack_00000008[2];
         puVar9 = &local_110;
         puVar10 = local_68;
         for (iVar7 = 6; iVar7 != 0; iVar7 = iVar7 + -1) {

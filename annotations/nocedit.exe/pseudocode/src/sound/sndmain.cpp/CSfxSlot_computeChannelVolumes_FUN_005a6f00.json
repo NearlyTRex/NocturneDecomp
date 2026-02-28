@@ -1,43 +1,20 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 71,
-        "line": 31,
-        "message": "invalid operands to binary expression ('float' and 'int')"
-      },
-      {
-        "category": "other",
-        "column": 45,
-        "line": 61,
-        "message": "called object type 'float' is not a function or function pointer"
-      },
-      {
-        "category": "other",
-        "column": 62,
-        "line": 61,
-        "message": "called object type 'float' is not a function or function pointer"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 135,
-    "complexity_score": 194,
+    "complexity_score": 51,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 7,
-    "max_suspect_severity": "severe",
-    "pseudocode_lines": 69,
-    "suspect_count": 11,
-    "suspect_types": [
-      "decompiler_intrinsic",
-      "fnstsw_flag_artifact",
-      "nan_function_artifact"
-    ],
-    "total_lines": 204
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 51,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 186
   },
   "cross_references": [
     {
@@ -58,7 +35,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "sound_sndmain.cpp_CSfxSlot_computeChannelVolumes_FUN_005a6f00",
-    "signature": "float __cdecl sound_sndmain_cpp_CSfxSlot_computeChannelVolumes_FUN_005a6f00(CSfxSlot *this_ptr)"
+    "signature": "void __cdecl sound_sndmain_cpp_CSfxSlot_computeChannelVolumes_FUN_005a6f00(CSfxSlot *this_ptr)"
   },
   "function_calls": [
     {
@@ -260,94 +237,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "FNSTSW flag reconstruction (floating-point comparison artifact)",
-      "line": 24,
-      "match": "CONCAT22((short)((uint)fVar4 >> 0x10",
-      "severity": "severe",
-      "text": "fVar4 = (float)CONCAT22((short)((uint)fVar4 >> 0x10),CONCAT11(bVar1,SUB41(fVar4,0)));",
-      "type": "fnstsw_flag_artifact"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 24,
-      "match": "CONCAT22",
-      "severity": "mild",
-      "text": "fVar4 = (float)CONCAT22((short)((uint)fVar4 >> 0x10),CONCAT11(bVar1,SUB41(fVar4,0)));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 24,
-      "match": "CONCAT11",
-      "severity": "mild",
-      "text": "fVar4 = (float)CONCAT22((short)((uint)fVar4 >> 0x10),CONCAT11(bVar1,SUB41(fVar4,0)));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 24,
-      "match": "SUB41",
-      "severity": "mild",
-      "text": "fVar4 = (float)CONCAT22((short)((uint)fVar4 >> 0x10),CONCAT11(bVar1,SUB41(fVar4,0)));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 33,
-      "match": "CONCAT21",
-      "severity": "mild",
-      "text": "fVar5 = (float)((uint)CONCAT21((short)((uint)fVar2 >> 0x10),local_30 < fVar4) << 8);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "FNSTSW flag reconstruction (floating-point comparison artifact)",
-      "line": 52,
-      "match": "CONCAT22((short)((uint)fVar4 >> 0x10",
-      "severity": "severe",
-      "text": "fVar4 = (float)CONCAT22((short)((uint)fVar4 >> 0x10),",
-      "type": "fnstsw_flag_artifact"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 52,
-      "match": "CONCAT22",
-      "severity": "mild",
-      "text": "fVar4 = (float)CONCAT22((short)((uint)fVar4 >> 0x10),",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "NAN() function call (FNSTSW comparison artifact)",
-      "line": 54,
-      "match": "NAN(",
-      "severity": "severe",
-      "text": "(ushort)(NAN(local_30) || NAN(fVar2)) << 10 |",
-      "type": "nan_function_artifact"
-    },
-    {
-      "description": "NAN() function call (FNSTSW comparison artifact)",
-      "line": 54,
-      "match": "NAN(",
-      "severity": "severe",
-      "text": "(ushort)(NAN(local_30) || NAN(fVar2)) << 10 |",
-      "type": "nan_function_artifact"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 54,
-      "match": "NAN",
-      "severity": "mild",
-      "text": "(ushort)(NAN(local_30) || NAN(fVar2)) << 10 |",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 54,
-      "match": "NAN",
-      "severity": "mild",
-      "text": "(ushort)(NAN(local_30) || NAN(fVar2)) << 10 |",
-      "type": "decompiler_intrinsic"
-    }
-  ]
+  "suspects": []
 }

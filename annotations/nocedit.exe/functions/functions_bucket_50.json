@@ -74659,6 +74659,38 @@
             ]
           },
           "type":"CDirectSoundDevice*"
+        },
+        {
+          "name":"output_buffer",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"short*"
+        },
+        {
+          "name":"num_samples",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ],
       "ret_storage":{
@@ -89239,7 +89271,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"crt_string.c_mbstrnicmp_FUN_00608e50",
+    "name":"crt_string.c__mbstrnicmp_FUN_00608e50",
     "ret":"int",
     "vars":{
       "params":[

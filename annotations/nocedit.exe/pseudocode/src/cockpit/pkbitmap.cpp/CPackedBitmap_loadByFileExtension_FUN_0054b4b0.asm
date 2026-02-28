@@ -17,7 +17,7 @@
 ; Called Functions:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_loadAndCompressBitmap_FUN_0054b080
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_loadPBMFile_FUN_0054b910
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;
 ; *****************************************************************************
 
@@ -59,16 +59,16 @@ section .text
     PUSH 0x63f07f                       ; 0054b4d9 | = ".raw"
         ;   Label: LAB_0054b4d9
     PUSH ESI                            ; 0054b4de
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 0054b4df
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 0054b4df
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0054b4e4
     TEST EAX,EAX                        ; 0054b4e7
     JZ 0x0054b50e                       ; 0054b4e9
         ;   XREF to: 0054b50e (CONDITIONAL_JUMP)  ; LAB_0054b50e
     PUSH 0x63f084                       ; 0054b4eb | = ".pbm"
     PUSH ESI                            ; 0054b4f0
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 0054b4f1
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 0054b4f1
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0054b4f6
     TEST EAX,EAX                        ; 0054b4f9
     JNZ 0x0054b4d6                      ; 0054b4fb

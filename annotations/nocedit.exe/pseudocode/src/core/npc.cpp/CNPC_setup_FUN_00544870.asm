@@ -18,7 +18,7 @@
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_setup_FUN_00428140
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;
 ; *****************************************************************************
 
@@ -36,8 +36,8 @@ section .text
     PUSH 0x63e314                       ; 00544880 | = "priest.dfm"
     LEA EAX,[EBX + 0x23b8]              ; 00544885
     PUSH EAX                            ; 0054488b
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 0054488c
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 0054488c
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 00544891
     TEST EAX,EAX                        ; 00544894
     JZ 0x0054489b                       ; 00544896

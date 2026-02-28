@@ -24,7 +24,7 @@ typedef struct CSfxSlot {
     float max_distance; // 0x108
     float fade_target_volume; // 0x10c
     float fade_time_remaining; // 0x110
-    int stop_after_fade; // 0x114
+    float stop_after_fade; // 0x114
     int is_active; // 0x118
     double prev_hardware_playback_pos; // 0x11c
     int loop_marker_index; // 0x124

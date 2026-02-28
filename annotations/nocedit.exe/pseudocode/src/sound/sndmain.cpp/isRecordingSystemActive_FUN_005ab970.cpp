@@ -9,5 +9,5 @@
 int __cdecl sound_sndmain_cpp_isRecordingSystemActive_FUN_005ab970(void)
 
 {
-  return (uint)(g_RecordingDeviceInterface != (IDirectSoundCapture *)0x0);
+  return (uint)(g_RecordingDeviceInterface != (CSoundDevice *)0x0);
 }

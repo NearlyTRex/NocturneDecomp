@@ -41,7 +41,7 @@ int __cdecl sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(CSfxSlot *this_ptr,f
   if ((this_ptr->playback_state != 0) && (0.0 <= (this_ptr->options).trigger_time)) {
     if ((0.0 < delta_time) && (0.0 <= this_ptr->fade_time_remaining)) {
       if (this_ptr->fade_time_remaining <= delta_time) {
-        if ((this_ptr->stop_after_fade & 0x7fffffffU) != 0) goto LAB_005a73d3;
+        if (ABS(this_ptr->stop_after_fade) != 0.0) goto LAB_005a73d3;
         (this_ptr->options).current_volume = this_ptr->fade_target_volume;
       }
       else {
@@ -78,7 +78,7 @@ int __cdecl sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(CSfxSlot *this_ptr,f
       dVar6 = (this_ptr->options).position.z - g_Cached3DListenerPos.z;
       dVar4 = SQRT(dVar6 * dVar6 + dVar5 * dVar5 + dVar7 * dVar7);
       if (this_ptr->is_active == 1) {
-        local_38 = SUB84(dVar4,0);
+        local_38 = SUB84(__BITCAST_UINT64(dVar4),0);
         engine_console_cpp_CConsole_printf_FUN_00441890
                   (g_CConsolePtr,"  distToEar = %7.2fs\n",local_38);
       }
@@ -91,17 +91,17 @@ int __cdecl sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(CSfxSlot *this_ptr,f
       else {
         dVar4 = (dVar6 * dVar10 + dVar5 * dVar9 + dVar7 * dVar8) / dVar4;
       }
-      local_60 = (dVar4 * DOUBLE_00681b30 + 1116.4000000000001) / 1116.4000000000001;
+      local_60 = (dVar4 * g_Cached3DDistanceFactor + 1116.4000000000001) / 1116.4000000000001;
       if (this_ptr->is_active == 1) {
         engine_console_cpp_CConsole_printf_FUN_00441890
                   (g_CConsolePtr,"  doppler = %5.2f\n",(uint)local_60);
       }
-      dVar4 = 1.0 / (double)CONCAT44(4._4_4_,4._0_4_);
+      dVar4 = 1.0 / __BITCAST_DOUBLE(CONCAT44(4._4_4_,4._0_4_));
       if (local_60 < dVar4) {
         local_60 = dVar4;
       }
-      if ((double)CONCAT44(4._4_4_,4._0_4_) < local_60) {
-        local_60 = (double)CONCAT44(4._4_4_,4._0_4_);
+      if (__BITCAST_DOUBLE(CONCAT44(4._4_4_,4._0_4_)) < local_60) {
+        local_60 = __BITCAST_DOUBLE(CONCAT44(4._4_4_,4._0_4_));
       }
       if (this_ptr->is_active == 1) {
         engine_console_cpp_CConsole_printf_FUN_00441890

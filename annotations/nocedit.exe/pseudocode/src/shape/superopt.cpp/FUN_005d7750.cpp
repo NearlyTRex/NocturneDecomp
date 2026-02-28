@@ -18,7 +18,7 @@ int __cdecl shape_superopt_cpp_FUN_005d7750(void)
   if (0 < g_TriListTextureCount) {
     str1 = g_TriListTextureNames;
     do {
-      iVar1 = stricmp(*str1,in_stack_00000004);
+      iVar1 = _stricmp(*str1,in_stack_00000004);
       if (iVar1 == 0) {
         return iVar2;
       }

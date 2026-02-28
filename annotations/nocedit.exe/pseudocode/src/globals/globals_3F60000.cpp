@@ -166,6 +166,7 @@ CSound g_CSoundInstance = {};
 
 // CSoundDevice*
 CSoundDevice* g_CSoundDevicePtr = {};
+CSoundDevice* g_RecordingDeviceInterface = {};
 
 // CSpotView
 CSpotView g_CSpotViewInstance = {};
@@ -241,9 +242,6 @@ IDirectSoundBuffer* g_DirectSoundHardwareSfxBuffers[31] = {};
 
 // IDirectSoundBufferMetadata[25]
 IDirectSoundBufferMetadata g_DirectSoundBufferMetadata[25] = {};
-
-// IDirectSoundCapture*
-IDirectSoundCapture* g_RecordingDeviceInterface = {};
 
 // IKsPropertySet*
 IKsPropertySet* g_DirectSoundPropertySet = {};

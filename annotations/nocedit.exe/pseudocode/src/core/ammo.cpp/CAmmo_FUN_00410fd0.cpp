@@ -27,7 +27,7 @@ void __cdecl core_ammo_cpp_CAmmo_FUN_00410fd0(CAmmo *this_ptr,char *weapon_class
       pcVar3 = pcVar3 + 2;
     } while (cVar1 != '\0');
   }
-  iVar2 = strcmp(weapon_class_name,"CGun");
+  iVar2 = _strcmp(weapon_class_name,"CGun");
   if (iVar2 == 0) {
     switch(this_ptr->ammo_type) {
     case AMMO_TYPE_HOLY:
@@ -53,12 +53,12 @@ void __cdecl core_ammo_cpp_CAmmo_FUN_00410fd0(CAmmo *this_ptr,char *weapon_class
     }
     core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(&this_ptr->model,pcVar4);
   }
-  iVar2 = strcmp(weapon_class_name,"CShotgun");
+  iVar2 = _strcmp(weapon_class_name,"CShotgun");
   if (iVar2 == 0) {
     core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
               (&this_ptr->model,"shell.kfm");
   }
-  iVar2 = strcmp(weapon_class_name,"CCrossbow");
+  iVar2 = _strcmp(weapon_class_name,"CCrossbow");
   if (iVar2 == 0) {
     if (this_ptr->ammo_type == AMMO_TYPE_HOLY) {
       pcVar4 = "holystake.kfm";
@@ -68,22 +68,22 @@ void __cdecl core_ammo_cpp_CAmmo_FUN_00410fd0(CAmmo *this_ptr,char *weapon_class
     }
     core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(&this_ptr->model,pcVar4);
   }
-  iVar2 = strcmp(weapon_class_name,"CDynamite");
+  iVar2 = _strcmp(weapon_class_name,"CDynamite");
   if (iVar2 == 0) {
     core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
               (&this_ptr->model,"dynamitebundle.kfm");
   }
-  iVar2 = strcmp(weapon_class_name,"CTommyGun");
+  iVar2 = _strcmp(weapon_class_name,"CTommyGun");
   if (iVar2 == 0) {
     core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
               (&this_ptr->model,"tommybullet.kfm");
   }
-  iVar2 = strcmp(weapon_class_name,"CFlameThrower");
+  iVar2 = _strcmp(weapon_class_name,"CFlameThrower");
   if (iVar2 == 0) {
     core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
               (&this_ptr->model,"fgunammo.kfm");
   }
-  iVar2 = strcmp(weapon_class_name,"CElephantGun");
+  iVar2 = _strcmp(weapon_class_name,"CElephantGun");
   if (iVar2 != 0) {
     core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(&this_ptr->model);
     return;

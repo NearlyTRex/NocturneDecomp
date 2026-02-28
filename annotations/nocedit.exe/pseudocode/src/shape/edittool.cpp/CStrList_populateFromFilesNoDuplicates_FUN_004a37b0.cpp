@@ -79,7 +79,7 @@ void __cdecl shape_edittool_cpp_CStrList_populateFromFilesNoDuplicates_FUN_004a3
       do {
         str2 = &local_528;
         pcVar3 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(this_ptr,index);
-        iVar4 = stricmp(pcVar3,str2->filename);
+        iVar4 = _stricmp(pcVar3,str2->filename);
         if (iVar4 == 0) goto LAB_004a3935;
         index = index + 1;
       } while (index < iVar2);

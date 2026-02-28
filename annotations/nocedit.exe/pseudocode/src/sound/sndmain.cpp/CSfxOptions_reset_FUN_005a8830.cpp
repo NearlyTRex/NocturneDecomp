@@ -14,11 +14,11 @@ void __cdecl sound_sndmain_cpp_CSfxOptions_reset_FUN_005a8830(CSfxOptions *this_
   this_ptr->channel_index = 0;
   *(uint *)&(this_ptr->position).z = 0;
   *(uint *)((int)&(this_ptr->position).z + 4) = 0;
-  this_ptr->position_source_ptr = (CVector3d *)0x0;
+  this_ptr->position_source_ptr = (void *)0x0;
   this_ptr->position_format = 0;
   *(uint *)&(this_ptr->velocity).z = 0;
   *(uint *)((int)&(this_ptr->velocity).z + 4) = 0;
-  this_ptr->velocity_source_ptr = (CVector3d *)0x0;
+  this_ptr->velocity_source_ptr = (void *)0x0;
   this_ptr->velocity_format = 0;
   this_ptr->current_volume = 1.0;
   this_ptr->base_frequency = 1.0;

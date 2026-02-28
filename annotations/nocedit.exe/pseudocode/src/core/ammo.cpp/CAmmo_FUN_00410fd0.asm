@@ -35,7 +35,7 @@
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
-;   crt_string.c_strcmp_FUN_005fef20
+;   crt_string.c__strcmp_FUN_005fef20
 ;
 ; *****************************************************************************
 
@@ -54,8 +54,8 @@ section .text
     PUSH 0x614971                       ; 00410fe9 | = "CGun"
         ;   Label: LAB_00410fe9
     PUSH EBP                            ; 00410fee
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 00410fef
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 00410fef
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 00410ff4
     TEST EAX,EAX                        ; 00410ff7
     JNZ 0x00411026                      ; 00410ff9
@@ -78,8 +78,8 @@ section .text
     PUSH 0x6149e6                       ; 00411026 | = "CShotgun"
         ;   Label: LAB_00411026
     PUSH EBP                            ; 0041102b
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 0041102c
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 0041102c
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 00411031
     TEST EAX,EAX                        ; 00411034
     JNZ 0x0041104c                      ; 00411036
@@ -93,8 +93,8 @@ section .text
     PUSH 0x6149f9                       ; 0041104c | = "CCrossbow"
         ;   Label: LAB_0041104c
     PUSH EBP                            ; 00411051
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 00411052
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 00411052
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 00411057
     TEST EAX,EAX                        ; 0041105a
     JNZ 0x00411081                      ; 0041105c
@@ -113,8 +113,8 @@ section .text
     PUSH 0x614a1b                       ; 00411081 | = "CDynamite"
         ;   Label: LAB_00411081
     PUSH EBP                            ; 00411086
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 00411087
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 00411087
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 0041108c
     TEST EAX,EAX                        ; 0041108f
     JNZ 0x004110a7                      ; 00411091
@@ -128,8 +128,8 @@ section .text
     PUSH 0x614a38                       ; 004110a7 | = "CTommyGun"
         ;   Label: LAB_004110a7
     PUSH EBP                            ; 004110ac
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 004110ad
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 004110ad
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 004110b2
     TEST EAX,EAX                        ; 004110b5
     JNZ 0x004110cd                      ; 004110b7
@@ -143,8 +143,8 @@ section .text
     PUSH 0x614a52                       ; 004110cd | = "CFlameThrower"
         ;   Label: LAB_004110cd
     PUSH EBP                            ; 004110d2
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 004110d3
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 004110d3
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 004110d8
     TEST EAX,EAX                        ; 004110db
     JNZ 0x004110f3                      ; 004110dd
@@ -158,8 +158,8 @@ section .text
     PUSH 0x614a6d                       ; 004110f3 | = "CElephantGun"
         ;   Label: LAB_004110f3
     PUSH EBP                            ; 004110f8
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 004110f9
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 004110f9
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 004110fe
     TEST EAX,EAX                        ; 00411101
     JZ 0x00411181                       ; 00411103

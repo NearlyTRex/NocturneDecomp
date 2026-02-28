@@ -20,7 +20,7 @@ void __cdecl core_event_cpp_CEventList_setTimerEvent_FUN_004b05a0(CEventList *th
   dVar1 = (double)duration;
   if (dVar1 < 0.0) {
     uStack_1c = (uint)((ulonglong)dVar1 >> 0x20);
-    local_20 = SUB84(dVar1,0);
+    local_20 = SUB84(__BITCAST_UINT64(dVar1),0);
     g_CurrentFilename = "..\\core\\event.cpp";
     g_CurrentLineNumber = 0xa5d;
     core_main_c_displayErrorAndQuit_FUN_00506f10

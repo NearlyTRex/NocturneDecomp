@@ -2,14 +2,15 @@
 // Address: 005f40a0
 // Address Range: [[005f40a0, 005f40dc]]
 // Convention: __cdecl
-// Signature: void __cdecl wincore_winrun_cpp_setThreadPriority_FUN_005f40a0(HANDLE hThread,int priority_level)
+// Signature: int __cdecl wincore_winrun_cpp_setThreadPriority_FUN_005f40a0(HANDLE hThread,int priority_level)
 
 #include "nocturne.h"
 
-void __cdecl wincore_winrun_cpp_setThreadPriority_FUN_005f40a0(HANDLE hThread,int priority_level)
+int __cdecl wincore_winrun_cpp_setThreadPriority_FUN_005f40a0(HANDLE hThread,int priority_level)
 
 {
   int nPriority;
+  BOOL BVar1;
   
   if ((uint)priority_level < 2) {
     if (priority_level == 0) {
@@ -28,6 +29,6 @@ void __cdecl wincore_winrun_cpp_setThreadPriority_FUN_005f40a0(HANDLE hThread,in
   else {
     nPriority = 0;
   }
-  (*g_SetThreadPriorityFunc)(hThread,nPriority);
-  return;
+  BVar1 = (*g_SetThreadPriorityFunc)(hThread,nPriority);
+  return BVar1;
 }

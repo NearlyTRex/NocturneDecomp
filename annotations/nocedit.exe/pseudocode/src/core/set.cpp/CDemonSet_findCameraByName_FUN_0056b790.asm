@@ -13,7 +13,7 @@
 ;   core_script.cpp_CScript_step_FUN_0055a810 at 0055cbf9
 ;
 ; Called Functions:
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;
 ; *****************************************************************************
 
@@ -35,8 +35,8 @@ section .text
     PUSH EBP                            ; 0056b7a7
         ;   Label: LAB_0056b7a7
     PUSH ESI                            ; 0056b7a8
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 0056b7a9
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 0056b7a9
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0056b7ae
     TEST EAX,EAX                        ; 0056b7b1
     JZ 0x0056b7cc                       ; 0056b7b3

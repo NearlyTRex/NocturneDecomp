@@ -8,7 +8,7 @@
 ;   int g_RecordingBitsPerSample = 0x8
 ;   int g_RecordingChannelCount = 0x1
 ;   int g_RecordingSampleRate = 0x2b11
-;   IDirectSoundCapture* g_RecordingDeviceInterface
+;   CSoundDevice* g_RecordingDeviceInterface
 ;   int isRecordingStarted
 ;   int g_RecordingSamplesSigned
 ;

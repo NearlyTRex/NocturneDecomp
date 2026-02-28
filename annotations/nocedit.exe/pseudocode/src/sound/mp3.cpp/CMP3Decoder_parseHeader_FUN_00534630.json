@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 12,
-        "line": 46,
+        "line": 55,
         "message": "assigning to 'char *' from incompatible type 'void *'"
       }
     ],
@@ -13,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 332,
-    "complexity_score": 168,
+    "complexity_score": 175,
     "cross_reference_count": 2,
     "function_call_count": 11,
     "global_count": 16,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 123,
+    "pseudocode_lines": 130,
     "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 455
+    "total_lines": 462
   },
   "cross_references": [
     {
@@ -172,7 +172,7 @@
     {
       "addr": "0067d820",
       "name": "g_MpegLayer2AllocationTables",
-      "type": "void*[4][4]",
+      "type": "int[4][4]",
       "value": null
     },
     {
@@ -414,34 +414,34 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 77,
+      "line": 84,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_14 = (int)ROUND(ROUND(g_MpegSampleRateTable[iVar5][*(int *)(local_48.mpeg_version + 0x10)]",
+      "text": "local_14 = (int)ROUND(ROUND(g_MpegSampleRateTable[iVar6][local_48->sampling_rate_index]));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 77,
+      "line": 84,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_14 = (int)ROUND(ROUND(g_MpegSampleRateTable[iVar5][*(int *)(local_48.mpeg_version + 0x10)]",
+      "text": "local_14 = (int)ROUND(ROUND(g_MpegSampleRateTable[iVar6][local_48->sampling_rate_index]));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 123,
+      "line": 129,
       "match": "ROUND",
       "severity": "mild",
-      "text": "(int)ROUND(ROUND(g_MpegSampleRateTable[local_78[0]][local_68] * 1000));",
+      "text": "(int)ROUND(ROUND(g_MpegSampleRateTable[local_78.mpeg_version][local_78.sampling_rate_index] *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 123,
+      "line": 129,
       "match": "ROUND",
       "severity": "mild",
-      "text": "(int)ROUND(ROUND(g_MpegSampleRateTable[local_78[0]][local_68] * 1000));",
+      "text": "(int)ROUND(ROUND(g_MpegSampleRateTable[local_78.mpeg_version][local_78.sampling_rate_index] *",
       "type": "decompiler_intrinsic"
     }
   ]

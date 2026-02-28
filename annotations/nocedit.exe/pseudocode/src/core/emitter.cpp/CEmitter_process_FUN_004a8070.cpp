@@ -49,7 +49,7 @@ void __cdecl core_emitter_cpp_CEmitter_process_FUN_004a8070(CEmitter *this_ptr,f
   float local_14;
   
   iVar8 = this_ptr->was_active;
-  iVar4 = strcmp(this_ptr->event_on,"none");
+  iVar4 = _strcmp(this_ptr->event_on,"none");
   if ((iVar4 != 0) &&
      (iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                         (g_CEventListPtr,this_ptr->event_on), pCVar3 = g_CDemonSetPtr, iVar4 != 0))
@@ -71,8 +71,8 @@ void __cdecl core_emitter_cpp_CEmitter_process_FUN_004a8070(CEmitter *this_ptr,f
                        (double)(this_ptr->base).location.position.y,
                        (double)(this_ptr->base).location.position.z,50.0);
     if (((iVar4 == 0) || (iVar8 = 1, g_CGamePtr->foul_language_flag != 0)) ||
-       (iVar4 = strnicmp(this_ptr->wav_name,"mob",3), iVar4 != 0)
-       ) {
+       (iVar4 = _strnicmp(this_ptr->wav_name,"mob",3), iVar4 != 0
+       )) {
       if (iVar8 != 0) goto LAB_004a811d;
     }
     else {

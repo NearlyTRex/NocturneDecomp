@@ -159,7 +159,7 @@ section .text
     PUSH EAX                            ; 00534344
     XOR EBX,EBX                         ; 00534345
     CALL crt_time.c__time_FUN_006001f0  ; 00534347
-        ;   XREF to: 006001f0 (UNCONDITIONAL_CALL)  ; time_t crt_time.c__time_FUN_006001f0(time_t * optional_output)
+        ;   XREF to: 006001f0 (UNCONDITIONAL_CALL)  ; time_t crt_time.c__time_FUN_006001f0(int * time)
     ADD ESP,0x4                         ; 0053434c
     PUSH EDI                            ; 0053434f
         ;   Label: LAB_0053434f
@@ -246,7 +246,7 @@ section .text
         ;   Label: LAB_0053443e
     PUSH EAX                            ; 00534442
     CALL crt_time.c__time_FUN_006001f0  ; 00534443
-        ;   XREF to: 006001f0 (UNCONDITIONAL_CALL)  ; time_t crt_time.c__time_FUN_006001f0(time_t * optional_output)
+        ;   XREF to: 006001f0 (UNCONDITIONAL_CALL)  ; time_t crt_time.c__time_FUN_006001f0(int * time)
     ADD ESP,0x4                         ; 00534448
     MOV EAX,dword ptr [ESP + 0x4]       ; 0053444b
     SUB EAX,dword ptr [ESP]             ; 0053444f

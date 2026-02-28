@@ -36,7 +36,7 @@
 ;   crt_stdio.c_fgetc_FUN_005fe840
 ;   crt_stdio.c_fputc_FUN_005fea10
 ;   crt_stdio.c_fscanf_FUN_005fe7c0
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
 ;
 ; *****************************************************************************
@@ -130,8 +130,8 @@ section .text
     PUSH 0x67d690                       ; 00523a58 | = "(none)"
     LEA EAX,[ESP + 0x4]                 ; 00523a5d
     PUSH EAX                            ; 00523a61
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 00523a62
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 00523a62
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 00523a67
     TEST EAX,EAX                        ; 00523a6a
     JNZ 0x00523a84                      ; 00523a6c

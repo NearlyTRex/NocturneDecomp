@@ -35,7 +35,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;   engine_dosio.c_splitPath_FUN_00481f20
 ;
 ; *****************************************************************************
@@ -67,8 +67,8 @@ section .text
         ;   Label: LAB_005782c5
     PUSH EAX                            ; 005782c7
     PUSH ESI                            ; 005782c8 | g_GroundTextureNames | DAT_03654398
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 005782c9
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 005782c9
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 005782ce
     TEST EAX,EAX                        ; 005782d1
     JNZ 0x005782fc                      ; 005782d3

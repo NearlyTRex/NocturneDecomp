@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl crt_string_c_mbstrnicmp_FUN_00608e50(char *str1,char *str2,SIZE_T count)
+; int __cdecl crt_string_c__mbstrnicmp_FUN_00608e50(char *str1,char *str2,SIZE_T count)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   str1
@@ -21,7 +21,7 @@
 section .text
 
     PUSH EBX                            ; 00608e50
-        ;   Label: crt_string.c_mbstrnicmp_FUN_00608e50
+        ;   Label: crt_string.c__mbstrnicmp_FUN_00608e50
     PUSH ESI                            ; 00608e51
     PUSH EDI                            ; 00608e52
     PUSH EBP                            ; 00608e53

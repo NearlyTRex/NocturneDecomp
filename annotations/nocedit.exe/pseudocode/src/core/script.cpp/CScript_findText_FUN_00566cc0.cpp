@@ -82,7 +82,7 @@ int __cdecl core_script_cpp_CScript_findText_FUN_00566cc0(CScript *this_ptr,char
           }
           pcVar3 = pcVar3 + uVar4;
           for (; 0 < (int)uVar4; uVar4 = uVar4 - 1) {
-            iVar2 = strnicmp(pcVar3,search_str,count);
+            iVar2 = _strnicmp(pcVar3,search_str,count);
             if (iVar2 == 0) {
               uVar5 = core_script_cpp_CScript_editorIndex2X_FUN_00566b30(this_ptr,start_line,uVar4);
               *found_col = uVar5;
@@ -118,7 +118,7 @@ int __cdecl core_script_cpp_CScript_findText_FUN_00566cc0(CScript *this_ptr,char
           pcVar3 = pcVar3 + uVar4;
           for (buffer_index = uVar4 + count; (int)buffer_index <= (int)(~uVar5 - 1);
               buffer_index = buffer_index + 1) {
-            iVar2 = strnicmp(pcVar3,search_str,count);
+            iVar2 = _strnicmp(pcVar3,search_str,count);
             if (iVar2 == 0) {
               uVar4 = core_script_cpp_CScript_editorIndex2X_FUN_00566b30(this_ptr,start_line,uVar4);
               *found_col = uVar4;

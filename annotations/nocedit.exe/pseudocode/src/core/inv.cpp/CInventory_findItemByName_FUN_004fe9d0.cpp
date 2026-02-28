@@ -17,7 +17,7 @@ CDemonActor * __cdecl core_inv_cpp_CInventory_findItemByName_FUN_004fe9d0(CInven
   pCVar2 = this_ptr;
   if (0 < this_ptr->item_count) {
     do {
-      iVar1 = stricmp(pCVar2->items[0]->actor_name,item_name);
+      iVar1 = _stricmp(pCVar2->items[0]->actor_name,item_name);
       if (iVar1 == 0) {
         return pCVar2->items[0];
       }

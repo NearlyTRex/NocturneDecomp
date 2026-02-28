@@ -18,7 +18,7 @@ int __cdecl shape_design_c_polygonTextureNameComparator_FUN_0045b850(SShapeEdito
     local_14 = -1;
   }
   else {
-    local_14 = stricmp(polygon1->texture_name,polygon2->texture_name);
+    local_14 = _stricmp(polygon1->texture_name,polygon2->texture_name);
   }
   return local_14;
 }

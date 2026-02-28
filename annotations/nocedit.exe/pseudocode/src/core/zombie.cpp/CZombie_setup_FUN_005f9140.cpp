@@ -73,7 +73,7 @@ void __cdecl core_zombie_cpp_CZombie_setup_FUN_005f9140(CZombie *this_ptr)
                     (this_ptr_02,"head01",1);
   this_ptr->part_indices[6] = iVar1;
   (this_ptr->base).base.model.part_data.visibility_flags[0x1d] = 0;
-  iVar1 = stricmp
+  iVar1 = _stricmp
                     ((this_ptr->base).base.model.model_name,"newzomb1.dfm");
   if (iVar1 == 0) {
     iVar1 = this_ptr->part_indices[0];
@@ -99,10 +99,10 @@ void __cdecl core_zombie_cpp_CZombie_setup_FUN_005f9140(CZombie *this_ptr)
   str1 = (this_ptr->base).base.model.model_name;
   this_ptr->bleedout_timer = 0.0;
   this_ptr->is_female = 0;
-  iVar1 = stricmp(str1,"newzchik.dfm");
+  iVar1 = _stricmp(str1,"newzchik.dfm");
   if (((iVar1 == 0) ||
-      (iVar1 = stricmp(str1,"zombho1.dfm"), iVar1 == 0)) ||
-     (iVar1 = stricmp(str1,"zombho2.dfm"), iVar1 == 0)) {
+      (iVar1 = _stricmp(str1,"zombho1.dfm"), iVar1 == 0)) ||
+     (iVar1 = _stricmp(str1,"zombho2.dfm"), iVar1 == 0)) {
     this_ptr->is_female = 1;
   }
   this_ptr->sfx_handles[1] = 0;

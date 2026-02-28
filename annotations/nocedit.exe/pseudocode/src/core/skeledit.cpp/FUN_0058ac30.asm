@@ -10,7 +10,7 @@
 ;
 ; Called Functions:
 ;   crt_stack.c___STK_FUN_005ff9f3
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;
 ; *****************************************************************************
 
@@ -35,8 +35,8 @@ section .text
     PUSH EBP                            ; 0058ac51
         ;   Label: LAB_0058ac51
     PUSH ESI                            ; 0058ac52
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 0058ac53
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 0058ac53
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0058ac58
     TEST EAX,EAX                        ; 0058ac5b
     JZ 0x0058ac76                       ; 0058ac5d

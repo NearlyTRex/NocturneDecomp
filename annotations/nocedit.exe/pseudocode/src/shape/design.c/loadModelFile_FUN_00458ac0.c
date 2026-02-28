@@ -69,7 +69,7 @@ int __cdecl shape_design_c_loadModelFile_FUN_00458ac0(char *filename)
   local_14 = (byte *)0x0;
 LAB_00458b67:
   if (local_14 != (byte *)0x0) {
-    iVar3 = strcmp((char *)local_14,".BIN");
+    iVar3 = _strcmp((char *)local_14,".BIN");
     if (iVar3 == 0) {
       iVar3 = shape_design_c_loadModelBinary_FUN_00458170((char *)local_74);
       if (iVar3 == 0) {
@@ -94,7 +94,7 @@ LAB_00458b67:
       g_PolygonOptimizationPasses = 0;
       return iVar3;
     }
-    iVar3 = strcmp((char *)local_14,".S3D");
+    iVar3 = _strcmp((char *)local_14,".S3D");
     if (iVar3 == 0) {
       iVar3 = shape_design_c_loadS3DModelFile_FUN_004593a0((char *)local_74);
       if (iVar3 == 0) {

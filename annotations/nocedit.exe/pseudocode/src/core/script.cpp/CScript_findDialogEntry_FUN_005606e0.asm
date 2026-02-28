@@ -14,8 +14,8 @@
 ;   core_script.cpp_CScript_step_FUN_0055a810 at 0055c462
 ;
 ; Called Functions:
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;   crt_string.c_splitpath_FUN_005ff178
-;   crt_string.c_stricmp_FUN_005fe7f0
 ;
 ; *****************************************************************************
 
@@ -50,8 +50,8 @@ section .text
     MOV EAX,dword ptr [EDI + 0x20]      ; 0056071a
     ADD EAX,ESI                         ; 0056071d
     PUSH EAX                            ; 0056071f
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 00560720
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 00560720
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 00560725
     TEST EAX,EAX                        ; 00560728
     JZ 0x0056074a                       ; 0056072a

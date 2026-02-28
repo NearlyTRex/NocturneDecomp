@@ -55,7 +55,7 @@
 ;   core_dlight.cpp_CDemonLight_initializeVisibilityBuffer_FUN_00475fc0
 ;   core_dlight.cpp_CDemonLight_projectLightAndMarkVisibility_FUN_00473270
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   crt_string.c_strcmp_FUN_005fef20
+;   crt_string.c__strcmp_FUN_005fef20
 ;
 ; *****************************************************************************
 
@@ -77,8 +77,8 @@ section .text
     PUSH EAX                            ; 0044de31
     MOV dword ptr [ESP + 0x48],EDX      ; 0044de32
     MOV dword ptr [ESP + 0x4c],ECX      ; 0044de36
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 0044de3a
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 0044de3a
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 0044de3f
     TEST EAX,EAX                        ; 0044de42
     JZ 0x0044e141                       ; 0044de44

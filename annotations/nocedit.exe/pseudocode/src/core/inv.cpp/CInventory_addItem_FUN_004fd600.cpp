@@ -967,7 +967,7 @@ int __cdecl core_inv_cpp_CInventory_addItem_FUN_004fd600(CInventory *this_ptr,CD
         pCVar5 = core_actor_cpp_castToClassHash_FUN_0040c790
                            (pCVar10->items[0],g_CAmmoClassInfo.name_hash);
         if (((pCVar5 != (CDemonActor *)0x0) &&
-            (iVar7 = strcmp
+            (iVar7 = _strcmp
                                (pcStack_18,(char *)&pCVar5[2].location.position.y),
             this_ptr_00 = g_CConsolePtr, iVar7 == 0)) &&
            (pCVar5[2].validation_magic == this_ptr_01->ammo_type)) {
@@ -992,7 +992,7 @@ int __cdecl core_inv_cpp_CInventory_addItem_FUN_004fd600(CInventory *this_ptr,CD
                            (pCVar10->items[0],g_CWeaponClassInfo.name_hash);
         if (pCVar5 != (CDemonActor *)0x0) {
           pcVar11 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(pCVar5);
-          iVar7 = stricmp(this_ptr_01->weapon_class_name,pcVar11);
+          iVar7 = _stricmp(this_ptr_01->weapon_class_name,pcVar11);
           if (iVar7 == 0) goto LAB_004fe2af;
         }
         iVar9 = iVar9 + 1;
@@ -1010,7 +1010,7 @@ LAB_004fe2af:
                              (pCVar10->items[0],g_CWeaponClassInfo.name_hash);
           if (pCVar5 != (CDemonActor *)0x0) {
             pcVar11 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(pCVar5);
-            iVar7 = stricmp(pcStack_14,pcVar11);
+            iVar7 = _stricmp(pcStack_14,pcVar11);
             uVar4 = g_CTommyGunClassInfo.name_hash;
             if ((iVar7 == 0) &&
                (*(EAmmoType *)(pCVar5[4].actor_name + 0xc) == this_ptr_01->ammo_type)) {
@@ -1048,7 +1048,7 @@ LAB_004fe2af:
                 (g_CConsolePtr,"Found new type of ammo for existing weapon.  Making new weapon for it\n");
       return 1;
     }
-    iVar9 = strcmp(this_ptr_01->weapon_class_name,"CDynamite");
+    iVar9 = _strcmp(this_ptr_01->weapon_class_name,"CDynamite");
     if (iVar9 == 0) {
       pCVar5 = core_actor_cpp_createActorByName_FUN_0040c430("CDynamite");
       core_mission_cpp_CDemonMission_generateActorName_FUN_00524700(g_CDemonMissionPtr,pCVar5);
@@ -1083,7 +1083,7 @@ LAB_004fe2af:
         if (pCVar8 != (CDemonActor *)0x0) {
           pcVar11 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(pCVar8);
           pcVar6 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(pCVar5);
-          iVar7 = strcmp(pcVar6,pcVar11);
+          iVar7 = _strcmp(pcVar6,pcVar11);
           uVar4 = g_CTommyGunClassInfo.name_hash;
           if ((iVar7 == 0) &&
              (*(int *)(pCVar8[4].actor_name + 0xc) == *(int *)(pCVar5[4].actor_name + 0xc))) {
@@ -1116,7 +1116,7 @@ LAB_004fe2af:
                            (pCVar10->items[0],g_CAmmoClassInfo.name_hash);
         if (pCVar8 != (CDemonActor *)0x0) {
           pcVar11 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(pCVar5);
-          iVar7 = strcmp((char *)&pCVar8[2].location.position.y,pcVar11);
+          iVar7 = _strcmp((char *)&pCVar8[2].location.position.y,pcVar11);
           if (iVar7 == 0) {
             pcVar11 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(pCVar5);
             actor = core_actor_cpp_createActorByName_FUN_0040c430(pcVar11);

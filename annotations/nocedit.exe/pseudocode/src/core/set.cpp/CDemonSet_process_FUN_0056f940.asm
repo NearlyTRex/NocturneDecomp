@@ -29,7 +29,7 @@
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 ;   core_setutil.cpp_C3DSLight_process_FUN_00586cb0
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
-;   crt_string.c_strnicmp_FUN_005ff070
+;   crt_string.c__strnicmp_FUN_005ff070
 ;
 ; *****************************************************************************
 
@@ -139,8 +139,8 @@ section .text
     PUSH 0x645fe6                       ; 0056fa54 | = "moon"
     ADD ESI,0x4                         ; 0056fa59
     PUSH ESI                            ; 0056fa5c
-    CALL crt_string.c_strnicmp_FUN_005ff070 ; 0056fa5d
-        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)
+    CALL crt_string.c__strnicmp_FUN_005ff070 ; 0056fa5d
+        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 0056fa62
     TEST EAX,EAX                        ; 0056fa65
     JNZ 0x0056fa84                      ; 0056fa67

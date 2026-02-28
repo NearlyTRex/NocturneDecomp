@@ -194,6 +194,7 @@ UNDEFINED_PTR_CAST_REPLACEMENTS = {
 AUTO_FIXABLE_SUSPECT_TYPES = {
     'undefined_ptr_cast',
     'undefined_type',
+    'double_reconstruction',
 }
 
 
@@ -1041,6 +1042,190 @@ def transform_funcptr_assignments(code):
     return _FUNCPTR_ASSIGN_RE.sub(_insert_cast, code)
 
 
+def _find_balanced_paren_end(code, start):
+    """Find the index after the closing paren that balances the open paren at start.
+
+    Args:
+        code: Full code string
+        start: Index of the opening '('
+
+    Returns:
+        Index one past the matching ')' or -1 if not found
+    """
+    depth = 0
+    i = start
+    while i < len(code):
+        if code[i] == '(':
+            depth += 1
+        elif code[i] == ')':
+            depth -= 1
+            if depth == 0:
+                return i + 1
+        i += 1
+    return -1
+
+
+def transform_float_concat_bitcast(code):
+    """Replace (double)CONCATxx(...) with __BITCAST_DOUBLE(CONCATxx(...)).
+
+    Ghidra splits x87 FSTP operations into two stack writes, then reconstructs
+    them as (double)CONCAT44(hi, lo). A C (double) cast does numeric conversion,
+    not bit reinterpretation. This transform wraps the CONCAT in a bitcast
+    helper that uses memcpy for correct semantics.
+
+    Handles:
+        (double)CONCAT44(...)  -> __BITCAST_DOUBLE(CONCAT44(...))
+        (double)CONCAT26(...)  -> __BITCAST_DOUBLE(CONCAT26(...))
+        (float)CONCAT22(...)   -> __BITCAST_FLOAT(CONCAT22(...))
+
+    Uses balanced-paren matching to correctly handle nested expressions.
+
+    Args:
+        code: Decompiled code string
+
+    Returns:
+        Transformed code with float/double CONCAT casts replaced by bitcast helpers
+    """
+    # Pattern: (double) or (float) followed by CONCATxx(
+    pattern = re.compile(r'\((double|float)\)\s*(CONCAT\d+)\s*\(')
+
+    result = []
+    pos = 0
+
+    while pos < len(code):
+        match = pattern.search(code, pos)
+        if not match:
+            result.append(code[pos:])
+            break
+
+        # Append everything before the match
+        result.append(code[pos:match.start()])
+
+        cast_type = match.group(1)
+        concat_name = match.group(2)
+
+        # Find the opening paren of the CONCAT call
+        open_paren = match.end() - 1  # The '(' captured by the pattern
+
+        # Find matching close paren
+        close_paren_end = _find_balanced_paren_end(code, open_paren)
+        if close_paren_end == -1:
+            # Unbalanced parens - leave unchanged
+            result.append(code[match.start():match.end()])
+            pos = match.end()
+            continue
+
+        # Extract the full CONCAT call including parens
+        concat_call = concat_name + code[open_paren:close_paren_end]
+
+        # Replace with bitcast helper
+        if cast_type == 'double':
+            result.append('__BITCAST_DOUBLE(%s)' % concat_call)
+        else:
+            result.append('__BITCAST_FLOAT(%s)' % concat_call)
+
+        pos = close_paren_end
+
+    return ''.join(result)
+
+
+def transform_sub_float_bitcast(code):
+    """Wrap double/float arguments to SUBxx() calls in bitcast helpers.
+
+    Ghidra emits SUB84(dVar, 0) to extract the low 32 bits of a double's bit
+    pattern, but the SUB macro uses >> which is invalid on floating-point types.
+    This transform wraps the first argument in __BITCAST_UINT64 (for doubles)
+    or __BITCAST_UINT32 (for floats) so the shift operates on an integer.
+
+    Detection heuristics for "this argument is a double/float":
+      - Variable name matches dVar\\d+ (Ghidra's naming for double locals)
+      - First argument contains an explicit (double) or (float) cast
+
+    Examples:
+        SUB84(dVar6, 0)              -> SUB84(__BITCAST_UINT64(dVar6), 0)
+        SUB82((double)fVar2, 0)      -> SUB82(__BITCAST_UINT64((double)fVar2), 0)
+        SUB84((double)local_468, 0)  -> SUB84(__BITCAST_UINT64((double)local_468), 0)
+        SUB84((float)x, 0)          -> SUB84(__BITCAST_UINT32((float)x), 0)
+    """
+    # Match SUBxx( where xx are digits
+    pattern = re.compile(r'SUB(\d+)\(')
+
+    result = []
+    pos = 0
+
+    while pos < len(code):
+        match = pattern.search(code, pos)
+        if not match:
+            result.append(code[pos:])
+            break
+
+        # Append everything before the match
+        result.append(code[pos:match.start()])
+
+        sub_name = 'SUB' + match.group(1)
+        open_paren = match.end() - 1  # The '(' from the pattern
+
+        # Find matching close paren for the entire SUB call
+        close_paren_end = _find_balanced_paren_end(code, open_paren)
+        if close_paren_end == -1:
+            # Unbalanced parens - leave unchanged
+            result.append(code[match.start():match.end()])
+            pos = match.end()
+            continue
+
+        # Extract the arguments string (inside the parens)
+        args_str = code[open_paren + 1:close_paren_end - 1]
+
+        # Find the first argument by scanning for the comma separator,
+        # respecting balanced parentheses
+        depth = 0
+        comma_pos = -1
+        for i, ch in enumerate(args_str):
+            if ch == '(':
+                depth += 1
+            elif ch == ')':
+                depth -= 1
+            elif ch == ',' and depth == 0:
+                comma_pos = i
+                break
+
+        if comma_pos == -1:
+            # No comma found - single-argument SUB, leave unchanged
+            result.append(code[match.start():close_paren_end])
+            pos = close_paren_end
+            continue
+
+        first_arg = args_str[:comma_pos]
+        rest_args = args_str[comma_pos:]  # includes leading comma
+
+        # Check if the first argument is a double/float type
+        first_arg_stripped = first_arg.strip()
+        is_double = False
+        is_float = False
+
+        # Check for dVar\d+ pattern (Ghidra's double variable naming)
+        if re.match(r'^dVar\d+$', first_arg_stripped):
+            is_double = True
+        # Check for explicit (double) cast anywhere in the argument
+        elif '(double)' in first_arg_stripped:
+            is_double = True
+        # Check for explicit (float) cast at the start (not a common case but handle it)
+        elif re.match(r'^\(float\)', first_arg_stripped):
+            is_float = True
+
+        if is_double:
+            result.append('%s(__BITCAST_UINT64(%s)%s)' % (sub_name, first_arg, rest_args))
+        elif is_float:
+            result.append('%s(__BITCAST_UINT32(%s)%s)' % (sub_name, first_arg, rest_args))
+        else:
+            # Not a float/double argument - leave unchanged
+            result.append(code[match.start():close_paren_end])
+
+        pos = close_paren_end
+
+    return ''.join(result)
+
+
 def apply_all_transforms(code, transforms=None, var_info=None):
     """Apply all or specified transforms to decompiled code.
 
@@ -1059,6 +1244,8 @@ def apply_all_transforms(code, transforms=None, var_info=None):
     default_transforms = [
         ('undefined_ptr_cast', transform_undefined_pointer_casts),
         ('undefined_type', transform_undefined_types),
+        ('float_concat_bitcast', transform_float_concat_bitcast),
+        ('sub_float_bitcast', transform_sub_float_bitcast),
         ('crt_functions', transform_crt_functions),
         ('file_pointer_casts', transform_file_pointer_casts),
         ('void_pointer_casts', transform_void_pointer_casts),

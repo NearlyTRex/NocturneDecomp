@@ -17,7 +17,7 @@ int __cdecl shape_design_c_findTextureByFilename_FUN_0046dfc0(char *filename)
     if (g_TextureProcessedCount <= local_14) {
       return -1;
     }
-    iVar1 = stricmp
+    iVar1 = _stricmp
                       (g_TextureAtlasEntries[local_14].original_filename,filename);
     if (iVar1 == 0) break;
     local_14 = local_14 + 1;

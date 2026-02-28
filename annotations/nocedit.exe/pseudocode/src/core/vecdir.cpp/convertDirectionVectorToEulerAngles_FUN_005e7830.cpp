@@ -23,7 +23,7 @@ CVector3f * __cdecl core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e
     else {
       uStack_14 = 0x3ff921fb;
     }
-    out_euler_angles->x = (float)(double)CONCAT44(uStack_14,0x54411744);
+    out_euler_angles->x = (float)__BITCAST_DOUBLE(CONCAT44(uStack_14,0x54411744));
     return out_euler_angles;
   }
   fVar1 = (float10)fpatan((float10)in_direction_vector->x,(float10)in_direction_vector->z);

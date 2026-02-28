@@ -39,8 +39,8 @@ double __cdecl ldexp(double x,int exp)
     if (0x7fe < iVar2) {
       set_range_error_errno();
       if ((short)uStack_1e < 1) {
-        dVar1 = -(double)CONCAT44(INFINITY._4_4_,INFINITY._0_4_);
-        local_1c = SUB82(dVar1,0);
+        dVar1 = -__BITCAST_DOUBLE(CONCAT44(INFINITY._4_4_,INFINITY._0_4_));
+        local_1c = SUB82(__BITCAST_UINT64(dVar1),0);
         uStack_1a = (ushort)((ulonglong)dVar1 >> 0x10);
         uStack_18 = (uint)((ulonglong)dVar1 >> 0x20);
       }
@@ -57,5 +57,5 @@ double __cdecl ldexp(double x,int exp)
   uStack_1a = (ushort)((uint)in_stack_00000004 >> 0x10);
   uStack_18 = CONCAT22(uStack_1e,local_20);
 LAB_006000b6:
-  return (double)CONCAT44(uStack_18,CONCAT22(uStack_1a,local_1c));
+  return __BITCAST_DOUBLE(CONCAT44(uStack_18,CONCAT22(uStack_1a,local_1c)));
 }

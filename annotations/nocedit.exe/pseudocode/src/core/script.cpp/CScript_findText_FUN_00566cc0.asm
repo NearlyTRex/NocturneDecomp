@@ -26,7 +26,7 @@
 ; Called Functions:
 ;   core_script.cpp_CScript_editorIndex2X_FUN_00566b30
 ;   core_script.cpp_CScript_editorX2Index_FUN_00566a90
-;   crt_string.c_strnicmp_FUN_005ff070
+;   crt_string.c__strnicmp_FUN_005ff070
 ;   shape_edittool.cpp_CStrList_getItemCount_FUN_004a6ed0
 ;   shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70
 ;
@@ -157,8 +157,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x34]      ; 00566dbf
     PUSH EAX                            ; 00566dc3
     PUSH EDI                            ; 00566dc4
-    CALL crt_string.c_strnicmp_FUN_005ff070 ; 00566dc5
-        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)
+    CALL crt_string.c__strnicmp_FUN_005ff070 ; 00566dc5
+        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 00566dca
     TEST EAX,EAX                        ; 00566dcd
     JZ 0x00566e23                       ; 00566dcf
@@ -286,8 +286,8 @@ section .text
     PUSH EBP                            ; 00566ee4
     PUSH EDI                            ; 00566ee5
     PUSH ESI                            ; 00566ee6
-    CALL crt_string.c_strnicmp_FUN_005ff070 ; 00566ee7
-        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)
+    CALL crt_string.c__strnicmp_FUN_005ff070 ; 00566ee7
+        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 00566eec
     TEST EAX,EAX                        ; 00566eef
     JZ 0x00566f46                       ; 00566ef1

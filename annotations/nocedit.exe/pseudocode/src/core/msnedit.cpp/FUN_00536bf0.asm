@@ -17,7 +17,7 @@
 ;   uchar[257] g_CharacterClassificationTable
 ;
 ; Called Functions:
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;   shape_edittool.cpp_CStrList_add_FUN_004a2b80
 ;
 ; *****************************************************************************
@@ -71,8 +71,8 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 00536c62
     PUSH EAX                            ; 00536c66
     MOV byte ptr [EDX],0x0              ; 00536c67
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 00536c6a
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 00536c6a
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 00536c6f
     TEST EAX,EAX                        ; 00536c72
     JNZ 0x00536c92                      ; 00536c74
@@ -101,8 +101,8 @@ section .text
         ;   Label: LAB_00536c92
     LEA EAX,[ESP + 0x4]                 ; 00536c97
     PUSH EAX                            ; 00536c9b
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 00536c9c
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 00536c9c
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 00536ca1
     TEST EAX,EAX                        ; 00536ca4
     JZ 0x00536c76                       ; 00536ca6

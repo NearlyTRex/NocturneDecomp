@@ -47,7 +47,7 @@
 ;
 ; Called Functions:
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;   crt_time.c__localtime_FUN_00600288
 ;   crt_time.c__strftime_FUN_006002d4
 ;   engine_pod.cpp_CPodFile_ctor_FUN_0054f5a0
@@ -353,8 +353,8 @@ section .text
     PUSH EAX                            ; 004b8282
     LEA EAX,[ESP + 0x9dc]               ; 004b8283
     PUSH EAX                            ; 004b828a
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 004b828b
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 004b828b
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004b8290
     TEST EAX,EAX                        ; 004b8293
     JNZ 0x004b80d8                      ; 004b8295

@@ -228,8 +228,8 @@ section .text
     PUSH 0x624607                       ; 004aacf3 | = "none"
         ;   Label: LAB_004aacf3
     PUSH EBX                            ; 004aacf8
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 004aacf9
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 004aacf9
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004aacfe
     TEST EAX,EAX                        ; 004aad01
     JZ 0x004aace6                       ; 004aad03
@@ -280,8 +280,8 @@ section .text
     PUSH EBX                            ; 004aad5a
         ;   Label: LAB_004aad5a
     PUSH ESI                            ; 004aad5b
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 004aad5c
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 004aad5c
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004aad61
     TEST EAX,EAX                        ; 004aad64
     JZ 0x004aace6                       ; 004aad66
@@ -422,8 +422,8 @@ section .text
         ;   Label: LAB_004aae8d
     PUSH 0x624664                       ; 004aae8f | = "advanceLightFilter"
     PUSH EBX                            ; 004aae94
-    CALL crt_string.c_strnicmp_FUN_005ff070 ; 004aae95
-        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)
+    CALL crt_string.c__strnicmp_FUN_005ff070 ; 004aae95
+        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 004aae9a
     TEST EAX,EAX                        ; 004aae9d
     JNZ 0x004aafc4                      ; 004aae9f
@@ -557,8 +557,8 @@ section .text
         ;   Label: LAB_004aafc4
     PUSH 0x6246ec                       ; 004aafc6 | = "createExplosion"
     PUSH EBX                            ; 004aafcb
-    CALL crt_string.c_strnicmp_FUN_005ff070 ; 004aafcc
-        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)
+    CALL crt_string.c__strnicmp_FUN_005ff070 ; 004aafcc
+        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 004aafd1
     TEST EAX,EAX                        ; 004aafd4
     JNZ 0x004ab274                      ; 004aafd6
@@ -845,8 +845,8 @@ section .text
         ;   Label: LAB_004ab274
     PUSH 0x6247d8                       ; 004ab276 | = "deleteActor"
     PUSH EBX                            ; 004ab27b
-    CALL crt_string.c_strnicmp_FUN_005ff070 ; 004ab27c
-        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)
+    CALL crt_string.c__strnicmp_FUN_005ff070 ; 004ab27c
+        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 004ab281
     TEST EAX,EAX                        ; 004ab284
     JNZ 0x004ab38f                      ; 004ab286
@@ -944,8 +944,8 @@ section .text
         ;   Label: LAB_004ab38f
     PUSH 0x6247e4                       ; 004ab391 | = "displayBitmap"
     PUSH EBX                            ; 004ab396
-    CALL crt_string.c_strnicmp_FUN_005ff070 ; 004ab397
-        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)
+    CALL crt_string.c__strnicmp_FUN_005ff070 ; 004ab397
+        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 004ab39c
     TEST EAX,EAX                        ; 004ab39f
     JNZ 0x004ab4b3                      ; 004ab3a1
@@ -1071,8 +1071,8 @@ section .text
         ;   Label: LAB_004ab4b3
     PUSH 0x624879                       ; 004ab4b5 | = "fadeAmbientSound"
     PUSH EBX                            ; 004ab4ba
-    CALL crt_string.c_strnicmp_FUN_005ff070 ; 004ab4bb
-        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)
+    CALL crt_string.c__strnicmp_FUN_005ff070 ; 004ab4bb
+        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 004ab4c0
     TEST EAX,EAX                        ; 004ab4c3
     JNZ 0x004ab56e                      ; 004ab4c5
@@ -1147,8 +1147,8 @@ section .text
         ;   Label: LAB_004ab56e
     PUSH 0x6248bb                       ; 004ab570 | = "fadeSfx"
     PUSH EBX                            ; 004ab575
-    CALL crt_string.c_strnicmp_FUN_005ff070 ; 004ab576
-        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)
+    CALL crt_string.c__strnicmp_FUN_005ff070 ; 004ab576
+        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 004ab57b
     TEST EAX,EAX                        ; 004ab57e
     JNZ 0x004ab6c9                      ; 004ab580
@@ -1297,8 +1297,8 @@ section .text
         ;   Label: LAB_004ab6c9
     PUSH 0x6248f2                       ; 004ab6cb | = "flagOn"
     PUSH EBX                            ; 004ab6d0
-    CALL crt_string.c_strnicmp_FUN_005ff070 ; 004ab6d1
-        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)
+    CALL crt_string.c__strnicmp_FUN_005ff070 ; 004ab6d1
+        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 004ab6d6
     TEST EAX,EAX                        ; 004ab6d9
     JNZ 0x004ab74e                      ; 004ab6db
@@ -1351,8 +1351,8 @@ section .text
         ;   Label: LAB_004ab74e
     PUSH 0x6248f9                       ; 004ab750 | = "flagOff"
     PUSH EBX                            ; 004ab755
-    CALL crt_string.c_strnicmp_FUN_005ff070 ; 004ab756
-        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)
+    CALL crt_string.c__strnicmp_FUN_005ff070 ; 004ab756
+        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 004ab75b
     TEST EAX,EAX                        ; 004ab75e
     JNZ 0x004ab7d3                      ; 004ab760
@@ -1405,8 +1405,8 @@ section .text
         ;   Label: LAB_004ab7d3
     PUSH 0x624901                       ; 004ab7d5 | = "gameFlagOn"
     PUSH EBX                            ; 004ab7da
-    CALL crt_string.c_strnicmp_FUN_005ff070 ; 004ab7db
-        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)
+    CALL crt_string.c__strnicmp_FUN_005ff070 ; 004ab7db
+        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 004ab7e0
     TEST EAX,EAX                        ; 004ab7e3
     JNZ 0x004ab858                      ; 004ab7e5
@@ -1459,8 +1459,8 @@ section .text
         ;   Label: LAB_004ab858
     PUSH 0x62490c                       ; 004ab85a | = "gameFlagOff"
     PUSH EBX                            ; 004ab85f
-    CALL crt_string.c_strnicmp_FUN_005ff070 ; 004ab860
-        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)
+    CALL crt_string.c__strnicmp_FUN_005ff070 ; 004ab860
+        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 004ab865
     TEST EAX,EAX                        ; 004ab868
     JNZ 0x004ab8dc                      ; 004ab86a
@@ -1513,8 +1513,8 @@ section .text
         ;   Label: LAB_004ab8dc
     PUSH 0x624918                       ; 004ab8de | = "hurtCharacter"
     PUSH EBX                            ; 004ab8e3
-    CALL crt_string.c_strnicmp_FUN_005ff070 ; 004ab8e4
-        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)
+    CALL crt_string.c__strnicmp_FUN_005ff070 ; 004ab8e4
+        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 004ab8e9
     TEST EAX,EAX                        ; 004ab8ec
     JNZ 0x004abaea                      ; 004ab8ee
@@ -1742,8 +1742,8 @@ section .text
         ;   Label: LAB_004abaea
     PUSH 0x624990                       ; 004abaec | = "incCounter"
     PUSH EBX                            ; 004abaf1
-    CALL crt_string.c_strnicmp_FUN_005ff070 ; 004abaf2
-        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)
+    CALL crt_string.c__strnicmp_FUN_005ff070 ; 004abaf2
+        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 004abaf7
     TEST EAX,EAX                        ; 004abafa
     JNZ 0x004abc21                      ; 004abafc
@@ -1872,8 +1872,8 @@ section .text
         ;   Label: LAB_004abc21
     PUSH 0x6249cb                       ; 004abc23 | = "killCharacter"
     PUSH EBX                            ; 004abc28
-    CALL crt_string.c_strnicmp_FUN_005ff070 ; 004abc29
-        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)
+    CALL crt_string.c__strnicmp_FUN_005ff070 ; 004abc29
+        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 004abc2e
     TEST EAX,EAX                        ; 004abc31
     JNZ 0x004abeef                      ; 004abc33
@@ -2164,8 +2164,8 @@ section .text
         ;   Label: LAB_004abeef
     PUSH 0x624a8c                       ; 004abef1 | = "killHero"
     PUSH EBX                            ; 004abef6
-    CALL crt_string.c_strnicmp_FUN_005ff070 ; 004abef7
-        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)
+    CALL crt_string.c__strnicmp_FUN_005ff070 ; 004abef7
+        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 004abefc
     TEST EAX,EAX                        ; 004abeff
     JNZ 0x004ac025                      ; 004abf01
@@ -2292,8 +2292,8 @@ section .text
         ;   Label: LAB_004ac025
     PUSH 0x624b1a                       ; 004ac027 | = "killSfx"
     PUSH EBX                            ; 004ac02c
-    CALL crt_string.c_strnicmp_FUN_005ff070 ; 004ac02d
-        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)
+    CALL crt_string.c__strnicmp_FUN_005ff070 ; 004ac02d
+        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 004ac032
     TEST EAX,EAX                        ; 004ac035
     JNZ 0x004ac230                      ; 004ac037
@@ -2519,8 +2519,8 @@ section .text
         ;   Label: LAB_004ac230
     PUSH 0x624b93                       ; 004ac232 | = "lightning"
     PUSH EBX                            ; 004ac237
-    CALL crt_string.c_strnicmp_FUN_005ff070 ; 004ac238
-        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)
+    CALL crt_string.c__strnicmp_FUN_005ff070 ; 004ac238
+        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 004ac23d
     TEST EAX,EAX                        ; 004ac240
     JNZ 0x004ac2e5                      ; 004ac242
@@ -2591,8 +2591,8 @@ section .text
         ;   Label: LAB_004ac2e5
     PUSH 0x624bc3                       ; 004ac2e7 | = "playSfx"
     PUSH EBX                            ; 004ac2ec
-    CALL crt_string.c_strnicmp_FUN_005ff070 ; 004ac2ed
-        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)
+    CALL crt_string.c__strnicmp_FUN_005ff070 ; 004ac2ed
+        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 004ac2f2
     TEST EAX,EAX                        ; 004ac2f5
     JNZ 0x004ac612                      ; 004ac2f7
@@ -2842,8 +2842,8 @@ section .text
     PUSH 0x624c68                       ; 004ac52b | = "cue"
     LEA EAX,[EBP + 0xffffece2]          ; 004ac530
     PUSH EAX                            ; 004ac536
-    CALL crt_string.c_strnicmp_FUN_005ff070 ; 004ac537
-        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)
+    CALL crt_string.c__strnicmp_FUN_005ff070 ; 004ac537
+        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 004ac53c
     TEST EAX,EAX                        ; 004ac53f
     JNZ 0x004ac5cb                      ; 004ac541
@@ -2926,8 +2926,8 @@ section .text
         ;   Label: LAB_004ac612
     PUSH 0x624c6c                       ; 004ac614 | = "setCameraAmbient"
     PUSH EBX                            ; 004ac619
-    CALL crt_string.c_strnicmp_FUN_005ff070 ; 004ac61a
-        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)
+    CALL crt_string.c__strnicmp_FUN_005ff070 ; 004ac61a
+        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 004ac61f
     TEST EAX,EAX                        ; 004ac622
     JNZ 0x004ac7ba                      ; 004ac624
@@ -3105,8 +3105,8 @@ section .text
         ;   Label: LAB_004ac7ba
     PUSH 0x624cf6                       ; 004ac7bc | = "setCounter"
     PUSH EBX                            ; 004ac7c1
-    CALL crt_string.c_strnicmp_FUN_005ff070 ; 004ac7c2
-        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)
+    CALL crt_string.c__strnicmp_FUN_005ff070 ; 004ac7c2
+        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 004ac7c7
     TEST EAX,EAX                        ; 004ac7ca
     JNZ 0x004ac982                      ; 004ac7cc
@@ -3302,8 +3302,8 @@ section .text
         ;   Label: LAB_004ac982
     PUSH 0x624d80                       ; 004ac984 | = "setGroupAmbient"
     PUSH EBX                            ; 004ac989
-    CALL crt_string.c_strnicmp_FUN_005ff070 ; 004ac98a
-        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)
+    CALL crt_string.c__strnicmp_FUN_005ff070 ; 004ac98a
+        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 004ac98f
     TEST EAX,EAX                        ; 004ac992
     JNZ 0x004aca81                      ; 004ac994
@@ -3405,8 +3405,8 @@ section .text
         ;   Label: LAB_004aca81
     PUSH 0x624de9                       ; 004aca83 | = "setLightFilterFrame"
     PUSH EBX                            ; 004aca88
-    CALL crt_string.c_strnicmp_FUN_005ff070 ; 004aca89
-        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)
+    CALL crt_string.c__strnicmp_FUN_005ff070 ; 004aca89
+        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 004aca8e
     TEST EAX,EAX                        ; 004aca91
     JNZ 0x004acbea                      ; 004aca93
@@ -3544,8 +3544,8 @@ section .text
         ;   Label: LAB_004acbea
     PUSH 0x624ed5                       ; 004acbec | = "setLeverState"
     PUSH EBX                            ; 004acbf1
-    CALL crt_string.c_strnicmp_FUN_005ff070 ; 004acbf2
-        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)
+    CALL crt_string.c__strnicmp_FUN_005ff070 ; 004acbf2
+        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 004acbf7
     TEST EAX,EAX                        ; 004acbfa
     JNZ 0x004acdf7                      ; 004acbfc
@@ -3772,8 +3772,8 @@ section .text
         ;   Label: LAB_004acdf7
     PUSH 0x624f1e                       ; 004acdf9 | = "setModelState"
     PUSH EBX                            ; 004acdfe
-    CALL crt_string.c_strnicmp_FUN_005ff070 ; 004acdff
-        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)
+    CALL crt_string.c__strnicmp_FUN_005ff070 ; 004acdff
+        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 004ace04
     TEST EAX,EAX                        ; 004ace07
     JNZ 0x004ad000                      ; 004ace09
@@ -3992,8 +3992,8 @@ section .text
         ;   Label: LAB_004ad000
     PUSH 0x624f87                       ; 004ad002 | = "setTimer"
     PUSH EBX                            ; 004ad007
-    CALL crt_string.c_strnicmp_FUN_005ff070 ; 004ad008
-        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)
+    CALL crt_string.c__strnicmp_FUN_005ff070 ; 004ad008
+        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 004ad00d
     TEST EAX,EAX                        ; 004ad010
     JNZ 0x004ad18c                      ; 004ad012
@@ -4163,8 +4163,8 @@ section .text
         ;   Label: LAB_004ad18c
     PUSH 0x625006                       ; 004ad18e | = "setWeather"
     PUSH EBX                            ; 004ad193
-    CALL crt_string.c_strnicmp_FUN_005ff070 ; 004ad194
-        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)
+    CALL crt_string.c__strnicmp_FUN_005ff070 ; 004ad194
+        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 004ad199
     TEST EAX,EAX                        ; 004ad19c
     JNZ 0x004ad323                      ; 004ad19e
@@ -4273,8 +4273,8 @@ section .text
         ;   Label: LAB_004ad28b
     LEA EAX,[EBP + 0xfffff25a]          ; 004ad290
     PUSH EAX                            ; 004ad296
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 004ad297
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 004ad297
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004ad29c
     TEST EAX,EAX                        ; 004ad29f
     JNZ 0x004ad2c2                      ; 004ad2a1
@@ -4295,8 +4295,8 @@ section .text
         ;   Label: LAB_004ad2c2
     LEA EAX,[EBP + 0xfffff25a]          ; 004ad2c7
     PUSH EAX                            ; 004ad2cd
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 004ad2ce
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 004ad2ce
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004ad2d3
     TEST EAX,EAX                        ; 004ad2d6
     JNZ 0x004ad2e1                      ; 004ad2d8
@@ -4308,8 +4308,8 @@ section .text
         ;   Label: LAB_004ad2e1
     LEA EAX,[EBP + 0xfffff25a]          ; 004ad2e6
     PUSH EAX                            ; 004ad2ec
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 004ad2ed
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 004ad2ed
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004ad2f2
     TEST EAX,EAX                        ; 004ad2f5
     JNZ 0x004ad300                      ; 004ad2f7
@@ -4336,8 +4336,8 @@ section .text
         ;   Label: LAB_004ad323
     PUSH 0x62506a                       ; 004ad325 | = "shakeScreen"
     PUSH EBX                            ; 004ad32a
-    CALL crt_string.c_strnicmp_FUN_005ff070 ; 004ad32b
-        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)
+    CALL crt_string.c__strnicmp_FUN_005ff070 ; 004ad32b
+        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 004ad330
     TEST EAX,EAX                        ; 004ad333
     JNZ 0x004ad3ed                      ; 004ad335
@@ -4418,8 +4418,8 @@ section .text
         ;   Label: LAB_004ad3ed
     PUSH 0x6250b3                       ; 004ad3ef | = "slamModelToMotion"
     PUSH EBX                            ; 004ad3f4
-    CALL crt_string.c_strnicmp_FUN_005ff070 ; 004ad3f5
-        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)
+    CALL crt_string.c__strnicmp_FUN_005ff070 ; 004ad3f5
+        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 004ad3fa
     TEST EAX,EAX                        ; 004ad3fd
     JNZ 0x004ad60f                      ; 004ad3ff
@@ -4650,8 +4650,8 @@ section .text
         ;   Label: LAB_004ad60f
     PUSH 0x625125                       ; 004ad611 | = "switchCamera"
     PUSH EBX                            ; 004ad616
-    CALL crt_string.c_strnicmp_FUN_005ff070 ; 004ad617
-        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)
+    CALL crt_string.c__strnicmp_FUN_005ff070 ; 004ad617
+        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 004ad61c
     TEST EAX,EAX                        ; 004ad61f
     JNZ 0x004ad7b2                      ; 004ad621
@@ -4830,8 +4830,8 @@ section .text
         ;   Label: LAB_004ad7b2
     PUSH 0x6251d1                       ; 004ad7b4 | = "warpTo"
     PUSH EBX                            ; 004ad7b9
-    CALL crt_string.c_strnicmp_FUN_005ff070 ; 004ad7ba
-        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)
+    CALL crt_string.c__strnicmp_FUN_005ff070 ; 004ad7ba
+        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 004ad7bf
     TEST EAX,EAX                        ; 004ad7c2
     JNZ 0x004adbcf                      ; 004ad7c4

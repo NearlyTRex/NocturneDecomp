@@ -19,7 +19,7 @@ void __cdecl sound_sndmain_cpp_calculateVirtualSpeakerPositions_FUN_005a5530(voi
   dVar2 = g_Cached3DListenerPos.y;
   dVar1 = g_Cached3DListenerPos.x;
   if (g_AudioChannelCount == 2) {
-    dVar1 = DOUBLE_00681b38 * 0.5;
+    dVar1 = g_Cached3DDistanceFactorInverse * 0.5;
     g_VirtualSpeakerXPositions[0] =
          g_Cached3DListenerPos.x - g_Cached3DListenerOrientFront.x * dVar1;
     g_VirtualSpeakerYPositions[0] =

@@ -85,8 +85,8 @@ section .text
     LEA EDI,[EBX + 0x16c]               ; 004a8087
     PUSH EDI                            ; 004a808d
     MOV ESI,dword ptr [EBX + 0x48c]     ; 004a808e
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 004a8094
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 004a8094
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 004a8099
     TEST EAX,EAX                        ; 004a809c
     JNZ 0x004a826a                      ; 004a809e
@@ -272,8 +272,8 @@ section .text
     PUSH 0x6240a3                       ; 004a82b4 | = "mob"
     LEA EAX,[EBX + 0x3d4]               ; 004a82b9
     PUSH EAX                            ; 004a82bf
-    CALL crt_string.c_strnicmp_FUN_005ff070 ; 004a82c0
-        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)
+    CALL crt_string.c__strnicmp_FUN_005ff070 ; 004a82c0
+        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 004a82c5
     TEST EAX,EAX                        ; 004a82c8
     JNZ 0x004a8115                      ; 004a82ca

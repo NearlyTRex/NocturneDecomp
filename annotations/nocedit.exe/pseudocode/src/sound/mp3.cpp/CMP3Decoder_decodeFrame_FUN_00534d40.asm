@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this_ptr)
+; int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this_ptr,short *pcm_output)
 ;
 ; Parameters:
 ; CMP3Decoder *    Stack[0x4]:4   this_ptr
+; short *          Stack[0x8]:4   pcm_output
 ; Local Variables:
 ; undefined4       Stack[-0x60d0]:4  local_60d0
 ; undefined4       Stack[-0x60cc]:4  local_60cc
@@ -96,7 +97,7 @@
 ;   TerminatedCString s_js_bound_bad_layer_modex_0063acb5
 ;   TerminatedCString s_sound_mp3_cpp_0063b2b2
 ;   TerminatedCString s_Not_enough_main_data_to__0063b2c3
-;   void*[4][4] g_MpegLayer2AllocationTables
+;   int[4][4] g_MpegLayer2AllocationTables
 ;   double[2][4] g_MpegSampleRateTable
 ;   int[2][3][15] g_MpegBitrateTable
 ;   double[64] g_MpegScalefactorTable
@@ -221,7 +222,7 @@ section .text
     PUSH EAX                            ; 00534e3c
     MOV dword ptr [ESP + 0x6028],ESI    ; 00534e3d
     CALL sound_mp3.cpp_CFileBitStream_readFrameHeader_FUN_0052f5b0 ; 00534e44
-        ;   XREF to: 0052f5b0 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_CFileBitStream_readFrameHeader_FUN_0052f5b0(CFileBitStream * this_ptr, SMpegFrameHeader * header_out)
+        ;   XREF to: 0052f5b0 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_CFileBitStream_readFrameHeader_FUN_0052f5b0(CFileBitStream * this_ptr, SMpegFrameHeader * * header_out)
     ADD ESP,0x8                         ; 00534e49
     MOV EDI,dword ptr [ESP + 0x5ff0]    ; 00534e4c
     LEA ESI,[ESP + 0x5ff0]              ; 00534e53
@@ -402,7 +403,7 @@ section .text
     PUSH EAX                            ; 005350f2
     XOR EDI,EDI                         ; 005350f3
     CALL sound_mp3.cpp_requantizeSamples_FUN_005301b0 ; 005350f5
-        ;   XREF to: 005301b0 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_requantizeSamples_FUN_005301b0(SMpegSubbandScalefactors * quantized_samples, SMpegSubbandScalefactors * dequantized_samples, SMpegSubbandAllocation * allocation, SMpegFrameHeader * header)
+        ;   XREF to: 005301b0 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_requantizeSamples_FUN_005301b0(SMpegSubbandScalefactors * quantized_samples, SMpegSubbandScalefactors * dequantized_samples, SMpegSubbandAllocation * allocation, SMpegFrame * frame)
     ADD ESP,0x10                        ; 005350fa
     LEA EAX,[ESP + 0x5708]              ; 005350fd
     MOV ESI,dword ptr [ESP + 0x6000]    ; 00535104

@@ -141,11 +141,11 @@ LAB_006053a3:
 LAB_006053ad:
   if ((0 < iVar8) && (iVar8 = iVar8 + local_24, (state->flags & 1) != 0)) {
     *pcVar7 = '\0';
-    fVar4 = (float)CONCAT22(local_1c._2_2_,(ushort)local_1c);
+    fVar4 = __BITCAST_FLOAT(CONCAT22(local_1c._2_2_,(ushort)local_1c));
     if ((state->flags & 0x10) == 0) {
       (*PTR_crt_stdio_c_ReportFloatingPointNotLoaded_FUN_0060ad30_00685410)
                 ((double *)&local_80,(char *)&local_30);
-      fVar4 = (float)CONCAT22(local_1c._2_2_,(ushort)local_1c);
+      fVar4 = __BITCAST_FLOAT(CONCAT22(local_1c._2_2_,(ushort)local_1c));
     }
     else if ((char)local_80 == '-') {
       fVar4 = (float)-CONCAT22(local_1c._2_2_,(ushort)local_1c);
@@ -175,7 +175,7 @@ LAB_006053ad:
         return iVar8;
       }
       local_1c = fVar4;
-      fVar4 = doubleToFloat((double)CONCAT44(local_2c,local_30));
+      fVar4 = doubleToFloat(__BITCAST_DOUBLE(CONCAT44(local_2c,local_30)));
     }
     *pfVar6 = fVar4;
   }

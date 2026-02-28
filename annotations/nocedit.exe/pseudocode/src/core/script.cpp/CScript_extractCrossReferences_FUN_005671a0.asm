@@ -26,7 +26,7 @@
 ;   core_script.cpp_CScript_addEventXRef_FUN_00567510
 ;   core_script.cpp_CScript_parseActionTemplate_FUN_00567490
 ;   core_script.cpp_CScript_tokenizeAtCursor_FUN_00567310
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;   shape_edittool.cpp_CStrList_ctor_FUN_004a2a20
 ;   shape_edittool.cpp_CStrList_dtor_FUN_004a2a40
 ;   shape_edittool.cpp_CStrList_getItemCount_FUN_004a6ed0
@@ -134,8 +134,8 @@ section .text
         ;   XREF to: 004a2f70 (UNCONDITIONAL_CALL)  ; char * shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70(CStrList * this_ptr, int index)
     ADD ESP,0x8                         ; 00567279
     PUSH EAX                            ; 0056727c
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 0056727d
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 0056727d
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 00567282
     TEST EAX,EAX                        ; 00567285
     JZ 0x00567306                       ; 00567287
@@ -148,8 +148,8 @@ section .text
         ;   XREF to: 004a2f70 (UNCONDITIONAL_CALL)  ; char * shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70(CStrList * this_ptr, int index)
     ADD ESP,0x8                         ; 005672a0
     PUSH EAX                            ; 005672a3
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 005672a4
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 005672a4
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 005672a9
     TEST EAX,EAX                        ; 005672ac
     JZ 0x00567306                       ; 005672ae
@@ -162,8 +162,8 @@ section .text
         ;   XREF to: 004a2f70 (UNCONDITIONAL_CALL)  ; char * shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70(CStrList * this_ptr, int index)
     ADD ESP,0x8                         ; 005672c3
     PUSH EAX                            ; 005672c6
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 005672c7
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 005672c7
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 005672cc
     TEST EAX,EAX                        ; 005672cf
     JZ 0x00567306                       ; 005672d1

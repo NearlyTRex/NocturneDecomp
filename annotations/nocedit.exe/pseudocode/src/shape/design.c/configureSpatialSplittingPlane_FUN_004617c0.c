@@ -114,7 +114,8 @@ LAB_0046186a:
       }
       return;
     }
-    iVar2 = strcmp((char *)local_90,g_ModelPartNames[(int)local_28].name);
+    iVar2 = _strcmp((char *)local_90,g_ModelPartNames[(int)local_28].name)
+    ;
     if (iVar2 == 0) {
       local_18 = local_28;
       goto LAB_0046186a;

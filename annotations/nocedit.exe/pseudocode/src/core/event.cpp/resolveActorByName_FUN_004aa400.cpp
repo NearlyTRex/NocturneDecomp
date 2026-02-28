@@ -35,7 +35,7 @@ CDemonActor * __cdecl core_event_cpp_resolveActorByName_FUN_004aa400(char *name,
     actor_ptr = core_event_cpp_CEventList_getActorByVarName_FUN_004b0b80(g_CEventListPtr,name);
   }
   else {
-    iVar2 = stricmp(name,"$");
+    iVar2 = _stricmp(name,"$");
     if (iVar2 != 0) {
       actor_ptr = core_mission_cpp_CDemonMission_findActorByName_FUN_00524030
                             (g_CDemonMissionPtr,name);

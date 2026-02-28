@@ -17,7 +17,7 @@ int __cdecl core_msnedit_cpp_CDemonMission_findSetByName_FUN_00538f40(CDemonMiss
   if (0 < this_ptr->num_sets) {
     str1 = this_ptr->set_names;
     do {
-      iVar1 = stricmp(*str1,set_name);
+      iVar1 = _stricmp(*str1,set_name);
       if (iVar1 == 0) {
         return iVar2;
       }

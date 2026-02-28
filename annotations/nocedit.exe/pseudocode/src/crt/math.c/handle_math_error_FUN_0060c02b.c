@@ -37,10 +37,10 @@ LAB_0060c06b:
     errorFlags = in_stack_0000000c | 0x2040;
   }
   dVar1 = set_math_errno(errorFlags,&stack0x00000004);
-  local_10 = SUB84(dVar1,0);
+  local_10 = SUB84(__BITCAST_UINT64(dVar1),0);
   local_18 = local_10;
   local_c = (uint)((ulonglong)dVar1 >> 0x20);
   local_14 = local_c;
 LAB_0060c0a7:
-  return (double)CONCAT44(local_14,local_18);
+  return __BITCAST_DOUBLE(CONCAT44(local_14,local_18));
 }

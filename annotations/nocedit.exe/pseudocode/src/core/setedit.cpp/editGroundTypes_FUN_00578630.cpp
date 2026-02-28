@@ -97,7 +97,7 @@ void __cdecl core_setedit_cpp_editGroundTypes_FUN_00578630(char *filename)
     if (0 < g_GroundTextureCount) {
       pacVar4 = g_GroundTextureNames;
       do {
-        iVar2 = stricmp(*pacVar4,local_16c);
+        iVar2 = _stricmp(*pacVar4,local_16c);
         if (iVar2 == 0) goto LAB_00578779;
         iVar3 = iVar3 + 1;
         pacVar4 = pacVar4 + 1;

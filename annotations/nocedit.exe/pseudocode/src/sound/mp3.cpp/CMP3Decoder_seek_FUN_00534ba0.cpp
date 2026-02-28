@@ -31,14 +31,14 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_seek_FUN_00534ba0(CMP3Decoder *this_ptr,in
   memset(this_ptr->synthesis_v_buffer,0,0x2000);
   memset(this_ptr->synthesis_history,0,0x1200);
   for (; 0x8ff < sample_offset; sample_offset = sample_offset - iVar1) {
-    iVar1 = sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(this_ptr);
+    iVar1 = sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(this_ptr,(short *)0x0);
     if (iVar1 < 1) {
       return 0;
     }
   }
   if (0 < sample_offset) {
     while( true ) {
-      iVar1 = sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(this_ptr);
+      iVar1 = sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(this_ptr,this_ptr->decode_buffer);
       this_ptr->available_samples = iVar1;
       if (iVar1 < 1) {
         return 0;

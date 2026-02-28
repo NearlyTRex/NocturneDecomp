@@ -73,7 +73,7 @@
 ;   crt_memory.c_memset_FUN_005fde40
 ;   crt_stdio.c_fread_FUN_005fd990
 ;   crt_stdio.c_fseek_FUN_005ffacc
-;   crt_string.c_strcmp_FUN_005fef20
+;   crt_string.c__strcmp_FUN_005fef20
 ;   crt_watcom.c__memset_FUN_004b19d0
 ;   engine_dosio.c_getFile_FUN_00481a50
 ;   engine_dosio.c_getFileSize_FUN_00481880
@@ -305,8 +305,8 @@ section .text
     MOV byte ptr [ESP + 0xab],AH        ; 0044f5dd
     LEA EAX,[ESP + 0xa8]                ; 0044f5e4
     PUSH EAX                            ; 0044f5eb
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 0044f5ec
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 0044f5ec
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 0044f5f1
     TEST EAX,EAX                        ; 0044f5f4
     JNZ 0x0044fbee                      ; 0044f5f6
@@ -732,8 +732,8 @@ section .text
         ;   Label: LAB_0044fbee
     LEA EAX,[ESP + 0xa8]                ; 0044fbf3
     PUSH EAX                            ; 0044fbfa
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 0044fbfb
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 0044fbfb
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 0044fc00
     TEST EAX,EAX                        ; 0044fc03
     JZ 0x0044f5fc                       ; 0044fc05

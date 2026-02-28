@@ -45,7 +45,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "sound_sndmain.cpp_analyzeFrequencyBand_FUN_005ac400",
-    "signature": "int __cdecl sound_sndmain_cpp_analyzeFrequencyBand_FUN_005ac400(int channel,float freq_start_hz,float freq_end_hz)"
+    "signature": "float __cdecl sound_sndmain_cpp_analyzeFrequencyBand_FUN_005ac400(int channel,float freq_start_hz,float freq_end_hz)"
   },
   "function_calls": [
     {
@@ -486,7 +486,7 @@
       "line": 164,
       "match": "SQRT",
       "severity": "mild",
-      "text": "return (int)(SQRT((fVar5 / (float)iVar21) / (float)iVar13) * (float)2);",
+      "text": "return SQRT((fVar5 / (float)iVar21) / (float)iVar13) * (float)2;",
       "type": "decompiler_intrinsic"
     }
   ]

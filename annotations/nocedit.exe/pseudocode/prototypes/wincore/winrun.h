@@ -105,7 +105,7 @@ HANDLE __cdecl createThread(LPTHREAD_START_ROUTINE thread_func,LPVOID thread_par
 
 // Original: wincore_winrun.cpp_setThreadPriority_FUN_005f40a0
 // Address: 005f40a0
-void __cdecl setThreadPriority(HANDLE hThread,int priority_level);
+int __cdecl setThreadPriority(HANDLE hThread,int priority_level);
 
 // Original: wincore_winrun.cpp_sleep_FUN_005f40e0
 // Address: 005f40e0

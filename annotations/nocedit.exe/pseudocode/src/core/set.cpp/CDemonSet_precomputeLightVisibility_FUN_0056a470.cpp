@@ -110,7 +110,7 @@ void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemo
               pCVar1 = local_34 + local_14;
               iVar6 = 0;
               do {
-                iVar2 = strcmp
+                iVar2 = _strcmp
                                   ((char *)(*(int *)((int)g_MasterLightList + iVar6) + 0x40),
                                    pCVar1->name);
                 if (iVar2 == 0) break;

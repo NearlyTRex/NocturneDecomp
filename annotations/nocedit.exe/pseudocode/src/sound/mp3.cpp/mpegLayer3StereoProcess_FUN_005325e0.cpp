@@ -165,7 +165,7 @@ void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0(SMpegStereoSubba
                 else {
                   sound_mp3_cpp_calculateIntensityStereoRatio_FUN_00532540
                             (*(int *)((int)&uStack_57a + iVar10) >> 0x10,
-                             (double)CONCAT44(local_207c,local_2080),iVar8,local_2078);
+                             __BITCAST_DOUBLE(CONCAT44(local_207c,local_2080)),iVar8,local_2078);
                 }
               }
               iVar10 = iVar10 + 2;
@@ -252,7 +252,7 @@ void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0(SMpegStereoSubba
                     else {
                       sound_mp3_cpp_calculateIntensityStereoRatio_FUN_00532540
                                 (*(int *)((int)&uStack_57a + iVar10) >> 0x10,
-                                 (double)CONCAT44(local_207c,local_2080),iVar8,local_2078);
+                                 __BITCAST_DOUBLE(CONCAT44(local_207c,local_2080)),iVar8,local_2078);
                     }
                   }
                   iVar10 = iVar10 + 2;
@@ -345,7 +345,7 @@ void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0(SMpegStereoSubba
                   else {
                     sound_mp3_cpp_calculateIntensityStereoRatio_FUN_00532540
                               (*(int *)((int)&uStack_57a + iVar10) >> 0x10,
-                               (double)CONCAT44(local_207c,local_2080),iVar8,local_2078);
+                               __BITCAST_DOUBLE(CONCAT44(local_207c,local_2080)),iVar8,local_2078);
                   }
                 }
                 iVar10 = iVar10 + 2;
@@ -429,7 +429,7 @@ void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0(SMpegStereoSubba
                     else {
                       sound_mp3_cpp_calculateIntensityStereoRatio_FUN_00532540
                                 (*(int *)((int)&uStack_57a + iVar10) >> 0x10,
-                                 (double)CONCAT44(local_207c,local_2080),iVar8,local_2078);
+                                 __BITCAST_DOUBLE(CONCAT44(local_207c,local_2080)),iVar8,local_2078);
                     }
                   }
                   iVar10 = iVar10 + 2;

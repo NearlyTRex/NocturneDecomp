@@ -38,7 +38,7 @@
 ;   core_mission.cpp_CDemonMission_findActorByName_FUN_00524030
 ;   core_script.cpp_validateActorVariableName_FUN_00559220
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;
 ; *****************************************************************************
 
@@ -144,8 +144,8 @@ section .text
     PUSH 0x6415c4                       ; 00559597 | = "$"
         ;   Label: LAB_00559597
     PUSH EBX                            ; 0055959c
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 0055959d
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 0055959d
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 005595a2
     TEST EAX,EAX                        ; 005595a5
     JNZ 0x00559601                      ; 005595a7

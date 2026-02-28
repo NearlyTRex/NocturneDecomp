@@ -37,16 +37,15 @@
   },
   "complexity": {
     "assembly_lines": 846,
-    "complexity_score": 751,
+    "complexity_score": 726,
     "cross_reference_count": 2,
     "function_call_count": 10,
     "global_count": 48,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 381,
-    "suspect_count": 34,
+    "suspect_count": 32,
     "suspect_types": [
       "decompiler_intrinsic",
-      "double_reconstruction",
       "pointer_cast",
       "stack_param",
       "sub84_truncation",
@@ -1144,19 +1143,11 @@
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 341,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "if (local_8c < (double)CONCAT44(uStack_114,local_118)) {",
-      "type": "double_reconstruction"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 341,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "if (local_8c < (double)CONCAT44(uStack_114,local_118)) {",
+      "text": "if (local_8c < __BITCAST_DOUBLE(CONCAT44(uStack_114,local_118))) {",
       "type": "decompiler_intrinsic"
     },
     {
@@ -1176,19 +1167,11 @@
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 353,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "(float)(double)CONCAT44(uStack_114,local_118) + fVar2;",
-      "type": "double_reconstruction"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 353,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "(float)(double)CONCAT44(uStack_114,local_118) + fVar2;",
+      "text": "(float)__BITCAST_DOUBLE(CONCAT44(uStack_114,local_118)) + fVar2;",
       "type": "decompiler_intrinsic"
     },
     {

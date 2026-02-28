@@ -26,7 +26,7 @@ void __cdecl core_setedit_cpp_addGroundType_FUN_00578290(char *filename,int grou
   if (0 < g_GroundTextureCount) {
     str1 = g_GroundTextureNames;
     do {
-      iVar2 = stricmp(*str1,local_20c);
+      iVar2 = _stricmp(*str1,local_20c);
       if (iVar2 == 0) {
         if (-1 < iVar4) {
           if ((uint)(byte)g_GroundTextureTypes[iVar4] != ground_type) {

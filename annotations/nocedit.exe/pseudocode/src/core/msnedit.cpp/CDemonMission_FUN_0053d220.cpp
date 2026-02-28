@@ -112,7 +112,7 @@ LAB_0053d316:
                 pcVar3 = (char *)0x0;
 LAB_0053d336:
                 if (pcVar3 == (char *)0x0) {
-                  iVar1 = stricmp(in_stack_00000008,in_stack_0000000c);
+                  iVar1 = _stricmp(in_stack_00000008,in_stack_0000000c);
                   if ((iVar1 != 0) &&
                      (pCVar2 = core_mission_cpp_CDemonMission_findActorByName_FUN_00524030
                                          (this_ptr,in_stack_0000000c), pCVar2 != (CDemonActor *)0x0)

@@ -3,12 +3,6 @@
     "errors": [
       {
         "category": "incompatible_types",
-        "column": 27,
-        "line": 77,
-        "message": "invalid operands to binary expression ('double' and 'int')"
-      },
-      {
-        "category": "incompatible_types",
         "column": 19,
         "line": 77,
         "message": "no matching function for call to '_strtod'"
@@ -334,7 +328,7 @@
       "line": 70,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "dVar7 = _strtod(SUB84(dVar7,0));",
+      "text": "dVar7 = _strtod(SUB84(__BITCAST_UINT64(dVar7),0));",
       "type": "sub84_truncation"
     },
     {
@@ -342,7 +336,7 @@
       "line": 70,
       "match": "SUB84",
       "severity": "mild",
-      "text": "dVar7 = _strtod(SUB84(dVar7,0));",
+      "text": "dVar7 = _strtod(SUB84(__BITCAST_UINT64(dVar7),0));",
       "type": "decompiler_intrinsic"
     }
   ]

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl crt_string_c_strcmp_FUN_005fef20(char *str1,char *str2)
+; int __cdecl crt_string_c__strcmp_FUN_005fef20(char *str1,char *str2)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   str1
@@ -25,7 +25,7 @@
 section .text
 
     PUSH EDX                            ; 005fef20
-        ;   Label: crt_string.c_strcmp_FUN_005fef20
+        ;   Label: crt_string.c__strcmp_FUN_005fef20
     MOV EAX,dword ptr [ESP + 0x8]       ; 005fef21
     MOV EDX,dword ptr [ESP + 0xc]       ; 005fef25
     PUSH EBX                            ; 005fef29

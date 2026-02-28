@@ -27,7 +27,7 @@ void __cdecl core_event_cpp_CEventList_updateSfxEntries_FUN_004b0db0(CEventList 
     local_18 = (this_ptr->sfx_handles).entries + 1;
     do {
       dVar5 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(1,in_stack_fffffe90);
-      local_20 = SUB84(dVar5,0);
+      local_20 = SUB84(__BITCAST_UINT64(dVar5),0);
       *(int *)&dest->playback_position = local_20;
       local_1c = (int)((ulonglong)dVar5 >> 0x20);
       *(int *)((int)&dest->playback_position + 4) = local_1c;

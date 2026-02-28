@@ -12,7 +12,7 @@
 ;   CKeys g_CKeysInstance
 ;
 ; Called Functions:
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;   engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_00502470
 ;   shape_edittool.cpp_CPickList_isItemEnabled_FUN_004a54e0
 ;   shape_edittool.cpp_CStrList_copyToClipboard_FUN_004a3270
@@ -196,8 +196,8 @@ section .text
     ADD ESP,0x8                         ; 004a40ad
     PUSH EAX                            ; 004a40b0
     PUSH ESI                            ; 004a40b1
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 004a40b2
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 004a40b2
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004a40b7
     TEST EAX,EAX                        ; 004a40ba
     JLE 0x004a41a9                      ; 004a40bc
@@ -215,8 +215,8 @@ section .text
     ADD ESP,0x8                         ; 004a40d9
     PUSH EAX                            ; 004a40dc
     PUSH ESI                            ; 004a40dd
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 004a40de
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 004a40de
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004a40e3
     TEST EAX,EAX                        ; 004a40e6
     JLE 0x004a4030                      ; 004a40e8

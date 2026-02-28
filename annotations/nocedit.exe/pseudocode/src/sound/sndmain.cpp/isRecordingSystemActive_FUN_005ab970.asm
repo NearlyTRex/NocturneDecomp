@@ -10,7 +10,7 @@
 ;   sound_sndmain.cpp_startRecording_FUN_005aba90 at 005aba92
 ;
 ; Referenced Globals:
-;   IDirectSoundCapture* g_RecordingDeviceInterface
+;   CSoundDevice* g_RecordingDeviceInterface
 ;
 ; *****************************************************************************
 

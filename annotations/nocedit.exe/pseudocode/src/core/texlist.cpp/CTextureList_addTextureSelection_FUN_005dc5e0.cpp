@@ -19,7 +19,7 @@ int __cdecl core_texlist_cpp_CTextureList_addTextureSelection_FUN_005dc5e0(CText
   }
   str1 = this_ptr->texture_entries[0].texture_name;
   for (iVar3 = 0; iVar3 < this_ptr->texture_count; iVar3 = iVar3 + 1) {
-    iVar2 = strcmp(str1,filename);
+    iVar2 = _strcmp(str1,filename);
     if (iVar2 == 0) {
       return iVar3;
     }

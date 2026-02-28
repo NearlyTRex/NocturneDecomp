@@ -46,8 +46,8 @@
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_fscanf_FUN_005fe7c0
 ;   crt_stdio.c_ftell_FUN_00601560
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;   crt_string.c_splitpath_FUN_005ff178
-;   crt_string.c_stricmp_FUN_005fe7f0
 ;   engine_dosio.c_getFile_FUN_00481a50
 ;   engine_dosio.c_getFileSize_FUN_00481880
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
@@ -156,8 +156,8 @@ section .text
     PUSH 0x64332f                       ; 005604dd | = "stranger"
     LEA EAX,[ESP + 0x84]                ; 005604e2
     PUSH EAX                            ; 005604e9
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 005604ea
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 005604ea
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 005604ef
     TEST EAX,EAX                        ; 005604f2
     JNZ 0x0056051c                      ; 005604f4

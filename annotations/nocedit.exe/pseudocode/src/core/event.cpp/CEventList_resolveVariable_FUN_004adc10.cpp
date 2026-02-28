@@ -13,13 +13,13 @@ int __cdecl core_event_cpp_CEventList_resolveVariable_FUN_004adc10(CEventList *t
   int iVar2;
   char (*str1) [32];
   
-  iVar1 = stricmp(identifier,"TRUE");
+  iVar1 = _stricmp(identifier,"TRUE");
   if (iVar1 != 0) {
     iVar1 = 0;
     if (0 < (this_ptr->current_events).count) {
       str1 = (this_ptr->current_events).names;
       do {
-        iVar2 = stricmp(*str1,identifier);
+        iVar2 = _stricmp(*str1,identifier);
         if (iVar2 == 0) {
           return 1;
         }

@@ -71,7 +71,7 @@ void __cdecl core_sound_cpp_CSound_process_FUN_005b2fd0(CSound *this_ptr)
   }
   local_138 = 0.0;
   if (((0.0 < g_CWaterPtr->visible_area_sqft) &&
-      (iVar4 = strnicmp
+      (iVar4 = _strnicmp
                          (g_CDemonSetPtr->geometry_filename,"NDUN",4), iVar4 == 0)) &&
      (local_138 = SQRT(g_CWaterPtr->visible_area_sqft) * (float)0.027777777777777801 +
                   (float)0.20000000000000001, (float)0.69999999999999996 < local_138)) {
@@ -150,7 +150,7 @@ void __cdecl core_sound_cpp_CSound_process_FUN_005b2fd0(CSound *this_ptr)
     sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
     sound_sndmain_cpp_setNextSfxFlags_FUN_005a8b70(1);
     sound_sndmain_cpp_setNextSfxChannel_FUN_005a8af0(3);
-    iVar4 = stricmp(g_CurrentTrainMode,"int");
+    iVar4 = _stricmp(g_CurrentTrainMode,"int");
     if (iVar4 == 0) {
       sound_sndmain_cpp_killSfx_FUN_005a9c40(g_TrainExteriorAmbientHandle);
       local_13c = 0.4;
@@ -174,7 +174,7 @@ void __cdecl core_sound_cpp_CSound_process_FUN_005b2fd0(CSound *this_ptr)
       sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
     }
     else {
-      iVar4 = stricmp(g_PreviousTrainMode,g_CurrentTrainMode);
+      iVar4 = _stricmp(g_PreviousTrainMode,g_CurrentTrainMode);
       if (iVar4 != 0) {
         sound_sndmain_cpp_setSfxVolume_FUN_005a9ae0
                   (g_TrainRailNoiseHandle,local_13c * (float)1.5);

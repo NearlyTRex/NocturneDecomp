@@ -40,70 +40,70 @@ LAB_00560e30:
   *parse_cursor = *parse_cursor + 1;
   pcVar5 = this_ptr->template_name;
   pcVar3 = (char *)0x0;
-  iVar2 = strnicmp(pcVar5,"kParmInt" + 5,3);
+  iVar2 = _strnicmp(pcVar5,"kParmInt" + 5,3);
   if (iVar2 == 0) {
     this_ptr->param_type = PARM_TYPE_INT;
     pcVar3 = this_ptr->template_name + 3;
     pcVar5 = "kParmInt" + 5;
   }
   else {
-    iVar2 = strnicmp(pcVar5,"kParmFloat" + 5,5);
+    iVar2 = _strnicmp(pcVar5,"kParmFloat" + 5,5);
     if (iVar2 == 0) {
       pcVar3 = this_ptr->template_name + 5;
       pcVar5 = "kParmFloat" + 5;
       this_ptr->param_type = PARM_TYPE_FLOAT;
     }
     else {
-      iVar2 = strnicmp(pcVar5,"kParmText" + 5,4);
+      iVar2 = _strnicmp(pcVar5,"kParmText" + 5,4);
       if (iVar2 == 0) {
         pcVar3 = this_ptr->template_name + 4;
         pcVar5 = "kParmText" + 5;
         this_ptr->param_type = PARM_TYPE_TEXT;
       }
       else {
-        iVar2 = strnicmp(pcVar5,"kParmActorVariable" + 5,0xd);
+        iVar2 = _strnicmp(pcVar5,"kParmActorVariable" + 5,0xd);
         if (iVar2 == 0) {
           pcVar3 = this_ptr->template_name + 0xd;
           pcVar5 = "kParmActorVariable" + 5;
           this_ptr->param_type = PARM_TYPE_ACTOR_VARIABLE;
         }
         else {
-          iVar2 = strnicmp(pcVar5,"kParmActorClass" + 5,10);
+          iVar2 = _strnicmp(pcVar5,"kParmActorClass" + 5,10);
           if (iVar2 == 0) {
             pcVar3 = this_ptr->template_name + 10;
             pcVar5 = "kParmActorClass" + 5;
             this_ptr->param_type = PARM_TYPE_ACTOR_CLASS;
           }
           else {
-            iVar2 = strnicmp(pcVar5,"kParmActor" + 5,5);
+            iVar2 = _strnicmp(pcVar5,"kParmActor" + 5,5);
             if (iVar2 == 0) {
               pcVar3 = this_ptr->template_name + 5;
               pcVar5 = "kParmActor" + 5;
               this_ptr->param_type = PARM_TYPE_ACTOR;
             }
             else {
-              iVar2 = strnicmp(pcVar5,"kParmCondition" + 5,9);
+              iVar2 = _strnicmp(pcVar5,"kParmCondition" + 5,9);
               if (iVar2 == 0) {
                 pcVar3 = this_ptr->template_name + 9;
                 pcVar5 = "kParmCondition" + 5;
                 this_ptr->param_type = PARM_TYPE_CONDITION;
               }
               else {
-                iVar2 = strnicmp(pcVar5,"kParmLabel" + 5,5);
+                iVar2 = _strnicmp(pcVar5,"kParmLabel" + 5,5);
                 if (iVar2 == 0) {
                   pcVar3 = this_ptr->template_name + 5;
                   pcVar5 = "kParmLabel" + 5;
                   this_ptr->param_type = PARM_TYPE_LABEL;
                 }
                 else {
-                  iVar2 = strnicmp(pcVar5,"kParmCamera" + 5,6);
+                  iVar2 = _strnicmp(pcVar5,"kParmCamera" + 5,6);
                   if (iVar2 == 0) {
                     pcVar3 = this_ptr->template_name + 6;
                     pcVar5 = "kParmCamera" + 5;
                     this_ptr->param_type = PARM_TYPE_CAMERA;
                   }
                   else {
-                    iVar2 = strnicmp
+                    iVar2 = _strnicmp
                                       (pcVar5,"kParmControlButton" + 5,0xd);
                     if (iVar2 == 0) {
                       pcVar3 = this_ptr->template_name + 0xd;
@@ -111,7 +111,7 @@ LAB_00560e30:
                       this_ptr->param_type = PARM_TYPE_CONTROL_BUTTON;
                     }
                     else {
-                      iVar2 = strnicmp
+                      iVar2 = _strnicmp
                                         (pcVar5,"kParmDamageType" + 5,10);
                       if (iVar2 == 0) {
                         pcVar3 = this_ptr->template_name + 10;
@@ -119,7 +119,7 @@ LAB_00560e30:
                         this_ptr->param_type = PARM_TYPE_DAMAGE_TYPE;
                       }
                       else {
-                        iVar2 = strnicmp
+                        iVar2 = _strnicmp
                                           (pcVar5,"kParmDeathType" + 5,9);
                         if (iVar2 == 0) {
                           pcVar3 = this_ptr->template_name + 9;
@@ -127,7 +127,7 @@ LAB_00560e30:
                           this_ptr->param_type = PARM_TYPE_DEATH_TYPE;
                         }
                         else {
-                          iVar2 = strnicmp
+                          iVar2 = _strnicmp
                                             (pcVar5,"kParmSfxSet" + 5,6);
                           if (iVar2 == 0) {
                             pcVar3 = this_ptr->template_name + 6;
@@ -135,7 +135,7 @@ LAB_00560e30:
                             this_ptr->param_type = PARM_TYPE_SFX_SET;
                           }
                           else {
-                            iVar2 = strnicmp
+                            iVar2 = _strnicmp
                                               (pcVar5,"kParmSfxUsed" + 5,7);
                             if (iVar2 == 0) {
                               pcVar3 = this_ptr->template_name + 7;
@@ -143,7 +143,7 @@ LAB_00560e30:
                               this_ptr->param_type = PARM_TYPE_SFX_USED;
                             }
                             else {
-                              iVar2 = strnicmp
+                              iVar2 = _strnicmp
                                                 (pcVar5,"kParmWav" + 5,3);
                               if (iVar2 == 0) {
                                 pcVar3 = this_ptr->template_name + 3;
@@ -151,7 +151,7 @@ LAB_00560e30:
                                 this_ptr->param_type = PARM_TYPE_WAV;
                               }
                               else {
-                                iVar2 = strnicmp
+                                iVar2 = _strnicmp
                                                   (pcVar5,"kParmWeather" + 5,7);
                                 if (iVar2 == 0) {
                                   pcVar3 = this_ptr->template_name + 7;
@@ -159,7 +159,7 @@ LAB_00560e30:
                                   this_ptr->param_type = PARM_TYPE_WEATHER;
                                 }
                                 else {
-                                  iVar2 = strnicmp
+                                  iVar2 = _strnicmp
                                                     (pcVar5,"kParmCounterSet" + 5,10);
                                   if (iVar2 == 0) {
                                     pcVar3 = this_ptr->template_name + 10;
@@ -167,7 +167,7 @@ LAB_00560e30:
                                     this_ptr->param_type = PARM_TYPE_COUNTER_SET;
                                   }
                                   else {
-                                    iVar2 = strnicmp
+                                    iVar2 = _strnicmp
                                                       (pcVar5,"kParmCounterUsed" + 5,0xb);
                                     if (iVar2 == 0) {
                                       pcVar3 = this_ptr->template_name + 0xb;
@@ -175,7 +175,7 @@ LAB_00560e30:
                                       this_ptr->param_type = PARM_TYPE_COUNTER_USED;
                                     }
                                     else {
-                                      iVar2 = strnicmp
+                                      iVar2 = _strnicmp
                                                         (pcVar5,"kParmLetterBoxMode" + 5,
                                                          0xd);
                                       if (iVar2 == 0) {
@@ -184,7 +184,7 @@ LAB_00560e30:
                                         this_ptr->param_type = PARM_TYPE_LETTER_BOX_MODE;
                                       }
                                       else {
-                                        iVar2 = strnicmp
+                                        iVar2 = _strnicmp
                                                           (pcVar5,"kParmFilename" + 5,8);
                                         if (iVar2 == 0) {
                                           pcVar3 = this_ptr->template_name + 8;
@@ -192,7 +192,7 @@ LAB_00560e30:
                                           this_ptr->param_type = PARM_TYPE_FILENAME;
                                         }
                                         else {
-                                          iVar2 = strnicmp
+                                          iVar2 = _strnicmp
                                                             (pcVar5,"kParmSpotLight" + 5,9)
                                           ;
                                           if (iVar2 == 0) {
@@ -201,7 +201,7 @@ LAB_00560e30:
                                             this_ptr->param_type = PARM_TYPE_SPOT_LIGHT;
                                           }
                                           else {
-                                            iVar2 = strnicmp
+                                            iVar2 = _strnicmp
                                                               (pcVar5,"kParmEventCommand" +
                                                                       5,0xc);
                                             if (iVar2 == 0) {
@@ -210,7 +210,7 @@ LAB_00560e30:
                                               this_ptr->param_type = PARM_TYPE_EVENT_COMMAND;
                                             }
                                             else {
-                                              iVar2 = strnicmp
+                                              iVar2 = _strnicmp
                                                                 (pcVar5,
                                                   "kParmPersistentEventName" + 5,0x13);
                                               if (iVar2 == 0) {
@@ -220,7 +220,7 @@ LAB_00560e30:
                                                      PARM_TYPE_PERSISTENT_EVENT_NAME;
                                               }
                                               else {
-                                                iVar2 = strnicmp
+                                                iVar2 = _strnicmp
                                                                   (pcVar5,
                                                   "kParmGameFlagName" + 5,0xc);
                                                 if (iVar2 == 0) {
@@ -229,7 +229,7 @@ LAB_00560e30:
                                                   this_ptr->param_type = PARM_TYPE_GAME_FLAG_NAME;
                                                 }
                                                 else {
-                                                  iVar2 = strnicmp
+                                                  iVar2 = _strnicmp
                                                                     (pcVar5,
                                                   "kParmMotionName" + 5,10);
                                                   if (iVar2 == 0) {
@@ -238,7 +238,7 @@ LAB_00560e30:
                                                     this_ptr->param_type = PARM_TYPE_MOTION_NAME;
                                                   }
                                                   else {
-                                                    iVar2 = strnicmp
+                                                    iVar2 = _strnicmp
                                                                       (pcVar5,
                                                   "kParmMotionState" + 5,0xb);
                                                   if (iVar2 == 0) {
@@ -247,7 +247,7 @@ LAB_00560e30:
                                                     this_ptr->param_type = PARM_TYPE_MOTION_STATE;
                                                   }
                                                   else {
-                                                    iVar2 = strnicmp
+                                                    iVar2 = _strnicmp
                                                                       (pcVar5,"kParmDBTag"
                                                                               + 5,5);
                                                     if (iVar2 == 0) {
@@ -256,7 +256,7 @@ LAB_00560e30:
                                                       this_ptr->param_type = PARM_TYPE_DB_TAG;
                                                     }
                                                     else {
-                                                      iVar2 = strnicmp
+                                                      iVar2 = _strnicmp
                                                                         (pcVar5,
                                                   "kParmHeroTask" + 5,8);
                                                   if (iVar2 == 0) {
@@ -265,7 +265,7 @@ LAB_00560e30:
                                                     this_ptr->param_type = PARM_TYPE_HERO_TASK;
                                                   }
                                                   else {
-                                                    iVar2 = strnicmp
+                                                    iVar2 = _strnicmp
                                                                       (pcVar5,"kParmTimer"
                                                                               + 5,5);
                                                     if (iVar2 == 0) {
@@ -274,7 +274,7 @@ LAB_00560e30:
                                                       this_ptr->param_type = PARM_TYPE_TIMER;
                                                     }
                                                     else {
-                                                      iVar2 = strnicmp
+                                                      iVar2 = _strnicmp
                                                                         (pcVar5,
                                                   "kParmRelOp" + 5,5);
                                                   if (iVar2 == 0) {
@@ -283,7 +283,7 @@ LAB_00560e30:
                                                     this_ptr->param_type = PARM_TYPE_REL_OP;
                                                   }
                                                   else {
-                                                    iVar2 = strnicmp
+                                                    iVar2 = _strnicmp
                                                                       (pcVar5,
                                                   "kParmBodyPartList" + 5,0xc);
                                                   if (iVar2 == 0) {
@@ -292,7 +292,7 @@ LAB_00560e30:
                                                     this_ptr->param_type = PARM_TYPE_BODY_PART_LIST;
                                                   }
                                                   else {
-                                                    iVar2 = strnicmp
+                                                    iVar2 = _strnicmp
                                                                       (this_ptr->template_name,
                                                                        "kParmIniVariable" +
                                                                        5,0xb);

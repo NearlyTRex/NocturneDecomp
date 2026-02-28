@@ -41,7 +41,7 @@ float10 __fpustack pow(float10 base,float10 exp)
       }
       exponent = (ushort)bVar2 << 8;
 LAB_005ffe01:
-      uVar7 = SUB86((double)exp,0);
+      uVar7 = SUB86(__BITCAST_UINT64((double)exp),0);
       if (0xff < (ushort)(((ushort)((ulonglong)(double)exp >> 0x30) & 0x7ff0) + 0xc010))
       goto LAB_005ffe88;
       uStack_6 = (ushort)((uint)(int)ROUND(exp) >> 0x10);
@@ -65,7 +65,7 @@ LAB_005ffe01:
       dVar1 = (double)fVar3;
       sStack_a = (short)((ulonglong)dVar1 >> 0x10);
       sStack_8 = (short)((ulonglong)dVar1 >> 0x20);
-      if (((SUB82(dVar1,0) != 0 || sStack_a != 0) || sStack_8 != 0) ||
+      if (((SUB82(__BITCAST_UINT64(dVar1),0) != 0 || sStack_a != 0) || sStack_8 != 0) ||
          (uStack_6 = (ushort)((ulonglong)dVar1 >> 0x30), exp = fVar4, (uStack_6 & 0x7fff) != 0x7ff0)
          ) goto LAB_005ffea7;
     }

@@ -57,8 +57,8 @@ void __cdecl shape_design_c_combineTextureMaps_FUN_00469ee0(void)
       _fscanf(local_40,"%s\n",local_e4);
       _fscanf(local_40,"%f,%f,%f,%f\n",&local_20,&local_1c,&local_18,&local_14);
       for (local_34 = 0; local_34 < g_PolygonCount; local_34 = local_34 + 1) {
-        iVar4 = strcmp(g_ModelPolygonData[local_34].texture_name,local_e4)
-        ;
+        iVar4 = _strcmp
+                          (g_ModelPolygonData[local_34].texture_name,local_e4);
         if (iVar4 == 0) {
           pcVar5 = local_134;
           pcVar6 = g_ModelPolygonData[local_34].texture_name;

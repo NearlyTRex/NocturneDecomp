@@ -76,7 +76,7 @@ int __cdecl shape_superopt_cpp_FUN_005c8e70(void)
           return 0;
         }
         local_44 = shape_superopt_cpp_FUN_005c9100();
-        if ((double)CONCAT44(uStack_38,local_3c) < (double)CONCAT44(extraout_EDX,local_44)) {
+        if (__BITCAST_DOUBLE(CONCAT44(uStack_38,local_3c)) < __BITCAST_DOUBLE(CONCAT44(extraout_EDX,local_44))) {
           local_18 = local_20;
           local_3c = local_44;
           uStack_38 = extraout_EDX;
@@ -86,7 +86,7 @@ int __cdecl shape_superopt_cpp_FUN_005c8e70(void)
         local_30 = extraout_EDX_00;
         local_54 = local_34;
         uStack_50 = extraout_EDX_00;
-        if ((double)CONCAT44(uStack_38,local_3c) < (double)CONCAT44(extraout_EDX_00,local_34)) {
+        if (__BITCAST_DOUBLE(CONCAT44(uStack_38,local_3c)) < __BITCAST_DOUBLE(CONCAT44(extraout_EDX_00,local_34))) {
           local_3c = local_34;
           uStack_38 = extraout_EDX_00;
           local_18 = local_20;

@@ -39,7 +39,7 @@
 ;   crt_io.c__findclose_FUN_00602380
 ;   crt_io.c__findfirst_FUN_006021f0
 ;   crt_io.c__findnext_FUN_00602300
-;   crt_string.c_strcmp_FUN_005fef20
+;   crt_string.c__strcmp_FUN_005fef20
 ;   shape_edittool.cpp_CEditorTools_createCenteredDialog_FUN_0049e940
 ;   shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870
 ;   shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0
@@ -268,8 +268,8 @@ section .text
     PUSH EBX                            ; 005dc540
     ADD EBP,ECX                         ; 005dc541
     PUSH EBP                            ; 005dc543
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 005dc544
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 005dc544
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 005dc549
     TEST EAX,EAX                        ; 005dc54c
     JLE 0x005dc50f                      ; 005dc54e

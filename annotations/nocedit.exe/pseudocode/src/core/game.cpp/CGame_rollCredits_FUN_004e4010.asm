@@ -45,7 +45,7 @@
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_math.c_round_FUN_005fe6b0
 ;   crt_stdio.c_fgets_FUN_005fefd0
-;   crt_string.c_strcmp_FUN_005fef20
+;   crt_string.c__strcmp_FUN_005fef20
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_fillRectColor_FUN_00403170
 ;   engine_3d.c_setRenderAlpha_FUN_00406d80
@@ -123,8 +123,8 @@ section .text
     PUSH 0x62d5ef                       ; 004e40c4 | = "end\n"
     LEA EAX,[ESP + 0x100c]              ; 004e40c9
     PUSH EAX                            ; 004e40d0
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 004e40d1
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 004e40d1
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 004e40d6
     TEST EAX,EAX                        ; 004e40d9
     JNZ 0x004e42fb                      ; 004e40db

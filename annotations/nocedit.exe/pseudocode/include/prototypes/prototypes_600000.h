@@ -31,7 +31,7 @@ int __cdecl crt_stdio_c_vsscanf_FUN_00600100(char *str,char *format,va_list_t ar
 int __cdecl crt_stdio_c_sscanf_FUN_0060013c(char *str,char *format,...);
 double __fpustack_safe crt_math_c_acos_FUN_00600162(double x);
 double __crtmath crt_math_c_ceil_FUN_006001b2(double value);
-time_t __cdecl crt_time_c__time_FUN_006001f0(time_t *optional_output);
+time_t __cdecl crt_time_c__time_FUN_006001f0(int *time);
 _tm * __cdecl crt_time_c_localtime_r_FUN_00600230(time_t *timer,_tm *result);
 _tm * __cdecl crt_time_c__localtime_FUN_00600288(time_t *timer);
 void __cdecl crt_stdio_c_formatTwoDigits_FUN_006002a0(char *buffer,int value);
@@ -100,7 +100,7 @@ char __watcallStack crt_string_c_hexDigitToChar_FUN_00601f0c(int digit);
 void __watcallStack crt_io_c__tempnam_FUN_00601f1c(char *buffer,int file_handle);
 int __cdecl crt_stdio_c__fclose_FUN_00601fd0(_FILE *file_handle,int force_close_flag);
 void * __cdecl crt_memory_c___arr_op_FUN_006020c2(void *dest,void *source,int count,int element_size,void *copy_func);
-int __cdecl crt_string_c_stricmp_FUN_005fe7f0(char *str1,char *str2);
+int __cdecl crt_string_c__stricmp_FUN_005fe7f0(char *str1,char *str2);
 double __crtmath crt_math_c_modf_FUN_00602102(double value,double *integer_part);
 int __watcallStack crt_stdlib_c_system_FUN_00602130(char *command);
 void __cdecl crt_stdio_c_fprintf_FUN_006021c0(_FILE *stream,char *format,...);
@@ -329,7 +329,7 @@ int __watcallStack crt_stdio_c_stream_valid_FUN_00608cd1(_FILE *stream,int opera
 char * __cdecl crt_io_c_getcwd_FUN_00608d20(char *buffer,SIZE_T size);
 void * __cdecl crt_memory_c___arrinit__FUN_00608dc8(void *array_start,int element_count,WatcomTypeInfo *type_info);
 float10 __fpustack crt_math_c_atan2_FUN_00608e14(float10 y,float10 x);
-int __cdecl crt_string_c_mbstrnicmp_FUN_00608e50(char *str1,char *str2,SIZE_T count);
+int __cdecl crt_string_c__mbstrnicmp_FUN_00608e50(char *str1,char *str2,SIZE_T count);
 void __cdecl crt_stdio_c_DetectDeviceAndSetBuffering_FUN_00608ee0(_FILE *file);
 void __cdecl crt_ioinit_c_staticInit_FUN_00608f20(void);
 void __cdecl crt_unknown_c_staticFinal_FUN_00608fc0(void);

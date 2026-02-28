@@ -519,11 +519,10 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_00511e50(void)
             iVar2 = local_1c * iVar7 + local_20;
             iVar12 = (int)local_a30 * 4 + iVar2;
             do {
-              fVar16 = (float10)(double)CONCAT44(local_a40,uStack_a44) * (float10)dVar17;
+              fVar16 = (float10)__BITCAST_DOUBLE(CONCAT44(local_a40,uStack_a44)) * (float10)dVar17;
               uStack_4c = (double)fVar16;
-              fVar4 = (float)sound_sndmain_cpp_analyzeFrequencyBand_FUN_005ac400
-                                       (iVar7,(float)(double)CONCAT44(local_a40,uStack_a44),
-                                        (float)fVar16);
+              fVar4 = sound_sndmain_cpp_analyzeFrequencyBand_FUN_005ac400
+                                (iVar7,(float)__BITCAST_DOUBLE(CONCAT44(local_a40,uStack_a44)),(float)fVar16);
               local_18 = (int)ROUND(ROUND((float)g_WindowHeight -
                                           fVar4 * (float)g_WindowHeight * 0.25f));
               core_menu_cpp_renderAudioSpectrumBar_FUN_0050fe70

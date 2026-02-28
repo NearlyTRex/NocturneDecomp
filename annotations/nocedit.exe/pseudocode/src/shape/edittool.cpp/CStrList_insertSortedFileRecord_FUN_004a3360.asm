@@ -39,8 +39,8 @@
 ; Called Functions:
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_sscanf_FUN_0060013c
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;   crt_string.c_memmove_FUN_005fe5e0
-;   crt_string.c_stricmp_FUN_005fe7f0
 ;   crt_string.c_strupr_FUN_00600770
 ;   crt_time.c__localtime_FUN_00600288
 ;   crt_time.c__strftime_FUN_006002d4
@@ -112,8 +112,8 @@ section .text
     PUSH EAX                            ; 004a340d
     MOV EDI,dword ptr [ESP + 0xb10]     ; 004a340e
     PUSH EDI                            ; 004a3415
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 004a3416
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 004a3416
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004a341b
     TEST EAX,EAX                        ; 004a341e
     JZ 0x004a3595                       ; 004a3420

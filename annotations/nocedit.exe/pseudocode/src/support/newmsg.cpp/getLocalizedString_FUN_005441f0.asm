@@ -26,7 +26,7 @@
 ;   char*[500] g_MessageTexts
 ;
 ; Called Functions:
-;   crt_string.c_strcmp_FUN_005fef20
+;   crt_string.c__strcmp_FUN_005fef20
 ;   support_newmsg.cpp_findLocalizedString_FUN_00544170
 ;
 ; *****************************************************************************
@@ -69,8 +69,8 @@ section .text
     MOV ECX,dword ptr [EBP + 0x2fa8cdc] ; 0054422c | g_MessageKeys
     PUSH ECX                            ; 00544232
     PUSH EDI                            ; 00544233
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 00544234
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 00544234
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 00544239
     TEST EAX,EAX                        ; 0054423c
     JL 0x0054424d                       ; 0054423e

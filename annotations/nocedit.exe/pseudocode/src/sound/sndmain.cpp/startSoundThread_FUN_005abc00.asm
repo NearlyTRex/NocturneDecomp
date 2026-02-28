@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; HANDLE __cdecl sound_sndmain_cpp_startSoundThread_FUN_005abc00(double latency_seconds)
+; int __cdecl sound_sndmain_cpp_startSoundThread_FUN_005abc00(double latency_seconds)
 ;
 ; Parameters:
 ; double           Stack[0x4]:8   latency_seconds
@@ -72,7 +72,7 @@ section .text
         ;   Label: LAB_005abc69
     PUSH EAX                            ; 005abc6b
     CALL wincore_winrun.cpp_setThreadPriority_FUN_005f40a0 ; 005abc6c
-        ;   XREF to: 005f40a0 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_setThreadPriority_FUN_005f40a0(HANDLE hThread, int priority_level)
+        ;   XREF to: 005f40a0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_setThreadPriority_FUN_005f40a0(HANDLE hThread, int priority_level)
     ADD ESP,0x8                         ; 005abc71
     TEST EAX,EAX                        ; 005abc74
     JZ 0x005abc64                       ; 005abc76

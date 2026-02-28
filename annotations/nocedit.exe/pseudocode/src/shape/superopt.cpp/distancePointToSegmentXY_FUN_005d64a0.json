@@ -31,16 +31,15 @@
   },
   "complexity": {
     "assembly_lines": 41,
-    "complexity_score": 175,
+    "complexity_score": 160,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 25,
-    "suspect_count": 12,
+    "suspect_count": 11,
     "suspect_types": [
       "decompiler_intrinsic",
-      "double_reconstruction",
       "pointer_cast",
       "stack_alignment_array",
       "stack_param",
@@ -255,19 +254,11 @@
       "type": "stack_ref"
     },
     {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 25,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "dVar1 = segEnd->x - (double)CONCAT44(uStack_34,local_38);",
-      "type": "double_reconstruction"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 25,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "dVar1 = segEnd->x - (double)CONCAT44(uStack_34,local_38);",
+      "text": "dVar1 = segEnd->x - __BITCAST_DOUBLE(CONCAT44(uStack_34,local_38));",
       "type": "decompiler_intrinsic"
     },
     {

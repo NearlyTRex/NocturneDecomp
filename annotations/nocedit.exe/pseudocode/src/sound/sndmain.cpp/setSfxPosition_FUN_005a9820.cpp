@@ -16,7 +16,7 @@ int __cdecl sound_sndmain_cpp_setSfxPosition_FUN_005a9820(uint sfx_handle,double
   if (this_ptr == (CSfxSlot *)0x0) {
     return 0;
   }
-  (this_ptr->options).position_source_ptr = (CVector3d *)0x0;
+  (this_ptr->options).position_source_ptr = (void *)0x0;
   (this_ptr->options).position_format = 0;
   (this_ptr->options).position.x = pos_x;
   (this_ptr->options).position.y = pos_y;

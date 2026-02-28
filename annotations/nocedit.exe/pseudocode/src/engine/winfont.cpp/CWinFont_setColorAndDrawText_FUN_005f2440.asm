@@ -36,7 +36,7 @@
 ;   undefined4 CHAR_ARRAY_02d01f4a
 ;
 ; Called Functions:
-;   crt_string.c_strcmp_FUN_005fef20
+;   crt_string.c__strcmp_FUN_005fef20
 ;   engine_font.cpp_getDefaultTextColor_FUN_004ce220
 ;   SetTextColor
 ;   TextOutA
@@ -250,8 +250,8 @@ section .text
         ;   Label: LAB_005f264f
     LEA EAX,[EBX + 0x18]                ; 005f2650
     PUSH EAX                            ; 005f2653
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 005f2654
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 005f2654
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 005f2659
     TEST EAX,EAX                        ; 005f265c
     JNZ 0x005f246b                      ; 005f265e

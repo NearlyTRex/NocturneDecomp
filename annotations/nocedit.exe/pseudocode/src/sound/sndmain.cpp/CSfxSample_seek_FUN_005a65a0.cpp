@@ -22,7 +22,7 @@ void __cdecl sound_sndmain_cpp_CSfxSample_seek_FUN_005a65a0(CSfxSample *this_ptr
     core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSample::seek - '%s' isn't streamed!",this_ptr);
   }
   dVar2 = sound_sndmain_cpp_CSampleInfo_normalizePlaybackPos_FUN_005a86f0
-                    (SUB84((double)playback_position,0),
+                    (SUB84(__BITCAST_UINT64((double)playback_position),0),
                      (double)((ulonglong)(double)playback_position >> 0x20),(uint)in_stack_ffffffe4,
                      (uint)((ulonglong)in_stack_ffffffe4 >> 0x20));
   this_ptr->stream_read_position = (int)ROUND(ROUND(dVar2));

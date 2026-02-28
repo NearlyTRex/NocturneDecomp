@@ -31,7 +31,7 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50(CC
   if (filename_out != (char *)0x0) {
     iVar2 = engine_fileio_cpp_CCheckOutList_findEntry_FUN_004b2e60(&local_18,filename_out);
     if (((-1 < iVar2) &&
-        (iVar3 = stricmp
+        (iVar3 = _stricmp
                            (local_18.items[iVar2].value,g_VersionControlSession.primary_username),
         iVar3 != 0)) || (iVar2 < 0)) {
       shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
@@ -57,7 +57,7 @@ LAB_004b3ff0:
     iVar3 = 0;
     iVar2 = 0;
     do {
-      iVar4 = stricmp
+      iVar4 = _stricmp
                         ((local_18.items)->value + iVar3,g_VersionControlSession.primary_username);
       if ((iVar4 == 0) &&
          (iVar4 = shape_edittool_cpp_wildcardStringMatch_FUN_004a6e20

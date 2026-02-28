@@ -43,7 +43,7 @@
 ;   core_moon.cpp_CMoon_render_FUN_00529ed0
 ;   core_moon.cpp_CMoon_update_FUN_00529d60
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;   support_newmsg.cpp_getLocalizedString_FUN_005441f0
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
 ;   wincore_windll.cpp_buildCardList_FUN_005b7db0
@@ -148,8 +148,8 @@ section .text
     MOV dword ptr [EAX],0x280           ; 00510dbd | g_CGameInstance
     PUSH 0x684010                       ; 00510dc3 | = "trid3d.dll"
     MOV dword ptr [EAX + 0x4],0x1e0     ; 00510dc8 | g_CGameInstance.game_pixy
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 00510dcf
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 00510dcf
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 00510dd4
     TEST EAX,EAX                        ; 00510dd7
     JZ 0x00510e60                       ; 00510dd9
@@ -443,8 +443,8 @@ section .text
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
     PUSH 0x636a22                       ; 00511114 | = "trid3d.dll"
     PUSH EBP                            ; 00511119 | = "trid3d.dll"
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 0051111a
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 0051111a
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0051111f
     XOR EDX,EDX                         ; 00511122
     TEST EAX,EAX                        ; 00511124
@@ -523,8 +523,8 @@ section .text
     PUSH 0x6367b7                       ; 00511201 | = "tri3dfx.dll"
         ;   Label: LAB_00511201
     PUSH 0x684010                       ; 00511206 | = "trid3d.dll"
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 0051120b
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 0051120b
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 00511210
     TEST EAX,EAX                        ; 00511213
     JNZ 0x00510e60                      ; 00511215
@@ -625,8 +625,8 @@ section .text
     PUSH 0x6368f0                       ; 005112fc | = "trid3d.dll"
         ;   Label: LAB_005112fc
     PUSH EBP                            ; 00511301 | = "trid3d.dll"
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 00511302
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 00511302
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 00511307
     TEST EAX,EAX                        ; 0051130a
     JNZ 0x00511318                      ; 0051130c
@@ -637,8 +637,8 @@ section .text
     PUSH 0x63690e                       ; 00511318 | = "tridx6.dll"
         ;   Label: LAB_00511318
     PUSH EBP                            ; 0051131d | = "trid3d.dll"
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 0051131e
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 0051131e
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 00511323
     TEST EAX,EAX                        ; 00511326
     JNZ 0x00511334                      ; 00511328
@@ -649,8 +649,8 @@ section .text
     PUSH 0x63692c                       ; 00511334 | = "tridx7.dll"
         ;   Label: LAB_00511334
     PUSH EBP                            ; 00511339 | = "trid3d.dll"
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 0051133a
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 0051133a
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0051133f
     TEST EAX,EAX                        ; 00511342
     JNZ 0x00511350                      ; 00511344
@@ -661,8 +661,8 @@ section .text
     PUSH 0x63694a                       ; 00511350 | = "tri3dfx.dll"
         ;   Label: LAB_00511350
     PUSH EBP                            ; 00511355 | = "trid3d.dll"
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 00511356
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 00511356
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0051135b
     TEST EAX,EAX                        ; 0051135e
     JNZ 0x0051136c                      ; 00511360
@@ -984,8 +984,8 @@ section .text
         ;   XREF to: 005111d3 (CONDITIONAL_JUMP)  ; default
     PUSH 0x636a2d                       ; 005116ac | = "trid3d.dll"
     PUSH EBP                            ; 005116b1 | = "trid3d.dll"
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 005116b2
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 005116b2
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 005116b7
     TEST EAX,EAX                        ; 005116ba
     JNZ 0x00511702                      ; 005116bc
@@ -1026,16 +1026,16 @@ section .text
     PUSH 0x636a43                       ; 00511702 | = "tridx6.dll"
         ;   Label: LAB_00511702
     PUSH EBP                            ; 00511707 | = "trid3d.dll"
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 00511708
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 00511708
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0051170d
     TEST EAX,EAX                        ; 00511710
     JZ 0x0051172d                       ; 00511712
         ;   XREF to: 0051172d (CONDITIONAL_JUMP)  ; LAB_0051172d
     PUSH 0x636a59                       ; 00511714 | = "tridx7.dll"
     PUSH EBP                            ; 00511719 | = "trid3d.dll"
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 0051171a
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 0051171a
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0051171f
     TEST EAX,EAX                        ; 00511722
     JNZ 0x00511734                      ; 00511724
@@ -1050,8 +1050,8 @@ section .text
     PUSH 0x636a6f                       ; 00511734 | = "tri3dfx.dll"
         ;   Label: LAB_00511734
     PUSH EBP                            ; 00511739 | = "trid3d.dll"
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 0051173a
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 0051173a
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0051173f
     TEST EAX,EAX                        ; 00511742
     JNZ 0x005116df                      ; 00511744

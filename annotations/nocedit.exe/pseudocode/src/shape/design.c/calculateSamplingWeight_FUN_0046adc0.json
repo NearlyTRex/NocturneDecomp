@@ -3,55 +3,55 @@
     "errors": [
       {
         "category": "other",
-        "column": 40,
+        "column": 49,
         "line": 15,
         "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "other",
-        "column": 58,
+        "column": 67,
         "line": 15,
         "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "other",
-        "column": 42,
+        "column": 51,
         "line": 16,
         "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "other",
-        "column": 35,
+        "column": 44,
         "line": 20,
         "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "other",
-        "column": 35,
+        "column": 44,
         "line": 21,
+        "message": "member reference base type 'double' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 62,
+        "line": 21,
+        "message": "member reference base type 'double' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 54,
+        "line": 22,
+        "message": "member reference base type 'double' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 72,
+        "line": 22,
         "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "other",
         "column": 53,
-        "line": 21,
-        "message": "member reference base type 'double' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 45,
-        "line": 22,
-        "message": "member reference base type 'double' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 63,
-        "line": 22,
-        "message": "member reference base type 'double' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 44,
         "line": 23,
         "message": "member reference base type 'double' is not a structure or union"
       }
@@ -61,16 +61,15 @@
   },
   "complexity": {
     "assembly_lines": 42,
-    "complexity_score": 286,
+    "complexity_score": 221,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 16,
-    "suspect_count": 25,
+    "suspect_count": 19,
     "suspect_types": [
       "decompiler_intrinsic",
-      "double_reconstruction",
       "stack_param",
       "unknown_field"
     ],
@@ -197,7 +196,7 @@
       "line": 8,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "local_18 = (double)CONCAT44(end_coord._0_4_,start_coord._4_4_) -",
+      "text": "local_18 = __BITCAST_DOUBLE(CONCAT44(end_coord._0_4_,start_coord._4_4_)) -",
       "type": "unknown_field"
     },
     {
@@ -205,23 +204,15 @@
       "line": 8,
       "match": "._4_4_",
       "severity": "mild",
-      "text": "local_18 = (double)CONCAT44(end_coord._0_4_,start_coord._4_4_) -",
+      "text": "local_18 = __BITCAST_DOUBLE(CONCAT44(end_coord._0_4_,start_coord._4_4_)) -",
       "type": "unknown_field"
-    },
-    {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 8,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "local_18 = (double)CONCAT44(end_coord._0_4_,start_coord._4_4_) -",
-      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 8,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "local_18 = (double)CONCAT44(end_coord._0_4_,start_coord._4_4_) -",
+      "text": "local_18 = __BITCAST_DOUBLE(CONCAT44(end_coord._0_4_,start_coord._4_4_)) -",
       "type": "decompiler_intrinsic"
     },
     {
@@ -229,7 +220,7 @@
       "line": 9,
       "match": "in_stack_00000004",
       "severity": "moderate",
-      "text": "(double)CONCAT44(current_pos._0_4_,in_stack_00000004);",
+      "text": "__BITCAST_DOUBLE(CONCAT44(current_pos._0_4_,in_stack_00000004));",
       "type": "stack_param"
     },
     {
@@ -237,23 +228,15 @@
       "line": 9,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "(double)CONCAT44(current_pos._0_4_,in_stack_00000004);",
+      "text": "__BITCAST_DOUBLE(CONCAT44(current_pos._0_4_,in_stack_00000004));",
       "type": "unknown_field"
-    },
-    {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 9,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "(double)CONCAT44(current_pos._0_4_,in_stack_00000004);",
-      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 9,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "(double)CONCAT44(current_pos._0_4_,in_stack_00000004);",
+      "text": "__BITCAST_DOUBLE(CONCAT44(current_pos._0_4_,in_stack_00000004));",
       "type": "decompiler_intrinsic"
     },
     {
@@ -261,7 +244,7 @@
       "line": 13,
       "match": "in_stack_00000004",
       "severity": "moderate",
-      "text": "if ((double)CONCAT44(current_pos._0_4_,in_stack_00000004) <",
+      "text": "if (__BITCAST_DOUBLE(CONCAT44(current_pos._0_4_,in_stack_00000004)) <",
       "type": "stack_param"
     },
     {
@@ -269,23 +252,15 @@
       "line": 13,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "if ((double)CONCAT44(current_pos._0_4_,in_stack_00000004) <",
+      "text": "if (__BITCAST_DOUBLE(CONCAT44(current_pos._0_4_,in_stack_00000004)) <",
       "type": "unknown_field"
-    },
-    {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 13,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "if ((double)CONCAT44(current_pos._0_4_,in_stack_00000004) <",
-      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 13,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "if ((double)CONCAT44(current_pos._0_4_,in_stack_00000004) <",
+      "text": "if (__BITCAST_DOUBLE(CONCAT44(current_pos._0_4_,in_stack_00000004)) <",
       "type": "decompiler_intrinsic"
     },
     {
@@ -293,7 +268,7 @@
       "line": 14,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "(double)CONCAT44(start_coord._0_4_,current_pos._4_4_)) {",
+      "text": "__BITCAST_DOUBLE(CONCAT44(start_coord._0_4_,current_pos._4_4_))) {",
       "type": "unknown_field"
     },
     {
@@ -301,23 +276,15 @@
       "line": 14,
       "match": "._4_4_",
       "severity": "mild",
-      "text": "(double)CONCAT44(start_coord._0_4_,current_pos._4_4_)) {",
+      "text": "__BITCAST_DOUBLE(CONCAT44(start_coord._0_4_,current_pos._4_4_))) {",
       "type": "unknown_field"
-    },
-    {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 14,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "(double)CONCAT44(start_coord._0_4_,current_pos._4_4_)) {",
-      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 14,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "(double)CONCAT44(start_coord._0_4_,current_pos._4_4_)) {",
+      "text": "__BITCAST_DOUBLE(CONCAT44(start_coord._0_4_,current_pos._4_4_))) {",
       "type": "decompiler_intrinsic"
     },
     {
@@ -325,7 +292,7 @@
       "line": 15,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "local_18 = ((double)CONCAT44(start_coord._0_4_,current_pos._4_4_) -",
+      "text": "local_18 = (__BITCAST_DOUBLE(CONCAT44(start_coord._0_4_,current_pos._4_4_)) -",
       "type": "unknown_field"
     },
     {
@@ -333,23 +300,15 @@
       "line": 15,
       "match": "._4_4_",
       "severity": "mild",
-      "text": "local_18 = ((double)CONCAT44(start_coord._0_4_,current_pos._4_4_) -",
+      "text": "local_18 = (__BITCAST_DOUBLE(CONCAT44(start_coord._0_4_,current_pos._4_4_)) -",
       "type": "unknown_field"
-    },
-    {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 15,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "local_18 = ((double)CONCAT44(start_coord._0_4_,current_pos._4_4_) -",
-      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 15,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "local_18 = ((double)CONCAT44(start_coord._0_4_,current_pos._4_4_) -",
+      "text": "local_18 = (__BITCAST_DOUBLE(CONCAT44(start_coord._0_4_,current_pos._4_4_)) -",
       "type": "decompiler_intrinsic"
     },
     {
@@ -357,7 +316,7 @@
       "line": 16,
       "match": "in_stack_00000004",
       "severity": "moderate",
-      "text": "(double)CONCAT44(current_pos._0_4_,in_stack_00000004)) * local_18;",
+      "text": "__BITCAST_DOUBLE(CONCAT44(current_pos._0_4_,in_stack_00000004))) * local_18;",
       "type": "stack_param"
     },
     {
@@ -365,23 +324,15 @@
       "line": 16,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "(double)CONCAT44(current_pos._0_4_,in_stack_00000004)) * local_18;",
+      "text": "__BITCAST_DOUBLE(CONCAT44(current_pos._0_4_,in_stack_00000004))) * local_18;",
       "type": "unknown_field"
-    },
-    {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 16,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "(double)CONCAT44(current_pos._0_4_,in_stack_00000004)) * local_18;",
-      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 16,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "(double)CONCAT44(current_pos._0_4_,in_stack_00000004)) * local_18;",
+      "text": "__BITCAST_DOUBLE(CONCAT44(current_pos._0_4_,in_stack_00000004))) * local_18;",
       "type": "decompiler_intrinsic"
     }
   ]

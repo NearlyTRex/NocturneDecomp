@@ -17,7 +17,7 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_trigger.cpp_CTrigger_setup_FUN_005df990
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;
 ; *****************************************************************************
 
@@ -78,16 +78,16 @@ section .text
         ;   Label: LAB_005ebf1c
     ADD ESI,0x78                        ; 005ebf21
     PUSH ESI                            ; 005ebf24
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 005ebf25
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 005ebf25
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 005ebf2a
     TEST EAX,EAX                        ; 005ebf2d
     JZ 0x005ebf15                       ; 005ebf2f
         ;   XREF to: 005ebf15 (CONDITIONAL_JUMP)  ; LAB_005ebf15
     PUSH 0x657541                       ; 005ebf31 | = "true"
     PUSH ESI                            ; 005ebf36
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 005ebf37
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 005ebf37
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 005ebf3c
     TEST EAX,EAX                        ; 005ebf3f
     JZ 0x005ebf15                       ; 005ebf41

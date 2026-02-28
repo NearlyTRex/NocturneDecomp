@@ -358,8 +358,8 @@ section .text
     PUSH 0x6459aa                       ; 00569731 | = "train"
     LEA EAX,[ESP + 0x108]               ; 00569736
     PUSH EAX                            ; 0056973d
-    CALL crt_string.c_strnicmp_FUN_005ff070 ; 0056973e
-        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)
+    CALL crt_string.c__strnicmp_FUN_005ff070 ; 0056973e
+        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 00569743
     TEST EAX,EAX                        ; 00569746
     JNZ 0x00569f59                      ; 00569748
@@ -794,8 +794,8 @@ section .text
     PUSH EAX                            ; 00569cc9
     LEA EBX,[EBP + 0x14d0f0]            ; 00569cca
     PUSH EBX                            ; 00569cd0
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 00569cd1
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 00569cd1
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 00569cd6
     TEST EAX,EAX                        ; 00569cd9
     JZ 0x0056a17a                       ; 00569cdb
@@ -1006,8 +1006,8 @@ section .text
     PUSH 0x64597e                       ; 00569ea6 | = "ndun"
     LEA EAX,[ESP + 0x108]               ; 00569eab
     PUSH EAX                            ; 00569eb2
-    CALL crt_string.c_strnicmp_FUN_005ff070 ; 00569eb3
-        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)
+    CALL crt_string.c__strnicmp_FUN_005ff070 ; 00569eb3
+        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 00569eb8
     TEST EAX,EAX                        ; 00569ebb
     JNZ 0x00569ecf                      ; 00569ebd
@@ -1086,8 +1086,8 @@ section .text
     LEA EAX,[ESP + 0x108]               ; 00569f7e
     PUSH EAX                            ; 00569f85
     MOV dword ptr [EBP + 0x15aeb8],0x0  ; 00569f86
-    CALL crt_string.c_strnicmp_FUN_005ff070 ; 00569f90
-        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)
+    CALL crt_string.c__strnicmp_FUN_005ff070 ; 00569f90
+        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 00569f95
     TEST EAX,EAX                        ; 00569f98
     JNZ 0x00569fa6                      ; 00569f9a
@@ -1098,8 +1098,8 @@ section .text
     PUSH 0x6459e8                       ; 00569fa8 | = "h109"
     LEA EAX,[ESP + 0x108]               ; 00569fad
     PUSH EAX                            ; 00569fb4
-    CALL crt_string.c_strnicmp_FUN_005ff070 ; 00569fb5
-        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)
+    CALL crt_string.c__strnicmp_FUN_005ff070 ; 00569fb5
+        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 00569fba
     TEST EAX,EAX                        ; 00569fbd
     JNZ 0x00569fc7                      ; 00569fbf
@@ -1110,8 +1110,8 @@ section .text
     PUSH 0x6459ed                       ; 00569fc9 | = "smill"
     LEA EAX,[ESP + 0x108]               ; 00569fce
     PUSH EAX                            ; 00569fd5
-    CALL crt_string.c_strnicmp_FUN_005ff070 ; 00569fd6
-        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)
+    CALL crt_string.c__strnicmp_FUN_005ff070 ; 00569fd6
+        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 00569fdb
     TEST EAX,EAX                        ; 00569fde
     JNZ 0x00569fec                      ; 00569fe0
@@ -1122,8 +1122,8 @@ section .text
     PUSH 0x6459f3                       ; 00569fee | = "pier59"
     LEA EAX,[ESP + 0x108]               ; 00569ff3
     PUSH EAX                            ; 00569ffa
-    CALL crt_string.c_strnicmp_FUN_005ff070 ; 00569ffb
-        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)
+    CALL crt_string.c__strnicmp_FUN_005ff070 ; 00569ffb
+        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 0056a000
     TEST EAX,EAX                        ; 0056a003
     JNZ 0x0056a00d                      ; 0056a005
@@ -1134,8 +1134,8 @@ section .text
     PUSH 0x6459fa                       ; 0056a00f | = "ndun"
     LEA EAX,[ESP + 0x108]               ; 0056a014
     PUSH EAX                            ; 0056a01b
-    CALL crt_string.c_strnicmp_FUN_005ff070 ; 0056a01c
-        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)
+    CALL crt_string.c__strnicmp_FUN_005ff070 ; 0056a01c
+        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 0056a021
     TEST EAX,EAX                        ; 0056a024
     JNZ 0x0056a032                      ; 0056a026
@@ -1151,8 +1151,8 @@ section .text
     LEA EAX,[ESP + 0x108]               ; 0056a048
     PUSH EAX                            ; 0056a04f
     MOV dword ptr [EBP + 0x15f67c],0x2  ; 0056a050
-    CALL crt_string.c_strnicmp_FUN_005ff070 ; 0056a05a
-        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)
+    CALL crt_string.c__strnicmp_FUN_005ff070 ; 0056a05a
+        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 0056a05f
     TEST EAX,EAX                        ; 0056a062
     JNZ 0x0056a070                      ; 0056a064
@@ -1163,8 +1163,8 @@ section .text
     PUSH 0x645a09                       ; 0056a072 | = "h109"
     LEA EAX,[ESP + 0x108]               ; 0056a077
     PUSH EAX                            ; 0056a07e
-    CALL crt_string.c_strnicmp_FUN_005ff070 ; 0056a07f
-        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)
+    CALL crt_string.c__strnicmp_FUN_005ff070 ; 0056a07f
+        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 0056a084
     TEST EAX,EAX                        ; 0056a087
     JNZ 0x0056a095                      ; 0056a089
@@ -1175,8 +1175,8 @@ section .text
     PUSH 0x645a0e                       ; 0056a097 | = "smill"
     LEA EAX,[ESP + 0x108]               ; 0056a09c
     PUSH EAX                            ; 0056a0a3
-    CALL crt_string.c_strnicmp_FUN_005ff070 ; 0056a0a4
-        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)
+    CALL crt_string.c__strnicmp_FUN_005ff070 ; 0056a0a4
+        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 0056a0a9
     TEST EAX,EAX                        ; 0056a0ac
     JNZ 0x0056a0ba                      ; 0056a0ae
@@ -1187,8 +1187,8 @@ section .text
     PUSH 0x645a14                       ; 0056a0bc | = "pier59"
     LEA EAX,[ESP + 0x108]               ; 0056a0c1
     PUSH EAX                            ; 0056a0c8
-    CALL crt_string.c_strnicmp_FUN_005ff070 ; 0056a0c9
-        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)
+    CALL crt_string.c__strnicmp_FUN_005ff070 ; 0056a0c9
+        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 0056a0ce
     TEST EAX,EAX                        ; 0056a0d1
     JNZ 0x0056a0df                      ; 0056a0d3
@@ -1199,8 +1199,8 @@ section .text
     PUSH 0x645a1b                       ; 0056a0e1 | = "castle"
     LEA EAX,[ESP + 0x108]               ; 0056a0e6
     PUSH EAX                            ; 0056a0ed
-    CALL crt_string.c_strnicmp_FUN_005ff070 ; 0056a0ee
-        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)
+    CALL crt_string.c__strnicmp_FUN_005ff070 ; 0056a0ee
+        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 0056a0f3
     TEST EAX,EAX                        ; 0056a0f6
     JNZ 0x0056a104                      ; 0056a0f8
@@ -1211,8 +1211,8 @@ section .text
     PUSH 0x645a22                       ; 0056a106 | = "ndun"
     LEA EAX,[ESP + 0x108]               ; 0056a10b
     PUSH EAX                            ; 0056a112
-    CALL crt_string.c_strnicmp_FUN_005ff070 ; 0056a113
-        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)
+    CALL crt_string.c__strnicmp_FUN_005ff070 ; 0056a113
+        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 0056a118
     TEST EAX,EAX                        ; 0056a11b
     JNZ 0x00569a35                      ; 0056a11d

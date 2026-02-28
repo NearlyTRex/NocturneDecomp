@@ -20,7 +20,7 @@
 ;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408b90
 ;   core_inv.cpp_CInventory_resetWeaponSwitchTimers_FUN_004fffa0
 ;   core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004ffe10
-;   crt_string.c_strcmp_FUN_005fef20
+;   crt_string.c__strcmp_FUN_005fef20
 ;
 ; *****************************************************************************
 
@@ -116,8 +116,8 @@ section .text
         ;   XREF to: 00408b90 (UNCONDITIONAL_CALL)  ; char * core_actor.cpp_CDemonActor_getActorClassName_FUN_00408b90(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004fedad
     PUSH EAX                            ; 004fedb0
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 004fedb1
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 004fedb1
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 004fedb6
     TEST EAX,EAX                        ; 004fedb9
     JNZ 0x004fed73                      ; 004fedbb

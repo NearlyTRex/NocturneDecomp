@@ -34,7 +34,7 @@ HANDLE __cdecl CreateFileImpl(char *filename,dword access_mode,dword share_mode,
   dwFlagsAndAttributes = 0x80;
   ConvertCreationDisposition(share_mode | access_mode_00,&share_mode_windows);
   if ((DAT_0068528c == (code *)0x0) ||
-     (iVar2 = stricmp(filename,"con"), iVar2 != 0)) {
+     (iVar2 = _stricmp(filename,"con"), iVar2 != 0)) {
     if ((access_mode & 0x20) == 0) {
       if ((access_mode & 0x40) == 0) {
 LAB_006091db:

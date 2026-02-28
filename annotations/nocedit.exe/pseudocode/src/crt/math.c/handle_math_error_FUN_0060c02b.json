@@ -1,16 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 79,
-    "complexity_score": 226,
+    "complexity_score": 211,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 36,
-    "suspect_count": 16,
+    "suspect_count": 15,
     "suspect_types": [
       "decompiler_intrinsic",
-      "double_reconstruction",
       "special_crt_function",
       "stack_param",
       "stack_ref",
@@ -227,7 +226,7 @@
       "line": 33,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "local_10 = SUB84(dVar1,0);",
+      "text": "local_10 = SUB84(__BITCAST_UINT64(dVar1),0);",
       "type": "sub84_truncation"
     },
     {
@@ -235,23 +234,15 @@
       "line": 33,
       "match": "SUB84",
       "severity": "mild",
-      "text": "local_10 = SUB84(dVar1,0);",
+      "text": "local_10 = SUB84(__BITCAST_UINT64(dVar1),0);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 38,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "return (double)CONCAT44(local_14,local_18);",
-      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 38,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "return (double)CONCAT44(local_14,local_18);",
+      "text": "return __BITCAST_DOUBLE(CONCAT44(local_14,local_18));",
       "type": "decompiler_intrinsic"
     },
     {

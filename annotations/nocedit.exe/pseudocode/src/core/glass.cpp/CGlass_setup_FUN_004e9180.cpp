@@ -187,7 +187,7 @@ void __cdecl core_glass_cpp_CGlass_setup_FUN_004e9180(CGlass *this_ptr)
     } while (local_1c < this_ptr->grid_rows);
   }
   (this_ptr->base).is_transparent = (uint)(this_ptr->opacity < 0xfde9);
-  iVar4 = stricmp(this_ptr->break_event,"none");
+  iVar4 = _stricmp(this_ptr->break_event,"none");
   if (iVar4 == 0) {
     this_ptr->break_event[0] = '\0';
   }
@@ -199,9 +199,9 @@ void __cdecl core_glass_cpp_CGlass_setup_FUN_004e9180(CGlass *this_ptr)
   this_ptr->pending_background_render = 0;
   if (this_ptr->background_flag != 0) {
     pcVar9 = (this_ptr->broken_texture).texture_name;
-    iVar4 = strcmp(pcVar9,"7YEARS.RAW");
+    iVar4 = _strcmp(pcVar9,"7YEARS.RAW");
     if (iVar4 == 0) {
-      iVar4 = stricmp
+      iVar4 = _stricmp
                         ((this_ptr->glass_texture).texture_name,"factwin.raw");
       if (iVar4 == 0) {
         pcVar8 = "factwinx.raw";
@@ -215,7 +215,7 @@ void __cdecl core_glass_cpp_CGlass_setup_FUN_004e9180(CGlass *this_ptr)
           pcVar9 = pcVar9 + 2;
         } while (cVar1 != '\0');
       }
-      iVar4 = stricmp
+      iVar4 = _stricmp
                         ((this_ptr->glass_texture).texture_name,"dockwin.raw");
       if (iVar4 == 0) {
         pcVar8 = "dockwinx.raw";
@@ -230,7 +230,7 @@ void __cdecl core_glass_cpp_CGlass_setup_FUN_004e9180(CGlass *this_ptr)
           pcVar9 = pcVar9 + 2;
         } while (cVar1 != '\0');
       }
-      iVar4 = stricmp
+      iVar4 = _stricmp
                         ((this_ptr->glass_texture).texture_name,"windo10.raw");
       if (iVar4 == 0) {
         pcVar8 = "windo10x.raw";
@@ -245,7 +245,7 @@ void __cdecl core_glass_cpp_CGlass_setup_FUN_004e9180(CGlass *this_ptr)
           pcVar9 = pcVar9 + 2;
         } while (cVar1 != '\0');
       }
-      iVar4 = stricmp
+      iVar4 = _stricmp
                         ((this_ptr->glass_texture).texture_name,"windo11.raw");
       if (iVar4 == 0) {
         pcVar8 = "windo11x.raw";

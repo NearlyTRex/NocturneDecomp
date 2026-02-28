@@ -170,7 +170,7 @@ char * __cdecl engine_colquant_c_quantizeColors_FUN_004406c0(SColorQuantWorkspac
       pSVar8 = workspace;
       if (0 < (int)uVar12) {
         do {
-          if ((double)CONCAT44(uStack_15c,local_160) < pSVar8->boxes[1].total_weighted_error) {
+          if (__BITCAST_DOUBLE(CONCAT44(uStack_15c,local_160)) < pSVar8->boxes[1].total_weighted_error) {
             local_160 = *(uint *)&pSVar8->boxes[1].total_weighted_error;
             uStack_15c = *(uint *)((int)&pSVar8->boxes[1].total_weighted_error + 4);
             local_158 = *(uint *)&pSVar8->boxes[1].max_spread;
@@ -182,20 +182,20 @@ char * __cdecl engine_colquant_c_quantizeColors_FUN_004406c0(SColorQuantWorkspac
         } while (iVar11 <= (int)uVar12);
       }
       iVar11 = uVar12 + 1;
-      if ((double)CONCAT44(uStack_154,local_158) != workspace->boxes[iVar13].spread_red) break;
+      if (__BITCAST_DOUBLE(CONCAT44(uStack_154,local_158)) != workspace->boxes[iVar13].spread_red) break;
       engine_colquant_c_partitionByRed_FUN_00440b40(workspace,iVar13,iVar11);
 LAB_0044091a:
       uVar12 = uVar12 + 1;
     }
-    if ((double)CONCAT44(uStack_154,local_158) == workspace->boxes[iVar13].spread_green) {
+    if (__BITCAST_DOUBLE(CONCAT44(uStack_154,local_158)) == workspace->boxes[iVar13].spread_green) {
       engine_colquant_c_partitionByGreen_FUN_00440c80(workspace,iVar13,iVar11);
       goto LAB_0044091a;
     }
-    if ((double)CONCAT44(uStack_154,local_158) == workspace->boxes[iVar13].spread_blue) {
+    if (__BITCAST_DOUBLE(CONCAT44(uStack_154,local_158)) == workspace->boxes[iVar13].spread_blue) {
       engine_colquant_c_partitionByBlue_FUN_00440dc0(workspace,iVar13,iVar11);
       goto LAB_0044091a;
     }
-    if ((double)CONCAT44(uStack_154,local_158) != workspace->boxes[iVar13].spread_intensity)
+    if (__BITCAST_DOUBLE(CONCAT44(uStack_154,local_158)) != workspace->boxes[iVar13].spread_intensity)
     goto LAB_0044091a;
     engine_colquant_c_partitionByIntensity_FUN_00440f00(workspace,iVar13,iVar11);
     uVar12 = uVar12 + 1;

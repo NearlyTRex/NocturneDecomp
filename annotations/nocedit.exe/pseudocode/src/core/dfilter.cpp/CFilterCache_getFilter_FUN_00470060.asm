@@ -28,7 +28,7 @@
 ;   core_dfilter.cpp_CDemonFilter_init_FUN_004705a0
 ;   core_dfilter.cpp_CDemonFilter_load_FUN_004702f0
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   crt_string.c_strcmp_FUN_005fef20
+;   crt_string.c__strcmp_FUN_005fef20
 ;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
 ;
 ; *****************************************************************************
@@ -50,8 +50,8 @@ section .text
         ;   Label: LAB_00470073
     PUSH EAX                            ; 00470077
     PUSH ESI                            ; 00470078
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 00470079
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 00470079
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 0047007e
     TEST EAX,EAX                        ; 00470081
     JZ 0x0047016e                       ; 00470083

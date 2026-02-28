@@ -72,7 +72,7 @@
 ;   core_netgame.cpp_CNetGame_removePlayer_FUN_00542b00
 ;   core_netgame.cpp_CNetGame_sendMyStateChanged_FUN_00542ff0
 ;   core_netgame.cpp_copyInteger_FUN_00543e20
-;   crt_string.c_strcmp_FUN_005fef20
+;   crt_string.c__strcmp_FUN_005fef20
 ;
 ; *****************************************************************************
 
@@ -456,8 +456,8 @@ section .text
     XOR EAX,EBP                         ; 0054299f
     PUSH EDX                            ; 005429a1
     MOV [0x00680a04],EAX                ; 005429a2 | INT_00680a04
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 005429a7
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 005429a7
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 005429ac
     TEST EAX,EAX                        ; 005429af
     JZ 0x005429bd                       ; 005429b1

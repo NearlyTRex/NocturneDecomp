@@ -59,7 +59,7 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_read_FUN_00534a60(CMP3Decoder *this_ptr,sh
       output_buffer = output_buffer + this_ptr->num_channels * iVar2;
     }
     for (; 0x47f < samples_requested; samples_requested = samples_requested - iVar2) {
-      iVar2 = sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(this_ptr);
+      iVar2 = sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(this_ptr,output_buffer);
       if (iVar2 < 1) {
         return local_14;
       }
@@ -67,7 +67,7 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_read_FUN_00534a60(CMP3Decoder *this_ptr,sh
       output_buffer = output_buffer + this_ptr->num_channels * iVar2;
     }
     if (samples_requested < 1) break;
-    iVar2 = sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(this_ptr);
+    iVar2 = sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(this_ptr,this_ptr->decode_buffer);
     this_ptr->available_samples = iVar2;
     if (iVar2 < 1) {
       return local_14;

@@ -5,7 +5,7 @@
         "category": "incompatible_types",
         "column": 8,
         "line": 120,
-        "message": "invalid operands to binary expression ('double' and 'int')"
+        "message": "incompatible integer to pointer conversion assigning to 'CVector2d *' from 'uint32_t' (aka 'unsigned int')"
       },
       {
         "category": "other",
@@ -1018,7 +1018,7 @@
       "line": 113,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "p3 = SUB84(dVar3,0);",
+      "text": "p3 = SUB84(__BITCAST_UINT64(dVar3),0);",
       "type": "sub84_truncation"
     },
     {
@@ -1026,7 +1026,7 @@
       "line": 113,
       "match": "SUB84",
       "severity": "mild",
-      "text": "p3 = SUB84(dVar3,0);",
+      "text": "p3 = SUB84(__BITCAST_UINT64(dVar3),0);",
       "type": "decompiler_intrinsic"
     },
     {

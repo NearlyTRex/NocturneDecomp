@@ -86,7 +86,7 @@ double * __cdecl shape_superopt_cpp_FUN_005cbb40(void)
       if (local_110 < 0.0) {
         local_110 = -local_110;
       }
-      if (local_110 < (double)CONCAT44(uStack_fc,local_100)) {
+      if (local_110 < __BITCAST_DOUBLE(CONCAT44(uStack_fc,local_100))) {
         local_100 = (uint)local_110;
         uStack_fc = local_110._4_4_;
         *in_stack_00000008 = dVar3 * local_68 - dVar1 * local_70;

@@ -14,7 +14,7 @@ int __cdecl engine_texture_cpp_CTextureCache_findTexture_FUN_005dd180(CTextureCa
   char (*str1) [64];
   
   if (((-1 < hint_index) && (hint_index < this_ptr->max_texture_count)) &&
-     (iVar2 = strcmp(this_ptr->texture_names[hint_index],texture_name),
+     (iVar2 = _strcmp(this_ptr->texture_names[hint_index],texture_name),
      iVar2 == 0)) {
     return hint_index;
   }
@@ -22,7 +22,7 @@ int __cdecl engine_texture_cpp_CTextureCache_findTexture_FUN_005dd180(CTextureCa
   if (0 < this_ptr->current_texture_count) {
     str1 = this_ptr->texture_names;
     do {
-      iVar1 = strcmp(*str1,texture_name);
+      iVar1 = _strcmp(*str1,texture_name);
       if (iVar1 == 0) {
         return iVar2;
       }

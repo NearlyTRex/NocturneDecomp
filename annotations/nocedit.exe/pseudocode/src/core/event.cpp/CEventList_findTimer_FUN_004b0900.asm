@@ -12,7 +12,7 @@
 ;   core_event.cpp_CEventList_setTimerEvent_FUN_004b05a0 at 004b05f7
 ;
 ; Called Functions:
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;
 ; *****************************************************************************
 
@@ -34,8 +34,8 @@ section .text
     PUSH EBP                            ; 004b091e
         ;   Label: LAB_004b091e
     PUSH ESI                            ; 004b091f
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 004b0920
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 004b0920
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004b0925
     TEST EAX,EAX                        ; 004b0928
     JZ 0x004b0944                       ; 004b092a

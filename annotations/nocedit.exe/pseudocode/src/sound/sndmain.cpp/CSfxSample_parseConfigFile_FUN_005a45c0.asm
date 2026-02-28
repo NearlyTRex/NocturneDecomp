@@ -56,8 +56,8 @@
 ;   crt_stdio.c_fgets_FUN_005fefd0
 ;   crt_stdio.c_ftell_FUN_00601560
 ;   crt_stdio.c_sscanf_FUN_0060013c
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;   crt_string.c_memmove_FUN_005fe5e0
-;   crt_string.c_stricmp_FUN_005fe7f0
 ;   crt_string.c_strstr_FUN_005fedd0
 ;   engine_dosio.c_getFile_FUN_00481a50
 ;   engine_dosio.c_getFileSize_FUN_00481880
@@ -77,7 +77,7 @@ section .text
     MOV EBP,ESP                         ; 005a45c4
     SUB ESP,0x46c                       ; 005a45c6
     AND ESP,0xfffffff8                  ; 005a45cc
-    FLD double ptr [0x00681b38]         ; 005a45cf | DOUBLE_00681b38
+    FLD double ptr [0x00681b38]         ; 005a45cf | g_Cached3DDistanceFactorInverse
     FLD float ptr [0x0066315c]          ; 005a45d5 | g_SoundReferenceDistanceConstant
     FMUL ST1                            ; 005a45db
     FLD float ptr [0x03f5daa0]          ; 005a45dd | g_SoundReferenceVolumeDistance
@@ -565,8 +565,8 @@ section .text
         ;   Label: LAB_005a4bde
     LEA EAX,[ESP + 0x20]                ; 005a4be3
     PUSH EAX                            ; 005a4be7
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 005a4be8
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 005a4be8
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 005a4bed
     TEST EAX,EAX                        ; 005a4bf0
     JNZ 0x005a4c1f                      ; 005a4bf2

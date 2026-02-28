@@ -231,7 +231,7 @@ int __cdecl core_script_cpp_CScript_step_FUN_0055a810(CScript *this_ptr,float *t
   }
   else if (cVar2 == ':') {
     local_11c = core_script_cpp_skipWhitespace_FUN_005593d0(pcVar17 + 1);
-    dVar1 = (double)CONCAT44(local_124,local_11c);
+    dVar1 = __BITCAST_DOUBLE(CONCAT44(local_124,local_11c));
     if (g_ScriptEventsEnabled != 0) {
       cVar2 = *local_11c;
       for (pcVar17 = local_11c;
@@ -260,7 +260,7 @@ int __cdecl core_script_cpp_CScript_step_FUN_0055a810(CScript *this_ptr,float *t
     local_11c = &s_EmptyChar_00641ce3;
   }
   else {
-    iVar6 = strnicmp(pcVar17,"syntaxCheckOn",0xd);
+    iVar6 = _strnicmp(pcVar17,"syntaxCheckOn",0xd);
     if ((iVar6 == 0) && ((g_CharacterClassificationTable[(byte)(pcVar17[0xd] + 1)] & 0xe0) == 0)) {
       if (g_ScriptEventsEnabled != 0) {
         g_ScriptEventsEnabled = 1;
@@ -268,7 +268,7 @@ int __cdecl core_script_cpp_CScript_step_FUN_0055a810(CScript *this_ptr,float *t
       local_11c = &s_EmptyChar_00641cf2;
     }
     else {
-      iVar6 = strnicmp(pcVar17,"syntaxCheckOff",0xe);
+      iVar6 = _strnicmp(pcVar17,"syntaxCheckOff",0xe);
       if ((iVar6 == 0) && ((g_CharacterClassificationTable[(byte)(pcVar17[0xe] + 1)] & 0xe0) == 0))
       {
         if (g_ScriptEventsEnabled != 0) {
@@ -277,90 +277,90 @@ int __cdecl core_script_cpp_CScript_step_FUN_0055a810(CScript *this_ptr,float *t
         local_11c = &s_EmptyChar_00641d02;
       }
       else if (g_ScriptEventsEnabled != 2) {
-        iVar6 = strnicmp(pcVar17,"advanceLightFilter",0x12);
+        iVar6 = _strnicmp(pcVar17,"advanceLightFilter",0x12);
         if (((((((((iVar6 == 0) &&
                   ((g_CharacterClassificationTable[(byte)(pcVar17[0x12] + 1)] & 0xe0) == 0)) ||
-                 ((iVar6 = strnicmp
+                 ((iVar6 = _strnicmp
                                      (pcVar17,"createExplosion",0xf), iVar6 == 0 &&
                   ((g_CharacterClassificationTable[(byte)(pcVar17[0xf] + 1)] & 0xe0) == 0)))) ||
-                ((iVar6 = strnicmp(pcVar17,"deleteActor",0xb),
+                ((iVar6 = _strnicmp(pcVar17,"deleteActor",0xb),
                  iVar6 == 0 &&
                  ((g_CharacterClassificationTable[(byte)(pcVar17[0xb] + 1)] & 0xe0) == 0)))) ||
-               ((iVar6 = strnicmp(pcVar17,"displayBitmap",0xd),
+               ((iVar6 = _strnicmp(pcVar17,"displayBitmap",0xd),
                 iVar6 == 0 &&
                 ((g_CharacterClassificationTable[(byte)(pcVar17[0xd] + 1)] & 0xe0) == 0)))) ||
-              (((((iVar6 = strnicmp(pcVar17,"hurtCharacter",0xd),
-                  iVar6 == 0 &&
+              (((((iVar6 = _strnicmp(pcVar17,"hurtCharacter",0xd)
+                  , iVar6 == 0 &&
                   ((g_CharacterClassificationTable[(byte)(pcVar17[0xd] + 1)] & 0xe0) == 0)) ||
-                 ((iVar6 = strnicmp(pcVar17,"incCounter",10),
+                 ((iVar6 = _strnicmp(pcVar17,"incCounter",10),
                   iVar6 == 0 &&
                   ((g_CharacterClassificationTable[(byte)(pcVar17[10] + 1)] & 0xe0) == 0)))) ||
-                ((iVar6 = strnicmp(pcVar17,"fadeSfx",7),
+                ((iVar6 = _strnicmp(pcVar17,"fadeSfx",7),
                  iVar6 == 0 &&
                  ((g_CharacterClassificationTable[(byte)(pcVar17[7] + 1)] & 0xe0) == 0)))) ||
-               ((iVar6 = strnicmp
+               ((iVar6 = _strnicmp
                                    (pcVar17,"fadeAmbientSound",0x10), iVar6 == 0 &&
                 ((g_CharacterClassificationTable[(byte)(pcVar17[0x10] + 1)] & 0xe0) == 0)))))) ||
-             ((((iVar6 = strnicmp(pcVar17,"flagOn",6), iVar6 == 0
-                && ((g_CharacterClassificationTable[(byte)(pcVar17[6] + 1)] & 0xe0) == 0)) ||
-               ((iVar6 = strnicmp(pcVar17,"flagOff",7),
-                iVar6 == 0 && ((g_CharacterClassificationTable[(byte)(pcVar17[7] + 1)] & 0xe0) == 0)
-                ))) || ((((iVar6 = strnicmp
-                                             (pcVar17,"gameFlagOn",10), iVar6 == 0 &&
-                          ((g_CharacterClassificationTable[(byte)(pcVar17[10] + 1)] & 0xe0) == 0))
-                         || ((iVar6 = strnicmp
-                                                (pcVar17,"gameFlagOff",0xb), iVar6 == 0 &&
-                             ((g_CharacterClassificationTable[(byte)(pcVar17[0xb] + 1)] & 0xe0) == 0
-                             )))) ||
-                        ((((iVar6 = strnicmp
-                                              (pcVar17,"killCharacter",0xd), iVar6 == 0 &&
-                           ((g_CharacterClassificationTable[(byte)(pcVar17[0xd] + 1)] & 0xe0) == 0))
-                          || ((iVar6 = strnicmp
-                                                 (pcVar17,"killHero",8), iVar6 == 0 &&
-                              ((g_CharacterClassificationTable[(byte)(pcVar17[8] + 1)] & 0xe0) == 0)
-                              ))) ||
-                         ((iVar6 = strnicmp(pcVar17,"killSfx",7),
-                          iVar6 == 0 &&
-                          ((g_CharacterClassificationTable[(byte)(pcVar17[7] + 1)] & 0xe0) == 0)))))
-                        ))))) ||
-            ((iVar6 = strnicmp(pcVar17,"lightning",9), iVar6 == 0
-             && ((g_CharacterClassificationTable[(byte)(pcVar17[9] + 1)] & 0xe0) == 0)))) ||
-           ((((iVar6 = strnicmp(pcVar17,"playSfx",7), iVar6 == 0
-              && ((g_CharacterClassificationTable[(byte)(pcVar17[7] + 1)] & 0xe0) == 0)) ||
-             ((iVar6 = strnicmp(pcVar17,"setCameraAmbient",0x10),
-              iVar6 == 0 &&
-              ((g_CharacterClassificationTable[(byte)(pcVar17[0x10] + 1)] & 0xe0) == 0)))) ||
-            ((((iVar6 = strnicmp(pcVar17,"setCounter",10),
-               iVar6 == 0 && ((g_CharacterClassificationTable[(byte)(pcVar17[10] + 1)] & 0xe0) == 0)
-               ) || (((iVar6 = strnicmp
-                                         (pcVar17,"setGroupAmbient",0xf), iVar6 == 0 &&
-                      ((g_CharacterClassificationTable[(byte)(pcVar17[0xf] + 1)] & 0xe0) == 0)) ||
-                     ((((iVar6 = strnicmp
-                                           (pcVar17,"setLightFilterFrame",0x13), iVar6 == 0
-                        && ((g_CharacterClassificationTable[(byte)(pcVar17[0x13] + 1)] & 0xe0) == 0)
-                        ) || ((iVar6 = strnicmp
-                                                 (pcVar17,"setLeverState",0xd), iVar6 == 0
-                              && ((g_CharacterClassificationTable[(byte)(pcVar17[0xd] + 1)] & 0xe0)
-                                  == 0)))) ||
-                      ((iVar6 = strnicmp
-                                          (pcVar17,"setModelState",0xd), iVar6 == 0 &&
-                       ((g_CharacterClassificationTable[(byte)(pcVar17[0xd] + 1)] & 0xe0) == 0))))))
-                    )) ||
-             (((iVar6 = strnicmp(pcVar17,"setTimer",8),
-               iVar6 == 0 && ((g_CharacterClassificationTable[(byte)(pcVar17[8] + 1)] & 0xe0) == 0))
-              || (((((iVar6 = strnicmp(pcVar17,"setWeather",10),
+             ((((iVar6 = _strnicmp(pcVar17,"flagOn",6),
+                iVar6 == 0 && ((g_CharacterClassificationTable[(byte)(pcVar17[6] + 1)] & 0xe0) == 0)
+                ) || ((iVar6 = _strnicmp(pcVar17,"flagOff",7),
+                      iVar6 == 0 &&
+                      ((g_CharacterClassificationTable[(byte)(pcVar17[7] + 1)] & 0xe0) == 0)))) ||
+              ((((iVar6 = _strnicmp(pcVar17,"gameFlagOn",10),
+                 iVar6 == 0 &&
+                 ((g_CharacterClassificationTable[(byte)(pcVar17[10] + 1)] & 0xe0) == 0)) ||
+                ((iVar6 = _strnicmp(pcVar17,"gameFlagOff",0xb),
+                 iVar6 == 0 &&
+                 ((g_CharacterClassificationTable[(byte)(pcVar17[0xb] + 1)] & 0xe0) == 0)))) ||
+               ((((iVar6 = _strnicmp(pcVar17,"killCharacter",0xd)
+                  , iVar6 == 0 &&
+                  ((g_CharacterClassificationTable[(byte)(pcVar17[0xd] + 1)] & 0xe0) == 0)) ||
+                 ((iVar6 = _strnicmp(pcVar17,"killHero",8),
+                  iVar6 == 0 &&
+                  ((g_CharacterClassificationTable[(byte)(pcVar17[8] + 1)] & 0xe0) == 0)))) ||
+                ((iVar6 = _strnicmp(pcVar17,"killSfx",7),
+                 iVar6 == 0 &&
+                 ((g_CharacterClassificationTable[(byte)(pcVar17[7] + 1)] & 0xe0) == 0)))))))))) ||
+            ((iVar6 = _strnicmp(pcVar17,"lightning",9),
+             iVar6 == 0 && ((g_CharacterClassificationTable[(byte)(pcVar17[9] + 1)] & 0xe0) == 0))))
+           || ((((iVar6 = _strnicmp(pcVar17,"playSfx",7),
+                 iVar6 == 0 &&
+                 ((g_CharacterClassificationTable[(byte)(pcVar17[7] + 1)] & 0xe0) == 0)) ||
+                ((iVar6 = _strnicmp
+                                    (pcVar17,"setCameraAmbient",0x10), iVar6 == 0 &&
+                 ((g_CharacterClassificationTable[(byte)(pcVar17[0x10] + 1)] & 0xe0) == 0)))) ||
+               ((((iVar6 = _strnicmp(pcVar17,"setCounter",10),
+                  iVar6 == 0 &&
+                  ((g_CharacterClassificationTable[(byte)(pcVar17[10] + 1)] & 0xe0) == 0)) ||
+                 (((iVar6 = _strnicmp
+                                      (pcVar17,"setGroupAmbient",0xf), iVar6 == 0 &&
+                   ((g_CharacterClassificationTable[(byte)(pcVar17[0xf] + 1)] & 0xe0) == 0)) ||
+                  ((((iVar6 = _strnicmp
+                                        (pcVar17,"setLightFilterFrame",0x13), iVar6 == 0 &&
+                     ((g_CharacterClassificationTable[(byte)(pcVar17[0x13] + 1)] & 0xe0) == 0)) ||
+                    ((iVar6 = _strnicmp
+                                        (pcVar17,"setLeverState",0xd), iVar6 == 0 &&
+                     ((g_CharacterClassificationTable[(byte)(pcVar17[0xd] + 1)] & 0xe0) == 0)))) ||
+                   ((iVar6 = _strnicmp
+                                       (pcVar17,"setModelState",0xd), iVar6 == 0 &&
+                    ((g_CharacterClassificationTable[(byte)(pcVar17[0xd] + 1)] & 0xe0) == 0))))))))
+                || (((iVar6 = _strnicmp(pcVar17,"setTimer",8),
                      iVar6 == 0 &&
-                     ((g_CharacterClassificationTable[(byte)(pcVar17[10] + 1)] & 0xe0) == 0)) ||
-                    ((iVar6 = strnicmp(pcVar17,"shakeScreen",0xb)
-                     , iVar6 == 0 &&
-                     ((g_CharacterClassificationTable[(byte)(pcVar17[0xb] + 1)] & 0xe0) == 0)))) ||
-                   ((iVar6 = strnicmp
-                                       (pcVar17,"slamModelToMotion",0x11), iVar6 == 0 &&
-                    ((g_CharacterClassificationTable[(byte)(pcVar17[0x11] + 1)] & 0xe0) == 0)))) ||
-                  ((iVar6 = strnicmp(pcVar17,"warpTo",6),
-                   iVar6 == 0 &&
-                   ((g_CharacterClassificationTable[(byte)(pcVar17[6] + 1)] & 0xe0) == 0))))))))))))
-        {
+                     ((g_CharacterClassificationTable[(byte)(pcVar17[8] + 1)] & 0xe0) == 0)) ||
+                    (((((iVar6 = _strnicmp
+                                           (pcVar17,"setWeather",10), iVar6 == 0 &&
+                        ((g_CharacterClassificationTable[(byte)(pcVar17[10] + 1)] & 0xe0) == 0)) ||
+                       ((iVar6 = _strnicmp
+                                           (pcVar17,"shakeScreen",0xb), iVar6 == 0 &&
+                        ((g_CharacterClassificationTable[(byte)(pcVar17[0xb] + 1)] & 0xe0) == 0))))
+                      || ((iVar6 = _strnicmp
+                                             (pcVar17,"slamModelToMotion",0x11), iVar6 == 0
+                          && ((g_CharacterClassificationTable[(byte)(pcVar17[0x11] + 1)] & 0xe0) ==
+                              0)))) ||
+                     ((iVar6 = _strnicmp(pcVar17,"warpTo",6),
+                      iVar6 == 0 &&
+                      ((g_CharacterClassificationTable[(byte)(pcVar17[6] + 1)] & 0xe0) == 0)))))))))
+               ))) {
           if (g_ScriptEventsEnabled == 0) {
             core_event_cpp_CEventList_executeCommands_FUN_004aabe0(g_CEventListPtr,pcVar17);
           }
@@ -372,7 +372,7 @@ int __cdecl core_script_cpp_CScript_step_FUN_0055a810(CScript *this_ptr,float *t
           local_11c = &s_EmptyChar_00641e5e;
         }
         else {
-          iVar6 = strnicmp(pcVar17,"addItemToInventory",0x12);
+          iVar6 = _strnicmp(pcVar17,"addItemToInventory",0x12);
           if ((iVar6 == 0) &&
              ((g_CharacterClassificationTable[(byte)(pcVar17[0x12] + 1)] & 0xe0) == 0)) {
             local_11c = core_script_cpp_skipWhitespace_FUN_005593d0(pcVar17 + 0x12);
@@ -399,7 +399,7 @@ int __cdecl core_script_cpp_CScript_step_FUN_0055a810(CScript *this_ptr,float *t
             }
           }
           else {
-            iVar6 = strnicmp(pcVar17,"addLightFilter",0xe);
+            iVar6 = _strnicmp(pcVar17,"addLightFilter",0xe);
             if ((iVar6 == 0) &&
                ((g_CharacterClassificationTable[(byte)(pcVar17[0xe] + 1)] & 0xe0) == 0)) {
               local_11c = core_script_cpp_skipWhitespace_FUN_005593d0(pcVar17 + 0xe);
@@ -430,7 +430,7 @@ int __cdecl core_script_cpp_CScript_step_FUN_0055a810(CScript *this_ptr,float *t
               }
             }
             else {
-              iVar6 = strnicmp(pcVar17,"allowEnemyAttack",0x10);
+              iVar6 = _strnicmp(pcVar17,"allowEnemyAttack",0x10);
               if ((iVar6 == 0) &&
                  ((g_CharacterClassificationTable[(byte)(pcVar17[0x10] + 1)] & 0xe0) == 0)) {
                 local_11c = core_script_cpp_skipWhitespace_FUN_005593d0(pcVar17 + 0x10);
@@ -458,7 +458,7 @@ LAB_0055bb9d:
                 }
               }
               else {
-                iVar6 = strnicmp
+                iVar6 = _strnicmp
                                   (pcVar17,"allowHeroControls",0x11);
                 if ((iVar6 == 0) &&
                    ((g_CharacterClassificationTable[(byte)(pcVar17[0x11] + 1)] & 0xe0) == 0)) {
@@ -473,8 +473,8 @@ LAB_0055bb9d:
                   }
                 }
                 else {
-                  iVar6 = strnicmp(pcVar17,"allowHeroDamage",0xf)
-                  ;
+                  iVar6 = _strnicmp
+                                    (pcVar17,"allowHeroDamage",0xf);
                   if ((iVar6 == 0) &&
                      ((g_CharacterClassificationTable[(byte)(pcVar17[0xf] + 1)] & 0xe0) == 0)) {
                     local_11c = core_script_cpp_skipWhitespace_FUN_005593d0(pcVar17 + 0xf);
@@ -487,7 +487,7 @@ LAB_0055bb9d:
                     }
                   }
                   else {
-                    iVar6 = strnicmp
+                    iVar6 = _strnicmp
                                       (pcVar17,"attachActorToPlatform",0x15);
                     if ((iVar6 == 0) &&
                        ((g_CharacterClassificationTable[(byte)(pcVar17[0x15] + 1)] & 0xe0) == 0)) {
@@ -517,8 +517,8 @@ LAB_0055bb9d:
                       }
                     }
                     else {
-                      iVar6 = strnicmp(pcVar17,"beginFadeIn",0xb)
-                      ;
+                      iVar6 = _strnicmp
+                                        (pcVar17,"beginFadeIn",0xb);
                       if ((iVar6 == 0) &&
                          ((g_CharacterClassificationTable[(byte)(pcVar17[0xb] + 1)] & 0xe0) == 0)) {
                         local_11c = core_script_cpp_skipWhitespace_FUN_005593d0(pcVar17 + 0xb);
@@ -527,7 +527,7 @@ LAB_0055bb9d:
                         }
                       }
                       else {
-                        iVar6 = strnicmp
+                        iVar6 = _strnicmp
                                           (pcVar17,"beginFadeOut",0xc);
                         if ((iVar6 == 0) &&
                            ((g_CharacterClassificationTable[(byte)(pcVar17[0xc] + 1)] & 0xe0) == 0))
@@ -538,7 +538,7 @@ LAB_0055bb9d:
                           }
                         }
                         else {
-                          iVar6 = strnicmp
+                          iVar6 = _strnicmp
                                             (pcVar17,"breakPoint",10);
                           if ((iVar6 == 0) &&
                              ((g_CharacterClassificationTable[(byte)(pcVar17[10] + 1)] & 0xe0) == 0)
@@ -553,7 +553,7 @@ LAB_0055bb9d:
                             }
                           }
                           else {
-                            iVar6 = strnicmp
+                            iVar6 = _strnicmp
                                               (pcVar17,"cancelCameraHold",0x10);
                             if ((iVar6 == 0) &&
                                ((g_CharacterClassificationTable[(byte)(pcVar17[0x10] + 1)] & 0xe0)
@@ -566,7 +566,7 @@ LAB_0055bb9d:
                               }
                             }
                             else {
-                              iVar6 = strnicmp
+                              iVar6 = _strnicmp
                                                 (pcVar17,"cancelWalkTo",0xc);
                               if ((iVar6 == 0) &&
                                  ((g_CharacterClassificationTable[(byte)(pcVar17[0xc] + 1)] & 0xe0)
@@ -590,8 +590,8 @@ LAB_0055bb9d:
                                   } while (cVar2 != '\0');
                                   return -1;
                                 }
-                                iVar6 = stricmp(local_2334,"all")
-                                ;
+                                iVar6 = _stricmp
+                                                  (local_2334,"all");
                                 if (iVar6 == 0) {
                                   if (g_ScriptEventsEnabled == 0) {
                                     iVar18 = 0;
@@ -623,7 +623,7 @@ LAB_0055bb9d:
                                 }
                               }
                               else {
-                                iVar6 = strnicmp
+                                iVar6 = _strnicmp
                                                   (pcVar17,"chainToMission",0xe);
                                 if ((iVar6 == 0) &&
                                    ((g_CharacterClassificationTable[(byte)(pcVar17[0xe] + 1)] & 0xe0
@@ -657,7 +657,7 @@ LAB_0055bb9d:
                                   }
                                 }
                                 else {
-                                  iVar6 = strnicmp
+                                  iVar6 = _strnicmp
                                                     (pcVar17,"clearActorVariable",0x12);
                                   if ((iVar6 == 0) &&
                                      ((g_CharacterClassificationTable[(byte)(pcVar17[0x12] + 1)] &
@@ -693,7 +693,7 @@ LAB_0055c37e:
                                     }
                                   }
                                   else {
-                                    iVar6 = strnicmp
+                                    iVar6 = _strnicmp
                                                       (pcVar17,"dbSay",5);
                                     if ((iVar6 == 0) &&
                                        ((g_CharacterClassificationTable[(byte)(pcVar17[5] + 1)] &
@@ -758,7 +758,7 @@ LAB_0055c37e:
                                       }
                                     }
                                     else {
-                                      iVar6 = strnicmp
+                                      iVar6 = _strnicmp
                                                         (pcVar17,"dbStartSay",10);
                                       if ((iVar6 == 0) &&
                                          ((g_CharacterClassificationTable[(byte)(pcVar17[10] + 1)] &
@@ -815,7 +815,7 @@ joined_r0x0055f6da:
                                         }
                                       }
                                       else {
-                                        iVar6 = strnicmp
+                                        iVar6 = _strnicmp
                                                           (pcVar17,"debug",5);
                                         if ((iVar6 == 0) &&
                                            ((g_CharacterClassificationTable[(byte)(pcVar17[5] + 1)]
@@ -833,7 +833,7 @@ joined_r0x0055f6da:
                                           }
                                         }
                                         else {
-                                          iVar6 = strnicmp
+                                          iVar6 = _strnicmp
                                                             (pcVar17,"dismember",9);
                                           if ((iVar6 == 0) &&
                                              ((g_CharacterClassificationTable
@@ -926,7 +926,7 @@ joined_r0x0055f6da:
                                             }
                                           }
                                           else {
-                                            iVar6 = strnicmp
+                                            iVar6 = _strnicmp
                                                               (pcVar17,"display",7);
                                             if ((iVar6 == 0) &&
                                                ((g_CharacterClassificationTable
@@ -946,7 +946,7 @@ joined_r0x0055f6da:
                                               }
                                             }
                                             else {
-                                              iVar6 = strnicmp
+                                              iVar6 = _strnicmp
                                                                 (pcVar17,"else",4);
                                               if ((iVar6 == 0) &&
                                                  ((g_CharacterClassificationTable
@@ -967,7 +967,7 @@ joined_r0x0055f6da:
                                                 this_ptr->next_cmd = iVar6;
                                               }
                                               else {
-                                                iVar6 = strnicmp
+                                                iVar6 = _strnicmp
                                                                   (pcVar17,"enableCamera",
                                                                    0xc);
                                                 if ((iVar6 == 0) &&
@@ -1030,7 +1030,7 @@ joined_r0x0055f6da:
                                                   }
                                                 }
                                                 else {
-                                                  iVar6 = strnicmp
+                                                  iVar6 = _strnicmp
                                                                     (pcVar17,
                                                   "enableCameraGroup",0x11);
                                                   if ((iVar6 == 0) &&
@@ -1082,7 +1082,7 @@ LAB_0055cd52:
                                                   }
                                                   }
                                                   else {
-                                                    iVar6 = strnicmp
+                                                    iVar6 = _strnicmp
                                                                       (pcVar17,
                                                   "enableHealthBar",0xf);
                                                   if ((iVar6 == 0) &&
@@ -1113,17 +1113,17 @@ LAB_0055cd52:
                                                                        &g_CCharacterClassInfo);
                                                   if (pCVar14 == (CDemonActor *)0x0)
                                                   goto joined_r0x0055c026;
-                                                  iVar6 = stricmp
+                                                  iVar6 = _stricmp
                                                                     (local_1f4c,"false");
                                                   pCVar8 = (CDemonActor_vtable *)0x0;
                                                   if (iVar6 != 0) {
-                                                    iVar6 = stricmp
+                                                    iVar6 = _stricmp
                                                                       (local_1f4c,"true");
                                                     if (iVar6 == 0) {
                                                       pCVar8 = (CDemonActor_vtable *)0x1;
                                                     }
                                                     else {
-                                                      iVar6 = stricmp
+                                                      iVar6 = _stricmp
                                                                         (local_1f4c,
                                                                          "always");
                                                       if (iVar6 != 0) {
@@ -1141,7 +1141,7 @@ LAB_0055cd52:
                                                   }
                                                   }
                                                   else {
-                                                    iVar6 = strnicmp
+                                                    iVar6 = _strnicmp
                                                                       (pcVar17,"end",3);
                                                     if ((iVar6 == 0) &&
                                                        ((g_CharacterClassificationTable
@@ -1155,7 +1155,7 @@ LAB_0055cd52:
                                                   }
                                                   }
                                                   else {
-                                                    iVar6 = strnicmp
+                                                    iVar6 = _strnicmp
                                                                       (pcVar17,"fadeIn",6);
                                                     if ((iVar6 == 0) &&
                                                        ((g_CharacterClassificationTable
@@ -1182,7 +1182,7 @@ LAB_0055cd52:
                                                   }
                                                   }
                                                   else {
-                                                    iVar6 = strnicmp
+                                                    iVar6 = _strnicmp
                                                                       (pcVar17,"fadeOut",7)
                                                     ;
                                                     if ((iVar6 == 0) &&
@@ -1211,7 +1211,7 @@ LAB_0055cd52:
                                                   }
                                                   }
                                                   else {
-                                                    iVar6 = strnicmp
+                                                    iVar6 = _strnicmp
                                                                       (pcVar17,"gesture",7)
                                                     ;
                                                     if ((iVar6 == 0) &&
@@ -1267,7 +1267,7 @@ LAB_0055cd52:
                                                   }
                                                   }
                                                   else {
-                                                    iVar6 = strnicmp
+                                                    iVar6 = _strnicmp
                                                                       (pcVar17,"getIniInt",
                                                                        9);
                                                     if ((iVar6 == 0) &&
@@ -1306,7 +1306,7 @@ LAB_0055cd52:
                                                   }
                                                   }
                                                   else {
-                                                    iVar6 = strnicmp
+                                                    iVar6 = _strnicmp
                                                                       (pcVar17,
                                                   "getTriggerActor",0xf);
                                                   if ((iVar6 == 0) &&
@@ -1349,7 +1349,7 @@ LAB_0055cd52:
                                                   }
                                                   }
                                                   else {
-                                                    iVar6 = strnicmp
+                                                    iVar6 = _strnicmp
                                                                       (pcVar17,"gosub",5);
                                                     if ((iVar6 == 0) &&
                                                        ((g_CharacterClassificationTable
@@ -1361,12 +1361,12 @@ LAB_0055cd52:
                                                   core_script_cpp_CScript_findLabelIndex_FUN_00560160
                                                             (this_ptr,local_11c);
                                                   if (iVar6 < 0) {
-                                                    dVar1 = (double)CONCAT44(local_124,local_11c);
+                                                    dVar1 = __BITCAST_DOUBLE(CONCAT44(local_124,local_11c));
                                                     pcVar17 = "Undefined label %s used in gosub statement on line %d";
 LAB_0055a97f:
                                                     _sprintf
                                                               (g_ScriptErrorBuffer,pcVar17,
-                                                               SUB84(dVar1,0),
+                                                               SUB84(__BITCAST_UINT64(dVar1),0),
                                                                (int)((ulonglong)dVar1 >> 0x20));
                                                     return -1;
                                                   }
@@ -1390,7 +1390,7 @@ LAB_0055a97f:
                                                   }
                                                   }
                                                   else {
-                                                    iVar6 = strnicmp
+                                                    iVar6 = _strnicmp
                                                                       (pcVar17,"goto",4);
                                                     if ((iVar6 == 0) &&
                                                        ((g_CharacterClassificationTable
@@ -1402,7 +1402,7 @@ LAB_0055a97f:
                                                   core_script_cpp_CScript_findLabelIndex_FUN_00560160
                                                             (this_ptr,local_11c);
                                                   if (iVar6 < 0) {
-                                                    dVar1 = (double)CONCAT44(local_124,local_11c);
+                                                    dVar1 = __BITCAST_DOUBLE(CONCAT44(local_124,local_11c));
                                                     pcVar17 = "Undefined label %s used in goto statement on line %d";
                                                     goto LAB_0055a97f;
                                                   }
@@ -1415,7 +1415,7 @@ LAB_0055a97f:
                                                   }
                                                   }
                                                   else {
-                                                    iVar6 = strnicmp
+                                                    iVar6 = _strnicmp
                                                                       (pcVar17,"gtfo",4);
                                                     if ((iVar6 == 0) &&
                                                        ((g_CharacterClassificationTable
@@ -1438,7 +1438,7 @@ LAB_0055a97f:
                                                   }
                                                   }
                                                   else {
-                                                    iVar6 = strnicmp
+                                                    iVar6 = _strnicmp
                                                                       (pcVar17,
                                                   "holsterWeapon",0xd);
                                                   if ((iVar6 == 0) &&
@@ -1531,7 +1531,7 @@ LAB_0055a97f:
                                                   }
                                                   }
                                                   else {
-                                                    iVar6 = strnicmp
+                                                    iVar6 = _strnicmp
                                                                       (pcVar17,"idle",4);
                                                     if ((iVar6 == 0) &&
                                                        ((g_CharacterClassificationTable
@@ -1543,7 +1543,7 @@ LAB_0055a97f:
                                                   local_114 = 0;
                                                   }
                                                   else {
-                                                    iVar6 = strnicmp
+                                                    iVar6 = _strnicmp
                                                                       (pcVar17,"if",2);
                                                     if ((iVar6 == 0) &&
                                                        ((g_CharacterClassificationTable
@@ -1570,7 +1570,7 @@ LAB_0055a97f:
                                                                local_124);
                                                     return -1;
                                                   }
-                                                  iVar18 = strnicmp
+                                                  iVar18 = _strnicmp
                                                                      (this_ptr->parsed_lines[iVar6].
                                                                       text,"else",4);
                                                   if (iVar18 == 0) {
@@ -1580,7 +1580,7 @@ LAB_0055a97f:
                                                   }
                                                   }
                                                   else {
-                                                    iVar6 = strnicmp
+                                                    iVar6 = _strnicmp
                                                                       (pcVar17,
                                                   "finishedAct",0xb);
                                                   if ((iVar6 == 0) &&
@@ -1608,7 +1608,7 @@ LAB_0055a97f:
                                                   }
                                                   }
                                                   else {
-                                                    iVar6 = strnicmp
+                                                    iVar6 = _strnicmp
                                                                       (pcVar17,"letterbox",
                                                                        9);
                                                     if ((iVar6 == 0) &&
@@ -1637,17 +1637,17 @@ LAB_0055d708:
                                                     return -1;
                                                   }
                                                   iVar18 = -1;
-                                                  iVar6 = stricmp
+                                                  iVar6 = _stricmp
                                                                     (local_b4c,"false");
                                                   if (iVar6 == 0) {
                                                     iVar18 = 0;
                                                   }
-                                                  iVar6 = stricmp
+                                                  iVar6 = _stricmp
                                                                     (local_b4c,"true");
                                                   if (iVar6 == 0) {
                                                     iVar18 = 1;
                                                   }
-                                                  iVar6 = stricmp
+                                                  iVar6 = _stricmp
                                                                     (local_b4c,"bottom");
                                                   pCVar4 = g_CGamePtr;
                                                   if (iVar6 == 0) {
@@ -1693,7 +1693,7 @@ LAB_0055d708:
                                                   }
                                                   }
                                                   else {
-                                                    iVar6 = strnicmp
+                                                    iVar6 = _strnicmp
                                                                       (pcVar17,
                                                   "lockFocusActor",0xe);
                                                   if ((iVar6 == 0) &&
@@ -1714,7 +1714,7 @@ LAB_0055d708:
                                                   }
                                                   }
                                                   else {
-                                                    iVar6 = strnicmp
+                                                    iVar6 = _strnicmp
                                                                       (pcVar17,"lookAt",6);
                                                     if ((iVar6 == 0) &&
                                                        ((g_CharacterClassificationTable
@@ -1786,7 +1786,7 @@ joined_r0x0055c026:
                                                   }
                                                   }
                                                   else {
-                                                    iVar6 = strnicmp
+                                                    iVar6 = _strnicmp
                                                                       (pcVar17,
                                                   "movePlatform",0xc);
                                                   if ((iVar6 == 0) &&
@@ -1833,7 +1833,7 @@ joined_r0x0055c026:
                                                   }
                                                   }
                                                   else {
-                                                    iVar6 = strnicmp
+                                                    iVar6 = _strnicmp
                                                                       (pcVar17,"openDoor",8
                                                                       );
                                                     if ((iVar6 == 0) &&
@@ -1887,7 +1887,7 @@ joined_r0x0055c026:
                                                   }
                                                   }
                                                   else {
-                                                    iVar6 = strnicmp
+                                                    iVar6 = _strnicmp
                                                                       (pcVar17,
                                                   "pressButton",0xb);
                                                   if ((iVar6 == 0) &&
@@ -1940,7 +1940,7 @@ joined_r0x0055c026:
                                                   }
                                                   }
                                                   else {
-                                                    iVar6 = strnicmp
+                                                    iVar6 = _strnicmp
                                                                       (pcVar17,"raise",5);
                                                     if ((iVar6 == 0) &&
                                                        ((g_CharacterClassificationTable
@@ -1985,7 +1985,7 @@ joined_r0x0055c026:
                                                   }
                                                   }
                                                   else {
-                                                    iVar6 = strnicmp
+                                                    iVar6 = _strnicmp
                                                                       (pcVar17,
                                                   "releaseButton",0xd);
                                                   if ((iVar6 == 0) &&
@@ -2039,7 +2039,7 @@ joined_r0x0055c026:
                                                   }
                                                   }
                                                   else {
-                                                    iVar6 = strnicmp
+                                                    iVar6 = _strnicmp
                                                                       (pcVar17,
                                                   "removeAllItemsFromInventory",0x1b);
                                                   if ((iVar6 == 0) &&
@@ -2075,7 +2075,7 @@ joined_r0x0055c026:
                                                   }
                                                   }
                                                   else {
-                                                    iVar6 = strnicmp
+                                                    iVar6 = _strnicmp
                                                                       (pcVar17,
                                                   "removeItemFromInventory",0x17);
                                                   if ((iVar6 == 0) &&
@@ -2118,7 +2118,7 @@ joined_r0x0055c026:
                                                   }
                                                   }
                                                   else {
-                                                    iVar6 = strnicmp
+                                                    iVar6 = _strnicmp
                                                                       (pcVar17,"removeKeys"
                                                                        ,10);
                                                     if ((iVar6 == 0) &&
@@ -2151,7 +2151,7 @@ joined_r0x0055c026:
                                                   }
                                                   }
                                                   else {
-                                                    iVar6 = strnicmp
+                                                    iVar6 = _strnicmp
                                                                       (pcVar17,"return",6);
                                                     if ((iVar6 == 0) &&
                                                        ((g_CharacterClassificationTable
@@ -2174,7 +2174,7 @@ joined_r0x0055c026:
                                                   }
                                                   }
                                                   else {
-                                                    iVar6 = strnicmp
+                                                    iVar6 = _strnicmp
                                                                       (pcVar17,
                                                   "rollCredits",0xb);
                                                   if ((iVar6 == 0) &&
@@ -2202,7 +2202,7 @@ joined_r0x0055c026:
                                                   }
                                                   }
                                                   else {
-                                                    iVar6 = strnicmp
+                                                    iVar6 = _strnicmp
                                                                       (pcVar17,"say",3);
                                                     if ((iVar6 == 0) &&
                                                        ((g_CharacterClassificationTable
@@ -2266,7 +2266,7 @@ LAB_0055e656:
                                                   }
                                                   }
                                                   else {
-                                                    iVar6 = strnicmp
+                                                    iVar6 = _strnicmp
                                                                       (pcVar17,
                                                   "selectWeapon",0xc);
                                                   if ((iVar6 == 0) &&
@@ -2337,7 +2337,7 @@ LAB_0055e656:
                                                   }
                                                   }
                                                   else {
-                                                    iVar6 = strnicmp
+                                                    iVar6 = _strnicmp
                                                                       (pcVar17,
                                                   "setActorVariable",0x10);
                                                   if ((iVar6 == 0) &&
@@ -2383,7 +2383,7 @@ LAB_0055e656:
                                                   }
                                                   }
                                                   else {
-                                                    iVar6 = strnicmp
+                                                    iVar6 = _strnicmp
                                                                       (pcVar17,
                                                   "setAmbientSound",0xf);
                                                   if ((iVar6 == 0) &&
@@ -2403,7 +2403,7 @@ LAB_0055e656:
                                                   }
                                                   }
                                                   else {
-                                                    iVar6 = strnicmp
+                                                    iVar6 = _strnicmp
                                                                       (pcVar17,
                                                   "setCameraGroup",0xe);
                                                   if ((iVar6 == 0) &&
@@ -2441,7 +2441,7 @@ LAB_0055e656:
                                                   }
                                                   }
                                                   else {
-                                                    iVar6 = strnicmp
+                                                    iVar6 = _strnicmp
                                                                       (pcVar17,
                                                   "setCharacterHealth",0x12);
                                                   if ((iVar6 == 0) &&
@@ -2478,7 +2478,7 @@ LAB_0055e656:
                                                   }
                                                   }
                                                   else {
-                                                    iVar6 = strnicmp
+                                                    iVar6 = _strnicmp
                                                                       (pcVar17,
                                                   "setFocusActor",0xd);
                                                   if ((iVar6 == 0) &&
@@ -2518,7 +2518,7 @@ LAB_0055e656:
                                                   }
                                                   }
                                                   else {
-                                                    iVar6 = strnicmp
+                                                    iVar6 = _strnicmp
                                                                       (pcVar17,
                                                   "setHeroTask",0xb);
                                                   if ((iVar6 == 0) &&
@@ -2548,20 +2548,20 @@ LAB_0055e656:
                                                              &g_CHeroClassInfo);
                                                   if (this_ptr_02 == (CHero *)0x0)
                                                   goto joined_r0x0055c026;
-                                                  iVar6 = stricmp
+                                                  iVar6 = _stricmp
                                                                     (local_2b4,"stand");
                                                   if ((((iVar6 != 0) &&
-                                                       (iVar6 = stricmp
+                                                       (iVar6 = _stricmp
                                                                           (local_2b4,
                                                                            "follow"),
                                                        iVar6 != 0)) &&
-                                                      (iVar6 = stricmp
+                                                      (iVar6 = _stricmp
                                                                          (local_2b4,"kill")
                                                       , iVar6 != 0)) &&
-                                                     ((iVar6 = stricmp
+                                                     ((iVar6 = _stricmp
                                                                          (local_2b4,"guard"
                                                                          ), iVar6 != 0 &&
-                                                      (iVar6 = stricmp
+                                                      (iVar6 = _stricmp
                                                                          (local_2b4,
                                                                           "suspend"),
                                                       iVar6 != 0)))) {
@@ -2575,7 +2575,7 @@ LAB_0055e656:
                                                   }
                                                   }
                                                   else {
-                                                    iVar6 = strnicmp
+                                                    iVar6 = _strnicmp
                                                                       (pcVar17,"setIniInt",
                                                                        9);
                                                     if ((iVar6 == 0) &&
@@ -2607,7 +2607,7 @@ LAB_0055e656:
                                                   }
                                                   }
                                                   else {
-                                                    iVar6 = strnicmp
+                                                    iVar6 = _strnicmp
                                                                       (pcVar17,
                                                   "setSayTimeOverride",0x12);
                                                   if ((iVar6 == 0) &&
@@ -2651,7 +2651,7 @@ LAB_0055e656:
                                                   }
                                                   }
                                                   else {
-                                                    iVar6 = strnicmp
+                                                    iVar6 = _strnicmp
                                                                       (pcVar17,
                                                   "setSkipLabel",0xc);
                                                   if ((iVar6 == 0) &&
@@ -2694,7 +2694,7 @@ LAB_0055f0a8:
                                                   }
                                                   }
                                                   else {
-                                                    iVar6 = strnicmp
+                                                    iVar6 = _strnicmp
                                                                       (pcVar17,"setSpeaker"
                                                                        ,10);
                                                     if ((iVar6 == 0) &&
@@ -2731,7 +2731,7 @@ LAB_0055f0a8:
                                                   }
                                                   }
                                                   else {
-                                                    iVar6 = strnicmp
+                                                    iVar6 = _strnicmp
                                                                       (pcVar17,
                                                   "setTimeFactor",0xd);
                                                   if ((iVar6 == 0) &&
@@ -2774,7 +2774,7 @@ LAB_0055f0a8:
                                                   }
                                                   }
                                                   else {
-                                                    iVar6 = strnicmp
+                                                    iVar6 = _strnicmp
                                                                       (pcVar17,"setVictim",
                                                                        9);
                                                     if ((iVar6 == 0) &&
@@ -2819,7 +2819,7 @@ LAB_0055f0a8:
                                                     local_11c = local_11c + local_44;
                                                     core_script_cpp_trimString_FUN_00559360
                                                               (local_1204);
-                                                    iVar6 = stricmp
+                                                    iVar6 = _stricmp
                                                                       (local_1204,"disable"
                                                                       );
                                                     pCVar14 = PTR_00662638;
@@ -2845,7 +2845,7 @@ LAB_0055f0a8:
                                                   }
                                                   }
                                                   else {
-                                                    iVar6 = strnicmp
+                                                    iVar6 = _strnicmp
                                                                       (pcVar17,"snapToFace"
                                                                        ,10);
                                                     if ((iVar6 == 0) &&
@@ -2896,7 +2896,7 @@ LAB_0055f0a8:
                                                   }
                                                   }
                                                   else {
-                                                    iVar6 = strnicmp
+                                                    iVar6 = _strnicmp
                                                                       (pcVar17,"startSay",8
                                                                       );
                                                     if ((iVar6 == 0) &&
@@ -2948,7 +2948,7 @@ LAB_0055f0a8:
                                                   fVar7 = this_ptr->dialog_wav_time;
                                                   goto joined_r0x0055f6da;
                                                   }
-                                                  iVar6 = strnicmp
+                                                  iVar6 = _strnicmp
                                                                     (pcVar17,"switchCamera"
                                                                      ,0xc);
                                                   if ((iVar6 == 0) &&
@@ -3061,7 +3061,7 @@ LAB_0055f760:
                                                   }
                                                   }
                                                   else {
-                                                    iVar6 = strnicmp
+                                                    iVar6 = _strnicmp
                                                                       (pcVar17,
                                                   "timedDisplay",0xc);
                                                   if ((iVar6 == 0) &&
@@ -3122,7 +3122,7 @@ LAB_0055f91c:
                                                   }
                                                   }
                                                   else {
-                                                    iVar6 = strnicmp
+                                                    iVar6 = _strnicmp
                                                                       (pcVar17,"turnToFace"
                                                                        ,10);
                                                     if ((iVar6 == 0) &&
@@ -3166,7 +3166,7 @@ LAB_0055f91c:
                                                   }
                                                   }
                                                   else {
-                                                    iVar6 = strnicmp
+                                                    iVar6 = _strnicmp
                                                                       (pcVar17,"wait",4);
                                                     if ((iVar6 == 0) &&
                                                        ((g_CharacterClassificationTable
@@ -3192,7 +3192,7 @@ LAB_0055f91c:
                                                   }
                                                   }
                                                   else {
-                                                    iVar6 = strnicmp
+                                                    iVar6 = _strnicmp
                                                                       (pcVar17,"waitFor",7)
                                                     ;
                                                     if ((iVar6 == 0) &&
@@ -3214,9 +3214,9 @@ LAB_0055f91c:
                                                   }
                                                   }
                                                   else {
-                                                    iVar6 = strnicmp
+                                                    iVar6 = _strnicmp
                                                                       (pcVar17,"walkTo",6);
-                                                    dVar1 = (double)CONCAT44(pcVar17,local_124);
+                                                    dVar1 = __BITCAST_DOUBLE(CONCAT44(pcVar17,local_124));
                                                     if ((iVar6 != 0) ||
                                                        ((g_CharacterClassificationTable
                                                          [(byte)(pcVar17[6] + 1)] & 0xe0) != 0)) {

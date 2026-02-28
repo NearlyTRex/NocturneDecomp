@@ -70,7 +70,7 @@ void __stack2_esi core_zombie_cpp_CZombie_getCarryObjToBodyXForm_FUN_005fb1f0(CZ
     }
   }
   else {
-    iVar2 = strnicmp
+    iVar2 = _strnicmp
                       ((this_ptr->base).base.model.model_name,"new",3);
     if (iVar2 == 0) {
       local_94.z = -0.986001;

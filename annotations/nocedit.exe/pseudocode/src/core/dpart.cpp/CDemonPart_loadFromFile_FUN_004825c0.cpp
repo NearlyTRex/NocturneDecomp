@@ -44,7 +44,7 @@ void __cdecl core_dpart_cpp_CDemonPart_loadFromFile_FUN_004825c0(CDemonPart *thi
   _fread(&this_ptr->vertex_group_size,4,1,file_handle);
   _fread(this_ptr->vertex_positions,0xc,this_ptr->vertex_count,file_handle);
   _fread(this_ptr->vertex_normals,0xc,this_ptr->vertex_count,file_handle);
-  iVar10 = strcmp(this_ptr->format,"newformat");
+  iVar10 = _strcmp(this_ptr->format,"newformat");
   if (iVar10 == 0) {
     _fread(this_ptr->face_data,0x20,this_ptr->face_count,file_handle);
   }

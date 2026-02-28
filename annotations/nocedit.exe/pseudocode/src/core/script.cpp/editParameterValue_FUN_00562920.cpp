@@ -475,7 +475,7 @@ int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,i
         do {
           _sprintf(local_6a0,"%s\t%s",str1);
           shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_3754.base,local_6a0);
-          iVar8 = stricmp(str1->motion_name,value_buffer);
+          iVar8 = _stricmp(str1->motion_name,value_buffer);
           if (iVar8 == 0) {
             local_28 = iVar7;
           }

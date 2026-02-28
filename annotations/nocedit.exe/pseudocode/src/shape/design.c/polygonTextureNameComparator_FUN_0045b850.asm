@@ -13,7 +13,7 @@
 ;   shape_design.c_sortPolygonsByTexture_FUN_0045b8b0 at 0045b90e
 ;
 ; Called Functions:
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;
 ; *****************************************************************************
 
@@ -48,8 +48,8 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 0045b887
     ADD EAX,0x4                         ; 0045b88a
     PUSH EAX                            ; 0045b88d
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 0045b88e
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 0045b88e
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0045b893
     MOV dword ptr [EBP + -0x4],EAX      ; 0045b896
     MOV EAX,dword ptr [EBP + -0x4]      ; 0045b899

@@ -40,7 +40,7 @@
 ;   core_msnedit.cpp_CDemonMission_FUN_0053c140
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;   shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
 ;   shape_edittool.cpp_CPickList_ctor_FUN_004a3b90
 ;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
@@ -92,8 +92,8 @@ section .text
     PUSH EAX                            ; 0053d90f
     MOV EAX,dword ptr [EBX + 0x822048]  ; 0053d910 | g_ActorClassRegistrations
     PUSH EAX                            ; 0053d916
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 0053d917
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 0053d917
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0053d91c
     TEST EAX,EAX                        ; 0053d91f
     JZ 0x0053d93b                       ; 0053d921
@@ -353,8 +353,8 @@ section .text
     PUSH EDI                            ; 0053dc1b
     LEA EAX,[EBX + 0x4]                 ; 0053dc1c
     PUSH EAX                            ; 0053dc1f
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 0053dc20
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 0053dc20
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0053dc25
     TEST EAX,EAX                        ; 0053dc28
     JNZ 0x0053dac4                      ; 0053dc2a

@@ -67,7 +67,7 @@ void __cdecl core_curtain_cpp_CCurtain_process_FUN_0044a920(CCurtain *this_ptr,f
     if (iVar6 != 0) {
       this_ptr->falling = 1;
     }
-    iVar6 = strcmp(this_ptr->let_go_event,"none");
+    iVar6 = _strcmp(this_ptr->let_go_event,"none");
     if ((iVar6 == 0) || (this_ptr->falling != 0)) {
       if (this_ptr->hit_floor != 0) {
         fStack_14 = (*((this_ptr->base).vtable._ub)->cylinderGroundCheck)

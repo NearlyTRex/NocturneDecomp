@@ -52,9 +52,9 @@ void __cdecl core_msnedit_cpp_CDemonMission_editActorDetailed_FUN_0053b510(CDemo
         } while ((g_CharacterClassificationTable[(byte)(*pbVar1 + 1)] & 0xe0) != 0);
       } while ((local_28 == 0x2d) || (local_28 == 0x5f));
       *pcVar6 = '\0';
-      iVar3 = stricmp(local_110,"none");
+      iVar3 = _stricmp(local_110,"none");
       if ((iVar3 != 0) &&
-         (iVar3 = stricmp(local_110,"true"), iVar3 != 0)) {
+         (iVar3 = _stricmp(local_110,"true"), iVar3 != 0)) {
         shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_38,local_110);
       }
     }
@@ -92,7 +92,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_editActorDetailed_FUN_0053b510(CDemo
     if (0 < local_38.item_count) {
       do {
         pcVar8 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_38,iStack_1c);
-        iVar3 = stricmp(pcVar8,local_18->actor_name);
+        iVar3 = _stricmp(pcVar8,local_18->actor_name);
         if (iVar3 == 0) {
           _sprintf(acStack_304,"%s\tReferenced by name",local_18);
           shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_6ac.base,acStack_304);
@@ -124,9 +124,9 @@ void __cdecl core_msnedit_cpp_CDemonMission_editActorDetailed_FUN_0053b510(CDemo
                     } while ((g_CharacterClassificationTable[(byte)(*pbVar1 + 1)] & 0xe0) != 0);
                   } while ((uStack_20 == 0x2d) || (uStack_20 == 0x5f));
                   *pcVar7 = '\0';
-                  iVar3 = stricmp(acStack_1d8,"none");
+                  iVar3 = _stricmp(acStack_1d8,"none");
                   if ((iVar3 != 0) &&
-                     (iVar3 = stricmp(acStack_1d8,"true"),
+                     (iVar3 = _stricmp(acStack_1d8,"true"),
                      iVar3 != 0)) {
                     shape_edittool_cpp_CStrList_add_FUN_004a2b80(&CStack_48,acStack_1d8);
                   }
@@ -137,7 +137,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_editActorDetailed_FUN_0053b510(CDemo
               if (0 < CStack_48.item_count) {
                 do {
                   pcVar6 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&CStack_48,iVar3);
-                  iVar5 = stricmp(pcVar8,pcVar6);
+                  iVar5 = _stricmp(pcVar8,pcVar6);
                   if (iVar5 == 0) {
                     _sprintf
                               (acStack_304,"%s\tChecks for \"%s\" in \"%s\"",local_18,pcVar8,pcStack_24

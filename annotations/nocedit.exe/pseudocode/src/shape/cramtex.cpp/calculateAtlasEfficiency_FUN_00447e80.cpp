@@ -25,8 +25,8 @@ double __cdecl shape_cramtex_cpp_calculateAtlasEfficiency_FUN_00447e80(void)
       pCVar1 = pCVar1 + 1;
     } while (iVar2 < g_CramTextureCount);
   }
-  return (double)CONCAT44(g_CramTextureCount,
+  return __BITCAST_DOUBLE(CONCAT44(g_CramTextureCount,
                           ((float)iVar3 * (float)100) /
                           (float)(g_CramCurrentAcceptableSize * g_CramCurrentAcceptableSize *
-                                 g_CramTotalMaps));
+                                 g_CramTotalMaps)));
 }

@@ -2,14 +2,13 @@
 // Address: 005a6d80
 // Address Range: [[005a6d80, 005a6dec]]
 // Convention: __cdecl
-// Signature: int __cdecl sound_sndmain_cpp_CSfxSlot_computeDistancesToSpeakers_FUN_005a6d80(CSfxSlot *this_ptr)
+// Signature: void __cdecl sound_sndmain_cpp_CSfxSlot_computeDistancesToSpeakers_FUN_005a6d80(CSfxSlot *this_ptr)
 
 #include "nocturne.h"
 
-int __cdecl sound_sndmain_cpp_CSfxSlot_computeDistancesToSpeakers_FUN_005a6d80(CSfxSlot *this_ptr)
+void __cdecl sound_sndmain_cpp_CSfxSlot_computeDistancesToSpeakers_FUN_005a6d80(CSfxSlot *this_ptr)
 
 {
-  int in_EAX;
   CSfxSlot *pCVar1;
   int iVar2;
   int iVar3;
@@ -34,5 +33,5 @@ int __cdecl sound_sndmain_cpp_CSfxSlot_computeDistancesToSpeakers_FUN_005a6d80(C
       pCVar1 = (CSfxSlot *)&(pCVar1->options).position;
     } while (iVar3 < g_AudioChannelCount);
   }
-  return in_EAX;
+  return;
 }

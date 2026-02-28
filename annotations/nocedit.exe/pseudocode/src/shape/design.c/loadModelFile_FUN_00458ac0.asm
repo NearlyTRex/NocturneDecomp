@@ -47,7 +47,7 @@
 ;   crt_stdio.c_fgets_FUN_005fefd0
 ;   crt_stdio.c_fscanf_FUN_005fe7c0
 ;   crt_stdlib.c_atoi_FUN_005ffef0
-;   crt_string.c_strcmp_FUN_005fef20
+;   crt_string.c__strcmp_FUN_005fef20
 ;   crt_string.c_strtok_FUN_005fff50
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_drawText_FUN_00401fd0
@@ -158,8 +158,8 @@ section .text
     PUSH EAX                            ; 00458b79 | = ".BIN"
     MOV EAX,dword ptr [EBP + -0x4]      ; 00458b7a
     PUSH EAX                            ; 00458b7d
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 00458b7e
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 00458b7e
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 00458b83
     TEST EAX,EAX                        ; 00458b86
     JNZ 0x00458be2                      ; 00458b88
@@ -204,8 +204,8 @@ section .text
     PUSH EAX                            ; 00458be7 | = ".S3D"
     MOV EAX,dword ptr [EBP + -0x4]      ; 00458be8
     PUSH EAX                            ; 00458beb
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 00458bec
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 00458bec
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 00458bf1
     TEST EAX,EAX                        ; 00458bf4
     JNZ 0x00458c50                      ; 00458bf6

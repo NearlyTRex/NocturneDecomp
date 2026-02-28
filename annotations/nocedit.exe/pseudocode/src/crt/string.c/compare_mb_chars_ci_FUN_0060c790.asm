@@ -11,7 +11,7 @@
 ; undefined1       Stack[-0xc]:1  local_c
 ;
 ; XREF[1]:
-;   crt_string.c_mbstrnicmp_FUN_00608e50 at 00608e82
+;   crt_string.c__mbstrnicmp_FUN_00608e50 at 00608e82
 ;
 ; Called Functions:
 ;   crt_locale.c_mblen_FUN_00605a40

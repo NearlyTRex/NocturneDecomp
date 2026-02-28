@@ -46,7 +46,7 @@
 ;   crt_ctype.c_toupper_FUN_005ff9e0
 ;   crt_stdio.c_sscanf_FUN_0060013c
 ;   crt_stdlib.c_atoi_FUN_005ffef0
-;   crt_string.c_strcmp_FUN_005fef20
+;   crt_string.c__strcmp_FUN_005fef20
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   engine_2d.c_getInputWithPrompt_FUN_004032c0
 ;   shape_design.c_allocateSpatialTreeNode_FUN_00457ed0
@@ -122,8 +122,8 @@ section .text
     PUSH EAX                            ; 0046184f
     LEA EAX,[EBP + -0x80]               ; 00461850
     PUSH EAX                            ; 00461853
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 00461854
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 00461854
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 00461859
     TEST EAX,EAX                        ; 0046185c
     JNZ 0x00461868                      ; 0046185e

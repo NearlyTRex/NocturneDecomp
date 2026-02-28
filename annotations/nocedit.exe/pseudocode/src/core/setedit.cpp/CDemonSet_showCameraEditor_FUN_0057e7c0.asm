@@ -806,8 +806,8 @@ section .text
     IMUL EAX,ESI,0x1a4                  ; 0057eeee
     ADD EAX,dword ptr [ESP + 0x4748]    ; 0057eef4
     PUSH EAX                            ; 0057eefb
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 0057eefc
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 0057eefc
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 0057ef01
     TEST EAX,EAX                        ; 0057ef04
     JNZ 0x0057ef52                      ; 0057ef06

@@ -176,7 +176,7 @@ LAB_0060f687:
     if (BVar6 == 0) goto LAB_0060f80e;
   }
   else {
-    iVar8 = stricmp(local_58,".bat");
+    iVar8 = _stricmp(local_58,".bat");
     if (iVar8 != 0) {
       setErrno(0);
       iVar8 = spawn(mode,pcVar4,local_18,local_38);

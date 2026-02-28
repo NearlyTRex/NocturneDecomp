@@ -1,28 +1,20 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 22,
-        "line": 32,
-        "message": "invalid operands to binary expression ('double' and 'int')"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 180,
+    "complexity_score": 165,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 35,
-    "suspect_count": 12,
+    "suspect_count": 11,
     "suspect_types": [
       "decompiler_intrinsic",
-      "double_reconstruction",
       "pointer_cast",
       "stack_param",
       "sub84_truncation"
@@ -186,19 +178,11 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 23,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "(double)CONCAT44((this_ptr->options).trigger_id,",
-      "type": "double_reconstruction"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 23,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "(double)CONCAT44((this_ptr->options).trigger_id,",
+      "text": "__BITCAST_DOUBLE(CONCAT44((this_ptr->options).trigger_id,",
       "type": "decompiler_intrinsic"
     },
     {
@@ -206,7 +190,7 @@
       "line": 24,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&(this_ptr->options).trigger_time + 4)),",
+      "text": "*(uint *)((int)&(this_ptr->options).trigger_time + 4))),",
       "type": "pointer_cast"
     },
     {
@@ -214,7 +198,7 @@
       "line": 25,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));",
+      "text": "SUB84(__BITCAST_UINT64(dVar1),0),(uint)((ulonglong)dVar1 >> 0x20));",
       "type": "sub84_truncation"
     },
     {
@@ -222,7 +206,7 @@
       "line": 25,
       "match": "SUB84",
       "severity": "mild",
-      "text": "SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));",
+      "text": "SUB84(__BITCAST_UINT64(dVar1),0),(uint)((ulonglong)dVar1 >> 0x20));",
       "type": "decompiler_intrinsic"
     },
     {

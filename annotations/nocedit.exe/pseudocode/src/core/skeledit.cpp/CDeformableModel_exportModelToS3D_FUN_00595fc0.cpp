@@ -145,7 +145,7 @@ void __cdecl core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0(CD
             core_skeleton_cpp_CDeformableModel_skinSingleVertex_FUN_0059aa00
                       (this_ptr,&local_a8,lod_level,local_1c,bone_matrices);
             _sprintf
-                      (local_340,"%g,%g,%g",SUB84((double)local_a8.x,0),
+                      (local_340,"%g,%g,%g",SUB84(__BITCAST_UINT64((double)local_a8.x),0),
                        (int)((ulonglong)(double)local_a8.x >> 0x20),(double)local_a8.y,
                        (double)local_a8.z);
             shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_b8,local_340);
@@ -166,7 +166,7 @@ void __cdecl core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0(CD
                    *(uint *)(*(int *)((int)this_ptr->index_data_ptr + local_50) + local_28),
                    dest[*puVar2],(double)local_14 * 0.00390625,
                    (double)puVar2[6] * 0.00390625,dest[puVar2[1]],
-                   (double)puVar2[4] * 0.00390625,SUB84((double)puVar2[7] * 0.00390625,0),
+                   (double)puVar2[4] * 0.00390625,SUB84(__BITCAST_UINT64((double)puVar2[7] * 0.00390625),0),
                    (int)((ulonglong)((double)puVar2[7] * 0.00390625) >> 0x20),dest[puVar2[2]],
                    (double)puVar2[5] * 0.00390625,(double)puVar2[8] * 0.00390625);
         shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_c8,local_340);
@@ -193,7 +193,7 @@ void __cdecl core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0(CD
                      dest[*puVar2],(double)local_14 * 0.00390625,
                      (double)puVar2[6] * 0.00390625,dest[puVar2[1]],
                      (double)puVar2[4] * 0.00390625,
-                     SUB84((double)puVar2[7] * 0.00390625,0),
+                     SUB84(__BITCAST_UINT64((double)puVar2[7] * 0.00390625),0),
                      (int)((ulonglong)((double)puVar2[7] * 0.00390625) >> 0x20),dest[puVar2[2]]
                      ,(double)puVar2[5] * 0.00390625,(double)puVar2[8] * 0.00390625);
           shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_c8,local_340);

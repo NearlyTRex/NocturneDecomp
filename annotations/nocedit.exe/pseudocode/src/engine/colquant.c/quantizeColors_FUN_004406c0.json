@@ -25,16 +25,15 @@
   },
   "complexity": {
     "assembly_lines": 388,
-    "complexity_score": 622,
+    "complexity_score": 567,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 6,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 192,
-    "suspect_count": 41,
+    "suspect_count": 36,
     "suspect_types": [
       "decompiler_intrinsic",
-      "double_reconstruction",
       "pointer_cast",
       "unknown_field"
     ],
@@ -529,19 +528,11 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 166,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "if ((double)CONCAT44(uStack_15c,local_160) < pSVar8->boxes[1].total_weighted_error) {",
-      "type": "double_reconstruction"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 166,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "if ((double)CONCAT44(uStack_15c,local_160) < pSVar8->boxes[1].total_weighted_error) {",
+      "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_15c,local_160)) < pSVar8->boxes[1].total_weighted_error) {",
       "type": "decompiler_intrinsic"
     },
     {
@@ -569,67 +560,35 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 178,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "if ((double)CONCAT44(uStack_154,local_158) != workspace->boxes[iVar13].spread_red) break;",
-      "type": "double_reconstruction"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 178,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "if ((double)CONCAT44(uStack_154,local_158) != workspace->boxes[iVar13].spread_red) break;",
+      "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_154,local_158)) != workspace->boxes[iVar13].spread_red) break;",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 183,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "if ((double)CONCAT44(uStack_154,local_158) == workspace->boxes[iVar13].spread_green) {",
-      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 183,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "if ((double)CONCAT44(uStack_154,local_158) == workspace->boxes[iVar13].spread_green) {",
+      "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_154,local_158)) == workspace->boxes[iVar13].spread_green) {",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 187,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "if ((double)CONCAT44(uStack_154,local_158) == workspace->boxes[iVar13].spread_blue) {",
-      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 187,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "if ((double)CONCAT44(uStack_154,local_158) == workspace->boxes[iVar13].spread_blue) {",
+      "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_154,local_158)) == workspace->boxes[iVar13].spread_blue) {",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 191,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "if ((double)CONCAT44(uStack_154,local_158) != workspace->boxes[iVar13].spread_intensity)",
-      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 191,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "if ((double)CONCAT44(uStack_154,local_158) != workspace->boxes[iVar13].spread_intensity)",
+      "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_154,local_158)) != workspace->boxes[iVar13].spread_intensity)",
       "type": "decompiler_intrinsic"
     }
   ]

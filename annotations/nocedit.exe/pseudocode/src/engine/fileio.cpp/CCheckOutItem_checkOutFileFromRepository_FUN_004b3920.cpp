@@ -45,7 +45,7 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3
   }
   iVar2 = engine_fileio_cpp_CCheckOutList_findEntry_FUN_004b2e60(&local_24,filename);
   if (-1 < iVar2) {
-    iVar5 = stricmp
+    iVar5 = _stricmp
                       (local_24.items[iVar2].value,g_VersionControlSession.primary_username);
     pCVar9 = local_24.items + iVar2;
     if (iVar5 == 0) {
@@ -220,7 +220,7 @@ LAB_004b3f0c:
           shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_1c,"..\\engine\\fileio.cpp",0xc4);
           local_1c = (_FILE *)0x0;
         }
-        iVar5 = stricmp
+        iVar5 = _stricmp
                           (local_24.items[iVar2].value,g_VersionControlSession.primary_username);
         pCVar9 = local_24.items + iVar2;
         if (iVar5 == 0) {

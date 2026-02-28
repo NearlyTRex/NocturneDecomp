@@ -25,7 +25,7 @@ char * __cdecl _fullpath(char *buffer,char *path,SIZE_T buffer_size)
     }
   }
   if ((path != (char *)0x0) && (*path != '\0')) {
-    iVar2 = stricmp(path,"con");
+    iVar2 = _stricmp(path,"con");
     if (iVar2 == 0) {
       if (buffer_size < 4) {
         free(unaff_EBP);

@@ -53,7 +53,7 @@
 ;   core_sound.cpp_CSound_playTrackedActorSound_FUN_005b3a70
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdlib.c_rand_FUN_005feb5c
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
 ;   sound_sndmain.cpp_killSfx_FUN_005a9c40
 ;   sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0
@@ -150,8 +150,8 @@ section .text
     PUSH 0x652718                       ; 005b28a7 | = "int"
     MOV EDX,dword ptr [0x00681ef0]      ; 005b28ac | g_CurrentTrainMode
     PUSH EDX                            ; 005b28b2 | = "int"
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 005b28b3
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 005b28b3
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 005b28b8
     TEST EAX,EAX                        ; 005b28bb
     JNZ 0x005b2a45                      ; 005b28bd
@@ -176,8 +176,8 @@ section .text
     PUSH EDX                            ; 005b28f6 | = "int"
     MOV ECX,dword ptr [0x00681ef4]      ; 005b28f7 | g_PreviousTrainMode
     PUSH ECX                            ; 005b28fd | = "x"
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 005b28fe
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 005b28fe
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 005b2903
     TEST EAX,EAX                        ; 005b2906
     JNZ 0x005b2acb                      ; 005b2908

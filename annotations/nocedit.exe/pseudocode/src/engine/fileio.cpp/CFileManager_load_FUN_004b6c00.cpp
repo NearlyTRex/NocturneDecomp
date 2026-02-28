@@ -77,7 +77,7 @@ LAB_004b6cb3:
         str2 = local_18 + local_14;
         do {
           str1 = *local_18 + local_1c;
-          iVar2 = stricmp(str1,*str2);
+          iVar2 = _stricmp(str1,*str2);
           pcVar6 = str1;
           pbVar8 = local_224;
           if (0 < iVar2) {

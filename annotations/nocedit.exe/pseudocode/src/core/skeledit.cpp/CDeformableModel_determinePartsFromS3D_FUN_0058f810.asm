@@ -244,8 +244,8 @@
 ;   crt_stdio.c_fgetc_FUN_005fe840
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
 ;   crt_stdio.c_fscanf_FUN_005fe7c0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;   crt_string.c_splitpath_FUN_005ff178
-;   crt_string.c_stricmp_FUN_005fe7f0
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
 ;   shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0
 ;   shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
@@ -756,8 +756,8 @@ section .text
     PUSH EAX                            ; 0058fe47
     LEA EAX,[ESP + 0x9e74]              ; 0058fe48
     PUSH EAX                            ; 0058fe4f
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 0058fe50
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 0058fe50
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0058fe55
     TEST EAX,EAX                        ; 0058fe58
     JNZ 0x00590a8e                      ; 0058fe5a
@@ -3379,8 +3379,8 @@ section .text
     LEA EAX,[ESP + 0x9ab8]              ; 005922bb
     PUSH EAX                            ; 005922c2
     PUSH EDI                            ; 005922c3
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 005922c4
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 005922c4
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 005922c9
     TEST EAX,EAX                        ; 005922cc
     JNZ 0x00592351                      ; 005922ce

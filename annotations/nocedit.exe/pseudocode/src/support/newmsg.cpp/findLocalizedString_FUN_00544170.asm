@@ -16,7 +16,7 @@
 ;   char*[500] g_MessageTexts
 ;
 ; Called Functions:
-;   crt_string.c_strcmp_FUN_005fef20
+;   crt_string.c__strcmp_FUN_005fef20
 ;
 ; *****************************************************************************
 
@@ -50,8 +50,8 @@ section .text
     MOV ECX,dword ptr [ESI + 0x2fa8cdc] ; 0054419f | g_MessageKeys
     PUSH ECX                            ; 005441a5
     PUSH EDI                            ; 005441a6
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 005441a7
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 005441a7
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 005441ac
     TEST EAX,EAX                        ; 005441af
     JL 0x005441c0                       ; 005441b1

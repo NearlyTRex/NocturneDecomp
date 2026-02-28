@@ -20,7 +20,7 @@ int __cdecl shape_meshlod_cpp_CLodMesh_findOrAddLodTexture_FUN_00518790(CLodMesh
   if (0 < this_ptr->lod_texture_count) {
     iVar5 = 0;
     do {
-      iVar2 = stricmp
+      iVar2 = _stricmp
                         (this_ptr->lod_textures->textures[0].texture_name + iVar5,texture_filename);
       if (iVar2 == 0) {
         return iVar4;

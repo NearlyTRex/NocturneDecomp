@@ -17,7 +17,7 @@ void __cdecl core_lever_cpp_CLever_setup_FUN_005048a0(CLever *this_ptr)
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(&this_ptr->model);
   core_actor_cpp_CDemonActor_setup_FUN_00408bb0(&this_ptr->base);
   if ((this_ptr->sound[0] == '\0') &&
-     (iVar2 = stricmp
+     (iVar2 = _stricmp
                         ((this_ptr->model).model_name,"elevbutton.kfm"), iVar2 != 0)) {
     pcVar3 = "lever-metal.wav";
     pcVar4 = this_ptr->sound;

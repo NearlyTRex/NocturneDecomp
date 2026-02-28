@@ -17,7 +17,7 @@ void __cdecl core_cloth_cpp_CCloth_grabCloth_FUN_0043e0d0(CCloth *this_ptr,char 
   if (0 < this_ptr->collide_bone_count) {
     str2 = this_ptr->collide_bones;
     do {
-      iVar1 = strcmp(bone_name,str2->name);
+      iVar1 = _strcmp(bone_name,str2->name);
       if (iVar1 == 0) break;
       iVar2 = iVar2 + 1;
       str2 = str2 + 1;

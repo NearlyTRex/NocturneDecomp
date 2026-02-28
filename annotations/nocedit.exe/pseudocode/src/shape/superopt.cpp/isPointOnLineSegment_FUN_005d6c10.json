@@ -79,16 +79,15 @@
   },
   "complexity": {
     "assembly_lines": 309,
-    "complexity_score": 528,
+    "complexity_score": 463,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 128,
-    "suspect_count": 38,
+    "suspect_count": 32,
     "suspect_types": [
       "decompiler_intrinsic",
-      "double_reconstruction",
       "pointer_cast",
       "unknown_field"
     ],
@@ -613,99 +612,51 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 89,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "if ((((double)CONCAT44(uVar1,local_b0) + -0.0001 <= point->x) &&",
-      "type": "double_reconstruction"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 89,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "if ((((double)CONCAT44(uVar1,local_b0) + -0.0001 <= point->x) &&",
+      "text": "if (((__BITCAST_DOUBLE(CONCAT44(uVar1,local_b0)) + -0.0001 <= point->x) &&",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 90,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "(point->x <= (double)CONCAT44(uVar4,local_a8) + 0.0001)) &&",
-      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 90,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "(point->x <= (double)CONCAT44(uVar4,local_a8) + 0.0001)) &&",
+      "text": "(point->x <= __BITCAST_DOUBLE(CONCAT44(uVar4,local_a8)) + 0.0001)) &&",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 91,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "(((double)CONCAT44(uVar2,local_c0) + -0.0001 <= point->y &&",
-      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 91,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "(((double)CONCAT44(uVar2,local_c0) + -0.0001 <= point->y &&",
+      "text": "((__BITCAST_DOUBLE(CONCAT44(uVar2,local_c0)) + -0.0001 <= point->y &&",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 92,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "(((point->y <= (double)CONCAT44(uVar5,local_f0) + 0.0001 &&",
-      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 92,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "(((point->y <= (double)CONCAT44(uVar5,local_f0) + 0.0001 &&",
+      "text": "(((point->y <= __BITCAST_DOUBLE(CONCAT44(uVar5,local_f0)) + 0.0001 &&",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 93,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "((double)CONCAT44(uVar3,local_f8) + -0.0001 <= point->z)) &&",
-      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 93,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "((double)CONCAT44(uVar3,local_f8) + -0.0001 <= point->z)) &&",
+      "text": "(__BITCAST_DOUBLE(CONCAT44(uVar3,local_f8)) + -0.0001 <= point->z)) &&",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 94,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "(point->z <= (double)CONCAT44(uVar6,local_b8) + 0.0001)))))) {",
-      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 94,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "(point->z <= (double)CONCAT44(uVar6,local_b8) + 0.0001)))))) {",
+      "text": "(point->z <= __BITCAST_DOUBLE(CONCAT44(uVar6,local_b8)) + 0.0001)))))) {",
       "type": "decompiler_intrinsic"
     },
     {

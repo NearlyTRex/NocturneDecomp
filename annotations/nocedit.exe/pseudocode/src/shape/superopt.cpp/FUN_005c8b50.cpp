@@ -79,12 +79,12 @@ int __cdecl shape_superopt_cpp_FUN_005c8b50(void)
         pdVar5 = (double *)((int)pdVar5 + (uint)bVar7 * -8 + 4);
         puVar4 = puVar4 + (uint)bVar7 * -2 + 1;
       }
-      local_9c = (double)CONCAT44(uStack_c0,local_c4) * local_14[2] -
-                 (double)CONCAT44(uStack_b8,local_bc) * local_14[1];
-      local_94 = (double)CONCAT44(uStack_b8,local_bc) * *local_14 -
-                 (double)CONCAT44(uStack_c8,local_cc) * local_14[2];
-      local_8c = (double)CONCAT44(uStack_c8,local_cc) * local_14[1] -
-                 (double)CONCAT44(uStack_c0,local_c4) * *local_14;
+      local_9c = __BITCAST_DOUBLE(CONCAT44(uStack_c0,local_c4)) * local_14[2] -
+                 __BITCAST_DOUBLE(CONCAT44(uStack_b8,local_bc)) * local_14[1];
+      local_94 = __BITCAST_DOUBLE(CONCAT44(uStack_b8,local_bc)) * *local_14 -
+                 __BITCAST_DOUBLE(CONCAT44(uStack_c8,local_cc)) * local_14[2];
+      local_8c = __BITCAST_DOUBLE(CONCAT44(uStack_c8,local_cc)) * local_14[1] -
+                 __BITCAST_DOUBLE(CONCAT44(uStack_c0,local_c4)) * *local_14;
       dVar1 = 1.0 / SQRT(local_8c * local_8c + local_9c * local_9c + local_94 * local_94);
       local_9c = local_9c * dVar1;
       local_94 = local_94 * dVar1;
@@ -122,7 +122,7 @@ int __cdecl shape_superopt_cpp_FUN_005c8b50(void)
             local_38 = extraout_EDX_00;
             local_54 = local_3c;
             uStack_50 = extraout_EDX_00;
-            if ((double)CONCAT44(uStack_40,local_44) < (double)CONCAT44(extraout_EDX_00,local_3c)) {
+            if (__BITCAST_DOUBLE(CONCAT44(uStack_40,local_44)) < __BITCAST_DOUBLE(CONCAT44(extraout_EDX_00,local_3c))) {
               local_44 = local_3c;
               uStack_40 = extraout_EDX_00;
               local_1c = local_18;
@@ -133,7 +133,7 @@ int __cdecl shape_superopt_cpp_FUN_005c8b50(void)
             local_38 = extraout_EDX;
             local_34 = local_3c;
             uStack_30 = extraout_EDX;
-            if ((double)CONCAT44(uStack_40,local_44) < (double)CONCAT44(extraout_EDX,local_3c)) {
+            if (__BITCAST_DOUBLE(CONCAT44(uStack_40,local_44)) < __BITCAST_DOUBLE(CONCAT44(extraout_EDX,local_3c))) {
               local_44 = local_3c;
               uStack_40 = extraout_EDX;
               local_1c = local_18;

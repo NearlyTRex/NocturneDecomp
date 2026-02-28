@@ -14,7 +14,7 @@
 ;
 ; Called Functions:
 ;   core_script.cpp_skipWhitespace_FUN_005593d0
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;
 ; *****************************************************************************
 
@@ -61,8 +61,8 @@ section .text
         ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_skipWhitespace_FUN_005593d0(char * str)
     ADD ESP,0x4                         ; 005601a0
     PUSH EAX                            ; 005601a3
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 005601a4
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 005601a4
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 005601a9
     TEST EAX,EAX                        ; 005601ac
     JNZ 0x00560183                      ; 005601ae

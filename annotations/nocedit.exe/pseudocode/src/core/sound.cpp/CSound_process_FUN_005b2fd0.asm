@@ -69,8 +69,8 @@
 ;   core_sound.cpp_updateListeners_FUN_005b1870
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdlib.c_rand_FUN_005feb5c
-;   crt_string.c_stricmp_FUN_005fe7f0
-;   crt_string.c_strnicmp_FUN_005ff070
+;   crt_string.c__stricmp_FUN_005fe7f0
+;   crt_string.c__strnicmp_FUN_005ff070
 ;   sound_sndmain.cpp_enableSfxChannel_FUN_005a9e20
 ;   sound_sndmain.cpp_getSfxChannelVol_FUN_005a9d90
 ;   sound_sndmain.cpp_isSfxChannelEnabled_FUN_005a9ea0
@@ -161,8 +161,8 @@ section .text
     PUSH 0x65278b                       ; 005b30d9 | = "NDUN"
     ADD EAX,0x14d0f0                    ; 005b30de
     PUSH EAX                            ; 005b30e3 | DAT_03261368
-    CALL crt_string.c_strnicmp_FUN_005ff070 ; 005b30e4
-        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)
+    CALL crt_string.c__strnicmp_FUN_005ff070 ; 005b30e4
+        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 005b30e9
     TEST EAX,EAX                        ; 005b30ec
     JNZ 0x005b311d                      ; 005b30ee
@@ -354,8 +354,8 @@ section .text
     PUSH 0x652718                       ; 005b339d | = "int"
     MOV ECX,dword ptr [0x00681ef0]      ; 005b33a2 | g_CurrentTrainMode
     PUSH ECX                            ; 005b33a8 | = "int"
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 005b33a9
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 005b33a9
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 005b33ae
     TEST EAX,EAX                        ; 005b33b1
     JNZ 0x005b35db                      ; 005b33b3
@@ -380,8 +380,8 @@ section .text
     PUSH ECX                            ; 005b33ee | = "int"
     MOV EBX,dword ptr [0x00681ef4]      ; 005b33ef | g_PreviousTrainMode | = "x"
     PUSH EBX                            ; 005b33f5 | = "x"
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 005b33f6
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 005b33f6
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 005b33fb
     TEST EAX,EAX                        ; 005b33fe
     JNZ 0x005b3662                      ; 005b3400

@@ -297,7 +297,7 @@ void __cdecl shape_design_c_showFacetPartEditor_FUN_0045f1d0(void)
         local_d8 = 0;
       }
       else {
-        local_d8 = SUB84((double)local_2c,0);
+        local_d8 = SUB84(__BITCAST_UINT64((double)local_2c),0);
       }
       _sprintf
                 (local_b8,"Zoom : %4.2f  FOV : %4.1f",65536 / (double)g_ProjectionScale,

@@ -18,5 +18,5 @@ double __cdecl engine_colquant_c_doubleMax_FUN_00441790(double a,double b)
   else {
     local_18 = a._0_4_;
   }
-  return (double)CONCAT44(a._4_4_,local_18);
+  return __BITCAST_DOUBLE(CONCAT44(a._4_4_,local_18));
 }

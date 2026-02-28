@@ -24,9 +24,9 @@ int __cdecl sound_sndmain_cpp_getSampleInfo_FUN_005aa3f0(CSfxSample *out_sample)
   sound_sndmain_cpp_lockSound_FUN_005abd30();
   iVar4 = 0;
   do {
-    if (0 < *(int *)((int)g_SfxSamples[0].loop_markers + iVar4 + -0x2c)) {
+    if (0 < *(int *)((int)g_SfxSamples[0].loop_endpoints + iVar4 + -0x18)) {
       pcVar5 = g_SfxSamples[0].sample_info.name + iVar4;
-      iVar2 = stricmp(pcVar5,(char *)out_sample);
+      iVar2 = _stricmp(pcVar5,(char *)out_sample);
       if (iVar2 == 0) {
         for (iVar4 = 0x54; iVar4 != 0; iVar4 = iVar4 + -1) {
           *(uint *)(out_sample->sample_info).name = *(uint *)pcVar5;
@@ -55,9 +55,9 @@ int __cdecl sound_sndmain_cpp_getSampleInfo_FUN_005aa3f0(CSfxSample *out_sample)
       } while (cVar1 != '\0');
       memmove(&local_114,local_113,~uVar3 - 1);
     }
-    iVar4 = stricmp(&local_114,"wav");
+    iVar4 = _stricmp(&local_114,"wav");
     if (iVar4 != 0) {
-      iVar4 = stricmp(&local_114,"mp3");
+      iVar4 = _stricmp(&local_114,"mp3");
       if (iVar4 == 0) {
         if ((g_GlobalMP3DecoderInitializedOther & 1) == 0) {
           g_GlobalMP3DecoderInitializedOther = g_GlobalMP3DecoderInitializedOther | 1;

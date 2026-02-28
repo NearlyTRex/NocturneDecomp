@@ -21,7 +21,7 @@
 ;   undefined4 DAT_016e9a88
 ;
 ; Called Functions:
-;   crt_string.c_strcmp_FUN_005fef20
+;   crt_string.c__strcmp_FUN_005fef20
 ;   shape_design.c_findVertexMatches_FUN_00461ae0
 ;   shape_design.c_mergeAdjacentPolygons_FUN_00462b70
 ;   shape_design.c_removeUnusedVertices_FUN_00463830
@@ -93,8 +93,8 @@ section .text
     ADD EAX,EDX                         ; 00465bfb
     ADD EAX,0x54                        ; 00465bfd
     PUSH EAX                            ; 00465c00
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 00465c01
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 00465c01
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 00465c06
     TEST EAX,EAX                        ; 00465c09
     JZ 0x00465c0f                       ; 00465c0b

@@ -22,7 +22,7 @@
 ; Called Functions:
 ;   core_inv.cpp_getItemModel_FUN_004fcda0
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;
 ; *****************************************************************************
 
@@ -49,8 +49,8 @@ section .text
     PUSH EBX                            ; 004fcf26 | g_ItemDefinitionArray | DAT_02dbadc8
         ;   Label: LAB_004fcf26
     PUSH EDI                            ; 004fcf27
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 004fcf28
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 004fcf28
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004fcf2d
     TEST EAX,EAX                        ; 004fcf30
     JZ 0x004fcf61                       ; 004fcf32

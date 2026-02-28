@@ -102,9 +102,9 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_exportToS3D_FUN_00479f30(CKeyFramed
                        (double)local_48[0] * 1.52587890625e-05,(double)local_48[1] * 1.52587890625e-05,
                        local_48[2],(double)local_48[3] * 1.52587890625e-05,
                        (double)local_38 * 1.52587890625e-05,local_34,
-                       SUB84((double)local_30 * 1.52587890625e-05,0),
+                       SUB84(__BITCAST_UINT64((double)local_30 * 1.52587890625e-05),0),
                        (int)((ulonglong)((double)local_30 * 1.52587890625e-05) >> 0x20),
-                       SUB84((double)local_2c * 1.52587890625e-05,0),
+                       SUB84(__BITCAST_UINT64((double)local_2c * 1.52587890625e-05),0),
                        (int)((ulonglong)((double)local_2c * 1.52587890625e-05) >> 0x20));
             iVar6 = iVar6 + 1;
             iVar8 = iVar8 + 0xc;
@@ -124,8 +124,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_exportToS3D_FUN_00479f30(CKeyFramed
       dVar3 = (double)*(int *)((int)&pCVar1->y + iVar6) * 0.00390625;
       dVar4 = (double)*(int *)((int)&pCVar1->x + iVar6) * 0.00390625;
       iVar6 = iVar6 + 0xc;
-      _fprintf(local_18,"%g,%g,%g\n",SUB84(dVar4,0),(int)((ulonglong)dVar4 >> 0x20),
-                 SUB84(dVar3,0),(int)((ulonglong)dVar3 >> 0x20),SUB84(dVar2,0),
+      _fprintf(local_18,"%g,%g,%g\n",SUB84(__BITCAST_UINT64(dVar4),0),(int)((ulonglong)dVar4 >> 0x20),
+                 SUB84(__BITCAST_UINT64(dVar3),0),(int)((ulonglong)dVar3 >> 0x20),SUB84(__BITCAST_UINT64(dVar2),0),
                  (int)((ulonglong)dVar2 >> 0x20));
     }
     _fprintf(local_18,"// lightList: \"name\", type, x,y,z, r,g,b, (type-specific info)\n");

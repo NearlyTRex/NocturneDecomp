@@ -25,7 +25,7 @@ int __cdecl shape_design_c_polygonToolModeManager_FUN_00464c90(int input_paramet
   float local_14;
   
   bVar7 = 0;
-  iVar2 = strcmp(g_LoadedModelName,&s_EmptyChar_0061c3e2);
+  iVar2 = _strcmp(g_LoadedModelName,&s_EmptyChar_0061c3e2);
   if (iVar2 == 0) {
     local_18 = -1;
   }
@@ -53,7 +53,7 @@ int __cdecl shape_design_c_polygonToolModeManager_FUN_00464c90(int input_paramet
       } while (cVar1 != '\0');
     }
     if ((g_ToolModeEnabled == 0) ||
-       (((iVar2 = strcmp(g_SavedModelName,g_LoadedModelName), iVar2 == 0
+       (((iVar2 = _strcmp(g_SavedModelName,g_LoadedModelName), iVar2 == 0
          && (g_VertexCount <= g_SavedVertexCount)) && (g_PolygonCount <= g_SavedPolygonCount)))) {
       if (g_ToolModeEnabled == 0) {
         local_18 = input_parameter;

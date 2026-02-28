@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_npc.cpp_CNPC_renderBackground_FUN_00544b70
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;
 ; *****************************************************************************
 
@@ -34,8 +34,8 @@ section .text
     PUSH 0x62f0f2                       ; 004f613c | = "ScatDazzle"
         ;   Label: LAB_004f613c
     PUSH EBX                            ; 004f6141
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 004f6142
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 004f6142
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004f6147
     TEST EAX,EAX                        ; 004f614a
     JZ 0x004f613a                       ; 004f614c

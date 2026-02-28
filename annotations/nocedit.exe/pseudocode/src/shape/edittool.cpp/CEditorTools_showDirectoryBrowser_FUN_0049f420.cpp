@@ -129,7 +129,7 @@ LAB_0049f47a:
                     (&local_1ec8.base,(int)local_5c4,pcVar2,1);
           engine_dosio_c_makePath_FUN_00481f50
                     (local_15d4,(char *)0x0,(char *)0x0,local_9c4,local_5c4);
-          iVar3 = stricmp(local_15d4,local_12c8);
+          iVar3 = _stricmp(local_15d4,local_12c8);
           if (iVar3 == 0) break;
           pcVar2 = pcVar2 + 1;
         } while ((int)pcVar2 < local_1ec8.base.item_count);
@@ -142,12 +142,12 @@ LAB_0049f47a:
     engine_dosio_c_CFileFinder_openSearch_FUN_00481c70(&local_18f0,"*.*");
     while (local_18f0.filename[0] != '\0') {
       if (((byte)local_18f0.file_size & 4) != 0) {
-        iVar3 = strcmp(local_18f0.filename,"..");
+        iVar3 = _strcmp(local_18f0.filename,"..");
         if (iVar3 == 0) {
           pcVar8 = "..\t\t(DIR)";
         }
         else {
-          iVar3 = strcmp(local_18f0.filename,".");
+          iVar3 = _strcmp(local_18f0.filename,".");
           if (iVar3 == 0) goto LAB_0049f64e;
           engine_dosio_c_splitPath_FUN_00481f20
                     (local_18f0.filename,(char *)0x0,(char *)0x0,local_ac4,&local_6c4);

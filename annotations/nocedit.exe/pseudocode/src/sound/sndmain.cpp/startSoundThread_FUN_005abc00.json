@@ -3,13 +3,13 @@
     "errors": [
       {
         "category": "other",
-        "column": 49,
+        "column": 58,
         "line": 18,
         "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "other",
-        "column": 77,
+        "column": 86,
         "line": 18,
         "message": "member reference base type 'double' is not a structure or union"
       },
@@ -26,12 +26,6 @@
         "message": "member reference base type 'double' is not a structure or union"
       },
       {
-        "category": "incompatible_types",
-        "column": 39,
-        "line": 42,
-        "message": "invalid operands to binary expression ('double' and 'int')"
-      },
-      {
         "category": "other",
         "column": 24,
         "line": 47,
@@ -42,12 +36,6 @@
         "column": 24,
         "line": 48,
         "message": "member reference base type 'double' is not a structure or union"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 33,
-        "line": 48,
-        "message": "invalid operands to binary expression ('double' and 'int')"
       }
     ],
     "success": false,
@@ -55,17 +43,15 @@
   },
   "complexity": {
     "assembly_lines": 72,
-    "complexity_score": 205,
+    "complexity_score": 165,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 40,
-    "suspect_count": 14,
+    "suspect_count": 11,
     "suspect_types": [
       "decompiler_intrinsic",
-      "double_reconstruction",
-      "extra_output",
       "sub84_truncation",
       "unknown_field"
     ],
@@ -96,7 +82,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "sound_sndmain.cpp_startSoundThread_FUN_005abc00",
-    "signature": "HANDLE __cdecl sound_sndmain_cpp_startSoundThread_FUN_005abc00(double latency_seconds)"
+    "signature": "int __cdecl sound_sndmain_cpp_startSoundThread_FUN_005abc00(double latency_seconds)"
   },
   "function_calls": [
     {
@@ -221,19 +207,11 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 8,
-      "match": "extraout_EAX",
-      "severity": "moderate",
-      "text": "int extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Unknown/mangled field access",
       "line": 11,
       "match": "._4_4_",
       "severity": "mild",
-      "text": "dVar1 = (double)CONCAT44(g_AudioLatencySeconds._4_4_,g_AudioLatencySeconds._0_4_);",
+      "text": "dVar1 = __BITCAST_DOUBLE(CONCAT44(g_AudioLatencySeconds._4_4_,g_AudioLatencySeconds._0_4_));",
       "type": "unknown_field"
     },
     {
@@ -241,32 +219,16 @@
       "line": 11,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "dVar1 = (double)CONCAT44(g_AudioLatencySeconds._4_4_,g_AudioLatencySeconds._0_4_);",
+      "text": "dVar1 = __BITCAST_DOUBLE(CONCAT44(g_AudioLatencySeconds._4_4_,g_AudioLatencySeconds._0_4_));",
       "type": "unknown_field"
-    },
-    {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 11,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "dVar1 = (double)CONCAT44(g_AudioLatencySeconds._4_4_,g_AudioLatencySeconds._0_4_);",
-      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 11,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "dVar1 = (double)CONCAT44(g_AudioLatencySeconds._4_4_,g_AudioLatencySeconds._0_4_);",
+      "text": "dVar1 = __BITCAST_DOUBLE(CONCAT44(g_AudioLatencySeconds._4_4_,g_AudioLatencySeconds._0_4_));",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 26,
-      "match": "extraout_EAX",
-      "severity": "moderate",
-      "text": "if (extraout_EAX != 0) {",
-      "type": "extra_output"
     },
     {
       "description": "Unknown/mangled field access",
@@ -281,7 +243,7 @@
       "line": 35,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "g_AudioLatencySeconds._0_4_ = SUB84(dVar1,0);",
+      "text": "g_AudioLatencySeconds._0_4_ = SUB84(__BITCAST_UINT64(dVar1),0);",
       "type": "unknown_field"
     },
     {
@@ -289,7 +251,7 @@
       "line": 35,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "g_AudioLatencySeconds._0_4_ = SUB84(dVar1,0);",
+      "text": "g_AudioLatencySeconds._0_4_ = SUB84(__BITCAST_UINT64(dVar1),0);",
       "type": "sub84_truncation"
     },
     {
@@ -297,7 +259,7 @@
       "line": 35,
       "match": "SUB84",
       "severity": "mild",
-      "text": "g_AudioLatencySeconds._0_4_ = SUB84(dVar1,0);",
+      "text": "g_AudioLatencySeconds._0_4_ = SUB84(__BITCAST_UINT64(dVar1),0);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -313,7 +275,7 @@
       "line": 41,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "g_AudioLatencySeconds._0_4_ = SUB84(dVar1,0);",
+      "text": "g_AudioLatencySeconds._0_4_ = SUB84(__BITCAST_UINT64(dVar1),0);",
       "type": "unknown_field"
     },
     {
@@ -321,7 +283,7 @@
       "line": 41,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "g_AudioLatencySeconds._0_4_ = SUB84(dVar1,0);",
+      "text": "g_AudioLatencySeconds._0_4_ = SUB84(__BITCAST_UINT64(dVar1),0);",
       "type": "sub84_truncation"
     },
     {
@@ -329,7 +291,7 @@
       "line": 41,
       "match": "SUB84",
       "severity": "mild",
-      "text": "g_AudioLatencySeconds._0_4_ = SUB84(dVar1,0);",
+      "text": "g_AudioLatencySeconds._0_4_ = SUB84(__BITCAST_UINT64(dVar1),0);",
       "type": "decompiler_intrinsic"
     }
   ]

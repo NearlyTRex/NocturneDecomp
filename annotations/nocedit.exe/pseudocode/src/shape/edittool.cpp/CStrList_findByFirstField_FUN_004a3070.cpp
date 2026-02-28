@@ -41,7 +41,7 @@ int __cdecl shape_edittool_cpp_CStrList_findByFirstField_FUN_004a3070(CStrList *
         pcVar4 = pcVar4 + 1;
       }
       *pcVar4 = '\0';
-      iVar3 = stricmp(local_19c,local_d4);
+      iVar3 = _stricmp(local_19c,local_d4);
       if (iVar3 == 0) {
         return index;
       }

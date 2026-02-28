@@ -32,7 +32,7 @@
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_ctype.c_toupper_FUN_005ff9e0
 ;   crt_stdio.c_fscanf_FUN_005fe7c0
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;   engine_fileio.cpp_CFileManager_registerFiles_FUN_004b5640
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;   shape_memdbg.cpp_openFile_FUN_0050f7a0
@@ -171,8 +171,8 @@ section .text
     PUSH EBX                            ; 004b6d7a
     ADD EBP,EDX                         ; 004b6d7b
     PUSH EBP                            ; 004b6d7d
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 004b6d7e
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 004b6d7e
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004b6d83
     TEST EAX,EAX                        ; 004b6d86
     JLE 0x004b6d47                      ; 004b6d88

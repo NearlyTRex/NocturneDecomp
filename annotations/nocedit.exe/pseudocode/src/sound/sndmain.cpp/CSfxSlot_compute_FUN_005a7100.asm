@@ -198,7 +198,7 @@ section .text
     PUSH ESI                            ; 005a7258
         ;   Label: LAB_005a7258
     CALL sound_sndmain.cpp_CSfxSlot_computeDistancesToSpeakers_FUN_005a6d80 ; 005a7259
-        ;   XREF to: 005a6d80 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_CSfxSlot_computeDistancesToSpeakers_FUN_005a6d80(CSfxSlot * this_ptr)
+        ;   XREF to: 005a6d80 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSlot_computeDistancesToSpeakers_FUN_005a6d80(CSfxSlot * this_ptr)
     ADD ESP,0x4                         ; 005a725e
     PUSH ESI                            ; 005a7261
     CALL sound_sndmain.cpp_CSfxSlot_computeChannelDelays_FUN_005a6df0 ; 005a7262
@@ -220,7 +220,7 @@ section .text
     PUSH ESI                            ; 005a7292
         ;   Label: LAB_005a7292
     CALL sound_sndmain.cpp_CSfxSlot_computeChannelVolumes_FUN_005a6f00 ; 005a7293
-        ;   XREF to: 005a6f00 (UNCONDITIONAL_CALL)  ; float sound_sndmain.cpp_CSfxSlot_computeChannelVolumes_FUN_005a6f00(CSfxSlot * this_ptr)
+        ;   XREF to: 005a6f00 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSlot_computeChannelVolumes_FUN_005a6f00(CSfxSlot * this_ptr)
     MOV EAX,dword ptr [ESI + 0x118]     ; 005a7298
     ADD ESP,0x4                         ; 005a729e
     CMP EAX,0x1                         ; 005a72a1
@@ -451,7 +451,7 @@ section .text
     FSTP double ptr [ESP + 0x10]        ; 005a74f6
         ;   Label: LAB_005a74f6
     FLD double ptr [ESP + 0x10]         ; 005a74fa
-    FMUL double ptr [0x00681b30]        ; 005a74fe | DOUBLE_00681b30
+    FMUL double ptr [0x00681b30]        ; 005a74fe | g_Cached3DDistanceFactor
     FLD double ptr [0x00663140]         ; 005a7504 | DOUBLE_00663140
     FXCH                                ; 005a750a
     FADD ST0,ST1                        ; 005a750c

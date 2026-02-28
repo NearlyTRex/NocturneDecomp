@@ -11,7 +11,7 @@
 ;   core_script.cpp_CScript_rebuildEventXRefs_FUN_00567630 at 005676af
 ;
 ; Called Functions:
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;
 ; *****************************************************************************
 
@@ -25,8 +25,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0x14]      ; 005675a7
     PUSH ESI                            ; 005675ab
     PUSH EBX                            ; 005675ac
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 005675ad
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 005675ad
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 005675b2
     TEST EAX,EAX                        ; 005675b5
     JNZ 0x005675f8                      ; 005675b7

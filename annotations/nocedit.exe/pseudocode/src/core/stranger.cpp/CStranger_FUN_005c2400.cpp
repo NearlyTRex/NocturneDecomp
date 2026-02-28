@@ -116,7 +116,7 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c2400(CStranger *this_ptr)
                                );
             if (0.0 < pCVar3->z) {
               uStack_f4 = (uint)((ulonglong)dVar1 >> 0x20);
-              uStack_f8 = SUB84(dVar1,0);
+              uStack_f8 = SUB84(__BITCAST_UINT64(dVar1),0);
               engine_console_cpp_CConsole_printf_FUN_00441890
                         (g_CConsolePtr,"Ladder dot : %f\n",uStack_f8,uStack_f4);
               this_ptr->ladder_to_descend = this_ptr_00;

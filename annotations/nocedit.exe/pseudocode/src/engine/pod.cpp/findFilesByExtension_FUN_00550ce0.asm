@@ -26,8 +26,8 @@
 ;
 ; Called Functions:
 ;   crt_ctype.c_toupper_FUN_005ff9e0
+;   crt_string.c__strcmp_FUN_005fef20
 ;   crt_string.c__strncpy_FUN_00600f40
-;   crt_string.c_strcmp_FUN_005fef20
 ;   engine_pod.cpp_CPodFile_findFileIndex_FUN_00550140
 ;
 ; *****************************************************************************
@@ -163,8 +163,8 @@ section .text
     PUSH EAX                            ; 00550e08
     LEA EAX,[ESP + 0x4]                 ; 00550e09
     PUSH EAX                            ; 00550e0d
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 00550e0e
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 00550e0e
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 00550e13
     TEST EAX,EAX                        ; 00550e16
     JNZ 0x00550e72                      ; 00550e18

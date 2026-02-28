@@ -72,7 +72,7 @@
 ;   core_setutil.cpp_C3DSCamera_apply_FUN_00585870
 ;   core_setutil.cpp_C3DSLight_isVisible_FUN_00587df0
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
-;   crt_string.c_strcmp_FUN_005fef20
+;   crt_string.c__strcmp_FUN_005fef20
 ;   ... and 2 more
 ;
 ; *****************************************************************************
@@ -175,8 +175,8 @@ section .text
     PUSH EDI                            ; 0056a60b
     ADD EAX,0x40                        ; 0056a60c
     PUSH EAX                            ; 0056a60f
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 0056a610
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 0056a610
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 0056a615
     TEST EAX,EAX                        ; 0056a618
     JNZ 0x0056a875                      ; 0056a61a

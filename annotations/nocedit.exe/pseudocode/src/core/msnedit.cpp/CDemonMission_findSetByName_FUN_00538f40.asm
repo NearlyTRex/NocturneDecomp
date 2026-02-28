@@ -11,7 +11,7 @@
 ;   core_msnedit.cpp_CDemonMission_addSet_FUN_00538d60 at 00538d6c
 ;
 ; Called Functions:
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;
 ; *****************************************************************************
 
@@ -33,8 +33,8 @@ section .text
     PUSH EBP                            ; 00538f5e
         ;   Label: LAB_00538f5e
     PUSH ESI                            ; 00538f5f
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 00538f60
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 00538f60
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 00538f65
     TEST EAX,EAX                        ; 00538f68
     JZ 0x00538f87                       ; 00538f6a

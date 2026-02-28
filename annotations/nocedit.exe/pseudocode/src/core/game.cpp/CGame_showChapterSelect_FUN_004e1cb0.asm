@@ -54,7 +54,7 @@
 ;   core_mission.cpp_CDemonMission_FUN_00524760
 ;   core_mission.cpp_CDemonMission_load_FUN_00522d90
 ;   core_mission.cpp_CDemonMission_run_FUN_00524420
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;   engine_dosio.c_getFile_FUN_00481a50
 ;   engine_ini.cpp_CIniFile_ctor_FUN_004fba70
 ;   engine_ini.cpp_CIniFile_getInteger_FUN_004fbc30
@@ -291,8 +291,8 @@ section .text
     PUSH EAX                            ; 004e1fc2
     PUSH 0x2d82c80                      ; 004e1fc3 | g_CurrentSaveFile
     MOV ESI,0x1                         ; 004e1fc8
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 004e1fcd
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 004e1fcd
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004e1fd2
     TEST EAX,EAX                        ; 004e1fd5
     JZ 0x004e2001                       ; 004e1fd7

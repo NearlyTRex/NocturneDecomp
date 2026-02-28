@@ -19,7 +19,7 @@
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_findActorVariable_FUN_004b0bf0
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;
 ; *****************************************************************************
 
@@ -69,8 +69,8 @@ section .text
         ;   Label: LAB_004b0bc9
     MOV EBP,dword ptr [EBX + EAX*0x1 + 0x14d158] ; 004b0bca | g_CDemonSetInstance.actors[0]
     PUSH EBP                            ; 004b0bd1
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 004b0bd2
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 004b0bd2
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004b0bd7
     TEST EAX,EAX                        ; 004b0bda
     JNZ 0x004b0bc3                      ; 004b0bdc

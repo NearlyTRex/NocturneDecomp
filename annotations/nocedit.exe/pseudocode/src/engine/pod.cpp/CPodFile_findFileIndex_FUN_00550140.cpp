@@ -20,7 +20,7 @@ int __cdecl engine_pod_cpp_CPodFile_findFileIndex_FUN_00550140(CPodFile *this_pt
     do {
       while( true ) {
         iVar1 = (iVar4 + iVar3) / 2;
-        iVar2 = stricmp
+        iVar2 = _stricmp
                           (filename,(char *)this_ptr->directory_entries[iVar1].name_or_offset);
         if (iVar2 == 0) {
           return iVar1;

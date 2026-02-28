@@ -43,7 +43,7 @@
 ;   TerminatedCString s_sound_mp3_cpp_0063ad14
 ;   TerminatedCString s_Out_of_memory_File_s_0063ad25
 ;   double DOUBLE_0063b2aa = 1000
-;   void*[4][4] g_MpegLayer2AllocationTables
+;   int[4][4] g_MpegLayer2AllocationTables
 ;   double[2][4] g_MpegSampleRateTable
 ;   int[2][3][15] g_MpegBitrateTable
 ;   char* g_CurrentFilename
@@ -214,7 +214,7 @@ section .text
     ADD EAX,0x5320                      ; 005347c1
     PUSH EAX                            ; 005347c6
     CALL sound_mp3.cpp_CFileBitStream_readFrameHeader_FUN_0052f5b0 ; 005347c7
-        ;   XREF to: 0052f5b0 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_CFileBitStream_readFrameHeader_FUN_0052f5b0(CFileBitStream * this_ptr, SMpegFrameHeader * header_out)
+        ;   XREF to: 0052f5b0 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_CFileBitStream_readFrameHeader_FUN_0052f5b0(CFileBitStream * this_ptr, SMpegFrameHeader * * header_out)
     ADD ESP,0x8                         ; 005347cc
     MOV EDI,dword ptr [ESP + 0x30]      ; 005347cf
     MOV EAX,dword ptr [EDI + 0x1c]      ; 005347d3

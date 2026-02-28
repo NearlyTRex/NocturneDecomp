@@ -16,7 +16,7 @@
 ;   engine_pod.cpp_findFilesByExtension_FUN_00550ce0 at 00550e2d
 ;
 ; Called Functions:
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;
 ; *****************************************************************************
 
@@ -47,8 +47,8 @@ section .text
     PUSH ECX                            ; 0055016f
     MOV EAX,dword ptr [ESP + 0x1c]      ; 00550170
     PUSH EAX                            ; 00550174
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 00550175
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 00550175
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0055017a
     TEST EAX,EAX                        ; 0055017d
     JZ 0x00550194                       ; 0055017f

@@ -14009,6 +14009,14 @@
         {
           "name":"this_ptr",
           "type":"CSoundDevice*"
+        },
+        {
+          "name":"output_buffer",
+          "type":"short*"
+        },
+        {
+          "name":"num_samples",
+          "type":"int"
         }
       ],
       "return_type":"int",
@@ -14078,6 +14086,18 @@
         },
         {
           "name":"z_top",
+          "type":"double"
+        },
+        {
+          "name":"x_right",
+          "type":"double"
+        },
+        {
+          "name":"y_right",
+          "type":"double"
+        },
+        {
+          "name":"z_right",
           "type":"double"
         }
       ],
@@ -40973,7 +40993,7 @@
           "len":4,
           "name":"position_source_ptr",
           "offset":28,
-          "type":"CVector3d*"
+          "type":"void*"
         },
         {
           "len":4,
@@ -40991,7 +41011,7 @@
           "len":4,
           "name":"velocity_source_ptr",
           "offset":60,
-          "type":"CVector3d*"
+          "type":"void*"
         },
         {
           "len":4,
@@ -41078,38 +41098,14 @@
           "type":"int"
         },
         {
-          "len":4,
-          "name":"loop_length",
+          "len":20,
+          "name":"loop_endpoints",
           "offset":296,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"loop_reserved1",
-          "offset":300,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"loop_reserved2",
-          "offset":304,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"loop_reserved3",
-          "offset":308,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"loop_reserved4",
-          "offset":312,
-          "type":"int"
+          "type":"int[5]"
         },
         {
           "len":20,
-          "name":"loop_markers",
+          "name":"loop_destinations",
           "offset":316,
           "type":"int[5]"
         },
@@ -41285,7 +41281,7 @@
           "len":4,
           "name":"stop_after_fade",
           "offset":276,
-          "type":"int"
+          "type":"float"
         },
         {
           "len":4,

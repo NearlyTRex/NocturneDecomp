@@ -44,7 +44,7 @@
 ;
 ; Called Functions:
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
-;   crt_string.c_strcmp_FUN_005fef20
+;   crt_string.c__strcmp_FUN_005fef20
 ;   engine_2d.c_drawTextColor_FUN_00402430
 ;   shape_design.c_calculateAngleBetweenPolygonNormals_FUN_00461cb0
 ;   shape_design.c_detectMouseButtonClick_FUN_00464870
@@ -74,8 +74,8 @@ section .text
     PUSH EAX                            ; 00464ca1 | s_EmptyChar_0061c3e2
     MOV EAX,0x66eda8                    ; 00464ca2 | g_LoadedModelName
     PUSH EAX                            ; 00464ca7 | g_LoadedModelName
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 00464ca8
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 00464ca8
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 00464cad
     TEST EAX,EAX                        ; 00464cb0
     JNZ 0x00464cc0                      ; 00464cb2
@@ -136,8 +136,8 @@ section .text
     PUSH EAX                            ; 00464d4d | g_LoadedModelName
     MOV EAX,0x15c4890                   ; 00464d4e | g_SavedModelName
     PUSH EAX                            ; 00464d53 | g_SavedModelName
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 00464d54
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 00464d54
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 00464d59
     TEST EAX,EAX                        ; 00464d5c
     JNZ 0x00464d6d                      ; 00464d5e

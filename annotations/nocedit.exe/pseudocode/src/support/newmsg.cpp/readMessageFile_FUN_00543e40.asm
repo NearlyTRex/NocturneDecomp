@@ -41,7 +41,7 @@
 ;   crt_stdio.c_fgets_FUN_005fefd0
 ;   crt_stdio.c_fscanf_FUN_005fe7c0
 ;   crt_stdio.c_ftell_FUN_00601560
-;   crt_string.c_strcmp_FUN_005fef20
+;   crt_string.c__strcmp_FUN_005fef20
 ;   engine_dosio.c_getFile_FUN_00481a50
 ;   engine_dosio.c_getFileSize_FUN_00481880
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
@@ -197,8 +197,8 @@ section .text
     PUSH EAX                            ; 00543fd7
     MOV EDX,dword ptr [ESI + 0x2fa8cdc] ; 00543fd8 | g_MessageKeys | DAT_02fa8ce0
     PUSH EDX                            ; 00543fde
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 00543fdf
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 00543fdf
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 00543fe4
     TEST EAX,EAX                        ; 00543fe7
     JLE 0x0054401b                      ; 00543fe9

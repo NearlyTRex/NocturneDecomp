@@ -38,7 +38,7 @@
 ;   core_dpart.cpp_CDemonPart_calculateFaceNormals_FUN_004824f0
 ;   crt_math.c_round_FUN_005fe6b0
 ;   crt_stdio.c_fread_FUN_005fd990
-;   crt_string.c_strcmp_FUN_005fef20
+;   crt_string.c__strcmp_FUN_005fef20
 ;
 ; *****************************************************************************
 
@@ -169,8 +169,8 @@ section .text
     ADD ESP,0x10                        ; 004826c4
     PUSH 0x6217ef                       ; 004826c7 | = "newformat"
     PUSH EBX                            ; 004826cc
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 004826cd
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 004826cd
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 004826d2
     TEST EAX,EAX                        ; 004826d5
     JZ 0x00482893                       ; 004826d7

@@ -2,36 +2,6 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
-        "column": 17,
-        "line": 230,
-        "message": "assigning to 'char *' from 'const char *' discards qualifiers"
-      },
-      {
-        "category": "other",
-        "column": 17,
-        "line": 260,
-        "message": "assigning to 'char *' from 'const char *' discards qualifiers"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 268,
-        "message": "assigning to 'char *' from 'const char *' discards qualifiers"
-      },
-      {
-        "category": "other",
-        "column": 21,
-        "line": 277,
-        "message": "assigning to 'char *' from 'const char *' discards qualifiers"
-      },
-      {
-        "category": "other",
-        "column": 23,
-        "line": 372,
-        "message": "assigning to 'char *' from 'const char *' discards qualifiers"
-      },
-      {
         "category": "format_error",
         "column": 89,
         "line": 872,
@@ -42,36 +12,6 @@
         "column": 86,
         "line": 1265,
         "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 64,
-        "line": 1369,
-        "message": "invalid operands to binary expression ('double' and 'int')"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 1386,
-        "message": "assigning to 'char *' from 'const char *' discards qualifiers"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 1389,
-        "message": "assigning to 'char *' from 'const char *' discards qualifiers"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 1411,
-        "message": "assigning to 'char *' from 'const char *' discards qualifiers"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 1414,
-        "message": "assigning to 'char *' from 'const char *' discards qualifiers"
       },
       {
         "category": "undeclared_identifier",
@@ -115,16 +55,15 @@
   },
   "complexity": {
     "assembly_lines": 7415,
-    "complexity_score": 3521,
+    "complexity_score": 3476,
     "cross_reference_count": 4,
     "function_call_count": 77,
     "global_count": 341,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 3366,
-    "suspect_count": 13,
+    "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic",
-      "double_reconstruction",
       "pointer_cast",
       "sub84_truncation",
       "warning_type_propagation"
@@ -513,12 +452,12 @@
     {
       "addr": "005fe7f0",
       "is_variadic": false,
-      "name": "crt_string.c_stricmp_FUN_005fe7f0"
+      "name": "crt_string.c__stricmp_FUN_005fe7f0"
     },
     {
       "addr": "005ff070",
       "is_variadic": false,
-      "name": "crt_string.c_strnicmp_FUN_005ff070"
+      "name": "crt_string.c__strnicmp_FUN_005ff070"
     },
     {
       "addr": "00441890",
@@ -3956,19 +3895,11 @@
       "type": "warning_type_propagation"
     },
     {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 227,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "dVar1 = (double)CONCAT44(local_124,local_11c);",
-      "type": "double_reconstruction"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 227,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "dVar1 = (double)CONCAT44(local_124,local_11c);",
+      "text": "dVar1 = __BITCAST_DOUBLE(CONCAT44(local_124,local_11c));",
       "type": "decompiler_intrinsic"
     },
     {
@@ -3980,19 +3911,11 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 1357,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "dVar1 = (double)CONCAT44(local_124,local_11c);",
-      "type": "double_reconstruction"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 1357,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "dVar1 = (double)CONCAT44(local_124,local_11c);",
+      "text": "dVar1 = __BITCAST_DOUBLE(CONCAT44(local_124,local_11c));",
       "type": "decompiler_intrinsic"
     },
     {
@@ -4000,7 +3923,7 @@
       "line": 1362,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "SUB84(dVar1,0),",
+      "text": "SUB84(__BITCAST_UINT64(dVar1),0),",
       "type": "sub84_truncation"
     },
     {
@@ -4008,23 +3931,15 @@
       "line": 1362,
       "match": "SUB84",
       "severity": "mild",
-      "text": "SUB84(dVar1,0),",
+      "text": "SUB84(__BITCAST_UINT64(dVar1),0),",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 1398,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "dVar1 = (double)CONCAT44(local_124,local_11c);",
-      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 1398,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "dVar1 = (double)CONCAT44(local_124,local_11c);",
+      "text": "dVar1 = __BITCAST_DOUBLE(CONCAT44(local_124,local_11c));",
       "type": "decompiler_intrinsic"
     },
     {
@@ -4036,19 +3951,11 @@
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 3212,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "dVar1 = (double)CONCAT44(pcVar17,local_124);",
-      "type": "double_reconstruction"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 3212,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "dVar1 = (double)CONCAT44(pcVar17,local_124);",
+      "text": "dVar1 = __BITCAST_DOUBLE(CONCAT44(pcVar17,local_124));",
       "type": "decompiler_intrinsic"
     }
   ]

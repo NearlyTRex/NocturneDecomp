@@ -17,7 +17,7 @@ int __cdecl core_event_cpp_CEventList_findSfxEntry_FUN_004b0d60(CEventList *this
   if (0 < (this_ptr->sfx_handles).count) {
     str1 = (this_ptr->sfx_handles).entries[0].handle_name;
     do {
-      iVar1 = stricmp(str1,name);
+      iVar1 = _stricmp(str1,name);
       if (iVar1 == 0) {
         return iVar2;
       }

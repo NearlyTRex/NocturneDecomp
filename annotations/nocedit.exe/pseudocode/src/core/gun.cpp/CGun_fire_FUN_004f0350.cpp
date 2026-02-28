@@ -128,7 +128,7 @@ int __cdecl core_gun_cpp_CGun_fire_FUN_004f0350(CGun *this_ptr)
           if (iVar2 != 0) {
             in_stack_fffffebc =
                  (float)(*(((this_ptr->base).base.vtable._uc)->_uc).getGrabbed)
-                                  ((CCharacter *)this_ptr,SUB84(dVar3,0),
+                                  ((CCharacter *)this_ptr,SUB84(__BITCAST_UINT64(dVar3),0),
                                    (int)((ulonglong)dVar3 >> 0x20));
             core_trigger_cpp_CTrigger_applyDamage_FUN_005e0b00(this_ptr_02,in_stack_fffffebc);
           }

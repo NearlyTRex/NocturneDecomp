@@ -20,7 +20,7 @@ int __cdecl core_skeledit_cpp_FUN_0058ac30(void)
   if (0 < *in_stack_00000004) {
     str1 = in_stack_00000004 + 1;
     do {
-      iVar1 = stricmp((char *)str1,in_stack_00000008);
+      iVar1 = _stricmp((char *)str1,in_stack_00000008);
       if (iVar1 == 0) {
         return iVar2;
       }

@@ -3792,15 +3792,15 @@ char g_TrainSoundFilenameTemplate[] = "";
 char g_ActorRefDefaultBuffer[] = "";
 
 // char[256]
-char g_DefaultRecordingDeviceName[] = "";
+char g_DefaultSoundDeviceName[] = "";
 char g_DefaultDeviceName[] = "";
 
 // char[260]
 char g_TempDirectoryBuffer[] = "";
 
 // double
-double DOUBLE_00681b30 = 1;
-double DOUBLE_00681b38 = 1;
+double g_Cached3DDistanceFactor = 1;
+double g_Cached3DDistanceFactorInverse = 1;
 double g_SelectedClearColor = 0;
 double g_ClearColor = 0;
 

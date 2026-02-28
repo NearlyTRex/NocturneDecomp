@@ -19,7 +19,7 @@
 ;   int g_CurrentPartIndex
 ;
 ; Called Functions:
-;   crt_string.c_strcmp_FUN_005fef20
+;   crt_string.c__strcmp_FUN_005fef20
 ;   engine_2d.c_getInputWithPrompt_FUN_004032c0
 ;
 ; *****************************************************************************
@@ -71,8 +71,8 @@ section .text
     PUSH EAX                            ; 0045dee5
     LEA EAX,[EBP + -0x1c]               ; 0045dee6
     PUSH EAX                            ; 0045dee9
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 0045deea
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 0045deea
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 0045deef
     TEST EAX,EAX                        ; 0045def2
     JNZ 0x0045defe                      ; 0045def4

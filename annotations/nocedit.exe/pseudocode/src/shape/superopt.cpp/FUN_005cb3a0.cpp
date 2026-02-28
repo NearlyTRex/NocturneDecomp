@@ -231,7 +231,7 @@ int __cdecl shape_superopt_cpp_FUN_005cb3a0(void)
             in_stack_fffffe80 =
                  shape_superopt_cpp_getSignedTriangleArea2D_FUN_005d6640
                            (&local_108,&local_118,SUB84(in_stack_fffffe80,0));
-            local_148 = SUB84(dVar4,0);
+            local_148 = SUB84(__BITCAST_UINT64(dVar4),0);
             if (((((((ulonglong)dVar4 & 0x7fffffff00000000) == 0) && (local_148 == 0)) &&
                  (((ulonglong)in_stack_fffffe80 & 0x7fffffff00000000) == 0)) &&
                 (SUB84(in_stack_fffffe80,0) == 0)) ||

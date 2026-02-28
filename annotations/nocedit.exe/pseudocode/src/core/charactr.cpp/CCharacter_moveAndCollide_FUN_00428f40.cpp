@@ -113,7 +113,7 @@ void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40(CCharacter
     local_20 = iVar11;
     if (-1 < iVar11) {
       do {
-        iVar11 = strnicmp(str1->motion_name,local_84,0xb);
+        iVar11 = _strnicmp(str1->motion_name,local_84,0xb);
         if (iVar11 == 0) {
           (this_ptr->velocity).z = 0.0;
           (this_ptr->velocity).y = (this_ptr->velocity).z;

@@ -220,7 +220,7 @@ inline int getsockname(_SOCKET s, struct SOCKADDR* name, int* namelen) {
     return -1;  // SOCKET_ERROR
 }
 
-inline int ioctlsocket(_SOCKET s, long cmd, ulong* argp) {
+inline int ioctlsocket(_SOCKET s, long cmd, uint* argp) {
     (void)s; (void)cmd; (void)argp;
     return -1;  // SOCKET_ERROR
 }

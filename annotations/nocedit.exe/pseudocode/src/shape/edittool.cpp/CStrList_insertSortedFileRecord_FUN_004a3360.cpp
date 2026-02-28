@@ -59,7 +59,7 @@ void __cdecl shape_edittool_cpp_CStrList_insertSortedFileRecord_FUN_004a3360(CSt
       pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(this_ptr,index);
       sscanf(pcVar2,format,pcVar7,pcVar6);
       engine_dosio_c_makePath_FUN_00481f50(local_600,(char *)0x0,(char *)0x0,local_904,local_b04);
-      iVar3 = stricmp(search_key,local_600);
+      iVar3 = _stricmp(search_key,local_600);
       if (iVar3 == 0) {
         return;
       }

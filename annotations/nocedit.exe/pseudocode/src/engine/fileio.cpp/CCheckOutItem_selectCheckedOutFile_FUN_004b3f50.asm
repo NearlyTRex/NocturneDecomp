@@ -28,7 +28,7 @@
 ;   SVersionControlSession g_VersionControlSession
 ;
 ; Called Functions:
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;   engine_fileio.cpp_CCheckOutList_findEntry_FUN_004b2e60
 ;   engine_fileio.cpp_CCheckOutList_load_FUN_004b2890
 ;   engine_fileio.cpp_CCheckOutList_reset_FUN_004b2860
@@ -154,8 +154,8 @@ section .text
     PUSH 0x2d12bd0                      ; 004b4049 | g_VersionControlSession
     ADD EAX,0x104                       ; 004b404e
     PUSH EAX                            ; 004b4053
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 004b4054
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 004b4054
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004b4059
     TEST EAX,EAX                        ; 004b405c
     JZ 0x004b3fca                       ; 004b405e
@@ -197,8 +197,8 @@ section .text
     PUSH 0x2d12bd0                      ; 004b40b8 | g_VersionControlSession
     ADD EAX,0x104                       ; 004b40bd
     PUSH EAX                            ; 004b40c2
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 004b40c3
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 004b40c3
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004b40c8
     TEST EAX,EAX                        ; 004b40cb
     JNZ 0x004b40fe                      ; 004b40cd

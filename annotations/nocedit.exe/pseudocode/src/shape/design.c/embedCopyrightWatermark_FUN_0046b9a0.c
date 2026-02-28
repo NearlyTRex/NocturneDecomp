@@ -12,7 +12,7 @@ void __cdecl shape_design_c_embedCopyrightWatermark_FUN_0046b9a0(void *image_buf
   _tm *time_ptr;
   char local_4dc [1024];
   char local_dc [200];
-  time_t local_14;
+  int local_14;
   
   if (texture_size < 0x100) {
     if (texture_size < 0x40) {

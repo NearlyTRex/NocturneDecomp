@@ -15,7 +15,7 @@
 ;   shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_004a37b0 at 004a38a5
 ;
 ; Called Functions:
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;   shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70
 ;
 ; *****************************************************************************
@@ -41,8 +41,8 @@ section .text
         ;   XREF to: 004a2f70 (UNCONDITIONAL_CALL)  ; char * shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70(CStrList * this_ptr, int index)
     ADD ESP,0x8                         ; 004a304b
     PUSH EAX                            ; 004a304e
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 004a304f
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 004a304f
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004a3054
     TEST EAX,EAX                        ; 004a3057
     JZ 0x004a3069                       ; 004a3059

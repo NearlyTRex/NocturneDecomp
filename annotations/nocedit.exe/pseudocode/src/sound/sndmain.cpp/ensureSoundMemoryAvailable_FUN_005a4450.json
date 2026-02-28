@@ -212,7 +212,7 @@
       "line": 13,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "if (*(int *)((int)g_SfxSamples[0].loop_markers + iVar2 + -0x1c) != 0) {",
+      "text": "if (*(int *)((int)g_SfxSamples[0].loop_endpoints + iVar2 + -8) != 0) {",
       "type": "pointer_cast"
     },
     {
@@ -220,7 +220,7 @@
       "line": 16,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "iVar4 = iVar4 + iVar3 * *(int *)((int)g_SfxSamples[0].loop_markers + iVar2 + 0x24);",
+      "text": "iVar4 = iVar4 + iVar3 * *(int *)((int)g_SfxSamples[0].loop_destinations + iVar2 + 0x24);",
       "type": "pointer_cast"
     }
   ]

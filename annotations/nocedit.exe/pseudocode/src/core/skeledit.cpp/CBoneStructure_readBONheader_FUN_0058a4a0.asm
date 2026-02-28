@@ -75,7 +75,7 @@
 ;   crt_stack.c___STK_FUN_005ff9f3
 ;   crt_stdio.c_fgetc_FUN_005fe840
 ;   crt_stdio.c_fscanf_FUN_005fe7c0
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;
 ; *****************************************************************************
 
@@ -299,8 +299,8 @@ section .text
     PUSH ESI                            ; 0058a70b
     MOV EDI,dword ptr [ESP + 0x22c]     ; 0058a70c
     PUSH EDI                            ; 0058a713
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 0058a714
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 0058a714
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0058a719
     TEST EAX,EAX                        ; 0058a71c
         ;   Label: LAB_0058a71c

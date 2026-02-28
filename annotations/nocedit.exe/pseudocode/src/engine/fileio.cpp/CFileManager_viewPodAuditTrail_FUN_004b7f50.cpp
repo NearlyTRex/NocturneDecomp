@@ -104,7 +104,7 @@ void __cdecl engine_fileio_cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50(CFile
         pcVar4 = "Change";
       }
       if ((local_2e8 != local_10) ||
-         (iVar2 = stricmp((char *)&local_308,local_98), iVar2 != 0)) {
+         (iVar2 = _stricmp((char *)&local_308,local_98), iVar2 != 0)) {
         _sprintf(local_508,"--\t%s\t%s",&local_308,local_34);
         shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_8b0.base,local_508);
         pcVar6 = (char *)&local_308;

@@ -71,6 +71,6 @@ void __cdecl sound_mp3_cpp_calculateMpegFrame_FUN_0052ea80(SMpegFrame *frame)
     core_main_c_displayErrorAndQuit_FUN_00506f10
               ("js_bound bad layer/modext (%d/%d)  File: %s",iVar6,iVar2,g_CurrentMp3Filename);
   }
-  frame->js_bound = (int)g_MpegLayer2AllocationTables[iVar6][iVar2];
+  frame->js_bound = g_MpegLayer2AllocationTables[iVar6][iVar2];
   return;
 }

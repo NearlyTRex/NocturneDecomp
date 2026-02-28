@@ -33,7 +33,7 @@
 ;
 ; Called Functions:
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;   engine_dosio.c_CFileFinder_closeSearch_FUN_00481d70
 ;   engine_dosio.c_CFileFinder_ctor_FUN_00481c30
 ;   engine_dosio.c_CFileFinder_dtor_FUN_00481c50
@@ -244,8 +244,8 @@ section .text
     PUSH 0x2d12bd0                      ; 004b5246 | g_VersionControlSession
     ADD EAX,0x104                       ; 004b524b
     PUSH EAX                            ; 004b5250
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 004b5251
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 004b5251
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004b5256
     MOV EDX,EAX                         ; 004b5259
     MOV EAX,dword ptr [ESP + 0x854]     ; 004b525b

@@ -118,7 +118,7 @@ void __cdecl shape_design_c_exportModelToBIN_FUN_0045aa80(char *filename,int dep
       }
       local_18 = (int)ROUND(ROUND(((double)local_14 * 0.6931471805599453) /
                                   (2 * 0.6931471805599453))) + 1;
-      dVar7 = ldexp((double)CONCAT44(local_18,0x3ff00000),in_stack_ffffff04)
+      dVar7 = ldexp(__BITCAST_DOUBLE(CONCAT44(local_18,0x3ff00000)),in_stack_ffffff04)
       ;
       local_14 = (float)64 / (float)dVar7;
     }
@@ -240,7 +240,7 @@ void __cdecl shape_design_c_exportModelToBIN_FUN_0045aa80(char *filename,int dep
         }
       }
       else {
-        iVar4 = strcmp
+        iVar4 = _strcmp
                           (g_TempTextureName,g_ModelPolygonData[local_28].texture_name);
         if (iVar4 != 0) {
           pcVar5 = g_ModelPolygonData[local_28].texture_name;

@@ -5,23 +5,23 @@ FUNCTION COMPILATION SUMMARY
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6494
-Successful: 5651 (87.0%)
-Failed: 843
+Successful: 5700 (87.8%)
+Failed: 794
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                           1629
-  undeclared_identifier            653
-  format_error                     590
-  incompatible_types               508
-  syntax_error                      75
+  other                           1588
+  undeclared_identifier            659
+  format_error                     591
+  incompatible_types               388
+  syntax_error                      76
   lvalue_required                   23
   missing_member                    21
   type_error                        19
   pointer_precision                  2
 
 ====================================================================================================
-CATEGORY: other (1629 errors)
+CATEGORY: other (1588 errors)
 ====================================================================================================
 
   core_hero.cpp_CHero_FUN_004f3960
@@ -85,10 +85,10 @@ CATEGORY: other (1629 errors)
   core_hero.cpp_CHero_FUN_004f33b0
     Line 57: C-style cast from 'struct CDemonActor *' to 'float' is not allowed...
 
-  ... and 316 more errors
+  ... and 298 more errors
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (653 errors)
+CATEGORY: undeclared_identifier (659 errors)
 ====================================================================================================
 
   core_msnedit.cpp_FUN_00536e20
@@ -155,7 +155,7 @@ CATEGORY: undeclared_identifier (653 errors)
   ... and 232 more errors
 
 ====================================================================================================
-CATEGORY: format_error (590 errors)
+CATEGORY: format_error (591 errors)
 ====================================================================================================
 
   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50
@@ -219,10 +219,10 @@ CATEGORY: format_error (590 errors)
   core_crate.cpp_CCrate_addFilesToExtract_FUN_00448b60
     Line 17: format specifies type 'char *' but the argument has type 'CKeyFramedModel *' [-W...
 
-  ... and 145 more errors
+  ... and 144 more errors
 
 ====================================================================================================
-CATEGORY: incompatible_types (508 errors)
+CATEGORY: incompatible_types (388 errors)
 ====================================================================================================
 
   engine_fileio.cpp_CCheckOutList_add_FUN_004b2d00
@@ -275,8 +275,6 @@ CATEGORY: incompatible_types (508 errors)
     Line 18: assigning to 'CPackedBitmapSet *' from incompatible type 'void *'...
   engine_fileio.cpp_CFileManager_addPodAuditRecord_FUN_004b5950
     Line 24: assigning to 'CPodAuditRecord *' from incompatible type 'void *'...
-  engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50
-    Line 174: assigning to 'CPodAuditRecord *' from incompatible type 'void *'...
   engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190
     Line 105: assigning to 'CPodAuditRecord *' from incompatible type 'void *'...
   engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650
@@ -285,11 +283,13 @@ CATEGORY: incompatible_types (508 errors)
     Line 78: assigning to 'CPodFile *' from incompatible type 'void *'...
   shape_superopt.cpp_CObj_addPolygons_FUN_005d2410
     Line 22: assigning to 'CPoly *' from incompatible type 'void *'...
+  shape_superopt.cpp_CObj_allocatePolygons_FUN_005d2320
+    Line 22: assigning to 'CPoly *' from incompatible type 'void *'...
 
-  ... and 283 more errors
+  ... and 215 more errors
 
 ====================================================================================================
-CATEGORY: syntax_error (75 errors)
+CATEGORY: syntax_error (76 errors)
 ====================================================================================================
 
   core_dskybox.cpp_renderSkyDome_FUN_004901f0
@@ -314,6 +314,8 @@ CATEGORY: syntax_error (75 errors)
     Line 1184: expected expression...
   core_fire.cpp_CFireball_process_FUN_004c0b30
     Line 94: expected expression...
+  core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0
+    Line 1247: expected expression...
   core_ghoul.cpp_CGhoul_process_FUN_004e6600
     Line 151: expected expression...
   core_hero.cpp_CHero_FUN_004f2af0
@@ -350,10 +352,8 @@ CATEGORY: syntax_error (75 errors)
     Line 726: expected expression...
   core_zombie.cpp_FUN_005f8cc0
     Line 18: expected expression...
-  core_zombie.cpp_FUN_005f8d30
-    Line 21: expected expression...
 
-  ... and 19 more errors
+  ... and 20 more errors
 
 ====================================================================================================
 CATEGORY: lvalue_required (23 errors)
@@ -449,8 +449,8 @@ CATEGORY: pointer_precision (2 errors)
 COMPILATION VS SUSPECT PATTERNS
 ====================================================================================================
 
-Average suspects in successfully compiled functions: 2.21
-Average suspects in failed compilations: 11.23
+Average suspects in successfully compiled functions: 2.22
+Average suspects in failed compilations: 11.25
 
-Functions that compile but have suspect patterns: 1744
+Functions that compile but have suspect patterns: 1770
 (These may have runtime issues even though syntax is valid)

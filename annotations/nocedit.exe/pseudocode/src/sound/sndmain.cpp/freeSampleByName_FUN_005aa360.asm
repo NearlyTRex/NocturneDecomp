@@ -14,7 +14,7 @@
 ;   undefined4 DAT_03f62b00
 ;
 ; Called Functions:
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;   sound_sndmain.cpp_CSfxSample_freeMemory_FUN_005a62c0
 ;   sound_sndmain.cpp_killSfxByName_FUN_005aa2f0
 ;   sound_sndmain.cpp_lockSound_FUN_005abd30
@@ -44,8 +44,8 @@ section .text
     PUSH EDI                            ; 005aa383
     ADD ESI,EBX                         ; 005aa384
     PUSH ESI                            ; 005aa386 | g_SfxSamples | DAT_03f629ac
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 005aa387
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 005aa387
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 005aa38c
     TEST EAX,EAX                        ; 005aa38f
     JNZ 0x005aa39c                      ; 005aa391

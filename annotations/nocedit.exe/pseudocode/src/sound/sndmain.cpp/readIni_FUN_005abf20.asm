@@ -34,12 +34,12 @@
 ;   TerminatedCString s_SfxChannel_dEnabled_00650f89
 ;   TerminatedCString s_SfxChannel_dVol_00650f9d
 ;   int g_MaxSoundChannels = 0x20
-;   char[256] g_DefaultRecordingDeviceName
+;   char[256] g_DefaultSoundDeviceName
 ;   undefined4 s__00681b64
 ;
 ; Called Functions:
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;   engine_ini.cpp_CIniFile_getFloat_FUN_004fbcd0
 ;   engine_ini.cpp_CIniFile_getInteger_FUN_004fbc30
 ;   engine_ini.cpp_CIniFile_getString_FUN_004fbb20
@@ -72,9 +72,9 @@ section .text
     MOV ECX,0x40                        ; 005abf3e
     PUSH 0x650f37                       ; 005abf43 | = "DeviceName"
     LEA EDI,[ESP + 0x22c]               ; 005abf48
-    MOV ESI,0x681b60                    ; 005abf4f | g_DefaultRecordingDeviceName
+    MOV ESI,0x681b60                    ; 005abf4f | g_DefaultSoundDeviceName
     PUSH EBP                            ; 005abf54
-    MOVSD.REP ES:EDI,ESI                ; 005abf55 | g_DefaultRecordingDeviceName | s__00681b64
+    MOVSD.REP ES:EDI,ESI                ; 005abf55 | g_DefaultSoundDeviceName | s__00681b64
     CALL engine_ini.cpp_CIniFile_getString_FUN_004fbb20 ; 005abf57
         ;   XREF to: 004fbb20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getString_FUN_004fbb20(CIniFile * this_ptr, char * key, char * output_buffer, int buffer_size, ...)
     ADD ESP,0x10                        ; 005abf5c
@@ -117,8 +117,8 @@ section .text
     PUSH EAX                            ; 005abfbb
     LEA EAX,[ESP + 0x11c]               ; 005abfbc
     PUSH EAX                            ; 005abfc3
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 005abfc4
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 005abfc4
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 005abfc9
     TEST EAX,EAX                        ; 005abfcc
     JZ 0x005ac009                       ; 005abfce
@@ -141,8 +141,8 @@ section .text
     PUSH EAX                            ; 005abfe9
     LEA EAX,[ESP + 0x4]                 ; 005abfea
     PUSH EAX                            ; 005abfee
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 005abfef
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 005abfef
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 005abff4
     TEST EAX,EAX                        ; 005abff7
     JNZ 0x005abfd3                      ; 005abff9

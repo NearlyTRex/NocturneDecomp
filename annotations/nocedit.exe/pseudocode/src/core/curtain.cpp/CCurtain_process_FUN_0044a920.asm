@@ -36,7 +36,7 @@
 ;   core_curtain.cpp_CCurtain_solveConstraints_FUN_00449fc0
 ;   core_curtain.cpp_CCurtain_updateLocalPositions_FUN_00449f10
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
-;   crt_string.c_strcmp_FUN_005fef20
+;   crt_string.c__strcmp_FUN_005fef20
 ;
 ; *****************************************************************************
 
@@ -78,8 +78,8 @@ section .text
         ;   Label: LAB_0044a984
     LEA EAX,[EDI + 0x194]               ; 0044a989
     PUSH EAX                            ; 0044a98f
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 0044a990
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 0044a990
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 0044a995
     TEST EAX,EAX                        ; 0044a998
     JZ 0x0044a9a9                       ; 0044a99a

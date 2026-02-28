@@ -18,7 +18,7 @@ int __cdecl core_bodypart_cpp_CBodyPart_addTexture_FUN_0041af90(CBodyPart *this_
   if (0 < this_ptr->texture_count) {
     pcVar4 = this_ptr->textures[0].texture_name;
     do {
-      iVar2 = stricmp(pcVar4,texture_name);
+      iVar2 = _stricmp(pcVar4,texture_name);
       if (iVar2 == 0) {
         return iVar3;
       }

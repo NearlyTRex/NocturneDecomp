@@ -26,7 +26,7 @@ void __cdecl core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_00524120
     if ((this_ptr_00->location).area_id == this_ptr->current_set_index) {
       if (this_ptr_00->was_created == 0) {
         if (this_ptr_00->create_event[0] != '\0') {
-          iVar2 = stricmp(this_ptr_00->create_event,"none");
+          iVar2 = _stricmp(this_ptr_00->create_event,"none");
           if ((iVar2 != 0) &&
              (iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                                 (g_CEventListPtr,this_ptr_00->create_event), iVar2 == 0))

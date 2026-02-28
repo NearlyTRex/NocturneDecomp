@@ -22,7 +22,7 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_skeleton.cpp_CSkeleton_load_FUN_00599b10
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;
 ; *****************************************************************************
 
@@ -47,8 +47,8 @@ section .text
     MOV EBP,0x38cc8a4                   ; 005a1e16 | g_SkeletonPool
     PUSH ESI                            ; 005a1e1b | DAT_038f4dac | DAT_0391e5d8
     ADD EBP,EAX                         ; 005a1e1c
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 005a1e1e
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 005a1e1e
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 005a1e23
     TEST EAX,EAX                        ; 005a1e26
     JZ 0x005a1e95                       ; 005a1e28

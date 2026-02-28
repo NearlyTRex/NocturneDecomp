@@ -15,7 +15,7 @@
 ;   core_script.cpp_editParameterValue_FUN_00562920 at 00563ae5
 ;
 ; Called Functions:
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;   shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70
 ;
 ; *****************************************************************************
@@ -67,8 +67,8 @@ section .text
     PUSH EAX                            ; 004a30c9
     LEA EAX,[ESP + 0x4]                 ; 004a30ca
     PUSH EAX                            ; 004a30ce
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 004a30cf
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 004a30cf
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004a30d4
     TEST EAX,EAX                        ; 004a30d7
     JZ 0x004a310b                       ; 004a30d9

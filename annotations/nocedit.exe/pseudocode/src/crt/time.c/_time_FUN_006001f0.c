@@ -2,11 +2,11 @@
 // Address: 006001f0
 // Address Range: [[006001f0, 00600226]]
 // Convention: __cdecl
-// Signature: time_t __cdecl crt_time_c__time_FUN_006001f0(time_t *optional_output)
+// Signature: time_t __cdecl crt_time_c__time_FUN_006001f0(int *time)
 
 #include "nocturne.h"
 
-time_t __cdecl _time(time_t *optional_output)
+time_t __cdecl _time(int *time)
 
 {
   int extraout_EAX;
@@ -18,8 +18,8 @@ time_t __cdecl _time(time_t *optional_output)
     local_28.tm_sec = local_28.tm_sec + 1;
   }
   tVar1 = _mktime(&local_28);
-  if (optional_output != (time_t *)0x0) {
-    *optional_output = tVar1;
+  if (time != (int *)0x0) {
+    *time = tVar1;
   }
   return tVar1;
 }

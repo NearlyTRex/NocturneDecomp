@@ -51,7 +51,7 @@
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_math.c_round_FUN_005fe6b0
 ;   crt_stdio.c_ftell_FUN_00601560
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;   engine_dosio.c_getFile_FUN_00481a50
 ;   engine_dosio.c_getFileSize_FUN_00481880
 ;   engine_dosio.c_splitPath_FUN_00481f20
@@ -358,8 +358,8 @@ section .text
     PUSH 0x64fa59                       ; 005a91d1 | = "mp3"
     LEA EAX,[ESP + 0x204]               ; 005a91d6
     PUSH EAX                            ; 005a91dd
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 005a91de
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 005a91de
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 005a91e3
     TEST EAX,EAX                        ; 005a91e6
     JZ 0x005a8fc7                       ; 005a91e8
@@ -367,8 +367,8 @@ section .text
     PUSH 0x64fa5d                       ; 005a91ee | = ".mp3"
     LEA EAX,[ESP + 0x204]               ; 005a91f3
     PUSH EAX                            ; 005a91fa
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 005a91fb
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 005a91fb
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 005a9200
     TEST EAX,EAX                        ; 005a9203
     JZ 0x005a8fc7                       ; 005a9205
@@ -402,8 +402,8 @@ section .text
     PUSH 0x64fa62                       ; 005a9251 | = "mp3"
     LEA EAX,[ESP + 0x104]               ; 005a9256
     PUSH EAX                            ; 005a925d
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 005a925e
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 005a925e
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 005a9263
     TEST EAX,EAX                        ; 005a9266
     JNZ 0x005a93e0                      ; 005a9268
@@ -516,8 +516,8 @@ section .text
         ;   Label: LAB_005a93e0
     LEA EAX,[ESP + 0x104]               ; 005a93e5
     PUSH EAX                            ; 005a93ec
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 005a93ed
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 005a93ed
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 005a93f2
     TEST EAX,EAX                        ; 005a93f5
     JZ 0x005a926e                       ; 005a93f7

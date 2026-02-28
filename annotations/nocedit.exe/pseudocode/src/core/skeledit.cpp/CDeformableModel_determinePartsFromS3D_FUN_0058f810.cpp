@@ -379,7 +379,7 @@ int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f81
             do {
               splitpath
                         (pcVar23,(char *)0x0,(char *)0x0,local_640,(char *)0x0);
-              iVar9 = stricmp(local_388,local_640);
+              iVar9 = _stricmp(local_388,local_640);
               if (iVar9 == 0) break;
               iVar22 = iVar22 + 1;
               pcVar23 = pcVar23 + 0x48;
@@ -1250,7 +1250,7 @@ LAB_00591f48:
                         do {
                           splitpath
                                     (pcVar23,(char *)0x0,(char *)0x0,local_740,(char *)0x0);
-                          iVar21 = stricmp
+                          iVar21 = _stricmp
                                              (local_a1ec + iVar22 * 0x100,local_740);
                           if (iVar21 == 0) break;
                           iVar9 = iVar9 + 1;

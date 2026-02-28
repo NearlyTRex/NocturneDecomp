@@ -20,7 +20,7 @@
 ;   engine_fileio.cpp_CFileManager_undoCheckout_FUN_004bc2b0 at 004bc38e
 ;
 ; Called Functions:
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;   engine_dosio.c_getFullPath_FUN_004820c0
 ;   shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70
 ;
@@ -71,8 +71,8 @@ section .text
     PUSH EAX                            ; 004ba71a
     LEA EAX,[ESP + 0x108]               ; 004ba71b
     PUSH EAX                            ; 004ba722
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 004ba723
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 004ba723
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004ba728
     TEST EAX,EAX                        ; 004ba72b
     JNZ 0x004ba6fd                      ; 004ba72d

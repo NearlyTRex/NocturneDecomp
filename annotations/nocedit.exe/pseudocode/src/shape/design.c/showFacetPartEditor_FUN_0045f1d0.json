@@ -44,12 +44,6 @@
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
-        "category": "incompatible_types",
-        "column": 20,
-        "line": 300,
-        "message": "invalid operands to binary expression ('double' and 'int')"
-      },
-      {
         "category": "format_error",
         "column": 18,
         "line": 304,
@@ -1548,7 +1542,7 @@
       "line": 293,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "local_d8 = SUB84((double)local_2c,0);",
+      "text": "local_d8 = SUB84(__BITCAST_UINT64((double)local_2c),0);",
       "type": "sub84_truncation"
     },
     {
@@ -1556,7 +1550,7 @@
       "line": 293,
       "match": "SUB84",
       "severity": "mild",
-      "text": "local_d8 = SUB84((double)local_2c,0);",
+      "text": "local_d8 = SUB84(__BITCAST_UINT64((double)local_2c),0);",
       "type": "decompiler_intrinsic"
     },
     {

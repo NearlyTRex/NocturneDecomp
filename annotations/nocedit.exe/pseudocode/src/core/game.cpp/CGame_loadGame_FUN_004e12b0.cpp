@@ -51,9 +51,9 @@ void __cdecl core_game_cpp_CGame_loadGame_FUN_004e12b0(CGame *this_ptr,char *sav
   this_ptr->is_loading = 1;
   splitpath
             (&g_CurrentSaveFile,(char *)0x0,(char *)0x0,(char *)0x0,local_430);
-  iVar2 = stricmp(local_430,"noc");
+  iVar2 = _stricmp(local_430,"noc");
   if ((iVar2 == 0) ||
-     (iVar2 = stricmp(local_430,".noc"), iVar2 == 0)) {
+     (iVar2 = _stricmp(local_430,".noc"), iVar2 == 0)) {
     pcVar7 = local_638;
     pcVar5 = &g_CurrentSaveFile;
     do {
@@ -112,7 +112,7 @@ LAB_004e17ac:
     core_level_cpp_CLevelLoader_show_FUN_00503dc0(g_CLevelLoaderPtr,9,0,-1);
     file_handle = engine_dosio_c_getFile_FUN_00481a50("save",local_638,"rt");
     local_18 = _ftell(file_handle);
-    iVar2 = stricmp(&g_CurrentSaveFile,local_638);
+    iVar2 = _stricmp(&g_CurrentSaveFile,local_638);
     if (iVar2 != 0) {
       pcVar5 = &g_CurrentSaveFile;
       pcVar7 = local_638;
@@ -227,7 +227,7 @@ LAB_004e14f5:
       if (iVar2 == 0) goto LAB_004e14f5;
     }
     _fgets(local_330,0xff,file_handle);
-    iVar2 = strnicmp(local_330,"CInventory",10);
+    iVar2 = _strnicmp(local_330,"CInventory",10);
     if (iVar2 == 0) {
       shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\core\\game.cpp",0xe28);
       shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0

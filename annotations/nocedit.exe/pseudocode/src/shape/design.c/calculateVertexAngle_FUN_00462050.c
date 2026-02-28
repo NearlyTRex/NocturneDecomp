@@ -58,9 +58,9 @@ double __cdecl shape_design_c_calculateVertexAngle_FUN_00462050(int vertex1_inde
   shape_design_c_normalizeVertex_FUN_00461e60((CVector3f *)&local_84);
   shape_design_c_normalizeVertex_FUN_00461e60((CVector3f *)&local_6c);
   dVar1 = shape_design_c_clampedArccos_FUN_00461c50
-                    ((double)CONCAT44(in_stack_ffffff74,
+                    (__BITCAST_DOUBLE(CONCAT44(in_stack_ffffff74,
                                       (int)((ulonglong)
                                             (local_74 * local_5c +
-                                            local_84 * local_6c + local_7c * local_64) >> 0x20)));
+                                            local_84 * local_6c + local_7c * local_64) >> 0x20))));
   return dVar1 * 57.295779513079999;
 }

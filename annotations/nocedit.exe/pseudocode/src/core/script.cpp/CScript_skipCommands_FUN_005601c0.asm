@@ -18,7 +18,7 @@
 ;   TerminatedCString s_else_006431f8
 ;
 ; Called Functions:
-;   crt_string.c_strnicmp_FUN_005ff070
+;   crt_string.c__strnicmp_FUN_005ff070
 ;
 ; *****************************************************************************
 
@@ -102,8 +102,8 @@ section .text
         ;   Label: LAB_00560237
     PUSH 0x6431f5                       ; 00560239 | = "if"
     PUSH EDI                            ; 0056023e
-    CALL crt_string.c_strnicmp_FUN_005ff070 ; 0056023f
-        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)
+    CALL crt_string.c__strnicmp_FUN_005ff070 ; 0056023f
+        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 00560244
     TEST EAX,EAX                        ; 00560247
     JZ 0x0056027f                       ; 00560249
@@ -119,8 +119,8 @@ section .text
         ;   Label: LAB_00560256
     PUSH 0x6431f8                       ; 00560258 | = "else"
     PUSH EDI                            ; 0056025d
-    CALL crt_string.c_strnicmp_FUN_005ff070 ; 0056025e
-        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)
+    CALL crt_string.c__strnicmp_FUN_005ff070 ; 0056025e
+        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 00560263
     TEST EAX,EAX                        ; 00560266
     JZ 0x00560293                       ; 00560268

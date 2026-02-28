@@ -70,7 +70,7 @@ void __cdecl core_sound_cpp_processTrainSounds_FUN_005b2770(void)
   sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
   sound_sndmain_cpp_setNextSfxFlags_FUN_005a8b70(1);
   sound_sndmain_cpp_setNextSfxChannel_FUN_005a8af0(3);
-  iVar4 = stricmp(g_CurrentTrainMode,"int");
+  iVar4 = _stricmp(g_CurrentTrainMode,"int");
   if (iVar4 == 0) {
     sound_sndmain_cpp_killSfx_FUN_005a9c40(g_TrainExteriorAmbientHandle);
     local_120 = 0.4;
@@ -94,7 +94,7 @@ void __cdecl core_sound_cpp_processTrainSounds_FUN_005b2770(void)
     sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
   }
   else {
-    iVar4 = stricmp(g_PreviousTrainMode,g_CurrentTrainMode);
+    iVar4 = _stricmp(g_PreviousTrainMode,g_CurrentTrainMode);
     if (iVar4 != 0) {
       sound_sndmain_cpp_setSfxVolume_FUN_005a9ae0
                 (g_TrainRailNoiseHandle,local_120 * (float)1.5);

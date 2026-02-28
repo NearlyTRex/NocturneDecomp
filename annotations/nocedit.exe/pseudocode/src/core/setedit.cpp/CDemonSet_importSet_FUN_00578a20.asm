@@ -39,7 +39,7 @@
 ;   core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_remove_FUN_005ff9d0
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   engine_dosio.c_makePath_FUN_00481f50
 ;   engine_dosio.c_splitPath_FUN_00481f20
@@ -142,8 +142,8 @@ section .text
     PUSH 0x646b1a                       ; 00578afe | = "a3d"
         ;   Label: LAB_00578afe
     PUSH ESI                            ; 00578b03
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 00578b04
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 00578b04
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 00578b09
     TEST EAX,EAX                        ; 00578b0c
     JNZ 0x00578bf9                      ; 00578b0e
@@ -230,8 +230,8 @@ section .text
     PUSH 0x646b1e                       ; 00578bf9 | = "s3d"
         ;   Label: LAB_00578bf9
     PUSH ESI                            ; 00578bfe
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 00578bff
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 00578bff
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 00578c04
     TEST EAX,EAX                        ; 00578c07
     JNZ 0x00578c17                      ; 00578c09

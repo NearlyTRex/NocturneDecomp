@@ -23,7 +23,7 @@
 ;   char** g_EnvironmentBlock
 ;
 ; Called Functions:
-;   crt_string.c_mbstrnicmp_FUN_00608e50
+;   crt_string.c__mbstrnicmp_FUN_00608e50
 ;
 ; *****************************************************************************
 
@@ -60,8 +60,8 @@ section .text
         ;   Label: LAB_0060141c
     PUSH EBP                            ; 0060141d
     PUSH EBX                            ; 0060141e
-    CALL crt_string.c_mbstrnicmp_FUN_00608e50 ; 0060141f
-        ;   XREF to: 00608e50 (UNCONDITIONAL_CALL)  ; int crt_string.c_mbstrnicmp_FUN_00608e50(char * str1, char * str2, SIZE_T count)
+    CALL crt_string.c__mbstrnicmp_FUN_00608e50 ; 0060141f
+        ;   XREF to: 00608e50 (UNCONDITIONAL_CALL)  ; int crt_string.c__mbstrnicmp_FUN_00608e50(char * str1, char * str2, SIZE_T count)
     ADD ESP,0xc                         ; 00601424
     TEST EAX,EAX                        ; 00601427
     JNZ 0x0060143b                      ; 00601429

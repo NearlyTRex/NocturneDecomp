@@ -14,13 +14,13 @@ double __cdecl shape_design_c_calculateAngleBetweenPolygonNormals_FUN_00461cb0(S
   uint in_stack_ffffffe0;
   
   dVar1 = shape_design_c_clampedArccos_FUN_00461c50
-                    ((double)CONCAT44(in_stack_ffffffe0,
+                    (__BITCAST_DOUBLE(CONCAT44(in_stack_ffffffe0,
                                       (int)((ulonglong)
                                             (double)(*(float *)(in_stack_00000004 + 0xb0) *
                                                      (normal1_ptr->normal).z +
                                                     *(float *)(in_stack_00000004 + 0xac) *
                                                     (normal1_ptr->normal).y +
                                                     *(float *)(in_stack_00000004 + 0xa8) *
-                                                    (normal1_ptr->normal).x) >> 0x20)));
+                                                    (normal1_ptr->normal).x) >> 0x20))));
   return dVar1 * 57.295779513079999;
 }

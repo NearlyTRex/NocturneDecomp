@@ -652,7 +652,7 @@ section .text
     FLD float ptr [EBP + 0x76]          ; 0048f2a7
     FSTP double ptr [ESP]               ; 0048f2aa
     CALL sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005a8be0 ; 0048f2ad
-        ;   XREF to: 005a8be0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005a8be0(double trigger_time, int trigger_id)
+        ;   XREF to: 005a8be0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005a8be0(double trigger_time, int trigger_id)
     ADD ESP,0xc                         ; 0048f2b2
     PUSH 0x6223e2                       ; 0048f2b5 | = "slime.wav"
     MOV EAX,dword ptr [EBX + 0x154]     ; 0048f2ba

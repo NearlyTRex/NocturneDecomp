@@ -11,37 +11,37 @@ int __cdecl core_event_cpp_parseDamageType_FUN_004aa960(char *type_name,int *out
 {
   int iVar1;
   
-  iVar1 = stricmp(type_name,"generic");
+  iVar1 = _stricmp(type_name,"generic");
   if (iVar1 == 0) {
     *out_type_id = 100;
     return 1;
   }
-  iVar1 = stricmp(type_name,"bullet");
+  iVar1 = _stricmp(type_name,"bullet");
   if (iVar1 == 0) {
     *out_type_id = 0x65;
     return 1;
   }
-  iVar1 = stricmp(type_name,"Fire");
+  iVar1 = _stricmp(type_name,"Fire");
   if (iVar1 == 0) {
     *out_type_id = 0x66;
     return 1;
   }
-  iVar1 = stricmp(type_name,"Blade");
+  iVar1 = _stricmp(type_name,"Blade");
   if (iVar1 == 0) {
     *out_type_id = 0x67;
     return 1;
   }
-  iVar1 = stricmp(type_name,"Stake");
+  iVar1 = _stricmp(type_name,"Stake");
   if (iVar1 == 0) {
     *out_type_id = 0x68;
     return 1;
   }
-  iVar1 = stricmp(type_name,"Gas");
+  iVar1 = _stricmp(type_name,"Gas");
   if (iVar1 == 0) {
     *out_type_id = 0x69;
     return 1;
   }
-  iVar1 = stricmp(type_name,"electrocute");
+  iVar1 = _stricmp(type_name,"electrocute");
   if (iVar1 == 0) {
     *out_type_id = 0x6a;
     return 1;

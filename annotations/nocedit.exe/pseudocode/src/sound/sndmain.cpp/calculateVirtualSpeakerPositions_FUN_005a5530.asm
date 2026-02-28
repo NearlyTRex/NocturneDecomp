@@ -11,7 +11,7 @@
 ; Referenced Globals:
 ;   double DOUBLE_0064fab7 = 0.5
 ;   int g_AudioChannelCount = 0x2
-;   double DOUBLE_00681b38 = 1
+;   double g_Cached3DDistanceFactorInverse = 1
 ;   CVector3d g_Cached3DListenerPos
 ;   undefined4 g_Cached3DListenerPos.y
 ;   undefined4 g_Cached3DListenerPos.z
@@ -62,7 +62,7 @@ section .text
         ;   Label: LAB_005a5584
     ADD ESP,0x10                        ; 005a558a
     RET                                 ; 005a558d
-    FLD double ptr [0x00681b38]         ; 005a558e | DOUBLE_00681b38
+    FLD double ptr [0x00681b38]         ; 005a558e | g_Cached3DDistanceFactorInverse
         ;   Label: LAB_005a558e
     FMUL double ptr [0x0064fab7]        ; 005a5594 | DOUBLE_0064fab7
     FLD double ptr [0x03f68860]         ; 005a559a | g_Cached3DListenerOrientFront

@@ -20,7 +20,7 @@
 ;   STextureAtlasEntry[250] g_TextureAtlasEntries
 ;
 ; Called Functions:
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;
 ; *****************************************************************************
 
@@ -51,8 +51,8 @@ section .text
     ADD EAX,EDX                         ; 0046dff6
     ADD EAX,0x100                       ; 0046dff8
     PUSH EAX                            ; 0046dffd
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 0046dffe
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 0046dffe
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0046e003
     TEST EAX,EAX                        ; 0046e006
     JNZ 0x0046e012                      ; 0046e008

@@ -117,7 +117,7 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_00505c70(CLightGun *this_ptr)
                           (this_ptr_02,(char *)this_ptr);
         if (iVar5 != 0) {
           fVar2 = (float)(*(((this_ptr->base).base.vtable._uc)->_uc).getGrabbed)
-                                   ((CCharacter *)this_ptr,SUB84(dVar6,0),
+                                   ((CCharacter *)this_ptr,SUB84(__BITCAST_UINT64(dVar6),0),
                                     (int)((ulonglong)dVar6 >> 0x20));
           core_trigger_cpp_CTrigger_applyDamage_FUN_005e0b00(this_ptr_02,fVar2);
         }

@@ -17,7 +17,7 @@
 ;   core_event.cpp_CEventList_findGameFlag_FUN_004b08b0
 ;   core_event.cpp_CEventList_findPersistentEvent_FUN_004b0860
 ;   core_event.cpp_CEventList_findTimer_FUN_004b0900
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;
 ; *****************************************************************************
 
@@ -32,8 +32,8 @@ section .text
     MOV EBP,dword ptr [ESP + 0x18]      ; 004adc18
     PUSH 0x6252a9                       ; 004adc1c | = "TRUE"
     PUSH EBP                            ; 004adc21
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 004adc22
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 004adc22
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004adc27
     TEST EAX,EAX                        ; 004adc2a
     JZ 0x004adc6a                       ; 004adc2c
@@ -47,8 +47,8 @@ section .text
     PUSH EBP                            ; 004adc40
         ;   Label: LAB_004adc40
     PUSH EBX                            ; 004adc41
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 004adc42
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 004adc42
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004adc47
     TEST EAX,EAX                        ; 004adc4a
     JZ 0x004adc6a                       ; 004adc4c

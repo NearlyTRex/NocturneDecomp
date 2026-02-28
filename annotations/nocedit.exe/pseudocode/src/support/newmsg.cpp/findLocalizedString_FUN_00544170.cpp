@@ -17,7 +17,7 @@ char * __cdecl support_newmsg_cpp_findLocalizedString_FUN_00544170(char *key,int
     return key;
   }
   iVar1 = (upper_bound + lower_bound) / 2;
-  iVar2 = strcmp(key,g_MessageKeys[iVar1]);
+  iVar2 = _strcmp(key,g_MessageKeys[iVar1]);
   if (-1 < iVar2) {
     if (iVar2 < 1) {
       return g_MessageTexts[iVar1];

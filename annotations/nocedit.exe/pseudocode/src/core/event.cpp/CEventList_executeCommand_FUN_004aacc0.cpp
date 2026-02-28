@@ -130,7 +130,7 @@ int __cdecl core_event_cpp_CEventList_executeCommand_FUN_004aacc0(CEventList *th
   bVar18 = 0;
   g_EventErrorMessageBuffer[0] = '\0';
   if (((command_buffer != (char *)0x0) && (*command_buffer != '\0')) &&
-     (iVar2 = stricmp(command_buffer,"none"), iVar2 != 0)) {
+     (iVar2 = _stricmp(command_buffer,"none"), iVar2 != 0)) {
     if (*command_buffer == '.') {
       command_buffer = command_buffer + 1;
     }
@@ -152,7 +152,7 @@ LAB_004aad41:
       if (0 < (this_ptr->events).count) {
         str1 = (this_ptr->events).names;
         do {
-          iVar3 = stricmp(*str1,command_buffer);
+          iVar3 = _stricmp(*str1,command_buffer);
           if (iVar3 == 0) {
             return 1;
           }
@@ -218,7 +218,7 @@ LAB_004aad41:
         pcVar15 = pcVar15 + 1;
       } while( true );
     }
-    iVar2 = strnicmp(command_buffer,"advanceLightFilter",0x12);
+    iVar2 = _strnicmp(command_buffer,"advanceLightFilter",0x12);
     if ((iVar2 == 0) &&
        ((g_CharacterClassificationTable[(byte)(command_buffer[0x12] + 1)] & 0xe0) == 0)) {
       local_ec = (byte *)(command_buffer + 0x12);
@@ -243,7 +243,7 @@ LAB_004aad41:
       }
     }
     else {
-      iVar2 = strnicmp(command_buffer,"createExplosion",0xf);
+      iVar2 = _strnicmp(command_buffer,"createExplosion",0xf);
       if ((iVar2 == 0) &&
          ((g_CharacterClassificationTable[(byte)(command_buffer[0xf] + 1)] & 0xe0) == 0)) {
         local_ec = (byte *)(command_buffer + 0xf);
@@ -333,7 +333,7 @@ LAB_004aad41:
         }
       }
       else {
-        iVar2 = strnicmp(command_buffer,"deleteActor",0xb);
+        iVar2 = _strnicmp(command_buffer,"deleteActor",0xb);
         if ((iVar2 == 0) &&
            ((g_CharacterClassificationTable[(byte)(command_buffer[0xb] + 1)] & 0xe0) == 0)) {
           local_ec = (byte *)(command_buffer + 0xb);
@@ -370,7 +370,7 @@ LAB_004aad41:
           }
         }
         else {
-          iVar2 = strnicmp(command_buffer,"displayBitmap",0xd);
+          iVar2 = _strnicmp(command_buffer,"displayBitmap",0xd);
           if ((iVar2 == 0) &&
              ((g_CharacterClassificationTable[(byte)(command_buffer[0xd] + 1)] & 0xe0) == 0)) {
             local_ec = (byte *)(command_buffer + 0xd);
@@ -404,7 +404,7 @@ LAB_004aad41:
             }
           }
           else {
-            iVar2 = strnicmp
+            iVar2 = _strnicmp
                               (command_buffer,"fadeAmbientSound",0x10);
             if ((iVar2 == 0) &&
                ((g_CharacterClassificationTable[(byte)(command_buffer[0x10] + 1)] & 0xe0) == 0)) {
@@ -426,7 +426,7 @@ LAB_004aad41:
               }
             }
             else {
-              iVar2 = strnicmp(command_buffer,"fadeSfx",7);
+              iVar2 = _strnicmp(command_buffer,"fadeSfx",7);
               if ((iVar2 == 0) &&
                  ((g_CharacterClassificationTable[(byte)(command_buffer[7] + 1)] & 0xe0) == 0)) {
                 local_ec = (byte *)(command_buffer + 7);
@@ -476,7 +476,7 @@ LAB_004aad41:
                 }
               }
               else {
-                iVar2 = strnicmp(command_buffer,"flagOn",6);
+                iVar2 = _strnicmp(command_buffer,"flagOn",6);
                 if ((iVar2 == 0) &&
                    ((g_CharacterClassificationTable[(byte)(command_buffer[6] + 1)] & 0xe0) == 0)) {
                   local_ec = (byte *)(command_buffer + 6);
@@ -507,7 +507,7 @@ LAB_004aaf38:
                   }
                 }
                 else {
-                  iVar2 = strnicmp(command_buffer,"flagOff",7);
+                  iVar2 = _strnicmp(command_buffer,"flagOff",7);
                   if ((iVar2 == 0) &&
                      ((g_CharacterClassificationTable[(byte)(command_buffer[7] + 1)] & 0xe0) == 0))
                   {
@@ -524,7 +524,7 @@ LAB_004aaf38:
                     }
                   }
                   else {
-                    iVar2 = strnicmp
+                    iVar2 = _strnicmp
                                       (command_buffer,"gameFlagOn",10);
                     if ((iVar2 == 0) &&
                        ((g_CharacterClassificationTable[(byte)(command_buffer[10] + 1)] & 0xe0) == 0
@@ -542,7 +542,7 @@ LAB_004aaf38:
                       }
                     }
                     else {
-                      iVar2 = strnicmp
+                      iVar2 = _strnicmp
                                         (command_buffer,"gameFlagOff",0xb);
                       if ((iVar2 == 0) &&
                          ((g_CharacterClassificationTable[(byte)(command_buffer[0xb] + 1)] & 0xe0)
@@ -560,7 +560,7 @@ LAB_004aaf38:
                         }
                       }
                       else {
-                        iVar2 = strnicmp
+                        iVar2 = _strnicmp
                                           (command_buffer,"hurtCharacter",0xd);
                         if ((iVar2 == 0) &&
                            ((g_CharacterClassificationTable[(byte)(command_buffer[0xd] + 1)] & 0xe0)
@@ -653,7 +653,7 @@ LAB_004aaf38:
                           }
                         }
                         else {
-                          iVar2 = strnicmp
+                          iVar2 = _strnicmp
                                             (command_buffer,"incCounter",10);
                           if ((iVar2 == 0) &&
                              ((g_CharacterClassificationTable[(byte)(command_buffer[10] + 1)] & 0xe0
@@ -706,7 +706,7 @@ LAB_004aaf38:
                             }
                           }
                           else {
-                            iVar2 = strnicmp
+                            iVar2 = _strnicmp
                                               (command_buffer,"killCharacter",0xd);
                             if ((iVar2 == 0) &&
                                ((g_CharacterClassificationTable[(byte)(command_buffer[0xd] + 1)] &
@@ -819,7 +819,7 @@ LAB_004aaf38:
                               }
                             }
                             else {
-                              iVar2 = strnicmp
+                              iVar2 = _strnicmp
                                                 (command_buffer,"killHero",8);
                               if ((iVar2 == 0) &&
                                  ((g_CharacterClassificationTable[(byte)(command_buffer[8] + 1)] &
@@ -862,7 +862,7 @@ LAB_004aaf38:
                                 }
                               }
                               else {
-                                iVar2 = strnicmp
+                                iVar2 = _strnicmp
                                                   (command_buffer,"killSfx",7);
                                 if ((iVar2 == 0) &&
                                    ((g_CharacterClassificationTable[(byte)(command_buffer[7] + 1)] &
@@ -949,7 +949,7 @@ LAB_004aaf38:
                                   }
                                 }
                                 else {
-                                  iVar2 = strnicmp
+                                  iVar2 = _strnicmp
                                                     (command_buffer,"lightning",9);
                                   if ((iVar2 == 0) &&
                                      ((g_CharacterClassificationTable[(byte)(command_buffer[9] + 1)]
@@ -974,7 +974,7 @@ LAB_004aaf38:
                                     }
                                   }
                                   else {
-                                    iVar2 = strnicmp
+                                    iVar2 = _strnicmp
                                                       (command_buffer,"playSfx",7);
                                     if ((iVar2 == 0) &&
                                        ((g_CharacterClassificationTable
@@ -1093,7 +1093,7 @@ LAB_004aaf38:
                                         return 0;
                                       }
                                       if (local_f0 != 0) {
-                                        iVar2 = strnicmp
+                                        iVar2 = _strnicmp
                                                           (local_13ad + 1,"cue",3);
                                         if (iVar2 == 0) {
                                           iVar2 = sound_sndmain_cpp_isSfxChannelEnabled_FUN_005a9ea0
@@ -1122,7 +1122,7 @@ LAB_004aaf38:
                                       }
                                     }
                                     else {
-                                      iVar2 = strnicmp
+                                      iVar2 = _strnicmp
                                                         (command_buffer,"setCameraAmbient",
                                                          0x10);
                                       if ((iVar2 == 0) &&
@@ -1191,7 +1191,7 @@ LAB_004aaf38:
                                         }
                                       }
                                       else {
-                                        iVar2 = strnicmp
+                                        iVar2 = _strnicmp
                                                           (command_buffer,"setCounter",10);
                                         if ((iVar2 == 0) &&
                                            ((g_CharacterClassificationTable
@@ -1266,7 +1266,7 @@ LAB_004aaf38:
                                           }
                                         }
                                         else {
-                                          iVar2 = strnicmp
+                                          iVar2 = _strnicmp
                                                             (command_buffer,
                                                              "setGroupAmbient",0xf);
                                           if ((iVar2 == 0) &&
@@ -1302,7 +1302,7 @@ LAB_004aaf38:
                                             }
                                           }
                                           else {
-                                            iVar2 = strnicmp
+                                            iVar2 = _strnicmp
                                                               (command_buffer,
                                                                "setLightFilterFrame",0x13);
                                             if ((iVar2 == 0) &&
@@ -1353,7 +1353,7 @@ LAB_004aaf38:
                                               }
                                             }
                                             else {
-                                              iVar2 = strnicmp
+                                              iVar2 = _strnicmp
                                                                 (command_buffer,
                                                                  "setLeverState",0xd);
                                               if ((iVar2 == 0) &&
@@ -1462,7 +1462,7 @@ LAB_004aaf38:
                                                 }
                                               }
                                               else {
-                                                iVar2 = strnicmp
+                                                iVar2 = _strnicmp
                                                                   (command_buffer,
                                                                    "setModelState",0xd);
                                                 if ((iVar2 == 0) &&
@@ -1569,7 +1569,7 @@ LAB_004aaf38:
                                                   }
                                                 }
                                                 else {
-                                                  iVar2 = strnicmp
+                                                  iVar2 = _strnicmp
                                                                     (command_buffer,
                                                                      "setTimer",8);
                                                   if ((iVar2 == 0) &&
@@ -1648,7 +1648,7 @@ LAB_004aaf38:
                                                   }
                                                   }
                                                   else {
-                                                    iVar2 = strnicmp
+                                                    iVar2 = _strnicmp
                                                                       (command_buffer,
                                                                        "setWeather",10);
                                                     if ((iVar2 == 0) &&
@@ -1698,18 +1698,18 @@ LAB_004aaf38:
                                                               (local_e35 + 1,local_e35 + 2,SVar14);
                                                     SVar14 = SVar14 - 1;
                                                   }
-                                                  iVar3 = stricmp
+                                                  iVar3 = _stricmp
                                                                     (local_e35 + 1,"none");
                                                   iVar2 = 0;
                                                   if (iVar3 != 0) {
-                                                    iVar2 = stricmp
+                                                    iVar2 = _stricmp
                                                                       (local_e35 + 1,"rain"
                                                                       );
                                                     if (iVar2 == 0) {
                                                       iVar2 = 1;
                                                     }
                                                     else {
-                                                      iVar2 = stricmp
+                                                      iVar2 = _stricmp
                                                                         (local_e35 + 1,
                                                                          "snow");
                                                       if (iVar2 != 0) {
@@ -1729,7 +1729,7 @@ LAB_004aaf38:
                                                   }
                                                   }
                                                   else {
-                                                    iVar2 = strnicmp
+                                                    iVar2 = _strnicmp
                                                                       (command_buffer,
                                                                        "shakeScreen",0xb);
                                                     if ((iVar2 == 0) &&
@@ -1762,7 +1762,7 @@ LAB_004aaf38:
                                                   }
                                                   }
                                                   else {
-                                                    iVar2 = strnicmp
+                                                    iVar2 = _strnicmp
                                                                       (command_buffer,
                                                                        "slamModelToMotion",
                                                                        0x11);
@@ -1879,7 +1879,7 @@ LAB_004aaf38:
                                                   }
                                                   }
                                                   else {
-                                                    iVar2 = strnicmp
+                                                    iVar2 = _strnicmp
                                                                       (command_buffer,
                                                                        "switchCamera",0xc);
                                                     if ((iVar2 == 0) &&
@@ -1957,7 +1957,7 @@ LAB_004aaf38:
                                                   }
                                                   }
                                                   else {
-                                                    iVar2 = strnicmp
+                                                    iVar2 = _strnicmp
                                                                       (command_buffer,
                                                                        "warpTo",6);
                                                     if ((iVar2 != 0) ||

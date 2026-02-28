@@ -125,25 +125,25 @@ void __cdecl engine_colquant_c_computeBoxStatistics_FUN_00441260(SColorQuantWork
   workspace->boxes[box_index].spread_blue = dVar13 * local_90;
   workspace->boxes[box_index].spread_intensity = dVar1 * local_60;
   dVar13 = engine_colquant_c_doubleMax_FUN_00441790
-                     ((double)CONCAT26((short)((uint)uVar2 >> 0x10),
-                                       CONCAT15((char)((uint)uVar2 >> 8),uVar7)),dVar6);
+                     (__BITCAST_DOUBLE(CONCAT26((short)((uint)uVar2 >> 0x10),
+                                       CONCAT15((char)((uint)uVar2 >> 8),uVar7))),dVar6);
   dVar14 = workspace->boxes[box_index].spread_blue;
   workspace->boxes[box_index].max_spread = dVar13;
   uVar2 = *(uint *)((int)&workspace->boxes[box_index].max_spread + 4);
   dVar13 = engine_colquant_c_doubleMax_FUN_00441790
-                     ((double)CONCAT26((short)((uint)uVar2 >> 0x10),
+                     (__BITCAST_DOUBLE(CONCAT26((short)((uint)uVar2 >> 0x10),
                                        CONCAT15((char)((uint)uVar2 >> 8),
                                                 *(undefined5 *)
-                                                 &workspace->boxes[box_index].max_spread)),dVar14);
+                                                 &workspace->boxes[box_index].max_spread))),dVar14);
   dVar14 = workspace->boxes[box_index].spread_intensity;
   workspace->boxes[box_index].max_spread = dVar13;
   uVar2 = *(uint *)((int)&workspace->boxes[box_index].max_spread + 4);
   dVar14 = engine_colquant_c_doubleMax_FUN_00441790
-                     ((double)CONCAT26((short)((uint)uVar2 >> 0x10),
+                     (__BITCAST_DOUBLE(CONCAT26((short)((uint)uVar2 >> 0x10),
                                        CONCAT15((char)((uint)uVar2 >> 8),
                                                 *(undefined5 *)
-                                                 &workspace->boxes[box_index].max_spread)),dVar14);
-  local_30._0_4_ = SUB84(dVar14,0);
+                                                 &workspace->boxes[box_index].max_spread))),dVar14);
+  local_30._0_4_ = SUB84(__BITCAST_UINT64(dVar14),0);
   *(uint *)&workspace->boxes[box_index].max_spread = (uint)local_30;
   local_30._4_4_ = (uint)((ulonglong)dVar14 >> 0x20);
   *(uint *)((int)&workspace->boxes[box_index].max_spread + 4) = local_30._4_4_;

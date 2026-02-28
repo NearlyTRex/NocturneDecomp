@@ -42,27 +42,27 @@ void __cdecl shape_design_c_sampleAndFilterPixel_FUN_0046ae20(void *rgb_buffer,v
   local_18 = (int)ROUND(ROUND(dVar1));
   for (local_14 = local_24; local_14 < local_20; local_14 = local_14 + 1) {
     dVar1 = shape_design_c_calculateSamplingWeight_FUN_0046adc0
-                      ((double)CONCAT44(SUB84(coord_y1,0),(int)((ulonglong)(double)local_14 >> 0x20)
-                                       ),
-                       (double)CONCAT26((short)((ulonglong)coord_y2 >> 0x10),
+                      (__BITCAST_DOUBLE(CONCAT44(SUB84(coord_y1,0),(int)((ulonglong)(double)local_14 >> 0x20)
+                                       )),
+                       __BITCAST_DOUBLE(CONCAT26((short)((ulonglong)coord_y2 >> 0x10),
                                         CONCAT24(SUB82(coord_y2,0),
-                                                 (int)((ulonglong)coord_y1 >> 0x20))),
-                       (double)CONCAT44(in_stack_ffffff98,(int)((ulonglong)coord_y2 >> 0x20)));
+                                                 (int)((ulonglong)coord_y1 >> 0x20)))),
+                       __BITCAST_DOUBLE(CONCAT44(in_stack_ffffff98,(int)((ulonglong)coord_y2 >> 0x20))));
     for (local_60 = local_1c; local_60 < local_18; local_60 = local_60 + 1) {
       dVar2 = shape_design_c_calculateSamplingWeight_FUN_0046adc0
-                        ((double)CONCAT44(SUB84(coord_x1,0),
-                                          (int)((ulonglong)(double)local_60 >> 0x20)),
-                         (double)CONCAT26((short)((ulonglong)coord_x2 >> 0x10),
+                        (__BITCAST_DOUBLE(CONCAT44(SUB84(coord_x1,0),
+                                          (int)((ulonglong)(double)local_60 >> 0x20))),
+                         __BITCAST_DOUBLE(CONCAT26((short)((ulonglong)coord_x2 >> 0x10),
                                           CONCAT24(SUB82(coord_x2,0),
-                                                   (int)((ulonglong)coord_x1 >> 0x20))),
-                         (double)CONCAT44(in_stack_ffffff98,(int)((ulonglong)coord_x2 >> 0x20)));
+                                                   (int)((ulonglong)coord_x1 >> 0x20)))),
+                         __BITCAST_DOUBLE(CONCAT44(in_stack_ffffff98,(int)((ulonglong)coord_x2 >> 0x20))));
       dVar2 = dVar2 * dVar1;
-      in_stack_ffffff98 = SUB84(dVar2,0);
+      in_stack_ffffff98 = SUB84(__BITCAST_UINT64(dVar2),0);
       uStack_64 = (uint)((ulonglong)dVar2 >> 0x20);
       shape_design_c_samplePixelAndAccumulate_FUN_0046ad00
                 (rgb_buffer,alpha_buffer,col_coord,row_coord,local_60,local_14,dVar2,&local_4c,
                  &local_44,&local_3c,&local_34);
-      local_2c = local_2c + (double)CONCAT44(uStack_64,in_stack_ffffff98);
+      local_2c = local_2c + __BITCAST_DOUBLE(CONCAT44(uStack_64,in_stack_ffffff98));
     }
   }
   if (0.0 < local_2c) {

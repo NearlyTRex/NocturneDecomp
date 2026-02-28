@@ -36,7 +36,7 @@ PRIORITY 1: Files with 1-2 functions remaining
 
   core/dirmat.cpp (1 remaining of 7)
     - core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
-      Suspects: decompiler_intrinsic, sub84_truncation, decompiler_intrinsic, sub84_truncation, decompiler_intrinsic, sub84_truncation, decompiler_intrinsic, double_reconstruction, decompiler_intrinsic, double_reconstruction, decompiler_intrinsic, double_reconstruction, decompiler_intrinsic
+      Suspects: decompiler_intrinsic, sub84_truncation, decompiler_intrinsic, sub84_truncation, decompiler_intrinsic, sub84_truncation, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic
 
   core/fileman.cpp (1 remaining of 12)
     - core_fileman.cpp_preprocessMusicFiles_FUN_004bd750
@@ -108,7 +108,7 @@ PRIORITY 1: Files with 1-2 functions remaining
 
   core/vecdir.cpp (1 remaining of 2)
     - core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
-      Suspects: decompiler_intrinsic, decompiler_intrinsic, double_reconstruction, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic
+      Suspects: decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic
 
   core/flamegun.cpp (1 remaining of 10)
     - core_flamegun.cpp_CFlameThrower_ctor_FUN_004cb880
@@ -260,7 +260,7 @@ PRIORITY 1: Files with 1-2 functions remaining
 
   core/menu.cpp (2 remaining of 22)
     - core_menu.cpp_configureSoundOptions_FUN_00511e50
-      Suspects: pointer_cast, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, double_reconstruction, decompiler_intrinsic, double_reconstruction, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, unknown_field
+      Suspects: pointer_cast, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, unknown_field
     - core_menu.cpp_showMainGameMenu_FUN_00512f40
       Suspects: unaffected_reg, pointer_cast, unaffected_reg
 
@@ -684,6 +684,9 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
   [unknown_field] - 1 functions
     engine_drender.cpp_CDemonRenderer_renderPerspectiveTextured_FUN_0048ad90 ( 20 lines)
 
+  [decompiler_intrinsic] - 1 functions
+    shape_cramtex.cpp_calculateAtlasEfficiency_FUN_00447e80                ( 22 lines)
+
 ====================================================================================================
 PRIORITY 3: Files at 90%+ (finish them off!)
 ====================================================================================================
@@ -774,8 +777,8 @@ PRIORITY 3: Files at 90%+ (finish them off!)
 
   core/menu.cpp (90.9% complete)
     2 functions remaining:
-      core_menu.cpp_configureSoundOptions_FUN_00511e50 (750 lines)
-        Types: ['decompiler_intrinsic', 'double_reconstruction', 'pointer_cast', 'unknown_field']
+      core_menu.cpp_configureSoundOptions_FUN_00511e50 (749 lines)
+        Types: ['decompiler_intrinsic', 'pointer_cast', 'unknown_field']
       core_menu.cpp_showMainGameMenu_FUN_00512f40 (186 lines)
         Types: ['pointer_cast', 'unaffected_reg']
 
@@ -868,13 +871,13 @@ ALL REMAINING FILES
   core/weather.cpp                                              70.0%  (7/10 clean, 3 remaining)
   core/motion.cpp                                               69.7%  (23/33 clean, 10 remaining)
   core/vampboss.cpp                                             69.6%  (16/23 clean, 7 remaining)
+  sound/sndmain.cpp                                             69.4%  (134/193 clean, 59 remaining)
   core/curtain.cpp                                              69.2%  (18/26 clean, 8 remaining)
   sound/snddx.cpp                                               68.8%  (22/32 clean, 10 remaining)
   core/gargoyle.cpp                                             68.8%  (11/16 clean, 5 remaining)
   core/batman.cpp                                               68.8%  (11/16 clean, 5 remaining)
   core/tbplayer.cpp                                             68.8%  (11/16 clean, 5 remaining)
   core/dfilter.cpp                                              68.4%  (13/19 clean, 6 remaining)
-  sound/sndmain.cpp                                             68.4%  (132/193 clean, 61 remaining)
   core/flies.cpp                                                68.2%  (15/22 clean, 7 remaining)
   core/mirror.cpp                                               68.2%  (15/22 clean, 7 remaining)
   core/set.cpp                                                  67.8%  (59/87 clean, 28 remaining)

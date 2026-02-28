@@ -86,12 +86,6 @@
         "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       },
       {
-        "category": "incompatible_types",
-        "column": 20,
-        "line": 146,
-        "message": "invalid operands to binary expression ('double' and 'int')"
-      },
-      {
         "category": "other",
         "column": 11,
         "line": 148,
@@ -617,7 +611,7 @@
       "line": 121,
       "match": "CONCAT26",
       "severity": "mild",
-      "text": "((double)CONCAT26((short)((uint)uVar2 >> 0x10),",
+      "text": "(__BITCAST_DOUBLE(CONCAT26((short)((uint)uVar2 >> 0x10),",
       "type": "decompiler_intrinsic"
     },
     {
@@ -625,7 +619,7 @@
       "line": 122,
       "match": "CONCAT15",
       "severity": "mild",
-      "text": "CONCAT15((char)((uint)uVar2 >> 8),uVar7)),dVar6);",
+      "text": "CONCAT15((char)((uint)uVar2 >> 8),uVar7))),dVar6);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -641,7 +635,7 @@
       "line": 127,
       "match": "CONCAT26",
       "severity": "mild",
-      "text": "((double)CONCAT26((short)((uint)uVar2 >> 0x10),",
+      "text": "(__BITCAST_DOUBLE(CONCAT26((short)((uint)uVar2 >> 0x10),",
       "type": "decompiler_intrinsic"
     },
     {
@@ -673,7 +667,7 @@
       "line": 135,
       "match": "CONCAT26",
       "severity": "mild",
-      "text": "((double)CONCAT26((short)((uint)uVar2 >> 0x10),",
+      "text": "(__BITCAST_DOUBLE(CONCAT26((short)((uint)uVar2 >> 0x10),",
       "type": "decompiler_intrinsic"
     },
     {
@@ -697,7 +691,7 @@
       "line": 139,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "local_30._0_4_ = SUB84(dVar14,0);",
+      "text": "local_30._0_4_ = SUB84(__BITCAST_UINT64(dVar14),0);",
       "type": "unknown_field"
     },
     {
@@ -705,7 +699,7 @@
       "line": 139,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "local_30._0_4_ = SUB84(dVar14,0);",
+      "text": "local_30._0_4_ = SUB84(__BITCAST_UINT64(dVar14),0);",
       "type": "sub84_truncation"
     },
     {
@@ -713,7 +707,7 @@
       "line": 139,
       "match": "SUB84",
       "severity": "mild",
-      "text": "local_30._0_4_ = SUB84(dVar14,0);",
+      "text": "local_30._0_4_ = SUB84(__BITCAST_UINT64(dVar14),0);",
       "type": "decompiler_intrinsic"
     },
     {

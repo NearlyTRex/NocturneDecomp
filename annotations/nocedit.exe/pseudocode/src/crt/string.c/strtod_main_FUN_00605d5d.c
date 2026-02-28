@@ -28,7 +28,7 @@ double __cdecl strtod_main(char *str,char **endptr)
     uVar5 = 0;
     uVar1 = 0;
 LAB_00605d83:
-    local_28 = (double)CONCAT44(uVar5,uVar1);
+    local_28 = __BITCAST_DOUBLE(CONCAT44(uVar5,uVar1));
     return local_28;
   }
   uVar6 = (uint)(CONCAT11(bStack_2b,uStack_2c) & 0x7fff);
@@ -37,7 +37,7 @@ LAB_00605d83:
     uVar5 = INFINITY._4_4_;
     uVar1 = INFINITY._0_4_;
     if ((bStack_2b & 0x80) != 0) {
-      return -(double)CONCAT44(INFINITY._4_4_,INFINITY._0_4_);
+      return -__BITCAST_DOUBLE(CONCAT44(INFINITY._4_4_,INFINITY._0_4_));
     }
     goto LAB_00605d83;
   }
@@ -47,16 +47,16 @@ LAB_00605d83:
       return 0.0;
     }
     local_28 = (double)(float10)CONCAT19(bStack_2b,CONCAT18(uStack_2c,local_34));
-    dVar2 = (double)CONCAT44(local_18._4_4_,(uint)local_18);
+    dVar2 = __BITCAST_DOUBLE(CONCAT44(local_18._4_4_,(uint)local_18));
     dVar3 = local_28;
     if ((((ulonglong)local_28 & 0x7fffffff00000000) == 0) &&
-       (local_20 = local_28, local_18 = (double)CONCAT44(local_18._4_4_,(uint)local_18),
+       (local_20 = local_28, local_18 = __BITCAST_DOUBLE(CONCAT44(local_18._4_4_,(uint)local_18)),
        dVar3 = local_28, (int)local_28 == 0)) goto LAB_00605e33;
   }
   else {
     local_28 = (double)(float10)CONCAT19(bStack_2b,CONCAT18(uStack_2c,local_34));
     dVar2 = local_28;
-    dVar3 = (double)CONCAT44(local_20._4_4_,(uint)local_20);
+    dVar3 = __BITCAST_DOUBLE(CONCAT44(local_20._4_4_,(uint)local_20));
     if (iVar4 == 3) goto LAB_00605e33;
   }
   local_20 = dVar3;

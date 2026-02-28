@@ -84,7 +84,7 @@ section .text
         ;   XREF to: 006081e0 (CONDITIONAL_JUMP)  ; LAB_006081e0
     PUSH EDI                            ; 006081cb
     CALL crt_time.c__time_FUN_006001f0  ; 006081cc
-        ;   XREF to: 006001f0 (UNCONDITIONAL_CALL)  ; time_t crt_time.c__time_FUN_006001f0(time_t * optional_output)
+        ;   XREF to: 006001f0 (UNCONDITIONAL_CALL)  ; time_t crt_time.c__time_FUN_006001f0(int * time)
     ADD ESP,0x4                         ; 006081d1
     LEA EDI,[ESP + 0x38]                ; 006081d4
     MOV dword ptr [ESP + 0x3c],EAX      ; 006081d8

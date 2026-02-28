@@ -402,7 +402,7 @@ LAB_004f579d:
         local_2c = 1;
         if (this_ptr->sit_down_way_point != (CDemonActor *)0x0) {
           fVar9 = delta_time * (float)0.5;
-          fVar24 = SUB84((double)fVar9,0);
+          fVar24 = SUB84(__BITCAST_UINT64((double)fVar9),0);
           if ((this_ptr->base).base.walk_step_speed < fVar9) {
             (this_ptr->base).base.walk_step_speed = fVar9;
           }

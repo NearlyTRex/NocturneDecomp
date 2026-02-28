@@ -55,7 +55,7 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004e4010(CGame *this_ptr)
   for (iVar7 = local_14 << 2; ((stream->_flag & 0x10) == 0 && (iVar7 < 0x1000)); iVar7 = iVar7 + 4)
   {
     _fgets(local_134,0xff,stream);
-    iVar3 = strcmp(local_134,"end\n");
+    iVar3 = _strcmp(local_134,"end\n");
     if (iVar3 == 0) break;
     uVar6 = 0xffffffff;
     pcVar4 = local_134;

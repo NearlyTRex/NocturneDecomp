@@ -16,7 +16,7 @@
 ;   undefined4 DAT_03f5dc44
 ;
 ; Called Functions:
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;   sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60
 ;   sound_sndmain.cpp_lockSound_FUN_005abd30
 ;   sound_sndmain.cpp_unlockSound_FUN_005abdc0
@@ -50,8 +50,8 @@ section .text
     PUSH ESI                            ; 005aa31d
         ;   Label: LAB_005aa31d
     PUSH EAX                            ; 005aa31e
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 005aa31f
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 005aa31f
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 005aa324
     TEST EAX,EAX                        ; 005aa327
     JNZ 0x005aa307                      ; 005aa329

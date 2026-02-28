@@ -43,7 +43,7 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;
 ; *****************************************************************************
 
@@ -159,8 +159,8 @@ section .text
     MOV EDX,0x1e8d264                   ; 0046aa3c | g_TextureAtlasEntries
     ADD EAX,EDX                         ; 0046aa41
     PUSH EAX                            ; 0046aa43
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 0046aa44
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 0046aa44
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0046aa49
     TEST EAX,EAX                        ; 0046aa4c
     JNZ 0x0046aae1                      ; 0046aa4e

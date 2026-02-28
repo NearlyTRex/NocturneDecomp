@@ -36,9 +36,9 @@ double __cdecl sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(uint sfx_ha
                        *(double *)((int)&(this_ptr->options).trigger_time + 4),sfx_handle,
                        in_stack_ffffffd8);
     sound_sndmain_cpp_unlockSound_FUN_005abdc0();
-    local_20 = SUB84(dVar2,0);
+    local_20 = SUB84(__BITCAST_UINT64(dVar2),0);
     uStack_1c = (uint)((ulonglong)dVar2 >> 0x20);
     local_24 = uStack_1c;
   }
-  return (double)CONCAT44(local_24,local_20);
+  return __BITCAST_DOUBLE(CONCAT44(local_24,local_20));
 }

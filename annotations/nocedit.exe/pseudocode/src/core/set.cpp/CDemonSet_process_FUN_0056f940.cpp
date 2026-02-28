@@ -49,7 +49,7 @@ void __cdecl core_set_cpp_CDemonSet_process_FUN_0056f940(CDemonSet *this_ptr)
         if (iVar1 != 0) {
           light->light_enabled_flag = 0;
         }
-        iVar1 = strnicmp(this_ptr_00->name,"moon",4);
+        iVar1 = _strnicmp(this_ptr_00->name,"moon",4);
         if (iVar1 == 0) {
           if (this_ptr->last_switch_area_invalid == 0) {
             light->light_enabled_flag = 0;

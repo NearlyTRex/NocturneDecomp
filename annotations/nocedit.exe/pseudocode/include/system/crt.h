@@ -27,10 +27,17 @@
 // ---------------------------------------------------------------------------
 
 #ifndef _MSC_VER
-#define stricmp strcasecmp
-#define _stricmp strcasecmp
-#define strnicmp strncasecmp
-#define _strnicmp strncasecmp
+inline int _strcmp(char* s1, char* s2) {
+    return strcmp(s1, s2);
+}
+inline int _stricmp(char* s1, char* s2) {
+    return strcasecmp(s1, s2);
+}
+inline int _strnicmp(char* s1, char* s2, size_t n) {
+    return strncasecmp(s1, s2, n);
+}
+#define stricmp _stricmp
+#define strnicmp _strnicmp
 #endif // _MSC_VER
 
 // ---------------------------------------------------------------------------
@@ -233,8 +240,10 @@ inline _tm* _localtime(const void* timer) {
     return reinterpret_cast<_tm*>(localtime(reinterpret_cast<const time_t*>(timer)));
 }
 
-inline time_t _time(time_t* timer) {
-    return time(timer);
+inline time_t _time(int* timer) {
+    time_t t = time(nullptr);
+    if (timer) *timer = (int)t;
+    return t;
 }
 
 inline char* _asctime(_tm* timeptr) {

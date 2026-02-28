@@ -19,7 +19,7 @@
 ;   core_actor.cpp_getRandomInt_FUN_0040cc70
 ;   core_enemy.cpp_CEnemy_randomize_FUN_004aa250
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;
 ; *****************************************************************************
 
@@ -39,8 +39,8 @@ section .text
     PUSH 0x658aa7                       ; 005fcb87 | = "jeff.dfm"
     LEA EAX,[ESI + 0x23b8]              ; 005fcb8c
     PUSH EAX                            ; 005fcb92
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 005fcb93
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 005fcb93
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 005fcb98
     TEST EAX,EAX                        ; 005fcb9b
     JNZ 0x005fcbfd                      ; 005fcb9d

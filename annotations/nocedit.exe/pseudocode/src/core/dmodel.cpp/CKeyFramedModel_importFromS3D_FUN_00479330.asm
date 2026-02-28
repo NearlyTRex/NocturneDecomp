@@ -82,8 +82,8 @@
 ;   crt_stdio.c_fgets_FUN_005fefd0
 ;   crt_stdio.c_fputc_FUN_006007a0
 ;   crt_stdio.c_fscanf_FUN_005fe7c0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;   crt_string.c_splitpath_FUN_005ff178
-;   crt_string.c_stricmp_FUN_005fe7f0
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   ... and 14 more
@@ -1058,8 +1058,8 @@ section .text
     PUSH 0x61ff3e                       ; 00479c95 | = "matProp"
     LEA EAX,[EBP + -0x16]               ; 00479c9a
     PUSH EAX                            ; 00479c9d
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 00479c9e
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 00479c9e
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 00479ca3
     TEST EAX,EAX                        ; 00479ca6
     JNZ 0x00479ea9                      ; 00479ca8

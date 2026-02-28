@@ -75,7 +75,7 @@
 ;   core_netgame.cpp_CNetGame_sendDisconnectNotify_FUN_00543930
 ;   core_netgame.cpp_CNetGame_sendPacket_FUN_00541230
 ;   crt_memory.c_memset_FUN_005fde40
-;   crt_string.c_strcmp_FUN_005fef20
+;   crt_string.c__strcmp_FUN_005fef20
 ;   support_trisock.cpp_createNetworkAddr_FUN_005e1940
 ;
 ; *****************************************************************************
@@ -138,8 +138,8 @@ section .text
     PUSH EAX                            ; 00540731
     MOV EAX,dword ptr [ESP + 0xd8]      ; 00540732
     PUSH EAX                            ; 00540739
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 0054073a
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 0054073a
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 0054073f
     TEST EAX,EAX                        ; 00540742
     JZ 0x00540897                       ; 00540744

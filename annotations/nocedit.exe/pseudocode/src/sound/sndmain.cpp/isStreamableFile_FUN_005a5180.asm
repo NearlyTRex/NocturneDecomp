@@ -1,11 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl sound_sndmain_cpp_isStreamableFile_FUN_005a5180(char *filename,char *filepath)
+; int __cdecl sound_sndmain_cpp_isStreamableFile_FUN_005a5180(char *filename)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename
-; char *           Stack[0x8]:4   filepath
 ; Local Variables:
 ; undefined        Stack[-0x100]:1  local_100
 ;
@@ -15,7 +14,7 @@
 ;   TerminatedCString s_mp3_0064fa5d
 ;
 ; Called Functions:
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;   engine_dosio.c_getFileSize_FUN_00481880
 ;   engine_dosio.c_splitPath_FUN_00481f20
 ;
@@ -52,8 +51,8 @@ section .text
     PUSH 0x64fa59                       ; 005a51c7 | = "mp3"
     LEA EAX,[ESP + 0x4]                 ; 005a51cc
     PUSH EAX                            ; 005a51d0
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 005a51d1
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 005a51d1
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 005a51d6
     TEST EAX,EAX                        ; 005a51d9
     JZ 0x005a51a2                       ; 005a51db
@@ -61,8 +60,8 @@ section .text
     PUSH 0x64fa5d                       ; 005a51dd | = ".mp3"
     LEA EAX,[ESP + 0x4]                 ; 005a51e2
     PUSH EAX                            ; 005a51e6
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 005a51e7
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 005a51e7
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 005a51ec
     TEST EAX,EAX                        ; 005a51ef
     JZ 0x005a51a2                       ; 005a51f1

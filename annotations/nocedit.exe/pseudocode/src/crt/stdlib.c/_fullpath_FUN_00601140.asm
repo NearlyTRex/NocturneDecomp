@@ -24,7 +24,7 @@
 ;   crt_io.c_getcwd_FUN_00608d20
 ;   crt_memory.c_free_FUN_00601cd0
 ;   crt_memory.c_malloc_FUN_00601bb0
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;   GetFullPathNameA
 ;
 ; *****************************************************************************
@@ -83,8 +83,8 @@ section .text
     PUSH 0x658c2c                       ; 00601199 | = "con"
         ;   Label: LAB_00601199
     PUSH ESI                            ; 0060119e
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 0060119f
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 0060119f
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 006011a4
     TEST EAX,EAX                        ; 006011a7
     JNZ 0x006011d6                      ; 006011a9

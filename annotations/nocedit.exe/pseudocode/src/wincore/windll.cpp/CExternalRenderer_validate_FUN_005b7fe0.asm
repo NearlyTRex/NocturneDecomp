@@ -12,7 +12,7 @@
 ;   wincore_windll.cpp_loadExternalRenderer_FUN_005b6750 at 005b67f5
 ;
 ; Called Functions:
-;   crt_string.c_strcmp_FUN_005fef20
+;   crt_string.c__strcmp_FUN_005fef20
 ;
 ; *****************************************************************************
 
@@ -94,8 +94,8 @@ section .text
     LEA EAX,[ESI + 0x100]               ; 005b80a3
     PUSH EAX                            ; 005b80a9
     XOR EBX,EBX                         ; 005b80aa
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 005b80ac
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 005b80ac
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 005b80b1
     TEST EAX,EAX                        ; 005b80b4
     SETZ AL                             ; 005b80b6

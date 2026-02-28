@@ -17,7 +17,7 @@ int __cdecl engine_fileio_cpp_checkFileOverwriteCondition_FUN_004b3120(char *tar
   uVar1 = engine_dosio_c_getFileTimestamp_FUN_00481960((char *)0x0,target_filename);
   if (-1 < (int)uVar1) {
     if (((source_directory != (char *)0x0) && (*source_directory != '\0')) &&
-       (iVar2 = stricmp
+       (iVar2 = _stricmp
                           (source_directory,g_VersionControlSession.primary_username), iVar2 == 0))
     {
       _sprintf

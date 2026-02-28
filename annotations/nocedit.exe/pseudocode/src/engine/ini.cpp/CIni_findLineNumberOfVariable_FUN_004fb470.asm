@@ -33,7 +33,7 @@
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_fgets_FUN_005fefd0
-;   crt_string.c_strcmp_FUN_005fef20
+;   crt_string.c__strcmp_FUN_005fef20
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;   shape_memdbg.cpp_openFile_FUN_0050f7a0
 ;
@@ -160,8 +160,8 @@ section .text
     PUSH EDX                            ; 004fb565
     LEA EAX,[ESP + 0x4]                 ; 004fb566
     PUSH EAX                            ; 004fb56a
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 004fb56b
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 004fb56b
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 004fb570
     TEST EAX,EAX                        ; 004fb573
     JNZ 0x004fb639                      ; 004fb575
@@ -172,8 +172,8 @@ section .text
     PUSH ECX                            ; 004fb58e
     ADD EAX,EBP                         ; 004fb58f
     PUSH EAX                            ; 004fb591
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 004fb592
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 004fb592
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 004fb597
     TEST EAX,EAX                        ; 004fb59a
     JNZ 0x004fb5ab                      ; 004fb59c
@@ -223,8 +223,8 @@ section .text
     PUSH EAX                            ; 004fb61d
     LEA EAX,[ESP + 0x4]                 ; 004fb61e
     PUSH EAX                            ; 004fb622
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 004fb623
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 004fb623
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 004fb628
     TEST EAX,EAX                        ; 004fb62b
     JZ 0x004fb4e8                       ; 004fb62d

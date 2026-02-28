@@ -41,9 +41,9 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053d3b0(CDemonMission *this_ptr
       local_14 = 1.0;
       if (pCVar2->create_event[0] != '\0') {
         local_18 = pCVar2->create_event;
-        iVar3 = stricmp(local_18,"none");
+        iVar3 = _stricmp(local_18,"none");
         if ((iVar3 != 0) &&
-           (iVar3 = stricmp(local_18,"true"), iVar3 != 0)) {
+           (iVar3 = _stricmp(local_18,"true"), iVar3 != 0)) {
           local_14 = pCVar2->create_prob;
         }
       }

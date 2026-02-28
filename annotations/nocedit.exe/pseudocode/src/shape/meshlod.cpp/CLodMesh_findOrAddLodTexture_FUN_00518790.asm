@@ -20,7 +20,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;   shape_memdbg.cpp_debugRealloc_FUN_0050f540
 ;
 ; *****************************************************************************
@@ -46,8 +46,8 @@ section .text
     PUSH EBP                            ; 005187ac
     ADD EAX,0x8                         ; 005187ad
     PUSH EAX                            ; 005187b0
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 005187b1
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 005187b1
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 005187b6
     TEST EAX,EAX                        ; 005187b9
     JZ 0x0051885d                       ; 005187bb

@@ -265,17 +265,17 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
         dVar2 = (double)(pCVar4->base).base.location.position.y;
         _sprintf
                   (local_3dc,"Hero : %4.2f,%4.2f,%4.2f xyz and %3.2f,%3.2f,%3.2f pbh",
-                   (double)(pCVar4->base).base.location.position.x,SUB84(dVar2,0),
-                   (int)((ulonglong)dVar2 >> 0x20),SUB84(dVar1,0),(int)((ulonglong)dVar1 >> 0x20),
-                   SUB84(180 *
-                         (double)(pCVar4->base).base.orient.vec.x * 0.31830988619288902,0));
+                   (double)(pCVar4->base).base.location.position.x,SUB84(__BITCAST_UINT64(dVar2),0),
+                   (int)((ulonglong)dVar2 >> 0x20),SUB84(__BITCAST_UINT64(dVar1),0),(int)((ulonglong)dVar1 >> 0x20),
+                   SUB84(__BITCAST_UINT64(180 *
+                         (double)(pCVar4->base).base.orient.vec.x * 0.31830988619288902),0));
         engine_2d_c_drawText_FUN_00401fd0(local_3dc,0,0);
         _sprintf(local_3dc,"Slew : %s, Virtual Director : %s");
         engine_2d_c_drawText_FUN_00401fd0(local_3dc,0,0xb);
         if (this_ptr->debug_fudge_target != (CVector3f *)0x0) {
           _sprintf
                     (local_3dc,"Fudge: %g,%g,%g",
-                     SUB84((double)this_ptr->debug_fudge_target->x,0));
+                     SUB84(__BITCAST_UINT64((double)this_ptr->debug_fudge_target->x),0));
           engine_2d_c_drawText_FUN_00401fd0(local_3dc,0,g_WindowHeight + -0x4d);
         }
         sound_sndmain_cpp_getSoundMemoryStats_FUN_005aa6a0

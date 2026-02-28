@@ -30,7 +30,7 @@ CDemonActor * __cdecl core_mission_cpp_CDemonMission_loadActor_FUN_00523990(CDem
       _fputc(iVar2,file);
       iVar2 = _fscanf(file,"%[^\"]",local_dc);
       if (iVar2 == 1) {
-        iVar2 = stricmp(local_dc,"(none)");
+        iVar2 = _stricmp(local_dc,"(none)");
         if (iVar2 == 0) {
           unaff_ESI = (CDemonActor *)0x0;
         }

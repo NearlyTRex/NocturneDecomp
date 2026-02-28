@@ -15,18 +15,18 @@ int __cdecl core_skeledit_cpp_FUN_00592520(void *ptr)
   int in_stack_00000010;
   
   __STK();
-  iVar1 = strcmp(ptr,"(");
+  iVar1 = _strcmp(ptr,"(");
   if (iVar1 == 0) {
     *in_stack_00000008 = 0;
   }
   else {
-    iVar1 = strcmp(ptr,")");
+    iVar1 = _strcmp(ptr,")");
     if (iVar1 == 0) {
       *in_stack_00000008 = in_stack_0000000c + -1;
       return 1;
     }
     if (in_stack_00000010 != 0) {
-      iVar1 = stricmp(ptr,"patch");
+      iVar1 = _stricmp(ptr,"patch");
       if (iVar1 == 0) {
         *in_stack_00000008 = -1;
         return 1;

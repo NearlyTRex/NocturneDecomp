@@ -8,12 +8,6 @@
         "message": "assigning to 'int *' from incompatible type 'void *'"
       },
       {
-        "category": "incompatible_types",
-        "column": 45,
-        "line": 148,
-        "message": "invalid operands to binary expression ('double' and 'int')"
-      },
-      {
         "category": "format_error",
         "column": 45,
         "line": 148,
@@ -32,12 +26,6 @@
         "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       },
       {
-        "category": "incompatible_types",
-        "column": 51,
-        "line": 169,
-        "message": "invalid operands to binary expression ('double' and 'int')"
-      },
-      {
         "category": "format_error",
         "column": 51,
         "line": 169,
@@ -54,12 +42,6 @@
         "column": 51,
         "line": 171,
         "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 22,
-        "line": 196,
-        "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "format_error",
@@ -913,7 +895,7 @@
       "line": 141,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "(local_340,\"%g,%g,%g\",SUB84((double)local_a8.x,0),",
+      "text": "(local_340,\"%g,%g,%g\",SUB84(__BITCAST_UINT64((double)local_a8.x),0),",
       "type": "sub84_truncation"
     },
     {
@@ -921,7 +903,7 @@
       "line": 141,
       "match": "SUB84",
       "severity": "mild",
-      "text": "(local_340,\"%g,%g,%g\",SUB84((double)local_a8.x,0),",
+      "text": "(local_340,\"%g,%g,%g\",SUB84(__BITCAST_UINT64((double)local_a8.x),0),",
       "type": "decompiler_intrinsic"
     },
     {
@@ -953,7 +935,7 @@
       "line": 162,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "(double)puVar2[4] * 0.00390625,SUB84((double)puVar2[7] * 0.00390625,0),",
+      "text": "(double)puVar2[4] * 0.00390625,SUB84(__BITCAST_UINT64((double)puVar2[7] * 0.00390625),0),",
       "type": "sub84_truncation"
     },
     {
@@ -961,7 +943,7 @@
       "line": 162,
       "match": "SUB84",
       "severity": "mild",
-      "text": "(double)puVar2[4] * 0.00390625,SUB84((double)puVar2[7] * 0.00390625,0),",
+      "text": "(double)puVar2[4] * 0.00390625,SUB84(__BITCAST_UINT64((double)puVar2[7] * 0.00390625),0),",
       "type": "decompiler_intrinsic"
     },
     {
@@ -993,7 +975,7 @@
       "line": 189,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "SUB84((double)puVar2[7] * 0.00390625,0),",
+      "text": "SUB84(__BITCAST_UINT64((double)puVar2[7] * 0.00390625),0),",
       "type": "sub84_truncation"
     },
     {
@@ -1001,7 +983,7 @@
       "line": 189,
       "match": "SUB84",
       "severity": "mild",
-      "text": "SUB84((double)puVar2[7] * 0.00390625,0),",
+      "text": "SUB84(__BITCAST_UINT64((double)puVar2[7] * 0.00390625),0),",
       "type": "decompiler_intrinsic"
     },
     {

@@ -200,9 +200,9 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
     return iVar7;
   }
   local_e0 = 0xffffffff;
-  iVar7 = stricmp(local_150,"cmp");
+  iVar7 = _stricmp(local_150,"cmp");
   if (iVar7 != 0) {
-    iVar7 = stricmp(local_150,"exists");
+    iVar7 = _stricmp(local_150,"exists");
     if (iVar7 == 0) {
       local_6c = -1;
       sscanf
@@ -259,7 +259,7 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
       *parse_position = *parse_position + local_6c;
     }
     else {
-      iVar7 = stricmp(local_150,"hasItem");
+      iVar7 = _stricmp(local_150,"hasItem");
       if (iVar7 == 0) {
         if (g_CNetGamePtr->connection_type != CONNECTION_NONE) {
           pcVar16 = "Can't use hasItem condition in multi-player";
@@ -330,7 +330,7 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
         *parse_position = *parse_position + local_b8;
       }
       else {
-        iVar7 = stricmp(local_150,"hasItemType");
+        iVar7 = _stricmp(local_150,"hasItemType");
         if (iVar7 == 0) {
           local_ac = -1;
           sscanf
@@ -418,7 +418,7 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
           }
           return -1;
         }
-        iVar7 = stricmp(local_150,"hasKeyMask");
+        iVar7 = _stricmp(local_150,"hasKeyMask");
         if (iVar7 == 0) {
           if (g_CNetGamePtr->connection_type != CONNECTION_NONE) {
             pcVar16 = "Can't use hasKeyMask condition in multi-player";
@@ -497,7 +497,7 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
           *parse_position = *parse_position + local_a4;
         }
         else {
-          iVar7 = stricmp(local_150,"isBroken");
+          iVar7 = _stricmp(local_150,"isBroken");
           if (iVar7 == 0) {
             local_9c = -1;
             sscanf
@@ -559,7 +559,7 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
             }
             return -1;
           }
-          iVar7 = stricmp(local_150,"isCurrentCamera");
+          iVar7 = _stricmp(local_150,"isCurrentCamera");
           if (iVar7 == 0) {
             local_94 = -1;
             sscanf
@@ -582,7 +582,7 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
             }
             local_e0 = 0;
             if ((-1 < g_CDemonSetPtr->selected_camera_index) &&
-               (iVar7 = stricmp
+               (iVar7 = _stricmp
                                   (g_CDemonSetPtr->cameras[g_CDemonSetPtr->selected_camera_index].
                                    name,local_8bc), iVar7 == 0)) {
               local_e0 = 1;
@@ -590,7 +590,7 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
             *parse_position = *parse_position + local_94;
           }
           else {
-            iVar7 = stricmp(local_150,"isDead");
+            iVar7 = _stricmp(local_150,"isDead");
             if (iVar7 == 0) {
               local_90 = -1;
               sscanf
@@ -630,7 +630,7 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
               }
               return -1;
             }
-            iVar7 = stricmp(local_150,"isFadeFinished");
+            iVar7 = _stricmp(local_150,"isFadeFinished");
             if (iVar7 == 0) {
               local_8c = -1;
               sscanf(expression + *parse_position," ( )%n",&local_8c);
@@ -655,7 +655,7 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
               local_e0 = core_game_cpp_CGame_fadeIn_FUN_004e0b90(this_ptr_00);
             }
             else {
-              iVar7 = stricmp(local_150,"isInRange");
+              iVar7 = _stricmp(local_150,"isInRange");
               if (iVar7 == 0) {
                 local_88 = -1;
                 sscanf(expression + *parse_position," ( %n",&local_88)
@@ -740,7 +740,7 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
                 }
                 return -1;
               }
-              iVar7 = stricmp(local_150,"isOfType");
+              iVar7 = _stricmp(local_150,"isOfType");
               if (iVar7 == 0) {
                 local_70 = -1;
                 sscanf
@@ -826,7 +826,7 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
                 }
                 return -1;
               }
-              iVar7 = stricmp(local_150,"isFacing");
+              iVar7 = _stricmp(local_150,"isFacing");
               if (iVar7 == 0) {
                 local_60 = -1;
                 sscanf
@@ -982,7 +982,7 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
                 }
               }
               else {
-                iVar7 = stricmp(local_150,"isLightOn");
+                iVar7 = _stricmp(local_150,"isLightOn");
                 if (iVar7 == 0) {
                   local_54 = -1;
                   sscanf
@@ -1027,7 +1027,7 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
                   *parse_position = *parse_position + local_54;
                 }
                 else {
-                  iVar7 = stricmp(local_150,"isNudityEnabled");
+                  iVar7 = _stricmp(local_150,"isNudityEnabled");
                   if (iVar7 == 0) {
                     local_44 = -1;
                     sscanf
@@ -1052,7 +1052,7 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
                     *parse_position = *parse_position + local_44;
                   }
                   else {
-                    iVar7 = stricmp(local_150,"isSfxActive");
+                    iVar7 = _stricmp(local_150,"isSfxActive");
                     if (iVar7 == 0) {
                       local_40 = -1;
                       sscanf
@@ -1109,7 +1109,7 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
                       *parse_position = *parse_position + local_40;
                     }
                     else {
-                      iVar7 = stricmp(local_150,"isTalking");
+                      iVar7 = _stricmp(local_150,"isTalking");
                       if (iVar7 == 0) {
                         local_38 = -1;
                         sscanf
@@ -1148,7 +1148,7 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
                         *parse_position = *parse_position + local_38;
                       }
                       else {
-                        iVar7 = stricmp(local_150,"isVictim");
+                        iVar7 = _stricmp(local_150,"isVictim");
                         if (iVar7 == 0) {
                           local_34 = -1;
                           sscanf
@@ -1202,7 +1202,7 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
                           }
                           return -1;
                         }
-                        iVar7 = stricmp
+                        iVar7 = _stricmp
                                           (local_150,"isWeaponDrawn");
                         if (iVar7 == 0) {
                           local_20 = -1;
@@ -1241,7 +1241,7 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
                           *parse_position = *parse_position + local_20;
                         }
                         else {
-                          iVar7 = stricmp
+                          iVar7 = _stricmp
                                             (local_150,"isWearingGasMask");
                           if (iVar7 == 0) {
                             local_1c = -1;
@@ -1280,10 +1280,10 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
                             }
                           }
                           else {
-                            iVar7 = stricmp(local_150,"randBool")
-                            ;
+                            iVar7 = _stricmp
+                                              (local_150,"randBool");
                             if (iVar7 != 0) {
-                              iVar7 = stricmp
+                              iVar7 = _stricmp
                                                 (local_150,"reachedDest");
                               if (iVar7 != 0) {
                                 pcVar16 = "Invalid meta-function";
@@ -1467,30 +1467,30 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
     memmove(local_985 + 1,local_c8,SVar15);
     SVar15 = SVar15 - 1;
   }
-  iVar8 = strcmp(local_985 + 1,"<");
+  iVar8 = _strcmp(local_985 + 1,"<");
   iVar7 = 0;
   if (iVar8 != 0) {
-    iVar7 = strcmp(local_985 + 1,"<=");
+    iVar7 = _strcmp(local_985 + 1,"<=");
     if (iVar7 == 0) {
       iVar7 = 1;
     }
     else {
-      iVar7 = strcmp(local_985 + 1,"==");
+      iVar7 = _strcmp(local_985 + 1,"==");
       if (iVar7 == 0) {
         iVar7 = 2;
       }
       else {
-        iVar7 = strcmp(local_985 + 1,"!=");
+        iVar7 = _strcmp(local_985 + 1,"!=");
         if (iVar7 == 0) {
           iVar7 = 3;
         }
         else {
-          iVar7 = strcmp(local_985 + 1,">");
+          iVar7 = _strcmp(local_985 + 1,">");
           if (iVar7 == 0) {
             iVar7 = 5;
           }
           else {
-            iVar7 = strcmp(local_985 + 1,">=");
+            iVar7 = _strcmp(local_985 + 1,">=");
             if (iVar7 == 0) {
               iVar7 = 4;
             }

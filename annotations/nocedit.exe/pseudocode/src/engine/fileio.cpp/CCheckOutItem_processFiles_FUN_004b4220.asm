@@ -1204,7 +1204,7 @@ section .text
     PUSH 0x0                            ; 004b4e5d
         ;   Label: LAB_004b4e5d
     CALL crt_time.c__time_FUN_006001f0  ; 004b4e5f
-        ;   XREF to: 006001f0 (UNCONDITIONAL_CALL)  ; time_t crt_time.c__time_FUN_006001f0(time_t * optional_output)
+        ;   XREF to: 006001f0 (UNCONDITIONAL_CALL)  ; time_t crt_time.c__time_FUN_006001f0(int * time)
     ADD ESP,0x4                         ; 004b4e64
     MOV dword ptr [ESP + 0x1384],EAX    ; 004b4e67
     LEA EAX,[ESP + 0x1384]              ; 004b4e6e

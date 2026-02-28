@@ -74,7 +74,7 @@ section .text
         ;   Label: LAB_00534c7a
     PUSH EBX                            ; 00534c7c
     CALL sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40 ; 00534c7d
-        ;   XREF to: 00534d40 (UNCONDITIONAL_CALL)  ; int sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder * this_ptr)
+        ;   XREF to: 00534d40 (UNCONDITIONAL_CALL)  ; int sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder * this_ptr, short * pcm_output)
     ADD ESP,0x8                         ; 00534c82
     TEST EAX,EAX                        ; 00534c85
     JLE 0x00534ca7                      ; 00534c87
@@ -105,7 +105,7 @@ section .text
         ;   Label: LAB_00534cae
     PUSH EBX                            ; 00534caf
     CALL sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40 ; 00534cb0
-        ;   XREF to: 00534d40 (UNCONDITIONAL_CALL)  ; int sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder * this_ptr)
+        ;   XREF to: 00534d40 (UNCONDITIONAL_CALL)  ; int sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder * this_ptr, short * pcm_output)
     ADD ESP,0x8                         ; 00534cb5
     MOV dword ptr [EBX + 0x108],EAX     ; 00534cb8
     TEST EAX,EAX                        ; 00534cbe

@@ -4,95 +4,95 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 4128 functions
-  1 suspects: 809 functions
-  2 suspects: 473 functions
-  3 suspects: 240 functions
-  4 suspects: 208 functions
-  5 suspects: 176 functions
+  0 suspects: 4130 functions
+  1 suspects: 811 functions
+  2 suspects: 470 functions
+  3 suspects: 243 functions
+  4 suspects: 207 functions
+  5 suspects: 177 functions
   6 suspects: 132 functions
-  7 suspects: 100 functions
-  8 suspects: 96 functions
+  7 suspects: 101 functions
+  8 suspects: 95 functions
   9 suspects: 74 functions
   10 suspects: 62 functions
-  11 suspects: 54 functions
-  12 suspects: 53 functions
-  13 suspects: 51 functions
-  14 suspects: 53 functions
-  15 suspects: 31 functions
+  11 suspects: 56 functions
+  12 suspects: 52 functions
+  13 suspects: 50 functions
+  14 suspects: 50 functions
+  15 suspects: 32 functions
   16 suspects: 32 functions
   17 suspects: 30 functions
-  18 suspects: 34 functions
-  19 suspects: 21 functions
+  18 suspects: 32 functions
+  19 suspects: 23 functions
   20 suspects: 24 functions
-  21 suspects: 13 functions
+  21 suspects: 16 functions
   22 suspects: 17 functions
-  23 suspects: 20 functions
-  24 suspects: 17 functions
+  23 suspects: 19 functions
+  24 suspects: 18 functions
   25 suspects: 13 functions
-  26 suspects: 11 functions
-  27 suspects: 11 functions
+  26 suspects: 10 functions
+  27 suspects: 12 functions
   28 suspects: 9 functions
   29 suspects: 11 functions
   30 suspects: 5 functions
-  31 suspects: 5 functions
-  32 suspects: 5 functions
-  33 suspects: 6 functions
+  31 suspects: 6 functions
+  32 suspects: 7 functions
+  33 suspects: 5 functions
   34 suspects: 4 functions
-  35 suspects: 9 functions
-  36 suspects: 8 functions
+  35 suspects: 6 functions
+  36 suspects: 10 functions
   37 suspects: 4 functions
-  38 suspects: 2 functions
-  39 suspects: 9 functions
-  40 suspects: 5 functions
-  41 suspects: 8 functions
-  42 suspects: 2 functions
-  43 suspects: 2 functions
+  38 suspects: 1 functions
+  39 suspects: 8 functions
+  40 suspects: 6 functions
+  41 suspects: 5 functions
+  42 suspects: 3 functions
+  43 suspects: 1 functions
   44 suspects: 3 functions
   45 suspects: 1 functions
-  46 suspects: 2 functions
+  46 suspects: 3 functions
   47 suspects: 2 functions
   48 suspects: 4 functions
-  50 suspects: 1 functions
-  52 suspects: 3 functions
-  53 suspects: 4 functions
+  49 suspects: 1 functions
+  50 suspects: 2 functions
+  52 suspects: 2 functions
+  53 suspects: 2 functions
   54 suspects: 2 functions
   55 suspects: 3 functions
-  56 suspects: 3 functions
+  56 suspects: 4 functions
   57 suspects: 1 functions
   58 suspects: 3 functions
   59 suspects: 4 functions
   60 suspects: 2 functions
-  62 suspects: 2 functions
+  62 suspects: 1 functions
   63 suspects: 1 functions
   64 suspects: 1 functions
   65 suspects: 1 functions
   66 suspects: 1 functions
-  67 suspects: 1 functions
   70 suspects: 1 functions
   71 suspects: 1 functions
+  73 suspects: 1 functions
   74 suspects: 1 functions
-  75 suspects: 1 functions
-  77 suspects: 1 functions
   79 suspects: 2 functions
   81 suspects: 1 functions
-  82 suspects: 1 functions
+  82 suspects: 2 functions
   85 suspects: 2 functions
   86 suspects: 1 functions
   97 suspects: 1 functions
   98 suspects: 3 functions
+  100 suspects: 1 functions
   104 suspects: 4 functions
+  105 suspects: 1 functions
   108 suspects: 1 functions
-  110 suspects: 2 functions
-  118 suspects: 2 functions
-  133 suspects: 1 functions
+  110 suspects: 1 functions
+  117 suspects: 1 functions
   159 suspects: 1 functions
   161 suspects: 1 functions
-  190 suspects: 1 functions
+  175 suspects: 1 functions
   212 suspects: 1 functions
   244 suspects: 1 functions
   286 suspects: 1 functions
-  396 suspects: 1 functions
+  324 suspects: 1 functions
 
 ========================================================================================================================
 EASY WINS: FUNCTIONS WITH 1 SUSPECT
@@ -186,7 +186,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       Function declares 4 params but call sites push 6 (2 missing)...
     ... and 131 more
 
-  [pointer_cast] (122 functions)
+  [pointer_cast] (123 functions)
   ------------------------------------------------------------
     core_dlight.cpp_drawGrayscalePixel_FUN_00473360    (  5 lines)
       *(int *)((int)g_ScreenBufferArray[y] + x * 4) = grayscale_va...
@@ -228,9 +228,9 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       out_matrix = (CMatrix3x4f *)((int)out_matrix + ((uint)bVar3 ...
     core_actor.cpp_syncActorTypeIDs_FUN_0040c7c0       ( 17 lines)
       piVar1 = (int *)((int)g_ActorClassRegistrations + iVar3);...
-    ... and 102 more
+    ... and 103 more
 
-  [decompiler_intrinsic] (48 functions)
+  [decompiler_intrinsic] (49 functions)
   ------------------------------------------------------------
     core_dynamite.cpp_CDynamite_FUN_0049cf90           (  4 lines)
       return (uint)(ABS(this_ptr->fuse_timer) == 0.0);...
@@ -262,6 +262,8 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       return SQRT(fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1);...
     core_setutil.cpp_C3DSLight_isVisible_FUN_00587df0  ( 18 lines)
       if (ABS(this_ptr->atten_end) == 0.0) {...
+    shape_cramtex.cpp_calculateAtlasEfficiency_FUN_004 ( 22 lines)
+      return __BITCAST_DOUBLE(CONCAT44(g_CramTextureCount,...
     core_setutil.cpp_C3DSCamera_exportS3D_FUN_00586190 ( 23 lines)
       fVar2 = (float10)fpatan((float10)18 / (float10)this_ptr->pro...
     core_trigger.cpp_CTrigger_calculateTestRadius_FUN_ ( 23 lines)
@@ -270,9 +272,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       (this_ptr,SQRT(local_8 * local_8 + local_10 * local_10 + loc...
     core_msnedit.cpp_CDemonMission_FUN_0053bcf0        ( 26 lines)
       fVar3 = SQRT(fVar4 * fVar4 + fVar5 * fVar5 + fVar3 * fVar3),...
-    core_weapon.cpp_CWeapon_canPickup_FUN_005ee340     ( 27 lines)
-      (float)0.5 < SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fV...
-    ... and 28 more
+    ... and 29 more
 
   [negative_offset] (40 functions)
   ------------------------------------------------------------

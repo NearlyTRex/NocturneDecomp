@@ -38,12 +38,6 @@
         "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       },
       {
-        "category": "incompatible_types",
-        "column": 26,
-        "line": 244,
-        "message": "invalid operands to binary expression ('double' and 'int')"
-      },
-      {
         "category": "other",
         "column": 20,
         "line": 284,
@@ -881,7 +875,7 @@
       "line": 237,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "SUB84((double)local_164.impact_direction.y,0),",
+      "text": "SUB84(__BITCAST_UINT64((double)local_164.impact_direction.y),0),",
       "type": "sub84_truncation"
     },
     {
@@ -889,7 +883,7 @@
       "line": 237,
       "match": "SUB84",
       "severity": "mild",
-      "text": "SUB84((double)local_164.impact_direction.y,0),",
+      "text": "SUB84(__BITCAST_UINT64((double)local_164.impact_direction.y),0),",
       "type": "decompiler_intrinsic"
     },
     {

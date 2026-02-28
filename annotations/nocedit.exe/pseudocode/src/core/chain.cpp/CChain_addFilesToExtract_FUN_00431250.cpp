@@ -16,7 +16,7 @@ void __cdecl core_chain_cpp_CChain_addFilesToExtract_FUN_00431250(CChain *this_p
   char local_104 [256];
   
   pcVar3 = this_ptr->texture_name;
-  iVar2 = stricmp(pcVar3,"CHAINLINK.RAW");
+  iVar2 = _stricmp(pcVar3,"CHAINLINK.RAW");
   if (iVar2 == 0) {
     return;
   }

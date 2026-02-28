@@ -23,8 +23,8 @@
 ; Called Functions:
 ;   CloseHandle
 ;   CreateFileA
-;   crt_string.c_strcmp_FUN_005fef20
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__strcmp_FUN_005fef20
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;   GetFileType
 ;   GetLastError
 ;
@@ -53,8 +53,8 @@ section .text
         ;   XREF to: 00607df7 (CONDITIONAL_JUMP)  ; LAB_00607df7
     PUSH 0x65905c                       ; 00607d7d | = "con"
     PUSH ESI                            ; 00607d82
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 00607d83
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 00607d83
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 00607d88
     TEST EAX,EAX                        ; 00607d8b
     JNZ 0x00607d96                      ; 00607d8d
@@ -148,8 +148,8 @@ section .text
     PUSH 0x659068                       ; 00607e35 | = "EXE"
     INC ESI                             ; 00607e3a
     PUSH ESI                            ; 00607e3b
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 00607e3c
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 00607e3c
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 00607e41
     TEST EAX,EAX                        ; 00607e44
     JNZ 0x00607e4b                      ; 00607e46

@@ -36,7 +36,7 @@ int __cdecl engine_ini_cpp_CIni_getProfileString_FUN_004fb250(CIni *this_ptr,cha
     if (((stream->_flag & 0x10) != 0) ||
        (pcVar5 = _fgets(local_210,0xff,stream), pcVar5 == (char *)0x0))
     goto LAB_004fb2d7;
-    iVar6 = strcmp(local_210,local_110);
+    iVar6 = _strcmp(local_210,local_110);
   } while (iVar6 != 0);
   bVar2 = (byte)stream->_flag;
   bVar3 = false;
@@ -57,7 +57,7 @@ LAB_004fb3b0:
     if (unaff_EBP != (char *)0x0) {
       *unaff_EBP = '\0';
     }
-    iVar6 = strcmp(local_210,key);
+    iVar6 = _strcmp(local_210,key);
     if (iVar6 == 0) break;
     bVar2 = (byte)stream->_flag;
   } while( true );

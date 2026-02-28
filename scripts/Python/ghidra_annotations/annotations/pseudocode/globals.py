@@ -1929,14 +1929,14 @@ def generate_constants_file(constants_list, type_to_path_map=None, needed_protot
                     (initializer.startswith('"') or initializer.startswith('L"'))):
                     # Remove array dimensions from variable name
                     var_name_no_dims = full_var_name.split('[')[0] + '[]'
-                    line = "const %s %s = %s;" % (base_type, var_name_no_dims, initializer)
+                    line = "static %s %s = %s;" % (base_type, var_name_no_dims, initializer)
                 else:
-                    line = "const %s %s = %s;" % (base_type, full_var_name, initializer)
+                    line = "static %s %s = %s;" % (base_type, full_var_name, initializer)
                 if const.get('comment'):
                     line += " // %s" % const['comment']
                 content.append(line)
             else:
-                content.append("// extern const %s %s; // No initializer found" % (base_type, full_var_name))
+                content.append("// extern %s %s; // No initializer found" % (base_type, full_var_name))
         content.append("")
     return "\n".join(content)
 
@@ -2676,10 +2676,17 @@ def generate_crt_header(functions_to_process):
     lines.append("// ---------------------------------------------------------------------------")
     lines.append("")
     lines.append("#ifndef _MSC_VER")
-    lines.append("#define stricmp strcasecmp")
-    lines.append("#define _stricmp strcasecmp")
-    lines.append("#define strnicmp strncasecmp")
-    lines.append("#define _strnicmp strncasecmp")
+    lines.append("inline int _strcmp(char* s1, char* s2) {")
+    lines.append("    return strcmp(s1, s2);")
+    lines.append("}")
+    lines.append("inline int _stricmp(char* s1, char* s2) {")
+    lines.append("    return strcasecmp(s1, s2);")
+    lines.append("}")
+    lines.append("inline int _strnicmp(char* s1, char* s2, size_t n) {")
+    lines.append("    return strncasecmp(s1, s2, n);")
+    lines.append("}")
+    lines.append("#define stricmp _stricmp")
+    lines.append("#define strnicmp _strnicmp")
     lines.append("#endif // _MSC_VER")
     lines.append("")
 
@@ -2892,8 +2899,10 @@ def generate_crt_header(functions_to_process):
     lines.append("    return reinterpret_cast<_tm*>(localtime(reinterpret_cast<const time_t*>(timer)));")
     lines.append("}")
     lines.append("")
-    lines.append("inline time_t _time(time_t* timer) {")
-    lines.append("    return time(timer);")
+    lines.append("inline time_t _time(int* timer) {")
+    lines.append("    time_t t = time(nullptr);")
+    lines.append("    if (timer) *timer = (int)t;")
+    lines.append("    return t;")
     lines.append("}")
     lines.append("")
     lines.append("inline char* _asctime(_tm* timeptr) {")

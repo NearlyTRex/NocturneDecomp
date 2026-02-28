@@ -46,7 +46,7 @@
 ;
 ; Called Functions:
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
-;   crt_string.c_strcmp_FUN_005fef20
+;   crt_string.c__strcmp_FUN_005fef20
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   engine_dosio.c_getFileSize_FUN_00481880
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
@@ -303,8 +303,8 @@ section .text
     PUSH EAX                            ; 00459c62
     LEA EAX,[EBP + -0x74]               ; 00459c63
     PUSH EAX                            ; 00459c66
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 00459c67
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 00459c67
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 00459c6c
     TEST EAX,EAX                        ; 00459c6f
     JNZ 0x00459c7c                      ; 00459c71

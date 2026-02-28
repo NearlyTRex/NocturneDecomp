@@ -20,7 +20,7 @@
 ;   CDemonLight*[96] g_MasterLightList
 ;
 ; Called Functions:
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;
 ; *****************************************************************************
 
@@ -73,8 +73,8 @@ section .text
     PUSH ECX                            ; 00570f76
     ADD EAX,0x4                         ; 00570f77
     PUSH EAX                            ; 00570f7a
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 00570f7b
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 00570f7b
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 00570f80
     TEST EAX,EAX                        ; 00570f83
     JZ 0x00570f8a                       ; 00570f85

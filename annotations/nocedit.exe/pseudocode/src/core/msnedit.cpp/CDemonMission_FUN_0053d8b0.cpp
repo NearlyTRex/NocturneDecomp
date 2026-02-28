@@ -43,7 +43,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053d8b0(CDemonMission *this_ptr
       if (*(int *)(*(int *)((int)g_ActorClassRegistrations + iVar8) + 0x2c) != 0) {
         pcVar5 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(this_ptr->selected_actor)
         ;
-        iVar6 = stricmp
+        iVar6 = _stricmp
                           (*(char **)((int)g_ActorClassRegistrations + iVar8),pcVar5);
         if (iVar6 != 0) {
           shape_edittool_cpp_CStrList_add_FUN_004a2b80
@@ -86,8 +86,8 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053d8b0(CDemonMission *this_ptr
             pCVar9 = CStack_502c.properties;
             do {
               if ((pCVar9->type == pCVar4->type) &&
-                 (iVar10 = stricmp(pCVar9->name,pcStack_14), iVar10 == 0))
-              {
+                 (iVar10 = _stricmp(pCVar9->name,pcStack_14), iVar10 == 0)
+                 ) {
                 switch(pCVar9->type) {
                 case PROP_INT:
                 case PROP_ENUM_PAIR:

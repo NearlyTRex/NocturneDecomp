@@ -119,7 +119,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(CSfxSlot *this_ptr,SMix
       local_50 = 0;
       if (0 < (pCVar4->sample_info).sample_count) {
         local_84 = floor
-                             (((double)pCVar4->loop_markers[this_ptr->loop_marker_index + -5] -
+                             (((double)pCVar4->loop_endpoints[this_ptr->loop_marker_index] -
                               (this_ptr->options).trigger_time) / dVar14);
         local_60 = (int)ROUND(ROUND(local_84));
         if (local_60 < iVar9) {
@@ -132,10 +132,10 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(CSfxSlot *this_ptr,SMix
       local_54 = 0;
       local_84 = floor
                            ((dVar5 - this_ptr->prev_hardware_playback_pos) / dVar14);
-      hardware_playback_pos = (double)CONCAT44(uVar13,uVar12);
+      hardware_playback_pos = __BITCAST_DOUBLE(CONCAT44(uVar13,uVar12));
       local_48 = (int)ROUND(ROUND(local_84));
       if ((int)ROUND(ROUND(local_84)) < 1) {
-        hardware_playback_pos = (double)CONCAT44(uVar13,uVar12) - dVar5;
+        hardware_playback_pos = __BITCAST_DOUBLE(CONCAT44(uVar13,uVar12)) - dVar5;
         if (hardware_playback_pos < 0.0) {
           hardware_playback_pos = 0.0;
         }
@@ -144,7 +144,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(CSfxSlot *this_ptr,SMix
       }
       sample_data = (short *)((ulonglong)hardware_playback_pos >> 0x20);
       channel_gains = (SStereoGains *)((ulonglong)dVar14 >> 0x20);
-      channel_buffers = SUB84(dVar14,0);
+      channel_buffers = SUB84(__BITCAST_UINT64(dVar14),0);
       if (local_48 < local_a8) {
         local_a8 = local_48;
         local_50 = 0;
@@ -213,8 +213,8 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(CSfxSlot *this_ptr,SMix
           if (mix_buffer.num_channels == 2) {
             local_84 = sound_sndmain_cpp_mixResampleStereoToStereo_FUN_005a5fb0
                                  (sample_data,channel_buffers,channel_gains,
-                                  (double)CONCAT44(SUB84(hardware_playback_pos,0),local_a8),
-                                  (double)CONCAT44(channel_buffers,sample_data),(int)channel_gains);
+                                  __BITCAST_DOUBLE(CONCAT44(SUB84(hardware_playback_pos,0),local_a8)),
+                                  __BITCAST_DOUBLE(CONCAT44(channel_buffers,sample_data)),(int)channel_gains);
             hardware_playback_pos = local_84;
           }
           else if (0 < local_a8) {
@@ -246,8 +246,8 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(CSfxSlot *this_ptr,SMix
         else if (mix_buffer.num_channels == 2) {
           local_84 = sound_sndmain_cpp_mixResampleMonoToStereo_FUN_005a5e70
                                (sample_data,channel_buffers,channel_gains,
-                                (double)CONCAT44(SUB84(hardware_playback_pos,0),local_a8),
-                                (double)CONCAT44(channel_buffers,sample_data),(int)channel_gains);
+                                __BITCAST_DOUBLE(CONCAT44(SUB84(hardware_playback_pos,0),local_a8)),
+                                __BITCAST_DOUBLE(CONCAT44(channel_buffers,sample_data)),(int)channel_gains);
           hardware_playback_pos = local_84;
         }
         else if (0 < local_a8) {
@@ -286,7 +286,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(CSfxSlot *this_ptr,SMix
       sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170(this_ptr,hardware_playback_pos);
       if (local_50 != 0) {
         iVar11 = this_ptr->loop_marker_index + 1;
-        iVar9 = this_ptr->sample->loop_markers[this_ptr->loop_marker_index];
+        iVar9 = this_ptr->sample->loop_destinations[this_ptr->loop_marker_index];
         this_ptr->loop_marker_index = iVar11;
         pCVar4 = this_ptr->sample;
         (this_ptr->options).trigger_time = (double)iVar9;

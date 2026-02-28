@@ -21,7 +21,7 @@
 ;   ... and 11 more
 ;
 ; Called Functions:
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;
 ; *****************************************************************************
 
@@ -39,8 +39,8 @@ section .text
     PUSH ESI                            ; 00524044
         ;   Label: LAB_00524044
     PUSH EBX                            ; 00524045
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 00524046
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 00524046
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0052404b
     TEST EAX,EAX                        ; 0052404e
     JZ 0x00524061                       ; 00524050

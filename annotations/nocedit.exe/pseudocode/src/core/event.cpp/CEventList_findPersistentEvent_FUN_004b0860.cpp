@@ -17,7 +17,7 @@ int __cdecl core_event_cpp_CEventList_findPersistentEvent_FUN_004b0860(CEventLis
   if (0 < (this_ptr->persistent_events).count) {
     str1 = (this_ptr->persistent_events).names;
     do {
-      iVar1 = stricmp(*str1,name);
+      iVar1 = _stricmp(*str1,name);
       if (iVar1 == 0) {
         return iVar2;
       }

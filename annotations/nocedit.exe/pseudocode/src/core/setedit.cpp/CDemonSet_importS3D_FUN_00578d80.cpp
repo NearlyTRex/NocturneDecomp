@@ -224,7 +224,7 @@ LAB_005797bd:
           if (0 < g_GroundTextureCount) {
             pacVar12 = g_GroundTextureNames;
             do {
-              iVar3 = stricmp(*pacVar12,local_4a0);
+              iVar3 = _stricmp(*pacVar12,local_4a0);
               if (iVar3 == 0) {
                 if (-1 < iVar8) {
                   uVar4 = (uint)(byte)g_GroundTextureTypes[iVar8];

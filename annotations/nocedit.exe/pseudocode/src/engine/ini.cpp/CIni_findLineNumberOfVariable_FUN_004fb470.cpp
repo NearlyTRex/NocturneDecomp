@@ -33,7 +33,7 @@ int __cdecl engine_ini_cpp_CIni_findLineNumberOfVariable_FUN_004fb470(CIni *this
   _sprintf(local_114,"[%s]\n",section);
   while (((stream->_flag & 0x10) == 0 &&
          (pcVar5 = _fgets(local_214,0xff,stream), pcVar5 != (char *)0x0))) {
-    iVar4 = strcmp(local_214,local_114);
+    iVar4 = _strcmp(local_214,local_114);
     if (iVar4 == 0) {
       bVar1 = (byte)stream->_flag;
       bVar2 = false;
@@ -79,10 +79,10 @@ LAB_004fb550:
   if (local_14 != (char *)0x0) {
     *local_14 = '\0';
   }
-  iVar4 = strcmp(local_214,key);
+  iVar4 = _strcmp(local_214,key);
   if (iVar4 == 0) {
     bVar2 = true;
-    iVar4 = strcmp(local_14 + 1,filename);
+    iVar4 = _strcmp(local_14 + 1,filename);
     if (iVar4 == 0) {
       this_ptr->initialized = 0;
     }

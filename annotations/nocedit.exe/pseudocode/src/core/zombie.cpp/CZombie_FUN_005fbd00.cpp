@@ -13,11 +13,11 @@ int __cdecl core_zombie_cpp_CZombie_FUN_005fbd00(CZombie *this_ptr)
   uint in_stack_00000008;
   
   if ((in_stack_00000008 != 2) &&
-     (iVar1 = stricmp
+     (iVar1 = _stricmp
                         ((this_ptr->base).base.model.model_name,"jeff.dfm"), iVar1 == 0)) {
     return -1;
   }
-  iVar1 = strnicmp
+  iVar1 = _strnicmp
                     ((this_ptr->base).base.model.model_name,"new",3);
   if (iVar1 == 0) {
     if (in_stack_00000008 < 2) {

@@ -56,12 +56,6 @@
         "message": "use of undeclared identifier 'stack0xffffff3c'"
       },
       {
-        "category": "incompatible_types",
-        "column": 41,
-        "line": 211,
-        "message": "invalid operands to binary expression ('double' and 'int')"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 66,
         "line": 212,
@@ -78,12 +72,6 @@
         "column": 65,
         "line": 215,
         "message": "use of undeclared identifier 'stack0xffffff10'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 46,
-        "line": 253,
-        "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "undeclared_identifier",
@@ -114,6 +102,18 @@
         "column": 47,
         "line": 291,
         "message": "use of undeclared identifier 'stack0xffffff2c'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 33,
+        "line": 294,
+        "message": "use of undeclared identifier 'stack0xffffff30'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 47,
+        "line": 297,
+        "message": "use of undeclared identifier 'stack0xffffff38'"
       }
     ],
     "success": false,
@@ -121,16 +121,15 @@
   },
   "complexity": {
     "assembly_lines": 723,
-    "complexity_score": 788,
+    "complexity_score": 763,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 14,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 368,
-    "suspect_count": 39,
+    "suspect_count": 37,
     "suspect_types": [
       "decompiler_intrinsic",
-      "double_reconstruction",
       "pointer_cast",
       "stack_alignment_array",
       "stack_ref",
@@ -866,7 +865,7 @@
       "line": 204,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "local_108 = SUB84(dVar21,0);",
+      "text": "local_108 = SUB84(__BITCAST_UINT64(dVar21),0);",
       "type": "sub84_truncation"
     },
     {
@@ -874,7 +873,7 @@
       "line": 204,
       "match": "SUB84",
       "severity": "mild",
-      "text": "local_108 = SUB84(dVar21,0);",
+      "text": "local_108 = SUB84(__BITCAST_UINT64(dVar21),0);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -946,7 +945,7 @@
       "line": 246,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "uStack_104 = SUB84(dVar21,0);",
+      "text": "uStack_104 = SUB84(__BITCAST_UINT64(dVar21),0);",
       "type": "sub84_truncation"
     },
     {
@@ -954,39 +953,23 @@
       "line": 246,
       "match": "SUB84",
       "severity": "mild",
-      "text": "uStack_104 = SUB84(dVar21,0);",
+      "text": "uStack_104 = SUB84(__BITCAST_UINT64(dVar21),0);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 260,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "dVar21 = (double)CONCAT44(uStack_104,local_108) +",
-      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 260,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "dVar21 = (double)CONCAT44(uStack_104,local_108) +",
+      "text": "dVar21 = __BITCAST_DOUBLE(CONCAT44(uStack_104,local_108)) +",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 261,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "(double)CONCAT44(uStack_fc,local_100);",
-      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 261,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "(double)CONCAT44(uStack_fc,local_100);",
+      "text": "__BITCAST_DOUBLE(CONCAT44(uStack_fc,local_100));",
       "type": "decompiler_intrinsic"
     },
     {

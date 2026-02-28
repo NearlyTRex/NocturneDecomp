@@ -182,14 +182,14 @@ uint FUN_0060dcf6(void)
     return uVar4;
   }
   if ((g_UseSoftwareMath & 1) == 0) {
-    fVar22 = (float10)(double)CONCAT44(in_EDX,in_EAX) / (float10)(double)CONCAT44(in_ECX,unaff_EBX);
+    fVar22 = (float10)__BITCAST_DOUBLE(CONCAT44(in_EDX,in_EAX)) / (float10)__BITCAST_DOUBLE(CONCAT44(in_ECX,unaff_EBX));
   }
   else {
     fVar22 = pentiumFdivBugWorkaroundDouble
-                       ((float10)(double)CONCAT44(in_EDX,in_EAX),(double)CONCAT44(in_ECX,unaff_EBX))
+                       ((float10)__BITCAST_DOUBLE(CONCAT44(in_EDX,in_EAX)),__BITCAST_DOUBLE(CONCAT44(in_ECX,unaff_EBX)))
     ;
   }
-  uVar4 = SUB84((double)fVar22,0);
+  uVar4 = SUB84(__BITCAST_UINT64((double)fVar22),0);
   if ((int)((ulonglong)(double)fVar22 >> 0x20) == -0x80000000) {
     uVar4 = 0;
   }

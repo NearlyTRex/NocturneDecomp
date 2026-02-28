@@ -41,7 +41,7 @@
 ;   core_setedit.cpp_loadGroundTypes_FUN_00578420
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;   engine_dosio.c_splitPath_FUN_00481f20
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
@@ -174,8 +174,8 @@ section .text
         ;   Label: LAB_0057875e
     PUSH EAX                            ; 00578765
     PUSH ESI                            ; 00578766 | g_GroundTextureNames | DAT_03654398
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 00578767
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 00578767
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0057876c
     TEST EAX,EAX                        ; 0057876f
     JNZ 0x005789b3                      ; 00578771

@@ -22,7 +22,7 @@
 ;   core_mission.cpp_CDemonMission_findActorByName_FUN_00524030
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_sscanf_FUN_0060013c
-;   crt_string.c_strnicmp_FUN_005ff070
+;   crt_string.c__strnicmp_FUN_005ff070
 ;
 ; *****************************************************************************
 
@@ -53,8 +53,8 @@ section .text
         ;   Label: LAB_0052468c
     PUSH EBP                            ; 0052468d
     PUSH EBX                            ; 0052468e
-    CALL crt_string.c_strnicmp_FUN_005ff070 ; 0052468f
-        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)
+    CALL crt_string.c__strnicmp_FUN_005ff070 ; 0052468f
+        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 00524694
     TEST EAX,EAX                        ; 00524697
     JZ 0x005246d8                       ; 00524699

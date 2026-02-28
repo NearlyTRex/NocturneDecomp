@@ -6,15 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 46,
-    "complexity_score": 17,
+    "complexity_score": 64,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 5,
-    "max_suspect_severity": "clean",
-    "pseudocode_lines": 17,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 63
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 19,
+    "suspect_count": 4,
+    "suspect_types": [
+      "unaffected_reg"
+    ],
+    "total_lines": 65
   },
   "cross_references": [
     {
@@ -134,5 +136,38 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 6,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "short *unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 7,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "int unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 14,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "(*g_CSoundDevicePtr->vtable->poll)(g_CSoundDevicePtr,unaff_EBX,unaff_ESI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 14,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "(*g_CSoundDevicePtr->vtable->poll)(g_CSoundDevicePtr,unaff_EBX,unaff_ESI);",
+      "type": "unaffected_reg"
+    }
+  ]
 }

@@ -61,7 +61,7 @@ void __cdecl core_script_cpp_CScript_initRuntime_FUN_0055a540(CScript *this_ptr)
     pcVar5[1] = cVar1;
     pcVar5 = pcVar5 + 2;
   } while (cVar1 != '\0');
-  iVar3 = stricmp(local_70,"smill.wav");
+  iVar3 = _stricmp(local_70,"smill.wav");
   if (iVar3 == 0) {
     pcVar4 = "@0.85";
     iVar3 = -1;
@@ -85,7 +85,7 @@ void __cdecl core_script_cpp_CScript_initRuntime_FUN_0055a540(CScript *this_ptr)
       pcVar5 = pcVar5 + 2;
     } while (cVar1 != '\0');
   }
-  iVar3 = stricmp(local_70,"town.wav");
+  iVar3 = _stricmp(local_70,"town.wav");
   if (iVar3 == 0) {
     pcVar4 = "@0.85";
     iVar3 = -1;

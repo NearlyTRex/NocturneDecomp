@@ -15,7 +15,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   crt_string.c_strcmp_FUN_005fef20
+;   crt_string.c__strcmp_FUN_005fef20
 ;
 ; *****************************************************************************
 
@@ -39,8 +39,8 @@ section .text
     PUSH EBP                            ; 00544fd9
     ADD EAX,ESI                         ; 00544fda
     PUSH EAX                            ; 00544fdc
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 00544fdd
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 00544fdd
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 00544fe2
     TEST EAX,EAX                        ; 00544fe5
     JZ 0x00545026                       ; 00544fe7

@@ -25,7 +25,7 @@
 ;
 ; Called Functions:
 ;   core_mission.cpp_CDemonMission_findActorByName_FUN_00524030
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
 ;   shape_edittool.cpp_CPickList_ctor_FUN_004a3b90
 ;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
@@ -109,8 +109,8 @@ section .text
     ADD ESP,0x8                         ; 0053c2af
     PUSH EAX                            ; 0053c2b2
     PUSH EDI                            ; 0053c2b3
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 0053c2b4
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 0053c2b4
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0053c2b9
     TEST EAX,EAX                        ; 0053c2bc
     JNZ 0x0053c31a                      ; 0053c2be

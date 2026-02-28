@@ -7,21 +7,21 @@
 // Address: 005fe5e0
 void * __cdecl memmove(void *dest,void *src,SIZE_T n);
 
-// Original: crt_string.c_stricmp_FUN_005fe7f0
+// Original: crt_string.c__stricmp_FUN_005fe7f0
 // Address: 005fe7f0
-int __cdecl stricmp(char *str1,char *str2);
+int __cdecl ::stricmp(char *str1,char *str2);
 
 // Original: crt_string.c_strstr_FUN_005fedd0
 // Address: 005fedd0
 char * __cdecl strstr(char *haystack_str,char *needle_str);
 
-// Original: crt_string.c_strcmp_FUN_005fef20
+// Original: crt_string.c__strcmp_FUN_005fef20
 // Address: 005fef20
-int __cdecl strcmp(char *str1,char *str2);
+int __cdecl ::strcmp(char *str1,char *str2);
 
-// Original: crt_string.c_strnicmp_FUN_005ff070
+// Original: crt_string.c__strnicmp_FUN_005ff070
 // Address: 005ff070
-int __cdecl strnicmp(char *str1,char *str2,int count);
+int __cdecl ::strnicmp(char *str1,char *str2,int count);
 
 // Original: crt_string.c__strtod_FUN_005ff0f3
 // Address: 005ff0f3
@@ -55,9 +55,9 @@ char * __watcallStack strerror(int errnum);
 // Address: 00601f0c
 char __watcallStack hexDigitToChar(int digit);
 
-// Original: crt_string.c_stricmp_FUN_005fe7f0
+// Original: crt_string.c__stricmp_FUN_005fe7f0
 // Address: 006020fc
-int __cdecl stricmp(char *str1,char *str2);
+int __cdecl ::stricmp(char *str1,char *str2);
 
 // Original: crt_string.c_strlen_far_FUN_00602f4c
 // Address: 00602f4c
@@ -103,9 +103,9 @@ int __watcallStack mbstrnbytes(char *str,int char_count);
 // Address: 00607318
 char * __cdecl parse::uint(char *str,int *result);
 
-// Original: crt_string.c_mbstrnicmp_FUN_00608e50
+// Original: crt_string.c__mbstrnicmp_FUN_00608e50
 // Address: 00608e50
-int __cdecl mbstrnicmp(char *str1,char *str2,SIZE_T count);
+int __cdecl ::mbstrnicmp(char *str1,char *str2,SIZE_T count);
 
 // Original: crt_string.c_strdup_FUN_0060a610
 // Address: 0060a610

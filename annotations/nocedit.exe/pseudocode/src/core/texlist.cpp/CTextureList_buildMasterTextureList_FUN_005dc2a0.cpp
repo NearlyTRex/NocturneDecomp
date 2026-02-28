@@ -96,7 +96,7 @@ void __cdecl core_texlist_cpp_CTextureList_buildMasterTextureList_FUN_005dc2a0(C
         pacVar3 = local_14 + local_28;
         do {
           pcVar9 = *local_14 + local_18;
-          iVar2 = strcmp(pcVar9,*pacVar3);
+          iVar2 = _strcmp(pcVar9,*pacVar3);
           if (0 < iVar2) {
             pcVar8 = local_78;
             pcVar5 = pcVar9;

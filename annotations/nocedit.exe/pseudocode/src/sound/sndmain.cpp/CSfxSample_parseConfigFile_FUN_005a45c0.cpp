@@ -43,7 +43,7 @@ void __cdecl sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_005a45c0(CSfxSampl
   int local_18;
   
   bVar11 = 0;
-  fVar4 = (float)DOUBLE_00681b38;
+  fVar4 = (float)g_Cached3DDistanceFactorInverse;
   fVar1 = 20.0f * fVar4;
   fVar5 = g_SoundReferenceVolumeDistance * fVar4;
   fVar4 = 10000.0f * fVar4;
@@ -51,8 +51,8 @@ void __cdecl sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_005a45c0(CSfxSampl
   (this_ptr->sample_info).reference_distance = fVar1;
   (this_ptr->sample_info).reference_volume_distance = fVar5;
   (this_ptr->sample_info).max_distance = fVar4;
-  this_ptr->loop_length = (this_ptr->sample_info).sample_count;
-  this_ptr->loop_markers[0] = -1;
+  this_ptr->loop_endpoints[0] = (this_ptr->sample_info).sample_count;
+  this_ptr->loop_destinations[0] = -1;
   engine_dosio_c_splitPath_FUN_00481f20
             ((char *)this_ptr,(char *)0x0,(char *)0x0,local_238,(char *)0x0);
   engine_dosio_c_makePath_FUN_00481f50(local_338,(char *)0x0,(char *)0x0,local_238,"klp");
@@ -60,8 +60,8 @@ void __cdecl sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_005a45c0(CSfxSampl
   if (0 < iVar6) {
     this_ptr->loop_marker_count = 1;
     iVar6 = (this_ptr->sample_info).sample_count;
-    this_ptr->loop_markers[0] = 0;
-    this_ptr->loop_length = iVar6;
+    this_ptr->loop_destinations[0] = 0;
+    this_ptr->loop_endpoints[0] = iVar6;
   }
   engine_dosio_c_makePath_FUN_00481f50(local_138,(char *)0x0,(char *)0x0,local_238,"sfx");
   iVar6 = engine_dosio_c_getFileSize_FUN_00481880("sound",local_138);
@@ -127,7 +127,7 @@ joined_r0x005a47dc:
         dVar2 = (double)fVar1;
         if (fVar1 < (float)0.10000000000000001) {
           uStack_474 = (uint)((ulonglong)dVar2 >> 0x20);
-          local_478 = SUB84(dVar2,0);
+          local_478 = SUB84(__BITCAST_UINT64(dVar2),0);
           g_CurrentFilename = "..\\sound\\sndmain.cpp";
           g_CurrentLineNumber = 0x292;
           core_main_c_displayErrorAndQuit_FUN_00506f10
@@ -152,7 +152,7 @@ joined_r0x005a47dc:
           dVar2 = (double)fVar1;
           if (fVar1 < (float)0.10000000000000001) {
             uStack_46c = (uint)((ulonglong)dVar2 >> 0x20);
-            local_470 = SUB84(dVar2,0);
+            local_470 = SUB84(__BITCAST_UINT64(dVar2),0);
             g_CurrentFilename = "..\\sound\\sndmain.cpp";
             g_CurrentLineNumber = 0x29a;
             core_main_c_displayErrorAndQuit_FUN_00506f10
@@ -180,7 +180,7 @@ joined_r0x005a47dc:
               if (local_468 < (float)0.001) {
                 g_CurrentFilename = "..\\sound\\sndmain.cpp";
                 uStack_47c = (uint)((ulonglong)(double)local_468 >> 0x20);
-                local_480 = SUB84((double)local_468,0);
+                local_480 = SUB84(__BITCAST_UINT64((double)local_468),0);
                 g_CurrentLineNumber = 0x2a7;
                 core_main_c_displayErrorAndQuit_FUN_00506f10
                           ("maxVol %g is too small in %s line %d!",local_480,uStack_47c,local_138,
@@ -207,12 +207,12 @@ joined_r0x005a47dc:
                 (this_ptr->sample_info).sample_count = local_38;
               }
               else {
-                iVar6 = stricmp(local_464,"loop");
+                iVar6 = _stricmp(local_464,"loop");
                 if (iVar6 == 0) {
                   this_ptr->loop_marker_count = 1;
                   iVar6 = (this_ptr->sample_info).sample_count;
-                  this_ptr->loop_markers[0] = 0;
-                  this_ptr->loop_length = iVar6;
+                  this_ptr->loop_destinations[0] = 0;
+                  this_ptr->loop_endpoints[0] = iVar6;
                 }
                 else {
                   g_CurrentFilename = "..\\sound\\sndmain.cpp";

@@ -34,7 +34,7 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 ;   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450
 ;   core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;
 ; *****************************************************************************
 
@@ -199,8 +199,8 @@ section .text
     LEA EAX,[EBX + 0x23b8]              ; 005f9312
     PUSH EAX                            ; 005f9318
     MOV dword ptr [EBX + 0x230c],0x0    ; 005f9319
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 005f9323
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 005f9323
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 005f9328
     TEST EAX,EAX                        ; 005f932b
     JNZ 0x005f9357                      ; 005f932d

@@ -17,7 +17,7 @@
 ;   core_vampboss.cpp_CVampireBoss_process_FUN_005e5970 at 005e6b6d
 ;
 ; Called Functions:
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;
 ; *****************************************************************************
 
@@ -55,8 +55,8 @@ section .text
     PUSH EBP                            ; 004e0c2d
         ;   Label: LAB_004e0c2d
     PUSH EDI                            ; 004e0c2e
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 004e0c2f
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 004e0c2f
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004e0c34
     TEST EAX,EAX                        ; 004e0c37
     JZ 0x004e0c5f                       ; 004e0c39

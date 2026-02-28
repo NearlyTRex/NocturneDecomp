@@ -44,7 +44,7 @@
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
 ;   crt_stdio.c_remove_FUN_005ff9d0
 ;   crt_stdio.c_rename_FUN_006015d0
-;   crt_string.c_strcmp_FUN_005fef20
+;   crt_string.c__strcmp_FUN_005fef20
 ;   engine_ini.cpp_CIni_findLineNumberOfVariable_FUN_004fb470
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;   shape_memdbg.cpp_openFile_FUN_0050f7a0
@@ -267,8 +267,8 @@ section .text
     PUSH EAX                            ; 004fb8a3
     LEA EAX,[ESP + 0x204]               ; 004fb8a4
     PUSH EAX                            ; 004fb8ab
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 004fb8ac
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 004fb8ac
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 004fb8b1
     TEST EAX,EAX                        ; 004fb8b4
     JNZ 0x004fb8db                      ; 004fb8b6

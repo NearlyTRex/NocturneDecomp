@@ -19,7 +19,7 @@
 ;   engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0 at 004b8b92
 ;
 ; Called Functions:
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;
 ; *****************************************************************************
 
@@ -43,8 +43,8 @@ section .text
     PUSH EBP                            ; 004b2e79
     ADD EAX,ESI                         ; 004b2e7a
     PUSH EAX                            ; 004b2e7c
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 004b2e7d
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 004b2e7d
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004b2e82
     TEST EAX,EAX                        ; 004b2e85
     JZ 0x004b2ea0                       ; 004b2e87

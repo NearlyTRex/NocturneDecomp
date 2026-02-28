@@ -19,7 +19,7 @@ int __cdecl core_script_cpp_CScript_findDialogEntry_FUN_005606e0(CScript *this_p
   if (0 < this_ptr->dialog_entry_count) {
     iVar3 = 0;
     do {
-      iVar1 = stricmp(this_ptr->dialog_entries->data + iVar3,local_110);
+      iVar1 = _stricmp(this_ptr->dialog_entries->data + iVar3,local_110);
       if (iVar1 == 0) {
         return iVar2;
       }

@@ -71,7 +71,7 @@
 ;   crt_math.c_round_FUN_005fe6b0
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
 ;   crt_stdio.c_fwrite_FUN_005fdc00
-;   crt_string.c_strcmp_FUN_005fef20
+;   crt_string.c__strcmp_FUN_005fef20
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   engine_dosio.c_getFile_FUN_00481a50
@@ -871,8 +871,8 @@ section .text
     PUSH EAX                            ; 0045b2c3
     MOV EAX,0x1626370                   ; 0045b2c4 | g_TempTextureName
     PUSH EAX                            ; 0045b2c9 | g_TempTextureName
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 0045b2ca
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 0045b2ca
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 0045b2cf
     TEST EAX,EAX                        ; 0045b2d2
     JZ 0x0045b37b                       ; 0045b2d4

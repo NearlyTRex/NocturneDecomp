@@ -48,7 +48,7 @@ double __watcallRegister dmul(double a,double b)
     uVar10 = uVar10 & 0x7fffffff | (uint)CARRY4(uVar10,uVar10) << 0x1f;
   }
   if (BYTE_00684acd != 0) {
-    dVar21 = (double)CONCAT44(uVar13,uVar15) * (double)CONCAT44(uVar10,uVar14);
+    dVar21 = __BITCAST_DOUBLE(CONCAT44(uVar13,uVar15)) * __BITCAST_DOUBLE(CONCAT44(uVar10,uVar14));
     if ((int)((ulonglong)dVar21 >> 0x20) == -0x80000000) {
       dVar21 = 0.0;
     }
@@ -138,9 +138,9 @@ double __watcallRegister dmul(double a,double b)
                          (uint)uVar6 >> bVar4 | uVar15 << 0x20 - bVar4);
         uVar18 = uVar18 & 0xffff0000;
       }
-      return (double)CONCAT44((uint)(uVar6 >> 0x20) & 0xfffff |
+      return __BITCAST_DOUBLE(CONCAT44((uint)(uVar6 >> 0x20) & 0xfffff |
                               (uVar18 << 0x15) >> 1 | (uint)CARRY4(uVar18,uVar18) << 0x1f,(int)uVar6
-                             );
+                             ));
     }
     uVar8 = uVar6 & 1;
     uVar6 = CONCAT44((uint)(uVar6 >> 0x21),

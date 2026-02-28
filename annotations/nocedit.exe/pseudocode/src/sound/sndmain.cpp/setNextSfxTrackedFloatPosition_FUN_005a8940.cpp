@@ -13,6 +13,6 @@ void __cdecl sound_sndmain_cpp_setNextSfxTrackedFloatPosition_FUN_005a8940(CVect
   
   iVar1 = g_SfxLastSlot;
   g_SfxOptions[g_SfxLastSlot].position_format = 1;
-  g_SfxOptions[iVar1].position_source_ptr = (CVector3d *)position_source_ptr;
+  g_SfxOptions[iVar1].position_source_ptr = position_source_ptr;
   return;
 }

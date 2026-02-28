@@ -916,7 +916,7 @@ LAB_005bd5e6:
                   (g_CConsolePtr,"Splat at %3.2f fps\n",
                    (double)(this_ptr->base).base.velocity.y);
         fVar18 = -this_ptr->fall_velocity_snapshot;
-        uVar23 = SUB84((double)fVar18,0);
+        uVar23 = SUB84(__BITCAST_UINT64((double)fVar18),0);
         uStack_2dc = (uint)((ulonglong)(double)fVar18 >> 0x20);
         if (fVar18 < (float)20) {
           if (((fStack_20 == 1.82169e-44) || (fStack_20 == 1.26117e-44)) ||
@@ -926,7 +926,7 @@ LAB_005bd5e6:
           uStack_74 = 0;
           core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&SStack_2bc);
           SStack_2bc.damage_amount =
-               (float)(((float10)(double)CONCAT44(uStack_2dc,uVar23) + (float10)-20) *
+               (float)(((float10)__BITCAST_DOUBLE(CONCAT44(uStack_2dc,uVar23)) + (float10)-20) *
                        (float10)0.050000000000000003 * (float10)100);
           if (0x42c80000 < (int)SStack_2bc.damage_amount) {
             uStack_74 = 1;

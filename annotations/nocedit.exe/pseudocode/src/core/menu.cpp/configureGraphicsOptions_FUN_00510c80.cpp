@@ -59,7 +59,7 @@ void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_00510c80(void)
         g_CGamePtr->game_bpp = 0x10;
         pCVar2->game_pixx = 0x280;
         pCVar2->game_pixy = 0x1e0;
-        iVar5 = stricmp(g_RendererDllName,"tri3dfx.dll");
+        iVar5 = _stricmp(g_RendererDllName,"tri3dfx.dll");
         iVar4 = g_GraphicsCardCount;
         if (iVar5 != 0) {
           pcVar8 = "tri3dfx.dll";
@@ -87,7 +87,7 @@ LAB_00510e1f:
         }
       }
       else {
-        iVar5 = stricmp(g_RendererDllName,"tri3dfx.dll");
+        iVar5 = _stricmp(g_RendererDllName,"tri3dfx.dll");
         iVar4 = g_GraphicsCardCount;
         if (iVar5 == 0) {
           pcVar8 = "tridx6.dll";
@@ -188,22 +188,22 @@ LAB_00510f71:
       pcVar8 = "3D API : None";
     }
     else {
-      iVar4 = stricmp(g_RendererDllName,"trid3d.dll");
+      iVar4 = _stricmp(g_RendererDllName,"trid3d.dll");
       if (iVar4 == 0) {
         pcVar8 = "3D API : DirectX 5";
       }
       else {
-        iVar4 = stricmp(g_RendererDllName,"tridx6.dll");
+        iVar4 = _stricmp(g_RendererDllName,"tridx6.dll");
         if (iVar4 == 0) {
           pcVar8 = "3D API : DirectX 6";
         }
         else {
-          iVar4 = stricmp(g_RendererDllName,"tridx7.dll");
+          iVar4 = _stricmp(g_RendererDllName,"tridx7.dll");
           if (iVar4 == 0) {
             pcVar8 = "3D API : DirectX 7";
           }
           else {
-            iVar4 = stricmp(g_RendererDllName,"tri3dfx.dll");
+            iVar4 = _stricmp(g_RendererDllName,"tri3dfx.dll");
             if (iVar4 == 0) {
               pcVar8 = "3D API : Voodoo Blit Emulation";
             }
@@ -364,7 +364,7 @@ LAB_00510f71:
     iVar4 = core_menu_cpp_renderMenuAndGetChoice_FUN_00510000
                       (g_GraphicsMenuTextPointers,iVar4,&local_20,0xfa,(int)pcVar9);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-    iVar5 = stricmp(g_RendererDllName,"trid3d.dll");
+    iVar5 = _stricmp(g_RendererDllName,"trid3d.dll");
     pCVar2 = g_CGamePtr;
     bVar12 = iVar5 != 0;
     if ((!bVar12) && (0x1e0 < g_CGamePtr->game_pixy)) {
@@ -510,7 +510,7 @@ LAB_0051164c:
       break;
     case 3:
       if (g_GraphicsCardVendorIDs[g_GraphicsCardHandle] != 0x121a) {
-        iVar4 = stricmp(g_RendererDllName,"trid3d.dll");
+        iVar4 = _stricmp(g_RendererDllName,"trid3d.dll");
         if (iVar4 == 0) {
           pcVar9 = "tridx6.dll";
 LAB_005116c3:
@@ -526,17 +526,17 @@ LAB_005116c3:
           } while (cVar1 != '\0');
         }
         else {
-          iVar4 = stricmp(g_RendererDllName,"tridx6.dll");
+          iVar4 = _stricmp(g_RendererDllName,"tridx6.dll");
           if (iVar4 == 0) {
             pcVar9 = "tridx7.dll";
             goto LAB_005116c3;
           }
-          iVar4 = stricmp(g_RendererDllName,"tridx7.dll");
+          iVar4 = _stricmp(g_RendererDllName,"tridx7.dll");
           if (iVar4 == 0) {
             pcVar9 = "trid3d.dll";
             goto LAB_005116c3;
           }
-          iVar4 = stricmp(g_RendererDllName,"tri3dfx.dll");
+          iVar4 = _stricmp(g_RendererDllName,"tri3dfx.dll");
           if (iVar4 == 0) {
             pcVar9 = "trid3d.dll";
             goto LAB_005116c3;

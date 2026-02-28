@@ -17,7 +17,7 @@ int __cdecl core_setedit_cpp_CDemonSet_findLightByMasterIndex_FUN_0057c550(CDemo
   if (0 < this_ptr->light_count) {
     str2 = this_ptr->lights[0].name;
     do {
-      iVar1 = strcmp
+      iVar1 = _strcmp
                         ((g_MasterLightList[master_light_index]->base).camera_name,str2);
       if (iVar1 == 0) {
         return iVar2;

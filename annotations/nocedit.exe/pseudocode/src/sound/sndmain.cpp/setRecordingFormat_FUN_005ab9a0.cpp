@@ -10,7 +10,6 @@ int __cdecl sound_sndmain_cpp_setRecordingFormat_FUN_005ab9a0(int bits_per_sampl
 
 {
   int iVar1;
-  HRESULT HVar2;
   
   iVar1 = sound_sndmain_cpp_isRecordingStarted_FUN_005ab980();
   if (iVar1 != 0) {
@@ -22,11 +21,11 @@ int __cdecl sound_sndmain_cpp_setRecordingFormat_FUN_005ab9a0(int bits_per_sampl
   g_RecordingChannelCount = channels;
   g_RecordingSampleRate = sample_rate;
   g_RecordingSamplesSigned = (int)(signed_samples != 0);
-  if (g_RecordingDeviceInterface != (IDirectSoundCapture *)0x0) {
-    HVar2 = (*g_RecordingDeviceInterface->vtable->CreateCaptureBuffer)
-                      (g_RecordingDeviceInterface,(void *)bits_per_sample,
-                       (LPDIRECTSOUNDCAPTUREBUFFER *)channels,(LPUNKNOWN)sample_rate);
-    if (HVar2 == 0) {
+  if (g_RecordingDeviceInterface != (CSoundDevice *)0x0) {
+    iVar1 = (*g_RecordingDeviceInterface->vtable->setMode)
+                      (g_RecordingDeviceInterface,bits_per_sample,channels,sample_rate,
+                       (int *)g_RecordingSamplesSigned);
+    if (iVar1 == 0) {
       return 0;
     }
   }

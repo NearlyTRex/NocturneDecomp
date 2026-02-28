@@ -1,14 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 14,
-        "line": 134,
-        "message": "invalid operands to binary expression ('double' and 'int')"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
@@ -487,7 +480,7 @@
       "line": 127,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "local_a0 = SUB84(dVar4,0);",
+      "text": "local_a0 = SUB84(__BITCAST_UINT64(dVar4),0);",
       "type": "sub84_truncation"
     },
     {
@@ -495,7 +488,7 @@
       "line": 127,
       "match": "SUB84",
       "severity": "mild",
-      "text": "local_a0 = SUB84(dVar4,0);",
+      "text": "local_a0 = SUB84(__BITCAST_UINT64(dVar4),0);",
       "type": "decompiler_intrinsic"
     }
   ]

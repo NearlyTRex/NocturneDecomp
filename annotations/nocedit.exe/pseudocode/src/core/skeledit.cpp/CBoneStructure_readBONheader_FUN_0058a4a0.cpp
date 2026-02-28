@@ -140,7 +140,7 @@ void __cdecl core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0(CBoneSt
           puVar10 = piVar4 + 1;
           iVar6 = local_248[local_14] - local_248[local_14 + 1];
           if (iVar6 == 0) {
-            iVar6 = stricmp(local_20->name,local_1c->name);
+            iVar6 = _stricmp(local_20->name,local_1c->name);
           }
           if (0 < iVar6) {
             pSVar14 = local_28 + local_14;

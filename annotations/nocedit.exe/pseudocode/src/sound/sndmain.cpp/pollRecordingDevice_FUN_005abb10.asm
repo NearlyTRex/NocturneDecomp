@@ -1,13 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; HRESULT __cdecl sound_sndmain_cpp_getRecordingDeviceCaps_FUN_005abb10(LPDSCCAPS pDSCCaps)
+; int __cdecl sound_sndmain_cpp_pollRecordingDevice_FUN_005abb10(short *output_buffer,int num_samples)
 ;
 ; Parameters:
-; LPDSCCAPS        Stack[0x8]:4   pDSCCaps
+; short *          Stack[0x4]:4   output_buffer
+; int              Stack[0x8]:4   num_samples
 ;
 ; Referenced Globals:
-;   IDirectSoundCapture* g_RecordingDeviceInterface
+;   CSoundDevice* g_RecordingDeviceInterface
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_isRecordingStarted_FUN_005ab980
@@ -20,7 +21,7 @@ section .text
 
     CALL sound_sndmain.cpp_lockSound_FUN_005abd30 ; 005abb10
         ;   XREF to: 005abd30 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_lockSound_FUN_005abd30()
-        ;   Label: sound_sndmain.cpp_getRecordingDeviceCaps_FUN_005abb10
+        ;   Label: sound_sndmain.cpp_pollRecordingDevice_FUN_005abb10
     CALL sound_sndmain.cpp_isRecordingStarted_FUN_005ab980 ; 005abb15
         ;   XREF to: 005ab980 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isRecordingStarted_FUN_005ab980()
     TEST EAX,EAX                        ; 005abb1a

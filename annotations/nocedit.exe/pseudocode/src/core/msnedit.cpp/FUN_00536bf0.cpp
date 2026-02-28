@@ -34,9 +34,9 @@ void __cdecl core_msnedit_cpp_FUN_00536bf0(char *param_1,CStrList *param_2)
         } while ((g_CharacterClassificationTable[(byte)(*pbVar1 + 1)] & 0xe0) != 0);
       } while ((local_10 == 0x2d) || (local_10 == 0x5f));
       *pcVar4 = '\0';
-      iVar3 = stricmp(local_d8,"none");
+      iVar3 = _stricmp(local_d8,"none");
       if ((iVar3 == 0) ||
-         (iVar3 = stricmp(local_d8,"true"), iVar3 == 0))
+         (iVar3 = _stricmp(local_d8,"true"), iVar3 == 0))
       goto LAB_00536c76;
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(param_2,local_d8);
       if (*param_1 == '\0') {

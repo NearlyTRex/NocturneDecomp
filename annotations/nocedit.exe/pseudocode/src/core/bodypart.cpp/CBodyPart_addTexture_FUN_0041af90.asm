@@ -19,7 +19,7 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_memory.c_memset_FUN_005fde40
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;
 ; *****************************************************************************
 
@@ -41,8 +41,8 @@ section .text
     PUSH EBP                            ; 0041afae
         ;   Label: LAB_0041afae
     PUSH EDI                            ; 0041afaf
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 0041afb0
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 0041afb0
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0041afb5
     TEST EAX,EAX                        ; 0041afb8
     JZ 0x0041b067                       ; 0041afba

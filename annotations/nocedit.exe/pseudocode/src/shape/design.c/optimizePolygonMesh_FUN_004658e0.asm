@@ -37,7 +37,7 @@
 ;
 ; Called Functions:
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
-;   crt_string.c_strcmp_FUN_005fef20
+;   crt_string.c__strcmp_FUN_005fef20
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   shape_design.c_findVertexMatches_FUN_00461ae0
 ;   shape_design.c_mergeTrianglesIntoQuad_FUN_00462190
@@ -183,8 +183,8 @@ section .text
     ADD EAX,EDX                         ; 00465a42
     ADD EAX,0x54                        ; 00465a44
     PUSH EAX                            ; 00465a47
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 00465a48
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 00465a48
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 00465a4d
     TEST EAX,EAX                        ; 00465a50
     JZ 0x00465a56                       ; 00465a52

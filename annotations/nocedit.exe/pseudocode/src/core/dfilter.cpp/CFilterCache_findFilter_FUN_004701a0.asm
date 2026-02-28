@@ -12,7 +12,7 @@
 ;   core_dfilter.cpp_CFilterFX_process_FUN_004708e0 at 004708f5
 ;
 ; Called Functions:
-;   crt_string.c_strcmp_FUN_005fef20
+;   crt_string.c__strcmp_FUN_005fef20
 ;
 ; *****************************************************************************
 
@@ -34,8 +34,8 @@ section .text
     PUSH EBP                            ; 004701b7
         ;   Label: LAB_004701b7
     PUSH ESI                            ; 004701b8
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 004701b9
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 004701b9
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 004701be
     TEST EAX,EAX                        ; 004701c1
     JZ 0x004701d6                       ; 004701c3

@@ -11,7 +11,7 @@
 ;   shape_edittool.cpp_CStrList_sort_FUN_004a2f00 at 004a2f41
 ;
 ; Called Functions:
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;
 ; *****************************************************************************
 
@@ -24,8 +24,8 @@ section .text
     PUSH EDX                            ; 004a2eea
     MOV ECX,dword ptr [EAX]             ; 004a2eeb
     PUSH ECX                            ; 004a2eed
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 004a2eee
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 004a2eee
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004a2ef3
     RET                                 ; 004a2ef6
 

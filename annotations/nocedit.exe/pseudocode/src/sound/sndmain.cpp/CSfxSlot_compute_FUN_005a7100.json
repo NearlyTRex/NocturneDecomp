@@ -2,44 +2,38 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "incompatible_types",
-        "column": 20,
-        "line": 81,
-        "message": "invalid operands to binary expression ('double' and 'int')"
-      },
-      {
         "category": "other",
-        "column": 40,
+        "column": 49,
         "line": 99,
         "message": "no matching literal operator for call to 'operator\"\"_4_4_' with argument of type 'long double' or 'const char *', and no matching literal operator template"
       },
       {
         "category": "other",
-        "column": 48,
+        "column": 57,
         "line": 99,
-        "message": "no matching literal operator for call to 'operator\"\"_0_4_' with argument of type 'long double' or 'const char *', and no matching literal operator template"
-      },
-      {
-        "category": "other",
-        "column": 30,
-        "line": 103,
-        "message": "no matching literal operator for call to 'operator\"\"_4_4_' with argument of type 'long double' or 'const char *', and no matching literal operator template"
-      },
-      {
-        "category": "other",
-        "column": 38,
-        "line": 103,
         "message": "no matching literal operator for call to 'operator\"\"_0_4_' with argument of type 'long double' or 'const char *', and no matching literal operator template"
       },
       {
         "category": "other",
         "column": 39,
-        "line": 104,
+        "line": 103,
         "message": "no matching literal operator for call to 'operator\"\"_4_4_' with argument of type 'long double' or 'const char *', and no matching literal operator template"
       },
       {
         "category": "other",
         "column": 47,
+        "line": 103,
+        "message": "no matching literal operator for call to 'operator\"\"_0_4_' with argument of type 'long double' or 'const char *', and no matching literal operator template"
+      },
+      {
+        "category": "other",
+        "column": 48,
+        "line": 104,
+        "message": "no matching literal operator for call to 'operator\"\"_4_4_' with argument of type 'long double' or 'const char *', and no matching literal operator template"
+      },
+      {
+        "category": "other",
+        "column": 56,
         "line": 104,
         "message": "no matching literal operator for call to 'operator\"\"_0_4_' with argument of type 'long double' or 'const char *', and no matching literal operator template"
       }
@@ -49,16 +43,15 @@
   },
   "complexity": {
     "assembly_lines": 464,
-    "complexity_score": 348,
+    "complexity_score": 323,
     "cross_reference_count": 12,
     "function_call_count": 8,
     "global_count": 33,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 143,
-    "suspect_count": 18,
+    "suspect_count": 16,
     "suspect_types": [
       "decompiler_intrinsic",
-      "double_reconstruction",
       "format_string_mismatch",
       "sub84_truncation",
       "unknown_field"
@@ -323,7 +316,7 @@
     },
     {
       "addr": "00681b30",
-      "name": "DOUBLE_00681b30",
+      "name": "g_Cached3DDistanceFactor",
       "type": "double",
       "value": "1"
     },
@@ -577,6 +570,14 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
+      "line": 37,
+      "match": "ABS",
+      "severity": "mild",
+      "text": "if (ABS(this_ptr->stop_after_fade) != 0.0) goto LAB_005a73d3;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 72,
       "match": "SQRT",
       "severity": "mild",
@@ -588,7 +589,7 @@
       "line": 74,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "local_38 = SUB84(dVar4,0);",
+      "text": "local_38 = SUB84(__BITCAST_UINT64(dVar4),0);",
       "type": "sub84_truncation"
     },
     {
@@ -596,7 +597,7 @@
       "line": 74,
       "match": "SUB84",
       "severity": "mild",
-      "text": "local_38 = SUB84(dVar4,0);",
+      "text": "local_38 = SUB84(__BITCAST_UINT64(dVar4),0);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -612,7 +613,7 @@
       "line": 92,
       "match": "._4_4_",
       "severity": "mild",
-      "text": "dVar4 = 1.0 / (double)CONCAT44(4._4_4_,4._0_4_);",
+      "text": "dVar4 = 1.0 / __BITCAST_DOUBLE(CONCAT44(4._4_4_,4._0_4_));",
       "type": "unknown_field"
     },
     {
@@ -620,23 +621,15 @@
       "line": 92,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "dVar4 = 1.0 / (double)CONCAT44(4._4_4_,4._0_4_);",
+      "text": "dVar4 = 1.0 / __BITCAST_DOUBLE(CONCAT44(4._4_4_,4._0_4_));",
       "type": "unknown_field"
-    },
-    {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 92,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "dVar4 = 1.0 / (double)CONCAT44(4._4_4_,4._0_4_);",
-      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 92,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "dVar4 = 1.0 / (double)CONCAT44(4._4_4_,4._0_4_);",
+      "text": "dVar4 = 1.0 / __BITCAST_DOUBLE(CONCAT44(4._4_4_,4._0_4_));",
       "type": "decompiler_intrinsic"
     },
     {
@@ -644,7 +637,7 @@
       "line": 96,
       "match": "._4_4_",
       "severity": "mild",
-      "text": "if ((double)CONCAT44(4._4_4_,4._0_4_) < local_60) {",
+      "text": "if (__BITCAST_DOUBLE(CONCAT44(4._4_4_,4._0_4_)) < local_60) {",
       "type": "unknown_field"
     },
     {
@@ -652,23 +645,15 @@
       "line": 96,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "if ((double)CONCAT44(4._4_4_,4._0_4_) < local_60) {",
+      "text": "if (__BITCAST_DOUBLE(CONCAT44(4._4_4_,4._0_4_)) < local_60) {",
       "type": "unknown_field"
-    },
-    {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 96,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "if ((double)CONCAT44(4._4_4_,4._0_4_) < local_60) {",
-      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 96,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "if ((double)CONCAT44(4._4_4_,4._0_4_) < local_60) {",
+      "text": "if (__BITCAST_DOUBLE(CONCAT44(4._4_4_,4._0_4_)) < local_60) {",
       "type": "decompiler_intrinsic"
     },
     {
@@ -676,7 +661,7 @@
       "line": 97,
       "match": "._4_4_",
       "severity": "mild",
-      "text": "local_60 = (double)CONCAT44(4._4_4_,4._0_4_);",
+      "text": "local_60 = __BITCAST_DOUBLE(CONCAT44(4._4_4_,4._0_4_));",
       "type": "unknown_field"
     },
     {
@@ -684,23 +669,15 @@
       "line": 97,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "local_60 = (double)CONCAT44(4._4_4_,4._0_4_);",
+      "text": "local_60 = __BITCAST_DOUBLE(CONCAT44(4._4_4_,4._0_4_));",
       "type": "unknown_field"
-    },
-    {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 97,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "local_60 = (double)CONCAT44(4._4_4_,4._0_4_);",
-      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 97,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "local_60 = (double)CONCAT44(4._4_4_,4._0_4_);",
+      "text": "local_60 = __BITCAST_DOUBLE(CONCAT44(4._4_4_,4._0_4_));",
       "type": "decompiler_intrinsic"
     },
     {

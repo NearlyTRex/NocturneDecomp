@@ -16,7 +16,7 @@ void __cdecl core_mission_cpp_CDemonMission_getNextLoadedInventoryActor_FUN_0052
     g_CurrentLineNumber = 0x186;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonMission::getNextLoadedInventoryActor - no more!");
   }
-  iVar1 = stricmp(this_ptr->next_inventory_actor->actor_name,actor_name);
+  iVar1 = _stricmp(this_ptr->next_inventory_actor->actor_name,actor_name);
   if (iVar1 != 0) {
     g_CurrentFilename = "..\\core\\mission.cpp";
     g_CurrentLineNumber = 0x18b;

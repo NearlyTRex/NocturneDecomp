@@ -28,7 +28,7 @@ section .text
         ;   Label: LAB_00534d23
     PUSH ESI                            ; 00534d25
     CALL sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40 ; 00534d26
-        ;   XREF to: 00534d40 (UNCONDITIONAL_CALL)  ; int sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder * this_ptr)
+        ;   XREF to: 00534d40 (UNCONDITIONAL_CALL)  ; int sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder * this_ptr, short * pcm_output)
     ADD ESP,0x8                         ; 00534d2b
     TEST EAX,EAX                        ; 00534d2e
     JLE 0x00534d36                      ; 00534d30

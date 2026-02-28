@@ -143,7 +143,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x8]       ; 005de53b
     PUSH ESI                            ; 005de53f
     CALL sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005a8be0 ; 005de540
-        ;   XREF to: 005a8be0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005a8be0(double trigger_time, int trigger_id)
+        ;   XREF to: 005a8be0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005a8be0(double trigger_time, int trigger_id)
     ADD ESP,0xc                         ; 005de545
     PUSH 0x6554ff                       ; 005de548 | = "m-gun-t.wav"
         ;   Label: LAB_005de548

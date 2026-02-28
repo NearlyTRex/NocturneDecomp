@@ -30,8 +30,8 @@
 ;
 ; Called Functions:
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;   crt_string.c_memmove_FUN_005fe5e0
-;   crt_string.c_stricmp_FUN_005fe7f0
 ;   engine_dosio.c_CFileFinder_closeSearch_FUN_00481d70
 ;   engine_dosio.c_CFileFinder_ctor_FUN_00481c30
 ;   engine_dosio.c_CFileFinder_dtor_FUN_00481c50
@@ -182,8 +182,8 @@ section .text
         ;   XREF to: 004a2f70 (UNCONDITIONAL_CALL)  ; char * shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70(CStrList * this_ptr, int index)
     ADD ESP,0x8                         ; 004a3921
     PUSH EAX                            ; 004a3924
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 004a3925
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 004a3925
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004a392a
     TEST EAX,EAX                        ; 004a392d
     JNZ 0x004a39b8                      ; 004a392f

@@ -82,7 +82,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x4]       ; 005ae3c9
     PUSH EBX                            ; 005ae3cd
     CALL sound_sndmain.cpp_startSoundThread_FUN_005abc00 ; 005ae3ce
-        ;   XREF to: 005abc00 (UNCONDITIONAL_CALL)  ; HANDLE sound_sndmain.cpp_startSoundThread_FUN_005abc00(double latency_seconds)
+        ;   XREF to: 005abc00 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_startSoundThread_FUN_005abc00(double latency_seconds)
     ADD ESP,0x8                         ; 005ae3d3
     TEST EAX,EAX                        ; 005ae3d6
     JZ 0x005ae43b                       ; 005ae3d8

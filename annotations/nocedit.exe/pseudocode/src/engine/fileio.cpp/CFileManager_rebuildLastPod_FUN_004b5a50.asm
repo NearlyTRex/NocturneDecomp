@@ -101,7 +101,7 @@
 ;   crt_stdio.c_fseek_FUN_005ffacc
 ;   crt_stdio.c_ftell_FUN_00601560
 ;   crt_stdio.c_fwrite_FUN_005fdc00
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;   crt_time.c__time_FUN_006001f0
 ;   engine_dosio.c_findFileNormally_FUN_004817c0
 ;   engine_dosio.c_getFileTimestamp_FUN_00481960
@@ -277,7 +277,7 @@ section .text
         ;   Label: LAB_004b5be3
     PUSH 0x2d129b0                      ; 004b5be4 | g_PodCreationTime
     CALL crt_time.c__time_FUN_006001f0  ; 004b5be9
-        ;   XREF to: 006001f0 (UNCONDITIONAL_CALL)  ; time_t crt_time.c__time_FUN_006001f0(time_t * optional_output)
+        ;   XREF to: 006001f0 (UNCONDITIONAL_CALL)  ; time_t crt_time.c__time_FUN_006001f0(int * time)
     ADD ESP,0x4                         ; 004b5bee
     MOV EAX,ESP                         ; 004b5bf1
     PUSH EAX                            ; 004b5bf3
@@ -445,8 +445,8 @@ section .text
     PUSH ESI                            ; 004b5df8
     MOV EDI,dword ptr [EAX + EBP*0x1]   ; 004b5df9
     PUSH EDI                            ; 004b5dfc
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 004b5dfd
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 004b5dfd
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004b5e02
     TEST EAX,EAX                        ; 004b5e05
     JNZ 0x004b63ad                      ; 004b5e07

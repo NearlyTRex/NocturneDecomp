@@ -81,7 +81,7 @@ int __cdecl CMP3Decoder::huffmanDecode(CMP3Decoder *this_ptr,SHuffmanTable *huff
 
 // Original: sound_mp3.cpp_CFileBitStream_readFrameHeader_FUN_0052f5b0
 // Address: 0052f5b0
-void __cdecl CFileBitStream::readFrameHeader(CFileBitStream *this_ptr,SMpegFrameHeader *header_out);
+void __cdecl CFileBitStream::readFrameHeader(CFileBitStream *this_ptr,SMpegFrameHeader **header_out);
 
 // Original: sound_mp3.cpp_CFileBitStream_readAllocationValues_FUN_0052f670
 // Address: 0052f670
@@ -113,7 +113,7 @@ void __cdecl requantizeLayer3Samples(int *scalefactor_indices,uint *quantized_sa
 
 // Original: sound_mp3.cpp_requantizeSamples_FUN_005301b0
 // Address: 005301b0
-void __cdecl requantizeSamples(SMpegSubbandScalefactors *quantized_samples,SMpegSubbandScalefactors *dequantized_samples,SMpegSubbandAllocation *allocation,SMpegFrameHeader *header);
+void __cdecl requantizeSamples(SMpegSubbandScalefactors *quantized_samples,SMpegSubbandScalefactors *dequantized_samples,SMpegSubbandAllocation *allocation,SMpegFrame *frame);
 
 // Original: sound_mp3.cpp_applyScalefactorsToSubbands_FUN_005302f0
 // Address: 005302f0
@@ -229,4 +229,4 @@ int __cdecl CMP3Decoder::getTotalSamples(CMP3Decoder *this_ptr);
 
 // Original: sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40
 // Address: 00534d40
-int __cdecl CMP3Decoder::decodeFrame(CMP3Decoder *this_ptr);
+int __cdecl CMP3Decoder::decodeFrame(CMP3Decoder *this_ptr,short *pcm_output);

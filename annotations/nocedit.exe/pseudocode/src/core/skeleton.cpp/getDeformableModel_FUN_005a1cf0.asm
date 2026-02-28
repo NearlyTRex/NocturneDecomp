@@ -24,7 +24,7 @@
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_skeleton.cpp_CDeformableModel_captureTextures_FUN_0059a780
 ;   core_skeleton.cpp_CDeformableModel_load_FUN_0059b8d0
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;
 ; *****************************************************************************
 
@@ -50,8 +50,8 @@ section .text
     MOV EDI,0x368c8a0                   ; 005a1d17 | g_DeformableModelPool
     PUSH ESI                            ; 005a1d1c | DAT_03695850 | DAT_0369e850
     ADD EDI,EAX                         ; 005a1d1d
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 005a1d1f
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 005a1d1f
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 005a1d24
     TEST EAX,EAX                        ; 005a1d27
     JZ 0x005a1db5                       ; 005a1d29

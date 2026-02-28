@@ -19,7 +19,7 @@ int __cdecl core_setedit_cpp_findGroundTextureIndex_FUN_005781a0(char *filename)
   if (0 < g_GroundTextureCount) {
     str1 = g_GroundTextureNames;
     do {
-      iVar1 = stricmp(*str1,local_10c);
+      iVar1 = _stricmp(*str1,local_10c);
       if (iVar1 == 0) {
         return iVar2;
       }

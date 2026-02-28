@@ -35,7 +35,7 @@
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_fgets_FUN_005fefd0
-;   crt_string.c_strcmp_FUN_005fef20
+;   crt_string.c__strcmp_FUN_005fef20
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;   shape_memdbg.cpp_openFile_FUN_0050f7a0
 ;
@@ -160,8 +160,8 @@ section .text
     PUSH EAX                            ; 004fb370
     LEA EAX,[ESP + 0x4]                 ; 004fb371
     PUSH EAX                            ; 004fb375
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 004fb376
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 004fb376
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 004fb37b
     TEST EAX,EAX                        ; 004fb37e
     JZ 0x004fb2b2                       ; 004fb380
@@ -205,8 +205,8 @@ section .text
     PUSH EDX                            ; 004fb3c0
     LEA EAX,[ESP + 0x4]                 ; 004fb3c1
     PUSH EAX                            ; 004fb3c5
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 004fb3c6
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 004fb3c6
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 004fb3cb
     TEST EAX,EAX                        ; 004fb3ce
     JNZ 0x004fb38b                      ; 004fb3d0

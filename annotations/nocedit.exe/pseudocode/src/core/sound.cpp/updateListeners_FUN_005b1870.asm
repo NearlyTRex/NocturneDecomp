@@ -93,7 +93,7 @@
 ;   core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370
 ;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0
 ;   core_setcolid.cpp_CDemonSet_rayVoxelHeightQuery_FUN_00572340
-;   crt_string.c_strnicmp_FUN_005ff070
+;   crt_string.c__strnicmp_FUN_005ff070
 ;   sound_sndmain.cpp_set3DListenerOrient_FUN_005aa0a0
 ;   sound_sndmain.cpp_set3DListenerPos_FUN_005aa020
 ;
@@ -302,8 +302,8 @@ section .text
     PUSH 0x652506                       ; 005b1b98 | = "castle"
     ADD EAX,0x14d0f0                    ; 005b1b9d
     PUSH EAX                            ; 005b1ba2 | DAT_03261368
-    CALL crt_string.c_strnicmp_FUN_005ff070 ; 005b1ba3
-        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)
+    CALL crt_string.c__strnicmp_FUN_005ff070 ; 005b1ba3
+        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 005b1ba8
     TEST EAX,EAX                        ; 005b1bab
     JNZ 0x005b1cc0                      ; 005b1bad

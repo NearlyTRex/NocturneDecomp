@@ -36,7 +36,7 @@
 ; Called Functions:
 ;   crt_math.c_round_FUN_005fe6b0
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
-;   crt_string.c_strcmp_FUN_005fef20
+;   crt_string.c__strcmp_FUN_005fef20
 ;   shape_design.c_calculatePolygonNormal_FUN_0045caa0
 ;
 ; *****************************************************************************
@@ -167,8 +167,8 @@ section .text
     PUSH EAX                            ; 0045a4b4
     MOV EAX,0x1626370                   ; 0045a4b5 | g_TempTextureName
     PUSH EAX                            ; 0045a4ba | g_TempTextureName
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 0045a4bb
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 0045a4bb
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 0045a4c0
     TEST EAX,EAX                        ; 0045a4c3
     JZ 0x0045a50f                       ; 0045a4c5

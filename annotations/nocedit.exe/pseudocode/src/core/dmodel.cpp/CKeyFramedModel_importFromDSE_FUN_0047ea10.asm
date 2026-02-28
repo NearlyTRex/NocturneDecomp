@@ -41,7 +41,7 @@
 ;   core_dmodel.cpp_CKeyFramedModel_free_FUN_00477690
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_math.c_round_FUN_005fe6b0
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;
 ; *****************************************************************************
 
@@ -209,8 +209,8 @@ section .text
     PUSH EDI                            ; 0047ebf8 | DAT_016e9914
         ;   Label: LAB_0047ebf8
     PUSH ESI                            ; 0047ebf9
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 0047ebfa
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 0047ebfa
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0047ebff
     TEST EAX,EAX                        ; 0047ec02
     JNZ 0x0047ecda                      ; 0047ec04

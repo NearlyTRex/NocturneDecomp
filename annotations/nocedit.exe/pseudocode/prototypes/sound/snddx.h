@@ -45,7 +45,7 @@ int __cdecl CDirectSoundDevice::setMode(CDirectSoundDevice *this_ptr,int bits_pe
 
 // Original: sound_snddx.cpp_CDirectSoundDevice_poll_FUN_005aed50
 // Address: 005aed50
-int __cdecl CDirectSoundDevice::poll(CDirectSoundDevice *this_ptr);
+int __cdecl CDirectSoundDevice::poll(CDirectSoundDevice *this_ptr,short *output_buffer,int num_samples);
 
 // Original: sound_snddx.cpp_CDirectSoundDevice_hasHardware3D_FUN_005aee20
 // Address: 005aee20

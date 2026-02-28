@@ -47,7 +47,7 @@ CDemonActor * __cdecl core_script_cpp_getActor_FUN_005594e0(char *actor_specifie
     }
   }
   else {
-    iVar2 = stricmp(actor_specifier,"$");
+    iVar2 = _stricmp(actor_specifier,"$");
     if (iVar2 == 0) {
       if (g_CNetGamePtr->connection_type != CONNECTION_NONE) {
         _sprintf(g_ScriptErrorBuffer,"Can't use '$' actor specifier in multi-player");

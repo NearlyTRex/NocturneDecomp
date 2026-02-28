@@ -79537,12 +79537,28 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"sound_sndmain.cpp_getRecordingDeviceCaps_FUN_005abb10",
-    "ret":"HRESULT",
+    "name":"sound_sndmain.cpp_pollRecordingDevice_FUN_005abb10",
+    "ret":"int",
     "vars":{
       "params":[
         {
-          "name":"pDSCCaps",
+          "name":"output_buffer",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"short*"
+        },
+        {
+          "name":"num_samples",
           "storage":{
             "offset":8,
             "size":4,
@@ -79555,7 +79571,7 @@
               }
             ]
           },
-          "type":"LPDSCCAPS"
+          "type":"int"
         }
       ],
       "ret_storage":{
@@ -80446,6 +80462,38 @@
             ]
           },
           "type":"CWavOutDevice*"
+        },
+        {
+          "name":"output_buffer",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"short*"
+        },
+        {
+          "name":"num_samples",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ],
       "ret_storage":{

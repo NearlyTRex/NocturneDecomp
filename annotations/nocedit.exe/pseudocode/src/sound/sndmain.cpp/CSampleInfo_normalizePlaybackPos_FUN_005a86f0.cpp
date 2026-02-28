@@ -31,8 +31,8 @@ double __cdecl sound_sndmain_cpp_CSampleInfo_normalizePlaybackPos_FUN_005a86f0(C
     dVar2 = dVar2 - dVar3;
   }
   position._0_4_ = (uint)((ulonglong)dVar2 >> 0x20);
-  this_ptr = SUB84(dVar2,0);
+  this_ptr = SUB84(__BITCAST_UINT64(dVar2),0);
   dVar2 = sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580
-                    (this_ptr,(double)CONCAT44(2,position._0_4_),position._4_4_,in_stack_ffffffe0);
+                    (this_ptr,__BITCAST_DOUBLE(CONCAT44(2,position._0_4_)),position._4_4_,in_stack_ffffffe0);
   return dVar2;
 }

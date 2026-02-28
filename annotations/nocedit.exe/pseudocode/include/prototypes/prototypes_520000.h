@@ -309,7 +309,7 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_putByte_FUN_0052f260(CMP3Decoder *this_pt
 void __cdecl sound_mp3_cpp_CMP3Decoder_unreadBits_FUN_0052f2c0(CMP3Decoder *this_ptr,int num_bits);
 void __cdecl sound_mp3_cpp_CMP3Decoder_rewindBytes_FUN_0052f320(CMP3Decoder *this_ptr,int num_bytes);
 int __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecode_FUN_0052f350(CMP3Decoder *this_ptr,SHuffmanTable *huffman_table,int *x_out,int *y_out,int *v_out, int *w_out);
-void __cdecl sound_mp3_cpp_CFileBitStream_readFrameHeader_FUN_0052f5b0(CFileBitStream *this_ptr,SMpegFrameHeader *header_out);
+void __cdecl sound_mp3_cpp_CFileBitStream_readFrameHeader_FUN_0052f5b0(CFileBitStream *this_ptr,SMpegFrameHeader **header_out);
 void __cdecl sound_mp3_cpp_CFileBitStream_readAllocationValues_FUN_0052f670(CFileBitStream *this_ptr,SMpegSubbandAllocation *output_allocation, SBitAllocationTable *alloc_table_info);
 void __cdecl sound_mp3_cpp_CFileBitStream_readAllocationTable_FUN_0052f7a0(CFileBitStream *this_ptr,uint *output_array,SBitAllocationTable *alloc_table);
 void __cdecl sound_mp3_cpp_CFileBitStream_readScalefactors_FUN_0052f850(CFileBitStream *this_ptr,SMpegSubbandAllocation *allocation_indices, SMpegSubbandScalefactors *scalefactors,SBitAllocationTable *alloc_info);

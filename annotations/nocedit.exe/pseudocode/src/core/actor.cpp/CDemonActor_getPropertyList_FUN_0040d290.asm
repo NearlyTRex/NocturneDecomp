@@ -33,7 +33,7 @@
 ;   core_actor.cpp_CActorPropertyList_addFloatRange_FUN_0040e1a0
 ;   core_actor.cpp_CActorPropertyList_addString_FUN_0040e290
 ;   core_actor.cpp_CActorPropertyList_addVector_FUN_0040e260
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;
 ; *****************************************************************************
 
@@ -89,8 +89,8 @@ section .text
     PUSH 0x614438                       ; 0040d2f8 | = "none"
         ;   Label: LAB_0040d2f8
     PUSH EDI                            ; 0040d2fd
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 0040d2fe
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 0040d2fe
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0040d303
     TEST EAX,EAX                        ; 0040d306
     JZ 0x0040d2f4                       ; 0040d308

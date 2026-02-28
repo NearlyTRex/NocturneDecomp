@@ -23,7 +23,7 @@ void __cdecl core_setedit_cpp_CDemonSet_editSpotLight_FUN_0057b500(CDemonSet *th
         iVar2 = 0;
         do {
           unaff_EDI = *(int *)((int)g_MasterLightList + iVar2);
-          iVar1 = strcmp(light->name,(char *)(unaff_EDI + 0x40));
+          iVar1 = _strcmp(light->name,(char *)(unaff_EDI + 0x40));
           if (iVar1 == 0) {
             *(uint *)(unaff_EDI + 0x1cb4) = 0;
             break;

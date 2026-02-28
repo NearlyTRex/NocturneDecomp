@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl crt_string_c_stricmp_FUN_005fe7f0(char *str1,char *str2)
+; int __cdecl crt_string_c__stricmp_FUN_005fe7f0(char *str1,char *str2)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   str1
@@ -16,5 +16,5 @@ section .text
 
     JMP 0x005fe7f0                      ; 006020fc
         ;   XREF to: 005fe7f0 (UNCONDITIONAL_JUMP)
-        ;   Label: crt_string.c_stricmp_FUN_005fe7f0
+        ;   Label: crt_string.c__stricmp_FUN_005fe7f0
 

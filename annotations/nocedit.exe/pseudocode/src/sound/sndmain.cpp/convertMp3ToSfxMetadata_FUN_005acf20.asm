@@ -46,9 +46,9 @@
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_fgets_FUN_005fefd0
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
+;   crt_string.c__strnicmp_FUN_005ff070
 ;   crt_string.c_memmove_FUN_005fe5e0
 ;   crt_string.c_splitpath_FUN_005ff178
-;   crt_string.c_strnicmp_FUN_005ff070
 ;   crt_string.c_strstr_FUN_005fedd0
 ;   engine_dosio.c_getFileSize_FUN_00481880
 ;   shape_edittool.cpp_CStrList_add_FUN_004a2b80
@@ -468,8 +468,8 @@ section .text
     PUSH 0x651177                       ; 005ad32c | = "length"
     LEA EAX,[ESP + 0x408]               ; 005ad331
     PUSH EAX                            ; 005ad338
-    CALL crt_string.c_strnicmp_FUN_005ff070 ; 005ad339
-        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)
+    CALL crt_string.c__strnicmp_FUN_005ff070 ; 005ad339
+        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 005ad33e
     TEST EAX,EAX                        ; 005ad341
     JNZ 0x005ad0b2                      ; 005ad343

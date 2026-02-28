@@ -69,7 +69,7 @@
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
 ;   crt_stdio.c_remove_FUN_005ff9d0
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;   shape_design.c_optimizePolygonMesh_FUN_004658e0
 ;   shape_design.c_removeDegeneratePolygons_FUN_00465310
 ;   shape_design.c_vertexReducer_FUN_00467850
@@ -287,8 +287,8 @@ section .text
     PUSH EDI                            ; 005d7a06 | DAT_016e9914
         ;   Label: LAB_005d7a06
     PUSH ESI                            ; 005d7a07 | g_TriListTextureNames | DAT_03f6bc40
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 005d7a08
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 005d7a08
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 005d7a0d
     TEST EAX,EAX                        ; 005d7a10
     JNZ 0x005d7d57                      ; 005d7a12

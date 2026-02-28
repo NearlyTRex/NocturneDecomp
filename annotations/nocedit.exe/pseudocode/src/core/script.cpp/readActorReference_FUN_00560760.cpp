@@ -23,7 +23,7 @@ void __cdecl core_script_cpp_readActorReference_FUN_00560760(_FILE *file_handle,
     pcVar1 = (char *)((int)pcVar1 + 4);
   }
   _fscanf(file_handle,"\"%[^\"]\"\n",local_d0);
-  iVar3 = stricmp(local_d0,"(none)");
+  iVar3 = _stricmp(local_d0,"(none)");
   if (iVar3 == 0) {
     actor_out->actor_name[0] = '\0';
     actor_out->actor_name[1] = '\0';

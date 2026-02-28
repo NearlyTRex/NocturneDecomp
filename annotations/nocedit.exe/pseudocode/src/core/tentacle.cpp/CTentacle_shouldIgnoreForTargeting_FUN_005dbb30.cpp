@@ -16,7 +16,7 @@ int __cdecl core_tentacle_cpp_CTentacle_shouldIgnoreForTargeting_FUN_005dbb30(CT
   str2 = "wait";
   str1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                    (&(this_ptr->base).base.model.motion_controller);
-  iVar1 = stricmp(str1->motion_name,str2);
+  iVar1 = _stricmp(str1->motion_name,str2);
   if (iVar1 == 0) {
     return 1;
   }

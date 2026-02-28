@@ -20,12 +20,6 @@
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
-        "category": "incompatible_types",
-        "column": 74,
-        "line": 43,
-        "message": "invalid operands to binary expression ('double' and 'int')"
-      },
-      {
         "category": "format_error",
         "column": 74,
         "line": 43,
@@ -42,12 +36,6 @@
         "column": 20,
         "line": 47,
         "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 26,
-        "line": 65,
-        "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "format_error",
@@ -335,7 +323,7 @@
       "line": 36,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "(double)*(float *)((int)pCVar2->uv_coords[1] + iVar7),SUB84(dVar1,0),",
+      "text": "(double)*(float *)((int)pCVar2->uv_coords[1] + iVar7),SUB84(__BITCAST_UINT64(dVar1),0),",
       "type": "pointer_cast"
     },
     {
@@ -343,7 +331,7 @@
       "line": 36,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "(double)*(float *)((int)pCVar2->uv_coords[1] + iVar7),SUB84(dVar1,0),",
+      "text": "(double)*(float *)((int)pCVar2->uv_coords[1] + iVar7),SUB84(__BITCAST_UINT64(dVar1),0),",
       "type": "sub84_truncation"
     },
     {
@@ -351,7 +339,7 @@
       "line": 36,
       "match": "SUB84",
       "severity": "mild",
-      "text": "(double)*(float *)((int)pCVar2->uv_coords[1] + iVar7),SUB84(dVar1,0),",
+      "text": "(double)*(float *)((int)pCVar2->uv_coords[1] + iVar7),SUB84(__BITCAST_UINT64(dVar1),0),",
       "type": "decompiler_intrinsic"
     },
     {
@@ -383,7 +371,7 @@
       "line": 58,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "SUB84((double)*(float *)(pCVar3->lod_workspace + iVar5),0),",
+      "text": "SUB84(__BITCAST_UINT64((double)*(float *)(pCVar3->lod_workspace + iVar5)),0),",
       "type": "sub84_truncation"
     },
     {
@@ -391,7 +379,7 @@
       "line": 58,
       "match": "SUB84",
       "severity": "mild",
-      "text": "SUB84((double)*(float *)(pCVar3->lod_workspace + iVar5),0),",
+      "text": "SUB84(__BITCAST_UINT64((double)*(float *)(pCVar3->lod_workspace + iVar5)),0),",
       "type": "decompiler_intrinsic"
     }
   ]

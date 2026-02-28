@@ -34,7 +34,7 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 ;   core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;
 ; *****************************************************************************
 
@@ -56,8 +56,8 @@ section .text
     PUSH 0x6218c0                       ; 004840d7 | = "nbride2x.dfm"
     PUSH EAX                            ; 004840dc
     MOV EDI,EAX                         ; 004840dd
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 004840df
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 004840df
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004840e4
     TEST EAX,EAX                        ; 004840e7
     JNZ 0x004840f9                      ; 004840e9
@@ -70,8 +70,8 @@ section .text
     PUSH 0x6218d9                       ; 004840f9 | = "nbride3x.dfm"
         ;   Label: LAB_004840f9
     PUSH EDI                            ; 004840fe
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 004840ff
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 004840ff
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 00484104
     TEST EAX,EAX                        ; 00484107
     JNZ 0x0048411f                      ; 00484109
@@ -85,8 +85,8 @@ section .text
     PUSH 0x6218f2                       ; 0048411f | = "nbride4x.dfm"
         ;   Label: LAB_0048411f
     PUSH EDI                            ; 00484124
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 00484125
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 00484125
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0048412a
     TEST EAX,EAX                        ; 0048412d
     JNZ 0x00484145                      ; 0048412f
@@ -244,8 +244,8 @@ section .text
         ;   Label: LAB_00484329
     PUSH EAX                            ; 0048432e
     MOV EDI,EAX                         ; 0048432f
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 00484331
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 00484331
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 00484336
     TEST EAX,EAX                        ; 00484339
     JNZ 0x0048434b                      ; 0048433b
@@ -258,8 +258,8 @@ section .text
     PUSH 0x62188e                       ; 0048434b | = "nbride3.dfm"
         ;   Label: LAB_0048434b
     PUSH EDI                            ; 00484350
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 00484351
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 00484351
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 00484356
     TEST EAX,EAX                        ; 00484359
     JNZ 0x00484371                      ; 0048435b
@@ -273,8 +273,8 @@ section .text
     PUSH 0x6218a7                       ; 00484371 | = "nbride4.dfm"
         ;   Label: LAB_00484371
     PUSH EDI                            ; 00484376
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 00484377
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 00484377
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0048437c
     TEST EAX,EAX                        ; 0048437f
     JNZ 0x00484145                      ; 00484381

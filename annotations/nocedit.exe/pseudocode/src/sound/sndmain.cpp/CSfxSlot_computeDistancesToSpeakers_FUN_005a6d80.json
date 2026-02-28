@@ -6,19 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 44,
-    "complexity_score": 103,
+    "complexity_score": 77,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 7,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 28,
-    "suspect_count": 6,
+    "pseudocode_lines": 27,
+    "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic",
-      "pointer_cast",
-      "register_param"
+      "pointer_cast"
     ],
-    "total_lines": 72
+    "total_lines": 71
   },
   "cross_references": [
     {
@@ -38,7 +37,7 @@
     ],
     "convention": "__cdecl",
     "name": "sound_sndmain.cpp_CSfxSlot_computeDistancesToSpeakers_FUN_005a6d80",
-    "signature": "int __cdecl sound_sndmain_cpp_CSfxSlot_computeDistancesToSpeakers_FUN_005a6d80(CSfxSlot *this_ptr)"
+    "signature": "void __cdecl sound_sndmain_cpp_CSfxSlot_computeDistancesToSpeakers_FUN_005a6d80(CSfxSlot *this_ptr)"
   },
   "function_calls": [],
   "globals": [
@@ -150,16 +149,8 @@
   },
   "suspects": [
     {
-      "description": "Inferred register parameter",
-      "line": 5,
-      "match": "in_EAX",
-      "severity": "mild",
-      "text": "int in_EAX;",
-      "type": "register_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 19,
+      "line": 18,
       "match": "(double *)((int)",
       "severity": "mild",
       "text": "(float10)*(double *)((int)g_VirtualSpeakerXPositions + iVar2);",
@@ -167,7 +158,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 21,
+      "line": 20,
       "match": "(double *)((int)",
       "severity": "mild",
       "text": "(float10)*(double *)((int)g_VirtualSpeakerYPositions + iVar2);",
@@ -175,7 +166,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 23,
+      "line": 22,
       "match": "(double *)((int)",
       "severity": "mild",
       "text": "(float10)*(double *)((int)g_VirtualSpeakerZPositions + iVar2);",
@@ -183,19 +174,11 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 26,
+      "line": 25,
       "match": "SQRT",
       "severity": "mild",
       "text": "pCVar1->distance_to_speakers[0] = (float)SQRT(fVar6 * fVar6 + fVar5 * fVar5 + fVar4 * fVar4);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 30,
-      "match": "in_EAX",
-      "severity": "mild",
-      "text": "return in_EAX;",
-      "type": "register_param"
     }
   ]
 }

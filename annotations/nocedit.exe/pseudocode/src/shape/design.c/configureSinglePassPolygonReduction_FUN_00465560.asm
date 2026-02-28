@@ -38,8 +38,8 @@
 ; Called Functions:
 ;   crt_ctype.c_toupper_FUN_005ff9e0
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_string.c__strcmp_FUN_005fef20
 ;   crt_string.c__strtod_FUN_005ff0f3
-;   crt_string.c_strcmp_FUN_005fef20
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   engine_2d.c_getInputWithPrompt_FUN_004032c0
 ;   shape_design.c_findVertexMatches_FUN_00461ae0
@@ -235,8 +235,8 @@ section .text
     ADD EAX,EDX                         ; 00465727
     ADD EAX,0x54                        ; 00465729
     PUSH EAX                            ; 0046572c
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 0046572d
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 0046572d
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 00465732
     TEST EAX,EAX                        ; 00465735
     JZ 0x0046573b                       ; 00465737

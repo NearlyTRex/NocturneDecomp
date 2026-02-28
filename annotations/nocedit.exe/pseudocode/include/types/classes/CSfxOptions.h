@@ -9,10 +9,10 @@
 typedef struct CSfxOptions {
     int channel_index; // 0x0
     CVector3d position; // 0x4
-    struct CVector3d* position_source_ptr; // 0x1c
+    void* position_source_ptr; // 0x1c
     int position_format; // 0x20
     CVector3d velocity; // 0x24
-    struct CVector3d* velocity_source_ptr; // 0x3c
+    void* velocity_source_ptr; // 0x3c
     int velocity_format; // 0x40
     float current_volume; // 0x44
     float base_frequency; // 0x48

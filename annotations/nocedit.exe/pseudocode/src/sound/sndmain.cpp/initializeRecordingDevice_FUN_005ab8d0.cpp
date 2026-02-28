@@ -19,11 +19,10 @@ int __cdecl sound_sndmain_cpp_initializeRecordingDevice_FUN_005ab8d0(void)
   if (-1 < g_CurrentRecordingDevice) {
     if (g_RecordingDevices[g_CurrentRecordingDevice].api_type == 0) {
       g_RecordingDeviceInterface =
-           (IDirectSoundCapture *)
-           sound_sndwav_cpp_getWavInDevice_FUN_005b1600
-                     (g_RecordingDevices[g_CurrentRecordingDevice].device_id);
+           &sound_sndwav_cpp_getWavInDevice_FUN_005b1600
+                      (g_RecordingDevices[g_CurrentRecordingDevice].device_id)->base;
     }
-    if (g_RecordingDeviceInterface != (IDirectSoundCapture *)0x0) {
+    if (g_RecordingDeviceInterface != (CSoundDevice *)0x0) {
       return 1;
     }
   }

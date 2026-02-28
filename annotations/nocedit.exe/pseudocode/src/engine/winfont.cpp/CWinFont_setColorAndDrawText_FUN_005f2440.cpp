@@ -29,8 +29,8 @@ void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005f2440(CWinFo
   bVar11 = 0;
   if (((foreground_color != this_ptr->cached_foreground_color) ||
       (background_color != this_ptr->cached_background_color)) ||
-     (iVar3 = strcmp(this_ptr->text_cache,(char *)x_position), iVar3 != 0)
-     ) {
+     (iVar3 = _strcmp(this_ptr->text_cache,(char *)x_position), iVar3 != 0
+     )) {
     this_ptr->cached_foreground_color = foreground_color;
     this_ptr->cached_background_color = background_color;
     if (foreground_color < 0) {

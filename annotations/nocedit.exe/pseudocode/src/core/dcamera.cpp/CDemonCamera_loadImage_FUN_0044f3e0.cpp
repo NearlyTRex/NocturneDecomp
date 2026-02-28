@@ -177,9 +177,9 @@ LAB_0044f4fd:
         }
         _fread(local_a0,3,1,local_14);
         local_9d = 0;
-        iVar6 = strcmp(local_a0,"LZW");
+        iVar6 = _strcmp(local_a0,"LZW");
         if ((iVar6 == 0) ||
-           (iVar6 = strcmp(local_a0,"EFD"), iVar6 == 0)) {
+           (iVar6 = _strcmp(local_a0,"EFD"), iVar6 == 0)) {
           iVar6 = engine_dosio_c_getFileSize_FUN_00481880("backdrop",local_f4);
           local_9c = iVar6 - 0x1003;
           if ((int)local_9c < 1) {

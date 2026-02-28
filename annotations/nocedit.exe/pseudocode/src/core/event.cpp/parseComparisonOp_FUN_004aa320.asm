@@ -15,7 +15,7 @@
 ;   TerminatedCString s_anon_00624446
 ;
 ; Called Functions:
-;   crt_string.c_strcmp_FUN_005fef20
+;   crt_string.c__strcmp_FUN_005fef20
 ;
 ; *****************************************************************************
 
@@ -26,8 +26,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 004aa321
     PUSH 0x624439                       ; 004aa325 | = "<"
     PUSH EBX                            ; 004aa32a
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 004aa32b
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 004aa32b
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 004aa330
     TEST EAX,EAX                        ; 004aa333
     JNZ 0x004aa339                      ; 004aa335
@@ -37,8 +37,8 @@ section .text
     PUSH 0x62443b                       ; 004aa339 | = "<="
         ;   Label: LAB_004aa339
     PUSH EBX                            ; 004aa33e
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 004aa33f
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 004aa33f
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 004aa344
     TEST EAX,EAX                        ; 004aa347
     JNZ 0x004aa352                      ; 004aa349
@@ -49,8 +49,8 @@ section .text
     PUSH 0x62443e                       ; 004aa352 | = "=="
         ;   Label: LAB_004aa352
     PUSH EBX                            ; 004aa357
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 004aa358
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 004aa358
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 004aa35d
     TEST EAX,EAX                        ; 004aa360
     JNZ 0x004aa36b                      ; 004aa362
@@ -61,8 +61,8 @@ section .text
     PUSH 0x624441                       ; 004aa36b | = "!="
         ;   Label: LAB_004aa36b
     PUSH EBX                            ; 004aa370
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 004aa371
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 004aa371
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 004aa376
     TEST EAX,EAX                        ; 004aa379
     JNZ 0x004aa384                      ; 004aa37b
@@ -73,8 +73,8 @@ section .text
     PUSH 0x624444                       ; 004aa384 | = ">"
         ;   Label: LAB_004aa384
     PUSH EBX                            ; 004aa389
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 004aa38a
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 004aa38a
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 004aa38f
     TEST EAX,EAX                        ; 004aa392
     JNZ 0x004aa39d                      ; 004aa394
@@ -85,8 +85,8 @@ section .text
     PUSH 0x624446                       ; 004aa39d | = ">="
         ;   Label: LAB_004aa39d
     PUSH EBX                            ; 004aa3a2
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 004aa3a3
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 004aa3a3
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 004aa3a8
     TEST EAX,EAX                        ; 004aa3ab
     JNZ 0x004aa3b6                      ; 004aa3ad

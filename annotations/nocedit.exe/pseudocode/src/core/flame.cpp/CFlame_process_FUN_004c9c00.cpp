@@ -72,7 +72,7 @@ void __cdecl core_flame_cpp_CFlame_process_FUN_004c9c00(CFlame *this_ptr,float d
       if (iVar3 == 0) {
         local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.95,1.05);
         _sprintf
-                  ((char *)&local_f8,"torch.wav * %f",SUB84((double)local_14,0),
+                  ((char *)&local_f8,"torch.wav * %f",SUB84(__BITCAST_UINT64((double)local_14),0),
                    (int)((ulonglong)(double)local_14 >> 0x20));
         sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
         iVar3 = 2;

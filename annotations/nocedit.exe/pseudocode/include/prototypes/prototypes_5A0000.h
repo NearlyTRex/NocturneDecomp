@@ -2,7 +2,6 @@
 
 // Dependencies
 #include "system/basetypes.h"
-#include "system/dsound.h"
 #include "system/stdio.h"
 #include "system/windef.h"
 #include "types/classes/CActorPropertyList.h"
@@ -116,7 +115,7 @@ int __cdecl sound_sndmain_cpp_ensureSoundMemoryAvailable_FUN_005a4450(int reques
 void __cdecl sound_sndmain_cpp_trimLineAndRemoveComments_FUN_005a4530(char *line);
 void __cdecl sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_005a45c0(CSfxSample *this_ptr);
 CSfxSample * __cdecl sound_sndmain_cpp_getSfxSample_FUN_005a4c80(char *filename);
-int __cdecl sound_sndmain_cpp_isStreamableFile_FUN_005a5180(char *filename,char *filepath);
+int __cdecl sound_sndmain_cpp_isStreamableFile_FUN_005a5180(char *filename);
 CSfxSample * __cdecl sound_sndmain_cpp_loadStreamingSoundFile_FUN_005a5200(int slot_index,char *filename);
 void __cdecl sound_sndmain_cpp_calculateVirtualSpeakerPositions_FUN_005a5530(void);
 int __cdecl sound_sndmain_cpp_allocateHwSample_FUN_005a5620(int bits_per_sample,int channel_count,int sample_rate,int sample_count);
@@ -141,9 +140,9 @@ void __cdecl sound_sndmain_cpp_CSfxSample_releaseSoundBuffer_FUN_005a6540(CSfxSa
 void __cdecl sound_sndmain_cpp_CSfxSample_seek_FUN_005a65a0(CSfxSample *this_ptr,int playback_position,int dest_buffer_offset);
 int __cdecl sound_sndmain_cpp_CSfxSample_pollStream_FUN_005a6730(CSfxSample *this_ptr,float time_window,float update_interval);
 void __cdecl sound_sndmain_cpp_CSfxSlot_updateBoundPositionAndVelocity_FUN_005a6ce0(CSfxSlot *this_ptr);
-int __cdecl sound_sndmain_cpp_CSfxSlot_computeDistancesToSpeakers_FUN_005a6d80(CSfxSlot *this_ptr);
+void __cdecl sound_sndmain_cpp_CSfxSlot_computeDistancesToSpeakers_FUN_005a6d80(CSfxSlot *this_ptr);
 void __cdecl sound_sndmain_cpp_CSfxSlot_computeChannelDelays_FUN_005a6df0(CSfxSlot *this_ptr);
-float __cdecl sound_sndmain_cpp_CSfxSlot_computeChannelVolumes_FUN_005a6f00(CSfxSlot *this_ptr);
+void __cdecl sound_sndmain_cpp_CSfxSlot_computeChannelVolumes_FUN_005a6f00(CSfxSlot *this_ptr);
 void __cdecl sound_sndmain_cpp_CSfxSlot_autoCalcDelayRemaining_FUN_005a7070(CSfxSlot *this_ptr);
 int __cdecl sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(CSfxSlot *this_ptr,float delta_time);
 void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(CSfxSlot *this_ptr,SMixBuffer mix_buffer);
@@ -175,7 +174,7 @@ void __cdecl sound_sndmain_cpp_setNextSfxDelay_FUN_005a8b40(double delay_seconds
 void __cdecl sound_sndmain_cpp_setNextSfxFlags_FUN_005a8b70(uint flags);
 void __cdecl sound_sndmain_cpp_setNextSfxFlagBits_FUN_005a8b90(uint flag_mask);
 void __cdecl sound_sndmain_cpp_clearNextSfxFlagBits_FUN_005a8bb0(uint flag_mask);
-int __cdecl sound_sndmain_cpp_setNextSfxTriggerTime_FUN_005a8be0(double trigger_time,int trigger_id);
+void __cdecl sound_sndmain_cpp_setNextSfxTriggerTime_FUN_005a8be0(double trigger_time,int trigger_id);
 void __cdecl sound_sndmain_cpp_resetCurrentSfxOptions_FUN_005a8c10(void);
 void __cdecl sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30(void);
 void __cdecl sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0(void);
@@ -267,10 +266,10 @@ int __cdecl sound_sndmain_cpp_getCurrentRecordingDevice_FUN_005ab990(void);
 int __cdecl sound_sndmain_cpp_setRecordingFormat_FUN_005ab9a0(int bits_per_sample,int channels,int sample_rate,int signed_samples);
 void __cdecl sound_sndmain_cpp_getRecordingFormat_FUN_005aba40(int *out_bits_per_sample,int *out_channels,int *out_sample_rate,int *out_signed);
 int __cdecl sound_sndmain_cpp_startRecording_FUN_005aba90(void);
-HRESULT __cdecl sound_sndmain_cpp_getRecordingDeviceCaps_FUN_005abb10(LPDSCCAPS pDSCCaps);
+int __cdecl sound_sndmain_cpp_pollRecordingDevice_FUN_005abb10(short *output_buffer,int num_samples);
 int __cdecl sound_sndmain_cpp_stopRecordingDevice_FUN_005abb60(void);
 DWORD __stdcall sound_sndmain_cpp_audioThreadProc_FUN_005abba0(LPVOID lpThreadParam);
-HANDLE __cdecl sound_sndmain_cpp_startSoundThread_FUN_005abc00(double latency_seconds);
+int __cdecl sound_sndmain_cpp_startSoundThread_FUN_005abc00(double latency_seconds);
 int __cdecl sound_sndmain_cpp_killSoundThread_FUN_005abcb0(void);
 void __cdecl sound_sndmain_cpp_lockSound_FUN_005abd30(void);
 void __cdecl sound_sndmain_cpp_unlockSound_FUN_005abdc0(void);
@@ -279,7 +278,7 @@ float __cdecl sound_sndmain_cpp_getMaxSwLatency_FUN_005abea0(void);
 void __cdecl sound_sndmain_cpp_setMaxSwSoundLatency_FUN_005abeb0(float latency);
 void __cdecl sound_sndmain_cpp_readIni_FUN_005abf20(CIniFile *ini_file);
 void __cdecl sound_sndmain_cpp_writeIni_FUN_005ac220(CIniFile *ini_file);
-int __cdecl sound_sndmain_cpp_analyzeFrequencyBand_FUN_005ac400(int channel,float freq_start_hz,float freq_end_hz);
+float __cdecl sound_sndmain_cpp_analyzeFrequencyBand_FUN_005ac400(int channel,float freq_start_hz,float freq_end_hz);
 void __cdecl sound_sndmain_cpp_getChannelLevels_FUN_005ac990(int channel,float *out_peak,float *out_average);
 void __cdecl sound_sndmain_cpp_pollAndMixSfx_FUN_005aca90(LPVOID *channel_buffers,int bits_per_sample,int num_channels,int samples_per_sec, int samples_per_block,int block_align);
 void __cdecl sound_sndmain_cpp_pollAllSfxSlots_FUN_005acdb0(void);
@@ -309,7 +308,7 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_start_FUN_005ae340(CDirectSoundDe
 int __cdecl sound_snddx_cpp_CDirectSoundDevice_reset_FUN_005ae4b0(CDirectSoundDevice *this_ptr);
 void __cdecl sound_snddx_cpp_CDirectSoundDevice_initPropertySet_FUN_005ae660(CDirectSoundDevice *this_ptr);
 int __cdecl sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_005ae830(CDirectSoundDevice *this_ptr,int bits_per_sample,int channels,int sample_rate, int *out_samples_per_block);
-int __cdecl sound_snddx_cpp_CDirectSoundDevice_poll_FUN_005aed50(CDirectSoundDevice *this_ptr);
+int __cdecl sound_snddx_cpp_CDirectSoundDevice_poll_FUN_005aed50(CDirectSoundDevice *this_ptr,short *output_buffer,int num_samples);
 int __cdecl sound_snddx_cpp_CDirectSoundDevice_hasHardware3D_FUN_005aee20(CDirectSoundDevice *this_ptr);
 void __cdecl sound_snddx_cpp_CDirectSoundDevice_set3DListenerPos_FUN_005aee30(CDirectSoundDevice *this_ptr,double x,double y,double z);
 void __cdecl sound_snddx_cpp_CDirectSoundDevice_set3DListenerOrient_FUN_005aee70(CDirectSoundDevice *this_ptr,double x_front,double y_front,double z_front, double x_top,double y_top,double z_top);

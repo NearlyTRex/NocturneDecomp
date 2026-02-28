@@ -74,7 +74,7 @@ int __cdecl engine_ini_cpp_CIni_writeProfileString_FUN_004fb660(CIni *this_ptr,c
            (pcVar6 = _fgets(local_314,0xff,stream), pcVar6 != (char *)0x0)))
     {
       _fprintf(file,local_314);
-      iVar2 = strcmp(local_114,local_314);
+      iVar2 = _strcmp(local_114,local_314);
       if (iVar2 == 0) {
         _fprintf(file,"%s=%s\n",key,value);
         local_14 = 1;

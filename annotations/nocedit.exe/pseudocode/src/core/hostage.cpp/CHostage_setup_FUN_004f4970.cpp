@@ -19,27 +19,27 @@ void __cdecl core_hostage_cpp_CHostage_setup_FUN_004f4970(CHostage *this_ptr)
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(&(this_ptr->base).base.model);
   str1 = (this_ptr->base).base.model.model_name;
   this_ptr->hostage_type = 6;
-  iVar1 = stricmp(str1,"hickboy.dfm");
+  iVar1 = _stricmp(str1,"hickboy.dfm");
   if (iVar1 == 0) {
     this_ptr->hostage_type = 0;
   }
-  iVar1 = stricmp(str1,"depute.dfm");
+  iVar1 = _stricmp(str1,"depute.dfm");
   if (iVar1 == 0) {
     this_ptr->hostage_type = 1;
   }
-  iVar1 = stricmp(str1,"hickho.dfm");
+  iVar1 = _stricmp(str1,"hickho.dfm");
   if (iVar1 == 0) {
     this_ptr->hostage_type = 2;
   }
-  iVar1 = stricmp(str1,"hickgirl.dfm");
+  iVar1 = _stricmp(str1,"hickgirl.dfm");
   if (iVar1 == 0) {
     this_ptr->hostage_type = 4;
   }
-  iVar1 = stricmp(str1,"hickdad.dfm");
+  iVar1 = _stricmp(str1,"hickdad.dfm");
   if (iVar1 == 0) {
     this_ptr->hostage_type = 5;
   }
-  iVar1 = stricmp(str1,"preacher.dfm");
+  iVar1 = _stricmp(str1,"preacher.dfm");
   if (iVar1 == 0) {
     this_ptr->hostage_type = 3;
   }

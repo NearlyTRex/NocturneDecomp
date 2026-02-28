@@ -10,11 +10,11 @@ void * __cdecl sound_mp3_cpp_getMpegLayer2AllocationTable_FUN_0052ea10(int layer
 
 {
   if ((((0 < layer) && (layer < 4)) && (-1 < mode_extension)) && (mode_extension < 4)) {
-    return g_MpegLayer2AllocationTables[layer][mode_extension];
+    return (void *)g_MpegLayer2AllocationTables[layer][mode_extension];
   }
   g_CurrentFilename = "..\\sound\\mp3.cpp";
   g_CurrentLineNumber = 0x1b2;
   core_main_c_displayErrorAndQuit_FUN_00506f10
             ("js_bound bad layer/modext (%d/%d)  File: %s",layer,mode_extension,g_CurrentMp3Filename);
-  return g_MpegLayer2AllocationTables[layer][mode_extension];
+  return (void *)g_MpegLayer2AllocationTables[layer][mode_extension];
 }

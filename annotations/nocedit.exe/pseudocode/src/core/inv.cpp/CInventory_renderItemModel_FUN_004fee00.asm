@@ -66,7 +66,7 @@
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
 ;   core_inv.cpp_getItemModel_FUN_004fcda0
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
 ;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
@@ -318,8 +318,8 @@ section .text
     PUSH 0x630857                       ; 004ff099 | = "axe1.kfm"
     ADD EAX,0x1d0                       ; 004ff09e
     PUSH EAX                            ; 004ff0a3
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 004ff0a4
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 004ff0a4
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004ff0a9
     TEST EAX,EAX                        ; 004ff0ac
     JNZ 0x004ff0ca                      ; 004ff0ae
@@ -337,8 +337,8 @@ section .text
         ;   Label: LAB_004ff0ca
     LEA EAX,[EBX + 0x1d0]               ; 004ff0cf
     PUSH EAX                            ; 004ff0d5
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 004ff0d6
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 004ff0d6
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004ff0db
     TEST EAX,EAX                        ; 004ff0de
     JNZ 0x004ff0fc                      ; 004ff0e0

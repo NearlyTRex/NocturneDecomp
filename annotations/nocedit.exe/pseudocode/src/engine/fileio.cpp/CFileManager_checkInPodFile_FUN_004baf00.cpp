@@ -487,7 +487,7 @@ LAB_004bba53:
 LAB_004bbb45:
           local_34 = p_Var3;
           if (p_Var3 != (_FILE *)0x0) {
-            local_58 = _time((time_t *)0x0);
+            local_58 = _time((int *)0x0);
             p_Var5 = _localtime(&local_58);
             _fprintf(p_Var3,"%4d: %04d/%02d/%02d %02d:%02d:%02d \"%s\"\n",local_4c + 1,
                        p_Var5->tm_year + 0x76c,p_Var5->tm_mon + 1,p_Var5->tm_mday,p_Var5->tm_hour,

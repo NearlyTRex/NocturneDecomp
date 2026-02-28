@@ -15,7 +15,7 @@ void __cdecl sound_sndmain_cpp_setNextSfxStaticVelocity_FUN_005a89a0(double vel_
   g_SfxOptions[g_SfxLastSlot].velocity.x = vel_x;
   g_SfxOptions[iVar1].velocity.y = vel_y;
   g_SfxOptions[iVar1].velocity.z = vel_z;
-  g_SfxOptions[iVar1].velocity_source_ptr = (CVector3d *)0x0;
+  g_SfxOptions[iVar1].velocity_source_ptr = (void *)0x0;
   g_SfxOptions[iVar1].velocity_format = 0;
   return;
 }

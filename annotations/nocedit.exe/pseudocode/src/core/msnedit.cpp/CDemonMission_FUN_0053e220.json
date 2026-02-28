@@ -109,16 +109,15 @@
   },
   "complexity": {
     "assembly_lines": 625,
-    "complexity_score": 724,
+    "complexity_score": 689,
     "cross_reference_count": 1,
     "function_call_count": 43,
     "global_count": 43,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 239,
-    "suspect_count": 43,
+    "suspect_count": 40,
     "suspect_types": [
       "decompiler_intrinsic",
-      "double_reconstruction",
       "pointer_cast",
       "stack_alignment_array",
       "stack_param",
@@ -907,23 +906,15 @@
       "line": 163,
       "match": "in_stack_ffffff54",
       "severity": "moderate",
-      "text": "in_stack_ffffff54 = (double)CONCAT44(fStack_80,fStack_84);",
+      "text": "in_stack_ffffff54 = __BITCAST_DOUBLE(CONCAT44(fStack_80,fStack_84));",
       "type": "stack_param"
-    },
-    {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 163,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "in_stack_ffffff54 = (double)CONCAT44(fStack_80,fStack_84);",
-      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 163,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "in_stack_ffffff54 = (double)CONCAT44(fStack_80,fStack_84);",
+      "text": "in_stack_ffffff54 = __BITCAST_DOUBLE(CONCAT44(fStack_80,fStack_84));",
       "type": "decompiler_intrinsic"
     },
     {
@@ -1019,23 +1010,15 @@
       "line": 219,
       "match": "in_stack_ffffff54",
       "severity": "moderate",
-      "text": "in_stack_ffffff54 = (double)CONCAT44(\"Reset gore?\",g_CEditorToolsPtr);",
+      "text": "in_stack_ffffff54 = __BITCAST_DOUBLE(CONCAT44(\"Reset gore?\",g_CEditorToolsPtr));",
       "type": "stack_param"
-    },
-    {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 219,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "in_stack_ffffff54 = (double)CONCAT44(\"Reset gore?\",g_CEditorToolsPtr);",
-      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 219,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "in_stack_ffffff54 = (double)CONCAT44(\"Reset gore?\",g_CEditorToolsPtr);",
+      "text": "in_stack_ffffff54 = __BITCAST_DOUBLE(CONCAT44(\"Reset gore?\",g_CEditorToolsPtr));",
       "type": "decompiler_intrinsic"
     },
     {
@@ -1051,23 +1034,15 @@
       "line": 225,
       "match": "in_stack_ffffff54",
       "severity": "moderate",
-      "text": "in_stack_ffffff54 = (double)CONCAT44(g_CDemonSetPtr->selected_camera_index,g_CDemonSetPtr);",
+      "text": "in_stack_ffffff54 = __BITCAST_DOUBLE(CONCAT44(g_CDemonSetPtr->selected_camera_index,g_CDemonSetPtr));",
       "type": "stack_param"
-    },
-    {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 225,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "in_stack_ffffff54 = (double)CONCAT44(g_CDemonSetPtr->selected_camera_index,g_CDemonSetPtr);",
-      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 225,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "in_stack_ffffff54 = (double)CONCAT44(g_CDemonSetPtr->selected_camera_index,g_CDemonSetPtr);",
+      "text": "in_stack_ffffff54 = __BITCAST_DOUBLE(CONCAT44(g_CDemonSetPtr->selected_camera_index,g_CDemonSetPtr));",
       "type": "decompiler_intrinsic"
     },
     {

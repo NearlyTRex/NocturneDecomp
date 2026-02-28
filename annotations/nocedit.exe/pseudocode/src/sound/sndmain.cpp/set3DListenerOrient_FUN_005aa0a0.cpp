@@ -22,6 +22,6 @@ void __cdecl sound_sndmain_cpp_set3DListenerOrient_FUN_005aa0a0(double front_x,d
     return;
   }
   (*g_CSoundDevicePtr->vtable->set3DListenerOrient)
-            (g_CSoundDevicePtr,front_x,front_y,front_z,up_x,up_y,up_z);
+            (g_CSoundDevicePtr,front_x,front_y,front_z,up_x,up_y,up_z,right_x,right_y,right_z);
   return;
 }

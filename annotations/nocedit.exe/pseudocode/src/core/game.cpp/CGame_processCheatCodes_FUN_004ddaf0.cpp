@@ -334,7 +334,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
           dVar6 = (double)this_ptr->frame_counter / (dVar6 * 1.52587890625e-05);
           local_2b4._4_4_ = (uint)((ulonglong)dVar6 >> 0x20);
           uVar7 = local_2b4._4_4_;
-          local_2b4._0_4_ = SUB84(dVar6,0);
+          local_2b4._0_4_ = SUB84(__BITCAST_UINT64(dVar6),0);
           uVar8 = (uint)local_2b4;
           local_2b4 = dVar6;
           _sprintf(local_460,"FPS: %3.2lf",uVar8,uVar7);

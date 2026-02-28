@@ -34,12 +34,12 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_startSfx_FUN_005afe80(CDirectSoun
       g_CurrentLineNumber = 0x3f2;
       core_main_c_displayErrorAndQuit_FUN_00506f10("DirectSoundDevice::startSfx - no sample??");
     }
-    if ((1 < slot->sample->loop_marker_count) || (0 < slot->sample->loop_markers[0])) {
+    if ((1 < slot->sample->loop_marker_count) || (0 < slot->sample->loop_destinations[0])) {
       g_CurrentFilename = "..\\sound\\snddx.cpp";
       g_CurrentLineNumber = 0x3f4;
       core_main_c_displayErrorAndQuit_FUN_00506f10("DirectSoundDevice::startSfx - exotic jump sequences not allowed for hardware mixed sounds");
     }
-    if ((slot->sample->loop_marker_count == 1) && (-1 < slot->sample->loop_markers[0])) {
+    if ((slot->sample->loop_marker_count == 1) && (-1 < slot->sample->loop_destinations[0])) {
       dwFlags = 1;
     }
     if (slot->sample->streaming_buffer_size != (slot->sample->sample_info).sample_count) {

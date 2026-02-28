@@ -32,11 +32,11 @@ void __cdecl core_trigger_cpp_CTrigger_setup_FUN_005df990(CTrigger *this_ptr)
   }
   this_ptr->event_flag = 0;
   this_ptr->cached_actor = (CDemonActor *)0x0;
-  iVar4 = stricmp(this_ptr->on_event,"none");
+  iVar4 = _stricmp(this_ptr->on_event,"none");
   if (iVar4 == 0) {
     this_ptr->on_event[0] = '\0';
   }
-  iVar4 = stricmp(this_ptr->off_event,"none");
+  iVar4 = _stricmp(this_ptr->off_event,"none");
   if (iVar4 == 0) {
     this_ptr->off_event[0] = '\0';
   }

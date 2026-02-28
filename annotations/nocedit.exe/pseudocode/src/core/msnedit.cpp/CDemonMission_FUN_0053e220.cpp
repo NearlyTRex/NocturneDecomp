@@ -167,7 +167,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053e220(CDemonMission *this_ptr
         fStack_84 = (float)CStack_28.y * 0.00390625f;
         fStack_80 = (float)CStack_28.z * 0.00390625f;
         if ((float *)&stack0xffffff50 != &fStack_88) {
-          in_stack_ffffff54 = (double)CONCAT44(fStack_80,fStack_84);
+          in_stack_ffffff54 = __BITCAST_DOUBLE(CONCAT44(fStack_80,fStack_84));
         }
       }
       g_MouseButtonFlags.bytes[0] = g_MouseButtonFlags.bytes[0] & 0xfe;
@@ -223,13 +223,13 @@ void __cdecl core_msnedit_cpp_CDemonMission_FUN_0053e220(CDemonMission *this_ptr
     pCVar7 = g_CKeysPtr;
     iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_R);
     if (iVar4 != 0) {
-      in_stack_ffffff54 = (double)CONCAT44("Reset gore?",g_CEditorToolsPtr);
+      in_stack_ffffff54 = __BITCAST_DOUBLE(CONCAT44("Reset gore?",g_CEditorToolsPtr));
       fVar8 = 7.705851e-39;
       iVar4 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
                         (g_CEditorToolsPtr,"Reset gore?");
       if (iVar4 != 0) {
         core_gore_cpp_CGore_reset_FUN_004ed760(g_CGorePtr);
-        in_stack_ffffff54 = (double)CONCAT44(g_CDemonSetPtr->selected_camera_index,g_CDemonSetPtr);
+        in_stack_ffffff54 = __BITCAST_DOUBLE(CONCAT44(g_CDemonSetPtr->selected_camera_index,g_CDemonSetPtr));
         fVar8 = 7.705913e-39;
         core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50
                   (g_CDemonSetPtr,g_CDemonSetPtr->selected_camera_index);

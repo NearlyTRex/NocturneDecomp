@@ -104,9 +104,9 @@ uint __cdecl sound_sndmain_cpp_startSfx_FUN_005a8e90(char *filename)
   iVar3 = engine_dosio_c_getFileSize_FUN_00481880("sound",local_390);
   if (iVar3 < 0x200001) {
     engine_dosio_c_splitPath_FUN_00481f20(local_390,(char *)0x0,(char *)0x0,(char *)0x0,local_190);
-    iVar3 = stricmp(local_190,"mp3");
+    iVar3 = _stricmp(local_190,"mp3");
     if ((iVar3 == 0) ||
-       (iVar3 = stricmp(local_190,".mp3"), iVar3 == 0))
+       (iVar3 = _stricmp(local_190,".mp3"), iVar3 == 0))
     goto LAB_005a8fc7;
     pCVar11 = sound_sndmain_cpp_getSfxSample_FUN_005a4c80(local_390);
   }
@@ -133,9 +133,9 @@ LAB_005a900a:
     if (local_18 != (CSfxSample *)0x0) {
       engine_dosio_c_splitPath_FUN_00481f20(local_390,(char *)0x0,(char *)0x0,(char *)0x0,local_290)
       ;
-      iVar3 = stricmp(local_290,"mp3");
+      iVar3 = _stricmp(local_290,"mp3");
       if ((iVar3 == 0) ||
-         (iVar3 = stricmp(local_290,".mp3"), iVar3 == 0)) {
+         (iVar3 = _stricmp(local_290,".mp3"), iVar3 == 0)) {
         iVar3 = engine_dosio_c_getFileSize_FUN_00481880("sound",local_390);
         if (0 < iVar3) {
           this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0
@@ -241,7 +241,7 @@ LAB_005a9026:
     g_SfxSlots[uVar12].is_active = 0;
     fVar1 = g_SfxSlots[uVar12].options.current_volume;
     g_SfxSlots[uVar12].fade_time_remaining = -1.0;
-    g_SfxSlots[uVar12].stop_after_fade = 0;
+    g_SfxSlots[uVar12].stop_after_fade = 0.0;
     g_SfxSlots[uVar12].fade_target_volume = fVar1;
     pCVar4 = this_ptr_00;
     do {

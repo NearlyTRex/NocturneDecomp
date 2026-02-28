@@ -14,7 +14,7 @@
 ;   engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0 at 005516a7
 ;
 ; Called Functions:
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;   engine_dosio.c_splitPath_FUN_00481f20
 ;
 ; *****************************************************************************
@@ -60,8 +60,8 @@ section .text
     PUSH EAX                            ; 00551875
     LEA EAX,[ESP + 0x104]               ; 00551876
     PUSH EAX                            ; 0055187d
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 0055187e
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 0055187e
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 00551883
     TEST EAX,EAX                        ; 00551886
     JZ 0x005518a4                       ; 00551888

@@ -150,7 +150,7 @@ LAB_00462e72:
         local_3c[3] = local_3c[3] + 1;
       }
       dVar7 = shape_design_c_calculateVertexAngle_FUN_00462050
-                        (local_58[0],local_58[1],SUB84(dVar7,0));
+                        (local_58[0],local_58[1],SUB84(__BITCAST_UINT64(dVar7),0));
       if ((double)local_14 < dVar7) {
         local_3c[local_3c[3]] = 0;
         local_3c[3] = local_3c[3] + 1;
@@ -166,7 +166,7 @@ LAB_00462e72:
           local_3c[6] = local_3c[6] - 1;
         }
         dVar7 = shape_design_c_calculateVertexAngle_FUN_00462050
-                          (local_58[1],local_58[2],SUB84(dVar7,0));
+                          (local_58[1],local_58[2],SUB84(__BITCAST_UINT64(dVar7),0));
         if (170 < dVar7) {
           local_40 = local_58[0];
           local_5c = local_74[0];

@@ -96,8 +96,8 @@ section .text
     PUSH 0x62c965                       ; 004e0d1d | = "noc"
     LEA EAX,[ESP + 0x310]               ; 004e0d22
     PUSH EAX                            ; 004e0d29
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 004e0d2a
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 004e0d2a
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004e0d2f
     TEST EAX,EAX                        ; 004e0d32
     JNZ 0x004e1172                      ; 004e0d34
@@ -491,8 +491,8 @@ section .text
         ;   Label: LAB_004e1172
     LEA EAX,[ESP + 0x310]               ; 004e1177
     PUSH EAX                            ; 004e117e
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 004e117f
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 004e117f
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004e1184
     TEST EAX,EAX                        ; 004e1187
     JZ 0x004e0d3a                       ; 004e1189

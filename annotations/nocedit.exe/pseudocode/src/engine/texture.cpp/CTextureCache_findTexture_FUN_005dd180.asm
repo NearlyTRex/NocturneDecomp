@@ -12,7 +12,7 @@
 ;   engine_texture.cpp_ensureTextureLoaded_FUN_005dd800 at 005dd835
 ;
 ; Called Functions:
-;   crt_string.c_strcmp_FUN_005fef20
+;   crt_string.c__strcmp_FUN_005fef20
 ;
 ; *****************************************************************************
 
@@ -42,8 +42,8 @@ section .text
     PUSH EBP                            ; 005dd1ab
         ;   Label: LAB_005dd1ab
     PUSH ESI                            ; 005dd1ac
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 005dd1ad
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 005dd1ad
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 005dd1b2
     TEST EAX,EAX                        ; 005dd1b5
     JZ 0x005dd1ec                       ; 005dd1b7
@@ -68,8 +68,8 @@ section .text
     PUSH EBP                            ; 005dd1dc
     ADD EAX,ESI                         ; 005dd1dd
     PUSH EAX                            ; 005dd1df
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 005dd1e0
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
+    CALL crt_string.c__strcmp_FUN_005fef20 ; 005dd1e0
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 005dd1e5
     TEST EAX,EAX                        ; 005dd1e8
     JNZ 0x005dd199                      ; 005dd1ea

@@ -13,7 +13,7 @@
 ;   TerminatedCString s_sound_sndmain_cpp_006501e7
 ;   TerminatedCString s_SfxSlot_autoCalcDelayRem_006501fc
 ;   double DOUBLE_00663140 = 1116.40000000000
-;   double DOUBLE_00681b30 = 1
+;   double g_Cached3DDistanceFactor = 1
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   CVector3d g_Cached3DListenerPos
@@ -71,7 +71,7 @@ section .text
     FMUL ST0                            ; 005a70e4
     FADDP                               ; 005a70e6
     FSQRT                               ; 005a70e8
-    FMUL double ptr [0x00681b30]        ; 005a70ea | DOUBLE_00681b30
+    FMUL double ptr [0x00681b30]        ; 005a70ea | g_Cached3DDistanceFactor
     FDIV double ptr [0x00663140]        ; 005a70f0 | DOUBLE_00663140
     FSTP double ptr [EBX + 0x4c]        ; 005a70f6
     ADD ESP,0x18                        ; 005a70f9

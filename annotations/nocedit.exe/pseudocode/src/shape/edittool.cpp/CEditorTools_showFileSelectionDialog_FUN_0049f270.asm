@@ -33,7 +33,7 @@
 ;   TerminatedCString s_No_files_found_006230e2
 ;
 ; Called Functions:
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;   engine_dosio.c_makePath_FUN_00481f50
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
 ;   shape_edittool.cpp_CPickList_ctor_FUN_004a3b90
@@ -120,8 +120,8 @@ section .text
     PUSH ESI                            ; 0049f32c
     LEA EAX,[ESP + 0x7ac]               ; 0049f32d
     PUSH EAX                            ; 0049f334
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 0049f335
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 0049f335
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0049f33a
     TEST EAX,EAX                        ; 0049f33d
     JNZ 0x0049f3ff                      ; 0049f33f

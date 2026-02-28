@@ -44,7 +44,7 @@
 ;   crt_errno.c__errno_FUN_00601450
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_setvbuf_FUN_00601490
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;   engine_dosio.c_ensureTrailingSlash_FUN_00481f80
 ;   engine_dosio.c_getFileTimestamp_FUN_00481960
 ;   engine_dosio.c_makePath_FUN_00481f50
@@ -285,8 +285,8 @@ section .text
     PUSH 0x2d12bd0                      ; 004b3b7a | g_VersionControlSession
     ADD EAX,0x104                       ; 004b3b7f
     PUSH EAX                            ; 004b3b84
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 004b3b85
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 004b3b85
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004b3b8a
     MOV EBX,EAX                         ; 004b3b8d
     MOV EAX,dword ptr [ESP + 0x564]     ; 004b3b8f
@@ -444,8 +444,8 @@ section .text
     PUSH 0x2d12bd0                      ; 004b3d30 | g_VersionControlSession
     ADD EAX,0x104                       ; 004b3d35
     PUSH EAX                            ; 004b3d3a
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 004b3d3b
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 004b3d3b
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004b3d40
     MOV EBX,EAX                         ; 004b3d43
     MOV EAX,dword ptr [ESP + 0x564]     ; 004b3d45

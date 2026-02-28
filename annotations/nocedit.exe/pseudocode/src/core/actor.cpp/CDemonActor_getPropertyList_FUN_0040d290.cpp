@@ -24,7 +24,7 @@ void __cdecl core_actor_cpp_CDemonActor_getPropertyList_FUN_0040d290(CDemonActor
   core_actor_cpp_CActorPropertyList_addEvent_FUN_0040e460
             (property_list,"Creation event",this_ptr->create_event);
   if (this_ptr->create_event[0] != '\0') {
-    iVar1 = stricmp(this_ptr->create_event,"none");
+    iVar1 = _stricmp(this_ptr->create_event,"none");
     if (iVar1 != 0) {
       core_actor_cpp_CActorPropertyList_addFloatRange_FUN_0040e1a0
                 (property_list,"Probability",&this_ptr->create_prob,0.0,1.0,

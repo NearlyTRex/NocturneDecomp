@@ -80,24 +80,6 @@
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
-        "category": "incompatible_types",
-        "column": 68,
-        "line": 268,
-        "message": "invalid operands to binary expression ('double' and 'int')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 52,
-        "line": 269,
-        "message": "invalid operands to binary expression ('double' and 'int')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 20,
-        "line": 270,
-        "message": "invalid operands to binary expression ('double' and 'int')"
-      },
-      {
         "category": "format_error",
         "column": 68,
         "line": 268,
@@ -114,6 +96,24 @@
         "column": 52,
         "line": 269,
         "message": "format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 85,
+        "line": 269,
+        "message": "format specifies type 'double' but the argument has type 'int' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 20,
+        "line": 270,
+        "message": "format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]"
+      },
+      {
+        "category": "other",
+        "column": 37,
+        "line": 273,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
     "success": false,
@@ -1398,7 +1398,7 @@
       "line": 261,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "(double)(pCVar4->base).base.location.position.x,SUB84(dVar2,0),",
+      "text": "(double)(pCVar4->base).base.location.position.x,SUB84(__BITCAST_UINT64(dVar2),0),",
       "type": "sub84_truncation"
     },
     {
@@ -1406,7 +1406,7 @@
       "line": 261,
       "match": "SUB84",
       "severity": "mild",
-      "text": "(double)(pCVar4->base).base.location.position.x,SUB84(dVar2,0),",
+      "text": "(double)(pCVar4->base).base.location.position.x,SUB84(__BITCAST_UINT64(dVar2),0),",
       "type": "decompiler_intrinsic"
     },
     {
@@ -1414,7 +1414,7 @@
       "line": 262,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "(int)((ulonglong)dVar2 >> 0x20),SUB84(dVar1,0),(int)((ulonglong)dVar1 >> 0x20),",
+      "text": "(int)((ulonglong)dVar2 >> 0x20),SUB84(__BITCAST_UINT64(dVar1),0),(int)((ulonglong)dVar1 >> 0x20),",
       "type": "sub84_truncation"
     },
     {
@@ -1422,7 +1422,7 @@
       "line": 262,
       "match": "SUB84",
       "severity": "mild",
-      "text": "(int)((ulonglong)dVar2 >> 0x20),SUB84(dVar1,0),(int)((ulonglong)dVar1 >> 0x20),",
+      "text": "(int)((ulonglong)dVar2 >> 0x20),SUB84(__BITCAST_UINT64(dVar1),0),(int)((ulonglong)dVar1 >> 0x20),",
       "type": "decompiler_intrinsic"
     },
     {
@@ -1430,7 +1430,7 @@
       "line": 263,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "SUB84(180 *",
+      "text": "SUB84(__BITCAST_UINT64(180 *",
       "type": "sub84_truncation"
     },
     {
@@ -1438,7 +1438,7 @@
       "line": 263,
       "match": "SUB84",
       "severity": "mild",
-      "text": "SUB84(180 *",
+      "text": "SUB84(__BITCAST_UINT64(180 *",
       "type": "decompiler_intrinsic"
     },
     {
@@ -1446,7 +1446,7 @@
       "line": 271,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "SUB84((double)this_ptr->debug_fudge_target->x,0));",
+      "text": "SUB84(__BITCAST_UINT64((double)this_ptr->debug_fudge_target->x),0));",
       "type": "sub84_truncation"
     },
     {
@@ -1454,7 +1454,7 @@
       "line": 271,
       "match": "SUB84",
       "severity": "mild",
-      "text": "SUB84((double)this_ptr->debug_fudge_target->x,0));",
+      "text": "SUB84(__BITCAST_UINT64((double)this_ptr->debug_fudge_target->x),0));",
       "type": "decompiler_intrinsic"
     },
     {

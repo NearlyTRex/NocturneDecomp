@@ -2,11 +2,11 @@
 // Address: 005b12e0
 // Address Range: [[005b12e0, 005b146f]]
 // Convention: __cdecl
-// Signature: int __cdecl sound_sndwav_cpp_CWavInDevice_poll_FUN_005b12e0(CWavInDevice *this_ptr)
+// Signature: int __cdecl sound_sndwav_cpp_CWavInDevice_poll_FUN_005b12e0(CWavInDevice *this_ptr,short *output_buffer,int num_samples)
 
 #include "nocturne.h"
 
-int __cdecl sound_sndwav_cpp_CWavInDevice_poll_FUN_005b12e0(CWavInDevice *this_ptr)
+int __cdecl sound_sndwav_cpp_CWavInDevice_poll_FUN_005b12e0(CWavInDevice *this_ptr,short *output_buffer,int num_samples)
 
 {
   int iVar1;
@@ -14,8 +14,6 @@ int __cdecl sound_sndwav_cpp_CWavInDevice_poll_FUN_005b12e0(CWavInDevice *this_p
   int iVar3;
   int iVar4;
   bool bVar5;
-  short *in_stack_00000008;
-  int in_stack_0000000c;
   
   iVar3 = g_WaveInChannels *
           ((int)((g_WaveInBitsPerSample + (g_WaveInBitsPerSample >> 0x1f) * -8) -
@@ -28,8 +26,8 @@ int __cdecl sound_sndwav_cpp_CWavInDevice_poll_FUN_005b12e0(CWavInDevice *this_p
     }
     iVar1 = ((g_WaveInBufferSizeSamples - g_WaveInCurrentSampleOffset) *
             g_WaveInRequestedBitsPerSample) / g_WaveInSampleRate;
-    if (in_stack_0000000c < iVar1) {
-      iVar1 = in_stack_0000000c;
+    if (num_samples < iVar1) {
+      iVar1 = num_samples;
     }
     if (0 < iVar1) {
       sound_sndmain_cpp_resampleAndConvertAudio_FUN_005aa7f0
@@ -37,15 +35,15 @@ int __cdecl sound_sndwav_cpp_CWavInDevice_poll_FUN_005b12e0(CWavInDevice *this_p
                  (short *)(g_WaveInCurrentSampleOffset * iVar3 +
                           (int)g_WaveInBuffers[g_WaveInCurrentBufferIndex]),
                  g_WaveInRequestedChannels,g_WaveInRequestedSampleRate,
-                 g_WaveInRequestedBitsPerSample,g_WaveInStereoRequested,in_stack_00000008,iVar1);
-      in_stack_00000008 = (short *)((int)in_stack_00000008 + iVar3 * iVar1);
-      in_stack_0000000c = in_stack_0000000c - iVar1;
+                 g_WaveInRequestedBitsPerSample,g_WaveInStereoRequested,output_buffer,iVar1);
+      output_buffer = (short *)((int)output_buffer + iVar3 * iVar1);
+      num_samples = num_samples - iVar1;
       g_WaveInCurrentSampleOffset =
            g_WaveInCurrentSampleOffset +
            (g_WaveInSampleRate * iVar1) / g_WaveInRequestedBitsPerSample;
       iVar4 = iVar4 + iVar1;
     }
-    if (in_stack_0000000c < 1) {
+    if (num_samples < 1) {
       return iVar4;
     }
     iVar1 = g_WaveInCurrentBufferIndex + 1;

@@ -241,7 +241,7 @@ LAB_0040a3e0:
                         (this_ptr,hit_type,(SDamageInfo *)&local_164.impact_point,&pCVar5->base);
               engine_console_cpp_CConsole_printf_FUN_00441890
                         (g_CConsolePtr,"%s causing %5.2f damage to %s\n",this_ptr,
-                         SUB84((double)local_164.impact_direction.y,0),
+                         SUB84(__BITCAST_UINT64((double)local_164.impact_direction.y),0),
                          (int)((ulonglong)(double)local_164.impact_direction.y >> 0x20),pCVar5);
               core_trigger_cpp_CTrigger_applyDamage_FUN_005e0b00
                         (pCVar5,local_164.impact_direction.y);

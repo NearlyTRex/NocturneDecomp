@@ -81,7 +81,7 @@ LAB_004ba895:
   }
   iVar2 = engine_fileio_cpp_CCheckOutList_findEntry_FUN_004b2e60(&local_28,local_340);
   if (-1 < iVar2) {
-    iVar3 = stricmp
+    iVar3 = _stricmp
                       (local_28.items[iVar2].value,g_VersionControlSession.primary_username);
     pCVar11 = local_28.items + iVar2;
     if (iVar3 == 0) {
@@ -240,7 +240,7 @@ LAB_004baa2c:
                       ((_FILE *)local_20,"..\\engine\\fileio.cpp",0xc4);
             local_20 = (CStrList_vtable *)0x0;
           }
-          iVar3 = stricmp
+          iVar3 = _stricmp
                             (local_28.items[iVar2].value,g_VersionControlSession.primary_username);
           pCVar11 = local_28.items + iVar2;
           if (iVar3 == 0) {

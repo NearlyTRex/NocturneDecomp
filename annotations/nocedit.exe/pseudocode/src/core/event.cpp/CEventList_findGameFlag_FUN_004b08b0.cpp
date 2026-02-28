@@ -17,7 +17,7 @@ int __cdecl core_event_cpp_CEventList_findGameFlag_FUN_004b08b0(CEventList *this
   if (0 < (this_ptr->game_flags).count) {
     str1 = (this_ptr->game_flags).names;
     do {
-      iVar1 = stricmp(*str1,name);
+      iVar1 = _stricmp(*str1,name);
       if (iVar1 == 0) {
         return iVar2;
       }

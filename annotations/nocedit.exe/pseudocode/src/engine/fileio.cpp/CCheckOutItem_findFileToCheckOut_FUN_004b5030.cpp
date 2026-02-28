@@ -88,7 +88,7 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030(CChe
     iVar2 = engine_fileio_cpp_CCheckOutList_findEntry_FUN_004b2e60(&local_1c,output_filename_buffer)
     ;
     if (iVar2 < 0) break;
-    iVar3 = stricmp
+    iVar3 = _stricmp
                       (local_1c.items[iVar2].value,g_VersionControlSession.primary_username);
     pCVar4 = local_1c.items + iVar2;
     if (iVar3 == 0) {

@@ -10,7 +10,7 @@
 ;   undefined4 DAT_03f6bc40
 ;
 ; Called Functions:
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;
 ; *****************************************************************************
 
@@ -30,8 +30,8 @@ section .text
     PUSH EDI                            ; 005d7768
         ;   Label: LAB_005d7768
     PUSH ESI                            ; 005d7769 | g_TriListTextureNames | DAT_03f6bc40
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 005d776a
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 005d776a
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 005d776f
     TEST EAX,EAX                        ; 005d7772
     JZ 0x005d778d                       ; 005d7774

@@ -16,7 +16,7 @@ int __cdecl sound_sndmain_cpp_setSfxVelocity_FUN_005a9970(uint sfx_handle,double
   if (this_ptr == (CSfxSlot *)0x0) {
     return 0;
   }
-  (this_ptr->options).velocity_source_ptr = (CVector3d *)0x0;
+  (this_ptr->options).velocity_source_ptr = (void *)0x0;
   (this_ptr->options).velocity_format = 0;
   (this_ptr->options).velocity.x = vel_x;
   (this_ptr->options).velocity.y = vel_y;

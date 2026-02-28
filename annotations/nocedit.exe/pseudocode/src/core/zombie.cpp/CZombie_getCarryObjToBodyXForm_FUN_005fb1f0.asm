@@ -67,7 +67,7 @@
 ;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10
 ;   core_xform.cpp_transformVector3x4_FUN_005f4dc0
-;   crt_string.c_strnicmp_FUN_005ff070
+;   crt_string.c__strnicmp_FUN_005ff070
 ;
 ; *****************************************************************************
 
@@ -103,8 +103,8 @@ section .text
     PUSH 0x65881d                       ; 005fb244 | = "new"
     ADD EAX,0x23b8                      ; 005fb249
     PUSH EAX                            ; 005fb24e
-    CALL crt_string.c_strnicmp_FUN_005ff070 ; 005fb24f
-        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)
+    CALL crt_string.c__strnicmp_FUN_005ff070 ; 005fb24f
+        ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 005fb254
     TEST EAX,EAX                        ; 005fb257
     JNZ 0x005fb445                      ; 005fb259

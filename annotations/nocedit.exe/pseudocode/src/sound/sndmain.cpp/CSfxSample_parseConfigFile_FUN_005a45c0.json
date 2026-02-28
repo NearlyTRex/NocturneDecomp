@@ -1,26 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 23,
-        "line": 130,
-        "message": "invalid operands to binary expression ('double' and 'int')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 25,
-        "line": 155,
-        "message": "invalid operands to binary expression ('double' and 'int')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 29,
-        "line": 183,
-        "message": "invalid operands to binary expression ('double' and 'int')"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
@@ -99,14 +80,14 @@
       "name": "crt_stdio.c_sscanf_FUN_0060013c"
     },
     {
+      "addr": "005fe7f0",
+      "is_variadic": false,
+      "name": "crt_string.c__stricmp_FUN_005fe7f0"
+    },
+    {
       "addr": "005fe5e0",
       "is_variadic": false,
       "name": "crt_string.c_memmove_FUN_005fe5e0"
-    },
-    {
-      "addr": "005fe7f0",
-      "is_variadic": false,
-      "name": "crt_string.c_stricmp_FUN_005fe7f0"
     },
     {
       "addr": "005fedd0",
@@ -376,7 +357,7 @@
     },
     {
       "addr": "00681b38",
-      "name": "DOUBLE_00681b38",
+      "name": "g_Cached3DDistanceFactorInverse",
       "type": "double",
       "value": "1"
     },
@@ -624,7 +605,7 @@
       "line": 123,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "local_478 = SUB84(dVar2,0);",
+      "text": "local_478 = SUB84(__BITCAST_UINT64(dVar2),0);",
       "type": "sub84_truncation"
     },
     {
@@ -632,7 +613,7 @@
       "line": 123,
       "match": "SUB84",
       "severity": "mild",
-      "text": "local_478 = SUB84(dVar2,0);",
+      "text": "local_478 = SUB84(__BITCAST_UINT64(dVar2),0);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -640,7 +621,7 @@
       "line": 148,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "local_470 = SUB84(dVar2,0);",
+      "text": "local_470 = SUB84(__BITCAST_UINT64(dVar2),0);",
       "type": "sub84_truncation"
     },
     {
@@ -648,7 +629,7 @@
       "line": 148,
       "match": "SUB84",
       "severity": "mild",
-      "text": "local_470 = SUB84(dVar2,0);",
+      "text": "local_470 = SUB84(__BITCAST_UINT64(dVar2),0);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -656,7 +637,7 @@
       "line": 176,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "local_480 = SUB84((double)local_468,0);",
+      "text": "local_480 = SUB84(__BITCAST_UINT64((double)local_468),0);",
       "type": "sub84_truncation"
     },
     {
@@ -664,7 +645,7 @@
       "line": 176,
       "match": "SUB84",
       "severity": "mild",
-      "text": "local_480 = SUB84((double)local_468,0);",
+      "text": "local_480 = SUB84(__BITCAST_UINT64((double)local_468),0);",
       "type": "decompiler_intrinsic"
     }
   ]

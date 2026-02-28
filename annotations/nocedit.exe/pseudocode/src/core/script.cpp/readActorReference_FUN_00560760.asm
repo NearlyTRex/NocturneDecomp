@@ -23,7 +23,7 @@
 ; Called Functions:
 ;   core_mission.cpp_CDemonMission_findActorByName_FUN_00524030
 ;   crt_stdio.c_fscanf_FUN_005fe7c0
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;
 ; *****************************************************************************
 
@@ -48,8 +48,8 @@ section .text
     PUSH 0x680d58                       ; 00560790 | = "(none)"
     LEA EAX,[ESP + 0x4]                 ; 00560795
     PUSH EAX                            ; 00560799
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 0056079a
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 0056079a
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0056079f
     TEST EAX,EAX                        ; 005607a2
     JNZ 0x005607bc                      ; 005607a4

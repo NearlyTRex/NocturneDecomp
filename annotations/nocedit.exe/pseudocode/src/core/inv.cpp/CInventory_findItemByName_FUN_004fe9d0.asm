@@ -14,7 +14,7 @@
 ;   core_vampboss.cpp_CVampireBoss_processDamage_FUN_005e7030 at 005e71de
 ;
 ; Called Functions:
-;   crt_string.c_stricmp_FUN_005fe7f0
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;
 ; *****************************************************************************
 
@@ -37,8 +37,8 @@ section .text
         ;   Label: LAB_004fe9e7
     MOV EAX,dword ptr [EBX + 0xc]       ; 004fe9e8
     PUSH EAX                            ; 004fe9eb
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 004fe9ec
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 004fe9ec
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004fe9f1
     TEST EAX,EAX                        ; 004fe9f4
     JZ 0x004fea0a                       ; 004fe9f6

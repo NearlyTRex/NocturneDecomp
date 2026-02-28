@@ -16,7 +16,7 @@ int __cdecl core_event_cpp_CEventList_evaluateCondition_FUN_004adca0(CEventList 
     iVar1 = 0;
   }
   else {
-    iVar2 = stricmp(condition_expression,"none");
+    iVar2 = _stricmp(condition_expression,"none");
     iVar1 = 0;
     if (iVar2 != 0) {
       g_EventDryRun = 0;

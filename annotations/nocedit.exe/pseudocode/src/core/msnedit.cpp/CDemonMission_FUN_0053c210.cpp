@@ -36,7 +36,7 @@ char * __cdecl core_msnedit_cpp_CDemonMission_FUN_0053c210(CDemonMission *this_p
   if ((param_3 != (char *)0x0) && (index = 0, 0 < local_3b4.base.item_count)) {
     do {
       pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_3b4.base,index);
-      iVar3 = stricmp(param_3,pcVar2);
+      iVar3 = _stricmp(param_3,pcVar2);
       iVar5 = index;
       if (iVar3 == 0) break;
       index = index + 1;

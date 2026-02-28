@@ -335,6 +335,9 @@ extern int g_TriangleMatchTableA[3];
 extern int g_TriangleMatchTableB[3];
 extern int g_Layer3ShortBandGroupCounts[3];
 
+// int[4][4]
+extern int g_MpegLayer2AllocationTables[4][4];
+
 // int[5]
 extern int g_Layer3LongBandGroupCounts[5];
 
@@ -423,7 +426,4 @@ extern ushort g_LightmapData[384];
 extern void* g_PerspectiveScanlineColorPtr;
 extern void* switchdataD_00679d10;
 extern void* switchdataD_00679d54;
-
-// void*[4][4]
-extern void* g_MpegLayer2AllocationTables[4][4];
 

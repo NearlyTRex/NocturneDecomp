@@ -6,16 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 268,
-    "complexity_score": 350,
+    "complexity_score": 305,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 90,
-    "suspect_count": 23,
+    "suspect_count": 19,
     "suspect_types": [
       "decompiler_intrinsic",
-      "double_reconstruction",
       "extra_output",
       "param_count_too_few",
       "pointer_cast",
@@ -437,31 +436,15 @@
       "line": 72,
       "match": "extraout_EDX",
       "severity": "moderate",
-      "text": "if ((double)CONCAT44(uStack_38,local_3c) < (double)CONCAT44(extraout_EDX,local_44)) {",
+      "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_38,local_3c)) < __BITCAST_DOUBLE(CONCAT44(extraout_EDX,local_44))) {",
       "type": "extra_output"
-    },
-    {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 72,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "if ((double)CONCAT44(uStack_38,local_3c) < (double)CONCAT44(extraout_EDX,local_44)) {",
-      "type": "double_reconstruction"
-    },
-    {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 72,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "if ((double)CONCAT44(uStack_38,local_3c) < (double)CONCAT44(extraout_EDX,local_44)) {",
-      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 72,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "if ((double)CONCAT44(uStack_38,local_3c) < (double)CONCAT44(extraout_EDX,local_44)) {",
+      "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_38,local_3c)) < __BITCAST_DOUBLE(CONCAT44(extraout_EDX,local_44))) {",
       "type": "decompiler_intrinsic"
     },
     {
@@ -469,7 +452,7 @@
       "line": 72,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "if ((double)CONCAT44(uStack_38,local_3c) < (double)CONCAT44(extraout_EDX,local_44)) {",
+      "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_38,local_3c)) < __BITCAST_DOUBLE(CONCAT44(extraout_EDX,local_44))) {",
       "type": "decompiler_intrinsic"
     },
     {
@@ -501,31 +484,15 @@
       "line": 82,
       "match": "extraout_EDX_00",
       "severity": "moderate",
-      "text": "if ((double)CONCAT44(uStack_38,local_3c) < (double)CONCAT44(extraout_EDX_00,local_34)) {",
+      "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_38,local_3c)) < __BITCAST_DOUBLE(CONCAT44(extraout_EDX_00,local_34))) {",
       "type": "extra_output"
-    },
-    {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 82,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "if ((double)CONCAT44(uStack_38,local_3c) < (double)CONCAT44(extraout_EDX_00,local_34)) {",
-      "type": "double_reconstruction"
-    },
-    {
-      "description": "Double reconstructed from 32-bit halves (stack alignment artifact)",
-      "line": 82,
-      "match": "(double)CONCAT44(",
-      "severity": "moderate",
-      "text": "if ((double)CONCAT44(uStack_38,local_3c) < (double)CONCAT44(extraout_EDX_00,local_34)) {",
-      "type": "double_reconstruction"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 82,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "if ((double)CONCAT44(uStack_38,local_3c) < (double)CONCAT44(extraout_EDX_00,local_34)) {",
+      "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_38,local_3c)) < __BITCAST_DOUBLE(CONCAT44(extraout_EDX_00,local_34))) {",
       "type": "decompiler_intrinsic"
     },
     {
@@ -533,7 +500,7 @@
       "line": 82,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "if ((double)CONCAT44(uStack_38,local_3c) < (double)CONCAT44(extraout_EDX_00,local_34)) {",
+      "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_38,local_3c)) < __BITCAST_DOUBLE(CONCAT44(extraout_EDX_00,local_34))) {",
       "type": "decompiler_intrinsic"
     },
     {
