@@ -13,13 +13,13 @@
   },
   "complexity": {
     "assembly_lines": 2005,
-    "complexity_score": 4157,
+    "complexity_score": 4123,
     "cross_reference_count": 1,
     "function_call_count": 41,
     "global_count": 52,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 1012,
-    "suspect_count": 311,
+    "pseudocode_lines": 1008,
+    "suspect_count": 308,
     "suspect_types": [
       "byvalue_struct_passing",
       "decompiler_intrinsic",
@@ -29,7 +29,7 @@
       "suspect_float",
       "unknown_field"
     ],
-    "total_lines": 3017
+    "total_lines": 3013
   },
   "cross_references": [
     {
@@ -1706,30 +1706,38 @@
     {
       "description": "Unresolved stack parameter",
       "line": 31,
-      "match": "in_stack_fffffd38",
+      "match": "in_stack_fffffd34",
       "severity": "moderate",
-      "text": "SRenderVertex in_stack_fffffd38;",
+      "text": "SRenderVertex in_stack_fffffd34;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 32,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "byte in_stack_fffffd68 [20];",
+      "text": "byte in_stack_fffffd64 [20];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 33,
-      "match": "in_stack_fffffd7c",
+      "match": "in_stack_fffffd78",
       "severity": "moderate",
-      "text": "uint in_stack_fffffd7c;",
+      "text": "uint in_stack_fffffd78;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 34,
+      "match": "in_stack_fffffd7c",
+      "severity": "moderate",
+      "text": "CVector3f *in_stack_fffffd7c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 35,
       "match": "in_stack_fffffd80",
       "severity": "moderate",
       "text": "CVector3f *in_stack_fffffd80;",
@@ -1737,18 +1745,10 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 35,
-      "match": "in_stack_fffffd84",
-      "severity": "moderate",
-      "text": "CVector3f *in_stack_fffffd84;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
       "line": 40,
       "match": "in_stack_fffffdbc",
       "severity": "moderate",
-      "text": "float in_stack_fffffdbc;",
+      "text": "CKeys *in_stack_fffffdbc;",
       "type": "stack_param"
     },
     {
@@ -1756,7 +1756,7 @@
       "line": 41,
       "match": "in_stack_fffffdc0",
       "severity": "moderate",
-      "text": "CKeys *in_stack_fffffdc0;",
+      "text": "float in_stack_fffffdc0;",
       "type": "stack_param"
     },
     {
@@ -1764,7 +1764,7 @@
       "line": 42,
       "match": "in_stack_fffffdc4",
       "severity": "moderate",
-      "text": "float in_stack_fffffdc4;",
+      "text": "CKeys *in_stack_fffffdc4;",
       "type": "stack_param"
     },
     {
@@ -1772,7 +1772,7 @@
       "line": 43,
       "match": "in_stack_fffffdcc",
       "severity": "moderate",
-      "text": "float in_stack_fffffdcc;",
+      "text": "CKeys *in_stack_fffffdcc;",
       "type": "stack_param"
     },
     {
@@ -1804,7 +1804,7 @@
       "line": 153,
       "match": "in_stack_fffffdcc",
       "severity": "moderate",
-      "text": "in_stack_fffffdcc = in_stack_fffffdcc + pCVar3->y;",
+      "text": "in_stack_fffffdcc = (CKeys *)((float)in_stack_fffffdcc + pCVar3->y);",
       "type": "stack_param"
     },
     {
@@ -1812,7 +1812,7 @@
       "line": 153,
       "match": "in_stack_fffffdcc",
       "severity": "moderate",
-      "text": "in_stack_fffffdcc = in_stack_fffffdcc + pCVar3->y;",
+      "text": "in_stack_fffffdcc = (CKeys *)((float)in_stack_fffffdcc + pCVar3->y);",
       "type": "stack_param"
     },
     {
@@ -1844,7 +1844,7 @@
       "line": 165,
       "match": "&stack0xfffffdbc",
       "severity": "moderate",
-      "text": "if ((float *)&stack0xfffffdbc != &local_1c4) {",
+      "text": "if ((CKeys **)&stack0xfffffdbc != &local_1c4) {",
       "type": "stack_ref"
     },
     {
@@ -1914,65 +1914,73 @@
     {
       "description": "Unresolved stack parameter",
       "line": 204,
-      "match": "in_stack_fffffd80",
+      "match": "in_stack_fffffd7c",
       "severity": "moderate",
-      "text": "in_stack_fffffd80 = &local_158;",
+      "text": "in_stack_fffffd7c = &local_158;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 208,
-      "match": "in_stack_fffffd7c",
+      "match": "in_stack_fffffd78",
       "severity": "moderate",
-      "text": "in_stack_fffffd7c = 0x583519;",
+      "text": "in_stack_fffffd78 = 0x583519;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 209,
-      "match": "in_stack_fffffd80",
+      "match": "in_stack_fffffd7c",
       "severity": "moderate",
-      "text": "core_setedit_cpp_renderColoredBox_FUN_005817d0(in_stack_fffffd80,corner_b,0.5,0,0xff,0);",
+      "text": "core_setedit_cpp_renderColoredBox_FUN_005817d0(in_stack_fffffd7c,corner_b,0.5,0,0xff,0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 217,
-      "match": "in_stack_fffffd84",
+      "match": "in_stack_fffffd80",
       "severity": "moderate",
-      "text": "in_stack_fffffd84 = (CVector3f *)0x583576;",
+      "text": "in_stack_fffffd80 = (CVector3f *)0x583576;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 226,
-      "match": "in_stack_fffffd84",
+      "match": "in_stack_fffffd80",
       "severity": "moderate",
-      "text": "in_stack_fffffd84 = pCVar3 + 1;",
+      "text": "in_stack_fffffd80 = pCVar3 + 1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 228,
-      "match": "in_stack_fffffd80",
+      "match": "in_stack_fffffd7c",
       "severity": "moderate",
-      "text": "in_stack_fffffd80 = &local_f8;",
+      "text": "in_stack_fffffd7c = &local_f8;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 229,
-      "match": "in_stack_fffffd84",
+      "match": "in_stack_fffffd80",
       "severity": "moderate",
-      "text": "local_f8.x = -in_stack_fffffd84->x;",
+      "text": "local_f8.x = -in_stack_fffffd80->x;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 232,
+      "match": "in_stack_fffffd78",
+      "severity": "moderate",
+      "text": "in_stack_fffffd78 = 0x5835b5;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 234,
       "match": "in_stack_fffffd7c",
       "severity": "moderate",
-      "text": "in_stack_fffffd7c = 0x5835b5;",
+      "text": "(in_stack_fffffd7c,in_stack_fffffd80,0.3,0,0x80,0);",
       "type": "stack_param"
     },
     {
@@ -1980,63 +1988,63 @@
       "line": 234,
       "match": "in_stack_fffffd80",
       "severity": "moderate",
-      "text": "(in_stack_fffffd80,in_stack_fffffd84,0.3,0,0x80,0);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 234,
-      "match": "in_stack_fffffd84",
-      "severity": "moderate",
-      "text": "(in_stack_fffffd80,in_stack_fffffd84,0.3,0,0x80,0);",
+      "text": "(in_stack_fffffd7c,in_stack_fffffd80,0.3,0,0x80,0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 235,
-      "match": "in_stack_fffffd84",
+      "match": "in_stack_fffffd80",
       "severity": "moderate",
-      "text": "local_8c.x = -in_stack_fffffd84->x;",
+      "text": "local_8c.x = -in_stack_fffffd80->x;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 240,
-      "match": "in_stack_fffffd84",
+      "match": "in_stack_fffffd80",
       "severity": "moderate",
-      "text": "(g_CEditorToolsPtr,&local_8c,in_stack_fffffd84,2);",
+      "text": "(g_CEditorToolsPtr,&local_8c,in_stack_fffffd80,2);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 241,
-      "match": "in_stack_fffffd84",
+      "match": "in_stack_fffffd80",
       "severity": "moderate",
-      "text": "in_stack_fffffd84 = pCVar3;",
+      "text": "in_stack_fffffd80 = pCVar3;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 244,
-      "match": "in_stack_fffffd80",
+      "match": "in_stack_fffffd7c",
       "severity": "moderate",
-      "text": "in_stack_fffffd80 = &local_140;",
+      "text": "in_stack_fffffd7c = &local_140;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 245,
-      "match": "in_stack_fffffd84",
+      "match": "in_stack_fffffd80",
       "severity": "moderate",
-      "text": "local_140.x = -in_stack_fffffd84->x;",
+      "text": "local_140.x = -in_stack_fffffd80->x;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 248,
+      "match": "in_stack_fffffd78",
+      "severity": "moderate",
+      "text": "in_stack_fffffd78 = 0x583621;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 250,
       "match": "in_stack_fffffd7c",
       "severity": "moderate",
-      "text": "in_stack_fffffd7c = 0x583621;",
+      "text": "(in_stack_fffffd7c,in_stack_fffffd80,0.2,0,0,0xff);",
       "type": "stack_param"
     },
     {
@@ -2044,15 +2052,7 @@
       "line": 250,
       "match": "in_stack_fffffd80",
       "severity": "moderate",
-      "text": "(in_stack_fffffd80,in_stack_fffffd84,0.2,0,0,0xff);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 250,
-      "match": "in_stack_fffffd84",
-      "severity": "moderate",
-      "text": "(in_stack_fffffd80,in_stack_fffffd84,0.2,0,0,0xff);",
+      "text": "(in_stack_fffffd7c,in_stack_fffffd80,0.2,0,0,0xff);",
       "type": "stack_param"
     },
     {
@@ -2258,9 +2258,9 @@
     {
       "description": "Direct stack address reference",
       "line": 366,
-      "match": "&stack0xfffffd68",
+      "match": "&stack0xfffffd64",
       "severity": "moderate",
-      "text": "piVar11 = (int *)&stack0xfffffd68;",
+      "text": "piVar11 = (int *)&stack0xfffffd64;",
       "type": "stack_ref"
     },
     {
@@ -2274,9 +2274,9 @@
     {
       "description": "Direct stack address reference",
       "line": 372,
-      "match": "&stack0xfffffd38",
+      "match": "&stack0xfffffd34",
       "severity": "moderate",
-      "text": "piVar11 = (int *)&stack0xfffffd38;",
+      "text": "piVar11 = (int *)&stack0xfffffd34;",
       "type": "stack_ref"
     },
     {
@@ -2290,17 +2290,17 @@
     {
       "description": "Unresolved stack parameter",
       "line": 378,
-      "match": "in_stack_fffffd7c",
+      "match": "in_stack_fffffd78",
       "severity": "moderate",
-      "text": "vertex2.projected_vertex.screen_y = in_stack_fffffd7c;",
+      "text": "vertex2.projected_vertex.screen_y = in_stack_fffffd78;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 379,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;",
+      "text": "vertex2.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;",
       "type": "stack_param"
     },
     {
@@ -2308,15 +2308,15 @@
       "line": 379,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "vertex2.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;",
+      "text": "vertex2.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 380,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;",
+      "text": "vertex2.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;",
       "type": "stack_param"
     },
     {
@@ -2324,15 +2324,15 @@
       "line": 380,
       "match": "._4_4_",
       "severity": "mild",
-      "text": "vertex2.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;",
+      "text": "vertex2.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 381,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;",
+      "text": "vertex2.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;",
       "type": "stack_param"
     },
     {
@@ -2340,15 +2340,15 @@
       "line": 381,
       "match": "._8_4_",
       "severity": "mild",
-      "text": "vertex2.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;",
+      "text": "vertex2.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 382,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2.projected_vertex.inv_z = in_stack_fffffd68._12_4_;",
+      "text": "vertex2.projected_vertex.inv_z = in_stack_fffffd64._12_4_;",
       "type": "stack_param"
     },
     {
@@ -2356,15 +2356,15 @@
       "line": 382,
       "match": "._12_4_",
       "severity": "mild",
-      "text": "vertex2.projected_vertex.inv_z = in_stack_fffffd68._12_4_;",
+      "text": "vertex2.projected_vertex.inv_z = in_stack_fffffd64._12_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 383,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2.projected_vertex.screen_x = in_stack_fffffd68._16_4_;",
+      "text": "vertex2.projected_vertex.screen_x = in_stack_fffffd64._16_4_;",
       "type": "stack_param"
     },
     {
@@ -2372,39 +2372,39 @@
       "line": 383,
       "match": "._16_4_",
       "severity": "mild",
-      "text": "vertex2.projected_vertex.screen_x = in_stack_fffffd68._16_4_;",
+      "text": "vertex2.projected_vertex.screen_x = in_stack_fffffd64._16_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 384,
-      "match": "in_stack_fffffd80",
+      "match": "in_stack_fffffd7c",
       "severity": "moderate",
-      "text": "vertex2.u = (int)in_stack_fffffd80;",
+      "text": "vertex2.u = (int)in_stack_fffffd7c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 385,
-      "match": "in_stack_fffffd84",
+      "match": "in_stack_fffffd80",
       "severity": "moderate",
-      "text": "vertex2.v = (int)in_stack_fffffd84;",
+      "text": "vertex2.v = (int)in_stack_fffffd80;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 391,
-      "match": "in_stack_fffffd38",
+      "match": "in_stack_fffffd34",
       "severity": "moderate",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd38,vertex2);",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd34,vertex2);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
       "line": 394,
-      "match": "&stack0xfffffd68",
+      "match": "&stack0xfffffd64",
       "severity": "moderate",
-      "text": "piVar11 = (int *)&stack0xfffffd68;",
+      "text": "piVar11 = (int *)&stack0xfffffd64;",
       "type": "stack_ref"
     },
     {
@@ -2418,9 +2418,9 @@
     {
       "description": "Direct stack address reference",
       "line": 401,
-      "match": "&stack0xfffffd38",
+      "match": "&stack0xfffffd34",
       "severity": "moderate",
-      "text": "piVar11 = (int *)&stack0xfffffd38;",
+      "text": "piVar11 = (int *)&stack0xfffffd34;",
       "type": "stack_ref"
     },
     {
@@ -2434,17 +2434,17 @@
     {
       "description": "Unresolved stack parameter",
       "line": 407,
-      "match": "in_stack_fffffd7c",
+      "match": "in_stack_fffffd78",
       "severity": "moderate",
-      "text": "vertex2_00.projected_vertex.screen_y = in_stack_fffffd7c;",
+      "text": "vertex2_00.projected_vertex.screen_y = in_stack_fffffd78;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 408,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2_00.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;",
+      "text": "vertex2_00.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;",
       "type": "stack_param"
     },
     {
@@ -2452,15 +2452,15 @@
       "line": 408,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "vertex2_00.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;",
+      "text": "vertex2_00.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 409,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2_00.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;",
+      "text": "vertex2_00.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;",
       "type": "stack_param"
     },
     {
@@ -2468,15 +2468,15 @@
       "line": 409,
       "match": "._4_4_",
       "severity": "mild",
-      "text": "vertex2_00.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;",
+      "text": "vertex2_00.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 410,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2_00.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;",
+      "text": "vertex2_00.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;",
       "type": "stack_param"
     },
     {
@@ -2484,15 +2484,15 @@
       "line": 410,
       "match": "._8_4_",
       "severity": "mild",
-      "text": "vertex2_00.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;",
+      "text": "vertex2_00.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 411,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2_00.projected_vertex.inv_z = in_stack_fffffd68._12_4_;",
+      "text": "vertex2_00.projected_vertex.inv_z = in_stack_fffffd64._12_4_;",
       "type": "stack_param"
     },
     {
@@ -2500,15 +2500,15 @@
       "line": 411,
       "match": "._12_4_",
       "severity": "mild",
-      "text": "vertex2_00.projected_vertex.inv_z = in_stack_fffffd68._12_4_;",
+      "text": "vertex2_00.projected_vertex.inv_z = in_stack_fffffd64._12_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 412,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2_00.projected_vertex.screen_x = in_stack_fffffd68._16_4_;",
+      "text": "vertex2_00.projected_vertex.screen_x = in_stack_fffffd64._16_4_;",
       "type": "stack_param"
     },
     {
@@ -2516,39 +2516,39 @@
       "line": 412,
       "match": "._16_4_",
       "severity": "mild",
-      "text": "vertex2_00.projected_vertex.screen_x = in_stack_fffffd68._16_4_;",
+      "text": "vertex2_00.projected_vertex.screen_x = in_stack_fffffd64._16_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 413,
-      "match": "in_stack_fffffd80",
+      "match": "in_stack_fffffd7c",
       "severity": "moderate",
-      "text": "vertex2_00.u = (int)in_stack_fffffd80;",
+      "text": "vertex2_00.u = (int)in_stack_fffffd7c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 414,
-      "match": "in_stack_fffffd84",
+      "match": "in_stack_fffffd80",
       "severity": "moderate",
-      "text": "vertex2_00.v = (int)in_stack_fffffd84;",
+      "text": "vertex2_00.v = (int)in_stack_fffffd80;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 419,
-      "match": "in_stack_fffffd38",
+      "match": "in_stack_fffffd34",
       "severity": "moderate",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd38,vertex2_00);",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd34,vertex2_00);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
       "line": 422,
-      "match": "&stack0xfffffd68",
+      "match": "&stack0xfffffd64",
       "severity": "moderate",
-      "text": "piVar11 = (int *)&stack0xfffffd68;",
+      "text": "piVar11 = (int *)&stack0xfffffd64;",
       "type": "stack_ref"
     },
     {
@@ -2562,9 +2562,9 @@
     {
       "description": "Direct stack address reference",
       "line": 429,
-      "match": "&stack0xfffffd38",
+      "match": "&stack0xfffffd34",
       "severity": "moderate",
-      "text": "piVar11 = (int *)&stack0xfffffd38;",
+      "text": "piVar11 = (int *)&stack0xfffffd34;",
       "type": "stack_ref"
     },
     {
@@ -2578,17 +2578,17 @@
     {
       "description": "Unresolved stack parameter",
       "line": 435,
-      "match": "in_stack_fffffd7c",
+      "match": "in_stack_fffffd78",
       "severity": "moderate",
-      "text": "vertex2_01.projected_vertex.screen_y = in_stack_fffffd7c;",
+      "text": "vertex2_01.projected_vertex.screen_y = in_stack_fffffd78;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 436,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2_01.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;",
+      "text": "vertex2_01.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;",
       "type": "stack_param"
     },
     {
@@ -2596,15 +2596,15 @@
       "line": 436,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "vertex2_01.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;",
+      "text": "vertex2_01.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 437,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2_01.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;",
+      "text": "vertex2_01.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;",
       "type": "stack_param"
     },
     {
@@ -2612,15 +2612,15 @@
       "line": 437,
       "match": "._4_4_",
       "severity": "mild",
-      "text": "vertex2_01.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;",
+      "text": "vertex2_01.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 438,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2_01.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;",
+      "text": "vertex2_01.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;",
       "type": "stack_param"
     },
     {
@@ -2628,15 +2628,15 @@
       "line": 438,
       "match": "._8_4_",
       "severity": "mild",
-      "text": "vertex2_01.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;",
+      "text": "vertex2_01.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 439,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2_01.projected_vertex.inv_z = in_stack_fffffd68._12_4_;",
+      "text": "vertex2_01.projected_vertex.inv_z = in_stack_fffffd64._12_4_;",
       "type": "stack_param"
     },
     {
@@ -2644,15 +2644,15 @@
       "line": 439,
       "match": "._12_4_",
       "severity": "mild",
-      "text": "vertex2_01.projected_vertex.inv_z = in_stack_fffffd68._12_4_;",
+      "text": "vertex2_01.projected_vertex.inv_z = in_stack_fffffd64._12_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 440,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2_01.projected_vertex.screen_x = in_stack_fffffd68._16_4_;",
+      "text": "vertex2_01.projected_vertex.screen_x = in_stack_fffffd64._16_4_;",
       "type": "stack_param"
     },
     {
@@ -2660,39 +2660,39 @@
       "line": 440,
       "match": "._16_4_",
       "severity": "mild",
-      "text": "vertex2_01.projected_vertex.screen_x = in_stack_fffffd68._16_4_;",
+      "text": "vertex2_01.projected_vertex.screen_x = in_stack_fffffd64._16_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 441,
-      "match": "in_stack_fffffd80",
+      "match": "in_stack_fffffd7c",
       "severity": "moderate",
-      "text": "vertex2_01.u = (int)in_stack_fffffd80;",
+      "text": "vertex2_01.u = (int)in_stack_fffffd7c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 442,
-      "match": "in_stack_fffffd84",
+      "match": "in_stack_fffffd80",
       "severity": "moderate",
-      "text": "vertex2_01.v = (int)in_stack_fffffd84;",
+      "text": "vertex2_01.v = (int)in_stack_fffffd80;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 447,
-      "match": "in_stack_fffffd38",
+      "match": "in_stack_fffffd34",
       "severity": "moderate",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd38,vertex2_01);",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd34,vertex2_01);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
       "line": 450,
-      "match": "&stack0xfffffd68",
+      "match": "&stack0xfffffd64",
       "severity": "moderate",
-      "text": "piVar11 = (int *)&stack0xfffffd68;",
+      "text": "piVar11 = (int *)&stack0xfffffd64;",
       "type": "stack_ref"
     },
     {
@@ -2706,9 +2706,9 @@
     {
       "description": "Direct stack address reference",
       "line": 457,
-      "match": "&stack0xfffffd38",
+      "match": "&stack0xfffffd34",
       "severity": "moderate",
-      "text": "piVar11 = (int *)&stack0xfffffd38;",
+      "text": "piVar11 = (int *)&stack0xfffffd34;",
       "type": "stack_ref"
     },
     {
@@ -2722,17 +2722,17 @@
     {
       "description": "Unresolved stack parameter",
       "line": 463,
-      "match": "in_stack_fffffd7c",
+      "match": "in_stack_fffffd78",
       "severity": "moderate",
-      "text": "vertex2_02.projected_vertex.screen_y = in_stack_fffffd7c;",
+      "text": "vertex2_02.projected_vertex.screen_y = in_stack_fffffd78;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 464,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2_02.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;",
+      "text": "vertex2_02.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;",
       "type": "stack_param"
     },
     {
@@ -2740,15 +2740,15 @@
       "line": 464,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "vertex2_02.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;",
+      "text": "vertex2_02.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 465,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2_02.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;",
+      "text": "vertex2_02.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;",
       "type": "stack_param"
     },
     {
@@ -2756,15 +2756,15 @@
       "line": 465,
       "match": "._4_4_",
       "severity": "mild",
-      "text": "vertex2_02.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;",
+      "text": "vertex2_02.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 466,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2_02.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;",
+      "text": "vertex2_02.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;",
       "type": "stack_param"
     },
     {
@@ -2772,15 +2772,15 @@
       "line": 466,
       "match": "._8_4_",
       "severity": "mild",
-      "text": "vertex2_02.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;",
+      "text": "vertex2_02.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 467,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2_02.projected_vertex.inv_z = in_stack_fffffd68._12_4_;",
+      "text": "vertex2_02.projected_vertex.inv_z = in_stack_fffffd64._12_4_;",
       "type": "stack_param"
     },
     {
@@ -2788,15 +2788,15 @@
       "line": 467,
       "match": "._12_4_",
       "severity": "mild",
-      "text": "vertex2_02.projected_vertex.inv_z = in_stack_fffffd68._12_4_;",
+      "text": "vertex2_02.projected_vertex.inv_z = in_stack_fffffd64._12_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 468,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2_02.projected_vertex.screen_x = in_stack_fffffd68._16_4_;",
+      "text": "vertex2_02.projected_vertex.screen_x = in_stack_fffffd64._16_4_;",
       "type": "stack_param"
     },
     {
@@ -2804,39 +2804,39 @@
       "line": 468,
       "match": "._16_4_",
       "severity": "mild",
-      "text": "vertex2_02.projected_vertex.screen_x = in_stack_fffffd68._16_4_;",
+      "text": "vertex2_02.projected_vertex.screen_x = in_stack_fffffd64._16_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 469,
-      "match": "in_stack_fffffd80",
+      "match": "in_stack_fffffd7c",
       "severity": "moderate",
-      "text": "vertex2_02.u = (int)in_stack_fffffd80;",
+      "text": "vertex2_02.u = (int)in_stack_fffffd7c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 470,
-      "match": "in_stack_fffffd84",
+      "match": "in_stack_fffffd80",
       "severity": "moderate",
-      "text": "vertex2_02.v = (int)in_stack_fffffd84;",
+      "text": "vertex2_02.v = (int)in_stack_fffffd80;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 475,
-      "match": "in_stack_fffffd38",
+      "match": "in_stack_fffffd34",
       "severity": "moderate",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd38,vertex2_02);",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd34,vertex2_02);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
       "line": 478,
-      "match": "&stack0xfffffd68",
+      "match": "&stack0xfffffd64",
       "severity": "moderate",
-      "text": "piVar11 = (int *)&stack0xfffffd68;",
+      "text": "piVar11 = (int *)&stack0xfffffd64;",
       "type": "stack_ref"
     },
     {
@@ -2850,9 +2850,9 @@
     {
       "description": "Direct stack address reference",
       "line": 485,
-      "match": "&stack0xfffffd38",
+      "match": "&stack0xfffffd34",
       "severity": "moderate",
-      "text": "piVar11 = (int *)&stack0xfffffd38;",
+      "text": "piVar11 = (int *)&stack0xfffffd34;",
       "type": "stack_ref"
     },
     {
@@ -2866,17 +2866,17 @@
     {
       "description": "Unresolved stack parameter",
       "line": 491,
-      "match": "in_stack_fffffd7c",
+      "match": "in_stack_fffffd78",
       "severity": "moderate",
-      "text": "vertex2_03.projected_vertex.screen_y = in_stack_fffffd7c;",
+      "text": "vertex2_03.projected_vertex.screen_y = in_stack_fffffd78;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 492,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2_03.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;",
+      "text": "vertex2_03.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;",
       "type": "stack_param"
     },
     {
@@ -2884,15 +2884,15 @@
       "line": 492,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "vertex2_03.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;",
+      "text": "vertex2_03.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 493,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2_03.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;",
+      "text": "vertex2_03.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;",
       "type": "stack_param"
     },
     {
@@ -2900,15 +2900,15 @@
       "line": 493,
       "match": "._4_4_",
       "severity": "mild",
-      "text": "vertex2_03.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;",
+      "text": "vertex2_03.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 494,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2_03.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;",
+      "text": "vertex2_03.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;",
       "type": "stack_param"
     },
     {
@@ -2916,15 +2916,15 @@
       "line": 494,
       "match": "._8_4_",
       "severity": "mild",
-      "text": "vertex2_03.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;",
+      "text": "vertex2_03.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 495,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2_03.projected_vertex.inv_z = in_stack_fffffd68._12_4_;",
+      "text": "vertex2_03.projected_vertex.inv_z = in_stack_fffffd64._12_4_;",
       "type": "stack_param"
     },
     {
@@ -2932,15 +2932,15 @@
       "line": 495,
       "match": "._12_4_",
       "severity": "mild",
-      "text": "vertex2_03.projected_vertex.inv_z = in_stack_fffffd68._12_4_;",
+      "text": "vertex2_03.projected_vertex.inv_z = in_stack_fffffd64._12_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 496,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2_03.projected_vertex.screen_x = in_stack_fffffd68._16_4_;",
+      "text": "vertex2_03.projected_vertex.screen_x = in_stack_fffffd64._16_4_;",
       "type": "stack_param"
     },
     {
@@ -2948,39 +2948,39 @@
       "line": 496,
       "match": "._16_4_",
       "severity": "mild",
-      "text": "vertex2_03.projected_vertex.screen_x = in_stack_fffffd68._16_4_;",
+      "text": "vertex2_03.projected_vertex.screen_x = in_stack_fffffd64._16_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 497,
-      "match": "in_stack_fffffd80",
+      "match": "in_stack_fffffd7c",
       "severity": "moderate",
-      "text": "vertex2_03.u = (int)in_stack_fffffd80;",
+      "text": "vertex2_03.u = (int)in_stack_fffffd7c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 498,
-      "match": "in_stack_fffffd84",
+      "match": "in_stack_fffffd80",
       "severity": "moderate",
-      "text": "vertex2_03.v = (int)in_stack_fffffd84;",
+      "text": "vertex2_03.v = (int)in_stack_fffffd80;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 503,
-      "match": "in_stack_fffffd38",
+      "match": "in_stack_fffffd34",
       "severity": "moderate",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd38,vertex2_03);",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd34,vertex2_03);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
       "line": 506,
-      "match": "&stack0xfffffd68",
+      "match": "&stack0xfffffd64",
       "severity": "moderate",
-      "text": "piVar11 = (int *)&stack0xfffffd68;",
+      "text": "piVar11 = (int *)&stack0xfffffd64;",
       "type": "stack_ref"
     },
     {
@@ -2994,9 +2994,9 @@
     {
       "description": "Direct stack address reference",
       "line": 513,
-      "match": "&stack0xfffffd38",
+      "match": "&stack0xfffffd34",
       "severity": "moderate",
-      "text": "piVar11 = (int *)&stack0xfffffd38;",
+      "text": "piVar11 = (int *)&stack0xfffffd34;",
       "type": "stack_ref"
     },
     {
@@ -3010,17 +3010,17 @@
     {
       "description": "Unresolved stack parameter",
       "line": 519,
-      "match": "in_stack_fffffd7c",
+      "match": "in_stack_fffffd78",
       "severity": "moderate",
-      "text": "vertex2_04.projected_vertex.screen_y = in_stack_fffffd7c;",
+      "text": "vertex2_04.projected_vertex.screen_y = in_stack_fffffd78;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 520,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2_04.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;",
+      "text": "vertex2_04.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;",
       "type": "stack_param"
     },
     {
@@ -3028,15 +3028,15 @@
       "line": 520,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "vertex2_04.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;",
+      "text": "vertex2_04.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 521,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2_04.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;",
+      "text": "vertex2_04.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;",
       "type": "stack_param"
     },
     {
@@ -3044,15 +3044,15 @@
       "line": 521,
       "match": "._4_4_",
       "severity": "mild",
-      "text": "vertex2_04.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;",
+      "text": "vertex2_04.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 522,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2_04.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;",
+      "text": "vertex2_04.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;",
       "type": "stack_param"
     },
     {
@@ -3060,15 +3060,15 @@
       "line": 522,
       "match": "._8_4_",
       "severity": "mild",
-      "text": "vertex2_04.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;",
+      "text": "vertex2_04.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 523,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2_04.projected_vertex.inv_z = in_stack_fffffd68._12_4_;",
+      "text": "vertex2_04.projected_vertex.inv_z = in_stack_fffffd64._12_4_;",
       "type": "stack_param"
     },
     {
@@ -3076,15 +3076,15 @@
       "line": 523,
       "match": "._12_4_",
       "severity": "mild",
-      "text": "vertex2_04.projected_vertex.inv_z = in_stack_fffffd68._12_4_;",
+      "text": "vertex2_04.projected_vertex.inv_z = in_stack_fffffd64._12_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 524,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2_04.projected_vertex.screen_x = in_stack_fffffd68._16_4_;",
+      "text": "vertex2_04.projected_vertex.screen_x = in_stack_fffffd64._16_4_;",
       "type": "stack_param"
     },
     {
@@ -3092,39 +3092,39 @@
       "line": 524,
       "match": "._16_4_",
       "severity": "mild",
-      "text": "vertex2_04.projected_vertex.screen_x = in_stack_fffffd68._16_4_;",
+      "text": "vertex2_04.projected_vertex.screen_x = in_stack_fffffd64._16_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 525,
-      "match": "in_stack_fffffd80",
+      "match": "in_stack_fffffd7c",
       "severity": "moderate",
-      "text": "vertex2_04.u = (int)in_stack_fffffd80;",
+      "text": "vertex2_04.u = (int)in_stack_fffffd7c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 526,
-      "match": "in_stack_fffffd84",
+      "match": "in_stack_fffffd80",
       "severity": "moderate",
-      "text": "vertex2_04.v = (int)in_stack_fffffd84;",
+      "text": "vertex2_04.v = (int)in_stack_fffffd80;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 531,
-      "match": "in_stack_fffffd38",
+      "match": "in_stack_fffffd34",
       "severity": "moderate",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd38,vertex2_04);",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd34,vertex2_04);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
       "line": 534,
-      "match": "&stack0xfffffd68",
+      "match": "&stack0xfffffd64",
       "severity": "moderate",
-      "text": "piVar11 = (int *)&stack0xfffffd68;",
+      "text": "piVar11 = (int *)&stack0xfffffd64;",
       "type": "stack_ref"
     },
     {
@@ -3138,9 +3138,9 @@
     {
       "description": "Direct stack address reference",
       "line": 541,
-      "match": "&stack0xfffffd38",
+      "match": "&stack0xfffffd34",
       "severity": "moderate",
-      "text": "piVar11 = (int *)&stack0xfffffd38;",
+      "text": "piVar11 = (int *)&stack0xfffffd34;",
       "type": "stack_ref"
     },
     {
@@ -3154,17 +3154,17 @@
     {
       "description": "Unresolved stack parameter",
       "line": 547,
-      "match": "in_stack_fffffd7c",
+      "match": "in_stack_fffffd78",
       "severity": "moderate",
-      "text": "vertex2_05.projected_vertex.screen_y = in_stack_fffffd7c;",
+      "text": "vertex2_05.projected_vertex.screen_y = in_stack_fffffd78;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 548,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2_05.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;",
+      "text": "vertex2_05.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;",
       "type": "stack_param"
     },
     {
@@ -3172,15 +3172,15 @@
       "line": 548,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "vertex2_05.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;",
+      "text": "vertex2_05.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 549,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2_05.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;",
+      "text": "vertex2_05.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;",
       "type": "stack_param"
     },
     {
@@ -3188,15 +3188,15 @@
       "line": 549,
       "match": "._4_4_",
       "severity": "mild",
-      "text": "vertex2_05.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;",
+      "text": "vertex2_05.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 550,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2_05.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;",
+      "text": "vertex2_05.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;",
       "type": "stack_param"
     },
     {
@@ -3204,15 +3204,15 @@
       "line": 550,
       "match": "._8_4_",
       "severity": "mild",
-      "text": "vertex2_05.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;",
+      "text": "vertex2_05.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 551,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2_05.projected_vertex.inv_z = in_stack_fffffd68._12_4_;",
+      "text": "vertex2_05.projected_vertex.inv_z = in_stack_fffffd64._12_4_;",
       "type": "stack_param"
     },
     {
@@ -3220,15 +3220,15 @@
       "line": 551,
       "match": "._12_4_",
       "severity": "mild",
-      "text": "vertex2_05.projected_vertex.inv_z = in_stack_fffffd68._12_4_;",
+      "text": "vertex2_05.projected_vertex.inv_z = in_stack_fffffd64._12_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 552,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2_05.projected_vertex.screen_x = in_stack_fffffd68._16_4_;",
+      "text": "vertex2_05.projected_vertex.screen_x = in_stack_fffffd64._16_4_;",
       "type": "stack_param"
     },
     {
@@ -3236,39 +3236,39 @@
       "line": 552,
       "match": "._16_4_",
       "severity": "mild",
-      "text": "vertex2_05.projected_vertex.screen_x = in_stack_fffffd68._16_4_;",
+      "text": "vertex2_05.projected_vertex.screen_x = in_stack_fffffd64._16_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 553,
-      "match": "in_stack_fffffd80",
+      "match": "in_stack_fffffd7c",
       "severity": "moderate",
-      "text": "vertex2_05.u = (int)in_stack_fffffd80;",
+      "text": "vertex2_05.u = (int)in_stack_fffffd7c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 554,
-      "match": "in_stack_fffffd84",
+      "match": "in_stack_fffffd80",
       "severity": "moderate",
-      "text": "vertex2_05.v = (int)in_stack_fffffd84;",
+      "text": "vertex2_05.v = (int)in_stack_fffffd80;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 559,
-      "match": "in_stack_fffffd38",
+      "match": "in_stack_fffffd34",
       "severity": "moderate",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd38,vertex2_05);",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd34,vertex2_05);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
       "line": 562,
-      "match": "&stack0xfffffd68",
+      "match": "&stack0xfffffd64",
       "severity": "moderate",
-      "text": "piVar11 = (int *)&stack0xfffffd68;",
+      "text": "piVar11 = (int *)&stack0xfffffd64;",
       "type": "stack_ref"
     },
     {
@@ -3282,9 +3282,9 @@
     {
       "description": "Direct stack address reference",
       "line": 569,
-      "match": "&stack0xfffffd38",
+      "match": "&stack0xfffffd34",
       "severity": "moderate",
-      "text": "piVar11 = (int *)&stack0xfffffd38;",
+      "text": "piVar11 = (int *)&stack0xfffffd34;",
       "type": "stack_ref"
     },
     {
@@ -3298,17 +3298,17 @@
     {
       "description": "Unresolved stack parameter",
       "line": 575,
-      "match": "in_stack_fffffd7c",
+      "match": "in_stack_fffffd78",
       "severity": "moderate",
-      "text": "vertex2_06.projected_vertex.screen_y = in_stack_fffffd7c;",
+      "text": "vertex2_06.projected_vertex.screen_y = in_stack_fffffd78;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 576,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2_06.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;",
+      "text": "vertex2_06.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;",
       "type": "stack_param"
     },
     {
@@ -3316,15 +3316,15 @@
       "line": 576,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "vertex2_06.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;",
+      "text": "vertex2_06.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 577,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2_06.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;",
+      "text": "vertex2_06.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;",
       "type": "stack_param"
     },
     {
@@ -3332,15 +3332,15 @@
       "line": 577,
       "match": "._4_4_",
       "severity": "mild",
-      "text": "vertex2_06.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;",
+      "text": "vertex2_06.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 578,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2_06.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;",
+      "text": "vertex2_06.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;",
       "type": "stack_param"
     },
     {
@@ -3348,15 +3348,15 @@
       "line": 578,
       "match": "._8_4_",
       "severity": "mild",
-      "text": "vertex2_06.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;",
+      "text": "vertex2_06.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 579,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2_06.projected_vertex.inv_z = in_stack_fffffd68._12_4_;",
+      "text": "vertex2_06.projected_vertex.inv_z = in_stack_fffffd64._12_4_;",
       "type": "stack_param"
     },
     {
@@ -3364,15 +3364,15 @@
       "line": 579,
       "match": "._12_4_",
       "severity": "mild",
-      "text": "vertex2_06.projected_vertex.inv_z = in_stack_fffffd68._12_4_;",
+      "text": "vertex2_06.projected_vertex.inv_z = in_stack_fffffd64._12_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 580,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2_06.projected_vertex.screen_x = in_stack_fffffd68._16_4_;",
+      "text": "vertex2_06.projected_vertex.screen_x = in_stack_fffffd64._16_4_;",
       "type": "stack_param"
     },
     {
@@ -3380,39 +3380,39 @@
       "line": 580,
       "match": "._16_4_",
       "severity": "mild",
-      "text": "vertex2_06.projected_vertex.screen_x = in_stack_fffffd68._16_4_;",
+      "text": "vertex2_06.projected_vertex.screen_x = in_stack_fffffd64._16_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 581,
-      "match": "in_stack_fffffd80",
+      "match": "in_stack_fffffd7c",
       "severity": "moderate",
-      "text": "vertex2_06.u = (int)in_stack_fffffd80;",
+      "text": "vertex2_06.u = (int)in_stack_fffffd7c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 582,
-      "match": "in_stack_fffffd84",
+      "match": "in_stack_fffffd80",
       "severity": "moderate",
-      "text": "vertex2_06.v = (int)in_stack_fffffd84;",
+      "text": "vertex2_06.v = (int)in_stack_fffffd80;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 587,
-      "match": "in_stack_fffffd38",
+      "match": "in_stack_fffffd34",
       "severity": "moderate",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd38,vertex2_06);",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd34,vertex2_06);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
       "line": 590,
-      "match": "&stack0xfffffd68",
+      "match": "&stack0xfffffd64",
       "severity": "moderate",
-      "text": "piVar11 = (int *)&stack0xfffffd68;",
+      "text": "piVar11 = (int *)&stack0xfffffd64;",
       "type": "stack_ref"
     },
     {
@@ -3426,9 +3426,9 @@
     {
       "description": "Direct stack address reference",
       "line": 596,
-      "match": "&stack0xfffffd38",
+      "match": "&stack0xfffffd34",
       "severity": "moderate",
-      "text": "piVar11 = (int *)&stack0xfffffd38;",
+      "text": "piVar11 = (int *)&stack0xfffffd34;",
       "type": "stack_ref"
     },
     {
@@ -3442,17 +3442,17 @@
     {
       "description": "Unresolved stack parameter",
       "line": 602,
-      "match": "in_stack_fffffd7c",
+      "match": "in_stack_fffffd78",
       "severity": "moderate",
-      "text": "vertex2_07.projected_vertex.screen_y = in_stack_fffffd7c;",
+      "text": "vertex2_07.projected_vertex.screen_y = in_stack_fffffd78;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 603,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2_07.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;",
+      "text": "vertex2_07.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;",
       "type": "stack_param"
     },
     {
@@ -3460,15 +3460,15 @@
       "line": 603,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "vertex2_07.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;",
+      "text": "vertex2_07.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 604,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2_07.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;",
+      "text": "vertex2_07.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;",
       "type": "stack_param"
     },
     {
@@ -3476,15 +3476,15 @@
       "line": 604,
       "match": "._4_4_",
       "severity": "mild",
-      "text": "vertex2_07.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;",
+      "text": "vertex2_07.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 605,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2_07.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;",
+      "text": "vertex2_07.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;",
       "type": "stack_param"
     },
     {
@@ -3492,15 +3492,15 @@
       "line": 605,
       "match": "._8_4_",
       "severity": "mild",
-      "text": "vertex2_07.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;",
+      "text": "vertex2_07.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 606,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2_07.projected_vertex.inv_z = in_stack_fffffd68._12_4_;",
+      "text": "vertex2_07.projected_vertex.inv_z = in_stack_fffffd64._12_4_;",
       "type": "stack_param"
     },
     {
@@ -3508,15 +3508,15 @@
       "line": 606,
       "match": "._12_4_",
       "severity": "mild",
-      "text": "vertex2_07.projected_vertex.inv_z = in_stack_fffffd68._12_4_;",
+      "text": "vertex2_07.projected_vertex.inv_z = in_stack_fffffd64._12_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 607,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2_07.projected_vertex.screen_x = in_stack_fffffd68._16_4_;",
+      "text": "vertex2_07.projected_vertex.screen_x = in_stack_fffffd64._16_4_;",
       "type": "stack_param"
     },
     {
@@ -3524,39 +3524,39 @@
       "line": 607,
       "match": "._16_4_",
       "severity": "mild",
-      "text": "vertex2_07.projected_vertex.screen_x = in_stack_fffffd68._16_4_;",
+      "text": "vertex2_07.projected_vertex.screen_x = in_stack_fffffd64._16_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 608,
-      "match": "in_stack_fffffd80",
+      "match": "in_stack_fffffd7c",
       "severity": "moderate",
-      "text": "vertex2_07.u = (int)in_stack_fffffd80;",
+      "text": "vertex2_07.u = (int)in_stack_fffffd7c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 609,
-      "match": "in_stack_fffffd84",
+      "match": "in_stack_fffffd80",
       "severity": "moderate",
-      "text": "vertex2_07.v = (int)in_stack_fffffd84;",
+      "text": "vertex2_07.v = (int)in_stack_fffffd80;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 614,
-      "match": "in_stack_fffffd38",
+      "match": "in_stack_fffffd34",
       "severity": "moderate",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd38,vertex2_07);",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd34,vertex2_07);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
       "line": 617,
-      "match": "&stack0xfffffd68",
+      "match": "&stack0xfffffd64",
       "severity": "moderate",
-      "text": "piVar11 = (int *)&stack0xfffffd68;",
+      "text": "piVar11 = (int *)&stack0xfffffd64;",
       "type": "stack_ref"
     },
     {
@@ -3570,9 +3570,9 @@
     {
       "description": "Direct stack address reference",
       "line": 624,
-      "match": "&stack0xfffffd38",
+      "match": "&stack0xfffffd34",
       "severity": "moderate",
-      "text": "piVar11 = (int *)&stack0xfffffd38;",
+      "text": "piVar11 = (int *)&stack0xfffffd34;",
       "type": "stack_ref"
     },
     {
@@ -3586,17 +3586,17 @@
     {
       "description": "Unresolved stack parameter",
       "line": 630,
-      "match": "in_stack_fffffd7c",
+      "match": "in_stack_fffffd78",
       "severity": "moderate",
-      "text": "vertex2_08.projected_vertex.screen_y = in_stack_fffffd7c;",
+      "text": "vertex2_08.projected_vertex.screen_y = in_stack_fffffd78;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 631,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2_08.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;",
+      "text": "vertex2_08.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;",
       "type": "stack_param"
     },
     {
@@ -3604,15 +3604,15 @@
       "line": 631,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "vertex2_08.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;",
+      "text": "vertex2_08.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 632,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2_08.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;",
+      "text": "vertex2_08.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;",
       "type": "stack_param"
     },
     {
@@ -3620,15 +3620,15 @@
       "line": 632,
       "match": "._4_4_",
       "severity": "mild",
-      "text": "vertex2_08.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;",
+      "text": "vertex2_08.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 633,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2_08.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;",
+      "text": "vertex2_08.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;",
       "type": "stack_param"
     },
     {
@@ -3636,15 +3636,15 @@
       "line": 633,
       "match": "._8_4_",
       "severity": "mild",
-      "text": "vertex2_08.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;",
+      "text": "vertex2_08.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 634,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2_08.projected_vertex.inv_z = in_stack_fffffd68._12_4_;",
+      "text": "vertex2_08.projected_vertex.inv_z = in_stack_fffffd64._12_4_;",
       "type": "stack_param"
     },
     {
@@ -3652,15 +3652,15 @@
       "line": 634,
       "match": "._12_4_",
       "severity": "mild",
-      "text": "vertex2_08.projected_vertex.inv_z = in_stack_fffffd68._12_4_;",
+      "text": "vertex2_08.projected_vertex.inv_z = in_stack_fffffd64._12_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 635,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2_08.projected_vertex.screen_x = in_stack_fffffd68._16_4_;",
+      "text": "vertex2_08.projected_vertex.screen_x = in_stack_fffffd64._16_4_;",
       "type": "stack_param"
     },
     {
@@ -3668,39 +3668,39 @@
       "line": 635,
       "match": "._16_4_",
       "severity": "mild",
-      "text": "vertex2_08.projected_vertex.screen_x = in_stack_fffffd68._16_4_;",
+      "text": "vertex2_08.projected_vertex.screen_x = in_stack_fffffd64._16_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 636,
-      "match": "in_stack_fffffd80",
+      "match": "in_stack_fffffd7c",
       "severity": "moderate",
-      "text": "vertex2_08.u = (int)in_stack_fffffd80;",
+      "text": "vertex2_08.u = (int)in_stack_fffffd7c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 637,
-      "match": "in_stack_fffffd84",
+      "match": "in_stack_fffffd80",
       "severity": "moderate",
-      "text": "vertex2_08.v = (int)in_stack_fffffd84;",
+      "text": "vertex2_08.v = (int)in_stack_fffffd80;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 642,
-      "match": "in_stack_fffffd38",
+      "match": "in_stack_fffffd34",
       "severity": "moderate",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd38,vertex2_08);",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd34,vertex2_08);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
       "line": 645,
-      "match": "&stack0xfffffd68",
+      "match": "&stack0xfffffd64",
       "severity": "moderate",
-      "text": "piVar11 = (int *)&stack0xfffffd68;",
+      "text": "piVar11 = (int *)&stack0xfffffd64;",
       "type": "stack_ref"
     },
     {
@@ -3714,9 +3714,9 @@
     {
       "description": "Direct stack address reference",
       "line": 652,
-      "match": "&stack0xfffffd38",
+      "match": "&stack0xfffffd34",
       "severity": "moderate",
-      "text": "piVar11 = (int *)&stack0xfffffd38;",
+      "text": "piVar11 = (int *)&stack0xfffffd34;",
       "type": "stack_ref"
     },
     {
@@ -3730,17 +3730,17 @@
     {
       "description": "Unresolved stack parameter",
       "line": 658,
-      "match": "in_stack_fffffd7c",
+      "match": "in_stack_fffffd78",
       "severity": "moderate",
-      "text": "vertex2_09.projected_vertex.screen_y = in_stack_fffffd7c;",
+      "text": "vertex2_09.projected_vertex.screen_y = in_stack_fffffd78;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 659,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2_09.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;",
+      "text": "vertex2_09.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;",
       "type": "stack_param"
     },
     {
@@ -3748,15 +3748,15 @@
       "line": 659,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "vertex2_09.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;",
+      "text": "vertex2_09.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 660,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2_09.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;",
+      "text": "vertex2_09.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;",
       "type": "stack_param"
     },
     {
@@ -3764,15 +3764,15 @@
       "line": 660,
       "match": "._4_4_",
       "severity": "mild",
-      "text": "vertex2_09.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;",
+      "text": "vertex2_09.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 661,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2_09.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;",
+      "text": "vertex2_09.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;",
       "type": "stack_param"
     },
     {
@@ -3780,15 +3780,15 @@
       "line": 661,
       "match": "._8_4_",
       "severity": "mild",
-      "text": "vertex2_09.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;",
+      "text": "vertex2_09.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 662,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2_09.projected_vertex.inv_z = in_stack_fffffd68._12_4_;",
+      "text": "vertex2_09.projected_vertex.inv_z = in_stack_fffffd64._12_4_;",
       "type": "stack_param"
     },
     {
@@ -3796,15 +3796,15 @@
       "line": 662,
       "match": "._12_4_",
       "severity": "mild",
-      "text": "vertex2_09.projected_vertex.inv_z = in_stack_fffffd68._12_4_;",
+      "text": "vertex2_09.projected_vertex.inv_z = in_stack_fffffd64._12_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 663,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2_09.projected_vertex.screen_x = in_stack_fffffd68._16_4_;",
+      "text": "vertex2_09.projected_vertex.screen_x = in_stack_fffffd64._16_4_;",
       "type": "stack_param"
     },
     {
@@ -3812,39 +3812,39 @@
       "line": 663,
       "match": "._16_4_",
       "severity": "mild",
-      "text": "vertex2_09.projected_vertex.screen_x = in_stack_fffffd68._16_4_;",
+      "text": "vertex2_09.projected_vertex.screen_x = in_stack_fffffd64._16_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 664,
-      "match": "in_stack_fffffd80",
+      "match": "in_stack_fffffd7c",
       "severity": "moderate",
-      "text": "vertex2_09.u = (int)in_stack_fffffd80;",
+      "text": "vertex2_09.u = (int)in_stack_fffffd7c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 665,
-      "match": "in_stack_fffffd84",
+      "match": "in_stack_fffffd80",
       "severity": "moderate",
-      "text": "vertex2_09.v = (int)in_stack_fffffd84;",
+      "text": "vertex2_09.v = (int)in_stack_fffffd80;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 670,
-      "match": "in_stack_fffffd38",
+      "match": "in_stack_fffffd34",
       "severity": "moderate",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd38,vertex2_09);",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd34,vertex2_09);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
       "line": 673,
-      "match": "&stack0xfffffd68",
+      "match": "&stack0xfffffd64",
       "severity": "moderate",
-      "text": "piVar11 = (int *)&stack0xfffffd68;",
+      "text": "piVar11 = (int *)&stack0xfffffd64;",
       "type": "stack_ref"
     },
     {
@@ -3858,9 +3858,9 @@
     {
       "description": "Direct stack address reference",
       "line": 680,
-      "match": "&stack0xfffffd38",
+      "match": "&stack0xfffffd34",
       "severity": "moderate",
-      "text": "piVar11 = (int *)&stack0xfffffd38;",
+      "text": "piVar11 = (int *)&stack0xfffffd34;",
       "type": "stack_ref"
     },
     {
@@ -3874,17 +3874,17 @@
     {
       "description": "Unresolved stack parameter",
       "line": 686,
-      "match": "in_stack_fffffd7c",
+      "match": "in_stack_fffffd78",
       "severity": "moderate",
-      "text": "vertex2_10.projected_vertex.screen_y = in_stack_fffffd7c;",
+      "text": "vertex2_10.projected_vertex.screen_y = in_stack_fffffd78;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 687,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2_10.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;",
+      "text": "vertex2_10.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;",
       "type": "stack_param"
     },
     {
@@ -3892,15 +3892,15 @@
       "line": 687,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "vertex2_10.projected_vertex.transformed_x = in_stack_fffffd68._0_4_;",
+      "text": "vertex2_10.projected_vertex.transformed_x = in_stack_fffffd64._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 688,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2_10.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;",
+      "text": "vertex2_10.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;",
       "type": "stack_param"
     },
     {
@@ -3908,15 +3908,15 @@
       "line": 688,
       "match": "._4_4_",
       "severity": "mild",
-      "text": "vertex2_10.projected_vertex.transformed_y = in_stack_fffffd68._4_4_;",
+      "text": "vertex2_10.projected_vertex.transformed_y = in_stack_fffffd64._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 689,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2_10.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;",
+      "text": "vertex2_10.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;",
       "type": "stack_param"
     },
     {
@@ -3924,15 +3924,15 @@
       "line": 689,
       "match": "._8_4_",
       "severity": "mild",
-      "text": "vertex2_10.projected_vertex.transformed_z = in_stack_fffffd68._8_4_;",
+      "text": "vertex2_10.projected_vertex.transformed_z = in_stack_fffffd64._8_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 690,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2_10.projected_vertex.inv_z = in_stack_fffffd68._12_4_;",
+      "text": "vertex2_10.projected_vertex.inv_z = in_stack_fffffd64._12_4_;",
       "type": "stack_param"
     },
     {
@@ -3940,15 +3940,15 @@
       "line": 690,
       "match": "._12_4_",
       "severity": "mild",
-      "text": "vertex2_10.projected_vertex.inv_z = in_stack_fffffd68._12_4_;",
+      "text": "vertex2_10.projected_vertex.inv_z = in_stack_fffffd64._12_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 691,
-      "match": "in_stack_fffffd68",
+      "match": "in_stack_fffffd64",
       "severity": "moderate",
-      "text": "vertex2_10.projected_vertex.screen_x = in_stack_fffffd68._16_4_;",
+      "text": "vertex2_10.projected_vertex.screen_x = in_stack_fffffd64._16_4_;",
       "type": "stack_param"
     },
     {
@@ -3956,31 +3956,31 @@
       "line": 691,
       "match": "._16_4_",
       "severity": "mild",
-      "text": "vertex2_10.projected_vertex.screen_x = in_stack_fffffd68._16_4_;",
+      "text": "vertex2_10.projected_vertex.screen_x = in_stack_fffffd64._16_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 692,
-      "match": "in_stack_fffffd80",
+      "match": "in_stack_fffffd7c",
       "severity": "moderate",
-      "text": "vertex2_10.u = (int)in_stack_fffffd80;",
+      "text": "vertex2_10.u = (int)in_stack_fffffd7c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 693,
-      "match": "in_stack_fffffd84",
+      "match": "in_stack_fffffd80",
       "severity": "moderate",
-      "text": "vertex2_10.v = (int)in_stack_fffffd84;",
+      "text": "vertex2_10.v = (int)in_stack_fffffd80;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 698,
-      "match": "in_stack_fffffd38",
+      "match": "in_stack_fffffd34",
       "severity": "moderate",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd38,vertex2_10);",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd34,vertex2_10);",
       "type": "stack_param"
     },
     {
@@ -3996,100 +3996,76 @@
       "line": 752,
       "match": "in_stack_fffffdbc",
       "severity": "moderate",
-      "text": "in_stack_fffffdbc = 8.10605e-39;",
+      "text": "in_stack_fffffdbc = g_CKeysPtr;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 757,
+      "match": "in_stack_fffffdc0",
+      "severity": "moderate",
+      "text": "in_stack_fffffdc0 = 8.106091e-39;",
       "type": "stack_param"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 752,
-      "match": "8.10605e-39",
+      "line": 757,
+      "match": "8.106091e-39",
       "severity": "mild",
-      "text": "in_stack_fffffdbc = 8.10605e-39;",
+      "text": "in_stack_fffffdc0 = 8.106091e-39;",
       "type": "suspect_float"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 753,
-      "match": "in_stack_fffffdc0",
-      "severity": "moderate",
-      "text": "in_stack_fffffdc0 = g_CKeysPtr;",
-      "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 758,
       "match": "in_stack_fffffdc4",
       "severity": "moderate",
-      "text": "in_stack_fffffdc4 = 8.106091e-39;",
+      "text": "in_stack_fffffdc4 = g_CKeysPtr;",
       "type": "stack_param"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 758,
-      "match": "8.106091e-39",
-      "severity": "mild",
-      "text": "in_stack_fffffdc4 = 8.106091e-39;",
-      "type": "suspect_float"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 763,
       "match": "in_stack_fffffdcc",
       "severity": "moderate",
-      "text": "in_stack_fffffdcc = 8.106132e-39;",
+      "text": "in_stack_fffffdcc = g_CKeysPtr;",
       "type": "stack_param"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 763,
-      "match": "8.106132e-39",
-      "severity": "mild",
-      "text": "in_stack_fffffdcc = 8.106132e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 783,
-      "match": "4.06377e-44",
-      "severity": "mild",
-      "text": "fVar17 = 4.06377e-44;",
-      "type": "suspect_float"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 788,
+      "line": 785,
       "match": "&stack0xfffffdd8",
       "severity": "moderate",
       "text": "core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)&stack0xfffffdd8);",
       "type": "stack_ref"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 789,
-      "match": "&stack0xfffffdd8",
-      "severity": "moderate",
-      "text": "if ((SVDBox *)&stack0xfffffdd8 != pSVar6) {",
-      "type": "stack_ref"
-    },
-    {
       "description": "Likely misinterpreted integer as float",
-      "line": 793,
+      "line": 786,
       "match": "8.106946e-39",
       "severity": "mild",
-      "text": "fVar18 = 8.106946e-39;",
+      "text": "fVar16 = 8.106946e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Direct stack address reference",
-      "line": 797,
+      "line": 790,
       "match": "&stack0xfffffdd8",
       "severity": "moderate",
-      "text": "core_slew_cpp_CSlew_processInput_FUN_005a20b0((CSlew *)&stack0xfffffdd8);",
+      "text": "this_ptr_00 = (CSlew *)&stack0xfffffdd8;",
       "type": "stack_ref"
     },
     {
+      "description": "Likely misinterpreted integer as float",
+      "line": 791,
+      "match": "8.107024e-39",
+      "severity": "mild",
+      "text": "fVar17 = 8.107024e-39;",
+      "type": "suspect_float"
+    },
+    {
       "description": "Direct stack address reference",
-      "line": 798,
+      "line": 793,
       "match": "&stack0xfffffdd8",
       "severity": "moderate",
       "text": "if ((SVDBox *)&stack0xfffffdd8 != pSVar6) {",
@@ -4097,7 +4073,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 804,
+      "line": 799,
       "match": "&stack0xfffffde4",
       "severity": "moderate",
       "text": "(&local_3c->rotation_matrix,(CVector3f *)&stack0xfffffde4);",
@@ -4105,7 +4081,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 869,
+      "line": 864,
       "match": "&stack0xfffffdbc",
       "severity": "moderate",
       "text": "if (pSVar6 != (SVDBox *)&stack0xfffffdbc) {",
@@ -4113,47 +4089,47 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 870,
+      "line": 865,
       "match": "in_stack_fffffdbc",
       "severity": "moderate",
-      "text": "(pSVar6->position).x = in_stack_fffffdbc;",
+      "text": "(pSVar6->position).x = (float)in_stack_fffffdbc;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 866,
+      "match": "in_stack_fffffdc0",
+      "severity": "moderate",
+      "text": "(pSVar6->position).y = in_stack_fffffdc0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 867,
+      "match": "in_stack_fffffdc4",
+      "severity": "moderate",
+      "text": "(pSVar6->position).z = (float)in_stack_fffffdc4;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 871,
-      "match": "in_stack_fffffdc0",
-      "severity": "moderate",
-      "text": "(pSVar6->position).y = (float)in_stack_fffffdc0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 872,
-      "match": "in_stack_fffffdc4",
-      "severity": "moderate",
-      "text": "(pSVar6->position).z = in_stack_fffffdc4;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 876,
       "match": "in_stack_fffffdcc",
       "severity": "moderate",
-      "text": "local_bc.y = in_stack_fffffdcc;",
+      "text": "local_bc.y = (float)in_stack_fffffdcc;",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 993,
+      "line": 989,
       "match": "&stack0xfffffe0c",
       "severity": "moderate",
-      "text": "(local_1c,&local_110,(CVector3f *)&stack0xfffffe0c);",
+      "text": "(CVector3f *)&stack0xfffffe0c);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 995,
+      "line": 991,
       "match": "&stack0xfffffe18",
       "severity": "moderate",
       "text": "(local_1c,&local_98,(CVector3f *)&stack0xfffffe18);",
@@ -4161,7 +4137,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 1000,
+      "line": 996,
       "match": "&stack0xfffffdf4",
       "severity": "moderate",
       "text": "((CBoundingBox3D *)&stack0xfffffdf4,&local_110,&local_98,",
@@ -4169,7 +4145,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 1007,
+      "line": 1003,
       "match": "(CVector3f *)((int)",
       "severity": "mild",
       "text": "pCVar3 = (CVector3f *)((int)(pCVar3 + 5) + 8);",
@@ -4177,7 +4153,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 1009,
+      "line": 1005,
       "match": "(CMatrix3x3f *)((int)",
       "severity": "mild",
       "text": "local_1c = (CMatrix3x3f *)((int)(local_1c + 1) + 0x20);",

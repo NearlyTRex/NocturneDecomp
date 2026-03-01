@@ -65,7 +65,7 @@ void __cdecl FUN_0060403f(undefined4 param_1,float10 *param_2,undefined4 param_3
 
 // Original: crt_unknown.c_FUN_006040d7
 // Address: 006040d7
-void __cdecl FUN_006040d7(uint param_1,undefined4 param_2,char *unaff_EBX,uint param_4,char *param_5,char *param_6,char *param_7,uint param_8,undefined4 param_9,char *param_10);
+void __cdecl FUN_006040d7(uint param_1,undefined4 param_2,char *unaff_EBX,undefined4 param_4,char *param_5,undefined4 param_6,char *param_7,uint param_8,undefined4 param_9,char *param_10);
 
 // Original: crt_unknown.c_FUN_006040ed
 // Address: 006040ed

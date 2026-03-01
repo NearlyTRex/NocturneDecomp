@@ -5,14 +5,14 @@ FUNCTION COMPILATION SUMMARY
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6494
-Successful: 5703 (87.8%)
-Failed: 791
+Successful: 5706 (87.9%)
+Failed: 788
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                           1610
-  undeclared_identifier            647
-  format_error                     581
+  other                           1565
+  undeclared_identifier            637
+  format_error                     588
   incompatible_types               391
   syntax_error                      71
   type_error                        21
@@ -22,7 +22,7 @@ ERROR CATEGORIES
   pointer_precision                  2
 
 ====================================================================================================
-CATEGORY: other (1610 errors)
+CATEGORY: other (1565 errors)
 ====================================================================================================
 
   core_hero.cpp_CHero_FUN_004f3960
@@ -61,6 +61,8 @@ CATEGORY: other (1610 errors)
     Line 42: C-style cast from 'CVector3f *' to 'float' is not allowed...
   core_stranger.cpp_CStranger_FUN_005c07b0
     Line 384: C-style cast from 'CWeapon *' to 'float' is not allowed...
+  core_cloth.cpp_CCloth_boneEditor_FUN_0043c880
+    Line 72: C-style cast from 'SClothBone *' to 'float' is not allowed...
   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_0042d090
     Line 41: C-style cast from 'UOrientationVector *' to 'float' is not allowed...
   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredBothPrintf_FUN_00489790
@@ -83,13 +85,11 @@ CATEGORY: other (1610 errors)
     Line 57: C-style cast from 'struct CDemonActor *' to 'float' is not allowed...
   core_msnedit.cpp_CDemonMission_showDifficultyStats_FUN_0053d3b0
     Line 52: C-style cast from 'struct CDemonActor *' to 'float' is not allowed...
-  core_script.cpp_CScript_step_FUN_0055a810
-    Line 2476: C-style cast from 'struct CDemonActor *' to 'float' is not allowed...
 
-  ... and 300 more errors
+  ... and 298 more errors
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (647 errors)
+CATEGORY: undeclared_identifier (637 errors)
 ====================================================================================================
 
   core_actor.cpp_adjustIndentationLevel_FUN_0040aee0
@@ -130,6 +130,8 @@ CATEGORY: undeclared_identifier (647 errors)
     Line 30: use of undeclared identifier 'PTR_s_Left_front_00684480'; did you mean 's_Left_f...
   core_setedit.cpp_CDemonSet_showEditorMenu_FUN_00584940
     Line 49: use of undeclared identifier 'PTR_s_None_006817f0'...
+  core_game.cpp_CGame_processFrame_FUN_004da100
+    Line 287: use of undeclared identifier 'PTR_s_Off_0067b658'...
   core_ghoul.cpp_CGhoul_findDarkWayPoint_FUN_004e63d0
     Line 40: use of undeclared identifier 'PTR_s_darkPoint_0062df3e_0067b930'...
   core_game.cpp_disableUnavailableChapters_FUN_004e1c30
@@ -150,13 +152,11 @@ CATEGORY: undeclared_identifier (647 errors)
     Line 95: use of undeclared identifier '_local_1a4'; did you mean 'local_1a4'?...
   core_stranger.cpp_CStranger_FUN_005be520
     Line 154: use of undeclared identifier '_local_1ecc'; did you mean 'local_1ecc'?...
-  cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_0054b190
-    Line 37: use of undeclared identifier '_transparency_color'; did you mean 'transparency_c...
 
-  ... and 228 more errors
+  ... and 225 more errors
 
 ====================================================================================================
-CATEGORY: format_error (581 errors)
+CATEGORY: format_error (588 errors)
 ====================================================================================================
 
   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50
@@ -164,7 +164,7 @@ CATEGORY: format_error (581 errors)
   core_setedit.cpp_CDemonSet_computeCameraFog_FUN_00581320
     Line 24: format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror...
   core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660
-    Line 121: format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror...
+    Line 124: format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror...
   core_setedit.cpp_CDemonSet_rebuildAllFogAndPVS_FUN_005805a0
     Line 26: format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror...
   core_setedit.cpp_CDemonSet_renderCameraBackdrop_FUN_0057d340
@@ -220,7 +220,7 @@ CATEGORY: format_error (581 errors)
   core_boxactor.cpp_CBoxActor_addFilesToExtract_FUN_00422900
     Line 16: format specifies type 'char *' but the argument has type 'CKeyFramedModel *' [-W...
 
-  ... and 143 more errors
+  ... and 144 more errors
 
 ====================================================================================================
 CATEGORY: incompatible_types (391 errors)
@@ -433,7 +433,7 @@ CATEGORY: lvalue_required (19 errors)
   core_stranger.cpp_CStranger_FUN_005c02b0
     Line 141: cannot take the address of an rvalue of type 'float'...
   core_main.c_initializeGameSystems_FUN_00507a60
-    Line 144: cannot take the address of an rvalue of type 'int'...
+    Line 145: cannot take the address of an rvalue of type 'int'...
   shape_design.c_complexPolygonReduction_FUN_00463b30
     Line 46: cannot take the address of an rvalue of type 'int'...
 
@@ -458,7 +458,7 @@ COMPILATION VS SUSPECT PATTERNS
 ====================================================================================================
 
 Average suspects in successfully compiled functions: 2.21
-Average suspects in failed compilations: 11.26
+Average suspects in failed compilations: 11.22
 
 Functions that compile but have suspect patterns: 1753
 (These may have runtime issues even though syntax is valid)

@@ -3,7 +3,7 @@
     "errors": [
       {
         "category": "other",
-        "column": 16,
+        "column": 18,
         "line": 55,
         "message": "cannot cast from type 'float' to pointer type 'void *'"
       },
@@ -17,13 +17,13 @@
         "category": "undeclared_identifier",
         "column": 61,
         "line": 86,
-        "message": "use of undeclared identifier 'stack0xfffffae4'"
+        "message": "use of undeclared identifier 'stack0xfffffae0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 29,
         "line": 91,
-        "message": "use of undeclared identifier 'stack0xfffffae4'"
+        "message": "use of undeclared identifier 'stack0xfffffae0'"
       },
       {
         "category": "other",
@@ -37,18 +37,18 @@
   },
   "complexity": {
     "assembly_lines": 417,
-    "complexity_score": 172,
+    "complexity_score": 175,
     "cross_reference_count": 1,
     "function_call_count": 29,
     "global_count": 41,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 122,
+    "pseudocode_lines": 125,
     "suspect_count": 4,
     "suspect_types": [
       "stack_ref",
       "unaffected_reg"
     ],
-    "total_lines": 539
+    "total_lines": 542
   },
   "cross_references": [
     {
@@ -574,34 +574,34 @@
   "suspects": [
     {
       "description": "Unaffected register variable",
-      "line": 11,
-      "match": "unaff_EDI",
+      "line": 9,
+      "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "int unaff_EDI;",
+      "text": "int unaff_EBP;",
       "type": "unaffected_reg"
     },
     {
       "description": "Direct stack address reference",
       "line": 79,
-      "match": "&stack0xfffffae4",
+      "match": "&stack0xfffffae0",
       "severity": "moderate",
-      "text": "(this_ptr,g_MouseX,g_MouseY,(int *)&stack0xfffffae4,-1);",
+      "text": "(this_ptr,g_MouseX,g_MouseY,(int *)&stack0xfffffae0,-1);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
       "line": 84,
-      "match": "&stack0xfffffae4",
+      "match": "&stack0xfffffae0",
       "severity": "moderate",
-      "text": "piVar1 = (int *)(&stack0xfffffae4 + iVar3);",
+      "text": "piVar1 = (int *)(&stack0xfffffae0 + iVar3);",
       "type": "stack_ref"
     },
     {
       "description": "Unaffected register variable",
       "line": 86,
-      "match": "unaff_EDI",
+      "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "engine_2d_c_drawTextXY_FUN_00402130(0,y,(char *)(*piVar1 * 0x1a4 + unaff_EDI));",
+      "text": "engine_2d_c_drawTextXY_FUN_00402130(0,y,(char *)(*piVar1 * 0x1a4 + unaff_EBP));",
       "type": "unaffected_reg"
     }
   ]

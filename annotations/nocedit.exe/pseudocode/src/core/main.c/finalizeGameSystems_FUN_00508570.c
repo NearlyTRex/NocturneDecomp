@@ -16,6 +16,7 @@ void __cdecl core_main_c_finalizeGameSystems_FUN_00508570(void)
   int iVar4;
   char *text;
   int iVar5;
+  char local_110 [256];
   
   shape_memdbg_cpp_SMemHead_checkAllMemory_FUN_0050efe0("..\\core\\main.c",0x4f9);
   file_ptr = engine_dosio_c_getFile_FUN_00481a50
@@ -25,9 +26,9 @@ void __cdecl core_main_c_finalizeGameSystems_FUN_00508570(void)
     wincore_winrun_cpp_getTime_FUN_005f2dc0();
     engine_2d_c_clearInputAndWait_FUN_00403260();
     uVar2 = rand();
-    _sprintf(&stack0xfffffef0,"load%d",(uVar2 & 3) + 1);
+    _sprintf(local_110,"load%d",(uVar2 & 3) + 1);
     engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0
-              (&g_LoadingScreenBitmap1,&stack0xfffffef0,0x280,0x1e0);
+              (&g_LoadingScreenBitmap1,local_110,0x280,0x1e0);
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
     engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(&g_LoadingScreenBitmap1,0,0,0xffff);
     iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80

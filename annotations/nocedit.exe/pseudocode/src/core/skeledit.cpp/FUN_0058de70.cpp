@@ -91,10 +91,6 @@ void __cdecl core_skeledit_cpp_FUN_0058de70(void)
   local_98.enable_visualization = 1;
   local_98.padding_size = 2;
   shape_design_c_cramTextureList_FUN_0046bb80(&local_98);
-  local_98.filename[0] = -0x60;
-  local_98.filename[1] = -0x20;
-  local_98.filename[2] = 'X';
-  local_98.filename[3] = '\0';
   engine_texture_cpp_clearTextureCache_FUN_005dd8e0();
   return;
 }

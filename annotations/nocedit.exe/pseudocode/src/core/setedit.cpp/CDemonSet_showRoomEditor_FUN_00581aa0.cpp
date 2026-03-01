@@ -18,6 +18,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showRoomEditor_FUN_00581aa0(CDemonSet *t
   char *pcVar5;
   int iVar6;
   char *pcVar7;
+  CPickList local_c8c;
   CPickList local_8e4;
   CPickList local_53c;
   char local_194 [100];
@@ -174,7 +175,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showRoomEditor_FUN_00581aa0(CDemonSet *t
       } while (cVar1 != '\0');
     }
     else {
-      _sprintf(local_194,"Room size: %d");
+      _sprintf(local_194,"Room size: %d",local_18->reverb_size);
     }
     engine_2d_c_drawText_FUN_00401fd0(local_194,0,0);
     core_dcamera_cpp_CDemonCamera_endScene_FUN_0044cb80(&g_CDemonCameraInstance,0);
@@ -410,22 +411,18 @@ void __cdecl core_setedit_cpp_CDemonSet_showRoomEditor_FUN_00581aa0(CDemonSet *t
     iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_RETURN);
     pSVar2 = local_18;
     if ((iVar6 != 0) && (local_18 != (SRoom *)0x0)) {
-      shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff374);
-      shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff374,"Outside");
-      shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff374,"Small");
-      shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                ((CStrList *)&stack0xfffff374,"Medium (e.g. Mausoleum)");
-      shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                ((CStrList *)&stack0xfffff374,"Large (e.g. Warehouse)");
-      shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                ((CStrList *)&stack0xfffff374,"Humongous");
+      shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_c8c);
+      shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_c8c.base,"Outside");
+      shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_c8c.base,"Small");
+      shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_c8c.base,"Medium (e.g. Mausoleum)");
+      shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_c8c.base,"Large (e.g. Warehouse)");
+      shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_c8c.base,"Humongous");
       iVar6 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                        ((CPickList *)&stack0xfffff374,"Choose room size",
-                         pSVar2->reverb_size,0);
+                        (&local_c8c,"Choose room size",pSVar2->reverb_size,0);
       if (-1 < iVar6) {
         pSVar2->reverb_size = iVar6;
       }
-      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffff374,0);
+      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_c8c,0);
     }
     iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_F1);
     if (iVar6 != 0) {

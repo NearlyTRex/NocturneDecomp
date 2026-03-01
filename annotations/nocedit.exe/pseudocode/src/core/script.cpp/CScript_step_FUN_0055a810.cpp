@@ -1876,7 +1876,7 @@ joined_r0x0055c026:
                                                       iVar6 = (*(((pCVar13->base).vtable._uc)->_uc).
                                                                 hasDoorTarget)(pCVar13);
                                                       if (iVar6 != 0) {
-                                                        local_110 = 1;
+                                                        local_114 = 1;
                                                       }
                                                     }
                                                     else {
@@ -3370,13 +3370,13 @@ LAB_0055f91c:
     }
   }
 LAB_0055a8bb:
-  if ((g_ScriptEventsEnabled != 2) && ((char)local_118->light_type != '\0')) {
+  if ((g_ScriptEventsEnabled != 2) && (*local_11c != '\0')) {
     _sprintf
-              (g_ScriptErrorBuffer,"Extra characters \"%s\" on line %d",local_118,local_120);
+              (g_ScriptErrorBuffer,"Extra characters \"%s\" on line %d",local_11c,local_124);
     return -1;
   }
 LAB_0055a8d4:
-  if (local_110 == 1) {
+  if (local_114 == 1) {
     this_ptr->dialog_wav_time = -1.0;
     iVar6 = g_ScriptEventsEnabled;
     this_ptr->cmd_timer = -1.0;
@@ -3385,9 +3385,9 @@ LAB_0055a8d4:
       return -1;
     }
   }
-  else if (-1 < local_110) {
-    this_ptr->next_cmd = local_10c;
-    return local_110;
+  else if (-1 < local_114) {
+    this_ptr->next_cmd = local_110;
+    return local_114;
   }
-  return local_110;
+  return local_114;
 }

@@ -18,15 +18,15 @@ void __cdecl core_course_cpp_CCourse_preview_FUN_00443bc0(CCourse *this_ptr,CKey
   int *piVar5;
   byte bVar6;
   byte auVar7 [24];
-  byte in_stack_fffffe74 [28];
-  uint in_stack_fffffe90;
+  byte in_stack_fffffe70 [28];
+  uint in_stack_fffffe8c;
+  char *in_stack_fffffe90;
   char *in_stack_fffffe94;
-  char *in_stack_fffffe98;
-  double in_stack_fffffe9c;
-  double in_stack_fffffea4;
-  double in_stack_fffffeac;
-  double in_stack_fffffeb4;
-  uint in_stack_fffffebc;
+  double in_stack_fffffe98;
+  double in_stack_fffffea0;
+  double in_stack_fffffea8;
+  double in_stack_fffffeb0;
+  uint in_stack_fffffeb8;
   uint uVar9;
   double dVar8;
   CCourse *pCVar10;
@@ -140,34 +140,34 @@ void __cdecl core_course_cpp_CCourse_preview_FUN_00443bc0(CCourse *this_ptr,CKey
                 (&output->projected_vertex,(CVector3i *)input);
       pSVar4 = g_CDemonRendererPtr2->vertex_buffer_ptr;
       pSVar3 = pSVar4 + 1;
-      piVar5 = (int *)&stack0xfffffea4;
+      piVar5 = (int *)&stack0xfffffea0;
       for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
         *piVar5 = (pSVar3->projected_vertex).transformed_x;
         pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);
         piVar5 = piVar5 + (uint)bVar6 * -2 + 1;
       }
-      piVar5 = (int *)&stack0xfffffe74;
+      piVar5 = (int *)&stack0xfffffe70;
       for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
         *piVar5 = (pSVar4->projected_vertex).transformed_x;
         pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);
         piVar5 = piVar5 + (uint)bVar6 * -2 + 1;
       }
-      vertex1.v = in_stack_fffffe90;
-      auVar7 = in_stack_fffffe74._0_24_;
+      vertex1.v = in_stack_fffffe8c;
+      auVar7 = in_stack_fffffe70._0_24_;
       vertex1.projected_vertex.transformed_x = auVar7._0_4_;
       vertex1.projected_vertex.transformed_y = auVar7._4_4_;
       vertex1.projected_vertex.transformed_z = auVar7._8_4_;
       vertex1.projected_vertex.inv_z = auVar7._12_4_;
       vertex1.projected_vertex.screen_x = auVar7._16_4_;
       vertex1.projected_vertex.screen_y = auVar7._20_4_;
-      vertex1.u = in_stack_fffffe74._24_4_;
-      vertex1.z = (int)in_stack_fffffe94;
-      vertex1.r = (int)in_stack_fffffe98;
-      vertex1._40_8_ = in_stack_fffffe9c;
-      vertex2.projected_vertex._8_8_ = in_stack_fffffeac;
-      vertex2.projected_vertex._0_8_ = in_stack_fffffea4;
-      vertex2.projected_vertex._16_8_ = in_stack_fffffeb4;
-      vertex2.u = in_stack_fffffebc;
+      vertex1.u = in_stack_fffffe70._24_4_;
+      vertex1.z = (int)in_stack_fffffe90;
+      vertex1.r = (int)in_stack_fffffe94;
+      vertex1._40_8_ = in_stack_fffffe98;
+      vertex2.projected_vertex._8_8_ = in_stack_fffffea8;
+      vertex2.projected_vertex._0_8_ = in_stack_fffffea0;
+      vertex2.projected_vertex._16_8_ = in_stack_fffffeb0;
+      vertex2.u = in_stack_fffffeb8;
       vertex2.v = uVar9;
       vertex2.z = (int)pCVar10;
       vertex2.r = uVar11;
@@ -194,14 +194,14 @@ void __cdecl core_course_cpp_CCourse_preview_FUN_00443bc0(CCourse *this_ptr,CKey
       engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
     }
     dVar8 = (double)local_98.x;
-    in_stack_fffffeb4 = (double)local_80.z;
-    in_stack_fffffeac = (double)local_80.y;
-    in_stack_fffffea4 = (double)local_80.x;
-    in_stack_fffffe9c = (double)local_18;
-    in_stack_fffffe98 = "t=%7.3f, Pos: %7.2f,%7.2f,%7.2f, PBH: %7.4f %7.4f %7.4f";
-    in_stack_fffffe94 = &stack0xfffffed0;
-    in_stack_fffffe90 = 0x443f7f;
-    _sprintf(in_stack_fffffe94,"t=%7.3f, Pos: %7.2f,%7.2f,%7.2f, PBH: %7.4f %7.4f %7.4f");
+    in_stack_fffffeb0 = (double)local_80.z;
+    in_stack_fffffea8 = (double)local_80.y;
+    in_stack_fffffea0 = (double)local_80.x;
+    in_stack_fffffe98 = (double)local_18;
+    in_stack_fffffe94 = "t=%7.3f, Pos: %7.2f,%7.2f,%7.2f, PBH: %7.4f %7.4f %7.4f";
+    in_stack_fffffe90 = &stack0xfffffed0;
+    in_stack_fffffe8c = 0x443f7f;
+    _sprintf(in_stack_fffffe90,"t=%7.3f, Pos: %7.2f,%7.2f,%7.2f, PBH: %7.4f %7.4f %7.4f");
     engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffed0,0,0);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
@@ -225,13 +225,13 @@ void __cdecl core_course_cpp_CCourse_preview_FUN_00443bc0(CCourse *this_ptr,CKey
       local_18 = local_18 + 1.0;
     }
     iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_COMMA);
-    in_stack_fffffebc = SUB84(__BITCAST_UINT64(dVar8),0);
+    in_stack_fffffeb8 = SUB84(__BITCAST_UINT64(dVar8),0);
     if (iVar2 != 0) {
       local_18 = local_18 + -1.0f;
     }
     if (local_24 == 0) {
       core_slew_cpp_CSlew_processInput_FUN_005a20b0((CSlew *)local_cc);
-      in_stack_fffffebc = SUB84(__BITCAST_UINT64(dVar8),0);
+      in_stack_fffffeb8 = SUB84(__BITCAST_UINT64(dVar8),0);
     }
     if (local_28 == 0) {
       local_18 = local_30 * (float)20 + local_18;

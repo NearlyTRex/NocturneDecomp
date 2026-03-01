@@ -4,16 +4,16 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  decompiler_intrinsic            6517 ( 26.0%)
-  pointer_cast                    5896 ( 23.5%)
-  stack_param                     4814 ( 19.2%)
-  unknown_field                   1580 (  6.3%)
-  unnamed_param                    945 (  3.8%)
+  decompiler_intrinsic            6527 ( 26.1%)
+  pointer_cast                    5900 ( 23.6%)
+  stack_param                     4797 ( 19.1%)
+  unknown_field                   1530 (  6.1%)
+  unnamed_param                    935 (  3.7%)
   special_crt_function             636 (  2.5%)
-  stack_ref                        631 (  2.5%)
-  unaffected_reg                   539 (  2.1%)
+  stack_ref                        608 (  2.4%)
+  unaffected_reg                   547 (  2.2%)
+  register_param                   370 (  1.5%)
   param_count_too_few              368 (  1.5%)
-  register_param                   361 (  1.4%)
   fpu_register_input               327 (  1.3%)
   negative_offset                  281 (  1.1%)
   nonstandard_int                  271 (  1.1%)
@@ -21,16 +21,16 @@ SUSPECT TYPE COUNTS
   undefined_data                   252 (  1.0%)
   unresolved_funcptr               208 (  0.8%)
   extra_output                     174 (  0.7%)
-  stack_alignment_array            138 (  0.5%)
-  warning_type_propagation         138 (  0.5%)
-  sub84_truncation                 123 (  0.5%)
-  suspect_float                    114 (  0.5%)
+  warning_type_propagation         139 (  0.6%)
+  stack_alignment_array            138 (  0.6%)
+  sub84_truncation                 132 (  0.5%)
+  suspect_float                    113 (  0.5%)
   param_count_too_many              86 (  0.3%)
   warning_unreachable               79 (  0.3%)
   unknown_type                      53 (  0.2%)
   warning_unmapped_variable         36 (  0.1%)
   mmx_assembly                      34 (  0.1%)
-  format_string_mismatch            32 (  0.1%)
+  format_string_mismatch            31 (  0.1%)
   eflags_input                      26 (  0.1%)
   special_math_intrinsic            24 (  0.1%)
   undefined_ram                     24 (  0.1%)
@@ -56,7 +56,7 @@ SUSPECT TYPE COUNTS
   special_entry_point                1 (  0.0%)
 
 ====================================================================================================
-TYPE: decompiler_intrinsic (6517 occurrences)
+TYPE: decompiler_intrinsic (6527 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -67,7 +67,7 @@ Unique patterns:
    315x  ABS
    158x  CARRY4
    151x  CONCAT11
-   123x  SUB84
+   132x  SUB84
    108x  CONCAT22
    106x  fcos
    105x  fsin
@@ -98,19 +98,19 @@ Example functions:
     ROUND(ROUND((float)(byte)g_SourcePaletteData[iVar3] * fVar2 +...
 
 ====================================================================================================
-TYPE: pointer_cast (5896 occurrences)
+TYPE: pointer_cast (5900 occurrences)
 ====================================================================================================
 
 Unique patterns:
   2200x  (uint *)((int)
-  1283x  (int *)((int)
+  1284x  (int *)((int)
    361x  (SRenderVertex *)((int)
-   344x  (float *)((int)
+   348x  (float *)((int)
    281x  (CMatrix3x4f *)((int)
    222x  (double *)((int)
-   221x  (void *)((int)
+   219x  (void *)((int)
    190x  (byte *)((int)
-    97x  (char *)((int)
+    98x  (char *)((int)
     84x  (ushort *)((int)
     61x  (short *)((int)
     49x  (CVector3f *)((int)
@@ -136,30 +136,30 @@ Example functions:
     piVar1 = (int *)((int)g_ScreenBufferArray + iVar4);...
 
 ====================================================================================================
-TYPE: stack_param (4814 occurrences)
+TYPE: stack_param (4797 occurrences)
 ====================================================================================================
 
 Unique patterns:
   1702x  in_stack_00000008
   1051x  in_stack_00000004
-   540x  in_stack_0000000c
-   221x  in_stack_00000010
-   106x  in_stack_00000014
-    69x  in_stack_0000001c
+   533x  in_stack_0000000c
+   220x  in_stack_00000010
+   103x  in_stack_00000014
+    67x  in_stack_0000001c
     63x  in_stack_00000018
-    61x  in_stack_fffffd68
+    61x  in_stack_fffffd64
     48x  in_stack_fffffc88
     46x  in_stack_ffffff68
     39x  in_stack_ffffff54
-    33x  in_stack_fffffe70
+    36x  in_stack_fffffe70
+    25x  in_stack_fffffd80
     24x  in_stack_fffffec4
-    22x  in_stack_fffffd80
-    22x  in_stack_fffffd84
     20x  in_stack_ffffff70
     19x  in_stack_ffffff74
+    19x  in_stack_fffffd7c
     19x  in_stack_fffffe10
-    17x  in_stack_fffffebc
     16x  in_stack_ffffff94
+    16x  in_stack_fffffd78
 
 Example functions:
   cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_0054c1e0
@@ -190,21 +190,21 @@ Example functions:
     char **in_stack_00000010;...
 
 ====================================================================================================
-TYPE: unknown_field (1580 occurrences)
+TYPE: unknown_field (1530 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   563x  ._0_4_
-   506x  ._4_4_
-    84x  ._8_4_
+   544x  ._0_4_
+   493x  ._4_4_
+    80x  ._8_4_
     59x  ._2_2_
-    59x  ._12_4_
-    55x  ._16_4_
+    55x  ._12_4_
+    50x  ._16_4_
     33x  ._0_2_
     29x  ._0_1_
     28x  ._24_4_
-    27x  ._20_4_
     22x  ._1_1_
+    22x  ._20_4_
     17x  ._0_24_
     17x  ._28_4_
     16x  ._3_1_
@@ -232,19 +232,19 @@ Example functions:
     if (y._4_1_ < 2) {...
 
 ====================================================================================================
-TYPE: unnamed_param (945 occurrences)
+TYPE: unnamed_param (935 occurrences)
 ====================================================================================================
 
 Unique patterns:
    288x  param_2
-   246x  param_1
+   247x  param_1
    127x  param_3
-    91x  param_4
+    82x  param_4
     46x  param1
-    40x  param_5
+    39x  param_5
     17x  param0
     16x  param3
-    14x  param_6
+    13x  param_6
     13x  param2
     12x  param4
     11x  param5
@@ -340,7 +340,7 @@ Example functions:
     CRT function (runtime support) at 00607e64...
 
 ====================================================================================================
-TYPE: stack_ref (631 occurrences)
+TYPE: stack_ref (608 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -358,12 +358,12 @@ Unique patterns:
     13x  &stack0xfffff790
     12x  &stack0xfffffff4
     12x  &stack0xffffffd4
-    12x  &stack0xfffffd68
-    12x  &stack0xfffffd38
+    12x  &stack0xfffffd64
+    12x  &stack0xfffffd34
     11x  &stack0xffffffec
+    11x  &stack0xfffffe90
     10x  &stack0xffffffdc
     10x  &stack0xffffff58
-     9x  &stack0xffffffe0
 
 Example functions:
   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_00489c40
@@ -394,14 +394,14 @@ Example functions:
     *(int *)(&stack0xfffffff4 + iVar3) = iVar3;...
 
 ====================================================================================================
-TYPE: unaffected_reg (539 occurrences)
+TYPE: unaffected_reg (547 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   187x  unaff_ESI
-   124x  unaff_EDI
-   113x  unaff_EBX
+   194x  unaff_ESI
+   128x  unaff_EDI
    111x  unaff_EBP
+   110x  unaff_EBX
      4x  unaff_EAX
 
 Example functions:
@@ -415,6 +415,42 @@ Example functions:
     HANDLE unaff_ESI;...
   crt_stdlib.c_memory_swap_FUN_005fdf10
     uint *unaff_ESI;...
+
+====================================================================================================
+TYPE: register_param (370 occurrences)
+====================================================================================================
+
+Unique patterns:
+   141x  in_EAX
+    85x  in_ECX
+    77x  in_EDX
+    20x  in_DS
+    14x  in_AX
+     4x  in_AL
+     3x  in_DX
+     2x  in_CF
+     2x  in_PF
+     2x  in_AF
+     2x  in_ZF
+     2x  in_SF
+     2x  in_TF
+     2x  in_IF
+     2x  in_OF
+     2x  in_NT
+     2x  in_AC
+     2x  in_VIF
+     2x  in_VIP
+     2x  in_ID
+
+Example functions:
+  cockpit_drawsurf.cpp_CDrawSurface_clipLine_FUN_00487e20
+    int in_EAX;...
+  crt_stdlib.c_memory_swap_FUN_005fdf10
+    uint in_ECX;...
+  crt_cpp.c_reportPureVirtualError_FUN_00605b23
+    ushort in_DS;...
+  crt_memory.c___stosd_FUN_00603b37
+    uint in_ECX;...
 
 ====================================================================================================
 TYPE: param_count_too_few (368 occurrences)
@@ -503,42 +539,6 @@ Example functions:
     Function declares 0 params but call sites push 4 (4 missing)...
   crt_io.c_CheckFileHandleAvailability_FUN_00608940
     Function declares 0 params but call sites push 4 (4 missing)...
-
-====================================================================================================
-TYPE: register_param (361 occurrences)
-====================================================================================================
-
-Unique patterns:
-   132x  in_EAX
-    85x  in_ECX
-    77x  in_EDX
-    20x  in_DS
-    14x  in_AX
-     4x  in_AL
-     3x  in_DX
-     2x  in_CF
-     2x  in_PF
-     2x  in_AF
-     2x  in_ZF
-     2x  in_SF
-     2x  in_TF
-     2x  in_IF
-     2x  in_OF
-     2x  in_NT
-     2x  in_AC
-     2x  in_VIF
-     2x  in_VIP
-     2x  in_ID
-
-Example functions:
-  cockpit_drawsurf.cpp_CDrawSurface_clipLine_FUN_00487e20
-    int in_EAX;...
-  crt_stdlib.c_memory_swap_FUN_005fdf10
-    uint in_ECX;...
-  crt_cpp.c_reportPureVirtualError_FUN_00605b23
-    ushort in_DS;...
-  crt_memory.c___stosd_FUN_00603b37
-    uint in_ECX;...
 
 ====================================================================================================
 TYPE: fpu_register_input (327 occurrences)
@@ -653,7 +653,7 @@ Example functions:
   crt_math.c_dmul_FUN_0060e0b9
     uVar18 = CONCAT31((int3)(uVar18 >> 8),1);...
   crt_unknown.c_FUN_006040d7
-    uVar1 = (ushort)CONCAT31((int3)param_4,(char)(param_4 >> 8));...
+    uVar1 = (ushort)CONCAT31((int3)in_EAX,(char)(in_EAX >> 8));...
   crt_unknown.c_FUN_006040ed
     uVar1 = (ushort)CONCAT31((int3)in_EAX,(char)(in_EAX >> 8));...
   engine_font.cpp_drawAlphaBlendedPixels_FUN_004ce240
@@ -887,73 +887,11 @@ Example functions:
     BOOL extraout_EAX;...
 
 ====================================================================================================
-TYPE: stack_alignment_array (138 occurrences)
+TYPE: warning_type_propagation (139 occurrences)
 ====================================================================================================
 
 Unique patterns:
-     9x  aiStackY_34
-     5x  aiStackY_1010
-     5x  aiStackY_1028
-     4x  uStackY_44
-     4x  auStackY_1804
-     4x  aiStackY_1004
-     3x  aiStackY_1000
-     3x  aiStackY_1018
-     3x  afStackY_1870
-     3x  afStackY_1000
-     2x  uStackY_38
-     2x  aiStackY_1038
-     2x  aiStackY_10d4
-     2x  aiStackY_106c
-     2x  afStackY_17f8
-     2x  aiStackY_101c
-     2x  aiStackY_10d8
-     2x  afStackY_1860
-     2x  afStackY_1850
-     2x  aiStackY_1024
-
-Example functions:
-  cockpit_drawsurf.cpp_CDrawSurface_fillPoly_FUN_00488cd0
-    int aiStackY_1818 [1483];...
-  crt_thread.c_create_thread_with_sync_FUN_0060f960
-    char acStackY_1034 [4048];...
-  crt_thread.c_threadStartupWrapper_FUN_0060f8c0
-    uint uStackY_38;...
-  crt_string.c_parseFloatString_FUN_00605b9b
-    uint uStackY_44;...
-  support_trisock.cpp_performSocketOperation_FUN_005e1ca0
-    uint auStackY_1808 [1521];...
-  support_trisock.cpp_connectSocket_FUN_005e1bd0
-    uint auStackY_1804 [1524];...
-  support_trisock.cpp_buildSockaddrIn_FUN_005e19d0
-    uint auStackY_17f4 [1524];...
-  engine_matrix.c_normalizeVector3DFixed_FUN_0050d970
-    int aiStackY_1000 [1017];...
-  engine_matrix.c_projectToScreen_FUN_0050e5b0
-    int aiStackY_1038 [1017];...
-  engine_light.cpp_calculatePhongLighting_FUN_00505530
-    int aiStackY_100c [1017];...
-  engine_3d.c_renderPolygonPerspectiveNormalized_FUN_004055b0
-    int aiStackY_1010 [1016];...
-  engine_3d.c_renderPolygonUVTextureNormalized_FUN_00405430
-    int aiStackY_1010 [1016];...
-  engine_3d.c_renderPolygonUVTextureEnable_FUN_00405350
-    int aiStackY_1010 [1016];...
-  engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10
-    time_t atStackY_2e68 [2034];...
-  engine_fileio.cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0
-    time_t atStackY_30f4 [2034];...
-  core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470
-    int aiStackY_208c [1986];...
-  core_dcamera.cpp_CDemonCamera_computeVisibleFrustumBounds_FUN_00454060
-    int aiStackY_10d4 [1015];...
-
-====================================================================================================
-TYPE: warning_type_propagation (138 occurrences)
-====================================================================================================
-
-Unique patterns:
-   138x  WARNING: Type propagation algorithm not settling
+   139x  WARNING: Type propagation algorithm not settling
 
 Example functions:
   crt_stdio.c_FormatEngine_FUN_00602950
@@ -1018,11 +956,73 @@ Example functions:
     /* WARNING: Type propagation algorithm not settling */...
 
 ====================================================================================================
-TYPE: sub84_truncation (123 occurrences)
+TYPE: stack_alignment_array (138 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   123x  SUB84(
+     9x  aiStackY_34
+     5x  aiStackY_1010
+     5x  aiStackY_1028
+     4x  uStackY_44
+     4x  auStackY_1804
+     4x  aiStackY_1004
+     3x  aiStackY_1000
+     3x  aiStackY_1018
+     3x  afStackY_1870
+     3x  afStackY_1000
+     2x  uStackY_38
+     2x  aiStackY_1038
+     2x  aiStackY_10d4
+     2x  aiStackY_106c
+     2x  afStackY_17f8
+     2x  aiStackY_101c
+     2x  aiStackY_10d8
+     2x  afStackY_1860
+     2x  afStackY_1850
+     2x  aiStackY_1024
+
+Example functions:
+  cockpit_drawsurf.cpp_CDrawSurface_fillPoly_FUN_00488cd0
+    int aiStackY_1818 [1483];...
+  crt_thread.c_create_thread_with_sync_FUN_0060f960
+    char acStackY_1034 [4048];...
+  crt_thread.c_threadStartupWrapper_FUN_0060f8c0
+    uint uStackY_38;...
+  crt_string.c_parseFloatString_FUN_00605b9b
+    uint uStackY_44;...
+  support_trisock.cpp_performSocketOperation_FUN_005e1ca0
+    uint auStackY_1808 [1521];...
+  support_trisock.cpp_connectSocket_FUN_005e1bd0
+    uint auStackY_1804 [1524];...
+  support_trisock.cpp_buildSockaddrIn_FUN_005e19d0
+    uint auStackY_17f4 [1524];...
+  engine_matrix.c_normalizeVector3DFixed_FUN_0050d970
+    int aiStackY_1000 [1017];...
+  engine_matrix.c_projectToScreen_FUN_0050e5b0
+    int aiStackY_1038 [1017];...
+  engine_light.cpp_calculatePhongLighting_FUN_00505530
+    int aiStackY_100c [1017];...
+  engine_3d.c_renderPolygonPerspectiveNormalized_FUN_004055b0
+    int aiStackY_1010 [1016];...
+  engine_3d.c_renderPolygonUVTextureNormalized_FUN_00405430
+    int aiStackY_1010 [1016];...
+  engine_3d.c_renderPolygonUVTextureEnable_FUN_00405350
+    int aiStackY_1010 [1016];...
+  engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10
+    time_t atStackY_2e68 [2034];...
+  engine_fileio.cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0
+    time_t atStackY_30f4 [2034];...
+  core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470
+    int aiStackY_208c [1986];...
+  core_dcamera.cpp_CDemonCamera_computeVisibleFrustumBounds_FUN_00454060
+    int aiStackY_10d4 [1015];...
+
+====================================================================================================
+TYPE: sub84_truncation (132 occurrences)
+====================================================================================================
+
+Unique patterns:
+   132x  SUB84(
 
 Example functions:
   crt_math.c_dadd_FUN_0060defc
@@ -1063,11 +1063,11 @@ Example functions:
     channel_buffers = SUB84(__BITCAST_UINT64(dVar14),0);...
 
 ====================================================================================================
-TYPE: suspect_float (114 occurrences)
+TYPE: suspect_float (113 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    19x  1.4013e-45
+    20x  1.4013e-45
     18x  1.12104e-44
      9x  2.8026e-45
      5x  3.57331e-43
@@ -1082,11 +1082,11 @@ Unique patterns:
      2x  1.4013e-43
      2x  2.24208e-44
      2x  3.58732e-43
-     1x  8.10605e-39
      1x  8.106091e-39
-     1x  8.106132e-39
-     1x  4.06377e-44
      1x  8.106946e-39
+     1x  8.107024e-39
+     1x  7.258603e-39
+     1x  8.621821e-39
 
 Example functions:
   core_netgame.cpp_CNetGame_syncPlayers_FUN_005401e0
@@ -1096,7 +1096,7 @@ Example functions:
   core_inv.cpp_CInventory_updateInventory_FUN_004ffad0
     if ((pCVar3 != (CDemonActor *)0x0) && (pCVar3[2].location.position.y != 2.8026e-...
   core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170
-    in_stack_fffffdbc = 8.10605e-39;...
+    in_stack_fffffdc0 = 8.106091e-39;...
   core_gun.cpp_CGun_fire_FUN_004f0350
     CStack_108.m[0].y = 1.41531e-43;...
   core_hero.cpp_CHero_ctor_FUN_004f2340
@@ -1416,7 +1416,7 @@ Example functions:
     Function uses MMX instructions...
 
 ====================================================================================================
-TYPE: format_string_mismatch (32 occurrences)
+TYPE: format_string_mismatch (31 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -1472,8 +1472,8 @@ Example functions:
     Format string expects 2 args but got 0...
   core_event.cpp_CEventList_executeCommand_FUN_004aacc0
     Format string expects 1 args but got 0...
-  core_game.cpp_CGame_processFrame_FUN_004da100
-    Format string expects 1 args but got 0...
+  core_game.cpp_CGame_displayBitmap_FUN_004e2890
+    Format string expects 2 args but got 0...
 
 ====================================================================================================
 TYPE: eflags_input (26 occurrences)

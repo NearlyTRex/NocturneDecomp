@@ -2,10 +2,10 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
-        "column": 42,
+        "category": "format_error",
+        "column": 45,
         "line": 194,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+        "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "other",
@@ -121,13 +121,13 @@
   },
   "complexity": {
     "assembly_lines": 2710,
-    "complexity_score": 1626,
+    "complexity_score": 1539,
     "cross_reference_count": 1,
     "function_call_count": 96,
     "global_count": 107,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 1021,
-    "suspect_count": 57,
+    "pseudocode_lines": 1004,
+    "suspect_count": 50,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
@@ -137,7 +137,7 @@
       "unknown_field",
       "unnamed_param"
     ],
-    "total_lines": 3731
+    "total_lines": 3714
   },
   "cross_references": [
     {
@@ -1916,7 +1916,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 10,
+      "line": 11,
       "match": "extraout_EAX",
       "severity": "moderate",
       "text": "CDemonActor *extraout_EAX;",
@@ -1924,7 +1924,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 12,
+      "line": 13,
       "match": "extraout_EAX_00",
       "severity": "moderate",
       "text": "CDemonActor *extraout_EAX_00;",
@@ -1932,7 +1932,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 26,
       "match": "param5",
       "severity": "mild",
       "text": "UOrientationVector *param5;",
@@ -1940,10 +1940,10 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 26,
-      "match": "in_stack_fffff698",
+      "line": 27,
+      "match": "in_stack_fffff64c",
       "severity": "moderate",
-      "text": "CDemonSet *in_stack_fffff698;",
+      "text": "CDemonMission *in_stack_fffff64c;",
       "type": "stack_param"
     },
     {
@@ -1983,7 +1983,7 @@
       "line": 200,
       "match": "(CMatrix3x3f *)((int)",
       "severity": "mild",
-      "text": "pCVar8 = (CMatrix3x3f *)((int)pCVar8 + ((uint)bVar13 * -2 + 1) * 4);",
+      "text": "pCVar9 = (CMatrix3x3f *)((int)pCVar9 + ((uint)bVar14 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
@@ -1991,7 +1991,7 @@
       "line": 208,
       "match": "(CMatrix3x3f *)((int)",
       "severity": "mild",
-      "text": "pCVar8 = (CMatrix3x3f *)((int)pCVar8 + ((uint)bVar13 * -2 + 1) * 4);",
+      "text": "pCVar9 = (CMatrix3x3f *)((int)pCVar9 + ((uint)bVar14 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
@@ -1999,7 +1999,7 @@
       "line": 212,
       "match": "._12_4_",
       "severity": "mild",
-      "text": "local_170._12_4_ = pCVar4->x;",
+      "text": "local_170._12_4_ = pCVar5->x;",
       "type": "unknown_field"
     },
     {
@@ -2095,7 +2095,7 @@
       "line": 262,
       "match": "._12_4_",
       "severity": "mild",
-      "text": "local_170._12_4_ = (pCVar5->orient).vec.x;",
+      "text": "local_170._12_4_ = (pCVar6->orient).vec.x;",
       "type": "unknown_field"
     },
     {
@@ -2223,7 +2223,7 @@
       "line": 615,
       "match": "extraout_EAX_00",
       "severity": "moderate",
-      "text": "pCVar5 = extraout_EAX_00;",
+      "text": "pCVar6 = extraout_EAX_00;",
       "type": "extra_output"
     },
     {
@@ -2231,36 +2231,20 @@
       "line": 620,
       "match": "extraout_EAX",
       "severity": "moderate",
-      "text": "pCVar5 = extraout_EAX;",
+      "text": "pCVar6 = extraout_EAX;",
       "type": "extra_output"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 734,
-      "match": "in_stack_fffff698",
+      "line": 727,
+      "match": "in_stack_fffff64c",
       "severity": "moderate",
-      "text": "(this_ptr,(CDemonMission *)in_stack_fffff698);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 738,
-      "match": "in_stack_fffff698",
-      "severity": "moderate",
-      "text": "in_stack_fffff698 = (CDemonSet *)g_CKeysPtr;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 741,
-      "match": "in_stack_fffff698",
-      "severity": "moderate",
-      "text": "in_stack_fffff698 = (CDemonSet *)0x53ab69;",
+      "text": "core_msnedit_cpp_CDemonMission_importActorsFrom_FUN_0053b9f0(this_ptr,in_stack_fffff64c);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 805,
+      "line": 795,
       "match": "&stack0xfffff64c",
       "severity": "moderate",
       "text": "shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff64c);",
@@ -2268,15 +2252,23 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 810,
+      "line": 800,
       "match": "&stack0xfffff64c",
       "severity": "moderate",
-      "text": "((CStrList *)&stack0xfffff64c,pCVar5->actor_name);",
+      "text": "((CStrList *)&stack0xfffff64c,pCVar6->actor_name);",
       "type": "stack_ref"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 803,
+      "match": "in_stack_fffff64c",
+      "severity": "moderate",
+      "text": "if ((int)in_stack_fffff64c < 1) break;",
+      "type": "stack_param"
+    },
+    {
       "description": "Direct stack address reference",
-      "line": 814,
+      "line": 804,
       "match": "&stack0xfffff64c",
       "severity": "moderate",
       "text": "shape_edittool_cpp_CStrList_sort_FUN_004a2ec0((CStrList *)&stack0xfffff64c);",
@@ -2284,23 +2276,23 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 817,
+      "line": 806,
       "match": "&stack0xfffff64c",
       "severity": "moderate",
-      "text": "((CPickList *)&stack0xfffff64c,\"Select actor to unhide\",iVar6",
+      "text": "((CPickList *)&stack0xfffff64c,\"Select actor to unhide\",",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 821,
+      "line": 810,
       "match": "&stack0xfffff64c",
       "severity": "moderate",
-      "text": "((CStrList *)&stack0xfffff64c,iVar6);",
+      "text": "((CStrList *)&stack0xfffff64c,iVar11);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 829,
+      "line": 818,
       "match": "&stack0xfffff64c",
       "severity": "moderate",
       "text": "shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffff64c,0);",
@@ -2308,59 +2300,11 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 836,
+      "line": 825,
       "match": "&stack0xfffff64c",
       "severity": "moderate",
       "text": "shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffff64c,0);",
       "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 902,
-      "match": "in_stack_fffff698",
-      "severity": "moderate",
-      "text": "in_stack_fffff698 = (CDemonSet *)0x53aa3e;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 913,
-      "match": "in_stack_fffff698",
-      "severity": "moderate",
-      "text": "in_stack_fffff698 = (CDemonSet *)this_ptr;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 928,
-      "match": "in_stack_fffff698",
-      "severity": "moderate",
-      "text": "in_stack_fffff698 = (CDemonSet *)0x53acfa;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 939,
-      "match": "in_stack_fffff698",
-      "severity": "moderate",
-      "text": "in_stack_fffff698 = pCVar15;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 946,
-      "match": "in_stack_fffff698",
-      "severity": "moderate",
-      "text": "in_stack_fffff698 = (CDemonSet *)g_CKeysPtr;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 973,
-      "match": "in_stack_fffff698",
-      "severity": "moderate",
-      "text": "in_stack_fffff698 = (CDemonSet *)g_CKeysPtr;",
-      "type": "stack_param"
     }
   ]
 }

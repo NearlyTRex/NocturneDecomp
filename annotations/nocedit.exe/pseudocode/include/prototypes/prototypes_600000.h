@@ -150,7 +150,7 @@ void __cdecl crt_unknown_c_CondCallDoNothing_FUN_00603ccc(void);
 void __cdecl crt_unknown_c_FUN_00603d60(void);
 void __cdecl crt_unknown_c_FUN_00603dc8(void);
 void __cdecl crt_unknown_c_FUN_0060403f(undefined4 param_1,float10 *param_2,undefined4 param_3,char *param_4,uint param_5, char *param_6,char *param_7,char *param_8,uint param_9,undefined4 param_10, char *param_11);
-void __cdecl crt_unknown_c_FUN_006040d7(uint param_1,undefined4 param_2,char *unaff_EBX,uint param_4,char *param_5, char *param_6,char *param_7,uint param_8,undefined4 param_9,char *param_10);
+void __cdecl crt_unknown_c_FUN_006040d7(uint param_1,undefined4 param_2,char *unaff_EBX,undefined4 param_4,char *param_5, undefined4 param_6,char *param_7,uint param_8,undefined4 param_9,char *param_10);
 void __cdecl crt_unknown_c_FUN_006040ed(uint param_1,undefined4 param_2,char *unaff_EBX,undefined4 param_4,char *param_5);
 void __cdecl crt_unknown_c_FUN_00604104(ushort param_1,undefined4 param_2,char *unaff_EBX);
 void crt_unknown_c_FUN_0060411c (undefined4 param_1,undefined4 param_2,undefined4 param_3,float10 *param_4, undefined4 param_5,undefined4 param_6,undefined4 param_7,char *param_8, undefined4 param_9,char *param_10,uint param_11,undefined4 param_12,char *param_13);

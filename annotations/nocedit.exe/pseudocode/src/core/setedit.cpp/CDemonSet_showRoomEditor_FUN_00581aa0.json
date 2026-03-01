@@ -4,13 +4,7 @@
       {
         "category": "other",
         "column": 18,
-        "line": 89,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 18,
-        "line": 108,
+        "line": 90,
         "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
       },
       {
@@ -26,16 +20,16 @@
         "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 10,
-        "line": 114,
-        "message": "use of undeclared identifier 'stack0x00000000'"
+        "category": "other",
+        "column": 18,
+        "line": 111,
+        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
       },
       {
-        "category": "other",
-        "column": 57,
+        "category": "undeclared_identifier",
+        "column": 10,
         "line": 115,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
+        "message": "use of undeclared identifier 'stack0x00000000'"
       },
       {
         "category": "other",
@@ -51,14 +45,8 @@
       },
       {
         "category": "other",
-        "column": 39,
-        "line": 177,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 254,
+        "column": 57,
+        "line": 118,
         "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
       },
       {
@@ -76,13 +64,13 @@
       {
         "category": "other",
         "column": 19,
-        "line": 262,
+        "line": 257,
         "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
       },
       {
         "category": "other",
-        "column": 49,
-        "line": 268,
+        "column": 19,
+        "line": 263,
         "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
       },
       {
@@ -99,8 +87,8 @@
       },
       {
         "category": "other",
-        "column": 54,
-        "line": 370,
+        "column": 49,
+        "line": 271,
         "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
       },
       {
@@ -114,6 +102,12 @@
         "column": 54,
         "line": 372,
         "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 54,
+        "line": 373,
+        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
       }
     ],
     "success": false,
@@ -121,20 +115,20 @@
   },
   "complexity": {
     "assembly_lines": 1372,
-    "complexity_score": 765,
+    "complexity_score": 682,
     "cross_reference_count": 0,
     "function_call_count": 36,
     "global_count": 58,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 445,
-    "suspect_count": 30,
+    "pseudocode_lines": 442,
+    "suspect_count": 22,
     "suspect_types": [
       "pointer_cast",
       "stack_ref",
       "undefined_data",
       "unknown_field"
     ],
-    "total_lines": 1817
+    "total_lines": 1814
   },
   "cross_references": [],
   "function": {
@@ -1160,7 +1154,7 @@
   "suspects": [
     {
       "description": "Unknown/mangled field access",
-      "line": 82,
+      "line": 83,
       "match": "._12_4_",
       "severity": "mild",
       "text": "local_108._12_4_ = local_a0;",
@@ -1168,7 +1162,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 101,
+      "line": 102,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_108._0_4_ = local_58;",
@@ -1176,7 +1170,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 102,
+      "line": 103,
       "match": "._4_4_",
       "severity": "mild",
       "text": "local_108._4_4_ = local_54;",
@@ -1184,7 +1178,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 103,
+      "line": 104,
       "match": "._8_4_",
       "severity": "mild",
       "text": "local_108._8_4_ = local_50;",
@@ -1192,7 +1186,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 107,
+      "line": 108,
       "match": "&stack0x00000000",
       "severity": "moderate",
       "text": "if (&stack0x00000000 != g_CDemonCameraInstance.camera_name + 0xcc) {",
@@ -1200,7 +1194,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 108,
+      "line": 109,
       "match": "._0_4_",
       "severity": "mild",
       "text": "g_CDemonCameraInstance.base.position.x = local_108._0_4_;",
@@ -1208,7 +1202,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 109,
+      "line": 110,
       "match": "._4_4_",
       "severity": "mild",
       "text": "g_CDemonCameraInstance.base.position.y = local_108._4_4_;",
@@ -1216,7 +1210,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 110,
+      "line": 111,
       "match": "._8_4_",
       "severity": "mild",
       "text": "g_CDemonCameraInstance.base.position.z = local_108._8_4_;",
@@ -1224,7 +1218,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 151,
+      "line": 152,
       "match": "(CMatrix3x3f *)((int)",
       "severity": "mild",
       "text": "local_14 = (CMatrix3x3f *)((int)(local_14 + 1) + 0x20);",
@@ -1232,7 +1226,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 247,
+      "line": 248,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_ec._0_4_ = (pSVar2->position).x;",
@@ -1240,7 +1234,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 248,
+      "line": 249,
       "match": "._4_4_",
       "severity": "mild",
       "text": "local_ec._4_4_ = (pSVar2->position).y;",
@@ -1248,7 +1242,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 249,
+      "line": 250,
       "match": "._8_4_",
       "severity": "mild",
       "text": "local_ec._8_4_ = (pSVar2->position).z;",
@@ -1256,7 +1250,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 255,
+      "line": 256,
       "match": "._12_4_",
       "severity": "mild",
       "text": "local_ec._12_4_ = pCVar3->x;",
@@ -1264,7 +1258,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 261,
+      "line": 262,
       "match": "._0_4_",
       "severity": "mild",
       "text": "(pSVar2->position).x = (float)local_ec._0_4_;",
@@ -1272,7 +1266,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 262,
+      "line": 263,
       "match": "._4_4_",
       "severity": "mild",
       "text": "(pSVar2->position).y = (float)local_ec._4_4_;",
@@ -1280,7 +1274,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 263,
+      "line": 264,
       "match": "._8_4_",
       "severity": "mild",
       "text": "(pSVar2->position).z = (float)local_ec._8_4_;",
@@ -1288,7 +1282,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 353,
+      "line": 354,
       "match": "DAT_03365cbc",
       "severity": "mild",
       "text": "(&local_53c,\"Create new room\",DAT_03365cbc,0);",
@@ -1296,7 +1290,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 358,
+      "line": 359,
       "match": "DAT_03365cbc",
       "severity": "mild",
       "text": "DAT_03365cbc = iVar6;",
@@ -1304,7 +1298,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 363,
+      "line": 364,
       "match": "._0_4_",
       "severity": "mild",
       "text": "(local_18->position).x = (float)local_108._0_4_;",
@@ -1312,7 +1306,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 364,
+      "line": 365,
       "match": "._4_4_",
       "severity": "mild",
       "text": "(local_18->position).y = (float)local_108._4_4_;",
@@ -1320,7 +1314,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 365,
+      "line": 366,
       "match": "._8_4_",
       "severity": "mild",
       "text": "(local_18->position).z = (float)local_108._8_4_;",
@@ -1328,75 +1322,11 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 375,
+      "line": 376,
       "match": "DAT_03365cbc",
       "severity": "mild",
       "text": "local_18->reverb_size = DAT_03365cbc;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 406,
-      "match": "&stack0xfffff374",
-      "severity": "moderate",
-      "text": "shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff374);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 407,
-      "match": "&stack0xfffff374",
-      "severity": "moderate",
-      "text": "shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff374,\"Outside\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 408,
-      "match": "&stack0xfffff374",
-      "severity": "moderate",
-      "text": "shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff374,\"Small\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 410,
-      "match": "&stack0xfffff374",
-      "severity": "moderate",
-      "text": "((CStrList *)&stack0xfffff374,\"Medium (e.g. Mausoleum)\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 412,
-      "match": "&stack0xfffff374",
-      "severity": "moderate",
-      "text": "((CStrList *)&stack0xfffff374,\"Large (e.g. Warehouse)\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 414,
-      "match": "&stack0xfffff374",
-      "severity": "moderate",
-      "text": "((CStrList *)&stack0xfffff374,\"Humongous\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 416,
-      "match": "&stack0xfffff374",
-      "severity": "moderate",
-      "text": "((CPickList *)&stack0xfffff374,\"Choose room size\",",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 421,
-      "match": "&stack0xfffff374",
-      "severity": "moderate",
-      "text": "shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffff374,0);",
-      "type": "stack_ref"
     }
   ]
 }

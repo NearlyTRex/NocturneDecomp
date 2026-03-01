@@ -1,35 +1,20 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 28,
-        "message": "use of undeclared identifier 'stack0xfffffef0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 41,
-        "line": 30,
-        "message": "use of undeclared identifier 'stack0xfffffef0'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 275,
-    "complexity_score": 108,
+    "complexity_score": 84,
     "cross_reference_count": 1,
     "function_call_count": 32,
     "global_count": 27,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 83,
-    "suspect_count": 2,
-    "suspect_types": [
-      "stack_ref"
-    ],
-    "total_lines": 358
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 84,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 359
   },
   "cross_references": [
     {
@@ -449,22 +434,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Direct stack address reference",
-      "line": 21,
-      "match": "&stack0xfffffef0",
-      "severity": "moderate",
-      "text": "_sprintf(&stack0xfffffef0,\"load%d\",(uVar2 & 3) + 1);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 23,
-      "match": "&stack0xfffffef0",
-      "severity": "moderate",
-      "text": "(&g_LoadingScreenBitmap1,&stack0xfffffef0,0x280,0x1e0);",
-      "type": "stack_ref"
-    }
-  ]
+  "suspects": []
 }
