@@ -32,9 +32,9 @@ void __cdecl core_zombie_cpp_FUN_005fcd20(void)
       iVar7 = in_stack_00000008;
       in_stack_00000008 = in_stack_00000004;
     }
-    g_RasterizerEdgeArray[g_RasterizerEdgeCount].y_start = iVar4;
+    g_RasterizerEdgeArray[g_RasterizerEdgeCount].base.y_min = iVar4;
     iVar3 = g_RasterizerMinY;
-    g_RasterizerEdgeArray[iVar2].y_end = iVar6;
+    g_RasterizerEdgeArray[iVar2].base.y_max = iVar6;
     if (iVar4 < iVar3) {
       g_RasterizerMinY = iVar4;
     }
@@ -52,17 +52,17 @@ void __cdecl core_zombie_cpp_FUN_005fcd20(void)
     lVar1 = (longlong)iVar6 *
             (longlong)(*(int *)(in_stack_00000008 + 0x10) - *(int *)(iVar7 + 0x10));
     uVar5 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    g_RasterizerEdgeArray[iVar2].x_delta = uVar5;
+    g_RasterizerEdgeArray[iVar2].base.x_gradient = uVar5;
     lVar1 = (longlong)(int)uVar8 * (longlong)(int)uVar5;
-    g_RasterizerEdgeArray[iVar2].x_current =
+    g_RasterizerEdgeArray[iVar2].base.x_current =
          *(int *)(iVar7 + 0x10) + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
     lVar1 = (longlong)iVar6 *
             (longlong)((*(int *)(in_stack_00000008 + 8) - *(int *)(iVar7 + 8)) * 0x100);
-    g_RasterizerEdgeArray[iVar2].z_delta =
+    g_RasterizerEdgeArray[iVar2].base.w_gradient =
          (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    lVar1 = (longlong)(int)uVar8 * (longlong)g_RasterizerEdgeArray[iVar2].z_delta;
+    lVar1 = (longlong)(int)uVar8 * (longlong)g_RasterizerEdgeArray[iVar2].base.w_gradient;
     g_RasterizerEdgeCount = g_RasterizerEdgeCount + 1;
-    g_RasterizerEdgeArray[iVar2].z_current =
+    g_RasterizerEdgeArray[iVar2].base.w_current =
          (*(int *)(iVar7 + 8) * 0x100 - g_RasterizerDepthBias) +
          ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
   }

@@ -9,9 +9,10 @@
 void __cdecl core_charactr_cpp_CCharacter_followActor_FUN_0042c5f0(CCharacter *this_ptr,CDemonActor *actor,float min_dist,float max_dist,int *out_state )
 
 {
+  CVector3f *pCVar1;
   CPathMap *path_map;
-  int iVar1;
-  CVector3f *pCVar2;
+  int iVar2;
+  UVector3 *direction;
   float fVar3;
   float fVar4;
   CVector3f local_50;
@@ -45,15 +46,15 @@ void __cdecl core_charactr_cpp_CCharacter_followActor_FUN_0042c5f0(CCharacter *t
       max_dist = 1e+30;
     }
     local_20 = min_dist * (float)0.10000000000000001;
-    iVar1 = *out_state;
-    if (iVar1 == 0) {
+    iVar2 = *out_state;
+    if (iVar2 == 0) {
       min_dist = min_dist + local_20;
     }
-    else if (iVar1 == 1) {
+    else if (iVar2 == 1) {
       max_dist = max_dist + local_20;
       min_dist = min_dist - local_20;
     }
-    else if (iVar1 == 2) {
+    else if (iVar2 == 2) {
       max_dist = max_dist - local_20;
     }
     if (min_dist < (float)0.01) {
@@ -62,11 +63,11 @@ void __cdecl core_charactr_cpp_CCharacter_followActor_FUN_0042c5f0(CCharacter *t
     if (min_dist <= local_2c) {
       fVar4 = 0.0;
       fVar3 = 0.0;
-      pCVar2 = &g_ZeroVector;
+      direction = &g_ZeroVector;
       path_map = (*((actor->vtable)._ub)->getPathMap)(actor);
-      iVar1 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
-                        (this_ptr,&(actor->location).position,path_map,pCVar2,fVar3,fVar4);
-      if (iVar1 < 0) {
+      iVar2 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
+                        (this_ptr,&(actor->location).position,path_map,&direction->f,fVar3,fVar4);
+      if (iVar2 < 0) {
         engine_console_cpp_CConsole_printf_FUN_00441890
                   (g_CConsolePtr,"%s confused after pathmap call while following %s\n",this_ptr,actor);
         *out_state = 3;
@@ -83,10 +84,10 @@ void __cdecl core_charactr_cpp_CCharacter_followActor_FUN_0042c5f0(CCharacter *t
     return;
   }
   local_50.y = 0.0;
-  pCVar2 = core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
+  pCVar1 = core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
                      (&this_ptr->base,&local_44,&local_50);
-  pCVar2 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_38,pCVar2);
-  this_ptr->turn_angle_accumulator = pCVar2->y;
+  pCVar1 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_38,pCVar1);
+  this_ptr->turn_angle_accumulator = pCVar1->y;
   if (*out_state == 0) {
     if ((float)0.17453292519444399 < ABS(this_ptr->turn_angle_accumulator)) goto LAB_0042c771;
     if (*out_state != 1) goto LAB_0042c80e;

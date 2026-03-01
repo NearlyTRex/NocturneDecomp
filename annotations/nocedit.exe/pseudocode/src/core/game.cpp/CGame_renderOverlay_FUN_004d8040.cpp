@@ -61,7 +61,7 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004d8040(CGame *this_ptr)
                       (local_38,this_ptr->message_text,(char *)&g_WrappedTextBuffer,10,0x100,
                        (g_CDemonCameraInstance.framebuffer_width * 9) / 10);
     local_48 = iVar3;
-    iVar5 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(local_38,0x58);
+    iVar5 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(local_38,0x58);
     iVar3 = g_WindowHeight - iVar3 * iVar5;
     local_54 = iVar5;
     iVar4 = core_script_cpp_CScript_getLetterboxHeight_FUN_00559ac0(g_CScriptPtr);
@@ -88,7 +88,7 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004d8040(CGame *this_ptr)
     if ((g_WindowHeight < 0x1e0) && (this_ptr_00 = g_TinyFont, g_WindowHeight < 0x180)) {
       this_ptr_00 = g_SmallEditorFont;
     }
-    iVar3 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(this_ptr_00,0x58);
+    iVar3 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(this_ptr_00,0x58);
     iVar4 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01a0(this_ptr_00,0x58);
     core_script_cpp_CScript_getLetterboxHeight_FUN_00559ac0(g_CScriptPtr);
     iVar5 = core_script_cpp_CScript_getLetterboxHeight_FUN_00559ac0(g_CScriptPtr);
@@ -110,9 +110,9 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004d8040(CGame *this_ptr)
     if (800 < g_WindowWidth) {
       local_40 = g_MediumFont;
     }
-    iVar5 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(local_40,0x58);
+    iVar5 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(local_40,0x58);
     if (local_44 < iVar5) {
-      local_44 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(local_40,0x58);
+      local_44 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(local_40,0x58);
     }
     local_3c = local_60 / 0x50;
     local_58 = local_3c + ((int)(iVar3 - (uint)(iVar4 << 1 < 0)) >> 2);

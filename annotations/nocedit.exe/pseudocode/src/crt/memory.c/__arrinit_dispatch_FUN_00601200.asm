@@ -9,7 +9,7 @@
 ; WatcomTypeInfo * Stack[0xc]:4   type_info
 ;
 ; XREF[2]:
-;   crt_memory.c___vec_new__FUN_00601232 at 0060124f
+;   crt_memory.c___vec_new_FUN_00601232 at 0060124f
 ;   crt_unknown.c_AnotherFunctorCall2_FUN_00601258 at 00601268
 ;
 ; Called Functions:

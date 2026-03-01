@@ -16,7 +16,7 @@ int __cdecl shape_meshlod_cpp_CLodMesh_previewLodGeneration_FUN_0051d520(CLodMes
   CVector3f *pCVar3;
   int iVar4;
   char *text;
-  int in_stack_ffffff44;
+  char local_bc [100];
   CBoundingBox3D local_58;
   CVector3f local_40;
   CVector3f local_34;
@@ -49,11 +49,11 @@ LAB_0051d5ec:
       shape_meshlod_cpp_CLodMesh_renderShadedTriangles_FUN_0051e990(this_ptr,0);
     }
     else if ((uint)render_mode < 2) {
-      shape_meshlod_cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0(this_ptr,0,in_stack_ffffff44);
+      shape_meshlod_cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0(this_ptr,0);
     }
     else {
       if (render_mode != 2) goto LAB_0051d5ec;
-      shape_meshlod_cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0(this_ptr,1,in_stack_ffffff44);
+      shape_meshlod_cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0(this_ptr,1);
     }
     if (INT_02f3123c != 0) {
       shape_meshlod_cpp_CLodMesh_renderColorCodedEdges_FUN_0051e830(this_ptr,1);
@@ -77,8 +77,8 @@ LAB_0051d5ec:
     }
     iVar4 = this_ptr->tri_count;
     iVar1 = shape_meshlod_cpp_CLodMesh_countUnprocessedFaces_FUN_005164d0(this_ptr);
-    _sprintf(&stack0xffffff44,"%d faces, %d original",iVar1,iVar4);
-    engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff44,0,0);
+    _sprintf(local_bc,"%d faces, %d original",iVar1,iVar4);
+    engine_2d_c_drawText_FUN_00401fd0(local_bc,0,0);
     engine_2d_c_drawText_FUN_00401fd0(g_LodMeshProgressBuffer,0,0xb);
     shape_meshlod_cpp_CLodMesh_computeVertexBoundingBox_FUN_00516500(this_ptr,&local_58);
     pCVar2 = (CBoundingBox3D *)
@@ -98,10 +98,10 @@ LAB_0051d5ec:
     }
     local_14 = core_box_cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_00420840(&local_58);
     local_1c = (int)ROUND(ROUND(local_14));
-    _sprintf(&stack0xffffff44,"Pixel Height: %d",local_1c);
-    engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff44,0,0x16);
+    _sprintf(local_bc,"Pixel Height: %d",local_1c);
+    engine_2d_c_drawText_FUN_00401fd0(local_bc,0,0x16);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-    core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
+    core_game_cpp_CGame_updateDT_FUN_004d7d90(g_CGamePtr);
     shape_spotview_cpp_CSpotView_handleInput_FUN_005b9670(g_CSpotViewPtr,0x1f);
     iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
     if (iVar4 != 0) {

@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dcamera_cpp_renderFlatColorScanline_FUN_004505e0(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
+; void __cdecl core_dcamera_cpp_renderFlatColorScanline_FUN_004505e0(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
 ;
 ; Parameters:
-; SEdgeData *      Stack[0x4]:4   left_edge
-; SEdgeData *      Stack[0x8]:4   right_edge
+; SSoftwareEdge *  Stack[0x4]:4   left_edge
+; SSoftwareEdge *  Stack[0x8]:4   right_edge
 ; int              Stack[0xc]:4   scanline_y
 ; Local Variables:
 ; undefined4       Stack[-0x28]:4  local_28

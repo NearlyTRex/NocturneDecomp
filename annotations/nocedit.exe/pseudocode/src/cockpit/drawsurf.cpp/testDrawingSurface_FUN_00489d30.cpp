@@ -94,7 +94,7 @@ void __cdecl cockpit_drawsurf_cpp_testDrawingSurface_FUN_00489d30(CBitFont *test
     local_24[3] = "A+A"[3];
     iVar2 = g_WindowHeight / 2 + 0x66;
     iVar3 = g_WindowHeight - iVar2;
-    iVar1 = test_font->current_max_width;
+    iVar1 = test_font->current_line_height;
     cockpit_drawsurf_cpp_CDrawSurface_ctor_FUN_00486ea0
               (&local_44,g_WindowWidth / 2,iVar2,0xc9,iVar3,(CDrawSurface *)0x0);
     cockpit_drawsurf_cpp_CDrawSurface_setColorRGB_FUN_00487220(0x80,0x80,0x80);

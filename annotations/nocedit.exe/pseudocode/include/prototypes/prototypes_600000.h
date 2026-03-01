@@ -60,7 +60,7 @@ char * __cdecl crt_string_c__strncpy_FUN_00600f40(char *dest,char *src,SIZE_T co
 time_t __cdecl crt_time_c__mktime_FUN_00600f80(_tm *timeptr);
 char * __cdecl crt_stdlib_c__fullpath_FUN_00601140(char *buffer,char *path,SIZE_T buffer_size);
 void * __cdecl crt_memory_c___arrinit_dispatch_FUN_00601200(void *array_ptr,int element_count,WatcomTypeInfo *type_info);
-void * __cdecl crt_memory_c___vec_new__FUN_00601232(void *dest,int element_count,WatcomTypeInfo *type_info);
+void * __cdecl crt_memory_c___vec_new_FUN_00601232(void *dest,int element_count,WatcomTypeInfo *type_info);
 void crt_unknown_c_AnotherFunctorCall2_FUN_00601258 (void *param_1,int param_2,WatcomTypeInfo *param_3);
 void * __cdecl crt_memory_c___vec_new_FUN_00601272(void *array_memory,int element_count,WatcomTypeInfo *type_info);
 char * __cdecl crt_io_c_getcwd_wrapper_FUN_00608d20(char *buffer,SIZE_T size);

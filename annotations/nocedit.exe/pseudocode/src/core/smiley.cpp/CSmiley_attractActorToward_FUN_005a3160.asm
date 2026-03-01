@@ -11,7 +11,7 @@
 ; Referenced Globals:
 ;   float FLOAT_0064f322 = -4
 ;   int INT_03f48fa8
-;   CVector3f g_ZeroVector
+;   UVector3 g_ZeroVector
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0

@@ -13,6 +13,7 @@ int __cdecl engine_drender_cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf
   int in_EAX;
   int extraout_EAX;
   int extraout_EAX_00;
+  int extraout_EAX_01;
   int iVar2;
   int iVar3;
   CVector3i local_28;
@@ -56,7 +57,7 @@ int __cdecl engine_drender_cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf
                     (&local_28.x,(primitive_array->base).count);
           primitive_array =
                (SMRGLHeaderPrimitive *)((int)&(primitive_array->base).type + render_flags);
-          in_EAX = extraout_EAX_00;
+          in_EAX = extraout_EAX_01;
         }
       }
       else {
@@ -110,7 +111,8 @@ int __cdecl engine_drender_cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf
         pSVar1 = &primitive_array->base;
         primitive_array =
              (SMRGLHeaderPrimitive *)((int)&(primitive_array->base).type + render_flags);
-        in_EAX = engine_drender_cpp_renderTriangleSimple_FUN_004839f0(&local_28,pSVar1->count);
+        engine_drender_cpp_renderTriangleSimple_FUN_004839f0(&local_28,pSVar1->count);
+        in_EAX = extraout_EAX_00;
       }
     }
   }

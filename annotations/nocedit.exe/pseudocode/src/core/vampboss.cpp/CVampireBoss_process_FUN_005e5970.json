@@ -4,91 +4,91 @@
       {
         "category": "other",
         "column": 16,
-        "line": 219,
+        "line": 218,
         "message": "cannot cast from type 'float' to pointer type 'CVector3f *'"
       },
       {
         "category": "other",
         "column": 32,
-        "line": 222,
+        "line": 221,
         "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 224,
+        "line": 223,
         "message": "cannot cast from type 'float' to pointer type 'CVector3f *'"
       },
       {
         "category": "other",
-        "column": 14,
-        "line": 227,
-        "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 28,
-        "line": 228,
-        "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 28,
-        "line": 228,
-        "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 28,
-        "line": 228,
+        "column": 13,
+        "line": 226,
         "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 27,
-        "line": 236,
+        "line": 227,
+        "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 27,
+        "line": 227,
+        "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 27,
+        "line": 227,
+        "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 27,
+        "line": 235,
         "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 10,
-        "line": 241,
+        "line": 240,
         "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 495,
+        "line": 494,
         "message": "cannot cast from type 'float' to pointer type 'CVector3f *'"
       },
       {
         "category": "other",
         "column": 58,
-        "line": 498,
+        "line": 497,
         "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 22,
-        "line": 510,
+        "line": 509,
         "message": "cannot cast from type 'float' to pointer type 'CVector3f *'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 553,
+        "line": 552,
         "message": "cannot cast from type 'float' to pointer type 'CVector3f *'"
       },
       {
         "category": "other",
         "column": 56,
-        "line": 556,
+        "line": 555,
         "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 566,
+        "line": 565,
         "message": "cannot cast from type 'float' to pointer type 'CVector3f *'"
       }
     ],
@@ -97,21 +97,20 @@
   },
   "complexity": {
     "assembly_lines": 1467,
-    "complexity_score": 817,
+    "complexity_score": 790,
     "cross_reference_count": 0,
     "function_call_count": 35,
     "global_count": 37,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 612,
-    "suspect_count": 18,
+    "pseudocode_lines": 610,
+    "suspect_count": 16,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
-      "stack_param",
       "warning_inlined_function",
       "warning_type_propagation"
     ],
-    "total_lines": 2079
+    "total_lines": 2077
   },
   "cross_references": [],
   "function": {
@@ -1102,24 +1101,16 @@
       "type": "warning_type_propagation"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 31,
-      "match": "in_stack_fffffdb0",
-      "severity": "moderate",
-      "text": "float in_stack_fffffdb0;",
-      "type": "stack_param"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 121,
+      "line": 120,
       "match": "SQRT",
       "severity": "mild",
-      "text": "fVar22 = SQRT(local_f4 * local_f4 + local_ec * local_ec);",
+      "text": "fVar3 = SQRT(local_f4 * local_f4 + local_ec * local_ec);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 125,
+      "line": 124,
       "match": "ABS",
       "severity": "mild",
       "text": "if ((float10)0 != ABS((float10)(int)local_18)) {",
@@ -1127,26 +1118,34 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 170,
+      "line": 169,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "iVar8 = *(int *)((int)this_ptr + (4 - this_ptr->waypoint_index) * 4 + 0xce908);",
+      "text": "iVar9 = *(int *)((int)this_ptr + (4 - this_ptr->waypoint_index) * 4 + 0xce908);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 179,
+      "line": 178,
       "match": "SQRT",
       "severity": "mild",
-      "text": "SQRT(fVar5 * fVar5 + fVar22 * fVar22) < (float)6)) {",
+      "text": "SQRT(fVar6 * fVar6 + fVar3 * fVar3) < (float)6)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 196,
+      "line": 195,
       "match": "SQRT",
       "severity": "mild",
-      "text": "SQRT(fVar5 * fVar5 + fVar22 * fVar22) < (float)4)) {",
+      "text": "SQRT(fVar6 * fVar6 + fVar3 * fVar3) < (float)4)) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 204,
+      "match": "fpatan",
+      "severity": "mild",
+      "text": "fVar18 = (float10)fpatan((float10)local_e8,fVar17);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -1154,20 +1153,12 @@
       "line": 205,
       "match": "fpatan",
       "severity": "mild",
-      "text": "fVar17 = (float10)fpatan((float10)local_e8,fVar16);",
+      "text": "fVar17 = (float10)fpatan((float10)local_e4,",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 206,
-      "match": "fpatan",
-      "severity": "mild",
-      "text": "fVar16 = (float10)fpatan((float10)local_e4,",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 207,
       "match": "SQRT",
       "severity": "mild",
       "text": "SQRT((float10)local_e8 * (float10)local_e8 +",
@@ -1175,34 +1166,42 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 221,
+      "line": 220,
       "match": "ABS",
       "severity": "mild",
-      "text": "if (ABS(fVar22) <= ABS((float)local_18)) {",
+      "text": "if (ABS(fVar3) <= ABS((float)local_18)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 221,
+      "line": 220,
       "match": "ABS",
       "severity": "mild",
-      "text": "if (ABS(fVar22) <= ABS((float)local_18)) {",
+      "text": "if (ABS(fVar3) <= ABS((float)local_18)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 246,
+      "line": 245,
       "match": "fsin",
       "severity": "mild",
-      "text": "fVar17 = (float10)fsin(fVar16);",
+      "text": "fVar18 = (float10)fsin(fVar17);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 247,
+      "match": "fsin",
+      "severity": "mild",
+      "text": "fVar20 = (float10)fsin(fVar19);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 248,
-      "match": "fsin",
+      "match": "fcos",
       "severity": "mild",
-      "text": "fVar19 = (float10)fsin(fVar18);",
+      "text": "fVar17 = (float10)fcos(fVar17);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -1210,24 +1209,8 @@
       "line": 249,
       "match": "fcos",
       "severity": "mild",
-      "text": "fVar16 = (float10)fcos(fVar16);",
+      "text": "fVar19 = (float10)fcos(fVar19);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 250,
-      "match": "fcos",
-      "severity": "mild",
-      "text": "fVar18 = (float10)fcos(fVar18);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 597,
-      "match": "in_stack_fffffdb0",
-      "severity": "moderate",
-      "text": "((CCharacter *)this_ptr,delta_time,in_stack_fffffdb0);",
-      "type": "stack_param"
     }
   ],
   "vtable_info": {

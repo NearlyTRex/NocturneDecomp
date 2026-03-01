@@ -249,8 +249,8 @@ void __cdecl core_setedit_cpp_CDemonSet_showCameraEditor_FUN_0057e7c0(CDemonSet 
         strupr((char *)(abStack_4be + 2));
       }
       iVar9 = shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
-                        (g_CEditorToolsPtr,"Save set","models",0x6481d1,
-                         (int)(abStack_4be + 2));
+                        (g_CEditorToolsPtr,"Save set","models","set",
+                         (char *)(abStack_4be + 2),1);
       if (iVar9 != 0) {
         core_setedit_cpp_CDemonSet_save_FUN_0057a2a0(this_ptr,(char *)(abStack_4be + 2));
       }

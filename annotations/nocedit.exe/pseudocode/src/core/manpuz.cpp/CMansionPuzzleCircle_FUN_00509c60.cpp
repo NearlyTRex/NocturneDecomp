@@ -22,9 +22,9 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_00509c60(CMansionPuzzleCir
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
             (g_CDemonRendererPtr2,&local_1c,(CVector3i *)0x0);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-            (g_CDemonRendererPtr2,(CVector3i *)&g_ZeroVector,&local_28);
+            (g_CDemonRendererPtr2,&g_ZeroVector.i,&local_28);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-            (g_CDemonRendererPtr2,(CVector3i *)&g_ZeroVector,(CVector3i *)&this_ptr->emitter_pos);
+            (g_CDemonRendererPtr2,&g_ZeroVector.i,&(this_ptr->emitter_pos).i);
   if (g_MansionPuzzleSlewType == 1) {
     shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(g_CEditorToolsPtr);
   }

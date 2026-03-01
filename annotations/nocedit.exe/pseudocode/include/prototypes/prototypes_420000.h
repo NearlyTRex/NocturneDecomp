@@ -56,7 +56,7 @@ void __cdecl core_box_cpp_CBoundingBox3D_reset_FUN_00420fb0(CBoundingBox3D *this
 int __cdecl core_box_cpp_CBoundingBox3D_isInverted_FUN_00420fe0(CBoundingBox3D *this_ptr);
 int __cdecl core_box_cpp_CBoundingBox3D_doesBoxIntersect_FUN_00421010(CBoundingBox3D *this_ptr,CBoundingBox3D *other);
 float __cdecl core_box_cpp_CBoundingBox3D_getMaximumBound_FUN_00421060(CBoundingBox3D *this_ptr);
-void __cdecl core_box_cpp_CBoundingBox3D_render_FUN_004210b0(CBoundingBox3D *this_ptr,int param1,int param2,int param3);
+void __cdecl core_box_cpp_CBoundingBox3D_render_FUN_004210b0(CBoundingBox3D *this_ptr);
 CVector3f * __cdecl core_box_cpp_CBoundingBox3D_clampPoint_FUN_00421550(CBoundingBox3D *this_ptr,CVector3f *out_point,CVector3f *in_point);
 int __cdecl core_box_cpp_CBoundingBox3D_doesSphereIntersect_FUN_004215f0(CBoundingBox3D *this_ptr,CVector3f *sphere_center,float radius);
 void __cdecl core_boxactor_cpp_staticInit_FUN_00421650(void);
@@ -248,7 +248,7 @@ void __cdecl core_charactr_cpp_CCharacter_calculateChecksum_FUN_0042dde0(CCharac
 int __cdecl core_charactr_cpp_CCharacter_canLookAt_FUN_0042de50(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_setOrientation_FUN_0042ded0(CCharacter *this_ptr,UOrientationVector *orientation);
 void __cdecl core_charactr_cpp_CCharacter_spawnFlies_FUN_0042df90(CCharacter *this_ptr,int fly_count,float spawn_radius);
-void __cdecl core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(CCharacter *this_ptr,float delta_time,float param_3);
+void __cdecl core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(CCharacter *this_ptr,float delta_time);
 int __cdecl core_charactr_cpp_CCharacter_updateWanderToWaypoint_FUN_0042e050(CCharacter *this_ptr,float delta_time,char *pattern);
 int __cdecl core_charactr_cpp_CCharacter_advanceLayerAction_FUN_0042e370(CCharacter *this_ptr,float *remaining_time,int target_bone_index);
 void __cdecl core_charactr_cpp_CCharacter_blendLayerActionMotion_FUN_0042e570(CCharacter *this_ptr,float blend_weight,int blend_mode);

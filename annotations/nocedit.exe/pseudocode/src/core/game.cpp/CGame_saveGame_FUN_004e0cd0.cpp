@@ -16,9 +16,10 @@ void __cdecl core_game_cpp_CGame_saveGame_FUN_004e0cd0(CGame *this_ptr,char *sav
   int iVar4;
   char *pcVar5;
   char *pcVar6;
-  char *filename_buffer;
-  char *buffer_size;
-  char *show_directory;
+  char *directory_path;
+  char *file_extension;
+  char *output_buffer;
+  uint flags;
   char local_558 [260];
   char local_454 [260];
   char local_350 [260];
@@ -59,15 +60,15 @@ void __cdecl core_game_cpp_CGame_saveGame_FUN_004e0cd0(CGame *this_ptr,char *sav
     local_558[0] = '\0';
   }
   pcVar5 = local_558;
-  show_directory = local_558;
+  output_buffer = local_558;
   pcVar6 = local_558;
   if (save_filename == (char *)0x0) {
-    buffer_size = "noc";
-    filename_buffer = "save";
+    flags = 1;
+    file_extension = "noc";
+    directory_path = "save";
     pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Save game");
     iVar3 = shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
-                      (g_CEditorToolsPtr,pcVar5,filename_buffer,(int)buffer_size,(int)show_directory
-                      );
+                      (g_CEditorToolsPtr,pcVar5,directory_path,file_extension,output_buffer,flags);
     if (iVar3 == 0) {
       return;
     }

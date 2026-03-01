@@ -47,7 +47,7 @@
 ; Referenced Globals:
 ;   float FLOAT_00616165 = 0.5
 ;   double DOUBLE_0061616d = 0.400000000000000
-;   CVector3f g_ZeroVector
+;   UVector3 g_ZeroVector
 ;
 ; Called Functions:
 ;   core_actor.cpp_CVector_ctor_FUN_00410340

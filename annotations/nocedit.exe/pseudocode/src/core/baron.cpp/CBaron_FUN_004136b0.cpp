@@ -71,13 +71,13 @@ void __cdecl core_baron_cpp_CBaron_FUN_004136b0(CBaron *this_ptr)
       CStack_4c.z = pCVar1->z;
     }
     pCVar1 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                       (&CStack_64,&g_ZeroVector,
+                       (&CStack_64,&g_ZeroVector.f,
                         (this_ptr->base).base.model.bone_transform.bone_world_matrices +
                         INT_008224cc);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
               ((CDemonActor *)this_ptr,&CStack_70,pCVar1);
     pCVar1 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                       (&CStack_88,&g_ZeroVector,
+                       (&CStack_88,&g_ZeroVector.f,
                         (this_ptr->base).base.model.bone_transform.bone_world_matrices +
                         INT_008224d0);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0

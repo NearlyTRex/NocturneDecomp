@@ -19,9 +19,9 @@
 ;   core_main.c_initializeGameSystems_FUN_00507a60 at 00507b7f
 ;
 ; Referenced Globals:
-;   char s_empty_0063e145 = \x00
+;   char s_EmptyChar_0063e145 = \x00
 ;   TerminatedCString s_rt_0063e146
-;   char s_empty_0063e149 = \x00
+;   char s_EmptyChar_0063e149 = \x00
 ;   TerminatedCString s_d_0063e14a
 ;   TerminatedCString s_d_0063e14e
 ;   TerminatedCString s_support_newmsg_cpp_0063e152
@@ -59,7 +59,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x320]     ; 00543e4a
     PUSH EBP                            ; 00543e51
     XOR EDX,EDX                         ; 00543e52
-    PUSH 0x63e145                       ; 00543e54 | s_empty_0063e145
+    PUSH 0x63e145                       ; 00543e54 | s_EmptyChar_0063e145
     MOV dword ptr [ESP + 0x308],EDX     ; 00543e59
     CALL engine_dosio.c_getFileSize_FUN_00481880 ; 00543e60
         ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFileSize_FUN_00481880(char * directory, char * filename)
@@ -80,7 +80,7 @@ section .text
     PUSH 0x63e146                       ; 00543e81 | = "rt"
         ;   Label: LAB_00543e81
     PUSH EBP                            ; 00543e86
-    PUSH 0x63e149                       ; 00543e87 | s_empty_0063e149
+    PUSH 0x63e149                       ; 00543e87 | s_EmptyChar_0063e149
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 00543e8c
         ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     MOV ESI,EAX                         ; 00543e91

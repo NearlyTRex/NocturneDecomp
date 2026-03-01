@@ -39,8 +39,8 @@
 ;
 ; Called Functions:
 ;   core_inivar.cpp_readIniData_FUN_004fbd90
-;   core_mission.cpp_CDemonMission_checkMemory2_FUN_00522d30
 ;   core_mission.cpp_CDemonMission_createFromSingleSet_FUN_005243a0
+;   core_mission.cpp_CDemonMission_FUN_00522d30
 ;   core_mission.cpp_CDemonMission_FUN_005248e0
 ;   core_mission.cpp_CDemonMission_load_FUN_00522d90
 ;   core_mission.cpp_CDemonMission_loadScript_FUN_005235b0
@@ -73,8 +73,8 @@ section .text
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x8                         ; 00538202
     PUSH EBP                            ; 00538205
-    CALL core_mission.cpp_CDemonMission_checkMemory2_FUN_00522d30 ; 00538206
-        ;   XREF to: 00522d30 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_checkMemory2_FUN_00522d30(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_FUN_00522d30 ; 00538206
+        ;   XREF to: 00522d30 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_00522d30(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 0053820b
     PUSH EBP                            ; 0053820e
     CALL core_mission.cpp_CDemonMission_FUN_005248e0 ; 0053820f
@@ -350,8 +350,8 @@ section .text
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x8                         ; 00538535
     PUSH EBP                            ; 00538538
-    CALL core_mission.cpp_CDemonMission_checkMemory2_FUN_00522d30 ; 00538539
-        ;   XREF to: 00522d30 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_checkMemory2_FUN_00522d30(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_FUN_00522d30 ; 00538539
+        ;   XREF to: 00522d30 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_00522d30(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 0053853e
     PUSH 0x63c228                       ; 00538541 | = "Freeing models..."
     MOV EAX,[0x00678a60]                ; 00538546 | g_CEditorToolsInstance | g_CEditorToolsPtr
@@ -592,7 +592,7 @@ section .text
     MOV EAX,[0x00678a60]                ; 005387ac | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH EAX                            ; 005387b1 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70 ; 005387b2
-        ;   XREF to: 0049fb70 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70(CEditorTools * this_ptr, char * prompt_text, char * filename_buffer, int buffer_size, ...)
+        ;   XREF to: 0049fb70 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70(CEditorTools * this_ptr, char * dialog_title, char * directory_path, char * file_extension, ...)
     ADD ESP,0x18                        ; 005387b7
     TEST EAX,EAX                        ; 005387ba
     JZ 0x005384ec                       ; 005387bc

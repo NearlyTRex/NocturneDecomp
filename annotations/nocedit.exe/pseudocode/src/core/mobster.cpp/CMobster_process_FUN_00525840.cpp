@@ -22,10 +22,9 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_00525840(CMobster *this_ptr,f
   CVector3f *pCVar11;
   CCharacter *pCVar12;
   CPathMap *pCVar13;
-  CMobster *in_stack_fffffe70;
+  float fVar14;
   CDemonActor *in_stack_fffffe74;
   float in_stack_fffffe78;
-  float fVar14;
   float fVar15;
   char *in_stack_fffffe84;
   float in_stack_fffffe88;
@@ -93,7 +92,6 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_00525840(CMobster *this_ptr,f
     (*(((this_ptr->base).base.base.vtable._uc)->_uc).dropCarriedObject)
               ((CCharacter *)this_ptr,1,(CVector3f *)0x0);
     in_stack_fffffe74 = (CDemonActor *)0x0;
-    in_stack_fffffe70 = (CMobster *)0x0;
     (*(((this_ptr->base).base.base.vtable._uc)->_uc).dropCarriedObject)
               ((CCharacter *)this_ptr,0,(CVector3f *)0x0);
     sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handles[1]);
@@ -172,10 +170,8 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_00525840(CMobster *this_ptr,f
       if (this_ptr->hold_pos_flag == 0) {
         (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
         if ((this_ptr->base).victim == (CDemonActor *)0x0) {
-          in_stack_fffffe70 = (CMobster *)delta_time;
           iVar5 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base,delta_time);
           if (iVar5 != 0) {
-            in_stack_fffffe70 = (CMobster *)0x1;
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                       (&pCVar2->motion_controller,1,1);
           }
@@ -192,7 +188,6 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_00525840(CMobster *this_ptr,f
                        (pCVar10->location).position.z;
             if ((float)2 <
                 SQRT(local_c8 * local_c8 + local_d0 * local_d0 + local_cc * local_cc)) {
-              in_stack_fffffe70 = (CMobster *)0x1;
               this_ptr->post_mode = 1;
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                         (&pCVar2->motion_controller,8,1);
@@ -216,11 +211,10 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_00525840(CMobster *this_ptr,f
           local_18 = local_20;
           if (local_20 < 3.0f + 1.0) {
             core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_70,&local_10c);
-            in_stack_fffffe70 = (CMobster *)(local_70.y - (this_ptr->base).base.base.orient.vec.y);
-            local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70((float)in_stack_fffffe70);
+            local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
+                                 (local_70.y - (this_ptr->base).base.base.orient.vec.y);
             if ((ABS(local_14) < (float)0.52359877558333301) &&
                ((this_ptr->base).attack_cooldown <= 0.0)) {
-              in_stack_fffffe70 = (CMobster *)0x1;
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                         (&(this_ptr->base).base.model.motion_controller,9,1);
               (this_ptr->base).attack_cooldown = 2.0;
@@ -228,33 +222,27 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_00525840(CMobster *this_ptr,f
           }
           if (local_20 < (this_ptr->base).guard_distance) {
             if (20.0f <= local_20) {
-              iVar5 = 8;
+              fVar14 = 1.12104e-44;
             }
             else {
-              iVar5 = 1;
+              fVar14 = 1.4013e-45;
             }
-            in_stack_fffffe70 = (CMobster *)0x1;
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                      (&(this_ptr->base).base.model.motion_controller,iVar5,1);
+                      (&(this_ptr->base).base.model.motion_controller,(int)fVar14,1);
           }
-          if (this_ptr->weapon_search_count == 0) {
-            in_stack_fffffe70 = (CMobster *)0x3f333333;
-            iVar5 = core_actor_cpp_randomChance_FUN_0040cd10(0.7);
-            if (iVar5 != 0) {
-              in_stack_fffffe70 = (CMobster *)0x1;
-              core_mobster_cpp_CMobster_FUN_005279f0(this_ptr,1);
-              this_ptr->weapon_search_count = 1;
-              break;
-            }
+          if ((this_ptr->weapon_search_count == 0) &&
+             (iVar5 = core_actor_cpp_randomChance_FUN_0040cd10(0.7), iVar5 != 0)) {
+            core_mobster_cpp_CMobster_FUN_005279f0(this_ptr,1);
+            this_ptr->weapon_search_count = 1;
           }
-          this_ptr->weapon_search_count = 1;
+          else {
+            this_ptr->weapon_search_count = 1;
+          }
           break;
         }
         if (this_ptr->firing_blend <= (float)0.5) break;
-        in_stack_fffffe70 = (CMobster *)0x3e800000;
         iVar5 = core_actor_cpp_randomChance_FUN_0040cd10(0.25);
         if (iVar5 != 0) {
-          in_stack_fffffe70 = this_ptr;
           core_mobster_cpp_CMobster_FUN_00525720(this_ptr);
           break;
         }
@@ -273,25 +261,22 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_00525840(CMobster *this_ptr,f
       if ((this_ptr->base).victim == (CDemonActor *)0x0) {
         iVar5 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base,delta_time);
         if (iVar5 == 0) {
-          in_stack_fffffe70 = (CMobster *)0x1;
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&pCVar2->motion_controller,0,1);
         }
         else {
-          in_stack_fffffe70 = (CMobster *)0x1;
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&pCVar2->motion_controller,1,1);
         }
       }
       else if (this_ptr->post_mode == 0) {
-        in_stack_fffffe70 = (CMobster *)delta_time;
         iVar5 = core_mobster_cpp_CMobster_FUN_00526d90(this_ptr,delta_time);
         if (iVar5 == 0) {
           local_24 = 3.0f + 1.0;
           if ((this_ptr->base).base.carry_hands[1].carry_actor != (CDemonActor *)0x0) {
             local_24 = 30.0f;
           }
-          in_stack_fffffe70 = (CMobster *)0x3e32b8c2;
+          fVar14 = 0.17453292;
           pCVar11 = (CVector3f *)0x3f000000;
           (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
           (this_ptr->base).base.model.accumulated_root_motion.y =
@@ -306,7 +291,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_00525840(CMobster *this_ptr,f
           pCVar13 = (*((pCVar10->vtable)._ub)->getPathMap)(pCVar10);
           iVar5 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
                             ((CCharacter *)this_ptr,&(((this_ptr->base).victim)->location).position,
-                             pCVar13,pCVar11,(float)in_stack_fffffe70,(float)in_stack_fffffe74);
+                             pCVar13,pCVar11,fVar14,(float)in_stack_fffffe74);
           if (-1 < iVar5) {
             pCVar1 = &(this_ptr->base).base.base.location;
             pCVar10 = (this_ptr->base).victim;
@@ -327,11 +312,9 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_00525840(CMobster *this_ptr,f
                              (this_ptr->base).base.base.location.position.z;
                 core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                           (&local_f4,&local_b8);
-                in_stack_fffffe70 = (CMobster *)0x52674a;
                 local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                                      (local_f4.y - (this_ptr->base).base.base.orient.vec.y);
                 if (ABS(local_14) < (float)0.52359877558333301) {
-                  in_stack_fffffe70 = (CMobster *)0x9;
                   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                             (&pCVar2->motion_controller,9,1);
                 }
@@ -345,18 +328,15 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_00525840(CMobster *this_ptr,f
                     core_mobster_cpp_CMobster_FUN_005279f0(this_ptr,2);
                   }
                   if (this_ptr->taunt_timer <= 0.0) {
-                    in_stack_fffffe70 = (CMobster *)0x526701;
                     core_mobster_cpp_CMobster_FUN_005271c0(this_ptr);
                   }
                   else {
                     pCVar2 = &(this_ptr->base).base.model;
                     if ((this_ptr->base).base.carry_hands[0].carry_actor == (CDemonActor *)0x0) {
-                      in_stack_fffffe70 = (CMobster *)0xa;
                       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                                 (&pCVar2->motion_controller,10,1);
                     }
                     else {
-                      in_stack_fffffe70 = (CMobster *)0xb;
                       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                                 (&pCVar2->motion_controller,0xb,1);
                     }
@@ -372,12 +352,10 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_00525840(CMobster *this_ptr,f
                              (this_ptr->base).base.base.location.position.z;
                 core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                           (&local_58,&local_e8);
-                in_stack_fffffe70 = (CMobster *)0x526602;
                 local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                                      (local_58.y - (this_ptr->base).base.base.orient.vec.y);
                 if ((ABS(local_14) < (float)0.52359877558333301) &&
                    ((this_ptr->base).attack_cooldown <= 0.0)) {
-                  in_stack_fffffe70 = (CMobster *)0x9;
                   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                             (&pCVar2->motion_controller,9,1);
                   (this_ptr->base).attack_cooldown = 2.0;
@@ -386,7 +364,6 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_00525840(CMobster *this_ptr,f
               (this_ptr->base).attack_cooldown = 1.0;
             }
             if ((this_ptr->base).guard_distance < local_30) {
-              in_stack_fffffe70 = (CMobster *)0x0;
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                         (&(this_ptr->base).base.model.motion_controller,0,1);
             }
@@ -394,7 +371,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_00525840(CMobster *this_ptr,f
         }
       }
       else {
-        in_stack_fffffe70 = (CMobster *)0x3e32b8c2;
+        fVar14 = 0.17453292;
         pCVar11 = (CVector3f *)0x3f000000;
         (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
         (this_ptr->base).base.model.accumulated_root_motion.y =
@@ -407,17 +384,15 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_00525840(CMobster *this_ptr,f
         pCVar13 = (*((this_ptr->our_post->vtable)._ub)->getPathMap)(this_ptr->our_post);
         iVar5 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
                           ((CCharacter *)this_ptr,&(this_ptr->our_post->location).position,pCVar13,
-                           pCVar11,(float)in_stack_fffffe70,(float)in_stack_fffffe74);
+                           pCVar11,fVar14,(float)in_stack_fffffe74);
         if (iVar5 < 1) {
           if (iVar5 < 0) {
-            in_stack_fffffe70 = (CMobster *)0x0;
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                       (&pCVar2->motion_controller,0,1);
             this_ptr->our_post = (CDemonActor *)0x0;
           }
         }
         else {
-          in_stack_fffffe70 = (CMobster *)0x0;
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&pCVar2->motion_controller,0,1);
         }
@@ -427,23 +402,20 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_00525840(CMobster *this_ptr,f
     case 6:
       (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
       if ((this_ptr->base).victim != (CDemonActor *)0x0) {
-        in_stack_fffffe70 = (CMobster *)g_CWeaponClassInfo.name_hash;
-        pCVar9 = (CMobster *)
-                 core_actor_cpp_castToClassHash_FUN_0040c790
-                           ((this_ptr->base).base.carry_hands[1].carry_actor,
-                            g_CWeaponClassInfo.name_hash);
-        if (pCVar9 != (CMobster *)0x0) {
+        pCVar12 = (CCharacter *)
+                  core_actor_cpp_castToClassHash_FUN_0040c790
+                            ((this_ptr->base).base.carry_hands[1].carry_actor,
+                             g_CWeaponClassInfo.name_hash);
+        if (pCVar12 != (CCharacter *)0x0) {
           core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
-          local_34 = (pCVar9->base).base.model.transformed_vertices[0x4f].y;
-          pCVar4 = (pCVar9->base).base.base.vtable._uc;
-          (pCVar9->base).base.model.transformed_vertices[0x4f].y = 1.4013e-43;
-          in_stack_fffffe70 = pCVar9;
-          iVar5 = (*(pCVar4->_uc).canBeGrabbed)
-                            ((CCharacter *)pCVar9,in_stack_fffffe74,(int)in_stack_fffffe78);
+          local_34 = (pCVar12->model).transformed_vertices[0x4f].y;
+          pCVar4 = (pCVar12->base).vtable._uc;
+          (pCVar12->model).transformed_vertices[0x4f].y = 1.4013e-43;
+          iVar5 = (*(pCVar4->_uc).canBeGrabbed)(pCVar12,in_stack_fffffe74,(int)in_stack_fffffe78);
           if (iVar5 != 0) {
-            (*(((pCVar9->base).base.base.vtable._uc)->_uc).isGrabbable)((CCharacter *)pCVar9);
+            (*(((pCVar12->base).vtable._uc)->_uc).isGrabbable)(pCVar12);
           }
-          (pCVar9->base).base.model.transformed_vertices[0x4f].y = local_34;
+          (pCVar12->model).transformed_vertices[0x4f].y = local_34;
         }
         pCVar12 = (CCharacter *)
                   core_actor_cpp_castToClassHash_FUN_0040c790
@@ -504,7 +476,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_00525840(CMobster *this_ptr,f
       local_14 = local_160.damage_amount;
       if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[1]] != 0) {
         pCVar11 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                            (&local_118,&g_ZeroVector,
+                            (&local_118,&g_ZeroVector.f,
                              (CMatrix3x4f *)
                              (this_ptr->base).base.model.bone_transform.bone_world_matrices
                              [INT_02f37ecc].m);
@@ -516,7 +488,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_00525840(CMobster *this_ptr,f
       local_14 = local_160.damage_amount;
       if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[3]] != 0) {
         pCVar11 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                            (&local_94,&g_ZeroVector,
+                            (&local_94,&g_ZeroVector.f,
                              (CMatrix3x4f *)
                              (this_ptr->base).base.model.bone_transform.bone_world_matrices
                              [INT_02f37ed0].m);
@@ -616,7 +588,6 @@ switchD_0052677f_caseD_7:
   if (iVar5 == 0) {
     core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(this_ptr,delta_time);
   }
-  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
-            ((CCharacter *)this_ptr,delta_time,(float)in_stack_fffffe70);
+  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr,delta_time);
   return;
 }

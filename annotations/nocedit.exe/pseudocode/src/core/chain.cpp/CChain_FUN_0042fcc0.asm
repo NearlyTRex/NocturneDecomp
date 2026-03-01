@@ -12,7 +12,7 @@
 ;   core_chain.cpp_CChain_process_FUN_004300d0 at 004301d7
 ;
 ; Referenced Globals:
-;   CVector3f g_ZeroVector
+;   UVector3 g_ZeroVector
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0

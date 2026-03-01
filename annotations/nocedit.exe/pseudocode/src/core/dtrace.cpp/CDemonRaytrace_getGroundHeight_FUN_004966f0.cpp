@@ -67,14 +67,14 @@ float __cdecl core_dtrace_cpp_CDemonRaytrace_getGroundHeight_FUN_004966f0(CDemon
     normal_out->z = 0.0;
     normal_out->x = 0.0;
   }
-  g_TempNormal2.y = g_ZeroVector.y;
-  g_TempNormal2.z = g_ZeroVector.z;
-  g_TempNormal2.x = g_ZeroVector.x;
-  g_TempNormal1.y = g_ZeroVector.y;
-  g_TempNormal1.z = g_ZeroVector.z;
-  g_TempNormal1.x = g_ZeroVector.x;
-  g_TempNormal0.y = g_ZeroVector.y;
-  g_TempNormal0.z = g_ZeroVector.z;
-  g_TempNormal0.x = g_ZeroVector.x;
+  g_TempNormal2.y = g_ZeroVector.f.y;
+  g_TempNormal2.z = g_ZeroVector.f.z;
+  g_TempNormal2.x = g_ZeroVector.f.x;
+  g_TempNormal1.y = g_ZeroVector.f.y;
+  g_TempNormal1.z = g_ZeroVector.f.z;
+  g_TempNormal1.x = g_ZeroVector.f.x;
+  g_TempNormal0.y = g_ZeroVector.f.y;
+  g_TempNormal0.z = g_ZeroVector.f.z;
+  g_TempNormal0.x = g_ZeroVector.f.x;
   return local_4c;
 }

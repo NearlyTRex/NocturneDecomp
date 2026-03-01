@@ -25,11 +25,11 @@
 ;   undefined4 g_CGameInstance.delta_time_float
 ;   CKeys g_CKeysInstance
 ;   CSpotView g_CSpotViewInstance
-;   CVector3f g_ZeroVector
+;   UVector3 g_ZeroVector
 ;
 ; Called Functions:
 ;   core_game.cpp_CGame_saveClockTime_FUN_004d7d80
-;   core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90
+;   core_game.cpp_CGame_updateDT_FUN_004d7d90
 ;   core_morph.cpp_CMorph_render_FUN_0052bae0
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_fillRectColor_FUN_00403170
@@ -118,8 +118,8 @@ section .text
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
     MOV EBX,dword ptr [0x0067b654]      ; 0052cb41 | g_CGameInstance | g_CGamePtr
     PUSH EBX                            ; 0052cb47 | g_CGameInstance
-    CALL core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90 ; 0052cb48
-        ;   XREF to: 004d7d90 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90(CGame * this_ptr)
+    CALL core_game.cpp_CGame_updateDT_FUN_004d7d90 ; 0052cb48
+        ;   XREF to: 004d7d90 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_updateDT_FUN_004d7d90(CGame * this_ptr)
     ADD ESP,0x4                         ; 0052cb4d
     PUSH 0x1f                           ; 0052cb50
     MOV EDI,dword ptr [0x0068416c]      ; 0052cb52 | g_CSpotViewPtr

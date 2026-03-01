@@ -1,18 +1,18 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dpart_cpp_setupTriangleEdgeInterpolation_FUN_00482fb0(SEdgeData *vertex_a,SEdgeData *vertex_b)
+; void __cdecl core_dpart_cpp_setupTriangleEdgeInterpolation_FUN_00482fb0(SSoftwareEdge *vertex_a,SSoftwareEdge *vertex_b)
 ;
 ; Parameters:
-; SEdgeData *      Stack[0x4]:4   vertex_a
-; SEdgeData *      Stack[0x8]:4   vertex_b
+; SSoftwareEdge *  Stack[0x4]:4   vertex_a
+; SSoftwareEdge *  Stack[0x8]:4   vertex_b
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   int g_TexturesDisabled
 ;   int g_RenderTriangleEdgeCount
-;   SEdgeData[16] g_EdgeInterpolationArray
+;   SSoftwareEdge[16] g_EdgeInterpolationArray
 ;   undefined4 DAT_02c6cb78
 ;   undefined4 DAT_02c6cb7c
 ;   undefined4 DAT_02c6cb80

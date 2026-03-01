@@ -16,7 +16,7 @@ SSoftwareEdge * __cdecl engine_prim_c_findEdgeInTable_FUN_00553410(int scanline,
   iVar2 = 0;
   if (0 < g_ActiveEdgeCount) {
     do {
-      if ((scanline == pSVar1->y_min) && (pSVar1 != target_edge)) {
+      if ((scanline == (pSVar1->base).y_min) && (pSVar1 != target_edge)) {
         return pSVar1;
       }
       iVar2 = iVar2 + 1;

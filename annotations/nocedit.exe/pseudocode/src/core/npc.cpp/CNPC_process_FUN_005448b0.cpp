@@ -18,7 +18,6 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_005448b0(CNPC *this_ptr,float delta_t
   CVector3f *pCVar7;
   CMotionList *this_ptr_00;
   char *state_name;
-  float fVar8;
   CVector3f CStack_54;
   CVector3f CStack_48;
   float fStack_3c;
@@ -40,8 +39,7 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_005448b0(CNPC *this_ptr,float delta_t
   (this_ptr->base).model.accumulated_root_motion.x =
        (this_ptr->base).model.accumulated_root_motion.y;
   pCVar1 = &(this_ptr->base).model;
-  fVar8 = delta_time;
-  while (0.0 < fVar8) {
+  while (0.0 < delta_time) {
     iVar6 = core_motion_cpp_CMotionController_advance_FUN_0052d610(&pCVar1->motion_controller);
     core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40(&this_ptr->base,iVar6);
   }
@@ -120,6 +118,6 @@ LAB_00544a0c:
   core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40(&this_ptr->base,&CStack_54);
   core_charactr_cpp_CCharacter_preProcess_FUN_00429820(&this_ptr->base);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020(&(this_ptr->base).model);
-  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(&this_ptr->base,delta_time,fVar8);
+  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(&this_ptr->base,delta_time);
   return;
 }

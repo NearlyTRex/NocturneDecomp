@@ -2950,7 +2950,7 @@ static TerminatedCString s_SfxSample_pollStream_can_0064ffae = "SfxSample::pollS
 static TerminatedCString s_SfxSample_pollStream_err_0064fff7 = "SfxSample::pollStream - error querrying hw playback position\n";
 
 // char constants
-static char s_EmptyString_0064015e = '\0';
+static char s_EmptyChar_0064015e = '\0';
 static char s_EmptyChar_00641c5a = '\0';
 static char s_EmptyChar_00641ce3 = '\0';
 static char s_EmptyChar_00641cf2 = '\0';

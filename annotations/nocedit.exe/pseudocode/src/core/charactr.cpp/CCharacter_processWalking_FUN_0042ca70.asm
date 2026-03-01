@@ -27,7 +27,7 @@
 ;   double DOUBLE_0061729a = 0.628318530700000
 ;   CConsole* g_CConsolePtr = 0083b1a4
 ;   CConsole g_CConsoleInstance
-;   CVector3f g_ZeroVector
+;   UVector3 g_ZeroVector
 ;   undefined4 g_CWayPointClassInfo.name_hash
 ;
 ; Called Functions:

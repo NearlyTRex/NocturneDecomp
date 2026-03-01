@@ -128,7 +128,7 @@ LAB_0057af67:
   engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffe90,0,0x16);
   wincore_winrun_cpp_drawCrosshair_FUN_005f2fd0();
   wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-  core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
+  core_game_cpp_CGame_updateDT_FUN_004d7d90(g_CGamePtr);
   iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_ESCAPE);
   if (iVar3 != 0) goto LAB_0057b3c9;
   iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_SPACE);

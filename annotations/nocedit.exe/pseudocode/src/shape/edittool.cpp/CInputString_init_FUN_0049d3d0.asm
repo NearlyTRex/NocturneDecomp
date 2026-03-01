@@ -1,15 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_edittool_cpp_CInputString_init_FUN_0049d3d0(CInputString *this_ptr,char *source_string,int max_length,int param4,int param5,int render_mode)
+; void __cdecl shape_edittool_cpp_CInputString_init_FUN_0049d3d0(CInputString *this_ptr,char *source_string,int max_length,int mask_mode)
 ;
 ; Parameters:
 ; CInputString *   Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   source_string
 ; int              Stack[0xc]:4   max_length
-; int              Stack[0x10]:4   param4
-; int              Stack[0x14]:4   param5
-; int              Stack[0x18]:4   render_mode
+; int              Stack[0x10]:4   mask_mode
 ;
 ; XREF[2]:
 ;   shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70 at 0049fc2a

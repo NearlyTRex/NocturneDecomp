@@ -32,7 +32,6 @@
 #include "types/structs/SCameraViewportState.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
-#include "types/structs/SEdgeData.h"
 #include "types/structs/SFace.h"
 #include "types/structs/SFoundFileInfo.h"
 #include "types/structs/SFreaky.h"
@@ -42,6 +41,7 @@
 #include "types/structs/SPoint2i.h"
 #include "types/structs/SRGBColorPalette.h"
 #include "types/structs/SRenderVertex.h"
+#include "types/structs/SSoftwareEdge.h"
 #include "types/structs/STrianglePackedIndices.h"
 
 // =============================================================================
@@ -109,11 +109,11 @@ void __cdecl core_dpart_cpp_CDemonPart_loadFromFile_FUN_004825c0(CDemonPart *thi
 void __cdecl core_dpart_cpp_CDemonPart_renderFaces_FUN_004828b0(CDemonPart *this_ptr);
 int __cdecl core_dpart_cpp_CDemonPart_importTriangleMesh_FUN_00482a10(CDemonPart *this_ptr,int triangle_count,int enable_alloc,int source_triangle_count, CDemonTriangle *triangle_data);
 void __cdecl core_dpart_cpp_CDemonPart_processAndFinalize_FUN_00482e40(CDemonPart *this_ptr,int enable_vertex_reduction,int enable_polygon_optimize);
-void __cdecl core_dpart_cpp_setupTriangleEdgeInterpolation_FUN_00482fb0(SEdgeData *vertex_a,SEdgeData *vertex_b);
-void __cdecl core_dpart_cpp_setupDepthOnlyEdgeInterpolation_FUN_00483210(SEdgeData *vertex_a,SEdgeData *vertex_b);
-SEdgeData * __cdecl core_dpart_cpp_findEdgeByYStart_FUN_00483330(int scanline_y,SEdgeData *exclude_edge);
+void __cdecl core_dpart_cpp_setupTriangleEdgeInterpolation_FUN_00482fb0(SSoftwareEdge *vertex_a,SSoftwareEdge *vertex_b);
+void __cdecl core_dpart_cpp_setupDepthOnlyEdgeInterpolation_FUN_00483210(SSoftwareEdge *vertex_a,SSoftwareEdge *vertex_b);
+SSoftwareEdge * __cdecl core_dpart_cpp_findEdgeByYStart_FUN_00483330(int scanline_y,SSoftwareEdge *exclude_edge);
 void __cdecl engine_drender_cpp_renderTriangleTextured_FUN_00483370(int *vertex_indices,int vertex_count);
-int __cdecl engine_drender_cpp_renderTriangleSimple_FUN_004839f0(CVector3i *vertex_indices,int vertex_count);
+void __cdecl engine_drender_cpp_renderTriangleSimple_FUN_004839f0(CVector3i *vertex_indices,int vertex_count);
 void __cdecl core_dracbrid_cpp_staticInit_FUN_00483ef0(void);
 CDraculaBride * __cdecl core_dracbrid_cpp_factoryFunc_FUN_00483f80(void);
 CDemonActorType * __cdecl core_dracbrid_cpp_CDraculaBride_getActorType_FUN_00483fb0(CDraculaBride *this_ptr);

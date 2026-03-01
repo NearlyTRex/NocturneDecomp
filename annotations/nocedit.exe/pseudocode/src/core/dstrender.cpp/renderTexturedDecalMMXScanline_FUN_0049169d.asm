@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dstrender_cpp_renderTexturedDecalMMXScanline_FUN_0049169d(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
+; void __cdecl core_dstrender_cpp_renderTexturedDecalMMXScanline_FUN_0049169d(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
 ;
 ;
 ; XREF[1]:

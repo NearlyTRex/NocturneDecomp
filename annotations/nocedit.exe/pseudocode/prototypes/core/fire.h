@@ -57,7 +57,7 @@ void __cdecl CStake::init(CStake *this_ptr,CVector3f *position,CVector3f *orient
 
 // Original: core_fire.cpp_CStake_spawn_FUN_004bfe90
 // Address: 004bfe90
-void __cdecl CStake::spawn(CStake *this_ptr,float spawn_scale,CVector3f *orientation_angles,CVector3f *launch_direction,CVector3f *spawn_position,CVector3f *spawn_velocity);
+void __cdecl CStake::spawn(CStake *this_ptr,CVector3f *spawn_position,CVector3f *orientation_angles,CVector3f *surface_normal);
 
 // Original: core_fire.cpp_CStake_render_FUN_004c0140
 // Address: 004c0140
@@ -247,9 +247,9 @@ void __cdecl CCrater::load(CCrater *this_ptr,_FILE *file_handle);
 // Address: 004c49c0
 void __cdecl CCrater::save(CCrater *this_ptr,_FILE *file_handle);
 
-// Original: core_fire.cpp_CGunFlame_initProcess_FUN_004c4b00
+// Original: core_fire.cpp_initProcess_FUN_004c4b00
 // Address: 004c4b00
-void __cdecl CGunFlame::initProcess(CGunFlame *this_ptr);
+void __cdecl initProcess(void);
 
 // Original: core_fire.cpp_CGunFlame_init_FUN_004c4c00
 // Address: 004c4c00
@@ -385,7 +385,7 @@ void __cdecl CFireEffect::createSpark(CFireEffect *this_ptr,CVector3f *position,
 
 // Original: core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_004c7a60
 // Address: 004c7a60
-void __cdecl CFireEffect::createMuzzleFlash(CFireEffect *this_ptr);
+void __cdecl CFireEffect::createMuzzleFlash(CFireEffect *this_ptr,CVector3f *position,CMatrix3x3f *rotation_matrix);
 
 // Original: core_fire.cpp_CFireEffect_loadAssets_FUN_004c7ab0
 // Address: 004c7ab0
@@ -397,7 +397,7 @@ void __cdecl CFireEffect::createSmokeParticle(CFireEffect *this_ptr,CVector3f *p
 
 // Original: core_fire.cpp_CFireEffect_createStake_FUN_004c7bb0
 // Address: 004c7bb0
-void __cdecl CFireEffect::createStake(CFireEffect *this_ptr,CVector3f *impact_position,CVector3f *orientation_angles,CVector3f *surface_normal,int material_type);
+void __cdecl CFireEffect::createStake(CFireEffect *this_ptr,CVector3f *impact_position,CVector3f *orientation_angles,CVector3f *surface_normal,int ground_type);
 
 // Original: core_fire.cpp_CFireEffect_createGlassParticle_FUN_004c7d00
 // Address: 004c7d00
@@ -405,7 +405,7 @@ void __cdecl CFireEffect::createGlassParticle(CFireEffect *this_ptr,STriangleVer
 
 // Original: core_fire.cpp_CFireEffect_createBulletTrail_FUN_004c7d60
 // Address: 004c7d60
-void __cdecl CFireEffect::createBulletTrail(CFireEffect *this_ptr);
+void __cdecl CFireEffect::createBulletTrail(CFireEffect *this_ptr,CVector3f *start_position,CVector3f *end_position,CKeyFramedModel *model_ptr,float segment_length);
 
 // Original: core_fire.cpp_CFireEffect_createFireball_FUN_004c7db0
 // Address: 004c7db0
@@ -413,19 +413,19 @@ void __cdecl CFireEffect::createFireball(CFireEffect *this_ptr,CVector3f *positi
 
 // Original: core_fire.cpp_CFireEffect_createRock_FUN_004c7e60
 // Address: 004c7e60
-void __cdecl CFireEffect::createRock(CFireEffect *this_ptr);
+void __cdecl CFireEffect::createRock(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity,CKeyFramedModel *model_ptr);
 
 // Original: core_fire.cpp_CFireEffect_createLaserSegment_FUN_004c7eb0
 // Address: 004c7eb0
 void __cdecl CFireEffect::createLaserSegment(CFireEffect *this_ptr,CVector3f *origin,CVector3f *hit_position,float beam_width,float reticle_intensity,CVector3f *reflection_normal,int red,int green,int blue,float halo_spread,float cone_angle);
 
-// Original: core_fire.cpp_CFireEffect_createLaserSegment2_FUN_004c7f20
+// Original: core_fire.cpp_CFireEffect_createLaserCone_FUN_004c7f20
 // Address: 004c7f20
-void __cdecl CFireEffect::createLaserSegment2(CFireEffect *this_ptr);
+void __cdecl CFireEffect::createLaserCone(CFireEffect *this_ptr,CVector3f *origin,CVector3f *hit_position,float beam_width,int red,int green,int blue,float cone_angle);
 
-// Original: core_fire.cpp_CFireEffect_createLaserBeamPath_FUN_004c7f80
+// Original: core_fire.cpp_CFireEffect_createLaserPath_FUN_004c7f80
 // Address: 004c7f80
-void __cdecl CFireEffect::createLaserBeamPath(CFireEffect *this_ptr,CVector3f *start_position,CVector3f *velocity,float beam_width ,float reticle_intensity,CVector3f *reflection_normal,float total_time,int red,int green,int blue);
+void __cdecl CFireEffect::createLaserPath(CFireEffect *this_ptr,CVector3f *start_position,CVector3f *velocity,float beam_width ,float reticle_intensity,CVector3f *reflection_normal,float total_time,int red,int green,int blue);
 
 // Original: core_fire.cpp_SLaserInfo_ctor_FUN_004c81f0
 // Address: 004c81f0
@@ -503,21 +503,21 @@ int __cdecl CFireEffect::hasActiveMuzzleFlash(CFireEffect *this_ptr);
 // Address: 004c9400
 void __cdecl transformWorldToScreen(CVector3i *input,SProjectedVertex *output,CVector3f *world_position);
 
-// Original: core_fire.cpp_FUN_004c9450
+// Original: core_fire.cpp_CKeyFramedModel_getBoundsMin_FUN_004c9450
 // Address: 004c9450
-int __cdecl FUN_004c9450(void);
+CVector3f * __cdecl CKeyFramedModel::getBoundsMin(CKeyFramedModel *model_ptr);
 
 // Original: core_fire.cpp_CBulletTrail_reset_FUN_004c9460
 // Address: 004c9460
 void __cdecl CBulletTrail::reset(CBulletTrail *this_ptr);
 
-// Original: core_fire.cpp_FUN_004c9470
+// Original: core_fire.cpp_CSmokeParticle_deactivate_FUN_004c9470
 // Address: 004c9470
-void __cdecl FUN_004c9470(void);
+void __cdecl CSmokeParticle::deactivate(CSmokeParticle *this_ptr);
 
-// Original: core_fire.cpp_FUN_004c9480
+// Original: core_fire.cpp_CBulletTrail_deactivate_FUN_004c9480
 // Address: 004c9480
-void __cdecl FUN_004c9480(void);
+void __cdecl CBulletTrail::deactivate(CBulletTrail *this_ptr);
 
 // Original: core_fire.cpp_CRainDrop_ctor_FUN_004c9490
 // Address: 004c9490

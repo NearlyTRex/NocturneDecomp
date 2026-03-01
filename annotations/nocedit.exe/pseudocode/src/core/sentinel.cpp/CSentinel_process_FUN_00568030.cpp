@@ -24,7 +24,7 @@ void __cdecl core_sentinel_cpp_CSentinel_process_FUN_00568030(CSentinel *this_pt
   float fVar11;
   float max_distance;
   float fVar12;
-  float in_stack_fffffe60;
+  SDamageInfo local_1a0;
   SDamageInfo local_164;
   CVector3f local_128;
   float local_11c;
@@ -334,18 +334,24 @@ LAB_0056878f:
                 (&pCVar1->motion_controller,0xf,1);
       break;
     case 4:
-      core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffe60);
-      local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
+      core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_1a0);
+      local_1a0.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
+      local_1a0.attacker = (CDemonActor *)this_ptr;
+      local_1a0.wielder = (CDemonActor *)this_ptr;
+      local_14 = local_1a0.damage_amount;
       pCVar9 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                         (&local_b0,&g_ZeroVector,
+                         (&local_b0,&g_ZeroVector.f,
                           (this_ptr->base).base.model.bone_transform.bone_world_matrices +
                           INT_03114214);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                 ((CDemonActor *)this_ptr,&local_a4,pCVar9);
       core_enemy_cpp_CEnemy_FUN_004a9880(&this_ptr->base);
-      local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(15.0,30.0);
+      local_1a0.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(15.0,30.0);
+      local_1a0.attacker = (CDemonActor *)this_ptr;
+      local_1a0.wielder = (CDemonActor *)this_ptr;
+      local_14 = local_1a0.damage_amount;
       pCVar9 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                         (&local_50,&g_ZeroVector,
+                         (&local_50,&g_ZeroVector.f,
                           (this_ptr->base).base.model.bone_transform.bone_world_matrices +
                           INT_0311420c);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
@@ -445,7 +451,6 @@ switchD_00568487_caseD_d:
   core_charactr_cpp_CCharacter_preProcess_FUN_00429820((CCharacter *)this_ptr);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
             (&(this_ptr->base).base.model);
-  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
-            ((CCharacter *)this_ptr,delta_time,in_stack_fffffe60);
+  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr,delta_time);
   return;
 }

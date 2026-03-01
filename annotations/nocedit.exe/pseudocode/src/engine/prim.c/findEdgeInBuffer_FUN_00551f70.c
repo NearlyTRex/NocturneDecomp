@@ -16,7 +16,7 @@ SSoftwareEdge * __cdecl engine_prim_c_findEdgeInBuffer_FUN_00551f70(int y_value,
   iVar2 = 0;
   if (0 < g_SoftwareEdgeCount) {
     do {
-      if ((y_value == pSVar1->y_min) && (pSVar1 != edge_ptr)) {
+      if ((y_value == (pSVar1->base).y_min) && (pSVar1 != edge_ptr)) {
         return pSVar1;
       }
       iVar2 = iVar2 + 1;

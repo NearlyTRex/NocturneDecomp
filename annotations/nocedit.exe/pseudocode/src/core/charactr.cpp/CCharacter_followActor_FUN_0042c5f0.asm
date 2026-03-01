@@ -39,7 +39,7 @@
 ;   double DOUBLE_0061724a = 0.174532925194444
 ;   CConsole* g_CConsolePtr = 0083b1a4
 ;   CConsole g_CConsoleInstance
-;   CVector3f g_ZeroVector
+;   UVector3 g_ZeroVector
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0

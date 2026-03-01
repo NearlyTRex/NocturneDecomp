@@ -90,8 +90,8 @@ void __cdecl core_course_cpp_CCourse_showEditorMenu_FUN_00443040(CCourse *this_p
         }
         else {
           iVar5 = shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
-                            (g_CEditorToolsPtr,"Save course","data",0x6192df,
-                             (int)local_1f0);
+                            (g_CEditorToolsPtr,"Save course","data","pth"
+                             ,local_1f0,1);
           if (iVar5 != 0) {
             core_course_cpp_CCourse_save_FUN_00442a90(this_ptr,local_1f0);
           }

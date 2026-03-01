@@ -51,9 +51,9 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
   this_ptr->camera_debug_enabled = 0;
   this_ptr->debug_toggle_flag = 0;
   this_ptr->screen_clear_enabled = 0;
-  this_ptr->debug_flag_1 = 0;
+  this_ptr->god_mode_enabled = 0;
   this_ptr->gratuitous_dismemberment = 0;
-  this_ptr->debug_flag_2 = 0;
+  this_ptr->freeze_enemies_enabled = 0;
   this_ptr->event_processing_enabled = 0;
   this_ptr->subtitle_system_enabled = 0;
   this_ptr->screen_clear_condition = 0;

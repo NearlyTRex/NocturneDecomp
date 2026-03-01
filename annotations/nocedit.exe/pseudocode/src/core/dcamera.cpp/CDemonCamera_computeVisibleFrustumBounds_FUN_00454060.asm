@@ -49,9 +49,9 @@
 ;
 ; Referenced Globals:
 ;   float g_WorldToFloat = 0.00390625
-;   CVector3f g_ZeroVector
-;   undefined4 g_ZeroVector.y
-;   undefined4 g_ZeroVector.z
+;   UVector3 g_ZeroVector
+;   undefined4 g_ZeroVector+4
+;   undefined4 g_ZeroVector+8
 ;
 ; Called Functions:
 ;   core_box.cpp_CBoundingBox3D_expand_FUN_00420240
@@ -127,9 +127,9 @@ section .text
     MOV EDX,dword ptr [0x03f87558]      ; 00454154 | g_ZeroVector
         ;   Label: LAB_00454154
     MOV dword ptr [EAX],EDX             ; 0045415a
-    MOV EDX,dword ptr [0x03f8755c]      ; 0045415c | g_ZeroVector.y
+    MOV EDX,dword ptr [0x03f8755c]      ; 0045415c | g_ZeroVector+4
     MOV dword ptr [EAX + 0x4],EDX       ; 00454162
-    MOV EDX,dword ptr [0x03f87560]      ; 00454165 | g_ZeroVector.z
+    MOV EDX,dword ptr [0x03f87560]      ; 00454165 | g_ZeroVector+8
     MOV dword ptr [EAX + 0x8],EDX       ; 0045416b
     JMP 0x00454088                      ; 0045416e
         ;   XREF to: 00454088 (UNCONDITIONAL_JUMP)  ; LAB_00454088

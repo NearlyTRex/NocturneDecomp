@@ -46,7 +46,7 @@ void __cdecl engine_pod_cpp_CPod_computeAndStoreCRC_FUN_00551000(CPod *this_ptr,
     core_main_c_displayErrorAndQuit_FUN_00506f10
               ("Invalid pod version for %s: %d",pod_filename,local_44c.pod_format_version);
   }
-  iVar2 = engine_dosio_c_getFileSize_FUN_00481880(&s_EmptyString_0064015e,pod_filename);
+  iVar2 = engine_dosio_c_getFileSize_FUN_00481880(&s_EmptyChar_0064015e,pod_filename);
   size = iVar2 - local_18;
   p_Var3 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                      (pod_filename,(char *)0x0,"rb","..\\engine\\pod.cpp",0xf2);

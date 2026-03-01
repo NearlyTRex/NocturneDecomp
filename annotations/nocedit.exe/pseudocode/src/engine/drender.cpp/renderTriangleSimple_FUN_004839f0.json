@@ -6,17 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 465,
-    "complexity_score": 248,
+    "complexity_score": 220,
     "cross_reference_count": 4,
     "function_call_count": 5,
     "global_count": 22,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 223,
-    "suspect_count": 2,
-    "suspect_types": [
-      "extra_output"
-    ],
-    "total_lines": 688
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 220,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 685
   },
   "cross_references": [
     {
@@ -54,7 +52,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_drender.cpp_renderTriangleSimple_FUN_004839f0",
-    "signature": "int __cdecl engine_drender_cpp_renderTriangleSimple_FUN_004839f0(CVector3i *vertex_indices,int vertex_count)"
+    "signature": "void __cdecl engine_drender_cpp_renderTriangleSimple_FUN_004839f0(CVector3i *vertex_indices,int vertex_count)"
   },
   "function_calls": [
     {
@@ -129,7 +127,7 @@
     {
       "addr": "02c6cb74",
       "name": "g_EdgeInterpolationArray",
-      "type": "SEdgeData[16]",
+      "type": "SSoftwareEdge[16]",
       "value": null
     },
     {
@@ -349,22 +347,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 10,
-      "match": "extraout_EAX",
-      "severity": "moderate",
-      "text": "int extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 200,
-      "match": "extraout_EAX",
-      "severity": "moderate",
-      "text": "return extraout_EAX;",
-      "type": "extra_output"
-    }
-  ]
+  "suspects": []
 }

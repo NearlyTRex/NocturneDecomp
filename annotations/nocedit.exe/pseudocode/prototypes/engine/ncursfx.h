@@ -19,25 +19,25 @@ CMouse * __cdecl CMouse::dtor(CMouse *this_ptr,uint flags);
 // Address: 00544420
 void __cdecl CMouse::load(CMouse *this_ptr);
 
-// Original: engine_ncursfx.cpp_CMouse_FUN_00544500
+// Original: engine_ncursfx.cpp_CMouse_reset_FUN_00544500
 // Address: 00544500
-void __cdecl CMouse(CMouse *this_ptr);
+void __cdecl CMouse::reset(CMouse *this_ptr);
 
-// Original: engine_ncursfx.cpp_CMouse_FUN_00544510
+// Original: engine_ncursfx.cpp_CMouse_startEffect_FUN_00544510
 // Address: 00544510
-int __cdecl CMouse(CMouse *this_ptr);
+int __cdecl CMouse::startEffect(CMouse *this_ptr,uint button_mask);
 
-// Original: engine_ncursfx.cpp_CMouse_FUN_00544540
+// Original: engine_ncursfx.cpp_CMouse_consumeButton_FUN_00544540
 // Address: 00544540
-int __cdecl CMouse(CMouse *this_ptr);
+int __cdecl CMouse::consumeButton(CMouse *this_ptr,uint button_mask,int use_skull_effect);
 
-// Original: engine_ncursfx.cpp_CMouse_FUN_005445a0
+// Original: engine_ncursfx.cpp_CMouse_getPosition_FUN_005445a0
 // Address: 005445a0
-void __cdecl CMouse(CMouse *this_ptr);
+void __cdecl CMouse::getPosition(CMouse *this_ptr,int *out_x,int *out_y);
 
-// Original: engine_ncursfx.cpp_CMouse_FUN_005445c0
+// Original: engine_ncursfx.cpp_CMouse_render_FUN_005445c0
 // Address: 005445c0
-void __cdecl CMouse(CMouse *this_ptr);
+void __cdecl CMouse::render(CMouse *this_ptr);
 
 // Original: engine_ncursfx.cpp_CAlphaBitmap_arrdtor_FUN_00544730
 // Address: 00544730

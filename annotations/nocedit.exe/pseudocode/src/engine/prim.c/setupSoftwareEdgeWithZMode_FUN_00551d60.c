@@ -30,9 +30,9 @@ void __cdecl engine_prim_c_setupSoftwareEdgeWithZMode_FUN_00551d60(SRenderVertex
       start_vertex = end_vertex;
       iVar7 = iVar3;
     }
-    g_SoftwareEdgeBuffer[g_SoftwareEdgeCount].y_min = iVar7;
+    g_SoftwareEdgeBuffer[g_SoftwareEdgeCount].base.y_min = iVar7;
     iVar3 = g_SoftwareMinScanline;
-    g_SoftwareEdgeBuffer[iVar2].y_max = iVar6;
+    g_SoftwareEdgeBuffer[iVar2].base.y_max = iVar6;
     if (iVar7 < iVar3) {
       g_SoftwareMinScanline = iVar7;
     }
@@ -51,34 +51,34 @@ void __cdecl engine_prim_c_setupSoftwareEdgeWithZMode_FUN_00551d60(SRenderVertex
             (longlong)
             ((pSVar5->projected_vertex).screen_x - (start_vertex->projected_vertex).screen_x);
     uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    g_SoftwareEdgeBuffer[iVar2].x_gradient = uVar4;
+    g_SoftwareEdgeBuffer[iVar2].base.x_gradient = uVar4;
     lVar1 = (longlong)(int)uVar8 * (longlong)(int)uVar4;
-    g_SoftwareEdgeBuffer[iVar2].x_current =
+    g_SoftwareEdgeBuffer[iVar2].base.x_current =
          (start_vertex->projected_vertex).screen_x +
          ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
     lVar1 = (longlong)iVar7 * (longlong)(pSVar5->u - start_vertex->u);
     uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    g_SoftwareEdgeBuffer[iVar2].u_gradient = uVar4;
+    g_SoftwareEdgeBuffer[iVar2].base.u_gradient = uVar4;
     lVar1 = (longlong)(int)uVar8 * (longlong)(int)uVar4;
-    g_SoftwareEdgeBuffer[iVar2].u_current =
+    g_SoftwareEdgeBuffer[iVar2].base.u_current =
          start_vertex->u + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
     lVar1 = (longlong)iVar7 * (longlong)(pSVar5->v - start_vertex->v);
     uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    g_SoftwareEdgeBuffer[iVar2].v_gradient = uVar4;
+    g_SoftwareEdgeBuffer[iVar2].base.v_gradient = uVar4;
     lVar1 = (longlong)(int)uVar8 * (longlong)(int)uVar4;
-    g_SoftwareEdgeBuffer[iVar2].v_current =
+    g_SoftwareEdgeBuffer[iVar2].base.v_current =
          start_vertex->v + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
     lVar1 = (longlong)iVar7 * (longlong)(pSVar5->z - start_vertex->z);
     uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    g_SoftwareEdgeBuffer[iVar2].z_gradient = uVar4;
+    g_SoftwareEdgeBuffer[iVar2].base.z_gradient = uVar4;
     lVar1 = (longlong)(int)uVar8 * (longlong)(int)uVar4;
-    g_SoftwareEdgeBuffer[iVar2].z_current =
+    g_SoftwareEdgeBuffer[iVar2].base.z_current =
          start_vertex->z + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
     lVar1 = (longlong)iVar7 * (longlong)(pSVar5->fog - start_vertex->fog);
     uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    g_SoftwareEdgeBuffer[iVar2].fog_gradient = uVar4;
+    g_SoftwareEdgeBuffer[iVar2].base.fog_gradient = uVar4;
     lVar1 = (longlong)(int)uVar8 * (longlong)(int)uVar4;
-    g_SoftwareEdgeBuffer[iVar2].fog_current =
+    g_SoftwareEdgeBuffer[iVar2].base.fog_current =
          start_vertex->fog + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
     if (g_RenderStateFlag2 != 1) {
       lVar1 = (longlong)iVar7 *
@@ -86,9 +86,9 @@ void __cdecl engine_prim_c_setupSoftwareEdgeWithZMode_FUN_00551d60(SRenderVertex
               ((pSVar5->projected_vertex).transformed_z -
               (start_vertex->projected_vertex).transformed_z);
       uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-      g_SoftwareEdgeBuffer[iVar2].w_gradient = uVar4;
+      g_SoftwareEdgeBuffer[iVar2].base.w_gradient = uVar4;
       lVar1 = (longlong)(int)uVar8 * (longlong)(int)uVar4;
-      g_SoftwareEdgeBuffer[iVar2].w_current =
+      g_SoftwareEdgeBuffer[iVar2].base.w_current =
            (start_vertex->projected_vertex).transformed_z +
            ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
       g_SoftwareEdgeCount = g_SoftwareEdgeCount + 1;
@@ -104,9 +104,9 @@ void __cdecl engine_prim_c_setupSoftwareEdgeWithZMode_FUN_00551d60(SRenderVertex
     }
     lVar1 = (longlong)iVar7 * (longlong)(iVar3 - iVar6);
     uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    g_SoftwareEdgeBuffer[iVar2].w_gradient = uVar4;
+    g_SoftwareEdgeBuffer[iVar2].base.w_gradient = uVar4;
     lVar1 = (longlong)(int)uVar8 * (longlong)(int)uVar4;
-    g_SoftwareEdgeBuffer[iVar2].w_current =
+    g_SoftwareEdgeBuffer[iVar2].base.w_current =
          iVar6 + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
     g_SoftwareEdgeCount = g_SoftwareEdgeCount + 1;
   }

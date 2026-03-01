@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; double __cdecl engine_colquant_c_computeWeightedColorDistance_FUN_00441040(SColorQuantWorkspace *workspace,int box_index,int color_index)
+; double __cdecl engine_colquant_c_computeWeightedColorDistance_FUN_00441040(SColorQuantMapper *workspace,int box_index,int color_index)
 ;
 ; Parameters:
-; SColorQuantWorkspace * Stack[0x4]:4   workspace
+; SColorQuantMapper * Stack[0x4]:4   workspace
 ; int              Stack[0x8]:4   box_index
 ; int              Stack[0xc]:4   color_index
 ; Local Variables:

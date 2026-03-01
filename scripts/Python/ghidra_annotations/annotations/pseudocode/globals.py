@@ -280,7 +280,8 @@ def parse_array_dimensions(type_name):
     return base_type, [int(d) for d in dims]
 
 
-def format_multidim_array(raw_bytes, type_name, elem_size, elem_type_name=None):
+def format_multidim_array(raw_bytes, type_name, elem_size, elem_type_name=None,
+                          currentProgram=None, string_map=None):
     """Format a multi-dimensional array with proper nested braces.
 
     Args:
@@ -288,6 +289,8 @@ def format_multidim_array(raw_bytes, type_name, elem_size, elem_type_name=None):
         type_name: The full type name like 'int[2][3][15]'
         elem_size: Size of each element in bytes
         elem_type_name: Name of element type for signed-ness detection
+        currentProgram: Optional Ghidra program for resolving char* pointers to strings
+        string_map: Optional map of address hex strings to escaped string values
 
     Returns:
         Formatted C initializer string with nested braces
@@ -335,6 +338,11 @@ def format_multidim_array(raw_bytes, type_name, elem_size, elem_type_name=None):
             if int_val == 0:
                 return "nullptr"
             else:
+                # For char* pointers, try to resolve to string literals
+                if "char" in base_type.lower() and currentProgram:
+                    string_val = resolve_pointer_to_string(currentProgram, int_val, string_map)
+                    if string_val:
+                        return '"%s"' % string_val
                 return "(%s)0x%08X" % (base_type.rstrip('[]0123456789 '), int_val)
         else:
             # Integer type
@@ -1230,7 +1238,7 @@ def extract_globals_and_constants(currentProgram, string_map=None, write_xref_ad
                     is_float_array = "float" in elem_type_name and not is_double_array
 
                     # Check for char array types - handle these BEFORE falling back to byte arrays
-                    is_2d_char_array = "char" in type_name.lower() and type_name.count("[") >= 2
+                    is_2d_char_array = "char" in type_name.lower() and type_name.count("[") >= 2 and "*" not in type_name
                     is_1d_char_array = "char" in type_name.lower() and type_name.count("[") == 1 and not is_pointer_array
                     is_char_pointer_array = is_pointer_array and "char" in type_name.lower()
 
@@ -1276,7 +1284,7 @@ def extract_globals_and_constants(currentProgram, string_map=None, write_xref_ad
                                         ptr_values.append("(%s)0x%08X" % (element_type, ptr_val))
                             initializer_value = format_array_initializer(ptr_values, vals_per_line=4)
 
-                    elif type_name.count("[") >= 2 and "char" not in type_name.lower():
+                    elif type_name.count("[") >= 2:
                         # Multi-dimensional array (not char) - format with nested braces
                         # Get the innermost element type and size
                         # Traverse array types but stop at non-array types (like pointers)
@@ -1293,7 +1301,8 @@ def extract_globals_and_constants(currentProgram, string_map=None, write_xref_ad
                         if innermost_type and hasattr(innermost_type, 'getLength'):
                             inner_size = innermost_type.getLength()
                             inner_name = innermost_type.getName() if hasattr(innermost_type, 'getName') else ""
-                            multidim_init = format_multidim_array(raw_bytes, type_name, inner_size, inner_name)
+                            multidim_init = format_multidim_array(raw_bytes, type_name, inner_size, inner_name,
+                                                                  currentProgram=currentProgram, string_map=string_map)
                             if multidim_init:
                                 initializer_value = multidim_init
                             else:

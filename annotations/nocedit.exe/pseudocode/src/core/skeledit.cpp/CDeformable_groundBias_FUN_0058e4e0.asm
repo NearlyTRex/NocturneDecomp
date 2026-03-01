@@ -23,9 +23,9 @@
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   int g_CurrentDebugLine
-;   CVector3f g_ZeroVector
-;   undefined4 g_ZeroVector.y
-;   undefined4 g_ZeroVector.z
+;   UVector3 g_ZeroVector
+;   undefined4 g_ZeroVector+4
+;   undefined4 g_ZeroVector+8
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
@@ -114,10 +114,10 @@ section .text
     MOV EAX,[0x03f87558]                ; 0058e58a | g_ZeroVector
         ;   Label: LAB_0058e58a
     MOV dword ptr [ESP],EAX             ; 0058e58f
-    MOV EAX,[0x03f8755c]                ; 0058e592 | g_ZeroVector.y
+    MOV EAX,[0x03f8755c]                ; 0058e592 | g_ZeroVector+4
     NEG ECX                             ; 0058e597
     MOV dword ptr [ESP + 0x4],EAX       ; 0058e599
-    MOV EAX,[0x03f87560]                ; 0058e59d | g_ZeroVector.z
+    MOV EAX,[0x03f87560]                ; 0058e59d | g_ZeroVector+8
     MOV dword ptr [ESP + 0xc],ECX       ; 0058e5a2
     MOV dword ptr [ESP + 0x8],EAX       ; 0058e5a6
     MOV EAX,ESP                         ; 0058e5aa

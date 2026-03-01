@@ -36,7 +36,6 @@ void __cdecl core_scat_cpp_CScat_process_FUN_005571f0(CScat *this_ptr,float delt
   CQuaternion4f *source_quaternions;
   float fVar20;
   code *blend_callback;
-  float in_stack_ffffff90;
   CQuaternion4f CStack_6c;
   CQuaternion4f local_5c;
   float local_4c;
@@ -55,10 +54,10 @@ void __cdecl core_scat_cpp_CScat_process_FUN_005571f0(CScat *this_ptr,float delt
   if (pCVar12->letterbox_mode != 0) {
     (this_ptr->base).base.turn_speed = (this_ptr->base).base.turn_speed * (float)0.33333333333333298;
   }
-  fVar20 = (float)(this_ptr->base).no_collision_flag - delta_time;
-  (this_ptr->base).no_collision_flag = (int)fVar20;
+  fVar20 = (this_ptr->base).invincibility_timer - delta_time;
+  (this_ptr->base).invincibility_timer = fVar20;
   if (fVar20 < 0.0) {
-    (this_ptr->base).no_collision_flag = 0;
+    (this_ptr->base).invincibility_timer = 0.0;
   }
   pCVar14 = &(this_ptr->base).base.model.accumulated_root_motion;
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
@@ -257,7 +256,6 @@ LAB_005573f5:
       if ((this_ptr->base).player_control.action_states[3] == 0) goto LAB_00557408;
       iVar13 = 0xf;
     }
-    in_stack_ffffff90 = 1.4013e-45;
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
               (&(this_ptr->base).base.model.motion_controller,iVar13,1);
   }
@@ -301,8 +299,7 @@ LAB_00557408:
     core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750
               (unaff_ESI,source_quaternions,fVar20,iVar13,blend_callback);
   }
-  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
-            ((CCharacter *)this_ptr,delta_time,in_stack_ffffff90);
+  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr,delta_time);
   core_scat_cpp_CScat_FUN_00558fd0(this_ptr);
 switchD_00557686_caseD_5:
   return;

@@ -10687,22 +10687,6 @@
             ]
           },
           "type":"float"
-        },
-        {
-          "name":"param_3",
-          "storage":{
-            "offset":12,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0xc]",
-                "offset":12,
-                "size":4
-              }
-            ]
-          },
-          "type":"float"
         }
       ]
     }
@@ -13844,7 +13828,7 @@
               }
             ]
           },
-          "type":"SColorQuantWorkspace*"
+          "type":"SColorQuantMapper*"
         },
         {
           "name":"color_data",
@@ -13970,7 +13954,7 @@
               }
             ]
           },
-          "type":"SColorQuantWorkspace*"
+          "type":"SColorQuantMapper*"
         },
         {
           "name":"box_index",
@@ -14070,7 +14054,7 @@
               }
             ]
           },
-          "type":"SColorQuantWorkspace*"
+          "type":"SColorQuantMapper*"
         },
         {
           "name":"box_index",
@@ -14186,7 +14170,7 @@
               }
             ]
           },
-          "type":"SColorQuantWorkspace*"
+          "type":"SColorQuantMapper*"
         },
         {
           "name":"box_index",
@@ -17765,7 +17749,7 @@
               }
             ]
           },
-          "type":"SEdgeData*"
+          "type":"SSoftwareEdge*"
         },
         {
           "name":"right_edge",
@@ -17781,7 +17765,7 @@
               }
             ]
           },
-          "type":"SEdgeData*"
+          "type":"SSoftwareEdge*"
         },
         {
           "name":"scanline_y",
@@ -29885,7 +29869,7 @@
               }
             ]
           },
-          "type":"SEdgeData*"
+          "type":"SSoftwareEdge*"
         },
         {
           "name":"right_edge",
@@ -29900,7 +29884,7 @@
               }
             ]
           },
-          "type":"SEdgeData*"
+          "type":"SSoftwareEdge*"
         },
         {
           "name":"scanline_y",
@@ -43625,7 +43609,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_flamecan.cpp_CFlameCan_FUN_004cb340",
+    "name":"core_flamecan.cpp_CFlameCan_ignite_FUN_004cb340",
     "ret":"void",
     "vars":{
       "params":[
@@ -44407,7 +44391,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_font.cpp_CBitFont_getCharWidth_FUN_004cff40",
+    "name":"engine_font.cpp_CBitFont_getTextHeight_FUN_004cff40",
     "ret":"int",
     "vars":{
       "params":[
@@ -46090,9 +46074,43 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_game.cpp_FUN_004e4440",
-    "ret":"void*",
+    "name":"core_game.cpp_copyInt_FUN_004e4440",
+    "ret":"int*",
     "vars":{
+      "params":[
+        {
+          "name":"dest",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int*"
+        },
+        {
+          "name":"src",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int*"
+        }
+      ],
       "ret_storage":{
         "reg":"EAX",
         "size":4,
@@ -64335,7 +64353,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_ncursfx.cpp_CMouse_FUN_00544540",
+    "name":"engine_ncursfx.cpp_CMouse_consumeButton_FUN_00544540",
     "ret":"int",
     "vars":{
       "params":[
@@ -64354,6 +64372,38 @@
             ]
           },
           "type":"CMouse*"
+        },
+        {
+          "name":"button_mask",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint"
+        },
+        {
+          "name":"use_skull_effect",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ],
       "ret_storage":{
@@ -64379,7 +64429,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_ncursfx.cpp_CMouse_FUN_005445c0",
+    "name":"engine_ncursfx.cpp_CMouse_render_FUN_005445c0",
     "ret":"void",
     "vars":{
       "params":[
@@ -64524,7 +64574,43 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"engine_palette.cpp_CPaletteManager_addTexture_FUN_00544fc0",
-    "ret":"void"
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CPaletteManager*"
+        },
+        {
+          "name":"filename",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        }
+      ]
+    }
   },
   {
     "addr":"00545ac0",

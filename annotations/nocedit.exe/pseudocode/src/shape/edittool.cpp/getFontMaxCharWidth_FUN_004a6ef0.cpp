@@ -9,5 +9,5 @@
 int __cdecl shape_edittool_cpp_getFontMaxCharWidth_FUN_004a6ef0(CBitFont *font_ptr)
 
 {
-  return font_ptr->max_char_width;
+  return font_ptr->max_char_height;
 }

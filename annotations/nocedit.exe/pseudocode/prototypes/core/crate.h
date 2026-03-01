@@ -67,9 +67,9 @@ CBoundingBox3D * __cdecl CCrate::getBoundingBox(CCrate *this_ptr,CBoundingBox3D 
 // Address: 004489d0
 int __cdecl CCrate::getTargetPoints(CCrate *this_ptr,CVector3f *out_points_array);
 
-// Original: core_crate.cpp_CCrate_FUN_00448a70
+// Original: core_crate.cpp_CCrate_explode_FUN_00448a70
 // Address: 00448a70
-void __cdecl CCrate(CCrate *this_ptr);
+void __cdecl CCrate::explode(CCrate *this_ptr);
 
 // Original: core_crate.cpp_CCrate_getPropertyList_FUN_00448b20
 // Address: 00448b20

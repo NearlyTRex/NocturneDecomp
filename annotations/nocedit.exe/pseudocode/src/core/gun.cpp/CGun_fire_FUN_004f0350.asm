@@ -33,10 +33,10 @@
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0
-;   core_crate.cpp_CCrate_FUN_00448a70
+;   core_crate.cpp_CCrate_explode_FUN_00448a70
 ;   core_fire.cpp_CFireEffect_createBulletImpact_FUN_004c76a0
 ;   core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_004c7a60
-;   core_flamecan.cpp_CFlameCan_FUN_004cb340
+;   core_flamecan.cpp_CFlameCan_ignite_FUN_004cb340
 ;   core_glass.cpp_CGlass_checkBreakableCondition_FUN_004eb3a0
 ;   core_glass.cpp_CGlass_shatter_FUN_004eaef0
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_005741b0
@@ -199,7 +199,7 @@ section .text
     PUSH EAX                            ; 004f058e | g_CFireEffectInstance
     FSTP float ptr [ESP + 0x10c]        ; 004f058f
     CALL core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_004c7a60 ; 004f0596
-        ;   XREF to: 004c7a60 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_004c7a60(CFireEffect * this_ptr)
+        ;   XREF to: 004c7a60 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_004c7a60(CFireEffect * this_ptr, CVector3f * position, CMatrix3x3f * rotation_matrix)
     ADD ESP,0xc                         ; 004f059b
     LEA EAX,[ESP + 0x90]                ; 004f059e
     PUSH EAX                            ; 004f05a5
@@ -328,8 +328,8 @@ section .text
     JZ 0x004f0ae3                       ; 004f080d
         ;   XREF to: 004f0ae3 (CONDITIONAL_JUMP)  ; LAB_004f0ae3
     PUSH EAX                            ; 004f0813
-    CALL core_flamecan.cpp_CFlameCan_FUN_004cb340 ; 004f0814
-        ;   XREF to: 004cb340 (UNCONDITIONAL_CALL)  ; void core_flamecan.cpp_CFlameCan_FUN_004cb340(CFlameCan * this_ptr)
+    CALL core_flamecan.cpp_CFlameCan_ignite_FUN_004cb340 ; 004f0814
+        ;   XREF to: 004cb340 (UNCONDITIONAL_CALL)  ; void core_flamecan.cpp_CFlameCan_ignite_FUN_004cb340(CFlameCan * this_ptr)
     ADD ESP,0x4                         ; 004f0819
     JMP 0x004f0ac6                      ; 004f081c
         ;   XREF to: 004f0ac6 (UNCONDITIONAL_JUMP)  ; LAB_004f0ac6
@@ -528,8 +528,8 @@ section .text
         ;   XREF to: 004f0ac6 (UNCONDITIONAL_JUMP)  ; LAB_004f0ac6
     PUSH ESI                            ; 004f0abd
         ;   Label: LAB_004f0abd
-    CALL core_crate.cpp_CCrate_FUN_00448a70 ; 004f0abe
-        ;   XREF to: 00448a70 (UNCONDITIONAL_CALL)  ; void core_crate.cpp_CCrate_FUN_00448a70(CCrate * this_ptr)
+    CALL core_crate.cpp_CCrate_explode_FUN_00448a70 ; 004f0abe
+        ;   XREF to: 00448a70 (UNCONDITIONAL_CALL)  ; void core_crate.cpp_CCrate_explode_FUN_00448a70(CCrate * this_ptr)
     ADD ESP,0x4                         ; 004f0ac3
     MOV EDI,dword ptr [ESP + 0x12c]     ; 004f0ac6
         ;   Label: LAB_004f0ac6

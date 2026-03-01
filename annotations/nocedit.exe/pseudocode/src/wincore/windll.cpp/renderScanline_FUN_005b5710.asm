@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __edi_esi_ebx wincore_windll_cpp_renderScanline_FUN_005b5710(void *left_data,void *right_data,int scanline_y)
+; void __edi_esi_ebx wincore_windll_cpp_renderScanline_FUN_005b5710(SHardwareEdge *left,SHardwareEdge *right,int scanline_y)
 ;
 ;
 ; XREF[8]:

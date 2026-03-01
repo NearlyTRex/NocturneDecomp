@@ -27,7 +27,6 @@ void __cdecl core_fire_cpp_CFireEffect_process_FUN_004c6ec0(CFireEffect *this_pt
   CShell *this_ptr_14;
   CPopcorn *this_ptr_15;
   CRainDrop *this_ptr_16;
-  CGunFlame *unaff_EBP;
   int iVar2;
   CBulletHole *this_ptr_17;
   
@@ -122,7 +121,7 @@ void __cdecl core_fire_cpp_CFireEffect_process_FUN_004c6ec0(CFireEffect *this_pt
   do {
     if (ABS(this_ptr_11->lifetime) != 0.0) {
       if (!bVar1) {
-        core_fire_cpp_CGunFlame_initProcess_FUN_004c4b00(unaff_EBP);
+        core_fire_cpp_initProcess_FUN_004c4b00();
         bVar1 = true;
       }
       core_fire_cpp_CGunFlame_process_FUN_004c4f60(this_ptr_11);

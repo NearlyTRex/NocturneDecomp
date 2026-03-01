@@ -2,11 +2,11 @@
 // Address: 00490a58
 // Address Range: [[00490a58, 00490c36]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dstrender_cpp_renderSolidColorDepth16xUnrolled_FUN_00490a58(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
+// Signature: void __cdecl core_dstrender_cpp_renderSolidColorDepth16xUnrolled_FUN_00490a58(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
 
 #include "nocturne.h"
 
-void __cdecl core_dstrender_cpp_renderSolidColorDepth16xUnrolled_FUN_00490a58(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
+void __cdecl core_dstrender_cpp_renderSolidColorDepth16xUnrolled_FUN_00490a58(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
 
 {
   int iVar1;
@@ -18,13 +18,13 @@ void __cdecl core_dstrender_cpp_renderSolidColorDepth16xUnrolled_FUN_00490a58(SE
   uint *puVar7;
   uint *puVar8;
   uint uVar9;
-  SEdgeData *pSVar10;
+  SSoftwareEdge *pSVar10;
   uint uVar11;
   int *piVar12;
   
   iVar1 = g_ActiveRenderColor;
-  uVar11 = left_edge->x_current;
-  uVar9 = right_edge->x_current;
+  uVar11 = (left_edge->base).x_current;
+  uVar9 = (right_edge->base).x_current;
   uVar2 = uVar11;
   pSVar10 = left_edge;
   if (uVar9 < uVar11) {
@@ -39,9 +39,9 @@ void __cdecl core_dstrender_cpp_renderSolidColorDepth16xUnrolled_FUN_00490a58(SE
     piVar6 = (int *)((int)g_ScreenBufferArray[scanline_y] + uVar2 * 4);
     puVar7 = g_ZBufferScanlineArray[scanline_y] + uVar2;
     iVar5 = (int)((ulonglong)
-                  ((longlong)(right_edge->z_current - pSVar10->z_current) *
+                  ((longlong)((right_edge->base).w_current - (pSVar10->base).w_current) *
                   (longlong)(int)g_ReciprocalLookupTable[iVar3 + 1]) >> 0x20);
-    uVar11 = pSVar10->z_current;
+    uVar11 = (pSVar10->base).w_current;
     while (iVar4 = iVar3 + -4, puVar8 = puVar7, piVar12 = piVar6, 3 < iVar3) {
       if ((int)*puVar7 <= (int)(uVar11 >> 8)) {
         *puVar7 = uVar11 >> 8;

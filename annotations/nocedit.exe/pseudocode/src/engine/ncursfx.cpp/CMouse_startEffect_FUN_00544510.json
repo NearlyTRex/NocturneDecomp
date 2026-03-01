@@ -1,0 +1,93 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 16,
+    "complexity_score": 8,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 8,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 24
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00544510",
+    "address_range": [
+      [
+        "00544510",
+        "00544538"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_ncursfx.cpp_CMouse_startEffect_FUN_00544510",
+    "signature": "int __cdecl engine_ncursfx_cpp_CMouse_startEffect_FUN_00544510(CMouse *this_ptr,uint button_mask)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "02cf6a94",
+      "name": "g_MouseButtonFlags",
+      "type": "_BIT_INTEGER32",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.090909090909091,
+    "instruction_count": 11,
+    "opcode_distribution": {
+      "CBRANCH": 2,
+      "COPY": 10,
+      "INT_ADD": 6,
+      "INT_AND": 9,
+      "INT_EQUAL": 8,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SLESS": 4,
+      "INT_SUB": 1,
+      "INT_XOR": 2,
+      "LOAD": 5,
+      "POPCOUNT": 4,
+      "RETURN": 2,
+      "STORE": 1
+    },
+    "pcode_op_count": 56
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMouse *"
+      },
+      {
+        "is_param": true,
+        "name": "button_mask",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": []
+}

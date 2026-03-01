@@ -2,11 +2,11 @@
 // Address: 004a1e90
 // Address Range: [[004a1e90, 004a1f2c]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_edittool_cpp_CEditorTools_draw3DAxisLabelsAt_FUN_004a1e90(CEditorTools *this_ptr,int param2,CQuaternion4f *world_position,CQuaternion4f *label_offset,void *param5)
+// Signature: void __cdecl shape_edittool_cpp_CEditorTools_draw3DAxisLabelsAt_FUN_004a1e90(CEditorTools *this_ptr,float scale_factor,int text_color,CVector3f *world_position,UOrientationVector *orientation)
 
 #include "nocturne.h"
 
-void __cdecl shape_edittool_cpp_CEditorTools_draw3DAxisLabelsAt_FUN_004a1e90(CEditorTools *this_ptr,int param2,CQuaternion4f *world_position,CQuaternion4f *label_offset,void *param5)
+void __cdecl shape_edittool_cpp_CEditorTools_draw3DAxisLabelsAt_FUN_004a1e90(CEditorTools *this_ptr,float scale_factor,int text_color,CVector3f *world_position,UOrientationVector *orientation)
 
 {
   CQuaternion4f CStack_28;
@@ -14,16 +14,15 @@ void __cdecl shape_edittool_cpp_CEditorTools_draw3DAxisLabelsAt_FUN_004a1e90(CEd
   int local_14;
   int local_10;
   
-  CStack_28.x = (float)(int)ROUND(label_offset->w * 256.0f);
-  CStack_28.y = (float)(int)ROUND(label_offset->x * 256.0f);
-  CStack_28.z = (float)(int)ROUND(label_offset->y * 256.0f);
+  CStack_28.x = (float)(int)ROUND(world_position->x * 256.0f);
+  CStack_28.y = (float)(int)ROUND(world_position->y * 256.0f);
+  CStack_28.z = (float)(int)ROUND(world_position->z * 256.0f);
   engine_3d_c_processCameraRelativePoint_FUN_004037e0(&CStack_28);
-  local_18 = (int)ROUND(*(float *)param5 * 10430.38f);
-  local_14 = (int)ROUND(*(float *)((int)param5 + 8) * 10430.38f);
-  local_10 = (int)ROUND(*(float *)((int)param5 + 4) * 10430.38f);
+  local_18 = (int)ROUND((orientation->vec).x * 10430.38f);
+  local_14 = (int)ROUND((orientation->vec).z * 10430.38f);
+  local_10 = (int)ROUND((orientation->vec).y * 10430.38f);
   engine_matrix_c_matrixPushAndTransform_FUN_0050cee0(local_18,local_14,local_10,0,0,0);
-  shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0
-            (this_ptr,(float)param2,(int)world_position);
+  shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0(this_ptr,scale_factor,text_color);
   engine_matrix_c_pop_FUN_0050d720();
   return;
 }

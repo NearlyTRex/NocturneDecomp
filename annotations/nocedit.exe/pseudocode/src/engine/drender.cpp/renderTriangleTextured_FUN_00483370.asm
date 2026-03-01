@@ -36,7 +36,7 @@
 ;   int g_TexturesDisabled
 ;   int g_CullingMode
 ;   int g_RenderTriangleEdgeCount
-;   SEdgeData[16] g_EdgeInterpolationArray
+;   SSoftwareEdge[16] g_EdgeInterpolationArray
 ;   ... and 25 more
 ;
 ; Called Functions:
@@ -293,7 +293,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x54]      ; 0048361c
     MOV EBX,dword ptr [ESP + 0x4c]      ; 00483620
     CALL wincore_windll.cpp_renderScanline_FUN_005b5710 ; 00483624
-        ;   XREF to: 005b5710 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_renderScanline_FUN_005b5710(void * left_data, void * right_data, int scanline_y)
+        ;   XREF to: 005b5710 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_renderScanline_FUN_005b5710(SHardwareEdge * left, SHardwareEdge * right, int scanline_y)
     CMP dword ptr [0x02c6d5a8],0x0      ; 00483629 | g_RenderAbortFlag
     JNZ 0x004833f9                      ; 00483630
         ;   XREF to: 004833f9 (CONDITIONAL_JUMP)  ; LAB_004833f9

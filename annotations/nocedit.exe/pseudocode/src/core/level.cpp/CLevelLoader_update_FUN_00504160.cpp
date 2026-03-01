@@ -42,7 +42,7 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_00504160(CLevelLoader *this_
                  this_ptr->viewport_width,this_ptr->viewport_height);
     }
     engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
-              (g_CDemonRendererPtr2,(CVector3i *)&g_ZeroVector);
+              (g_CDemonRendererPtr2,&g_ZeroVector.i);
     local_18 = 56.0;
     if (this_ptr->use_custom_viewport != 0) {
       local_18 = 84.0;
@@ -162,7 +162,7 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_00504160(CLevelLoader *this_
         iVar5 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(local_10,text);
         engine_font_cpp_CBitFont_drawText_FUN_004cda80
                   (local_10,text,(iVar4 + iVar3 / 2) - iVar5 / 2,
-                   (local_14 + iVar6 / 2) - local_10->max_char_width / 2,0xf8,-1);
+                   (local_14 + iVar6 / 2) - local_10->max_char_height / 2,0xf8,-1);
       }
     }
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();

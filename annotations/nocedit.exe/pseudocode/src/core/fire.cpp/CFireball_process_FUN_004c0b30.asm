@@ -22,7 +22,7 @@
 ; Called Functions:
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0
 ;   core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_00471360
-;   core_dglobe.cpp_CDemonGlobe_setColor_FUN_00471310
+;   core_dglobe.cpp_CDemonGlobe_setPosition_FUN_00471310
 ;   core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004c7b20
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_004c79d0
 ;   core_particle.cpp_CParticle_process_FUN_00545760
@@ -74,8 +74,8 @@ section .text
     PUSH EBP                            ; 004c0b94
     LEA EBX,[EBP + 0x5c]                ; 004c0b95
     PUSH EBX                            ; 004c0b98
-    CALL core_dglobe.cpp_CDemonGlobe_setColor_FUN_00471310 ; 004c0b99
-        ;   XREF to: 00471310 (UNCONDITIONAL_CALL)  ; void core_dglobe.cpp_CDemonGlobe_setColor_FUN_00471310(CDemonGlobe * this_ptr, CColor3f * color)
+    CALL core_dglobe.cpp_CDemonGlobe_setPosition_FUN_00471310 ; 004c0b99
+        ;   XREF to: 00471310 (UNCONDITIONAL_CALL)  ; void core_dglobe.cpp_CDemonGlobe_setPosition_FUN_00471310(CDemonGlobe * this_ptr, CVector3f * position)
     MOV EDX,dword ptr [EBP + 0x38]      ; 004c0b9e
     MOV EAX,EDX                         ; 004c0ba1
     MOV dword ptr [EBX + 0x3c],EDX      ; 004c0ba3

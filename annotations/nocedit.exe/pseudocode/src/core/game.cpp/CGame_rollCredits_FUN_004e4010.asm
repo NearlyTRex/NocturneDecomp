@@ -41,7 +41,7 @@
 ;
 ; Called Functions:
 ;   core_game.cpp_CGame_saveClockTime_FUN_004d7d80
-;   core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90
+;   core_game.cpp_CGame_updateDT_FUN_004d7d90
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_math.c_round_FUN_005fe6b0
 ;   crt_stdio.c_fgets_FUN_005fefd0
@@ -156,8 +156,8 @@ section .text
     MOV EDI,dword ptr [0x020a5720]      ; 004e4120 | g_ThemeFont
     PUSH EDI                            ; 004e4126
     MOV dword ptr [EDI + 0x3190],0x0    ; 004e4127
-    CALL engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0 ; 004e4131
-        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0 ; 004e4131
+        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 004e4136
     MOV EBX,0xffffffff                  ; 004e4139
     MOV ESI,dword ptr [ESP + 0x1140]    ; 004e413e
@@ -285,8 +285,8 @@ section .text
         ;   XREF to: 004e43c1 (CONDITIONAL_JUMP)  ; LAB_004e43c1
     MOV EDX,dword ptr [ESP + 0x1140]    ; 004e42ab
     PUSH EDX                            ; 004e42b2
-    CALL core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90 ; 004e42b3
-        ;   XREF to: 004d7d90 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90(CGame * this_ptr)
+    CALL core_game.cpp_CGame_updateDT_FUN_004d7d90 ; 004e42b3
+        ;   XREF to: 004d7d90 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_updateDT_FUN_004d7d90(CGame * this_ptr)
     ADD ESP,0x4                         ; 004e42b8
     MOV EAX,dword ptr [ESP + 0x1140]    ; 004e42bb
     FLD float ptr [EAX + 0x264]         ; 004e42c2

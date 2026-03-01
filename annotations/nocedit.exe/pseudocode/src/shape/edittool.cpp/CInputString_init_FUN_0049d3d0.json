@@ -6,16 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 82,
+    "complexity_score": 47,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 32,
-    "suspect_count": 4,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
-      "unnamed_param"
+      "pointer_cast"
     ],
     "total_lines": 83
   },
@@ -43,7 +42,7 @@
     ],
     "convention": "__cdecl",
     "name": "shape_edittool.cpp_CInputString_init_FUN_0049d3d0",
-    "signature": "void __cdecl shape_edittool_cpp_CInputString_init_FUN_0049d3d0(CInputString *this_ptr,char *source_string,int max_length,int param4,int param5,int render_mode)"
+    "signature": "void __cdecl shape_edittool_cpp_CInputString_init_FUN_0049d3d0(CInputString *this_ptr,char *source_string,int max_length,int mask_mode)"
   },
   "function_calls": [
     {
@@ -88,10 +87,10 @@
     "pcode_op_count": 186
   },
   "stack_frame": {
-    "frame_size": 28,
+    "frame_size": 20,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 24,
+    "param_size": 16,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -117,22 +116,8 @@
       },
       {
         "is_param": true,
-        "name": "param4",
+        "name": "mask_mode",
         "offset": 16,
-        "size": 4,
-        "type": "int"
-      },
-      {
-        "is_param": true,
-        "name": "param5",
-        "offset": 20,
-        "size": 4,
-        "type": "int"
-      },
-      {
-        "is_param": true,
-        "name": "render_mode",
-        "offset": 24,
         "size": 4,
         "type": "int"
       }
@@ -140,36 +125,12 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param4",
-      "severity": "mild",
-      "text": "void __cdecl shape_edittool_cpp_CInputString_init_FUN_0049d3d0(CInputString *this_ptr,char *source_string,int max_length,int param4,int param5,int render_mode)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param5",
-      "severity": "mild",
-      "text": "void __cdecl shape_edittool_cpp_CInputString_init_FUN_0049d3d0(CInputString *this_ptr,char *source_string,int max_length,int param4,int param5,int render_mode)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 27,
       "match": "(CInputString *)((int)",
       "severity": "mild",
       "text": "pCVar3 = (CInputString *)((int)pCVar3 + (uint)bVar4 * -2 + 1);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param4",
-      "severity": "mild",
-      "text": "this_ptr->mask_mode = param4;",
-      "type": "unnamed_param"
     }
   ]
 }

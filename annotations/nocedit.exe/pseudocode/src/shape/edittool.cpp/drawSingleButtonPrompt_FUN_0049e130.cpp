@@ -25,8 +25,8 @@ void __cdecl shape_edittool_cpp_drawSingleButtonPrompt_FUN_0049e130(char *title,
     g_CurrentLineNumber = 0x8d;
     core_main_c_displayErrorAndQuit_FUN_00506f10("gEdFont must be set by the application.");
   }
-  g_FontCharacterHeight = g_EditorFont->max_char_height;
-  g_FontCharacterWidth = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(g_EditorFont,0x6a);
+  g_FontCharacterHeight = g_EditorFont->max_char_width;
+  g_FontCharacterWidth = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(g_EditorFont,0x6a);
   iVar1 = g_WindowHeight / 0x60;
   local_18 = shape_edittool_cpp_calculateButtonWidth_FUN_004a68e0("Cancel");
   iVar2 = shape_edittool_cpp_calculateButtonHeight_FUN_004a6970((char *)0x0);
@@ -40,7 +40,7 @@ void __cdecl shape_edittool_cpp_drawSingleButtonPrompt_FUN_0049e130(char *title,
   if (local_14 < local_18) {
     local_14 = local_18;
   }
-  iVar1 = engine_font_cpp_CBitFont_getCharWidth_FUN_004cff40(g_EditorFont,message);
+  iVar1 = engine_font_cpp_CBitFont_getTextHeight_FUN_004cff40(g_EditorFont,message);
   shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_004a0890
             (g_CEditorToolsPtr,g_FontCharacterHeight * 4 + local_14,
              iVar1 + g_FontCharacterWidth * 2 + iVar2,title,0);

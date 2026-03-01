@@ -62,8 +62,8 @@ typedef struct CGame {
     int auto_use_health; // 0xc8
     int cutscene_skippable; // 0xcc
     char debug_info_string[256]; // 0xd0
-    int debug_flag_1; // 0x1d0
-    int debug_flag_2; // 0x1d4
+    int god_mode_enabled; // 0x1d0
+    int freeze_enemies_enabled; // 0x1d4
     int event_processing_enabled; // 0x1d8
     int subtitle_system_enabled; // 0x1dc
     int gratuitous_dismemberment; // 0x1e0

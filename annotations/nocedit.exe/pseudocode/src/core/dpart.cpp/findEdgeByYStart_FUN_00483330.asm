@@ -1,15 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SEdgeData * __cdecl core_dpart_cpp_findEdgeByYStart_FUN_00483330(int scanline_y,SEdgeData *exclude_edge)
+; SSoftwareEdge * __cdecl core_dpart_cpp_findEdgeByYStart_FUN_00483330(int scanline_y,SSoftwareEdge *exclude_edge)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   scanline_y
-; SEdgeData *      Stack[0x8]:4   exclude_edge
+; SSoftwareEdge *  Stack[0x8]:4   exclude_edge
 ;
 ; Referenced Globals:
 ;   int g_RenderTriangleEdgeCount
-;   SEdgeData[16] g_EdgeInterpolationArray
+;   SSoftwareEdge[16] g_EdgeInterpolationArray
 ;   undefined4 DAT_02c6cbbc
 ;
 ; *****************************************************************************

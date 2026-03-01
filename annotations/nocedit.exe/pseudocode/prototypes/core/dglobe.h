@@ -3,9 +3,9 @@
 // Function prototypes for core/dglobe.cpp
 // Generated from Ghidra function signatures
 
-// Original: core_dglobe.cpp_CDemonGlobe_setColor_FUN_00471310
+// Original: core_dglobe.cpp_CDemonGlobe_setPosition_FUN_00471310
 // Address: 00471310
-void __cdecl CDemonGlobe::setColor(CDemonGlobe *this_ptr,CColor3f *color);
+void __cdecl CDemonGlobe::setPosition(CDemonGlobe *this_ptr,CVector3f *position);
 
 // Original: core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_00471360
 // Address: 00471360

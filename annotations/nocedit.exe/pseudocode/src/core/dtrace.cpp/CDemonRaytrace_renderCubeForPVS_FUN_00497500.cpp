@@ -236,7 +236,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500(CDemon
                   (g_CDemonRendererPtr2,&local_4c);
         core_dcube_cpp_CDemonCube_rotateVertices_FUN_00457650(local_34,this_ptr->rendering_mode);
         engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-                  (g_CDemonRendererPtr2,&g_ZeroVector);
+                  (g_CDemonRendererPtr2,&g_ZeroVector.f);
         iVar2 = g_PVSDrawnCubeCount;
         g_PVSCubePointers[g_PVSDrawnCubeCount] = local_34;
         if (g_PVSCubePositions + iVar2 != &local_4c) {

@@ -14,7 +14,6 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
   int iVar2;
   uint uVar3;
   CBoundingBox3D *pCVar4;
-  CQuaternion4f *world_position;
   CDemonActor *extraout_EAX;
   CVector3f *pCVar5;
   CDemonActor *extraout_EAX_00;
@@ -29,8 +28,7 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
   bool bVar13;
   byte bVar14;
   char *pcVar15;
-  CQuaternion4f *label_offset;
-  UOrientationVector *param5;
+  UOrientationVector *orientation;
   CDemonMission *in_stack_fffff64c;
   char local_60c [300];
   char local_4e0 [300];
@@ -422,13 +420,12 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
         if (local_40 < (float)0.5) {
           local_40 = 0.5;
         }
-        param5 = &this_ptr->selected_actor->orient;
-        label_offset = (CQuaternion4f *)&this_ptr->selected_actor->location;
-        world_position =
-             (CQuaternion4f *)
-             shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(g_CEditorToolsPtr);
+        orientation = &this_ptr->selected_actor->orient;
+        pCVar5 = &(this_ptr->selected_actor->location).position;
+        uVar3 = shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330
+                          (g_CEditorToolsPtr);
         shape_edittool_cpp_CEditorTools_draw3DAxisLabelsAt_FUN_004a1e90
-                  (g_CEditorToolsPtr,(int)local_40,world_position,label_offset,param5);
+                  (g_CEditorToolsPtr,local_40,uVar3,pCVar5,orientation);
       }
       core_dcamera_cpp_CDemonCamera_endScene_FUN_0044cb80(&g_CDemonCameraInstance,0);
       engine_2d_c_setupViewportAndClipping_FUN_00401800(0,0,g_WindowWidth + -1,g_WindowHeight + -1);
@@ -500,7 +497,7 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
     shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380(g_CEditorToolsPtr,0);
     shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a2920(g_CEditorToolsPtr,0,0,0);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-    core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
+    core_game_cpp_CGame_updateDT_FUN_004d7d90(g_CGamePtr);
     core_setcolid_cpp_CDemonSet_buildCollidableActorList_FUN_005743e0(g_CDemonSetPtr);
     iVar11 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
     if ((iVar11 != 0) &&

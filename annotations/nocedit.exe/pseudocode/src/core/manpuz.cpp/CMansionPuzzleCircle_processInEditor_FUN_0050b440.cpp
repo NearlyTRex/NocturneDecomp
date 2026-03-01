@@ -25,18 +25,18 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_processInEditor_FUN_0050b440(C
   if (g_MansionPuzzleSlewType == 1) {
     core_slew_cpp_CSlew_init_FUN_005a2060(&local_40);
     if (&local_40 != (CSlew *)&this_ptr->emitter_pos) {
-      local_40.position.x = (this_ptr->emitter_pos).x;
-      local_40.position.y = (this_ptr->emitter_pos).y;
-      local_40.position.z = (this_ptr->emitter_pos).z;
+      local_40.position.x = (this_ptr->emitter_pos).f.x;
+      local_40.position.y = (this_ptr->emitter_pos).f.y;
+      local_40.position.z = (this_ptr->emitter_pos).f.z;
     }
     local_40.roll = 0.0;
     local_40.yaw = 0.0;
     local_40.pitch = 0.0;
     core_slew_cpp_CSlew_processInput_FUN_005a20b0(&local_40);
     if ((CSlew *)&this_ptr->emitter_pos != &local_40) {
-      (this_ptr->emitter_pos).x = local_40.position.x;
-      (this_ptr->emitter_pos).y = local_40.position.y;
-      (this_ptr->emitter_pos).z = local_40.position.z;
+      (this_ptr->emitter_pos).f.x = local_40.position.x;
+      (this_ptr->emitter_pos).f.y = local_40.position.y;
+      (this_ptr->emitter_pos).f.z = local_40.position.z;
     }
   }
   else if (g_MansionPuzzleSlewType == 2) {

@@ -10,7 +10,6 @@ void __cdecl engine_font_cpp_CBitFont_loadFromFile_FUN_004cd2c0(CBitFont *this_p
 
 {
   _FILE *stream;
-  int unaff_EDI;
   char local_22c [256];
   char local_12c [256];
   int local_2c;
@@ -45,7 +44,7 @@ void __cdecl engine_font_cpp_CBitFont_loadFromFile_FUN_004cd2c0(CBitFont *this_p
   }
   else {
     engine_font_cpp_CBitFont_loadNewBitmap_FUN_004cd280
-              (this_ptr,local_22c,local_2c,local_28,local_24,local_20,local_1c,unaff_EDI);
+              (this_ptr,local_22c,local_2c,local_28,local_24,local_20,local_1c);
   }
   this_ptr->char_widths[0x20] = local_18;
   this_ptr->shadow_offset_x = local_14;

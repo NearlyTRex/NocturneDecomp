@@ -43,7 +43,7 @@
 ;   float FLOAT_02d7b82c
 ;   int INT_02d7b870
 ;   int INT_02d7b88c
-;   CVector3f g_ZeroVector
+;   UVector3 g_ZeroVector
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10

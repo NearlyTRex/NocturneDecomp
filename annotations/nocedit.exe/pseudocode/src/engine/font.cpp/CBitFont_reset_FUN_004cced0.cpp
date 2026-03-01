@@ -30,12 +30,12 @@ void __cdecl engine_font_cpp_CBitFont_reset_FUN_004cced0(CBitFont *this_ptr)
     pCVar2->char_bitmap_index[0] = 0;
     pCVar2->char_widths[0] = 0;
     pCVar2->char_heights[0] = 0;
-    pCVar2->char_x_advance[0] = 0;
+    pCVar2->char_y_offsets[0] = 0;
     pCVar2->char_positions[0] = 0;
     pCVar2 = (CBitFont *)pacVar1;
   } while (pacVar1 != (char (*) [80])(this_ptr->palette_data + 0x29c));
-  this_ptr->max_char_width = 0;
-  this_ptr->current_max_width = 0;
+  this_ptr->max_char_height = 0;
+  this_ptr->current_line_height = 0;
   this_ptr->char_spacing = 1;
   this_ptr->line_spacing = 2;
   this_ptr->char_widths[0x20] = 8;
@@ -46,6 +46,6 @@ void __cdecl engine_font_cpp_CBitFont_reset_FUN_004cced0(CBitFont *this_ptr)
   this_ptr->use_3d_rendering = 0;
   this_ptr->win_font_enabled = 0;
   this_ptr->win_font_helper = (CWinFont *)0x0;
-  this_ptr->max_char_height = 0;
+  this_ptr->max_char_width = 0;
   return;
 }

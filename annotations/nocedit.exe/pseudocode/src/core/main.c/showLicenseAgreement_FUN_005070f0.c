@@ -29,7 +29,7 @@ int __cdecl core_main_c_showLicenseAgreement_FUN_005070f0(void)
     return 1;
   }
   text_string = support_newmsg_cpp_decryptMessage_FUN_00544270(g_LicenseAgreement);
-  iVar1 = engine_font_cpp_CBitFont_getCharWidth_FUN_004cff40(g_EditorFont,text_string);
+  iVar1 = engine_font_cpp_CBitFont_getTextHeight_FUN_004cff40(g_EditorFont,text_string);
   shape_edittool_cpp_CEdScrollBar_ctor_FUN_004a5ae0(&local_48);
   iVar3 = g_ClipTop;
   right_pos = g_ClipRight;

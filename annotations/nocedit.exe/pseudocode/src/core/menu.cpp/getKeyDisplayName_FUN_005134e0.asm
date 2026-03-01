@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; char * __cdecl core_menu_cpp_getKeyDisplayName_FUN_005134e0(int key_code)
+; char * __cdecl core_menu_cpp_getKeyDisplayName_FUN_005134e0(EInputCodeType key_code)
 ;
 ; Parameters:
-; int              Stack[0x4]:4   key_code
+; EInputCodeType   Stack[0x4]:4   key_code
 ;
 ; XREF[4]:
 ;   core_game.cpp_CGame_showCustomizableKeys_FUN_004d89d0 at 004d9322
-;   core_game.cpp_FUN_004d8910 at 004d892a
+;   core_game.cpp_drawKeyBindingEntry_FUN_004d8910 at 004d892a
 ;   core_inv.cpp_CInventory_addItem_FUN_004fd600 at 004fd9a2
 ;   core_menu.cpp_configureCustomKeyBindings_FUN_005138e0 at 00514713
 ;

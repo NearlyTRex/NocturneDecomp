@@ -1,0 +1,207 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 69,
+    "complexity_score": 52,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 17,
+    "suspect_count": 3,
+    "suspect_types": [
+      "decompiler_intrinsic"
+    ],
+    "total_lines": 86
+  },
+  "cross_references": [
+    {
+      "addr": "00576870",
+      "from_addr": "0057688a",
+      "name": "core_setdir.cpp_CDemonSet_findVdirBoxAtPosition_FUN_00576870",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00576340",
+      "from_addr": "00576389",
+      "name": "core_setdir.cpp_CDemonSet_isPointInVdirGroup_FUN_00576340",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005762a0",
+    "address_range": [
+      [
+        "005762a0",
+        "00576336"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_setdir.cpp_CDemonSet_isPointInVdirBox_FUN_005762a0",
+    "signature": "int __cdecl core_setdir_cpp_CDemonSet_isPointInVdirBox_FUN_005762a0(CDemonSet *this_ptr,int box_index,CVector3f *point)"
+  },
+  "function_calls": [
+    {
+      "addr": "00472030",
+      "is_variadic": false,
+      "name": "core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030"
+    }
+  ],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 8.161290322580646,
+    "instruction_count": 62,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 12,
+      "BOOL_OR": 4,
+      "CALL": 1,
+      "CBRANCH": 3,
+      "COPY": 201,
+      "FLOAT2FLOAT": 15,
+      "FLOAT_ABS": 3,
+      "FLOAT_EQUAL": 3,
+      "FLOAT_LESS": 3,
+      "FLOAT_NAN": 6,
+      "FLOAT_SUB": 3,
+      "INT_ADD": 28,
+      "INT_AND": 56,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 20,
+      "INT_LEFT": 16,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 19,
+      "INT_OR": 25,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 13,
+      "INT_SUB": 9,
+      "INT_XOR": 3,
+      "INT_ZEXT": 12,
+      "LOAD": 21,
+      "POPCOUNT": 9,
+      "RETURN": 2,
+      "STORE": 9
+    },
+    "pcode_op_count": 506
+  },
+  "stack_frame": {
+    "frame_size": 48,
+    "local_size": 36,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      },
+      {
+        "is_param": true,
+        "name": "box_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "point",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005762a7",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 15,
+      "match": "ABS",
+      "severity": "mild",
+      "text": "if (((ABS(local_20.x) <= (pSVar1->extents).x) && (ABS(local_20.y) <= (pSVar1->extents).y)) &&",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 15,
+      "match": "ABS",
+      "severity": "mild",
+      "text": "if (((ABS(local_20.x) <= (pSVar1->extents).x) && (ABS(local_20.y) <= (pSVar1->extents).y)) &&",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 16,
+      "match": "ABS",
+      "severity": "mild",
+      "text": "(ABS(local_20.z) <= (pSVar1->extents).z)) {",
+      "type": "decompiler_intrinsic"
+    }
+  ]
+}

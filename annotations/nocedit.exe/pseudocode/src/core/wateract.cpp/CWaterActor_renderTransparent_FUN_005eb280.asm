@@ -13,7 +13,7 @@
 ;   SMRGLTextureBasic[16] SMRGLTextureBasic_ARRAY_006846f0
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CDemonSet g_CDemonSetInstance
-;   CVector3f g_ZeroVector
+;   UVector3 g_ZeroVector
 ;   undefined4 DAT_03f90a88
 ;   undefined4 DAT_03f90a8c
 ;   undefined4 DAT_03f90a90

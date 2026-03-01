@@ -69,8 +69,8 @@ LAB_0042c429:
     core_charactr_cpp_CCharacter_igniteBone_FUN_0042b5b0
               (this_ptr,&local_28,damage_info->fire_type,0.0,0x3f800000,0);
   }
-  if (0.0 < (float)damage_info->damage_flags) {
-    iVar1 = (int)ROUND(ROUND(damage_info->damage_amount * (float)damage_info->damage_flags));
+  if (0.0 < damage_info->gore_multiplier) {
+    iVar1 = (int)ROUND(ROUND(damage_info->damage_amount * damage_info->gore_multiplier));
     local_10 = iVar1;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
               (&this_ptr->base,&local_1c,&damage_info->impact_direction);

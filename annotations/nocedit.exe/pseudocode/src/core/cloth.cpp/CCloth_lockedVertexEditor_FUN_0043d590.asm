@@ -58,7 +58,7 @@
 ;   core_cloth.cpp_CCloth_setup_FUN_00439710
 ;   core_cloth.cpp_drawVertexMarker_FUN_0043c6e0
 ;   core_game.cpp_CGame_saveClockTime_FUN_004d7d80
-;   core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90
+;   core_game.cpp_CGame_updateDT_FUN_004d7d90
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
@@ -531,8 +531,8 @@ section .text
         ;   Label: LAB_0043da5b
     MOV ESI,dword ptr [0x0067b654]      ; 0043da60 | g_CGamePtr
     PUSH ESI                            ; 0043da66 | g_CGameInstance
-    CALL core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90 ; 0043da67
-        ;   XREF to: 004d7d90 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90(CGame * this_ptr)
+    CALL core_game.cpp_CGame_updateDT_FUN_004d7d90 ; 0043da67
+        ;   XREF to: 004d7d90 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_updateDT_FUN_004d7d90(CGame * this_ptr)
     ADD ESP,0x4                         ; 0043da6c
     MOV EAX,[0x0067cf44]                ; 0043da6f | g_CKeysPtr
     PUSH 0x26                           ; 0043da74

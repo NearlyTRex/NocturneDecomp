@@ -4,55 +4,67 @@
       {
         "category": "other",
         "column": 19,
-        "line": 113,
+        "line": 111,
         "message": "C-style cast from 'CTrigger *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 114,
+        "line": 112,
         "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 15,
-        "line": 122,
+        "line": 120,
         "message": "cannot cast from type 'float' to pointer type 'CCrate *'"
       },
       {
         "category": "other",
-        "column": 48,
-        "line": 133,
+        "column": 56,
+        "line": 131,
         "message": "cannot cast from type 'float' to pointer type 'CCrate *'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 143,
+        "line": 141,
         "message": "cannot initialize a parameter of type 'struct CDemonActor *' with an rvalue of type 'uint32_t' (aka 'unsigned int')"
       },
       {
         "category": "other",
         "column": 74,
-        "line": 147,
+        "line": 145,
         "message": "cannot cast from type 'float' to pointer type 'CDemonActor *'"
       },
       {
         "category": "undeclared_identifier",
         "column": 71,
-        "line": 172,
+        "line": 170,
         "message": "use of undeclared identifier 'stack0xfffffec0'"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 173,
+        "line": 171,
         "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 176,
+        "line": 174,
+        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 184,
+        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 185,
         "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
       },
       {
@@ -64,31 +76,19 @@
       {
         "category": "other",
         "column": 20,
-        "line": 187,
-        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 188,
-        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 193,
+        "line": 191,
         "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 27,
-        "line": 200,
+        "line": 198,
         "message": "C-style cast from 'CTommyGun *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 12,
-        "line": 202,
+        "line": 200,
         "message": "C-style cast from 'struct CDemonActor *' to 'float' is not allowed"
       }
     ],
@@ -97,12 +97,12 @@
   },
   "complexity": {
     "assembly_lines": 544,
-    "complexity_score": 433,
+    "complexity_score": 432,
     "cross_reference_count": 0,
     "function_call_count": 21,
     "global_count": 26,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 233,
+    "pseudocode_lines": 232,
     "suspect_count": 17,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -112,7 +112,7 @@
       "suspect_float",
       "unknown_field"
     ],
-    "total_lines": 777
+    "total_lines": 776
   },
   "cross_references": [],
   "function": {
@@ -166,7 +166,7 @@
     {
       "addr": "00448a70",
       "is_variadic": false,
-      "name": "core_crate.cpp_CCrate_FUN_00448a70"
+      "name": "core_crate.cpp_CCrate_explode_FUN_00448a70"
     },
     {
       "addr": "004c76a0",
@@ -181,7 +181,7 @@
     {
       "addr": "004cb340",
       "is_variadic": false,
-      "name": "core_flamecan.cpp_CFlameCan_FUN_004cb340"
+      "name": "core_flamecan.cpp_CFlameCan_ignite_FUN_004cb340"
     },
     {
       "addr": "004eb3a0",
@@ -497,7 +497,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 134,
+      "line": 132,
       "match": "in_stack_fffffebc",
       "severity": "moderate",
       "text": "in_stack_fffffebc =",
@@ -505,7 +505,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 136,
+      "line": 134,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "((CCharacter *)this_ptr,SUB84(__BITCAST_UINT64(dVar6),0),",
@@ -513,7 +513,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 136,
+      "line": 134,
       "match": "SUB84",
       "severity": "mild",
       "text": "((CCharacter *)this_ptr,SUB84(__BITCAST_UINT64(dVar6),0),",
@@ -521,7 +521,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 138,
+      "line": 136,
       "match": "in_stack_fffffebc",
       "severity": "moderate",
       "text": "core_trigger_cpp_CTrigger_applyDamage_FUN_005e0b00(this_ptr_02,in_stack_fffffebc);",
@@ -529,7 +529,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 165,
+      "line": 163,
       "match": "&stack0xfffffec0",
       "severity": "moderate",
       "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffec0);",
@@ -537,7 +537,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 166,
+      "line": 164,
       "match": "._0_4_",
       "severity": "mild",
       "text": "auStack_130._0_4_ =",
@@ -545,7 +545,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 168,
+      "line": 166,
       "match": "in_stack_fffffebc",
       "severity": "moderate",
       "text": "((CCharacter *)this_ptr,pCVar7,(int)in_stack_fffffebc);",
@@ -553,7 +553,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 169,
+      "line": 167,
       "match": "._4_4_",
       "severity": "mild",
       "text": "auStack_130._4_4_ = 0.4;",
@@ -561,7 +561,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 174,
+      "line": 172,
       "match": "SQRT",
       "severity": "mild",
       "text": "SQRT(fStack_38 * fStack_38 + fStack_40 * fStack_40 + fStack_3c * fStack_3c);",
@@ -569,7 +569,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 179,
+      "line": 177,
       "match": "._8_4_",
       "severity": "mild",
       "text": "auStack_130._8_4_ = fStack_58;",
@@ -577,7 +577,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 180,
+      "line": 178,
       "match": "._12_4_",
       "severity": "mild",
       "text": "auStack_130._12_4_ = fStack_54;",
@@ -585,7 +585,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 181,
+      "line": 179,
       "match": "._16_4_",
       "severity": "mild",
       "text": "auStack_130._16_4_ = fStack_50;",
@@ -593,7 +593,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 186,
+      "line": 184,
       "match": "._24_4_",
       "severity": "mild",
       "text": "auStack_130._24_4_ = pCVar3->x;",
@@ -601,7 +601,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 191,
+      "line": 189,
       "match": "1.41531e-43",
       "severity": "mild",
       "text": "CStack_108.m[0].y = 1.41531e-43;",
@@ -609,7 +609,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 196,
+      "line": 194,
       "match": "in_stack_fffffebc",
       "severity": "moderate",
       "text": "in_stack_fffffebc = 8.621821e-39;",
@@ -617,7 +617,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 196,
+      "line": 194,
       "match": "8.621821e-39",
       "severity": "mild",
       "text": "in_stack_fffffebc = 8.621821e-39;",

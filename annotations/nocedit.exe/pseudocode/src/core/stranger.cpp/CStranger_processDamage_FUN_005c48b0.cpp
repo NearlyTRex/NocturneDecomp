@@ -19,21 +19,21 @@ void __cdecl core_stranger_cpp_CStranger_processDamage_FUN_005c48b0(CStranger *t
   CDemonActor *pCVar6;
   float force_immediate;
   
-  if (g_CGamePtr->debug_flag_1 != 0) {
+  if (g_CGamePtr->god_mode_enabled != 0) {
     damage_info->damage_amount = 0.0;
   }
   if (g_CGamePtr->allow_damage_flag == 0) {
     damage_info->damage_amount = 0.0;
   }
   core_hero_cpp_CHero_FUN_004f3580(&this_ptr->base);
-  if ((0.0 < (float)(this_ptr->base).no_collision_flag) && (0xb < damage_info->damage_type)) {
+  if ((0.0 < (this_ptr->base).invincibility_timer) && (0xb < damage_info->damage_type)) {
     damage_info->damage_amount = 0.0;
     return;
   }
-  (this_ptr->base).no_collision_flag = (int)2.0f;
+  (this_ptr->base).invincibility_timer = 2.0f;
   iVar3 = core_actor_cpp_isOfClass_FUN_0040c6d0(damage_info->wielder,"CBugs");
   if (iVar3 != 0) {
-    (this_ptr->base).no_collision_flag = 0x3e19999a;
+    (this_ptr->base).invincibility_timer = 0.15;
   }
   pCVar2 = g_CGamePtr;
   (this_ptr->base).base.hit_points = (this_ptr->base).base.hit_points - damage_info->damage_amount;

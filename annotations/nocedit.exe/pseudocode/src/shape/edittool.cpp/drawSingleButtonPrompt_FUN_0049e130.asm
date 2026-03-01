@@ -43,8 +43,8 @@
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_3d.c_setRenderAlpha_FUN_00406d80
 ;   engine_font.cpp_CBitFont_drawText_FUN_004cda80
-;   engine_font.cpp_CBitFont_getCharWidth_FUN_004cff40
-;   engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0
+;   engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0
+;   engine_font.cpp_CBitFont_getTextHeight_FUN_004cff40
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80
 ;   shape_edittool.cpp_calculateButtonHeight_FUN_004a6970
 ;   shape_edittool.cpp_calculateButtonWidth_FUN_004a68e0
@@ -76,8 +76,8 @@ section .text
     MOV EDX,dword ptr [EAX + 0x3168]    ; 0049e155
     PUSH EAX                            ; 0049e15b
     MOV dword ptr [0x02cf2668],EDX      ; 0049e15c | g_FontCharacterHeight
-    CALL engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0 ; 0049e162
-        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0 ; 0049e162
+        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0(CBitFont * this_ptr, int char_code)
     MOV [0x02cf266c],EAX                ; 0049e167 | g_FontCharacterWidth
     MOV EAX,[0x00679398]                ; 0049e16c | g_WindowHeight
     MOV EDX,EAX                         ; 0049e171
@@ -126,8 +126,8 @@ section .text
         ;   Label: LAB_0049e1f4
     MOV ECX,dword ptr [0x02cf1cd0]      ; 0049e1f5 | g_EditorFont
     PUSH ECX                            ; 0049e1fb
-    CALL engine_font.cpp_CBitFont_getCharWidth_FUN_004cff40 ; 0049e1fc
-        ;   XREF to: 004cff40 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004cff40(CBitFont * this_ptr, char * text_string)
+    CALL engine_font.cpp_CBitFont_getTextHeight_FUN_004cff40 ; 0049e1fc
+        ;   XREF to: 004cff40 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextHeight_FUN_004cff40(CBitFont * this_ptr, char * text_string)
     ADD ESP,0x8                         ; 0049e201
     PUSH 0x0                            ; 0049e204
     MOV EDX,dword ptr [ESP + 0x110]     ; 0049e206

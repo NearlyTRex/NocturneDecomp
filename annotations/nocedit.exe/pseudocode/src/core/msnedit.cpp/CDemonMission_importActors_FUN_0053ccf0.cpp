@@ -88,7 +88,7 @@ LAB_0053ce9f:
         pCVar1 = local_10;
       }
       g_CDemonMissionPtr = pCVar1;
-      core_mission_cpp_CDemonMission_checkMemory_FUN_00522d20(pCVar1);
+      core_mission_cpp_CDemonMission_FUN_00522d20(pCVar1);
       g_CurrentDebugFilename = "..\\core\\msnedit.cpp";
       g_CurrentDebugLine = 0xc85;
       shape_memdbg_cpp_debugFree_FUN_0050f210(pCVar1);

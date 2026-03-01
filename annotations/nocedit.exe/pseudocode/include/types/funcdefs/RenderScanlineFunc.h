@@ -3,6 +3,9 @@
 // Dependencies
 #include "system/basetypes.h"
 
+// Forward declarations
+struct SHardwareEdge;
+
 // Function Definition: RenderScanlineFunc
-typedef void RenderScanlineFunc(void* param_1, void* param_2, int param_3);
+typedef void RenderScanlineFunc(struct SHardwareEdge* left, struct SHardwareEdge* right, int scanline_y);
 

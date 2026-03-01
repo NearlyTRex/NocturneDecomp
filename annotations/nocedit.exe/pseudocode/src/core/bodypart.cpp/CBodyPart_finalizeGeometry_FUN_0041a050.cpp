@@ -190,10 +190,10 @@ void __cdecl core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_0041a050(CBodyPart
   (this_ptr->base).was_created = 2;
   core_bodypart_cpp_CBodyPart_setCounts_FUN_004191d0(this_ptr,0,0);
   pCVar5 = &(this_ptr->bounding_box).max;
-  if (pCVar5 != &g_ZeroVector) {
-    pCVar5->x = g_ZeroVector.x;
-    (this_ptr->bounding_box).max.y = g_ZeroVector.y;
-    (this_ptr->bounding_box).max.z = g_ZeroVector.z;
+  if ((UVector3 *)pCVar5 != &g_ZeroVector) {
+    pCVar5->x = g_ZeroVector.f.x;
+    (this_ptr->bounding_box).max.y = g_ZeroVector.f.y;
+    (this_ptr->bounding_box).max.z = g_ZeroVector.f.z;
   }
   if (&this_ptr->bounding_box != (CBoundingBox3D *)pCVar5) {
     (this_ptr->bounding_box).min.x = pCVar5->x;

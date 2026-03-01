@@ -43,7 +43,7 @@
 ;   core_game.cpp_CGame_saveClockTime_FUN_004d7d80
 ;   core_game.cpp_CGame_setGameRes_FUN_004dade0
 ;   core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004daed0
-;   core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90
+;   core_game.cpp_CGame_updateDT_FUN_004d7d90
 ;   core_gore.cpp_CGore_createBloodPool_FUN_004ede30
 ;   core_gore.cpp_CGore_process_FUN_004ed9e0
 ;   core_gore.cpp_CGore_reset_FUN_004ed760
@@ -308,8 +308,8 @@ section .text
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
     MOV EBX,dword ptr [0x0067b654]      ; 0053e543 | g_CGameInstance | g_CGamePtr
     PUSH EBX                            ; 0053e549 | g_CGameInstance
-    CALL core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90 ; 0053e54a
-        ;   XREF to: 004d7d90 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90(CGame * this_ptr)
+    CALL core_game.cpp_CGame_updateDT_FUN_004d7d90 ; 0053e54a
+        ;   XREF to: 004d7d90 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_updateDT_FUN_004d7d90(CGame * this_ptr)
     ADD ESP,0x4                         ; 0053e54f
     MOV ESI,dword ptr [0x006810c8]      ; 0053e552 | g_CDemonSetPtr
     PUSH ESI                            ; 0053e558 | g_CDemonSetInstance

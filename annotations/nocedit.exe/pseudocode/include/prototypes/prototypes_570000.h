@@ -137,7 +137,7 @@ void __cdecl core_setdir_cpp_CDemonSet_writeThumbs_FUN_00575e40(CDemonSet *this_
 void __cdecl core_setdir_cpp_CDemonSet_saveThumbs_FUN_00575f60(CDemonSet *this_ptr);
 void __cdecl core_setdir_cpp_CDemonSet_renderVirtualDirectors_FUN_00575f70(CDemonSet *this_ptr);
 void __cdecl core_setdir_cpp_CDemonSet_skipDeprecatedVirtualDirectorData_FUN_00576200(CDemonSet *this_ptr,_FILE *file_handle);
-int __cdecl core_setdir_cpp_CDemonSet_FUN_005762a0(CDemonSet *this_ptr);
+int __cdecl core_setdir_cpp_CDemonSet_isPointInVdirBox_FUN_005762a0(CDemonSet *this_ptr,int box_index,CVector3f *point);
 int __cdecl core_setdir_cpp_CDemonSet_isPointInVdirGroup_FUN_00576340(CDemonSet *this_ptr,int box_index,CVector3f *point);
 int __cdecl core_setdir_cpp_testOBBIntersection_FUN_005763a0(SVDBox *obb_a,SVDBox *obb_b);
 int __cdecl core_setdir_cpp_CDemonSet_buildVdirBoxGroups_FUN_00576710(CDemonSet *this_ptr);

@@ -22,7 +22,7 @@ void __cdecl core_game_cpp_disableUnavailableChapters_FUN_004e1c30(void)
   }
   do {
     file_ptr = engine_dosio_c_getFile_FUN_00481a50
-                         ("world",*(char **)(&PTR_s_hq_act1_msn_0067b750 + iVar1),
+                         ("world",*(char **)((int)g_ChapterMissionFiles[0] + iVar1),
                           "rt");
     if (file_ptr == (_FILE *)0x0) {
       shape_edittool_cpp_CPickList_enableItem_FUN_004a5410(in_stack_00000004,item_index,0);

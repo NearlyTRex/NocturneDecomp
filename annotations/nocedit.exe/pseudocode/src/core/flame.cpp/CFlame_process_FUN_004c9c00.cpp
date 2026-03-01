@@ -60,7 +60,7 @@ void __cdecl core_flame_cpp_CFlame_process_FUN_004c9c00(CFlame *this_ptr,float d
     (this_ptr->base).orient.vec.x = 0.0;
     (this_ptr->base).orient.vec.z = 0.0;
     (this_ptr->base).orient.vec.y = 0.0;
-    core_flame_cpp_CFlame_FUN_004cad90(this_ptr);
+    core_flame_cpp_CFlame_updateGlobe_FUN_004cad90(this_ptr);
     if (this_ptr->render_corona == 0) {
       if (this_ptr->sfx_handle != 0) {
         core_sound_cpp_CSound_killSound_FUN_005b3b90(g_CSoundPtr,this_ptr->sfx_handle);

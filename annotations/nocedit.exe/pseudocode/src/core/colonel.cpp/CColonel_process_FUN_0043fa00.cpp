@@ -28,7 +28,7 @@ void __cdecl core_colonel_cpp_CColonel_process_FUN_0043fa00(CColonel *this_ptr,f
   CQuaternion4f *source_quaternions;
   float fVar13;
   code *blend_callback;
-  float in_stack_ffffff68;
+  float local_98;
   CQuaternion4f CStack_94;
   CQuaternion4f CStack_84;
   CVector3f local_74;
@@ -52,10 +52,10 @@ void __cdecl core_colonel_cpp_CColonel_process_FUN_0043fa00(CColonel *this_ptr,f
   if (iVar5 == 0) {
     return;
   }
-  fVar13 = (float)(this_ptr->base).no_collision_flag - delta_time;
-  (this_ptr->base).no_collision_flag = (int)fVar13;
+  fVar13 = (this_ptr->base).invincibility_timer - delta_time;
+  (this_ptr->base).invincibility_timer = fVar13;
   if (fVar13 < 0.0) {
-    (this_ptr->base).no_collision_flag = 0;
+    (this_ptr->base).invincibility_timer = 0.0;
   }
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
   (this_ptr->base).base.model.accumulated_root_motion.y =
@@ -199,23 +199,22 @@ switchD_0043fe37_caseD_5:
       pCVar6 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_44,pCVar6);
       local_14 = (CCharacter_full_vtable *)core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(pCVar6->y)
       ;
-      in_stack_ffffff68 = (float)local_14;
+      local_98 = (float)local_14;
       if ((float)local_14 < (float)-1.57079632675) {
-        in_stack_ffffff68 = (float)local_14 + 5.3286462644388174e-315._0_4_;
+        local_98 = (float)local_14 + 5.3286462644388174e-315._0_4_;
       }
-      if ((float)1.57079632675 < in_stack_ffffff68) {
-        in_stack_ffffff68 = in_stack_ffffff68 + -3.141593f;
+      if ((float)1.57079632675 < local_98) {
+        local_98 = local_98 + -3.141593f;
       }
       local_1c = delta_time * (float)3.1415926535000001;
       local_20 = -local_1c;
-      if (in_stack_ffffff68 < local_20) {
-        in_stack_ffffff68 = local_20;
+      if (local_98 < local_20) {
+        local_98 = local_20;
       }
-      if (local_1c < in_stack_ffffff68) {
-        in_stack_ffffff68 = local_1c;
+      if (local_1c < local_98) {
+        local_98 = local_1c;
       }
-      (this_ptr->base).base.base.orient.vec.y =
-           (this_ptr->base).base.base.orient.vec.y + in_stack_ffffff68;
+      (this_ptr->base).base.base.orient.vec.y = (this_ptr->base).base.base.orient.vec.y + local_98;
       core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10((CDemonActor *)this_ptr);
     }
     this_ptr_00 = (CCharacter *)(this_ptr->base).base.grabbed_by;
@@ -258,8 +257,7 @@ LAB_0043fc14:
     core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750
               (pCVar12,source_quaternions,fVar13,iVar5,blend_callback);
   }
-  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
-            ((CCharacter *)this_ptr,delta_time,in_stack_ffffff68);
+  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr,delta_time);
 switchD_0043fe37_caseD_6:
   return;
 }

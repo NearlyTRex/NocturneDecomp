@@ -22,7 +22,7 @@ void __cdecl core_moloch_cpp_CMoloch_process_FUN_00528d20(CMoloch *this_ptr,floa
   CMorph *this_ptr_02;
   char *model_name;
   uint uVar9;
-  float in_stack_ffffe4e8;
+  float local_1b18;
   SPose SStack_1b10;
   float local_74;
   float local_70;
@@ -47,10 +47,10 @@ void __cdecl core_moloch_cpp_CMoloch_process_FUN_00528d20(CMoloch *this_ptr,floa
   if (iVar6 == 0) {
     return;
   }
-  fVar4 = (float)(this_ptr->base).no_collision_flag - delta_time;
-  (this_ptr->base).no_collision_flag = (int)fVar4;
+  fVar4 = (this_ptr->base).invincibility_timer - delta_time;
+  (this_ptr->base).invincibility_timer = fVar4;
   if (fVar4 < 0.0) {
-    (this_ptr->base).no_collision_flag = 0;
+    (this_ptr->base).invincibility_timer = 0.0;
   }
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
   (this_ptr->base).base.model.accumulated_root_motion.y =
@@ -154,23 +154,23 @@ LAB_00528e3a:
                          ((CDemonActor *)this_ptr,&local_5c,&(pCVar3->location).position);
       pCVar7 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_50,pCVar7);
       local_14 = (SMotion *)core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(pCVar7->y);
-      in_stack_ffffe4e8 = (float)local_14;
+      local_1b18 = (float)local_14;
       if ((float)local_14 < (float)-1.57079632675) {
-        in_stack_ffffe4e8 = (float)local_14 + 3.141593f;
+        local_1b18 = (float)local_14 + 3.141593f;
       }
-      if ((float)1.57079632675 < in_stack_ffffe4e8) {
-        in_stack_ffffe4e8 = in_stack_ffffe4e8 + -3.141593f;
+      if ((float)1.57079632675 < local_1b18) {
+        local_1b18 = local_1b18 + -3.141593f;
       }
       local_18 = delta_time * (float)3.1415926535000001;
       local_1c = -local_18;
-      if (in_stack_ffffe4e8 < local_1c) {
-        in_stack_ffffe4e8 = local_1c;
+      if (local_1b18 < local_1c) {
+        local_1b18 = local_1c;
       }
-      if (local_18 < in_stack_ffffe4e8) {
-        in_stack_ffffe4e8 = local_18;
+      if (local_18 < local_1b18) {
+        local_1b18 = local_18;
       }
-      (this_ptr->base).base.base.orient.vec.y =
-           (this_ptr->base).base.base.orient.vec.y + in_stack_ffffe4e8;
+      (this_ptr->base).base.base.orient.vec.y = (this_ptr->base).base.base.orient.vec.y + local_1b18
+      ;
       core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10((CDemonActor *)this_ptr);
     }
     this_ptr_01 = (CCharacter *)(this_ptr->base).base.grabbed_by;
@@ -192,8 +192,7 @@ LAB_00528f8e:
   pCVar2 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020(pCVar2);
   (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)this_ptr);
-  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
-            ((CCharacter *)this_ptr,delta_time,in_stack_ffffe4e8);
+  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr,delta_time);
   if (this_ptr->morphing == 0) {
     if (this_ptr->in_human_form == 0) {
       iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0

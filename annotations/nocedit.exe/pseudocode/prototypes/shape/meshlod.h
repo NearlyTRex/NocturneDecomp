@@ -413,7 +413,7 @@ void __cdecl CLodMesh::renderShadedTriangles(CLodMesh *this_ptr,int use_palette_
 
 // Original: shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0
 // Address: 0051ead0
-void __cdecl CLodMesh::renderTexturedTriangles(CLodMesh *this_ptr,int enable_texture_lookup,int use_atlas_mode);
+void __cdecl CLodMesh::renderTexturedTriangles(CLodMesh *this_ptr,int enable_texture_lookup);
 
 // Original: shape_meshlod.cpp_CLodMesh_drawVertexIndexLabel_FUN_0051ecd0
 // Address: 0051ecd0

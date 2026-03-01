@@ -234,7 +234,7 @@ section .text
         ;   Label: LAB_004dd0af
     JZ 0x004dd0c5                       ; 004dd0b6
         ;   XREF to: 004dd0c5 (CONDITIONAL_JUMP)  ; LAB_004dd0c5
-    CMP dword ptr [0x02d831b0],0x0      ; 004dd0b8 | g_CheatFlags
+    CMP dword ptr [0x02d831b0],0x0      ; 004dd0b8 | g_MovieRecordingArmed
     JZ 0x004dd4b9                       ; 004dd0bf
         ;   XREF to: 004dd4b9 (CONDITIONAL_JUMP)  ; LAB_004dd4b9
     PUSH 0x1d                           ; 004dd0c5

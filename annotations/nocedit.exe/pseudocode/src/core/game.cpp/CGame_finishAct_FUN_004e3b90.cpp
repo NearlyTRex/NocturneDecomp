@@ -42,7 +42,7 @@ void __cdecl core_game_cpp_CGame_finishAct_FUN_004e3b90(CGame *this_ptr)
     if (g_CDemonCameraInstance.framebuffer_width < 0x1e0) {
       pCVar9 = g_SmallEditorFont;
     }
-    iVar3 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(pCVar9,0x58);
+    iVar3 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(pCVar9,0x58);
     core_game_cpp_CGame_saveClockTime_FUN_004d7d80(this_ptr);
     for (local_550 = 5.0; 0.0 < local_550; local_550 = local_550 - this_ptr->delta_time_float) {
       wincore_windll_cpp_clearScreen_FUN_005b3e70();
@@ -50,7 +50,7 @@ void __cdecl core_game_cpp_CGame_finishAct_FUN_004e3b90(CGame *this_ptr)
       engine_font_cpp_CBitFont_drawTextCenterInBounds_FUN_004cdee0
                 (pCVar9,0,g_WindowWidth + -1,(g_WindowHeight - iVar3) / 2,0xf8,0,pcVar4);
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-      core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(this_ptr);
+      core_game_cpp_CGame_updateDT_FUN_004d7d90(this_ptr);
     }
     engine_2d_c_clearInputAndWait_FUN_00403260();
     core_game_cpp_CGame_rollCredits_FUN_004e4010(this_ptr);
@@ -216,7 +216,7 @@ void __cdecl core_game_cpp_CGame_finishAct_FUN_004e3b90(CGame *this_ptr)
                     (local_1c,local_54c,g_ActStatsTextBuffer2,0x14,0x100,0xc0);
   iVar11 = 0;
   local_24 = iVar3;
-  local_20 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(pCVar9,0x58);
+  local_20 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(pCVar9,0x58);
   iVar6 = 0xf0;
   if (0 < iVar3) {
     pcVar4 = g_ActStatsTextBuffer2;

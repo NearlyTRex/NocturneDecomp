@@ -484,7 +484,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(void)
     pcVar6 = pcVar6 + 2;
   } while (cVar2 != '\0');
   engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(g_ThemeFont,loading_text);
-  engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(g_ThemeFont,0x58);
+  engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(g_ThemeFont,0x58);
   engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_00410520(&loading_bitmap);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0(&loading_bitmap,"fangs",0x280,0x1e0);
   engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(&loading_bitmap,0,0,0x8000);

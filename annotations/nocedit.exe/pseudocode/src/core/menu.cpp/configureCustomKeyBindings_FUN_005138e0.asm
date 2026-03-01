@@ -1269,7 +1269,7 @@ section .text
     MOV EBP,dword ptr [EAX]             ; 00514710 | g_CGameInstance.key_walk | g_CGameInstance.key_backup
     PUSH EBP                            ; 00514712
     CALL core_menu.cpp_getKeyDisplayName_FUN_005134e0 ; 00514713
-        ;   XREF to: 005134e0 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_005134e0(int key_code)
+        ;   XREF to: 005134e0 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_005134e0(EInputCodeType key_code)
     ADD ESP,0x4                         ; 00514718
     PUSH EAX                            ; 0051471b
     PUSH EBX                            ; 0051471c | g_CustomKeyNames

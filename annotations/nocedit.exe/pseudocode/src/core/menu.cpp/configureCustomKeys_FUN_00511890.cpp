@@ -37,7 +37,7 @@ void __cdecl core_menu_cpp_configureCustomKeys_FUN_00511890(void)
   do {
     pcVar8 = local_114;
     pcVar9 = local_114;
-    core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
+    core_game_cpp_CGame_updateDT_FUN_004d7d90(g_CGamePtr);
     core_moon_cpp_CMoon_update_FUN_00529d60(&g_CMoonInstance,g_CGamePtr->delta_time_float);
     core_moon_cpp_CMoon_render_FUN_00529ed0(&g_CMoonInstance);
     uVar2 = g_CGamePtr->game_control;

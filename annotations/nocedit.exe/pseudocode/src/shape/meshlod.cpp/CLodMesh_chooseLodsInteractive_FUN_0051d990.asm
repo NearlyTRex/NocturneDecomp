@@ -86,7 +86,7 @@
 ; Called Functions:
 ;   core_box.cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_00420840
 ;   core_game.cpp_CGame_saveClockTime_FUN_004d7d80
-;   core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90
+;   core_game.cpp_CGame_updateDT_FUN_004d7d90
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_math.c_round_FUN_005fe6b0
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
@@ -589,8 +589,8 @@ section .text
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
     MOV EDX,dword ptr [0x0067b654]      ; 0051e00a | g_CGamePtr
     PUSH EDX                            ; 0051e010 | g_CGameInstance
-    CALL core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90 ; 0051e011
-        ;   XREF to: 004d7d90 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90(CGame * this_ptr)
+    CALL core_game.cpp_CGame_updateDT_FUN_004d7d90 ; 0051e011
+        ;   XREF to: 004d7d90 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_updateDT_FUN_004d7d90(CGame * this_ptr)
     ADD ESP,0x4                         ; 0051e016
     MOV EAX,[0x0067cf44]                ; 0051e019 | g_CKeysPtr
     PUSH 0x31                           ; 0051e01e
@@ -1058,7 +1058,7 @@ section .text
     LEA EAX,[ESP + 0x604]               ; 0051e569
     PUSH EAX                            ; 0051e570
     CALL shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0 ; 0051e571
-        ;   XREF to: 0051ead0 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0(CLodMesh * this_ptr, int enable_texture_lookup, int use_atlas_mode)
+        ;   XREF to: 0051ead0 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0(CLodMesh * this_ptr, int enable_texture_lookup)
     JMP 0x0051dfb9                      ; 0051e576
         ;   XREF to: 0051dfb9 (UNCONDITIONAL_JUMP)  ; LAB_0051dfb9
     JBE 0x0051e567                      ; 0051e57b

@@ -272,7 +272,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
       engine_2d_c_drawText_FUN_00401fd0(local_408,0,g_WindowHeight + -0x16);
     }
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-    core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
+    core_game_cpp_CGame_updateDT_FUN_004d7d90(g_CGamePtr);
     local_5c = g_CGamePtr->delta_time_float;
     local_48 = local_5c;
     iVar9 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LMENU);
@@ -483,7 +483,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
                        iVar9 != 0)) &&
                       (iVar9 = shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
                                          (g_CEditorToolsPtr,"Save Keyframed model",
-                                          "models",0x620967,(int)this_ptr), iVar9 != 0)) {
+                                          "models","kfm",this_ptr->model_filename,
+                                          1), iVar9 != 0)) {
                 core_dmodel_cpp_CKeyFramedModel_export_FUN_00478e10
                           (this_ptr,this_ptr->model_filename);
                 local_64 = 1;

@@ -37,8 +37,8 @@
 ;   core_level.cpp_CLevelLoader_show_FUN_00503dc0
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_00524120
-;   core_mission.cpp_CDemonMission_checkMemory2_FUN_00522d30
 ;   core_mission.cpp_CDemonMission_createHeros_FUN_00524a80
+;   core_mission.cpp_CDemonMission_FUN_00522d30
 ;   core_mission.cpp_CDemonMission_FUN_00524760
 ;   core_mission.cpp_CDemonMission_load_FUN_00522d90
 ;   core_mission.cpp_CDemonMission_loadSet_FUN_00523fb0
@@ -109,8 +109,8 @@ section .text
     CALL dword ptr [EAX + 0x160]        ; 005244c3
     ADD ESP,0x4                         ; 005244c9
     PUSH EBX                            ; 005244cc
-    CALL core_mission.cpp_CDemonMission_checkMemory2_FUN_00522d30 ; 005244cd
-        ;   XREF to: 00522d30 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_checkMemory2_FUN_00522d30(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_FUN_00522d30 ; 005244cd
+        ;   XREF to: 00522d30 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_00522d30(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 005244d2
     TEST EDI,EDI                        ; 005244d5
     JZ 0x005244e2                       ; 005244d7
@@ -203,8 +203,8 @@ section .text
     MOV ESI,dword ptr [0x020a5720]      ; 005245b5 | g_ThemeFont
     PUSH ESI                            ; 005245bb
     MOV ESI,0x1df                       ; 005245bc
-    CALL engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0 ; 005245c1
-        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0 ; 005245c1
+        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0(CBitFont * this_ptr, int char_code)
     SUB ESI,EAX                         ; 005245c6
     ADD ESP,0x8                         ; 005245c8
     LEA EAX,[ESI + -0x4]                ; 005245cb

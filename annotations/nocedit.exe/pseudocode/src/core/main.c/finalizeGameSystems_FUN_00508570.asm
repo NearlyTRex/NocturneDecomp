@@ -31,7 +31,7 @@
 ;   core_dfont.cpp_freeFonts_FUN_004710a0
 ;   core_dmodel.cpp_freeAllModels_FUN_00478cb0
 ;   core_inivar.cpp_writeIniData_FUN_004fc510
-;   core_mission.cpp_CDemonMission_checkMemory_FUN_00522d20
+;   core_mission.cpp_CDemonMission_FUN_00522d20
 ;   core_netgame.cpp_CNetGame_shutdown_FUN_0053f830
 ;   core_skeleton.cpp_freeAllModels_FUN_005a1dc0
 ;   core_skeleton.cpp_freeAllSkeletons_FUN_005a1ea0
@@ -72,8 +72,8 @@ section .text
     PUSH 0x58                           ; 005085ab
     MOV EDX,dword ptr [0x020a5720]      ; 005085ad | g_ThemeFont
     PUSH EDX                            ; 005085b3
-    CALL engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0 ; 005085b4
-        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0 ; 005085b4
+        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 005085b9
     MOV ESI,EAX                         ; 005085bc
     MOV EDI,EAX                         ; 005085be
@@ -266,13 +266,13 @@ section .text
     ADD ESP,0x4                         ; 005087b6
     MOV ESI,dword ptr [0x00680b80]      ; 005087b9 | g_CMousePtr
     PUSH ESI                            ; 005087bf | g_CMouseInstance
-    CALL engine_ncursfx.cpp_CMouse_FUN_00544500 ; 005087c0
-        ;   XREF to: 00544500 (UNCONDITIONAL_CALL)  ; void engine_ncursfx.cpp_CMouse_FUN_00544500(CMouse * this_ptr)
+    CALL engine_ncursfx.cpp_CMouse_reset_FUN_00544500 ; 005087c0
+        ;   XREF to: 00544500 (UNCONDITIONAL_CALL)  ; void engine_ncursfx.cpp_CMouse_reset_FUN_00544500(CMouse * this_ptr)
     ADD ESP,0x4                         ; 005087c5
     MOV EDI,dword ptr [0x0067d550]      ; 005087c8 | g_CDemonMissionPtr
     PUSH EDI                            ; 005087ce | g_CDemonMissionInstance
-    CALL core_mission.cpp_CDemonMission_checkMemory_FUN_00522d20 ; 005087cf
-        ;   XREF to: 00522d20 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_checkMemory_FUN_00522d20(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_FUN_00522d20 ; 005087cf
+        ;   XREF to: 00522d20 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_00522d20(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 005087d4
     MOV EBP,dword ptr [0x00681ef8]      ; 005087d7 | g_CSoundPtr
     PUSH EBP                            ; 005087dd | g_CSoundInstance

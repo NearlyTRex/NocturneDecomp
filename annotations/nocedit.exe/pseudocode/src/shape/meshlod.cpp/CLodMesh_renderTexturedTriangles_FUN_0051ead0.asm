@@ -1,12 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_meshlod_cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0(CLodMesh *this_ptr,int enable_texture_lookup,int use_atlas_mode)
+; void __cdecl shape_meshlod_cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0(CLodMesh *this_ptr,int enable_texture_lookup)
 ;
 ; Parameters:
 ; CLodMesh *       Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   enable_texture_lookup
-; int              Stack[0xc]:4   use_atlas_mode
 ; Local Variables:
 ; undefined4       Stack[-0x74]:4  local_74
 ; undefined4       Stack[-0x70]:4  local_70

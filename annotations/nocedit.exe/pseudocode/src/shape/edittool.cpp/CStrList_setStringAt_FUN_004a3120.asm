@@ -16,7 +16,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_00623871
 ;   TerminatedCString s_CStrList_set_invalid_ind_00623887
-;   char s_EmpyStringLiteral_006238a5 = \x00
+;   char s_EmptyChar_006238a5 = \x00
 ;   TerminatedCString s_shape_edittool_cpp_006238a6
 ;   undefined4 s_.\\shape\\edittool.cpp_006238a7
 ;   undefined4 s_\\shape\\edittool.cpp_006238a8
@@ -60,7 +60,7 @@ section .text
         ;   Label: LAB_004a315c
     JNZ 0x004a3165                      ; 004a315e
         ;   XREF to: 004a3165 (CONDITIONAL_JUMP)  ; LAB_004a3165
-    MOV ESI,0x6238a5                    ; 004a3160 | s_EmpyStringLiteral_006238a5
+    MOV ESI,0x6238a5                    ; 004a3160 | s_EmptyChar_006238a5
     PUSH 0xc1b                          ; 004a3165
         ;   Label: LAB_004a3165
     PUSH 0x6238a6                       ; 004a316a | = "..\\shape\\edittool.cpp"
@@ -69,7 +69,7 @@ section .text
     SUB ECX,ECX                         ; 004a3175
     DEC ECX                             ; 004a3177
     XOR EAX,EAX                         ; 004a3178
-    SCASB.REPNE ES:EDI                  ; 004a317a | s_EmpyStringLiteral_006238a5 | = "..\\shape\\edittool.cpp"
+    SCASB.REPNE ES:EDI                  ; 004a317a | s_EmptyChar_006238a5 | = "..\\shape\\edittool.cpp"
     NOT ECX                             ; 004a317c
     DEC ECX                             ; 004a317e
     INC ECX                             ; 004a317f
@@ -92,7 +92,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x8]       ; 004a31a4
     MOV EDI,dword ptr [EAX + ECX*0x4]   ; 004a31a7
     PUSH EDI                            ; 004a31aa
-    MOV AL,byte ptr [ESI]               ; 004a31ab | s_EmpyStringLiteral_006238a5 | s_.\shape\edittool.cpp_006238a7
+    MOV AL,byte ptr [ESI]               ; 004a31ab | s_EmptyChar_006238a5 | s_.\shape\edittool.cpp_006238a7
         ;   Label: LAB_004a31ab
     MOV byte ptr [EDI],AL               ; 004a31ad
     CMP AL,0x0                          ; 004a31af

@@ -40,7 +40,7 @@ void __cdecl core_zombie_cpp_CZombie_process_FUN_005f9470(CZombie *this_ptr,floa
   float fVar24;
   float max_distance;
   float fVar25;
-  float in_stack_fffffc54;
+  SDamageInfo local_3ac;
   SDamageInfo local_370;
   char local_334 [32];
   CBoundingBox3D local_314;
@@ -259,12 +259,14 @@ LAB_005f9541:
             goto LAB_005f9504;
           }
         }
-        core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffc54);
-        pCVar10 = (CVector3f *)core_actor_cpp_getRandomFloat_FUN_0040cc10(15.0,25.0);
+        core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_3ac);
+        local_3ac.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(15.0,25.0);
+        local_3ac.attacker = (CDemonActor *)this_ptr;
+        local_3ac.wielder = (CDemonActor *)this_ptr;
         pCVar3 = (CCharacter *)(this_ptr->base).victim;
-        local_14 = pCVar10;
-        (*(((pCVar3->base).vtable._uc)->_uc).processDamage)(pCVar3,(SDamageInfo *)&stack0xfffffc54);
-        local_98 = (double)(float)pCVar10;
+        local_14 = (CVector3f *)local_3ac.damage_amount;
+        (*(((pCVar3->base).vtable._uc)->_uc).processDamage)(pCVar3,&local_3ac);
+        local_98 = (double)local_3ac.damage_amount;
         if (0.0 < local_98) {
           local_80 = (int)ROUND(ROUND(local_98 * 2.5 * 0.25));
           core_gore_cpp_CGore_spawnBloodBurst_FUN_004edbb0
@@ -981,8 +983,7 @@ LAB_005f9f22:
   if (iVar6 != 0xe) {
     core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
               (&(this_ptr->base).base.model);
-    core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
-              ((CCharacter *)this_ptr,delta_time,in_stack_fffffc54);
+    core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr,delta_time);
   }
   if ((this_ptr->base).pool_me == 0) {
     iVar6 = this_ptr->part_indices[5];

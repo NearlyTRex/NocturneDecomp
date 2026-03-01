@@ -26,7 +26,7 @@
 ;   char[21] s__0062a87d
 ;   char[11] s__0062a892
 ;   TerminatedCString s_maxCharHght_d_0062a89d
-;   char s_CharMax_0062a8ad = \xff
+;   char s_MaxChar_0062a8ad = \xff
 ;   int g_ClipLeft
 ;   int g_ClipTop
 ;   int g_ClipRight
@@ -39,9 +39,9 @@
 ;   engine_font.cpp_CBitFont_drawCharacter_FUN_004ce7a0
 ;   engine_font.cpp_CBitFont_drawText_FUN_004cda80
 ;   engine_font.cpp_CBitFont_drawTextF_FUN_004cdc20
+;   engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0
 ;   engine_font.cpp_CBitFont_getCharWidth_FUN_004d01a0
-;   engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0
-;   engine_font.cpp_CBitFont_getCharXAdvance_FUN_004d0200
+;   engine_font.cpp_CBitFont_getCharYOffset_FUN_004d0200
 ;
 ; *****************************************************************************
 
@@ -130,8 +130,8 @@ section .text
     PUSH 0xc5                           ; 004d0925
     PUSH ESI                            ; 004d092a
     MOV dword ptr [0x02d02570],EDI      ; 004d092b | g_ActiveRenderColor
-    CALL engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0 ; 004d0931
-        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0 ; 004d0931
+        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 004d0936
     ADD EAX,EBX                         ; 004d0939
     PUSH EAX                            ; 004d093b
@@ -139,8 +139,8 @@ section .text
     PUSH EDI                            ; 004d093f
     PUSH 0xc5                           ; 004d0940
     PUSH ESI                            ; 004d0945
-    CALL engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0 ; 004d0946
-        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0 ; 004d0946
+        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 004d094b
     ADD EAX,EBX                         ; 004d094e
     PUSH EAX                            ; 004d0950
@@ -191,16 +191,16 @@ section .text
     MOV EAX,0x4                         ; 004d09c7
     PUSH ESI                            ; 004d09cc
     MOV [0x02d02570],EAX                ; 004d09cd | g_ActiveRenderColor
-    CALL engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0 ; 004d09d2
-        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0 ; 004d09d2
+        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 004d09d7
     ADD EAX,EBX                         ; 004d09da
     PUSH EAX                            ; 004d09dc
     PUSH EDI                            ; 004d09dd
     PUSH 0xc5                           ; 004d09de
     PUSH ESI                            ; 004d09e3
-    CALL engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0 ; 004d09e4
-        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0 ; 004d09e4
+        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 004d09e9
     ADD EAX,EBX                         ; 004d09ec
     PUSH EAX                            ; 004d09ee
@@ -524,14 +524,14 @@ section .text
         ;   XREF to: 004d0cbf (CONDITIONAL_JUMP)  ; LAB_004d0cbf
     PUSH 0xff                           ; 004d0ce4
     PUSH ESI                            ; 004d0ce9
-    CALL engine_font.cpp_CBitFont_getCharXAdvance_FUN_004d0200 ; 004d0cea
-        ;   XREF to: 004d0200 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharXAdvance_FUN_004d0200(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharYOffset_FUN_004d0200 ; 004d0cea
+        ;   XREF to: 004d0200 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharYOffset_FUN_004d0200(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 004d0cef
     PUSH EAX                            ; 004d0cf2
     PUSH 0xff                           ; 004d0cf3
     PUSH ESI                            ; 004d0cf8
-    CALL engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0 ; 004d0cf9
-        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0 ; 004d0cf9
+        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 004d0cfe
     PUSH EAX                            ; 004d0d01
     PUSH 0xff                           ; 004d0d02
@@ -540,7 +540,7 @@ section .text
         ;   XREF to: 004d01a0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004d01a0(CBitFont * font, int char_code)
     ADD ESP,0x8                         ; 004d0d0d
     PUSH EAX                            ; 004d0d10
-    PUSH 0x62a8ad                       ; 004d0d11 | s_CharMax_0062a8ad
+    PUSH 0x62a8ad                       ; 004d0d11 | s_MaxChar_0062a8ad
     MOV EDI,dword ptr [EBP + -0x2c]     ; 004d0d16
     PUSH 0x6                            ; 004d0d19
     ADD EBX,EDI                         ; 004d0d1b
@@ -576,16 +576,16 @@ section .text
     MOV EDX,0x4                         ; 004d0d5b
     PUSH ESI                            ; 004d0d60
     MOV dword ptr [0x02d02570],EDX      ; 004d0d61 | g_ActiveRenderColor
-    CALL engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0 ; 004d0d67
-        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0 ; 004d0d67
+        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 004d0d6c
     ADD EAX,EBX                         ; 004d0d6f
     PUSH EAX                            ; 004d0d71
     PUSH EDI                            ; 004d0d72
     PUSH 0xc5                           ; 004d0d73
     PUSH ESI                            ; 004d0d78
-    CALL engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0 ; 004d0d79
-        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0 ; 004d0d79
+        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 004d0d7e
     ADD EAX,EBX                         ; 004d0d81
     PUSH EAX                            ; 004d0d83
@@ -623,16 +623,16 @@ section .text
     MOV EAX,0x4                         ; 004d0dd7
     PUSH ESI                            ; 004d0ddc
     MOV [0x02d02570],EAX                ; 004d0ddd | g_ActiveRenderColor
-    CALL engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0 ; 004d0de2
-        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0 ; 004d0de2
+        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 004d0de7
     ADD EAX,EBX                         ; 004d0dea
     PUSH EAX                            ; 004d0dec
     PUSH EDI                            ; 004d0ded
     PUSH 0xc5                           ; 004d0dee
     PUSH ESI                            ; 004d0df3
-    CALL engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0 ; 004d0df4
-        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0 ; 004d0df4
+        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 004d0df9
     ADD EAX,EBX                         ; 004d0dfc
     PUSH EAX                            ; 004d0dfe
@@ -670,16 +670,16 @@ section .text
     MOV EAX,0x4                         ; 004d0e52
     PUSH ESI                            ; 004d0e57
     MOV [0x02d02570],EAX                ; 004d0e58 | g_ActiveRenderColor
-    CALL engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0 ; 004d0e5d
-        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0 ; 004d0e5d
+        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 004d0e62
     ADD EAX,EBX                         ; 004d0e65
     PUSH EAX                            ; 004d0e67
     PUSH EDI                            ; 004d0e68
     PUSH 0xc5                           ; 004d0e69
     PUSH ESI                            ; 004d0e6e
-    CALL engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0 ; 004d0e6f
-        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0 ; 004d0e6f
+        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 004d0e74
     ADD EAX,EBX                         ; 004d0e77
     PUSH EAX                            ; 004d0e79
@@ -717,16 +717,16 @@ section .text
     MOV EAX,0x4                         ; 004d0ecd
     PUSH ESI                            ; 004d0ed2
     MOV [0x02d02570],EAX                ; 004d0ed3 | g_ActiveRenderColor
-    CALL engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0 ; 004d0ed8
-        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0 ; 004d0ed8
+        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 004d0edd
     ADD EAX,EBX                         ; 004d0ee0
     PUSH EAX                            ; 004d0ee2
     PUSH EDI                            ; 004d0ee3
     PUSH 0xc5                           ; 004d0ee4
     PUSH ESI                            ; 004d0ee9
-    CALL engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0 ; 004d0eea
-        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0 ; 004d0eea
+        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 004d0eef
     ADD EAX,EBX                         ; 004d0ef2
     PUSH EAX                            ; 004d0ef4
@@ -764,16 +764,16 @@ section .text
     MOV EAX,0x4                         ; 004d0f48
     PUSH ESI                            ; 004d0f4d
     MOV [0x02d02570],EAX                ; 004d0f4e | g_ActiveRenderColor
-    CALL engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0 ; 004d0f53
-        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0 ; 004d0f53
+        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 004d0f58
     ADD EAX,EBX                         ; 004d0f5b
     PUSH EAX                            ; 004d0f5d
     PUSH EDI                            ; 004d0f5e
     PUSH 0xc5                           ; 004d0f5f
     PUSH ESI                            ; 004d0f64
-    CALL engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0 ; 004d0f65
-        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0 ; 004d0f65
+        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 004d0f6a
     ADD EAX,EBX                         ; 004d0f6d
     PUSH EAX                            ; 004d0f6f
@@ -810,16 +810,16 @@ section .text
     MOV EDX,0x4                         ; 004d0fc2
     PUSH ESI                            ; 004d0fc7
     MOV dword ptr [0x02d02570],EDX      ; 004d0fc8 | g_ActiveRenderColor
-    CALL engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0 ; 004d0fce
-        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0 ; 004d0fce
+        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 004d0fd3
     ADD EAX,EBX                         ; 004d0fd6
     PUSH EAX                            ; 004d0fd8
     PUSH EDI                            ; 004d0fd9
     PUSH 0xc5                           ; 004d0fda
     PUSH ESI                            ; 004d0fdf
-    CALL engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0 ; 004d0fe0
-        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0 ; 004d0fe0
+        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 004d0fe5
     ADD EAX,EBX                         ; 004d0fe8
     PUSH EAX                            ; 004d0fea
@@ -857,16 +857,16 @@ section .text
     MOV EAX,0x4                         ; 004d103e
     PUSH ESI                            ; 004d1043
     MOV [0x02d02570],EAX                ; 004d1044 | g_ActiveRenderColor
-    CALL engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0 ; 004d1049
-        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0 ; 004d1049
+        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 004d104e
     ADD EAX,EBX                         ; 004d1051
     PUSH EAX                            ; 004d1053
     PUSH EDI                            ; 004d1054
     PUSH 0xc5                           ; 004d1055
     PUSH ESI                            ; 004d105a
-    CALL engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0 ; 004d105b
-        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0 ; 004d105b
+        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 004d1060
     ADD EAX,EBX                         ; 004d1063
     PUSH EAX                            ; 004d1065
@@ -903,16 +903,16 @@ section .text
     MOV EDX,0x4                         ; 004d10b8
     PUSH ESI                            ; 004d10bd
     MOV dword ptr [0x02d02570],EDX      ; 004d10be | g_ActiveRenderColor
-    CALL engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0 ; 004d10c4
-        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0 ; 004d10c4
+        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 004d10c9
     ADD EAX,EBX                         ; 004d10cc
     PUSH EAX                            ; 004d10ce
     PUSH EDI                            ; 004d10cf
     PUSH 0xc5                           ; 004d10d0
     PUSH ESI                            ; 004d10d5
-    CALL engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0 ; 004d10d6
-        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0 ; 004d10d6
+        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 004d10db
     ADD EAX,EBX                         ; 004d10de
     PUSH EAX                            ; 004d10e0

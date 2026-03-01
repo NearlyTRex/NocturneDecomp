@@ -15,9 +15,7 @@ int __cdecl core_vehicle_cpp_CVehicle_renderOpaque_FUN_005e88c0(CVehicle *this_p
   CVector3i *rotation;
   CKeyFramedModelInstance *this_ptr_00;
   CVector3i *position;
-  float in_stack_ffffff88;
-  float in_stack_ffffff8c;
-  float in_stack_ffffff90;
+  CBoundingBox3D CStack_78;
   CBoundingBox3D local_60;
   CVector3f CStack_48;
   CVector3f CStack_3c;
@@ -59,10 +57,8 @@ int __cdecl core_vehicle_cpp_CVehicle_renderOpaque_FUN_005e88c0(CVehicle *this_p
       }
     }
     else {
-      pCVar1 = (*((this_ptr->base).vtable._ub)->getBoundingBox)
-                         (&this_ptr->base,(CBoundingBox3D *)&stack0xffffff88);
-      core_box_cpp_CBoundingBox3D_render_FUN_004210b0
-                (pCVar1,(int)in_stack_ffffff88,(int)in_stack_ffffff8c,(int)in_stack_ffffff90);
+      pCVar1 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&CStack_78);
+      core_box_cpp_CBoundingBox3D_render_FUN_004210b0(pCVar1);
     }
   }
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(&this_ptr->base);

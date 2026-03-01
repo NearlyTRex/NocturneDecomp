@@ -196,7 +196,7 @@
 ;   core_dmodel.cpp_CKeyFramedModel_load_FUN_00476db0
 ;   core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850
 ;   core_game.cpp_CGame_saveClockTime_FUN_004d7d80
-;   core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90
+;   core_game.cpp_CGame_updateDT_FUN_004d7d90
 ;   core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_0052e2b0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 ;   core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0
@@ -360,9 +360,9 @@ section .text
         ;   XREF to: 00477690 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_free_FUN_00477690(CKeyFramedModel * this_ptr)
     MOV EAX,[0x03f87558]                ; 00596a9a | g_ZeroVector
     MOV dword ptr [EBP + 0xffffff0a],EAX ; 00596a9f
-    MOV EAX,[0x03f8755c]                ; 00596aa5 | g_ZeroVector.y
+    MOV EAX,[0x03f8755c]                ; 00596aa5 | g_ZeroVector+4
     MOV dword ptr [EBP + 0xffffff0e],EAX ; 00596aaa
-    MOV EAX,[0x03f87560]                ; 00596ab0 | g_ZeroVector.z
+    MOV EAX,[0x03f87560]                ; 00596ab0 | g_ZeroVector+8
     MOV dword ptr [EBP + 0xffffff12],EAX ; 00596ab5
     MOV EAX,dword ptr [EBP + 0xffffff0a] ; 00596abb
     MOV dword ptr [EBP + 0xfffffef2],EAX ; 00596ac1
@@ -1546,8 +1546,8 @@ section .text
         ;   Label: LAB_00597807
     MOV ECX,dword ptr [0x0067b654]      ; 0059780c | g_CGamePtr
     PUSH ECX                            ; 00597812 | g_CGameInstance
-    CALL core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90 ; 00597813
-        ;   XREF to: 004d7d90 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90(CGame * this_ptr)
+    CALL core_game.cpp_CGame_updateDT_FUN_004d7d90 ; 00597813
+        ;   XREF to: 004d7d90 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_updateDT_FUN_004d7d90(CGame * this_ptr)
     ADD ESP,0x4                         ; 00597818
     MOV EAX,[0x0067cf44]                ; 0059781b | g_CKeysPtr
     PUSH 0x1                            ; 00597820
@@ -3533,7 +3533,7 @@ section .text
     MOV EDX,dword ptr [0x00678a60]      ; 00598ea9 | g_CEditorToolsPtr
     PUSH EDX                            ; 00598eaf | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70 ; 00598eb0
-        ;   XREF to: 0049fb70 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70(CEditorTools * this_ptr, char * prompt_text, char * filename_buffer, int buffer_size, ...)
+        ;   XREF to: 0049fb70 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70(CEditorTools * this_ptr, char * dialog_title, char * directory_path, char * file_extension, ...)
     ADD ESP,0x18                        ; 00598eb5
     TEST EAX,EAX                        ; 00598eb8
     JZ 0x00597847                       ; 00598eba

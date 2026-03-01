@@ -2,11 +2,11 @@
 // Address: 005b5322
 // Address Range: [[005b5322, 005b555b]]
 // Convention: __cdecl
-// Signature: void __cdecl wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322(SEdgeData *left_vertex,SEdgeData *right_vertex,int scanline_y)
+// Signature: void __cdecl wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y)
 
 #include "nocturne.h"
 
-void __cdecl wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322(SEdgeData *left_vertex,SEdgeData *right_vertex,int scanline_y)
+void __cdecl wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y)
 
 {
   bool bVar1;
@@ -15,13 +15,13 @@ void __cdecl wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322(
   int iVar4;
   int iVar5;
   uint uVar6;
-  SEdgeData *pSVar7;
+  SSoftwareEdge *pSVar7;
   int iVar8;
   uint *puVar9;
   uint uVar10;
   
-  uVar10 = left_vertex->x_current;
-  uVar6 = right_vertex->x_current;
+  uVar10 = (left_vertex->base).x_current;
+  uVar6 = (right_vertex->base).x_current;
   uVar3 = uVar10;
   pSVar7 = left_vertex;
   if (uVar6 < uVar10) {
@@ -38,9 +38,9 @@ void __cdecl wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322(
     puVar9 = g_ZBufferScanlineArray[scanline_y] + uVar3;
     g_CurrentZBufferPtr = (int *)puVar9;
     if (g_RenderStateFlags.dword == 0x80) {
-      uVar10 = pSVar7->z_current;
+      uVar10 = (pSVar7->base).w_current;
       iVar8 = (int)((ulonglong)
-                    ((longlong)(int)(right_vertex->z_current - uVar10) *
+                    ((longlong)(int)((right_vertex->base).w_current - uVar10) *
                     (longlong)(int)g_ReciprocalLookupTable[iVar4 + 1]) >> 0x20);
       iVar4 = g_ScanlinePixelCount;
       g_StartDepthW = uVar10;
@@ -56,45 +56,45 @@ void __cdecl wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322(
       return;
     }
     if (g_RenderStateFlag2 == 5) {
-      uVar10 = pSVar7->u_current;
+      uVar10 = (pSVar7->base).u_current;
       g_StartTextureU =
            (int)(CONCAT44(((int)uVar10 >> 0x1f) << 0x18 | uVar10 >> 8,uVar10 << 0x18) /
-                (longlong)pSVar7->z_current);
-      uVar10 = right_vertex->u_current;
+                (longlong)(pSVar7->base).w_current);
+      uVar10 = (right_vertex->base).u_current;
       g_DeltaTextureU =
            (int)((ulonglong)
                  ((longlong)
                   ((int)(CONCAT44(((int)uVar10 >> 0x1f) << 0x18 | uVar10 >> 8,uVar10 << 0x18) /
-                        (longlong)right_vertex->z_current) - g_StartTextureU) *
+                        (longlong)(right_vertex->base).w_current) - g_StartTextureU) *
                  (longlong)(int)g_ReciprocalLookupTable[iVar4 + 1]) >> 0x20);
-      uVar10 = pSVar7->v_current;
+      uVar10 = (pSVar7->base).v_current;
       g_StartTextureV =
            (int)(CONCAT44(((int)uVar10 >> 0x1f) << 0x18 | uVar10 >> 8,uVar10 << 0x18) /
-                (longlong)pSVar7->z_current);
-      uVar10 = right_vertex->v_current;
+                (longlong)(pSVar7->base).w_current);
+      uVar10 = (right_vertex->base).v_current;
       g_DeltaTextureV =
            (int)((ulonglong)
                  ((longlong)
                   ((int)(CONCAT44(((int)uVar10 >> 0x1f) << 0x18 | uVar10 >> 8,uVar10 << 0x18) /
-                        (longlong)right_vertex->z_current) - g_StartTextureV) *
+                        (longlong)(right_vertex->base).w_current) - g_StartTextureV) *
                  (longlong)(int)g_ReciprocalLookupTable[iVar4 + 1]) >> 0x20);
     }
     else {
-      g_StartTextureU = pSVar7->u_current;
+      g_StartTextureU = (pSVar7->base).u_current;
       g_DeltaTextureU =
            (int)((ulonglong)
-                 ((longlong)(right_vertex->u_current - g_StartTextureU) *
+                 ((longlong)((right_vertex->base).u_current - g_StartTextureU) *
                  (longlong)(int)g_ReciprocalLookupTable[iVar4 + 1]) >> 0x20);
-      g_StartTextureV = pSVar7->v_current;
+      g_StartTextureV = (pSVar7->base).v_current;
       g_DeltaTextureV =
            (int)((ulonglong)
-                 ((longlong)(right_vertex->v_current - g_StartTextureV) *
+                 ((longlong)((right_vertex->base).v_current - g_StartTextureV) *
                  (longlong)(int)g_ReciprocalLookupTable[iVar4 + 1]) >> 0x20);
     }
-    iVar8 = pSVar7->z_current;
+    iVar8 = (pSVar7->base).w_current;
     g_DeltaDepthW =
          (int)((ulonglong)
-               ((longlong)(right_vertex->z_current - iVar8) *
+               ((longlong)((right_vertex->base).w_current - iVar8) *
                (longlong)(int)g_ReciprocalLookupTable[iVar4 + 1]) >> 0x20);
     uVar10 = 0;
     g_StartDepthW = iVar8;

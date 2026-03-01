@@ -19,8 +19,8 @@ void __cdecl core_keyactor_cpp_CKeyActor_process_FUN_00501710(CKeyActor *this_pt
   
   this_ptr_00 = &this_ptr->globe;
   this_ptr->rotation_angle = delta_time * (float)3.1415926535000001 + this_ptr->rotation_angle;
-  core_dglobe_cpp_CDemonGlobe_setColor_FUN_00471310
-            (this_ptr_00,(CColor3f *)&(this_ptr->base).location);
+  core_dglobe_cpp_CDemonGlobe_setPosition_FUN_00471310
+            (this_ptr_00,&(this_ptr->base).location.position);
   fVar3 = (float10)fsin((float10)this_ptr->rotation_angle);
   iVar1 = (int)ROUND(ROUND(fVar3 * (float10)8192 + (float10)16384));
   (this_ptr->globe).intensity_multiplier = iVar1;

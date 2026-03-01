@@ -27,7 +27,7 @@ void __cdecl core_melee_cpp_CMelee_process_FUN_0050ec10(CMelee *this_ptr,float d
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
               ((CDemonActor *)this_ptr,&CStack_18,input_local_point);
     core_gore_cpp_CGore_spawnBloodParticles_FUN_004edaa0
-              (g_CGorePtr,&CStack_18,&g_ZeroVector,this_ptr->blood_gore_type);
+              (g_CGorePtr,&CStack_18,&g_ZeroVector.f,this_ptr->blood_gore_type);
     return;
   }
   return;

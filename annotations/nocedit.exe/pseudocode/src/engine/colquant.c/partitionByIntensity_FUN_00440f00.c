@@ -2,11 +2,11 @@
 // Address: 00440f00
 // Address Range: [[00440f00, 00441033]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_colquant_c_partitionByIntensity_FUN_00440f00(SColorQuantWorkspace *workspace,int box_index,int new_box_index)
+// Signature: void __cdecl engine_colquant_c_partitionByIntensity_FUN_00440f00(SColorQuantMapper *workspace,int box_index,int new_box_index)
 
 #include "nocturne.h"
 
-void __cdecl engine_colquant_c_partitionByIntensity_FUN_00440f00(SColorQuantWorkspace *workspace,int box_index,int new_box_index)
+void __cdecl engine_colquant_c_partitionByIntensity_FUN_00440f00(SColorQuantMapper *workspace,int box_index,int new_box_index)
 
 {
   uint uVar1;

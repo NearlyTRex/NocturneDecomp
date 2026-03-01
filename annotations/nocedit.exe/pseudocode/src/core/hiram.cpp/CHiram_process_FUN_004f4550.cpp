@@ -15,7 +15,6 @@ void __cdecl core_hiram_cpp_CHiram_process_FUN_004f4550(CHiram *this_ptr,float d
   CDemonActor *actor_ptr;
   CGlass *this_ptr_00;
   uint class_name_hash;
-  float fVar4;
   
   iVar2 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
   if (iVar2 == 0) {
@@ -47,8 +46,7 @@ void __cdecl core_hiram_cpp_CHiram_process_FUN_004f4550(CHiram *this_ptr,float d
        (this_ptr->base).base.model.accumulated_root_motion.z;
   (this_ptr->base).base.model.accumulated_root_motion.x =
        (this_ptr->base).base.model.accumulated_root_motion.y;
-  fVar4 = delta_time;
-  while (0.0 < fVar4) {
+  while (0.0 < delta_time) {
     iVar2 = core_motion_cpp_CMotionController_advance_FUN_0052d610(&pCVar1->motion_controller);
     if (iVar2 == 0x29a) {
       core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0
@@ -61,7 +59,6 @@ void __cdecl core_hiram_cpp_CHiram_process_FUN_004f4550(CHiram *this_ptr,float d
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020(pCVar1);
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10((CDemonActor *)this_ptr);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020(pCVar1);
-  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
-            ((CCharacter *)this_ptr,delta_time,fVar4);
+  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr,delta_time);
   return;
 }

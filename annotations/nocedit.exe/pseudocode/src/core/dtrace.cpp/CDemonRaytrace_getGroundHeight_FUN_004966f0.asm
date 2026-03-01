@@ -45,9 +45,9 @@
 ;   CVector3f g_TempNormal2
 ;   undefined4 g_TempNormal2.y
 ;   undefined4 g_TempNormal2.z
-;   CVector3f g_ZeroVector
-;   undefined4 g_ZeroVector.y
-;   undefined4 g_ZeroVector.z
+;   UVector3 g_ZeroVector
+;   undefined4 g_ZeroVector+4
+;   undefined4 g_ZeroVector+8
 ;
 ; Called Functions:
 ;   core_dcube.cpp_CDemonCube_rayIntersectTriangles_FUN_004578f0
@@ -227,8 +227,8 @@ section .text
     JZ 0x004968d5                       ; 004968b1
         ;   XREF to: 004968d5 (CONDITIONAL_JUMP)  ; LAB_004968d5
     FLD float ptr [0x03f87558]          ; 004968b3 | g_ZeroVector
-    FLD float ptr [0x03f87560]          ; 004968b9 | g_ZeroVector.z
-    MOV EAX,[0x03f8755c]                ; 004968bf | g_ZeroVector.y
+    FLD float ptr [0x03f87560]          ; 004968b9 | g_ZeroVector+8
+    MOV EAX,[0x03f8755c]                ; 004968bf | g_ZeroVector+4
     MOV [0x015c481c],EAX                ; 004968c4 | g_TempNormal2.y
     FSTP float ptr [0x015c4820]         ; 004968c9 | g_TempNormal2.z
     FSTP float ptr [0x015c4818]         ; 004968cf | g_TempNormal2

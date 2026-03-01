@@ -55,7 +55,7 @@ void __cdecl core_setedit_cpp_CDemonSet_buildCameraDepthData_FUN_00580310(CDemon
         piVar2[1] = g_CameraOriginY;
         piVar2[2] = g_CameraOriginZ;
         engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-                  (this_ptr_00,&g_ZeroVector);
+                  (this_ptr_00,&g_ZeroVector.f);
         core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0056a190(this_ptr,9999.9,0);
         iVar5 = 0;
         do {

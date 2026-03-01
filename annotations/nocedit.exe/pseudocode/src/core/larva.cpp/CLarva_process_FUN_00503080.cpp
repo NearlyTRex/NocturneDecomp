@@ -13,9 +13,10 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
 
 {
   CLocation *pCVar1;
+  CDeformableModelInstance *this_ptr_00;
   CVector3f *pCVar2;
   float fVar3;
-  CCharacter *this_ptr_00;
+  CCharacter *this_ptr_01;
   CDemonActor *pCVar4;
   float fVar5;
   int iVar6;
@@ -30,9 +31,7 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
   float10 fVar14;
   float10 fVar15;
   unkbyte10 Var16;
-  CLarva *in_stack_fffffe10;
-  CLarva *pCVar17;
-  float fVar18;
+  float fVar17;
   float in_stack_fffffe18;
   CVector3f local_128;
   CVector3f local_11c;
@@ -87,9 +86,9 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
   (this_ptr->base).base.model.accumulated_root_motion.x =
        (this_ptr->base).base.model.accumulated_root_motion.y;
   local_18 = delta_time * (this_ptr->base).speed;
-  pCVar8 = (CLarva *)&(this_ptr->base).base.model;
+  this_ptr_00 = &(this_ptr->base).base.model;
   while (0.0 < local_18) {
-    iVar6 = core_motion_cpp_CMotionController_advance_FUN_0052d610((CMotionController *)pCVar8);
+    iVar6 = core_motion_cpp_CMotionController_advance_FUN_0052d610(&this_ptr_00->motion_controller);
     if ((iVar6 == 100) && (pCVar4 = (this_ptr->base).victim, pCVar4 != (CDemonActor *)0x0)) {
       local_d4 = (pCVar4->location).position.x - (pCVar1->position).x;
       local_d0 = (pCVar4->location).position.y - (this_ptr->base).base.base.location.position.y;
@@ -144,11 +143,11 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
   }
   fVar3 = (this_ptr->base).speed;
   fVar5 = (float)0.39269908168750001;
-  fVar18 = (float)3;
+  fVar17 = (float)3;
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
-  (this_ptr->base).base.turn_speed = delta_time * fVar5 * fVar3 * fVar18;
+  (this_ptr->base).base.turn_speed = delta_time * fVar5 * fVar3 * fVar17;
   pSVar7 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                     ((CMotionController *)pCVar8);
+                     (&this_ptr_00->motion_controller);
   local_30 = pSVar7->state_index;
   local_28 = local_30;
   iVar6 = core_charactr_cpp_CCharacter_processWalking_FUN_0042ca70
@@ -158,12 +157,10 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
       (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
       pCVar4 = (this_ptr->base).victim;
       if (pCVar4 == (CDemonActor *)0x0) {
-        in_stack_fffffe10 = this_ptr;
         iVar6 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base,delta_time);
         if (iVar6 != 0) {
-          in_stack_fffffe10 = (CLarva *)0x1;
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                    ((CMotionController *)pCVar8,1,1);
+                    (&this_ptr_00->motion_controller,1,1);
         }
       }
       else {
@@ -176,18 +173,15 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
         ;
         local_2c = (float)(((int)local_54 >> 1) + INT_02d7a7b8);
         core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_80,&local_128);
-        in_stack_fffffe10 = (CLarva *)0x503624;
         local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                              (local_80.y - (this_ptr->base).base.base.orient.vec.y);
         if (((float)0.39269908168750001 <= ABS(local_14)) || ((float)12 < local_2c)) {
-          in_stack_fffffe10 = (CLarva *)0x1;
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&(this_ptr->base).base.model.motion_controller,1,1);
         }
         else if ((this_ptr->base).attack_cooldown <= 0.0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                    ((CMotionController *)pCVar8,2,1);
-          in_stack_fffffe10 = (CLarva *)0x41700000;
+                    (&this_ptr_00->motion_controller,2,1);
           local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(15.0,30.0);
           (this_ptr->base).attack_cooldown = local_14;
         }
@@ -196,14 +190,11 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
     else if (local_28 < 2) {
       (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
       fVar3 = 20.0f;
-      pCVar17 = (CLarva *)(this_ptr->base).victim;
-      if (pCVar17 == (CLarva *)0x0) {
-        in_stack_fffffe10 = this_ptr;
+      if ((this_ptr->base).victim == (CDemonActor *)0x0) {
         iVar6 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base,delta_time);
         if (iVar6 == 0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                    ((CMotionController *)pCVar8,0,1);
-          in_stack_fffffe10 = pCVar17;
+                    (&this_ptr_00->motion_controller,0,1);
         }
       }
       else {
@@ -215,20 +206,19 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
              (this_ptr->base).base.model.accumulated_root_motion.y;
         local_110 = 0;
         local_10c = 0;
-        fVar18 = 0.17453292;
+        fVar17 = 0.17453292;
         local_108 = fVar3;
-        in_stack_fffffe10 = (CLarva *)0x3f000000;
+        pCVar9 = (CVector3f *)0x3f000000;
         pCVar4 = (this_ptr->base).victim;
         path_map = (*((pCVar4->vtable)._ub)->getPathMap)(pCVar4);
         iVar6 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
                           ((CCharacter *)this_ptr,&(((this_ptr->base).victim)->location).position,
-                           path_map,(CVector3f *)in_stack_fffffe10,fVar18,in_stack_fffffe18);
+                           path_map,pCVar9,fVar17,in_stack_fffffe18);
         if (iVar6 < 0) {
           engine_console_cpp_CConsole_printf_FUN_00441890
                     (g_CConsolePtr,"%s gave up chase - I'm confused\n");
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                    ((CMotionController *)pCVar8,0,1);
-          in_stack_fffffe10 = pCVar8;
+                    (&this_ptr_00->motion_controller,0,1);
         }
         if ((this_ptr->base).attack_cooldown <= 0.0) {
           pCVar4 = (this_ptr->base).victim;
@@ -241,7 +231,6 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
           local_44 = local_f8.z * local_f8.z + local_f8.x * local_f8.x + local_f8.y * local_f8.y;
           local_40 = (float)(((int)local_44 >> 1) + INT_02d7a7b8);
           if (local_40 < (this_ptr->base).guard_distance) {
-            in_stack_fffffe10 = (CLarva *)0x5037db;
             pCVar9 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                                (&local_a4,&local_f8);
             if (&local_f8 != pCVar9) {
@@ -255,9 +244,8 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
                                  ((this_ptr->base).base.base.orient.vec.y);
             local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(local_3c - local_14);
             if (ABS(local_14) < (float)0.39269908168750001) {
-              in_stack_fffffe10 = (CLarva *)&(this_ptr->base).base.model;
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                        ((CMotionController *)in_stack_fffffe10,2,1);
+                        (&(this_ptr->base).base.model.motion_controller,2,1);
               (this_ptr->base).attack_cooldown = 6.0;
             }
           }
@@ -267,7 +255,7 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
     else if (((local_28 == 5) && ((this_ptr->base).pool_me == 0)) &&
             ((this_ptr->base).base.base.standing_platform == (CPlatform *)0x0)) {
       pCVar9 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
-                         ((CDeformableModelInstance *)pCVar8,&local_c8,0);
+                         (this_ptr_00,&local_c8,0);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                 ((CDemonActor *)this_ptr,&local_e0,pCVar9);
       core_gore_cpp_CGore_createBloodPool_FUN_004ede30(g_CGorePtr,&local_e0,1);
@@ -291,7 +279,8 @@ LAB_00503501:
   else {
     if (uVar10 < 3) goto LAB_00503159;
     if (uVar10 != 3) goto LAB_00503501;
-    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00((CMotionController *)pCVar8,0,1);
+    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+              (&this_ptr_00->motion_controller,0,1);
     engine_console_cpp_CConsole_printf_FUN_00441890
               (g_CConsolePtr,"%s confused while walking to scriptDest!\n");
   }
@@ -328,13 +317,11 @@ LAB_00503184:
   }
   iVar6 = core_charactr_cpp_CCharacter_isOnGround_FUN_004297e0((CCharacter *)this_ptr);
   if (iVar6 != 0) {
-    this_ptr_00 = (CCharacter *)(this_ptr->base).victim;
-    if ((this_ptr_00 != (CCharacter *)0x0) &&
-       (pCVar8 = (CLarva *)(*(((this_ptr_00->base).vtable._uc)->_uc).getGrabber)(this_ptr_00),
+    this_ptr_01 = (CCharacter *)(this_ptr->base).victim;
+    if ((this_ptr_01 != (CCharacter *)0x0) &&
+       (pCVar8 = (CLarva *)(*(((this_ptr_01->base).vtable._uc)->_uc).getGrabber)(this_ptr_01),
        pCVar8 == this_ptr)) {
-      in_stack_fffffe10 = (CLarva *)(this_ptr->base).victim;
-      core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0
-                (g_CDemonSetPtr,(CDemonActor *)in_stack_fffffe10);
+      core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,(this_ptr->base).victim);
     }
     (this_ptr->base).base.velocity.y =
          (this_ptr->base).base.velocity.y - delta_time * (float)32;
@@ -361,7 +348,6 @@ LAB_00503184:
   core_charactr_cpp_CCharacter_preProcess_FUN_00429820((CCharacter *)this_ptr);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
             (&(this_ptr->base).base.model);
-  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
-            ((CCharacter *)this_ptr,delta_time,(float)in_stack_fffffe10);
+  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr,delta_time);
   return;
 }

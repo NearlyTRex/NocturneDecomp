@@ -1,0 +1,181 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "lvalue_required",
+        "column": 58,
+        "line": 17,
+        "message": "cannot take the address of an rvalue of type 'float'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 84,
+    "complexity_score": 31,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 14,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 31,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 115
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004d7730",
+    "address_range": [
+      [
+        "004d7730",
+        "004d780c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_game.cpp_setupMovieRecording_FUN_004d7730",
+    "signature": "void __cdecl core_game_cpp_setupMovieRecording_FUN_004d7730(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "004a00f0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0"
+    },
+    {
+      "addr": "004a0020",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_004a0020"
+    },
+    {
+      "addr": "0049e6a0",
+      "is_variadic": true,
+      "name": "shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062b161",
+      "name": "s_Enter_Movie_FPS_0062b161",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062b171",
+      "name": "s_Enter_number_of_frames_t_0062b171",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062b1bb",
+      "name": "s_Enter_image_width_0062b1bb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062b1cd",
+      "name": "s_Enter_image_height_0062b1cd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062b1e0",
+      "name": "s_Press_CTRL_V_to_begin_re_0062b1e0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00678a60",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "02cf1cd4"
+    },
+    {
+      "addr": "0067b660",
+      "name": "g_MovieRecordingTargetFPS",
+      "type": "float",
+      "value": "30"
+    },
+    {
+      "addr": "0067b664",
+      "name": "g_MovieRecordingWidth",
+      "type": "int",
+      "value": "0x40"
+    },
+    {
+      "addr": "0067b668",
+      "name": "g_MovieRecordingHeight",
+      "type": "int",
+      "value": "0x40"
+    },
+    {
+      "addr": "02cf1cd4",
+      "name": "g_CEditorToolsInstance",
+      "type": "CEditorTools",
+      "value": null
+    },
+    {
+      "addr": "02d831b0",
+      "name": "g_MovieRecordingArmed",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d831b4",
+      "name": "g_MovieRecordingActive",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d831b8",
+      "name": "g_MovieRecordingMaxFrames",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d831bc",
+      "name": "g_MovieRecordingFrameCounter",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "estimated_params": 0
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.5972222222222223,
+    "instruction_count": 72,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 5,
+      "CBRANCH": 4,
+      "COPY": 69,
+      "INT_ADD": 15,
+      "INT_AND": 24,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 20,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 10,
+      "INT_SUB": 39,
+      "INT_XOR": 1,
+      "LOAD": 10,
+      "POPCOUNT": 10,
+      "RETURN": 2,
+      "STORE": 39
+    },
+    "pcode_op_count": 259
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
+}

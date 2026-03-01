@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_palette_cpp_CPaletteManager_createOutputPalette_FUN_00545180(void)
+; int __cdecl engine_palette_cpp_CPaletteManager_createOutputPalette_FUN_00545180(CPaletteManager *this_ptr,char *output_filename,int num_palette_entries)
 ;
+; Parameters:
+; CPaletteManager * Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   output_filename
+; int              Stack[0xc]:4   num_palette_entries
 ; Local Variables:
 ; undefined        Stack[-0x6c]:1  local_6c
 ; undefined1       Stack[-0x6b]:1  local_6b
@@ -355,7 +359,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x68]      ; 0054542c
     PUSH EDI                            ; 00545430
     CALL engine_colquant.c_quantizeColors_FUN_004406c0 ; 00545431
-        ;   XREF to: 004406c0 (UNCONDITIONAL_CALL)  ; char * engine_colquant.c_quantizeColors_FUN_004406c0(SColorQuantWorkspace * workspace, char * color_data, int color_count, int num_palette_entries)
+        ;   XREF to: 004406c0 (UNCONDITIONAL_CALL)  ; char * engine_colquant.c_quantizeColors_FUN_004406c0(SColorQuantMapper * workspace, char * color_data, int color_count, int num_palette_entries)
     ADD ESP,0x10                        ; 00545436
     MOV DL,0x5c                         ; 00545439
     MOV ESI,dword ptr [ESP + 0x7c]      ; 0054543b

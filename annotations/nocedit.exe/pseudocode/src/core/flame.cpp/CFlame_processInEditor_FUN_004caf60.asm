@@ -15,7 +15,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_processInEditor_FUN_0040d040
-;   core_flame.cpp_CFlame_FUN_004cad90
+;   core_flame.cpp_CFlame_updateGlobe_FUN_004cad90
 ;
 ; *****************************************************************************
 
@@ -119,8 +119,8 @@ section .text
         ;   Label: LAB_004cb066
     MOV dword ptr [EBX + 0x160],EAX     ; 004cb06c
     PUSH EBX                            ; 004cb072
-    CALL core_flame.cpp_CFlame_FUN_004cad90 ; 004cb073
-        ;   XREF to: 004cad90 (UNCONDITIONAL_CALL)  ; void core_flame.cpp_CFlame_FUN_004cad90(CFlame * this_ptr)
+    CALL core_flame.cpp_CFlame_updateGlobe_FUN_004cad90 ; 004cb073
+        ;   XREF to: 004cad90 (UNCONDITIONAL_CALL)  ; void core_flame.cpp_CFlame_updateGlobe_FUN_004cad90(CFlame * this_ptr)
     ADD ESP,0x4                         ; 004cb078
     ADD ESP,0x8                         ; 004cb07b
     POP EBX                             ; 004cb07e
@@ -131,8 +131,8 @@ section .text
         ;   XREF to: 0040d040 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_processInEditor_FUN_0040d040(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004cb086
     PUSH EBX                            ; 004cb089
-    CALL core_flame.cpp_CFlame_FUN_004cad90 ; 004cb08a
-        ;   XREF to: 004cad90 (UNCONDITIONAL_CALL)  ; void core_flame.cpp_CFlame_FUN_004cad90(CFlame * this_ptr)
+    CALL core_flame.cpp_CFlame_updateGlobe_FUN_004cad90 ; 004cb08a
+        ;   XREF to: 004cad90 (UNCONDITIONAL_CALL)  ; void core_flame.cpp_CFlame_updateGlobe_FUN_004cad90(CFlame * this_ptr)
     ADD ESP,0x4                         ; 004cb08f
     ADD ESP,0x8                         ; 004cb092
     POP EBX                             ; 004cb095

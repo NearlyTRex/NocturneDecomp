@@ -23,9 +23,9 @@
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CFireEffect g_CFireEffectInstance
 ;   undefined4 g_CGameInstance.delta_time_float
-;   CVector3f g_ZeroVector
-;   undefined4 g_ZeroVector.y
-;   undefined4 g_ZeroVector.z
+;   UVector3 g_ZeroVector
+;   undefined4 g_ZeroVector+4
+;   undefined4 g_ZeroVector+8
 ;
 ; Called Functions:
 ;   core_box.cpp_CBox_process_FUN_0041e2f0
@@ -95,9 +95,9 @@ section .text
     MOV EAX,[0x03f87558]                ; 004c408a | g_ZeroVector
         ;   Label: LAB_004c408a
     MOV dword ptr [ESP],EAX             ; 004c408f
-    MOV EAX,[0x03f8755c]                ; 004c4092 | g_ZeroVector.y
+    MOV EAX,[0x03f8755c]                ; 004c4092 | g_ZeroVector+4
     MOV dword ptr [ESP + 0x4],EAX       ; 004c4097
-    MOV EAX,[0x03f87560]                ; 004c409b | g_ZeroVector.z
+    MOV EAX,[0x03f87560]                ; 004c409b | g_ZeroVector+8
     MOV dword ptr [ESP + 0x8],EAX       ; 004c40a0
     LEA EAX,[EBX + 0x4]                 ; 004c40a4
     PUSH EAX                            ; 004c40a7

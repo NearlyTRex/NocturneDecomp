@@ -3457,7 +3457,7 @@
       "type":"struct"
     },
     {
-      "name":"SColorQuantWorkspace",
+      "name":"SColorQuantMapper",
       "type":"struct"
     },
     {
@@ -3578,10 +3578,6 @@
     },
     {
       "name":"SEdge",
-      "type":"struct"
-    },
-    {
-      "name":"SEdgeData",
       "type":"struct"
     },
     {
@@ -7585,6 +7581,10 @@
           "val":523
         },
         {
+          "name":"DIM_MBUTTON",
+          "val":524
+        },
+        {
           "name":"DIJ_LEFT",
           "val":593
         },
@@ -7599,6 +7599,18 @@
         {
           "name":"DIJ_DOWN",
           "val":596
+        },
+        {
+          "name":"DIM_XAXIS",
+          "val":597
+        },
+        {
+          "name":"DIM_YAXIS",
+          "val":598
+        },
+        {
+          "name":"INPUT_NONE",
+          "val":599
         }
       ]
     },
@@ -19618,15 +19630,15 @@
       "name":"RenderScanlineFunc",
       "parameters":[
         {
-          "name":"param_1",
-          "type":"void*"
+          "name":"left",
+          "type":"SHardwareEdge*"
         },
         {
-          "name":"param_2",
-          "type":"void*"
+          "name":"right",
+          "type":"SHardwareEdge*"
         },
         {
-          "name":"param_3",
+          "name":"scanline_y",
           "type":"int"
         }
       ],
@@ -21679,20 +21691,26 @@
           "type":"void*"
         },
         {
+          "len":2,
+          "name":"_segment",
+          "offset":4,
+          "type":"ushort"
+        },
+        {
           "len":4,
           "name":"_size",
-          "offset":4,
+          "offset":6,
           "type":"SIZE_T"
         },
         {
           "len":4,
           "name":"_useflag",
-          "offset":8,
+          "offset":10,
           "type":"int"
         }
       ],
       "importable":true,
-      "len":12,
+      "len":14,
       "name":"_heapinfo",
       "pack":false,
       "type":"struct"
@@ -24200,25 +24218,25 @@
         },
         {
           "len":1024,
-          "name":"char_x_advance",
+          "name":"char_y_offsets",
           "offset":11624,
           "type":"int[256]"
         },
         {
           "len":4,
-          "name":"max_char_height",
+          "name":"max_char_width",
           "offset":12648,
           "type":"int"
         },
         {
           "len":4,
-          "name":"max_char_width",
+          "name":"max_char_height",
           "offset":12652,
           "type":"int"
         },
         {
           "len":4,
-          "name":"current_max_width",
+          "name":"current_line_height",
           "offset":12656,
           "type":"int"
         },
@@ -33421,13 +33439,13 @@
         },
         {
           "len":4,
-          "name":"debug_flag_1",
+          "name":"god_mode_enabled",
           "offset":464,
           "type":"int"
         },
         {
           "len":4,
-          "name":"debug_flag_2",
+          "name":"freeze_enemies_enabled",
           "offset":468,
           "type":"int"
         },
@@ -34567,9 +34585,9 @@
         },
         {
           "len":4,
-          "name":"no_collision_flag",
+          "name":"invincibility_timer",
           "offset":48676,
-          "type":"int"
+          "type":"float"
         },
         {
           "len":4,
@@ -36841,7 +36859,7 @@
           "len":12,
           "name":"emitter_pos",
           "offset":1508,
-          "type":"CVector3f"
+          "type":"UVector3"
         },
         {
           "len":1200,
@@ -37127,7 +37145,7 @@
         },
         {
           "len":4,
-          "name":"damage_type",
+          "name":"ammo_type",
           "offset":1436,
           "type":"int"
         },
@@ -51257,7 +51275,7 @@
       ],
       "importable":true,
       "len":33544,
-      "name":"SColorQuantWorkspace",
+      "name":"SColorQuantMapper",
       "pack":false,
       "type":"struct"
     },
@@ -51724,9 +51742,9 @@
         },
         {
           "len":4,
-          "name":"damage_flags",
+          "name":"gore_multiplier",
           "offset":8,
-          "type":"int"
+          "type":"float"
         },
         {
           "len":12,
@@ -51754,7 +51772,7 @@
         },
         {
           "len":4,
-          "name":"weapon_damage_modifier",
+          "name":"dismember_prob",
           "offset":44,
           "type":"float"
         },
@@ -51910,129 +51928,9 @@
       "fields":[
         {
           "len":4,
-          "name":"y_start",
-          "offset":0,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"y_end",
-          "offset":4,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"x_current",
-          "offset":8,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"x_delta",
-          "offset":12,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"light_current",
-          "offset":16,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"light_delta",
-          "offset":20,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"u_current",
-          "offset":24,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"u_delta",
-          "offset":28,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"v_current",
-          "offset":32,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"v_delta",
-          "offset":36,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"z_current",
-          "offset":40,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"z_delta",
-          "offset":44,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"w_recip_current",
-          "offset":48,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"w_recip_delta",
-          "offset":52,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"color_current",
-          "offset":56,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"color_delta",
-          "offset":60,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"fog_current",
-          "offset":64,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"fog_delta",
-          "offset":68,
-          "type":"int"
-        }
-      ],
-      "importable":true,
-      "len":72,
-      "name":"SEdgeData",
-      "pack":false,
-      "type":"struct"
-    },
-    {
-      "alig":1,
-      "cat":"/Nocturne/Struct/Game",
-      "desc":"",
-      "fields":[
-        {
-          "len":4,
           "name":"edge_data",
           "offset":0,
-          "type":"void*"
+          "type":"SEdge*"
         },
         {
           "len":4,
@@ -56494,110 +56392,32 @@
       "desc":"",
       "fields":[
         {
-          "len":4,
-          "name":"y_min",
+          "len":56,
+          "name":"base",
           "offset":0,
-          "type":"int"
+          "type":"SHardwareEdge"
         },
         {
           "len":4,
-          "name":"y_max",
-          "offset":4,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"x_current",
-          "offset":8,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"x_gradient",
-          "offset":12,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"z_current",
-          "offset":16,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"z_gradient",
-          "offset":20,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"u_current",
-          "offset":24,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"u_gradient",
-          "offset":28,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"v_current",
-          "offset":32,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"v_gradient",
-          "offset":36,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"w_current",
-          "offset":40,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"w_gradient",
-          "offset":44,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"fog_current",
-          "offset":48,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"fog_gradient",
-          "offset":52,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"r_current",
+          "name":"color_current",
           "offset":56,
           "type":"int"
         },
         {
           "len":4,
-          "name":"r_gradient",
+          "name":"color_gradient",
           "offset":60,
           "type":"int"
         },
         {
           "len":4,
-          "name":"g_current",
+          "name":"alpha_current",
           "offset":64,
           "type":"int"
         },
         {
           "len":4,
-          "name":"g_gradient",
+          "name":"alpha_gradient",
           "offset":68,
           "type":"int"
         }

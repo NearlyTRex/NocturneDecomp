@@ -6,15 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 105,
-    "complexity_score": 57,
+    "complexity_score": 58,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 10,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 57,
+    "pseudocode_lines": 58,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 162
+    "total_lines": 163
   },
   "cross_references": [],
   "function": {
@@ -27,7 +27,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_dpart.cpp_setupDepthOnlyEdgeInterpolation_FUN_00483210",
-    "signature": "void __cdecl core_dpart_cpp_setupDepthOnlyEdgeInterpolation_FUN_00483210(SEdgeData *vertex_a,SEdgeData *vertex_b)"
+    "signature": "void __cdecl core_dpart_cpp_setupDepthOnlyEdgeInterpolation_FUN_00483210(SSoftwareEdge *vertex_a,SSoftwareEdge *vertex_b)"
   },
   "function_calls": [],
   "globals": [
@@ -40,7 +40,7 @@
     {
       "addr": "02c6cb74",
       "name": "g_EdgeInterpolationArray",
-      "type": "SEdgeData[16]",
+      "type": "SSoftwareEdge[16]",
       "value": null
     },
     {
@@ -148,14 +148,14 @@
         "name": "vertex_a",
         "offset": 4,
         "size": 4,
-        "type": "SEdgeData *"
+        "type": "SSoftwareEdge *"
       },
       {
         "is_param": true,
         "name": "vertex_b",
         "offset": 8,
         "size": 4,
-        "type": "SEdgeData *"
+        "type": "SSoftwareEdge *"
       }
     ]
   },

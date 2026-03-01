@@ -53,12 +53,12 @@ void __cdecl CDemonPart::processAndFinalize(CDemonPart *this_ptr,int enable_vert
 
 // Original: core_dpart.cpp_setupTriangleEdgeInterpolation_FUN_00482fb0
 // Address: 00482fb0
-void __cdecl setupTriangleEdgeInterpolation(SEdgeData *vertex_a,SEdgeData *vertex_b);
+void __cdecl setupTriangleEdgeInterpolation(SSoftwareEdge *vertex_a,SSoftwareEdge *vertex_b);
 
 // Original: core_dpart.cpp_setupDepthOnlyEdgeInterpolation_FUN_00483210
 // Address: 00483210
-void __cdecl setupDepthOnlyEdgeInterpolation(SEdgeData *vertex_a,SEdgeData *vertex_b);
+void __cdecl setupDepthOnlyEdgeInterpolation(SSoftwareEdge *vertex_a,SSoftwareEdge *vertex_b);
 
 // Original: core_dpart.cpp_findEdgeByYStart_FUN_00483330
 // Address: 00483330
-SEdgeData * __cdecl findEdgeByYStart(int scanline_y,SEdgeData *exclude_edge);
+SSoftwareEdge * __cdecl findEdgeByYStart(int scanline_y,SSoftwareEdge *exclude_edge);

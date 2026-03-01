@@ -148,10 +148,10 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005bb960(CStranger *this_ptr)
   core_charactr_cpp_CCharacter_processSmoking_FUN_0042ea40((CCharacter *)this_ptr,in_stack_00000008)
   ;
   core_game_cpp_CGame_slamDT_FUN_004e3080(g_CGamePtr,in_stack_00000008);
-  fVar18 = (float)(this_ptr->base).no_collision_flag - in_stack_00000008;
-  (this_ptr->base).no_collision_flag = (int)fVar18;
+  fVar18 = (this_ptr->base).invincibility_timer - in_stack_00000008;
+  (this_ptr->base).invincibility_timer = fVar18;
   if (fVar18 < 0.0) {
-    (this_ptr->base).no_collision_flag = 0;
+    (this_ptr->base).invincibility_timer = 0.0;
   }
   fVar18 = this_ptr->action_timer - in_stack_00000008;
   this_ptr->action_timer = fVar18;
@@ -618,12 +618,12 @@ LAB_005bd19f:
             core_hero_cpp_CHero_FUN_004f3580(&this_ptr->base);
           }
           else {
-            SStack_2bc.damage_flags =
-                 (int)core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
-                                ((((this_ptr->base).nearby_interactive_actor)->orient).vec.y -
-                                 (this_ptr->base).base.base.orient.vec.y);
-            if ((float)-0.01 <= (float)SStack_2bc.damage_flags) {
-              if ((double)(float)SStack_2bc.damage_flags <= 0.01) {
+            SStack_2bc.gore_multiplier =
+                 core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
+                           ((((this_ptr->base).nearby_interactive_actor)->orient).vec.y -
+                            (this_ptr->base).base.base.orient.vec.y);
+            if ((float)-0.01 <= SStack_2bc.gore_multiplier) {
+              if ((double)SStack_2bc.gore_multiplier <= 0.01) {
                 iVar20 = 0;
               }
               else {
@@ -638,7 +638,7 @@ LAB_005bd19f:
             UStack_84.vec.x = (this_ptr->base).base.base.orient.vec.x;
             UStack_84.vec.z = (this_ptr->base).base.base.orient.vec.z;
             UStack_84.vec.y =
-                 (float)SStack_2bc.damage_flags * this_ptr->interact_blend +
+                 SStack_2bc.gore_multiplier * this_ptr->interact_blend +
                  (this_ptr->base).base.base.orient.vec.y;
             core_charactr_cpp_CCharacter_setOrientation_FUN_0042ded0
                       ((CCharacter *)this_ptr,&UStack_84);
@@ -933,12 +933,11 @@ LAB_005bd5e6:
             SStack_2bc.damage_amount = 9999.0;
           }
           pCVar12 = (this_ptr->base).base.base.vtable._uc;
-          (this_ptr->base).no_collision_flag = 0;
+          (this_ptr->base).invincibility_timer = 0.0;
           (*(pCVar12->_uc).processDamage)((CCharacter *)this_ptr,&SStack_2bc);
           if (((this_ptr->base).base.hit_points <= 0.0) || (fStack_6c != 0.0)) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                       (&(this_ptr->base).base.model.motion_controller,0x12,1);
-            in_stack_fffffd10 = (UOrientationVector *)this_ptr;
             (*((this_ptr->base).base.base.vtable._ub)->playSound)
                       ((CDemonActor *)this_ptr,"fall-?.wav");
             iVar20 = (this_ptr->base).base.is_on_ground;
@@ -953,7 +952,7 @@ LAB_005bd763:
                      (int)in_stack_fffffd14);
         }
         (*((this_ptr->base).base.base.vtable._ub)->processFootstepAtOffset)
-                  ((CDemonActor *)this_ptr,&g_ZeroVector,fVar18 * 0.025f + 1.0);
+                  ((CDemonActor *)this_ptr,&g_ZeroVector.f,fVar18 * 0.025f + 1.0);
       }
       iVar20 = (this_ptr->base).base.is_on_ground;
       pfStack_2c4 = (float *)0.5f;
@@ -1076,7 +1075,7 @@ LAB_005bc1a6:
   core_stranger_cpp_CStranger_FUN_005c4c20(this_ptr);
   core_stranger_cpp_CStranger_FUN_005c6220(this_ptr);
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
-            ((CCharacter *)this_ptr,in_stack_00000008,(float)in_stack_fffffd10);
+            ((CCharacter *)this_ptr,in_stack_00000008);
   pCVar2 = &(this_ptr->base).base.model;
   fVar18 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
                      (&pCVar2->motion_controller,6);

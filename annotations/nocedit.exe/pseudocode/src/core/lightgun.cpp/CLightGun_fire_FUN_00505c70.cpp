@@ -23,7 +23,7 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_00505c70(CLightGun *this_ptr)
   CVector3f *unaff_retaddr;
   double dVar6;
   byte auStack_fc [8];
-  int iStack_f4;
+  float fStack_f4;
   float fStack_f0;
   float fStack_ec;
   float fStack_e8;
@@ -209,7 +209,7 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_00505c70(CLightGun *this_ptr)
           core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)auStack_fc);
           auStack_fc._4_4_ = 0.1;
           CStack_d0.min.y = 1.5134e-43;
-          iStack_f4 = 0;
+          fStack_f4 = 0.0;
           fStack_e8 = 0.0;
           fStack_ec = 0.0;
           fStack_f0 = 0.0;

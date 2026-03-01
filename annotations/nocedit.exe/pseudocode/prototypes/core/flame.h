@@ -31,9 +31,9 @@ void __cdecl CFlame::process(CFlame *this_ptr,float delta_time);
 // Address: 004ca110
 int __cdecl CFlame::renderTransparent(CFlame *this_ptr);
 
-// Original: core_flame.cpp_CFlame_FUN_004caa70
+// Original: core_flame.cpp_CFlame_hide_FUN_004caa70
 // Address: 004caa70
-void __cdecl CFlame(CFlame *this_ptr);
+void __cdecl CFlame::hide(CFlame *this_ptr);
 
 // Original: core_flame.cpp_CFlame_renderBackground_FUN_004caa80
 // Address: 004caa80
@@ -51,9 +51,9 @@ void __cdecl CFlame::archive(CFlame *this_ptr);
 // Address: 004cad80
 int __cdecl CFlame::hasCollision(CFlame *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_flame.cpp_CFlame_FUN_004cad90
+// Original: core_flame.cpp_CFlame_updateGlobe_FUN_004cad90
 // Address: 004cad90
-void __cdecl CFlame(CFlame *this_ptr);
+void __cdecl CFlame::updateGlobe(CFlame *this_ptr);
 
 // Original: core_flame.cpp_CFlame_getPropertyList_FUN_004cae70
 // Address: 004cae70

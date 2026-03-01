@@ -7,7 +7,7 @@
 ; CDemonMission *  Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_mission.cpp_CDemonMission_checkMemory2_FUN_00522d30 at 00522d48
+;   core_mission.cpp_CDemonMission_FUN_00522d30 at 00522d48
 ;   core_mission.cpp_CDemonMission_createFromSingleSet_FUN_005243a0 at 005243dc
 ;
 ; Referenced Globals:

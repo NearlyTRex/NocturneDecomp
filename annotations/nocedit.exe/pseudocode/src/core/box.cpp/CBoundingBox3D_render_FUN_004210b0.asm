@@ -1,13 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_box_cpp_CBoundingBox3D_render_FUN_004210b0(CBoundingBox3D *this_ptr,int param1,int param2,int param3)
+; void __cdecl core_box_cpp_CBoundingBox3D_render_FUN_004210b0(CBoundingBox3D *this_ptr)
 ;
 ; Parameters:
 ; CBoundingBox3D * Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param1
-; int              Stack[0xc]:4   param2
-; int              Stack[0x10]:4   param3
 ; Local Variables:
 ; undefined4       Stack[-0xb0]:4  local_b0
 ; undefined4       Stack[-0xac]:4  local_ac

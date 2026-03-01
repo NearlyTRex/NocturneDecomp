@@ -1,14 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 37,
-        "line": 77,
-        "message": "cannot cast from type 'float' to pointer type 'CVector3f *'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
@@ -45,7 +38,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_fire.cpp_CStake_spawn_FUN_004bfe90",
-    "signature": "void __cdecl core_fire_cpp_CStake_spawn_FUN_004bfe90(CStake *this_ptr,float spawn_scale,CVector3f *orientation_angles,CVector3f *launch_direction,CVector3f *spawn_position,CVector3f *spawn_velocity)"
+    "signature": "void __cdecl core_fire_cpp_CStake_spawn_FUN_004bfe90(CStake *this_ptr,CVector3f *spawn_position,CVector3f *orientation_angles,CVector3f *surface_normal)"
   },
   "function_calls": [
     {
@@ -119,10 +112,10 @@
     "pcode_op_count": 760
   },
   "stack_frame": {
-    "frame_size": 208,
+    "frame_size": 200,
     "local_size": 184,
     "param_offset": 4,
-    "param_size": 24,
+    "param_size": 16,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -365,10 +358,10 @@
       },
       {
         "is_param": true,
-        "name": "spawn_scale",
+        "name": "spawn_position",
         "offset": 8,
         "size": 4,
-        "type": "float"
+        "type": "CVector3f *"
       },
       {
         "is_param": true,
@@ -379,22 +372,8 @@
       },
       {
         "is_param": true,
-        "name": "launch_direction",
+        "name": "surface_normal",
         "offset": 16,
-        "size": 4,
-        "type": "CVector3f *"
-      },
-      {
-        "is_param": true,
-        "name": "spawn_position",
-        "offset": 20,
-        "size": 4,
-        "type": "CVector3f *"
-      },
-      {
-        "is_param": true,
-        "name": "spawn_velocity",
-        "offset": 24,
         "size": 4,
         "type": "CVector3f *"
       }

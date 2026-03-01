@@ -9,6 +9,7 @@
 #include "types/classes/CWater.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SMRGLTextureBasic.h"
+#include "types/unions/UVector3.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x3F80000
@@ -31,9 +32,6 @@ extern CTerrain g_CTerrainInstance;
 // CTextureCache*
 extern CTextureCache* g_TextureCacheInstance;
 
-// CVector3f
-extern CVector3f g_ZeroVector;
-
 // CVector3f[100]
 extern CVector3f DAT_03f8f638[100];
 
@@ -45,6 +43,9 @@ extern SCollisionInfo DAT_03f8fae8[100];
 
 // SMRGLTextureBasic
 extern SMRGLTextureBasic g_CurrentTexture;
+
+// UVector3
+extern UVector3 g_ZeroVector;
 
 // float
 extern float FLOAT_03f875f0;

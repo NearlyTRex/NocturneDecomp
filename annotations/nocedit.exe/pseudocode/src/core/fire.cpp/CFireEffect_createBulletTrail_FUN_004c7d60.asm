@@ -1,10 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fire_cpp_CFireEffect_createBulletTrail_FUN_004c7d60(CFireEffect *this_ptr)
+; void __cdecl core_fire_cpp_CFireEffect_createBulletTrail_FUN_004c7d60(CFireEffect *this_ptr,CVector3f *start_position,CVector3f *end_position,CKeyFramedModel *model_ptr,float segment_length)
 ;
 ; Parameters:
 ; CFireEffect *    Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   start_position
+; CVector3f *      Stack[0xc]:4   end_position
+; CKeyFramedModel * Stack[0x10]:4   model_ptr
+; float            Stack[0x14]:4   segment_length
 ;
 ; Referenced Globals:
 ;   int g_BulletTrailAllocIndex

@@ -13,15 +13,15 @@ Mismatches may indicate:
 
 SUMMARY
 --------------------------------------------------
-Functions with parameter estimates: 5101
-Functions with no callers: 3242
-Parameter mismatches detected: 502
-Signature accuracy rate: 73.0%
+Functions with parameter estimates: 5100
+Functions with no callers: 3241
+Parameter mismatches detected: 499
+Signature accuracy rate: 73.2%
 
 Mismatches by confidence:
-  High confidence:   22 (multiple call sites agree)
+  High confidence:   20 (multiple call sites agree)
   Medium confidence: 69 (some agreement)
-  Low confidence:    411 (limited data)
+  Low confidence:    410 (limited data)
 
 ====================================================================================================
 HIGH CONFIDENCE MISMATCHES - Likely signature issues
@@ -46,16 +46,6 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       core_manpuz.cpp_CMansionPuzzle at 0050a6a3: 0 reg [], 6 stack
       core_manpuz.cpp_CMansionPuzzle at 0050a6c7: 0 reg [], 6 stack
       core_manpuz.cpp_CMansionPuzzle at 0050a67c: 0 reg [], 6 stack
-
-  core_box.cpp_CBoundingBox3D_render_FUN_004210b0
-    Declared: 4 params, Estimated: 1 params (-3)
-    Call sites: 4, Confidence: high
-    File: core/box.cpp
-    Signature: void __cdecl core_box_cpp_CBoundingBox3D_render_FUN_004210b0(CBoundingBox3D *this_ptr,int param1,int param2,int param3)
-    Sample call sites:
-      core_curtain.cpp_CCurtain_rend at 0044b22a: 0 reg [], 1 stack
-      core_door.cpp_CDoor_renderOpaq at 00480852: 0 reg [], 1 stack
-      core_platfrm.cpp_CPlatform_ren at 0054d7fa: 0 reg [], 1 stack
 
   core_motion.cpp_CMotionController_advanceTween_FUN_0052e1d0
     Declared: 1 params, Estimated: 4 params (+3)
@@ -227,16 +217,6 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       shape_spotview.cpp_CSpotView_a at 005b9ae6: 0 reg [], 2 stack
       core_set.cpp_CDemonSet_restore at 00570b28: 0 reg [], 2 stack
 
-  shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0
-    Declared: 3 params, Estimated: 2 params (-1)
-    Call sites: 3, Confidence: high
-    File: shape/meshlod.cpp
-    Signature: void __cdecl shape_meshlod_cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0(CLodMesh *this_ptr,int enable_texture_lookup,int use_atlas_mode)
-    Sample call sites:
-      shape_meshlod.cpp_CLodMesh_pre at 0051d94f: 0 reg [], 2 stack
-      shape_meshlod.cpp_CLodMesh_pre at 0051d95c: 0 reg [], 2 stack
-      shape_meshlod.cpp_CLodMesh_cho at 0051e571: 0 reg [], 2 stack
-
   sound_sndmain.cpp_setNextSfxDelay_FUN_005a8b40
     Declared: 1 params, Estimated: 0 params (-1)
     Call sites: 3, Confidence: high
@@ -308,7 +288,7 @@ MEDIUM CONFIDENCE MISMATCHES
 LOW CONFIDENCE MISMATCHES (limited data)
 ====================================================================================================
 
-  411 functions with low-confidence mismatches
+  410 functions with low-confidence mismatches
   Sample:
     cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_F declared:1 est:5 (+4)
     cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_ declared:1 est:3 (+2)
@@ -325,10 +305,10 @@ LOW CONFIDENCE MISMATCHES (limited data)
 MISMATCH DIRECTION ANALYSIS
 ====================================================================================================
 
-Functions where declaration has MORE params than estimated: 86
+Functions where declaration has MORE params than estimated: 84
   (May indicate: extra params not being passed, or params in globals)
 
-Functions where declaration has FEWER params than estimated: 416
+Functions where declaration has FEWER params than estimated: 415
   (May indicate: missing params in signature, or calling convention issue)
 
 Distribution of differences (estimated - declared):
@@ -338,12 +318,12 @@ Distribution of differences (estimated - declared):
   -6 params: 2 functions
   -5 params: 2 functions
   -4 params: 3 functions
-  -3 params: 9 functions
+  -3 params: 8 functions
   -2 params: 16 functions
-  -1 params: 51 functions
+  -1 params: 50 functions
   +1 params: 187 functions
   +2 params: 95 functions
-  +3 params: 46 functions
+  +3 params: 45 functions
   +4 params: 73 functions
   +5 params: 5 functions
   +6 params: 3 functions

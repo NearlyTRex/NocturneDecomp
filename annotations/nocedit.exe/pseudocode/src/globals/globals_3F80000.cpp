@@ -21,9 +21,6 @@ CTerrain g_CTerrainInstance = {};
 // CTextureCache*
 CTextureCache* g_TextureCacheInstance = {};
 
-// CVector3f
-CVector3f g_ZeroVector = {};
-
 // CVector3f[100]
 CVector3f DAT_03f8f638[100] = {};
 
@@ -35,6 +32,9 @@ SCollisionInfo DAT_03f8fae8[100] = {};
 
 // SMRGLTextureBasic
 SMRGLTextureBasic g_CurrentTexture = {};
+
+// UVector3
+UVector3 g_ZeroVector = {};
 
 // float
 float FLOAT_03f875f0 = {};

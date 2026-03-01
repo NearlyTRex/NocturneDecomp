@@ -46,20 +46,26 @@
       {
         "category": "other",
         "column": 20,
-        "line": 179,
+        "line": 180,
         "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 27,
-        "line": 185,
+        "line": 186,
         "message": "C-style cast from 'CGun *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 12,
-        "line": 188,
+        "line": 189,
         "message": "C-style cast from 'struct CDemonActor *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 13,
+        "line": 200,
+        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
       }
     ],
     "success": false,
@@ -67,13 +73,13 @@
   },
   "complexity": {
     "assembly_lines": 509,
-    "complexity_score": 417,
+    "complexity_score": 429,
     "cross_reference_count": 0,
     "function_call_count": 21,
     "global_count": 27,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 217,
-    "suspect_count": 17,
+    "pseudocode_lines": 219,
+    "suspect_count": 18,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_param",
@@ -82,7 +88,7 @@
       "suspect_float",
       "unknown_field"
     ],
-    "total_lines": 726
+    "total_lines": 728
   },
   "cross_references": [],
   "function": {
@@ -136,7 +142,7 @@
     {
       "addr": "00448a70",
       "is_variadic": false,
-      "name": "core_crate.cpp_CCrate_FUN_00448a70"
+      "name": "core_crate.cpp_CCrate_explode_FUN_00448a70"
     },
     {
       "addr": "004c76a0",
@@ -151,7 +157,7 @@
     {
       "addr": "004cb340",
       "is_variadic": false,
-      "name": "core_flamecan.cpp_CFlameCan_FUN_004cb340"
+      "name": "core_flamecan.cpp_CFlameCan_ignite_FUN_004cb340"
     },
     {
       "addr": "004eb3a0",
@@ -569,7 +575,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 172,
+      "line": 173,
       "match": "._24_4_",
       "severity": "mild",
       "text": "auStack_130._24_4_ = pCVar1->x;",
@@ -577,7 +583,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 179,
+      "line": 180,
       "match": "1.41531e-43",
       "severity": "mild",
       "text": "CStack_108.m[0].y = 1.41531e-43;",
@@ -585,7 +591,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 182,
+      "line": 183,
       "match": "in_stack_fffffebc",
       "severity": "moderate",
       "text": "in_stack_fffffebc = 7.258603e-39;",
@@ -593,11 +599,19 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 182,
+      "line": 183,
       "match": "7.258603e-39",
       "severity": "mild",
       "text": "in_stack_fffffebc = 7.258603e-39;",
       "type": "suspect_float"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 193,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "auStack_58._8_4_ = CStack_bc.x;",
+      "type": "unknown_field"
     }
   ],
   "vtable_info": {

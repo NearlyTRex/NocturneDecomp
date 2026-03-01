@@ -46,7 +46,8 @@ void __cdecl core_weapon_cpp_CWeapon_updateLighting_FUN_005ee4a0(CWeapon *this_p
   if (g_CGamePtr->auto_save_blocked == 0) {
     return;
   }
-  core_dglobe_cpp_CDemonGlobe_setColor_FUN_00471310(&CDemonGlobe_03f95d7c,(CColor3f *)&CStack_18.y);
+  core_dglobe_cpp_CDemonGlobe_setPosition_FUN_00471310
+            (&CDemonGlobe_03f95d7c,(CVector3f *)&CStack_18.y);
   CDemonGlobe_03f95d7c.intensity_multiplier = 0x8000;
   CDemonGlobe_03f95d7c.intensity.bytes[0] = ' ';
   core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_00471360(&CDemonGlobe_03f95d7c,3.0);

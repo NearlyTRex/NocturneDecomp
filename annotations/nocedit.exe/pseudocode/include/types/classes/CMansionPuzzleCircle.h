@@ -10,6 +10,7 @@
 #include "types/structs/SPanel.h"
 #include "types/structs/SReflector.h"
 #include "types/unions/UOrientationVector.h"
+#include "types/unions/UVector3.h"
 
 // Structure: CMansionPuzzleCircle
 // Ghidra size: 0x1514 (5396 bytes)
@@ -20,7 +21,7 @@ typedef struct CMansionPuzzleCircle {
     CKeyFramedModelInstance reflector_model; // 0x450
     CVector3f gem_pos; // 0x5cc
     UOrientationVector gem_orient; // 0x5d8
-    CVector3f emitter_pos; // 0x5e4
+    UVector3 emitter_pos; // 0x5e4
     SPanel panels[12]; // 0x5f0
     SGem gems[12]; // 0xaa0
     SReflector reflectors[2]; // 0x1340

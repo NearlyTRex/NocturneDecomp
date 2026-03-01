@@ -17,7 +17,7 @@ typedef struct CMelee {
     int blood_spurt_count; // 0x590
     float blood_spurt_timer; // 0x594
     float blood_spurt_interval; // 0x598
-    int damage_type; // 0x59c
+    int ammo_type; // 0x59c
     char thrust_hit_character_sound[100]; // 0x5a0
     char swing_hit_character_sound[100]; // 0x604
     char hit_other_sound[100]; // 0x668

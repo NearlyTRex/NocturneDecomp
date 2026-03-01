@@ -28,8 +28,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_pt
   CPathMap *path_map;
   CDemonActor *pCVar15;
   int iVar16;
-  ulonglong in_stack_fffffce4;
-  CWerewolf *actor_ptr;
+  ulonglong uVar17;
   float in_stack_fffffcec;
   SDamageInfo local_2e4;
   SDamageInfo local_2a8;
@@ -113,7 +112,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_pt
        (this_ptr->base).base.model.accumulated_root_motion.y;
   local_3c = delta_time * (this_ptr->base).speed;
   pCVar1 = &(this_ptr->base).base.model;
-  while (actor_ptr = SUB84(in_stack_fffffce4,4), 0.0 < local_3c) {
+  while (0.0 < local_3c) {
     uVar10 = core_motion_cpp_CMotionController_advance_FUN_0052d610(&pCVar1->motion_controller);
     if (uVar10 < 10) {
       core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,uVar10);
@@ -160,7 +159,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_pt
       local_2a8.wielder = (CDemonActor *)this_ptr;
       local_14 = local_2a8.damage_amount;
       pCVar11 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                          (&local_e0,&g_ZeroVector,
+                          (&local_e0,&g_ZeroVector.f,
                            (CMatrix3x4f *)
                            (this_ptr->base).base.model.bone_transform.bone_world_matrices
                            [this_ptr->bone_indices[3]].m);
@@ -172,7 +171,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_pt
       local_2a8.wielder = (CDemonActor *)this_ptr;
       local_14 = local_2a8.damage_amount;
       pCVar11 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                          (&local_d4,&g_ZeroVector,
+                          (&local_d4,&g_ZeroVector.f,
                            (CMatrix3x4f *)
                            (this_ptr->base).base.model.bone_transform.bone_world_matrices
                            [this_ptr->bone_indices[2]].m);
@@ -184,7 +183,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_pt
       local_2a8.wielder = (CDemonActor *)this_ptr;
       local_14 = local_2a8.damage_amount;
       pCVar11 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                          (&local_17c,&g_ZeroVector,
+                          (&local_17c,&g_ZeroVector.f,
                            (CMatrix3x4f *)
                            (this_ptr->base).base.model.bone_transform.bone_world_matrices
                            [this_ptr->bone_indices[1]].m);
@@ -200,7 +199,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_pt
             core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffce0);
             local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
             pCVar11 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                                (&local_74,&g_ZeroVector,
+                                (&local_74,&g_ZeroVector.f,
                                  (CMatrix3x4f *)
                                  (this_ptr->base).base.model.bone_transform.bone_world_matrices
                                  [this_ptr->bone_indices[1]].m);
@@ -222,10 +221,8 @@ LAB_005f094d:
       (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
       pCVar14 = (this_ptr->base).victim;
       if (pCVar14 == (CDemonActor *)0x0) {
-        actor_ptr = (CWerewolf *)delta_time;
         iVar9 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base,delta_time);
         if (iVar9 == 0) {
-          actor_ptr = (CWerewolf *)0x1;
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&(this_ptr->base).base.model.motion_controller,0,1);
         }
@@ -237,7 +234,6 @@ LAB_005f094d:
         local_fc = (pCVar14->location).position.z - (this_ptr->base).base.base.location.position.z;
         local_24 = SQRT(local_fc * local_fc + local_104 * local_104 + local_100 * local_100);
         if (((this_ptr->base).guard_distance < local_24) || ((float)32 < local_24)) {
-          actor_ptr = (CWerewolf *)0x1;
           (this_ptr->base).victim = (CDemonActor *)0x0;
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&(this_ptr->base).base.model.motion_controller,0,1);
@@ -318,25 +314,23 @@ LAB_005f0ae7:
              (this_ptr->base).base.model.accumulated_root_motion.z;
         (this_ptr->base).base.model.accumulated_root_motion.x =
              (this_ptr->base).base.model.accumulated_root_motion.y;
-        pCVar11 = (CVector3f *)0x3f000000;
-        actor_ptr = (CWerewolf *)0x3e32b8c2;
+        uVar17._0_4_ = 0.5;
+        uVar17._4_4_ = 0.17453292;
         local_1e8 = 0;
         local_1e4 = 0;
         path_map = (*((pCVar14->vtable)._ub)->getPathMap)(pCVar14);
         iVar9 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
-                          ((CCharacter *)this_ptr,&(pCVar14->location).position,path_map,pCVar11,
-                           (float)actor_ptr,in_stack_fffffcec);
+                          ((CCharacter *)this_ptr,&(pCVar14->location).position,path_map,
+                           (CVector3f *)uVar17,SUB84(uVar17,4),in_stack_fffffcec);
         if (iVar9 < 0) {
           engine_console_cpp_CConsole_printf_FUN_00441890
                     (g_CConsolePtr,"%s gave up chase - I'm confused\n");
-          actor_ptr = (CWerewolf *)0x0;
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&(this_ptr->base).base.model.motion_controller,0,1);
         }
         else if (iVar9 < 1) {
-          actor_ptr = (CWerewolf *)this_ptr->chain_anchor;
           pCVar15 = core_actor_cpp_castToClassHash_FUN_0040c790
-                              ((CDemonActor *)actor_ptr,g_CTrapClassInfo.name_hash);
+                              (this_ptr->chain_anchor,g_CTrapClassInfo.name_hash);
           if (pCVar15 == (CDemonActor *)0x0) {
             local_194.x = (pCVar14->location).position.x -
                           (this_ptr->base).base.base.location.position.x;
@@ -362,48 +356,41 @@ LAB_005f0ae7:
             if (local_1c < local_28) {
               core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_170,&local_bc)
               ;
-              actor_ptr = (CWerewolf *)0x5f0f40;
               local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                                    (local_170.y - (this_ptr->base).base.base.orient.vec.y);
               if (ABS(local_14) < (float)0.39269908168750001) {
                 core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                           (&pCVar1->motion_controller,8,1);
-                actor_ptr = (CWerewolf *)0x5f0f71;
                 iVar9 = core_actor_cpp_randomChance_FUN_0040cd10(0.85);
                 if (iVar9 != 0) {
-                  actor_ptr = (CWerewolf *)0x5f0fb4;
                   core_werewolf_cpp_CWerewolf_FUN_005f11e0(this_ptr);
                 }
                 iVar9 = 0;
                 for (iVar16 = 0; iVar16 < g_CDemonSetPtr->enemy_count; iVar16 = iVar16 + 1) {
-                  actor_ptr = *(CWerewolf **)((int)g_CDemonSetPtr->enemies + iVar9);
                   pCVar13 = (CWerewolf *)
                             core_actor_cpp_castToClassHash_FUN_0040c790
-                                      ((CDemonActor *)actor_ptr,g_CWerewolfClassInfo.name_hash);
-                  if ((pCVar13 != (CWerewolf *)0x0) && (pCVar13 != this_ptr)) {
-                    actor_ptr = (CWerewolf *)0x5f0fc8;
-                    pSVar12 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                                        (&(pCVar13->base).base.model.motion_controller);
-                    if (pSVar12->state_index == 8) {
-                      actor_ptr = (CWerewolf *)0x0;
-                      iVar9 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,2);
-                      if (iVar9 == 1) {
-                        (this_ptr->base).base.base.orient.vec.y =
-                             (this_ptr->base).base.base.orient.vec.y + 0.2617994f;
-                      }
-                      if (iVar9 == 2) {
-                        (this_ptr->base).base.base.orient.vec.y =
-                             (this_ptr->base).base.base.orient.vec.y + -0.2617994f;
-                      }
-                      break;
+                                      (*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar9),
+                                       g_CWerewolfClassInfo.name_hash);
+                  if (((pCVar13 != (CWerewolf *)0x0) && (pCVar13 != this_ptr)) &&
+                     (pSVar12 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                                          (&(pCVar13->base).base.model.motion_controller),
+                     pSVar12->state_index == 8)) {
+                    iVar9 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,2);
+                    if (iVar9 == 1) {
+                      (this_ptr->base).base.base.orient.vec.y =
+                           (this_ptr->base).base.base.orient.vec.y + 0.2617994f;
                     }
+                    if (iVar9 == 2) {
+                      (this_ptr->base).base.base.orient.vec.y =
+                           (this_ptr->base).base.base.orient.vec.y + -0.2617994f;
+                    }
+                    break;
                   }
                   iVar9 = iVar9 + 4;
                 }
               }
             }
             else if ((local_28 < 3.0f * 2.0f) && (local_18 == 0xf)) {
-              actor_ptr = (CWerewolf *)0x0;
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                         (&pCVar1->motion_controller,0,1);
             }
@@ -427,10 +414,8 @@ LAB_005f0ae7:
                         (&(this_ptr->base).base.model.motion_controller,4,1);
             }
             (this_ptr->base).attack_cooldown = 1.0;
-            actor_ptr = (CWerewolf *)0x5f0c82;
             iVar9 = core_actor_cpp_randomChance_FUN_0040cd10(0.6);
             if (iVar9 != 0) {
-              actor_ptr = (CWerewolf *)0x5f0c8f;
               core_werewolf_cpp_CWerewolf_FUN_005f11e0(this_ptr);
             }
           }
@@ -438,13 +423,11 @@ LAB_005f0ae7:
         fVar3 = this_ptr->howl_cooldown - delta_time;
         this_ptr->howl_cooldown = fVar3;
         if (fVar3 < 0.0) {
-          actor_ptr = (CWerewolf *)0x5f0cb7;
           core_werewolf_cpp_CWerewolf_FUN_005f11e0(this_ptr);
         }
         goto LAB_005f0010;
       }
 LAB_005f092a:
-      actor_ptr = (CWerewolf *)0x1;
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                 (&(this_ptr->base).base.model.motion_controller,0,1);
     }
@@ -457,7 +440,7 @@ LAB_005f092a:
         local_26c.wielder = (CDemonActor *)this_ptr;
         local_14 = local_26c.damage_amount;
         pCVar11 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                            (&local_11c,&g_ZeroVector,
+                            (&local_11c,&g_ZeroVector.f,
                              (CMatrix3x4f *)
                              (this_ptr->base).base.model.bone_transform.bone_world_matrices
                              [this_ptr->bone_indices[2]].m);
@@ -493,7 +476,7 @@ LAB_005f092a:
           local_230.wielder = (CDemonActor *)this_ptr;
           local_14 = local_230.damage_amount;
           pCVar11 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                              (&local_1d0,&g_ZeroVector,
+                              (&local_1d0,&g_ZeroVector.f,
                                (CMatrix3x4f *)
                                (this_ptr->base).base.model.bone_transform.bone_world_matrices
                                [this_ptr->bone_indices[3]].m);
@@ -501,7 +484,7 @@ LAB_005f092a:
                     ((CDemonActor *)this_ptr,&local_8c,pCVar11);
           core_enemy_cpp_CEnemy_FUN_004a9880(&this_ptr->base);
           pCVar11 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                              (&local_68,&g_ZeroVector,
+                              (&local_68,&g_ZeroVector.f,
                                (CMatrix3x4f *)
                                (this_ptr->base).base.model.bone_transform.bone_world_matrices
                                [this_ptr->bone_indices[2]].m);
@@ -509,7 +492,7 @@ LAB_005f092a:
                     ((CDemonActor *)this_ptr,&local_5c,pCVar11);
           core_enemy_cpp_CEnemy_FUN_004a9880(&this_ptr->base);
           pCVar11 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                              (&local_1a0,&g_ZeroVector,
+                              (&local_1a0,&g_ZeroVector.f,
                                (CMatrix3x4f *)
                                (this_ptr->base).base.model.bone_transform.bone_world_matrices
                                [this_ptr->bone_indices[1]].m);
@@ -531,7 +514,7 @@ LAB_005f04ff:
           local_2e4.wielder = (CDemonActor *)this_ptr;
           local_14 = local_2e4.damage_amount;
           pCVar11 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                              (&local_1f4,&g_ZeroVector,
+                              (&local_1f4,&g_ZeroVector.f,
                                (CMatrix3x4f *)
                                (this_ptr->base).base.model.bone_transform.bone_world_matrices
                                [this_ptr->bone_indices[3]].m);
@@ -542,7 +525,6 @@ LAB_005f04ff:
         pCVar6 = (CCharacter *)(this_ptr->base).victim;
         if ((pCVar6 != (CCharacter *)0x0) &&
            (iVar9 = (*(((pCVar6->base).vtable._uc)->_uc).getDeathState)(pCVar6), iVar9 != 0)) {
-          actor_ptr = (CWerewolf *)0x1;
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&(this_ptr->base).base.model.motion_controller,7,1);
         }
@@ -574,19 +556,15 @@ LAB_005f0481:
             goto LAB_005f0010;
           }
         }
-        actor_ptr = (CWerewolf *)g_CTrapClassInfo.name_hash;
         pCVar14 = core_actor_cpp_castToClassHash_FUN_0040c790
                             (this_ptr->chain_anchor,g_CTrapClassInfo.name_hash);
         if ((pCVar14 != (CDemonActor *)0x0) && (local_18 == 0xe)) goto LAB_005f092a;
         if ((this_ptr->base).victim == (CDemonActor *)0x0) goto LAB_005f0010;
-        actor_ptr = (CWerewolf *)0x3ecccccd;
         iVar9 = core_actor_cpp_randomChance_FUN_0040cd10(0.4);
         if (iVar9 != 0) {
-          actor_ptr = this_ptr;
           core_werewolf_cpp_CWerewolf_FUN_005f11e0(this_ptr);
         }
         if (local_18 == 0xe) {
-          actor_ptr = (CWerewolf *)0x1;
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&(this_ptr->base).base.model.motion_controller,0xf,1);
           goto LAB_005f0010;
@@ -676,8 +654,7 @@ LAB_005f0010:
     if ((pCVar6 != (CCharacter *)0x0) &&
        (pCVar13 = (CWerewolf *)(*(((pCVar6->base).vtable._uc)->_uc).getGrabber)(pCVar6),
        pCVar13 == this_ptr)) {
-      actor_ptr = (CWerewolf *)(this_ptr->base).victim;
-      core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,(CDemonActor *)actor_ptr);
+      core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,(this_ptr->base).victim);
     }
     (this_ptr->base).base.velocity.y =
          (this_ptr->base).base.velocity.y - delta_time * (float)32;
@@ -704,8 +681,7 @@ LAB_005f0010:
   core_charactr_cpp_CCharacter_preProcess_FUN_00429820((CCharacter *)this_ptr);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
             (&(this_ptr->base).base.model);
-  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
-            ((CCharacter *)this_ptr,delta_time,(float)actor_ptr);
+  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr,delta_time);
   core_werewolf_cpp_CWerewolf_FUN_005f1e40(this_ptr);
   this_ptr->eye_glow_phase = delta_time * (float)0.5 + this_ptr->eye_glow_phase;
   return;

@@ -29,7 +29,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
   
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Sec...");
-  core_mission_cpp_CDemonMission_checkMemory2_FUN_00522d30(this_ptr);
+  core_mission_cpp_CDemonMission_FUN_00522d30(this_ptr);
   core_mission_cpp_CDemonMission_FUN_005248e0(this_ptr);
   remove("$$UNDO$$.TMP");
   core_inivar_cpp_readIniData_FUN_004fbd90();
@@ -185,7 +185,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
       else if ((uVar2 == 0x38) &&
               (iVar4 = shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
                                  (g_CEditorToolsPtr,"Save mission to new name",
-                                  "world",0x63c162,(int)local_320), iVar4 != 0)) {
+                                  "world","msn",local_320,0), iVar4 != 0)) {
         splitpath(local_320,(char *)0x0,(char *)0x0,local_11c,(char *)0x0)
         ;
         _sprintf(local_320,"%s.msn",local_11c);
@@ -279,7 +279,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
       this_ptr->skip_gore_load_flag = 0;
       shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                 (this_ptr_00,"Deleting actors...");
-      core_mission_cpp_CDemonMission_checkMemory2_FUN_00522d30(this_ptr);
+      core_mission_cpp_CDemonMission_FUN_00522d30(this_ptr);
       shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                 (g_CEditorToolsPtr,"Freeing models...");
       core_mission_cpp_CDemonMission_FUN_005248e0(this_ptr);

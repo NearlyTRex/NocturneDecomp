@@ -11,13 +11,13 @@
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
 #include "types/structs/SCorona.h"
-#include "types/structs/SEdgeData.h"
 #include "types/structs/SFog.h"
 #include "types/structs/SIntersectXZCylinder.h"
 #include "types/structs/SMRGLHeaderPrimitive.h"
 #include "types/structs/SRenderVertex.h"
 #include "types/structs/SScreenCoord.h"
 #include "types/structs/SShapeEditorPolygon.h"
+#include "types/structs/SSoftwareEdge.h"
 #include "types/structs/STreeNode.h"
 #include "types/structs/STriangleRef.h"
 #include "types/structs/SVertexData.h"
@@ -27,9 +27,9 @@
 // =============================================================================
 
 void __cdecl core_dcamera_cpp_initializeCoronaBuffers_FUN_004502e0(void);
-void __cdecl core_dcamera_cpp_renderCoronaDepthScanline_FUN_00450320(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y);
-void __cdecl core_dcamera_cpp_renderVolumetricLightScanline_FUN_00450440(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y);
-void __cdecl core_dcamera_cpp_renderFlatColorScanline_FUN_004505e0(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y);
+void __cdecl core_dcamera_cpp_renderCoronaDepthScanline_FUN_00450320(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
+void __cdecl core_dcamera_cpp_renderVolumetricLightScanline_FUN_00450440(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
+void __cdecl core_dcamera_cpp_renderFlatColorScanline_FUN_004505e0(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 void __cdecl core_dcamera_cpp_renderCoronaProjectedTextureScanline_FUN_004507a0(int scanline_y,int x_start,int x_end);
 void __cdecl core_dcamera_cpp_CDemonCamera_blurCoronaBufferAndClearEdges_FUN_004509b0(CDemonCamera *this_ptr);
 double __watcallRegister core_dcamera_cpp_log2Custom_FUN_00450a90(void);

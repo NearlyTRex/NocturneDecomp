@@ -5,10 +5,10 @@
 #include "types/classes/CBitFont.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonRenderer.h"
-#include "types/structs/SEdgeData.h"
 #include "types/structs/SEdgeTableEntry.h"
 #include "types/structs/SFace.h"
 #include "types/structs/SFreaky.h"
+#include "types/structs/SSoftwareEdge.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x2C60000
@@ -23,9 +23,6 @@ extern CDemonActorType g_CDraculaBrideClassInfo;
 // CDemonRenderer
 extern CDemonRenderer g_CDemonRendererInstance;
 
-// SEdgeData[16]
-extern SEdgeData g_EdgeInterpolationArray[16];
-
 // SEdgeTableEntry[40]
 extern SEdgeTableEntry g_GlobalEdgeTable[40];
 
@@ -34,6 +31,9 @@ extern SFace g_CapturedFaces[5000];
 
 // SFreaky[6]
 extern SFreaky SFreaky_ARRAY_02c6d0c0[6];
+
+// SSoftwareEdge[16]
+extern SSoftwareEdge g_EdgeInterpolationArray[16];
 
 // float
 extern float FLOAT_02c6d040;

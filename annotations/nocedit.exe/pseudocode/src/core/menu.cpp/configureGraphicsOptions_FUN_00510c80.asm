@@ -37,7 +37,7 @@
 ;
 ; Called Functions:
 ;   core_game.cpp_CGame_saveClockTime_FUN_004d7d80
-;   core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90
+;   core_game.cpp_CGame_updateDT_FUN_004d7d90
 ;   core_menu.cpp_renderMenuAndGetChoice_FUN_00510000
 ;   core_menu.cpp_showCalibrationTest_FUN_00510ba0
 ;   core_moon.cpp_CMoon_render_FUN_00529ed0
@@ -112,8 +112,8 @@ section .text
     MOV EDX,dword ptr [0x0067b654]      ; 00510d33 | g_CGameInstance | g_CGamePtr
         ;   Label: LAB_00510d33
     PUSH EDX                            ; 00510d39 | g_CGameInstance
-    CALL core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90 ; 00510d3a
-        ;   XREF to: 004d7d90 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90(CGame * this_ptr)
+    CALL core_game.cpp_CGame_updateDT_FUN_004d7d90 ; 00510d3a
+        ;   XREF to: 004d7d90 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_updateDT_FUN_004d7d90(CGame * this_ptr)
     ADD ESP,0x4                         ; 00510d3f
     MOV EAX,[0x0067b654]                ; 00510d42 | g_CGameInstance | g_CGamePtr
     SUB ESP,0x4                         ; 00510d47

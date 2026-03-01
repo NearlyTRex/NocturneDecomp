@@ -81,14 +81,14 @@ ReentrantCriticalSection g_GlobalMemoryCriticalSection = {};
 ReentrantCriticalSection g_GlobalIoCriticalSection = {};
 ReentrantCriticalSection g_GlobalRuntimeCriticalSection = {};
 
-// SEdgeData[16]
-SEdgeData g_RasterizerEdgeArray[16] = {};
-
 // SRenderVertex[32]
 SRenderVertex g_ClipVertexBufferStage2[32] = {};
 SRenderVertex g_ClipVertexBufferStage1[32] = {};
 SRenderVertex g_ClipVertexBufferStage3[32] = {};
 SRenderVertex g_ClipVertexBufferStage4[32] = {};
+
+// SSoftwareEdge[16]
+SSoftwareEdge g_RasterizerEdgeArray[16] = {};
 
 // ThreadRegistryEntry*
 ThreadRegistryEntry* g_ThreadDataRegistryList = {};

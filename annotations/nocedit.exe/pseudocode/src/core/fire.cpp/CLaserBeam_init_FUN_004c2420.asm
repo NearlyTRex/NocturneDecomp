@@ -17,7 +17,7 @@
 ; float            Stack[0x2c]:4   cone_angle
 ;
 ; XREF[2]:
-;   core_fire.cpp_CFireEffect_createLaserSegment2_FUN_004c7f20 at 004c7f67
+;   core_fire.cpp_CFireEffect_createLaserCone_FUN_004c7f20 at 004c7f67
 ;   core_fire.cpp_CFireEffect_createLaserSegment_FUN_004c7eb0 at 004c7ef8
 ;
 ; *****************************************************************************

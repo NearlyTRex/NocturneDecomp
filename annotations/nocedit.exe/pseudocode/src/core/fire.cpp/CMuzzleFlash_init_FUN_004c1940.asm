@@ -22,7 +22,7 @@
 ;
 ; Called Functions:
 ;   core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_00471360
-;   core_dglobe.cpp_CDemonGlobe_setColor_FUN_00471310
+;   core_dglobe.cpp_CDemonGlobe_setPosition_FUN_00471310
 ;   core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
 ;   core_set.cpp_CDemonSet_addCoronaGlobe_FUN_0056d110
 ;
@@ -40,8 +40,8 @@ section .text
     PUSH ESI                            ; 004c194e
     LEA EBX,[EDI + 0x1c]                ; 004c194f
     PUSH EBX                            ; 004c1952
-    CALL core_dglobe.cpp_CDemonGlobe_setColor_FUN_00471310 ; 004c1953
-        ;   XREF to: 00471310 (UNCONDITIONAL_CALL)  ; void core_dglobe.cpp_CDemonGlobe_setColor_FUN_00471310(CDemonGlobe * this_ptr, CColor3f * color)
+    CALL core_dglobe.cpp_CDemonGlobe_setPosition_FUN_00471310 ; 004c1953
+        ;   XREF to: 00471310 (UNCONDITIONAL_CALL)  ; void core_dglobe.cpp_CDemonGlobe_setPosition_FUN_00471310(CDemonGlobe * this_ptr, CVector3f * position)
     ADD ESP,0x8                         ; 004c1958
     PUSH 0x41000000                     ; 004c195b
     MOV dword ptr [EBX + 0x3c],0x8000   ; 004c1960

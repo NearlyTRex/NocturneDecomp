@@ -1297,7 +1297,7 @@ LAB_0059518b:
                                         local_15c.z = local_15c.z * 0.01745329f;
                                         local_c4 = 1;
                                         core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
-                                                  (&local_434,&g_ZeroVector,&local_15c);
+                                                  (&local_434,&g_ZeroVector.f,&local_15c);
                                       }
                                     }
                                   }

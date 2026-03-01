@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_edittool_cpp_CEditorTools_draw3DAxisLabelsAt_FUN_004a1e90(CEditorTools *this_ptr,int param2,CQuaternion4f *world_position,CQuaternion4f *label_offset,void *param5)
+; void __cdecl shape_edittool_cpp_CEditorTools_draw3DAxisLabelsAt_FUN_004a1e90(CEditorTools *this_ptr,float scale_factor,int text_color,CVector3f *world_position,UOrientationVector *orientation)
 ;
 ; Parameters:
 ; CEditorTools *   Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param2
-; CQuaternion4f *  Stack[0xc]:4   world_position
-; CQuaternion4f *  Stack[0x10]:4   label_offset
-; void *           Stack[0x14]:4   param5
+; float            Stack[0x8]:4   scale_factor
+; int              Stack[0xc]:4   text_color
+; CVector3f *      Stack[0x10]:4   world_position
+; UOrientationVector * Stack[0x14]:4   orientation
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
 ; undefined4       Stack[-0x20]:4  local_20

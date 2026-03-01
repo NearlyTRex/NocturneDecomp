@@ -9,25 +9,26 @@
 void __cdecl engine_3d_c_rasterizePolygon_FUN_005fd4e0(SRenderVertex *vertex_buffer,int vertex_count,RenderScanlineFunc *scanline_renderer)
 
 {
-  longlong lVar1;
-  byte *puVar2;
-  int iVar3;
-  SEdgeData *pSVar4;
-  SEdgeData *pSVar5;
+  int *piVar1;
+  longlong lVar2;
+  byte *puVar3;
+  int iVar4;
+  SSoftwareEdge *pSVar5;
+  SSoftwareEdge *left;
   int iVar6;
   SRenderVertex *pSVar7;
   SRenderVertex *pSVar8;
-  SEdgeData *pSVar9;
-  uint uVar10;
-  SRenderVertex *pSVar11;
-  void *pvVar12;
-  void *pvVar13;
-  void *extraout_ESI;
-  int iVar14;
-  SEdgeData *extraout_EDI;
-  SEdgeData *local_18;
+  SSoftwareEdge *scanline_y;
+  uint uVar9;
+  SRenderVertex *pSVar10;
+  SHardwareEdge *right;
+  SHardwareEdge *pSVar11;
+  SHardwareEdge *extraout_ESI;
+  int iVar12;
+  SSoftwareEdge *extraout_EDI;
+  SSoftwareEdge *local_18;
   
-  iVar14 = 0;
+  iVar12 = 0;
   pSVar7 = vertex_buffer;
   if (0 < vertex_count) {
     do {
@@ -43,13 +44,13 @@ void __cdecl engine_3d_c_rasterizePolygon_FUN_005fd4e0(SRenderVertex *vertex_buf
                    (longlong)g_ViewportCenterYFixed) /
                   (longlong)(pSVar7->projected_vertex).transformed_z) + g_ViewportBottomFixed;
       }
-      iVar14 = iVar14 + 1;
+      iVar12 = iVar12 + 1;
       pSVar7 = pSVar7 + 1;
-    } while (iVar14 < vertex_count);
+    } while (iVar12 < vertex_count);
   }
   if ((g_CullingMode != 0) &&
-     (iVar14 = engine_prim_c_calculateTriangleWindingOrder_FUN_00552150
-                         (vertex_buffer,vertex_buffer + 1,vertex_buffer + 2), iVar14 == 0)) {
+     (iVar12 = engine_prim_c_calculateTriangleWindingOrder_FUN_00552150
+                         (vertex_buffer,vertex_buffer + 1,vertex_buffer + 2), iVar12 == 0)) {
     return;
   }
   g_RenderedTriangleCount = g_RenderedTriangleCount + 1;
@@ -69,166 +70,172 @@ void __cdecl engine_3d_c_rasterizePolygon_FUN_005fd4e0(SRenderVertex *vertex_buf
   case 6:
     engine_prim_c_replaceWWithDepth_FUN_00552110(vertex_buffer,vertex_count);
   }
-  pvVar12 = (void *)0x0;
+  right = (SHardwareEdge *)0x0;
   g_RasterizerMaxY = 0;
-  local_18 = (SEdgeData *)0x0;
+  local_18 = (SSoftwareEdge *)0x0;
   g_RasterizerMinY = 0x4b0;
-  pvVar13 = pvVar12;
+  pSVar11 = right;
   if (0 < vertex_count) {
     do {
-      puVar2 = (byte *)((int)&local_18->y_start + 1);
-      if (vertex_count <= (int)puVar2) {
-        puVar2 = (byte *)0x0;
+      puVar3 = (byte *)((int)&(local_18->base).y_min + 1);
+      if (vertex_count <= (int)puVar3) {
+        puVar3 = (byte *)0x0;
       }
-      pSVar8 = vertex_buffer + (int)puVar2;
+      pSVar8 = vertex_buffer + (int)puVar3;
       pSVar7 = vertex_buffer + (int)local_18;
-      iVar3 = (pSVar8->projected_vertex).screen_y >> 0x10;
-      iVar14 = (pSVar7->projected_vertex).screen_y >> 0x10;
-      pvVar12 = pvVar13;
-      if (iVar14 != iVar3) {
-        iVar6 = iVar3;
-        pSVar11 = pSVar8;
+      iVar4 = (pSVar8->projected_vertex).screen_y >> 0x10;
+      iVar12 = (pSVar7->projected_vertex).screen_y >> 0x10;
+      right = pSVar11;
+      if (iVar12 != iVar4) {
+        iVar6 = iVar4;
+        pSVar10 = pSVar8;
         if ((pSVar8->projected_vertex).screen_y < (pSVar7->projected_vertex).screen_y) {
-          iVar6 = iVar14;
-          iVar14 = iVar3;
-          pSVar11 = pSVar7;
+          iVar6 = iVar12;
+          iVar12 = iVar4;
+          pSVar10 = pSVar7;
           pSVar7 = pSVar8;
         }
-        g_RasterizerEdgeArray[(int)pvVar13].y_start = iVar14;
-        iVar3 = g_RasterizerMinY;
-        g_RasterizerEdgeArray[(int)pvVar13].y_end = iVar6;
-        if (iVar14 < iVar3) {
-          g_RasterizerMinY = iVar14;
+        g_RasterizerEdgeArray[(int)pSVar11].base.y_min = iVar12;
+        iVar4 = g_RasterizerMinY;
+        g_RasterizerEdgeArray[(int)pSVar11].base.y_max = iVar6;
+        if (iVar12 < iVar4) {
+          g_RasterizerMinY = iVar12;
         }
         if (g_RasterizerMaxY < iVar6) {
           g_RasterizerMaxY = iVar6;
         }
-        g_RasterizerEdgeArray[(int)pvVar13].x_current = (pSVar7->projected_vertex).screen_x;
-        g_RasterizerEdgeArray[(int)pvVar13].z_current =
+        g_RasterizerEdgeArray[(int)pSVar11].base.x_current = (pSVar7->projected_vertex).screen_x;
+        g_RasterizerEdgeArray[(int)pSVar11].base.w_current =
              (pSVar7->projected_vertex).transformed_z << 8;
-        g_RasterizerEdgeArray[(int)pvVar13].light_current = pSVar7->z;
-        uVar10 = (pSVar11->projected_vertex).screen_y - (pSVar7->projected_vertex).screen_y;
-        if (uVar10 < 0x10000) {
-          iVar14 = 0;
+        g_RasterizerEdgeArray[(int)pSVar11].base.z_current = pSVar7->z;
+        uVar9 = (pSVar10->projected_vertex).screen_y - (pSVar7->projected_vertex).screen_y;
+        if (uVar9 < 0x10000) {
+          iVar12 = 0;
         }
         else {
-          iVar14 = (int)(0xffffffff / (ulonglong)uVar10);
+          iVar12 = (int)(0xffffffff / (ulonglong)uVar9);
         }
-        lVar1 = (longlong)iVar14 *
+        lVar2 = (longlong)iVar12 *
                 (longlong)
-                ((pSVar11->projected_vertex).screen_x - (pSVar7->projected_vertex).screen_x);
-        g_RasterizerEdgeCount = (int)pvVar13;
-        g_RasterizerEdgeArray[(int)pvVar13].x_delta =
-             (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-        lVar1 = (longlong)iVar14 *
+                ((pSVar10->projected_vertex).screen_x - (pSVar7->projected_vertex).screen_x);
+        g_RasterizerEdgeCount = (int)pSVar11;
+        g_RasterizerEdgeArray[(int)pSVar11].base.x_gradient =
+             (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
+        lVar2 = (longlong)iVar12 *
                 (longlong)
-                (((pSVar11->projected_vertex).transformed_z -
+                (((pSVar10->projected_vertex).transformed_z -
                  (pSVar7->projected_vertex).transformed_z) * 0x100);
-        g_RasterizerEdgeArray[(int)pvVar13].z_delta =
-             (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-        lVar1 = (longlong)iVar14 * (longlong)(pSVar11->z - pSVar7->z);
-        g_RasterizerEdgeArray[(int)pvVar13].light_delta =
-             (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-        uVar10 = (uint)(ushort)((ushort)(pSVar7->projected_vertex).screen_y ^ 0xffff);
-        lVar1 = (longlong)(int)uVar10 * (longlong)g_RasterizerEdgeArray[(int)pvVar13].x_delta;
-        g_RasterizerEdgeArray[(int)pvVar13].x_current =
-             g_RasterizerEdgeArray[(int)pvVar13].x_current +
-             ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-        lVar1 = (longlong)(int)uVar10 * (longlong)g_RasterizerEdgeArray[(int)pvVar13].z_delta;
-        iVar14 = g_RasterizerEdgeArray[(int)pvVar13].light_delta;
-        g_RasterizerEdgeArray[(int)pvVar13].z_current =
-             g_RasterizerEdgeArray[(int)pvVar13].z_current +
-             ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-        lVar1 = (longlong)(int)uVar10 * (longlong)iVar14;
-        pvVar12 = (void *)(g_RasterizerEdgeCount + 1);
-        g_RasterizerEdgeArray[(int)pvVar13].light_current =
-             g_RasterizerEdgeArray[(int)pvVar13].light_current +
-             ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
+        g_RasterizerEdgeArray[(int)pSVar11].base.w_gradient =
+             (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
+        lVar2 = (longlong)iVar12 * (longlong)(pSVar10->z - pSVar7->z);
+        g_RasterizerEdgeArray[(int)pSVar11].base.z_gradient =
+             (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
+        uVar9 = (uint)(ushort)((ushort)(pSVar7->projected_vertex).screen_y ^ 0xffff);
+        lVar2 = (longlong)(int)uVar9 * (longlong)g_RasterizerEdgeArray[(int)pSVar11].base.x_gradient
+        ;
+        piVar1 = &g_RasterizerEdgeArray[(int)pSVar11].base.x_current;
+        *piVar1 = *piVar1 + ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
+        lVar2 = (longlong)(int)uVar9 * (longlong)g_RasterizerEdgeArray[(int)pSVar11].base.w_gradient
+        ;
+        iVar12 = g_RasterizerEdgeArray[(int)pSVar11].base.z_gradient;
+        g_RasterizerEdgeArray[(int)pSVar11].base.w_current =
+             g_RasterizerEdgeArray[(int)pSVar11].base.w_current +
+             ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
+        lVar2 = (longlong)(int)uVar9 * (longlong)iVar12;
+        right = (SHardwareEdge *)(g_RasterizerEdgeCount + 1);
+        g_RasterizerEdgeArray[(int)pSVar11].base.z_current =
+             g_RasterizerEdgeArray[(int)pSVar11].base.z_current +
+             ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
       }
-      local_18 = (SEdgeData *)((int)&local_18->y_start + 1);
-      pvVar13 = pvVar12;
+      local_18 = (SSoftwareEdge *)((int)&(local_18->base).y_min + 1);
+      pSVar11 = right;
     } while ((int)local_18 < vertex_count);
   }
-  iVar14 = g_RasterizerMinY;
-  pSVar4 = g_RasterizerEdgeArray;
-  iVar3 = 0;
-  if (0 < (int)pvVar12) {
+  iVar12 = g_RasterizerMinY;
+  pSVar5 = g_RasterizerEdgeArray;
+  iVar4 = 0;
+  if (0 < (int)right) {
     do {
-      if ((g_RasterizerMinY == pSVar4->y_start) && (pSVar4 != (SEdgeData *)0x0)) goto LAB_005fd5f3;
-      iVar3 = iVar3 + 1;
-      pSVar4 = pSVar4 + 1;
-    } while (iVar3 < (int)pvVar12);
+      if ((g_RasterizerMinY == (pSVar5->base).y_min) && (pSVar5 != (SSoftwareEdge *)0x0))
+      goto LAB_005fd5f3;
+      iVar4 = iVar4 + 1;
+      pSVar5 = pSVar5 + 1;
+    } while (iVar4 < (int)right);
   }
-  pSVar4 = (SEdgeData *)0x0;
+  pSVar5 = (SSoftwareEdge *)0x0;
 LAB_005fd5f3:
-  if (pSVar4 != (SEdgeData *)0x0) {
-    iVar3 = 0;
-    pSVar5 = g_RasterizerEdgeArray;
-    if (0 < (int)pvVar12) {
+  if (pSVar5 != (SSoftwareEdge *)0x0) {
+    iVar4 = 0;
+    left = g_RasterizerEdgeArray;
+    if (0 < (int)right) {
       do {
-        if ((g_RasterizerMinY == pSVar5->y_start) && (pSVar5 != pSVar4)) goto LAB_005fd62a;
-        iVar3 = iVar3 + 1;
-        pSVar5 = pSVar5 + 1;
-      } while (iVar3 < (int)pvVar12);
+        if ((g_RasterizerMinY == (left->base).y_min) && (left != pSVar5)) goto LAB_005fd62a;
+        iVar4 = iVar4 + 1;
+        left = left + 1;
+      } while (iVar4 < (int)right);
     }
-    pSVar5 = (SEdgeData *)0x0;
+    left = (SSoftwareEdge *)0x0;
 LAB_005fd62a:
-    pSVar9 = (SEdgeData *)g_RasterizerMinY;
-    g_RasterizerEdgeCount = (int)pvVar12;
-    if (pSVar5 != (SEdgeData *)0x0) {
+    scanline_y = (SSoftwareEdge *)g_RasterizerMinY;
+    g_RasterizerEdgeCount = (int)right;
+    if (left != (SSoftwareEdge *)0x0) {
       do {
-        if (pSVar4->y_end <= iVar14) {
-          pSVar4->y_start = -1;
-          iVar3 = 0;
-          pSVar4 = g_RasterizerEdgeArray;
-          if (0 < g_RasterizerEdgeCount) {
-            do {
-              if ((iVar14 == pSVar4->y_start) && (pSVar4 != pSVar5)) goto LAB_005fd67c;
-              iVar3 = iVar3 + 1;
-              pSVar4 = pSVar4 + 1;
-            } while (iVar3 < g_RasterizerEdgeCount);
-          }
-          pSVar4 = (SEdgeData *)0x0;
-LAB_005fd67c:
-          pSVar9 = (SEdgeData *)iVar14;
-          pvVar12 = (void *)g_RasterizerEdgeCount;
-          if (pSVar4 == (SEdgeData *)0x0) {
-            return;
-          }
-        }
-        if (pSVar5->y_end <= iVar14) {
-          pSVar5->y_start = -1;
-          iVar3 = 0;
+        if ((pSVar5->base).y_max <= iVar12) {
+          (pSVar5->base).y_min = -1;
+          iVar4 = 0;
           pSVar5 = g_RasterizerEdgeArray;
           if (0 < g_RasterizerEdgeCount) {
             do {
-              if ((iVar14 == pSVar5->y_start) && (pSVar5 != pSVar4)) goto LAB_005fd6c4;
-              iVar3 = iVar3 + 1;
+              if ((iVar12 == (pSVar5->base).y_min) && (pSVar5 != left)) goto LAB_005fd67c;
+              iVar4 = iVar4 + 1;
               pSVar5 = pSVar5 + 1;
-            } while (iVar3 < g_RasterizerEdgeCount);
+            } while (iVar4 < g_RasterizerEdgeCount);
           }
-          pSVar5 = (SEdgeData *)0x0;
-LAB_005fd6c4:
-          pSVar9 = pSVar4;
-          pvVar12 = (void *)g_RasterizerEdgeCount;
-          if (pSVar5 == (SEdgeData *)0x0) {
+          pSVar5 = (SSoftwareEdge *)0x0;
+LAB_005fd67c:
+          scanline_y = (SSoftwareEdge *)iVar12;
+          right = (SHardwareEdge *)g_RasterizerEdgeCount;
+          if (pSVar5 == (SSoftwareEdge *)0x0) {
             return;
           }
         }
-        (*scanline_renderer)(pSVar5,pvVar12,(int)pSVar9);
-        pSVar4->x_current = pSVar4->x_current + pSVar4->x_delta;
-        pSVar4->z_current = pSVar4->z_current + pSVar4->z_delta;
-        pSVar4->light_current = pSVar4->light_current + pSVar4->light_delta;
-        extraout_EDI->x_current = extraout_EDI->x_current + extraout_EDI->x_delta;
-        local_18 = (SEdgeData *)((int)&local_18->y_start + 1);
-        extraout_EDI->z_current = extraout_EDI->z_current + extraout_EDI->z_delta;
-        extraout_EDI->light_current = extraout_EDI->light_current + extraout_EDI->light_delta;
-        pSVar9 = local_18;
-        pvVar12 = extraout_ESI;
-        pSVar5 = extraout_EDI;
+        if ((left->base).y_max <= iVar12) {
+          (left->base).y_min = -1;
+          iVar4 = 0;
+          left = g_RasterizerEdgeArray;
+          if (0 < g_RasterizerEdgeCount) {
+            do {
+              if ((iVar12 == (left->base).y_min) && (left != pSVar5)) goto LAB_005fd6c4;
+              iVar4 = iVar4 + 1;
+              left = left + 1;
+            } while (iVar4 < g_RasterizerEdgeCount);
+          }
+          left = (SSoftwareEdge *)0x0;
+LAB_005fd6c4:
+          scanline_y = pSVar5;
+          right = (SHardwareEdge *)g_RasterizerEdgeCount;
+          if (left == (SSoftwareEdge *)0x0) {
+            return;
+          }
+        }
+        (*scanline_renderer)(&left->base,right,(int)scanline_y);
+        piVar1 = &(pSVar5->base).x_current;
+        *piVar1 = *piVar1 + (pSVar5->base).x_gradient;
+        (pSVar5->base).w_current = (pSVar5->base).w_current + (pSVar5->base).w_gradient;
+        (pSVar5->base).z_current = (pSVar5->base).z_current + (pSVar5->base).z_gradient;
+        (extraout_EDI->base).x_current =
+             (extraout_EDI->base).x_current + (extraout_EDI->base).x_gradient;
+        local_18 = (SSoftwareEdge *)((int)&(local_18->base).y_min + 1);
+        (extraout_EDI->base).w_current =
+             (extraout_EDI->base).w_current + (extraout_EDI->base).w_gradient;
+        (extraout_EDI->base).z_current =
+             (extraout_EDI->base).z_current + (extraout_EDI->base).z_gradient;
+        scanline_y = local_18;
+        right = extraout_ESI;
+        left = extraout_EDI;
       } while( true );
     }
   }
-  g_RasterizerEdgeCount = (int)pvVar12;
+  g_RasterizerEdgeCount = (int)right;
   return;
 }

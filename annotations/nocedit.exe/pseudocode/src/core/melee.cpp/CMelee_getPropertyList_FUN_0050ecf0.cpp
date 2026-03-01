@@ -26,7 +26,7 @@ void __cdecl core_melee_cpp_CMelee_getPropertyList_FUN_0050ecf0(CMelee *this_ptr
   core_actor_cpp_CActorPropertyList_addBool_FUN_0040e330
             (property_list,"Can go in inventory",&this_ptr->can_go_in_inventory);
   core_actor_cpp_CActorPropertyList_addEnumPair_FUN_0040e640
-            (property_list,"Damage type",9,g_MeleeDamageTypePairs,&this_ptr->damage_type);
+            (property_list,"Damage type",9,g_MeleeDamageTypePairs,&this_ptr->ammo_type);
   core_actor_cpp_CActorPropertyList_addSound_FUN_0040e2d0
             (property_list,"thrustHitCharacterSound",this_ptr->thrust_hit_character_sound);
   core_actor_cpp_CActorPropertyList_addSound_FUN_0040e2d0

@@ -28,7 +28,7 @@ void __cdecl core_melee_cpp_CMelee_archive_FUN_0050e920(CMelee *this_ptr)
               (&this_ptr->can_go_in_inventory,"canGoInInventory");
   }
   if (5 < g_CMeleeClassVersion) {
-    core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->damage_type,"ammoType");
+    core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->ammo_type,"ammoType");
   }
   if (g_CMeleeClassVersion < 7) {
     return;

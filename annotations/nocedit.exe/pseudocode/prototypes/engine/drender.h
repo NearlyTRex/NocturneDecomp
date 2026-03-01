@@ -9,7 +9,7 @@ void __cdecl renderTriangleTextured(int *vertex_indices,int vertex_count);
 
 // Original: engine_drender.cpp_renderTriangleSimple_FUN_004839f0
 // Address: 004839f0
-int __cdecl renderTriangleSimple(CVector3i *vertex_indices,int vertex_count);
+void __cdecl renderTriangleSimple(CVector3i *vertex_indices,int vertex_count);
 
 // Original: engine_drender.cpp_staticInit_FUN_0048a6b0
 // Address: 0048a6b0

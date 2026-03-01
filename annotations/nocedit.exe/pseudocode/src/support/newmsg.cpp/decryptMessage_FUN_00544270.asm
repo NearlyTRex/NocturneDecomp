@@ -6,7 +6,7 @@
 ; Parameters:
 ; char *           Stack[0x4]:4   encrypted_msg
 ; Local Variables:
-; undefined4       Stack[-0x10]:4  local_10
+; ushort           Stack[-0x10]:2  local_10
 ;
 ; XREF[3]:
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 at 004de9a0

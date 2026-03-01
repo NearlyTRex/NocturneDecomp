@@ -90,7 +90,7 @@ int __cdecl engine_pod_cpp_CPodFile_verifyChecksum_FUN_00550230(CPodFile *this_p
   _fseek(p_Var3,iVar7 + -4,0);
   _fread(&local_20,4,1,p_Var3);
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var3,"..\\engine\\pod.cpp",0x2f3);
-  iVar4 = engine_dosio_c_getFileSize_FUN_00481880(&s_EmptyString_0064015e,pcVar6);
+  iVar4 = engine_dosio_c_getFileSize_FUN_00481880(&s_EmptyChar_0064015e,pcVar6);
   p_Var3 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                      (pcVar6,(char *)0x0,"rb","..\\engine\\pod.cpp",0xf2);
   uVar8 = 0xffffffff;

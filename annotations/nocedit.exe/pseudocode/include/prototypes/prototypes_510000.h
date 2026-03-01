@@ -13,6 +13,7 @@
 #include "types/classes/CMimic.h"
 #include "types/classes/CSpotView.h"
 #include "types/classes/CVector3f.h"
+#include "types/enums/EInputCodeType.h"
 #include "types/structs/SLodSamplePoint.h"
 
 // =============================================================================
@@ -33,7 +34,7 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_00511e50(void);
 void __cdecl core_menu_cpp_showOptionsScreen_FUN_00512d30(int initialize_systems);
 int __cdecl core_menu_cpp_showMainGameMenu_FUN_00512f40(void);
 void __cdecl core_menu_cpp_addCustomKeyBinding_FUN_00513460(int *key_code_ptr,char *key_name);
-char * __cdecl core_menu_cpp_getKeyDisplayName_FUN_005134e0(int key_code);
+char * __cdecl core_menu_cpp_getKeyDisplayName_FUN_005134e0(EInputCodeType key_code);
 int __cdecl core_menu_cpp_isKeyCodeValidForMode_FUN_00513720(int *key_code_ptr,char *description);
 int __cdecl core_menu_cpp_getSinglePressedKey_FUN_00513860(void);
 void __cdecl core_menu_cpp_configureCustomKeyBindings_FUN_005138e0(void);
@@ -140,7 +141,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_transformVerticesForPreview_FUN_0051e6b0
 void __cdecl shape_meshlod_cpp_CLodMesh_renderWireframe_FUN_0051e770(CLodMesh *this_ptr);
 void __cdecl shape_meshlod_cpp_CLodMesh_renderColorCodedEdges_FUN_0051e830(CLodMesh *this_ptr,int backface_culling_enabled);
 void __cdecl shape_meshlod_cpp_CLodMesh_renderShadedTriangles_FUN_0051e990(CLodMesh *this_ptr,int use_palette_coloring);
-void __cdecl shape_meshlod_cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0(CLodMesh *this_ptr,int enable_texture_lookup,int use_atlas_mode);
+void __cdecl shape_meshlod_cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0(CLodMesh *this_ptr,int enable_texture_lookup);
 void __cdecl shape_meshlod_cpp_CLodMesh_drawVertexIndexLabel_FUN_0051ecd0(CLodMesh *this_ptr,int vertex_index);
 void __cdecl shape_meshlod_cpp_CLodMesh_drawVertexLabels_FUN_0051ed30(CLodMesh *this_ptr);
 void __cdecl shape_meshlod_cpp_testLodGeneration_FUN_0051ed60(void);

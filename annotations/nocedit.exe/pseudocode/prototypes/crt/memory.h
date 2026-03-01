@@ -31,9 +31,9 @@ void * __cdecl ::_arrcopy(void *dest,void *source,int count,WatcomTypeInfo *type
 // Address: 00601200
 void * __cdecl ::_arrinit_dispatch(void *array_ptr,int element_count,WatcomTypeInfo *type_info);
 
-// Original: crt_memory.c___vec_new__FUN_00601232
+// Original: crt_memory.c___vec_new_FUN_00601232
 // Address: 00601232
-void * __cdecl ::_vec_new_(void *dest,int element_count,WatcomTypeInfo *type_info);
+void * __cdecl ::_vec_new(void *dest,int element_count,WatcomTypeInfo *type_info);
 
 // Original: crt_memory.c___vec_new_FUN_00601272
 // Address: 00601272

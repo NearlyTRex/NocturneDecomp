@@ -12,6 +12,7 @@ char * __cdecl support_newmsg_cpp_decryptMessage_FUN_00544270(char *encrypted_ms
   byte bVar2;
   byte *puVar2;
   int iVar3;
+  ushort local_10;
   byte bVar1;
   
   if (encrypted_msg[2] != '>') {

@@ -27,7 +27,7 @@ void __cdecl shape_edittool_cpp_CEdCheck_render_FUN_004a6c00(CEdCheck *this_ptr)
   iVar2 = iVar2 + left;
   local_14 = shape_edittool_cpp_CEdCheck_calculateBaseWidth_FUN_004a6bb0(this_ptr);
   local_14 = iVar1 + local_14;
-  iVar3 = engine_font_cpp_CBitFont_getCharWidth_FUN_004cff40(g_EditorFont,this_ptr->checkbox_text);
+  iVar3 = engine_font_cpp_CBitFont_getTextHeight_FUN_004cff40(g_EditorFont,this_ptr->checkbox_text);
   color_value = -1;
   iVar5 = this_ptr->text_color_mode;
   iVar3 = ((this_ptr->y_position + this_ptr->right_boundary) - iVar3) / 2;

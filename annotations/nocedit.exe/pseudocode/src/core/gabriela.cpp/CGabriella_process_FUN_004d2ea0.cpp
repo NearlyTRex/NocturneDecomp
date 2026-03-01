@@ -37,7 +37,7 @@ void __cdecl core_gabriela_cpp_CGabriella_process_FUN_004d2ea0(CGabriella *this_
   bool bVar22;
   bool bVar23;
   char *sound_name;
-  float in_stack_fffffe24;
+  CMatrix3x3f local_1dc;
   CBoundingBox3D local_1b4;
   float local_19c;
   float local_198;
@@ -98,10 +98,10 @@ void __cdecl core_gabriela_cpp_CGabriella_process_FUN_004d2ea0(CGabriella *this_
   if ((this_ptr->base).control_type == 2) {
     core_gabriela_cpp_CGabriella_FUN_004d4190(this_ptr);
   }
-  fVar3 = (float)(this_ptr->base).no_collision_flag - delta_time;
-  (this_ptr->base).no_collision_flag = (int)fVar3;
+  fVar3 = (this_ptr->base).invincibility_timer - delta_time;
+  (this_ptr->base).invincibility_timer = fVar3;
   if (fVar3 < 0.0) {
-    (this_ptr->base).no_collision_flag = 0;
+    (this_ptr->base).invincibility_timer = 0.0;
   }
   pCVar16 = (CVector3f *)core_gabriela_cpp_CGabriella_FUN_004d4cf0(this_ptr);
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
@@ -607,8 +607,7 @@ LAB_004d344b:
   }
   core_gabriela_cpp_CGabriella_FUN_004d4d80(this_ptr);
   core_gabriela_cpp_CGabriella_FUN_004d6d40(this_ptr);
-  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
-            ((CCharacter *)this_ptr,delta_time,in_stack_fffffe24);
+  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr,delta_time);
   pCVar2 = &(this_ptr->base).base.model;
   local_14 = (CCharacter_full_vtable *)
              core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
@@ -659,13 +658,12 @@ LAB_004d344b:
       local_e8.x = this_ptr->aim_pitch;
       local_e8.z = 0.0;
       local_e8.y = 0.0;
-      core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
-                ((CMatrix3x3f *)&stack0xfffffe24,&local_e8);
+      core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(&local_1dc,&local_e8);
       local_d0.z = this_ptr->dynamite_charge_power;
       local_d0.x = 0.0;
       local_d0.y = 0.0;
       pCVar16 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
-                          ((CMatrix3x3f *)&stack0xfffffe24,&local_100,&local_d0);
+                          (&local_1dc,&local_100,&local_d0);
       pCVar16 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
                           ((CDemonActor *)this_ptr,&local_94,pCVar16);
       if ((CVector3f *)(pCVar18[4].actor_name + 0x1c) != pCVar16) {

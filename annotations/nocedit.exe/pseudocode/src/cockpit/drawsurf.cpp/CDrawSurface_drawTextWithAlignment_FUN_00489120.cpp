@@ -82,25 +82,25 @@ LAB_00489337:
     engine_font_cpp_CBitFont_drawTextCenter_FUN_004cdde0(g_CurrentFont,left_x,y_00,-3,-1,text);
     break;
   case TEXT_ALIGN_LEFT_VCENTER:
-    y_00 = y_00 - g_CurrentFont->current_max_width / 2;
+    y_00 = y_00 - g_CurrentFont->current_line_height / 2;
     goto LAB_004891ea;
   case TEXT_ALIGN_CENTER_BOTH:
     engine_font_cpp_CBitFont_drawTextCenter_FUN_004cdde0
-              (g_CurrentFont,left_x,y_00 - g_CurrentFont->current_max_width / 2,-3,-1,text);
+              (g_CurrentFont,left_x,y_00 - g_CurrentFont->current_line_height / 2,-3,-1,text);
     break;
   case TEXT_ALIGN_CENTER_IN_BOUNDS:
     engine_font_cpp_CBitFont_drawTextCenterInBounds_FUN_004cdee0
               (g_CurrentFont,left_x,right_x,y_00,-3,-1,text);
     break;
   case TEXT_ALIGN_LEFT_IN_AREA:
-    y_00 = ((y_00 + iVar6 + 1) - g_CurrentFont->current_max_width) / 2;
+    y_00 = ((y_00 + iVar6 + 1) - g_CurrentFont->current_line_height) / 2;
 LAB_004891ea:
     engine_font_cpp_CBitFont_drawTextWrapper_FUN_004cdbf0(g_CurrentFont,left_x,y_00,-3,-1,text);
     break;
   case TEXT_ALIGN_CENTER_IN_AREA:
     engine_font_cpp_CBitFont_drawTextCenterInBounds_FUN_004cdee0
               (g_CurrentFont,left_x,right_x,
-               ((y_00 + iVar6 + 1) - g_CurrentFont->current_max_width) / 2,-3,-1,text);
+               ((y_00 + iVar6 + 1) - g_CurrentFont->current_line_height) / 2,-3,-1,text);
   }
   engine_font_cpp_setDefaultTextColor_FUN_004ce230(iVar5);
   g_ClipLeft = iVar1;

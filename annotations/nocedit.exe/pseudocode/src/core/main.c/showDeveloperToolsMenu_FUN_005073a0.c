@@ -172,7 +172,7 @@ LAB_0050740e:
     return;
   }
   pcVar3 = support_newmsg_cpp_decryptMessage_FUN_00544270(g_LicenseAgreement);
-  iVar4 = engine_font_cpp_CBitFont_getCharWidth_FUN_004cff40(g_EditorFont,pcVar3);
+  iVar4 = engine_font_cpp_CBitFont_getTextHeight_FUN_004cff40(g_EditorFont,pcVar3);
   shape_edittool_cpp_CEdScrollBar_ctor_FUN_004a5ae0(&local_60);
   iVar1 = g_ClipTop;
   right_pos = g_ClipRight;

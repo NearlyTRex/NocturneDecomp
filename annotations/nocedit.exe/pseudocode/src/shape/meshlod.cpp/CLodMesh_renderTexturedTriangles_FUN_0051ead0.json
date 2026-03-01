@@ -6,16 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 204,
-    "complexity_score": 218,
+    "complexity_score": 203,
     "cross_reference_count": 2,
     "function_call_count": 9,
     "global_count": 8,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 98,
-    "suspect_count": 10,
+    "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic",
-      "param_count_too_many",
       "pointer_cast",
       "warning_inlined_function"
     ],
@@ -45,7 +44,7 @@
     ],
     "convention": "__cdecl",
     "name": "shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0",
-    "signature": "void __cdecl shape_meshlod_cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0(CLodMesh *this_ptr,int enable_texture_lookup,int use_atlas_mode)"
+    "signature": "void __cdecl shape_meshlod_cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0(CLodMesh *this_ptr,int enable_texture_lookup)"
   },
   "function_calls": [
     {
@@ -176,7 +175,7 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 3,
+    "declared_params": 2,
     "estimated_params": 2
   },
   "pcode_summary": {
@@ -216,10 +215,10 @@
     "pcode_op_count": 752
   },
   "stack_frame": {
-    "frame_size": 132,
+    "frame_size": 128,
     "local_size": 120,
     "param_offset": 4,
-    "param_size": 12,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -326,13 +325,6 @@
         "offset": 8,
         "size": 4,
         "type": "int"
-      },
-      {
-        "is_param": true,
-        "name": "use_atlas_mode",
-        "offset": 12,
-        "size": 4,
-        "type": "int"
       }
     ]
   },
@@ -408,17 +400,6 @@
       "severity": "mild",
       "text": "*(int *)((int)aiStack_60 + iVar3 + 8) = local_28;",
       "type": "pointer_cast"
-    },
-    {
-      "call_site_count": 3,
-      "declared_params": 3,
-      "description": "Signature has too many params - likely wrong calling convention",
-      "estimated_params": 2,
-      "fix_type": "remove_params",
-      "match": "declared:3 vs estimated:2",
-      "param_delta": -1,
-      "text": "Function declares 3 params but call sites push 2 (1 extra)",
-      "type": "param_count_too_many"
     }
   ]
 }

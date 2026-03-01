@@ -100,7 +100,7 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004e4010(CGame *this_ptr)
   engine_2d_c_clearInputAndWait_FUN_00403260();
   this_ptr_00 = g_ThemeFont;
   g_ThemeFont->win_font_enabled = 0;
-  iVar7 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(this_ptr_00,0x58);
+  iVar7 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(this_ptr_00,0x58);
   local_1c = -1;
   local_c = iVar7;
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(this_ptr);
@@ -159,7 +159,7 @@ LAB_004e43c1:
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_ESCAPE);
     if (iVar3 != 0) goto LAB_004e43c1;
-    core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(this_ptr);
+    core_game_cpp_CGame_updateDT_FUN_004d7d90(this_ptr);
     local_18 = local_18 - this_ptr->delta_time_float * 32.0f;
   } while( true );
 }

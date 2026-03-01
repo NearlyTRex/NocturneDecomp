@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dstrender_cpp_renderPerspectiveCorrectTextured16xCached_FUN_00490ec0(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
+; void __cdecl core_dstrender_cpp_renderPerspectiveCorrectTextured16xCached_FUN_00490ec0(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
 ;
 ;
 ; XREF[1]:

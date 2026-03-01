@@ -47,7 +47,6 @@ char g_PrevKeyboardState[600] = {};
 
 // float
 float g_OverlayDisplayTimer = {};
-float FLOAT_02d831bc = {};
 float g_IrisFadeRadius = {};
 
 // int
@@ -56,14 +55,15 @@ int g_InputResetFlag = {};
 int g_StoredCameraValue = {};
 int g_CheatSystemEnabled = {};
 int g_HasSavedLightState = {};
-int g_CheatFlags = {};
-int g_DebugRecording = {};
-int g_DebugRecordingParams = {};
-int INT_02d831c0 = {};
-int INT_02d831c4 = {};
-int INT_02d831c8 = {};
-int INT_02d831cc = {};
-int INT_02d831d0 = {};
+int g_MovieRecordingArmed = {};
+int g_MovieRecordingActive = {};
+int g_MovieRecordingMaxFrames = {};
+int g_MovieRecordingFrameCounter = {};
+int g_SoundDebugEnabled = {};
+int g_HelpCursorX = {};
+int g_HelpCursorY = {};
+int g_HelpLineHeight = {};
+int g_HelpCharWidth = {};
 int g_IrisFadeType = {};
 int g_IrisFadeCenterX = {};
 int g_IrisFadeCenterY = {};

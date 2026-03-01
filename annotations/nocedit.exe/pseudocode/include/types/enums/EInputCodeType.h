@@ -118,10 +118,14 @@ enum {
     DIJ_BUTTON8 = 521,
     DIJ_BUTTON9 = 522,
     DIJ_BUTTON10 = 523,
+    DIM_MBUTTON = 524,
     DIJ_LEFT = 593,
     DIJ_RIGHT = 594,
     DIJ_UP = 595,
-    DIJ_DOWN = 596
+    DIJ_DOWN = 596,
+    DIM_XAXIS = 597,
+    DIM_YAXIS = 598,
+    INPUT_NONE = 599
 };
 typedef int EInputCodeType;
 

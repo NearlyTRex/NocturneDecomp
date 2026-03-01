@@ -210,9 +210,9 @@ LAB_005fba18:
         CStack_a4.z = CStack_50.z;
       }
     }
-    CStack_c8.x = g_ZeroVector.x;
-    CStack_c8.y = g_ZeroVector.y;
-    CStack_c8.z = g_ZeroVector.z;
+    CStack_c8.x = g_ZeroVector.f.x;
+    CStack_c8.y = g_ZeroVector.f.y;
+    CStack_c8.z = g_ZeroVector.f.z;
     if (iVar10 == 0) {
       CStack_74.x = -1.5;
       CStack_74.y = 0.0;

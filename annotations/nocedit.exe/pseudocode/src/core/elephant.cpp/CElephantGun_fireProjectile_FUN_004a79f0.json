@@ -46,7 +46,7 @@
     {
       "addr": "004c7f20",
       "is_variadic": false,
-      "name": "core_fire.cpp_CFireEffect_createLaserSegment2_FUN_004c7f20"
+      "name": "core_fire.cpp_CFireEffect_createLaserCone_FUN_004c7f20"
     },
     {
       "addr": "0048cae0",
@@ -185,7 +185,7 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 46,
+      "line": 44,
       "match": "SQRT",
       "severity": "mild",
       "text": "fVar1 = SQRT(fStack_48 * fStack_48 + fStack_50 * fStack_50 + fStack_4c * fStack_4c);",
@@ -196,7 +196,7 @@
       "line": 61,
       "match": "SQRT",
       "severity": "mild",
-      "text": "SQRT((fStack_24 - aCStack_68[0].z) * (fStack_24 - aCStack_68[0].z) +",
+      "text": "SQRT((CStack_2c.z - aCStack_68[0].z) * (CStack_2c.z - aCStack_68[0].z) +",
       "type": "decompiler_intrinsic"
     }
   ],

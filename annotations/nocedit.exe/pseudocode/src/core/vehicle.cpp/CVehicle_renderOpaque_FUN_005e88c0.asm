@@ -81,7 +81,7 @@ section .text
     ADD ESP,0x8                         ; 005e8948
     PUSH EAX                            ; 005e894b
     CALL core_box.cpp_CBoundingBox3D_render_FUN_004210b0 ; 005e894c
-        ;   XREF to: 004210b0 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBoundingBox3D_render_FUN_004210b0(CBoundingBox3D * this_ptr, int param1, int param2, int param3)
+        ;   XREF to: 004210b0 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBoundingBox3D_render_FUN_004210b0(CBoundingBox3D * this_ptr)
     ADD ESP,0x4                         ; 005e8951
     LEA EAX,[EAX]                       ; 005e8954
     LEA EDX,[EDX]                       ; 005e895a

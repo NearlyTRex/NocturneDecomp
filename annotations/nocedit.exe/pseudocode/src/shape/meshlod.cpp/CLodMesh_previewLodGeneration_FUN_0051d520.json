@@ -12,30 +12,6 @@
         "column": 36,
         "line": 71,
         "message": "use of undeclared identifier 'PTR_02f313e8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 80,
-        "message": "use of undeclared identifier 'stack0xffffff44'; did you mean 'in_stack_ffffff44'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 40,
-        "line": 81,
-        "message": "use of undeclared identifier 'stack0xffffff44'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 101,
-        "message": "use of undeclared identifier 'stack0xffffff44'; did you mean 'in_stack_ffffff44'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 40,
-        "line": 102,
-        "message": "use of undeclared identifier 'stack0xffffff44'"
       }
     ],
     "success": false,
@@ -43,17 +19,15 @@
   },
   "complexity": {
     "assembly_lines": 427,
-    "complexity_score": 262,
+    "complexity_score": 182,
     "cross_reference_count": 3,
     "function_call_count": 30,
     "global_count": 25,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 142,
-    "suspect_count": 10,
+    "suspect_count": 3,
     "suspect_types": [
       "decompiler_intrinsic",
-      "stack_param",
-      "stack_ref",
       "warning_inlined_function"
     ],
     "total_lines": 569
@@ -104,7 +78,7 @@
     {
       "addr": "004d7d90",
       "is_variadic": false,
-      "name": "core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90"
+      "name": "core_game.cpp_CGame_updateDT_FUN_004d7d90"
     },
     {
       "addr": "005fe6b0",
@@ -606,46 +580,6 @@
       "type": "warning_inlined_function"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_ffffff44",
-      "severity": "moderate",
-      "text": "int in_stack_ffffff44;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 45,
-      "match": "in_stack_ffffff44",
-      "severity": "moderate",
-      "text": "shape_meshlod_cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0(this_ptr,0,in_stack_ffffff44);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 49,
-      "match": "in_stack_ffffff44",
-      "severity": "moderate",
-      "text": "shape_meshlod_cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0(this_ptr,1,in_stack_ffffff44);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 73,
-      "match": "&stack0xffffff44",
-      "severity": "moderate",
-      "text": "_sprintf(&stack0xffffff44,\"%d faces, %d original\",iVar1,iVar4);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 74,
-      "match": "&stack0xffffff44",
-      "severity": "moderate",
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff44,0,0);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 93,
       "match": "ROUND",
@@ -660,22 +594,6 @@
       "severity": "mild",
       "text": "local_1c = (int)ROUND(ROUND(local_14));",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 94,
-      "match": "&stack0xffffff44",
-      "severity": "moderate",
-      "text": "_sprintf(&stack0xffffff44,\"Pixel Height: %d\",local_1c);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 95,
-      "match": "&stack0xffffff44",
-      "severity": "moderate",
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff44,0,0x16);",
-      "type": "stack_ref"
     }
   ]
 }

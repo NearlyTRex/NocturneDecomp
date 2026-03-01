@@ -361,8 +361,8 @@ section .text
         ;   Label: LAB_0047ce65
     MOV EBX,dword ptr [0x0067b654]      ; 0047ce6a | g_CGamePtr
     PUSH EBX                            ; 0047ce70 | g_CGameInstance
-    CALL core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90 ; 0047ce71
-        ;   XREF to: 004d7d90 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90(CGame * this_ptr)
+    CALL core_game.cpp_CGame_updateDT_FUN_004d7d90 ; 0047ce71
+        ;   XREF to: 004d7d90 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_updateDT_FUN_004d7d90(CGame * this_ptr)
     MOV EAX,[0x0067b654]                ; 0047ce76 | g_CGamePtr
     ADD ESP,0x4                         ; 0047ce7b
     MOV EAX,dword ptr [EAX + 0x264]     ; 0047ce7e | g_CGameInstance.delta_time_float
@@ -1247,7 +1247,7 @@ section .text
     MOV EAX,[0x00678a60]                ; 0047d857 | g_CEditorToolsPtr
     PUSH EAX                            ; 0047d85c | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70 ; 0047d85d
-        ;   XREF to: 0049fb70 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70(CEditorTools * this_ptr, char * prompt_text, char * filename_buffer, int buffer_size, ...)
+        ;   XREF to: 0049fb70 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70(CEditorTools * this_ptr, char * dialog_title, char * directory_path, char * file_extension, ...)
     ADD ESP,0x18                        ; 0047d862
     TEST EAX,EAX                        ; 0047d865
     JZ 0x0047d6c7                       ; 0047d867

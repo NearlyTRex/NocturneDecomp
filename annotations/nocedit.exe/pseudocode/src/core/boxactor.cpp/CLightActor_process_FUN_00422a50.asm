@@ -21,7 +21,7 @@
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CDemonFilter[8] CDemonFilter_ARRAY_008229ec
 ;   CDemonSet g_CDemonSetInstance
-;   CVector3f g_ZeroVector
+;   UVector3 g_ZeroVector
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
@@ -29,7 +29,7 @@
 ;   core_actor.cpp_getRandomInt_FUN_0040cc70
 ;   core_boxactor.cpp_CBoxActor_process_FUN_004219e0
 ;   core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_00471360
-;   core_dglobe.cpp_CDemonGlobe_setColor_FUN_00471310
+;   core_dglobe.cpp_CDemonGlobe_setPosition_FUN_00471310
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
 ;   core_dlight.cpp_CDemonLight_applyFilter_FUN_00474770
 ;   core_set.cpp_CDemonSet_addCoronaGlobe_FUN_0056d110
@@ -108,8 +108,8 @@ section .text
     PUSH EAX                            ; 00422b1a
     ADD EBX,0x3638                      ; 00422b1b
     PUSH EBX                            ; 00422b21
-    CALL core_dglobe.cpp_CDemonGlobe_setColor_FUN_00471310 ; 00422b22
-        ;   XREF to: 00471310 (UNCONDITIONAL_CALL)  ; void core_dglobe.cpp_CDemonGlobe_setColor_FUN_00471310(CDemonGlobe * this_ptr, CColor3f * color)
+    CALL core_dglobe.cpp_CDemonGlobe_setPosition_FUN_00471310 ; 00422b22
+        ;   XREF to: 00471310 (UNCONDITIONAL_CALL)  ; void core_dglobe.cpp_CDemonGlobe_setPosition_FUN_00471310(CDemonGlobe * this_ptr, CVector3f * position)
     ADD ESP,0x8                         ; 00422b27
     CALL crt_stdlib.c_rand_FUN_005feb5c ; 00422b2a
         ;   XREF to: 005feb5c (UNCONDITIONAL_CALL)  ; int crt_stdlib.c_rand_FUN_005feb5c()

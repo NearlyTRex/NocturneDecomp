@@ -169,15 +169,15 @@ void __cdecl initializeCoronaBuffers(void);
 
 // Original: core_dcamera.cpp_renderCoronaDepthScanline_FUN_00450320
 // Address: 00450320
-void __cdecl renderCoronaDepthScanline(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y);
+void __cdecl renderCoronaDepthScanline(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 
 // Original: core_dcamera.cpp_renderVolumetricLightScanline_FUN_00450440
 // Address: 00450440
-void __cdecl renderVolumetricLightScanline(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y);
+void __cdecl renderVolumetricLightScanline(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 
 // Original: core_dcamera.cpp_renderFlatColorScanline_FUN_004505e0
 // Address: 004505e0
-void __cdecl renderFlatColorScanline(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y);
+void __cdecl renderFlatColorScanline(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 
 // Original: core_dcamera.cpp_renderCoronaProjectedTextureScanline_FUN_004507a0
 // Address: 004507a0

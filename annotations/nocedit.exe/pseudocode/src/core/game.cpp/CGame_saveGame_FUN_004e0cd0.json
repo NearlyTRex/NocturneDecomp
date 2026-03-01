@@ -4,13 +4,13 @@
       {
         "category": "format_error",
         "column": 28,
-        "line": 110,
+        "line": 111,
         "message": "format specifies type 'char *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 15,
-        "line": 132,
+        "line": 133,
         "message": "format specifies type 'int' but the argument has type 'float' [-Werror,-Wformat]"
       }
     ],
@@ -19,17 +19,17 @@
   },
   "complexity": {
     "assembly_lines": 540,
-    "complexity_score": 202,
+    "complexity_score": 203,
     "cross_reference_count": 2,
     "function_call_count": 31,
     "global_count": 53,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 177,
+    "pseudocode_lines": 178,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 717
+    "total_lines": 718
   },
   "cross_references": [
     {
@@ -739,7 +739,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 100,
+      "line": 101,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar1 = (uint *)((int)g_HeroActors + iVar4);",
@@ -747,7 +747,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 117,
+      "line": 118,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar1 = (uint *)((int)g_MasterLightStateSaveBuffer + iVar4);",

@@ -49,7 +49,7 @@
 ;   engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_00410540
 ;   engine_alphabit.cpp_CAlphaBitmap_load_FUN_004105d0
 ;   engine_font.cpp_CBitFont_drawTextCenterInBounds_FUN_004cdee0
-;   engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0
+;   engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0
 ;   engine_font.cpp_CBitFont_wrapText_FUN_004d0010
 ;   support_newmsg.cpp_getLocalizedString_FUN_005441f0
 ;   wincore_windll.cpp_clearScreen_FUN_005b3e70
@@ -339,8 +339,8 @@ section .text
     PUSH EBP                            ; 004e3afb
     MOV EDI,EAX                         ; 004e3afc
     MOV dword ptr [ESP + 0x538],EAX     ; 004e3afe
-    CALL engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0 ; 004e3b05
-        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0 ; 004e3b05
+        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 004e3b0a
     MOV ESI,0xf0                        ; 004e3b0d
     MOV dword ptr [ESP + 0x52c],EAX     ; 004e3b12

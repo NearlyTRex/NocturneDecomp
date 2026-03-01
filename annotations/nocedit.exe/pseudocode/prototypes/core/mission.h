@@ -15,13 +15,13 @@ void __cdecl skipLine(_FILE *file_handle);
 // Address: 00522c80
 void __cdecl CDemonMission::reset(CDemonMission *this_ptr);
 
-// Original: core_mission.cpp_CDemonMission_checkMemory_FUN_00522d20
+// Original: core_mission.cpp_CDemonMission_FUN_00522d20
 // Address: 00522d20
-void __cdecl CDemonMission::checkMemory(CDemonMission *this_ptr);
+void __cdecl CDemonMission(CDemonMission *this_ptr);
 
-// Original: core_mission.cpp_CDemonMission_checkMemory2_FUN_00522d30
+// Original: core_mission.cpp_CDemonMission_FUN_00522d30
 // Address: 00522d30
-void __cdecl CDemonMission::checkMemory2(CDemonMission *this_ptr);
+void __cdecl CDemonMission(CDemonMission *this_ptr);
 
 // Original: core_mission.cpp_CDemonMission_load_FUN_00522d90
 // Address: 00522d90

@@ -291,7 +291,7 @@ section .text
     MOV EDI,0x40000000                  ; 00413123
     XOR EBX,EBX                         ; 00413128
     CALL core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0 ; 0041312a
-        ;   XREF to: 0042dfc0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(CCharacter * this_ptr, float delta_time, float param_3)
+        ;   XREF to: 0042dfc0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0041312f
     LEA ESI,[EBP + 0x20]                ; 00413132
     PUSH 0x40000000                     ; 00413135

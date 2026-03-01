@@ -42,7 +42,7 @@ void __cdecl core_fire_cpp_CFireball_process_FUN_004c0b30(CFireball *this_ptr)
   this_ptr->rotation_angle2 = this_ptr->rotation_angle2 + iVar3;
   if (this_ptr->lighting_active == 0) {
     this_ptr_00 = &this_ptr->light_globe;
-    core_dglobe_cpp_CDemonGlobe_setColor_FUN_00471310(this_ptr_00,(CColor3f *)this_ptr);
+    core_dglobe_cpp_CDemonGlobe_setPosition_FUN_00471310(this_ptr_00,(CVector3f *)this_ptr);
     iVar3 = this_ptr->timer;
     (this_ptr->light_globe).intensity_multiplier = iVar3;
     iVar3 = (iVar3 + (iVar3 >> 0x1f) * -0x100) - (uint)((iVar3 >> 0x1f) << 7 < 0);

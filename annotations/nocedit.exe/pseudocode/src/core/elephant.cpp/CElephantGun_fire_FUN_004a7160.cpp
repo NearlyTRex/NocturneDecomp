@@ -29,9 +29,7 @@ int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_004a7160(CElephantGun *this_
   CElephantGun *pCStack_f0;
   CVector3f aCStack_e8 [2];
   CVector3f CStack_d0;
-  float fStack_c4;
-  float fStack_c0;
-  float fStack_bc;
+  CVector3f CStack_c4;
   CVector3f CStack_b8;
   CVector3f CStack_ac;
   float fStack_a0;
@@ -152,11 +150,11 @@ int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_004a7160(CElephantGun *this_
                   break;
                 }
                 in_stack_fffffec4 = (CDemonSet *)0x4a7834;
-                core_flamecan_cpp_CFlameCan_FUN_004cb340(pCStack_38);
+                core_flamecan_cpp_CFlameCan_ignite_FUN_004cb340(pCStack_38);
               }
               else {
                 in_stack_fffffec4 = (CDemonSet *)0x4a783f;
-                core_crate_cpp_CCrate_FUN_00448a70(pCStack_3c);
+                core_crate_cpp_CCrate_explode_FUN_00448a70(pCStack_3c);
               }
             }
             else {
@@ -232,10 +230,11 @@ int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_004a7160(CElephantGun *this_
       pCStack_3c = (CCrate *)((pCStack_3c->base).actor_name + 1);
     } while ((int)pCStack_3c < (int)fStack_34);
   }
-  fStack_c4 = CStack_7c.x;
-  fStack_bc = CStack_7c.z;
-  fStack_c0 = CStack_7c.y + -0.125f;
-  core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_004c7a60(g_CFireEffectPtr);
+  CStack_c4.x = CStack_7c.x;
+  CStack_c4.z = CStack_7c.z;
+  CStack_c4.y = CStack_7c.y + -0.125f;
+  core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_004c7a60
+            (g_CFireEffectPtr,&CStack_c4,&(this_ptr->base).base.orient_matrix);
   core_sound_cpp_CSound_playActorSound_FUN_005b3a40
             (g_CSoundPtr,(CDemonActor *)this_ptr,"elephantgun.wav",&CStack_7c);
   (this_ptr->base).fire_cooldown_timer = 1.0;

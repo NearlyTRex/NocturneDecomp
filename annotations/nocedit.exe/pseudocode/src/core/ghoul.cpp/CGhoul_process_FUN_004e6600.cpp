@@ -891,7 +891,6 @@ LAB_004e7d9a:
                         ((CCharacter *)this_ptr,pCVar12,pCVar11,pCVar21,fVar22,
                          (float)in_stack_fffffc88);
       if (iVar9 != 1) {
-        in_stack_fffffc88 = (char *)0x1;
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&(this_ptr->base).base.model.motion_controller,1,1);
         (this_ptr->base).base.turn_angle_accumulator = 0.0;
@@ -939,9 +938,7 @@ LAB_004e6754:
     if ((pCVar3 != (CCharacter *)0x0) &&
        (pCVar10 = (CGhoul *)(*(((pCVar3->base).vtable._uc)->_uc).getGrabber)(pCVar3),
        pCVar10 == this_ptr)) {
-      in_stack_fffffc88 = ((this_ptr->base).victim)->actor_name;
-      core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0
-                (g_CDemonSetPtr,(CDemonActor *)in_stack_fffffc88);
+      core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,(this_ptr->base).victim);
     }
     (this_ptr->base).base.velocity.y =
          (this_ptr->base).base.velocity.y - delta_time * (float)32;
@@ -984,8 +981,7 @@ LAB_004e6754:
       this_ptr->flinch_blend_weight = 0.0;
     }
   }
-  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
-            ((CCharacter *)this_ptr,delta_time,(float)in_stack_fffffc88);
+  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr,delta_time);
   if (((float)0.01 < ABS((this_ptr->base).base.turn_angle_accumulator)) ||
      (fVar22 = (this_ptr->base).base.position_delta.y,
      fVar1 = (this_ptr->base).base.position_delta.x, fVar2 = (this_ptr->base).base.position_delta.z,

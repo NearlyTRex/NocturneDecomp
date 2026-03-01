@@ -107,7 +107,7 @@ void __cdecl core_game_cpp_CGame_processHotkeys_FUN_004dcee0(CGame *this_ptr)
       uVar8 = (uint)(iVar5 != 0);
       core_set_cpp_CDemonSet_reinitCamera_FUN_0056b7e0(g_CDemonSetPtr,uVar8,uVar8,iVar4);
     }
-    if (((this_ptr->velocity_debug_enabled != 0) && (g_CheatFlags == 0)) &&
+    if (((this_ptr->velocity_debug_enabled != 0) && (g_MovieRecordingArmed == 0)) &&
        ((iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL), iVar4 != 0 &&
         ((iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_V), iVar4 != 0 &&
          (0x1df < g_WindowHeight)))))) {

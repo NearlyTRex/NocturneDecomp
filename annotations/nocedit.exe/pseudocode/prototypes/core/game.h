@@ -7,9 +7,9 @@
 // Address: 004d76d0
 void __cdecl staticInit(void);
 
-// Original: core_game.cpp_PleaseEnterValidInteger_FUN_004d7730
+// Original: core_game.cpp_setupMovieRecording_FUN_004d7730
 // Address: 004d7730
-void __cdecl PleaseEnterValidInteger(void);
+void __cdecl setupMovieRecording(void);
 
 // Original: core_game.cpp_captureDebugMovieFrame_FUN_004d7810
 // Address: 004d7810
@@ -27,9 +27,9 @@ CGame * __cdecl CGame::dtor(CGame *this_ptr,uint flags);
 // Address: 004d7d80
 void __cdecl CGame::saveClockTime(CGame *this_ptr);
 
-// Original: core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90
+// Original: core_game.cpp_CGame_updateDT_FUN_004d7d90
 // Address: 004d7d90
-void __cdecl CGame::updateDeltaTime(CGame *this_ptr);
+void __cdecl CGame::updateDT(CGame *this_ptr);
 
 // Original: core_game.cpp_CGame_drawScreenBorder_FUN_004d7e50
 // Address: 004d7e50
@@ -67,9 +67,9 @@ int __cdecl CGame::processFudge(CGame *this_ptr,float delta_time,int additional_
 // Address: 004d8890
 void __cdecl drawCreditsLine(char *text_string);
 
-// Original: core_game.cpp_FUN_004d8910
+// Original: core_game.cpp_drawKeyBindingEntry_FUN_004d8910
 // Address: 004d8910
-void __cdecl FUN_004d8910(void);
+void __cdecl drawKeyBindingEntry(EInputCodeType key_code,char *action_name);
 
 // Original: core_game.cpp_CGame_showCustomizableKeys_FUN_004d89d0
 // Address: 004d89d0
@@ -267,14 +267,14 @@ void __cdecl CGame::finishAct(CGame *this_ptr);
 // Address: 004e4010
 void __cdecl CGame::rollCredits(CGame *this_ptr);
 
-// Original: core_game.cpp_FUN_004e4440
+// Original: core_game.cpp_copyInt_FUN_004e4440
 // Address: 004e4440
-void * __cdecl FUN_004e4440(void);
+int * __cdecl copyInt(int *dest,int *src);
 
-// Original: core_game.cpp_FUN_004e4450
+// Original: core_game.cpp_copyInt_FUN_004e4450
 // Address: 004e4450
-void * __cdecl FUN_004e4450(void);
+int * __cdecl copyInt(int *dest,int *src);
 
-// Original: core_game.cpp_FUN_004e4460
+// Original: core_game.cpp_copyInt_FUN_004e4460
 // Address: 004e4460
-void * __cdecl FUN_004e4460(void);
+int * __cdecl copyInt(int *dest,int *src);

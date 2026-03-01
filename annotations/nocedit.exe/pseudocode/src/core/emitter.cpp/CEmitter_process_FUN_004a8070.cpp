@@ -16,6 +16,7 @@ void __cdecl core_emitter_cpp_CEmitter_process_FUN_004a8070(CEmitter *this_ptr,f
   CDemonActor *pCVar2;
   CDemonSet *pCVar3;
   int iVar4;
+  CKeyFramedModel *model_ptr;
   CBoundingBox3D *pCVar5;
   CVector3f *pCVar6;
   uint uVar7;
@@ -35,15 +36,13 @@ void __cdecl core_emitter_cpp_CEmitter_process_FUN_004a8070(CEmitter *this_ptr,f
   float local_a8;
   float local_a4;
   CVector3f local_a0;
-  float local_94;
-  float local_90;
-  float local_8c;
+  CVector3f local_94;
   CVector3f CStack_88;
   CVector3f CStack_7c;
   CVector3f local_70;
   CVector3f CStack_64;
   CVector3f CStack_58;
-  CColor3f local_4c [2];
+  CVector3f local_4c [2];
   float local_2c;
   float local_28;
   float local_14;
@@ -95,7 +94,7 @@ LAB_004a811d:
     pCVar1 = &(this_ptr->base).location;
     core_fire_cpp_CFireEffect_createSpark_FUN_004c79d0
               (g_CFireEffectPtr,&pCVar1->position,(CVector3f *)0x0,0x4000,0x10000,0,0xffff);
-    core_dglobe_cpp_CDemonGlobe_setColor_FUN_00471310(&this_ptr->globe,(CColor3f *)pCVar1);
+    core_dglobe_cpp_CDemonGlobe_setPosition_FUN_00471310(&this_ptr->globe,&pCVar1->position);
     iVar8 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,0x7fff);
     (this_ptr->globe).intensity_multiplier = iVar8;
     iVar8 = (iVar8 + (iVar8 >> 0x1f) * -0x100) - (uint)((iVar8 >> 0x1f) << 7 < 0);
@@ -134,11 +133,12 @@ LAB_004a811d:
     fVar10 = (float10)fcos((float10)local_14);
     fVar11 = (float10)fsin((float10)local_28);
     fVar12 = (float10)fsin((float10)local_14);
-    local_90 = (float)((float10)local_2c * fVar11);
-    local_94 = (float)((float10)local_2c * fVar10 * fVar9);
-    local_8c = (float)(fVar12 * (float10)local_2c * fVar9);
-    core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->model);
-    core_fire_cpp_CFireEffect_createRock_FUN_004c7e60(g_CFireEffectPtr);
+    local_94.y = (float)((float10)local_2c * fVar11);
+    local_94.x = (float)((float10)local_2c * fVar10 * fVar9);
+    local_94.z = (float)(fVar12 * (float10)local_2c * fVar9);
+    model_ptr = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->model);
+    core_fire_cpp_CFireEffect_createRock_FUN_004c7e60
+              (g_CFireEffectPtr,&(this_ptr->base).location.position,&local_94,model_ptr);
     break;
   case 5:
     core_emitter_cpp_CEmitter_FUN_004a8d20(this_ptr);
@@ -174,12 +174,12 @@ LAB_004a811d:
               (g_CFireEffectPtr,&pCVar1->position,(this_ptr->emitter_size).y,0,
                (this_ptr->emitter_size).x * (float)0.5);
     if ((CLocation *)local_4c != pCVar1) {
-      local_4c[0].r = (pCVar1->position).x;
-      local_4c[0].g = (this_ptr->base).location.position.y;
-      local_4c[0].b = (this_ptr->base).location.position.z;
+      local_4c[0].x = (pCVar1->position).x;
+      local_4c[0].y = (this_ptr->base).location.position.y;
+      local_4c[0].z = (this_ptr->base).location.position.z;
     }
-    local_4c[0].g = (this_ptr->emitter_size).y * (float)0.5 + local_4c[0].g;
-    core_dglobe_cpp_CDemonGlobe_setColor_FUN_00471310(&this_ptr->globe,local_4c);
+    local_4c[0].y = (this_ptr->emitter_size).y * (float)0.5 + local_4c[0].y;
+    core_dglobe_cpp_CDemonGlobe_setPosition_FUN_00471310(&this_ptr->globe,local_4c);
     iVar8 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,0x7fff);
     (this_ptr->globe).intensity_multiplier = iVar8;
     iVar8 = (iVar8 + (iVar8 >> 0x1f) * -0x100) - (uint)((iVar8 >> 0x1f) << 7 < 0);

@@ -35,7 +35,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0
+;   engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80
 ;   shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_004a0890
 ;   shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530
@@ -68,8 +68,8 @@ section .text
     MOV EBX,dword ptr [EAX + 0x3168]    ; 004a046b
     PUSH EAX                            ; 004a0471
     MOV dword ptr [0x02cf2668],EBX      ; 004a0472 | g_FontCharacterHeight
-    CALL engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0 ; 004a0478
-        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0 ; 004a0478
+        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0(CBitFont * this_ptr, int char_code)
     MOV [0x02cf266c],EAX                ; 004a047d | g_FontCharacterWidth
     MOV EAX,[0x00679394]                ; 004a0482 | g_WindowWidth
     MOV EDX,EAX                         ; 004a0487

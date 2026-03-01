@@ -16,16 +16,16 @@ void __cdecl core_icepick_cpp_CIcePick_processDamage_FUN_004f95b0(CIcePick *this
   int iVar4;
   
   sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handles[0]);
-  if (((this_ptr->base).no_collision_flag & 0x7fffffffU) != 0) {
+  if (ABS((this_ptr->base).invincibility_timer) != 0.0) {
     damage_info->damage_amount = 0.0;
   }
-  if (g_CGamePtr->debug_flag_1 != 0) {
+  if (g_CGamePtr->god_mode_enabled != 0) {
     damage_info->damage_amount = 0.0;
   }
   if (g_CGamePtr->allow_damage_flag == 0) {
     damage_info->damage_amount = 0.0;
   }
-  (this_ptr->base).no_collision_flag = (int)3.0f;
+  (this_ptr->base).invincibility_timer = 3.0f;
   fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
   this_ptr_00 = &(this_ptr->base).base.model;
   (this_ptr->base).base.hit_points = fVar1;

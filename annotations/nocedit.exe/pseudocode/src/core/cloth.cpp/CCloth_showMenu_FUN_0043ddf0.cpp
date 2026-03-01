@@ -48,8 +48,8 @@ void __cdecl core_cloth_cpp_CCloth_showMenu_FUN_0043ddf0(CCloth *this_ptr)
       break;
     case 0x32:
       iVar3 = shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
-                        (g_CEditorToolsPtr,"Save cloth file","models",0x618a40,
-                         (int)local_178);
+                        (g_CEditorToolsPtr,"Save cloth file","models",
+                         "cth",local_178,1);
       if (iVar3 != 0) {
         core_cloth_cpp_CCloth_save_FUN_00439260(this_ptr,local_178);
       }

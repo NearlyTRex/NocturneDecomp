@@ -16,7 +16,7 @@ struct CDemonActor;
 // Ghidra size: 0x1fbd4 (130004 bytes)
 typedef struct CHero {
     CCharacter base; // 0x0
-    int no_collision_flag; // 0xbe24
+    float invincibility_timer; // 0xbe24
     int control_type; // 0xbe28
     SPlayerControl player_control; // 0xbe2c
     CPathMap path_map; // 0xbe58

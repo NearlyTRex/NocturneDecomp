@@ -2,11 +2,11 @@
 // Address: 004bfe90
 // Address Range: [[004bfe90, 004c00b4] [004c0111, 004c0136]]
 // Convention: __cdecl
-// Signature: void __cdecl core_fire_cpp_CStake_spawn_FUN_004bfe90(CStake *this_ptr,float spawn_scale,CVector3f *orientation_angles,CVector3f *launch_direction,CVector3f *spawn_position,CVector3f *spawn_velocity)
+// Signature: void __cdecl core_fire_cpp_CStake_spawn_FUN_004bfe90(CStake *this_ptr,CVector3f *spawn_position,CVector3f *orientation_angles,CVector3f *surface_normal)
 
 #include "nocturne.h"
 
-void __cdecl core_fire_cpp_CStake_spawn_FUN_004bfe90(CStake *this_ptr,float spawn_scale,CVector3f *orientation_angles,CVector3f *launch_direction,CVector3f *spawn_position,CVector3f *spawn_velocity)
+void __cdecl core_fire_cpp_CStake_spawn_FUN_004bfe90(CStake *this_ptr,CVector3f *spawn_position,CVector3f *orientation_angles,CVector3f *surface_normal)
 
 {
   CKeyFramedModel *pCVar1;
@@ -35,11 +35,11 @@ void __cdecl core_fire_cpp_CStake_spawn_FUN_004bfe90(CStake *this_ptr,float spaw
   local_38.y = 0.0;
   local_38.z = 10.0;
   core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0(&local_b4,&local_44,&local_38);
-  local_14 = (launch_direction->z * local_44.z +
-             launch_direction->x * local_44.x + launch_direction->y * local_44.y) * 2.0f;
-  local_68 = launch_direction->x * local_14;
-  local_64 = launch_direction->y * local_14;
-  local_60 = launch_direction->z * local_14;
+  local_14 = (surface_normal->z * local_44.z +
+             surface_normal->x * local_44.x + surface_normal->y * local_44.y) * 2.0f;
+  local_68 = surface_normal->x * local_14;
+  local_64 = surface_normal->y * local_14;
+  local_60 = surface_normal->z * local_14;
   local_20.x = local_68 - local_44.x;
   local_20.y = local_64 - local_44.y;
   local_20.z = local_60 - local_44.z;
@@ -74,7 +74,7 @@ void __cdecl core_fire_cpp_CStake_spawn_FUN_004bfe90(CStake *this_ptr,float spaw
     local_74.z = local_2c.z;
   }
   core_box_cpp_CBox_setupCorners_FUN_0041dd20
-            (&this_ptr->physics_box,(CVector3f *)spawn_scale,orientation_angles,&local_74,2.0);
+            (&this_ptr->physics_box,spawn_position,orientation_angles,&local_74,2.0);
   local_5c.x = core_actor_cpp_getRandomFloat_FUN_0040cc10(-9.424778,9.424778);
   local_5c.z = 0.0;
   local_10 = local_5c.x;

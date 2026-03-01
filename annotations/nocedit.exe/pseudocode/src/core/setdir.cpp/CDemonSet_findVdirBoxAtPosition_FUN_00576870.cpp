@@ -15,7 +15,7 @@ int __cdecl core_setdir_cpp_CDemonSet_findVdirBoxAtPosition_FUN_00576870(CDemonS
   iVar2 = 0;
   if (0 < this_ptr->vdir_box_count) {
     do {
-      iVar1 = core_setdir_cpp_CDemonSet_FUN_005762a0(this_ptr);
+      iVar1 = core_setdir_cpp_CDemonSet_isPointInVdirBox_FUN_005762a0(this_ptr,iVar2,position);
       if (iVar1 != 0) {
         iVar2 = core_setdir_cpp_CDemonSet_findVdirBoxRoot_FUN_00576820(this_ptr,iVar2);
         return iVar2;

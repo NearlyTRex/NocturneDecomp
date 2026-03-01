@@ -41,10 +41,10 @@ void __cdecl core_flame_cpp_CFlame_processInEditor_FUN_004caf60(CFlame *this_ptr
       (this_ptr->flame_size).z = 0.1;
     }
     (this_ptr->flame_size).z = (this_ptr->flame_size).x;
-    core_flame_cpp_CFlame_FUN_004cad90(this_ptr);
+    core_flame_cpp_CFlame_updateGlobe_FUN_004cad90(this_ptr);
     return;
   }
   core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(&this_ptr->base);
-  core_flame_cpp_CFlame_FUN_004cad90(this_ptr);
+  core_flame_cpp_CFlame_updateGlobe_FUN_004cad90(this_ptr);
   return;
 }

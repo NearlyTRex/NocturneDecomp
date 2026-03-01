@@ -14,9 +14,9 @@
 #include "types/classes/CStrList.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
-#include "types/structs/SEdgeData.h"
 #include "types/structs/SIntersectXZCylinder.h"
 #include "types/structs/SMRGLTextureBasic.h"
+#include "types/structs/SSoftwareEdge.h"
 #include "types/structs/STriangleRef.h"
 
 // =============================================================================
@@ -29,17 +29,17 @@ SMRGLTextureBasic * __cdecl core_dskybox_cpp_initializeSkyboxTexture_FUN_0049007
 void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_004900b0(SMRGLTextureBasic *sky_texture,int u_coord,int v_coord,int vertex_index);
 void __cdecl core_dskybox_cpp_renderSkyDome_FUN_004901f0(SMRGLTextureBasic *sky_texture,char *texture_name,int brightness_factor);
 void __mmx_save core_dstrender_cpp_saveMMXRegisters_FUN_004906b0 (ulonglong mm0,ulonglong mm1,ulonglong mm2,ulonglong mm3,ulonglong mm4,ulonglong mm5, ulonglong mm6,ulonglong mm7);
-void __cdecl core_dstrender_cpp_renderDepthOnlyReversed_FUN_004906e9(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y);
-void __cdecl core_dstrender_cpp_renderDepthOnlyStandard_FUN_0049072f(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y);
-void __cdecl core_dstrender_cpp_renderDepth16BitConditional_FUN_0049077d(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y);
-void __cdecl core_dstrender_cpp_renderTexturedAlphaMMXScanline_FUN_004907e7(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y);
-void __cdecl core_dstrender_cpp_renderZBufferFill16xUnrolled_FUN_00490902(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y);
-void __cdecl core_dstrender_cpp_renderSolidColorDepth16xUnrolled_FUN_00490a58(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y);
-void __cdecl core_dstrender_cpp_renderDepthInterlacedProfiled_FUN_00490c37(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y);
-void __cdecl core_dstrender_cpp_renderScreenDepthTestInterlacedProfiled_FUN_00490cb5(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y);
-void __cdecl core_dstrender_cpp_renderDepthTestStatistics16xUnrolled_FUN_00490d35(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y);
-void __cdecl core_dstrender_cpp_renderPerspectiveCorrectTextured16xCached_FUN_00490ec0(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y);
-void __cdecl core_dstrender_cpp_renderTexturedDecalMMXScanline_FUN_0049169d(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y);
+void __cdecl core_dstrender_cpp_renderDepthOnlyReversed_FUN_004906e9(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
+void __cdecl core_dstrender_cpp_renderDepthOnlyStandard_FUN_0049072f(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
+void __cdecl core_dstrender_cpp_renderDepth16BitConditional_FUN_0049077d(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
+void __cdecl core_dstrender_cpp_renderTexturedAlphaMMXScanline_FUN_004907e7(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
+void __cdecl core_dstrender_cpp_renderZBufferFill16xUnrolled_FUN_00490902(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
+void __cdecl core_dstrender_cpp_renderSolidColorDepth16xUnrolled_FUN_00490a58(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
+void __cdecl core_dstrender_cpp_renderDepthInterlacedProfiled_FUN_00490c37(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
+void __cdecl core_dstrender_cpp_renderScreenDepthTestInterlacedProfiled_FUN_00490cb5(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
+void __cdecl core_dstrender_cpp_renderDepthTestStatistics16xUnrolled_FUN_00490d35(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
+void __cdecl core_dstrender_cpp_renderPerspectiveCorrectTextured16xCached_FUN_00490ec0(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
+void __cdecl core_dstrender_cpp_renderTexturedDecalMMXScanline_FUN_0049169d(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 void __cdecl core_dstrender_cpp_blendBilerpLightmapToTexture64BitOutput_FUN_004917bc(ulonglong *output_buffer,ulonglong *texture_buffer,byte *texture_indices, byte *lightmap_indices,int pixel_count);
 void __cdecl core_dstrender_cpp_blendBilerpLightmapToTexture64BitOutput_FUN_00491c9a(ulonglong *output_buffer,ulonglong *texture_buffer,byte *texture_indices, byte *lightmap_indices,int pixel_count);
 void __cdecl core_dstrender_cpp_blendSinglePixelLightmapNoRoundingMMX_FUN_00491f90(uint *output_pixel,uint *texture_pixel,byte *texture_index,byte *lightmap_index);
@@ -58,7 +58,7 @@ void __cdecl core_dstrender_cpp_blendBilerpTextureWithLightmapMMX_FUN_00493450(u
 void __cdecl core_dstrender_cpp_blendSinglePixelLightmapMMX_FUN_004937b6(ushort *output_pixel,uint *texture_pixel,byte *texture_index,byte *lightmap_index);
 void __cdecl core_dstrender_cpp_blendTextureWithLightmapMMX_FUN_00493860(uint *output_buffer,uint *texture_buffer,byte *texture_indices, byte *lightmap_indices,int pixel_count);
 void __cdecl core_dstrender_cpp_blendLightmapToTextureMMX_FUN_00493dc4(ulonglong *output_buffer,ulonglong *texture_buffer,byte *texture_indices, byte *lightmap_indices,int pixel_count);
-void __cdecl core_dstrender_cpp_renderPerspectiveTexturedScanline_FUN_004940e9(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y);
+void __cdecl core_dstrender_cpp_renderPerspectiveTexturedScanline_FUN_004940e9(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 void __cdecl core_dtrace_cpp_staticInit_FUN_004941e0(void);
 CDemonRaytrace * __cdecl core_dtrace_cpp_CDemonRaytrace_ctor_FUN_00494200(CDemonRaytrace *this_ptr);
 CDemonRaytrace * __cdecl core_dtrace_cpp_CDemonRaytrace_dtor_FUN_00494240(CDemonRaytrace *this_ptr,uint flags);
@@ -156,7 +156,7 @@ void __cdecl shape_edittool_cpp_plotPixelWithClipping_FUN_0049d190(int x_coord,i
 void __cdecl shape_edittool_cpp_initEditorFontMetrics_FUN_0049d1f0(void);
 char * __cdecl shape_edittool_cpp_extractTabDelimitedField_FUN_0049d250(char *source_str,char *dest_buffer);
 void __cdecl shape_edittool_cpp_drawDashedLine_FUN_0049d290(int x1,int y1,int x2,int y2,int dash_length);
-void __cdecl shape_edittool_cpp_CInputString_init_FUN_0049d3d0(CInputString *this_ptr,char *source_string,int max_length,int param4,int param5, int render_mode);
+void __cdecl shape_edittool_cpp_CInputString_init_FUN_0049d3d0(CInputString *this_ptr,char *source_string,int max_length,int mask_mode);
 void __cdecl shape_edittool_cpp_CInputString_setSelectionToCursor_FUN_0049d460(CInputString *this_ptr);
 void __cdecl shape_edittool_cpp_CInputString_insertChar_FUN_0049d480(CInputString *this_ptr,char character,int advance_cursor);
 void __cdecl shape_edittool_cpp_CInputString_deleteRange_FUN_0049d510(CInputString *this_ptr,int start_pos,int end_pos);
@@ -167,7 +167,7 @@ void __cdecl shape_edittool_cpp_CInputString_pasteFromClipboard_FUN_0049d660(CIn
 void __cdecl shape_edittool_cpp_CInputString_handleKeyboardInput_FUN_0049d6c0(CInputString *this_ptr);
 int __cdecl shape_edittool_cpp_CInputString_calcX_FUN_0049d8f0(CInputString *this_ptr,int char_index);
 void __cdecl shape_edittool_cpp_CInputString_draw_FUN_0049d9b0(CInputString *this_ptr,int x_pos,int y_pos);
-int __cdecl shape_edittool_cpp_showTextInputDialog_FUN_0049db10(int dialog_mode,char *prompt_text,char *input_buffer,int buffer_size,int dialog_flags );
+int __cdecl shape_edittool_cpp_showTextInputDialog_FUN_0049db10(char *dialog_title,char *input_buffer,int max_length,int flags,int dialog_mode);
 CEditorTools * __cdecl shape_edittool_cpp_CEditorTools_ctor_FUN_0049df80(CEditorTools *this_ptr);
 CEditorTools * __cdecl shape_edittool_cpp_CEditorTools_dtor_FUN_0049dfb0(CEditorTools *this_ptr,uint flags);
 void __cdecl shape_edittool_cpp_CEditorTools_init_FUN_0049e020(CEditorTools *this_ptr);
@@ -187,5 +187,5 @@ int __cdecl shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0(CEditor
 int __cdecl shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f180(CEditorTools *this_ptr,char *format,...);
 int __cdecl shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270(CEditorTools *this_ptr,char *search_pattern,char *directory,char *target_filename, int auto_select_flag,uint unknown);
 int __cdecl shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420(CEditorTools *this_ptr,char *file_pattern,int include_files,char *initial_path);
-int __cdecl shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70(CEditorTools *this_ptr,char *prompt_text,char *filename_buffer,int buffer_size, int show_directory);
+int __cdecl shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70(CEditorTools *this_ptr,char *dialog_title,char *directory_path,char *file_extension, char *output_buffer,uint flags);
 

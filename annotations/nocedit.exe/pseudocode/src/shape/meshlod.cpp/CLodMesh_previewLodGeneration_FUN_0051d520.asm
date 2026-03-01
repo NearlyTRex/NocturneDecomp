@@ -50,7 +50,7 @@
 ; Called Functions:
 ;   core_box.cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_00420840
 ;   core_game.cpp_CGame_saveClockTime_FUN_004d7d80
-;   core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90
+;   core_game.cpp_CGame_updateDT_FUN_004d7d90
 ;   crt_math.c_round_FUN_005fe6b0
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
@@ -313,8 +313,8 @@ section .text
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
     MOV EBX,dword ptr [0x0067b654]      ; 0051d7b5 | g_CGameInstance | g_CGamePtr
     PUSH EBX                            ; 0051d7bb | g_CGameInstance
-    CALL core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90 ; 0051d7bc
-        ;   XREF to: 004d7d90 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90(CGame * this_ptr)
+    CALL core_game.cpp_CGame_updateDT_FUN_004d7d90 ; 0051d7bc
+        ;   XREF to: 004d7d90 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_updateDT_FUN_004d7d90(CGame * this_ptr)
     ADD ESP,0x4                         ; 0051d7c1
     PUSH 0x1f                           ; 0051d7c4
     MOV EAX,[0x0068416c]                ; 0051d7c6 | g_CSpotViewInstance | g_CSpotViewPtr
@@ -467,14 +467,14 @@ section .text
         ;   Label: LAB_0051d94c
     PUSH ESI                            ; 0051d94e
     CALL shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0 ; 0051d94f
-        ;   XREF to: 0051ead0 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0(CLodMesh * this_ptr, int enable_texture_lookup, int use_atlas_mode)
+        ;   XREF to: 0051ead0 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0(CLodMesh * this_ptr, int enable_texture_lookup)
     JMP 0x0051d5f4                      ; 0051d954
         ;   XREF to: 0051d5f4 (UNCONDITIONAL_JUMP)  ; LAB_0051d5f4
     PUSH 0x1                            ; 0051d959
         ;   Label: LAB_0051d959
     PUSH ESI                            ; 0051d95b
     CALL shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0 ; 0051d95c
-        ;   XREF to: 0051ead0 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0(CLodMesh * this_ptr, int enable_texture_lookup, int use_atlas_mode)
+        ;   XREF to: 0051ead0 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0(CLodMesh * this_ptr, int enable_texture_lookup)
     JMP 0x0051d5f4                      ; 0051d961
         ;   XREF to: 0051d5f4 (UNCONDITIONAL_JUMP)  ; LAB_0051d5f4
     JBE 0x0051d94c                      ; 0051d966

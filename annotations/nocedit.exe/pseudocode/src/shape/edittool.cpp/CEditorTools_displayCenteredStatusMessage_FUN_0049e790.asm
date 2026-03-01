@@ -40,7 +40,7 @@
 ;   crt_stdio.c__vsprintf_FUN_005fdba8
 ;   engine_3d.c_setRenderAlpha_FUN_00406d80
 ;   engine_font.cpp_CBitFont_drawTextCenter_FUN_004cdde0
-;   engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0
+;   engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
 ;   wincore_windll.cpp_clearScreen_FUN_005b3e70
 ;
@@ -63,8 +63,8 @@ section .text
     MOV EDX,dword ptr [EAX + 0x3168]    ; 0049e7ab
     PUSH EAX                            ; 0049e7b1
     MOV dword ptr [0x02cf2668],EDX      ; 0049e7b2 | g_FontCharacterHeight
-    CALL engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0 ; 0049e7b8
-        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0 ; 0049e7b8
+        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 0049e7bd
     MOV [0x02cf266c],EAX                ; 0049e7c0 | g_FontCharacterWidth
     LEA EAX,[ESP + 0x20]                ; 0049e7c5

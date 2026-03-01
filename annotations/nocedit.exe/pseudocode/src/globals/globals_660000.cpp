@@ -4402,13 +4402,13 @@ CWeapon_vtable DAT_00661260 = {
     .updateLighting = (CWeapon_updateLighting *)core_weapon_cpp_CWeapon_updateLighting_FUN_005ee4a0
 };
 CWeapon_vtable DAT_00662B70 = {
-    .onFired = (CWeapon_onFired *)core_shotgun_cpp_CShotgun_FUN_005887a0,
+    .onFired = (CWeapon_onFired *)core_shotgun_cpp_CShotgun_onFired_FUN_005887a0,
     .setWeaponState = (CWeapon_setWeaponState *)core_weapon_cpp_CWeapon_setWeaponState_FUN_005ee640,
     .getMuzzlePoint = (CWeapon_getMuzzlePoint *)core_weapon_cpp_CWeapon_getMuzzlePoint_FUN_005ee670,
     .fire = (CWeapon_fire *)core_shotgun_cpp_CShotgun_fire_FUN_00588060,
     .isReadyToFire = (CWeapon_isReadyToFire *)core_weapon_cpp_CWeapon_isReadyToFire_FUN_005ee710,
-    .getDamage = (CWeapon_getDamage *)core_shotgun_cpp_CShotgun_FUN_005888b0,
-    .fireProjectile = (CWeapon_fireProjectile *)core_shotgun_cpp_CShotgun_FUN_005888f0,
+    .getDamage = (CWeapon_getDamage *)core_shotgun_cpp_CShotgun_getDamage_FUN_005888b0,
+    .fireProjectile = (CWeapon_fireProjectile *)core_shotgun_cpp_CShotgun_fireProjectile_FUN_005888f0,
     .updateLighting = (CWeapon_updateLighting *)core_weapon_cpp_CWeapon_updateLighting_FUN_005ee4a0
 };
 CWeapon_vtable DAT_00662CC0 = {

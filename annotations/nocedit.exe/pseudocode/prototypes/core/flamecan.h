@@ -23,9 +23,9 @@ CFlameCan * __cdecl CFlameCan::ctor(CFlameCan *this_ptr);
 // Address: 004cb200
 void __cdecl CFlameCan::setup(CFlameCan *this_ptr);
 
-// Original: core_flamecan.cpp_CFlameCan_FUN_004cb340
+// Original: core_flamecan.cpp_CFlameCan_ignite_FUN_004cb340
 // Address: 004cb340
-void __cdecl CFlameCan(CFlameCan *this_ptr);
+void __cdecl CFlameCan::ignite(CFlameCan *this_ptr);
 
 // Original: core_flamecan.cpp_CFlameCan_process_FUN_004cb390
 // Address: 004cb390

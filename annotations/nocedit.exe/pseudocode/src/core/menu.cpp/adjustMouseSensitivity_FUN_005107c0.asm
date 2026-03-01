@@ -33,7 +33,7 @@
 ;   engine_2d.c_fillRectColor_FUN_00403170
 ;   engine_2d.c_fillRectWithBorder_FUN_00403200
 ;   engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_004cdf30
-;   engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0
+;   engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0
 ;   shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_004a0890
 ;   shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80
 ;   shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0
@@ -197,8 +197,8 @@ section .text
     MOV EBX,dword ptr [0x02d02564]      ; 0051096b | g_ClipBottom
     PUSH EDI                            ; 00510971
     ADD EBX,EDX                         ; 00510972
-    CALL engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0 ; 00510974
-        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0 ; 00510974
+        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0(CBitFont * this_ptr, int char_code)
     MOV EDX,EBX                         ; 00510979
     SUB EDX,EAX                         ; 0051097b
     MOV EAX,EDX                         ; 0051097d

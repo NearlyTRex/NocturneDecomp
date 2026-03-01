@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SEdgeData * __cdecl core_zombie_cpp_FUN_005fcf80(void)
+; SSoftwareEdge * __cdecl core_zombie_cpp_FUN_005fcf80(void)
 ;
 ;
 ; Referenced Globals:
 ;   int g_RasterizerEdgeCount
-;   SEdgeData[16] g_RasterizerEdgeArray
-;   undefined4 g_RasterizerEdgeArray[1].y_start
+;   SSoftwareEdge[16] g_RasterizerEdgeArray
+;   undefined4 g_RasterizerEdgeArray[1].base.y_min
 ;
 ; *****************************************************************************
 
@@ -24,7 +24,7 @@ section .text
     TEST EBX,EBX                        ; 005fcf97
     JLE 0x005fcfab                      ; 005fcf99
         ;   XREF to: 005fcfab (CONDITIONAL_JUMP)  ; LAB_005fcfab
-    CMP ECX,dword ptr [EAX]             ; 005fcf9b | g_RasterizerEdgeArray | g_RasterizerEdgeArray[1].y_start
+    CMP ECX,dword ptr [EAX]             ; 005fcf9b | g_RasterizerEdgeArray | g_RasterizerEdgeArray[1].base.y_min
         ;   Label: LAB_005fcf9b
     JNZ 0x005fcfa3                      ; 005fcf9d
         ;   XREF to: 005fcfa3 (CONDITIONAL_JUMP)  ; LAB_005fcfa3
@@ -33,7 +33,7 @@ section .text
         ;   XREF to: 005fcfad (CONDITIONAL_JUMP)  ; LAB_005fcfad
     INC EDX                             ; 005fcfa3
         ;   Label: LAB_005fcfa3
-    ADD EAX,0x48                        ; 005fcfa4 | g_RasterizerEdgeArray[1].y_start
+    ADD EAX,0x48                        ; 005fcfa4 | g_RasterizerEdgeArray[1].base.y_min
     CMP EDX,EBX                         ; 005fcfa7
     JL 0x005fcf9b                       ; 005fcfa9
         ;   XREF to: 005fcf9b (CONDITIONAL_JUMP)  ; LAB_005fcf9b

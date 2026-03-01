@@ -111,7 +111,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showScenePreview_FUN_0057a940(CDemonSet 
     wincore_windll_cpp_unlockFrame_FUN_005b7250(0);
     wincore_wddvmem_cpp_closeScreenDevice_FUN_005ed630();
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-    core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
+    core_game_cpp_CGame_updateDT_FUN_004d7d90(g_CGamePtr);
     iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_ESCAPE);
     if (iVar2 != 0) break;
     iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_R);

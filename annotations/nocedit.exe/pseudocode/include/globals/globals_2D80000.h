@@ -57,7 +57,6 @@ extern char g_PrevKeyboardState[600];
 
 // float
 extern float g_OverlayDisplayTimer;
-extern float FLOAT_02d831bc;
 extern float g_IrisFadeRadius;
 
 // int
@@ -66,14 +65,15 @@ extern int g_InputResetFlag;
 extern int g_StoredCameraValue;
 extern int g_CheatSystemEnabled;
 extern int g_HasSavedLightState;
-extern int g_CheatFlags;
-extern int g_DebugRecording;
-extern int g_DebugRecordingParams;
-extern int INT_02d831c0;
-extern int INT_02d831c4;
-extern int INT_02d831c8;
-extern int INT_02d831cc;
-extern int INT_02d831d0;
+extern int g_MovieRecordingArmed;
+extern int g_MovieRecordingActive;
+extern int g_MovieRecordingMaxFrames;
+extern int g_MovieRecordingFrameCounter;
+extern int g_SoundDebugEnabled;
+extern int g_HelpCursorX;
+extern int g_HelpCursorY;
+extern int g_HelpLineHeight;
+extern int g_HelpCharWidth;
 extern int g_IrisFadeType;
 extern int g_IrisFadeCenterX;
 extern int g_IrisFadeCenterY;

@@ -35,7 +35,7 @@ int __cdecl core_menu_cpp_checkAndCalibrateGamepad_FUN_00511840(void)
     ;
     iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(g_MediumFont,pcVar2);
     iStack_24 = 0x140 - iVar3 / 2;
-    iVar3 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(g_MediumFont,0x58);
+    iVar3 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(g_MediumFont,0x58);
     engine_font_cpp_CBitFont_drawText_FUN_004cda80
               (g_MediumFont,pcVar2,iStack_24,0xf0 - iVar3 / 2,7,0);
     _sprintf(acStack_224,"%d,%d,%x",g_JoyXPos,g_JoyYPos,g_JoyButtons)
@@ -57,7 +57,7 @@ int __cdecl core_menu_cpp_checkAndCalibrateGamepad_FUN_00511840(void)
     ;
     iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(g_MediumFont,pcVar2);
     iStack_20 = 0x140 - iVar3 / 2;
-    iVar3 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(g_MediumFont,0x58);
+    iVar3 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(g_MediumFont,0x58);
     engine_font_cpp_CBitFont_drawText_FUN_004cda80
               (g_MediumFont,pcVar2,iStack_20,0xf0 - iVar3 / 2,7,0);
     _sprintf(acStack_124,"%d,%d,%x",g_JoyXPos,g_JoyYPos,g_JoyButtons)

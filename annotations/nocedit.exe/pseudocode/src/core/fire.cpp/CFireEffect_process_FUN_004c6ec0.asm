@@ -34,7 +34,6 @@
 ;   core_fire.cpp_CBulletTrail_process_FUN_004c21d0
 ;   core_fire.cpp_CCrater_process_FUN_004c4550
 ;   core_fire.cpp_CExplosion_process_FUN_004c3ac0
-;   core_fire.cpp_CGunFlame_initProcess_FUN_004c4b00
 ;   core_fire.cpp_CGunFlame_process_FUN_004c4f60
 ;   core_fire.cpp_CLightningBolt_process_FUN_004c56e0
 ;   core_fire.cpp_CMuzzleFlash_process_FUN_004c1a00
@@ -42,6 +41,7 @@
 ;   core_fire.cpp_CStake_process_FUN_004c0210
 ;   core_fire.cpp_CToss_process_FUN_004c4000
 ;   core_fire.cpp_CTrail_process_FUN_004c5e40
+;   core_fire.cpp_initProcess_FUN_004c4b00
 ;   core_fire.cpp_updateTextureAnimCounts_FUN_004c3870
 ;
 ; *****************************************************************************
@@ -265,8 +265,8 @@ section .text
     TEST ESI,ESI                        ; 004c70a9
     JNZ 0x004c70b7                      ; 004c70ab
         ;   XREF to: 004c70b7 (CONDITIONAL_JUMP)  ; LAB_004c70b7
-    CALL core_fire.cpp_CGunFlame_initProcess_FUN_004c4b00 ; 004c70ad
-        ;   XREF to: 004c4b00 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CGunFlame_initProcess_FUN_004c4b00(CGunFlame * this_ptr)
+    CALL core_fire.cpp_initProcess_FUN_004c4b00 ; 004c70ad
+        ;   XREF to: 004c4b00 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_initProcess_FUN_004c4b00()
     MOV ESI,0x1                         ; 004c70b2
     PUSH EBX                            ; 004c70b7 | g_GunFlamePool | DAT_02d6cf8c
         ;   Label: LAB_004c70b7

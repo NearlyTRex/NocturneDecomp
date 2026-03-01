@@ -33,7 +33,7 @@
 ; Called Functions:
 ;   core_game.cpp_CGame_rollCredits_FUN_004e4010
 ;   core_game.cpp_CGame_saveClockTime_FUN_004d7d80
-;   core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90
+;   core_game.cpp_CGame_updateDT_FUN_004d7d90
 ;   core_inivar.cpp_writeIniData_FUN_004fc510
 ;   core_menu.cpp_configureCustomKeyBindings_FUN_005138e0
 ;   core_menu.cpp_configureCustomKeys_FUN_00511890
@@ -83,8 +83,8 @@ section .text
     MOV EDI,dword ptr [0x0067b654]      ; 00512d73 | g_CGamePtr
         ;   Label: LAB_00512d73
     PUSH EDI                            ; 00512d79 | g_CGameInstance
-    CALL core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90 ; 00512d7a
-        ;   XREF to: 004d7d90 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90(CGame * this_ptr)
+    CALL core_game.cpp_CGame_updateDT_FUN_004d7d90 ; 00512d7a
+        ;   XREF to: 004d7d90 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_updateDT_FUN_004d7d90(CGame * this_ptr)
     MOV EAX,[0x0067b654]                ; 00512d7f | g_CGamePtr
     ADD ESP,0x4                         ; 00512d84
     MOV EAX,dword ptr [EAX + 0x264]     ; 00512d87 | g_CGameInstance.delta_time_float

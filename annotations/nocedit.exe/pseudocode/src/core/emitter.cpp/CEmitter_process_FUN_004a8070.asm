@@ -57,7 +57,7 @@
 ;   core_actor.cpp_getRandomInt_FUN_0040cc70
 ;   core_charactr.cpp_CCharacter_igniteBone_FUN_0042b5b0
 ;   core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_00471360
-;   core_dglobe.cpp_CDemonGlobe_setColor_FUN_00471310
+;   core_dglobe.cpp_CDemonGlobe_setPosition_FUN_00471310
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
 ;   core_emitter.cpp_CEmitter_FUN_004a8d20
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
@@ -175,8 +175,8 @@ section .text
     PUSH ESI                            ; 004a819d
     LEA ESI,[EBX + 0x44c]               ; 004a819e
     PUSH ESI                            ; 004a81a4
-    CALL core_dglobe.cpp_CDemonGlobe_setColor_FUN_00471310 ; 004a81a5
-        ;   XREF to: 00471310 (UNCONDITIONAL_CALL)  ; void core_dglobe.cpp_CDemonGlobe_setColor_FUN_00471310(CDemonGlobe * this_ptr, CColor3f * color)
+    CALL core_dglobe.cpp_CDemonGlobe_setPosition_FUN_00471310 ; 004a81a5
+        ;   XREF to: 00471310 (UNCONDITIONAL_CALL)  ; void core_dglobe.cpp_CDemonGlobe_setPosition_FUN_00471310(CDemonGlobe * this_ptr, CVector3f * position)
     ADD ESP,0x8                         ; 004a81aa
     PUSH 0x7fff                         ; 004a81ad
     PUSH 0x0                            ; 004a81b2
@@ -397,7 +397,7 @@ section .text
     MOV EDI,dword ptr [0x0067a3d0]      ; 004a8468 | g_CFireEffectPtr
     PUSH EDI                            ; 004a846e | g_CFireEffectInstance
     CALL core_fire.cpp_CFireEffect_createRock_FUN_004c7e60 ; 004a846f
-        ;   XREF to: 004c7e60 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createRock_FUN_004c7e60(CFireEffect * this_ptr)
+        ;   XREF to: 004c7e60 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createRock_FUN_004c7e60(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, CKeyFramedModel * model_ptr)
     ADD ESP,0x10                        ; 004a8474
     JMP 0x004a8201                      ; 004a8477
         ;   XREF to: 004a8201 (UNCONDITIONAL_JUMP)  ; caseD_a
@@ -534,8 +534,8 @@ section .text
     PUSH ESI                            ; 004a85fb
     FSTP ST1                            ; 004a85fc
     FSTP float ptr [ESP + 0xa8]         ; 004a85fe
-    CALL core_dglobe.cpp_CDemonGlobe_setColor_FUN_00471310 ; 004a8605
-        ;   XREF to: 00471310 (UNCONDITIONAL_CALL)  ; void core_dglobe.cpp_CDemonGlobe_setColor_FUN_00471310(CDemonGlobe * this_ptr, CColor3f * color)
+    CALL core_dglobe.cpp_CDemonGlobe_setPosition_FUN_00471310 ; 004a8605
+        ;   XREF to: 00471310 (UNCONDITIONAL_CALL)  ; void core_dglobe.cpp_CDemonGlobe_setPosition_FUN_00471310(CDemonGlobe * this_ptr, CVector3f * position)
     ADD ESP,0x8                         ; 004a860a
     PUSH 0x7fff                         ; 004a860d
     PUSH 0x0                            ; 004a8612

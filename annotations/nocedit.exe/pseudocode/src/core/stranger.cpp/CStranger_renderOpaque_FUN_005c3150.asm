@@ -66,7 +66,7 @@
 ;   core_charactr.cpp_CCharacter_renderOpaque_FUN_0042a2c0
 ;   core_cloth.cpp_CClothList_reset_FUN_0043c070
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
-;   core_fire.cpp_CFireEffect_createLaserBeamPath_FUN_004c7f80
+;   core_fire.cpp_CFireEffect_createLaserPath_FUN_004c7f80
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_005741b0
 ;   core_setcolid.cpp_CDemonSet_init_FUN_00574180
 ;   core_setcolid.cpp_CDemonSet_iterativeRaycast_FUN_00572800
@@ -206,8 +206,8 @@ section .text
     PUSH ESI                            ; 005c3295
     MOV ESI,dword ptr [0x0067a3d0]      ; 005c3296 | g_CFireEffectPtr
     PUSH ESI                            ; 005c329c | g_CFireEffectInstance
-    CALL core_fire.cpp_CFireEffect_createLaserBeamPath_FUN_004c7f80 ; 005c329d
-        ;   XREF to: 004c7f80 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLaserBeamPath_FUN_004c7f80(CFireEffect * this_ptr, CVector3f * start_position, CVector3f * velocity, float beam_width, ...)
+    CALL core_fire.cpp_CFireEffect_createLaserPath_FUN_004c7f80 ; 005c329d
+        ;   XREF to: 004c7f80 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLaserPath_FUN_004c7f80(CFireEffect * this_ptr, CVector3f * start_position, CVector3f * velocity, float beam_width, ...)
     ADD ESP,0x28                        ; 005c32a2
     MOV EDI,dword ptr [0x006810c8]      ; 005c32a5 | g_CDemonSetPtr
     PUSH EDI                            ; 005c32ab | g_CDemonSetInstance

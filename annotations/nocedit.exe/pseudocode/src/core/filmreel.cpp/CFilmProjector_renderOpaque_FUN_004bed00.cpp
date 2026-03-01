@@ -30,9 +30,9 @@ int __cdecl core_filmreel_cpp_CFilmProjector_renderOpaque_FUN_004bed00(CFilmProj
   CStack_24.z = 0;
   CStack_24.y = 0x40000000;
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-            (g_CDemonRendererPtr2,(CVector3i *)&g_ZeroVector,&CStack_24);
+            (g_CDemonRendererPtr2,&g_ZeroVector.i,&CStack_24);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-            (g_CDemonRendererPtr2,&CStack_18,(CVector3i *)&g_ZeroVector);
+            (g_CDemonRendererPtr2,&CStack_18,&g_ZeroVector.i);
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20(&this_ptr->model,0.0,-1);
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();

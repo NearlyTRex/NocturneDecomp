@@ -720,8 +720,8 @@ section .text
     PUSH 0x58                           ; 00508095
     MOV ECX,dword ptr [0x020a5720]      ; 00508097 | g_ThemeFont
     PUSH ECX                            ; 0050809d
-    CALL engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0 ; 0050809e
-        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0 ; 0050809e
+        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 005080a3
     LEA EAX,[ESP + 0x700]               ; 005080a6
     PUSH EAX                            ; 005080ad

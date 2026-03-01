@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 149,
-    "complexity_score": 95,
+    "complexity_score": 96,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 9,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 70,
+    "pseudocode_lines": 71,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 219
+    "total_lines": 220
   },
   "cross_references": [
     {
@@ -37,7 +37,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_dcamera.cpp_renderVolumetricLightScanline_FUN_00450440",
-    "signature": "void __cdecl core_dcamera_cpp_renderVolumetricLightScanline_FUN_00450440(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)"
+    "signature": "void __cdecl core_dcamera_cpp_renderVolumetricLightScanline_FUN_00450440(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)"
   },
   "function_calls": [],
   "globals": [
@@ -202,14 +202,14 @@
         "name": "left_edge",
         "offset": 4,
         "size": 4,
-        "type": "SEdgeData *"
+        "type": "SSoftwareEdge *"
       },
       {
         "is_param": true,
         "name": "right_edge",
         "offset": 8,
         "size": 4,
-        "type": "SEdgeData *"
+        "type": "SSoftwareEdge *"
       },
       {
         "is_param": true,
@@ -223,15 +223,15 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 53,
+      "line": 54,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "if (*(int *)((int)puVar2 + iVar16 + (iVar14 << bVar4) * 4) < iVar5) {",
+      "text": "if (*(int *)((int)puVar3 + iVar16 + (iVar14 << bVar5) * 4) < iVar6) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 54,
+      "line": 55,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "piVar1 = (int *)((int)g_DitherPatternTable + g_DitherPatternOffset);",

@@ -15,7 +15,7 @@
 ;   double DOUBLE_00657db4 = 0.800000000000000
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
-;   CVector3f g_ZeroVector
+;   UVector3 g_ZeroVector
 ;   float FLOAT_03f96b44
 ;   float FLOAT_03f96b50
 ;

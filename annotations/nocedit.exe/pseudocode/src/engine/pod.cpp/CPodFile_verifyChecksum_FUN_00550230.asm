@@ -19,7 +19,7 @@
 ;   engine_pod.cpp_CPod_verifyIntegrity_FUN_00551280 at 005512ae
 ;
 ; Referenced Globals:
-;   char s_EmptyString_0064015e = \x00
+;   char s_EmptyChar_0064015e = \x00
 ;   TerminatedCString s_engine_pod_cpp_0064015f
 ;   TerminatedCString s_rb_00640171
 ;   TerminatedCString s_engine_pod_cpp_00640174
@@ -125,7 +125,7 @@ section .text
         ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 005502e6
     PUSH EDI                            ; 005502e9
-    PUSH 0x64015e                       ; 005502ea | s_EmptyString_0064015e
+    PUSH 0x64015e                       ; 005502ea | s_EmptyChar_0064015e
     CALL engine_dosio.c_getFileSize_FUN_00481880 ; 005502ef
         ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFileSize_FUN_00481880(char * directory, char * filename)
     ADD ESP,0x8                         ; 005502f4

@@ -57,9 +57,9 @@ void __cdecl core_boxactor_cpp_CLightActor_process_FUN_00422a50(CLightActor *thi
       (this_ptr->light).base.base.position.z = (int)local_18.z;
     }
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
-              (&local_54,&g_ZeroVector,&(this_ptr->light_orient).vec);
+              (&local_54,&g_ZeroVector.f,&(this_ptr->light_orient).vec);
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
-              (&local_b4,&g_ZeroVector,&(this_ptr->base).base.orient.vec);
+              (&local_b4,&g_ZeroVector.f,&(this_ptr->base).base.orient.vec);
     core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_54,&local_b4,&local_e4);
     pCVar5 = &local_e4;
     pCVar6 = &local_84;
@@ -75,8 +75,8 @@ void __cdecl core_boxactor_cpp_CLightActor_process_FUN_00422a50(CLightActor *thi
     return;
   }
   this_ptr_01 = &this_ptr->globe;
-  core_dglobe_cpp_CDemonGlobe_setColor_FUN_00471310
-            (this_ptr_01,(CColor3f *)&(this_ptr->base).base.location);
+  core_dglobe_cpp_CDemonGlobe_setPosition_FUN_00471310
+            (this_ptr_01,&(this_ptr->base).base.location.position);
   uVar3 = rand();
   (this_ptr->globe).intensity_multiplier = uVar3 & 0x7fff;
   (this_ptr->globe).intensity.bytes[0] = (uchar)((int)(uVar3 & 0x7fff) >> 10);

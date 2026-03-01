@@ -28,8 +28,8 @@
 #include "types/enums/EInputCodeType.h"
 #include "types/funcdefs/RenderScanlineFunc.h"
 #include "types/structs/SDamageInfo.h"
-#include "types/structs/SEdgeData.h"
 #include "types/structs/SRenderVertex.h"
+#include "types/structs/SSoftwareEdge.h"
 #include "types/typedefs/MessageHandler.h"
 
 // =============================================================================
@@ -193,7 +193,7 @@ CZombie * __cdecl core_zombie_cpp_CZombie_dtor_FUN_005fcc50(CZombie *this_ptr,ui
 int __cdecl core_zombie_cpp_FUN_005fcd10(void);
 void __cdecl core_zombie_cpp_FUN_005fcd20(void);
 void __cdecl core_zombie_cpp_FUN_005fce40(void);
-SEdgeData * __cdecl core_zombie_cpp_FUN_005fcf80(void);
+SSoftwareEdge * __cdecl core_zombie_cpp_FUN_005fcf80(void);
 void __cdecl engine_3d_c_rasterizeTriangle_FUN_005fcfc0(SRenderVertex *vertex_buffer,int vertex_count,int triangle_count);
 template<typename T_func0>
 inline void engine_3d_c_rasterizePolygon_FUN_005fd4e0(SRenderVertex *vertex_buffer,int vertex_count,T_func0 scanline_renderer) {

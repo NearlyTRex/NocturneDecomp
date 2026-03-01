@@ -172,18 +172,18 @@
     {
       "addr": "03f87558",
       "name": "g_ZeroVector",
-      "type": "CVector3f",
+      "type": "UVector3",
       "value": null
     },
     {
       "addr": "03f8755c",
-      "name": "g_ZeroVector.y",
+      "name": "g_ZeroVector+4",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "03f87560",
-      "name": "g_ZeroVector.z",
+      "name": "g_ZeroVector+8",
       "type": "undefined4",
       "value": null
     }
@@ -858,7 +858,7 @@
       "line": 214,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_c0.x = (int)ROUND(g_ZeroVector.x * 256.0f);",
+      "text": "local_c0.x = (int)ROUND(g_ZeroVector.f.x * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -866,7 +866,7 @@
       "line": 215,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_c0.y = (int)ROUND(g_ZeroVector.y * 256.0f);",
+      "text": "local_c0.y = (int)ROUND(g_ZeroVector.f.y * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -874,7 +874,7 @@
       "line": 216,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_c0.z = (int)ROUND(g_ZeroVector.z * 256.0f);",
+      "text": "local_c0.z = (int)ROUND(g_ZeroVector.f.z * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {

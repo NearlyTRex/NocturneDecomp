@@ -28,12 +28,11 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bf90(CBoneGuy *this_ptr,f
   uint *puVar13;
   uint *puVar14;
   byte bVar15;
-  float afStackY_1908 [1483];
+  uint auStackY_1908 [1483];
   CQuaternion4f *quat_in;
   float fVar16;
   float fVar17;
-  float in_stack_fffffe44;
-  float local_1b8;
+  SDamageInfo local_1bc;
   SDamageInfo local_180;
   CBoundingBox3D local_144;
   CVector3f local_12c;
@@ -298,7 +297,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bf90(CBoneGuy *this_ptr,f
       local_180.wielder = (CDemonActor *)this_ptr;
       local_14 = local_180.damage_amount;
       pCVar12 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                          (&local_94,&g_ZeroVector,
+                          (&local_94,&g_ZeroVector.f,
                            (this_ptr->base).base.model.bone_transform.bone_world_matrices +
                            INT_00822944);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
@@ -345,9 +344,11 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bf90(CBoneGuy *this_ptr,f
           local_f4.y = pCVar12->y;
           local_f4.z = pCVar12->z;
         }
-        core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffe44);
-        local_1b8 = core_actor_cpp_getRandomFloat_FUN_0040cc10(15.0,25.0);
-        local_14 = local_1b8;
+        core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_1bc);
+        local_1bc.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(15.0,25.0);
+        local_1bc.attacker = (this_ptr->base).base.carry_hands[1].carry_actor;
+        local_1bc.wielder = (CDemonActor *)this_ptr;
+        local_14 = local_1bc.damage_amount;
         core_enemy_cpp_CEnemy_FUN_004a9930(&this_ptr->base);
       }
     }
@@ -416,8 +417,7 @@ LAB_0041c60c:
   core_charactr_cpp_CCharacter_preProcess_FUN_00429820((CCharacter *)this_ptr);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
             (&(this_ptr->base).base.model);
-  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
-            ((CCharacter *)this_ptr,delta_time,in_stack_fffffe44);
+  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr,delta_time);
   if ((local_34 == 1) &&
      (iVar6 = sound_sndmain_cpp_isWithinListenerRadius_FUN_005aa290
                         ((double)(this_ptr->base).base.base.location.position.x,

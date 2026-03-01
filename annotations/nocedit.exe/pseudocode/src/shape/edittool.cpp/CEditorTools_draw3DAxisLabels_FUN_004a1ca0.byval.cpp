@@ -7,8 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-/* WARNING: Variable defined which should be unmapped: local_64 */
-/* WARNING: Variable defined which should be unmapped: local_94 */
 
 void __cdecl shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0(CEditorTools *this_ptr,float scale_factor,int text_color)
 {
@@ -21,7 +19,7 @@ __asm {
         mov EBX,dword ptr [EAX + 0x3168]
         push EAX
         mov dword ptr [g_FontCharacterHeight],EBX
-        call engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0
+        call engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0
         add ESP,0x8
         fld float ptr [ESP + 0x3c]
         fmul double ptr [g_AxisScaleMultiplier]

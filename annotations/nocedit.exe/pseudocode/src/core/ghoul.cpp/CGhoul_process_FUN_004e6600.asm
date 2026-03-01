@@ -439,7 +439,7 @@ section .text
         ;   Label: LAB_004e6939
     PUSH EBX                            ; 004e693f
     CALL core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0 ; 004e6940
-        ;   XREF to: 0042dfc0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(CCharacter * this_ptr, float delta_time, float param_3)
+        ;   XREF to: 0042dfc0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(CCharacter * this_ptr, float delta_time)
     FLD float ptr [EBX + 0x2418]        ; 004e6945
     FABS                                ; 004e694b
     ADD ESP,0x8                         ; 004e694d

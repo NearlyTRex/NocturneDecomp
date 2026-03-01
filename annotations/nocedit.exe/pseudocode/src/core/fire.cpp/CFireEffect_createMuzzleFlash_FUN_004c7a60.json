@@ -6,17 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 31,
-    "complexity_score": 60,
+    "complexity_score": 13,
     "cross_reference_count": 5,
     "function_call_count": 1,
     "global_count": 2,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 15,
-    "suspect_count": 4,
-    "suspect_types": [
-      "stack_param"
-    ],
-    "total_lines": 46
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 13,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 44
   },
   "cross_references": [
     {
@@ -60,7 +58,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_004c7a60",
-    "signature": "void __cdecl core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_004c7a60(CFireEffect *this_ptr)"
+    "signature": "void __cdecl core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_004c7a60(CFireEffect *this_ptr,CVector3f *position,CMatrix3x3f *rotation_matrix)"
   },
   "function_calls": [
     {
@@ -113,10 +111,10 @@
     "pcode_op_count": 187
   },
   "stack_frame": {
-    "frame_size": 8,
+    "frame_size": 16,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -125,41 +123,22 @@
         "offset": 4,
         "size": 4,
         "type": "CFireEffect *"
+      },
+      {
+        "is_param": true,
+        "name": "position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "rotation_matrix",
+        "offset": 12,
+        "size": 4,
+        "type": "CMatrix3x3f *"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 7,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "CVector3f *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "CMatrix3x3f *in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "core_fire_cpp_CMuzzleFlash_init_FUN_004c1940(this_ptr_00,in_stack_00000008,in_stack_0000000c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "core_fire_cpp_CMuzzleFlash_init_FUN_004c1940(this_ptr_00,in_stack_00000008,in_stack_0000000c);",
-      "type": "stack_param"
-    }
-  ]
+  "suspects": []
 }

@@ -19,7 +19,7 @@
 ; Called Functions:
 ;   engine_2d.c_clipLineGlobal_FUN_00402c50
 ;   engine_font.cpp_CBitFont_drawText_FUN_004cda80
-;   engine_font.cpp_CBitFont_getCharWidth_FUN_004cff40
+;   engine_font.cpp_CBitFont_getTextHeight_FUN_004cff40
 ;   shape_edittool.cpp_CEdCheck_calculateBaseWidth_FUN_004a6bb0
 ;   shape_edittool.cpp_CEdCheck_calculateScaledWidth_FUN_004a6b70
 ;   shape_edittool.cpp_CEdCheck_calculateSpacing_FUN_004a6be0
@@ -68,8 +68,8 @@ section .text
     MOV EDX,dword ptr [0x02cf1cd0]      ; 004a6c4f | g_EditorFont
     PUSH EDX                            ; 004a6c55
     MOV dword ptr [ESP + 0x8],EAX       ; 004a6c56
-    CALL engine_font.cpp_CBitFont_getCharWidth_FUN_004cff40 ; 004a6c5a
-        ;   XREF to: 004cff40 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004cff40(CBitFont * this_ptr, char * text_string)
+    CALL engine_font.cpp_CBitFont_getTextHeight_FUN_004cff40 ; 004a6c5a
+        ;   XREF to: 004cff40 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextHeight_FUN_004cff40(CBitFont * this_ptr, char * text_string)
     ADD ESP,0x8                         ; 004a6c5f
     PUSH -0x1                           ; 004a6c62
     MOV ECX,dword ptr [EBX + 0xc]       ; 004a6c64

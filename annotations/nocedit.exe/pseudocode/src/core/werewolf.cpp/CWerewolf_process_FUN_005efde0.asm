@@ -477,7 +477,7 @@ section .text
     PUSH dword ptr [EBP + 0x92]         ; 005f01d8
     PUSH EBX                            ; 005f01de
     CALL core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0 ; 005f01df
-        ;   XREF to: 0042dfc0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(CCharacter * this_ptr, float delta_time, float param_3)
+        ;   XREF to: 0042dfc0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 005f01e4
     PUSH EBX                            ; 005f01e7
     CALL core_werewolf.cpp_CWerewolf_FUN_005f1e40 ; 005f01e8

@@ -206,7 +206,7 @@ int __cdecl core_set_cpp_CDemonSet_processActors_FUN_0056b810(CDemonSet *this_pt
            (iVar7 = core_fire_cpp_CFireEffect_checkExplosionDamage_FUN_004c8c90
                               (g_CFireEffectPtr,&(this_ptr_04->base).location.position,0.0,
                                (CVector3f *)0x0,(int *)0x0), iVar7 != 0)) {
-          core_flamecan_cpp_CFlameCan_FUN_004cb340(this_ptr_04);
+          core_flamecan_cpp_CFlameCan_ignite_FUN_004cb340(this_ptr_04);
         }
         iVar9 = iVar9 + 1;
         pCVar6 = (CDemonSet *)pCVar6->cameras;

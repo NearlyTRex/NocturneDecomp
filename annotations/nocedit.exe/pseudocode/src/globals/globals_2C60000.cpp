@@ -13,9 +13,6 @@ CDemonActorType g_CDraculaBrideClassInfo = {};
 // CDemonRenderer
 CDemonRenderer g_CDemonRendererInstance = {};
 
-// SEdgeData[16]
-SEdgeData g_EdgeInterpolationArray[16] = {};
-
 // SEdgeTableEntry[40]
 SEdgeTableEntry g_GlobalEdgeTable[40] = {};
 
@@ -24,6 +21,9 @@ SFace g_CapturedFaces[5000] = {};
 
 // SFreaky[6]
 SFreaky SFreaky_ARRAY_02c6d0c0[6] = {};
+
+// SSoftwareEdge[16]
+SSoftwareEdge g_EdgeInterpolationArray[16] = {};
 
 // float
 float FLOAT_02c6d040 = {};

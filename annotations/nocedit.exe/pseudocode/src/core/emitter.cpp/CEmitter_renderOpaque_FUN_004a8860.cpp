@@ -10,10 +10,10 @@ int __cdecl core_emitter_cpp_CEmitter_renderOpaque_FUN_004a8860(CEmitter *this_p
 
 {
   int iVar1;
-  CQuaternion4f *world_position;
+  uint text_color;
   SLaserInfo *laser_info;
   CVector3f *pCVar2;
-  UOrientationVector *param5;
+  UOrientationVector *orientation;
   SLaserInfo local_d0;
   SLaserInfo local_7c;
   CVector3f local_28;
@@ -72,14 +72,12 @@ int __cdecl core_emitter_cpp_CEmitter_renderOpaque_FUN_004a8860(CEmitter *this_p
         if ((((this_ptr->emitter_type == 3) && (g_SlewTargetMode != 0)) &&
             (this_ptr == PTR_02cf2b78)) &&
            (PTR_02cf2b78 == (CEmitter *)g_CDemonMissionPtr->selected_actor)) {
-          param5 = &UNION_UOrientationVector_02cf2b6c;
+          orientation = &UNION_UOrientationVector_02cf2b6c;
           pCVar2 = &g_EmitterTarget;
-          world_position =
-               (CQuaternion4f *)
-               shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330
-                         (g_CEditorToolsPtr);
+          text_color = shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330
+                                 (g_CEditorToolsPtr);
           shape_edittool_cpp_CEditorTools_draw3DAxisLabelsAt_FUN_004a1e90
-                    (g_CEditorToolsPtr,0x3f800000,world_position,(CQuaternion4f *)pCVar2,param5);
+                    (g_CEditorToolsPtr,1.0,text_color,pCVar2,orientation);
           return 0;
         }
       }

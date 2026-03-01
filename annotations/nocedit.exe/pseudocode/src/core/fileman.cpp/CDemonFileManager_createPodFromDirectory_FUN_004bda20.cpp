@@ -30,14 +30,14 @@ void __cdecl core_fileman_cpp_CDemonFileManager_createPodFromDirectory_FUN_004bd
   
   bVar8 = 0;
   iVar2 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
-                    (g_CEditorToolsPtr,"Select response file.",&s_EmptyStr_006295ce,
+                    (g_CEditorToolsPtr,"Select response file.",&s_EmptyChar_006295ce,
                      "*.vox",(int)local_598,0);
   if (iVar2 != 0) {
     splitpath(local_598,(char *)0x0,(char *)0x0,local_1a4,(char *)0x0);
     makepath(local_140,(char *)0x0,(char *)0x0,local_1a4,"pod");
     iVar2 = shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
-                      (g_CEditorToolsPtr,"Enter POD name to build",&s_EmptyStr_006295ed,
-                       0x6295e9,(int)local_140);
+                      (g_CEditorToolsPtr,"Enter POD name to build",&s_EmptyChar_006295ed,
+                       "pod",local_140,1);
     if ((iVar2 != 0) &&
        (iVar2 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
                           (g_CEditorToolsPtr,"Enter volume name",local_1a4,100,1),

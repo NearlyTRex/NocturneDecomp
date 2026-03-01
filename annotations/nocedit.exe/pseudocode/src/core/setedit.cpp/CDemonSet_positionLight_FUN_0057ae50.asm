@@ -41,7 +41,7 @@
 ;   core_dlight.cpp_CDemonLight_renderShadowMapDebugView_FUN_00473390
 ;   core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0
 ;   core_game.cpp_CGame_saveClockTime_FUN_004d7d80
-;   core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90
+;   core_game.cpp_CGame_updateDT_FUN_004d7d90
 ;   core_set.cpp_CDemonSet_reinitCamera_FUN_0056b7e0
 ;   core_set.cpp_CDemonSet_renderScene_FUN_0056c1a0
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50
@@ -373,8 +373,8 @@ section .text
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
     MOV EAX,[0x0067b654]                ; 0057b1f4 | g_CGameInstance | g_CGamePtr
     PUSH EAX                            ; 0057b1f9 | g_CGameInstance
-    CALL core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90 ; 0057b1fa
-        ;   XREF to: 004d7d90 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90(CGame * this_ptr)
+    CALL core_game.cpp_CGame_updateDT_FUN_004d7d90 ; 0057b1fa
+        ;   XREF to: 004d7d90 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_updateDT_FUN_004d7d90(CGame * this_ptr)
     ADD ESP,0x4                         ; 0057b1ff
     MOV EAX,[0x0067cf44]                ; 0057b202 | g_CKeysPtr
     PUSH 0x1                            ; 0057b207

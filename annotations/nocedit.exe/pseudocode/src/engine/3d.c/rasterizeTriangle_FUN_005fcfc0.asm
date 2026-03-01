@@ -36,7 +36,7 @@
 ;   int g_RenderStateFlag2
 ;   int g_RenderedTriangleCount
 ;   int g_RasterizerEdgeCount
-;   SEdgeData[16] g_RasterizerEdgeArray
+;   SSoftwareEdge[16] g_RasterizerEdgeArray
 ;   ... and 8 more
 ;
 ; Called Functions:
@@ -193,14 +193,14 @@ section .text
     TEST EBP,EBP                        ; 005fd150
     JLE 0x005fd40e                      ; 005fd152
         ;   XREF to: 005fd40e (CONDITIONAL_JUMP)  ; LAB_005fd40e
-    CMP EDI,dword ptr [ESI]             ; 005fd158 | g_RasterizerEdgeArray | g_RasterizerEdgeArray[1].y_start
+    CMP EDI,dword ptr [ESI]             ; 005fd158 | g_RasterizerEdgeArray | g_RasterizerEdgeArray[1].base.y_min
         ;   Label: LAB_005fd158
     JNZ 0x005fd402                      ; 005fd15a
         ;   XREF to: 005fd402 (CONDITIONAL_JUMP)  ; LAB_005fd402
     TEST ESI,ESI                        ; 005fd160
     JZ 0x005fd402                       ; 005fd162
         ;   XREF to: 005fd402 (CONDITIONAL_JUMP)  ; LAB_005fd402
-    MOV dword ptr [ESP + 0x1c],ESI      ; 005fd168 | g_RasterizerEdgeArray | g_RasterizerEdgeArray[1].y_start
+    MOV dword ptr [ESP + 0x1c],ESI      ; 005fd168 | g_RasterizerEdgeArray | g_RasterizerEdgeArray[1].base.y_min
         ;   Label: LAB_005fd168
     MOV dword ptr [0x03f9ad5c],EBP      ; 005fd16c | g_RasterizerEdgeCount
     TEST ESI,ESI                        ; 005fd172
@@ -213,14 +213,14 @@ section .text
     TEST EBP,EBP                        ; 005fd189
     JLE 0x005fd421                      ; 005fd18b
         ;   XREF to: 005fd421 (CONDITIONAL_JUMP)  ; LAB_005fd421
-    CMP EBX,dword ptr [EAX]             ; 005fd191 | g_RasterizerEdgeArray | g_RasterizerEdgeArray[1].y_start
+    CMP EBX,dword ptr [EAX]             ; 005fd191 | g_RasterizerEdgeArray | g_RasterizerEdgeArray[1].base.y_min
         ;   Label: LAB_005fd191
     JNZ 0x005fd415                      ; 005fd193
         ;   XREF to: 005fd415 (CONDITIONAL_JUMP)  ; LAB_005fd415
     CMP EAX,ECX                         ; 005fd199
     JZ 0x005fd415                       ; 005fd19b
         ;   XREF to: 005fd415 (CONDITIONAL_JUMP)  ; LAB_005fd415
-    MOV dword ptr [ESP + 0x18],EAX      ; 005fd1a1 | g_RasterizerEdgeArray | g_RasterizerEdgeArray[1].y_start
+    MOV dword ptr [ESP + 0x18],EAX      ; 005fd1a1 | g_RasterizerEdgeArray | g_RasterizerEdgeArray[1].base.y_min
         ;   Label: LAB_005fd1a1
     MOV dword ptr [0x03f9ad5c],EBP      ; 005fd1a5 | g_RasterizerEdgeCount
     TEST EAX,EAX                        ; 005fd1ab
@@ -231,7 +231,7 @@ section .text
         ;   Label: LAB_005fd1b8
     MOV EDX,dword ptr [ESP + 0x1c]      ; 005fd1bc
     MOV EAX,dword ptr [ESP + 0x14]      ; 005fd1c0
-    MOV EDI,dword ptr [EDX + 0x4]       ; 005fd1c4 | g_RasterizerEdgeArray[0].y_end
+    MOV EDI,dword ptr [EDX + 0x4]       ; 005fd1c4 | g_RasterizerEdgeArray[0].base.y_max
     MOV dword ptr [0x03f9ad5c],EBP      ; 005fd1c7 | g_RasterizerEdgeCount
     CMP EAX,EDI                         ; 005fd1cd
     JL 0x005fd20a                       ; 005fd1cf
@@ -244,14 +244,14 @@ section .text
     TEST EBP,EBP                        ; 005fd1e4
     JLE 0x005fd434                      ; 005fd1e6
         ;   XREF to: 005fd434 (CONDITIONAL_JUMP)  ; LAB_005fd434
-    CMP EBX,dword ptr [EAX]             ; 005fd1ec | g_RasterizerEdgeArray | g_RasterizerEdgeArray[1].y_start
+    CMP EBX,dword ptr [EAX]             ; 005fd1ec | g_RasterizerEdgeArray | g_RasterizerEdgeArray[1].base.y_min
         ;   Label: LAB_005fd1ec
     JNZ 0x005fd428                      ; 005fd1ee
         ;   XREF to: 005fd428 (CONDITIONAL_JUMP)  ; LAB_005fd428
     CMP EAX,ECX                         ; 005fd1f4
     JZ 0x005fd428                       ; 005fd1f6
         ;   XREF to: 005fd428 (CONDITIONAL_JUMP)  ; LAB_005fd428
-    MOV dword ptr [ESP + 0x1c],EAX      ; 005fd1fc | g_RasterizerEdgeArray | g_RasterizerEdgeArray[1].y_start
+    MOV dword ptr [ESP + 0x1c],EAX      ; 005fd1fc | g_RasterizerEdgeArray | g_RasterizerEdgeArray[1].base.y_min
         ;   Label: LAB_005fd1fc
     MOV dword ptr [0x03f9ad5c],EBP      ; 005fd200 | g_RasterizerEdgeCount
     TEST EAX,EAX                        ; 005fd206
@@ -260,7 +260,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x18]      ; 005fd20a | g_RasterizerEdgeArray
         ;   Label: LAB_005fd20a
     MOV EAX,dword ptr [ESP + 0x14]      ; 005fd20e
-    CMP EAX,dword ptr [EDX + 0x4]       ; 005fd212 | g_RasterizerEdgeArray[0].y_end
+    CMP EAX,dword ptr [EDX + 0x4]       ; 005fd212 | g_RasterizerEdgeArray[0].base.y_max
     JL 0x005fd44e                       ; 005fd215
         ;   XREF to: 005fd44e (CONDITIONAL_JUMP)  ; LAB_005fd44e
     MOV ECX,dword ptr [ESP + 0x1c]      ; 005fd21b
@@ -272,14 +272,14 @@ section .text
     TEST EBP,EBP                        ; 005fd234
     JLE 0x005fd447                      ; 005fd236
         ;   XREF to: 005fd447 (CONDITIONAL_JUMP)  ; LAB_005fd447
-    CMP EBX,dword ptr [EAX]             ; 005fd23c | g_RasterizerEdgeArray | g_RasterizerEdgeArray[1].y_start
+    CMP EBX,dword ptr [EAX]             ; 005fd23c | g_RasterizerEdgeArray | g_RasterizerEdgeArray[1].base.y_min
         ;   Label: LAB_005fd23c
     JNZ 0x005fd43b                      ; 005fd23e
         ;   XREF to: 005fd43b (CONDITIONAL_JUMP)  ; LAB_005fd43b
     CMP EAX,ECX                         ; 005fd244
     JZ 0x005fd43b                       ; 005fd246
         ;   XREF to: 005fd43b (CONDITIONAL_JUMP)  ; LAB_005fd43b
-    MOV dword ptr [ESP + 0x18],EAX      ; 005fd24c | g_RasterizerEdgeArray | g_RasterizerEdgeArray[1].y_start
+    MOV dword ptr [ESP + 0x18],EAX      ; 005fd24c | g_RasterizerEdgeArray | g_RasterizerEdgeArray[1].base.y_min
         ;   Label: LAB_005fd24c
     MOV dword ptr [0x03f9ad5c],EBP      ; 005fd250 | g_RasterizerEdgeCount
     TEST EAX,EAX                        ; 005fd256
@@ -378,7 +378,7 @@ section .text
     ADD EBX,0x3f9ad60                   ; 005fd321 | g_RasterizerEdgeArray
     MOV dword ptr [EBX],EDX             ; 005fd327 | g_RasterizerEdgeArray
     MOV ECX,dword ptr [0x03f9b1e0]      ; 005fd329 | g_RasterizerMinY
-    MOV dword ptr [EBX + 0x4],EAX       ; 005fd32f | g_RasterizerEdgeArray[0].y_end
+    MOV dword ptr [EBX + 0x4],EAX       ; 005fd32f | g_RasterizerEdgeArray[0].base.y_max
     CMP EDX,ECX                         ; 005fd332
     JGE 0x005fd33c                      ; 005fd334
         ;   XREF to: 005fd33c (CONDITIONAL_JUMP)  ; LAB_005fd33c
@@ -412,7 +412,7 @@ section .text
     IMUL EDX                            ; 005fd388
     SHRD EAX,EDX,0x10                   ; 005fd38a
     MOV EDX,EAX                         ; 005fd38e
-    MOV dword ptr [EBX + 0xc],EAX       ; 005fd390 | g_RasterizerEdgeArray[0].x_delta
+    MOV dword ptr [EBX + 0xc],EAX       ; 005fd390 | g_RasterizerEdgeArray[0].base.x_gradient
     MOV EAX,dword ptr [ESP]             ; 005fd393
     IMUL EDX                            ; 005fd396
     SHRD EAX,EDX,0x10                   ; 005fd398
@@ -420,7 +420,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 005fd3a0
     MOV EAX,dword ptr [ESI + 0x10]      ; 005fd3a4
     ADD EAX,EDX                         ; 005fd3a7
-    MOV dword ptr [EBX + 0x8],EAX       ; 005fd3a9 | g_RasterizerEdgeArray[0].x_current
+    MOV dword ptr [EBX + 0x8],EAX       ; 005fd3a9 | g_RasterizerEdgeArray[0].base.x_current
     MOV EAX,dword ptr [ESP + 0x10]      ; 005fd3ac
     MOV EDX,dword ptr [ESI + 0x8]       ; 005fd3b0
     MOV EAX,dword ptr [EAX + 0x8]       ; 005fd3b3
@@ -431,7 +431,7 @@ section .text
     IMUL EDX                            ; 005fd3bf
     SHRD EAX,EDX,0x10                   ; 005fd3c1
     MOV EDX,EAX                         ; 005fd3c5
-    MOV dword ptr [EBX + 0x2c],EAX      ; 005fd3c7 | g_RasterizerEdgeArray[0].z_delta
+    MOV dword ptr [EBX + 0x2c],EAX      ; 005fd3c7 | g_RasterizerEdgeArray[0].base.w_gradient
     MOV EAX,dword ptr [ESP]             ; 005fd3ca
     MOV ECX,dword ptr [ESI + 0x8]       ; 005fd3cd
     MOV ESI,dword ptr [0x02c6d03c]      ; 005fd3d0 | g_RasterizerDepthBias
@@ -442,7 +442,7 @@ section .text
     MOV EBP,dword ptr [0x03f9ad5c]      ; 005fd3e1 | g_RasterizerEdgeCount
     ADD ECX,EAX                         ; 005fd3e7
     INC EBP                             ; 005fd3e9
-    MOV dword ptr [EBX + 0x28],ECX      ; 005fd3ea | g_RasterizerEdgeArray[0].z_current
+    MOV dword ptr [EBX + 0x28],ECX      ; 005fd3ea | g_RasterizerEdgeArray[0].base.w_current
     JMP 0x005fd132                      ; 005fd3ed
         ;   XREF to: 005fd132 (UNCONDITIONAL_JUMP)  ; LAB_005fd132
     MOV EAX,0xffffffff                  ; 005fd3f2
@@ -484,7 +484,7 @@ section .text
         ;   XREF to: 005fd1fc (UNCONDITIONAL_JUMP)  ; LAB_005fd1fc
     INC EDX                             ; 005fd43b
         ;   Label: LAB_005fd43b
-    ADD EAX,0x48                        ; 005fd43c | g_RasterizerEdgeArray[1].y_start
+    ADD EAX,0x48                        ; 005fd43c | g_RasterizerEdgeArray[1].base.y_min
     CMP EDX,EBP                         ; 005fd43f
     JL 0x005fd23c                       ; 005fd441
         ;   XREF to: 005fd23c (CONDITIONAL_JUMP)  ; LAB_005fd23c
@@ -497,7 +497,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x1c]      ; 005fd452
     MOV EBX,dword ptr [ESP + 0x14]      ; 005fd456
     CALL wincore_windll.cpp_renderScanline_FUN_005b5710 ; 005fd45a
-        ;   XREF to: 005b5710 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_renderScanline_FUN_005b5710(void * left_data, void * right_data, int scanline_y)
+        ;   XREF to: 005b5710 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_renderScanline_FUN_005b5710(SHardwareEdge * left, SHardwareEdge * right, int scanline_y)
     CMP dword ptr [0x02c6d5a8],0x0      ; 005fd45f | g_RenderAbortFlag
     JNZ 0x005fd25e                      ; 005fd466
         ;   XREF to: 005fd25e (CONDITIONAL_JUMP)  ; LAB_005fd25e

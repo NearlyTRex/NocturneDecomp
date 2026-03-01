@@ -81,7 +81,7 @@ LAB_005d9adc:
     core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_84);
     local_84.damage_amount = 15.0;
     local_84.ammo_type = 3;
-    local_84.weapon_damage_modifier = 0.7;
+    local_84.dismember_prob = 0.7;
     local_84.damage_type = 0x67;
     iVar3 = (*(((this_ptr_01->base).base.base.vtable._uc)->_uc).testDamageLine)
                       ((CCharacter *)this_ptr_01,&local_24,&local_3c,&local_84,(CVector3f *)0x0);

@@ -11,7 +11,7 @@ int __cdecl core_hero_cpp_CHero_testLineIntersection_FUN_004f25c0(CHero *this_pt
 {
   int iVar1;
   
-  if ((g_CGamePtr->debug_flag_1 == 0) && ((this_ptr->no_collision_flag & 0x7fffffffU) == 0)) {
+  if ((g_CGamePtr->god_mode_enabled == 0) && (ABS(this_ptr->invincibility_timer) == 0.0)) {
     iVar1 = core_actor_cpp_CDemonActor_testLineIntersection_FUN_00409150
                       ((CDemonActor *)this_ptr,line_start,line_end,out_intersection_point);
     return iVar1;

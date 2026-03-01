@@ -204,7 +204,7 @@ void __cdecl core_course_cpp_CCourse_preview_FUN_00443bc0(CCourse *this_ptr,CKey
     _sprintf(in_stack_fffffe90,"t=%7.3f, Pos: %7.2f,%7.2f,%7.2f, PBH: %7.4f %7.4f %7.4f");
     engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffed0,0,0);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-    core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
+    core_game_cpp_CGame_updateDT_FUN_004d7d90(g_CGamePtr);
     local_30 = g_CGamePtr->delta_time_float;
     iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
     if (iVar2 != 0) break;

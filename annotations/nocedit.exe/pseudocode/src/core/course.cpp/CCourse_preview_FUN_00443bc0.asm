@@ -62,7 +62,7 @@
 ;   core_course.cpp_renderCourseGizmo_FUN_00443760
 ;   core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850
 ;   core_game.cpp_CGame_saveClockTime_FUN_004d7d80
-;   core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90
+;   core_game.cpp_CGame_updateDT_FUN_004d7d90
 ;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0056a190
 ;   core_slew.cpp_CSlew_init_FUN_005a2060
 ;   core_slew.cpp_CSlew_processInput_FUN_005a20b0
@@ -442,8 +442,8 @@ section .text
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
     MOV ECX,dword ptr [0x0067b654]      ; 00443f9a | g_CGamePtr
     PUSH ECX                            ; 00443fa0 | g_CGameInstance
-    CALL core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90 ; 00443fa1
-        ;   XREF to: 004d7d90 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90(CGame * this_ptr)
+    CALL core_game.cpp_CGame_updateDT_FUN_004d7d90 ; 00443fa1
+        ;   XREF to: 004d7d90 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_updateDT_FUN_004d7d90(CGame * this_ptr)
     ADD ESP,0x4                         ; 00443fa6
     MOV EAX,[0x0067b654]                ; 00443fa9 | g_CGamePtr
     PUSH 0x1                            ; 00443fae

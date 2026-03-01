@@ -6,18 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 33,
-    "complexity_score": 97,
+    "complexity_score": 13,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 17,
-    "suspect_count": 7,
-    "suspect_types": [
-      "param_count_too_few",
-      "stack_param"
-    ],
-    "total_lines": 50
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 13,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 46
   },
   "cross_references": [
     {
@@ -37,7 +34,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_fire.cpp_CFireEffect_createRock_FUN_004c7e60",
-    "signature": "void __cdecl core_fire_cpp_CFireEffect_createRock_FUN_004c7e60(CFireEffect *this_ptr)"
+    "signature": "void __cdecl core_fire_cpp_CFireEffect_createRock_FUN_004c7e60(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity,CKeyFramedModel *model_ptr)"
   },
   "function_calls": [
     {
@@ -67,8 +64,8 @@
         "stack_params": 4
       }
     ],
-    "confidence": "low",
-    "declared_params": 1,
+    "confidence": "medium",
+    "declared_params": 4,
     "estimated_params": 4
   },
   "pcode_summary": {
@@ -101,10 +98,10 @@
     "pcode_op_count": 154
   },
   "stack_frame": {
-    "frame_size": 8,
+    "frame_size": 20,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 16,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -113,68 +110,29 @@
         "offset": 4,
         "size": 4,
         "type": "CFireEffect *"
+      },
+      {
+        "is_param": true,
+        "name": "position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "velocity",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "model_ptr",
+        "offset": 16,
+        "size": 4,
+        "type": "CKeyFramedModel *"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 7,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "CVector3f *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "CVector3f *in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000010",
-      "severity": "moderate",
-      "text": "CKeyFramedModel *in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "(this_ptr_00,in_stack_00000008,in_stack_0000000c,in_stack_00000010);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "(this_ptr_00,in_stack_00000008,in_stack_0000000c,in_stack_00000010);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_00000010",
-      "severity": "moderate",
-      "text": "(this_ptr_00,in_stack_00000008,in_stack_0000000c,in_stack_00000010);",
-      "type": "stack_param"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 1,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 4,
-      "fix_type": "add_params",
-      "match": "declared:1 vs estimated:4",
-      "param_delta": 3,
-      "text": "Function declares 1 params but call sites push 4 (3 missing)",
-      "type": "param_count_too_few"
-    }
-  ]
+  "suspects": []
 }

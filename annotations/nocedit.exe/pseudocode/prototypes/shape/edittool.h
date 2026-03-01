@@ -25,7 +25,7 @@ void __cdecl drawDashedLine(int x1,int y1,int x2,int y2,int dash_length);
 
 // Original: shape_edittool.cpp_CInputString_init_FUN_0049d3d0
 // Address: 0049d3d0
-void __cdecl CInputString::init(CInputString *this_ptr,char *source_string,int max_length,int param4,int param5,int render_mode);
+void __cdecl CInputString::init(CInputString *this_ptr,char *source_string,int max_length,int mask_mode);
 
 // Original: shape_edittool.cpp_CInputString_setSelectionToCursor_FUN_0049d460
 // Address: 0049d460
@@ -69,7 +69,7 @@ void __cdecl CInputString::draw(CInputString *this_ptr,int x_pos,int y_pos);
 
 // Original: shape_edittool.cpp_showTextInputDialog_FUN_0049db10
 // Address: 0049db10
-int __cdecl showTextInputDialog(int dialog_mode,char *prompt_text,char *input_buffer,int buffer_size,int dialog_flags);
+int __cdecl showTextInputDialog(char *dialog_title,char *input_buffer,int max_length,int flags,int dialog_mode);
 
 // Original: shape_edittool.cpp_CEditorTools_ctor_FUN_0049df80
 // Address: 0049df80
@@ -149,7 +149,7 @@ int __cdecl CEditorTools::showDirectoryBrowser(CEditorTools *this_ptr,char *file
 
 // Original: shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
 // Address: 0049fb70
-int __cdecl CEditorTools::showFilenameInputDialog(CEditorTools *this_ptr,char *prompt_text,char *filename_buffer,int buffer_size,int show_directory);
+int __cdecl CEditorTools::showFilenameInputDialog(CEditorTools *this_ptr,char *dialog_title,char *directory_path,char *file_extension,char *output_buffer,uint flags);
 
 // Original: shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_004a0020
 // Address: 004a0020
@@ -229,7 +229,7 @@ void __cdecl CEditorTools::draw3DAxisLabels(CEditorTools *this_ptr,float scale_f
 
 // Original: shape_edittool.cpp_CEditorTools_draw3DAxisLabelsAt_FUN_004a1e90
 // Address: 004a1e90
-void __cdecl CEditorTools::draw3DAxisLabelsAt(CEditorTools *this_ptr,int param2,CQuaternion4f *world_position,CQuaternion4f *label_offset,void *param5);
+void __cdecl CEditorTools::draw3DAxisLabelsAt(CEditorTools *this_ptr,float scale_factor,int text_color,CVector3f *world_position,UOrientationVector *orientation);
 
 // Original: shape_edittool.cpp_draw3DInterpolatedLine_FUN_004a1f40
 // Address: 004a1f40

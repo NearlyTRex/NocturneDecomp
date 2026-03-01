@@ -13799,7 +13799,7 @@
               }
             ]
           },
-          "type":"SColorQuantWorkspace*"
+          "type":"SColorQuantMapper*"
         },
         {
           "name":"box_index",
@@ -17541,7 +17541,7 @@
               }
             ]
           },
-          "type":"SEdgeData*"
+          "type":"SSoftwareEdge*"
         },
         {
           "name":"right_edge",
@@ -17557,7 +17557,7 @@
               }
             ]
           },
-          "type":"SEdgeData*"
+          "type":"SSoftwareEdge*"
         },
         {
           "name":"scanline_y",
@@ -32856,6 +32856,38 @@
             ]
           },
           "type":"CFireEffect*"
+        },
+        {
+          "name":"position",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"rotation_matrix",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"CMatrix3x3f*"
         }
       ]
     }
@@ -32890,6 +32922,70 @@
             ]
           },
           "type":"CFireEffect*"
+        },
+        {
+          "name":"start_position",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"end_position",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"model_ptr",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"CKeyFramedModel*"
+        },
+        {
+          "name":"segment_length",
+          "storage":{
+            "offset":20,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x14]",
+                "offset":20,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
         }
       ]
     }
@@ -32924,6 +33020,54 @@
             ]
           },
           "type":"CFireEffect*"
+        },
+        {
+          "name":"position",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"velocity",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"model_ptr",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"CKeyFramedModel*"
         }
       ]
     }
@@ -35523,9 +35667,43 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_game.cpp_FUN_004e4460",
-    "ret":"void*",
+    "name":"core_game.cpp_copyInt_FUN_004e4460",
+    "ret":"int*",
     "vars":{
+      "params":[
+        {
+          "name":"dest",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int*"
+        },
+        {
+          "name":"src",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int*"
+        }
+      ],
       "ret_storage":{
         "reg":"EAX",
         "size":4,
@@ -40735,7 +40913,7 @@
               }
             ]
           },
-          "type":"int"
+          "type":"EInputCodeType"
         }
       ],
       "ret_storage":{
@@ -48166,8 +48344,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_palette.cpp_CPaletteManager_FUN_00545060",
-    "ret":"SMRGLHeaderExtended*",
+    "name":"engine_palette.cpp_CPaletteManager_scanTextures_FUN_00545060",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -48221,7 +48399,7 @@
           "type":"CPaletteManager*"
         },
         {
-          "name":"unk",
+          "name":"mrgl_data",
           "storage":{
             "offset":8,
             "size":4,
@@ -48236,17 +48414,7 @@
           },
           "type":"SMRGLHeaderExtended*"
         }
-      ],
-      "ret_storage":{
-        "reg":"EAX",
-        "size":4,
-        "varnodes":[
-          {
-            "addr":"register:00000000",
-            "size":4
-          }
-        ]
-      }
+      ]
     }
   },
   {

@@ -6,18 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 202,
-    "complexity_score": 242,
+    "complexity_score": 243,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 12,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 102,
+    "pseudocode_lines": 103,
     "suspect_count": 13,
     "suspect_types": [
       "decompiler_intrinsic",
       "warning_inlined_function"
     ],
-    "total_lines": 304
+    "total_lines": 305
   },
   "cross_references": [
     {
@@ -114,18 +114,18 @@
     {
       "addr": "03f87558",
       "name": "g_ZeroVector",
-      "type": "CVector3f",
+      "type": "UVector3",
       "value": null
     },
     {
       "addr": "03f8755c",
-      "name": "g_ZeroVector.y",
+      "name": "g_ZeroVector+4",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "03f87560",
-      "name": "g_ZeroVector.z",
+      "name": "g_ZeroVector+8",
       "type": "undefined4",
       "value": null
     }
@@ -267,7 +267,7 @@
       "line": 71,
       "match": "ROUND",
       "severity": "mild",
-      "text": "for (; grid_y = (int)ROUND(ROUND((fVar4 - fVar5) * fVar13)), fVar18 = g_ZeroVector.y,",
+      "text": "for (; grid_y = (int)ROUND(ROUND((fVar4 - fVar5) * fVar13)), fVar18 = g_ZeroVector.f.y,",
       "type": "decompiler_intrinsic"
     },
     {
@@ -275,7 +275,7 @@
       "line": 71,
       "match": "ROUND",
       "severity": "mild",
-      "text": "for (; grid_y = (int)ROUND(ROUND((fVar4 - fVar5) * fVar13)), fVar18 = g_ZeroVector.y,",
+      "text": "for (; grid_y = (int)ROUND(ROUND((fVar4 - fVar5) * fVar13)), fVar18 = g_ZeroVector.f.y,",
       "type": "decompiler_intrinsic"
     },
     {
@@ -299,7 +299,7 @@
       "line": 76,
       "match": "ROUND",
       "severity": "mild",
-      "text": "grid_z = (int)ROUND(ROUND(fVar14 * (1.0 / fVar8))), g_TempNormal0.y = g_ZeroVector.y,",
+      "text": "grid_z = (int)ROUND(ROUND(fVar14 * (1.0 / fVar8))), g_TempNormal0.y = g_ZeroVector.f.y,",
       "type": "decompiler_intrinsic"
     },
     {
@@ -307,7 +307,7 @@
       "line": 76,
       "match": "ROUND",
       "severity": "mild",
-      "text": "grid_z = (int)ROUND(ROUND(fVar14 * (1.0 / fVar8))), g_TempNormal0.y = g_ZeroVector.y,",
+      "text": "grid_z = (int)ROUND(ROUND(fVar14 * (1.0 / fVar8))), g_TempNormal0.y = g_ZeroVector.f.y,",
       "type": "decompiler_intrinsic"
     },
     {
@@ -328,7 +328,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 80,
+      "line": 81,
       "match": "ROUND",
       "severity": "mild",
       "text": "grid_z <= (int)ROUND(ROUND(((fVar12 - fVar9) + fVar10) * (1.0 / fVar8)));",
@@ -336,7 +336,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 80,
+      "line": 81,
       "match": "ROUND",
       "severity": "mild",
       "text": "grid_z <= (int)ROUND(ROUND(((fVar12 - fVar9) + fVar10) * (1.0 / fVar8)));",

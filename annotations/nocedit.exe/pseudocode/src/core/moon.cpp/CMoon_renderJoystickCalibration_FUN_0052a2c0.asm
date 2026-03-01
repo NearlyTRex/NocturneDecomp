@@ -29,7 +29,7 @@
 ;   undefined4 DAT_0326f0f0
 ;   undefined4 DAT_0326f0f4
 ;   undefined4 DAT_0326f0f8
-;   CVector3f g_ZeroVector
+;   UVector3 g_ZeroVector
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850

@@ -15,7 +15,7 @@ void __cdecl core_fire_cpp_CMuzzleFlash_init_FUN_004c1940(CMuzzleFlash *this_ptr
   CVector3f local_18;
   
   this_ptr_00 = &this_ptr->light;
-  core_dglobe_cpp_CDemonGlobe_setColor_FUN_00471310(this_ptr_00,(CColor3f *)position);
+  core_dglobe_cpp_CDemonGlobe_setPosition_FUN_00471310(this_ptr_00,position);
   (this_ptr->light).intensity_multiplier = 0x8000;
   (this_ptr->light).intensity.bytes[0] = ' ';
   core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_00471360(this_ptr_00,8.0);

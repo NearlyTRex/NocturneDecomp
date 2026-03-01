@@ -11,7 +11,7 @@ int __cdecl core_enemy_cpp_CEnemy_FUN_004a9fd0(CEnemy *this_ptr,float delta_time
 {
   int iVar1;
   
-  if (g_CGamePtr->debug_flag_2 == 0) {
+  if (g_CGamePtr->freeze_enemies_enabled == 0) {
     iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                       (g_CEventListPtr,"Capture");
     if (iVar1 == 0) {

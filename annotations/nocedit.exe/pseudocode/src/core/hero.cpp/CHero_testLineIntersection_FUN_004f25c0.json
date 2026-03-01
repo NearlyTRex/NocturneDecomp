@@ -6,14 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 31,
-    "complexity_score": 10,
+    "complexity_score": 25,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 3,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 10,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "decompiler_intrinsic"
+    ],
     "total_lines": 41
   },
   "cross_references": [],
@@ -125,7 +127,16 @@
       }
     ]
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 7,
+      "match": "ABS",
+      "severity": "mild",
+      "text": "if ((g_CGamePtr->god_mode_enabled == 0) && (ABS(this_ptr->invincibility_timer) == 0.0)) {",
+      "type": "decompiler_intrinsic"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

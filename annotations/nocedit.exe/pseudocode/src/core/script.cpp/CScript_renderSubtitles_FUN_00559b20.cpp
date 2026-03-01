@@ -56,7 +56,7 @@ void __cdecl core_script_cpp_CScript_renderSubtitles_FUN_00559b20(CScript *this_
     iVar5 = engine_font_cpp_CBitFont_wrapText_FUN_004d0010
                       (this_ptr_00,this_ptr->current_message,g_ScriptSubtitleLines[0],10,0x400,
                        (g_WindowWidth * 9) / 10);
-    iVar6 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(this_ptr_00,0x58);
+    iVar6 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(this_ptr_00,0x58);
     iVar4 = ((iVar8 * 2 - iVar4) - iVar6 * iVar5) / 2;
     iVar8 = iVar8 - iVar6 * iVar5;
     if (iVar8 < iVar4) {

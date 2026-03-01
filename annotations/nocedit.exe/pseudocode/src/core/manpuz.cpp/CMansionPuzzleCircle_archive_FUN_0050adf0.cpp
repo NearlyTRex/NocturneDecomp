@@ -19,7 +19,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_archive_FUN_0050adf0(CMansionP
     core_actor_cpp_archiveVector_FUN_0040b340(&this_ptr->gem_pos,"pGemPos");
     core_actor_cpp_archiveOrientation_FUN_0040b3e0
               (&(this_ptr->gem_orient).orient,"pGemOrient");
-    core_actor_cpp_archiveVector_FUN_0040b340(&this_ptr->emitter_pos,"pEmitterPos");
+    core_actor_cpp_archiveVector_FUN_0040b340(&(this_ptr->emitter_pos).f,"pEmitterPos");
   }
   if (2 < g_CMansionPuzzleCircleClassVersion) {
     int_ptr = &this_ptr->panels[0].color.b;

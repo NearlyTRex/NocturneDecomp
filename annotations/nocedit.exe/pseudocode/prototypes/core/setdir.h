@@ -103,9 +103,9 @@ void __cdecl CDemonSet::renderVirtualDirectors(CDemonSet *this_ptr);
 // Address: 00576200
 void __cdecl CDemonSet::skipDeprecatedVirtualDirectorData(CDemonSet *this_ptr,_FILE *file_handle);
 
-// Original: core_setdir.cpp_CDemonSet_FUN_005762a0
+// Original: core_setdir.cpp_CDemonSet_isPointInVdirBox_FUN_005762a0
 // Address: 005762a0
-int __cdecl CDemonSet(CDemonSet *this_ptr);
+int __cdecl CDemonSet::isPointInVdirBox(CDemonSet *this_ptr,int box_index,CVector3f *point);
 
 // Original: core_setdir.cpp_CDemonSet_isPointInVdirGroup_FUN_00576340
 // Address: 00576340

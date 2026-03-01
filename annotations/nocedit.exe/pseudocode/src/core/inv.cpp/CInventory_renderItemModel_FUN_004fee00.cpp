@@ -85,7 +85,7 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004fee00(CInventory *th
     engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0048c650(g_CDemonRendererPtr2,36.0);
     engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(g_CDemonRendererPtr2);
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-              (g_CDemonRendererPtr2,&g_ZeroVector);
+              (g_CDemonRendererPtr2,&g_ZeroVector.f);
     local_50.x = (int)((fVar2 + fVar5) * -0.5f);
     local_50.y = (int)((fVar3 + fVar6) * -0.5f);
     local_50.z = (int)((fVar4 + fVar7) * -0.5f);
@@ -113,7 +113,7 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004fee00(CInventory *th
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
               (g_CDemonRendererPtr2,&local_2c,(CVector3i *)0x0);
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-              (g_CDemonRendererPtr2,(CVector3i *)&g_ZeroVector,&local_50);
+              (g_CDemonRendererPtr2,&g_ZeroVector.i,&local_50);
     if (alpha < 65000) {
       engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,alpha);
       engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0048d6c0(g_CDemonRendererPtr2,1);

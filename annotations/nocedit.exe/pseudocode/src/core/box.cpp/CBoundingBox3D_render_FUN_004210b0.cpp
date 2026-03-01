@@ -2,11 +2,11 @@
 // Address: 004210b0
 // Address Range: [[004210b0, 0042154b]]
 // Convention: __cdecl
-// Signature: void __cdecl core_box_cpp_CBoundingBox3D_render_FUN_004210b0(CBoundingBox3D *this_ptr,int param1,int param2,int param3)
+// Signature: void __cdecl core_box_cpp_CBoundingBox3D_render_FUN_004210b0(CBoundingBox3D *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_box_cpp_CBoundingBox3D_render_FUN_004210b0(CBoundingBox3D *this_ptr,int param1,int param2,int param3)
+void __cdecl core_box_cpp_CBoundingBox3D_render_FUN_004210b0(CBoundingBox3D *this_ptr)
 
 {
   CDemonRenderer *pCVar1;

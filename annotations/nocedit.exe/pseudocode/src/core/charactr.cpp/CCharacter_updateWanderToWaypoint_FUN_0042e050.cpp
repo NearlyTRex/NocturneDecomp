@@ -16,7 +16,7 @@ int __cdecl core_charactr_cpp_CCharacter_updateWanderToWaypoint_FUN_0042e050(CCh
   CPathMap *path_map;
   int iVar4;
   int iVar5;
-  CVector3f *direction;
+  UVector3 *direction;
   float fVar6;
   float fVar7;
   int local_1f80 [2005];
@@ -118,7 +118,7 @@ LAB_0042e20c:
   path_map = (*((pCVar3->base).base.vtable._ub)->getPathMap)((CDemonActor *)pCVar3);
   iVar5 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
                     (this_ptr,&(this_ptr->wander_nearest_waypoint->base).base.location.position,
-                     path_map,direction,fVar6,fVar7);
+                     path_map,&direction->f,fVar6,fVar7);
   if (iVar5 == 0) {
     return 1;
   }

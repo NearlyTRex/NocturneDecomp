@@ -197,5 +197,5 @@ void __cdecl core_fire_cpp_CBulletHole_setupRenderState_FUN_004bfa40(CBulletHole
 void __cdecl core_fire_cpp_CBulletHole_render_FUN_004bfac0(CBulletHole *this_ptr);
 void __cdecl core_fire_cpp_loadStakeAssets_FUN_004bfe00(void);
 void __cdecl core_fire_cpp_CStake_init_FUN_004bfe20(CStake *this_ptr,CVector3f *position,CVector3f *orientation);
-void __cdecl core_fire_cpp_CStake_spawn_FUN_004bfe90(CStake *this_ptr,float spawn_scale,CVector3f *orientation_angles, CVector3f *launch_direction,CVector3f *spawn_position,CVector3f *spawn_velocity);
+void __cdecl core_fire_cpp_CStake_spawn_FUN_004bfe90(CStake *this_ptr,CVector3f *spawn_position,CVector3f *orientation_angles, CVector3f *surface_normal);
 

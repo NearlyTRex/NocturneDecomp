@@ -53,14 +53,14 @@ LAB_0050a92e:
     }
     local_1c = &pSVar1->rotation_matrix;
     pCVar3 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
-                       (local_1c,&local_6c,&this_ptr->emitter_pos);
+                       (local_1c,&local_6c,&(this_ptr->emitter_pos).f);
     local_48.x = (pSVar1->local_position).x + pCVar3->x;
     local_48.y = (pSVar1->local_position).y + pCVar3->y;
     local_48.z = (pSVar1->local_position).z + pCVar3->z;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(&this_ptr->base,&local_3c,&local_48);
     local_60.x = 0.0;
-    local_60.y = ((this_ptr->gem_pos).y - (this_ptr->emitter_pos).y) * 4.0f;
-    local_60.z = -(this_ptr->panel_radius * 2.0f + (this_ptr->emitter_pos).z +
+    local_60.y = ((this_ptr->gem_pos).y - (this_ptr->emitter_pos).f.y) * 4.0f;
+    local_60.z = -(this_ptr->panel_radius * 2.0f + (this_ptr->emitter_pos).f.z +
                   (this_ptr->gem_pos).z) * 4.0f;
     core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0(local_1c,&local_30,&local_60);
     core_actor_cpp_CDemonActor_transformVector_FUN_00408e80(&this_ptr->base,&local_54,&local_30);

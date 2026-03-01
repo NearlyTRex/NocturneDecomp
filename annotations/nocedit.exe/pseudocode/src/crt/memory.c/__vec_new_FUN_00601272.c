@@ -11,6 +11,6 @@ void * __cdecl __vec_new(void *array_memory,int element_count,WatcomTypeInfo *ty
 {
   void *pvVar1;
   
-  pvVar1 = __vec_new_(array_memory,element_count,type_info);
+  pvVar1 = __vec_new(array_memory,element_count,type_info);
   return pvVar1;
 }

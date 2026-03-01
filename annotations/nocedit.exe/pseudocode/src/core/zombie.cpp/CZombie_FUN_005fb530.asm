@@ -278,9 +278,9 @@ section .text
     MOV EAX,[0x03f87558]                ; 005fb819 | g_ZeroVector
         ;   Label: LAB_005fb819
     MOV dword ptr [ESP + 0xa0],EAX      ; 005fb81e
-    MOV EAX,[0x03f8755c]                ; 005fb825 | g_ZeroVector.y
+    MOV EAX,[0x03f8755c]                ; 005fb825 | g_ZeroVector+4
     MOV dword ptr [ESP + 0xa4],EAX      ; 005fb82a
-    MOV EAX,[0x03f87560]                ; 005fb831 | g_ZeroVector.z
+    MOV EAX,[0x03f87560]                ; 005fb831 | g_ZeroVector+8
     MOV dword ptr [ESP + 0xa8],EAX      ; 005fb836
     TEST EDI,EDI                        ; 005fb83d
     JNZ 0x005fb887                      ; 005fb83f

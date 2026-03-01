@@ -293,9 +293,9 @@ section .text
         ;   XREF to: 005e8029 (CONDITIONAL_JUMP)  ; LAB_005e8029
     MOV EAX,[0x03f87558]                ; 005e818d | g_ZeroVector
     MOV dword ptr [EDX],EAX             ; 005e8192
-    MOV EAX,[0x03f8755c]                ; 005e8194 | g_ZeroVector.y
+    MOV EAX,[0x03f8755c]                ; 005e8194 | g_ZeroVector+4
     MOV dword ptr [EDX + 0x4],EAX       ; 005e8199
-    MOV EAX,[0x03f87560]                ; 005e819c | g_ZeroVector.z
+    MOV EAX,[0x03f87560]                ; 005e819c | g_ZeroVector+8
     MOV dword ptr [EDX + 0x8],EAX       ; 005e81a1
     JMP 0x005e8029                      ; 005e81a4
         ;   XREF to: 005e8029 (UNCONDITIONAL_JUMP)  ; LAB_005e8029

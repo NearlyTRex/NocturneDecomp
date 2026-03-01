@@ -28,7 +28,7 @@ void __cdecl core_svetlana_cpp_CSvetlana_process_FUN_005d8ba0(CSvetlana *this_pt
   float afStackY_1870 [1520];
   float fVar12;
   code *blend_callback;
-  float in_stack_ffffff68;
+  float local_98;
   CQuaternion4f CStack_94;
   CQuaternion4f CStack_84;
   float local_74;
@@ -59,12 +59,12 @@ switchD_005d8f77_caseD_9:
     return;
   }
   core_charactr_cpp_CCharacter_processSmoking_FUN_0042ea40((CCharacter *)this_ptr,delta_time);
-  fVar12 = (float)(this_ptr->base).no_collision_flag - delta_time;
+  fVar12 = (this_ptr->base).invincibility_timer - delta_time;
   fVar3 = (float)12.566370614;
-  (this_ptr->base).no_collision_flag = (int)fVar12;
+  (this_ptr->base).invincibility_timer = fVar12;
   (this_ptr->base).base.turn_speed = delta_time * fVar3;
   if (fVar12 < 0.0) {
-    (this_ptr->base).no_collision_flag = 0;
+    (this_ptr->base).invincibility_timer = 0.0;
   }
   pCVar6 = &(this_ptr->base).base.model.accumulated_root_motion;
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
@@ -236,23 +236,22 @@ switchD_005d8f77_caseD_8:
                        ((CDemonActor *)this_ptr,&local_68,&(pCVar1->location).position);
     pCVar6 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_50,pCVar6);
     local_14 = (CCharacter_full_vtable *)core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(pCVar6->y);
-    in_stack_ffffff68 = (float)local_14;
+    local_98 = (float)local_14;
     if ((float)local_14 < (float)-1.57079632675) {
-      in_stack_ffffff68 = (float)local_14 + 3.141593f;
+      local_98 = (float)local_14 + 3.141593f;
     }
-    if ((float)1.57079632675 < in_stack_ffffff68) {
-      in_stack_ffffff68 = in_stack_ffffff68 + -3.141593f;
+    if ((float)1.57079632675 < local_98) {
+      local_98 = local_98 + -3.141593f;
     }
     local_18 = delta_time * (float)3.1415926535000001;
     local_20 = -local_18;
-    if (in_stack_ffffff68 < local_20) {
-      in_stack_ffffff68 = local_20;
+    if (local_98 < local_20) {
+      local_98 = local_20;
     }
-    if (local_18 < in_stack_ffffff68) {
-      in_stack_ffffff68 = local_18;
+    if (local_18 < local_98) {
+      local_98 = local_18;
     }
-    (this_ptr->base).base.base.orient.vec.y =
-         (this_ptr->base).base.base.orient.vec.y + in_stack_ffffff68;
+    (this_ptr->base).base.base.orient.vec.y = (this_ptr->base).base.base.orient.vec.y + local_98;
     core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10((CDemonActor *)this_ptr);
   }
   this_ptr_00 = (CCharacter *)(this_ptr->base).base.grabbed_by;
@@ -292,8 +291,7 @@ LAB_005d8e27:
     core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750
               (pCStack_1c,&CStack_94,fVar12,iVar4,blend_callback);
   }
-  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
-            ((CCharacter *)this_ptr,delta_time,in_stack_ffffff68);
+  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr,delta_time);
   model_ptr = &(this_ptr->base).base.model;
   euler = &(this_ptr->base).base.base.orient;
   local_14 = (CCharacter_full_vtable *)&(this_ptr->base).base.base.location;

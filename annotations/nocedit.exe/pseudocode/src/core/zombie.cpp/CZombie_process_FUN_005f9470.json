@@ -2,69 +2,51 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 73,
-        "line": 262,
-        "message": "use of undeclared identifier 'stack0xfffffc54'; did you mean 'in_stack_fffffc54'?"
-      },
-      {
         "category": "other",
-        "column": 19,
-        "line": 263,
-        "message": "cannot cast from type 'float' to pointer type 'CVector3f *'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 84,
-        "line": 266,
-        "message": "use of undeclared identifier 'stack0xfffffc54'; did you mean 'in_stack_fffffc54'?"
-      },
-      {
-        "category": "other",
-        "column": 28,
+        "column": 20,
         "line": 267,
-        "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
+        "message": "cannot cast from type 'float' to pointer type 'CVector3f *'"
       },
       {
         "category": "other",
         "column": 24,
-        "line": 674,
+        "line": 676,
         "message": "cannot cast from type 'float' to pointer type 'CVector3f *'"
       },
       {
         "category": "other",
         "column": 32,
-        "line": 677,
+        "line": 679,
         "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
       },
       {
         "category": "undeclared_identifier",
         "column": 30,
-        "line": 726,
+        "line": 728,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 37,
-        "line": 726,
+        "line": 728,
         "message": "expected expression"
       },
       {
         "category": "other",
         "column": 26,
-        "line": 817,
+        "line": 819,
         "message": "cannot cast from type 'float' to pointer type 'CVector3f *'"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 829,
+        "line": 831,
         "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
       },
       {
         "category": "undeclared_identifier",
         "column": 47,
-        "line": 936,
+        "line": 938,
         "message": "use of undeclared identifier 'PTR_00823c50'"
       }
     ],
@@ -73,24 +55,22 @@
   },
   "complexity": {
     "assembly_lines": 2463,
-    "complexity_score": 1288,
+    "complexity_score": 1239,
     "cross_reference_count": 0,
     "function_call_count": 48,
     "global_count": 72,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 1018,
-    "suspect_count": 23,
+    "pseudocode_lines": 1019,
+    "suspect_count": 19,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
-      "stack_param",
-      "stack_ref",
       "unresolved_funcptr",
       "warning_inlined_function",
       "warning_type_propagation",
       "warning_unreachable"
     ],
-    "total_lines": 3481
+    "total_lines": 3482
   },
   "cross_references": [],
   "function": {
@@ -1871,14 +1851,6 @@
       "type": "warning_type_propagation"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 36,
-      "match": "in_stack_fffffc54",
-      "severity": "moderate",
-      "text": "float in_stack_fffffc54;",
-      "type": "stack_param"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 199,
       "match": "SQRT",
@@ -1895,24 +1867,8 @@
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 255,
-      "match": "&stack0xfffffc54",
-      "severity": "moderate",
-      "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffc54);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 259,
-      "match": "&stack0xfffffc54",
-      "severity": "moderate",
-      "text": "(*(((pCVar3->base).vtable._uc)->_uc).processDamage)(pCVar3,(SDamageInfo *)&stack0xfffffc54);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 262,
+      "line": 264,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_80 = (int)ROUND(ROUND(local_98 * 2.5 * 0.25));",
@@ -1920,7 +1876,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 262,
+      "line": 264,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_80 = (int)ROUND(ROUND(local_98 * 2.5 * 0.25));",
@@ -1928,7 +1884,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 338,
+      "line": 340,
       "match": "SQRT",
       "severity": "mild",
       "text": "local_2c = SQRT(local_1e8.z * local_1e8.z +",
@@ -1936,7 +1892,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 575,
+      "line": 577,
       "match": "SQRT",
       "severity": "mild",
       "text": "if (SQRT(local_1a4 * local_1a4 + local_1ac * local_1ac + local_1a8 * local_1a8) <",
@@ -1944,7 +1900,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 582,
+      "line": 584,
       "match": "ABS",
       "severity": "mild",
       "text": "if (((ABS(pCVar10->y) < (float)0.261799387791667) && (-1 < iVar6)) &&",
@@ -1952,7 +1908,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 718,
+      "line": 720,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "iVar9 = *(int *)((int)g_CDemonSetPtr->characters + iVar6);",
@@ -1960,7 +1916,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 719,
+      "line": 721,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar18 = (**(code **)(*(int *)(iVar9 + 0x154) + 0xf8))(iVar9,this_ptr);",
@@ -1968,7 +1924,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 724,
+      "line": 726,
       "match": "ABS",
       "severity": "mild",
       "text": "if ((ABS(local_1b4) <= (float)10) &&",
@@ -1976,7 +1932,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 726,
+      "line": 728,
       "match": "SQRT",
       "severity": "mild",
       "text": "SQRT(local_1b0 * local_1b0 + local_1b8 * local_1b8) <=",
@@ -1984,7 +1940,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 752,
+      "line": 754,
       "match": "SQRT",
       "severity": "mild",
       "text": "SQRT(fVar25 * fVar25 + fVar24 * fVar24) <= (float)3)) &&",
@@ -1992,7 +1948,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 753,
+      "line": 755,
       "match": "ABS",
       "severity": "mild",
       "text": "(ABS((this_ptr->base).base.base.location.position.y - (pCVar16->location).position.y)",
@@ -2000,7 +1956,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 808,
+      "line": 810,
       "match": "fcos",
       "severity": "mild",
       "text": "fVar21 = (float10)fcos((float10)local_78);",
@@ -2008,7 +1964,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 809,
+      "line": 811,
       "match": "fsin",
       "severity": "mild",
       "text": "fVar22 = (float10)fsin((float10)local_78);",
@@ -2016,19 +1972,11 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 945,
+      "line": 947,
       "match": "ABS",
       "severity": "mild",
       "text": "if (ABS(pCVar10->y) < (float)0.34906585038888899) {",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 978,
-      "match": "in_stack_fffffc54",
-      "severity": "moderate",
-      "text": "((CCharacter *)this_ptr,delta_time,in_stack_fffffc54);",
-      "type": "stack_param"
     }
   ],
   "vtable_info": {

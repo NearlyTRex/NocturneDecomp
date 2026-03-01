@@ -30,9 +30,9 @@ void __cdecl core_fire_cpp_CToss_process_FUN_004c4000(CToss *this_ptr)
       if (this_ptr->toss_type != 0) {
         return;
       }
-      local_30.x = g_ZeroVector.x;
-      local_30.y = g_ZeroVector.y;
-      local_30.z = g_ZeroVector.z;
+      local_30.x = g_ZeroVector.f.x;
+      local_30.y = g_ZeroVector.f.y;
+      local_30.z = g_ZeroVector.f.z;
       pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->model);
       local_30.z = local_30.z + (pCVar2->bounds_max).z;
       pCVar3 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0

@@ -173,7 +173,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 0048d53f
     PUSH EAX                            ; 0048d543
     CALL engine_drender.cpp_renderTriangleSimple_FUN_004839f0 ; 0048d544
-        ;   XREF to: 004839f0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_renderTriangleSimple_FUN_004839f0(CVector3i * vertex_indices, int vertex_count)
+        ;   XREF to: 004839f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_renderTriangleSimple_FUN_004839f0(CVector3i * vertex_indices, int vertex_count)
     JMP 0x0048d4f1                      ; 0048d549
         ;   XREF to: 0048d4f1 (UNCONDITIONAL_JUMP)  ; LAB_0048d4f1
     CMP EDI,0xc0                        ; 0048d54b

@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_colquant_c_computeBoxStatistics_FUN_00441260(SColorQuantWorkspace *workspace,int box_index)
+; void __cdecl engine_colquant_c_computeBoxStatistics_FUN_00441260(SColorQuantMapper *workspace,int box_index)
 ;
 ; Parameters:
-; SColorQuantWorkspace * Stack[0x4]:4   workspace
+; SColorQuantMapper * Stack[0x4]:4   workspace
 ; int              Stack[0x8]:4   box_index
 ; Local Variables:
 ; undefined8       Stack[-0x90]:8  local_90

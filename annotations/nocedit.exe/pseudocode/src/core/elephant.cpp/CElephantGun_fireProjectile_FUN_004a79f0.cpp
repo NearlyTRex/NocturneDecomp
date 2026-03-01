@@ -21,9 +21,7 @@ void __cdecl core_elephant_cpp_CElephantGun_fireProjectile_FUN_004a79f0(CElephan
   float fStack_38;
   float fStack_34;
   float fStack_30;
-  float fStack_2c;
-  float fStack_28;
-  float fStack_24;
+  CVector3f CStack_2c;
   CVector3f CStack_20;
   
   iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
@@ -42,9 +40,9 @@ void __cdecl core_elephant_cpp_CElephantGun_fireProjectile_FUN_004a79f0(CElephan
   fStack_38 = -CStack_74.x;
   fStack_34 = -CStack_74.y;
   fStack_30 = -CStack_74.z;
-  fStack_2c = aCStack_68[0].x + CStack_74.x;
-  fStack_28 = aCStack_68[0].y + CStack_74.y;
-  fStack_24 = aCStack_68[0].z + CStack_74.z;
+  CStack_2c.x = aCStack_68[0].x + CStack_74.x;
+  CStack_2c.y = aCStack_68[0].y + CStack_74.y;
+  CStack_2c.z = aCStack_68[0].z + CStack_74.z;
   if (&fStack_50 != &fStack_38) {
     fStack_50 = fStack_38;
     fStack_4c = fStack_34;
@@ -62,11 +60,13 @@ void __cdecl core_elephant_cpp_CElephantGun_fireProjectile_FUN_004a79f0(CElephan
     fStack_4c = fStack_4c * fVar1;
     fStack_48 = fStack_48 * fVar1;
   }
-  core_fire_cpp_CFireEffect_createLaserSegment2_FUN_004c7f20(g_CFireEffectPtr);
+  core_fire_cpp_CFireEffect_createLaserCone_FUN_004c7f20
+            (g_CFireEffectPtr,aCStack_68,&CStack_2c,1.0,0,0xff,0,
+             this_ptr->spread_angle * (float)3.1415926535000001 * (float)0.0055555555555555497);
   this_ptr->muzzle_flash_active = 1;
   this_ptr->projectile_distance =
-       SQRT((fStack_24 - aCStack_68[0].z) * (fStack_24 - aCStack_68[0].z) +
-            (fStack_2c - aCStack_68[0].x) * (fStack_2c - aCStack_68[0].x) +
-            (fStack_28 - aCStack_68[0].y) * (fStack_28 - aCStack_68[0].y));
+       SQRT((CStack_2c.z - aCStack_68[0].z) * (CStack_2c.z - aCStack_68[0].z) +
+            (CStack_2c.x - aCStack_68[0].x) * (CStack_2c.x - aCStack_68[0].x) +
+            (CStack_2c.y - aCStack_68[0].y) * (CStack_2c.y - aCStack_68[0].y));
   return;
 }

@@ -113,7 +113,7 @@ float __cdecl CBoundingBox3D::getMaximumBound(CBoundingBox3D *this_ptr);
 
 // Original: core_box.cpp_CBoundingBox3D_render_FUN_004210b0
 // Address: 004210b0
-void __cdecl CBoundingBox3D::render(CBoundingBox3D *this_ptr,int param1,int param2,int param3);
+void __cdecl CBoundingBox3D::render(CBoundingBox3D *this_ptr);
 
 // Original: core_box.cpp_CBoundingBox3D_clampPoint_FUN_00421550
 // Address: 00421550

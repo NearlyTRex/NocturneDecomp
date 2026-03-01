@@ -30,7 +30,7 @@ void __cdecl core_flamecan_cpp_CFlameCan_process_FUN_004cb390(CFlameCan *this_pt
     }
   }
   else {
-    core_flamecan_cpp_CFlameCan_FUN_004cb340(this_ptr);
+    core_flamecan_cpp_CFlameCan_ignite_FUN_004cb340(this_ptr);
     if (this_ptr->on_fire == 0) {
       return;
     }

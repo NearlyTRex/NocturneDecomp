@@ -25,7 +25,7 @@ void __cdecl core_cow_cpp_CZombieCow_process_FUN_00444310(CZombieCow *this_ptr,f
   CPathMap *path_map;
   float fVar9;
   float fVar10;
-  float in_stack_ffffff40;
+  SDamageInfo local_c0;
   CVector3f local_84;
   CVector3f local_78;
   CVector3f local_6c;
@@ -132,10 +132,13 @@ void __cdecl core_cow_cpp_CZombieCow_process_FUN_00444310(CZombieCow *this_ptr,f
       }
       break;
     case 2:
-      core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xffffff40);
-      local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
+      core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_c0);
+      local_c0.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
+      local_c0.attacker = (CDemonActor *)this_ptr;
+      local_c0.wielder = (CDemonActor *)this_ptr;
+      local_14 = local_c0.damage_amount;
       pCVar7 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                         (&local_3c,&g_ZeroVector,
+                         (&local_3c,&g_ZeroVector.f,
                           (this_ptr->base).base.model.bone_transform.bone_world_matrices +
                           this_ptr->bone_head);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
@@ -218,7 +221,6 @@ switchD_0044482d_caseD_3:
   core_charactr_cpp_CCharacter_preProcess_FUN_00429820((CCharacter *)this_ptr);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
             (&(this_ptr->base).base.model);
-  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
-            ((CCharacter *)this_ptr,delta_time,in_stack_ffffff40);
+  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr,delta_time);
   return;
 }

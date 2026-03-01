@@ -20,10 +20,10 @@ typedef struct CBitFont {
     int char_bitmap_index[256]; // 0x2168
     int char_widths[256]; // 0x2568
     int char_heights[256]; // 0x2968
-    int char_x_advance[256]; // 0x2d68
-    int max_char_height; // 0x3168
-    int max_char_width; // 0x316c
-    int current_max_width; // 0x3170
+    int char_y_offsets[256]; // 0x2d68
+    int max_char_width; // 0x3168
+    int max_char_height; // 0x316c
+    int current_line_height; // 0x3170
     int char_spacing; // 0x3174
     int line_spacing; // 0x3178
     int shadow_offset_x; // 0x317c

@@ -15,8 +15,8 @@
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
 #include "types/classes/CWeather.h"
-#include "types/structs/SEdgeData.h"
 #include "types/structs/SRenderVertex.h"
+#include "types/structs/SSoftwareEdge.h"
 #include "types/typedefs/MessageHandler.h"
 
 // =============================================================================
@@ -100,14 +100,14 @@ extern ReentrantCriticalSection g_GlobalMemoryCriticalSection;
 extern ReentrantCriticalSection g_GlobalIoCriticalSection;
 extern ReentrantCriticalSection g_GlobalRuntimeCriticalSection;
 
-// SEdgeData[16]
-extern SEdgeData g_RasterizerEdgeArray[16];
-
 // SRenderVertex[32]
 extern SRenderVertex g_ClipVertexBufferStage2[32];
 extern SRenderVertex g_ClipVertexBufferStage1[32];
 extern SRenderVertex g_ClipVertexBufferStage3[32];
 extern SRenderVertex g_ClipVertexBufferStage4[32];
+
+// SSoftwareEdge[16]
+extern SSoftwareEdge g_RasterizerEdgeArray[16];
 
 // ThreadRegistryEntry*
 extern ThreadRegistryEntry* g_ThreadDataRegistryList;

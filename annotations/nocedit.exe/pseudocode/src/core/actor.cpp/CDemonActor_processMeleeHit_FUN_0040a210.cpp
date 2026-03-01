@@ -177,7 +177,7 @@ int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a210(CDemonActor 
                        (int)ROUND(ROUND(uStack_26c * 0.5 + 1.0)),pCVar3->collision_layer
                       );
             (*((this_ptr->vtable)._ub)->playAttackHitEffects)
-                      (this_ptr,hit_type,(SDamageInfo *)&local_1a0.weapon_damage_modifier,
+                      (this_ptr,hit_type,(SDamageInfo *)&local_1a0.dismember_prob,
                        (CDemonActor *)pCVar3);
           }
         }
@@ -225,10 +225,10 @@ LAB_0040a3e0:
               if (this_ptr_00 == (CFlameCan *)0x0) {
                 return 0;
               }
-              core_flamecan_cpp_CFlameCan_FUN_004cb340(this_ptr_00);
+              core_flamecan_cpp_CFlameCan_ignite_FUN_004cb340(this_ptr_00);
             }
             else {
-              core_crate_cpp_CCrate_FUN_00448a70(local_30);
+              core_crate_cpp_CCrate_explode_FUN_00448a70(local_30);
             }
           }
           else {
@@ -286,7 +286,7 @@ LAB_0040a3e0:
         local_38 = (int)(local_68.x * fVar7);
         if ((CTrigger **)&local_218.ammo_type != &local_40) {
           local_218.ammo_type = (int)local_40;
-          local_218.weapon_damage_modifier = (float)local_3c;
+          local_218.dismember_prob = (float)local_3c;
           local_218.damage_type = local_38;
         }
         pCVar2 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10

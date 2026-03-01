@@ -215,6 +215,7 @@ extern char* g_CurrentDebugFilename;
 // char[100]
 extern char g_DefaultAuditPath[100];
 extern char g_DefaultAuditRecordPath[100];
+extern char g_EventCommandBuffer[100];
 
 // char[260]
 extern char g_FilePathBuffer[260];
@@ -272,8 +273,8 @@ extern int g_CFlashlightClassVersion;
 extern int g_CFliesClassVersion;
 extern int g_CFrankenstienMachineClassVersion;
 extern int g_CGabriellaClassVersion;
-extern int INT_0067b664;
-extern int INT_0067b668;
+extern int g_MovieRecordingWidth;
+extern int g_MovieRecordingHeight;
 extern int g_CGargoyleClassVersion;
 extern int g_CGasMaskClassVersion;
 extern int g_CGhoulClassVersion;

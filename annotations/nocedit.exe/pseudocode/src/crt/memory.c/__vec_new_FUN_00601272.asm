@@ -17,7 +17,7 @@
 ;   shape_edittool.cpp_showMultiChoiceDialog_FUN_0049e9d0 at 0049ea6c
 ;
 ; Called Functions:
-;   crt_memory.c___vec_new__FUN_00601232
+;   crt_memory.c___vec_new_FUN_00601232
 ;
 ; *****************************************************************************
 
@@ -31,8 +31,8 @@ section .text
     PUSH ECX                            ; 0060127c
     MOV EBX,dword ptr [ESP + 0x10]      ; 0060127d
     PUSH EBX                            ; 00601281
-    CALL crt_memory.c___vec_new__FUN_00601232 ; 00601282
-        ;   XREF to: 00601232 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_new__FUN_00601232(void * dest, int element_count, WatcomTypeInfo * type_info)
+    CALL crt_memory.c___vec_new_FUN_00601232 ; 00601282
+        ;   XREF to: 00601232 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_new_FUN_00601232(void * dest, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00601287
     POP EBX                             ; 0060128a
     RET                                 ; 0060128b

@@ -2,13 +2,13 @@
 // Address: 004406c0
 // Address Range: [[004406c0, 00440b32]]
 // Convention: __cdecl
-// Signature: char * __cdecl engine_colquant_c_quantizeColors_FUN_004406c0(SColorQuantWorkspace *workspace,char *color_data,int color_count,int num_palette_entries)
+// Signature: char * __cdecl engine_colquant_c_quantizeColors_FUN_004406c0(SColorQuantMapper *workspace,char *color_data,int color_count,int num_palette_entries)
 
 #include "nocturne.h"
 
 /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
-char * __cdecl engine_colquant_c_quantizeColors_FUN_004406c0(SColorQuantWorkspace *workspace,char *color_data,int color_count,int num_palette_entries)
+char * __cdecl engine_colquant_c_quantizeColors_FUN_004406c0(SColorQuantMapper *workspace,char *color_data,int color_count,int num_palette_entries)
 
 {
   short sVar1;
@@ -18,9 +18,9 @@ char * __cdecl engine_colquant_c_quantizeColors_FUN_004406c0(SColorQuantWorkspac
   double dVar5;
   double dVar6;
   double dVar7;
-  SColorQuantWorkspace *pSVar8;
-  SColorQuantWorkspace *pSVar9;
-  SColorQuantWorkspace *pSVar10;
+  SColorQuantMapper *pSVar8;
+  SColorQuantMapper *pSVar9;
+  SColorQuantMapper *pSVar10;
   int iVar11;
   uint uVar12;
   int iVar13;
@@ -81,7 +81,7 @@ char * __cdecl engine_colquant_c_quantizeColors_FUN_004406c0(SColorQuantWorkspac
         if (0 < workspace->num_palette_entries) {
           do {
             pSVar9->centroids[0].red = (double)pSVar8->boxes[0].avg_red;
-            pSVar10 = (SColorQuantWorkspace *)((int)pSVar9->sort_keys[0] + 0x1c);
+            pSVar10 = (SColorQuantMapper *)((int)pSVar9->sort_keys[0] + 0x1c);
             pSVar9->centroids[0].green = (double)pSVar8->boxes[0].avg_green;
             sVar1 = pSVar8->boxes[0].avg_blue;
             *(uint *)pSVar9->sort_keys[0] = 0;
@@ -98,7 +98,7 @@ char * __cdecl engine_colquant_c_quantizeColors_FUN_004406c0(SColorQuantWorkspac
             iVar13 = iVar13 + 1;
             pSVar9->centroids[0].weighted_intensity =
                  (double)sVar1 * dVar6 + dVar3 * dVar5 + dVar2 * dVar7;
-            pSVar8 = (SColorQuantWorkspace *)((int)pSVar8->sort_keys[1] + 0x1c);
+            pSVar8 = (SColorQuantMapper *)((int)pSVar8->sort_keys[1] + 0x1c);
             pSVar9 = pSVar10;
           } while (iVar13 < workspace->num_palette_entries);
         }
@@ -132,11 +132,11 @@ char * __cdecl engine_colquant_c_quantizeColors_FUN_004406c0(SColorQuantWorkspac
                   pSVar14 = (SColorQuantCentroid *)((int)pSVar14 + (uint)bVar17 * -8 + 4);
                 }
                 iVar13 = iVar13 + 1;
-                pSVar8 = (SColorQuantWorkspace *)((int)pSVar8->sort_keys[0] + 0x1c);
+                pSVar8 = (SColorQuantMapper *)((int)pSVar8->sort_keys[0] + 0x1c);
               }
               else {
                 iVar13 = iVar13 + 1;
-                pSVar8 = (SColorQuantWorkspace *)((int)pSVar8->sort_keys[0] + 0x1c);
+                pSVar8 = (SColorQuantMapper *)((int)pSVar8->sort_keys[0] + 0x1c);
               }
             }
             local_24 = local_24 + 1;
@@ -150,10 +150,10 @@ char * __cdecl engine_colquant_c_quantizeColors_FUN_004406c0(SColorQuantWorkspac
           local_20._0_1_ = (char)(int)ROUND(ROUND(pSVar8->centroids[0].green));
           pSVar9->output_palette[1] = (char)local_20;
           local_20._0_1_ = (char)(int)ROUND(ROUND(pSVar8->centroids[0].blue));
-          pSVar8 = (SColorQuantWorkspace *)((int)pSVar8->sort_keys[0] + 0x1c);
+          pSVar8 = (SColorQuantMapper *)((int)pSVar8->sort_keys[0] + 0x1c);
           pSVar9->output_palette[2] = (char)local_20;
-          pSVar9 = (SColorQuantWorkspace *)((int)&pSVar9->num_palette_entries + 3);
-        } while (pSVar8 != (SColorQuantWorkspace *)((int)workspace->sort_keys[0xff] + 0x1c));
+          pSVar9 = (SColorQuantMapper *)((int)&pSVar9->num_palette_entries + 3);
+        } while (pSVar8 != (SColorQuantMapper *)((int)workspace->sort_keys[0xff] + 0x1c));
         return workspace->output_palette;
       }
       _sprintf(local_150,"%6.6d",uVar12);
@@ -178,7 +178,7 @@ char * __cdecl engine_colquant_c_quantizeColors_FUN_004406c0(SColorQuantWorkspac
             iVar13 = iVar11;
           }
           iVar11 = iVar11 + 1;
-          pSVar8 = (SColorQuantWorkspace *)((int)pSVar8->sort_keys[1] + 0x1c);
+          pSVar8 = (SColorQuantMapper *)((int)pSVar8->sort_keys[1] + 0x1c);
         } while (iVar11 <= (int)uVar12);
       }
       iVar11 = uVar12 + 1;

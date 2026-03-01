@@ -603,7 +603,7 @@ section .text
     PUSH dword ptr [EBP + 0x4e]         ; 005396ef
     PUSH ESI                            ; 005396f2 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_draw3DAxisLabelsAt_FUN_004a1e90 ; 005396f3
-        ;   XREF to: 004a1e90 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_draw3DAxisLabelsAt_FUN_004a1e90(CEditorTools * this_ptr, int param2, CQuaternion4f * world_position, CQuaternion4f * label_offset, ...)
+        ;   XREF to: 004a1e90 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_draw3DAxisLabelsAt_FUN_004a1e90(CEditorTools * this_ptr, float scale_factor, int text_color, CVector3f * world_position, ...)
     ADD ESP,0x14                        ; 005396f8
     PUSH 0x0                            ; 005396fb
         ;   Label: LAB_005396fb
@@ -859,8 +859,8 @@ section .text
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
     MOV EBX,dword ptr [0x0067b654]      ; 005399ad | g_CGameInstance | g_CGamePtr
     PUSH EBX                            ; 005399b3 | g_CGameInstance
-    CALL core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90 ; 005399b4
-        ;   XREF to: 004d7d90 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90(CGame * this_ptr)
+    CALL core_game.cpp_CGame_updateDT_FUN_004d7d90 ; 005399b4
+        ;   XREF to: 004d7d90 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_updateDT_FUN_004d7d90(CGame * this_ptr)
     ADD ESP,0x4                         ; 005399b9
     MOV ESI,dword ptr [0x006810c8]      ; 005399bc | g_CDemonSetPtr
     PUSH ESI                            ; 005399c2 | g_CDemonSetInstance

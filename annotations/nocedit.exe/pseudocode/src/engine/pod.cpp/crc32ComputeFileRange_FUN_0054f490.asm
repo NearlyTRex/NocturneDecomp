@@ -11,7 +11,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   char s_EmptyString_0064015e = \x00
+;   char s_EmptyChar_0064015e = \x00
 ;   TerminatedCString s_engine_pod_cpp_0064015f
 ;   TerminatedCString s_rb_00640171
 ;   TerminatedCString s_engine_pod_cpp_00640174
@@ -39,7 +39,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x1c]      ; 0054f497
     MOV EDI,dword ptr [ESP + 0x20]      ; 0054f49b
     PUSH ESI                            ; 0054f49f
-    PUSH 0x64015e                       ; 0054f4a0 | s_EmptyString_0064015e
+    PUSH 0x64015e                       ; 0054f4a0 | s_EmptyChar_0064015e
     CALL engine_dosio.c_getFileSize_FUN_00481880 ; 0054f4a5
         ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFileSize_FUN_00481880(char * directory, char * filename)
     ADD ESP,0x8                         ; 0054f4aa

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dstrender_cpp_renderDepthOnlyStandard_FUN_0049072f(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
+; void __cdecl core_dstrender_cpp_renderDepthOnlyStandard_FUN_0049072f(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
 ;
 ;
 ; XREF[20]:

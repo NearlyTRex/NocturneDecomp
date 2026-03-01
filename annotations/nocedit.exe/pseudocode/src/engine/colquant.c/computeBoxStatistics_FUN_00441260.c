@@ -2,13 +2,13 @@
 // Address: 00441260
 // Address Range: [[00441260, 00441780]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_colquant_c_computeBoxStatistics_FUN_00441260(SColorQuantWorkspace *workspace,int box_index)
+// Signature: void __cdecl engine_colquant_c_computeBoxStatistics_FUN_00441260(SColorQuantMapper *workspace,int box_index)
 
 #include "nocturne.h"
 
 /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
-void __cdecl engine_colquant_c_computeBoxStatistics_FUN_00441260(SColorQuantWorkspace *workspace,int box_index)
+void __cdecl engine_colquant_c_computeBoxStatistics_FUN_00441260(SColorQuantMapper *workspace,int box_index)
 
 {
   double dVar1;

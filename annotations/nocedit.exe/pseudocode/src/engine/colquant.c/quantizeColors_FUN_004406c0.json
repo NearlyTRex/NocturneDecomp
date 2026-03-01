@@ -59,7 +59,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "engine_colquant.c_quantizeColors_FUN_004406c0",
-    "signature": "char * __cdecl engine_colquant_c_quantizeColors_FUN_004406c0(SColorQuantWorkspace *workspace,char *color_data,int color_count,int num_palette_entries)"
+    "signature": "char * __cdecl engine_colquant_c_quantizeColors_FUN_004406c0(SColorQuantMapper *workspace,char *color_data,int color_count,int num_palette_entries)"
   },
   "function_calls": [
     {
@@ -261,7 +261,7 @@
         "name": "workspace",
         "offset": 4,
         "size": 4,
-        "type": "SColorQuantWorkspace *"
+        "type": "SColorQuantMapper *"
       },
       {
         "is_param": true,
@@ -339,9 +339,9 @@
     {
       "description": "Complex pointer cast",
       "line": 77,
-      "match": "(SColorQuantWorkspace *)((int)",
+      "match": "(SColorQuantMapper *)((int)",
       "severity": "mild",
-      "text": "pSVar10 = (SColorQuantWorkspace *)((int)pSVar9->sort_keys[0] + 0x1c);",
+      "text": "pSVar10 = (SColorQuantMapper *)((int)pSVar9->sort_keys[0] + 0x1c);",
       "type": "pointer_cast"
     },
     {
@@ -371,9 +371,9 @@
     {
       "description": "Complex pointer cast",
       "line": 94,
-      "match": "(SColorQuantWorkspace *)((int)",
+      "match": "(SColorQuantMapper *)((int)",
       "severity": "mild",
-      "text": "pSVar8 = (SColorQuantWorkspace *)((int)pSVar8->sort_keys[1] + 0x1c);",
+      "text": "pSVar8 = (SColorQuantMapper *)((int)pSVar8->sort_keys[1] + 0x1c);",
       "type": "pointer_cast"
     },
     {
@@ -411,17 +411,17 @@
     {
       "description": "Complex pointer cast",
       "line": 128,
-      "match": "(SColorQuantWorkspace *)((int)",
+      "match": "(SColorQuantMapper *)((int)",
       "severity": "mild",
-      "text": "pSVar8 = (SColorQuantWorkspace *)((int)pSVar8->sort_keys[0] + 0x1c);",
+      "text": "pSVar8 = (SColorQuantMapper *)((int)pSVar8->sort_keys[0] + 0x1c);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 132,
-      "match": "(SColorQuantWorkspace *)((int)",
+      "match": "(SColorQuantMapper *)((int)",
       "severity": "mild",
-      "text": "pSVar8 = (SColorQuantWorkspace *)((int)pSVar8->sort_keys[0] + 0x1c);",
+      "text": "pSVar8 = (SColorQuantMapper *)((int)pSVar8->sort_keys[0] + 0x1c);",
       "type": "pointer_cast"
     },
     {
@@ -499,25 +499,25 @@
     {
       "description": "Complex pointer cast",
       "line": 146,
-      "match": "(SColorQuantWorkspace *)((int)",
+      "match": "(SColorQuantMapper *)((int)",
       "severity": "mild",
-      "text": "pSVar8 = (SColorQuantWorkspace *)((int)pSVar8->sort_keys[0] + 0x1c);",
+      "text": "pSVar8 = (SColorQuantMapper *)((int)pSVar8->sort_keys[0] + 0x1c);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 148,
-      "match": "(SColorQuantWorkspace *)((int)",
+      "match": "(SColorQuantMapper *)((int)",
       "severity": "mild",
-      "text": "pSVar9 = (SColorQuantWorkspace *)((int)&pSVar9->num_palette_entries + 3);",
+      "text": "pSVar9 = (SColorQuantMapper *)((int)&pSVar9->num_palette_entries + 3);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 149,
-      "match": "(SColorQuantWorkspace *)((int)",
+      "match": "(SColorQuantMapper *)((int)",
       "severity": "mild",
-      "text": "} while (pSVar8 != (SColorQuantWorkspace *)((int)workspace->sort_keys[0xff] + 0x1c));",
+      "text": "} while (pSVar8 != (SColorQuantMapper *)((int)workspace->sort_keys[0xff] + 0x1c));",
       "type": "pointer_cast"
     },
     {
@@ -563,9 +563,9 @@
     {
       "description": "Complex pointer cast",
       "line": 174,
-      "match": "(SColorQuantWorkspace *)((int)",
+      "match": "(SColorQuantMapper *)((int)",
       "severity": "mild",
-      "text": "pSVar8 = (SColorQuantWorkspace *)((int)pSVar8->sort_keys[1] + 0x1c);",
+      "text": "pSVar8 = (SColorQuantMapper *)((int)pSVar8->sort_keys[1] + 0x1c);",
       "type": "pointer_cast"
     },
     {

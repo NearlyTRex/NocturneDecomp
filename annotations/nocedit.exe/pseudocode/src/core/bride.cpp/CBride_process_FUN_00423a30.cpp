@@ -24,7 +24,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
   float min_distance;
   float fVar11;
   float max_distance;
-  float in_stack_fffffe0c;
+  SDamageInfo local_1f4;
   SDamageInfo local_1b8;
   SDamageInfo local_17c;
   SDamageInfo local_140;
@@ -200,8 +200,11 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
             }
             else if ((this_ptr->base).base.model.part_data.visibility_flags
                      [this_ptr->part_indices[3]] != 0) {
-              core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffe0c);
-              local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
+              core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_1f4);
+              local_1f4.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
+              local_1f4.attacker = (CDemonActor *)this_ptr;
+              local_1f4.wielder = (CDemonActor *)this_ptr;
+              local_14 = local_1f4.damage_amount;
               pCVar6 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                                  (&local_e0,(CVector3f *)&FLOAT_00822c94,
                                   (this_ptr->base).base.model.bone_transform.bone_world_matrices +
@@ -355,8 +358,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
     }
     core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
               (&(this_ptr->base).base.model);
-    core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
-              ((CCharacter *)this_ptr,delta_time,in_stack_fffffe0c);
+    core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr,delta_time);
     if ((this_ptr->base).pool_me == 0) {
       core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_0042b760
                 ((CCharacter *)this_ptr,this_ptr->part_indices[0],INT_00822cf0,0.2);

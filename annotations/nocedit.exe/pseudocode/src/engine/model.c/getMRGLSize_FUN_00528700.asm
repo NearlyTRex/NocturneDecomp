@@ -16,7 +16,7 @@
 ;   engine_keyframe.c_recomputeKeyFrameNormals_FUN_00502320 at 0050238a
 ;   engine_model.c_byteswapMRGLData_FUN_00527e40 at 00527e50
 ;   engine_model.c_loadMRGLTextures_FUN_00528870 at 005288aa
-;   engine_palette.cpp_CPaletteManager_FUN_00545060 at 005450e1
+;   engine_palette.cpp_CPaletteManager_scanTextures_FUN_00545060 at 005450e1
 ;   shape_design.c_findVertexListInModel_FUN_00468000 at 00468022
 ;   shape_design.c_getVertexCountFromModel_FUN_00468080 at 004680a2
 ;

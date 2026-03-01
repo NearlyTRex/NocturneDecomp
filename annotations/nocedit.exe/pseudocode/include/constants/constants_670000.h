@@ -291,10 +291,22 @@ static TerminatedCString s_SBat_0067d7d8 = "$SBat$$";
 static TerminatedCString s_SMorphControlPoint_0067d7e4 = "$SMorphControlPoint$$";
 static TerminatedCString s_CMorphModel_0067d7fe = "$CMorphModel$$";
 
+// char*[2] constants
+static char* g_OnOffLabels[2] = {"Off", "On"};
+
 // char*[5] constants
 static char* g_ChapterDisplayTexts[5] = {
     (char*)0x00000787, (char*)0x0000078B, (char*)0x0000078D, (char*)0x0000078F,
     (char*)0x00000796
+};
+
+// char*[5][13] constants
+static char* g_ChapterMissionFiles[5][13] = {
+    {"hq-act1.msn", "gtown.msn", "forest.msn", "castle1.msn", "dungeon.msn", nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr},
+    {"train.msn", "town.msn", "mine.msn", "trans.msn", "temple.msn", "town2.msn", "hq-act2b.msn", nullptr, nullptr, nullptr, nullptr, nullptr, nullptr},
+    {"hq-act3.msn", "chicago1.msn", "speak.msn", "chicago2.msn", "wworks.msn", "chicago3.msn", "theater.msn", "chicago4.msn", "ware2.msn", "factory.msn", "intfact.msn", nullptr, nullptr},
+    {"hq-act4.msn", "grave.msn", "mansion.msn", "hq-act4b.msn", nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr},
+    {"hq-act5.msn", nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr}
 };
 
 // char*[8] constants
@@ -965,33 +977,6 @@ static void* DAT_00679D64 = (void*)0x004B1AC2; // caseD_4
 static void* DAT_00679D68 = (void*)0x004B1AD4; // caseD_5
 static void* DAT_00679D6C = (void*)0x004B1ABA; // caseD_6
 static void* DAT_00679D70 = (void*)0x004B1AB4; // caseD_7
-static void* DAT_0067B65C = (void*)s_On_0062d675;
-static void* DAT_0067B758 = (void*)s_forest_msn_0062d68e;
-static void* DAT_0067B75C = (void*)s_castle1_msn_0062d699;
-static void* DAT_0067B760 = (void*)s_dungeon_msn_0062d6a5;
-static void* DAT_0067B784 = (void*)s_train_msn_0062d6b1;
-static void* DAT_0067B788 = (void*)s_town_msn_0062d6bb;
-static void* DAT_0067B78C = (void*)s_mine_msn_0062d6c4;
-static void* DAT_0067B790 = (void*)s_trans_msn_0062d6cd;
-static void* DAT_0067B794 = (void*)s_temple_msn_0062d6d7;
-static void* DAT_0067B798 = (void*)s_town2_msn_0062d6e2;
-static void* DAT_0067B79C = (void*)s_hq_act2b_msn_0062d6ec;
-static void* DAT_0067B7B8 = (void*)s_hq_act3_msn_0062d6f9;
-static void* DAT_0067B7BC = (void*)s_chicago1_msn_0062d705;
-static void* DAT_0067B7C0 = (void*)s_speak_msn_0062d712;
-static void* DAT_0067B7C4 = (void*)s_chicago2_msn_0062d71c;
-static void* DAT_0067B7C8 = (void*)s_wworks_msn_0062d729;
-static void* DAT_0067B7CC = (void*)s_chicago3_msn_0062d734;
-static void* DAT_0067B7D0 = (void*)s_theater_msn_0062d741;
-static void* DAT_0067B7D4 = (void*)s_chicago4_msn_0062d74d;
-static void* DAT_0067B7D8 = (void*)s_ware2_msn_0062d75a;
-static void* DAT_0067B7DC = (void*)s_factory_msn_0062d764;
-static void* DAT_0067B7E0 = (void*)s_intfact_msn_0062d770;
-static void* DAT_0067B7EC = (void*)s_hq_act4_msn_0062d77c;
-static void* DAT_0067B7F0 = (void*)s_grave_msn_0062d788;
-static void* DAT_0067B7F4 = (void*)s_mansion_msn_0062d792;
-static void* DAT_0067B7F8 = (void*)s_hq_act4b_msn_0062d79e;
-static void* DAT_0067B820 = (void*)s_hq_act5_msn_0062d7ab;
 static void* DAT_0067D6F8 = (void*)s_anon_00639d28;
 static void* DAT_0067D6FC = (void*)s_p_m_m_m_m_00639d2a;
 static void* DAT_0067D700 = (void*)s_anon_00639d2b;

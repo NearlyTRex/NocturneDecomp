@@ -21,7 +21,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
-;   core_fire.cpp_CFireEffect_createLaserSegment2_FUN_004c7f20
+;   core_fire.cpp_CFireEffect_createLaserCone_FUN_004c7f20
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_004c79d0
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
 ;
@@ -171,8 +171,8 @@ section .text
     PUSH EAX                            ; 00506842
     MOV ECX,dword ptr [0x0067a3d0]      ; 00506843 | g_CFireEffectInstance | g_CFireEffectPtr
     PUSH ECX                            ; 00506849 | g_CFireEffectInstance
-    CALL core_fire.cpp_CFireEffect_createLaserSegment2_FUN_004c7f20 ; 0050684a
-        ;   XREF to: 004c7f20 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLaserSegment2_FUN_004c7f20(CFireEffect * this_ptr)
+    CALL core_fire.cpp_CFireEffect_createLaserCone_FUN_004c7f20 ; 0050684a
+        ;   XREF to: 004c7f20 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLaserCone_FUN_004c7f20(CFireEffect * this_ptr, CVector3f * origin, CVector3f * hit_position, float beam_width, ...)
     MOV EBX,dword ptr [ESI + 0x588]     ; 0050684f
     ADD ESP,0x20                        ; 00506855
     TEST EBX,EBX                        ; 00506858
@@ -199,8 +199,8 @@ section .text
     MOV EDI,dword ptr [0x0067a3d0]      ; 005068ad | g_CFireEffectPtr
     PUSH EDI                            ; 005068b3 | g_CFireEffectInstance
     INC EBX                             ; 005068b4
-    CALL core_fire.cpp_CFireEffect_createLaserSegment2_FUN_004c7f20 ; 005068b5
-        ;   XREF to: 004c7f20 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLaserSegment2_FUN_004c7f20(CFireEffect * this_ptr)
+    CALL core_fire.cpp_CFireEffect_createLaserCone_FUN_004c7f20 ; 005068b5
+        ;   XREF to: 004c7f20 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLaserCone_FUN_004c7f20(CFireEffect * this_ptr, CVector3f * origin, CVector3f * hit_position, float beam_width, ...)
     ADD ESP,0x20                        ; 005068ba
     CMP EBX,0xa                         ; 005068bd
     JL 0x0050686f                       ; 005068c0

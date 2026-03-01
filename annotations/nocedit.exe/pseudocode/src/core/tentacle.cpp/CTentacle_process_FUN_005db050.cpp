@@ -26,7 +26,6 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_pt
   CMatrix3x4f *pCVar12;
   CMatrix3x4f *pCVar13;
   byte bVar14;
-  float in_stack_fffffda0;
   CMatrix3x4f CStack_250;
   CMatrix3x4f CStack_220;
   CMatrix3x4f CStack_1f0;
@@ -215,12 +214,11 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_pt
             pCVar8 = (this_ptr->base).victim;
             fVar1 = (this_ptr->base).base.base.location.position.x - (pCVar8->location).position.x;
             fVar3 = (this_ptr->base).base.base.location.position.z - (pCVar8->location).position.z;
-            in_stack_fffffda0 = SQRT(fVar3 * fVar3 + fVar1 * fVar1);
+            fVar1 = SQRT(fVar3 * fVar3 + fVar1 * fVar1);
             if (((fStack_18 < (float)0.17453292519444399) &&
                 (ABS((this_ptr->base).base.base.location.position.y - (pCVar8->location).position.y)
                  < (float)4)) &&
-               ((float)7 < in_stack_fffffda0 &&
-                in_stack_fffffda0 < (float)12)) {
+               ((float)7 < fVar1 && fVar1 < (float)12)) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                         (&(this_ptr->base).base.model.motion_controller,6,1);
               this_ptr->wait_timer = 25.0;
@@ -266,8 +264,7 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_pt
     core_charactr_cpp_CCharacter_preProcess_FUN_00429820((CCharacter *)this_ptr);
     core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
               (&(this_ptr->base).base.model);
-    core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
-              ((CCharacter *)this_ptr,delta_time,in_stack_fffffda0);
+    core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr,delta_time);
   }
   return;
 }

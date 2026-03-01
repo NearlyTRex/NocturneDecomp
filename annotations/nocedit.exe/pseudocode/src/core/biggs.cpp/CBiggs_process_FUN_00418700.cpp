@@ -16,7 +16,6 @@ void __cdecl core_biggs_cpp_CBiggs_process_FUN_00418700(CBiggs *this_ptr,float d
   uint uVar4;
   float fVar5;
   int iVar6;
-  float fVar7;
   CVector3f local_30;
   float local_24;
   float local_20;
@@ -31,9 +30,9 @@ void __cdecl core_biggs_cpp_CBiggs_process_FUN_00418700(CBiggs *this_ptr,float d
        (this_ptr->base).base.model.accumulated_root_motion.z;
   (this_ptr->base).base.model.accumulated_root_motion.x =
        (this_ptr->base).base.model.accumulated_root_motion.y;
-  fVar7 = delta_time * (this_ptr->base).speed;
+  fVar3 = (this_ptr->base).speed;
   this_ptr_00 = &(this_ptr->base).base.model;
-  while (0.0 < fVar7) {
+  while (0.0 < delta_time * fVar3) {
     iVar6 = core_motion_cpp_CMotionController_advance_FUN_0052d610(&this_ptr_00->motion_controller);
     core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,iVar6);
   }
@@ -101,8 +100,7 @@ LAB_004187db:
   core_charactr_cpp_CCharacter_preProcess_FUN_00429820((CCharacter *)this_ptr);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
             (&(this_ptr->base).base.model);
-  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
-            ((CCharacter *)this_ptr,delta_time,fVar7);
+  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr,delta_time);
   iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                     (g_CEventListPtr,this_ptr->morph_event);
   if (iVar6 != 0) {
@@ -110,8 +108,8 @@ LAB_004187db:
     this_ptr->morphing = 1;
   }
   if ((this_ptr->morphing != 0) &&
-     (fVar7 = this_ptr->morph_timer + delta_time, this_ptr->morph_timer = fVar7,
-     4.0f < fVar7)) {
+     (fVar3 = this_ptr->morph_timer + delta_time, this_ptr->morph_timer = fVar3,
+     4.0f < fVar3)) {
     this_ptr->morph_timer = 4.0f;
     return;
   }

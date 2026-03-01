@@ -24,7 +24,7 @@ void __cdecl core_batcreat_cpp_CBatCreature_process_FUN_00415470(CBatCreature *t
   uint uVar9;
   float fVar10;
   float max_distance;
-  float in_stack_fffffec4;
+  SDamageInfo local_13c;
   CVector3f local_100;
   CVector3f local_f4;
   CVector3f local_e8;
@@ -260,10 +260,13 @@ LAB_004158fb:
       }
       break;
     case 3:
-      core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffec4);
-      local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
+      core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_13c);
+      local_13c.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
+      local_13c.attacker = (CDemonActor *)this_ptr;
+      local_13c.wielder = (CDemonActor *)this_ptr;
+      local_14 = local_13c.damage_amount;
       pCVar8 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                         (&local_ac,&g_ZeroVector,
+                         (&local_ac,&g_ZeroVector.f,
                           (this_ptr->base).base.model.bone_transform.bone_world_matrices +
                           INT_00822754);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
@@ -340,7 +343,6 @@ switchD_00415d62_caseD_2:
   core_charactr_cpp_CCharacter_preProcess_FUN_00429820((CCharacter *)this_ptr);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
             (&(this_ptr->base).base.model);
-  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
-            ((CCharacter *)this_ptr,delta_time,in_stack_fffffec4);
+  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr,delta_time);
   return;
 }

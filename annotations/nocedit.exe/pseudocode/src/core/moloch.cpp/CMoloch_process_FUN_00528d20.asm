@@ -305,7 +305,7 @@ section .text
     PUSH dword ptr [EBP + 0x18]         ; 00528fb6
     PUSH EBX                            ; 00528fb9
     CALL core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0 ; 00528fba
-        ;   XREF to: 0042dfc0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(CCharacter * this_ptr, float delta_time, float param_3)
+        ;   XREF to: 0042dfc0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(CCharacter * this_ptr, float delta_time)
     MOV EDX,dword ptr [EBX + 0x21e8c]   ; 00528fbf
     ADD ESP,0x8                         ; 00528fc5
     TEST EDX,EDX                        ; 00528fc8

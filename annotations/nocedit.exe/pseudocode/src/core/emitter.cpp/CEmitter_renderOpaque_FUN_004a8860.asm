@@ -269,7 +269,7 @@ section .text
     PUSH 0x3f800000                     ; 004a8a5a
     PUSH EDX                            ; 004a8a5f | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_draw3DAxisLabelsAt_FUN_004a1e90 ; 004a8a60
-        ;   XREF to: 004a1e90 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_draw3DAxisLabelsAt_FUN_004a1e90(CEditorTools * this_ptr, int param2, CQuaternion4f * world_position, CQuaternion4f * label_offset, ...)
+        ;   XREF to: 004a1e90 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_draw3DAxisLabelsAt_FUN_004a1e90(CEditorTools * this_ptr, float scale_factor, int text_color, CVector3f * world_position, ...)
     ADD ESP,0x14                        ; 004a8a65
     XOR EAX,EAX                         ; 004a8a68
     LEA ESP,[EBP + 0x7e]                ; 004a8a6a

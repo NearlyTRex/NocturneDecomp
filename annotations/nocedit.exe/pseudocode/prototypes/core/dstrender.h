@@ -9,47 +9,47 @@ void __mmx_save saveMMXRegisters(ulonglong mm0,ulonglong mm1,ulonglong mm2,ulong
 
 // Original: core_dstrender.cpp_renderDepthOnlyReversed_FUN_004906e9
 // Address: 004906e9
-void __cdecl renderDepthOnlyReversed(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y);
+void __cdecl renderDepthOnlyReversed(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 
 // Original: core_dstrender.cpp_renderDepthOnlyStandard_FUN_0049072f
 // Address: 0049072f
-void __cdecl renderDepthOnlyStandard(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y);
+void __cdecl renderDepthOnlyStandard(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 
 // Original: core_dstrender.cpp_renderDepth16BitConditional_FUN_0049077d
 // Address: 0049077d
-void __cdecl renderDepth16BitConditional(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y);
+void __cdecl renderDepth16BitConditional(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 
 // Original: core_dstrender.cpp_renderTexturedAlphaMMXScanline_FUN_004907e7
 // Address: 004907e7
-void __cdecl renderTexturedAlphaMMXScanline(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y);
+void __cdecl renderTexturedAlphaMMXScanline(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 
 // Original: core_dstrender.cpp_renderZBufferFill16xUnrolled_FUN_00490902
 // Address: 00490902
-void __cdecl renderZBufferFill16xUnrolled(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y);
+void __cdecl renderZBufferFill16xUnrolled(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 
 // Original: core_dstrender.cpp_renderSolidColorDepth16xUnrolled_FUN_00490a58
 // Address: 00490a58
-void __cdecl renderSolidColorDepth16xUnrolled(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y);
+void __cdecl renderSolidColorDepth16xUnrolled(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 
 // Original: core_dstrender.cpp_renderDepthInterlacedProfiled_FUN_00490c37
 // Address: 00490c37
-void __cdecl renderDepthInterlacedProfiled(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y);
+void __cdecl renderDepthInterlacedProfiled(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 
 // Original: core_dstrender.cpp_renderScreenDepthTestInterlacedProfiled_FUN_00490cb5
 // Address: 00490cb5
-void __cdecl renderScreenDepthTestInterlacedProfiled(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y);
+void __cdecl renderScreenDepthTestInterlacedProfiled(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 
 // Original: core_dstrender.cpp_renderDepthTestStatistics16xUnrolled_FUN_00490d35
 // Address: 00490d35
-void __cdecl renderDepthTestStatistics16xUnrolled(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y);
+void __cdecl renderDepthTestStatistics16xUnrolled(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 
 // Original: core_dstrender.cpp_renderPerspectiveCorrectTextured16xCached_FUN_00490ec0
 // Address: 00490ec0
-void __cdecl renderPerspectiveCorrectTextured16xCached(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y);
+void __cdecl renderPerspectiveCorrectTextured16xCached(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 
 // Original: core_dstrender.cpp_renderTexturedDecalMMXScanline_FUN_0049169d
 // Address: 0049169d
-void __cdecl renderTexturedDecalMMXScanline(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y);
+void __cdecl renderTexturedDecalMMXScanline(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 
 // Original: core_dstrender.cpp_blendBilerpLightmapToTexture64BitOutput_FUN_004917bc
 // Address: 004917bc
@@ -125,4 +125,4 @@ void __cdecl blendLightmapToTextureMMX(ulonglong *output_buffer,ulonglong *textu
 
 // Original: core_dstrender.cpp_renderPerspectiveTexturedScanline_FUN_004940e9
 // Address: 004940e9
-void __cdecl renderPerspectiveTexturedScanline(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y);
+void __cdecl renderPerspectiveTexturedScanline(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);

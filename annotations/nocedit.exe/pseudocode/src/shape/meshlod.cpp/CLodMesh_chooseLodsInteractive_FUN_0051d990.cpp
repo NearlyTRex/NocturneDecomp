@@ -27,7 +27,7 @@ int __cdecl shape_meshlod_cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990(CLodMe
   int in_stack_00000010;
   uint in_stack_00000014;
   char *text;
-  int in_stack_fffff880;
+  CPickList CStack_780;
   float local_3d8 [100];
   char local_248 [200];
   CLodMesh local_180;
@@ -129,12 +129,12 @@ int __cdecl shape_meshlod_cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990(CLodMe
     local_10c.pan_y = 0.0;
     shape_spotview_cpp_CSpotView_applyCamera_FUN_005b9a20(&local_10c);
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-              (g_CDemonRendererPtr2,&g_ZeroVector);
+              (g_CDemonRendererPtr2,&g_ZeroVector.f);
     local_14 = (int *)core_box_cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_00420840(&local_94);
     local_34 = (int)ROUND(ROUND((float)local_14));
     shape_spotview_cpp_CSpotView_applyCamera_FUN_005b9a20(&local_d0);
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-              (g_CDemonRendererPtr2,&g_ZeroVector);
+              (g_CDemonRendererPtr2,&g_ZeroVector.f);
     if (iVar3 < 0) {
       iVar8 = local_30 + -1;
       if (iVar8 < 1) {
@@ -246,14 +246,13 @@ LAB_0051e453:
       shape_meshlod_cpp_CLodMesh_renderShadedTriangles_FUN_0051e990(&local_180,0);
     }
     else if ((in_stack_00000014 < 2) || (in_stack_00000014 == 2)) {
-      shape_meshlod_cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0
-                (&local_180,0,in_stack_fffff880);
+      shape_meshlod_cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0(&local_180,0);
     }
     iVar8 = shape_meshlod_cpp_CLodMesh_countUnprocessedFaces_FUN_005164d0(&local_180);
     _sprintf(local_248,"Current: %d pixelHeight, %d faces",local_34,iVar8);
     engine_2d_c_drawText_FUN_00401fd0(local_248,0,g_WindowHeight + -0xb);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-    core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
+    core_game_cpp_CGame_updateDT_FUN_004d7d90(g_CGamePtr);
     iVar9 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_N);
     iVar8 = local_30;
     if (iVar9 != 0) {
@@ -374,27 +373,26 @@ LAB_0051e453:
     }
     iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
     if (iVar8 != 0) {
-      shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff880);
+      shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&CStack_780);
+      shape_edittool_cpp_CStrList_add_FUN_004a2b80(&CStack_780.base,"Accept LOD settings.");
+      shape_edittool_cpp_CStrList_add_FUN_004a2b80(&CStack_780.base,"Cancel LOD selection.")
+      ;
       shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                ((CStrList *)&stack0xfffff880,"Accept LOD settings.");
-      shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                ((CStrList *)&stack0xfffff880,"Cancel LOD selection.");
-      shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                ((CStrList *)&stack0xfffff880,"Oops, go back to editing the LODs.");
+                (&CStack_780.base,"Oops, go back to editing the LODs.");
       iVar9 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                        ((CPickList *)&stack0xfffff880,"Accept or Cancel?",-1,0);
+                        (&CStack_780,"Accept or Cancel?",-1,0);
       iVar8 = local_30;
       if (iVar9 == 0) {
-        shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffff880,0);
+        shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&CStack_780,0);
         shape_meshlod_cpp_CLodMesh_dtor_FUN_00515950(&local_180,0);
         return iVar8;
       }
       if (iVar9 == 1) {
-        shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffff880,0);
+        shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&CStack_780,0);
         shape_meshlod_cpp_CLodMesh_dtor_FUN_00515950(&local_180,0);
         return -1;
       }
-      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffff880,0);
+      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&CStack_780,0);
     }
     if (-1 < iVar3) {
       local_d0.distance = local_3d8[iVar3];

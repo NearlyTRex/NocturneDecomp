@@ -1,58 +1,19 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 11,
-        "line": 23,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 11,
-        "line": 24,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 17,
-        "line": 27,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 31,
-        "line": 29,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 33,
-        "line": 30,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 25,
-        "line": 31,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 101,
-    "complexity_score": 118,
+    "complexity_score": 53,
     "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 10,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 53,
-    "suspect_count": 6,
-    "suspect_types": [
-      "unknown_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 154
   },
   "cross_references": [
@@ -226,29 +187,8 @@
         "is_param": false,
         "name": "local_28",
         "offset": -40,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_24",
-        "offset": -36,
-        "size": 2,
-        "type": "undefined2"
-      },
-      {
-        "is_param": false,
-        "name": "local_22",
-        "offset": -34,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_1e",
-        "offset": -30,
-        "size": 4,
-        "type": "undefined4"
+        "size": 14,
+        "type": "_heapinfo"
       },
       {
         "is_param": false,
@@ -290,54 +230,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Unknown/mangled field access",
-      "line": 16,
-      "match": "._4_2_",
-      "severity": "mild",
-      "text": "local_28._4_2_ = 0;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 17,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "local_28._0_4_ = (void *)0x0;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 20,
-      "match": "._10_4_",
-      "severity": "mild",
-      "text": "if (local_28._10_4_ == 0) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 22,
-      "match": "._6_4_",
-      "severity": "mild",
-      "text": "iVar6 = iVar6 + local_28._6_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 23,
-      "match": "._6_4_",
-      "severity": "mild",
-      "text": "if (uVar4 < (uint)local_28._6_4_) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 24,
-      "match": "._6_4_",
-      "severity": "mild",
-      "text": "uVar4 = local_28._6_4_;",
-      "type": "unknown_field"
-    }
-  ]
+  "suspects": []
 }

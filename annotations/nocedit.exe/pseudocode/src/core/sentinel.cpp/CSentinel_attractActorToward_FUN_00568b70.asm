@@ -25,7 +25,7 @@
 ;   float FLOAT_0064588a = -4
 ;   int INT_03114210
 ;   int INT_03114214
-;   CVector3f g_ZeroVector
+;   UVector3 g_ZeroVector
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0

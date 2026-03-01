@@ -27,8 +27,8 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   engine_font.cpp_CBitFont_getCharWidth_FUN_004cff40
-;   engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0
+;   engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0
+;   engine_font.cpp_CBitFont_getTextHeight_FUN_004cff40
 ;
 ; *****************************************************************************
 
@@ -57,8 +57,8 @@ section .text
     MOV ECX,dword ptr [EAX + 0x3168]    ; 004a69ab
     PUSH EAX                            ; 004a69b1
     MOV dword ptr [0x02cf2668],ECX      ; 004a69b2 | g_FontCharacterHeight
-    CALL engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0 ; 004a69b8
-        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0 ; 004a69b8
+        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 004a69bd
     MOV [0x02cf266c],EAX                ; 004a69c0 | g_FontCharacterWidth
     TEST EBX,EBX                        ; 004a69c5
@@ -80,8 +80,8 @@ section .text
         ;   Label: LAB_004a69eb
     MOV EDI,dword ptr [0x02cf1cd0]      ; 004a69ec | g_EditorFont
     PUSH EDI                            ; 004a69f2
-    CALL engine_font.cpp_CBitFont_getCharWidth_FUN_004cff40 ; 004a69f3
-        ;   XREF to: 004cff40 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004cff40(CBitFont * this_ptr, char * text_string)
+    CALL engine_font.cpp_CBitFont_getTextHeight_FUN_004cff40 ; 004a69f3
+        ;   XREF to: 004cff40 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextHeight_FUN_004cff40(CBitFont * this_ptr, char * text_string)
     ADD ESP,0x8                         ; 004a69f8
     MOV ECX,EAX                         ; 004a69fb
     JMP 0x004a69d5                      ; 004a69fd

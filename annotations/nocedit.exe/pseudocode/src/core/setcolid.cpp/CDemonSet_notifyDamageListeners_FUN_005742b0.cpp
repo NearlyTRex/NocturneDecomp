@@ -29,7 +29,7 @@ void __cdecl core_setcolid_cpp_CDemonSet_notifyDamageListeners_FUN_005742b0(CDem
     do {
       local_5c.fire_type = *(int *)unknown_param;
       local_5c.damage_amount = *(float *)((int)unknown_param + 4);
-      local_5c.damage_flags = *(int *)((int)unknown_param + 8);
+      local_5c.gore_multiplier = *(float *)((int)unknown_param + 8);
       local_5c.impact_point.x = *local_14;
       local_5c.impact_point.y = *local_10;
       local_5c.impact_point.z = *(float *)((int)unknown_param + 0x14);
@@ -38,7 +38,7 @@ void __cdecl core_setcolid_cpp_CDemonSet_notifyDamageListeners_FUN_005742b0(CDem
       local_5c.impact_direction.y = *local_18;
       local_5c.impact_direction.z = *local_20;
       local_5c.ammo_type = *(int *)((int)unknown_param + 0x28);
-      local_5c.weapon_damage_modifier = *(float *)((int)unknown_param + 0x2c);
+      local_5c.dismember_prob = *(float *)((int)unknown_param + 0x2c);
       local_5c.damage_type = *(int *)((int)unknown_param + 0x30);
       local_5c.attacker = *(CDemonActor **)((int)unknown_param + 0x34);
       local_5c.wielder = *(CDemonActor **)((int)unknown_param + 0x38);

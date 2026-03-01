@@ -21,19 +21,19 @@ void __cdecl fillDepthRegion(int left,int right,int top,int bottom);
 
 // Original: wincore_windll.cpp_renderMMXPerspectiveScanline32_FUN_005b4031
 // Address: 005b4031
-void __cdecl renderMMXPerspectiveScanline32(SEdgeData *left_vertex,SEdgeData *right_vertex,int scanline_y);
+void __cdecl renderMMXPerspectiveScanline32(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
 
 // Original: wincore_windll.cpp_renderMMXPerspectiveScanline16_FUN_005b4823
 // Address: 005b4823
-void __cdecl renderMMXPerspectiveScanline16(SEdgeData *left_vertex,SEdgeData *right_vertex,int scanline_y);
+void __cdecl renderMMXPerspectiveScanline16(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
 
 // Original: wincore_windll.cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec
 // Address: 005b50ec
-void __cdecl renderPerspectiveCorrectScanline32(SEdgeData *left_vertex,SEdgeData *right_vertex,int scanline_y);
+void __cdecl renderPerspectiveCorrectScanline32(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
 
 // Original: wincore_windll.cpp_renderPerspectiveCorrectScanline16_FUN_005b5322
 // Address: 005b5322
-void __cdecl renderPerspectiveCorrectScanline16(SEdgeData *left_vertex,SEdgeData *right_vertex,int scanline_y);
+void __cdecl renderPerspectiveCorrectScanline16(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
 
 // Original: wincore_windll.cpp_renderAlphaRow32_FUN_005b555c
 // Address: 005b555c
@@ -45,11 +45,11 @@ void __cdecl renderAlphaRow16(ushort *destPixels,uchar *srcIndices,uchar *srcAlp
 
 // Original: wincore_windll.cpp_renderScanline_FUN_005b5710
 // Address: 005b5710
-void __edi_esi_ebx renderScanline(void *left_data,void *right_data,int scanline_y);
+void __edi_esi_ebx renderScanline(SHardwareEdge *left,SHardwareEdge *right,int scanline_y);
 
-// Original: wincore_windll.cpp_renderScanlineSaved_FUN_005b5716
+// Original: wincore_windll.cpp_renderScanlineSwapped_FUN_005b5716
 // Address: 005b5716
-void __cdecl renderScanlineSaved(void *scanline_data,int scanline_y,int render_flags);
+void __cdecl renderScanlineSwapped(int scanline_y,SHardwareEdge *right,SHardwareEdge *left);
 
 // Original: wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
 // Address: 005b575c

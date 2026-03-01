@@ -26,7 +26,7 @@
 ;   undefined4 DAT_032690dc
 ;   undefined4 DAT_032690e0
 ;   undefined4 DAT_032690e4
-;   CVector3f g_ZeroVector
+;   UVector3 g_ZeroVector
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10

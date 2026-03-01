@@ -1,42 +1,20 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 30,
-        "line": 40,
-        "message": "use of undeclared identifier 'stack0xffffffa4'; did you mean 'in_stack_ffffffa4'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 39,
-        "line": 45,
-        "message": "use of undeclared identifier 'stack0xffffffa4'; did you mean 'in_stack_ffffffa4'?"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 51,
-        "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 128,
-    "complexity_score": 130,
+    "complexity_score": 56,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 7,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 60,
-    "suspect_count": 6,
-    "suspect_types": [
-      "stack_param",
-      "stack_ref"
-    ],
-    "total_lines": 188
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 56,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 184
   },
   "cross_references": [
     {
@@ -56,7 +34,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_fire.cpp_CFireEffect_createStake_FUN_004c7bb0",
-    "signature": "void __cdecl core_fire_cpp_CFireEffect_createStake_FUN_004c7bb0(CFireEffect *this_ptr,CVector3f *impact_position,CVector3f *orientation_angles,CVector3f *surface_normal,int material_type)"
+    "signature": "void __cdecl core_fire_cpp_CFireEffect_createStake_FUN_004c7bb0(CFireEffect *this_ptr,CVector3f *impact_position,CVector3f *orientation_angles,CVector3f *surface_normal,int ground_type)"
   },
   "function_calls": [
     {
@@ -273,61 +251,12 @@
       },
       {
         "is_param": true,
-        "name": "material_type",
+        "name": "ground_type",
         "offset": 20,
         "size": 4,
         "type": "int"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 7,
-      "match": "in_stack_ffffffa4",
-      "severity": "moderate",
-      "text": "CVector3f *in_stack_ffffffa4;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_ffffffa8",
-      "severity": "moderate",
-      "text": "CVector3f *in_stack_ffffffa8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 33,
-      "match": "&stack0xffffffa4",
-      "severity": "moderate",
-      "text": "((CMatrix3x3f *)&stack0xffffffa4,orientation_angles);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 38,
-      "match": "&stack0xffffffa4",
-      "severity": "moderate",
-      "text": "((CMatrix3x3f *)&stack0xffffffa4,&local_28,&local_34);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 45,
-      "match": "in_stack_ffffffa4",
-      "severity": "moderate",
-      "text": "in_stack_ffffffa4,in_stack_ffffffa8);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 45,
-      "match": "in_stack_ffffffa8",
-      "severity": "moderate",
-      "text": "in_stack_ffffffa4,in_stack_ffffffa8);",
-      "type": "stack_param"
-    }
-  ]
+  "suspects": []
 }

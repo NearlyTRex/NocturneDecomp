@@ -44,7 +44,7 @@
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
 ;   core_dmodel.cpp_CKeyFramedModel_dtor_FUN_00476d90
 ;   core_game.cpp_CGame_saveClockTime_FUN_004d7d80
-;   core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90
+;   core_game.cpp_CGame_updateDT_FUN_004d7d90
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0056a190
 ;   core_setedit.cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00
@@ -436,8 +436,8 @@ section .text
         ;   Label: LAB_0057db22
     MOV ESI,dword ptr [0x0067b654]      ; 0057db27 | g_CGamePtr
     PUSH ESI                            ; 0057db2d | g_CGameInstance
-    CALL core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90 ; 0057db2e
-        ;   XREF to: 004d7d90 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90(CGame * this_ptr)
+    CALL core_game.cpp_CGame_updateDT_FUN_004d7d90 ; 0057db2e
+        ;   XREF to: 004d7d90 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_updateDT_FUN_004d7d90(CGame * this_ptr)
     ADD ESP,0x4                         ; 0057db33
     MOV EAX,[0x0067cf44]                ; 0057db36 | g_CKeysPtr
     PUSH 0x1                            ; 0057db3b

@@ -1,0 +1,172 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 42,
+    "complexity_score": 11,
+    "cross_reference_count": 3,
+    "function_call_count": 1,
+    "global_count": 3,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 11,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 53
+  },
+  "cross_references": [
+    {
+      "addr": "004a79f0",
+      "from_addr": "004a7b64",
+      "name": "core_elephant.cpp_CElephantGun_fireProjectile_FUN_004a79f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005066b0",
+      "from_addr": "0050684a",
+      "name": "core_lightgun.cpp_CLightGun_fireProjectile_FUN_005066b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005888f0",
+      "from_addr": "00588a64",
+      "name": "core_shotgun.cpp_CShotgun_fireProjectile_FUN_005888f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004c7f20",
+    "address_range": [
+      [
+        "004c7f20",
+        "004c7f7e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_CFireEffect_createLaserCone_FUN_004c7f20",
+    "signature": "void __cdecl core_fire_cpp_CFireEffect_createLaserCone_FUN_004c7f20(CFireEffect *this_ptr,CVector3f *origin,CVector3f *hit_position,float beam_width,int red,int green,int blue,float cone_angle)"
+  },
+  "function_calls": [
+    {
+      "addr": "004c2420",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CLaserBeam_init_FUN_004c2420"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0065dcc0",
+      "name": "FLOAT_0065dcc0",
+      "type": "float",
+      "value": "0.02000000"
+    },
+    {
+      "addr": "02d667ac",
+      "name": "g_LaserBeamActiveCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d667b0",
+      "name": "g_LaserBeamPool",
+      "type": "CLaserBeam[64]",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.526315789473684,
+    "instruction_count": 38,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "CALL": 1,
+      "CBRANCH": 1,
+      "COPY": 36,
+      "INT_ADD": 17,
+      "INT_AND": 21,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 11,
+      "INT_LEFT": 2,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 3,
+      "INT_OR": 5,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 7,
+      "INT_SUB": 18,
+      "INT_XOR": 1,
+      "LOAD": 14,
+      "POPCOUNT": 5,
+      "RETURN": 2,
+      "STORE": 16
+    },
+    "pcode_op_count": 172
+  },
+  "stack_frame": {
+    "frame_size": 36,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 32,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFireEffect *"
+      },
+      {
+        "is_param": true,
+        "name": "origin",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "hit_position",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "beam_width",
+        "offset": 16,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "red",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "green",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "blue",
+        "offset": 28,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "cone_angle",
+        "offset": 32,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": []
+}

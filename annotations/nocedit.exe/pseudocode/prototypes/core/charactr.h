@@ -317,7 +317,7 @@ void __cdecl CCharacter::spawnFlies(CCharacter *this_ptr,int fly_count,float spa
 
 // Original: core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
 // Address: 0042dfc0
-void __cdecl CCharacter::applyGestureLookAt(CCharacter *this_ptr,float delta_time,float param_3);
+void __cdecl CCharacter::applyGestureLookAt(CCharacter *this_ptr,float delta_time);
 
 // Original: core_charactr.cpp_CCharacter_updateWanderToWaypoint_FUN_0042e050
 // Address: 0042e050

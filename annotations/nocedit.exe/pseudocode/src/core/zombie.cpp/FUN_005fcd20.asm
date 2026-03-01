@@ -9,12 +9,12 @@
 ; Referenced Globals:
 ;   int g_RasterizerDepthBias
 ;   int g_RasterizerEdgeCount
-;   SEdgeData[16] g_RasterizerEdgeArray
-;   undefined4 g_RasterizerEdgeArray[0].y_end
-;   undefined4 g_RasterizerEdgeArray[0].x_current
-;   undefined4 g_RasterizerEdgeArray[0].x_delta
-;   undefined4 g_RasterizerEdgeArray[0].z_current
-;   undefined4 g_RasterizerEdgeArray[0].z_delta
+;   SSoftwareEdge[16] g_RasterizerEdgeArray
+;   undefined4 g_RasterizerEdgeArray[0].base.y_max
+;   undefined4 g_RasterizerEdgeArray[0].base.x_current
+;   undefined4 g_RasterizerEdgeArray[0].base.x_gradient
+;   undefined4 g_RasterizerEdgeArray[0].base.w_current
+;   undefined4 g_RasterizerEdgeArray[0].base.w_gradient
 ;   int g_RasterizerMinY
 ;   int g_RasterizerMaxY
 ;
@@ -56,7 +56,7 @@ section .text
     ADD ESI,ECX                         ; 005fcd6e
     MOV dword ptr [ESI],EAX             ; 005fcd70 | g_RasterizerEdgeArray
     MOV EBP,dword ptr [0x03f9b1e0]      ; 005fcd72 | g_RasterizerMinY
-    MOV dword ptr [ESI + 0x4],EDX       ; 005fcd78 | g_RasterizerEdgeArray[0].y_end
+    MOV dword ptr [ESI + 0x4],EDX       ; 005fcd78 | g_RasterizerEdgeArray[0].base.y_max
     CMP EAX,EBP                         ; 005fcd7b
     JGE 0x005fcd84                      ; 005fcd7d
         ;   XREF to: 005fcd84 (CONDITIONAL_JUMP)  ; LAB_005fcd84
@@ -86,7 +86,7 @@ section .text
     IMUL EDX                            ; 005fcdc3
     SHRD EAX,EDX,0x10                   ; 005fcdc5
     MOV EDX,EAX                         ; 005fcdc9
-    MOV dword ptr [ESI + 0xc],EAX       ; 005fcdcb | g_RasterizerEdgeArray[0].x_delta
+    MOV dword ptr [ESI + 0xc],EAX       ; 005fcdcb | g_RasterizerEdgeArray[0].base.x_gradient
     MOV EAX,EBP                         ; 005fcdce
     IMUL EDX                            ; 005fcdd0
     SHRD EAX,EDX,0x10                   ; 005fcdd2
@@ -94,18 +94,18 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 005fcdda
     MOV EAX,dword ptr [EBX + 0x10]      ; 005fcdde
     ADD EAX,EDX                         ; 005fcde1
-    MOV dword ptr [ESI + 0x8],EAX       ; 005fcde3 | g_RasterizerEdgeArray[0].x_current
+    MOV dword ptr [ESI + 0x8],EAX       ; 005fcde3 | g_RasterizerEdgeArray[0].base.x_current
     MOV EDX,dword ptr [EDI + 0x8]       ; 005fcde6
     SUB EDX,dword ptr [EBX + 0x8]       ; 005fcde9
     MOV EAX,ECX                         ; 005fcdec
     SHL EDX,0x8                         ; 005fcdee
     IMUL EDX                            ; 005fcdf1
     SHRD EAX,EDX,0x10                   ; 005fcdf3
-    MOV dword ptr [ESI + 0x2c],EAX      ; 005fcdf7 | g_RasterizerEdgeArray[0].z_delta
+    MOV dword ptr [ESI + 0x2c],EAX      ; 005fcdf7 | g_RasterizerEdgeArray[0].base.w_gradient
     MOV ECX,dword ptr [EBX + 0x8]       ; 005fcdfa
     MOV EAX,[0x02c6d03c]                ; 005fcdfd | g_RasterizerDepthBias
     SHL ECX,0x8                         ; 005fce02
-    MOV EDX,dword ptr [ESI + 0x2c]      ; 005fce05 | g_RasterizerEdgeArray[0].z_delta
+    MOV EDX,dword ptr [ESI + 0x2c]      ; 005fce05 | g_RasterizerEdgeArray[0].base.w_gradient
     SUB ECX,EAX                         ; 005fce08
     MOV EAX,EBP                         ; 005fce0a
     IMUL EDX                            ; 005fce0c
@@ -113,7 +113,7 @@ section .text
     MOV EDX,dword ptr [0x03f9ad5c]      ; 005fce12 | g_RasterizerEdgeCount
     ADD ECX,EAX                         ; 005fce18
     INC EDX                             ; 005fce1a
-    MOV dword ptr [ESI + 0x28],ECX      ; 005fce1b | g_RasterizerEdgeArray[0].z_current
+    MOV dword ptr [ESI + 0x28],ECX      ; 005fce1b | g_RasterizerEdgeArray[0].base.w_current
     MOV dword ptr [0x03f9ad5c],EDX      ; 005fce1e | g_RasterizerEdgeCount
     POP ESI                             ; 005fce24
     ADD ESP,0x4                         ; 005fce25

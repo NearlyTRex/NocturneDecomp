@@ -108,7 +108,7 @@ section .text
     PUSH EDX                            ; 00588358 | g_CFireEffectInstance
     FSTP float ptr [ESP + 0xac]         ; 00588359
     CALL core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_004c7a60 ; 00588360
-        ;   XREF to: 004c7a60 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_004c7a60(CFireEffect * this_ptr)
+        ;   XREF to: 004c7a60 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_004c7a60(CFireEffect * this_ptr, CVector3f * position, CMatrix3x3f * rotation_matrix)
     ADD ESP,0xc                         ; 00588365
     LEA EAX,[ESP + 0x6c]                ; 00588368
     PUSH EAX                            ; 0058836c

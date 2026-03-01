@@ -13,7 +13,6 @@ void __cdecl core_armour_cpp_CArmour_process_FUN_00412260(CArmour *this_ptr,floa
   float fVar1;
   float fVar2;
   int iVar3;
-  float fVar4;
   CVector3f CStack_1c;
   
   iVar3 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
@@ -23,9 +22,9 @@ void __cdecl core_armour_cpp_CArmour_process_FUN_00412260(CArmour *this_ptr,floa
          (this_ptr->base).base.model.accumulated_root_motion.z;
     (this_ptr->base).base.model.accumulated_root_motion.x =
          (this_ptr->base).base.model.accumulated_root_motion.y;
-    fVar4 = delta_time * (this_ptr->base).speed;
+    fVar1 = (this_ptr->base).speed;
     this_ptr_00 = &(this_ptr->base).base.model;
-    while (0.0 < fVar4) {
+    while (0.0 < delta_time * fVar1) {
       core_motion_cpp_CMotionController_advance_FUN_0052d610(&this_ptr_00->motion_controller);
     }
     fVar1 = (this_ptr->base).speed;
@@ -45,8 +44,7 @@ void __cdecl core_armour_cpp_CArmour_process_FUN_00412260(CArmour *this_ptr,floa
     }
     core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
               (&(this_ptr->base).base.model);
-    core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
-              ((CCharacter *)this_ptr,delta_time,fVar4);
+    core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr,delta_time);
     iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                       (g_CEventListPtr,this_ptr->fall_apart_event);
     if (iVar3 != 0) {

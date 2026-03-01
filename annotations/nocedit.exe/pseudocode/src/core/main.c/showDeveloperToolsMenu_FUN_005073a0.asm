@@ -215,8 +215,8 @@ section .text
     MOV EBX,dword ptr [0x02cf1cd0]      ; 00507549 | g_EditorFont
     PUSH EBX                            ; 0050754f
     MOV EBP,EAX                         ; 00507550
-    CALL engine_font.cpp_CBitFont_getCharWidth_FUN_004cff40 ; 00507552
-        ;   XREF to: 004cff40 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004cff40(CBitFont * this_ptr, char * text_string)
+    CALL engine_font.cpp_CBitFont_getTextHeight_FUN_004cff40 ; 00507552
+        ;   XREF to: 004cff40 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextHeight_FUN_004cff40(CBitFont * this_ptr, char * text_string)
     MOV EBX,EAX                         ; 00507557
     ADD ESP,0x8                         ; 00507559
     MOV ESI,EAX                         ; 0050755c

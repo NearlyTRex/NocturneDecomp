@@ -29,11 +29,11 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_vox_006295c8
-;   char s_EmptyStr_006295ce = \x00
+;   char s_EmptyChar_006295ce = \x00
 ;   TerminatedCString s_Select_response_file_006295cf
 ;   TerminatedCString s_pod_006295e5
 ;   TerminatedCString s_pod_006295e9
-;   char s_EmptyStr_006295ed = \x00
+;   char s_EmptyChar_006295ed = \x00
 ;   TerminatedCString s_Enter_POD_name_to_build_006295ee
 ;   TerminatedCString s_Enter_volume_name_00629606
 ;   TerminatedCString s_core_fileman_cpp_00629618
@@ -78,7 +78,7 @@ section .text
     LEA EAX,[ESP + 0x204]               ; 004bda33
     PUSH EAX                            ; 004bda3a
     PUSH 0x6295c8                       ; 004bda3b | = "*.vox"
-    PUSH 0x6295ce                       ; 004bda40 | s_EmptyStr_006295ce
+    PUSH 0x6295ce                       ; 004bda40 | s_EmptyChar_006295ce
     PUSH 0x6295cf                       ; 004bda45 | = "Select response file."
     MOV EDX,dword ptr [0x00678a60]      ; 004bda4a | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH EDX                            ; 004bda50 | g_CEditorToolsInstance
@@ -120,12 +120,12 @@ section .text
     LEA EAX,[ESP + 0x65c]               ; 004bdaa9
     PUSH EAX                            ; 004bdab0
     PUSH 0x6295e9                       ; 004bdab1 | = "pod"
-    PUSH 0x6295ed                       ; 004bdab6 | s_EmptyStr_006295ed
+    PUSH 0x6295ed                       ; 004bdab6 | s_EmptyChar_006295ed
     PUSH 0x6295ee                       ; 004bdabb | = "Enter POD name to build"
     MOV ECX,dword ptr [0x00678a60]      ; 004bdac0 | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH ECX                            ; 004bdac6 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70 ; 004bdac7
-        ;   XREF to: 0049fb70 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70(CEditorTools * this_ptr, char * prompt_text, char * filename_buffer, int buffer_size, ...)
+        ;   XREF to: 0049fb70 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70(CEditorTools * this_ptr, char * dialog_title, char * directory_path, char * file_extension, ...)
     ADD ESP,0x18                        ; 004bdacc
     TEST EAX,EAX                        ; 004bdacf
     JZ 0x004bda5d                       ; 004bdad1

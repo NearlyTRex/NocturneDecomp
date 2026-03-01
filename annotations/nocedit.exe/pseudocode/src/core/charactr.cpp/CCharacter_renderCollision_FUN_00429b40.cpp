@@ -218,9 +218,9 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_00429b40(CCharacte
     local_1c = local_1c + 1;
     iVar9 = iVar9 + 0x60;
   } while (local_1c < 0x19);
-  local_c0.x = (int)ROUND(g_ZeroVector.x * 256.0f);
-  local_c0.y = (int)ROUND(g_ZeroVector.y * 256.0f);
-  local_c0.z = (int)ROUND(g_ZeroVector.z * 256.0f);
+  local_c0.x = (int)ROUND(g_ZeroVector.f.x * 256.0f);
+  local_c0.y = (int)ROUND(g_ZeroVector.f.y * 256.0f);
+  local_c0.z = (int)ROUND(g_ZeroVector.f.z * 256.0f);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_c0);
   pCVar5 = g_CDemonRendererPtr2;

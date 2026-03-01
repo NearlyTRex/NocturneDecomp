@@ -1,14 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70(CEditorTools *this_ptr,char *prompt_text,char *filename_buffer,int buffer_size,int show_directory)
+; int __cdecl shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70(CEditorTools *this_ptr,char *dialog_title,char *directory_path,char *file_extension,char *output_buffer,uint flags)
 ;
 ; Parameters:
 ; CEditorTools *   Stack[0x4]:4   this_ptr
-; char *           Stack[0x8]:4   prompt_text
-; char *           Stack[0xc]:4   filename_buffer
-; int              Stack[0x10]:4   buffer_size
-; int              Stack[0x14]:4   show_directory
+; char *           Stack[0x8]:4   dialog_title
+; char *           Stack[0xc]:4   directory_path
+; char *           Stack[0x10]:4   file_extension
+; char *           Stack[0x14]:4   output_buffer
+; uint             Stack[0x18]:4   flags
 ; Local Variables:
 ; undefined1       Stack[-0x360]:1  local_360
 ; undefined1       Stack[-0x35f]:1  local_35f
@@ -56,7 +57,7 @@
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_3d.c_setRenderAlpha_FUN_00406d80
 ;   engine_font.cpp_CBitFont_drawText_FUN_004cda80
-;   engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0
+;   engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80
 ;   engine_keys.cpp_CKeys_getInputKey_FUN_00502460
 ;   shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_004a0890
@@ -100,8 +101,8 @@ section .text
     MOV ECX,dword ptr [EAX + 0x3168]    ; 0049fbc2
     PUSH EAX                            ; 0049fbc8
     MOV dword ptr [0x02cf2668],ECX      ; 0049fbc9 | g_FontCharacterHeight
-    CALL engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0 ; 0049fbcf
-        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0 ; 0049fbcf
+        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 0049fbd4
     PUSH 0x0                            ; 0049fbd7
     MOV EDX,dword ptr [ESP + 0x36c]     ; 0049fbd9
@@ -131,7 +132,7 @@ section .text
         ;   Label: LAB_0049fc22
     PUSH EAX                            ; 0049fc29
     CALL shape_edittool.cpp_CInputString_init_FUN_0049d3d0 ; 0049fc2a
-        ;   XREF to: 0049d3d0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CInputString_init_FUN_0049d3d0(CInputString * this_ptr, char * source_string, int max_length, int param4, ...)
+        ;   XREF to: 0049d3d0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CInputString_init_FUN_0049d3d0(CInputString * this_ptr, char * source_string, int max_length, int mask_mode)
     ADD ESP,0x10                        ; 0049fc2f
     MOV EDI,0x7f                        ; 0049fc32
     MOV EAX,[0x006793a8]                ; 0049fc37 | g_InputKeyMask

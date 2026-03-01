@@ -141,4 +141,4 @@ void __cdecl FUN_005fce40(void);
 
 // Original: core_zombie.cpp_FUN_005fcf80
 // Address: 005fcf80
-SEdgeData * __cdecl FUN_005fcf80(void);
+SSoftwareEdge * __cdecl FUN_005fcf80(void);

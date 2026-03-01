@@ -49,7 +49,7 @@ int __cdecl core_menu_cpp_showMainGameMenu_FUN_00512f40(void)
   local_8 = 1;
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr);
   do {
-    core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
+    core_game_cpp_CGame_updateDT_FUN_004d7d90(g_CGamePtr);
     core_moon_cpp_CMoon_update_FUN_00529d60(&g_CMoonInstance,g_CGamePtr->delta_time_float);
     core_moon_cpp_CMoon_render_FUN_00529ed0(&g_CMoonInstance);
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("S T A R T");

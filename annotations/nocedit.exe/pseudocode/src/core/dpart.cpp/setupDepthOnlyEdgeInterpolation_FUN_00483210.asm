@@ -1,15 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dpart_cpp_setupDepthOnlyEdgeInterpolation_FUN_00483210(SEdgeData *vertex_a,SEdgeData *vertex_b)
+; void __cdecl core_dpart_cpp_setupDepthOnlyEdgeInterpolation_FUN_00483210(SSoftwareEdge *vertex_a,SSoftwareEdge *vertex_b)
 ;
 ; Parameters:
-; SEdgeData *      Stack[0x4]:4   vertex_a
-; SEdgeData *      Stack[0x8]:4   vertex_b
+; SSoftwareEdge *  Stack[0x4]:4   vertex_a
+; SSoftwareEdge *  Stack[0x8]:4   vertex_b
 ;
 ; Referenced Globals:
 ;   int g_RenderTriangleEdgeCount
-;   SEdgeData[16] g_EdgeInterpolationArray
+;   SSoftwareEdge[16] g_EdgeInterpolationArray
 ;   undefined4 DAT_02c6cb78
 ;   undefined4 DAT_02c6cb7c
 ;   undefined4 DAT_02c6cb80

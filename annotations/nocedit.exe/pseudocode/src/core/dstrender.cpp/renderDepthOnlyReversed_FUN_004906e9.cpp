@@ -2,11 +2,11 @@
 // Address: 004906e9
 // Address Range: [[004906e9, 0049072e]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dstrender_cpp_renderDepthOnlyReversed_FUN_004906e9(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
+// Signature: void __cdecl core_dstrender_cpp_renderDepthOnlyReversed_FUN_004906e9(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
 
 #include "nocturne.h"
 
-void __cdecl core_dstrender_cpp_renderDepthOnlyReversed_FUN_004906e9(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
+void __cdecl core_dstrender_cpp_renderDepthOnlyReversed_FUN_004906e9(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
 
 {
   uint uVar1;
@@ -17,11 +17,11 @@ void __cdecl core_dstrender_cpp_renderDepthOnlyReversed_FUN_004906e9(SEdgeData *
   int iVar6;
   int iVar7;
   uint *puVar8;
-  SEdgeData *pSVar9;
+  SSoftwareEdge *pSVar9;
   uint uVar10;
   
-  uVar1 = left_edge->x_current;
-  uVar10 = right_edge->x_current;
+  uVar1 = (left_edge->base).x_current;
+  uVar10 = (right_edge->base).x_current;
   uVar5 = uVar1;
   pSVar9 = left_edge;
   if (uVar10 < uVar1) {
@@ -34,10 +34,10 @@ void __cdecl core_dstrender_cpp_renderDepthOnlyReversed_FUN_004906e9(SEdgeData *
   iVar6 = (uVar10 >> 0x10) - uVar5;
   if (iVar6 != 0 && uVar5 <= uVar10 >> 0x10) {
     puVar8 = g_ZBufferScanlineArray[scanline_y] + uVar5;
-    iVar2 = right_edge->z_current;
-    iVar3 = pSVar9->z_current;
+    iVar2 = (right_edge->base).w_current;
+    iVar3 = (pSVar9->base).w_current;
     uVar1 = g_ReciprocalLookupTable[iVar6 + 1];
-    uVar10 = pSVar9->z_current;
+    uVar10 = (pSVar9->base).w_current;
     do {
       if ((int)*puVar8 <= (int)uVar10) {
         *puVar8 = uVar10;

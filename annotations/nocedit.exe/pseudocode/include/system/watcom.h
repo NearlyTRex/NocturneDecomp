@@ -144,6 +144,7 @@ typedef struct WatcomVirtualBaseDescriptor {
 // Structure: _heapinfo
 typedef struct _heapinfo {
     void* _pentry;
+    ushort _segment;
     SIZE_T _size;
     int _useflag;
 } _heapinfo;

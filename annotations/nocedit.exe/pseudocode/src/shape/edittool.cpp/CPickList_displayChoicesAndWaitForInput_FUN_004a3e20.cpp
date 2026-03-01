@@ -17,8 +17,8 @@ int __cdecl shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3
     g_CurrentLineNumber = 0x8d;
     core_main_c_displayErrorAndQuit_FUN_00506f10("gEdFont must be set by the application.");
   }
-  g_FontCharacterHeight = g_EditorFont->max_char_height;
-  g_FontCharacterWidth = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(g_EditorFont,0x6a);
+  g_FontCharacterHeight = g_EditorFont->max_char_width;
+  g_FontCharacterWidth = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(g_EditorFont,0x6a);
   iVar1 = g_InputKeyMask;
   if (0 < (this_ptr->base).item_count) {
     g_InputKeyMask = 0x7f;

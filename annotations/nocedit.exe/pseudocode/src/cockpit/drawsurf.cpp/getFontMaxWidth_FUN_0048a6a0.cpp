@@ -9,5 +9,5 @@
 int __cdecl cockpit_drawsurf_cpp_getFontMaxWidth_FUN_0048a6a0(CBitFont *font_ptr)
 
 {
-  return font_ptr->current_max_width;
+  return font_ptr->current_line_height;
 }

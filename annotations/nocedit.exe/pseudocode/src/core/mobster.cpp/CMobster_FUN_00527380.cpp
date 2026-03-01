@@ -16,7 +16,7 @@ void __cdecl core_mobster_cpp_CMobster_FUN_00527380(CMobster *this_ptr,SDamageIn
   CBodyPart *body_part;
   float local_1c;
   
-  if ((0.0 < damage_info->weapon_damage_modifier) && (damage_info->fire_type == -1)) {
+  if ((0.0 < damage_info->dismember_prob) && (damage_info->fire_type == -1)) {
     iVar1 = rand();
     switch(iVar1 % 6) {
     case 0:
@@ -60,7 +60,7 @@ switchD_005273b9_default:
     damage_info->fire_type = iVar1;
   }
 LAB_00527413:
-  local_1c = damage_info->weapon_damage_modifier;
+  local_1c = damage_info->dismember_prob;
   if (this_ptr->part_indices[10] == damage_info->fire_type) {
     local_1c = 0.05;
   }
@@ -108,7 +108,7 @@ LAB_00527413:
     if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[10]] == 0) {
       damage_info->damage_amount = 9999.0;
     }
-    damage_info->damage_flags = (int)((float)damage_info->damage_flags * (float)7);
+    damage_info->gore_multiplier = damage_info->gore_multiplier * (float)7;
     if ((damage_info->fire_type == this_ptr->part_indices[2]) ||
        (damage_info->fire_type == this_ptr->part_indices[3])) {
       (*(((this_ptr->base).base.base.vtable._uc)->_uc).dropCarriedObject)

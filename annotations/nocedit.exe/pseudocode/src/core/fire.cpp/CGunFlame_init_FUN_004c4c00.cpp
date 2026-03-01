@@ -50,7 +50,7 @@ void __cdecl core_fire_cpp_CGunFlame_init_FUN_004c4c00(CGunFlame *this_ptr)
       fVar3 = (this_ptr_01->base).location.position.y - local_24->y;
       fVar2 = (this_ptr_01->base).location.position.z - local_24->z;
       if (fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1 <= (float)25) {
-        core_flamecan_cpp_CFlameCan_FUN_004cb340(this_ptr_01);
+        core_flamecan_cpp_CFlameCan_ignite_FUN_004cb340(this_ptr_01);
       }
       iVar4 = iVar4 + 1;
       iVar5 = iVar5 + 4;

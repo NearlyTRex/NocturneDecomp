@@ -23,8 +23,8 @@ CGame * __cdecl core_game_cpp_CGame_ctor_FUN_004d7b40(CGame *this_ptr)
   this_ptr->game_control = 0;
   core_game_cpp_CGame_restoreDefaultControls_FUN_004dbbc0(this_ptr);
   this_ptr->debug_info_string[0] = '\0';
-  this_ptr->debug_flag_1 = 0;
-  this_ptr->debug_flag_2 = 0;
+  this_ptr->god_mode_enabled = 0;
+  this_ptr->freeze_enemies_enabled = 0;
   this_ptr->event_processing_enabled = 0;
   this_ptr->subtitle_system_enabled = 0;
   this_ptr->gratuitous_dismemberment = 0;

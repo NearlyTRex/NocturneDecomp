@@ -1,11 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_palette_cpp_CPaletteManager_addTexture_FUN_00544fc0(void)
+; void __cdecl engine_palette_cpp_CPaletteManager_addTexture_FUN_00544fc0(CPaletteManager *this_ptr,char *filename)
 ;
+; Parameters:
+; CPaletteManager * Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   filename
 ;
 ; XREF[1]:
-;   engine_palette.cpp_CPaletteManager_FUN_00545060 at 005450a8
+;   engine_palette.cpp_CPaletteManager_scanTextures_FUN_00545060 at 005450a8
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_palette_cpp_0063e482

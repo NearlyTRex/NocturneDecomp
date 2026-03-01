@@ -2,11 +2,11 @@
 // Address: 00490cb5
 // Address Range: [[00490cb5, 00490d34]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dstrender_cpp_renderScreenDepthTestInterlacedProfiled_FUN_00490cb5(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
+// Signature: void __cdecl core_dstrender_cpp_renderScreenDepthTestInterlacedProfiled_FUN_00490cb5(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
 
 #include "nocturne.h"
 
-void __cdecl core_dstrender_cpp_renderScreenDepthTestInterlacedProfiled_FUN_00490cb5(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
+void __cdecl core_dstrender_cpp_renderScreenDepthTestInterlacedProfiled_FUN_00490cb5(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
 
 {
   bool bVar1;
@@ -16,14 +16,14 @@ void __cdecl core_dstrender_cpp_renderScreenDepthTestInterlacedProfiled_FUN_0049
   int iVar5;
   int iVar6;
   ushort *puVar7;
-  SEdgeData *pSVar8;
+  SSoftwareEdge *pSVar8;
   uint uVar9;
   
   if ((scanline_y & 1U) != 0) {
     return;
   }
-  uVar9 = left_edge->x_current;
-  uVar3 = right_edge->x_current;
+  uVar9 = (left_edge->base).x_current;
+  uVar3 = (right_edge->base).x_current;
   uVar2 = uVar9;
   pSVar8 = left_edge;
   if (uVar3 < uVar9) {
@@ -36,7 +36,7 @@ void __cdecl core_dstrender_cpp_renderScreenDepthTestInterlacedProfiled_FUN_0049
   iVar4 = (uVar3 >> 0x10) - uVar2;
   if (iVar4 != 0 && uVar2 <= uVar3 >> 0x10) {
     puVar7 = (ushort *)((int)g_ScreenBufferArray[scanline_y] + uVar2 * 2);
-    uVar9 = pSVar8->z_current;
+    uVar9 = (pSVar8->base).w_current;
     iVar5 = iVar4;
     do {
       if ((uVar9 >> 8 < (uint)*puVar7) &&
@@ -46,7 +46,7 @@ void __cdecl core_dstrender_cpp_renderScreenDepthTestInterlacedProfiled_FUN_0049
         return;
       }
       uVar9 = uVar9 + (int)((ulonglong)
-                            ((longlong)(right_edge->z_current - pSVar8->z_current) *
+                            ((longlong)((right_edge->base).w_current - (pSVar8->base).w_current) *
                             (longlong)(int)g_ReciprocalLookupTable[iVar4 + 1]) >> 0x20) * 2;
       puVar7 = puVar7 + 2;
       iVar6 = iVar5 + -2;

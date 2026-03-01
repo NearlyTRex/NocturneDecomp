@@ -111,15 +111,15 @@ void __cdecl engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_004cd550(CBitFon
         else if (*local_14 != local_20) {
           *(int *)(iVar6 + 0x2568) = iVar2;
           local_18 = 0;
-          if (this_ptr->max_char_height < iVar2) {
-            this_ptr->max_char_height = iVar2;
+          if (this_ptr->max_char_width < iVar2) {
+            this_ptr->max_char_width = iVar2;
           }
           iVar2 = engine_font_cpp_CBitFont_calculateCharacterHeight_FUN_004cda20
                             (this_ptr,*(uchar **)(iVar6 + 0x1d68),*(int *)(iVar6 + 0x2568),
                              local_24[1] - (*local_24 + 1),other2);
           *(int *)(iVar6 + 0x2968) = iVar2;
-          if (this_ptr->max_char_width < iVar2) {
-            this_ptr->max_char_width = iVar2;
+          if (this_ptr->max_char_height < iVar2) {
+            this_ptr->max_char_height = iVar2;
           }
           iVar1 = iVar1 + 1;
           iVar6 = iVar6 + 4;
@@ -129,15 +129,15 @@ void __cdecl engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_004cd550(CBitFon
       }
       if (local_18 == 1) {
         *(int *)(iVar6 + 0x2568) = iVar2;
-        if (this_ptr->max_char_height < iVar2) {
-          this_ptr->max_char_height = iVar2;
+        if (this_ptr->max_char_width < iVar2) {
+          this_ptr->max_char_width = iVar2;
         }
         iVar6 = engine_font_cpp_CBitFont_calculateCharacterHeight_FUN_004cda20
                           (this_ptr,(uchar *)this_ptr->char_positions[iVar1],
                            this_ptr->char_widths[iVar1],local_30[1] - (*local_30 + 1),other2);
         this_ptr->char_heights[iVar1] = iVar6;
-        if (this_ptr->max_char_width < iVar6) {
-          this_ptr->max_char_width = iVar6;
+        if (this_ptr->max_char_height < iVar6) {
+          this_ptr->max_char_height = iVar6;
         }
         iVar1 = iVar1 + 1;
       }
@@ -153,7 +153,7 @@ void __cdecl engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_004cd550(CBitFon
       iVar6 = iVar6 + 4;
     } while (width < iVar1);
   }
-  this_ptr->current_max_width = this_ptr->max_char_width;
+  this_ptr->current_line_height = this_ptr->max_char_height;
   g_CurrentDebugFilename = "..\\engine\\font.cpp";
   g_CurrentDebugLine = 0x23e;
   shape_memdbg_cpp_free_FUN_005fe659(local_40);

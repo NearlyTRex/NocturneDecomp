@@ -15,16 +15,16 @@ void __cdecl core_svetlana_cpp_CSvetlana_processDamage_FUN_005d9d30(CSvetlana *t
   uint uVar3;
   int iVar4;
   
-  if (((this_ptr->base).no_collision_flag & 0x7fffffffU) != 0) {
+  if (ABS((this_ptr->base).invincibility_timer) != 0.0) {
     damage_info->damage_amount = 0.0;
   }
-  if (g_CGamePtr->debug_flag_1 != 0) {
+  if (g_CGamePtr->god_mode_enabled != 0) {
     damage_info->damage_amount = 0.0;
   }
   if (g_CGamePtr->allow_damage_flag == 0) {
     damage_info->damage_amount = 0.0;
   }
-  (this_ptr->base).no_collision_flag = (int)3.0f;
+  (this_ptr->base).invincibility_timer = 3.0f;
   fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
   this_ptr_00 = &(this_ptr->base).base.model;
   (this_ptr->base).base.hit_points = fVar1;

@@ -91,8 +91,8 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
   else {
     if (pod_filename == (char *)0x0) {
       iVar2 = shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
-                        (g_CEditorToolsPtr,"Enter name of .POD to build",(char *)0x0,0x62772c,
-                         (int)local_290);
+                        (g_CEditorToolsPtr,"Enter name of .POD to build",(char *)0x0,
+                         "pod",local_290,0);
       if (iVar2 == 0) {
         return;
       }

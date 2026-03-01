@@ -29,7 +29,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_process_FUN_00484410(CDraculaBride 
   CPathMap *pCVar14;
   float fVar15;
   float fVar16;
-  float in_stack_fffffb6c;
+  char local_494 [100];
   char local_430 [100];
   char local_3cc [100];
   char local_368 [100];
@@ -267,7 +267,7 @@ LAB_004848f9:
     local_28c.wielder = (CDemonActor *)this_ptr;
     local_14 = local_28c.damage_amount;
     pCVar12 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                        (&local_b8,&g_ZeroVector,
+                        (&local_b8,&g_ZeroVector.f,
                          (this_ptr->base).base.model.bone_transform.bone_world_matrices +
                          INT_02c6d0a0);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
@@ -282,7 +282,7 @@ LAB_004848f9:
     local_304.wielder = (CDemonActor *)this_ptr;
     local_14 = local_304.damage_amount;
     pCVar12 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                        (&local_184,&g_ZeroVector,
+                        (&local_184,&g_ZeroVector.f,
                          (this_ptr->base).base.model.bone_transform.bone_world_matrices +
                          INT_02c6d0a0);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
@@ -522,7 +522,7 @@ LAB_004852f8:
     local_2c8.wielder = (CDemonActor *)this_ptr;
     local_14 = local_2c8.damage_amount;
     pCVar12 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                        (&local_13c,&g_ZeroVector,
+                        (&local_13c,&g_ZeroVector.f,
                          (this_ptr->base).base.model.bone_transform.bone_world_matrices +
                          INT_02c6d0a0);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
@@ -537,7 +537,7 @@ LAB_004852f8:
     local_214.wielder = (CDemonActor *)this_ptr;
     local_14 = local_214.damage_amount;
     pCVar12 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                        (&local_88,&g_ZeroVector,
+                        (&local_88,&g_ZeroVector.f,
                          (this_ptr->base).base.model.bone_transform.bone_world_matrices +
                          INT_02c6d0a0);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
@@ -552,7 +552,7 @@ LAB_004852f8:
     local_250.wielder = (CDemonActor *)this_ptr;
     local_14 = local_250.damage_amount;
     pCVar12 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                        (&local_1c0,&g_ZeroVector,
+                        (&local_1c0,&g_ZeroVector.f,
                          (this_ptr->base).base.model.bone_transform.bone_world_matrices +
                          INT_02c6d0a8);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
@@ -562,7 +562,7 @@ LAB_004852f8:
   case 0x17:
     if (this_ptr->freaky_timer <= 0.0) {
       _sprintf
-                (&stack0xfffffb6c,"bride-%d?.wav",this_ptr->freaky_voice_number);
+                (local_494,"bride-%d?.wav",this_ptr->freaky_voice_number);
       core_dracbrid_cpp_CDraculaBride_FUN_004864c0(this_ptr);
       iVar7 = core_actor_cpp_randomChance_FUN_0040cd10(0.2);
       if (iVar7 != 0) {
@@ -732,8 +732,7 @@ switchD_004858cd_caseD_1:
   core_charactr_cpp_CCharacter_preProcess_FUN_00429820((CCharacter *)this_ptr);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
             (&(this_ptr->base).base.model);
-  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
-            ((CCharacter *)this_ptr,delta_time,in_stack_fffffb6c);
+  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr,delta_time);
   return;
 switchD_004858cd_caseD_10:
   (this_ptr->base).pool_me = 1;

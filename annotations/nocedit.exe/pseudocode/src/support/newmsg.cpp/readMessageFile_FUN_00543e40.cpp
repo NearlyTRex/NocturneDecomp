@@ -30,10 +30,10 @@ void __cdecl support_newmsg_cpp_readMessageFile_FUN_00543e40(char *message_file)
   int local_14;
   
   local_1c = 0;
-  iVar3 = engine_dosio_c_getFileSize_FUN_00481880(&s_empty_0063e145,message_file);
+  iVar3 = engine_dosio_c_getFileSize_FUN_00481880(&s_EmptyChar_0063e145,message_file);
   if ((iVar3 < 1) ||
      (file_handle = engine_dosio_c_getFile_FUN_00481a50
-                              (&s_empty_0063e149,message_file,"rt"),
+                              (&s_EmptyChar_0063e149,message_file,"rt"),
      file_handle == (_FILE *)0x0)) {
     return;
   }

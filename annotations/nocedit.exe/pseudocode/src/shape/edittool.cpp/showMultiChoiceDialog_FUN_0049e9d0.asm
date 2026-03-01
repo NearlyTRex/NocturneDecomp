@@ -58,7 +58,7 @@
 ;   crt_memory.c___vec_delete_FUN_005fe632
 ;   crt_memory.c___vec_new_FUN_00601272
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
-;   engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0
+;   engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80
 ;   engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_00502470
 ;   shape_edittool.cpp_calculateButtonHeight_FUN_004a6970
@@ -96,8 +96,8 @@ section .text
     MOV EDX,dword ptr [EAX + 0x3168]    ; 0049ea0c
     PUSH EAX                            ; 0049ea12
     MOV dword ptr [0x02cf2668],EDX      ; 0049ea13 | g_FontCharacterHeight
-    CALL engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0 ; 0049ea19
-        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0 ; 0049ea19
+        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 0049ea1e
     MOV ESI,dword ptr [ESP + 0x158]     ; 0049ea21
     MOV [0x02cf266c],EAX                ; 0049ea28 | g_FontCharacterWidth

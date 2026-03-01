@@ -63,7 +63,7 @@
 ;   CKeyFramedModelInstance g_FireEffectFireballSmallModel
 ;   CKeyFramedModelInstance g_FireEffectFireballGreenModel
 ;   CDemonSet g_CDemonSetInstance
-;   CVector3f g_ZeroVector
+;   UVector3 g_ZeroVector
 ;
 ; Called Functions:
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0

@@ -18,7 +18,7 @@
 ;
 ; Called Functions:
 ;   core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_00471360
-;   core_dglobe.cpp_CDemonGlobe_setColor_FUN_00471310
+;   core_dglobe.cpp_CDemonGlobe_setPosition_FUN_00471310
 ;   core_set.cpp_CDemonSet_addCoronaGlobe_FUN_0056d110
 ;   crt_math.c_round_FUN_005fe6b0
 ;
@@ -42,8 +42,8 @@ section .text
     PUSH EBX                            ; 00501737
     FSTP ST1                            ; 00501738
     FSTP float ptr [ESI + 0x2d8]        ; 0050173a
-    CALL core_dglobe.cpp_CDemonGlobe_setColor_FUN_00471310 ; 00501740
-        ;   XREF to: 00471310 (UNCONDITIONAL_CALL)  ; void core_dglobe.cpp_CDemonGlobe_setColor_FUN_00471310(CDemonGlobe * this_ptr, CColor3f * color)
+    CALL core_dglobe.cpp_CDemonGlobe_setPosition_FUN_00471310 ; 00501740
+        ;   XREF to: 00471310 (UNCONDITIONAL_CALL)  ; void core_dglobe.cpp_CDemonGlobe_setPosition_FUN_00471310(CDemonGlobe * this_ptr, CVector3f * position)
     FLD float ptr [ESI + 0x2d8]         ; 00501745
     FSIN                                ; 0050174b
     FMUL double ptr [0x00630c45]        ; 0050174d | DOUBLE_00630c45

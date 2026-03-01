@@ -32,8 +32,8 @@ void __cdecl shape_edittool_cpp_CEdButton_paint_FUN_004a65e0(CEdButton *this_ptr
   pcVar7 = this_ptr->button_text;
   g_ClipTop = iVar2;
   iVar2 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(g_EditorFont,pcVar7);
-  iVar3 = engine_font_cpp_CBitFont_getCharWidth_FUN_004cff40(g_EditorFont,pcVar7);
-  iVar4 = engine_font_cpp_CBitFont_getCharXAdvance_FUN_004d0200(g_EditorFont,0x41);
+  iVar3 = engine_font_cpp_CBitFont_getTextHeight_FUN_004cff40(g_EditorFont,pcVar7);
+  iVar4 = engine_font_cpp_CBitFont_getCharYOffset_FUN_004d0200(g_EditorFont,0x41);
   iVar2 = this_ptr->button_state + ((this_ptr->right + this_ptr->left) - iVar2) / 2;
   local_14 = this_ptr->button_state + ((this_ptr->top + this_ptr->bottom) - (iVar3 + iVar4)) / 2;
   engine_font_cpp_CBitFont_drawText_FUN_004cda80
@@ -104,7 +104,7 @@ LAB_004a6754:
     uVar5 = uVar6 ^ bVar12;
   }
   iVar2 = iVar2 + uVar5;
-  iVar3 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(g_EditorFont,0x41);
+  iVar3 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(g_EditorFont,0x41);
   local_14 = local_14 + iVar3 + 1;
   g_ActiveRenderColor = g_UITextColor;
   iVar3 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01a0

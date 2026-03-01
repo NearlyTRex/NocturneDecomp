@@ -178,7 +178,7 @@ void __cdecl core_morph_cpp_CMorph_editMorph_FUN_0052bcb0(CMorph *morph)
                      local_58);
           shape_spotview_cpp_CSpotView_applyCamera_FUN_005b9a20(g_CSpotViewPtr);
           engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-                    (g_CDemonRendererPtr2,&g_ZeroVector);
+                    (g_CDemonRendererPtr2,&g_ZeroVector.f);
           core_skeleton_cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_005a0250(local_40,0);
           local_14 = (g_MouseX + -5) * 0x10000;
           local_20 = (g_MouseX + 5) * 0x10000;
@@ -297,7 +297,7 @@ void __cdecl core_morph_cpp_CMorph_editMorph_FUN_0052bcb0(CMorph *morph)
                      local_58);
           shape_spotview_cpp_CSpotView_applyCamera_FUN_005b9a20(g_CSpotViewPtr);
           engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-                    (g_CDemonRendererPtr2,&g_ZeroVector);
+                    (g_CDemonRendererPtr2,&g_ZeroVector.f);
           core_skeleton_cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_005a0250(local_2c,0);
           if (local_5c == 0) {
             core_skeleton_cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340(local_2c,-1,0);
@@ -380,7 +380,7 @@ void __cdecl core_morph_cpp_CMorph_editMorph_FUN_0052bcb0(CMorph *morph)
         }
         local_78 = g_MouseButtonFlags;
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-        core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
+        core_game_cpp_CGame_updateDT_FUN_004d7d90(g_CGamePtr);
         shape_spotview_cpp_CSpotView_handleInput_FUN_005b9670(g_CSpotViewPtr,0x1f);
         iVar15 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
         if (iVar15 != 0) break;

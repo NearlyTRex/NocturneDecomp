@@ -31,9 +31,9 @@
 ;   core_skeleton.cpp_getRootMotionDeltaForMotion_FUN_005a0f50 at 005a0fc1
 ;
 ; Referenced Globals:
-;   CVector3f g_ZeroVector
-;   undefined4 g_ZeroVector.y
-;   undefined4 g_ZeroVector.z
+;   UVector3 g_ZeroVector
+;   undefined4 g_ZeroVector+4
+;   undefined4 g_ZeroVector+8
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
@@ -60,9 +60,9 @@ section .text
     MOV EAX,[0x03f87558]                ; 005a0d2a | g_ZeroVector
     MOV dword ptr [ESI],EAX             ; 005a0d2f
     LEA EAX,[ESI + 0x4]                 ; 005a0d31
-    MOV EDX,dword ptr [0x03f8755c]      ; 005a0d34 | g_ZeroVector.y
+    MOV EDX,dword ptr [0x03f8755c]      ; 005a0d34 | g_ZeroVector+4
     MOV dword ptr [EAX],EDX             ; 005a0d3a
-    MOV EDX,dword ptr [0x03f87560]      ; 005a0d3c | g_ZeroVector.z
+    MOV EDX,dword ptr [0x03f87560]      ; 005a0d3c | g_ZeroVector+8
     MOV dword ptr [EAX + 0x4],EDX       ; 005a0d42
     MOV EAX,ESI                         ; 005a0d45
     ADD ESP,0x40                        ; 005a0d47

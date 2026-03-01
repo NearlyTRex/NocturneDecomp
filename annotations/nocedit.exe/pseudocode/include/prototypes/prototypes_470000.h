@@ -4,7 +4,6 @@
 #include "system/basetypes.h"
 #include "system/stdio.h"
 #include "types/classes/CActorPropertyList.h"
-#include "types/classes/CColor3f.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonFilter.h"
 #include "types/classes/CDemonGlobe.h"
@@ -48,7 +47,7 @@ CDemonFilter * __cdecl core_dfilter_cpp_CDemonFilter_arrdtor_FUN_00470980(CDemon
 void __cdecl core_dfont_cpp_initFonts_FUN_004709a0(void);
 void __cdecl core_dfont_cpp_freeFonts_FUN_004710a0(void);
 void __cdecl core_dfont_cpp_remapFonts_FUN_00471300(void);
-void __cdecl core_dglobe_cpp_CDemonGlobe_setColor_FUN_00471310(CDemonGlobe *this_ptr,CColor3f *color);
+void __cdecl core_dglobe_cpp_CDemonGlobe_setPosition_FUN_00471310(CDemonGlobe *this_ptr,CVector3f *position);
 void __cdecl core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_00471360(CDemonGlobe *this_ptr,float radius);
 void __cdecl core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_00471400(CDemonGlobe *this_ptr);
 void __cdecl core_dglobe_cpp_CDemonGlobe_renderCoronaTextured_FUN_004715e0(CDemonGlobe *this_ptr);

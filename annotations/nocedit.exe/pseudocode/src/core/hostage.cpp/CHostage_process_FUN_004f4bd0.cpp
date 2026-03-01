@@ -36,8 +36,6 @@ void __cdecl core_hostage_cpp_CHostage_process_FUN_004f4bd0(CHostage *this_ptr,f
   CDemonActor *pCVar22;
   int iVar23;
   char *bone_name;
-  float fVar24;
-  ulonglong in_stack_fffffe40;
   float local_19c;
   SDamageInfo local_194;
   CVector3f local_158;
@@ -119,7 +117,7 @@ void __cdecl core_hostage_cpp_CHostage_process_FUN_004f4bd0(CHostage *this_ptr,f
   (this_ptr->base).base.model.accumulated_root_motion.x =
        (this_ptr->base).base.model.accumulated_root_motion.y;
   local_28 = &(this_ptr->base).base.model.motion_controller;
-  while (fVar24 = (float)in_stack_fffffe40, 0.0 < delta_time) {
+  while (0.0 < delta_time) {
     uVar15 = core_motion_cpp_CMotionController_advance_FUN_0052d610(local_28);
     if (uVar15 < 0xb) {
       if (uVar15 == 6) {
@@ -401,10 +399,8 @@ LAB_004f579d:
       case 4:
         local_2c = 1;
         if (this_ptr->sit_down_way_point != (CDemonActor *)0x0) {
-          fVar9 = delta_time * (float)0.5;
-          fVar24 = SUB84(__BITCAST_UINT64((double)fVar9),0);
-          if ((this_ptr->base).base.walk_step_speed < fVar9) {
-            (this_ptr->base).base.walk_step_speed = fVar9;
+          if ((this_ptr->base).base.walk_step_speed < delta_time * (float)0.5) {
+            (this_ptr->base).base.walk_step_speed = delta_time * (float)0.5;
           }
           pCVar20 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                               ((CDemonActor *)this_ptr,&local_8c,
@@ -669,8 +665,7 @@ LAB_004f50f1:
   }
   core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0
             ((CCharacter *)this_ptr,delta_time,uVar15);
-  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
-            ((CCharacter *)this_ptr,delta_time,fVar24);
+  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr,delta_time);
   if ((1.0 <= this_ptr->gun_raise_progress) &&
      (pCVar18 = (CWeapon *)
                 core_actor_cpp_castToClassHash_FUN_0040c790

@@ -49,7 +49,7 @@
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0
 ;   core_fire.cpp_CFireEffect_checkExplosionDamage_FUN_004c8c90
-;   core_flamecan.cpp_CFlameCan_FUN_004cb340
+;   core_flamecan.cpp_CFlameCan_ignite_FUN_004cb340
 ;   core_glass.cpp_CGlass_checkBreakableCondition_FUN_004eb3a0
 ;   core_glass.cpp_CGlass_shatter_FUN_004eaef0
 ;   core_path.cpp_CPathMap_updateIfNeeded_FUN_00546a60
@@ -475,8 +475,8 @@ section .text
     JZ 0x0056bc91                       ; 0056bc86
         ;   XREF to: 0056bc91 (CONDITIONAL_JUMP)  ; LAB_0056bc91
     PUSH EBX                            ; 0056bc88
-    CALL core_flamecan.cpp_CFlameCan_FUN_004cb340 ; 0056bc89
-        ;   XREF to: 004cb340 (UNCONDITIONAL_CALL)  ; void core_flamecan.cpp_CFlameCan_FUN_004cb340(CFlameCan * this_ptr)
+    CALL core_flamecan.cpp_CFlameCan_ignite_FUN_004cb340 ; 0056bc89
+        ;   XREF to: 004cb340 (UNCONDITIONAL_CALL)  ; void core_flamecan.cpp_CFlameCan_ignite_FUN_004cb340(CFlameCan * this_ptr)
     ADD ESP,0x4                         ; 0056bc8e
     MOV EAX,dword ptr [EBP + 0x14]      ; 0056bc91
         ;   Label: LAB_0056bc91

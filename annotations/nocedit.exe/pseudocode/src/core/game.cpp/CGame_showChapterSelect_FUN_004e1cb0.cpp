@@ -111,7 +111,7 @@ void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004e1cb0(CGame *this_ptr,
         if (0 < (int)in_stack_fffff914) {
           do {
             p_Var2 = engine_dosio_c_getFile_FUN_00481a50
-                               ("world",*(char **)(&PTR_s_hq_act1_msn_0067b750 + iVar3),
+                               ("world",*(char **)((int)g_ChapterMissionFiles[0] + iVar3),
                                 "rt");
             if (p_Var2 == (_FILE *)0x0) {
               shape_edittool_cpp_CPickList_enableItem_FUN_004a5410
@@ -168,7 +168,7 @@ LAB_004e2250:
           shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff914,pcVar7);
           while (iVar6 < (int)in_stack_fffff914) {
             p_Var2 = engine_dosio_c_getFile_FUN_00481a50
-                               ("world",*(char **)(&PTR_s_hq_act1_msn_0067b750 + iVar5),
+                               ("world",*(char **)((int)g_ChapterMissionFiles[0] + iVar5),
                                 "rt");
             if (p_Var2 == (_FILE *)0x0) {
               shape_edittool_cpp_CPickList_enableItem_FUN_004a5410
@@ -216,7 +216,7 @@ LAB_004e2250:
           iVar5 = 0x34;
           for (iVar6 = 0; iVar6 < (int)in_stack_fffff914; iVar6 = iVar6 + 1) {
             p_Var2 = engine_dosio_c_getFile_FUN_00481a50
-                               ("world",*(char **)(&PTR_s_hq_act1_msn_0067b750 + iVar5),
+                               ("world",*(char **)((int)g_ChapterMissionFiles[0] + iVar5),
                                 "rt");
             if (p_Var2 == (_FILE *)0x0) {
               shape_edittool_cpp_CPickList_enableItem_FUN_004a5410
@@ -271,7 +271,7 @@ LAB_004e2250:
           shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff914,pcVar7);
           for (iVar6 = 0; iVar6 < (int)in_stack_fffff914; iVar6 = iVar6 + 1) {
             p_Var2 = engine_dosio_c_getFile_FUN_00481a50
-                               ("world",*(char **)(&PTR_s_hq_act1_msn_0067b750 + iVar5),
+                               ("world",*(char **)((int)g_ChapterMissionFiles[0] + iVar5),
                                 "rt");
             if (p_Var2 == (_FILE *)0x0) {
               shape_edittool_cpp_CPickList_enableItem_FUN_004a5410
@@ -305,7 +305,7 @@ LAB_004e2250:
           shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff914,pcVar7);
           for (iVar6 = 0; iVar6 < (int)in_stack_fffff914; iVar6 = iVar6 + 1) {
             p_Var2 = engine_dosio_c_getFile_FUN_00481a50
-                               ("world",*(char **)(&PTR_s_hq_act1_msn_0067b750 + iVar5),
+                               ("world",*(char **)((int)g_ChapterMissionFiles[0] + iVar5),
                                 "rt");
             if (p_Var2 == (_FILE *)0x0) {
               shape_edittool_cpp_CPickList_enableItem_FUN_004a5410
@@ -330,7 +330,7 @@ LAB_004e2250:
         shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff914,pcVar7);
         for (iVar6 = 0; iVar6 < (int)in_stack_fffff914; iVar6 = iVar6 + 1) {
           p_Var2 = engine_dosio_c_getFile_FUN_00481a50
-                             ("world",*(char **)(&PTR_s_hq_act1_msn_0067b750 + iVar5),
+                             ("world",*(char **)((int)g_ChapterMissionFiles[0] + iVar5),
                               "rt");
           if (p_Var2 == (_FILE *)0x0) {
             shape_edittool_cpp_CPickList_enableItem_FUN_004a5410
@@ -355,7 +355,7 @@ LAB_004e2376:
         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffff914,0);
       }
     }
-    pcVar4 = *(char **)(&PTR_s_hq_act1_msn_0067b750 + iVar3 * 0x34 + iVar6 * 4);
+    pcVar4 = g_ChapterMissionFiles[iVar3][iVar6];
     pcVar7 = local_144;
     do {
       cVar1 = *pcVar4;

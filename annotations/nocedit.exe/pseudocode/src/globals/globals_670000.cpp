@@ -1943,6 +1943,7 @@ char* g_CurrentDebugFilename = (char*)s_unknown_0067d200;
 // char[100]
 char g_DefaultAuditPath[] = "";
 char g_DefaultAuditRecordPath[] = "";
+char g_EventCommandBuffer[] = "";
 
 // char[260]
 char g_FilePathBuffer[] = "";
@@ -2000,8 +2001,8 @@ int g_CFlashlightClassVersion = 0x1;
 int g_CFliesClassVersion = 0x3;
 int g_CFrankenstienMachineClassVersion = 0x1;
 int g_CGabriellaClassVersion = 0x3;
-int INT_0067b664 = 0x40;
-int INT_0067b668 = 0x40;
+int g_MovieRecordingWidth = 0x40;
+int g_MovieRecordingHeight = 0x40;
 int g_CGargoyleClassVersion = 0x2;
 int g_CGasMaskClassVersion = 0x1;
 int g_CGhoulClassVersion = 0x7;

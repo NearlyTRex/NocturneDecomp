@@ -297,7 +297,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c07b0(CStranger *this_ptr)
     }
     else if (in_stack_0000000c == 0) {
       core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
-                (&local_75c,(CVector3f *)&FLOAT_03f6babc,&g_ZeroVector);
+                (&local_75c,(CVector3f *)&FLOAT_03f6babc,&g_ZeroVector.f);
       pCVar11 = &local_75c;
       core_xform_cpp_buildRotationX_FUN_005f6c40(1.5707964,&local_66c);
       pCVar10 = &local_c6c;
@@ -337,7 +337,7 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c07b0(CStranger *this_ptr)
     }
     else {
       core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
-                (&local_aec,(CVector3f *)&FLOAT_03f6bab0,&g_ZeroVector);
+                (&local_aec,(CVector3f *)&FLOAT_03f6bab0,&g_ZeroVector.f);
       pCVar11 = &local_aec;
       core_xform_cpp_buildRotationX_FUN_005f6c40(1.5707964,&local_72c);
       pCVar10 = &local_36c;
@@ -386,11 +386,11 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005c07b0(CStranger *this_ptr)
   local_84.z = (float)local_180;
   if ((this_ptr->base).base.layer_action_index == 0xe) {
     pCVar4 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                       (&local_d8,&g_ZeroVector,
+                       (&local_d8,&g_ZeroVector.f,
                         (this_ptr->base).base.model.bone_transform.bone_world_matrices +
                         INT_03f6bb04);
     pCVar5 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                       (&local_90,&g_ZeroVector,
+                       (&local_90,&g_ZeroVector.f,
                         (this_ptr->base).base.model.bone_transform.bone_world_matrices +
                         INT_03f6bb00);
     local_198 = pCVar5->x + pCVar4->x;

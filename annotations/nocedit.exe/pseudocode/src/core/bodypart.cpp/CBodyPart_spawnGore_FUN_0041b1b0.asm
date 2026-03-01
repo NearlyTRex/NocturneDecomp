@@ -12,7 +12,7 @@
 ; Referenced Globals:
 ;   CGore* g_CGorePtr = 02d83364
 ;   CGore g_CGoreInstance
-;   CVector3f g_ZeroVector
+;   UVector3 g_ZeroVector
 ;
 ; Called Functions:
 ;   core_actor.cpp_randomChance_FUN_0040cd10

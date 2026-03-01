@@ -4,13 +4,13 @@
       {
         "category": "undeclared_identifier",
         "column": 11,
-        "line": 114,
+        "line": 116,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 18,
-        "line": 114,
+        "line": 116,
         "message": "expected expression"
       }
     ],
@@ -19,19 +19,19 @@
   },
   "complexity": {
     "assembly_lines": 166,
-    "complexity_score": 198,
+    "complexity_score": 200,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 9,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 113,
+    "pseudocode_lines": 115,
     "suspect_count": 7,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "unresolved_funcptr"
     ],
-    "total_lines": 279
+    "total_lines": 281
   },
   "cross_references": [],
   "function": {
@@ -256,7 +256,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 67,
+      "line": 68,
       "match": "fcos",
       "severity": "mild",
       "text": "fVar6 = (float10)fcos((float10)fStack_14);",
@@ -264,7 +264,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 68,
+      "line": 69,
       "match": "fcos",
       "severity": "mild",
       "text": "fVar7 = (float10)fcos((float10)fStack_1c);",
@@ -272,7 +272,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 69,
+      "line": 70,
       "match": "fsin",
       "severity": "mild",
       "text": "fVar8 = (float10)fsin((float10)fStack_14);",
@@ -280,7 +280,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 70,
+      "line": 71,
       "match": "fsin",
       "severity": "mild",
       "text": "fVar9 = (float10)fsin((float10)fStack_1c);",
@@ -288,7 +288,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 100,
+      "line": 102,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "iVar2 = *(int *)((int)g_CDemonSetPtr->characters + iVar4);",
@@ -296,7 +296,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 107,
+      "line": 109,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(iVar2 + 0x154) + 0x114))(iVar2,pCStack_20,0x3f800000,&SStack_b4);",

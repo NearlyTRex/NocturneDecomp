@@ -219,12 +219,12 @@ void __cdecl core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(C
     _atexit(&g_SkeleditViewModelDestructorNode);
   }
   core_dmodel_cpp_CKeyFramedModel_free_FUN_00477690(&g_SkeleditViewModel);
-  local_184.x = g_ZeroVector.x;
-  local_184.y = g_ZeroVector.y;
-  local_184.z = g_ZeroVector.z;
-  local_19c.x = g_ZeroVector.x;
-  local_19c.y = g_ZeroVector.y;
-  local_19c.z = g_ZeroVector.z;
+  local_184.x = g_ZeroVector.f.x;
+  local_184.y = g_ZeroVector.f.y;
+  local_184.z = g_ZeroVector.f.z;
+  local_19c.x = g_ZeroVector.f.x;
+  local_19c.y = g_ZeroVector.f.y;
+  local_19c.z = g_ZeroVector.f.z;
   core_motion_cpp_CMotionController_reset_FUN_0052dad0(&this_ptr->motion_controller);
   local_100.x = 0.0;
   local_100.y = 0.0;
@@ -634,7 +634,7 @@ LAB_005975b4:
       engine_2d_c_drawText_FUN_00401fd0(local_46c,0,0x6e);
     }
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-    core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
+    core_game_cpp_CGame_updateDT_FUN_004d7d90(g_CGamePtr);
     iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
     if (iVar7 != 0) break;
     iVar7 = 0;
@@ -1132,8 +1132,8 @@ LAB_005975b4:
       pcVar19 = pcVar19 + 2;
     } while (cVar2 != '\0');
     iVar7 = shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
-                      (g_CEditorToolsPtr,"Enter .DFM filename","models",0x64e099,
-                       (int)local_860);
+                      (g_CEditorToolsPtr,"Enter .DFM filename","models",
+                       "dfm",local_860,1);
     if (iVar7 != 0) {
       core_skeledit_cpp_CDeformableModel_save_FUN_0058f040(local_c0,local_860);
     }

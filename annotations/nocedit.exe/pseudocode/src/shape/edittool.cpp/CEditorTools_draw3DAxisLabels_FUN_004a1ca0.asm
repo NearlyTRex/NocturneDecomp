@@ -8,8 +8,6 @@
 ; float            Stack[0x8]:4   scale_factor
 ; int              Stack[0xc]:4   text_color
 ; Local Variables:
-; SRenderVertex    Stack[-0x94]:48  local_94
-; SRenderVertex    Stack[-0x64]:48  local_64
 ; undefined1       Stack[-0x34]:1  local_34
 ; undefined4       Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x1c]:4  local_1c
@@ -51,7 +49,7 @@
 ;   engine_3d.c_clipAndDrawLine2D_FUN_00407d70
 ;   engine_3d.c_setRenderAlpha_FUN_00406d80
 ;   engine_font.cpp_CBitFont_drawText_FUN_004cda80
-;   engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0
+;   engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0
 ;   engine_matrix.c_transformToCache_FUN_0050cd70
 ;
 ; *****************************************************************************
@@ -73,8 +71,8 @@ section .text
     MOV EBX,dword ptr [EAX + 0x3168]    ; 004a1cbb
     PUSH EAX                            ; 004a1cc1
     MOV dword ptr [0x02cf2668],EBX      ; 004a1cc2 | g_FontCharacterHeight
-    CALL engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0 ; 004a1cc8
-        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0 ; 004a1cc8
+        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 004a1ccd
     FLD float ptr [ESP + 0x3c]          ; 004a1cd0
     FMUL double ptr [0x006235b6]        ; 004a1cd4 | g_AxisScaleMultiplier

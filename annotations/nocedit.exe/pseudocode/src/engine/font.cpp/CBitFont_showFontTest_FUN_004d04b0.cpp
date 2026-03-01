@@ -23,12 +23,12 @@ void __cdecl engine_font_cpp_CBitFont_showFontTest_FUN_004d04b0(CBitFont *this_p
   iVar5 = 0x20;
   engine_2d_c_fillRectColor_FUN_00403170(g_ClipLeft,g_ClipTop,g_ClipRight,g_ClipBottom,0);
   iVar3 = 10;
-  local_14 = this_ptr->max_char_width + this_ptr->line_spacing;
+  local_14 = this_ptr->max_char_height + this_ptr->line_spacing;
   iVar2 = 10;
   do {
     engine_font_cpp_CBitFont_drawCharacter_FUN_004ce7a0(this_ptr,iVar5,iVar3,iVar2,1,-1);
-    iVar3 = iVar3 + this_ptr->max_char_height;
-    if ((uint)screen_height < (uint)(this_ptr->char_spacing + iVar3 + this_ptr->max_char_height)) {
+    iVar3 = iVar3 + this_ptr->max_char_width;
+    if ((uint)screen_height < (uint)(this_ptr->char_spacing + iVar3 + this_ptr->max_char_width)) {
       iVar3 = 10;
       iVar2 = iVar2 + local_14;
     }
@@ -40,7 +40,7 @@ void __cdecl engine_font_cpp_CBitFont_showFontTest_FUN_004d04b0(CBitFont *this_p
   do {
     iVar1 = engine_font_cpp_CBitFont_drawCharacter_FUN_004ce7a0(this_ptr,iVar5,iVar3,iVar2,1,-1);
     iVar3 = iVar3 + iVar1;
-    if ((uint)screen_height < (uint)(this_ptr->char_spacing + this_ptr->max_char_height + iVar3)) {
+    if ((uint)screen_height < (uint)(this_ptr->char_spacing + this_ptr->max_char_width + iVar3)) {
       iVar3 = 10;
       iVar2 = iVar2 + local_14;
     }
@@ -48,7 +48,7 @@ void __cdecl engine_font_cpp_CBitFont_showFontTest_FUN_004d04b0(CBitFont *this_p
   } while (iVar5 < 0x7f);
   iVar2 = iVar2 + local_14 + 10;
   engine_2d_c_fillRectColor_FUN_00403170
-            (0,iVar2,screen_height + -1,this_ptr->max_char_width * 3 + iVar2 + 8,1);
+            (0,iVar2,screen_height + -1,this_ptr->max_char_height * 3 + iVar2 + 8,1);
   iVar3 = engine_font_cpp_CBitFont_drawText_FUN_004cda80(this_ptr,"one",10,iVar2,6,-1);
   iVar5 = engine_font_cpp_CBitFont_drawText_FUN_004cda80
                     (this_ptr,&s_BackspaceChar_0062a766,iVar3 + 10,iVar2,6,-1);

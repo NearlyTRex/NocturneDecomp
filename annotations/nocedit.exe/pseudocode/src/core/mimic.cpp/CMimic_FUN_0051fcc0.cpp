@@ -82,7 +82,7 @@ void __cdecl core_mimic_cpp_CMimic_FUN_0051fcc0(CMimic *this_ptr)
     if (uVar8 == 0) {
       iVar7 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).getDeathState)
                         (&g_HeroActors[g_LocalHeroIndex]->base);
-      if (((iVar7 == 0) && (g_CGamePtr->debug_flag_2 == 0)) &&
+      if (((iVar7 == 0) && (g_CGamePtr->freeze_enemies_enabled == 0)) &&
          (ABS((this_ptr->base).base.base.location.position.y -
               (g_HeroActors[g_LocalHeroIndex]->base).base.location.position.y) <=
           (float)15)) {
@@ -122,7 +122,7 @@ void __cdecl core_mimic_cpp_CMimic_FUN_0051fcc0(CMimic *this_ptr)
 LAB_0051fd7d:
     iVar7 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).getDeathState)
                       (&g_HeroActors[g_LocalHeroIndex]->base);
-    if ((iVar7 != 0) || (g_CGamePtr->debug_flag_2 != 0)) {
+    if ((iVar7 != 0) || (g_CGamePtr->freeze_enemies_enabled != 0)) {
       iVar7 = 0;
       goto LAB_0051fda5;
     }

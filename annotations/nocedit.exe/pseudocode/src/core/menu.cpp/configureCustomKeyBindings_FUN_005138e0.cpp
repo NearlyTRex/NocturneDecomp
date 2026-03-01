@@ -592,7 +592,7 @@ LAB_0051390e:
       iVar34 = 0;
       do {
         pcVar2 = core_menu_cpp_getKeyDisplayName_FUN_005134e0
-                           (**(int **)((int)g_CustomKeyPointers + iVar34));
+                           (**(EInputCodeType **)((int)g_CustomKeyPointers + iVar34));
         _sprintf(local_d4,"%s\t%s",pacVar28,pcVar2);
         iVar34 = iVar34 + 4;
         iVar31 = iVar31 + 1;

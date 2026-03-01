@@ -17,7 +17,7 @@ void __cdecl core_main_c_showPromoScreen_FUN_00508340(void)
   int iVar5;
   char local_110 [256];
   
-  iVar1 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(g_ThemeFont,0x58);
+  iVar1 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(g_ThemeFont,0x58);
   wincore_winrun_cpp_getTime_FUN_005f2dc0();
   engine_2d_c_clearInputAndWait_FUN_00403260();
   uVar2 = rand();

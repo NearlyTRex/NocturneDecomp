@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 14,
-        "line": 45,
+        "line": 42,
         "message": "assigning to 'char *' from incompatible type 'void *'"
       }
     ],
@@ -13,17 +13,15 @@
   },
   "complexity": {
     "assembly_lines": 504,
-    "complexity_score": 411,
+    "complexity_score": 233,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 47,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 236,
-    "suspect_count": 17,
-    "suspect_types": [
-      "stack_param"
-    ],
-    "total_lines": 740
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 233,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 737
   },
   "cross_references": [],
   "function": {
@@ -36,7 +34,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_palette.cpp_CPaletteManager_createOutputPalette_FUN_00545180",
-    "signature": "int __cdecl engine_palette_cpp_CPaletteManager_createOutputPalette_FUN_00545180(void)"
+    "signature": "int __cdecl engine_palette_cpp_CPaletteManager_createOutputPalette_FUN_00545180(CPaletteManager *this_ptr,char *output_filename,int num_palette_entries)"
   },
   "function_calls": [
     {
@@ -388,8 +386,8 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "estimated_params": 0
+    "declared_params": 3,
+    "estimated_params": 3
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.354166666666667,
@@ -424,10 +422,10 @@
     "pcode_op_count": 1672
   },
   "stack_frame": {
-    "frame_size": 112,
+    "frame_size": 124,
     "local_size": 112,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -478,145 +476,29 @@
         "offset": -12,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPaletteManager *"
+      },
+      {
+        "is_param": true,
+        "name": "output_filename",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "num_palette_entries",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "int *in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "char *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "int in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 39,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "(in_stack_00000004[2],4,\"..\\\\engine\\\\palette.cpp\",0xbb);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 43,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "if (0 < *in_stack_00000004) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 47,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "pcVar10 = (char *)(in_stack_00000004[1] + local_10);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 121,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "pcVar12 = (char *)(in_stack_00000004[1] + local_10);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 133,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "iVar7 = in_stack_00000004[1];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 137,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "iVar7 = in_stack_00000004[1];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 141,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "pcVar12 = (char *)(in_stack_00000004[1] + local_10);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 153,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "iVar4 = in_stack_00000004[1];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 158,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "iVar4 = in_stack_00000004[1];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 192,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "if ((uint)in_stack_00000004[2] < color_count) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 201,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "} while (local_1c < *in_stack_00000004);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 204,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "(local_18,local_14,color_count,in_stack_0000000c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 205,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "pcVar12 = in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 224,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "p_Var6 = engine_dosio_c_getFile_FUN_00481a50(pcVar12,in_stack_00000008,pcVar11);",
-      "type": "stack_param"
-    }
-  ]
+  "suspects": []
 }

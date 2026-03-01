@@ -25,9 +25,9 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_testCylinderCollision_FUN_00496c60(C
   float fVar12;
   float fVar13;
   float fVar14;
-  float fVar15;
-  float fVar16;
-  float fVar17;
+  uint uVar15;
+  uint uVar16;
+  uint uVar17;
   int grid_y;
   int grid_z;
   float fVar18;
@@ -66,24 +66,25 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_testCylinderCollision_FUN_00496c60(C
   }
   fVar9 = (this_ptr->bbox_min).z;
   fVar10 = cylinder->radius;
-  g_TempNormal0.z = g_ZeroVector.z;
-  g_TempNormal0.x = g_ZeroVector.x;
-  g_TempNormal1.y = g_ZeroVector.y;
-  g_TempNormal2.y = g_ZeroVector.y;
-  g_TempNormal2.z = g_ZeroVector.z;
-  g_TempNormal2.x = g_ZeroVector.x;
-  fVar15 = g_ZeroVector.x;
-  fVar16 = g_ZeroVector.z;
-  fVar17 = g_ZeroVector.y;
-  for (; grid_y = (int)ROUND(ROUND((fVar4 - fVar5) * fVar13)), fVar18 = g_ZeroVector.y,
-      fVar19 = g_ZeroVector.x, fVar20 = g_ZeroVector.z,
+  g_TempNormal0.z = g_ZeroVector.f.z;
+  g_TempNormal0.x = g_ZeroVector.f.x;
+  g_TempNormal1.y = g_ZeroVector.f.y;
+  g_TempNormal2.y = g_ZeroVector.f.y;
+  g_TempNormal2.z = g_ZeroVector.f.z;
+  g_TempNormal2.x = g_ZeroVector.f.x;
+  uVar15 = g_ZeroVector.f.x;
+  uVar16 = g_ZeroVector.f.z;
+  uVar17 = g_ZeroVector.f.y;
+  for (; grid_y = (int)ROUND(ROUND((fVar4 - fVar5) * fVar13)), fVar18 = g_ZeroVector.f.y,
+      fVar19 = g_ZeroVector.f.x, fVar20 = g_ZeroVector.f.z,
       grid_x <= (int)ROUND(ROUND(((fVar11 - fVar2) + fVar3) * (1.0 / fVar1))); grid_x = grid_x + 1)
   {
-    for (; g_ZeroVector.z = fVar20, g_ZeroVector.x = fVar19, g_ZeroVector.y = fVar18,
-        grid_z = (int)ROUND(ROUND(fVar14 * (1.0 / fVar8))), g_TempNormal0.y = g_ZeroVector.y,
-        g_TempNormal1.x = g_ZeroVector.x, g_TempNormal1.z = g_ZeroVector.z,
+    for (; g_ZeroVector.f.z = fVar20, g_ZeroVector.f.x = fVar19, g_ZeroVector.f.y = fVar18,
+        grid_z = (int)ROUND(ROUND(fVar14 * (1.0 / fVar8))), g_TempNormal0.y = g_ZeroVector.f.y,
+        g_TempNormal1.x = g_ZeroVector.f.x, g_TempNormal1.z = g_ZeroVector.f.z,
         grid_y <= (int)ROUND(ROUND((fVar6 - fVar7) * fVar13)); grid_y = grid_y + 1) {
-      for (; g_ZeroVector.z = fVar16, g_ZeroVector.y = fVar17, g_ZeroVector.x = fVar15,
+      for (; g_ZeroVector.f.z = (float)uVar16, g_ZeroVector.f.y = (float)uVar17,
+          g_ZeroVector.f.x = (float)uVar15,
           grid_z <= (int)ROUND(ROUND(((fVar12 - fVar9) + fVar10) * (1.0 / fVar8)));
           grid_z = grid_z + 1) {
         this_ptr_00 = core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_004952b0
@@ -91,23 +92,23 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_testCylinderCollision_FUN_00496c60(C
         if (this_ptr_00 != (CDemonCube *)0x0) {
           core_dcube_cpp_CDemonCube_testCylinderCollision_FUN_00457a90(this_ptr_00,cylinder);
         }
-        fVar15 = g_ZeroVector.x;
-        fVar17 = g_ZeroVector.y;
-        fVar16 = g_ZeroVector.z;
+        uVar15 = g_ZeroVector.f.x;
+        uVar17 = g_ZeroVector.f.y;
+        uVar16 = g_ZeroVector.f.z;
       }
       fVar18 = g_TempNormal0.y;
       fVar19 = g_TempNormal1.x;
       fVar20 = g_TempNormal1.z;
-      fVar15 = g_ZeroVector.x;
-      fVar17 = g_ZeroVector.y;
-      fVar16 = g_ZeroVector.z;
+      uVar15 = g_ZeroVector.f.x;
+      uVar17 = g_ZeroVector.f.y;
+      uVar16 = g_ZeroVector.f.z;
     }
   }
-  g_TempNormal0.y = g_ZeroVector.y;
-  g_TempNormal1.x = g_ZeroVector.x;
-  g_TempNormal1.z = g_ZeroVector.z;
-  g_ZeroVector.x = fVar15;
-  g_ZeroVector.y = fVar17;
-  g_ZeroVector.z = fVar16;
+  g_TempNormal0.y = g_ZeroVector.f.y;
+  g_TempNormal1.x = g_ZeroVector.f.x;
+  g_TempNormal1.z = g_ZeroVector.f.z;
+  g_ZeroVector.f.x = (float)uVar15;
+  g_ZeroVector.f.y = (float)uVar17;
+  g_ZeroVector.f.z = (float)uVar16;
   return;
 }

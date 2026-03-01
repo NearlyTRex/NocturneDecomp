@@ -3,81 +3,51 @@
     "errors": [
       {
         "category": "other",
-        "column": 62,
-        "line": 94,
+        "column": 67,
+        "line": 93,
         "message": "cannot initialize a parameter of type 'struct CDemonActor *' with an rvalue of type 'uint32_t' (aka 'unsigned int')"
       },
       {
         "category": "undeclared_identifier",
         "column": 71,
-        "line": 123,
+        "line": 122,
         "message": "use of undeclared identifier 'stack0xffffff24'"
       },
       {
         "category": "other",
         "column": 17,
-        "line": 124,
-        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
+        "line": 123,
+        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 46,
-        "line": 126,
+        "line": 125,
         "message": "cannot initialize a parameter of type 'struct CDemonActor *' with an rvalue of type 'uint32_t' (aka 'unsigned int')"
       },
       {
         "category": "other",
         "column": 17,
-        "line": 127,
-        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 135,
-        "message": "cannot cast from type 'float' to pointer type 'CDemonActor *'"
+        "line": 126,
+        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 137,
-        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 138,
-        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 139,
-        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 145,
-        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
+        "line": 136,
+        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 21,
-        "line": 151,
+        "line": 150,
         "message": "C-style cast from 'CTurret *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 12,
-        "line": 154,
+        "line": 153,
         "message": "C-style cast from 'struct CDemonActor *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 16,
-        "line": 164,
-        "message": "cannot cast from type 'float' to pointer type 'CDemonActor *'"
       }
     ],
     "success": false,
@@ -85,13 +55,13 @@
   },
   "complexity": {
     "assembly_lines": 397,
-    "complexity_score": 315,
+    "complexity_score": 285,
     "cross_reference_count": 0,
     "function_call_count": 17,
     "global_count": 22,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 160,
-    "suspect_count": 13,
+    "suspect_count": 10,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_ref",
@@ -144,7 +114,7 @@
     {
       "addr": "00448a70",
       "is_variadic": false,
-      "name": "core_crate.cpp_CCrate_FUN_00448a70"
+      "name": "core_crate.cpp_CCrate_explode_FUN_00448a70"
     },
     {
       "addr": "004c76a0",
@@ -159,7 +129,7 @@
     {
       "addr": "004cb340",
       "is_variadic": false,
-      "name": "core_flamecan.cpp_CFlameCan_FUN_004cb340"
+      "name": "core_flamecan.cpp_CFlameCan_ignite_FUN_004cb340"
     },
     {
       "addr": "004eb3a0",
@@ -428,23 +398,23 @@
   "suspects": [
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 87,
+      "line": 86,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "((CCharacter *)this_ptr,SUB84(__BITCAST_UINT64(dVar4),0),",
+      "text": "((CCharacter *)this_ptr,SUB84(__BITCAST_UINT64(dVar3),0),",
       "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 87,
+      "line": 86,
       "match": "SUB84",
       "severity": "mild",
-      "text": "((CCharacter *)this_ptr,SUB84(__BITCAST_UINT64(dVar4),0),",
+      "text": "((CCharacter *)this_ptr,SUB84(__BITCAST_UINT64(dVar3),0),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Direct stack address reference",
-      "line": 116,
+      "line": 115,
       "match": "&stack0xffffff24",
       "severity": "moderate",
       "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xffffff24);",
@@ -452,7 +422,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 117,
+      "line": 116,
       "match": "._0_4_",
       "severity": "mild",
       "text": "auStack_cc._0_4_ =",
@@ -460,23 +430,23 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 119,
+      "line": 118,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "((CCharacter *)this_ptr,SUB84(__BITCAST_UINT64(dVar4),0),(int)((ulonglong)dVar4 >> 0x20));",
+      "text": "((CCharacter *)this_ptr,SUB84(__BITCAST_UINT64(dVar3),0),(int)((ulonglong)dVar3 >> 0x20));",
       "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 119,
+      "line": 118,
       "match": "SUB84",
       "severity": "mild",
-      "text": "((CCharacter *)this_ptr,SUB84(__BITCAST_UINT64(dVar4),0),(int)((ulonglong)dVar4 >> 0x20));",
+      "text": "((CCharacter *)this_ptr,SUB84(__BITCAST_UINT64(dVar3),0),(int)((ulonglong)dVar3 >> 0x20));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 120,
+      "line": 119,
       "match": "._4_4_",
       "severity": "mild",
       "text": "auStack_cc._4_4_ = 0.4;",
@@ -484,7 +454,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 125,
+      "line": 124,
       "match": "SQRT",
       "severity": "mild",
       "text": "SQRT(fStack_74 * fStack_74 + fStack_7c * fStack_7c + fStack_78 * fStack_78);",
@@ -492,39 +462,15 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 130,
+      "line": 129,
       "match": "._8_4_",
       "severity": "mild",
-      "text": "auStack_cc._8_4_ = fStack_40;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 131,
-      "match": "._12_4_",
-      "severity": "mild",
-      "text": "auStack_cc._12_4_ = fStack_3c;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 132,
-      "match": "._16_4_",
-      "severity": "mild",
-      "text": "auStack_cc._16_4_ = pCStack_38;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 138,
-      "match": "._24_4_",
-      "severity": "mild",
-      "text": "auStack_cc._24_4_ = pCVar1->x;",
+      "text": "auStack_cc._8_4_ = CStack_40.x;",
       "type": "unknown_field"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 145,
+      "line": 144,
       "match": "1.41531e-43",
       "severity": "mild",
       "text": "CStack_a0.x = 1.41531e-43;",

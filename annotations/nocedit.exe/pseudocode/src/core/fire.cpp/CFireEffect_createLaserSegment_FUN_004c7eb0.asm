@@ -17,7 +17,7 @@
 ; float            Stack[0x2c]:4   cone_angle
 ;
 ; XREF[2]:
-;   core_fire.cpp_CFireEffect_createLaserBeamPath_FUN_004c7f80 at 004c8127
+;   core_fire.cpp_CFireEffect_createLaserPath_FUN_004c7f80 at 004c8127
 ;   core_fire.cpp_CFireEffect_traceLaser_FUN_004c8230 at 004c8b13
 ;
 ; Referenced Globals:

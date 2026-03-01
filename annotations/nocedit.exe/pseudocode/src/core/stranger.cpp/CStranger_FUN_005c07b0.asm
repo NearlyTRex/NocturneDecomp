@@ -210,7 +210,7 @@
 ;   float FLOAT_03f6babc
 ;   int INT_03f6bb00
 ;   int INT_03f6bb04
-;   CVector3f g_ZeroVector
+;   UVector3 g_ZeroVector
 ;   undefined4 g_CWeaponClassInfo.name_hash
 ;
 ; Called Functions:

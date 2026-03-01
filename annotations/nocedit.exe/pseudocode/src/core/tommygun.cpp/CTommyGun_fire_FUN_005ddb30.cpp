@@ -32,9 +32,7 @@ int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_005ddb30(CTommyGun *this_ptr)
   CVector3f CStack_bc;
   CVector3f CStack_b0;
   CVector3f CStack_a4;
-  float fStack_98;
-  float fStack_94;
-  float fStack_90;
+  CVector3f CStack_98;
   CVector3f CStack_8c;
   CVector3f CStack_80;
   CVector3f aCStack_74 [2];
@@ -127,10 +125,10 @@ int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_005ddb30(CTommyGun *this_ptr)
                          g_CDemonSetPtr->collision_actor);
               goto LAB_005ddd4e;
             }
-            core_flamecan_cpp_CFlameCan_FUN_004cb340(this_ptr_03);
+            core_flamecan_cpp_CFlameCan_ignite_FUN_004cb340(this_ptr_03);
           }
           else {
-            core_crate_cpp_CCrate_FUN_00448a70((CCrate *)CStack_28.z);
+            core_crate_cpp_CCrate_explode_FUN_00448a70((CCrate *)CStack_28.z);
           }
         }
         else {
@@ -212,10 +210,11 @@ int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_005ddb30(CTommyGun *this_ptr)
 LAB_005ddd4e:
       core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
       if ((this_ptr->base).is_rendered != 0) {
-        fStack_98 = CStack_80.x;
-        fStack_90 = CStack_80.z;
-        fStack_94 = CStack_80.y + -0.125f;
-        core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_004c7a60(g_CFireEffectPtr);
+        CStack_98.x = CStack_80.x;
+        CStack_98.z = CStack_80.z;
+        CStack_98.y = CStack_80.y + -0.125f;
+        core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_004c7a60
+                  (g_CFireEffectPtr,&CStack_98,&(this_ptr->base).base.orient_matrix);
         CStack_e0.x = 5.0;
         CStack_e0.y = 6.0;
         CStack_e0.z = -6.0;

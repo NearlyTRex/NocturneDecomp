@@ -21,9 +21,9 @@
 ;   double DOUBLE_00615e0c = 3
 ;   CEventList* g_CEventListPtr = 02d05310
 ;   CEventList g_CEventListInstance
-;   CVector3f g_ZeroVector
-;   undefined4 g_ZeroVector.y
-;   undefined4 g_ZeroVector.z
+;   UVector3 g_ZeroVector
+;   undefined4 g_ZeroVector+4
+;   undefined4 g_ZeroVector+8
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
@@ -109,9 +109,9 @@ section .text
         ;   XREF to: 00419cb0 (CONDITIONAL_JUMP)  ; LAB_00419cb0
     MOV EDX,dword ptr [0x03f87558]      ; 00419c96 | g_ZeroVector
     MOV dword ptr [EAX],EDX             ; 00419c9c
-    MOV EDX,dword ptr [0x03f8755c]      ; 00419c9e | g_ZeroVector.y
+    MOV EDX,dword ptr [0x03f8755c]      ; 00419c9e | g_ZeroVector+4
     MOV dword ptr [EAX + 0x4],EDX       ; 00419ca4
-    MOV EDX,dword ptr [0x03f87560]      ; 00419ca7 | g_ZeroVector.z
+    MOV EDX,dword ptr [0x03f87560]      ; 00419ca7 | g_ZeroVector+8
     MOV dword ptr [EAX + 0x8],EDX       ; 00419cad
     ADD EBX,0x15c                       ; 00419cb0
         ;   Label: LAB_00419cb0

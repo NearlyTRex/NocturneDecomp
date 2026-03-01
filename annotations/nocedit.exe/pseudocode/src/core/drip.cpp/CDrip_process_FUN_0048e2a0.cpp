@@ -9,9 +9,11 @@
 void __cdecl core_drip_cpp_CDrip_process_FUN_0048e2a0(CDrip *this_ptr,float delta_time)
 
 {
+  CLocation *position;
   CDemonActor_vtable *pCVar1;
   int iVar2;
   float fVar3;
+  CKeyFramedModel *model_ptr;
   int iVar4;
   int iVar5;
   float10 fVar6;
@@ -23,9 +25,7 @@ void __cdecl core_drip_cpp_CDrip_process_FUN_0048e2a0(CDrip *this_ptr,float delt
   CVector3f CStack_60;
   CVector3f local_54;
   CVector3f local_48;
-  float fStack_3c;
-  float fStack_38;
-  float fStack_34;
+  CVector3f aCStack_3c [2];
   CLocation *pCStack_20;
   float fStack_1c;
   float fStack_18;
@@ -56,6 +56,7 @@ void __cdecl core_drip_cpp_CDrip_process_FUN_0048e2a0(CDrip *this_ptr,float delt
       iVar4 = this_ptr->no_rock_flag;
       (this_ptr->base).location.position.y = this_ptr->ground_y;
       if (iVar4 == 0) {
+        position = &(this_ptr->base).location;
         iVar4 = 0;
         do {
           CStack_60.x = core_actor_cpp_getRandomFloat_FUN_0040cc10(-0.5,0.5);
@@ -63,7 +64,7 @@ void __cdecl core_drip_cpp_CDrip_process_FUN_0048e2a0(CDrip *this_ptr,float delt
           CStack_60.y = core_actor_cpp_getRandomFloat_FUN_0040cc10(-0.5,0.5);
           fStack_14 = CStack_60.y;
           fStack_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-0.5,0.5);
-          CStack_60.x = CStack_60.x + (this_ptr->base).location.position.x;
+          CStack_60.x = CStack_60.x + (position->position).x;
           CStack_60.y = CStack_60.y + (this_ptr->base).location.position.y;
           CStack_60.z = fStack_14 + (this_ptr->base).location.position.z;
           core_fire_cpp_CFireEffect_createSmokeParticle_FUN_004c7b20
@@ -76,13 +77,14 @@ void __cdecl core_drip_cpp_CDrip_process_FUN_0048e2a0(CDrip *this_ptr,float delt
           fVar8 = (float10)fsin((float10)fStack_14);
           fVar9 = (float10)fsin((float10)fStack_1c);
           fStack_18 = (float)fVar7;
-          fStack_38 = (float)(fVar9 * (float10)20.0f);
-          fStack_3c = (float)(fVar6 * (float10)20.0f * (float10)fStack_18);
-          fStack_34 = (float)(fVar8 * (float10)20.0f * (float10)fStack_18);
-          core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
-                    (&CKeyFramedModelInstance_02c9b170);
+          aCStack_3c[0].y = (float)(fVar9 * (float10)20.0f);
+          aCStack_3c[0].x = (float)(fVar6 * (float10)20.0f * (float10)fStack_18);
+          aCStack_3c[0].z = (float)(fVar8 * (float10)20.0f * (float10)fStack_18);
+          model_ptr = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
+                                (&CKeyFramedModelInstance_02c9b170);
           iVar4 = iVar4 + 1;
-          core_fire_cpp_CFireEffect_createRock_FUN_004c7e60(g_CFireEffectPtr);
+          core_fire_cpp_CFireEffect_createRock_FUN_004c7e60
+                    (g_CFireEffectPtr,&position->position,aCStack_3c,model_ptr);
         } while (iVar4 < 10);
       }
       (this_ptr->base).location.position.y = (this_ptr->home_pos).y;

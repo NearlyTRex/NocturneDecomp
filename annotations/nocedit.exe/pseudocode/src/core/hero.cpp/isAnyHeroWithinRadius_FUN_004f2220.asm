@@ -8,7 +8,7 @@
 ; float            Stack[0x8]:4   radius
 ;
 ; XREF[5]:
-;   core_fire.cpp_CGunFlame_initProcess_FUN_004c4b00 at 004c4b62
+;   core_fire.cpp_initProcess_FUN_004c4b00 at 004c4b62
 ;   core_manpuz.cpp_CMansionPuzzleCircle_process_FUN_005091d0 at 005091de
 ;   core_trash.cpp_CTrash_process_FUN_005decf0 at 005ded0b
 ;   core_trigger.cpp_CTrigger_process_FUN_005dfac0 at 005dff26

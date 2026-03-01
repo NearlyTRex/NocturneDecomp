@@ -38,7 +38,7 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_004a9b00(CEnemy *this_ptr,fl
   fVar1 = this_ptr->victim_height;
   pCVar2 = this_ptr->script_victim;
   if (pCVar2 == (CDemonActor *)0x0) {
-    if (((g_CGamePtr->debug_flag_2 != 0) || (g_CGamePtr->allow_enemy_attack_flag == 0)) ||
+    if (((g_CGamePtr->freeze_enemies_enabled != 0) || (g_CGamePtr->allow_enemy_attack_flag == 0)) ||
        (iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                           (g_CEventListPtr,"Capture"), iVar6 != 0)) {
       this_ptr->is_in_combat = 0;

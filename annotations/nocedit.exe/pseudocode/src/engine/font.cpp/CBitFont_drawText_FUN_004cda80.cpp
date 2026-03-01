@@ -20,7 +20,7 @@ int __cdecl engine_font_cpp_CBitFont_drawText_FUN_004cda80(CBitFont *this_ptr,ch
     for (; character_code = (uint)(byte)*text, character_code != 0; text = text + 1) {
       if (character_code != 0xd) {
         if (character_code == 10) {
-          y = y + this_ptr->current_max_width + this_ptr->line_spacing;
+          y = y + this_ptr->current_line_height + this_ptr->line_spacing;
           iVar1 = x;
         }
         else {
@@ -65,7 +65,7 @@ LAB_004cdad3:
       }
       text = pcVar3 + 1;
       *pcVar3 = '\n';
-      y = y + this_ptr->current_max_width + this_ptr->line_spacing;
+      y = y + this_ptr->current_line_height + this_ptr->line_spacing;
       local_14 = text;
     }
   } while( true );

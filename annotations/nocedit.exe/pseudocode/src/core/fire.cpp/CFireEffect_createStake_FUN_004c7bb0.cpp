@@ -2,23 +2,22 @@
 // Address: 004c7bb0
 // Address Range: [[004c7bb0, 004c7cfa]]
 // Convention: __cdecl
-// Signature: void __cdecl core_fire_cpp_CFireEffect_createStake_FUN_004c7bb0(CFireEffect *this_ptr,CVector3f *impact_position,CVector3f *orientation_angles,CVector3f *surface_normal,int material_type)
+// Signature: void __cdecl core_fire_cpp_CFireEffect_createStake_FUN_004c7bb0(CFireEffect *this_ptr,CVector3f *impact_position,CVector3f *orientation_angles,CVector3f *surface_normal,int ground_type)
 
 #include "nocturne.h"
 
-void __cdecl core_fire_cpp_CFireEffect_createStake_FUN_004c7bb0(CFireEffect *this_ptr,CVector3f *impact_position,CVector3f *orientation_angles,CVector3f *surface_normal,int material_type)
+void __cdecl core_fire_cpp_CFireEffect_createStake_FUN_004c7bb0(CFireEffect *this_ptr,CVector3f *impact_position,CVector3f *orientation_angles,CVector3f *surface_normal,int ground_type)
 
 {
   bool bVar1;
   CVector3f *pCVar2;
-  CVector3f *in_stack_ffffffa4;
-  CVector3f *in_stack_ffffffa8;
+  CMatrix3x3f local_5c;
   CVector3f local_34;
   CVector3f local_28;
   CVector3f local_1c;
   
   bVar1 = false;
-  switch(material_type) {
+  switch(ground_type) {
   case 0:
   case 1:
   case 2:
@@ -36,20 +35,17 @@ void __cdecl core_fire_cpp_CFireEffect_createStake_FUN_004c7bb0(CFireEffect *thi
   case 6:
     goto switchD_004c7bca_caseD_6;
   }
-  core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
-            ((CMatrix3x3f *)&stack0xffffffa4,orientation_angles);
+  core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(&local_5c,orientation_angles);
   local_34.x = 0.0;
   local_34.y = 0.0;
   local_34.z = 0.7;
-  pCVar2 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
-                     ((CMatrix3x3f *)&stack0xffffffa4,&local_28,&local_34);
+  pCVar2 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0(&local_5c,&local_28,&local_34);
   local_1c.x = impact_position->x - pCVar2->x;
   local_1c.y = impact_position->y - pCVar2->y;
   local_1c.z = impact_position->z - pCVar2->z;
   if (bVar1) {
     core_fire_cpp_CStake_spawn_FUN_004bfe90
-              (g_StakePool + g_StakeAllocIndex,(float)&local_1c,orientation_angles,surface_normal,
-               in_stack_ffffffa4,in_stack_ffffffa8);
+              (g_StakePool + g_StakeAllocIndex,&local_1c,orientation_angles,surface_normal);
   }
   else {
     core_sound_cpp_CSound_playActorPositionalSoundWithDelay_FUN_005b3ae0

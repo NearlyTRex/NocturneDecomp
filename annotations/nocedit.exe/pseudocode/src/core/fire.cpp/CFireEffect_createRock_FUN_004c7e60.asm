@@ -1,10 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fire_cpp_CFireEffect_createRock_FUN_004c7e60(CFireEffect *this_ptr)
+; void __cdecl core_fire_cpp_CFireEffect_createRock_FUN_004c7e60(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity,CKeyFramedModel *model_ptr)
 ;
 ; Parameters:
 ; CFireEffect *    Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   position
+; CVector3f *      Stack[0xc]:4   velocity
+; CKeyFramedModel * Stack[0x10]:4   model_ptr
 ;
 ; XREF[1]:
 ;   core_emitter.cpp_CEmitter_process_FUN_004a8070 at 004a846f

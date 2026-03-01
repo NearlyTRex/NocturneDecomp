@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_font_cpp_CBitFont_loadNewBitmap_FUN_004cd280(CBitFont *this_ptr,char *filename,int width,int height,int first_char,int last_char,int load_flags,int other)
+; void __cdecl engine_font_cpp_CBitFont_loadNewBitmap_FUN_004cd280(CBitFont *this_ptr,char *filename,int width,int height,int first_char,int last_char,int load_flags)
 ;
 ; Parameters:
 ; CBitFont *       Stack[0x4]:4   this_ptr
@@ -11,7 +11,6 @@
 ; int              Stack[0x14]:4   first_char
 ; int              Stack[0x18]:4   last_char
 ; int              Stack[0x1c]:4   load_flags
-; int              Stack[0x20]:4   other
 ;
 ; XREF[2]:
 ;   engine_font.cpp_CBitFont_loadFromFile_FUN_004cd2c0 at 004cd463

@@ -45,7 +45,7 @@
 ; Called Functions:
 ;   core_game.cpp_CGame_rollCredits_FUN_004e4010
 ;   core_game.cpp_CGame_saveClockTime_FUN_004d7d80
-;   core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90
+;   core_game.cpp_CGame_updateDT_FUN_004d7d90
 ;   crt_math.c_round_FUN_005fe6b0
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
@@ -55,7 +55,7 @@
 ;   engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_00410540
 ;   engine_alphabit.cpp_CAlphaBitmap_load_FUN_004105d0
 ;   engine_font.cpp_CBitFont_drawTextCenterInBounds_FUN_004cdee0
-;   engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0
+;   engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0
 ;   engine_font.cpp_CBitFont_wrapText_FUN_004d0010
 ;   support_newmsg.cpp_getLocalizedString_FUN_005441f0
 ;   ... and 3 more
@@ -85,8 +85,8 @@ section .text
     PUSH 0x58                           ; 004e3bc7
         ;   Label: LAB_004e3bc7
     PUSH EDI                            ; 004e3bc9
-    CALL engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0 ; 004e3bca
-        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0 ; 004e3bca
+        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 004e3bcf
     MOV EDX,dword ptr [EBP + 0x14]      ; 004e3bd2
     PUSH EDX                            ; 004e3bd5
@@ -132,8 +132,8 @@ section .text
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
     MOV EAX,dword ptr [EBP + 0x14]      ; 004e3c37
     PUSH EAX                            ; 004e3c3a
-    CALL core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90 ; 004e3c3b
-        ;   XREF to: 004d7d90 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90(CGame * this_ptr)
+    CALL core_game.cpp_CGame_updateDT_FUN_004d7d90 ; 004e3c3b
+        ;   XREF to: 004d7d90 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_updateDT_FUN_004d7d90(CGame * this_ptr)
     ADD ESP,0x4                         ; 004e3c40
     MOV EAX,dword ptr [EBP + 0x14]      ; 004e3c43
     FLD float ptr [ESP]                 ; 004e3c46
@@ -437,8 +437,8 @@ section .text
     PUSH ESI                            ; 004e3f79
     MOV EBX,EAX                         ; 004e3f7a
     MOV dword ptr [ESP + 0x534],EAX     ; 004e3f7c
-    CALL engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0 ; 004e3f83
-        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0 ; 004e3f83
+        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 004e3f88
     MOV ESI,0xf0                        ; 004e3f8b
     MOV dword ptr [ESP + 0x530],EAX     ; 004e3f90

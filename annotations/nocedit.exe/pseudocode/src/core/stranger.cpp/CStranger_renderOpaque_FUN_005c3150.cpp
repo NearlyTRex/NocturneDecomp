@@ -104,7 +104,7 @@ int __cdecl core_stranger_cpp_CStranger_renderOpaque_FUN_005c3150(CStranger *thi
       if (local_14 < 0.0) {
         local_18 = 10.0;
       }
-      core_fire_cpp_CFireEffect_createLaserBeamPath_FUN_004c7f80
+      core_fire_cpp_CFireEffect_createLaserPath_FUN_004c7f80
                 (g_CFireEffectPtr,start_pos,local_7c,1.0,1.0,&g_CDemonSetPtr->collision_normal,
                  local_18,0xff,0,0);
       core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);

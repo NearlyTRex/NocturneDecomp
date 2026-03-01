@@ -13,7 +13,7 @@
 ;   double DOUBLE_00635ce5 = 1.15000000000000
 ;   CGore* g_CGorePtr = 02d83364
 ;   CGore g_CGoreInstance
-;   CVector3f g_ZeroVector
+;   UVector3 g_ZeroVector
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0

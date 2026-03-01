@@ -26,13 +26,14 @@
 #include "types/classes/CWavInDevice.h"
 #include "types/classes/CWavOutDevice.h"
 #include "types/structs/SCollisionInfo.h"
-#include "types/structs/SEdgeData.h"
+#include "types/structs/SHardwareEdge.h"
 #include "types/structs/SIntersectXZCylinder.h"
 #include "types/structs/SMRGLTextureBasic.h"
 #include "types/structs/SProjectedVertex.h"
 #include "types/structs/SRGBColorPalette.h"
 #include "types/structs/SRecordingDeviceInfo.h"
 #include "types/structs/SRenderVertex.h"
+#include "types/structs/SSoftwareEdge.h"
 #include "types/structs/SSoundDeviceInfo.h"
 #include "types/structs/STrainNoise.h"
 
@@ -125,14 +126,14 @@ void __cdecl wincore_windll_cpp_clearScreen_FUN_005b3e70(void);
 void __cdecl wincore_windll_cpp_clearZBuffer_FUN_005b3ed4(void);
 void __cdecl wincore_windll_cpp_clearScreen_FUN_005b3f37(int color);
 void __cdecl wincore_windll_cpp_fillDepthRegion_FUN_005b3fc2(int left,int right,int top,int bottom);
-void __cdecl wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031(SEdgeData *left_vertex,SEdgeData *right_vertex,int scanline_y);
-void __cdecl wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823(SEdgeData *left_vertex,SEdgeData *right_vertex,int scanline_y);
-void __cdecl wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec(SEdgeData *left_vertex,SEdgeData *right_vertex,int scanline_y);
-void __cdecl wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322(SEdgeData *left_vertex,SEdgeData *right_vertex,int scanline_y);
+void __cdecl wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
+void __cdecl wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
+void __cdecl wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
+void __cdecl wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
 void __cdecl wincore_windll_cpp_renderAlphaRow32_FUN_005b555c(uint *destPixels,uchar *srcIndices,uchar *srcAlpha,int globalAlpha,int pixelCount);
 void __cdecl wincore_windll_cpp_renderAlphaRow16_FUN_005b55f7(ushort *destPixels,uchar *srcIndices,uchar *srcAlpha,int globalAlpha,int pixelCount);
-void __edi_esi_ebx wincore_windll_cpp_renderScanline_FUN_005b5710(void *left_data,void *right_data,int scanline_y);
-void __cdecl wincore_windll_cpp_renderScanlineSaved_FUN_005b5716(void *scanline_data,int scanline_y,int render_flags);
+void __edi_esi_ebx wincore_windll_cpp_renderScanline_FUN_005b5710 (SHardwareEdge *left,SHardwareEdge *right,int scanline_y);
+void __cdecl wincore_windll_cpp_renderScanlineSwapped_FUN_005b5716(int scanline_y,SHardwareEdge *right,SHardwareEdge *left);
 void __cdecl wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex *output,CVector3i *input);
 int __cdecl wincore_windll_cpp_transformPoint_FUN_005b5a25(SProjectedVertex *output,CVector3i *input);
 void __cdecl wincore_windll_cpp_CExternalRenderer_initValidate_FUN_005b5cf0(CExternalRenderer *this_ptr,char *buffer_ptr);

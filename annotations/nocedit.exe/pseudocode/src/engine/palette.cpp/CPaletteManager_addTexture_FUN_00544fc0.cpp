@@ -2,11 +2,11 @@
 // Address: 00544fc0
 // Address Range: [[00544fc0, 00545051]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_palette_cpp_CPaletteManager_addTexture_FUN_00544fc0(void)
+// Signature: void __cdecl engine_palette_cpp_CPaletteManager_addTexture_FUN_00544fc0(CPaletteManager *this_ptr,char *filename)
 
 #include "nocturne.h"
 
-void __cdecl engine_palette_cpp_CPaletteManager_addTexture_FUN_00544fc0(void)
+void __cdecl engine_palette_cpp_CPaletteManager_addTexture_FUN_00544fc0(CPaletteManager *this_ptr,char *filename)
 
 {
   char cVar1;
@@ -14,35 +14,32 @@ void __cdecl engine_palette_cpp_CPaletteManager_addTexture_FUN_00544fc0(void)
   int iVar3;
   int iVar4;
   char *pcVar5;
-  int *in_stack_00000004;
-  char *in_stack_00000008;
   
   iVar4 = 0;
-  if (0 < *in_stack_00000004) {
+  if (0 < this_ptr->texture_count) {
     iVar3 = 0;
     do {
-      iVar2 = _strcmp
-                        ((char *)(in_stack_00000004[1] + iVar3),in_stack_00000008);
+      iVar2 = _strcmp(this_ptr->texture_names + iVar3,filename);
       if (iVar2 == 0) {
         return;
       }
       iVar4 = iVar4 + 1;
       iVar3 = iVar3 + 0x40;
-    } while (iVar4 < *in_stack_00000004);
+    } while (iVar4 < this_ptr->texture_count);
   }
-  pcVar5 = (char *)(in_stack_00000004[1] + *in_stack_00000004 * 0x40);
+  pcVar5 = this_ptr->texture_names + this_ptr->texture_count * 0x40;
   do {
-    cVar1 = *in_stack_00000008;
+    cVar1 = *filename;
     *pcVar5 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = in_stack_00000008[1];
-    in_stack_00000008 = in_stack_00000008 + 2;
+    cVar1 = filename[1];
+    filename = filename + 2;
     pcVar5[1] = cVar1;
     pcVar5 = pcVar5 + 2;
   } while (cVar1 != '\0');
-  iVar4 = *in_stack_00000004;
-  *in_stack_00000004 = iVar4 + 1;
-  if (iVar4 + 1 < 0x400) {
+  iVar4 = this_ptr->texture_count + 1;
+  this_ptr->texture_count = iVar4;
+  if (iVar4 < 0x400) {
     return;
   }
   g_CurrentFilename = "..\\engine\\palette.cpp";

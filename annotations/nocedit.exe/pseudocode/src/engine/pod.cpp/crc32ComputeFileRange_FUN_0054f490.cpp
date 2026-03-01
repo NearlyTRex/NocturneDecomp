@@ -17,7 +17,7 @@ uint __cdecl engine_pod_cpp_crc32ComputeFileRange_FUN_0054f490(char *filename,in
   uint current_crc;
   uint uVar4;
   
-  iVar2 = engine_dosio_c_getFileSize_FUN_00481880(&s_EmptyString_0064015e,filename);
+  iVar2 = engine_dosio_c_getFileSize_FUN_00481880(&s_EmptyChar_0064015e,filename);
   file = shape_memdbg_cpp_openFile_FUN_0050f7a0
                    (filename,(char *)0x0,"rb","..\\engine\\pod.cpp",0xf2);
   size = iVar2 - start_offset;

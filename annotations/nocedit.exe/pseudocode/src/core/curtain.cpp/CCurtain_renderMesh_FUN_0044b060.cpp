@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Variable defined which should be unmapped: local_3c */
-
 int __cdecl core_curtain_cpp_CCurtain_renderMesh_FUN_0044b060(CCurtain *this_ptr)
 
 {
@@ -32,8 +30,7 @@ int __cdecl core_curtain_cpp_CCurtain_renderMesh_FUN_0044b060(CCurtain *this_ptr
   iVar4 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(this_ptr_00);
   if (((iVar4 != 0) && (this_ptr->cinched_top != 0)) && (this_ptr->needs_update == 0)) {
     pCVar2 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&local_24);
-    core_box_cpp_CBoundingBox3D_render_FUN_004210b0
-              (pCVar2,(int)local_3c.min.x,(int)local_3c.min.y,(int)local_3c.min.z);
+    core_box_cpp_CBoundingBox3D_render_FUN_004210b0(pCVar2);
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(&this_ptr->base);
     return 1;
   }

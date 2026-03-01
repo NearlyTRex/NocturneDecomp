@@ -21,8 +21,8 @@ void __cdecl engine_3d_c_rasterizeTriangle_FUN_005fcfc0(SRenderVertex *vertex_bu
   SRenderVertex *pSVar9;
   int iVar10;
   SRenderVertex *local_20;
-  SEdgeData *local_18;
-  SEdgeData *local_14;
+  SSoftwareEdge *local_18;
+  SSoftwareEdge *local_14;
   
   if ((g_VertexProcessingEnabled != 0) && (iVar8 = 0, pSVar6 = vertex_buffer, 0 < vertex_count)) {
     do {
@@ -92,9 +92,9 @@ void __cdecl engine_3d_c_rasterizeTriangle_FUN_005fcfc0(SRenderVertex *vertex_bu
           pSVar9 = local_20;
           local_20 = pSVar6;
         }
-        g_RasterizerEdgeArray[iVar8].y_start = iVar2;
+        g_RasterizerEdgeArray[iVar8].base.y_min = iVar2;
         iVar3 = g_RasterizerMinY;
-        g_RasterizerEdgeArray[iVar8].y_end = iVar4;
+        g_RasterizerEdgeArray[iVar8].base.y_max = iVar4;
         if (iVar2 < iVar3) {
           g_RasterizerMinY = iVar2;
         }
@@ -113,9 +113,9 @@ void __cdecl engine_3d_c_rasterizeTriangle_FUN_005fcfc0(SRenderVertex *vertex_bu
                 (longlong)
                 ((local_20->projected_vertex).screen_x - (pSVar9->projected_vertex).screen_x);
         uVar5 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-        g_RasterizerEdgeArray[iVar8].x_delta = uVar5;
+        g_RasterizerEdgeArray[iVar8].base.x_gradient = uVar5;
         lVar1 = (longlong)(int)uVar7 * (longlong)(int)uVar5;
-        g_RasterizerEdgeArray[iVar8].x_current =
+        g_RasterizerEdgeArray[iVar8].base.x_current =
              (pSVar9->projected_vertex).screen_x +
              ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
         lVar1 = (longlong)iVar2 *
@@ -123,10 +123,10 @@ void __cdecl engine_3d_c_rasterizeTriangle_FUN_005fcfc0(SRenderVertex *vertex_bu
                 (((local_20->projected_vertex).transformed_z -
                  (pSVar9->projected_vertex).transformed_z) * 0x100);
         uVar5 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-        g_RasterizerEdgeArray[iVar8].z_delta = uVar5;
+        g_RasterizerEdgeArray[iVar8].base.w_gradient = uVar5;
         lVar1 = (longlong)(int)uVar7 * (longlong)(int)uVar5;
         g_RasterizerEdgeCount = g_RasterizerEdgeCount + 1;
-        g_RasterizerEdgeArray[iVar8].z_current =
+        g_RasterizerEdgeArray[iVar8].base.w_current =
              ((pSVar9->projected_vertex).transformed_z * 0x100 - g_RasterizerDepthBias) +
              ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
       }
@@ -139,69 +139,72 @@ void __cdecl engine_3d_c_rasterizeTriangle_FUN_005fcfc0(SRenderVertex *vertex_bu
   g_RenderAbortFlag = 0;
   if (0 < g_RasterizerEdgeCount) {
     do {
-      if ((g_RasterizerMinY == local_14->y_start) && (local_14 != (SEdgeData *)0x0))
+      if ((g_RasterizerMinY == (local_14->base).y_min) && (local_14 != (SSoftwareEdge *)0x0))
       goto LAB_005fd168;
       iVar8 = iVar8 + 1;
       local_14 = local_14 + 1;
     } while (iVar8 < g_RasterizerEdgeCount);
   }
-  local_14 = (SEdgeData *)0x0;
+  local_14 = (SSoftwareEdge *)0x0;
 LAB_005fd168:
-  if (local_14 != (SEdgeData *)0x0) {
+  if (local_14 != (SSoftwareEdge *)0x0) {
     local_18 = g_RasterizerEdgeArray;
     iVar8 = 0;
     if (0 < g_RasterizerEdgeCount) {
       do {
-        if ((g_RasterizerMinY == local_18->y_start) && (local_18 != local_14)) goto LAB_005fd1a1;
+        if ((g_RasterizerMinY == (local_18->base).y_min) && (local_18 != local_14))
+        goto LAB_005fd1a1;
         iVar8 = iVar8 + 1;
         local_18 = local_18 + 1;
       } while (iVar8 < g_RasterizerEdgeCount);
     }
-    local_18 = (SEdgeData *)0x0;
+    local_18 = (SSoftwareEdge *)0x0;
 LAB_005fd1a1:
     scanline_y = g_RasterizerMinY;
-    if (local_18 != (SEdgeData *)0x0) {
+    if (local_18 != (SSoftwareEdge *)0x0) {
       do {
-        if (local_14->y_end <= scanline_y) {
-          local_14->y_start = -1;
+        if ((local_14->base).y_max <= scanline_y) {
+          (local_14->base).y_min = -1;
           local_14 = g_RasterizerEdgeArray;
           iVar8 = 0;
           if (0 < g_RasterizerEdgeCount) {
             do {
-              if ((scanline_y == local_14->y_start) && (local_14 != local_18)) goto LAB_005fd1fc;
+              if ((scanline_y == (local_14->base).y_min) && (local_14 != local_18))
+              goto LAB_005fd1fc;
               iVar8 = iVar8 + 1;
               local_14 = local_14 + 1;
             } while (iVar8 < g_RasterizerEdgeCount);
           }
-          local_14 = (SEdgeData *)0x0;
+          local_14 = (SSoftwareEdge *)0x0;
 LAB_005fd1fc:
-          if (local_14 == (SEdgeData *)0x0) {
+          if (local_14 == (SSoftwareEdge *)0x0) {
             return;
           }
         }
-        if (local_18->y_end <= scanline_y) {
-          local_18->y_start = -1;
+        if ((local_18->base).y_max <= scanline_y) {
+          (local_18->base).y_min = -1;
           local_18 = g_RasterizerEdgeArray;
           iVar8 = 0;
           if (0 < g_RasterizerEdgeCount) {
             do {
-              if ((scanline_y == local_18->y_start) && (local_18 != local_14)) goto LAB_005fd24c;
+              if ((scanline_y == (local_18->base).y_min) && (local_18 != local_14))
+              goto LAB_005fd24c;
               iVar8 = iVar8 + 1;
               local_18 = local_18 + 1;
             } while (iVar8 < g_RasterizerEdgeCount);
           }
-          local_18 = (SEdgeData *)0x0;
+          local_18 = (SSoftwareEdge *)0x0;
 LAB_005fd24c:
-          if (local_18 == (SEdgeData *)0x0) {
+          if (local_18 == (SSoftwareEdge *)0x0) {
             return;
           }
         }
-        wincore_windll_cpp_renderScanline_FUN_005b5710(local_18,local_14,scanline_y);
+        wincore_windll_cpp_renderScanline_FUN_005b5710(&local_18->base,&local_14->base,scanline_y);
         if (g_RenderAbortFlag != 0) {
           return;
         }
-        local_18->x_current = local_18->x_current + local_18->x_delta;
-        local_18->z_current = local_18->z_current + local_18->z_delta;
+        (local_18->base).x_current = (local_18->base).x_current + (local_18->base).x_gradient;
+        (local_18->base).w_current = (local_18->base).w_current + (local_18->base).w_gradient;
         *(int *)(scanline_y + 8) = *(int *)(scanline_y + 8) + *(int *)(scanline_y + 0xc);
         *(int *)(scanline_y + 0x28) = *(int *)(scanline_y + 0x28) + *(int *)(scanline_y + 0x2c);
         scanline_y = (int)((int)&(local_20->projected_vertex).transformed_x + 1);

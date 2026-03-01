@@ -6567,54 +6567,6 @@
             ]
           },
           "type":"CBoundingBox3D*"
-        },
-        {
-          "name":"param1",
-          "storage":{
-            "offset":8,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x8]",
-                "offset":8,
-                "size":4
-              }
-            ]
-          },
-          "type":"int"
-        },
-        {
-          "name":"param2",
-          "storage":{
-            "offset":12,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0xc]",
-                "offset":12,
-                "size":4
-              }
-            ]
-          },
-          "type":"int"
-        },
-        {
-          "name":"param3",
-          "storage":{
-            "offset":16,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x10]",
-                "offset":16,
-                "size":4
-              }
-            ]
-          },
-          "type":"int"
         }
       ]
     }
@@ -22243,7 +22195,7 @@
               }
             ]
           },
-          "type":"SEdgeData*"
+          "type":"SSoftwareEdge*"
         },
         {
           "name":"vertex_b",
@@ -22259,7 +22211,7 @@
               }
             ]
           },
-          "type":"SEdgeData*"
+          "type":"SSoftwareEdge*"
         }
       ]
     }
@@ -22276,7 +22228,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"core_dpart.cpp_findEdgeByYStart_FUN_00483330",
-    "ret":"SEdgeData*",
+    "ret":"SSoftwareEdge*",
     "vars":{
       "params":[
         {
@@ -22309,7 +22261,7 @@
               }
             ]
           },
-          "type":"SEdgeData*"
+          "type":"SSoftwareEdge*"
         }
       ],
       "ret_storage":{
@@ -33090,7 +33042,7 @@
           "type":"CVector3f*"
         },
         {
-          "name":"material_type",
+          "name":"ground_type",
           "storage":{
             "offset":20,
             "size":4,
@@ -37130,7 +37082,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_font.cpp_CBitFont_setCharXAdvanceRange_FUN_004d0230",
+    "name":"engine_font.cpp_CBitFont_setCharYOffsetRange_FUN_004d0230",
     "ret":"void",
     "vars":{
       "params":[
@@ -37151,7 +37103,7 @@
           "type":"CBitFont*"
         },
         {
-          "name":"advance_value",
+          "name":"offset_value",
           "storage":{
             "offset":8,
             "size":4,
@@ -37770,7 +37722,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_game.cpp_PleaseEnterValidInteger_FUN_004d7730",
+    "name":"core_game.cpp_setupMovieRecording_FUN_004d7730",
     "ret":"void"
   },
   {
@@ -44752,6 +44704,22 @@
             ]
           },
           "type":"undefined1"
+        },
+        {
+          "name":"unionfacet5_5066f6",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:40410b7aaa0e",
+                "offset":70648109640206,
+                "size":4
+              }
+            ]
+          },
+          "type":"UActorVTable*",
+          "use":70
         }
       ],
       "params":[
@@ -50120,7 +50088,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_mission.cpp_CDemonMission_checkMemory2_FUN_00522d30",
+    "name":"core_mission.cpp_CDemonMission_FUN_00522d30",
     "ret":"void",
     "vars":{
       "params":[
@@ -56608,7 +56576,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_palette.cpp_CPaletteManager_FUN_00544fb0",
+    "name":"engine_palette.cpp_CPaletteManager_reset_FUN_00544fb0",
     "ret":"void",
     "vars":{
       "params":[
@@ -67319,7 +67287,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setedit.cpp_FUN_00582f30",
+    "name":"core_setedit.cpp_showVdirBoxEditorHelp_FUN_00582f30",
     "ret":"void"
   },
   {
@@ -67577,7 +67545,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_shotgun.cpp_CShotgun_FUN_005888b0",
+    "name":"core_shotgun.cpp_CShotgun_getDamage_FUN_005888b0",
     "ret":"float",
     "vars":{
       "locals":[

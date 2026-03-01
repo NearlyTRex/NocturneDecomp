@@ -32,7 +32,7 @@
 ;
 ; Called Functions:
 ;   core_game.cpp_CGame_saveClockTime_FUN_004d7d80
-;   core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90
+;   core_game.cpp_CGame_updateDT_FUN_004d7d90
 ;   core_menu.cpp_adjustMouseSensitivity_FUN_005107c0
 ;   core_menu.cpp_calibrateGamepad_FUN_005104d0
 ;   core_menu.cpp_configureCustomKeyBindings_FUN_005138e0
@@ -72,8 +72,8 @@ section .text
     MOV EBX,dword ptr [0x0067b654]      ; 005118cd | g_CGameInstance | g_CGamePtr
         ;   Label: LAB_005118cd
     PUSH EBX                            ; 005118d3 | g_CGameInstance
-    CALL core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90 ; 005118d4
-        ;   XREF to: 004d7d90 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90(CGame * this_ptr)
+    CALL core_game.cpp_CGame_updateDT_FUN_004d7d90 ; 005118d4
+        ;   XREF to: 004d7d90 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_updateDT_FUN_004d7d90(CGame * this_ptr)
     ADD ESP,0x4                         ; 005118d9
     MOV EAX,[0x0067b654]                ; 005118dc | g_CGameInstance | g_CGamePtr
     SUB ESP,0x4                         ; 005118e1

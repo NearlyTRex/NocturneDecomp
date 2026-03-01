@@ -10,7 +10,7 @@ void __cdecl core_mission_cpp_CDemonMission_FUN_00524c20(CDemonMission *this_ptr
 
 {
   int iVar1;
-  CDemonActor *pCVar2;
+  CHeroPlaceholder *pCVar2;
   char *name;
   CDemonActor *pCVar3;
   CHeroPlaceholder *this_ptr_00;
@@ -70,9 +70,10 @@ void __cdecl core_mission_cpp_CDemonMission_FUN_00524c20(CDemonMission *this_ptr
     if (iVar1 != 0) {
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_3b4.base,pCVar3->actor_name);
     }
-    pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c790
+    pCVar2 = (CHeroPlaceholder *)
+             core_actor_cpp_castToClassHash_FUN_0040c790
                        (pCVar3,g_CHeroPlaceholderClassInfo.name_hash);
-    if ((pCVar2 != (CDemonActor *)0x0) && (*(int *)pCVar2[1].actor_name == 0)) break;
+    if ((pCVar2 != (CHeroPlaceholder *)0x0) && (pCVar2->index == 0)) break;
     pCVar3 = pCVar3->next_actor;
   }
   shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_3b4,0);

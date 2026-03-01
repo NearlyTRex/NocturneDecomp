@@ -24,7 +24,7 @@
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CEditorTools g_CEditorToolsInstance
 ;   int g_MansionPuzzleSlewType
-;   CVector3f g_ZeroVector
+;   UVector3 g_ZeroVector
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0

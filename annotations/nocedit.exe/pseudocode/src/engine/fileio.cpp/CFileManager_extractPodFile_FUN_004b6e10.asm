@@ -47,7 +47,7 @@
 ;   TerminatedCString s_A_B_d_Y_I_M_S_p_00627c5b
 ;   TerminatedCString s_s_already_exists_on_disk_00627c77
 ;   TerminatedCString s_skipped_00627d02
-;   char s_EmptyString_00627d0c = \x00
+;   char s_EmptyChar_00627d0c = \x00
 ;   TerminatedCString s_Unable_to_extract_file_s_00627d0d
 ;   ... and 15 more
 ;
@@ -505,8 +505,8 @@ section .text
     TEST EAX,EAX                        ; 004b72e1
     JZ 0x004b7428                       ; 004b72e3
         ;   XREF to: 004b7428 (CONDITIONAL_JUMP)  ; LAB_004b7428
-    MOV EAX,0x627d0c                    ; 004b72e9 | s_EmptyString_00627d0c
-    PUSH EAX                            ; 004b72ee | s_EmptyString_00627d0c | = "(error)" | s_skipped_00627d02
+    MOV EAX,0x627d0c                    ; 004b72e9 | s_EmptyChar_00627d0c
+    PUSH EAX                            ; 004b72ee | s_EmptyChar_00627d0c | = "(error)" | s_skipped_00627d02
         ;   Label: LAB_004b72ee
     MOV EAX,dword ptr [ESP + 0xe44]     ; 004b72ef
     PUSH EAX                            ; 004b72f6

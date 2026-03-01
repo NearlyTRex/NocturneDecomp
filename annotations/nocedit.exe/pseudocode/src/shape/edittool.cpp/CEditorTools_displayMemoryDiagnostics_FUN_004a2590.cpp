@@ -15,20 +15,20 @@ void __cdecl shape_edittool_cpp_CEditorTools_displayMemoryDiagnostics_FUN_004a25
   uint uVar4;
   char *pcVar5;
   int iVar6;
-  byte local_28 [16];
+  _heapinfo _Stack_28;
   int local_18;
   
   iVar3 = 0;
   iVar6 = 0;
-  local_28._4_2_ = 0;
-  local_28._0_4_ = (void *)0x0;
+  _Stack_28._segment = 0;
+  _Stack_28._pentry = (void *)0x0;
   uVar4 = 0;
-  while (iVar2 = _heapwalk((_heapinfo *)local_28), iVar2 == 0) {
-    if (local_28._10_4_ == 0) {
+  while (iVar2 = _heapwalk(&_Stack_28), iVar2 == 0) {
+    if (_Stack_28._useflag == 0) {
       iVar3 = iVar3 + 1;
-      iVar6 = iVar6 + local_28._6_4_;
-      if (uVar4 < (uint)local_28._6_4_) {
-        uVar4 = local_28._6_4_;
+      iVar6 = iVar6 + _Stack_28._size;
+      if (uVar4 < _Stack_28._size) {
+        uVar4 = _Stack_28._size;
       }
     }
   }

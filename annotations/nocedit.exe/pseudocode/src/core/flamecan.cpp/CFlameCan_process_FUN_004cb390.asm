@@ -22,7 +22,7 @@
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 ;   core_fire.cpp_CFireEffect_createExplosion_FUN_004c8c10
 ;   core_flame.cpp_CFlame_process_FUN_004c9c00
-;   core_flamecan.cpp_CFlameCan_FUN_004cb340
+;   core_flamecan.cpp_CFlameCan_ignite_FUN_004cb340
 ;   core_mission.cpp_CDemonMission_markActorToDelete_FUN_005240a0
 ;
 ; *****************************************************************************
@@ -52,8 +52,8 @@ section .text
     RET                                 ; 004cb3bf
     PUSH EBX                            ; 004cb3c0
         ;   Label: LAB_004cb3c0
-    CALL core_flamecan.cpp_CFlameCan_FUN_004cb340 ; 004cb3c1
-        ;   XREF to: 004cb340 (UNCONDITIONAL_CALL)  ; void core_flamecan.cpp_CFlameCan_FUN_004cb340(CFlameCan * this_ptr)
+    CALL core_flamecan.cpp_CFlameCan_ignite_FUN_004cb340 ; 004cb3c1
+        ;   XREF to: 004cb340 (UNCONDITIONAL_CALL)  ; void core_flamecan.cpp_CFlameCan_ignite_FUN_004cb340(CFlameCan * this_ptr)
     ADD ESP,0x4                         ; 004cb3c6
     CMP dword ptr [EBX + 0x2d4],0x0     ; 004cb3c9
     JNZ 0x004cb3d7                      ; 004cb3d0

@@ -297,7 +297,7 @@ section .text
     PUSH EBX                            ; 004e4c35
     MOV ESI,dword ptr [EBP + 0x62]      ; 004e4c36
     CALL core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0 ; 004e4c39
-        ;   XREF to: 0042dfc0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(CCharacter * this_ptr, float delta_time, float param_3)
+        ;   XREF to: 0042dfc0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004e4c3e
     CMP ESI,0x5                         ; 004e4c41
     JNZ 0x004e5326                      ; 004e4c44

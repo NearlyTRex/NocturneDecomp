@@ -6,17 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 286,
-    "complexity_score": 277,
+    "complexity_score": 227,
     "cross_reference_count": 4,
     "function_call_count": 6,
     "global_count": 7,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 132,
-    "suspect_count": 13,
+    "suspect_count": 9,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "param_count_too_many",
-      "unnamed_param"
+      "decompiler_intrinsic"
     ],
     "total_lines": 418
   },
@@ -56,7 +54,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_box.cpp_CBoundingBox3D_render_FUN_004210b0",
-    "signature": "void __cdecl core_box_cpp_CBoundingBox3D_render_FUN_004210b0(CBoundingBox3D *this_ptr,int param1,int param2,int param3)"
+    "signature": "void __cdecl core_box_cpp_CBoundingBox3D_render_FUN_004210b0(CBoundingBox3D *this_ptr)"
   },
   "function_calls": [
     {
@@ -175,7 +173,7 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 4,
+    "declared_params": 1,
     "estimated_params": 1
   },
   "pcode_summary": {
@@ -210,10 +208,10 @@
     "pcode_op_count": 1020
   },
   "stack_frame": {
-    "frame_size": 196,
+    "frame_size": 184,
     "local_size": 180,
     "param_offset": 4,
-    "param_size": 16,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -376,55 +374,10 @@
         "offset": 4,
         "size": 4,
         "type": "CBoundingBox3D *"
-      },
-      {
-        "is_param": true,
-        "name": "param1",
-        "offset": 8,
-        "size": 4,
-        "type": "int"
-      },
-      {
-        "is_param": true,
-        "name": "param2",
-        "offset": 12,
-        "size": 4,
-        "type": "int"
-      },
-      {
-        "is_param": true,
-        "name": "param3",
-        "offset": 16,
-        "size": 4,
-        "type": "int"
       }
     ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param1",
-      "severity": "mild",
-      "text": "void __cdecl core_box_cpp_CBoundingBox3D_render_FUN_004210b0(CBoundingBox3D *this_ptr,int param1,int param2,int param3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param2",
-      "severity": "mild",
-      "text": "void __cdecl core_box_cpp_CBoundingBox3D_render_FUN_004210b0(CBoundingBox3D *this_ptr,int param1,int param2,int param3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param3",
-      "severity": "mild",
-      "text": "void __cdecl core_box_cpp_CBoundingBox3D_render_FUN_004210b0(CBoundingBox3D *this_ptr,int param1,int param2,int param3)",
-      "type": "unnamed_param"
-    },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 28,
@@ -496,17 +449,6 @@
       "severity": "mild",
       "text": "local_8 = (int)ROUND((this_ptr->max).z * 256.0f);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "call_site_count": 4,
-      "declared_params": 4,
-      "description": "Signature has too many params - likely wrong calling convention",
-      "estimated_params": 1,
-      "fix_type": "remove_params",
-      "match": "declared:4 vs estimated:1",
-      "param_delta": -3,
-      "text": "Function declares 4 params but call sites push 1 (3 extra)",
-      "type": "param_count_too_many"
     }
   ]
 }

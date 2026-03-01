@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dstrender_cpp_renderSolidColorDepth16xUnrolled_FUN_00490a58(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
+; void __cdecl core_dstrender_cpp_renderSolidColorDepth16xUnrolled_FUN_00490a58(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
 ;
 ;
 ; XREF[2]:

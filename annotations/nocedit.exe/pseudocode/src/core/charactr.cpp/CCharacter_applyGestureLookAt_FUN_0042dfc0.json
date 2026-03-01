@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 34,
+    "complexity_score": 19,
     "cross_reference_count": 37,
     "function_call_count": 6,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 19,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unnamed_param"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 73
   },
   "cross_references": [
@@ -252,7 +250,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0",
-    "signature": "void __cdecl core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(CCharacter *this_ptr,float delta_time,float param_3)"
+    "signature": "void __cdecl core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(CCharacter *this_ptr,float delta_time)"
   },
   "function_calls": [
     {
@@ -313,10 +311,10 @@
     "pcode_op_count": 197
   },
   "stack_frame": {
-    "frame_size": 16,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 12,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -332,24 +330,8 @@
         "offset": 8,
         "size": 4,
         "type": "float"
-      },
-      {
-        "is_param": true,
-        "name": "param_3",
-        "offset": 12,
-        "size": 4,
-        "type": "float"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void __cdecl core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(CCharacter *this_ptr,float delta_time,float param_3)",
-      "type": "unnamed_param"
-    }
-  ]
+  "suspects": []
 }

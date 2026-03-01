@@ -1,0 +1,90 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 7,
+    "complexity_score": 5,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 5,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 12
+  },
+  "cross_references": [
+    {
+      "addr": "00508570",
+      "from_addr": "005087cf",
+      "name": "core_main.c_finalizeGameSystems_FUN_00508570",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053ccf0",
+      "from_addr": "0053cef4",
+      "name": "core_msnedit.cpp_CDemonMission_importActors_FUN_0053ccf0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00522d20",
+    "address_range": [
+      [
+        "00522d20",
+        "00522d2d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_mission.cpp_CDemonMission_FUN_00522d20",
+    "signature": "void __cdecl core_mission_cpp_CDemonMission_FUN_00522d20(CDemonMission *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00522d30",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_FUN_00522d30"
+    }
+  ],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.2,
+    "instruction_count": 5,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 2,
+      "INT_ADD": 3,
+      "INT_AND": 2,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 2,
+      "LOAD": 2,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 2
+    },
+    "pcode_op_count": 21
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonMission *"
+      }
+    ]
+  },
+  "suspects": []
+}

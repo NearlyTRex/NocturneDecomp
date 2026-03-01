@@ -50,7 +50,7 @@ void __cdecl core_menu_cpp_showCalibrationTestPattern_FUN_00510a50(char *message
     pcVar6[1] = cVar1;
     pcVar6 = pcVar6 + 2;
   } while (cVar1 != '\0');
-  iVar4 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(g_SmallEditorFont,0x58);
+  iVar4 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(g_SmallEditorFont,0x58);
   iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(g_SmallEditorFont,local_110);
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(&g_CalibrationBitmap,0,0,0xffff);

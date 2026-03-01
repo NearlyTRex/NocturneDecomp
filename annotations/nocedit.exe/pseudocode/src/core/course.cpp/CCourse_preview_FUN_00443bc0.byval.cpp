@@ -330,7 +330,7 @@ __asm {
         call wincore_wddvmem_cpp_swapBuffers_FUN_005eda20
         mov ECX,dword ptr [g_CGamePtr]
         push ECX
-        call core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90
+        call core_game_cpp_CGame_updateDT_FUN_004d7d90
         add ESP,0x4
         mov EAX,[g_CGamePtr]
         push 0x1

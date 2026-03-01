@@ -48,7 +48,7 @@ void __cdecl core_cloth_cpp_CCloth_lockedVertexEditor_FUN_0043d590(CCloth *this_
   shape_spotview_cpp_CSpotView_reset_FUN_005b9620(g_CSpotViewPtr,0x1f);
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr);
   core_cloth_cpp_CCloth_setup_FUN_00439710
-            (this_ptr,&g_ZeroVector,&g_ZeroVector,(CDeformableModelInstance *)0x0);
+            (this_ptr,&g_ZeroVector.f,&g_ZeroVector.f,(CDeformableModelInstance *)0x0);
   pSVar1 = this_ptr->vertices;
   if ((SClothVertex *)&local_84 != pSVar1) {
     local_84.min.x = (pSVar1->position).x;
@@ -87,7 +87,7 @@ void __cdecl core_cloth_cpp_CCloth_lockedVertexEditor_FUN_0043d590(CCloth *this_
     shape_spotview_cpp_CSpotView_handleInput_FUN_005b9670(g_CSpotViewPtr,0x1f);
     shape_spotview_cpp_CSpotView_applyCamera_FUN_005b9a20(g_CSpotViewPtr);
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-              (g_CDemonRendererPtr2,&g_ZeroVector);
+              (g_CDemonRendererPtr2,&g_ZeroVector.f);
     local_18 = 0;
     if (0 < (this_ptr->model).vertex_count) {
       iVar7 = 0;
@@ -280,7 +280,7 @@ void __cdecl core_cloth_cpp_CCloth_lockedVertexEditor_FUN_0043d590(CCloth *this_
       local_38 = g_MouseY;
     }
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-    core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
+    core_game_cpp_CGame_updateDT_FUN_004d7d90(g_CGamePtr);
     iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_L);
     if (iVar7 != 0) {
       local_30 = (uint)(local_30 == 0);

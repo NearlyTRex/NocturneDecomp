@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_colquant_c_partitionByGreen_FUN_00440c80(SColorQuantWorkspace *workspace,int box_index,int new_box_index)
+; void __cdecl engine_colquant_c_partitionByGreen_FUN_00440c80(SColorQuantMapper *workspace,int box_index,int new_box_index)
 ;
 ; Parameters:
-; SColorQuantWorkspace * Stack[0x4]:4   workspace
+; SColorQuantMapper * Stack[0x4]:4   workspace
 ; int              Stack[0x8]:4   box_index
 ; int              Stack[0xc]:4   new_box_index
 ; Local Variables:
@@ -108,13 +108,13 @@ section .text
     PUSH EDX                            ; 00440d7a
     PUSH EBX                            ; 00440d7b
     CALL engine_colquant.c_computeBoxStatistics_FUN_00441260 ; 00440d7c
-        ;   XREF to: 00441260 (UNCONDITIONAL_CALL)  ; void engine_colquant.c_computeBoxStatistics_FUN_00441260(SColorQuantWorkspace * workspace, int box_index)
+        ;   XREF to: 00441260 (UNCONDITIONAL_CALL)  ; void engine_colquant.c_computeBoxStatistics_FUN_00441260(SColorQuantMapper * workspace, int box_index)
     ADD ESP,0x8                         ; 00440d81
     MOV ECX,dword ptr [ESP + 0x24]      ; 00440d84
     PUSH ECX                            ; 00440d88
     PUSH EBX                            ; 00440d89
     CALL engine_colquant.c_computeBoxStatistics_FUN_00441260 ; 00440d8a
-        ;   XREF to: 00441260 (UNCONDITIONAL_CALL)  ; void engine_colquant.c_computeBoxStatistics_FUN_00441260(SColorQuantWorkspace * workspace, int box_index)
+        ;   XREF to: 00441260 (UNCONDITIONAL_CALL)  ; void engine_colquant.c_computeBoxStatistics_FUN_00441260(SColorQuantMapper * workspace, int box_index)
     ADD ESP,0x8                         ; 00440d8f
     MOV dword ptr [ESI + EBX*0x1 + 0x4044],EDI ; 00440d92
     MOV ESI,dword ptr [ESP + 0x24]      ; 00440d99
@@ -123,7 +123,7 @@ section .text
     PUSH EDI                            ; 00440da2
     PUSH EBX                            ; 00440da3
     CALL engine_colquant.c_refinePartitionByDistance_FUN_00441110 ; 00440da4
-        ;   XREF to: 00441110 (UNCONDITIONAL_CALL)  ; void engine_colquant.c_refinePartitionByDistance_FUN_00441110(SColorQuantWorkspace * workspace, int box_index, int new_box_index)
+        ;   XREF to: 00441110 (UNCONDITIONAL_CALL)  ; void engine_colquant.c_refinePartitionByDistance_FUN_00441110(SColorQuantMapper * workspace, int box_index, int new_box_index)
     ADD ESP,0xc                         ; 00440da9
     ADD ESP,0x8                         ; 00440dac
     POP EBP                             ; 00440daf

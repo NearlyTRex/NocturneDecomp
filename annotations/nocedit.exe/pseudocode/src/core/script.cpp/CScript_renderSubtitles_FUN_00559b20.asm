@@ -42,7 +42,7 @@
 ;   engine_2d.c_fillRectColor_FUN_00403170
 ;   engine_3d.c_setRenderAlpha_FUN_00406d80
 ;   engine_font.cpp_CBitFont_drawText_FUN_004cda80
-;   engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0
+;   engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80
 ;   engine_font.cpp_CBitFont_wrapText_FUN_004d0010
 ;
@@ -182,8 +182,8 @@ section .text
     PUSH EBP                            ; 00559c8a
     MOV ESI,EAX                         ; 00559c8b
     MOV dword ptr [ESP + 0x20],EAX      ; 00559c8d
-    CALL engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0 ; 00559c91
-        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0 ; 00559c91
+        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0(CBitFont * this_ptr, int char_code)
     MOV EDI,EAX                         ; 00559c96
     IMUL EDI,ESI                        ; 00559c98
     ADD ESP,0x8                         ; 00559c9b

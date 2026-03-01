@@ -73,7 +73,7 @@ void __cdecl addCustomKeyBinding(int *key_code_ptr,char *key_name);
 
 // Original: core_menu.cpp_getKeyDisplayName_FUN_005134e0
 // Address: 005134e0
-char * __cdecl getKeyDisplayName(int key_code);
+char * __cdecl getKeyDisplayName(EInputCodeType key_code);
 
 // Original: core_menu.cpp_isKeyCodeValidForMode_FUN_00513720
 // Address: 00513720

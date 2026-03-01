@@ -26,7 +26,7 @@
 #include "types/classes/CVector3i.h"
 #include "types/classes/CZombieCow.h"
 #include "types/structs/SCollisionInfo.h"
-#include "types/structs/SColorQuantWorkspace.h"
+#include "types/structs/SColorQuantMapper.h"
 #include "types/structs/SCramRectangle.h"
 #include "types/structs/SCurtainVertex.h"
 #include "types/structs/SDamageInfo.h"
@@ -48,14 +48,14 @@ void __cdecl core_colonel_cpp_CColonel_getPropertyList_FUN_00440610(CColonel *th
 void __cdecl core_colonel_cpp_CColonel_addFilesToExtract_FUN_00440630(CColonel *this_ptr,_FILE *file_handle);
 int __cdecl core_colonel_cpp_FUN_00440650(void);
 CColonel * __cdecl core_colonel_cpp_CColonel_dtor_FUN_00440670(CColonel *this_ptr,uint flags);
-char * __cdecl engine_colquant_c_quantizeColors_FUN_004406c0(SColorQuantWorkspace *workspace,char *color_data,int color_count, int num_palette_entries);
-void __cdecl engine_colquant_c_partitionByRed_FUN_00440b40(SColorQuantWorkspace *workspace,int box_index,int new_box_index);
-void __cdecl engine_colquant_c_partitionByGreen_FUN_00440c80(SColorQuantWorkspace *workspace,int box_index,int new_box_index);
-void __cdecl engine_colquant_c_partitionByBlue_FUN_00440dc0(SColorQuantWorkspace *workspace,int box_index,int new_box_index);
-void __cdecl engine_colquant_c_partitionByIntensity_FUN_00440f00(SColorQuantWorkspace *workspace,int box_index,int new_box_index);
-double __cdecl engine_colquant_c_computeWeightedColorDistance_FUN_00441040(SColorQuantWorkspace *workspace,int box_index,int color_index);
-void __cdecl engine_colquant_c_refinePartitionByDistance_FUN_00441110(SColorQuantWorkspace *workspace,int box_index,int new_box_index);
-void __cdecl engine_colquant_c_computeBoxStatistics_FUN_00441260(SColorQuantWorkspace *workspace,int box_index);
+char * __cdecl engine_colquant_c_quantizeColors_FUN_004406c0(SColorQuantMapper *workspace,char *color_data,int color_count, int num_palette_entries);
+void __cdecl engine_colquant_c_partitionByRed_FUN_00440b40(SColorQuantMapper *workspace,int box_index,int new_box_index);
+void __cdecl engine_colquant_c_partitionByGreen_FUN_00440c80(SColorQuantMapper *workspace,int box_index,int new_box_index);
+void __cdecl engine_colquant_c_partitionByBlue_FUN_00440dc0(SColorQuantMapper *workspace,int box_index,int new_box_index);
+void __cdecl engine_colquant_c_partitionByIntensity_FUN_00440f00(SColorQuantMapper *workspace,int box_index,int new_box_index);
+double __cdecl engine_colquant_c_computeWeightedColorDistance_FUN_00441040(SColorQuantMapper *workspace,int box_index,int color_index);
+void __cdecl engine_colquant_c_refinePartitionByDistance_FUN_00441110(SColorQuantMapper *workspace,int box_index,int new_box_index);
+void __cdecl engine_colquant_c_computeBoxStatistics_FUN_00441260(SColorQuantMapper *workspace,int box_index);
 double __cdecl engine_colquant_c_doubleMax_FUN_00441790(double a,double b);
 void __cdecl engine_console_cpp_staticInit_FUN_004417e0(void);
 CConsole * __cdecl engine_console_cpp_CConsole_ctor_FUN_00441810(CConsole *this_ptr,int width,int height,int screen_x,int screen_y);
@@ -151,7 +151,7 @@ void __cdecl core_crate_cpp_CCrate_archive_FUN_00448910(CCrate *this_ptr);
 int __cdecl core_crate_cpp_CCrate_hasCollision_FUN_00448960(CCrate *this_ptr,SCollisionInfo *collision_info);
 CBoundingBox3D * __cdecl core_crate_cpp_CCrate_getBoundingBox_FUN_00448980(CCrate *this_ptr,CBoundingBox3D *out_box);
 int __cdecl core_crate_cpp_CCrate_getTargetPoints_FUN_004489d0(CCrate *this_ptr,CVector3f *out_points_array);
-void __cdecl core_crate_cpp_CCrate_FUN_00448a70(CCrate *this_ptr);
+void __cdecl core_crate_cpp_CCrate_explode_FUN_00448a70(CCrate *this_ptr);
 void __cdecl core_crate_cpp_CCrate_getPropertyList_FUN_00448b20(CCrate *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_crate_cpp_CCrate_addFilesToExtract_FUN_00448b60(CCrate *this_ptr,_FILE *file_handle);
 CCrate * __cdecl core_crate_cpp_CCrate_dtor_FUN_00448bb0(CCrate *this_ptr,uint flags);

@@ -11,7 +11,7 @@ int __cdecl core_hero_cpp_CHero_testCylinderCollision_FUN_004f2580(CHero *this_p
 {
   int iVar1;
   
-  if ((g_CGamePtr->debug_flag_1 == 0) && ((this_ptr->no_collision_flag & 0x7fffffffU) == 0)) {
+  if ((g_CGamePtr->god_mode_enabled == 0) && (ABS(this_ptr->invincibility_timer) == 0.0)) {
     iVar1 = core_actor_cpp_CDemonActor_testPointInCylinder_FUN_004090c0
                       ((CDemonActor *)this_ptr,collision_info,tolerance);
     return iVar1;

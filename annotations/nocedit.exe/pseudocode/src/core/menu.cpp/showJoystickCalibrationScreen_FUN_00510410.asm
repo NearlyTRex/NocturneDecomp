@@ -20,7 +20,7 @@
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   engine_font.cpp_CBitFont_drawText_FUN_004cda80
-;   engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0
+;   engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80
 ;
 ; *****************************************************************************
@@ -49,8 +49,8 @@ section .text
     MOV EBX,0x140                       ; 00510442
     PUSH ESI                            ; 00510447
     SUB EBX,EAX                         ; 00510448
-    CALL engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0 ; 0051044a
-        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0 ; 0051044a
+        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0(CBitFont * this_ptr, int char_code)
     MOV EDX,EAX                         ; 0051044f
     SAR EDX,0x1f                        ; 00510451
     SUB EAX,EDX                         ; 00510454

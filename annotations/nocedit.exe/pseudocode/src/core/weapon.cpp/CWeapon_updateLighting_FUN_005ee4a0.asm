@@ -28,7 +28,7 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 ;   core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_00471360
-;   core_dglobe.cpp_CDemonGlobe_setColor_FUN_00471310
+;   core_dglobe.cpp_CDemonGlobe_setPosition_FUN_00471310
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
 ;   core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0
 ;   core_set.cpp_CDemonSet_addCoronaGlobe_FUN_0056d110
@@ -140,8 +140,8 @@ section .text
     LEA EAX,[ESP + 0x1c]                ; 005ee5d6
     PUSH EAX                            ; 005ee5da
     PUSH 0x3f95d7c                      ; 005ee5db | CDemonGlobe_03f95d7c
-    CALL core_dglobe.cpp_CDemonGlobe_setColor_FUN_00471310 ; 005ee5e0
-        ;   XREF to: 00471310 (UNCONDITIONAL_CALL)  ; void core_dglobe.cpp_CDemonGlobe_setColor_FUN_00471310(CDemonGlobe * this_ptr, CColor3f * color)
+    CALL core_dglobe.cpp_CDemonGlobe_setPosition_FUN_00471310 ; 005ee5e0
+        ;   XREF to: 00471310 (UNCONDITIONAL_CALL)  ; void core_dglobe.cpp_CDemonGlobe_setPosition_FUN_00471310(CDemonGlobe * this_ptr, CVector3f * position)
     ADD ESP,0x8                         ; 005ee5e5
     MOV EBX,0x8000                      ; 005ee5e8
     PUSH 0x40400000                     ; 005ee5ed

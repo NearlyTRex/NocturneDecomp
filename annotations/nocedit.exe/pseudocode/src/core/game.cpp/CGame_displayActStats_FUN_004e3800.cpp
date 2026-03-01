@@ -194,7 +194,7 @@ void __cdecl core_game_cpp_CGame_displayActStats_FUN_004e3800(CGame *this_ptr)
                     (this_ptr_00,local_548,g_ActStatsTextBuffer1,0x14,0x100,0xc0);
   iVar7 = 0;
   local_18 = iVar5;
-  local_1c = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(this_ptr_00,0x58);
+  local_1c = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(this_ptr_00,0x58);
   y = 0xf0;
   if (0 < iVar5) {
     pcVar4 = g_ActStatsTextBuffer1;

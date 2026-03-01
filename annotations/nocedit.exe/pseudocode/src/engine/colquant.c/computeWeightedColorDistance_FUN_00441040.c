@@ -2,11 +2,11 @@
 // Address: 00441040
 // Address Range: [[00441040, 00441105]]
 // Convention: __cdecl
-// Signature: double __cdecl engine_colquant_c_computeWeightedColorDistance_FUN_00441040(SColorQuantWorkspace *workspace,int box_index,int color_index)
+// Signature: double __cdecl engine_colquant_c_computeWeightedColorDistance_FUN_00441040(SColorQuantMapper *workspace,int box_index,int color_index)
 
 #include "nocturne.h"
 
-double __cdecl engine_colquant_c_computeWeightedColorDistance_FUN_00441040(SColorQuantWorkspace *workspace,int box_index,int color_index)
+double __cdecl engine_colquant_c_computeWeightedColorDistance_FUN_00441040(SColorQuantMapper *workspace,int box_index,int color_index)
 
 {
   int iVar1;

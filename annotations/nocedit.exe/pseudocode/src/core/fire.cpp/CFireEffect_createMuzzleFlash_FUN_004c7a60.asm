@@ -1,10 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_004c7a60(CFireEffect *this_ptr)
+; void __cdecl core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_004c7a60(CFireEffect *this_ptr,CVector3f *position,CMatrix3x3f *rotation_matrix)
 ;
 ; Parameters:
 ; CFireEffect *    Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   position
+; CMatrix3x3f *    Stack[0xc]:4   rotation_matrix
 ;
 ; XREF[5]:
 ;   core_elephant.cpp_CElephantGun_fire_FUN_004a7160 at 004a7444

@@ -76,10 +76,10 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr,f
   local_80 = (this_ptr->base).location.position.z - local_70.z;
   pCVar9 = &this_ptr->world_velocity;
   if (delta_time <= 0.0) {
-    if (pCVar9 != &g_ZeroVector) {
-      pCVar9->x = g_ZeroVector.x;
-      (this_ptr->world_velocity).y = g_ZeroVector.y;
-      (this_ptr->world_velocity).z = g_ZeroVector.z;
+    if ((UVector3 *)pCVar9 != &g_ZeroVector) {
+      pCVar9->x = g_ZeroVector.f.x;
+      (this_ptr->world_velocity).y = g_ZeroVector.f.y;
+      (this_ptr->world_velocity).z = g_ZeroVector.f.z;
     }
   }
   else {

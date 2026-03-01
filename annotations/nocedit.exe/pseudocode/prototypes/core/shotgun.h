@@ -27,17 +27,17 @@ void __cdecl CShotgun::process(CShotgun *this_ptr,float delta_time);
 // Address: 00588060
 int __cdecl CShotgun::fire(CShotgun *this_ptr);
 
-// Original: core_shotgun.cpp_CShotgun_FUN_005887a0
+// Original: core_shotgun.cpp_CShotgun_onFired_FUN_005887a0
 // Address: 005887a0
-void __cdecl CShotgun(CShotgun *this_ptr);
+void __cdecl CShotgun::onFired(CShotgun *this_ptr);
 
-// Original: core_shotgun.cpp_CShotgun_FUN_005888b0
+// Original: core_shotgun.cpp_CShotgun_getDamage_FUN_005888b0
 // Address: 005888b0
-float __cdecl CShotgun(CShotgun *this_ptr);
+float __cdecl CShotgun::getDamage(CShotgun *this_ptr);
 
-// Original: core_shotgun.cpp_CShotgun_FUN_005888f0
+// Original: core_shotgun.cpp_CShotgun_fireProjectile_FUN_005888f0
 // Address: 005888f0
-void __cdecl CShotgun(CShotgun *this_ptr);
+void __cdecl CShotgun::fireProjectile(CShotgun *this_ptr);
 
 // Original: core_shotgun.cpp_CShotgun_dtor_FUN_00588ae0
 // Address: 00588ae0

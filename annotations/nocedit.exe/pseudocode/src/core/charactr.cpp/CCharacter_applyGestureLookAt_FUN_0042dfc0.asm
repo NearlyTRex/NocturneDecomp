@@ -1,12 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(CCharacter *this_ptr,float delta_time,float param_3)
+; void __cdecl core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(CCharacter *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
-; float            Stack[0xc]:4   param_3
 ;
 ; XREF[37]:
 ;   core_armour.cpp_CArmour_process_FUN_00412260 at 00412324

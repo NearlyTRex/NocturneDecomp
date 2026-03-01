@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 294,
-    "complexity_score": 172,
+    "complexity_score": 173,
     "cross_reference_count": 3,
     "function_call_count": 5,
     "global_count": 11,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 107,
+    "pseudocode_lines": 108,
     "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 401
+    "total_lines": 402
   },
   "cross_references": [
     {
@@ -146,7 +146,7 @@
     {
       "addr": "03f87558",
       "name": "g_ZeroVector",
-      "type": "CVector3f",
+      "type": "UVector3",
       "value": null
     }
   ],
@@ -341,15 +341,7 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 28,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if ((((float)20 < ABS(local_50.y)) || ((float)40 < ABS(local_50.x)))",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 28,
+      "line": 29,
       "match": "ABS",
       "severity": "mild",
       "text": "if ((((float)20 < ABS(local_50.y)) || ((float)40 < ABS(local_50.x)))",
@@ -360,12 +352,20 @@
       "line": 29,
       "match": "ABS",
       "severity": "mild",
+      "text": "if ((((float)20 < ABS(local_50.y)) || ((float)40 < ABS(local_50.x)))",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 30,
+      "match": "ABS",
+      "severity": "mild",
       "text": "|| ((float)40 < ABS(local_50.z))) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 35,
+      "line": 36,
       "match": "SQRT",
       "severity": "mild",
       "text": "local_2c = SQRT(local_50.z * local_50.z + local_50.x * local_50.x);",
@@ -373,7 +373,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 84,
+      "line": 85,
       "match": "ABS",
       "severity": "mild",
       "text": "if ((float)0.17453292519444399 < ABS(this_ptr->turn_angle_accumulator)) goto LAB_0042c771;",
@@ -381,7 +381,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 88,
+      "line": 89,
       "match": "ABS",
       "severity": "mild",
       "text": "if (ABS(this_ptr->turn_angle_accumulator) < (float)0.034906585038888903) {",

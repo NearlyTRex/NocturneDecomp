@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dstrender_cpp_renderZBufferFill16xUnrolled_FUN_00490902(SEdgeData *left_edge,SEdgeData *right_edge,int scanline_y)
+; void __cdecl core_dstrender_cpp_renderZBufferFill16xUnrolled_FUN_00490902(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
 ;
 ;
 ; XREF[1]:

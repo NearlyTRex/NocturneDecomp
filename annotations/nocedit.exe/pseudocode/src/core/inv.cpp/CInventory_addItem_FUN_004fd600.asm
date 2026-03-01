@@ -252,7 +252,7 @@ section .text
     MOV ECX,dword ptr [EAX + 0x84]      ; 004fd7ec | g_CGameInstance.key_next_item
     PUSH ECX                            ; 004fd7f2
     CALL core_menu.cpp_getKeyDisplayName_FUN_005134e0 ; 004fd7f3
-        ;   XREF to: 005134e0 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_005134e0(int key_code)
+        ;   XREF to: 005134e0 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_005134e0(EInputCodeType key_code)
     ADD ESP,0x4                         ; 004fd7f8
     LEA EDI,[ESP + 0x100]               ; 004fd7fb
     MOV ESI,EAX                         ; 004fd802
@@ -308,7 +308,7 @@ section .text
     MOV EBX,dword ptr [EAX + 0x88]      ; 004fd863 | g_CGameInstance.key_prev_item
     PUSH EBX                            ; 004fd869
     CALL core_menu.cpp_getKeyDisplayName_FUN_005134e0 ; 004fd86a
-        ;   XREF to: 005134e0 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_005134e0(int key_code)
+        ;   XREF to: 005134e0 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_005134e0(EInputCodeType key_code)
     ADD ESP,0x4                         ; 004fd86f
     LEA EDI,[ESP + 0x100]               ; 004fd872
     MOV ESI,EAX                         ; 004fd879
@@ -364,7 +364,7 @@ section .text
     MOV ESI,dword ptr [EAX + 0x4c]      ; 004fd8da | g_CGameInstance.key_use_item
     PUSH ESI                            ; 004fd8dd
     CALL core_menu.cpp_getKeyDisplayName_FUN_005134e0 ; 004fd8de
-        ;   XREF to: 005134e0 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_005134e0(int key_code)
+        ;   XREF to: 005134e0 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_005134e0(EInputCodeType key_code)
     ADD ESP,0x4                         ; 004fd8e3
     LEA EDI,[ESP + 0x100]               ; 004fd8e6
     MOV ESI,EAX                         ; 004fd8ed
@@ -452,7 +452,7 @@ section .text
     MOV EDX,dword ptr [EAX + 0x84]      ; 004fd99b | g_CGameInstance.key_next_item
     PUSH EDX                            ; 004fd9a1
     CALL core_menu.cpp_getKeyDisplayName_FUN_005134e0 ; 004fd9a2
-        ;   XREF to: 005134e0 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_005134e0(int key_code)
+        ;   XREF to: 005134e0 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_005134e0(EInputCodeType key_code)
     ADD ESP,0x4                         ; 004fd9a7
     LEA EDI,[ESP + 0x100]               ; 004fd9aa
     MOV ESI,EAX                         ; 004fd9b1
@@ -508,7 +508,7 @@ section .text
     MOV ECX,dword ptr [EAX + 0x88]      ; 004fda12 | g_CGameInstance.key_prev_item
     PUSH ECX                            ; 004fda18
     CALL core_menu.cpp_getKeyDisplayName_FUN_005134e0 ; 004fda19
-        ;   XREF to: 005134e0 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_005134e0(int key_code)
+        ;   XREF to: 005134e0 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_005134e0(EInputCodeType key_code)
     ADD ESP,0x4                         ; 004fda1e
     LEA EDI,[ESP + 0x100]               ; 004fda21
     MOV ESI,EAX                         ; 004fda28
@@ -564,7 +564,7 @@ section .text
     MOV EBX,dword ptr [EAX + 0x4c]      ; 004fda89 | g_CGameInstance.key_use_item
     PUSH EBX                            ; 004fda8c
     CALL core_menu.cpp_getKeyDisplayName_FUN_005134e0 ; 004fda8d
-        ;   XREF to: 005134e0 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_005134e0(int key_code)
+        ;   XREF to: 005134e0 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_005134e0(EInputCodeType key_code)
     ADD ESP,0x4                         ; 004fda92
     LEA EDI,[ESP + 0x100]               ; 004fda95
     MOV ESI,EAX                         ; 004fda9c
@@ -652,7 +652,7 @@ section .text
     MOV EDI,dword ptr [EAX + 0x48]      ; 004fdb4a | g_CGameInstance.key_fire
     PUSH EDI                            ; 004fdb4d
     CALL core_menu.cpp_getKeyDisplayName_FUN_005134e0 ; 004fdb4e
-        ;   XREF to: 005134e0 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_005134e0(int key_code)
+        ;   XREF to: 005134e0 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_005134e0(EInputCodeType key_code)
     ADD ESP,0x4                         ; 004fdb53
     LEA EDI,[ESP + 0x100]               ; 004fdb56
     MOV ESI,EAX                         ; 004fdb5d
@@ -740,7 +740,7 @@ section .text
     MOV EDX,dword ptr [EAX + 0x84]      ; 004fdc0b | g_CGameInstance.key_next_item
     PUSH EDX                            ; 004fdc11
     CALL core_menu.cpp_getKeyDisplayName_FUN_005134e0 ; 004fdc12
-        ;   XREF to: 005134e0 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_005134e0(int key_code)
+        ;   XREF to: 005134e0 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_005134e0(EInputCodeType key_code)
     ADD ESP,0x4                         ; 004fdc17
     LEA EDI,[ESP + 0x100]               ; 004fdc1a
     MOV ESI,EAX                         ; 004fdc21
@@ -796,7 +796,7 @@ section .text
     MOV ECX,dword ptr [EAX + 0x88]      ; 004fdc82 | g_CGameInstance.key_prev_item
     PUSH ECX                            ; 004fdc88
     CALL core_menu.cpp_getKeyDisplayName_FUN_005134e0 ; 004fdc89
-        ;   XREF to: 005134e0 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_005134e0(int key_code)
+        ;   XREF to: 005134e0 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_005134e0(EInputCodeType key_code)
     ADD ESP,0x4                         ; 004fdc8e
     LEA EDI,[ESP + 0x100]               ; 004fdc91
     MOV ESI,EAX                         ; 004fdc98
@@ -852,7 +852,7 @@ section .text
     MOV EBX,dword ptr [EAX + 0x4c]      ; 004fdcf9 | g_CGameInstance.key_use_item
     PUSH EBX                            ; 004fdcfc
     CALL core_menu.cpp_getKeyDisplayName_FUN_005134e0 ; 004fdcfd
-        ;   XREF to: 005134e0 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_005134e0(int key_code)
+        ;   XREF to: 005134e0 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_005134e0(EInputCodeType key_code)
     ADD ESP,0x4                         ; 004fdd02
     LEA EDI,[ESP + 0x100]               ; 004fdd05
     MOV ESI,EAX                         ; 004fdd0c
@@ -1060,7 +1060,7 @@ section .text
     MOV EDX,dword ptr [EAX + 0x7c]      ; 004fdeb2 | g_CGameInstance.key_next_weapon
     PUSH EDX                            ; 004fdeb5
     CALL core_menu.cpp_getKeyDisplayName_FUN_005134e0 ; 004fdeb6
-        ;   XREF to: 005134e0 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_005134e0(int key_code)
+        ;   XREF to: 005134e0 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_005134e0(EInputCodeType key_code)
     ADD ESP,0x4                         ; 004fdebb
     LEA EDI,[ESP + 0x100]               ; 004fdebe
     MOV ESI,EAX                         ; 004fdec5
@@ -1116,7 +1116,7 @@ section .text
     MOV ECX,dword ptr [EAX + 0x80]      ; 004fdf26 | g_CGameInstance.key_prev_weapon
     PUSH ECX                            ; 004fdf2c
     CALL core_menu.cpp_getKeyDisplayName_FUN_005134e0 ; 004fdf2d
-        ;   XREF to: 005134e0 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_005134e0(int key_code)
+        ;   XREF to: 005134e0 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_005134e0(EInputCodeType key_code)
     ADD ESP,0x4                         ; 004fdf32
     LEA EDI,[ESP + 0x100]               ; 004fdf35
     MOV ESI,EAX                         ; 004fdf3c
@@ -1278,7 +1278,7 @@ section .text
     MOV EBX,dword ptr [EAX + 0x7c]      ; 004fe09b | g_CGameInstance.key_next_weapon
     PUSH EBX                            ; 004fe09e
     CALL core_menu.cpp_getKeyDisplayName_FUN_005134e0 ; 004fe09f
-        ;   XREF to: 005134e0 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_005134e0(int key_code)
+        ;   XREF to: 005134e0 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_005134e0(EInputCodeType key_code)
     ADD ESP,0x4                         ; 004fe0a4
     LEA EDI,[ESP + 0x100]               ; 004fe0a7
     MOV ESI,EAX                         ; 004fe0ae
@@ -1334,7 +1334,7 @@ section .text
     MOV ESI,dword ptr [EAX + 0x80]      ; 004fe10f | g_CGameInstance.key_prev_weapon
     PUSH ESI                            ; 004fe115
     CALL core_menu.cpp_getKeyDisplayName_FUN_005134e0 ; 004fe116
-        ;   XREF to: 005134e0 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_005134e0(int key_code)
+        ;   XREF to: 005134e0 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_005134e0(EInputCodeType key_code)
     ADD ESP,0x4                         ; 004fe11b
     LEA EDI,[ESP + 0x100]               ; 004fe11e
     MOV ESI,EAX                         ; 004fe125

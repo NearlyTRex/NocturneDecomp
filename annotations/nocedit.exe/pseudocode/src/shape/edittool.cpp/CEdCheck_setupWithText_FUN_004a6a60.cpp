@@ -17,7 +17,7 @@ void __cdecl shape_edittool_cpp_CEdCheck_setupWithText_FUN_004a6a60(CEdCheck *th
   char *pcVar6;
   
   if (checkbox_text == (char *)0x0) {
-    checkbox_text = &s_EmptyString_00623fa1;
+    checkbox_text = &s_EmptyChar_00623fa1;
   }
   this_ptr->x_position = x_pos;
   pcVar6 = this_ptr->checkbox_text;
@@ -36,9 +36,9 @@ void __cdecl shape_edittool_cpp_CEdCheck_setupWithText_FUN_004a6a60(CEdCheck *th
     g_CurrentLineNumber = 0x8d;
     core_main_c_displayErrorAndQuit_FUN_00506f10("gEdFont must be set by the application.");
   }
-  g_FontCharacterHeight = g_EditorFont->max_char_height;
-  g_FontCharacterWidth = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(g_EditorFont,0x6a);
-  iVar2 = engine_font_cpp_CBitFont_getCharWidth_FUN_004cff40(g_EditorFont,this_ptr->checkbox_text);
+  g_FontCharacterHeight = g_EditorFont->max_char_width;
+  g_FontCharacterWidth = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(g_EditorFont,0x6a);
+  iVar2 = engine_font_cpp_CBitFont_getTextHeight_FUN_004cff40(g_EditorFont,this_ptr->checkbox_text);
   this_ptr->right_boundary = this_ptr->y_position + iVar2;
   iVar3 = shape_edittool_cpp_CEdCheck_calculateScaledWidth_FUN_004a6b70(this_ptr);
   iVar2 = this_ptr->x_position;

@@ -97,7 +97,7 @@
 ; Called Functions:
 ;   core_box.cpp_CBoundingBox3D_computeFromVertices_FUN_00420e90
 ;   core_game.cpp_CGame_saveClockTime_FUN_004d7d80
-;   core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90
+;   core_game.cpp_CGame_updateDT_FUN_004d7d90
 ;   core_morph.cpp_CDeformableModelInstance_arrdtor_FUN_0052ccd0
 ;   core_morph.cpp_CMorph_free_FUN_0052b350
 ;   core_morph.cpp_CMorph_getReady_FUN_0052b680
@@ -652,8 +652,8 @@ section .text
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
     MOV ESI,dword ptr [0x0067b654]      ; 0052c3e8 | g_CGamePtr
     PUSH ESI                            ; 0052c3ee | g_CGameInstance
-    CALL core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90 ; 0052c3ef
-        ;   XREF to: 004d7d90 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90(CGame * this_ptr)
+    CALL core_game.cpp_CGame_updateDT_FUN_004d7d90 ; 0052c3ef
+        ;   XREF to: 004d7d90 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_updateDT_FUN_004d7d90(CGame * this_ptr)
     ADD ESP,0x4                         ; 0052c3f4
     PUSH 0x1f                           ; 0052c3f7
     MOV EDI,dword ptr [0x0068416c]      ; 0052c3f9 | g_CSpotViewPtr

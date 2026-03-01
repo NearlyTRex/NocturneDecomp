@@ -33,7 +33,7 @@
 ; Called Functions:
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_font.cpp_CBitFont_drawText_FUN_004cda80
-;   engine_font.cpp_CBitFont_getCharWidth_FUN_004cff40
+;   engine_font.cpp_CBitFont_getTextHeight_FUN_004cff40
 ;   engine_ini.cpp_CIniFile_ctor_FUN_004fba70
 ;   engine_ini.cpp_CIniFile_getInteger_FUN_004fbc30
 ;   engine_ini.cpp_CIniFile_setInteger_FUN_004fbc90
@@ -95,8 +95,8 @@ section .text
     MOV EBX,dword ptr [0x02cf1cd0]      ; 0050715e | g_EditorFont
     PUSH EBX                            ; 00507164
     MOV EDI,EAX                         ; 00507165
-    CALL engine_font.cpp_CBitFont_getCharWidth_FUN_004cff40 ; 00507167
-        ;   XREF to: 004cff40 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004cff40(CBitFont * this_ptr, char * text_string)
+    CALL engine_font.cpp_CBitFont_getTextHeight_FUN_004cff40 ; 00507167
+        ;   XREF to: 004cff40 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextHeight_FUN_004cff40(CBitFont * this_ptr, char * text_string)
     MOV EBX,EAX                         ; 0050716c
     ADD ESP,0x8                         ; 0050716e
     MOV ESI,EAX                         ; 00507171

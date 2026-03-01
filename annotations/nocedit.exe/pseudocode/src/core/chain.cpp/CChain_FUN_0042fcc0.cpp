@@ -15,7 +15,7 @@ CVector3f * __cdecl core_chain_cpp_CChain_FUN_0042fcc0(CChain *this_ptr)
   
   input_local_point =
        core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                 (&local_14,&g_ZeroVector,
+                 (&local_14,&g_ZeroVector.f,
                   (CMatrix3x4f *)
                   (this_ptr->target[0xb].footstep_sound_code + this_ptr->target_bone * 0x30 + -0xc))
   ;

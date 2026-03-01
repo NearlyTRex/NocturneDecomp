@@ -39,9 +39,7 @@ int __cdecl core_shotgun_cpp_CShotgun_fire_FUN_00588060(CShotgun *this_ptr)
   float fStack_a0;
   float fStack_9c;
   float fStack_98;
-  float fStack_88;
-  float fStack_84;
-  float local_80;
+  CVector3f aCStack_88 [2];
   CVector3f CStack_70;
   CVector3f aCStack_64 [2];
   CTrigger *pCStack_4c;
@@ -154,11 +152,11 @@ int __cdecl core_shotgun_cpp_CShotgun_fire_FUN_00588060(CShotgun *this_ptr)
                   break;
                 }
                 in_stack_fffffec4 = (CDemonSet *)0x588736;
-                core_flamecan_cpp_CFlameCan_FUN_004cb340(pCStack_3c);
+                core_flamecan_cpp_CFlameCan_ignite_FUN_004cb340(pCStack_3c);
               }
               else {
                 in_stack_fffffec4 = (CDemonSet *)0x588741;
-                core_crate_cpp_CCrate_FUN_00448a70(pCStack_38);
+                core_crate_cpp_CCrate_explode_FUN_00448a70(pCStack_38);
               }
             }
             else {
@@ -234,10 +232,11 @@ int __cdecl core_shotgun_cpp_CShotgun_fire_FUN_00588060(CShotgun *this_ptr)
     } while ((int)pCStack_3c < (int)fStack_34);
   }
   core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
-  fStack_88 = CStack_b8.x;
-  local_80 = CStack_b8.z;
-  fStack_84 = CStack_b8.y + -0.125f;
-  core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_004c7a60(g_CFireEffectPtr);
+  aCStack_88[0].x = CStack_b8.x;
+  aCStack_88[0].z = CStack_b8.z;
+  aCStack_88[0].y = CStack_b8.y + -0.125f;
+  core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_004c7a60
+            (g_CFireEffectPtr,aCStack_88,&(this_ptr->base).base.orient_matrix);
   core_sound_cpp_CSound_playActorSound_FUN_005b3a40
             (g_CSoundPtr,(CDemonActor *)this_ptr,"shotgun.wav",&CStack_b8);
   (this_ptr->base).fire_cooldown_timer = 0.666;

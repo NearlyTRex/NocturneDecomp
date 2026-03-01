@@ -34,7 +34,7 @@
 ;   core_game.cpp_CGame_loadGame_FUN_004e12b0
 ;   core_game.cpp_CGame_saveClockTime_FUN_004d7d80
 ;   core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0
-;   core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90
+;   core_game.cpp_CGame_updateDT_FUN_004d7d90
 ;   core_main.c_showDeveloperToolsMenu_FUN_005073a0
 ;   core_menu.cpp_renderMenuAndGetChoice_FUN_00510000
 ;   core_menu.cpp_showOptionsScreen_FUN_00512d30
@@ -128,8 +128,8 @@ section .text
     MOV ECX,dword ptr [0x0067b654]      ; 00513010 | g_CGameInstance | g_CGamePtr
         ;   Label: LAB_00513010
     PUSH ECX                            ; 00513016 | g_CGameInstance
-    CALL core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90 ; 00513017
-        ;   XREF to: 004d7d90 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90(CGame * this_ptr)
+    CALL core_game.cpp_CGame_updateDT_FUN_004d7d90 ; 00513017
+        ;   XREF to: 004d7d90 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_updateDT_FUN_004d7d90(CGame * this_ptr)
     ADD ESP,0x4                         ; 0051301c
     MOV EAX,[0x0067b654]                ; 0051301f | g_CGameInstance | g_CGamePtr
     SUB ESP,0x4                         ; 00513024

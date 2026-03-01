@@ -31,7 +31,7 @@ int __cdecl core_gun_cpp_CGun_fire_FUN_004f0350(CGun *this_ptr)
   CVector3f CStack_8c;
   CVector3f CStack_80;
   CVector3f aCStack_74 [2];
-  CVector3f CStack_58;
+  byte auStack_58 [12];
   float fStack_4c;
   float fStack_48;
   float fStack_44;
@@ -115,10 +115,10 @@ int __cdecl core_gun_cpp_CGun_fire_FUN_004f0350(CGun *this_ptr)
                          g_CDemonSetPtr->collision_actor);
               break;
             }
-            core_flamecan_cpp_CFlameCan_FUN_004cb340(this_ptr_03);
+            core_flamecan_cpp_CFlameCan_ignite_FUN_004cb340(this_ptr_03);
           }
           else {
-            core_crate_cpp_CCrate_FUN_00448a70(pCStack_24);
+            core_crate_cpp_CCrate_explode_FUN_00448a70(pCStack_24);
           }
         }
         else {
@@ -174,7 +174,8 @@ int __cdecl core_gun_cpp_CGun_fire_FUN_004f0350(CGun *this_ptr)
         auStack_130._16_4_ = CStack_80.x;
       }
       pCVar1 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-                         (&this_ptr_01->base,&CStack_58,&g_CDemonSetPtr->collision_impact_position);
+                         (&this_ptr_01->base,(CVector3f *)auStack_58,
+                          &g_CDemonSetPtr->collision_impact_position);
       if ((CVector3f *)(auStack_130 + 0x18) != pCVar1) {
         auStack_130._24_4_ = pCVar1->x;
         fStack_114 = pCVar1->y;
@@ -196,10 +197,11 @@ int __cdecl core_gun_cpp_CGun_fire_FUN_004f0350(CGun *this_ptr)
     iStack_20 = iStack_20 + 1;
   } while (iStack_20 < 4);
   core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
-  CStack_58.z = CStack_bc.x;
+  auStack_58._8_4_ = CStack_bc.x;
   fStack_48 = CStack_bc.z;
   fStack_4c = CStack_bc.y + -0.125f;
-  core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_004c7a60(g_CFireEffectPtr);
+  core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_004c7a60
+            (g_CFireEffectPtr,(CVector3f *)(auStack_58 + 8),&(this_ptr->base).base.orient_matrix);
   core_sound_cpp_CSound_playActorSound_FUN_005b3a40
             (g_CSoundPtr,(CDemonActor *)this_ptr,"45.wav",&CStack_bc);
   (this_ptr->base).fire_cooldown_timer = 0.333;

@@ -12,7 +12,7 @@
 ; XREF[35]:
 ;   core_game.cpp_CGame_loadGame_FUN_004e12b0 at 004e1be2
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 at 004de3fb
-;   core_game.cpp_PleaseEnterValidInteger_FUN_004d7730 at 004d77f5
+;   core_game.cpp_setupMovieRecording_FUN_004d7730 at 004d77f5
 ;   core_main.c_showDeveloperToolsMenu_FUN_005073a0 at 005079b8
 ;   core_mission.cpp_CDemonMission_FUN_00524c20 at 00524d83
 ;   core_msnedit.cpp_CDemonMission_deleteMultipleActorsMenu_FUN_0053df90 at 0053e166

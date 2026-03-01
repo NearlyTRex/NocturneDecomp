@@ -34,7 +34,7 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonM
   int local_14;
   
   bVar11 = 0;
-  core_mission_cpp_CDemonMission_checkMemory2_FUN_00522d30(this_ptr);
+  core_mission_cpp_CDemonMission_FUN_00522d30(this_ptr);
   if (in_stack_0000000c == 0) {
     core_mission_cpp_CDemonMission_FUN_005248e0(this_ptr);
   }

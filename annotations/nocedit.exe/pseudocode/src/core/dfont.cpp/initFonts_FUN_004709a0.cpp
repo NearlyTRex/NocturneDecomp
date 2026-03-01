@@ -30,8 +30,8 @@ void __cdecl core_dfont_cpp_initFonts_FUN_004709a0(void)
   engine_font_cpp_CBitFont_setInitializedFlag_FUN_004cd540(g_MediumFont);
   pCVar2 = g_MediumFont;
   g_MediumFont->char_widths[0x20] = 8;
-  engine_font_cpp_CBitFont_setCharXAdvanceRange_FUN_004d0230(pCVar2,3,0x20,0x7e);
-  engine_font_cpp_CBitFont_setCharXAdvanceRange_FUN_004d0230(g_MediumFont,1,0xc0,0xdf);
+  engine_font_cpp_CBitFont_setCharYOffsetRange_FUN_004d0230(pCVar2,3,0x20,0x7e);
+  engine_font_cpp_CBitFont_setCharYOffsetRange_FUN_004d0230(g_MediumFont,1,0xc0,0xdf);
   pCVar2 = g_MediumFont;
   g_MediumFont->shadow_offset_x = 2;
   pCVar2->shadow_offset_y = 1;
@@ -52,7 +52,7 @@ void __cdecl core_dfont_cpp_initFonts_FUN_004709a0(void)
   engine_font_cpp_CBitFont_setInitializedFlag_FUN_004cd540(g_TinyFont);
   pCVar2 = g_TinyFont;
   g_TinyFont->char_widths[0x20] = 5;
-  engine_font_cpp_CBitFont_setCharXAdvanceRange_FUN_004d0230(pCVar2,2,0x20,0x7e);
+  engine_font_cpp_CBitFont_setCharYOffsetRange_FUN_004d0230(pCVar2,2,0x20,0x7e);
   pCVar2 = g_TinyFont;
   g_TinyFont->shadow_offset_x = 2;
   pCVar2->shadow_offset_y = 1;
@@ -73,9 +73,9 @@ void __cdecl core_dfont_cpp_initFonts_FUN_004709a0(void)
   engine_font_cpp_CBitFont_setInitializedFlag_FUN_004cd540(g_ThemeFont);
   pCVar2 = g_ThemeFont;
   g_ThemeFont->char_widths[0x20] = 8;
-  engine_font_cpp_CBitFont_setCharXAdvanceRange_FUN_004d0230(pCVar2,3,0x20,0x7e);
-  engine_font_cpp_CBitFont_setCharXAdvanceRange_FUN_004d0230(g_ThemeFont,0,0xc0,0xdf);
-  engine_font_cpp_CBitFont_setCharXAdvanceRange_FUN_004d0230(g_ThemeFont,1,0xe0,0xff);
+  engine_font_cpp_CBitFont_setCharYOffsetRange_FUN_004d0230(pCVar2,3,0x20,0x7e);
+  engine_font_cpp_CBitFont_setCharYOffsetRange_FUN_004d0230(g_ThemeFont,0,0xc0,0xdf);
+  engine_font_cpp_CBitFont_setCharYOffsetRange_FUN_004d0230(g_ThemeFont,1,0xe0,0xff);
   pCVar2 = g_ThemeFont;
   g_ThemeFont->shadow_offset_x = 2;
   pCVar2->shadow_offset_y = 1;
@@ -96,7 +96,7 @@ void __cdecl core_dfont_cpp_initFonts_FUN_004709a0(void)
   engine_font_cpp_CBitFont_setInitializedFlag_FUN_004cd540(g_SmallEditorFont);
   pCVar2 = g_SmallEditorFont;
   g_SmallEditorFont->char_widths[0x20] = 4;
-  engine_font_cpp_CBitFont_setCharXAdvanceRange_FUN_004d0230(pCVar2,3,0x20,0x7e);
+  engine_font_cpp_CBitFont_setCharYOffsetRange_FUN_004d0230(pCVar2,3,0x20,0x7e);
   pCVar2 = g_SmallEditorFont;
   g_SmallEditorFont->shadow_offset_x = 1;
   pCVar2->shadow_offset_y = 1;
@@ -117,7 +117,7 @@ void __cdecl core_dfont_cpp_initFonts_FUN_004709a0(void)
             (g_ConsoleFont,"fnte_f.RAW",0x94,0xec,0xff);
   pCVar2 = g_ConsoleFont;
   g_ConsoleFont->char_widths[0x20] = 4;
-  engine_font_cpp_CBitFont_setCharXAdvanceRange_FUN_004d0230(pCVar2,3,0x20,0x7e);
+  engine_font_cpp_CBitFont_setCharYOffsetRange_FUN_004d0230(pCVar2,3,0x20,0x7e);
   pCVar2 = g_ConsoleFont;
   g_ConsoleFont->shadow_offset_x = 1;
   pCVar2->shadow_offset_y = 1;
@@ -138,7 +138,7 @@ void __cdecl core_dfont_cpp_initFonts_FUN_004709a0(void)
   engine_font_cpp_CBitFont_setInitializedFlag_FUN_004cd540(g_MicroFont);
   pCVar2 = g_MicroFont;
   g_MicroFont->char_widths[0x20] = 4;
-  engine_font_cpp_CBitFont_setCharXAdvanceRange_FUN_004d0230(pCVar2,1,0x20,0x7e);
+  engine_font_cpp_CBitFont_setCharYOffsetRange_FUN_004d0230(pCVar2,1,0x20,0x7e);
   pCVar2 = g_MicroFont;
   g_MicroFont->shadow_offset_x = 1;
   pCVar2->shadow_offset_y = 1;

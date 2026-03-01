@@ -20,7 +20,7 @@
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   int g_CurrentDebugLine
-;   CVector3f g_ZeroVector
+;   UVector3 g_ZeroVector
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00478950

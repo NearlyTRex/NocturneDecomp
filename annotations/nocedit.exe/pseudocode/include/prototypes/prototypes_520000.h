@@ -103,8 +103,8 @@ CVector3f * __cdecl core_mirror_cpp_CVector3f_arrdtor_FUN_00522c30(CVector3f *ob
 void __cdecl core_mission_cpp_staticInit_FUN_00522c50(void);
 void __cdecl core_mission_cpp_skipLine_FUN_00522c60(_FILE *file_handle);
 void __cdecl core_mission_cpp_CDemonMission_reset_FUN_00522c80(CDemonMission *this_ptr);
-void __cdecl core_mission_cpp_CDemonMission_checkMemory_FUN_00522d20(CDemonMission *this_ptr);
-void __cdecl core_mission_cpp_CDemonMission_checkMemory2_FUN_00522d30(CDemonMission *this_ptr);
+void __cdecl core_mission_cpp_CDemonMission_FUN_00522d20(CDemonMission *this_ptr);
+void __cdecl core_mission_cpp_CDemonMission_FUN_00522d30(CDemonMission *this_ptr);
 void __cdecl core_mission_cpp_CDemonMission_load_FUN_00522d90(CDemonMission *this_ptr,char *mission_filename,int load_flags);
 void __cdecl core_mission_cpp_CDemonMission_save_FUN_00522e30(CDemonMission *this_ptr,char *filename);
 void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonMission *this_ptr,_FILE *file_handle);

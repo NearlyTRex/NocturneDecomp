@@ -25,7 +25,7 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_005a2800(CSmiley *this_ptr,floa
   CSmiley *pCVar11;
   float fVar12;
   float fVar13;
-  float in_stack_fffffe34;
+  SDamageInfo local_1cc;
   SDamageInfo local_190;
   SDamageInfo local_154;
   SDamageInfo local_118;
@@ -64,9 +64,13 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_005a2800(CSmiley *this_ptr,floa
   if (((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[10]] == 0) &&
      (iVar5 = (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)
                         ((CCharacter *)this_ptr), iVar5 == 0)) {
-    core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffe34);
+    core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_1cc);
+    local_1cc.damage_type = 0;
+    local_1cc.attacker = (CDemonActor *)this_ptr;
+    local_1cc.wielder = (CDemonActor *)this_ptr;
+    local_1cc.damage_amount = 9999.9;
     (*(((this_ptr->base).base.base.vtable._uc)->_uc).processDamage)
-              ((CCharacter *)this_ptr,(SDamageInfo *)&stack0xfffffe34);
+              ((CCharacter *)this_ptr,&local_1cc);
   }
   iVar5 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
   if (iVar5 == 0) {
@@ -235,7 +239,7 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_005a2800(CSmiley *this_ptr,floa
         local_190.wielder = (CDemonActor *)this_ptr;
         local_14 = local_190.damage_amount;
         pCVar10 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                            (&local_b8,&g_ZeroVector,
+                            (&local_b8,&g_ZeroVector.f,
                              (this_ptr->base).base.model.bone_transform.bone_world_matrices +
                              INT_03f48fa8);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
@@ -269,7 +273,7 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_005a2800(CSmiley *this_ptr,floa
           local_154.wielder = (CDemonActor *)this_ptr;
           local_14 = local_154.damage_amount;
           pCVar10 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                              (&local_88,&g_ZeroVector,
+                              (&local_88,&g_ZeroVector.f,
                                (this_ptr->base).base.model.bone_transform.bone_world_matrices +
                                INT_03f48fa8);
           core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
@@ -376,7 +380,6 @@ switchD_005a3055_caseD_7:
   core_charactr_cpp_CCharacter_preProcess_FUN_00429820((CCharacter *)this_ptr);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
             (&(this_ptr->base).base.model);
-  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
-            ((CCharacter *)this_ptr,delta_time,in_stack_fffffe34);
+  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr,delta_time);
   return;
 }

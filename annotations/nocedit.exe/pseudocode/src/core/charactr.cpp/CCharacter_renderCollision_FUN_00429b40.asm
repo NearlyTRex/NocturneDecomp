@@ -510,10 +510,10 @@ section .text
     FLD float ptr [EAX]                 ; 0042a103 | g_ZeroVector
     FMUL float ptr [0x0065b810]         ; 0042a105 | FLOAT_0065b810
     FISTP dword ptr [EBX]               ; 0042a10b
-    FLD float ptr [EAX + 0x4]           ; 0042a10d | g_ZeroVector.y
+    FLD float ptr [EAX + 0x4]           ; 0042a10d | g_ZeroVector+4
     FMUL float ptr [0x0065b810]         ; 0042a110 | FLOAT_0065b810
     FISTP dword ptr [EBX + 0x4]         ; 0042a116
-    FLD float ptr [EAX + 0x8]           ; 0042a119 | g_ZeroVector.z
+    FLD float ptr [EAX + 0x8]           ; 0042a119 | g_ZeroVector+8
     FMUL float ptr [0x0065b810]         ; 0042a11c | FLOAT_0065b810
     FISTP dword ptr [EBX + 0x8]         ; 0042a122
     LEA EAX,[ESP + 0x38]                ; 0042a125

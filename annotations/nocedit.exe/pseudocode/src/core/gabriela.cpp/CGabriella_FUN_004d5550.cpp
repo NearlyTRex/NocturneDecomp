@@ -80,7 +80,7 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d5550(CGabriella *this_ptr)
     pCVar1 = (CCharacter *)(this_ptr->base).inventory.selected_weapon;
     (*(((pCVar1->base).vtable._uc)->_uc).kill)(pCVar1,2,in_stack_fffffc54,in_stack_fffffc58);
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
-              (&local_13c,(CVector3f *)&FLOAT_02d7b814,&g_ZeroVector);
+              (&local_13c,(CVector3f *)&FLOAT_02d7b814,&g_ZeroVector.f);
     matrix_b = (this_ptr->base).base.model.bone_transform.bone_world_matrices[INT_02d7b88c].m;
     pCVar10 = &local_13c;
     core_xform_cpp_buildRotationX_FUN_005f6c40(1.5707964,&local_16c);

@@ -29,7 +29,7 @@
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   engine_font.cpp_CBitFont_ctor_FUN_004cce90
 ;   engine_font.cpp_CBitFont_openFontFile_FUN_004ccfc0
-;   engine_font.cpp_CBitFont_setCharXAdvanceRange_FUN_004d0230
+;   engine_font.cpp_CBitFont_setCharYOffsetRange_FUN_004d0230
 ;   engine_font.cpp_CBitFont_setFontReady_FUN_004d0290
 ;   engine_font.cpp_CBitFont_setInitializedFlag_FUN_004cd540
 ;   engine_winfont.cpp_CWinFont_ctor_FUN_005f22e0
@@ -79,16 +79,16 @@ section .text
     MOV EAX,[0x020a5718]                ; 00470a02 | g_MediumFont
     PUSH EAX                            ; 00470a07
     MOV dword ptr [EAX + 0x25e8],0x8    ; 00470a08
-    CALL engine_font.cpp_CBitFont_setCharXAdvanceRange_FUN_004d0230 ; 00470a12
-        ;   XREF to: 004d0230 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_setCharXAdvanceRange_FUN_004d0230(CBitFont * this_ptr, int advance_value, int start_char, int end_char)
+    CALL engine_font.cpp_CBitFont_setCharYOffsetRange_FUN_004d0230 ; 00470a12
+        ;   XREF to: 004d0230 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_setCharYOffsetRange_FUN_004d0230(CBitFont * this_ptr, int offset_value, int start_char, int end_char)
     ADD ESP,0x10                        ; 00470a17
     PUSH 0xdf                           ; 00470a1a
     PUSH 0xc0                           ; 00470a1f
     PUSH 0x1                            ; 00470a24
     MOV EDI,dword ptr [0x020a5718]      ; 00470a26 | g_MediumFont
     PUSH EDI                            ; 00470a2c
-    CALL engine_font.cpp_CBitFont_setCharXAdvanceRange_FUN_004d0230 ; 00470a2d
-        ;   XREF to: 004d0230 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_setCharXAdvanceRange_FUN_004d0230(CBitFont * this_ptr, int advance_value, int start_char, int end_char)
+    CALL engine_font.cpp_CBitFont_setCharYOffsetRange_FUN_004d0230 ; 00470a2d
+        ;   XREF to: 004d0230 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_setCharYOffsetRange_FUN_004d0230(CBitFont * this_ptr, int offset_value, int start_char, int end_char)
     ADD ESP,0x10                        ; 00470a32
     MOV EAX,[0x020a5718]                ; 00470a35 | g_MediumFont
     PUSH 0x1                            ; 00470a3a
@@ -137,8 +137,8 @@ section .text
     MOV EAX,[0x020a571c]                ; 00470abc | g_TinyFont
     PUSH EAX                            ; 00470ac1
     MOV dword ptr [EAX + 0x25e8],0x5    ; 00470ac2
-    CALL engine_font.cpp_CBitFont_setCharXAdvanceRange_FUN_004d0230 ; 00470acc
-        ;   XREF to: 004d0230 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_setCharXAdvanceRange_FUN_004d0230(CBitFont * this_ptr, int advance_value, int start_char, int end_char)
+    CALL engine_font.cpp_CBitFont_setCharYOffsetRange_FUN_004d0230 ; 00470acc
+        ;   XREF to: 004d0230 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_setCharYOffsetRange_FUN_004d0230(CBitFont * this_ptr, int offset_value, int start_char, int end_char)
     ADD ESP,0x10                        ; 00470ad1
     MOV EAX,[0x020a571c]                ; 00470ad4 | g_TinyFont
     PUSH 0x1                            ; 00470ad9
@@ -187,24 +187,24 @@ section .text
     MOV EAX,[0x020a5720]                ; 00470b5b | g_ThemeFont
     PUSH EAX                            ; 00470b60
     MOV dword ptr [EAX + 0x25e8],0x8    ; 00470b61
-    CALL engine_font.cpp_CBitFont_setCharXAdvanceRange_FUN_004d0230 ; 00470b6b
-        ;   XREF to: 004d0230 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_setCharXAdvanceRange_FUN_004d0230(CBitFont * this_ptr, int advance_value, int start_char, int end_char)
+    CALL engine_font.cpp_CBitFont_setCharYOffsetRange_FUN_004d0230 ; 00470b6b
+        ;   XREF to: 004d0230 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_setCharYOffsetRange_FUN_004d0230(CBitFont * this_ptr, int offset_value, int start_char, int end_char)
     ADD ESP,0x10                        ; 00470b70
     PUSH 0xdf                           ; 00470b73
     PUSH 0xc0                           ; 00470b78
     PUSH 0x0                            ; 00470b7d
     MOV EAX,[0x020a5720]                ; 00470b7f | g_ThemeFont
     PUSH EAX                            ; 00470b84
-    CALL engine_font.cpp_CBitFont_setCharXAdvanceRange_FUN_004d0230 ; 00470b85
-        ;   XREF to: 004d0230 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_setCharXAdvanceRange_FUN_004d0230(CBitFont * this_ptr, int advance_value, int start_char, int end_char)
+    CALL engine_font.cpp_CBitFont_setCharYOffsetRange_FUN_004d0230 ; 00470b85
+        ;   XREF to: 004d0230 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_setCharYOffsetRange_FUN_004d0230(CBitFont * this_ptr, int offset_value, int start_char, int end_char)
     ADD ESP,0x10                        ; 00470b8a
     PUSH 0xff                           ; 00470b8d
     PUSH 0xe0                           ; 00470b92
     PUSH 0x1                            ; 00470b97
     MOV EDX,dword ptr [0x020a5720]      ; 00470b99 | g_ThemeFont
     PUSH EDX                            ; 00470b9f
-    CALL engine_font.cpp_CBitFont_setCharXAdvanceRange_FUN_004d0230 ; 00470ba0
-        ;   XREF to: 004d0230 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_setCharXAdvanceRange_FUN_004d0230(CBitFont * this_ptr, int advance_value, int start_char, int end_char)
+    CALL engine_font.cpp_CBitFont_setCharYOffsetRange_FUN_004d0230 ; 00470ba0
+        ;   XREF to: 004d0230 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_setCharYOffsetRange_FUN_004d0230(CBitFont * this_ptr, int offset_value, int start_char, int end_char)
     ADD ESP,0x10                        ; 00470ba5
     MOV EAX,[0x020a5720]                ; 00470ba8 | g_ThemeFont
     PUSH 0x1                            ; 00470bad
@@ -253,8 +253,8 @@ section .text
     MOV EAX,[0x020a5724]                ; 00470c2f | g_SmallEditorFont
     PUSH EAX                            ; 00470c34
     MOV dword ptr [EAX + 0x25e8],0x4    ; 00470c35
-    CALL engine_font.cpp_CBitFont_setCharXAdvanceRange_FUN_004d0230 ; 00470c3f
-        ;   XREF to: 004d0230 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_setCharXAdvanceRange_FUN_004d0230(CBitFont * this_ptr, int advance_value, int start_char, int end_char)
+    CALL engine_font.cpp_CBitFont_setCharYOffsetRange_FUN_004d0230 ; 00470c3f
+        ;   XREF to: 004d0230 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_setCharYOffsetRange_FUN_004d0230(CBitFont * this_ptr, int offset_value, int start_char, int end_char)
     ADD ESP,0x10                        ; 00470c44
     MOV EAX,[0x020a5724]                ; 00470c47 | g_SmallEditorFont
     PUSH 0x1                            ; 00470c4c
@@ -300,8 +300,8 @@ section .text
     MOV EAX,[0x020a5728]                ; 00470ccf | g_ConsoleFont
     PUSH EAX                            ; 00470cd4
     MOV dword ptr [EAX + 0x25e8],0x4    ; 00470cd5
-    CALL engine_font.cpp_CBitFont_setCharXAdvanceRange_FUN_004d0230 ; 00470cdf
-        ;   XREF to: 004d0230 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_setCharXAdvanceRange_FUN_004d0230(CBitFont * this_ptr, int advance_value, int start_char, int end_char)
+    CALL engine_font.cpp_CBitFont_setCharYOffsetRange_FUN_004d0230 ; 00470cdf
+        ;   XREF to: 004d0230 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_setCharYOffsetRange_FUN_004d0230(CBitFont * this_ptr, int offset_value, int start_char, int end_char)
     ADD ESP,0x10                        ; 00470ce4
     MOV EAX,[0x020a5728]                ; 00470ce7 | g_ConsoleFont
     PUSH 0x1                            ; 00470cec
@@ -360,8 +360,8 @@ section .text
     MOV EAX,[0x020a572c]                ; 00470d9a | g_MicroFont
     PUSH EAX                            ; 00470d9f
     MOV dword ptr [EAX + 0x25e8],0x4    ; 00470da0
-    CALL engine_font.cpp_CBitFont_setCharXAdvanceRange_FUN_004d0230 ; 00470daa
-        ;   XREF to: 004d0230 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_setCharXAdvanceRange_FUN_004d0230(CBitFont * this_ptr, int advance_value, int start_char, int end_char)
+    CALL engine_font.cpp_CBitFont_setCharYOffsetRange_FUN_004d0230 ; 00470daa
+        ;   XREF to: 004d0230 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_setCharYOffsetRange_FUN_004d0230(CBitFont * this_ptr, int offset_value, int start_char, int end_char)
     ADD ESP,0x10                        ; 00470daf
     MOV EAX,[0x020a572c]                ; 00470db2 | g_MicroFont
     PUSH 0x1                            ; 00470db7

@@ -11,7 +11,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-;   core_flame.cpp_CFlame_FUN_004caa70
+;   core_flame.cpp_CFlame_hide_FUN_004caa70
 ;   core_flame.cpp_CFlame_process_FUN_004c9c00
 ;   core_weapon.cpp_CWeapon_process_FUN_005ee110
 ;
@@ -81,8 +81,8 @@ section .text
     LEA EAX,[EBX + 0x57c]               ; 00448dd9
         ;   Label: LAB_00448dd9
     PUSH EAX                            ; 00448ddf
-    CALL core_flame.cpp_CFlame_FUN_004caa70 ; 00448de0
-        ;   XREF to: 004caa70 (UNCONDITIONAL_CALL)  ; void core_flame.cpp_CFlame_FUN_004caa70(CFlame * this_ptr)
+    CALL core_flame.cpp_CFlame_hide_FUN_004caa70 ; 00448de0
+        ;   XREF to: 004caa70 (UNCONDITIONAL_CALL)  ; void core_flame.cpp_CFlame_hide_FUN_004caa70(CFlame * this_ptr)
     ADD ESP,0x4                         ; 00448de5
     MOV dword ptr [EBX + 0x578],0x0     ; 00448de8
     JMP 0x00448db5                      ; 00448df2

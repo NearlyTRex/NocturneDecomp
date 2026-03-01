@@ -46,9 +46,9 @@
 ; Referenced Globals:
 ;   double DOUBLE_00615e34 = 0.00390625
 ;   double DOUBLE_00615e3c = 65535
-;   CVector3f g_ZeroVector
-;   undefined4 g_ZeroVector.y
-;   undefined4 g_ZeroVector.z
+;   UVector3 g_ZeroVector
+;   undefined4 g_ZeroVector+4
+;   undefined4 g_ZeroVector+8
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
@@ -96,9 +96,9 @@ section .text
         ;   XREF to: 0041a0b1 (CONDITIONAL_JUMP)  ; LAB_0041a0b1
     MOV ECX,dword ptr [0x03f87558]      ; 0041a097 | g_ZeroVector
     MOV dword ptr [EAX],ECX             ; 0041a09d
-    MOV ECX,dword ptr [0x03f8755c]      ; 0041a09f | g_ZeroVector.y
+    MOV ECX,dword ptr [0x03f8755c]      ; 0041a09f | g_ZeroVector+4
     MOV dword ptr [EAX + 0x4],ECX       ; 0041a0a5
-    MOV ECX,dword ptr [0x03f87560]      ; 0041a0a8 | g_ZeroVector.z
+    MOV ECX,dword ptr [0x03f87560]      ; 0041a0a8 | g_ZeroVector+8
     MOV dword ptr [EAX + 0x8],ECX       ; 0041a0ae
     ADD EDI,0x15c                       ; 0041a0b1
         ;   Label: LAB_0041a0b1

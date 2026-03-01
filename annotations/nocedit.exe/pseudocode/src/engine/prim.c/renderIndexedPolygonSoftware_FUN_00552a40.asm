@@ -283,7 +283,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x4c]      ; 00552cb0
     MOV ESI,EBP                         ; 00552cb4
     CALL wincore_windll.cpp_renderScanline_FUN_005b5710 ; 00552cb6
-        ;   XREF to: 005b5710 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_renderScanline_FUN_005b5710(void * left_data, void * right_data, int scanline_y)
+        ;   XREF to: 005b5710 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_renderScanline_FUN_005b5710(SHardwareEdge * left, SHardwareEdge * right, int scanline_y)
     MOV EAX,dword ptr [EBP + 0xc]       ; 00552cbb
     ADD dword ptr [EBP + 0x8],EAX       ; 00552cbe
     MOV EBX,dword ptr [EBP + 0x18]      ; 00552cc1

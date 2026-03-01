@@ -92,7 +92,7 @@ section .text
     ADD ESP,0x8                         ; 0048084e
     PUSH EAX                            ; 00480851
     CALL core_box.cpp_CBoundingBox3D_render_FUN_004210b0 ; 00480852
-        ;   XREF to: 004210b0 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBoundingBox3D_render_FUN_004210b0(CBoundingBox3D * this_ptr, int param1, int param2, int param3)
+        ;   XREF to: 004210b0 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBoundingBox3D_render_FUN_004210b0(CBoundingBox3D * this_ptr)
     ADD ESP,0x4                         ; 00480857
     PUSH EBX                            ; 0048085a
         ;   Label: LAB_0048085a

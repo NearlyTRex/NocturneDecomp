@@ -38,7 +38,7 @@
 ;   int g_CurrentLineNumber
 ;   int INT_02f37ed0
 ;   int INT_02f37ef0
-;   CVector3f g_ZeroVector
+;   UVector3 g_ZeroVector
 ;   undefined4 g_CWeaponClassInfo.name_hash
 ;
 ; Called Functions:

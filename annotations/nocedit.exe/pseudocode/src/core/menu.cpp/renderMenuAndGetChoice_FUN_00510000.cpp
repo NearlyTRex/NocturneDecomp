@@ -25,7 +25,7 @@ int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_00510000(char **menu_text_a
   if (spacing_flag != 0) {
     engine_font_cpp_CBitFont_drawText_FUN_004cda80
               (g_ThemeFont,(char *)spacing_flag,0xa0,y_position,7,0);
-    iVar1 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(this_ptr,0x58);
+    iVar1 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(this_ptr,0x58);
     y_position = y_position + iVar1 * 2;
   }
   local_20 = 0;
@@ -33,7 +33,7 @@ int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_00510000(char **menu_text_a
     local_1c = menu_text_array;
     do {
       engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(this_ptr,*local_1c);
-      iVar1 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(this_ptr,0x58);
+      iVar1 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(this_ptr,0x58);
       local_24 = 0xf8;
       if (local_20 == *selected_index_ptr) {
         iVar2 = core_moon_cpp_CMoon_isAnimationFirstHalf_FUN_0052a3f0(&g_CMoonInstance);
@@ -71,14 +71,14 @@ int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_00510000(char **menu_text_a
   if (g_MessageCount == 0) {
     iVar2 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80
                       (g_SmallEditorFont,"Nocturne 1999 Terminal Reality Inc.  Patent Pending.");
-    iVar1 = engine_font_cpp_CBitFont_getCharWidth_FUN_004cff40
+    iVar1 = engine_font_cpp_CBitFont_getTextHeight_FUN_004cff40
                       (g_SmallEditorFont,"Nocturne 1999 Terminal Reality Inc.  Patent Pending.");
     pcVar7 = "Nocturne 1999 Terminal Reality Inc.  Patent Pending.";
   }
   else {
     iVar2 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80
                       (g_SmallEditorFont,"Nocturne (c) 1999 Terminal Reality Inc.  Patent Pending.");
-    iVar1 = engine_font_cpp_CBitFont_getCharWidth_FUN_004cff40
+    iVar1 = engine_font_cpp_CBitFont_getTextHeight_FUN_004cff40
                       (g_SmallEditorFont,"Nocturne (c) 1999 Terminal Reality Inc.  Patent Pending.");
     pcVar7 = "Nocturne (c) 1999 Terminal Reality Inc.  Patent Pending.";
   }

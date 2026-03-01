@@ -29,7 +29,7 @@ void __cdecl core_fire_cpp_CShell_render_FUN_004c6200(CShell *this_ptr)
       }
       core_set_cpp_CDemonSet_setLightingParameters_FUN_0056d380
                 (g_CDemonSetPtr,(CVector3f *)this_ptr,(UOrientationVector *)&this_ptr->euler_angles,
-                 &g_ZeroVector,&g_ZeroVector,(CMatrix3x3f *)0x0);
+                 &g_ZeroVector.f,&g_ZeroVector.f,(CMatrix3x3f *)0x0);
       engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
                 (g_CDemonRendererPtr2,(CVector3f *)this_ptr);
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0

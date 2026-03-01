@@ -27,9 +27,9 @@
 ;   CVector3f g_TempNormal2
 ;   undefined4 g_TempNormal2.y
 ;   undefined4 g_TempNormal2.z
-;   CVector3f g_ZeroVector
-;   undefined4 g_ZeroVector.y
-;   undefined4 g_ZeroVector.z
+;   UVector3 g_ZeroVector
+;   undefined4 g_ZeroVector+4
+;   undefined4 g_ZeroVector+8
 ;
 ; Called Functions:
 ;   core_dcube.cpp_CDemonCube_testCylinderCollision_FUN_00457a90
@@ -213,8 +213,8 @@ section .text
     RET                                 ; 00496e04
     FLD float ptr [0x03f87558]          ; 00496e05 | g_ZeroVector
         ;   Label: LAB_00496e05
-    FLD float ptr [0x03f87560]          ; 00496e0b | g_ZeroVector.z
-    MOV EAX,[0x03f8755c]                ; 00496e11 | g_ZeroVector.y
+    FLD float ptr [0x03f87560]          ; 00496e0b | g_ZeroVector+8
+    MOV EAX,[0x03f8755c]                ; 00496e11 | g_ZeroVector+4
     MOV [0x015c481c],EAX                ; 00496e16 | g_TempNormal2.y
     FSTP float ptr [0x015c4820]         ; 00496e1b | g_TempNormal2.z
     FSTP float ptr [0x015c4818]         ; 00496e21 | g_TempNormal2

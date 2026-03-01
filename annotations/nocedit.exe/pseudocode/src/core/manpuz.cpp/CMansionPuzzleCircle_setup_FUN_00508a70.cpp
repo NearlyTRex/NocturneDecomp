@@ -83,17 +83,17 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_setup_FUN_00508a70(CMansionPuz
   local_b0 = (pCVar8->bounds_max).z;
   this_ptr->panel_radius = 12.1391;
   fVar17 = (float10)fcos((float10)0.5235988f * (float10)0.5);
-  fVar1 = (this_ptr->emitter_pos).y;
-  fVar2 = (this_ptr->emitter_pos).x;
-  fVar3 = (this_ptr->emitter_pos).z;
+  fVar1 = (this_ptr->emitter_pos).f.y;
+  fVar2 = (this_ptr->emitter_pos).f.x;
+  fVar3 = (this_ptr->emitter_pos).f.z;
   this_ptr->bbox_extent = (float)(((float10)this_ptr->panel_radius + (float10)local_b0) / fVar17);
   this_ptr->bbox_height = local_b4 - local_c0;
   if (SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1) == 0.0) {
     fVar1 = this_ptr->bbox_height;
-    (this_ptr->emitter_pos).x = 0.0;
+    (this_ptr->emitter_pos).f.x = 0.0;
     fVar2 = (float)2;
-    (this_ptr->emitter_pos).z = -1.1;
-    (this_ptr->emitter_pos).y = fVar1 + fVar2;
+    (this_ptr->emitter_pos).i.z = -0x40733333;
+    (this_ptr->emitter_pos).f.y = fVar1 + fVar2;
   }
   fVar1 = (this_ptr->gem_pos).y;
   fVar2 = (this_ptr->gem_pos).x;
@@ -210,7 +210,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_setup_FUN_00508a70(CMansionPuz
   fVar19 = (float10)0.5;
   fVar2 = this_ptr->panel_radius;
   pCVar10 = &this_ptr->reflectors[0].target_position;
-  fVar3 = (this_ptr->emitter_pos).y;
+  fVar3 = (this_ptr->emitter_pos).f.y;
   fVar4 = (float)0.25;
   this_ptr->reflectors[0].target_position.z =
        (float)(fVar17 * (float10)this_ptr->panel_radius * fVar19);

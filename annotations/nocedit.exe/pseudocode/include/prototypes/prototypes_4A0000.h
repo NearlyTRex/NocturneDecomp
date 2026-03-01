@@ -23,6 +23,7 @@
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SLaserInfo.h"
+#include "types/unions/UOrientationVector.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x4A0000
@@ -47,7 +48,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380(CE
 char * __cdecl shape_edittool_cpp_CEditorTools_getClipboardText_FUN_004a1b30(CEditorTools *this_ptr);
 void __cdecl shape_edittool_cpp_CEditorTools_setClipboardText_FUN_004a1bc0(CEditorTools *this_ptr,char *text_data);
 void __cdecl shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0(CEditorTools *this_ptr,float scale_factor,int text_color);
-void __cdecl shape_edittool_cpp_CEditorTools_draw3DAxisLabelsAt_FUN_004a1e90(CEditorTools *this_ptr,int param2,CQuaternion4f *world_position, CQuaternion4f *label_offset,void *param5);
+void __cdecl shape_edittool_cpp_CEditorTools_draw3DAxisLabelsAt_FUN_004a1e90(CEditorTools *this_ptr,float scale_factor,int text_color,CVector3f *world_position, UOrientationVector *orientation);
 void __cdecl shape_edittool_cpp_draw3DInterpolatedLine_FUN_004a1f40(CVector3f *start_point,CVector3f *end_point);
 void __cdecl shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050(CEditorTools *this_ptr,CVector3f *corner1,CVector3f *corner2,int color_value);
 void __cdecl shape_edittool_cpp_CEditorTools_drawCenteredWireframeCube_FUN_004a2510(CEditorTools *this_ptr,CVector3f *dimensions,int color_value);

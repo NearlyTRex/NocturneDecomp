@@ -23,7 +23,7 @@
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_alphabit.cpp_CAlphaBitmap_free_FUN_00410560
 ;   engine_alphabit.cpp_CAlphaBitmap_load_FUN_004105d0
-;   engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0
+;   engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0
 ;   support_newmsg.cpp_getLocalizedString_FUN_005441f0
 ;
 ; *****************************************************************************
@@ -41,8 +41,8 @@ section .text
     PUSH 0x58                           ; 00510bbc
     MOV EDX,dword ptr [0x020a5724]      ; 00510bbe | g_SmallEditorFont
     PUSH EDX                            ; 00510bc4
-    CALL engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0 ; 00510bc5
-        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0 ; 00510bc5
+        ;   XREF to: 004d01d0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 00510bca
     PUSH 0x636693                       ; 00510bcd | = "1. Turn off all the lights in your room."
     CALL support_newmsg.cpp_getLocalizedString_FUN_005441f0 ; 00510bd2

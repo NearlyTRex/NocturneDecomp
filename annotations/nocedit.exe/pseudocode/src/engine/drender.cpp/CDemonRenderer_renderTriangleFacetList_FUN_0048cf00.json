@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 19,
-        "line": 92,
+        "line": 93,
         "message": "no matching function for call to 'wincore_windll_cpp_drawPolyList_FUN_005b7640'"
       }
     ],
@@ -13,19 +13,19 @@
   },
   "complexity": {
     "assembly_lines": 245,
-    "complexity_score": 276,
+    "complexity_score": 298,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 11,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 121,
-    "suspect_count": 14,
+    "pseudocode_lines": 123,
+    "suspect_count": 16,
     "suspect_types": [
       "extra_output",
       "pointer_cast",
       "register_param"
     ],
-    "total_lines": 366
+    "total_lines": 368
   },
   "cross_references": [
     {
@@ -323,8 +323,16 @@
       "type": "extra_output"
     },
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 9,
+      "match": "extraout_EAX_01",
+      "severity": "moderate",
+      "text": "int extraout_EAX_01;",
+      "type": "extra_output"
+    },
+    {
       "description": "Inferred register parameter",
-      "line": 26,
+      "line": 27,
       "match": "in_EAX",
       "severity": "mild",
       "text": "in_EAX = 6;",
@@ -332,7 +340,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 51,
+      "line": 52,
       "match": "(SMRGLHeaderPrimitive *)((int)",
       "severity": "mild",
       "text": "(SMRGLHeaderPrimitive *)((int)&(primitive_array->base).type + render_flags);",
@@ -340,23 +348,23 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 52,
-      "match": "extraout_EAX_00",
+      "line": 53,
+      "match": "extraout_EAX_01",
       "severity": "moderate",
-      "text": "in_EAX = extraout_EAX_00;",
+      "text": "in_EAX = extraout_EAX_01;",
       "type": "extra_output"
     },
     {
       "description": "Inferred register parameter",
-      "line": 52,
+      "line": 53,
       "match": "in_EAX",
       "severity": "mild",
-      "text": "in_EAX = extraout_EAX_00;",
+      "text": "in_EAX = extraout_EAX_01;",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 81,
+      "line": 82,
       "match": "in_EAX",
       "severity": "mild",
       "text": "in_EAX = render_flags;",
@@ -364,23 +372,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 105,
-      "match": "(SMRGLHeaderPrimitive *)((int)",
-      "severity": "mild",
-      "text": "(SMRGLHeaderPrimitive *)((int)&(primitive_array->base).type + render_flags);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Inferred register parameter",
       "line": 106,
-      "match": "in_EAX",
-      "severity": "mild",
-      "text": "in_EAX = engine_drender_cpp_renderTriangleSimple_FUN_004839f0(&local_28,pSVar1->count);",
-      "type": "register_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 118,
       "match": "(SMRGLHeaderPrimitive *)((int)",
       "severity": "mild",
       "text": "(SMRGLHeaderPrimitive *)((int)&(primitive_array->base).type + render_flags);",
@@ -388,7 +380,31 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 119,
+      "line": 108,
+      "match": "extraout_EAX_00",
+      "severity": "moderate",
+      "text": "in_EAX = extraout_EAX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 108,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "in_EAX = extraout_EAX_00;",
+      "type": "register_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 120,
+      "match": "(SMRGLHeaderPrimitive *)((int)",
+      "severity": "mild",
+      "text": "(SMRGLHeaderPrimitive *)((int)&(primitive_array->base).type + render_flags);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 121,
       "match": "extraout_EAX",
       "severity": "moderate",
       "text": "in_EAX = extraout_EAX;",
@@ -396,7 +412,7 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 119,
+      "line": 121,
       "match": "in_EAX",
       "severity": "mild",
       "text": "in_EAX = extraout_EAX;",
@@ -404,7 +420,7 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 123,
+      "line": 125,
       "match": "in_EAX",
       "severity": "mild",
       "text": "return in_EAX;",

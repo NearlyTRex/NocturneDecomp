@@ -41,7 +41,7 @@
 ;   undefined4 DAT_02c6d590
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   CVector3f g_ZeroVector
+;   UVector3 g_ZeroVector
 ;
 ; Called Functions:
 ;   core_dcube.cpp_buildAndRenderTrianglePrimitive_FUN_004566e0

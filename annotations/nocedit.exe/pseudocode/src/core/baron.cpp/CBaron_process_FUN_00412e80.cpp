@@ -17,7 +17,6 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00412e80(CBaron *this_ptr,float d
   CVector3f *pCVar4;
   SMotion *pSVar5;
   uint *puVar6;
-  float unaff_EDI;
   uint *puVar7;
   byte bVar8;
   CVector3f *apCStackY_1880 [1519];
@@ -76,10 +75,10 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00412e80(CBaron *this_ptr,float d
   if (pCVar2->letterbox_mode != 0) {
     (this_ptr->base).base.turn_speed = (this_ptr->base).base.turn_speed * (float)0.33333333333333298;
   }
-  fVar10 = (float)(this_ptr->base).no_collision_flag - delta_time;
-  (this_ptr->base).no_collision_flag = (int)fVar10;
+  fVar10 = (this_ptr->base).invincibility_timer - delta_time;
+  (this_ptr->base).invincibility_timer = fVar10;
   if (fVar10 < 0.0) {
-    (this_ptr->base).no_collision_flag = 0;
+    (this_ptr->base).invincibility_timer = 0.0;
   }
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
   (this_ptr->base).base.model.accumulated_root_motion.y =
@@ -126,7 +125,7 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00412e80(CBaron *this_ptr,float d
       goto LAB_0041300c;
     case 4:
       pCVar4 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                         (&local_84,&g_ZeroVector,
+                         (&local_84,&g_ZeroVector.f,
                           (this_ptr->base).base.model.bone_transform.bone_world_matrices +
                           INT_008224cc);
       pCVar4 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
@@ -137,7 +136,7 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00412e80(CBaron *this_ptr,float d
         local_30.z = pCVar4->z;
       }
       pCVar4 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                         (&local_24,&g_ZeroVector,
+                         (&local_24,&g_ZeroVector.f,
                           (this_ptr->base).base.model.bone_transform.bone_world_matrices +
                           INT_008224d0);
       pCVar4 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
@@ -225,8 +224,7 @@ switchD_0041345d_default:
   core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750
             (pCVar9,source_quaternions,fVar10,iVar3,blend_callback);
   iVar3 = 0;
-  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
-            ((CCharacter *)this_ptr,delta_time,unaff_EDI);
+  core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr,delta_time);
   do {
     local_60.x = core_actor_cpp_getRandomFloat_FUN_0040cc10(-2.0,2.0);
     iVar3 = iVar3 + 1;

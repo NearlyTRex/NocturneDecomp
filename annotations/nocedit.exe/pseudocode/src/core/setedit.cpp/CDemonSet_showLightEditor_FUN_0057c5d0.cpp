@@ -287,8 +287,8 @@ void __cdecl core_setedit_cpp_CDemonSet_showLightEditor_FUN_0057c5d0(CDemonSet *
           strupr(local_134);
         }
         iVar5 = shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
-                          (g_CEditorToolsPtr,"Save set","models",0x647c8f,
-                           (int)local_134);
+                          (g_CEditorToolsPtr,"Save set","models","set",
+                           local_134,1);
         if (iVar5 != 0) {
           core_setedit_cpp_CDemonSet_save_FUN_0057a2a0(this_ptr,local_134);
         }

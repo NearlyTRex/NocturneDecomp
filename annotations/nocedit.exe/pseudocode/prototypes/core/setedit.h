@@ -187,17 +187,17 @@ void __cdecl CDemonSet::showFogEditor(CDemonSet *this_ptr);
 // Address: 00581320
 void __cdecl CDemonSet::computeCameraFog(CDemonSet *this_ptr,int camera_index);
 
-// Original: core_setedit.cpp_FUN_00581450
+// Original: core_setedit.cpp_pickRoomSize_FUN_00581450
 // Address: 00581450
-int __cdecl FUN_00581450(void);
+int __cdecl pickRoomSize(char *title,int *room_size);
 
-// Original: core_setedit.cpp_FUN_00581520
+// Original: core_setedit.cpp_drawHelpEntry_FUN_00581520
 // Address: 00581520
-void __cdecl FUN_00581520(void);
+void __cdecl drawHelpEntry(int column,int row,char *key_label,char *description);
 
-// Original: core_setedit.cpp_FUN_00581590
+// Original: core_setedit.cpp_showRoomEditorHelp_FUN_00581590
 // Address: 00581590
-void __cdecl FUN_00581590(void);
+void __cdecl showRoomEditorHelp(void);
 
 // Original: core_setedit.cpp_renderColoredBox_FUN_005817d0
 // Address: 005817d0
@@ -211,9 +211,9 @@ void __cdecl CDemonSet::showRoomEditor(CDemonSet *this_ptr);
 // Address: 00582930
 void __cdecl drawCameraFrustum(int color,int use_3d_lines);
 
-// Original: core_setedit.cpp_FUN_00582f30
+// Original: core_setedit.cpp_showVdirBoxEditorHelp_FUN_00582f30
 // Address: 00582f30
-void __cdecl FUN_00582f30(void);
+void __cdecl showVdirBoxEditorHelp(void);
 
 // Original: core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170
 // Address: 00583170

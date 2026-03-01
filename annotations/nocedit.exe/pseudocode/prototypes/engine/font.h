@@ -33,7 +33,7 @@ void __cdecl CBitFont::loadBitmap(CBitFont *this_ptr,char *filename,int width,in
 
 // Original: engine_font.cpp_CBitFont_loadNewBitmap_FUN_004cd280
 // Address: 004cd280
-void __cdecl CBitFont::loadNewBitmap(CBitFont *this_ptr,char *filename,int width,int height,int first_char,int last_char,int load_flags,int other);
+void __cdecl CBitFont::loadNewBitmap(CBitFont *this_ptr,char *filename,int width,int height,int first_char,int last_char,int load_flags);
 
 // Original: engine_font.cpp_CBitFont_loadFromFile_FUN_004cd2c0
 // Address: 004cd2c0
@@ -147,9 +147,9 @@ int __cdecl CBitFont::drawCharacter(CBitFont *this_ptr,int character_code,int x,
 // Address: 004cfe80
 int __cdecl CBitFont::getTextWidth(CBitFont *this_ptr,char *text);
 
-// Original: engine_font.cpp_CBitFont_getCharWidth_FUN_004cff40
+// Original: engine_font.cpp_CBitFont_getTextHeight_FUN_004cff40
 // Address: 004cff40
-int __cdecl CBitFont::getCharWidth(CBitFont *this_ptr,char *text_string);
+int __cdecl CBitFont::getTextHeight(CBitFont *this_ptr,char *text_string);
 
 // Original: engine_font.cpp_CBitFont_wrapText_FUN_004d0010
 // Address: 004d0010
@@ -159,17 +159,17 @@ int __cdecl CBitFont::wrapText(CBitFont *this_ptr,char *source_text,char *dest_b
 // Address: 004d01a0
 int __cdecl CBitFont::getCharWidth(CBitFont *font,int char_code);
 
-// Original: engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0
+// Original: engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0
 // Address: 004d01d0
-int __cdecl CBitFont::getCharWidth(CBitFont *this_ptr,int char_code);
+int __cdecl CBitFont::getCharHeight(CBitFont *this_ptr,int char_code);
 
-// Original: engine_font.cpp_CBitFont_getCharXAdvance_FUN_004d0200
+// Original: engine_font.cpp_CBitFont_getCharYOffset_FUN_004d0200
 // Address: 004d0200
-int __cdecl CBitFont::getCharXAdvance(CBitFont *this_ptr,int char_code);
+int __cdecl CBitFont::getCharYOffset(CBitFont *this_ptr,int char_code);
 
-// Original: engine_font.cpp_CBitFont_setCharXAdvanceRange_FUN_004d0230
+// Original: engine_font.cpp_CBitFont_setCharYOffsetRange_FUN_004d0230
 // Address: 004d0230
-void __cdecl CBitFont::setCharXAdvanceRange(CBitFont *this_ptr,int advance_value,int start_char,int end_char);
+void __cdecl CBitFont::setCharYOffsetRange(CBitFont *this_ptr,int offset_value,int start_char,int end_char);
 
 // Original: engine_font.cpp_CBitFont_setFontReady_FUN_004d0290
 // Address: 004d0290

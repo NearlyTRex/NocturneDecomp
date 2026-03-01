@@ -16,9 +16,7 @@ int __cdecl core_platfrm_cpp_CPlatform_renderOpaque_FUN_0054d720(CPlatform *this
   int iVar5;
   CVector3f *pCVar6;
   UOrientationVector *pUVar7;
-  float in_stack_ffffff94;
-  float in_stack_ffffff98;
-  float in_stack_ffffff9c;
+  CBoundingBox3D CStack_6c;
   CBoundingBox3D local_54;
   float fStack_3c;
   float fStack_38;
@@ -52,10 +50,8 @@ int __cdecl core_platfrm_cpp_CPlatform_renderOpaque_FUN_0054d720(CPlatform *this
     if (this_ptr->plot_as_box_in_shadow != 0) {
       iVar5 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
       if (iVar5 != 0) {
-        pCVar4 = (*((this_ptr->base).vtable._ub)->getBoundingBox)
-                           (&this_ptr->base,(CBoundingBox3D *)&stack0xffffff94);
-        core_box_cpp_CBoundingBox3D_render_FUN_004210b0
-                  (pCVar4,(int)in_stack_ffffff94,(int)in_stack_ffffff98,(int)in_stack_ffffff9c);
+        pCVar4 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&CStack_6c);
+        core_box_cpp_CBoundingBox3D_render_FUN_004210b0(pCVar4);
         goto LAB_0054d802;
       }
     }

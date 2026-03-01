@@ -2,11 +2,11 @@
 // Address: 0049d3d0
 // Address Range: [[0049d3d0, 0049d459]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_edittool_cpp_CInputString_init_FUN_0049d3d0(CInputString *this_ptr,char *source_string,int max_length,int param4,int param5,int render_mode)
+// Signature: void __cdecl shape_edittool_cpp_CInputString_init_FUN_0049d3d0(CInputString *this_ptr,char *source_string,int max_length,int mask_mode)
 
 #include "nocturne.h"
 
-void __cdecl shape_edittool_cpp_CInputString_init_FUN_0049d3d0(CInputString *this_ptr,char *source_string,int max_length,int param4,int param5,int render_mode)
+void __cdecl shape_edittool_cpp_CInputString_init_FUN_0049d3d0(CInputString *this_ptr,char *source_string,int max_length,int mask_mode)
 
 {
   char *pcVar1;
@@ -37,6 +37,6 @@ void __cdecl shape_edittool_cpp_CInputString_init_FUN_0049d3d0(CInputString *thi
   }
   this_ptr->selection_start = 0;
   this_ptr->cursor_position = this_ptr->current_length;
-  this_ptr->mask_mode = param4;
+  this_ptr->mask_mode = mask_mode;
   return;
 }

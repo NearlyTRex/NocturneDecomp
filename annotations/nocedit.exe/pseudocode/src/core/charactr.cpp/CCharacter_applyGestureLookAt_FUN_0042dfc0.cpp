@@ -2,11 +2,11 @@
 // Address: 0042dfc0
 // Address Range: [[0042dfc0, 0042e046]]
 // Convention: __cdecl
-// Signature: void __cdecl core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(CCharacter *this_ptr,float delta_time,float param_3)
+// Signature: void __cdecl core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(CCharacter *this_ptr,float delta_time)
 
 #include "nocturne.h"
 
-void __cdecl core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(CCharacter *this_ptr,float delta_time,float param_3)
+void __cdecl core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(CCharacter *this_ptr,float delta_time)
 
 {
   int iVar1;

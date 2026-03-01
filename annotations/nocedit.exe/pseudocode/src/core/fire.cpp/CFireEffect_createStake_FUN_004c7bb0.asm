@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fire_cpp_CFireEffect_createStake_FUN_004c7bb0(CFireEffect *this_ptr,CVector3f *impact_position,CVector3f *orientation_angles,CVector3f *surface_normal,int material_type)
+; void __cdecl core_fire_cpp_CFireEffect_createStake_FUN_004c7bb0(CFireEffect *this_ptr,CVector3f *impact_position,CVector3f *orientation_angles,CVector3f *surface_normal,int ground_type)
 ;
 ; Parameters:
 ; CFireEffect *    Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   impact_position
 ; CVector3f *      Stack[0xc]:4   orientation_angles
 ; CVector3f *      Stack[0x10]:4   surface_normal
-; int              Stack[0x14]:4   material_type
+; int              Stack[0x14]:4   ground_type
 ; Local Variables:
 ; undefined1       Stack[-0x5c]:1  local_5c
 ; undefined4       Stack[-0x34]:4  local_34
@@ -106,7 +106,7 @@ section .text
     ADD EAX,0x2d2ddfc                   ; 004c7c50 | g_StakePool
     PUSH EAX                            ; 004c7c55
     CALL core_fire.cpp_CStake_spawn_FUN_004bfe90 ; 004c7c56
-        ;   XREF to: 004bfe90 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CStake_spawn_FUN_004bfe90(CStake * this_ptr, float spawn_scale, CVector3f * orientation_angles, CVector3f * launch_direction, ...)
+        ;   XREF to: 004bfe90 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CStake_spawn_FUN_004bfe90(CStake * this_ptr, CVector3f * spawn_position, CVector3f * orientation_angles, CVector3f * surface_normal)
     ADD ESP,0x10                        ; 004c7c5b
     MOV EBX,dword ptr [0x02d2ddf8]      ; 004c7c5e | g_StakeAllocIndex
         ;   Label: LAB_004c7c5e

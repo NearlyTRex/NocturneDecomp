@@ -198,7 +198,7 @@ LAB_0057d6df:
       g_CDemonCameraInstance.base.focal_length = g_CSlewPtr->slew_rate;
       core_dcamera_cpp_CDemonCamera_beginScene_FUN_0044c430(&g_CDemonCameraInstance,0);
       engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-                (g_CDemonRendererPtr2,&g_ZeroVector);
+                (g_CDemonRendererPtr2,&g_ZeroVector.f);
       if (iStack_4c == 0) {
         g_CDemonRaytraceInstance.rendering_mode = 1;
       }
@@ -362,7 +362,7 @@ LAB_0057db4e:
       } while (p_Stack_20 != (_FILE *)0x780);
     }
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-    core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
+    core_game_cpp_CGame_updateDT_FUN_004d7d90(g_CGamePtr);
     iVar16 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
     if (iVar16 != 0) goto LAB_0057db4e;
     iVar16 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_F1);
