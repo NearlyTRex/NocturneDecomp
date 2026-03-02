@@ -84,7 +84,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   shape_superopt.cpp_TriListSomething_FUN_005d77a0 at 005d7add
+;   shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a0 at 005d7add
 ;
 ; *****************************************************************************
 

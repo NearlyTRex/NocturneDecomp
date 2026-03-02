@@ -25,7 +25,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_Warning_00623010
 ;   char[1024] g_DialogMessageBuffer_02cef130
-;   HWND g_DialogParentWindow
+;   int g_WarningTextColor
 ;
 ; Called Functions:
 ;   crt_stdio.c__vsprintf_FUN_005fdba8
@@ -48,7 +48,7 @@ section .text
     CALL crt_stdio.c__vsprintf_FUN_005fdba8 ; 0049e708
         ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 0049e70d
-    MOV EBX,dword ptr [0x02cf2a90]      ; 0049e710 | g_DialogParentWindow
+    MOV EBX,dword ptr [0x02cf2a90]      ; 0049e710 | g_WarningTextColor
     PUSH EBX                            ; 0049e716
     PUSH 0x2cef130                      ; 0049e717 | g_DialogMessageBuffer_02cef130
     XOR ECX,ECX                         ; 0049e71c

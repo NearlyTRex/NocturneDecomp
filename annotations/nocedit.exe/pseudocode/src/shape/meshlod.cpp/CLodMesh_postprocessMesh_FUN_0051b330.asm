@@ -12,7 +12,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[4]:
-;   core_skeledit.cpp_CDeformableModel_FUN_0058c190 at 0058d072
+;   core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190 at 0058d072
 ;   shape_meshlod.cpp_CLodMesh_importFromEditorGlobals_FUN_0051b080 at 0051b27b
 ;   shape_meshlod.cpp_CLodMesh_parseS3DFileVariant_FUN_0051adf0 at 0051b066
 ;   shape_meshlod.cpp_CLodMesh_parseS3DFile_FUN_0051aa60 at 0051ad12

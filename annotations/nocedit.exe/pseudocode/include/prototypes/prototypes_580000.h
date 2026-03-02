@@ -17,6 +17,7 @@
 #include "types/classes/CDemonSet.h"
 #include "types/classes/CIniFile.h"
 #include "types/classes/CLodMesh.h"
+#include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CShotgun.h"
 #include "types/classes/CShovel.h"
 #include "types/classes/CSimBox.h"
@@ -24,6 +25,7 @@
 #include "types/classes/CSlew.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
+#include "types/structs/CLodMeshPrecomputeEntry.h"
 #include "types/structs/SCollisionInfo.h"
 
 // =============================================================================
@@ -123,62 +125,62 @@ int __cdecl core_simbox_cpp_CSimBox_propertyActionCallback_FUN_005892d0(CSimBox 
 void __cdecl core_simbox_cpp_CSimBox_getPropertyList_FUN_00589310(CSimBox *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_simbox_cpp_CSimBox_addFilesToExtract_FUN_005893c0(CSimBox *this_ptr,_FILE *file_handle);
 CSimBox * __cdecl core_simbox_cpp_CSimBox_dtor_FUN_005893e0(CSimBox *this_ptr,uint flags);
-void __cdecl core_skeledit_cpp_FUN_00589450(void);
-void __cdecl core_skeledit_cpp_FUN_005894c0(void);
-void __cdecl core_skeledit_cpp_FUN_00589500(void);
-void __cdecl core_skeledit_cpp_FUN_00589530(void);
+void __cdecl core_skeledit_cpp_trimWhitespace_FUN_00589450(char *str);
+void __cdecl core_skeledit_cpp_skipFileLines_FUN_005894c0(_FILE *file_handle,int line_count);
+void __cdecl core_skeledit_cpp_skipLeadingWhitespace_FUN_00589500(char *str);
+void __cdecl core_skeledit_cpp_makeAbsolutePathFromReference_FUN_00589530(char *reference_path,char *target_path);
 int __cdecl core_skeledit_cpp_readNonEmptyLine_FUN_005895f0(char *buffer,_FILE *file,int require_content);
-void __cdecl core_skeledit_cpp_FUN_005896b0(void);
-void __cdecl core_skeledit_cpp_FUN_00589740(void);
-void __cdecl core_skeledit_cpp_FUN_005897b0(void);
-void __cdecl core_skeledit_cpp_FUN_00589a40(void);
-void __cdecl core_skeledit_cpp_FUN_00589b10(void);
+void __cdecl core_skeledit_cpp_ensureFileExtension_FUN_005896b0(char *filename,char *extension);
+void __cdecl core_skeledit_cpp_readQuotedString_FUN_00589740(_FILE *file_handle,char *buffer);
+void __cdecl core_skeledit_cpp_loadIni_FUN_005897b0(void);
+void __cdecl core_skeledit_cpp_saveIni_FUN_00589a40(void);
+void __cdecl core_skeledit_cpp_onLodGenerationComplete_FUN_00589b10(int use_simple_message);
 void __cdecl core_skeledit_cpp_createMeshPrecomputeFile_FUN_00589bb0(CLodMesh *mesh_ptr);
-int __cdecl core_skeledit_cpp_CLodMesh_FUN_00589c20(CLodMesh *this_ptr);
-void __cdecl core_skeledit_cpp_FUN_00589f40(void);
-int __cdecl core_skeledit_cpp_FUN_00589fa0(void);
-void __cdecl core_skeledit_cpp_FUN_00589fc0(void);
-void __cdecl core_skeledit_cpp_FUN_00589fe0(void);
-void __cdecl core_skeledit_cpp_FUN_0058a0f0(void);
-int __cdecl core_skeledit_cpp_FUN_0058a1b0(void);
+int __cdecl core_skeledit_cpp_CLodMesh_selectAndGenerateLods_FUN_00589c20(CLodMesh *this_ptr,CLodMeshPrecomputeEntry *entry,int render_mode);
+void __cdecl core_skeledit_cpp_warnIfFileExistsInPod_FUN_00589f40(char *base_path,char *filename);
+CLodMeshPrecomputeEntry * __cdecl core_skeledit_cpp_CLodMeshPrecomputeEntry_ctor_FUN_00589fa0(CLodMeshPrecomputeEntry *this_ptr);
+void __cdecl core_skeledit_cpp_CLodMeshPrecomputeEntry_reset_FUN_00589fc0(CLodMeshPrecomputeEntry *this_ptr);
+void __cdecl core_skeledit_cpp_CLodMeshPrecomputeEntry_load_FUN_00589fe0(CLodMeshPrecomputeEntry *this_ptr,_FILE *file_handle);
+void __cdecl core_skeledit_cpp_CLodMeshPrecomputeEntry_save_FUN_0058a0f0(CLodMeshPrecomputeEntry *this_ptr,_FILE *file_handle);
+int __cdecl core_skeledit_cpp_CLodMeshPrecomputeEntry_parseLine_FUN_0058a1b0(CLodMeshPrecomputeEntry *this_ptr,char *line);
 void __cdecl core_skeledit_cpp_CDeformableModelInstance_addFilesToExtract_FUN_0058a260(CDeformableModelInstance *this_ptr,_FILE *file_handle);
-void __cdecl core_skeledit_cpp_CDeformableModel_FUN_0058a2b0(CDeformableModel *this_ptr,_FILE *file_handle);
+void __cdecl core_skeledit_cpp_CDeformableModel_addFilesToExtract_FUN_0058a2b0(CDeformableModel *this_ptr,_FILE *file_handle);
 void __cdecl core_skeledit_cpp_CBoneStructure_importBON_FUN_0058a3d0(CBoneStructure *this_ptr,char *filename);
 void __cdecl core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0(CBoneStructure *this_ptr,_FILE *file,int *frame_count_out);
 void __cdecl core_skeledit_cpp_CBoneStructure_readBONframe_FUN_0058aa10(CBoneStructure *this_ptr,_FILE *file,int mirror_flag);
 void __cdecl core_skeledit_cpp_CBoneStructure_skipBONframe_FUN_0058abb0(CBoneStructure *this_ptr,_FILE *file_handle);
-int __cdecl core_skeledit_cpp_FUN_0058ac30(void);
-void __cdecl core_skeledit_cpp_CBoneStructure_FUN_0058ac80(CBoneStructure *this_ptr);
-void __cdecl core_skeledit_cpp_FUN_0058ad30(void);
+int __cdecl core_skeledit_cpp_CBoneStructure_findBoneByName_FUN_0058ac30(CBoneStructure *this_ptr,char *bone_name);
+void __cdecl core_skeledit_cpp_CBoneStructure_computeLocalMatrices_FUN_0058ac80(CBoneStructure *this_ptr);
+void __cdecl core_skeledit_cpp_CBoneStructure_computeWorldMatrices_FUN_0058ad30(CBoneStructure *this_ptr);
 void __cdecl core_skeledit_cpp_CBoneStructure_fixupMatrices_FUN_0058adb0(CBoneStructure *this_ptr);
-void __cdecl core_skeledit_cpp_FUN_0058aeb0(void);
-void __cdecl core_skeledit_cpp_FUN_0058af40(void);
-void __cdecl core_skeledit_cpp_FUN_0058afe0(void *ptr);
-void __cdecl core_skeledit_cpp_FUN_0058b160(void);
-int __cdecl core_skeledit_cpp_FUN_0058b200(void);
-void __cdecl core_skeledit_cpp_FUN_0058b260(void);
+void __cdecl core_skeledit_cpp_CBoneStructure_extractInverseBindPose_FUN_0058aeb0(CBoneStructure *this_ptr,CMatrix3x4f *inverse_matrices);
+void __cdecl core_skeledit_cpp_CBoneStructure_applyMatrixArray_FUN_0058af40(CBoneStructure *this_ptr,CMatrix3x4f *matrices);
+void __cdecl core_skeledit_cpp_CBoneStructure_showBoneHierarchy_FUN_0058afe0(CBoneStructure *this_ptr,char *model_name);
+void __cdecl core_skeledit_cpp_CBoneStructure_copyHierarchyFromSkeleton_FUN_0058b160(CBoneStructure *this_ptr,CSkeleton *skeleton);
+int __cdecl core_skeledit_cpp_CBoneStructure_doesHierarchyMatch_FUN_0058b200(CBoneStructure *this_ptr,CBoneStructure *other);
+void __cdecl core_skeledit_cpp_CSkeleton_scaleFramePositions_FUN_0058b260(CSkeleton *this_ptr,float scale);
 void __cdecl core_skeledit_cpp_CSkeleton_save_FUN_0058b2c0(CSkeleton *this_ptr,char *filename);
 void __cdecl core_skeledit_cpp_CSkeleton_saveStream_FUN_0058b3a0(CSkeleton *this_ptr,_FILE *file_handle);
-void __cdecl core_skeledit_cpp_CDeformableModel_FUN_0058b660(CDeformableModel *this_ptr,char *filename);
-int __cdecl core_skeledit_cpp_CDeformableModel_FUN_0058b8e0(CDeformableModel *this_ptr,_FILE *file_handle);
-int __cdecl core_skeledit_cpp_CDeformableModel_FUN_0058b9b0(CDeformableModel *this_ptr,_FILE *file_handle);
-int __cdecl core_skeledit_cpp_CDeformableModel_FUN_0058bc40(CDeformableModel *this_ptr,_FILE *file_handle);
-void __cdecl core_skeledit_cpp_FUN_0058bd00(void);
-int __cdecl core_skeledit_cpp_CDeformableModel_FUN_0058c190(CDeformableModel *this_ptr,char *filename);
-void __cdecl core_skeledit_cpp_CDeformableModel_FUN_0058d790(CDeformableModel *this_ptr,int param_2,CLodMesh *param_3);
-void __cdecl core_skeledit_cpp_FUN_0058dde0(void);
-void __cdecl core_skeledit_cpp_FUN_0058de70(void);
-void __cdecl core_skeledit_cpp_FUN_0058e0b0(void);
-void __cdecl core_skeledit_cpp_CDeformableModel_FUN_0058e240(CDeformableModel *this_ptr);
-void __cdecl core_skeledit_cpp_CDeformableModel_FUN_0058e3e0(CDeformableModel *this_ptr,float param_2);
-void __cdecl core_skeledit_cpp_CDeformable_groundBias_FUN_0058e4e0(CDeformableModel *this_ptr,int motion_index,float frame_number);
-void __cdecl core_skeledit_cpp_CDeformableModel_FUN_0058e600(CDeformableModel *this_ptr);
+void __cdecl core_skeledit_cpp_CDeformableModel_importGeometryS3D_FUN_0058b660(CDeformableModel *this_ptr,char *filename);
+int __cdecl core_skeledit_cpp_CDeformableModel_importTexturesS3D_FUN_0058b8e0(CDeformableModel *this_ptr,_FILE *file_handle);
+int __cdecl core_skeledit_cpp_CDeformableModel_importFacesS3D_FUN_0058b9b0(CDeformableModel *this_ptr,_FILE *file_handle);
+int __cdecl core_skeledit_cpp_CDeformableModel_importVerticesS3D_FUN_0058bc40(CDeformableModel *this_ptr,_FILE *file_handle);
+void __cdecl core_skeledit_cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00(CDeformableModel *this_ptr,char *filename,CBoneStructure *bone_structure);
+int __cdecl core_skeledit_cpp_CDeformableModel_buildFromPosFile_FUN_0058c190(CDeformableModel *this_ptr,CLodMeshPrecomputeEntry *entry);
+void __cdecl core_skeledit_cpp_CDeformableModel_extractLodLevel_FUN_0058d790(CDeformableModel *this_ptr,int lod_index,CLodMesh *lod_mesh, CMatrix3x4f *inverse_matrices);
+void __cdecl core_skeledit_cpp_CDeformableModel_extractBoneScales_FUN_0058dde0(CDeformableModel *this_ptr,CBoneStructure *bone_structure);
+void __cdecl core_skeledit_cpp_CDeformableModel_cramModelTexture_FUN_0058de70(CDeformableModel *this_ptr,char *base_name,int num_crams,int atlas_dimension, int texture_set_index,int max_iterations);
+void __cdecl core_skeledit_cpp_CDeformableModel_addTextureSet_FUN_0058e0b0(CDeformableModel *this_ptr,char *name_format);
+void __cdecl core_skeledit_cpp_CDeformableModel_sortFacesByTexture_FUN_0058e240(CDeformableModel *this_ptr);
+void __cdecl core_skeledit_cpp_CDeformableModel_scaleAllVertices_FUN_0058e3e0(CDeformableModel *this_ptr,float scale);
+void __cdecl core_skeledit_cpp_CDeformableModel_groundBias_FUN_0058e4e0(CDeformableModel *this_ptr,int motion_index,float frame_number);
+void __cdecl core_skeledit_cpp_CDeformableModel_offsetRootVertices_FUN_0058e600(CDeformableModel *this_ptr,CVector3f *offset);
 void __cdecl core_skeledit_cpp_CDeformableModel_calcRootOffsetScale_FUN_0058e690(CDeformableModel *this_ptr);
-void __cdecl core_skeledit_cpp_FUN_0058eaa0(void);
+void __cdecl core_skeledit_cpp_CDeformableModel_pruneWeakBoneInfluences_FUN_0058eaa0(CDeformableModel *this_ptr);
 void __cdecl core_skeledit_cpp_CDeformableModel_removeUnusedTextures_FUN_0058ec60(CDeformableModel *this_ptr);
-void __cdecl core_skeledit_cpp_CDeformableModel_FUN_0058ede0(CDeformableModel *this_ptr);
+void __cdecl core_skeledit_cpp_CDeformableModel_removeDuplicateFaces_FUN_0058ede0(CDeformableModel *this_ptr);
 void __cdecl core_skeledit_cpp_CDeformableModel_save_FUN_0058f040(CDeformableModel *this_ptr,char *filename);
 void __cdecl core_skeledit_cpp_CDeformableModel_saveStream_FUN_0058f120(CDeformableModel *this_ptr,_FILE *file_handle);
-int * __cdecl core_skeledit_cpp_CDeformableModel_FUN_0058f790(CDeformableModel *this_ptr);
+void __cdecl core_skeledit_cpp_CDeformableModel_initSinglePart_FUN_0058f790(CDeformableModel *this_ptr);
 int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformableModel *this_ptr,char *filename);
 

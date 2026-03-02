@@ -1,0 +1,256 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 124,
+    "complexity_score": 77,
+    "cross_reference_count": 3,
+    "function_call_count": 2,
+    "global_count": 3,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 62,
+    "suspect_count": 1,
+    "suspect_types": [
+      "param_count_too_many"
+    ],
+    "total_lines": 186
+  },
+  "cross_references": [
+    {
+      "addr": "004be070",
+      "from_addr": "004be0fe",
+      "name": "core_fileman.cpp_CDemonFileManager_addDeformableModelToExtractList_FUN_004be070",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f3fa0",
+      "from_addr": "004f3fdb",
+      "name": "core_hero.cpp_CHero_addFilesToExtract_FUN_004f3fa0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058a260",
+      "from_addr": "0058a29a",
+      "name": "core_skeledit.cpp_CDeformableModelInstance_addFilesToExtract_FUN_0058a260",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0058a2b0",
+    "address_range": [
+      [
+        "0058a2b0",
+        "0058a3c8"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeledit.cpp_CDeformableModel_addFilesToExtract_FUN_0058a2b0",
+    "signature": "void __cdecl core_skeledit_cpp_CDeformableModel_addFilesToExtract_FUN_0058a2b0(CDeformableModel *this_ptr,_FILE *file_handle)"
+  },
+  "function_calls": [
+    {
+      "addr": "005ff9f3",
+      "is_variadic": false,
+      "name": "crt_stack.c___STK_FUN_005ff9f3"
+    },
+    {
+      "addr": "005fe6d0",
+      "is_variadic": true,
+      "name": "crt_stdio.c_fprintf_FUN_005fe6d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0064a258",
+      "name": "s_DATA_s_0064a258",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064a261",
+      "name": "s_ART_s_RAW_0064a261",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064a26d",
+      "name": "s_ART_s_ACT_0064a26d",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "0058a29a",
+        "call_type": "direct",
+        "caller": "core_skeledit.cpp_CDeformableModelInstance_addFilesToExtract_FUN_0058a260",
+        "estimated_params": 1,
+        "instructions_analyzed": 3,
+        "reg_params": [],
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004f3fdb",
+        "call_type": "direct",
+        "caller": "core_hero.cpp_CHero_addFilesToExtract_FUN_004f3fa0",
+        "estimated_params": 1,
+        "instructions_analyzed": 3,
+        "reg_params": [],
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004be0fe",
+        "call_type": "direct",
+        "caller": "core_fileman.cpp_CDemonFileManager_addDeformableModelToExtractList_FUN_004be070",
+        "estimated_params": 2,
+        "instructions_analyzed": 7,
+        "reg_params": [],
+        "stack_params": 2
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 2,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.571428571428571,
+    "instruction_count": 98,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 2,
+      "CALL": 4,
+      "CBRANCH": 11,
+      "COPY": 71,
+      "INT_ADD": 42,
+      "INT_AND": 63,
+      "INT_CARRY": 11,
+      "INT_EQUAL": 60,
+      "INT_LESS": 10,
+      "INT_NOTEQUAL": 4,
+      "INT_SBORROW": 10,
+      "INT_SCARRY": 15,
+      "INT_SLESS": 30,
+      "INT_SUB": 29,
+      "INT_XOR": 2,
+      "LOAD": 25,
+      "POPCOUNT": 30,
+      "RETURN": 1,
+      "STORE": 26
+    },
+    "pcode_op_count": 448
+  },
+  "stack_frame": {
+    "frame_size": 56,
+    "local_size": 48,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_2b",
+        "offset": -43,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_29",
+        "offset": -41,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModel *"
+      },
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "_FILE *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 4,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "0058a31b",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "0058a33b",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "0058a35c",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "0058a371",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "call_site_count": 3,
+      "declared_params": 2,
+      "description": "Signature has too many params - likely wrong calling convention",
+      "estimated_params": 1,
+      "fix_type": "remove_params",
+      "match": "declared:2 vs estimated:1",
+      "param_delta": -1,
+      "text": "Function declares 2 params but call sites push 1 (1 extra)",
+      "type": "param_count_too_many"
+    }
+  ]
+}

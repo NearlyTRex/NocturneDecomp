@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   frame_count
 ;
 ; XREF[2]:
-;   core_skeledit.cpp_CSkeleton_FUN_00592690 at 00592b10
+;   core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 at 00592b10
 ;   core_skeleton.cpp_CSkeleton_loadStream_FUN_00599bb0 at 00599c9e
 ;
 ; Referenced Globals:

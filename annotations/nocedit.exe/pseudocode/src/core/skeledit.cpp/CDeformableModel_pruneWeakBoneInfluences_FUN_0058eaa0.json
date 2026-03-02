@@ -1,0 +1,290 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 188,
+    "complexity_score": 149,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 5,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 84,
+    "suspect_count": 6,
+    "suspect_types": [
+      "pointer_cast"
+    ],
+    "total_lines": 272
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0058eaa0",
+    "address_range": [
+      [
+        "0058eaa0",
+        "0058ec5c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_skeledit.cpp_CDeformableModel_pruneWeakBoneInfluences_FUN_0058eaa0",
+    "signature": "void __cdecl core_skeledit_cpp_CDeformableModel_pruneWeakBoneInfluences_FUN_0058eaa0(CDeformableModel *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005ff9f3",
+      "is_variadic": false,
+      "name": "crt_stack.c___STK_FUN_005ff9f3"
+    },
+    {
+      "addr": "0049e790",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0064b072",
+      "name": "s_Optimizing_deformable_mo_0064b072",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064b09a",
+      "name": "s_Optimized_deformable_mod_0064b09a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064b0c2",
+      "name": "DOUBLE_0064b0c2",
+      "type": "double",
+      "value": "0.0100000000000000"
+    },
+    {
+      "addr": "00678a60",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "02cf1cd4"
+    },
+    {
+      "addr": "02cf1cd4",
+      "name": "g_CEditorToolsInstance",
+      "type": "CEditorTools",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.922077922077922,
+    "instruction_count": 154,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 4,
+      "BRANCH": 5,
+      "CALL": 3,
+      "CBRANCH": 11,
+      "COPY": 177,
+      "FLOAT2FLOAT": 8,
+      "FLOAT_ADD": 1,
+      "FLOAT_DIV": 1,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_NAN": 2,
+      "INT_ADD": 82,
+      "INT_AND": 91,
+      "INT_CARRY": 12,
+      "INT_EQUAL": 90,
+      "INT_LEFT": 4,
+      "INT_LESS": 10,
+      "INT_NOTEQUAL": 8,
+      "INT_OR": 5,
+      "INT_SBORROW": 10,
+      "INT_SCARRY": 20,
+      "INT_SLESS": 42,
+      "INT_SUB": 22,
+      "INT_XOR": 10,
+      "INT_ZEXT": 4,
+      "LOAD": 50,
+      "POPCOUNT": 42,
+      "RETURN": 1,
+      "STORE": 40
+    },
+    "pcode_op_count": 758
+  },
+  "stack_frame": {
+    "frame_size": 72,
+    "local_size": 68,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModel *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0058eab3",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 28,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "for (local_34 = 0; local_34 < *(int *)((int)this_ptr->vertex_count + local_40);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 30,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "pfVar1 = (float *)(local_14 + *(int *)((int)this_ptr->vertex_data_ptr + local_40));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 44,
+      "match": "(byte *)((int)",
+      "severity": "mild",
+      "text": "*(byte *)((int)local_2c + 1) = *(byte *)((int)local_28 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 44,
+      "match": "(byte *)((int)",
+      "severity": "mild",
+      "text": "*(byte *)((int)local_2c + 1) = *(byte *)((int)local_28 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 54,
+      "match": "(float *)((int)",
+      "severity": "mild",
+      "text": "local_2c = (float *)((int)local_2c + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 59,
+      "match": "(float *)((int)",
+      "severity": "mild",
+      "text": "local_28 = (float *)((int)local_28 + 1);",
+      "type": "pointer_cast"
+    }
+  ]
+}

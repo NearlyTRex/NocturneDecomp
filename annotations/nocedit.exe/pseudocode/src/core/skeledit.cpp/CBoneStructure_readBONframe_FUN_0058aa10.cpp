@@ -71,7 +71,7 @@ LAB_0058aa88:
     }
     core_xform_cpp_orthonormalizeMatrix3x3_FUN_005f6690((CMatrix3x3f *)matrix,1);
   }
-  core_skeledit_cpp_CBoneStructure_FUN_0058ac80(this_ptr);
+  core_skeledit_cpp_CBoneStructure_computeLocalMatrices_FUN_0058ac80(this_ptr);
   if ((file->_flag & 0x20) == 0) {
     return;
   }

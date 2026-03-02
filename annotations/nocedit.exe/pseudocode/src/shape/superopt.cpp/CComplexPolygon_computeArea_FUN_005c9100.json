@@ -1,0 +1,200 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "incompatible_types",
+        "column": 14,
+        "line": 54,
+        "message": "invalid operands to binary expression ('double' and 'int')"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 83,
+    "complexity_score": 86,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 46,
+    "suspect_count": 3,
+    "suspect_types": [
+      "decompiler_intrinsic",
+      "sub84_truncation"
+    ],
+    "total_lines": 129
+  },
+  "cross_references": [
+    {
+      "addr": "005c8e70",
+      "from_addr": "005c9064",
+      "name": "shape_superopt.cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005c8b50",
+      "from_addr": "005c8e2b",
+      "name": "shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005c9100",
+    "address_range": [
+      [
+        "005c9100",
+        "005c91d8"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "shape_superopt.cpp_CComplexPolygon_computeArea_FUN_005c9100",
+    "signature": "int __cdecl shape_superopt_cpp_CComplexPolygon_computeArea_FUN_005c9100(CComplexPolygon *this_ptr,SExpandedEdge *edges,int edge_count)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "00654222",
+      "name": "DOUBLE_00654222",
+      "type": "double",
+      "value": "0.5"
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.628205128205129,
+    "instruction_count": 78,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "BOOL_OR": 1,
+      "CBRANCH": 2,
+      "COPY": 281,
+      "FLOAT2FLOAT": 23,
+      "FLOAT_ADD": 8,
+      "FLOAT_MULT": 9,
+      "FLOAT_SQRT": 1,
+      "FLOAT_SUB": 3,
+      "INT_ADD": 34,
+      "INT_AND": 35,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 23,
+      "INT_LEFT": 2,
+      "INT_LESS": 3,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_OR": 5,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 13,
+      "INT_SUB": 5,
+      "INT_XOR": 2,
+      "LOAD": 25,
+      "POPCOUNT": 11,
+      "RETURN": 1,
+      "STORE": 11
+    },
+    "pcode_op_count": 517
+  },
+  "stack_frame": {
+    "frame_size": 56,
+    "local_size": 44,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CComplexPolygon *"
+      },
+      {
+        "is_param": true,
+        "name": "edges",
+        "offset": 8,
+        "size": 4,
+        "type": "SExpandedEdge *"
+      },
+      {
+        "is_param": true,
+        "name": "edge_count",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005c9106",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 47,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "local_10 = SUB84(SQRT(local_18 * local_18 + local_28 * local_28 + local_20 * local_20),0);",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 47,
+      "match": "SUB84",
+      "severity": "mild",
+      "text": "local_10 = SUB84(SQRT(local_18 * local_18 + local_28 * local_28 + local_20 * local_20),0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 47,
+      "match": "SQRT",
+      "severity": "mild",
+      "text": "local_10 = SUB84(SQRT(local_18 * local_18 + local_28 * local_28 + local_20 * local_20),0);",
+      "type": "decompiler_intrinsic"
+    }
+  ]
+}

@@ -375,7 +375,7 @@ CCharacter_vtable DAT_00663E50 = {
     .canWalk = (CCharacter_canWalk *)core_hero_cpp_CHero_canWalk_FUN_004f28a0,
     .isGrabbable = (CCharacter_isGrabbable *)core_hero_cpp_CHero_isGrabbable_FUN_004f2880,
     .canBeGrabbed = (CCharacter_canBeGrabbed *)core_hero_cpp_CHero_canBeGrabbed_FUN_004f2890,
-    .getGrabbed = (CCharacter_getGrabbed *)core_svetlana_cpp_CSvetlana_FUN_005d9ec0,
+    .getGrabbed = (CCharacter_getGrabbed *)core_svetlana_cpp_CSvetlana_getGrabbed_FUN_005d9ec0,
     .releaseFromGrab = (CCharacter_releaseFromGrab *)core_hero_cpp_CHero_releaseFromGrab_FUN_004f29b0,
     .getGrabber = (CCharacter_getGrabber *)core_charactr_cpp_CCharacter_getGrabber_FUN_0042bf80,
     .releaseVictim = (CCharacter_releaseVictim *)core_charactr_cpp_CCharacter_releaseVictim_FUN_0042bf70,
@@ -3825,33 +3825,33 @@ CFont_vtable g_CWinFontVTable = {
 
 // CHero_vtable
 CHero_vtable DAT_00660188 = {
-    .createDefaultGun = (CHero_createDefaultGun *)core_hero_cpp_CHero_createDefaultGun_FUN_004f2a30,
-    .drawGun = (CHero_drawGun *)core_icepick_cpp_CIcePick_drawGuns_FUN_004f9770,
-    .areGunsDrawn = (CHero_areGunsDrawn *)core_icepick_cpp_CIcePick_areGunsDrawn_FUN_004f9760,
+    .createDefaultWeapon = (CHero_createDefaultWeapon *)core_hero_cpp_CHero_createDefaultWeapon_FUN_004f2a30,
+    .drawWeapon = (CHero_drawWeapon *)core_icepick_cpp_CIcePick_drawWeapon_FUN_004f9770,
+    .isWeaponDrawn = (CHero_isWeaponDrawn *)core_icepick_cpp_CIcePick_isWeaponDrawn_FUN_004f9760,
     .reset = (CHero_reset *)core_hero_cpp_CHero_reset_FUN_004f3b20
 };
 CHero_vtable DAT_00661A98 = {
-    .createDefaultGun = (CHero_createDefaultGun *)core_hero_cpp_CHero_createDefaultGun_FUN_004f2a30,
-    .drawGun = (CHero_drawGun *)core_moloch_cpp_CMoloch_drawGun_FUN_005299d0,
-    .areGunsDrawn = (CHero_areGunsDrawn *)core_moloch_cpp_CMoloch_areGunsDrawn_FUN_005299e0,
+    .createDefaultWeapon = (CHero_createDefaultWeapon *)core_hero_cpp_CHero_createDefaultWeapon_FUN_004f2a30,
+    .drawWeapon = (CHero_drawWeapon *)core_moloch_cpp_CMoloch_drawWeapon_FUN_005299d0,
+    .isWeaponDrawn = (CHero_isWeaponDrawn *)core_moloch_cpp_CMoloch_isWeaponDrawn_FUN_005299e0,
     .reset = (CHero_reset *)core_hero_cpp_CHero_reset_FUN_004f3b20
 };
 CHero_vtable DAT_006625B8 = {
-    .createDefaultGun = (CHero_createDefaultGun *)core_scat_cpp_CScat_createDefaultGun_FUN_00557150,
-    .drawGun = (CHero_drawGun *)core_scat_cpp_CScat_drawGun_FUN_00558000,
-    .areGunsDrawn = (CHero_areGunsDrawn *)core_scat_cpp_CScat_areGunsDrawn_FUN_00557ff0,
+    .createDefaultWeapon = (CHero_createDefaultWeapon *)core_scat_cpp_CScat_createDefaultWeapon_FUN_00557150,
+    .drawWeapon = (CHero_drawWeapon *)core_scat_cpp_CScat_drawWeapon_FUN_00558000,
+    .isWeaponDrawn = (CHero_isWeaponDrawn *)core_scat_cpp_CScat_isWeaponDrawn_FUN_00557ff0,
     .reset = (CHero_reset *)core_hero_cpp_CHero_reset_FUN_004f3b20
 };
 CHero_vtable DAT_006638D8 = {
-    .createDefaultGun = (CHero_createDefaultGun *)core_hero_cpp_CHero_createDefaultGun_FUN_004f2a30,
-    .drawGun = (CHero_drawGun *)core_stranger_cpp_CStranger_drawGuns_FUN_005c6660,
-    .areGunsDrawn = (CHero_areGunsDrawn *)core_stranger_cpp_CStranger_areGunsDrawn_FUN_005c6650,
+    .createDefaultWeapon = (CHero_createDefaultWeapon *)core_hero_cpp_CHero_createDefaultWeapon_FUN_004f2a30,
+    .drawWeapon = (CHero_drawWeapon *)core_stranger_cpp_CStranger_drawWeapon_FUN_005c6660,
+    .isWeaponDrawn = (CHero_isWeaponDrawn *)core_stranger_cpp_CStranger_isWeaponDrawn_FUN_005c6650,
     .reset = (CHero_reset *)core_stranger_cpp_CStranger_reset_FUN_005c6750
 };
 CHero_vtable DAT_00663EB8 = {
-    .createDefaultGun = (CHero_createDefaultGun *)core_hero_cpp_CHero_createDefaultGun_FUN_004f2a30,
-    .drawGun = (CHero_drawGun *)core_svetlana_cpp_CSvetlana_FUN_005d9ee0,
-    .areGunsDrawn = (CHero_areGunsDrawn *)core_svetlana_cpp_CSvetlana_FUN_005d9ed0,
+    .createDefaultWeapon = (CHero_createDefaultWeapon *)core_hero_cpp_CHero_createDefaultWeapon_FUN_004f2a30,
+    .drawWeapon = (CHero_drawWeapon *)core_svetlana_cpp_CSvetlana_drawWeapon_FUN_005d9ee0,
+    .isWeaponDrawn = (CHero_isWeaponDrawn *)core_svetlana_cpp_CSvetlana_isWeaponDrawn_FUN_005d9ed0,
     .reset = (CHero_reset *)core_hero_cpp_CHero_reset_FUN_004f3b20
 };
 
@@ -3935,21 +3935,21 @@ CObj_vtable g_CObjVTable = {
 
 // COptimize_vtable
 COptimize_vtable g_COptimizeVTable = {
-    .func1 = (void *)shape_superopt_cpp_COptimize_FUN_005d7000,
-    .func2 = (void *)shape_superopt_cpp_COptimize_FUN_005d70d0,
-    .func3 = (void *)shape_superopt_cpp_COptimize_FUN_005d70f0,
-    .func4 = (void *)shape_superopt_cpp_COptimize_FUN_005d7120,
-    .func5 = (void *)shape_superopt_cpp_COptimize_FUN_005d7140,
-    .func6 = (void *)shape_superopt_cpp_COptimize_FUN_005d7170,
-    .func7 = (void *)shape_superopt_cpp_COptimize_FUN_005d7190,
-    .func8 = (void *)shape_superopt_cpp_COptimize_FUN_005d71c0,
-    .func9 = (void *)shape_superopt_cpp_COptimize_FUN_005d71d0,
-    .func10 = (void *)shape_superopt_cpp_COptimize_FUN_005d71e0,
-    .func11 = (void *)shape_superopt_cpp_COptimize_FUN_005d7290,
-    .func12 = (void *)shape_superopt_cpp_COptimize_FUN_005d7350,
-    .func13 = (void *)shape_superopt_cpp_COptimize_FUN_005d7460,
-    .func14 = (void *)shape_superopt_cpp_COptimize_FUN_005d7690,
-    .func15 = (void *)shape_superopt_cpp_COptimize_FUN_005d76e0
+    .cleanup = (COptimize_cleanup *)shape_superopt_cpp_COptimize_cleanup_FUN_005d7000,
+    .setWeldThreshold = (COptimize_setWeldThreshold *)shape_superopt_cpp_COptimize_setWeldThreshold_FUN_005d70d0,
+    .getWeldThreshold = (COptimize_getWeldThreshold *)shape_superopt_cpp_COptimize_getWeldThreshold_FUN_005d70f0,
+    .setCoplanarAngleThreshold = (COptimize_setCoplanarAngleThreshold *)shape_superopt_cpp_COptimize_setCoplanarAngleThreshold_FUN_005d7120,
+    .getCoplanarAngleThreshold = (COptimize_getCoplanarAngleThreshold *)shape_superopt_cpp_COptimize_getCoplanarAngleThreshold_FUN_005d7140,
+    .setCoplanarDistanceThreshold = (COptimize_setCoplanarDistanceThreshold *)shape_superopt_cpp_COptimize_setCoplanarDistanceThreshold_FUN_005d7170,
+    .getCoplanarDistanceThreshold = (COptimize_getCoplanarDistanceThreshold *)shape_superopt_cpp_COptimize_getCoplanarDistanceThreshold_FUN_005d7190,
+    .setMaxPolygonSides = (COptimize_setMaxPolygonSides *)shape_superopt_cpp_COptimize_setMaxPolygonSides_FUN_005d71c0,
+    .getMaxPolygonSides = (COptimize_getMaxPolygonSides *)shape_superopt_cpp_COptimize_getMaxPolygonSides_FUN_005d71d0,
+    .setGeometry = (COptimize_setGeometry *)shape_superopt_cpp_COptimize_setGeometry_FUN_005d71e0,
+    .optimize = (COptimize_optimize *)shape_superopt_cpp_COptimize_optimize_FUN_005d7290,
+    .optimizeComplex = (COptimize_optimizeComplex *)shape_superopt_cpp_COptimize_optimizeComplex_FUN_005d7350,
+    .findCoplanarPolygons = (COptimize_findCoplanarPolygons *)shape_superopt_cpp_COptimize_findCoplanarPolygons_FUN_005d7460,
+    .splitToConvex = (COptimize_splitToConvex *)shape_superopt_cpp_COptimize_splitToConvex_FUN_005d7690,
+    .addComplexPolygon = (COptimize_addComplexPolygon *)shape_superopt_cpp_COptimize_addComplexPolygon_FUN_005d76e0
 };
 
 // CParticle_vtable

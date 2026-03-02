@@ -7,7 +7,7 @@
 ; CMatrix3x4f *    Stack[0x4]:4   matrix
 ;
 ; XREF[3]:
-;   core_skeledit.cpp_FUN_0058aeb0 at 0058aef3
+;   core_skeledit.cpp_CBoneStructure_extractInverseBindPose_FUN_0058aeb0 at 0058aef3
 ;   core_tentacle.cpp_CTentacle_process_FUN_005db050 at 005db3c0
 ;   core_xform.cpp_quaternionToMatrix3x4_FUN_005f73e0 at 005f7402
 ;

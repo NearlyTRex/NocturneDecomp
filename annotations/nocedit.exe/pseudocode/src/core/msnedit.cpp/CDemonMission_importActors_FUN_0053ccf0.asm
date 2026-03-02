@@ -37,9 +37,9 @@
 ;   core_game.cpp_CGame_loadGame_FUN_004e12b0
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_00523b70
+;   core_mission.cpp_CDemonMission_clearMission_FUN_00522d20
 ;   core_mission.cpp_CDemonMission_countActors_FUN_00523cc0
 ;   core_mission.cpp_CDemonMission_findActorByName_FUN_00524030
-;   core_mission.cpp_CDemonMission_FUN_00522d20
 ;   core_mission.cpp_CDemonMission_generateActorName_FUN_00524700
 ;   core_mission.cpp_CDemonMission_load_FUN_00522d90
 ;   core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0
@@ -222,8 +222,8 @@ section .text
     PUSH EAX                            ; 0053ceec
     MOV [0x0067d550],EAX                ; 0053ceed | g_CDemonMissionPtr
     MOV EBX,EAX                         ; 0053cef2
-    CALL core_mission.cpp_CDemonMission_FUN_00522d20 ; 0053cef4
-        ;   XREF to: 00522d20 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_00522d20(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_clearMission_FUN_00522d20 ; 0053cef4
+        ;   XREF to: 00522d20 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_clearMission_FUN_00522d20(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 0053cef9
     MOV EAX,EBX                         ; 0053cefc
     MOV EDI,0xc85                       ; 0053cefe

@@ -11,9 +11,9 @@ void __cdecl shape_superopt_cpp_CPoly_copyFrom_FUN_005cc6a0(CPoly *this_ptr,CPol
 {
   int iVar1;
   CPoly *pCVar2;
-  CVector2d *pCVar3;
+  CP2D *pCVar3;
   CPoly *pCVar4;
-  CVector2d *pCVar5;
+  CP2D *pCVar5;
   
   this_ptr->parent_obj = parent_obj;
   pCVar2 = source;
@@ -30,22 +30,25 @@ void __cdecl shape_superopt_cpp_CPoly_copyFrom_FUN_005cc6a0(CPoly *this_ptr,CPol
   pCVar3 = source->uv_coords;
   pCVar5 = this_ptr->uv_coords;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *(uint *)&pCVar5->x = *(uint *)&pCVar3->x;
-    pCVar3 = (CVector2d *)((int)&pCVar3->x + 4);
-    pCVar5 = (CVector2d *)((int)&pCVar5->x + 4);
+    *(uint *)&(pCVar5->impl).x = *(uint *)&(pCVar3->impl).x;
+    pCVar3 = (CP2D *)((int)&(pCVar3->impl).x + 4);
+    pCVar5 = (CP2D *)((int)&(pCVar5->impl).x + 4);
   }
   for (iVar1 = 0; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *(byte *)&pCVar5->x = *(byte *)&pCVar3->x;
-    pCVar3 = (CVector2d *)((int)&pCVar3->x + 1);
-    pCVar5 = (CVector2d *)((int)&pCVar5->x + 1);
+    *(byte *)&(pCVar5->impl).x = *(byte *)&(pCVar3->impl).x;
+    pCVar3 = (CP2D *)((int)&(pCVar3->impl).x + 1);
+    pCVar5 = (CP2D *)((int)&(pCVar5->impl).x + 1);
   }
   this_ptr->material_id = source->material_id;
   this_ptr->flags = source->flags;
-  *(uint *)&(this_ptr->normal).x = *(uint *)&(source->normal).x;
-  *(uint *)((int)&(this_ptr->normal).x + 4) = *(uint *)((int)&(source->normal).x + 4);
-  *(uint *)&(this_ptr->normal).y = *(uint *)&(source->normal).y;
-  *(uint *)((int)&(this_ptr->normal).y + 4) = *(uint *)((int)&(source->normal).y + 4);
-  *(uint *)&(this_ptr->normal).z = *(uint *)&(source->normal).z;
-  *(uint *)((int)&(this_ptr->normal).z + 4) = *(uint *)((int)&(source->normal).z + 4);
+  *(uint *)&(this_ptr->normal).impl.x = *(uint *)&(source->normal).impl.x;
+  *(uint *)((int)&(this_ptr->normal).impl.x + 4) =
+       *(uint *)((int)&(source->normal).impl.x + 4);
+  *(uint *)&(this_ptr->normal).impl.y = *(uint *)&(source->normal).impl.y;
+  *(uint *)((int)&(this_ptr->normal).impl.y + 4) =
+       *(uint *)((int)&(source->normal).impl.y + 4);
+  *(uint *)&(this_ptr->normal).impl.z = *(uint *)&(source->normal).impl.z;
+  *(uint *)((int)&(this_ptr->normal).impl.z + 4) =
+       *(uint *)((int)&(source->normal).impl.z + 4);
   return;
 }

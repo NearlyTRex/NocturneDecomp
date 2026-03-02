@@ -17,7 +17,7 @@
 ;   core_msnedit.cpp_convertAllMissionFiles_FUN_00537230 at 00537274
 ;   core_skeledit.cpp_CDeformableModel_save_FUN_0058f040 at 0058f075
 ;   core_skeledit.cpp_CSkeleton_save_FUN_0058b2c0 at 0058b2f5
-;   core_skeledit.cpp_FUN_00589f40 at 00589f5f
+;   core_skeledit.cpp_warnIfFileExistsInPod_FUN_00589f40 at 00589f5f
 ;
 ; Called Functions:
 ;   engine_dosio.c_getRelativeFilePath_FUN_004816c0

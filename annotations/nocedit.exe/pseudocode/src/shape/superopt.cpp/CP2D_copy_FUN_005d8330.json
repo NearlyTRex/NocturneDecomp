@@ -1,0 +1,119 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 12,
+    "complexity_score": 53,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 8,
+    "suspect_count": 4,
+    "suspect_types": [
+      "pointer_cast"
+    ],
+    "total_lines": 20
+  },
+  "cross_references": [
+    {
+      "addr": "005d77a0",
+      "from_addr": "005d7af3",
+      "name": "shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a0",
+      "type": "DATA"
+    }
+  ],
+  "function": {
+    "address": "005d8330",
+    "address_range": [
+      [
+        "005d8330",
+        "005d834e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_superopt.cpp_CP2D_copy_FUN_005d8330",
+    "signature": "CP2D * __cdecl shape_superopt_cpp_CP2D_copy_FUN_005d8330(CP2D *dst,CP2D *src)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 2.8181818181818183,
+    "instruction_count": 11,
+    "opcode_distribution": {
+      "COPY": 10,
+      "INT_ADD": 9,
+      "LOAD": 7,
+      "RETURN": 1,
+      "STORE": 4
+    },
+    "pcode_op_count": 31
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "dst",
+        "offset": 4,
+        "size": 4,
+        "type": "CP2D *"
+      },
+      {
+        "is_param": true,
+        "name": "src",
+        "offset": 8,
+        "size": 4,
+        "type": "CP2D *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 6,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&(dst->impl).x + 4) = *(uint *)((int)&(src->impl).x + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 6,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&(dst->impl).x + 4) = *(uint *)((int)&(src->impl).x + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 8,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&(dst->impl).y + 4) = *(uint *)((int)&(src->impl).y + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 8,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&(dst->impl).y + 4) = *(uint *)((int)&(src->impl).y + 4);",
+      "type": "pointer_cast"
+    }
+  ]
+}

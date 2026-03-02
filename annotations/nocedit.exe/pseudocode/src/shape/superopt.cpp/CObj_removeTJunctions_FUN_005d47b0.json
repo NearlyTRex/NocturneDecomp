@@ -15,43 +15,43 @@
       },
       {
         "category": "other",
-        "column": 39,
+        "column": 44,
         "line": 470,
         "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "other",
-        "column": 39,
+        "column": 44,
         "line": 471,
         "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "other",
-        "column": 39,
+        "column": 44,
         "line": 472,
         "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "other",
-        "column": 39,
+        "column": 44,
         "line": 474,
         "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "other",
-        "column": 39,
+        "column": 44,
         "line": 475,
         "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "other",
-        "column": 39,
+        "column": 44,
         "line": 476,
         "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "other",
-        "column": 39,
+        "column": 44,
         "line": 477,
         "message": "member reference base type 'double' is not a structure or union"
       }
@@ -80,7 +80,7 @@
     {
       "addr": "005d7290",
       "from_addr": "005d72bc",
-      "name": "shape_superopt.cpp_COptimize_FUN_005d7290",
+      "name": "shape_superopt.cpp_COptimize_optimize_FUN_005d7290",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -889,7 +889,7 @@
       "line": 123,
       "match": "(char *)((int)",
       "severity": "mild",
-      "text": "((char *)((int)&local_1dc.normal.z + 4),\"Deleting T-Junctions (%d deleted so far)\",",
+      "text": "((char *)((int)&local_1dc.normal.impl.z + 4),\"Deleting T-Junctions (%d deleted so far)\",",
       "type": "pointer_cast"
     },
     {
@@ -897,7 +897,7 @@
       "line": 136,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uVar12 = *(uint *)((int)&(segEnd->position).x + 4);",
+      "text": "uVar12 = *(uint *)((int)&(seg_end->position).x + 4);",
       "type": "pointer_cast"
     },
     {
@@ -905,7 +905,7 @@
       "line": 140,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uVar12 = *(uint *)((int)&(segStart->position).x + 4);",
+      "text": "uVar12 = *(uint *)((int)&(seg_start->position).x + 4);",
       "type": "pointer_cast"
     },
     {
@@ -1185,7 +1185,7 @@
       "line": 327,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uStack_234 = *(uint *)((int)&local_2c->x + 4);",
+      "text": "uStack_234 = *(uint *)((int)&(local_2c->impl).x + 4);",
       "type": "pointer_cast"
     },
     {
@@ -1193,7 +1193,7 @@
       "line": 329,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uStack_2bc = *(uint *)((int)&local_2c->y + 4);",
+      "text": "uStack_2bc = *(uint *)((int)&(local_2c->impl).y + 4);",
       "type": "pointer_cast"
     },
     {
@@ -1201,7 +1201,7 @@
       "line": 331,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uStack_128 = *(uint *)((int)&(segStart->position).x + 4);",
+      "text": "uStack_128 = *(uint *)((int)&(seg_start->position).x + 4);",
       "type": "pointer_cast"
     },
     {
@@ -1209,7 +1209,7 @@
       "line": 333,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uStack_120 = *(uint *)((int)&(segStart->position).y + 4);",
+      "text": "uStack_120 = *(uint *)((int)&(seg_start->position).y + 4);",
       "type": "pointer_cast"
     },
     {
@@ -1217,7 +1217,7 @@
       "line": 335,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uStack_118 = *(uint *)((int)&(segStart->position).z + 4);",
+      "text": "uStack_118 = *(uint *)((int)&(seg_start->position).z + 4);",
       "type": "pointer_cast"
     },
     {
@@ -1225,7 +1225,7 @@
       "line": 337,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uStack_22c = *(uint *)((int)&local_34->x + 4);",
+      "text": "uStack_22c = *(uint *)((int)&(local_34->impl).x + 4);",
       "type": "pointer_cast"
     },
     {
@@ -1233,7 +1233,7 @@
       "line": 340,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uVar13 = *(uint *)((int)&local_34->y + 4);",
+      "text": "uVar13 = *(uint *)((int)&(local_34->impl).y + 4);",
       "type": "pointer_cast"
     },
     {
@@ -1241,7 +1241,7 @@
       "line": 345,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uStack_110 = *(uint *)((int)&(segEnd->position).x + 4);",
+      "text": "uStack_110 = *(uint *)((int)&(seg_end->position).x + 4);",
       "type": "pointer_cast"
     },
     {
@@ -1249,7 +1249,7 @@
       "line": 347,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uStack_108 = *(uint *)((int)&(segEnd->position).y + 4);",
+      "text": "uStack_108 = *(uint *)((int)&(seg_end->position).y + 4);",
       "type": "pointer_cast"
     },
     {
@@ -1257,7 +1257,7 @@
       "line": 349,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uStack_100 = *(uint *)((int)&(segEnd->position).z + 4);",
+      "text": "uStack_100 = *(uint *)((int)&(seg_end->position).z + 4);",
       "type": "pointer_cast"
     },
     {
@@ -1265,7 +1265,7 @@
       "line": 351,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uStack_234 = *(uint *)((int)&local_28->x + 4);",
+      "text": "uStack_234 = *(uint *)((int)&(local_28->impl).x + 4);",
       "type": "pointer_cast"
     },
     {
@@ -1273,7 +1273,7 @@
       "line": 353,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uStack_2bc = *(uint *)((int)&local_28->y + 4);",
+      "text": "uStack_2bc = *(uint *)((int)&(local_28->impl).y + 4);",
       "type": "pointer_cast"
     },
     {
@@ -1305,7 +1305,7 @@
       "line": 361,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uStack_22c = *(uint *)((int)&local_2c->x + 4);",
+      "text": "uStack_22c = *(uint *)((int)&(local_2c->impl).x + 4);",
       "type": "pointer_cast"
     },
     {
@@ -1313,7 +1313,7 @@
       "line": 364,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uVar13 = *(uint *)((int)&local_2c->y + 4);",
+      "text": "uVar13 = *(uint *)((int)&(local_2c->impl).y + 4);",
       "type": "pointer_cast"
     },
     {
@@ -1321,7 +1321,7 @@
       "line": 371,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uStack_110 = *(uint *)((int)&(segStart->position).x + 4);",
+      "text": "uStack_110 = *(uint *)((int)&(seg_start->position).x + 4);",
       "type": "pointer_cast"
     },
     {
@@ -1329,7 +1329,7 @@
       "line": 373,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uStack_108 = *(uint *)((int)&(segStart->position).y + 4);",
+      "text": "uStack_108 = *(uint *)((int)&(seg_start->position).y + 4);",
       "type": "pointer_cast"
     },
     {
@@ -1337,7 +1337,7 @@
       "line": 375,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uStack_100 = *(uint *)((int)&(segStart->position).z + 4);",
+      "text": "uStack_100 = *(uint *)((int)&(seg_start->position).z + 4);",
       "type": "pointer_cast"
     },
     {
@@ -1345,7 +1345,7 @@
       "line": 377,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uStack_234 = *(uint *)((int)&local_34->x + 4);",
+      "text": "uStack_234 = *(uint *)((int)&(local_34->impl).x + 4);",
       "type": "pointer_cast"
     },
     {
@@ -1353,7 +1353,7 @@
       "line": 379,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uStack_2bc = *(uint *)((int)&local_34->y + 4);",
+      "text": "uStack_2bc = *(uint *)((int)&(local_34->impl).y + 4);",
       "type": "pointer_cast"
     },
     {
@@ -1361,7 +1361,7 @@
       "line": 381,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uStack_128 = *(uint *)((int)&(segEnd->position).x + 4);",
+      "text": "uStack_128 = *(uint *)((int)&(seg_end->position).x + 4);",
       "type": "pointer_cast"
     },
     {
@@ -1369,7 +1369,7 @@
       "line": 383,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uStack_120 = *(uint *)((int)&(segEnd->position).y + 4);",
+      "text": "uStack_120 = *(uint *)((int)&(seg_end->position).y + 4);",
       "type": "pointer_cast"
     },
     {
@@ -1377,7 +1377,7 @@
       "line": 385,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uStack_118 = *(uint *)((int)&(segEnd->position).z + 4);",
+      "text": "uStack_118 = *(uint *)((int)&(seg_end->position).z + 4);",
       "type": "pointer_cast"
     },
     {
@@ -1385,7 +1385,7 @@
       "line": 387,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uStack_22c = *(uint *)((int)&local_28->x + 4);",
+      "text": "uStack_22c = *(uint *)((int)&(local_28->impl).x + 4);",
       "type": "pointer_cast"
     },
     {
@@ -1393,7 +1393,7 @@
       "line": 389,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uVar13 = *(uint *)((int)&local_28->y + 4);",
+      "text": "uVar13 = *(uint *)((int)&(local_28->impl).y + 4);",
       "type": "pointer_cast"
     },
     {
@@ -1617,7 +1617,7 @@
       "line": 463,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "local_1dc.uv_coords[0].x._0_4_ = *(uint *)((int)&pCVar16->x + 4);",
+      "text": "local_1dc.uv_coords[0].impl.x._0_4_ = *(uint *)((int)&(pCVar16->impl).x + 4);",
       "type": "pointer_cast"
     },
     {
@@ -1625,7 +1625,7 @@
       "line": 463,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "local_1dc.uv_coords[0].x._0_4_ = *(uint *)((int)&pCVar16->x + 4);",
+      "text": "local_1dc.uv_coords[0].impl.x._0_4_ = *(uint *)((int)&(pCVar16->impl).x + 4);",
       "type": "unknown_field"
     },
     {
@@ -1633,7 +1633,7 @@
       "line": 464,
       "match": "._4_4_",
       "severity": "mild",
-      "text": "local_1dc.uv_coords[0].x._4_4_ = *(uint *)&pCVar16->y;",
+      "text": "local_1dc.uv_coords[0].impl.x._4_4_ = *(uint *)&(pCVar16->impl).y;",
       "type": "unknown_field"
     },
     {
@@ -1641,7 +1641,7 @@
       "line": 465,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "local_1dc.uv_coords[0].y._0_4_ = *(uint *)((int)&pCVar16->y + 4);",
+      "text": "local_1dc.uv_coords[0].impl.y._0_4_ = *(uint *)((int)&(pCVar16->impl).y + 4);",
       "type": "pointer_cast"
     },
     {
@@ -1649,7 +1649,7 @@
       "line": 465,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "local_1dc.uv_coords[0].y._0_4_ = *(uint *)((int)&pCVar16->y + 4);",
+      "text": "local_1dc.uv_coords[0].impl.y._0_4_ = *(uint *)((int)&(pCVar16->impl).y + 4);",
       "type": "unknown_field"
     },
     {
@@ -1657,7 +1657,7 @@
       "line": 467,
       "match": "._4_4_",
       "severity": "mild",
-      "text": "local_1dc.uv_coords[0].y._4_4_ = *(uint *)&pCVar18->x;",
+      "text": "local_1dc.uv_coords[0].impl.y._4_4_ = *(uint *)&(pCVar18->impl).x;",
       "type": "unknown_field"
     },
     {
@@ -1665,7 +1665,7 @@
       "line": 468,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "local_1dc.uv_coords[1].x._0_4_ = *(uint *)((int)&pCVar18->x + 4);",
+      "text": "local_1dc.uv_coords[1].impl.x._0_4_ = *(uint *)((int)&(pCVar18->impl).x + 4);",
       "type": "pointer_cast"
     },
     {
@@ -1673,7 +1673,7 @@
       "line": 468,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "local_1dc.uv_coords[1].x._0_4_ = *(uint *)((int)&pCVar18->x + 4);",
+      "text": "local_1dc.uv_coords[1].impl.x._0_4_ = *(uint *)((int)&(pCVar18->impl).x + 4);",
       "type": "unknown_field"
     },
     {
@@ -1681,7 +1681,7 @@
       "line": 469,
       "match": "._4_4_",
       "severity": "mild",
-      "text": "local_1dc.uv_coords[1].x._4_4_ = *(uint *)&pCVar18->y;",
+      "text": "local_1dc.uv_coords[1].impl.x._4_4_ = *(uint *)&(pCVar18->impl).y;",
       "type": "unknown_field"
     },
     {
@@ -1689,7 +1689,7 @@
       "line": 470,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "local_1dc.uv_coords[1].y._0_4_ = *(uint *)((int)&pCVar18->y + 4);",
+      "text": "local_1dc.uv_coords[1].impl.y._0_4_ = *(uint *)((int)&(pCVar18->impl).y + 4);",
       "type": "pointer_cast"
     },
     {
@@ -1697,7 +1697,7 @@
       "line": 470,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "local_1dc.uv_coords[1].y._0_4_ = *(uint *)((int)&pCVar18->y + 4);",
+      "text": "local_1dc.uv_coords[1].impl.y._0_4_ = *(uint *)((int)&(pCVar18->impl).y + 4);",
       "type": "unknown_field"
     },
     {
@@ -1705,15 +1705,15 @@
       "line": 474,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)&pCVar16->y + 4) = local_cc[1];",
+      "text": "*(int *)((int)&(pCVar16->impl).y + 4) = local_cc[1];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 484,
-      "match": "(CVector2d *)((int)",
+      "match": "(CP2D *)((int)",
       "severity": "mild",
-      "text": "local_2c = (CVector2d *)((int)&local_2c->x + 1);",
+      "text": "local_2c = (CP2D *)((int)&(local_2c->impl).x + 1);",
       "type": "pointer_cast"
     }
   ]

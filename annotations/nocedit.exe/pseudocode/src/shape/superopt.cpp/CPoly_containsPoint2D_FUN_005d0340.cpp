@@ -105,29 +105,29 @@ int __cdecl shape_superopt_cpp_CPoly_containsPoint2D_FUN_005d0340(CPoly *this_pt
   uint local_1c;
   double local_18;
   
-  if (0.0 <= (this_ptr->normal).x) {
-    local_1d0 = (this_ptr->normal).x;
+  if (0.0 <= (this_ptr->normal).impl.x) {
+    local_1d0 = (this_ptr->normal).impl.x;
   }
   else {
-    local_1d0 = -(this_ptr->normal).x;
+    local_1d0 = -(this_ptr->normal).impl.x;
   }
-  if ((this_ptr->normal).y < 0.0) {
-    dVar3 = -(this_ptr->normal).y;
+  if ((this_ptr->normal).impl.y < 0.0) {
+    dVar3 = -(this_ptr->normal).impl.y;
   }
   else {
-    dVar3 = (this_ptr->normal).y;
+    dVar3 = (this_ptr->normal).impl.y;
   }
   p3 = SUB84(__BITCAST_UINT64(dVar3),0);
-  if ((this_ptr->normal).z < 0.0) {
-    local_1b0 = -(this_ptr->normal).z;
+  if ((this_ptr->normal).impl.z < 0.0) {
+    local_1b0 = -(this_ptr->normal).impl.z;
   }
   else {
-    local_1b0 = (this_ptr->normal).z;
+    local_1b0 = (this_ptr->normal).impl.z;
   }
   pCVar2 = this_ptr->parent_obj->vertex_data;
   if ((local_1d0 < dVar3) || (local_1d0 < local_1b0)) {
     if ((dVar3 < local_1d0) || (dVar3 < local_1b0)) {
-      if (0.0 <= (this_ptr->normal).z) {
+      if (0.0 <= (this_ptr->normal).impl.z) {
         iVar1 = this_ptr->vertex_idx_0;
         local_1a8.x._0_4_ = *(uint *)&pCVar2[iVar1].position.x;
         local_1a8.x._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.x + 4);
@@ -195,7 +195,7 @@ int __cdecl shape_superopt_cpp_CPoly_containsPoint2D_FUN_005d0340(CPoly *this_pt
       local_84 = local_188.x._4_4_;
     }
     else {
-      if ((this_ptr->normal).y <= 0.0) {
+      if ((this_ptr->normal).impl.y <= 0.0) {
         iVar1 = this_ptr->vertex_idx_0;
         local_1a8.x._0_4_ = *(uint *)&pCVar2[iVar1].position.x;
         local_1a8.x._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.x + 4);
@@ -264,7 +264,7 @@ int __cdecl shape_superopt_cpp_CPoly_containsPoint2D_FUN_005d0340(CPoly *this_pt
     }
   }
   else {
-    if (0.0 <= (this_ptr->normal).x) {
+    if (0.0 <= (this_ptr->normal).impl.x) {
       iVar1 = this_ptr->vertex_idx_0;
       local_1a8.x._0_4_ = *(uint *)&pCVar2[iVar1].position.y;
       local_1a8.x._4_4_ = *(uint *)((int)&pCVar2[iVar1].position.y + 4);

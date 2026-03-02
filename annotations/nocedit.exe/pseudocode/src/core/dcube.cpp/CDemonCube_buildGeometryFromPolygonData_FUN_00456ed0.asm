@@ -39,7 +39,7 @@
 ;   core_dcube.cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0
 ;   core_dcube.cpp_CDemonCubeTriangle_init_FUN_00455430
 ;   crt_stdlib.c_atoi_FUN_005ffef0
-;   shape_superopt.cpp_TriListSomething_FUN_005d77a0
+;   shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a0
 ;
 ; *****************************************************************************
 
@@ -53,8 +53,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0x28]      ; 00456ed6
     MOV EAX,[0x016e990c]                ; 00456eda | g_PolygonCount
     MOV dword ptr [ESI + 0x28],EAX      ; 00456edf
-    CALL shape_superopt.cpp_TriListSomething_FUN_005d77a0 ; 00456ee2
-        ;   XREF to: 005d77a0 (UNCONDITIONAL_CALL)  ; void shape_superopt.cpp_TriListSomething_FUN_005d77a0()
+    CALL shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a0 ; 00456ee2
+        ;   XREF to: 005d77a0 (UNCONDITIONAL_CALL)  ; void shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a0()
     MOV EAX,[0x01626408]                ; 00456ee7 | g_VertexCount
     MOV dword ptr [ESI + 0x28],0x0      ; 00456eec
     MOV EDX,dword ptr [0x016e990c]      ; 00456ef3 | g_PolygonCount

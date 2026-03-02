@@ -9,10 +9,10 @@
 ; XREF[14]:
 ;   core_cloth.cpp_CCloth_setup_FUN_00439710 at 00439a1f
 ;   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 at 005968f5
-;   core_skeledit.cpp_CDeformableModel_FUN_0058c190 at 0058c24e
-;   core_skeledit.cpp_CDeformableModel_FUN_0058d790 at 0058d7ad
-;   core_skeledit.cpp_CDeformableModel_FUN_0058e600 at 0058e617
+;   core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190 at 0058c24e
 ;   core_skeledit.cpp_CDeformableModel_calcRootOffsetScale_FUN_0058e690 at 0058e6a6
+;   core_skeledit.cpp_CDeformableModel_extractLodLevel_FUN_0058d790 at 0058d7ad
+;   core_skeledit.cpp_CDeformableModel_offsetRootVertices_FUN_0058e600 at 0058e617
 ;   core_skeledit.cpp_CDeformableModel_saveStream_FUN_0058f120 at 0058f136
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a16c0 at 005a16db
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820 at 005a082e

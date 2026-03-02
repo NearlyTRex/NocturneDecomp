@@ -133,7 +133,7 @@ void __cdecl CLodMesh::markDegenerateFaces(CLodMesh *this_ptr);
 
 // Original: shape_meshlod.cpp_CLodMesh_generateLOD_FUN_00516ba0
 // Address: 00516ba0
-void __cdecl CLodMesh::generateLOD(CLodMesh *this_ptr,int target_tri_count,uint display_mode);
+void __cdecl CLodMesh::generateLOD(CLodMesh *this_ptr,int target_tri_count,int render_mode);
 
 // Original: shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_00516d50
 // Address: 00516d50

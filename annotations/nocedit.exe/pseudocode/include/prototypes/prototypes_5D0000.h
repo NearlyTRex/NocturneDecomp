@@ -6,6 +6,7 @@
 #include "types/classes/CActorPropertyList.h"
 #include "types/classes/CBassPlayer.h"
 #include "types/classes/CBoundingBox3D.h"
+#include "types/classes/CComplexPolygon.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDrummer.h"
@@ -33,6 +34,7 @@
 #include "types/classes/CVert.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
+#include "types/structs/SExpandedEdge.h"
 #include "types/structs/SMRGLHeaderExtended.h"
 #include "types/structs/SMRGLTextureBasic.h"
 #include "types/structs/SRGBColorPalette.h"
@@ -118,58 +120,58 @@ double __cdecl shape_superopt_cpp_distancePointToSegmentXY_FUN_005d64a0(CVector3
 double __cdecl shape_superopt_cpp_rayPlaneIntersect_FUN_005d6500(CVector3d *ray_origin,CVector3d *ray_dir,CVector3d *plane_point, CVector3d *plane_normal);
 double __cdecl shape_superopt_cpp_getSignedTriangleArea2D_FUN_005d6640(CVector2d *p1,CVector2d *p2,CVector2d *p3);
 int __cdecl shape_superopt_cpp_areVectorsCollinear_FUN_005d66e0(CVector3d *vec1,CVector3d *vec2);
-int __cdecl shape_superopt_cpp_isPointOnLineSegment_FUN_005d6c10(CVector3d *point,CVector3d *segStart,CVector3d *segEnd);
+int __cdecl shape_superopt_cpp_isPointOnLineSegment_FUN_005d6c10(CVector3d *point,CVector3d *seg_start,CVector3d *seg_end);
 COptimize * __cdecl shape_superopt_cpp_COptimize_ctor_FUN_005d6f90(COptimize *this_ptr);
 COptimize * __cdecl shape_superopt_cpp_COptimize_dtor_FUN_005d6fd0(COptimize *this_ptr,uint flags);
-void __cdecl shape_superopt_cpp_COptimize_FUN_005d7000(COptimize *this_ptr);
-void __cdecl shape_superopt_cpp_COptimize_FUN_005d70d0(COptimize *this_ptr);
-double __cdecl shape_superopt_cpp_COptimize_FUN_005d70f0(COptimize *this_ptr);
-void __cdecl shape_superopt_cpp_COptimize_FUN_005d7120(COptimize *this_ptr);
-double __cdecl shape_superopt_cpp_COptimize_FUN_005d7140(COptimize *this_ptr);
-void __cdecl shape_superopt_cpp_COptimize_FUN_005d7170(COptimize *this_ptr);
-double __cdecl shape_superopt_cpp_COptimize_FUN_005d7190(COptimize *this_ptr);
-void __cdecl shape_superopt_cpp_COptimize_FUN_005d71c0(COptimize *this_ptr);
-int __cdecl shape_superopt_cpp_COptimize_FUN_005d71d0(COptimize *this_ptr);
-int __cdecl shape_superopt_cpp_COptimize_FUN_005d71e0(COptimize *this_ptr);
-int __cdecl shape_superopt_cpp_COptimize_FUN_005d7290(COptimize *this_ptr);
-int __cdecl shape_superopt_cpp_COptimize_FUN_005d7350(COptimize *this_ptr);
-void __cdecl shape_superopt_cpp_COptimize_FUN_005d7460(COptimize *this_ptr);
-int __cdecl shape_superopt_cpp_COptimize_FUN_005d7690(COptimize *this_ptr);
-void __cdecl shape_superopt_cpp_COptimize_FUN_005d76e0(COptimize *this_ptr);
-int __cdecl shape_superopt_cpp_FUN_005d7750(void);
-void __cdecl shape_superopt_cpp_TriListSomething_FUN_005d77a0(void);
-void __cdecl shape_superopt_cpp_BonesAndPointsCheck_FUN_005d7e00(void);
+void __cdecl shape_superopt_cpp_COptimize_cleanup_FUN_005d7000(COptimize *this_ptr);
+void __cdecl shape_superopt_cpp_COptimize_setWeldThreshold_FUN_005d70d0(COptimize *this_ptr,double threshold);
+double __cdecl shape_superopt_cpp_COptimize_getWeldThreshold_FUN_005d70f0(COptimize *this_ptr);
+void __cdecl shape_superopt_cpp_COptimize_setCoplanarAngleThreshold_FUN_005d7120(COptimize *this_ptr,double threshold);
+double __cdecl shape_superopt_cpp_COptimize_getCoplanarAngleThreshold_FUN_005d7140(COptimize *this_ptr);
+void __cdecl shape_superopt_cpp_COptimize_setCoplanarDistanceThreshold_FUN_005d7170(COptimize *this_ptr,double threshold);
+double __cdecl shape_superopt_cpp_COptimize_getCoplanarDistanceThreshold_FUN_005d7190(COptimize *this_ptr);
+void __cdecl shape_superopt_cpp_COptimize_setMaxPolygonSides_FUN_005d71c0(COptimize *this_ptr,int max_sides);
+int __cdecl shape_superopt_cpp_COptimize_getMaxPolygonSides_FUN_005d71d0(COptimize *this_ptr);
+int __cdecl shape_superopt_cpp_COptimize_setGeometry_FUN_005d71e0(COptimize *this_ptr,CObj *objects,uint object_count);
+int __cdecl shape_superopt_cpp_COptimize_optimize_FUN_005d7290(COptimize *this_ptr);
+int __cdecl shape_superopt_cpp_COptimize_optimizeComplex_FUN_005d7350(COptimize *this_ptr);
+void __cdecl shape_superopt_cpp_COptimize_findCoplanarPolygons_FUN_005d7460(COptimize *this_ptr,CPoly *polygon,COptimize *search_obj);
+int __cdecl shape_superopt_cpp_COptimize_splitToConvex_FUN_005d7690(COptimize *this_ptr);
+void __cdecl shape_superopt_cpp_COptimize_addComplexPolygon_FUN_005d76e0(COptimize *this_ptr,CComplexPolygon *polygon);
+int __cdecl shape_superopt_cpp_findTriListTextureIndex_FUN_005d7750(char *filename);
+void __cdecl shape_superopt_cpp_optimizeCubeTriList_FUN_005d77a0(void);
+void __cdecl shape_superopt_cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00(COptimize *this_ptr);
 CP3D * __cdecl shape_superopt_cpp_CP3D_ctor_FUN_005d8120(CP3D *this_ptr);
 CP2D * __cdecl shape_superopt_cpp_CP2D_ctor_FUN_005d8130(CP2D *this_ptr);
 CVec * __cdecl shape_superopt_cpp_CVec_ctor_FUN_005d8140(CVec *this_ptr);
 CVec * __cdecl shape_superopt_cpp_CVec_dtor_FUN_005d8150(CVec *this_ptr,uint flags);
 CVec * __cdecl shape_superopt_cpp_CVec_copy_FUN_005d8160(CVec *this_ptr,CVec *other);
-void __cdecl shape_superopt_cpp_FUN_005d8190(void);
-void __cdecl shape_superopt_cpp_FUN_005d81c0(void);
-int __cdecl shape_superopt_cpp_FUN_005d8200(void);
-void __cdecl shape_superopt_cpp_FUN_005d8230(void);
-double * __cdecl shape_superopt_cpp_FUN_005d8270(void);
-void __cdecl shape_superopt_cpp_FUN_005d82b0(void);
-int __cdecl shape_superopt_cpp_FUN_005d82e0(void);
-void __cdecl shape_superopt_cpp_FUN_005d8310(void);
-void __cdecl shape_superopt_cpp_FUN_005d8330(void);
-void __cdecl shape_superopt_cpp_FUN_005d8350(void);
-void __cdecl shape_superopt_cpp_FUN_005d8390(void);
-void __cdecl shape_superopt_cpp_FUN_005d83d0(void);
-int __cdecl shape_superopt_cpp_FUN_005d8410(void);
-void __cdecl shape_superopt_cpp_FUN_005d8440(void);
-void __cdecl shape_superopt_cpp_FUN_005d8470(void);
-void __cdecl shape_superopt_cpp_FUN_005d84a0(void);
-void __cdecl shape_superopt_cpp_FUN_005d84d0(void);
-void __cdecl shape_superopt_cpp_FUN_005d8520(void);
-void __cdecl shape_superopt_cpp_FUN_005d8570(void);
-void __cdecl shape_superopt_cpp_FUN_005d85a0(void);
-void __cdecl shape_superopt_cpp_FUN_005d85f0(void);
-void __cdecl shape_superopt_cpp_FUN_005d8630(void);
-int __cdecl shape_superopt_cpp_FUN_005d8670(void);
-int __cdecl shape_superopt_cpp_FUN_005d86a0(void);
-double __cdecl shape_superopt_cpp_FUN_005d86d0(double *param_1,double *param_2);
-void __cdecl shape_superopt_cpp_FUN_005d8710(void);
+CVec * __cdecl shape_superopt_cpp_CVec_copy_FUN_005d8190(CVec *this_ptr,CVec *other);
+void __cdecl shape_superopt_cpp_CVec_normalize_FUN_005d81c0(CVec *this_ptr);
+int __cdecl shape_superopt_cpp_CVec_getLength_FUN_005d8200(CVec *this_ptr);
+void __cdecl shape_superopt_cpp_CVec_setLength_FUN_005d8230(CVec *this_ptr,double length);
+CVec * __cdecl shape_superopt_cpp_CVec_cross_FUN_005d8270(CVec *this_ptr,CVec *a,CVec *b);
+void __cdecl shape_superopt_cpp_CVec_copy_FUN_005d82b0(CVec *this_ptr,CVec *other);
+int __cdecl shape_superopt_cpp_CVec_dot_FUN_005d82e0(CVec *this_ptr,CVec *other);
+void __cdecl shape_superopt_cpp_CP2D_set_FUN_005d8310(CP2D *this_ptr,double x,double y);
+CP2D * __cdecl shape_superopt_cpp_CP2D_copy_FUN_005d8330(CP2D *dst,CP2D *src);
+CP2D * __stack2_esi shape_superopt_cpp_CP2D_subtract_FUN_005d8350(CP2D *this_ptr,CP2D *a,CP2D *b);
+CP2D * __stack2_esi shape_superopt_cpp_CP2D_add_FUN_005d8390(CP2D *this_ptr,CP2D *a,CP2D *b);
+CP2D * __cdecl shape_superopt_cpp_CP2D_FUN_005d83d0(CP2D *this_ptr,double scale);
+int __cdecl shape_superopt_cpp_CP2D_isEqual_FUN_005d8410(CP2D *this_ptr,CP2D *b);
+void __cdecl shape_superopt_cpp_CP3D_set_FUN_005d8440(CP3D *this_ptr,double x,double y,double z);
+void __cdecl shape_superopt_cpp_CP3D_copy_FUN_005d8470(CP3D *this_ptr,CP3D *other);
+void __cdecl shape_superopt_cpp_CP3D_copy_FUN_005d84a0(CP3D *this_ptr,CP3D *other);
+CP3D * __stack2_esi shape_superopt_cpp_CP3D_subtract_FUN_005d84d0(CP3D *this_ptr,CP3D *a,CP3D *b);
+CP3D * __stack2_esi shape_superopt_cpp_CP3D_add_FUN_005d8520(CP3D *this_ptr,CP3D *a,CP3D *b);
+CP3D * __cdecl shape_superopt_cpp_CP3D_increment_FUN_005d8570(CP3D *this_ptr,CP3D *other);
+CP3D * __stack2_esi shape_superopt_cpp_CP3D_add_FUN_005d85a0(CP3D *this_ptr,CP3D *a,CP3D *b);
+CP3D * __stack2_esi shape_superopt_cpp_CP3D_multiply_FUN_005d85f0(CP3D *this_ptr,CP3D *a,CP3D *b);
+CP3D * __cdecl shape_superopt_cpp_CP3D_FUN_005d8630(CP3D *this_ptr,double scalar);
+int __cdecl shape_superopt_cpp_CP3D_isEqual_FUN_005d8670(CP3D *this_ptr,CP3D *other);
+int __cdecl shape_superopt_cpp_CP3D_isNotEqual_FUN_005d86a0(CP3D *this_ptr,CP3D *other);
+double __cdecl shape_superopt_cpp_CP3D_distance_FUN_005d86d0(CP3D *this_ptr,CP3D *other);
+SExpandedEdge * __cdecl shape_superopt_cpp_SExpandedEdge_copy_FUN_005d8710(SExpandedEdge *this_ptr,SExpandedEdge *other);
 CP2D * __cdecl shape_superopt_cpp_CP2D_dtor_FUN_005d87c0(CP2D *this_ptr,uint flags);
 CP3D * __cdecl shape_superopt_cpp_CP3D_dtor_FUN_005d87d0(CP3D *this_ptr,uint flags);
 void __cdecl core_svetlana_cpp_staticInit_FUN_005d87e0(void);
@@ -178,15 +180,15 @@ CDemonActorType * __cdecl core_svetlana_cpp_CSvetlana_getActorType_FUN_005d8840(
 CSvetlana * __cdecl core_svetlana_cpp_CSvetlana_ctor_FUN_005d8850(CSvetlana *this_ptr);
 void __cdecl core_svetlana_cpp_CSvetlana_setup_FUN_005d88e0(CSvetlana *this_ptr);
 void __cdecl core_svetlana_cpp_CSvetlana_process_FUN_005d8ba0(CSvetlana *this_ptr,float delta_time);
-void __cdecl core_svetlana_cpp_CSvetlana_FUN_005d9260(CSvetlana *this_ptr);
-void __cdecl core_svetlana_cpp_CSvetlana_FUN_005d9970(CSvetlana *this_ptr);
-void __cdecl core_svetlana_cpp_CSvetlana_FUN_005d9a10(CSvetlana *this_ptr);
+void __cdecl core_svetlana_cpp_CSvetlana_processAI_FUN_005d9260(CSvetlana *this_ptr,float delta_time);
+void __cdecl core_svetlana_cpp_CSvetlana_advanceMotion_FUN_005d9970(CSvetlana *this_ptr,float delta_time);
+void __cdecl core_svetlana_cpp_CSvetlana_performBladeAttack_FUN_005d9a10(CSvetlana *this_ptr,int bone_index);
 void __cdecl core_svetlana_cpp_CSVetlana_archive_FUN_005d9bb0(CSvetlana *this_ptr);
 int __cdecl core_svetlana_cpp_CSvetlana_renderOpaque_FUN_005d9bc0(CSvetlana *this_ptr);
 void __cdecl core_svetlana_cpp_CSvetlana_processDamage_FUN_005d9d30(CSvetlana *this_ptr,SDamageInfo *damage_info);
-int __cdecl core_svetlana_cpp_CSvetlana_FUN_005d9ec0(CSvetlana *this_ptr);
-int __cdecl core_svetlana_cpp_CSvetlana_FUN_005d9ed0(CSvetlana *this_ptr);
-void __cdecl core_svetlana_cpp_CSvetlana_FUN_005d9ee0(CSvetlana *this_ptr);
+int __cdecl core_svetlana_cpp_CSvetlana_getGrabbed_FUN_005d9ec0(CSvetlana *this_ptr,CDemonActor *grabber,int grab_type);
+int __cdecl core_svetlana_cpp_CSvetlana_isWeaponDrawn_FUN_005d9ed0(CSvetlana *this_ptr);
+void __cdecl core_svetlana_cpp_CSvetlana_drawWeapon_FUN_005d9ee0(CSvetlana *this_ptr,int drawn);
 void __cdecl core_svetlana_cpp_CSvetlana_onActorDeleted_FUN_005d9ef0(CSvetlana *this_ptr,CDemonActor *deleted_actor);
 void __cdecl core_svetlana_cpp_CSvetlana_getPropertyList_FUN_005d9f10(CSvetlana *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_svetlana_cpp_CSvetlana_addFilesToExtract_FUN_005d9f30(CSvetlana *this_ptr,_FILE *file_handle);

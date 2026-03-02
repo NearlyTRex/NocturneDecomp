@@ -4,21 +4,21 @@ STRUCT QUALITY REPORT
 
 SUMMARY
 ----------------------------------------------------------------------
-Total structs:              498
-Fully clean structs:        492
-Structs with issues:        6
-Unreferenced structs:       15
+Total structs:              502
+Fully clean structs:        499
+Structs with issues:        3
+Unreferenced structs:       16
 
-Total fields:               4017
-Clean fields:               4005
-Unknown (unk*) fields:      7
+Total fields:               4043
+Clean fields:               4039
+Unknown (unk*) fields:      0
 Padding (pad*) fields:      4
-Reserved (reserved*) fields:1
+Reserved (reserved*) fields:0
 Default (field_*) fields:   0
-Overall field quality:      99.7%
+Overall field quality:      99.9%
 
 ======================================================================
-UNREFERENCED STRUCTS (15)
+UNREFERENCED STRUCTS (16)
 ----------------------------------------------------------------------
 These structs are not referenced in any source or header file.
 
@@ -26,6 +26,7 @@ These structs are not referenced in any source or header file.
   CHero_full_vtable                         /Nocturne/Class/Game
   CQuaternion4i                             /Nocturne/Class/Game
   CVector2f                                 /Nocturne/Class/Game
+  CVector4d                                 /Nocturne/Class/Game
   CVector4f                                 /Nocturne/Class/Game
   CWeapon_full_vtable                       /Nocturne/Class/Game
   SConditionVariable                        /Nocturne/Struct/Game
@@ -39,12 +40,8 @@ These structs are not referenced in any source or header file.
   SNetPacket_Simple                         /Nocturne/Struct/Game
 
 ======================================================================
-STRUCTS WITH PROBLEMATIC FIELDS (6)
+STRUCTS WITH PROBLEMATIC FIELDS (3)
 ----------------------------------------------------------------------
-
-COptimize                                  25.0% complete  (2/8 fields clean)
-  Issues: 6 unknown
-  Fields: unk1, unk2, unk3, unk4, unk5, unk6
 
 CCramTex                                   89.5% complete  (17/19 fields clean)
   Issues: 2 padding
@@ -54,20 +51,12 @@ SCram                                      90.0% complete  (9/10 fields clean)
   Issues: 1 padding
   Fields: padding_size
 
-CGargoyle                                  90.9% complete  (10/11 fields clean)
-  Issues: 1 unknown
-  Fields: unk2
-
 SMpegFrameHeader                           91.7% complete  (11/12 fields clean)
   Issues: 1 padding
   Fields: padding
 
-CLodMesh                                   95.8% complete  (23/24 fields clean)
-  Issues: 1 reserved
-  Fields: reserved_attribute_count
-
 ======================================================================
-FULLY CLEAN STRUCTS (492)
+FULLY CLEAN STRUCTS (499)
 ----------------------------------------------------------------------
   C3DSCamera
   C3DSLight
@@ -126,6 +115,7 @@ FULLY CLEAN STRUCTS (492)
   CColor3i
   CColor4f
   CColorQuantizer
+  CComplexPolygon
   CConsole
   CConveyor
   CCourse
@@ -200,6 +190,7 @@ FULLY CLEAN STRUCTS (492)
   CFrankenstienMachine
   CGabriella
   CGame
+  CGargoyle
   CGasMask
   CGhoul
   CGlass
@@ -248,6 +239,8 @@ FULLY CLEAN STRUCTS (492)
   CLocation
   CLodEdge
   CLodFace
+  CLodMesh
+  CLodMeshPrecomputeEntry
   CLodVert
   CMP3Decoder
   CMansionPuzzleCircle
@@ -278,6 +271,7 @@ FULLY CLEAN STRUCTS (492)
   CNetGame
   CObj
   CObj_vtable
+  COptimize
   COptimize_vtable
   COrientation
   CP2D
@@ -364,6 +358,7 @@ FULLY CLEAN STRUCTS (492)
   CVector3d
   CVector3f
   CVector3i
+  CVector4d
   CVector4f
   CVector4i
   CVehicle
@@ -428,6 +423,7 @@ FULLY CLEAN STRUCTS (492)
   SEdgeTableEntry
   SEnumPair
   SEventNameBlock
+  SExpandedEdge
   SFace
   SFire
   SFly

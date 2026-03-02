@@ -1,0 +1,162 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 69,
+    "complexity_score": 31,
+    "cross_reference_count": 0,
+    "function_call_count": 9,
+    "global_count": 5,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 31,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 100
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00589b10",
+    "address_range": [
+      [
+        "00589b10",
+        "00589baf"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeledit.cpp_onLodGenerationComplete_FUN_00589b10",
+    "signature": "void __cdecl core_skeledit_cpp_onLodGenerationComplete_FUN_00589b10(int use_simple_message)"
+  },
+  "function_calls": [
+    {
+      "addr": "005ff9f3",
+      "is_variadic": false,
+      "name": "crt_stack.c___STK_FUN_005ff9f3"
+    },
+    {
+      "addr": "0049e940",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_createCenteredDialog_FUN_0049e940"
+    },
+    {
+      "addr": "0049e870",
+      "is_variadic": true,
+      "name": "shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870"
+    },
+    {
+      "addr": "004a0dd0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0"
+    },
+    {
+      "addr": "0049e6a0",
+      "is_variadic": true,
+      "name": "shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0"
+    },
+    {
+      "addr": "005aaef0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_enableSoundSystem_FUN_005aaef0"
+    },
+    {
+      "addr": "005ab130",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_resetSoundDevice_FUN_005ab130"
+    },
+    {
+      "addr": "005a8e90",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_startSfx_FUN_005a8e90"
+    },
+    {
+      "addr": "005f2dc0",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_getTime_FUN_005f2dc0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00649df5",
+      "name": "s_dixie_wav_00649df5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00649dff",
+      "name": "s_LOD_generation_complete_00649dff",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00649e18",
+      "name": "s_LOD_generation_complete_00649e18",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00678a60",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "02cf1cd4"
+    },
+    {
+      "addr": "02cf1cd4",
+      "name": "g_CEditorToolsInstance",
+      "type": "CEditorTools",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.078431372549019,
+    "instruction_count": 51,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "CALL": 11,
+      "CBRANCH": 3,
+      "COPY": 35,
+      "INT_ADD": 13,
+      "INT_AND": 24,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 22,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 11,
+      "INT_SUB": 25,
+      "INT_XOR": 1,
+      "LOAD": 7,
+      "POPCOUNT": 11,
+      "RETURN": 2,
+      "STORE": 23
+    },
+    "pcode_op_count": 208
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "use_simple_message",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

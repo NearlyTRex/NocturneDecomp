@@ -23,13 +23,13 @@
     {
       "addr": "0058c190",
       "from_addr": "0058d17d",
-      "name": "core_skeledit.cpp_CDeformableModel_FUN_0058c190",
+      "name": "core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00589c20",
       "from_addr": "00589e84",
-      "name": "core_skeledit.cpp_CLodMesh_FUN_00589c20",
+      "name": "core_skeledit.cpp_CLodMesh_selectAndGenerateLods_FUN_00589c20",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -44,7 +44,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "shape_meshlod.cpp_CLodMesh_generateLOD_FUN_00516ba0",
-    "signature": "void __cdecl shape_meshlod_cpp_CLodMesh_generateLOD_FUN_00516ba0(CLodMesh *this_ptr,int target_tri_count,uint display_mode)"
+    "signature": "void __cdecl shape_meshlod_cpp_CLodMesh_generateLOD_FUN_00516ba0(CLodMesh *this_ptr,int target_tri_count,int render_mode)"
   },
   "function_calls": [
     {
@@ -255,10 +255,10 @@
       },
       {
         "is_param": true,
-        "name": "display_mode",
+        "name": "render_mode",
         "offset": 12,
         "size": 4,
-        "type": "uint"
+        "type": "int"
       }
     ]
   },

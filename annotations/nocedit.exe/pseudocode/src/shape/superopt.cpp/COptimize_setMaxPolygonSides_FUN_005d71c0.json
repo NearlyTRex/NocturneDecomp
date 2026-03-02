@@ -1,0 +1,125 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 5,
+    "complexity_score": 5,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 5,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 10
+  },
+  "cross_references": [
+    {
+      "addr": "005d77a0",
+      "from_addr": "005d7cb1",
+      "name": "shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005d71c0",
+    "address_range": [
+      [
+        "005d71c0",
+        "005d71cb"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_superopt.cpp_COptimize_setMaxPolygonSides_FUN_005d71c0",
+    "signature": "void __cdecl shape_superopt_cpp_COptimize_setMaxPolygonSides_FUN_005d71c0(COptimize *this_ptr,int max_sides)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005d7cb1",
+        "call_type": "direct",
+        "caller": "shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a0",
+        "estimated_params": 2,
+        "instructions_analyzed": 5,
+        "reg_params": [],
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.0,
+    "instruction_count": 4,
+    "opcode_distribution": {
+      "COPY": 3,
+      "INT_ADD": 4,
+      "LOAD": 3,
+      "RETURN": 1,
+      "STORE": 1
+    },
+    "pcode_op_count": 12
+  },
+  "possible_indirect_callers": {
+    "method_name": "setMaxPolygonSides",
+    "param_analysis": {
+      "call_site_count": 1,
+      "caller_details": [
+        {
+          "caller": "COptimize_cleanup_FUN_005d7000",
+          "estimated_params": 2
+        }
+      ],
+      "estimated_params": 2,
+      "param_estimates": [
+        2
+      ]
+    },
+    "possible_callers": [
+      "COptimize_cleanup_FUN_005d7000"
+    ],
+    "vtable_offset": 28
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "COptimize *"
+      },
+      {
+        "is_param": true,
+        "name": "max_sides",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "COptimize",
+        "offset": 28,
+        "vtable_addr": "00663c44"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

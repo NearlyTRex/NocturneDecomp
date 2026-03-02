@@ -27,7 +27,7 @@ void __cdecl shape_superopt_cpp_CObj_computeCoplanarAdjacency_FUN_005d3960(CObj 
   uint uVar16;
   void *local_68;
   int local_64;
-  CVector3d *pCStack_60;
+  CP3D *pCStack_60;
   uint local_5c;
   int *local_58;
   CPoly *local_54;
@@ -66,12 +66,13 @@ void __cdecl shape_superopt_cpp_CObj_computeCoplanarAdjacency_FUN_005d3960(CObj 
           uStack_2c = local_5c + 1;
           if (uStack_2c < (uint)this_ptr->poly_count) {
             puVar13 = (uint *)((int)(pCVar12->uv_coords + 4) + local_64 + 8);
-            pdStack_1c = (double *)((int)&((CVector3d *)(pCVar12->uv_coords + 3))->x + local_64);
+            pdStack_1c = (double *)((int)&(((CP3D *)(pCVar12->uv_coords + 3))->impl).x + local_64);
             piVar15 = (int *)((int)pCVar12->uv_coords + local_64 + -0xc);
             do {
               if (((*puVar13 & 0x38) != 0x38) &&
-                 (0.9999 <= pCStack_60->z * pdStack_1c[2] +
-                            pCStack_60->x * *pdStack_1c + pCStack_60->y * pdStack_1c[1])) {
+                 (0.9999 <= (pCStack_60->impl).z * pdStack_1c[2] +
+                            (pCStack_60->impl).x * *pdStack_1c +
+                            (pCStack_60->impl).y * pdStack_1c[1])) {
                 uVar14 = (uint)(iVar1 == *piVar15) * 2;
                 uVar4 = (uint)(iVar2 == *piVar15) << 2;
                 uVar5 = (uint)(iVar3 == *piVar15) << 3;
@@ -150,7 +151,7 @@ void __cdecl shape_superopt_cpp_CObj_computeCoplanarAdjacency_FUN_005d3960(CObj 
           }
         }
         local_64 = local_64 + 0x68;
-        pCStack_60 = (CVector3d *)((int)(pCStack_60 + 4) + 8);
+        pCStack_60 = (CP3D *)((int)(pCStack_60 + 4) + 8);
         *local_58 = *local_58 & 7;
         local_54 = local_54 + 1;
         local_5c = local_5c + 1;

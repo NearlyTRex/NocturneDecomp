@@ -15,13 +15,13 @@ SUMMARY
 --------------------------------------------------
 Functions with parameter estimates: 5100
 Functions with no callers: 3241
-Parameter mismatches detected: 499
-Signature accuracy rate: 73.2%
+Parameter mismatches detected: 483
+Signature accuracy rate: 74.0%
 
 Mismatches by confidence:
   High confidence:   20 (multiple call sites agree)
-  Medium confidence: 69 (some agreement)
-  Low confidence:    410 (limited data)
+  Medium confidence: 67 (some agreement)
+  Low confidence:    396 (limited data)
 
 ====================================================================================================
 HIGH CONFIDENCE MISMATCHES - Likely signature issues
@@ -251,8 +251,6 @@ MEDIUM CONFIDENCE MISMATCHES
   core_dmodel.cpp_CKeyFramedModel_addFilesToExtract_ declared:3 est:1 (-2) [10 calls]
   core_fire.cpp_CFireEffect_createCrater_FUN_004c8ea declared:1 est:3 (+2) [2 calls]
   core_set.cpp_CDemonSet_renderEnvMapPrimitives_FUN_ declared:5 est:7 (+2) [2 calls]
-  core_skeledit.cpp_CLodMesh_FUN_00589c20            declared:1 est:3 (+2) [2 calls]
-  core_skeledit.cpp_FUN_0058aeb0                     declared:0 est:2 (+2) [2 calls]
   core_stranger.cpp_CStranger_autoAimAtThreat_FUN_00 declared:1 est:3 (+2) [2 calls]
   core_weapon.cpp_CWeapon_getPropertyList_FUN_005ee9 declared:2 est:4 (+2) [2 calls]
   crt_unknown.c_SomethingWithUppercaseCharacterConve declared:0 est:2 (+2) [2 calls]
@@ -281,14 +279,16 @@ MEDIUM CONFIDENCE MISMATCHES
   core_mimic.cpp_CMimic_processMorph_FUN_00520ba0    declared:1 est:2 (+1) [2 calls]
   core_moon.cpp_CMoon_update_FUN_00529d60            declared:2 est:1 (-1) [5 calls]
   core_skeleton.cpp_CDeformableModel_selectLOD_FUN_0 declared:2 est:1 (-1) [2 calls]
+  core_stranger.cpp_CStranger_FUN_005c02b0           declared:1 est:2 (+1) [2 calls]
+  core_stranger.cpp_CStranger_FUN_005c1680           declared:1 est:2 (+1) [2 calls]
 
-  ... and 19 more
+  ... and 17 more
 
 ====================================================================================================
 LOW CONFIDENCE MISMATCHES (limited data)
 ====================================================================================================
 
-  410 functions with low-confidence mismatches
+  396 functions with low-confidence mismatches
   Sample:
     cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_F declared:1 est:5 (+4)
     cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_ declared:1 est:3 (+2)
@@ -305,10 +305,10 @@ LOW CONFIDENCE MISMATCHES (limited data)
 MISMATCH DIRECTION ANALYSIS
 ====================================================================================================
 
-Functions where declaration has MORE params than estimated: 84
+Functions where declaration has MORE params than estimated: 85
   (May indicate: extra params not being passed, or params in globals)
 
-Functions where declaration has FEWER params than estimated: 415
+Functions where declaration has FEWER params than estimated: 398
   (May indicate: missing params in signature, or calling convention issue)
 
 Distribution of differences (estimated - declared):
@@ -320,13 +320,12 @@ Distribution of differences (estimated - declared):
   -4 params: 3 functions
   -3 params: 8 functions
   -2 params: 16 functions
-  -1 params: 50 functions
-  +1 params: 187 functions
-  +2 params: 95 functions
-  +3 params: 45 functions
-  +4 params: 73 functions
+  -1 params: 51 functions
+  +1 params: 188 functions
+  +2 params: 82 functions
+  +3 params: 42 functions
+  +4 params: 74 functions
   +5 params: 5 functions
-  +6 params: 3 functions
-  +7 params: 4 functions
-  +8 params: 1 functions
+  +6 params: 2 functions
+  +7 params: 3 functions
   +9 params: 2 functions

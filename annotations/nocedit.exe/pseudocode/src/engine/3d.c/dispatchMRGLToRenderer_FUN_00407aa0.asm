@@ -96,7 +96,7 @@ section .text
     PUSH 0x820074                       ; 00407b1e | g_RenderFaceArray
     PUSH 0x688014                       ; 00407b23 | g_RenderVertexBuffer
     CALL wincore_windll.cpp_drawPolyList_FUN_005b7640 ; 00407b28
-        ;   XREF to: 005b7640 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_drawPolyList_FUN_005b7640(void * vertex_buffer, void * * polygons, int polygon_count, int render_flags)
+        ;   XREF to: 005b7640 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_drawPolyList_FUN_005b7640(SRenderVertex * vertex_buffer, SMRGLPrimitiveTriangle * * polygons, int polygon_count, int render_flags)
     ADD ESP,0x10                        ; 00407b2d
     XOR EDX,EDX                         ; 00407b30
         ;   Label: LAB_00407b30
@@ -142,7 +142,7 @@ section .text
     PUSH 0x820074                       ; 00407b87 | g_RenderFaceArray
     PUSH 0x688014                       ; 00407b8c | g_RenderVertexBuffer
     CALL wincore_windll.cpp_drawPolyList_FUN_005b7640 ; 00407b91
-        ;   XREF to: 005b7640 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_drawPolyList_FUN_005b7640(void * vertex_buffer, void * * polygons, int polygon_count, int render_flags)
+        ;   XREF to: 005b7640 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_drawPolyList_FUN_005b7640(SRenderVertex * vertex_buffer, SMRGLPrimitiveTriangle * * polygons, int polygon_count, int render_flags)
     ADD ESP,0x10                        ; 00407b96
     XOR EDX,EDX                         ; 00407b99
         ;   Label: LAB_00407b99

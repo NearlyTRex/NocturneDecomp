@@ -33,7 +33,7 @@
 ;   undefined4 DAT_02cf1d18
 ;   int g_FontCharacterHeight
 ;   int g_FontCharacterWidth
-;   int INT_02cf2a78
+;   int g_WindowContentColor
 ;   ... and 8 more
 ;
 ; Called Functions:
@@ -115,9 +115,9 @@ section .text
     CALL engine_matrix.c_pushViewport_FUN_0050e320 ; 004a1020
         ;   XREF to: 0050e320 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pushViewport_FUN_0050e320(int x, int y, int width, int height)
     ADD ESP,0x10                        ; 004a1025
-    MOV EBP,dword ptr [0x02cf2a7c]      ; 004a1028 | g_WindowBorderColor1
+    MOV EBP,dword ptr [0x02cf2a7c]      ; 004a1028 | g_WindowBorderHighlightColor
     PUSH EBP                            ; 004a102e
-    MOV EAX,[0x02cf2a78]                ; 004a102f | INT_02cf2a78
+    MOV EAX,[0x02cf2a78]                ; 004a102f | g_WindowContentColor
     PUSH EAX                            ; 004a1034
     MOV EAX,dword ptr [EBX + 0xc]       ; 004a1035 | DAT_02cf1cec
     SUB EAX,0x2                         ; 004a1038
@@ -133,7 +133,7 @@ section .text
     PUSH EAX                            ; 004a104b
     CALL engine_2d.c_fillRectWithBorder_FUN_00403200 ; 004a104c
         ;   XREF to: 00403200 (UNCONDITIONAL_CALL)  ; void engine_2d.c_fillRectWithBorder_FUN_00403200(int x1, int y1, int x2, int y2, ...)
-    MOV EAX,[0x02cf2a80]                ; 004a1051 | g_WindowBorderColor2
+    MOV EAX,[0x02cf2a80]                ; 004a1051 | g_WindowBorderShadowColor
     MOV [0x02d02570],EAX                ; 004a1056 | g_ActiveRenderColor
     MOV EAX,dword ptr [EBX + 0x8]       ; 004a105b | DAT_02cf1ce8
     ADD ESP,0x18                        ; 004a105e
@@ -202,7 +202,7 @@ section .text
     SHL EDX,0x2                         ; 004a1102
     SBB EAX,EDX                         ; 004a1105
     SAR EAX,0x2                         ; 004a1107
-    MOV EDI,dword ptr [0x02cf2a88]      ; 004a110a | g_WindowFillColor
+    MOV EDI,dword ptr [0x02cf2a88]      ; 004a110a | g_TitleBarFillColor
     ADD EAX,ESI                         ; 004a1110
     PUSH EDI                            ; 004a1112
     DEC EAX                             ; 004a1113
@@ -273,7 +273,7 @@ section .text
     JGE 0x004a11bf                      ; 004a11bb
         ;   XREF to: 004a11bf (CONDITIONAL_JUMP)  ; LAB_004a11bf
     MOV ESI,EAX                         ; 004a11bd
-    MOV EAX,[0x02cf2a7c]                ; 004a11bf | g_WindowBorderColor1
+    MOV EAX,[0x02cf2a7c]                ; 004a11bf | g_WindowBorderHighlightColor
         ;   Label: LAB_004a11bf
     MOV [0x02d02570],EAX                ; 004a11c4 | g_ActiveRenderColor
     MOV EAX,dword ptr [EBX + 0x8]       ; 004a11c9 | DAT_02cf1ce8
@@ -287,8 +287,8 @@ section .text
     PUSH EAX                            ; 004a11d9
     CALL engine_2d.c_drawHLine_FUN_00402ee0 ; 004a11da
         ;   XREF to: 00402ee0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawHLine_FUN_00402ee0(int x1, int y, int x2)
-    MOV EAX,[0x02cf2a7c]                ; 004a11df | g_WindowBorderColor1
-    MOV EDI,dword ptr [0x02cf2a80]      ; 004a11e4 | g_WindowBorderColor2
+    MOV EAX,[0x02cf2a7c]                ; 004a11df | g_WindowBorderHighlightColor
+    MOV EDI,dword ptr [0x02cf2a80]      ; 004a11e4 | g_WindowBorderShadowColor
     ADD ESP,0xc                         ; 004a11ea
     CMP EAX,EDI                         ; 004a11ed
     JZ 0x004a120c                       ; 004a11ef

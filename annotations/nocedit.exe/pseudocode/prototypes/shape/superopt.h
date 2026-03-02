@@ -7,117 +7,117 @@
 // Address: 005c7910
 void __cdecl logToFile(char *format,...);
 
-// Original: shape_superopt.cpp_FUN_005c79a0
+// Original: shape_superopt.cpp_CComplexPolygon_ctor_FUN_005c79a0
 // Address: 005c79a0
-void __cdecl FUN_005c79a0(void);
+CComplexPolygon * __cdecl CComplexPolygon::ctor(CComplexPolygon *this_ptr);
 
-// Original: shape_superopt.cpp_FUN_005c79d0
+// Original: shape_superopt.cpp_CComplexPolygon_dtor_FUN_005c79d0
 // Address: 005c79d0
-int __cdecl FUN_005c79d0(void);
+CComplexPolygon * __cdecl CComplexPolygon::dtor(CComplexPolygon *this_ptr,uint flags);
 
-// Original: shape_superopt.cpp_FUN_005c79f0
+// Original: shape_superopt.cpp_CComplexPolygon_free_FUN_005c79f0
 // Address: 005c79f0
-void __cdecl FUN_005c79f0(void);
+void __cdecl CComplexPolygon::free(CComplexPolygon *this_ptr);
 
-// Original: shape_superopt.cpp_FUN_005c7a90
+// Original: shape_superopt.cpp_CComplexPolygon_addSharedTriangle_FUN_005c7a90
 // Address: 005c7a90
-int __cdecl FUN_005c7a90(void);
+int __cdecl CComplexPolygon::addSharedTriangle(CComplexPolygon *this_ptr,CPoly *poly);
 
-// Original: shape_superopt.cpp_FUN_005c7b20
+// Original: shape_superopt.cpp_CComplexPolygon_buildEdgeList_FUN_005c7b20
 // Address: 005c7b20
-int __cdecl FUN_005c7b20(void);
+int __cdecl CComplexPolygon::buildEdgeList(CComplexPolygon *this_ptr);
 
-// Original: shape_superopt.cpp_FUN_005c7dc0
+// Original: shape_superopt.cpp_CComplexPolygon_mergeAdjacentEdges_FUN_005c7dc0
 // Address: 005c7dc0
-void __cdecl FUN_005c7dc0(void);
+void __cdecl CComplexPolygon::mergeAdjacentEdges(CComplexPolygon *this_ptr);
 
-// Original: shape_superopt.cpp_FUN_005c7fb0
+// Original: shape_superopt.cpp_CComplexPolygon_canMergeEdges_FUN_005c7fb0
 // Address: 005c7fb0
-int __cdecl FUN_005c7fb0(void);
+int __cdecl CComplexPolygon::canMergeEdges(CComplexPolygon *this_ptr,SExpandedEdge *edge_a,SExpandedEdge *edge_b);
 
-// Original: shape_superopt.cpp_FUN_005c8160
+// Original: shape_superopt.cpp_CComplexPolygon_removedSharedEdges_FUN_005c8160
 // Address: 005c8160
-void __cdecl FUN_005c8160(void);
+void __cdecl CComplexPolygon::removedSharedEdges(CComplexPolygon *this_ptr);
 
-// Original: shape_superopt.cpp_FUN_005c8280
+// Original: shape_superopt.cpp_CComplexPolygon_orderEdgesIntoChain_FUN_005c8280
 // Address: 005c8280
-int __cdecl FUN_005c8280(void);
+int __cdecl CComplexPolygon::orderEdgesIntoChain(CComplexPolygon *this_ptr,SExpandedEdge *edges,int edge_count);
 
-// Original: shape_superopt.cpp_FUN_005c84c0
+// Original: shape_superopt.cpp_CComplexPolygon_splitToConvex_FUN_005c84c0
 // Address: 005c84c0
-int __cdecl FUN_005c84c0(void);
+int __cdecl CComplexPolygon::splitToConvex(CComplexPolygon *this_ptr);
 
-// Original: shape_superopt.cpp_FUN_005c8b50
+// Original: shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50
 // Address: 005c8b50
-int __cdecl FUN_005c8b50(void);
+int __cdecl CComplexPolygon::findReflexVertex(CComplexPolygon *this_ptr,SExpandedEdge *buf_a,SExpandedEdge *buf_b);
 
-// Original: shape_superopt.cpp_FUN_005c8e70
+// Original: shape_superopt.cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70
 // Address: 005c8e70
-int __cdecl FUN_005c8e70(void);
+int __cdecl CComplexPolygon::findBestSplitEdge(CComplexPolygon *this_ptr,SExpandedEdge *buf_a,SExpandedEdge *buf_b);
 
-// Original: shape_superopt.cpp_FUN_005c9100
+// Original: shape_superopt.cpp_CComplexPolygon_computeArea_FUN_005c9100
 // Address: 005c9100
-int __cdecl FUN_005c9100(void);
+int __cdecl CComplexPolygon::computeArea(CComplexPolygon *this_ptr,SExpandedEdge *edges,int edge_count);
 
-// Original: shape_superopt.cpp_FUN_005c91e0
+// Original: shape_superopt.cpp_CComplexPolygon_processEdgeSubLoops_FUN_005c91e0
 // Address: 005c91e0
-uint __cdecl FUN_005c91e0(void);
+int __cdecl CComplexPolygon::processEdgeSubLoops(CComplexPolygon *this_ptr,SExpandedEdge *edges,int *edge_count_ptr);
 
-// Original: shape_superopt.cpp_FUN_005c9340
+// Original: shape_superopt.cpp_CComplexPolygon_removeRedundantEdges_FUN_005c9340
 // Address: 005c9340
-void __cdecl FUN_005c9340(void);
+void __cdecl CComplexPolygon::removeRedundantEdges(CComplexPolygon *this_ptr,SExpandedEdge *edges,int *edge_count_ptr);
 
-// Original: shape_superopt.cpp_FUN_005c9500
+// Original: shape_superopt.cpp_CComplexPolygon_splitByDimensions_FUN_005c9500
 // Address: 005c9500
-int __cdecl FUN_005c9500(void);
+CComplexPolygon * __cdecl CComplexPolygon::splitByDimensions(CComplexPolygon *this_ptr,double *max_dimensions);
 
-// Original: shape_superopt.cpp_FUN_005c9aa0
+// Original: shape_superopt.cpp_CComplexPolygon_splitEdgesByPlane_FUN_005c9aa0
 // Address: 005c9aa0
-void __cdecl FUN_005c9aa0(void);
+void __cdecl CComplexPolygon::splitEdgesByPlane(CComplexPolygon *this_ptr,CVector3d *plane_normal,CVector3d *plane_point,SExpandedEdge *buf_a,SExpandedEdge *buf_b,int *count_a,int *count_b);
 
-// Original: shape_superopt.cpp_FUN_005ca590
+// Original: shape_superopt.cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590
 // Address: 005ca590
-int __cdecl FUN_005ca590(void);
+int __cdecl CComplexPolygon::closeSplitBoundary(CComplexPolygon *this_ptr,SExpandedEdge *edges,int *edge_count_ptr,int is_secondary);
 
-// Original: shape_superopt.cpp_FUN_005cb3a0
+// Original: shape_superopt.cpp_CComplexPolygon_isConvex_FUN_005cb3a0
 // Address: 005cb3a0
-int __cdecl FUN_005cb3a0(void);
+int __cdecl CComplexPolygon::isConvex(CComplexPolygon *this_ptr,SExpandedEdge *edges,int edge_count);
 
-// Original: shape_superopt.cpp_FUN_005cbb40
+// Original: shape_superopt.cpp_CComplexPolygon_computeWindingNormal_FUN_005cbb40
 // Address: 005cbb40
-double * __cdecl FUN_005cbb40(void);
+CVector3d * __cdecl CComplexPolygon::computeWindingNormal(CComplexPolygon *this_ptr,CVector3d *output_normal,SExpandedEdge *edges,int edge_count);
 
-// Original: shape_superopt.cpp_FUN_005cbe20
+// Original: shape_superopt.cpp_CComplexPolygon_storeEdgeSubChain_FUN_005cbe20
 // Address: 005cbe20
-void __cdecl FUN_005cbe20(void);
+void __cdecl CComplexPolygon::storeEdgeSubChain(CComplexPolygon *this_ptr,SExpandedEdge *edges,int edge_count);
 
-// Original: shape_superopt.cpp_FUN_005cbec0
+// Original: shape_superopt.cpp_CComplexPolygon_getConvexSubChains_FUN_005cbec0
 // Address: 005cbec0
-int __cdecl FUN_005cbec0(void);
+void * __cdecl CComplexPolygon::getConvexSubChains(CComplexPolygon *this_ptr,int *out_count);
 
-// Original: shape_superopt.cpp_FUN_005cbee0
+// Original: shape_superopt.cpp_CComplexPolygon_getExpandedEdgeCount_FUN_005cbee0
 // Address: 005cbee0
-int __cdecl FUN_005cbee0(void);
+int __cdecl CComplexPolygon::getExpandedEdgeCount(CComplexPolygon *this_ptr);
 
-// Original: shape_superopt.cpp_FUN_005cbef0
+// Original: shape_superopt.cpp_CComplexPolygon_getNormal_FUN_005cbef0
 // Address: 005cbef0
-int __cdecl FUN_005cbef0(void);
+CVector3d * __cdecl CComplexPolygon::getNormal(CComplexPolygon *this_ptr);
 
-// Original: shape_superopt.cpp_FUN_005cbf00
+// Original: shape_superopt.cpp_CComplexPolygon_setMaterialId_FUN_005cbf00
 // Address: 005cbf00
-int __cdecl FUN_005cbf00(void);
+int __cdecl CComplexPolygon::setMaterialId(CComplexPolygon *this_ptr,int material_id);
 
-// Original: shape_superopt.cpp_FUN_005cbf10
+// Original: shape_superopt.cpp_CComplexPolygon_getExpandedEdges_FUN_005cbf10
 // Address: 005cbf10
-int __cdecl FUN_005cbf10(void);
+void * __cdecl CComplexPolygon::getExpandedEdges(CComplexPolygon *this_ptr);
 
-// Original: shape_superopt.cpp_FUN_005cbf20
+// Original: shape_superopt.cpp_CComplexPolygon_isEdgeChainClosed_FUN_005cbf20
 // Address: 005cbf20
-int __cdecl FUN_005cbf20(void);
+int __cdecl CComplexPolygon::isEdgeChainClosed(CComplexPolygon *this_ptr,SExpandedEdge *edges,int edge_count);
 
-// Original: shape_superopt.cpp_FUN_005cbf90
+// Original: shape_superopt.cpp_CComplexPolygon_validateSubChainVisibility_FUN_005cbf90
 // Address: 005cbf90
-int __cdecl FUN_005cbf90(void);
+int __cdecl CComplexPolygon::validateSubChainVisibility(CComplexPolygon *this_ptr,CVector3d *normal,SExpandedEdge *sub_chain,int sub_chain_count,SExpandedEdge *full_edges,int full_edge_count);
 
 // Original: shape_superopt.cpp_CPoly_ctor_FUN_005cc620
 // Address: 005cc620
@@ -533,7 +533,7 @@ int __cdecl areVectorsCollinear(CVector3d *vec1,CVector3d *vec2);
 
 // Original: shape_superopt.cpp_isPointOnLineSegment_FUN_005d6c10
 // Address: 005d6c10
-int __cdecl isPointOnLineSegment(CVector3d *point,CVector3d *segStart,CVector3d *segEnd);
+int __cdecl isPointOnLineSegment(CVector3d *point,CVector3d *seg_start,CVector3d *seg_end);
 
 // Original: shape_superopt.cpp_COptimize_ctor_FUN_005d6f90
 // Address: 005d6f90
@@ -543,77 +543,77 @@ COptimize * __cdecl COptimize::ctor(COptimize *this_ptr);
 // Address: 005d6fd0
 COptimize * __cdecl COptimize::dtor(COptimize *this_ptr,uint flags);
 
-// Original: shape_superopt.cpp_COptimize_FUN_005d7000
+// Original: shape_superopt.cpp_COptimize_cleanup_FUN_005d7000
 // Address: 005d7000
-void __cdecl COptimize(COptimize *this_ptr);
+void __cdecl COptimize::cleanup(COptimize *this_ptr);
 
-// Original: shape_superopt.cpp_COptimize_FUN_005d70d0
+// Original: shape_superopt.cpp_COptimize_setWeldThreshold_FUN_005d70d0
 // Address: 005d70d0
-void __cdecl COptimize(COptimize *this_ptr);
+void __cdecl COptimize::setWeldThreshold(COptimize *this_ptr,double threshold);
 
-// Original: shape_superopt.cpp_COptimize_FUN_005d70f0
+// Original: shape_superopt.cpp_COptimize_getWeldThreshold_FUN_005d70f0
 // Address: 005d70f0
-double __cdecl COptimize(COptimize *this_ptr);
+double __cdecl COptimize::getWeldThreshold(COptimize *this_ptr);
 
-// Original: shape_superopt.cpp_COptimize_FUN_005d7120
+// Original: shape_superopt.cpp_COptimize_setCoplanarAngleThreshold_FUN_005d7120
 // Address: 005d7120
-void __cdecl COptimize(COptimize *this_ptr);
+void __cdecl COptimize::setCoplanarAngleThreshold(COptimize *this_ptr,double threshold);
 
-// Original: shape_superopt.cpp_COptimize_FUN_005d7140
+// Original: shape_superopt.cpp_COptimize_getCoplanarAngleThreshold_FUN_005d7140
 // Address: 005d7140
-double __cdecl COptimize(COptimize *this_ptr);
+double __cdecl COptimize::getCoplanarAngleThreshold(COptimize *this_ptr);
 
-// Original: shape_superopt.cpp_COptimize_FUN_005d7170
+// Original: shape_superopt.cpp_COptimize_setCoplanarDistanceThreshold_FUN_005d7170
 // Address: 005d7170
-void __cdecl COptimize(COptimize *this_ptr);
+void __cdecl COptimize::setCoplanarDistanceThreshold(COptimize *this_ptr,double threshold);
 
-// Original: shape_superopt.cpp_COptimize_FUN_005d7190
+// Original: shape_superopt.cpp_COptimize_getCoplanarDistanceThreshold_FUN_005d7190
 // Address: 005d7190
-double __cdecl COptimize(COptimize *this_ptr);
+double __cdecl COptimize::getCoplanarDistanceThreshold(COptimize *this_ptr);
 
-// Original: shape_superopt.cpp_COptimize_FUN_005d71c0
+// Original: shape_superopt.cpp_COptimize_setMaxPolygonSides_FUN_005d71c0
 // Address: 005d71c0
-void __cdecl COptimize(COptimize *this_ptr);
+void __cdecl COptimize::setMaxPolygonSides(COptimize *this_ptr,int max_sides);
 
-// Original: shape_superopt.cpp_COptimize_FUN_005d71d0
+// Original: shape_superopt.cpp_COptimize_getMaxPolygonSides_FUN_005d71d0
 // Address: 005d71d0
-int __cdecl COptimize(COptimize *this_ptr);
+int __cdecl COptimize::getMaxPolygonSides(COptimize *this_ptr);
 
-// Original: shape_superopt.cpp_COptimize_FUN_005d71e0
+// Original: shape_superopt.cpp_COptimize_setGeometry_FUN_005d71e0
 // Address: 005d71e0
-int __cdecl COptimize(COptimize *this_ptr);
+int __cdecl COptimize::setGeometry(COptimize *this_ptr,CObj *objects,uint object_count);
 
-// Original: shape_superopt.cpp_COptimize_FUN_005d7290
+// Original: shape_superopt.cpp_COptimize_optimize_FUN_005d7290
 // Address: 005d7290
-int __cdecl COptimize(COptimize *this_ptr);
+int __cdecl COptimize::optimize(COptimize *this_ptr);
 
-// Original: shape_superopt.cpp_COptimize_FUN_005d7350
+// Original: shape_superopt.cpp_COptimize_optimizeComplex_FUN_005d7350
 // Address: 005d7350
-int __cdecl COptimize(COptimize *this_ptr);
+int __cdecl COptimize::optimizeComplex(COptimize *this_ptr);
 
-// Original: shape_superopt.cpp_COptimize_FUN_005d7460
+// Original: shape_superopt.cpp_COptimize_findCoplanarPolygons_FUN_005d7460
 // Address: 005d7460
-void __cdecl COptimize(COptimize *this_ptr);
+void __cdecl COptimize::findCoplanarPolygons(COptimize *this_ptr,CPoly *polygon,COptimize *search_obj);
 
-// Original: shape_superopt.cpp_COptimize_FUN_005d7690
+// Original: shape_superopt.cpp_COptimize_splitToConvex_FUN_005d7690
 // Address: 005d7690
-int __cdecl COptimize(COptimize *this_ptr);
+int __cdecl COptimize::splitToConvex(COptimize *this_ptr);
 
-// Original: shape_superopt.cpp_COptimize_FUN_005d76e0
+// Original: shape_superopt.cpp_COptimize_addComplexPolygon_FUN_005d76e0
 // Address: 005d76e0
-void __cdecl COptimize(COptimize *this_ptr);
+void __cdecl COptimize::addComplexPolygon(COptimize *this_ptr,CComplexPolygon *polygon);
 
-// Original: shape_superopt.cpp_FUN_005d7750
+// Original: shape_superopt.cpp_findTriListTextureIndex_FUN_005d7750
 // Address: 005d7750
-int __cdecl FUN_005d7750(void);
+int __cdecl findTriListTextureIndex(char *filename);
 
-// Original: shape_superopt.cpp_TriListSomething_FUN_005d77a0
+// Original: shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a0
 // Address: 005d77a0
-void __cdecl TriListSomething(void);
+void __cdecl optimizeCubeTriList(void);
 
-// Original: shape_superopt.cpp_BonesAndPointsCheck_FUN_005d7e00
+// Original: shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00
 // Address: 005d7e00
-void __cdecl BonesAndPointsCheck(void);
+void __cdecl COptimize::exportOptimizeGeometry(COptimize *this_ptr);
 
 // Original: shape_superopt.cpp_CP3D_ctor_FUN_005d8120
 // Address: 005d8120
@@ -635,109 +635,109 @@ CVec * __cdecl CVec::dtor(CVec *this_ptr,uint flags);
 // Address: 005d8160
 CVec * __cdecl CVec::copy(CVec *this_ptr,CVec *other);
 
-// Original: shape_superopt.cpp_FUN_005d8190
+// Original: shape_superopt.cpp_CVec_copy_FUN_005d8190
 // Address: 005d8190
-void __cdecl FUN_005d8190(void);
+CVec * __cdecl CVec::copy(CVec *this_ptr,CVec *other);
 
-// Original: shape_superopt.cpp_FUN_005d81c0
+// Original: shape_superopt.cpp_CVec_normalize_FUN_005d81c0
 // Address: 005d81c0
-void __cdecl FUN_005d81c0(void);
+void __cdecl CVec::normalize(CVec *this_ptr);
 
-// Original: shape_superopt.cpp_FUN_005d8200
+// Original: shape_superopt.cpp_CVec_getLength_FUN_005d8200
 // Address: 005d8200
-int __cdecl FUN_005d8200(void);
+int __cdecl CVec::getLength(CVec *this_ptr);
 
-// Original: shape_superopt.cpp_FUN_005d8230
+// Original: shape_superopt.cpp_CVec_setLength_FUN_005d8230
 // Address: 005d8230
-void __cdecl FUN_005d8230(void);
+void __cdecl CVec::setLength(CVec *this_ptr,double length);
 
-// Original: shape_superopt.cpp_FUN_005d8270
+// Original: shape_superopt.cpp_CVec_cross_FUN_005d8270
 // Address: 005d8270
-double * __cdecl FUN_005d8270(void);
+CVec * __cdecl CVec::cross(CVec *this_ptr,CVec *a,CVec *b);
 
-// Original: shape_superopt.cpp_FUN_005d82b0
+// Original: shape_superopt.cpp_CVec_copy_FUN_005d82b0
 // Address: 005d82b0
-void __cdecl FUN_005d82b0(void);
+void __cdecl CVec::copy(CVec *this_ptr,CVec *other);
 
-// Original: shape_superopt.cpp_FUN_005d82e0
+// Original: shape_superopt.cpp_CVec_dot_FUN_005d82e0
 // Address: 005d82e0
-int __cdecl FUN_005d82e0(void);
+int __cdecl CVec::dot(CVec *this_ptr,CVec *other);
 
-// Original: shape_superopt.cpp_FUN_005d8310
+// Original: shape_superopt.cpp_CP2D_set_FUN_005d8310
 // Address: 005d8310
-void __cdecl FUN_005d8310(void);
+void __cdecl CP2D::set(CP2D *this_ptr,double x,double y);
 
-// Original: shape_superopt.cpp_FUN_005d8330
+// Original: shape_superopt.cpp_CP2D_copy_FUN_005d8330
 // Address: 005d8330
-void __cdecl FUN_005d8330(void);
+CP2D * __cdecl CP2D::copy(CP2D *dst,CP2D *src);
 
-// Original: shape_superopt.cpp_FUN_005d8350
+// Original: shape_superopt.cpp_CP2D_subtract_FUN_005d8350
 // Address: 005d8350
-void __cdecl FUN_005d8350(void);
+CP2D * __stack2_esi CP2D::subtract(CP2D *this_ptr,CP2D *a,CP2D *b);
 
-// Original: shape_superopt.cpp_FUN_005d8390
+// Original: shape_superopt.cpp_CP2D_add_FUN_005d8390
 // Address: 005d8390
-void __cdecl FUN_005d8390(void);
+CP2D * __stack2_esi CP2D::add(CP2D *this_ptr,CP2D *a,CP2D *b);
 
-// Original: shape_superopt.cpp_FUN_005d83d0
+// Original: shape_superopt.cpp_CP2D_FUN_005d83d0
 // Address: 005d83d0
-void __cdecl FUN_005d83d0(void);
+CP2D * __cdecl CP2D(CP2D *this_ptr,double scale);
 
-// Original: shape_superopt.cpp_FUN_005d8410
+// Original: shape_superopt.cpp_CP2D_isEqual_FUN_005d8410
 // Address: 005d8410
-int __cdecl FUN_005d8410(void);
+int __cdecl CP2D::isEqual(CP2D *this_ptr,CP2D *b);
 
-// Original: shape_superopt.cpp_FUN_005d8440
+// Original: shape_superopt.cpp_CP3D_set_FUN_005d8440
 // Address: 005d8440
-void __cdecl FUN_005d8440(void);
+void __cdecl CP3D::set(CP3D *this_ptr,double x,double y,double z);
 
-// Original: shape_superopt.cpp_FUN_005d8470
+// Original: shape_superopt.cpp_CP3D_copy_FUN_005d8470
 // Address: 005d8470
-void __cdecl FUN_005d8470(void);
+void __cdecl CP3D::copy(CP3D *this_ptr,CP3D *other);
 
-// Original: shape_superopt.cpp_FUN_005d84a0
+// Original: shape_superopt.cpp_CP3D_copy_FUN_005d84a0
 // Address: 005d84a0
-void __cdecl FUN_005d84a0(void);
+void __cdecl CP3D::copy(CP3D *this_ptr,CP3D *other);
 
-// Original: shape_superopt.cpp_FUN_005d84d0
+// Original: shape_superopt.cpp_CP3D_subtract_FUN_005d84d0
 // Address: 005d84d0
-void __cdecl FUN_005d84d0(void);
+CP3D * __stack2_esi CP3D::subtract(CP3D *this_ptr,CP3D *a,CP3D *b);
 
-// Original: shape_superopt.cpp_FUN_005d8520
+// Original: shape_superopt.cpp_CP3D_add_FUN_005d8520
 // Address: 005d8520
-void __cdecl FUN_005d8520(void);
+CP3D * __stack2_esi CP3D::add(CP3D *this_ptr,CP3D *a,CP3D *b);
 
-// Original: shape_superopt.cpp_FUN_005d8570
+// Original: shape_superopt.cpp_CP3D_increment_FUN_005d8570
 // Address: 005d8570
-void __cdecl FUN_005d8570(void);
+CP3D * __cdecl CP3D::increment(CP3D *this_ptr,CP3D *other);
 
-// Original: shape_superopt.cpp_FUN_005d85a0
+// Original: shape_superopt.cpp_CP3D_add_FUN_005d85a0
 // Address: 005d85a0
-void __cdecl FUN_005d85a0(void);
+CP3D * __stack2_esi CP3D::add(CP3D *this_ptr,CP3D *a,CP3D *b);
 
-// Original: shape_superopt.cpp_FUN_005d85f0
+// Original: shape_superopt.cpp_CP3D_multiply_FUN_005d85f0
 // Address: 005d85f0
-void __cdecl FUN_005d85f0(void);
+CP3D * __stack2_esi CP3D::multiply(CP3D *this_ptr,CP3D *a,CP3D *b);
 
-// Original: shape_superopt.cpp_FUN_005d8630
+// Original: shape_superopt.cpp_CP3D_FUN_005d8630
 // Address: 005d8630
-void __cdecl FUN_005d8630(void);
+CP3D * __cdecl CP3D(CP3D *this_ptr,double scalar);
 
-// Original: shape_superopt.cpp_FUN_005d8670
+// Original: shape_superopt.cpp_CP3D_isEqual_FUN_005d8670
 // Address: 005d8670
-int __cdecl FUN_005d8670(void);
+int __cdecl CP3D::isEqual(CP3D *this_ptr,CP3D *other);
 
-// Original: shape_superopt.cpp_FUN_005d86a0
+// Original: shape_superopt.cpp_CP3D_isNotEqual_FUN_005d86a0
 // Address: 005d86a0
-int __cdecl FUN_005d86a0(void);
+int __cdecl CP3D::isNotEqual(CP3D *this_ptr,CP3D *other);
 
-// Original: shape_superopt.cpp_FUN_005d86d0
+// Original: shape_superopt.cpp_CP3D_distance_FUN_005d86d0
 // Address: 005d86d0
-double __cdecl FUN_005d86d0(double *param_1,double *param_2);
+double __cdecl CP3D::distance(CP3D *this_ptr,CP3D *other);
 
-// Original: shape_superopt.cpp_FUN_005d8710
+// Original: shape_superopt.cpp_SExpandedEdge_copy_FUN_005d8710
 // Address: 005d8710
-void __cdecl FUN_005d8710(void);
+SExpandedEdge * __cdecl SExpandedEdge::copy(SExpandedEdge *this_ptr,SExpandedEdge *other);
 
 // Original: shape_superopt.cpp_CP2D_dtor_FUN_005d87c0
 // Address: 005d87c0

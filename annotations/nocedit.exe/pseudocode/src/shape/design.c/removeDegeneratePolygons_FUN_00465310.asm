@@ -13,7 +13,7 @@
 ; XREF[3]:
 ;   shape_design.c_configureSinglePassPolygonReduction_FUN_00465560 at 00465780
 ;   shape_design.c_optimizePolygonMesh_FUN_004658e0 at 00465aaf
-;   shape_superopt.cpp_TriListSomething_FUN_005d77a0 at 005d77af
+;   shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a0 at 005d77af
 ;
 ; Referenced Globals:
 ;   int g_PolygonCount

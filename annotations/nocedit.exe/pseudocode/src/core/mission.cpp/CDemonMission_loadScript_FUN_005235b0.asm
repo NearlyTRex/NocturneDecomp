@@ -1,16 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_mission_cpp_CDemonMission_loadScript_FUN_005235b0(CDemonMission *this_ptr,int param_2)
+; int __cdecl core_mission_cpp_CDemonMission_loadScript_FUN_005235b0(CDemonMission *this_ptr,int is_loading)
 ;
 ; Parameters:
 ; CDemonMission *  Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param_2
+; int              Stack[0x8]:4   is_loading
 ; Local Variables:
 ; undefined1       Stack[-0x104]:1  local_104
 ;
 ; XREF[2]:
-;   core_mission.cpp_CDemonMission_FUN_00524760 at 00524816
+;   core_mission.cpp_CDemonMission_startMission_FUN_00524760 at 00524816
 ;   core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0 at 005384e4
 ;
 ; Referenced Globals:

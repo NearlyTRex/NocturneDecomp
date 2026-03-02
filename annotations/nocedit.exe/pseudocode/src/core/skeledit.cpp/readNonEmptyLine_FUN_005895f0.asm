@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   require_content
 ;
 ; XREF[1]:
-;   core_skeledit.cpp_CSkeleton_FUN_00592690 at 00592a7a
+;   core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 at 00592a7a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeledit_cpp_00649cda

@@ -1,0 +1,141 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "format_error",
+        "column": 58,
+        "line": 17,
+        "message": "format specifies type 'char *' but the argument has type 'CLodMeshPrecomputeEntry *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 44,
+        "line": 19,
+        "message": "format specifies type 'char *' but the argument has type 'CLodMeshPrecomputeEntry *' [-Werror,-Wformat]"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 70,
+    "complexity_score": 19,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 3,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 19,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 89
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0058a1b0",
+    "address_range": [
+      [
+        "0058a1b0",
+        "0058a25c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeledit.cpp_CLodMeshPrecomputeEntry_parseLine_FUN_0058a1b0",
+    "signature": "int __cdecl core_skeledit_cpp_CLodMeshPrecomputeEntry_parseLine_FUN_0058a1b0(CLodMeshPrecomputeEntry *this_ptr,char *line)"
+  },
+  "function_calls": [
+    {
+      "addr": "005ff9f3",
+      "is_variadic": false,
+      "name": "crt_stack.c___STK_FUN_005ff9f3"
+    },
+    {
+      "addr": "0060013c",
+      "is_variadic": true,
+      "name": "crt_stdio.c_sscanf_FUN_0060013c"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0064a213",
+      "name": "s_n_0064a213",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064a22f",
+      "name": "s_n_0064a22f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064a242",
+      "name": "s_d_d_0064a242",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.016949152542373,
+    "instruction_count": 59,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CALL": 4,
+      "CBRANCH": 2,
+      "COPY": 49,
+      "INT_ADD": 24,
+      "INT_AND": 22,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 22,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 11,
+      "INT_SUB": 26,
+      "INT_XOR": 1,
+      "LOAD": 13,
+      "POPCOUNT": 11,
+      "RETURN": 2,
+      "STORE": 27
+    },
+    "pcode_op_count": 237
+  },
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 20,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLodMeshPrecomputeEntry *"
+      },
+      {
+        "is_param": true,
+        "name": "line",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
+}

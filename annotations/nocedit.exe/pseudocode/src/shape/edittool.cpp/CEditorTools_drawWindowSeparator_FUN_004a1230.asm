@@ -21,8 +21,8 @@
 ;   undefined4 DAT_02cf1ce4
 ;   undefined4 DAT_02cf1ce8
 ;   undefined4 DAT_02cf1cec
-;   int g_WindowBorderColor1
-;   int g_WindowBorderColor2
+;   int g_WindowBorderHighlightColor
+;   int g_WindowBorderShadowColor
 ;   int g_ClipTop
 ;   int g_ActiveRenderColor
 ;   char* g_CurrentFilename
@@ -86,7 +86,7 @@ section .text
     MOV ESI,dword ptr [EBX + 0xc]       ; 004a12bd | DAT_02cf1cec
     ADD EAX,EDX                         ; 004a12c0
     SUB ESI,EAX                         ; 004a12c2
-    MOV EAX,[0x02cf2a7c]                ; 004a12c4 | g_WindowBorderColor1
+    MOV EAX,[0x02cf2a7c]                ; 004a12c4 | g_WindowBorderHighlightColor
     MOV [0x02d02570],EAX                ; 004a12c9 | g_ActiveRenderColor
     MOV EAX,dword ptr [EBX + 0x8]       ; 004a12ce | DAT_02cf1ce8
     SUB EAX,0x2                         ; 004a12d1
@@ -97,8 +97,8 @@ section .text
     PUSH EAX                            ; 004a12d9
     CALL engine_2d.c_drawHLine_FUN_00402ee0 ; 004a12da
         ;   XREF to: 00402ee0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawHLine_FUN_00402ee0(int x1, int y, int x2)
-    MOV EAX,[0x02cf2a7c]                ; 004a12df | g_WindowBorderColor1
-    MOV EDX,dword ptr [0x02cf2a80]      ; 004a12e4 | g_WindowBorderColor2
+    MOV EAX,[0x02cf2a7c]                ; 004a12df | g_WindowBorderHighlightColor
+    MOV EDX,dword ptr [0x02cf2a80]      ; 004a12e4 | g_WindowBorderShadowColor
     ADD ESP,0xc                         ; 004a12ea
     CMP EAX,EDX                         ; 004a12ed
     JNZ 0x004a1302                      ; 004a12ef

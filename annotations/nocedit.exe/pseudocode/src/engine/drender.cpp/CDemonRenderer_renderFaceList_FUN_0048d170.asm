@@ -304,7 +304,7 @@ section .text
     MOV ECX,dword ptr [ESI]             ; 0048d3f2
     PUSH ECX                            ; 0048d3f4
     CALL wincore_windll.cpp_drawPolyList2_FUN_005b7780 ; 0048d3f5
-        ;   XREF to: 005b7780 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_drawPolyList2_FUN_005b7780(void * vertex_buffer, void * * polygons, int polygon_count, int render_flags)
+        ;   XREF to: 005b7780 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_drawPolyList2_FUN_005b7780(SRenderVertex * vertex_buffer, ushort * * polygons, int polygon_count, int render_flags)
     ADD ESP,0x10                        ; 0048d3fa
     ADD ESP,0x14                        ; 0048d3fd
     POP EBP                             ; 0048d400

@@ -205,7 +205,7 @@ section .text
         ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; void engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
     ADD ESP,0x4                         ; 0049fce2
     PUSH -0x1                           ; 0049fce5
-    MOV EDX,dword ptr [0x02cf2aac]      ; 0049fce7 | INT_02cf2aac
+    MOV EDX,dword ptr [0x02cf2aac]      ; 0049fce7 | g_DialogTextColor
     PUSH EDX                            ; 0049fced
     MOV ECX,dword ptr [0x02d0255c]      ; 0049fcee | g_ClipTop
     PUSH ECX                            ; 0049fcf4
@@ -222,7 +222,7 @@ section .text
         ;   Label: LAB_0049fd10
     JZ 0x0049fdf6                       ; 0049fd18
         ;   XREF to: 0049fdf6 (CONDITIONAL_JUMP)  ; LAB_0049fdf6
-    MOV EBX,dword ptr [0x02cf2ab0]      ; 0049fd1e | g_ButtonColor
+    MOV EBX,dword ptr [0x02cf2ab0]      ; 0049fd1e | g_ActiveItemTextColor
     PUSH 0xffff                         ; 0049fd24
         ;   Label: LAB_0049fd24
     CALL engine_3d.c_setRenderAlpha_FUN_00406d80 ; 0049fd29
@@ -296,7 +296,7 @@ section .text
     PUSH 0x0                            ; 0049fdef
     JMP 0x0049fc22                      ; 0049fdf1
         ;   XREF to: 0049fc22 (UNCONDITIONAL_JUMP)  ; LAB_0049fc22
-    MOV EBX,dword ptr [0x02cf2aac]      ; 0049fdf6 | INT_02cf2aac
+    MOV EBX,dword ptr [0x02cf2aac]      ; 0049fdf6 | g_DialogTextColor
         ;   Label: LAB_0049fdf6
     JMP 0x0049fd24                      ; 0049fdfc
         ;   XREF to: 0049fd24 (UNCONDITIONAL_JUMP)  ; LAB_0049fd24

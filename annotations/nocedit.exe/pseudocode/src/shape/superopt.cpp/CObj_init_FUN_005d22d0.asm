@@ -10,7 +10,7 @@
 ;
 ; XREF[2]:
 ;   shape_superopt.cpp_CObj_ctor_FUN_005d2230 at 005d2250
-;   shape_superopt.cpp_TriListSomething_FUN_005d77a0 at 005d789a
+;   shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a0 at 005d789a
 ;
 ; *****************************************************************************
 

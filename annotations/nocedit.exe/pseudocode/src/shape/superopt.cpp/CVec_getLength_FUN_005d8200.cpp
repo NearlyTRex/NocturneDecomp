@@ -1,0 +1,22 @@
+// Name: shape_superopt.cpp_CVec_getLength_FUN_005d8200
+// Address: 005d8200
+// Address Range: [[005d8200, 005d8228]]
+// Convention: __cdecl
+// Signature: int __cdecl shape_superopt_cpp_CVec_getLength_FUN_005d8200(CVec *this_ptr)
+
+#include "nocturne.h"
+
+int __cdecl shape_superopt_cpp_CVec_getLength_FUN_005d8200(CVec *this_ptr)
+
+{
+  double dVar1;
+  double dVar2;
+  double dVar3;
+  int local_8;
+  
+  dVar1 = (this_ptr->impl).y;
+  dVar2 = (this_ptr->impl).x;
+  dVar3 = (this_ptr->impl).z;
+  local_8 = SUB84(SQRT(dVar3 * dVar3 + dVar2 * dVar2 + dVar1 * dVar1),0);
+  return local_8;
+}

@@ -17,8 +17,7 @@ typedef struct CGargoyle {
     int stone_green; // 0xbef0
     int stone_blue; // 0xbef4
     struct CDemonActor* home_base; // 0xbef8
-    int unk2; // 0xbefc
-    uint sfx_handle; // 0xbf00
+    uint sfx_handles[2]; // 0xbefc
     CVector3i target_scale; // 0xbf04
     int returning_home; // 0xbf10
     float petrify_timer; // 0xbf14

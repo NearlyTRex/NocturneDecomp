@@ -2,11 +2,11 @@
 // Address: 004a3360
 // Address Range: [[004a3360, 004a35a7]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_edittool_cpp_CStrList_insertSortedFileRecord_FUN_004a3360(CStrList *this_ptr,char *search_key,char *file_path,int file_size)
+// Signature: void __cdecl shape_edittool_cpp_CStrList_insertSortedFileRecord_FUN_004a3360(CStrList *this_ptr,char *search_key,char *file_path,int file_size,time_t file_timestamp)
 
 #include "nocturne.h"
 
-void __cdecl shape_edittool_cpp_CStrList_insertSortedFileRecord_FUN_004a3360(CStrList *this_ptr,char *search_key,char *file_path,int file_size)
+void __cdecl shape_edittool_cpp_CStrList_insertSortedFileRecord_FUN_004a3360(CStrList *this_ptr,char *search_key,char *file_path,int file_size,time_t file_timestamp)
 
 {
   char cVar1;
@@ -71,7 +71,7 @@ void __cdecl shape_edittool_cpp_CStrList_insertSortedFileRecord_FUN_004a3360(CSt
       }
     } while (local_14 <= iVar5);
   }
-  time_ptr = _localtime((time_t *)&stack0x00000014);
+  time_ptr = _localtime(&file_timestamp);
   _strftime(local_34,0x1e,"%m/%d/%y %I:%M:%S %p",time_ptr);
   pcVar7 = g_FilePathBuffer;
   pcVar6 = local_704;

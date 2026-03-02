@@ -28,7 +28,7 @@
 ;   core_dcube.cpp_CDemonCube_loadGeometryFromTriangleList_FUN_004570a0 at 004572b1
 ;   core_dpart.cpp_CDemonPart_processAndFinalize_FUN_00482e40 at 00482f8a
 ;   shape_design.c_showShapeEditorMenu_FUN_0046f290 at 0046f6cf
-;   shape_superopt.cpp_TriListSomething_FUN_005d77a0 at 005d7d07
+;   shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a0 at 005d7d07
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Enter_tolerance_1_0061ca0d

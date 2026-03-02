@@ -11,7 +11,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
-;   shape_superopt.cpp_COptimize_FUN_005d71e0 at 005d722a
+;   shape_superopt.cpp_COptimize_setGeometry_FUN_005d71e0 at 005d722a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Unable_to_add_vertices_t_006543e6

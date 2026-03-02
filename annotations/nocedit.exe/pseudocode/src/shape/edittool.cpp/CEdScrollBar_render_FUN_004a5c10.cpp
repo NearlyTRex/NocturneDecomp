@@ -22,7 +22,7 @@ void __cdecl shape_edittool_cpp_CEdScrollBar_render_FUN_004a5c10(CEdScrollBar *t
   shape_edittool_cpp_CEdScrollBar_computeThumb_FUN_004a5ea0(this_ptr);
   engine_2d_c_fillRectWithBorder_FUN_00403200
             (this_ptr->bounds_left + 1,this_ptr->bounds_top + 1,this_ptr->bounds_right + -2,
-             this_ptr->bounds_bottom + -2,g_ShadowColor,g_ShadowHighlightColor);
+             this_ptr->bounds_bottom + -2,g_ShadowColor,g_ScrollBarHighlightColor);
   iVar1 = this_ptr->bounds_left + 1;
   width = this_ptr->bounds_right + -1;
   iVar3 = this_ptr->bounds_top + 1;

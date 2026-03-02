@@ -22,7 +22,7 @@
 ;
 ; Referenced Globals:
 ;   int g_ShadowColor
-;   int g_ShadowHighlightColor
+;   int g_ScrollBarHighlightColor
 ;   void* g_ActiveControl
 ;   int g_ScrollAction
 ;
@@ -48,7 +48,7 @@ section .text
     CALL shape_edittool.cpp_CEdScrollBar_computeThumb_FUN_004a5ea0 ; 004a5c1d
         ;   XREF to: 004a5ea0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEdScrollBar_computeThumb_FUN_004a5ea0(CEdScrollBar * this_ptr)
     ADD ESP,0x4                         ; 004a5c22
-    MOV EDX,dword ptr [0x02cf2ae0]      ; 004a5c25 | g_ShadowHighlightColor
+    MOV EDX,dword ptr [0x02cf2ae0]      ; 004a5c25 | g_ScrollBarHighlightColor
     PUSH EDX                            ; 004a5c2b
     MOV ECX,dword ptr [0x02cf2adc]      ; 004a5c2c | g_ShadowColor
     MOV EAX,dword ptr [EBX + 0x20]      ; 004a5c32

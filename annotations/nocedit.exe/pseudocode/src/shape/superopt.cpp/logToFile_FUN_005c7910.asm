@@ -9,16 +9,16 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[11]:
+;   shape_superopt.cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590 at 005cb062
 ;   shape_superopt.cpp_CObj_addPolygons_FUN_005d2410 at 005d24cb
 ;   shape_superopt.cpp_CObj_addVertices_FUN_005d2580 at 005d25ec
 ;   shape_superopt.cpp_CObj_allocatePolygons_FUN_005d2320 at 005d236f
 ;   shape_superopt.cpp_CObj_allocateVertices_FUN_005d2500 at 005d2541
 ;   shape_superopt.cpp_CObj_appendTo_FUN_005d2720 at 005d2861
 ;   shape_superopt.cpp_CObj_copyFrom_FUN_005d2650 at 005d2709
-;   shape_superopt.cpp_COptimize_FUN_005d71e0 at 005d7261
-;   shape_superopt.cpp_COptimize_FUN_005d7290 at 005d730c
-;   shape_superopt.cpp_COptimize_FUN_005d7350 at 005d7420
-;   shape_superopt.cpp_COptimize_FUN_005d7690 at 005d76d0
+;   shape_superopt.cpp_COptimize_optimizeComplex_FUN_005d7350 at 005d7420
+;   shape_superopt.cpp_COptimize_optimize_FUN_005d7290 at 005d730c
+;   shape_superopt.cpp_COptimize_setGeometry_FUN_005d71e0 at 005d7261
 ;   ... and 1 more
 ;
 ; Referenced Globals:

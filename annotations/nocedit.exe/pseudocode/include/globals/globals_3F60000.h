@@ -481,6 +481,7 @@ extern int INT_03f6bb8c;
 extern int INT_03f6bb90;
 extern int INT_03f6bb94;
 extern int g_LogInitialized;
+extern int INT_03f6bbe4;
 extern int g_TriListTextureCount;
 extern int INT_03f6cb90;
 extern int INT_03f6cb94;
@@ -523,7 +524,6 @@ extern undefined4 DAT_03f6baa8;
 extern undefined4 DAT_03f6bb1c;
 extern undefined4 DAT_03f6bb20;
 extern undefined4 DAT_03f6bb24;
-extern undefined4 DAT_03f6bbe4;
 
 // void*
 extern void* g_PrimaryMixBuffer;

@@ -1,0 +1,165 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 88,
+    "complexity_score": 29,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 3,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 29,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 117
+  },
+  "cross_references": [
+    {
+      "addr": "005d77a0",
+      "from_addr": "005d7ccb",
+      "name": "shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005d71e0",
+    "address_range": [
+      [
+        "005d71e0",
+        "005d7284"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_superopt.cpp_COptimize_setGeometry_FUN_005d71e0",
+    "signature": "int __cdecl shape_superopt_cpp_COptimize_setGeometry_FUN_005d71e0(COptimize *this_ptr,CObj *objects,uint object_count)"
+  },
+  "function_calls": [
+    {
+      "addr": "005d2720",
+      "is_variadic": false,
+      "name": "shape_superopt.cpp_CObj_appendTo_FUN_005d2720"
+    },
+    {
+      "addr": "005d2650",
+      "is_variadic": false,
+      "name": "shape_superopt.cpp_CObj_copyFrom_FUN_005d2650"
+    },
+    {
+      "addr": "005c7910",
+      "is_variadic": true,
+      "name": "shape_superopt.cpp_logToFile_FUN_005c7910"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00654572",
+      "name": "s_Invalid_inputs_to_setGeo_00654572",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006545a0",
+      "name": "s_Unable_to_copy_object_fo_006545a0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006545c3",
+      "name": "s_Unable_to_copy_merge_wit_006545c3",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005d7ccb",
+        "call_type": "direct",
+        "caller": "shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a0",
+        "estimated_params": 3,
+        "instructions_analyzed": 7,
+        "reg_params": [],
+        "stack_params": 3
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 3,
+    "estimated_params": 3
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.112676056338028,
+    "instruction_count": 71,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "BOOL_OR": 1,
+      "CALL": 5,
+      "CBRANCH": 6,
+      "COPY": 69,
+      "INT_ADD": 35,
+      "INT_AND": 55,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 41,
+      "INT_LEFT": 2,
+      "INT_LESS": 3,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_OR": 5,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 9,
+      "INT_SLESS": 22,
+      "INT_SUB": 21,
+      "INT_XOR": 4,
+      "LOAD": 25,
+      "POPCOUNT": 20,
+      "RETURN": 4,
+      "STORE": 17
+    },
+    "pcode_op_count": 363
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "COptimize *"
+      },
+      {
+        "is_param": true,
+        "name": "objects",
+        "offset": 8,
+        "size": 4,
+        "type": "CObj *"
+      },
+      {
+        "is_param": true,
+        "name": "object_count",
+        "offset": 12,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "COptimize",
+        "offset": 36,
+        "vtable_addr": "00663c44"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

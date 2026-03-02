@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   core_hero.cpp_factoryFunc_FUN_004f3bc0 at 004f3bdd
-;   core_mission.cpp_CDemonMission_FUN_00524c20 at 00524d0d
+;   core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_00524c20 at 00524d0d
 ;
 ; Referenced Globals:
 ;   CDemonActor_vtable g_CHeroPlaceholderVTable

@@ -8,8 +8,8 @@
 ;
 ; XREF[3]:
 ;   shape_superopt.cpp_CObj_dtor_FUN_005d2260 at 005d226d
-;   shape_superopt.cpp_COptimize_FUN_005d7000 at 005d7009
-;   shape_superopt.cpp_TriListSomething_FUN_005d77a0 at 005d7d24
+;   shape_superopt.cpp_COptimize_cleanup_FUN_005d7000 at 005d7009
+;   shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a0 at 005d7d24
 ;
 ; Called Functions:
 ;   crt_memory.c_free_FUN_00601cd0

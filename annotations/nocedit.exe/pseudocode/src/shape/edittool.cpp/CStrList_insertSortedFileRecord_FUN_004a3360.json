@@ -1,28 +1,20 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 36,
-        "line": 74,
-        "message": "use of undeclared identifier 'stack0x00000014'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 190,
-    "complexity_score": 124,
+    "complexity_score": 109,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 9,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 94,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
-      "stack_ref"
+      "pointer_cast"
     ],
     "total_lines": 284
   },
@@ -44,7 +36,7 @@
     ],
     "convention": "__cdecl",
     "name": "shape_edittool.cpp_CStrList_insertSortedFileRecord_FUN_004a3360",
-    "signature": "void __cdecl shape_edittool_cpp_CStrList_insertSortedFileRecord_FUN_004a3360(CStrList *this_ptr,char *search_key,char *file_path,int file_size)"
+    "signature": "void __cdecl shape_edittool_cpp_CStrList_insertSortedFileRecord_FUN_004a3360(CStrList *this_ptr,char *search_key,char *file_path,int file_size,time_t file_timestamp)"
   },
   "function_calls": [
     {
@@ -188,10 +180,10 @@
     "pcode_op_count": 711
   },
   "stack_frame": {
-    "frame_size": 2840,
+    "frame_size": 2844,
     "local_size": 2824,
     "param_offset": 4,
-    "param_size": 16,
+    "param_size": 20,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -305,6 +297,13 @@
         "offset": 16,
         "size": 4,
         "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "file_timestamp",
+        "offset": 20,
+        "size": 4,
+        "type": "time_t"
       }
     ]
   },
@@ -316,14 +315,6 @@
       "severity": "mild",
       "text": "pcVar2 = (char *)((int)pcVar2 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 67,
-      "match": "&stack0x00000014",
-      "severity": "moderate",
-      "text": "time_ptr = _localtime((time_t *)&stack0x00000014);",
-      "type": "stack_ref"
     }
   ]
 }

@@ -33,7 +33,7 @@
 ; Called Functions:
 ;   core_level.cpp_CLevelLoader_update_FUN_00504160
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   core_mission.cpp_CDemonMission_FUN_00524c20
+;   core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_00524c20
 ;   core_mission.cpp_CDemonMission_readMissionFile_FUN_00522eb0
 ;   engine_dosio.c_getFile_FUN_00481a50
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
@@ -76,7 +76,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x18]      ; 00522dd5
     PUSH EAX                            ; 00522dd9
     CALL core_mission.cpp_CDemonMission_readMissionFile_FUN_00522eb0 ; 00522dda
-        ;   XREF to: 00522eb0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonMission * this_ptr, _FILE * file_handle)
+        ;   XREF to: 00522eb0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonMission * this_ptr, _FILE * file_handle, int load_flags)
     ADD ESP,0xc                         ; 00522ddf
     PUSH 0x9f                           ; 00522de2
     PUSH 0x638a1c                       ; 00522de7 | = "..\\core\\mission.cpp"
@@ -86,8 +86,8 @@ section .text
     ADD ESP,0xc                         ; 00522df2
     MOV EDX,dword ptr [ESP + 0x10]      ; 00522df5
     PUSH EDX                            ; 00522df9
-    CALL core_mission.cpp_CDemonMission_FUN_00524c20 ; 00522dfa
-        ;   XREF to: 00524c20 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_00524c20(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_00524c20 ; 00522dfa
+        ;   XREF to: 00524c20 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_00524c20(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 00522dff
     POP EBP                             ; 00522e02
     POP EDI                             ; 00522e03

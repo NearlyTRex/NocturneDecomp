@@ -14,7 +14,7 @@
 ;   core_haystack.cpp_CHaystack_FUN_004f13f0 at 004f1863
 ;   core_icepick.cpp_CIcePick_FUN_004f8c70 at 004f9207
 ;   core_scat.cpp_CScat_FUN_005578e0 at 00557ab9
-;   core_svetlana.cpp_CSvetlana_FUN_005d9260 at 005d97f7
+;   core_svetlana.cpp_CSvetlana_processAI_FUN_005d9260 at 005d97f7
 ;   core_waypoint.cpp_CWayPoint_FUN_005ebd40 at 005ebe00
 ;   core_waypoint.cpp_CWaypoint_renderOpaque_FUN_005ebf70 at 005ec112
 ;

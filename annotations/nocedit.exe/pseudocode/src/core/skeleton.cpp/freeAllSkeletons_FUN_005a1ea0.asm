@@ -7,7 +7,7 @@
 ; XREF[5]:
 ;   core_fileman.cpp_CDemonFileManager_showEditorMenu_FUN_004be270 at 004be3e0
 ;   core_main.c_finalizeGameSystems_FUN_00508570 at 005087f0
-;   core_mission.cpp_CDemonMission_FUN_005248e0 at 00524901
+;   core_mission.cpp_CDemonMission_freeAllAssets_FUN_005248e0 at 00524901
 ;   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 at 005968c9
 ;   core_skeledit.cpp_viewModel_FUN_00598fc0 at 0059916d
 ;

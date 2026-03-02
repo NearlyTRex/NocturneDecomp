@@ -15,7 +15,7 @@
 ;
 ; XREF[5]:
 ;   core_skeledit.cpp_CDeformableModel_calcRootOffsetScale_FUN_0058e690 at 0058e71c
-;   core_skeledit.cpp_CDeformable_groundBias_FUN_0058e4e0 at 0058e53f
+;   core_skeledit.cpp_CDeformableModel_groundBias_FUN_0058e4e0 at 0058e53f
 ;   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450 at 005a0468
 ;   core_skeleton.cpp_CDeformableModel_computeBoneDominantPart_FUN_0059c2f0 at 0059c382
 ;   core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_0059d460 at 0059d525

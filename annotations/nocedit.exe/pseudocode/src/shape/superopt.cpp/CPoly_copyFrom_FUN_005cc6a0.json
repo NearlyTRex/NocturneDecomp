@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 52,
-    "complexity_score": 166,
+    "complexity_score": 169,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 41,
+    "pseudocode_lines": 44,
     "suspect_count": 12,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 93
+    "total_lines": 96
   },
   "cross_references": [
     {
@@ -132,33 +132,33 @@
     {
       "description": "Complex pointer cast",
       "line": 27,
-      "match": "(CVector2d *)((int)",
+      "match": "(CP2D *)((int)",
       "severity": "mild",
-      "text": "pCVar3 = (CVector2d *)((int)&pCVar3->x + 4);",
+      "text": "pCVar3 = (CP2D *)((int)&(pCVar3->impl).x + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 28,
-      "match": "(CVector2d *)((int)",
+      "match": "(CP2D *)((int)",
       "severity": "mild",
-      "text": "pCVar5 = (CVector2d *)((int)&pCVar5->x + 4);",
+      "text": "pCVar5 = (CP2D *)((int)&(pCVar5->impl).x + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 32,
-      "match": "(CVector2d *)((int)",
+      "match": "(CP2D *)((int)",
       "severity": "mild",
-      "text": "pCVar3 = (CVector2d *)((int)&pCVar3->x + 1);",
+      "text": "pCVar3 = (CP2D *)((int)&(pCVar3->impl).x + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 33,
-      "match": "(CVector2d *)((int)",
+      "match": "(CP2D *)((int)",
       "severity": "mild",
-      "text": "pCVar5 = (CVector2d *)((int)&pCVar5->x + 1);",
+      "text": "pCVar5 = (CP2D *)((int)&(pCVar5->impl).x + 1);",
       "type": "pointer_cast"
     },
     {
@@ -166,31 +166,23 @@
       "line": 38,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&(this_ptr->normal).x + 4) = *(uint *)((int)&(source->normal).x + 4);",
+      "text": "*(uint *)((int)&(this_ptr->normal).impl.x + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 38,
+      "line": 39,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&(this_ptr->normal).x + 4) = *(uint *)((int)&(source->normal).x + 4);",
+      "text": "*(uint *)((int)&(source->normal).impl.x + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 40,
+      "line": 41,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&(this_ptr->normal).y + 4) = *(uint *)((int)&(source->normal).y + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 40,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&(this_ptr->normal).y + 4) = *(uint *)((int)&(source->normal).y + 4);",
+      "text": "*(uint *)((int)&(this_ptr->normal).impl.y + 4) =",
       "type": "pointer_cast"
     },
     {
@@ -198,15 +190,23 @@
       "line": 42,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&(this_ptr->normal).z + 4) = *(uint *)((int)&(source->normal).z + 4);",
+      "text": "*(uint *)((int)&(source->normal).impl.y + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 42,
+      "line": 44,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&(this_ptr->normal).z + 4) = *(uint *)((int)&(source->normal).z + 4);",
+      "text": "*(uint *)((int)&(this_ptr->normal).impl.z + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 45,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&(source->normal).impl.z + 4);",
       "type": "pointer_cast"
     }
   ],

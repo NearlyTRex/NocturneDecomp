@@ -18,7 +18,7 @@
 ; Referenced Globals:
 ;   int g_ButtonFaceColor
 ;   int g_HighlightColor
-;   int g_BackgroundColor2
+;   int g_BorderBackgroundColor
 ;   int g_ActiveRenderColor
 ;
 ; Called Functions:
@@ -41,7 +41,7 @@ section .text
     TEST ESI,ESI                        ; 004a5900
     JZ 0x004a598c                       ; 004a5902
         ;   XREF to: 004a598c (CONDITIONAL_JUMP)  ; LAB_004a598c
-    MOV EBX,dword ptr [0x02cf2af4]      ; 004a5908 | g_BackgroundColor2
+    MOV EBX,dword ptr [0x02cf2af4]      ; 004a5908 | g_BorderBackgroundColor
     MOV dword ptr [0x02d02570],EBX      ; 004a590e | g_ActiveRenderColor
         ;   Label: LAB_004a590e
     MOV EBX,dword ptr [ESP + 0x1c]      ; 004a5914
@@ -106,7 +106,7 @@ section .text
         ;   Label: LAB_004a598c
     JMP 0x004a590e                      ; 004a5992
         ;   XREF to: 004a590e (UNCONDITIONAL_JUMP)  ; LAB_004a590e
-    MOV EBX,dword ptr [0x02cf2af4]      ; 004a5997 | g_BackgroundColor2
+    MOV EBX,dword ptr [0x02cf2af4]      ; 004a5997 | g_BorderBackgroundColor
         ;   Label: LAB_004a5997
     JMP 0x004a593e                      ; 004a599d
         ;   XREF to: 004a593e (UNCONDITIONAL_JUMP)  ; LAB_004a593e

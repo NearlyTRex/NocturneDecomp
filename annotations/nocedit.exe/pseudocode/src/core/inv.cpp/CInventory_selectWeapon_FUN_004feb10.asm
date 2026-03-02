@@ -13,10 +13,10 @@
 ;
 ; XREF[6]:
 ;   core_game.cpp_CGame_processKeyboardControls_FUN_004dc3e0 at 004dc869
-;   core_hero.cpp_CHero_createDefaultGun_FUN_004f2a30 at 004f2aa6
+;   core_hero.cpp_CHero_createDefaultWeapon_FUN_004f2a30 at 004f2aa6
 ;   core_inv.cpp_CInventory_addItem_FUN_004fd600 at 004fe58f
 ;   core_inv.cpp_CInventory_select_FUN_004ff800 at 004ff91c
-;   core_scat.cpp_CScat_createDefaultGun_FUN_00557150 at 005571a9
+;   core_scat.cpp_CScat_createDefaultWeapon_FUN_00557150 at 005571a9
 ;   core_script.cpp_CScript_step_FUN_0055a810 at 0055e8da
 ;
 ; Referenced Globals:

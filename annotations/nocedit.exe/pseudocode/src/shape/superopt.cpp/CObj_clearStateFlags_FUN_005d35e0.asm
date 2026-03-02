@@ -8,8 +8,8 @@
 ; uint             Stack[0x8]:4   mask
 ;
 ; XREF[2]:
-;   shape_superopt.cpp_COptimize_FUN_005d7290 at 005d72cb
-;   shape_superopt.cpp_COptimize_FUN_005d7350 at 005d7361
+;   shape_superopt.cpp_COptimize_optimizeComplex_FUN_005d7350 at 005d7361
+;   shape_superopt.cpp_COptimize_optimize_FUN_005d7290 at 005d72cb
 ;
 ; *****************************************************************************
 

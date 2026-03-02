@@ -2,11 +2,11 @@
 // Address: 00522eb0
 // Address Range: [[00522eb0, 00523518]]
 // Convention: __cdecl
-// Signature: void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonMission *this_ptr,_FILE *file_handle)
+// Signature: void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonMission *this_ptr,_FILE *file_handle,int load_flags)
 
 #include "nocturne.h"
 
-void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonMission *this_ptr,_FILE *file_handle)
+void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonMission *this_ptr,_FILE *file_handle,int load_flags)
 
 {
   char cVar1;
@@ -21,7 +21,6 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonM
   char *pcVar9;
   char *pcVar10;
   byte bVar11;
-  int in_stack_0000000c;
   char local_158 [100];
   char local_f4 [100];
   char local_90 [100];
@@ -34,9 +33,9 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonM
   int local_14;
   
   bVar11 = 0;
-  core_mission_cpp_CDemonMission_FUN_00522d30(this_ptr);
-  if (in_stack_0000000c == 0) {
-    core_mission_cpp_CDemonMission_FUN_005248e0(this_ptr);
+  core_mission_cpp_CDemonMission_clearMissionData_FUN_00522d30(this_ptr);
+  if (load_flags == 0) {
+    core_mission_cpp_CDemonMission_freeAllAssets_FUN_005248e0(this_ptr);
   }
   do {
     iVar2 = _fgetc(file_handle);

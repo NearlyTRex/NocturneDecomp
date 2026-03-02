@@ -23,8 +23,8 @@ void __cdecl core_mission_cpp_CDemonMission_load_FUN_00522d90(CDemonMission *thi
   clear_screen = 0;
   text = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Loading mission");
   core_level_cpp_CLevelLoader_update_FUN_00504160(g_CLevelLoaderPtr,text,clear_screen);
-  core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(this_ptr,file_handle);
+  core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(this_ptr,file_handle,load_flags);
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\core\\mission.cpp",0x9f);
-  core_mission_cpp_CDemonMission_FUN_00524c20(this_ptr);
+  core_mission_cpp_CDemonMission_ensureHeroPlaceholder_FUN_00524c20(this_ptr);
   return;
 }

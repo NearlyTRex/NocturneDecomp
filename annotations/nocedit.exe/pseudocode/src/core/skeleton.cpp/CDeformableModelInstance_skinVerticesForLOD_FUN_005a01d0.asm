@@ -15,7 +15,7 @@
 ;   core_morph.cpp_CMorph_editMorph_FUN_0052bcb0 at 0052beaa
 ;   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 at 00597ddc
 ;   core_skeledit.cpp_CDeformableModel_calcRootOffsetScale_FUN_0058e690 at 0058e77a
-;   core_skeledit.cpp_CDeformable_groundBias_FUN_0058e4e0 at 0058e55c
+;   core_skeledit.cpp_CDeformableModel_groundBias_FUN_0058e4e0 at 0058e55c
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a05e0 at 005a0629
 ;   core_skeleton.cpp_CDeformableModelInstance_dismemberPart_FUN_005a1040 at 005a10a3
 ;   ... and 7 more

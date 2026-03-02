@@ -16,6 +16,6 @@ void __cdecl core_hero_cpp_CHero_addFilesToExtract_FUN_004f3fa0(CHero *this_ptr,
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr_00);
   _fprintf(file_handle,"MODELS\\%s\n",pCVar1->model_filename);
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr_00);
-  core_skeledit_cpp_CDeformableModel_FUN_0058a2b0(pCVar1,file_handle);
+  core_skeledit_cpp_CDeformableModel_addFilesToExtract_FUN_0058a2b0(pCVar1,file_handle);
   return;
 }

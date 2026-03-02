@@ -13,7 +13,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_skeledit.cpp_CDeformableModel_FUN_0058c190 at 0058c367
+;   core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190 at 0058c367
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeledit_cpp_0064b0ca

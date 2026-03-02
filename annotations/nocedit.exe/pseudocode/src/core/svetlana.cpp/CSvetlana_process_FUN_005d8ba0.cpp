@@ -71,13 +71,13 @@ switchD_005d8f77_caseD_9:
   (this_ptr->base).base.model.accumulated_root_motion.y =
        (this_ptr->base).base.model.accumulated_root_motion.z;
   pCVar6->x = (this_ptr->base).base.model.accumulated_root_motion.y;
-  core_svetlana_cpp_CSvetlana_FUN_005d9970(this_ptr);
+  core_svetlana_cpp_CSvetlana_advanceMotion_FUN_005d9970(this_ptr,delta_time);
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
   iVar4 = core_charactr_cpp_CCharacter_processWalking_FUN_0042ca70
                     ((CCharacter *)this_ptr,delta_time);
   if (iVar4 == 0) {
     if ((this_ptr->base).control_type == 2) {
-      core_svetlana_cpp_CSvetlana_FUN_005d9260(this_ptr);
+      core_svetlana_cpp_CSvetlana_processAI_FUN_005d9260(this_ptr,delta_time);
     }
     pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                        (&(this_ptr->base).base.model.motion_controller);

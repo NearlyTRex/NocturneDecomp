@@ -10,7 +10,7 @@
 ; int              Stack[0x10]:4   lod_texture_count
 ;
 ; XREF[5]:
-;   core_skeledit.cpp_CDeformableModel_FUN_0058c190 at 0058c552
+;   core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190 at 0058c552
 ;   shape_meshlod.cpp_CLodMesh_copyFrom_FUN_0051a8c0 at 0051a8d9
 ;   shape_meshlod.cpp_CLodMesh_importFromEditorGlobals_FUN_0051b080 at 0051b0f4
 ;   shape_meshlod.cpp_CLodMesh_parseS3DFileVariant_FUN_0051adf0 at 0051aef3

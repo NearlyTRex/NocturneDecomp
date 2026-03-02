@@ -4,25 +4,25 @@
       {
         "category": "format_error",
         "column": 26,
-        "line": 71,
+        "line": 72,
         "message": "format specifies type 'int *' but the argument has type 'CBoneStructure *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 38,
-        "line": 89,
+        "line": 90,
         "message": "format specifies type 'char *' but the argument has type 'SBoneData *' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 28,
-        "line": 140,
+        "line": 141,
         "message": "assigning to 'uint *' (aka 'unsigned int *') from 'int *' converts between pointers to integer types with different sign"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 202,
+        "line": 203,
         "message": "assigning to 'int *' from 'uint *' (aka 'unsigned int *') converts between pointers to integer types with different sign"
       }
     ],
@@ -31,17 +31,17 @@
   },
   "complexity": {
     "assembly_lines": 419,
-    "complexity_score": 315,
+    "complexity_score": 318,
     "cross_reference_count": 3,
     "function_call_count": 6,
     "global_count": 17,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 230,
+    "pseudocode_lines": 233,
     "suspect_count": 8,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 649
+    "total_lines": 652
   },
   "cross_references": [
     {
@@ -53,13 +53,13 @@
     {
       "addr": "0058c190",
       "from_addr": "0058c235",
-      "name": "core_skeledit.cpp_CDeformableModel_FUN_0058c190",
+      "name": "core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00592690",
       "from_addr": "00592f26",
-      "name": "core_skeledit.cpp_CSkeleton_FUN_00592690",
+      "name": "core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -84,7 +84,7 @@
     {
       "addr": "0058ac30",
       "is_variadic": false,
-      "name": "core_skeledit.cpp_FUN_0058ac30"
+      "name": "core_skeledit.cpp_CBoneStructure_findBoneByName_FUN_0058ac30"
     },
     {
       "addr": "005ff9f3",
@@ -226,7 +226,7 @@
       {
         "call_addr": "0058c235",
         "call_type": "direct",
-        "caller": "core_skeledit.cpp_CDeformableModel_FUN_0058c190",
+        "caller": "core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190",
         "estimated_params": 3,
         "instructions_analyzed": 7,
         "reg_params": [],
@@ -235,7 +235,7 @@
       {
         "call_addr": "00592f26",
         "call_type": "direct",
-        "caller": "core_skeledit.cpp_CSkeleton_FUN_00592690",
+        "caller": "core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690",
         "estimated_params": 3,
         "instructions_analyzed": 7,
         "reg_params": [],
@@ -244,7 +244,7 @@
       {
         "call_addr": "005953d9",
         "call_type": "direct",
-        "caller": "core_skeledit.cpp_CSkeleton_FUN_00592690",
+        "caller": "core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690",
         "estimated_params": 3,
         "instructions_analyzed": 8,
         "reg_params": [],
@@ -580,7 +580,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 112,
+      "line": 113,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)local_248 + iVar5) = 0;",
@@ -588,7 +588,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 114,
+      "line": 115,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)local_248 + iVar5) = *(int *)((int)local_248 + iVar5) + 1;",
@@ -596,7 +596,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 114,
+      "line": 115,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)local_248 + iVar5) = *(int *)((int)local_248 + iVar5) + 1;",
@@ -604,15 +604,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 144,
-      "match": "(SBoneData *)((int)",
-      "severity": "mild",
-      "text": "pSVar11 = (SBoneData *)((int)pSVar11 + (uint)bVar15 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 176,
+      "line": 145,
       "match": "(SBoneData *)((int)",
       "severity": "mild",
       "text": "pSVar11 = (SBoneData *)((int)pSVar11 + (uint)bVar15 * -8 + 4);",
@@ -623,12 +615,20 @@
       "line": 177,
       "match": "(SBoneData *)((int)",
       "severity": "mild",
+      "text": "pSVar11 = (SBoneData *)((int)pSVar11 + (uint)bVar15 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 178,
+      "match": "(SBoneData *)((int)",
+      "severity": "mild",
       "text": "pSVar14 = (SBoneData *)((int)pSVar14 + (uint)bVar15 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 184,
+      "line": 185,
       "match": "(SBoneData *)((int)",
       "severity": "mild",
       "text": "pSVar11 = (SBoneData *)((int)pSVar11 + (uint)bVar15 * -8 + 4);",
@@ -636,7 +636,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 190,
+      "line": 191,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
       "text": "pCVar8 = (CMatrix3x4f *)((int)(pCVar8 + 2) + 0x24);",

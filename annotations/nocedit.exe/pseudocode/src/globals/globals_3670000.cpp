@@ -7,8 +7,12 @@
 // CVector3f[5000]
 CVector3f g_FloatVertexArray[5000] = {};
 
+// char[260]
+char g_SkeleditLastTestSkeletonDir[260] = {};
+
 // char[264]
 char g_SkeleditLastPOSImported[264] = {};
+char g_SkeleditLastMOTImported[264] = {};
 
 // char[504]
 char g_SkeleditStatusMessage[504] = {};

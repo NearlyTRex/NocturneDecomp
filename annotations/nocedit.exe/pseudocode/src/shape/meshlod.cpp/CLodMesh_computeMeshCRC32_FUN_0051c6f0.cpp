@@ -331,7 +331,7 @@ LAB_0051c748:
         *out_crc = uVar4;
       } while (0 < iVar5);
       iVar5 = 0;
-      if (0 < this_ptr->reserved_attribute_count) {
+      if (0 < this_ptr->extra_attribute_count) {
         do {
           iVar2 = 4;
           pbVar1 = (byte *)&local_40;
@@ -400,7 +400,7 @@ LAB_0051c748:
           } while (0 < iVar2);
           iVar5 = iVar5 + 1;
           local_24 = local_24 + 4;
-        } while (iVar5 < this_ptr->reserved_attribute_count);
+        } while (iVar5 < this_ptr->extra_attribute_count);
       }
       local_30 = local_30 + 1;
       local_3c = local_3c + 0x4c4;

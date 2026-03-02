@@ -21,7 +21,7 @@ void __cdecl core_hero_cpp_CHero_reset_FUN_004f3b20(CHero *this_ptr)
   this_ptr->target_actor = (CDemonActor *)0x0;
   (this_ptr->base).grabbed_by = (CDemonActor *)0x0;
   core_inv_cpp_CInventory_removeMatchingKeys_FUN_005014a0(&this_ptr->inventory,0xffffffff);
-  (*(((this_ptr->base).base.vtable._uh)->_uh).drawGun)(this_ptr,0);
+  (*(((this_ptr->base).base.vtable._uh)->_uh).drawWeapon)(this_ptr,0);
   pCVar1 = this_ptr;
   do {
     pfVar2 = &(pCVar1->base).base.orient_matrix.m[0].z;

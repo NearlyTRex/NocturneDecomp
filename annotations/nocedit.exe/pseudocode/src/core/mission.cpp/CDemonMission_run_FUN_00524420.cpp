@@ -36,7 +36,7 @@ void __cdecl core_mission_cpp_CDemonMission_run_FUN_00524420(CDemonMission *this
     core_mission_cpp_CDemonMission_removeActorFromList_FUN_00523be0
               (this_ptr,(CDemonActor *)this_ptr_00);
     (*(((this_ptr_00->base).base.vtable._uh)->_uh).reset)(this_ptr_00);
-    core_mission_cpp_CDemonMission_FUN_00522d30(this_ptr);
+    core_mission_cpp_CDemonMission_clearMissionData_FUN_00522d30(this_ptr);
     if ((iVar1 == 0) || (g_PendingMissionName[0] == '\0')) break;
     iVar1 = _stricmp(g_CDemonSetPtr->geometry_filename,"hq.geo");
     bVar2 = iVar1 != 0;
@@ -52,7 +52,7 @@ void __cdecl core_mission_cpp_CDemonMission_run_FUN_00524420(CDemonMission *this
     core_mission_cpp_CDemonMission_load_FUN_00522d90(this_ptr,g_PendingMissionName,0);
     iVar1 = core_mission_cpp_CDemonMission_createHeros_FUN_00524a80(this_ptr,(int)this_ptr_00);
     if (iVar1 == 0) goto LAB_005244ee;
-    iVar1 = core_mission_cpp_CDemonMission_FUN_00524760(this_ptr);
+    iVar1 = core_mission_cpp_CDemonMission_startMission_FUN_00524760(this_ptr);
     if (iVar1 == 0) goto LAB_005244ee;
     if (color_value == 0) {
       text = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Press any key to continue...")

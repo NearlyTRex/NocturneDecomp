@@ -25,7 +25,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   core_skeledit.cpp_CLodMesh_FUN_00589c20 at 00589c63
+;   core_skeledit.cpp_CLodMesh_selectAndGenerateLods_FUN_00589c20 at 00589c63
 ;   shape_meshlod.cpp_CLodMesh_generateLOD_FUN_00516ba0 at 00516cc3
 ;   shape_meshlod.cpp_testLodGeneration_FUN_0051ed60 at 0051eda8
 ;

@@ -12,7 +12,7 @@
 ; undefined4       Stack[-0x104]:4  local_104
 ;
 ; XREF[1]:
-;   shape_superopt.cpp_COptimize_FUN_005d7290 at 005d72a0
+;   shape_superopt.cpp_COptimize_optimize_FUN_005d7290 at 005d72a0
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Welding_vertices_d_remov_00654468

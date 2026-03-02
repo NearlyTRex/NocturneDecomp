@@ -4654,33 +4654,33 @@ CFileManager_vtable g_CFileManagerVTable = {.extractPodFile = (CFileManager_extr
 
 // CHero_vtable
 CHero_vtable DAT_0065A1C8 = {
-    .createDefaultGun = (CHero_createDefaultGun *)core_hero_cpp_CHero_createDefaultGun_FUN_004f2a30,
-    .drawGun = (CHero_drawGun *)core_baron_cpp_CBaron_drawGun_FUN_00413cf0,
-    .areGunsDrawn = (CHero_areGunsDrawn *)core_baron_cpp_CBaron_renderOpaque_FUN_00413ad0,
+    .createDefaultWeapon = (CHero_createDefaultWeapon *)core_hero_cpp_CHero_createDefaultWeapon_FUN_004f2a30,
+    .drawWeapon = (CHero_drawWeapon *)core_baron_cpp_CBaron_drawWeapon_FUN_00413cf0,
+    .isWeaponDrawn = (CHero_isWeaponDrawn *)core_baron_cpp_CBaron_renderOpaque_FUN_00413ad0,
     .reset = (CHero_reset *)core_hero_cpp_CHero_reset_FUN_004f3b20
 };
 CHero_vtable DAT_0065BEA8 = {
-    .createDefaultGun = (CHero_createDefaultGun *)core_hero_cpp_CHero_createDefaultGun_FUN_004f2a30,
-    .drawGun = (CHero_drawGun *)core_colonel_cpp_CColonel_drawGuns_FUN_004405e0,
-    .areGunsDrawn = (CHero_areGunsDrawn *)core_colonel_cpp_CColonel_areGunsDrawn_FUN_004405d0,
+    .createDefaultWeapon = (CHero_createDefaultWeapon *)core_hero_cpp_CHero_createDefaultWeapon_FUN_004f2a30,
+    .drawWeapon = (CHero_drawWeapon *)core_colonel_cpp_CColonel_drawWeapon_FUN_004405e0,
+    .isWeaponDrawn = (CHero_isWeaponDrawn *)core_colonel_cpp_CColonel_isWeaponDrawn_FUN_004405d0,
     .reset = (CHero_reset *)core_hero_cpp_CHero_reset_FUN_004f3b20
 };
 CHero_vtable DAT_0065E958 = {
-    .createDefaultGun = (CHero_createDefaultGun *)core_hero_cpp_CHero_createDefaultGun_FUN_004f2a30,
-    .drawGun = (CHero_drawGun *)core_gabriela_cpp_CGabriella_drawGun_FUN_004d75b0,
-    .areGunsDrawn = (CHero_areGunsDrawn *)core_gabriela_cpp_CGabriella_areGunsDrawn_FUN_004d7590,
+    .createDefaultWeapon = (CHero_createDefaultWeapon *)core_hero_cpp_CHero_createDefaultWeapon_FUN_004f2a30,
+    .drawWeapon = (CHero_drawWeapon *)core_gabriela_cpp_CGabriella_drawWeapon_FUN_004d75b0,
+    .isWeaponDrawn = (CHero_isWeaponDrawn *)core_gabriela_cpp_CGabriella_isWeaponDrawn_FUN_004d7590,
     .reset = (CHero_reset *)core_hero_cpp_CHero_reset_FUN_004f3b20
 };
 CHero_vtable DAT_0065F548 = {
-    .createDefaultGun = (CHero_createDefaultGun *)core_hero_cpp_CHero_createDefaultGun_FUN_004f2a30,
-    .drawGun = (CHero_drawGun *)core_haystack_cpp_CHaystack_drawGun_FUN_004f1ca0,
-    .areGunsDrawn = (CHero_areGunsDrawn *)core_haystack_cpp_CHaystack_areGunsDrawn_FUN_004f1c90,
+    .createDefaultWeapon = (CHero_createDefaultWeapon *)core_hero_cpp_CHero_createDefaultWeapon_FUN_004f2a30,
+    .drawWeapon = (CHero_drawWeapon *)core_haystack_cpp_CHaystack_drawWeapon_FUN_004f1ca0,
+    .isWeaponDrawn = (CHero_isWeaponDrawn *)core_haystack_cpp_CHaystack_isWeaponDrawn_FUN_004f1c90,
     .reset = (CHero_reset *)core_hero_cpp_CHero_reset_FUN_004f3b20
 };
 CHero_vtable DAT_0065F828 = {
-    .createDefaultGun = (CHero_createDefaultGun *)core_hero_cpp_CHero_createDefaultGun_FUN_004f2a30,
-    .drawGun = (CHero_drawGun *)crt_cpp_c_handlePureVirtualCall_FUN_006015f1,
-    .areGunsDrawn = (CHero_areGunsDrawn *)crt_cpp_c_handlePureVirtualCall_FUN_006015f1,
+    .createDefaultWeapon = (CHero_createDefaultWeapon *)core_hero_cpp_CHero_createDefaultWeapon_FUN_004f2a30,
+    .drawWeapon = (CHero_drawWeapon *)crt_cpp_c_handlePureVirtualCall_FUN_006015f1,
+    .isWeaponDrawn = (CHero_isWeaponDrawn *)crt_cpp_c_handlePureVirtualCall_FUN_006015f1,
     .reset = (CHero_reset *)core_hero_cpp_CHero_reset_FUN_004f3b20
 };
 

@@ -1,35 +1,22 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 38,
-        "message": "no matching function for call to 'wincore_windll_cpp_drawPolyList_FUN_005b7640'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 13,
-        "line": 86,
-        "message": "no matching function for call to 'wincore_windll_cpp_drawPolyList_FUN_005b7640'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 242,
-    "complexity_score": 147,
+    "complexity_score": 149,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 12,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 112,
+    "pseudocode_lines": 114,
     "suspect_count": 3,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 354
+    "total_lines": 356
   },
   "cross_references": [],
   "function": {
@@ -250,7 +237,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 70,
+      "line": 71,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar1 = (uint *)((int)g_RenderFaceArray + iVar5);",
@@ -258,7 +245,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 112,
+      "line": 114,
       "match": "(SMRGLHeaderExtended *)((int)",
       "severity": "mild",
       "text": "mrgl = (SMRGLHeaderExtended *)((int)&(((SMRGLHeaderPrimitive *)mrgl)->base).type + iVar4);",

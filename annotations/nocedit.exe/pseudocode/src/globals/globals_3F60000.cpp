@@ -411,6 +411,7 @@ int INT_03f6bb8c = {};
 int INT_03f6bb90 = {};
 int INT_03f6bb94 = {};
 int g_LogInitialized = {};
+int INT_03f6bbe4 = {};
 int g_TriListTextureCount = {};
 int INT_03f6cb90 = {};
 int INT_03f6cb94 = {};
@@ -453,7 +454,6 @@ undefined4 DAT_03f6baa8 = {};
 undefined4 DAT_03f6bb1c = {};
 undefined4 DAT_03f6bb20 = {};
 undefined4 DAT_03f6bb24 = {};
-undefined4 DAT_03f6bbe4 = {};
 
 // void*
 void* g_PrimaryMixBuffer = {};

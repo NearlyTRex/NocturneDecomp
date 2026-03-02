@@ -846,7 +846,7 @@ def generate_individual_function_definition_header(currentProgram, func_def, typ
         """Extract struct/union name from a pointer type string like 'struct CStrList*'"""
         type_str = type_str.strip()
         if type_str.endswith('*'):
-            base = type_str[:-1].strip()
+            base = type_str.rstrip('* ').strip()
             if base.startswith('struct '):
                 return ('struct', base[7:].strip())
             elif base.startswith('union '):

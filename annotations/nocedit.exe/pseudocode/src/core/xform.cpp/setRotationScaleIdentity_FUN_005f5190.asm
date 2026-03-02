@@ -7,7 +7,7 @@
 ; CMatrix3x4f *    Stack[0x4]:4   matrix
 ;
 ; XREF[2]:
-;   core_skeledit.cpp_FUN_0058aeb0 at 0058aefc
+;   core_skeledit.cpp_CBoneStructure_extractInverseBindPose_FUN_0058aeb0 at 0058aefc
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820 at 0059f933
 ;
 ; *****************************************************************************

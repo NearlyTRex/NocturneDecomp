@@ -20,7 +20,7 @@
 ;   core_hero.cpp_CHeroPlaceholder_createHero_FUN_004f3d80 at 004f3de7
 ;   core_inv.cpp_CInventory_addItem_FUN_004fd600 at 004fe862
 ;   core_mimic.cpp_CMimic_processMorph_FUN_00520ba0 at 00520c32
-;   core_mission.cpp_CDemonMission_FUN_00524c20 at 00524d59
+;   core_mission.cpp_CDemonMission_addActorToList_FUN_00523b70 at 00523baa
 ;   ... and 7 more
 ;
 ; Called Functions:

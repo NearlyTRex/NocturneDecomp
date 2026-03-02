@@ -15,6 +15,6 @@ void __cdecl shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(CEditorTools
   _vsprintf(g_ErrorMessageBuffer_02cef530,format,(va_list_t)&local_8);
   local_8.value[0] = (char * [1])(char *)0x0;
   shape_edittool_cpp_drawSingleButtonPrompt_FUN_0049e130
-            ("Error",g_ErrorMessageBuffer_02cef530,INT_02cf2a94);
+            ("Error",g_ErrorMessageBuffer_02cef530,g_ErrorTextColor);
   return;
 }

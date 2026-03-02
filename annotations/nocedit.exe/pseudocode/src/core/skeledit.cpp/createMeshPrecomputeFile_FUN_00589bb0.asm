@@ -15,7 +15,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   core_skeledit.cpp_FUN_0058a0f0
+;   core_skeledit.cpp_CLodMeshPrecomputeEntry_save_FUN_0058a0f0
 ;   crt_stack.c___STK_FUN_005ff9f3
 ;   shape_meshlod.cpp_CLodMesh_openPrecomputeFile_FUN_0051b770
 ;
@@ -45,8 +45,8 @@ section .text
     PUSH EDI                            ; 00589bd9
     MOV EBP,dword ptr [ESP + 0x18]      ; 00589bda
     PUSH EBP                            ; 00589bde
-    CALL core_skeledit.cpp_FUN_0058a0f0 ; 00589bdf
-        ;   XREF to: 0058a0f0 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_FUN_0058a0f0()
+    CALL core_skeledit.cpp_CLodMeshPrecomputeEntry_save_FUN_0058a0f0 ; 00589bdf
+        ;   XREF to: 0058a0f0 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_CLodMeshPrecomputeEntry_save_FUN_0058a0f0(CLodMeshPrecomputeEntry * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 00589be4
     POP EBP                             ; 00589be7
     POP EDI                             ; 00589be8

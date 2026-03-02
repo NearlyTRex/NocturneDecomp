@@ -21,9 +21,6 @@ CEditorTools g_CEditorToolsInstance = {};
 // CVector3f
 CVector3f g_EmitterTarget = {};
 
-// HWND
-HWND g_DialogParentWindow = {};
-
 // SWindow[5]
 SWindow g_WindowStack[5] = {};
 
@@ -52,37 +49,38 @@ int g_WindowStackCount = {};
 int g_FontCharacterHeight = {};
 int g_FontCharacterWidth = {};
 int g_MouseCursorType = {};
-int INT_02cf2a78 = {};
-int g_WindowBorderColor1 = {};
-int g_WindowBorderColor2 = {};
+int g_WindowContentColor = {};
+int g_WindowBorderHighlightColor = {};
+int g_WindowBorderShadowColor = {};
 int g_TitleBarColor = {};
-int g_WindowFillColor = {};
+int g_TitleBarFillColor = {};
 int g_WindowFontColor = {};
-int INT_02cf2a94 = {};
+int g_WarningTextColor = {};
+int g_ErrorTextColor = {};
 int g_SelectionColor = {};
 int g_TextColor = {};
 int g_CursorColor = {};
 int g_StatusTextColor = {};
 int g_WindowStatusTextColor = {};
-int INT_02cf2aac = {};
-int g_ButtonColor = {};
+int g_DialogTextColor = {};
+int g_ActiveItemTextColor = {};
 int g_ProgressBarBackgroundColor = {};
 int g_ProgressBarFillColor = {};
 int g_ProgressBarBorderColor = {};
 int g_ProgressBarTextColor = {};
 int g_AxisLabelTextColor = {};
 int g_EnabledTextColor = {};
-int g_BackgroundColor1 = {};
+int g_DisabledTextColor = {};
 int g_SelectionHighlightColor = {};
-int g_HighlightColor1 = {};
-int g_HighlightColor2 = {};
+int g_ConfirmedSelectionColor = {};
+int g_PickListSeparatorColor = {};
 int g_ShadowColor = {};
-int g_ShadowHighlightColor = {};
+int g_ScrollBarHighlightColor = {};
 int g_ButtonFaceColor = {};
 int g_UITextColor = {};
 int g_InsetColor = {};
 int g_HighlightColor = {};
-int g_BackgroundColor2 = {};
+int g_BorderBackgroundColor = {};
 int g_LastClickTimestamp = {};
 int g_LastClickItemIndex = {};
 int g_ScrollAction = {};

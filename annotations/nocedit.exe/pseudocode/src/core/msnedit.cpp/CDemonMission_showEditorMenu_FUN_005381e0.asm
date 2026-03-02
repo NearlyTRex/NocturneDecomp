@@ -39,9 +39,9 @@
 ;
 ; Called Functions:
 ;   core_inivar.cpp_readIniData_FUN_004fbd90
+;   core_mission.cpp_CDemonMission_clearMissionData_FUN_00522d30
 ;   core_mission.cpp_CDemonMission_createFromSingleSet_FUN_005243a0
-;   core_mission.cpp_CDemonMission_FUN_00522d30
-;   core_mission.cpp_CDemonMission_FUN_005248e0
+;   core_mission.cpp_CDemonMission_freeAllAssets_FUN_005248e0
 ;   core_mission.cpp_CDemonMission_load_FUN_00522d90
 ;   core_mission.cpp_CDemonMission_loadScript_FUN_005235b0
 ;   core_mission.cpp_CDemonMission_loadSet_FUN_00523fb0
@@ -73,12 +73,12 @@ section .text
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x8                         ; 00538202
     PUSH EBP                            ; 00538205
-    CALL core_mission.cpp_CDemonMission_FUN_00522d30 ; 00538206
-        ;   XREF to: 00522d30 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_00522d30(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_clearMissionData_FUN_00522d30 ; 00538206
+        ;   XREF to: 00522d30 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_clearMissionData_FUN_00522d30(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 0053820b
     PUSH EBP                            ; 0053820e
-    CALL core_mission.cpp_CDemonMission_FUN_005248e0 ; 0053820f
-        ;   XREF to: 005248e0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_005248e0(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_freeAllAssets_FUN_005248e0 ; 0053820f
+        ;   XREF to: 005248e0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_freeAllAssets_FUN_005248e0(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 00538214
     PUSH 0x680800                       ; 00538217 | = "$$UNDO$$.TMP"
     CALL crt_stdio.c_remove_FUN_005ff9d0 ; 0053821c
@@ -324,7 +324,7 @@ section .text
     PUSH 0x1                            ; 005384e1
     PUSH EBP                            ; 005384e3
     CALL core_mission.cpp_CDemonMission_loadScript_FUN_005235b0 ; 005384e4
-        ;   XREF to: 005235b0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_loadScript_FUN_005235b0(CDemonMission * this_ptr, int param_2)
+        ;   XREF to: 005235b0 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_loadScript_FUN_005235b0(CDemonMission * this_ptr, int is_loading)
     ADD ESP,0x8                         ; 005384e9
         ;   Label: LAB_005384e9
     CMP ESI,0x1b                        ; 005384ec
@@ -350,8 +350,8 @@ section .text
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x8                         ; 00538535
     PUSH EBP                            ; 00538538
-    CALL core_mission.cpp_CDemonMission_FUN_00522d30 ; 00538539
-        ;   XREF to: 00522d30 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_00522d30(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_clearMissionData_FUN_00522d30 ; 00538539
+        ;   XREF to: 00522d30 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_clearMissionData_FUN_00522d30(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 0053853e
     PUSH 0x63c228                       ; 00538541 | = "Freeing models..."
     MOV EAX,[0x00678a60]                ; 00538546 | g_CEditorToolsInstance | g_CEditorToolsPtr
@@ -360,8 +360,8 @@ section .text
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x8                         ; 00538551
     PUSH EBP                            ; 00538554
-    CALL core_mission.cpp_CDemonMission_FUN_005248e0 ; 00538555
-        ;   XREF to: 005248e0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_005248e0(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_freeAllAssets_FUN_005248e0 ; 00538555
+        ;   XREF to: 005248e0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_freeAllAssets_FUN_005248e0(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 0053855a
     ADD ESP,0x7cc                       ; 0053855d
     POP EBP                             ; 00538563

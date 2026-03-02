@@ -15,9 +15,8 @@ void __cdecl core_skeledit_cpp_viewModel_FUN_00598fc0(void)
   CDeformableModelInstance *this_ptr;
   CDeformableModelInstance *this_ptr_00;
   int iVar4;
-  byte *puVar5;
+  char *pcVar5;
   char *pcVar6;
-  char *pcVar7;
   char local_118 [260];
   int local_14;
   
@@ -48,16 +47,16 @@ void __cdecl core_skeledit_cpp_viewModel_FUN_00598fc0(void)
   do {
     iVar4 = _fgetc(p_Var2);
     if ((iVar4 < 0) || (iVar4 == 10)) goto LAB_00599080;
-    pcVar6 = g_SkeleditLastPOSImported;
+    pcVar5 = g_SkeleditLastPOSImported;
   } while (iVar4 != 0x22);
   while ((iVar4 = _fgetc(p_Var2), -1 < iVar4 && (iVar4 != 10))) {
     if (iVar4 == 0x22) {
       iVar4 = 1;
       goto LAB_005992fc;
     }
-    *pcVar6 = (char)iVar4;
-    pcVar6[1] = '\0';
-    pcVar6 = pcVar6 + 1;
+    *pcVar5 = (char)iVar4;
+    pcVar5[1] = '\0';
+    pcVar5 = pcVar5 + 1;
   }
   goto LAB_00599080;
   while ((iVar3 != 10 || (iVar4 = iVar4 + -1, 0 < iVar4))) {
@@ -83,20 +82,20 @@ LAB_00599080:
     iVar3 = _fgetc(p_Var2);
     if (iVar3 < 0) break;
   } while ((iVar3 != 10) || (iVar4 = iVar4 + -1, 0 < iVar4));
-  DAT_03670950 = 0;
+  g_SkeleditLastMOTImported[0] = '\0';
   do {
     iVar4 = _fgetc(p_Var2);
     if ((iVar4 < 0) || (iVar4 == 10)) goto LAB_005990c3;
-    puVar5 = &DAT_03670950;
+    pcVar5 = g_SkeleditLastMOTImported;
   } while (iVar4 != 0x22);
   while ((iVar4 = _fgetc(p_Var2), -1 < iVar4 && (iVar4 != 10))) {
     if (iVar4 == 0x22) {
       iVar4 = 1;
       goto LAB_00599354;
     }
-    *puVar5 = (char)iVar4;
-    puVar5[1] = 0;
-    puVar5 = puVar5 + 1;
+    *pcVar5 = (char)iVar4;
+    pcVar5[1] = '\0';
+    pcVar5 = pcVar5 + 1;
   }
 LAB_005990c3:
   iVar4 = 1;
@@ -104,34 +103,34 @@ LAB_005990c3:
     iVar3 = _fgetc(p_Var2);
     if (iVar3 < 0) break;
   } while ((iVar3 != 10) || (iVar4 = iVar4 + -1, 0 < iVar4));
-  DAT_03670a58 = 0;
+  g_SkeleditLastTestSkeletonDir[0] = '\0';
   do {
     iVar4 = _fgetc(p_Var2);
     if ((iVar4 < 0) || (iVar4 == 10)) goto LAB_00599106;
-    puVar5 = &DAT_03670a58;
+    pcVar5 = g_SkeleditLastTestSkeletonDir;
   } while (iVar4 != 0x22);
   while ((iVar4 = _fgetc(p_Var2), -1 < iVar4 && (iVar4 != 10))) {
     if (iVar4 == 0x22) {
       iVar4 = 1;
       goto LAB_005993ac;
     }
-    *puVar5 = (char)iVar4;
-    puVar5[1] = 0;
-    puVar5 = puVar5 + 1;
+    *pcVar5 = (char)iVar4;
+    pcVar5[1] = '\0';
+    pcVar5 = pcVar5 + 1;
   }
 LAB_00599106:
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\core\\skeledit.cpp",0x13f);
 LAB_00599119:
-  pcVar6 = "z:\\meshlod";
-  pcVar7 = "meshlod";
+  pcVar5 = "z:\\meshlod";
+  pcVar6 = "meshlod";
   do {
-    cVar1 = *pcVar6;
-    *pcVar7 = cVar1;
+    cVar1 = *pcVar5;
+    *pcVar6 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar6[1];
+    cVar1 = pcVar5[1];
+    pcVar5 = pcVar5 + 2;
+    pcVar6[1] = cVar1;
     pcVar6 = pcVar6 + 2;
-    pcVar7[1] = cVar1;
-    pcVar7 = pcVar7 + 2;
   } while (cVar1 != '\0');
   do {
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
@@ -177,9 +176,9 @@ LAB_00599119:
     _fprintf(p_Var2,"// lastPOSimported\n");
     _fprintf(p_Var2,"\"%s\"\n",g_SkeleditLastPOSImported);
     _fprintf(p_Var2,"// lastMOTimported\n");
-    _fprintf(p_Var2,"\"%s\"\n",&DAT_03670950);
+    _fprintf(p_Var2,"\"%s\"\n",g_SkeleditLastMOTImported);
     _fprintf(p_Var2,"// lastTestSkeletonDir\n");
-    _fprintf(p_Var2,"\"%s\"\n",&DAT_03670a58);
+    _fprintf(p_Var2,"\"%s\"\n",g_SkeleditLastTestSkeletonDir);
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\core\\skeledit.cpp",0x154);
     return;
   }

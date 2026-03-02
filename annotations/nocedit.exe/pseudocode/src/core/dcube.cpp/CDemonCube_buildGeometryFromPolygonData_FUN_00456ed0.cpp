@@ -21,7 +21,7 @@ void __cdecl core_dcube_cpp_CDemonCube_buildGeometryFromPolygonData_FUN_00456ed0
   int local_10;
   
   this_ptr->triangle_count = g_PolygonCount;
-  shape_superopt_cpp_TriListSomething_FUN_005d77a0();
+  shape_superopt_cpp_optimizeCubeTriList_FUN_005d77a0();
   iVar2 = g_VertexCount;
   this_ptr->triangle_count = 0;
   iVar3 = g_PolygonCount;

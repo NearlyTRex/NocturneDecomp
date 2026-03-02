@@ -1,0 +1,225 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "format_error",
+        "column": 49,
+        "line": 35,
+        "message": "format specifies type 'char *' but the argument has type 'SBoneData *' [-Werror,-Wformat]"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 144,
+    "complexity_score": 54,
+    "cross_reference_count": 2,
+    "function_call_count": 8,
+    "global_count": 9,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 54,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 198
+  },
+  "cross_references": [
+    {
+      "addr": "0058c190",
+      "from_addr": "0058c74a",
+      "name": "core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00592690",
+      "from_addr": "0059386d",
+      "name": "core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0058afe0",
+    "address_range": [
+      [
+        "0058afe0",
+        "0058b158"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeledit.cpp_CBoneStructure_showBoneHierarchy_FUN_0058afe0",
+    "signature": "void __cdecl core_skeledit_cpp_CBoneStructure_showBoneHierarchy_FUN_0058afe0(CBoneStructure *this_ptr,char *model_name)"
+  },
+  "function_calls": [
+    {
+      "addr": "005ff9f3",
+      "is_variadic": false,
+      "name": "crt_stack.c___STK_FUN_005ff9f3"
+    },
+    {
+      "addr": "005fdbd0",
+      "is_variadic": true,
+      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
+    },
+    {
+      "addr": "004a1bc0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_setClipboardText_FUN_004a1bc0"
+    },
+    {
+      "addr": "004a3b90",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_ctor_FUN_004a3b90"
+    },
+    {
+      "addr": "004a3e20",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20"
+    },
+    {
+      "addr": "004a3c80",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_dtor_FUN_004a3c80"
+    },
+    {
+      "addr": "004a2b80",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_add_FUN_004a2b80"
+    },
+    {
+      "addr": "004a2f70",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0064a562",
+      "name": "s_no_parent_0064a562",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064a56e",
+      "name": "s_s_2d_s_d_s_0064a56e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064a57d",
+      "name": "s_Dump_to_the_clipboard_0064a57d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064a595",
+      "name": "s_Viewing_bone_heirarchy_f_0064a595",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064a5b4",
+      "name": "s_Heirarchy_for_s_0064a5b4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064a5c9",
+      "name": "s_s_0064a5c9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00678a60",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "02cf1cd4"
+    },
+    {
+      "addr": "02cf1cd4",
+      "name": "g_CEditorToolsInstance",
+      "type": "CEditorTools",
+      "value": null
+    },
+    {
+      "addr": "0366b650",
+      "name": "g_SkeleditClipboardBuffer",
+      "type": "char[20480]",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.282051282051282,
+    "instruction_count": 117,
+    "opcode_distribution": {
+      "BOOL_OR": 2,
+      "BRANCH": 1,
+      "CALL": 12,
+      "CBRANCH": 6,
+      "COPY": 85,
+      "INT_ADD": 41,
+      "INT_AND": 61,
+      "INT_CARRY": 17,
+      "INT_EQUAL": 58,
+      "INT_LESS": 4,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 6,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 19,
+      "INT_SEXT": 3,
+      "INT_SLESS": 29,
+      "INT_SUB": 52,
+      "INT_XOR": 2,
+      "LOAD": 17,
+      "POPCOUNT": 29,
+      "RETURN": 1,
+      "STORE": 48,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 501
+  },
+  "stack_frame": {
+    "frame_size": 1168,
+    "local_size": 1160,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_484",
+        "offset": -1156,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_dc",
+        "offset": -220,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBoneStructure *"
+      },
+      {
+        "is_param": true,
+        "name": "model_name",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
+}

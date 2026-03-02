@@ -10,7 +10,7 @@
 ;
 ; XREF[2]:
 ;   shape_superopt.cpp_COptimize_ctor_FUN_005d6f90 at 005d6f9a
-;   shape_superopt.cpp_TriListSomething_FUN_005d77a0 at 005d7882
+;   shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a0 at 005d7882
 ;
 ; Referenced Globals:
 ;   CObj_vtable g_CObjVTable

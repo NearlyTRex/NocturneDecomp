@@ -47,13 +47,13 @@ void __cdecl CColonel::renderOpaque(CColonel *this_ptr);
 // Address: 004404b0
 void __cdecl CColonel::processDamage(CColonel *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_colonel.cpp_CColonel_areGunsDrawn_FUN_004405d0
+// Original: core_colonel.cpp_CColonel_isWeaponDrawn_FUN_004405d0
 // Address: 004405d0
-int __cdecl CColonel::areGunsDrawn(CColonel *this_ptr);
+int __cdecl CColonel::isWeaponDrawn(CColonel *this_ptr);
 
-// Original: core_colonel.cpp_CColonel_drawGuns_FUN_004405e0
+// Original: core_colonel.cpp_CColonel_drawWeapon_FUN_004405e0
 // Address: 004405e0
-void __cdecl CColonel::drawGuns(CColonel *this_ptr,int drawn);
+void __cdecl CColonel::drawWeapon(CColonel *this_ptr,int drawn);
 
 // Original: core_colonel.cpp_CColonel_onActorDeleted_FUN_004405f0
 // Address: 004405f0

@@ -3,7 +3,6 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "system/winnt.h"
-#include "system/winuser.h"
 #include "types/classes/CBitFont.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
@@ -33,9 +32,6 @@ extern CEditorTools g_CEditorToolsInstance;
 // CVector3f
 extern CVector3f g_EmitterTarget;
 
-// HWND
-extern HWND g_DialogParentWindow;
-
 // SWindow[5]
 extern SWindow g_WindowStack[5];
 
@@ -64,37 +60,38 @@ extern int g_WindowStackCount;
 extern int g_FontCharacterHeight;
 extern int g_FontCharacterWidth;
 extern int g_MouseCursorType;
-extern int INT_02cf2a78;
-extern int g_WindowBorderColor1;
-extern int g_WindowBorderColor2;
+extern int g_WindowContentColor;
+extern int g_WindowBorderHighlightColor;
+extern int g_WindowBorderShadowColor;
 extern int g_TitleBarColor;
-extern int g_WindowFillColor;
+extern int g_TitleBarFillColor;
 extern int g_WindowFontColor;
-extern int INT_02cf2a94;
+extern int g_WarningTextColor;
+extern int g_ErrorTextColor;
 extern int g_SelectionColor;
 extern int g_TextColor;
 extern int g_CursorColor;
 extern int g_StatusTextColor;
 extern int g_WindowStatusTextColor;
-extern int INT_02cf2aac;
-extern int g_ButtonColor;
+extern int g_DialogTextColor;
+extern int g_ActiveItemTextColor;
 extern int g_ProgressBarBackgroundColor;
 extern int g_ProgressBarFillColor;
 extern int g_ProgressBarBorderColor;
 extern int g_ProgressBarTextColor;
 extern int g_AxisLabelTextColor;
 extern int g_EnabledTextColor;
-extern int g_BackgroundColor1;
+extern int g_DisabledTextColor;
 extern int g_SelectionHighlightColor;
-extern int g_HighlightColor1;
-extern int g_HighlightColor2;
+extern int g_ConfirmedSelectionColor;
+extern int g_PickListSeparatorColor;
 extern int g_ShadowColor;
-extern int g_ShadowHighlightColor;
+extern int g_ScrollBarHighlightColor;
 extern int g_ButtonFaceColor;
 extern int g_UITextColor;
 extern int g_InsetColor;
 extern int g_HighlightColor;
-extern int g_BackgroundColor2;
+extern int g_BorderBackgroundColor;
 extern int g_LastClickTimestamp;
 extern int g_LastClickItemIndex;
 extern int g_ScrollAction;

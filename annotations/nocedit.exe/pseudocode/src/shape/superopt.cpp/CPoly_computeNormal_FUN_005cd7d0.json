@@ -19,25 +19,25 @@
   },
   "complexity": {
     "assembly_lines": 539,
-    "complexity_score": 455,
+    "complexity_score": 457,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 210,
+    "pseudocode_lines": 212,
     "suspect_count": 23,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "unknown_field"
     ],
-    "total_lines": 749
+    "total_lines": 751
   },
   "cross_references": [
     {
       "addr": "005d77a0",
       "from_addr": "005d7add",
-      "name": "shape_superopt.cpp_TriListSomething_FUN_005d77a0",
+      "name": "shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -62,7 +62,7 @@
       {
         "call_addr": "005d7add",
         "call_type": "direct",
-        "caller": "shape_superopt.cpp_TriListSomething_FUN_005d77a0",
+        "caller": "shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a0",
         "estimated_params": 1,
         "instructions_analyzed": 4,
         "reg_params": [],
@@ -882,7 +882,7 @@
       "line": 208,
       "match": "SQRT",
       "severity": "mild",
-      "text": "dVar3 = 1.0 / SQRT(dVar5 * dVar5 + dVar4 * dVar4 + dVar3 * dVar3);",
+      "text": "dVar5 = 1.0 / SQRT(dVar5 * dVar5 + dVar4 * dVar4 + dVar3 * dVar3);",
       "type": "decompiler_intrinsic"
     }
   ],

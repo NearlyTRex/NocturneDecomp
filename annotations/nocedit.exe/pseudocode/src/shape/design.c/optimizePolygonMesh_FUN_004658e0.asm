@@ -19,7 +19,7 @@
 ; XREF[3]:
 ;   core_dpart.cpp_CDemonPart_processAndFinalize_FUN_00482e40 at 00482e6b
 ;   shape_design.c_configureFullPassPolygonReduction_FUN_00465810 at 004658cd
-;   shape_superopt.cpp_TriListSomething_FUN_005d77a0 at 005d7de2
+;   shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a0 at 005d7de2
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Scanning_polygons_0061c5f9

@@ -8,7 +8,7 @@
 ; CLodMesh *       Stack[0x8]:4   source_mesh
 ;
 ; XREF[4]:
-;   core_skeledit.cpp_CDeformableModel_FUN_0058c190 at 0058d68d
+;   core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190 at 0058d68d
 ;   shape_meshlod.cpp_CLodMesh_copy_FUN_00515860 at 00515874
 ;   shape_meshlod.cpp_CLodMesh_createNextLOD_FUN_00516f50 at 00516fa0
 ;   shape_meshlod.cpp_CLodMesh_getLOD_FUN_0051b920 at 0051b940

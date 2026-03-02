@@ -18,7 +18,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_script_cpp_00643f95
 ;   TerminatedCString s_CScript_editorPutLine_in_00643fa8
-;   char s_EmpyChar_00643fd5 = \x00
+;   char s_EmptyChar_00643fd5 = \x00
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   undefined4 g_CurrentLineBuffer
@@ -88,7 +88,7 @@ section .text
     ADD ESP,0x4                         ; 0056630f
     JMP 0x005662c2                      ; 00566312
         ;   XREF to: 005662c2 (UNCONDITIONAL_JUMP)  ; LAB_005662c2
-    PUSH 0x643fd5                       ; 00566314 | s_EmpyChar_00643fd5
+    PUSH 0x643fd5                       ; 00566314 | s_EmptyChar_00643fd5
         ;   Label: LAB_00566314
     PUSH EBX                            ; 00566319
     CALL shape_edittool.cpp_CStrList_add_FUN_004a2b80 ; 0056631a

@@ -34,11 +34,11 @@
 ;   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_0042d090 at 0042d24b
 ;   core_cloth.cpp_CCloth_computeBoneTransform_FUN_0043a2b0 at 0043a300
 ;   core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0 at 005218a7
-;   core_skeledit.cpp_CBoneStructure_FUN_0058ac80 at 0058acf9
-;   core_skeledit.cpp_CDeformableModel_FUN_0058c190 at 0058c3bf
-;   core_skeledit.cpp_CSkeleton_FUN_00592690 at 00595bfa
-;   core_skeledit.cpp_FUN_0058aeb0 at 0058aedd
-;   core_skeledit.cpp_FUN_0058bd00 at 0058c010
+;   core_skeledit.cpp_CBoneStructure_computeLocalMatrices_FUN_0058ac80 at 0058acf9
+;   core_skeledit.cpp_CBoneStructure_extractInverseBindPose_FUN_0058aeb0 at 0058aedd
+;   core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190 at 0058c3bf
+;   core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00 at 0058c010
+;   core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 at 00595bfa
 ;   core_tentacle.cpp_CTentacle_process_FUN_005db050 at 005db32e
 ;   ... and 3 more
 ;

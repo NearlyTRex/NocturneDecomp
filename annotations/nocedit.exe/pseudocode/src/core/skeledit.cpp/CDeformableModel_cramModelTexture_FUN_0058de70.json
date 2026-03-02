@@ -1,0 +1,300 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 199,
+    "complexity_score": 120,
+    "cross_reference_count": 1,
+    "function_call_count": 7,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 85,
+    "suspect_count": 3,
+    "suspect_types": [
+      "pointer_cast"
+    ],
+    "total_lines": 284
+  },
+  "cross_references": [
+    {
+      "addr": "0058c190",
+      "from_addr": "0058c512",
+      "name": "core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0058de70",
+    "address_range": [
+      [
+        "0058de70",
+        "0058e0aa"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeledit.cpp_CDeformableModel_cramModelTexture_FUN_0058de70",
+    "signature": "void __cdecl core_skeledit_cpp_CDeformableModel_cramModelTexture_FUN_0058de70(CDeformableModel *this_ptr,char *base_name,int num_crams,int atlas_dimension,int texture_set_index,int max_iterations)"
+  },
+  "function_calls": [
+    {
+      "addr": "005ff9f3",
+      "is_variadic": false,
+      "name": "crt_stack.c___STK_FUN_005ff9f3"
+    },
+    {
+      "addr": "005dd8e0",
+      "is_variadic": false,
+      "name": "engine_texture.cpp_clearTextureCache_FUN_005dd8e0"
+    },
+    {
+      "addr": "0046bb80",
+      "is_variadic": false,
+      "name": "shape_design.c_cramTextureList_FUN_0046bb80"
+    },
+    {
+      "addr": "0046a970",
+      "is_variadic": false,
+      "name": "shape_design.c_cramTextures_FUN_0046a970"
+    },
+    {
+      "addr": "0046b6e0",
+      "is_variadic": false,
+      "name": "shape_design.c_initializeCram_FUN_0046b6e0"
+    },
+    {
+      "addr": "0046a880",
+      "is_variadic": false,
+      "name": "shape_design.c_initializeTextureManager_FUN_0046a880"
+    },
+    {
+      "addr": "0046a8e0",
+      "is_variadic": false,
+      "name": "shape_design.c_setTextureQualityParameter_FUN_0046a8e0"
+    }
+  ],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.58282208588957,
+    "instruction_count": 163,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 32,
+      "BOOL_OR": 4,
+      "BRANCH": 2,
+      "CALL": 7,
+      "CBRANCH": 12,
+      "COPY": 127,
+      "INT_ADD": 82,
+      "INT_AND": 163,
+      "INT_CARRY": 19,
+      "INT_EQUAL": 105,
+      "INT_LEFT": 12,
+      "INT_LESS": 14,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 17,
+      "INT_OR": 30,
+      "INT_SBORROW": 14,
+      "INT_SCARRY": 21,
+      "INT_SLESS": 60,
+      "INT_SUB": 42,
+      "INT_XOR": 12,
+      "LOAD": 41,
+      "POPCOUNT": 48,
+      "RETURN": 1,
+      "STORE": 43
+    },
+    "pcode_op_count": 910
+  },
+  "stack_frame": {
+    "frame_size": 180,
+    "local_size": 156,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_98",
+        "offset": -152,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_97",
+        "offset": -151,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModel *"
+      },
+      {
+        "is_param": true,
+        "name": "base_name",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "num_crams",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "atlas_dimension",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "texture_set_index",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "max_iterations",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 37,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "if (local_20 == *(int *)((int)this_ptr->index_data_ptr[0] + local_14)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 73,
+      "match": "(char *)((int)",
+      "severity": "mild",
+      "text": "*(char *)((int)pSVar8 + 1) = cVar1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 74,
+      "match": "(SCram *)((int)",
+      "severity": "mild",
+      "text": "pSVar8 = (SCram *)((int)pSVar8 + 2);",
+      "type": "pointer_cast"
+    }
+  ]
+}

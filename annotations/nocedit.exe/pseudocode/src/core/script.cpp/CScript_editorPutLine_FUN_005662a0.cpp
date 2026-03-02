@@ -24,7 +24,7 @@ LAB_005662c2:
   while( true ) {
     iVar1 = shape_edittool_cpp_CStrList_getItemCount_FUN_004a6ed0(this_ptr_00);
     if (line_number < iVar1) break;
-    shape_edittool_cpp_CStrList_add_FUN_004a2b80(this_ptr_00,&s_EmpyChar_00643fd5);
+    shape_edittool_cpp_CStrList_add_FUN_004a2b80(this_ptr_00,&s_EmptyChar_00643fd5);
   }
   shape_edittool_cpp_CStrList_setStringAt_FUN_004a3120
             (this_ptr_00,line_number,g_CurrentLineBuffer + 1);

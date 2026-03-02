@@ -32,17 +32,17 @@ void __cdecl core_gargoyle_cpp_CGargoyle_processDamage_FUN_004e57d0(CGargoyle *t
     fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
     (this_ptr->base).base.hit_points = fVar1;
     if (0.0 < fVar1) {
-      iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->unk2);
+      iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handles[0]);
       if (iVar4 == 0) {
         uVar3 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                           ((CDemonActor *)this_ptr,"gargoyle-hurt?.wav");
-        this_ptr->unk2 = uVar3;
+        this_ptr->sfx_handles[0] = uVar3;
         core_enemy_cpp_CEnemy_processDamage_FUN_004a9f10(&this_ptr->base,damage_info);
         return;
       }
     }
     else {
-      sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->unk2);
+      sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handles[0]);
       (this_ptr->base).base.hit_points = 0.0;
       pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                          (&this_ptr_00->motion_controller);

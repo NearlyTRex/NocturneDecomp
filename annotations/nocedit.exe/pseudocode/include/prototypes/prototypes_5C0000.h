@@ -4,6 +4,7 @@
 #include "system/basetypes.h"
 #include "system/stdio.h"
 #include "types/classes/CActorPropertyList.h"
+#include "types/classes/CComplexPolygon.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CMatrix3x3d.h"
@@ -18,6 +19,7 @@
 #include "types/classes/CVector3f.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
+#include "types/structs/SExpandedEdge.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x5C0000
@@ -49,8 +51,8 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c5e80(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_FUN_005c5f10(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_FUN_005c6220(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_FUN_005c6590(CStranger *this_ptr);
-int __cdecl core_stranger_cpp_CStranger_areGunsDrawn_FUN_005c6650(CStranger *this_ptr);
-void __cdecl core_stranger_cpp_CStranger_drawGuns_FUN_005c6660(CStranger *this_ptr,int drawn);
+int __cdecl core_stranger_cpp_CStranger_isWeaponDrawn_FUN_005c6650(CStranger *this_ptr);
+void __cdecl core_stranger_cpp_CStranger_drawWeapon_FUN_005c6660(CStranger *this_ptr,int drawn);
 int __cdecl core_stranger_cpp_CStranger_getGrabbed_FUN_005c66a0(CStranger *this_ptr,CDemonActor *grabber,int grab_type);
 void __cdecl core_stranger_cpp_CStranger_reset_FUN_005c6750(CStranger *this_ptr);
 int __cdecl core_stranger_cpp_CStranger_getDeathState_FUN_005c67c0(CStranger *this_ptr);
@@ -80,34 +82,34 @@ void __cdecl core_succubus_cpp_CSuccubus_getPropertyList_FUN_005c77b0(CSuccubus 
 void __cdecl core_succubus_cpp_CSuccubus_addFilesToExtract_FUN_005c77f0(CSuccubus *this_ptr,_FILE *file_handle);
 CSuccubus * __cdecl core_succubus_cpp_CSuccubus_dtor_FUN_005c7820(CSuccubus *this_ptr,uint flags);
 void __cdecl shape_superopt_cpp_logToFile_FUN_005c7910(char *format,...);
-void __cdecl shape_superopt_cpp_FUN_005c79a0(void);
-int __cdecl shape_superopt_cpp_FUN_005c79d0(void);
-void __cdecl shape_superopt_cpp_FUN_005c79f0(void);
-int __cdecl shape_superopt_cpp_FUN_005c7a90(void);
-int __cdecl shape_superopt_cpp_FUN_005c7b20(void);
-void __cdecl shape_superopt_cpp_FUN_005c7dc0(void);
-int __cdecl shape_superopt_cpp_FUN_005c7fb0(void);
-void __cdecl shape_superopt_cpp_FUN_005c8160(void);
-int __cdecl shape_superopt_cpp_FUN_005c8280(void);
-int __cdecl shape_superopt_cpp_FUN_005c84c0(void);
-int __cdecl shape_superopt_cpp_FUN_005c8b50(void);
-int __cdecl shape_superopt_cpp_FUN_005c8e70(void);
-int __cdecl shape_superopt_cpp_FUN_005c9100(void);
-uint __cdecl shape_superopt_cpp_FUN_005c91e0(void);
-void __cdecl shape_superopt_cpp_FUN_005c9340(void);
-int __cdecl shape_superopt_cpp_FUN_005c9500(void);
-void __cdecl shape_superopt_cpp_FUN_005c9aa0(void);
-int __cdecl shape_superopt_cpp_FUN_005ca590(void);
-int __cdecl shape_superopt_cpp_FUN_005cb3a0(void);
-double * __cdecl shape_superopt_cpp_FUN_005cbb40(void);
-void __cdecl shape_superopt_cpp_FUN_005cbe20(void);
-int __cdecl shape_superopt_cpp_FUN_005cbec0(void);
-int __cdecl shape_superopt_cpp_FUN_005cbee0(void);
-int __cdecl shape_superopt_cpp_FUN_005cbef0(void);
-int __cdecl shape_superopt_cpp_FUN_005cbf00(void);
-int __cdecl shape_superopt_cpp_FUN_005cbf10(void);
-int __cdecl shape_superopt_cpp_FUN_005cbf20(void);
-int __cdecl shape_superopt_cpp_FUN_005cbf90(void);
+CComplexPolygon * __cdecl shape_superopt_cpp_CComplexPolygon_ctor_FUN_005c79a0(CComplexPolygon *this_ptr);
+CComplexPolygon * __cdecl shape_superopt_cpp_CComplexPolygon_dtor_FUN_005c79d0(CComplexPolygon *this_ptr,uint flags);
+void __cdecl shape_superopt_cpp_CComplexPolygon_free_FUN_005c79f0(CComplexPolygon *this_ptr);
+int __cdecl shape_superopt_cpp_CComplexPolygon_addSharedTriangle_FUN_005c7a90(CComplexPolygon *this_ptr,CPoly *poly);
+int __cdecl shape_superopt_cpp_CComplexPolygon_buildEdgeList_FUN_005c7b20(CComplexPolygon *this_ptr);
+void __cdecl shape_superopt_cpp_CComplexPolygon_mergeAdjacentEdges_FUN_005c7dc0(CComplexPolygon *this_ptr);
+int __cdecl shape_superopt_cpp_CComplexPolygon_canMergeEdges_FUN_005c7fb0(CComplexPolygon *this_ptr,SExpandedEdge *edge_a,SExpandedEdge *edge_b);
+void __cdecl shape_superopt_cpp_CComplexPolygon_removedSharedEdges_FUN_005c8160(CComplexPolygon *this_ptr);
+int __cdecl shape_superopt_cpp_CComplexPolygon_orderEdgesIntoChain_FUN_005c8280(CComplexPolygon *this_ptr,SExpandedEdge *edges,int edge_count);
+int __cdecl shape_superopt_cpp_CComplexPolygon_splitToConvex_FUN_005c84c0(CComplexPolygon *this_ptr);
+int __cdecl shape_superopt_cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50(CComplexPolygon *this_ptr,SExpandedEdge *buf_a,SExpandedEdge *buf_b);
+int __cdecl shape_superopt_cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70(CComplexPolygon *this_ptr,SExpandedEdge *buf_a,SExpandedEdge *buf_b);
+int __cdecl shape_superopt_cpp_CComplexPolygon_computeArea_FUN_005c9100(CComplexPolygon *this_ptr,SExpandedEdge *edges,int edge_count);
+int __cdecl shape_superopt_cpp_CComplexPolygon_processEdgeSubLoops_FUN_005c91e0(CComplexPolygon *this_ptr,SExpandedEdge *edges,int *edge_count_ptr);
+void __cdecl shape_superopt_cpp_CComplexPolygon_removeRedundantEdges_FUN_005c9340(CComplexPolygon *this_ptr,SExpandedEdge *edges,int *edge_count_ptr);
+CComplexPolygon * __cdecl shape_superopt_cpp_CComplexPolygon_splitByDimensions_FUN_005c9500(CComplexPolygon *this_ptr,double *max_dimensions);
+void __cdecl shape_superopt_cpp_CComplexPolygon_splitEdgesByPlane_FUN_005c9aa0(CComplexPolygon *this_ptr,CVector3d *plane_normal,CVector3d *plane_point, SExpandedEdge *buf_a,SExpandedEdge *buf_b,int *count_a,int *count_b);
+int __cdecl shape_superopt_cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590(CComplexPolygon *this_ptr,SExpandedEdge *edges,int *edge_count_ptr,int is_secondary);
+int __cdecl shape_superopt_cpp_CComplexPolygon_isConvex_FUN_005cb3a0(CComplexPolygon *this_ptr,SExpandedEdge *edges,int edge_count);
+CVector3d * __cdecl shape_superopt_cpp_CComplexPolygon_computeWindingNormal_FUN_005cbb40(CComplexPolygon *this_ptr,CVector3d *output_normal,SExpandedEdge *edges,int edge_count);
+void __cdecl shape_superopt_cpp_CComplexPolygon_storeEdgeSubChain_FUN_005cbe20(CComplexPolygon *this_ptr,SExpandedEdge *edges,int edge_count);
+void * __cdecl shape_superopt_cpp_CComplexPolygon_getConvexSubChains_FUN_005cbec0(CComplexPolygon *this_ptr,int *out_count);
+int __cdecl shape_superopt_cpp_CComplexPolygon_getExpandedEdgeCount_FUN_005cbee0(CComplexPolygon *this_ptr);
+CVector3d * __cdecl shape_superopt_cpp_CComplexPolygon_getNormal_FUN_005cbef0(CComplexPolygon *this_ptr);
+int __cdecl shape_superopt_cpp_CComplexPolygon_setMaterialId_FUN_005cbf00(CComplexPolygon *this_ptr,int material_id);
+void * __cdecl shape_superopt_cpp_CComplexPolygon_getExpandedEdges_FUN_005cbf10(CComplexPolygon *this_ptr);
+int __cdecl shape_superopt_cpp_CComplexPolygon_isEdgeChainClosed_FUN_005cbf20(CComplexPolygon *this_ptr,SExpandedEdge *edges,int edge_count);
+int __cdecl shape_superopt_cpp_CComplexPolygon_validateSubChainVisibility_FUN_005cbf90(CComplexPolygon *this_ptr,CVector3d *normal,SExpandedEdge *sub_chain, int sub_chain_count,SExpandedEdge *full_edges,int full_edge_count);
 CPoly * __cdecl shape_superopt_cpp_CPoly_ctor_FUN_005cc620(CPoly *this_ptr);
 CPoly * __cdecl shape_superopt_cpp_CPoly_dtor_FUN_005cc660(CPoly *this_ptr,uint flags);
 void __cdecl shape_superopt_cpp_CPoly_init_FUN_005cc670(CPoly *this_ptr,CObj *parent_obj);

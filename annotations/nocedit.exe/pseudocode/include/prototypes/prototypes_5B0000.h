@@ -28,6 +28,7 @@
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SHardwareEdge.h"
 #include "types/structs/SIntersectXZCylinder.h"
+#include "types/structs/SMRGLPrimitiveTriangle.h"
 #include "types/structs/SMRGLTextureBasic.h"
 #include "types/structs/SProjectedVertex.h"
 #include "types/structs/SRGBColorPalette.h"
@@ -159,9 +160,9 @@ int __cdecl wincore_windll_cpp_setColorTable16_FUN_005b7579(void);
 int __cdecl wincore_windll_cpp_restoreVideoMode_FUN_005b75b0(void);
 int __cdecl wincore_windll_cpp_drawPolygon_FUN_005b75e0(SRenderVertex *vertices,int vertex_count,int render_flags);
 int __cdecl wincore_windll_cpp_drawPolygon2_FUN_005b7610(SRenderVertex **vertex_array,int vertex_count,int render_flags);
-int __cdecl wincore_windll_cpp_drawPolyList_FUN_005b7640(void *vertex_buffer,void **polygons,int polygon_count,int render_flags);
-int __cdecl wincore_windll_cpp_drawPolyList2_FUN_005b7780(void *vertex_buffer,void **polygons,int polygon_count,int render_flags);
-int __cdecl wincore_windll_cpp_drawPolyList3_FUN_005b78c0(void *vertex_buffer,void *polygons,int polygon_count,int render_flags);
+int __cdecl wincore_windll_cpp_drawPolyList_FUN_005b7640(SRenderVertex *vertex_buffer,SMRGLPrimitiveTriangle **polygons,int polygon_count, int render_flags);
+int __cdecl wincore_windll_cpp_drawPolyList2_FUN_005b7780(SRenderVertex *vertex_buffer,ushort **polygons,int polygon_count,int render_flags);
+int __cdecl wincore_windll_cpp_drawPolyList3_FUN_005b78c0(SRenderVertex *vertex_buffer,ushort *polygons,int polygon_count,int render_flags);
 int __cdecl wincore_windll_cpp_addParticle_FUN_005b7985(void *particle_data,int particle_type);
 int __cdecl wincore_windll_cpp_flushParticleList_FUN_005b79b2(void);
 int __cdecl wincore_windll_cpp_add3dLine_FUN_005b79d3(void *start_point,void *end_point,int line_style);
@@ -172,7 +173,7 @@ int __cdecl wincore_windll_cpp_setFogColorFromPalette_FUN_005b7b01(int palette_i
 int __cdecl wincore_windll_cpp_setFogColor_FUN_005b7b80(int red,int green,int blue);
 int __cdecl wincore_windll_cpp_sync_FUN_005b7bc0(void);
 int __cdecl wincore_windll_cpp_clearZBuffer_FUN_005b7be0(void);
-int __cdecl wincore_windll_cpp_clearZBox_FUN_005b7c00(int left,int top,int right,int bottom);
+int __cdecl wincore_windll_cpp_clearZBox_FUN_005b7c00(int left,int right,int top,int bottom);
 void __cdecl wincore_windll_cpp_presentToExternalRenderer_FUN_005b7c30(int skip_buffer_copy);
 int __cdecl wincore_windll_cpp_masterZBuffer_FUN_005b7d00(int z_buffer_mode);
 int __cdecl wincore_windll_cpp_restoreZBuffer_FUN_005b7d20(int left,int top,int mode,int right,int bottom);

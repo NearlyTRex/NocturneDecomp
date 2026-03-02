@@ -104,9 +104,7 @@ void __cdecl core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(C
   float local_124;
   float local_120;
   float local_11c;
-  float local_118;
-  float local_114;
-  float local_110;
+  CVector3f local_118;
   CVector3f local_10c;
   CVector3f local_100;
   float local_f4;
@@ -669,36 +667,37 @@ LAB_005975b4:
         if (iVar7 != 0) {
           local_50 = local_50 * 0.05f;
         }
-        local_118 = 0.0;
-        local_114 = 0.0;
-        local_110 = 0.0;
+        local_118.x = 0.0;
+        local_118.y = 0.0;
+        local_118.z = 0.0;
         iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_A);
         if (iVar7 != 0) {
-          local_114 = local_114 - local_50;
+          local_118.y = local_118.y - local_50;
         }
         iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_Q);
         if (iVar7 != 0) {
-          local_114 = local_114 + local_50;
+          local_118.y = local_118.y + local_50;
         }
         iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD4);
         if (iVar7 != 0) {
-          local_118 = local_118 - local_50;
+          local_118.x = local_118.x - local_50;
         }
         iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD6);
         if (iVar7 != 0) {
-          local_118 = local_118 + local_50;
+          local_118.x = local_118.x + local_50;
         }
         iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD2);
         if (iVar7 != 0) {
-          local_110 = local_110 - local_50;
+          local_118.z = local_118.z - local_50;
         }
         iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD8);
         if (iVar7 != 0) {
-          local_110 = local_110 + local_50;
+          local_118.z = local_118.z + local_50;
         }
-        if (0.0 < SQRT(local_110 * local_110 + local_118 * local_118 + local_114 * local_114)) {
+        if (0.0 < SQRT(local_118.z * local_118.z +
+                       local_118.x * local_118.x + local_118.y * local_118.y)) {
           local_40 = 1;
-          core_skeledit_cpp_CDeformableModel_FUN_0058e600(local_c0);
+          core_skeledit_cpp_CDeformableModel_offsetRootVertices_FUN_0058e600(local_c0,&local_118);
         }
       }
     }
@@ -750,7 +749,7 @@ LAB_005975b4:
            (0.0 < SQRT(local_13c.z * local_13c.z +
                        local_13c.x * local_13c.x + local_13c.y * local_13c.y))) {
           local_40 = 1;
-          core_skeledit_cpp_CDeformableModel_FUN_0058e600(local_c0);
+          core_skeledit_cpp_CDeformableModel_offsetRootVertices_FUN_0058e600(local_c0,&local_13c);
         }
       }
     }
@@ -809,7 +808,7 @@ LAB_005975b4:
         iVar7 = shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
                           (g_CEditorToolsPtr,local_660,&local_3c,1,0.0001,999999.9,0);
         if ((iVar7 != 0) && (local_3c != 1.0)) {
-          core_skeledit_cpp_CDeformableModel_FUN_0058e3e0(pCVar8,local_3c);
+          core_skeledit_cpp_CDeformableModel_scaleAllVertices_FUN_0058e3e0(pCVar8,local_3c);
           local_94 = 1;
         }
       }

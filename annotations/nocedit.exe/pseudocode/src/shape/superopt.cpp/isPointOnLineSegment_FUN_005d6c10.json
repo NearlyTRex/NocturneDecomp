@@ -112,7 +112,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "shape_superopt.cpp_isPointOnLineSegment_FUN_005d6c10",
-    "signature": "int __cdecl shape_superopt_cpp_isPointOnLineSegment_FUN_005d6c10(CVector3d *point,CVector3d *segStart,CVector3d *segEnd)"
+    "signature": "int __cdecl shape_superopt_cpp_isPointOnLineSegment_FUN_005d6c10(CVector3d *point,CVector3d *seg_start,CVector3d *seg_end)"
   },
   "function_calls": [
     {
@@ -483,14 +483,14 @@
       },
       {
         "is_param": true,
-        "name": "segStart",
+        "name": "seg_start",
         "offset": 8,
         "size": 4,
         "type": "CVector3d *"
       },
       {
         "is_param": true,
-        "name": "segEnd",
+        "name": "seg_end",
         "offset": 12,
         "size": 4,
         "type": "CVector3d *"
@@ -520,7 +520,7 @@
       "line": 43,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uVar1 = *(uint *)((int)&segStart->x + 4);",
+      "text": "uVar1 = *(uint *)((int)&seg_start->x + 4);",
       "type": "pointer_cast"
     },
     {
@@ -528,7 +528,7 @@
       "line": 47,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uVar1 = *(uint *)((int)&segEnd->x + 4);",
+      "text": "uVar1 = *(uint *)((int)&seg_end->x + 4);",
       "type": "pointer_cast"
     },
     {
@@ -536,7 +536,7 @@
       "line": 51,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uVar2 = *(uint *)((int)&segEnd->y + 4);",
+      "text": "uVar2 = *(uint *)((int)&seg_end->y + 4);",
       "type": "pointer_cast"
     },
     {
@@ -544,7 +544,7 @@
       "line": 55,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uVar2 = *(uint *)((int)&segStart->y + 4);",
+      "text": "uVar2 = *(uint *)((int)&seg_start->y + 4);",
       "type": "pointer_cast"
     },
     {
@@ -552,7 +552,7 @@
       "line": 59,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uVar3 = *(uint *)((int)&segEnd->z + 4);",
+      "text": "uVar3 = *(uint *)((int)&seg_end->z + 4);",
       "type": "pointer_cast"
     },
     {
@@ -560,7 +560,7 @@
       "line": 63,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uVar3 = *(uint *)((int)&segStart->z + 4);",
+      "text": "uVar3 = *(uint *)((int)&seg_start->z + 4);",
       "type": "pointer_cast"
     },
     {
@@ -568,7 +568,7 @@
       "line": 67,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uVar4 = *(uint *)((int)&segEnd->x + 4);",
+      "text": "uVar4 = *(uint *)((int)&seg_end->x + 4);",
       "type": "pointer_cast"
     },
     {
@@ -576,7 +576,7 @@
       "line": 71,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uVar4 = *(uint *)((int)&segStart->x + 4);",
+      "text": "uVar4 = *(uint *)((int)&seg_start->x + 4);",
       "type": "pointer_cast"
     },
     {
@@ -584,7 +584,7 @@
       "line": 75,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uVar5 = *(uint *)((int)&segEnd->y + 4);",
+      "text": "uVar5 = *(uint *)((int)&seg_end->y + 4);",
       "type": "pointer_cast"
     },
     {
@@ -592,7 +592,7 @@
       "line": 79,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uVar5 = *(uint *)((int)&segStart->y + 4);",
+      "text": "uVar5 = *(uint *)((int)&seg_start->y + 4);",
       "type": "pointer_cast"
     },
     {
@@ -600,7 +600,7 @@
       "line": 83,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uVar6 = *(uint *)((int)&segEnd->z + 4);",
+      "text": "uVar6 = *(uint *)((int)&seg_end->z + 4);",
       "type": "pointer_cast"
     },
     {
@@ -608,7 +608,7 @@
       "line": 87,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uVar6 = *(uint *)((int)&segStart->z + 4);",
+      "text": "uVar6 = *(uint *)((int)&seg_start->z + 4);",
       "type": "pointer_cast"
     },
     {

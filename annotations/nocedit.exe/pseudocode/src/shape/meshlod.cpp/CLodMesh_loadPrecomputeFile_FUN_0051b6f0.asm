@@ -7,7 +7,7 @@
 ; CLodMesh *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_skeledit.cpp_CLodMesh_FUN_00589c20 at 00589c6c
+;   core_skeledit.cpp_CLodMesh_selectAndGenerateLods_FUN_00589c20 at 00589c6c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_rt_00637cf5

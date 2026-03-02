@@ -35,11 +35,11 @@
 ;   core_game.cpp_CGame_runGameSession_FUN_004daf80
 ;   core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_00524120
 ;   core_mission.cpp_CDemonMission_createHeros_FUN_00524a80
-;   core_mission.cpp_CDemonMission_FUN_00524760
 ;   core_mission.cpp_CDemonMission_load_FUN_00522d90
 ;   core_mission.cpp_CDemonMission_loadSet_FUN_00523fb0
 ;   core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0
 ;   core_mission.cpp_CDemonMission_save_FUN_00522e30
+;   core_mission.cpp_CDemonMission_startMission_FUN_00524760
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_remove_FUN_005ff9d0
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
@@ -125,8 +125,8 @@ section .text
         ;   XREF to: 004b0460 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_resetGameFlags_FUN_004b0460(CEventList * this_ptr)
     ADD ESP,0x4                         ; 00538c84
     PUSH EBX                            ; 00538c87
-    CALL core_mission.cpp_CDemonMission_FUN_00524760 ; 00538c88
-        ;   XREF to: 00524760 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_FUN_00524760(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_startMission_FUN_00524760 ; 00538c88
+        ;   XREF to: 00524760 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_startMission_FUN_00524760(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 00538c8d
     TEST EAX,EAX                        ; 00538c90
     JZ 0x00538cc0                       ; 00538c92

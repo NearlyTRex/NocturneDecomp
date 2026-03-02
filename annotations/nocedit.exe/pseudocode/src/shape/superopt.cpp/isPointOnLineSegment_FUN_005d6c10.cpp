@@ -2,11 +2,11 @@
 // Address: 005d6c10
 // Address Range: [[005d6c10, 005d6f80]]
 // Convention: __cdecl
-// Signature: int __cdecl shape_superopt_cpp_isPointOnLineSegment_FUN_005d6c10(CVector3d *point,CVector3d *segStart,CVector3d *segEnd)
+// Signature: int __cdecl shape_superopt_cpp_isPointOnLineSegment_FUN_005d6c10(CVector3d *point,CVector3d *seg_start,CVector3d *seg_end)
 
 #include "nocturne.h"
 
-int __cdecl shape_superopt_cpp_isPointOnLineSegment_FUN_005d6c10(CVector3d *point,CVector3d *segStart,CVector3d *segEnd)
+int __cdecl shape_superopt_cpp_isPointOnLineSegment_FUN_005d6c10(CVector3d *point,CVector3d *seg_start,CVector3d *seg_end)
 
 {
   uint uVar1;
@@ -39,59 +39,59 @@ int __cdecl shape_superopt_cpp_isPointOnLineSegment_FUN_005d6c10(CVector3d *poin
   double local_30;
   CVector3d local_28;
   
-  if (((point->x == segStart->x) && (point->y == segStart->y)) && (point->z == segStart->z)) {
+  if (((point->x == seg_start->x) && (point->y == seg_start->y)) && (point->z == seg_start->z)) {
     return 1;
   }
-  if (((point->x == segEnd->x) && (point->y == segEnd->y)) && (point->z == segEnd->z)) {
+  if (((point->x == seg_end->x) && (point->y == seg_end->y)) && (point->z == seg_end->z)) {
     return 1;
   }
-  if (segStart->x < segEnd->x) {
-    local_b0 = *(uint *)&segStart->x;
-    uVar1 = *(uint *)((int)&segStart->x + 4);
+  if (seg_start->x < seg_end->x) {
+    local_b0 = *(uint *)&seg_start->x;
+    uVar1 = *(uint *)((int)&seg_start->x + 4);
   }
   else {
-    local_b0 = *(uint *)&segEnd->x;
-    uVar1 = *(uint *)((int)&segEnd->x + 4);
+    local_b0 = *(uint *)&seg_end->x;
+    uVar1 = *(uint *)((int)&seg_end->x + 4);
   }
-  if (segEnd->y <= segStart->y) {
-    local_c0 = *(uint *)&segEnd->y;
-    uVar2 = *(uint *)((int)&segEnd->y + 4);
-  }
-  else {
-    local_c0 = *(uint *)&segStart->y;
-    uVar2 = *(uint *)((int)&segStart->y + 4);
-  }
-  if (segEnd->z <= segStart->z) {
-    local_f8 = *(uint *)&segEnd->z;
-    uVar3 = *(uint *)((int)&segEnd->z + 4);
+  if (seg_end->y <= seg_start->y) {
+    local_c0 = *(uint *)&seg_end->y;
+    uVar2 = *(uint *)((int)&seg_end->y + 4);
   }
   else {
-    local_f8 = *(uint *)&segStart->z;
-    uVar3 = *(uint *)((int)&segStart->z + 4);
+    local_c0 = *(uint *)&seg_start->y;
+    uVar2 = *(uint *)((int)&seg_start->y + 4);
   }
-  if (segStart->x <= segEnd->x) {
-    local_a8 = *(uint *)&segEnd->x;
-    uVar4 = *(uint *)((int)&segEnd->x + 4);
-  }
-  else {
-    local_a8 = *(uint *)&segStart->x;
-    uVar4 = *(uint *)((int)&segStart->x + 4);
-  }
-  if (segStart->y <= segEnd->y) {
-    local_f0 = *(uint *)&segEnd->y;
-    uVar5 = *(uint *)((int)&segEnd->y + 4);
+  if (seg_end->z <= seg_start->z) {
+    local_f8 = *(uint *)&seg_end->z;
+    uVar3 = *(uint *)((int)&seg_end->z + 4);
   }
   else {
-    local_f0 = *(uint *)&segStart->y;
-    uVar5 = *(uint *)((int)&segStart->y + 4);
+    local_f8 = *(uint *)&seg_start->z;
+    uVar3 = *(uint *)((int)&seg_start->z + 4);
   }
-  if (segStart->z <= segEnd->z) {
-    local_b8 = *(uint *)&segEnd->z;
-    uVar6 = *(uint *)((int)&segEnd->z + 4);
+  if (seg_start->x <= seg_end->x) {
+    local_a8 = *(uint *)&seg_end->x;
+    uVar4 = *(uint *)((int)&seg_end->x + 4);
   }
   else {
-    local_b8 = *(uint *)&segStart->z;
-    uVar6 = *(uint *)((int)&segStart->z + 4);
+    local_a8 = *(uint *)&seg_start->x;
+    uVar4 = *(uint *)((int)&seg_start->x + 4);
+  }
+  if (seg_start->y <= seg_end->y) {
+    local_f0 = *(uint *)&seg_end->y;
+    uVar5 = *(uint *)((int)&seg_end->y + 4);
+  }
+  else {
+    local_f0 = *(uint *)&seg_start->y;
+    uVar5 = *(uint *)((int)&seg_start->y + 4);
+  }
+  if (seg_start->z <= seg_end->z) {
+    local_b8 = *(uint *)&seg_end->z;
+    uVar6 = *(uint *)((int)&seg_end->z + 4);
+  }
+  else {
+    local_b8 = *(uint *)&seg_start->z;
+    uVar6 = *(uint *)((int)&seg_start->z + 4);
   }
   if (((__BITCAST_DOUBLE(CONCAT44(uVar1,local_b0)) + -0.0001 <= point->x) &&
       (point->x <= __BITCAST_DOUBLE(CONCAT44(uVar4,local_a8)) + 0.0001)) &&
@@ -99,9 +99,9 @@ int __cdecl shape_superopt_cpp_isPointOnLineSegment_FUN_005d6c10(CVector3d *poin
       (((point->y <= __BITCAST_DOUBLE(CONCAT44(uVar5,local_f0)) + 0.0001 &&
         (__BITCAST_DOUBLE(CONCAT44(uVar3,local_f8)) + -0.0001 <= point->z)) &&
        (point->z <= __BITCAST_DOUBLE(CONCAT44(uVar6,local_b8)) + 0.0001)))))) {
-    local_a0 = point->x - segStart->x;
-    local_98 = point->y - segStart->y;
-    local_90 = point->z - segStart->z;
+    local_a0 = point->x - seg_start->x;
+    local_98 = point->y - seg_start->y;
+    local_90 = point->z - seg_start->z;
     pdVar8 = &local_a0;
     puVar9 = local_58;
     for (iVar7 = 6; iVar7 != 0; iVar7 = iVar7 + -1) {
@@ -115,9 +115,9 @@ int __cdecl shape_superopt_cpp_isPointOnLineSegment_FUN_005d6c10(CVector3d *poin
     local_88.y._4_4_ = local_58[3];
     local_88.z._0_4_ = local_48;
     local_88.z._4_4_ = local_44;
-    local_40 = point->x - segEnd->x;
-    local_38 = point->y - segEnd->y;
-    local_30 = point->z - segEnd->z;
+    local_40 = point->x - seg_end->x;
+    local_38 = point->y - seg_end->y;
+    local_30 = point->z - seg_end->z;
     pdVar8 = &local_40;
     puVar9 = local_70;
     for (iVar7 = 6; iVar7 != 0; iVar7 = iVar7 + -1) {

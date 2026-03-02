@@ -1,0 +1,158 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "incompatible_types",
+        "column": 13,
+        "line": 31,
+        "message": "assigning to 'CPoly **' from incompatible type 'void *'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 67,
+    "complexity_score": 95,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 30,
+    "suspect_count": 6,
+    "suspect_types": [
+      "pointer_cast"
+    ],
+    "total_lines": 97
+  },
+  "cross_references": [
+    {
+      "addr": "005d7350",
+      "from_addr": "005d73df",
+      "name": "shape_superopt.cpp_COptimize_optimizeComplex_FUN_005d7350",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005c7a90",
+    "address_range": [
+      [
+        "005c7a90",
+        "005c7b18"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_superopt.cpp_CComplexPolygon_addSharedTriangle_FUN_005c7a90",
+    "signature": "int __cdecl shape_superopt_cpp_CComplexPolygon_addSharedTriangle_FUN_005c7a90(CComplexPolygon *this_ptr,CPoly *poly)"
+  },
+  "function_calls": [
+    {
+      "addr": "00601df0",
+      "is_variadic": false,
+      "name": "crt_memory.c_realloc_FUN_00601df0"
+    }
+  ],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.315789473684211,
+    "instruction_count": 57,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 7,
+      "CALL": 1,
+      "CBRANCH": 4,
+      "COPY": 56,
+      "INT_ADD": 34,
+      "INT_AND": 31,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 19,
+      "INT_LEFT": 2,
+      "INT_LESS": 2,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 2,
+      "INT_OR": 5,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 11,
+      "INT_SUB": 9,
+      "INT_XOR": 2,
+      "LOAD": 26,
+      "POPCOUNT": 9,
+      "RETURN": 2,
+      "STORE": 16
+    },
+    "pcode_op_count": 246
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CComplexPolygon *"
+      },
+      {
+        "is_param": true,
+        "name": "poly",
+        "offset": 8,
+        "size": 4,
+        "type": "CPoly *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 14,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&(this_ptr->normal).x + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 15,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&(poly->normal).impl.x + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 17,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&(this_ptr->normal).y + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 18,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&(poly->normal).impl.y + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 20,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&(this_ptr->normal).z + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 21,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&(poly->normal).impl.z + 4);",
+      "type": "pointer_cast"
+    }
+  ]
+}

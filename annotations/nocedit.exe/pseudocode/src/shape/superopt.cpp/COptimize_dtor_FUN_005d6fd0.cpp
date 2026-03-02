@@ -12,7 +12,7 @@ COptimize * __cdecl shape_superopt_cpp_COptimize_dtor_FUN_005d6fd0(COptimize *th
   COptimize *pCVar1;
   
   this_ptr->vtable = &g_COptimizeVTable;
-  shape_superopt_cpp_COptimize_FUN_005d7000(this_ptr);
-  pCVar1 = (COptimize *)shape_superopt_cpp_CObj_dtor_FUN_005d2260(&this_ptr->obj,0);
+  shape_superopt_cpp_COptimize_cleanup_FUN_005d7000(this_ptr);
+  pCVar1 = (COptimize *)shape_superopt_cpp_CObj_dtor_FUN_005d2260(&this_ptr->base,0);
   return pCVar1;
 }

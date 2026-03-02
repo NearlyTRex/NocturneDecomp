@@ -47,7 +47,7 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_004a4d40(CPickList *t
             iVar5 = local_1c + this_ptr->character_width + -1;
             iVar4 = g_SelectionHighlightColor;
             if (this_ptr->confirmed_flag != 0) {
-              iVar4 = g_HighlightColor1;
+              iVar4 = g_ConfirmedSelectionColor;
             }
             engine_2d_c_fillRectColor_FUN_00403170(local_28,local_1c,iVar3,iVar5,iVar4);
             if (this_ptr->selection_state == -1) {
@@ -62,7 +62,7 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_004a4d40(CPickList *t
           local_20 = g_EnabledTextColor;
           iVar8 = shape_edittool_cpp_CPickList_isItemEnabled_FUN_004a54e0(this_ptr,iVar8);
           if (iVar8 == 0) {
-            local_20 = g_BackgroundColor1;
+            local_20 = g_DisabledTextColor;
           }
           piVar10 = this_ptr->tab_column_widths + local_18 + -4;
           do {
@@ -90,7 +90,7 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_004a4d40(CPickList *t
       }
       iVar8 = g_ActiveRenderColor;
       if (0 < local_30) {
-        g_ActiveRenderColor = g_HighlightColor2;
+        g_ActiveRenderColor = g_PickListSeparatorColor;
         iVar3 = shape_edittool_cpp_calculateGridHeight_FUN_004a64b0();
         iVar4 = g_WindowHeight / 0x60;
         if (this_ptr->dialog_result == 2) {

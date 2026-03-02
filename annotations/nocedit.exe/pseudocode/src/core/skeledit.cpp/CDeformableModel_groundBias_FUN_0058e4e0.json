@@ -1,0 +1,247 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 110,
+    "complexity_score": 45,
+    "cross_reference_count": 0,
+    "function_call_count": 8,
+    "global_count": 12,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 45,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 155
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0058e4e0",
+    "address_range": [
+      [
+        "0058e4e0",
+        "0058e5f9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeledit.cpp_CDeformableModel_groundBias_FUN_0058e4e0",
+    "signature": "void __cdecl core_skeledit_cpp_CDeformableModel_groundBias_FUN_0058e4e0(CDeformableModel *this_ptr,int motion_index,float frame_number)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "is_variadic": true,
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "0058e600",
+      "is_variadic": false,
+      "name": "core_skeledit.cpp_CDeformableModel_offsetRootVertices_FUN_0058e600"
+    },
+    {
+      "addr": "0059ddc0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0059ddc0"
+    },
+    {
+      "addr": "005a0480",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_initializeFromModel_FUN_005a0480"
+    },
+    {
+      "addr": "005a01d0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0"
+    },
+    {
+      "addr": "0059e070",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_0059e070"
+    },
+    {
+      "addr": "005ff9f3",
+      "is_variadic": false,
+      "name": "crt_stack.c___STK_FUN_005ff9f3"
+    },
+    {
+      "addr": "0050f1b0",
+      "is_variadic": false,
+      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0064af04",
+      "name": "s_core_skeledit_cpp_0064af04",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064af19",
+      "name": "s_core_skeledit_cpp_0064af19",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064af2e",
+      "name": "s_CDeformableModel_groundB_0064af2e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064af5c",
+      "name": "s_core_skeledit_cpp_0064af5c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064af72",
+      "name": "DOUBLE_0064af72",
+      "type": "double",
+      "value": "0.00390625"
+    },
+    {
+      "addr": "0067d20c",
+      "name": "g_CurrentDebugFilename",
+      "type": "char*",
+      "value": "0067d200"
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02f0d944",
+      "name": "g_CurrentDebugLine",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f87558",
+      "name": "g_ZeroVector",
+      "type": "UVector3",
+      "value": null
+    },
+    {
+      "addr": "03f8755c",
+      "name": "g_ZeroVector+4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f87560",
+      "name": "g_ZeroVector+8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 3,
+    "estimated_params": 3
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.202247191011236,
+    "instruction_count": 89,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 2,
+      "BRANCH": 1,
+      "CALL": 8,
+      "CALLIND": 1,
+      "CBRANCH": 5,
+      "COPY": 85,
+      "FLOAT2FLOAT": 2,
+      "FLOAT_MULT": 1,
+      "INT2FLOAT": 1,
+      "INT_2COMP": 1,
+      "INT_ADD": 30,
+      "INT_AND": 41,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 38,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 4,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 11,
+      "INT_SLESS": 19,
+      "INT_SUB": 33,
+      "INT_XOR": 1,
+      "LOAD": 16,
+      "POPCOUNT": 19,
+      "RETURN": 1,
+      "STORE": 35
+    },
+    "pcode_op_count": 374
+  },
+  "stack_frame": {
+    "frame_size": 48,
+    "local_size": 36,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModel *"
+      },
+      {
+        "is_param": true,
+        "name": "motion_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "frame_number",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": []
+}

@@ -1,0 +1,269 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 190,
+    "complexity_score": 175,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 80,
+    "suspect_count": 9,
+    "suspect_types": [
+      "pointer_cast"
+    ],
+    "total_lines": 270
+  },
+  "cross_references": [
+    {
+      "addr": "005c7b20",
+      "from_addr": "005c7d76",
+      "name": "shape_superopt.cpp_CComplexPolygon_buildEdgeList_FUN_005c7b20",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005c7dc0",
+    "address_range": [
+      [
+        "005c7dc0",
+        "005c7fac"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_superopt.cpp_CComplexPolygon_mergeAdjacentEdges_FUN_005c7dc0",
+    "signature": "void __cdecl shape_superopt_cpp_CComplexPolygon_mergeAdjacentEdges_FUN_005c7dc0(CComplexPolygon *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fe5e0",
+      "is_variadic": false,
+      "name": "crt_string.c_memmove_FUN_005fe5e0"
+    },
+    {
+      "addr": "005c7fb0",
+      "is_variadic": false,
+      "name": "shape_superopt.cpp_CComplexPolygon_canMergeEdges_FUN_005c7fb0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005c7d76",
+        "call_type": "direct",
+        "caller": "shape_superopt.cpp_CComplexPolygon_buildEdgeList_FUN_005c7b20",
+        "estimated_params": 1,
+        "instructions_analyzed": 3,
+        "reg_params": [],
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.951219512195122,
+    "instruction_count": 164,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BOOL_OR": 4,
+      "BRANCH": 2,
+      "CALL": 2,
+      "CBRANCH": 11,
+      "COPY": 199,
+      "FLOAT2FLOAT": 8,
+      "FLOAT_EQUAL": 3,
+      "FLOAT_LESS": 3,
+      "FLOAT_NAN": 6,
+      "INT_ADD": 108,
+      "INT_AND": 79,
+      "INT_CARRY": 14,
+      "INT_EQUAL": 62,
+      "INT_LEFT": 12,
+      "INT_LESS": 8,
+      "INT_MULT": 5,
+      "INT_NOTEQUAL": 18,
+      "INT_OR": 15,
+      "INT_SBORROW": 10,
+      "INT_SCARRY": 17,
+      "INT_SEXT": 9,
+      "INT_SLESS": 31,
+      "INT_SUB": 22,
+      "INT_XOR": 2,
+      "INT_ZEXT": 12,
+      "LOAD": 60,
+      "POPCOUNT": 31,
+      "RETURN": 1,
+      "STORE": 48,
+      "SUBPIECE": 6
+    },
+    "pcode_op_count": 812
+  },
+  "stack_frame": {
+    "frame_size": 64,
+    "local_size": 60,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CComplexPolygon *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 22,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "local_38 = (uint *)((int)pvVar1 + 0x10);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 23,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "local_34 = (uint *)((int)pvVar1 + 0x28);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 30,
+      "match": "(SExpandedEdge *)((int)",
+      "severity": "mild",
+      "text": "edge_b = (SExpandedEdge *)((int)pvVar1 + iVar3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 32,
+      "match": "(SExpandedEdge *)((int)",
+      "severity": "mild",
+      "text": "edge_a = (SExpandedEdge *)((int)pvVar1 + local_2c * 0x60);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 42,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "local_34[1] = *(uint *)((int)&(edge_b->end_pos).x + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 44,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "local_34[3] = *(uint *)((int)&(edge_b->end_pos).y + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 47,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "local_34[0xb] = *(uint *)((int)edge_b->end_uv + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 49,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "local_34[0xd] = *(uint *)((int)edge_b->end_uv + 0xc);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 70,
+      "match": "(void *)((int)",
+      "severity": "mild",
+      "text": "local_20 = (void *)((int)local_20 + 0x60);",
+      "type": "pointer_cast"
+    }
+  ]
+}

@@ -7,9 +7,9 @@
 ; CDemonMission *  Stack[0x4]:4   this_ptr
 ;
 ; XREF[11]:
-;   core_mission.cpp_CDemonMission_FUN_00523f50 at 00523f7f
 ;   core_mission.cpp_CDemonMission_createHeros_FUN_00524a80 at 00524b7b
 ;   core_mission.cpp_CDemonMission_loadSet_FUN_00523fb0 at 00523fe1
+;   core_mission.cpp_CDemonMission_removeAllActors_FUN_00523f50 at 00523f7f
 ;   core_msnedit.cpp_CDemonMission_changeActorType_FUN_0053d8b0 at 0053dbde
 ;   core_msnedit.cpp_CDemonMission_deleteActorWithConfirm_FUN_0053bc80 at 0053bcba
 ;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 00539497

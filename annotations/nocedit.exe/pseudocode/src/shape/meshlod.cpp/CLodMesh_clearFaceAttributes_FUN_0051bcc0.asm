@@ -7,7 +7,7 @@
 ; CLodMesh *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_skeledit.cpp_CDeformableModel_FUN_0058c190 at 0058d09f
+;   core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190 at 0058d09f
 ;
 ; *****************************************************************************
 

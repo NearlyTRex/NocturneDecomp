@@ -51,9 +51,9 @@
 ;   core_game.cpp_CGame_loadGame_FUN_004e12b0
 ;   core_level.cpp_CLevelLoader_show_FUN_00503dc0
 ;   core_mission.cpp_CDemonMission_createHeros_FUN_00524a80
-;   core_mission.cpp_CDemonMission_FUN_00524760
 ;   core_mission.cpp_CDemonMission_load_FUN_00522d90
 ;   core_mission.cpp_CDemonMission_run_FUN_00524420
+;   core_mission.cpp_CDemonMission_startMission_FUN_00524760
 ;   crt_string.c__stricmp_FUN_005fe7f0
 ;   engine_dosio.c_getFile_FUN_00481a50
 ;   engine_ini.cpp_CIniFile_ctor_FUN_004fba70
@@ -344,8 +344,8 @@ section .text
         ;   XREF to: 004e208f (CONDITIONAL_JUMP)  ; LAB_004e208f
     MOV EDI,dword ptr [0x0067d550]      ; 004e2042 | g_CDemonMissionPtr
     PUSH EDI                            ; 004e2048 | g_CDemonMissionInstance
-    CALL core_mission.cpp_CDemonMission_FUN_00524760 ; 004e2049
-        ;   XREF to: 00524760 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_FUN_00524760(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_startMission_FUN_00524760 ; 004e2049
+        ;   XREF to: 00524760 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_startMission_FUN_00524760(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 004e204e
     MOV EBP,dword ptr [0x0067d550]      ; 004e2051 | g_CDemonMissionPtr
     PUSH EBP                            ; 004e2057 | g_CDemonMissionInstance

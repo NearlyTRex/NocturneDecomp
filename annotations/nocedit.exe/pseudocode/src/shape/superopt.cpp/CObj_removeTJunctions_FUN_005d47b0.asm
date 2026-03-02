@@ -100,7 +100,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   shape_superopt.cpp_COptimize_FUN_005d7290 at 005d72bc
+;   shape_superopt.cpp_COptimize_optimize_FUN_005d7290 at 005d72bc
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Deleting_T_Junctions_d_d_006544fc
@@ -735,7 +735,7 @@ section .text
     LEA EAX,[ESP + 0x1dc]               ; 005d5074
     PUSH EAX                            ; 005d507b
     CALL shape_superopt.cpp_isPointOnLineSegment_FUN_005d6c10 ; 005d507c
-        ;   XREF to: 005d6c10 (UNCONDITIONAL_CALL)  ; int shape_superopt.cpp_isPointOnLineSegment_FUN_005d6c10(CVector3d * point, CVector3d * segStart, CVector3d * segEnd)
+        ;   XREF to: 005d6c10 (UNCONDITIONAL_CALL)  ; int shape_superopt.cpp_isPointOnLineSegment_FUN_005d6c10(CVector3d * point, CVector3d * seg_start, CVector3d * seg_end)
     ADD ESP,0xc                         ; 005d5081
     TEST EAX,EAX                        ; 005d5084
     JZ 0x005d54cd                       ; 005d5086
@@ -995,7 +995,7 @@ section .text
     LEA EAX,[ESP + 0x1dc]               ; 005d54dd
     PUSH EAX                            ; 005d54e4
     CALL shape_superopt.cpp_isPointOnLineSegment_FUN_005d6c10 ; 005d54e5
-        ;   XREF to: 005d6c10 (UNCONDITIONAL_CALL)  ; int shape_superopt.cpp_isPointOnLineSegment_FUN_005d6c10(CVector3d * point, CVector3d * segStart, CVector3d * segEnd)
+        ;   XREF to: 005d6c10 (UNCONDITIONAL_CALL)  ; int shape_superopt.cpp_isPointOnLineSegment_FUN_005d6c10(CVector3d * point, CVector3d * seg_start, CVector3d * seg_end)
     ADD ESP,0xc                         ; 005d54ea
     TEST EAX,EAX                        ; 005d54ed
     JZ 0x005d5652                       ; 005d54ef
@@ -1073,7 +1073,7 @@ section .text
     LEA EAX,[ESP + 0x1dc]               ; 005d5662
     PUSH EAX                            ; 005d5669
     CALL shape_superopt.cpp_isPointOnLineSegment_FUN_005d6c10 ; 005d566a
-        ;   XREF to: 005d6c10 (UNCONDITIONAL_CALL)  ; int shape_superopt.cpp_isPointOnLineSegment_FUN_005d6c10(CVector3d * point, CVector3d * segStart, CVector3d * segEnd)
+        ;   XREF to: 005d6c10 (UNCONDITIONAL_CALL)  ; int shape_superopt.cpp_isPointOnLineSegment_FUN_005d6c10(CVector3d * point, CVector3d * seg_start, CVector3d * seg_end)
     ADD ESP,0xc                         ; 005d566f
     TEST EAX,EAX                        ; 005d5672
     JZ 0x005d4d06                       ; 005d5674

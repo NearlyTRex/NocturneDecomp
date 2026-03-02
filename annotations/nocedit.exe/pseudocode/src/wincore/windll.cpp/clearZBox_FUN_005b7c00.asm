@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl wincore_windll_cpp_clearZBox_FUN_005b7c00(int left,int top,int right,int bottom)
+; int __cdecl wincore_windll_cpp_clearZBox_FUN_005b7c00(int left,int right,int top,int bottom)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   left
-; int              Stack[0x8]:4   top
-; int              Stack[0xc]:4   right
+; int              Stack[0x8]:4   right
+; int              Stack[0xc]:4   top
 ; int              Stack[0x10]:4   bottom
 ;
 ; XREF[1]:

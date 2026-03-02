@@ -69,9 +69,9 @@
 ;   core_level.cpp_CLevelLoader_show_FUN_00503dc0
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_mission.cpp_CDemonMission_findActorByName_FUN_00524030
-;   core_mission.cpp_CDemonMission_FUN_00524760
 ;   core_mission.cpp_CDemonMission_readMissionFile_FUN_00522eb0
 ;   core_mission.cpp_CDemonMission_run_FUN_00524420
+;   core_mission.cpp_CDemonMission_startMission_FUN_00524760
 ;   core_script.cpp_CScript_loadState_FUN_00560820
 ;   core_set.cpp_CDemonSet_loadStateInfo_FUN_00571230
 ;   ... and 31 more
@@ -637,7 +637,7 @@ section .text
     MOV EDI,dword ptr [0x0067d550]      ; 004e190c | g_CDemonMissionPtr
     PUSH EDI                            ; 004e1912 | g_CDemonMissionInstance
     CALL core_mission.cpp_CDemonMission_readMissionFile_FUN_00522eb0 ; 004e1913
-        ;   XREF to: 00522eb0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonMission * this_ptr, _FILE * file_handle)
+        ;   XREF to: 00522eb0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonMission * this_ptr, _FILE * file_handle, int load_flags)
     ADD ESP,0xc                         ; 004e1918
     PUSH EBX                            ; 004e191b
     PUSH 0xff                           ; 004e191c
@@ -714,8 +714,8 @@ section .text
     MOV EBP,dword ptr [0x0067d550]      ; 004e1a08 | g_CDemonMissionPtr
         ;   Label: LAB_004e1a08
     PUSH EBP                            ; 004e1a0e | g_CDemonMissionInstance
-    CALL core_mission.cpp_CDemonMission_FUN_00524760 ; 004e1a0f
-        ;   XREF to: 00524760 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_FUN_00524760(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_startMission_FUN_00524760 ; 004e1a0f
+        ;   XREF to: 00524760 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_startMission_FUN_00524760(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 004e1a14
     TEST EAX,EAX                        ; 004e1a17
     JZ 0x004e17ac                       ; 004e1a19

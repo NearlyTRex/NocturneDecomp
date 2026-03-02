@@ -3,6 +3,7 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "system/stdio.h"
+#include "system/time.h"
 #include "types/classes/CActorPropertyList.h"
 #include "types/classes/CBitFont.h"
 #include "types/classes/CBoundingBox3D.h"
@@ -78,7 +79,7 @@ int __cdecl shape_edittool_cpp_CStrList_findByFirstField_FUN_004a3070(CStrList *
 void __cdecl shape_edittool_cpp_CStrList_setStringAt_FUN_004a3120(CStrList *this_ptr,int index,char *new_string);
 void __cdecl shape_edittool_cpp_CStrList_swap_FUN_004a31f0(CStrList *this_ptr,int index1,int index2);
 void __cdecl shape_edittool_cpp_CStrList_copyToClipboard_FUN_004a3270(CStrList *this_ptr);
-void __cdecl shape_edittool_cpp_CStrList_insertSortedFileRecord_FUN_004a3360(CStrList *this_ptr,char *search_key,char *file_path,int file_size);
+void __cdecl shape_edittool_cpp_CStrList_insertSortedFileRecord_FUN_004a3360(CStrList *this_ptr,char *search_key,char *file_path,int file_size, time_t file_timestamp);
 void __cdecl shape_edittool_cpp_CStrList_populateFromFileSearch_FUN_004a35b0(CStrList *this_ptr,char *directory_path,char *file_pattern);
 void __cdecl shape_edittool_cpp_CStrList_populateFromFilesNoDuplicates_FUN_004a37b0(CStrList *this_ptr,char *directory_path,char *file_pattern);
 void __cdecl shape_edittool_cpp_CStrList_populateWithFullPaths_FUN_004a39e0(CStrList *this_ptr,char *base_path,char *search_path);

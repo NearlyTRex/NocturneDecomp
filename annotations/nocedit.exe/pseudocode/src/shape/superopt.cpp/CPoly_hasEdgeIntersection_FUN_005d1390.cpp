@@ -104,23 +104,23 @@ int __cdecl shape_superopt_cpp_CPoly_hasEdgeIntersection_FUN_005d1390(CPoly *thi
   CVert *local_1c;
   CVert *local_18;
   
-  if (0.0 <= (this_ptr->normal).x) {
-    local_1d0 = (this_ptr->normal).x;
+  if (0.0 <= (this_ptr->normal).impl.x) {
+    local_1d0 = (this_ptr->normal).impl.x;
   }
   else {
-    local_1d0 = -(this_ptr->normal).x;
+    local_1d0 = -(this_ptr->normal).impl.x;
   }
-  if ((this_ptr->normal).y < 0.0) {
-    local_1c8 = -(this_ptr->normal).y;
-  }
-  else {
-    local_1c8 = (this_ptr->normal).y;
-  }
-  if ((this_ptr->normal).z < 0.0) {
-    local_1b0 = -(this_ptr->normal).z;
+  if ((this_ptr->normal).impl.y < 0.0) {
+    local_1c8 = -(this_ptr->normal).impl.y;
   }
   else {
-    local_1b0 = (this_ptr->normal).z;
+    local_1c8 = (this_ptr->normal).impl.y;
+  }
+  if ((this_ptr->normal).impl.z < 0.0) {
+    local_1b0 = -(this_ptr->normal).impl.z;
+  }
+  else {
+    local_1b0 = (this_ptr->normal).impl.z;
   }
   pCVar3 = this_ptr->parent_obj->vertex_data;
   local_1c = pCVar3 + this_ptr->vertex_idx_0;

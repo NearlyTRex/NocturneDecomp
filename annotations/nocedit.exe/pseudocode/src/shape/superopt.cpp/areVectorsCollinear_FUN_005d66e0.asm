@@ -51,7 +51,7 @@
 ; undefined8       Stack[-0x10]:8  local_10
 ;
 ; XREF[2]:
-;   shape_superopt.cpp_FUN_005c7fb0 at 005c8146
+;   shape_superopt.cpp_CComplexPolygon_canMergeEdges_FUN_005c7fb0 at 005c8146
 ;   shape_superopt.cpp_isPointOnLineSegment_FUN_005d6c10 at 005d6f72
 ;
 ; Referenced Globals:

@@ -43,8 +43,8 @@
 ; Called Functions:
 ;   core_actor.cpp_setRandomSeed_FUN_0040cb90
 ;   core_mission.cpp_CDemonMission_createHeros_FUN_00524a80
-;   core_mission.cpp_CDemonMission_FUN_00524760
 ;   core_mission.cpp_CDemonMission_load_FUN_00522d90
+;   core_mission.cpp_CDemonMission_startMission_FUN_00524760
 ;   core_netgame.cpp_CNetGame_disconnect_FUN_0053fd00
 ;   core_netgame.cpp_CNetGame_gameSettingsChanged_FUN_00542cf0
 ;   core_netgame.cpp_CNetGame_processChatOut_FUN_00541e40
@@ -638,8 +638,8 @@ section .text
         ;   XREF to: 005419ed (CONDITIONAL_JUMP)  ; LAB_005419ed
     MOV EAX,[0x0067d550]                ; 005419c9 | g_CDemonMissionPtr | g_CDemonMissionInstance
     PUSH EAX                            ; 005419ce | g_CDemonMissionInstance
-    CALL core_mission.cpp_CDemonMission_FUN_00524760 ; 005419cf
-        ;   XREF to: 00524760 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_FUN_00524760(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_startMission_FUN_00524760 ; 005419cf
+        ;   XREF to: 00524760 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_startMission_FUN_00524760(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 005419d4
     PUSH 0x2                            ; 005419d7
     MOV EDX,dword ptr [EBP + 0x14]      ; 005419d9
@@ -820,8 +820,8 @@ section .text
         ;   XREF to: 00541c1f (CONDITIONAL_JUMP)  ; LAB_00541c1f
     MOV ECX,dword ptr [0x0067d550]      ; 00541ba4 | g_CDemonMissionPtr | g_CDemonMissionInstance
     PUSH ECX                            ; 00541baa | g_CDemonMissionInstance
-    CALL core_mission.cpp_CDemonMission_FUN_00524760 ; 00541bab
-        ;   XREF to: 00524760 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_FUN_00524760(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_startMission_FUN_00524760 ; 00541bab
+        ;   XREF to: 00524760 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_startMission_FUN_00524760(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 00541bb0
     PUSH 0x2                            ; 00541bb3
     MOV EBX,dword ptr [EBP + 0x14]      ; 00541bb5

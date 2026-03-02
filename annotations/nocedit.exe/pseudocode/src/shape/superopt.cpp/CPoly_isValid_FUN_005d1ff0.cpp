@@ -79,9 +79,9 @@ int __cdecl shape_superopt_cpp_CPoly_isValid_FUN_005d1ff0(CPoly *this_ptr)
     }
     if (local_e0 <= 0.99999998999999995) {
       (*this_ptr->vtable->computeNormal)(this_ptr);
-      dVar2 = (this_ptr->normal).y;
-      dVar3 = (this_ptr->normal).x;
-      dVar4 = (this_ptr->normal).z;
+      dVar2 = (this_ptr->normal).impl.y;
+      dVar3 = (this_ptr->normal).impl.x;
+      dVar4 = (this_ptr->normal).impl.z;
       dVar2 = SQRT(dVar4 * dVar4 + dVar3 * dVar3 + dVar2 * dVar2);
       if ((0.99999998999999995 <= dVar2) && (dVar2 <= 1.0000000099999999)) {
         return 1;

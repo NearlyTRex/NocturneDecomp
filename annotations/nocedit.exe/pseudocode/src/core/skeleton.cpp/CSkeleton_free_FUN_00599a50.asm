@@ -7,7 +7,7 @@
 ; CSkeleton *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[5]:
-;   core_skeledit.cpp_CSkeleton_FUN_00592690 at 005926b0
+;   core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 at 005926b0
 ;   core_skeleton.cpp_CSkeleton_allocMemory_FUN_00599910 at 0059991c
 ;   core_skeleton.cpp_CSkeleton_dtor_FUN_005998e0 at 005998f0
 ;   core_skeleton.cpp_CSkeleton_loadStream_FUN_00599bb0 at 00599bbc

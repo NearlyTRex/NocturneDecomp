@@ -9,7 +9,7 @@
 ; undefined1       Stack[-0x6c]:1  local_6c
 ;
 ; XREF[1]:
-;   shape_superopt.cpp_COptimize_FUN_005d7290 at 005d72ad
+;   shape_superopt.cpp_COptimize_optimize_FUN_005d7290 at 005d72ad
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Deleting_invalid_polygon_006544ce

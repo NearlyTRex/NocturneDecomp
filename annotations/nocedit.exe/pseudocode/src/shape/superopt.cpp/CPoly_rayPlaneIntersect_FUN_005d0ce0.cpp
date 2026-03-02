@@ -10,12 +10,11 @@ double __cdecl shape_superopt_cpp_CPoly_rayPlaneIntersect_FUN_005d0ce0(CPoly *th
 
 {
   double dVar1;
-  int *in_stack_00000004;
   CVector3d *in_stack_fffffff0;
   
   dVar1 = shape_superopt_cpp_rayPlaneIntersect_FUN_005d6500
-                    (&ray_origin->impl,
-                     (CVector3d *)(*(int *)(*in_stack_00000004 + 4) + in_stack_00000004[1] * 0x38),
-                     (CVector3d *)(in_stack_00000004 + 0x10),in_stack_fffffff0);
+                    (&ray_dir->impl,
+                     &this_ptr->parent_obj->vertex_data[this_ptr->vertex_idx_0].position,
+                     &(this_ptr->normal).impl,in_stack_fffffff0);
   return dVar1;
 }

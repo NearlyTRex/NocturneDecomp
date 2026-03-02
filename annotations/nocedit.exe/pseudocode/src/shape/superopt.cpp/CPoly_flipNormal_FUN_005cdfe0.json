@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 62,
-    "complexity_score": 114,
+    "complexity_score": 118,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 29,
+    "pseudocode_lines": 33,
     "suspect_count": 8,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 91
+    "total_lines": 95
   },
   "cross_references": [],
   "function": {
@@ -147,18 +147,10 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 15,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uVar3 = *(uint *)((int)&this_ptr->uv_coords[0].x + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 17,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uVar5 = *(uint *)((int)&this_ptr->uv_coords[0].y + 4);",
+      "text": "uVar5 = *(uint *)((int)&this_ptr->uv_coords[0].impl.x + 4);",
       "type": "pointer_cast"
     },
     {
@@ -166,15 +158,15 @@
       "line": 19,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&this_ptr->uv_coords[0].x + 4) =",
+      "text": "uVar7 = *(uint *)((int)&this_ptr->uv_coords[0].impl.y + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 20,
+      "line": 21,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&this_ptr->uv_coords[1].x + 4);",
+      "text": "*(uint *)((int)&this_ptr->uv_coords[0].impl.x + 4) =",
       "type": "pointer_cast"
     },
     {
@@ -182,15 +174,15 @@
       "line": 22,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&this_ptr->uv_coords[0].y + 4) =",
+      "text": "*(uint *)((int)&this_ptr->uv_coords[1].impl.x + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 23,
+      "line": 24,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&this_ptr->uv_coords[1].y + 4);",
+      "text": "*(uint *)((int)&this_ptr->uv_coords[0].impl.y + 4) =",
       "type": "pointer_cast"
     },
     {
@@ -198,7 +190,7 @@
       "line": 25,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&this_ptr->uv_coords[1].x + 4) = uVar3;",
+      "text": "*(uint *)((int)&this_ptr->uv_coords[1].impl.y + 4);",
       "type": "pointer_cast"
     },
     {
@@ -206,7 +198,15 @@
       "line": 27,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&this_ptr->uv_coords[1].y + 4) = uVar5;",
+      "text": "*(uint *)((int)&this_ptr->uv_coords[1].impl.x + 4) = uVar5;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 29,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&this_ptr->uv_coords[1].impl.y + 4) = uVar7;",
       "type": "pointer_cast"
     }
   ],

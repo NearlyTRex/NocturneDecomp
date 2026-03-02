@@ -15,7 +15,7 @@
 ;   core_game.cpp_checkCheatCode_FUN_004dd7f0 at 004dd828
 ;   core_main.c_showDeveloperToolsMenu_FUN_005073a0 at 005074fd
 ;   core_script.cpp_CCmdParse_parse_FUN_00561fd0 at 00562181
-;   core_skeledit.cpp_CSkeleton_FUN_00592690 at 00594994
+;   core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 at 00594994
 ;   core_texlist.cpp_CTextureList_buildMasterTextureList_FUN_005dc2a0 at 005dc392
 ;   ... and 28 more
 ;

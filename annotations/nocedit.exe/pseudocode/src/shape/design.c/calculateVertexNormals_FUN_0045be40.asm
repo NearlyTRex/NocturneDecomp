@@ -24,7 +24,7 @@
 ;   shape_design.c_realignObject_FUN_0045ee70 at 0045f073
 ;   shape_design.c_showFacetPartEditor_FUN_0045f1d0 at 0045f2ff
 ;   shape_dsemodel.cpp_CDSEModel_load_FUN_0048f960 at 0048fa3f
-;   shape_superopt.cpp_BonesAndPointsCheck_FUN_005d7e00 at 005d80dc
+;   shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00 at 005d80dc
 ;
 ; Referenced Globals:
 ;   double g_NormalizeThreshold = 0.00100000000000000

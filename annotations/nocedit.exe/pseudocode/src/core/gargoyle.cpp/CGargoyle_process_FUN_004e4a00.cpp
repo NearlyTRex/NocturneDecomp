@@ -93,11 +93,11 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004e4a00(CGargoyle *this_pt
         this_ptr->petrify_timer = local_14;
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&pCVar1->motion_controller,5,1);
-        iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handle);
+        iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handles[1]);
         if (iVar4 == 0) {
           uVar8 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                             ((CDemonActor *)this_ptr,"gargoyle-stone.wav");
-          this_ptr->sfx_handle = uVar8;
+          this_ptr->sfx_handles[1] = uVar8;
         }
       }
       else {
@@ -158,11 +158,11 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004e4a00(CGargoyle *this_pt
         this_ptr->petrify_timer = local_14;
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&pCVar1->motion_controller,5,1);
-        iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handle);
+        iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handles[1]);
         if (iVar4 == 0) {
           uVar8 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                             ((CDemonActor *)this_ptr,"gargoyle-stone.wav");
-          this_ptr->sfx_handle = uVar8;
+          this_ptr->sfx_handles[1] = uVar8;
         }
       }
       else {
@@ -284,11 +284,11 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004e4a00(CGargoyle *this_pt
         this_ptr->petrify_timer = 0.0;
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&pCVar1->motion_controller,0,1);
-        iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handle);
+        iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handles[1]);
         if (iVar4 == 0) {
           uVar8 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                             ((CDemonActor *)this_ptr,"gargoyle-alive?.wav");
-          this_ptr->sfx_handle = uVar8;
+          this_ptr->sfx_handles[1] = uVar8;
         }
       }
     }

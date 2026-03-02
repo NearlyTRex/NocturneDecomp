@@ -1,0 +1,133 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 46,
+    "complexity_score": 21,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 1,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 21,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 67
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005d7690",
+    "address_range": [
+      [
+        "005d7690",
+        "005d76de"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_superopt.cpp_COptimize_splitToConvex_FUN_005d7690",
+    "signature": "int __cdecl shape_superopt_cpp_COptimize_splitToConvex_FUN_005d7690(COptimize *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005c84c0",
+      "is_variadic": false,
+      "name": "shape_superopt.cpp_CComplexPolygon_splitToConvex_FUN_005c84c0"
+    },
+    {
+      "addr": "005c7910",
+      "is_variadic": true,
+      "name": "shape_superopt.cpp_logToFile_FUN_005c7910"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00654789",
+      "name": "s_Unable_to_split_polygon__00654789",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.675675675675675,
+    "instruction_count": 37,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "CALL": 2,
+      "CBRANCH": 3,
+      "COPY": 39,
+      "INT_ADD": 19,
+      "INT_AND": 22,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 20,
+      "INT_LESS": 1,
+      "INT_MULT": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 10,
+      "INT_SUB": 9,
+      "INT_XOR": 3,
+      "LOAD": 15,
+      "POPCOUNT": 10,
+      "RETURN": 2,
+      "STORE": 8
+    },
+    "pcode_op_count": 173
+  },
+  "possible_indirect_callers": {
+    "method_name": "splitToConvex",
+    "param_analysis": {
+      "call_site_count": 1,
+      "caller_details": [
+        {
+          "caller": "COptimize_optimize_FUN_005d7290",
+          "estimated_params": 1
+        }
+      ],
+      "estimated_params": 1,
+      "param_estimates": [
+        1
+      ]
+    },
+    "possible_callers": [
+      "COptimize_optimize_FUN_005d7290"
+    ],
+    "vtable_offset": 52
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "COptimize *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "COptimize",
+        "offset": 52,
+        "vtable_addr": "00663c44"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

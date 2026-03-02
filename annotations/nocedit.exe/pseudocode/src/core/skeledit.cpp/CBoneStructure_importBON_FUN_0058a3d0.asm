@@ -10,7 +10,7 @@
 ; undefined        Stack[-0x14]:1  local_14
 ;
 ; XREF[1]:
-;   core_skeledit.cpp_CSkeleton_FUN_00592690 at 0059299f
+;   core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 at 0059299f
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeledit_cpp_0064a279

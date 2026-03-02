@@ -9,9 +9,9 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[4]:
-;   core_hero.cpp_CHero_createDefaultGun_FUN_004f2a30 at 004f2a3d
+;   core_hero.cpp_CHero_createDefaultWeapon_FUN_004f2a30 at 004f2a3d
 ;   core_inv.cpp_CInventory_load_FUN_004ff400 at 004ff422
-;   core_scat.cpp_CScat_createDefaultGun_FUN_00557150 at 0055715e
+;   core_scat.cpp_CScat_createDefaultWeapon_FUN_00557150 at 0055715e
 ;   core_script.cpp_CScript_step_FUN_0055a810 at 0055e340
 ;
 ; Referenced Globals:

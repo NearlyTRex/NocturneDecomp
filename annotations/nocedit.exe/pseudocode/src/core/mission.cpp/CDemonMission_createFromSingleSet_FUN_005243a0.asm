@@ -15,9 +15,9 @@
 ;   CScript g_CScriptInstance
 ;
 ; Called Functions:
-;   core_mission.cpp_CDemonMission_FUN_00523f50
 ;   core_mission.cpp_CDemonMission_loadSet_FUN_00523fb0
 ;   core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0
+;   core_mission.cpp_CDemonMission_removeAllActors_FUN_00523f50
 ;   core_script.cpp_CScript_clear_FUN_00559870
 ;
 ; *****************************************************************************
@@ -50,8 +50,8 @@ section .text
         ;   Label: LAB_005243d4
     PUSH EBX                            ; 005243d5
     MOV dword ptr [EBX],0x0             ; 005243d6
-    CALL core_mission.cpp_CDemonMission_FUN_00523f50 ; 005243dc
-        ;   XREF to: 00523f50 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_00523f50(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_removeAllActors_FUN_00523f50 ; 005243dc
+        ;   XREF to: 00523f50 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_removeAllActors_FUN_00523f50(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 005243e1
     MOV EDX,dword ptr [0x00680d50]      ; 005243e4 | g_CScriptInstance | g_CScriptPtr
     PUSH EDX                            ; 005243ea | g_CScriptInstance

@@ -388,7 +388,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_collapseEdge_FUN_00517630(CLodMesh *this
   (pCVar10->position).y = local_cc;
   (pCVar10->position).z = local_c8;
   iVar9 = 0;
-  if (0 < this_ptr->reserved_attribute_count) {
+  if (0 < this_ptr->extra_attribute_count) {
     iVar5 = 0;
     do {
       pCVar10 = this_ptr->vertex_data;
@@ -399,7 +399,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_collapseEdge_FUN_00517630(CLodMesh *this
       iVar5 = iVar5 + 4;
       local_70 = local_74;
       local_6c = vertex_idx_2 * 0x4c4;
-    } while (iVar9 < this_ptr->reserved_attribute_count);
+    } while (iVar9 < this_ptr->extra_attribute_count);
   }
   local_60 = vertex_idx_1 * 0x4c4;
   g_LodGenerationStamp = g_LodGenerationStamp + 1;

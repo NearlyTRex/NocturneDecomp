@@ -8,7 +8,7 @@
 ;
 ; XREF[3]:
 ;   core_dmodel.cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0 at 0047a559
-;   core_skeledit.cpp_FUN_0058de70 at 0058e01f
+;   core_skeledit.cpp_CDeformableModel_cramModelTexture_FUN_0058de70 at 0058e01f
 ;   shape_design.c_setTextureQualityParameter_FUN_0046a8e0 at 0046a8fe
 ;
 ; Called Functions:

@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl wincore_windll_cpp_drawPolyList_FUN_005b7640(void *vertex_buffer,void **polygons,int polygon_count,int render_flags)
+; int __cdecl wincore_windll_cpp_drawPolyList_FUN_005b7640(SRenderVertex *vertex_buffer,SMRGLPrimitiveTriangle **polygons,int polygon_count,int render_flags)
 ;
 ; Parameters:
-; void *           Stack[0x4]:4   vertex_buffer
-; void * *         Stack[0x8]:4   polygons
+; SRenderVertex *  Stack[0x4]:4   vertex_buffer
+; SMRGLPrimitiveTriangle * * Stack[0x8]:4   polygons
 ; int              Stack[0xc]:4   polygon_count
 ; int              Stack[0x10]:4   render_flags
 ; Local Variables:

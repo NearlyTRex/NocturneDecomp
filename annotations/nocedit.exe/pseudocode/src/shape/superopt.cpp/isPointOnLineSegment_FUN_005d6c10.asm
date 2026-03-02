@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl shape_superopt_cpp_isPointOnLineSegment_FUN_005d6c10(CVector3d *point,CVector3d *segStart,CVector3d *segEnd)
+; int __cdecl shape_superopt_cpp_isPointOnLineSegment_FUN_005d6c10(CVector3d *point,CVector3d *seg_start,CVector3d *seg_end)
 ;
 ; Parameters:
 ; CVector3d *      Stack[0x4]:4   point
-; CVector3d *      Stack[0x8]:4   segStart
-; CVector3d *      Stack[0xc]:4   segEnd
+; CVector3d *      Stack[0x8]:4   seg_start
+; CVector3d *      Stack[0xc]:4   seg_end
 ; Local Variables:
 ; undefined8       Stack[-0x100]:8  local_100
 ; undefined8       Stack[-0xf8]:8  local_f8

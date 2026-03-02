@@ -26,10 +26,10 @@
 ;   CBitFont* g_EditorFont
 ;   CEditorTools g_CEditorToolsInstance
 ;   int g_EnabledTextColor
-;   int g_BackgroundColor1
+;   int g_DisabledTextColor
 ;   int g_SelectionHighlightColor
-;   int g_HighlightColor1
-;   int g_HighlightColor2
+;   int g_ConfirmedSelectionColor
+;   int g_PickListSeparatorColor
 ;   int g_ClipLeft
 ;   int g_ClipTop
 ;   int g_ClipBottom
@@ -104,7 +104,7 @@ section .text
         ;   Label: LAB_004a4de4
     JLE 0x004a4e85                      ; 004a4dec
         ;   XREF to: 004a4e85 (CONDITIONAL_JUMP)  ; LAB_004a4e85
-    MOV EAX,[0x02cf2ad8]                ; 004a4df2 | g_HighlightColor2
+    MOV EAX,[0x02cf2ad8]                ; 004a4df2 | g_PickListSeparatorColor
     MOV EBP,dword ptr [0x02d02570]      ; 004a4df7 | g_ActiveRenderColor
     MOV [0x02d02570],EAX                ; 004a4dfd | g_ActiveRenderColor
     CALL shape_edittool.cpp_calculateGridHeight_FUN_004a64b0 ; 004a4e02
@@ -260,7 +260,7 @@ section .text
     TEST EBX,EBX                        ; 004a5026
     JZ 0x004a517d                       ; 004a5028
         ;   XREF to: 004a517d (CONDITIONAL_JUMP)  ; LAB_004a517d
-    MOV EAX,[0x02cf2ad4]                ; 004a502e | g_HighlightColor1
+    MOV EAX,[0x02cf2ad4]                ; 004a502e | g_ConfirmedSelectionColor
     PUSH EAX                            ; 004a5033
         ;   Label: LAB_004a5033
     PUSH EDI                            ; 004a5034
@@ -371,7 +371,7 @@ section .text
         ;   Label: LAB_004a517d
     JMP 0x004a5033                      ; 004a5182
         ;   XREF to: 004a5033 (UNCONDITIONAL_JUMP)  ; LAB_004a5033
-    MOV EAX,[0x02cf2acc]                ; 004a5187 | g_BackgroundColor1
+    MOV EAX,[0x02cf2acc]                ; 004a5187 | g_DisabledTextColor
         ;   Label: LAB_004a5187
     MOV dword ptr [ESP + 0x13c],EAX     ; 004a518c
     JMP 0x004a50d7                      ; 004a5193

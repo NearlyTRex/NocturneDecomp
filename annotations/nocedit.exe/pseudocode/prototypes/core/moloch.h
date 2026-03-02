@@ -55,10 +55,10 @@ void __cdecl CMoloch::getPropertyList(CMoloch *this_ptr,CActorPropertyList *prop
 // Address: 005299b0
 void __cdecl CMoloch::addFilesToExtract(CMoloch *this_ptr,_FILE *file_handle);
 
-// Original: core_moloch.cpp_CMoloch_drawGun_FUN_005299d0
+// Original: core_moloch.cpp_CMoloch_drawWeapon_FUN_005299d0
 // Address: 005299d0
-void __cdecl CMoloch::drawGun(CMoloch *this_ptr,int drawn);
+void __cdecl CMoloch::drawWeapon(CMoloch *this_ptr,int drawn);
 
-// Original: core_moloch.cpp_CMoloch_areGunsDrawn_FUN_005299e0
+// Original: core_moloch.cpp_CMoloch_isWeaponDrawn_FUN_005299e0
 // Address: 005299e0
-int __cdecl CMoloch::areGunsDrawn(CMoloch *this_ptr);
+int __cdecl CMoloch::isWeaponDrawn(CMoloch *this_ptr);

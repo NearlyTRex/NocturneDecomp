@@ -88,8 +88,8 @@ void __cdecl core_gargoyle_cpp_CGargoyle_setup_FUN_004e45e0(CGargoyle *this_ptr)
   this_ptr->part_indices[10] = iVar1;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"tail01",1);
-  this_ptr->unk2 = 0;
-  this_ptr->sfx_handle = 0;
+  this_ptr->sfx_handles[0] = 0;
+  this_ptr->sfx_handles[1] = 0;
   this_ptr->part_indices[0xb] = iVar1;
   return;
 }

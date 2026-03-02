@@ -91,7 +91,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_importFromEditorGlobals_FUN_0051b080(CLo
   }
   this_ptr->active_attribute_count = 2;
   this_ptr->sort_attribute_count = 2;
-  this_ptr->reserved_attribute_count = 0;
+  this_ptr->extra_attribute_count = 0;
   shape_meshlod_cpp_CLodMesh_postprocessMesh_FUN_0051b330(this_ptr);
   return;
 }

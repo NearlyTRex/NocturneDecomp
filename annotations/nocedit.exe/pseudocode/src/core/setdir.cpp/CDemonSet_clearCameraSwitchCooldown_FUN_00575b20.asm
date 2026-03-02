@@ -7,7 +7,7 @@
 ; CDemonSet *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[5]:
-;   core_mission.cpp_CDemonMission_FUN_00524760 at 00524882
+;   core_mission.cpp_CDemonMission_startMission_FUN_00524760 at 00524882
 ;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 005391a2
 ;   core_msnedit.cpp_CDemonMission_editGore_FUN_0053e220 at 0053e2b3
 ;   core_platfrm.cpp_CPlatform_process_FUN_0054cc30 at 0054cdc1

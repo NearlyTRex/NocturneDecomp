@@ -1,0 +1,203 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 19,
+        "line": 34,
+        "message": "cannot cast from type 'void' to pointer type 'CComplexPolygon *'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 137,
+    "complexity_score": 104,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 3,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 59,
+    "suspect_count": 4,
+    "suspect_types": [
+      "pointer_cast"
+    ],
+    "total_lines": 196
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005d7350",
+    "address_range": [
+      [
+        "005d7350",
+        "005d745f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_superopt.cpp_COptimize_optimizeComplex_FUN_005d7350",
+    "signature": "int __cdecl shape_superopt_cpp_COptimize_optimizeComplex_FUN_005d7350(COptimize *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005c7a90",
+      "is_variadic": false,
+      "name": "shape_superopt.cpp_CComplexPolygon_addSharedTriangle_FUN_005c7a90"
+    },
+    {
+      "addr": "005c7b20",
+      "is_variadic": false,
+      "name": "shape_superopt.cpp_CComplexPolygon_buildEdgeList_FUN_005c7b20"
+    },
+    {
+      "addr": "005d35e0",
+      "is_variadic": false,
+      "name": "shape_superopt.cpp_CObj_clearStateFlags_FUN_005d35e0"
+    },
+    {
+      "addr": "005c7910",
+      "is_variadic": true,
+      "name": "shape_superopt.cpp_logToFile_FUN_005c7910"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006546f3",
+      "name": "s_Unable_to_add_polygon_fo_006546f3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0065471a",
+      "name": "s_Unable_to_add_shared_tri_0065471a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00654749",
+      "name": "s_Unable_to_build_complex__00654749",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.108108108108108,
+    "instruction_count": 111,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 2,
+      "CALL": 6,
+      "CALLIND": 2,
+      "CBRANCH": 10,
+      "COPY": 103,
+      "INT_ADD": 57,
+      "INT_AND": 82,
+      "INT_CARRY": 16,
+      "INT_EQUAL": 74,
+      "INT_LESS": 4,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 1,
+      "INT_OR": 1,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 18,
+      "INT_SEXT": 3,
+      "INT_SLESS": 37,
+      "INT_SUB": 29,
+      "INT_XOR": 6,
+      "LOAD": 38,
+      "POPCOUNT": 37,
+      "RETURN": 4,
+      "STORE": 28,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 567
+  },
+  "possible_indirect_callers": {
+    "method_name": "optimizeComplex",
+    "param_analysis": {
+      "call_site_count": 1,
+      "caller_details": [
+        {
+          "caller": "COptimize_optimize_FUN_005d7290",
+          "estimated_params": 1
+        }
+      ],
+      "estimated_params": 1,
+      "param_estimates": [
+        1
+      ]
+    },
+    "possible_callers": [
+      "COptimize_optimize_FUN_005d7290"
+    ],
+    "vtable_offset": 44
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "COptimize *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 39,
+      "match": "(CPoly *)((int)",
+      "severity": "mild",
+      "text": "pCVar3 = (CPoly *)((int)&((CPoly *)(((this_ptr->base).poly_array)->uv_coords + -1))->",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 48,
+      "match": "(byte *)((int)",
+      "severity": "mild",
+      "text": "bVar1 = *(byte *)((int)&pCVar3->flags + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 49,
+      "match": "(byte *)((int)",
+      "severity": "mild",
+      "text": "*(byte *)((int)&pCVar3->flags + 1) = bVar1 | 0x80;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 50,
+      "match": "(byte *)((int)",
+      "severity": "mild",
+      "text": "*(byte *)((int)&pCVar3->flags + 1) = bVar1 & 0xdf | 0x80;",
+      "type": "pointer_cast"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "COptimize",
+        "offset": 44,
+        "vtable_addr": "00663c44"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

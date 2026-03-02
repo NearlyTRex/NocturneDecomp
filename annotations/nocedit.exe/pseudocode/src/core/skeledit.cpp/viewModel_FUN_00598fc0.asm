@@ -151,11 +151,11 @@ section .text
     TEST EBX,EBX                        ; 0059909a
     JG 0x00599087                       ; 0059909c
         ;   XREF to: 00599087 (CONDITIONAL_JUMP)  ; LAB_00599087
-    MOV EBX,0x3670950                   ; 0059909e | DAT_03670950
+    MOV EBX,0x3670950                   ; 0059909e | g_SkeleditLastMOTImported
         ;   Label: LAB_0059909e
     XOR DL,DL                           ; 005990a3
     MOV ESI,EDI                         ; 005990a5
-    MOV byte ptr [0x03670950],DL        ; 005990a7 | DAT_03670950
+    MOV byte ptr [0x03670950],DL        ; 005990a7 | g_SkeleditLastMOTImported
     PUSH ESI                            ; 005990ad
         ;   Label: LAB_005990ad
     CALL crt_stdio.c_fgetc_FUN_005fe840 ; 005990ae
@@ -185,11 +185,11 @@ section .text
     TEST EBX,EBX                        ; 005990dd
     JG 0x005990ca                       ; 005990df
         ;   XREF to: 005990ca (CONDITIONAL_JUMP)  ; LAB_005990ca
-    MOV EBX,0x3670a58                   ; 005990e1 | DAT_03670a58
+    MOV EBX,0x3670a58                   ; 005990e1 | g_SkeleditLastTestSkeletonDir
         ;   Label: LAB_005990e1
     XOR DH,DH                           ; 005990e6
     MOV ESI,EDI                         ; 005990e8
-    MOV byte ptr [0x03670a58],DH        ; 005990ea | DAT_03670a58
+    MOV byte ptr [0x03670a58],DH        ; 005990ea | g_SkeleditLastTestSkeletonDir
     PUSH ESI                            ; 005990f0
         ;   Label: LAB_005990f0
     CALL crt_stdio.c_fgetc_FUN_005fe840 ; 005990f1
@@ -453,7 +453,7 @@ section .text
         ;   XREF to: 005990c3 (UNCONDITIONAL_JUMP)  ; LAB_005990c3
     INC EBX                             ; 00599374 | DAT_03670951
         ;   Label: LAB_00599374
-    MOV byte ptr [EBX + -0x1],DL        ; 00599375 | DAT_03670950
+    MOV byte ptr [EBX + -0x1],DL        ; 00599375 | g_SkeleditLastMOTImported
     MOV byte ptr [EBX],0x0              ; 00599378 | DAT_03670951
     JMP 0x0059932e                      ; 0059937b
         ;   XREF to: 0059932e (UNCONDITIONAL_JUMP)  ; LAB_0059932e
@@ -496,7 +496,7 @@ section .text
         ;   XREF to: 00599106 (UNCONDITIONAL_JUMP)  ; LAB_00599106
     INC EBX                             ; 005993cc | DAT_03670a59
         ;   Label: LAB_005993cc
-    MOV byte ptr [EBX + -0x1],DL        ; 005993cd | DAT_03670a58
+    MOV byte ptr [EBX + -0x1],DL        ; 005993cd | g_SkeleditLastTestSkeletonDir
     MOV byte ptr [EBX],0x0              ; 005993d0 | DAT_03670a59
     JMP 0x00599386                      ; 005993d3
         ;   XREF to: 00599386 (UNCONDITIONAL_JUMP)  ; LAB_00599386
@@ -528,7 +528,7 @@ section .text
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0059941a
         ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0x8                         ; 0059941f
-    PUSH 0x3670950                      ; 00599422 | DAT_03670950
+    PUSH 0x3670950                      ; 00599422 | g_SkeleditLastMOTImported
     PUSH 0x649dbc                       ; 00599427 | = "\"%s\"\n"
     PUSH EBX                            ; 0059942c
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0059942d
@@ -539,7 +539,7 @@ section .text
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0059943b
         ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0x8                         ; 00599440
-    PUSH 0x3670a58                      ; 00599443 | DAT_03670a58
+    PUSH 0x3670a58                      ; 00599443 | g_SkeleditLastTestSkeletonDir
     PUSH 0x649dda                       ; 00599448 | = "\"%s\"\n"
     PUSH EBX                            ; 0059944d
     CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0059944e

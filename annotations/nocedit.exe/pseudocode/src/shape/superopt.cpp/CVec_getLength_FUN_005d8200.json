@@ -1,0 +1,125 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "incompatible_types",
+        "column": 13,
+        "line": 20,
+        "message": "invalid operands to binary expression ('double' and 'int')"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 17,
+    "complexity_score": 52,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 12,
+    "suspect_count": 3,
+    "suspect_types": [
+      "decompiler_intrinsic",
+      "sub84_truncation"
+    ],
+    "total_lines": 29
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005d8200",
+    "address_range": [
+      [
+        "005d8200",
+        "005d8228"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_superopt.cpp_CVec_getLength_FUN_005d8200",
+    "signature": "int __cdecl shape_superopt_cpp_CVec_getLength_FUN_005d8200(CVec *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.4375,
+    "instruction_count": 16,
+    "opcode_distribution": {
+      "COPY": 61,
+      "FLOAT2FLOAT": 4,
+      "FLOAT_ADD": 2,
+      "FLOAT_MULT": 3,
+      "FLOAT_SQRT": 1,
+      "INT_ADD": 6,
+      "INT_AND": 4,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 4,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 2,
+      "INT_SUB": 1,
+      "LOAD": 7,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 1
+    },
+    "pcode_op_count": 103
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 12,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CVec *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 13,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "local_8 = SUB84(SQRT(dVar3 * dVar3 + dVar2 * dVar2 + dVar1 * dVar1),0);",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 13,
+      "match": "SUB84",
+      "severity": "mild",
+      "text": "local_8 = SUB84(SQRT(dVar3 * dVar3 + dVar2 * dVar2 + dVar1 * dVar1),0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 13,
+      "match": "SQRT",
+      "severity": "mild",
+      "text": "local_8 = SUB84(SQRT(dVar3 * dVar3 + dVar2 * dVar2 + dVar1 * dVar1),0);",
+      "type": "decompiler_intrinsic"
+    }
+  ]
+}

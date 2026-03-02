@@ -1,0 +1,167 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 58,
+    "complexity_score": 59,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 34,
+    "suspect_count": 2,
+    "suspect_types": [
+      "pointer_cast"
+    ],
+    "total_lines": 92
+  },
+  "cross_references": [
+    {
+      "addr": "00592690",
+      "from_addr": "005954fc",
+      "name": "core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0058af40",
+    "address_range": [
+      [
+        "0058af40",
+        "0058afd0"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeledit.cpp_CBoneStructure_applyMatrixArray_FUN_0058af40",
+    "signature": "void __cdecl core_skeledit_cpp_CBoneStructure_applyMatrixArray_FUN_0058af40(CBoneStructure *this_ptr,CMatrix3x4f *matrices)"
+  },
+  "function_calls": [
+    {
+      "addr": "0058ac80",
+      "is_variadic": false,
+      "name": "core_skeledit.cpp_CBoneStructure_computeLocalMatrices_FUN_0058ac80"
+    },
+    {
+      "addr": "005f4f10",
+      "is_variadic": false,
+      "name": "core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10"
+    },
+    {
+      "addr": "005ff9f3",
+      "is_variadic": false,
+      "name": "crt_stack.c___STK_FUN_005ff9f3"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005954fc",
+        "call_type": "direct",
+        "caller": "core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690",
+        "estimated_params": 2,
+        "instructions_analyzed": 6,
+        "reg_params": [],
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.6,
+    "instruction_count": 50,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 3,
+      "CBRANCH": 3,
+      "COPY": 43,
+      "INT_ADD": 30,
+      "INT_AND": 25,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 25,
+      "INT_LESS": 2,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 12,
+      "INT_SUB": 16,
+      "INT_XOR": 1,
+      "INT_ZEXT": 2,
+      "LOAD": 16,
+      "POPCOUNT": 12,
+      "RETURN": 1,
+      "STORE": 16
+    },
+    "pcode_op_count": 230
+  },
+  "stack_frame": {
+    "frame_size": 76,
+    "local_size": 68,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBoneStructure *"
+      },
+      {
+        "is_param": true,
+        "name": "matrices",
+        "offset": 8,
+        "size": 4,
+        "type": "CMatrix3x4f *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 26,
+      "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
+      "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 27,
+      "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + (uint)bVar4 * -8 + 4);",
+      "type": "pointer_cast"
+    }
+  ]
+}

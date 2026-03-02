@@ -24,7 +24,7 @@ typedef struct CLodMesh {
     struct SMRGLTextureLod* lod_textures; // 0x14
     int active_attribute_count; // 0x18
     int sort_attribute_count; // 0x1c
-    int reserved_attribute_count; // 0x20
+    int extra_attribute_count; // 0x20
     int attribute_enabled_flags[4]; // 0x24
     struct CLodMesh* next_lod; // 0x34
     struct _FILE* precompute_file; // 0x38

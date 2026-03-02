@@ -24,7 +24,7 @@ void __cdecl core_mission_cpp_CDemonMission_createFromSingleSet_FUN_005243a0(CDe
     pacVar2 = (char (*) [256])(*pacVar2 + 2);
   } while (cVar1 != '\0');
   this_ptr->current_set_index = 0;
-  core_mission_cpp_CDemonMission_FUN_00523f50(this_ptr);
+  core_mission_cpp_CDemonMission_removeAllActors_FUN_00523f50(this_ptr);
   core_script_cpp_CScript_clear_FUN_00559870(g_CScriptPtr);
   core_mission_cpp_CDemonMission_prepareAllActors_FUN_00523cf0(this_ptr);
   this_ptr->current_set_index = -1;

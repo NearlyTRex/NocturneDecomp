@@ -5,24 +5,24 @@ FUNCTION COMPILATION SUMMARY
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6493
-Successful: 5724 (88.2%)
-Failed: 769
+Successful: 5732 (88.3%)
+Failed: 761
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                           1541
-  format_error                     587
-  undeclared_identifier            587
-  incompatible_types               391
+  other                           1542
+  format_error                     583
+  undeclared_identifier            577
+  incompatible_types               385
   syntax_error                      71
-  type_error                        21
   missing_member                    21
+  type_error                        20
   lvalue_required                   19
   pointer_arithmetic                 4
   pointer_precision                  2
 
 ====================================================================================================
-CATEGORY: other (1541 errors)
+CATEGORY: other (1542 errors)
 ====================================================================================================
 
   core_hero.cpp_CHero_FUN_004f3960
@@ -86,10 +86,10 @@ CATEGORY: other (1541 errors)
   core_script.cpp_CScript_step_FUN_0055a810
     Line 2476: C-style cast from 'struct CDemonActor *' to 'float' is not allowed...
 
-  ... and 293 more errors
+  ... and 291 more errors
 
 ====================================================================================================
-CATEGORY: format_error (587 errors)
+CATEGORY: format_error (583 errors)
 ====================================================================================================
 
   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50
@@ -156,7 +156,7 @@ CATEGORY: format_error (587 errors)
   ... and 143 more errors
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (587 errors)
+CATEGORY: undeclared_identifier (577 errors)
 ====================================================================================================
 
   core_actor.cpp_adjustIndentationLevel_FUN_0040aee0
@@ -167,14 +167,8 @@ CATEGORY: undeclared_identifier (587 errors)
     Line 42: use of undeclared identifier 'DAT_02f79820'...
   core_path.cpp_CPathMap_searchGrid_FUN_005487a0
     Line 105: use of undeclared identifier 'DAT_030d2857'...
-  core_skeledit.cpp_CSkeleton_FUN_00592690
-    Line 324: use of undeclared identifier 'DAT_0365caf8'...
-  core_skeledit.cpp_FUN_005897b0
-    Line 83: use of undeclared identifier 'DAT_03670950'...
-  core_skeledit.cpp_FUN_00589a40
-    Line 26: use of undeclared identifier 'DAT_03670950'...
-  core_skeledit.cpp_viewModel_FUN_00598fc0
-    Line 86: use of undeclared identifier 'DAT_03670950'...
+  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
+    Line 327: use of undeclared identifier 'DAT_0365caf8'...
   wincore_winrun.cpp_getRegistryStringValue_FUN_005f4210
     Line 19: use of undeclared identifier 'DAT_80000002'...
   wincore_winrun.cpp_setRegistryStringValue_FUN_005f4290
@@ -186,9 +180,9 @@ CATEGORY: undeclared_identifier (587 errors)
   core_emitter.cpp_CEmitter_getPropertyList_FUN_004a8db0
     Line 44: use of undeclared identifier 'PTR_02cf2b78'...
   core_emitter.cpp_CEmitter_processInEditor_FUN_004a8fe0
-    Line 34: use of undeclared identifier 'PTR_02cf2b78'; did you mean 'INT_02cf2a78'?...
+    Line 34: use of undeclared identifier 'PTR_02cf2b78'...
   core_emitter.cpp_CEmitter_renderOpaque_FUN_004a8860
-    Line 74: use of undeclared identifier 'PTR_02cf2b78'; did you mean 'INT_02cf2a78'?...
+    Line 74: use of undeclared identifier 'PTR_02cf2b78'...
   shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520
     Line 67: use of undeclared identifier 'PTR_02f313e8'...
   engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0
@@ -219,11 +213,17 @@ CATEGORY: undeclared_identifier (587 errors)
     Line 37: use of undeclared identifier '_transparency_color'; did you mean 'transparency_c...
   shape_quantize.cpp_quantizeRawPixelData_FUN_00556490
     Line 73: use of undeclared identifier '_width'; did you mean 'width'?...
+  engine_dosio.c_reopenFileStream_FUN_00481b50
+    Line 17: use of undeclared identifier 'clear_and_preserve_state'...
+  core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0
+    Line 154: use of undeclared identifier 'code'...
+  core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50
+    Line 55: use of undeclared identifier 'code'...
 
-  ... and 204 more errors
+  ... and 200 more errors
 
 ====================================================================================================
-CATEGORY: incompatible_types (391 errors)
+CATEGORY: incompatible_types (385 errors)
 ====================================================================================================
 
   engine_fileio.cpp_CCheckOutList_add_FUN_004b2d00
@@ -234,8 +234,10 @@ CATEGORY: incompatible_types (391 errors)
     Line 30: assigning to 'CCloth *' from incompatible type 'void *'...
   shape_quantize.cpp_CColorQuantizer_reset_FUN_00554d40
     Line 51: assigning to 'CColorQuantizer *' from incompatible type 'void *'...
+  shape_superopt.cpp_COptimize_addComplexPolygon_FUN_005d76e0
+    Line 16: assigning to 'CComplexPolygon **' from incompatible type 'void *'...
   core_skeledit.cpp_viewModel_FUN_00598fc0
-    Line 149: assigning to 'CDeformableModelInstance *' from incompatible type 'void *'...
+    Line 148: assigning to 'CDeformableModelInstance *' from incompatible type 'void *'...
   core_actor.cpp_createActorByName_FUN_0040c430
     Line 26: assigning to 'CDemonActor *' from incompatible type 'void *'...
   core_dtrace.cpp_CDemonRaytrace_allocNewCubeList_FUN_00494380
@@ -246,7 +248,7 @@ CATEGORY: incompatible_types (391 errors)
     Line 58: assigning to 'CEdButton *' from incompatible type 'void *'...
   core_mission.cpp_CDemonMission_createOneHero_FUN_00524920
     Line 48: assigning to 'CHero *' from incompatible type 'void *'...
-  core_mission.cpp_CDemonMission_FUN_00524c20
+  core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_00524c20
     Line 40: assigning to 'CHeroPlaceholder *' from incompatible type 'void *'...
   core_succubus.cpp_CSuccubus_process_FUN_005c6e90
     Line 226: assigning to 'CHotDemon *' from incompatible type 'void *'...
@@ -284,10 +286,8 @@ CATEGORY: incompatible_types (391 errors)
     Line 78: assigning to 'CPodFile *' from incompatible type 'void *'...
   shape_superopt.cpp_CObj_addPolygons_FUN_005d2410
     Line 22: assigning to 'CPoly *' from incompatible type 'void *'...
-  shape_superopt.cpp_CObj_allocatePolygons_FUN_005d2320
-    Line 22: assigning to 'CPoly *' from incompatible type 'void *'...
 
-  ... and 214 more errors
+  ... and 211 more errors
 
 ====================================================================================================
 CATEGORY: syntax_error (71 errors)
@@ -357,7 +357,16 @@ CATEGORY: syntax_error (71 errors)
   ... and 17 more errors
 
 ====================================================================================================
-CATEGORY: type_error (21 errors)
+CATEGORY: missing_member (21 errors)
+====================================================================================================
+
+  sound_sndwav.cpp_CWavInDevice_setMode_FUN_005b0f70
+    Line 35: no member named '_16_4_' in 'tWAVEFORMATEX'...
+  core_actor.cpp_CDemonActor_ctor_FUN_004088b0
+    Line 20: no member named 'unk15' in 'CDemonActor'...
+
+====================================================================================================
+CATEGORY: type_error (20 errors)
 ====================================================================================================
 
   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0
@@ -394,23 +403,12 @@ CATEGORY: type_error (21 errors)
     Line 18: unknown type name 'code'...
   cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_0054b190
     Line 24: unknown type name 'undefined3'...
-  core_skeledit.cpp_CDeformableModel_FUN_0058f790
-    Line 15: unknown type name 'undefined3'...
   engine_dosio.c_reopenFileStream_FUN_00481b50
     Line 13: unknown type name 'undefined3'...
   wincore_winrun.cpp_getNextKeypress_FUN_005f2e90
     Line 13: unknown type name 'undefined3'...
   engine_colquant.c_computeBoxStatistics_FUN_00441260
     Line 23: unknown type name 'undefined5'...
-
-====================================================================================================
-CATEGORY: missing_member (21 errors)
-====================================================================================================
-
-  sound_sndwav.cpp_CWavInDevice_setMode_FUN_005b0f70
-    Line 35: no member named '_16_4_' in 'tWAVEFORMATEX'...
-  core_actor.cpp_CDemonActor_ctor_FUN_004088b0
-    Line 20: no member named 'unk15' in 'CDemonActor'...
 
 ====================================================================================================
 CATEGORY: lvalue_required (19 errors)
@@ -427,9 +425,9 @@ CATEGORY: lvalue_required (19 errors)
   core_scat.cpp_CScat_FUN_005584a0
     Line 114: cannot take the address of an rvalue of type 'float'...
   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
-    Line 539: cannot take the address of an rvalue of type 'float'...
-  core_skeledit.cpp_CSkeleton_FUN_00592690
-    Line 490: cannot take the address of an rvalue of type 'float'...
+    Line 537: cannot take the address of an rvalue of type 'float'...
+  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
+    Line 493: cannot take the address of an rvalue of type 'float'...
   core_stranger.cpp_CStranger_FUN_005c02b0
     Line 141: cannot take the address of an rvalue of type 'float'...
   core_main.c_initializeGameSystems_FUN_00507a60
@@ -457,8 +455,8 @@ CATEGORY: pointer_precision (2 errors)
 COMPILATION VS SUSPECT PATTERNS
 ====================================================================================================
 
-Average suspects in successfully compiled functions: 2.19
-Average suspects in failed compilations: 11.01
+Average suspects in successfully compiled functions: 2.04
+Average suspects in failed compilations: 10.82
 
-Functions that compile but have suspect patterns: 1752
+Functions that compile but have suspect patterns: 1698
 (These may have runtime issues even though syntax is valid)

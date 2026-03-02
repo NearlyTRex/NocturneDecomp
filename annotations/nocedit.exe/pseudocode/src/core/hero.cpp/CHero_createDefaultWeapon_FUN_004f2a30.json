@@ -1,0 +1,223 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 74,
+    "complexity_score": 33,
+    "cross_reference_count": 1,
+    "function_call_count": 6,
+    "global_count": 10,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 33,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 107
+  },
+  "cross_references": [
+    {
+      "addr": "004f2340",
+      "from_addr": "004f243e",
+      "name": "core_hero.cpp_CHero_ctor_FUN_004f2340",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004f2a30",
+    "address_range": [
+      [
+        "004f2a30",
+        "004f2ae0"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_hero.cpp_CHero_createDefaultWeapon_FUN_004f2a30",
+    "signature": "void __cdecl core_hero_cpp_CHero_createDefaultWeapon_FUN_004f2a30(CHero *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c790",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790"
+    },
+    {
+      "addr": "0040c430",
+      "is_variadic": false,
+      "name": "core_actor.cpp_createActorByName_FUN_0040c430"
+    },
+    {
+      "addr": "004fd600",
+      "is_variadic": false,
+      "name": "core_inv.cpp_CInventory_addItem_FUN_004fd600"
+    },
+    {
+      "addr": "004fd190",
+      "is_variadic": false,
+      "name": "core_inv.cpp_CInventory_initialize_FUN_004fd190"
+    },
+    {
+      "addr": "004feb10",
+      "is_variadic": false,
+      "name": "core_inv.cpp_CInventory_selectWeapon_FUN_004feb10"
+    },
+    {
+      "addr": "00506f10",
+      "is_variadic": true,
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062ebd9",
+      "name": "s_CGun_0062ebd9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062ebde",
+      "name": "s_core_hero_cpp_0062ebde",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062ebef",
+      "name": "s_Out_of_memory_0062ebef",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062ebfe",
+      "name": "s_Your_weapon_0062ebfe",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062ebff",
+      "name": "s_our_weapon_0062ebff",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0062ec00",
+      "name": "s_ur_weapon_0062ec00",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0062ec01",
+      "name": "s_r_weapon_0062ec01",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f95d78",
+      "name": "g_CWeaponClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004f243e",
+        "call_type": "direct",
+        "caller": "core_hero.cpp_CHero_ctor_FUN_004f2340",
+        "estimated_params": 1,
+        "instructions_analyzed": 20,
+        "reg_params": [],
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.9661016949152543,
+    "instruction_count": 59,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 1,
+      "CALL": 6,
+      "CBRANCH": 3,
+      "COPY": 41,
+      "INT_ADD": 20,
+      "INT_AND": 27,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 26,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 10,
+      "INT_SLESS": 13,
+      "INT_SUB": 24,
+      "LOAD": 9,
+      "POPCOUNT": 13,
+      "RETURN": 1,
+      "STORE": 25
+    },
+    "pcode_op_count": 234
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CHero *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CGabriella",
+        "offset": 340,
+        "vtable_addr": "0065e804"
+      },
+      {
+        "class_name": "CIcePick",
+        "offset": 340,
+        "vtable_addr": "00660034"
+      },
+      {
+        "class_name": "CMoloch",
+        "offset": 340,
+        "vtable_addr": "00661944"
+      },
+      {
+        "class_name": "CColonel",
+        "offset": 340,
+        "vtable_addr": "0065bd54"
+      },
+      {
+        "class_name": "CSvetlana",
+        "offset": 340,
+        "vtable_addr": "00663d64"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 9
+  }
+}

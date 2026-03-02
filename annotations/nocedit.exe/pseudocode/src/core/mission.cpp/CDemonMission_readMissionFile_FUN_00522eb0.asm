@@ -1,11 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonMission *this_ptr,_FILE *file_handle)
+; void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonMission *this_ptr,_FILE *file_handle,int load_flags)
 ;
 ; Parameters:
 ; CDemonMission *  Stack[0x4]:4   this_ptr
 ; _FILE *          Stack[0x8]:4   file_handle
+; int              Stack[0xc]:4   load_flags
 ; Local Variables:
 ; undefined1       Stack[-0x158]:1  local_158
 ; undefined1       Stack[-0xf4]:1  local_f4
@@ -52,8 +53,8 @@
 ;   core_inv.cpp_CInventory_loadItems_FUN_004ff740
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_00523b70
-;   core_mission.cpp_CDemonMission_FUN_00522d30
-;   core_mission.cpp_CDemonMission_FUN_005248e0
+;   core_mission.cpp_CDemonMission_clearMissionData_FUN_00522d30
+;   core_mission.cpp_CDemonMission_freeAllAssets_FUN_005248e0
 ;   crt_stdio.c_fgetc_FUN_005fe840
 ;   crt_stdio.c_fscanf_FUN_005fe7c0
 ;   shape_memdbg.cpp_SMemHead_checkAllMemory_FUN_0050efe0
@@ -70,8 +71,8 @@ section .text
     SUB ESP,0x148                       ; 00522eb4
     MOV EBX,dword ptr [ESP + 0x15c]     ; 00522eba
     PUSH EBX                            ; 00522ec1
-    CALL core_mission.cpp_CDemonMission_FUN_00522d30 ; 00522ec2
-        ;   XREF to: 00522d30 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_00522d30(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_clearMissionData_FUN_00522d30 ; 00522ec2
+        ;   XREF to: 00522d30 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_clearMissionData_FUN_00522d30(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 00522ec7
     CMP dword ptr [ESP + 0x164],0x0     ; 00522eca
     JZ 0x005233b8                       ; 00522ed2
@@ -529,8 +530,8 @@ section .text
     RET                                 ; 005233b7
     PUSH EBX                            ; 005233b8
         ;   Label: LAB_005233b8
-    CALL core_mission.cpp_CDemonMission_FUN_005248e0 ; 005233b9
-        ;   XREF to: 005248e0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_005248e0(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_freeAllAssets_FUN_005248e0 ; 005233b9
+        ;   XREF to: 005248e0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_freeAllAssets_FUN_005248e0(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 005233be
     JMP 0x00522ed8                      ; 005233c1
         ;   XREF to: 00522ed8 (UNCONDITIONAL_JUMP)  ; LAB_00522ed8

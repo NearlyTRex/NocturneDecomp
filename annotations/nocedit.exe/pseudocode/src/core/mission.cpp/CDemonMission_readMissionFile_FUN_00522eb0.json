@@ -4,13 +4,13 @@
       {
         "category": "format_error",
         "column": 34,
-        "line": 77,
+        "line": 76,
         "message": "format specifies type 'char *' but the argument has type 'char (*)[256]' [-Werror,-Wformat]"
       },
       {
         "category": "incompatible_types",
         "column": 18,
-        "line": 213,
+        "line": 212,
         "message": "incompatible pointer types assigning to 'CDemonActor *' from 'CHero *'"
       }
     ],
@@ -19,19 +19,18 @@
   },
   "complexity": {
     "assembly_lines": 579,
-    "complexity_score": 311,
+    "complexity_score": 285,
     "cross_reference_count": 2,
     "function_call_count": 15,
     "global_count": 39,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 246,
-    "suspect_count": 5,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 245,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
-      "stack_param",
       "undefined_data"
     ],
-    "total_lines": 825
+    "total_lines": 824
   },
   "cross_references": [
     {
@@ -57,7 +56,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_mission.cpp_CDemonMission_readMissionFile_FUN_00522eb0",
-    "signature": "void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonMission *this_ptr,_FILE *file_handle)"
+    "signature": "void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonMission *this_ptr,_FILE *file_handle,int load_flags)"
   },
   "function_calls": [
     {
@@ -113,12 +112,12 @@
     {
       "addr": "00522d30",
       "is_variadic": false,
-      "name": "core_mission.cpp_CDemonMission_FUN_00522d30"
+      "name": "core_mission.cpp_CDemonMission_clearMissionData_FUN_00522d30"
     },
     {
       "addr": "005248e0",
       "is_variadic": false,
-      "name": "core_mission.cpp_CDemonMission_FUN_005248e0"
+      "name": "core_mission.cpp_CDemonMission_freeAllAssets_FUN_005248e0"
     },
     {
       "addr": "005fe840",
@@ -404,10 +403,10 @@
     "pcode_op_count": 1860
   },
   "stack_frame": {
-    "frame_size": 356,
+    "frame_size": 360,
     "local_size": 348,
     "param_offset": 4,
-    "param_size": 8,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -500,29 +499,20 @@
         "offset": 8,
         "size": 4,
         "type": "_FILE *"
+      },
+      {
+        "is_param": true,
+        "name": "load_flags",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "int in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 31,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "if (in_stack_0000000c == 0) {",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 90,
+      "line": 89,
       "match": "(char *)((int)",
       "severity": "mild",
       "text": "pcVar10 = (char *)((int)pcVar10 + ((uint)bVar11 * -2 + 1) * 4);",
@@ -530,7 +520,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 135,
+      "line": 134,
       "match": "DAT_0067d5c0",
       "severity": "mild",
       "text": "puVar8 = &DAT_0067d5c0;",
@@ -538,7 +528,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 142,
+      "line": 141,
       "match": "DAT_0067d628",
       "severity": "mild",
       "text": "puVar8 = &DAT_0067d628;",

@@ -67,9 +67,9 @@ int __cdecl CBaron::renderTransparent(CBaron *this_ptr);
 // Address: 00413cd0
 void __cdecl CBaron::processDamage(CBaron *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_baron.cpp_CBaron_drawGun_FUN_00413cf0
+// Original: core_baron.cpp_CBaron_drawWeapon_FUN_00413cf0
 // Address: 00413cf0
-void __cdecl CBaron::drawGun(CBaron *this_ptr,int drawn);
+void __cdecl CBaron::drawWeapon(CBaron *this_ptr,int drawn);
 
 // Original: core_baron.cpp_factoryFunc_FUN_00413d00
 // Address: 00413d00

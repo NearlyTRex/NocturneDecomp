@@ -67,9 +67,9 @@ int __cdecl CHero::getGrabbed(CHero *this_ptr,CDemonActor *grabber,int grab_type
 // Address: 004f29b0
 void __cdecl CHero::releaseFromGrab(CHero *this_ptr);
 
-// Original: core_hero.cpp_CHero_createDefaultGun_FUN_004f2a30
+// Original: core_hero.cpp_CHero_createDefaultWeapon_FUN_004f2a30
 // Address: 004f2a30
-void __cdecl CHero::createDefaultGun(CHero *this_ptr);
+void __cdecl CHero::createDefaultWeapon(CHero *this_ptr);
 
 // Original: core_hero.cpp_CHero_FUN_004f2af0
 // Address: 004f2af0

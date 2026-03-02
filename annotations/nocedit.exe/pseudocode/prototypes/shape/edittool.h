@@ -349,7 +349,7 @@ void __cdecl CStrList::copyToClipboard(CStrList *this_ptr);
 
 // Original: shape_edittool.cpp_CStrList_insertSortedFileRecord_FUN_004a3360
 // Address: 004a3360
-void __cdecl CStrList::insertSortedFileRecord(CStrList *this_ptr,char *search_key,char *file_path,int file_size);
+void __cdecl CStrList::insertSortedFileRecord(CStrList *this_ptr,char *search_key,char *file_path,int file_size,time_t file_timestamp);
 
 // Original: shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_004a35b0
 // Address: 004a35b0

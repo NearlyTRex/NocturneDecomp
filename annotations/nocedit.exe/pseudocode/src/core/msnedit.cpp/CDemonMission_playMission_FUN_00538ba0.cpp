@@ -37,7 +37,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_playMission_FUN_00538ba0(CDemonMissi
       shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                 (g_CEditorToolsPtr,"Preparing...");
       core_event_cpp_CEventList_resetGameFlags_FUN_004b0460(g_CEventListPtr);
-      iVar1 = core_mission_cpp_CDemonMission_FUN_00524760(this_ptr);
+      iVar1 = core_mission_cpp_CDemonMission_startMission_FUN_00524760(this_ptr);
       if (iVar1 != 0) {
         core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_00524120(this_ptr);
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790

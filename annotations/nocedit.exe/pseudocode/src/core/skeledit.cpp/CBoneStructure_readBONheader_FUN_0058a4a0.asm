@@ -48,8 +48,8 @@
 ;
 ; XREF[3]:
 ;   core_skeledit.cpp_CBoneStructure_importBON_FUN_0058a3d0 at 0058a43f
-;   core_skeledit.cpp_CDeformableModel_FUN_0058c190 at 0058c235
-;   core_skeledit.cpp_CSkeleton_FUN_00592690 at 00592f26
+;   core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190 at 0058c235
+;   core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 at 00592f26
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_d_d_0064a2e7
@@ -71,7 +71,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   core_skeledit.cpp_FUN_0058ac30
+;   core_skeledit.cpp_CBoneStructure_findBoneByName_FUN_0058ac30
 ;   crt_stack.c___STK_FUN_005ff9f3
 ;   crt_stdio.c_fgetc_FUN_005fe840
 ;   crt_stdio.c_fscanf_FUN_005fe7c0
@@ -415,8 +415,8 @@ section .text
     PUSH ESI                            ; 0058a90a | g_BoneNameBuffer | DAT_0365984e
         ;   Label: LAB_0058a90a
     PUSH EDI                            ; 0058a90b
-    CALL core_skeledit.cpp_FUN_0058ac30 ; 0058a90c
-        ;   XREF to: 0058ac30 (UNCONDITIONAL_CALL)  ; int core_skeledit.cpp_FUN_0058ac30()
+    CALL core_skeledit.cpp_CBoneStructure_findBoneByName_FUN_0058ac30 ; 0058a90c
+        ;   XREF to: 0058ac30 (UNCONDITIONAL_CALL)  ; int core_skeledit.cpp_CBoneStructure_findBoneByName_FUN_0058ac30(CBoneStructure * this_ptr, char * bone_name)
     ADD ESP,0x8                         ; 0058a911
     MOV dword ptr [EBP + 0x3394],EAX    ; 0058a914
     TEST EAX,EAX                        ; 0058a91a

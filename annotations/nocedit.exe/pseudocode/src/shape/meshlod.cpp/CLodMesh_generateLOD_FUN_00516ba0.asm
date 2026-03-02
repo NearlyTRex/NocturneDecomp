@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_meshlod_cpp_CLodMesh_generateLOD_FUN_00516ba0(CLodMesh *this_ptr,int target_tri_count,uint display_mode)
+; void __cdecl shape_meshlod_cpp_CLodMesh_generateLOD_FUN_00516ba0(CLodMesh *this_ptr,int target_tri_count,int render_mode)
 ;
 ; Parameters:
 ; CLodMesh *       Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   target_tri_count
-; uint             Stack[0xc]:4   display_mode
+; int              Stack[0xc]:4   render_mode
 ; Local Variables:
 ; undefined4       Stack[-0x30]:4  local_30
 ; undefined4       Stack[-0x24]:4  local_24
@@ -15,8 +15,8 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
-;   core_skeledit.cpp_CDeformableModel_FUN_0058c190 at 0058d17d
-;   core_skeledit.cpp_CLodMesh_FUN_00589c20 at 00589e84
+;   core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190 at 0058d17d
+;   core_skeledit.cpp_CLodMesh_selectAndGenerateLods_FUN_00589c20 at 00589e84
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Mesh_degredation_in_prog_00637615

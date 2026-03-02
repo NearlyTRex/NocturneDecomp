@@ -140,7 +140,7 @@ section .text
     PUSH ECX                            ; 004a36bb
     PUSH EBX                            ; 004a36bc
     CALL shape_edittool.cpp_CStrList_insertSortedFileRecord_FUN_004a3360 ; 004a36bd
-        ;   XREF to: 004a3360 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_insertSortedFileRecord_FUN_004a3360(CStrList * this_ptr, char * search_key, char * file_path, int file_size)
+        ;   XREF to: 004a3360 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_insertSortedFileRecord_FUN_004a3360(CStrList * this_ptr, char * search_key, char * file_path, int file_size, ...)
     ADD ESP,0x14                        ; 004a36c2
     MOV ECX,ESP                         ; 004a36c5
     PUSH ECX                            ; 004a36c7
@@ -178,7 +178,7 @@ section .text
     PUSH ECX                            ; 004a372c
     PUSH EBX                            ; 004a372d
     CALL shape_edittool.cpp_CStrList_insertSortedFileRecord_FUN_004a3360 ; 004a372e
-        ;   XREF to: 004a3360 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_insertSortedFileRecord_FUN_004a3360(CStrList * this_ptr, char * search_key, char * file_path, int file_size)
+        ;   XREF to: 004a3360 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_insertSortedFileRecord_FUN_004a3360(CStrList * this_ptr, char * search_key, char * file_path, int file_size, ...)
     ADD ESP,0x14                        ; 004a3733
     LEA ECX,[ESP + 0x31c]               ; 004a3736
     PUSH ECX                            ; 004a373d

@@ -8,7 +8,7 @@
 ; _FILE *          Stack[0x8]:4   file_handle
 ;
 ; XREF[1]:
-;   core_skeledit.cpp_CSkeleton_FUN_00592690 at 005953fa
+;   core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 at 005953fa
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeledit_cpp_0064a490

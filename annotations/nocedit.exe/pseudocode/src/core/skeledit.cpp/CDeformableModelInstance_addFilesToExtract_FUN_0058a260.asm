@@ -24,7 +24,7 @@
 ;   TerminatedCString s_MODELS_s_0064a24d
 ;
 ; Called Functions:
-;   core_skeledit.cpp_CDeformableModel_FUN_0058a2b0
+;   core_skeledit.cpp_CDeformableModel_addFilesToExtract_FUN_0058a2b0
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
 ;   crt_stack.c___STK_FUN_005ff9f3
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
@@ -55,8 +55,8 @@ section .text
         ;   XREF to: 005a07a0 (UNCONDITIONAL_CALL)  ; CDeformableModel * core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0058a296
     PUSH EAX                            ; 0058a299
-    CALL core_skeledit.cpp_CDeformableModel_FUN_0058a2b0 ; 0058a29a
-        ;   XREF to: 0058a2b0 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_CDeformableModel_FUN_0058a2b0(CDeformableModel * this_ptr, _FILE * file_handle)
+    CALL core_skeledit.cpp_CDeformableModel_addFilesToExtract_FUN_0058a2b0 ; 0058a29a
+        ;   XREF to: 0058a2b0 (UNCONDITIONAL_CALL)  ; void core_skeledit.cpp_CDeformableModel_addFilesToExtract_FUN_0058a2b0(CDeformableModel * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 0058a29f
     POP EBX                             ; 0058a2a2
     RET                                 ; 0058a2a3

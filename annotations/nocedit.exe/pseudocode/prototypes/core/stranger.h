@@ -215,13 +215,13 @@ void __cdecl CStranger(CStranger *this_ptr);
 // Address: 005c6590
 void __cdecl CStranger(CStranger *this_ptr);
 
-// Original: core_stranger.cpp_CStranger_areGunsDrawn_FUN_005c6650
+// Original: core_stranger.cpp_CStranger_isWeaponDrawn_FUN_005c6650
 // Address: 005c6650
-int __cdecl CStranger::areGunsDrawn(CStranger *this_ptr);
+int __cdecl CStranger::isWeaponDrawn(CStranger *this_ptr);
 
-// Original: core_stranger.cpp_CStranger_drawGuns_FUN_005c6660
+// Original: core_stranger.cpp_CStranger_drawWeapon_FUN_005c6660
 // Address: 005c6660
-void __cdecl CStranger::drawGuns(CStranger *this_ptr,int drawn);
+void __cdecl CStranger::drawWeapon(CStranger *this_ptr,int drawn);
 
 // Original: core_stranger.cpp_CStranger_getGrabbed_FUN_005c66a0
 // Address: 005c66a0

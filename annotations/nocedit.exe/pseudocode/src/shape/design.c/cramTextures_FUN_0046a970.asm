@@ -19,7 +19,7 @@
 ;
 ; XREF[3]:
 ;   core_dmodel.cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0 at 0047a51b
-;   core_skeledit.cpp_FUN_0058de70 at 0058dfe7
+;   core_skeledit.cpp_CDeformableModel_cramModelTexture_FUN_0058de70 at 0058dfe7
 ;   shape_design.c_tileTextureMaps_FUN_0046a180 at 0046a458
 ;
 ; Referenced Globals:

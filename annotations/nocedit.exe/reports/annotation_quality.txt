@@ -12,80 +12,23 @@ SUMMARY STATISTICS
 ====================================================================================================
 
   Total functions analyzed:          6,493
-  Unnamed functions (FUN_):          173 ( 2.7%)
-  Functions with unnamed params:     33 ( 0.5%)
-  Functions with type issues:        2,477 (38.1%)
+  Unnamed functions (FUN_):          81 ( 1.2%)
+  Functions with unnamed params:     29 ( 0.4%)
+  Functions with type issues:        2,421 (37.3%)
 
   Type issue breakdown:
-    Wrong return type (void):          4
+    Wrong return type (void):          3
     Wrong return type (wide/64-bit):   2
-    Missing register params:           15
-    Wrong calling convention:          65
+    Missing register params:           14
+    Wrong calling convention:          59
     Undefined types in variables:      2274
-    Unresolved stack params:           497
+    Unresolved stack params:           393
 
 ====================================================================================================
 UNNAMED FUNCTIONS (still using FUN_XXXXXXXX)
 ====================================================================================================
 
 Sorted by caller count (most-referenced first = highest priority to name).
-
-  shape/superopt.cpp (55 unnamed)
-    0x005c9aa0  __cdecl       4 callers
-    0x005ca590  __cdecl       4 callers
-    0x005c79f0  __cdecl       3 callers
-    0x005c8280  __cdecl       2 callers
-    0x005cb3a0  __cdecl       2 callers
-    0x005c9100  __cdecl       2 callers
-    0x005c79a0  __cdecl       2 callers
-    0x005c7a90  __cdecl       1 callers
-    0x005c7dc0  __cdecl       1 callers
-    0x005cbf90  __cdecl       1 callers
-    0x005c7b20  __cdecl       1 callers
-    0x005cbb40  __cdecl       1 callers
-    0x005c8b50  __cdecl       1 callers
-    0x005c79d0  __cdecl       1 callers
-    0x005cbec0  __cdecl       1 callers
-    0x005c7fb0  __cdecl       1 callers
-    0x005cbe20  __cdecl       1 callers
-    0x005cbf00  __cdecl       1 callers
-    0x005c91e0  __cdecl       1 callers
-    0x005c84c0  __cdecl       1 callers
-    0x005c8160  __cdecl       1 callers
-    0x005c8e70  __cdecl       1 callers
-    0x005c9340  __cdecl       1 callers
-    0x005cbf20  __cdecl       1 callers
-    0x005d8520  __cdecl       0 callers
-    0x005d8410  __cdecl       0 callers
-    0x005d8310  __cdecl       0 callers
-    0x005d82b0  __cdecl       0 callers
-    0x005d85f0  __cdecl       0 callers
-    0x005d8630  __cdecl       0 callers
-    0x005cbef0  __cdecl       0 callers
-    0x005d8200  __cdecl       0 callers
-    0x005cbee0  __cdecl       0 callers
-    0x005d8670  __cdecl       0 callers
-    0x005d8350  __cdecl       0 callers
-    0x005d7750  __cdecl       0 callers
-    0x005d8390  __cdecl       0 callers
-    0x005d8440  __cdecl       0 callers
-    0x005d86d0  __cdecl       0 callers
-    0x005d8270  __cdecl       0 callers
-    0x005d81c0  __cdecl       0 callers
-    0x005d84d0  __cdecl       0 callers
-    0x005cbf10  __cdecl       0 callers
-    0x005d82e0  __cdecl       0 callers
-    0x005c9500  __cdecl       0 callers
-    0x005d8710  __cdecl       0 callers
-    0x005d8470  __cdecl       0 callers
-    0x005d8230  __cdecl       0 callers
-    0x005d84a0  __cdecl       0 callers
-    0x005d8190  __cdecl       0 callers
-    0x005d8570  __cdecl       0 callers
-    0x005d83d0  __cdecl       0 callers
-    0x005d8330  __cdecl       0 callers
-    0x005d85a0  __cdecl       0 callers
-    0x005d86a0  __cdecl       0 callers
 
   core/stranger.cpp (19 unnamed)
     0x005bb010  __cdecl       3 callers
@@ -107,45 +50,6 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x005bafcc  __cdecl       0 callers
     0x005bafc6  __cdecl       0 callers
     0x005baf3d  __cdecl       0 callers
-
-  core/skeledit.cpp (37 unnamed)
-    0x0058a0f0  __cdecl       3 callers
-    0x0058aeb0  __cdecl       2 callers
-    0x0058b200  __cdecl       2 callers
-    0x0058ac30  __cdecl       2 callers
-    0x0058afe0  __cdecl       2 callers
-    0x00589fc0  __cdecl       2 callers
-    0x00595f30  __cdecl       1 callers
-    0x00589fa0  __cdecl       1 callers
-    0x0058af40  __cdecl       1 callers
-    0x0058b160  __cdecl       1 callers
-    0x005925c0  __cdecl       1 callers
-    0x00589fe0  __cdecl       1 callers
-    0x00592520  __cdecl       1 callers
-    0x0058dde0  __cdecl       1 callers
-    0x0058de70  __cdecl       1 callers
-    0x00589740  __cdecl       0 callers
-    0x00596860  __cdecl       0 callers
-    0x0058e0b0  __cdecl       0 callers
-    0x00589530  __cdecl       0 callers
-    0x0058ad30  __cdecl       0 callers
-    0x00589500  __cdecl       0 callers
-    0x005896b0  __cdecl       0 callers
-    0x00589b10  __cdecl       0 callers
-    0x00589a40  __cdecl       0 callers
-    0x00589f40  __cdecl       0 callers
-    0x00589450  __cdecl       0 callers
-    0x005894c0  __cdecl       0 callers
-    0x005897b0  __cdecl       0 callers
-    0x00599480  __cdecl       0 callers
-    0x00599650  __cdecl       0 callers
-    0x0058bd00  __cdecl       0 callers
-    0x005995d0  __cdecl       0 callers
-    0x0058b260  __cdecl       0 callers
-    0x00598f10  __cdecl       0 callers
-    0x0058a1b0  __cdecl       0 callers
-    0x00599630  __cdecl       0 callers
-    0x0058eaa0  __cdecl       0 callers
 
   core/bugs.cpp (13 unnamed)
     0x00427ba0  __cdecl       2 callers
@@ -284,15 +188,6 @@ Sorted by number of unnamed parameters (most unnamed first).
     Unnamed: param_2 (uint), param_3 (uint)
     Named:   this_ptr (CDemonSet *), screen_height (int)
 
-  CDeformableModel
-    Address: 0x0058d790  File: core/skeledit.cpp
-    Unnamed: param_2 (int), param_3 (CLodMesh *)
-    Named:   this_ptr (CDeformableModel *)
-
-  FUN_005d86d0
-    Address: 0x005d86d0  File: shape/superopt.cpp
-    Unnamed: param_1 (double *), param_2 (double *)
-
   CBaron
     Address: 0x004135a0  File: core/baron.cpp
     Unnamed: param_2 (int)
@@ -343,11 +238,6 @@ Sorted by number of unnamed parameters (most unnamed first).
     Unnamed: param_2 (float)
     Named:   this_ptr (CLever *)
 
-  CDemonMission_loadScript
-    Address: 0x005235b0  File: core/mission.cpp
-    Unnamed: param_2 (int)
-    Named:   this_ptr (CDemonMission *)
-
   CDemonMission_addSet
     Address: 0x00538d60  File: core/msnedit.cpp
     Unnamed: param_2 (char *)
@@ -393,11 +283,6 @@ Sorted by number of unnamed parameters (most unnamed first).
     Unnamed: param_2 (void *)
     Named:   vertex_array (int *)
 
-  CDeformableModel
-    Address: 0x0058e3e0  File: core/skeledit.cpp
-    Unnamed: param_2 (float)
-    Named:   this_ptr (CDeformableModel *)
-
   FUN_005e3ec0
     Address: 0x005e3ec0  File: core/tvbat.cpp
     Unnamed: param_1 (float)
@@ -427,7 +312,7 @@ TYPE CORRECTNESS ISSUES (heuristic-based)
 ====================================================================================================
 
 --------------------------------------------------------------------------------
-Wrong return type (void function with extra output) (4)
+Wrong return type (void function with extra output) (3)
 --------------------------------------------------------------------------------
 
   CInventory_load
@@ -448,30 +333,24 @@ Wrong return type (void function with extra output) (4)
     Signature: void __cdecl shape_meshlod_cpp_CLodMesh_collapseEdge_FUN_00517630(CLodMesh *this_ptr,int vertex_idx_1,int vertex_idx_2,float collapse_weight)
     Suggested: Likely returns int or void*
 
-  COptimize
-    Address: 0x005d76e0  File: shape/superopt.cpp
-    Evidence: extraout_EAX, extraout_EAX
-    Signature: void __cdecl shape_superopt_cpp_COptimize_FUN_005d76e0(COptimize *this_ptr)
-    Suggested: Likely returns int or void*
-
 --------------------------------------------------------------------------------
 Wrong return type (64-bit return via EDX:EAX) (2)
 --------------------------------------------------------------------------------
 
-  FUN_005c8b50
-    Address: 0x005c8b50  File: shape/superopt.cpp
-    Evidence: extraout_EDX, extraout_EDX_00, extraout_EDX_00, extraout_EDX_00, extraout_EDX_00, extraout_EDX_00, extraout_EDX, extraout_EDX, extraout_EDX, extraout_EDX
-    Signature: int __cdecl shape_superopt_cpp_FUN_005c8b50(void)
-    Suggested: Likely returns 64-bit value (longlong) via EDX:EAX
-
-  FUN_005c8e70
+  CComplexPolygon_findBestSplitEdge
     Address: 0x005c8e70  File: shape/superopt.cpp
     Evidence: extraout_EDX, extraout_EDX_00, extraout_EDX, extraout_EDX, extraout_EDX_00, extraout_EDX_00, extraout_EDX_00, extraout_EDX_00
-    Signature: int __cdecl shape_superopt_cpp_FUN_005c8e70(void)
+    Signature: int __cdecl shape_superopt_cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70(CComplexPolygon *this_ptr,SExpandedEdge *buf_a,SExpandedEdge *buf_b)
+    Suggested: Likely returns 64-bit value (longlong) via EDX:EAX
+
+  CComplexPolygon_findReflexVertex
+    Address: 0x005c8b50  File: shape/superopt.cpp
+    Evidence: extraout_EDX, extraout_EDX_00, extraout_EDX_00, extraout_EDX_00, extraout_EDX_00, extraout_EDX_00, extraout_EDX, extraout_EDX, extraout_EDX, extraout_EDX
+    Signature: int __cdecl shape_superopt_cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50(CComplexPolygon *this_ptr,SExpandedEdge *buf_a,SExpandedEdge *buf_b)
     Suggested: Likely returns 64-bit value (longlong) via EDX:EAX
 
 --------------------------------------------------------------------------------
-Missing register parameters (likely wrong calling convention) (15)
+Missing register parameters (likely wrong calling convention) (14)
 --------------------------------------------------------------------------------
 
   CDrawSurface_clipLine
@@ -528,12 +407,6 @@ Missing register parameters (likely wrong calling convention) (15)
     Signature: void * __cdecl core_dstrender_cpp_memcpyMMX_FUN_00492001(void *dest,void *src,int byte_count)
     Suggested: Likely register-based calling convention
 
-  CDeformableModel
-    Address: 0x0058f790  File: core/skeledit.cpp
-    Evidence: in_EAX, in_EAX, in_EAX, in_EAX, in_EAX, in_EAX, in_EAX
-    Signature: int * __cdecl core_skeledit_cpp_CDeformableModel_FUN_0058f790(CDeformableModel *this_ptr)
-    Suggested: Likely register-based calling convention
-
   detectIntelProcessor
     Address: 0x00524f4c  File: core/mmx.c
     Evidence: in_CF, in_PF, in_AF, in_ZF, in_SF, in_TF, in_IF, in_OF, in_NT, in_AC, in_VIF, in_VIP, in_ID, in_NT, in_OF, in_IF, in_TF, in_SF, in_ZF, in_AF, in_PF, in_CF, in_ID, in_VIP, in_VIF, in_AC
@@ -565,7 +438,7 @@ Missing register parameters (likely wrong calling convention) (15)
     Suggested: Likely register-based calling convention
 
 --------------------------------------------------------------------------------
-Wrong calling convention (unaffected register usage) (65)
+Wrong calling convention (unaffected register usage) (59)
 --------------------------------------------------------------------------------
 
   CPackedBitmapSet_reloadStoredPBGFile
@@ -892,16 +765,10 @@ Wrong calling convention (unaffected register usage) (65)
     Signature: int __cdecl shape_meshlod_cpp_CLodMesh_initializeLodGeneration_FUN_0051b8a0(CLodMesh *this_ptr,_FILE *file_handle)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
-  FUN_005d8520
-    Address: 0x005d8520  File: shape/superopt.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void __cdecl shape_superopt_cpp_FUN_005d8520(void)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  FUN_005d85f0
-    Address: 0x005d85f0  File: shape/superopt.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void __cdecl shape_superopt_cpp_FUN_005d85f0(void)
+  CP3D
+    Address: 0x005d8630  File: shape/superopt.cpp
+    Evidence: unaff_ESI, unaff_ESI, unaff_ESI
+    Signature: CP3D * __cdecl shape_superopt_cpp_CP3D_FUN_005d8630(CP3D *this_ptr,double scalar)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
   CPoly_hasCentroidIntersection
@@ -910,22 +777,10 @@ Wrong calling convention (unaffected register usage) (65)
     Signature: int __cdecl shape_superopt_cpp_CPoly_hasCentroidIntersection_FUN_005d1230(CPoly *this_ptr,CPoly *other)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
-  FUN_005d8630
-    Address: 0x005d8630  File: shape/superopt.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void __cdecl shape_superopt_cpp_FUN_005d8630(void)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
   closestPointOnSegment3D
     Address: 0x005d6020  File: shape/superopt.cpp
     Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
     Signature: CVector2d * __cdecl shape_superopt_cpp_closestPointOnSegment3D_FUN_005d6020(CVector3d *segment_start,CVector3d *segment_end,CVector3d *query_point)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  FUN_005d8350
-    Address: 0x005d8350  File: shape/superopt.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void __cdecl shape_superopt_cpp_FUN_005d8350(void)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
   projectPointOntoPlane
@@ -934,32 +789,14 @@ Wrong calling convention (unaffected register usage) (65)
     Signature: CVector3d * __cdecl shape_superopt_cpp_projectPointOntoPlane_FUN_005d63d0(CVector3d *point,CVector3d *plane_point,CVector3d *plane_normal)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
-  FUN_005d8390
-    Address: 0x005d8390  File: shape/superopt.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void __cdecl shape_superopt_cpp_FUN_005d8390(void)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  FUN_005d84d0
-    Address: 0x005d84d0  File: shape/superopt.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void __cdecl shape_superopt_cpp_FUN_005d84d0(void)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  FUN_005d83d0
+  CP2D
     Address: 0x005d83d0  File: shape/superopt.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void __cdecl shape_superopt_cpp_FUN_005d83d0(void)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  FUN_005d85a0
-    Address: 0x005d85a0  File: shape/superopt.cpp
     Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void __cdecl shape_superopt_cpp_FUN_005d85a0(void)
+    Signature: CP2D * __cdecl shape_superopt_cpp_CP2D_FUN_005d83d0(CP2D *this_ptr,double scale)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
 --------------------------------------------------------------------------------
-Unresolved stack parameters (missing from signature) (497)
+Unresolved stack parameters (missing from signature) (393)
 --------------------------------------------------------------------------------
 
   CPackedBitmapSet_reload
@@ -2354,52 +2191,10 @@ Unresolved stack parameters (missing from signature) (497)
     Signature: CVector3f * __cdecl core_stranger_cpp_CStranger_FUN_005c51c0(CStranger *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
-  FUN_00589740
-    Address: 0x00589740  File: core/skeledit.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_skeledit_cpp_FUN_00589740(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  CDeformableModel
-    Address: 0x0058c190  File: core/skeledit.cpp
-    Evidence: in_stack_ffff5dd8, in_stack_ffff5dd8, in_stack_ffff5dd8, in_stack_ffff5dd8, in_stack_ffff5dd8
-    Signature: int __cdecl core_skeledit_cpp_CDeformableModel_FUN_0058c190(CDeformableModel *this_ptr,char *filename)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_00596860
-    Address: 0x00596860  File: core/skeledit.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000004, in_stack_00000008, in_stack_0000000c
-    Signature: void __cdecl core_skeledit_cpp_FUN_00596860(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_0058e0b0
-    Address: 0x0058e0b0  File: core/skeledit.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000008, in_stack_00000004
-    Signature: void __cdecl core_skeledit_cpp_FUN_0058e0b0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_00589530
-    Address: 0x00589530  File: core/skeledit.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000004, in_stack_00000008
-    Signature: void __cdecl core_skeledit_cpp_FUN_00589530(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_0058ad30
-    Address: 0x0058ad30  File: core/skeledit.cpp
-    Evidence: in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004
-    Signature: void __cdecl core_skeledit_cpp_FUN_0058ad30(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_00589500
-    Address: 0x00589500  File: core/skeledit.cpp
-    Evidence: in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004
-    Signature: void __cdecl core_skeledit_cpp_FUN_00589500(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_00595f30
-    Address: 0x00595f30  File: core/skeledit.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000004, in_stack_00000008
-    Signature: void __cdecl core_skeledit_cpp_FUN_00595f30(void)
+  CSkeleton_importSkeletonFile
+    Address: 0x00592690  File: core/skeledit.cpp
+    Evidence: in_stack_fffeec08, in_stack_fffeec08
+    Signature: int __cdecl core_skeledit_cpp_CSkeleton_importSkeletonFile_FUN_00592690(CSkeleton *this_ptr,char *filename)
     Suggested: Signature is missing stack parameters entirely
 
   CBoneStructure_importBON
@@ -2408,190 +2203,16 @@ Unresolved stack parameters (missing from signature) (497)
     Signature: void __cdecl core_skeledit_cpp_CBoneStructure_importBON_FUN_0058a3d0(CBoneStructure *this_ptr,char *filename)
     Suggested: Signature is missing stack parameters entirely
 
-  CDeformableModel
-    Address: 0x0058d790  File: core/skeledit.cpp
-    Evidence: in_stack_00000010, in_stack_00000010
-    Signature: void __cdecl core_skeledit_cpp_CDeformableModel_FUN_0058d790(CDeformableModel *this_ptr,int param_2,CLodMesh *param_3)
+  CDeformableModel_buildFromPosFile
+    Address: 0x0058c190  File: core/skeledit.cpp
+    Evidence: in_stack_ffff5dd8, in_stack_ffff5dd8, in_stack_ffff5dd8, in_stack_ffff5dd8, in_stack_ffff5dd8
+    Signature: int __cdecl core_skeledit_cpp_CDeformableModel_buildFromPosFile_FUN_0058c190(CDeformableModel *this_ptr,CLodMeshPrecomputeEntry *entry)
     Suggested: Signature is missing stack parameters entirely
 
-  FUN_0058aeb0
-    Address: 0x0058aeb0  File: core/skeledit.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000004, in_stack_00000004
-    Signature: void __cdecl core_skeledit_cpp_FUN_0058aeb0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005896b0
-    Address: 0x005896b0  File: core/skeledit.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000008
-    Signature: void __cdecl core_skeledit_cpp_FUN_005896b0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_00589b10
-    Address: 0x00589b10  File: core/skeledit.cpp
-    Evidence: in_stack_00000004, in_stack_00000004
-    Signature: void __cdecl core_skeledit_cpp_FUN_00589b10(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_0058a0f0
-    Address: 0x0058a0f0  File: core/skeledit.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000004
-    Signature: void __cdecl core_skeledit_cpp_FUN_0058a0f0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  CDeformableModel
-    Address: 0x0058e600  File: core/skeledit.cpp
-    Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_skeledit_cpp_CDeformableModel_FUN_0058e600(CDeformableModel *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_00589f40
-    Address: 0x00589f40  File: core/skeledit.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008
-    Signature: void __cdecl core_skeledit_cpp_FUN_00589f40(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_00589fa0
-    Address: 0x00589fa0  File: core/skeledit.cpp
-    Evidence: in_stack_00000004, in_stack_00000004
-    Signature: int __cdecl core_skeledit_cpp_FUN_00589fa0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_00589450
-    Address: 0x00589450  File: core/skeledit.cpp
-    Evidence: in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004
-    Signature: void __cdecl core_skeledit_cpp_FUN_00589450(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005894c0
-    Address: 0x005894c0  File: core/skeledit.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_skeledit_cpp_FUN_005894c0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_0058af40
-    Address: 0x0058af40  File: core/skeledit.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000004, in_stack_00000004
-    Signature: void __cdecl core_skeledit_cpp_FUN_0058af40(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  CLodMesh
-    Address: 0x00589c20  File: core/skeledit.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_0000000c
-    Signature: int __cdecl core_skeledit_cpp_CLodMesh_FUN_00589c20(CLodMesh *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_0058b200
-    Address: 0x0058b200  File: core/skeledit.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000004
-    Signature: int __cdecl core_skeledit_cpp_FUN_0058b200(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_0058b160
-    Address: 0x0058b160  File: core/skeledit.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000004
-    Signature: void __cdecl core_skeledit_cpp_FUN_0058b160(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_0058ac30
-    Address: 0x0058ac30  File: core/skeledit.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000008, in_stack_00000004
-    Signature: int __cdecl core_skeledit_cpp_FUN_0058ac30(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_00599480
-    Address: 0x00599480  File: core/skeledit.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008
-    Signature: void __cdecl core_skeledit_cpp_FUN_00599480(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_0058afe0
-    Address: 0x0058afe0  File: core/skeledit.cpp
-    Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_skeledit_cpp_FUN_0058afe0(void *ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_00599650
-    Address: 0x00599650  File: core/skeledit.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004
-    Signature: int __cdecl core_skeledit_cpp_FUN_00599650(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_0058bd00
-    Address: 0x0058bd00  File: core/skeledit.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_0000000c, in_stack_00000004, in_stack_0000000c
-    Signature: void __cdecl core_skeledit_cpp_FUN_0058bd00(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005995d0
-    Address: 0x005995d0  File: core/skeledit.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008
-    Signature: void __cdecl core_skeledit_cpp_FUN_005995d0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_0058b260
-    Address: 0x0058b260  File: core/skeledit.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000004
-    Signature: void __cdecl core_skeledit_cpp_FUN_0058b260(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_00598f10
-    Address: 0x00598f10  File: core/skeledit.cpp
-    Evidence: in_stack_00000004, in_stack_00000004
-    Signature: void __cdecl core_skeledit_cpp_FUN_00598f10(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_00589fe0
-    Address: 0x00589fe0  File: core/skeledit.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000004
-    Signature: void __cdecl core_skeledit_cpp_FUN_00589fe0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_00592520
-    Address: 0x00592520  File: core/skeledit.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000008, in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_0000000c, in_stack_00000008
-    Signature: int __cdecl core_skeledit_cpp_FUN_00592520(void *ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_00589fc0
-    Address: 0x00589fc0  File: core/skeledit.cpp
-    Evidence: in_stack_00000004, in_stack_00000004
-    Signature: void __cdecl core_skeledit_cpp_FUN_00589fc0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_0058a1b0
-    Address: 0x0058a1b0  File: core/skeledit.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000004
-    Signature: int __cdecl core_skeledit_cpp_FUN_0058a1b0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_0058dde0
-    Address: 0x0058dde0  File: core/skeledit.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000004, in_stack_00000008
-    Signature: void __cdecl core_skeledit_cpp_FUN_0058dde0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_00599630
-    Address: 0x00599630  File: core/skeledit.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004
-    Signature: int __cdecl core_skeledit_cpp_FUN_00599630(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_0058de70
-    Address: 0x0058de70  File: core/skeledit.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000014, in_stack_00000004, in_stack_00000004, in_stack_00000014, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_skeledit_cpp_FUN_0058de70(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  CSkeleton
-    Address: 0x00592690  File: core/skeledit.cpp
-    Evidence: in_stack_fffeec08, in_stack_fffeec08
-    Signature: int __cdecl core_skeledit_cpp_CSkeleton_FUN_00592690(CSkeleton *this_ptr,char *filename)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_0058eaa0
-    Address: 0x0058eaa0  File: core/skeledit.cpp
-    Evidence: in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004
-    Signature: void __cdecl core_skeledit_cpp_FUN_0058eaa0(void)
+  createMeshPrecomputeFile
+    Address: 0x00589bb0  File: core/skeledit.cpp
+    Evidence: in_stack_00000008, in_stack_00000008
+    Signature: void __cdecl core_skeledit_cpp_createMeshPrecomputeFile_FUN_00589bb0(CLodMesh *mesh_ptr)
     Suggested: Signature is missing stack parameters entirely
 
   CTentacle
@@ -2930,30 +2551,6 @@ Unresolved stack parameters (missing from signature) (497)
     Signature: void __cdecl core_frankgen_cpp_CFrankenstienMachine_FUN_004d1f20(CFrankenstienMachine *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
-  CSvetlana
-    Address: 0x005d9260  File: core/svetlana.cpp
-    Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_svetlana_cpp_CSvetlana_FUN_005d9260(CSvetlana *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CSvetlana
-    Address: 0x005d9a10  File: core/svetlana.cpp
-    Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_svetlana_cpp_CSvetlana_FUN_005d9a10(CSvetlana *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CSvetlana
-    Address: 0x005d9970  File: core/svetlana.cpp
-    Evidence: in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_svetlana_cpp_CSvetlana_FUN_005d9970(CSvetlana *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CSvetlana
-    Address: 0x005d9ee0  File: core/svetlana.cpp
-    Evidence: in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_svetlana_cpp_CSvetlana_FUN_005d9ee0(CSvetlana *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
   CPathMap_findPathToDestination
     Address: 0x00547320  File: core/path.cpp
     Evidence: in_stack_fffffee8, in_stack_fffffee8
@@ -3042,12 +2639,6 @@ Unresolved stack parameters (missing from signature) (497)
     Address: 0x0054e1e0  File: core/platfrm.cpp
     Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
     Signature: void __cdecl core_platfrm_cpp_CPlatform_attachActor_FUN_0054e1e0(CPlatform *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CDemonMission_readMissionFile
-    Address: 0x00522eb0  File: core/mission.cpp
-    Evidence: in_stack_0000000c, in_stack_0000000c
-    Signature: void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonMission *this_ptr,_FILE *file_handle)
     Suggested: Signature is missing stack parameters entirely
 
   CNPC
@@ -3506,64 +3097,10 @@ Unresolved stack parameters (missing from signature) (497)
     Signature: void __cdecl shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0(CEditorTools *this_ptr,float scale_factor,int text_color)
     Suggested: Signature is missing stack parameters entirely
 
-  FUN_005d8520
-    Address: 0x005d8520  File: shape/superopt.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008
-    Signature: void __cdecl shape_superopt_cpp_FUN_005d8520(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005c79f0
-    Address: 0x005c79f0  File: shape/superopt.cpp
-    Evidence: in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004
-    Signature: void __cdecl shape_superopt_cpp_FUN_005c79f0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005d8410
-    Address: 0x005d8410  File: shape/superopt.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008
-    Signature: int __cdecl shape_superopt_cpp_FUN_005d8410(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005d8310
-    Address: 0x005d8310  File: shape/superopt.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000014, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_0000000c, in_stack_00000004, in_stack_00000010, in_stack_00000004, in_stack_00000014
-    Signature: void __cdecl shape_superopt_cpp_FUN_005d8310(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005d82b0
-    Address: 0x005d82b0  File: shape/superopt.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008
-    Signature: void __cdecl shape_superopt_cpp_FUN_005d82b0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005c8280
-    Address: 0x005c8280  File: shape/superopt.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_00000008, in_stack_00000008, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_00000008, in_stack_0000000c
-    Signature: int __cdecl shape_superopt_cpp_FUN_005c8280(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005c7a90
-    Address: 0x005c7a90  File: shape/superopt.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000008
-    Signature: int __cdecl shape_superopt_cpp_FUN_005c7a90(void)
-    Suggested: Signature is missing stack parameters entirely
-
   CPoly_ctor
     Address: 0x005cc620  File: shape/superopt.cpp
     Evidence: in_stack_00000008, in_stack_00000008
     Signature: CPoly * __cdecl shape_superopt_cpp_CPoly_ctor_FUN_005cc620(CPoly *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005c7dc0
-    Address: 0x005c7dc0  File: shape/superopt.cpp
-    Evidence: in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004
-    Signature: void __cdecl shape_superopt_cpp_FUN_005c7dc0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005d85f0
-    Address: 0x005d85f0  File: shape/superopt.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008
-    Signature: void __cdecl shape_superopt_cpp_FUN_005d85f0(void)
     Suggested: Signature is missing stack parameters entirely
 
   CPoly_hasCentroidIntersection
@@ -3572,232 +3109,16 @@ Unresolved stack parameters (missing from signature) (497)
     Signature: int __cdecl shape_superopt_cpp_CPoly_hasCentroidIntersection_FUN_005d1230(CPoly *this_ptr,CPoly *other)
     Suggested: Signature is missing stack parameters entirely
 
-  FUN_005d8630
-    Address: 0x005d8630  File: shape/superopt.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008
-    Signature: void __cdecl shape_superopt_cpp_FUN_005d8630(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005cbf90
-    Address: 0x005cbf90  File: shape/superopt.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000014, in_stack_00000018, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000018, in_stack_0000000c, in_stack_00000010, in_stack_00000014, in_stack_00000014, in_stack_00000018, in_stack_0000000c, in_stack_00000010, in_stack_0000000c, in_stack_00000010, in_stack_0000000c, in_stack_00000010
-    Signature: int __cdecl shape_superopt_cpp_FUN_005cbf90(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005cbef0
-    Address: 0x005cbef0  File: shape/superopt.cpp
-    Evidence: in_stack_00000004, in_stack_00000004
-    Signature: int __cdecl shape_superopt_cpp_FUN_005cbef0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005d8200
-    Address: 0x005d8200  File: shape/superopt.cpp
-    Evidence: in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004
-    Signature: int __cdecl shape_superopt_cpp_FUN_005d8200(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005c7b20
-    Address: 0x005c7b20  File: shape/superopt.cpp
-    Evidence: in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004
-    Signature: int __cdecl shape_superopt_cpp_FUN_005c7b20(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005cbee0
-    Address: 0x005cbee0  File: shape/superopt.cpp
-    Evidence: in_stack_00000004, in_stack_00000004
-    Signature: int __cdecl shape_superopt_cpp_FUN_005cbee0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005d8670
-    Address: 0x005d8670  File: shape/superopt.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008
-    Signature: int __cdecl shape_superopt_cpp_FUN_005d8670(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  COptimize
-    Address: 0x005d7120  File: shape/superopt.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_0000000c
-    Signature: void __cdecl shape_superopt_cpp_COptimize_FUN_005d7120(COptimize *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005d8350
-    Address: 0x005d8350  File: shape/superopt.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008
-    Signature: void __cdecl shape_superopt_cpp_FUN_005d8350(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  COptimize
-    Address: 0x005d71c0  File: shape/superopt.cpp
-    Evidence: in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl shape_superopt_cpp_COptimize_FUN_005d71c0(COptimize *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005d7750
-    Address: 0x005d7750  File: shape/superopt.cpp
-    Evidence: in_stack_00000004, in_stack_00000004
-    Signature: int __cdecl shape_superopt_cpp_FUN_005d7750(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005cbb40
-    Address: 0x005cbb40  File: shape/superopt.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000010, in_stack_0000000c, in_stack_00000010, in_stack_0000000c, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000010, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: double * __cdecl shape_superopt_cpp_FUN_005cbb40(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005c8b50
-    Address: 0x005c8b50  File: shape/superopt.cpp
-    Evidence: in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004
-    Signature: int __cdecl shape_superopt_cpp_FUN_005c8b50(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005c79d0
-    Address: 0x005c79d0  File: shape/superopt.cpp
-    Evidence: in_stack_00000004, in_stack_00000004
-    Signature: int __cdecl shape_superopt_cpp_FUN_005c79d0(void)
-    Suggested: Signature is missing stack parameters entirely
-
   CPoly_computePlaneDistance
     Address: 0x005d1fa0  File: shape/superopt.cpp
     Evidence: in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004
     Signature: double __cdecl shape_superopt_cpp_CPoly_computePlaneDistance_FUN_005d1fa0(CPoly *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
-  FUN_005d8390
-    Address: 0x005d8390  File: shape/superopt.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008
-    Signature: void __cdecl shape_superopt_cpp_FUN_005d8390(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005cbec0
-    Address: 0x005cbec0  File: shape/superopt.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000004, in_stack_00000004
-    Signature: int __cdecl shape_superopt_cpp_FUN_005cbec0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005c7fb0
-    Address: 0x005c7fb0  File: shape/superopt.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c
-    Signature: int __cdecl shape_superopt_cpp_FUN_005c7fb0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005d8440
-    Address: 0x005d8440  File: shape/superopt.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000014, in_stack_00000018, in_stack_0000001c, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_0000000c, in_stack_00000004, in_stack_00000010, in_stack_00000004, in_stack_00000014, in_stack_00000004, in_stack_00000018, in_stack_00000004, in_stack_0000001c
-    Signature: void __cdecl shape_superopt_cpp_FUN_005d8440(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  COptimize
-    Address: 0x005d7140  File: shape/superopt.cpp
-    Evidence: in_stack_00000004, in_stack_00000004
-    Signature: double __cdecl shape_superopt_cpp_COptimize_FUN_005d7140(COptimize *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005d8270
-    Address: 0x005d8270  File: shape/superopt.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_00000004, in_stack_0000000c, in_stack_00000004, in_stack_0000000c, in_stack_00000008, in_stack_00000004, in_stack_0000000c, in_stack_00000004, in_stack_0000000c, in_stack_00000008, in_stack_00000004, in_stack_0000000c, in_stack_00000004, in_stack_0000000c, in_stack_00000008
-    Signature: double * __cdecl shape_superopt_cpp_FUN_005d8270(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005cb3a0
-    Address: 0x005cb3a0  File: shape/superopt.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_fffffe80, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_0000000c, in_stack_00000008, in_stack_00000008, in_stack_0000000c, in_stack_fffffe80, in_stack_fffffe80, in_stack_fffffe80, in_stack_fffffe80, in_stack_fffffe80, in_stack_fffffe80, in_stack_fffffe80, in_stack_fffffe80, in_stack_0000000c, in_stack_0000000c
-    Signature: int __cdecl shape_superopt_cpp_FUN_005cb3a0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005c9100
-    Address: 0x005c9100  File: shape/superopt.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_0000000c, in_stack_00000008, in_stack_0000000c, in_stack_00000008
-    Signature: int __cdecl shape_superopt_cpp_FUN_005c9100(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005c79a0
-    Address: 0x005c79a0  File: shape/superopt.cpp
-    Evidence: in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004
-    Signature: void __cdecl shape_superopt_cpp_FUN_005c79a0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  BonesAndPointsCheck
-    Address: 0x005d7e00  File: shape/superopt.cpp
-    Evidence: in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004
-    Signature: void __cdecl shape_superopt_cpp_BonesAndPointsCheck_FUN_005d7e00(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005cbe20
-    Address: 0x005cbe20  File: shape/superopt.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_0000000c, in_stack_0000000c, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_0000000c, in_stack_00000004, in_stack_00000004
-    Signature: void __cdecl shape_superopt_cpp_FUN_005cbe20(void)
-    Suggested: Signature is missing stack parameters entirely
-
   CPoly_rayPlaneIntersect
     Address: 0x005d0ce0  File: shape/superopt.cpp
-    Evidence: in_stack_00000004, in_stack_fffffff0, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_fffffff0
+    Evidence: in_stack_fffffff0, in_stack_fffffff0
     Signature: double __cdecl shape_superopt_cpp_CPoly_rayPlaneIntersect_FUN_005d0ce0(CPoly *this_ptr,CVec *ray_origin,CVec *ray_dir)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005cbf00
-    Address: 0x005cbf00  File: shape/superopt.cpp
-    Evidence: in_stack_00000004, in_stack_00000004
-    Signature: int __cdecl shape_superopt_cpp_FUN_005cbf00(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005d81c0
-    Address: 0x005d81c0  File: shape/superopt.cpp
-    Evidence: in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004
-    Signature: void __cdecl shape_superopt_cpp_FUN_005d81c0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005d84d0
-    Address: 0x005d84d0  File: shape/superopt.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008
-    Signature: void __cdecl shape_superopt_cpp_FUN_005d84d0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005cbf10
-    Address: 0x005cbf10  File: shape/superopt.cpp
-    Evidence: in_stack_00000004, in_stack_00000004
-    Signature: int __cdecl shape_superopt_cpp_FUN_005cbf10(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005d82e0
-    Address: 0x005d82e0  File: shape/superopt.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008
-    Signature: int __cdecl shape_superopt_cpp_FUN_005d82e0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005c9500
-    Address: 0x005c9500  File: shape/superopt.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004
-    Signature: int __cdecl shape_superopt_cpp_FUN_005c9500(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005c91e0
-    Address: 0x005c91e0  File: shape/superopt.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_0000000c, in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_00000008, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c
-    Signature: uint __cdecl shape_superopt_cpp_FUN_005c91e0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005c84c0
-    Address: 0x005c84c0  File: shape/superopt.cpp
-    Evidence: in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004
-    Signature: int __cdecl shape_superopt_cpp_FUN_005c84c0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  COptimize
-    Address: 0x005d7170  File: shape/superopt.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_0000000c
-    Signature: void __cdecl shape_superopt_cpp_COptimize_FUN_005d7170(COptimize *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005c8160
-    Address: 0x005c8160  File: shape/superopt.cpp
-    Evidence: in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004
-    Signature: void __cdecl shape_superopt_cpp_FUN_005c8160(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005c9aa0
-    Address: 0x005c9aa0  File: shape/superopt.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000014, in_stack_00000018, in_stack_0000001c, in_stack_00000004, in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_00000018, in_stack_00000010, in_stack_00000018, in_stack_00000010, in_stack_00000018, in_stack_00000010, in_stack_00000018, in_stack_00000010, in_stack_00000018, in_stack_00000010, in_stack_00000018, in_stack_00000018, in_stack_0000001c, in_stack_00000014, in_stack_0000001c, in_stack_0000001c, in_stack_00000014, in_stack_0000001c, in_stack_00000014, in_stack_0000001c, in_stack_00000014, in_stack_0000001c, in_stack_00000014, in_stack_0000001c, in_stack_0000001c, in_stack_00000014, in_stack_0000001c, in_stack_00000014, in_stack_0000001c, in_stack_00000014, in_stack_0000001c, in_stack_00000014, in_stack_0000001c, in_stack_0000001c, in_stack_00000014, in_stack_0000001c, in_stack_0000001c, in_stack_0000001c, in_stack_00000018, in_stack_00000010, in_stack_00000018, in_stack_00000010, in_stack_00000018, in_stack_00000010, in_stack_00000018, in_stack_00000010, in_stack_00000018, in_stack_00000010, in_stack_00000018, in_stack_00000018, in_stack_0000001c, in_stack_00000014, in_stack_0000001c, in_stack_00000014, in_stack_0000001c, in_stack_00000014, in_stack_0000001c, in_stack_0000001c, in_stack_00000018, in_stack_00000010, in_stack_00000018, in_stack_00000010, in_stack_00000018, in_stack_00000010, in_stack_00000018, in_stack_00000018, in_stack_00000004
-    Signature: void __cdecl shape_superopt_cpp_FUN_005c9aa0(void)
     Suggested: Signature is missing stack parameters entirely
 
   distancePointToSegmentXY
@@ -3806,64 +3127,16 @@ Unresolved stack parameters (missing from signature) (497)
     Signature: double __cdecl shape_superopt_cpp_distancePointToSegmentXY_FUN_005d64a0(CVector3d *segStart,CVector3d *segEnd,CVector3d *point)
     Suggested: Signature is missing stack parameters entirely
 
-  FUN_005c8e70
-    Address: 0x005c8e70  File: shape/superopt.cpp
-    Evidence: in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004
-    Signature: int __cdecl shape_superopt_cpp_FUN_005c8e70(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005d8710
-    Address: 0x005d8710  File: shape/superopt.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008
-    Signature: void __cdecl shape_superopt_cpp_FUN_005d8710(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005d8470
-    Address: 0x005d8470  File: shape/superopt.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008
-    Signature: void __cdecl shape_superopt_cpp_FUN_005d8470(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  COptimize
-    Address: 0x005d7190  File: shape/superopt.cpp
-    Evidence: in_stack_00000004, in_stack_00000004
-    Signature: double __cdecl shape_superopt_cpp_COptimize_FUN_005d7190(COptimize *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005d8230
-    Address: 0x005d8230  File: shape/superopt.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004
-    Signature: void __cdecl shape_superopt_cpp_FUN_005d8230(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005ca590
-    Address: 0x005ca590  File: shape/superopt.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_0000000c, in_stack_0000000c, in_stack_00000008, in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_0000000c, in_stack_0000000c
-    Signature: int __cdecl shape_superopt_cpp_FUN_005ca590(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  COptimize
-    Address: 0x005d70f0  File: shape/superopt.cpp
-    Evidence: in_stack_00000004, in_stack_00000004
-    Signature: double __cdecl shape_superopt_cpp_COptimize_FUN_005d70f0(COptimize *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
   getSignedTriangleArea2D
     Address: 0x005d6640  File: shape/superopt.cpp
     Evidence: in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004
     Signature: double __cdecl shape_superopt_cpp_getSignedTriangleArea2D_FUN_005d6640(CVector2d *p1,CVector2d *p2,CVector2d *p3)
     Suggested: Signature is missing stack parameters entirely
 
-  FUN_005d84a0
-    Address: 0x005d84a0  File: shape/superopt.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008
-    Signature: void __cdecl shape_superopt_cpp_FUN_005d84a0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005c9340
-    Address: 0x005c9340  File: shape/superopt.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_0000000c, in_stack_00000008, in_stack_00000008, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c
-    Signature: void __cdecl shape_superopt_cpp_FUN_005c9340(void)
+  COptimize_exportOptimizeGeometry
+    Address: 0x005d7e00  File: shape/superopt.cpp
+    Evidence: in_stack_ffffffc4, in_stack_ffffffc4, in_stack_ffffffc4, in_stack_ffffffc4
+    Signature: void __cdecl shape_superopt_cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00(COptimize *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
   rayPlaneIntersect
@@ -3872,70 +3145,10 @@ Unresolved stack parameters (missing from signature) (497)
     Signature: double __cdecl shape_superopt_cpp_rayPlaneIntersect_FUN_005d6500(CVector3d *ray_origin,CVector3d *ray_dir,CVector3d *plane_point,CVector3d *plane_normal)
     Suggested: Signature is missing stack parameters entirely
 
-  FUN_005d8190
-    Address: 0x005d8190  File: shape/superopt.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008
-    Signature: void __cdecl shape_superopt_cpp_FUN_005d8190(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  COptimize
-    Address: 0x005d71e0  File: shape/superopt.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_00000008, in_stack_0000000c
-    Signature: int __cdecl shape_superopt_cpp_COptimize_FUN_005d71e0(COptimize *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005d8570
-    Address: 0x005d8570  File: shape/superopt.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000008, in_stack_00000004
-    Signature: void __cdecl shape_superopt_cpp_FUN_005d8570(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  COptimize
-    Address: 0x005d7460  File: shape/superopt.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_00000008, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c
-    Signature: void __cdecl shape_superopt_cpp_COptimize_FUN_005d7460(COptimize *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005d83d0
-    Address: 0x005d83d0  File: shape/superopt.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl shape_superopt_cpp_FUN_005d83d0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005cbf20
-    Address: 0x005cbf20  File: shape/superopt.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_0000000c, in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_0000000c
-    Signature: int __cdecl shape_superopt_cpp_FUN_005cbf20(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005d8330
-    Address: 0x005d8330  File: shape/superopt.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008
-    Signature: void __cdecl shape_superopt_cpp_FUN_005d8330(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  COptimize
-    Address: 0x005d76e0  File: shape/superopt.cpp
-    Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl shape_superopt_cpp_COptimize_FUN_005d76e0(COptimize *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  COptimize
-    Address: 0x005d70d0  File: shape/superopt.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_0000000c
-    Signature: void __cdecl shape_superopt_cpp_COptimize_FUN_005d70d0(COptimize *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005d85a0
-    Address: 0x005d85a0  File: shape/superopt.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008
-    Signature: void __cdecl shape_superopt_cpp_FUN_005d85a0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005d86a0
-    Address: 0x005d86a0  File: shape/superopt.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008
-    Signature: int __cdecl shape_superopt_cpp_FUN_005d86a0(void)
+  CComplexPolygon_isConvex
+    Address: 0x005cb3a0  File: shape/superopt.cpp
+    Evidence: in_stack_fffffe80, in_stack_fffffe80, in_stack_fffffe80, in_stack_fffffe80, in_stack_fffffe80, in_stack_fffffe80, in_stack_fffffe80, in_stack_fffffe80, in_stack_fffffe80
+    Signature: int __cdecl shape_superopt_cpp_CComplexPolygon_isConvex_FUN_005cb3a0(CComplexPolygon *this_ptr,SExpandedEdge *edges,int edge_count)
     Suggested: Signature is missing stack parameters entirely
 
   getRegistryStringValue
@@ -3953,7 +3166,7 @@ Undefined types in variables (2274)
     Locals:  local_440 (undefined8), local_438 (undefined8), local_430 (undefined8), local_428 (undefined4), local_424 (undefined4), local_420 (undefined4), local_41c (undefined4), local_418 (undefined4), local_414 (undefined4), local_410 (undefined4), local_40c (undefined4), local_408 (undefined4), local_404 (undefined4), local_400 (undefined4), local_3f8 (undefined4), local_3f4 (undefined4), local_3f0 (undefined4), local_3ec (undefined4), local_3e8 (undefined4), local_3e4 (undefined4), local_3e0 (undefined4), local_3dc (undefined4), local_3d8 (undefined4), local_3d0 (undefined4), local_3cc (undefined4), local_3b0 (undefined4), local_3ac (undefined4), local_3a8 (undefined4), local_3a4 (undefined4), local_3a0 (undefined4), local_39c (undefined4), local_398 (undefined4), local_394 (undefined4), local_390 (undefined4), local_38c (undefined4), local_388 (undefined4), local_384 (undefined4), local_380 (undefined4), local_37c (undefined4), local_378 (undefined4), local_374 (undefined4), local_370 (undefined4), local_36c (undefined4), local_368 (undefined4), local_364 (undefined4), local_360 (undefined4), local_35c (undefined4), local_358 (undefined4), local_354 (undefined4), local_350 (undefined4), local_34c (undefined4), local_348 (undefined4), local_344 (undefined4), local_340 (undefined4), local_33c (undefined4), local_338 (undefined4), local_334 (undefined4), local_330 (undefined4), local_32c (undefined4), local_328 (undefined4), local_324 (undefined4), local_320 (undefined4), local_31c (undefined4), local_318 (undefined4), local_314 (undefined4), local_310 (undefined4), local_30c (undefined4), local_308 (undefined4), local_304 (undefined4), local_300 (undefined4), local_2fc (undefined1), local_2f0 (undefined4), local_2ec (undefined4), local_2e8 (undefined4), local_2e4 (undefined4), local_2e0 (undefined4), local_2dc (undefined4), local_2d8 (undefined4), local_2d4 (undefined4), local_2d0 (undefined4), local_2cc (undefined1), local_2c0 (undefined1), local_2b4 (undefined4), local_2b0 (undefined4), local_2ac (undefined4), local_2a8 (undefined4), local_2a4 (undefined4), local_2a0 (undefined4), local_29c (undefined4), local_298 (undefined4), local_294 (undefined4), local_290 (undefined4), local_28c (undefined4), local_288 (undefined4), local_284 (undefined1), local_278 (undefined4), local_274 (undefined4), local_270 (undefined4), local_26c (undefined4), local_268 (undefined4), local_264 (undefined4), local_260 (undefined4), local_25c (undefined4), local_258 (undefined4), local_254 (undefined4), local_250 (undefined4), local_24c (undefined4), local_248 (undefined4), local_244 (undefined4), local_240 (undefined4), local_23c (undefined4), local_238 (undefined4), local_234 (undefined4), local_230 (undefined4), local_22c (undefined4), local_228 (undefined4), local_224 (undefined4), local_220 (undefined4), local_21c (undefined4), local_218 (undefined4), local_214 (undefined4), local_210 (undefined4), local_20c (undefined1), local_200 (undefined4), local_1fc (undefined4), local_1f8 (undefined4), local_1f4 (undefined1), local_1e8 (undefined4), local_1e4 (undefined4), local_1e0 (undefined4), local_1dc (undefined4), local_1d8 (undefined4), local_1d4 (undefined4), local_1d0 (undefined4), local_1cc (undefined4), local_1c8 (undefined4), local_1c4 (undefined1), local_1b8 (undefined4), local_1b4 (undefined4), local_1b0 (undefined4), local_1ac (undefined4), local_1a8 (undefined4), local_1a4 (undefined4), local_1a0 (undefined4), local_19c (undefined4), local_198 (undefined4), local_194 (undefined4), local_190 (undefined4), local_18c (undefined4), local_188 (undefined1), local_17c (undefined4), local_178 (undefined4), local_174 (undefined4), local_170 (undefined1), local_164 (undefined4), local_160 (undefined4), local_15c (undefined4), local_158 (undefined4), local_154 (undefined4), local_150 (undefined4), local_14c (undefined4), local_148 (undefined4), local_144 (undefined4), local_140 (undefined4), local_13c (undefined4), local_138 (undefined4), local_134 (undefined4), local_130 (undefined4), local_12c (undefined4), local_128 (undefined4), local_124 (undefined4), local_120 (undefined4), local_11c (undefined4), local_118 (undefined4), local_114 (undefined4), local_110 (undefined4), local_10c (undefined4), local_108 (undefined4), local_104 (undefined4), local_100 (undefined4), local_fc (undefined4), local_f8 (undefined1), local_ec (undefined4), local_e8 (undefined4), local_e4 (undefined4), local_e0 (undefined4), local_dc (undefined4), local_d8 (undefined4), local_d4 (undefined4), local_d0 (undefined4), local_cc (undefined4), local_c8 (undefined4), local_c4 (undefined4), local_c0 (undefined4), local_bc (undefined4), local_b8 (undefined4), local_b4 (undefined4), local_b0 (undefined4), local_ac (undefined4), local_a8 (undefined4), local_a4 (undefined4), local_a0 (undefined4), local_9c (undefined4), local_98 (undefined4), local_94 (undefined4), local_90 (undefined4), local_8c (undefined4), local_88 (undefined4), local_84 (undefined4), local_80 (undefined4), local_7c (undefined4), local_78 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CSkeleton
+  CSkeleton_importSkeletonFile
     Address: 0x00592690  File: core/skeledit.cpp
     Locals:  local_ded4 (undefined4), local_ded0 (undefined), local_decf (undefined1), local_a9b0 (undefined), local_748c (undefined4), local_7488 (undefined), local_7434 (undefined), local_7428 (undefined4), local_7418 (undefined4), local_7408 (undefined4), local_3f68 (undefined), local_2ca8 (undefined4), local_2540 (undefined), local_2360 (undefined), local_21d0 (undefined), local_21ca (undefined), local_21c8 (undefined), local_21c7 (undefined), local_20a4 (undefined), local_20a2 (undefined), local_20a1 (undefined), local_20a0 (undefined1), local_209e (undefined), local_209d (undefined1), local_209c (undefined1), local_209b (undefined), local_209a (undefined1), local_2099 (undefined1), local_2098 (undefined), local_2097 (undefined), local_2096 (undefined1), local_2095 (undefined1), local_2093 (undefined), local_2092 (undefined), local_2091 (undefined1), local_2090 (undefined1), local_1f78 (undefined), local_1f77 (undefined1), local_1e74 (undefined), local_1d70 (undefined), local_1c70 (undefined), local_1b70 (undefined), local_1a70 (undefined), local_1970 (undefined), local_1870 (undefined), local_1770 (undefined), local_1670 (undefined), local_1570 (undefined), local_1470 (undefined), local_1370 (undefined), local_1270 (undefined), local_1170 (undefined), local_1070 (undefined), local_f70 (undefined), local_e70 (undefined), local_d70 (undefined), local_c70 (undefined), local_b70 (undefined), local_aa8 (undefined), local_9e0 (undefined), local_918 (undefined), local_850 (undefined), local_84f (undefined), local_7ec (undefined), local_788 (undefined), local_724 (undefined), local_6c0 (undefined), local_65c (undefined), local_5f8 (undefined), local_594 (undefined), local_530 (undefined), local_4cc (undefined), local_468 (undefined), local_434 (undefined), local_404 (undefined), local_3d4 (undefined), local_3a4 (undefined), local_374 (undefined), local_344 (undefined), local_314 (undefined), local_2e4 (undefined), local_2b4 (undefined), local_28c (undefined), local_264 (undefined), local_244 (undefined), local_224 (undefined), local_214 (undefined), local_204 (undefined4), local_200 (undefined4), local_1fc (undefined4), local_1f8 (undefined4), local_1f4 (undefined4), local_1f0 (undefined4), local_1ec (undefined4), local_1e8 (undefined4), local_1e4 (undefined4), local_1e0 (undefined4), local_1dc (undefined4), local_1d8 (undefined4), local_1d4 (undefined4), local_1d0 (undefined4), local_1cc (undefined4), local_1c8 (undefined4), local_1c4 (undefined4), local_1c0 (undefined4), local_1bc (undefined4), local_1b8 (undefined4), local_1b4 (undefined4), local_1b0 (undefined), local_1a4 (undefined4), local_1a0 (undefined4), local_19c (undefined4), local_198 (undefined4), local_194 (undefined4), local_190 (undefined4), local_18c (undefined4), local_188 (undefined4), local_184 (undefined4), local_180 (undefined4), local_17c (undefined4), local_178 (undefined4), local_174 (undefined4), local_170 (undefined4), local_16c (undefined4), local_168 (undefined4), local_164 (undefined4), local_160 (undefined4), local_15c (undefined4), local_158 (undefined4), local_154 (undefined4), local_150 (undefined4), local_14c (undefined4), local_148 (undefined4), local_144 (undefined4), local_140 (undefined4), local_13c (undefined4), local_138 (undefined4), local_134 (undefined4), local_130 (undefined4), local_12c (undefined8), local_124 (undefined8), local_11c (undefined4), local_118 (undefined4), local_114 (undefined4), local_110 (undefined4), local_10c (undefined4), local_108 (undefined4), local_104 (undefined4), local_100 (undefined4), local_fc (undefined4), local_f8 (undefined4), local_f4 (undefined4), local_f0 (undefined4), local_ec (undefined4), local_e8 (undefined4), local_e4 (undefined4), local_e0 (undefined4), local_dc (undefined4), local_d8 (undefined4), local_d4 (undefined4), local_d0 (undefined4), local_cc (undefined4), local_c8 (undefined4), local_c4 (undefined4), local_c0 (undefined4), local_bc (undefined), local_b8 (undefined4), local_b4 (undefined4), local_b0 (undefined4), local_ac (undefined4), local_a8 (undefined4), local_a4 (undefined4), local_a0 (undefined4), local_9c (undefined4), local_98 (undefined4), local_94 (undefined4), local_90 (undefined4), local_8c (undefined4), local_88 (undefined4), local_84 (undefined4), local_80 (undefined4), local_7c (undefined4), local_78 (undefined4), local_74 (undefined4), local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined), local_2c (undefined4), local_28 (undefined), local_24 (undefined), local_20 (undefined), local_1c (undefined), local_18 (undefined), local_14 (undefined), local_10 (undefined)
     Suggested: Resolve undefined types to concrete types
@@ -4053,7 +3266,7 @@ Undefined types in variables (2274)
     Locals:  local_1b0 (undefined8), local_1a8 (undefined8), local_1a0 (undefined8), local_198 (undefined4), local_194 (undefined4), local_190 (undefined4), local_18c (undefined4), local_188 (undefined4), local_184 (undefined4), local_180 (undefined4), local_17c (undefined4), local_178 (undefined4), local_174 (undefined4), local_170 (undefined4), local_16c (undefined4), local_168 (undefined4), local_164 (undefined4), local_160 (undefined4), local_15c (undefined4), local_158 (undefined4), local_154 (undefined4), local_150 (undefined1), local_144 (undefined4), local_140 (undefined4), local_13c (undefined4), local_134 (undefined4), local_130 (undefined4), local_114 (undefined4), local_110 (undefined4), local_10c (undefined4), local_108 (undefined4), local_104 (undefined4), local_100 (undefined4), local_fc (undefined4), local_f8 (undefined4), local_f4 (undefined4), local_f0 (undefined4), local_ec (undefined4), local_e8 (undefined4), local_e4 (undefined4), local_e0 (undefined4), local_dc (undefined4), local_d8 (undefined4), local_d4 (undefined4), local_d0 (undefined4), local_cc (undefined4), local_c8 (undefined4), local_c4 (undefined4), local_c0 (undefined4), local_bc (undefined4), local_b8 (undefined4), local_b4 (undefined4), local_b0 (undefined4), local_ac (undefined4), local_a8 (undefined4), local_a4 (undefined4), local_a0 (undefined4), local_9c (undefined4), local_98 (undefined4), local_94 (undefined4), local_90 (undefined4), local_8c (undefined4), local_88 (undefined4), local_84 (undefined4), local_80 (undefined4), local_7c (undefined4), local_78 (undefined4), local_74 (undefined4), local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CDeformableModel
+  CDeformableModel_buildFromPosFile
     Address: 0x0058c190  File: core/skeledit.cpp
     Locals:  local_a228 (undefined4), local_a224 (undefined), local_6d04 (undefined), local_37e0 (undefined), local_2520 (undefined), local_1260 (undefined), local_eb8 (undefined), local_d28 (undefined), local_c24 (undefined), local_b20 (undefined), local_b1f (undefined1), local_a1c (undefined), local_918 (undefined), local_818 (undefined), local_718 (undefined), local_618 (undefined), local_518 (undefined), local_418 (undefined), local_350 (undefined), local_338 (undefined4), local_334 (undefined4), local_330 (undefined4), local_32c (undefined4), local_328 (undefined4), local_324 (undefined4), local_320 (undefined4), local_318 (undefined4), local_2dc (undefined), local_2cc (undefined4), local_2c8 (undefined4), local_268 (undefined), local_1f4 (undefined), local_1f0 (undefined4), local_1e8 (undefined4), local_1e0 (undefined4), local_1dc (undefined4), local_1d8 (undefined4), local_1d4 (undefined4), local_1d0 (undefined4), local_1cc (undefined4), local_1c8 (undefined4), local_1c4 (undefined4), local_1bc (undefined4), local_180 (undefined), local_11c (undefined), local_ec (undefined4), local_d8 (undefined), local_c4 (undefined), local_bc (undefined), local_b8 (undefined4), local_b4 (undefined), local_b0 (undefined4), local_ac (undefined4), local_a8 (undefined4), local_a4 (undefined4), local_a0 (undefined4), local_9c (undefined4), local_98 (undefined4), local_94 (undefined4), local_90 (undefined4), local_8c (undefined4), local_88 (undefined4), local_84 (undefined4), local_80 (undefined4), local_7c (undefined4), local_78 (undefined4), local_74 (undefined4), local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined), local_1c (undefined4), local_18 (undefined), local_14 (undefined)
     Suggested: Resolve undefined types to concrete types
@@ -4083,12 +3296,12 @@ Undefined types in variables (2274)
     Locals:  local_158 (undefined4), local_154 (undefined4), local_150 (undefined4), local_14c (undefined4), local_148 (undefined4), local_144 (undefined4), local_140 (undefined4), local_13c (undefined4), local_138 (undefined4), local_134 (undefined4), local_130 (undefined4), local_12c (undefined4), local_128 (undefined4), local_124 (undefined4), local_120 (undefined4), local_11c (undefined4), local_118 (undefined4), local_114 (undefined4), local_110 (undefined4), local_10c (undefined4), local_108 (undefined4), local_104 (undefined4), local_100 (undefined4), local_fc (undefined4), local_f8 (undefined4), local_f4 (undefined4), local_f0 (undefined4), local_ec (undefined4), local_e8 (undefined4), local_e4 (undefined4), local_e0 (undefined4), local_dc (undefined4), local_d8 (undefined4), local_d4 (undefined4), local_d0 (undefined4), local_cc (undefined4), local_c8 (undefined4), local_c4 (undefined4), local_c0 (undefined4), local_bc (undefined4), local_b8 (undefined4), local_b4 (undefined4), local_b0 (undefined4), local_ac (undefined4), local_a8 (undefined4), local_a4 (undefined4), local_a0 (undefined4), local_9c (undefined4), local_98 (undefined4), local_94 (undefined4), local_90 (undefined4), local_8c (undefined4), local_88 (undefined4), local_84 (undefined4), local_80 (undefined4), local_7c (undefined4), local_78 (undefined4), local_74 (undefined4), local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_005ca590
+  CComplexPolygon_closeSplitBoundary
     Address: 0x005ca590  File: shape/superopt.cpp
     Locals:  local_330 (undefined8), local_328 (undefined8), local_320 (undefined8), local_318 (undefined8), local_310 (undefined8), local_308 (undefined8), local_300 (undefined8), local_2f8 (undefined8), local_2f0 (undefined8), local_2e8 (undefined8), local_2e0 (undefined8), local_2d8 (undefined8), local_2d0 (undefined8), local_2c8 (undefined8), local_2c0 (undefined8), local_2b8 (undefined8), local_2b0 (undefined8), local_2a8 (undefined8), local_2a0 (undefined8), local_298 (undefined8), local_290 (undefined8), local_288 (undefined8), local_280 (undefined8), local_278 (undefined8), local_270 (undefined8), local_268 (undefined8), local_260 (undefined8), local_258 (undefined8), local_250 (undefined8), local_248 (undefined8), local_240 (undefined8), local_238 (undefined8), local_230 (undefined8), local_228 (undefined8), local_220 (undefined8), local_218 (undefined8), local_210 (undefined8), local_208 (undefined8), local_200 (undefined8), local_1f8 (undefined8), local_1f0 (undefined8), local_1e8 (undefined8), local_1e0 (undefined8), local_1d8 (undefined8), local_1d0 (undefined8), local_1c8 (undefined8), local_1c0 (undefined8), local_1b8 (undefined8), local_1b0 (undefined8), local_1a8 (undefined8), local_1a0 (undefined8), local_198 (undefined8), local_190 (undefined8), local_188 (undefined8), local_180 (undefined8), local_178 (undefined8), local_170 (undefined8), local_168 (undefined8), local_160 (undefined8), local_158 (undefined8), local_150 (undefined8), local_148 (undefined8), local_140 (undefined8), local_138 (undefined8), local_130 (undefined8), local_128 (undefined8), local_120 (undefined8), local_118 (undefined8), local_110 (undefined8), local_108 (undefined8), local_100 (undefined8), local_f8 (undefined8), local_f0 (undefined8), local_e8 (undefined8), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_005cb3a0
+  CComplexPolygon_isConvex
     Address: 0x005cb3a0  File: shape/superopt.cpp
     Locals:  local_180 (undefined8), local_178 (undefined8), local_170 (undefined8), local_168 (undefined8), local_160 (undefined8), local_158 (undefined8), local_150 (undefined8), local_148 (undefined8), local_140 (undefined8), local_138 (undefined8), local_130 (undefined8), local_128 (undefined4), local_124 (undefined4), local_120 (undefined4), local_11c (undefined4), local_118 (undefined4), local_114 (undefined4), local_110 (undefined4), local_10c (undefined4), local_108 (undefined4), local_104 (undefined4), local_100 (undefined4), local_fc (undefined4), local_f8 (undefined4), local_f4 (undefined4), local_f0 (undefined4), local_ec (undefined4), local_e8 (undefined4), local_e4 (undefined4), local_e0 (undefined4), local_dc (undefined4), local_d8 (undefined4), local_d4 (undefined4), local_d0 (undefined4), local_cc (undefined4), local_c8 (undefined4), local_c4 (undefined4), local_c0 (undefined4), local_bc (undefined4), local_b8 (undefined4), local_b4 (undefined4), local_b0 (undefined4), local_ac (undefined4), local_a8 (undefined4), local_a4 (undefined4), local_a0 (undefined4), local_9c (undefined4), local_98 (undefined4), local_94 (undefined4), local_90 (undefined4), local_8c (undefined4), local_88 (undefined4), local_84 (undefined4), local_80 (undefined4), local_7c (undefined4), local_78 (undefined4), local_74 (undefined4), local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined8), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -4133,7 +3346,7 @@ Undefined types in variables (2274)
     Locals:  local_160 (undefined), local_15c (undefined4), local_158 (undefined4), local_154 (undefined4), local_150 (undefined4), local_14c (undefined4), local_148 (undefined4), local_144 (undefined4), local_140 (undefined4), local_13c (undefined4), local_138 (undefined4), local_134 (undefined4), local_130 (undefined4), local_12c (undefined4), local_128 (undefined4), local_124 (undefined4), local_120 (undefined4), local_11c (undefined4), local_118 (undefined4), local_114 (undefined4), local_110 (undefined4), local_10c (undefined4), local_108 (undefined), local_fc (undefined4), local_f8 (undefined4), local_f4 (undefined4), local_f0 (undefined), local_e4 (undefined4), local_e0 (undefined4), local_dc (undefined4), local_d8 (undefined4), local_d4 (undefined4), local_d0 (undefined4), local_cc (undefined), local_c0 (undefined4), local_bc (undefined4), local_b8 (undefined4), local_b4 (undefined), local_a8 (undefined4), local_a4 (undefined4), local_a0 (undefined4), local_9c (undefined4), local_98 (undefined4), local_94 (undefined4), local_78 (undefined4), local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_005c9500
+  CComplexPolygon_splitByDimensions
     Address: 0x005c9500  File: shape/superopt.cpp
     Locals:  local_188 (undefined8), local_180 (undefined8), local_178 (undefined8), local_170 (undefined), local_158 (undefined), local_140 (undefined4), local_13c (undefined4), local_138 (undefined4), local_134 (undefined4), local_130 (undefined4), local_12c (undefined4), local_128 (undefined4), local_124 (undefined4), local_120 (undefined4), local_11c (undefined4), local_118 (undefined4), local_114 (undefined4), local_110 (undefined4), local_10c (undefined4), local_108 (undefined4), local_104 (undefined4), local_100 (undefined8), local_f8 (undefined8), local_f0 (undefined4), local_ec (undefined4), local_e8 (undefined4), local_e4 (undefined4), local_e0 (undefined8), local_d8 (undefined8), local_d0 (undefined8), local_c8 (undefined4), local_c4 (undefined4), local_c0 (undefined8), local_b8 (undefined4), local_b4 (undefined4), local_b0 (undefined4), local_ac (undefined4), local_a8 (undefined4), local_a4 (undefined4), local_a0 (undefined4), local_9c (undefined4), local_98 (undefined4), local_94 (undefined4), local_90 (undefined4), local_8c (undefined4), local_88 (undefined4), local_84 (undefined4), local_80 (undefined4), local_7c (undefined4), local_78 (undefined4), local_74 (undefined4), local_70 (undefined4), local_6c (undefined4), local_68 (undefined), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined8), local_30 (undefined8), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined)
     Suggested: Resolve undefined types to concrete types
@@ -4178,14 +3391,14 @@ Undefined types in variables (2274)
     Locals:  local_118 (undefined4), local_114 (undefined4), local_110 (undefined4), local_10c (undefined4), local_108 (undefined4), local_104 (undefined4), local_100 (undefined4), local_fc (undefined4), local_f8 (undefined4), local_f4 (undefined4), local_f0 (undefined4), local_ec (undefined4), local_e8 (undefined4), local_e4 (undefined4), local_e0 (undefined4), local_dc (undefined4), local_d8 (undefined4), local_d4 (undefined4), local_d0 (undefined4), local_cc (undefined4), local_c8 (undefined4), local_c4 (undefined4), local_c0 (undefined4), local_bc (undefined4), local_b8 (undefined4), local_b4 (undefined4), local_b0 (undefined4), local_ac (undefined4), local_a8 (undefined4), local_a4 (undefined4), local_a0 (undefined4), local_9c (undefined4), local_98 (undefined4), local_94 (undefined4), local_90 (undefined4), local_8c (undefined4), local_88 (undefined4), local_84 (undefined4), local_80 (undefined4), local_7c (undefined4), local_78 (undefined4), local_74 (undefined4), local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
+  CComplexPolygon_splitEdgesByPlane
+    Address: 0x005c9aa0  File: shape/superopt.cpp
+    Locals:  local_1e0 (undefined8), local_1d8 (undefined8), local_1d0 (undefined8), local_1c8 (undefined8), local_1c0 (undefined8), local_1b8 (undefined8), local_1b0 (undefined8), local_1a8 (undefined8), local_1a0 (undefined8), local_198 (undefined8), local_190 (undefined8), local_188 (undefined8), local_180 (undefined8), local_178 (undefined8), local_170 (undefined8), local_168 (undefined8), local_160 (undefined8), local_158 (undefined8), local_150 (undefined8), local_148 (undefined8), local_140 (undefined8), local_138 (undefined8), local_130 (undefined8), local_128 (undefined8), local_120 (undefined8), local_118 (undefined8), local_110 (undefined8), local_108 (undefined8), local_100 (undefined8), local_f8 (undefined4), local_f4 (undefined4), local_f0 (undefined4), local_ec (undefined4), local_e8 (undefined4), local_e4 (undefined4), local_e0 (undefined8), local_d8 (undefined8), local_d0 (undefined8), local_c8 (undefined8), local_c0 (undefined8), local_b8 (undefined8), local_b0 (undefined4), local_ac (undefined4), local_a8 (undefined4), local_a4 (undefined4), local_a0 (undefined8), local_98 (undefined8), local_90 (undefined8), local_88 (undefined8), local_80 (undefined8), local_78 (undefined8), local_70 (undefined8), local_68 (undefined8), local_60 (undefined8), local_58 (undefined8), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
   CPoly_transform
     Address: 0x005ccc30  File: shape/superopt.cpp
     Locals:  local_1d0 (undefined8), local_1c8 (undefined8), local_1c0 (undefined8), local_1b8 (undefined8), local_1b0 (undefined8), local_1a8 (undefined8), local_1a0 (undefined4), local_19c (undefined4), local_198 (undefined4), local_194 (undefined4), local_190 (undefined4), local_18c (undefined4), local_188 (undefined8), local_180 (undefined8), local_178 (undefined8), local_170 (undefined8), local_168 (undefined8), local_160 (undefined8), local_158 (undefined8), local_150 (undefined8), local_148 (undefined8), local_140 (undefined8), local_138 (undefined8), local_130 (undefined8), local_128 (undefined4), local_124 (undefined4), local_120 (undefined4), local_11c (undefined4), local_118 (undefined4), local_114 (undefined4), local_110 (undefined8), local_108 (undefined8), local_100 (undefined8), local_f8 (undefined8), local_f0 (undefined8), local_e8 (undefined8), local_e0 (undefined4), local_dc (undefined4), local_d8 (undefined4), local_d4 (undefined4), local_d0 (undefined4), local_cc (undefined4), local_c8 (undefined8), local_c0 (undefined8), local_b8 (undefined8), local_b0 (undefined8), local_a8 (undefined8), local_a0 (undefined8), local_98 (undefined8), local_90 (undefined8), local_88 (undefined8), local_80 (undefined8), local_78 (undefined8), local_70 (undefined8), local_68 (undefined8), local_60 (undefined8), local_58 (undefined8), local_50 (undefined8), local_48 (undefined8), local_40 (undefined8), local_38 (undefined8), local_30 (undefined8), local_28 (undefined8), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  FUN_005c9aa0
-    Address: 0x005c9aa0  File: shape/superopt.cpp
-    Locals:  local_1e0 (undefined8), local_1d8 (undefined8), local_1d0 (undefined8), local_1c8 (undefined8), local_1c0 (undefined8), local_1b8 (undefined8), local_1b0 (undefined8), local_1a8 (undefined8), local_1a0 (undefined8), local_198 (undefined8), local_190 (undefined8), local_188 (undefined8), local_180 (undefined8), local_178 (undefined8), local_170 (undefined8), local_168 (undefined8), local_160 (undefined8), local_158 (undefined8), local_150 (undefined8), local_148 (undefined8), local_140 (undefined8), local_138 (undefined8), local_130 (undefined8), local_128 (undefined8), local_120 (undefined8), local_118 (undefined8), local_110 (undefined8), local_108 (undefined8), local_100 (undefined8), local_f8 (undefined4), local_f4 (undefined4), local_f0 (undefined4), local_ec (undefined4), local_e8 (undefined4), local_e4 (undefined4), local_e0 (undefined8), local_d8 (undefined8), local_d0 (undefined8), local_c8 (undefined8), local_c0 (undefined8), local_b8 (undefined8), local_b0 (undefined4), local_ac (undefined4), local_a8 (undefined4), local_a4 (undefined4), local_a0 (undefined8), local_98 (undefined8), local_90 (undefined8), local_88 (undefined8), local_80 (undefined8), local_78 (undefined8), local_70 (undefined8), local_68 (undefined8), local_60 (undefined8), local_58 (undefined8), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CDemonSet_lightVerticies
@@ -4288,7 +3501,7 @@ Undefined types in variables (2274)
     Locals:  local_b60 (undefined8), local_b58 (undefined1), local_a54 (undefined4), local_a50 (undefined4), local_a4c (undefined4), local_a48 (undefined4), local_a44 (undefined4), local_a40 (undefined4), local_a3c (undefined4), local_a38 (undefined4), local_a34 (undefined4), local_a30 (undefined4), local_a2c (undefined4), local_a28 (undefined4), local_9d4 (undefined4), local_9d0 (undefined1), local_980 (undefined4), local_97c (undefined1), local_850 (undefined4), local_84c (undefined1), local_460 (undefined1), local_45f (undefined1), local_45d (undefined1), local_35c (undefined1), local_35b (undefined1), local_359 (undefined1), local_258 (undefined1), local_257 (undefined1), local_255 (undefined1), local_8c (undefined1), local_80 (undefined4), local_7c (undefined4), local_78 (undefined4), local_74 (undefined4), local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_005cbf90
+  CComplexPolygon_validateSubChainVisibility
     Address: 0x005cbf90  File: shape/superopt.cpp
     Locals:  local_138 (undefined8), local_130 (undefined8), local_128 (undefined8), local_120 (undefined8), local_118 (undefined8), local_110 (undefined8), local_108 (undefined8), local_100 (undefined8), local_f8 (undefined8), local_f0 (undefined8), local_e8 (undefined8), local_e0 (undefined8), local_d8 (undefined8), local_d0 (undefined8), local_c8 (undefined4), local_c4 (undefined4), local_c0 (undefined4), local_bc (undefined4), local_b8 (undefined4), local_b4 (undefined4), local_b0 (undefined4), local_ac (undefined4), local_a8 (undefined4), local_a4 (undefined4), local_a0 (undefined8), local_98 (undefined4), local_94 (undefined4), local_90 (undefined4), local_8c (undefined4), local_88 (undefined4), local_84 (undefined4), local_80 (undefined4), local_7c (undefined4), local_78 (undefined4), local_74 (undefined4), local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -4348,7 +3561,7 @@ Undefined types in variables (2274)
     Locals:  local_294 (undefined1), local_264 (undefined1), local_234 (undefined1), local_204 (undefined1), local_1d4 (undefined1), local_1a4 (undefined1), local_174 (undefined1), local_144 (undefined1), local_114 (undefined1), local_e4 (undefined1), local_b4 (undefined4), local_b0 (undefined4), local_ac (undefined4), local_a8 (undefined4), local_a4 (undefined4), local_a0 (undefined4), local_9c (undefined4), local_98 (undefined4), local_94 (undefined4), local_90 (undefined4), local_8c (undefined4), local_88 (undefined4), local_84 (undefined4), local_80 (undefined4), local_7c (undefined4), local_78 (undefined4), local_74 (undefined4), local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_005c84c0
+  CComplexPolygon_splitToConvex
     Address: 0x005c84c0  File: shape/superopt.cpp
     Locals:  local_15c (undefined8), local_154 (undefined8), local_14c (undefined8), local_144 (undefined8), local_13c (undefined8), local_134 (undefined8), local_12c (undefined4), local_128 (undefined4), local_124 (undefined4), local_120 (undefined4), local_11c (undefined4), local_118 (undefined4), local_114 (undefined1), local_fc (undefined8), local_f4 (undefined8), local_ec (undefined8), local_e4 (undefined8), local_dc (undefined8), local_d4 (undefined8), local_cc (undefined4), local_c8 (undefined4), local_c4 (undefined4), local_c0 (undefined4), local_bc (undefined4), local_b8 (undefined4), local_b4 (undefined4), local_b0 (undefined4), local_ac (undefined4), local_a8 (undefined4), local_a4 (undefined4), local_a0 (undefined4), local_9c (undefined4), local_98 (undefined4), local_94 (undefined4), local_90 (undefined4), local_8c (undefined4), local_88 (undefined4), local_84 (undefined8), local_7c (undefined8), local_74 (undefined8), local_6c (undefined1), local_54 (undefined8), local_4c (undefined8), local_44 (undefined8), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined1)
     Suggested: Resolve undefined types to concrete types
@@ -4613,7 +3826,7 @@ Undefined types in variables (2274)
     Locals:  local_108 (undefined8), local_100 (undefined8), local_f8 (undefined8), local_f0 (undefined8), local_e8 (undefined4), local_e4 (undefined8), local_dc (undefined4), local_d8 (undefined8), local_d0 (undefined4), local_cc (undefined4), local_c8 (undefined4), local_c4 (undefined4), local_c0 (undefined4), local_bc (undefined4), local_b8 (undefined1), local_68 (undefined1), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  TriListSomething
+  optimizeCubeTriList
     Address: 0x005d77a0  File: shape/superopt.cpp
     Locals:  local_180 (undefined8), local_178 (undefined8), local_170 (undefined8), local_168 (undefined4), local_164 (undefined4), local_160 (undefined4), local_15c (undefined4), local_158 (undefined8), local_150 (undefined8), local_148 (undefined8), local_140 (undefined8), local_138 (undefined8), local_130 (undefined8), local_128 (undefined4), local_124 (undefined4), local_120 (undefined4), local_11c (undefined4), local_118 (undefined4), local_114 (undefined4), local_110 (undefined4), local_10c (undefined4), local_108 (undefined4), local_100 (undefined1), local_9c (undefined1), local_58 (undefined1), local_54 (undefined4), local_4c (undefined4), local_3c (undefined8), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -4663,14 +3876,14 @@ Undefined types in variables (2274)
     Locals:  local_1e0 (undefined4), local_1dc (undefined1), local_1cc (undefined1), local_1bc (undefined1), local_1ac (undefined1), local_19c (undefined1), local_18c (undefined1), local_17c (undefined1), local_16c (undefined1), local_15c (undefined1), local_14c (undefined1), local_13c (undefined1), local_12c (undefined1), local_11c (undefined1), local_10c (undefined1), local_fc (undefined1), local_ec (undefined1), local_dc (undefined1), local_cc (undefined1), local_bc (undefined1), local_ac (undefined1), local_9c (undefined1), local_8c (undefined1), local_7c (undefined1), local_6c (undefined1), local_5c (undefined1), local_4c (undefined1), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_005c8b50
-    Address: 0x005c8b50  File: shape/superopt.cpp
-    Locals:  local_e4 (undefined4), local_e0 (undefined4), local_dc (undefined4), local_d8 (undefined4), local_d4 (undefined4), local_d0 (undefined4), local_cc (undefined8), local_c4 (undefined8), local_bc (undefined8), local_b4 (undefined4), local_b0 (undefined4), local_ac (undefined4), local_a8 (undefined4), local_a4 (undefined4), local_a0 (undefined4), local_9c (undefined8), local_94 (undefined8), local_8c (undefined8), local_84 (undefined8), local_7c (undefined8), local_74 (undefined8), local_6c (undefined1), local_54 (undefined8), local_44 (undefined8), local_3c (undefined4), local_38 (undefined4), local_34 (undefined8), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined1)
-    Suggested: Resolve undefined types to concrete types
-
-  FUN_005c8e70
+  CComplexPolygon_findBestSplitEdge
     Address: 0x005c8e70  File: shape/superopt.cpp
     Locals:  local_e4 (undefined4), local_e0 (undefined4), local_dc (undefined4), local_d8 (undefined4), local_d4 (undefined4), local_d0 (undefined4), local_cc (undefined8), local_c4 (undefined8), local_bc (undefined8), local_b4 (undefined4), local_b0 (undefined4), local_ac (undefined4), local_a8 (undefined4), local_a4 (undefined4), local_a0 (undefined4), local_9c (undefined8), local_94 (undefined8), local_8c (undefined8), local_84 (undefined8), local_7c (undefined8), local_74 (undefined8), local_6c (undefined1), local_54 (undefined8), local_44 (undefined8), local_3c (undefined8), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined1)
+    Suggested: Resolve undefined types to concrete types
+
+  CComplexPolygon_findReflexVertex
+    Address: 0x005c8b50  File: shape/superopt.cpp
+    Locals:  local_e4 (undefined4), local_e0 (undefined4), local_dc (undefined4), local_d8 (undefined4), local_d4 (undefined4), local_d0 (undefined4), local_cc (undefined8), local_c4 (undefined8), local_bc (undefined8), local_b4 (undefined4), local_b0 (undefined4), local_ac (undefined4), local_a8 (undefined4), local_a4 (undefined4), local_a0 (undefined4), local_9c (undefined8), local_94 (undefined8), local_8c (undefined8), local_84 (undefined8), local_7c (undefined8), local_74 (undefined8), local_6c (undefined1), local_54 (undefined8), local_44 (undefined8), local_3c (undefined4), local_38 (undefined4), local_34 (undefined8), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined1)
     Suggested: Resolve undefined types to concrete types
 
   configureSoundOptions
@@ -4833,7 +4046,7 @@ Undefined types in variables (2274)
     Locals:  local_ac (undefined4), local_a8 (undefined8), local_a0 (undefined8), local_98 (undefined8), local_90 (undefined4), local_8c (undefined4), local_88 (undefined4), local_84 (undefined1), local_80 (undefined4), local_78 (undefined4), local_74 (undefined4), local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_60 (undefined1), local_50 (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined1), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CDeformableModel
+  CDeformableModel_extractLodLevel
     Address: 0x0058d790  File: core/skeledit.cpp
     Locals:  local_540 (undefined8), local_538 (undefined4), local_534 (undefined4), local_530 (undefined4), local_52c (undefined4), local_528 (undefined), local_140 (undefined4), local_13c (undefined4), local_138 (undefined), local_70 (undefined), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -4928,7 +4141,7 @@ Undefined types in variables (2274)
     Locals:  local_80 (undefined4), local_78 (undefined4), local_74 (undefined4), local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_005cbb40
+  CComplexPolygon_computeWindingNormal
     Address: 0x005cbb40  File: shape/superopt.cpp
     Locals:  local_110 (undefined8), local_108 (undefined8), local_100 (undefined8), local_f8 (undefined8), local_f0 (undefined8), local_e8 (undefined8), local_e0 (undefined8), local_d8 (undefined8), local_d0 (undefined8), local_c8 (undefined8), local_c0 (undefined8), local_b8 (undefined8), local_b0 (undefined8), local_a8 (undefined8), local_a0 (undefined8), local_98 (undefined8), local_90 (undefined8), local_88 (undefined8), local_80 (undefined8), local_78 (undefined8), local_70 (undefined8), local_68 (undefined8), local_60 (undefined8), local_58 (undefined8), local_50 (undefined8), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -5138,7 +4351,7 @@ Undefined types in variables (2274)
     Locals:  local_198 (undefined8), local_190 (undefined8), local_188 (undefined8), local_180 (undefined4), local_17c (undefined4), local_178 (undefined1), local_177 (undefined1), local_114 (undefined1), local_113 (undefined1), local_b0 (undefined1), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined1), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_005c7fb0
+  CComplexPolygon_canMergeEdges
     Address: 0x005c7fb0  File: shape/superopt.cpp
     Locals:  local_a0 (undefined4), local_9c (undefined4), local_98 (undefined4), local_94 (undefined4), local_90 (undefined4), local_8c (undefined4), local_88 (undefined8), local_80 (undefined8), local_78 (undefined8), local_70 (undefined8), local_68 (undefined8), local_60 (undefined8), local_58 (undefined8), local_50 (undefined8), local_48 (undefined8), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined8), local_20 (undefined8), local_18 (undefined8)
     Suggested: Resolve undefined types to concrete types
@@ -5213,7 +4426,7 @@ Undefined types in variables (2274)
     Locals:  local_160 (undefined4), local_15c (undefined1), local_14c (undefined1), local_13c (undefined1), local_12c (undefined1), local_11c (undefined1), local_10c (undefined1), local_fc (undefined1), local_ec (undefined1), local_dc (undefined1), local_cc (undefined1), local_bc (undefined1), local_ac (undefined1), local_9c (undefined1), local_8c (undefined1), local_7c (undefined1), local_6c (undefined1), local_5c (undefined1), local_4c (undefined1), local_3c (undefined1), local_2c (undefined1), local_1c (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_0058bd00
+  CDeformableModel_importVertexAssignmentsVPH
     Address: 0x0058bd00  File: core/skeledit.cpp
     Locals:  local_110 (undefined), local_10e (undefined4), local_d8 (undefined), local_a8 (undefined), local_78 (undefined4), local_68 (undefined4), local_64 (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined), local_40 (undefined), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -5738,12 +4951,12 @@ Undefined types in variables (2274)
     Locals:  local_600 (undefined8), local_5f8 (undefined8), local_5f0 (undefined8), local_5e8 (undefined1), local_240 (undefined1), local_140 (undefined1), local_13f (undefined1), local_40 (undefined8), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CDeformableModel
+  CDeformableModel_importFacesS3D
     Address: 0x0058b9b0  File: core/skeledit.cpp
     Locals:  local_5c (undefined8), local_54 (undefined4), local_50 (undefined), local_4c (undefined), local_48 (undefined4), local_44 (undefined), local_40 (undefined), local_3c (undefined), local_38 (undefined), local_34 (undefined), local_30 (undefined8), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CDeformableModel
+  CDeformableModel_removeDuplicateFaces
     Address: 0x0058ede0  File: core/skeledit.cpp
     Locals:  local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -5863,14 +5076,14 @@ Undefined types in variables (2274)
     Locals:  local_b8 (undefined8), local_b0 (undefined8), local_a8 (undefined8), local_a0 (undefined1), local_9f (undefined1), local_9d (undefined1), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
+  CDeformableModel_cramModelTexture
+    Address: 0x0058de70  File: core/skeledit.cpp
+    Locals:  local_98 (undefined), local_97 (undefined1), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
   CDeformableModel_saveStream
     Address: 0x0058f120  File: core/skeledit.cpp
     Locals:  local_60 (undefined8), local_58 (undefined8), local_50 (undefined8), local_48 (undefined8), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  FUN_0058de70
-    Address: 0x0058de70  File: core/skeledit.cpp
-    Locals:  local_98 (undefined), local_97 (undefined1), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CDeformableModelInstance_getRootMotionDelta
@@ -6338,7 +5551,7 @@ Undefined types in variables (2274)
     Locals:  local_5c (undefined1), local_4c (undefined1), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CDeformableModel
+  CDeformableModel_importGeometryS3D
     Address: 0x0058b660  File: core/skeledit.cpp
     Locals:  local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined), local_2c (undefined), local_28 (undefined), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -6408,7 +5621,7 @@ Undefined types in variables (2274)
     Locals:  local_74 (undefined4), local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_005c9340
+  CComplexPolygon_removeRedundantEdges
     Address: 0x005c9340  File: shape/superopt.cpp
     Locals:  local_c0 (undefined8), local_b8 (undefined8), local_b0 (undefined8), local_a8 (undefined8), local_a0 (undefined8), local_98 (undefined8), local_90 (undefined8), local_88 (undefined8), local_80 (undefined8), local_78 (undefined8), local_70 (undefined8), local_68 (undefined8), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -6478,14 +5691,14 @@ Undefined types in variables (2274)
     Locals:  local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CDeformableModel
-    Address: 0x0058e240  File: core/skeledit.cpp
-    Locals:  local_46 (undefined), local_40 (undefined), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  FUN_0058eaa0
+  CDeformableModel_pruneWeakBoneInfluences
     Address: 0x0058eaa0  File: core/skeledit.cpp
     Locals:  local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CDeformableModel_sortFacesByTexture
+    Address: 0x0058e240  File: core/skeledit.cpp
+    Locals:  local_46 (undefined), local_40 (undefined), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CTurret
@@ -6803,7 +6016,7 @@ Undefined types in variables (2274)
     Locals:  local_50 (undefined8), local_48 (undefined8), local_40 (undefined8), local_38 (undefined8), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CSvetlana
+  CSvetlana_performBladeAttack
     Address: 0x005d9a10  File: core/svetlana.cpp
     Locals:  local_84 (undefined1), local_80 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_48 (undefined1), local_3c (undefined1), local_30 (undefined1), local_24 (undefined1), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -6868,7 +6081,7 @@ Undefined types in variables (2274)
     Locals:  local_40 (undefined8), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  BonesAndPointsCheck
+  COptimize_exportOptimizeGeometry
     Address: 0x005d7e00  File: shape/superopt.cpp
     Locals:  local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -7153,7 +6366,7 @@ Undefined types in variables (2274)
     Locals:  local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_005c7dc0
+  CComplexPolygon_mergeAdjacentEdges
     Address: 0x005c7dc0  File: shape/superopt.cpp
     Locals:  local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -7813,7 +7026,7 @@ Undefined types in variables (2274)
     Locals:  local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined1), local_14 (undefined1)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_005c8160
+  CComplexPolygon_removedSharedEdges
     Address: 0x005c8160  File: shape/superopt.cpp
     Locals:  local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -8123,7 +7336,7 @@ Undefined types in variables (2274)
     Locals:  local_48 (undefined1), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined4), local_c (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CSvetlana
+  CSvetlana_processAI
     Address: 0x005d9260  File: core/svetlana.cpp
     Locals:  local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_30 (undefined4), local_28 (undefined4), local_24 (undefined4), local_1c (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -8638,12 +7851,12 @@ Undefined types in variables (2274)
     Locals:  local_18 (undefined4), local_14 (undefined4), local_10 (undefined4), local_c (undefined4), local_8 (undefined4), local_4 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_0058dde0
+  CDeformableModel_extractBoneScales
     Address: 0x0058dde0  File: core/skeledit.cpp
     Locals:  local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_00595f30
+  CSkeleton_extractBoneScales
     Address: 0x00595f30  File: core/skeledit.cpp
     Locals:  local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -9148,19 +8361,19 @@ Undefined types in variables (2274)
     Locals:  local_38 (undefined8), local_30 (undefined8), local_28 (undefined8), local_20 (undefined8), local_18 (undefined8)
     Suggested: Resolve undefined types to concrete types
 
-  CDeformableModel
+  CDeformableModel_addFilesToExtract
     Address: 0x0058a2b0  File: core/skeledit.cpp
     Locals:  local_2c (undefined1), local_2b (undefined1), local_29 (undefined1), local_18 (undefined4), local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CDeformableModel_addTextureSet
+    Address: 0x0058e0b0  File: core/skeledit.cpp
+    Locals:  local_31c (undefined), local_218 (undefined), local_118 (undefined), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CDeformableModel_removeUnusedTextures
     Address: 0x0058ec60  File: core/skeledit.cpp
     Locals:  local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  FUN_0058e0b0
-    Address: 0x0058e0b0  File: core/skeledit.cpp
-    Locals:  local_31c (undefined), local_218 (undefined), local_118 (undefined), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CDeformableModelInstance_initializeFromModel
@@ -9393,7 +8606,7 @@ Undefined types in variables (2274)
     Locals:  local_78 (undefined), local_77 (undefined1), local_14 (undefined4), local_10 (undefined4), local_c (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  COptimize
+  COptimize_findCoplanarPolygons
     Address: 0x005d7460  File: shape/superopt.cpp
     Locals:  local_50 (undefined8), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -9723,23 +8936,23 @@ Undefined types in variables (2274)
     Locals:  local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CBoneStructure
+  CBoneStructure_computeLocalMatrices
     Address: 0x0058ac80  File: core/skeledit.cpp
     Locals:  local_a4 (undefined1), local_74 (undefined1), local_44 (undefined1), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CDeformable_groundBias
+  CDeformableModel_groundBias
     Address: 0x0058e4e0  File: core/skeledit.cpp
     Locals:  local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_00589530
-    Address: 0x00589530  File: core/skeledit.cpp
+  ensureFileExtension
+    Address: 0x005896b0  File: core/skeledit.cpp
     Locals:  local_304 (undefined), local_204 (undefined), local_104 (undefined), local_4 (undefined)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_005896b0
-    Address: 0x005896b0  File: core/skeledit.cpp
+  makeAbsolutePathFromReference
+    Address: 0x00589530  File: core/skeledit.cpp
     Locals:  local_304 (undefined), local_204 (undefined), local_104 (undefined), local_4 (undefined)
     Suggested: Resolve undefined types to concrete types
 
@@ -10093,14 +9306,14 @@ Undefined types in variables (2274)
     Locals:  local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
+  CComplexPolygon_computeArea
+    Address: 0x005c9100  File: shape/superopt.cpp
+    Locals:  local_28 (undefined8), local_20 (undefined8), local_18 (undefined8), local_10 (undefined8)
+    Suggested: Resolve undefined types to concrete types
+
   CObj_updatePolyFlagsFromVerts
     Address: 0x005d36b0  File: shape/superopt.cpp
     Locals:  local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  FUN_005c9100
-    Address: 0x005c9100  File: shape/superopt.cpp
-    Locals:  local_28 (undefined8), local_20 (undefined8), local_18 (undefined8), local_10 (undefined8)
     Suggested: Resolve undefined types to concrete types
 
   distancePointToSegmentXY
@@ -10788,34 +10001,34 @@ Undefined types in variables (2274)
     Locals:  local_188 (undefined), local_187 (undefined1), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
+  CBoneStructure_applyMatrixArray
+    Address: 0x0058af40  File: core/skeledit.cpp
+    Locals:  local_40 (undefined1), local_10 (undefined4), local_c (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
   CBoneStructure_fixupMatrices
     Address: 0x0058adb0  File: core/skeledit.cpp
     Locals:  local_28 (undefined8), local_20 (undefined8), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CDeformableModel
+  CBoneStructure_showBoneHierarchy
+    Address: 0x0058afe0  File: core/skeledit.cpp
+    Locals:  local_484 (undefined4), local_dc (undefined), local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CDeformableModel_importVerticesS3D
     Address: 0x0058bc40  File: core/skeledit.cpp
     Locals:  local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CDeformableModel
+  CDeformableModel_scaleAllVertices
     Address: 0x0058e3e0  File: core/skeledit.cpp
     Locals:  local_18 (undefined4), local_14 (undefined4), local_10 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CLodMesh
+  CLodMesh_selectAndGenerateLods
     Address: 0x00589c20  File: core/skeledit.cpp
     Locals:  local_a70 (undefined), local_6c8 (undefined), local_320 (undefined)
-    Suggested: Resolve undefined types to concrete types
-
-  FUN_0058af40
-    Address: 0x0058af40  File: core/skeledit.cpp
-    Locals:  local_40 (undefined1), local_10 (undefined4), local_c (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  FUN_0058afe0
-    Address: 0x0058afe0  File: core/skeledit.cpp
-    Locals:  local_484 (undefined4), local_dc (undefined), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CDeformableModelInstance_computeCylindricalUVs
@@ -11173,34 +10386,34 @@ Undefined types in variables (2274)
     Locals:  local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CPoly_hasCentroidIntersection
-    Address: 0x005d1230  File: shape/superopt.cpp
-    Locals:  local_74 (undefined1), local_44 (undefined1), local_14 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  FUN_005d84d0
-    Address: 0x005d84d0  File: shape/superopt.cpp
+  CP3D
+    Address: 0x005d8630  File: shape/superopt.cpp
     Locals:  local_20 (undefined8), local_18 (undefined8), local_10 (undefined8)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_005d8520
+  CP3D_add
     Address: 0x005d8520  File: shape/superopt.cpp
     Locals:  local_20 (undefined8), local_18 (undefined8), local_10 (undefined8)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_005d85a0
+  CP3D_add
     Address: 0x005d85a0  File: shape/superopt.cpp
     Locals:  local_20 (undefined8), local_18 (undefined8), local_10 (undefined8)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_005d85f0
+  CP3D_multiply
     Address: 0x005d85f0  File: shape/superopt.cpp
     Locals:  local_20 (undefined8), local_18 (undefined8), local_10 (undefined8)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_005d8630
-    Address: 0x005d8630  File: shape/superopt.cpp
+  CP3D_subtract
+    Address: 0x005d84d0  File: shape/superopt.cpp
     Locals:  local_20 (undefined8), local_18 (undefined8), local_10 (undefined8)
+    Suggested: Resolve undefined types to concrete types
+
+  CPoly_hasCentroidIntersection
+    Address: 0x005d1230  File: shape/superopt.cpp
+    Locals:  local_74 (undefined1), local_44 (undefined1), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CFileBitStream_readAllocationTable
@@ -11919,19 +11132,19 @@ Undefined types in variables (2274)
     Locals:  local_8 (undefined4), local_4 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CDeformableModel
-    Address: 0x0058b8e0  File: core/skeledit.cpp
-    Locals:  local_214 (undefined), local_110 (undefined)
-    Suggested: Resolve undefined types to concrete types
-
-  FUN_0058ad30
+  CBoneStructure_computeWorldMatrices
     Address: 0x0058ad30  File: core/skeledit.cpp
     Locals:  local_44 (undefined), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_0058aeb0
+  CBoneStructure_extractInverseBindPose
     Address: 0x0058aeb0  File: core/skeledit.cpp
     Locals:  local_38 (undefined), local_8 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CDeformableModel_importTexturesS3D
+    Address: 0x0058b8e0  File: core/skeledit.cpp
+    Locals:  local_214 (undefined), local_110 (undefined)
     Suggested: Resolve undefined types to concrete types
 
   viewModel
@@ -12459,6 +11672,21 @@ Undefined types in variables (2274)
     Locals:  local_dc (undefined1), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
+  CComplexPolygon_buildEdgeList
+    Address: 0x005c7b20  File: shape/superopt.cpp
+    Locals:  local_14 (undefined4), local_10 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CComplexPolygon_orderEdgesIntoChain
+    Address: 0x005c8280  File: shape/superopt.cpp
+    Locals:  local_c (undefined4), local_8 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CComplexPolygon_processEdgeSubLoops
+    Address: 0x005c91e0  File: shape/superopt.cpp
+    Locals:  local_18 (undefined4), local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
   CObj_addPolygons
     Address: 0x005d2410  File: shape/superopt.cpp
     Locals:  local_78 (undefined1), local_10 (undefined4)
@@ -12479,19 +11707,34 @@ Undefined types in variables (2274)
     Locals:  local_108 (undefined4), local_104 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  COptimize
-    Address: 0x005d70f0  File: shape/superopt.cpp
-    Locals:  local_8 (undefined4), local_4 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  COptimize
+  COptimize_getCoplanarAngleThreshold
     Address: 0x005d7140  File: shape/superopt.cpp
     Locals:  local_8 (undefined4), local_4 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  COptimize
+  COptimize_getCoplanarDistanceThreshold
     Address: 0x005d7190  File: shape/superopt.cpp
     Locals:  local_8 (undefined4), local_4 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  COptimize_getWeldThreshold
+    Address: 0x005d70f0  File: shape/superopt.cpp
+    Locals:  local_8 (undefined4), local_4 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CP2D
+    Address: 0x005d83d0  File: shape/superopt.cpp
+    Locals:  local_18 (undefined8), local_10 (undefined8)
+    Suggested: Resolve undefined types to concrete types
+
+  CP2D_add
+    Address: 0x005d8390  File: shape/superopt.cpp
+    Locals:  local_18 (undefined8), local_10 (undefined8)
+    Suggested: Resolve undefined types to concrete types
+
+  CP2D_subtract
+    Address: 0x005d8350  File: shape/superopt.cpp
+    Locals:  local_18 (undefined8), local_10 (undefined8)
     Suggested: Resolve undefined types to concrete types
 
   CPoly_hasSeamlessEdge
@@ -12507,36 +11750,6 @@ Undefined types in variables (2274)
   CPoly_rayPlaneIntersect
     Address: 0x005d0ce0  File: shape/superopt.cpp
     Locals:  local_10 (undefined8), local_8 (undefined8)
-    Suggested: Resolve undefined types to concrete types
-
-  FUN_005c7b20
-    Address: 0x005c7b20  File: shape/superopt.cpp
-    Locals:  local_14 (undefined4), local_10 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  FUN_005c8280
-    Address: 0x005c8280  File: shape/superopt.cpp
-    Locals:  local_c (undefined4), local_8 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  FUN_005c91e0
-    Address: 0x005c91e0  File: shape/superopt.cpp
-    Locals:  local_18 (undefined4), local_14 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  FUN_005d8350
-    Address: 0x005d8350  File: shape/superopt.cpp
-    Locals:  local_18 (undefined8), local_10 (undefined8)
-    Suggested: Resolve undefined types to concrete types
-
-  FUN_005d8390
-    Address: 0x005d8390  File: shape/superopt.cpp
-    Locals:  local_18 (undefined8), local_10 (undefined8)
-    Suggested: Resolve undefined types to concrete types
-
-  FUN_005d83d0
-    Address: 0x005d83d0  File: shape/superopt.cpp
-    Locals:  local_18 (undefined8), local_10 (undefined8)
     Suggested: Resolve undefined types to concrete types
 
   CMP3Decoder_read
@@ -13804,14 +13017,14 @@ Undefined types in variables (2274)
     Locals:  local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CDemonMission
-    Address: 0x00524c20  File: core/mission.cpp
-    Locals:  local_3b4 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
   CDemonMission_createOneHero
     Address: 0x00524920  File: core/mission.cpp
     Locals:  local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CDemonMission_ensureHeroPlaceholder
+    Address: 0x00524c20  File: core/mission.cpp
+    Locals:  local_3b4 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CDemonMission_generateUniqueActorName
@@ -14154,23 +13367,23 @@ Undefined types in variables (2274)
     Locals:  local_18 (undefined1)
     Suggested: Resolve undefined types to concrete types
 
+  CBoneStructure_copyHierarchyFromSkeleton
+    Address: 0x0058b160  File: core/skeledit.cpp
+    Locals:  local_10 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
   CBoneStructure_importBON
     Address: 0x0058a3d0  File: core/skeledit.cpp
     Locals:  local_14 (undefined)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_005897b0
-    Address: 0x005897b0  File: core/skeledit.cpp
-    Locals:  local_10 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  FUN_0058a1b0
+  CLodMeshPrecomputeEntry_parseLine
     Address: 0x0058a1b0  File: core/skeledit.cpp
     Locals:  local_10 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_0058b160
-    Address: 0x0058b160  File: core/skeledit.cpp
+  loadIni
+    Address: 0x005897b0  File: core/skeledit.cpp
     Locals:  local_10 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
@@ -15054,6 +14267,11 @@ Undefined types in variables (2274)
     Locals:  local_6c (undefined1)
     Suggested: Resolve undefined types to concrete types
 
+  CP3D_distance
+    Address: 0x005d86d0  File: shape/superopt.cpp
+    Locals:  local_20 (undefined8)
+    Suggested: Resolve undefined types to concrete types
+
   CPoly_computePlaneDistance
     Address: 0x005d1fa0  File: shape/superopt.cpp
     Locals:  local_8 (undefined8)
@@ -15064,19 +14282,14 @@ Undefined types in variables (2274)
     Locals:  local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_005d8200
-    Address: 0x005d8200  File: shape/superopt.cpp
-    Locals:  local_8 (undefined8)
-    Suggested: Resolve undefined types to concrete types
-
-  FUN_005d82e0
+  CVec_dot
     Address: 0x005d82e0  File: shape/superopt.cpp
     Locals:  local_8 (undefined8)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_005d86d0
-    Address: 0x005d86d0  File: shape/superopt.cpp
-    Locals:  local_20 (undefined8)
+  CVec_getLength
+    Address: 0x005d8200  File: shape/superopt.cpp
+    Locals:  local_8 (undefined8)
     Suggested: Resolve undefined types to concrete types
 
   logToFile

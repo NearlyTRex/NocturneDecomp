@@ -16,8 +16,8 @@
 ;   crt_unknown.c_FUN_0060fcf4 at 0060fe29
 ;   crt_unknown.c_SetStdHandleToSomething_FUN_00608a1c at 00608a90
 ;   shape_memdbg.cpp_debugRealloc_FUN_0050f540 at 0050f5ec
-;   shape_superopt.cpp_CObj_addPolygons_FUN_005d2410 at 005d243c
-;   shape_superopt.cpp_CObj_addVertices_FUN_005d2580 at 005d259d
+;   shape_superopt.cpp_CComplexPolygon_addSharedTriangle_FUN_005c7a90 at 005c7ae9
+;   shape_superopt.cpp_CComplexPolygon_storeEdgeSubChain_FUN_005cbe20 at 005cbe46
 ;   ... and 6 more
 ;
 ; Called Functions:

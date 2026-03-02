@@ -19,7 +19,7 @@
 ;   core_icepick.cpp_CIcePick_FUN_004f8c70 at 004f922b
 ;   core_moloch.cpp_CMoloch_FUN_005293b0 at 005294c1
 ;   core_scat.cpp_CScat_FUN_005578e0 at 00557ad1
-;   core_svetlana.cpp_CSvetlana_FUN_005d9260 at 005d981b
+;   core_svetlana.cpp_CSvetlana_processAI_FUN_005d9260 at 005d981b
 ;   ... and 1 more
 ;
 ; Referenced Globals:

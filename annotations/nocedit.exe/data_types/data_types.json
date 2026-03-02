@@ -801,15 +801,15 @@
       "type":"typedef"
     },
     {
-      "name":"CHero_areGunsDrawn",
+      "name":"CHero_createDefaultWeapon",
       "type":"function_definition"
     },
     {
-      "name":"CHero_createDefaultGun",
+      "name":"CHero_drawWeapon",
       "type":"function_definition"
     },
     {
-      "name":"CHero_drawGun",
+      "name":"CHero_isWeaponDrawn",
       "type":"function_definition"
     },
     {
@@ -862,6 +862,10 @@
     },
     {
       "name":"CLodEdge",
+      "type":"struct"
+    },
+    {
+      "name":"CLodMeshPrecomputeEntry",
       "type":"struct"
     },
     {
@@ -1119,6 +1123,66 @@
     {
       "name":"CObj_vtable",
       "type":"struct"
+    },
+    {
+      "name":"COptimize_addComplexPolygon",
+      "type":"function_definition"
+    },
+    {
+      "name":"COptimize_cleanup",
+      "type":"function_definition"
+    },
+    {
+      "name":"COptimize_findCoplanarPolygons",
+      "type":"function_definition"
+    },
+    {
+      "name":"COptimize_getCoplanarAngleThreshold",
+      "type":"function_definition"
+    },
+    {
+      "name":"COptimize_getCoplanarDistanceThreshold",
+      "type":"function_definition"
+    },
+    {
+      "name":"COptimize_getMaxPolygonSides",
+      "type":"function_definition"
+    },
+    {
+      "name":"COptimize_getWeldThreshold",
+      "type":"function_definition"
+    },
+    {
+      "name":"COptimize_optimize",
+      "type":"function_definition"
+    },
+    {
+      "name":"COptimize_optimizeComplex",
+      "type":"function_definition"
+    },
+    {
+      "name":"COptimize_setCoplanarAngleThreshold",
+      "type":"function_definition"
+    },
+    {
+      "name":"COptimize_setCoplanarDistanceThreshold",
+      "type":"function_definition"
+    },
+    {
+      "name":"COptimize_setGeometry",
+      "type":"function_definition"
+    },
+    {
+      "name":"COptimize_setMaxPolygonSides",
+      "type":"function_definition"
+    },
+    {
+      "name":"COptimize_setWeldThreshold",
+      "type":"function_definition"
+    },
+    {
+      "name":"COptimize_splitToConvex",
+      "type":"function_definition"
     },
     {
       "name":"COptimize_vtable",
@@ -1577,6 +1641,10 @@
       "type":"struct"
     },
     {
+      "name":"CComplexPolygon",
+      "type":"struct"
+    },
+    {
       "name":"CMatrix3x3d",
       "type":"struct"
     },
@@ -1762,6 +1830,10 @@
     },
     {
       "name":"CPathMap",
+      "type":"struct"
+    },
+    {
+      "name":"CVector4d",
       "type":"struct"
     },
     {
@@ -3594,6 +3666,10 @@
     },
     {
       "name":"SEventNameBlock",
+      "type":"struct"
+    },
+    {
+      "name":"SExpandedEdge",
       "type":"struct"
     },
     {
@@ -8253,11 +8329,11 @@
           "type":"int"
         },
         {
-          "name":"top",
+          "name":"right",
           "type":"int"
         },
         {
-          "name":"right",
+          "name":"top",
           "type":"int"
         },
         {
@@ -8285,7 +8361,7 @@
       "parameters":[
         {
           "name":"vertices",
-          "type":"void*"
+          "type":"SRenderVertex*"
         },
         {
           "name":"vertex_count",
@@ -8306,8 +8382,8 @@
       "name":"APIDLL_drawPolygon2",
       "parameters":[
         {
-          "name":"vertices",
-          "type":"void*"
+          "name":"vertex_array",
+          "type":"SRenderVertex**"
         },
         {
           "name":"vertex_count",
@@ -8329,11 +8405,11 @@
       "parameters":[
         {
           "name":"vertex_buffer",
-          "type":"void*"
+          "type":"SRenderVertex*"
         },
         {
           "name":"polygons",
-          "type":"void**"
+          "type":"SMRGLPrimitiveTriangle**"
         },
         {
           "name":"polygon_count",
@@ -8355,11 +8431,11 @@
       "parameters":[
         {
           "name":"vertex_buffer",
-          "type":"void*"
+          "type":"SRenderVertex*"
         },
         {
           "name":"polygons",
-          "type":"void**"
+          "type":"ushort**"
         },
         {
           "name":"polygon_count",
@@ -8381,11 +8457,11 @@
       "parameters":[
         {
           "name":"vertex_buffer",
-          "type":"void*"
+          "type":"SRenderVertex*"
         },
         {
           "name":"polygons",
-          "type":"void*"
+          "type":"ushort*"
         },
         {
           "name":"polygon_count",
@@ -11117,21 +11193,7 @@
       "calling_convention":"__cdecl",
       "cat":"/Nocturne/FunctionDefinition/Game",
       "importable":true,
-      "name":"CHero_areGunsDrawn",
-      "parameters":[
-        {
-          "name":"this_ptr",
-          "type":"CHero*"
-        }
-      ],
-      "return_type":"int",
-      "type":"function_definition"
-    },
-    {
-      "calling_convention":"__cdecl",
-      "cat":"/Nocturne/FunctionDefinition/Game",
-      "importable":true,
-      "name":"CHero_createDefaultGun",
+      "name":"CHero_createDefaultWeapon",
       "parameters":[
         {
           "name":"this_ptr",
@@ -11145,7 +11207,7 @@
       "calling_convention":"__cdecl",
       "cat":"/Nocturne/FunctionDefinition/Game",
       "importable":true,
-      "name":"CHero_drawGun",
+      "name":"CHero_drawWeapon",
       "parameters":[
         {
           "name":"this_ptr",
@@ -11157,6 +11219,20 @@
         }
       ],
       "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CHero_isWeaponDrawn",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CHero*"
+        }
+      ],
+      "return_type":"int",
       "type":"function_definition"
     },
     {
@@ -12387,6 +12463,252 @@
         {
           "name":"namelen",
           "type":"int"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"COptimize_addComplexPolygon",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"COptimize*"
+        },
+        {
+          "name":"polygon",
+          "type":"CComplexPolygon*"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"COptimize_cleanup",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"COptimize*"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"COptimize_findCoplanarPolygons",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"COptimize*"
+        },
+        {
+          "name":"polygon",
+          "type":"CPoly*"
+        },
+        {
+          "name":"search_obj",
+          "type":"COptimize*"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"COptimize_getCoplanarAngleThreshold",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"COptimize*"
+        }
+      ],
+      "return_type":"double",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"COptimize_getCoplanarDistanceThreshold",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"COptimize*"
+        }
+      ],
+      "return_type":"double",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"COptimize_getMaxPolygonSides",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"COptimize*"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"COptimize_getWeldThreshold",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"COptimize*"
+        }
+      ],
+      "return_type":"double",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"COptimize_optimize",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"COptimize*"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"COptimize_optimizeComplex",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"COptimize*"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"COptimize_setCoplanarAngleThreshold",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"COptimize*"
+        },
+        {
+          "name":"threshold",
+          "type":"double"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"COptimize_setCoplanarDistanceThreshold",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"COptimize*"
+        },
+        {
+          "name":"threshold",
+          "type":"double"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"COptimize_setGeometry",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"COptimize*"
+        },
+        {
+          "name":"objects",
+          "type":"CObj*"
+        },
+        {
+          "name":"object_count",
+          "type":"uint"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"COptimize_setMaxPolygonSides",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"COptimize*"
+        },
+        {
+          "name":"max_sides",
+          "type":"int"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"COptimize_setWeldThreshold",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"COptimize*"
+        },
+        {
+          "name":"threshold",
+          "type":"double"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"COptimize_splitToConvex",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"COptimize*"
         }
       ],
       "return_type":"int",
@@ -27051,6 +27373,66 @@
       "type":"struct"
     },
     {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"polygon_count",
+          "offset":0,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"polygon_list",
+          "offset":4,
+          "type":"CPoly**"
+        },
+        {
+          "len":4,
+          "name":"edge_count",
+          "offset":8,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"edge_array",
+          "offset":12,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"material_id",
+          "offset":16,
+          "type":"int"
+        },
+        {
+          "len":24,
+          "name":"normal",
+          "offset":20,
+          "type":"CVector3d"
+        },
+        {
+          "len":4,
+          "name":"expanded_edge_count",
+          "offset":44,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"expanded_edges",
+          "offset":48,
+          "type":"void*"
+        }
+      ],
+      "importable":true,
+      "len":52,
+      "name":"CComplexPolygon",
+      "pack":false,
+      "type":"struct"
+    },
+    {
       "alig":4,
       "cat":"/Nocturne/Class/Game",
       "desc":"",
@@ -33840,16 +34222,10 @@
           "type":"CDemonActor*"
         },
         {
-          "len":4,
-          "name":"unk2",
+          "len":8,
+          "name":"sfx_handles",
           "offset":48892,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"sfx_handle",
-          "offset":48896,
-          "type":"uint"
+          "type":"uint[2]"
         },
         {
           "len":12,
@@ -34729,21 +35105,21 @@
       "fields":[
         {
           "len":4,
-          "name":"createDefaultGun",
+          "name":"createDefaultWeapon",
           "offset":0,
-          "type":"CHero_createDefaultGun*"
+          "type":"CHero_createDefaultWeapon*"
         },
         {
           "len":4,
-          "name":"drawGun",
+          "name":"drawWeapon",
           "offset":4,
-          "type":"CHero_drawGun*"
+          "type":"CHero_drawWeapon*"
         },
         {
           "len":4,
-          "name":"areGunsDrawn",
+          "name":"isWeaponDrawn",
           "offset":8,
-          "type":"CHero_areGunsDrawn*"
+          "type":"CHero_isWeaponDrawn*"
         },
         {
           "len":4,
@@ -36461,7 +36837,7 @@
         },
         {
           "len":4,
-          "name":"reserved_attribute_count",
+          "name":"extra_attribute_count",
           "offset":32,
           "type":"int"
         },
@@ -36559,6 +36935,60 @@
       "importable":true,
       "len":116,
       "name":"CLodMesh",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":256,
+          "name":"pos_filename",
+          "offset":0,
+          "type":"char[256]"
+        },
+        {
+          "len":256,
+          "name":"skl_filename",
+          "offset":256,
+          "type":"char[256]"
+        },
+        {
+          "len":256,
+          "name":"s3d_filename",
+          "offset":512,
+          "type":"char[256]"
+        },
+        {
+          "len":4,
+          "name":"dead1",
+          "offset":768,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"dead2",
+          "offset":772,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"skip_generation",
+          "offset":776,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"for_shadows",
+          "offset":780,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":784,
+      "name":"CLodMeshPrecomputeEntry",
       "pack":false,
       "type":"struct"
     },
@@ -38647,45 +39077,45 @@
       "fields":[
         {
           "len":28,
-          "name":"obj",
+          "name":"base",
           "offset":0,
           "type":"CObj"
         },
         {
           "len":8,
-          "name":"unk1",
+          "name":"weld_threshold",
           "offset":28,
           "type":"double"
         },
         {
           "len":8,
-          "name":"unk2",
+          "name":"coplanar_angle_threshold",
           "offset":36,
           "type":"double"
         },
         {
           "len":8,
-          "name":"unk3",
+          "name":"coplanar_distance_threshold",
           "offset":44,
           "type":"double"
         },
         {
           "len":4,
-          "name":"unk4",
+          "name":"max_polygon_sides",
           "offset":52,
           "type":"int"
         },
         {
           "len":4,
-          "name":"unk5",
+          "name":"complex_polygon_count",
           "offset":56,
           "type":"int"
         },
         {
           "len":4,
-          "name":"unk6",
+          "name":"complex_polygons",
           "offset":60,
-          "type":"void*"
+          "type":"CComplexPolygon**"
         },
         {
           "len":4,
@@ -38707,93 +39137,93 @@
       "fields":[
         {
           "len":4,
-          "name":"func1",
+          "name":"cleanup",
           "offset":0,
-          "type":"void*"
+          "type":"COptimize_cleanup*"
         },
         {
           "len":4,
-          "name":"func2",
+          "name":"setWeldThreshold",
           "offset":4,
-          "type":"void*"
+          "type":"COptimize_setWeldThreshold*"
         },
         {
           "len":4,
-          "name":"func3",
+          "name":"getWeldThreshold",
           "offset":8,
-          "type":"void*"
+          "type":"COptimize_getWeldThreshold*"
         },
         {
           "len":4,
-          "name":"func4",
+          "name":"setCoplanarAngleThreshold",
           "offset":12,
-          "type":"void*"
+          "type":"COptimize_setCoplanarAngleThreshold*"
         },
         {
           "len":4,
-          "name":"func5",
+          "name":"getCoplanarAngleThreshold",
           "offset":16,
-          "type":"void*"
+          "type":"COptimize_getCoplanarAngleThreshold*"
         },
         {
           "len":4,
-          "name":"func6",
+          "name":"setCoplanarDistanceThreshold",
           "offset":20,
-          "type":"void*"
+          "type":"COptimize_setCoplanarDistanceThreshold*"
         },
         {
           "len":4,
-          "name":"func7",
+          "name":"getCoplanarDistanceThreshold",
           "offset":24,
-          "type":"void*"
+          "type":"COptimize_getCoplanarDistanceThreshold*"
         },
         {
           "len":4,
-          "name":"func8",
+          "name":"setMaxPolygonSides",
           "offset":28,
-          "type":"void*"
+          "type":"COptimize_setMaxPolygonSides*"
         },
         {
           "len":4,
-          "name":"func9",
+          "name":"getMaxPolygonSides",
           "offset":32,
-          "type":"void*"
+          "type":"COptimize_getMaxPolygonSides*"
         },
         {
           "len":4,
-          "name":"func10",
+          "name":"setGeometry",
           "offset":36,
-          "type":"void*"
+          "type":"COptimize_setGeometry*"
         },
         {
           "len":4,
-          "name":"func11",
+          "name":"optimize",
           "offset":40,
-          "type":"void*"
+          "type":"COptimize_optimize*"
         },
         {
           "len":4,
-          "name":"func12",
+          "name":"optimizeComplex",
           "offset":44,
-          "type":"void*"
+          "type":"COptimize_optimizeComplex*"
         },
         {
           "len":4,
-          "name":"func13",
+          "name":"findCoplanarPolygons",
           "offset":48,
-          "type":"void*"
+          "type":"COptimize_findCoplanarPolygons*"
         },
         {
           "len":4,
-          "name":"func14",
+          "name":"splitToConvex",
           "offset":52,
-          "type":"void*"
+          "type":"COptimize_splitToConvex*"
         },
         {
           "len":4,
-          "name":"func15",
+          "name":"addComplexPolygon",
           "offset":56,
-          "type":"void*"
+          "type":"COptimize_addComplexPolygon*"
         }
       ],
       "importable":true,
@@ -40161,13 +40591,13 @@
           "len":48,
           "name":"uv_coords",
           "offset":16,
-          "type":"CVector2d[3]"
+          "type":"CP2D[3]"
         },
         {
           "len":24,
           "name":"normal",
           "offset":64,
-          "type":"CVector3d"
+          "type":"CP3D"
         },
         {
           "len":4,
@@ -44085,6 +44515,42 @@
       "importable":true,
       "len":12,
       "name":"CVector3i",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":8,
+          "name":"x",
+          "offset":0,
+          "type":"double"
+        },
+        {
+          "len":8,
+          "name":"y",
+          "offset":8,
+          "type":"double"
+        },
+        {
+          "len":8,
+          "name":"z",
+          "offset":16,
+          "type":"double"
+        },
+        {
+          "len":8,
+          "name":"w",
+          "offset":24,
+          "type":"double"
+        }
+      ],
+      "importable":true,
+      "len":32,
+      "name":"CVector4d",
       "pack":false,
       "type":"struct"
     },
@@ -52062,6 +52528,66 @@
       "importable":true,
       "len":3204,
       "name":"SEventNameBlock",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"start_vertex_index",
+          "offset":0,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"end_vertex_index",
+          "offset":4,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"start_side",
+          "offset":8,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"end_side",
+          "offset":12,
+          "type":"int"
+        },
+        {
+          "len":24,
+          "name":"start_pos",
+          "offset":16,
+          "type":"CVector3d"
+        },
+        {
+          "len":24,
+          "name":"end_pos",
+          "offset":40,
+          "type":"CVector3d"
+        },
+        {
+          "len":16,
+          "name":"start_uv",
+          "offset":64,
+          "type":"double[2]"
+        },
+        {
+          "len":16,
+          "name":"end_uv",
+          "offset":80,
+          "type":"double[2]"
+        }
+      ],
+      "importable":true,
+      "len":96,
+      "name":"SExpandedEdge",
       "pack":false,
       "type":"struct"
     },

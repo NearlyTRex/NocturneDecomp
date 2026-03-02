@@ -4,6 +4,7 @@
 #include "system/basetypes.h"
 #include "system/stdio.h"
 #include "types/classes/CBodyPart.h"
+#include "types/classes/CBoneStructure.h"
 #include "types/classes/CBoundingBox3D.h"
 #include "types/classes/CDeformableModel.h"
 #include "types/classes/CDeformableModelInstance.h"
@@ -14,6 +15,7 @@
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
 #include "types/funcdefs/CDeformableModel_MotionBlendWeightFunc.h"
+#include "types/structs/SBoneData.h"
 #include "types/structs/SPart.h"
 #include "types/structs/SPoseData.h"
 
@@ -21,22 +23,22 @@
 // FUNCTION PROTOTYPES - Range 0x590000
 // =============================================================================
 
-int __cdecl core_skeledit_cpp_FUN_00592520(void *ptr);
-int __cdecl core_skeledit_cpp_FUN_005925c0(void *ptr);
-int __cdecl core_skeledit_cpp_CSkeleton_FUN_00592690(CSkeleton *this_ptr,char *filename);
-void __cdecl core_skeledit_cpp_FUN_00595f30(void);
+int __cdecl core_skeledit_cpp_parseBoneParentToken_FUN_00592520(char *token,int *out_index,int bone_count,int allow_patch);
+int __cdecl core_skeledit_cpp_parseTransitionType_FUN_005925c0(char *type_name);
+int __cdecl core_skeledit_cpp_CSkeleton_importSkeletonFile_FUN_00592690(CSkeleton *this_ptr,char *filename);
+void __cdecl core_skeledit_cpp_CSkeleton_extractBoneScales_FUN_00595f30(CSkeleton *this_ptr,CBoneStructure *bone_structure);
 void __cdecl core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0(CDeformableModel *this_ptr,char *output_filename,int lod_level, CMatrix3x4f *bone_matrices);
-void __cdecl core_skeledit_cpp_FUN_00596860(void);
+void __cdecl core_skeledit_cpp_drawInfoRow_FUN_00596860(int row,char *label,char *value);
 void __cdecl core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(CDeformableModelInstance *this_ptr);
 void __cdecl core_skeledit_cpp_CDeformableModelInstance_exportModelToS3D_FUN_00598ee0(CDeformableModelInstance *this_ptr,char *filename);
-void __cdecl core_skeledit_cpp_FUN_00598f10(void);
+void __cdecl core_skeledit_cpp_previewModel_FUN_00598f10(char *model_name);
 void __cdecl core_skeledit_cpp_viewModel_FUN_00598fc0(void);
-void __cdecl core_skeledit_cpp_FUN_00599480(void);
+SBoneData * __cdecl core_skeledit_cpp_copyBoneData_FUN_00599480(SBoneData *dest,SBoneData *src);
 CLodVert * __cdecl core_skeledit_cpp_CLodVert_copy_FUN_00599550(CLodVert *this_ptr,CLodVert *other);
 CLodVert * __cdecl core_skeledit_cpp_CLodVert_dtor_FUN_005995c0(CLodVert *this_ptr,uint flags);
-void __cdecl core_skeledit_cpp_FUN_005995d0(void);
-int __cdecl core_skeledit_cpp_FUN_00599630(void);
-int __cdecl core_skeledit_cpp_FUN_00599650(void);
+CMatrix3x4f * __cdecl core_skeledit_cpp_copyMatrix_FUN_005995d0(CMatrix3x4f *dst,CMatrix3x4f *src);
+int * __cdecl core_skeledit_cpp_copyInt_FUN_00599630(int *dest,int *src);
+int * __cdecl core_skeledit_cpp_copyInt_FUN_00599650(int *dest,int *src);
 void __cdecl core_skeleton_cpp_staticInit_FUN_00599670(void);
 void __cdecl core_skeleton_cpp_skipToEndOfLine_FUN_005996c0(_FILE *file_ptr);
 float __cdecl core_skeleton_cpp_distancePointToLineSegment_FUN_005996e0(CVector3f *line_start,CVector3f *line_end,CVector3f *test_point);

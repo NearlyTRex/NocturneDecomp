@@ -63,7 +63,7 @@ CLodMesh * __cdecl shape_meshlod_cpp_CLodMesh_copyFrom_FUN_0051a8c0(CLodMesh *th
   }
   this_ptr->active_attribute_count = source_mesh->active_attribute_count;
   this_ptr->sort_attribute_count = source_mesh->sort_attribute_count;
-  this_ptr->reserved_attribute_count = source_mesh->reserved_attribute_count;
+  this_ptr->extra_attribute_count = source_mesh->extra_attribute_count;
   piVar6 = source_mesh->attribute_enabled_flags;
   piVar10 = this_ptr->attribute_enabled_flags;
   for (iVar2 = 4; iVar2 != 0; iVar2 = iVar2 + -1) {

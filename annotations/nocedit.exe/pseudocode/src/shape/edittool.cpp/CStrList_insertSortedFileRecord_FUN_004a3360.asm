@@ -1,13 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_edittool_cpp_CStrList_insertSortedFileRecord_FUN_004a3360(CStrList *this_ptr,char *search_key,char *file_path,int file_size)
+; void __cdecl shape_edittool_cpp_CStrList_insertSortedFileRecord_FUN_004a3360(CStrList *this_ptr,char *search_key,char *file_path,int file_size,time_t file_timestamp)
 ;
 ; Parameters:
 ; CStrList *       Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   search_key
 ; char *           Stack[0xc]:4   file_path
 ; int              Stack[0x10]:4   file_size
+; time_t           Stack[0x14]:4   file_timestamp
 ; Local Variables:
 ; undefined1       Stack[-0xb04]:1  local_b04
 ; undefined1       Stack[-0x904]:1  local_904

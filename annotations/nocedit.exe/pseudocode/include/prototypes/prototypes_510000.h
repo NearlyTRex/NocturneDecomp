@@ -71,7 +71,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_scaleVertices_FUN_005165c0(CLodMesh *thi
 void __cdecl shape_meshlod_cpp_CLodMesh_buildSpatialGrid_FUN_00516620(CLodMesh *this_ptr);
 void __cdecl shape_meshlod_cpp_CLodMesh_markDuplicateFaces_FUN_00516a40(CLodMesh *this_ptr);
 void __cdecl shape_meshlod_cpp_CLodMesh_markDegenerateFaces_FUN_00516b40(CLodMesh *this_ptr);
-void __cdecl shape_meshlod_cpp_CLodMesh_generateLOD_FUN_00516ba0(CLodMesh *this_ptr,int target_tri_count,uint display_mode);
+void __cdecl shape_meshlod_cpp_CLodMesh_generateLOD_FUN_00516ba0(CLodMesh *this_ptr,int target_tri_count,int render_mode);
 void __cdecl shape_meshlod_cpp_CLodMesh_initializeLodGeneration_FUN_00516d50(CLodMesh *this_ptr);
 void __cdecl shape_meshlod_cpp_CLodMesh_normalizeAndCenterMesh_FUN_00516e10(CLodMesh *this_ptr);
 void __cdecl shape_meshlod_cpp_CLodMesh_createNextLOD_FUN_00516f50(CLodMesh *this_ptr);

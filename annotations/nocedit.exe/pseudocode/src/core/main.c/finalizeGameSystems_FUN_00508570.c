@@ -76,7 +76,7 @@ void __cdecl core_main_c_finalizeGameSystems_FUN_00508570(void)
   }
   core_netgame_cpp_CNetGame_shutdown_FUN_0053f830(g_CNetGamePtr);
   engine_ncursfx_cpp_CMouse_reset_FUN_00544500(g_CMousePtr);
-  core_mission_cpp_CDemonMission_FUN_00522d20(g_CDemonMissionPtr);
+  core_mission_cpp_CDemonMission_clearMission_FUN_00522d20(g_CDemonMissionPtr);
   core_sound_cpp_CSound_dtor_FUN_005aaeb0();
   core_dmodel_cpp_freeAllModels_FUN_00478cb0();
   core_skeleton_cpp_freeAllModels_FUN_005a1dc0();

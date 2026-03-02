@@ -2,19 +2,19 @@
 // Address: 005b7640
 // Address Range: [[005b7640, 005b7775]]
 // Convention: __cdecl
-// Signature: int __cdecl wincore_windll_cpp_drawPolyList_FUN_005b7640(void *vertex_buffer,void **polygons,int polygon_count,int render_flags)
+// Signature: int __cdecl wincore_windll_cpp_drawPolyList_FUN_005b7640(SRenderVertex *vertex_buffer,SMRGLPrimitiveTriangle **polygons,int polygon_count,int render_flags)
 
 #include "nocturne.h"
 
-int __cdecl wincore_windll_cpp_drawPolyList_FUN_005b7640(void *vertex_buffer,void **polygons,int polygon_count,int render_flags)
+int __cdecl wincore_windll_cpp_drawPolyList_FUN_005b7640(SRenderVertex *vertex_buffer,SMRGLPrimitiveTriangle **polygons,int polygon_count,int render_flags)
 
 {
-  void *pvVar1;
+  SMRGLPrimitiveTriangle *pSVar1;
   int iVar2;
-  void *local_20;
-  void *local_1c;
-  void *local_18;
-  void *local_14;
+  SRenderVertex *local_20;
+  SRenderVertex *local_1c;
+  SRenderVertex *local_18;
+  SRenderVertex *local_14;
   
   if (g_UseExternalRenderer == 0) {
     return 0;
@@ -27,26 +27,26 @@ int __cdecl wincore_windll_cpp_drawPolyList_FUN_005b7640(void *vertex_buffer,voi
   iVar2 = 0;
   if (0 < polygon_count) {
     do {
-      pvVar1 = *polygons;
-      local_20 = (void *)((int)vertex_buffer + *(int *)((int)pvVar1 + 0x18) * 0x30);
-      local_1c = (void *)((int)vertex_buffer + *(int *)((int)pvVar1 + 0x24) * 0x30);
-      local_18 = (void *)((int)vertex_buffer + *(int *)((int)pvVar1 + 0x30) * 0x30);
-      if (*(int *)((int)pvVar1 + 4) == 4) {
-        local_14 = (void *)((int)vertex_buffer + *(int *)((int)pvVar1 + 0x3c) * 0x30);
+      pSVar1 = *polygons;
+      local_20 = vertex_buffer + pSVar1->vertices[0].vertex_index;
+      local_1c = vertex_buffer + pSVar1->vertices[1].vertex_index;
+      local_18 = vertex_buffer + pSVar1->vertices[2].vertex_index;
+      if ((pSVar1->base).base.count == 4) {
+        local_14 = vertex_buffer + pSVar1[1].base.base.type;
       }
-      *(uint *)((int)local_20 + 0x18) = *(uint *)((int)pvVar1 + 0x1c);
-      *(uint *)((int)local_20 + 0x1c) = *(uint *)((int)pvVar1 + 0x20);
-      *(uint *)((int)local_1c + 0x18) = *(uint *)((int)pvVar1 + 0x28);
-      *(uint *)((int)local_1c + 0x1c) = *(uint *)((int)pvVar1 + 0x2c);
-      *(uint *)((int)local_18 + 0x18) = *(uint *)((int)pvVar1 + 0x34);
-      *(uint *)((int)local_18 + 0x1c) = *(uint *)((int)pvVar1 + 0x38);
-      if (*(int *)((int)pvVar1 + 4) == 4) {
-        *(uint *)((int)local_14 + 0x18) = *(uint *)((int)pvVar1 + 0x40);
-        *(uint *)((int)local_14 + 0x1c) = *(uint *)((int)pvVar1 + 0x44);
+      local_20->u = pSVar1->vertices[0].texture_u;
+      local_20->v = pSVar1->vertices[0].texture_v;
+      local_1c->u = pSVar1->vertices[1].texture_u;
+      local_1c->v = pSVar1->vertices[1].texture_v;
+      local_18->u = pSVar1->vertices[2].texture_u;
+      local_18->v = pSVar1->vertices[2].texture_v;
+      if ((pSVar1->base).base.count == 4) {
+        local_14->u = pSVar1[1].base.base.count;
+        local_14->v = pSVar1[1].base.surface_normal.A;
       }
       polygons = polygons + 1;
       iVar2 = iVar2 + 1;
-      (*g_APIDLL_drawPolygon2)(&local_20,*(int *)((int)pvVar1 + 4),render_flags);
+      (*g_APIDLL_drawPolygon2)(&local_20,(pSVar1->base).base.count,render_flags);
     } while (iVar2 < polygon_count);
   }
   return 1;

@@ -10,7 +10,7 @@
 ;   shape_superopt.cpp_CObj_addPolygons_FUN_005d2410 at 005d2457
 ;   shape_superopt.cpp_CObj_allocatePolygons_FUN_005d2320 at 005d2393
 ;   shape_superopt.cpp_CObj_removeTJunctions_FUN_005d47b0 at 005d520e
-;   shape_superopt.cpp_TriListSomething_FUN_005d77a0 at 005d79a3
+;   shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a0 at 005d79a3
 ;
 ; Referenced Globals:
 ;   CPoly_vtable g_CPolyVTable

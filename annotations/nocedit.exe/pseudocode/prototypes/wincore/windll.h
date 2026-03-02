@@ -153,15 +153,15 @@ int __cdecl drawPolygon2(SRenderVertex **vertex_array,int vertex_count,int rende
 
 // Original: wincore_windll.cpp_drawPolyList_FUN_005b7640
 // Address: 005b7640
-int __cdecl drawPolyList(void *vertex_buffer,void **polygons,int polygon_count,int render_flags);
+int __cdecl drawPolyList(SRenderVertex *vertex_buffer,SMRGLPrimitiveTriangle **polygons,int polygon_count,int render_flags);
 
 // Original: wincore_windll.cpp_drawPolyList2_FUN_005b7780
 // Address: 005b7780
-int __cdecl drawPolyList2(void *vertex_buffer,void **polygons,int polygon_count,int render_flags);
+int __cdecl drawPolyList2(SRenderVertex *vertex_buffer,ushort **polygons,int polygon_count,int render_flags);
 
 // Original: wincore_windll.cpp_drawPolyList3_FUN_005b78c0
 // Address: 005b78c0
-int __cdecl drawPolyList3(void *vertex_buffer,void *polygons,int polygon_count,int render_flags);
+int __cdecl drawPolyList3(SRenderVertex *vertex_buffer,ushort *polygons,int polygon_count,int render_flags);
 
 // Original: wincore_windll.cpp_addParticle_FUN_005b7985
 // Address: 005b7985
@@ -205,7 +205,7 @@ int __cdecl clearZBuffer(void);
 
 // Original: wincore_windll.cpp_clearZBox_FUN_005b7c00
 // Address: 005b7c00
-int __cdecl clearZBox(int left,int top,int right,int bottom);
+int __cdecl clearZBox(int left,int right,int top,int bottom);
 
 // Original: wincore_windll.cpp_presentToExternalRenderer_FUN_005b7c30
 // Address: 005b7c30

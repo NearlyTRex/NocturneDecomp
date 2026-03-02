@@ -1,0 +1,570 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 332,
+    "complexity_score": 386,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 141,
+    "suspect_count": 23,
+    "suspect_types": [
+      "decompiler_intrinsic",
+      "extra_output",
+      "pointer_cast"
+    ],
+    "total_lines": 473
+  },
+  "cross_references": [
+    {
+      "addr": "005c84c0",
+      "from_addr": "005c8554",
+      "name": "shape_superopt.cpp_CComplexPolygon_splitToConvex_FUN_005c84c0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005c8b50",
+    "address_range": [
+      [
+        "005c8b50",
+        "005c8e6a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50",
+    "signature": "int __cdecl shape_superopt_cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50(CComplexPolygon *this_ptr,SExpandedEdge *buf_a,SExpandedEdge *buf_b)"
+  },
+  "function_calls": [
+    {
+      "addr": "005ca590",
+      "is_variadic": false,
+      "name": "shape_superopt.cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590"
+    },
+    {
+      "addr": "005c9100",
+      "is_variadic": false,
+      "name": "shape_superopt.cpp_CComplexPolygon_computeArea_FUN_005c9100"
+    },
+    {
+      "addr": "005cb3a0",
+      "is_variadic": false,
+      "name": "shape_superopt.cpp_CComplexPolygon_isConvex_FUN_005cb3a0"
+    },
+    {
+      "addr": "005c9aa0",
+      "is_variadic": false,
+      "name": "shape_superopt.cpp_CComplexPolygon_splitEdgesByPlane_FUN_005c9aa0"
+    }
+  ],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.918149466192171,
+    "instruction_count": 281,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BOOL_OR": 5,
+      "BRANCH": 9,
+      "CALL": 7,
+      "CBRANCH": 19,
+      "COPY": 572,
+      "FLOAT2FLOAT": 37,
+      "FLOAT_ADD": 2,
+      "FLOAT_DIV": 1,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_MULT": 12,
+      "FLOAT_NAN": 4,
+      "FLOAT_SQRT": 1,
+      "FLOAT_SUB": 6,
+      "INT2FLOAT": 1,
+      "INT_ADD": 162,
+      "INT_AND": 91,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 70,
+      "INT_LEFT": 8,
+      "INT_LESS": 4,
+      "INT_MULT": 4,
+      "INT_NOTEQUAL": 10,
+      "INT_OR": 10,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 10,
+      "INT_SLESS": 34,
+      "INT_SUB": 48,
+      "INT_XOR": 7,
+      "INT_ZEXT": 12,
+      "LOAD": 92,
+      "POPCOUNT": 34,
+      "RETURN": 3,
+      "STORE": 86
+    },
+    "pcode_op_count": 1382
+  },
+  "stack_frame": {
+    "frame_size": 244,
+    "local_size": 232,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_e4",
+        "offset": -228,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_e0",
+        "offset": -224,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_dc",
+        "offset": -220,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_d8",
+        "offset": -216,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_d4",
+        "offset": -212,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_d0",
+        "offset": -208,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_cc",
+        "offset": -204,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_c4",
+        "offset": -196,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_bc",
+        "offset": -188,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_b4",
+        "offset": -180,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_b0",
+        "offset": -176,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_ac",
+        "offset": -172,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a8",
+        "offset": -168,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a4",
+        "offset": -164,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a0",
+        "offset": -160,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_9c",
+        "offset": -156,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_94",
+        "offset": -148,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_8c",
+        "offset": -140,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_84",
+        "offset": -132,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_7c",
+        "offset": -124,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_74",
+        "offset": -116,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_6c",
+        "offset": -108,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CComplexPolygon *"
+      },
+      {
+        "is_param": true,
+        "name": "buf_a",
+        "offset": 8,
+        "size": 4,
+        "type": "SExpandedEdge *"
+      },
+      {
+        "is_param": true,
+        "name": "buf_b",
+        "offset": 12,
+        "size": 4,
+        "type": "SExpandedEdge *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 7,
+      "match": "extraout_EDX",
+      "severity": "moderate",
+      "text": "uint extraout_EDX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 8,
+      "match": "extraout_EDX_00",
+      "severity": "moderate",
+      "text": "uint extraout_EDX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 60,
+      "match": "(CVector3d *)((int)",
+      "severity": "mild",
+      "text": "pCVar6 = (CVector3d *)((int)pCVar6 + ((uint)bVar7 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 69,
+      "match": "(double *)((int)",
+      "severity": "mild",
+      "text": "pdVar5 = (double *)((int)pdVar5 + (uint)bVar7 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 72,
+      "match": "CONCAT44",
+      "severity": "mild",
+      "text": "local_9c = __BITCAST_DOUBLE(CONCAT44(uStack_c0,local_c4)) * local_14->z -",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 73,
+      "match": "CONCAT44",
+      "severity": "mild",
+      "text": "__BITCAST_DOUBLE(CONCAT44(uStack_b8,local_bc)) * local_14->y;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 74,
+      "match": "CONCAT44",
+      "severity": "mild",
+      "text": "local_94 = __BITCAST_DOUBLE(CONCAT44(uStack_b8,local_bc)) * local_14->x -",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 75,
+      "match": "CONCAT44",
+      "severity": "mild",
+      "text": "__BITCAST_DOUBLE(CONCAT44(uStack_c8,local_cc)) * local_14->z;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 76,
+      "match": "CONCAT44",
+      "severity": "mild",
+      "text": "local_8c = __BITCAST_DOUBLE(CONCAT44(uStack_c8,local_cc)) * local_14->y -",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 77,
+      "match": "CONCAT44",
+      "severity": "mild",
+      "text": "__BITCAST_DOUBLE(CONCAT44(uStack_c0,local_c4)) * local_14->x;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 78,
+      "match": "SQRT",
+      "severity": "mild",
+      "text": "dVar1 = 1.0 / SQRT(local_8c * local_8c + local_9c * local_9c + local_94 * local_94);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 116,
+      "match": "extraout_EDX_00",
+      "severity": "moderate",
+      "text": "local_38 = extraout_EDX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 118,
+      "match": "extraout_EDX_00",
+      "severity": "moderate",
+      "text": "uStack_50 = extraout_EDX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 119,
+      "match": "extraout_EDX_00",
+      "severity": "moderate",
+      "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_40,local_44)) < __BITCAST_DOUBLE(CONCAT44(extraout_EDX_00,local_3c))) {",
+      "type": "extra_output"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 119,
+      "match": "CONCAT44",
+      "severity": "mild",
+      "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_40,local_44)) < __BITCAST_DOUBLE(CONCAT44(extraout_EDX_00,local_3c))) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 119,
+      "match": "CONCAT44",
+      "severity": "mild",
+      "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_40,local_44)) < __BITCAST_DOUBLE(CONCAT44(extraout_EDX_00,local_3c))) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 121,
+      "match": "extraout_EDX_00",
+      "severity": "moderate",
+      "text": "uStack_40 = extraout_EDX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 128,
+      "match": "extraout_EDX",
+      "severity": "moderate",
+      "text": "local_38 = extraout_EDX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 130,
+      "match": "extraout_EDX",
+      "severity": "moderate",
+      "text": "uStack_30 = extraout_EDX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 131,
+      "match": "extraout_EDX",
+      "severity": "moderate",
+      "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_40,local_44)) < __BITCAST_DOUBLE(CONCAT44(extraout_EDX,local_3c))) {",
+      "type": "extra_output"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 131,
+      "match": "CONCAT44",
+      "severity": "mild",
+      "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_40,local_44)) < __BITCAST_DOUBLE(CONCAT44(extraout_EDX,local_3c))) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 131,
+      "match": "CONCAT44",
+      "severity": "mild",
+      "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_40,local_44)) < __BITCAST_DOUBLE(CONCAT44(extraout_EDX,local_3c))) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 133,
+      "match": "extraout_EDX",
+      "severity": "moderate",
+      "text": "uStack_40 = extraout_EDX;",
+      "type": "extra_output"
+    }
+  ]
+}

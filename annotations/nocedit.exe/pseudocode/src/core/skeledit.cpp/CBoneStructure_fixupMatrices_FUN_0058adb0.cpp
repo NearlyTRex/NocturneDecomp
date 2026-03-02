@@ -38,6 +38,6 @@ void __cdecl core_skeledit_cpp_CBoneStructure_fixupMatrices_FUN_0058adb0(CBoneSt
       matrix = (CMatrix3x4f *)&matrix[2].m[2].x;
     } while (iVar1 < this_ptr->bone_count);
   }
-  core_skeledit_cpp_CBoneStructure_FUN_0058ac80(this_ptr);
+  core_skeledit_cpp_CBoneStructure_computeLocalMatrices_FUN_0058ac80(this_ptr);
   return;
 }

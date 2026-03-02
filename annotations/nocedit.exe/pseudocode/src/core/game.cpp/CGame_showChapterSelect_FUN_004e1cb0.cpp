@@ -407,7 +407,7 @@ LAB_004e2376:
   core_mission_cpp_CDemonMission_load_FUN_00522d90(g_CDemonMissionPtr,local_144,iVar5);
   iVar3 = core_mission_cpp_CDemonMission_createHeros_FUN_00524a80(g_CDemonMissionPtr,0);
   if (iVar3 != 0) {
-    core_mission_cpp_CDemonMission_FUN_00524760(g_CDemonMissionPtr);
+    core_mission_cpp_CDemonMission_startMission_FUN_00524760(g_CDemonMissionPtr);
     core_mission_cpp_CDemonMission_run_FUN_00524420(g_CDemonMissionPtr);
     if (this_ptr->need_chapter_reload != 0) {
       this_ptr->need_chapter_reload = 0;

@@ -16,7 +16,7 @@
 ;   shape_meshlod.cpp_CLodFace_copy2_FUN_0051efe0 at 0051f04a
 ;   shape_meshlod.cpp_CLodMesh_compactFaces_FUN_0051b570 at 0051b6c1
 ;   shape_meshlod.cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30 at 0051bf63
-;   shape_superopt.cpp_TriListSomething_FUN_005d77a0 at 005d7b27
+;   shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a0 at 005d7b27
 ;
 ; *****************************************************************************
 

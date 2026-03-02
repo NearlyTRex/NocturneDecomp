@@ -10,8 +10,8 @@
 ; va_list_t        Stack[-0x14]:4  local_14
 ;
 ; XREF[4]:
-;   core_skeledit.cpp_CDeformableModel_FUN_0058c190 at 0058d223
-;   core_skeledit.cpp_FUN_00589b10 at 00589b53
+;   core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190 at 0058d223
+;   core_skeledit.cpp_onLodGenerationComplete_FUN_00589b10 at 00589b53
 ;   core_texlist.cpp_CTextureList_buildMasterTextureList_FUN_005dc2a0 at 005dc3d5
 ;   shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520 at 0051d805
 ;

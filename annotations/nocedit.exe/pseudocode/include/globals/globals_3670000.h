@@ -11,8 +11,12 @@
 // CVector3f[5000]
 extern CVector3f g_FloatVertexArray[5000];
 
+// char[260]
+extern char g_SkeleditLastTestSkeletonDir[260];
+
 // char[264]
 extern char g_SkeleditLastPOSImported[264];
+extern char g_SkeleditLastMOTImported[264];
 
 // char[504]
 extern char g_SkeleditStatusMessage[504];

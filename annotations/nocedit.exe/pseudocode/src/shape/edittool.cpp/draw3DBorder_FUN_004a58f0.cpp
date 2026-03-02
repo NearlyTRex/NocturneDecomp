@@ -11,11 +11,11 @@ void __cdecl shape_edittool_cpp_draw3DBorder_FUN_004a58f0(int left,int top,int w
 {
   g_ActiveRenderColor = g_HighlightColor;
   if (border_style_flag != 0) {
-    g_ActiveRenderColor = g_BackgroundColor2;
+    g_ActiveRenderColor = g_BorderBackgroundColor;
   }
   engine_2d_c_drawHLine_FUN_00402ee0(left,top,width + -1);
   engine_2d_c_drawVLine_FUN_00402ff0(left,top,height + -1);
-  g_ActiveRenderColor = g_BackgroundColor2;
+  g_ActiveRenderColor = g_BorderBackgroundColor;
   if (border_style_flag != 0) {
     g_ActiveRenderColor = g_HighlightColor;
   }

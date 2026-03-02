@@ -42,8 +42,8 @@ void __cdecl shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(CEd
              (g_WindowStack[iVar3].bottom - g_WindowStack[iVar3].top) + 1);
   engine_2d_c_fillRectWithBorder_FUN_00403200
             (pSVar7->left + 1,g_WindowStack[iVar3].top + 1,g_WindowStack[iVar3].right + -2,
-             g_WindowStack[iVar3].bottom + -2,INT_02cf2a78,g_WindowBorderColor1);
-  g_ActiveRenderColor = g_WindowBorderColor2;
+             g_WindowStack[iVar3].bottom + -2,g_WindowContentColor,g_WindowBorderHighlightColor);
+  g_ActiveRenderColor = g_WindowBorderShadowColor;
   engine_2d_c_drawHLine_FUN_00402ee0
             (pSVar7->left,g_WindowStack[iVar3].bottom + -1,g_WindowStack[iVar3].right + -1);
   engine_2d_c_drawVLine_FUN_00402ff0
@@ -61,7 +61,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(CEd
   engine_2d_c_fillRectColor_FUN_00403170
             (pSVar7->left + 1,iVar5,g_WindowStack[iVar3].right + -2,
              ((int)((g_FontCharacterWidth * 5 + iVar6 * -4) - (uint)(iVar6 << 1 < 0)) >> 2) + iVar5
-             + -1,g_WindowFillColor);
+             + -1,g_TitleBarFillColor);
   engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
   color_value = -1;
   y = g_FontCharacterWidth / 2 + g_WindowStack[iVar3].top;
@@ -78,11 +78,11 @@ void __cdecl shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(CEd
   if (iVar5 < iVar6 + g_FontCharacterWidth) {
     iVar5 = iVar6 + g_FontCharacterWidth;
   }
-  g_ActiveRenderColor = g_WindowBorderColor1;
+  g_ActiveRenderColor = g_WindowBorderHighlightColor;
   iVar5 = iVar5 + g_WindowStack[iVar3].top;
   engine_2d_c_drawHLine_FUN_00402ee0(pSVar7->left + 1,iVar5,g_WindowStack[iVar3].right + -2);
-  if (g_WindowBorderColor1 != g_WindowBorderColor2) {
-    g_ActiveRenderColor = g_WindowBorderColor2;
+  if (g_WindowBorderHighlightColor != g_WindowBorderShadowColor) {
+    g_ActiveRenderColor = g_WindowBorderShadowColor;
     engine_2d_c_drawHLine_FUN_00402ee0(pSVar7->left + 1,iVar5 + -1,g_WindowStack[iVar3].right + -2);
   }
   g_ClipTop = iVar1;

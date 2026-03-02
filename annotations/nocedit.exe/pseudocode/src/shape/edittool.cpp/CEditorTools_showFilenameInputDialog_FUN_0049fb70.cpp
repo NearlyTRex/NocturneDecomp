@@ -84,11 +84,11 @@ int __cdecl shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
       } while (cVar1 != '\0');
       engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
       engine_font_cpp_CBitFont_drawText_FUN_004cda80
-                (g_EditorFont,local_360,g_ClipLeft,g_ClipTop,INT_02cf2aac,-1);
+                (g_EditorFont,local_360,g_ClipLeft,g_ClipTop,g_DialogTextColor,-1);
     }
-    iVar3 = INT_02cf2aac;
+    iVar3 = g_DialogTextColor;
     if (local_14 != 0) {
-      iVar3 = g_ButtonColor;
+      iVar3 = g_ActiveItemTextColor;
     }
     engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
     color_value = -1;

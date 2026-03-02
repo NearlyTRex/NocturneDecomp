@@ -30,7 +30,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_skeledit.cpp_CDeformableModel_FUN_0058d790 at 0058d9fa
+;   core_skeledit.cpp_CDeformableModel_extractLodLevel_FUN_0058d790 at 0058d9fa
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CVectorTypeInfo

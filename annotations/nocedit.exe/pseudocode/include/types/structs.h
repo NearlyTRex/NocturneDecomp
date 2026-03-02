@@ -5,6 +5,7 @@
 // =============================================================================
 // Auto-generated aggregate of all structs type definitions.
 
+#include "types/structs/CLodMeshPrecomputeEntry.h"
 #include "types/structs/SActionKeyBindings.h"
 #include "types/structs/SActorVarBlock.h"
 #include "types/structs/SAlphaEntry.h"
@@ -51,6 +52,7 @@
 #include "types/structs/SEdgeTableEntry.h"
 #include "types/structs/SEnumPair.h"
 #include "types/structs/SEventNameBlock.h"
+#include "types/structs/SExpandedEdge.h"
 #include "types/structs/SFace.h"
 #include "types/structs/SFire.h"
 #include "types/structs/SFly.h"

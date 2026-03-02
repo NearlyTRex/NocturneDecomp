@@ -96,8 +96,8 @@ void __cdecl core_gabriela_cpp_CGabriella_processDamage_FUN_004d6b30(CGabriella 
 void __cdecl core_gabriela_cpp_CGabriella_FUN_004d6d40(CGabriella *this_ptr);
 void __cdecl core_gabriela_cpp_CGabriella_FUN_004d6f80(CGabriella *this_ptr);
 void __stack2_esi core_gabriela_cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d7120 (CGabriella *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
-int __cdecl core_gabriela_cpp_CGabriella_areGunsDrawn_FUN_004d7590(CGabriella *this_ptr);
-void __cdecl core_gabriela_cpp_CGabriella_drawGun_FUN_004d75b0(CGabriella *this_ptr,int drawn);
+int __cdecl core_gabriela_cpp_CGabriella_isWeaponDrawn_FUN_004d7590(CGabriella *this_ptr);
+void __cdecl core_gabriela_cpp_CGabriella_drawWeapon_FUN_004d75b0(CGabriella *this_ptr,int drawn);
 void __cdecl core_gabriela_cpp_CGabriella_onActorDeleted_FUN_004d75e0(CGabriella *this_ptr,CDemonActor *deleted_actor);
 void __cdecl core_gabriela_cpp_CGabriella_getPropertyList_FUN_004d7610(CGabriella *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_gabriela_cpp_CGabriella_addFilesToExtract_FUN_004d7630(CGabriella *this_ptr,_FILE *file_handle);

@@ -127,13 +127,13 @@ void __cdecl CGabriella(CGabriella *this_ptr);
 // Address: 004d7120
 void __stack2_esi CGabriella::getCarryObjToBodyXForm(CGabriella *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
-// Original: core_gabriela.cpp_CGabriella_areGunsDrawn_FUN_004d7590
+// Original: core_gabriela.cpp_CGabriella_isWeaponDrawn_FUN_004d7590
 // Address: 004d7590
-int __cdecl CGabriella::areGunsDrawn(CGabriella *this_ptr);
+int __cdecl CGabriella::isWeaponDrawn(CGabriella *this_ptr);
 
-// Original: core_gabriela.cpp_CGabriella_drawGun_FUN_004d75b0
+// Original: core_gabriela.cpp_CGabriella_drawWeapon_FUN_004d75b0
 // Address: 004d75b0
-void __cdecl CGabriella::drawGun(CGabriella *this_ptr,int drawn);
+void __cdecl CGabriella::drawWeapon(CGabriella *this_ptr,int drawn);
 
 // Original: core_gabriela.cpp_CGabriella_onActorDeleted_FUN_004d75e0
 // Address: 004d75e0

@@ -2,13 +2,13 @@
 // Address: 00516ba0
 // Address Range: [[00516ba0, 00516d46]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_meshlod_cpp_CLodMesh_generateLOD_FUN_00516ba0(CLodMesh *this_ptr,int target_tri_count,uint display_mode)
+// Signature: void __cdecl shape_meshlod_cpp_CLodMesh_generateLOD_FUN_00516ba0(CLodMesh *this_ptr,int target_tri_count,int render_mode)
 
 #include "nocturne.h"
 
 /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
-void __cdecl shape_meshlod_cpp_CLodMesh_generateLOD_FUN_00516ba0(CLodMesh *this_ptr,int target_tri_count,uint display_mode)
+void __cdecl shape_meshlod_cpp_CLodMesh_generateLOD_FUN_00516ba0(CLodMesh *this_ptr,int target_tri_count,int render_mode)
 
 {
   int iVar1;
@@ -51,7 +51,7 @@ LAB_00516cb3:
                   (buffer,", est %d:%02d remaining",iVar2 / 0x3c,iVar2 % 0x3c);
       }
     }
-    iVar2 = shape_meshlod_cpp_CLodMesh_previewLodGeneration_FUN_0051d520(this_ptr,0,display_mode);
+    iVar2 = shape_meshlod_cpp_CLodMesh_previewLodGeneration_FUN_0051d520(this_ptr,0,render_mode);
     if (iVar2 == 0) break;
     shape_meshlod_cpp_CLodMesh_collapseEdge_FUN_00517630
               (this_ptr,edge_data->vertex_idx_1,edge_data->vertex_idx_2,edge_data->collapse_error);

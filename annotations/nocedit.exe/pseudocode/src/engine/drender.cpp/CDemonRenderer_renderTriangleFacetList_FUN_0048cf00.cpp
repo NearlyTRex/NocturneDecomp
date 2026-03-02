@@ -91,7 +91,8 @@ int __cdecl engine_drender_cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf
         }
         if (0 < iVar3) {
           iVar3 = wincore_windll_cpp_drawPolyList_FUN_005b7640
-                            (this_ptr->vertex_buffer_ptr,g_VisibleFacePointers,iVar3,
+                            (this_ptr->vertex_buffer_ptr,
+                             (SMRGLPrimitiveTriangle **)g_VisibleFacePointers,iVar3,
                              g_RenderStateFlags.dword);
           return iVar3;
         }

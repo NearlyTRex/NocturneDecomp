@@ -2,46 +2,10 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 86,
-        "message": "use of undeclared identifier 'DAT_03670950'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 90,
-        "message": "use of undeclared identifier 'DAT_03670950'; did you mean 'DAT_03f9b850'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 107,
-        "message": "use of undeclared identifier 'DAT_03670a58'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 111,
-        "message": "use of undeclared identifier 'DAT_03670a58'; did you mean 'DAT_006590a8'?"
-      },
-      {
         "category": "incompatible_types",
         "column": 18,
-        "line": 149,
+        "line": 148,
         "message": "assigning to 'CDeformableModelInstance *' from incompatible type 'void *'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 33,
-        "line": 180,
-        "message": "use of undeclared identifier 'DAT_03670950'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 33,
-        "line": 182,
-        "message": "use of undeclared identifier 'DAT_03670a58'"
       }
     ],
     "success": false,
@@ -49,17 +13,15 @@
   },
   "complexity": {
     "assembly_lines": 507,
-    "complexity_score": 242,
+    "complexity_score": 176,
     "cross_reference_count": 1,
     "function_call_count": 22,
     "global_count": 49,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 177,
-    "suspect_count": 6,
-    "suspect_types": [
-      "undefined_data"
-    ],
-    "total_lines": 684
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 176,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 683
   },
   "cross_references": [
     {
@@ -466,8 +428,8 @@
     },
     {
       "addr": "03670950",
-      "name": "DAT_03670950",
-      "type": "undefined4",
+      "name": "g_SkeleditLastMOTImported",
+      "type": "char[264]",
       "value": null
     },
     {
@@ -478,8 +440,8 @@
     },
     {
       "addr": "03670a58",
-      "name": "DAT_03670a58",
-      "type": "undefined4",
+      "name": "g_SkeleditLastTestSkeletonDir",
+      "type": "char[260]",
       "value": null
     },
     {
@@ -558,54 +520,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 79,
-      "match": "DAT_03670950",
-      "severity": "mild",
-      "text": "DAT_03670950 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 83,
-      "match": "DAT_03670950",
-      "severity": "mild",
-      "text": "puVar5 = &DAT_03670950;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 100,
-      "match": "DAT_03670a58",
-      "severity": "mild",
-      "text": "DAT_03670a58 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 104,
-      "match": "DAT_03670a58",
-      "severity": "mild",
-      "text": "puVar5 = &DAT_03670a58;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 173,
-      "match": "DAT_03670950",
-      "severity": "mild",
-      "text": "_fprintf(p_Var2,\"\\\"%s\\\"\\n\",&DAT_03670950);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 175,
-      "match": "DAT_03670a58",
-      "severity": "mild",
-      "text": "_fprintf(p_Var2,\"\\\"%s\\\"\\n\",&DAT_03670a58);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

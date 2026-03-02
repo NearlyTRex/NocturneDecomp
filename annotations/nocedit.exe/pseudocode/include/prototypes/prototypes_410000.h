@@ -170,7 +170,7 @@ void __cdecl core_baron_cpp_CBaron_archive_FUN_00413a70(CBaron *this_ptr);
 int __cdecl core_baron_cpp_CBaron_renderOpaque_FUN_00413ad0(CBaron *this_ptr);
 int __cdecl core_baron_cpp_CBaron_renderTransparent_FUN_00413ae0(CBaron *this_ptr);
 void __cdecl core_baron_cpp_CBaron_processDamage_FUN_00413cd0(CBaron *this_ptr,SDamageInfo *damage_info);
-void __cdecl core_baron_cpp_CBaron_drawGun_FUN_00413cf0(CBaron *this_ptr,int drawn);
+void __cdecl core_baron_cpp_CBaron_drawWeapon_FUN_00413cf0(CBaron *this_ptr,int drawn);
 CBaronWeapon * __cdecl core_baron_cpp_factoryFunc_FUN_00413d00(void);
 CDemonActorType * __cdecl core_baron_cpp_CBaronWeapon_getActorType_FUN_00413d30(CBaronWeapon *this_ptr);
 CBaronWeapon * __cdecl core_baron_cpp_CBaronWeapon_ctor_FUN_00413d40(CBaronWeapon *this_ptr);

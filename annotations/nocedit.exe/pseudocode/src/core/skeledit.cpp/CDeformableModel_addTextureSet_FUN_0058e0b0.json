@@ -1,0 +1,207 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 132,
+    "complexity_score": 54,
+    "cross_reference_count": 0,
+    "function_call_count": 6,
+    "global_count": 7,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 54,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 186
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0058e0b0",
+    "address_range": [
+      [
+        "0058e0b0",
+        "0058e234"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeledit.cpp_CDeformableModel_addTextureSet_FUN_0058e0b0",
+    "signature": "void __cdecl core_skeledit_cpp_CDeformableModel_addTextureSet_FUN_0058e0b0(CDeformableModel *this_ptr,char *name_format)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "is_variadic": true,
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "005febfc",
+      "is_variadic": false,
+      "name": "crt_file.c_makepath_FUN_005febfc"
+    },
+    {
+      "addr": "005ff9f3",
+      "is_variadic": false,
+      "name": "crt_stack.c___STK_FUN_005ff9f3"
+    },
+    {
+      "addr": "005fdbd0",
+      "is_variadic": true,
+      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
+    },
+    {
+      "addr": "005ff178",
+      "is_variadic": false,
+      "name": "crt_string.c_splitpath_FUN_005ff178"
+    },
+    {
+      "addr": "00481880",
+      "is_variadic": false,
+      "name": "engine_dosio.c_getFileSize_FUN_00481880"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0064aec2",
+      "name": "s_core_skeledit_cpp_0064aec2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064aed7",
+      "name": "s_Can_t_add_another_textur_0064aed7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064aef6",
+      "name": "s_tga_0064aef6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064aefb",
+      "name": "s_art_0064aefb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064aeff",
+      "name": "s_raw_0064aeff",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.861111111111111,
+    "instruction_count": 108,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 11,
+      "BOOL_OR": 1,
+      "BRANCH": 2,
+      "CALL": 7,
+      "CBRANCH": 6,
+      "COPY": 80,
+      "INT_ADD": 46,
+      "INT_AND": 78,
+      "INT_CARRY": 14,
+      "INT_EQUAL": 58,
+      "INT_LEFT": 4,
+      "INT_LESS": 7,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 7,
+      "INT_OR": 10,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 15,
+      "INT_SEXT": 3,
+      "INT_SLESS": 31,
+      "INT_SUB": 43,
+      "INT_XOR": 3,
+      "LOAD": 21,
+      "POPCOUNT": 27,
+      "RETURN": 1,
+      "STORE": 39,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 525
+  },
+  "stack_frame": {
+    "frame_size": 808,
+    "local_size": 800,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_31c",
+        "offset": -796,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_218",
+        "offset": -536,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_118",
+        "offset": -280,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModel *"
+      },
+      {
+        "is_param": true,
+        "name": "name_format",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
+}

@@ -35,7 +35,7 @@ section .text
     PUSH dword ptr [EBP + 0xc]          ; 005b3fd6
     PUSH dword ptr [EBP + 0x8]          ; 005b3fd9
     CALL wincore_windll.cpp_clearZBox_FUN_005b7c00 ; 005b3fdc
-        ;   XREF to: 005b7c00 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_clearZBox_FUN_005b7c00(int left, int top, int right, int bottom)
+        ;   XREF to: 005b7c00 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_clearZBox_FUN_005b7c00(int left, int right, int top, int bottom)
     POP EAX                             ; 005b3fe1
     POP EAX                             ; 005b3fe2
     POP EAX                             ; 005b3fe3

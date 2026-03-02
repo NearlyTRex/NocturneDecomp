@@ -8,7 +8,7 @@
 ; CObj *           Stack[0x8]:4   source
 ;
 ; XREF[1]:
-;   shape_superopt.cpp_COptimize_FUN_005d71e0 at 005d71fa
+;   shape_superopt.cpp_COptimize_setGeometry_FUN_005d71e0 at 005d71fa
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Unable_to_allocate_RAM_f_006543bf

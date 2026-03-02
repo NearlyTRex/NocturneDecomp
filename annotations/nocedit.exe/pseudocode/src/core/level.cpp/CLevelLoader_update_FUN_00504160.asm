@@ -41,9 +41,9 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[5]:
-;   core_mission.cpp_CDemonMission_FUN_00524760 at 00524801
 ;   core_mission.cpp_CDemonMission_load_FUN_00522d90 at 00522dc7
 ;   core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0 at 00523d21
+;   core_mission.cpp_CDemonMission_startMission_FUN_00524760 at 00524801
 ;   core_set.cpp_CDemonSet_initScene_FUN_0056aa10 at 0056aa32
 ;   core_set.cpp_CDemonSet_load_FUN_00569410 at 00569d63
 ;

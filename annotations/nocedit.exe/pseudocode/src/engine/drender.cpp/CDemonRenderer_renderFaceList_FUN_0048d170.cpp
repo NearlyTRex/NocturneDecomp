@@ -74,7 +74,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFaceList_FUN_0048d170(CDemo
           }
           if (0 < iVar3) {
             wincore_windll_cpp_drawPolyList2_FUN_005b7780
-                      (this_ptr->vertex_buffer_ptr,g_VisibleFacePointers,iVar3,
+                      (this_ptr->vertex_buffer_ptr,(ushort **)g_VisibleFacePointers,iVar3,
                        g_RenderStateFlags.dword);
             return;
           }

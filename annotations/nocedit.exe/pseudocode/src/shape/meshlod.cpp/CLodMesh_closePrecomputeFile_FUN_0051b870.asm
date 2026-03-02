@@ -7,7 +7,7 @@
 ; CLodMesh *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
-;   core_skeledit.cpp_CLodMesh_FUN_00589c20 at 00589dd2
+;   core_skeledit.cpp_CLodMesh_selectAndGenerateLods_FUN_00589c20 at 00589dd2
 ;   shape_meshlod.cpp_CLodMesh_free_FUN_00515970 at 00515979
 ;   shape_meshlod.cpp_CLodMesh_generateLOD_FUN_00516ba0 at 00516d38
 ;
