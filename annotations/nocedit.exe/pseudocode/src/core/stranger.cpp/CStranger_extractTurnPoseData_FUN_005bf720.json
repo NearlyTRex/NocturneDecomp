@@ -1,0 +1,236 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "type_error",
+        "column": 3,
+        "line": 21,
+        "message": "unknown type name 'code'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 74,
+    "complexity_score": 121,
+    "cross_reference_count": 1,
+    "function_call_count": 6,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 46,
+    "suspect_count": 6,
+    "suspect_types": [
+      "pointer_cast",
+      "unresolved_funcptr",
+      "warning_type_propagation"
+    ],
+    "total_lines": 120
+  },
+  "cross_references": [
+    {
+      "addr": "005be520",
+      "from_addr": "005be5ce",
+      "name": "core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005bf720",
+    "address_range": [
+      [
+        "005bf720",
+        "005bf7fe"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_stranger.cpp_CStranger_extractTurnPoseData_FUN_005bf720",
+    "signature": "void __cdecl core_stranger_cpp_CStranger_extractTurnPoseData_FUN_005bf720(CStranger *this_ptr,SPoseData *out_pose)"
+  },
+  "function_calls": [
+    {
+      "addr": "0059ff20",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20"
+    },
+    {
+      "addr": "005a1510",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510"
+    },
+    {
+      "addr": "005a15e0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0"
+    },
+    {
+      "addr": "0059e0a0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0"
+    },
+    {
+      "addr": "005f79f0",
+      "is_variadic": false,
+      "name": "core_xform.cpp_quaternionFromAngleY_FUN_005f79f0"
+    },
+    {
+      "addr": "005f7ac0",
+      "is_variadic": false,
+      "name": "core_xform.cpp_quaternionToEulerAngles_FUN_005f7ac0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00653894",
+      "name": "DOUBLE_00653894",
+      "type": "double",
+      "value": "40"
+    },
+    {
+      "addr": "03f6bacc",
+      "name": "INT_03f6bacc",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.621212121212121,
+    "instruction_count": 66,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "CALL": 7,
+      "COPY": 89,
+      "FLOAT2FLOAT": 5,
+      "FLOAT_MULT": 1,
+      "FLOAT_NEG": 1,
+      "INT_ADD": 35,
+      "INT_AND": 37,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 27,
+      "INT_LEFT": 2,
+      "INT_LESS": 2,
+      "INT_MULT": 8,
+      "INT_NOTEQUAL": 2,
+      "INT_OR": 5,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 10,
+      "INT_SLESS": 15,
+      "INT_SUB": 38,
+      "INT_XOR": 1,
+      "INT_ZEXT": 8,
+      "LOAD": 14,
+      "POPCOUNT": 13,
+      "RETURN": 1,
+      "STORE": 33
+    },
+    "pcode_op_count": 371
+  },
+  "stack_frame": {
+    "frame_size": 6892,
+    "local_size": 6884,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_1ae0",
+        "offset": -6880,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CStranger *"
+      },
+      {
+        "is_param": true,
+        "name": "out_pose",
+        "offset": 8,
+        "size": 4,
+        "type": "SPoseData *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 14,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "code *blend_callback;",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 37,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "puVar3 = (uint *)((int)&local_3c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 38,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "puVar2 = (uint *)((int)&local_2c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 39,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&local_3c + (uint)bVar4 * -8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 40,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&local_2c + (uint)bVar4 * -8 + 4);",
+      "type": "pointer_cast"
+    }
+  ]
+}

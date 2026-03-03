@@ -55,7 +55,7 @@ section .text
     LEA EBX,[ESP + 0x4]                 ; 005ec2bd
     PUSH EBX                            ; 005ec2c1
     CALL core_actor.cpp_archiveActor_FUN_0040b870 ; 005ec2c2
-        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * actor_ptr, char * property_name)
+        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 005ec2c7
     JMP 0x005ec29f                      ; 005ec2ca
         ;   XREF to: 005ec29f (UNCONDITIONAL_JUMP)  ; LAB_005ec29f
@@ -77,7 +77,7 @@ section .text
     PUSH EBX                            ; 005ec2f4
     INC ESI                             ; 005ec2f5
     CALL core_actor.cpp_archiveActor_FUN_0040b870 ; 005ec2f6
-        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * actor_ptr, char * property_name)
+        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 005ec2fb
     MOV EBP,dword ptr [EDI + 0x370]     ; 005ec2fe
     ADD EBX,0x8                         ; 005ec304

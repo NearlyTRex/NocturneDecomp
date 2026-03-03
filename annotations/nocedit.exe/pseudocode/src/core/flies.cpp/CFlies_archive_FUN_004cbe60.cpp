@@ -17,8 +17,7 @@ void __cdecl core_flies_cpp_CFlies_archive_FUN_004cbe60(CFlies *this_ptr)
     }
   }
   else {
-    core_actor_cpp_archiveActor_FUN_0040b870
-              ((CDemonActor *)&this_ptr->follow_actor,"followActor");
+    core_actor_cpp_archiveActor_FUN_0040b870(&this_ptr->follow_actor,"followActor");
     core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->gather_count,"gatherCount");
     core_actor_cpp_archiveFloat_FUN_0040b770(&this_ptr->gather_time,"gatherTime");
     if (g_CFliesClassVersion < 3) {

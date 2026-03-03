@@ -25,8 +25,7 @@ void __cdecl core_charactr_cpp_CCharacter_archive_FUN_004283a0(CCharacter *this_
         do {
           core_actor_cpp_archiveInteger_FUN_0040b7f0(&local_18,"carry hand");
           core_actor_cpp_archiveActor_FUN_0040b870
-                    ((CDemonActor *)&this_ptr->carry_hands[local_18].carry_actor,
-                     "carry actor");
+                    (&this_ptr->carry_hands[local_18].carry_actor,"carry actor");
           local_20 = local_20 + 1;
         } while (local_20 < local_1c);
       }
@@ -47,8 +46,7 @@ void __cdecl core_charactr_cpp_CCharacter_archive_FUN_004283a0(CCharacter *this_
         if (this_ptr->carry_hands[local_20].carry_actor != (CDemonActor *)0x0) {
           core_actor_cpp_archiveInteger_FUN_0040b7f0(&local_20,"carry hand");
           core_actor_cpp_archiveActor_FUN_0040b870
-                    ((CDemonActor *)&this_ptr->carry_hands[local_20].carry_actor,
-                     "carry actor");
+                    (&this_ptr->carry_hands[local_20].carry_actor,"carry actor");
         }
         local_20 = local_20 + 1;
       } while (local_20 < 2);
@@ -58,8 +56,7 @@ void __cdecl core_charactr_cpp_CCharacter_archive_FUN_004283a0(CCharacter *this_
     core_actor_cpp_archiveString_FUN_0040b5c0(this_ptr->talk_to_me_event,"talkToMeEvent");
   }
   if (3 < g_CCharacterClassVersion) {
-    core_actor_cpp_archiveActor_FUN_0040b870
-              ((CDemonActor *)&this_ptr->grabbed_by,"grabbedBy");
+    core_actor_cpp_archiveActor_FUN_0040b870(&this_ptr->grabbed_by,"grabbedBy");
     core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->grabbed_type,"grabbedType");
     core_actor_cpp_archiveClothList_FUN_0040be60(&this_ptr->cloth_list,"clothList");
   }

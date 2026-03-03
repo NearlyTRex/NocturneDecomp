@@ -22,7 +22,7 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50 at 0059f1a5
 ;   core_skeleton.cpp_CDeformableModelInstance_blendWithQuaternions_FUN_0059f260 at 0059f6a5
 ;   core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0 at 0059e908
-;   core_stranger.cpp_CStranger_FUN_005c02b0 at 005c0530
+;   core_stranger.cpp_CStranger_applyArmAimRotation_FUN_005c02b0 at 005c0530
 ;   ... and 1 more
 ;
 ; *****************************************************************************

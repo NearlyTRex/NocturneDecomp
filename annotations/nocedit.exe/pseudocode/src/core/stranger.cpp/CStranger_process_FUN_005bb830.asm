@@ -21,7 +21,7 @@
 ;   core_charactr.cpp_CCharacter_process_FUN_00429870
 ;   core_game.cpp_CGame_slamDT_FUN_004e3080
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-;   core_stranger.cpp_CStranger_FUN_005bb960
+;   core_stranger.cpp_CStranger_processFrame_FUN_005bb960
 ;
 ; *****************************************************************************
 
@@ -54,24 +54,24 @@ section .text
     FSTP float ptr [ESP + 0x4]          ; 005bb86a
     PUSH dword ptr [ESP + 0x4]          ; 005bb86e
     PUSH EBX                            ; 005bb872
-    CALL core_stranger.cpp_CStranger_FUN_005bb960 ; 005bb873
-        ;   XREF to: 005bb960 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_FUN_005bb960(CStranger * this_ptr)
+    CALL core_stranger.cpp_CStranger_processFrame_FUN_005bb960 ; 005bb873
+        ;   XREF to: 005bb960 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_processFrame_FUN_005bb960(CStranger * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 005bb878
     PUSH dword ptr [ESP + 0x4]          ; 005bb87b
     PUSH EBX                            ; 005bb87f
-    CALL core_stranger.cpp_CStranger_FUN_005bb960 ; 005bb880
-        ;   XREF to: 005bb960 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_FUN_005bb960(CStranger * this_ptr)
+    CALL core_stranger.cpp_CStranger_processFrame_FUN_005bb960 ; 005bb880
+        ;   XREF to: 005bb960 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_processFrame_FUN_005bb960(CStranger * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 005bb885
     PUSH dword ptr [ESP + 0x4]          ; 005bb888
     PUSH EBX                            ; 005bb88c
-    CALL core_stranger.cpp_CStranger_FUN_005bb960 ; 005bb88d
-        ;   XREF to: 005bb960 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_FUN_005bb960(CStranger * this_ptr)
+    CALL core_stranger.cpp_CStranger_processFrame_FUN_005bb960 ; 005bb88d
+        ;   XREF to: 005bb960 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_processFrame_FUN_005bb960(CStranger * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 005bb892
     PUSH dword ptr [ESP + 0x4]          ; 005bb895
     PUSH EBX                            ; 005bb899
         ;   Label: LAB_005bb899
-    CALL core_stranger.cpp_CStranger_FUN_005bb960 ; 005bb89a
-        ;   XREF to: 005bb960 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_FUN_005bb960(CStranger * this_ptr)
+    CALL core_stranger.cpp_CStranger_processFrame_FUN_005bb960 ; 005bb89a
+        ;   XREF to: 005bb960 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_processFrame_FUN_005bb960(CStranger * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 005bb89f
     MOV ECX,dword ptr [0x0067b654]      ; 005bb8a2 | g_CGameInstance | g_CGamePtr
     PUSH dword ptr [ESP + 0x8]          ; 005bb8a8

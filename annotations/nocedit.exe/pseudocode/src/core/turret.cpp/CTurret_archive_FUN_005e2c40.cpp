@@ -20,7 +20,7 @@ void __cdecl core_turret_cpp_CTurret_archive_FUN_005e2c40(CTurret *this_ptr)
   core_actor_cpp_archiveFloat_FUN_0040b770(&this_ptr->fire_delay_time,"fireDelayTime");
   core_actor_cpp_archiveFloat_FUN_0040b770(&this_ptr->timer,"timer");
   core_actor_cpp_archiveActor_FUN_0040b870
-            ((CDemonActor *)&this_ptr->guard_zone_box_trigger,"guardZoneTriggerPtr");
+            (&this_ptr->guard_zone_box_trigger,"guardZoneTriggerPtr");
   core_actor_cpp_archiveString_FUN_0040b5c0
             (this_ptr->allowed_victim_types,"allowedVictimTypes");
   core_actor_cpp_archiveFloat_FUN_0040b770(&this_ptr->rotate_deg_per_sec,"rotateDegPerSec")

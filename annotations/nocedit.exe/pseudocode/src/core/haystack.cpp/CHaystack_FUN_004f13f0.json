@@ -4,7 +4,7 @@
       {
         "category": "other",
         "column": 16,
-        "line": 57,
+        "line": 59,
         "message": "cannot cast from type 'float' to pointer type 'CHero *'"
       }
     ],
@@ -13,12 +13,12 @@
   },
   "complexity": {
     "assembly_lines": 439,
-    "complexity_score": 290,
+    "complexity_score": 293,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 12,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 180,
+    "pseudocode_lines": 183,
     "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -26,7 +26,7 @@
       "stack_param",
       "warning_type_propagation"
     ],
-    "total_lines": 619
+    "total_lines": 622
   },
   "cross_references": [
     {
@@ -58,7 +58,7 @@
     {
       "addr": "004f3960",
       "is_variadic": false,
-      "name": "core_hero.cpp_CHero_FUN_004f3960"
+      "name": "core_hero.cpp_CHero_findNearestEnemy_FUN_004f3960"
     },
     {
       "addr": "0052dab0",
@@ -474,7 +474,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 47,
+      "line": 48,
       "match": "SQRT",
       "severity": "mild",
       "text": "local_30 = SQRT(local_48.z * local_48.z + local_48.x * local_48.x + local_48.y * local_48.y);",
@@ -482,7 +482,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 72,
+      "line": 75,
       "match": "SQRT",
       "severity": "mild",
       "text": "fVar1 = SQRT(local_48.z * local_48.z + local_48.x * local_48.x + local_48.y * local_48.y);",
@@ -490,7 +490,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 175,
+      "line": 178,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "if (in_stack_00000008 * (float)3.1415926535000001 < local_8c) {",
@@ -498,7 +498,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 176,
+      "line": 179,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "local_8c = in_stack_00000008 * (float)3.1415926535000001;",
@@ -506,7 +506,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 178,
+      "line": 181,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "if (local_8c < in_stack_00000008 * (float)-3.1415926535000001) {",
@@ -514,7 +514,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 179,
+      "line": 182,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "local_8c = in_stack_00000008 * (float)-3.1415926535000001;",

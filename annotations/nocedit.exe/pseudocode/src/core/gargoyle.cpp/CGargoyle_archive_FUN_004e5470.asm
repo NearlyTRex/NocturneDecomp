@@ -83,7 +83,7 @@ section .text
     ADD EBX,0xbef8                      ; 004e5504
     PUSH EBX                            ; 004e550a
     CALL core_actor.cpp_archiveActor_FUN_0040b870 ; 004e550b
-        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * actor_ptr, char * property_name)
+        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 004e5510
     POP ESI                             ; 004e5513
     POP EBX                             ; 004e5514

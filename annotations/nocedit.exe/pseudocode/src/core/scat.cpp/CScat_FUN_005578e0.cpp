@@ -29,7 +29,7 @@ void __cdecl core_scat_cpp_CScat_FUN_005578e0(CScat *this_ptr)
   CVector3f CStack_54;
   float fStack_44;
   CVector3f local_3c;
-  int local_30;
+  float local_30;
   int local_2c;
   float fStack_24;
   float local_20;
@@ -55,9 +55,9 @@ void __cdecl core_scat_cpp_CScat_FUN_005578e0(CScat *this_ptr)
   if ((((iVar5 == 2) || (iVar5 == 3)) &&
       (pCVar1 = (this_ptr->base).inventory.selected_weapon, pCVar1 != (CWeapon *)0x0)) &&
      (0 < pCVar1->ammo_count)) {
-    local_30 = 0x461c3f9a;
-    pCVar3 = (CHero *)core_hero_cpp_CHero_FUN_004f3960(&this_ptr->base);
-    if ((pCVar3 != (CHero *)0x0) && (local_30 < 0x41f00000)) {
+    local_30 = 9999.9;
+    pCVar3 = (CHero *)core_hero_cpp_CHero_findNearestEnemy_FUN_004f3960(&this_ptr->base,&local_30);
+    if ((pCVar3 != (CHero *)0x0) && ((int)local_30 < 0x41f00000)) {
       iVar7 = 1;
       this_ptr_01 = pCVar3;
     }

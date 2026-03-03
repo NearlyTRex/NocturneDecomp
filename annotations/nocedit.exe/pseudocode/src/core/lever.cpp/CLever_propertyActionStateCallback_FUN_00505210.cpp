@@ -14,6 +14,6 @@ int __cdecl core_lever_cpp_CLever_propertyActionStateCallback_FUN_00505210(CLeve
   this_ptr_00 = (CLever *)
                 core_actor_cpp_castToClassHash_FUN_0040c790
                           (&this_ptr->base,g_CLeverClassInfo.name_hash);
-  core_lever_cpp_CLever_FUN_00504c90(this_ptr_00);
+  core_lever_cpp_CLever_activate_FUN_00504c90(this_ptr_00);
   return 1;
 }

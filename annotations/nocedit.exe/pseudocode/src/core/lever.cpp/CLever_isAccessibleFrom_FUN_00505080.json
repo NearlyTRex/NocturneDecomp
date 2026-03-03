@@ -1,0 +1,138 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 67,
+    "complexity_score": 15,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 15,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 82
+  },
+  "cross_references": [
+    {
+      "addr": "004f2f50",
+      "from_addr": "004f3055",
+      "name": "core_hero.cpp_CHero_tryPullLever_FUN_004f2f50",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00505080",
+    "address_range": [
+      [
+        "00505080",
+        "005050f6"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_lever.cpp_CLever_isAccessibleFrom_FUN_00505080",
+    "signature": "int __cdecl core_lever_cpp_CLever_isAccessibleFrom_FUN_00505080(CLever *this_ptr,CVector3f *world_position)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408f10",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10"
+    }
+  ],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.589285714285714,
+    "instruction_count": 56,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BOOL_OR": 3,
+      "CALL": 1,
+      "CBRANCH": 5,
+      "COPY": 122,
+      "FLOAT2FLOAT": 2,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_NAN": 4,
+      "INT2FLOAT": 2,
+      "INT_ADD": 24,
+      "INT_AND": 26,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 14,
+      "INT_LEFT": 8,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 10,
+      "INT_OR": 10,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 7,
+      "INT_SUB": 11,
+      "INT_XOR": 1,
+      "INT_ZEXT": 8,
+      "LOAD": 22,
+      "POPCOUNT": 7,
+      "RETURN": 3,
+      "STORE": 8
+    },
+    "pcode_op_count": 313
+  },
+  "stack_frame": {
+    "frame_size": 44,
+    "local_size": 36,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLever *"
+      },
+      {
+        "is_param": true,
+        "name": "world_position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "00505089",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": []
+}

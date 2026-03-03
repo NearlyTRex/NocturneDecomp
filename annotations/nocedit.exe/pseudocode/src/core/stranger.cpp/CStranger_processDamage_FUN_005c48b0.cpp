@@ -25,7 +25,7 @@ void __cdecl core_stranger_cpp_CStranger_processDamage_FUN_005c48b0(CStranger *t
   if (g_CGamePtr->allow_damage_flag == 0) {
     damage_info->damage_amount = 0.0;
   }
-  core_hero_cpp_CHero_FUN_004f3580(&this_ptr->base);
+  core_hero_cpp_CHero_stopNearbyInteraction_FUN_004f3580(&this_ptr->base);
   if ((0.0 < (this_ptr->base).invincibility_timer) && (0xb < damage_info->damage_type)) {
     damage_info->damage_amount = 0.0;
     return;
@@ -57,8 +57,8 @@ void __cdecl core_stranger_cpp_CStranger_processDamage_FUN_005c48b0(CStranger *t
       pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                          (&this_ptr_00->motion_controller);
       if (pSVar4->state_index != 0x28) {
-        if (((this_ptr->base).ladder_to_climb == (CDemonActor *)0x0) &&
-           (this_ptr->ladder_to_descend == (CDemonActor *)0x0)) {
+        if (((this_ptr->base).ladder_to_climb == (CLadder *)0x0) &&
+           (this_ptr->ladder_to_descend == (CLadder *)0x0)) {
           if (damage_info->damage_type == 1) {
             iVar3 = 0x27;
             force_immediate = 1.4013e-45;
@@ -70,9 +70,9 @@ void __cdecl core_stranger_cpp_CStranger_processDamage_FUN_005c48b0(CStranger *t
         }
         else {
           force_immediate = 1.4013e-45;
-          (this_ptr->base).ladder_to_climb = (CDemonActor *)0x0;
+          (this_ptr->base).ladder_to_climb = (CLadder *)0x0;
           iVar3 = 0xf;
-          this_ptr->ladder_to_descend = (CDemonActor *)0x0;
+          this_ptr->ladder_to_descend = (CLadder *)0x0;
         }
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&(this_ptr->base).base.model.motion_controller,iVar3,(int)force_immediate);
@@ -86,22 +86,21 @@ void __cdecl core_stranger_cpp_CStranger_processDamage_FUN_005c48b0(CStranger *t
                   (g_CGorePtr,(CDemonActor *)this_ptr,0x32,50.0,(CVector3f *)0x0);
       }
     }
-    if (this_ptr->weapon == (this_ptr->base).base.carry_hands[0].carry_actor) {
-      this_ptr->weapon = (CDemonActor *)0x0;
+    if (this_ptr->weapon == (CWeapon *)(this_ptr->base).base.carry_hands[0].carry_actor) {
+      this_ptr->weapon = (CWeapon *)0x0;
     }
     (*(((this_ptr->base).base.base.vtable._uc)->_uc).dropCarriedObject)
               ((CCharacter *)this_ptr,0,(CVector3f *)0x0);
-    if ((this_ptr->base).base.carry_hands[1].carry_actor == this_ptr->weapon) {
-      this_ptr->weapon = (CDemonActor *)0x0;
+    if ((CWeapon *)(this_ptr->base).base.carry_hands[1].carry_actor == this_ptr->weapon) {
+      this_ptr->weapon = (CWeapon *)0x0;
     }
     (*(((this_ptr->base).base.base.vtable._uc)->_uc).dropCarriedObject)
               ((CCharacter *)this_ptr,1,(CVector3f *)0x0);
     goto LAB_005c4ae0;
   }
   if (damage_info->damage_amount <= 0.0) goto LAB_005c4ae0;
-  if (((damage_info->damage_type != 0x69) &&
-      ((this_ptr->base).ladder_to_climb == (CDemonActor *)0x0)) &&
-     ((this_ptr->ladder_to_descend == (CDemonActor *)0x0 && (this_ptr->action_pending == 0)))) {
+  if (((damage_info->damage_type != 0x69) && ((this_ptr->base).ladder_to_climb == (CLadder *)0x0))
+     && ((this_ptr->ladder_to_descend == (CLadder *)0x0 && (this_ptr->action_pending == 0)))) {
     pCVar6 = core_actor_cpp_castToClassHash_FUN_0040c790
                        (damage_info->attacker,g_CTommyGunClassInfo.name_hash);
     if (pCVar6 != (CDemonActor *)0x0) {

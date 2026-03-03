@@ -43,7 +43,7 @@ void __cdecl core_lever_cpp_CLever_archive_FUN_00504e80(CLever *this_ptr)
   }
   if (2 < g_CLeverClassVersion) {
     core_actor_cpp_archiveActor_FUN_0040b870
-              ((CDemonActor *)&this_ptr->linked_lever,"linkedLever");
+              ((CDemonActor **)&this_ptr->linked_lever,"linkedLever");
   }
   if (3 < g_CLeverClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040b7f0

@@ -191,6 +191,8 @@ CVector3f g_SoundListenerPrev = {};
 CVector3f CVector3f_03f6af7c = {};
 CVector3f g_SoundListenerOrient = {};
 CVector3f g_TrainVelocityVector = {};
+CVector3f CVector3f_03f6bab0 = {};
+CVector3f CVector3f_03f6babc = {};
 
 // CWavInDevice
 CWavInDevice g_CWavInDeviceInstance = {};
@@ -300,12 +302,6 @@ float FLOAT_03f6ba20 = {};
 float FLOAT_03f6ba9c = {};
 float FLOAT_03f6baa0 = {};
 float FLOAT_03f6baa4 = {};
-float FLOAT_03f6bab0 = {};
-float FLOAT_03f6bab4 = {};
-float FLOAT_03f6bab8 = {};
-float FLOAT_03f6babc = {};
-float FLOAT_03f6bac0 = {};
-float FLOAT_03f6bac4 = {};
 
 // float*
 float* g_TertiaryMixBuffer = {};
@@ -397,6 +393,9 @@ int INT_03f6bb0c = {};
 int INT_03f6bb10 = {};
 int INT_03f6bb14 = {};
 int INT_03f6bb18 = {};
+int INT_03f6bb1c = {};
+int INT_03f6bb20 = {};
+int INT_03f6bb24 = {};
 int INT_03f6bb64 = {};
 int INT_03f6bb68 = {};
 int INT_03f6bb6c = {};
@@ -451,9 +450,6 @@ uint g_TrainExteriorAmbientHandle = {};
 
 // undefined4
 undefined4 DAT_03f6baa8 = {};
-undefined4 DAT_03f6bb1c = {};
-undefined4 DAT_03f6bb20 = {};
-undefined4 DAT_03f6bb24 = {};
 
 // void*
 void* g_PrimaryMixBuffer = {};

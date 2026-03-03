@@ -11,11 +11,12 @@ void __cdecl core_vessel_cpp_CCryptVessel_archive_FUN_005e9a80(CCryptVessel *thi
 {
   core_actor_cpp_CDemonActor_archive_FUN_0040c1c0(&this_ptr->base);
   core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b8f0(&this_ptr->model,"modelName");
-  core_actor_cpp_archiveActor_FUN_0040b870((CDemonActor *)&this_ptr->prey,"prey");
-  core_actor_cpp_archiveActor_FUN_0040b870((CDemonActor *)&this_ptr->neutral,"neutral");
+  core_actor_cpp_archiveActor_FUN_0040b870((CDemonActor **)&this_ptr->prey,"prey");
+  core_actor_cpp_archiveActor_FUN_0040b870((CDemonActor **)&this_ptr->neutral,"neutral");
   core_actor_cpp_archiveString_FUN_0040b5c0(this_ptr->destroyed_event,"destroyedEvent");
-  core_actor_cpp_archiveActor_FUN_0040b870((CDemonActor *)&this_ptr->start_loc,"startLoc");
-  core_actor_cpp_archiveActor_FUN_0040b870((CDemonActor *)&this_ptr->end_loc,"endLoc");
+  core_actor_cpp_archiveActor_FUN_0040b870((CDemonActor **)&this_ptr->start_loc,"startLoc")
+  ;
+  core_actor_cpp_archiveActor_FUN_0040b870((CDemonActor **)&this_ptr->end_loc,"endLoc");
   core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->state,"state");
   core_actor_cpp_archiveFloat_FUN_0040b770(&this_ptr->timer,"timer");
   if (1 < g_CCryptVesselClassVersion) {

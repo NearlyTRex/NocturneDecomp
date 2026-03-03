@@ -13,7 +13,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_stranger.cpp_CStranger_FUN_005be520 at 005be8cf
+;   core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520 at 005be8cf
 ;
 ; Referenced Globals:
 ;   float FLOAT_006608f8 = 0.00390625

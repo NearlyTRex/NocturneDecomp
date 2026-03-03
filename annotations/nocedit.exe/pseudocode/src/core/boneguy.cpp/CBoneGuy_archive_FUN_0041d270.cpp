@@ -15,7 +15,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_archive_FUN_0041d270(CBoneGuy *this_ptr)
   CVector3f *vector_ptr_00;
   CQuaternion4f *quat_ptr;
   CQuaternion4f *local_18;
-  CDemonActor *local_14;
+  CBodyPart **local_14;
   
   core_enemy_cpp_CEnemy_archive_FUN_004a9660(&this_ptr->base);
   core_actor_cpp_archiveFloat_FUN_0040b770(&(this_ptr->base).speed,"speed");
@@ -37,7 +37,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_archive_FUN_0041d270(CBoneGuy *this_ptr)
     core_actor_cpp_archivePartStatus_FUN_0040bae0(model_ptr,"partStatus");
     iVar1 = 0;
     if (0 < this_ptr->box_count) {
-      local_14 = (CDemonActor *)&this_ptr->boxes[0].body_part;
+      local_14 = &this_ptr->boxes[0].body_part;
       vector_ptr_00 = &this_ptr->boxes[0].source_pos;
       quat_ptr = &this_ptr->boxes[0].dest_orient;
       local_18 = &this_ptr->boxes[0].start_orient;
@@ -52,9 +52,9 @@ void __cdecl core_boneguy_cpp_CBoneGuy_archive_FUN_0041d270(CBoneGuy *this_ptr)
         iVar1 = iVar1 + 1;
         vector_ptr = vector_ptr + 6;
         quat_ptr = (CQuaternion4f *)&quat_ptr[4].y;
-        core_actor_cpp_archiveActor_FUN_0040b870(local_14,"boxListPart");
+        core_actor_cpp_archiveActor_FUN_0040b870((CDemonActor **)local_14,"boxListPart");
         vector_ptr_00 = vector_ptr_00 + 6;
-        local_14 = (CDemonActor *)((local_14->orient_matrix).m + 1);
+        local_14 = local_14 + 0x12;
         local_18 = (CQuaternion4f *)&local_18[4].y;
       } while (iVar1 < this_ptr->box_count);
     }

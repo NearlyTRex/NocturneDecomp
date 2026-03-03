@@ -1,68 +1,23 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 5,
-        "line": 124,
-        "message": "statement requires expression of integer type ('float' invalid)"
-      },
-      {
-        "category": "other",
-        "column": 10,
-        "line": 125,
-        "message": "conversion from 'double' to 'int' is not allowed in a converted constant expression"
-      },
-      {
-        "category": "other",
-        "column": 10,
-        "line": 126,
-        "message": "conversion from 'double' to 'int' is not allowed in a converted constant expression"
-      },
-      {
-        "category": "other",
-        "column": 10,
-        "line": 129,
-        "message": "conversion from 'double' to 'int' is not allowed in a converted constant expression"
-      },
-      {
-        "category": "other",
-        "column": 10,
-        "line": 132,
-        "message": "conversion from 'double' to 'int' is not allowed in a converted constant expression"
-      },
-      {
-        "category": "other",
-        "column": 10,
-        "line": 137,
-        "message": "conversion from 'double' to 'int' is not allowed in a converted constant expression"
-      },
-      {
-        "category": "other",
-        "column": 10,
-        "line": 140,
-        "message": "conversion from 'double' to 'int' is not allowed in a converted constant expression"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 504,
-    "complexity_score": 379,
+    "complexity_score": 270,
     "cross_reference_count": 0,
     "function_call_count": 21,
     "global_count": 13,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 209,
-    "suspect_count": 15,
+    "pseudocode_lines": 210,
+    "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
-      "suspect_float",
-      "undefined_data",
       "warning_type_propagation"
     ],
-    "total_lines": 713
+    "total_lines": 714
   },
   "cross_references": [],
   "function": {
@@ -140,14 +95,14 @@
       "name": "core_setcolid.cpp_CDemonSet_setRayType_FUN_00574230"
     },
     {
-      "addr": "005c06b0",
-      "is_variadic": false,
-      "name": "core_stranger.cpp_CStranger_FUN_005c06b0"
-    },
-    {
       "addr": "005c51c0",
       "is_variadic": false,
-      "name": "core_stranger.cpp_CStranger_FUN_005c51c0"
+      "name": "core_stranger.cpp_CStranger_getThrowDirection_FUN_005c51c0"
+    },
+    {
+      "addr": "005c06b0",
+      "is_variadic": false,
+      "name": "core_stranger.cpp_CStranger_updateWeaponPosition_FUN_005c06b0"
     },
     {
       "addr": "005f54c0",
@@ -260,8 +215,8 @@
     },
     {
       "addr": "03f6bb24",
-      "name": "DAT_03f6bb24",
-      "type": "undefined4",
+      "name": "INT_03f6bb24",
+      "type": "int",
       "value": null
     }
   ],
@@ -589,99 +544,19 @@
       "type": "warning_type_propagation"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 43,
-      "match": "DAT_03f6bb24",
-      "severity": "mild",
-      "text": "if ((this_ptr->base).base.model.part_data.visibility_flags[DAT_03f6bb24] != 0) {",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 61,
+      "line": 63,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);",
+      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 62,
+      "line": 64,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 110,
-      "match": "DAT_03f6bb24",
-      "severity": "mild",
-      "text": "((this_ptr->base).base.model.part_data.visibility_flags[DAT_03f6bb24] == 0)) goto LAB_005c33d7;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 119,
-      "match": "7.00649e-45",
-      "severity": "mild",
-      "text": "case 7.00649e-45:",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 122,
-      "match": "1.4013e-45",
-      "severity": "mild",
-      "text": "case 1.4013e-45:",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 125,
-      "match": "2.8026e-45",
-      "severity": "mild",
-      "text": "case 2.8026e-45:",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 130,
-      "match": "5.60519e-45",
-      "severity": "mild",
-      "text": "case 5.60519e-45:",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 133,
-      "match": "9.80909e-45",
-      "severity": "mild",
-      "text": "case 9.80909e-45:",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 140,
-      "match": "1.4013e-45",
-      "severity": "mild",
-      "text": "if ((this_ptr->weapon[2].orient.vec.x == 1.4013e-45) &&",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 159,
-      "match": "DAT_03f6bb24",
-      "severity": "mild",
-      "text": "((this_ptr->base).base.model.part_data.visibility_flags[DAT_03f6bb24] != 0)) &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 195,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "mild",
-      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);",
+      "text": "pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
@@ -689,16 +564,16 @@
       "line": 196,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);",
+      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 207,
-      "match": "DAT_03f6bb24",
+      "description": "Complex pointer cast",
+      "line": 197,
+      "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "if ((((this_ptr->base).base.model.part_data.visibility_flags[DAT_03f6bb24] == 0) &&",
-      "type": "undefined_data"
+      "text": "pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar7 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

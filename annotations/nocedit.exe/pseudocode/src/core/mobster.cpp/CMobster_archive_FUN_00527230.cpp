@@ -25,10 +25,10 @@ void __cdecl core_mobster_cpp_CMobster_archive_FUN_00527230(CMobster *this_ptr)
   }
   if (4 < g_CMobsterClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->post_mode,"postMode");
-    core_actor_cpp_archiveActor_FUN_0040b870((CDemonActor *)&this_ptr->our_post,"ourPost");
+    core_actor_cpp_archiveActor_FUN_0040b870(&this_ptr->our_post,"ourPost");
   }
   if (5 < g_CMobsterClassVersion) {
-    core_actor_cpp_archiveActor_FUN_0040b870((CDemonActor *)&this_ptr->vehicle,"vehicle");
+    core_actor_cpp_archiveActor_FUN_0040b870(&this_ptr->vehicle,"vehicle");
     core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->side_of_car,"sideOfCar");
   }
   if (g_CMobsterClassVersion < 7) {

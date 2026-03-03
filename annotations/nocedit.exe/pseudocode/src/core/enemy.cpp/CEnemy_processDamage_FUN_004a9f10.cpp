@@ -9,18 +9,20 @@
 void __cdecl core_enemy_cpp_CEnemy_processDamage_FUN_004a9f10(CEnemy *this_ptr,SDamageInfo *damage_info)
 
 {
-  CDemonActor *pCVar1;
+  CCharacter *pCVar1;
   
   (*(((this_ptr->base).base.vtable._uc)->_uc).releaseVictim)(&this_ptr->base);
   core_charactr_cpp_CCharacter_processDamage_FUN_0042c3c0(&this_ptr->base,damage_info);
   if (0.0 < damage_info->damage_amount) {
-    pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c790
+    pCVar1 = (CCharacter *)
+             core_actor_cpp_castToClassHash_FUN_0040c790
                        (damage_info->wielder,g_CCharacterClassInfo.name_hash);
-    if (pCVar1 == (CDemonActor *)0x0) {
-      pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c790
+    if (pCVar1 == (CCharacter *)0x0) {
+      pCVar1 = (CCharacter *)
+               core_actor_cpp_castToClassHash_FUN_0040c790
                          (damage_info->attacker,g_CCharacterClassInfo.name_hash);
     }
-    if (pCVar1 != (CDemonActor *)0x0) {
+    if (pCVar1 != (CCharacter *)0x0) {
       this_ptr->victim_search_timer = 15.0;
       this_ptr->is_in_combat = 1;
       this_ptr->victim = pCVar1;

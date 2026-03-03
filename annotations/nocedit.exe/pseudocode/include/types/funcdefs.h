@@ -127,7 +127,7 @@
 #include "types/funcdefs/CDemonActor_onPickup.h"
 #include "types/funcdefs/CDemonActor_pickup.h"
 #include "types/funcdefs/CDemonActor_playAmbientSound.h"
-#include "types/funcdefs/CDemonActor_playAmbientSoundWithVolume.h"
+#include "types/funcdefs/CDemonActor_playAmbientSoundWithDelay.h"
 #include "types/funcdefs/CDemonActor_playAttackHitEffects.h"
 #include "types/funcdefs/CDemonActor_playSound.h"
 #include "types/funcdefs/CDemonActor_playSoundWithDelay.h"

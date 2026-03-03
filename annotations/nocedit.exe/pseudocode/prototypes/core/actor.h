@@ -121,15 +121,15 @@ uint __cdecl CDemonActor::playSound(CDemonActor *this_ptr,char *sound_name);
 
 // Original: core_actor.cpp_CDemonActor_playAmbientSound_FUN_00408f80
 // Address: 00408f80
-void __cdecl CDemonActor::playAmbientSound(CDemonActor *this_ptr,char *sound_name);
+uint __cdecl CDemonActor::playAmbientSound(CDemonActor *this_ptr,char *sound_name);
 
 // Original: core_actor.cpp_CDemonActor_playSoundWithDelay_FUN_00408fa0
 // Address: 00408fa0
 uint __cdecl CDemonActor::playSoundWithDelay(CDemonActor *this_ptr,char *sound_name,float delay);
 
-// Original: core_actor.cpp_CDemonActor_playAmbientSoundWithVolume_FUN_00408fd0
+// Original: core_actor.cpp_CDemonActor_playAmbientSoundWithDelay_FUN_00408fd0
 // Address: 00408fd0
-void __cdecl CDemonActor::playAmbientSoundWithVolume(CDemonActor *this_ptr,char *sound_name,float volume);
+uint __cdecl CDemonActor::playAmbientSoundWithDelay(CDemonActor *this_ptr,char *sound_name,float delay);
 
 // Original: core_actor.cpp_CDemonActor_canPickup_FUN_00409000
 // Address: 00409000
@@ -329,7 +329,7 @@ void __cdecl archiveInteger(int *int_ptr,char *property_name);
 
 // Original: core_actor.cpp_archiveActor_FUN_0040b870
 // Address: 0040b870
-void __cdecl archiveActor(CDemonActor *actor_ptr,char *property_name);
+void __cdecl archiveActor(CDemonActor **actor_ptr,char *property_name);
 
 // Original: core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b8f0
 // Address: 0040b8f0

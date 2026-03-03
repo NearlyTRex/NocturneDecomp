@@ -2,11 +2,11 @@
 // Address: 005c3960
 // Address Range: [[005c3960, 005c4364]]
 // Convention: __cdecl
-// Signature: void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_005c3960(CStranger *this_ptr)
+// Signature: void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_005c3960(CStranger *this_ptr,int hand_index,float delta_time)
 
 #include "nocturne.h"
 
-void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_005c3960(CStranger *this_ptr)
+void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_005c3960(CStranger *this_ptr,int hand_index,float delta_time)
 
 {
   CDemonActor *this_ptr_00;
@@ -21,8 +21,6 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_005c3960(CStranger 
   int iVar8;
   int iVar9;
   float fVar10;
-  int in_stack_00000008;
-  float in_stack_0000000c;
   float fStack_1a8;
   CVector3f aCStack_1a0 [10];
   CMatrix3x3f CStack_128;
@@ -44,7 +42,7 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_005c3960(CStranger 
   float fStack_54;
   float fStack_50;
   float fStack_4c;
-  float local_48;
+  int local_48;
   float fStack_44;
   int iStack_40;
   int iStack_3c;
@@ -59,13 +57,13 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_005c3960(CStranger 
   float fStack_18;
   
   local_24 = &this_ptr->left_arm_aim;
-  if (in_stack_00000008 == 1) {
+  if (hand_index == 1) {
     local_24 = &this_ptr->right_arm_aim;
   }
-  if (this_ptr->weapon == (CDemonActor *)0x0) {
+  if (this_ptr->weapon == (CWeapon *)0x0) {
     local_24->target_yaw = 0.0;
     local_24->aim_yaw = 0.0;
-    this_ptr_00 = (this_ptr->base).base.carry_hands[in_stack_00000008].carry_actor;
+    this_ptr_00 = (this_ptr->base).base.carry_hands[hand_index].carry_actor;
     uVar4 = 0;
     if (this_ptr_00 != (CDemonActor *)0x0) {
       uVar4 = (*((this_ptr_00->vtable)._ub)->getAllowedMeleeAttackTypes)(this_ptr_00);
@@ -75,13 +73,13 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_005c3960(CStranger 
       local_24->aim_pitch = 0.0;
       return;
     }
-    local_48 = 4.2039e-45;
+    local_48 = 3;
   }
   else {
-    local_48 = this_ptr->weapon[2].orient.vec.x;
+    local_48 = this_ptr->weapon->weapon_type;
   }
-  if (in_stack_00000008 == 0) {
-    if (((this_ptr->base).aim_mode == 2) && (local_48 == 0.0)) {
+  if (hand_index == 0) {
+    if (((this_ptr->base).aim_mode == 2) && (local_48 == 0)) {
       return;
     }
     local_30 = -1.3089969;
@@ -92,7 +90,7 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_005c3960(CStranger 
   else {
     iVar8 = INT_03f6bb04;
     iVar9 = INT_03f6badc;
-    if (local_48 == 0.0) {
+    if (local_48 == 0) {
       local_2c = 1.3089969;
       local_30 = -0.5235988;
     }
@@ -102,7 +100,7 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_005c3960(CStranger 
     }
   }
   fVar10 = (this_ptr->base).player_control.look_up_down_speed * (float)3.1415926535000001 *
-           (float)2 * in_stack_0000000c + local_24->aim_pitch;
+           (float)2 * delta_time + local_24->aim_pitch;
   local_24->aim_yaw = 0.0;
   local_24->aim_pitch = fVar10;
   if (fVar10 < -1.047198f) {
@@ -126,7 +124,7 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_005c3960(CStranger 
   local_24->aim_lock_state = 0;
   fStack_38 = local_24->aim_yaw;
   fStack_34 = local_24->aim_pitch;
-  if ((local_48 == 4.2039e-45) || (iVar1 = (this_ptr->base).aim_mode, iVar1 != 0)) {
+  if ((local_48 == 3) || (iVar1 = (this_ptr->base).aim_mode, iVar1 != 0)) {
     local_24->target_yaw = 0.0;
   }
   else {
@@ -142,7 +140,7 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_005c3960(CStranger 
       iStack_74 = piVar5[2];
     }
     this_ptr_01 = &(this_ptr->base).base.model;
-    if (local_48 == 0.0) {
+    if (local_48 == 0) {
       pCVar6 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
                          (this_ptr_01,&CStack_a0,iVar9);
       if (&CStack_100 != pCVar6) {
@@ -239,10 +237,10 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_005c3960(CStranger 
     }
   }
   dVar3 = 1.5;
-  if (local_48 != 0.0) {
+  if (local_48 != 0) {
     dVar3 = 0.5;
   }
-  fStack_44 = in_stack_0000000c * (float)3.1415926535000001 * (float)dVar3;
+  fStack_44 = delta_time * (float)3.1415926535000001 * (float)dVar3;
   fStack_4c = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(fStack_38 - local_24->target_yaw);
   fStack_18 = fStack_4c;
   fStack_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(fStack_34 - local_24->target_pitch);

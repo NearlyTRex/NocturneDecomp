@@ -253,9 +253,9 @@ CVector3f * __cdecl core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408e
 CVector3f * __cdecl core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(CDemonActor *this_ptr,CVector3f *output_world_point,CVector3f *input_local_point);
 CVector3f * __cdecl core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10(CDemonActor *this_ptr,CVector3f *output_local_point,CVector3f *input_world_point);
 uint __cdecl core_actor_cpp_CDemonActor_playSound_FUN_00408f60(CDemonActor *this_ptr,char *sound_name);
-void __cdecl core_actor_cpp_CDemonActor_playAmbientSound_FUN_00408f80(CDemonActor *this_ptr,char *sound_name);
+uint __cdecl core_actor_cpp_CDemonActor_playAmbientSound_FUN_00408f80(CDemonActor *this_ptr,char *sound_name);
 uint __cdecl core_actor_cpp_CDemonActor_playSoundWithDelay_FUN_00408fa0(CDemonActor *this_ptr,char *sound_name,float delay);
-void __cdecl core_actor_cpp_CDemonActor_playAmbientSoundWithVolume_FUN_00408fd0(CDemonActor *this_ptr,char *sound_name,float volume);
+uint __cdecl core_actor_cpp_CDemonActor_playAmbientSoundWithDelay_FUN_00408fd0(CDemonActor *this_ptr,char *sound_name,float delay);
 int __cdecl core_actor_cpp_CDemonActor_canPickup_FUN_00409000(CDemonActor *this_ptr,CDemonActor *picker);
 void __cdecl core_actor_cpp_CDemonActor_pickup_FUN_00409020(CDemonActor *this_ptr,CDemonActor *carrier);
 void __cdecl core_actor_cpp_CDemonActor_onDropped_FUN_00409040(CDemonActor *this_ptr,CVector3f *drop_position);
@@ -305,7 +305,7 @@ void __cdecl core_actor_cpp_archiveString_FUN_0040b5c0(char *string_buffer,char 
 void __cdecl core_actor_cpp_archiveLocalizedString_FUN_0040b6e0(char *string_buffer,char *localization_key);
 void __cdecl core_actor_cpp_archiveFloat_FUN_0040b770(float *float_ptr,char *property_name);
 void __cdecl core_actor_cpp_archiveInteger_FUN_0040b7f0(int *int_ptr,char *property_name);
-void __cdecl core_actor_cpp_archiveActor_FUN_0040b870(CDemonActor *actor_ptr,char *property_name);
+void __cdecl core_actor_cpp_archiveActor_FUN_0040b870(CDemonActor **actor_ptr,char *property_name);
 void __cdecl core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b8f0(CKeyFramedModelInstance *model_ptr,char *property_name);
 void __cdecl core_actor_cpp_archiveDeformableModelInstance_FUN_0040b970(CDeformableModelInstance *model_ptr,char *property_name);
 void __cdecl core_actor_cpp_archiveMotionState_FUN_0040b9f0(CMotionController *motion_controller,char *property_name);

@@ -157,12 +157,12 @@ section .text
     ADD EBX,0x1070                      ; 005e887e
     PUSH EBX                            ; 005e8884
     CALL core_actor.cpp_archiveActor_FUN_0040b870 ; 005e8885
-        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * actor_ptr, char * property_name)
+        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 005e888a
     PUSH 0x656f58                       ; 005e888d | = "lastMobsterRight"
     PUSH EBX                            ; 005e8892
     CALL core_actor.cpp_archiveActor_FUN_0040b870 ; 005e8893
-        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * actor_ptr, char * property_name)
+        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 005e8898
     ADD ESP,0x8                         ; 005e889b
     POP EBP                             ; 005e889e

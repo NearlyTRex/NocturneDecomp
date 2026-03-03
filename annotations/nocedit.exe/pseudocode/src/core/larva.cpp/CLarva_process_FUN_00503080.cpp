@@ -16,8 +16,7 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
   CDeformableModelInstance *this_ptr_00;
   CVector3f *pCVar2;
   float fVar3;
-  CCharacter *this_ptr_01;
-  CDemonActor *pCVar4;
+  CCharacter *pCVar4;
   float fVar5;
   int iVar6;
   SMotion *pSVar7;
@@ -89,10 +88,12 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
   this_ptr_00 = &(this_ptr->base).base.model;
   while (0.0 < local_18) {
     iVar6 = core_motion_cpp_CMotionController_advance_FUN_0052d610(&this_ptr_00->motion_controller);
-    if ((iVar6 == 100) && (pCVar4 = (this_ptr->base).victim, pCVar4 != (CDemonActor *)0x0)) {
-      local_d4 = (pCVar4->location).position.x - (pCVar1->position).x;
-      local_d0 = (pCVar4->location).position.y - (this_ptr->base).base.base.location.position.y;
-      local_cc = (pCVar4->location).position.z - (this_ptr->base).base.base.location.position.z;
+    if ((iVar6 == 100) && (pCVar4 = (this_ptr->base).victim, pCVar4 != (CCharacter *)0x0)) {
+      local_d4 = (pCVar4->base).location.position.x - (pCVar1->position).x;
+      local_d0 = (pCVar4->base).location.position.y - (this_ptr->base).base.base.location.position.y
+      ;
+      local_cc = (pCVar4->base).location.position.z - (this_ptr->base).base.base.location.position.z
+      ;
       if (&local_ec != &local_d4) {
         local_ec = local_d4;
         local_e8 = local_d0;
@@ -156,7 +157,7 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
     if (local_28 == 0) {
       (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
       pCVar4 = (this_ptr->base).victim;
-      if (pCVar4 == (CDemonActor *)0x0) {
+      if (pCVar4 == (CCharacter *)0x0) {
         iVar6 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base,delta_time);
         if (iVar6 != 0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
@@ -164,11 +165,11 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
         }
       }
       else {
-        local_128.x = (pCVar4->location).position.x - (pCVar1->position).x;
-        local_128.y = (pCVar4->location).position.y - (this_ptr->base).base.base.location.position.y
-        ;
-        local_128.z = (pCVar4->location).position.z - (this_ptr->base).base.base.location.position.z
-        ;
+        local_128.x = (pCVar4->base).location.position.x - (pCVar1->position).x;
+        local_128.y = (pCVar4->base).location.position.y -
+                      (this_ptr->base).base.base.location.position.y;
+        local_128.z = (pCVar4->base).location.position.z -
+                      (this_ptr->base).base.base.location.position.z;
         local_54 = local_128.z * local_128.z + local_128.x * local_128.x + local_128.y * local_128.y
         ;
         local_2c = (float)(((int)local_54 >> 1) + INT_02d7a7b8);
@@ -190,7 +191,7 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
     else if (local_28 < 2) {
       (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
       fVar3 = 20.0f;
-      if ((this_ptr->base).victim == (CDemonActor *)0x0) {
+      if ((this_ptr->base).victim == (CCharacter *)0x0) {
         iVar6 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base,delta_time);
         if (iVar6 == 0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
@@ -210,10 +211,11 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
         local_108 = fVar3;
         pCVar9 = (CVector3f *)0x3f000000;
         pCVar4 = (this_ptr->base).victim;
-        path_map = (*((pCVar4->vtable)._ub)->getPathMap)(pCVar4);
+        path_map = (*((pCVar4->base).vtable._ub)->getPathMap)(&pCVar4->base);
         iVar6 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
-                          ((CCharacter *)this_ptr,&(((this_ptr->base).victim)->location).position,
-                           path_map,pCVar9,fVar17,in_stack_fffffe18);
+                          ((CCharacter *)this_ptr,
+                           &(((this_ptr->base).victim)->base).location.position,path_map,pCVar9,
+                           fVar17,in_stack_fffffe18);
         if (iVar6 < 0) {
           engine_console_cpp_CConsole_printf_FUN_00441890
                     (g_CConsolePtr,"%s gave up chase - I'm confused\n");
@@ -222,11 +224,11 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
         }
         if ((this_ptr->base).attack_cooldown <= 0.0) {
           pCVar4 = (this_ptr->base).victim;
-          local_f8.x = (pCVar4->location).position.x -
+          local_f8.x = (pCVar4->base).location.position.x -
                        (this_ptr->base).base.base.location.position.x;
-          local_f8.y = (pCVar4->location).position.y -
+          local_f8.y = (pCVar4->base).location.position.y -
                        (this_ptr->base).base.base.location.position.y;
-          local_f8.z = (pCVar4->location).position.z -
+          local_f8.z = (pCVar4->base).location.position.z -
                        (this_ptr->base).base.base.location.position.z;
           local_44 = local_f8.z * local_f8.z + local_f8.x * local_f8.x + local_f8.y * local_f8.y;
           local_40 = (float)(((int)local_44 >> 1) + INT_02d7a7b8);
@@ -317,11 +319,12 @@ LAB_00503184:
   }
   iVar6 = core_charactr_cpp_CCharacter_isOnGround_FUN_004297e0((CCharacter *)this_ptr);
   if (iVar6 != 0) {
-    this_ptr_01 = (CCharacter *)(this_ptr->base).victim;
-    if ((this_ptr_01 != (CCharacter *)0x0) &&
-       (pCVar8 = (CLarva *)(*(((this_ptr_01->base).vtable._uc)->_uc).getGrabber)(this_ptr_01),
+    pCVar4 = (this_ptr->base).victim;
+    if ((pCVar4 != (CCharacter *)0x0) &&
+       (pCVar8 = (CLarva *)(*(((pCVar4->base).vtable._uc)->_uc).getGrabber)(pCVar4),
        pCVar8 == this_ptr)) {
-      core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,(this_ptr->base).victim);
+      core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0
+                (g_CDemonSetPtr,&((this_ptr->base).victim)->base);
     }
     (this_ptr->base).base.velocity.y =
          (this_ptr->base).base.velocity.y - delta_time * (float)32;

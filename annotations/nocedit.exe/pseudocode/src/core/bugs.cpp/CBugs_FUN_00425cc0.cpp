@@ -12,7 +12,7 @@ void __cdecl core_bugs_cpp_CBugs_FUN_00425cc0(CBugs *this_ptr)
   CLocation *dest_position;
   float *pfVar1;
   float *pfVar2;
-  CDemonActor *pCVar3;
+  CCharacter *pCVar3;
   CPathMap *this_ptr_00;
   int iVar4;
   float in_stack_00000008;
@@ -38,10 +38,11 @@ void __cdecl core_bugs_cpp_CBugs_FUN_00425cc0(CBugs *this_ptr)
   
   (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,in_stack_00000008);
   if ((this_ptr->allow_swarm != 0) &&
-     (pCVar3 = (this_ptr->base).victim, pCVar3 != (CDemonActor *)0x0)) {
-    CStack_74.z = (this_ptr->base).base.base.location.position.x - (pCVar3->location).position.x;
-    fStack_68 = (this_ptr->base).base.base.location.position.y - (pCVar3->location).position.y;
-    fStack_64 = (this_ptr->base).base.base.location.position.z - (pCVar3->location).position.z;
+     (pCVar3 = (this_ptr->base).victim, pCVar3 != (CCharacter *)0x0)) {
+    CStack_74.z = (this_ptr->base).base.base.location.position.x -
+                  (pCVar3->base).location.position.x;
+    fStack_68 = (this_ptr->base).base.base.location.position.y - (pCVar3->base).location.position.y;
+    fStack_64 = (this_ptr->base).base.base.location.position.z - (pCVar3->base).location.position.z;
     if ((ABS(fStack_68) < (float)2) &&
        ((ABS(CStack_74.z) < (float)2 && (ABS(fStack_64) < (float)2)))) {
       core_bugs_cpp_CBugs_FUN_004257f0(this_ptr);
@@ -54,10 +55,11 @@ void __cdecl core_bugs_cpp_CBugs_FUN_00425cc0(CBugs *this_ptr)
     }
   }
   if ((this_ptr->allow_chase != 0) &&
-     (pCVar3 = (this_ptr->base).victim, pCVar3 != (CDemonActor *)0x0)) {
-    this_ptr_00 = (*((pCVar3->vtable)._ub)->getPathMap)(pCVar3);
+     (pCVar3 = (this_ptr->base).victim, pCVar3 != (CCharacter *)0x0)) {
+    this_ptr_00 = (*((pCVar3->base).vtable._ub)->getPathMap)(&pCVar3->base);
     if (this_ptr_00 == (CPathMap *)0x0) {
-      this_ptr_00 = core_path_cpp_getPathMap_FUN_00548500(&((this_ptr->base).victim)->location);
+      this_ptr_00 = core_path_cpp_getPathMap_FUN_00548500
+                              (&(((this_ptr->base).victim)->base).location);
     }
     dest_position = &(this_ptr->base).base.base.location;
     iVar4 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00

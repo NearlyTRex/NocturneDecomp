@@ -37,7 +37,7 @@ int __cdecl core_tentacle_cpp_CTentacle_FUN_005db900(CTentacle *this_ptr)
         fVar3 = (actor_ptr->base).base.base.location.position.z -
                 (this_ptr->base).base.base.location.position.z;
         if (SQRT(fVar3 * fVar3 + fVar1 * fVar1 + fVar2 * fVar2) < (this_ptr->base).guard_distance) {
-          (this_ptr->base).victim = (CDemonActor *)actor_ptr;
+          (this_ptr->base).victim = (CCharacter *)actor_ptr;
           return 1;
         }
       }

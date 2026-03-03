@@ -128,7 +128,7 @@ section .text
     LEA EAX,[EBX + 0x2598]              ; 0042847b
     PUSH EAX                            ; 00428481
     CALL core_actor.cpp_archiveActor_FUN_0040b870 ; 00428482
-        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * actor_ptr, char * property_name)
+        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 00428487
     PUSH 0x616fba                       ; 0042848a | = "grabbedType"
     LEA EAX,[EBX + 0x259c]              ; 0042848f
@@ -191,7 +191,7 @@ section .text
     ADD EAX,0x8                         ; 00428537
     PUSH EAX                            ; 0042853a
     CALL core_actor.cpp_archiveActor_FUN_0040b870 ; 0042853b
-        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * actor_ptr, char * property_name)
+        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 00428540
     MOV ECX,dword ptr [ESP]             ; 00428543
     INC ECX                             ; 00428546
@@ -215,7 +215,7 @@ section .text
     ADD EAX,0x8                         ; 00428574
     PUSH EAX                            ; 00428577
     CALL core_actor.cpp_archiveActor_FUN_0040b870 ; 00428578
-        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * actor_ptr, char * property_name)
+        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 0042857d
     JMP 0x00428441                      ; 00428580
         ;   XREF to: 00428441 (UNCONDITIONAL_JUMP)  ; LAB_00428441

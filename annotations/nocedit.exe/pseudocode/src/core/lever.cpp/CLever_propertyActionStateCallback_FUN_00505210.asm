@@ -15,7 +15,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
-;   core_lever.cpp_CLever_FUN_00504c90
+;   core_lever.cpp_CLever_activate_FUN_00504c90
 ;
 ; *****************************************************************************
 
@@ -30,8 +30,8 @@ section .text
         ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 00505221
     PUSH EAX                            ; 00505224
-    CALL core_lever.cpp_CLever_FUN_00504c90 ; 00505225
-        ;   XREF to: 00504c90 (UNCONDITIONAL_CALL)  ; void core_lever.cpp_CLever_FUN_00504c90(CLever * this_ptr)
+    CALL core_lever.cpp_CLever_activate_FUN_00504c90 ; 00505225
+        ;   XREF to: 00504c90 (UNCONDITIONAL_CALL)  ; void core_lever.cpp_CLever_activate_FUN_00504c90(CLever * this_ptr)
     MOV EAX,0x1                         ; 0050522a
     ADD ESP,0x4                         ; 0050522f
     RET                                 ; 00505232

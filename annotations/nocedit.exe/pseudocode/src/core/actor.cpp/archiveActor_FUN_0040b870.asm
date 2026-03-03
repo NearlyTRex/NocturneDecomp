@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_actor_cpp_archiveActor_FUN_0040b870(CDemonActor *actor_ptr,char *property_name)
+; void __cdecl core_actor_cpp_archiveActor_FUN_0040b870(CDemonActor **actor_ptr,char *property_name)
 ;
 ; Parameters:
-; CDemonActor *    Stack[0x4]:4   actor_ptr
+; CDemonActor * *  Stack[0x4]:4   actor_ptr
 ; char *           Stack[0x8]:4   property_name
 ;
 ; XREF[35]:

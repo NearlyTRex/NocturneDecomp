@@ -10,7 +10,6 @@ void __cdecl core_stone_cpp_CTempleStone_archive_FUN_005bad40(CTempleStone *this
 
 {
   core_boxactor_cpp_CBoxActor_archive_FUN_00422060(&this_ptr->base);
-  core_actor_cpp_archiveActor_FUN_0040b870
-            ((CDemonActor *)&this_ptr->dest_actor,"destActor");
+  core_actor_cpp_archiveActor_FUN_0040b870(&this_ptr->dest_actor,"destActor");
   return;
 }

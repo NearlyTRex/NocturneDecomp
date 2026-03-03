@@ -10,8 +10,8 @@ CHero * __cdecl core_hero_cpp_CHero_dtor_FUN_004f2470(CHero *this_ptr,uint flags
 
 {
   int iVar1;
-  CInventory *pCVar2;
-  CPathMap *pCVar3;
+  CHero_ptr_128824 pCVar2;
+  CHero_ptr_48728 pCVar3;
   CFlame *pCVar4;
   SFire *pSVar5;
   CVector3f *pCVar6;
@@ -28,10 +28,8 @@ CHero * __cdecl core_hero_cpp_CHero_dtor_FUN_004f2470(CHero *this_ptr,uint flags
     iVar1 = iVar1 + 4;
   } while (iVar1 != 0x10);
   pCVar2 = core_inv_cpp_CInventory_dtor_FUN_004fd0c0(&this_ptr->inventory,0);
-  pCVar3 = core_path_cpp_CPathMap_dtor_FUN_005464d0
-                     ((CPathMap *)(pCVar2[-0x48].item_angles + 0x21),0);
-  pCVar4 = core_armour_cpp_CFlame_arrdtor_FUN_00412720
-                     ((CFlame *)(pCVar3[-1].height_cache_tags[0xb] + 0x2c),0);
+  pCVar3 = core_path_cpp_CPathMap_dtor_FUN_005464d0(&ADJ(pCVar2)->path_map,0);
+  pCVar4 = core_armour_cpp_CFlame_arrdtor_FUN_00412720(ADJ(pCVar3)->base.flames,0);
   pSVar5 = core_armour_cpp_SFire_arrdtor_FUN_00412700
                      ((SFire *)(pCVar4[-2].base.create_event + 0x20),0);
   pCVar6 = core_armour_cpp_CVector3f_arrdtor_FUN_004126e0((CVector3f *)&pSVar5[-0x16].bone_index,0);

@@ -39,8 +39,7 @@ void __cdecl core_emitter_cpp_CEmitter_archive_FUN_004a8b30(CEmitter *this_ptr)
     core_actor_cpp_archiveFloat_FUN_0040b770(&this_ptr->max_wait_time,"maxWaitTime");
   }
   if (5 < g_CEmitterClassVersion) {
-    core_actor_cpp_archiveActor_FUN_0040b870
-              ((CDemonActor *)&this_ptr->dest_actor,"destActor");
+    core_actor_cpp_archiveActor_FUN_0040b870(&this_ptr->dest_actor,"destActor");
   }
   if (g_CEmitterClassVersion < 7) {
     return;

@@ -1,0 +1,602 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 17,
+        "line": 43,
+        "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 93,
+        "message": "C-style cast from 'CStranger *' to 'float' is not allowed"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 19,
+        "line": 102,
+        "message": "use of undeclared identifier 'code'"
+      },
+      {
+        "category": "syntax_error",
+        "column": 26,
+        "line": 102,
+        "message": "expected expression"
+      },
+      {
+        "category": "other",
+        "column": 53,
+        "line": 159,
+        "message": "cannot cast from type 'float' to pointer type 'CVector3f *'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 75,
+        "line": 190,
+        "message": "use of undeclared identifier 'stack0xffffff50'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 47,
+        "line": 203,
+        "message": "use of undeclared identifier 'stack0xffffff50'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 579,
+    "complexity_score": 444,
+    "cross_reference_count": 1,
+    "function_call_count": 17,
+    "global_count": 18,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 284,
+    "suspect_count": 13,
+    "suspect_types": [
+      "decompiler_intrinsic",
+      "stack_param",
+      "stack_ref",
+      "unaffected_reg",
+      "unresolved_funcptr",
+      "warning_inlined_function"
+    ],
+    "total_lines": 863
+  },
+  "cross_references": [
+    {
+      "addr": "005bb960",
+      "from_addr": "005bbb4b",
+      "name": "core_stranger.cpp_CStranger_processFrame_FUN_005bb960",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005bdd20",
+    "address_range": [
+      [
+        "005bdd20",
+        "005be191"
+      ],
+      [
+        "005be262",
+        "005be428"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_stranger.cpp_CStranger_processMotionEvents_FUN_005bdd20",
+    "signature": "void __cdecl core_stranger_cpp_CStranger_processMotionEvents_FUN_005bdd20(CStranger *this_ptr,float delta_time)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c790",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790"
+    },
+    {
+      "addr": "00408ec0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0"
+    },
+    {
+      "addr": "00408f10",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10"
+    },
+    {
+      "addr": "0040cc10",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomFloat_FUN_0040cc10"
+    },
+    {
+      "addr": "0042ec40",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40"
+    },
+    {
+      "addr": "00427db0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0"
+    },
+    {
+      "addr": "004f38d0",
+      "is_variadic": false,
+      "name": "core_hero.cpp_CHero_addCarriedItemToInventory_FUN_004f38d0"
+    },
+    {
+      "addr": "004f30f0",
+      "is_variadic": false,
+      "name": "core_hero.cpp_CHero_executeLeverPull_FUN_004f30f0"
+    },
+    {
+      "addr": "004f3890",
+      "is_variadic": false,
+      "name": "core_hero.cpp_CHero_executeObjectPickup_FUN_004f3890"
+    },
+    {
+      "addr": "004f2ed0",
+      "is_variadic": false,
+      "name": "core_hero.cpp_CHero_tryOpenDoor_FUN_004f2ed0"
+    },
+    {
+      "addr": "0052d610",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_advance_FUN_0052d610"
+    },
+    {
+      "addr": "0052dd20",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getStateBlendWeight_FUN_0052dd20"
+    },
+    {
+      "addr": "0052db00",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00"
+    },
+    {
+      "addr": "0059fa20",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20"
+    },
+    {
+      "addr": "005c1f80",
+      "is_variadic": false,
+      "name": "core_stranger.cpp_CStranger_dropRightHandObject_FUN_005c1f80"
+    },
+    {
+      "addr": "005c1f00",
+      "is_variadic": false,
+      "name": "core_stranger.cpp_CStranger_processPickupComplete_FUN_005c1f00"
+    },
+    {
+      "addr": "0049e6f0",
+      "is_variadic": true,
+      "name": "shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00653690",
+      "name": "s_actionPending_d_stranger_00653690",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006536b8",
+      "name": "s_actionPending_d_stranger_006536b8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006536e0",
+      "name": "s_Object_to_pick_up_is_now_006536e0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00653713",
+      "name": "s_actionPending_d_stranger_00653713",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0065373b",
+      "name": "s_actionPending_d_stranger_0065373b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0065376d",
+      "name": "s_hit_gh_4_7_wav_0065376d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0065377d",
+      "name": "s_fall_1_wav_0065377d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00653788",
+      "name": "s_actionPending_d_stranger_00653788",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006537b0",
+      "name": "s_doorToOpen_NULL_stranger_006537b0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006537e4",
+      "name": "DOUBLE_006537e4",
+      "type": "double",
+      "value": "0.400000000000000"
+    },
+    {
+      "addr": "00663750",
+      "name": "FLOAT_00663750",
+      "type": "float",
+      "value": "10"
+    },
+    {
+      "addr": "00663758",
+      "name": "FLOAT_00663758",
+      "type": "float",
+      "value": "8"
+    },
+    {
+      "addr": "00678a60",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "02cf1cd4"
+    },
+    {
+      "addr": "02cf1cd4",
+      "name": "g_CEditorToolsInstance",
+      "type": "CEditorTools",
+      "value": null
+    },
+    {
+      "addr": "02cf2bf0",
+      "name": "g_CEnemyClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f6bae8",
+      "name": "INT_03f6bae8",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f6baec",
+      "name": "INT_03f6baec",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f6bafc",
+      "name": "INT_03f6bafc",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005bbb4b",
+        "call_type": "direct",
+        "caller": "core_stranger.cpp_CStranger_processFrame_FUN_005bb960",
+        "estimated_params": 2,
+        "instructions_analyzed": 4,
+        "reg_params": [],
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.370283018867925,
+    "instruction_count": 424,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 24,
+      "BOOL_OR": 15,
+      "BRANCH": 29,
+      "CALL": 30,
+      "CALLIND": 12,
+      "CBRANCH": 49,
+      "COPY": 382,
+      "FLOAT2FLOAT": 8,
+      "FLOAT_EQUAL": 5,
+      "FLOAT_LESS": 5,
+      "FLOAT_NAN": 10,
+      "INT2FLOAT": 2,
+      "INT_ADD": 136,
+      "INT_AND": 194,
+      "INT_CARRY": 39,
+      "INT_EQUAL": 158,
+      "INT_LEFT": 20,
+      "INT_LESS": 29,
+      "INT_NOTEQUAL": 25,
+      "INT_OR": 25,
+      "INT_SBORROW": 29,
+      "INT_SCARRY": 39,
+      "INT_SLESS": 79,
+      "INT_SUB": 179,
+      "INT_ZEXT": 20,
+      "LOAD": 57,
+      "POPCOUNT": 79,
+      "RETURN": 1,
+      "STORE": 173
+    },
+    "pcode_op_count": 1853
+  },
+  "stack_frame": {
+    "frame_size": 188,
+    "local_size": 180,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_b0",
+        "offset": -176,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_ac",
+        "offset": -172,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_94",
+        "offset": -148,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_90",
+        "offset": -144,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8c",
+        "offset": -140,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_7c",
+        "offset": -124,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_78",
+        "offset": -120,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_74",
+        "offset": -116,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CStranger *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005bdd2c",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 17,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "int unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_ffffff48",
+      "severity": "moderate",
+      "text": "CStranger *in_stack_ffffff48;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 86,
+      "match": "in_stack_ffffff48",
+      "severity": "moderate",
+      "text": "((CDemonActor *)this_ptr,pCVar4,iVar3,(float)in_stack_ffffff48);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 95,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "(**(code **)(unaff_EBP + 0x20))(this_ptr,pCVar4,iVar3);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 95,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(unaff_EBP + 0x20))(this_ptr,pCVar4,iVar3);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 128,
+      "match": "in_stack_ffffff48",
+      "severity": "moderate",
+      "text": "in_stack_ffffff48 = this_ptr_04, iVar5 == 4)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 134,
+      "match": "in_stack_ffffff48",
+      "severity": "moderate",
+      "text": "in_stack_ffffff48 = (CStranger *)g_CEditorToolsPtr;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 183,
+      "match": "&stack0xffffff50",
+      "severity": "moderate",
+      "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xffffff50);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 196,
+      "match": "&stack0xffffff50",
+      "severity": "moderate",
+      "text": "(local_18,(SDamageInfo *)&stack0xffffff50);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 200,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "(int)ROUND(ROUND((double)fStack_a4 * 0.20000000000000001)) + 1,0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 200,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "(int)ROUND(ROUND((double)fStack_a4 * 0.20000000000000001)) + 1,0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 201,
+      "match": "in_stack_ffffff48",
+      "severity": "moderate",
+      "text": "in_stack_ffffff48 = this_ptr;",
+      "type": "stack_param"
+    }
+  ]
+}

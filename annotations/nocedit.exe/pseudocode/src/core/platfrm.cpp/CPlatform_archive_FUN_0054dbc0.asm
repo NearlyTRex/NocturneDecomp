@@ -247,7 +247,7 @@ section .text
     ADD EAX,EBP                         ; 0054de1b
     PUSH EAX                            ; 0054de1d
     CALL core_actor.cpp_archiveActor_FUN_0040b870 ; 0054de1e
-        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * actor_ptr, char * property_name)
+        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 0054de23
     INC EBX                             ; 0054de26
         ;   Label: LAB_0054de26
@@ -348,7 +348,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 0054df33
     PUSH EAX                            ; 0054df37
     CALL core_actor.cpp_archiveActor_FUN_0040b870 ; 0054df38
-        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * actor_ptr, char * property_name)
+        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 0054df3d
     MOV EAX,dword ptr [ESP + 0x4]       ; 0054df40
     MOV dword ptr [EBX + 0x51c],EAX     ; 0054df44

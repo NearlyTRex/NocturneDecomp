@@ -29,7 +29,7 @@ void __cdecl core_enemy_cpp_CEnemy_archive_FUN_004a9660(CEnemy *this_ptr)
     }
     if (5 < g_CEnemyClassVersion) {
       core_actor_cpp_archiveActor_FUN_0040b870
-                ((CDemonActor *)&this_ptr->script_victim,"scriptVictim");
+                ((CDemonActor **)&this_ptr->script_victim,"scriptVictim");
     }
     if (6 < g_CEnemyClassVersion) {
       core_actor_cpp_archiveString_FUN_0040b5c0
@@ -42,7 +42,7 @@ void __cdecl core_enemy_cpp_CEnemy_archive_FUN_004a9660(CEnemy *this_ptr)
       core_actor_cpp_archiveFloat_FUN_0040b770(&this_ptr->victim_height,"victimHeight");
     }
     if (9 < g_CEnemyClassVersion) {
-      core_actor_cpp_archiveActor_FUN_0040b870((CDemonActor *)&this_ptr->victim,"victim");
+      core_actor_cpp_archiveActor_FUN_0040b870((CDemonActor **)&this_ptr->victim,"victim");
       return;
     }
   }

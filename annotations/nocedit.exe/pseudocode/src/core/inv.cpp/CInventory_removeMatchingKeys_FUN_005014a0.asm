@@ -8,7 +8,7 @@
 ; uint             Stack[0x8]:4   key_mask
 ;
 ; XREF[2]:
-;   core_hero.cpp_CHero_FUN_004f3910 at 004f391f
+;   core_hero.cpp_CHero_removeMatchingKeys_FUN_004f3910 at 004f391f
 ;   core_hero.cpp_CHero_reset_FUN_004f3b20 at 004f3b7e
 ;
 ; Referenced Globals:

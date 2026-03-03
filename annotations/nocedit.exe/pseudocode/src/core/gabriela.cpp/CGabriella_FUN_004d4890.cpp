@@ -12,11 +12,12 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d4890(CGabriella *this_ptr)
 
 {
   CDeformableModelInstance *this_ptr_00;
+  CLadder *this_ptr_01;
   CDemonActor_vtable *pCVar1;
   int iVar2;
   int bone_index;
   CDemonActor *pCVar3;
-  CCharacter *this_ptr_01;
+  CCharacter *this_ptr_02;
   CVector3f *pCVar4;
   float in_stack_00000008;
   CGabriella *in_stack_ffffff58;
@@ -44,8 +45,8 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d4890(CGabriella *this_ptr)
       }
       core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
                 (this_ptr_00,(CVector3f *)local_58,bone_index);
-      pCVar3 = (this_ptr->base).ladder_to_climb;
-      if (pCVar3 == (CDemonActor *)0x0) {
+      this_ptr_01 = (this_ptr->base).ladder_to_climb;
+      if (this_ptr_01 == (CLadder *)0x0) {
         if ((this_ptr->base).base.is_on_ground != 0) {
           local_18 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
                                (&this_ptr_00->motion_controller,2);
@@ -73,7 +74,7 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d4890(CGabriella *this_ptr)
       }
       else {
         pCVar1 = (this_ptr->base).base.base.vtable._ub;
-        iVar2 = (*((pCVar3->vtable)._ub)->getGroundType)(pCVar3);
+        iVar2 = (*((this_ptr_01->base).vtable._ub)->getGroundType)(&this_ptr_01->base);
         pCVar4 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                            ((CDemonActor *)this_ptr,(CVector3f *)auStack_48,
                             (CVector3f *)(local_58 + 4));
@@ -86,13 +87,13 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d4890(CGabriella *this_ptr)
       if (pCVar3 != (CDemonActor *)0x0) {
         if (pCVar3[4].scale.y != 1) {
           this_ptr->flashlight_angle = -0.5235988;
-          core_hero_cpp_CHero_FUN_004f3890(&this_ptr->base,0);
+          core_hero_cpp_CHero_executeObjectPickup_FUN_004f3890(&this_ptr->base,0);
           break;
         }
         this_ptr->flashlight_angle = 0.31415927;
       }
     case 0x14:
-      core_hero_cpp_CHero_FUN_004f3890(&this_ptr->base,0);
+      core_hero_cpp_CHero_executeObjectPickup_FUN_004f3890(&this_ptr->base,0);
       break;
     case 3:
       (*(((this_ptr->base).base.base.vtable._uc)->_uc).dropCarriedObject)
@@ -105,11 +106,11 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d4890(CGabriella *this_ptr)
       core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,iVar2);
       break;
     case 6:
-      this_ptr_01 = (CCharacter *)
+      this_ptr_02 = (CCharacter *)
                     core_actor_cpp_castToClassHash_FUN_0040c790
                               ((this_ptr->base).base.grabbed_by,g_CEnemyClassInfo.name_hash);
-      local_1c = this_ptr_01;
-      if (this_ptr_01 != (CCharacter *)0x0) {
+      local_1c = this_ptr_02;
+      if (this_ptr_02 != (CCharacter *)0x0) {
         pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
                            (this_ptr_00,(CVector3f *)(auStack_48 + 8),INT_02d7b878);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
@@ -117,7 +118,7 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d4890(CGabriella *this_ptr)
         core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xffffff60);
         local_18 = core_actor_cpp_getRandomFloat_FUN_0040cc10(10.0,15.0);
         pCVar4 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-                           ((CDemonActor *)this_ptr_01,&local_34,(CVector3f *)local_64);
+                           ((CDemonActor *)this_ptr_02,&local_34,(CVector3f *)local_64);
         if (local_84 != pCVar4) {
           local_84[0].x = pCVar4->x;
           local_84[0].y = pCVar4->y;
@@ -160,10 +161,10 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d4890(CGabriella *this_ptr)
       core_gabriela_cpp_CGabriella_FUN_004d5c10(this_ptr);
       break;
     case 0x15:
-      core_hero_cpp_CHero_FUN_004f38d0(&this_ptr->base);
+      core_hero_cpp_CHero_addCarriedItemToInventory_FUN_004f38d0(&this_ptr->base,0);
       break;
     case 0x16:
-      iVar2 = core_hero_cpp_CHero_FUN_004f2ed0(&this_ptr->base);
+      iVar2 = core_hero_cpp_CHero_tryOpenDoor_FUN_004f2ed0(&this_ptr->base);
       if (iVar2 == 0) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&this_ptr_00->motion_controller,0,1);

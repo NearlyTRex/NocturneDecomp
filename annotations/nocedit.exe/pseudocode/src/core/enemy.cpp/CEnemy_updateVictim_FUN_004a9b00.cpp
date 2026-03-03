@@ -10,40 +10,39 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_004a9b00(CEnemy *this_ptr,fl
 
 {
   float fVar1;
-  CDemonActor *pCVar2;
-  CCharacter *this_ptr_00;
+  CCharacter *pCVar2;
   float fVar3;
   float fVar4;
   float fVar5;
-  CConsole *this_ptr_01;
+  CConsole *this_ptr_00;
   int iVar6;
-  CPathMap *this_ptr_02;
+  CPathMap *this_ptr_01;
   int iVar7;
   int iVar8;
   int iVar10;
   CVector3f CStack_48;
   CVector3f *local_3c;
   float local_38;
-  CDemonActor *local_34;
+  CCharacter *local_34;
   float fStack_30;
   int local_2c;
   CLocation *local_28;
   int local_24;
   int local_20;
-  CDemonActor *local_1c;
+  CCharacter *local_1c;
   float local_18;
   float local_14;
   CCharacter *iVar9;
   
   fVar1 = this_ptr->victim_height;
   pCVar2 = this_ptr->script_victim;
-  if (pCVar2 == (CDemonActor *)0x0) {
+  if (pCVar2 == (CCharacter *)0x0) {
     if (((g_CGamePtr->freeze_enemies_enabled != 0) || (g_CGamePtr->allow_enemy_attack_flag == 0)) ||
        (iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                           (g_CEventListPtr,"Capture"), iVar6 != 0)) {
       this_ptr->is_in_combat = 0;
       this_ptr->victim_search_timer = 0.0;
-      this_ptr->victim = (CDemonActor *)0x0;
+      this_ptr->victim = (CCharacter *)0x0;
       return;
     }
     fVar3 = this_ptr->victim_search_timer - delta_time;
@@ -54,7 +53,7 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_004a9b00(CEnemy *this_ptr,fl
       local_38 = this_ptr->victim_search_radius * this_ptr->victim_search_radius;
       iVar6 = 0;
       this_ptr->victim_search_timer = local_14;
-      if ((this_ptr->victim == (CDemonActor *)0x0) &&
+      if ((this_ptr->victim == (CCharacter *)0x0) &&
          (this_ptr->guard_distance < this_ptr->victim_search_radius)) {
         local_38 = this_ptr->guard_distance * this_ptr->guard_distance;
       }
@@ -84,7 +83,7 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_004a9b00(CEnemy *this_ptr,fl
       }
       local_34 = this_ptr->victim;
       local_3c = &(this_ptr->base).base.location.position;
-      this_ptr->victim = (CDemonActor *)0x0;
+      this_ptr->victim = (CCharacter *)0x0;
       while( true ) {
         iVar8 = 0;
         local_18 = 1e+20;
@@ -101,21 +100,21 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_004a9b00(CEnemy *this_ptr,fl
           } while (iVar8 < iVar6);
         }
         if (iVar10 < 0) break;
-        local_1c = g_EnemyVictimCandidates[iVar10];
-        iVar8 = core_enemy_cpp_CEnemy_FUN_004a9a50(this_ptr,local_1c);
-        this_ptr_01 = g_CConsolePtr;
+        local_1c = (CCharacter *)g_EnemyVictimCandidates[iVar10];
+        iVar8 = core_enemy_cpp_CEnemy_FUN_004a9a50(this_ptr,(CDemonActor *)local_1c);
+        this_ptr_00 = g_CConsolePtr;
         if (iVar8 != 0) {
           this_ptr->victim = local_1c;
           engine_console_cpp_CConsole_printf_FUN_00441890
-                    (this_ptr_01,"%s can see hero\n",this_ptr);
+                    (this_ptr_00,"%s can see hero\n",this_ptr);
           return;
         }
         if ((((this_ptr->allow_pathfind_to_new_targets != 0) ||
              ((this_ptr->allow_pathfind_to_new_targets == 0 && (local_1c == local_34)))) &&
-            (this_ptr_02 = (*((local_1c->vtable)._ub)->getPathMap)(local_1c),
-            this_ptr_02 != (CPathMap *)0x0)) &&
+            (this_ptr_01 = (*((local_1c->base).vtable._ub)->getPathMap)(&local_1c->base),
+            this_ptr_01 != (CPathMap *)0x0)) &&
            (iVar8 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00
-                              (this_ptr_02,local_3c,&CStack_48,(this_ptr->base).base.direction_hint)
+                              (this_ptr_01,local_3c,&CStack_48,(this_ptr->base).base.direction_hint)
            , iVar8 == 1)) {
           this_ptr->victim = local_1c;
           return;
@@ -127,20 +126,19 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_004a9b00(CEnemy *this_ptr,fl
       }
     }
     else {
-      this_ptr_00 = (CCharacter *)this_ptr->victim;
-      if ((this_ptr_00 != (CCharacter *)0x0) &&
-         (iVar6 = (*(((this_ptr_00->base).vtable._uc)->_uc).getDeathState)(this_ptr_00), iVar6 != 0)
-         ) {
+      pCVar2 = this_ptr->victim;
+      if ((pCVar2 != (CCharacter *)0x0) &&
+         (iVar6 = (*(((pCVar2->base).vtable._uc)->_uc).getDeathState)(pCVar2), iVar6 != 0)) {
         this_ptr->victim_search_timer = 0.0;
         this_ptr->is_in_combat = 0;
-        this_ptr->victim = (CDemonActor *)0x0;
+        this_ptr->victim = (CCharacter *)0x0;
         return;
       }
     }
   }
   else {
-    if (pCVar2 == (CDemonActor *)NAN) {
-      this_ptr->victim = (CDemonActor *)0x0;
+    if (pCVar2 == (CCharacter *)NAN) {
+      this_ptr->victim = (CCharacter *)0x0;
     }
     else {
       this_ptr->victim = pCVar2;

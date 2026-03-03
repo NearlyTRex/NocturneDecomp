@@ -21,11 +21,11 @@ CEnemy * __cdecl core_enemy_cpp_CEnemy_ctor_FUN_004a9500(CEnemy *this_ptr)
   fVar3 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.9,1.1);
   pCVar2->pool_me = 0;
   pCVar2->special_form_flag = 0;
-  pCVar2->victim = (CDemonActor *)0x0;
+  pCVar2->victim = (CCharacter *)0x0;
   pCVar2->victim_search_timer = 0.0;
   pCVar2->victim_search_radius = 50.0;
   pCVar2->randomize_me = 1;
-  pCVar2->script_victim = (CDemonActor *)0x0;
+  pCVar2->script_victim = (CCharacter *)0x0;
   pCVar2->is_in_combat = 0;
   pCVar2->patrol_name_pattern[0] = '\0';
   pCVar2->guard_distance = 100.0;

@@ -191,7 +191,7 @@ section .text
     LEA EAX,[EBX + 0xf28]               ; 00419a12
     PUSH EAX                            ; 00419a18
     CALL core_actor.cpp_archiveActor_FUN_0040b870 ; 00419a19
-        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * actor_ptr, char * property_name)
+        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 00419a1e
     CMP dword ptr [0x0066e52c],0x3      ; 00419a21 | g_CBodyPartClassVersion
         ;   Label: LAB_00419a21

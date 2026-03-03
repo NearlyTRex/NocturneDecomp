@@ -22,8 +22,8 @@
 ;   core_scat.cpp_CScat_FUN_005584a0 at 0055870a
 ;   core_scat.cpp_CScat_process_FUN_005571f0 at 00557596
 ;   core_skeleton.cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0059fdd0 at 0059ff03
-;   core_stranger.cpp_CStranger_FUN_005be520 at 005be832
-;   core_stranger.cpp_CStranger_FUN_005c02b0 at 005c058d
+;   core_stranger.cpp_CStranger_applyArmAimRotation_FUN_005c02b0 at 005c058d
+;   core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520 at 005be832
 ;   ... and 1 more
 ;
 ; Referenced Globals:

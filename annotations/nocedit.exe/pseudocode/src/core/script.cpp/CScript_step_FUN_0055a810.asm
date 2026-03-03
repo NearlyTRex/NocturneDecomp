@@ -5448,8 +5448,8 @@ section .text
     PUSH ESI                            ; 0055e4e3
     MOV EDI,dword ptr [EAX*0x4 + 0x2db87c0] ; 0055e4e4 | g_HeroActors
     PUSH EDI                            ; 0055e4eb
-    CALL core_hero.cpp_CHero_FUN_004f3910 ; 0055e4ec
-        ;   XREF to: 004f3910 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_FUN_004f3910(CHero * this_ptr)
+    CALL core_hero.cpp_CHero_removeMatchingKeys_FUN_004f3910 ; 0055e4ec
+        ;   XREF to: 004f3910 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_removeMatchingKeys_FUN_004f3910(CHero * this_ptr, uint key_mask)
     ADD ESP,0x8                         ; 0055e4f1
     JMP 0x0055a8bb                      ; 0055e4f4
         ;   XREF to: 0055a8bb (UNCONDITIONAL_JUMP)  ; LAB_0055a8bb
@@ -6194,8 +6194,8 @@ section .text
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
     PUSH EAX                            ; 0055edff
     PUSH ESI                            ; 0055ee00
-    CALL core_hero.cpp_CHero_FUN_004f3930 ; 0055ee01
-        ;   XREF to: 004f3930 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_FUN_004f3930(CHero * this_ptr)
+    CALL core_hero.cpp_CHero_setAiTask_FUN_004f3930 ; 0055ee01
+        ;   XREF to: 004f3930 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_setAiTask_FUN_004f3930(CHero * this_ptr, int ai_task)
     ADD ESP,0x8                         ; 0055ee06
     JMP 0x0055a8bb                      ; 0055ee09
         ;   XREF to: 0055a8bb (UNCONDITIONAL_JUMP)  ; LAB_0055a8bb

@@ -16,7 +16,7 @@
 ;   core_bride.cpp_CBride_processDamage_FUN_00424830 at 004249f1
 ;   core_bride.cpp_CBride_process_FUN_00423a30 at 00423ca1
 ;   core_chain.cpp_CChain_process_FUN_004300d0 at 004307e9
-;   core_door.cpp_CDoor_FUN_00481210 at 0048121c
+;   core_door.cpp_CDoor_onLocked_FUN_00481210 at 0048121c
 ;   ... and 43 more
 ;
 ; Called Functions:

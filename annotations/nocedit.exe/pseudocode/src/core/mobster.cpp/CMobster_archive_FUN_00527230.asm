@@ -88,7 +88,7 @@ section .text
     LEA EAX,[EBX + 0xbedc]              ; 005272ca
     PUSH EAX                            ; 005272d0
     CALL core_actor.cpp_archiveActor_FUN_0040b870 ; 005272d1
-        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * actor_ptr, char * property_name)
+        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 005272d6
     CMP dword ptr [0x0067d6e4],0x6      ; 005272d9 | g_CMobsterClassVersion
         ;   Label: LAB_005272d9
@@ -98,7 +98,7 @@ section .text
     LEA EAX,[EBX + 0xbee0]              ; 005272e7
     PUSH EAX                            ; 005272ed
     CALL core_actor.cpp_archiveActor_FUN_0040b870 ; 005272ee
-        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * actor_ptr, char * property_name)
+        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 005272f3
     PUSH 0x63997c                       ; 005272f6 | = "sideOfCar"
     LEA EAX,[EBX + 0xbee4]              ; 005272fb

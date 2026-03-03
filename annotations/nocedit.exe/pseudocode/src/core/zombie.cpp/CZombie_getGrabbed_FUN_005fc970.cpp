@@ -13,11 +13,11 @@ int __cdecl core_zombie_cpp_CZombie_getGrabbed_FUN_005fc970(CZombie *this_ptr,CD
   CZombie *pCVar2;
   
   if (grab_type == 1) {
-    pCVar1 = (CCharacter *)(this_ptr->base).victim;
+    pCVar1 = (this_ptr->base).victim;
     if (pCVar1 != (CCharacter *)0x0) {
       pCVar2 = (CZombie *)(*(((pCVar1->base).vtable._uc)->_uc).getGrabber)(pCVar1);
       if (pCVar2 == this_ptr) {
-        pCVar1 = (CCharacter *)(this_ptr->base).victim;
+        pCVar1 = (this_ptr->base).victim;
         (*(((pCVar1->base).vtable._uc)->_uc).releaseFromGrab)(pCVar1);
       }
     }

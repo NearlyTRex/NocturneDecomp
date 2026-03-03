@@ -1,10 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_005c3960(CStranger *this_ptr)
+; void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_005c3960(CStranger *this_ptr,int hand_index,float delta_time)
 ;
 ; Parameters:
 ; CStranger *      Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   hand_index
+; float            Stack[0xc]:4   delta_time
 ; Local Variables:
 ; undefined4       Stack[-0x48]:4  local_48
 ; undefined4       Stack[-0x30]:4  local_30
@@ -12,7 +14,7 @@
 ; undefined4       Stack[-0x24]:4  local_24
 ;
 ; XREF[1]:
-;   core_stranger.cpp_CStranger_FUN_005bb960 at 005bc4e5
+;   core_stranger.cpp_CStranger_processFrame_FUN_005bb960 at 005bc4e5
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00653c94 = 3.14159265350000

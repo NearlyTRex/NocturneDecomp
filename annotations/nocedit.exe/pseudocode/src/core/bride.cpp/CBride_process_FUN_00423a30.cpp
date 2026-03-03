@@ -72,7 +72,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
         if (iVar4 == 0) {
           (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time)
           ;
-          if ((this_ptr->base).victim != (CDemonActor *)0x0) {
+          if ((this_ptr->base).victim != (CCharacter *)0x0) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                       (&pCVar1->motion_controller,1,1);
             iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handles[0]);
@@ -113,7 +113,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
              (this_ptr->base).speed * (float)3 * delta_time;
         (this_ptr->base).base.turn_speed = fVar10 * fVar11 * delta_time;
         (*(pCVar2->_ue).updateVictim)(&this_ptr->base,delta_time);
-        if ((this_ptr->base).victim == (CDemonActor *)0x0) {
+        if ((this_ptr->base).victim == (CCharacter *)0x0) {
           iVar4 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base,delta_time);
           if (iVar4 == 0) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
@@ -127,17 +127,18 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
           local_104.z = 2.5f;
           pCVar6 = &local_104;
           local_104.y = 0.0;
-          pCVar7 = (this_ptr->base).victim;
-          pCVar9 = (*((pCVar7->vtable)._ub)->getPathMap)(pCVar7);
+          pCVar3 = (this_ptr->base).victim;
+          pCVar9 = (*((pCVar3->base).vtable._ub)->getPathMap)(&pCVar3->base);
           iVar4 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
-                            ((CCharacter *)this_ptr,&(((this_ptr->base).victim)->location).position,
-                             pCVar9,pCVar6,fVar10,fVar11);
+                            ((CCharacter *)this_ptr,
+                             &(((this_ptr->base).victim)->base).location.position,pCVar9,pCVar6,
+                             fVar10,fVar11);
           if (iVar4 < 0) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                       (&pCVar1->motion_controller,0,1);
           }
           else if (((0 < iVar4) && ((this_ptr->base).attack_cooldown <= 0.0)) &&
-                  (pCVar3 = (CCharacter *)(this_ptr->base).victim,
+                  (pCVar3 = (this_ptr->base).victim,
                   pCVar7 = (*(((pCVar3->base).vtable._uc)->_uc).getGrabber)(pCVar3),
                   pCVar7 == (CDemonActor *)0x0)) {
             iVar4 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);
@@ -162,7 +163,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
       }
     }
     else if (uVar8 < 6) {
-      pCVar3 = (CCharacter *)(this_ptr->base).victim;
+      pCVar3 = (this_ptr->base).victim;
       if (pCVar3 == (CCharacter *)0x0) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&pCVar1->motion_controller,1,1);
@@ -222,7 +223,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
       }
     }
     else if (uVar8 < 7) {
-      pCVar3 = (CCharacter *)(this_ptr->base).victim;
+      pCVar3 = (this_ptr->base).victim;
       if (pCVar3 == (CCharacter *)0x0) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&pCVar1->motion_controller,1,1);
@@ -295,7 +296,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
       (*((this_ptr->base).base.base.vtable._ub)->spawnFlies)((CDemonActor *)this_ptr,0x32,25.0);
       (this_ptr->base).pool_me = 1;
     }
-    if (((this_ptr->base).victim != (CDemonActor *)0x0) && (0.0 <= local_18)) {
+    if (((this_ptr->base).victim != (CCharacter *)0x0) && (0.0 <= local_18)) {
       fVar10 = (this_ptr->base).speed;
       fVar11 = (float)2.5;
       max_distance = 0.5235988;
@@ -307,11 +308,11 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
       local_8c.z = local_18;
       pCVar6 = &local_8c;
       local_8c.y = 0.0;
-      pCVar7 = (this_ptr->base).victim;
-      pCVar9 = (*((pCVar7->vtable)._ub)->getPathMap)(pCVar7);
+      pCVar3 = (this_ptr->base).victim;
+      pCVar9 = (*((pCVar3->base).vtable._ub)->getPathMap)(&pCVar3->base);
       iVar4 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
-                        ((CCharacter *)this_ptr,&(((this_ptr->base).victim)->location).position,
-                         pCVar9,pCVar6,min_distance,max_distance);
+                        ((CCharacter *)this_ptr,&(((this_ptr->base).victim)->base).location.position
+                         ,pCVar9,pCVar6,min_distance,max_distance);
       if (iVar4 != 1) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&(this_ptr->base).base.model.motion_controller,1,1);

@@ -20,7 +20,7 @@
 ;   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 at 005978ca
 ;   core_skeleton.cpp_CDeformableModel_renderBones_FUN_0059b800 at 0059b83c
 ;   core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_0059b640 at 0059b688
-;   core_stranger.cpp_CStranger_FUN_005c06b0 at 005c0792
+;   core_stranger.cpp_CStranger_renderOpaque_FUN_005c3150 at 005c34bc
 ;   ... and 5 more
 ;
 ; *****************************************************************************

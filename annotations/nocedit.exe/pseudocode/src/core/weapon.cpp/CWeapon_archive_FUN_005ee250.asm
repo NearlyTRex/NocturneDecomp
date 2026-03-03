@@ -96,7 +96,7 @@ section .text
     LEA EAX,[EBX + 0x304]               ; 005ee2fc
     PUSH EAX                            ; 005ee302
     CALL core_actor.cpp_archiveActor_FUN_0040b870 ; 005ee303
-        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * actor_ptr, char * property_name)
+        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 005ee308
     JMP 0x005ee286                      ; 005ee30b
         ;   XREF to: 005ee286 (UNCONDITIONAL_JUMP)  ; LAB_005ee286

@@ -44080,10 +44080,25 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_hero.cpp_CHero_FUN_004f3120",
+    "name":"core_hero.cpp_CHero_tryPushNearbyBox_FUN_004f3120",
     "ret":"int",
     "vars":{
       "locals":[
+        {
+          "name":"this_ptr_00",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CBoxActor*",
+          "use":83
+        },
         {
           "name":"local_80",
           "storage":{
@@ -79272,21 +79287,51 @@
     "addr":"005baf20",
     "body":[
       {
-        "end":"005baf3c",
-        "size":29,
-        "start":"005baf20"
-      },
-      {
         "end":"005baf6f",
-        "size":48,
-        "start":"005baf40"
+        "size":80,
+        "start":"005baf20"
       }
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_stranger.cpp_FUN_005baf20",
+    "name":"core_stranger.cpp_getWeaponInteractionType_FUN_005baf20",
     "ret":"int",
     "vars":{
+      "locals":[
+        {
+          "name":"pCVar2",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CMelee*",
+          "use":40
+        }
+      ],
+      "params":[
+        {
+          "name":"weapon",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CWeapon*"
+        }
+      ],
       "ret_storage":{
         "reg":"EAX",
         "size":4,
@@ -79303,16 +79348,34 @@
     "addr":"005bafa0",
     "body":[
       {
-        "end":"005bafb9",
-        "size":26,
+        "end":"005bafd7",
+        "size":56,
         "start":"005bafa0"
       }
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_stranger.cpp_FUN_005bafa0",
+    "name":"core_stranger.cpp_getWeaponHoldType_FUN_005bafa0",
     "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"weapon",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CWeapon*"
+        }
+      ],
       "ret_storage":{
         "reg":"EAX",
         "size":4,
@@ -79417,7 +79480,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_stranger.cpp_CStranger_FUN_005bdd20",
+    "name":"core_stranger.cpp_CStranger_processMotionEvents_FUN_005bdd20",
     "ret":"void",
     "vars":{
       "locals":[
@@ -79435,7 +79498,7 @@
               }
             ]
           },
-          "type":"undefined4"
+          "type":"float"
         },
         {
           "name":"local_18",
@@ -79694,6 +79757,22 @@
             ]
           },
           "type":"CStranger*"
+        },
+        {
+          "name":"delta_time",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
         }
       ]
     }
@@ -79709,7 +79788,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_stranger.cpp_CStranger_FUN_005be520",
+    "name":"core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520",
     "ret":"void",
     "vars":{
       "locals":[
@@ -81809,7 +81888,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_stranger.cpp_CStranger_FUN_005bf720",
+    "name":"core_stranger.cpp_CStranger_extractTurnPoseData_FUN_005bf720",
     "ret":"void",
     "vars":{
       "locals":[
@@ -81910,6 +81989,22 @@
             ]
           },
           "type":"CStranger*"
+        },
+        {
+          "name":"out_pose",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"SPoseData*"
         }
       ]
     }
@@ -81925,7 +82020,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_stranger.cpp_CStranger_FUN_005c4c20",
+    "name":"core_stranger.cpp_CStranger_updateArmRecoilBlend_FUN_005c4c20",
     "ret":"void",
     "vars":{
       "locals":[
@@ -82570,6 +82665,38 @@
             ]
           },
           "type":"CStranger*"
+        },
+        {
+          "name":"delta_time",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"is_weapon_active",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }
@@ -82585,7 +82712,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_stranger.cpp_CStranger_FUN_005c6220",
+    "name":"core_stranger.cpp_CStranger_updateClothSimulation_FUN_005c6220",
     "ret":"void",
     "vars":{
       "params":[
@@ -82745,9 +82872,27 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_stranger.cpp_FUN_005c69a0",
+    "name":"core_stranger.cpp_CCharacter_getCurrentMotionStateIndex_FUN_005c69a0",
     "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CCharacter*"
+        }
+      ],
       "ret_storage":{
         "reg":"EAX",
         "size":4,

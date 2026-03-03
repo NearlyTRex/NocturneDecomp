@@ -110,8 +110,7 @@ void __cdecl core_scat_cpp_CScat_FUN_005584a0(CScat *this_ptr)
   *puVar4 = *puVar3;
   puVar4[(uint)bVar6 * -2 + 1] = puVar3[(uint)bVar6 * -2 + 1];
   pCVar2 = &local_12c;
-  core_xform_cpp_slerpQuaternion_FUN_005f77e0
-            ((CQuaternion4f *)&1.0f,&local_fc,0.95,&local_4c);
+  core_xform_cpp_slerpQuaternion_FUN_005f77e0(&CQuaternion4f_00665998,&local_fc,0.95,&local_4c);
   local_ec.w = local_4c.w;
   puVar4 = (uint *)((int)&local_ec + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
   puVar3 = (uint *)((int)&local_4c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);

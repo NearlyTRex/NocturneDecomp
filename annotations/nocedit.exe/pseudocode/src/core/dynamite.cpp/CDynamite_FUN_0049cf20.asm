@@ -9,7 +9,7 @@
 ; undefined1       Stack[-0x68]:1  local_68
 ;
 ; XREF[1]:
-;   core_stranger.cpp_CStranger_FUN_005c5270 at 005c5813
+;   core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_005c5270 at 005c5813
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_fuse_wav_00622e93

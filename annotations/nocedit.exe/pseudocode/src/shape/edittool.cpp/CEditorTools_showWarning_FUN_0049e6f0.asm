@@ -15,10 +15,10 @@
 ;   core_msnedit.cpp_copyFile_FUN_00537dd0 at 00537e7b
 ;   core_script.cpp_CScript_loadState_FUN_00560820 at 00560b34
 ;   core_set.cpp_CDemonSet_loadStateInfo_FUN_00571230 at 005712a0
-;   core_stranger.cpp_CStranger_FUN_005bdd20 at 005be3a0
-;   core_stranger.cpp_CStranger_FUN_005c1f00 at 005c1f6e
-;   core_stranger.cpp_CStranger_FUN_005c2850 at 005c2b4e
-;   core_stranger.cpp_CStranger_FUN_005c5270 at 005c5aff
+;   core_stranger.cpp_CStranger_processMotionEvents_FUN_005bdd20 at 005be3a0
+;   core_stranger.cpp_CStranger_processPickupComplete_FUN_005c1f00 at 005c1f6e
+;   core_stranger.cpp_CStranger_tryPlaceObject_FUN_005c2850 at 005c2b4e
+;   core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_005c5270 at 005c5aff
 ;   engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220 at 004b5009
 ;   ... and 2 more
 ;

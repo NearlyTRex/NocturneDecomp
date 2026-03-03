@@ -14,8 +14,7 @@ void __cdecl core_hostage_cpp_CHostage_archive_FUN_004f6170(CHostage *this_ptr)
   core_npc_cpp_CNPC_archive_FUN_00544ba0(&this_ptr->base);
   core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->follow_state,"followState");
   core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->hostage_state,"hostageState");
-  core_actor_cpp_archiveActor_FUN_0040b870
-            ((CDemonActor *)&this_ptr->goal_way_point,"goalWayPoint");
+  core_actor_cpp_archiveActor_FUN_0040b870(&this_ptr->goal_way_point,"goalWayPoint");
   if (g_CHostageClassVersion < 10) {
     model_ptr = &(this_ptr->base).base.model;
     core_actor_cpp_archiveDeformableModelInstance_FUN_0040b970(model_ptr,"modelName");
@@ -56,7 +55,7 @@ void __cdecl core_hostage_cpp_CHostage_archive_FUN_004f6170(CHostage *this_ptr)
   }
   if (8 < g_CHostageClassVersion) {
     core_actor_cpp_archiveActor_FUN_0040b870
-              ((CDemonActor *)&this_ptr->sit_down_way_point,"sitDownWayPoint");
+              (&this_ptr->sit_down_way_point,"sitDownWayPoint");
   }
   if (g_CHostageClassVersion < 0xb) {
     return;

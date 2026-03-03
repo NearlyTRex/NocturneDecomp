@@ -41292,7 +41292,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_hero.cpp_CHero_FUN_004f33b0",
+    "name":"core_hero.cpp_CHero_tryApproachNearbyActor_FUN_004f33b0",
     "ret":"int",
     "vars":{
       "locals":[
@@ -41439,6 +41439,22 @@
             ]
           },
           "type":"undefined4"
+        },
+        {
+          "name":"this_ptr_00",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:5fa2b60a42",
+                "offset":410751732290,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonActor*",
+          "use":77
         }
       ],
       "params":[
@@ -41482,7 +41498,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_hero.cpp_CHero_FUN_004f35b0",
+    "name":"core_hero.cpp_CHero_findItemUseTarget_FUN_004f35b0",
     "ret":"int",
     "vars":{
       "locals":[
@@ -41688,7 +41704,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_hero.cpp_CHero_FUN_004f3930",
+    "name":"core_hero.cpp_CHero_setAiTask_FUN_004f3930",
     "ret":"void",
     "vars":{
       "params":[
@@ -41707,6 +41723,22 @@
             ]
           },
           "type":"CHero*"
+        },
+        {
+          "name":"ai_task",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }
@@ -76190,8 +76222,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_stranger.cpp_CStranger_FUN_005be430",
-    "ret":"int",
+    "name":"core_stranger.cpp_CStranger_getCarryLightIntensity_FUN_005be430",
+    "ret":"float",
     "vars":{
       "locals":[
         {
@@ -76267,7 +76299,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_stranger.cpp_CStranger_FUN_005c02b0",
+    "name":"core_stranger.cpp_CStranger_applyArmAimRotation_FUN_005c02b0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -76848,6 +76880,22 @@
             ]
           },
           "type":"CStranger*"
+        },
+        {
+          "name":"arm_side",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }
@@ -76863,7 +76911,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_stranger.cpp_CStranger_FUN_005c06b0",
+    "name":"core_stranger.cpp_CStranger_updateWeaponPosition_FUN_005c06b0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -76996,6 +77044,22 @@
             ]
           },
           "type":"CStranger*"
+        },
+        {
+          "name":"hand_index",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }
@@ -77011,7 +77075,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_stranger.cpp_CStranger_FUN_005c07b0",
+    "name":"core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_005c07b0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -80007,6 +80071,38 @@
             ]
           },
           "type":"CStranger*"
+        },
+        {
+          "name":"carried_actor",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonActor*"
+        },
+        {
+          "name":"hand_index",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }

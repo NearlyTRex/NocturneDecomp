@@ -64,7 +64,7 @@ section .text
     LEA ESI,[EBX + 0x1fac0]             ; 004f61ac
     PUSH ESI                            ; 004f61b2
     CALL core_actor.cpp_archiveActor_FUN_0040b870 ; 004f61b3
-        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * actor_ptr, char * property_name)
+        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * * actor_ptr, char * property_name)
     MOV EDX,dword ptr [0x0067cc5c]      ; 004f61b8 | g_CHostageClassVersion
     ADD ESP,0x8                         ; 004f61be
     CMP EDX,0xa                         ; 004f61c1
@@ -188,7 +188,7 @@ section .text
     LEA ESI,[EBX + 0x1fac4]             ; 004f6320
     PUSH ESI                            ; 004f6326
     CALL core_actor.cpp_archiveActor_FUN_0040b870 ; 004f6327
-        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * actor_ptr, char * property_name)
+        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 004f632c
     CMP dword ptr [0x0067cc5c],0xb      ; 004f632f | g_CHostageClassVersion
         ;   Label: LAB_004f632f

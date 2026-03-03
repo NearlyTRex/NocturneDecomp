@@ -13,7 +13,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004e4a00(CGargoyle *this_pt
 {
   CDeformableModelInstance *pCVar1;
   CVector3f *pCVar2;
-  CDemonActor *pCVar3;
+  CCharacter *pCVar3;
   int iVar4;
   SMotion *pSVar5;
   int iVar6;
@@ -103,7 +103,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004e4a00(CGargoyle *this_pt
       else {
         if (this_ptr->returning_home == 0) {
           pCVar3 = (this_ptr->base).victim;
-          if (pCVar3 == (CDemonActor *)0x0) {
+          if (pCVar3 == (CCharacter *)0x0) {
             iVar4 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base,delta_time);
             if (iVar4 != 0) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
@@ -111,11 +111,11 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004e4a00(CGargoyle *this_pt
             }
             break;
           }
-          local_a4.x = (pCVar3->location).position.x -
+          local_a4.x = (pCVar3->base).location.position.x -
                        (this_ptr->base).base.base.location.position.x;
-          local_a4.y = (pCVar3->location).position.y -
+          local_a4.y = (pCVar3->base).location.position.y -
                        (this_ptr->base).base.base.location.position.y;
-          local_a4.z = (pCVar3->location).position.z -
+          local_a4.z = (pCVar3->base).location.position.z -
                        (this_ptr->base).base.base.location.position.z;
           local_1c = SQRT(local_a4.z * local_a4.z +
                           local_a4.x * local_a4.x + local_a4.y * local_a4.y);
@@ -169,7 +169,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004e4a00(CGargoyle *this_pt
         fVar10 = (float)this_ptr->returning_home;
         pCVar7 = &(this_ptr->base).base.model.accumulated_root_motion;
         if (fVar10 == 0.0) {
-          if ((this_ptr->base).victim == (CDemonActor *)0x0) {
+          if ((this_ptr->base).victim == (CCharacter *)0x0) {
             iVar4 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base,delta_time);
             if (iVar4 == 0) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
@@ -193,17 +193,17 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004e4a00(CGargoyle *this_pt
             local_20 = local_80.z;
             local_80.x = fVar10;
             local_80.y = fVar10;
-            pCVar9 = (*((pCVar3->vtable)._ub)->getPathMap)(pCVar3);
+            pCVar9 = (*((pCVar3->base).vtable._ub)->getPathMap)(&pCVar3->base);
             iVar4 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
                               ((CCharacter *)this_ptr,
-                               &(((this_ptr->base).victim)->location).position,pCVar9,pCVar7,fVar11,
-                               max_distance);
+                               &(((this_ptr->base).victim)->base).location.position,pCVar9,pCVar7,
+                               fVar11,max_distance);
             if (-1 < iVar4) {
               pCVar3 = (this_ptr->base).victim;
               local_5c = (this_ptr->base).base.base.location.position.x -
-                         (pCVar3->location).position.x;
+                         (pCVar3->base).location.position.x;
               local_54 = (this_ptr->base).base.base.location.position.z -
-                         (pCVar3->location).position.z;
+                         (pCVar3->base).location.position.z;
               local_30 = SQRT(local_54 * local_54 + local_5c * local_5c);
               local_58 = fVar10;
               local_24 = local_30;
@@ -220,11 +220,11 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004e4a00(CGargoyle *this_pt
               }
               if ((local_24 <= local_20) && ((this_ptr->base).attack_cooldown <= 0.0)) {
                 pCVar3 = (this_ptr->base).victim;
-                local_50.x = (pCVar3->location).position.x -
+                local_50.x = (pCVar3->base).location.position.x -
                              (this_ptr->base).base.base.location.position.x;
-                local_50.y = (pCVar3->location).position.y -
+                local_50.y = (pCVar3->base).location.position.y -
                              (this_ptr->base).base.base.location.position.y;
-                local_50.z = (pCVar3->location).position.z -
+                local_50.z = (pCVar3->base).location.position.z -
                              (this_ptr->base).base.base.location.position.z;
                 core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                           (&local_c8,&local_50);

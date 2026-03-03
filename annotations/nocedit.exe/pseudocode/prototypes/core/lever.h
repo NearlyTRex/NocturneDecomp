@@ -31,9 +31,9 @@ void __cdecl CLever::process(CLever *this_ptr,float delta_time);
 // Address: 00504b20
 void __cdecl CLever::setState(CLever *this_ptr,float param_2);
 
-// Original: core_lever.cpp_CLever_FUN_00504c90
+// Original: core_lever.cpp_CLever_activate_FUN_00504c90
 // Address: 00504c90
-void __cdecl CLever(CLever *this_ptr);
+void __cdecl CLever::activate(CLever *this_ptr);
 
 // Original: core_lever.cpp_CLever_renderOpaque_FUN_00504cf0
 // Address: 00504cf0
@@ -55,9 +55,9 @@ void __cdecl CLever::archive(CLever *this_ptr);
 // Address: 00505060
 int __cdecl CLever::hasCollision(CLever *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_lever.cpp_CLever_FUN_00505080
+// Original: core_lever.cpp_CLever_isAccessibleFrom_FUN_00505080
 // Address: 00505080
-int __cdecl CLever(CLever *this_ptr);
+int __cdecl CLever::isAccessibleFrom(CLever *this_ptr,CVector3f *world_position);
 
 // Original: core_lever.cpp_CLever_propertyDisplayTypeCallback_FUN_00505100
 // Address: 00505100

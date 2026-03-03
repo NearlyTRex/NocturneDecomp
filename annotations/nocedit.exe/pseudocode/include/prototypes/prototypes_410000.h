@@ -95,7 +95,7 @@ CDemonActorType * __cdecl core_ammobox_cpp_CAmmoBox_getActorType_FUN_00411590(CA
 CAmmoBox * __cdecl core_ammobox_cpp_CAmmoBox_ctor_FUN_004115a0(CAmmoBox *this_ptr);
 void __cdecl core_ammobox_cpp_CAmmoBox_setup_FUN_00411650(CAmmoBox *this_ptr);
 void __cdecl core_ammobox_cpp_CAmmoBox_process_FUN_00411680(CAmmoBox *this_ptr,float delta_time);
-void __cdecl core_ammobox_cpp_CAmmoBox_FUN_00411690(CAmmoBox *this_ptr);
+void __cdecl core_ammobox_cpp_CAmmoBox_FUN_00411690(CAmmoBox *this_ptr,float open_pct);
 void __cdecl core_ammobox_cpp_CAmmoBox_FUN_00411700(CAmmoBox *this_ptr,CInventory *inventory);
 int __cdecl core_ammobox_cpp_CAmmoBox_renderOpaque_FUN_00411820(CAmmoBox *this_ptr);
 CBoundingBox3D * __cdecl core_ammobox_cpp_CAmmoBox_getBoundingBox_FUN_004118b0(CAmmoBox *this_ptr,CBoundingBox3D *out_box);

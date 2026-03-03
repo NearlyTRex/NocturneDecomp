@@ -14,7 +14,7 @@
 ;   core_sound.cpp_CSound_process_FUN_005b2fd0 at 005b3605
 ;   core_sound.cpp_playSfxInternal_FUN_005b1fd0 at 005b21f1
 ;   core_sound.cpp_processTrainSounds_FUN_005b2770 at 005b2a6f
-;   core_stranger.cpp_CStranger_FUN_005bb960 at 005bdcd4
+;   core_stranger.cpp_CStranger_processFrame_FUN_005bb960 at 005bdcd4
 ;
 ; Referenced Globals:
 ;   int g_SfxLastSlot

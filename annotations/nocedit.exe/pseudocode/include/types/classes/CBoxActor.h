@@ -23,7 +23,7 @@ typedef struct CBoxActor {
     int can_be_pushed; // 0x31c
     struct CDemonActor* pushed_by_actor; // 0x320
     struct CDemonActor* constrain_extents_actor; // 0x324
-    int dead; // 0x328
+    uint push_sfx_handle; // 0x328
     char push_sound[100]; // 0x32c
     float weight_in_pounds; // 0x390
     CBox physics_box; // 0x394

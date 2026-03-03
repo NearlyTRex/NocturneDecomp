@@ -32,7 +32,7 @@
 ;   undefined4 DAT_032613d4
 ;
 ; Called Functions:
-;   core_dest.cpp_CActorDestination_FUN_0046fd50
+;   core_dest.cpp_CActorDestination_acceptsActor_FUN_0046fd50
 ;   core_event.cpp_CEventList_executeCommands_FUN_004aabe0
 ;
 ; *****************************************************************************
@@ -96,8 +96,8 @@ section .text
     PUSH ECX                            ; 0046fa40
     MOV EAX,dword ptr [EBP + 0x14]      ; 0046fa41
     PUSH EAX                            ; 0046fa44
-    CALL core_dest.cpp_CActorDestination_FUN_0046fd50 ; 0046fa45
-        ;   XREF to: 0046fd50 (UNCONDITIONAL_CALL)  ; int core_dest.cpp_CActorDestination_FUN_0046fd50(CActorDestination * this_ptr, CDemonActor * actor)
+    CALL core_dest.cpp_CActorDestination_acceptsActor_FUN_0046fd50 ; 0046fa45
+        ;   XREF to: 0046fd50 (UNCONDITIONAL_CALL)  ; int core_dest.cpp_CActorDestination_acceptsActor_FUN_0046fd50(CActorDestination * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 0046fa4a
     TEST EAX,EAX                        ; 0046fa4d
     JZ 0x0046fa34                       ; 0046fa4f

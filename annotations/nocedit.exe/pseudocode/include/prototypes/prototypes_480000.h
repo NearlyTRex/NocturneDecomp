@@ -10,6 +10,7 @@
 #include "types/classes/CBitFont.h"
 #include "types/classes/CBoundingBox3D.h"
 #include "types/classes/CDSEModel.h"
+#include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonPart.h"
 #include "types/classes/CDemonRenderer.h"
@@ -60,8 +61,8 @@ int __cdecl core_door_cpp_CDoor_getBlockVirtualDirectorFlag_FUN_00480df0(CDoor *
 int __cdecl core_door_cpp_CDoor_allowBulletHoles_FUN_00480e00(CDoor *this_ptr);
 float * __cdecl core_door_cpp_CDoor_getOpenStandPos_FUN_00480e20(CDoor *this_ptr);
 void __cdecl core_door_cpp_CDoor_updateCollisionData_FUN_00481020(CDoor *this_ptr);
-int __cdecl core_door_cpp_CDoor_getMoveType_FUN_00481070(CDoor *this_ptr);
-int __cdecl core_door_cpp_CDoor_FUN_00481210(CDoor *this_ptr);
+int __cdecl core_door_cpp_CDoor_getMoveType_FUN_00481070(CDoor *this_ptr,CDemonActor *opener);
+uint __cdecl core_door_cpp_CDoor_onLocked_FUN_00481210(CDoor *this_ptr);
 void __cdecl core_door_cpp_CDoor_propertyDisplayCallback_FUN_00481250(CDoor *this_ptr,CActorPropertyList *property,char *output_buffer);
 int __cdecl core_door_cpp_CDoor_propertyActionCallback_FUN_004812b0(CDoor *this_ptr,CActorProperty *property);
 void __cdecl core_door_cpp_CDoor_getPropertyList_FUN_00481320(CDoor *this_ptr,CActorPropertyList *property_list);

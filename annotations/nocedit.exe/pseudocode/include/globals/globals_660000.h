@@ -24,6 +24,7 @@
 #include "types/classes/CParticle_vtable.h"
 #include "types/classes/CPod_vtable.h"
 #include "types/classes/CPoly_vtable.h"
+#include "types/classes/CQuaternion4f.h"
 #include "types/classes/CSoundDeviceBasic_vtable.h"
 #include "types/classes/CSoundDeviceFull_vtable.h"
 #include "types/classes/CVector3i.h"
@@ -181,6 +182,9 @@ extern CPod_vtable g_CPodVTable;
 
 // CPoly_vtable
 extern CPoly_vtable g_CPolyVTable;
+
+// CQuaternion4f
+extern CQuaternion4f CQuaternion4f_00665998;
 
 // CSoundDeviceBasic_vtable
 extern CSoundDeviceBasic_vtable g_CWavInDeviceVTable;

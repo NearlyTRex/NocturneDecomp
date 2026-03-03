@@ -22,7 +22,6 @@ void __cdecl core_tentacle_cpp_CTentacle_archive_FUN_005db880(CTentacle *this_pt
   core_actor_cpp_archiveMotionState_FUN_0040b9f0
             (&model_ptr->motion_controller,"motion state");
   core_actor_cpp_archivePartStatus_FUN_0040bae0(model_ptr,"partStatus");
-  core_actor_cpp_archiveActor_FUN_0040b870
-            ((CDemonActor *)&this_ptr->grave_actor,"graveActor");
+  core_actor_cpp_archiveActor_FUN_0040b870(&this_ptr->grave_actor,"graveActor");
   return;
 }

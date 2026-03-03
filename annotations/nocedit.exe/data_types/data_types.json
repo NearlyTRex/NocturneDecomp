@@ -581,7 +581,7 @@
       "type":"function_definition"
     },
     {
-      "name":"CDemonActor_playAmbientSoundWithVolume",
+      "name":"CDemonActor_playAmbientSoundWithDelay",
       "type":"function_definition"
     },
     {
@@ -4597,6 +4597,26 @@
       "type":"typedef"
     },
     {
+      "name":"CEnemy",
+      "type":"struct"
+    },
+    {
+      "name":"CDrone",
+      "type":"struct"
+    },
+    {
+      "name":"CHotDemon",
+      "type":"struct"
+    },
+    {
+      "name":"CImp",
+      "type":"struct"
+    },
+    {
+      "name":"CLarva",
+      "type":"struct"
+    },
+    {
       "name":"CNPC",
       "type":"struct"
     },
@@ -4615,6 +4635,38 @@
     {
       "name":"CNPC_ptr_48676",
       "type":"typedef"
+    },
+    {
+      "name":"CSentinel",
+      "type":"struct"
+    },
+    {
+      "name":"CSmiley",
+      "type":"struct"
+    },
+    {
+      "name":"CSuccubus",
+      "type":"struct"
+    },
+    {
+      "name":"CSuccubus_ptr_48828",
+      "type":"typedef"
+    },
+    {
+      "name":"CSuccubus_ptr_57712",
+      "type":"typedef"
+    },
+    {
+      "name":"CSuccubus_ptr_58172",
+      "type":"typedef"
+    },
+    {
+      "name":"CZombieCow",
+      "type":"struct"
+    },
+    {
+      "name":"CZombieDog",
+      "type":"struct"
     },
     {
       "name":"SCollisionInfo",
@@ -6133,6 +6185,10 @@
       "type":"typedef"
     },
     {
+      "name":"CDraculaBride",
+      "type":"struct"
+    },
+    {
       "name":"CDrip",
       "type":"struct"
     },
@@ -6147,18 +6203,6 @@
     {
       "name":"CEmitter_ptr_584",
       "type":"typedef"
-    },
-    {
-      "name":"CEnemy",
-      "type":"struct"
-    },
-    {
-      "name":"CDraculaBride",
-      "type":"struct"
-    },
-    {
-      "name":"CDrone",
-      "type":"struct"
     },
     {
       "name":"CFilmProjector",
@@ -6249,23 +6293,11 @@
       "type":"struct"
     },
     {
-      "name":"CHotDemon",
-      "type":"struct"
-    },
-    {
-      "name":"CImp",
-      "type":"struct"
-    },
-    {
       "name":"CKeyActor",
       "type":"struct"
     },
     {
       "name":"CLadder",
-      "type":"struct"
-    },
-    {
-      "name":"CLarva",
       "type":"struct"
     },
     {
@@ -6309,10 +6341,6 @@
       "type":"struct"
     },
     {
-      "name":"CSentinel",
-      "type":"struct"
-    },
-    {
       "name":"CSimBox",
       "type":"struct"
     },
@@ -6323,10 +6351,6 @@
     {
       "name":"CSimBox_ptr_856",
       "type":"typedef"
-    },
-    {
-      "name":"CSmiley",
-      "type":"struct"
     },
     {
       "name":"CSpike",
@@ -6342,22 +6366,6 @@
     },
     {
       "name":"CStairs_ptr_368",
-      "type":"typedef"
-    },
-    {
-      "name":"CSuccubus",
-      "type":"struct"
-    },
-    {
-      "name":"CSuccubus_ptr_48828",
-      "type":"typedef"
-    },
-    {
-      "name":"CSuccubus_ptr_57712",
-      "type":"typedef"
-    },
-    {
-      "name":"CSuccubus_ptr_58172",
       "type":"typedef"
     },
     {
@@ -6505,6 +6513,18 @@
       "type":"struct"
     },
     {
+      "name":"CHero_ptr_128824",
+      "type":"typedef"
+    },
+    {
+      "name":"CHero_ptr_13260",
+      "type":"typedef"
+    },
+    {
+      "name":"CHero_ptr_48728",
+      "type":"typedef"
+    },
+    {
       "name":"CIcePick",
       "type":"struct"
     },
@@ -6566,14 +6586,6 @@
     },
     {
       "name":"CZombie",
-      "type":"struct"
-    },
-    {
-      "name":"CZombieCow",
-      "type":"struct"
-    },
-    {
-      "name":"CZombieDog",
       "type":"struct"
     },
     {
@@ -10512,14 +10524,14 @@
           "type":"char*"
         }
       ],
-      "return_type":"void",
+      "return_type":"uint",
       "type":"function_definition"
     },
     {
       "calling_convention":"__cdecl",
       "cat":"/Nocturne/FunctionDefinition/Game",
       "importable":true,
-      "name":"CDemonActor_playAmbientSoundWithVolume",
+      "name":"CDemonActor_playAmbientSoundWithDelay",
       "parameters":[
         {
           "name":"this_ptr",
@@ -10530,11 +10542,11 @@
           "type":"char*"
         },
         {
-          "name":"volume",
+          "name":"delay",
           "type":"float"
         }
       ],
-      "return_type":"int",
+      "return_type":"uint",
       "type":"function_definition"
     },
     {
@@ -25350,9 +25362,9 @@
         },
         {
           "len":4,
-          "name":"dead",
+          "name":"push_sfx_handle",
           "offset":808,
-          "type":"int"
+          "type":"uint"
         },
         {
           "len":100,
@@ -26162,13 +26174,13 @@
           "len":4,
           "name":"look_at_candidate",
           "offset":9680,
-          "type":"CDemonActor*"
+          "type":"CCharacter*"
         },
         {
           "len":4,
           "name":"look_at_target",
           "offset":9684,
-          "type":"CDemonActor*"
+          "type":"CCharacter*"
         },
         {
           "len":4,
@@ -28690,7 +28702,7 @@
           "len":4,
           "name":"playAmbientSoundWithVolume",
           "offset":48,
-          "type":"CDemonActor_playAmbientSoundWithVolume*"
+          "type":"CDemonActor_playAmbientSoundWithDelay*"
         },
         {
           "len":4,
@@ -31909,7 +31921,7 @@
           "len":4,
           "name":"victim",
           "offset":48700,
-          "type":"CDemonActor*"
+          "type":"CCharacter*"
         },
         {
           "len":4,
@@ -31945,7 +31957,7 @@
           "len":4,
           "name":"script_victim",
           "offset":48820,
-          "type":"CDemonActor*"
+          "type":"CCharacter*"
         },
         {
           "len":4,
@@ -35005,7 +35017,7 @@
           "len":4,
           "name":"door_to_open",
           "offset":129948,
-          "type":"CDemonActor*"
+          "type":"CDoor*"
         },
         {
           "len":4,
@@ -35017,19 +35029,19 @@
           "len":4,
           "name":"pushed_object",
           "offset":129956,
-          "type":"CDemonActor*"
+          "type":"CBoxActor*"
         },
         {
           "len":4,
           "name":"lever_to_pull",
           "offset":129960,
-          "type":"CDemonActor*"
+          "type":"CLever*"
         },
         {
           "len":4,
           "name":"ladder_to_climb",
           "offset":129964,
-          "type":"CDemonActor*"
+          "type":"CLadder*"
         },
         {
           "len":4,
@@ -42811,13 +42823,13 @@
           "len":4,
           "name":"ladder_to_descend",
           "offset":130088,
-          "type":"CDemonActor*"
+          "type":"CLadder*"
         },
         {
           "len":4,
           "name":"weapon",
           "offset":130092,
-          "type":"CDemonActor*"
+          "type":"CWeapon*"
         },
         {
           "len":4,
@@ -60530,6 +60542,30 @@
       "component_offset":344,
       "importable":true,
       "name":"CHealthItem_ptr_344",
+      "type":"typedef"
+    },
+    {
+      "base":"CHero*",
+      "cat":"/Nocturne/Typedef/Game",
+      "component_offset":128824,
+      "importable":true,
+      "name":"CHero_ptr_128824",
+      "type":"typedef"
+    },
+    {
+      "base":"CHero*",
+      "cat":"/Nocturne/Typedef/Game",
+      "component_offset":13260,
+      "importable":true,
+      "name":"CHero_ptr_13260",
+      "type":"typedef"
+    },
+    {
+      "base":"CHero*",
+      "cat":"/Nocturne/Typedef/Game",
+      "component_offset":48728,
+      "importable":true,
+      "name":"CHero_ptr_48728",
       "type":"typedef"
     },
     {

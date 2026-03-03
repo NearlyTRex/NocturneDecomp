@@ -48,8 +48,8 @@ typedef struct CCharacter {
     int gesture_branch_root; // 0x25c4
     int gesture_motion_index; // 0x25c8
     float gesture_frame; // 0x25cc
-    struct CDemonActor* look_at_candidate; // 0x25d0
-    struct CDemonActor* look_at_target; // 0x25d4
+    struct CCharacter* look_at_candidate; // 0x25d0
+    struct CCharacter* look_at_target; // 0x25d4
     float look_at_yaw; // 0x25d8
     float look_at_pitch; // 0x25dc
     float look_at_weight; // 0x25e0

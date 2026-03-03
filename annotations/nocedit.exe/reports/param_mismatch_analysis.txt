@@ -13,15 +13,15 @@ Mismatches may indicate:
 
 SUMMARY
 --------------------------------------------------
-Functions with parameter estimates: 5100
-Functions with no callers: 3241
-Parameter mismatches detected: 483
-Signature accuracy rate: 74.0%
+Functions with parameter estimates: 5094
+Functions with no callers: 3235
+Parameter mismatches detected: 476
+Signature accuracy rate: 74.4%
 
 Mismatches by confidence:
   High confidence:   20 (multiple call sites agree)
-  Medium confidence: 67 (some agreement)
-  Low confidence:    396 (limited data)
+  Medium confidence: 65 (some agreement)
+  Low confidence:    391 (limited data)
 
 ====================================================================================================
 HIGH CONFIDENCE MISMATCHES - Likely signature issues
@@ -63,9 +63,9 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
     File: core/xform.cpp
     Signature: CMatrix3x4f * __stack_esi core_xform_cpp_buildRotationX_FUN_005f6c40(float angle_radians,CMatrix3x4f *matrix_out)
     Sample call sites:
-      core_stranger.cpp_CStranger_FU at 005c088e: 2 reg [EAX, EDX], 3 stack
+      core_stranger.cpp_CStranger_co at 005c088e: 2 reg [EAX, EDX], 3 stack
       core_gabriela.cpp_CGabriella_F at 004d5610: 2 reg [EAX, EDX], 3 stack
-      core_stranger.cpp_CStranger_FU at 005c0edc: 2 reg [EAX, EDX], 3 stack
+      core_stranger.cpp_CStranger_co at 005c0edc: 2 reg [EAX, EDX], 3 stack
 
   core_bodypart.cpp_addVector_FUN_0041b540
     Declared: 3 params, Estimated: 5 params (+2)
@@ -251,7 +251,6 @@ MEDIUM CONFIDENCE MISMATCHES
   core_dmodel.cpp_CKeyFramedModel_addFilesToExtract_ declared:3 est:1 (-2) [10 calls]
   core_fire.cpp_CFireEffect_createCrater_FUN_004c8ea declared:1 est:3 (+2) [2 calls]
   core_set.cpp_CDemonSet_renderEnvMapPrimitives_FUN_ declared:5 est:7 (+2) [2 calls]
-  core_stranger.cpp_CStranger_autoAimAtThreat_FUN_00 declared:1 est:3 (+2) [2 calls]
   core_weapon.cpp_CWeapon_getPropertyList_FUN_005ee9 declared:2 est:4 (+2) [2 calls]
   crt_unknown.c_SomethingWithUppercaseCharacterConve declared:0 est:2 (+2) [2 calls]
   engine_drender.cpp_CDemonRenderer_updateTexture_FU declared:3 est:5 (+2) [2 calls]
@@ -268,6 +267,7 @@ MEDIUM CONFIDENCE MISMATCHES
   cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAli declared:4 est:5 (+1) [2 calls]
   cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAli declared:4 est:5 (+1) [2 calls]
   cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitma declared:7 est:6 (-1) [2 calls]
+  core_ammobox.cpp_CAmmoBox_FUN_00411690             declared:2 est:1 (-1) [2 calls]
   core_bugs.cpp_CBugs_FUN_00425fe0                   declared:1 est:2 (+1) [2 calls]
   core_charactr.cpp_CCharacter_dismember_FUN_0042b9e declared:3 est:4 (+1) [9 calls]
   core_cloth.cpp_CCloth_free_FUN_00438cb0            declared:1 est:2 (+1) [2 calls]
@@ -279,16 +279,16 @@ MEDIUM CONFIDENCE MISMATCHES
   core_mimic.cpp_CMimic_processMorph_FUN_00520ba0    declared:1 est:2 (+1) [2 calls]
   core_moon.cpp_CMoon_update_FUN_00529d60            declared:2 est:1 (-1) [5 calls]
   core_skeleton.cpp_CDeformableModel_selectLOD_FUN_0 declared:2 est:1 (-1) [2 calls]
-  core_stranger.cpp_CStranger_FUN_005c02b0           declared:1 est:2 (+1) [2 calls]
-  core_stranger.cpp_CStranger_FUN_005c1680           declared:1 est:2 (+1) [2 calls]
+  core_turret.cpp_CTurret_FUN_005e3560               declared:1 est:2 (+1) [2 calls]
+  core_weapon.cpp_CWeapon_archive_FUN_005ee250       declared:1 est:2 (+1) [2 calls]
 
-  ... and 17 more
+  ... and 15 more
 
 ====================================================================================================
 LOW CONFIDENCE MISMATCHES (limited data)
 ====================================================================================================
 
-  396 functions with low-confidence mismatches
+  391 functions with low-confidence mismatches
   Sample:
     cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_F declared:1 est:5 (+4)
     cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_ declared:1 est:3 (+2)
@@ -305,10 +305,10 @@ LOW CONFIDENCE MISMATCHES (limited data)
 MISMATCH DIRECTION ANALYSIS
 ====================================================================================================
 
-Functions where declaration has MORE params than estimated: 85
+Functions where declaration has MORE params than estimated: 86
   (May indicate: extra params not being passed, or params in globals)
 
-Functions where declaration has FEWER params than estimated: 398
+Functions where declaration has FEWER params than estimated: 390
   (May indicate: missing params in signature, or calling convention issue)
 
 Distribution of differences (estimated - declared):
@@ -320,9 +320,9 @@ Distribution of differences (estimated - declared):
   -4 params: 3 functions
   -3 params: 8 functions
   -2 params: 16 functions
-  -1 params: 51 functions
-  +1 params: 188 functions
-  +2 params: 82 functions
+  -1 params: 52 functions
+  +1 params: 182 functions
+  +2 params: 80 functions
   +3 params: 42 functions
   +4 params: 74 functions
   +5 params: 5 functions

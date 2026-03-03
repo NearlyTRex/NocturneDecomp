@@ -37116,9 +37116,27 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_hero.cpp_CHero_FUN_004f3760",
+    "name":"core_hero.cpp_CHero_tryUseSelectedItem_FUN_004f3760",
     "ret":"int",
     "vars":{
+      "locals":[
+        {
+          "name":"unionfacet4_4f378f",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:4041bd690f01",
+                "offset":70651094830849,
+                "size":4
+              }
+            ]
+          },
+          "type":"UActorVTable*",
+          "use":47
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",
@@ -37160,10 +37178,25 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_hero.cpp_CHero_FUN_004f3960",
+    "name":"core_hero.cpp_CHero_findNearestEnemy_FUN_004f3960",
     "ret":"float",
     "vars":{
       "locals":[
+        {
+          "name":"pCVar1",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CVehicle*",
+          "use":105
+        },
         {
           "name":"local_14",
           "storage":{
@@ -37213,6 +37246,22 @@
             ]
           },
           "type":"CHero*"
+        },
+        {
+          "name":"out_distance",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float*"
         }
       ],
       "ret_storage":{
@@ -63452,7 +63501,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_stranger.cpp_FUN_005baee0",
+    "name":"core_stranger.cpp_blendWeightCallback_FUN_005baee0",
     "ret":"float",
     "vars":{
       "locals":[
@@ -63475,7 +63524,7 @@
       ],
       "params":[
         {
-          "name":"current_bone_index",
+          "name":"bone",
           "storage":{
             "offset":4,
             "size":4,
@@ -63491,7 +63540,7 @@
           "type":"int"
         },
         {
-          "name":"target_bone_index",
+          "name":"target",
           "storage":{
             "offset":8,
             "size":4,
@@ -63507,7 +63556,7 @@
           "type":"int"
         },
         {
-          "name":"blend_weight",
+          "name":"weight",
           "storage":{
             "offset":12,
             "size":4,
@@ -63523,7 +63572,7 @@
           "type":"float"
         },
         {
-          "name":"hierarchy_distance",
+          "name":"distance",
           "storage":{
             "offset":16,
             "size":4,
@@ -63578,9 +63627,43 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_stranger.cpp_FUN_005bafe0",
+    "name":"core_stranger.cpp_canPickupObject_FUN_005bafe0",
     "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"actor",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonActor*"
+        },
+        {
+          "name":"object",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonActor*"
+        }
+      ],
       "ret_storage":{
         "reg":"EAX",
         "size":4,
@@ -63630,7 +63713,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_stranger.cpp_CStranger_FUN_005bb960",
+    "name":"core_stranger.cpp_CStranger_processFrame_FUN_005bb960",
     "ret":"void",
     "vars":{
       "locals":[
@@ -63683,6 +63766,22 @@
             ]
           },
           "type":"CStranger*"
+        },
+        {
+          "name":"delta_time",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
         }
       ]
     }
@@ -63703,7 +63802,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_stranger.cpp_CStranger_FUN_005bfb60",
+    "name":"core_stranger.cpp_CStranger_makeDrawDecision_FUN_005bfb60",
     "ret":"void",
     "vars":{
       "locals":[
@@ -64155,7 +64254,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_stranger.cpp_CStranger_FUN_005c1fe0",
+    "name":"core_stranger.cpp_CStranger_tryClimbLadder_FUN_005c1fe0",
     "ret":"int",
     "vars":{
       "locals":[
@@ -64363,7 +64462,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_stranger.cpp_FUN_005c37e0",
+    "name":"core_stranger.cpp_calculateAimAnglesWithOffset_FUN_005c37e0",
     "ret":"CVector3f*",
     "vars":{
       "locals":[
@@ -64544,6 +64643,56 @@
           "type":"undefined8"
         }
       ],
+      "params":[
+        {
+          "name":"out_angles",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"direction",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"offset_pair",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"float*"
+        }
+      ],
       "ret_storage":{
         "reg":"EAX",
         "size":4,
@@ -64652,6 +64801,38 @@
             ]
           },
           "type":"CStranger*"
+        },
+        {
+          "name":"hand_index",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"delta_time",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
         }
       ]
     }

@@ -12,11 +12,11 @@ void __cdecl core_hero_cpp_CHero_reset_FUN_004f3b20(CHero *this_ptr)
   CHero *pCVar1;
   float *pfVar2;
   
-  this_ptr->door_to_open = (CDemonActor *)0x0;
+  this_ptr->door_to_open = (CDoor *)0x0;
   this_ptr->object_to_pick_up = (CDemonActor *)0x0;
-  this_ptr->pushed_object = (CDemonActor *)0x0;
-  this_ptr->lever_to_pull = (CDemonActor *)0x0;
-  this_ptr->ladder_to_climb = (CDemonActor *)0x0;
+  this_ptr->pushed_object = (CBoxActor *)0x0;
+  this_ptr->lever_to_pull = (CLever *)0x0;
+  this_ptr->ladder_to_climb = (CLadder *)0x0;
   this_ptr->nearby_interactive_actor = (CDemonActor *)0x0;
   this_ptr->target_actor = (CDemonActor *)0x0;
   (this_ptr->base).grabbed_by = (CDemonActor *)0x0;

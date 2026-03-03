@@ -13,7 +13,7 @@
 ;
 ; XREF[2]:
 ;   core_event.cpp_CEventList_executeCommand_FUN_004aacc0 at 004ab6ab
-;   core_stranger.cpp_CStranger_FUN_005bb960 at 005bdd07
+;   core_stranger.cpp_CStranger_processFrame_FUN_005bb960 at 005bdd07
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005a5d00

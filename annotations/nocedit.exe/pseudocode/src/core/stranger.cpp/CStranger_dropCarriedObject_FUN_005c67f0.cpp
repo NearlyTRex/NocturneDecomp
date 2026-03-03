@@ -11,9 +11,9 @@ void __cdecl core_stranger_cpp_CStranger_dropCarriedObject_FUN_005c67f0(CStrange
 {
   CEnemy_full_vtable *pCVar1;
   
-  if ((this_ptr->base).base.carry_hands[hand_index].carry_actor == this_ptr->weapon) {
+  if ((CWeapon *)(this_ptr->base).base.carry_hands[hand_index].carry_actor == this_ptr->weapon) {
     pCVar1 = (this_ptr->base).base.base.vtable._ue;
-    this_ptr->weapon = (CDemonActor *)0x0;
+    this_ptr->weapon = (CWeapon *)0x0;
     (*(pCVar1->_ue).updateVictim)((CEnemy *)this_ptr,0.0);
   }
   core_charactr_cpp_CCharacter_dropCarriedObject_FUN_0042cfe0

@@ -128,7 +128,7 @@ section .text
     LEA ESI,[EBX + 0x410]               ; 00504f73
     PUSH ESI                            ; 00504f79
     CALL core_actor.cpp_archiveActor_FUN_0040b870 ; 00504f7a
-        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * actor_ptr, char * property_name)
+        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 00504f7f
     CMP dword ptr [0x0067cfb4],0x4      ; 00504f82 | g_CLeverClassVersion
         ;   Label: LAB_00504f82

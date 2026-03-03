@@ -15,8 +15,8 @@
 ;   core_ghoul.cpp_CGhoul_process_FUN_004e6600 at 004e7c72
 ;   core_mimic.cpp_CMimic_FUN_0051fcc0 at 005201b9
 ;   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 at 00597644
-;   core_stranger.cpp_CStranger_FUN_005bb960 at 005bc3f0
-;   core_stranger.cpp_CStranger_FUN_005bfb60 at 005bfcbd
+;   core_stranger.cpp_CStranger_makeDrawDecision_FUN_005bfb60 at 005bfcbd
+;   core_stranger.cpp_CStranger_processFrame_FUN_005bb960 at 005bc3f0
 ;   core_zombie.cpp_CZombie_process_FUN_005f9470 at 005fada1
 ;
 ; *****************************************************************************

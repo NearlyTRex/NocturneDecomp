@@ -195,7 +195,7 @@ section .text
     PUSH ESI                            ; 00485f7d
     INC EBX                             ; 00485f7e
     CALL core_actor.cpp_archiveActor_FUN_0040b870 ; 00485f7f
-        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * actor_ptr, char * property_name)
+        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 00485f84
     MOV EBP,dword ptr [EDI + 0xbf68]    ; 00485f87
     ADD ESI,0x4                         ; 00485f8d

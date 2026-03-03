@@ -65,10 +65,10 @@ void __cdecl core_stranger_cpp_CStranger_setup_FUN_005bb4b0(CStranger *this_ptr)
   (this_ptr->base).base.carry_hands[1].bone_index = INT_03f6bb04;
   pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                      (&this_ptr_00->motion_controller);
-  DAT_03f6bb1c = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(pCVar1);
+  INT_03f6bb1c = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(pCVar1);
   pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                      (&this_ptr_00->motion_controller);
-  DAT_03f6bb20 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(pCVar1);
+  INT_03f6bb20 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(pCVar1);
   pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                      (&this_ptr_00->motion_controller);
   motion_index = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(pCVar1);
@@ -88,7 +88,7 @@ void __cdecl core_stranger_cpp_CStranger_setup_FUN_005bb4b0(CStranger *this_ptr)
     (this_ptr->ref_r_upperarm_bone_pos).y = pCVar2->y;
     (this_ptr->ref_r_upperarm_bone_pos).z = pCVar2->z;
   }
-  core_stranger_cpp_CStranger_FUN_005be520(this_ptr);
+  core_stranger_cpp_CStranger_updateProceduralAnimation_FUN_005be520(this_ptr);
   this_ptr->grab_timer = 0.0;
   this_ptr->ladder_blend_time = 0.0;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
@@ -99,7 +99,7 @@ void __cdecl core_stranger_cpp_CStranger_setup_FUN_005bb4b0(CStranger *this_ptr)
   this_ptr->goggle_sfx_handles[1] = 0;
   this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
                           (&(this_ptr->base).base.model);
-  DAT_03f6bb24 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
+  INT_03f6bb24 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                            (this_ptr_02,"head01",1);
   return;
 }

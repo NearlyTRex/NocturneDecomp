@@ -6,12 +6,6 @@
         "column": 3,
         "line": 22,
         "message": "unknown type name 'code'"
-      },
-      {
-        "category": "lvalue_required",
-        "column": 31,
-        "line": 114,
-        "message": "cannot take the address of an rvalue of type 'float'"
       }
     ],
     "success": false,
@@ -19,12 +13,12 @@
   },
   "complexity": {
     "assembly_lines": 206,
-    "complexity_score": 663,
+    "complexity_score": 662,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 153,
+    "pseudocode_lines": 152,
     "suspect_count": 48,
     "suspect_types": [
       "param_count_too_few",
@@ -34,7 +28,7 @@
       "unresolved_funcptr",
       "warning_type_propagation"
     ],
-    "total_lines": 359
+    "total_lines": 358
   },
   "cross_references": [
     {
@@ -92,9 +86,9 @@
   "globals": [
     {
       "addr": "00665998",
-      "name": "FLOAT_00665998",
-      "type": "float",
-      "value": "1"
+      "name": "CQuaternion4f_00665998",
+      "type": "CQuaternion4f",
+      "value": null
     },
     {
       "addr": "03106168",
@@ -596,7 +590,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 109,
+      "line": 108,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar4 = (uint *)((int)&local_ec + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
@@ -604,7 +598,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 110,
+      "line": 109,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar3 = (uint *)((int)&local_4c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
@@ -612,7 +606,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 111,
+      "line": 110,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_ec + (uint)bVar6 * -8 + 4) =",
@@ -620,7 +614,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 112,
+      "line": 111,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_4c + (uint)bVar6 * -8 + 4);",
@@ -628,7 +622,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 117,
+      "line": 116,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar4 = (uint *)((int)&local_2c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
@@ -636,7 +630,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 118,
+      "line": 117,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar3 = (uint *)((int)&local_3c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
@@ -644,7 +638,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 119,
+      "line": 118,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_2c + (uint)bVar6 * -8 + 4) =",
@@ -652,7 +646,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 120,
+      "line": 119,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_3c + (uint)bVar6 * -8 + 4);",
@@ -660,7 +654,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 128,
+      "line": 127,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar4 = (uint *)((int)pCVar2 + ((uint)bVar6 * -2 + 1) * 4);",
@@ -668,7 +662,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 131,
+      "line": 130,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar3 = (uint *)((int)&local_8c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
@@ -676,7 +670,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 132,
+      "line": 131,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*puVar4 = *(uint *)((int)&local_8c + (uint)bVar6 * -8 + 4);",
@@ -684,7 +678,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 138,
+      "line": 137,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar4 = (uint *)((int)&local_dc + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
@@ -692,7 +686,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 139,
+      "line": 138,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar3 = (uint *)((int)&local_5c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
@@ -700,7 +694,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 140,
+      "line": 139,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_dc + (uint)bVar6 * -8 + 4) =",
@@ -708,7 +702,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 141,
+      "line": 140,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_5c + (uint)bVar6 * -8 + 4);",
@@ -716,7 +710,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 148,
+      "line": 147,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar4 = (uint *)((int)&local_2c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
@@ -724,7 +718,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 149,
+      "line": 148,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar3 = (uint *)((int)&local_6c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
@@ -732,7 +726,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 150,
+      "line": 149,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_2c + (uint)bVar6 * -8 + 4) =",
@@ -740,7 +734,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 151,
+      "line": 150,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_6c + (uint)bVar6 * -8 + 4);",

@@ -1,16 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_ammobox_cpp_CAmmoBox_FUN_00411690(CAmmoBox *this_ptr)
+; void __cdecl core_ammobox_cpp_CAmmoBox_FUN_00411690(CAmmoBox *this_ptr,float open_pct)
 ;
 ; Parameters:
 ; CAmmoBox *       Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   open_pct
 ; Local Variables:
 ; undefined8       Stack[-0xc]:8  local_c
 ;
 ; XREF[2]:
 ;   core_gabriela.cpp_CGabriella_process_FUN_004d2ea0 at 004d3c02
-;   core_stranger.cpp_CStranger_FUN_005bb960 at 005bc0fb
+;   core_stranger.cpp_CStranger_processFrame_FUN_005bb960 at 005bc0fb
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Open_pct_f_00614bd1

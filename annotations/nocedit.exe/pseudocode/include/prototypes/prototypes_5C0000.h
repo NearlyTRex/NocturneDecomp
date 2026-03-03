@@ -4,6 +4,8 @@
 #include "system/basetypes.h"
 #include "system/stdio.h"
 #include "types/classes/CActorPropertyList.h"
+#include "types/classes/CCharacter.h"
+#include "types/classes/CCloth.h"
 #include "types/classes/CComplexPolygon.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
@@ -25,32 +27,32 @@
 // FUNCTION PROTOTYPES - Range 0x5C0000
 // =============================================================================
 
-void __cdecl core_stranger_cpp_CStranger_FUN_005c02b0(CStranger *this_ptr);
-void __cdecl core_stranger_cpp_CStranger_FUN_005c06b0(CStranger *this_ptr);
-void __cdecl core_stranger_cpp_CStranger_FUN_005c07b0(CStranger *this_ptr);
-int __cdecl core_stranger_cpp_CStranger_FUN_005c1680(CStranger *this_ptr);
-void __cdecl core_stranger_cpp_CStranger_FUN_005c1f00(CStranger *this_ptr);
-void __cdecl core_stranger_cpp_CStranger_FUN_005c1f80(CStranger *this_ptr);
-int __cdecl core_stranger_cpp_CStranger_FUN_005c1fe0(CStranger *this_ptr);
-int __cdecl core_stranger_cpp_CStranger_FUN_005c2400(CStranger *this_ptr);
-int __cdecl core_stranger_cpp_CStranger_FUN_005c2850(CStranger *this_ptr);
+void __cdecl core_stranger_cpp_CStranger_applyArmAimRotation_FUN_005c02b0(CStranger *this_ptr,int arm_side);
+void __cdecl core_stranger_cpp_CStranger_updateWeaponPosition_FUN_005c06b0(CStranger *this_ptr,int hand_index);
+void __cdecl core_stranger_cpp_CStranger_computeWeaponAttachXForm_FUN_005c07b0(CStranger *this_ptr,CDemonActor *carried_actor,int hand_index);
+int __cdecl core_stranger_cpp_CStranger_tryPickupObject_FUN_005c1680(CStranger *this_ptr,char *param_2);
+void __cdecl core_stranger_cpp_CStranger_processPickupComplete_FUN_005c1f00(CStranger *this_ptr);
+void __cdecl core_stranger_cpp_CStranger_dropRightHandObject_FUN_005c1f80(CStranger *this_ptr);
+int __cdecl core_stranger_cpp_CStranger_tryClimbLadder_FUN_005c1fe0(CStranger *this_ptr);
+int __cdecl core_stranger_cpp_CStranger_tryDescendLadder_FUN_005c2400(CStranger *this_ptr);
+int __cdecl core_stranger_cpp_CStranger_tryPlaceObject_FUN_005c2850(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_archive_FUN_005c2fe0(CStranger *this_ptr);
 int __cdecl core_stranger_cpp_CStranger_renderOpaque_FUN_005c3150(CStranger *this_ptr);
 int __cdecl core_stranger_cpp_CStranger_renderTransparent_FUN_005c3710(CStranger *this_ptr);
-void __cdecl core_stranger_cpp_FUN_005c3750(void);
-CVector3f * __cdecl core_stranger_cpp_FUN_005c37e0(void);
-void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_005c3960(CStranger *this_ptr);
+void __cdecl core_stranger_cpp_adjustAimAngleForOffset_FUN_005c3750(float *angle,float distance,float offset);
+CVector3f * __cdecl core_stranger_cpp_calculateAimAnglesWithOffset_FUN_005c37e0(CVector3f *out_angles,CVector3f *direction,float *offset_pair);
+void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_005c3960(CStranger *this_ptr,int hand_index,float delta_time);
 void __cdecl core_stranger_cpp_CStranger_aimLeftPistol_FUN_005c4370(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_processDamage_FUN_005c48b0(CStranger *this_ptr,SDamageInfo *damage_info);
-void __cdecl core_stranger_cpp_CStranger_FUN_005c4c20(CStranger *this_ptr);
+void __cdecl core_stranger_cpp_CStranger_updateArmRecoilBlend_FUN_005c4c20(CStranger *this_ptr,float delta_time,int is_weapon_active);
 void __stack2_esi core_stranger_cpp_CStranger_getCarryObjToBodyXForm_FUN_005c5170 (CStranger *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
-CVector3f * __cdecl core_stranger_cpp_CStranger_FUN_005c51c0(CStranger *this_ptr);
-void __cdecl core_stranger_cpp_CStranger_FUN_005c5270(CStranger *this_ptr);
-void __cdecl core_stranger_cpp_CStranger_FUN_005c5b90(CStranger *this_ptr);
-int __cdecl core_stranger_cpp_CStranger_FUN_005c5e80(CStranger *this_ptr);
-void __cdecl core_stranger_cpp_CStranger_FUN_005c5f10(CStranger *this_ptr);
-void __cdecl core_stranger_cpp_CStranger_FUN_005c6220(CStranger *this_ptr);
-void __cdecl core_stranger_cpp_CStranger_FUN_005c6590(CStranger *this_ptr);
+CVector3f * __cdecl core_stranger_cpp_CStranger_getThrowDirection_FUN_005c51c0(CStranger *this_ptr,CVector3f *out_direction);
+void __cdecl core_stranger_cpp_CStranger_updateWeaponLayerActions_FUN_005c5270(CStranger *this_ptr,float delta_time);
+void __cdecl core_stranger_cpp_CStranger_handleActionButton_FUN_005c5b90(CStranger *this_ptr);
+int __cdecl core_stranger_cpp_CStranger_tryThrowDynamite_FUN_005c5e80(CStranger *this_ptr);
+void __cdecl core_stranger_cpp_CStranger_handleFireButton_FUN_005c5f10(CStranger *this_ptr);
+void __cdecl core_stranger_cpp_CStranger_updateClothSimulation_FUN_005c6220(CStranger *this_ptr);
+void __cdecl core_stranger_cpp_CStranger_processWeaponTick_FUN_005c6590(CStranger *this_ptr,float delta_time);
 int __cdecl core_stranger_cpp_CStranger_isWeaponDrawn_FUN_005c6650(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_drawWeapon_FUN_005c6660(CStranger *this_ptr,int drawn);
 int __cdecl core_stranger_cpp_CStranger_getGrabbed_FUN_005c66a0(CStranger *this_ptr,CDemonActor *grabber,int grab_type);
@@ -64,8 +66,8 @@ void __cdecl core_stranger_cpp_CStranger_addFilesToExtract_FUN_005c6910(CStrange
 void __cdecl core_stranger_cpp_FUN_005c6930(void);
 int __cdecl core_stranger_cpp_FUN_005c6950(void);
 int __cdecl core_stranger_cpp_FUN_005c695e(void);
-void __cdecl core_stranger_cpp_FUN_005c6970(void);
-int __cdecl core_stranger_cpp_FUN_005c69a0(void);
+void __cdecl core_stranger_cpp_CCloth_setWindVelocity_FUN_005c6970(CCloth *this_ptr,CVector3f *velocity);
+int __cdecl core_stranger_cpp_CCharacter_getCurrentMotionStateIndex_FUN_005c69a0(CCharacter *this_ptr);
 CStranger * __cdecl core_stranger_cpp_CStranger_dtor_FUN_005c69c0(CStranger *this_ptr,uint flags);
 void __cdecl core_succubus_cpp_staticInit_FUN_005c6a10(void);
 CSuccubus * __cdecl core_succubus_cpp_factoryFunc_FUN_005c6a40(void);

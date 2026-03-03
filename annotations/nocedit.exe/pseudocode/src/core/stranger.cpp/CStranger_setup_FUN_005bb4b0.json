@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 273,
-    "complexity_score": 130,
+    "complexity_score": 95,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 48,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 95,
-    "suspect_count": 3,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 368
   },
   "cross_references": [],
@@ -90,7 +88,7 @@
     {
       "addr": "005be520",
       "is_variadic": false,
-      "name": "core_stranger.cpp_CStranger_FUN_005be520"
+      "name": "core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520"
     }
   ],
   "globals": [
@@ -366,20 +364,20 @@
     },
     {
       "addr": "03f6bb1c",
-      "name": "DAT_03f6bb1c",
-      "type": "undefined4",
+      "name": "INT_03f6bb1c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "03f6bb20",
-      "name": "DAT_03f6bb20",
-      "type": "undefined4",
+      "name": "INT_03f6bb20",
+      "type": "int",
       "value": null
     },
     {
       "addr": "03f6bb24",
-      "name": "DAT_03f6bb24",
-      "type": "undefined4",
+      "name": "INT_03f6bb24",
+      "type": "int",
       "value": null
     }
   ],
@@ -443,32 +441,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 61,
-      "match": "DAT_03f6bb1c",
-      "severity": "mild",
-      "text": "DAT_03f6bb1c = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(pCVar1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 64,
-      "match": "DAT_03f6bb20",
-      "severity": "mild",
-      "text": "DAT_03f6bb20 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(pCVar1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 95,
-      "match": "DAT_03f6bb24",
-      "severity": "mild",
-      "text": "DAT_03f6bb24 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240",
-      "type": "undefined_data"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

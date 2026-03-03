@@ -23,10 +23,10 @@ void __cdecl core_boxactor_cpp_CBoxActor_setup_FUN_00421830(CBoxActor *this_ptr)
     this_ptr->anim_frame = (float)(iVar1 + -1);
   }
   if (-1 < (this_ptr->physics_box).is_valid) {
-    this_ptr->dead = 0;
+    this_ptr->push_sfx_handle = 0;
     return;
   }
   core_boxactor_cpp_CBoxActor_FUN_004218d0(this_ptr);
-  this_ptr->dead = 0;
+  this_ptr->push_sfx_handle = 0;
   return;
 }

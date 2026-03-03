@@ -14,7 +14,6 @@ void __cdecl core_crate_cpp_CCrate_archive_FUN_00448910(CCrate *this_ptr)
   if (g_CCrateClassVersion < 2) {
     return;
   }
-  core_actor_cpp_archiveActor_FUN_0040b870
-            ((CDemonActor *)&this_ptr->last_platform,"lastPlatform");
+  core_actor_cpp_archiveActor_FUN_0040b870(&this_ptr->last_platform,"lastPlatform");
   return;
 }

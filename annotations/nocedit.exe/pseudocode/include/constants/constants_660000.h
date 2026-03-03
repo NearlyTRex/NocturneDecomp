@@ -235,7 +235,6 @@ static float FLOAT_00665768 = 10.0f;
 static float FLOAT_0066576c = 0.2f;
 static float FLOAT_00665770 = 0.2f;
 static float FLOAT_00665968 = 1.0f;
-static float FLOAT_00665998 = 1.0f;
 static float FLOAT_006659c8 = 1.3f;
 static float FLOAT_006659cc = 50.0f;
 static float FLOAT_006659d0 = 100.0f;

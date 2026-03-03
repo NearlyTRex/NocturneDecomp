@@ -1,0 +1,266 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 346,
+    "complexity_score": 109,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 20,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 109,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 455
+  },
+  "cross_references": [
+    {
+      "addr": "005bb960",
+      "from_addr": "005bc3af",
+      "name": "core_stranger.cpp_CStranger_processFrame_FUN_005bb960",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005c6220",
+    "address_range": [
+      [
+        "005c6220",
+        "005c658b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_stranger.cpp_CStranger_updateClothSimulation_FUN_005c6220",
+    "signature": "void __cdecl core_stranger_cpp_CStranger_updateClothSimulation_FUN_005c6220(CStranger *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0043e0d0",
+      "is_variadic": false,
+      "name": "core_cloth.cpp_CCloth_grabCloth_FUN_0043e0d0"
+    },
+    {
+      "addr": "0043e170",
+      "is_variadic": false,
+      "name": "core_cloth.cpp_CCloth_resetState_FUN_0043e170"
+    },
+    {
+      "addr": "0052dab0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00653e84",
+      "name": "s_Bip01_L_Forearm_00653e84",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00653e94",
+      "name": "s_Bip01_L_Forearm_00653e94",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00653ea4",
+      "name": "s_Bip01_L_Forearm_00653ea4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00653eb4",
+      "name": "s_Bip01_L_Forearm_00653eb4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00653ec4",
+      "name": "s_Bip01_L_Forearm_00653ec4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00653ed4",
+      "name": "s_Bip01_L_Forearm_00653ed4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00653ee4",
+      "name": "s_Bip01_R_Forearm_00653ee4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00653ef4",
+      "name": "s_Bip01_R_Forearm_00653ef4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00653f04",
+      "name": "s_Bip01_R_Forearm_00653f04",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00653f14",
+      "name": "s_Bip01_R_Forearm_00653f14",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00653f24",
+      "name": "s_Bip01_R_Forearm_00653f24",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00653f34",
+      "name": "s_Bip01_R_Forearm_00653f34",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00653f44",
+      "name": "s_Bip01_L_Forearm_00653f44",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00653f54",
+      "name": "s_Bip01_L_Forearm_00653f54",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00653f64",
+      "name": "DOUBLE_00653f64",
+      "type": "double",
+      "value": "0.700000000000000"
+    },
+    {
+      "addr": "00653f6c",
+      "name": "DOUBLE_00653f6c",
+      "type": "double",
+      "value": "0.300000000000000"
+    },
+    {
+      "addr": "00653f74",
+      "name": "DOUBLE_00653f74",
+      "type": "double",
+      "value": "0.5"
+    },
+    {
+      "addr": "00653f7c",
+      "name": "DOUBLE_00653f7c",
+      "type": "double",
+      "value": "0.400000000000000"
+    },
+    {
+      "addr": "00653f84",
+      "name": "DOUBLE_00653f84",
+      "type": "double",
+      "value": "0.600000000000000"
+    },
+    {
+      "addr": "00653f8c",
+      "name": "DOUBLE_00653f8c",
+      "type": "double",
+      "value": "0.800000000000000"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005bc3af",
+        "call_type": "direct",
+        "caller": "core_stranger.cpp_CStranger_processFrame_FUN_005bb960",
+        "estimated_params": 1,
+        "instructions_analyzed": 3,
+        "reg_params": [],
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.41970802919708,
+    "instruction_count": 274,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 15,
+      "BOOL_OR": 13,
+      "BRANCH": 2,
+      "CALL": 29,
+      "CALLIND": 1,
+      "CBRANCH": 25,
+      "COPY": 345,
+      "FLOAT2FLOAT": 19,
+      "FLOAT_EQUAL": 9,
+      "FLOAT_LESS": 9,
+      "FLOAT_NAN": 18,
+      "INT_ADD": 83,
+      "INT_AND": 156,
+      "INT_CARRY": 32,
+      "INT_EQUAL": 110,
+      "INT_LEFT": 36,
+      "INT_LESS": 15,
+      "INT_NOTEQUAL": 45,
+      "INT_OR": 45,
+      "INT_SBORROW": 15,
+      "INT_SCARRY": 32,
+      "INT_SLESS": 54,
+      "INT_SUB": 121,
+      "INT_XOR": 4,
+      "INT_ZEXT": 36,
+      "LOAD": 40,
+      "POPCOUNT": 54,
+      "RETURN": 3,
+      "STORE": 119
+    },
+    "pcode_op_count": 1485
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CStranger *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005c6229",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": []
+}

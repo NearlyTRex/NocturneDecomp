@@ -1,8 +1,5 @@
 #pragma once
 
-// Forward declarations
-struct CDemonActor;
-
 // Dependencies
 #include "system/basetypes.h"
 #include "types/classes/CCharacter.h"
@@ -17,13 +14,13 @@ typedef struct CEnemy {
     int is_in_combat; // 0xbe30
     float guard_distance; // 0xbe34
     float attack_cooldown; // 0xbe38
-    struct CDemonActor* victim; // 0xbe3c
+    struct CCharacter* victim; // 0xbe3c
     float victim_search_timer; // 0xbe40
     float victim_search_radius; // 0xbe44
     char patrol_name_pattern[100]; // 0xbe48
     int special_form_flag; // 0xbeac
     float victim_height; // 0xbeb0
-    struct CDemonActor* script_victim; // 0xbeb4
+    struct CCharacter* script_victim; // 0xbeb4
     int allow_pathfind_to_new_targets; // 0xbeb8
 } CEnemy;
 

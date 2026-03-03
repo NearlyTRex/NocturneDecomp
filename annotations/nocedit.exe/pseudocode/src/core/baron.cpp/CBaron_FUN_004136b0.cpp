@@ -27,10 +27,12 @@ void __cdecl core_baron_cpp_CBaron_FUN_004136b0(CBaron *this_ptr)
   CVector3f local_40;
   CVector3f CStack_34;
   CVector3f CStack_28;
+  float local_1c;
   int iStack_18;
   float local_14;
   
-  this_ptr_00 = (CCharacter *)core_hero_cpp_CHero_FUN_004f3960(&this_ptr->base);
+  this_ptr_00 = (CCharacter *)
+                core_hero_cpp_CHero_findNearestEnemy_FUN_004f3960(&this_ptr->base,&local_1c);
   if (this_ptr_00 == (CCharacter *)0x0) {
     return;
   }

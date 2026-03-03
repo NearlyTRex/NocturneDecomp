@@ -182,7 +182,7 @@ section .text
     ADD EBP,0x48                        ; 0041d41a
     ADD EDI,0x48                        ; 0041d41d
     CALL core_actor.cpp_archiveActor_FUN_0040b870 ; 0041d420
-        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * actor_ptr, char * property_name)
+        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 0041d425
     ADD ESI,0x48                        ; 0041d428
     MOV EDX,dword ptr [ESP + 0x8]       ; 0041d42b

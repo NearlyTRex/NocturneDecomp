@@ -27,7 +27,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_FUN_005f1e40(CWerewolf *this_ptr)
   float local_14;
   
   if ((this_ptr->chain_anchor != (CDemonActor *)0x0) &&
-     ((this_ptr->base).victim != (CDemonActor *)0x0)) {
+     ((this_ptr->base).victim != (CCharacter *)0x0)) {
     local_50.x = 0.0;
     local_50.y = -0.3;
     local_50.z = 0.0;

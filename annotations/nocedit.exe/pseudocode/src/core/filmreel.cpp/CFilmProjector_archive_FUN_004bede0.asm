@@ -38,7 +38,7 @@ section .text
     LEA EAX,[EBX + 0x370]               ; 004bee00
     PUSH EAX                            ; 004bee06
     CALL core_actor.cpp_archiveActor_FUN_0040b870 ; 004bee07
-        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * actor_ptr, char * property_name)
+        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 004bee0c
     PUSH 0x629bd5                       ; 004bee0f | = "keyEvent"
     LEA EAX,[EBX + 0x374]               ; 004bee14

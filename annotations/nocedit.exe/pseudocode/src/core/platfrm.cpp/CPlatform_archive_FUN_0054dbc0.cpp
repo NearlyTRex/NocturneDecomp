@@ -77,8 +77,7 @@ void __cdecl core_platfrm_cpp_CPlatform_archive_FUN_0054dbc0(CPlatform *this_ptr
       pCVar1 = this_ptr;
       if (0 < local_1c) {
         do {
-          core_actor_cpp_archiveActor_FUN_0040b870((CDemonActor *)&local_18,"attach actor")
-          ;
+          core_actor_cpp_archiveActor_FUN_0040b870(&local_18,"attach actor");
           pCVar1->attach_actors[0].actor = local_18;
           iVar2 = iVar2 + 1;
           pCVar1 = (CPlatform *)((int)&(pCVar1->base).orient + 4);
@@ -100,7 +99,7 @@ void __cdecl core_platfrm_cpp_CPlatform_archive_FUN_0054dbc0(CPlatform *this_ptr
       do {
         if (pCVar1->attach_actors[0].actor != (CDemonActor *)0x0) {
           core_actor_cpp_archiveActor_FUN_0040b870
-                    ((CDemonActor *)(this_ptr->attach_actors + iVar2),"attach actor");
+                    (&this_ptr->attach_actors[iVar2].actor,"attach actor");
         }
         iVar2 = iVar2 + 1;
         pCVar1 = (CPlatform *)((int)&(pCVar1->base).orient + 4);

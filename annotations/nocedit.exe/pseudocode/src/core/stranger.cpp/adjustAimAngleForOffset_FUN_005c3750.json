@@ -1,0 +1,187 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 67,
+    "complexity_score": 35,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 20,
+    "suspect_count": 1,
+    "suspect_types": [
+      "decompiler_intrinsic"
+    ],
+    "total_lines": 87
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005c3750",
+    "address_range": [
+      [
+        "005c3750",
+        "005c37da"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_stranger.cpp_adjustAimAngleForOffset_FUN_005c3750",
+    "signature": "void __cdecl core_stranger_cpp_adjustAimAngleForOffset_FUN_005c3750(float *angle,float distance,float offset)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cd70",
+      "is_variadic": false,
+      "name": "core_actor.cpp_normalizeAngleToPi_FUN_0040cd70"
+    },
+    {
+      "addr": "00600162",
+      "is_variadic": false,
+      "name": "crt_math.c_acos_FUN_00600162"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00653c84",
+      "name": "DOUBLE_00653c84",
+      "type": "double",
+      "value": "0.0100000000000000"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 3,
+    "estimated_params": 3
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.410714285714286,
+    "instruction_count": 56,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 7,
+      "BRANCH": 1,
+      "CALL": 2,
+      "CBRANCH": 4,
+      "COPY": 189,
+      "FLOAT2FLOAT": 17,
+      "FLOAT_ADD": 1,
+      "FLOAT_DIV": 1,
+      "FLOAT_EQUAL": 4,
+      "FLOAT_LESS": 4,
+      "FLOAT_MULT": 2,
+      "FLOAT_NAN": 8,
+      "FLOAT_SQRT": 1,
+      "FLOAT_SUB": 2,
+      "INT2FLOAT": 3,
+      "INT_ADD": 16,
+      "INT_AND": 27,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 6,
+      "INT_LEFT": 16,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 20,
+      "INT_OR": 20,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 3,
+      "INT_SUB": 6,
+      "INT_ZEXT": 16,
+      "LOAD": 18,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 11
+    },
+    "pcode_op_count": 415
+  },
+  "stack_frame": {
+    "frame_size": 48,
+    "local_size": 36,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "angle",
+        "offset": 4,
+        "size": 4,
+        "type": "float *"
+      },
+      {
+        "is_param": true,
+        "name": "distance",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "offset",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005c3757",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 9,
+      "match": "SQRT",
+      "severity": "mild",
+      "text": "(dVar2 = (double)(SQRT(distance * distance - offset * offset) / distance), dVar2 < 1.0)) &&",
+      "type": "decompiler_intrinsic"
+    }
+  ]
+}

@@ -36,7 +36,7 @@ CStranger * __cdecl core_stranger_cpp_CStranger_ctor_FUN_005bb120(CStranger *thi
   (ADJ(pCVar6)->left_arm_aim).kickback_factor = 0.0;
   (ADJ(pCVar6)->left_arm_aim).aim_lock_state = 0;
   ADJ(pCVar6)->arm_recoil_blend = 0.0;
-  ADJ(pCVar6)->ladder_to_descend = (CDemonActor *)0x0;
+  ADJ(pCVar6)->ladder_to_descend = (CLadder *)0x0;
   ADJ(pCVar6)->dual_wield_side = 0;
   ADJ(pCVar6)->melee_attack_index = 0;
   ADJ(pCVar6)->action_timer = 0.0;
@@ -54,7 +54,7 @@ CStranger * __cdecl core_stranger_cpp_CStranger_ctor_FUN_005bb120(CStranger *thi
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             (&ADJ(pCVar6)->base.base.model,"stranger.dfm");
   ADJ(pCVar6)->base.base.layer_action_index = 0;
-  ADJ(pCVar6)->weapon = (CDemonActor *)0x0;
+  ADJ(pCVar6)->weapon = (CWeapon *)0x0;
   ADJ(pCVar6)->turn_angle = 0.0;
   ADJ(pCVar6)->turn_blend_weight = 0.0;
   (ADJ(pCVar6)->pending_velocity).z = 0.0;

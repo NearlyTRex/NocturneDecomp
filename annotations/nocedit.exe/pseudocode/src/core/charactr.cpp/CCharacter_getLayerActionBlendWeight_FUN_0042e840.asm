@@ -11,15 +11,15 @@
 ;
 ; XREF[11]:
 ;   core_scat.cpp_CScat_renderOpaque_FUN_00557df0 at 00557e4d
-;   core_stranger.cpp_CStranger_FUN_005bfb60 at 005bffbd
-;   core_stranger.cpp_CStranger_FUN_005c07b0 at 005c11a5
-;   core_stranger.cpp_CStranger_FUN_005c1680 at 005c16b6
-;   core_stranger.cpp_CStranger_FUN_005c1fe0 at 005c1fff
-;   core_stranger.cpp_CStranger_FUN_005c2400 at 005c241f
-;   core_stranger.cpp_CStranger_FUN_005c2850 at 005c2888
-;   core_stranger.cpp_CStranger_FUN_005c5270 at 005c55d7
-;   core_stranger.cpp_CStranger_FUN_005c5b90 at 005c5dc6
-;   core_stranger.cpp_CStranger_FUN_005c5f10 at 005c600b
+;   core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_005c07b0 at 005c11a5
+;   core_stranger.cpp_CStranger_handleActionButton_FUN_005c5b90 at 005c5dc6
+;   core_stranger.cpp_CStranger_handleFireButton_FUN_005c5f10 at 005c600b
+;   core_stranger.cpp_CStranger_makeDrawDecision_FUN_005bfb60 at 005bffbd
+;   core_stranger.cpp_CStranger_renderOpaque_FUN_005c3150 at 005c318c
+;   core_stranger.cpp_CStranger_tryClimbLadder_FUN_005c1fe0 at 005c1fff
+;   core_stranger.cpp_CStranger_tryDescendLadder_FUN_005c2400 at 005c241f
+;   core_stranger.cpp_CStranger_tryPickupObject_FUN_005c1680 at 005c16b6
+;   core_stranger.cpp_CStranger_tryPlaceObject_FUN_005c2850 at 005c2888
 ;   ... and 1 more
 ;
 ; *****************************************************************************

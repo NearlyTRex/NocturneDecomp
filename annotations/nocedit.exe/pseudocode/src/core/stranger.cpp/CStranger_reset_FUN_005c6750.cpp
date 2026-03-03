@@ -13,8 +13,8 @@ void __cdecl core_stranger_cpp_CStranger_reset_FUN_005c6750(CStranger *this_ptr)
   
   this_ptr_00 = &(this_ptr->base).base.model;
   core_hero_cpp_CHero_reset_FUN_004f3b20(&this_ptr->base);
-  this_ptr->ladder_to_descend = (CDemonActor *)0x0;
-  this_ptr->weapon = (CDemonActor *)0x0;
+  this_ptr->ladder_to_descend = (CLadder *)0x0;
+  this_ptr->weapon = (CWeapon *)0x0;
   this_ptr->action_pending = 0;
   (this_ptr->base).base.layer_action_index = 0;
   (this_ptr->base).base.layer_action_t = 0.0;

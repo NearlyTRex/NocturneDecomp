@@ -92,7 +92,7 @@ section .text
     LEA EAX,[EBX + 0x780]               ; 005e2cf3
     PUSH EAX                            ; 005e2cf9
     CALL core_actor.cpp_archiveActor_FUN_0040b870 ; 005e2cfa
-        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * actor_ptr, char * property_name)
+        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 005e2cff
     PUSH 0x65672b                       ; 005e2d02 | = "allowedVictimTypes"
     LEA EAX,[EBX + 0x784]               ; 005e2d07

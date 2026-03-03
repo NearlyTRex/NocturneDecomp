@@ -52,7 +52,7 @@ section .text
     LEA EAX,[EBX + 0x2a08]              ; 004cbe9d
     PUSH EAX                            ; 004cbea3
     CALL core_actor.cpp_archiveActor_FUN_0040b870 ; 004cbea4
-        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * actor_ptr, char * property_name)
+        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 004cbea9
     PUSH 0x62a401                       ; 004cbeac | = "gatherCount"
     LEA EAX,[EBX + 0x2a0c]              ; 004cbeb1

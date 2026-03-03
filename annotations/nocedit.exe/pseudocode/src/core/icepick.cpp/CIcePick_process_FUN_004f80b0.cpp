@@ -122,19 +122,19 @@ LAB_004f8427:
             if ((this_ptr->base).player_control.action_states[3] != 0) {
               bVar1 = true;
               if ((this_ptr->guns_drawn == 0) && ((this_ptr->base).control_type != 2)) {
-                iVar7 = core_hero_cpp_CHero_FUN_004f2af0(&this_ptr->base);
+                iVar7 = core_hero_cpp_CHero_tryInteract_FUN_004f2af0(&this_ptr->base);
                 bVar1 = false;
                 if (iVar7 != 0) goto LAB_004f84cc;
-                local_24 = core_hero_cpp_CHero_FUN_004f2d70(&this_ptr->base);
+                local_24 = core_hero_cpp_CHero_tryOpenNearbyDoor_FUN_004f2d70(&this_ptr->base);
                 if ((local_24 != 0) && (local_24 != 1)) {
-                  core_hero_cpp_CHero_FUN_004f2ed0(&this_ptr->base);
+                  core_hero_cpp_CHero_tryOpenDoor_FUN_004f2ed0(&this_ptr->base);
                 }
                 if ((local_24 != 0) ||
-                   (iVar7 = core_hero_cpp_CHero_FUN_004f2c40(&this_ptr->base), iVar7 != 0))
-                goto LAB_004f84cc;
-                iVar7 = core_hero_cpp_CHero_FUN_004f2f50(&this_ptr->base);
+                   (iVar7 = core_hero_cpp_CHero_tryTalkToNearbyCharacter_FUN_004f2c40
+                                      (&this_ptr->base), iVar7 != 0)) goto LAB_004f84cc;
+                iVar7 = core_hero_cpp_CHero_tryPullLever_FUN_004f2f50(&this_ptr->base);
                 if (iVar7 != 0) {
-                  core_hero_cpp_CHero_FUN_004f30f0(&this_ptr->base);
+                  core_hero_cpp_CHero_executeLeverPull_FUN_004f30f0(&this_ptr->base);
                   goto LAB_004f84cc;
                 }
               }

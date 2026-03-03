@@ -48,7 +48,7 @@ section .text
     LEA EAX,[EBX + 0x2e0]               ; 005029fb
     PUSH EAX                            ; 00502a01
     CALL core_actor.cpp_archiveActor_FUN_0040b870 ; 00502a02
-        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * actor_ptr, char * property_name)
+        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 00502a07
     PUSH EBX                            ; 00502a0a
     CALL core_ladder.cpp_CLadder_FUN_00502b80 ; 00502a0b

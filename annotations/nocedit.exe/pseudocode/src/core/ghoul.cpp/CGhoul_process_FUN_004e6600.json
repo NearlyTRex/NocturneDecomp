@@ -121,12 +121,12 @@
   },
   "complexity": {
     "assembly_lines": 2368,
-    "complexity_score": 2021,
+    "complexity_score": 2022,
     "cross_reference_count": 0,
     "function_call_count": 40,
     "global_count": 71,
     "max_suspect_severity": "severe",
-    "pseudocode_lines": 1041,
+    "pseudocode_lines": 1042,
     "suspect_count": 95,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -136,7 +136,7 @@
       "unresolved_funcptr",
       "warning_inlined_function"
     ],
-    "total_lines": 3409
+    "total_lines": 3410
   },
   "cross_references": [],
   "function": {
@@ -1720,7 +1720,7 @@
       "line": 143,
       "match": "in_stack_fffffc88",
       "severity": "moderate",
-      "text": "in_stack_fffffc88 = ((this_ptr->base).victim)->actor_name;",
+      "text": "in_stack_fffffc88 = (char *)(this_ptr->base).victim;",
       "type": "stack_param"
     },
     {
@@ -2024,7 +2024,7 @@
       "line": 463,
       "match": "in_stack_fffffc88",
       "severity": "moderate",
-      "text": "in_stack_fffffc88 = (char *)(*((pCVar13->vtable)._ub)->getPathMap)(pCVar13);",
+      "text": "in_stack_fffffc88 = (char *)(*((pCVar3->base).vtable._ub)->getPathMap)(&pCVar3->base);",
       "type": "stack_param"
     },
     {
@@ -2280,7 +2280,7 @@
       "line": 795,
       "match": "in_stack_fffffc88",
       "severity": "moderate",
-      "text": "in_stack_fffffc88 = ((this_ptr->base).victim)->actor_name;",
+      "text": "in_stack_fffffc88 = (char *)(this_ptr->base).victim;",
       "type": "stack_param"
     },
     {
@@ -2405,7 +2405,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 978,
+      "line": 979,
       "match": "ABS",
       "severity": "mild",
       "text": "if (((float)0.01 < ABS((this_ptr->base).base.turn_angle_accumulator)) ||",
@@ -2413,7 +2413,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 981,
+      "line": 982,
       "match": "SQRT",
       "severity": "mild",
       "text": "(float)0.01 < SQRT(fVar2 * fVar2 + fVar1 * fVar1 + fVar22 * fVar22))) {",
@@ -2421,7 +2421,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 985,
+      "line": 986,
       "match": "&stack0xfffffc88",
       "severity": "moderate",
       "text": "(&stack0xfffffc88,\"ghoul-walk-?.wav *%f\",(double)(this_ptr->base).speed);",
@@ -2429,7 +2429,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 987,
+      "line": 988,
       "match": "&stack0xfffffc88",
       "severity": "moderate",
       "text": "((CDemonActor *)this_ptr,&stack0xfffffc88);",
@@ -2437,7 +2437,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 1024,
+      "line": 1025,
       "match": "SQRT",
       "severity": "mild",
       "text": "if (delta_time * (float)0.5 <= SQRT(fVar1 * fVar1 + fVar22 * fVar22)) {",

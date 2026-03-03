@@ -210,39 +210,39 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004f2d70",
-      "from_addr": "004f2e0f",
-      "name": "core_hero.cpp_CHero_FUN_004f2d70",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004f2f50",
-      "from_addr": "004f2fd2",
-      "name": "core_hero.cpp_CHero_FUN_004f2f50",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004f3120",
-      "from_addr": "004f3266",
-      "name": "core_hero.cpp_CHero_FUN_004f3120",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004f33b0",
-      "from_addr": "004f34c4",
-      "name": "core_hero.cpp_CHero_FUN_004f33b0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004f35b0",
       "from_addr": "004f366a",
-      "name": "core_hero.cpp_CHero_FUN_004f35b0",
+      "name": "core_hero.cpp_CHero_findItemUseTarget_FUN_004f35b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004f28d0",
       "from_addr": "004f2955",
       "name": "core_hero.cpp_CHero_getGrabbed_FUN_004f28d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f33b0",
+      "from_addr": "004f34c4",
+      "name": "core_hero.cpp_CHero_tryApproachNearbyActor_FUN_004f33b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f2d70",
+      "from_addr": "004f2e0f",
+      "name": "core_hero.cpp_CHero_tryOpenNearbyDoor_FUN_004f2d70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f2f50",
+      "from_addr": "004f2fd2",
+      "name": "core_hero.cpp_CHero_tryPullLever_FUN_004f2f50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f3120",
+      "from_addr": "004f3266",
+      "name": "core_hero.cpp_CHero_tryPushNearbyBox_FUN_004f3120",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -260,7 +260,7 @@
     {
       "addr": "00505080",
       "from_addr": "005050ae",
-      "name": "core_lever.cpp_CLever_FUN_00505080",
+      "name": "core_lever.cpp_CLever_isAccessibleFrom_FUN_00505080",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -336,54 +336,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005bb960",
-      "from_addr": "005bba88",
-      "name": "core_stranger.cpp_CStranger_FUN_005bb960",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005bdd20",
-      "from_addr": "005be289",
-      "name": "core_stranger.cpp_CStranger_FUN_005bdd20",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005be520",
-      "from_addr": "005be8e1",
-      "name": "core_stranger.cpp_CStranger_FUN_005be520",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005c1680",
-      "from_addr": "005c1dcb",
-      "name": "core_stranger.cpp_CStranger_FUN_005c1680",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005c1fe0",
-      "from_addr": "005c20d2",
-      "name": "core_stranger.cpp_CStranger_FUN_005c1fe0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005c2400",
-      "from_addr": "005c26f7",
-      "name": "core_stranger.cpp_CStranger_FUN_005c2400",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005c2850",
-      "from_addr": "005c2a2a",
-      "name": "core_stranger.cpp_CStranger_FUN_005c2850",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005c4c20",
-      "from_addr": "005c4c79",
-      "name": "core_stranger.cpp_CStranger_FUN_005c4c20",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "005c4370",
       "from_addr": "005c4594",
       "name": "core_stranger.cpp_CStranger_aimLeftPistol_FUN_005c4370",
@@ -393,6 +345,54 @@
       "addr": "005c3960",
       "from_addr": "005c3eec",
       "name": "core_stranger.cpp_CStranger_autoAimAtThreat_FUN_005c3960",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005bb960",
+      "from_addr": "005bba88",
+      "name": "core_stranger.cpp_CStranger_processFrame_FUN_005bb960",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005bdd20",
+      "from_addr": "005be289",
+      "name": "core_stranger.cpp_CStranger_processMotionEvents_FUN_005bdd20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005c1fe0",
+      "from_addr": "005c20d2",
+      "name": "core_stranger.cpp_CStranger_tryClimbLadder_FUN_005c1fe0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005c2400",
+      "from_addr": "005c26f7",
+      "name": "core_stranger.cpp_CStranger_tryDescendLadder_FUN_005c2400",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005c1680",
+      "from_addr": "005c1dcb",
+      "name": "core_stranger.cpp_CStranger_tryPickupObject_FUN_005c1680",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005c2850",
+      "from_addr": "005c2a2a",
+      "name": "core_stranger.cpp_CStranger_tryPlaceObject_FUN_005c2850",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005c4c20",
+      "from_addr": "005c4c79",
+      "name": "core_stranger.cpp_CStranger_updateArmRecoilBlend_FUN_005c4c20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005be520",
+      "from_addr": "005be8e1",
+      "name": "core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520",
       "type": "UNCONDITIONAL_CALL"
     },
     {

@@ -24,8 +24,7 @@ void __cdecl core_hero_cpp_CHero_archive_FUN_004f2610(CHero *this_ptr)
     }
     if (2 < g_CHeroClassVersion) {
       core_actor_cpp_archivePartStatus_FUN_0040bae0(&(this_ptr->base).model,"partStatus");
-      core_actor_cpp_archiveActor_FUN_0040b870
-                ((CDemonActor *)&(this_ptr->base).grabbed_by,"grabbedBy");
+      core_actor_cpp_archiveActor_FUN_0040b870(&(this_ptr->base).grabbed_by,"grabbedBy");
       core_actor_cpp_archiveFloat_FUN_0040b770(&(this_ptr->base).hit_points,"hitPoints");
     }
   }
@@ -35,8 +34,7 @@ void __cdecl core_hero_cpp_CHero_archive_FUN_004f2610(CHero *this_ptr)
               (&model_ptr->motion_controller,"motion state");
     core_actor_cpp_archivePartStatus_FUN_0040bae0(model_ptr,"partStatus");
     if (g_CHeroClassVersion < 8) {
-      core_actor_cpp_archiveActor_FUN_0040b870
-                ((CDemonActor *)&(this_ptr->base).grabbed_by,"grabbedBy");
+      core_actor_cpp_archiveActor_FUN_0040b870(&(this_ptr->base).grabbed_by,"grabbedBy");
       (this_ptr->base).grabbed_type = 0;
     }
     if (4 < g_CHeroClassVersion) {
@@ -44,15 +42,15 @@ void __cdecl core_hero_cpp_CHero_archive_FUN_004f2610(CHero *this_ptr)
     }
     if (6 < g_CHeroClassVersion) {
       core_actor_cpp_archiveActor_FUN_0040b870
-                ((CDemonActor *)&this_ptr->object_to_pick_up,"objectToPickUp");
+                (&this_ptr->object_to_pick_up,"objectToPickUp");
       core_actor_cpp_archiveActor_FUN_0040b870
-                ((CDemonActor *)&this_ptr->door_to_open,"doorToOpen");
+                ((CDemonActor **)&this_ptr->door_to_open,"doorToOpen");
       core_actor_cpp_archiveActor_FUN_0040b870
-                ((CDemonActor *)&this_ptr->lever_to_pull,"leverToPull");
+                ((CDemonActor **)&this_ptr->lever_to_pull,"leverToPull");
       core_actor_cpp_archiveActor_FUN_0040b870
-                ((CDemonActor *)&this_ptr->ladder_to_climb,"ladderToClimb");
+                ((CDemonActor **)&this_ptr->ladder_to_climb,"ladderToClimb");
       core_actor_cpp_archiveActor_FUN_0040b870
-                ((CDemonActor *)&this_ptr->pushed_object,"pushedObject");
+                ((CDemonActor **)&this_ptr->pushed_object,"pushedObject");
     }
     if (g_CHeroClassVersion == 10) {
       core_actor_cpp_archiveInteger_FUN_0040b7f0(&local_c,"keys");

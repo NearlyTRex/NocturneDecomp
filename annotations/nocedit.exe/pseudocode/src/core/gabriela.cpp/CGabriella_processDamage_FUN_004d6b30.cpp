@@ -30,7 +30,7 @@ void __cdecl core_gabriela_cpp_CGabriella_processDamage_FUN_004d6b30(CGabriella 
   (this_ptr->base).base.hit_points = fVar3;
   if (0.0 < fVar3) {
     if (0.0 < damage_info->damage_amount) {
-      if ((this_ptr->base).ladder_to_climb == (CDemonActor *)0x0) {
+      if ((this_ptr->base).ladder_to_climb == (CLadder *)0x0) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&this_ptr_00->motion_controller,8,1);
       }

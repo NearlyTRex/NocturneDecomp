@@ -47,9 +47,8 @@ void __cdecl core_vehicle_cpp_CVehicle_archive_FUN_005e8720(CVehicle *this_ptr)
       return;
     }
   }
-  core_actor_cpp_archiveActor_FUN_0040b870
-            ((CDemonActor *)&this_ptr->last_mobster_left,"lastMobsterLeft");
-  core_actor_cpp_archiveActor_FUN_0040b870
-            ((CDemonActor *)&this_ptr->last_mobster_left,"lastMobsterRight");
+  core_actor_cpp_archiveActor_FUN_0040b870(&this_ptr->last_mobster_left,"lastMobsterLeft");
+  core_actor_cpp_archiveActor_FUN_0040b870(&this_ptr->last_mobster_left,"lastMobsterRight")
+  ;
   return;
 }

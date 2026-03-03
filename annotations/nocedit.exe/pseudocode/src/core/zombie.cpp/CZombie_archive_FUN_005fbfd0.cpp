@@ -26,8 +26,7 @@ void __cdecl core_zombie_cpp_CZombie_archive_FUN_005fbfd0(CZombie *this_ptr)
               (&(this_ptr->base).base.model,"partStatus");
     if (g_CZombieClassVersion < 7) {
       core_actor_cpp_archiveActor_FUN_0040b870
-                ((CDemonActor *)&(this_ptr->base).base.carry_hands[1].carry_actor,
-                 "carriedActor");
+                (&(this_ptr->base).base.carry_hands[1].carry_actor,"carriedActor");
     }
   }
   if (3 < g_CZombieClassVersion) {
@@ -35,8 +34,7 @@ void __cdecl core_zombie_cpp_CZombie_archive_FUN_005fbfd0(CZombie *this_ptr)
               (this_ptr->rise_from_grave_condition,"riseFromGraveCondition");
   }
   if (4 < g_CZombieClassVersion) {
-    core_actor_cpp_archiveActor_FUN_0040b870
-              ((CDemonActor *)&this_ptr->grave_actor,"graveActor");
+    core_actor_cpp_archiveActor_FUN_0040b870(&this_ptr->grave_actor,"graveActor");
   }
   if ((5 < g_CZombieClassVersion) && (g_CZombieClassVersion < 9)) {
     core_actor_cpp_archiveClothList_FUN_0040be60

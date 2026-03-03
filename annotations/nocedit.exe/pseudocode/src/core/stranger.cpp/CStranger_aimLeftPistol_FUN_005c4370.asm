@@ -9,7 +9,7 @@
 ; undefined1       Stack[-0x9c]:1  local_9c
 ;
 ; XREF[1]:
-;   core_stranger.cpp_CStranger_FUN_005bb960 at 005bc390
+;   core_stranger.cpp_CStranger_processFrame_FUN_005bb960 at 005bc390
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_stranger_cpp_00653cd4

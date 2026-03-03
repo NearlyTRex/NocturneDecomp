@@ -47,11 +47,11 @@ void __cdecl core_ghoul_cpp_CGhoul_processDamage_FUN_004e87e0(CGhoul *this_ptr,S
     this_ptr->stun_timer = 4.0;
   }
   core_ghoul_cpp_CGhoul_FUN_004e8520(this_ptr);
-  pCVar2 = (CCharacter *)(this_ptr->base).victim;
+  pCVar2 = (this_ptr->base).victim;
   if ((pCVar2 != (CCharacter *)0x0) &&
      (pCVar5 = (CGhoul *)(*(((pCVar2->base).vtable._uc)->_uc).getGrabber)(pCVar2),
      pCVar5 == this_ptr)) {
-    pCVar2 = (CCharacter *)(this_ptr->base).victim;
+    pCVar2 = (this_ptr->base).victim;
     (*(((pCVar2->base).vtable._uc)->_uc).releaseFromGrab)(pCVar2);
   }
   iVar9 = this_ptr->part_indices[10];

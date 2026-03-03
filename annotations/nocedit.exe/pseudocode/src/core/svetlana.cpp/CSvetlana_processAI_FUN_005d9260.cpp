@@ -65,7 +65,8 @@ void __cdecl core_svetlana_cpp_CSvetlana_processAI_FUN_005d9260(CSvetlana *this_
     }
     if ((local_30 < local_28) && ((iVar4 = (this_ptr->base).ai_task, iVar4 == 2 || (iVar4 == 3)))) {
       fStack_3c = 9999.9;
-      pCVar5 = (CHero *)core_hero_cpp_CHero_FUN_004f3960(&this_ptr->base);
+      pCVar5 = (CHero *)core_hero_cpp_CHero_findNearestEnemy_FUN_004f3960
+                                  (&this_ptr->base,&fStack_3c);
       if ((pCVar5 == (CHero *)0x0) || (local_28 <= fStack_3c)) {
         if (this_ptr->blades_drawn != 0) {
           (this_ptr->base).player_control.action_states[6] = 1;

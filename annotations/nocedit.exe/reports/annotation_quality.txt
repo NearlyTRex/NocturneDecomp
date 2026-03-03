@@ -11,45 +11,24 @@ manual annotation work.
 SUMMARY STATISTICS
 ====================================================================================================
 
-  Total functions analyzed:          6,493
-  Unnamed functions (FUN_):          81 ( 1.2%)
-  Functions with unnamed params:     29 ( 0.4%)
-  Functions with type issues:        2,421 (37.3%)
+  Total functions analyzed:          6,487
+  Unnamed functions (FUN_):          65 ( 1.0%)
+  Functions with unnamed params:     30 ( 0.5%)
+  Functions with type issues:        2,412 (37.2%)
 
   Type issue breakdown:
     Wrong return type (void):          3
     Wrong return type (wide/64-bit):   2
     Missing register params:           14
-    Wrong calling convention:          59
+    Wrong calling convention:          58
     Undefined types in variables:      2274
-    Unresolved stack params:           393
+    Unresolved stack params:           368
 
 ====================================================================================================
 UNNAMED FUNCTIONS (still using FUN_XXXXXXXX)
 ====================================================================================================
 
 Sorted by caller count (most-referenced first = highest priority to name).
-
-  core/stranger.cpp (19 unnamed)
-    0x005bb010  __cdecl       3 callers
-    0x005bafba  __cdecl       0 callers
-    0x005bafe0  __cdecl       0 callers
-    0x005bafc0  __cdecl       0 callers
-    0x005baee0  __cdecl       0 callers
-    0x005c3750  __cdecl       0 callers
-    0x005c695e  __cdecl       0 callers
-    0x005c6950  __cdecl       0 callers
-    0x005c6970  __cdecl       0 callers
-    0x005bafa0  __cdecl       0 callers
-    0x005c69a0  __cdecl       0 callers
-    0x005baf20  __cdecl       0 callers
-    0x005c6930  __cdecl       0 callers
-    0x005c37e0  __cdecl       0 callers
-    0x005be480  __cdecl       0 callers
-    0x005bafd2  __cdecl       0 callers
-    0x005bafcc  __cdecl       0 callers
-    0x005bafc6  __cdecl       0 callers
-    0x005baf3d  __cdecl       0 callers
 
   core/bugs.cpp (13 unnamed)
     0x00427ba0  __cdecl       2 callers
@@ -112,6 +91,11 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x004424a0  __cdecl       0 callers
     0x004423f0  __cdecl       0 callers
     0x00442400  __cdecl       0 callers
+
+  core/stranger.cpp (3 unnamed)
+    0x005c695e  __cdecl       0 callers
+    0x005c6950  __cdecl       0 callers
+    0x005c6930  __cdecl       0 callers
 
   core/colonel.cpp (1 unnamed)
     0x00440650  __cdecl       0 callers
@@ -283,6 +267,11 @@ Sorted by number of unnamed parameters (most unnamed first).
     Unnamed: param_2 (void *)
     Named:   vertex_array (int *)
 
+  CStranger_tryPickupObject
+    Address: 0x005c1680  File: core/stranger.cpp
+    Unnamed: param_2 (char *)
+    Named:   this_ptr (CStranger *)
+
   FUN_005e3ec0
     Address: 0x005e3ec0  File: core/tvbat.cpp
     Unnamed: param_1 (float)
@@ -438,7 +427,7 @@ Missing register parameters (likely wrong calling convention) (14)
     Suggested: Likely register-based calling convention
 
 --------------------------------------------------------------------------------
-Wrong calling convention (unaffected register usage) (59)
+Wrong calling convention (unaffected register usage) (58)
 --------------------------------------------------------------------------------
 
   CPackedBitmapSet_reloadStoredPBGFile
@@ -597,22 +586,16 @@ Wrong calling convention (unaffected register usage) (59)
     Signature: void __cdecl core_scat_cpp_CScat_FUN_00558060(CScat *this_ptr)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
-  CStranger
-    Address: 0x005bdd20  File: core/stranger.cpp
-    Evidence: unaff_EBP, unaff_EBP
-    Signature: void __cdecl core_stranger_cpp_CStranger_FUN_005bdd20(CStranger *this_ptr)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  CStranger
+  CStranger_computeWeaponAttachXForm
     Address: 0x005c07b0  File: core/stranger.cpp
     Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void __cdecl core_stranger_cpp_CStranger_FUN_005c07b0(CStranger *this_ptr)
+    Signature: void __cdecl core_stranger_cpp_CStranger_computeWeaponAttachXForm_FUN_005c07b0(CStranger *this_ptr,CDemonActor *carried_actor,int hand_index)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
-  CStranger
-    Address: 0x005c5f10  File: core/stranger.cpp
-    Evidence: unaff_EDI, unaff_EDI
-    Signature: void __cdecl core_stranger_cpp_CStranger_FUN_005c5f10(CStranger *this_ptr)
+  CStranger_processMotionEvents
+    Address: 0x005bdd20  File: core/stranger.cpp
+    Evidence: unaff_EBP, unaff_EBP
+    Signature: void __cdecl core_stranger_cpp_CStranger_processMotionEvents_FUN_005bdd20(CStranger *this_ptr,float delta_time)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
   CTentacle
@@ -796,7 +779,7 @@ Wrong calling convention (unaffected register usage) (59)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
 --------------------------------------------------------------------------------
-Unresolved stack parameters (missing from signature) (393)
+Unresolved stack parameters (missing from signature) (368)
 --------------------------------------------------------------------------------
 
   CPackedBitmapSet_reload
@@ -1471,12 +1454,6 @@ Unresolved stack parameters (missing from signature) (393)
     Signature: float * __cdecl core_door_cpp_CDoor_getOpenStandPos_FUN_00480e20(CDoor *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
-  CDoor_getMoveType
-    Address: 0x00481070  File: core/door.cpp
-    Evidence: in_stack_00000008, in_stack_00000008
-    Signature: int __cdecl core_door_cpp_CDoor_getMoveType_FUN_00481070(CDoor *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
   CVehicle
     Address: 0x005e8b50  File: core/vehicle.cpp
     Evidence: in_stack_00000008, in_stack_00000008
@@ -1687,30 +1664,6 @@ Unresolved stack parameters (missing from signature) (393)
     Signature: int __cdecl core_gun_cpp_CGun_fire_FUN_004f0350(CGun *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
-  CHero
-    Address: 0x004f3910  File: core/hero.cpp
-    Evidence: in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_hero_cpp_CHero_FUN_004f3910(CHero *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CHero
-    Address: 0x004f3930  File: core/hero.cpp
-    Evidence: in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_hero_cpp_CHero_FUN_004f3930(CHero *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CHero
-    Address: 0x004f3960  File: core/hero.cpp
-    Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: float __cdecl core_hero_cpp_CHero_FUN_004f3960(CHero *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CHero
-    Address: 0x004f38d0  File: core/hero.cpp
-    Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_hero_cpp_CHero_FUN_004f38d0(CHero *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
   CMobster_process
     Address: 0x00525840  File: core/mobster.cpp
     Evidence: in_stack_fffffe74, in_stack_fffffe78, in_stack_fffffe84, in_stack_fffffe88, in_stack_fffffe74, in_stack_fffffe84, in_stack_fffffe84, in_stack_fffffe84, in_stack_fffffe84, in_stack_fffffe84, in_stack_fffffe74, in_stack_fffffe74, in_stack_fffffe74, in_stack_fffffe78, in_stack_fffffe84, in_stack_fffffe88
@@ -1763,12 +1716,6 @@ Unresolved stack parameters (missing from signature) (393)
     Address: 0x004fa900  File: core/imp.cpp
     Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_0000000c, in_stack_00000004, in_stack_00000010
     Signature: void __cdecl core_imp_cpp_FUN_004fa900(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  CAmmoBox
-    Address: 0x00411690  File: core/ammobox.cpp
-    Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_ammobox_cpp_CAmmoBox_FUN_00411690(CAmmoBox *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
   CPassenger_dtor
@@ -2041,76 +1988,10 @@ Unresolved stack parameters (missing from signature) (393)
     Signature: void __cdecl core_scat_cpp_CScat_FUN_005584a0(CScat *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
-  CStranger
-    Address: 0x005bdd20  File: core/stranger.cpp
-    Evidence: in_stack_00000008, in_stack_ffffff48, in_stack_ffffff48, in_stack_ffffff48, in_stack_ffffff48, in_stack_ffffff48, in_stack_ffffff48, in_stack_00000008
-    Signature: void __cdecl core_stranger_cpp_CStranger_FUN_005bdd20(CStranger *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CStranger
-    Address: 0x005c6590  File: core/stranger.cpp
-    Evidence: in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_stranger_cpp_CStranger_FUN_005c6590(CStranger *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005bafe0
-    Address: 0x005bafe0  File: core/stranger.cpp
-    Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: int __cdecl core_stranger_cpp_FUN_005bafe0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  CStranger
-    Address: 0x005c1680  File: core/stranger.cpp
-    Evidence: in_stack_00000008, in_stack_00000008
-    Signature: int __cdecl core_stranger_cpp_CStranger_FUN_005c1680(CStranger *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CStranger
-    Address: 0x005c02b0  File: core/stranger.cpp
-    Evidence: in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_stranger_cpp_CStranger_FUN_005c02b0(CStranger *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CStranger
-    Address: 0x005be490  File: core/stranger.cpp
-    Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: float * __cdecl core_stranger_cpp_CStranger_FUN_005be490(CStranger *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005c3750
-    Address: 0x005c3750  File: core/stranger.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_0000000c, in_stack_0000000c, in_stack_00000008, in_stack_0000000c, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004
-    Signature: void __cdecl core_stranger_cpp_FUN_005c3750(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  CStranger
-    Address: 0x005c07b0  File: core/stranger.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_0000000c, in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_0000000c, in_stack_0000000c, in_stack_00000008, in_stack_00000008, in_stack_0000000c, in_stack_0000000c
-    Signature: void __cdecl core_stranger_cpp_CStranger_FUN_005c07b0(CStranger *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
   FUN_005c695e
     Address: 0x005c695e  File: core/stranger.cpp
     Evidence: in_stack_00000004, in_stack_00000004
     Signature: int __cdecl core_stranger_cpp_FUN_005c695e(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  CStranger
-    Address: 0x005bf800  File: core/stranger.cpp
-    Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_stranger_cpp_CStranger_FUN_005bf800(CStranger *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CStranger
-    Address: 0x005c5270  File: core/stranger.cpp
-    Evidence: in_stack_00000008, in_stack_ffffffa4, in_stack_ffffffa8, in_stack_00000008, in_stack_00000008, in_stack_ffffffa4, in_stack_ffffffa8, in_stack_ffffffa4, in_stack_ffffffa8, in_stack_ffffffa4, in_stack_ffffffa8
-    Signature: void __cdecl core_stranger_cpp_CStranger_FUN_005c5270(CStranger *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CStranger_autoAimAtThreat
-    Address: 0x005c3960  File: core/stranger.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_0000000c, in_stack_0000000c
-    Signature: void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_005c3960(CStranger *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
   FUN_005c6950
@@ -2119,52 +2000,22 @@ Unresolved stack parameters (missing from signature) (393)
     Signature: int __cdecl core_stranger_cpp_FUN_005c6950(void)
     Suggested: Signature is missing stack parameters entirely
 
-  CStranger
-    Address: 0x005c2850  File: core/stranger.cpp
-    Evidence: in_stack_ffffff18, in_stack_ffffff18, in_stack_ffffff18, in_stack_ffffff18, in_stack_ffffff18
-    Signature: int __cdecl core_stranger_cpp_CStranger_FUN_005c2850(CStranger *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005c6970
-    Address: 0x005c6970  File: core/stranger.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008
-    Signature: void __cdecl core_stranger_cpp_FUN_005c6970(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005bafa0
-    Address: 0x005bafa0  File: core/stranger.cpp
-    Evidence: in_stack_00000004, in_stack_00000004, in_stack_00000004
-    Signature: int __cdecl core_stranger_cpp_FUN_005bafa0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  CStranger
+  CStranger_processFrame
     Address: 0x005bb960  File: core/stranger.cpp
-    Evidence: in_stack_00000008, in_stack_fffffd10, in_stack_fffffd14, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_fffffd14, in_stack_fffffd10, in_stack_fffffd14, in_stack_00000008, in_stack_fffffd14, in_stack_fffffd10, in_stack_fffffd14, in_stack_00000008, in_stack_00000008, in_stack_fffffd10, in_stack_fffffd14, in_stack_fffffd14, in_stack_fffffd14, in_stack_fffffd10, in_stack_fffffd14, in_stack_fffffd10, in_stack_fffffd10, in_stack_fffffd10, in_stack_fffffd14, in_stack_00000008, in_stack_00000008, in_stack_fffffd10, in_stack_fffffd10, in_stack_fffffd14, in_stack_00000008, in_stack_00000008, in_stack_fffffd14, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_fffffd14, in_stack_fffffd10, in_stack_fffffd10, in_stack_fffffd14, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_stranger_cpp_CStranger_FUN_005bb960(CStranger *this_ptr)
+    Evidence: in_stack_fffffd10, in_stack_fffffd14, in_stack_fffffd14, in_stack_fffffd10, in_stack_fffffd14, in_stack_fffffd14, in_stack_fffffd10, in_stack_fffffd14, in_stack_fffffd10, in_stack_fffffd14, in_stack_fffffd14, in_stack_fffffd14, in_stack_fffffd10, in_stack_fffffd14, in_stack_fffffd10, in_stack_fffffd10, in_stack_fffffd10, in_stack_fffffd14, in_stack_fffffd10, in_stack_fffffd10, in_stack_fffffd14, in_stack_fffffd14, in_stack_fffffd14, in_stack_fffffd10, in_stack_fffffd10, in_stack_fffffd14
+    Signature: void __cdecl core_stranger_cpp_CStranger_processFrame_FUN_005bb960(CStranger *this_ptr,float delta_time)
     Suggested: Signature is missing stack parameters entirely
 
-  FUN_005bb010
-    Address: 0x005bb010  File: core/stranger.cpp
-    Evidence: in_stack_00000004, in_stack_00000004, in_stack_00000004
-    Signature: float __cdecl core_stranger_cpp_FUN_005bb010(void)
+  CStranger_processMotionEvents
+    Address: 0x005bdd20  File: core/stranger.cpp
+    Evidence: in_stack_ffffff48, in_stack_ffffff48, in_stack_ffffff48, in_stack_ffffff48, in_stack_ffffff48
+    Signature: void __cdecl core_stranger_cpp_CStranger_processMotionEvents_FUN_005bdd20(CStranger *this_ptr,float delta_time)
     Suggested: Signature is missing stack parameters entirely
 
-  FUN_005c69a0
-    Address: 0x005c69a0  File: core/stranger.cpp
-    Evidence: in_stack_00000004, in_stack_00000004
-    Signature: int __cdecl core_stranger_cpp_FUN_005c69a0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  CStranger
-    Address: 0x005c4c20  File: core/stranger.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_stranger_cpp_CStranger_FUN_005c4c20(CStranger *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005baf20
-    Address: 0x005baf20  File: core/stranger.cpp
-    Evidence: in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004
-    Signature: int __cdecl core_stranger_cpp_FUN_005baf20(void)
+  CStranger_updateWeaponLayerActions
+    Address: 0x005c5270  File: core/stranger.cpp
+    Evidence: in_stack_ffffffa4, in_stack_ffffffa8, in_stack_ffffffa4, in_stack_ffffffa8, in_stack_ffffffa4, in_stack_ffffffa8, in_stack_ffffffa4, in_stack_ffffffa8
+    Signature: void __cdecl core_stranger_cpp_CStranger_updateWeaponLayerActions_FUN_005c5270(CStranger *this_ptr,float delta_time)
     Suggested: Signature is missing stack parameters entirely
 
   FUN_005c6930
@@ -2173,22 +2024,10 @@ Unresolved stack parameters (missing from signature) (393)
     Signature: void __cdecl core_stranger_cpp_FUN_005c6930(void)
     Suggested: Signature is missing stack parameters entirely
 
-  CStranger
-    Address: 0x005bf720  File: core/stranger.cpp
-    Evidence: in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_stranger_cpp_CStranger_FUN_005bf720(CStranger *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005c37e0
-    Address: 0x005c37e0  File: core/stranger.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000004, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004
-    Signature: CVector3f * __cdecl core_stranger_cpp_FUN_005c37e0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  CStranger
-    Address: 0x005c51c0  File: core/stranger.cpp
-    Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: CVector3f * __cdecl core_stranger_cpp_CStranger_FUN_005c51c0(CStranger *this_ptr)
+  CStranger_tryPlaceObject
+    Address: 0x005c2850  File: core/stranger.cpp
+    Evidence: in_stack_ffffff18, in_stack_ffffff18, in_stack_ffffff18, in_stack_ffffff18, in_stack_ffffff18
+    Signature: int __cdecl core_stranger_cpp_CStranger_tryPlaceObject_FUN_005c2850(CStranger *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
   CSkeleton_importSkeletonFile
@@ -2441,12 +2280,6 @@ Unresolved stack parameters (missing from signature) (393)
     Address: 0x0042d090  File: core/charactr.cpp
     Evidence: in_stack_fffffd80, in_stack_fffffd80, in_stack_fffffd80
     Signature: void __cdecl core_charactr_cpp_CCharacter_updateCarriedObjects_FUN_0042d090(CCharacter *this_ptr,float delta_time)
-    Suggested: Signature is missing stack parameters entirely
-
-  CLever
-    Address: 0x00505080  File: core/lever.cpp
-    Evidence: in_stack_00000008, in_stack_00000008
-    Signature: int __cdecl core_lever_cpp_CLever_FUN_00505080(CLever *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
   CLever
@@ -3176,7 +3009,7 @@ Undefined types in variables (2274)
     Locals:  local_a210 (undefined8), local_a208 (undefined8), local_a200 (undefined8), local_a1f8 (undefined4), local_a1f4 (undefined4), local_a1f0 (undefined4), local_a1ec (undefined), local_bec (undefined), local_844 (undefined), local_740 (undefined), local_640 (undefined), local_540 (undefined), local_478 (undefined), local_400 (undefined), local_388 (undefined), local_324 (undefined4), local_320 (undefined4), local_31c (undefined4), local_318 (undefined4), local_314 (undefined4), local_310 (undefined4), local_30c (undefined4), local_308 (undefined4), local_304 (undefined4), local_300 (undefined4), local_2fc (undefined4), local_2f8 (undefined4), local_2f4 (undefined), local_2ee (undefined), local_2e8 (undefined), local_2e0 (undefined), local_2da (undefined), local_2d4 (undefined), local_2cc (undefined4), local_2c8 (undefined4), local_2c4 (undefined4), local_2c0 (undefined4), local_2bc (undefined4), local_2b8 (undefined4), local_2b4 (undefined4), local_2b0 (undefined4), local_2ac (undefined4), local_2a8 (undefined4), local_2a4 (undefined4), local_2a0 (undefined4), local_29c (undefined4), local_298 (undefined4), local_294 (undefined4), local_290 (undefined4), local_28c (undefined4), local_288 (undefined4), local_284 (undefined4), local_280 (undefined4), local_27c (undefined4), local_278 (undefined), local_274 (undefined), local_270 (undefined), local_26c (undefined4), local_268 (undefined4), local_264 (undefined4), local_260 (undefined4), local_25c (undefined4), local_258 (undefined4), local_254 (undefined4), local_250 (undefined4), local_24c (undefined4), local_248 (undefined4), local_244 (undefined4), local_240 (undefined4), local_23c (undefined4), local_238 (undefined4), local_234 (undefined4), local_230 (undefined4), local_22c (undefined4), local_228 (undefined4), local_224 (undefined4), local_220 (undefined4), local_21c (undefined4), local_218 (undefined4), local_214 (undefined4), local_210 (undefined4), local_20c (undefined4), local_208 (undefined4), local_204 (undefined4), local_200 (undefined), local_1fc (undefined), local_1f8 (undefined), local_1f4 (undefined4), local_1f0 (undefined4), local_1ec (undefined4), local_1e8 (undefined4), local_1e4 (undefined4), local_1e0 (undefined4), local_1dc (undefined4), local_1d8 (undefined4), local_1d4 (undefined4), local_1d0 (undefined4), local_1cc (undefined4), local_1c8 (undefined4), local_1c4 (undefined4), local_1c0 (undefined4), local_1bc (undefined4), local_1b8 (undefined4), local_1b4 (undefined4), local_1b0 (undefined4), local_1ac (undefined4), local_1a8 (undefined4), local_1a4 (undefined4), local_1a0 (undefined4), local_19c (undefined4), local_198 (undefined4), local_194 (undefined), local_190 (undefined), local_18c (undefined), local_188 (undefined4), local_184 (undefined4), local_180 (undefined4), local_17c (undefined4), local_178 (undefined4), local_174 (undefined4), local_170 (undefined4), local_16c (undefined4), local_168 (undefined4), local_164 (undefined), local_160 (undefined4), local_15c (undefined4), local_158 (undefined4), local_154 (undefined4), local_150 (undefined4), local_14c (undefined4), local_148 (undefined4), local_144 (undefined4), local_140 (undefined4), local_13c (undefined4), local_138 (undefined), local_134 (undefined4), local_130 (undefined4), local_12c (undefined4), local_128 (undefined4), local_124 (undefined4), local_120 (undefined4), local_11c (undefined4), local_118 (undefined4), local_114 (undefined4), local_110 (undefined4), local_10c (undefined4), local_108 (undefined4), local_104 (undefined4), local_fc (undefined4), local_f8 (undefined4), local_f4 (undefined4), local_f0 (undefined4), local_ec (undefined4), local_e8 (undefined4), local_e4 (undefined4), local_e0 (undefined4), local_dc (undefined), local_d8 (undefined4), local_d4 (undefined4), local_d0 (undefined4), local_cc (undefined4), local_c8 (undefined4), local_c4 (undefined4), local_c0 (undefined4), local_bc (undefined4), local_b8 (undefined4), local_b4 (undefined4), local_b0 (undefined4), local_ac (undefined4), local_a8 (undefined4), local_a4 (undefined4), local_a0 (undefined4), local_9c (undefined4), local_98 (undefined4), local_94 (undefined4), local_90 (undefined4), local_8c (undefined4), local_88 (undefined4), local_84 (undefined4), local_80 (undefined4), local_7c (undefined4), local_78 (undefined4), local_74 (undefined4), local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CStranger
+  CStranger_computeWeaponAttachXForm
     Address: 0x005c07b0  File: core/stranger.cpp
     Locals:  local_d64 (undefined4), local_d5c (undefined1), local_d2c (undefined1), local_cfc (undefined1), local_ccc (undefined1), local_c9c (undefined1), local_c6c (undefined1), local_c3c (undefined1), local_c0c (undefined1), local_bdc (undefined1), local_bac (undefined1), local_b7c (undefined1), local_b4c (undefined1), local_b1c (undefined1), local_aec (undefined1), local_abc (undefined1), local_a8c (undefined1), local_a5c (undefined1), local_a50 (undefined4), local_a40 (undefined4), local_a30 (undefined4), local_a2c (undefined1), local_9fc (undefined1), local_9cc (undefined1), local_99c (undefined1), local_96c (undefined1), local_93c (undefined1), local_90c (undefined1), local_8dc (undefined1), local_8ac (undefined1), local_87c (undefined1), local_84c (undefined1), local_81c (undefined1), local_7ec (undefined1), local_7bc (undefined1), local_78c (undefined1), local_75c (undefined1), local_72c (undefined1), local_6fc (undefined1), local_6cc (undefined1), local_69c (undefined1), local_66c (undefined1), local_63c (undefined1), local_60c (undefined1), local_5dc (undefined1), local_5ac (undefined1), local_57c (undefined1), local_54c (undefined1), local_51c (undefined1), local_4ec (undefined1), local_4bc (undefined1), local_48c (undefined1), local_45c (undefined1), local_42c (undefined1), local_3fc (undefined1), local_3cc (undefined1), local_39c (undefined1), local_36c (undefined1), local_33c (undefined1), local_30c (undefined1), local_2dc (undefined1), local_2ac (undefined1), local_2a0 (undefined4), local_290 (undefined4), local_280 (undefined4), local_27c (undefined1), local_24c (undefined1), local_21c (undefined4), local_218 (undefined4), local_214 (undefined4), local_210 (undefined4), local_20c (undefined4), local_208 (undefined4), local_204 (undefined1), local_200 (undefined4), local_1f4 (undefined4), local_1ec (undefined4), local_1e8 (undefined4), local_1e4 (undefined4), local_1e0 (undefined4), local_1dc (undefined4), local_1d8 (undefined4), local_1d4 (undefined4), local_1d0 (undefined4), local_1cc (undefined4), local_1c8 (undefined4), local_1c4 (undefined4), local_1c0 (undefined4), local_1bc (undefined4), local_1b8 (undefined4), local_1b4 (undefined4), local_1b0 (undefined4), local_1ac (undefined4), local_1a8 (undefined4), local_1a4 (undefined4), local_1a0 (undefined4), local_19c (undefined4), local_198 (undefined4), local_194 (undefined4), local_190 (undefined4), local_18c (undefined4), local_188 (undefined4), local_184 (undefined4), local_174 (undefined4), local_170 (undefined4), local_16c (undefined4), local_168 (undefined4), local_164 (undefined4), local_160 (undefined4), local_15c (undefined4), local_158 (undefined4), local_154 (undefined4), local_150 (undefined4), local_14c (undefined4), local_148 (undefined4), local_144 (undefined4), local_140 (undefined4), local_13c (undefined4), local_138 (undefined4), local_134 (undefined4), local_130 (undefined4), local_12c (undefined4), local_128 (undefined4), local_124 (undefined4), local_120 (undefined4), local_11c (undefined4), local_118 (undefined4), local_114 (undefined1), local_108 (undefined4), local_104 (undefined4), local_100 (undefined4), local_fc (undefined4), local_f8 (undefined4), local_f4 (undefined4), local_f0 (undefined4), local_ec (undefined4), local_e8 (undefined4), local_e4 (undefined4), local_e0 (undefined4), local_dc (undefined4), local_d8 (undefined1), local_cc (undefined4), local_c8 (undefined4), local_c4 (undefined4), local_c0 (undefined4), local_bc (undefined4), local_b8 (undefined4), local_b4 (undefined4), local_b0 (undefined4), local_ac (undefined4), local_a8 (undefined4), local_a4 (undefined4), local_a0 (undefined4), local_9c (undefined4), local_98 (undefined4), local_94 (undefined4), local_90 (undefined1), local_84 (undefined4), local_80 (undefined4), local_7c (undefined4), local_78 (undefined1), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined1), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined4), local_c (undefined1)
     Suggested: Resolve undefined types to concrete types
@@ -3211,7 +3044,7 @@ Undefined types in variables (2274)
     Locals:  local_3b0 (undefined4), local_3ac (undefined1), local_3a8 (undefined4), local_378 (undefined4), local_374 (undefined4), local_370 (undefined1), local_36c (undefined4), local_33c (undefined4), local_338 (undefined4), local_334 (undefined1), local_333 (undefined1), local_314 (undefined1), local_2fc (undefined1), local_2e4 (undefined1), local_2cc (undefined1), local_2b4 (undefined1), local_29c (undefined1), local_290 (undefined4), local_28c (undefined4), local_288 (undefined4), local_284 (undefined4), local_280 (undefined4), local_27c (undefined4), local_278 (undefined1), local_26c (undefined4), local_268 (undefined4), local_264 (undefined4), local_260 (undefined4), local_25c (undefined4), local_258 (undefined4), local_254 (undefined4), local_250 (undefined4), local_24c (undefined4), local_248 (undefined4), local_240 (undefined4), local_23c (undefined4), local_238 (undefined4), local_234 (undefined4), local_230 (undefined1), local_22c (undefined4), local_224 (undefined4), local_220 (undefined4), local_21c (undefined4), local_218 (undefined1), local_20c (undefined1), local_200 (undefined4), local_1fc (undefined4), local_1f8 (undefined4), local_1f4 (undefined4), local_1f0 (undefined4), local_1ec (undefined4), local_1e8 (undefined4), local_1e4 (undefined4), local_1e0 (undefined4), local_1dc (undefined4), local_1d8 (undefined4), local_1d4 (undefined4), local_1d0 (undefined1), local_1c4 (undefined1), local_1b8 (undefined4), local_1b4 (undefined4), local_1b0 (undefined4), local_1ac (undefined4), local_1a8 (undefined4), local_1a4 (undefined4), local_1a0 (undefined4), local_19c (undefined4), local_198 (undefined4), local_194 (undefined4), local_190 (undefined4), local_18c (undefined4), local_188 (undefined4), local_184 (undefined4), local_180 (undefined4), local_17c (undefined1), local_170 (undefined1), local_164 (undefined4), local_160 (undefined4), local_15c (undefined4), local_158 (undefined4), local_154 (undefined4), local_150 (undefined4), local_14c (undefined4), local_148 (undefined4), local_144 (undefined4), local_140 (undefined1), local_134 (undefined4), local_130 (undefined4), local_12c (undefined4), local_128 (undefined1), local_11c (undefined1), local_110 (undefined4), local_10c (undefined4), local_108 (undefined4), local_104 (undefined1), local_f8 (undefined4), local_f4 (undefined4), local_f0 (undefined4), local_ec (undefined4), local_e8 (undefined4), local_e4 (undefined4), local_e0 (undefined4), local_dc (undefined4), local_d8 (undefined4), local_d4 (undefined4), local_d0 (undefined4), local_cc (undefined4), local_c8 (undefined1), local_bc (undefined4), local_b8 (undefined4), local_b4 (undefined4), local_b0 (undefined1), local_a4 (undefined1), local_98 (undefined8), local_88 (undefined8), local_80 (undefined4), local_7c (undefined4), local_78 (undefined4), local_74 (undefined4), local_68 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined1)
     Suggested: Resolve undefined types to concrete types
 
-  CStranger
+  CStranger_updateProceduralAnimation
     Address: 0x005be520  File: core/stranger.cpp
     Locals:  local_1f58 (undefined4), local_1f54 (undefined4), local_1f50 (undefined8), local_1f48 (undefined8), local_1f38 (undefined8), local_1f30 (undefined8), local_1f28 (undefined8), local_1f20 (undefined8), local_1f18 (undefined8), local_1f0c (undefined4), local_1f08 (undefined4), local_1f04 (undefined4), local_1f00 (undefined4), local_1efc (undefined4), local_1ef8 (undefined4), local_1ef4 (undefined4), local_1ef0 (undefined4), local_1eec (undefined4), local_1ee8 (undefined4), local_1ee4 (undefined4), local_1ee0 (undefined4), local_1edc (undefined4), local_1ed4 (undefined4), local_1ed0 (undefined4), local_1ec4 (undefined4), local_430 (undefined1), local_408 (undefined1), local_3f0 (undefined1), local_3e4 (undefined1), local_3e0 (undefined1), local_3d0 (undefined1), local_3c4 (undefined1), local_3c0 (undefined1), local_3b0 (undefined1), local_3a0 (undefined1), local_390 (undefined1), local_384 (undefined1), local_380 (undefined1), local_360 (undefined1), local_354 (undefined1), local_350 (undefined1), local_344 (undefined1), local_340 (undefined1), local_330 (undefined1), local_320 (undefined1), local_310 (undefined1), local_300 (undefined1), local_2f4 (undefined1), local_2f0 (undefined1), local_2e0 (undefined1), local_2d0 (undefined1), local_2c0 (undefined1), local_2b0 (undefined1), local_2a0 (undefined1), local_294 (undefined1), local_290 (undefined1), local_260 (undefined1), local_250 (undefined1), local_240 (undefined1), local_230 (undefined1), local_220 (undefined1), local_214 (undefined1), local_210 (undefined1), local_204 (undefined1), local_200 (undefined1), local_1f0 (undefined1), local_1e0 (undefined1), local_1d0 (undefined1), local_1c0 (undefined1), local_1a4 (undefined1), local_1a0 (undefined1), local_190 (undefined4), local_18c (undefined4), local_188 (undefined4), local_184 (undefined4), local_180 (undefined4), local_17c (undefined4), local_16c (undefined1), local_168 (undefined4), local_160 (undefined4), local_15c (undefined4), local_158 (undefined4), local_154 (undefined1), local_148 (undefined4), local_144 (undefined4), local_130 (undefined4), local_12c (undefined4), local_128 (undefined4), local_10c (undefined1), local_100 (undefined4), local_fc (undefined4), local_f8 (undefined4), local_e8 (undefined4), local_e4 (undefined4), local_e0 (undefined4), local_c4 (undefined1), local_c0 (undefined4), local_b8 (undefined4), local_b4 (undefined4), local_b0 (undefined4), local_ac (undefined4), local_a8 (undefined4), local_a4 (undefined4), local_a0 (undefined1), local_94 (undefined4), local_90 (undefined4), local_8c (undefined4), local_88 (undefined4), local_84 (undefined4), local_80 (undefined4), local_7c (undefined4), local_78 (undefined4), local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined1), local_58 (undefined1), local_4c (undefined4), local_48 (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -3771,7 +3604,7 @@ Undefined types in variables (2274)
     Locals:  local_cc (undefined4), local_c8 (undefined4), local_c4 (undefined4), local_c0 (undefined4), local_bc (undefined4), local_b8 (undefined4), local_b4 (undefined4), local_b0 (undefined4), local_ac (undefined4), local_a8 (undefined4), local_a4 (undefined4), local_a0 (undefined4), local_9c (undefined4), local_98 (undefined4), local_94 (undefined4), local_90 (undefined4), local_8c (undefined4), local_88 (undefined4), local_84 (undefined4), local_80 (undefined4), local_7c (undefined1), local_70 (undefined1), local_64 (undefined1), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined1), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CStranger
+  CStranger_updateArmRecoilBlend
     Address: 0x005c4c20  File: core/stranger.cpp
     Locals:  local_110 (undefined8), local_108 (undefined8), local_100 (undefined8), local_f8 (undefined4), local_f4 (undefined4), local_ec (undefined4), local_e8 (undefined4), local_bc (undefined1), local_b0 (undefined1), local_a4 (undefined4), local_a0 (undefined4), local_9c (undefined4), local_98 (undefined4), local_94 (undefined4), local_90 (undefined4), local_8c (undefined4), local_88 (undefined4), local_84 (undefined4), local_80 (undefined1), local_74 (undefined4), local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined1), local_44 (undefined1), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -3871,7 +3704,7 @@ Undefined types in variables (2274)
     Locals:  local_690 (undefined8), local_688 (undefined8), local_680 (undefined4), local_67c (undefined4), local_678 (undefined1), local_578 (undefined1), local_478 (undefined1), local_378 (undefined1), local_278 (undefined1), local_178 (undefined1), local_177 (undefined1), local_78 (undefined4), local_74 (undefined4), local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CStranger
+  CStranger_applyArmAimRotation
     Address: 0x005c02b0  File: core/stranger.cpp
     Locals:  local_1e0 (undefined4), local_1dc (undefined1), local_1cc (undefined1), local_1bc (undefined1), local_1ac (undefined1), local_19c (undefined1), local_18c (undefined1), local_17c (undefined1), local_16c (undefined1), local_15c (undefined1), local_14c (undefined1), local_13c (undefined1), local_12c (undefined1), local_11c (undefined1), local_10c (undefined1), local_fc (undefined1), local_ec (undefined1), local_dc (undefined1), local_cc (undefined1), local_bc (undefined1), local_ac (undefined1), local_9c (undefined1), local_8c (undefined1), local_7c (undefined1), local_6c (undefined1), local_5c (undefined1), local_4c (undefined1), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -3916,7 +3749,7 @@ Undefined types in variables (2274)
     Locals:  local_d8 (undefined4), local_d4 (undefined4), local_d0 (undefined4), local_cc (undefined4), local_c8 (undefined4), local_c4 (undefined4), local_c0 (undefined4), local_bc (undefined4), local_b8 (undefined4), local_b4 (undefined4), local_b0 (undefined4), local_ac (undefined4), local_a8 (undefined1), local_9c (undefined4), local_98 (undefined4), local_94 (undefined4), local_90 (undefined1), local_84 (undefined1), local_78 (undefined1), local_6c (undefined1), local_60 (undefined1), local_54 (undefined1), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined1), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CStranger
+  CStranger_tryPlaceObject
     Address: 0x005c2850  File: core/stranger.cpp
     Locals:  local_108 (undefined8), local_100 (undefined8), local_f8 (undefined8), local_e8 (undefined8), local_e0 (undefined4), local_dc (undefined4), local_d8 (undefined4), local_d4 (undefined4), local_d0 (undefined4), local_cc (undefined4), local_c8 (undefined1), local_bc (undefined4), local_b8 (undefined4), local_b4 (undefined4), local_a4 (undefined1), local_8c (undefined1), local_80 (undefined4), local_7c (undefined4), local_78 (undefined4), local_74 (undefined4), local_70 (undefined4), local_6c (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_38 (undefined4), local_30 (undefined4), local_28 (undefined4), local_24 (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -4191,7 +4024,7 @@ Undefined types in variables (2274)
     Locals:  local_d8 (undefined1), local_a8 (undefined1), local_78 (undefined4), local_74 (undefined4), local_70 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CStranger
+  CStranger_makeDrawDecision
     Address: 0x005bfb60  File: core/stranger.cpp
     Locals:  local_10c (undefined4), local_108 (undefined8), local_100 (undefined4), local_fc (undefined4), local_f8 (undefined4), local_f4 (undefined4), local_f0 (undefined1), local_e0 (undefined1), local_d0 (undefined1), local_c0 (undefined1), local_b0 (undefined1), local_a0 (undefined1), local_90 (undefined1), local_80 (undefined1), local_70 (undefined1), local_60 (undefined1), local_50 (undefined1), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -5091,11 +4924,6 @@ Undefined types in variables (2274)
     Locals:  local_54 (undefined8), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined8), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined4), local_c (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CStranger
-    Address: 0x005bdd20  File: core/stranger.cpp
-    Locals:  local_b0 (undefined1), local_ac (undefined4), local_94 (undefined4), local_90 (undefined4), local_8c (undefined4), local_7c (undefined4), local_78 (undefined4), local_74 (undefined1), local_5c (undefined1), local_50 (undefined1), local_44 (undefined1), local_38 (undefined1), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
   CFileManager_checkOutAndExtractPod
     Address: 0x004ba740  File: engine/fileio.cpp
     Locals:  local_69c (undefined), local_4a8 (undefined), local_4a7 (undefined1), local_3a4 (undefined), local_3a3 (undefined1), local_340 (undefined), local_33f (undefined1), local_23c (undefined), local_23b (undefined1), local_138 (undefined), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined)
@@ -5234,6 +5062,11 @@ Undefined types in variables (2274)
   CDeformableModel_exactRayTrace
     Address: 0x0059cba0  File: core/skeleton.cpp
     Locals:  local_78 (undefined8), local_70 (undefined4), local_6c (undefined1), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CStranger_processMotionEvents
+    Address: 0x005bdd20  File: core/stranger.cpp
+    Locals:  local_b0 (undefined1), local_ac (undefined4), local_94 (undefined4), local_90 (undefined4), local_8c (undefined4), local_7c (undefined4), local_78 (undefined4), local_74 (undefined1), local_5c (undefined1), local_50 (undefined1), local_44 (undefined1), local_38 (undefined1), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   generateGlobe
@@ -5559,11 +5392,6 @@ Undefined types in variables (2274)
   CDeformableModel_skinVertices
     Address: 0x0059a880  File: core/skeleton.cpp
     Locals:  local_54 (undefined1), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined1), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  CStranger
-    Address: 0x005c5270  File: core/stranger.cpp
-    Locals:  local_60 (undefined1), local_54 (undefined1), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CTextureList_buildMasterTextureList
@@ -5916,7 +5744,7 @@ Undefined types in variables (2274)
     Locals:  local_60 (undefined1), local_54 (undefined1), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined1), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined1), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CHero
+  CHero_tryPullLever
     Address: 0x004f2f50  File: core/hero.cpp
     Locals:  local_50 (undefined8), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined1), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -6011,7 +5839,12 @@ Undefined types in variables (2274)
     Locals:  local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined1), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_005c37e0
+  CStranger_updateWeaponLayerActions
+    Address: 0x005c5270  File: core/stranger.cpp
+    Locals:  local_60 (undefined1), local_54 (undefined1), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_18 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  calculateAimAnglesWithOffset
     Address: 0x005c37e0  File: core/stranger.cpp
     Locals:  local_50 (undefined8), local_48 (undefined8), local_40 (undefined8), local_38 (undefined8), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -6176,14 +6009,14 @@ Undefined types in variables (2274)
     Locals:  local_80 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_4c (undefined1), local_48 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CHero
-    Address: 0x004f2c40  File: core/hero.cpp
-    Locals:  local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined1), local_38 (undefined1), local_2c (undefined1), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  CHero
+  CHero_findItemUseTarget
     Address: 0x004f35b0  File: core/hero.cpp
     Locals:  local_48 (undefined1), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined8), local_28 (undefined8), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CHero_tryTalkToNearbyCharacter
+    Address: 0x004f2c40  File: core/hero.cpp
+    Locals:  local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined1), local_38 (undefined1), local_2c (undefined1), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   showDeveloperToolsMenu
@@ -6506,7 +6339,7 @@ Undefined types in variables (2274)
     Locals:  local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_10 (undefined4), local_c (undefined4), local_8 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CHero
+  CHero_tryApproachNearbyActor
     Address: 0x004f33b0  File: core/hero.cpp
     Locals:  local_84 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_3c (undefined1), local_30 (undefined1), local_20 (undefined4), local_1c (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -6586,7 +6419,7 @@ Undefined types in variables (2274)
     Locals:  local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined4), local_c (undefined4), local_8 (undefined4), local_4 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CStranger
+  CStranger_updateTurnBlending
     Address: 0x005bf800  File: core/stranger.cpp
     Locals:  local_48 (undefined8), local_40 (undefined8), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -6921,12 +6754,12 @@ Undefined types in variables (2274)
     Locals:  local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined1), local_14 (undefined4), local_10 (undefined4), local_c (undefined4), local_8 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CStranger
+  CStranger_tryClimbLadder
     Address: 0x005c1fe0  File: core/stranger.cpp
     Locals:  local_e8 (undefined8), local_e0 (undefined1), local_a4 (undefined1), local_9c (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CStranger
+  CStranger_tryDescendLadder
     Address: 0x005c2400  File: core/stranger.cpp
     Locals:  local_f0 (undefined8), local_e8 (undefined1), local_d0 (undefined1), local_c8 (undefined4), local_28 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -7326,14 +7159,14 @@ Undefined types in variables (2274)
     Locals:  local_30 (undefined8), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CStranger
-    Address: 0x005c06b0  File: core/stranger.cpp
-    Locals:  local_114 (undefined1), local_e4 (undefined1), local_b4 (undefined1), local_84 (undefined1), local_54 (undefined1), local_24 (undefined1), local_18 (undefined1)
-    Suggested: Resolve undefined types to concrete types
-
-  CStranger
+  CStranger_getThrowDirection
     Address: 0x005c51c0  File: core/stranger.cpp
     Locals:  local_48 (undefined1), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined4), local_c (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CStranger_updateWeaponPosition
+    Address: 0x005c06b0  File: core/stranger.cpp
+    Locals:  local_114 (undefined1), local_e4 (undefined1), local_b4 (undefined1), local_84 (undefined1), local_54 (undefined1), local_24 (undefined1), local_18 (undefined1)
     Suggested: Resolve undefined types to concrete types
 
   CSvetlana_processAI
@@ -7686,7 +7519,7 @@ Undefined types in variables (2274)
     Locals:  local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CHero
+  CHero_tryOpenNearbyDoor
     Address: 0x004f2d70  File: core/hero.cpp
     Locals:  local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined1), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -7861,7 +7694,7 @@ Undefined types in variables (2274)
     Locals:  local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CStranger
+  CStranger_tryPickupObject
     Address: 0x005c1680  File: core/stranger.cpp
     Locals:  local_16c (undefined1), local_28 (undefined4), local_24 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -8396,14 +8229,14 @@ Undefined types in variables (2274)
     Locals:  local_20 (undefined4), local_14 (undefined4), local_10 (undefined4), local_c (undefined4), local_8 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CStranger
-    Address: 0x005be490  File: core/stranger.cpp
-    Locals:  local_30 (undefined1), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined1)
-    Suggested: Resolve undefined types to concrete types
-
-  CStranger
+  CStranger_extractTurnPoseData
     Address: 0x005bf720  File: core/stranger.cpp
     Locals:  local_1ae0 (undefined4), local_3c (undefined1), local_2c (undefined1), local_1c (undefined1), local_10 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CStranger_getHandsMidpoint
+    Address: 0x005be490  File: core/stranger.cpp
+    Locals:  local_30 (undefined1), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined1)
     Suggested: Resolve undefined types to concrete types
 
   CTentacle
@@ -8981,7 +8814,7 @@ Undefined types in variables (2274)
     Locals:  local_48 (undefined4), local_30 (undefined4), local_2c (undefined4), local_24 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_005c3750
+  adjustAimAngleForOffset
     Address: 0x005c3750  File: core/stranger.cpp
     Locals:  local_20 (undefined8), local_18 (undefined8), local_10 (undefined4), local_c (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -10071,7 +9904,7 @@ Undefined types in variables (2274)
     Locals:  local_14 (undefined4), local_10 (undefined4), local_c (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_005bb010
+  getCarriedObjectVerticalOffset
     Address: 0x005bb010  File: core/stranger.cpp
     Locals:  local_18 (undefined4), local_14 (undefined4), local_10 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -10897,7 +10730,7 @@ Undefined types in variables (2274)
     Locals:  local_8 (undefined4), local_4 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CHero
+  CHero_findNearestEnemy
     Address: 0x004f3960  File: core/hero.cpp
     Locals:  local_1c (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -10917,14 +10750,14 @@ Undefined types in variables (2274)
     Locals:  local_20 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CLever
-    Address: 0x00505080  File: core/lever.cpp
-    Locals:  local_20 (undefined1), local_18 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
   CLever_archive
     Address: 0x00504e80  File: core/lever.cpp
     Locals:  local_d4 (undefined1), local_d3 (undefined1)
+    Suggested: Resolve undefined types to concrete types
+
+  CLever_isAccessibleFrom
+    Address: 0x00505080  File: core/lever.cpp
+    Locals:  local_20 (undefined1), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CLever_renderOpaque
@@ -11192,12 +11025,7 @@ Undefined types in variables (2274)
     Locals:  local_14 (undefined4), local_10 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CStranger
-    Address: 0x005bb960  File: core/stranger.cpp
-    Locals:  local_268 (undefined1), local_1c (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  CStranger
+  CStranger_handleActionButton
     Address: 0x005c5b90  File: core/stranger.cpp
     Locals:  local_14 (undefined4), local_10 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -11205,6 +11033,11 @@ Undefined types in variables (2274)
   CStranger_processDamage
     Address: 0x005c48b0  File: core/stranger.cpp
     Locals:  local_1c (undefined8), local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CStranger_processFrame
+    Address: 0x005bb960  File: core/stranger.cpp
+    Locals:  local_268 (undefined1), local_1c (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CStranger_process
@@ -12817,16 +12650,6 @@ Undefined types in variables (2274)
     Locals:  local_1c (undefined1)
     Suggested: Resolve undefined types to concrete types
 
-  CHero
-    Address: 0x004f2af0  File: core/hero.cpp
-    Locals:  local_64 (undefined1)
-    Suggested: Resolve undefined types to concrete types
-
-  CHero
-    Address: 0x004f3120  File: core/hero.cpp
-    Locals:  local_80 (undefined1)
-    Suggested: Resolve undefined types to concrete types
-
   CHero_getGrabbed
     Address: 0x004f28d0  File: core/hero.cpp
     Locals:  local_14 (undefined1)
@@ -12835,6 +12658,16 @@ Undefined types in variables (2274)
   CHero_releaseFromGrab
     Address: 0x004f29b0  File: core/hero.cpp
     Locals:  local_c (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CHero_tryInteract
+    Address: 0x004f2af0  File: core/hero.cpp
+    Locals:  local_64 (undefined1)
+    Suggested: Resolve undefined types to concrete types
+
+  CHero_tryPushNearbyBox
+    Address: 0x004f3120  File: core/hero.cpp
+    Locals:  local_80 (undefined1)
     Suggested: Resolve undefined types to concrete types
 
   CHiram_process
@@ -12912,7 +12745,7 @@ Undefined types in variables (2274)
     Locals:  local_10 (undefined8)
     Suggested: Resolve undefined types to concrete types
 
-  CLever
+  CLever_activate
     Address: 0x00504c90  File: core/lever.cpp
     Locals:  local_18 (undefined8)
     Suggested: Resolve undefined types to concrete types
@@ -13447,19 +13280,14 @@ Undefined types in variables (2274)
     Locals:  local_bc (undefined1)
     Suggested: Resolve undefined types to concrete types
 
-  CStranger
-    Address: 0x005be430  File: core/stranger.cpp
-    Locals:  local_8 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  CStranger
-    Address: 0x005c5f10  File: core/stranger.cpp
-    Locals:  local_14 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
   CStranger_aimLeftPistol
     Address: 0x005c4370  File: core/stranger.cpp
     Locals:  local_9c (undefined1)
+    Suggested: Resolve undefined types to concrete types
+
+  CStranger_getCarryLightIntensity
+    Address: 0x005be430  File: core/stranger.cpp
+    Locals:  local_8 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CStranger_getCarryObjToBodyXForm
@@ -13467,7 +13295,12 @@ Undefined types in variables (2274)
     Locals:  local_38 (undefined1)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_005baee0
+  CStranger_handleFireButton
+    Address: 0x005c5f10  File: core/stranger.cpp
+    Locals:  local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  blendWeightCallback
     Address: 0x005baee0  File: core/stranger.cpp
     Locals:  local_4 (undefined4)
     Suggested: Resolve undefined types to concrete types

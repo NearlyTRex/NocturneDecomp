@@ -10,6 +10,6 @@ void __cdecl core_enemy_cpp_CEnemy_setVictim_FUN_004a9ef0(CEnemy *this_ptr,CDemo
 
 {
   this_ptr->victim_search_timer = 0.0;
-  this_ptr->script_victim = victim;
+  this_ptr->script_victim = (CCharacter *)victim;
   return;
 }

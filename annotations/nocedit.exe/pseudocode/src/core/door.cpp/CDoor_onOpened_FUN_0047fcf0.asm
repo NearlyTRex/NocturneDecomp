@@ -8,8 +8,8 @@
 ;
 ; XREF[3]:
 ;   core_charactr.cpp_CCharacter_clearDoorTarget_FUN_0042cd60 at 0042cd72
-;   core_hero.cpp_CHero_FUN_004f2d70 at 004f2e9a
-;   core_hero.cpp_CHero_FUN_004f2ed0 at 004f2f11
+;   core_hero.cpp_CHero_tryOpenDoor_FUN_004f2ed0 at 004f2f11
+;   core_hero.cpp_CHero_tryOpenNearbyDoor_FUN_004f2d70 at 004f2e9a
 ;
 ; Referenced Globals:
 ;   CEventList* g_CEventListPtr = 02d05310

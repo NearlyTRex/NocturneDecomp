@@ -20,6 +20,8 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d4190(CGabriella *this_ptr)
   float fVar6;
   CDemonActor *this_ptr_01;
   float local_120;
+  float local_11c;
+  float fStack_118;
   CBoundingBox3D CStack_114;
   CBoundingBox3D local_fc;
   CVector3f local_e4;
@@ -106,12 +108,14 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d4190(CGabriella *this_ptr)
       }
     }
     else {
+      local_11c = 9999.9;
       iVar5 = (this_ptr->base).ai_task;
       this_ptr_01 = (CDemonActor *)0x0;
       if ((iVar5 == 2) || (iVar5 == 3)) {
-        this_ptr_01 = (CDemonActor *)core_hero_cpp_CHero_FUN_004f3960(&this_ptr->base);
+        this_ptr_01 = (CDemonActor *)
+                      core_hero_cpp_CHero_findNearestEnemy_FUN_004f3960(&this_ptr->base,&local_11c);
       }
-      if ((this_ptr_01 == (CDemonActor *)0x0) || ((float)30 <= 9999.9)) {
+      if ((this_ptr_01 == (CDemonActor *)0x0) || ((float)30 <= local_11c)) {
         if (this_ptr->weapon_state_flags != 0) {
           pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                              (&(this_ptr->base).base.model.motion_controller);
@@ -174,14 +178,14 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d4190(CGabriella *this_ptr)
           fStack_c8 = CStack_48.y - CStack_78.y;
           CStack_48.z = (this_ptr_01->location).position.z + fStack_58;
           fStack_c4 = CStack_48.z - CStack_78.z;
-          fVar6 = SQRT(fStack_c4 * fStack_c4 + fStack_cc * fStack_cc + fStack_c8 * fStack_c8);
-          if (fVar6 <= 0.0) {
+          fStack_118 = SQRT(fStack_c4 * fStack_c4 + fStack_cc * fStack_cc + fStack_c8 * fStack_c8);
+          if (fStack_118 <= 0.0) {
             fStack_c8 = 0.0;
             fStack_cc = 0.0;
             fStack_c4 = 0.0;
           }
           else {
-            fVar6 = 1.0 / fVar6;
+            fVar6 = 1.0 / fStack_118;
             fStack_cc = fStack_cc * fVar6;
             fStack_c8 = fStack_c8 * fVar6;
             fStack_c4 = fStack_c4 * fVar6;

@@ -36,7 +36,7 @@
 ;   core_charactr.cpp_CCharacter_processDamage_FUN_0042c3c0
 ;   core_game.cpp_CGame_resetInventoryDisplayTimer_FUN_004e0bd0
 ;   core_gore.cpp_CGore_spawnFliesOnActor_FUN_004ee030
-;   core_hero.cpp_CHero_FUN_004f3580
+;   core_hero.cpp_CHero_stopNearbyInteraction_FUN_004f3580
 ;   core_inv.cpp_CInventory_autoUseHealthItem_FUN_00501570
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
@@ -70,8 +70,8 @@ section .text
     MOV dword ptr [ESI + 0x4],ECX       ; 005c48e0
     PUSH EBX                            ; 005c48e3
         ;   Label: LAB_005c48e3
-    CALL core_hero.cpp_CHero_FUN_004f3580 ; 005c48e4
-        ;   XREF to: 004f3580 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_FUN_004f3580(CHero * this_ptr)
+    CALL core_hero.cpp_CHero_stopNearbyInteraction_FUN_004f3580 ; 005c48e4
+        ;   XREF to: 004f3580 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_stopNearbyInteraction_FUN_004f3580(CHero * this_ptr)
     FLD float ptr [EBX + 0xbe24]        ; 005c48e9
     FLDZ                                ; 005c48ef
     ADD ESP,0x4                         ; 005c48f1

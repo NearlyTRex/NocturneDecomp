@@ -20,9 +20,9 @@
 ;   core_ghoul.cpp_CGhoul_process_FUN_004e6600 at 004e68c0
 ;   core_hostage.cpp_CHostage_process_FUN_004f4bd0 at 004f5eda
 ;   core_scat.cpp_CScat_FUN_005582c0 at 00558431
-;   core_stranger.cpp_CStranger_FUN_005be520 at 005bf6cc
-;   core_stranger.cpp_CStranger_FUN_005bfb60 at 005bfda9
-;   core_stranger.cpp_CStranger_FUN_005c02b0 at 005c03b3
+;   core_stranger.cpp_CStranger_applyArmAimRotation_FUN_005c02b0 at 005c03b3
+;   core_stranger.cpp_CStranger_makeDrawDecision_FUN_005bfb60 at 005bfda9
+;   core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520 at 005bf6cc
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005fe6b0

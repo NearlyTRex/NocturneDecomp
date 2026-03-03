@@ -11,7 +11,7 @@
 void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(CMobster *this_ptr,float delta_time)
 
 {
-  CDemonActor *pCVar1;
+  CCharacter *pCVar1;
   int iVar2;
   CWeapon *pCVar2;
   CVector3f *pCVar3;
@@ -41,8 +41,8 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(CMobster *this_p
   }
   else {
     pCVar1 = (this_ptr->base).victim;
-    if (pCVar1 != (CDemonActor *)0x0) {
-      iVar2 = core_enemy_cpp_CEnemy_FUN_004a9a50(&this_ptr->base,pCVar1);
+    if (pCVar1 != (CCharacter *)0x0) {
+      iVar2 = core_enemy_cpp_CEnemy_FUN_004a9a50(&this_ptr->base,&pCVar1->base);
       if ((iVar2 == 0) && (this_ptr->hold_pos_flag == 0)) {
         this_ptr->firing_blend = 0.0;
         return;
@@ -67,11 +67,11 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(CMobster *this_p
       pCVar3 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                          ((CDemonActor *)this_ptr,&local_44,pCVar3);
       pCVar1 = (this_ptr->base).victim;
-      local_38.x = (pCVar1->location).position.x - pCVar3->x;
-      local_38.y = (pCVar1->location).position.y - pCVar3->y;
-      local_38.z = (pCVar1->location).position.z - pCVar3->z;
+      local_38.x = (pCVar1->base).location.position.x - pCVar3->x;
+      local_38.y = (pCVar1->base).location.position.y - pCVar3->y;
+      local_38.z = (pCVar1->base).location.position.z - pCVar3->z;
       pCVar4 = (CHero *)core_actor_cpp_castToClassHash_FUN_0040c790
-                                  ((this_ptr->base).victim,g_CHeroClassInfo.name_hash);
+                                  (&((this_ptr->base).victim)->base,g_CHeroClassInfo.name_hash);
       fVar7 = 3.0f;
       if (pCVar4 != (CHero *)0x0) {
         fVar7 = 4.0f;

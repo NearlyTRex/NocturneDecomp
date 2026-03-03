@@ -56,7 +56,7 @@
 ;   undefined4 DAT_032613a0
 ;   int INT_03f6bacc
 ;   int INT_03f6bb04
-;   undefined4 DAT_03f6bb24
+;   int INT_03f6bb24
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40
@@ -71,8 +71,8 @@
 ;   core_setcolid.cpp_CDemonSet_init_FUN_00574180
 ;   core_setcolid.cpp_CDemonSet_iterativeRaycast_FUN_00572800
 ;   core_setcolid.cpp_CDemonSet_setRayType_FUN_00574230
-;   core_stranger.cpp_CStranger_FUN_005c06b0
-;   core_stranger.cpp_CStranger_FUN_005c51c0
+;   core_stranger.cpp_CStranger_getThrowDirection_FUN_005c51c0
+;   core_stranger.cpp_CStranger_updateWeaponPosition_FUN_005c06b0
 ;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
 ;   ... and 6 more
 ;
@@ -96,7 +96,7 @@ section .text
     TEST EAX,EAX                        ; 005c316e
     JZ 0x005c3547                       ; 005c3170
         ;   XREF to: 005c3547 (CONDITIONAL_JUMP)  ; LAB_005c3547
-    MOV EAX,[0x03f6bb24]                ; 005c3176 | DAT_03f6bb24
+    MOV EAX,[0x03f6bb24]                ; 005c3176 | INT_03f6bb24
     CMP dword ptr [EBX + EAX*0x4 + 0x2298],0x0 ; 005c317b
     JNZ 0x005c354f                      ; 005c3183
         ;   XREF to: 005c354f (CONDITIONAL_JUMP)  ; LAB_005c354f
@@ -163,8 +163,8 @@ section .text
     LEA EAX,[EBP + 0x1e]                ; 005c3227
     PUSH EAX                            ; 005c322a
     PUSH EBX                            ; 005c322b
-    CALL core_stranger.cpp_CStranger_FUN_005c51c0 ; 005c322c
-        ;   XREF to: 005c51c0 (UNCONDITIONAL_CALL)  ; CVector3f * core_stranger.cpp_CStranger_FUN_005c51c0(CStranger * this_ptr)
+    CALL core_stranger.cpp_CStranger_getThrowDirection_FUN_005c51c0 ; 005c322c
+        ;   XREF to: 005c51c0 (UNCONDITIONAL_CALL)  ; CVector3f * core_stranger.cpp_CStranger_getThrowDirection_FUN_005c51c0(CStranger * this_ptr, CVector3f * out_direction)
     ADD ESP,0x8                         ; 005c3231
     PUSH EAX                            ; 005c3234
     LEA EAX,[EBP + 0x12]                ; 005c3235
@@ -225,7 +225,7 @@ section .text
     CMP EAX,dword ptr [EBX + 0x24f8]    ; 005c32ce
     JZ 0x005c33d7                       ; 005c32d4
         ;   XREF to: 005c33d7 (CONDITIONAL_JUMP)  ; LAB_005c33d7
-    MOV EAX,[0x03f6bb24]                ; 005c32da | DAT_03f6bb24
+    MOV EAX,[0x03f6bb24]                ; 005c32da | INT_03f6bb24
     CMP dword ptr [EBX + EAX*0x4 + 0x2298],0x0 ; 005c32df
     JZ 0x005c33d7                       ; 005c32e7
         ;   XREF to: 005c33d7 (CONDITIONAL_JUMP)  ; LAB_005c33d7
@@ -284,8 +284,8 @@ section .text
         ;   XREF to: 005c33cc (CONDITIONAL_JUMP)  ; LAB_005c33cc
     PUSH 0x1                            ; 005c3394
     PUSH EBX                            ; 005c3396
-    CALL core_stranger.cpp_CStranger_FUN_005c06b0 ; 005c3397
-        ;   XREF to: 005c06b0 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_FUN_005c06b0(CStranger * this_ptr)
+    CALL core_stranger.cpp_CStranger_updateWeaponPosition_FUN_005c06b0 ; 005c3397
+        ;   XREF to: 005c06b0 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_updateWeaponPosition_FUN_005c06b0(CStranger * this_ptr, int hand_index)
     ADD ESP,0x8                         ; 005c339c
     MOV EAX,dword ptr [EBX + 0x1fc2c]   ; 005c339f
     PUSH EAX                            ; 005c33a5
@@ -303,14 +303,14 @@ section .text
     PUSH 0x0                            ; 005c33cc
         ;   Label: LAB_005c33cc
     PUSH EBX                            ; 005c33ce
-    CALL core_stranger.cpp_CStranger_FUN_005c06b0 ; 005c33cf
-        ;   XREF to: 005c06b0 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_FUN_005c06b0(CStranger * this_ptr)
+    CALL core_stranger.cpp_CStranger_updateWeaponPosition_FUN_005c06b0 ; 005c33cf
+        ;   XREF to: 005c06b0 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_updateWeaponPosition_FUN_005c06b0(CStranger * this_ptr, int hand_index)
     ADD ESP,0x8                         ; 005c33d4
     CMP dword ptr [EBX + 0x1fb98],0x0   ; 005c33d7
         ;   Label: LAB_005c33d7
     JZ 0x005c3508                       ; 005c33de
         ;   XREF to: 005c3508 (CONDITIONAL_JUMP)  ; LAB_005c3508
-    MOV EAX,[0x03f6bb24]                ; 005c33e4 | DAT_03f6bb24
+    MOV EAX,[0x03f6bb24]                ; 005c33e4 | INT_03f6bb24
     CMP dword ptr [EBX + EAX*0x4 + 0x2298],0x0 ; 005c33e9
     JZ 0x005c3508                       ; 005c33f1
         ;   XREF to: 005c3508 (CONDITIONAL_JUMP)  ; LAB_005c3508
@@ -407,7 +407,7 @@ section .text
     CALL core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40 ; 005c3500
         ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 005c3505
-    MOV EAX,[0x03f6bb24]                ; 005c3508 | DAT_03f6bb24
+    MOV EAX,[0x03f6bb24]                ; 005c3508 | INT_03f6bb24
         ;   Label: LAB_005c3508
     CMP dword ptr [EBX + EAX*0x4 + 0x2298],0x0 ; 005c350d
     JNZ 0x005c3542                      ; 005c3515

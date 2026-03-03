@@ -6,24 +6,21 @@
   },
   "complexity": {
     "assembly_lines": 191,
-    "complexity_score": 105,
+    "complexity_score": 64,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 8,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 65,
-    "suspect_count": 3,
-    "suspect_types": [
-      "param_count_too_few",
-      "stack_param"
-    ],
-    "total_lines": 256
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 64,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 255
   },
   "cross_references": [
     {
       "addr": "004f2d70",
       "from_addr": "004f2e80",
-      "name": "core_hero.cpp_CHero_FUN_004f2d70",
+      "name": "core_hero.cpp_CHero_tryOpenNearbyDoor_FUN_004f2d70",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -38,7 +35,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_door.cpp_CDoor_getMoveType_FUN_00481070",
-    "signature": "int __cdecl core_door_cpp_CDoor_getMoveType_FUN_00481070(CDoor *this_ptr)"
+    "signature": "int __cdecl core_door_cpp_CDoor_getMoveType_FUN_00481070(CDoor *this_ptr,CDemonActor *opener)"
   },
   "function_calls": [
     {
@@ -49,7 +46,7 @@
     {
       "addr": "00481210",
       "is_variadic": false,
-      "name": "core_door.cpp_CDoor_FUN_00481210"
+      "name": "core_door.cpp_CDoor_onLocked_FUN_00481210"
     },
     {
       "addr": "004d7f20",
@@ -123,15 +120,15 @@
       {
         "call_addr": "004f2e80",
         "call_type": "direct",
-        "caller": "core_hero.cpp_CHero_FUN_004f2d70",
+        "caller": "core_hero.cpp_CHero_tryOpenNearbyDoor_FUN_004f2d70",
         "estimated_params": 2,
         "instructions_analyzed": 4,
         "reg_params": [],
         "stack_params": 2
       }
     ],
-    "confidence": "low",
-    "declared_params": 1,
+    "confidence": "medium",
+    "declared_params": 2,
     "estimated_params": 2
   },
   "pcode_summary": {
@@ -173,10 +170,10 @@
     "pcode_op_count": 780
   },
   "stack_frame": {
-    "frame_size": 32,
+    "frame_size": 36,
     "local_size": 28,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -199,6 +196,13 @@
         "offset": 4,
         "size": 4,
         "type": "CDoor *"
+      },
+      {
+        "is_param": true,
+        "name": "opener",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonActor *"
       }
     ]
   },
@@ -219,33 +223,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 6,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "int in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "(&this_ptr->base,&local_18,(CVector3f *)(in_stack_00000008 + 0x20));",
-      "type": "stack_param"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 1,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:1 vs estimated:2",
-      "param_delta": 1,
-      "text": "Function declares 1 params but call sites push 2 (1 missing)",
-      "type": "param_count_too_few"
-    }
-  ]
+  "suspects": []
 }

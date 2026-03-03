@@ -16,13 +16,13 @@
       {
         "category": "incompatible_types",
         "column": 17,
-        "line": 102,
+        "line": 103,
         "message": "assigning to 'int' from incompatible type 'void'"
       },
       {
         "category": "incompatible_types",
         "column": 17,
-        "line": 164,
+        "line": 165,
         "message": "assigning to 'int' from incompatible type 'void'"
       }
     ],
@@ -31,12 +31,12 @@
   },
   "complexity": {
     "assembly_lines": 547,
-    "complexity_score": 364,
+    "complexity_score": 365,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 234,
+    "pseudocode_lines": 235,
     "suspect_count": 11,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -44,7 +44,7 @@
       "stack_param",
       "warning_type_propagation"
     ],
-    "total_lines": 781
+    "total_lines": 782
   },
   "cross_references": [
     {
@@ -81,7 +81,7 @@
     {
       "addr": "004f3960",
       "is_variadic": false,
-      "name": "core_hero.cpp_CHero_FUN_004f3960"
+      "name": "core_hero.cpp_CHero_findNearestEnemy_FUN_004f3960"
     },
     {
       "addr": "0052dab0",
@@ -340,7 +340,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 84,
+      "line": 85,
       "match": "SQRT",
       "severity": "mild",
       "text": "fVar1 = SQRT(local_6c.z * local_6c.z + local_6c.x * local_6c.x + local_6c.y * local_6c.y);",
@@ -348,7 +348,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 99,
+      "line": 100,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "((CCharacter *)this_ptr,in_stack_00000008), uVar8 != 0)) {",
@@ -356,18 +356,10 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 161,
+      "line": 162,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "((CCharacter *)this_ptr,in_stack_00000008), uVar8 != 0)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 229,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "if (in_stack_00000008 * (float)3.1415926535000001 < fStack_98) {",
       "type": "stack_param"
     },
     {
@@ -375,12 +367,20 @@
       "line": 230,
       "match": "in_stack_00000008",
       "severity": "moderate",
+      "text": "if (in_stack_00000008 * (float)3.1415926535000001 < fStack_98) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 231,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
       "text": "fStack_98 = in_stack_00000008 * (float)3.1415926535000001;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 232,
+      "line": 233,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "if (fStack_98 < in_stack_00000008 * (float)-3.1415926535000001) {",
@@ -388,7 +388,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 233,
+      "line": 234,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "fStack_98 = in_stack_00000008 * (float)-3.1415926535000001;",

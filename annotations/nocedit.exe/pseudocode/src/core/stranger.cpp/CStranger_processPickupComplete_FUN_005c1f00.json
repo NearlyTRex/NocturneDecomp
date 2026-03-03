@@ -1,0 +1,141 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 48,
+    "complexity_score": 20,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 4,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 20,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 68
+  },
+  "cross_references": [
+    {
+      "addr": "005bdd20",
+      "from_addr": "005be2ce",
+      "name": "core_stranger.cpp_CStranger_processMotionEvents_FUN_005bdd20",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005c1f00",
+    "address_range": [
+      [
+        "005c1f00",
+        "005c1f78"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_stranger.cpp_CStranger_processPickupComplete_FUN_005c1f00",
+    "signature": "void __cdecl core_stranger_cpp_CStranger_processPickupComplete_FUN_005c1f00(CStranger *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c790",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790"
+    },
+    {
+      "addr": "00411700",
+      "is_variadic": false,
+      "name": "core_ammobox.cpp_CAmmoBox_FUN_00411700"
+    },
+    {
+      "addr": "0049e6f0",
+      "is_variadic": true,
+      "name": "shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00653aac",
+      "name": "s_actionPending_d_stranger_00653aac",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00678a60",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "02cf1cd4"
+    },
+    {
+      "addr": "008223e0",
+      "name": "g_CAmmoBoxClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf1cd4",
+      "name": "g_CEditorToolsInstance",
+      "type": "CEditorTools",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005be2ce",
+        "call_type": "direct",
+        "caller": "core_stranger.cpp_CStranger_processMotionEvents_FUN_005bdd20",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "reg_params": [],
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.861111111111111,
+    "instruction_count": 36,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 1,
+      "CALL": 3,
+      "CBRANCH": 3,
+      "COPY": 29,
+      "INT_ADD": 14,
+      "INT_AND": 13,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 12,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 6,
+      "INT_SUB": 16,
+      "LOAD": 8,
+      "POPCOUNT": 6,
+      "RETURN": 1,
+      "STORE": 16
+    },
+    "pcode_op_count": 139
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CStranger *"
+      }
+    ]
+  },
+  "suspects": []
+}

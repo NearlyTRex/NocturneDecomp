@@ -4,31 +4,31 @@
       {
         "category": "other",
         "column": 20,
-        "line": 267,
+        "line": 268,
         "message": "cannot cast from type 'float' to pointer type 'CVector3f *'"
       },
       {
         "category": "other",
         "column": 24,
-        "line": 676,
+        "line": 677,
         "message": "cannot cast from type 'float' to pointer type 'CVector3f *'"
       },
       {
         "category": "other",
         "column": 32,
-        "line": 679,
+        "line": 680,
         "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
       },
       {
         "category": "undeclared_identifier",
         "column": 30,
-        "line": 728,
+        "line": 729,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 37,
-        "line": 728,
+        "line": 729,
         "message": "expected expression"
       },
       {
@@ -46,7 +46,7 @@
       {
         "category": "undeclared_identifier",
         "column": 47,
-        "line": 938,
+        "line": 939,
         "message": "use of undeclared identifier 'PTR_00823c50'"
       }
     ],
@@ -55,12 +55,12 @@
   },
   "complexity": {
     "assembly_lines": 2463,
-    "complexity_score": 1239,
+    "complexity_score": 1240,
     "cross_reference_count": 0,
     "function_call_count": 48,
     "global_count": 72,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 1019,
+    "pseudocode_lines": 1020,
     "suspect_count": 19,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -70,7 +70,7 @@
       "warning_type_propagation",
       "warning_unreachable"
     ],
-    "total_lines": 3482
+    "total_lines": 3483
   },
   "cross_references": [],
   "function": {
@@ -1860,7 +1860,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 242,
+      "line": 243,
       "match": "SQRT",
       "severity": "mild",
       "text": "if ((float)1.5 < SQRT(fVar25 * fVar25 + fVar24 * fVar24)) {",
@@ -1868,7 +1868,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 264,
+      "line": 265,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_80 = (int)ROUND(ROUND(local_98 * 2.5 * 0.25));",
@@ -1876,7 +1876,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 264,
+      "line": 265,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_80 = (int)ROUND(ROUND(local_98 * 2.5 * 0.25));",
@@ -1884,7 +1884,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 340,
+      "line": 341,
       "match": "SQRT",
       "severity": "mild",
       "text": "local_2c = SQRT(local_1e8.z * local_1e8.z +",
@@ -1892,7 +1892,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 577,
+      "line": 578,
       "match": "SQRT",
       "severity": "mild",
       "text": "if (SQRT(local_1a4 * local_1a4 + local_1ac * local_1ac + local_1a8 * local_1a8) <",
@@ -1900,7 +1900,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 584,
+      "line": 585,
       "match": "ABS",
       "severity": "mild",
       "text": "if (((ABS(pCVar10->y) < (float)0.261799387791667) && (-1 < iVar6)) &&",
@@ -1908,7 +1908,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 720,
+      "line": 721,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "iVar9 = *(int *)((int)g_CDemonSetPtr->characters + iVar6);",
@@ -1916,7 +1916,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 721,
+      "line": 722,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar18 = (**(code **)(*(int *)(iVar9 + 0x154) + 0xf8))(iVar9,this_ptr);",
@@ -1924,7 +1924,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 726,
+      "line": 727,
       "match": "ABS",
       "severity": "mild",
       "text": "if ((ABS(local_1b4) <= (float)10) &&",
@@ -1932,7 +1932,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 728,
+      "line": 729,
       "match": "SQRT",
       "severity": "mild",
       "text": "SQRT(local_1b0 * local_1b0 + local_1b8 * local_1b8) <=",
@@ -1940,7 +1940,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 754,
+      "line": 755,
       "match": "SQRT",
       "severity": "mild",
       "text": "SQRT(fVar25 * fVar25 + fVar24 * fVar24) <= (float)3)) &&",
@@ -1948,10 +1948,10 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 755,
+      "line": 756,
       "match": "ABS",
       "severity": "mild",
-      "text": "(ABS((this_ptr->base).base.base.location.position.y - (pCVar16->location).position.y)",
+      "text": "(ABS((this_ptr->base).base.base.location.position.y -",
       "type": "decompiler_intrinsic"
     },
     {
@@ -1972,7 +1972,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 947,
+      "line": 948,
       "match": "ABS",
       "severity": "mild",
       "text": "if (ABS(pCVar10->y) < (float)0.34906585038888899) {",

@@ -32,12 +32,10 @@ void __cdecl core_boxactor_cpp_CBoxActor_archive_FUN_00422060(CBoxActor *this_pt
   else {
     core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->pickup_type,"pickupType");
   }
-  core_actor_cpp_archiveActor_FUN_0040b870
-            ((CDemonActor *)&this_ptr->carrier_actor,"carriedByActor");
+  core_actor_cpp_archiveActor_FUN_0040b870(&this_ptr->carrier_actor,"carriedByActor");
   if (1 < g_CBoxActorClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->can_be_pushed,"canBePushed");
-    core_actor_cpp_archiveActor_FUN_0040b870
-              ((CDemonActor *)&this_ptr->pushed_by_actor,"pushedByActor");
+    core_actor_cpp_archiveActor_FUN_0040b870(&this_ptr->pushed_by_actor,"pushedByActor");
   }
   if (2 < g_CBoxActorClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->ground_type,"groundType");
@@ -72,7 +70,7 @@ void __cdecl core_boxactor_cpp_CBoxActor_archive_FUN_00422060(CBoxActor *this_pt
   }
   if (10 < g_CBoxActorClassVersion) {
     core_actor_cpp_archiveActor_FUN_0040b870
-              ((CDemonActor *)&this_ptr->constrain_extents_actor,"constrainExtentsActor");
+              (&this_ptr->constrain_extents_actor,"constrainExtentsActor");
   }
   if (0xb < g_CBoxActorClassVersion) {
     core_actor_cpp_archiveString_FUN_0040b5c0(this_ptr->use_event,"useEvent");

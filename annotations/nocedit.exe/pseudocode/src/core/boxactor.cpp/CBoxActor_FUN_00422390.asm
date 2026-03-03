@@ -18,7 +18,7 @@
 ;
 ; XREF[2]:
 ;   core_gabriela.cpp_CGabriella_process_FUN_004d2ea0 at 004d35e4
-;   core_stranger.cpp_CStranger_FUN_005bb960 at 005bc4cc
+;   core_stranger.cpp_CStranger_processFrame_FUN_005bb960 at 005bc4cc
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00616797 = 1.01000000000000

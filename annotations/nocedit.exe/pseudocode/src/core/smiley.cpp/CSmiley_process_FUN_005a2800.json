@@ -4,19 +4,19 @@
       {
         "category": "undeclared_identifier",
         "column": 15,
-        "line": 119,
+        "line": 118,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 22,
-        "line": 119,
+        "line": 118,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 24,
-        "line": 119,
+        "line": 118,
         "message": "use of undeclared identifier 'iRam00000154'"
       },
       {
@@ -43,19 +43,19 @@
   },
   "complexity": {
     "assembly_lines": 847,
-    "complexity_score": 449,
+    "complexity_score": 450,
     "cross_reference_count": 0,
     "function_call_count": 25,
     "global_count": 19,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 374,
+    "pseudocode_lines": 375,
     "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic",
       "unresolved_funcptr",
       "warning_type_propagation"
     ],
-    "total_lines": 1221
+    "total_lines": 1222
   },
   "cross_references": [],
   "function": {
@@ -742,7 +742,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 112,
+      "line": 111,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(iRam00000154 + 0x104))(0);",
@@ -750,7 +750,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 154,
+      "line": 153,
       "match": "SQRT",
       "severity": "mild",
       "text": "local_20 = SQRT(local_58.z * local_58.z +",
@@ -758,7 +758,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 161,
+      "line": 160,
       "match": "ABS",
       "severity": "mild",
       "text": "if (ABS(local_14) < (float)0.52359877558333301) {",

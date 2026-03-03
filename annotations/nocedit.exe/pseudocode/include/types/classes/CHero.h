@@ -1,7 +1,11 @@
 #pragma once
 
 // Forward declarations
+struct CBoxActor;
 struct CDemonActor;
+struct CDoor;
+struct CLadder;
+struct CLever;
 
 // Dependencies
 #include "system/basetypes.h"
@@ -23,11 +27,11 @@ typedef struct CHero {
     int aim_mode; // 0x1f734
     CInventory inventory; // 0x1f738
     int is_wearing_gas_mask; // 0x1fb98
-    struct CDemonActor* door_to_open; // 0x1fb9c
+    struct CDoor* door_to_open; // 0x1fb9c
     struct CDemonActor* object_to_pick_up; // 0x1fba0
-    struct CDemonActor* pushed_object; // 0x1fba4
-    struct CDemonActor* lever_to_pull; // 0x1fba8
-    struct CDemonActor* ladder_to_climb; // 0x1fbac
+    struct CBoxActor* pushed_object; // 0x1fba4
+    struct CLever* lever_to_pull; // 0x1fba8
+    struct CLadder* ladder_to_climb; // 0x1fbac
     struct CDemonActor* nearby_interactive_actor; // 0x1fbb0
     struct CDemonActor* target_actor; // 0x1fbb4
     CVector3f target_position; // 0x1fbb8

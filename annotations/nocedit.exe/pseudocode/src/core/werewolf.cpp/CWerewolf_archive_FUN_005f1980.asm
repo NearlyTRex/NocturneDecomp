@@ -81,7 +81,7 @@ section .text
     LEA EAX,[EBX + 0xbee8]              ; 005f1a06
     PUSH EAX                            ; 005f1a0c
     CALL core_actor.cpp_archiveActor_FUN_0040b870 ; 005f1a0d
-        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * actor_ptr, char * property_name)
+        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 005f1a12
     PUSH 0x657dff                       ; 005f1a15 | = "chainLength"
     LEA EAX,[EBX + 0xbeec]              ; 005f1a1a
@@ -131,13 +131,13 @@ section .text
     LEA EAX,[EBX + 0xbef0]              ; 005f1a97
     PUSH EAX                            ; 005f1a9d
     CALL core_actor.cpp_archiveActor_FUN_0040b870 ; 005f1a9e
-        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * actor_ptr, char * property_name)
+        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 005f1aa3
     PUSH 0x657e28                       ; 005f1aa6 | = "alpha2"
     ADD EBX,0xbef4                      ; 005f1aab
     PUSH EBX                            ; 005f1ab1
     CALL core_actor.cpp_archiveActor_FUN_0040b870 ; 005f1ab2
-        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * actor_ptr, char * property_name)
+        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 005f1ab7
     POP EBX                             ; 005f1aba
     RET                                 ; 005f1abb

@@ -110,19 +110,19 @@ void __cdecl core_haystack_cpp_CHaystack_process_FUN_004f0e40(CHaystack *this_pt
         if ((this_ptr->base).player_control.action_states[3] != 0) {
           bVar3 = true;
           if ((this_ptr->guns_drawn == 0) && ((this_ptr->base).control_type != 2)) {
-            iVar9 = core_hero_cpp_CHero_FUN_004f2af0(&this_ptr->base);
+            iVar9 = core_hero_cpp_CHero_tryInteract_FUN_004f2af0(&this_ptr->base);
             bVar3 = false;
             if (iVar9 != 0) goto LAB_004f11d6;
-            local_1c = core_hero_cpp_CHero_FUN_004f2d70(&this_ptr->base);
+            local_1c = core_hero_cpp_CHero_tryOpenNearbyDoor_FUN_004f2d70(&this_ptr->base);
             if ((local_1c != 0) && (local_1c != 1)) {
-              core_hero_cpp_CHero_FUN_004f2ed0(&this_ptr->base);
+              core_hero_cpp_CHero_tryOpenDoor_FUN_004f2ed0(&this_ptr->base);
             }
             if ((local_1c != 0) ||
-               (iVar9 = core_hero_cpp_CHero_FUN_004f2c40(&this_ptr->base), iVar9 != 0))
-            goto LAB_004f11d6;
-            iVar9 = core_hero_cpp_CHero_FUN_004f2f50(&this_ptr->base);
+               (iVar9 = core_hero_cpp_CHero_tryTalkToNearbyCharacter_FUN_004f2c40(&this_ptr->base),
+               iVar9 != 0)) goto LAB_004f11d6;
+            iVar9 = core_hero_cpp_CHero_tryPullLever_FUN_004f2f50(&this_ptr->base);
             if (iVar9 != 0) {
-              core_hero_cpp_CHero_FUN_004f30f0(&this_ptr->base);
+              core_hero_cpp_CHero_executeLeverPull_FUN_004f30f0(&this_ptr->base);
               goto LAB_004f11d6;
             }
           }

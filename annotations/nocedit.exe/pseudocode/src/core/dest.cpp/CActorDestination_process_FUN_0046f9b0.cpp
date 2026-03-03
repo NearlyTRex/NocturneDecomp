@@ -32,7 +32,7 @@ void __cdecl core_dest_cpp_CActorDestination_process_FUN_0046f9b0(CActorDestinat
       local_24 = (this_ptr->base).location.position.z - *(float *)(iVar2 + 0x28);
       if ((SQRT(local_24 * local_24 + local_2c * local_2c + local_28 * local_28) <
            (float)0.10000000000000001) &&
-         (iVar2 = core_dest_cpp_CActorDestination_FUN_0046fd50
+         (iVar2 = core_dest_cpp_CActorDestination_acceptsActor_FUN_0046fd50
                             (this_ptr,*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar3)),
          iVar2 != 0)) break;
       iVar3 = iVar3 + 4;

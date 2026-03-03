@@ -24,7 +24,7 @@
 ;
 ; XREF[3]:
 ;   core_npc.cpp_CNPC_process_FUN_005448b0 at 005448da
-;   core_stranger.cpp_CStranger_FUN_005bb960 at 005bbaae
+;   core_stranger.cpp_CStranger_processFrame_FUN_005bb960 at 005bbaae
 ;   core_svetlana.cpp_CSvetlana_process_FUN_005d8ba0 at 005d8c0b
 ;
 ; Referenced Globals:

@@ -65,9 +65,9 @@ void __cdecl core_gabriela_cpp_CGabriella_setup_FUN_004d2c40(CGabriella *this_pt
   pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                      (&this_ptr_00->motion_controller);
   INT_02d7b880 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(pCVar1);
-  (this_ptr->base).pushed_object = (CDemonActor *)0x0;
-  (this_ptr->base).lever_to_pull = (CDemonActor *)0x0;
-  (this_ptr->base).ladder_to_climb = (CDemonActor *)0x0;
+  (this_ptr->base).pushed_object = (CBoxActor *)0x0;
+  (this_ptr->base).lever_to_pull = (CLever *)0x0;
+  (this_ptr->base).ladder_to_climb = (CLadder *)0x0;
   (this_ptr->base).base.carry_hands[0].bone_index = INT_02d7b888;
   return;
 }

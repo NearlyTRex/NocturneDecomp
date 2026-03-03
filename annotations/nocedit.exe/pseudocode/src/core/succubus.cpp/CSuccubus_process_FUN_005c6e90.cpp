@@ -16,7 +16,7 @@ void __cdecl core_succubus_cpp_CSuccubus_process_FUN_005c6e90(CSuccubus *this_pt
   CVector3f *pCVar2;
   char cVar3;
   CCloth *pCVar4;
-  CDemonActor *pCVar5;
+  CCharacter *pCVar5;
   CDemonActor_vtable *pCVar6;
   float fVar7;
   CDemonMission *pCVar8;
@@ -89,7 +89,7 @@ void __cdecl core_succubus_cpp_CSuccubus_process_FUN_005c6e90(CSuccubus *this_pt
     if (uVar12 == 0) {
       (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
       pCVar5 = (this_ptr->base).victim;
-      if (pCVar5 == (CDemonActor *)0x0) {
+      if (pCVar5 == (CCharacter *)0x0) {
         iVar9 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base,delta_time);
         if (iVar9 != 0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
@@ -97,9 +97,12 @@ void __cdecl core_succubus_cpp_CSuccubus_process_FUN_005c6e90(CSuccubus *this_pt
         }
       }
       else {
-        local_38 = (this_ptr->base).base.base.location.position.x - (pCVar5->location).position.x;
-        local_34 = (this_ptr->base).base.base.location.position.y - (pCVar5->location).position.y;
-        local_30 = (this_ptr->base).base.base.location.position.z - (pCVar5->location).position.z;
+        local_38 = (this_ptr->base).base.base.location.position.x -
+                   (pCVar5->base).location.position.x;
+        local_34 = (this_ptr->base).base.base.location.position.y -
+                   (pCVar5->base).location.position.y;
+        local_30 = (this_ptr->base).base.base.location.position.z -
+                   (pCVar5->base).location.position.z;
         if (SQRT(local_30 * local_30 + local_38 * local_38 + local_34 * local_34) <
             (this_ptr->base).guard_distance) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
@@ -109,7 +112,7 @@ void __cdecl core_succubus_cpp_CSuccubus_process_FUN_005c6e90(CSuccubus *this_pt
     }
     else if ((uVar12 < 2) || (uVar12 == 2)) {
       (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
-      if ((this_ptr->base).victim == (CDemonActor *)0x0) {
+      if ((this_ptr->base).victim == (CCharacter *)0x0) {
         iVar9 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base,delta_time);
         pCVar15 = &(this_ptr->base).base.model;
         if (iVar9 == 0) {
@@ -134,15 +137,19 @@ void __cdecl core_succubus_cpp_CSuccubus_process_FUN_005c6e90(CSuccubus *this_pt
         pCVar17 = &local_68;
         local_68.y = 0.0;
         pCVar5 = (this_ptr->base).victim;
-        path_map = (*((pCVar5->vtable)._ub)->getPathMap)(pCVar5);
+        path_map = (*((pCVar5->base).vtable._ub)->getPathMap)(&pCVar5->base);
         iVar9 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
-                          ((CCharacter *)this_ptr,&(((this_ptr->base).victim)->location).position,
-                           path_map,pCVar17,fVar18,fVar19);
+                          ((CCharacter *)this_ptr,
+                           &(((this_ptr->base).victim)->base).location.position,path_map,pCVar17,
+                           fVar18,fVar19);
         if (((-1 < iVar9) &&
             (pCVar5 = (this_ptr->base).victim,
-            fVar18 = (pCVar5->location).position.x - (this_ptr->base).base.base.location.position.x,
-            fVar19 = (pCVar5->location).position.y - (this_ptr->base).base.base.location.position.y,
-            fVar7 = (pCVar5->location).position.z - (this_ptr->base).base.base.location.position.z,
+            fVar18 = (pCVar5->base).location.position.x -
+                     (this_ptr->base).base.base.location.position.x,
+            fVar19 = (pCVar5->base).location.position.y -
+                     (this_ptr->base).base.base.location.position.y,
+            fVar7 = (pCVar5->base).location.position.z -
+                    (this_ptr->base).base.base.location.position.z,
             SQRT(fVar7 * fVar7 + fVar18 * fVar18 + fVar19 * fVar19) < 15.0f)) &&
            (this_ptr->morph_started == 0)) {
           this_ptr->morph_started = 1;

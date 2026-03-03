@@ -11,9 +11,9 @@ void __cdecl core_stranger_cpp_CStranger_drop_FUN_005c6850(CStranger *this_ptr,C
 {
   CEnemy_full_vtable *pCVar1;
   
-  if (carrier == this_ptr->weapon) {
+  if ((CWeapon *)carrier == this_ptr->weapon) {
     pCVar1 = (this_ptr->base).base.base.vtable._ue;
-    this_ptr->weapon = (CDemonActor *)0x0;
+    this_ptr->weapon = (CWeapon *)0x0;
     (*(pCVar1->_ue).updateVictim)((CEnemy *)this_ptr,0.0);
   }
   core_charactr_cpp_CCharacter_drop_FUN_0042bf90((CCharacter *)this_ptr,carrier,drop_position);

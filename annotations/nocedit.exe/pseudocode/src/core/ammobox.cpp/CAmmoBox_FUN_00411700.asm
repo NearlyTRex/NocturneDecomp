@@ -9,7 +9,7 @@
 ;
 ; XREF[2]:
 ;   core_gabriela.cpp_CGabriella_FUN_004d5c10 at 004d5c3d
-;   core_stranger.cpp_CStranger_FUN_005c1f00 at 005c1f3c
+;   core_stranger.cpp_CStranger_processPickupComplete_FUN_005c1f00 at 005c1f3c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_ammobox_cpp_00614be0

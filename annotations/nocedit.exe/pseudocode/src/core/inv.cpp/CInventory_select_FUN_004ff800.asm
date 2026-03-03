@@ -12,7 +12,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   core_hero.cpp_CHero_FUN_004f3760 at 004f37b0
+;   core_hero.cpp_CHero_tryUseSelectedItem_FUN_004f3760 at 004f37b0
 ;   core_inv.cpp_CInventory_autoUseHealthItem_FUN_00501570 at 005015f4
 ;
 ; Referenced Globals:

@@ -1,16 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_door_cpp_CDoor_getMoveType_FUN_00481070(CDoor *this_ptr)
+; int __cdecl core_door_cpp_CDoor_getMoveType_FUN_00481070(CDoor *this_ptr,CDemonActor *opener)
 ;
 ; Parameters:
 ; CDoor *          Stack[0x4]:4   this_ptr
+; CDemonActor *    Stack[0x8]:4   opener
 ; Local Variables:
 ; undefined1       Stack[-0x18]:1  local_18
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
-;   core_hero.cpp_CHero_FUN_004f2d70 at 004f2e80
+;   core_hero.cpp_CHero_tryOpenNearbyDoor_FUN_004f2d70 at 004f2e80
 ;
 ; Referenced Globals:
 ;   void* switchdataD_00481058 = 00481126
@@ -24,7 +25,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-;   core_door.cpp_CDoor_FUN_00481210
+;   core_door.cpp_CDoor_onLocked_FUN_00481210
 ;   core_game.cpp_CGame_displayMessage_FUN_004d7f20
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   support_newmsg.cpp_getLocalizedString_FUN_005441f0
@@ -69,8 +70,8 @@ section .text
     JZ 0x004810e2                       ; 004810c3
         ;   XREF to: 004810e2 (CONDITIONAL_JUMP)  ; LAB_004810e2
     PUSH EBX                            ; 004810c5
-    CALL core_door.cpp_CDoor_FUN_00481210 ; 004810c6
-        ;   XREF to: 00481210 (UNCONDITIONAL_CALL)  ; int core_door.cpp_CDoor_FUN_00481210(CDoor * this_ptr)
+    CALL core_door.cpp_CDoor_onLocked_FUN_00481210 ; 004810c6
+        ;   XREF to: 00481210 (UNCONDITIONAL_CALL)  ; uint core_door.cpp_CDoor_onLocked_FUN_00481210(CDoor * this_ptr)
     ADD ESP,0x4                         ; 004810cb
     PUSH 0x40a00000                     ; 004810ce
     PUSH ESI                            ; 004810d3
@@ -94,8 +95,8 @@ section .text
     JZ 0x004810e2                       ; 004810fe
         ;   XREF to: 004810e2 (CONDITIONAL_JUMP)  ; LAB_004810e2
     PUSH EBX                            ; 00481100
-    CALL core_door.cpp_CDoor_FUN_00481210 ; 00481101
-        ;   XREF to: 00481210 (UNCONDITIONAL_CALL)  ; int core_door.cpp_CDoor_FUN_00481210(CDoor * this_ptr)
+    CALL core_door.cpp_CDoor_onLocked_FUN_00481210 ; 00481101
+        ;   XREF to: 00481210 (UNCONDITIONAL_CALL)  ; uint core_door.cpp_CDoor_onLocked_FUN_00481210(CDoor * this_ptr)
     ADD ESP,0x4                         ; 00481106
     PUSH 0x40a00000                     ; 00481109
     PUSH ESI                            ; 0048110e

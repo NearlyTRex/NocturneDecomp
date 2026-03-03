@@ -18,8 +18,7 @@ void __cdecl core_dest_cpp_CActorDestination_archive_FUN_0046fdb0(CActorDestinat
   }
   core_actor_cpp_archiveString_FUN_0040b5c0(this_ptr->what_event,"whatEvent");
   if (1 < g_CActorDestinationClassVersion) {
-    core_actor_cpp_archiveActor_FUN_0040b870
-              ((CDemonActor *)&this_ptr->dest_actor,"destActor");
+    core_actor_cpp_archiveActor_FUN_0040b870(&this_ptr->dest_actor,"destActor");
   }
   if (2 < g_CActorDestinationClassVersion) {
     core_actor_cpp_archiveString_FUN_0040b5c0(this_ptr->dest_class,"destClass");

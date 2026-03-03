@@ -67,7 +67,7 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_pt
       uVar7 = core_motion_cpp_CMotionController_advance_FUN_0052d610(&local_1c->motion_controller);
       if (99 < uVar7) {
         if (uVar7 < 0x65) {
-          pCVar2 = (CCharacter *)(this_ptr->base).victim;
+          pCVar2 = (this_ptr->base).victim;
           if ((pCVar2 != (CCharacter *)0x0) &&
              (pCVar8 = (*(((pCVar2->base).vtable._uc)->_uc).getGrabber)(pCVar2),
              pCVar8 == (CDemonActor *)0x0)) {
@@ -83,19 +83,19 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_pt
             pCVar9 = core_xform_cpp_getTranslation_FUN_005f6110(&CStack_1f0,&CStack_94);
             core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                       ((CDemonActor *)this_ptr,&CStack_a0,pCVar9);
-            pCVar8 = (this_ptr->base).victim;
-            fStack_4c = CStack_a0.x - (pCVar8->location).position.x;
-            fStack_48 = CStack_a0.y - (pCVar8->location).position.y;
-            fStack_44 = CStack_a0.z - (pCVar8->location).position.z;
+            pCVar2 = (this_ptr->base).victim;
+            fStack_4c = CStack_a0.x - (pCVar2->base).location.position.x;
+            fStack_48 = CStack_a0.y - (pCVar2->base).location.position.y;
+            fStack_44 = CStack_a0.z - (pCVar2->base).location.position.z;
             if (((ABS(fStack_48) <= (float)6) &&
                 (fStack_4c * fStack_4c + fStack_44 * fStack_44 <= (float)16)) &&
-               (pCVar2 = (CCharacter *)(this_ptr->base).victim,
+               (pCVar2 = (this_ptr->base).victim,
                iVar4 = (*(((pCVar2->base).vtable._uc)->_uc).getGrabbed)
                                  (pCVar2,(CDemonActor *)this_ptr,1), iVar4 != 0)) {
-              pCVar8 = (this_ptr->base).victim;
+              pCVar2 = (this_ptr->base).victim;
               this_ptr->target_blend = 0.0;
               core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
-                        (&CStack_160,&(pCVar8->location).position,&(pCVar8->orient).vec);
+                        (&CStack_160,&(pCVar2->base).location.position,&(pCVar2->base).orient.vec);
               core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
                         (&CStack_190,local_20,local_24);
               core_xform_cpp_inverse_FUN_005f6210(&CStack_1f0,&CStack_220);
@@ -142,16 +142,16 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_pt
                 fStack_18 = CStack_7c.y;
                 core_gore_cpp_CGore_spawnBloodParticles_FUN_004edaa0
                           (g_CGorePtr,&CStack_a0,&CStack_7c,
-                           (this_ptr->base).victim[0x1c].was_created);
+                           ((this_ptr->base).victim)->collision_layer);
               } while (iVar4 < 0x46);
             }
           }
         }
-        else if (((uVar7 == 0x65) &&
-                 (pCVar2 = (CCharacter *)(this_ptr->base).victim, pCVar2 != (CCharacter *)0x0)) &&
-                (pCVar6 = (CTentacle *)(*(((pCVar2->base).vtable._uc)->_uc).getGrabber)(pCVar2),
-                pCVar6 == this_ptr)) {
-          ((this_ptr->base).victim)->was_created = 2;
+        else if (((uVar7 == 0x65) && (pCVar2 = (this_ptr->base).victim, pCVar2 != (CCharacter *)0x0)
+                 ) && (pCVar6 = (CTentacle *)
+                                (*(((pCVar2->base).vtable._uc)->_uc).getGrabber)(pCVar2),
+                      pCVar6 == this_ptr)) {
+          (((this_ptr->base).victim)->base).was_created = 2;
         }
       }
     }
@@ -192,11 +192,11 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_pt
       this_ptr->chase_timer = fVar1;
       if (fVar1 < (float)25) {
         (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
-        pCVar8 = (this_ptr->base).victim;
-        if (pCVar8 != (CDemonActor *)0x0) {
-          CStack_88.x = (pCVar8->location).position.x - ((CVector3f *)&local_20->x)->x;
-          CStack_88.y = (pCVar8->location).position.y - local_20->y;
-          CStack_88.z = (pCVar8->location).position.z - local_20->z;
+        pCVar2 = (this_ptr->base).victim;
+        if (pCVar2 != (CCharacter *)0x0) {
+          CStack_88.x = (pCVar2->base).location.position.x - ((CVector3f *)&local_20->x)->x;
+          CStack_88.y = (pCVar2->base).location.position.y - local_20->y;
+          CStack_88.z = (pCVar2->base).location.position.z - local_20->z;
           pCVar9 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                              (&CStack_70,&CStack_88);
           fStack_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
@@ -211,13 +211,15 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_pt
             (this_ptr->base).base.turn_angle_accumulator = fStack_2c;
           }
           if ((float)5 < this_ptr->chase_timer) {
-            pCVar8 = (this_ptr->base).victim;
-            fVar1 = (this_ptr->base).base.base.location.position.x - (pCVar8->location).position.x;
-            fVar3 = (this_ptr->base).base.base.location.position.z - (pCVar8->location).position.z;
+            pCVar2 = (this_ptr->base).victim;
+            fVar1 = (this_ptr->base).base.base.location.position.x -
+                    (pCVar2->base).location.position.x;
+            fVar3 = (this_ptr->base).base.base.location.position.z -
+                    (pCVar2->base).location.position.z;
             fVar1 = SQRT(fVar3 * fVar3 + fVar1 * fVar1);
             if (((fStack_18 < (float)0.17453292519444399) &&
-                (ABS((this_ptr->base).base.base.location.position.y - (pCVar8->location).position.y)
-                 < (float)4)) &&
+                (ABS((this_ptr->base).base.base.location.position.y -
+                     (pCVar2->base).location.position.y) < (float)4)) &&
                ((float)7 < fVar1 && fVar1 < (float)12)) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                         (&(this_ptr->base).base.model.motion_controller,6,1);
@@ -232,16 +234,15 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_pt
         this_ptr->wait_timer = 25.0;
       }
     }
-    else if ((((uVar7 == 6) &&
-              (pCVar2 = (CCharacter *)(this_ptr->base).victim, pCVar2 != (CCharacter *)0x0)) &&
+    else if ((((uVar7 == 6) && (pCVar2 = (this_ptr->base).victim, pCVar2 != (CCharacter *)0x0)) &&
              (iVar4 = (*(((pCVar2->base).vtable._uc)->_uc).getDeathState)(pCVar2), iVar4 < 1)) &&
-            (pCVar2 = (CCharacter *)(this_ptr->base).victim,
+            (pCVar2 = (this_ptr->base).victim,
             pCVar8 = (*(((pCVar2->base).vtable._uc)->_uc).getGrabber)(pCVar2),
             pCVar8 == (CDemonActor *)0x0)) {
-      pCVar8 = (this_ptr->base).victim;
-      CStack_64.x = (pCVar8->location).position.x - ((CVector3f *)&local_20->x)->x;
-      CStack_64.y = (pCVar8->location).position.y - local_20->y;
-      CStack_64.z = (pCVar8->location).position.z - local_20->z;
+      pCVar2 = (this_ptr->base).victim;
+      CStack_64.x = (pCVar2->base).location.position.x - ((CVector3f *)&local_20->x)->x;
+      CStack_64.y = (pCVar2->base).location.position.y - local_20->y;
+      CStack_64.z = (pCVar2->base).location.position.z - local_20->z;
       pCVar9 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                          (&CStack_58,&CStack_64);
       fStack_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70

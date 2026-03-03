@@ -1521,7 +1521,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"core_actor.cpp_CDemonActor_playAmbientSound_FUN_00408f80",
-    "ret":"void",
+    "ret":"uint",
     "vars":{
       "params":[
         {
@@ -1556,7 +1556,17 @@
           },
           "type":"char*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -41477,7 +41487,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_hero.cpp_CHero_FUN_004f3580",
+    "name":"core_hero.cpp_CHero_stopNearbyInteraction_FUN_004f3580",
     "ret":"void",
     "vars":{
       "params":[
@@ -45153,7 +45163,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_lever.cpp_CLever_FUN_00505080",
+    "name":"core_lever.cpp_CLever_isAccessibleFrom_FUN_00505080",
     "ret":"int",
     "vars":{
       "locals":[
@@ -45206,6 +45216,22 @@
             ]
           },
           "type":"CLever*"
+        },
+        {
+          "name":"world_position",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
         }
       ],
       "ret_storage":{
@@ -71453,8 +71479,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_stranger.cpp_FUN_005be480",
-    "ret":"int",
+    "name":"core_stranger.cpp_getDefaultAimPitch_FUN_005be480",
+    "ret":"float",
     "vars":{
       "ret_storage":{
         "reg":"EAX",
@@ -71479,7 +71505,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_stranger.cpp_CStranger_FUN_005bf800",
+    "name":"core_stranger.cpp_CStranger_updateTurnBlending_FUN_005bf800",
     "ret":"void",
     "vars":{
       "locals":[
@@ -71644,6 +71670,22 @@
             ]
           },
           "type":"CStranger*"
+        },
+        {
+          "name":"delta_time",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
         }
       ]
     }
@@ -71659,7 +71701,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_stranger.cpp_CStranger_FUN_005c1680",
+    "name":"core_stranger.cpp_CStranger_tryPickupObject_FUN_005c1680",
     "ret":"int",
     "vars":{
       "locals":[
@@ -71776,6 +71818,22 @@
             ]
           },
           "type":"CStranger*"
+        },
+        {
+          "name":"param_2",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
         }
       ],
       "ret_storage":{
@@ -71801,7 +71859,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_stranger.cpp_CStranger_FUN_005c1f00",
+    "name":"core_stranger.cpp_CStranger_processPickupComplete_FUN_005c1f00",
     "ret":"void",
     "vars":{
       "params":[
@@ -71835,7 +71893,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_stranger.cpp_CStranger_FUN_005c1f80",
+    "name":"core_stranger.cpp_CStranger_dropRightHandObject_FUN_005c1f80",
     "ret":"void",
     "vars":{
       "params":[
@@ -71869,7 +71927,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_stranger.cpp_CStranger_FUN_005c2400",
+    "name":"core_stranger.cpp_CStranger_tryDescendLadder_FUN_005c2400",
     "ret":"int",
     "vars":{
       "locals":[
@@ -72043,7 +72101,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_stranger.cpp_CStranger_FUN_005c5e80",
+    "name":"core_stranger.cpp_CStranger_tryThrowDynamite_FUN_005c5e80",
     "ret":"int",
     "vars":{
       "params":[

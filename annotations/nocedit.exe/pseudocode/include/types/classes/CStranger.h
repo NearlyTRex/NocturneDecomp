@@ -1,7 +1,8 @@
 #pragma once
 
 // Forward declarations
-struct CDemonActor;
+struct CLadder;
+struct CWeapon;
 
 // Dependencies
 #include "system/basetypes.h"
@@ -22,8 +23,8 @@ typedef struct CStranger {
     float aim_speed_factor; // 0x1fbe4
     SArmAimData right_arm_aim; // 0x1fbe8
     SArmAimData left_arm_aim; // 0x1fc08
-    struct CDemonActor* ladder_to_descend; // 0x1fc28
-    struct CDemonActor* weapon; // 0x1fc2c
+    struct CLadder* ladder_to_descend; // 0x1fc28
+    struct CWeapon* weapon; // 0x1fc2c
     int dual_wield_side; // 0x1fc30
     int can_grab_weapon; // 0x1fc34
     int action_pending; // 0x1fc38

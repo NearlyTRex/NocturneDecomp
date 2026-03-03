@@ -11,7 +11,7 @@
 ;   core_fire.cpp_CSpark_process_FUN_004c0240 at 004c02aa
 ;   core_game.cpp_CGame_processFrame_FUN_004da100 at 004da196
 ;   core_netgame.cpp_CNetGame_applySimFrameHistory_FUN_00543800 at 00543830
-;   core_stranger.cpp_CStranger_FUN_005bb960 at 005bbac0
+;   core_stranger.cpp_CStranger_processFrame_FUN_005bb960 at 005bbac0
 ;   core_stranger.cpp_CStranger_process_FUN_005bb830 at 005bb8ad
 ;
 ; Referenced Globals:

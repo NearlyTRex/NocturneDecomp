@@ -66,7 +66,7 @@ section .text
     LEA EAX,[EBX + 0x4bdf8]             ; 00520994
     PUSH EAX                            ; 0052099a
     CALL core_actor.cpp_archiveActor_FUN_0040b870 ; 0052099b
-        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * actor_ptr, char * property_name)
+        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * * actor_ptr, char * property_name)
     MOV EDX,dword ptr [0x0067d510]      ; 005209a0 | g_CMimicClassVersion
     ADD ESP,0x8                         ; 005209a6
     CMP EDX,0x2                         ; 005209a9

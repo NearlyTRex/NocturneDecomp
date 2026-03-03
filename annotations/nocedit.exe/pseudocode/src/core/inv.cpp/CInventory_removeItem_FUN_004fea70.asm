@@ -13,7 +13,7 @@
 ;   core_inv.cpp_CInventory_removeMatchingKeys_FUN_005014a0 at 005014dc
 ;   core_inv.cpp_CInventory_select_FUN_004ff800 at 004ff9fe
 ;   core_script.cpp_CScript_step_FUN_0055a810 at 0055e45a
-;   core_stranger.cpp_CStranger_FUN_005c5270 at 005c5457
+;   core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_005c5270 at 005c5457
 ;   core_vampboss.cpp_CVampireBoss_processDamage_FUN_005e7030 at 005e71ee
 ;
 ; Called Functions:

@@ -55,7 +55,7 @@ section .text
     LEA EAX,[EBX + 0x164]               ; 0043101b
     PUSH EAX                            ; 00431021
     CALL core_actor.cpp_archiveActor_FUN_0040b870 ; 00431022
-        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * actor_ptr, char * property_name)
+        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 00431027
     PUSH 0x617811                       ; 0043102a | = "targetBone"
     LEA EAX,[EBX + 0x168]               ; 0043102f

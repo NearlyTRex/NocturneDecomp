@@ -14,7 +14,7 @@ void __cdecl core_hotdemon_cpp_CHotDemon_process_FUN_004f6f20(CHotDemon *this_pt
   CDeformableModelInstance *pCVar1;
   CVector3f *pCVar2;
   float fVar3;
-  CDemonActor *pCVar4;
+  CCharacter *pCVar4;
   int iVar5;
   SMotion *pSVar6;
   int iVar7;
@@ -109,10 +109,13 @@ LAB_004f7178:
   case 6:
     (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
     pCVar4 = (this_ptr->base).victim;
-    if (pCVar4 != (CDemonActor *)0x0) {
-      local_c4.x = (pCVar4->location).position.x - (this_ptr->base).base.base.location.position.x;
-      local_c4.y = (pCVar4->location).position.y - (this_ptr->base).base.base.location.position.y;
-      local_c4.z = (pCVar4->location).position.z - (this_ptr->base).base.base.location.position.z;
+    if (pCVar4 != (CCharacter *)0x0) {
+      local_c4.x = (pCVar4->base).location.position.x -
+                   (this_ptr->base).base.base.location.position.x;
+      local_c4.y = (pCVar4->base).location.position.y -
+                   (this_ptr->base).base.base.location.position.y;
+      local_c4.z = (pCVar4->base).location.position.z -
+                   (this_ptr->base).base.base.location.position.z;
       local_28 = SQRT(local_c4.z * local_c4.z + local_c4.x * local_c4.x + local_c4.y * local_c4.y);
       local_24 = local_28;
       if (local_28 < 2.0f) {
@@ -160,7 +163,7 @@ LAB_004f7178:
     (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
     fVar3 = 2.0f;
     pCVar1 = &(this_ptr->base).base.model;
-    if ((this_ptr->base).victim != (CDemonActor *)0x0) {
+    if ((this_ptr->base).victim != (CCharacter *)0x0) {
       max_distance = 0.17453292;
       local_1c = 2.0f;
       fVar10 = 0.5;
@@ -174,14 +177,16 @@ LAB_004f7178:
       pCVar8 = &local_64;
       local_64.y = 0.0;
       pCVar4 = (this_ptr->base).victim;
-      path_map = (*((pCVar4->vtable)._ub)->getPathMap)(pCVar4);
+      path_map = (*((pCVar4->base).vtable._ub)->getPathMap)(&pCVar4->base);
       iVar7 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
-                        ((CCharacter *)this_ptr,&(((this_ptr->base).victim)->location).position,
-                         path_map,pCVar8,fVar10,max_distance);
+                        ((CCharacter *)this_ptr,&(((this_ptr->base).victim)->base).location.position
+                         ,path_map,pCVar8,fVar10,max_distance);
       if (-1 < iVar7) {
         pCVar4 = (this_ptr->base).victim;
-        local_94 = (this_ptr->base).base.base.location.position.x - (pCVar4->location).position.x;
-        local_8c = (this_ptr->base).base.base.location.position.z - (pCVar4->location).position.z;
+        local_94 = (this_ptr->base).base.base.location.position.x -
+                   (pCVar4->base).location.position.x;
+        local_8c = (this_ptr->base).base.base.location.position.z -
+                   (pCVar4->base).location.position.z;
         local_90 = 0;
         local_20 = SQRT(local_8c * local_8c + local_94 * local_94);
         local_18 = local_20;
@@ -192,11 +197,11 @@ LAB_004f7178:
         }
         if ((local_20 <= local_1c) && ((this_ptr->base).attack_cooldown <= 0.0)) {
           pCVar4 = (this_ptr->base).victim;
-          local_70.x = (pCVar4->location).position.x -
+          local_70.x = (pCVar4->base).location.position.x -
                        (this_ptr->base).base.base.location.position.x;
-          local_70.y = (pCVar4->location).position.y -
+          local_70.y = (pCVar4->base).location.position.y -
                        (this_ptr->base).base.base.location.position.y;
-          local_70.z = (pCVar4->location).position.z -
+          local_70.z = (pCVar4->base).location.position.z -
                        (this_ptr->base).base.base.location.position.z;
           core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_88,&local_70);
           local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70

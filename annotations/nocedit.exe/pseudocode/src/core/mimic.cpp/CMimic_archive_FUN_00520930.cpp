@@ -18,7 +18,7 @@ void __cdecl core_mimic_cpp_CMimic_archive_FUN_00520930(CMimic *this_ptr)
   core_actor_cpp_archiveString_FUN_0040b5c0(this_ptr->attack_condition,"attackCondition");
   core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->attack_mode,"attackMode");
   core_actor_cpp_archiveActor_FUN_0040b870
-            ((CDemonActor *)&this_ptr->mirror_plane_actor,"mirrorPlaneActor");
+            (&this_ptr->mirror_plane_actor,"mirrorPlaneActor");
   if (g_CMimicClassVersion < 2) {
     if (g_CMimicClassVersion < 3) {
       return;

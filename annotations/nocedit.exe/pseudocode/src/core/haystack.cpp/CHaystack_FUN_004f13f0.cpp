@@ -23,6 +23,7 @@ void __cdecl core_haystack_cpp_CHaystack_FUN_004f13f0(CHaystack *this_ptr)
   CHero *pCVar8;
   float in_stack_00000008;
   float local_8c;
+  float local_88;
   CVector3f local_84;
   CVector3f local_78;
   CVector3f local_6c;
@@ -54,8 +55,10 @@ void __cdecl core_haystack_cpp_CHaystack_FUN_004f13f0(CHaystack *this_ptr)
     local_30 = SQRT(local_48.z * local_48.z + local_48.x * local_48.x + local_48.y * local_48.y);
     if ((((this_ptr->base).ai_task == 3) || (local_30 < 20.0f)) &&
        ((iVar7 = (this_ptr->base).ai_task, iVar7 == 2 || (iVar7 == 3)))) {
-      pCVar4 = (CHero *)core_hero_cpp_CHero_FUN_004f3960(&this_ptr->base);
-      if ((pCVar4 == (CHero *)0x0) || ((float)20 <= 9999.9)) {
+      local_88 = 9999.9;
+      pCVar4 = (CHero *)core_hero_cpp_CHero_findNearestEnemy_FUN_004f3960(&this_ptr->base,&local_88)
+      ;
+      if ((pCVar4 == (CHero *)0x0) || ((float)20 <= local_88)) {
         if (this_ptr->guns_drawn != 0) {
           (this_ptr->base).player_control.action_states[6] = 1;
         }

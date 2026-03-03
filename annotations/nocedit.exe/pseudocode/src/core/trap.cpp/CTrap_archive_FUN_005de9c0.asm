@@ -36,7 +36,7 @@ section .text
     LEA EAX,[EBX + 0x2d8]               ; 005de9e7
     PUSH EAX                            ; 005de9ed
     CALL core_actor.cpp_archiveActor_FUN_0040b870 ; 005de9ee
-        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * actor_ptr, char * property_name)
+        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b870(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 005de9f3
     POP EBX                             ; 005de9f6
     RET                                 ; 005de9f7

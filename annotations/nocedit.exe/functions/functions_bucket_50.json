@@ -1144,8 +1144,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_actor.cpp_CDemonActor_playAmbientSoundWithVolume_FUN_00408fd0",
-    "ret":"void",
+    "name":"core_actor.cpp_CDemonActor_playAmbientSoundWithDelay_FUN_00408fd0",
+    "ret":"uint",
     "vars":{
       "params":[
         {
@@ -1181,7 +1181,7 @@
           "type":"char*"
         },
         {
-          "name":"volume",
+          "name":"delay",
           "storage":{
             "offset":12,
             "size":4,
@@ -1196,7 +1196,17 @@
           },
           "type":"float"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -21981,7 +21991,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_dest.cpp_CActorDestination_FUN_0046fd50",
+    "name":"core_dest.cpp_CActorDestination_acceptsActor_FUN_0046fd50",
     "ret":"int",
     "vars":{
       "params":[
@@ -47373,7 +47383,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_hero.cpp_CHero_FUN_004f2ed0",
+    "name":"core_hero.cpp_CHero_tryOpenDoor_FUN_004f2ed0",
     "ret":"int",
     "vars":{
       "params":[
@@ -47417,7 +47427,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_hero.cpp_CHero_FUN_004f2f50",
+    "name":"core_hero.cpp_CHero_tryPullLever_FUN_004f2f50",
     "ret":"int",
     "vars":{
       "locals":[
@@ -47639,9 +47649,26 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_hero.cpp_CHero_FUN_004f3350",
+    "name":"core_hero.cpp_CHero_stopPushingBox_FUN_004f3350",
     "ret":"void",
     "vars":{
+      "locals":[
+        {
+          "name":"pCVar1",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CBoxActor*",
+          "use":28
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",
@@ -47717,7 +47744,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_hero.cpp_CHero_FUN_004f38d0",
+    "name":"core_hero.cpp_CHero_addCarriedItemToInventory_FUN_004f38d0",
     "ret":"void",
     "vars":{
       "params":[
@@ -47736,6 +47763,22 @@
             ]
           },
           "type":"CHero*"
+        },
+        {
+          "name":"hand_index",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }
@@ -77750,7 +77793,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_stranger.cpp_CStranger_FUN_005c2850",
+    "name":"core_stranger.cpp_CStranger_tryPlaceObject_FUN_005c2850",
     "ret":"int",
     "vars":{
       "locals":[
@@ -78946,7 +78989,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_stranger.cpp_FUN_005c3750",
+    "name":"core_stranger.cpp_adjustAimAngleForOffset_FUN_005c3750",
     "ret":"void",
     "vars":{
       "locals":[
@@ -79013,6 +79056,56 @@
             ]
           },
           "type":"undefined8"
+        }
+      ],
+      "params":[
+        {
+          "name":"angle",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"float*"
+        },
+        {
+          "name":"distance",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"offset",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
         }
       ]
     }

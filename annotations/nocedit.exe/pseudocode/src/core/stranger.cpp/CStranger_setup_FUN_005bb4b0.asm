@@ -39,7 +39,7 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 ;   core_skeleton.cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_0059e070
 ;   core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0
-;   core_stranger.cpp_CStranger_FUN_005be520
+;   core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520
 ;
 ; *****************************************************************************
 
@@ -218,7 +218,7 @@ section .text
     PUSH 0x1                            ; 005bb6a7
     PUSH 0x65347c                       ; 005bb6a9 | = "turnrstart"
     PUSH EDI                            ; 005bb6ae
-    MOV [0x03f6bb1c],EAX                ; 005bb6af | DAT_03f6bb1c
+    MOV [0x03f6bb1c],EAX                ; 005bb6af | INT_03f6bb1c
     CALL core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0 ; 005bb6b4
         ;   XREF to: 0052dce0 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 005bb6b9
@@ -229,7 +229,7 @@ section .text
     PUSH 0x1                            ; 005bb6c5
     PUSH 0x653487                       ; 005bb6c7 | = "pickup"
     PUSH EDI                            ; 005bb6cc
-    MOV [0x03f6bb20],EAX                ; 005bb6cd | DAT_03f6bb20
+    MOV [0x03f6bb20],EAX                ; 005bb6cd | INT_03f6bb20
     CALL core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0 ; 005bb6d2
         ;   XREF to: 0052dce0 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 005bb6d7
@@ -283,8 +283,8 @@ section .text
     MOV dword ptr [EBX + 0x8],EDX       ; 005bb753
     PUSH ESI                            ; 005bb756
         ;   Label: LAB_005bb756
-    CALL core_stranger.cpp_CStranger_FUN_005be520 ; 005bb757
-        ;   XREF to: 005be520 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_FUN_005be520(CStranger * this_ptr)
+    CALL core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520 ; 005bb757
+        ;   XREF to: 005be520 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520(CStranger * this_ptr)
     ADD ESP,0x4                         ; 005bb75c
     PUSH 0x65348e                       ; 005bb75f | = "stranger-hat.kfm"
     LEA EBX,[ESI + 0x1fcd8]             ; 005bb764
@@ -312,7 +312,7 @@ section .text
     CALL core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0059c240 ; 005bb7c5
         ;   XREF to: 0059c240 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0059c240(CDeformableModel * this_ptr, char * part_name, int error_if_not_found)
     ADD ESP,0xc                         ; 005bb7ca
-    MOV [0x03f6bb24],EAX                ; 005bb7cd | DAT_03f6bb24
+    MOV [0x03f6bb24],EAX                ; 005bb7cd | INT_03f6bb24
     ADD ESP,0x18                        ; 005bb7d2
     POP EDI                             ; 005bb7d5
     POP ESI                             ; 005bb7d6

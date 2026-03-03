@@ -2534,7 +2534,7 @@
               }
             ]
           },
-          "type":"CDemonActor*"
+          "type":"CDemonActor**"
         },
         {
           "name":"property_name",
@@ -26320,6 +26320,22 @@
             ]
           },
           "type":"CDoor*"
+        },
+        {
+          "name":"opener",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonActor*"
         }
       ],
       "ret_storage":{
@@ -48204,6 +48220,38 @@
     "name":"core_hero.cpp_CHero_dtor_FUN_004f2470",
     "ret":"CHero*",
     "vars":{
+      "locals":[
+        {
+          "name":"pCVar2",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CHero_ptr_128824",
+          "use":46
+        },
+        {
+          "name":"pCVar3",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CHero_ptr_48728",
+          "use":62
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",
@@ -48305,10 +48353,26 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_hero.cpp_CHero_FUN_004f2af0",
+    "name":"core_hero.cpp_CHero_tryInteract_FUN_004f2af0",
     "ret":"int",
     "vars":{
       "locals":[
+        {
+          "name":"iVar4",
+          "storage":{
+            "reg":"EDI",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:0000001c",
+                "offset":28,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonActor*",
+          "use":161
+        },
         {
           "name":"local_64",
           "storage":{
@@ -48324,6 +48388,22 @@
             ]
           },
           "type":"undefined1"
+        },
+        {
+          "name":"iVar1",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:5fb6852ce4",
+                "offset":411084074212,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonActor*",
+          "use":234
         }
       ],
       "params":[
@@ -48367,7 +48447,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_hero.cpp_CHero_FUN_004f2d70",
+    "name":"core_hero.cpp_CHero_tryOpenNearbyDoor_FUN_004f2d70",
     "ret":"int",
     "vars":{
       "locals":[
@@ -48509,7 +48589,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_hero.cpp_CHero_FUN_004f30f0",
+    "name":"core_hero.cpp_CHero_executeLeverPull_FUN_004f30f0",
     "ret":"int",
     "vars":{
       "params":[
@@ -85210,10 +85290,70 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_stranger.cpp_CStranger_FUN_005c5270",
+    "name":"core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_005c5270",
     "ret":"void",
     "vars":{
       "locals":[
+        {
+          "name":"pCVar11",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CMelee*",
+          "use":1249
+        },
+        {
+          "name":"pCVar8",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CMelee*",
+          "use":1330
+        },
+        {
+          "name":"pCVar9",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CMelee*",
+          "use":1967
+        },
+        {
+          "name":"pCVar10",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CMelee*",
+          "use":2065
+        },
         {
           "name":"local_18",
           "storage":{
@@ -85244,7 +85384,7 @@
               }
             ]
           },
-          "type":"undefined4"
+          "type":"CWeapon*"
         },
         {
           "name":"local_20",
@@ -85340,7 +85480,7 @@
               }
             ]
           },
-          "type":"undefined4"
+          "type":"CDynamite*"
         },
         {
           "name":"local_38",
@@ -85439,6 +85579,22 @@
             ]
           },
           "type":"CStranger*"
+        },
+        {
+          "name":"delta_time",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
         }
       ]
     }
@@ -85570,8 +85726,44 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_stranger.cpp_FUN_005c6970",
-    "ret":"void"
+    "name":"core_stranger.cpp_CCloth_setWindVelocity_FUN_005c6970",
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CCloth*"
+        },
+        {
+          "name":"velocity",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        }
+      ]
+    }
   },
   {
     "addr":"005c6a70",

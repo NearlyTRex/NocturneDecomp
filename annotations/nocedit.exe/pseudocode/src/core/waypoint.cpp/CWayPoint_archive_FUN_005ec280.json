@@ -1,28 +1,19 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 32,
-        "line": 18,
-        "message": "use of undeclared identifier 'stack0xffffffec'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 68,
-    "complexity_score": 40,
+    "complexity_score": 25,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 3,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 25,
-    "suspect_count": 1,
-    "suspect_types": [
-      "stack_ref"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 93
   },
   "cross_references": [],
@@ -132,16 +123,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Direct stack address reference",
-      "line": 11,
-      "match": "&stack0xffffffec",
-      "severity": "moderate",
-      "text": "((CDemonActor *)&stack0xffffffec,\"nextWayPoint\");",
-      "type": "stack_ref"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

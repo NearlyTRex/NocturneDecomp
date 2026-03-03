@@ -23,6 +23,6 @@ void __cdecl core_gargoyle_cpp_CGargoyle_archive_FUN_004e5470(CGargoyle *this_pt
   core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->stone_red,"stoneRed");
   core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->stone_green,"stoneGreen");
   core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->stone_blue,"stoneBlue");
-  core_actor_cpp_archiveActor_FUN_0040b870((CDemonActor *)&this_ptr->home_base,"homeBase");
+  core_actor_cpp_archiveActor_FUN_0040b870(&this_ptr->home_base,"homeBase");
   return;
 }

@@ -4,33 +4,33 @@ FUNCTION COMPILATION SUMMARY
 
 SUMMARY
 --------------------------------------------------
-Total functions compiled: 6493
-Successful: 5732 (88.3%)
-Failed: 761
+Total functions compiled: 6487
+Successful: 5738 (88.5%)
+Failed: 749
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                           1542
-  format_error                     583
-  undeclared_identifier            577
-  incompatible_types               385
-  syntax_error                      71
+  other                           1514
+  format_error                     582
+  undeclared_identifier            572
+  incompatible_types               373
+  syntax_error                      68
   missing_member                    21
   type_error                        20
-  lvalue_required                   19
+  lvalue_required                   17
   pointer_arithmetic                 4
   pointer_precision                  2
 
 ====================================================================================================
-CATEGORY: other (1542 errors)
+CATEGORY: other (1514 errors)
 ====================================================================================================
 
-  core_hero.cpp_CHero_FUN_004f3960
-    Line 66: C-style cast from 'CCharacter *' to 'float' is not allowed...
+  core_hero.cpp_CHero_findNearestEnemy_FUN_004f3960
+    Line 67: C-style cast from 'CCharacter *' to 'float' is not allowed...
   core_imp.cpp_CImp_process_FUN_004f9c30
     Line 267: C-style cast from 'CDemonActor *' to 'float' is not allowed...
   core_mobster.cpp_CMobster_process_FUN_00525840
-    Line 294: C-style cast from 'CDemonActor *' to 'float' is not allowed...
+    Line 295: C-style cast from 'CDemonActor *' to 'float' is not allowed...
   core_gabriela.cpp_CGabriella_ctor_FUN_004d2b20
     Line 19: C-style cast from 'CDemonActor_vtable *' to 'float' is not allowed...
   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
@@ -40,7 +40,7 @@ CATEGORY: other (1542 errors)
   core_frankgen.cpp_CFrankenstienMachine_process_FUN_004d1a40
     Line 96: C-style cast from 'CFrankenstienMachine *' to 'float' is not allowed...
   core_gabriela.cpp_CGabriella_FUN_004d4890
-    Line 80: C-style cast from 'CGabriella *' to 'float' is not allowed...
+    Line 81: C-style cast from 'CGabriella *' to 'float' is not allowed...
   core_set.cpp_CDemonSet_buildDisplayList_FUN_0056fbd0
     Line 120: C-style cast from 'CHero *' to 'float' is not allowed...
   core_set.cpp_CDemonSet_setLightingParameters_FUN_0056d380
@@ -55,10 +55,10 @@ CATEGORY: other (1542 errors)
     Line 19: C-style cast from 'CVector3f *' to 'float' is not allowed...
   core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010
     Line 20: C-style cast from 'CVector3f *' to 'float' is not allowed...
-  core_stranger.cpp_CStranger_FUN_005bdd20
-    Line 42: C-style cast from 'CVector3f *' to 'float' is not allowed...
-  core_stranger.cpp_CStranger_FUN_005c07b0
-    Line 384: C-style cast from 'CWeapon *' to 'float' is not allowed...
+  core_stranger.cpp_CStranger_processMotionEvents_FUN_005bdd20
+    Line 43: C-style cast from 'CVector3f *' to 'float' is not allowed...
+  core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_005c07b0
+    Line 382: C-style cast from 'CWeapon *' to 'float' is not allowed...
   core_cloth.cpp_CCloth_boneEditor_FUN_0043c880
     Line 72: C-style cast from 'SClothBone *' to 'float' is not allowed...
   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_0042d090
@@ -79,17 +79,17 @@ CATEGORY: other (1542 errors)
     Line 112: C-style cast from 'float *' to 'float' is not allowed...
   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0
     Line 151: C-style cast from 'float *' to 'float' is not allowed...
-  core_hero.cpp_CHero_FUN_004f33b0
-    Line 57: C-style cast from 'struct CDemonActor *' to 'float' is not allowed...
+  core_hero.cpp_CHero_tryApproachNearbyActor_FUN_004f33b0
+    Line 55: C-style cast from 'struct CDemonActor *' to 'float' is not allowed...
   core_msnedit.cpp_CDemonMission_showDifficultyStats_FUN_0053d3b0
     Line 52: C-style cast from 'struct CDemonActor *' to 'float' is not allowed...
   core_script.cpp_CScript_step_FUN_0055a810
-    Line 2476: C-style cast from 'struct CDemonActor *' to 'float' is not allowed...
+    Line 2478: C-style cast from 'struct CDemonActor *' to 'float' is not allowed...
 
-  ... and 291 more errors
+  ... and 288 more errors
 
 ====================================================================================================
-CATEGORY: format_error (583 errors)
+CATEGORY: format_error (582 errors)
 ====================================================================================================
 
   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50
@@ -156,7 +156,7 @@ CATEGORY: format_error (583 errors)
   ... and 143 more errors
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (577 errors)
+CATEGORY: undeclared_identifier (572 errors)
 ====================================================================================================
 
   core_actor.cpp_adjustIndentationLevel_FUN_0040aee0
@@ -207,7 +207,7 @@ CATEGORY: undeclared_identifier (577 errors)
     Line 39: use of undeclared identifier '_in_stack_00000010'; did you mean 'in_stack_000000...
   core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0
     Line 95: use of undeclared identifier '_local_1a4'; did you mean 'local_1a4'?...
-  core_stranger.cpp_CStranger_FUN_005be520
+  core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520
     Line 154: use of undeclared identifier '_local_1ecc'; did you mean 'local_1ecc'?...
   cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_0054b190
     Line 37: use of undeclared identifier '_transparency_color'; did you mean 'transparency_c...
@@ -220,10 +220,10 @@ CATEGORY: undeclared_identifier (577 errors)
   core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50
     Line 55: use of undeclared identifier 'code'...
 
-  ... and 200 more errors
+  ... and 197 more errors
 
 ====================================================================================================
-CATEGORY: incompatible_types (385 errors)
+CATEGORY: incompatible_types (373 errors)
 ====================================================================================================
 
   engine_fileio.cpp_CCheckOutList_add_FUN_004b2d00
@@ -251,7 +251,7 @@ CATEGORY: incompatible_types (385 errors)
   core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_00524c20
     Line 40: assigning to 'CHeroPlaceholder *' from incompatible type 'void *'...
   core_succubus.cpp_CSuccubus_process_FUN_005c6e90
-    Line 226: assigning to 'CHotDemon *' from incompatible type 'void *'...
+    Line 233: assigning to 'CHotDemon *' from incompatible type 'void *'...
   support_codec.cpp_CLZWDictionary_init_FUN_0043ee60
     Line 17: assigning to 'CLZWDictionaryNode *' from incompatible type 'void *'...
   shape_meshlod.cpp_CLodMesh_findOrCreateEdge_FUN_00515ec0
@@ -287,10 +287,10 @@ CATEGORY: incompatible_types (385 errors)
   shape_superopt.cpp_CObj_addPolygons_FUN_005d2410
     Line 22: assigning to 'CPoly *' from incompatible type 'void *'...
 
-  ... and 211 more errors
+  ... and 201 more errors
 
 ====================================================================================================
-CATEGORY: syntax_error (71 errors)
+CATEGORY: syntax_error (68 errors)
 ====================================================================================================
 
   core_dskybox.cpp_renderSkyDome_FUN_004901f0
@@ -315,8 +315,6 @@ CATEGORY: syntax_error (71 errors)
     Line 1248: expected expression...
   core_ghoul.cpp_CGhoul_process_FUN_004e6600
     Line 151: expected expression...
-  core_hero.cpp_CHero_FUN_004f2af0
-    Line 46: expected expression...
   core_inv.cpp_CInventory_addItem_FUN_004fd600
     Line 53: expected expression...
   core_lightgun.cpp_CLightGun_fire_FUN_00505c70
@@ -336,15 +334,13 @@ CATEGORY: syntax_error (71 errors)
   core_shotgun.cpp_CShotgun_fire_FUN_00588060
     Line 120: expected expression...
   core_smiley.cpp_CSmiley_process_FUN_005a2800
-    Line 119: expected expression...
-  core_stranger.cpp_CStranger_FUN_005bdd20
-    Line 104: expected expression...
-  core_stranger.cpp_FUN_005bafe0
-    Line 18: expected expression...
+    Line 118: expected expression...
+  core_stranger.cpp_CStranger_processMotionEvents_FUN_005bdd20
+    Line 102: expected expression...
   core_trap.cpp_CTrap_process_FUN_005de770
     Line 24: expected expression...
   core_zombie.cpp_CZombie_process_FUN_005f9470
-    Line 728: expected expression...
+    Line 729: expected expression...
   core_zombie.cpp_FUN_005f8cc0
     Line 18: expected expression...
   core_zombie.cpp_FUN_005f8d30
@@ -353,8 +349,12 @@ CATEGORY: syntax_error (71 errors)
     Line 124: expected expression...
   engine_dosio.c_findFile_FUN_00481760
     Line 24: expected expression...
+  shape_superopt.cpp_CObj_addPolygons_FUN_005d2410
+    Line 44: expected expression...
+  shape_superopt.cpp_CObj_allocatePolygons_FUN_005d2320
+    Line 44: expected expression...
 
-  ... and 17 more errors
+  ... and 15 more errors
 
 ====================================================================================================
 CATEGORY: missing_member (21 errors)
@@ -389,12 +389,12 @@ CATEGORY: type_error (20 errors)
     Line 22: unknown type name 'code'...
   core_scat.cpp_CScat_process_FUN_005571f0
     Line 38: unknown type name 'code'...
-  core_stranger.cpp_CStranger_FUN_005be520
-    Line 34: unknown type name 'code'...
-  core_stranger.cpp_CStranger_FUN_005bf720
-    Line 22: unknown type name 'code'...
-  core_stranger.cpp_CStranger_FUN_005bfb60
+  core_stranger.cpp_CStranger_extractTurnPoseData_FUN_005bf720
+    Line 21: unknown type name 'code'...
+  core_stranger.cpp_CStranger_makeDrawDecision_FUN_005bfb60
     Line 29: unknown type name 'code'...
+  core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520
+    Line 34: unknown type name 'code'...
   core_svetlana.cpp_CSvetlana_process_FUN_005d8ba0
     Line 30: unknown type name 'code'...
   engine_3d.c_renderPolygonAdaptiveDepthMode_FUN_00404ae0
@@ -411,7 +411,7 @@ CATEGORY: type_error (20 errors)
     Line 23: unknown type name 'undefined5'...
 
 ====================================================================================================
-CATEGORY: lvalue_required (19 errors)
+CATEGORY: lvalue_required (17 errors)
 ====================================================================================================
 
   core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0
@@ -422,14 +422,10 @@ CATEGORY: lvalue_required (19 errors)
     Line 29: cannot take the address of an rvalue of type 'float'...
   core_msnedit.cpp_CDemonMission_enemyRandomizer_FUN_005379e0
     Line 80: cannot take the address of an rvalue of type 'float'...
-  core_scat.cpp_CScat_FUN_005584a0
-    Line 114: cannot take the address of an rvalue of type 'float'...
   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
     Line 537: cannot take the address of an rvalue of type 'float'...
   core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
     Line 493: cannot take the address of an rvalue of type 'float'...
-  core_stranger.cpp_CStranger_FUN_005c02b0
-    Line 141: cannot take the address of an rvalue of type 'float'...
   core_main.c_initializeGameSystems_FUN_00507a60
     Line 145: cannot take the address of an rvalue of type 'int'...
   shape_design.c_complexPolygonReduction_FUN_00463b30
@@ -456,7 +452,7 @@ COMPILATION VS SUSPECT PATTERNS
 ====================================================================================================
 
 Average suspects in successfully compiled functions: 2.04
-Average suspects in failed compilations: 10.82
+Average suspects in failed compilations: 10.72
 
-Functions that compile but have suspect patterns: 1698
+Functions that compile but have suspect patterns: 1692
 (These may have runtime issues even though syntax is valid)

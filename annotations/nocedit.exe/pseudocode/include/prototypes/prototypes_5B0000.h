@@ -25,11 +25,13 @@
 #include "types/classes/CVector3i.h"
 #include "types/classes/CWavInDevice.h"
 #include "types/classes/CWavOutDevice.h"
+#include "types/classes/CWeapon.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SHardwareEdge.h"
 #include "types/structs/SIntersectXZCylinder.h"
 #include "types/structs/SMRGLPrimitiveTriangle.h"
 #include "types/structs/SMRGLTextureBasic.h"
+#include "types/structs/SPoseData.h"
 #include "types/structs/SProjectedVertex.h"
 #include "types/structs/SRGBColorPalette.h"
 #include "types/structs/SRecordingDeviceInfo.h"
@@ -253,30 +255,24 @@ int __cdecl core_stone_cpp_CTempleStone_canPickup_FUN_005bad70(CTempleStone *thi
 void __cdecl core_stone_cpp_CTempleStone_getPropertyList_FUN_005badd0(CTempleStone *this_ptr,CActorPropertyList *property_list);
 CTempleStone * __cdecl core_stone_cpp_CTempleStone_dtor_FUN_005bae10(CTempleStone *this_ptr,uint flags);
 void __cdecl core_stranger_cpp_staticInit_FUN_005bae80(void);
-float __cdecl core_stranger_cpp_FUN_005baee0(int current_bone_index,int target_bone_index,float blend_weight, int hierarchy_distance,CDeformableModelInstance *instance);
-int __cdecl core_stranger_cpp_FUN_005baf20(void);
-int __cdecl core_stranger_cpp_FUN_005baf3d(void);
-int __cdecl core_stranger_cpp_FUN_005bafa0(void);
-int __cdecl core_stranger_cpp_FUN_005bafba(void);
-int __cdecl core_stranger_cpp_FUN_005bafc0(void);
-int __cdecl core_stranger_cpp_FUN_005bafc6(void);
-int __cdecl core_stranger_cpp_FUN_005bafcc(void);
-int __cdecl core_stranger_cpp_FUN_005bafd2(void);
-int __cdecl core_stranger_cpp_FUN_005bafe0(void);
-float __cdecl core_stranger_cpp_FUN_005bb010(void);
+float __cdecl core_stranger_cpp_blendWeightCallback_FUN_005baee0(int bone,int target,float weight,int distance,CDeformableModelInstance *instance);
+int __cdecl core_stranger_cpp_getWeaponInteractionType_FUN_005baf20(CWeapon *weapon);
+int __cdecl core_stranger_cpp_getWeaponHoldType_FUN_005bafa0(CWeapon *weapon);
+int __cdecl core_stranger_cpp_canPickupObject_FUN_005bafe0(CDemonActor *actor,CDemonActor *object);
+float __cdecl core_stranger_cpp_getCarriedObjectVerticalOffset_FUN_005bb010(CDemonActor *object);
 CStranger * __cdecl core_stranger_cpp_factoryFunc_FUN_005bb0e0(void);
 CDemonActorType * __cdecl core_stranger_cpp_CStranger_getActorType_FUN_005bb110(CStranger *this_ptr);
 CStranger * __cdecl core_stranger_cpp_CStranger_ctor_FUN_005bb120(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_setup_FUN_005bb4b0(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_process_FUN_005bb830(CStranger *this_ptr,float delta_time);
-void __cdecl core_stranger_cpp_CStranger_FUN_005bb960(CStranger *this_ptr);
-void __cdecl core_stranger_cpp_CStranger_FUN_005bdd20(CStranger *this_ptr);
-int __cdecl core_stranger_cpp_CStranger_FUN_005be430(CStranger *this_ptr);
-int __cdecl core_stranger_cpp_FUN_005be480(void);
-float * __cdecl core_stranger_cpp_CStranger_FUN_005be490(CStranger *this_ptr);
-void __cdecl core_stranger_cpp_CStranger_FUN_005be520(CStranger *this_ptr);
-void __cdecl core_stranger_cpp_CStranger_FUN_005bf720(CStranger *this_ptr);
-void __cdecl core_stranger_cpp_CStranger_FUN_005bf800(CStranger *this_ptr);
+void __cdecl core_stranger_cpp_CStranger_processFrame_FUN_005bb960(CStranger *this_ptr,float delta_time);
+void __cdecl core_stranger_cpp_CStranger_processMotionEvents_FUN_005bdd20(CStranger *this_ptr,float delta_time);
+float __cdecl core_stranger_cpp_CStranger_getCarryLightIntensity_FUN_005be430(CStranger *this_ptr);
+float __cdecl core_stranger_cpp_getDefaultAimPitch_FUN_005be480(void);
+CVector3f * __cdecl core_stranger_cpp_CStranger_getHandsMidpoint_FUN_005be490(CStranger *this_ptr,CVector3f *out_position);
+void __cdecl core_stranger_cpp_CStranger_updateProceduralAnimation_FUN_005be520(CStranger *this_ptr);
+void __cdecl core_stranger_cpp_CStranger_extractTurnPoseData_FUN_005bf720(CStranger *this_ptr,SPoseData *out_pose);
+void __cdecl core_stranger_cpp_CStranger_updateTurnBlending_FUN_005bf800(CStranger *this_ptr,float delta_time);
 void __cdecl core_stranger_cpp_CStranger_setPositionAndOrientation_FUN_005bfb10(CStranger *this_ptr,CVector3f *new_position,CVector3f *new_orientation);
-void __cdecl core_stranger_cpp_CStranger_FUN_005bfb60(CStranger *this_ptr);
+void __cdecl core_stranger_cpp_CStranger_makeDrawDecision_FUN_005bfb60(CStranger *this_ptr);
 

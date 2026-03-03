@@ -1,31 +1,24 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 16,
-        "line": 324,
-        "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 792,
-    "complexity_score": 458,
+    "complexity_score": 461,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 29,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 323,
+    "pseudocode_lines": 326,
     "suspect_count": 12,
     "suspect_types": [
       "decompiler_intrinsic",
       "warning_inlined_function",
       "warning_type_propagation"
     ],
-    "total_lines": 1115
+    "total_lines": 1118
   },
   "cross_references": [],
   "function": {
@@ -780,7 +773,7 @@
       "line": 215,
       "match": "fpatan",
       "severity": "mild",
-      "text": "fVar19 = (float10)fpatan((float10)local_88,(float10)local_80);",
+      "text": "fVar20 = (float10)fpatan((float10)local_88,(float10)local_80);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -788,7 +781,7 @@
       "line": 216,
       "match": "SQRT",
       "severity": "mild",
-      "text": "fVar18 = SQRT((float10)local_88 * (float10)local_88 + (float10)local_80 * (float10)local_80);",
+      "text": "fVar19 = SQRT((float10)local_88 * (float10)local_88 + (float10)local_80 * (float10)local_80);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -796,39 +789,39 @@
       "line": 217,
       "match": "fpatan",
       "severity": "mild",
-      "text": "fVar21 = (float10)fpatan((float10)local_84,fVar18);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 248,
-      "match": "fsin",
-      "severity": "mild",
-      "text": "fVar21 = (float10)fsin(fVar18);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 250,
-      "match": "fsin",
-      "severity": "mild",
-      "text": "fVar20 = (float10)fsin(fVar19);",
+      "text": "fVar22 = (float10)fpatan((float10)local_84,fVar19);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 251,
-      "match": "fcos",
+      "match": "fsin",
       "severity": "mild",
-      "text": "fVar18 = (float10)fcos(fVar18);",
+      "text": "fVar22 = (float10)fsin(fVar19);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 252,
+      "line": 253,
+      "match": "fsin",
+      "severity": "mild",
+      "text": "fVar21 = (float10)fsin(fVar20);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 254,
       "match": "fcos",
       "severity": "mild",
       "text": "fVar19 = (float10)fcos(fVar19);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 255,
+      "match": "fcos",
+      "severity": "mild",
+      "text": "fVar20 = (float10)fcos(fVar20);",
       "type": "decompiler_intrinsic"
     }
   ],

@@ -71,77 +71,77 @@ void __cdecl CHero::releaseFromGrab(CHero *this_ptr);
 // Address: 004f2a30
 void __cdecl CHero::createDefaultWeapon(CHero *this_ptr);
 
-// Original: core_hero.cpp_CHero_FUN_004f2af0
+// Original: core_hero.cpp_CHero_tryInteract_FUN_004f2af0
 // Address: 004f2af0
-int __cdecl CHero(CHero *this_ptr);
+int __cdecl CHero::tryInteract(CHero *this_ptr);
 
-// Original: core_hero.cpp_CHero_FUN_004f2c40
+// Original: core_hero.cpp_CHero_tryTalkToNearbyCharacter_FUN_004f2c40
 // Address: 004f2c40
-int __cdecl CHero(CHero *this_ptr);
+int __cdecl CHero::tryTalkToNearbyCharacter(CHero *this_ptr);
 
-// Original: core_hero.cpp_CHero_FUN_004f2d70
+// Original: core_hero.cpp_CHero_tryOpenNearbyDoor_FUN_004f2d70
 // Address: 004f2d70
-int __cdecl CHero(CHero *this_ptr);
+int __cdecl CHero::tryOpenNearbyDoor(CHero *this_ptr);
 
-// Original: core_hero.cpp_CHero_FUN_004f2ed0
+// Original: core_hero.cpp_CHero_tryOpenDoor_FUN_004f2ed0
 // Address: 004f2ed0
-int __cdecl CHero(CHero *this_ptr);
+int __cdecl CHero::tryOpenDoor(CHero *this_ptr);
 
-// Original: core_hero.cpp_CHero_FUN_004f2f50
+// Original: core_hero.cpp_CHero_tryPullLever_FUN_004f2f50
 // Address: 004f2f50
-int __cdecl CHero(CHero *this_ptr);
+int __cdecl CHero::tryPullLever(CHero *this_ptr);
 
-// Original: core_hero.cpp_CHero_FUN_004f30f0
+// Original: core_hero.cpp_CHero_executeLeverPull_FUN_004f30f0
 // Address: 004f30f0
-int __cdecl CHero(CHero *this_ptr);
+int __cdecl CHero::executeLeverPull(CHero *this_ptr);
 
-// Original: core_hero.cpp_CHero_FUN_004f3120
+// Original: core_hero.cpp_CHero_tryPushNearbyBox_FUN_004f3120
 // Address: 004f3120
-int __cdecl CHero(CHero *this_ptr);
+int __cdecl CHero::tryPushNearbyBox(CHero *this_ptr);
 
-// Original: core_hero.cpp_CHero_FUN_004f3350
+// Original: core_hero.cpp_CHero_stopPushingBox_FUN_004f3350
 // Address: 004f3350
-void __cdecl CHero(CHero *this_ptr);
+void __cdecl CHero::stopPushingBox(CHero *this_ptr);
 
-// Original: core_hero.cpp_CHero_FUN_004f33b0
+// Original: core_hero.cpp_CHero_tryApproachNearbyActor_FUN_004f33b0
 // Address: 004f33b0
-int __cdecl CHero(CHero *this_ptr);
+int __cdecl CHero::tryApproachNearbyActor(CHero *this_ptr);
 
-// Original: core_hero.cpp_CHero_FUN_004f3580
+// Original: core_hero.cpp_CHero_stopNearbyInteraction_FUN_004f3580
 // Address: 004f3580
-void __cdecl CHero(CHero *this_ptr);
+void __cdecl CHero::stopNearbyInteraction(CHero *this_ptr);
 
-// Original: core_hero.cpp_CHero_FUN_004f35b0
+// Original: core_hero.cpp_CHero_findItemUseTarget_FUN_004f35b0
 // Address: 004f35b0
-int __cdecl CHero(CHero *this_ptr);
+int __cdecl CHero::findItemUseTarget(CHero *this_ptr);
 
-// Original: core_hero.cpp_CHero_FUN_004f3760
+// Original: core_hero.cpp_CHero_tryUseSelectedItem_FUN_004f3760
 // Address: 004f3760
-int __cdecl CHero(CHero *this_ptr);
+int __cdecl CHero::tryUseSelectedItem(CHero *this_ptr);
 
 // Original: core_hero.cpp_CHero_canLookAt_FUN_004f37d0
 // Address: 004f37d0
 int __cdecl CHero::canLookAt(CHero *this_ptr);
 
-// Original: core_hero.cpp_CHero_FUN_004f3890
+// Original: core_hero.cpp_CHero_executeObjectPickup_FUN_004f3890
 // Address: 004f3890
-void __cdecl CHero(CHero *this_ptr,int hand_index);
+void __cdecl CHero::executeObjectPickup(CHero *this_ptr,int hand_index);
 
-// Original: core_hero.cpp_CHero_FUN_004f38d0
+// Original: core_hero.cpp_CHero_addCarriedItemToInventory_FUN_004f38d0
 // Address: 004f38d0
-void __cdecl CHero(CHero *this_ptr);
+void __cdecl CHero::addCarriedItemToInventory(CHero *this_ptr,int hand_index);
 
-// Original: core_hero.cpp_CHero_FUN_004f3910
+// Original: core_hero.cpp_CHero_removeMatchingKeys_FUN_004f3910
 // Address: 004f3910
-void __cdecl CHero(CHero *this_ptr);
+void __cdecl CHero::removeMatchingKeys(CHero *this_ptr,uint key_mask);
 
-// Original: core_hero.cpp_CHero_FUN_004f3930
+// Original: core_hero.cpp_CHero_setAiTask_FUN_004f3930
 // Address: 004f3930
-void __cdecl CHero(CHero *this_ptr);
+void __cdecl CHero::setAiTask(CHero *this_ptr,int ai_task);
 
-// Original: core_hero.cpp_CHero_FUN_004f3960
+// Original: core_hero.cpp_CHero_findNearestEnemy_FUN_004f3960
 // Address: 004f3960
-float __cdecl CHero(CHero *this_ptr);
+float __cdecl CHero::findNearestEnemy(CHero *this_ptr,float *out_distance);
 
 // Original: core_hero.cpp_CHero_kill_FUN_004f3af0
 // Address: 004f3af0

@@ -2,24 +2,23 @@
 // Address: 00481070
 // Address Range: [[00481070, 0048120e]]
 // Convention: __cdecl
-// Signature: int __cdecl core_door_cpp_CDoor_getMoveType_FUN_00481070(CDoor *this_ptr)
+// Signature: int __cdecl core_door_cpp_CDoor_getMoveType_FUN_00481070(CDoor *this_ptr,CDemonActor *opener)
 
 #include "nocturne.h"
 
-int __cdecl core_door_cpp_CDoor_getMoveType_FUN_00481070(CDoor *this_ptr)
+int __cdecl core_door_cpp_CDoor_getMoveType_FUN_00481070(CDoor *this_ptr,CDemonActor *opener)
 
 {
   char *message;
-  int in_stack_00000008;
   CVector3f local_18;
   
   core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-            (&this_ptr->base,&local_18,(CVector3f *)(in_stack_00000008 + 0x20));
+            (&this_ptr->base,&local_18,&(opener->location).position);
   message = support_newmsg_cpp_getLocalizedString_FUN_005441f0("The door is locked from the other side.");
   if (local_18.z <= 0.0) {
     if ((this_ptr->allowed_sides & 2) != 0) goto LAB_004811fd;
     if (this_ptr->allowed_sides != 0) {
-      core_door_cpp_CDoor_FUN_00481210(this_ptr);
+      core_door_cpp_CDoor_onLocked_FUN_00481210(this_ptr);
       core_game_cpp_CGame_displayMessage_FUN_004d7f20(g_CGamePtr,message,5.0);
       return 0;
     }
@@ -56,7 +55,7 @@ LAB_004811fd:
       }
     }
     if (this_ptr->allowed_sides != 0) {
-      core_door_cpp_CDoor_FUN_00481210(this_ptr);
+      core_door_cpp_CDoor_onLocked_FUN_00481210(this_ptr);
       core_game_cpp_CGame_displayMessage_FUN_004d7f20(g_CGamePtr,message,5.0);
     }
   }

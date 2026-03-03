@@ -55,8 +55,9 @@ void __cdecl core_colonel_cpp_CColonel_FUN_0043ff20(CColonel *this_ptr)
     local_2c = SQRT(local_54.z * local_54.z + local_54.x * local_54.x + local_54.y * local_54.y);
     if (((((this_ptr->base).ai_task == 3) || (local_2c < 20.0f)) &&
         ((iVar7 = (this_ptr->base).ai_task, iVar7 == 2 || (iVar7 == 3)))) &&
-       ((pCVar4 = (CHero *)core_hero_cpp_CHero_FUN_004f3960(&this_ptr->base), pCVar4 != (CHero *)0x0
-        && (local_88 < (float)20)))) {
+       ((pCVar4 = (CHero *)core_hero_cpp_CHero_findNearestEnemy_FUN_004f3960
+                                     (&this_ptr->base,&local_88), pCVar4 != (CHero *)0x0 &&
+        (local_88 < (float)20)))) {
       bVar2 = true;
       pCVar8 = pCVar4;
     }

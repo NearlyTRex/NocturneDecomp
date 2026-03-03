@@ -1,8 +1,5 @@
 #pragma once
 
-// Dependencies
-#include "prototypes/prototypes_5B0000.h"
-
 // =============================================================================
 // CONSTANTS
 // =============================================================================
@@ -16,14 +13,14 @@ static void* DAT_005B2FC0 = (void*)0x005B3692; // caseD_1
 static void* DAT_005B2FC4 = (void*)0x005B3780; // caseD_3
 static void* DAT_005B2FC8 = (void*)0x005B3780; // caseD_3
 static void* DAT_005B2FCC = (void*)0x005B3510; // caseD_4
-static void* DAT_005BAF74 = (void*)core_stranger_cpp_FUN_005bafc0;
-static void* DAT_005BAF78 = (void*)core_stranger_cpp_FUN_005bafcc;
-static void* DAT_005BAF7C = (void*)core_stranger_cpp_FUN_005baf3d;
-static void* DAT_005BAF80 = (void*)core_stranger_cpp_FUN_005bafc6;
-static void* DAT_005BAF84 = (void*)core_stranger_cpp_FUN_005bafba;
-static void* DAT_005BAF88 = (void*)core_stranger_cpp_FUN_005baf3d;
-static void* DAT_005BAF8C = (void*)core_stranger_cpp_FUN_005bafd2;
-static void* DAT_005BAF90 = (void*)core_stranger_cpp_FUN_005baf3d;
+static void* DAT_005BAF74 = (void*)0x005BAFC0; // caseD_1
+static void* DAT_005BAF78 = (void*)0x005BAFCC; // caseD_2
+static void* DAT_005BAF7C = (void*)0x005BAF3D; // caseD_3
+static void* DAT_005BAF80 = (void*)0x005BAFC6; // caseD_4
+static void* DAT_005BAF84 = (void*)0x005BAFBA; // caseD_0
+static void* DAT_005BAF88 = (void*)0x005BAF3D; // caseD_3
+static void* DAT_005BAF8C = (void*)0x005BAFD2; // caseD_7
+static void* DAT_005BAF90 = (void*)0x005BAF3D; // caseD_3
 static void* DAT_005BB7E0 = (void*)0x005BB84E; // caseD_1b
 static void* DAT_005BB7E4 = (void*)0x005BB84E; // caseD_1b
 static void* DAT_005BB7E8 = (void*)0x005BB84E; // caseD_1b

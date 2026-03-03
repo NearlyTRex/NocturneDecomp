@@ -5,11 +5,11 @@ VIRTUAL FILE COMPLETION REPORT
 SUMMARY
 --------------------------------------------------
 Total virtual files: 214
-Total functions: 6493
-Clean functions: 4444 (68.4%)
+Total functions: 6487
+Clean functions: 4461 (68.8%)
 Files at 100%: 20
-Files at 90%+: 39
-Files at 50%+: 197
+Files at 90%+: 40
+Files at 50%+: 198
 
 ====================================================================================================
 FILES AT 100% (COMPLETE)
@@ -19,7 +19,7 @@ FILES AT 100% (COMPLETE)
   core/barrier.cpp: 14 functions, 203 lines
   core/battery.cpp: 17 functions, 155 lines
   core/camview.cpp: 6 functions, 38 lines
-  core/crate.cpp: 20 functions, 306 lines
+  core/crate.cpp: 20 functions, 305 lines
   core/dfont.cpp: 3 functions, 279 lines
   core/flashlit.cpp: 7 functions, 65 lines
   core/flattn.cpp: 2 functions, 11 lines
@@ -55,7 +55,7 @@ FILES AT 90-99% (ALMOST COMPLETE)
 
    94.4% | core/ammobox.cpp
          17/18 clean, 1 remaining
-           - core_ammobox.cpp_CAmmoBox_FUN_00411690 (13 lines) [stack_param]
+           - core_ammobox.cpp_CAmmoBox_FUN_00411690 (12 lines) [param_count_too_many]
 
    94.1% | core/trap.cpp
          16/17 clean, 1 remaining
@@ -72,6 +72,11 @@ FILES AT 90-99% (ALMOST COMPLETE)
    92.9% | core/beast.cpp
          13/14 clean, 1 remaining
            - core_beast.cpp_CBeast_dtor_FUN_00418490 (30 lines) [negative_offset]
+
+   92.9% | core/door.cpp
+         26/28 clean, 2 remaining
+           - core_door.cpp_CDoor_process_FUN_004800c0 (188 lines) [decompiler_intrinsic, pointer_cast, unresolved_funcptr]
+           - core_door.cpp_CDoor_getOpenStandPos_FUN_00480e20 (86 lines) [stack_param]
 
    92.9% | core/gasmask.cpp
          13/14 clean, 1 remaining
@@ -120,7 +125,7 @@ FILES AT 90-99% (ALMOST COMPLETE)
          9/10 clean, 1 remaining
            - engine_light.cpp_calculatePhongLighting_FUN_00505530 (97 lines) [param_count_too_few, pointer_cast, stack_alignment_array]
 
-Total: 19 files
+Total: 20 files
 
 ====================================================================================================
 FILES AT 50-89%
@@ -129,11 +134,6 @@ FILES AT 50-89%
          17/19 clean, 2 remaining
            - core_armour.cpp_CEnemy_dtor_FUN_004125c0 (31 lines) [negative_offset]
            - core_armour.cpp_CArmour_dtor_FUN_00412500 (31 lines) [negative_offset]
-   89.3% | core/door.cpp
-         25/28 clean, 3 remaining
-           - core_door.cpp_CDoor_process_FUN_004800c0 (188 lines) [decompiler_intrinsic, pointer_cast, unresolved_funcptr]
-           - core_door.cpp_CDoor_getOpenStandPos_FUN_00480e20 (86 lines) [stack_param]
-           - core_door.cpp_CDoor_getMoveType_FUN_00481070 (65 lines) [param_count_too_few, stack_param]
    88.9% | core/hpriest.cpp
          8/9 clean, 1 remaining
            - core_hpriest.cpp_CHighPriestOfGardath_dtor_FUN_004f7cb0 (34 lines) [negative_offset]
@@ -158,6 +158,14 @@ FILES AT 50-89%
          14/16 clean, 2 remaining
            - core_flamecan.cpp_CFlameCan_dtor_FUN_004cb7a0 (20 lines) [negative_offset]
            - core_flamecan.cpp_CFlameCan_ctor_FUN_004cb160 (42 lines) [negative_offset]
+   87.5% | core/hero.cpp
+         42/48 clean, 6 remaining
+           - core_hero.cpp_CHero_dtor_FUN_004f2470 (33 lines) [decompiler_intrinsic, negative_offset, pointer_cast]
+           - core_hero.cpp_closestHeroToPoint_FUN_004f2170 (34 lines) [pointer_cast]
+           - core_hero.cpp_isAnyHeroWithinRadius_FUN_004f2220 (24 lines) [pointer_cast]
+           - core_hero.cpp_CHero_ctor_FUN_004f2340 (36 lines) [decompiler_intrinsic, param_count_too_few]
+           - core_hero.cpp_CHeroPlaceholder_createHero_FUN_004f3d80 (64 lines) [unnamed_param]
+           - core_hero.cpp_isAnyHeroWithinCylinder_FUN_004f22a0 (24 lines) [decompiler_intrinsic, pointer_cast]
    87.5% | core/stone.cpp
          7/8 clean, 1 remaining
            - core_stone.cpp_CTempleStone_dtor_FUN_005bae10 (20 lines) [negative_offset]
@@ -169,6 +177,11 @@ FILES AT 50-89%
          13/15 clean, 2 remaining
            - core_trash.cpp_CTrash_process_FUN_005decf0 (261 lines) [decompiler_intrinsic, pointer_cast]
            - core_trash.cpp_FUN_005decc0 (8 lines) [stack_param]
+   86.4% | core/lever.cpp
+         19/22 clean, 3 remaining
+           - core_lever.cpp_CLever_ctor_FUN_005047d0 (46 lines) [negative_offset]
+           - core_lever.cpp_CLever_FUN_00504dd0 (25 lines) [decompiler_intrinsic, stack_param, warning_inlined_function]
+           - core_lever.cpp_CLever_setState_FUN_00504b20 (36 lines) [unnamed_param]
    85.7% | core/biggs.cpp
          12/14 clean, 2 remaining
            - core_biggs.cpp_CBiggs_renderOpaque_FUN_004189b0 (46 lines) [undefined_data]
@@ -181,7 +194,7 @@ FILES AT 50-89%
            - core_gun.cpp_CGun_fire_FUN_004f0350 (219 lines) [decompiler_intrinsic, stack_param, stack_ref, sub84_truncation, suspect_float, unknown_field]
    85.7% | core/hotdemon.cpp
          12/14 clean, 2 remaining
-           - core_hotdemon.cpp_CHotDemon_process_FUN_004f6f20 (303 lines) [decompiler_intrinsic, warning_type_propagation]
+           - core_hotdemon.cpp_CHotDemon_process_FUN_004f6f20 (308 lines) [decompiler_intrinsic, warning_type_propagation]
            - core_hotdemon.cpp_CHotDemon_dtor_FUN_004f7a40 (30 lines) [negative_offset]
    85.7% | core/npc.cpp
          12/14 clean, 2 remaining
@@ -198,16 +211,16 @@ FILES AT 50-89%
            - core_emitter.cpp_CEmitter_process_FUN_004a8070 (251 lines) [decompiler_intrinsic, warning_type_propagation]
    84.6% | core/dog.cpp
          11/13 clean, 2 remaining
-           - core_dog.cpp_CZombieDog_process_FUN_0047f140 (266 lines) [decompiler_intrinsic, warning_type_propagation]
+           - core_dog.cpp_CZombieDog_process_FUN_0047f140 (273 lines) [decompiler_intrinsic, warning_type_propagation]
            - core_dog.cpp_CZombieDog_dtor_FUN_0047f9a0 (31 lines) [negative_offset]
    84.6% | core/drone.cpp
          11/13 clean, 2 remaining
            - core_drone.cpp_CDrone_dtor_FUN_0048f5a0 (31 lines) [negative_offset]
-           - core_drone.cpp_CDrone_process_FUN_0048ec70 (261 lines) [warning_type_propagation]
+           - core_drone.cpp_CDrone_process_FUN_0048ec70 (262 lines) [warning_type_propagation]
    84.6% | core/larva.cpp
          11/13 clean, 2 remaining
            - core_larva.cpp_CLarva_dtor_FUN_00503cc0 (30 lines) [negative_offset]
-           - core_larva.cpp_CLarva_process_FUN_00503080 (342 lines) [decompiler_intrinsic, stack_param, stack_ref, unknown_type, warning_inlined_function, warning_unreachable]
+           - core_larva.cpp_CLarva_process_FUN_00503080 (345 lines) [decompiler_intrinsic, stack_param, stack_ref, unknown_type, warning_inlined_function, warning_unreachable]
    84.6% | shape/memdbg.cpp
          22/26 clean, 4 remaining
            - shape_memdbg.cpp_debugRealloc_FUN_0050f540 (55 lines) [pointer_cast]
@@ -269,12 +282,6 @@ FILES AT 50-89%
            - engine_pod.cpp_CPodFile_verifyChecksum_FUN_00550230 (114 lines) [pointer_cast]
            - engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650 (378 lines) [decompiler_intrinsic, pointer_cast]
            - engine_pod.cpp_findFilesByExtension_FUN_00550ce0 (110 lines) [pointer_cast]
-   81.8% | core/lever.cpp
-         18/22 clean, 4 remaining
-           - core_lever.cpp_CLever_FUN_00505080 (16 lines) [stack_param]
-           - core_lever.cpp_CLever_ctor_FUN_005047d0 (46 lines) [negative_offset]
-           - core_lever.cpp_CLever_FUN_00504dd0 (25 lines) [decompiler_intrinsic, stack_param, warning_inlined_function]
-           - core_lever.cpp_CLever_setState_FUN_00504b20 (36 lines) [unnamed_param]
    81.5% | core/weapon.cpp
          22/27 clean, 5 remaining
            - core_weapon.cpp_CWeapon_FUN_005ee740 (30 lines) [param_count_too_few]
@@ -375,29 +382,29 @@ FILES AT 50-89%
    78.9% | core/enemy.cpp
          15/19 clean, 4 remaining
            - core_enemy.cpp_CEnemy_FUN_004a9930 (22 lines) [decompiler_intrinsic, param_count_too_few, stack_param, stack_ref, warning_inlined_function]
-           - core_enemy.cpp_CEnemy_updateVictim_FUN_004a9b00 (142 lines) [decompiler_intrinsic, pointer_cast]
+           - core_enemy.cpp_CEnemy_updateVictim_FUN_004a9b00 (140 lines) [decompiler_intrinsic, pointer_cast]
            - core_enemy.cpp_CEnemy_FUN_004a9880 (23 lines) [decompiler_intrinsic, param_count_too_few, stack_param, warning_inlined_function]
            - core_enemy.cpp_CEnemy_FUN_004a9a50 (24 lines) [unnamed_param]
    78.9% | core/svetlana.cpp
          15/19 clean, 4 remaining
            - core_svetlana.cpp_CSvetlana_process_FUN_005d8ba0 (294 lines) [pointer_cast, stack_alignment_array, unresolved_funcptr, warning_type_propagation]
            - core_svetlana.cpp_CSvetlana_dtor_FUN_005d9f50 (21 lines) [negative_offset]
-           - core_svetlana.cpp_CSvetlana_processAI_FUN_005d9260 (233 lines) [decompiler_intrinsic, warning_type_propagation]
+           - core_svetlana.cpp_CSvetlana_processAI_FUN_005d9260 (234 lines) [decompiler_intrinsic, warning_type_propagation]
            - core_svetlana.cpp_CSvetlana_renderOpaque_FUN_005d9bc0 (60 lines) [warning_type_propagation]
    78.6% | core/batcreat.cpp
          11/14 clean, 3 remaining
            - core_batcreat.cpp_CBatCreature_FUN_00415dd0 (90 lines) [param_count_too_few, stack_param, warning_type_propagation]
            - core_batcreat.cpp_CBatCreature_dtor_FUN_00416320 (30 lines) [negative_offset]
-           - core_batcreat.cpp_CBatCreature_process_FUN_00415470 (337 lines) [decompiler_intrinsic, warning_type_propagation]
+           - core_batcreat.cpp_CBatCreature_process_FUN_00415470 (342 lines) [decompiler_intrinsic, warning_type_propagation]
    78.6% | core/cow.cpp
          11/14 clean, 3 remaining
-           - core_cow.cpp_CZombieCow_process_FUN_00444310 (215 lines) [warning_type_propagation]
+           - core_cow.cpp_CZombieCow_process_FUN_00444310 (216 lines) [warning_type_propagation]
            - core_cow.cpp_CZombieCow_dtor_FUN_00444cd0 (31 lines) [negative_offset]
            - core_cow.cpp_CZombieCow_FUN_004448c0 (83 lines) [param_count_too_few, stack_param, warning_type_propagation]
    78.6% | core/sentinel.cpp
          11/14 clean, 3 remaining
            - core_sentinel.cpp_CSentinel_dtor_FUN_00568f80 (31 lines) [negative_offset]
-           - core_sentinel.cpp_CSentinel_process_FUN_00568030 (445 lines) [decompiler_intrinsic, warning_type_propagation]
+           - core_sentinel.cpp_CSentinel_process_FUN_00568030 (457 lines) [decompiler_intrinsic, warning_type_propagation]
            - core_sentinel.cpp_CSentinel_attractActorToward_FUN_00568b70 (29 lines) [warning_type_propagation]
    78.0% | core/sound.cpp
          32/41 clean, 9 remaining
@@ -412,13 +419,13 @@ FILES AT 50-89%
            - core_sound.cpp_resetTrainSounds_FUN_005b26f0 (12 lines) [stack_ref]
    77.8% | core/colonel.cpp
          14/18 clean, 4 remaining
-           - core_colonel.cpp_CColonel_FUN_0043ff20 (172 lines) [decompiler_intrinsic, stack_param, warning_type_propagation]
+           - core_colonel.cpp_CColonel_FUN_0043ff20 (173 lines) [decompiler_intrinsic, stack_param, warning_type_propagation]
            - core_colonel.cpp_FUN_00440650 (7 lines) [stack_param]
            - core_colonel.cpp_CColonel_process_FUN_0043fa00 (252 lines) [pointer_cast, stack_alignment_array, unknown_field, unresolved_funcptr, warning_type_propagation]
            - core_colonel.cpp_CColonel_FUN_00440430 (20 lines) [decompiler_intrinsic, fnstsw_flag_artifact, nan_function_artifact, stack_param]
    77.8% | core/haystack.cpp
          14/18 clean, 4 remaining
-           - core_haystack.cpp_CHaystack_FUN_004f13f0 (180 lines) [decompiler_intrinsic, param_count_too_few, stack_param, warning_type_propagation]
+           - core_haystack.cpp_CHaystack_FUN_004f13f0 (183 lines) [decompiler_intrinsic, param_count_too_few, stack_param, warning_type_propagation]
            - core_haystack.cpp_CHaystack_FUN_004f1ab0 (33 lines) [param_count_too_few, stack_param]
            - core_haystack.cpp_CHaystack_process_FUN_004f0e40 (276 lines) [pointer_cast, stack_alignment_array, unresolved_funcptr]
            - core_haystack.cpp_CHaystack_FUN_004f1970 (51 lines) [stack_param, warning_type_propagation]
@@ -428,19 +435,6 @@ FILES AT 50-89%
            - core_hostage.cpp_CHostage_process_FUN_004f4bd0 (682 lines) [decompiler_intrinsic, warning_type_propagation]
            - core_hostage.cpp_CHostage_FUN_004f5ff0 (39 lines) [warning_type_propagation]
            - core_hostage.cpp_CHostage_dtor_FUN_004f6b60 (34 lines) [negative_offset]
-   77.1% | core/hero.cpp
-         37/48 clean, 11 remaining
-           - core_hero.cpp_CHero_FUN_004f3910 (6 lines) [stack_param]
-           - core_hero.cpp_CHero_FUN_004f3930 (7 lines) [stack_param]
-           - core_hero.cpp_CHero_dtor_FUN_004f2470 (35 lines) [negative_offset, pointer_cast]
-           - core_hero.cpp_CHero_FUN_004f3960 (57 lines) [decompiler_intrinsic, stack_param]
-           - core_hero.cpp_closestHeroToPoint_FUN_004f2170 (34 lines) [pointer_cast]
-           - core_hero.cpp_isAnyHeroWithinRadius_FUN_004f2220 (24 lines) [pointer_cast]
-           - core_hero.cpp_CHero_ctor_FUN_004f2340 (36 lines) [negative_offset, param_count_too_few, pointer_cast, suspect_float]
-           - core_hero.cpp_CHeroPlaceholder_createHero_FUN_004f3d80 (64 lines) [unnamed_param]
-           - core_hero.cpp_CHero_FUN_004f38d0 (12 lines) [stack_param]
-           - core_hero.cpp_CHero_FUN_004f2af0 (51 lines) [pointer_cast, unresolved_funcptr]
-           - core_hero.cpp_isAnyHeroWithinCylinder_FUN_004f22a0 (24 lines) [decompiler_intrinsic, pointer_cast]
    76.8% | core/event.cpp
          43/56 clean, 13 remaining
            - core_event.cpp_CEventList_updateSfxEntries_FUN_004b0db0 (53 lines) [decompiler_intrinsic, pointer_cast, stack_param, stack_ref, sub84_truncation]
@@ -559,7 +553,7 @@ FILES AT 50-89%
            - cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBGFileComplete_FUN_0054c480 (13 lines) [param_count_too_many, unnamed_param]
    76.2% | core/werewolf.cpp
          16/21 clean, 5 remaining
-           - core_werewolf.cpp_CWerewolf_process_FUN_005efde0 (677 lines) [decompiler_intrinsic, format_string_mismatch, stack_param, stack_ref, sub84_truncation, unknown_field, warning_inlined_function]
+           - core_werewolf.cpp_CWerewolf_process_FUN_005efde0 (681 lines) [decompiler_intrinsic, format_string_mismatch, stack_param, stack_ref, sub84_truncation, unknown_field, warning_inlined_function]
            - core_werewolf.cpp_CWerewolf_FUN_005f1230 (189 lines) [decompiler_intrinsic, param_count_too_few, stack_param]
            - core_werewolf.cpp_CWerewolf_renderTransparent_FUN_005f1820 (46 lines) [pointer_cast, warning_type_propagation]
            - core_werewolf.cpp_CWerewolf_dtor_FUN_005f2220 (31 lines) [negative_offset]
@@ -592,7 +586,7 @@ FILES AT 50-89%
            - core_crossbow.cpp_CCrossbow_fire_FUN_00448f20 (178 lines) [decompiler_intrinsic, stack_ref, sub84_truncation, suspect_float, unknown_field]
    75.0% | core/smiley.cpp
          12/16 clean, 4 remaining
-           - core_smiley.cpp_CSmiley_process_FUN_005a2800 (374 lines) [decompiler_intrinsic, unresolved_funcptr, warning_type_propagation]
+           - core_smiley.cpp_CSmiley_process_FUN_005a2800 (375 lines) [decompiler_intrinsic, unresolved_funcptr, warning_type_propagation]
            - core_smiley.cpp_CSmiley_dtor_FUN_005a3880 (31 lines) [negative_offset]
            - core_smiley.cpp_CSmiley_FUN_005a32a0 (103 lines) [stack_param, warning_type_propagation]
            - core_smiley.cpp_CSmiley_attractActorToward_FUN_005a3160 (25 lines) [warning_type_propagation]
@@ -603,7 +597,7 @@ FILES AT 50-89%
          15/20 clean, 5 remaining
            - core_tvbat.cpp_FUN_005e3ec0 (6 lines) [unnamed_param]
            - core_tvbat.cpp_CTVBat_dtor_FUN_005e5460 (31 lines) [negative_offset]
-           - core_tvbat.cpp_CTVBat_process_FUN_005e4210 (323 lines) [decompiler_intrinsic, warning_inlined_function, warning_type_propagation]
+           - core_tvbat.cpp_CTVBat_process_FUN_005e4210 (326 lines) [decompiler_intrinsic, warning_inlined_function, warning_type_propagation]
            - core_tvbat.cpp_CTVBat_processInEditor_FUN_005e5260 (59 lines) [warning_type_propagation]
            - core_tvbat.cpp_CTVBat_getBoundingBox_FUN_005e5050 (17 lines) [decompiler_intrinsic, warning_inlined_function]
    75.0% | core/vehicle.cpp
@@ -628,7 +622,7 @@ FILES AT 50-89%
          26/35 clean, 9 remaining
            - core_baron.cpp_CBaron_FUN_00414090 (6 lines) [stack_param]
            - core_baron.cpp_CBaron_process_FUN_00412e80 (232 lines) [pointer_cast, stack_alignment_array, unresolved_funcptr, warning_type_propagation]
-           - core_baron.cpp_CBaron_FUN_004136b0 (92 lines) [warning_type_propagation]
+           - core_baron.cpp_CBaron_FUN_004136b0 (94 lines) [warning_type_propagation]
            - core_baron.cpp_CBaron_engageTarget_FUN_00413470 (50 lines) [warning_type_propagation]
            - core_baron.cpp_CBaron_FUN_00413a00 (19 lines) [unnamed_param]
            - core_baron.cpp_CBaron_renderTransparent_FUN_00413ae0 (73 lines) [decompiler_intrinsic, undefined_data, warning_inlined_function]
@@ -667,7 +661,7 @@ FILES AT 50-89%
            - core_bodypart.cpp_createBodyPart_FUN_00418e10 (70 lines) [decompiler_intrinsic, stack_param]
            - core_bodypart.cpp_addVector_FUN_0041b540 (7 lines) [param_count_too_few]
            - core_bodypart.cpp_SBodyPartFire_dtor_FUN_0041b640 (6 lines) [negative_offset]
-           - core_bodypart.cpp_CBodyPart_archive_FUN_00419880 (132 lines) [pointer_cast]
+           - core_bodypart.cpp_CBodyPart_archive_FUN_00419880 (131 lines) [pointer_cast]
            - core_bodypart.cpp_CBodyPart_renderGeometry_FUN_00419340 (50 lines) [pointer_cast]
            - core_bodypart.cpp_scaleVector_FUN_0041b4e0 (7 lines) [param_count_too_many]
            - core_bodypart.cpp_CBodyPart_addFire_FUN_0041ae50 (57 lines) [pointer_cast, unnamed_param]
@@ -731,7 +725,7 @@ FILES AT 50-89%
            - core_script.cpp_CCmdParse_bestParse_FUN_00561db0 (75 lines) [param_count_too_many, pointer_cast]
            - core_script.cpp_getDeformableModelFilename_FUN_00567d30 (4 lines) [param_count_too_few]
            - core_script.cpp_parseCommandWithDefaultTemplates_FUN_00561c70 (8 lines) [param_count_too_many]
-           - core_script.cpp_CScript_step_FUN_0055a810 (3366 lines) [decompiler_intrinsic, pointer_cast, sub84_truncation, warning_type_propagation]
+           - core_script.cpp_CScript_step_FUN_0055a810 (3384 lines) [decompiler_intrinsic, pointer_cast, sub84_truncation, warning_type_propagation]
            - core_script.cpp_CScript_rebuildEventXRefs_FUN_00567630 (26 lines) [pointer_cast]
            - core_script.cpp_readActorReference_FUN_00560760 (27 lines) [pointer_cast]
            - core_script.cpp_CScript_browseEventXRefs_FUN_005677a0 (169 lines) [pointer_cast]
@@ -754,7 +748,7 @@ FILES AT 50-89%
            - core_dcube.cpp_CDemonCube_rotateVertices_FUN_00457650 (98 lines) [decompiler_intrinsic, pointer_cast, unresolved_funcptr, warning_indirect_jump, warning_jumptable]
    71.6% | core/charactr.cpp
          78/109 clean, 31 remaining
-           - core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0 (216 lines) [decompiler_intrinsic, unnamed_param]
+           - core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0 (215 lines) [decompiler_intrinsic, unnamed_param]
            - core_charactr.cpp_CCharacter_renderEthereal_FUN_0042af60 (47 lines) [decompiler_intrinsic, pointer_cast, warning_inlined_function]
            - core_charactr.cpp_CCharacter_dtor_FUN_0042f9f0 (30 lines) [negative_offset]
            - core_charactr.cpp_FUN_0042f9d0 (5 lines) [stack_param]
@@ -788,7 +782,7 @@ FILES AT 50-89%
    71.4% | core/succubus.cpp
          10/14 clean, 4 remaining
            - core_succubus.cpp_CSuccubus_setup_FUN_005c6b60 (95 lines) [warning_type_propagation]
-           - core_succubus.cpp_CSuccubus_process_FUN_005c6e90 (292 lines) [decompiler_intrinsic, warning_type_propagation, warning_unreachable]
+           - core_succubus.cpp_CSuccubus_process_FUN_005c6e90 (299 lines) [decompiler_intrinsic, warning_type_propagation, warning_unreachable]
            - core_succubus.cpp_CSuccubus_dtor_FUN_005c7820 (37 lines) [negative_offset]
            - core_succubus.cpp_CSuccubus_renderOpaque_FUN_005c7590 (55 lines) [undefined_data]
    71.4% | engine/prim.c
@@ -826,7 +820,7 @@ FILES AT 50-89%
            - core_platfrm.cpp_CPlatform_onActorDeleted_FUN_0054e2e0 (16 lines) [pointer_cast]
            - core_platfrm.cpp_CPlatform_updateAttachedActors_FUN_0054e320 (44 lines) [pointer_cast]
            - core_platfrm.cpp_CPlatform_processInEditor_FUN_0054ea00 (264 lines) [decompiler_intrinsic, pointer_cast, stack_alignment_array, unknown_field]
-           - core_platfrm.cpp_CPlatform_archive_FUN_0054dbc0 (112 lines) [pointer_cast]
+           - core_platfrm.cpp_CPlatform_archive_FUN_0054dbc0 (111 lines) [pointer_cast]
            - core_platfrm.cpp_CPlatform_evaluatePosition_FUN_0054cab0 (75 lines) [pointer_cast, stack_alignment_array]
    70.0% | core/weather.cpp
          7/10 clean, 3 remaining
@@ -872,7 +866,7 @@ FILES AT 50-89%
          11/16 clean, 5 remaining
            - core_batman.cpp_CBatman_FUN_00417660 (120 lines) [param_count_too_few, stack_param, warning_type_propagation]
            - core_batman.cpp_CBatman_getTargetPoints_FUN_00417bb0 (40 lines) [warning_type_propagation]
-           - core_batman.cpp_CBatman_process_FUN_00416870 (442 lines) [decompiler_intrinsic, warning_type_propagation]
+           - core_batman.cpp_CBatman_process_FUN_00416870 (448 lines) [decompiler_intrinsic, warning_type_propagation]
            - core_batman.cpp_CBatman_dtor_FUN_00417d60 (31 lines) [negative_offset]
            - core_batman.cpp_CBatman_renderOpaque_FUN_004173b0 (66 lines) [undefined_data]
    68.8% | core/gargoyle.cpp
@@ -880,7 +874,7 @@ FILES AT 50-89%
            - core_gargoyle.cpp_CGargoyle_process_FUN_004e4a00 (411 lines) [decompiler_intrinsic, warning_type_propagation]
            - core_gargoyle.cpp_CGargoyle_getTargetPoints_FUN_004e5930 (64 lines) [warning_type_propagation]
            - core_gargoyle.cpp_CGargoyle_FUN_004e5530 (93 lines) [stack_param, warning_type_propagation]
-           - core_gargoyle.cpp_CGargoyle_FUN_004e48a0 (48 lines) [decompiler_intrinsic, warning_type_propagation]
+           - core_gargoyle.cpp_CGargoyle_FUN_004e48a0 (51 lines) [decompiler_intrinsic, warning_type_propagation]
            - core_gargoyle.cpp_CGargoyle_dtor_FUN_004e5bd0 (31 lines) [negative_offset]
    68.8% | core/tbplayer.cpp
          11/16 clean, 5 remaining
@@ -1045,8 +1039,8 @@ FILES AT 50-89%
            - core_tentacle.cpp_CTentacle_dtor_FUN_005dbcf0 (31 lines) [negative_offset]
            - core_tentacle.cpp_CTentacle_FUN_005db900 (37 lines) [decompiler_intrinsic, stack_param, warning_type_propagation]
            - core_tentacle.cpp_CTentacle_FUN_005dbb70 (45 lines) [param_count_too_few, pointer_cast, unaffected_reg, warning_type_propagation]
-           - core_tentacle.cpp_CTentacle_FUN_005db9d0 (77 lines) [pointer_cast, stack_param]
-           - core_tentacle.cpp_CTentacle_process_FUN_005db050 (259 lines) [decompiler_intrinsic, pointer_cast, warning_type_propagation]
+           - core_tentacle.cpp_CTentacle_FUN_005db9d0 (76 lines) [pointer_cast, stack_param]
+           - core_tentacle.cpp_CTentacle_process_FUN_005db050 (260 lines) [decompiler_intrinsic, pointer_cast, warning_type_propagation]
    66.7% | core/turret.cpp
          16/24 clean, 8 remaining
            - core_turret.cpp_CTurret_FUN_005e2d50 (130 lines) [decompiler_intrinsic, param_count_too_few]
@@ -1235,16 +1229,40 @@ FILES AT 50-89%
    65.2% | core/icepick.cpp
          15/23 clean, 8 remaining
            - core_icepick.cpp_CIcePick_process_FUN_004f80b0 (312 lines) [pointer_cast, stack_alignment_array, unresolved_funcptr, warning_unreachable]
-           - core_icepick.cpp_CIcePick_FUN_004f8c70 (234 lines) [decompiler_intrinsic, param_count_too_few, stack_param, warning_type_propagation]
+           - core_icepick.cpp_CIcePick_FUN_004f8c70 (235 lines) [decompiler_intrinsic, param_count_too_few, stack_param, warning_type_propagation]
            - core_icepick.cpp_CIcePick_FUN_004f9490 (52 lines) [param_count_too_few, stack_param]
            - core_icepick.cpp_CIcePick_FUN_004f93a0 (49 lines) [stack_param]
            - core_icepick.cpp_CIcePick_FUN_004f8810 (62 lines) [param_count_too_few, pointer_cast, stack_alignment_array, stack_param, unresolved_funcptr]
            - core_icepick.cpp_FUN_004f8b00 (11 lines) [stack_param]
            - core_icepick.cpp_CIcePick_getCarryObjToBodyXForm_FUN_004f8b20 (49 lines) [pointer_cast, warning_type_propagation]
            - core_icepick.cpp_CIcePick_FUN_004f8970 (52 lines) [decompiler_intrinsic, warning_type_propagation]
+   65.1% | core/stranger.cpp
+         41/63 clean, 22 remaining
+           - core_stranger.cpp_CStranger_updateWeaponPosition_FUN_005c06b0 (52 lines) [pointer_cast]
+           - core_stranger.cpp_CStranger_tryDescendLadder_FUN_005c2400 (148 lines) [decompiler_intrinsic, sub84_truncation, warning_type_propagation]
+           - core_stranger.cpp_CStranger_handleFireButton_FUN_005c5f10 (136 lines) [param_count_too_few]
+           - core_stranger.cpp_CStranger_processDamage_FUN_005c48b0 (116 lines) [suspect_float]
+           - core_stranger.cpp_CStranger_aimLeftPistol_FUN_005c4370 (129 lines) [decompiler_intrinsic, suspect_float]
+           - core_stranger.cpp_FUN_005c695e (5 lines) [stack_param]
+           - core_stranger.cpp_FUN_005c6950 (5 lines) [stack_param]
+           - core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520 (661 lines) [decompiler_intrinsic, pointer_cast, stack_ref, undefined_data, unknown_field, unresolved_funcptr, warning_inlined_function]
+           - core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_005c07b0 (588 lines) [pointer_cast, unaffected_reg, warning_type_propagation]
+           - core_stranger.cpp_CStranger_tryClimbLadder_FUN_005c1fe0 (143 lines) [decompiler_intrinsic, warning_type_propagation]
+           - core_stranger.cpp_CStranger_makeDrawDecision_FUN_005bfb60 (288 lines) [decompiler_intrinsic, pointer_cast, stack_alignment_array, unresolved_funcptr, warning_type_propagation]
+           - core_stranger.cpp_CStranger_extractTurnPoseData_FUN_005bf720 (46 lines) [pointer_cast, unresolved_funcptr, warning_type_propagation]
+           - core_stranger.cpp_CStranger_processFrame_FUN_005bb960 (1158 lines) [decompiler_intrinsic, format_string_mismatch, pointer_cast, stack_param, sub84_truncation, suspect_float, unknown_field]
+           - core_stranger.cpp_CStranger_processMotionEvents_FUN_005bdd20 (284 lines) [decompiler_intrinsic, stack_param, stack_ref, unaffected_reg, unresolved_funcptr, warning_inlined_function]
+           - core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_005c5270 (368 lines) [stack_param, stack_ref, suspect_float, warning_unreachable]
+           - core_stranger.cpp_FUN_005c6930 (9 lines) [stack_param]
+           - core_stranger.cpp_CStranger_tryPickupObject_FUN_005c1680 (277 lines) [decompiler_intrinsic, unnamed_param]
+           - core_stranger.cpp_CStranger_applyArmAimRotation_FUN_005c02b0 (208 lines) [pointer_cast, stack_alignment_array, warning_type_propagation]
+           - core_stranger.cpp_getCarriedObjectVerticalOffset_FUN_005bb010 (42 lines) [pointer_cast]
+           - core_stranger.cpp_CStranger_getCarryObjToBodyXForm_FUN_005c5170 (17 lines) [pointer_cast]
+           - core_stranger.cpp_CStranger_renderOpaque_FUN_005c3150 (210 lines) [pointer_cast, warning_type_propagation]
+           - core_stranger.cpp_CStranger_tryPlaceObject_FUN_005c2850 (250 lines) [decompiler_intrinsic, stack_param]
    64.7% | core/imp.cpp
          11/17 clean, 6 remaining
-           - core_imp.cpp_CImp_process_FUN_004f9c30 (492 lines) [decompiler_intrinsic, warning_inlined_function, warning_type_propagation]
+           - core_imp.cpp_CImp_process_FUN_004f9c30 (493 lines) [decompiler_intrinsic, warning_inlined_function, warning_type_propagation]
            - core_imp.cpp_CImp_getTargetPoints_FUN_004faf40 (68 lines) [warning_type_propagation]
            - core_imp.cpp_CImp_dtor_FUN_004fb180 (30 lines) [negative_offset]
            - core_imp.cpp_CImp_FUN_004fab60 (94 lines) [stack_param]
@@ -1375,6 +1393,15 @@ FILES AT 50-89%
            - core_dfilter.cpp_CFilterCache_free_FUN_00470000 (22 lines) [param_count_too_few]
            - core_dfilter.cpp_CDemonFilter_load_FUN_004702f0 (62 lines) [decompiler_intrinsic, warning_inlined_function]
            - core_dfilter.cpp_CFilterFX_free_FUN_00470700 (9 lines) [param_count_too_few]
+   63.2% | core/waypoint.cpp
+         12/19 clean, 7 remaining
+           - core_waypoint.cpp_CWaypoint_setup_FUN_005ebeb0 (37 lines) [decompiler_intrinsic, warning_type_propagation]
+           - core_waypoint.cpp_CWayPoint_FUN_005ec4f0 (42 lines) [param_count_too_few]
+           - core_waypoint.cpp_CWayPoint_FUN_005ec640 (21 lines) [stack_param]
+           - core_waypoint.cpp_CWayPoint_FUN_005ec320 (84 lines) [pointer_cast, stack_param, undefined_data]
+           - core_waypoint.cpp_CWayPoint_addAdj_FUN_005ec700 (26 lines) [decompiler_intrinsic, pointer_cast, stack_param, warning_type_propagation]
+           - core_waypoint.cpp_CWayPoint_FUN_005ec830 (36 lines) [param_count_too_few]
+           - core_waypoint.cpp_CWayPoint_FUN_005ebd40 (35 lines) [decompiler_intrinsic, stack_param]
    62.9% | sound/sndwav.cpp
          22/35 clean, 13 remaining
            - sound_sndwav.cpp_CWavInDevice_reset_FUN_005b0f10 (23 lines) [pointer_cast]
@@ -1445,7 +1472,7 @@ FILES AT 50-89%
            - core_boneguy.cpp_FUN_0041b860 (59 lines) [stack_param]
            - core_boneguy.cpp_FUN_0041b770 (25 lines) [stack_param, stack_ref]
            - core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_0041ca40 (82 lines) [pointer_cast, warning_type_propagation]
-           - core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90 (433 lines) [decompiler_intrinsic, pointer_cast, stack_alignment_array, warning_type_propagation]
+           - core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90 (437 lines) [decompiler_intrinsic, pointer_cast, stack_alignment_array, warning_type_propagation]
            - core_boneguy.cpp_hsvToRgb_FUN_0041ba10 (69 lines) [decompiler_intrinsic, warning_inlined_function]
    60.7% | wincore/wddvmem.cpp
          17/28 clean, 11 remaining
@@ -1485,7 +1512,7 @@ FILES AT 50-89%
            - core_dracbrid.cpp_CDraculaBride_dtor_FUN_00486d70 (31 lines) [negative_offset]
            - core_dracbrid.cpp_CDraculaBride_FUN_00486020 (13 lines) [param_count_too_few, stack_param]
            - core_dracbrid.cpp_SFreaky_ctor_FUN_00486d30 (6 lines) [pointer_cast]
-           - core_dracbrid.cpp_CDraculaBride_process_FUN_00484410 (729 lines) [decompiler_intrinsic, warning_inlined_function, warning_type_propagation]
+           - core_dracbrid.cpp_CDraculaBride_process_FUN_00484410 (731 lines) [decompiler_intrinsic, warning_inlined_function, warning_type_propagation]
            - core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_00485be0 (71 lines) [undefined_data]
    60.0% | core/ground.cpp
          12/20 clean, 8 remaining
@@ -1508,7 +1535,7 @@ FILES AT 50-89%
            - core_scat.cpp_CScat_FUN_00558cf0 (89 lines) [decompiler_intrinsic, stack_param, unaffected_reg, unknown_field]
            - core_scat.cpp_CScat_FUN_00558060 (110 lines) [param_count_too_few, stack_param, stack_ref, suspect_float, unaffected_reg]
            - core_scat.cpp_CScat_FUN_00558fd0 (64 lines) [pointer_cast, suspect_float, warning_type_propagation]
-           - core_scat.cpp_CScat_FUN_005584a0 (153 lines) [param_count_too_few, pointer_cast, stack_alignment_array, stack_param, unresolved_funcptr, warning_type_propagation]
+           - core_scat.cpp_CScat_FUN_005584a0 (152 lines) [param_count_too_few, pointer_cast, stack_alignment_array, stack_param, unresolved_funcptr, warning_type_propagation]
    59.5% | core/dlight.cpp
          22/37 clean, 15 remaining
            - core_dlight.cpp_CDemonLight_init_FUN_004727c0 (31 lines) [decompiler_intrinsic, pointer_cast, warning_inlined_function]
@@ -1617,16 +1644,6 @@ FILES AT 50-89%
            - core_dmodel.cpp_CKeyFramedModel_buildCollisionTriList_FUN_00478830 (43 lines) [negative_offset, pointer_cast]
            - core_dmodel.cpp_CKeyFramedModel_scale_FUN_0047c4d0 (25 lines) [decompiler_intrinsic, pointer_cast, warning_inlined_function]
            - core_dmodel.cpp_CKeyFramedModel_validatePartList_FUN_0047bf40 (58 lines) [pointer_cast]
-   57.9% | core/waypoint.cpp
-         11/19 clean, 8 remaining
-           - core_waypoint.cpp_CWaypoint_setup_FUN_005ebeb0 (37 lines) [decompiler_intrinsic, warning_type_propagation]
-           - core_waypoint.cpp_CWayPoint_archive_FUN_005ec280 (25 lines) [stack_ref]
-           - core_waypoint.cpp_CWayPoint_FUN_005ec4f0 (42 lines) [param_count_too_few]
-           - core_waypoint.cpp_CWayPoint_FUN_005ec640 (21 lines) [stack_param]
-           - core_waypoint.cpp_CWayPoint_FUN_005ec320 (84 lines) [pointer_cast, stack_param, undefined_data]
-           - core_waypoint.cpp_CWayPoint_addAdj_FUN_005ec700 (26 lines) [decompiler_intrinsic, pointer_cast, stack_param, warning_type_propagation]
-           - core_waypoint.cpp_CWayPoint_FUN_005ec830 (36 lines) [param_count_too_few]
-           - core_waypoint.cpp_CWayPoint_FUN_005ebd40 (35 lines) [decompiler_intrinsic, stack_param]
    57.1% | core/moon.cpp
          8/14 clean, 6 remaining
            - core_moon.cpp_CMoon_render_FUN_00529ed0 (122 lines) [decompiler_intrinsic, mmx_assembly, pointer_cast, warning_inlined_function]
@@ -1794,7 +1811,7 @@ FILES AT 50-89%
            - core_gabriela.cpp_CGabriella_FUN_004d6260 (89 lines) [decompiler_intrinsic, stack_param, unaffected_reg, unknown_field]
            - core_gabriela.cpp_CGabriella_dtor_FUN_004d7660 (20 lines) [negative_offset]
            - core_gabriela.cpp_CGabriella_FUN_004d6f80 (71 lines) [param_count_too_few, pointer_cast, stack_param]
-           - core_gabriela.cpp_CGabriella_FUN_004d4890 (165 lines) [decompiler_intrinsic, param_count_too_few, stack_param, stack_ref, warning_inlined_function]
+           - core_gabriela.cpp_CGabriella_FUN_004d4890 (166 lines) [decompiler_intrinsic, param_count_too_few, stack_param, stack_ref, warning_inlined_function]
            - core_gabriela.cpp_CGabriella_FUN_004d4cf0 (28 lines) [stack_param]
            - core_gabriela.cpp_CGabriella_FUN_004d5870 (138 lines) [decompiler_intrinsic, warning_type_propagation]
            - core_gabriela.cpp_CGabriella_process_FUN_004d2ea0 (698 lines) [decompiler_intrinsic, pointer_cast, warning_type_propagation]
@@ -1802,10 +1819,10 @@ FILES AT 50-89%
            - core_gabriela.cpp_FUN_004d29f0 (11 lines) [stack_param]
            - core_gabriela.cpp_CGabriella_FUN_004d6d40 (78 lines) [param_count_too_few, stack_param]
            - core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d7120 (152 lines) [pointer_cast, warning_type_propagation]
-           - core_gabriela.cpp_CGabriella_FUN_004d4190 (204 lines) [decompiler_intrinsic, param_count_too_few, warning_type_propagation]
+           - core_gabriela.cpp_CGabriella_FUN_004d4190 (208 lines) [decompiler_intrinsic, param_count_too_few, warning_type_propagation]
            - core_gabriela.cpp_FUN_004d2a30 (14 lines) [stack_param]
            - core_gabriela.cpp_CGabriella_ctor_FUN_004d2b20 (36 lines) [negative_offset]
-           - core_gabriela.cpp_CGabriella_FUN_004d5c60 (107 lines) [decompiler_intrinsic, warning_type_propagation]
+           - core_gabriela.cpp_CGabriella_FUN_004d5c60 (110 lines) [decompiler_intrinsic, warning_type_propagation]
            - core_gabriela.cpp_CGabriella_FUN_004d4d80 (348 lines) [pointer_cast, stack_alignment_array, undefined_data, unresolved_funcptr, warning_type_propagation]
    54.5% | cockpit/pkbitmap.cpp
          18/33 clean, 15 remaining
@@ -1857,7 +1874,7 @@ FILES AT 50-89%
            - core_bride.cpp_CBride_processDamage_FUN_00424830 (68 lines) [warning_type_propagation]
            - core_bride.cpp_FUN_00424800 (7 lines) [fpu_register_input, unaffected_reg]
            - core_bride.cpp_CBride_dtor_FUN_00424b80 (31 lines) [negative_offset]
-           - core_bride.cpp_CBride_process_FUN_00423a30 (370 lines) [warning_type_propagation]
+           - core_bride.cpp_CBride_process_FUN_00423a30 (371 lines) [warning_type_propagation]
            - core_bride.cpp_CBride_getTargetPoint_FUN_00424aa0 (25 lines) [pointer_cast]
    52.9% | core/dtrace.cpp
          27/51 clean, 24 remaining
@@ -2049,7 +2066,7 @@ FILES AT 50-89%
            - core_ghoul.cpp_CGhoul_findDarkWayPoint_FUN_004e63d0 (69 lines) [stack_param]
            - core_ghoul.cpp_CGhoul_getTargetPoint_FUN_004e84a0 (25 lines) [pointer_cast]
            - core_ghoul.cpp_CGhoul_getTargetPoints_FUN_004e8bc0 (90 lines) [warning_type_propagation]
-           - core_ghoul.cpp_CGhoul_process_FUN_004e6600 (1041 lines) [decompiler_intrinsic, fnstsw_flag_artifact, stack_param, stack_ref, unresolved_funcptr, warning_inlined_function]
+           - core_ghoul.cpp_CGhoul_process_FUN_004e6600 (1042 lines) [decompiler_intrinsic, fnstsw_flag_artifact, stack_param, stack_ref, unresolved_funcptr, warning_inlined_function]
            - core_ghoul.cpp_CGhoul_ctor_FUN_004e6030 (35 lines) [decompiler_intrinsic, warning_inlined_function]
            - core_ghoul.cpp_CGhoul_dtor_FUN_004e8f10 (31 lines) [negative_offset]
            - core_ghoul.cpp_CGhoul_FUN_004e8520 (98 lines) [stack_param, warning_type_propagation]
@@ -2066,7 +2083,7 @@ FILES AT 50-89%
            - core_main.c_drawCenteredText_FUN_00508250 (9 lines) [stack_param]
    50.0% | core/mobster.cpp
          13/26 clean, 13 remaining
-           - core_mobster.cpp_CMobster_process_FUN_00525840 (583 lines) [decompiler_intrinsic, stack_param, stack_ref, suspect_float]
+           - core_mobster.cpp_CMobster_process_FUN_00525840 (585 lines) [decompiler_intrinsic, stack_param, stack_ref, suspect_float]
            - core_mobster.cpp_FUN_00525110 (25 lines) [stack_param, stack_ref]
            - core_mobster.cpp_FUN_005250a0 (17 lines) [stack_param, unresolved_funcptr]
            - core_mobster.cpp_CMobster_FUN_00525650 (39 lines) [warning_type_propagation]
@@ -2240,45 +2257,6 @@ FILES BELOW 50%
            - engine_matrix.c_setCameraRotation_FUN_0050e290 (8 lines) [param_count_too_few]
            - engine_matrix.c_invertTransformMatrix_FUN_0050c640 (49 lines) [decompiler_intrinsic, warning_inlined_function]
            - engine_matrix.c_integerSquareRoot_FUN_0050d890 (16 lines) [param_count_too_few]
-   46.4% | core/stranger.cpp
-         32/69 clean, 37 remaining
-           - core_stranger.cpp_CStranger_FUN_005bdd20 (287 lines) [decompiler_intrinsic, param_count_too_few, stack_param, stack_ref, unaffected_reg, unresolved_funcptr, warning_inlined_function]
-           - core_stranger.cpp_CStranger_FUN_005c6590 (36 lines) [param_count_too_few, stack_param]
-           - core_stranger.cpp_FUN_005bafe0 (10 lines) [stack_param, unresolved_funcptr]
-           - core_stranger.cpp_CStranger_FUN_005c06b0 (51 lines) [pointer_cast]
-           - core_stranger.cpp_CStranger_FUN_005c1680 (279 lines) [decompiler_intrinsic, param_count_too_few, stack_param]
-           - core_stranger.cpp_CStranger_FUN_005c1fe0 (141 lines) [decompiler_intrinsic, warning_type_propagation]
-           - core_stranger.cpp_CStranger_FUN_005c02b0 (210 lines) [param_count_too_few, pointer_cast, stack_alignment_array, stack_param, warning_type_propagation]
-           - core_stranger.cpp_CStranger_FUN_005be490 (28 lines) [stack_param]
-           - core_stranger.cpp_CStranger_FUN_005bfb60 (287 lines) [decompiler_intrinsic, pointer_cast, stack_alignment_array, unresolved_funcptr, warning_type_propagation]
-           - core_stranger.cpp_CStranger_processDamage_FUN_005c48b0 (117 lines) [suspect_float]
-           - core_stranger.cpp_FUN_005c3750 (24 lines) [decompiler_intrinsic, stack_param]
-           - core_stranger.cpp_CStranger_aimLeftPistol_FUN_005c4370 (127 lines) [decompiler_intrinsic, suspect_float]
-           - core_stranger.cpp_CStranger_FUN_005c07b0 (588 lines) [pointer_cast, stack_param, unaffected_reg, warning_type_propagation]
-           - core_stranger.cpp_FUN_005c695e (5 lines) [stack_param]
-           - core_stranger.cpp_CStranger_FUN_005be520 (660 lines) [decompiler_intrinsic, pointer_cast, stack_ref, undefined_data, unknown_field, unresolved_funcptr, warning_inlined_function]
-           - core_stranger.cpp_CStranger_FUN_005bf800 (90 lines) [decompiler_intrinsic, param_count_too_few, stack_param, undefined_data]
-           - core_stranger.cpp_CStranger_FUN_005c5270 (362 lines) [stack_param, stack_ref, suspect_float, warning_unreachable]
-           - core_stranger.cpp_CStranger_autoAimAtThreat_FUN_005c3960 (266 lines) [decompiler_intrinsic, param_count_too_few, stack_param, suspect_float]
-           - core_stranger.cpp_FUN_005c6950 (5 lines) [stack_param]
-           - core_stranger.cpp_CStranger_setup_FUN_005bb4b0 (95 lines) [undefined_data]
-           - core_stranger.cpp_CStranger_FUN_005c2850 (249 lines) [decompiler_intrinsic, stack_param]
-           - core_stranger.cpp_FUN_005c6970 (12 lines) [stack_param]
-           - core_stranger.cpp_FUN_005bafa0 (20 lines) [stack_param]
-           - core_stranger.cpp_CStranger_FUN_005bb960 (1131 lines) [decompiler_intrinsic, format_string_mismatch, pointer_cast, stack_param, sub84_truncation, suspect_float, unknown_field]
-           - core_stranger.cpp_CStranger_FUN_005c2400 (146 lines) [decompiler_intrinsic, sub84_truncation, warning_type_propagation]
-           - core_stranger.cpp_FUN_005bb010 (44 lines) [pointer_cast, stack_param]
-           - core_stranger.cpp_FUN_005c69a0 (8 lines) [stack_param]
-           - core_stranger.cpp_CStranger_FUN_005c4c20 (148 lines) [decompiler_intrinsic, param_count_too_few, stack_param]
-           - core_stranger.cpp_FUN_005baf20 (27 lines) [stack_param]
-           - core_stranger.cpp_FUN_005c6930 (9 lines) [stack_param]
-           - core_stranger.cpp_CStranger_FUN_005bf720 (47 lines) [pointer_cast, stack_param, unresolved_funcptr, warning_type_propagation]
-           - core_stranger.cpp_FUN_005c37e0 (48 lines) [decompiler_intrinsic, stack_param]
-           - core_stranger.cpp_CStranger_getCarryObjToBodyXForm_FUN_005c5170 (16 lines) [pointer_cast]
-           - core_stranger.cpp_CStranger_renderOpaque_FUN_005c3150 (209 lines) [pointer_cast, suspect_float, undefined_data, warning_type_propagation]
-           - core_stranger.cpp_CStranger_FUN_005c5e80 (18 lines) [suspect_float]
-           - core_stranger.cpp_CStranger_FUN_005c51c0 (16 lines) [stack_param]
-           - core_stranger.cpp_CStranger_FUN_005c5f10 (136 lines) [param_count_too_few, suspect_float, unaffected_reg]
    45.6% | sound/mp3.cpp
          26/57 clean, 31 remaining
            - sound_mp3.cpp_CMP3Decoder_seek_FUN_00534ba0 (48 lines) [param_count_too_many]
@@ -2373,7 +2351,7 @@ FILES BELOW 50%
            - core_zombie.cpp_CZombie_dtor_FUN_005fcc50 (31 lines) [negative_offset]
            - core_zombie.cpp_FUN_005fcd10 (7 lines) [stack_param]
            - core_zombie.cpp_FUN_005f8cc0 (10 lines) [stack_param, unresolved_funcptr]
-           - core_zombie.cpp_CZombie_process_FUN_005f9470 (1019 lines) [decompiler_intrinsic, pointer_cast, unresolved_funcptr, warning_inlined_function, warning_type_propagation, warning_unreachable]
+           - core_zombie.cpp_CZombie_process_FUN_005f9470 (1020 lines) [decompiler_intrinsic, pointer_cast, unresolved_funcptr, warning_inlined_function, warning_type_propagation, warning_unreachable]
            - core_zombie.cpp_CZombie_setup_FUN_005f9140 (100 lines) [warning_type_propagation]
            - core_zombie.cpp_CZombie_FUN_005fc220 (101 lines) [param_count_too_few, stack_param, warning_type_propagation]
            - core_zombie.cpp_FUN_005fce40 (72 lines) [stack_param]
@@ -2436,7 +2414,7 @@ FILES BELOW 50%
            - core_bugs.cpp_CBugs_FUN_00427400 (102 lines) [decompiler_intrinsic, param_count_too_few, pointer_cast, stack_param, undefined_data, warning_type_propagation]
            - core_bugs.cpp_CBugs_FUN_00425b70 (16 lines) [decompiler_intrinsic, stack_param, warning_inlined_function]
            - core_bugs.cpp_CBugs_dtor_FUN_00427bd0 (32 lines) [negative_offset]
-           - core_bugs.cpp_CBugs_FUN_00425cc0 (100 lines) [decompiler_intrinsic, param_count_too_few, stack_param]
+           - core_bugs.cpp_CBugs_FUN_00425cc0 (102 lines) [decompiler_intrinsic, param_count_too_few, stack_param]
            - core_bugs.cpp_CBugs_addSwarmGraphEdge_FUN_00425740 (45 lines) [stack_param]
            - core_bugs.cpp_FUN_00427a20 (13 lines) [stack_param]
            - core_bugs.cpp_FUN_00427b00 (22 lines) [stack_param]
@@ -2508,4 +2486,4 @@ FILES BELOW 50%
            - core_procedur.cpp_CProceduralTexture_createWaterFrames_FUN_005542b0 (122 lines) [decompiler_intrinsic, pointer_cast]
            - core_procedur.cpp_CProceduralTexture_calculateWaveOffset_FUN_00554620 (9 lines) [param_count_too_many]
 
-Total: 17 files
+Total: 16 files

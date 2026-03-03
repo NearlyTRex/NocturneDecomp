@@ -9,7 +9,7 @@
 void __cdecl core_enemy_cpp_CEnemy_onVictimLost_FUN_004aa0c0(CEnemy *this_ptr,CDemonActor *lost_actor)
 
 {
-  if (lost_actor != this_ptr->victim) {
+  if ((CCharacter *)lost_actor != this_ptr->victim) {
     return;
   }
   (*(((this_ptr->base).base.vtable._uc)->_uc).releaseVictim)(&this_ptr->base);

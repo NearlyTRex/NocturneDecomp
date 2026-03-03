@@ -15,7 +15,8 @@ void __stack2_esi core_stranger_cpp_CStranger_getCarryObjToBodyXForm_FUN_005c517
   float local_38 [12];
   
   bVar3 = 0;
-  core_stranger_cpp_CStranger_FUN_005c07b0(this_ptr);
+  core_stranger_cpp_CStranger_computeWeaponAttachXForm_FUN_005c07b0
+            (this_ptr,(this_ptr->base).base.carry_hands[hand_index].carry_actor,hand_index);
   pfVar2 = local_38;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
     out_matrix->m[0].w = *pfVar2;
