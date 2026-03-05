@@ -35,7 +35,7 @@ void __cdecl core_stranger_cpp_CStranger_extractTurnPoseData_FUN_005bf720(CStran
                      (&local_1c,
                       (CVector3f *)
                       ((this_ptr->base).base.model.bone_transform.bone_rotations + INT_03f6bacc));
-  blend_callback = core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0;
+  blend_callback = core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0;
   bone_index = -1;
   local_1c.z = -pCVar1->y;
   blend_weight = 1.0;

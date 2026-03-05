@@ -23,7 +23,7 @@ int __cdecl core_menu_cpp_checkAndCalibrateGamepad_FUN_00511840(void)
   DWORD DStack_18;
   DWORD DStack_14;
   
-  if ((g_CGamePtr->game_control != 2) || (g_CGamePtr->x_center != 0)) {
+  if ((g_CGamePtr->game_control != CONTROL_MODE_GAMEPAD) || (g_CGamePtr->x_center != 0)) {
     return 1;
   }
   DVar5 = 0x7fffffff;
@@ -94,6 +94,6 @@ int __cdecl core_menu_cpp_checkAndCalibrateGamepad_FUN_00511840(void)
 LAB_00510743:
   pCVar1 = g_CGamePtr;
   g_CGamePtr->x_center = 0;
-  pCVar1->game_control = 0;
+  pCVar1->game_control = CONTROL_MODE_KEYBOARD;
   return 0;
 }

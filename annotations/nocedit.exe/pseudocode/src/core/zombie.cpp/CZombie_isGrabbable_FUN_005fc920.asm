@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_zombie_cpp_CZombie_isGrabbable_FUN_005fc920(CZombie *this_ptr,CDemonActor *param_2)
+; int __cdecl core_zombie_cpp_CZombie_isGrabbable_FUN_005fc920(CZombie *this_ptr,CDemonActor *grabber)
 ;
 ; Parameters:
 ; CZombie *        Stack[0x4]:4   this_ptr
-; CDemonActor *    Stack[0x8]:4   param_2
+; CDemonActor *    Stack[0x8]:4   grabber
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CTentacle_00658a3d
@@ -37,7 +37,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0xc]       ; 005fc942
     PUSH EBX                            ; 005fc946
     CALL core_charactr.cpp_CCharacter_isGrabbable_FUN_0042bf30 ; 005fc947
-        ;   XREF to: 0042bf30 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_isGrabbable_FUN_0042bf30(CCharacter * this_ptr)
+        ;   XREF to: 0042bf30 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_isGrabbable_FUN_0042bf30(CCharacter * this_ptr, CDemonActor * grabber)
     ADD ESP,0x8                         ; 005fc94c
     POP EBX                             ; 005fc94f
     RET                                 ; 005fc950

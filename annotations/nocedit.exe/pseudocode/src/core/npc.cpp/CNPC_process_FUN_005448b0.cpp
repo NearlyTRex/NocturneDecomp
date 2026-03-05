@@ -17,7 +17,8 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_005448b0(CNPC *this_ptr,float delta_t
   int iVar6;
   CVector3f *pCVar7;
   CMotionList *this_ptr_00;
-  char *state_name;
+  char *pcVar8;
+  float local_58;
   CVector3f CStack_54;
   CVector3f CStack_48;
   float fStack_3c;
@@ -39,8 +40,10 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_005448b0(CNPC *this_ptr,float delta_t
   (this_ptr->base).model.accumulated_root_motion.x =
        (this_ptr->base).model.accumulated_root_motion.y;
   pCVar1 = &(this_ptr->base).model;
-  while (0.0 < delta_time) {
-    iVar6 = core_motion_cpp_CMotionController_advance_FUN_0052d610(&pCVar1->motion_controller);
+  local_58 = delta_time;
+  while (0.0 < local_58) {
+    iVar6 = core_motion_cpp_CMotionController_advance_FUN_0052d610
+                      (&pCVar1->motion_controller,&local_58);
     core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40(&this_ptr->base,iVar6);
   }
   iVar6 = (*(((this_ptr->base).base.vtable._uc)->_uc).getDeathState)(&this_ptr->base);
@@ -63,21 +66,23 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_005448b0(CNPC *this_ptr,float delta_t
   if (uVar3 < 2) {
     if (uVar3 == 1) {
 LAB_005449de:
-      state_name = "WALK";
+      pcVar8 = "WALK";
     }
     else {
 LAB_00544b62:
-      state_name = "STAND";
+      pcVar8 = "STAND";
     }
     core_motion_cpp_CMotionController_setDesiredStateByName_FUN_0052db90
-              (&(this_ptr->base).model.motion_controller,state_name,1);
+              (&(this_ptr->base).model.motion_controller,pcVar8,1);
   }
   else {
     pCVar1 = &(this_ptr->base).model;
     if (uVar3 < 3) {
+      iVar6 = 0;
+      pcVar8 = "RUN";
       this_ptr_00 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                               (&pCVar1->motion_controller);
-      iVar6 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(this_ptr_00);
+      iVar6 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(this_ptr_00,pcVar8,iVar6);
       if (iVar6 < 0) goto LAB_005449de;
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                 (&pCVar1->motion_controller,iVar6,1);

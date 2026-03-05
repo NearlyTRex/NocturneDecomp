@@ -2,11 +2,11 @@
 // Address: 00538ea0
 // Address Range: [[00538ea0, 00538f3a]]
 // Convention: __cdecl
-// Signature: void __cdecl core_msnedit_cpp_CDemonMission_deleteActor_FUN_00538ea0(CDemonMission *this_ptr,int param_2)
+// Signature: void __cdecl core_msnedit_cpp_CDemonMission_deleteActor_FUN_00538ea0(CDemonMission *this_ptr,CDemonActor *actor)
 
 #include "nocturne.h"
 
-void __cdecl core_msnedit_cpp_CDemonMission_deleteActor_FUN_00538ea0(CDemonMission *this_ptr,int param_2)
+void __cdecl core_msnedit_cpp_CDemonMission_deleteActor_FUN_00538ea0(CDemonMission *this_ptr,CDemonActor *actor)
 
 {
   CDemonActor *this_ptr_00;
@@ -17,8 +17,8 @@ void __cdecl core_msnedit_cpp_CDemonMission_deleteActor_FUN_00538ea0(CDemonMissi
   
   for (this_ptr_00 = this_ptr->first_actor; this_ptr_00 != (CDemonActor *)0x0;
       this_ptr_00 = this_ptr_00->next_actor) {
-    if (this_ptr_00 != (CDemonActor *)param_2) {
-      (*((this_ptr_00->vtable)._ub)->onActorDeleted)(this_ptr_00,(CDemonActor *)param_2);
+    if (this_ptr_00 != actor) {
+      (*((this_ptr_00->vtable)._ub)->onActorDeleted)(this_ptr_00,actor);
       core_actor_cpp_CActorPropertyList_init_FUN_0040e130(&CStack_2510);
       (*((this_ptr_00->vtable)._ub)->getPropertyList)(this_ptr_00,&CStack_2510);
       iVar3 = 0;
@@ -26,8 +26,8 @@ void __cdecl core_msnedit_cpp_CDemonMission_deleteActor_FUN_00538ea0(CDemonMissi
         iVar2 = 0;
         do {
           if ((*(int *)(CStack_2510.properties[0].name + iVar2 + -4) == 5) &&
-             (piVar1 = *(int **)(CStack_2510.properties[0].string1 + iVar2 + -8), param_2 == *piVar1
-             )) {
+             (piVar1 = *(int **)(CStack_2510.properties[0].string1 + iVar2 + -8),
+             actor == (CDemonActor *)*piVar1)) {
             *piVar1 = 0;
           }
           iVar3 = iVar3 + 1;

@@ -29,7 +29,7 @@ void __cdecl CLever::process(CLever *this_ptr,float delta_time);
 
 // Original: core_lever.cpp_CLever_setState_FUN_00504b20
 // Address: 00504b20
-void __cdecl CLever::setState(CLever *this_ptr,float param_2);
+void __cdecl CLever::setState(CLever *this_ptr,float new_state);
 
 // Original: core_lever.cpp_CLever_activate_FUN_00504c90
 // Address: 00504c90
@@ -45,7 +45,7 @@ CBoundingBox3D * __cdecl CLever::getBoundingBox(CLever *this_ptr,CBoundingBox3D 
 
 // Original: core_lever.cpp_CLever_FUN_00504dd0
 // Address: 00504dd0
-CVector3f * __cdecl CLever(CLever *this_ptr);
+CVector3f * __cdecl CLever(CLever *this_ptr,CVector3f *param_2);
 
 // Original: core_lever.cpp_CLever_archive_FUN_00504e80
 // Address: 00504e80

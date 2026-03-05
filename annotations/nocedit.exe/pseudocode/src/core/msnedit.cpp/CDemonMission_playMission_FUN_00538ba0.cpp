@@ -23,7 +23,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_playMission_FUN_00538ba0(CDemonMissi
               (g_CEditorToolsPtr,"Backing up to %s...");
     core_mission_cpp_CDemonMission_save_FUN_00522e30(this_ptr,local_18);
     this_ptr->is_in_editor = 0;
-    iVar1 = core_mission_cpp_CDemonMission_createHeros_FUN_00524a80(this_ptr,0);
+    iVar1 = core_mission_cpp_CDemonMission_createHeros_FUN_00524a80(this_ptr,(CCharacter *)0x0);
     if (iVar1 != 0) {
       shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                 (g_CEditorToolsPtr,"Preparing actors...");

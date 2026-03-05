@@ -2,11 +2,11 @@
 // Address: 0049b2f0
 // Address Range: [[0049b2f0, 0049b690]]
 // Convention: __cdecl
-// Signature: int __cdecl core_dtri_cpp_rayTriangleFloorTest_FUN_0049b2f0(CDemonTriangle *triangle,float x,float z,float *out_height)
+// Signature: int __cdecl core_dtri_cpp_rayTriangleFloorTest_FUN_0049b2f0(CDemonTriangle *triangle,CVector3f *position,float search_radius,float *out_height)
 
 #include "nocturne.h"
 
-int __cdecl core_dtri_cpp_rayTriangleFloorTest_FUN_0049b2f0(CDemonTriangle *triangle,float x,float z,float *out_height)
+int __cdecl core_dtri_cpp_rayTriangleFloorTest_FUN_0049b2f0(CDemonTriangle *triangle,CVector3f *position,float search_radius,float *out_height)
 
 {
   float fVar1;
@@ -27,15 +27,15 @@ int __cdecl core_dtri_cpp_rayTriangleFloorTest_FUN_0049b2f0(CDemonTriangle *tria
   CVector3f local_34 [3];
   
   if ((triangle->normal).y <= (float)-0.34000000000000002) {
-    fVar1 = (triangle->vertex1).x - *(float *)x;
+    fVar1 = (triangle->vertex1).x - position->x;
     fVar9 = (triangle->vertex1).y;
-    fVar2 = (triangle->vertex1).z - *(float *)((int)x + 8);
-    local_58.x = (triangle->vertex2).x - *(float *)x;
+    fVar2 = (triangle->vertex1).z - position->z;
+    local_58.x = (triangle->vertex2).x - position->x;
     local_58.y = (triangle->vertex2).y;
-    local_58.z = (triangle->vertex2).z - *(float *)((int)x + 8);
-    local_70.x = (triangle->vertex3).x - *(float *)x;
+    local_58.z = (triangle->vertex2).z - position->z;
+    local_70.x = (triangle->vertex3).x - position->x;
     local_70.y = (triangle->vertex3).y;
-    local_70.z = (triangle->vertex3).z - *(float *)((int)x + 8);
+    local_70.z = (triangle->vertex3).z - position->z;
     local_4c.x = fVar1;
     local_4c.y = fVar9;
     local_4c.z = fVar2;
@@ -75,7 +75,7 @@ int __cdecl core_dtri_cpp_rayTriangleFloorTest_FUN_0049b2f0(CDemonTriangle *tria
         local_70.z = fVar2;
       }
     }
-    if (local_70.y <= *(float *)((int)x + 4)) {
+    if (local_70.y <= position->y) {
       if (local_4c.y < local_58.y) {
         local_7c.x = local_4c.x;
         local_7c.y = local_4c.y;
@@ -92,13 +92,16 @@ int __cdecl core_dtri_cpp_rayTriangleFloorTest_FUN_0049b2f0(CDemonTriangle *tria
         }
       }
       if (*out_height <= local_4c.y) {
-        if (local_4c.x * local_4c.x + local_4c.z * local_4c.z < z * z) {
+        if (local_4c.x * local_4c.x + local_4c.z * local_4c.z < search_radius * search_radius) {
           *out_height = local_4c.y;
           return 1;
         }
-        uVar6 = core_dtri_cpp_rayEdgeHeightTest_FUN_0049b180(&local_4c,&local_58,z,out_height);
-        uVar7 = core_dtri_cpp_rayEdgeHeightTest_FUN_0049b180(&local_58,&local_70,z,out_height);
-        uVar8 = core_dtri_cpp_rayEdgeHeightTest_FUN_0049b180(&local_70,&local_4c,z,out_height);
+        uVar6 = core_dtri_cpp_rayEdgeHeightTest_FUN_0049b180
+                          (&local_4c,&local_58,search_radius,out_height);
+        uVar7 = core_dtri_cpp_rayEdgeHeightTest_FUN_0049b180
+                          (&local_58,&local_70,search_radius,out_height);
+        uVar8 = core_dtri_cpp_rayEdgeHeightTest_FUN_0049b180
+                          (&local_70,&local_4c,search_radius,out_height);
         fVar9 = (triangle->normal).x;
         fVar1 = (triangle->normal).z;
         uVar8 = uVar6 | uVar7 | uVar8;
@@ -110,10 +113,10 @@ int __cdecl core_dtri_cpp_rayTriangleFloorTest_FUN_0049b2f0(CDemonTriangle *tria
           g_FloorRayDirection.z = 0.0;
         }
         if (0.01 <= (double)fVar9) {
-          fVar9 = z / fVar9;
-          local_64.x = (triangle->normal).x * fVar9 + *(float *)x;
-          local_64.z = fVar9 * (triangle->normal).z + *(float *)((int)x + 8);
-          local_64.y = *(float *)((int)x + 4);
+          fVar9 = search_radius / fVar9;
+          local_64.x = (triangle->normal).x * fVar9 + position->x;
+          local_64.z = fVar9 * (triangle->normal).z + position->z;
+          local_64.y = position->y;
           fVar9 = core_dtri_cpp_rayTriangleIntersection_FUN_0049a800
                             (triangle,&local_64,&g_FloorRayDirection);
           if ((0.0 <= fVar9) &&
@@ -124,7 +127,7 @@ int __cdecl core_dtri_cpp_rayTriangleFloorTest_FUN_0049b2f0(CDemonTriangle *tria
         }
         else if (uVar8 == 0) {
           fVar9 = core_dtri_cpp_rayTriangleIntersection_FUN_0049a800
-                            (triangle,(CVector3f *)x,&g_FloorRayDirection);
+                            (triangle,position,&g_FloorRayDirection);
           if (0.0 <= fVar9) {
             uVar8 = 1;
             *out_height = local_4c.y;

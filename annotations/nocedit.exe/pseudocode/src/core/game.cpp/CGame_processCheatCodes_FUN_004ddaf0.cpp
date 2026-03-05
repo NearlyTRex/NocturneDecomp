@@ -538,7 +538,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
       if (local_274 == local_278) {
         fVar23 = 5.0;
         g_InputHistory[1] = '\0';
-        this_ptr->aim_mode = 2;
+        this_ptr->aim_mode = AIM_MODE_MANUAL;
         pcVar10 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Manual aim enabled");
         core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar10,fVar23);
         core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,"cheat-1.wav")
@@ -572,7 +572,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
       if (local_26c == local_270) {
         fVar23 = 5.0;
         g_InputHistory[1] = '\0';
-        this_ptr->aim_mode = 0;
+        this_ptr->aim_mode = AIM_MODE_AUTO;
         pcVar10 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Auto aim enabled");
         core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar10,fVar23);
         core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,"cheat-1.wav")

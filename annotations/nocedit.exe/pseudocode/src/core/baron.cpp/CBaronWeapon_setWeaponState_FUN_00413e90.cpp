@@ -24,7 +24,7 @@ void __cdecl core_baron_cpp_CBaronWeapon_setWeaponState_FUN_00413e90(CBaronWeapo
     core_baron_cpp_CBaron_engageTarget_FUN_00413470(this_ptr->baron,target);
   }
   else if (this_ptr->baron != (CBaron *)0x0) {
-    core_baron_cpp_CBaron_FUN_004135a0(this_ptr->baron,(int)target);
+    core_baron_cpp_CBaron_FUN_004135a0(this_ptr->baron,target);
     return;
   }
   return;

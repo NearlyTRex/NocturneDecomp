@@ -34,7 +34,7 @@ void __cdecl core_door_cpp_CDoor_reposition_FUN_0047fd20(CDoor *this_ptr)
   
   (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&local_c8);
   switch(this_ptr->door_type) {
-  case 0:
+  case DOOR_TYPE_SWING:
     (this_ptr->base).orient.vec.x = 0.0;
     (this_ptr->base).orient.vec.z = 0.0;
     (this_ptr->base).location.position.x = (this_ptr->orig_pos).x;
@@ -60,7 +60,7 @@ void __cdecl core_door_cpp_CDoor_reposition_FUN_0047fd20(CDoor *this_ptr)
     pCVar3 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                        (&this_ptr->base,&CStack_50,&this_ptr->open_position);
     break;
-  case 1:
+  case DOOR_TYPE_VERTICAL:
     (this_ptr->base).location.position.y = (this_ptr->orig_pos).y + this_ptr->param;
     CStack_44.y = 3.5;
     CStack_44.x = 0.0;
@@ -68,7 +68,7 @@ void __cdecl core_door_cpp_CDoor_reposition_FUN_0047fd20(CDoor *this_ptr)
     pCVar3 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                        (&this_ptr->base,&CStack_74,&CStack_44);
     break;
-  case 2:
+  case DOOR_TYPE_SLIDE:
     if (this_ptr->door_side == 1) {
       CStack_a4.x = this_ptr->param;
     }
@@ -91,7 +91,7 @@ void __cdecl core_door_cpp_CDoor_reposition_FUN_0047fd20(CDoor *this_ptr)
     pCVar3 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                        (&this_ptr->base,&CStack_68,&CStack_8c);
     break;
-  case 3:
+  case DOOR_TYPE_TILT:
     (this_ptr->base).orient.vec.x = this_ptr->param * (float)1.57079632675;
     core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr->base);
     fStack_b0 = local_c8.min.x + local_c8.max.x;

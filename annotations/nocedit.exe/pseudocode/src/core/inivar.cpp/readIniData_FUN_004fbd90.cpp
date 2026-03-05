@@ -36,7 +36,7 @@ void __cdecl core_inivar_cpp_readIniData_FUN_004fbd90(void)
             (&local_204,"rendererDLLPath",g_RendererDllName,0xfa,unaff_EBX);
   engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30(&local_204,"gamma",&g_CGamePtr->gamma);
   engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30
-            (&local_204,"heroNumber",&g_CGamePtr->hero_number);
+            (&local_204,"heroNumber",(int *)&g_CGamePtr->hero_number);
   engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30
             (&local_204,"haloMode",&g_CGamePtr->halo_mode);
   engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30
@@ -66,7 +66,7 @@ void __cdecl core_inivar_cpp_readIniData_FUN_004fbd90(void)
   sound_sndmain_cpp_readIni_FUN_005abf20(&local_204);
   engine_ini_cpp_CIniFile_readIniHeader_FUN_004fbae0(&local_204,"Control");
   engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30
-            (&local_204,"gameControl",&g_CGamePtr->game_control);
+            (&local_204,"gameControl",(int *)&g_CGamePtr->game_control);
   core_game_cpp_CGame_restoreDefaultControls_FUN_004dbbc0(g_CGamePtr);
   engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30
             (&local_204,"keyWalk",&g_CGamePtr->key_walk);
@@ -143,7 +143,7 @@ void __cdecl core_inivar_cpp_readIniData_FUN_004fbd90(void)
   engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30
             (&local_204,"yStickMax",&g_CGamePtr->y_stick_max);
   engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30
-            (&local_204,"aimMode",&g_CGamePtr->aim_mode);
+            (&local_204,"aimMode",(int *)&g_CGamePtr->aim_mode);
   engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30
             (&local_204,"autoUseHealth",&g_CGamePtr->auto_use_health);
   engine_ini_cpp_CIniFile_readIniHeader_FUN_004fbae0(&local_204,"Debug");

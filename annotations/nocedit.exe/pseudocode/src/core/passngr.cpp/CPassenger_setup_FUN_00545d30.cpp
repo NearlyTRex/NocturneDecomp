@@ -17,8 +17,8 @@ void __cdecl core_passngr_cpp_CPassenger_setup_FUN_00545d30(CPassenger *this_ptr
   char cVar2;
   CDemonActor *pCVar3;
   CMotionList *this_ptr_02;
-  int target_motion_index;
   char *pcVar4;
+  int iVar5;
   
   core_npc_cpp_CNPC_setup_FUN_00544870(&this_ptr->base);
   if (this_ptr->werewolf_actor == (CDemonActor *)0x0) {
@@ -51,11 +51,13 @@ void __cdecl core_passngr_cpp_CPassenger_setup_FUN_00545d30(CPassenger *this_ptr
     ;
     *(float *)(this_ptr->werewolf_actor[0x1c].create_event + 4) = this_ptr->wolf_size;
     (*((this_ptr->werewolf_actor->vtable)._ub)->setup)(this_ptr->werewolf_actor);
+    iVar5 = 1;
+    pcVar4 = "transform";
     this_ptr_02 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                             ((CMotionController *)(this_ptr->werewolf_actor + 1));
-    target_motion_index = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(this_ptr_02);
+    iVar5 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(this_ptr_02,pcVar4,iVar5);
     core_motion_cpp_CMotionController_jumpToMotion_FUN_0052dde0
-              ((CMotionController *)(this_ptr->werewolf_actor + 1),target_motion_index,0.0);
+              ((CMotionController *)(this_ptr->werewolf_actor + 1),iVar5,0.0);
   }
   core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80
             ((CDeformableModelInstance *)(this_ptr->werewolf_actor + 1));

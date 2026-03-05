@@ -2,11 +2,11 @@
 // Address: 0043c3e0
 // Address Range: [[0043c3e0, 0043c42f]]
 // Convention: __cdecl
-// Signature: void __cdecl core_cloth_cpp_CClothList_FUN_0043c3e0(CClothList *this_ptr,CVector3f *param_2)
+// Signature: void __cdecl core_cloth_cpp_CClothList_FUN_0043c3e0(CClothList *this_ptr,CVector3f *wind_velocity)
 
 #include "nocturne.h"
 
-void __cdecl core_cloth_cpp_CClothList_FUN_0043c3e0(CClothList *this_ptr,CVector3f *param_2)
+void __cdecl core_cloth_cpp_CClothList_FUN_0043c3e0(CClothList *this_ptr,CVector3f *wind_velocity)
 
 {
   CCloth *pCVar1;
@@ -19,10 +19,10 @@ void __cdecl core_cloth_cpp_CClothList_FUN_0043c3e0(CClothList *this_ptr,CVector
     do {
       while( true ) {
         pCVar1 = pCVar2->cloths[0];
-        if (&pCVar1->wind_velocity == param_2) break;
-        (pCVar1->wind_velocity).x = param_2->x;
-        (pCVar1->wind_velocity).y = param_2->y;
-        (pCVar1->wind_velocity).z = param_2->z;
+        if (&pCVar1->wind_velocity == wind_velocity) break;
+        (pCVar1->wind_velocity).x = wind_velocity->x;
+        (pCVar1->wind_velocity).y = wind_velocity->y;
+        (pCVar1->wind_velocity).z = wind_velocity->z;
         iVar3 = iVar3 + 1;
         pCVar2 = (CClothList *)pCVar2->filenames;
         if (this_ptr->count <= iVar3) {

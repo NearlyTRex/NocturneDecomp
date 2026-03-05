@@ -77,7 +77,7 @@ LAB_005c5f6e:
   if (iVar5 == 3) {
     return;
   }
-  if (((this_ptr->base).aim_mode == 0) && (iVar5 == 0)) {
+  if (((this_ptr->base).aim_mode == AIM_MODE_AUTO) && (iVar5 == 0)) {
     pSVar6 = &this_ptr->right_arm_aim;
     pSVar1 = &this_ptr->left_arm_aim;
     if (this_ptr->dual_wield_side != 0) {
@@ -129,8 +129,7 @@ switchD_005c5ffd_caseD_8:
         this_ptr->dual_wield_side = (uint)(this_ptr->dual_wield_side == 0);
       }
       this_ptr->can_grab_weapon = 0;
-      iVar5 = (*(((((CCharacter *)this_ptr->weapon)->base).vtable._uc)->_uc).isGrabbable)
-                        ((CCharacter *)this_ptr->weapon);
+      iVar5 = (*(((this_ptr->weapon->base).vtable._uw)->_uw).fire)(this_ptr->weapon);
       if (iVar5 != 0) {
         this_ptr->can_grab_weapon = 1;
       }

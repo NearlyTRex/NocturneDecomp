@@ -38,7 +38,8 @@ void __cdecl core_hero_cpp_CHero_archive_FUN_004f2610(CHero *this_ptr)
       (this_ptr->base).grabbed_type = 0;
     }
     if (4 < g_CHeroClassVersion) {
-      core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->control_type,"controlType");
+      core_actor_cpp_archiveInteger_FUN_0040b7f0
+                ((int *)&this_ptr->control_type,"controlType");
     }
     if (6 < g_CHeroClassVersion) {
       core_actor_cpp_archiveActor_FUN_0040b870
@@ -64,7 +65,7 @@ void __cdecl core_hero_cpp_CHero_archive_FUN_004f2610(CHero *this_ptr)
       } while (iVar1 < 0x20);
     }
     if (8 < g_CHeroClassVersion) {
-      core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->ai_task,"AITask");
+      core_actor_cpp_archiveInteger_FUN_0040b7f0((int *)&this_ptr->ai_task,"AITask");
     }
     if (0xb < g_CHeroClassVersion) {
       core_actor_cpp_archiveInteger_FUN_0040b7f0

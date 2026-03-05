@@ -1729,10 +1729,6 @@
       "type":"struct"
     },
     {
-      "name":"CGame",
-      "type":"struct"
-    },
-    {
       "name":"CGunFlame",
       "type":"struct"
     },
@@ -2013,7 +2009,19 @@
       "type":"typedef"
     },
     {
+      "name":"EActionType",
+      "type":"enum"
+    },
+    {
       "name":"EActorPropertyType",
+      "type":"enum"
+    },
+    {
+      "name":"EAimLockState",
+      "type":"enum"
+    },
+    {
+      "name":"EAimMode",
       "type":"enum"
     },
     {
@@ -2045,11 +2053,67 @@
       "type":"enum"
     },
     {
+      "name":"EControlMode",
+      "type":"enum"
+    },
+    {
+      "name":"EDamageType",
+      "type":"enum"
+    },
+    {
+      "name":"EDeathType",
+      "type":"enum"
+    },
+    {
+      "name":"EDoorState",
+      "type":"enum"
+    },
+    {
+      "name":"EDoorType",
+      "type":"enum"
+    },
+    {
       "name":"EDripType",
       "type":"enum"
     },
     {
       "name":"EEditorActionType",
+      "type":"enum"
+    },
+    {
+      "name":"EFireMode",
+      "type":"enum"
+    },
+    {
+      "name":"EGroundType",
+      "type":"enum"
+    },
+    {
+      "name":"EHealthBarMode",
+      "type":"enum"
+    },
+    {
+      "name":"EHeroControlType",
+      "type":"enum"
+    },
+    {
+      "name":"EHeroTask",
+      "type":"enum"
+    },
+    {
+      "name":"EHeroType",
+      "type":"enum"
+    },
+    {
+      "name":"CGame",
+      "type":"struct"
+    },
+    {
+      "name":"EHostageState",
+      "type":"enum"
+    },
+    {
+      "name":"EHostageType",
       "type":"enum"
     },
     {
@@ -2078,6 +2142,10 @@
     },
     {
       "name":"ELightActorType",
+      "type":"enum"
+    },
+    {
+      "name":"EMotionTransitionCmd",
       "type":"enum"
     },
     {
@@ -2110,6 +2178,18 @@
     },
     {
       "name":"ETextAlignment",
+      "type":"enum"
+    },
+    {
+      "name":"ETriggerEventType",
+      "type":"enum"
+    },
+    {
+      "name":"EWeaponState",
+      "type":"enum"
+    },
+    {
+      "name":"EWeaponType",
       "type":"enum"
     },
     {
@@ -6757,6 +6837,46 @@
     {
       "cat":"/Nocturne/Enum/Game",
       "importable":true,
+      "name":"EActionType",
+      "type":"enum",
+      "values":[
+        {
+          "name":"ACTION_TYPE_WALK",
+          "val":0
+        },
+        {
+          "name":"ACTION_TYPE_BACKUP",
+          "val":1
+        },
+        {
+          "name":"ACTION_TYPE_RUN",
+          "val":2
+        },
+        {
+          "name":"ACTION_TYPE_FIRE",
+          "val":3
+        },
+        {
+          "name":"ACTION_TYPE_USE_ITEM",
+          "val":4
+        },
+        {
+          "name":"ACTION_TYPE_LIGHT",
+          "val":5
+        },
+        {
+          "name":"ACTION_TYPE_DRAW",
+          "val":6
+        },
+        {
+          "name":"ACTION_TYPE_JUMP",
+          "val":7
+        }
+      ]
+    },
+    {
+      "cat":"/Nocturne/Enum/Game",
+      "importable":true,
       "name":"EActorPropertyType",
       "type":"enum",
       "values":[
@@ -6835,6 +6955,46 @@
         {
           "name":"PROP_FLAGS",
           "val":18
+        }
+      ]
+    },
+    {
+      "cat":"/Nocturne/Enum/Game",
+      "importable":true,
+      "name":"EAimLockState",
+      "type":"enum",
+      "values":[
+        {
+          "name":"AIM_LOCK_NONE",
+          "val":0
+        },
+        {
+          "name":"AIM_LOCK_ACQUIRING",
+          "val":1
+        },
+        {
+          "name":"AIM_LOCK_LOCKED",
+          "val":2
+        }
+      ]
+    },
+    {
+      "cat":"/Nocturne/Enum/Game",
+      "importable":true,
+      "name":"EAimMode",
+      "type":"enum",
+      "values":[
+        {
+          "name":"AIM_MODE_AUTO",
+          "val":0
+        },
+        {
+          "name":"AIM_MODE_SEMI_AUTO",
+          "val":1
+        },
+        {
+          "name":"AIM_MODE_MANUAL",
+          "val":2
         }
       ]
     },
@@ -7097,6 +7257,190 @@
     {
       "cat":"/Nocturne/Enum/Game",
       "importable":true,
+      "name":"EControlMode",
+      "type":"enum",
+      "values":[
+        {
+          "name":"CONTROL_MODE_KEYBOARD",
+          "val":0
+        },
+        {
+          "name":"CONTROL_MODE_MOUSE",
+          "val":1
+        },
+        {
+          "name":"CONTROL_MODE_GAMEPAD",
+          "val":2
+        }
+      ]
+    },
+    {
+      "cat":"/Nocturne/Enum/Game",
+      "importable":true,
+      "name":"EDamageType",
+      "type":"enum",
+      "values":[
+        {
+          "name":"DAMAGE_TYPE_GENERIC",
+          "val":0
+        },
+        {
+          "name":"DAMAGE_TYPE_DROWN",
+          "val":1
+        },
+        {
+          "name":"DAMAGE_TYPE_FALL",
+          "val":2
+        },
+        {
+          "name":"DAMAGE_TYPE_EXPLODE",
+          "val":3
+        },
+        {
+          "name":"DAMAGE_TYPE_SHATTER",
+          "val":4
+        },
+        {
+          "name":"DAMAGE_TYPE_FALL_APART",
+          "val":5
+        },
+        {
+          "name":"DAMAGE_TYPE_ELECTROCUTE",
+          "val":6
+        },
+        {
+          "name":"DAMAGE_TYPE_CHOPPED",
+          "val":7
+        },
+        {
+          "name":"DAMAGE_TYPE_CRUSHED",
+          "val":8
+        },
+        {
+          "name":"DAMAGE_TYPE_IMPALE",
+          "val":9
+        },
+        {
+          "name":"DAMAGE_TYPE_FIRE",
+          "val":10
+        },
+        {
+          "name":"DAMAGE_TYPE_IMMUNE",
+          "val":100
+        },
+        {
+          "name":"DAMAGE_TYPE_MELEE",
+          "val":103
+        },
+        {
+          "name":"DAMAGE_TYPE_LAUNCH",
+          "val":104
+        },
+        {
+          "name":"DAMAGE_TYPE_NO_FLINCH",
+          "val":105
+        },
+        {
+          "name":"DAMAGE_TYPE_DECAL",
+          "val":106
+        },
+        {
+          "name":"DAMAGE_TYPE_PIERCING",
+          "val":107
+        },
+        {
+          "name":"DAMAGE_TYPE_BURN",
+          "val":108
+        }
+      ]
+    },
+    {
+      "cat":"/Nocturne/Enum/Game",
+      "importable":true,
+      "name":"EDeathType",
+      "type":"enum",
+      "values":[
+        {
+          "name":"DEATH_TYPE_GENERIC",
+          "val":0
+        },
+        {
+          "name":"DEATH_TYPE_BULLET",
+          "val":1
+        },
+        {
+          "name":"DEATH_TYPE_FIRE",
+          "val":2
+        },
+        {
+          "name":"DEATH_TYPE_BLADE",
+          "val":3
+        },
+        {
+          "name":"DEATH_TYPE_STAKE",
+          "val":4
+        },
+        {
+          "name":"DEATH_TYPE_GAS",
+          "val":5
+        },
+        {
+          "name":"DEATH_TYPE_ELECTROCUTE",
+          "val":6
+        }
+      ]
+    },
+    {
+      "cat":"/Nocturne/Enum/Game",
+      "importable":true,
+      "name":"EDoorState",
+      "type":"enum",
+      "values":[
+        {
+          "name":"DOOR_STATE_CLOSED",
+          "val":0
+        },
+        {
+          "name":"DOOR_STATE_OPENING",
+          "val":1
+        },
+        {
+          "name":"DOOR_STATE_OPEN",
+          "val":2
+        },
+        {
+          "name":"DOOR_STATE_CLOSING",
+          "val":3
+        }
+      ]
+    },
+    {
+      "cat":"/Nocturne/Enum/Game",
+      "importable":true,
+      "name":"EDoorType",
+      "type":"enum",
+      "values":[
+        {
+          "name":"DOOR_TYPE_SWING",
+          "val":0
+        },
+        {
+          "name":"DOOR_TYPE_VERTICAL",
+          "val":1
+        },
+        {
+          "name":"DOOR_TYPE_SLIDE",
+          "val":2
+        },
+        {
+          "name":"DOOR_TYPE_TILT",
+          "val":3
+        }
+      ]
+    },
+    {
+      "cat":"/Nocturne/Enum/Game",
+      "importable":true,
       "name":"EDripType",
       "type":"enum",
       "values":[
@@ -7195,6 +7539,266 @@
         {
           "name":"ACTION_TYPE_ENTER",
           "val":18
+        }
+      ]
+    },
+    {
+      "cat":"/Nocturne/Enum/Game",
+      "importable":true,
+      "name":"EFireMode",
+      "type":"enum",
+      "values":[
+        {
+          "name":"FIRE_MODE_SINGLE",
+          "val":0
+        },
+        {
+          "name":"FIRE_MODE_AUTO",
+          "val":1
+        },
+        {
+          "name":"FIRE_MODE_PUMP",
+          "val":2
+        }
+      ]
+    },
+    {
+      "cat":"/Nocturne/Enum/Game",
+      "importable":true,
+      "name":"EGroundType",
+      "type":"enum",
+      "values":[
+        {
+          "name":"GROUND_TYPE_DEFAULT",
+          "val":0
+        },
+        {
+          "name":"GROUND_TYPE_NONE",
+          "val":1
+        },
+        {
+          "name":"GROUND_TYPE_CONCRETE",
+          "val":2
+        },
+        {
+          "name":"GROUND_TYPE_DIRT",
+          "val":3
+        },
+        {
+          "name":"GROUND_TYPE_GRASS",
+          "val":4
+        },
+        {
+          "name":"GROUND_TYPE_METAL",
+          "val":5
+        },
+        {
+          "name":"GROUND_TYPE_WATER",
+          "val":6
+        },
+        {
+          "name":"GROUND_TYPE_WOOD",
+          "val":7
+        },
+        {
+          "name":"GROUND_TYPE_MARBLE",
+          "val":8
+        },
+        {
+          "name":"GROUND_TYPE_MUD",
+          "val":9
+        },
+        {
+          "name":"GROUND_TYPE_CARPET",
+          "val":10
+        },
+        {
+          "name":"GROUND_TYPE_BLOOD",
+          "val":11
+        },
+        {
+          "name":"GROUND_TYPE_GLASS",
+          "val":12
+        },
+        {
+          "name":"GROUND_TYPE_GRAVEL",
+          "val":13
+        }
+      ]
+    },
+    {
+      "cat":"/Nocturne/Enum/Game",
+      "importable":true,
+      "name":"EHealthBarMode",
+      "type":"enum",
+      "values":[
+        {
+          "name":"HEALTH_BAR_NONE",
+          "val":0
+        },
+        {
+          "name":"HEALTH_BAR_WHEN_HURT",
+          "val":1
+        },
+        {
+          "name":"HEALTH_BAR_ALWAYS",
+          "val":2
+        }
+      ]
+    },
+    {
+      "cat":"/Nocturne/Enum/Game",
+      "importable":true,
+      "name":"EHeroControlType",
+      "type":"enum",
+      "values":[
+        {
+          "name":"HERO_CONTROL_PLAYER",
+          "val":0
+        },
+        {
+          "name":"HERO_CONTROL_AI",
+          "val":2
+        }
+      ]
+    },
+    {
+      "cat":"/Nocturne/Enum/Game",
+      "importable":true,
+      "name":"EHeroTask",
+      "type":"enum",
+      "values":[
+        {
+          "name":"HERO_TASK_STAND",
+          "val":0
+        },
+        {
+          "name":"HERO_TASK_FOLLOW",
+          "val":1
+        },
+        {
+          "name":"HERO_TASK_KILL",
+          "val":2
+        },
+        {
+          "name":"HERO_TASK_GUARD",
+          "val":3
+        },
+        {
+          "name":"HERO_TASK_SUSPEND",
+          "val":4
+        }
+      ]
+    },
+    {
+      "cat":"/Nocturne/Enum/Game",
+      "importable":true,
+      "name":"EHeroType",
+      "type":"enum",
+      "values":[
+        {
+          "name":"HERO_TYPE_GABRIELLA",
+          "val":0
+        },
+        {
+          "name":"HERO_TYPE_SVETLANA",
+          "val":1
+        },
+        {
+          "name":"HERO_TYPE_STRANGER",
+          "val":2
+        },
+        {
+          "name":"HERO_TYPE_SCAT",
+          "val":3
+        },
+        {
+          "name":"HERO_TYPE_BARON",
+          "val":4
+        },
+        {
+          "name":"HERO_TYPE_ICEPICK",
+          "val":5
+        },
+        {
+          "name":"HERO_TYPE_HAYSTACK",
+          "val":6
+        },
+        {
+          "name":"HERO_TYPE_COLONEL",
+          "val":7
+        },
+        {
+          "name":"HERO_TYPE_MOLOCH",
+          "val":8
+        }
+      ]
+    },
+    {
+      "cat":"/Nocturne/Enum/Game",
+      "importable":true,
+      "name":"EHostageState",
+      "type":"enum",
+      "values":[
+        {
+          "name":"HOSTAGE_STATE_IDLE",
+          "val":0
+        },
+        {
+          "name":"HOSTAGE_STATE_FOLLOWING",
+          "val":1
+        },
+        {
+          "name":"HOSTAGE_STATE_WALKING",
+          "val":2
+        },
+        {
+          "name":"HOSTAGE_STATE_GRABBED",
+          "val":3
+        },
+        {
+          "name":"HOSTAGE_STATE_RESCUED",
+          "val":4
+        },
+        {
+          "name":"HOSTAGE_STATE_DEAD",
+          "val":5
+        }
+      ]
+    },
+    {
+      "cat":"/Nocturne/Enum/Game",
+      "importable":true,
+      "name":"EHostageType",
+      "type":"enum",
+      "values":[
+        {
+          "name":"HOSTAGE_TYPE_HICKBOY",
+          "val":0
+        },
+        {
+          "name":"HOSTAGE_TYPE_DEPUTY",
+          "val":1
+        },
+        {
+          "name":"HOSTAGE_TYPE_HICKHO",
+          "val":2
+        },
+        {
+          "name":"HOSTAGE_TYPE_PREACHER",
+          "val":3
+        },
+        {
+          "name":"HOSTAGE_TYPE_HICKGIRL",
+          "val":4
+        },
+        {
+          "name":"HOSTAGE_TYPE_HICKDAD",
+          "val":5
+        },
+        {
+          "name":"HOSTAGE_TYPE_UNKNOWN",
+          "val":6
         }
       ]
     },
@@ -7753,6 +8357,42 @@
     {
       "cat":"/Nocturne/Enum/Game",
       "importable":true,
+      "name":"EMotionTransitionCmd",
+      "type":"enum",
+      "values":[
+        {
+          "name":"MOTION_CMD_NONE",
+          "val":0
+        },
+        {
+          "name":"MOTION_CMD_JUMP",
+          "val":1
+        },
+        {
+          "name":"MOTION_CMD_WAIT_EXIT",
+          "val":2
+        },
+        {
+          "name":"MOTION_CMD_TWEEN",
+          "val":3
+        },
+        {
+          "name":"MOTION_CMD_TWEEN_ADVANCE",
+          "val":4
+        },
+        {
+          "name":"MOTION_CMD_TWEEN_ADVANCE_BOTH",
+          "val":5
+        },
+        {
+          "name":"MOTION_CMD_TWEEN_BIDIR",
+          "val":6
+        }
+      ]
+    },
+    {
+      "cat":"/Nocturne/Enum/Game",
+      "importable":true,
       "name":"ENetPacketType",
       "type":"enum",
       "values":[
@@ -7930,6 +8570,94 @@
         },
         {
           "name":"TEXT_ALIGN_CENTER_IN_AREA",
+          "val":7
+        }
+      ]
+    },
+    {
+      "cat":"/Nocturne/Enum/Game",
+      "importable":true,
+      "name":"ETriggerEventType",
+      "type":"enum",
+      "values":[
+        {
+          "name":"TRIGGER_EVENT_SINGLE",
+          "val":0
+        },
+        {
+          "name":"TRIGGER_EVENT_REPEAT",
+          "val":1
+        },
+        {
+          "name":"TRIGGER_EVENT_ON_ENTER",
+          "val":2
+        },
+        {
+          "name":"TRIGGER_EVENT_ON_EXIT",
+          "val":3
+        }
+      ]
+    },
+    {
+      "cat":"/Nocturne/Enum/Game",
+      "importable":true,
+      "name":"EWeaponState",
+      "type":"enum",
+      "values":[
+        {
+          "name":"WEAPON_STATE_LYING_AROUND",
+          "val":0
+        },
+        {
+          "name":"WEAPON_STATE_IN_INVENTORY",
+          "val":1
+        },
+        {
+          "name":"WEAPON_STATE_IN_HAND",
+          "val":2
+        },
+        {
+          "name":"WEAPON_STATE_ON_HOOK",
+          "val":3
+        }
+      ]
+    },
+    {
+      "cat":"/Nocturne/Enum/Game",
+      "importable":true,
+      "name":"EWeaponType",
+      "type":"enum",
+      "values":[
+        {
+          "name":"WEAPON_TYPE_GUN",
+          "val":0
+        },
+        {
+          "name":"WEAPON_TYPE_SHOTGUN",
+          "val":1
+        },
+        {
+          "name":"WEAPON_TYPE_LIGHT_GUN",
+          "val":2
+        },
+        {
+          "name":"WEAPON_TYPE_DYNAMITE",
+          "val":3
+        },
+        {
+          "name":"WEAPON_TYPE_TOMMY_GUN",
+          "val":4
+        },
+        {
+          "name":"WEAPON_TYPE_FLASHLIGHT",
+          "val":5
+        },
+        {
+          "name":"WEAPON_TYPE_MELEE",
+          "val":6
+        },
+        {
+          "name":"WEAPON_TYPE_BARON",
           "val":7
         }
       ]
@@ -9159,6 +9887,10 @@
         {
           "name":"this_ptr",
           "type":"CCharacter*"
+        },
+        {
+          "name":"out_attract_position",
+          "type":"CVector3f*"
         }
       ],
       "return_type":"int",
@@ -9375,6 +10107,10 @@
         {
           "name":"this_ptr",
           "type":"CCharacter*"
+        },
+        {
+          "name":"grabber",
+          "type":"CDemonActor*"
         }
       ],
       "return_type":"int",
@@ -24014,7 +24750,7 @@
           "len":4,
           "name":"ground_type",
           "offset":728,
-          "type":"int"
+          "type":"EGroundType"
         }
       ],
       "importable":true,
@@ -25394,7 +26130,7 @@
           "len":4,
           "name":"ground_type",
           "offset":1520,
-          "type":"int"
+          "type":"EGroundType"
         },
         {
           "len":4,
@@ -30870,13 +31606,13 @@
           "len":4,
           "name":"ground_type",
           "offset":724,
-          "type":"int"
+          "type":"EGroundType"
         },
         {
           "len":4,
           "name":"door_type",
           "offset":728,
-          "type":"int"
+          "type":"EDoorType"
         },
         {
           "len":4,
@@ -30888,7 +31624,7 @@
           "len":4,
           "name":"door_state",
           "offset":736,
-          "type":"int"
+          "type":"EDoorState"
         },
         {
           "len":4,
@@ -33799,19 +34535,19 @@
           "len":4,
           "name":"game_control",
           "offset":188,
-          "type":"int"
+          "type":"EControlMode"
         },
         {
           "len":4,
           "name":"hero_number",
           "offset":192,
-          "type":"int"
+          "type":"EHeroType"
         },
         {
           "len":4,
           "name":"aim_mode",
           "offset":196,
-          "type":"int"
+          "type":"EAimMode"
         },
         {
           "len":4,
@@ -34981,7 +35717,7 @@
           "len":4,
           "name":"control_type",
           "offset":48680,
-          "type":"int"
+          "type":"EHeroControlType"
         },
         {
           "len":44,
@@ -34999,7 +35735,7 @@
           "len":4,
           "name":"aim_mode",
           "offset":128820,
-          "type":"int"
+          "type":"EAimMode"
         },
         {
           "len":1120,
@@ -35071,7 +35807,7 @@
           "len":4,
           "name":"ai_task",
           "offset":130000,
-          "type":"int"
+          "type":"EHeroTask"
         }
       ],
       "importable":true,
@@ -36077,7 +36813,7 @@
           "len":4,
           "name":"ground_type",
           "offset":764,
-          "type":"int"
+          "type":"EGroundType"
         }
       ],
       "importable":true,
@@ -38237,13 +38973,13 @@
           "len":4,
           "name":"current_frame_number",
           "offset":8,
-          "type":"int"
+          "type":"float"
         },
         {
           "len":4,
           "name":"tween_type",
           "offset":12,
-          "type":"int"
+          "type":"EMotionTransitionCmd"
         },
         {
           "len":4,
@@ -38291,7 +39027,7 @@
           "len":4,
           "name":"in_transition",
           "offset":44,
-          "type":"int"
+          "type":"SMotionTransition*"
         },
         {
           "len":32,
@@ -39823,7 +40559,7 @@
           "len":4,
           "name":"ground_type",
           "offset":1080,
-          "type":"int"
+          "type":"EGroundType"
         },
         {
           "len":4,
@@ -40039,7 +40775,7 @@
           "len":4,
           "name":"ground_type",
           "offset":728,
-          "type":"int"
+          "type":"EGroundType"
         },
         {
           "len":4,
@@ -41392,16 +42128,16 @@
           "type":"float"
         },
         {
-          "len":1025,
+          "len":1024,
           "name":"current_message",
           "offset":84,
-          "type":"char[1025]"
+          "type":"char[1024]"
         },
         {
-          "len":3,
-          "name":"msg_state_flags",
-          "offset":1109,
-          "type":"char[3]"
+          "len":4,
+          "name":"message_duration",
+          "offset":1108,
+          "type":"float"
         },
         {
           "len":4,
@@ -42727,7 +43463,7 @@
           "len":4,
           "name":"ground_type",
           "offset":2608,
-          "type":"int"
+          "type":"EGroundType"
         }
       ],
       "importable":true,
@@ -43819,7 +44555,7 @@
           "len":4,
           "name":"event_type",
           "offset":348,
-          "type":"int"
+          "type":"ETriggerEventType"
         },
         {
           "len":12,
@@ -52208,7 +52944,7 @@
       "fields":[
         {
           "len":4,
-          "name":"fire_type",
+          "name":"hit_part_index",
           "offset":0,
           "type":"int"
         },
@@ -52246,7 +52982,7 @@
           "len":4,
           "name":"ammo_type",
           "offset":40,
-          "type":"int"
+          "type":"EAmmoType"
         },
         {
           "len":4,
@@ -52258,7 +52994,7 @@
           "len":4,
           "name":"damage_type",
           "offset":48,
-          "type":"int"
+          "type":"EDamageType"
         },
         {
           "len":4,
@@ -52972,7 +53708,7 @@
           "len":4,
           "name":"hero_number",
           "offset":28,
-          "type":"uint"
+          "type":"EHeroType"
         },
         {
           "len":4,
@@ -54214,7 +54950,7 @@
           "len":4,
           "name":"cmd",
           "offset":4,
-          "type":"int"
+          "type":"EMotionTransitionCmd"
         },
         {
           "len":4,
@@ -55276,7 +56012,7 @@
           "len":4,
           "name":"hero_number",
           "offset":33,
-          "type":"int"
+          "type":"EHeroType"
         },
         {
           "len":4,
@@ -55354,7 +56090,7 @@
           "len":4,
           "name":"hero_number",
           "offset":33,
-          "type":"int"
+          "type":"EHeroType"
         },
         {
           "len":4,
@@ -55498,7 +56234,7 @@
           "len":4,
           "name":"hero_number",
           "offset":20,
-          "type":"int"
+          "type":"EHeroType"
         },
         {
           "len":4,

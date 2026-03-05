@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 52,
-    "complexity_score": 44,
+    "complexity_score": 19,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 19,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unnamed_param"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 71
   },
   "cross_references": [
@@ -37,7 +35,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_baron.cpp_CBaron_FUN_00413a00",
-    "signature": "void __cdecl core_baron_cpp_CBaron_FUN_00413a00(CBaron *this_ptr,float param_2)"
+    "signature": "void __cdecl core_baron_cpp_CBaron_FUN_00413a00(CBaron *this_ptr,float delta_time)"
   },
   "function_calls": [
     {
@@ -103,7 +101,7 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "delta_time",
         "offset": 8,
         "size": 4,
         "type": "float"
@@ -127,22 +125,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_baron_cpp_CBaron_FUN_00413a00(CBaron *this_ptr,float param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "} while (0.0 < param_2);",
-      "type": "unnamed_param"
-    }
-  ]
+  "suspects": []
 }

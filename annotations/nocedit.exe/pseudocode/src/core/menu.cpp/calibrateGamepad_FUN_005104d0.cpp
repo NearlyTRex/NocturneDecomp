@@ -90,6 +90,6 @@ int __cdecl core_menu_cpp_calibrateGamepad_FUN_005104d0(void)
 LAB_00510743:
   pCVar1 = g_CGamePtr;
   g_CGamePtr->x_center = 0;
-  pCVar1->game_control = 0;
+  pCVar1->game_control = CONTROL_MODE_KEYBOARD;
   return 0;
 }

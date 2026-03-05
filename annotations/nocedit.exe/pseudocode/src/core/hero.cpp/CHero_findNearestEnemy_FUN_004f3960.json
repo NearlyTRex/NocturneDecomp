@@ -1,29 +1,22 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 10,
-        "line": 67,
-        "message": "C-style cast from 'CCharacter *' to 'float' is not allowed"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 139,
-    "complexity_score": 73,
+    "complexity_score": 74,
     "cross_reference_count": 7,
     "function_call_count": 2,
     "global_count": 7,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 58,
+    "pseudocode_lines": 59,
     "suspect_count": 1,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 197
+    "total_lines": 198
   },
   "cross_references": [
     {
@@ -41,7 +34,7 @@
     {
       "addr": "004d4190",
       "from_addr": "004d4269",
-      "name": "core_gabriela.cpp_CGabriella_FUN_004d4190",
+      "name": "core_gabriela.cpp_CGabriella_processAI_FUN_004d4190",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -80,7 +73,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_hero.cpp_CHero_findNearestEnemy_FUN_004f3960",
-    "signature": "float __cdecl core_hero_cpp_CHero_findNearestEnemy_FUN_004f3960(CHero *this_ptr,float *out_distance)"
+    "signature": "CEnemy * __cdecl core_hero_cpp_CHero_findNearestEnemy_FUN_004f3960(CHero *this_ptr,float *out_distance)"
   },
   "function_calls": [
     {
@@ -236,7 +229,7 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 59,
+      "line": 60,
       "match": "SQRT",
       "severity": "mild",
       "text": "*out_distance = SQRT(*out_distance);",

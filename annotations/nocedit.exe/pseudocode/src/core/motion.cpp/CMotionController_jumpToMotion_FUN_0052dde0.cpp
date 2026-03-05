@@ -13,13 +13,13 @@ void __cdecl core_motion_cpp_CMotionController_jumpToMotion_FUN_0052dde0(CMotion
   
   if (target_frame_number == -1.0f) {
     iVar1 = (*this_ptr->vtable->findPatchToFrame)
-                      (this_ptr,this_ptr->current_motion_index,(float)this_ptr->current_frame_number
-                       ,target_motion_index);
+                      (this_ptr,this_ptr->current_motion_index,this_ptr->current_frame_number,
+                       target_motion_index);
     target_frame_number = (float)iVar1;
   }
-  this_ptr->in_transition = 0;
+  this_ptr->in_transition = (SMotionTransition *)0x0;
   this_ptr->current_motion_index = target_motion_index;
-  this_ptr->current_frame_number = (int)target_frame_number;
+  this_ptr->current_frame_number = target_frame_number;
   core_motion_cpp_CMotionController_clearTweenState_FUN_0052de40(this_ptr);
   return;
 }

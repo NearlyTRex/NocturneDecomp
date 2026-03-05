@@ -1,20 +1,28 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 66,
+        "line": 22,
+        "message": "use of undeclared identifier 'stack0x00000008'; did you mean 'in_stack_00000008'?"
+      }
+    ],
+    "success": false,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 108,
-    "complexity_score": 91,
+    "complexity_score": 106,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 46,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
-      "stack_param"
+      "stack_param",
+      "stack_ref"
     ],
     "total_lines": 154
   },
@@ -186,6 +194,14 @@
       "severity": "moderate",
       "text": "if (0.0 < in_stack_00000008) {",
       "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 15,
+      "match": "&stack0x00000008",
+      "severity": "moderate",
+      "text": "(&(this_ptr->model).motion_controller,&stack0x00000008);",
+      "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",

@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_mission_cpp_CDemonMission_createHeros_FUN_00524a80(CDemonMission *this_ptr,int creation_flags)
+; int __cdecl core_mission_cpp_CDemonMission_createHeros_FUN_00524a80(CDemonMission *this_ptr,CCharacter *existing_hero)
 ;
 ; Parameters:
 ; CDemonMission *  Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   creation_flags
+; CCharacter *     Stack[0x8]:4   existing_hero
 ;
 ; XREF[5]:
 ;   core_fileman.cpp_CDemonFileManager_createPodFromDirectory_FUN_004bda20 at 004bddd6
@@ -83,7 +83,7 @@ section .text
     PUSH EDI                            ; 00524ad5
     PUSH EBP                            ; 00524ad6
     CALL core_mission.cpp_CDemonMission_createOneHero_FUN_00524920 ; 00524ad7
-        ;   XREF to: 00524920 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_createOneHero_FUN_00524920(CDemonMission * this_ptr, int index, int param_3, void * param_4)
+        ;   XREF to: 00524920 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_createOneHero_FUN_00524920(CDemonMission * this_ptr, int index, int hero_type, CCharacter * existing_actor)
     ADD ESP,0x10                        ; 00524adc
     TEST EAX,EAX                        ; 00524adf
     JZ 0x00524b88                       ; 00524ae1
@@ -158,7 +158,7 @@ section .text
     MOV dword ptr [0x02db87d0],ECX      ; 00524ba5 | g_LocalHeroIndex
     MOV dword ptr [0x02db87bc],EDX      ; 00524bab | g_HeroCount
     CALL core_mission.cpp_CDemonMission_createOneHero_FUN_00524920 ; 00524bb1
-        ;   XREF to: 00524920 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_createOneHero_FUN_00524920(CDemonMission * this_ptr, int index, int param_3, void * param_4)
+        ;   XREF to: 00524920 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_createOneHero_FUN_00524920(CDemonMission * this_ptr, int index, int hero_type, CCharacter * existing_actor)
     ADD ESP,0x10                        ; 00524bb6
     TEST EAX,EAX                        ; 00524bb9
     JZ 0x00524b88                       ; 00524bbb

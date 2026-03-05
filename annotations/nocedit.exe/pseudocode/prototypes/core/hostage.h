@@ -45,7 +45,7 @@ void __cdecl CHostage::archive(CHostage *this_ptr);
 
 // Original: core_hostage.cpp_CHostage_isGrabbable_FUN_004f6390
 // Address: 004f6390
-int __cdecl CHostage::isGrabbable(CHostage *this_ptr);
+int __cdecl CHostage::isGrabbable(CHostage *this_ptr,CDemonActor *grabber);
 
 // Original: core_hostage.cpp_CHostage_canBeGrabbed_FUN_004f63d0
 // Address: 004f63d0

@@ -15,7 +15,7 @@ void __cdecl core_charactr_cpp_CCharacter_processDamage_FUN_0042c3c0(CCharacter 
   float fVar2;
   float fVar3;
   float fVar4;
-  uint uVar5;
+  EDamageType EVar5;
   CVector3f *impact_point;
   CVector3f local_28;
   CVector3f local_1c;
@@ -31,16 +31,16 @@ void __cdecl core_charactr_cpp_CCharacter_processDamage_FUN_0042c3c0(CCharacter 
   if (0.0 < SQRT(fVar4 * fVar4 + fVar3 * fVar3 + fVar2 * fVar2)) {
     impact_point = &damage_info->impact_point;
   }
-  uVar5 = damage_info->damage_type;
-  if (uVar5 < 6) {
-    if (uVar5 < 4) {
-      if (uVar5 == 3) {
+  EVar5 = damage_info->damage_type;
+  if (EVar5 < DAMAGE_TYPE_ELECTROCUTE) {
+    if (EVar5 < DAMAGE_TYPE_SHATTER) {
+      if (EVar5 == DAMAGE_TYPE_EXPLODE) {
         core_charactr_cpp_CCharacter_explode_FUN_0042b930
                   (this_ptr,impact_point,damage_info->impact_force);
       }
       goto LAB_0042c429;
     }
-    if (4 < uVar5) {
+    if (DAMAGE_TYPE_SHATTER < EVar5) {
       core_charactr_cpp_CCharacter_shatter_FUN_0042b8e0(this_ptr);
       goto LAB_0042c429;
     }
@@ -49,25 +49,25 @@ LAB_0042c50c:
               (this_ptr,impact_point,damage_info->impact_force);
   }
   else {
-    if (6 < uVar5) {
-      if (uVar5 < 0x68) {
-        if (uVar5 != 7) goto LAB_0042c429;
+    if (DAMAGE_TYPE_ELECTROCUTE < EVar5) {
+      if (EVar5 < DAMAGE_TYPE_LAUNCH) {
+        if (EVar5 != DAMAGE_TYPE_CHOPPED) goto LAB_0042c429;
         goto LAB_0042c50c;
       }
-      if (uVar5 < 0x69) {
+      if (EVar5 < DAMAGE_TYPE_NO_FLINCH) {
         core_charactr_cpp_CCharacter_addDamageDecal_FUN_0042b190(this_ptr);
         goto LAB_0042c429;
       }
-      if (uVar5 != 0x6a) goto LAB_0042c429;
+      if (EVar5 != DAMAGE_TYPE_DECAL) goto LAB_0042c429;
     }
     this_ptr->stagger_amount = 2.0;
   }
 LAB_0042c429:
-  if (damage_info->ammo_type == 5) {
+  if (damage_info->ammo_type == AMMO_TYPE_FLAMING) {
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
               (&this_ptr->base,&local_28,&damage_info->impact_direction);
     core_charactr_cpp_CCharacter_igniteBone_FUN_0042b5b0
-              (this_ptr,&local_28,damage_info->fire_type,0.0,0x3f800000,0);
+              (this_ptr,&local_28,damage_info->hit_part_index,0.0,0x3f800000,0);
   }
   if (0.0 < damage_info->gore_multiplier) {
     iVar1 = (int)ROUND(ROUND(damage_info->damage_amount * damage_info->gore_multiplier));

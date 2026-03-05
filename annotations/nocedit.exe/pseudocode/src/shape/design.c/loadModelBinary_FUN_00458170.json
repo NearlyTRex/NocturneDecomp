@@ -19,15 +19,15 @@
   },
   "complexity": {
     "assembly_lines": 735,
-    "complexity_score": 278,
+    "complexity_score": 268,
     "cross_reference_count": 1,
     "function_call_count": 16,
     "global_count": 38,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 253,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "stack_param"
+      "pointer_cast"
     ],
     "total_lines": 988
   },
@@ -690,20 +690,12 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_fffffe64",
-      "severity": "moderate",
-      "text": "SMRGLModelBounds *in_stack_fffffe64;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 225,
-      "match": "in_stack_fffffe64",
-      "severity": "moderate",
-      "text": "engine_model_c_getMRGLBounds_FUN_00528140(local_1c,in_stack_fffffe64);",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 230,
+      "match": "(SMRGLModelBounds *)((int)",
+      "severity": "mild",
+      "text": "pSVar4 = (SMRGLModelBounds *)((int)pSVar4 + ((uint)bVar8 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     }
   ]
 }

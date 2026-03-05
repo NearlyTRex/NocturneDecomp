@@ -17,7 +17,7 @@ void __cdecl core_hotdemon_cpp_CHotDemon_processDamage_FUN_004f7720(CHotDemon *t
   CVector3f local_24;
   
   sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handles[0]);
-  if (damage_info->ammo_type == 8) {
+  if (damage_info->ammo_type == AMMO_TYPE_MERCURY) {
     iVar4 = 0;
     damage_info->damage_amount = damage_info->damage_amount * (float)2;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0

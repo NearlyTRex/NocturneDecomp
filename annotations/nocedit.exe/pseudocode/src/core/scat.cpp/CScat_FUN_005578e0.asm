@@ -114,7 +114,7 @@ section .text
     PUSH EAX                            ; 00557994
     PUSH EBX                            ; 00557995
     CALL core_hero.cpp_CHero_findNearestEnemy_FUN_004f3960 ; 00557996
-        ;   XREF to: 004f3960 (UNCONDITIONAL_CALL)  ; float core_hero.cpp_CHero_findNearestEnemy_FUN_004f3960(CHero * this_ptr, float * out_distance)
+        ;   XREF to: 004f3960 (UNCONDITIONAL_CALL)  ; CEnemy * core_hero.cpp_CHero_findNearestEnemy_FUN_004f3960(CHero * this_ptr, float * out_distance)
     ADD ESP,0x8                         ; 0055799b
     TEST EAX,EAX                        ; 0055799e
     JZ 0x005579b3                       ; 005579a0

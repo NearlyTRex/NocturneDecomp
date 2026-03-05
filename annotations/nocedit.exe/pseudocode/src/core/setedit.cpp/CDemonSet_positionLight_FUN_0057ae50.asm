@@ -474,7 +474,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 0057b2fe
     PUSH EBX                            ; 0057b301
     CALL core_set.cpp_CDemonSet_reinitCamera_FUN_0056b7e0 ; 0057b302
-        ;   XREF to: 0056b7e0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_reinitCamera_FUN_0056b7e0(CDemonSet * this_ptr, uint param_2, uint param_3, int screen_height)
+        ;   XREF to: 0056b7e0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_reinitCamera_FUN_0056b7e0(CDemonSet * this_ptr, int clear_enabled, int is_clearing, int screen_height)
     ADD ESP,0x10                        ; 0057b307
     JMP 0x0057af62                      ; 0057b30a
         ;   XREF to: 0057af62 (UNCONDITIONAL_JUMP)  ; LAB_0057af62

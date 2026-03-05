@@ -13,6 +13,9 @@ struct CLever;
 #include "types/classes/CInventory.h"
 #include "types/classes/CPathMap.h"
 #include "types/classes/CVector3f.h"
+#include "types/enums/EAimMode.h"
+#include "types/enums/EHeroControlType.h"
+#include "types/enums/EHeroTask.h"
 #include "types/structs/SPlayerControl.h"
 #include "types/unions/UOrientationVector.h"
 
@@ -21,10 +24,10 @@ struct CLever;
 typedef struct CHero {
     CCharacter base; // 0x0
     float invincibility_timer; // 0xbe24
-    int control_type; // 0xbe28
+    EHeroControlType control_type; // 0xbe28
     SPlayerControl player_control; // 0xbe2c
     CPathMap path_map; // 0xbe58
-    int aim_mode; // 0x1f734
+    EAimMode aim_mode; // 0x1f734
     CInventory inventory; // 0x1f738
     int is_wearing_gas_mask; // 0x1fb98
     struct CDoor* door_to_open; // 0x1fb9c
@@ -36,6 +39,6 @@ typedef struct CHero {
     struct CDemonActor* target_actor; // 0x1fbb4
     CVector3f target_position; // 0x1fbb8
     UOrientationVector target_orientation; // 0x1fbc4
-    int ai_task; // 0x1fbd0
+    EHeroTask ai_task; // 0x1fbd0
 } CHero;
 

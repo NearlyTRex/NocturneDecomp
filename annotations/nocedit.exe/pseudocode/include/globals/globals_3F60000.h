@@ -518,9 +518,6 @@ extern uint g_WaterSoundHandle;
 extern uint g_TrainRailNoiseHandle;
 extern uint g_TrainExteriorAmbientHandle;
 
-// undefined4
-extern undefined4 DAT_03f6baa8;
-
 // void*
 extern void* g_PrimaryMixBuffer;
 extern void* g_FrameBufferPtr;

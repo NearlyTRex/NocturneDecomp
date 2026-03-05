@@ -12,12 +12,12 @@ int __cdecl shape_design_c_loadModelBinary_FUN_00458170(char *filename)
   char cVar1;
   int iVar2;
   char *pcVar3;
-  int *piVar4;
-  char *pcVar5;
-  int *piVar6;
-  byte bVar7;
-  SMRGLModelBounds *in_stack_fffffe64;
-  int local_198 [13];
+  SMRGLModelBounds *pSVar4;
+  int *piVar5;
+  char *pcVar6;
+  int *piVar7;
+  byte bVar8;
+  SMRGLModelBounds local_198;
   uint local_164;
   char local_160 [80];
   int local_110;
@@ -53,7 +53,7 @@ int __cdecl shape_design_c_loadModelBinary_FUN_00458170(char *filename)
   uint local_18;
   SIZE_T local_14;
   
-  bVar7 = 0;
+  bVar8 = 0;
   local_20 = 1.0;
   local_38 = engine_dosio_c_getFile_FUN_00481a50("models",filename,"rb");
   if (local_38 == (_FILE *)0x0) {
@@ -108,15 +108,15 @@ LAB_00458378:
           g_ModelPolygonData[g_PolygonCount].vertex_indices_count = local_a4;
           shape_design_c_calculatePolygonNormal_FUN_0045caa0(g_ModelPolygonData + g_PolygonCount);
           pcVar3 = g_TempTextureName;
-          pcVar5 = g_ModelPolygonData[g_PolygonCount].texture_name;
+          pcVar6 = g_ModelPolygonData[g_PolygonCount].texture_name;
           do {
             cVar1 = *pcVar3;
-            *pcVar5 = cVar1;
+            *pcVar6 = cVar1;
             if (cVar1 == '\0') break;
             cVar1 = pcVar3[1];
             pcVar3 = pcVar3 + 2;
-            pcVar5[1] = cVar1;
-            pcVar5 = pcVar5 + 2;
+            pcVar6[1] = cVar1;
+            pcVar6 = pcVar6 + 2;
           } while (cVar1 != '\0');
           g_ModelPolygonData[g_PolygonCount].material_id = local_24;
           _fread(g_ModelPolygonData[g_PolygonCount].vertex_indices,local_a4,4,local_38);
@@ -139,14 +139,14 @@ LAB_00458378:
             goto LAB_004584f3;
           }
           _fread(local_90,1,0x18,local_38);
-          pcVar5 = local_88;
+          pcVar6 = local_88;
           pcVar3 = g_TempTextureName;
           do {
-            cVar1 = *pcVar5;
+            cVar1 = *pcVar6;
             *pcVar3 = cVar1;
             if (cVar1 == '\0') break;
-            cVar1 = pcVar5[1];
-            pcVar5 = pcVar5 + 2;
+            cVar1 = pcVar6[1];
+            pcVar6 = pcVar6 + 2;
             pcVar3[1] = cVar1;
             pcVar3 = pcVar3 + 2;
           } while (cVar1 != '\0');
@@ -192,15 +192,15 @@ LAB_004584f3:
         g_ModelPolygonData[g_PolygonCount].vertex_indices_count = local_a4;
         shape_design_c_calculatePolygonNormal_FUN_0045caa0(g_ModelPolygonData + g_PolygonCount);
         pcVar3 = g_TempTextureName;
-        pcVar5 = g_ModelPolygonData[g_PolygonCount].texture_name;
+        pcVar6 = g_ModelPolygonData[g_PolygonCount].texture_name;
         do {
           cVar1 = *pcVar3;
-          *pcVar5 = cVar1;
+          *pcVar6 = cVar1;
           if (cVar1 == '\0') break;
           cVar1 = pcVar3[1];
           pcVar3 = pcVar3 + 2;
-          pcVar5[1] = cVar1;
-          pcVar5 = pcVar5 + 2;
+          pcVar6[1] = cVar1;
+          pcVar6 = pcVar6 + 2;
         } while (cVar1 != '\0');
         g_ModelPolygonData[g_PolygonCount].material_id = local_24;
         for (local_28 = 0; local_28 < (int)local_a4; local_28 = local_28 + 1) {
@@ -229,20 +229,20 @@ LAB_00458835:
       g_CurrentLineNumber = 699;
       core_main_c_displayErrorAndQuit_FUN_00506f10("loadBinary - Out of mem!");
     }
-    engine_model_c_getMRGLBounds_FUN_00528140(local_1c,in_stack_fffffe64);
-    piVar4 = local_198;
-    piVar6 = local_dc;
+    engine_model_c_getMRGLBounds_FUN_00528140(local_1c,&local_198);
+    pSVar4 = &local_198;
+    piVar5 = local_dc;
     for (iVar2 = 0xd; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *piVar6 = *piVar4;
-      piVar4 = piVar4 + (uint)bVar7 * -2 + 1;
-      piVar6 = piVar6 + (uint)bVar7 * -2 + 1;
+      *piVar5 = (pSVar4->min_scaled).x;
+      pSVar4 = (SMRGLModelBounds *)((int)pSVar4 + ((uint)bVar8 * -2 + 1) * 4);
+      piVar5 = piVar5 + (uint)bVar8 * -2 + 1;
     }
-    piVar4 = local_dc;
-    piVar6 = &local_110;
+    piVar5 = local_dc;
+    piVar7 = &local_110;
     for (iVar2 = 0xd; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *piVar6 = *piVar4;
-      piVar4 = piVar4 + (uint)bVar7 * -2 + 1;
-      piVar6 = piVar6 + (uint)bVar7 * -2 + 1;
+      *piVar7 = *piVar5;
+      piVar5 = piVar5 + (uint)bVar8 * -2 + 1;
+      piVar7 = piVar7 + (uint)bVar8 * -2 + 1;
     }
     engine_model_c_freeMRGLData_FUN_005280b0(local_1c);
     _sprintf

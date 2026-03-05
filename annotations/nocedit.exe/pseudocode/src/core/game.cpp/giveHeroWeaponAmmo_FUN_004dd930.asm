@@ -19,7 +19,7 @@
 ;
 ; Called Functions:
 ;   core_ammo.cpp_CAmmo_ctor_FUN_00410dc0
-;   core_ammo.cpp_CAmmo_FUN_00410fd0
+;   core_ammo.cpp_CAmmo_setWeaponClass_FUN_00410fd0
 ;   core_inv.cpp_CInventory_addItem_FUN_004fd600
 ;   core_mission.cpp_CDemonMission_generateActorName_FUN_00524700
 ;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
@@ -72,8 +72,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x10]      ; 004dd986
     PUSH EBX                            ; 004dd98a
     MOV dword ptr [EBX + 0x318],EAX     ; 004dd98b
-    CALL core_ammo.cpp_CAmmo_FUN_00410fd0 ; 004dd991
-        ;   XREF to: 00410fd0 (UNCONDITIONAL_CALL)  ; void core_ammo.cpp_CAmmo_FUN_00410fd0(CAmmo * this_ptr, char * weapon_class_name)
+    CALL core_ammo.cpp_CAmmo_setWeaponClass_FUN_00410fd0 ; 004dd991
+        ;   XREF to: 00410fd0 (UNCONDITIONAL_CALL)  ; void core_ammo.cpp_CAmmo_setWeaponClass_FUN_00410fd0(CAmmo * this_ptr, char * weapon_class_name)
     ADD ESP,0x8                         ; 004dd996
     PUSH 0x1                            ; 004dd999
     MOV dword ptr [EBX + 0x314],0x1f4   ; 004dd99b

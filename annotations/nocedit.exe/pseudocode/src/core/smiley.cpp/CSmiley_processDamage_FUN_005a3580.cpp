@@ -10,20 +10,20 @@ void __cdecl core_smiley_cpp_CSmiley_processDamage_FUN_005a3580(CSmiley *this_pt
 
 {
   CDeformableModelInstance *this_ptr_00;
-  int iVar1;
+  EDamageType EVar1;
   float fVar2;
   SMotion *pSVar3;
   
   if (this_ptr->model_variant != 1) {
-    damage_info->damage_type = 100;
+    damage_info->damage_type = DAMAGE_TYPE_IMMUNE;
     damage_info->damage_amount = 0.0;
     return;
   }
-  iVar1 = damage_info->damage_type;
-  if (iVar1 == 4) {
-    damage_info->damage_type = 100;
+  EVar1 = damage_info->damage_type;
+  if (EVar1 == DAMAGE_TYPE_SHATTER) {
+    damage_info->damage_type = DAMAGE_TYPE_IMMUNE;
   }
-  else if ((iVar1 < 0xc) || (iVar1 == 0x6b)) goto LAB_005a35b4;
+  else if (((int)EVar1 < 0xc) || (EVar1 == DAMAGE_TYPE_PIERCING)) goto LAB_005a35b4;
   damage_info->damage_amount = 0.0;
 LAB_005a35b4:
   if (0.0 < damage_info->damage_amount) {

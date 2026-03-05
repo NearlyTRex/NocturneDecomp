@@ -11,7 +11,7 @@
 void __cdecl core_baron_cpp_CBaron_FUN_004136b0(CBaron *this_ptr)
 
 {
-  CCharacter *this_ptr_00;
+  CEnemy *this_ptr_00;
   CVector3f *pCVar1;
   int iVar2;
   int iVar3;
@@ -31,13 +31,12 @@ void __cdecl core_baron_cpp_CBaron_FUN_004136b0(CBaron *this_ptr)
   int iStack_18;
   float local_14;
   
-  this_ptr_00 = (CCharacter *)
-                core_hero_cpp_CHero_findNearestEnemy_FUN_004f3960(&this_ptr->base,&local_1c);
-  if (this_ptr_00 == (CCharacter *)0x0) {
+  this_ptr_00 = core_hero_cpp_CHero_findNearestEnemy_FUN_004f3960(&this_ptr->base,&local_1c);
+  if (this_ptr_00 == (CEnemy *)0x0) {
     return;
   }
   core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-            ((CDemonActor *)this_ptr,&local_40,&(this_ptr_00->base).location.position);
+            ((CDemonActor *)this_ptr,&local_40,&(this_ptr_00->base).base.location.position);
   pCVar1 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_7c,&local_40);
   if (&local_40 != pCVar1) {
     local_40.x = pCVar1->x;
@@ -48,12 +47,12 @@ void __cdecl core_baron_cpp_CBaron_FUN_004136b0(CBaron *this_ptr)
   local_14 = local_40.y;
   if ((local_40.y < (float)-0.78539816337500001) || (0.78539816337500001 < (double)local_40.y)) {
     core_fire_cpp_CFireEffect_createLightningBolt_FUN_004c8f50
-              (g_CFireEffectPtr,&(this_ptr_00->base).location.position,16.0,1,0.0);
+              (g_CFireEffectPtr,&(this_ptr_00->base).base.location.position,16.0,1,0.0);
     core_fire_cpp_CFireEffect_createCrater_FUN_004c8ea0(g_CFireEffectPtr);
   }
   else {
     __arrinit(local_148,10,&g_CVectorTypeInfo);
-    iVar2 = (*((this_ptr_00->base).vtable._ub)->getTargetPoints)
+    iVar2 = (*((this_ptr_00->base).base.vtable._ub)->getTargetPoints)
                       ((CDemonActor *)this_ptr_00,local_148);
     iStack_18 = iVar2;
     iVar3 = rand();
@@ -92,14 +91,14 @@ void __cdecl core_baron_cpp_CBaron_FUN_004136b0(CBaron *this_ptr)
               ((CDemonActor *)this_ptr,"baron-attack.wav");
   }
   core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_d0);
-  local_d0.damage_type = 6;
+  local_d0.damage_type = DAMAGE_TYPE_ELECTROCUTE;
   local_d0.damage_amount = 100.0;
   local_d0.attacker = (CDemonActor *)this_ptr;
   local_d0.wielder = this_ptr->target_actor;
   if ((CBaron *)local_d0.wielder == (CBaron *)0x0) {
     local_d0.wielder = (CDemonActor *)this_ptr;
   }
-  (*(((this_ptr_00->base).vtable._uc)->_uc).processDamage)(this_ptr_00,&local_d0);
-  this_ptr_00->stagger_amount = 3.0;
+  (*(((this_ptr_00->base).base.vtable._uc)->_uc).processDamage)(&this_ptr_00->base,&local_d0);
+  (this_ptr_00->base).stagger_amount = 3.0;
   return;
 }

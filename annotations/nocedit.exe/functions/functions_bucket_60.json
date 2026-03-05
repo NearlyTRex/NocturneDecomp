@@ -12998,7 +12998,7 @@
           "type":"CClothList*"
         },
         {
-          "name":"param_2",
+          "name":"wind_velocity",
           "storage":{
             "offset":8,
             "size":4,
@@ -34733,8 +34733,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_gabriela.cpp_CGabriella_FUN_004d4ce0",
-    "ret":"int",
+    "name":"core_gabriela.cpp_CGabriella_getFlashlightMaxAngle_FUN_004d4ce0",
+    "ret":"float",
     "vars":{
       "params":[
         {
@@ -34777,7 +34777,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_gabriela.cpp_CGabriella_FUN_004d5c60",
+    "name":"core_gabriela.cpp_CGabriella_tryClimbLadder_FUN_004d5c60",
     "ret":"int",
     "vars":{
       "locals":[
@@ -35191,9 +35191,27 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_gabriela.cpp_CGabriella_FUN_004d5fe0",
+    "name":"core_gabriela.cpp_CGabriella_tryFireWeapon_FUN_004d5fe0",
     "ret":"void",
     "vars":{
+      "locals":[
+        {
+          "name":"unionfacet5_4d6003",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:404141235c35",
+                "offset":70649009888309,
+                "size":4
+              }
+            ]
+          },
+          "type":"UActorVTable*",
+          "use":35
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",
@@ -35225,8 +35243,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_gabriela.cpp_CGabriella_FUN_004d6260",
-    "ret":"int",
+    "name":"core_gabriela.cpp_CGabriella_scoreTargetVisibility_FUN_004d6260",
+    "ret":"float",
     "vars":{
       "locals":[
         {
@@ -35262,6 +35280,38 @@
             ]
           },
           "type":"CGabriella*"
+        },
+        {
+          "name":"target_actor",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonActor*"
+        },
+        {
+          "name":"use_wider_fov",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ],
       "ret_storage":{
@@ -37179,7 +37229,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"core_hero.cpp_CHero_findNearestEnemy_FUN_004f3960",
-    "ret":"float",
+    "ret":"CEnemy*",
     "vars":{
       "locals":[
         {
@@ -44566,6 +44616,38 @@
             ]
           },
           "type":"CMotionList*"
+        },
+        {
+          "name":"motion_name",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        },
+        {
+          "name":"error_on_not_found",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ],
       "ret_storage":{
@@ -47479,7 +47561,7 @@
           "type":"CDemonMission*"
         },
         {
-          "name":"param_2",
+          "name":"set_name",
           "storage":{
             "offset":8,
             "size":4,
@@ -52319,7 +52401,7 @@
           "type":"CDemonSet*"
         },
         {
-          "name":"param_2",
+          "name":"clear_enabled",
           "storage":{
             "offset":8,
             "size":4,
@@ -52332,10 +52414,10 @@
               }
             ]
           },
-          "type":"uint"
+          "type":"int"
         },
         {
-          "name":"param_3",
+          "name":"is_clearing",
           "storage":{
             "offset":12,
             "size":4,
@@ -52348,7 +52430,7 @@
               }
             ]
           },
-          "type":"uint"
+          "type":"int"
         },
         {
           "name":"screen_height",
@@ -64221,6 +64303,54 @@
             ]
           },
           "type":"undefined4"
+        },
+        {
+          "name":"pcVar16",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:27f1336c09b",
+                "offset":2744806457499,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDeformableModel_MotionBlendWeightFunc*",
+          "use":1164
+        },
+        {
+          "name":"pcVar17",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:27f9c43c871",
+                "offset":2747105790065,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDeformableModel_MotionBlendWeightFunc*",
+          "use":1408
+        },
+        {
+          "name":"pcVar18",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:7bfdfbab343",
+                "offset":8520673702723,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDeformableModel_MotionBlendWeightFunc*",
+          "use":1855
         }
       ],
       "params":[
@@ -69753,6 +69883,22 @@
             ]
           },
           "type":"undefined4"
+        },
+        {
+          "name":"unionfacet5_5e3592",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:40414f47773d",
+                "offset":70649247135549,
+                "size":4
+              }
+            ]
+          },
+          "type":"UActorVTable*",
+          "use":50
         }
       ],
       "params":[

@@ -20,7 +20,7 @@
 ;   int g_ActiveRenderColor
 ;   int g_CurrentLightingValue
 ;   RenderScanlineFunc* g_ScanlineRenderFunc
-;   BOOL g_MMXSupported
+;   int g_MMXSupported
 ;   _BIT_INTEGER32 g_RenderStateFlags
 ;   ... and 1 more
 ;

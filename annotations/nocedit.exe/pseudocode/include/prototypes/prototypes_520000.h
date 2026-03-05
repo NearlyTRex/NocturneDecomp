@@ -6,6 +6,7 @@
 #include "types/classes/CActorPropertyList.h"
 #include "types/classes/CAlphaBitmap.h"
 #include "types/classes/CBoundingBox3D.h"
+#include "types/classes/CCharacter.h"
 #include "types/classes/CCourse.h"
 #include "types/classes/CDeformableModelInstance.h"
 #include "types/classes/CDemonActor.h"
@@ -134,8 +135,8 @@ void __cdecl core_mission_cpp_CDemonMission_generateActorName_FUN_00524700(CDemo
 int __cdecl core_mission_cpp_CDemonMission_startMission_FUN_00524760(CDemonMission *this_ptr);
 void __cdecl core_mission_cpp_CDemonMission_calculateAllActorChecksums_FUN_005248a0(CDemonMission *this_ptr,uint *checksum);
 void __cdecl core_mission_cpp_CDemonMission_freeAllAssets_FUN_005248e0(CDemonMission *this_ptr);
-int __cdecl core_mission_cpp_CDemonMission_createOneHero_FUN_00524920(CDemonMission *this_ptr,int index,int param_3,void *param_4);
-int __cdecl core_mission_cpp_CDemonMission_createHeros_FUN_00524a80(CDemonMission *this_ptr,int creation_flags);
+int __cdecl core_mission_cpp_CDemonMission_createOneHero_FUN_00524920(CDemonMission *this_ptr,int index,int hero_type,CCharacter *existing_actor);
+int __cdecl core_mission_cpp_CDemonMission_createHeros_FUN_00524a80(CDemonMission *this_ptr,CCharacter *existing_hero);
 void __cdecl core_mission_cpp_CDemonMission_ensureHeroPlaceholder_FUN_00524c20(CDemonMission *this_ptr);
 int __cdecl core_mission_cpp_CDemonMission_countDamageableEnemies_FUN_00524e00(CDemonMission *this_ptr);
 void __cdecl core_mission_cpp_CDemonMission_addFilesToExtract_FUN_00524e60(CDemonMission *this_ptr,_FILE *file_handle,int unknown_flag);
@@ -174,9 +175,9 @@ CMobster * __cdecl core_mobster_cpp_CMobster_dtor_FUN_00527c70(CMobster *this_pt
 void __cdecl engine_model_c_byteswapMRGLData_FUN_00527e40(SMRGLHeaderExtended *mrgl_data,int data_size);
 SMRGLHeaderExtended * __cdecl engine_model_c_loadModelFile_FUN_00527ec0(char *filename);
 void __cdecl engine_model_c_freeMRGLData_FUN_005280b0(SMRGLHeaderExtended *modelStruct);
-void __cdecl engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHeaderExtended *header,SMRGLModelBounds *output);
+SMRGLModelBounds * __stack_esi engine_model_c_getMRGLBounds_FUN_00528140 (SMRGLHeaderExtended *header,SMRGLModelBounds *output_bounds);
 int __cdecl engine_model_c_getMRGLSize_FUN_00528700(SMRGLHeaderExtended *header);
-void __cdecl engine_model_c_loadMRGLTextures_FUN_00528870(SMRGLHeaderExtended *block);
+void __cdecl engine_model_c_loadMRGLTextures_FUN_00528870(SMRGLHeaderExtended *mrgl);
 void __cdecl engine_model_c_initializeMRGLModel_FUN_00528940(SMRGLHeaderExtended *mrgl);
 SMRGLHeaderExtended * __cdecl engine_model_c_loadModelChunk_FUN_00528970(char *filename,int model_size);
 void __cdecl core_moloch_cpp_staticInit_FUN_00528ac0(void);
@@ -260,11 +261,11 @@ void __cdecl core_morph_cpp_skipLine_FUN_0052cd30(_FILE *file_handle);
 CMotionList * __cdecl core_motion_cpp_CMotionList_ctor_FUN_0052cd50(CMotionList *this_ptr);
 void __cdecl core_motion_cpp_CMotionList_load_FUN_0052cd70(CMotionList *this_ptr,_FILE *file_handle);
 void __cdecl core_motion_cpp_CMotionList_save_FUN_0052d170(CMotionList *this_ptr,_FILE *file_handle);
-int __cdecl core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(CMotionList *this_ptr);
-int __cdecl core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(CMotionList *this_ptr);
+int __cdecl core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(CMotionList *this_ptr,char *motion_name,int error_on_not_found);
+int __cdecl core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(CMotionList *this_ptr,char *state_name,int error_on_not_found);
 CMotionController * __cdecl core_motion_cpp_CMotionController_ctor_FUN_0052d570(CMotionController *this_ptr);
 CMotionController * __cdecl core_motion_cpp_CMotionController_dtor_FUN_0052d5a0(CMotionController *this_ptr,uint flags);
-int __cdecl core_motion_cpp_CMotionController_advance_FUN_0052d610(CMotionController *this_ptr);
+int __cdecl core_motion_cpp_CMotionController_advance_FUN_0052d610(CMotionController *this_ptr,float *delta_time);
 int __cdecl core_motion_cpp_CMotionController_findAndStartTransition_FUN_0052d950(CMotionController *this_ptr);
 void __cdecl core_motion_cpp_CMotionController_reverseTransition_FUN_0052da50(CMotionController *this_ptr);
 SMotion * __cdecl core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(CMotionController *this_ptr);
@@ -282,13 +283,13 @@ void __cdecl core_motion_cpp_CMotionController_jumpToMotion_FUN_0052dde0(CMotion
 void __cdecl core_motion_cpp_CMotionController_clearTweenState_FUN_0052de40(CMotionController *this_ptr);
 int __cdecl core_motion_cpp_CMotionController_advanceFrameAndCheckSignals_FUN_0052de70(CMotionController *this_ptr,int *inout_motion_index,float *inout_frame_number, float delta_time,float scale_factor);
 int __cdecl core_motion_cpp_CMotionController_advanceFrameToExitPoint_FUN_0052e020(CMotionController *this_ptr,int motion_index,float current_frame, float *inout_delta_time,SMotionTransition *out_transition);
-void __cdecl core_motion_cpp_CMotionController_advanceTween_FUN_0052e1d0(CMotionController *this_ptr);
+void __cdecl core_motion_cpp_CMotionController_advanceTween_FUN_0052e1d0(CMotionController *this_ptr,int motion_index,float current_frame, float *remaining_time);
 float __cdecl core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_0052e2b0(CMotionController *this_ptr);
 float __cdecl core_motion_cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0(CMotionController *this_ptr,int motion_index,float marker_position);
 void __cdecl core_motion_cpp_CMotionController_getFramesForInterpolation_FUN_0052e4c0(CMotionController *this_ptr,int motion_index,float frame_number,int *out_frame1, int *out_frame2,float *out_blend_weight);
 void __cdecl core_motion_cpp_CMotionController_accumulateScaledRootMotion_FUN_0052e570(CMotionController *this_ptr,float start_frame,float end_frame,float scale_factor);
 void __cdecl core_motion_cpp_CMotionController_load_FUN_0052e5d0(CMotionController *this_ptr,_FILE *file_handle);
-void __cdecl core_motion_cpp_CMotionController_save_FUN_0052e670(CMotionController *this_ptr,_FILE *file_handle);
+void __cdecl core_motion_cpp_CMotionController_save_FUN_0052e670(CMotionController *this_ptr,_FILE *file_handle,char *indent_prefix);
 void __cdecl core_motion_cpp_CMotionController_render_FUN_0052e700(CMotionController *this_ptr,CDemonActor *actor);
 int __cdecl sound_mp3_cpp_validateLayer2AllocationTable_FUN_0052e8d0(SMpegFrame *frame);
 void * __cdecl sound_mp3_cpp_getMpegLayer2AllocationTable_FUN_0052ea10(int layer,int mode_extension);

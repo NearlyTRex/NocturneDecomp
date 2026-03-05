@@ -43,9 +43,9 @@ void __cdecl CAmmo::archive(CAmmo *this_ptr);
 // Address: 00410fa0
 int __cdecl CAmmo::hasCollision(CAmmo *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_ammo.cpp_CAmmo_FUN_00410fd0
+// Original: core_ammo.cpp_CAmmo_setWeaponClass_FUN_00410fd0
 // Address: 00410fd0
-void __cdecl CAmmo(CAmmo *this_ptr,char *weapon_class_name);
+void __cdecl CAmmo::setWeaponClass(CAmmo *this_ptr,char *weapon_class_name);
 
 // Original: core_ammo.cpp_CAmmo_setAmmoCount_FUN_004111b0
 // Address: 004111b0

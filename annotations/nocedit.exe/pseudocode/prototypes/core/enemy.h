@@ -37,7 +37,7 @@ CVector3f * __cdecl CEnemy::getTargetPoint(CEnemy *this_ptr,CVector3f *out_point
 
 // Original: core_enemy.cpp_CEnemy_FUN_004a9a50
 // Address: 004a9a50
-int __cdecl CEnemy(CEnemy *this_ptr,CDemonActor *param_2);
+int __cdecl CEnemy(CEnemy *this_ptr,CDemonActor *target);
 
 // Original: core_enemy.cpp_CEnemy_updateVictim_FUN_004a9b00
 // Address: 004a9b00

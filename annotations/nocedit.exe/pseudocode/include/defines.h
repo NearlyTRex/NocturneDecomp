@@ -5,11 +5,6 @@
 // ACTOR Constants
 #define ACTOR_VALID_MAGIC                         0x78A123  // 7905571
 
-// CONTROL Constants
-#define CONTROL_MODE_GAMEPAD                      2
-#define CONTROL_MODE_KEYBOARD                     0
-#define CONTROL_MODE_MOUSE                        1
-
 // GAME Constants
 #define GAME_BEEFDEAD                             0xBEEFDEAD  // -1091576147
 #define GAME_CLIP_BOTTOM                          0x80000004  // 2147483652
@@ -94,6 +89,6 @@
 #define SYSTEM_WATCOM_ENOMEM                      12  // 0xC
 #define SYSTEM_WINDOWS_NT_4_0                     0x8000  // 32768
 
-// Total equates: 80
-// Total references: 277
+// Total equates: 77
+// Total references: 273
 

@@ -17,7 +17,8 @@ void __cdecl core_icepick_cpp_CIcePick_FUN_004f93a0(CIcePick *this_ptr)
   
   this_ptr_00 = &(this_ptr->base).base.model;
   do {
-    iVar1 = core_motion_cpp_CMotionController_advance_FUN_0052d610(&this_ptr_00->motion_controller);
+    iVar1 = core_motion_cpp_CMotionController_advance_FUN_0052d610
+                      (&this_ptr_00->motion_controller,&stack0x00000008);
     switch(iVar1) {
     case 100:
       iVar1 = this_ptr->attack_count + 1;

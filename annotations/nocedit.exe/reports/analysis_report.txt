@@ -7,51 +7,51 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 6487
-Clean functions: 4461 (68.8%)
-Functions with suspects: 2026 (31.2%)
+Clean functions: 4498 (69.3%)
+Functions with suspects: 1989 (30.7%)
 
-Total suspect patterns: 19748
-Average suspects per function: 3.04
+Total suspect patterns: 19375
+Average suspects per function: 2.99
 
-Virtual files: 214 total, 20 at 100%, 40 at 90%+
+Virtual files: 214 total, 20 at 100%, 41 at 90%+
 
 Pseudocode lines:
-  Min: 4, Max: 3384, Average: 47.4
+  Min: 4, Max: 3382, Average: 47.4
 
-Average complexity score: 80.9
+Average complexity score: 80.3
 
 COMPILATION STATUS
 ----------------------------------------
 Functions compiled: 6487
-Successful: 5738 (88.5%)
-Failed: 749
+Successful: 5748 (88.6%)
+Failed: 739
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
-  decompiler_intrinsic      6302
-  pointer_cast              5775
-  stack_param               2905
-  unknown_field             1388
-  stack_ref                 512
-  unaffected_reg            285
-  param_count_too_few       270
+  decompiler_intrinsic      6303
+  pointer_cast              5770
+  stack_param               2722
+  unknown_field             1380
+  stack_ref                 460
   nonstandard_int           268
+  unaffected_reg            266
+  param_count_too_few       264
   warning_inlined_function  261
   negative_offset           234
-  unnamed_param             225
-  warning_type_propagation  138
-  unresolved_funcptr        130
+  warning_type_propagation  141
+  unnamed_param             139
+  unresolved_funcptr        127
   stack_alignment_array     122
   sub84_truncation          122
-  undefined_data            121
+  undefined_data            119
   extra_output              117
   register_param            104
-  suspect_float             92
+  suspect_float             81
   warning_unreachable       74
   param_count_too_many      71
   mmx_assembly              34
   warning_unmapped_variable 31
-  format_string_mismatch    31
+  format_string_mismatch    29
   eflags_input              26
   undefined_ram             24
   byvalue_struct_passing    21
@@ -126,34 +126,34 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   005b1680: sound_sndwav.cpp_CWavOutDevice_set3DListenerVelocity_FUN_005b1680 (4 lines)
   005b1660: sound_sndwav.cpp_CWavOutDevice_set3DListenerPos_FUN_005b1660 (4 lines)
   005b16e0: sound_sndwav.cpp_CWavOutDevice_unlockSample_FUN_005b16e0 (4 lines)
-  ... and 4411 more
+  ... and 4448 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
   00583170: core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170 (score: 4123, suspects: 308, lines: 1008)
   005d1390: shape_superopt.cpp_CPoly_hasEdgeIntersection_FUN_005d1390 (score: 3629, suspects: 324, lines: 374)
-  0055a810: core_script.cpp_CScript_step_FUN_0055a810 (score: 3494, suspects: 9, lines: 3384)
+  0055a810: core_script.cpp_CScript_step_FUN_0055a810 (score: 3492, suspects: 9, lines: 3382)
   00582930: core_setedit.cpp_drawCameraFrustum_FUN_00582930 (score: 2928, suspects: 244, lines: 458)
   005ce580: shape_superopt.cpp_CPoly_intersectPoly_FUN_005ce580 (score: 2707, suspects: 175, lines: 937)
   0058f810: core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (score: 2484, suspects: 99, lines: 1464)
   005d0340: shape_superopt.cpp_CPoly_containsPoint2D_FUN_005d0340 (score: 2475, suspects: 212, lines: 335)
-  00592690: core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 (score: 2381, suspects: 45, lines: 1891)
-  004aacc0: core_event.cpp_CEventList_executeCommand_FUN_004aacc0 (score: 2288, suspects: 10, lines: 2163)
+  00592690: core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 (score: 2385, suspects: 45, lines: 1895)
+  004aacc0: core_event.cpp_CEventList_executeCommand_FUN_004aacc0 (score: 2292, suspects: 10, lines: 2167)
   005b4823: wincore_windll.cpp_renderMMXPerspectiveScanline16_FUN_005b4823 (score: 2235, suspects: 161, lines: 585)
   005b4031: wincore_windll.cpp_renderMMXPerspectiveScanline32_FUN_005b4031 (score: 2198, suspects: 159, lines: 568)
   004ddaf0: core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 (score: 2181, suspects: 14, lines: 2006)
-  004e6600: core_ghoul.cpp_CGhoul_process_FUN_004e6600 (score: 2022, suspects: 95, lines: 1042)
+  004e6600: core_ghoul.cpp_CGhoul_process_FUN_004e6600 (score: 2026, suspects: 95, lines: 1046)
   005bb960: core_stranger.cpp_CStranger_processFrame_FUN_005bb960 (score: 1893, suspects: 70, lines: 1158)
   004fd600: core_inv.cpp_CInventory_addItem_FUN_004fd600 (score: 1735, suspects: 57, lines: 1145)
   004ae140: core_event.cpp_CEventList_evaluateAtom_FUN_004ae140 (score: 1662, suspects: 7, lines: 1572)
   005ca590: shape_superopt.cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590 (score: 1660, suspects: 115, lines: 495)
   005d47b0: shape_superopt.cpp_CObj_removeTJunctions_FUN_005d47b0 (score: 1567, suspects: 105, lines: 497)
-  005968b0: core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (score: 1507, suspects: 34, lines: 1132)
   005390f0: core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 (score: 1506, suspects: 47, lines: 1001)
+  005968b0: core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (score: 1502, suspects: 34, lines: 1127)
   0056eac0: core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0 (score: 1463, suspects: 85, lines: 598)
-  005be520: core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520 (score: 1416, suspects: 72, lines: 661)
   005cb3a0: shape_superopt.cpp_CComplexPolygon_isConvex_FUN_005cb3a0 (score: 1408, suspects: 113, lines: 253)
   004b86b0: engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0 (score: 1398, suspects: 48, lines: 913)
+  005be520: core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520 (score: 1396, suspects: 70, lines: 666)
   0047cbc0: core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 (score: 1386, suspects: 46, lines: 896)
   005f8550: core_xform.cpp_transformAndClipGeometry_FUN_005f8550 (score: 1362, suspects: 85, lines: 487)
   0040eed0: core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 (score: 1315, suspects: 54, lines: 755)
@@ -164,7 +164,7 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
 
-  decompiler_intrinsic (805 functions):
+  decompiler_intrinsic (806 functions):
     00488630: cockpit_drawsurf.cpp_CDrawSurface_drawSolidRectangle_FUN_00488630
     004887a0: cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_004887a0
     00487bc0: cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_FUN_00487bc0
@@ -175,9 +175,9 @@ FUNCTIONS BY SUSPECT TYPE
     0050db00: engine_matrix.c_matrixPushAndTransform_FUN_0050db00
     0050d830: engine_matrix.c_calculate3DDistance_FUN_0050d830
     0050d9f0: engine_matrix.c_normalizeVector3DFloat_FUN_0050d9f0
-    ... and 795 more
+    ... and 796 more
 
-  pointer_cast (972 functions):
+  pointer_cast (973 functions):
     00488230: cockpit_drawsurf.cpp_CDrawSurface_drawVerticalLine_FUN_00488230
     004874d0: cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0
     00487630: cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_00487630
@@ -188,9 +188,9 @@ FUNCTIONS BY SUSPECT TYPE
     0054ab30: cockpit_pkbitmap.cpp_CPackedBitmap_renderClippedRegion_FUN_0054ab30
     0054ae70: cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0054ae70
     0054aa20: cockpit_pkbitmap.cpp_CPackedBitmap_renderToScreenBuffer_FUN_0054aa20
-    ... and 962 more
+    ... and 963 more
 
-  stack_param (368 functions):
+  stack_param (339 functions):
     0054c1e0: cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_0054c1e0
     00489520: cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariantPrintf_FUN_00489520
     00489860: cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBoundsPrintf_FUN_00489860
@@ -201,9 +201,9 @@ FUNCTIONS BY SUSPECT TYPE
     0054b190: cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_0054b190
     00433160: cockpit_ckptutil.c_mirrorBitmapHorizontally_FUN_00433160
     00434af0: cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af0
-    ... and 358 more
+    ... and 329 more
 
-  unknown_field (108 functions):
+  unknown_field (107 functions):
     0054be70: cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_0054be70
     0043e530: support_codec.cpp_readBitsFromStream_FUN_0043e530
     00441040: engine_colquant.c_computeWeightedColorDistance_FUN_00441040
@@ -214,7 +214,7 @@ FUNCTIONS BY SUSPECT TYPE
     00440c80: engine_colquant.c_partitionByGreen_FUN_00440c80
     00441790: engine_colquant.c_doubleMax_FUN_00441790
     004366e0: engine_clipper.c_clipPolygonToViewFrustum_FUN_004366e0
-    ... and 98 more
+    ... and 97 more
 
   stack_ref (157 functions):
     00489c40: cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_00489c40
@@ -229,32 +229,6 @@ FUNCTIONS BY SUSPECT TYPE
     0050d970: engine_matrix.c_normalizeVector3DFixed_FUN_0050d970
     ... and 147 more
 
-  unaffected_reg (58 functions):
-    0054c4d0: cockpit_pkbmpset.cpp_CPackedBitmapSet_reloadStoredPBGFile_FUN_0054c4d0
-    0054a840: cockpit_pkbitmap.cpp_CPackedBitmap_init_FUN_0054a840
-    005dcc00: engine_texture.cpp_CTextureCache_loadTexture_FUN_005dcc00
-    004fb250: engine_ini.cpp_CIni_getProfileString_FUN_004fb250
-    00528140: engine_model.c_getMRGLBounds_FUN_00528140
-    0041dbe0: engine_boss.c_modelStructNotSupported_FUN_0041dbe0
-    0048a740: engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740
-    004b76d0: engine_fileio.cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0
-    005abe20: sound_sndmain.cpp_processAudio_FUN_005abe20
-    0044d7d0: core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0
-    ... and 48 more
-
-  param_count_too_few (270 functions):
-    0054bd60: cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_FUN_0054bd60
-    0054c1e0: cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_0054c1e0
-    00489590: cockpit_drawsurf.cpp_CDrawSurface_drawTextCentered_FUN_00489590
-    00489520: cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariantPrintf_FUN_00489520
-    00489b60: cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullHeight_FUN_00489b60
-    00489c40: cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_00489c40
-    00489a30: cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_00489a30
-    00489660: cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVCentered_FUN_00489660
-    004894c0: cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariant_FUN_004894c0
-    00489800: cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBounds_FUN_00489800
-    ... and 260 more
-
   nonstandard_int (23 functions):
     004ce240: engine_font.cpp_drawAlphaBlendedPixels_FUN_004ce240
     004517f0: core_dcamera.cpp_blendCoronaTextureSpan_FUN_004517f0
@@ -267,6 +241,32 @@ FUNCTIONS BY SUSPECT TYPE
     00491f90: core_dstrender.cpp_blendSinglePixelLightmapNoRoundingMMX_FUN_00491f90
     00493860: core_dstrender.cpp_blendTextureWithLightmapMMX_FUN_00493860
     ... and 13 more
+
+  unaffected_reg (52 functions):
+    0054c4d0: cockpit_pkbmpset.cpp_CPackedBitmapSet_reloadStoredPBGFile_FUN_0054c4d0
+    0054a840: cockpit_pkbitmap.cpp_CPackedBitmap_init_FUN_0054a840
+    005dcc00: engine_texture.cpp_CTextureCache_loadTexture_FUN_005dcc00
+    004fb250: engine_ini.cpp_CIni_getProfileString_FUN_004fb250
+    0041dbe0: engine_boss.c_modelStructNotSupported_FUN_0041dbe0
+    0048a740: engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740
+    004b76d0: engine_fileio.cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0
+    005abe20: sound_sndmain.cpp_processAudio_FUN_005abe20
+    0044d7d0: core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0
+    0043c880: core_cloth.cpp_CCloth_boneEditor_FUN_0043c880
+    ... and 42 more
+
+  param_count_too_few (264 functions):
+    0054bd60: cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_FUN_0054bd60
+    0054c1e0: cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_0054c1e0
+    00489590: cockpit_drawsurf.cpp_CDrawSurface_drawTextCentered_FUN_00489590
+    00489520: cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariantPrintf_FUN_00489520
+    00489b60: cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullHeight_FUN_00489b60
+    00489c40: cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_00489c40
+    00489a30: cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_00489a30
+    00489660: cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVCentered_FUN_00489660
+    004894c0: cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariant_FUN_004894c0
+    00489800: cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBounds_FUN_00489800
+    ... and 254 more
 
   warning_inlined_function (258 functions):
     00488630: cockpit_drawsurf.cpp_CDrawSurface_drawSolidRectangle_FUN_00488630
@@ -294,20 +294,7 @@ FUNCTIONS BY SUSPECT TYPE
     0047f9a0: core_dog.cpp_CZombieDog_dtor_FUN_0047f9a0
     ... and 100 more
 
-  unnamed_param (50 functions):
-    0054c480: cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBGFileComplete_FUN_0054c480
-    0054bb40: cockpit_pkbitmap.cpp_CPackedBitmap_loadPBGFile_FUN_0054bb40
-    0054b9b0: cockpit_pkbitmap.cpp_CPackedBitmap_parsePBGFile_FUN_0054b9b0
-    005e1df0: support_trisock.cpp_getSocketName_FUN_005e1df0
-    0043c3e0: core_cloth.cpp_CClothList_FUN_0043c3e0
-    005fc970: core_zombie.cpp_CZombie_getGrabbed_FUN_005fc970
-    005fc120: core_zombie.cpp_CZombie_canBeAttracted_FUN_005fc120
-    005fc920: core_zombie.cpp_CZombie_isGrabbable_FUN_005fc920
-    00413a00: core_baron.cpp_CBaron_FUN_00413a00
-    004135a0: core_baron.cpp_CBaron_FUN_004135a0
-    ... and 40 more
-
-  warning_type_propagation (138 functions):
+  warning_type_propagation (141 functions):
     005513d0: engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
     004366e0: engine_clipper.c_clipPolygonToViewFrustum_FUN_004366e0
     00411d90: core_anvil.cpp_CAnvil_process_FUN_00411d90
@@ -318,9 +305,22 @@ FUNCTIONS BY SUSPECT TYPE
     00484410: core_dracbrid.cpp_CDraculaBride_process_FUN_00484410
     0048ec70: core_drone.cpp_CDrone_process_FUN_0048ec70
     005f9470: core_zombie.cpp_CZombie_process_FUN_005f9470
-    ... and 128 more
+    ... and 131 more
 
-  unresolved_funcptr (69 functions):
+  unnamed_param (32 functions):
+    0054c480: cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBGFileComplete_FUN_0054c480
+    0054bb40: cockpit_pkbitmap.cpp_CPackedBitmap_loadPBGFile_FUN_0054bb40
+    0054b9b0: cockpit_pkbitmap.cpp_CPackedBitmap_parsePBGFile_FUN_0054b9b0
+    005e1df0: support_trisock.cpp_getSocketName_FUN_005e1df0
+    0040e1e0: core_actor.cpp_CActorPropertyList_addInt_FUN_0040e1e0
+    0040eed0: core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0
+    0040e350: core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350
+    0040e160: core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160
+    0040e5a0: core_actor.cpp_CActorPropertyList_addRuleList_FUN_0040e5a0
+    0040e220: core_actor.cpp_CActorPropertyList_addIntRange_FUN_0040e220
+    ... and 22 more
+
+  unresolved_funcptr (67 functions):
     0043eef0: support_codec.cpp_CLZWDictionary_initTable_FUN_0043eef0
     0043f270: support_codec.cpp_CLZWDictionary_decodeCodeToBuffer_FUN_0043f270
     0043f200: support_codec.cpp_CLZWDictionary_writeCodeSequence_FUN_0043f200
@@ -331,7 +331,7 @@ FUNCTIONS BY SUSPECT TYPE
     00407890: engine_3d.c_dispatchMRGLBlockChain_FUN_00407890
     0048da80: engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80
     005ade70: sound_snddx.cpp_getDirectSoundErrorString_FUN_005ade70
-    ... and 59 more
+    ... and 57 more
 
   stack_alignment_array (119 functions):
     00488cd0: cockpit_drawsurf.cpp_CDrawSurface_fillPoly_FUN_00488cd0
@@ -359,7 +359,7 @@ FUNCTIONS BY SUSPECT TYPE
     005a45c0: sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_005a45c0
     ... and 55 more
 
-  undefined_data (50 functions):
+  undefined_data (49 functions):
     0050cdc0: engine_matrix.c_projectTransformedPoint_FUN_0050cdc0
     00406430: engine_3d.c_renderPolygonTextureAdaptiveWrapped_FUN_00406430
     00404220: engine_3d.c_renderPolygonLitDetailed_FUN_00404220
@@ -370,7 +370,7 @@ FUNCTIONS BY SUSPECT TYPE
     00485be0: core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_00485be0
     00500050: core_inv.cpp_drawWeaponIconBackground_FUN_00500050
     004ff400: core_inv.cpp_CInventory_load_FUN_004ff400
-    ... and 40 more
+    ... and 39 more
 
   extra_output (27 functions):
     0041dbb0: engine_boss.c_modelStructNotSupported_FUN_0041dbb0
@@ -398,18 +398,18 @@ FUNCTIONS BY SUSPECT TYPE
     00524f4c: core_mmx.c_detectIntelProcessor_FUN_00524f4c
     ... and 4 more
 
-  suspect_float (36 functions):
+  suspect_float (33 functions):
     005401e0: core_netgame.cpp_CNetGame_syncPlayers_FUN_005401e0
     0043c880: core_cloth.cpp_CCloth_boneEditor_FUN_0043c880
     004ffad0: core_inv.cpp_CInventory_updateInventory_FUN_004ffad0
     00583170: core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170
     004f0350: core_gun.cpp_CGun_fire_FUN_004f0350
-    00525840: core_mobster.cpp_CMobster_process_FUN_00525840
     0049a640: core_dtri.cpp_CDemonTriangle_calculateData_FUN_0049a640
     0049a800: core_dtri.cpp_rayTriangleIntersection_FUN_0049a800
     005dda90: core_tommygun.cpp_CTommyGun_ctor_FUN_005dda90
     005ddb30: core_tommygun.cpp_CTommyGun_fire_FUN_005ddb30
-    ... and 26 more
+    0040d940: core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940
+    ... and 23 more
 
   warning_unreachable (40 functions):
     00487010: cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_00487010
@@ -434,7 +434,7 @@ FUNCTIONS BY SUSPECT TYPE
     004cdbf0: engine_font.cpp_CBitFont_drawTextWrapper_FUN_004cdbf0
     004cd550: engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_004cd550
     004fbd30: engine_ini.cpp_CIniFile_setFloatValue_FUN_004fbd30
-    00528140: engine_model.c_getMRGLBounds_FUN_00528140
+    00410b00: engine_alphabit.cpp_CAlphaBitmap_render_FUN_00410b00
     ... and 61 more
 
   mmx_assembly (34 functions):
@@ -463,7 +463,7 @@ FUNCTIONS BY SUSPECT TYPE
     0053b9f0: core_msnedit.cpp_CDemonMission_importActorsFrom_FUN_0053b9f0
     ... and 7 more
 
-  format_string_mismatch (17 functions):
+  format_string_mismatch (15 functions):
     00534d40: sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40
     005a8580: sound_sndmain.cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580
     005a7100: sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100
@@ -472,9 +472,9 @@ FUNCTIONS BY SUSPECT TYPE
     0040ac80: core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
     0040ea50: core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50
     005b1fd0: core_sound.cpp_playSfxInternal_FUN_005b1fd0
-    0052d460: core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460
-    0052d4f0: core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0
-    ... and 7 more
+    005efde0: core_werewolf.cpp_CWerewolf_process_FUN_005efde0
+    005bb960: core_stranger.cpp_CStranger_processFrame_FUN_005bb960
+    ... and 5 more
 
   eflags_input (1 functions):
     00524f4c: core_mmx.c_detectIntelProcessor_FUN_00524f4c

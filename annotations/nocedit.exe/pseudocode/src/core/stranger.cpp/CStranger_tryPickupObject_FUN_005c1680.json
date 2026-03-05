@@ -6,16 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 692,
-    "complexity_score": 377,
+    "complexity_score": 352,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 26,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 277,
-    "suspect_count": 9,
+    "suspect_count": 7,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "unnamed_param"
+      "decompiler_intrinsic"
     ],
     "total_lines": 969
   },
@@ -38,7 +37,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_stranger.cpp_CStranger_tryPickupObject_FUN_005c1680",
-    "signature": "int __cdecl core_stranger_cpp_CStranger_tryPickupObject_FUN_005c1680(CStranger *this_ptr,char *param_2)"
+    "signature": "int __cdecl core_stranger_cpp_CStranger_tryPickupObject_FUN_005c1680(CStranger *this_ptr,char *class_name)"
   },
   "function_calls": [
     {
@@ -379,7 +378,7 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "class_name",
         "offset": 8,
         "size": 4,
         "type": "char *"
@@ -405,14 +404,6 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "int __cdecl core_stranger_cpp_CStranger_tryPickupObject_FUN_005c1680(CStranger *this_ptr,char *param_2)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 78,
       "match": "SQRT",
@@ -427,14 +418,6 @@
       "severity": "mild",
       "text": "if (((ABS(fStack_fc) <= (float)5) &&",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 131,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "&& (iVar5 = core_actor_cpp_isOfClass_FUN_0040c6d0(pCVar8,param_2), iVar5 != 0)) {",
-      "type": "unnamed_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",

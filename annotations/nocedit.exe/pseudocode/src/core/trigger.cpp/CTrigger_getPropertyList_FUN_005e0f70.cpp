@@ -17,7 +17,8 @@ void __cdecl core_trigger_cpp_CTrigger_getPropertyList_FUN_005e0f70(CTrigger *th
   core_actor_cpp_CActorPropertyList_addButton_FUN_0040e480
             (property_list,"Off event",this_ptr->off_event);
   core_actor_cpp_CActorPropertyList_addEnumPair_FUN_0040e640
-            (property_list,"Event type",4,g_TriggerEventTypePairs,&this_ptr->event_type);
+            (property_list,"Event type",4,g_TriggerEventTypePairs,
+             (int *)&this_ptr->event_type);
   core_actor_cpp_CActorPropertyList_addEnumPair_FUN_0040e640
             (property_list,"What triggers me",10,g_TriggerCauseTypePairs,
              &this_ptr->hero_triggers_me);

@@ -1546,12 +1546,14 @@ LAB_004aaf38:
                                                     return 0;
                                                   }
                                                   if (pCVar4 != g_ActorNameSentinel) {
+                                                    pcVar16 = local_8bd + 1;
+                                                    iVar2 = 0;
                                                     pCVar8 = 
                                                   core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                                                             ((CMotionController *)(pCVar4 + 1));
                                                   iVar2 = 
                                                   core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0
-                                                            (pCVar8);
+                                                            (pCVar8,pcVar16,iVar2);
                                                   if (iVar2 < 0) {
                                                     _sprintf
                                                               (g_EventErrorMessageBuffer,
@@ -1848,13 +1850,15 @@ LAB_004aaf38:
                                                     return 0;
                                                   }
                                                   if (pCVar4 != g_ActorNameSentinel) {
+                                                    pcVar16 = local_40d + 1;
+                                                    iVar2 = 0;
                                                     pCVar11 = pCVar4 + 1;
                                                     pCVar8 = 
                                                   core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                                                             ((CMotionController *)pCVar11);
                                                   iVar2 = 
                                                   core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460
-                                                            (pCVar8);
+                                                            (pCVar8,pcVar16,iVar2);
                                                   if (iVar2 < 0) {
                                                     _sprintf
                                                               (g_EventErrorMessageBuffer,

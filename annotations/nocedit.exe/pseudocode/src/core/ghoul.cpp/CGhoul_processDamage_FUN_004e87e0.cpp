@@ -23,6 +23,7 @@ void __cdecl core_ghoul_cpp_CGhoul_processDamage_FUN_004e87e0(CGhoul *this_ptr,S
   uint uVar8;
   CMotionList *this_ptr_01;
   int iVar9;
+  char *motion_name;
   char local_78 [100];
   float local_14;
   
@@ -43,7 +44,7 @@ void __cdecl core_ghoul_cpp_CGhoul_processDamage_FUN_004e87e0(CGhoul *this_ptr,S
     }
     engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"go berzerk\n");
   }
-  if (damage_info->damage_type == 0x6c) {
+  if (damage_info->damage_type == DAMAGE_TYPE_BURN) {
     this_ptr->stun_timer = 4.0;
   }
   core_ghoul_cpp_CGhoul_FUN_004e8520(this_ptr);
@@ -128,9 +129,12 @@ void __cdecl core_ghoul_cpp_CGhoul_processDamage_FUN_004e87e0(CGhoul *this_ptr,S
     else {
       iVar9 = core_actor_cpp_getRandomInt_FUN_0040cc70(1,2);
       _sprintf(local_78,"guul flinch%d",iVar9);
+      iVar9 = 1;
+      motion_name = local_78;
       this_ptr_01 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                               (&(this_ptr->base).base.model.motion_controller);
-      iVar9 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(this_ptr_01);
+      iVar9 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460
+                        (this_ptr_01,motion_name,iVar9);
       this_ptr->flinch_blend_weight = 1.0;
       this_ptr->flinch_motion_index = iVar9;
     }

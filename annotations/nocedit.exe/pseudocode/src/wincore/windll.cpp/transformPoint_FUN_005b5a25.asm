@@ -31,7 +31,7 @@
 ;   int g_ViewportCenterYFixed
 ;   int g_ViewportRightFixed
 ;   int g_ViewportBottomFixed
-;   BOOL g_MMXSupported
+;   int g_MMXSupported
 ;   int g_CameraOriginX
 ;   int g_CameraOriginY
 ;   int g_CameraOriginZ

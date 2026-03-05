@@ -63,7 +63,7 @@ void __cdecl core_colonel_cpp_CColonel_process_FUN_0043fa00(CColonel *this_ptr,f
   (this_ptr->base).base.model.accumulated_root_motion.x =
        (this_ptr->base).base.model.accumulated_root_motion.y;
   core_colonel_cpp_CColonel_FUN_00440430(this_ptr);
-  if ((this_ptr->base).control_type == 2) {
+  if ((this_ptr->base).control_type == HERO_CONTROL_AI) {
     core_colonel_cpp_CColonel_FUN_0043ff20(this_ptr);
   }
   fVar13 = (float)12.566370614;
@@ -101,7 +101,7 @@ void __cdecl core_colonel_cpp_CColonel_process_FUN_0043fa00(CColonel *this_ptr,f
         }
         if ((this_ptr->base).player_control.action_states[3] != 0) {
           bVar4 = true;
-          if ((this_ptr->guns_drawn == 0) && ((this_ptr->base).control_type != 2)) {
+          if ((this_ptr->guns_drawn == 0) && ((this_ptr->base).control_type != HERO_CONTROL_AI)) {
             iVar7 = core_hero_cpp_CHero_tryInteract_FUN_004f2af0(&this_ptr->base);
             bVar4 = false;
             if (iVar7 != 0) goto LAB_0043fd60;
@@ -241,7 +241,7 @@ LAB_0043fc14:
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020(pCStack_18);
   iVar5 = (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)this_ptr);
   if (iVar5 == 0) {
-    blend_callback = core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0;
+    blend_callback = core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0;
     fVar13 = this_ptr->head_look_blend_weight;
     iVar5 = INT_0083b124;
     core_xform_cpp_eulerToQuaternion_FUN_005f7b20(&this_ptr->head_look_euler,&CStack_94);

@@ -11380,9 +11380,27 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_charactr.cpp_FUN_0042f9c0",
+    "name":"core_charactr.cpp_getDeformableModelPartCount_FUN_0042f9c0",
     "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"model_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDeformableModel*"
+        }
+      ],
       "ret_storage":{
         "reg":"EAX",
         "size":4,
@@ -23423,7 +23441,7 @@
           "type":"int"
         },
         {
-          "name":"x",
+          "name":"position",
           "storage":{
             "offset":12,
             "size":4,
@@ -23436,10 +23454,10 @@
               }
             ]
           },
-          "type":"float"
+          "type":"CVector3f*"
         },
         {
-          "name":"z",
+          "name":"search_radius",
           "storage":{
             "offset":16,
             "size":4,
@@ -44925,6 +44943,24 @@
     "name":"core_gabriela.cpp_CGabriella_renderOpaque_FUN_004d6140",
     "ret":"int",
     "vars":{
+      "locals":[
+        {
+          "name":"unionfacet5_4d620e",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:4041b0cd5086",
+                "offset":70650883297414,
+                "size":4
+              }
+            ]
+          },
+          "type":"UActorVTable*",
+          "use":206
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",
@@ -44966,7 +45002,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_gabriela.cpp_CGabriella_FUN_004d6540",
+    "name":"core_gabriela.cpp_CGabriella_updateAimTracking_FUN_004d6540",
     "ret":"void",
     "vars":{
       "locals":[
@@ -45195,6 +45231,38 @@
             ]
           },
           "type":"CGabriella*"
+        },
+        {
+          "name":"delta_time",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"is_holstering",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }
@@ -45210,7 +45278,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_gabriela.cpp_CGabriella_FUN_004d6d40",
+    "name":"core_gabriela.cpp_CGabriella_updateClavicleCollisionAvoidance_FUN_004d6d40",
     "ret":"void",
     "vars":{
       "locals":[
@@ -45295,6 +45363,38 @@
             ]
           },
           "type":"CGabriella*"
+        },
+        {
+          "name":"delta_time",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"has_carried_objects",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }
@@ -59927,6 +60027,70 @@
             ]
           },
           "type":"undefined1"
+        },
+        {
+          "name":"unionfacet5_525fce",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:40412769c6dd",
+                "offset":70648578295517,
+                "size":4
+              }
+            ]
+          },
+          "type":"UActorVTable*",
+          "use":1934
+        },
+        {
+          "name":"unionfacet5_525fec",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:40412d52a168",
+                "offset":70648677441896,
+                "size":4
+              }
+            ]
+          },
+          "type":"UActorVTable*",
+          "use":1964
+        },
+        {
+          "name":"unionfacet5_526036",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:40414b8c5a38",
+                "offset":70649184541240,
+                "size":4
+              }
+            ]
+          },
+          "type":"UActorVTable*",
+          "use":2038
+        },
+        {
+          "name":"unionfacet5_526069",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:4041d8e245cc",
+                "offset":70651555759564,
+                "size":4
+              }
+            ]
+          },
+          "type":"UActorVTable*",
+          "use":2089
         }
       ],
       "params":[
@@ -60255,10 +60419,10 @@
         "start":"00528140"
       }
     ],
-    "conv":"__cdecl",
+    "conv":"__stack_esi",
     "importable":true,
     "name":"engine_model.c_getMRGLBounds_FUN_00528140",
-    "ret":"void",
+    "ret":"SMRGLModelBounds*",
     "vars":{
       "locals":[
         {
@@ -60712,22 +60876,31 @@
           "type":"SMRGLHeaderExtended*"
         },
         {
-          "name":"output",
+          "name":"output_bounds",
           "storage":{
-            "offset":8,
+            "reg":"ESI",
             "size":4,
-            "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0x8]",
-                "offset":8,
+                "addr":"register:00000018",
+                "offset":24,
                 "size":4
               }
             ]
           },
           "type":"SMRGLModelBounds*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {

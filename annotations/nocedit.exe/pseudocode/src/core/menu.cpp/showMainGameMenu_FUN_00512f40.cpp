@@ -13,7 +13,6 @@ int __cdecl core_menu_cpp_showMainGameMenu_FUN_00512f40(void)
   CGame *pCVar2;
   char *pcVar3;
   int iVar4;
-  char *unaff_EBX;
   int iVar5;
   CAlphaBitmap *this_ptr;
   char (*pacVar6) [256];
@@ -137,7 +136,7 @@ int __cdecl core_menu_cpp_showMainGameMenu_FUN_00512f40(void)
     case 2:
       core_moon_cpp_CMoon_free_FUN_00529ce0(&g_CMoonInstance);
       core_sound_cpp_CSound_reset_FUN_005b39a0(g_CSoundPtr);
-      core_game_cpp_CGame_loadGame_FUN_004e12b0(g_CGamePtr,(char *)0x0,1,unaff_EBX);
+      core_game_cpp_CGame_loadGame_FUN_004e12b0(g_CGamePtr,(char *)0x0,1);
       engine_2d_c_clearInputAndWait_FUN_00403260();
       engine_texture_cpp_clearTextureCache_FUN_005dd8e0();
       core_moon_cpp_CMoon_init_FUN_00529ae0(&g_CMoonInstance);

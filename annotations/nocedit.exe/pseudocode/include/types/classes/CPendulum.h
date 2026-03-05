@@ -5,6 +5,7 @@
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CKeyFramedModelInstance.h"
 #include "types/classes/CVector3f.h"
+#include "types/enums/EGroundType.h"
 
 // Structure: CPendulum
 // Ghidra size: 0x444 (1092 bytes)
@@ -27,7 +28,7 @@ typedef struct CPendulum {
     int kill_enemy; // 0x42c
     float decay; // 0x430
     float decay_timer; // 0x434
-    int ground_type; // 0x438
+    EGroundType ground_type; // 0x438
     int one_shot; // 0x43c
     int is_stopped; // 0x440
 } CPendulum;

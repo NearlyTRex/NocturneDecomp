@@ -13,7 +13,7 @@ void __cdecl core_motion_cpp_CMotionList_save_FUN_0052d170(CMotionList *this_ptr
   float *pfVar2;
   float *pfVar3;
   int *piVar4;
-  int *piVar5;
+  EMotionTransitionCmd *pEVar5;
   int *piVar6;
   int iVar7;
   SMotionTransition *pSVar8;
@@ -62,11 +62,11 @@ void __cdecl core_motion_cpp_CMotionList_save_FUN_0052d170(CMotionList *this_ptr
           pfVar2 = &pSVar8->tween_time;
           pfVar3 = &pSVar8->to_frame_number;
           piVar4 = &pSVar8->to_motion_number;
-          piVar5 = &pSVar8->cmd;
+          pEVar5 = &pSVar8->cmd;
           piVar6 = &pSVar8->desired_state;
           pSVar8 = pSVar8 + 1;
           iVar7 = iVar7 + 1;
-          _fprintf(file_handle,"%d,%d,%d,%g,%g,%d\n",*piVar6,*piVar5,*piVar4,(double)*pfVar3,
+          _fprintf(file_handle,"%d,%d,%d,%g,%g,%d\n",*piVar6,*pEVar5,*piVar4,(double)*pfVar3,
                      SUB84(__BITCAST_UINT64((double)*pfVar2),0),(int)((ulonglong)(double)*pfVar2 >> 0x20),*piVar1);
         } while (iVar7 < local_14->transition_count);
       }

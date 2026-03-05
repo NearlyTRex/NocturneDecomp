@@ -23,6 +23,6 @@ void __cdecl core_charactr_cpp_CCharacter_calculateChecksum_FUN_0042dde0(CCharac
                      (&(this_ptr->model).motion_controller);
   core_actor_cpp_crc32ProcessString_FUN_0040cf90(out_crc,string->motion_name);
   core_actor_cpp_crc32ProcessInt_FUN_0040cf50
-            (out_crc,(this_ptr->model).motion_controller.current_frame_number);
+            (out_crc,(int)(this_ptr->model).motion_controller.current_frame_number);
   return;
 }

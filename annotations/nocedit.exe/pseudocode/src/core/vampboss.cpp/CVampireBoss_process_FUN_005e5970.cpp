@@ -62,7 +62,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *t
   float local_b8;
   float local_b4;
   float local_b0;
-  float local_78;
+  float local_78 [4];
   float local_68;
   float local_64;
   float local_60;
@@ -303,7 +303,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *t
     pCVar2 = &(this_ptr->base).base.model;
     local_20 = delta_time;
     while (0.0 < local_20) {
-      core_motion_cpp_CMotionController_advance_FUN_0052d610(&pCVar2->motion_controller);
+      core_motion_cpp_CMotionController_advance_FUN_0052d610(&pCVar2->motion_controller,&local_20);
     }
     core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000(pCVar2);
     local_18 = (CVector3f *)&(this_ptr->base).base.base.orient;
@@ -365,7 +365,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *t
     pCVar2 = &(this_ptr->base).base.model;
     local_1c = delta_time;
     while (0.0 < local_1c) {
-      core_motion_cpp_CMotionController_advance_FUN_0052d610(&pCVar2->motion_controller);
+      core_motion_cpp_CMotionController_advance_FUN_0052d610(&pCVar2->motion_controller,&local_1c);
     }
     core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000(pCVar2);
     euler = &(this_ptr->base).base.base.orient;
@@ -398,9 +398,10 @@ void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *t
     goto LAB_005e5f5f;
   }
   local_30 = &(this_ptr->base).base.model;
-  local_78 = delta_time;
-  while (0.0 < local_78) {
-    uVar12 = core_motion_cpp_CMotionController_advance_FUN_0052d610(&local_30->motion_controller);
+  local_78[0] = delta_time;
+  while (0.0 < local_78[0]) {
+    uVar12 = core_motion_cpp_CMotionController_advance_FUN_0052d610
+                       (&local_30->motion_controller,local_78);
     if (uVar12 < 2) {
       if (uVar12 == 1) {
         core_vampboss_cpp_CVampireBoss_FUN_005e7390(this_ptr);

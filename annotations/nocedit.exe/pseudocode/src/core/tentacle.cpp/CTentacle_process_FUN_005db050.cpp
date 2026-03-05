@@ -12,8 +12,8 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_pt
 
 {
   CDeformableModelInstance *this_ptr_00;
-  float fVar1;
-  CCharacter *pCVar2;
+  CCharacter *pCVar1;
+  float fVar2;
   float fVar3;
   int iVar4;
   SMotion *pSVar5;
@@ -26,6 +26,8 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_pt
   CMatrix3x4f *pCVar12;
   CMatrix3x4f *pCVar13;
   byte bVar14;
+  float local_258;
+  float fStack_254;
   CMatrix3x4f CStack_250;
   CMatrix3x4f CStack_220;
   CMatrix3x4f CStack_1f0;
@@ -59,17 +61,18 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_pt
   iVar4 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
   if (iVar4 != 0) {
     local_24 = (CVector3f *)&(this_ptr->base).base.base.orient;
-    fVar1 = (this_ptr->base).speed;
+    local_258 = delta_time * (this_ptr->base).speed;
     local_28 = &this_ptr->prev_target_matrix;
     local_20 = &(this_ptr->base).base.base.location.position;
     local_1c = &(this_ptr->base).base.model;
-    while (0.0 < delta_time * fVar1) {
-      uVar7 = core_motion_cpp_CMotionController_advance_FUN_0052d610(&local_1c->motion_controller);
+    while (0.0 < local_258) {
+      uVar7 = core_motion_cpp_CMotionController_advance_FUN_0052d610
+                        (&local_1c->motion_controller,&local_258);
       if (99 < uVar7) {
         if (uVar7 < 0x65) {
-          pCVar2 = (this_ptr->base).victim;
-          if ((pCVar2 != (CCharacter *)0x0) &&
-             (pCVar8 = (*(((pCVar2->base).vtable._uc)->_uc).getGrabber)(pCVar2),
+          pCVar1 = (this_ptr->base).victim;
+          if ((pCVar1 != (CCharacter *)0x0) &&
+             (pCVar8 = (*(((pCVar1->base).vtable._uc)->_uc).getGrabber)(pCVar1),
              pCVar8 == (CDemonActor *)0x0)) {
             core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(local_1c);
             core_tentacle_cpp_CTentacle_FUN_005dbb70(this_ptr);
@@ -83,19 +86,19 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_pt
             pCVar9 = core_xform_cpp_getTranslation_FUN_005f6110(&CStack_1f0,&CStack_94);
             core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                       ((CDemonActor *)this_ptr,&CStack_a0,pCVar9);
-            pCVar2 = (this_ptr->base).victim;
-            fStack_4c = CStack_a0.x - (pCVar2->base).location.position.x;
-            fStack_48 = CStack_a0.y - (pCVar2->base).location.position.y;
-            fStack_44 = CStack_a0.z - (pCVar2->base).location.position.z;
+            pCVar1 = (this_ptr->base).victim;
+            fStack_4c = CStack_a0.x - (pCVar1->base).location.position.x;
+            fStack_48 = CStack_a0.y - (pCVar1->base).location.position.y;
+            fStack_44 = CStack_a0.z - (pCVar1->base).location.position.z;
             if (((ABS(fStack_48) <= (float)6) &&
                 (fStack_4c * fStack_4c + fStack_44 * fStack_44 <= (float)16)) &&
-               (pCVar2 = (this_ptr->base).victim,
-               iVar4 = (*(((pCVar2->base).vtable._uc)->_uc).getGrabbed)
-                                 (pCVar2,(CDemonActor *)this_ptr,1), iVar4 != 0)) {
-              pCVar2 = (this_ptr->base).victim;
+               (pCVar1 = (this_ptr->base).victim,
+               iVar4 = (*(((pCVar1->base).vtable._uc)->_uc).getGrabbed)
+                                 (pCVar1,(CDemonActor *)this_ptr,1), iVar4 != 0)) {
+              pCVar1 = (this_ptr->base).victim;
               this_ptr->target_blend = 0.0;
               core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
-                        (&CStack_160,&(pCVar2->base).location.position,&(pCVar2->base).orient.vec);
+                        (&CStack_160,&(pCVar1->base).location.position,&(pCVar1->base).orient.vec);
               core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
                         (&CStack_190,local_20,local_24);
               core_xform_cpp_inverse_FUN_005f6210(&CStack_1f0,&CStack_220);
@@ -147,9 +150,9 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_pt
             }
           }
         }
-        else if (((uVar7 == 0x65) && (pCVar2 = (this_ptr->base).victim, pCVar2 != (CCharacter *)0x0)
+        else if (((uVar7 == 0x65) && (pCVar1 = (this_ptr->base).victim, pCVar1 != (CCharacter *)0x0)
                  ) && (pCVar6 = (CTentacle *)
-                                (*(((pCVar2->base).vtable._uc)->_uc).getGrabber)(pCVar2),
+                                (*(((pCVar1->base).vtable._uc)->_uc).getGrabber)(pCVar1),
                       pCVar6 == this_ptr)) {
           (((this_ptr->base).victim)->base).was_created = 2;
         }
@@ -188,21 +191,21 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_pt
       }
     }
     else if (uVar7 < 3) {
-      fVar1 = this_ptr->chase_timer + delta_time;
-      this_ptr->chase_timer = fVar1;
-      if (fVar1 < (float)25) {
+      fVar2 = this_ptr->chase_timer + delta_time;
+      this_ptr->chase_timer = fVar2;
+      if (fVar2 < (float)25) {
         (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
-        pCVar2 = (this_ptr->base).victim;
-        if (pCVar2 != (CCharacter *)0x0) {
-          CStack_88.x = (pCVar2->base).location.position.x - ((CVector3f *)&local_20->x)->x;
-          CStack_88.y = (pCVar2->base).location.position.y - local_20->y;
-          CStack_88.z = (pCVar2->base).location.position.z - local_20->z;
+        pCVar1 = (this_ptr->base).victim;
+        if (pCVar1 != (CCharacter *)0x0) {
+          CStack_88.x = (pCVar1->base).location.position.x - ((CVector3f *)&local_20->x)->x;
+          CStack_88.y = (pCVar1->base).location.position.y - local_20->y;
+          CStack_88.z = (pCVar1->base).location.position.z - local_20->z;
           pCVar9 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                              (&CStack_70,&CStack_88);
-          fStack_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
-                                (pCVar9->y - (this_ptr->base).base.base.orient.vec.y);
+          fStack_254 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
+                                 (pCVar9->y - (this_ptr->base).base.base.orient.vec.y);
           fStack_2c = delta_time * (float)0.78539816337500001;
-          (this_ptr->base).base.turn_angle_accumulator = fStack_18;
+          (this_ptr->base).base.turn_angle_accumulator = fStack_254;
           fStack_38 = -fStack_2c;
           if ((this_ptr->base).base.turn_angle_accumulator < fStack_38) {
             (this_ptr->base).base.turn_angle_accumulator = fStack_38;
@@ -210,17 +213,18 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_pt
           if (fStack_2c < (this_ptr->base).base.turn_angle_accumulator) {
             (this_ptr->base).base.turn_angle_accumulator = fStack_2c;
           }
+          fStack_18 = fStack_254;
           if ((float)5 < this_ptr->chase_timer) {
-            pCVar2 = (this_ptr->base).victim;
-            fVar1 = (this_ptr->base).base.base.location.position.x -
-                    (pCVar2->base).location.position.x;
+            pCVar1 = (this_ptr->base).victim;
+            fVar2 = (this_ptr->base).base.base.location.position.x -
+                    (pCVar1->base).location.position.x;
             fVar3 = (this_ptr->base).base.base.location.position.z -
-                    (pCVar2->base).location.position.z;
-            fVar1 = SQRT(fVar3 * fVar3 + fVar1 * fVar1);
-            if (((fStack_18 < (float)0.17453292519444399) &&
+                    (pCVar1->base).location.position.z;
+            fVar2 = SQRT(fVar3 * fVar3 + fVar2 * fVar2);
+            if (((fStack_254 < (float)0.17453292519444399) &&
                 (ABS((this_ptr->base).base.base.location.position.y -
-                     (pCVar2->base).location.position.y) < (float)4)) &&
-               ((float)7 < fVar1 && fVar1 < (float)12)) {
+                     (pCVar1->base).location.position.y) < (float)4)) &&
+               ((float)7 < fVar2 && fVar2 < (float)12)) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                         (&(this_ptr->base).base.model.motion_controller,6,1);
               this_ptr->wait_timer = 25.0;
@@ -234,15 +238,15 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_pt
         this_ptr->wait_timer = 25.0;
       }
     }
-    else if ((((uVar7 == 6) && (pCVar2 = (this_ptr->base).victim, pCVar2 != (CCharacter *)0x0)) &&
-             (iVar4 = (*(((pCVar2->base).vtable._uc)->_uc).getDeathState)(pCVar2), iVar4 < 1)) &&
-            (pCVar2 = (this_ptr->base).victim,
-            pCVar8 = (*(((pCVar2->base).vtable._uc)->_uc).getGrabber)(pCVar2),
+    else if ((((uVar7 == 6) && (pCVar1 = (this_ptr->base).victim, pCVar1 != (CCharacter *)0x0)) &&
+             (iVar4 = (*(((pCVar1->base).vtable._uc)->_uc).getDeathState)(pCVar1), iVar4 < 1)) &&
+            (pCVar1 = (this_ptr->base).victim,
+            pCVar8 = (*(((pCVar1->base).vtable._uc)->_uc).getGrabber)(pCVar1),
             pCVar8 == (CDemonActor *)0x0)) {
-      pCVar2 = (this_ptr->base).victim;
-      CStack_64.x = (pCVar2->base).location.position.x - ((CVector3f *)&local_20->x)->x;
-      CStack_64.y = (pCVar2->base).location.position.y - local_20->y;
-      CStack_64.z = (pCVar2->base).location.position.z - local_20->z;
+      pCVar1 = (this_ptr->base).victim;
+      CStack_64.x = (pCVar1->base).location.position.x - ((CVector3f *)&local_20->x)->x;
+      CStack_64.y = (pCVar1->base).location.position.y - local_20->y;
+      CStack_64.z = (pCVar1->base).location.position.z - local_20->z;
       pCVar9 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                          (&CStack_58,&CStack_64);
       fStack_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
@@ -257,9 +261,9 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_pt
         (this_ptr->base).base.turn_angle_accumulator = fStack_30;
       }
     }
-    fVar1 = delta_time / 0.5f + this_ptr->target_blend;
-    this_ptr->target_blend = fVar1;
-    if (1.0 < fVar1) {
+    fVar2 = delta_time / 0.5f + this_ptr->target_blend;
+    this_ptr->target_blend = fVar2;
+    if (1.0 < fVar2) {
       this_ptr->target_blend = 1.0;
     }
     core_charactr_cpp_CCharacter_preProcess_FUN_00429820((CCharacter *)this_ptr);

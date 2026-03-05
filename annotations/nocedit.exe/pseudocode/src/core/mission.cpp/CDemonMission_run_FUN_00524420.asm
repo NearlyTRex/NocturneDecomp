@@ -177,7 +177,7 @@ section .text
     PUSH ESI                            ; 00524574
     PUSH EBX                            ; 00524575
     CALL core_mission.cpp_CDemonMission_createHeros_FUN_00524a80 ; 00524576
-        ;   XREF to: 00524a80 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_createHeros_FUN_00524a80(CDemonMission * this_ptr, int creation_flags)
+        ;   XREF to: 00524a80 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_createHeros_FUN_00524a80(CDemonMission * this_ptr, CCharacter * existing_hero)
     ADD ESP,0x8                         ; 0052457b
     TEST EAX,EAX                        ; 0052457e
     JZ 0x005244ee                       ; 00524580

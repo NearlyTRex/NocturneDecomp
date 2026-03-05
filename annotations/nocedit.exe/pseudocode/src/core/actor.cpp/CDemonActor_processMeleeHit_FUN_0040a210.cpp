@@ -285,7 +285,7 @@ LAB_0040a3e0:
         local_3c = (CCrate *)(local_74.z * fVar7);
         local_38 = (int)(local_68.x * fVar7);
         if ((CTrigger **)&local_218.ammo_type != &local_40) {
-          local_218.ammo_type = (int)local_40;
+          local_218.ammo_type = (EAmmoType)local_40;
           local_218.dismember_prob = (float)local_3c;
           local_218.damage_type = local_38;
         }
@@ -294,7 +294,7 @@ LAB_0040a3e0:
                             &g_CDemonSetPtr->collision_impact_position);
         if ((CVector3f *)&local_218.wielder != pCVar2) {
           local_218.wielder = (CDemonActor *)pCVar2->x;
-          local_1dc.fire_type = (int)pCVar2->y;
+          local_1dc.hit_part_index = (int)pCVar2->y;
           local_1dc.damage_amount = pCVar2->z;
         }
         (*(((pCVar3->base).vtable._uc)->_uc).processDamage)

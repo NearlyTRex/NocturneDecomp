@@ -20,7 +20,7 @@ CGame * __cdecl core_game_cpp_CGame_ctor_FUN_004d7b40(CGame *this_ptr)
   this_ptr->foul_language_flag = 1;
   this_ptr->shadow_flag = 1;
   this_ptr->quimby_flag = 0;
-  this_ptr->game_control = 0;
+  this_ptr->game_control = CONTROL_MODE_KEYBOARD;
   core_game_cpp_CGame_restoreDefaultControls_FUN_004dbbc0(this_ptr);
   this_ptr->debug_info_string[0] = '\0';
   this_ptr->god_mode_enabled = 0;
@@ -40,7 +40,7 @@ CGame * __cdecl core_game_cpp_CGame_ctor_FUN_004d7b40(CGame *this_ptr)
   this_ptr->head_of_horror_cheat = 0;
   this_ptr->geometry_debug_enabled = 0;
   this_ptr->collision_render_enabled = 0;
-  this_ptr->hero_number = 0;
+  this_ptr->hero_number = HERO_TYPE_GABRIELLA;
   this_ptr->auto_use_health = 0;
   this_ptr->debug_fudge_target = (CVector3f *)0x0;
   this_ptr->debug_fudge_step = 1.0;

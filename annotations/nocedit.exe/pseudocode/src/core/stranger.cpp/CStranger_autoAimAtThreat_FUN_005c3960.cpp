@@ -10,11 +10,11 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_005c3960(CStranger 
 
 {
   CDemonActor *this_ptr_00;
-  int iVar1;
+  EAimMode EVar1;
   float fVar2;
   double dVar3;
   uint uVar4;
-  int *piVar5;
+  EAimMode *pEVar5;
   CDeformableModelInstance *this_ptr_01;
   CVector3f *pCVar6;
   CCharacter *pCVar7;
@@ -34,9 +34,9 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_005c3960(CStranger 
   CVector3f CStack_a0;
   CVector3f CStack_94;
   CVector3f CStack_88;
-  int iStack_7c;
-  int iStack_78;
-  int iStack_74;
+  EAimMode EStack_7c;
+  EAimMode EStack_78;
+  EAimMode EStack_74;
   CVector3f aCStack_70 [2];
   float fStack_58;
   float fStack_54;
@@ -79,7 +79,7 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_005c3960(CStranger 
     local_48 = this_ptr->weapon->weapon_type;
   }
   if (hand_index == 0) {
-    if (((this_ptr->base).aim_mode == 2) && (local_48 == 0)) {
+    if (((this_ptr->base).aim_mode == AIM_MODE_MANUAL) && (local_48 == 0)) {
       return;
     }
     local_30 = -1.3089969;
@@ -124,20 +124,20 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_005c3960(CStranger 
   local_24->aim_lock_state = 0;
   fStack_38 = local_24->aim_yaw;
   fStack_34 = local_24->aim_pitch;
-  if ((local_48 == 3) || (iVar1 = (this_ptr->base).aim_mode, iVar1 != 0)) {
+  if ((local_48 == 3) || (EVar1 = (this_ptr->base).aim_mode, EVar1 != AIM_MODE_AUTO)) {
     local_24->target_yaw = 0.0;
   }
   else {
     pCVar7 = (CCharacter *)this_ptr->weapon;
-    iStack_7c = iVar1;
-    iStack_78 = iVar1;
-    iStack_74 = iVar1;
+    EStack_7c = EVar1;
+    EStack_78 = EVar1;
+    EStack_74 = EVar1;
     if ((pCVar7 != (CCharacter *)0x0) &&
-       (piVar5 = (int *)(*(((pCVar7->base).vtable._uc)->_uc).canWalk)(pCVar7), &iStack_7c != piVar5)
-       ) {
-      iStack_7c = *piVar5;
-      iStack_78 = piVar5[1];
-      iStack_74 = piVar5[2];
+       (pEVar5 = (EAimMode *)(*(((pCVar7->base).vtable._uc)->_uc).canWalk)(pCVar7),
+       &EStack_7c != pEVar5)) {
+      EStack_7c = *pEVar5;
+      EStack_78 = pEVar5[1];
+      EStack_74 = pEVar5[2];
     }
     this_ptr_01 = &(this_ptr->base).base.model;
     if (local_48 == 0) {

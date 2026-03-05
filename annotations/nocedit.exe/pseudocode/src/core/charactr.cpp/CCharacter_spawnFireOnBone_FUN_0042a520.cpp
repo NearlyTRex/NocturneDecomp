@@ -2,13 +2,13 @@
 // Address: 0042a520
 // Address Range: [[0042a520, 0042a827]]
 // Convention: __cdecl
-// Signature: void __cdecl core_charactr_cpp_CCharacter_spawnFireOnBone_FUN_0042a520(CCharacter *this_ptr,int bone_index,int target_bone_index)
+// Signature: void __cdecl core_charactr_cpp_CCharacter_spawnFireOnBone_FUN_0042a520(CCharacter *this_ptr,CSkeleton *skeleton,int target_bone_index)
 
 #include "nocturne.h"
 
 /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
-void __cdecl core_charactr_cpp_CCharacter_spawnFireOnBone_FUN_0042a520(CCharacter *this_ptr,int bone_index,int target_bone_index)
+void __cdecl core_charactr_cpp_CCharacter_spawnFireOnBone_FUN_0042a520(CCharacter *this_ptr,CSkeleton *skeleton,int target_bone_index)
 
 {
   float fVar1;
@@ -18,7 +18,7 @@ void __cdecl core_charactr_cpp_CCharacter_spawnFireOnBone_FUN_0042a520(CCharacte
   CDeformableModel *this_ptr_00;
   CVector3f *pCVar5;
   int iVar6;
-  int iVar7;
+  CSkeleton *pCVar7;
   CVector3f *pCVar8;
   SFire *pSVar9;
   int iVar10;
@@ -46,20 +46,20 @@ void __cdecl core_charactr_cpp_CCharacter_spawnFireOnBone_FUN_0042a520(CCharacte
     local_44 = (this_ptr->model).transformed_vertices;
     iVar10 = 0;
     local_24 = 0.0;
-    iVar7 = bone_index;
+    pCVar7 = skeleton;
     pCVar5 = local_44;
-    if (0 < *(int *)(bone_index + 0x28558)) {
+    if (0 < skeleton->bone_count) {
       do {
-        if ((target_bone_index == *(int *)(iVar7 + 0x2857c)) &&
+        if ((target_bone_index == pCVar7->bone_list[0].parent_index) &&
            (local_20 = SQRT(pCVar5->z * pCVar5->z + pCVar5->x * pCVar5->x + pCVar5->y * pCVar5->y),
            local_24 < local_20)) {
           iVar6 = iVar10;
           local_24 = local_20;
         }
-        iVar7 = iVar7 + 0x24;
+        pCVar7 = (CSkeleton *)((pCVar7->motion_list).state_names[1] + 2);
         iVar10 = iVar10 + 1;
         pCVar5 = pCVar5 + 1;
-      } while (iVar10 < *(int *)(bone_index + 0x28558));
+      } while (iVar10 < skeleton->bone_count);
     }
     if (iVar6 != -1) {
       pCVar8 = local_44 + target_bone_index;
@@ -78,15 +78,15 @@ void __cdecl core_charactr_cpp_CCharacter_spawnFireOnBone_FUN_0042a520(CCharacte
         local_30 = &this_ptr->model;
         local_34 = local_18 + 2;
         while (this_ptr->fire_count < 0x32) {
-          iVar7 = this_ptr->fire_count;
+          iVar10 = this_ptr->fire_count;
           (this_ptr->base).is_transparent = 1;
-          pSVar9 = local_38 + iVar7;
-          this_ptr->fire_count = iVar7 + 1;
+          pSVar9 = local_38 + iVar10;
+          this_ptr->fire_count = iVar10 + 1;
           this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
                                   (local_30);
-          iVar7 = core_skeleton_cpp_CDeformableModel_getBonePart_FUN_0059c2d0
-                            (this_ptr_00,target_bone_index);
-          pSVar9->bone_part = iVar7;
+          iVar10 = core_skeleton_cpp_CDeformableModel_getBonePart_FUN_0059c2d0
+                             (this_ptr_00,target_bone_index);
+          pSVar9->bone_part = iVar10;
           local_18 = local_34;
           local_14 = iVar6 + 1;
           pSVar9->bone_index = target_bone_index;
@@ -105,10 +105,10 @@ void __cdecl core_charactr_cpp_CCharacter_spawnFireOnBone_FUN_0042a520(CCharacte
                              (&local_68,&pSVar9->offset,local_40 + pSVar9->bone_index);
           pCVar5 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                              (&this_ptr->base,&local_5c,pCVar5);
-          iVar7 = this_ptr->fire_count + -1;
-          local_3c[iVar7].base.location.position.x = pCVar5->x;
-          local_3c[iVar7].base.location.position.y = pCVar5->y;
-          local_3c[iVar7].base.location.position.z = pCVar5->z;
+          iVar10 = this_ptr->fire_count + -1;
+          local_3c[iVar10].base.location.position.x = pCVar5->x;
+          local_3c[iVar10].base.location.position.y = pCVar5->y;
+          local_3c[iVar10].base.location.position.z = pCVar5->z;
           *(uint *)((int)this_ptr->fire_effects + this_ptr->fire_count * 0x2a4 + 0x3b8) = 0;
           pSVar9->size = 0.5;
           fVar4 = (float)0.5;

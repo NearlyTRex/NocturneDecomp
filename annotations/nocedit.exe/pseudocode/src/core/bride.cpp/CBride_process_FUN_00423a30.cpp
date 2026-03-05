@@ -327,7 +327,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
     local_24 = delta_time * (this_ptr->base).speed;
     while (0.0 < local_24) {
       iVar4 = core_motion_cpp_CMotionController_advance_FUN_0052d610
-                        (&(this_ptr->base).base.model.motion_controller);
+                        (&(this_ptr->base).base.model.motion_controller,&local_24);
       if (iVar4 != 0x11) {
         core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,iVar4);
       }

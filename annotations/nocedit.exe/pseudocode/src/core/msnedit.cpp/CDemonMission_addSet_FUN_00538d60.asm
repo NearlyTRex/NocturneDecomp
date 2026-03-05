@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_msnedit_cpp_CDemonMission_addSet_FUN_00538d60(CDemonMission *this_ptr,char *param_2)
+; void __cdecl core_msnedit_cpp_CDemonMission_addSet_FUN_00538d60(CDemonMission *this_ptr,char *set_name)
 ;
 ; Parameters:
 ; CDemonMission *  Stack[0x4]:4   this_ptr
-; char *           Stack[0x8]:4   param_2
+; char *           Stack[0x8]:4   set_name
 ;
 ; XREF[1]:
 ;   core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0 at 00538650

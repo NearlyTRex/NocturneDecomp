@@ -2,12 +2,13 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/enums/EMotionTransitionCmd.h"
 
 // Structure: SMotionTransition
 // Ghidra size: 0x18 (24 bytes)
 typedef struct SMotionTransition {
     int desired_state; // 0x0
-    int cmd; // 0x4
+    EMotionTransitionCmd cmd; // 0x4
     int to_motion_number; // 0x8
     float to_frame_number; // 0xc
     float tween_time; // 0x10

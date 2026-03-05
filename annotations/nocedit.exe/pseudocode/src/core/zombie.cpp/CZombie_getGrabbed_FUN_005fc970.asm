@@ -1,13 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_zombie_cpp_CZombie_getGrabbed_FUN_005fc970(CZombie *this_ptr,CDemonActor *grabber,int grab_type,int param_4)
+; int __cdecl core_zombie_cpp_CZombie_getGrabbed_FUN_005fc970(CZombie *this_ptr,CDemonActor *grabber,int grab_type)
 ;
 ; Parameters:
 ; CZombie *        Stack[0x4]:4   this_ptr
 ; CDemonActor *    Stack[0x8]:4   grabber
 ; int              Stack[0xc]:4   grab_type
-; int              Stack[0x10]:4   param_4
 ;
 ; *****************************************************************************
 

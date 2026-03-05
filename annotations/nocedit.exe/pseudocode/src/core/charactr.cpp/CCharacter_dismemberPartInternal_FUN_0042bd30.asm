@@ -230,7 +230,7 @@ section .text
     MOV ECX,dword ptr [EBP + 0x8a]      ; 0042bf13
     PUSH ECX                            ; 0042bf19
     CALL core_bodypart.cpp_CBodyPart_addFire_FUN_0041ae50 ; 0042bf1a
-        ;   XREF to: 0041ae50 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_addFire_FUN_0041ae50(CBodyPart * this_ptr, CVector3f * param_2)
+        ;   XREF to: 0041ae50 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_addFire_FUN_0041ae50(CBodyPart * this_ptr, CVector3f * position)
     ADD ESP,0x8                         ; 0042bf1f
     JMP 0x0042be11                      ; 0042bf22
         ;   XREF to: 0042be11 (UNCONDITIONAL_JUMP)  ; LAB_0042be11

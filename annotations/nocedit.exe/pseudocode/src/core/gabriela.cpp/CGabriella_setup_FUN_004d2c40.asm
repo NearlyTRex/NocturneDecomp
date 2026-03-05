@@ -205,7 +205,7 @@ section .text
     ADD ESP,0x4                         ; 004d2e10
     PUSH EAX                            ; 004d2e13
     CALL core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460 ; 004d2e14
-        ;   XREF to: 0052d460 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460(CMotionList * this_ptr)
+        ;   XREF to: 0052d460 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460(CMotionList * this_ptr, char * motion_name, int error_on_not_found)
     ADD ESP,0xc                         ; 004d2e19
     PUSH 0x1                            ; 004d2e1c
     PUSH 0x62adf6                       ; 004d2e1e | = "gab shoot"
@@ -216,7 +216,7 @@ section .text
     ADD ESP,0x4                         ; 004d2e2e
     PUSH EAX                            ; 004d2e31
     CALL core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460 ; 004d2e32
-        ;   XREF to: 0052d460 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460(CMotionList * this_ptr)
+        ;   XREF to: 0052d460 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460(CMotionList * this_ptr, char * motion_name, int error_on_not_found)
     ADD ESP,0xc                         ; 004d2e37
     PUSH 0x1                            ; 004d2e3a
     PUSH 0x62ae00                       ; 004d2e3c | = "gab crossbow shoot"
@@ -227,7 +227,7 @@ section .text
     ADD ESP,0x4                         ; 004d2e4c
     PUSH EAX                            ; 004d2e4f
     CALL core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460 ; 004d2e50
-        ;   XREF to: 0052d460 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460(CMotionList * this_ptr)
+        ;   XREF to: 0052d460 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460(CMotionList * this_ptr, char * motion_name, int error_on_not_found)
     MOV dword ptr [ESI + 0x1fba4],0x0   ; 004d2e55
     MOV dword ptr [ESI + 0x1fba8],0x0   ; 004d2e5f
     MOV [0x02d7b880],EAX                ; 004d2e69 | INT_02d7b880

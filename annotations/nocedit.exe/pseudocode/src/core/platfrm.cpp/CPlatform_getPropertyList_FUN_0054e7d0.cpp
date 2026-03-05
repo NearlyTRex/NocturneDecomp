@@ -33,7 +33,7 @@ void __cdecl core_platfrm_cpp_CPlatform_getPropertyList_FUN_0054e7d0(CPlatform *
             (property_list,"Travel time end->start (sec)",&this_ptr->travel_time_to_start,
              (CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addGroundType_FUN_0040e300
-            (property_list,"groundType",&this_ptr->ground_type);
+            (property_list,"groundType",(int *)&this_ptr->ground_type);
   pCVar1 = core_actor_cpp_CActorPropertyList_addAction_FUN_0040e670
                      (property_list,"course",
                       core_platfrm_cpp_CPlatform_propertyDisplayTypeCallback_FUN_0054e4e0,

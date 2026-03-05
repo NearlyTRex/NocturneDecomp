@@ -631,7 +631,7 @@ section .text
     MOV EDI,dword ptr [0x0067d550]      ; 005419b6 | g_CDemonMissionPtr
     PUSH EDI                            ; 005419bc | g_CDemonMissionInstance
     CALL core_mission.cpp_CDemonMission_createHeros_FUN_00524a80 ; 005419bd
-        ;   XREF to: 00524a80 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_createHeros_FUN_00524a80(CDemonMission * this_ptr, int creation_flags)
+        ;   XREF to: 00524a80 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_createHeros_FUN_00524a80(CDemonMission * this_ptr, CCharacter * existing_hero)
     ADD ESP,0x8                         ; 005419c2
     TEST EAX,EAX                        ; 005419c5
     JZ 0x005419ed                       ; 005419c7
@@ -813,7 +813,7 @@ section .text
     MOV EDX,dword ptr [0x0067d550]      ; 00541b8d | g_CDemonMissionPtr
     PUSH EDX                            ; 00541b93 | g_CDemonMissionInstance
     CALL core_mission.cpp_CDemonMission_createHeros_FUN_00524a80 ; 00541b94
-        ;   XREF to: 00524a80 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_createHeros_FUN_00524a80(CDemonMission * this_ptr, int creation_flags)
+        ;   XREF to: 00524a80 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_createHeros_FUN_00524a80(CDemonMission * this_ptr, CCharacter * existing_hero)
     ADD ESP,0x8                         ; 00541b99
     TEST EAX,EAX                        ; 00541b9c
     JZ 0x00541c1f                       ; 00541b9e

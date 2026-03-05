@@ -1,0 +1,165 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 30,
+    "complexity_score": 45,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 10,
+    "suspect_count": 3,
+    "suspect_types": [
+      "decompiler_intrinsic"
+    ],
+    "total_lines": 40
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0042f930",
+    "address_range": [
+      [
+        "0042f930",
+        "0042f984"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_charactr.cpp_projectPointToVertex_FUN_0042f930",
+    "signature": "void __cdecl core_charactr_cpp_projectPointToVertex_FUN_0042f930(SProjectedVertex **vertex_array,int vertex_index,CVector3f *world_position)"
+  },
+  "function_calls": [
+    {
+      "addr": "005b575c",
+      "is_variadic": false,
+      "name": "wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0065b810",
+      "name": "FLOAT_0065b810",
+      "type": "float",
+      "value": "256"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 3,
+    "estimated_params": 3
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.107142857142857,
+    "instruction_count": 28,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "CALL": 1,
+      "COPY": 70,
+      "FLOAT2FLOAT": 6,
+      "FLOAT_MULT": 3,
+      "INT_ADD": 13,
+      "INT_AND": 23,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 13,
+      "INT_LEFT": 2,
+      "INT_LESS": 2,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_OR": 5,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 8,
+      "INT_SUB": 7,
+      "INT_XOR": 1,
+      "LOAD": 9,
+      "POPCOUNT": 6,
+      "RETURN": 1,
+      "ROUND": 3,
+      "STORE": 7,
+      "TRUNC": 3
+    },
+    "pcode_op_count": 199
+  },
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 20,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_array",
+        "offset": 4,
+        "size": 4,
+        "type": "SProjectedVertex * *"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "world_position",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 7,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_10.x = (int)ROUND(world_position->x * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 8,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_10.y = (int)ROUND(world_position->y * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 9,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_10.z = (int)ROUND(world_position->z * 256.0f);",
+      "type": "decompiler_intrinsic"
+    }
+  ]
+}

@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_lever_cpp_CLever_setState_FUN_00504b20(CLever *this_ptr,float param_2)
+; void __cdecl core_lever_cpp_CLever_setState_FUN_00504b20(CLever *this_ptr,float new_state)
 ;
 ; Parameters:
 ; CLever *         Stack[0x4]:4   this_ptr
-; float            Stack[0x8]:4   param_2
+; float            Stack[0x8]:4   new_state
 ;
 ; XREF[3]:
 ;   core_event.cpp_CEventList_executeCommand_FUN_004aacc0 at 004acde5
@@ -152,7 +152,7 @@ section .text
         ;   Label: LAB_00504c41
     PUSH EBP                            ; 00504c42
     CALL core_lever.cpp_CLever_setState_FUN_00504b20 ; 00504c43
-        ;   XREF to: 00504b20 (UNCONDITIONAL_CALL)  ; void core_lever.cpp_CLever_setState_FUN_00504b20(CLever * this_ptr, float param_2)
+        ;   XREF to: 00504b20 (UNCONDITIONAL_CALL)  ; void core_lever.cpp_CLever_setState_FUN_00504b20(CLever * this_ptr, float new_state)
     ADD ESP,0x8                         ; 00504c48
     JMP 0x00504b90                      ; 00504c4b
         ;   XREF to: 00504b90 (UNCONDITIONAL_JUMP)  ; LAB_00504b90
@@ -173,7 +173,7 @@ section .text
     PUSH dword ptr [ESP + 0x18]         ; 00504c73
     PUSH EAX                            ; 00504c77
     CALL core_lever.cpp_CLever_setState_FUN_00504b20 ; 00504c78
-        ;   XREF to: 00504b20 (UNCONDITIONAL_CALL)  ; void core_lever.cpp_CLever_setState_FUN_00504b20(CLever * this_ptr, float param_2)
+        ;   XREF to: 00504b20 (UNCONDITIONAL_CALL)  ; void core_lever.cpp_CLever_setState_FUN_00504b20(CLever * this_ptr, float new_state)
     ADD ESP,0x8                         ; 00504c7d
     INC ESI                             ; 00504c80
         ;   Label: LAB_00504c80

@@ -25,7 +25,7 @@
 ;   SRenderBufferEntry*[2500] g_RenderBufferSortArray
 ;   undefined4 g_RenderBufferSortArray[1]
 ;   RenderScanlineFunc* g_ScanlineRenderFunc
-;   BOOL g_MMXSupported
+;   int g_MMXSupported
 ;   ... and 3 more
 ;
 ; Called Functions:

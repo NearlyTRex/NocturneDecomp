@@ -9,7 +9,7 @@
 void __cdecl core_setcolid_cpp_SDamageInfo_copy_FUN_005746d0(SDamageInfo *this_ptr,SDamageInfo *other)
 
 {
-  this_ptr->fire_type = other->fire_type;
+  this_ptr->hit_part_index = other->hit_part_index;
   this_ptr->damage_amount = other->damage_amount;
   this_ptr->gore_multiplier = other->gore_multiplier;
   (this_ptr->impact_point).x = (other->impact_point).x;

@@ -350,7 +350,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x248]     ; 005db4b8
     PUSH ECX                            ; 005db4bf
     CALL core_motion.cpp_CMotionController_advance_FUN_0052d610 ; 005db4c0
-        ;   XREF to: 0052d610 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionController_advance_FUN_0052d610(CMotionController * this_ptr)
+        ;   XREF to: 0052d610 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionController_advance_FUN_0052d610(CMotionController * this_ptr, float * delta_time)
     ADD ESP,0x8                         ; 005db4c5
     CMP EAX,0x64                        ; 005db4c8
     JC 0x005db0b1                       ; 005db4cb

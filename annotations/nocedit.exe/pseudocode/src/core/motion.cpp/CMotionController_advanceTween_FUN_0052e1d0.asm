@@ -1,10 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_motion_cpp_CMotionController_advanceTween_FUN_0052e1d0(CMotionController *this_ptr)
+; void __cdecl core_motion_cpp_CMotionController_advanceTween_FUN_0052e1d0(CMotionController *this_ptr,int motion_index,float current_frame,float *remaining_time)
 ;
 ; Parameters:
 ; CMotionController * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   motion_index
+; float            Stack[0xc]:4   current_frame
+; float *          Stack[0x10]:4   remaining_time
 ; Local Variables:
 ; undefined8       Stack[-0x28]:8  local_28
 ; undefined4       Stack[-0x20]:4  local_20

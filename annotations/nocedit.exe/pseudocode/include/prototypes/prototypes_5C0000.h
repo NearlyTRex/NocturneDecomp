@@ -30,7 +30,7 @@
 void __cdecl core_stranger_cpp_CStranger_applyArmAimRotation_FUN_005c02b0(CStranger *this_ptr,int arm_side);
 void __cdecl core_stranger_cpp_CStranger_updateWeaponPosition_FUN_005c06b0(CStranger *this_ptr,int hand_index);
 void __cdecl core_stranger_cpp_CStranger_computeWeaponAttachXForm_FUN_005c07b0(CStranger *this_ptr,CDemonActor *carried_actor,int hand_index);
-int __cdecl core_stranger_cpp_CStranger_tryPickupObject_FUN_005c1680(CStranger *this_ptr,char *param_2);
+int __cdecl core_stranger_cpp_CStranger_tryPickupObject_FUN_005c1680(CStranger *this_ptr,char *class_name);
 void __cdecl core_stranger_cpp_CStranger_processPickupComplete_FUN_005c1f00(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_dropRightHandObject_FUN_005c1f80(CStranger *this_ptr);
 int __cdecl core_stranger_cpp_CStranger_tryClimbLadder_FUN_005c1fe0(CStranger *this_ptr);

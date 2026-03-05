@@ -10,14 +10,17 @@ void __cdecl core_charactr_cpp_CCharacter_setWalkTarget_FUN_0042c920(CCharacter 
 
 {
   CMotionList *this_ptr_00;
+  char *state_name;
   int iVar1;
   
   if (target == (CDemonActor *)0x0) {
     if (((this_ptr->is_walking != 0) && (this_ptr->walk_to_target != (CDemonActor *)0x0)) &&
        ((this_ptr->model).model_name[0] != '\0')) {
+      iVar1 = 0;
+      state_name = "STAND";
       this_ptr_00 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                               (&(this_ptr->model).motion_controller);
-      iVar1 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(this_ptr_00);
+      iVar1 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(this_ptr_00,state_name,iVar1);
       if (-1 < iVar1) {
         core_motion_cpp_CMotionController_setDesiredStateByName_FUN_0052db90
                   (&(this_ptr->model).motion_controller,"STAND",1);

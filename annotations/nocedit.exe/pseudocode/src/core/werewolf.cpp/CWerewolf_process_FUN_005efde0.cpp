@@ -86,7 +86,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_pt
   CVector3f local_68;
   CVector3f local_5c;
   CVector3f local_50;
-  float local_3c;
+  float local_3c [2];
   int local_34;
   float local_30;
   float local_2c;
@@ -110,10 +110,11 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_pt
        (this_ptr->base).base.model.accumulated_root_motion.z;
   (this_ptr->base).base.model.accumulated_root_motion.x =
        (this_ptr->base).base.model.accumulated_root_motion.y;
-  local_3c = delta_time * (this_ptr->base).speed;
+  local_3c[0] = delta_time * (this_ptr->base).speed;
   pCVar1 = &(this_ptr->base).base.model;
-  while (0.0 < local_3c) {
-    uVar9 = core_motion_cpp_CMotionController_advance_FUN_0052d610(&pCVar1->motion_controller);
+  while (0.0 < local_3c[0]) {
+    uVar9 = core_motion_cpp_CMotionController_advance_FUN_0052d610
+                      (&pCVar1->motion_controller,local_3c);
     if (uVar9 < 10) {
       core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,uVar9);
     }

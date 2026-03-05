@@ -12,9 +12,6 @@
 // GLOBAL VARIABLES - Range 0x2D00000
 // =============================================================================
 
-// BOOL
-extern BOOL g_MMXSupported;
-
 // CEventList
 extern CEventList g_CEventListInstance;
 
@@ -103,6 +100,7 @@ extern int g_JoyWantUAxis;
 extern int g_JoyWantRAxis;
 extern int g_JoystickHasPOV;
 extern int g_JoyPOVDirection;
+extern int g_MMXSupported;
 extern int g_CPUModel;
 extern int g_CalibratedCPUSpeed;
 extern int g_BlendMode;

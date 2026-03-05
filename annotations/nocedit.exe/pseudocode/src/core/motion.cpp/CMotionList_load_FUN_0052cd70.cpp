@@ -14,7 +14,7 @@ void __cdecl core_motion_cpp_CMotionList_load_FUN_0052cd70(CMotionList *this_ptr
   SMotionSignal *pSVar3;
   char (*pacVar4) [30];
   int *piVar5;
-  int local_38;
+  EMotionTransitionCmd local_38;
   int local_34;
   SMotionTransition *local_30;
   SMotion *local_2c;

@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_bodypart_cpp_CBodyPart_addFire_FUN_0041ae50(CBodyPart *this_ptr,CVector3f *param_2)
+; void __cdecl core_bodypart_cpp_CBodyPart_addFire_FUN_0041ae50(CBodyPart *this_ptr,CVector3f *position)
 ;
 ; Parameters:
 ; CBodyPart *      Stack[0x4]:4   this_ptr
-; CVector3f *      Stack[0x8]:4   param_2
+; CVector3f *      Stack[0x8]:4   position
 ; Local Variables:
 ; undefined1       Stack[-0x18]:1  local_18
 ; undefined4       Stack[-0xc]:4  local_c

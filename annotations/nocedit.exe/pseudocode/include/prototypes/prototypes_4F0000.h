@@ -7,6 +7,7 @@
 #include "types/classes/CBoundingBox3D.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CEnemy.h"
 #include "types/classes/CGun.h"
 #include "types/classes/CHaystack.h"
 #include "types/classes/CHealthItem.h"
@@ -29,6 +30,7 @@
 #include "types/classes/CPathMap.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CWeapon.h"
+#include "types/enums/EHeroType.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SCollisionReturnInfo.h"
 #include "types/structs/SDamageInfo.h"
@@ -90,7 +92,7 @@ int __cdecl core_hero_cpp_CHero_testCylinderCollision_FUN_004f2580(CHero *this_p
 int __cdecl core_hero_cpp_CHero_testLineIntersection_FUN_004f25c0(CHero *this_ptr,CVector3f *line_start,CVector3f *line_end, CVector3f *out_intersection_point);
 void __cdecl core_hero_cpp_CHero_archive_FUN_004f2610(CHero *this_ptr);
 CPathMap * __cdecl core_hero_cpp_CHero_getPathMap_FUN_004f2870(CHero *this_ptr);
-int __cdecl core_hero_cpp_CHero_isGrabbable_FUN_004f2880(CHero *this_ptr);
+int __cdecl core_hero_cpp_CHero_isGrabbable_FUN_004f2880(CHero *this_ptr,CDemonActor *grabber);
 int __cdecl core_hero_cpp_CHero_canBeGrabbed_FUN_004f2890(CHero *this_ptr,CDemonActor *grabber,int grab_type);
 int __cdecl core_hero_cpp_CHero_canWalk_FUN_004f28a0(CHero *this_ptr);
 int __cdecl core_hero_cpp_CHero_getGrabbed_FUN_004f28d0(CHero *this_ptr,CDemonActor *grabber,int grab_type);
@@ -113,7 +115,7 @@ void __cdecl core_hero_cpp_CHero_executeObjectPickup_FUN_004f3890(CHero *this_pt
 void __cdecl core_hero_cpp_CHero_addCarriedItemToInventory_FUN_004f38d0(CHero *this_ptr,int hand_index);
 void __cdecl core_hero_cpp_CHero_removeMatchingKeys_FUN_004f3910(CHero *this_ptr,uint key_mask);
 void __cdecl core_hero_cpp_CHero_setAiTask_FUN_004f3930(CHero *this_ptr,int ai_task);
-float __cdecl core_hero_cpp_CHero_findNearestEnemy_FUN_004f3960(CHero *this_ptr,float *out_distance);
+CEnemy * __cdecl core_hero_cpp_CHero_findNearestEnemy_FUN_004f3960(CHero *this_ptr,float *out_distance);
 void __cdecl core_hero_cpp_CHero_kill_FUN_004f3af0(CHero *this_ptr,int damage_type,CVector3f *damage_direction,float impact_force);
 void __cdecl core_hero_cpp_CHero_reset_FUN_004f3b20(CHero *this_ptr);
 CHeroPlaceholder * __cdecl core_hero_cpp_factoryFunc_FUN_004f3bc0(void);
@@ -122,7 +124,7 @@ CHeroPlaceholder * __cdecl core_hero_cpp_CHeroPlaceholder_ctor_FUN_004f3c00(CHer
 CHeroPlaceholder * __cdecl core_hero_cpp_CHeroPlaceholder_dtor_FUN_004f3c30(CHeroPlaceholder *this_ptr,uint flags);
 int __cdecl core_hero_cpp_CHeroPlaceholder_renderTransparent_FUN_004f3c90(CHeroPlaceholder *this_ptr);
 CBoundingBox3D * __cdecl core_hero_cpp_CHeroPlaceholder_getBoundingBox_FUN_004f3d20(CHeroPlaceholder *this_ptr,CBoundingBox3D *out_box);
-CDemonActor * __cdecl core_hero_cpp_CHeroPlaceholder_createHero_FUN_004f3d80(CHeroPlaceholder *this_ptr,int param_2);
+CDemonActor * __cdecl core_hero_cpp_CHeroPlaceholder_createHero_FUN_004f3d80(CHeroPlaceholder *this_ptr,EHeroType hero_type);
 void __cdecl core_hero_cpp_CHeroPlaceholder_archive_FUN_004f3ef0(CHeroPlaceholder *this_ptr);
 void __cdecl core_hero_cpp_CHero_getPropertyList_FUN_004f3f20(CHero *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_hero_cpp_CHeroPlaceholder_getPropertyList_FUN_004f3f60(CHeroPlaceholder *this_ptr,CActorPropertyList *property_list);
@@ -151,7 +153,7 @@ void __cdecl core_hostage_cpp_CHostage_process_FUN_004f4bd0(CHostage *this_ptr,f
 int __cdecl core_hostage_cpp_CHostage_FUN_004f5ff0(CHostage *this_ptr,float delta_time);
 void __cdecl core_hostage_cpp_CHostage_renderBackground_FUN_004f6120(CHostage *this_ptr,int layer_flag);
 void __cdecl core_hostage_cpp_CHostage_archive_FUN_004f6170(CHostage *this_ptr);
-int __cdecl core_hostage_cpp_CHostage_isGrabbable_FUN_004f6390(CHostage *this_ptr);
+int __cdecl core_hostage_cpp_CHostage_isGrabbable_FUN_004f6390(CHostage *this_ptr,CDemonActor *grabber);
 int __cdecl core_hostage_cpp_CHostage_canBeGrabbed_FUN_004f63d0(CHostage *this_ptr,CDemonActor *grabber,int grab_type);
 int __cdecl core_hostage_cpp_CHostage_getGrabbed_FUN_004f63e0(CHostage *this_ptr,CDemonActor *grabber,int grab_type);
 void __cdecl core_hostage_cpp_CHostage_processDamage_FUN_004f6450(CHostage *this_ptr,SDamageInfo *damage_info);

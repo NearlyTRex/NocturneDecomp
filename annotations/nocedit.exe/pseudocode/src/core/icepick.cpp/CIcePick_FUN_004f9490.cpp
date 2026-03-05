@@ -48,7 +48,7 @@ LAB_004f94e9:
     core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_6c);
     local_6c.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(90.0,130.0);
     local_6c.dismember_prob = 0.5;
-    local_6c.fire_type = -1;
+    local_6c.hit_part_index = -1;
     local_6c.attacker = (CDemonActor *)this_ptr;
     local_6c.wielder = (CDemonActor *)this_ptr;
     local_14 = local_6c.damage_amount;

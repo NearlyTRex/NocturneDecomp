@@ -26,7 +26,7 @@ void __cdecl core_netgame_cpp_CNetGame_swapPlayerData_FUN_00543bb0(CNetGame *thi
   uint local_60;
   uint local_5c;
   uint local_58;
-  int local_54;
+  EHeroType local_54;
   int local_50;
   uint local_4c;
   uint local_48;

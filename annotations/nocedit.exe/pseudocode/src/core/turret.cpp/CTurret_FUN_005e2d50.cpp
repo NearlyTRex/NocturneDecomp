@@ -76,7 +76,7 @@ void __cdecl core_turret_cpp_CTurret_FUN_005e2d50(CTurret *this_ptr)
         if ((int)CStack_90.y < 0x42c60001) {
           core_turret_cpp_CTurret_FUN_005e3280(this_ptr);
           if ((this_ptr->base).fire_cooldown_timer <= 0.0) {
-            (*(((this_ptr->base).base.vtable._uc)->_uc).isGrabbable)((CCharacter *)this_ptr);
+            (*(((this_ptr->base).base.vtable._uw)->_uw).fire)(&this_ptr->base);
           }
           this_ptr->fire_sound_timer = 1.0;
           return;

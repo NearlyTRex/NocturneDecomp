@@ -122,7 +122,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010(C
 void __cdecl core_dmodel_cpp_CKeyFramedModel_captureTextures_FUN_00478190(CKeyFramedModel *this_ptr);
 float __cdecl core_dmodel_cpp_CKeyFramedModel_intersectRay_FUN_004781d0(CKeyFramedModel *this_ptr,int frame_index,CVector3f *ray_origin, CVector3f *ray_direction,CVector3f *output_normal);
 void __cdecl core_dmodel_cpp_CKeyFramedModel_intersectCylinder_FUN_00478650(CKeyFramedModel *this_ptr,int frame_index,SIntersectXZCylinder *cylinder, CVector3f *transform_vector);
-int __cdecl core_dmodel_cpp_CKeyFramedModel_getFloorHeight_FUN_00478740(CKeyFramedModel *this_ptr,int frame_index,float x,float z,float *out_height, CVector3f *transform_vector);
+int __cdecl core_dmodel_cpp_CKeyFramedModel_getFloorHeight_FUN_00478740(CKeyFramedModel *this_ptr,int frame_index,CVector3f *position,float search_radius, float *out_height,CVector3f *transform_vector);
 void __cdecl core_dmodel_cpp_CKeyFramedModel_buildCollisionTriList_FUN_00478830(CKeyFramedModel *this_ptr);
 void __cdecl core_dmodel_cpp_CKeyFramedModel_populateCollisionList_FUN_00478950(CKeyFramedModel *this_ptr,CVector3f *transform_vector);
 CKeyFramedModel * __cdecl core_dmodel_cpp_loadModel_FUN_00478c00(char *filename);

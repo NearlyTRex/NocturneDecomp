@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_stranger_cpp_CStranger_tryPickupObject_FUN_005c1680(CStranger *this_ptr,char *param_2)
+; int __cdecl core_stranger_cpp_CStranger_tryPickupObject_FUN_005c1680(CStranger *this_ptr,char *class_name)
 ;
 ; Parameters:
 ; CStranger *      Stack[0x4]:4   this_ptr
-; char *           Stack[0x8]:4   param_2
+; char *           Stack[0x8]:4   class_name
 ; Local Variables:
 ; undefined1       Stack[-0x16c]:1  local_16c
 ; undefined4       Stack[-0x28]:4  local_28

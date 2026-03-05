@@ -83,7 +83,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
   local_3c = delta_time * (this_ptr->base).speed;
   while (0.0 < local_3c) {
     iVar7 = core_motion_cpp_CMotionController_advance_FUN_0052d610
-                      (&(this_ptr->base).base.model.motion_controller);
+                      (&(this_ptr->base).base.model.motion_controller,&local_3c);
     core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,iVar7);
   }
   fVar4 = (this_ptr->base).speed;

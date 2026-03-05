@@ -17,7 +17,7 @@ void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004e1cb0(CGame *this_ptr,
   int iVar6;
   char *pcVar7;
   bool bVar8;
-  char *in_stack_fffff914;
+  CPickList local_6ec;
   CIniFile local_344;
   char local_144 [260];
   char *local_40 [4];
@@ -88,41 +88,40 @@ void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004e1cb0(CGame *this_ptr,
   }
   else {
     while (iVar6 < 0) {
-      shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff914);
+      shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_6ec);
       pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                          ("Volume 1 - 'Dark Reign of the Vampire King'");
-      shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff914,pcVar7);
+      shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_6ec.base,pcVar7);
       pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                          ("Volume 2 - 'Tomb of the Underground God'");
-      shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff914,pcVar7);
+      shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_6ec.base,pcVar7);
       pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                          ("Volume 3 - 'Windy City Massacre'");
-      shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff914,pcVar7);
+      shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_6ec.base,pcVar7);
       pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                          ("Volume 4 - 'The House on the Edge of Hell'");
-      shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff914,pcVar7);
+      shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_6ec.base,pcVar7);
       if (local_18 != 0) {
         pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Volume 5 - 'Epilogue'");
-        shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff914,pcVar7);
+        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_6ec.base,pcVar7);
       }
       if (local_14 == 0) {
         iVar5 = 0;
         iVar3 = 0;
-        if (0 < (int)in_stack_fffff914) {
+        if (0 < local_6ec.base.item_count) {
           do {
             p_Var2 = engine_dosio_c_getFile_FUN_00481a50
                                ("world",*(char **)((int)g_ChapterMissionFiles[0] + iVar3),
                                 "rt");
             if (p_Var2 == (_FILE *)0x0) {
-              shape_edittool_cpp_CPickList_enableItem_FUN_004a5410
-                        ((CPickList *)&stack0xfffff914,iVar5,0);
+              shape_edittool_cpp_CPickList_enableItem_FUN_004a5410(&local_6ec,iVar5,0);
             }
             else {
               shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\core\\game.cpp",0xf29);
             }
             iVar5 = iVar5 + 1;
             iVar3 = iVar3 + 0x34;
-          } while (iVar5 < (int)in_stack_fffff914);
+          } while (iVar5 < local_6ec.base.item_count);
         }
       }
       iVar5 = 0;
@@ -130,10 +129,10 @@ void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004e1cb0(CGame *this_ptr,
       pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Choose a story to play")
       ;
       iVar3 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                        ((CPickList *)&stack0xfffff914,pcVar7,iVar3,iVar5);
+                        (&local_6ec,pcVar7,iVar3,iVar5);
       if (iVar3 < 0) {
         g_EditorFont = local_1c;
-        shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffff914,0);
+        shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_6ec,0);
         return;
       }
       if ((iVar3 == 0) && (local_2c == 0x331)) {
@@ -148,31 +147,30 @@ void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004e1cb0(CGame *this_ptr,
       if ((iVar3 == 3) && (local_20 == 0xd6)) {
         unknown = 1;
 LAB_004e2250:
-        shape_edittool_cpp_CPickList_clear_FUN_004a5770((CPickList *)&stack0xfffff914);
+        shape_edittool_cpp_CPickList_clear_FUN_004a5770(&local_6ec);
         if (iVar3 == 0) {
           iVar5 = 0;
           pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                              ("Chapter 1 - 'Your New Partner'");
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff914,pcVar7);
+          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_6ec.base,pcVar7);
           pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                              ("Chapter 2 - 'Sentinels'");
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff914,pcVar7);
+          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_6ec.base,pcVar7);
           pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                              ("Chapter 3 - 'Werewolf Forest'");
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff914,pcVar7);
+          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_6ec.base,pcVar7);
           pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                              ("Chapter 4 - 'Castle Gaustadt'");
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff914,pcVar7);
+          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_6ec.base,pcVar7);
           pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Chapter 5 - 'Dungeon'");
           iVar6 = 0;
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff914,pcVar7);
-          while (iVar6 < (int)in_stack_fffff914) {
+          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_6ec.base,pcVar7);
+          while (iVar6 < local_6ec.base.item_count) {
             p_Var2 = engine_dosio_c_getFile_FUN_00481a50
                                ("world",*(char **)((int)g_ChapterMissionFiles[0] + iVar5),
                                 "rt");
             if (p_Var2 == (_FILE *)0x0) {
-              shape_edittool_cpp_CPickList_enableItem_FUN_004a5410
-                        ((CPickList *)&stack0xfffff914,iVar6,0);
+              shape_edittool_cpp_CPickList_enableItem_FUN_004a5410(&local_6ec,iVar6,0);
               iVar6 = iVar6 + 1;
               iVar5 = iVar5 + 4;
             }
@@ -187,40 +185,39 @@ LAB_004e2250:
           pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                              ("'Dark Reign of the Vampire King'");
           iVar6 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                            ((CPickList *)&stack0xfffff914,pcVar7,iVar6,iVar5);
+                            (&local_6ec,pcVar7,iVar6,iVar5);
         }
         if (iVar3 == 1) {
           pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                              ("Chapter 1 - 'Train to Redeye'");
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff914,pcVar7);
+          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_6ec.base,pcVar7);
           pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                              ("Chapter 2 - 'Zombie Town'");
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff914,pcVar7);
+          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_6ec.base,pcVar7);
           pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                              ("Chapter 3 - 'Underground Mine'");
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff914,pcVar7);
+          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_6ec.base,pcVar7);
           pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                              ("Chapter 4 - 'Hidden Entrance'");
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff914,pcVar7);
+          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_6ec.base,pcVar7);
           pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                              ("Chapter 5 - 'Temple of the God'");
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff914,pcVar7);
+          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_6ec.base,pcVar7);
           pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Chapter 6 - 'Epilogue'")
           ;
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff914,pcVar7);
+          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_6ec.base,pcVar7);
           if (local_14 == 0) {
             pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                                ("Chapter X - 'Failure'");
-            shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff914,pcVar7);
+            shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_6ec.base,pcVar7);
           }
           iVar5 = 0x34;
-          for (iVar6 = 0; iVar6 < (int)in_stack_fffff914; iVar6 = iVar6 + 1) {
+          for (iVar6 = 0; iVar6 < local_6ec.base.item_count; iVar6 = iVar6 + 1) {
             p_Var2 = engine_dosio_c_getFile_FUN_00481a50
                                ("world",*(char **)((int)g_ChapterMissionFiles[0] + iVar5),
                                 "rt");
             if (p_Var2 == (_FILE *)0x0) {
-              shape_edittool_cpp_CPickList_enableItem_FUN_004a5410
-                        ((CPickList *)&stack0xfffff914,iVar6,0);
+              shape_edittool_cpp_CPickList_enableItem_FUN_004a5410(&local_6ec,iVar6,0);
             }
             else {
               shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\core\\game.cpp",0xec1);
@@ -232,50 +229,49 @@ LAB_004e2250:
           pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                              ("'Tomb of the Underground God'");
           iVar6 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                            ((CPickList *)&stack0xfffff914,pcVar7,iVar6,iVar5);
+                            (&local_6ec,pcVar7,iVar6,iVar5);
         }
         if (iVar3 == 2) {
           pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                              ("Chapter 1 - 'Headquarters'");
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff914,pcVar7);
+          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_6ec.base,pcVar7);
           pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                              ("Chapter 2 - 'Chicago River'");
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff914,pcVar7);
+          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_6ec.base,pcVar7);
           pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                              ("Chapter 3 - 'The Vendome'");
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff914,pcVar7);
+          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_6ec.base,pcVar7);
           pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                              ("Chapter 4 - 'Night on the Town'");
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff914,pcVar7);
+          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_6ec.base,pcVar7);
           pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                              ("Chapter 5 - 'Water Works'");
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff914,pcVar7);
+          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_6ec.base,pcVar7);
           pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                              ("Chapter 6 - 'Windy City'");
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff914,pcVar7);
+          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_6ec.base,pcVar7);
           pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                              ("Chapter 7 - 'Crescent Theater'");
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff914,pcVar7);
+          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_6ec.base,pcVar7);
           pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                              ("Chapter 8 - 'Rooftop to Rooftop'");
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff914,pcVar7);
+          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_6ec.base,pcVar7);
           iVar5 = 0x68;
           pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                              ("Chapter 9 - 'Warehouse of Hell'");
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff914,pcVar7);
+          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_6ec.base,pcVar7);
           pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                              ("Chapter 10 - 'Mobster Factory'");
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff914,pcVar7);
+          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_6ec.base,pcVar7);
           pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                              ("Chapter 11 - 'Not You Again'");
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff914,pcVar7);
-          for (iVar6 = 0; iVar6 < (int)in_stack_fffff914; iVar6 = iVar6 + 1) {
+          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_6ec.base,pcVar7);
+          for (iVar6 = 0; iVar6 < local_6ec.base.item_count; iVar6 = iVar6 + 1) {
             p_Var2 = engine_dosio_c_getFile_FUN_00481a50
                                ("world",*(char **)((int)g_ChapterMissionFiles[0] + iVar5),
                                 "rt");
             if (p_Var2 == (_FILE *)0x0) {
-              shape_edittool_cpp_CPickList_enableItem_FUN_004a5410
-                        ((CPickList *)&stack0xfffff914,iVar6,0);
+              shape_edittool_cpp_CPickList_enableItem_FUN_004a5410(&local_6ec,iVar6,0);
             }
             else {
               shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\core\\game.cpp",0xec1);
@@ -287,29 +283,28 @@ LAB_004e2250:
           pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                              ("'Windy City Massacre'");
           iVar6 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                            ((CPickList *)&stack0xfffff914,pcVar7,iVar6,iVar5);
+                            (&local_6ec,pcVar7,iVar6,iVar5);
         }
         if (iVar3 == 3) {
           iVar5 = 0x9c;
           pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                              ("Chapter 1 - 'Headquarters'");
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff914,pcVar7);
+          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_6ec.base,pcVar7);
           pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                              ("Chapter 2 - 'Graveyard'");
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff914,pcVar7);
+          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_6ec.base,pcVar7);
           pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                              ("Chapter 3 - 'House of Hell'");
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff914,pcVar7);
+          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_6ec.base,pcVar7);
           pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                              ("Chapter 4 - 'Back from Hell'");
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff914,pcVar7);
-          for (iVar6 = 0; iVar6 < (int)in_stack_fffff914; iVar6 = iVar6 + 1) {
+          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_6ec.base,pcVar7);
+          for (iVar6 = 0; iVar6 < local_6ec.base.item_count; iVar6 = iVar6 + 1) {
             p_Var2 = engine_dosio_c_getFile_FUN_00481a50
                                ("world",*(char **)((int)g_ChapterMissionFiles[0] + iVar5),
                                 "rt");
             if (p_Var2 == (_FILE *)0x0) {
-              shape_edittool_cpp_CPickList_enableItem_FUN_004a5410
-                        ((CPickList *)&stack0xfffff914,iVar6,0);
+              shape_edittool_cpp_CPickList_enableItem_FUN_004a5410(&local_6ec,iVar6,0);
             }
             else {
               shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\core\\game.cpp",0xec1);
@@ -321,20 +316,19 @@ LAB_004e2250:
           pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                              ("'The House on the Edge of Hell'");
           iVar6 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                            ((CPickList *)&stack0xfffff914,pcVar7,iVar6,iVar5);
+                            (&local_6ec,pcVar7,iVar6,iVar5);
         }
         if (iVar3 != 4) goto LAB_004e2376;
         iVar5 = 0xd0;
         pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                            ("Chapter 1 - 'Headquarters'");
-        shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff914,pcVar7);
-        for (iVar6 = 0; iVar6 < (int)in_stack_fffff914; iVar6 = iVar6 + 1) {
+        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_6ec.base,pcVar7);
+        for (iVar6 = 0; iVar6 < local_6ec.base.item_count; iVar6 = iVar6 + 1) {
           p_Var2 = engine_dosio_c_getFile_FUN_00481a50
                              ("world",*(char **)((int)g_ChapterMissionFiles[0] + iVar5),
                               "rt");
           if (p_Var2 == (_FILE *)0x0) {
-            shape_edittool_cpp_CPickList_enableItem_FUN_004a5410
-                      ((CPickList *)&stack0xfffff914,iVar6,0);
+            shape_edittool_cpp_CPickList_enableItem_FUN_004a5410(&local_6ec,iVar6,0);
           }
           else {
             shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\core\\game.cpp",0xec1);
@@ -345,14 +339,14 @@ LAB_004e2250:
         iVar6 = -1;
         pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("'Epilogue'");
         iVar6 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                          ((CPickList *)&stack0xfffff914,pcVar7,iVar6,iVar5);
-        shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffff914,0);
+                          (&local_6ec,pcVar7,iVar6,iVar5);
+        shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_6ec,0);
       }
       else {
         if (unknown != 0) goto LAB_004e2250;
         iVar6 = 0;
 LAB_004e2376:
-        shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffff914,0);
+        shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_6ec,0);
       }
     }
     pcVar4 = g_ChapterMissionFiles[iVar3][iVar6];
@@ -405,14 +399,14 @@ LAB_004e2376:
   }
   core_level_cpp_CLevelLoader_show_FUN_00503dc0(g_CLevelLoaderPtr,10,0,iVar3);
   core_mission_cpp_CDemonMission_load_FUN_00522d90(g_CDemonMissionPtr,local_144,iVar5);
-  iVar3 = core_mission_cpp_CDemonMission_createHeros_FUN_00524a80(g_CDemonMissionPtr,0);
+  iVar3 = core_mission_cpp_CDemonMission_createHeros_FUN_00524a80
+                    (g_CDemonMissionPtr,(CCharacter *)0x0);
   if (iVar3 != 0) {
     core_mission_cpp_CDemonMission_startMission_FUN_00524760(g_CDemonMissionPtr);
     core_mission_cpp_CDemonMission_run_FUN_00524420(g_CDemonMissionPtr);
     if (this_ptr->need_chapter_reload != 0) {
       this_ptr->need_chapter_reload = 0;
-      core_game_cpp_CGame_loadGame_FUN_004e12b0
-                (this_ptr,this_ptr->chapter_reload_filename,1,in_stack_fffff914);
+      core_game_cpp_CGame_loadGame_FUN_004e12b0(this_ptr,this_ptr->chapter_reload_filename,1);
     }
   }
   g_EditorFont = local_1c;

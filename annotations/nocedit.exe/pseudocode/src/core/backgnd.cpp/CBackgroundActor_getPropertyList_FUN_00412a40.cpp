@@ -18,6 +18,6 @@ void __cdecl core_backgnd_cpp_CBackgroundActor_getPropertyList_FUN_00412a40(CBac
     return;
   }
   core_actor_cpp_CActorPropertyList_addGroundType_FUN_0040e300
-            (property_list,"ground type",&this_ptr->ground_type);
+            (property_list,"ground type",(int *)&this_ptr->ground_type);
   return;
 }

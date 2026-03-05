@@ -16,10 +16,10 @@
 ;   float FLOAT_02d7b808
 ;   float FLOAT_02d7b80c
 ;   float FLOAT_02d7b810
-;   float FLOAT_02d7b814
-;   float FLOAT_02d7b818
-;   float FLOAT_02d7b81c
-;   float FLOAT_02d7b820
+;   UVector3 UNION_UVector3_02d7b814
+;   undefined4 UNION_UVector3_02d7b814+4
+;   undefined4 UNION_UVector3_02d7b814+8
+;   UVector3 UNION_UVector3_02d7b820
 ;   ... and 10 more
 ;
 ; Called Functions:
@@ -49,14 +49,14 @@ section .text
     MOV EAX,0x3fc90fdb                  ; 004d2956
     XOR EBP,EBP                         ; 004d295b
     PUSH 0x3                            ; 004d295d
-    MOV dword ptr [0x02d7b814],EDX      ; 004d295f | FLOAT_02d7b814
-    MOV dword ptr [0x02d7b818],ECX      ; 004d2965 | FLOAT_02d7b818
-    MOV dword ptr [0x02d7b81c],EBX      ; 004d296b | FLOAT_02d7b81c
-    MOV dword ptr [0x02d7b820],ESI      ; 004d2971 | FLOAT_02d7b820
-    MOV dword ptr [0x02d7b824],EDI      ; 004d2977 | FLOAT_02d7b824
-    MOV dword ptr [0x02d7b828],EBP      ; 004d297d | FLOAT_02d7b828
-    MOV [0x02d7b82c],EAX                ; 004d2983 | FLOAT_02d7b82c
-    MOV dword ptr [0x02d7b830],EBP      ; 004d2988 | FLOAT_02d7b830
+    MOV dword ptr [0x02d7b814],EDX      ; 004d295f | UNION_UVector3_02d7b814
+    MOV dword ptr [0x02d7b818],ECX      ; 004d2965 | UNION_UVector3_02d7b814+4
+    MOV dword ptr [0x02d7b81c],EBX      ; 004d296b | UNION_UVector3_02d7b814+8
+    MOV dword ptr [0x02d7b820],ESI      ; 004d2971 | UNION_UVector3_02d7b820
+    MOV dword ptr [0x02d7b824],EDI      ; 004d2977 | UNION_UVector3_02d7b820+4
+    MOV dword ptr [0x02d7b828],EBP      ; 004d297d | UNION_UVector3_02d7b820+8
+    MOV [0x02d7b82c],EAX                ; 004d2983 | UNION_UVector3_02d7b82c
+    MOV dword ptr [0x02d7b830],EBP      ; 004d2988 | UNION_UVector3_02d7b82c+4
     MOV dword ptr [0x02d7b840],EBP      ; 004d298e | FLOAT_02d7b840
     FXCH ST2                            ; 004d2994
     FSTP float ptr [0x02d7b808]         ; 004d2996 | FLOAT_02d7b808
@@ -68,7 +68,7 @@ section .text
     MOV EBX,0x40133333                  ; 004d29b7
     PUSH 0x62ac6d                       ; 004d29bc | = "CGabriella"
     MOV ESI,0x408ccccd                  ; 004d29c1
-    MOV dword ptr [0x02d7b834],ECX      ; 004d29c6 | FLOAT_02d7b834
+    MOV dword ptr [0x02d7b834],ECX      ; 004d29c6 | UNION_UVector3_02d7b82c+8
     PUSH 0x2d7b898                      ; 004d29cc | g_CGabriellaClassInfo
     MOV dword ptr [0x02d7b838],EBX      ; 004d29d1 | FLOAT_02d7b838
     MOV dword ptr [0x02d7b83c],ESI      ; 004d29d7 | FLOAT_02d7b83c

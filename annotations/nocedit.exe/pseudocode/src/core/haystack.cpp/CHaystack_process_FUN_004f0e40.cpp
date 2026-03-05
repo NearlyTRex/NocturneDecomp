@@ -48,7 +48,7 @@ void __cdecl core_haystack_cpp_CHaystack_process_FUN_004f0e40(CHaystack *this_pt
   if (iVar5 == 0) {
     return;
   }
-  if ((this_ptr->base).control_type == 2) {
+  if ((this_ptr->base).control_type == HERO_CONTROL_AI) {
     core_haystack_cpp_CHaystack_FUN_004f13f0(this_ptr);
   }
   pCVar4 = g_CGamePtr;
@@ -109,7 +109,7 @@ void __cdecl core_haystack_cpp_CHaystack_process_FUN_004f0e40(CHaystack *this_pt
         }
         if ((this_ptr->base).player_control.action_states[3] != 0) {
           bVar3 = true;
-          if ((this_ptr->guns_drawn == 0) && ((this_ptr->base).control_type != 2)) {
+          if ((this_ptr->guns_drawn == 0) && ((this_ptr->base).control_type != HERO_CONTROL_AI)) {
             iVar9 = core_hero_cpp_CHero_tryInteract_FUN_004f2af0(&this_ptr->base);
             bVar3 = false;
             if (iVar9 != 0) goto LAB_004f11d6;
@@ -264,7 +264,7 @@ LAB_004f1054:
   if ((iVar5 == 0) &&
      (pSVar7 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                          (&pCStack_24->motion_controller), pSVar7->state_index != 0x13)) {
-    blend_callback = core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0;
+    blend_callback = core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0;
     fVar14 = this_ptr->head_look_blend_weight;
     iVar5 = INT_02db8700;
     core_xform_cpp_eulerToQuaternion_FUN_005f7b20(&this_ptr->head_look_euler,&CStack_8c);

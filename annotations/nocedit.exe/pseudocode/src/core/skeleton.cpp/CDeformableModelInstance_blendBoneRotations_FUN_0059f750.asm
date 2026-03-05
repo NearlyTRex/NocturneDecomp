@@ -16,7 +16,7 @@
 ; XREF[11]:
 ;   core_baron.cpp_CBaron_process_FUN_00412e80 at 00413113
 ;   core_colonel.cpp_CColonel_process_FUN_0043fa00 at 0043fc85
-;   core_gabriela.cpp_CGabriella_FUN_004d4d80 at 004d4e97
+;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80 at 004d4e97
 ;   core_haystack.cpp_CHaystack_process_FUN_004f0e40 at 004f10d4
 ;   core_icepick.cpp_CIcePick_process_FUN_004f80b0 at 004f83ab
 ;   core_scat.cpp_CScat_FUN_005584a0 at 0055870a

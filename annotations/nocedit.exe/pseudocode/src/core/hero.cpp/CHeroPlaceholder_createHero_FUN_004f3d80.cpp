@@ -2,11 +2,11 @@
 // Address: 004f3d80
 // Address Range: [[004f3d80, 004f3ee9]]
 // Convention: __cdecl
-// Signature: CDemonActor * __cdecl core_hero_cpp_CHeroPlaceholder_createHero_FUN_004f3d80(CHeroPlaceholder *this_ptr,int param_2)
+// Signature: CDemonActor * __cdecl core_hero_cpp_CHeroPlaceholder_createHero_FUN_004f3d80(CHeroPlaceholder *this_ptr,EHeroType hero_type)
 
 #include "nocturne.h"
 
-CDemonActor * __cdecl core_hero_cpp_CHeroPlaceholder_createHero_FUN_004f3d80(CHeroPlaceholder *this_ptr,int param_2)
+CDemonActor * __cdecl core_hero_cpp_CHeroPlaceholder_createHero_FUN_004f3d80(CHeroPlaceholder *this_ptr,EHeroType hero_type)
 
 {
   UOrientationVector *pUVar1;
@@ -15,32 +15,32 @@ CDemonActor * __cdecl core_hero_cpp_CHeroPlaceholder_createHero_FUN_004f3d80(CHe
   uint class_name_hash;
   
   pCVar2 = (CDemonActor *)0x0;
-  switch(param_2) {
-  case 0:
+  switch(hero_type) {
+  case HERO_TYPE_GABRIELLA:
     class_name = "CGabriella";
     break;
-  case 1:
+  case HERO_TYPE_SVETLANA:
     class_name = "CSvetlana";
     break;
-  case 2:
+  case HERO_TYPE_STRANGER:
     class_name = "CStranger";
     break;
-  case 3:
+  case HERO_TYPE_SCAT:
     class_name = "CScat";
     break;
-  case 4:
+  case HERO_TYPE_BARON:
     class_name = "CBaron";
     break;
-  case 5:
+  case HERO_TYPE_ICEPICK:
     class_name = "CIcePick";
     break;
-  case 6:
+  case HERO_TYPE_HAYSTACK:
     class_name = "CHaystack";
     break;
-  case 7:
+  case HERO_TYPE_COLONEL:
     class_name = "CColonel";
     break;
-  case 8:
+  case HERO_TYPE_MOLOCH:
     class_name = "CMoloch";
     break;
   default:

@@ -1,10 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(CMotionList *this_ptr)
+; int __cdecl core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(CMotionList *this_ptr,char *motion_name,int error_on_not_found)
 ;
 ; Parameters:
 ; CMotionList *    Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   motion_name
+; int              Stack[0xc]:4   error_on_not_found
 ;
 ; XREF[19]:
 ;   core_charactr.cpp_CCharacter_buildLayerActionTransitionCosts_FUN_0042e670 at 0042e6f8

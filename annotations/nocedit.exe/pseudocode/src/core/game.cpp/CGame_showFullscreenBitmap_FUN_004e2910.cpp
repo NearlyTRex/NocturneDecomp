@@ -168,7 +168,7 @@ void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004e2910(CGame *this_p
       core_game_cpp_CGame_resetInputAndCenterCursor_FUN_004dce70(this_ptr);
       do {
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-        if (this_ptr->game_control == 2) {
+        if (this_ptr->game_control == CONTROL_MODE_GAMEPAD) {
           core_game_cpp_CGame_resetKeyState_FUN_004dbe60(this_ptr);
         }
         iVar2 = wincore_winrun_cpp_wasKeyPressed_FUN_005f2f00();
@@ -178,7 +178,7 @@ void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004e2910(CGame *this_p
       while ((g_MouseButtonFlags.dword != 0 ||
              (iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,this_ptr->key_fire), iVar2 != 0)
              )) {
-        if (this_ptr->game_control == 2) {
+        if (this_ptr->game_control == CONTROL_MODE_GAMEPAD) {
           core_game_cpp_CGame_resetKeyState_FUN_004dbe60(this_ptr);
           wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
         }

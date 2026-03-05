@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_dtri_cpp_rayTriangleFloorTest_FUN_0049b2f0(CDemonTriangle *triangle,float x,float z,float *out_height)
+; int __cdecl core_dtri_cpp_rayTriangleFloorTest_FUN_0049b2f0(CDemonTriangle *triangle,CVector3f *position,float search_radius,float *out_height)
 ;
 ; Parameters:
 ; CDemonTriangle * Stack[0x4]:4   triangle
-; float            Stack[0x8]:4   x
-; float            Stack[0xc]:4   z
+; CVector3f *      Stack[0x8]:4   position
+; float            Stack[0xc]:4   search_radius
 ; float *          Stack[0x10]:4   out_height
 ; Local Variables:
 ; undefined8       Stack[-0x88]:8  local_88
@@ -211,7 +211,7 @@ section .text
     LEA EAX,[ESP + 0x48]                ; 0049b49c
     PUSH EAX                            ; 0049b4a0
     CALL core_dtri.cpp_rayEdgeHeightTest_FUN_0049b180 ; 0049b4a1
-        ;   XREF to: 0049b180 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_rayEdgeHeightTest_FUN_0049b180(CVector3f * vertex1, CVector3f * vertex2, float rayRadius, float * outHeight)
+        ;   XREF to: 0049b180 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_rayEdgeHeightTest_FUN_0049b180(CVector3f * vertex1, CVector3f * vertex2, float ray_radius, float * out_height)
     ADD ESP,0x10                        ; 0049b4a6
     MOV ECX,dword ptr [EBP + 0x20]      ; 0049b4a9
     PUSH ECX                            ; 0049b4ac
@@ -222,7 +222,7 @@ section .text
     LEA EAX,[ESP + 0x3c]                ; 0049b4b7
     PUSH EAX                            ; 0049b4bb
     CALL core_dtri.cpp_rayEdgeHeightTest_FUN_0049b180 ; 0049b4bc
-        ;   XREF to: 0049b180 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_rayEdgeHeightTest_FUN_0049b180(CVector3f * vertex1, CVector3f * vertex2, float rayRadius, float * outHeight)
+        ;   XREF to: 0049b180 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_rayEdgeHeightTest_FUN_0049b180(CVector3f * vertex1, CVector3f * vertex2, float ray_radius, float * out_height)
     ADD ESP,0x10                        ; 0049b4c1
     OR EDI,EAX                          ; 0049b4c4
     MOV EAX,dword ptr [EBP + 0x20]      ; 0049b4c6
@@ -233,7 +233,7 @@ section .text
     LEA EAX,[ESP + 0x24]                ; 0049b4d2
     PUSH EAX                            ; 0049b4d6
     CALL core_dtri.cpp_rayEdgeHeightTest_FUN_0049b180 ; 0049b4d7
-        ;   XREF to: 0049b180 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_rayEdgeHeightTest_FUN_0049b180(CVector3f * vertex1, CVector3f * vertex2, float rayRadius, float * outHeight)
+        ;   XREF to: 0049b180 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_rayEdgeHeightTest_FUN_0049b180(CVector3f * vertex1, CVector3f * vertex2, float ray_radius, float * out_height)
     FLD float ptr [EBX + 0x24]          ; 0049b4dc
     FMUL ST0                            ; 0049b4df
     FLD float ptr [EBX + 0x2c]          ; 0049b4e1

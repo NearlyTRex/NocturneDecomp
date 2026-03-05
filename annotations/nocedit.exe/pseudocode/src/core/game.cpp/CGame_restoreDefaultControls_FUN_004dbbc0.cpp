@@ -39,9 +39,9 @@ void __cdecl core_game_cpp_CGame_restoreDefaultControls_FUN_004dbbc0(CGame *this
   this_ptr->always_run = 0;
   this_ptr->x_mouse_sensitivity = 0x10000;
   this_ptr->y_mouse_sensitivity = 0x10000;
-  this_ptr->aim_mode = 0;
+  this_ptr->aim_mode = AIM_MODE_AUTO;
   this_ptr->key_walk = 0x148;
-  if (this_ptr->game_control == 1) {
+  if (this_ptr->game_control == CONTROL_MODE_MOUSE) {
     this_ptr->key_backup = 0x1f;
     this_ptr->key_strafe_left = 0x1e;
     this_ptr->key_strafe_right = 0x20;
@@ -54,13 +54,13 @@ void __cdecl core_game_cpp_CGame_restoreDefaultControls_FUN_004dbbc0(CGame *this
     this_ptr->key_draw = 0x12;
     this_ptr->key_jump = 0x22;
     this_ptr->key_light = 0x10;
-    this_ptr->aim_mode = 2;
+    this_ptr->aim_mode = AIM_MODE_MANUAL;
     this_ptr->key_walk = 0x11;
-    if (this_ptr->game_control != 2) {
+    if (this_ptr->game_control != CONTROL_MODE_GAMEPAD) {
       return;
     }
   }
-  else if (this_ptr->game_control != 2) {
+  else if (this_ptr->game_control != CONTROL_MODE_GAMEPAD) {
     return;
   }
   this_ptr->key_draw = 0x203;

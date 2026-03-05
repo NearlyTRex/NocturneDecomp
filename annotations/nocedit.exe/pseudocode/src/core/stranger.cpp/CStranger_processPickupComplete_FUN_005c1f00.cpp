@@ -21,7 +21,8 @@ void __cdecl core_stranger_cpp_CStranger_processPickupComplete_FUN_005c1f00(CStr
                   core_actor_cpp_castToClassHash_FUN_0040c790
                             ((this_ptr->base).object_to_pick_up,g_CAmmoBoxClassInfo.name_hash);
     if (this_ptr_00 != (CAmmoBox *)0x0) {
-      core_ammobox_cpp_CAmmoBox_FUN_00411700(this_ptr_00,&(this_ptr->base).inventory);
+      core_ammobox_cpp_CAmmoBox_addToInventory_FUN_00411700(this_ptr_00,&(this_ptr->base).inventory)
+      ;
     }
     this_ptr->action_pending = 1;
     (this_ptr->base).object_to_pick_up = (CDemonActor *)0x0;

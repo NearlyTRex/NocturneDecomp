@@ -68,7 +68,7 @@ void __cdecl core_charactr_cpp_CCharacter_setup_FUN_00428140(CCharacter *this_pt
     if (0 < pCVar3->bone_count) {
       do {
         iVar6 = iVar9 + 1;
-        core_charactr_cpp_CCharacter_spawnFireOnBone_FUN_0042a520(this_ptr,(int)pCVar3,iVar9);
+        core_charactr_cpp_CCharacter_spawnFireOnBone_FUN_0042a520(this_ptr,pCVar3,iVar9);
         iVar9 = iVar6;
       } while (iVar6 < pCVar3->bone_count);
     }

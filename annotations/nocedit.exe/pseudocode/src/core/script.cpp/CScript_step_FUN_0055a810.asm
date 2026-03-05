@@ -2932,7 +2932,7 @@ section .text
     PUSH EDI                            ; 0055c585
     PUSH EBX                            ; 0055c586
     CALL core_script.cpp_CScript_getDialogDuration_FUN_0055ff00 ; 0055c587
-        ;   XREF to: 0055ff00 (UNCONDITIONAL_CALL)  ; float core_script.cpp_CScript_getDialogDuration_FUN_0055ff00(CScript * this_ptr, int param_2, char * param_3, char * param_4)
+        ;   XREF to: 0055ff00 (UNCONDITIONAL_CALL)  ; float core_script.cpp_CScript_getDialogDuration_FUN_0055ff00(CScript * this_ptr, char * actor_specifier, char * sound_name, char * dialog_text)
     MOV dword ptr [ESP + 0x3fa4],EAX    ; 0055c58c
     FLDZ                                ; 0055c593
     MOV EAX,dword ptr [ESP + 0x3fa4]    ; 0055c595
@@ -3018,7 +3018,7 @@ section .text
     PUSH EDI                            ; 0055c69b | = "$"
     PUSH EBX                            ; 0055c69c
     CALL core_script.cpp_CScript_getDialogDuration_FUN_0055ff00 ; 0055c69d
-        ;   XREF to: 0055ff00 (UNCONDITIONAL_CALL)  ; float core_script.cpp_CScript_getDialogDuration_FUN_0055ff00(CScript * this_ptr, int param_2, char * param_3, char * param_4)
+        ;   XREF to: 0055ff00 (UNCONDITIONAL_CALL)  ; float core_script.cpp_CScript_getDialogDuration_FUN_0055ff00(CScript * this_ptr, char * actor_specifier, char * sound_name, char * dialog_text)
     MOV dword ptr [ESP + 0x3fa4],EAX    ; 0055c6a2
     FLDZ                                ; 0055c6a9
     MOV EAX,dword ptr [ESP + 0x3fa4]    ; 0055c6ab
@@ -3848,7 +3848,7 @@ section .text
     ADD ESP,0x4                         ; 0055d11d
     PUSH EAX                            ; 0055d120
     CALL core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460 ; 0055d121
-        ;   XREF to: 0052d460 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460(CMotionList * this_ptr)
+        ;   XREF to: 0052d460 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460(CMotionList * this_ptr, char * motion_name, int error_on_not_found)
     ADD ESP,0xc                         ; 0055d126
     TEST EAX,EAX                        ; 0055d129
     SETGE AL                            ; 0055d12b
@@ -5660,7 +5660,7 @@ section .text
     PUSH EAX                            ; 0055e767
     PUSH EBX                            ; 0055e768
     CALL core_script.cpp_CScript_getDialogDuration_FUN_0055ff00 ; 0055e769
-        ;   XREF to: 0055ff00 (UNCONDITIONAL_CALL)  ; float core_script.cpp_CScript_getDialogDuration_FUN_0055ff00(CScript * this_ptr, int param_2, char * param_3, char * param_4)
+        ;   XREF to: 0055ff00 (UNCONDITIONAL_CALL)  ; float core_script.cpp_CScript_getDialogDuration_FUN_0055ff00(CScript * this_ptr, char * actor_specifier, char * sound_name, char * dialog_text)
     MOV dword ptr [ESP + 0x3fa4],EAX    ; 0055e76e
     FLDZ                                ; 0055e775
     MOV EAX,dword ptr [ESP + 0x3fa4]    ; 0055e777
@@ -5742,8 +5742,8 @@ section .text
     LEA EDI,[EAX + 0x1f738]             ; 0055e872
     PUSH EDI                            ; 0055e878
     MOV dword ptr [ESP + 0x3f2c],EDX    ; 0055e879
-    CALL core_gabriela.cpp_CGabriella_FUN_004d7650 ; 0055e880
-        ;   XREF to: 004d7650 (UNCONDITIONAL_CALL)  ; int core_gabriela.cpp_CGabriella_FUN_004d7650(CGabriella * this_ptr)
+    CALL core_gabriela.cpp_getSelectedWeapon_FUN_004d7650 ; 0055e880
+        ;   XREF to: 004d7650 (UNCONDITIONAL_CALL)  ; CWeapon * core_gabriela.cpp_getSelectedWeapon_FUN_004d7650(CInventory * inventory_ptr)
     ADD ESP,0x4                         ; 0055e885
     MOV dword ptr [ESP + 0x3f2c],EAX    ; 0055e888
     TEST EAX,EAX                        ; 0055e88f
@@ -5780,8 +5780,8 @@ section .text
         ;   XREF to: 004feb10 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_selectWeapon_FUN_004feb10(CInventory * this_ptr, CDemonActor * specific_weapon, int weapon_category, int direction)
     ADD ESP,0x10                        ; 0055e8df
     PUSH EDI                            ; 0055e8e2
-    CALL core_gabriela.cpp_CGabriella_FUN_004d7650 ; 0055e8e3
-        ;   XREF to: 004d7650 (UNCONDITIONAL_CALL)  ; int core_gabriela.cpp_CGabriella_FUN_004d7650(CGabriella * this_ptr)
+    CALL core_gabriela.cpp_getSelectedWeapon_FUN_004d7650 ; 0055e8e3
+        ;   XREF to: 004d7650 (UNCONDITIONAL_CALL)  ; CWeapon * core_gabriela.cpp_getSelectedWeapon_FUN_004d7650(CInventory * inventory_ptr)
     ADD ESP,0x4                         ; 0055e8e8
     MOV ECX,dword ptr [ESP + 0x3f2c]    ; 0055e8eb
     MOV ESI,EAX                         ; 0055e8f2
@@ -6939,7 +6939,7 @@ section .text
     PUSH EAX                            ; 0055f6b7
     PUSH EBX                            ; 0055f6b8
     CALL core_script.cpp_CScript_getDialogDuration_FUN_0055ff00 ; 0055f6b9
-        ;   XREF to: 0055ff00 (UNCONDITIONAL_CALL)  ; float core_script.cpp_CScript_getDialogDuration_FUN_0055ff00(CScript * this_ptr, int param_2, char * param_3, char * param_4)
+        ;   XREF to: 0055ff00 (UNCONDITIONAL_CALL)  ; float core_script.cpp_CScript_getDialogDuration_FUN_0055ff00(CScript * this_ptr, char * actor_specifier, char * sound_name, char * dialog_text)
     MOV dword ptr [ESP + 0x3fa4],EAX    ; 0055f6be
     FLDZ                                ; 0055f6c5
     MOV EAX,dword ptr [ESP + 0x3fa4]    ; 0055f6c7

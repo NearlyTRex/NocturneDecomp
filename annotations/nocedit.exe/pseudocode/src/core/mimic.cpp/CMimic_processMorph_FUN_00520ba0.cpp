@@ -14,6 +14,7 @@ void __cdecl core_mimic_cpp_CMimic_processMorph_FUN_00520ba0(CMimic *this_ptr)
   int iVar3;
   int iVar4;
   float in_stack_00000008;
+  float local_18 [2];
   
   if (this_ptr->morph_target_actor == (CDemonActor *)0x0) {
     g_CurrentFilename = "..\\core\\mimic.cpp";
@@ -32,13 +33,15 @@ void __cdecl core_mimic_cpp_CMimic_processMorph_FUN_00520ba0(CMimic *this_ptr)
               (g_CDemonMissionPtr,(CDemonActor *)this_ptr,1);
   }
   else {
-    while (0.0 < in_stack_00000008) {
+    local_18[0] = in_stack_00000008;
+    while (0.0 < local_18[0]) {
       core_motion_cpp_CMotionController_advance_FUN_0052d610
-                (&(this_ptr->base).base.model.motion_controller);
+                (&(this_ptr->base).base.model.motion_controller,local_18);
     }
-    while (0.0 < in_stack_00000008) {
+    local_18[0] = in_stack_00000008;
+    while (0.0 < local_18[0]) {
       core_motion_cpp_CMotionController_advance_FUN_0052d610
-                ((CMotionController *)(this_ptr->morph_target_actor + 1));
+                ((CMotionController *)(this_ptr->morph_target_actor + 1),local_18);
     }
     core_morph_cpp_CMorph_updateModelFromDeformable_FUN_0052b600
               (&this_ptr->morph,0,&(this_ptr->base).base.model,0);

@@ -11,6 +11,7 @@
 #include "types/classes/CShell.h"
 #include "types/classes/CTrail.h"
 #include "types/structs/SHardwareEdge.h"
+#include "types/unions/UVector3.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x2D70000
@@ -49,6 +50,11 @@ extern CTrail g_TrailPool[100];
 // SHardwareEdge[16]
 extern SHardwareEdge g_HardwareEdgeTable[16];
 
+// UVector3
+extern UVector3 UNION_UVector3_02d7b814;
+extern UVector3 UNION_UVector3_02d7b820;
+extern UVector3 UNION_UVector3_02d7b82c;
+
 // char*
 extern char* g_WrappedTextBuffer;
 
@@ -67,15 +73,6 @@ extern float FLOAT_02d7b7f0;
 extern float FLOAT_02d7b808;
 extern float FLOAT_02d7b80c;
 extern float FLOAT_02d7b810;
-extern float FLOAT_02d7b814;
-extern float FLOAT_02d7b818;
-extern float FLOAT_02d7b81c;
-extern float FLOAT_02d7b820;
-extern float FLOAT_02d7b824;
-extern float FLOAT_02d7b828;
-extern float FLOAT_02d7b82c;
-extern float FLOAT_02d7b830;
-extern float FLOAT_02d7b834;
 extern float FLOAT_02d7b838;
 extern float FLOAT_02d7b83c;
 extern float FLOAT_02d7b840;

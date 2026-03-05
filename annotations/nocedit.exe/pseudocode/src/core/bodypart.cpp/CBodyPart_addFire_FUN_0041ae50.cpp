@@ -2,11 +2,11 @@
 // Address: 0041ae50
 // Address Range: [[0041ae50, 0041af6e] [0041af82, 0041af87]]
 // Convention: __cdecl
-// Signature: void __cdecl core_bodypart_cpp_CBodyPart_addFire_FUN_0041ae50(CBodyPart *this_ptr,CVector3f *param_2)
+// Signature: void __cdecl core_bodypart_cpp_CBodyPart_addFire_FUN_0041ae50(CBodyPart *this_ptr,CVector3f *position)
 
 #include "nocturne.h"
 
-void __cdecl core_bodypart_cpp_CBodyPart_addFire_FUN_0041ae50(CBodyPart *this_ptr,CVector3f *param_2)
+void __cdecl core_bodypart_cpp_CBodyPart_addFire_FUN_0041ae50(CBodyPart *this_ptr,CVector3f *position)
 
 {
   char cVar1;
@@ -23,10 +23,10 @@ void __cdecl core_bodypart_cpp_CBodyPart_addFire_FUN_0041ae50(CBodyPart *this_pt
   if (iVar5 < 2) {
     input_local_point = &this_ptr->fires[iVar5].local_position;
     this_ptr->fire_count = iVar5 + 1;
-    if (input_local_point != param_2) {
-      input_local_point->x = param_2->x;
-      input_local_point->y = param_2->y;
-      input_local_point->z = param_2->z;
+    if (input_local_point != position) {
+      input_local_point->x = position->x;
+      input_local_point->y = position->y;
+      input_local_point->z = position->z;
     }
     pCVar2 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                        (&this_ptr->base,&local_18,input_local_point);

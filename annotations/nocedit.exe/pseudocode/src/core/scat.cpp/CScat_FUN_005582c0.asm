@@ -159,7 +159,7 @@ section .text
     ADD ESP,0x4                         ; 0055841b
     PUSH EAX                            ; 0055841e
     CALL core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460 ; 0055841f
-        ;   XREF to: 0052d460 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460(CMotionList * this_ptr)
+        ;   XREF to: 0052d460 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460(CMotionList * this_ptr, char * motion_name, int error_on_not_found)
     ADD ESP,0xc                         ; 00558424
     PUSH dword ptr [EBX + 0x2a90]       ; 00558427
     PUSH EAX                            ; 0055842d

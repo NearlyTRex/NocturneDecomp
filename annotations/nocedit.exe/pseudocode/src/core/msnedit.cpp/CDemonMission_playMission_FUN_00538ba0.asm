@@ -83,7 +83,7 @@ section .text
     PUSH EBX                            ; 00538bfd
     MOV dword ptr [EBX + 0x4],0x0       ; 00538bfe
     CALL core_mission.cpp_CDemonMission_createHeros_FUN_00524a80 ; 00538c05
-        ;   XREF to: 00524a80 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_createHeros_FUN_00524a80(CDemonMission * this_ptr, int creation_flags)
+        ;   XREF to: 00524a80 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_createHeros_FUN_00524a80(CDemonMission * this_ptr, CCharacter * existing_hero)
     ADD ESP,0x8                         ; 00538c0a
     TEST EAX,EAX                        ; 00538c0d
     JZ 0x00538cc0                       ; 00538c0f

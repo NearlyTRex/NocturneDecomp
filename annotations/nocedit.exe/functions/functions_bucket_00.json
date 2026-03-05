@@ -3083,7 +3083,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_ammobox.cpp_CAmmoBox_FUN_00411700",
+    "name":"core_ammobox.cpp_CAmmoBox_addToInventory_FUN_00411700",
     "ret":"void",
     "vars":{
       "params":[
@@ -3898,7 +3898,7 @@
           "type":"CBaron*"
         },
         {
-          "name":"param_2",
+          "name":"delta_time",
           "storage":{
             "offset":8,
             "size":4,
@@ -24527,7 +24527,7 @@
           "type":"CVector3f*"
         },
         {
-          "name":"rayRadius",
+          "name":"ray_radius",
           "storage":{
             "offset":12,
             "size":4,
@@ -24543,7 +24543,7 @@
           "type":"float"
         },
         {
-          "name":"outHeight",
+          "name":"out_height",
           "storage":{
             "offset":16,
             "size":4,
@@ -34435,7 +34435,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_gabriela.cpp_FUN_004d2a80",
+    "name":"core_gabriela.cpp_aimRotationBlendWeightCallback_FUN_004d2a80",
     "ret":"float",
     "vars":{
       "locals":[
@@ -34561,7 +34561,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_gabriela.cpp_CGabriella_FUN_004d4d80",
+    "name":"core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80",
     "ret":"void",
     "vars":{
       "locals":[
@@ -35380,6 +35380,38 @@
             ]
           },
           "type":"undefined4"
+        },
+        {
+          "name":"pcVar11",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:7bf88bea76e",
+                "offset":8519214344046,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDeformableModel_MotionBlendWeightFunc*",
+          "use":1046
+        },
+        {
+          "name":"pcVar10",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:27fb38d5f55",
+                "offset":2747496488789,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDeformableModel_MotionBlendWeightFunc*",
+          "use":1762
         }
       ],
       "params":[
@@ -35413,7 +35445,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_gabriela.cpp_CGabriella_FUN_004d6f80",
+    "name":"core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_004d6f80",
     "ret":"void",
     "vars":{
       "locals":[
@@ -35610,6 +35642,86 @@
             ]
           },
           "type":"CGabriella*"
+        },
+        {
+          "name":"delta_time",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"clavicle_blend",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"float*"
+        },
+        {
+          "name":"probe_bone_index",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"blend_bone_index",
+          "storage":{
+            "offset":20,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x14]",
+                "offset":20,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"probe_offset",
+          "storage":{
+            "offset":24,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x18]",
+                "offset":24,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
         }
       ]
     }
@@ -41462,6 +41574,22 @@
             ]
           },
           "type":"CHero*"
+        },
+        {
+          "name":"grabber",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonActor*"
         }
       ],
       "ret_storage":{
@@ -41586,7 +41714,7 @@
           "type":"CHeroPlaceholder*"
         },
         {
-          "name":"param_2",
+          "name":"hero_type",
           "storage":{
             "offset":8,
             "size":4,
@@ -41599,7 +41727,7 @@
               }
             ]
           },
-          "type":"int"
+          "type":"EHeroType"
         }
       ],
       "ret_storage":{
@@ -50313,7 +50441,7 @@
           "type":"CDemonMission*"
         },
         {
-          "name":"creation_flags",
+          "name":"existing_hero",
           "storage":{
             "offset":8,
             "size":4,
@@ -50326,7 +50454,7 @@
               }
             ]
           },
-          "type":"int"
+          "type":"CCharacter*"
         }
       ],
       "ret_storage":{
@@ -59062,7 +59190,7 @@
           "type":"CScript*"
         },
         {
-          "name":"param_2",
+          "name":"actor_specifier",
           "storage":{
             "offset":8,
             "size":4,
@@ -59075,10 +59203,10 @@
               }
             ]
           },
-          "type":"int"
+          "type":"char*"
         },
         {
-          "name":"param_3",
+          "name":"sound_name",
           "storage":{
             "offset":12,
             "size":4,
@@ -59094,7 +59222,7 @@
           "type":"char*"
         },
         {
-          "name":"param_4",
+          "name":"dialog_text",
           "storage":{
             "offset":16,
             "size":4,
@@ -71820,7 +71948,7 @@
           "type":"CStranger*"
         },
         {
-          "name":"param_2",
+          "name":"class_name",
           "storage":{
             "offset":8,
             "size":4,
@@ -75258,8 +75386,86 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_tbplayer.cpp_FUN_005da100",
-    "ret":"void"
+    "name":"core_tbplayer.cpp_setVector_FUN_005da100",
+    "ret":"CVector3f*",
+    "vars":{
+      "params":[
+        {
+          "name":"out",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"x",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"y",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"z",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        }
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
+    }
   },
   {
     "addr":"005da280",

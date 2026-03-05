@@ -11,7 +11,7 @@
 void __cdecl core_game_cpp_CGame_playerControls_FUN_004dbd80(CGame *this_ptr)
 
 {
-  uint uVar1;
+  EControlMode EVar1;
   SPlayerControl *player_control;
   int iVar2;
   char *pcVar3;
@@ -25,14 +25,14 @@ void __cdecl core_game_cpp_CGame_playerControls_FUN_004dbd80(CGame *this_ptr)
   }
   if ((this_ptr->is_paused == 0) && (this_ptr->allow_hero_controls_flag == 0)) {
     player_control = core_netgame_cpp_CNetGame_getMyControls_FUN_005438c0(g_CNetGamePtr);
-    uVar1 = this_ptr->game_control;
-    if (uVar1 == 0) {
+    EVar1 = this_ptr->game_control;
+    if (EVar1 == CONTROL_MODE_KEYBOARD) {
       core_game_cpp_CGame_processKeyboardControls_FUN_004dc3e0(this_ptr,player_control);
     }
-    else if (uVar1 < 2) {
+    else if (EVar1 < CONTROL_MODE_GAMEPAD) {
       core_game_cpp_CGame_processMouseControls_FUN_004dccc0(this_ptr,player_control);
     }
-    else if (uVar1 == 2) {
+    else if (EVar1 == CONTROL_MODE_GAMEPAD) {
       core_game_cpp_CGame_processJoystickControls_FUN_004dc230(this_ptr,player_control);
     }
     else {

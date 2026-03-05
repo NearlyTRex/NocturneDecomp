@@ -11,12 +11,12 @@
 void __cdecl core_scat_cpp_CScat_FUN_005578e0(CScat *this_ptr)
 
 {
-  CWeapon *pCVar1;
-  float fVar2;
-  CHero *pCVar3;
-  SMotion *pSVar4;
+  EHeroTask EVar1;
+  CWeapon *pCVar2;
+  float fVar3;
+  CHero *pCVar4;
+  SMotion *pSVar5;
   CPathMap *this_ptr_00;
-  int iVar5;
   CVector3f *pCVar6;
   CHero *this_ptr_01;
   int iVar7;
@@ -39,27 +39,27 @@ void __cdecl core_scat_cpp_CScat_FUN_005578e0(CScat *this_ptr)
   local_20 = 0.25;
   local_1c = 0.7853982;
   this_ptr_01 = g_HeroActors[g_LocalHeroIndex];
-  if ((this_ptr->base).ai_task == 0) {
+  if ((this_ptr->base).ai_task == HERO_TASK_STAND) {
     return;
   }
   memset(&(this_ptr->base).player_control,0,0x2c);
-  pCVar3 = g_HeroActors[g_LocalHeroIndex];
+  pCVar4 = g_HeroActors[g_LocalHeroIndex];
   local_3c.x = (this_ptr->base).base.base.location.position.x -
-               (pCVar3->base).base.location.position.x;
+               (pCVar4->base).base.location.position.x;
   local_3c.y = (this_ptr->base).base.base.location.position.y -
-               (pCVar3->base).base.location.position.y;
+               (pCVar4->base).base.location.position.y;
   local_3c.z = (this_ptr->base).base.base.location.position.z -
-               (pCVar3->base).base.location.position.z;
-  iVar5 = (this_ptr->base).ai_task;
+               (pCVar4->base).base.location.position.z;
+  EVar1 = (this_ptr->base).ai_task;
   iVar7 = 0;
-  if ((((iVar5 == 2) || (iVar5 == 3)) &&
-      (pCVar1 = (this_ptr->base).inventory.selected_weapon, pCVar1 != (CWeapon *)0x0)) &&
-     (0 < pCVar1->ammo_count)) {
+  if ((((EVar1 == HERO_TASK_KILL) || (EVar1 == HERO_TASK_GUARD)) &&
+      (pCVar2 = (this_ptr->base).inventory.selected_weapon, pCVar2 != (CWeapon *)0x0)) &&
+     (0 < pCVar2->ammo_count)) {
     local_30 = 9999.9;
-    pCVar3 = (CHero *)core_hero_cpp_CHero_findNearestEnemy_FUN_004f3960(&this_ptr->base,&local_30);
-    if ((pCVar3 != (CHero *)0x0) && ((int)local_30 < 0x41f00000)) {
+    pCVar4 = (CHero *)core_hero_cpp_CHero_findNearestEnemy_FUN_004f3960(&this_ptr->base,&local_30);
+    if ((pCVar4 != (CHero *)0x0) && ((int)local_30 < 0x41f00000)) {
       iVar7 = 1;
-      this_ptr_01 = pCVar3;
+      this_ptr_01 = pCVar4;
     }
   }
   if (iVar7 != this_ptr->guns_drawn) {
@@ -77,16 +77,16 @@ void __cdecl core_scat_cpp_CScat_FUN_005578e0(CScat *this_ptr)
     local_3c.z = local_60.z;
   }
   local_7c = SQRT(local_3c.z * local_3c.z + local_3c.x * local_3c.x + local_3c.y * local_3c.y);
-  if ((this_ptr->base).ai_task == 3) {
+  if ((this_ptr->base).ai_task == HERO_TASK_GUARD) {
     local_7c = 0.0;
   }
   if (this_ptr->weapon_actor == (CDemonActor *)0x0) goto LAB_00557b63;
   local_2c = 0;
   if (this_ptr->weapon_actor[2].orient.vec.x == 1.12104e-44) {
     if (local_7c < (float)8) {
-      pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+      pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                          (&(this_ptr->base).base.model.motion_controller);
-      if ((pSVar4->state_index == 7) && (this_ptr->guns_drawn != 0)) {
+      if ((pSVar5->state_index == 7) && (this_ptr->guns_drawn != 0)) {
         (this_ptr->base).player_control.action_states[3] = 1;
       }
 LAB_00557a94:
@@ -110,16 +110,16 @@ LAB_00557a94:
   if (this_ptr_00 == (CPathMap *)0x0) {
     this_ptr_00 = core_path_cpp_getPathMap_FUN_00548500(&(this_ptr_01->base).base.location);
   }
-  iVar5 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00
+  iVar7 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00
                     (this_ptr_00,&(this_ptr->base).base.base.location.position,&CStack_54,
                      (this_ptr->base).base.base.direction_hint);
-  if (iVar5 != 0) {
+  if (iVar7 != 0) {
     fStack_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                           (CStack_54.y - (this_ptr->base).base.base.orient.vec.y);
-    fVar2 = fStack_18 * (float)0.31830988619288902 * (float)4;
+    fVar3 = fStack_18 * (float)0.31830988619288902 * (float)4;
     fStack_24 = -local_20;
-    (this_ptr->base).player_control.turn_speed = fVar2;
-    if (fVar2 < fStack_24) {
+    (this_ptr->base).player_control.turn_speed = fVar3;
+    if (fVar3 < fStack_24) {
       (this_ptr->base).player_control.turn_speed = fStack_24;
     }
     if (local_20 < (this_ptr->base).player_control.turn_speed) {

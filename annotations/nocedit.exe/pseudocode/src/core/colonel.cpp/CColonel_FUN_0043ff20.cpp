@@ -13,14 +13,15 @@ void __cdecl core_colonel_cpp_CColonel_FUN_0043ff20(CColonel *this_ptr)
 {
   CDeformableModelInstance *this_ptr_00;
   float fVar1;
-  bool bVar2;
-  float fVar3;
-  CHero *pCVar4;
-  CVector3f *pCVar5;
-  SMotion *pSVar6;
+  EHeroTask EVar2;
+  bool bVar3;
+  float fVar4;
+  CHero *pCVar5;
+  CVector3f *pCVar6;
+  SMotion *pSVar7;
   CPathMap *this_ptr_01;
-  int iVar7;
-  CHero *pCVar8;
+  int iVar8;
+  CHero *pCVar9;
   float in_stack_00000008;
   float local_8c;
   float local_88;
@@ -39,33 +40,33 @@ void __cdecl core_colonel_cpp_CColonel_FUN_0043ff20(CColonel *this_ptr)
   float local_18;
   float local_14;
   
-  bVar2 = false;
+  bVar3 = false;
   local_1c = 0.25;
   local_20 = 0.7853982;
-  pCVar8 = g_HeroActors[g_LocalHeroIndex];
+  pCVar9 = g_HeroActors[g_LocalHeroIndex];
   memset(&(this_ptr->base).player_control,0,0x2c);
-  if ((this_ptr->base).ai_task != 0) {
-    pCVar4 = g_HeroActors[g_LocalHeroIndex];
+  if ((this_ptr->base).ai_task != HERO_TASK_STAND) {
+    pCVar5 = g_HeroActors[g_LocalHeroIndex];
     local_54.x = (this_ptr->base).base.base.location.position.x -
-                 (pCVar4->base).base.location.position.x;
+                 (pCVar5->base).base.location.position.x;
     local_54.y = (this_ptr->base).base.base.location.position.y -
-                 (pCVar4->base).base.location.position.y;
+                 (pCVar5->base).base.location.position.y;
     local_54.z = (this_ptr->base).base.base.location.position.z -
-                 (pCVar4->base).base.location.position.z;
+                 (pCVar5->base).base.location.position.z;
     local_2c = SQRT(local_54.z * local_54.z + local_54.x * local_54.x + local_54.y * local_54.y);
-    if (((((this_ptr->base).ai_task == 3) || (local_2c < 20.0f)) &&
-        ((iVar7 = (this_ptr->base).ai_task, iVar7 == 2 || (iVar7 == 3)))) &&
-       ((pCVar4 = (CHero *)core_hero_cpp_CHero_findNearestEnemy_FUN_004f3960
-                                     (&this_ptr->base,&local_88), pCVar4 != (CHero *)0x0 &&
-        (local_88 < (float)20)))) {
-      bVar2 = true;
-      pCVar8 = pCVar4;
+    if (((((this_ptr->base).ai_task == HERO_TASK_GUARD) || (local_2c < 20.0f)) &&
+        ((EVar2 = (this_ptr->base).ai_task, EVar2 == HERO_TASK_KILL || (EVar2 == HERO_TASK_GUARD))))
+       && ((pCVar5 = (CHero *)core_hero_cpp_CHero_findNearestEnemy_FUN_004f3960
+                                        (&this_ptr->base,&local_88), pCVar5 != (CHero *)0x0 &&
+           (local_88 < (float)20)))) {
+      bVar3 = true;
+      pCVar9 = pCVar5;
     }
-    local_60.x = (pCVar8->base).base.location.position.x -
+    local_60.x = (pCVar9->base).base.location.position.x -
                  (this_ptr->base).base.base.location.position.x;
-    local_60.y = (pCVar8->base).base.location.position.y -
+    local_60.y = (pCVar9->base).base.location.position.y -
                  (this_ptr->base).base.base.location.position.y;
-    local_60.z = (pCVar8->base).base.location.position.z -
+    local_60.z = (pCVar9->base).base.location.position.z -
                  (this_ptr->base).base.base.location.position.z;
     if (&local_54 != &local_60) {
       local_54.x = local_60.x;
@@ -76,29 +77,29 @@ void __cdecl core_colonel_cpp_CColonel_FUN_0043ff20(CColonel *this_ptr)
     local_30 = fVar1;
     if ((float)6 <= fVar1) {
       this_ptr_01 = (CPathMap *)0x0;
-      if (!bVar2) {
+      if (!bVar3) {
         this_ptr_01 = (*((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._ub)->getPathMap)
                                 ((CDemonActor *)g_HeroActors[g_LocalHeroIndex]);
       }
       if (this_ptr_01 == (CPathMap *)0x0) {
-        this_ptr_01 = core_path_cpp_getPathMap_FUN_00548500(&(pCVar8->base).base.location);
+        this_ptr_01 = core_path_cpp_getPathMap_FUN_00548500(&(pCVar9->base).base.location);
       }
-      iVar7 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00
+      iVar8 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00
                         (this_ptr_01,&(this_ptr->base).base.base.location.position,&local_84,
                          (this_ptr->base).base.base.direction_hint);
-      if (iVar7 != 0) {
+      if (iVar8 != 0) {
         local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                              (local_84.y - (this_ptr->base).base.base.orient.vec.y);
-        fVar3 = local_14 * (float)0.31830988619288902 * (float)4;
+        fVar4 = local_14 * (float)0.31830988619288902 * (float)4;
         local_28 = -local_1c;
-        (this_ptr->base).player_control.turn_speed = fVar3;
-        if (fVar3 < local_28) {
+        (this_ptr->base).player_control.turn_speed = fVar4;
+        if (fVar4 < local_28) {
           (this_ptr->base).player_control.turn_speed = local_28;
         }
         if (local_1c < (this_ptr->base).player_control.turn_speed) {
           (this_ptr->base).player_control.turn_speed = local_1c;
         }
-        if (((float)10 <= fVar1) || (bVar2)) {
+        if (((float)10 <= fVar1) || (bVar3)) {
           (this_ptr->base).player_control.action_states[2] = 1;
           (this_ptr->base).player_control.action_states[0] = 1;
         }
@@ -109,14 +110,14 @@ void __cdecl core_colonel_cpp_CColonel_FUN_0043ff20(CColonel *this_ptr)
     }
     else {
       this_ptr_00 = &(this_ptr->base).base.model;
-      if (bVar2) {
+      if (bVar3) {
         if (this_ptr->guns_drawn == 0) {
           (this_ptr->base).player_control.action_states[6] = 1;
         }
         else {
-          pSVar6 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+          pSVar7 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                              (&this_ptr_00->motion_controller);
-          if ((pSVar6->state_index != 2) && (pSVar6->state_index != 1)) {
+          if ((pSVar7->state_index != 2) && (pSVar7->state_index != 1)) {
             (this_ptr->base).player_control.action_states[3] = 1;
           }
         }
@@ -125,11 +126,11 @@ void __cdecl core_colonel_cpp_CColonel_FUN_0043ff20(CColonel *this_ptr)
         core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                   (&this_ptr_00->motion_controller);
       }
-      if (bVar2) {
-        pCVar5 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+      if (bVar3) {
+        pCVar6 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                            (&local_3c,&local_54);
         local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
-                             (pCVar5->y - (this_ptr->base).base.base.orient.vec.y);
+                             (pCVar6->y - (this_ptr->base).base.base.orient.vec.y);
         fVar1 = local_14 * (float)0.31830988619288902 * (float)4;
         local_18 = -local_1c;
         (this_ptr->base).player_control.turn_speed = fVar1;
@@ -146,22 +147,22 @@ void __cdecl core_colonel_cpp_CColonel_FUN_0043ff20(CColonel *this_ptr)
         }
       }
     }
-    local_78.x = (pCVar8->base).base.location.position.x -
+    local_78.x = (pCVar9->base).base.location.position.x -
                  (this_ptr->base).base.base.location.position.x;
-    local_78.y = (pCVar8->base).base.location.position.y -
+    local_78.y = (pCVar9->base).base.location.position.y -
                  (this_ptr->base).base.base.location.position.y;
-    local_78.z = (pCVar8->base).base.location.position.z -
+    local_78.z = (pCVar9->base).base.location.position.z -
                  (this_ptr->base).base.base.location.position.z;
     if (&local_54 != &local_78) {
       local_54.x = local_78.x;
       local_54.y = local_78.y;
       local_54.z = local_78.z;
     }
-    pCVar5 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_6c,&local_54);
-    if (&local_54 != pCVar5) {
-      local_54.x = pCVar5->x;
-      local_54.y = pCVar5->y;
-      local_54.z = pCVar5->z;
+    pCVar6 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_6c,&local_54);
+    if (&local_54 != pCVar6) {
+      local_54.x = pCVar6->x;
+      local_54.y = pCVar6->y;
+      local_54.z = pCVar6->z;
     }
     local_44 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                          (local_54.y - (this_ptr->base).base.base.orient.vec.y);

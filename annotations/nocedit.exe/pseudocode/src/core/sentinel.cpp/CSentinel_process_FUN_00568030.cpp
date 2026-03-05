@@ -56,7 +56,7 @@ void __cdecl core_sentinel_cpp_CSentinel_process_FUN_00568030(CSentinel *this_pt
   float local_54;
   CVector3f local_50;
   CVector3f local_44 [2];
-  float local_2c;
+  float local_2c [2];
   float local_24;
   float local_20;
   int local_1c;
@@ -72,11 +72,12 @@ void __cdecl core_sentinel_cpp_CSentinel_process_FUN_00568030(CSentinel *this_pt
        (this_ptr->base).base.model.accumulated_root_motion.z;
   (this_ptr->base).base.model.accumulated_root_motion.x =
        (this_ptr->base).base.model.accumulated_root_motion.y;
-  local_2c = delta_time * (this_ptr->base).speed;
+  local_2c[0] = delta_time * (this_ptr->base).speed;
   pCVar1 = &(this_ptr->base).base.model;
 LAB_00568089:
-  if (0.0 < local_2c) {
-    iVar5 = core_motion_cpp_CMotionController_advance_FUN_0052d610(&pCVar1->motion_controller);
+  if (0.0 < local_2c[0]) {
+    iVar5 = core_motion_cpp_CMotionController_advance_FUN_0052d610
+                      (&pCVar1->motion_controller,local_2c);
     switch(iVar5) {
     case 100:
       pCVar4 = (this_ptr->base).victim;

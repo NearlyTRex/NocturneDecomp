@@ -27,14 +27,14 @@ section .text
     MOV ECX,dword ptr [EBX + 0x14]      ; 00528953
     PUSH ECX                            ; 00528956
     CALL engine_model.c_loadMRGLTextures_FUN_00528870 ; 00528957
-        ;   XREF to: 00528870 (UNCONDITIONAL_CALL)  ; void engine_model.c_loadMRGLTextures_FUN_00528870(SMRGLHeaderExtended * block)
+        ;   XREF to: 00528870 (UNCONDITIONAL_CALL)  ; void engine_model.c_loadMRGLTextures_FUN_00528870(SMRGLHeaderExtended * mrgl)
     ADD ESP,0x4                         ; 0052895c
     POP EBX                             ; 0052895f
     RET                                 ; 00528960
     PUSH EBX                            ; 00528961
         ;   Label: LAB_00528961
     CALL engine_model.c_loadMRGLTextures_FUN_00528870 ; 00528962
-        ;   XREF to: 00528870 (UNCONDITIONAL_CALL)  ; void engine_model.c_loadMRGLTextures_FUN_00528870(SMRGLHeaderExtended * block)
+        ;   XREF to: 00528870 (UNCONDITIONAL_CALL)  ; void engine_model.c_loadMRGLTextures_FUN_00528870(SMRGLHeaderExtended * mrgl)
     ADD ESP,0x4                         ; 00528967
     POP EBX                             ; 0052896a
     RET                                 ; 0052896b

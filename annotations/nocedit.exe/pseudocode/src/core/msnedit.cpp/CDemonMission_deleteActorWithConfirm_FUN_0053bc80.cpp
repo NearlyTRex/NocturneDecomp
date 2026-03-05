@@ -22,7 +22,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_deleteActorWithConfirm_FUN_0053bc80(
     if (actor == this_ptr->selected_actor) {
       core_msnedit_cpp_CDemonMission_selectNearestActor_FUN_0053bcf0(this_ptr);
     }
-    core_msnedit_cpp_CDemonMission_deleteActor_FUN_00538ea0(this_ptr,(int)actor);
+    core_msnedit_cpp_CDemonMission_deleteActor_FUN_00538ea0(this_ptr,actor);
     core_mission_cpp_CDemonMission_removeActor_FUN_00523f20(this_ptr,actor,1);
     core_mission_cpp_CDemonMission_buildSetActorList_FUN_00523e60(this_ptr);
   }

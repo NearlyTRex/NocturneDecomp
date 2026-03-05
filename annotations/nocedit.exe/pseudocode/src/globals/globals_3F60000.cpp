@@ -448,9 +448,6 @@ uint g_WaterSoundHandle = {};
 uint g_TrainRailNoiseHandle = {};
 uint g_TrainExteriorAmbientHandle = {};
 
-// undefined4
-undefined4 DAT_03f6baa8 = {};
-
 // void*
 void* g_PrimaryMixBuffer = {};
 void* g_FrameBufferPtr = {};

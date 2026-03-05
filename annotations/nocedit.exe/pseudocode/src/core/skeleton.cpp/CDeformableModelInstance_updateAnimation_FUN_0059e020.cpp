@@ -11,7 +11,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059
 {
   core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
             (this_ptr,(this_ptr->motion_controller).current_motion_index,
-             (float)(this_ptr->motion_controller).current_frame_number,-1);
+             (this_ptr->motion_controller).current_frame_number,-1);
   if ((this_ptr->motion_controller).tween_progress <= (float)0.001) {
     return;
   }
@@ -19,6 +19,6 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059
             (this_ptr,(this_ptr->motion_controller).tween_target_motion,
              (this_ptr->motion_controller).tween_target_frame,
              (this_ptr->motion_controller).tween_progress,-1,
-             core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0);
+             core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0);
   return;
 }

@@ -452,7 +452,7 @@ section .text
     PUSH EAX                            ; 0053864e
     PUSH EBP                            ; 0053864f
     CALL core_msnedit.cpp_CDemonMission_addSet_FUN_00538d60 ; 00538650
-        ;   XREF to: 00538d60 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_addSet_FUN_00538d60(CDemonMission * this_ptr, char * param_2)
+        ;   XREF to: 00538d60 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_addSet_FUN_00538d60(CDemonMission * this_ptr, char * set_name)
     JMP 0x005384e9                      ; 00538655
         ;   XREF to: 005384e9 (UNCONDITIONAL_JUMP)  ; LAB_005384e9
     MOV EDX,dword ptr [EBP]             ; 0053865a

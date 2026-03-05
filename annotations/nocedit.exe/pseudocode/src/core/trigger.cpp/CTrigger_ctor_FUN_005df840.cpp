@@ -20,7 +20,7 @@ CTrigger * __cdecl core_trigger_cpp_CTrigger_ctor_FUN_005df840(CTrigger *this_pt
   (pCVar2->trigger_size).y = 9.0;
   (pCVar2->trigger_size).z = 5.0;
   pCVar2->shape = 0;
-  pCVar2->event_type = 0;
+  pCVar2->event_type = TRIGGER_EVENT_SINGLE;
   pcVar3 = "nobody";
   pCVar2->on_event[0] = '\0';
   pCVar2->off_event[0] = '\0';

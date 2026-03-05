@@ -1,11 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHeaderExtended *header,SMRGLModelBounds *output)
+; SMRGLModelBounds * __stack_esi engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHeaderExtended *header,SMRGLModelBounds *output_bounds)
 ;
 ; Parameters:
 ; SMRGLHeaderExtended * Stack[0x4]:4   header
-; SMRGLModelBounds * Stack[0x8]:4   output
 ; Local Variables:
 ; undefined1       Stack[-0x160]:1  local_160
 ; undefined1       Stack[-0x110]:1  local_110
@@ -362,7 +361,7 @@ section .text
     LEA EDI,[ESP + 0xbc]                ; 00528564
     MOV EBX,EAX                         ; 0052856b
     CALL engine_model.c_getMRGLBounds_FUN_00528140 ; 0052856d
-        ;   XREF to: 00528140 (UNCONDITIONAL_CALL)  ; void engine_model.c_getMRGLBounds_FUN_00528140(SMRGLHeaderExtended * header, SMRGLModelBounds * output)
+        ;   XREF to: 00528140 (UNCONDITIONAL_CALL)  ; SMRGLModelBounds * engine_model.c_getMRGLBounds_FUN_00528140(SMRGLHeaderExtended * header, SMRGLModelBounds * output_bounds)
     ADD ESP,0x4                         ; 00528572
     MOV ECX,0xd                         ; 00528575
     LEA ESI,[ESP + 0xec]                ; 0052857a

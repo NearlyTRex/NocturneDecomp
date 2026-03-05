@@ -17,14 +17,14 @@ void __cdecl core_werewolf_cpp_CWerewolf_processDamage_FUN_005f1ac0(CWerewolf *t
   CVector3f local_28 [2];
   
   sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handle);
-  if (damage_info->damage_type == 0x6c) {
+  if (damage_info->damage_type == DAMAGE_TYPE_BURN) {
     core_werewolf_cpp_CWerewolf_FUN_005f11e0(this_ptr);
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
               (&(this_ptr->base).base.model.motion_controller,0x16,1);
     core_enemy_cpp_CEnemy_processDamage_FUN_004a9f10(&this_ptr->base,damage_info);
     return;
   }
-  if (damage_info->ammo_type == 3) {
+  if (damage_info->ammo_type == AMMO_TYPE_SILVER) {
     iVar4 = 0;
     damage_info->damage_amount = damage_info->damage_amount * (float)2;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0

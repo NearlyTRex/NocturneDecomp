@@ -6,19 +6,19 @@
   },
   "complexity": {
     "assembly_lines": 147,
-    "complexity_score": 136,
+    "complexity_score": 139,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 51,
+    "pseudocode_lines": 54,
     "suspect_count": 7,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
       "stack_param"
     ],
-    "total_lines": 198
+    "total_lines": 201
   },
   "cross_references": [
     {
@@ -240,7 +240,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 17,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "fVar2 = in_stack_00000008 / 1.0f + this_ptr->morph_blend;",
@@ -248,23 +248,23 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 28,
+      "line": 29,
       "match": "in_stack_00000008",
       "severity": "moderate",
-      "text": "while (0.0 < in_stack_00000008) {",
+      "text": "local_18[0] = in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 32,
+      "line": 34,
       "match": "in_stack_00000008",
       "severity": "moderate",
-      "text": "while (0.0 < in_stack_00000008) {",
+      "text": "local_18[0] = in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 46,
+      "line": 49,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)&(pSVar1->position).x + iVar4) =",
@@ -272,7 +272,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 47,
+      "line": 50,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "-*(float *)((int)&(pSVar1->position).x + iVar4);",

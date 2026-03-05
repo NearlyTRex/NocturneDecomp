@@ -17,6 +17,6 @@ void __cdecl core_ladder_cpp_CLadder_archive_FUN_005029c0(CLadder *this_ptr)
   if (g_CLadderClassVersion < 2) {
     return;
   }
-  core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->ground_type,"groundType");
+  core_actor_cpp_archiveInteger_FUN_0040b7f0((int *)&this_ptr->ground_type,"groundType");
   return;
 }

@@ -2,11 +2,11 @@
 // Address: 00524920
 // Address Range: [[00524920, 00524a7e]]
 // Convention: __cdecl
-// Signature: int __cdecl core_mission_cpp_CDemonMission_createOneHero_FUN_00524920(CDemonMission *this_ptr,int index,int param_3,void *param_4)
+// Signature: int __cdecl core_mission_cpp_CDemonMission_createOneHero_FUN_00524920(CDemonMission *this_ptr,int index,int hero_type,CCharacter *existing_actor)
 
 #include "nocturne.h"
 
-int __cdecl core_mission_cpp_CDemonMission_createOneHero_FUN_00524920(CDemonMission *this_ptr,int index,int param_3,void *param_4)
+int __cdecl core_mission_cpp_CDemonMission_createOneHero_FUN_00524920(CDemonMission *this_ptr,int index,int hero_type,CCharacter *existing_actor)
 
 {
   CDemonActor *actor_ptr;
@@ -40,18 +40,20 @@ LAB_0052499a:
                   core_actor_cpp_castToClassHash_FUN_0040c790
                             (actor_ptr,g_CHeroPlaceholderClassInfo.name_hash);
     if ((this_ptr_00 != (CHeroPlaceholder *)0x0) && (index == this_ptr_00->index)) {
-      if (param_4 == (void *)0x0) {
+      if (existing_actor == (CCharacter *)0x0) {
         local_14 = (CHero *)core_hero_cpp_CHeroPlaceholder_createHero_FUN_004f3d80
-                                      (this_ptr_00,param_3);
+                                      (this_ptr_00,hero_type);
       }
       else {
-        local_14 = param_4;
-        (**(code **)(*(int *)((int)param_4 + 0x154) + 0x60))
-                  (param_4,&(this_ptr_00->base).location,&(this_ptr_00->base).orient);
-        *(int *)((int)param_4 + 0x2c) = (this_ptr_00->base).location.area_id;
+        local_14 = (CHero *)existing_actor;
+        (*((existing_actor->base).vtable._ub)->setPositionAndOrientation)
+                  (&existing_actor->base,&(this_ptr_00->base).location.position,
+                   (CVector3f *)&(this_ptr_00->base).orient);
+        (existing_actor->base).location.area_id = (this_ptr_00->base).location.area_id;
         core_motion_cpp_CMotionController_jumpToMotion_FUN_0052dde0
-                  ((CMotionController *)((int)param_4 + 0x158),0,0.0);
-        (**(code **)(*(int *)((int)param_4 + 0x154) + 0x144))(param_4,0,0,0);
+                  (&(existing_actor->model).motion_controller,0,0.0);
+        (*(((existing_actor->base).vtable._uc)->_uc).setWalkTarget)
+                  (existing_actor,(CDemonActor *)0x0,0.0,0.0);
       }
       core_mission_cpp_CDemonMission_addActorToList_FUN_00523b70
                 (g_CDemonMissionPtr,(CDemonActor *)local_14);

@@ -4,9 +4,6 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x2D00000
 // =============================================================================
 
-// BOOL
-BOOL g_MMXSupported = {};
-
 // CEventList
 CEventList g_CEventListInstance = {};
 
@@ -95,6 +92,7 @@ int g_JoyWantUAxis = {};
 int g_JoyWantRAxis = {};
 int g_JoystickHasPOV = {};
 int g_JoyPOVDirection = {};
+int g_MMXSupported = {};
 int g_CPUModel = {};
 int g_CalibratedCPUSpeed = {};
 int g_BlendMode = {};

@@ -16,7 +16,7 @@
 ;   undefined4 DAT_00fbffff
 ;   undefined4 DAT_00feffff
 ;   RenderScanlineFunc* g_ScanlineRenderFunc
-;   BOOL g_MMXSupported
+;   int g_MMXSupported
 ;   _BIT_INTEGER32 g_RenderStateFlags
 ;   int g_RenderStateFlag2
 ;

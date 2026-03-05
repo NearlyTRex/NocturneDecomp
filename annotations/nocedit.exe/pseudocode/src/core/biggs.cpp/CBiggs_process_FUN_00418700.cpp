@@ -16,6 +16,10 @@ void __cdecl core_biggs_cpp_CBiggs_process_FUN_00418700(CBiggs *this_ptr,float d
   uint uVar4;
   float fVar5;
   int iVar6;
+  float local_40;
+  float local_3c;
+  float local_38;
+  float local_34;
   CVector3f local_30;
   float local_24;
   float local_20;
@@ -30,10 +34,11 @@ void __cdecl core_biggs_cpp_CBiggs_process_FUN_00418700(CBiggs *this_ptr,float d
        (this_ptr->base).base.model.accumulated_root_motion.z;
   (this_ptr->base).base.model.accumulated_root_motion.x =
        (this_ptr->base).base.model.accumulated_root_motion.y;
-  fVar3 = (this_ptr->base).speed;
+  local_40 = delta_time * (this_ptr->base).speed;
   this_ptr_00 = &(this_ptr->base).base.model;
-  while (0.0 < delta_time * fVar3) {
-    iVar6 = core_motion_cpp_CMotionController_advance_FUN_0052d610(&this_ptr_00->motion_controller);
+  while (0.0 < local_40) {
+    iVar6 = core_motion_cpp_CMotionController_advance_FUN_0052d610
+                      (&this_ptr_00->motion_controller,&local_40);
     core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,iVar6);
   }
   fVar3 = (this_ptr->base).speed;
@@ -78,13 +83,14 @@ LAB_004187db:
   if (iVar6 != 0) {
     (this_ptr->base).base.velocity.y =
          (this_ptr->base).base.velocity.y - delta_time * (float)32;
+    local_3c = (this_ptr->base).base.velocity.x * delta_time;
+    local_38 = (this_ptr->base).base.velocity.y * delta_time;
     pCVar1 = &(this_ptr->base).base.position_delta;
+    local_34 = delta_time * (this_ptr->base).base.velocity.z;
     pCVar2 = &(this_ptr->base).base.model.accumulated_root_motion;
-    local_24 = (this_ptr->base).base.velocity.x * delta_time + pCVar1->x;
-    local_20 = (this_ptr->base).base.velocity.y * delta_time +
-               (this_ptr->base).base.position_delta.y;
-    local_1c = delta_time * (this_ptr->base).base.velocity.z +
-               (this_ptr->base).base.position_delta.z;
+    local_24 = local_3c + pCVar1->x;
+    local_20 = local_38 + (this_ptr->base).base.position_delta.y;
+    local_1c = local_34 + (this_ptr->base).base.position_delta.z;
     local_30.x = local_24 + pCVar2->x;
     local_30.y = local_20 + (this_ptr->base).base.model.accumulated_root_motion.y;
     local_30.z = local_1c + (this_ptr->base).base.model.accumulated_root_motion.z;

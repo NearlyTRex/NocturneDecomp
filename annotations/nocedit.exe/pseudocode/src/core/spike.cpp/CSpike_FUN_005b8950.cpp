@@ -132,7 +132,7 @@ void __cdecl core_spike_cpp_CSpike_FUN_005b8950(CSpike *this_ptr)
                     (&this_ptr_00->base,&CStack_a4,&CStack_b0);
           core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&SStack_16c);
           SStack_16c.damage_amount = this_ptr->damage_strength;
-          SStack_16c.damage_type = 0x67;
+          SStack_16c.damage_type = DAMAGE_TYPE_MELEE;
           if (&SStack_16c.impact_direction != &CStack_a4) {
             SStack_16c.impact_direction.x = CStack_a4.x;
             SStack_16c.impact_direction.y = CStack_a4.y;

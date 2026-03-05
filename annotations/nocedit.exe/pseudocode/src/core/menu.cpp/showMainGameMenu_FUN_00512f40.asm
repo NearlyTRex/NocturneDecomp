@@ -532,7 +532,7 @@ section .text
     MOV EDI,dword ptr [0x0067b654]      ; 005133f8 | g_CGamePtr
     PUSH EDI                            ; 005133fe | g_CGameInstance
     CALL core_game.cpp_CGame_loadGame_FUN_004e12b0 ; 005133ff
-        ;   XREF to: 004e12b0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_loadGame_FUN_004e12b0(CGame * this_ptr, char * save_filename, int load_mode, char * chapter_name)
+        ;   XREF to: 004e12b0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_loadGame_FUN_004e12b0(CGame * this_ptr, char * save_filename, int load_mode)
     ADD ESP,0xc                         ; 00513404
     CALL engine_2d.c_clearInputAndWait_FUN_00403260 ; 00513407
         ;   XREF to: 00403260 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403260()

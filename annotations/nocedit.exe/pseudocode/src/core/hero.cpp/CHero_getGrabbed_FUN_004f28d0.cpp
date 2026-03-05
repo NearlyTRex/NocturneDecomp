@@ -13,19 +13,24 @@ int __cdecl core_hero_cpp_CHero_getGrabbed_FUN_004f28d0(CHero *this_ptr,CDemonAc
   CMotionList *pCVar1;
   int iVar2;
   CVector3f *pCVar3;
+  char *pcVar4;
   CVector3f local_14;
   
   if (grab_type == 0) {
+    pcVar4 = "GETGRABBED";
     this_ptr_00 = &(this_ptr->base).model;
+    iVar2 = grab_type;
     pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                        (&this_ptr_00->motion_controller);
-    iVar2 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(pCVar1);
+    iVar2 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(pCVar1,pcVar4,iVar2);
     if (iVar2 < 0) {
       return 0;
     }
+    iVar2 = 0;
+    pcVar4 = "GETGRABBED_FRONT";
     pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                        (&this_ptr_00->motion_controller);
-    iVar2 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(pCVar1);
+    iVar2 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(pCVar1,pcVar4,iVar2);
     if (iVar2 < 0) {
       core_motion_cpp_CMotionController_setDesiredStateByName_FUN_0052db90
                 (&this_ptr_00->motion_controller,"GETGRABBED",1);

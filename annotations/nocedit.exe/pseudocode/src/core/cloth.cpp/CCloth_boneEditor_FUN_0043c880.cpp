@@ -80,11 +80,11 @@ void __cdecl core_cloth_cpp_CCloth_boneEditor_FUN_0043c880(CCloth *this_ptr)
     local_24 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                          (&g_CDeformableModelInstanceInstance.motion_controller);
     if ((SMotion *)local_50.position.y == (SMotion *)0x0) {
-      local_6c.x = g_CDeformableModelInstanceInstance.motion_controller.current_frame_number;
+      local_6c.x = (int)g_CDeformableModelInstanceInstance.motion_controller.current_frame_number;
       for (local_18 = local_58 * local_24->fps +
-                      (float)g_CDeformableModelInstanceInstance.motion_controller.
-                             current_frame_number; local_20 = (float)local_24->frame_count,
-          local_20 < local_18; local_18 = local_18 - local_20) {
+                      g_CDeformableModelInstanceInstance.motion_controller.current_frame_number;
+          local_20 = (float)local_24->frame_count, local_20 < local_18;
+          local_18 = local_18 - local_20) {
       }
       core_motion_cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0
                 (&g_CDeformableModelInstanceInstance.motion_controller,local_24->motion_name,
@@ -202,8 +202,7 @@ void __cdecl core_cloth_cpp_CCloth_boneEditor_FUN_0043c880(CCloth *this_ptr)
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
     _sprintf
               (acStack_1a0,"Model motion : %s frame %f",local_18,
-               (double)(float)g_CDeformableModelInstanceInstance.motion_controller.
-                              current_frame_number);
+               (double)g_CDeformableModelInstanceInstance.motion_controller.current_frame_number);
     engine_2d_c_drawText_FUN_00401fd0(acStack_1a0,0,0);
     iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_M);
     if (iVar2 != 0) {

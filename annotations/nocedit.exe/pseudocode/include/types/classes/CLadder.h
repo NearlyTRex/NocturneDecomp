@@ -5,6 +5,7 @@
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CKeyFramedModelInstance.h"
 #include "types/classes/CVector3f.h"
+#include "types/enums/EGroundType.h"
 
 // Structure: CLadder
 // Ghidra size: 0x300 (768 bytes)
@@ -15,6 +16,6 @@ typedef struct CLadder {
     struct CDemonActor* master_actor; // 0x2e0
     CVector3f relative_position; // 0x2e4
     CVector3f cached_euler_angles; // 0x2f0
-    int ground_type; // 0x2fc
+    EGroundType ground_type; // 0x2fc
 } CLadder;
 

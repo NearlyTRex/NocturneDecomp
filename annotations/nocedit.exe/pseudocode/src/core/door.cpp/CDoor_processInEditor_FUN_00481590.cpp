@@ -13,7 +13,7 @@ void __cdecl core_door_cpp_CDoor_processInEditor_FUN_00481590(CDoor *this_ptr)
   UOrientationVector *pUVar2;
   
   core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(&this_ptr->base);
-  if (this_ptr->door_state == 0) {
+  if (this_ptr->door_state == DOOR_STATE_CLOSED) {
     pCVar1 = &(this_ptr->base).location;
     if ((CLocation *)&this_ptr->orig_pos != pCVar1) {
       (this_ptr->orig_pos).x = (pCVar1->position).x;
@@ -27,13 +27,13 @@ void __cdecl core_door_cpp_CDoor_processInEditor_FUN_00481590(CDoor *this_ptr)
       (this_ptr->orig_orient).z = (this_ptr->base).orient.vec.z;
     }
   }
-  if (this_ptr->door_state != 0) {
-    if (this_ptr->door_state == 2) {
+  if (this_ptr->door_state != DOOR_STATE_CLOSED) {
+    if (this_ptr->door_state == DOOR_STATE_OPEN) {
       this_ptr->param = this_ptr->max_param;
       return;
     }
     this_ptr->param = 0.0;
-    this_ptr->door_state = 0;
+    this_ptr->door_state = DOOR_STATE_CLOSED;
     return;
   }
   this_ptr->param = 0.0;

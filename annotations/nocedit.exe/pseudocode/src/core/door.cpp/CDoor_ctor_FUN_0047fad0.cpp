@@ -22,9 +22,9 @@ CDoor * __cdecl core_door_cpp_CDoor_ctor_FUN_0047fad0(CDoor *this_ptr)
   ADJ(this_ptr_00)->base.vtable._ub = &g_CDoorVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (this_ptr_00,"churchd01.kfm");
-  ADJ(this_ptr_00)->door_type = 0;
+  ADJ(this_ptr_00)->door_type = DOOR_TYPE_SWING;
   ADJ(this_ptr_00)->door_side = 1;
-  ADJ(this_ptr_00)->door_state = 0;
+  ADJ(this_ptr_00)->door_state = DOOR_STATE_CLOSED;
   pCVar1 = &ADJ(this_ptr_00)->base.location;
   ADJ(this_ptr_00)->door_swing = 0;
   if ((CLocation *)&ADJ(this_ptr_00)->orig_pos != pCVar1) {
@@ -72,7 +72,7 @@ CDoor * __cdecl core_door_cpp_CDoor_ctor_FUN_0047fad0(CDoor *this_ptr)
   ADJ(this_ptr_00)->max_param = 1.0;
   ADJ(this_ptr_00)->open_speed = 1.0;
   ADJ(this_ptr_00)->close_speed = 1.0;
-  ADJ(this_ptr_00)->ground_type = 0;
+  ADJ(this_ptr_00)->ground_type = GROUND_TYPE_DEFAULT;
   ADJ(this_ptr_00)->on_open_trigger_event[0] = '\0';
   ADJ(this_ptr_00)->on_close_trigger_event[0] = '\0';
   ADJ(this_ptr_00)->one_shot = 0;

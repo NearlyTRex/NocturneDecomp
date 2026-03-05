@@ -10,7 +10,7 @@
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0054ae70 at 0054aeb7
 ;
 ; Referenced Globals:
-;   BOOL g_MMXSupported
+;   int g_MMXSupported
 ;
 ; *****************************************************************************
 

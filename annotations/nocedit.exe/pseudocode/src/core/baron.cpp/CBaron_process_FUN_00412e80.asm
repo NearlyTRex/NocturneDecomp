@@ -175,7 +175,7 @@ section .text
     MOV EDX,dword ptr [EAX + 0x4]       ; 00412fb5
     MOV dword ptr [EAX],EDX             ; 00412fb8
     CALL core_baron.cpp_CBaron_FUN_00413a00 ; 00412fba
-        ;   XREF to: 00413a00 (UNCONDITIONAL_CALL)  ; void core_baron.cpp_CBaron_FUN_00413a00(CBaron * this_ptr, float param_2)
+        ;   XREF to: 00413a00 (UNCONDITIONAL_CALL)  ; void core_baron.cpp_CBaron_FUN_00413a00(CBaron * this_ptr, float delta_time)
     MOV EBX,dword ptr [EBP + 0x1fccc]   ; 00412fbf
     ADD ESP,0x8                         ; 00412fc5
     TEST EBX,EBX                        ; 00412fc8

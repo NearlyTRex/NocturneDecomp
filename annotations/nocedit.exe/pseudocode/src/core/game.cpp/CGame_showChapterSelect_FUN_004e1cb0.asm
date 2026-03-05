@@ -337,7 +337,7 @@ section .text
     MOV ESI,dword ptr [0x0067d550]      ; 004e202f | g_CDemonMissionPtr
     PUSH ESI                            ; 004e2035 | g_CDemonMissionInstance
     CALL core_mission.cpp_CDemonMission_createHeros_FUN_00524a80 ; 004e2036
-        ;   XREF to: 00524a80 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_createHeros_FUN_00524a80(CDemonMission * this_ptr, int creation_flags)
+        ;   XREF to: 00524a80 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_createHeros_FUN_00524a80(CDemonMission * this_ptr, CCharacter * existing_hero)
     ADD ESP,0x8                         ; 004e203b
     TEST EAX,EAX                        ; 004e203e
     JZ 0x004e208f                       ; 004e2040
@@ -363,7 +363,7 @@ section .text
     PUSH ECX                            ; 004e207f
     MOV dword ptr [EAX + -0x4],0x0      ; 004e2080
     CALL core_game.cpp_CGame_loadGame_FUN_004e12b0 ; 004e2087
-        ;   XREF to: 004e12b0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_loadGame_FUN_004e12b0(CGame * this_ptr, char * save_filename, int load_mode, char * chapter_name)
+        ;   XREF to: 004e12b0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_loadGame_FUN_004e12b0(CGame * this_ptr, char * save_filename, int load_mode)
     ADD ESP,0xc                         ; 004e208c
     MOV EAX,dword ptr [ESP + 0x6d0]     ; 004e208f
         ;   Label: LAB_004e208f

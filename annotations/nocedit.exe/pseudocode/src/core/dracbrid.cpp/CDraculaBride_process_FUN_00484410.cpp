@@ -143,7 +143,8 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_process_FUN_00484410(CDraculaBride 
   local_38 = delta_time * (this_ptr->base).speed;
   pCVar2 = &(this_ptr->base).base.model;
   while (0.0 < local_38) {
-    iVar7 = core_motion_cpp_CMotionController_advance_FUN_0052d610(&pCVar2->motion_controller);
+    iVar7 = core_motion_cpp_CMotionController_advance_FUN_0052d610
+                      (&pCVar2->motion_controller,&local_38);
     if (iVar7 == 0x29a) {
       (this_ptr->base).base.damage_decal_count = 0;
       local_178.x = 0.0;

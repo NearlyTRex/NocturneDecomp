@@ -6,17 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 338,
-    "complexity_score": 202,
+    "complexity_score": 140,
     "cross_reference_count": 40,
     "function_call_count": 9,
     "global_count": 12,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 137,
-    "suspect_count": 6,
-    "suspect_types": [
-      "stack_param"
-    ],
-    "total_lines": 475
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 140,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 478
   },
   "cross_references": [
     {
@@ -100,7 +98,7 @@
     {
       "addr": "004d4890",
       "from_addr": "004d48ad",
-      "name": "core_gabriela.cpp_CGabriella_FUN_004d4890",
+      "name": "core_gabriela.cpp_CGabriella_processMotionEvents_FUN_004d4890",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -271,7 +269,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_motion.cpp_CMotionController_advance_FUN_0052d610",
-    "signature": "int __cdecl core_motion_cpp_CMotionController_advance_FUN_0052d610(CMotionController *this_ptr)"
+    "signature": "int __cdecl core_motion_cpp_CMotionController_advance_FUN_0052d610(CMotionController *this_ptr,float *delta_time)"
   },
   "function_calls": [
     {
@@ -437,10 +435,10 @@
     "pcode_op_count": 1403
   },
   "stack_frame": {
-    "frame_size": 92,
+    "frame_size": 96,
     "local_size": 88,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -554,6 +552,13 @@
         "offset": 4,
         "size": 4,
         "type": "CMotionController *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float *"
       }
     ]
   },
@@ -574,54 +579,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "float *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "if (*in_stack_00000008 <= (float)1.0000000000000001e-05) break;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 30,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "local_48 = *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 127,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "*in_stack_00000008 = *in_stack_00000008 - local_48;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 127,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "*in_stack_00000008 = *in_stack_00000008 - local_48;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 138,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "*in_stack_00000008 = 0.0;",
-      "type": "stack_param"
-    }
-  ]
+  "suspects": []
 }

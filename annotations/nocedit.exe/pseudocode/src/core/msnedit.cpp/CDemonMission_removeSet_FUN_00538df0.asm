@@ -45,7 +45,7 @@ section .text
     PUSH EBX                            ; 00538e27
     PUSH EDI                            ; 00538e28
     CALL core_msnedit.cpp_CDemonMission_deleteActor_FUN_00538ea0 ; 00538e29
-        ;   XREF to: 00538ea0 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_deleteActor_FUN_00538ea0(CDemonMission * this_ptr, int param_2)
+        ;   XREF to: 00538ea0 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_deleteActor_FUN_00538ea0(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 00538e2e
     PUSH 0x1                            ; 00538e31
     PUSH EBX                            ; 00538e33

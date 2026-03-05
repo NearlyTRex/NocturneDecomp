@@ -12,9 +12,10 @@ void __cdecl core_stranger_cpp_CStranger_setup_FUN_005bb4b0(CStranger *this_ptr)
   CDeformableModelInstance *this_ptr_00;
   CSkeleton *this_ptr_01;
   CMotionList *pCVar1;
-  int motion_index;
   CVector3f *pCVar2;
   CDeformableModel *this_ptr_02;
+  char *pcVar3;
+  int iVar4;
   CVector3f local_24;
   CVector3f local_18;
   
@@ -61,19 +62,25 @@ void __cdecl core_stranger_cpp_CStranger_setup_FUN_005bb4b0(CStranger *this_ptr)
                            (this_ptr_01,"Bip01 Spine",1);
   INT_03f6bb18 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
                            (this_ptr_01,"Bip01 Pelvis",1);
+  iVar4 = 1;
+  pcVar3 = "turnlstart";
   (this_ptr->base).base.carry_hands[0].bone_index = INT_03f6bb00;
   (this_ptr->base).base.carry_hands[1].bone_index = INT_03f6bb04;
   pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                      (&this_ptr_00->motion_controller);
-  INT_03f6bb1c = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(pCVar1);
+  INT_03f6bb1c = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(pCVar1,pcVar3,iVar4);
+  iVar4 = 1;
+  pcVar3 = "turnrstart";
   pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                      (&this_ptr_00->motion_controller);
-  INT_03f6bb20 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(pCVar1);
+  INT_03f6bb20 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(pCVar1,pcVar3,iVar4);
+  iVar4 = 1;
+  pcVar3 = "pickup";
   pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                      (&this_ptr_00->motion_controller);
-  motion_index = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(pCVar1);
+  iVar4 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(pCVar1,pcVar3,iVar4);
   core_skeleton_cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_0059e070
-            (this_ptr_00,motion_index,22.0);
+            (this_ptr_00,iVar4,22.0);
   pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
                      (this_ptr_00,&local_18,INT_03f6bb04);
   if (&this_ptr->ref_r_hand_bone_pos != pCVar2) {

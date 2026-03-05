@@ -42,7 +42,7 @@ void __cdecl core_boxactor_cpp_CBoxActor_getPropertyList_FUN_004226e0(CBoxActor 
               (property_list,"push sound",this_ptr->push_sound);
   }
   core_actor_cpp_CActorPropertyList_addGroundType_FUN_0040e300
-            (property_list,"groundType",&this_ptr->ground_type);
+            (property_list,"groundType",(int *)&this_ptr->ground_type);
   core_actor_cpp_CActorPropertyList_addBool_FUN_0040e330
             (property_list,"plotInShadowFlag",&this_ptr->plot_in_shadow_flag);
   core_actor_cpp_CActorPropertyList_addBool_FUN_0040e330

@@ -2,6 +2,7 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/enums/EHeroType.h"
 #include "types/structs/SNetworkAddr.h"
 
 // Structure: SGameSettingsPlayer
@@ -9,7 +10,7 @@
 typedef struct SGameSettingsPlayer {
     char name[20]; // 0x0
     SNetworkAddr addr; // 0x14
-    uint hero_number; // 0x1c
+    EHeroType hero_number; // 0x1c
     uint aim_mode; // 0x20
     int ready_flag; // 0x24
 } SGameSettingsPlayer;

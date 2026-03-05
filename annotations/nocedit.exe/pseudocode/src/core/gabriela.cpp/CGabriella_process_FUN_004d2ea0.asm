@@ -160,8 +160,8 @@ section .text
         ;   Label: LAB_004d2efe
     PUSH EAX                            ; 004d2f04
     PUSH EBX                            ; 004d2f05
-    CALL core_gabriela.cpp_CGabriella_FUN_004d4cf0 ; 004d2f06
-        ;   XREF to: 004d4cf0 (UNCONDITIONAL_CALL)  ; float * core_gabriela.cpp_CGabriella_FUN_004d4cf0(CGabriella * this_ptr)
+    CALL core_gabriela.cpp_CGabriella_getTorsoCenterPosition_FUN_004d4cf0 ; 004d2f06
+        ;   XREF to: 004d4cf0 (UNCONDITIONAL_CALL)  ; CVector3f * core_gabriela.cpp_CGabriella_getTorsoCenterPosition_FUN_004d4cf0(CGabriella * this_ptr, CVector3f * out_position)
     ADD ESP,0x8                         ; 004d2f0b
     PUSH EAX                            ; 004d2f0e
     LEA EAX,[EBP + 0xffffff06]          ; 004d2f0f
@@ -179,8 +179,8 @@ section .text
     MOV dword ptr [EAX + 0x4],EDX       ; 004d2f38
     MOV EDX,dword ptr [EAX + 0x4]       ; 004d2f3b
     MOV dword ptr [EAX],EDX             ; 004d2f3e
-    CALL core_gabriela.cpp_CGabriella_FUN_004d4890 ; 004d2f40
-        ;   XREF to: 004d4890 (UNCONDITIONAL_CALL)  ; void core_gabriela.cpp_CGabriella_FUN_004d4890(CGabriella * this_ptr)
+    CALL core_gabriela.cpp_CGabriella_processMotionEvents_FUN_004d4890 ; 004d2f40
+        ;   XREF to: 004d4890 (UNCONDITIONAL_CALL)  ; void core_gabriela.cpp_CGabriella_processMotionEvents_FUN_004d4890(CGabriella * this_ptr, float delta_time)
     FLD float ptr [EBX + 0x243c]        ; 004d2f45
     FLDZ                                ; 004d2f4b
     ADD ESP,0x8                         ; 004d2f4d
@@ -494,15 +494,15 @@ section .text
     PUSH EBX                            ; 004d32de
     FSTP ST1                            ; 004d32df
     FSTP float ptr [EBX + 0x1fbe8]      ; 004d32e1
-    CALL core_gabriela.cpp_CGabriella_FUN_004d4c90 ; 004d32e7
-        ;   XREF to: 004d4c90 (UNCONDITIONAL_CALL)  ; int core_gabriela.cpp_CGabriella_FUN_004d4c90(CGabriella * this_ptr)
+    CALL core_gabriela.cpp_CGabriella_getFlashlightMinAngle_FUN_004d4c90 ; 004d32e7
+        ;   XREF to: 004d4c90 (UNCONDITIONAL_CALL)  ; float core_gabriela.cpp_CGabriella_getFlashlightMinAngle_FUN_004d4c90(CGabriella * this_ptr)
     MOV dword ptr [EBP + 0x76],EAX      ; 004d32ec
     ADD ESP,0x4                         ; 004d32ef
     FLD float ptr [EBP + 0x76]          ; 004d32f2
     PUSH EBX                            ; 004d32f5
     FSTP float ptr [EBP + 0x42]         ; 004d32f6
-    CALL core_gabriela.cpp_CGabriella_FUN_004d4ce0 ; 004d32f9
-        ;   XREF to: 004d4ce0 (UNCONDITIONAL_CALL)  ; int core_gabriela.cpp_CGabriella_FUN_004d4ce0(CGabriella * this_ptr)
+    CALL core_gabriela.cpp_CGabriella_getFlashlightMaxAngle_FUN_004d4ce0 ; 004d32f9
+        ;   XREF to: 004d4ce0 (UNCONDITIONAL_CALL)  ; float core_gabriela.cpp_CGabriella_getFlashlightMaxAngle_FUN_004d4ce0(CGabriella * this_ptr)
     FLD float ptr [EBX + 0x1fbe8]       ; 004d32fe
     MOV dword ptr [EBP + 0x76],EAX      ; 004d3304
     ADD ESP,0x4                         ; 004d3307
@@ -630,8 +630,8 @@ section .text
         ;   Label: LAB_004d348b
     PUSH dword ptr [EBP + 0x92]         ; 004d348c
     PUSH EBX                            ; 004d3492
-    CALL core_gabriela.cpp_CGabriella_FUN_004d6540 ; 004d3493
-        ;   XREF to: 004d6540 (UNCONDITIONAL_CALL)  ; void core_gabriela.cpp_CGabriella_FUN_004d6540(CGabriella * this_ptr)
+    CALL core_gabriela.cpp_CGabriella_updateAimTracking_FUN_004d6540 ; 004d3493
+        ;   XREF to: 004d6540 (UNCONDITIONAL_CALL)  ; void core_gabriela.cpp_CGabriella_updateAimTracking_FUN_004d6540(CGabriella * this_ptr, float delta_time, int is_holstering)
     FLD float ptr [EBP + 0x92]          ; 004d3498
     FDIV float ptr [0x0065e7bc]         ; 004d349e | FLOAT_0065e7bc
     FSUBR float ptr [EBX + 0x1fc0c]     ; 004d34a4
@@ -649,8 +649,8 @@ section .text
         ;   XREF to: 004d3f82 (CONDITIONAL_JUMP)  ; LAB_004d3f82
     PUSH EBX                            ; 004d34ce
         ;   Label: LAB_004d34ce
-    CALL core_gabriela.cpp_CGabriella_FUN_004d4d80 ; 004d34cf
-        ;   XREF to: 004d4d80 (UNCONDITIONAL_CALL)  ; void core_gabriela.cpp_CGabriella_FUN_004d4d80(CGabriella * this_ptr)
+    CALL core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80 ; 004d34cf
+        ;   XREF to: 004d4d80 (UNCONDITIONAL_CALL)  ; void core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80(CGabriella * this_ptr)
     ADD ESP,0x4                         ; 004d34d4
     TEST ESI,ESI                        ; 004d34d7
     SETZ AL                             ; 004d34d9
@@ -658,8 +658,8 @@ section .text
     PUSH EAX                            ; 004d34e1
     PUSH dword ptr [EBP + 0x92]         ; 004d34e2
     PUSH EBX                            ; 004d34e8
-    CALL core_gabriela.cpp_CGabriella_FUN_004d6d40 ; 004d34e9
-        ;   XREF to: 004d6d40 (UNCONDITIONAL_CALL)  ; void core_gabriela.cpp_CGabriella_FUN_004d6d40(CGabriella * this_ptr)
+    CALL core_gabriela.cpp_CGabriella_updateClavicleCollisionAvoidance_FUN_004d6d40 ; 004d34e9
+        ;   XREF to: 004d6d40 (UNCONDITIONAL_CALL)  ; void core_gabriela.cpp_CGabriella_updateClavicleCollisionAvoidance_FUN_004d6d40(CGabriella * this_ptr, float delta_time, int has_carried_objects)
     ADD ESP,0xc                         ; 004d34ee
     PUSH dword ptr [EBP + 0x92]         ; 004d34f1
     PUSH EBX                            ; 004d34f7
@@ -706,8 +706,8 @@ section .text
     LEA EAX,[EBP + 0xe]                 ; 004d355f
     PUSH EAX                            ; 004d3562
     PUSH EBX                            ; 004d3563
-    CALL core_gabriela.cpp_CGabriella_FUN_004d4cf0 ; 004d3564
-        ;   XREF to: 004d4cf0 (UNCONDITIONAL_CALL)  ; float * core_gabriela.cpp_CGabriella_FUN_004d4cf0(CGabriella * this_ptr)
+    CALL core_gabriela.cpp_CGabriella_getTorsoCenterPosition_FUN_004d4cf0 ; 004d3564
+        ;   XREF to: 004d4cf0 (UNCONDITIONAL_CALL)  ; CVector3f * core_gabriela.cpp_CGabriella_getTorsoCenterPosition_FUN_004d4cf0(CGabriella * this_ptr, CVector3f * out_position)
     ADD ESP,0x8                         ; 004d3569
     LEA EAX,[EBP + 0xe]                 ; 004d356c
     PUSH EAX                            ; 004d356f
@@ -754,8 +754,8 @@ section .text
     PUSH dword ptr [EBP + 0x92]         ; 004d35ec
         ;   Label: LAB_004d35ec
     PUSH EBX                            ; 004d35f2
-    CALL core_gabriela.cpp_CGabriella_FUN_004d5550 ; 004d35f3
-        ;   XREF to: 004d5550 (UNCONDITIONAL_CALL)  ; void core_gabriela.cpp_CGabriella_FUN_004d5550(CGabriella * this_ptr)
+    CALL core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004d5550 ; 004d35f3
+        ;   XREF to: 004d5550 (UNCONDITIONAL_CALL)  ; void core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004d5550(CGabriella * this_ptr, float delta_time)
     MOV ESI,dword ptr [EBX + 0x1fbec]   ; 004d35f8
     ADD ESP,0x8                         ; 004d35fe
     CMP ESI,0x3                         ; 004d3601
@@ -778,8 +778,8 @@ section .text
         ;   Label: LAB_004d363a
     PUSH EBX                            ; 004d3640
     FSTP float ptr [EBX + 0x5fa84]      ; 004d3641
-    CALL core_gabriela.cpp_CGabriella_FUN_004d5f70 ; 004d3647
-        ;   XREF to: 004d5f70 (UNCONDITIONAL_CALL)  ; int core_gabriela.cpp_CGabriella_FUN_004d5f70(CGabriella * this_ptr)
+    CALL core_gabriela.cpp_CGabriella_canFireWeapon_FUN_004d5f70 ; 004d3647
+        ;   XREF to: 004d5f70 (UNCONDITIONAL_CALL)  ; int core_gabriela.cpp_CGabriella_canFireWeapon_FUN_004d5f70(CGabriella * this_ptr)
     ADD ESP,0x4                         ; 004d364c
     TEST EAX,EAX                        ; 004d364f
     JZ 0x004d4152                       ; 004d3651
@@ -788,8 +788,8 @@ section .text
     PUSH EBX                            ; 004d3661
         ;   Label: LAB_004d3661
     MOV dword ptr [EBX + 0x1fbec],0x0   ; 004d3662
-    CALL core_gabriela.cpp_CGabriella_FUN_004d5fe0 ; 004d366c
-        ;   XREF to: 004d5fe0 (UNCONDITIONAL_CALL)  ; void core_gabriela.cpp_CGabriella_FUN_004d5fe0(CGabriella * this_ptr)
+    CALL core_gabriela.cpp_CGabriella_tryFireWeapon_FUN_004d5fe0 ; 004d366c
+        ;   XREF to: 004d5fe0 (UNCONDITIONAL_CALL)  ; void core_gabriela.cpp_CGabriella_tryFireWeapon_FUN_004d5fe0(CGabriella * this_ptr)
     LEA EAX,[EBX + 0x1f738]             ; 004d3671
     MOV EAX,dword ptr [EAX + 0x330]     ; 004d3677
     MOV ESI,dword ptr [EAX + 0x2ec]     ; 004d367d
@@ -841,8 +841,8 @@ section .text
     PUSH dword ptr [EBP + 0x92]         ; 004d3708
         ;   Label: LAB_004d3708
     PUSH EBX                            ; 004d370e
-    CALL core_gabriela.cpp_CGabriella_FUN_004d4190 ; 004d370f
-        ;   XREF to: 004d4190 (UNCONDITIONAL_CALL)  ; void core_gabriela.cpp_CGabriella_FUN_004d4190(CGabriella * this_ptr)
+    CALL core_gabriela.cpp_CGabriella_processAI_FUN_004d4190 ; 004d370f
+        ;   XREF to: 004d4190 (UNCONDITIONAL_CALL)  ; void core_gabriela.cpp_CGabriella_processAI_FUN_004d4190(CGabriella * this_ptr)
     ADD ESP,0x8                         ; 004d3714
     JMP 0x004d2ed9                      ; 004d3717
         ;   XREF to: 004d2ed9 (UNCONDITIONAL_JUMP)  ; LAB_004d2ed9
@@ -1264,15 +1264,15 @@ section .text
     JZ 0x004d321d                       ; 004d3b9a
         ;   XREF to: 004d321d (CONDITIONAL_JUMP)  ; LAB_004d321d
     PUSH EBX                            ; 004d3ba0
-    CALL core_gabriela.cpp_CGabriella_FUN_004d5870 ; 004d3ba1
-        ;   XREF to: 004d5870 (UNCONDITIONAL_CALL)  ; int core_gabriela.cpp_CGabriella_FUN_004d5870(CGabriella * this_ptr)
+    CALL core_gabriela.cpp_CGabriella_findAndPickupNearbyObject_FUN_004d5870 ; 004d3ba1
+        ;   XREF to: 004d5870 (UNCONDITIONAL_CALL)  ; int core_gabriela.cpp_CGabriella_findAndPickupNearbyObject_FUN_004d5870(CGabriella * this_ptr)
     ADD ESP,0x4                         ; 004d3ba6
     TEST EAX,EAX                        ; 004d3ba9
     JNZ 0x004d321d                      ; 004d3bab
         ;   XREF to: 004d321d (CONDITIONAL_JUMP)  ; LAB_004d321d
     PUSH EBX                            ; 004d3bb1
-    CALL core_gabriela.cpp_CGabriella_FUN_004d6050 ; 004d3bb2
-        ;   XREF to: 004d6050 (UNCONDITIONAL_CALL)  ; int core_gabriela.cpp_CGabriella_FUN_004d6050(CGabriella * this_ptr)
+    CALL core_gabriela.cpp_CGabriella_tryThrowObject_FUN_004d6050 ; 004d3bb2
+        ;   XREF to: 004d6050 (UNCONDITIONAL_CALL)  ; int core_gabriela.cpp_CGabriella_tryThrowObject_FUN_004d6050(CGabriella * this_ptr)
     ADD ESP,0x4                         ; 004d3bb7
     JMP 0x004d321d                      ; 004d3bba
         ;   XREF to: 004d321d (UNCONDITIONAL_JUMP)  ; LAB_004d321d
@@ -1681,8 +1681,8 @@ section .text
         ;   XREF to: 004d34ce (UNCONDITIONAL_JUMP)  ; LAB_004d34ce
     PUSH EBX                            ; 004d4066
         ;   Label: LAB_004d4066
-    CALL core_gabriela.cpp_CGabriella_FUN_004d5c60 ; 004d4067
-        ;   XREF to: 004d5c60 (UNCONDITIONAL_CALL)  ; int core_gabriela.cpp_CGabriella_FUN_004d5c60(CGabriella * this_ptr)
+    CALL core_gabriela.cpp_CGabriella_tryClimbLadder_FUN_004d5c60 ; 004d4067
+        ;   XREF to: 004d5c60 (UNCONDITIONAL_CALL)  ; int core_gabriela.cpp_CGabriella_tryClimbLadder_FUN_004d5c60(CGabriella * this_ptr)
     ADD ESP,0x4                         ; 004d406c
     JMP 0x004d34ce                      ; 004d406f
         ;   XREF to: 004d34ce (UNCONDITIONAL_JUMP)  ; LAB_004d34ce

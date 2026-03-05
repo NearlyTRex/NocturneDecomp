@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_model_c_loadMRGLTextures_FUN_00528870(SMRGLHeaderExtended *block)
+; void __cdecl engine_model_c_loadMRGLTextures_FUN_00528870(SMRGLHeaderExtended *mrgl)
 ;
 ; Parameters:
-; SMRGLHeaderExtended * Stack[0x4]:4   block
+; SMRGLHeaderExtended * Stack[0x4]:4   mrgl
 ; Local Variables:
 ; undefined4       Stack[-0x2c]:4  local_2c
 ; undefined        Stack[-0x28]:1  local_28

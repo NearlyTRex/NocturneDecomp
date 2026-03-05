@@ -2,11 +2,11 @@
 // Address: 00524a80
 // Address Range: [[00524a80, 00524c12]]
 // Convention: __cdecl
-// Signature: int __cdecl core_mission_cpp_CDemonMission_createHeros_FUN_00524a80(CDemonMission *this_ptr,int creation_flags)
+// Signature: int __cdecl core_mission_cpp_CDemonMission_createHeros_FUN_00524a80(CDemonMission *this_ptr,CCharacter *existing_hero)
 
 #include "nocturne.h"
 
-int __cdecl core_mission_cpp_CDemonMission_createHeros_FUN_00524a80(CDemonMission *this_ptr,int creation_flags)
+int __cdecl core_mission_cpp_CDemonMission_createHeros_FUN_00524a80(CDemonMission *this_ptr,CCharacter *existing_hero)
 
 {
   CDemonActor *actor_ptr;
@@ -25,7 +25,7 @@ int __cdecl core_mission_cpp_CDemonMission_createHeros_FUN_00524a80(CDemonMissio
     g_HeroCount = 1;
     g_LocalHeroIndex = g_CNetGamePtr->connection_type;
     iVar4 = core_mission_cpp_CDemonMission_createOneHero_FUN_00524920
-                      (this_ptr,0,g_CGamePtr->hero_number,(void *)creation_flags);
+                      (this_ptr,0,g_CGamePtr->hero_number,existing_hero);
     if (iVar4 == 0) {
       return 0;
     }
@@ -45,7 +45,7 @@ int __cdecl core_mission_cpp_CDemonMission_createHeros_FUN_00524a80(CDemonMissio
       do {
         iVar1 = core_mission_cpp_CDemonMission_createOneHero_FUN_00524920
                           (this_ptr,iVar4,*(int *)(g_CNetGamePtr->players[0].name + iVar3 + 0x14),
-                           (void *)0x0);
+                           (CCharacter *)0x0);
         if (iVar1 == 0) {
           return 0;
         }
@@ -59,7 +59,7 @@ int __cdecl core_mission_cpp_CDemonMission_createHeros_FUN_00524a80(CDemonMissio
     }
     g_LocalHeroIndex = g_CNetGamePtr->local_player_index;
   }
-  g_HeroActors[g_LocalHeroIndex]->control_type = 0;
+  g_HeroActors[g_LocalHeroIndex]->control_type = HERO_CONTROL_PLAYER;
   actor_ptr = this_ptr->first_actor;
   while (actor_ptr != (CDemonActor *)0x0) {
     iVar4 = core_actor_cpp_isOfClass_FUN_0040c6d0(actor_ptr,"CHeroPlaceholder");

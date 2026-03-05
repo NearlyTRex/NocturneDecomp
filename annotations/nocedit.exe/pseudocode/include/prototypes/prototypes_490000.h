@@ -121,8 +121,8 @@ float __cdecl core_dtri_cpp_rayTriangleIntersection_FUN_0049a800(CDemonTriangle 
 int __cdecl core_dtri_cpp_cylinderEdgeIntersection_FUN_0049aa00(SIntersectXZCylinder *cylinder);
 void __cdecl core_dtri_cpp_cylinderEdgeTestWithHeight_FUN_0049ace0(SIntersectXZCylinder *cylinder,CVector3f *vertex1,CVector3f *vertex2);
 void __cdecl core_dtri_cpp_cylinderTriangleTest_FUN_0049ad80(CDemonTriangle *triangle,SIntersectXZCylinder *cylinder);
-int __cdecl core_dtri_cpp_rayEdgeHeightTest_FUN_0049b180(CVector3f *vertex1,CVector3f *vertex2,float rayRadius,float *outHeight);
-int __cdecl core_dtri_cpp_rayTriangleFloorTest_FUN_0049b2f0(CDemonTriangle *triangle,float x,float z,float *out_height);
+int __cdecl core_dtri_cpp_rayEdgeHeightTest_FUN_0049b180(CVector3f *vertex1,CVector3f *vertex2,float ray_radius,float *out_height);
+int __cdecl core_dtri_cpp_rayTriangleFloorTest_FUN_0049b2f0(CDemonTriangle *triangle,CVector3f *position,float search_radius,float *out_height);
 void __cdecl core_dtri_cpp_copyVector3_FUN_0049b6a0(CVector3f *dest_ptr,CVector3f *src_ptr);
 void __cdecl core_dtri_cpp_clipLineToPlane_FUN_0049b6c0(CVector3f *point1_ptr,CVector3f *point2_ptr,CVector3f *result_ptr,double plane_nx, double plane_ny,double plane_nz,double plane_d);
 void __cdecl core_dtri_cpp_clipPolygonToTop_FUN_0049b860(float y_max);

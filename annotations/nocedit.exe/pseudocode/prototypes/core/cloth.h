@@ -117,7 +117,7 @@ void __cdecl CClothList::applyRotation(CClothList *this_ptr,CVector3f *euler);
 
 // Original: core_cloth.cpp_CClothList_FUN_0043c3e0
 // Address: 0043c3e0
-void __cdecl CClothList(CClothList *this_ptr,CVector3f *param_2);
+void __cdecl CClothList(CClothList *this_ptr,CVector3f *wind_velocity);
 
 // Original: core_cloth.cpp_CCloth_addCollisionBone_FUN_0043c430
 // Address: 0043c430

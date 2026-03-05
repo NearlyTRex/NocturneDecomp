@@ -4014,7 +4014,7 @@
           "type":"CBaron*"
         },
         {
-          "name":"param_2",
+          "name":"target",
           "storage":{
             "offset":8,
             "size":4,
@@ -4027,7 +4027,7 @@
               }
             ]
           },
-          "type":"int"
+          "type":"CDemonActor*"
         }
       ]
     }
@@ -7640,7 +7640,7 @@
           "type":"CCharacter*"
         },
         {
-          "name":"bone_index",
+          "name":"skeleton",
           "storage":{
             "offset":8,
             "size":4,
@@ -7653,7 +7653,7 @@
               }
             ]
           },
-          "type":"int"
+          "type":"CSkeleton*"
         },
         {
           "name":"target_bone_index",
@@ -7996,7 +7996,7 @@
           "type":"float"
         },
         {
-          "name":"param_3",
+          "name":"disable_search",
           "storage":{
             "offset":12,
             "size":4,
@@ -8075,8 +8075,44 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_charactr.cpp_FUN_0042f920",
-    "ret":"void"
+    "name":"core_charactr.cpp_setActorXPos_FUN_0042f920",
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"actor",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonActor*"
+        },
+        {
+          "name":"x",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        }
+      ]
+    }
   },
   {
     "addr":"0042fd20",
@@ -13923,6 +13959,70 @@
             ]
           },
           "type":"undefined1"
+        },
+        {
+          "name":"unionfacet5_448f3a",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:4041bf7cc7ca",
+                "offset":70651129677770,
+                "size":4
+              }
+            ]
+          },
+          "type":"UActorVTable*",
+          "use":26
+        },
+        {
+          "name":"unionfacet5_449284",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:4041562fce40",
+                "offset":70649363025472,
+                "size":4
+              }
+            ]
+          },
+          "type":"UActorVTable*",
+          "use":868
+        },
+        {
+          "name":"unionfacet5_4492cd",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:4041b033d9f7",
+                "offset":70650873240055,
+                "size":4
+              }
+            ]
+          },
+          "type":"UActorVTable*",
+          "use":941
+        },
+        {
+          "name":"unionfacet5_449330",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:4041c5fd7dba",
+                "offset":70651238776250,
+                "size":4
+              }
+            ]
+          },
+          "type":"UActorVTable*",
+          "use":1040
         }
       ],
       "params":[
@@ -37351,6 +37451,22 @@
             ]
           },
           "type":"undefined1"
+        },
+        {
+          "name":"unionfacet5_4cb93e",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:4041d82143b7",
+                "offset":70651543110583,
+                "size":4
+              }
+            ]
+          },
+          "type":"UActorVTable*",
+          "use":30
         }
       ],
       "params":[
@@ -47446,7 +47562,7 @@
           "type":"CLever*"
         },
         {
-          "name":"param_2",
+          "name":"new_state",
           "storage":{
             "offset":8,
             "size":4,
@@ -49303,7 +49419,7 @@
               }
             ]
           },
-          "type":"int*"
+          "type":"EInputCodeType*"
         },
         {
           "name":"description",
@@ -51808,7 +51924,7 @@
           "type":"int"
         },
         {
-          "name":"param_3",
+          "name":"hero_type",
           "storage":{
             "offset":12,
             "size":4,
@@ -51824,7 +51940,7 @@
           "type":"int"
         },
         {
-          "name":"param_4",
+          "name":"existing_actor",
           "storage":{
             "offset":16,
             "size":4,
@@ -51837,7 +51953,7 @@
               }
             ]
           },
-          "type":"void*"
+          "type":"CCharacter*"
         }
       ],
       "ret_storage":{
@@ -55921,7 +56037,7 @@
           "type":"CDemonMission*"
         },
         {
-          "name":"param_2",
+          "name":"actor",
           "storage":{
             "offset":8,
             "size":4,
@@ -55934,7 +56050,7 @@
               }
             ]
           },
-          "type":"int"
+          "type":"CDemonActor*"
         }
       ]
     }
@@ -79485,6 +79601,21 @@
     "vars":{
       "locals":[
         {
+          "name":"this_ptr_03",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CEnemy*",
+          "use":1046
+        },
+        {
           "name":"local_14",
           "storage":{
             "offset":-20,
@@ -94771,7 +94902,7 @@
           "type":"CZombie*"
         },
         {
-          "name":"param_2",
+          "name":"out_attract_position",
           "storage":{
             "offset":8,
             "size":4,
@@ -95121,7 +95252,7 @@
           "type":"CZombie*"
         },
         {
-          "name":"param_2",
+          "name":"grabber",
           "storage":{
             "offset":8,
             "size":4,

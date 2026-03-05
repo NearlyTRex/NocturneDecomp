@@ -16,7 +16,7 @@ void __cdecl core_scat_cpp_CScat_FUN_00557d20(CScat *this_ptr)
   
   do {
     bone_index = core_motion_cpp_CMotionController_advance_FUN_0052d610
-                           (&(this_ptr->base).base.model.motion_controller);
+                           (&(this_ptr->base).base.model.motion_controller,&stack0x00000008);
     if (bone_index == 100) {
       this_ptr_00 = (CCharacter *)
                     core_actor_cpp_castToClassHash_FUN_0040c790

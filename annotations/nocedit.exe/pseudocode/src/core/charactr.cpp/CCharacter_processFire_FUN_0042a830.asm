@@ -447,7 +447,7 @@ section .text
     PUSH EDX                            ; 0042acb1
     PUSH EBX                            ; 0042acb2
     CALL core_charactr.cpp_CCharacter_spawnFireOnBone_FUN_0042a520 ; 0042acb3
-        ;   XREF to: 0042a520 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_spawnFireOnBone_FUN_0042a520(CCharacter * this_ptr, int bone_index, int target_bone_index)
+        ;   XREF to: 0042a520 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_spawnFireOnBone_FUN_0042a520(CCharacter * this_ptr, CSkeleton * skeleton, int target_bone_index)
     ADD ESP,0xc                         ; 0042acb8
     JMP 0x0042ab2b                      ; 0042acbb
         ;   XREF to: 0042ab2b (UNCONDITIONAL_JUMP)  ; LAB_0042ab2b
@@ -466,7 +466,7 @@ section .text
     PUSH ECX                            ; 0042acdc
     PUSH EBX                            ; 0042acdd
     CALL core_charactr.cpp_CCharacter_spawnFireOnBone_FUN_0042a520 ; 0042acde
-        ;   XREF to: 0042a520 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_spawnFireOnBone_FUN_0042a520(CCharacter * this_ptr, int bone_index, int target_bone_index)
+        ;   XREF to: 0042a520 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_spawnFireOnBone_FUN_0042a520(CCharacter * this_ptr, CSkeleton * skeleton, int target_bone_index)
     ADD ESP,0xc                         ; 0042ace3
     JMP 0x0042ac56                      ; 0042ace6
         ;   XREF to: 0042ac56 (UNCONDITIONAL_JUMP)  ; LAB_0042ac56

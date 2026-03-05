@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   ammo_count
 ;
 ; XREF[1]:
-;   core_ammobox.cpp_CAmmoBox_FUN_00411700 at 004117aa
+;   core_ammobox.cpp_CAmmoBox_addToInventory_FUN_00411700 at 004117aa
 ;
 ; *****************************************************************************
 

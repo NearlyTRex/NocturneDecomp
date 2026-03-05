@@ -101,7 +101,7 @@ void __cdecl CStranger::computeWeaponAttachXForm(CStranger *this_ptr,CDemonActor
 
 // Original: core_stranger.cpp_CStranger_tryPickupObject_FUN_005c1680
 // Address: 005c1680
-int __cdecl CStranger::tryPickupObject(CStranger *this_ptr,char *param_2);
+int __cdecl CStranger::tryPickupObject(CStranger *this_ptr,char *class_name);
 
 // Original: core_stranger.cpp_CStranger_processPickupComplete_FUN_005c1f00
 // Address: 005c1f00

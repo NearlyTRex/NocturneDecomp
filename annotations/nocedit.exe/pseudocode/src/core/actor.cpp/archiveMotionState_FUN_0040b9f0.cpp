@@ -14,7 +14,8 @@ void __cdecl core_actor_cpp_archiveMotionState_FUN_0040b9f0(CMotionController *m
   if (g_ActorReadingMode != 1) {
     _fprintf(g_ActorDataFile,"%s{ // %s\n",g_PropertyNamePrefix,property_name);
     core_actor_cpp_adjustIndentationLevel_FUN_0040aee0(1);
-    core_motion_cpp_CMotionController_save_FUN_0052e670(motion_controller,g_ActorDataFile);
+    core_motion_cpp_CMotionController_save_FUN_0052e670
+              (motion_controller,g_ActorDataFile,g_PropertyNamePrefix);
     core_actor_cpp_adjustIndentationLevel_FUN_0040aee0(-1);
     _fprintf(g_ActorDataFile,"%s}\n",g_PropertyNamePrefix);
     return;

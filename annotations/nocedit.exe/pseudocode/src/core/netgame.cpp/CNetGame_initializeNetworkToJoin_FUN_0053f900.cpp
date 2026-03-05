@@ -18,11 +18,12 @@ int __cdecl core_netgame_cpp_CNetGame_initializeNetworkToJoin_FUN_0053f900(CNetG
   uint uVar5;
   char *pcVar6;
   byte bVar7;
-  int hero_number;
+  EHeroType hero_number;
+  EAimMode aim_mode;
   float local_60;
   uint uStack_53;
   char local_4f [20];
-  int local_3b;
+  EHeroType local_3b;
   int local_37;
   SNetworkAddr local_30;
   SNetworkAddr local_28;
@@ -34,11 +35,12 @@ int __cdecl core_netgame_cpp_CNetGame_initializeNetworkToJoin_FUN_0053f900(CNetG
   core_netgame_cpp_CNetGame_disconnect_FUN_0053fd00(this_ptr,0);
   pCVar2 = g_CGamePtr;
   this_ptr->player_count = 0;
-  iVar3 = pCVar2->aim_mode;
+  aim_mode = pCVar2->aim_mode;
   hero_number = pCVar2->hero_number;
   pcVar6 = this_ptr->player_name;
   support_trisock_cpp_createNetworkAddr_FUN_005e1940(&local_30,(uint32_t *)g_AnyAddressIP,0x1ddf);
-  iVar3 = core_netgame_cpp_CNetGame_addPlayer_FUN_005412b0(this_ptr,addr,pcVar6,hero_number,iVar3);
+  iVar3 = core_netgame_cpp_CNetGame_addPlayer_FUN_005412b0
+                    (this_ptr,addr,pcVar6,hero_number,aim_mode);
   this_ptr->local_player_index = iVar3;
   iVar3 = core_netgame_cpp_CNetGame_initializeNetwork_FUN_0053fbc0(this_ptr);
   if (iVar3 == 0) {

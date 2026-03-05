@@ -195,9 +195,9 @@ int __cdecl CDeformableModel::findMinWeightBone(CDeformableModel *this_ptr,int l
 // Address: 0059dd60
 int __cdecl CDeformableModel::calculateMemorySize(CDeformableModel *this_ptr);
 
-// Original: core_skeleton.cpp_defaultBlendWeight_FUN_0059ddb0
+// Original: core_skeleton.cpp_blendWeightCallback_FUN_0059ddb0
 // Address: 0059ddb0
-float __cdecl defaultBlendWeight(int current_bone_index,int target_bone_index,float blend_weight,int hierarchy_distance,CDeformableModelInstance *instance);
+float __cdecl blendWeightCallback(int current_bone_index,int target_bone_index,float blend_weight,int hierarchy_distance,CDeformableModelInstance *instance);
 
 // Original: core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0059ddc0
 // Address: 0059ddc0

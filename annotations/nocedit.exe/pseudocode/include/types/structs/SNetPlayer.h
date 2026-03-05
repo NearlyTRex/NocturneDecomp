@@ -2,6 +2,7 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/enums/EHeroType.h"
 #include "types/structs/SNetworkAddr.h"
 #include "types/structs/SPlayerControl.h"
 
@@ -9,7 +10,7 @@
 // Ghidra size: 0x78 (120 bytes)
 typedef struct SNetPlayer {
     char name[20]; // 0x0
-    int hero_number; // 0x14
+    EHeroType hero_number; // 0x14
     int aim_mode; // 0x18
     SNetworkAddr addr; // 0x1c
     uint last_arrival_time; // 0x24

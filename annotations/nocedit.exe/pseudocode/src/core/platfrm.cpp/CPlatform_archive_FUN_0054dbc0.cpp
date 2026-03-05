@@ -41,7 +41,7 @@ void __cdecl core_platfrm_cpp_CPlatform_archive_FUN_0054dbc0(CPlatform *this_ptr
     core_actor_cpp_archiveFloat_FUN_0040b770
               (&this_ptr->travel_time_to_end,"travelTimeToEnd");
   }
-  core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->ground_type,"groundType");
+  core_actor_cpp_archiveInteger_FUN_0040b7f0((int *)&this_ptr->ground_type,"groundType");
   if (1 < g_CPlatformClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->one_shot,"oneShot");
   }

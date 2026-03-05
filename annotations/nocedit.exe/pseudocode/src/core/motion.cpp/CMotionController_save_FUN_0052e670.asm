@@ -1,11 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_motion_cpp_CMotionController_save_FUN_0052e670(CMotionController *this_ptr,_FILE *file_handle)
+; void __cdecl core_motion_cpp_CMotionController_save_FUN_0052e670(CMotionController *this_ptr,_FILE *file_handle,char *indent_prefix)
 ;
 ; Parameters:
 ; CMotionController * Stack[0x4]:4   this_ptr
 ; _FILE *          Stack[0x8]:4   file_handle
+; char *           Stack[0xc]:4   indent_prefix
 ; Local Variables:
 ; undefined8       Stack[-0x14]:8  local_14
 ;

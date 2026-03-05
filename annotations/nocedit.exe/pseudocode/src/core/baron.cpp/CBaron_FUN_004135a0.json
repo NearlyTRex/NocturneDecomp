@@ -6,17 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 25,
-    "complexity_score": 36,
+    "complexity_score": 10,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 11,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unnamed_param"
-    ],
-    "total_lines": 36
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 35
   },
   "cross_references": [
     {
@@ -42,7 +40,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_baron.cpp_CBaron_FUN_004135a0",
-    "signature": "void __cdecl core_baron_cpp_CBaron_FUN_004135a0(CBaron *this_ptr,int param_2)"
+    "signature": "void __cdecl core_baron_cpp_CBaron_FUN_004135a0(CBaron *this_ptr,CDemonActor *target)"
   },
   "function_calls": [
     {
@@ -92,29 +90,12 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "target",
         "offset": 8,
         "size": 4,
-        "type": "int"
+        "type": "CDemonActor *"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_baron_cpp_CBaron_FUN_004135a0(CBaron *this_ptr,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 5,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (((CDemonActor *)param_2 == this_ptr->target_actor) &&",
-      "type": "unnamed_param"
-    }
-  ]
+  "suspects": []
 }

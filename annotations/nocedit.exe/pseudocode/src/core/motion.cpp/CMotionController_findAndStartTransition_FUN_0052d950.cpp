@@ -17,11 +17,11 @@ int __cdecl core_motion_cpp_CMotionController_findAndStartTransition_FUN_0052d95
   pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(this_ptr);
   iVar2 = this_ptr->state_index;
   if ((iVar2 < 0) || (iVar2 == pSVar1->state_index)) {
-    this_ptr->in_transition = 0;
+    this_ptr->in_transition = (SMotionTransition *)0x0;
     return 0;
   }
-  if (((int *)this_ptr->in_transition == (int *)0x0) || (iVar2 != *(int *)this_ptr->in_transition))
-  {
+  if ((this_ptr->in_transition == (SMotionTransition *)0x0) ||
+     (iVar2 != this_ptr->in_transition->desired_state)) {
     iVar2 = 0;
     transition = (SMotionTransition *)0x0;
     pSVar3 = pSVar1;
@@ -35,12 +35,11 @@ int __cdecl core_motion_cpp_CMotionController_findAndStartTransition_FUN_0052d95
         pSVar3 = (SMotion *)(pSVar3->motion_name + 0x18);
       } while (iVar2 < pSVar1->transition_count);
     }
-    if ((transition != (SMotionTransition *)0x0) &&
-       (transition != (SMotionTransition *)this_ptr->in_transition)) {
-      this_ptr->in_transition = 0;
+    if ((transition != (SMotionTransition *)0x0) && (transition != this_ptr->in_transition)) {
+      this_ptr->in_transition = (SMotionTransition *)0x0;
       core_motion_cpp_CMotionController_clearTweenState_FUN_0052de40(this_ptr);
       switch(transition->cmd) {
-      case 1:
+      case MOTION_CMD_JUMP:
         core_motion_cpp_CMotionController_jumpToMotion_FUN_0052dde0
                   (this_ptr,transition->to_motion_number,transition->to_frame_number);
         if (transition->set_new_state_as_desired != 0) {
@@ -48,14 +47,14 @@ int __cdecl core_motion_cpp_CMotionController_findAndStartTransition_FUN_0052d95
           this_ptr->state_index = pSVar1->state_index;
         }
         return 1;
-      case 2:
-        this_ptr->in_transition = (int)transition;
+      case MOTION_CMD_WAIT_EXIT:
+        this_ptr->in_transition = transition;
         return 0;
-      case 3:
-      case 4:
-      case 5:
-      case 6:
-        this_ptr->in_transition = (int)transition;
+      case MOTION_CMD_TWEEN:
+      case MOTION_CMD_TWEEN_ADVANCE:
+      case MOTION_CMD_TWEEN_ADVANCE_BOTH:
+      case MOTION_CMD_TWEEN_BIDIR:
+        this_ptr->in_transition = transition;
         core_motion_cpp_CMotionController_startTransition_FUN_0052dbc0(this_ptr,transition);
         return 0;
       }

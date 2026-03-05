@@ -14,6 +14,7 @@
 #include "types/classes/CCameraView.h"
 #include "types/classes/CChain.h"
 #include "types/classes/CCharacter.h"
+#include "types/classes/CDeformableModel.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonFilter.h"
@@ -22,6 +23,7 @@
 #include "types/classes/CLightActor.h"
 #include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CPathMap.h"
+#include "types/classes/CSkeleton.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
 #include "types/enums/ELightActorType.h"
@@ -30,6 +32,7 @@
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SFire.h"
 #include "types/structs/SPose.h"
+#include "types/structs/SProjectedVertex.h"
 #include "types/structs/SScrape.h"
 #include "types/unions/UOrientationVector.h"
 
@@ -192,14 +195,14 @@ int __cdecl core_charactr_cpp_CCharacter_renderOpaque_FUN_0042a2c0(CCharacter *t
 void __cdecl core_charactr_cpp_CCharacter_renderBackground_FUN_0042a390(CCharacter *this_ptr,int layer_flag);
 int __cdecl core_charactr_cpp_CCharacter_getPartDominantBone_FUN_0042a3f0(CCharacter *this_ptr,int part_index);
 void __cdecl core_charactr_cpp_CCharacter_renderAttachedModels_FUN_0042a420(CCharacter *this_ptr);
-void __cdecl core_charactr_cpp_CCharacter_spawnFireOnBone_FUN_0042a520(CCharacter *this_ptr,int bone_index,int target_bone_index);
+void __cdecl core_charactr_cpp_CCharacter_spawnFireOnBone_FUN_0042a520(CCharacter *this_ptr,CSkeleton *skeleton,int target_bone_index);
 void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_0042a830(CCharacter *this_ptr,float delta_time);
 void __cdecl core_charactr_cpp_CCharacter_renderBurn_FUN_0042ad00(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_renderEthereal_FUN_0042af60(CCharacter *this_ptr);
 int __cdecl core_charactr_cpp_CCharacter_renderTransparent_FUN_0042b0e0(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_renderFlames_FUN_0042b110(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_addDamageDecal_FUN_0042b190(CCharacter *this_ptr);
-void __cdecl core_charactr_cpp_CCharacter_igniteBone_FUN_0042b5b0(CCharacter *this_ptr,CVector3f *position,int fire_type,float spread_rate, int allow_hero,int param_6);
+void __cdecl core_charactr_cpp_CCharacter_igniteBone_FUN_0042b5b0(CCharacter *this_ptr,CVector3f *position,int fire_type,float spread_rate, int allow_hero,int include_hero);
 void __cdecl core_charactr_cpp_CCharacter_processDamageDecals_FUN_0042b670(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_0042b760(CCharacter *this_ptr,int part_index,int bone_index,float chance);
 void __cdecl core_charactr_cpp_CCharacter_spawnBloodAtBone_FUN_0042b810(CCharacter *this_ptr,int part_index,int bone_index,float chance);
@@ -210,7 +213,7 @@ void __cdecl core_charactr_cpp_CCharacter_dismember_FUN_0042b9e0(CCharacter *thi
 int __cdecl core_charactr_cpp_CCharacter_hasCollision_FUN_0042bc20(CCharacter *this_ptr,SCollisionInfo *collision_info);
 void __cdecl core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0(CCharacter *this_ptr,int part_index);
 void __cdecl core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30(CCharacter *this_ptr,CBodyPart *body_part,int part_index,int render_in_background);
-int __cdecl core_charactr_cpp_CCharacter_isGrabbable_FUN_0042bf30(CCharacter *this_ptr);
+int __cdecl core_charactr_cpp_CCharacter_isGrabbable_FUN_0042bf30(CCharacter *this_ptr,CDemonActor *grabber);
 void __cdecl core_charactr_cpp_CCharacter_releaseFromGrab_FUN_0042bf40(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_releaseVictim_FUN_0042bf70(CCharacter *this_ptr);
 CDemonActor * __cdecl core_charactr_cpp_CCharacter_getGrabber_FUN_0042bf80(CCharacter *this_ptr);
@@ -241,7 +244,7 @@ int __cdecl core_charactr_cpp_CCharacter_initGesture_FUN_0042d390(CCharacter *th
 void __cdecl core_charactr_cpp_CCharacter_applyGesture_FUN_0042d3d0(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_advanceGesture_FUN_0042d4d0(CCharacter *this_ptr,float delta_time);
 void __cdecl core_charactr_cpp_CCharacter_computeBoundingBox_FUN_0042d530(CCharacter *this_ptr);
-void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCharacter *this_ptr,float delta_time,int param_3);
+void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCharacter *this_ptr,float delta_time,int disable_search);
 void __cdecl core_charactr_cpp_CCharacter_applyLookAt_FUN_0042dcd0(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_setLookAtTarget_FUN_0042ddd0(CCharacter *this_ptr,CDemonActor *target);
 void __cdecl core_charactr_cpp_CCharacter_calculateChecksum_FUN_0042dde0(CCharacter *this_ptr,uint *out_crc);
@@ -266,11 +269,11 @@ void __cdecl core_charactr_cpp_CCharacter_getPropertyList_FUN_0042f730(CCharacte
 void __cdecl core_charactr_cpp_CCharacter_processInEditor_FUN_0042f800(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_onActorDeleted_FUN_0042f8a0(CCharacter *this_ptr,CDemonActor *deleted_actor);
 CVector3f * __cdecl core_charactr_cpp_divideVector_FUN_0042f8f0(CVector3f *src,CVector3f *dst,float *scalar);
-void __cdecl core_charactr_cpp_FUN_0042f920(void);
-void __cdecl core_charactr_cpp_FUN_0042f930(void);
-void __cdecl core_charactr_cpp_FUN_0042f990(void);
-int __cdecl core_charactr_cpp_FUN_0042f9c0(void);
-int __cdecl core_charactr_cpp_FUN_0042f9d0(void);
+void __cdecl core_charactr_cpp_setActorXPos_FUN_0042f920(CDemonActor *actor,float x);
+void __cdecl core_charactr_cpp_projectPointToVertex_FUN_0042f930(SProjectedVertex **vertex_array,int vertex_index,CVector3f *world_position);
+void __cdecl core_charactr_cpp_getTranslationMatrix_FUN_0042f990(CMatrix3x4f *matrix,CVector3f *out_translation);
+int __cdecl core_charactr_cpp_getDeformableModelPartCount_FUN_0042f9c0(CDeformableModel *model_ptr);
+char * __cdecl core_charactr_cpp_getActorCreateEvent_FUN_0042f9d0(CDemonActor *actor);
 float __cdecl core_charactr_cpp_getGameDeltaTime_FUN_0042f9e0(CGame *game_ptr);
 CDemonActor * __cdecl core_charactr_cpp_CCharacter_dtor_FUN_0042f9f0(CCharacter *this_ptr,uint flags);
 SFire * __cdecl core_charactr_cpp_SFire_ctor_FUN_0042fab0(SFire *this_ptr);

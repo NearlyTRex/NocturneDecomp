@@ -9802,7 +9802,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_charactr.cpp_FUN_0042f990",
+    "name":"core_charactr.cpp_getTranslationMatrix_FUN_0042f990",
     "ret":"void",
     "vars":{
       "locals":[
@@ -9837,6 +9837,40 @@
             ]
           },
           "type":"undefined4"
+        }
+      ],
+      "params":[
+        {
+          "name":"matrix",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CMatrix3x4f*"
+        },
+        {
+          "name":"out_translation",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
         }
       ]
     }
@@ -40112,7 +40146,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_gabriela.cpp_CGabriella_FUN_004d4190",
+    "name":"core_gabriela.cpp_CGabriella_processAI_FUN_004d4190",
     "ret":"void",
     "vars":{
       "locals":[
@@ -40532,7 +40566,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_gabriela.cpp_CGabriella_FUN_004d4890",
+    "name":"core_gabriela.cpp_CGabriella_processMotionEvents_FUN_004d4890",
     "ret":"void",
     "vars":{
       "locals":[
@@ -40777,6 +40811,22 @@
             ]
           },
           "type":"CGabriella*"
+        },
+        {
+          "name":"delta_time",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
         }
       ]
     }
@@ -40792,8 +40842,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_gabriela.cpp_CGabriella_FUN_004d4c90",
-    "ret":"int",
+    "name":"core_gabriela.cpp_CGabriella_getFlashlightMinAngle_FUN_004d4c90",
+    "ret":"float",
     "vars":{
       "locals":[
         {
@@ -40869,7 +40919,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_gabriela.cpp_CGabriella_FUN_004d5c10",
+    "name":"core_gabriela.cpp_CGabriella_collectAmmo_FUN_004d5c10",
     "ret":"void",
     "vars":{
       "params":[
@@ -44431,6 +44481,22 @@
             ]
           },
           "type":"CHostage*"
+        },
+        {
+          "name":"grabber",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonActor*"
         }
       ],
       "ret_storage":{
@@ -44585,6 +44651,22 @@
             ]
           },
           "type":"undefined1"
+        },
+        {
+          "name":"blend_callback",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:27fad6c6eda",
+                "offset":2747393666778,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDeformableModel_MotionBlendWeightFunc*",
+          "use":240
         }
       ],
       "params":[
@@ -53358,6 +53440,22 @@
             ]
           },
           "type":"CMotionController*"
+        },
+        {
+          "name":"delta_time",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float*"
         }
       ],
       "ret_storage":{
@@ -58881,6 +58979,21 @@
     "ret":"int",
     "vars":{
       "locals":[
+        {
+          "name":"pCVar15",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CHero*",
+          "use":16438
+        },
         {
           "name":"local_14",
           "storage":{
@@ -83247,6 +83360,22 @@
           },
           "type":"UActorVTable*",
           "use":587
+        },
+        {
+          "name":"unionfacet5_5c6192",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:404116c493d3",
+                "offset":70648299033555,
+                "size":4
+              }
+            ]
+          },
+          "type":"UActorVTable*",
+          "use":642
         }
       ],
       "params":[
@@ -83283,6 +83412,24 @@
     "name":"core_stranger.cpp_CStranger_processWeaponTick_FUN_005c6590",
     "ret":"void",
     "vars":{
+      "locals":[
+        {
+          "name":"unionfacet5_5c65f8",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:404145562c68",
+                "offset":70649080327272,
+                "size":4
+              }
+            ]
+          },
+          "type":"UActorVTable*",
+          "use":104
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",

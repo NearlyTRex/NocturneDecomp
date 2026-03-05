@@ -16,25 +16,25 @@
       {
         "category": "other",
         "column": 21,
-        "line": 262,
+        "line": 263,
         "message": "member reference base type 'float' is not a structure or union"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 262,
+        "line": 263,
         "message": "member reference base type 'float' is not a structure or union"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 270,
+        "line": 271,
         "message": "member reference base type 'float' is not a structure or union"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 270,
+        "line": 271,
         "message": "member reference base type 'float' is not a structure or union"
       }
     ],
@@ -43,12 +43,12 @@
   },
   "complexity": {
     "assembly_lines": 698,
-    "complexity_score": 599,
+    "complexity_score": 600,
     "cross_reference_count": 1,
     "function_call_count": 22,
     "global_count": 25,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 314,
+    "pseudocode_lines": 315,
     "suspect_count": 26,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -57,7 +57,7 @@
       "unknown_field",
       "warning_type_propagation"
     ],
-    "total_lines": 1012
+    "total_lines": 1013
   },
   "cross_references": [
     {
@@ -928,12 +928,12 @@
       "line": 246,
       "match": "in_stack_00000008",
       "severity": "moderate",
-      "text": "local_2c = in_stack_00000008 * (this_ptr->base).speed;",
+      "text": "local_2c[0] = in_stack_00000008 * (this_ptr->base).speed;",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 255,
+      "line": 256,
       "match": "._3_1_",
       "severity": "mild",
       "text": "local_c4.x._3_1_ = local_c4.x._3_1_ ^ 0x80;",
@@ -941,7 +941,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 255,
+      "line": 256,
       "match": "._3_1_",
       "severity": "mild",
       "text": "local_c4.x._3_1_ = local_c4.x._3_1_ ^ 0x80;",
@@ -949,7 +949,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 263,
+      "line": 264,
       "match": "._3_1_",
       "severity": "mild",
       "text": "local_100.x._3_1_ = local_100.x._3_1_ ^ 0x80;",
@@ -957,7 +957,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 263,
+      "line": 264,
       "match": "._3_1_",
       "severity": "mild",
       "text": "local_100.x._3_1_ = local_100.x._3_1_ ^ 0x80;",
@@ -965,7 +965,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 276,
+      "line": 277,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "(this_ptr->base).base.velocity.y - in_stack_00000008 * (float)32;",
@@ -973,7 +973,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 277,
+      "line": 278,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "local_d0 = (this_ptr->base).base.velocity.x * in_stack_00000008;",
@@ -981,7 +981,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 278,
+      "line": 279,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "local_cc = (this_ptr->base).base.velocity.y * in_stack_00000008;",
@@ -989,7 +989,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 279,
+      "line": 280,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "local_c8 = in_stack_00000008 * (this_ptr->base).base.velocity.z;",
@@ -997,7 +997,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 315,
+      "line": 316,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "&(this_ptr->base).base.base.orient.vec,in_stack_00000008,",

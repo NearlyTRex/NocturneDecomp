@@ -35,7 +35,7 @@ section .text
     ADD ESP,0x4                         ; 005fca28
     PUSH EAX                            ; 005fca2b
     CALL core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0 ; 005fca2c
-        ;   XREF to: 0052d4f0 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0(CMotionList * this_ptr)
+        ;   XREF to: 0052d4f0 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0(CMotionList * this_ptr, char * state_name, int error_on_not_found)
     ADD ESP,0xc                         ; 005fca31
     CMP EAX,0x16                        ; 005fca34
     JNZ 0x005fca69                      ; 005fca37

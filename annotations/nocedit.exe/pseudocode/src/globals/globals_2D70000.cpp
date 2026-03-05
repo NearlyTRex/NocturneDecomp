@@ -37,6 +37,11 @@ CTrail g_TrailPool[100] = {};
 // SHardwareEdge[16]
 SHardwareEdge g_HardwareEdgeTable[16] = {};
 
+// UVector3
+UVector3 UNION_UVector3_02d7b814 = {};
+UVector3 UNION_UVector3_02d7b820 = {};
+UVector3 UNION_UVector3_02d7b82c = {};
+
 // char*
 char* g_WrappedTextBuffer = {};
 
@@ -55,15 +60,6 @@ float FLOAT_02d7b7f0 = {};
 float FLOAT_02d7b808 = {};
 float FLOAT_02d7b80c = {};
 float FLOAT_02d7b810 = {};
-float FLOAT_02d7b814 = {};
-float FLOAT_02d7b818 = {};
-float FLOAT_02d7b81c = {};
-float FLOAT_02d7b820 = {};
-float FLOAT_02d7b824 = {};
-float FLOAT_02d7b828 = {};
-float FLOAT_02d7b82c = {};
-float FLOAT_02d7b830 = {};
-float FLOAT_02d7b834 = {};
 float FLOAT_02d7b838 = {};
 float FLOAT_02d7b83c = {};
 float FLOAT_02d7b840 = {};

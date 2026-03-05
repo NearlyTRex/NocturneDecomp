@@ -81,7 +81,7 @@ void __cdecl CKeyFramedModel::intersectCylinder(CKeyFramedModel *this_ptr,int fr
 
 // Original: core_dmodel.cpp_CKeyFramedModel_getFloorHeight_FUN_00478740
 // Address: 00478740
-int __cdecl CKeyFramedModel::getFloorHeight(CKeyFramedModel *this_ptr,int frame_index,float x,float z,float *out_height,CVector3f *transform_vector);
+int __cdecl CKeyFramedModel::getFloorHeight(CKeyFramedModel *this_ptr,int frame_index,CVector3f *position,float search_radius,float *out_height,CVector3f *transform_vector);
 
 // Original: core_dmodel.cpp_CKeyFramedModel_buildCollisionTriList_FUN_00478830
 // Address: 00478830

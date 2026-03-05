@@ -149,7 +149,7 @@ void __cdecl core_scat_cpp_CScat_FUN_005584a0(CScat *this_ptr)
   puVar4[(uint)bVar6 * -2 + 1] = puVar3[(uint)bVar6 * -2 + 1];
   core_xform_cpp_multiplyQuaternion_FUN_005f7640(&local_dc,pCVar2,&local_6c);
   iVar1 = local_18;
-  blend_callback = core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0;
+  blend_callback = core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0;
   local_2c.w = local_6c.w;
   puVar4 = (uint *)((int)&local_2c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
   puVar3 = (uint *)((int)&local_6c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);

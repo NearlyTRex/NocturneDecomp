@@ -16,7 +16,7 @@ void __cdecl core_haystack_cpp_CHaystack_FUN_004f1970(CHaystack *this_ptr)
   
   do {
     iVar1 = core_motion_cpp_CMotionController_advance_FUN_0052d610
-                      (&(this_ptr->base).base.model.motion_controller);
+                      (&(this_ptr->base).base.model.motion_controller,&stack0x00000008);
     switch(iVar1) {
     case 0x65:
       core_haystack_cpp_CHaystack_FUN_004f1ab0(this_ptr);

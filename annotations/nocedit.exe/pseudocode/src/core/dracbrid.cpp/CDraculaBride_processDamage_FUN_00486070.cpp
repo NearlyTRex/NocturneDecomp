@@ -20,7 +20,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_processDamage_FUN_00486070(CDracula
   CVector3f local_24;
   
   bVar2 = false;
-  if (damage_info->ammo_type == 7) {
+  if (damage_info->ammo_type == AMMO_TYPE_LITHIUM) {
     iVar4 = 0;
     damage_info->damage_amount = damage_info->damage_amount * (float)2;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
@@ -32,10 +32,10 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_processDamage_FUN_00486070(CDracula
     } while (iVar4 < 5);
     bVar2 = true;
   }
-  if (damage_info->damage_type == 0x68) {
+  if (damage_info->damage_type == DAMAGE_TYPE_LAUNCH) {
     bVar2 = true;
   }
-  if (damage_info->damage_type == 0x6c) {
+  if (damage_info->damage_type == DAMAGE_TYPE_BURN) {
     input_local_point =
          core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
                    (&(this_ptr->base).base.model,&local_3c,0);

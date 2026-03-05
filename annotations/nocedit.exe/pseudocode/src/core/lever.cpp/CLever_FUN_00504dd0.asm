@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CVector3f * __cdecl core_lever_cpp_CLever_FUN_00504dd0(CLever *this_ptr)
+; CVector3f * __cdecl core_lever_cpp_CLever_FUN_00504dd0(CLever *this_ptr,CVector3f *param_2)
 ;
 ; Parameters:
 ; CLever *         Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   param_2
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
 ; undefined4       Stack[-0x20]:4  local_20

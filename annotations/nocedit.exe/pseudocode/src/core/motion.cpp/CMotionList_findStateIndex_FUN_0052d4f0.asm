@@ -1,10 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(CMotionList *this_ptr)
+; int __cdecl core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(CMotionList *this_ptr,char *state_name,int error_on_not_found)
 ;
 ; Parameters:
 ; CMotionList *    Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   state_name
+; int              Stack[0xc]:4   error_on_not_found
 ;
 ; XREF[13]:
 ;   core_charactr.cpp_CCharacter_canLookAt_FUN_0042de50 at 0042de9e

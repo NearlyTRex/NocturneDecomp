@@ -22,14 +22,14 @@ int __cdecl core_baron_cpp_CBaron_renderTransparent_FUN_00413ae0(CBaron *this_pt
   float local_1c;
   int local_18;
   
-  if ((this_ptr->summoned == 0) && ((this_ptr->base).control_type == 2)) {
+  if ((this_ptr->summoned == 0) && ((this_ptr->base).control_type == HERO_CONTROL_AI)) {
     return 0;
   }
   pCVar1 = &(this_ptr->base).base.model;
   pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                      (&pCVar1->motion_controller);
   uVar2 = pSVar4->state_index;
-  fVar3 = (float)(this_ptr->base).base.model.motion_controller.current_frame_number;
+  fVar3 = (this_ptr->base).base.model.motion_controller.current_frame_number;
   local_1c = fVar3;
   pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                      (&pCVar1->motion_controller);

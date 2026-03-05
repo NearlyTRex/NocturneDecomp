@@ -32,7 +32,7 @@ CBoxActor * __cdecl core_boxactor_cpp_CBoxActor_ctor_FUN_00421700(CBoxActor *thi
   ADJ(pCVar3)->pushed_by_actor = (CDemonActor *)0x0;
   ADJ(pCVar3)->push_sound[0] = '\0';
   ADJ(pCVar3)->constrain_extents_actor = (CDemonActor *)0x0;
-  ADJ(pCVar3)->ground_type = 0;
+  ADJ(pCVar3)->ground_type = GROUND_TYPE_DEFAULT;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (&ADJ(pCVar3)->model,"question.kfm");
   pCVar3->is_valid = -1;

@@ -173,8 +173,7 @@ void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_0042a830(CCharacter *t
                 } while ((int)uVar7 < this_ptr->fire_count);
               }
               if (uVar7 == this_ptr->fire_count) {
-                core_charactr_cpp_CCharacter_spawnFireOnBone_FUN_0042a520
-                          (this_ptr,(int)local_18,iVar8);
+                core_charactr_cpp_CCharacter_spawnFireOnBone_FUN_0042a520(this_ptr,local_18,iVar8);
               }
             }
             iVar8 = iVar8 + 1;
@@ -193,7 +192,7 @@ void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_0042a830(CCharacter *t
         }
         if (iVar8 == this_ptr->fire_count) {
           core_charactr_cpp_CCharacter_spawnFireOnBone_FUN_0042a520
-                    (this_ptr,(int)local_18,local_18->bone_list[local_1c->bone_index].parent_index);
+                    (this_ptr,local_18,local_18->bone_list[local_1c->bone_index].parent_index);
         }
       }
       local_20 = local_20 + 1;

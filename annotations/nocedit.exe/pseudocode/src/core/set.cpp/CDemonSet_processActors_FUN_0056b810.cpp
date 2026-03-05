@@ -27,7 +27,7 @@ int __cdecl core_set_cpp_CDemonSet_processActors_FUN_0056b810(CDemonSet *this_pt
   CDemonSet *pCVar11;
   CPathMap *damage_info;
   CVector3f aCStack_94 [3];
-  int iStack_70;
+  EDamageType EStack_70;
   CDemonActor *local_68;
   float local_64;
   float local_60;
@@ -161,7 +161,7 @@ int __cdecl core_set_cpp_CDemonSet_processActors_FUN_0056b810(CDemonSet *this_pt
                              (int *)damage_info);
           if (iVar7 != 0) {
             core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xffffff60);
-            iStack_70 = 4;
+            EStack_70 = DAMAGE_TYPE_SHATTER;
             if (aCStack_94 != &CStack_58) {
               aCStack_94[0].x = CStack_58.x;
               aCStack_94[0].y = CStack_58.y;

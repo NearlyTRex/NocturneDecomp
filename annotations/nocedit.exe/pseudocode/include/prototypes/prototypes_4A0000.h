@@ -187,7 +187,7 @@ int __cdecl core_enemy_cpp_CEnemy_getTargetPoints_FUN_004a97c0(CEnemy *this_ptr,
 int __cdecl core_enemy_cpp_CEnemy_FUN_004a9880(CEnemy *this_ptr);
 int __cdecl core_enemy_cpp_CEnemy_FUN_004a9930(CEnemy *this_ptr);
 CVector3f * __cdecl core_enemy_cpp_CEnemy_getTargetPoint_FUN_004a99d0(CEnemy *this_ptr,CVector3f *out_point);
-int __cdecl core_enemy_cpp_CEnemy_FUN_004a9a50(CEnemy *this_ptr,CDemonActor *param_2);
+int __cdecl core_enemy_cpp_CEnemy_FUN_004a9a50(CEnemy *this_ptr,CDemonActor *target);
 void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_004a9b00(CEnemy *this_ptr,float delta_time);
 void __cdecl core_enemy_cpp_CEnemy_setVictim_FUN_004a9ef0(CEnemy *this_ptr,CDemonActor *victim);
 void __cdecl core_enemy_cpp_CEnemy_processDamage_FUN_004a9f10(CEnemy *this_ptr,SDamageInfo *damage_info);

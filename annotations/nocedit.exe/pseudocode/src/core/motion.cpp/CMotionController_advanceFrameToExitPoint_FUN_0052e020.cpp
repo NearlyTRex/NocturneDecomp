@@ -44,7 +44,7 @@ int __cdecl core_motion_cpp_CMotionController_advanceFrameToExitPoint_FUN_0052e0
     (*this_ptr->vtable->accumulateScaledRootMotion)
               (this_ptr,(float)pSVar4->frame_start + current_frame,
                (float)pSVar4->frame_start + local_24,1.0);
-    out_transition->cmd = 1;
+    out_transition->cmd = MOTION_CMD_JUMP;
     out_transition->set_new_state_as_desired = 0;
     out_transition->to_motion_number = motion_index;
     out_transition->to_frame_number = local_24;
@@ -64,10 +64,10 @@ int __cdecl core_motion_cpp_CMotionController_advanceFrameToExitPoint_FUN_0052e0
       piVar6 = piVar6 + (uint)bVar8 * -2 + 1;
       pSVar7 = (SMotionTransition *)((int)pSVar7 + (uint)bVar8 * -8 + 4);
     }
-    iVar5 = this_ptr->in_transition;
-    if ((iVar5 != 0) && (*(int *)(iVar5 + 4) == 2)) {
-      out_transition->to_motion_number = *(int *)(iVar5 + 8);
-      out_transition->to_frame_number = *(float *)(this_ptr->in_transition + 0xc);
+    pSVar7 = this_ptr->in_transition;
+    if ((pSVar7 != (SMotionTransition *)0x0) && (pSVar7->cmd == MOTION_CMD_WAIT_EXIT)) {
+      out_transition->to_motion_number = pSVar7->to_motion_number;
+      out_transition->to_frame_number = this_ptr->in_transition->to_frame_number;
     }
     fVar2 = (float)pSVar4->exit_forward_from_frame;
   }

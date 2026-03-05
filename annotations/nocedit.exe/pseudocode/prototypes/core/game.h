@@ -209,7 +209,7 @@ void __cdecl CGame::saveGame(CGame *this_ptr,char *save_filename);
 
 // Original: core_game.cpp_CGame_loadGame_FUN_004e12b0
 // Address: 004e12b0
-void __cdecl CGame::loadGame(CGame *this_ptr,char *save_filename,int load_mode,char *chapter_name);
+void __cdecl CGame::loadGame(CGame *this_ptr,char *save_filename,int load_mode);
 
 // Original: core_game.cpp_disableUnavailableChapters_FUN_004e1c30
 // Address: 004e1c30

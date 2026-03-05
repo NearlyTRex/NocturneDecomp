@@ -17,7 +17,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_processDamage_FUN_005e7030(CVampireB
   CDemonActor *pCVar5;
   CVector3f local_24;
   
-  if (damage_info->ammo_type == 7) {
+  if (damage_info->ammo_type == AMMO_TYPE_LITHIUM) {
     iVar2 = 0;
     damage_info->damage_amount = damage_info->damage_amount * (float)2;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
@@ -29,7 +29,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_processDamage_FUN_005e7030(CVampireB
     } while (iVar2 < 5);
   }
   if (this_ptr->form == 0) {
-    if ((damage_info->ammo_type == 1) &&
+    if ((damage_info->ammo_type == AMMO_TYPE_HOLY) &&
        (this_ptr_00 = core_actor_cpp_castToClassHash_FUN_0040c790
                                 (damage_info->attacker,g_CMeleeClassInfo.name_hash),
        this_ptr_00 != (CDemonActor *)0x0)) {

@@ -13,7 +13,7 @@
 ; XREF[15]:
 ;   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_0042d090 at 0042d1c4
 ;   core_fire.cpp_CBulletHole_init_FUN_004bf7f0 at 004bf96f
-;   core_gabriela.cpp_CGabriella_FUN_004d5550 at 004d56e4
+;   core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004d5550 at 004d56e4
 ;   core_mimic.cpp_CMimic_FUN_005205f0 at 005207af
 ;   core_platfrm.cpp_CPlatform_updateAttachedActors_FUN_0054e320 at 0054e3d1
 ;   core_scat.cpp_CScat_FUN_00558fd0 at 005590da

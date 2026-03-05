@@ -25,9 +25,9 @@ int __cdecl core_shotgun_cpp_CShotgun_fire_FUN_00588060(CShotgun *this_ptr)
   float fStack_114;
   float fStack_110;
   CVector3f CStack_108;
-  int iStack_fc;
+  EAmmoType EStack_fc;
   float fStack_f8;
-  int iStack_f4;
+  EDamageType EStack_f4;
   CShotgun *pCStack_f0;
   CDemonActor *pCStack_e8;
   float fStack_e4;
@@ -215,8 +215,8 @@ int __cdecl core_shotgun_cpp_CShotgun_fire_FUN_00588060(CShotgun *this_ptr)
             CStack_108.y = pCVar1->y;
             CStack_108.z = pCVar1->z;
           }
-          iStack_fc = (this_ptr->base).ammo_type;
-          iStack_f4 = 0x65;
+          EStack_fc = (this_ptr->base).ammo_type;
+          EStack_f4 = DAMAGE_TYPE_IMMUNE|DAMAGE_TYPE_DROWN;
           fStack_f8 = 0.15;
           pCStack_f0 = this_ptr;
           pCStack_e8 = (*((this_ptr->base).base.vtable._ub)->getCarrier)((CDemonActor *)this_ptr);

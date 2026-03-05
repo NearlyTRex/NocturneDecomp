@@ -2,11 +2,11 @@
 // Address: 004e82d0
 // Address Range: [[004e82d0, 004e8495]]
 // Convention: __cdecl
-// Signature: int __cdecl core_ghoul_cpp_CGhoul_canBeAttracted_FUN_004e82d0(CGhoul *this_ptr,CVector3f *param_2)
+// Signature: int __cdecl core_ghoul_cpp_CGhoul_canBeAttracted_FUN_004e82d0(CGhoul *this_ptr,CVector3f *out_attract_position)
 
 #include "nocturne.h"
 
-int __cdecl core_ghoul_cpp_CGhoul_canBeAttracted_FUN_004e82d0(CGhoul *this_ptr,CVector3f *param_2)
+int __cdecl core_ghoul_cpp_CGhoul_canBeAttracted_FUN_004e82d0(CGhoul *this_ptr,CVector3f *out_attract_position)
 
 {
   CVector3f *pCVar1;
@@ -69,10 +69,10 @@ int __cdecl core_ghoul_cpp_CGhoul_canBeAttracted_FUN_004e82d0(CGhoul *this_ptr,C
   local_70.z = local_20 * 0.5f;
   pCVar1 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                      ((CDemonActor *)this_ptr,&local_1c,&local_70);
-  if (param_2 != pCVar1) {
-    param_2->x = pCVar1->x;
-    param_2->y = pCVar1->y;
-    param_2->z = pCVar1->z;
+  if (out_attract_position != pCVar1) {
+    out_attract_position->x = pCVar1->x;
+    out_attract_position->y = pCVar1->y;
+    out_attract_position->z = pCVar1->z;
   }
   return 1;
 }

@@ -7,7 +7,7 @@
 ; CKeyFramedModelInstance * Stack[0x4]:4   this_ptr
 ;
 ; XREF[30]:
-;   core_ammo.cpp_CAmmo_FUN_00410fd0 at 0041110c
+;   core_ammo.cpp_CAmmo_setWeaponClass_FUN_00410fd0 at 0041110c
 ;   core_ammo.cpp_CAmmo_setup_FUN_00410e50 at 00410e5a
 ;   core_backgnd.cpp_CBackgroundActor_setup_FUN_00412810 at 0041281c
 ;   core_baron.cpp_CBaron_setup_FUN_00412cb0 at 00412e5a

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_charactr_cpp_CCharacter_igniteBone_FUN_0042b5b0(CCharacter *this_ptr,CVector3f *position,int fire_type,float spread_rate,int allow_hero,int param_6)
+; void __cdecl core_charactr_cpp_CCharacter_igniteBone_FUN_0042b5b0(CCharacter *this_ptr,CVector3f *position,int fire_type,float spread_rate,int allow_hero,int include_hero)
 ;
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr
@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   fire_type
 ; float            Stack[0x10]:4   spread_rate
 ; int              Stack[0x14]:4   allow_hero
-; int              Stack[0x18]:4   param_6
+; int              Stack[0x18]:4   include_hero
 ;
 ; XREF[8]:
 ;   core_batcreat.cpp_CBatCreature_processDamage_FUN_00416030 at 004160ac
@@ -107,7 +107,7 @@ section .text
     PUSH EAX                            ; 0042b64a
     PUSH EBX                            ; 0042b64b
     CALL core_charactr.cpp_CCharacter_spawnFireOnBone_FUN_0042a520 ; 0042b64c
-        ;   XREF to: 0042a520 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_spawnFireOnBone_FUN_0042a520(CCharacter * this_ptr, int bone_index, int target_bone_index)
+        ;   XREF to: 0042a520 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_spawnFireOnBone_FUN_0042a520(CCharacter * this_ptr, CSkeleton * skeleton, int target_bone_index)
     ADD ESP,0xc                         ; 0042b651
     MOV dword ptr [EBX + 0xfc],0x1      ; 0042b654
     POP EBP                             ; 0042b65e

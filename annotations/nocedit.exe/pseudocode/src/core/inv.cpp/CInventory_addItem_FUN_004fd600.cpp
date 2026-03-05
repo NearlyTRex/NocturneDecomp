@@ -958,7 +958,7 @@ int __cdecl core_inv_cpp_CInventory_addItem_FUN_004fd600(CInventory *this_ptr,CD
                                    (in_stack_0000001c,g_CAmmoClassInfo.name_hash);
   if (this_ptr_01 != (CAmmo *)0x0) {
     iVar9 = 0;
-    core_ammo_cpp_CAmmo_FUN_00410fd0(this_ptr_01,this_ptr_01->weapon_class_name);
+    core_ammo_cpp_CAmmo_setWeaponClass_FUN_00410fd0(this_ptr_01,this_ptr_01->weapon_class_name);
     pCVar10 = this_ptr;
     pcVar11 = this_ptr_01->weapon_class_name;
     if (0 < this_ptr->item_count) {

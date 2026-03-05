@@ -877,7 +877,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x8e]      ; 00592dcf
     PUSH EBX                            ; 00592dd5
     CALL core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0 ; 00592dd6
-        ;   XREF to: 0052d4f0 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0(CMotionList * this_ptr)
+        ;   XREF to: 0052d4f0 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0(CMotionList * this_ptr, char * state_name, int error_on_not_found)
     ADD ESP,0xc                         ; 00592ddb
     TEST EAX,EAX                        ; 00592dde
     JL 0x00592887                       ; 00592de0
@@ -1241,7 +1241,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x8e]      ; 005931f0
     PUSH EAX                            ; 005931f6
     CALL core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0 ; 005931f7
-        ;   XREF to: 0052d4f0 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0(CMotionList * this_ptr)
+        ;   XREF to: 0052d4f0 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0(CMotionList * this_ptr, char * state_name, int error_on_not_found)
     ADD ESP,0xc                         ; 005931fc
     MOV dword ptr [EBX + 0x24],EAX      ; 005931ff
     TEST EAX,EAX                        ; 00593202
@@ -2147,7 +2147,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x8e]      ; 00593c03
     PUSH EBX                            ; 00593c09
     CALL core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0 ; 00593c0a
-        ;   XREF to: 0052d4f0 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0(CMotionList * this_ptr)
+        ;   XREF to: 0052d4f0 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0(CMotionList * this_ptr, char * state_name, int error_on_not_found)
     ADD ESP,0xc                         ; 00593c0f
     MOV dword ptr [EDI],EAX             ; 00593c12
     TEST EAX,EAX                        ; 00593c14
@@ -2292,7 +2292,7 @@ section .text
     MOV ECX,dword ptr [EBP + 0x8e]      ; 00593d86
     PUSH ECX                            ; 00593d8c
     CALL core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460 ; 00593d8d
-        ;   XREF to: 0052d460 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460(CMotionList * this_ptr)
+        ;   XREF to: 0052d460 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460(CMotionList * this_ptr, char * motion_name, int error_on_not_found)
     ADD ESP,0xc                         ; 00593d92
     MOV dword ptr [EDI + 0x8],EAX       ; 00593d95
     TEST EAX,EAX                        ; 00593d98
@@ -2765,7 +2765,7 @@ section .text
     MOV EDI,dword ptr [EBP + 0x8e]      ; 00594259
     PUSH EDI                            ; 0059425f
     CALL core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460 ; 00594260
-        ;   XREF to: 0052d460 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460(CMotionList * this_ptr)
+        ;   XREF to: 0052d460 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460(CMotionList * this_ptr, char * motion_name, int error_on_not_found)
     MOV EDX,dword ptr [EBP + -0x62]     ; 00594265
     ADD ESP,0xc                         ; 00594268
     MOV dword ptr [EDX + 0x34],EAX      ; 0059426b
@@ -3591,7 +3591,7 @@ section .text
     MOV ESI,dword ptr [EBP + 0x8e]      ; 00594ad3
     PUSH ESI                            ; 00594ad9
     CALL core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460 ; 00594ada
-        ;   XREF to: 0052d460 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460(CMotionList * this_ptr)
+        ;   XREF to: 0052d460 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460(CMotionList * this_ptr, char * motion_name, int error_on_not_found)
     ADD ESP,0xc                         ; 00594adf
     MOV dword ptr [EBX + 0x8],EAX       ; 00594ae2 | DAT_03670b68
     TEST EAX,EAX                        ; 00594ae5

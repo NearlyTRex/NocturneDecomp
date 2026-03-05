@@ -23,7 +23,7 @@ int __cdecl core_npc_cpp_CNPC_FUN_00544c50(CNPC *this_ptr)
   pcVar4 = local_d8;
   while( true ) {
     _sprintf(local_d8,"%s_%d");
-    iVar2 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(this_ptr_00);
+    iVar2 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(this_ptr_00,local_d8,0);
     if (iVar2 < 0) break;
     iVar3 = iVar3 + 1;
   }
@@ -42,7 +42,7 @@ int __cdecl core_npc_cpp_CNPC_FUN_00544c50(CNPC *this_ptr)
     core_actor_cpp_getRandomInt_FUN_0040cc70(1,iVar3);
     _sprintf(local_d8,"%s_%d");
   }
-  iVar3 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(this_ptr_00);
+  iVar3 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(this_ptr_00,local_d8,0);
   if (-1 < iVar3) {
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
               ((CMotionController *)this_ptr,iVar3,1);

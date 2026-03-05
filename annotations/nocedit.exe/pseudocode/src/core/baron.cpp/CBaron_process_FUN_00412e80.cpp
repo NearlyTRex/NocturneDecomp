@@ -62,12 +62,12 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00412e80(CBaron *this_ptr,float d
       ;
     }
   }
-  if (((this_ptr->summoned == 0) && ((this_ptr->base).control_type == 2)) ||
+  if (((this_ptr->summoned == 0) && ((this_ptr->base).control_type == HERO_CONTROL_AI)) ||
      (iVar3 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time),
      iVar3 == 0)) {
     return;
   }
-  if ((this_ptr->base).control_type == 2) {
+  if ((this_ptr->base).control_type == HERO_CONTROL_AI) {
     core_baron_cpp_CBaron_FUN_004135e0(this_ptr);
   }
   pCVar2 = g_CGamePtr;
@@ -208,7 +208,7 @@ switchD_0041345d_default:
   core_charactr_cpp_CCharacter_preProcess_FUN_00429820((CCharacter *)this_ptr);
   pCVar9 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020(pCVar9);
-  blend_callback = core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0;
+  blend_callback = core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0;
   fVar10 = this_ptr->head_blend_weight;
   iVar3 = INT_00822498;
   core_xform_cpp_eulerToQuaternion_FUN_005f7b20(&this_ptr->head_rotation,&local_a4);

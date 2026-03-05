@@ -213,7 +213,7 @@ section .text
     ADD ESP,0x4                         ; 005bb69b
     PUSH EAX                            ; 005bb69e
     CALL core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460 ; 005bb69f
-        ;   XREF to: 0052d460 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460(CMotionList * this_ptr)
+        ;   XREF to: 0052d460 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460(CMotionList * this_ptr, char * motion_name, int error_on_not_found)
     ADD ESP,0xc                         ; 005bb6a4
     PUSH 0x1                            ; 005bb6a7
     PUSH 0x65347c                       ; 005bb6a9 | = "turnrstart"
@@ -224,7 +224,7 @@ section .text
     ADD ESP,0x4                         ; 005bb6b9
     PUSH EAX                            ; 005bb6bc
     CALL core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460 ; 005bb6bd
-        ;   XREF to: 0052d460 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460(CMotionList * this_ptr)
+        ;   XREF to: 0052d460 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460(CMotionList * this_ptr, char * motion_name, int error_on_not_found)
     ADD ESP,0xc                         ; 005bb6c2
     PUSH 0x1                            ; 005bb6c5
     PUSH 0x653487                       ; 005bb6c7 | = "pickup"
@@ -235,7 +235,7 @@ section .text
     ADD ESP,0x4                         ; 005bb6d7
     PUSH EAX                            ; 005bb6da
     CALL core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460 ; 005bb6db
-        ;   XREF to: 0052d460 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460(CMotionList * this_ptr)
+        ;   XREF to: 0052d460 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460(CMotionList * this_ptr, char * motion_name, int error_on_not_found)
     ADD ESP,0xc                         ; 005bb6e0
     PUSH 0x41b00000                     ; 005bb6e3
     PUSH EAX                            ; 005bb6e8

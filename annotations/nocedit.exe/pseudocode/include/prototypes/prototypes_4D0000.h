@@ -12,8 +12,10 @@
 #include "types/classes/CFrankenstienMachine.h"
 #include "types/classes/CGabriella.h"
 #include "types/classes/CGame.h"
+#include "types/classes/CInventory.h"
 #include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CVector3f.h"
+#include "types/classes/CWeapon.h"
 #include "types/enums/EAmmoType.h"
 #include "types/enums/EInputCodeType.h"
 #include "types/structs/SCollisionInfo.h"
@@ -66,42 +68,42 @@ int __cdecl core_frankgen_cpp_FUN_004d2880(void);
 int __cdecl core_frankgen_cpp_FUN_004d2890(void);
 CFrankenstienMachine * __cdecl core_frankgen_cpp_CFrankenstienMachine_dtor_FUN_004d28a0(CFrankenstienMachine *this_ptr,uint flags);
 void __cdecl core_gabriela_cpp_staticInit_FUN_004d2910(void);
-float __cdecl core_gabriela_cpp_FUN_004d29f0(void);
-float __cdecl core_gabriela_cpp_FUN_004d2a30(void);
-float __cdecl core_gabriela_cpp_FUN_004d2a80(int current_bone_index,int target_bone_index,float blend_weight, int hierarchy_distance,CDeformableModelInstance *model_ptr);
+float __cdecl core_gabriela_cpp_weaponDrawBlendWeightCallback_FUN_004d29f0(int current_bone_index,int target_bone_index,float blend_weight, int hierarchy_distance,CDeformableModelInstance *instance);
+float __cdecl core_gabriela_cpp_flashlightBlendWeightCallback_FUN_004d2a30(int current_bone_index,int target_bone_index,float blend_weight, int hierarchy_distance,CDeformableModelInstance *instance);
+float __cdecl core_gabriela_cpp_aimRotationBlendWeightCallback_FUN_004d2a80(int current_bone_index,int target_bone_index,float blend_weight, int hierarchy_distance,CDeformableModelInstance *model_ptr);
 CGabriella * __cdecl core_gabriela_cpp_factoryFunc_FUN_004d2ae0(void);
 CDemonActorType * __cdecl core_gabriela_cpp_CGabriella_getActorType_FUN_004d2b10(CGabriella *this_ptr);
 CGabriella * __cdecl core_gabriela_cpp_CGabriella_ctor_FUN_004d2b20(CGabriella *this_ptr);
 void __cdecl core_gabriela_cpp_CGabriella_setup_FUN_004d2c40(CGabriella *this_ptr);
 void __cdecl core_gabriela_cpp_CGabriella_process_FUN_004d2ea0(CGabriella *this_ptr,float delta_time);
-void __cdecl core_gabriela_cpp_CGabriella_FUN_004d4190(CGabriella *this_ptr);
-void __cdecl core_gabriela_cpp_CGabriella_FUN_004d4890(CGabriella *this_ptr);
-int __cdecl core_gabriela_cpp_CGabriella_FUN_004d4c90(CGabriella *this_ptr);
-int __cdecl core_gabriela_cpp_CGabriella_FUN_004d4ce0(CGabriella *this_ptr);
-float * __cdecl core_gabriela_cpp_CGabriella_FUN_004d4cf0(CGabriella *this_ptr);
-void __cdecl core_gabriela_cpp_CGabriella_FUN_004d4d80(CGabriella *this_ptr);
-void __cdecl core_gabriela_cpp_CGabriella_FUN_004d5550(CGabriella *this_ptr);
-int __cdecl core_gabriela_cpp_CGabriella_FUN_004d5870(CGabriella *this_ptr);
-void __cdecl core_gabriela_cpp_CGabriella_FUN_004d5c10(CGabriella *this_ptr);
-int __cdecl core_gabriela_cpp_CGabriella_FUN_004d5c60(CGabriella *this_ptr);
-int __cdecl core_gabriela_cpp_CGabriella_FUN_004d5f70(CGabriella *this_ptr);
-void __cdecl core_gabriela_cpp_CGabriella_FUN_004d5fe0(CGabriella *this_ptr);
-int __cdecl core_gabriela_cpp_CGabriella_FUN_004d6050(CGabriella *this_ptr);
+void __cdecl core_gabriela_cpp_CGabriella_processAI_FUN_004d4190(CGabriella *this_ptr);
+void __cdecl core_gabriela_cpp_CGabriella_processMotionEvents_FUN_004d4890(CGabriella *this_ptr,float delta_time);
+float __cdecl core_gabriela_cpp_CGabriella_getFlashlightMinAngle_FUN_004d4c90(CGabriella *this_ptr);
+float __cdecl core_gabriela_cpp_CGabriella_getFlashlightMaxAngle_FUN_004d4ce0(CGabriella *this_ptr);
+CVector3f * __cdecl core_gabriela_cpp_CGabriella_getTorsoCenterPosition_FUN_004d4cf0(CGabriella *this_ptr,CVector3f *out_position);
+void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80(CGabriella *this_ptr);
+void __cdecl core_gabriela_cpp_CGabriella_updateWeaponPosition_FUN_004d5550(CGabriella *this_ptr,float delta_time);
+int __cdecl core_gabriela_cpp_CGabriella_findAndPickupNearbyObject_FUN_004d5870(CGabriella *this_ptr);
+void __cdecl core_gabriela_cpp_CGabriella_collectAmmo_FUN_004d5c10(CGabriella *this_ptr);
+int __cdecl core_gabriela_cpp_CGabriella_tryClimbLadder_FUN_004d5c60(CGabriella *this_ptr);
+int __cdecl core_gabriela_cpp_CGabriella_canFireWeapon_FUN_004d5f70(CGabriella *this_ptr);
+void __cdecl core_gabriela_cpp_CGabriella_tryFireWeapon_FUN_004d5fe0(CGabriella *this_ptr);
+int __cdecl core_gabriela_cpp_CGabriella_tryThrowObject_FUN_004d6050(CGabriella *this_ptr);
 void __cdecl core_gabriela_cpp_CGabriella_archive_FUN_004d6090(CGabriella *this_ptr);
 int __cdecl core_gabriela_cpp_CGabriella_renderOpaque_FUN_004d6140(CGabriella *this_ptr);
 int __cdecl core_gabriela_cpp_CGabriella_renderTransparent_FUN_004d6230(CGabriella *this_ptr);
-int __cdecl core_gabriela_cpp_CGabriella_FUN_004d6260(CGabriella *this_ptr);
-void __cdecl core_gabriela_cpp_CGabriella_FUN_004d6540(CGabriella *this_ptr);
+float __cdecl core_gabriela_cpp_CGabriella_scoreTargetVisibility_FUN_004d6260(CGabriella *this_ptr,CDemonActor *target_actor,int use_wider_fov);
+void __cdecl core_gabriela_cpp_CGabriella_updateAimTracking_FUN_004d6540(CGabriella *this_ptr,float delta_time,int is_holstering);
 void __cdecl core_gabriela_cpp_CGabriella_processDamage_FUN_004d6b30(CGabriella *this_ptr,SDamageInfo *damage_info);
-void __cdecl core_gabriela_cpp_CGabriella_FUN_004d6d40(CGabriella *this_ptr);
-void __cdecl core_gabriela_cpp_CGabriella_FUN_004d6f80(CGabriella *this_ptr);
+void __cdecl core_gabriela_cpp_CGabriella_updateClavicleCollisionAvoidance_FUN_004d6d40(CGabriella *this_ptr,float delta_time,int has_carried_objects);
+void __cdecl core_gabriela_cpp_CGabriella_binarySearchClavicleBlend_FUN_004d6f80(CGabriella *this_ptr,float delta_time,float *clavicle_blend,int probe_bone_index, int blend_bone_index,CVector3f *probe_offset);
 void __stack2_esi core_gabriela_cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d7120 (CGabriella *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 int __cdecl core_gabriela_cpp_CGabriella_isWeaponDrawn_FUN_004d7590(CGabriella *this_ptr);
 void __cdecl core_gabriela_cpp_CGabriella_drawWeapon_FUN_004d75b0(CGabriella *this_ptr,int drawn);
 void __cdecl core_gabriela_cpp_CGabriella_onActorDeleted_FUN_004d75e0(CGabriella *this_ptr,CDemonActor *deleted_actor);
 void __cdecl core_gabriela_cpp_CGabriella_getPropertyList_FUN_004d7610(CGabriella *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_gabriela_cpp_CGabriella_addFilesToExtract_FUN_004d7630(CGabriella *this_ptr,_FILE *file_handle);
-int __cdecl core_gabriela_cpp_CGabriella_FUN_004d7650(CGabriella *this_ptr);
+CWeapon * __cdecl core_gabriela_cpp_getSelectedWeapon_FUN_004d7650(CInventory *inventory_ptr);
 CGabriella * __cdecl core_gabriela_cpp_CGabriella_dtor_FUN_004d7660(CGabriella *this_ptr,uint flags);
 void __cdecl core_game_cpp_staticInit_FUN_004d76d0(void);
 void __cdecl core_game_cpp_setupMovieRecording_FUN_004d7730(void);

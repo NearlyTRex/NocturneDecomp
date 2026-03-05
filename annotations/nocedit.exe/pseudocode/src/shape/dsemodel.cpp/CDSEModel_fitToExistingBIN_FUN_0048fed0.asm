@@ -90,7 +90,7 @@ section .text
     PUSH EAX                            ; 0048ff32
     LEA ESI,[EBP + 0xffffff4c]          ; 0048ff33
     CALL engine_model.c_getMRGLBounds_FUN_00528140 ; 0048ff39
-        ;   XREF to: 00528140 (UNCONDITIONAL_CALL)  ; void engine_model.c_getMRGLBounds_FUN_00528140(SMRGLHeaderExtended * header, SMRGLModelBounds * output)
+        ;   XREF to: 00528140 (UNCONDITIONAL_CALL)  ; SMRGLModelBounds * engine_model.c_getMRGLBounds_FUN_00528140(SMRGLHeaderExtended * header, SMRGLModelBounds * output_bounds)
     ADD ESP,0x4                         ; 0048ff3e
     MOV ECX,0xd                         ; 0048ff41
     LEA EDI,[EBP + -0x80]               ; 0048ff46

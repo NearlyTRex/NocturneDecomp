@@ -105,7 +105,7 @@ void __cdecl CBodyPart::addAttachedModel(CBodyPart *this_ptr,char *model_name,CV
 
 // Original: core_bodypart.cpp_CBodyPart_addFire_FUN_0041ae50
 // Address: 0041ae50
-void __cdecl CBodyPart::addFire(CBodyPart *this_ptr,CVector3f *param_2);
+void __cdecl CBodyPart::addFire(CBodyPart *this_ptr,CVector3f *position);
 
 // Original: core_bodypart.cpp_CBodyPart_addTexture_FUN_0041af90
 // Address: 0041af90

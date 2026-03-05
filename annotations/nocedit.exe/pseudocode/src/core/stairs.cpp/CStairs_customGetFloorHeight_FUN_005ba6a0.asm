@@ -45,7 +45,7 @@ section .text
     PUSH ECX                            ; 005ba6d2
     PUSH ESI                            ; 005ba6d3
     CALL core_dtri.cpp_rayTriangleFloorTest_FUN_0049b2f0 ; 005ba6d4
-        ;   XREF to: 0049b2f0 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_rayTriangleFloorTest_FUN_0049b2f0(CDemonTriangle * triangle, float x, float z, float * out_height)
+        ;   XREF to: 0049b2f0 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_rayTriangleFloorTest_FUN_0049b2f0(CDemonTriangle * triangle, CVector3f * position, float search_radius, float * out_height)
     ADD ESP,0x10                        ; 005ba6d9
     TEST EAX,EAX                        ; 005ba6dc
     JZ 0x005ba6e5                       ; 005ba6de

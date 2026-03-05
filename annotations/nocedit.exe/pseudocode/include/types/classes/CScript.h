@@ -31,8 +31,8 @@ typedef struct CScript {
     int next_cmd; // 0x48
     float cmd_timer; // 0x4c
     float dialog_wav_time; // 0x50
-    char current_message[1025]; // 0x54
-    char msg_state_flags[3]; // 0x455
+    char current_message[1024]; // 0x54
+    float message_duration; // 0x454
     int saved_cmd_index; // 0x458
     int call_stack_count; // 0x45c
     int call_stack[8]; // 0x460

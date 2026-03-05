@@ -193,7 +193,8 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bf90(CBoneGuy *this_ptr,f
   local_38 = delta_time * (this_ptr->base).speed;
   pCVar2 = &(this_ptr->base).base.model;
   while (0.0 < local_38) {
-    iVar7 = core_motion_cpp_CMotionController_advance_FUN_0052d610(&pCVar2->motion_controller);
+    iVar7 = core_motion_cpp_CMotionController_advance_FUN_0052d610
+                      (&pCVar2->motion_controller,&local_38);
     if (iVar7 == 100) {
       pCVar4 = this_ptr->pickup_target;
       if (pCVar4 != (CDemonActor *)0x0) {

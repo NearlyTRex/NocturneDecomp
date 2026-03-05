@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 149,
-    "complexity_score": 131,
+    "complexity_score": 36,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 9,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 36,
-    "suspect_count": 9,
-    "suspect_types": [
-      "unnamed_param"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 185
   },
   "cross_references": [
@@ -48,7 +46,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_lever.cpp_CLever_setState_FUN_00504b20",
-    "signature": "void __cdecl core_lever_cpp_CLever_setState_FUN_00504b20(CLever *this_ptr,float param_2)"
+    "signature": "void __cdecl core_lever_cpp_CLever_setState_FUN_00504b20(CLever *this_ptr,float new_state)"
   },
   "function_calls": [
     {
@@ -172,85 +170,12 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "new_state",
         "offset": 8,
         "size": 4,
         "type": "float"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_lever_cpp_CLever_setState_FUN_00504b20(CLever *this_ptr,float param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (this_ptr->param != param_2) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((param_2 <= 0.0) && (0.0 < this_ptr->param)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((1.0 <= param_2) && (this_ptr->param < 1.0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (((0.0 < param_2) && (this_ptr->param <= 0.0)) ||",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(((int)param_2 < 0x3f800000 && (1.0 <= this_ptr->param)))) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "this_ptr->param = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_lever_cpp_CLever_setState_FUN_00504b20((CLever *)this_ptr->linked_lever,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_lever_cpp_CLever_setState_FUN_00504b20(this_ptr_00,param_2);",
-      "type": "unnamed_param"
-    }
-  ]
+  "suspects": []
 }

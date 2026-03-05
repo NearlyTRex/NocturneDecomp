@@ -15,9 +15,11 @@ int __cdecl core_setcolid_cpp_rayTestQuadFloor_FUN_005715d0(float x,float z,CVec
   CVector3f local_1c;
   
   core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0049a790(&local_54,vertex1,vertex2,vertex3);
-  uVar1 = core_dtri_cpp_rayTriangleFloorTest_FUN_0049b2f0(&local_54,x,z,&out_height->x);
+  uVar1 = core_dtri_cpp_rayTriangleFloorTest_FUN_0049b2f0(&local_54,(CVector3f *)x,z,&out_height->x)
+  ;
   core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0049a790(&local_54,vertex1,vertex3,vertex4);
-  uVar2 = core_dtri_cpp_rayTriangleFloorTest_FUN_0049b2f0(&local_54,x,z,&out_height->x);
+  uVar2 = core_dtri_cpp_rayTriangleFloorTest_FUN_0049b2f0(&local_54,(CVector3f *)x,z,&out_height->x)
+  ;
   uVar1 = uVar1 | uVar2;
   if (uVar1 != 0) {
     if (out_transformed_normal != &local_1c) {

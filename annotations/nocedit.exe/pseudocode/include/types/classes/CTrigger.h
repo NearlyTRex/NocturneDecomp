@@ -4,13 +4,14 @@
 #include "system/basetypes.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CVector3f.h"
+#include "types/enums/ETriggerEventType.h"
 
 // Structure: CTrigger
 // Ghidra size: 0x370 (880 bytes)
 typedef struct CTrigger {
     CDemonActor base; // 0x0
     float test_radius; // 0x158
-    int event_type; // 0x15c
+    ETriggerEventType event_type; // 0x15c
     CVector3f trigger_size; // 0x160
     int trigger_state; // 0x16c
     int shape; // 0x170

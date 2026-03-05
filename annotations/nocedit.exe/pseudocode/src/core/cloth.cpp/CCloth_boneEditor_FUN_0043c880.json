@@ -70,49 +70,49 @@
       {
         "category": "undeclared_identifier",
         "column": 68,
-        "line": 210,
+        "line": 209,
         "message": "use of undeclared identifier 'stack0xfffffac0'"
       },
       {
         "category": "other",
         "column": 21,
-        "line": 213,
+        "line": 212,
         "message": "cannot cast from type 'float' to pointer type 'char *'"
       },
       {
         "category": "undeclared_identifier",
         "column": 69,
-        "line": 216,
+        "line": 215,
         "message": "use of undeclared identifier 'stack0xfffffac0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 40,
-        "line": 225,
+        "line": 224,
         "message": "use of undeclared identifier 'stack0xfffffac0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 68,
-        "line": 230,
+        "line": 229,
         "message": "use of undeclared identifier 'stack0xfffffac0'"
       },
       {
         "category": "other",
         "column": 48,
-        "line": 237,
+        "line": 236,
         "message": "C-style cast from 'CKeys *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 47,
-        "line": 276,
+        "line": 275,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 284,
+        "line": 283,
         "message": "cannot cast from type 'float' to pointer type 'char *'"
       }
     ],
@@ -121,12 +121,12 @@
   },
   "complexity": {
     "assembly_lines": 395,
-    "complexity_score": 984,
+    "complexity_score": 983,
     "cross_reference_count": 1,
     "function_call_count": 28,
     "global_count": 32,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 364,
+    "pseudocode_lines": 363,
     "suspect_count": 59,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -136,7 +136,7 @@
       "suspect_float",
       "unaffected_reg"
     ],
-    "total_lines": 759
+    "total_lines": 758
   },
   "cross_references": [
     {
@@ -952,7 +952,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 203,
+      "line": 202,
       "match": "&stack0xfffffac0",
       "severity": "moderate",
       "text": "shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffffac0);",
@@ -960,7 +960,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 204,
+      "line": 203,
       "match": "NAN",
       "severity": "mild",
       "text": "fStack_1c = -NAN;",
@@ -968,7 +968,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 207,
+      "line": 206,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (0 < *(int *)((int)local_20 + 0x964)) {",
@@ -976,7 +976,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 209,
+      "line": 208,
       "match": "&stack0xfffffac0",
       "severity": "moderate",
       "text": "shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffffac0,string_data);",
@@ -984,7 +984,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 210,
+      "line": 209,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "if (string_data == unaff_EBP) {",
@@ -992,7 +992,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 215,
+      "line": 214,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "} while ((int)fVar4 < *(int *)((int)local_20 + 0x964));",
@@ -1000,7 +1000,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 218,
+      "line": 217,
       "match": "&stack0xfffffac0",
       "severity": "moderate",
       "text": "((CPickList *)&stack0xfffffac0,\"Select motion\",(int)fStack_1c,0);",
@@ -1008,7 +1008,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 223,
+      "line": 222,
       "match": "&stack0xfffffac0",
       "severity": "moderate",
       "text": "shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffffac0,0);",
@@ -1016,7 +1016,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 230,
+      "line": 229,
       "match": "in_stack_fffffac4",
       "severity": "moderate",
       "text": "(acStack_190,\"%f\",(double)(1.0 / (float)in_stack_fffffac4));",
@@ -1024,7 +1024,23 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 243,
+      "line": 242,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "if ((iVar2 != 0) && (unaff_ESI = unaff_ESI + 1, 2 < unaff_ESI)) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 242,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "if ((iVar2 != 0) && (unaff_ESI = unaff_ESI + 1, 2 < unaff_ESI)) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 242,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "if ((iVar2 != 0) && (unaff_ESI = unaff_ESI + 1, 2 < unaff_ESI)) {",
@@ -1033,22 +1049,6 @@
     {
       "description": "Unaffected register variable",
       "line": 243,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "if ((iVar2 != 0) && (unaff_ESI = unaff_ESI + 1, 2 < unaff_ESI)) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 243,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "if ((iVar2 != 0) && (unaff_ESI = unaff_ESI + 1, 2 < unaff_ESI)) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 244,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "unaff_ESI = 0;",
@@ -1056,7 +1056,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 246,
+      "line": 245,
       "match": "in_stack_fffffac4",
       "severity": "moderate",
       "text": "in_stack_fffffac4 = g_CKeysPtr;",
@@ -1064,7 +1064,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 259,
+      "line": 258,
       "match": "in_stack_00000028",
       "severity": "moderate",
       "text": "if (((in_stack_00000028 == 2) && (-1 < in_stack_0000002c)) &&",
@@ -1072,7 +1072,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 259,
+      "line": 258,
       "match": "in_stack_0000002c",
       "severity": "moderate",
       "text": "if (((in_stack_00000028 == 2) && (-1 < in_stack_0000002c)) &&",
@@ -1080,7 +1080,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 260,
+      "line": 259,
       "match": "in_stack_0000002c",
       "severity": "moderate",
       "text": "(in_stack_0000002c < this_ptr->collide_bone_count)) {",
@@ -1088,7 +1088,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 268,
+      "line": 267,
       "match": "in_stack_0000002c",
       "severity": "moderate",
       "text": "iVar5 = in_stack_0000002c * 0xac + in_stack_00000010;",
@@ -1096,7 +1096,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 268,
+      "line": 267,
       "match": "in_stack_00000010",
       "severity": "moderate",
       "text": "iVar5 = in_stack_0000002c * 0xac + in_stack_00000010;",
@@ -1104,7 +1104,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 312,
+      "line": 311,
       "match": "in_stack_0000003c",
       "severity": "moderate",
       "text": "((void *)(in_stack_0000003c * 0xac + in_stack_00000020),",
@@ -1112,7 +1112,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 312,
+      "line": 311,
       "match": "in_stack_00000020",
       "severity": "moderate",
       "text": "((void *)(in_stack_0000003c * 0xac + in_stack_00000020),",
@@ -1120,7 +1120,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 313,
+      "line": 312,
       "match": "in_stack_0000003c",
       "severity": "moderate",
       "text": "(void *)((in_stack_0000003c + 1) * 0xac + in_stack_00000020),",
@@ -1128,7 +1128,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 313,
+      "line": 312,
       "match": "in_stack_00000020",
       "severity": "moderate",
       "text": "(void *)((in_stack_0000003c + 1) * 0xac + in_stack_00000020),",
@@ -1136,7 +1136,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 314,
+      "line": 313,
       "match": "in_stack_0000003c",
       "severity": "moderate",
       "text": "(iVar2 - in_stack_0000003c) * 0xac);",
@@ -1144,7 +1144,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 339,
+      "line": 338,
       "match": "in_stack_00000054",
       "severity": "moderate",
       "text": "(this_ptr,in_stack_00000054,&g_CDeformableModelInstanceInstance);",
@@ -1152,7 +1152,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 354,
+      "line": 353,
       "match": "in_stack_00000034",
       "severity": "moderate",
       "text": "if (in_stack_00000034 < 0) {",
@@ -1160,7 +1160,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 355,
+      "line": 354,
       "match": "in_stack_00000034",
       "severity": "moderate",
       "text": "in_stack_00000034 = this_ptr->collide_bone_count + -1;",
@@ -1168,7 +1168,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 357,
+      "line": 356,
       "match": "in_stack_00000034",
       "severity": "moderate",
       "text": "if (this_ptr->collide_bone_count <= in_stack_00000034) {",
@@ -1176,7 +1176,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 358,
+      "line": 357,
       "match": "in_stack_00000034",
       "severity": "moderate",
       "text": "in_stack_00000034 = 0;",

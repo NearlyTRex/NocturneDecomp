@@ -141,11 +141,11 @@ void __cdecl CDemonMission::freeAllAssets(CDemonMission *this_ptr);
 
 // Original: core_mission.cpp_CDemonMission_createOneHero_FUN_00524920
 // Address: 00524920
-int __cdecl CDemonMission::createOneHero(CDemonMission *this_ptr,int index,int param_3,void *param_4);
+int __cdecl CDemonMission::createOneHero(CDemonMission *this_ptr,int index,int hero_type,CCharacter *existing_actor);
 
 // Original: core_mission.cpp_CDemonMission_createHeros_FUN_00524a80
 // Address: 00524a80
-int __cdecl CDemonMission::createHeros(CDemonMission *this_ptr,int creation_flags);
+int __cdecl CDemonMission::createHeros(CDemonMission *this_ptr,CCharacter *existing_hero);
 
 // Original: core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_00524c20
 // Address: 00524c20

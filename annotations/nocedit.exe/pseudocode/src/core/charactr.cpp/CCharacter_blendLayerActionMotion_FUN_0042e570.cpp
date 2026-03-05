@@ -13,6 +13,6 @@ void __cdecl core_charactr_cpp_CCharacter_blendLayerActionMotion_FUN_0042e570(CC
             (&this_ptr->model,this_ptr->layer_actions[this_ptr->layer_action_count].motion_index,
              (float)this_ptr->layer_actions[this_ptr->layer_action_count].frame_count *
              this_ptr->layer_action_t,blend_weight,blend_mode,
-             core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0);
+             core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0);
   return;
 }

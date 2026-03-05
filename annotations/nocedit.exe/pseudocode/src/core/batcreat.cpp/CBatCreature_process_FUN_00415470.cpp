@@ -68,7 +68,7 @@ void __cdecl core_batcreat_cpp_CBatCreature_process_FUN_00415470(CBatCreature *t
   local_2c = delta_time * (this_ptr->base).speed;
   while (0.0 < local_2c) {
     iVar5 = core_motion_cpp_CMotionController_advance_FUN_0052d610
-                      (&(this_ptr->base).base.model.motion_controller);
+                      (&(this_ptr->base).base.model.motion_controller,&local_2c);
     core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,iVar5);
   }
   fVar3 = (this_ptr->base).speed;

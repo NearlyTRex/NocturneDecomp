@@ -50,7 +50,7 @@ void __cdecl core_mission_cpp_CDemonMission_run_FUN_00524420(CDemonMission *this
     color_value = (uint)!bVar2;
     core_level_cpp_CLevelLoader_show_FUN_00503dc0(g_CLevelLoaderPtr,9,(uint)bVar2,iVar1);
     core_mission_cpp_CDemonMission_load_FUN_00522d90(this_ptr,g_PendingMissionName,0);
-    iVar1 = core_mission_cpp_CDemonMission_createHeros_FUN_00524a80(this_ptr,(int)this_ptr_00);
+    iVar1 = core_mission_cpp_CDemonMission_createHeros_FUN_00524a80(this_ptr,&this_ptr_00->base);
     if (iVar1 == 0) goto LAB_005244ee;
     iVar1 = core_mission_cpp_CDemonMission_startMission_FUN_00524760(this_ptr);
     if (iVar1 == 0) goto LAB_005244ee;

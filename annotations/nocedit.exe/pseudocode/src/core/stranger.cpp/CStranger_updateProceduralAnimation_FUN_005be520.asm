@@ -467,7 +467,7 @@ section .text
     PUSH EAX                            ; 005be8cd
     PUSH EDI                            ; 005be8ce
     CALL core_lever.cpp_CLever_FUN_00504dd0 ; 005be8cf
-        ;   XREF to: 00504dd0 (UNCONDITIONAL_CALL)  ; CVector3f * core_lever.cpp_CLever_FUN_00504dd0(CLever * this_ptr)
+        ;   XREF to: 00504dd0 (UNCONDITIONAL_CALL)  ; CVector3f * core_lever.cpp_CLever_FUN_00504dd0(CLever * this_ptr, CVector3f * param_2)
     ADD ESP,0x8                         ; 005be8d4
     PUSH EAX                            ; 005be8d7
     LEA EAX,[ESP + 0x1eb4]              ; 005be8d8
@@ -487,7 +487,7 @@ section .text
     MOV dword ptr [ESI + 0x8],EDX       ; 005be8fa
     MOV EAX,dword ptr [EBX + 0x1fba8]   ; 005be8fd
         ;   Label: LAB_005be8fd
-    MOV [0x03f6baa8],EAX                ; 005be903 | DAT_03f6baa8
+    MOV [0x03f6baa8],EAX                ; 005be903 | PTR_03f6baa8
     LEA ESI,[EBX + 0x1fc98]             ; 005be908
         ;   Label: LAB_005be908
     MOV EAX,dword ptr [ESI]             ; 005be90e
@@ -967,10 +967,10 @@ section .text
     LEA EAX,[ESP + 0x1e44]              ; 005bf003
         ;   Label: LAB_005bf003
     PUSH EAX                            ; 005bf00a
-    MOV EAX,[0x03f6baa8]                ; 005bf00b | DAT_03f6baa8
+    MOV EAX,[0x03f6baa8]                ; 005bf00b | PTR_03f6baa8
     PUSH EAX                            ; 005bf010
     CALL core_lever.cpp_CLever_FUN_00504dd0 ; 005bf011
-        ;   XREF to: 00504dd0 (UNCONDITIONAL_CALL)  ; CVector3f * core_lever.cpp_CLever_FUN_00504dd0(CLever * this_ptr)
+        ;   XREF to: 00504dd0 (UNCONDITIONAL_CALL)  ; CVector3f * core_lever.cpp_CLever_FUN_00504dd0(CLever * this_ptr, CVector3f * param_2)
     ADD ESP,0x8                         ; 005bf016
     PUSH EAX                            ; 005bf019
     LEA EAX,[ESP + 0x1e00]              ; 005bf01a
@@ -1477,7 +1477,7 @@ section .text
     ADD ESP,0x4                         ; 005bf6b7
     PUSH EAX                            ; 005bf6ba
     CALL core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460 ; 005bf6bb
-        ;   XREF to: 0052d460 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460(CMotionList * this_ptr)
+        ;   XREF to: 0052d460 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460(CMotionList * this_ptr, char * motion_name, int error_on_not_found)
     ADD ESP,0xc                         ; 005bf6c0
     PUSH 0x3f800000                     ; 005bf6c3
     PUSH EAX                            ; 005bf6c8

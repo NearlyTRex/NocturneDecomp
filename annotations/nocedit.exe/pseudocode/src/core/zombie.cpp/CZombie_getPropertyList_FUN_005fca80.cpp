@@ -12,6 +12,7 @@ void __cdecl core_zombie_cpp_CZombie_getPropertyList_FUN_005fca80(CZombie *this_
   CDeformableModelInstance *data_ptr;
   SMotion *pSVar1;
   CMotionList *this_ptr_00;
+  char *state_name;
   int iVar2;
   
   core_enemy_cpp_CEnemy_getPropertyList_FUN_004aa170(&this_ptr->base,property_list);
@@ -30,9 +31,11 @@ void __cdecl core_zombie_cpp_CZombie_getPropertyList_FUN_005fca80(CZombie *this_
   }
   core_actor_cpp_CActorPropertyList_addBool_FUN_0040e330
             (property_list,"IsMinerZombie",&this_ptr->is_miner_zombie);
+  iVar2 = 0;
+  state_name = "CHASE_2";
   this_ptr_00 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                           (&(this_ptr->base).base.model.motion_controller);
-  iVar2 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(this_ptr_00);
+  iVar2 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(this_ptr_00,state_name,iVar2);
   if (iVar2 != 0x16) {
     return;
   }

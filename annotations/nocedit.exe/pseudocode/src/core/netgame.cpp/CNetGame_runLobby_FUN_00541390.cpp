@@ -122,7 +122,8 @@ LAB_005415cb:
           puVar8 = puVar8 + 2;
         } while (uVar1 != '\0');
         engine_2d_c_drawText_FUN_00401fd0((char *)local_130,300,iVar4);
-        _sprintf((char *)local_130,"%d",*(int *)(local_1c + 0x14));
+        _sprintf
+                  ((char *)local_130,"%d",*(EHeroType *)(local_1c + 0x14));
         engine_2d_c_drawText_FUN_00401fd0((char *)local_130,400,iVar4);
         if (this_ptr->connection_type == CONNECTION_HOST) {
           _sprintf
@@ -197,7 +198,8 @@ LAB_005415cb:
             srand(this_ptr->random_seed);
             core_actor_cpp_setRandomSeed_FUN_0040cb90(this_ptr->random_seed);
             core_mission_cpp_CDemonMission_load_FUN_00522d90(g_CDemonMissionPtr,pcVar6,0);
-            iVar4 = core_mission_cpp_CDemonMission_createHeros_FUN_00524a80(g_CDemonMissionPtr,0);
+            iVar4 = core_mission_cpp_CDemonMission_createHeros_FUN_00524a80
+                              (g_CDemonMissionPtr,(CCharacter *)0x0);
             if (iVar4 != 0) {
               core_mission_cpp_CDemonMission_startMission_FUN_00524760(g_CDemonMissionPtr);
               iVar4 = core_netgame_cpp_CNetGame_syncPlayers_FUN_005401e0(this_ptr,2);
@@ -217,7 +219,8 @@ LAB_005415cb:
         core_actor_cpp_setRandomSeed_FUN_0040cb90(this_ptr->random_seed);
         core_mission_cpp_CDemonMission_load_FUN_00522d90
                   (g_CDemonMissionPtr,this_ptr->mission_name,0);
-        iVar4 = core_mission_cpp_CDemonMission_createHeros_FUN_00524a80(g_CDemonMissionPtr,0);
+        iVar4 = core_mission_cpp_CDemonMission_createHeros_FUN_00524a80
+                          (g_CDemonMissionPtr,(CCharacter *)0x0);
         if (iVar4 != 0) {
           core_mission_cpp_CDemonMission_startMission_FUN_00524760(g_CDemonMissionPtr);
           iVar4 = core_netgame_cpp_CNetGame_syncPlayers_FUN_005401e0(this_ptr,2);

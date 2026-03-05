@@ -51,7 +51,7 @@ section .text
         ;   Label: LAB_0053bca3
     PUSH EBX                            ; 0053bca4
     CALL core_msnedit.cpp_CDemonMission_deleteActor_FUN_00538ea0 ; 0053bca5
-        ;   XREF to: 00538ea0 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_deleteActor_FUN_00538ea0(CDemonMission * this_ptr, int param_2)
+        ;   XREF to: 00538ea0 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_deleteActor_FUN_00538ea0(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 0053bcaa
     PUSH 0x1                            ; 0053bcad
     PUSH ESI                            ; 0053bcaf

@@ -115,7 +115,7 @@ void __cdecl core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(C
   float local_e0;
   CVector3i local_dc;
   CVector3i local_d0;
-  int *local_c4;
+  float *local_c4;
   CDeformableModel *local_c0;
   CSkeleton *local_bc;
   uint local_b8;
@@ -249,14 +249,14 @@ void __cdecl core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(C
       if (iVar7 == 0) {
         iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD7);
         if (iVar7 != 0) {
-          (this_ptr->motion_controller).current_frame_number = 0;
+          (this_ptr->motion_controller).current_frame_number = 0.0;
         }
         iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD1);
         if (iVar7 != 0) {
           pSVar10 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                               (&this_ptr->motion_controller);
           local_18 = (float)(pSVar10->frame_count + -1);
-          (this_ptr->motion_controller).current_frame_number = (int)(float)(int)local_18;
+          (this_ptr->motion_controller).current_frame_number = (float)(int)local_18;
         }
       }
       else {
@@ -294,7 +294,7 @@ void __cdecl core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(C
       pSVar10 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                           (&this_ptr->motion_controller);
       fVar9 = (float)pSVar10->frame_start;
-      local_80 = (float)(this_ptr->motion_controller).current_frame_number;
+      local_80 = (this_ptr->motion_controller).current_frame_number;
       pSVar10 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                           (&this_ptr->motion_controller);
       local_7c = (float)pSVar10->frame_count;
@@ -302,8 +302,8 @@ void __cdecl core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(C
         pSVar10 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                             (&this_ptr->motion_controller);
         fVar5 = local_90 * pSVar10->fps * local_8c +
-                (float)(this_ptr->motion_controller).current_frame_number;
-        (this_ptr->motion_controller).current_frame_number = (int)fVar5;
+                (this_ptr->motion_controller).current_frame_number;
+        (this_ptr->motion_controller).current_frame_number = fVar5;
         if (local_7c < fVar5) {
           do {
             local_18 = fVar9;
@@ -312,31 +312,29 @@ void __cdecl core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(C
                        (float)(int)fVar9 + local_7c,1.0);
             if (local_b8 == 0) {
               (this_ptr->motion_controller).current_frame_number =
-                   (int)((float)(this_ptr->motion_controller).current_frame_number - local_7c);
+                   (this_ptr->motion_controller).current_frame_number - local_7c;
             }
             else {
               pSVar10 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                                   (&this_ptr->motion_controller);
-              (this_ptr->motion_controller).current_frame_number =
-                   (int)pSVar10->exit_forward_to_frame;
+              (this_ptr->motion_controller).current_frame_number = pSVar10->exit_forward_to_frame;
             }
             local_80 = 0.0;
-          } while (local_7c < (float)(this_ptr->motion_controller).current_frame_number);
+          } while (local_7c < (this_ptr->motion_controller).current_frame_number);
         }
         local_18 = fVar9;
         (*((this_ptr->motion_controller).vtable)->accumulateScaledRootMotion)
                   (&this_ptr->motion_controller,(float)(int)fVar9 + local_80,
-                   (float)(int)fVar9 + (float)(this_ptr->motion_controller).current_frame_number,1.0
-                  );
+                   (float)(int)fVar9 + (this_ptr->motion_controller).current_frame_number,1.0);
       }
       else {
         iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_PERIOD);
         if (iVar7 != 0) {
           (this_ptr->motion_controller).current_frame_number =
-               (int)((float)(this_ptr->motion_controller).current_frame_number + local_8c);
+               (this_ptr->motion_controller).current_frame_number + local_8c;
           local_78 = local_7c;
-          if ((float)(this_ptr->motion_controller).current_frame_number < local_7c) {
-            local_78 = (float)(this_ptr->motion_controller).current_frame_number;
+          if ((this_ptr->motion_controller).current_frame_number < local_7c) {
+            local_78 = (this_ptr->motion_controller).current_frame_number;
           }
           local_18 = fVar9;
           (*((this_ptr->motion_controller).vtable)->accumulateScaledRootMotion)
@@ -346,21 +344,20 @@ void __cdecl core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(C
         iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_COMMA);
         if (iVar7 != 0) {
           (this_ptr->motion_controller).current_frame_number =
-               (int)((float)(this_ptr->motion_controller).current_frame_number - local_8c);
+               (this_ptr->motion_controller).current_frame_number - local_8c;
           local_74 = 0.0;
-          if (0.0 < (float)(this_ptr->motion_controller).current_frame_number) {
-            local_74 = (float)(this_ptr->motion_controller).current_frame_number;
+          if (0.0 < (this_ptr->motion_controller).current_frame_number) {
+            local_74 = (this_ptr->motion_controller).current_frame_number;
           }
           local_70 = (float)(int)fVar9;
           local_18 = fVar9;
           (*((this_ptr->motion_controller).vtable)->accumulateScaledRootMotion)
                     (&this_ptr->motion_controller,local_70 + local_74,local_70 + local_80,1.0);
-          if ((float)(this_ptr->motion_controller).current_frame_number < 0.0) {
+          if ((this_ptr->motion_controller).current_frame_number < 0.0) {
             local_18 = local_70 + local_7c;
             (*((this_ptr->motion_controller).vtable)->accumulateScaledRootMotion)
                       (&this_ptr->motion_controller,
-                       local_18 + (float)(this_ptr->motion_controller).current_frame_number,local_18
-                       ,1.0);
+                       local_18 + (this_ptr->motion_controller).current_frame_number,local_18,1.0);
           }
           local_178 = -local_6c->x;
           local_174 = -local_6c->y;
@@ -372,24 +369,22 @@ void __cdecl core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(C
           }
         }
       }
-      while ((float)(this_ptr->motion_controller).current_frame_number < 0.0) {
+      while ((this_ptr->motion_controller).current_frame_number < 0.0) {
         pSVar10 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                             (&this_ptr->motion_controller);
         (this_ptr->motion_controller).current_frame_number =
-             (int)((float)pSVar10->frame_count +
-                  (float)(this_ptr->motion_controller).current_frame_number);
+             (float)pSVar10->frame_count + (this_ptr->motion_controller).current_frame_number;
       }
       pSVar10 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                           (&this_ptr->motion_controller);
-      if ((float)pSVar10->frame_count <= (float)(this_ptr->motion_controller).current_frame_number)
-      {
+      if ((float)pSVar10->frame_count <= (this_ptr->motion_controller).current_frame_number) {
         if (local_b8 == 0) {
-          (this_ptr->motion_controller).current_frame_number = 0;
+          (this_ptr->motion_controller).current_frame_number = 0.0;
         }
         else {
           pSVar10 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                               (&this_ptr->motion_controller);
-          (this_ptr->motion_controller).current_frame_number = (int)pSVar10->exit_forward_to_frame;
+          (this_ptr->motion_controller).current_frame_number = pSVar10->exit_forward_to_frame;
         }
       }
       if (local_48 != 0) {
@@ -819,7 +814,7 @@ LAB_005975b4:
       pSVar10 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                           (&this_ptr->motion_controller);
       shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
-                (g_CEditorToolsPtr,"Enter frame number",(float *)local_c4,1,0.0,
+                (g_CEditorToolsPtr,"Enter frame number",local_c4,1,0.0,
                  (float)pSVar10->frame_count,(int)fVar9);
     }
     iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_M);

@@ -3830,7 +3830,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_ammo.cpp_CAmmo_FUN_00410fd0",
+    "name":"core_ammo.cpp_CAmmo_setWeaponClass_FUN_00410fd0",
     "ret":"void",
     "vars":{
       "params":[
@@ -5802,7 +5802,7 @@
           "type":"CBodyPart*"
         },
         {
-          "name":"param_2",
+          "name":"position",
           "storage":{
             "offset":8,
             "size":4,
@@ -12196,9 +12196,27 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_charactr.cpp_FUN_0042f9d0",
-    "ret":"int",
+    "name":"core_charactr.cpp_getActorCreateEvent_FUN_0042f9d0",
+    "ret":"char*",
     "vars":{
+      "params":[
+        {
+          "name":"actor",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonActor*"
+        }
+      ],
       "ret_storage":{
         "reg":"EAX",
         "size":4,
@@ -36983,7 +37001,7 @@
           "type":"CEnemy*"
         },
         {
-          "name":"param_2",
+          "name":"target",
           "storage":{
             "offset":8,
             "size":4,
@@ -43502,7 +43520,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_gabriela.cpp_CGabriella_FUN_004d5550",
+    "name":"core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004d5550",
     "ret":"void",
     "vars":{
       "locals":[
@@ -43905,6 +43923,38 @@
             ]
           },
           "type":"undefined1"
+        },
+        {
+          "name":"unionfacet5_4d55bb",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:4041bb451d3b",
+                "offset":70651058920763,
+                "size":4
+              }
+            ]
+          },
+          "type":"UActorVTable*",
+          "use":107
+        },
+        {
+          "name":"unionfacet5_4d57de",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:4041b439ce64",
+                "offset":70650940739172,
+                "size":4
+              }
+            ]
+          },
+          "type":"UActorVTable*",
+          "use":654
         }
       ],
       "params":[
@@ -43923,6 +43973,22 @@
             ]
           },
           "type":"CGabriella*"
+        },
+        {
+          "name":"delta_time",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
         }
       ]
     }
@@ -43938,7 +44004,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_gabriela.cpp_CGabriella_FUN_004d6050",
+    "name":"core_gabriela.cpp_CGabriella_tryThrowObject_FUN_004d6050",
     "ret":"int",
     "vars":{
       "params":[
@@ -43982,12 +44048,12 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_gabriela.cpp_CGabriella_FUN_004d7650",
-    "ret":"int",
+    "name":"core_gabriela.cpp_getSelectedWeapon_FUN_004d7650",
+    "ret":"CWeapon*",
     "vars":{
       "params":[
         {
-          "name":"this_ptr",
+          "name":"inventory_ptr",
           "storage":{
             "offset":4,
             "size":4,
@@ -44000,7 +44066,7 @@
               }
             ]
           },
-          "type":"CGabriella*"
+          "type":"CInventory*"
         }
       ],
       "ret_storage":{
@@ -46037,7 +46103,7 @@
           "type":"CGhoul*"
         },
         {
-          "name":"param_2",
+          "name":"out_attract_position",
           "storage":{
             "offset":8,
             "size":4,
@@ -46786,6 +46852,70 @@
             ]
           },
           "type":"undefined1"
+        },
+        {
+          "name":"unionfacet5_4f036a",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:40417faaf347",
+                "offset":70650058961735,
+                "size":4
+              }
+            ]
+          },
+          "type":"UActorVTable*",
+          "use":26
+        },
+        {
+          "name":"unionfacet5_4f0822",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:40412d5f6c74",
+                "offset":70648678280308,
+                "size":4
+              }
+            ]
+          },
+          "type":"UActorVTable*",
+          "use":1234
+        },
+        {
+          "name":"unionfacet5_4f0885",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:4041fde34dc8",
+                "offset":70652176584136,
+                "size":4
+              }
+            ]
+          },
+          "type":"UActorVTable*",
+          "use":1333
+        },
+        {
+          "name":"unionfacet5_4f0a79",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:404132d730b9",
+                "offset":70648770015417,
+                "size":4
+              }
+            ]
+          },
+          "type":"UActorVTable*",
+          "use":1833
         }
       ],
       "params":[
@@ -49057,6 +49187,22 @@
             ]
           },
           "type":"undefined4"
+        },
+        {
+          "name":"unionfacet5_4f520b",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:4041914e27a6",
+                "offset":70650354870182,
+                "size":4
+              }
+            ]
+          },
+          "type":"UActorVTable*",
+          "use":1595
         }
       ],
       "params":[
@@ -51761,6 +51907,22 @@
             ]
           },
           "type":"CLever*"
+        },
+        {
+          "name":"param_2",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
         }
       ],
       "ret_storage":{
@@ -59701,6 +59863,54 @@
             ]
           },
           "type":"CMotionController*"
+        },
+        {
+          "name":"motion_index",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"current_frame",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"remaining_time",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"float*"
         }
       ]
     }
@@ -85573,6 +85783,22 @@
             ]
           },
           "type":"undefined1"
+        },
+        {
+          "name":"unionfacet5_5e3235",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:40419ab44004",
+                "offset":70650512556036,
+                "size":4
+              }
+            ]
+          },
+          "type":"UActorVTable*",
+          "use":1253
         }
       ],
       "params":[
@@ -85609,6 +85835,24 @@
     "name":"core_turret.cpp_CTurret_updateInteraction_FUN_005e34d0",
     "ret":"int",
     "vars":{
+      "locals":[
+        {
+          "name":"unionfacet5_5e350d",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:4041aa6486cf",
+                "offset":70650775766735,
+                "size":4
+              }
+            ]
+          },
+          "type":"UActorVTable*",
+          "use":61
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",
@@ -86013,7 +86257,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_vampboss.cpp_FUN_005e58d0",
+    "name":"core_vampboss.cpp_clampAngle_FUN_005e58d0",
     "ret":"float",
     "vars":{
       "locals":[
@@ -86064,6 +86308,40 @@
             ]
           },
           "type":"undefined4"
+        }
+      ],
+      "params":[
+        {
+          "name":"angle",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"max_angle",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
         }
       ],
       "ret_storage":{

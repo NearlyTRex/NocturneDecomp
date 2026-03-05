@@ -395,8 +395,27 @@ def import_variable_storage(currentProgram, storage_info, data_type):
             storage = VariableStorage(currentProgram, address, data_type.getLength())
             return storage if storage.isValid() else None
 
-    # Complex storage with varnodes
+    # Complex storage with varnodes (including HASH-addressed decompiler overrides)
     elif storage_info.get("varnodes"):
+        varnodes = storage_info["varnodes"]
+        if len(varnodes) == 1 and str(varnodes[0].get("addr", "")).startswith("HASH:"):
+            # Reconstruct hash-addressed variable storage (decompiler type overrides)
+            hash_hex = str(varnodes[0]["addr"]).replace("HASH:", "")
+            hash_offset = long(hash_hex, 16)
+            vn_size = varnodes[0].get("size", data_type.getLength())
+            try:
+                addr_factory = currentProgram.getAddressFactory()
+                hash_space = addr_factory.getAddressSpace("HASH")
+                if hash_space:
+                    hash_addr = hash_space.getAddress(hash_offset)
+                    storage = VariableStorage(currentProgram, hash_addr, vn_size)
+                    if storage.isValid():
+                        log_info("Created HASH variable storage: %s size=%d" % (varnodes[0]["addr"], vn_size))
+                        return storage
+                    else:
+                        log_info("HASH variable storage is invalid: %s" % varnodes[0]["addr"])
+            except Exception as e:
+                log_info("Failed to create HASH variable storage: %s" % str(e))
         return None
     return None
 

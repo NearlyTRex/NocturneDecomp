@@ -2,11 +2,11 @@
 // Address: 004e12b0
 // Address Range: [[004e12b0, 004e1c24]]
 // Convention: __cdecl
-// Signature: void __cdecl core_game_cpp_CGame_loadGame_FUN_004e12b0(CGame *this_ptr,char *save_filename,int load_mode,char *chapter_name)
+// Signature: void __cdecl core_game_cpp_CGame_loadGame_FUN_004e12b0(CGame *this_ptr,char *save_filename,int load_mode)
 
 #include "nocturne.h"
 
-void __cdecl core_game_cpp_CGame_loadGame_FUN_004e12b0(CGame *this_ptr,char *save_filename,int load_mode,char *chapter_name)
+void __cdecl core_game_cpp_CGame_loadGame_FUN_004e12b0(CGame *this_ptr,char *save_filename,int load_mode)
 
 {
   char cVar1;

@@ -71,7 +71,7 @@ section .text
     PUSH EAX                            ; 00520bf4
     PUSH ESI                            ; 00520bf5
     CALL core_motion.cpp_CMotionController_advance_FUN_0052d610 ; 00520bf6
-        ;   XREF to: 0052d610 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionController_advance_FUN_0052d610(CMotionController * this_ptr)
+        ;   XREF to: 0052d610 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionController_advance_FUN_0052d610(CMotionController * this_ptr, float * delta_time)
     ADD ESP,0x8                         ; 00520bfb
     JMP 0x00520be2                      ; 00520bfe
         ;   XREF to: 00520be2 (UNCONDITIONAL_JUMP)  ; LAB_00520be2
@@ -134,7 +134,7 @@ section .text
     ADD EAX,0x158                       ; 00520c92
     PUSH EAX                            ; 00520c97
     CALL core_motion.cpp_CMotionController_advance_FUN_0052d610 ; 00520c98
-        ;   XREF to: 0052d610 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionController_advance_FUN_0052d610(CMotionController * this_ptr)
+        ;   XREF to: 0052d610 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionController_advance_FUN_0052d610(CMotionController * this_ptr, float * delta_time)
     ADD ESP,0x8                         ; 00520c9d
     JMP 0x00520c7d                      ; 00520ca0
         ;   XREF to: 00520c7d (UNCONDITIONAL_JUMP)  ; LAB_00520c7d

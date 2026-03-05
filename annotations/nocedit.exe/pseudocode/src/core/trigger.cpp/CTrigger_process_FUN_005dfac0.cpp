@@ -199,19 +199,19 @@ LAB_005dfb52:
     }
   }
   switch(this_ptr->event_type) {
-  case 0:
-  case 1:
+  case TRIGGER_EVENT_SINGLE:
+  case TRIGGER_EVENT_REPEAT:
     if (local_34 == 0) {
-      if (this_ptr->event_type == 0) {
+      if (this_ptr->event_type == TRIGGER_EVENT_SINGLE) {
         this_ptr->trigger_state = 0;
       }
       goto switchD_005dfb63_default;
     }
     break;
-  case 2:
+  case TRIGGER_EVENT_ON_ENTER:
     if ((this_ptr->prev_triggered != 0) || (local_34 == 0)) goto LAB_005e0053;
     break;
-  case 3:
+  case TRIGGER_EVENT_ON_EXIT:
     if ((this_ptr->prev_triggered == 1) && (local_34 == 0)) {
       this_ptr->trigger_state = 1;
       goto switchD_005dfb63_default;

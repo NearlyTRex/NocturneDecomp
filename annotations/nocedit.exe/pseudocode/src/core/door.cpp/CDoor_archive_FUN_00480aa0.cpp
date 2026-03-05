@@ -15,9 +15,9 @@ void __cdecl core_door_cpp_CDoor_archive_FUN_00480aa0(CDoor *this_ptr)
   
   core_actor_cpp_CDemonActor_archive_FUN_0040c1c0(&this_ptr->base);
   core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b8f0(&this_ptr->model,"modelName");
-  core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->door_type,"doorType");
+  core_actor_cpp_archiveInteger_FUN_0040b7f0((int *)&this_ptr->door_type,"doorType");
   core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->door_side,"doorSide");
-  core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->door_state,"doorState");
+  core_actor_cpp_archiveInteger_FUN_0040b7f0((int *)&this_ptr->door_state,"doorState");
   core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->door_swing,"doorSwing");
   core_actor_cpp_archiveString_FUN_0040b5c0(this_ptr->open_condition,"openEvent");
   core_actor_cpp_archiveString_FUN_0040b5c0(this_ptr->close_condition,"closeEvent");
@@ -31,7 +31,7 @@ void __cdecl core_door_cpp_CDoor_archive_FUN_00480aa0(CDoor *this_ptr)
   core_actor_cpp_archiveFloat_FUN_0040b770(&this_ptr->open_speed,"openSpeed");
   core_actor_cpp_archiveFloat_FUN_0040b770(&this_ptr->close_speed,"closeSpeed");
   if (1 < g_CDoorClassVersion) {
-    core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->ground_type,"groundType");
+    core_actor_cpp_archiveInteger_FUN_0040b7f0((int *)&this_ptr->ground_type,"groundType");
   }
   if (2 < g_CDoorClassVersion) {
     core_actor_cpp_archiveString_FUN_0040b5c0

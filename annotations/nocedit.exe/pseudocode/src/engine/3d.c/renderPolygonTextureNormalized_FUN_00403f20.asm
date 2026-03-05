@@ -13,7 +13,7 @@
 ;   int[24] g_ProcessedVertexIndices
 ;   undefined4 DAT_00772a9c
 ;   RenderScanlineFunc* g_ScanlineRenderFunc
-;   BOOL g_MMXSupported
+;   int g_MMXSupported
 ;   _BIT_INTEGER32 g_RenderStateFlags
 ;   int g_RenderStateFlag2
 ;

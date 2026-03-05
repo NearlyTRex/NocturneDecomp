@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   show_tutorial_message
 ;
 ; XREF[10]:
-;   core_ammobox.cpp_CAmmoBox_FUN_00411700 at 00411724
+;   core_ammobox.cpp_CAmmoBox_addToInventory_FUN_00411700 at 00411724
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 at 004e036d
 ;   core_game.cpp_giveHeroWeaponAmmo_FUN_004dd930 at 004dd9ba
 ;   core_game.cpp_giveHeroWeapon_FUN_004dd870 at 004dd8f4
@@ -44,7 +44,7 @@
 ;   core_actor.cpp_createActorByName_FUN_0040c430
 ;   core_actor.cpp_deleteActor_FUN_00408820
 ;   core_actor.cpp_isOfClass_FUN_0040c6d0
-;   core_ammo.cpp_CAmmo_FUN_00410fd0
+;   core_ammo.cpp_CAmmo_setWeaponClass_FUN_00410fd0
 ;   core_game.cpp_CGame_displayMessage_FUN_004d7f20
 ;   core_inv.cpp_CInventory_selectWeapon_FUN_004feb10
 ;   core_inv.cpp_getItemDisplayName_FUN_004fcf00
@@ -1440,8 +1440,8 @@ section .text
     PUSH EBX                            ; 004fe216
     PUSH EAX                            ; 004fe217
     XOR ESI,ESI                         ; 004fe218
-    CALL core_ammo.cpp_CAmmo_FUN_00410fd0 ; 004fe21a
-        ;   XREF to: 00410fd0 (UNCONDITIONAL_CALL)  ; void core_ammo.cpp_CAmmo_FUN_00410fd0(CAmmo * this_ptr, char * weapon_class_name)
+    CALL core_ammo.cpp_CAmmo_setWeaponClass_FUN_00410fd0 ; 004fe21a
+        ;   XREF to: 00410fd0 (UNCONDITIONAL_CALL)  ; void core_ammo.cpp_CAmmo_setWeaponClass_FUN_00410fd0(CAmmo * this_ptr, char * weapon_class_name)
     MOV EDI,dword ptr [EBP + 0x8]       ; 004fe21f
     ADD ESP,0x8                         ; 004fe222
     TEST EDI,EDI                        ; 004fe225

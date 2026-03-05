@@ -10,6 +10,6 @@ void __cdecl core_motion_cpp_CMotionController_clearTweenState_FUN_0052de40(CMot
 
 {
   this_ptr->tween_progress = -1.0;
-  this_ptr->tween_type = 0;
+  this_ptr->tween_type = MOTION_CMD_NONE;
   return;
 }

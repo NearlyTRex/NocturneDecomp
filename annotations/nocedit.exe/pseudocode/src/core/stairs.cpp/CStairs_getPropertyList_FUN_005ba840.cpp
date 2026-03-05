@@ -24,6 +24,6 @@ void __cdecl core_stairs_cpp_CStairs_getPropertyList_FUN_005ba840(CStairs *this_
   core_actor_cpp_CActorPropertyList_addFloat_FUN_0040e160
             (property_list,"bevelZ",&this_ptr->bevel_z,(CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addGroundType_FUN_0040e300
-            (property_list,"ground type",&this_ptr->ground_type);
+            (property_list,"ground type",(int *)&this_ptr->ground_type);
   return;
 }

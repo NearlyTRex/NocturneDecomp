@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 165,
-    "complexity_score": 116,
+    "complexity_score": 118,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 81,
+    "pseudocode_lines": 83,
     "suspect_count": 3,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 246
+    "total_lines": 248
   },
   "cross_references": [],
   "function": {
@@ -156,23 +156,23 @@
       "line": 25,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)pcVar4 + 0xb7e4) = 0x501502f9;",
+      "text": "*(uint *)((int)pcVar8 + 0xb7e4) = 0x501502f9;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 56,
+      "line": 58,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)pCVar5->motion_transition_costs[0] + iVar7) = 0;",
+      "text": "*(uint *)((int)pCVar4->motion_transition_costs[0] + iVar6) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 70,
+      "line": 72,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "fVar1 = local_18->motion_transition_costs[0][0] + *(float *)((int)pcVar4 + 0xb7e4);",
+      "text": "fVar1 = local_18->motion_transition_costs[0][0] + *(float *)((int)pcVar8 + 0xb7e4);",
       "type": "pointer_cast"
     }
   ]

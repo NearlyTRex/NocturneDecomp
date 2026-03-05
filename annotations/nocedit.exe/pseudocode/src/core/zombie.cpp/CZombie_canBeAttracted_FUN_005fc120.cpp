@@ -2,11 +2,11 @@
 // Address: 005fc120
 // Address Range: [[005fc120, 005fc1fc]]
 // Convention: __cdecl
-// Signature: int __cdecl core_zombie_cpp_CZombie_canBeAttracted_FUN_005fc120(CZombie *this_ptr,CVector3f *param_2)
+// Signature: int __cdecl core_zombie_cpp_CZombie_canBeAttracted_FUN_005fc120(CZombie *this_ptr,CVector3f *out_attract_position)
 
 #include "nocturne.h"
 
-int __cdecl core_zombie_cpp_CZombie_canBeAttracted_FUN_005fc120(CZombie *this_ptr,CVector3f *param_2)
+int __cdecl core_zombie_cpp_CZombie_canBeAttracted_FUN_005fc120(CZombie *this_ptr,CVector3f *out_attract_position)
 
 {
   CDeformableModelInstance *this_ptr_00;
@@ -38,10 +38,10 @@ int __cdecl core_zombie_cpp_CZombie_canBeAttracted_FUN_005fc120(CZombie *this_pt
   local_28.z = local_14 * 0.5f;
   pCVar1 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                      ((CDemonActor *)this_ptr,&local_40,&local_28);
-  if (param_2 != pCVar1) {
-    param_2->x = pCVar1->x;
-    param_2->y = pCVar1->y;
-    param_2->z = pCVar1->z;
+  if (out_attract_position != pCVar1) {
+    out_attract_position->x = pCVar1->x;
+    out_attract_position->y = pCVar1->y;
+    out_attract_position->z = pCVar1->z;
   }
   return 1;
 }

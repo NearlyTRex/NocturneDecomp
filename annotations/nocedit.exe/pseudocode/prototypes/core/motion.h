@@ -17,11 +17,11 @@ void __cdecl CMotionList::save(CMotionList *this_ptr,_FILE *file_handle);
 
 // Original: core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460
 // Address: 0052d460
-int __cdecl CMotionList::findMotionIndex(CMotionList *this_ptr);
+int __cdecl CMotionList::findMotionIndex(CMotionList *this_ptr,char *motion_name,int error_on_not_found);
 
 // Original: core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0
 // Address: 0052d4f0
-int __cdecl CMotionList::findStateIndex(CMotionList *this_ptr);
+int __cdecl CMotionList::findStateIndex(CMotionList *this_ptr,char *state_name,int error_on_not_found);
 
 // Original: core_motion.cpp_CMotionController_ctor_FUN_0052d570
 // Address: 0052d570
@@ -33,7 +33,7 @@ CMotionController * __cdecl CMotionController::dtor(CMotionController *this_ptr,
 
 // Original: core_motion.cpp_CMotionController_advance_FUN_0052d610
 // Address: 0052d610
-int __cdecl CMotionController::advance(CMotionController *this_ptr);
+int __cdecl CMotionController::advance(CMotionController *this_ptr,float *delta_time);
 
 // Original: core_motion.cpp_CMotionController_findAndStartTransition_FUN_0052d950
 // Address: 0052d950
@@ -105,7 +105,7 @@ int __cdecl CMotionController::advanceFrameToExitPoint(CMotionController *this_p
 
 // Original: core_motion.cpp_CMotionController_advanceTween_FUN_0052e1d0
 // Address: 0052e1d0
-void __cdecl CMotionController::advanceTween(CMotionController *this_ptr);
+void __cdecl CMotionController::advanceTween(CMotionController *this_ptr,int motion_index,float current_frame,float *remaining_time);
 
 // Original: core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_0052e2b0
 // Address: 0052e2b0
@@ -129,7 +129,7 @@ void __cdecl CMotionController::load(CMotionController *this_ptr,_FILE *file_han
 
 // Original: core_motion.cpp_CMotionController_save_FUN_0052e670
 // Address: 0052e670
-void __cdecl CMotionController::save(CMotionController *this_ptr,_FILE *file_handle);
+void __cdecl CMotionController::save(CMotionController *this_ptr,_FILE *file_handle,char *indent_prefix);
 
 // Original: core_motion.cpp_CMotionController_render_FUN_0052e700
 // Address: 0052e700

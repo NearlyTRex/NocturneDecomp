@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_baron_cpp_CBaron_FUN_004135a0(CBaron *this_ptr,int param_2)
+; void __cdecl core_baron_cpp_CBaron_FUN_004135a0(CBaron *this_ptr,CDemonActor *target)
 ;
 ; Parameters:
 ; CBaron *         Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param_2
+; CDemonActor *    Stack[0x8]:4   target
 ;
 ; XREF[2]:
 ;   core_baron.cpp_CBaronWeapon_setWeaponState_FUN_00413e90 at 00413f11

@@ -44,7 +44,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_charactr.cpp_CCharacter_spawnFireOnBone_FUN_0042a520",
-    "signature": "void __cdecl core_charactr_cpp_CCharacter_spawnFireOnBone_FUN_0042a520(CCharacter *this_ptr,int bone_index,int target_bone_index)"
+    "signature": "void __cdecl core_charactr_cpp_CCharacter_spawnFireOnBone_FUN_0042a520(CCharacter *this_ptr,CSkeleton *skeleton,int target_bone_index)"
   },
   "function_calls": [
     {
@@ -311,10 +311,10 @@
       },
       {
         "is_param": true,
-        "name": "bone_index",
+        "name": "skeleton",
         "offset": 8,
         "size": 4,
-        "type": "int"
+        "type": "CSkeleton *"
       },
       {
         "is_param": true,

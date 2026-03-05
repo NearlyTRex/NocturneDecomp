@@ -128,7 +128,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x1c]      ; 0040baa7
     PUSH ESI                            ; 0040baab
     CALL core_motion.cpp_CMotionController_save_FUN_0052e670 ; 0040baac
-        ;   XREF to: 0052e670 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_save_FUN_0052e670(CMotionController * this_ptr, _FILE * file_handle)
+        ;   XREF to: 0052e670 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_save_FUN_0052e670(CMotionController * this_ptr, _FILE * file_handle, char * indent_prefix)
     ADD ESP,0xc                         ; 0040bab1
     PUSH -0x1                           ; 0040bab4
     CALL core_actor.cpp_adjustIndentationLevel_FUN_0040aee0 ; 0040bab6

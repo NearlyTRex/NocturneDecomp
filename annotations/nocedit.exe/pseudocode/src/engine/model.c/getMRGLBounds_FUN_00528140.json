@@ -1,40 +1,24 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 17,
-        "line": 87,
-        "message": "use of undeclared identifier 'stack0xfffffea0'; did you mean 'in_stack_fffffea0'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 53,
-        "line": 90,
-        "message": "use of undeclared identifier 'stack0xfffffea0'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 339,
-    "complexity_score": 394,
+    "complexity_score": 319,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 6,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 174,
-    "suspect_count": 19,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 184,
+    "suspect_count": 12,
     "suspect_types": [
       "decompiler_intrinsic",
-      "param_count_too_many",
-      "stack_param",
-      "stack_ref",
-      "unaffected_reg",
+      "pointer_cast",
       "warning_inlined_function"
     ],
-    "total_lines": 513
+    "total_lines": 523
   },
   "cross_references": [
     {
@@ -58,9 +42,9 @@
         "005285ea"
       ]
     ],
-    "convention": "__cdecl",
+    "convention": "__stack_esi",
     "name": "engine_model.c_getMRGLBounds_FUN_00528140",
-    "signature": "void __cdecl engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHeaderExtended *header,SMRGLModelBounds *output)"
+    "signature": "SMRGLModelBounds * __stack_esi engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHeaderExtended *header,SMRGLModelBounds *output_bounds)"
   },
   "function_calls": [
     {
@@ -139,24 +123,28 @@
         "call_addr": "0048ff39",
         "call_type": "direct",
         "caller": "shape_dsemodel.cpp_CDSEModel_fitToExistingBIN_FUN_0048fed0",
-        "estimated_params": 1,
+        "estimated_params": 2,
         "instructions_analyzed": 6,
-        "reg_params": [],
+        "reg_params": [
+          "EAX"
+        ],
         "stack_params": 1
       },
       {
         "call_addr": "004588c3",
         "call_type": "direct",
         "caller": "shape_design.c_loadModelBinary_FUN_00458170",
-        "estimated_params": 1,
+        "estimated_params": 2,
         "instructions_analyzed": 5,
-        "reg_params": [],
+        "reg_params": [
+          "EAX"
+        ],
         "stack_params": 1
       }
     ],
-    "confidence": "medium",
+    "confidence": "high",
     "declared_params": 2,
-    "estimated_params": 1
+    "estimated_params": 2
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.140410958904109,
@@ -205,10 +193,10 @@
     "pcode_op_count": 1793
   },
   "stack_frame": {
-    "frame_size": 364,
+    "frame_size": 360,
     "local_size": 356,
     "param_offset": 4,
-    "param_size": 8,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -406,13 +394,6 @@
         "offset": 4,
         "size": 4,
         "type": "SMRGLHeaderExtended *"
-      },
-      {
-        "is_param": true,
-        "name": "output",
-        "offset": 8,
-        "size": 4,
-        "type": "SMRGLModelBounds *"
       }
     ]
   },
@@ -426,96 +407,64 @@
       "type": "warning_inlined_function"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 18,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "uint *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 24,
-      "match": "in_stack_fffffea0",
-      "severity": "moderate",
-      "text": "SMRGLModelBounds *in_stack_fffffea0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 52,
-      "match": "in_stack_fffffea0",
-      "severity": "moderate",
-      "text": "engine_model_c_getMRGLBounds_FUN_00528140(header_00,in_stack_fffffea0);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 80,
-      "match": "&stack0xfffffea0",
-      "severity": "moderate",
-      "text": "_sprintf(&stack0xfffffea0,\"Unable to read verticies in model!\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 83,
-      "match": "&stack0xfffffea0",
-      "severity": "moderate",
-      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xfffffea0);",
-      "type": "stack_ref"
+      "description": "Complex pointer cast",
+      "line": 61,
+      "match": "(SMRGLModelBounds *)((int)",
+      "severity": "mild",
+      "text": "pSVar13 = (SMRGLModelBounds *)((int)pSVar13 + ((uint)bVar15 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 138,
+      "line": 146,
       "match": "ROUND",
       "severity": "mild",
-      "text": "lVar4 = (longlong)iVar7 * (longlong)(int)ROUND(ROUND(local_14 * fVar5));",
+      "text": "lVar4 = (longlong)local_2c * (longlong)(int)ROUND(ROUND(local_14));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 138,
+      "line": 146,
       "match": "ROUND",
       "severity": "mild",
-      "text": "lVar4 = (longlong)iVar7 * (longlong)(int)ROUND(ROUND(local_14 * fVar5));",
+      "text": "lVar4 = (longlong)local_2c * (longlong)(int)ROUND(ROUND(local_14));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 140,
+      "line": 148,
       "match": "ROUND",
       "severity": "mild",
-      "text": "lVar4 = (longlong)iVar7 * (longlong)(int)ROUND(ROUND(local_18 * fVar5));",
+      "text": "lVar4 = (longlong)local_2c * (longlong)(int)ROUND(ROUND(local_18));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 140,
+      "line": 148,
       "match": "ROUND",
       "severity": "mild",
-      "text": "lVar4 = (longlong)iVar7 * (longlong)(int)ROUND(ROUND(local_18 * fVar5));",
+      "text": "lVar4 = (longlong)local_2c * (longlong)(int)ROUND(ROUND(local_18));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 142,
+      "line": 150,
       "match": "ROUND",
       "severity": "mild",
-      "text": "lVar4 = (longlong)iVar7 * (longlong)(int)ROUND(ROUND(local_1c * fVar5));",
+      "text": "lVar4 = (longlong)local_2c * (longlong)(int)ROUND(ROUND(local_1c));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 142,
+      "line": 150,
       "match": "ROUND",
       "severity": "mild",
-      "text": "lVar4 = (longlong)iVar7 * (longlong)(int)ROUND(ROUND(local_1c * fVar5));",
+      "text": "lVar4 = (longlong)local_2c * (longlong)(int)ROUND(ROUND(local_1c));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 160,
+      "line": 169,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_84 = (int)ROUND(ROUND(SQRT((float10)local_78 * (float10)local_78 +",
@@ -523,7 +472,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 160,
+      "line": 169,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_84 = (int)ROUND(ROUND(SQRT((float10)local_78 * (float10)local_78 +",
@@ -531,46 +480,19 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 160,
+      "line": 169,
       "match": "SQRT",
       "severity": "mild",
       "text": "local_84 = (int)ROUND(ROUND(SQRT((float10)local_78 * (float10)local_78 +",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 173,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "*unaff_ESI = *puVar13;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 175,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI = unaff_ESI + (uint)bVar15 * -2 + 1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 175,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI = unaff_ESI + (uint)bVar15 * -2 + 1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 2,
-      "description": "Signature has too many params - likely wrong calling convention",
-      "estimated_params": 1,
-      "fix_type": "remove_params",
-      "match": "declared:2 vs estimated:1",
-      "param_delta": -1,
-      "text": "Function declares 2 params but call sites push 1 (1 extra)",
-      "type": "param_count_too_many"
+      "description": "Complex pointer cast",
+      "line": 185,
+      "match": "(SMRGLModelBounds *)((int)",
+      "severity": "mild",
+      "text": "pSVar13 = (SMRGLModelBounds *)((int)pSVar13 + (uint)bVar15 * -8 + 4);",
+      "type": "pointer_cast"
     }
   ]
 }

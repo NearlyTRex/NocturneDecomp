@@ -9,9 +9,10 @@
 void __cdecl core_menu_cpp_showOptionsScreen_FUN_00512d30(int initialize_systems)
 
 {
-  int iVar1;
-  char *pcVar2;
-  char (*pacVar3) [256];
+  EControlMode EVar1;
+  int iVar2;
+  char *pcVar3;
+  char (*pacVar4) [256];
   int local_10;
   
   local_10 = 0;
@@ -19,32 +20,32 @@ void __cdecl core_menu_cpp_showOptionsScreen_FUN_00512d30(int initialize_systems
     core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);
     core_moon_cpp_CMoon_init_FUN_00529ae0(&g_CMoonInstance);
   }
-  pacVar3 = g_OptionsMenuTextBuffers;
+  pacVar4 = g_OptionsMenuTextBuffers;
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr);
-  iVar1 = 0;
+  iVar2 = 0;
   do {
-    *(char (**) [256])((int)g_OptionsMenuPointers + iVar1) = pacVar3;
-    iVar1 = iVar1 + 4;
-    pacVar3 = pacVar3 + 1;
-  } while (iVar1 != 0x10);
+    *(char (**) [256])((int)g_OptionsMenuPointers + iVar2) = pacVar4;
+    iVar2 = iVar2 + 4;
+    pacVar4 = pacVar4 + 1;
+  } while (iVar2 != 0x10);
   do {
     core_game_cpp_CGame_updateDT_FUN_004d7d90(g_CGamePtr);
     core_moon_cpp_CMoon_update_FUN_00529d60(&g_CMoonInstance,g_CGamePtr->delta_time_float);
     core_moon_cpp_CMoon_render_FUN_00529ed0(&g_CMoonInstance);
-    pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Graphic options");
-    _sprintf(g_OptionsMenuTextBuffers[0],pcVar2);
-    pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Sound options");
-    _sprintf(g_OptionsMenuTextBuffers[1],pcVar2);
-    pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Control options");
-    _sprintf(g_OptionsMenuTextBuffers[2],pcVar2);
-    pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Credits");
-    _sprintf(g_OptionsMenuTextBuffers[3],pcVar2);
-    g_CGamePtr->hero_number = 2;
-    pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Option Menu");
-    iVar1 = core_menu_cpp_renderMenuAndGetChoice_FUN_00510000
-                      (g_OptionsMenuPointers,4,&local_10,0xfa,(int)pcVar2);
+    pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Graphic options");
+    _sprintf(g_OptionsMenuTextBuffers[0],pcVar3);
+    pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Sound options");
+    _sprintf(g_OptionsMenuTextBuffers[1],pcVar3);
+    pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Control options");
+    _sprintf(g_OptionsMenuTextBuffers[2],pcVar3);
+    pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Credits");
+    _sprintf(g_OptionsMenuTextBuffers[3],pcVar3);
+    g_CGamePtr->hero_number = HERO_TYPE_STRANGER;
+    pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Option Menu");
+    iVar2 = core_menu_cpp_renderMenuAndGetChoice_FUN_00510000
+                      (g_OptionsMenuPointers,4,&local_10,0xfa,(int)pcVar3);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-    switch(iVar1) {
+    switch(iVar2) {
     case 0:
       core_menu_cpp_configureGraphicsOptions_FUN_00510c80();
       break;
@@ -52,9 +53,9 @@ void __cdecl core_menu_cpp_showOptionsScreen_FUN_00512d30(int initialize_systems
       core_menu_cpp_configureSoundOptions_FUN_00511e50();
       break;
     case 2:
-      iVar1 = g_CGamePtr->game_control;
+      EVar1 = g_CGamePtr->game_control;
       core_menu_cpp_configureCustomKeys_FUN_00511890();
-      if (iVar1 != g_CGamePtr->game_control) {
+      if (EVar1 != g_CGamePtr->game_control) {
         core_menu_cpp_configureCustomKeyBindings_FUN_005138e0();
       }
       break;
@@ -62,8 +63,8 @@ void __cdecl core_menu_cpp_showOptionsScreen_FUN_00512d30(int initialize_systems
       core_game_cpp_CGame_rollCredits_FUN_004e4010(g_CGamePtr);
       core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);
     }
-    iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
-  } while (iVar1 == 0);
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
+  } while (iVar2 == 0);
   if (initialize_systems != 0) {
     core_moon_cpp_CMoon_free_FUN_00529ce0(&g_CMoonInstance);
     core_sound_cpp_CSound_reset_FUN_005b39a0(g_CSoundPtr);

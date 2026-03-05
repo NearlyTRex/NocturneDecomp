@@ -20,7 +20,7 @@ void __cdecl core_game_cpp_giveHeroWeaponAmmo_FUN_004dd930(char *p1,EAmmoType p3
     core_mission_cpp_CDemonMission_generateActorName_FUN_00524700(g_CDemonMissionPtr,&pCVar1->base);
     (*((pCVar1->base).vtable._ub)->setup)(&pCVar1->base);
     pCVar1->ammo_type = p3;
-    core_ammo_cpp_CAmmo_FUN_00410fd0(pCVar1,p1);
+    core_ammo_cpp_CAmmo_setWeaponClass_FUN_00410fd0(pCVar1,p1);
     pCVar1->ammo_count = 500;
     core_inv_cpp_CInventory_addItem_FUN_004fd600
               (&g_HeroActors[g_LocalHeroIndex]->inventory,&pCVar1->base,1);

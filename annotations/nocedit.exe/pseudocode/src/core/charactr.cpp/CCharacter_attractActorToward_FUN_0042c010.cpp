@@ -16,18 +16,18 @@ int __cdecl core_charactr_cpp_CCharacter_attractActorToward_FUN_0042c010(CCharac
   float local_2c;
   float local_28;
   float local_24;
-  float local_20;
-  float local_18;
+  CVector3f local_20;
   float local_14;
   float local_10;
   float local_c;
   
   if ((actor != (CDemonActor *)0x0) &&
-     (iVar1 = (*(((this_ptr->base).vtable._uc)->_uc).canBeAttracted)(this_ptr), iVar1 != 0)) {
+     (iVar1 = (*(((this_ptr->base).vtable._uc)->_uc).canBeAttracted)(this_ptr,&local_20), iVar1 != 0
+     )) {
     pCVar2 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                        (actor,&local_44,target_local_point);
-    local_2c = local_20 - pCVar2->x;
-    local_24 = local_18 - pCVar2->z;
+    local_2c = local_20.x - pCVar2->x;
+    local_24 = local_20.z - pCVar2->z;
     local_28 = 0.0;
     local_10 = SQRT(local_24 * local_24 + local_2c * local_2c);
     local_14 = g_CGamePtr->delta_time_float * (float)5;

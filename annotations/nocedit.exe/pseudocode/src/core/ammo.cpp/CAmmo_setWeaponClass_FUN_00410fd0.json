@@ -1,0 +1,266 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 198,
+    "complexity_score": 85,
+    "cross_reference_count": 5,
+    "function_call_count": 3,
+    "global_count": 22,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 85,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 283
+  },
+  "cross_references": [
+    {
+      "addr": "00411700",
+      "from_addr": "004117cc",
+      "name": "core_ammobox.cpp_CAmmoBox_addToInventory_FUN_00411700",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004dd930",
+      "from_addr": "004dd991",
+      "name": "core_game.cpp_giveHeroWeaponAmmo_FUN_004dd930",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004fd600",
+      "from_addr": "004fe21a",
+      "name": "core_inv.cpp_CInventory_addItem_FUN_004fd600",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004fe900",
+      "from_addr": "004fe984",
+      "name": "core_inv.cpp_CInventory_createAmmoFromWeapon_FUN_004fe900",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ffe10",
+      "from_addr": "004ffe65",
+      "name": "core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004ffe10",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00410fd0",
+    "address_range": [
+      [
+        "00410fd0",
+        "004111a7"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_ammo.cpp_CAmmo_setWeaponClass_FUN_00410fd0",
+    "signature": "void __cdecl core_ammo_cpp_CAmmo_setWeaponClass_FUN_00410fd0(CAmmo *this_ptr,char *weapon_class_name)"
+  },
+  "function_calls": [
+    {
+      "addr": "00478d60",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60"
+    },
+    {
+      "addr": "00478dd0",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0"
+    },
+    {
+      "addr": "005fef20",
+      "is_variadic": false,
+      "name": "crt_string.c__strcmp_FUN_005fef20"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00410fa4",
+      "name": "switchdataD_00410fa4",
+      "type": "void*",
+      "value": "00411012"
+    },
+    {
+      "addr": "00614971",
+      "name": "s_CGun_00614971",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00614976",
+      "name": "s_gatbullet_kfm_00614976",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00614984",
+      "name": "s_holybullet.kfm_00614984",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "00614993",
+      "name": "s_woodbullet_kfm_00614993",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006149a2",
+      "name": "s_silverbullet_kfm_006149a2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006149b3",
+      "name": "s_goldbullet_kfm_006149b3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006149c2",
+      "name": "s_lithiumbullet_kfm_006149c2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006149d4",
+      "name": "s_mercurybullet_kfm_006149d4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006149e6",
+      "name": "s_CShotgun_006149e6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006149ef",
+      "name": "s_shell_kfm_006149ef",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006149f9",
+      "name": "s_CCrossbow_006149f9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00614a03",
+      "name": "s_holystake_kfm_00614a03",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00614a11",
+      "name": "s_stake_kfm_00614a11",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00614a1b",
+      "name": "s_CDynamite_00614a1b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00614a25",
+      "name": "s_dynamitebundle_kfm_00614a25",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00614a38",
+      "name": "s_CTommyGun_00614a38",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00614a42",
+      "name": "s_tommybullet_kfm_00614a42",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00614a52",
+      "name": "s_CFlameThrower_00614a52",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00614a60",
+      "name": "s_fgunammo_kfm_00614a60",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00614a6d",
+      "name": "s_CElephantGun_00614a6d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00614a7a",
+      "name": "s_eleshell_kfm_00614a7a",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.2086330935251794,
+    "instruction_count": 139,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 10,
+      "BOOL_OR": 1,
+      "BRANCH": 8,
+      "BRANCHIND": 1,
+      "CALL": 16,
+      "CBRANCH": 12,
+      "COPY": 92,
+      "INT_ADD": 45,
+      "INT_AND": 73,
+      "INT_CARRY": 20,
+      "INT_EQUAL": 66,
+      "INT_LESS": 5,
+      "INT_MULT": 1,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 20,
+      "INT_SLESS": 33,
+      "INT_SUB": 64,
+      "LOAD": 17,
+      "POPCOUNT": 33,
+      "RETURN": 2,
+      "STORE": 60
+    },
+    "pcode_op_count": 585
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CAmmo *"
+      },
+      {
+        "is_param": true,
+        "name": "weapon_class_name",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
+}

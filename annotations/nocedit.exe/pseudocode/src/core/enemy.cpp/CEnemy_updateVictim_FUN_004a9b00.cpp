@@ -62,7 +62,7 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_004a9b00(CEnemy *this_ptr,fl
       local_20 = 0;
       for (local_24 = 0; local_24 < g_CDemonSetPtr->character_count; local_24 = local_24 + 1) {
         iVar9 = *(CCharacter **)((int)g_CDemonSetPtr->characters + local_2c);
-        iVar10 = (*(((iVar9->base).vtable._uc)->_uc).isGrabbable)(iVar9);
+        iVar10 = (*(((iVar9->base).vtable._uc)->_uc).isGrabbable)(iVar9,(CDemonActor *)this_ptr);
         if (((iVar10 != 0) &&
             (iVar10 = (*(((iVar9->base).vtable._uc)->_uc).getDeathState)(iVar9), iVar10 == 0)) &&
            ((iVar10 = (*((iVar9->base).vtable._ub)->shouldIgnoreForTargeting)(&iVar9->base),

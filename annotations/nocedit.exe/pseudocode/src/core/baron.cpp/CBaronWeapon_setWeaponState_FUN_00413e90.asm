@@ -78,7 +78,7 @@ section .text
     PUSH EAX                            ; 00413f0f
     PUSH ESI                            ; 00413f10
     CALL core_baron.cpp_CBaron_FUN_004135a0 ; 00413f11
-        ;   XREF to: 004135a0 (UNCONDITIONAL_CALL)  ; void core_baron.cpp_CBaron_FUN_004135a0(CBaron * this_ptr, int param_2)
+        ;   XREF to: 004135a0 (UNCONDITIONAL_CALL)  ; void core_baron.cpp_CBaron_FUN_004135a0(CBaron * this_ptr, CDemonActor * target)
     ADD ESP,0x8                         ; 00413f16
     POP EBP                             ; 00413f19
     POP ESI                             ; 00413f1a

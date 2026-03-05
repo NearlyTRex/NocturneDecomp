@@ -20,7 +20,7 @@ int __cdecl core_turret_cpp_CTurret_updateInteraction_FUN_005e34d0(CTurret *this
     }
     core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10((CDemonActor *)this_ptr);
     if (player_control->action_states[3] != 0) {
-      (*(((this_ptr->base).base.vtable._uc)->_uc).isGrabbable)((CCharacter *)this_ptr);
+      (*(((this_ptr->base).base.vtable._uw)->_uw).fire)(&this_ptr->base);
     }
     return 1;
   }

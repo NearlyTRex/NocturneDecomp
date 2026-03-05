@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_dmodel_cpp_CKeyFramedModel_getFloorHeight_FUN_00478740(CKeyFramedModel *this_ptr,int frame_index,float x,float z,float *out_height,CVector3f *transform_vector)
+; int __cdecl core_dmodel_cpp_CKeyFramedModel_getFloorHeight_FUN_00478740(CKeyFramedModel *this_ptr,int frame_index,CVector3f *position,float search_radius,float *out_height,CVector3f *transform_vector)
 ;
 ; Parameters:
 ; CKeyFramedModel * Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   frame_index
-; float            Stack[0xc]:4   x
-; float            Stack[0x10]:4   z
+; CVector3f *      Stack[0xc]:4   position
+; float            Stack[0x10]:4   search_radius
 ; float *          Stack[0x14]:4   out_height
 ; CVector3f *      Stack[0x18]:4   transform_vector
 ;
@@ -96,7 +96,7 @@ section .text
     PUSH EDX                            ; 004787e1
     PUSH ESI                            ; 004787e2
     CALL core_dtri.cpp_rayTriangleFloorTest_FUN_0049b2f0 ; 004787e3
-        ;   XREF to: 0049b2f0 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_rayTriangleFloorTest_FUN_0049b2f0(CDemonTriangle * triangle, float x, float z, float * out_height)
+        ;   XREF to: 0049b2f0 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_rayTriangleFloorTest_FUN_0049b2f0(CDemonTriangle * triangle, CVector3f * position, float search_radius, float * out_height)
     ADD ESP,0x10                        ; 004787e8
     TEST EAX,EAX                        ; 004787eb
     JZ 0x004787f4                       ; 004787ed

@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_baron_cpp_CBaron_FUN_00413a00(CBaron *this_ptr,float param_2)
+; void __cdecl core_baron_cpp_CBaron_FUN_00413a00(CBaron *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CBaron *         Stack[0x4]:4   this_ptr
-; float            Stack[0x8]:4   param_2
+; float            Stack[0x8]:4   delta_time
 ;
 ; XREF[1]:
 ;   core_baron.cpp_CBaron_process_FUN_00412e80 at 00412fba
@@ -31,7 +31,7 @@ section .text
     PUSH EAX                            ; 00413a14
     PUSH ESI                            ; 00413a15
     CALL core_motion.cpp_CMotionController_advance_FUN_0052d610 ; 00413a16
-        ;   XREF to: 0052d610 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionController_advance_FUN_0052d610(CMotionController * this_ptr)
+        ;   XREF to: 0052d610 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionController_advance_FUN_0052d610(CMotionController * this_ptr, float * delta_time)
     ADD ESP,0x8                         ; 00413a1b
     CMP EAX,0x64                        ; 00413a1e
     JNC 0x00413a60                      ; 00413a21

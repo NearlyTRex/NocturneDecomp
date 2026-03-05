@@ -53,7 +53,8 @@ void __cdecl core_cow_cpp_CZombieCow_process_FUN_00444310(CZombieCow *this_ptr,f
   local_1c = delta_time * (this_ptr->base).speed;
   this_ptr_00 = &(this_ptr->base).base.model;
   while (0.0 < local_1c) {
-    iVar4 = core_motion_cpp_CMotionController_advance_FUN_0052d610(&this_ptr_00->motion_controller);
+    iVar4 = core_motion_cpp_CMotionController_advance_FUN_0052d610
+                      (&this_ptr_00->motion_controller,&local_1c);
     core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,iVar4);
   }
   fVar10 = (this_ptr->base).speed;

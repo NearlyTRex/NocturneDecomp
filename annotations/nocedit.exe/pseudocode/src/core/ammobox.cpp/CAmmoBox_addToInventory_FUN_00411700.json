@@ -1,0 +1,182 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 111,
+    "complexity_score": 45,
+    "cross_reference_count": 2,
+    "function_call_count": 6,
+    "global_count": 9,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 45,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 156
+  },
+  "cross_references": [
+    {
+      "addr": "004d5c10",
+      "from_addr": "004d5c3d",
+      "name": "core_gabriela.cpp_CGabriella_collectAmmo_FUN_004d5c10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005c1f00",
+      "from_addr": "005c1f3c",
+      "name": "core_stranger.cpp_CStranger_processPickupComplete_FUN_005c1f00",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00411700",
+    "address_range": [
+      [
+        "00411700",
+        "00411813"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_ammobox.cpp_CAmmoBox_addToInventory_FUN_00411700",
+    "signature": "void __cdecl core_ammobox_cpp_CAmmoBox_addToInventory_FUN_00411700(CAmmoBox *this_ptr,CInventory *inventory)"
+  },
+  "function_calls": [
+    {
+      "addr": "00410dc0",
+      "is_variadic": false,
+      "name": "core_ammo.cpp_CAmmo_ctor_FUN_00410dc0"
+    },
+    {
+      "addr": "004111b0",
+      "is_variadic": false,
+      "name": "core_ammo.cpp_CAmmo_setAmmoCount_FUN_004111b0"
+    },
+    {
+      "addr": "00410fd0",
+      "is_variadic": false,
+      "name": "core_ammo.cpp_CAmmo_setWeaponClass_FUN_00410fd0"
+    },
+    {
+      "addr": "004fd600",
+      "is_variadic": false,
+      "name": "core_inv.cpp_CInventory_addItem_FUN_004fd600"
+    },
+    {
+      "addr": "00506f10",
+      "is_variadic": true,
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "0050f1b0",
+      "is_variadic": false,
+      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00614be0",
+      "name": "s_core_ammobox_cpp_00614be0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00614bf4",
+      "name": "s_core_ammobox_cpp_00614bf4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00614c08",
+      "name": "s_Out_of_memory_00614c08",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00614c16",
+      "name": "s_Some_ammo_00614c16",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00614c17",
+      "name": "s_ome_ammo_00614c17",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00614c18",
+      "name": "s_me_ammo_00614c18",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00614c19",
+      "name": "s_e_ammo_00614c19",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.011111111111111,
+    "instruction_count": 90,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "CALL": 8,
+      "CALLIND": 1,
+      "CBRANCH": 6,
+      "COPY": 72,
+      "INT_ADD": 38,
+      "INT_AND": 37,
+      "INT_CARRY": 11,
+      "INT_EQUAL": 34,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 11,
+      "INT_SLESS": 17,
+      "INT_SUB": 35,
+      "LOAD": 23,
+      "POPCOUNT": 17,
+      "RETURN": 3,
+      "STORE": 38
+    },
+    "pcode_op_count": 361
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CAmmoBox *"
+      },
+      {
+        "is_param": true,
+        "name": "inventory",
+        "offset": 8,
+        "size": 4,
+        "type": "CInventory *"
+      }
+    ]
+  },
+  "suspects": []
+}

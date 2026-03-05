@@ -59,7 +59,7 @@ section .text
     ADD ESP,0x4                         ; 004f2912
     PUSH EAX                            ; 004f2915
     CALL core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0 ; 004f2916
-        ;   XREF to: 0052d4f0 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0(CMotionList * this_ptr)
+        ;   XREF to: 0052d4f0 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0(CMotionList * this_ptr, char * state_name, int error_on_not_found)
     ADD ESP,0xc                         ; 004f291b
     TEST EAX,EAX                        ; 004f291e
     JGE 0x004f292a                      ; 004f2920
@@ -78,7 +78,7 @@ section .text
     ADD ESP,0x4                         ; 004f2937
     PUSH EAX                            ; 004f293a
     CALL core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0 ; 004f293b
-        ;   XREF to: 0052d4f0 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0(CMotionList * this_ptr)
+        ;   XREF to: 0052d4f0 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0(CMotionList * this_ptr, char * state_name, int error_on_not_found)
     ADD ESP,0xc                         ; 004f2940
     TEST EAX,EAX                        ; 004f2943
     JL 0x004f2991                       ; 004f2945

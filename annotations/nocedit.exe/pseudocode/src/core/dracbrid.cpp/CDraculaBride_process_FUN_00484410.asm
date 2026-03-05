@@ -231,7 +231,7 @@ section .text
     PUSH EAX                            ; 0048451e
     PUSH ESI                            ; 0048451f
     CALL core_motion.cpp_CMotionController_advance_FUN_0052d610 ; 00484520
-        ;   XREF to: 0052d610 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionController_advance_FUN_0052d610(CMotionController * this_ptr)
+        ;   XREF to: 0052d610 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionController_advance_FUN_0052d610(CMotionController * this_ptr, float * delta_time)
     ADD ESP,0x8                         ; 00484525
     CMP EAX,0x29a                       ; 00484528
     JNZ 0x00484621                      ; 0048452d

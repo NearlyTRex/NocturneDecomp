@@ -22,7 +22,7 @@
 ; undefined4       Stack[-0x1c]:4  local_1c
 ;
 ; XREF[6]:
-;   core_gabriela.cpp_CGabriella_FUN_004d4d80 at 004d5483
+;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80 at 004d5483
 ;   core_icepick.cpp_CIcePick_FUN_004f8810 at 004f8926
 ;   core_mobster.cpp_CMobster_aimTommyGun_FUN_005267a0 at 00526a3b
 ;   core_stranger.cpp_CStranger_extractTurnPoseData_FUN_005bf720 at 005bf7d0

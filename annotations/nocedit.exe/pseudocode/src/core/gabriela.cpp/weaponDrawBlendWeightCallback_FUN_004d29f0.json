@@ -1,0 +1,141 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 27,
+    "complexity_score": 9,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 2,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 36
+  },
+  "cross_references": [
+    {
+      "addr": "004d4d80",
+      "from_addr": "004d516a",
+      "name": "core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80",
+      "type": "DATA"
+    }
+  ],
+  "function": {
+    "address": "004d29f0",
+    "address_range": [
+      [
+        "004d29f0",
+        "004d2a2d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_gabriela.cpp_weaponDrawBlendWeightCallback_FUN_004d29f0",
+    "signature": "float __cdecl core_gabriela_cpp_weaponDrawBlendWeightCallback_FUN_004d29f0(int current_bone_index,int target_bone_index,float blend_weight,int hierarchy_distance,CDeformableModelInstance *instance)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "0062ac7d",
+      "name": "DOUBLE_0062ac7d",
+      "type": "double",
+      "value": "0.950000000000000"
+    },
+    {
+      "addr": "0062ac85",
+      "name": "DOUBLE_0062ac85",
+      "type": "double",
+      "value": "0.900000000000000"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 5,
+    "estimated_params": 5
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.6,
+    "instruction_count": 20,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CBRANCH": 2,
+      "COPY": 38,
+      "FLOAT2FLOAT": 5,
+      "FLOAT_MULT": 2,
+      "INT_ADD": 8,
+      "INT_AND": 11,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 10,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 5,
+      "INT_SUB": 2,
+      "LOAD": 8,
+      "POPCOUNT": 5,
+      "RETURN": 2,
+      "STORE": 2
+    },
+    "pcode_op_count": 112
+  },
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 8,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_4",
+        "offset": -4,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "current_bone_index",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "target_bone_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "blend_weight",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "hierarchy_distance",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "instance",
+        "offset": 20,
+        "size": 4,
+        "type": "CDeformableModelInstance *"
+      }
+    ]
+  },
+  "suspects": []
+}

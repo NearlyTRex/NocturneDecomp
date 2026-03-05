@@ -11,7 +11,7 @@
 ;   int g_AdvancedClippingEnabled
 ;   RenderScanlineFunc* g_ScanlineRenderFunc
 ;   int g_UseExternalRenderer
-;   BOOL g_MMXSupported
+;   int g_MMXSupported
 ;   _BIT_INTEGER32 g_RenderStateFlags
 ;   int g_RenderStateFlag2
 ;

@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 185,
-    "complexity_score": 215,
+    "complexity_score": 80,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 10,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 80,
-    "suspect_count": 13,
-    "suspect_types": [
-      "unnamed_param"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 265
   },
   "cross_references": [
@@ -37,7 +35,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_script.cpp_CScript_getDialogDuration_FUN_0055ff00",
-    "signature": "float __cdecl core_script_cpp_CScript_getDialogDuration_FUN_0055ff00(CScript *this_ptr,int param_2,char *param_3,char *param_4)"
+    "signature": "float __cdecl core_script_cpp_CScript_getDialogDuration_FUN_0055ff00(CScript *this_ptr,char *actor_specifier,char *sound_name,char *dialog_text)"
   },
   "function_calls": [
     {
@@ -234,21 +232,21 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "actor_specifier",
         "offset": 8,
         "size": 4,
-        "type": "int"
+        "type": "char *"
       },
       {
         "is_param": true,
-        "name": "param_3",
+        "name": "sound_name",
         "offset": 12,
         "size": 4,
         "type": "char *"
       },
       {
         "is_param": true,
-        "name": "param_4",
+        "name": "dialog_text",
         "offset": 16,
         "size": 4,
         "type": "char *"
@@ -272,110 +270,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "float __cdecl core_script_cpp_CScript_getDialogDuration_FUN_0055ff00(CScript *this_ptr,int param_2,char *param_3,char *param_4)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "float __cdecl core_script_cpp_CScript_getDialogDuration_FUN_0055ff00(CScript *this_ptr,int param_2,char *param_3,char *param_4)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "float __cdecl core_script_cpp_CScript_getDialogDuration_FUN_0055ff00(CScript *this_ptr,int param_2,char *param_3,char *param_4)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "iVar3 = sscanf(param_3,\"%f\",&local_28);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "local_28 = core_sound_cpp_CSound_getSoundDuration_FUN_005b3ba0(g_CSoundPtr,param_3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "shape_edittool_cpp_CStrList_add_FUN_004a2b80(&g_ScriptPickList.base,param_3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "pcVar5 = param_4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 47,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "((char *)param_2,g_CCharacterClassInfo.name_hash,&g_CCharacterClassInfo);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 63,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "cVar1 = *param_4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 66,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "cVar1 = param_4[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 67,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_4 = param_4 + 2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 67,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_4 = param_4 + 2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 77,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "uVar4 = core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,this_ptr,param_3);",
-      "type": "unnamed_param"
-    }
-  ]
+  "suspects": []
 }

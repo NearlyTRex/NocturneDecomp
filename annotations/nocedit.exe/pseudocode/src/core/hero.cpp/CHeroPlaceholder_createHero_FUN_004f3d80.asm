@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * __cdecl core_hero_cpp_CHeroPlaceholder_createHero_FUN_004f3d80(CHeroPlaceholder *this_ptr,int param_2)
+; CDemonActor * __cdecl core_hero_cpp_CHeroPlaceholder_createHero_FUN_004f3d80(CHeroPlaceholder *this_ptr,EHeroType hero_type)
 ;
 ; Parameters:
 ; CHeroPlaceholder * Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param_2
+; EHeroType        Stack[0x8]:4   hero_type
 ;
 ; XREF[1]:
 ;   core_mission.cpp_CDemonMission_createOneHero_FUN_00524920 at 00524a53

@@ -1,54 +1,22 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 38,
-        "line": 30,
-        "message": "cannot cast from type 'float' to pointer type 'float *'"
-      },
-      {
-        "category": "other",
-        "column": 43,
-        "line": 33,
-        "message": "cannot cast from type 'float' to pointer type 'float *'"
-      },
-      {
-        "category": "other",
-        "column": 43,
-        "line": 36,
-        "message": "cannot cast from type 'float' to pointer type 'float *'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 114,
-        "message": "cannot cast from type 'float' to pointer type 'float *'"
-      },
-      {
-        "category": "other",
-        "column": 39,
-        "line": 127,
-        "message": "cannot cast from type 'float' to pointer type 'CVector3f *'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 338,
-    "complexity_score": 208,
+    "complexity_score": 146,
     "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 6,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 128,
-    "suspect_count": 7,
+    "pseudocode_lines": 131,
+    "suspect_count": 1,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "pointer_cast"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 466
+    "total_lines": 469
   },
   "cross_references": [
     {
@@ -87,7 +55,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_dtri.cpp_rayTriangleFloorTest_FUN_0049b2f0",
-    "signature": "int __cdecl core_dtri_cpp_rayTriangleFloorTest_FUN_0049b2f0(CDemonTriangle *triangle,float x,float z,float *out_height)"
+    "signature": "int __cdecl core_dtri_cpp_rayTriangleFloorTest_FUN_0049b2f0(CDemonTriangle *triangle,CVector3f *position,float search_radius,float *out_height)"
   },
   "function_calls": [
     {
@@ -371,14 +339,14 @@
       },
       {
         "is_param": true,
-        "name": "x",
+        "name": "position",
         "offset": 8,
         "size": 4,
-        "type": "float"
+        "type": "CVector3f *"
       },
       {
         "is_param": true,
-        "name": "z",
+        "name": "search_radius",
         "offset": 12,
         "size": 4,
         "type": "float"
@@ -411,60 +379,12 @@
   },
   "suspects": [
     {
-      "description": "Complex pointer cast",
-      "line": 25,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "fVar2 = (triangle->vertex1).z - *(float *)((int)x + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 28,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "local_58.z = (triangle->vertex2).z - *(float *)((int)x + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 31,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "local_70.z = (triangle->vertex3).z - *(float *)((int)x + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 71,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "if (local_70.y <= *(float *)((int)x + 4)) {",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 98,
+      "line": 101,
       "match": "SQRT",
       "severity": "mild",
       "text": "fVar9 = SQRT(fVar1 * fVar1 + fVar9 * fVar9);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 108,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "local_64.z = fVar9 * (triangle->normal).z + *(float *)((int)x + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 109,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "local_64.y = *(float *)((int)x + 4);",
-      "type": "pointer_cast"
     }
   ]
 }

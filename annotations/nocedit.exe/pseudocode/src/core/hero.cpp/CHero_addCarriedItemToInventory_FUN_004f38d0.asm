@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   hand_index
 ;
 ; XREF[3]:
-;   core_gabriela.cpp_CGabriella_FUN_004d4890 at 004d49b8
+;   core_gabriela.cpp_CGabriella_processMotionEvents_FUN_004d4890 at 004d49b8
 ;   core_stranger.cpp_CStranger_processMotionEvents_FUN_005bdd20 at 005bdfc3
 ;   core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_005c5270 at 005c542a
 ;

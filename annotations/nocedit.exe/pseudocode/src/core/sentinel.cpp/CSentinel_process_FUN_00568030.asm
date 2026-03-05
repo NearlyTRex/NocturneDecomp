@@ -460,7 +460,7 @@ section .text
     PUSH EAX                            ; 00568413
     PUSH EDI                            ; 00568414
     CALL core_motion.cpp_CMotionController_advance_FUN_0052d610 ; 00568415
-        ;   XREF to: 0052d610 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionController_advance_FUN_0052d610(CMotionController * this_ptr)
+        ;   XREF to: 0052d610 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionController_advance_FUN_0052d610(CMotionController * this_ptr, float * delta_time)
     MOV EDX,EAX                         ; 0056841a
     SUB EAX,0x64                        ; 0056841c
     ADD ESP,0x8                         ; 0056841f

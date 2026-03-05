@@ -19,11 +19,11 @@ void __cdecl core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(CMot
     core_main_c_displayErrorAndQuit_FUN_00506f10("CMotionController::setDesiredState - invalid state index");
   }
   if (desired_state_index != this_ptr->state_index) {
-    if (this_ptr->in_transition != 0) {
+    if (this_ptr->in_transition != (SMotionTransition *)0x0) {
       if (this_ptr->tween_direction == 0) {
         core_motion_cpp_CMotionController_reverseTransition_FUN_0052da50(this_ptr);
       }
-      this_ptr->in_transition = 0;
+      this_ptr->in_transition = (SMotionTransition *)0x0;
     }
     this_ptr->tween_set_new_state = 0;
     this_ptr->state_index = desired_state_index;

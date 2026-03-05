@@ -11,11 +11,14 @@ int __cdecl core_hero_cpp_CHero_canBeGrabbed_FUN_004f2890(CHero *this_ptr,CDemon
 {
   CMotionList *this_ptr_00;
   int iVar1;
+  char *state_name;
   
   if (grab_type == 0) {
+    state_name = "GETGRABBED";
     this_ptr_00 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                             (&(this_ptr->base).model.motion_controller);
-    iVar1 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(this_ptr_00);
+    iVar1 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0
+                      (this_ptr_00,state_name,grab_type);
     if (iVar1 < 0) {
       return 0;
     }

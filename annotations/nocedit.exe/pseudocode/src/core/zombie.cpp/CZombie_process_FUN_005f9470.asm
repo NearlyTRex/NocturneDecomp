@@ -224,7 +224,7 @@ section .text
     ADD ESP,0x4                         ; 005f94b7
     PUSH EAX                            ; 005f94ba
     CALL core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0 ; 005f94bb
-        ;   XREF to: 0052d4f0 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0(CMotionList * this_ptr)
+        ;   XREF to: 0052d4f0 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0(CMotionList * this_ptr, char * state_name, int error_on_not_found)
     ADD ESP,0xc                         ; 005f94c0
     CMP EAX,0x16                        ; 005f94c3
     JNZ 0x005f94cf                      ; 005f94c6
@@ -261,7 +261,7 @@ section .text
     MOV ESI,dword ptr [EBP + 0x6a]      ; 005f9518
     PUSH ESI                            ; 005f951b
     CALL core_motion.cpp_CMotionController_advance_FUN_0052d610 ; 005f951c
-        ;   XREF to: 0052d610 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionController_advance_FUN_0052d610(CMotionController * this_ptr)
+        ;   XREF to: 0052d610 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionController_advance_FUN_0052d610(CMotionController * this_ptr, float * delta_time)
     ADD ESP,0x8                         ; 005f9521
     MOV EDX,EAX                         ; 005f9524
     CMP EAX,0xb                         ; 005f9526
@@ -1666,7 +1666,7 @@ section .text
     ADD ESP,0x4                         ; 005fa680
     PUSH EAX                            ; 005fa683
     CALL core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460 ; 005fa684
-        ;   XREF to: 0052d460 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460(CMotionList * this_ptr)
+        ;   XREF to: 0052d460 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460(CMotionList * this_ptr, char * motion_name, int error_on_not_found)
     ADD ESP,0xc                         ; 005fa689
     TEST EAX,EAX                        ; 005fa68c
     JGE 0x005fa72d                      ; 005fa68e

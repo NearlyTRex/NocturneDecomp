@@ -1,0 +1,21 @@
+#pragma once
+
+// Enum: EGroundType
+enum {
+    GROUND_TYPE_DEFAULT = 0,
+    GROUND_TYPE_NONE = 1,
+    GROUND_TYPE_CONCRETE = 2,
+    GROUND_TYPE_DIRT = 3,
+    GROUND_TYPE_GRASS = 4,
+    GROUND_TYPE_METAL = 5,
+    GROUND_TYPE_WATER = 6,
+    GROUND_TYPE_WOOD = 7,
+    GROUND_TYPE_MARBLE = 8,
+    GROUND_TYPE_MUD = 9,
+    GROUND_TYPE_CARPET = 10,
+    GROUND_TYPE_BLOOD = 11,
+    GROUND_TYPE_GLASS = 12,
+    GROUND_TYPE_GRAVEL = 13
+};
+typedef int EGroundType;
+

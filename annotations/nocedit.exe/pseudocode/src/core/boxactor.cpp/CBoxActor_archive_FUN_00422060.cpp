@@ -38,7 +38,7 @@ void __cdecl core_boxactor_cpp_CBoxActor_archive_FUN_00422060(CBoxActor *this_pt
     core_actor_cpp_archiveActor_FUN_0040b870(&this_ptr->pushed_by_actor,"pushedByActor");
   }
   if (2 < g_CBoxActorClassVersion) {
-    core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->ground_type,"groundType");
+    core_actor_cpp_archiveInteger_FUN_0040b7f0((int *)&this_ptr->ground_type,"groundType");
   }
   if (g_CBoxActorClassVersion < 4) {
     (this_ptr->physics_box).is_valid = -1;

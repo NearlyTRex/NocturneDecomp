@@ -8521,7 +8521,7 @@
           "type":"int"
         },
         {
-          "name":"param_6",
+          "name":"include_hero",
           "storage":{
             "offset":24,
             "size":4,
@@ -8927,6 +8927,22 @@
             ]
           },
           "type":"CCharacter*"
+        },
+        {
+          "name":"grabber",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonActor*"
         }
       ],
       "ret_storage":{
@@ -9162,7 +9178,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_charactr.cpp_FUN_0042f930",
+    "name":"core_charactr.cpp_projectPointToVertex_FUN_0042f930",
     "ret":"void",
     "vars":{
       "locals":[
@@ -9213,6 +9229,56 @@
             ]
           },
           "type":"undefined4"
+        }
+      ],
+      "params":[
+        {
+          "name":"vertex_array",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"SProjectedVertex**"
+        },
+        {
+          "name":"vertex_index",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"world_position",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
         }
       ]
     }
@@ -37424,7 +37490,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_gabriela.cpp_FUN_004d2a30",
+    "name":"core_gabriela.cpp_flashlightBlendWeightCallback_FUN_004d2a30",
     "ret":"float",
     "vars":{
       "locals":[
@@ -37459,6 +37525,88 @@
             ]
           },
           "type":"undefined4"
+        }
+      ],
+      "params":[
+        {
+          "name":"current_bone_index",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"target_bone_index",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"blend_weight",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"hierarchy_distance",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"instance",
+          "storage":{
+            "offset":20,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x14]",
+                "offset":20,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDeformableModelInstance*"
         }
       ],
       "ret_storage":{
@@ -38389,22 +38537,6 @@
             ]
           },
           "type":"int"
-        },
-        {
-          "name":"chapter_name",
-          "storage":{
-            "offset":16,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x10]",
-                "offset":16,
-                "size":4
-              }
-            ]
-          },
-          "type":"char*"
         }
       ]
     }
@@ -42419,6 +42551,22 @@
             ]
           },
           "type":"undefined4"
+        },
+        {
+          "name":"unionfacet5_4f8502",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:404164804b99",
+                "offset":70649603181465,
+                "size":4
+              }
+            ]
+          },
+          "type":"UActorVTable*",
+          "use":1106
         }
       ],
       "params":[
@@ -72059,7 +72207,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_skeleton.cpp_defaultBlendWeight_FUN_0059ddb0",
+    "name":"core_skeleton.cpp_blendWeightCallback_FUN_0059ddb0",
     "ret":"float",
     "vars":{
       "params":[

@@ -19,7 +19,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_FUN_005e6ca0(CVampireBoss *this_ptr)
     do {
       while( true ) {
         uVar1 = core_motion_cpp_CMotionController_advance_FUN_0052d610
-                          (&(this_ptr->model).motion_controller);
+                          (&(this_ptr->model).motion_controller,&stack0x00000008);
         if (uVar1 < 0x66) break;
         if ((uVar1 < 0x67) || (uVar1 == 0x67)) {
           sound_name = "wing?.wav @1.5 *1.2";

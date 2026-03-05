@@ -11,19 +11,19 @@
 void __cdecl core_stranger_cpp_CStranger_processMotionEvents_FUN_005bdd20(CStranger *this_ptr,float delta_time)
 
 {
-  CDeformableModelInstance *this_ptr_00;
-  CLadder *this_ptr_01;
-  CWeapon *this_ptr_02;
+  CDeformableModelInstance *this_ptr_04;
+  CLadder *this_ptr_05;
+  CWeapon *this_ptr_06;
   CDemonActor *pCVar1;
   CDemonActor_vtable *pCVar2;
   uint bone_index;
   int iVar3;
   CVector3f *pCVar4;
   int iVar5;
-  CCharacter *this_ptr_03;
+  CEnemy *this_ptr_03;
   int unaff_EBP;
   CStranger *in_stack_ffffff48;
-  CStranger *this_ptr_04;
+  CStranger *this_ptr_07;
   float fStack_a4;
   CVector3f local_94 [2];
   CStranger *local_7c;
@@ -35,15 +35,15 @@ void __cdecl core_stranger_cpp_CStranger_processMotionEvents_FUN_005bdd20(CStran
   byte local_38 [16];
   CVector3f CStack_28;
   CVector3f *local_1c;
-  CCharacter *local_18;
+  CEnemy *local_18;
   float local_14;
   
-  this_ptr_00 = &(this_ptr->base).base.model;
+  this_ptr_04 = &(this_ptr->base).base.model;
   local_1c = (CVector3f *)&(this_ptr->base).target_orientation;
   CStack_28.z = (float)&(this_ptr->base).target_position;
   do {
     bone_index = core_motion_cpp_CMotionController_advance_FUN_0052d610
-                           (&this_ptr_00->motion_controller);
+                           (&this_ptr_04->motion_controller,&delta_time);
     if (bone_index < 0x12) {
       if (bone_index < 6) {
         if (bone_index < 2) {
@@ -54,23 +54,23 @@ LAB_005bdd85:
               iVar3 = INT_03f6baec;
             }
             core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
-                      (this_ptr_00,(CVector3f *)(auStack_64 + 8),iVar3);
-            this_ptr_01 = (this_ptr->base).ladder_to_climb;
-            if (this_ptr_01 == (CLadder *)0x0) {
+                      (this_ptr_04,(CVector3f *)(auStack_64 + 8),iVar3);
+            this_ptr_05 = (this_ptr->base).ladder_to_climb;
+            if (this_ptr_05 == (CLadder *)0x0) {
               if (this_ptr->ladder_to_descend == (CLadder *)0x0) {
                 if ((this_ptr->base).base.is_on_ground != 0) {
                   local_14 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
-                                       (&this_ptr_00->motion_controller,3);
+                                       (&this_ptr_04->motion_controller,3);
                   if ((float)0.40000000000000002 < local_14) {
                     (*((this_ptr->base).base.base.vtable._ub)->processFootstepAtOffset)
                               ((CDemonActor *)this_ptr,(CVector3f *)(auStack_64 + 8),1.7);
                   }
                   else {
                     local_14 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
-                                         (&this_ptr_00->motion_controller,1);
+                                         (&this_ptr_04->motion_controller,1);
                     if (local_14 <= (float)0.40000000000000002) {
                       local_14 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
-                                           (&this_ptr_00->motion_controller,2);
+                                           (&this_ptr_04->motion_controller,2);
                       if ((float)0.40000000000000002 < local_14) {
                         (*((this_ptr->base).base.base.vtable._ub)->processFootstepAtOffset)
                                   ((CDemonActor *)this_ptr,(CVector3f *)(auStack_64 + 8),1.0);
@@ -95,7 +95,7 @@ LAB_005bdd85:
             }
             else {
               local_14 = *(float *)&(this_ptr->base).base.base.vtable;
-              iVar3 = (*((this_ptr_01->base).vtable._ub)->getGroundType)(&this_ptr_01->base);
+              iVar3 = (*((this_ptr_05->base).vtable._ub)->getGroundType)(&this_ptr_05->base);
               pCVar4 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                                  ((CDemonActor *)this_ptr,(CVector3f *)auStack_64,
                                   (CVector3f *)auStack_58);
@@ -128,11 +128,11 @@ LAB_005be41a:
               (this_ptr->base).object_to_pick_up = (CDemonActor *)0x0;
             }
             else {
-              this_ptr_04 = (CStranger *)(this_ptr->base).object_to_pick_up;
-              if ((this_ptr_04 != (CStranger *)0x0) &&
-                 (iVar5 = (*((this_ptr_04->base).base.base.vtable._ub)->canPickup)
-                                    ((CDemonActor *)this_ptr_04,(CDemonActor *)this_ptr),
-                 in_stack_ffffff48 = this_ptr_04, iVar5 == 4)) {
+              this_ptr_07 = (CStranger *)(this_ptr->base).object_to_pick_up;
+              if ((this_ptr_07 != (CStranger *)0x0) &&
+                 (iVar5 = (*((this_ptr_07->base).base.base.vtable._ub)->canPickup)
+                                    ((CDemonActor *)this_ptr_07,(CDemonActor *)this_ptr),
+                 in_stack_ffffff48 = this_ptr_07, iVar5 == 4)) {
                 (this_ptr->base).base.layer_action_t = 0.0;
                 (this_ptr->base).base.layer_action_index = 0xe;
               }
@@ -150,13 +150,13 @@ LAB_005be41a:
         }
         else {
           if (bone_index != 3) goto LAB_005be41a;
-          this_ptr_02 = (CWeapon *)(this_ptr->base).base.carry_hands[1].carry_actor;
+          this_ptr_06 = (CWeapon *)(this_ptr->base).base.carry_hands[1].carry_actor;
           core_stranger_cpp_CStranger_dropRightHandObject_FUN_005c1f80(this_ptr);
           iVar3 = this_ptr->action_pending;
           if (iVar3 == 2) {
-            if (this_ptr_02 != (CWeapon *)0x0) {
-              (*((this_ptr_02->base).vtable._ub)->setPositionAndOrientation)
-                        ((CDemonActor *)this_ptr_02,(CVector3f *)CStack_28.z,local_1c);
+            if (this_ptr_06 != (CWeapon *)0x0) {
+              (*((this_ptr_06->base).vtable._ub)->setPositionAndOrientation)
+                        ((CDemonActor *)this_ptr_06,(CVector3f *)CStack_28.z,local_1c);
             }
 LAB_005bde44:
             this_ptr->action_pending = 0;
@@ -172,19 +172,19 @@ LAB_005bde44:
             (this_ptr->base).base.layer_action_t = 0.0;
             (this_ptr->base).base.layer_action_index = 0;
           }
-          if (this_ptr_02 == this_ptr->weapon) {
+          if (this_ptr_06 == this_ptr->weapon) {
             this_ptr->weapon = (CWeapon *)0x0;
           }
         }
       }
       else if (bone_index < 7) {
-        this_ptr_03 = (CCharacter *)
+        this_ptr_03 = (CEnemy *)
                       core_actor_cpp_castToClassHash_FUN_0040c790
                                 ((this_ptr->base).base.grabbed_by,g_CEnemyClassInfo.name_hash);
         local_18 = this_ptr_03;
-        if (this_ptr_03 != (CCharacter *)0x0) {
+        if (this_ptr_03 != (CEnemy *)0x0) {
           pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
-                             (this_ptr_00,&local_44,INT_03f6bafc);
+                             (this_ptr_04,&local_44,INT_03f6bafc);
           core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                     ((CDemonActor *)this_ptr,(CVector3f *)local_38,pCVar4);
           core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xffffff50);
@@ -199,8 +199,8 @@ LAB_005bde44:
           }
           local_7c = this_ptr;
           local_78 = this_ptr;
-          (*(((local_18->base).vtable._uc)->_uc).processDamage)
-                    (local_18,(SDamageInfo *)&stack0xffffff50);
+          (*(((local_18->base).base.vtable._uc)->_uc).processDamage)
+                    (&local_18->base,(SDamageInfo *)&stack0xffffff50);
           if (0.0 < (double)fStack_a4) {
             core_gore_cpp_CGore_spawnBloodBurst_FUN_004edbb0
                       (g_CGorePtr,(CVector3f *)(local_38 + 8),(CVector3f *)0x0,
@@ -270,7 +270,7 @@ LAB_005bde44:
           iVar3 = core_hero_cpp_CHero_tryOpenDoor_FUN_004f2ed0(&this_ptr->base);
           if (iVar3 == 0) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                      (&this_ptr_00->motion_controller,0,1);
+                      (&this_ptr_04->motion_controller,0,1);
           }
         }
       }

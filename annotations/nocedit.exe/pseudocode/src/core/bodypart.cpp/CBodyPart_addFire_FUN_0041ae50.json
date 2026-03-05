@@ -6,16 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 99,
-    "complexity_score": 127,
+    "complexity_score": 72,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 4,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 57,
-    "suspect_count": 6,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
-      "unnamed_param"
+      "pointer_cast"
     ],
     "total_lines": 156
   },
@@ -41,7 +40,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_bodypart.cpp_CBodyPart_addFire_FUN_0041ae50",
-    "signature": "void __cdecl core_bodypart_cpp_CBodyPart_addFire_FUN_0041ae50(CBodyPart *this_ptr,CVector3f *param_2)"
+    "signature": "void __cdecl core_bodypart_cpp_CBodyPart_addFire_FUN_0041ae50(CBodyPart *this_ptr,CVector3f *position)"
   },
   "function_calls": [
     {
@@ -164,7 +163,7 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "position",
         "offset": 8,
         "size": 4,
         "type": "CVector3f *"
@@ -172,46 +171,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_bodypart_cpp_CBodyPart_addFire_FUN_0041ae50(CBodyPart *this_ptr,CVector3f *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (input_local_point != param_2) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "input_local_point->x = param_2->x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "input_local_point->y = param_2->y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "input_local_point->z = param_2->z;",
-      "type": "unnamed_param"
-    },
     {
       "description": "Complex pointer cast",
       "line": 51,

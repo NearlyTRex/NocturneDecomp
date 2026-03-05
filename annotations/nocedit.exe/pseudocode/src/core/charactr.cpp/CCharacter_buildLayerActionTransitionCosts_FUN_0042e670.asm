@@ -73,7 +73,7 @@ section .text
     PUSH EDI                            ; 0042e6f5
     ADD EBX,ECX                         ; 0042e6f6
     CALL core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460 ; 0042e6f8
-        ;   XREF to: 0052d460 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460(CMotionList * this_ptr)
+        ;   XREF to: 0052d460 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460(CMotionList * this_ptr, char * motion_name, int error_on_not_found)
     MOV dword ptr [EBX + 0x2c],EAX      ; 0042e6fd
     IMUL EAX,EAX,0x54c                  ; 0042e700
     MOV EAX,dword ptr [EDI + EAX*0x1 + 0x9cc] ; 0042e706

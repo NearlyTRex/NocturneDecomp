@@ -35,7 +35,7 @@ void __cdecl core_menu_cpp_showOptionsScreen_FUN_00512d30(int initialize_systems
 int __cdecl core_menu_cpp_showMainGameMenu_FUN_00512f40(void);
 void __cdecl core_menu_cpp_addCustomKeyBinding_FUN_00513460(int *key_code_ptr,char *key_name);
 char * __cdecl core_menu_cpp_getKeyDisplayName_FUN_005134e0(EInputCodeType key_code);
-int __cdecl core_menu_cpp_isKeyCodeValidForMode_FUN_00513720(int *key_code_ptr,char *description);
+int __cdecl core_menu_cpp_isKeyCodeValidForMode_FUN_00513720(EInputCodeType *key_code_ptr,char *description);
 int __cdecl core_menu_cpp_getSinglePressedKey_FUN_00513860(void);
 void __cdecl core_menu_cpp_configureCustomKeyBindings_FUN_005138e0(void);
 CAlphaBitmap * __cdecl core_menu_cpp_CAlphaBitmap_arrdtor_FUN_00514f50(CAlphaBitmap *objs,uint flags);

@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_zombie_cpp_CZombie_canBeAttracted_FUN_005fc120(CZombie *this_ptr,CVector3f *param_2)
+; int __cdecl core_zombie_cpp_CZombie_canBeAttracted_FUN_005fc120(CZombie *this_ptr,CVector3f *out_attract_position)
 ;
 ; Parameters:
 ; CZombie *        Stack[0x4]:4   this_ptr
-; CVector3f *      Stack[0x8]:4   param_2
+; CVector3f *      Stack[0x8]:4   out_attract_position
 ; Local Variables:
 ; undefined4       Stack[-0x4c]:4  local_4c
 ; undefined4       Stack[-0x48]:4  local_48

@@ -3,21 +3,9 @@
     "errors": [
       {
         "category": "format_error",
-        "column": 81,
-        "line": 24,
-        "message": "format specifies type 'char *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 99,
-        "line": 24,
+        "column": 95,
+        "line": 23,
         "message": "format specifies type 'char *' but the argument has type 'SMotion *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "other",
-        "column": 26,
-        "line": 27,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
     "success": false,
@@ -25,17 +13,14 @@
   },
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 59,
+    "complexity_score": 19,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 6,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 19,
-    "suspect_count": 3,
-    "suspect_types": [
-      "param_count_too_few",
-      "stack_param"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 78
   },
   "cross_references": [
@@ -57,7 +42,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_motion.cpp_CMotionController_save_FUN_0052e670",
-    "signature": "void __cdecl core_motion_cpp_CMotionController_save_FUN_0052e670(CMotionController *this_ptr,_FILE *file_handle)"
+    "signature": "void __cdecl core_motion_cpp_CMotionController_save_FUN_0052e670(CMotionController *this_ptr,_FILE *file_handle,char *indent_prefix)"
   },
   "function_calls": [
     {
@@ -127,8 +112,8 @@
         "stack_params": 3
       }
     ],
-    "confidence": "low",
-    "declared_params": 2,
+    "confidence": "medium",
+    "declared_params": 3,
     "estimated_params": 3
   },
   "pcode_summary": {
@@ -157,10 +142,10 @@
     "pcode_op_count": 237
   },
   "stack_frame": {
-    "frame_size": 32,
+    "frame_size": 36,
     "local_size": 24,
     "param_offset": 4,
-    "param_size": 8,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -183,36 +168,15 @@
         "offset": 8,
         "size": 4,
         "type": "_FILE *"
+      },
+      {
+        "is_param": true,
+        "name": "indent_prefix",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 6,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "uint in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "_fprintf(file_handle,\"%s\\\"%s\\\",%g // current motion name, curFrameNumber\\n\",in_stack_0000000c,pSVar1,dVar2);",
-      "type": "stack_param"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 2,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
-      "fix_type": "add_params",
-      "match": "declared:2 vs estimated:3",
-      "param_delta": 1,
-      "text": "Function declares 2 params but call sites push 3 (1 missing)",
-      "type": "param_count_too_few"
-    }
-  ]
+  "suspects": []
 }

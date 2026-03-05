@@ -17,7 +17,7 @@ void __cdecl freeMRGLData(SMRGLHeaderExtended *modelStruct);
 
 // Original: engine_model.c_getMRGLBounds_FUN_00528140
 // Address: 00528140
-void __cdecl getMRGLBounds(SMRGLHeaderExtended *header,SMRGLModelBounds *output);
+SMRGLModelBounds * __stack_esi getMRGLBounds(SMRGLHeaderExtended *header,SMRGLModelBounds *output_bounds);
 
 // Original: engine_model.c_getMRGLSize_FUN_00528700
 // Address: 00528700
@@ -25,7 +25,7 @@ int __cdecl getMRGLSize(SMRGLHeaderExtended *header);
 
 // Original: engine_model.c_loadMRGLTextures_FUN_00528870
 // Address: 00528870
-void __cdecl loadMRGLTextures(SMRGLHeaderExtended *block);
+void __cdecl loadMRGLTextures(SMRGLHeaderExtended *mrgl);
 
 // Original: engine_model.c_initializeMRGLModel_FUN_00528940
 // Address: 00528940

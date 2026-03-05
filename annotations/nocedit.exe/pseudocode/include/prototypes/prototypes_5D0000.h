@@ -198,7 +198,7 @@ CBassPlayer * __cdecl core_tbplayer_cpp_factoryFunc_FUN_005da020(void);
 CDemonActorType * __cdecl core_tbplayer_cpp_CBassPlayer_getActorType_FUN_005da050(CBassPlayer *this_ptr);
 CBassPlayer * __cdecl core_tbplayer_cpp_CBassPlayer_ctor_FUN_005da060(CBassPlayer *this_ptr);
 void __cdecl core_tbplayer_cpp_CBassPlayer_setup_FUN_005da090(CBassPlayer *this_ptr);
-void __cdecl core_tbplayer_cpp_FUN_005da100(void);
+CVector3f * __cdecl core_tbplayer_cpp_setVector_FUN_005da100(CVector3f *out,float x,float y,float z);
 void __stack2_esi core_tbplayer_cpp_CBassPlayer_getCarryObjToBodyXForm_FUN_005da120 (CBassPlayer *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 void __cdecl core_tbplayer_cpp_CBassPlayer_processDamage_FUN_005da240(CBassPlayer *this_ptr,SDamageInfo *damage_info);
 CDrummer * __cdecl core_tbplayer_cpp_factoryFunc_FUN_005da280(void);

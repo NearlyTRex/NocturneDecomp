@@ -15,13 +15,13 @@ SUMMARY
 --------------------------------------------------
 Functions with parameter estimates: 5094
 Functions with no callers: 3235
-Parameter mismatches detected: 476
-Signature accuracy rate: 74.4%
+Parameter mismatches detected: 470
+Signature accuracy rate: 74.7%
 
 Mismatches by confidence:
-  High confidence:   20 (multiple call sites agree)
-  Medium confidence: 65 (some agreement)
-  Low confidence:    391 (limited data)
+  High confidence:   19 (multiple call sites agree)
+  Medium confidence: 63 (some agreement)
+  Low confidence:    388 (limited data)
 
 ====================================================================================================
 HIGH CONFIDENCE MISMATCHES - Likely signature issues
@@ -47,16 +47,6 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       core_manpuz.cpp_CMansionPuzzle at 0050a6c7: 0 reg [], 6 stack
       core_manpuz.cpp_CMansionPuzzle at 0050a67c: 0 reg [], 6 stack
 
-  core_motion.cpp_CMotionController_advanceTween_FUN_0052e1d0
-    Declared: 1 params, Estimated: 4 params (+3)
-    Call sites: 4, Confidence: high
-    File: core/motion.cpp
-    Signature: void __cdecl core_motion_cpp_CMotionController_advanceTween_FUN_0052e1d0(CMotionController *this_ptr)
-    Sample call sites:
-      core_motion.cpp_CMotionControl at 0052d822: 0 reg [], 4 stack
-      core_motion.cpp_CMotionControl at 0052d808: 0 reg [], 4 stack
-      core_motion.cpp_CMotionControl at 0052d7ee: 0 reg [], 4 stack
-
   core_xform.cpp_buildRotationX_FUN_005f6c40
     Declared: 2 params, Estimated: 5 params (+3)
     Call sites: 3, Confidence: high
@@ -64,7 +54,7 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
     Signature: CMatrix3x4f * __stack_esi core_xform_cpp_buildRotationX_FUN_005f6c40(float angle_radians,CMatrix3x4f *matrix_out)
     Sample call sites:
       core_stranger.cpp_CStranger_co at 005c088e: 2 reg [EAX, EDX], 3 stack
-      core_gabriela.cpp_CGabriella_F at 004d5610: 2 reg [EAX, EDX], 3 stack
+      core_gabriela.cpp_CGabriella_u at 004d5610: 2 reg [EAX, EDX], 3 stack
       core_stranger.cpp_CStranger_co at 005c0edc: 2 reg [EAX, EDX], 3 stack
 
   core_bodypart.cpp_addVector_FUN_0041b540
@@ -233,7 +223,6 @@ MEDIUM CONFIDENCE MISMATCHES
 
   sound_sndmain.cpp_set3DListenerOrient_FUN_005aa0a0 declared:9 est:18 (+9) [5 calls]
   core_script.cpp_parseCommandWithDefaultTemplates_F declared:7 est:1 (-6) [2 calls]
-  core_gabriela.cpp_CGabriella_FUN_004d6f80          declared:1 est:6 (+5) [2 calls]
   crt_unknown.c_FUN_0060d480                         declared:0 est:5 (+5) [2 calls]
   core_charactr.cpp_CCharacter_isCarryingAnything_FU declared:1 est:5 (+4) [2 calls]
   core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_0 declared:5 est:1 (-4) [2 calls]
@@ -281,14 +270,15 @@ MEDIUM CONFIDENCE MISMATCHES
   core_skeleton.cpp_CDeformableModel_selectLOD_FUN_0 declared:2 est:1 (-1) [2 calls]
   core_turret.cpp_CTurret_FUN_005e3560               declared:1 est:2 (+1) [2 calls]
   core_weapon.cpp_CWeapon_archive_FUN_005ee250       declared:1 est:2 (+1) [2 calls]
+  core_weapon.cpp_CWeapon_ctor_FUN_005ede70          declared:1 est:2 (+1) [13 calls]
 
-  ... and 15 more
+  ... and 13 more
 
 ====================================================================================================
 LOW CONFIDENCE MISMATCHES (limited data)
 ====================================================================================================
 
-  391 functions with low-confidence mismatches
+  388 functions with low-confidence mismatches
   Sample:
     cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_F declared:1 est:5 (+4)
     cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_ declared:1 est:3 (+2)
@@ -308,7 +298,7 @@ MISMATCH DIRECTION ANALYSIS
 Functions where declaration has MORE params than estimated: 86
   (May indicate: extra params not being passed, or params in globals)
 
-Functions where declaration has FEWER params than estimated: 390
+Functions where declaration has FEWER params than estimated: 384
   (May indicate: missing params in signature, or calling convention issue)
 
 Distribution of differences (estimated - declared):
@@ -319,13 +309,13 @@ Distribution of differences (estimated - declared):
   -5 params: 2 functions
   -4 params: 3 functions
   -3 params: 8 functions
-  -2 params: 16 functions
-  -1 params: 52 functions
-  +1 params: 182 functions
-  +2 params: 80 functions
-  +3 params: 42 functions
+  -2 params: 17 functions
+  -1 params: 51 functions
+  +1 params: 180 functions
+  +2 params: 78 functions
+  +3 params: 41 functions
   +4 params: 74 functions
-  +5 params: 5 functions
+  +5 params: 4 functions
   +6 params: 2 functions
   +7 params: 3 functions
   +9 params: 2 functions

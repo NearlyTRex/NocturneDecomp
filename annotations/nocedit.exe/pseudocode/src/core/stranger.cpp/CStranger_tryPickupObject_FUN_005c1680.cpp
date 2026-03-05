@@ -2,11 +2,11 @@
 // Address: 005c1680
 // Address Range: [[005c1680, 005c1ef9]]
 // Convention: __cdecl
-// Signature: int __cdecl core_stranger_cpp_CStranger_tryPickupObject_FUN_005c1680(CStranger *this_ptr,char *param_2)
+// Signature: int __cdecl core_stranger_cpp_CStranger_tryPickupObject_FUN_005c1680(CStranger *this_ptr,char *class_name)
 
 #include "nocturne.h"
 
-int __cdecl core_stranger_cpp_CStranger_tryPickupObject_FUN_005c1680(CStranger *this_ptr,char *param_2)
+int __cdecl core_stranger_cpp_CStranger_tryPickupObject_FUN_005c1680(CStranger *this_ptr,char *class_name)
 
 {
   CDeformableModelInstance *pCVar1;
@@ -135,7 +135,7 @@ LAB_005c17d2:
           fStack_f8 = pCVar4->z - pCVar7->z;
           if (((ABS(fStack_fc) <= (float)5) &&
               (fStack_20 = fStack_100 * fStack_100 + fStack_f8 * fStack_f8, fStack_20 <= local_28))
-             && (iVar5 = core_actor_cpp_isOfClass_FUN_0040c6d0(pCVar8,param_2), iVar5 != 0)) {
+             && (iVar5 = core_actor_cpp_isOfClass_FUN_0040c6d0(pCVar8,class_name), iVar5 != 0)) {
             local_28 = fStack_20;
             iStack_30 = iStack_2c;
             (this_ptr->base).object_to_pick_up = pCVar8;

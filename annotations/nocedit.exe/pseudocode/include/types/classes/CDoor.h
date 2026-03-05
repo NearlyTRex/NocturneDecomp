@@ -6,16 +6,19 @@
 #include "types/classes/CKeyFramedModelInstance.h"
 #include "types/classes/CRuleList.h"
 #include "types/classes/CVector3f.h"
+#include "types/enums/EDoorState.h"
+#include "types/enums/EDoorType.h"
+#include "types/enums/EGroundType.h"
 
 // Structure: CDoor
 // Ghidra size: 0x9e0 (2528 bytes)
 typedef struct CDoor {
     CDemonActor base; // 0x0
     CKeyFramedModelInstance model; // 0x158
-    int ground_type; // 0x2d4
-    int door_type; // 0x2d8
+    EGroundType ground_type; // 0x2d4
+    EDoorType door_type; // 0x2d8
     int door_side; // 0x2dc
-    int door_state; // 0x2e0
+    EDoorState door_state; // 0x2e0
     int door_swing; // 0x2e4
     char open_condition[100]; // 0x2e8
     char close_condition[100]; // 0x34c

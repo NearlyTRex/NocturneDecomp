@@ -12,10 +12,11 @@ int __cdecl core_charactr_cpp_CCharacter_initGesture_FUN_0042d390(CCharacter *th
   CMotionList *this_ptr_00;
   int iVar1;
   
+  iVar1 = 0;
   this_ptr->gesture_frame = 0.0;
   this_ptr_00 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                           (&(this_ptr->model).motion_controller);
-  iVar1 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(this_ptr_00);
+  iVar1 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(this_ptr_00,motion_name,iVar1);
   this_ptr->gesture_motion_index = iVar1;
   return (uint)(-1 < iVar1);
 }

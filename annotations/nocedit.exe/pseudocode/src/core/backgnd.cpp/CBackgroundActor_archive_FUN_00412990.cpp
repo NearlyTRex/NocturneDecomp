@@ -15,6 +15,6 @@ void __cdecl core_backgnd_cpp_CBackgroundActor_archive_FUN_00412990(CBackgroundA
   if (g_CBackgroundActorClassVersion < 2) {
     return;
   }
-  core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->ground_type,"groundType");
+  core_actor_cpp_archiveInteger_FUN_0040b7f0((int *)&this_ptr->ground_type,"groundType");
   return;
 }

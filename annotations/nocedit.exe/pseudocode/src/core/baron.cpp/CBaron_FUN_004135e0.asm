@@ -102,7 +102,7 @@ section .text
     PUSH EDI                            ; 00413692
     PUSH EBX                            ; 00413693
     CALL core_baron.cpp_CBaron_FUN_004135a0 ; 00413694
-        ;   XREF to: 004135a0 (UNCONDITIONAL_CALL)  ; void core_baron.cpp_CBaron_FUN_004135a0(CBaron * this_ptr, int param_2)
+        ;   XREF to: 004135a0 (UNCONDITIONAL_CALL)  ; void core_baron.cpp_CBaron_FUN_004135a0(CBaron * this_ptr, CDemonActor * target)
     ADD ESP,0x8                         ; 00413699
     MOV ESP,EBP                         ; 0041369c
     POP EBP                             ; 0041369e

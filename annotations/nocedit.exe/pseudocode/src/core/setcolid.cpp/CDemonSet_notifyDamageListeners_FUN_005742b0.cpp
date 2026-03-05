@@ -27,7 +27,7 @@ void __cdecl core_setcolid_cpp_CDemonSet_notifyDamageListeners_FUN_005742b0(CDem
     local_20 = (float *)((int)unknown_param + 0x24);
     pCVar2 = this_ptr;
     do {
-      local_5c.fire_type = *(int *)unknown_param;
+      local_5c.hit_part_index = *(int *)unknown_param;
       local_5c.damage_amount = *(float *)((int)unknown_param + 4);
       local_5c.gore_multiplier = *(float *)((int)unknown_param + 8);
       local_5c.impact_point.x = *local_14;
@@ -37,9 +37,9 @@ void __cdecl core_setcolid_cpp_CDemonSet_notifyDamageListeners_FUN_005742b0(CDem
       local_5c.impact_direction.x = *local_1c;
       local_5c.impact_direction.y = *local_18;
       local_5c.impact_direction.z = *local_20;
-      local_5c.ammo_type = *(int *)((int)unknown_param + 0x28);
+      local_5c.ammo_type = *(EAmmoType *)((int)unknown_param + 0x28);
       local_5c.dismember_prob = *(float *)((int)unknown_param + 0x2c);
-      local_5c.damage_type = *(int *)((int)unknown_param + 0x30);
+      local_5c.damage_type = *(EDamageType *)((int)unknown_param + 0x30);
       local_5c.attacker = *(CDemonActor **)((int)unknown_param + 0x34);
       local_5c.wielder = *(CDemonActor **)((int)unknown_param + 0x38);
       (*(((pCVar2->characters[0]->base).vtable._uc)->_uc).testDamageLine)

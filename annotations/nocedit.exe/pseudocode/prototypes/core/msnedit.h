@@ -89,7 +89,7 @@ void __cdecl CDemonMission::playMission(CDemonMission *this_ptr);
 
 // Original: core_msnedit.cpp_CDemonMission_addSet_FUN_00538d60
 // Address: 00538d60
-void __cdecl CDemonMission::addSet(CDemonMission *this_ptr,char *param_2);
+void __cdecl CDemonMission::addSet(CDemonMission *this_ptr,char *set_name);
 
 // Original: core_msnedit.cpp_CDemonMission_removeSet_FUN_00538df0
 // Address: 00538df0
@@ -97,7 +97,7 @@ void __cdecl CDemonMission::removeSet(CDemonMission *this_ptr,int param_2);
 
 // Original: core_msnedit.cpp_CDemonMission_deleteActor_FUN_00538ea0
 // Address: 00538ea0
-void __cdecl CDemonMission::deleteActor(CDemonMission *this_ptr,int param_2);
+void __cdecl CDemonMission::deleteActor(CDemonMission *this_ptr,CDemonActor *actor);
 
 // Original: core_msnedit.cpp_CDemonMission_findSetByName_FUN_00538f40
 // Address: 00538f40

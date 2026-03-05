@@ -212,7 +212,7 @@ section .text
         ;   Label: LAB_005c5d30
     PUSH EBX                            ; 005c5d35
     CALL core_stranger.cpp_CStranger_tryPickupObject_FUN_005c1680 ; 005c5d36
-        ;   XREF to: 005c1680 (UNCONDITIONAL_CALL)  ; int core_stranger.cpp_CStranger_tryPickupObject_FUN_005c1680(CStranger * this_ptr, char * param_2)
+        ;   XREF to: 005c1680 (UNCONDITIONAL_CALL)  ; int core_stranger.cpp_CStranger_tryPickupObject_FUN_005c1680(CStranger * this_ptr, char * class_name)
     ADD ESP,0x8                         ; 005c5d3b
     TEST EAX,EAX                        ; 005c5d3e
     JZ 0x005c5d53                       ; 005c5d40
@@ -354,7 +354,7 @@ section .text
         ;   Label: LAB_005c5e56
     PUSH EBX                            ; 005c5e5b
     CALL core_stranger.cpp_CStranger_tryPickupObject_FUN_005c1680 ; 005c5e5c
-        ;   XREF to: 005c1680 (UNCONDITIONAL_CALL)  ; int core_stranger.cpp_CStranger_tryPickupObject_FUN_005c1680(CStranger * this_ptr, char * param_2)
+        ;   XREF to: 005c1680 (UNCONDITIONAL_CALL)  ; int core_stranger.cpp_CStranger_tryPickupObject_FUN_005c1680(CStranger * this_ptr, char * class_name)
     ADD ESP,0x8                         ; 005c5e61
     TEST EAX,EAX                        ; 005c5e64
     JZ 0x005c5d9f                       ; 005c5e66

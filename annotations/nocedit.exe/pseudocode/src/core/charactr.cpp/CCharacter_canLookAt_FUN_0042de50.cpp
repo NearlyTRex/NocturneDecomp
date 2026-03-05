@@ -12,13 +12,16 @@ int __cdecl core_charactr_cpp_CCharacter_canLookAt_FUN_0042de50(CCharacter *this
   int iVar1;
   CMotionList *this_ptr_00;
   float fVar2;
+  char *state_name;
   
   iVar1 = (*(((this_ptr->base).vtable._uc)->_uc).getDeathState)(this_ptr);
   if (iVar1 < 2) {
     if ((this_ptr->model).model_name[0] != '\0') {
+      iVar1 = 0;
+      state_name = "STAND";
       this_ptr_00 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                               (&(this_ptr->model).motion_controller);
-      iVar1 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(this_ptr_00);
+      iVar1 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(this_ptr_00,state_name,iVar1);
       if (-1 < iVar1) {
         fVar2 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
                           (&(this_ptr->model).motion_controller,iVar1);

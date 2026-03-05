@@ -22,6 +22,6 @@ CStairs * __cdecl core_stairs_cpp_CStairs_ctor_FUN_005b9b70(CStairs *this_ptr)
   ADJ(pvVar2)->stair_count = 5;
   ADJ(pvVar2)->bevel_y = 0.5;
   ADJ(pvVar2)->bevel_z = 0.3;
-  ADJ(pvVar2)->ground_type = 0;
+  ADJ(pvVar2)->ground_type = GROUND_TYPE_DEFAULT;
   return ADJ(pvVar2);
 }

@@ -18,6 +18,6 @@ CBackgroundActor * __cdecl core_backgnd_cpp_CBackgroundActor_ctor_FUN_004127b0(C
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (this_ptr_00,"candle.kfm");
   ADJ(this_ptr_00)->collide_with_me = 0;
-  ADJ(this_ptr_00)->ground_type = 0;
+  ADJ(this_ptr_00)->ground_type = GROUND_TYPE_DEFAULT;
   return ADJ(this_ptr_00);
 }

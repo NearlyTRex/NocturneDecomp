@@ -39,9 +39,9 @@ float * __cdecl core_door_cpp_CDoor_getOpenStandPos_FUN_00480e20(CDoor *this_ptr
     }
   }
   switch(this_ptr->door_type) {
-  case 0:
-  case 1:
-  case 2:
+  case DOOR_TYPE_SWING:
+  case DOOR_TYPE_VERTICAL:
+  case DOOR_TYPE_SLIDE:
     pCVar5 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                        (&this_ptr->base,&local_2c,in_stack_00000010);
     if (pCVar5->z <= 0.0) {
@@ -75,7 +75,7 @@ float * __cdecl core_door_cpp_CDoor_getOpenStandPos_FUN_00480e20(CDoor *this_ptr
       }
     }
     break;
-  case 3:
+  case DOOR_TYPE_TILT:
     if ((CVector3f *)in_stack_00000008 != &this_ptr->open_position) {
       *in_stack_00000008 = (this_ptr->open_position).x;
       in_stack_00000008[1] = (this_ptr->open_position).y;

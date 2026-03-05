@@ -165,7 +165,8 @@ LAB_004bdb2c:
               shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                         (g_CEditorToolsPtr,"Loading %s");
               core_mission_cpp_CDemonMission_load_FUN_00522d90(g_CDemonMissionPtr,local_3a5 + 1,0);
-              core_mission_cpp_CDemonMission_createHeros_FUN_00524a80(g_CDemonMissionPtr,0);
+              core_mission_cpp_CDemonMission_createHeros_FUN_00524a80
+                        (g_CDemonMissionPtr,(CCharacter *)0x0);
               core_mission_cpp_CDemonMission_prepareAllActors_FUN_00523cf0(g_CDemonMissionPtr);
               _fprintf((this_ptr->base).file_ptr,"WORLD\\%s\n",local_3a5 + 1);
               splitpath

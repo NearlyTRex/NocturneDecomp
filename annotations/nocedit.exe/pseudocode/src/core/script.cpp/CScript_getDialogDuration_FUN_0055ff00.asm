@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float __cdecl core_script_cpp_CScript_getDialogDuration_FUN_0055ff00(CScript *this_ptr,int param_2,char *param_3,char *param_4)
+; float __cdecl core_script_cpp_CScript_getDialogDuration_FUN_0055ff00(CScript *this_ptr,char *actor_specifier,char *sound_name,char *dialog_text)
 ;
 ; Parameters:
 ; CScript *        Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param_2
-; char *           Stack[0xc]:4   param_3
-; char *           Stack[0x10]:4   param_4
+; char *           Stack[0x8]:4   actor_specifier
+; char *           Stack[0xc]:4   sound_name
+; char *           Stack[0x10]:4   dialog_text
 ; Local Variables:
 ; undefined4       Stack[-0x28]:4  local_28
 ; undefined8       Stack[-0x24]:8  local_24

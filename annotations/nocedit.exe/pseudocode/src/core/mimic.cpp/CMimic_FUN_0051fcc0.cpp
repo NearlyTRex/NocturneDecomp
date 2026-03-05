@@ -55,7 +55,7 @@ void __cdecl core_mimic_cpp_CMimic_FUN_0051fcc0(CMimic *this_ptr)
   CVector3f local_58;
   CVector3f local_4c;
   double local_38;
-  float local_2c;
+  float local_2c [2];
   float local_24;
   float local_20;
   float local_1c;
@@ -250,10 +250,11 @@ LAB_0051fdb4:
                 (&(this_ptr->base).base.model.motion_controller,2,1);
     }
   }
-  local_2c = in_stack_00000008 * (this_ptr->base).speed;
+  local_2c[0] = in_stack_00000008 * (this_ptr->base).speed;
   pCVar14 = &(this_ptr->base).base.model;
-  while (0.0 < local_2c) {
-    uVar8 = core_motion_cpp_CMotionController_advance_FUN_0052d610(&pCVar14->motion_controller);
+  while (0.0 < local_2c[0]) {
+    uVar8 = core_motion_cpp_CMotionController_advance_FUN_0052d610
+                      (&pCVar14->motion_controller,local_2c);
     if (uVar8 != 0) {
       if (uVar8 < 2) {
         if ((this_ptr->base).base.is_on_ground != 0) {

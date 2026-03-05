@@ -15,8 +15,8 @@ void __cdecl core_door_cpp_CDoor_getPropertyList_FUN_00481320(CDoor *this_ptr,CA
   core_actor_cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0
             (property_list,"Model file (.kfm)",&this_ptr->model,0);
   core_actor_cpp_CActorPropertyList_addEnumPair_FUN_0040e640
-            (property_list,"Door type",4,g_DoorTypePairs,&this_ptr->door_type);
-  if (this_ptr->door_type == 2) {
+            (property_list,"Door type",4,g_DoorTypePairs,(int *)&this_ptr->door_type);
+  if (this_ptr->door_type == DOOR_TYPE_SLIDE) {
     core_actor_cpp_CActorPropertyList_addEnumPair_FUN_0040e640
               (property_list,"Door side",2,g_DoorSideTypePairs,&this_ptr->door_side);
   }
@@ -24,7 +24,7 @@ void __cdecl core_door_cpp_CDoor_getPropertyList_FUN_00481320(CDoor *this_ptr,CA
             (property_list,"Door state",
              core_door_cpp_CDoor_propertyDisplayCallback_FUN_00481250,
              core_door_cpp_CDoor_propertyActionCallback_FUN_004812b0);
-  if (this_ptr->door_type == 0) {
+  if (this_ptr->door_type == DOOR_TYPE_SWING) {
     core_actor_cpp_CActorPropertyList_addEnumPair_FUN_0040e640
               (property_list,"Door swing",2,g_DoorSwingTypePairs,&this_ptr->door_swing);
   }
@@ -41,7 +41,7 @@ void __cdecl core_door_cpp_CDoor_getPropertyList_FUN_00481320(CDoor *this_ptr,CA
   core_actor_cpp_CActorPropertyList_addInt_FUN_0040e1e0
             (property_list,"Key mask",&this_ptr->key_mask,
              (CActorPropertyValidatorFunc *)0x0);
-  if (this_ptr->door_type == 1) {
+  if (this_ptr->door_type == DOOR_TYPE_VERTICAL) {
     property_name = "Maximum open distance (ft)";
   }
   else {
@@ -56,7 +56,7 @@ void __cdecl core_door_cpp_CDoor_getPropertyList_FUN_00481320(CDoor *this_ptr,CA
             (property_list,"Close speed (sec)",&this_ptr->close_speed,
              (CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addGroundType_FUN_0040e300
-            (property_list,"groundType",&this_ptr->ground_type);
+            (property_list,"groundType",(int *)&this_ptr->ground_type);
   core_actor_cpp_CActorPropertyList_addButton_FUN_0040e480
             (property_list,"Event to trigger when open",this_ptr->on_open_trigger_event);
   core_actor_cpp_CActorPropertyList_addButton_FUN_0040e480

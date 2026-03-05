@@ -54,7 +54,7 @@ void __cdecl core_svetlana_cpp_CSvetlana_process_FUN_005d8ba0(CSvetlana *this_pt
     (this_ptr->base).base.hit_points = 100.0;
   }
   iVar4 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
-  if ((iVar4 == 0) || ((this_ptr->base).ai_task == 4)) {
+  if ((iVar4 == 0) || ((this_ptr->base).ai_task == HERO_TASK_SUSPEND)) {
 switchD_005d8f77_caseD_9:
     return;
   }
@@ -76,7 +76,7 @@ switchD_005d8f77_caseD_9:
   iVar4 = core_charactr_cpp_CCharacter_processWalking_FUN_0042ca70
                     ((CCharacter *)this_ptr,delta_time);
   if (iVar4 == 0) {
-    if ((this_ptr->base).control_type == 2) {
+    if ((this_ptr->base).control_type == HERO_CONTROL_AI) {
       core_svetlana_cpp_CSvetlana_processAI_FUN_005d9260(this_ptr,delta_time);
     }
     pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
@@ -117,7 +117,7 @@ switchD_005d8f77_caseD_9:
         }
         if ((this_ptr->base).player_control.action_states[3] != 0) {
           bVar2 = true;
-          if ((this_ptr->blades_drawn == 0) && ((this_ptr->base).control_type != 2)) {
+          if ((this_ptr->blades_drawn == 0) && ((this_ptr->base).control_type != HERO_CONTROL_AI)) {
             iVar8 = core_hero_cpp_CHero_tryInteract_FUN_004f2af0(&this_ptr->base);
             bVar2 = false;
             if (iVar8 != 0) goto LAB_005d9011;
@@ -277,7 +277,7 @@ LAB_005d8e27:
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020(pCStack_1c);
   iVar4 = (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)this_ptr);
   if (iVar4 == 0) {
-    blend_callback = core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0;
+    blend_callback = core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0;
     fVar12 = this_ptr->head_blend_weight;
     iVar4 = INT_03f6cb90;
     core_xform_cpp_eulerToQuaternion_FUN_005f7b20(&this_ptr->head_euler_angles,&CStack_84);

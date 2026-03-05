@@ -176,7 +176,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x19c]     ; 004f4c81
     PUSH ESI                            ; 004f4c88
     CALL core_motion.cpp_CMotionController_advance_FUN_0052d610 ; 004f4c89
-        ;   XREF to: 0052d610 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionController_advance_FUN_0052d610(CMotionController * this_ptr)
+        ;   XREF to: 0052d610 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionController_advance_FUN_0052d610(CMotionController * this_ptr, float * delta_time)
     ADD ESP,0x8                         ; 004f4c8e
     MOV ESI,EAX                         ; 004f4c91
     CMP EAX,0xb                         ; 004f4c93
@@ -598,7 +598,7 @@ section .text
     PUSH dword ptr [EBP + 0x18]         ; 004f51b7
     PUSH EBX                            ; 004f51ba
     CALL core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0 ; 004f51bb
-        ;   XREF to: 0042d5a0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCharacter * this_ptr, float delta_time, int param_3)
+        ;   XREF to: 0042d5a0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCharacter * this_ptr, float delta_time, int disable_search)
     ADD ESP,0xc                         ; 004f51c0
     PUSH dword ptr [EBP + 0x18]         ; 004f51c3
     PUSH EBX                            ; 004f51c6

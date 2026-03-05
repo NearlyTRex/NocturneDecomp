@@ -170,7 +170,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_changeActorType_FUN_0053d8b0(CDemonM
     (*((local_20->vtable)._ub)->setup)(local_20);
     pCVar7 = this_ptr->selected_actor;
     core_msnedit_cpp_CDemonMission_selectActor_FUN_0053c140(this_ptr,(CDemonActor *)0x0);
-    core_msnedit_cpp_CDemonMission_deleteActor_FUN_00538ea0(this_ptr,(int)pCVar7);
+    core_msnedit_cpp_CDemonMission_deleteActor_FUN_00538ea0(this_ptr,pCVar7);
     core_mission_cpp_CDemonMission_removeActor_FUN_00523f20(this_ptr,pCVar7,1);
     core_mission_cpp_CDemonMission_addActorToList_FUN_00523b70(this_ptr,local_20);
     core_mission_cpp_CDemonMission_buildSetActorList_FUN_00523e60(this_ptr);

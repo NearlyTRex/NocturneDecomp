@@ -162,7 +162,7 @@ section .text
     MOV EAX,[0x0067b654]                ; 0053ce2e | g_CGameInstance | g_CGamePtr
     PUSH EAX                            ; 0053ce33 | g_CGameInstance
     CALL core_game.cpp_CGame_loadGame_FUN_004e12b0 ; 0053ce34
-        ;   XREF to: 004e12b0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_loadGame_FUN_004e12b0(CGame * this_ptr, char * save_filename, int load_mode, char * chapter_name)
+        ;   XREF to: 004e12b0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_loadGame_FUN_004e12b0(CGame * this_ptr, char * save_filename, int load_mode)
     ADD ESP,0xc                         ; 0053ce39
         ;   Label: LAB_0053ce39
     MOV EDX,dword ptr [ESP + 0x43c]     ; 0053ce3c
@@ -209,7 +209,7 @@ section .text
         ;   Label: LAB_0053cec6
     PUSH EBP                            ; 0053cec7
     CALL core_msnedit.cpp_CDemonMission_deleteActor_FUN_00538ea0 ; 0053cec8
-        ;   XREF to: 00538ea0 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_deleteActor_FUN_00538ea0(CDemonMission * this_ptr, int param_2)
+        ;   XREF to: 00538ea0 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_deleteActor_FUN_00538ea0(CDemonMission * this_ptr, CDemonActor * actor)
     MOV EBX,dword ptr [EBX + 0x14c]     ; 0053cecd
     ADD ESP,0x8                         ; 0053ced3
     TEST EBX,EBX                        ; 0053ced6

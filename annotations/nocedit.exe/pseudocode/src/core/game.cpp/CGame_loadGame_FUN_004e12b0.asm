@@ -1,13 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_game_cpp_CGame_loadGame_FUN_004e12b0(CGame *this_ptr,char *save_filename,int load_mode,char *chapter_name)
+; void __cdecl core_game_cpp_CGame_loadGame_FUN_004e12b0(CGame *this_ptr,char *save_filename,int load_mode)
 ;
 ; Parameters:
 ; CGame *          Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   save_filename
 ; int              Stack[0xc]:4   load_mode
-; char *           Stack[0x10]:4   chapter_name
 ; Local Variables:
 ; undefined1       Stack[-0x638]:1  local_638
 ; undefined1       Stack[-0x637]:1  local_637

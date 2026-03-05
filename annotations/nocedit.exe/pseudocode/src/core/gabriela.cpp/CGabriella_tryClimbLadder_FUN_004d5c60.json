@@ -1,0 +1,446 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 267,
+    "complexity_score": 190,
+    "cross_reference_count": 1,
+    "function_call_count": 7,
+    "global_count": 9,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 110,
+    "suspect_count": 7,
+    "suspect_types": [
+      "decompiler_intrinsic",
+      "warning_type_propagation"
+    ],
+    "total_lines": 377
+  },
+  "cross_references": [
+    {
+      "addr": "004d2ea0",
+      "from_addr": "004d4067",
+      "name": "core_gabriela.cpp_CGabriella_process_FUN_004d2ea0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004d5c60",
+    "address_range": [
+      [
+        "004d5c60",
+        "004d5f63"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_gabriela.cpp_CGabriella_tryClimbLadder_FUN_004d5c60",
+    "signature": "int __cdecl core_gabriela_cpp_CGabriella_tryClimbLadder_FUN_004d5c60(CGabriella *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c790",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790"
+    },
+    {
+      "addr": "00408ec0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0"
+    },
+    {
+      "addr": "00408c10",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10"
+    },
+    {
+      "addr": "00408f10",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10"
+    },
+    {
+      "addr": "0040cd70",
+      "is_variadic": false,
+      "name": "core_actor.cpp_normalizeAngleToPi_FUN_0040cd70"
+    },
+    {
+      "addr": "0052db00",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00"
+    },
+    {
+      "addr": "005e7830",
+      "is_variadic": false,
+      "name": "core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062affd",
+      "name": "DOUBLE_0062affd",
+      "type": "double",
+      "value": "5"
+    },
+    {
+      "addr": "0062b005",
+      "name": "DOUBLE_0062b005",
+      "type": "double",
+      "value": "3"
+    },
+    {
+      "addr": "0062b00d",
+      "name": "DOUBLE_0062b00d",
+      "type": "double",
+      "value": "0.300000000000000"
+    },
+    {
+      "addr": "0062b015",
+      "name": "DOUBLE_0062b015",
+      "type": "double",
+      "value": "0.5"
+    },
+    {
+      "addr": "0062b01d",
+      "name": "DOUBLE_0062b01d",
+      "type": "double",
+      "value": "0.174532925194444"
+    },
+    {
+      "addr": "006810c8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "03114278"
+    },
+    {
+      "addr": "02dcd810",
+      "name": "g_CLadderClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "032613cc",
+      "name": "g_CDemonSetInstance.actor_count",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "032613d0",
+      "name": "g_CDemonSetInstance.actors[0]",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004d4067",
+        "call_type": "direct",
+        "caller": "core_gabriela.cpp_CGabriella_process_FUN_004d2ea0",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "reg_params": [],
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.07725321888412,
+    "instruction_count": 233,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 8,
+      "BOOL_OR": 20,
+      "BRANCH": 1,
+      "CALL": 11,
+      "CBRANCH": 15,
+      "COPY": 525,
+      "FLOAT2FLOAT": 45,
+      "FLOAT_ABS": 5,
+      "FLOAT_ADD": 1,
+      "FLOAT_EQUAL": 11,
+      "FLOAT_LESS": 11,
+      "FLOAT_MULT": 2,
+      "FLOAT_NAN": 22,
+      "FLOAT_SQRT": 1,
+      "FLOAT_SUB": 6,
+      "INT2FLOAT": 1,
+      "INT_ADD": 110,
+      "INT_AND": 110,
+      "INT_CARRY": 13,
+      "INT_EQUAL": 52,
+      "INT_LEFT": 44,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 56,
+      "INT_OR": 55,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 14,
+      "INT_SLESS": 26,
+      "INT_SUB": 41,
+      "INT_XOR": 6,
+      "INT_ZEXT": 44,
+      "LOAD": 57,
+      "POPCOUNT": 26,
+      "RETURN": 2,
+      "STORE": 69
+    },
+    "pcode_op_count": 1416
+  },
+  "stack_frame": {
+    "frame_size": 168,
+    "local_size": 164,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_a0",
+        "offset": -160,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_98",
+        "offset": -152,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_90",
+        "offset": -144,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8c",
+        "offset": -140,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_88",
+        "offset": -136,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_84",
+        "offset": -132,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_80",
+        "offset": -128,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_7c",
+        "offset": -124,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_78",
+        "offset": -120,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_6c",
+        "offset": -108,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGabriella *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004d5c6c",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 48,
+      "match": "ABS",
+      "severity": "mild",
+      "text": "if ((ABS(local_5c) <= (float)5) &&",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 49,
+      "match": "SQRT",
+      "severity": "mild",
+      "text": "(local_5c = 0.0, SQRT(local_58 * local_58 + local_60 * local_60) <= (float)3)",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 53,
+      "match": "ABS",
+      "severity": "mild",
+      "text": "if ((ABS(local_90.x) <= (float)0.29999999999999999) &&",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 58,
+      "match": "ABS",
+      "severity": "mild",
+      "text": "if (ABS(local_18) <= (float)0.17453292519444399) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 71,
+      "match": "ABS",
+      "severity": "mild",
+      "text": "if (((ABS(local_90.x) <= (float)0.29999999999999999) &&",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 77,
+      "match": "ABS",
+      "severity": "mild",
+      "text": "if (ABS(local_18) <= (float)0.17453292519444399) {",
+      "type": "decompiler_intrinsic"
+    }
+  ]
+}

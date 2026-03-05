@@ -12,7 +12,7 @@
 ;   byte g_CPUInfoFamily = 0x96
 ;   byte g_CPUInfoIntelCPU = 0x0
 ;   byte g_CPUInfoMMXSupported = 0x0
-;   BOOL g_MMXSupported
+;   int g_MMXSupported
 ;   int g_CPUModel
 ;
 ; Called Functions:

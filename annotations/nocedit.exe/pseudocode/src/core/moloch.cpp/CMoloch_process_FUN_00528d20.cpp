@@ -23,6 +23,7 @@ void __cdecl core_moloch_cpp_CMoloch_process_FUN_00528d20(CMoloch *this_ptr,floa
   char *model_name;
   uint uVar9;
   float local_1b18;
+  float local_1b14;
   SPose SStack_1b10;
   float local_74;
   float local_70;
@@ -40,7 +41,7 @@ void __cdecl core_moloch_cpp_CMoloch_process_FUN_00528d20(CMoloch *this_ptr,floa
   float local_18;
   SMotion *local_14;
   
-  if ((this_ptr->base).ai_task == 4) {
+  if ((this_ptr->base).ai_task == HERO_TASK_SUSPEND) {
     return;
   }
   iVar6 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
@@ -57,9 +58,10 @@ void __cdecl core_moloch_cpp_CMoloch_process_FUN_00528d20(CMoloch *this_ptr,floa
        (this_ptr->base).base.model.accumulated_root_motion.z;
   (this_ptr->base).base.model.accumulated_root_motion.x =
        (this_ptr->base).base.model.accumulated_root_motion.y;
-  while (pCVar5 = g_CGamePtr, 0.0 < delta_time) {
+  local_1b14 = delta_time;
+  while (pCVar5 = g_CGamePtr, 0.0 < local_1b14) {
     iVar6 = core_motion_cpp_CMotionController_advance_FUN_0052d610
-                      (&(this_ptr->base).base.model.motion_controller);
+                      (&(this_ptr->base).base.model.motion_controller,&local_1b14);
     core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,iVar6);
   }
   fVar4 = (float)12.566370614;
@@ -71,7 +73,7 @@ void __cdecl core_moloch_cpp_CMoloch_process_FUN_00528d20(CMoloch *this_ptr,floa
   iVar6 = core_charactr_cpp_CCharacter_processWalking_FUN_0042ca70
                     ((CCharacter *)this_ptr,delta_time);
   if (iVar6 == 0) {
-    if ((this_ptr->base).control_type == 2) {
+    if ((this_ptr->base).control_type == HERO_CONTROL_AI) {
       core_moloch_cpp_CMoloch_FUN_005293b0(this_ptr);
     }
     pSVar8 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
@@ -216,7 +218,7 @@ LAB_00528f8e:
                        (&pCVar2->motion_controller);
     core_motion_cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0
               (&(this_ptr->model).motion_controller,pSVar8->motion_name,
-               (float)(this_ptr->base).base.model.motion_controller.current_frame_number);
+               (this_ptr->base).base.model.motion_controller.current_frame_number);
     core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000
               (&this_ptr->model);
     fVar4 = this_ptr->morph_timer + delta_time;
@@ -239,7 +241,7 @@ LAB_00528f8e:
       local_14 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                            (&pCVar2->motion_controller);
       this_ptr_00 = &(this_ptr->base).base.model;
-      fStack_24 = (float)(this_ptr->model).motion_controller.current_frame_number;
+      fStack_24 = (this_ptr->model).motion_controller.current_frame_number;
       core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840(this_ptr_00,model_name);
       core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(this_ptr_00);
       core_motion_cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0

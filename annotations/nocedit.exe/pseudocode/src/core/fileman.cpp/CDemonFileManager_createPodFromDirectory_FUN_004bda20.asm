@@ -450,7 +450,7 @@ section .text
     MOV EBX,dword ptr [0x0067d550]      ; 004bddcf | g_CDemonMissionInstance | g_CDemonMissionPtr
     PUSH EBX                            ; 004bddd5 | g_CDemonMissionInstance
     CALL core_mission.cpp_CDemonMission_createHeros_FUN_00524a80 ; 004bddd6
-        ;   XREF to: 00524a80 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_createHeros_FUN_00524a80(CDemonMission * this_ptr, int creation_flags)
+        ;   XREF to: 00524a80 (UNCONDITIONAL_CALL)  ; int core_mission.cpp_CDemonMission_createHeros_FUN_00524a80(CDemonMission * this_ptr, CCharacter * existing_hero)
     ADD ESP,0x8                         ; 004bdddb
     MOV ESI,dword ptr [0x0067d550]      ; 004bddde | g_CDemonMissionPtr
     PUSH ESI                            ; 004bdde4 | g_CDemonMissionInstance

@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_menu_cpp_isKeyCodeValidForMode_FUN_00513720(int *key_code_ptr,char *description)
+; int __cdecl core_menu_cpp_isKeyCodeValidForMode_FUN_00513720(EInputCodeType *key_code_ptr,char *description)
 ;
 ; Parameters:
-; int *            Stack[0x4]:4   key_code_ptr
+; EInputCodeType * Stack[0x4]:4   key_code_ptr
 ; char *           Stack[0x8]:4   description
 ;
 ; XREF[1]:

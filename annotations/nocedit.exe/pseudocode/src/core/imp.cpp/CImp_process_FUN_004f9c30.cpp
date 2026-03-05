@@ -56,7 +56,7 @@ void __cdecl core_imp_cpp_CImp_process_FUN_004f9c30(CImp *this_ptr,float delta_t
   CVector3f local_5c;
   CVector3f local_50;
   int local_3c;
-  float local_34;
+  float local_34 [2];
   float local_2c;
   float local_28;
   int local_24;
@@ -80,11 +80,12 @@ void __cdecl core_imp_cpp_CImp_process_FUN_004f9c30(CImp *this_ptr,float delta_t
        (this_ptr->base).base.model.accumulated_root_motion.z;
   (this_ptr->base).base.model.accumulated_root_motion.x =
        (this_ptr->base).base.model.accumulated_root_motion.y;
-  local_34 = delta_time * (this_ptr->base).speed;
+  local_34[0] = delta_time * (this_ptr->base).speed;
   pCVar1 = &(this_ptr->base).base.model;
 LAB_004f9c99:
-  if (0.0 < local_34) {
-    uVar8 = core_motion_cpp_CMotionController_advance_FUN_0052d610(&pCVar1->motion_controller);
+  if (0.0 < local_34[0]) {
+    uVar8 = core_motion_cpp_CMotionController_advance_FUN_0052d610
+                      (&pCVar1->motion_controller,local_34);
     if (uVar8 < 0x29a) {
       core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,uVar8);
       goto LAB_004f9c99;

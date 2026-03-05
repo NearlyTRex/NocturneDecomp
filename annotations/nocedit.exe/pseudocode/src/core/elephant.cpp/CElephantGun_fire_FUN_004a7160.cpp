@@ -23,9 +23,9 @@ int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_004a7160(CElephantGun *this_
   float fStack_11c;
   CVector3f CStack_118;
   CVector3f CStack_108;
-  int iStack_fc;
+  EAmmoType EStack_fc;
   float fStack_f8;
-  int iStack_f4;
+  EDamageType EStack_f4;
   CElephantGun *pCStack_f0;
   CVector3f aCStack_e8 [2];
   CVector3f CStack_d0;
@@ -213,8 +213,8 @@ int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_004a7160(CElephantGun *this_
             CStack_108.y = pCVar1->y;
             CStack_108.z = pCVar1->z;
           }
-          iStack_fc = (this_ptr->base).ammo_type;
-          iStack_f4 = 0x6b;
+          EStack_fc = (this_ptr->base).ammo_type;
+          EStack_f4 = DAMAGE_TYPE_PIERCING;
           fStack_f8 = 1.0;
           pCStack_f0 = this_ptr;
           aCStack_e8[0].x =

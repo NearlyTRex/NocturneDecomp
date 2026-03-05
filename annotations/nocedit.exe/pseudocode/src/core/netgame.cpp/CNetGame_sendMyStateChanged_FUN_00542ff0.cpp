@@ -16,7 +16,7 @@ void __cdecl core_netgame_cpp_CNetGame_sendMyStateChanged_FUN_00542ff0(CNetGame 
   char *pcVar5;
   char local_33 [20];
   int local_1f;
-  int local_1b;
+  EHeroType local_1b;
   int local_17;
   
   if ((this_ptr->connection_type != CONNECTION_CLIENT) || (this_ptr->network_mode != NET_MODE_LOBBY)

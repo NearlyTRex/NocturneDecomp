@@ -87,7 +87,8 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
   local_18 = delta_time * (this_ptr->base).speed;
   this_ptr_00 = &(this_ptr->base).base.model;
   while (0.0 < local_18) {
-    iVar6 = core_motion_cpp_CMotionController_advance_FUN_0052d610(&this_ptr_00->motion_controller);
+    iVar6 = core_motion_cpp_CMotionController_advance_FUN_0052d610
+                      (&this_ptr_00->motion_controller,&local_18);
     if ((iVar6 == 100) && (pCVar4 = (this_ptr->base).victim, pCVar4 != (CCharacter *)0x0)) {
       local_d4 = (pCVar4->base).location.position.x - (pCVar1->position).x;
       local_d0 = (pCVar4->base).location.position.y - (this_ptr->base).base.base.location.position.y

@@ -23,9 +23,9 @@ CVampireBoss * __cdecl CVampireBoss::ctor(CVampireBoss *this_ptr);
 // Address: 005e56c0
 void __cdecl CVampireBoss::setup(CVampireBoss *this_ptr);
 
-// Original: core_vampboss.cpp_FUN_005e58d0
+// Original: core_vampboss.cpp_clampAngle_FUN_005e58d0
 // Address: 005e58d0
-float __cdecl FUN_005e58d0(void);
+float __cdecl clampAngle(float angle,float max_angle);
 
 // Original: core_vampboss.cpp_CVampireBoss_process_FUN_005e5970
 // Address: 005e5970

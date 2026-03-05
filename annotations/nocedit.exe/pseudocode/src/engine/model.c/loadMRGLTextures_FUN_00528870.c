@@ -2,11 +2,11 @@
 // Address: 00528870
 // Address Range: [[00528870, 00528931]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_model_c_loadMRGLTextures_FUN_00528870(SMRGLHeaderExtended *block)
+// Signature: void __cdecl engine_model_c_loadMRGLTextures_FUN_00528870(SMRGLHeaderExtended *mrgl)
 
 #include "nocturne.h"
 
-void __cdecl engine_model_c_loadMRGLTextures_FUN_00528870(SMRGLHeaderExtended *block)
+void __cdecl engine_model_c_loadMRGLTextures_FUN_00528870(SMRGLHeaderExtended *mrgl)
 
 {
   char cVar1;
@@ -20,10 +20,10 @@ void __cdecl engine_model_c_loadMRGLTextures_FUN_00528870(SMRGLHeaderExtended *b
   SMRGLTextureBasic *local_18;
   SMRGLTextureBasic *local_14;
   
-  iVar4 = (block->base).type;
-  local_18 = (SMRGLTextureBasic *)block;
+  iVar4 = (mrgl->base).type;
+  local_18 = (SMRGLTextureBasic *)mrgl;
   if (iVar4 == 0x26) {
-    engine_boss_c_modelStructNotSupported_FUN_0041dc20(block);
+    engine_boss_c_modelStructNotSupported_FUN_0041dc20(mrgl);
   }
   else {
     while (iVar4 != 0) {

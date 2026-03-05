@@ -6,6 +6,7 @@
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CKeyFramedModelInstance.h"
 #include "types/classes/CVector3f.h"
+#include "types/enums/EGroundType.h"
 
 // Structure: CBoxActor
 // Ghidra size: 0x66c (1644 bytes)
@@ -28,7 +29,7 @@ typedef struct CBoxActor {
     float weight_in_pounds; // 0x390
     CBox physics_box; // 0x394
     float ground_height; // 0x5ec
-    int ground_type; // 0x5f0
+    EGroundType ground_type; // 0x5f0
     int plot_in_shadow_flag; // 0x5f4
     int collision_flag; // 0x5f8
     int dont_use_normals; // 0x5fc

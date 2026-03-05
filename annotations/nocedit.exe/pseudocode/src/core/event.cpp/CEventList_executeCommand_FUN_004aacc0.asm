@@ -3760,7 +3760,7 @@ section .text
     FSTP float ptr [ESP]                ; 004acde1
     PUSH EBX                            ; 004acde4
     CALL core_lever.cpp_CLever_setState_FUN_00504b20 ; 004acde5
-        ;   XREF to: 00504b20 (UNCONDITIONAL_CALL)  ; void core_lever.cpp_CLever_setState_FUN_00504b20(CLever * this_ptr, float param_2)
+        ;   XREF to: 00504b20 (UNCONDITIONAL_CALL)  ; void core_lever.cpp_CLever_setState_FUN_00504b20(CLever * this_ptr, float new_state)
     ADD ESP,0x8                         ; 004acdea
     JMP 0x004aaf1d                      ; 004acded
         ;   XREF to: 004aaf1d (UNCONDITIONAL_JUMP)  ; LAB_004aaf1d
@@ -3955,7 +3955,7 @@ section .text
     ADD ESP,0x4                         ; 004acfab
     PUSH EAX                            ; 004acfae
     CALL core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0 ; 004acfaf
-        ;   XREF to: 0052d4f0 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0(CMotionList * this_ptr)
+        ;   XREF to: 0052d4f0 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0(CMotionList * this_ptr, char * state_name, int error_on_not_found)
     ADD ESP,0xc                         ; 004acfb4
     TEST EAX,EAX                        ; 004acfb7
     JL 0x004acfd6                       ; 004acfb9
@@ -4602,7 +4602,7 @@ section .text
     ADD ESP,0x4                         ; 004ad5a2
     PUSH EAX                            ; 004ad5a5
     CALL core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460 ; 004ad5a6
-        ;   XREF to: 0052d460 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460(CMotionList * this_ptr)
+        ;   XREF to: 0052d460 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460(CMotionList * this_ptr, char * motion_name, int error_on_not_found)
     ADD ESP,0xc                         ; 004ad5ab
     TEST EAX,EAX                        ; 004ad5ae
     JL 0x004ad5e5                       ; 004ad5b0

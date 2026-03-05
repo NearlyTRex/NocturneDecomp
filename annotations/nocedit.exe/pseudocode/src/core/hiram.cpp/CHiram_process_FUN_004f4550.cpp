@@ -15,6 +15,7 @@ void __cdecl core_hiram_cpp_CHiram_process_FUN_004f4550(CHiram *this_ptr,float d
   CDemonActor *actor_ptr;
   CGlass *this_ptr_00;
   uint class_name_hash;
+  float local_18 [2];
   
   iVar2 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
   if (iVar2 == 0) {
@@ -40,14 +41,16 @@ void __cdecl core_hiram_cpp_CHiram_process_FUN_004f4550(CHiram *this_ptr,float d
       }
     }
   }
+  local_18[0] = delta_time;
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
   pCVar1 = &(this_ptr->base).base.model;
   (this_ptr->base).base.model.accumulated_root_motion.y =
        (this_ptr->base).base.model.accumulated_root_motion.z;
   (this_ptr->base).base.model.accumulated_root_motion.x =
        (this_ptr->base).base.model.accumulated_root_motion.y;
-  while (0.0 < delta_time) {
-    iVar2 = core_motion_cpp_CMotionController_advance_FUN_0052d610(&pCVar1->motion_controller);
+  while (0.0 < local_18[0]) {
+    iVar2 = core_motion_cpp_CMotionController_advance_FUN_0052d610
+                      (&pCVar1->motion_controller,local_18);
     if (iVar2 == 0x29a) {
       core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0
                 (g_CDemonMissionPtr,(CDemonActor *)this_ptr,1);

@@ -34,7 +34,7 @@ section .text
     MOV EDX,dword ptr [EBX]             ; 0052dcc9
     PUSH EDX                            ; 0052dccb
     CALL core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460 ; 0052dccc
-        ;   XREF to: 0052d460 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460(CMotionList * this_ptr)
+        ;   XREF to: 0052d460 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460(CMotionList * this_ptr, char * motion_name, int error_on_not_found)
     MOV byte ptr [EBX + 0x30],0x0       ; 0052dcd1
     ADD ESP,0xc                         ; 0052dcd5
     MOV dword ptr [EBX + 0x4],EAX       ; 0052dcd8

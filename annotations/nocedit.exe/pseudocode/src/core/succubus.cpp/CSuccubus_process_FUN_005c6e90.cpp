@@ -62,7 +62,7 @@ void __cdecl core_succubus_cpp_CSuccubus_process_FUN_005c6e90(CSuccubus *this_pt
   local_24 = delta_time * (this_ptr->base).speed;
   while (0.0 < local_24) {
     iVar9 = core_motion_cpp_CMotionController_advance_FUN_0052d610
-                      (&(this_ptr->base).base.model.motion_controller);
+                      (&(this_ptr->base).base.model.motion_controller,&local_24);
     core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,iVar9);
   }
   (this_ptr->hotdemon_model).accumulated_root_motion.z = 0.0;
@@ -73,7 +73,7 @@ void __cdecl core_succubus_cpp_CSuccubus_process_FUN_005c6e90(CSuccubus *this_pt
   local_24 = delta_time * (this_ptr->base).speed;
   while (0.0 < local_24) {
     core_motion_cpp_CMotionController_advance_FUN_0052d610
-              (&(this_ptr->hotdemon_model).motion_controller);
+              (&(this_ptr->hotdemon_model).motion_controller,&local_24);
   }
   fVar18 = (this_ptr->base).speed;
   fVar19 = (float)3.1415926535000001;
@@ -222,7 +222,7 @@ LAB_005c6fd0:
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr,delta_time);
   local_20 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                        (&pCVar15->motion_controller);
-  local_1c = (float)(this_ptr->base).base.model.motion_controller.current_frame_number;
+  local_1c = (this_ptr->base).base.model.motion_controller.current_frame_number;
   core_motion_cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0
             (&(this_ptr->hotdemon_model).motion_controller,local_20->motion_name,local_1c);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000

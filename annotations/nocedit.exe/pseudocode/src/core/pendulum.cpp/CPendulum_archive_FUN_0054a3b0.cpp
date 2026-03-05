@@ -33,7 +33,7 @@ void __cdecl core_pendulum_cpp_CPendulum_archive_FUN_0054a3b0(CPendulum *this_pt
     core_actor_cpp_archiveFloat_FUN_0040b770(&this_ptr->decay_timer,"decayTimer");
   }
   if (5 < g_CPendulumClassVersion) {
-    core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->ground_type,"groundType");
+    core_actor_cpp_archiveInteger_FUN_0040b7f0((int *)&this_ptr->ground_type,"groundType");
   }
   if (6 < g_CPendulumClassVersion) {
     core_actor_cpp_archiveString_FUN_0040b5c0(this_ptr->stop_event,"stopEvent");

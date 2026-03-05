@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 37,
-    "complexity_score": 34,
+    "complexity_score": 19,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 19,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unnamed_param"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 56
   },
   "cross_references": [],
@@ -29,7 +27,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_zombie.cpp_CZombie_getGrabbed_FUN_005fc970",
-    "signature": "int __cdecl core_zombie_cpp_CZombie_getGrabbed_FUN_005fc970(CZombie *this_ptr,CDemonActor *grabber,int grab_type,int param_4)"
+    "signature": "int __cdecl core_zombie_cpp_CZombie_getGrabbed_FUN_005fc970(CZombie *this_ptr,CDemonActor *grabber,int grab_type)"
   },
   "function_calls": [],
   "globals": [],
@@ -37,8 +35,8 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 4,
-    "estimated_params": 4
+    "declared_params": 3,
+    "estimated_params": 3
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.413793103448276,
@@ -67,10 +65,10 @@
     "pcode_op_count": 128
   },
   "stack_frame": {
-    "frame_size": 20,
+    "frame_size": 16,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 16,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -93,26 +91,10 @@
         "offset": 12,
         "size": 4,
         "type": "int"
-      },
-      {
-        "is_param": true,
-        "name": "param_4",
-        "offset": 16,
-        "size": 4,
-        "type": "int"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "int __cdecl core_zombie_cpp_CZombie_getGrabbed_FUN_005fc970(CZombie *this_ptr,CDemonActor *grabber,int grab_type,int param_4)",
-      "type": "unnamed_param"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

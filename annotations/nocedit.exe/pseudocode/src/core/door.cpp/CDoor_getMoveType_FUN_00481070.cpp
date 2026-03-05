@@ -27,25 +27,25 @@ int __cdecl core_door_cpp_CDoor_getMoveType_FUN_00481070(CDoor *this_ptr,CDemonA
     if ((this_ptr->allowed_sides & 1) != 0) {
 LAB_004811fd:
       switch(this_ptr->door_type) {
-      case 0:
+      case DOOR_TYPE_SWING:
         if (this_ptr->door_swing != 0) {
           local_18.z = -local_18.z;
         }
-        if (this_ptr->door_state != 0) {
+        if (this_ptr->door_state != DOOR_STATE_CLOSED) {
           local_18.z = -local_18.z;
         }
         if (0.0 <= local_18.z) {
           return 2;
         }
         return 3;
-      case 1:
-        if (this_ptr->door_state == 0) {
+      case DOOR_TYPE_VERTICAL:
+        if (this_ptr->door_state == DOOR_STATE_CLOSED) {
           return 6;
         }
         return 7;
-      case 2:
+      case DOOR_TYPE_SLIDE:
         goto switchD_00481208_caseD_2;
-      case 3:
+      case DOOR_TYPE_TILT:
         return 1;
       default:
         g_CurrentFilename = "..\\core\\door.cpp";
@@ -64,7 +64,7 @@ switchD_00481208_caseD_2:
   if (this_ptr->door_side != 1) {
     local_18.z = -local_18.z;
   }
-  if (this_ptr->door_state != 0) {
+  if (this_ptr->door_state != DOOR_STATE_CLOSED) {
     local_18.z = -local_18.z;
   }
   if (0.0 <= local_18.z) {

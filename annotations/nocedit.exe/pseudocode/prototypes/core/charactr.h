@@ -93,7 +93,7 @@ void __cdecl CCharacter::renderAttachedModels(CCharacter *this_ptr);
 
 // Original: core_charactr.cpp_CCharacter_spawnFireOnBone_FUN_0042a520
 // Address: 0042a520
-void __cdecl CCharacter::spawnFireOnBone(CCharacter *this_ptr,int bone_index,int target_bone_index);
+void __cdecl CCharacter::spawnFireOnBone(CCharacter *this_ptr,CSkeleton *skeleton,int target_bone_index);
 
 // Original: core_charactr.cpp_CCharacter_processFire_FUN_0042a830
 // Address: 0042a830
@@ -121,7 +121,7 @@ void __cdecl CCharacter::addDamageDecal(CCharacter *this_ptr);
 
 // Original: core_charactr.cpp_CCharacter_igniteBone_FUN_0042b5b0
 // Address: 0042b5b0
-void __cdecl CCharacter::igniteBone(CCharacter *this_ptr,CVector3f *position,int fire_type,float spread_rate,int allow_hero,int param_6);
+void __cdecl CCharacter::igniteBone(CCharacter *this_ptr,CVector3f *position,int fire_type,float spread_rate,int allow_hero,int include_hero);
 
 // Original: core_charactr.cpp_CCharacter_processDamageDecals_FUN_0042b670
 // Address: 0042b670
@@ -165,7 +165,7 @@ void __cdecl CCharacter::dismemberPartInternal(CCharacter *this_ptr,CBodyPart *b
 
 // Original: core_charactr.cpp_CCharacter_isGrabbable_FUN_0042bf30
 // Address: 0042bf30
-int __cdecl CCharacter::isGrabbable(CCharacter *this_ptr);
+int __cdecl CCharacter::isGrabbable(CCharacter *this_ptr,CDemonActor *grabber);
 
 // Original: core_charactr.cpp_CCharacter_releaseFromGrab_FUN_0042bf40
 // Address: 0042bf40
@@ -289,7 +289,7 @@ void __cdecl CCharacter::computeBoundingBox(CCharacter *this_ptr);
 
 // Original: core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0
 // Address: 0042d5a0
-void __cdecl CCharacter::findSomethingToLookAt(CCharacter *this_ptr,float delta_time,int param_3);
+void __cdecl CCharacter::findSomethingToLookAt(CCharacter *this_ptr,float delta_time,int disable_search);
 
 // Original: core_charactr.cpp_CCharacter_applyLookAt_FUN_0042dcd0
 // Address: 0042dcd0
@@ -387,25 +387,25 @@ void __cdecl CCharacter::onActorDeleted(CCharacter *this_ptr,CDemonActor *delete
 // Address: 0042f8f0
 CVector3f * __cdecl divideVector(CVector3f *src,CVector3f *dst,float *scalar);
 
-// Original: core_charactr.cpp_FUN_0042f920
+// Original: core_charactr.cpp_setActorXPos_FUN_0042f920
 // Address: 0042f920
-void __cdecl FUN_0042f920(void);
+void __cdecl setActorXPos(CDemonActor *actor,float x);
 
-// Original: core_charactr.cpp_FUN_0042f930
+// Original: core_charactr.cpp_projectPointToVertex_FUN_0042f930
 // Address: 0042f930
-void __cdecl FUN_0042f930(void);
+void __cdecl projectPointToVertex(SProjectedVertex **vertex_array,int vertex_index,CVector3f *world_position);
 
-// Original: core_charactr.cpp_FUN_0042f990
+// Original: core_charactr.cpp_getTranslationMatrix_FUN_0042f990
 // Address: 0042f990
-void __cdecl FUN_0042f990(void);
+void __cdecl getTranslationMatrix(CMatrix3x4f *matrix,CVector3f *out_translation);
 
-// Original: core_charactr.cpp_FUN_0042f9c0
+// Original: core_charactr.cpp_getDeformableModelPartCount_FUN_0042f9c0
 // Address: 0042f9c0
-int __cdecl FUN_0042f9c0(void);
+int __cdecl getDeformableModelPartCount(CDeformableModel *model_ptr);
 
-// Original: core_charactr.cpp_FUN_0042f9d0
+// Original: core_charactr.cpp_getActorCreateEvent_FUN_0042f9d0
 // Address: 0042f9d0
-int __cdecl FUN_0042f9d0(void);
+char * __cdecl getActorCreateEvent(CDemonActor *actor);
 
 // Original: core_charactr.cpp_getGameDeltaTime_FUN_0042f9e0
 // Address: 0042f9e0

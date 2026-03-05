@@ -2,11 +2,11 @@
 // Address: 004f2880
 // Address Range: [[004f2880, 004f2885]]
 // Convention: __cdecl
-// Signature: int __cdecl core_hero_cpp_CHero_isGrabbable_FUN_004f2880(CHero *this_ptr)
+// Signature: int __cdecl core_hero_cpp_CHero_isGrabbable_FUN_004f2880(CHero *this_ptr,CDemonActor *grabber)
 
 #include "nocturne.h"
 
-int __cdecl core_hero_cpp_CHero_isGrabbable_FUN_004f2880(CHero *this_ptr)
+int __cdecl core_hero_cpp_CHero_isGrabbable_FUN_004f2880(CHero *this_ptr,CDemonActor *grabber)
 
 {
   return 1;

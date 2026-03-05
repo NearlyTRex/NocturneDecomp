@@ -42,8 +42,8 @@ void __cdecl core_mimic_cpp_CMimic_FUN_00520500(CMimic *this_ptr)
       pSVar5 = (SClothVertex *)((int)pSVar5 + (uint)bVar6 * -2 + 1);
     }
   }
-  frame_number = (float)(g_HeroActors[g_LocalHeroIndex]->base).model.motion_controller.
-                        current_frame_number;
+  frame_number = (g_HeroActors[g_LocalHeroIndex]->base).model.motion_controller.current_frame_number
+  ;
   motion_name = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                           (&(g_HeroActors[g_LocalHeroIndex]->base).model.motion_controller);
   this_ptr_00 = &(this_ptr->base).base.model;

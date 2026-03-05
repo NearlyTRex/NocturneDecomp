@@ -18,7 +18,7 @@ void __cdecl core_imp_cpp_CImp_processDamage_FUN_004fae00(CImp *this_ptr,SDamage
   CVector3f local_24;
   
   sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handles[0]);
-  if (damage_info->ammo_type == 8) {
+  if (damage_info->ammo_type == AMMO_TYPE_MERCURY) {
     iVar4 = 0;
     damage_info->damage_amount = damage_info->damage_amount * (float)2;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0

@@ -60,9 +60,7 @@ float __cdecl core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0(CDe
   CVector3f CStack_7c;
   CVector3f CStack_70;
   CVector3f CStack_64;
-  float fStack_58;
-  float fStack_54;
-  float fStack_50;
+  CVector3f CStack_58;
   CVector3f CStack_4c;
   CVector3f CStack_40;
   CVector3f CStack_34;
@@ -143,12 +141,12 @@ float __cdecl core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0(CDe
                     core_main_c_displayErrorAndQuit_FUN_00506f10
                               ("info.keyFramedModelInstancePtr != NULL, but %s doesn't have exact collision",this_ptr_00);
                   }
-                  fStack_58 = local_e8.x - (pCVar2->location).position.x;
-                  fStack_54 = local_e8.y - (pCVar2->location).position.y;
-                  fStack_50 = local_e8.z - (pCVar2->location).position.z;
+                  CStack_58.x = local_e8.x - (pCVar2->location).position.x;
+                  CStack_58.y = local_e8.y - (pCVar2->location).position.y;
+                  CStack_58.z = local_e8.z - (pCVar2->location).position.z;
                   fStack_24 = local_28 - (pCVar2->location).position.y;
                   iVar3 = core_dmodel_cpp_CKeyFramedModel_getFloorHeight_FUN_00478740
-                                    (this_ptr_00,0,(float)&fStack_58,radius,&fStack_24,
+                                    (this_ptr_00,0,&CStack_58,radius,&fStack_24,
                                      &(pCVar2->orient).vec);
                   if (iVar3 != 0) {
                     this_ptr->collision_actor = pCVar2;
@@ -185,11 +183,11 @@ float __cdecl core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0(CDe
                     core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0049a790
                               (&CStack_270,&CStack_308,&CStack_2d8,&CStack_2c0);
                     iVar3 = core_dtri_cpp_rayTriangleFloorTest_FUN_0049b2f0
-                                      (&CStack_270,(float)&local_e8,radius,&local_28);
+                                      (&CStack_270,&local_e8,radius,&local_28);
                     core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0049a790
                               (&CStack_270,&CStack_308,&CStack_2c0,&CStack_2f0);
                     iVar6 = core_dtri_cpp_rayTriangleFloorTest_FUN_0049b2f0
-                                      (&CStack_270,(float)&local_e8,radius,&local_28);
+                                      (&CStack_270,&local_e8,radius,&local_28);
                     if (iVar3 != 0 || iVar6 != 0) {
                       CStack_a0.x = -CStack_270.normal.x;
                       CStack_a0.y = -CStack_270.normal.y;
@@ -203,11 +201,11 @@ float __cdecl core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0(CDe
                     core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0049a790
                               (&CStack_1c8,&CStack_2fc,&CStack_2e4,&CStack_2b4);
                     iVar7 = core_dtri_cpp_rayTriangleFloorTest_FUN_0049b2f0
-                                      (&CStack_1c8,(float)&local_e8,radius,&local_28);
+                                      (&CStack_1c8,&local_e8,radius,&local_28);
                     core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0049a790
                               (&CStack_1c8,&CStack_2fc,&CStack_2b4,&CStack_2cc);
                     iVar8 = core_dtri_cpp_rayTriangleFloorTest_FUN_0049b2f0
-                                      (&CStack_1c8,(float)&local_e8,radius,&local_28);
+                                      (&CStack_1c8,&local_e8,radius,&local_28);
                     if (iVar7 != 0 || iVar8 != 0) {
                       CStack_40.x = -CStack_1c8.normal.x;
                       CStack_40.y = -CStack_1c8.normal.y;
@@ -221,11 +219,11 @@ float __cdecl core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0(CDe
                     core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0049a790
                               (&CStack_200,&CStack_308,&CStack_2fc,&CStack_2cc);
                     iVar9 = core_dtri_cpp_rayTriangleFloorTest_FUN_0049b2f0
-                                      (&CStack_200,(float)&local_e8,radius,&local_28);
+                                      (&CStack_200,&local_e8,radius,&local_28);
                     core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0049a790
                               (&CStack_200,&CStack_308,&CStack_2cc,&CStack_2d8);
                     iVar10 = core_dtri_cpp_rayTriangleFloorTest_FUN_0049b2f0
-                                       (&CStack_200,(float)&local_e8,radius,&local_28);
+                                       (&CStack_200,&local_e8,radius,&local_28);
                     if (iVar9 != 0 || iVar10 != 0) {
                       CStack_34.x = -CStack_200.normal.x;
                       CStack_34.y = -CStack_200.normal.y;
@@ -239,11 +237,11 @@ float __cdecl core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0(CDe
                     core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0049a790
                               (&CStack_190,&CStack_2f0,&CStack_2c0,&CStack_2b4);
                     iVar11 = core_dtri_cpp_rayTriangleFloorTest_FUN_0049b2f0
-                                       (&CStack_190,(float)&local_e8,radius,&local_28);
+                                       (&CStack_190,&local_e8,radius,&local_28);
                     core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0049a790
                               (&CStack_190,&CStack_2f0,&CStack_2b4,&CStack_2e4);
                     iVar12 = core_dtri_cpp_rayTriangleFloorTest_FUN_0049b2f0
-                                       (&CStack_190,(float)&local_e8,radius,&local_28);
+                                       (&CStack_190,&local_e8,radius,&local_28);
                     if (iVar11 != 0 || iVar12 != 0) {
                       CStack_dc.x = -CStack_190.normal.x;
                       CStack_dc.y = -CStack_190.normal.y;
@@ -257,11 +255,11 @@ float __cdecl core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0(CDe
                     core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0049a790
                               (&CStack_2a8,&CStack_308,&CStack_2f0,&CStack_2e4);
                     iVar13 = core_dtri_cpp_rayTriangleFloorTest_FUN_0049b2f0
-                                       (&CStack_2a8,(float)&local_e8,radius,&local_28);
+                                       (&CStack_2a8,&local_e8,radius,&local_28);
                     core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0049a790
                               (&CStack_2a8,&CStack_308,&CStack_2e4,&CStack_2fc);
                     iVar14 = core_dtri_cpp_rayTriangleFloorTest_FUN_0049b2f0
-                                       (&CStack_2a8,(float)&local_e8,radius,&local_28);
+                                       (&CStack_2a8,&local_e8,radius,&local_28);
                     if (iVar13 != 0 || iVar14 != 0) {
                       CStack_94.x = -CStack_2a8.normal.x;
                       CStack_94.y = -CStack_2a8.normal.y;
@@ -275,11 +273,11 @@ float __cdecl core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0(CDe
                     core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0049a790
                               (&CStack_238,&CStack_2d8,&CStack_2cc,&CStack_2b4);
                     iVar15 = core_dtri_cpp_rayTriangleFloorTest_FUN_0049b2f0
-                                       (&CStack_238,(float)&local_e8,radius,&local_28);
+                                       (&CStack_238,&local_e8,radius,&local_28);
                     core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0049a790
                               (&CStack_238,&CStack_2d8,&CStack_2b4,&CStack_2c0);
                     iVar16 = core_dtri_cpp_rayTriangleFloorTest_FUN_0049b2f0
-                                       (&CStack_238,(float)&local_e8,radius,&local_28);
+                                       (&CStack_238,&local_e8,radius,&local_28);
                     if (iVar15 != 0 || iVar16 != 0) {
                       CStack_c4.x = -CStack_238.normal.x;
                       CStack_c4.y = -CStack_238.normal.y;

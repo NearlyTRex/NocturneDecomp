@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_cloth_cpp_CClothList_FUN_0043c3e0(CClothList *this_ptr,CVector3f *param_2)
+; void __cdecl core_cloth_cpp_CClothList_FUN_0043c3e0(CClothList *this_ptr,CVector3f *wind_velocity)
 ;
 ; Parameters:
 ; CClothList *     Stack[0x4]:4   this_ptr
-; CVector3f *      Stack[0x8]:4   param_2
+; CVector3f *      Stack[0x8]:4   wind_velocity
 ;
 ; *****************************************************************************
 

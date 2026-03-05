@@ -16,7 +16,8 @@ void __cdecl core_scat_cpp_CScat_FUN_005582c0(CScat *this_ptr)
   float fVar5;
   float fVar6;
   CSkeleton *this_ptr_00;
-  int motion_index;
+  char *motion_name;
+  int iVar7;
   float local_28;
   
   local_28 = 1.0;
@@ -47,16 +48,18 @@ void __cdecl core_scat_cpp_CScat_FUN_005582c0(CScat *this_ptr)
     if (1.0 < local_28) {
       local_28 = 1.0;
     }
+    iVar7 = 1;
+    motion_name = (this_ptr->base).base.layer_actions[(this_ptr->base).base.layer_action_index].
+                  motion_name;
     pCVar1 = &(this_ptr->base).base.model;
     this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(pCVar1);
-    motion_index = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460
-                             (&this_ptr_00->motion_list);
+    iVar7 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460
+                      (&this_ptr_00->motion_list,motion_name,iVar7);
     fVar2 = core_motion_cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0
-                      (&pCVar1->motion_controller,motion_index,(this_ptr->base).base.layer_action_t)
-    ;
+                      (&pCVar1->motion_controller,iVar7,(this_ptr->base).base.layer_action_t);
     core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
-              (pCVar1,motion_index,fVar2,local_28,INT_0310619c,
-               core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0);
+              (pCVar1,iVar7,fVar2,local_28,INT_0310619c,
+               core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0);
     if ((this_ptr->base).base.layer_action_index == 1) {
       core_scat_cpp_CScat_FUN_005584a0(this_ptr);
       return;

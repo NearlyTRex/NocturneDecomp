@@ -7,6 +7,7 @@
 #include "types/classes/CKeyFramedModelInstance.h"
 #include "types/classes/CQuaternion4f.h"
 #include "types/classes/CVector3f.h"
+#include "types/enums/EGroundType.h"
 #include "types/enums/EPlatformStateType.h"
 #include "types/enums/EPlatformType.h"
 #include "types/structs/SPlatformAttachment.h"
@@ -17,7 +18,7 @@ typedef struct CPlatform {
     CDemonActor base; // 0x0
     CKeyFramedModelInstance model; // 0x158
     EPlatformStateType state; // 0x2d4
-    int ground_type; // 0x2d8
+    EGroundType ground_type; // 0x2d8
     float param; // 0x2dc
     float goal_param; // 0x2e0
     float current_movement_rate; // 0x2e4

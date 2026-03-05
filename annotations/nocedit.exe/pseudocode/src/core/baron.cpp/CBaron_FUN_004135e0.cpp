@@ -38,7 +38,7 @@ void __cdecl core_baron_cpp_CBaron_FUN_004135e0(CBaron *this_ptr)
     if (this_ptr_00 != (CCharacter *)0x0) {
       iVar4 = (*(((this_ptr_00->base).vtable._uc)->_uc).getDeathState)(this_ptr_00);
       if (iVar4 == 2) {
-        core_baron_cpp_CBaron_FUN_004135a0(this_ptr,(int)this_ptr->target_actor);
+        core_baron_cpp_CBaron_FUN_004135a0(this_ptr,this_ptr->target_actor);
         return;
       }
     }

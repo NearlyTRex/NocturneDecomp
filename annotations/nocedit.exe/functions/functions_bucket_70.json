@@ -33555,7 +33555,7 @@
           "type":"CDemonTriangle*"
         },
         {
-          "name":"x",
+          "name":"position",
           "storage":{
             "offset":8,
             "size":4,
@@ -33568,10 +33568,10 @@
               }
             ]
           },
-          "type":"float"
+          "type":"CVector3f*"
         },
         {
-          "name":"z",
+          "name":"search_radius",
           "storage":{
             "offset":12,
             "size":4,
@@ -43757,7 +43757,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_gabriela.cpp_FUN_004d29f0",
+    "name":"core_gabriela.cpp_weaponDrawBlendWeightCallback_FUN_004d29f0",
     "ret":"float",
     "vars":{
       "locals":[
@@ -43776,6 +43776,88 @@
             ]
           },
           "type":"undefined4"
+        }
+      ],
+      "params":[
+        {
+          "name":"current_bone_index",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"target_bone_index",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"blend_weight",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"hierarchy_distance",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"instance",
+          "storage":{
+            "offset":20,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x14]",
+                "offset":20,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDeformableModelInstance*"
         }
       ],
       "ret_storage":{
@@ -43801,8 +43883,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_gabriela.cpp_CGabriella_FUN_004d4cf0",
-    "ret":"float*",
+    "name":"core_gabriela.cpp_CGabriella_getTorsoCenterPosition_FUN_004d4cf0",
+    "ret":"CVector3f*",
     "vars":{
       "locals":[
         {
@@ -43902,6 +43984,22 @@
             ]
           },
           "type":"CGabriella*"
+        },
+        {
+          "name":"out_position",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
         }
       ],
       "ret_storage":{
@@ -43927,7 +44025,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_gabriela.cpp_CGabriella_FUN_004d5870",
+    "name":"core_gabriela.cpp_CGabriella_findAndPickupNearbyObject_FUN_004d5870",
     "ret":"int",
     "vars":{
       "locals":[
@@ -44389,9 +44487,27 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_gabriela.cpp_CGabriella_FUN_004d5f70",
+    "name":"core_gabriela.cpp_CGabriella_canFireWeapon_FUN_004d5f70",
     "ret":"int",
     "vars":{
+      "locals":[
+        {
+          "name":"unionfacet5_4d5fba",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:40410e6eff88",
+                "offset":70648159207304,
+                "size":4
+              }
+            ]
+          },
+          "type":"UActorVTable*",
+          "use":74
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",
@@ -57955,7 +58071,7 @@
       ],
       "params":[
         {
-          "name":"block",
+          "name":"mrgl",
           "storage":{
             "offset":4,
             "size":4,
@@ -59381,6 +59497,38 @@
             ]
           },
           "type":"CMotionList*"
+        },
+        {
+          "name":"state_name",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        },
+        {
+          "name":"error_on_not_found",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ],
       "ret_storage":{
@@ -59835,6 +59983,22 @@
             ]
           },
           "type":"_FILE*"
+        },
+        {
+          "name":"indent_prefix",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
         }
       ]
     }
@@ -68359,6 +68523,38 @@
             ]
           },
           "type":"undefined4"
+        },
+        {
+          "name":"unionfacet5_557709",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:4041b5ec91fd",
+                "offset":70650969231869,
+                "size":4
+              }
+            ]
+          },
+          "type":"UActorVTable*",
+          "use":1305
+        },
+        {
+          "name":"unionfacet5_557723",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:40417a63dea7",
+                "offset":70649970417319,
+                "size":4
+              }
+            ]
+          },
+          "type":"UActorVTable*",
+          "use":1331
         }
       ],
       "params":[
@@ -85561,6 +85757,70 @@
             ]
           },
           "type":"undefined1"
+        },
+        {
+          "name":"unionfacet5_5c53c4",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:4041df4df253",
+                "offset":70651663479379,
+                "size":4
+              }
+            ]
+          },
+          "type":"UActorVTable*",
+          "use":340
+        },
+        {
+          "name":"unionfacet5_5c5408",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:4041e699b568",
+                "offset":70651785885032,
+                "size":4
+              }
+            ]
+          },
+          "type":"UActorVTable*",
+          "use":408
+        },
+        {
+          "name":"unionfacet5_5c58bf",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:40416f263a2f",
+                "offset":70649781828143,
+                "size":4
+              }
+            ]
+          },
+          "type":"UActorVTable*",
+          "use":1615
+        },
+        {
+          "name":"unionfacet5_5c597a",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:40412f774e2c",
+                "offset":70648713399852,
+                "size":4
+              }
+            ]
+          },
+          "type":"UActorVTable*",
+          "use":1802
         }
       ],
       "params":[
@@ -98941,22 +99201,6 @@
               {
                 "addr":"Stack[0xc]",
                 "offset":12,
-                "size":4
-              }
-            ]
-          },
-          "type":"int"
-        },
-        {
-          "name":"param_4",
-          "storage":{
-            "offset":16,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x10]",
-                "offset":16,
                 "size":4
               }
             ]

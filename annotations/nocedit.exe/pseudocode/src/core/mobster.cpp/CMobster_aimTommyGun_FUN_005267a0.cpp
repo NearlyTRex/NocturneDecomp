@@ -121,7 +121,7 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(CMobster *this_p
       }
       core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
                 (&(this_ptr->base).base.model,iVar2,6.0,fVar7,INT_02f37ef0,
-                 core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0);
+                 core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0);
       core_xform_cpp_quaternionFromAngleX_FUN_005f79b0(local_2c.x,&local_60);
       local_80.w = local_60.w;
       puVar5 = (uint *)((int)&local_80 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
@@ -133,9 +133,9 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(CMobster *this_p
       local_18 = &(this_ptr->base).base.model;
       core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20
                 (local_18,&local_80,this_ptr->firing_blend,INT_02f37ef0,
-                 core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0);
+                 core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0);
       core_xform_cpp_quaternionFromAngleY_FUN_005f79f0(local_2c.y,&local_70);
-      blend_callback = core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0;
+      blend_callback = core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0;
       local_80.w = local_70.w;
       puVar5 = (uint *)((int)&local_80 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
       puVar4 = (uint *)((int)&local_70 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);

@@ -41,7 +41,7 @@ CPlatform * __cdecl core_platfrm_cpp_CPlatform_ctor_FUN_0054c850(CPlatform *this
   ADJ(pCVar5)->param = 0.0;
   ADJ(pCVar5)->travel_time_to_start = 2.0;
   ADJ(pCVar5)->travel_time_to_end = 2.0;
-  ADJ(pCVar5)->ground_type = 0;
+  ADJ(pCVar5)->ground_type = GROUND_TYPE_DEFAULT;
   pCVar2 = &ADJ(pCVar5)->end_pos;
   ADJ(pCVar5)->course_filename[0] = '\0';
   pCVar1 = &ADJ(pCVar5)->base.location;

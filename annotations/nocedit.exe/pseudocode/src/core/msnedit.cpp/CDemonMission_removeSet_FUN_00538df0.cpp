@@ -18,7 +18,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_removeSet_FUN_00538df0(CDemonMission
     while (actor = pCVar1, actor != (CDemonActor *)0x0) {
       pCVar1 = actor->next_actor;
       if (param_2 == (actor->location).area_id) {
-        core_msnedit_cpp_CDemonMission_deleteActor_FUN_00538ea0(this_ptr,(int)actor);
+        core_msnedit_cpp_CDemonMission_deleteActor_FUN_00538ea0(this_ptr,actor);
         core_mission_cpp_CDemonMission_removeActor_FUN_00523f20(this_ptr,actor,1);
       }
     }

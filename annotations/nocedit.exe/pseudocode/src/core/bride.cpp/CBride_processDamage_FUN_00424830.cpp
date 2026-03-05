@@ -23,7 +23,7 @@ void __cdecl core_bride_cpp_CBride_processDamage_FUN_00424830(CBride *this_ptr,S
   CVector3f local_24;
   
   sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handles[1]);
-  if (damage_info->ammo_type == 7) {
+  if (damage_info->ammo_type == AMMO_TYPE_LITHIUM) {
     iVar2 = 0;
     damage_info->damage_amount = damage_info->damage_amount * (float)2;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
@@ -34,7 +34,7 @@ void __cdecl core_bride_cpp_CBride_processDamage_FUN_00424830(CBride *this_ptr,S
                 (g_CFireEffectPtr,&local_3c,(CVector3f *)0x0,0x4000,0x4000,0,0xffff);
     } while (iVar2 < 5);
   }
-  if (damage_info->damage_type == 0x6c) {
+  if (damage_info->damage_type == DAMAGE_TYPE_BURN) {
     input_local_point =
          core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
                    (&(this_ptr->base).base.model,&local_24,0);

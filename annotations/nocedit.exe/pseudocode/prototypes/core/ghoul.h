@@ -41,7 +41,7 @@ void __cdecl CGhoul::archive(CGhoul *this_ptr);
 
 // Original: core_ghoul.cpp_CGhoul_canBeAttracted_FUN_004e82d0
 // Address: 004e82d0
-int __cdecl CGhoul::canBeAttracted(CGhoul *this_ptr,CVector3f *param_2);
+int __cdecl CGhoul::canBeAttracted(CGhoul *this_ptr,CVector3f *out_attract_position);
 
 // Original: core_ghoul.cpp_CGhoul_getTargetPoint_FUN_004e84a0
 // Address: 004e84a0

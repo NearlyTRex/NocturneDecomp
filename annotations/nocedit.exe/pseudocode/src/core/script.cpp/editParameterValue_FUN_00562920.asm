@@ -65,7 +65,7 @@
 ; Called Functions:
 ;   core_actor.cpp_isOfClass_FUN_0040c6d0
 ;   core_actor.cpp_matchesClassName_FUN_0040c740
-;   core_charactr.cpp_FUN_0042f9c0
+;   core_charactr.cpp_getDeformableModelPartCount_FUN_0042f9c0
 ;   core_script.cpp_CCmdParse_getCharacterByParamIndex_FUN_005627f0
 ;   core_script.cpp_CCmdParse_getMotionListByParamIndex_FUN_00562860
 ;   core_script.cpp_CScript_browseEventXRefs_FUN_005677a0
@@ -2293,8 +2293,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x3738]    ; 00563def
         ;   Label: LAB_00563def
     PUSH EAX                            ; 00563df6
-    CALL core_charactr.cpp_FUN_0042f9c0 ; 00563df7
-        ;   XREF to: 0042f9c0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_FUN_0042f9c0()
+    CALL core_charactr.cpp_getDeformableModelPartCount_FUN_0042f9c0 ; 00563df7
+        ;   XREF to: 0042f9c0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_getDeformableModelPartCount_FUN_0042f9c0(CDeformableModel * model_ptr)
     ADD ESP,0x4                         ; 00563dfc
     CMP EBX,EAX                         ; 00563dff
     JGE 0x00563e5f                      ; 00563e01
@@ -2372,8 +2372,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x3738]    ; 00563ecb
         ;   Label: LAB_00563ecb
     PUSH ECX                            ; 00563ed2
-    CALL core_charactr.cpp_FUN_0042f9c0 ; 00563ed3
-        ;   XREF to: 0042f9c0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_FUN_0042f9c0()
+    CALL core_charactr.cpp_getDeformableModelPartCount_FUN_0042f9c0 ; 00563ed3
+        ;   XREF to: 0042f9c0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_getDeformableModelPartCount_FUN_0042f9c0(CDeformableModel * model_ptr)
     ADD ESP,0x4                         ; 00563ed8
     CMP EBX,EAX                         ; 00563edb
     JGE 0x00563f99                      ; 00563edd

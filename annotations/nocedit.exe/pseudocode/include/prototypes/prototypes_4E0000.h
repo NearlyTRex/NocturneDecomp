@@ -45,7 +45,7 @@ void __cdecl core_game_cpp_CGame_resetWeaponSwitchTimers_FUN_004e0bb0(CGame *thi
 void __cdecl core_game_cpp_CGame_resetInventoryDisplayTimer_FUN_004e0bd0(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_setStatusDisplay_FUN_004e0bf0(CGame *this_ptr,char *name,int value,float duration);
 void __cdecl core_game_cpp_CGame_saveGame_FUN_004e0cd0(CGame *this_ptr,char *save_filename);
-void __cdecl core_game_cpp_CGame_loadGame_FUN_004e12b0(CGame *this_ptr,char *save_filename,int load_mode,char *chapter_name);
+void __cdecl core_game_cpp_CGame_loadGame_FUN_004e12b0(CGame *this_ptr,char *save_filename,int load_mode);
 void __cdecl core_game_cpp_disableUnavailableChapters_FUN_004e1c30(void);
 void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004e1cb0(CGame *this_ptr,int unknown);
 void __cdecl core_game_cpp_CGame_displayBitmap_FUN_004e2890(CGame *this_ptr);
@@ -102,7 +102,7 @@ void __cdecl core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004e63d0(CGhoul *this_pt
 void __cdecl core_ghoul_cpp_CGhoul_process_FUN_004e6600(CGhoul *this_ptr,float delta_time);
 void __cdecl core_ghoul_cpp_CGhoul_renderBackground_FUN_004e8190(CGhoul *this_ptr,int layer_flag);
 void __cdecl core_ghoul_cpp_CGhoul_archive_FUN_004e81c0(CGhoul *this_ptr);
-int __cdecl core_ghoul_cpp_CGhoul_canBeAttracted_FUN_004e82d0(CGhoul *this_ptr,CVector3f *param_2);
+int __cdecl core_ghoul_cpp_CGhoul_canBeAttracted_FUN_004e82d0(CGhoul *this_ptr,CVector3f *out_attract_position);
 CVector3f * __cdecl core_ghoul_cpp_CGhoul_getTargetPoint_FUN_004e84a0(CGhoul *this_ptr,CVector3f *out_point);
 void __cdecl core_ghoul_cpp_CGhoul_FUN_004e8520(CGhoul *this_ptr);
 void __cdecl core_ghoul_cpp_CGhoul_processDamage_FUN_004e87e0(CGhoul *this_ptr,SDamageInfo *damage_info);

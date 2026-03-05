@@ -80,9 +80,9 @@ void __cdecl core_msnedit_cpp_copyFile_FUN_00537dd0(char *src_filename,char *des
 void __cdecl core_msnedit_cpp_CDemonMission_saveWithNewName_FUN_00537f60(CDemonMission *this_ptr,char *name);
 void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMission *this_ptr);
 void __cdecl core_msnedit_cpp_CDemonMission_playMission_FUN_00538ba0(CDemonMission *this_ptr);
-void __cdecl core_msnedit_cpp_CDemonMission_addSet_FUN_00538d60(CDemonMission *this_ptr,char *param_2);
+void __cdecl core_msnedit_cpp_CDemonMission_addSet_FUN_00538d60(CDemonMission *this_ptr,char *set_name);
 void __cdecl core_msnedit_cpp_CDemonMission_removeSet_FUN_00538df0(CDemonMission *this_ptr,int param_2);
-void __cdecl core_msnedit_cpp_CDemonMission_deleteActor_FUN_00538ea0(CDemonMission *this_ptr,int param_2);
+void __cdecl core_msnedit_cpp_CDemonMission_deleteActor_FUN_00538ea0(CDemonMission *this_ptr,CDemonActor *actor);
 int __cdecl core_msnedit_cpp_CDemonMission_findSetByName_FUN_00538f40(CDemonMission *this_ptr,char *set_name);
 int __cdecl core_msnedit_cpp_CDemonMission_pickSet_FUN_00538f90(CDemonMission *this_ptr,char *title,int selected_index);
 void __cdecl core_msnedit_cpp_CDemonMission_editActorProperties_FUN_00539060(CDemonMission *this_ptr,int param_2);

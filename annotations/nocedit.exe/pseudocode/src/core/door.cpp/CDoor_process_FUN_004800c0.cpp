@@ -48,11 +48,11 @@ void __cdecl core_door_cpp_CDoor_process_FUN_004800c0(CDoor *this_ptr,float delt
     return;
   }
   switch(this_ptr->door_state) {
-  case 0:
+  case DOOR_STATE_CLOSED:
     iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                       (g_CEventListPtr,this_ptr->open_condition);
     if (iVar4 != 0) {
-      this_ptr->door_state = 1;
+      this_ptr->door_state = DOOR_STATE_OPENING;
       if (this_ptr->open_sound[0] != '\0') {
         (*((this_ptr->base).vtable._ub)->playSound)(&this_ptr->base,this_ptr->open_sound);
       }
@@ -60,11 +60,11 @@ void __cdecl core_door_cpp_CDoor_process_FUN_004800c0(CDoor *this_ptr,float delt
     }
     this_ptr->param = 0.0;
     break;
-  case 1:
+  case DOOR_STATE_OPENING:
     this_ptr->param = (delta_time * this_ptr->max_param) / this_ptr->open_speed + local_50;
     if (this_ptr->max_param <= 0.0) {
       if (this_ptr->param < this_ptr->max_param) {
-        this_ptr->door_state = 2;
+        this_ptr->door_state = DOOR_STATE_OPEN;
         this_ptr->param = this_ptr->max_param;
         if (this_ptr->one_shot != 0) {
           this_ptr->one_shot = 2;
@@ -72,26 +72,27 @@ void __cdecl core_door_cpp_CDoor_process_FUN_004800c0(CDoor *this_ptr,float delt
       }
     }
     else if (this_ptr->max_param < this_ptr->param) {
-      this_ptr->door_state = 2;
+      this_ptr->door_state = DOOR_STATE_OPEN;
       this_ptr->param = this_ptr->max_param;
       if (this_ptr->one_shot != 0) {
         this_ptr->one_shot = 2;
       }
     }
     break;
-  case 2:
+  case DOOR_STATE_OPEN:
     iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                       (g_CEventListPtr,this_ptr->close_condition);
-    if ((iVar4 != 0) && (this_ptr->door_state = 3, this_ptr->close_sound[0] != '\0')) {
+    if ((iVar4 != 0) &&
+       (this_ptr->door_state = DOOR_STATE_CLOSING, this_ptr->close_sound[0] != '\0')) {
       (*((this_ptr->base).vtable._ub)->playSound)(&this_ptr->base,this_ptr->close_sound);
     }
     this_ptr->param = this_ptr->max_param;
     break;
-  case 3:
+  case DOOR_STATE_CLOSING:
     this_ptr->param = local_50 - (delta_time * this_ptr->max_param) / this_ptr->close_speed;
     if (this_ptr->max_param <= 0.0) {
       if (0.0 < this_ptr->param) {
-        this_ptr->door_state = 0;
+        this_ptr->door_state = DOOR_STATE_CLOSED;
         this_ptr->param = 0.0;
         if (this_ptr->one_shot != 0) {
           this_ptr->one_shot = 2;
@@ -100,7 +101,7 @@ void __cdecl core_door_cpp_CDoor_process_FUN_004800c0(CDoor *this_ptr,float delt
       }
     }
     else if (this_ptr->param < 0.0) {
-      this_ptr->door_state = 0;
+      this_ptr->door_state = DOOR_STATE_CLOSED;
       this_ptr->param = 0.0;
       if (this_ptr->one_shot != 0) {
         this_ptr->one_shot = 2;
@@ -108,19 +109,19 @@ void __cdecl core_door_cpp_CDoor_process_FUN_004800c0(CDoor *this_ptr,float delt
       core_setcolid_cpp_CDemonSet_castVoxelShadow_FUN_00574440(g_CDemonSetPtr,&this_ptr->base);
     }
   }
-  if (this_ptr->door_state == 0) {
+  if (this_ptr->door_state == DOOR_STATE_CLOSED) {
     if (this_ptr->on_close_trigger_event[0] == '\0') goto LAB_004801a8;
     commands = this_ptr->on_close_trigger_event;
   }
   else {
-    if ((this_ptr->door_state != 2) || (this_ptr->on_open_trigger_event[0] == '\0'))
+    if ((this_ptr->door_state != DOOR_STATE_OPEN) || (this_ptr->on_open_trigger_event[0] == '\0'))
     goto LAB_004801a8;
     commands = this_ptr->on_open_trigger_event;
   }
   core_event_cpp_CEventList_executeCommands_FUN_004aabe0(g_CEventListPtr,commands);
 LAB_004801a8:
   core_door_cpp_CDoor_reposition_FUN_0047fd20(this_ptr);
-  if ((this_ptr->param != local_50) && (this_ptr->door_type != 3)) {
+  if ((this_ptr->param != local_50) && (this_ptr->door_type != DOOR_TYPE_TILT)) {
     iVar4 = 0;
     (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&local_a8);
     iStack_54 = 0;

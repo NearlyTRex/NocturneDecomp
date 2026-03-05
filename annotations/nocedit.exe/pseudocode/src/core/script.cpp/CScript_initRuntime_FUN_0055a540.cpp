@@ -33,7 +33,7 @@ void __cdecl core_script_cpp_CScript_initRuntime_FUN_0055a540(CScript *this_ptr)
   pCVar2->allow_enemy_attack_flag = 1;
   pCVar2->letterbox_mode = 0;
   g_ScriptTimeScale = 0.0;
-  *(uint *)(this_ptr->current_message + 0x400) = 0xbf800000;
+  this_ptr->message_duration = -1.0;
   this_ptr->saved_cmd_index = -1;
   pcVar6 = g_CDemonSetPtr->geometry_filename;
   this_ptr->call_stack_count = 0;

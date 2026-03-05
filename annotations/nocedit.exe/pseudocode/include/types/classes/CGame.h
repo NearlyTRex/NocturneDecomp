@@ -5,6 +5,9 @@ struct CVector3f;
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/enums/EAimMode.h"
+#include "types/enums/EControlMode.h"
+#include "types/enums/EHeroType.h"
 
 // Structure: CGame
 // Ghidra size: 0xacc (2764 bytes)
@@ -56,9 +59,9 @@ typedef struct CGame {
     int x_stick_max; // 0xb0
     int y_stick_min; // 0xb4
     int y_stick_max; // 0xb8
-    int game_control; // 0xbc
-    int hero_number; // 0xc0
-    int aim_mode; // 0xc4
+    EControlMode game_control; // 0xbc
+    EHeroType hero_number; // 0xc0
+    EAimMode aim_mode; // 0xc4
     int auto_use_health; // 0xc8
     int cutscene_skippable; // 0xcc
     char debug_info_string[256]; // 0xd0

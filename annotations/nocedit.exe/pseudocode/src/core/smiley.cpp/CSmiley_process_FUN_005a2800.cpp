@@ -64,7 +64,7 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_005a2800(CSmiley *this_ptr,floa
      (iVar4 = (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)
                         ((CCharacter *)this_ptr), iVar4 == 0)) {
     core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_1cc);
-    local_1cc.damage_type = 0;
+    local_1cc.damage_type = DAMAGE_TYPE_GENERIC;
     local_1cc.attacker = (CDemonActor *)this_ptr;
     local_1cc.wielder = (CDemonActor *)this_ptr;
     local_1cc.damage_amount = 9999.9;
@@ -83,7 +83,8 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_005a2800(CSmiley *this_ptr,floa
   local_28 = delta_time * (this_ptr->base).speed;
   pCVar2 = &(this_ptr->base).base.model;
   while (0.0 < local_28) {
-    uVar5 = core_motion_cpp_CMotionController_advance_FUN_0052d610(&pCVar2->motion_controller);
+    uVar5 = core_motion_cpp_CMotionController_advance_FUN_0052d610
+                      (&pCVar2->motion_controller,&local_28);
     if (uVar5 < 0x66) {
       if (uVar5 == 0x65) {
         pCVar3 = (this_ptr->base).victim;
@@ -121,7 +122,7 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_005a2800(CSmiley *this_ptr,floa
         }
         else {
           core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_118);
-          local_118.damage_type = 4;
+          local_118.damage_type = DAMAGE_TYPE_SHATTER;
           pCVar3 = (this_ptr->base).victim;
           (*(((pCVar3->base).vtable._uc)->_uc).processDamage)(pCVar3,&local_118);
         }

@@ -6,18 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 61,
-    "complexity_score": 87,
+    "complexity_score": 40,
     "cross_reference_count": 13,
     "function_call_count": 2,
     "global_count": 4,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 27,
-    "suspect_count": 5,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 25,
+    "suspect_count": 1,
     "suspect_types": [
-      "format_string_mismatch",
-      "stack_param"
+      "param_count_too_many"
     ],
-    "total_lines": 88
+    "total_lines": 86
   },
   "cross_references": [
     {
@@ -109,7 +108,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0",
-    "signature": "int __cdecl core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(CMotionList *this_ptr)"
+    "signature": "int __cdecl core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(CMotionList *this_ptr,char *state_name,int error_on_not_found)"
   },
   "function_calls": [
     {
@@ -243,8 +242,8 @@
         "stack_params": 1
       }
     ],
-    "confidence": "medium",
-    "declared_params": 1,
+    "confidence": "low",
+    "declared_params": 3,
     "estimated_params": 1
   },
   "pcode_summary": {
@@ -275,10 +274,10 @@
     "pcode_op_count": 198
   },
   "stack_frame": {
-    "frame_size": 8,
+    "frame_size": 16,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -287,52 +286,34 @@
         "offset": 4,
         "size": 4,
         "type": "CMotionList *"
+      },
+      {
+        "is_param": true,
+        "name": "state_name",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "error_on_not_found",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "char *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "int in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "iVar1 = _stricmp(*str1,in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 23,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "if (in_stack_0000000c == 0) {",
-      "type": "stack_param"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Can't find state \\\"%s\\\" in motion list\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Can't find state \\\"%s\\\" in motion list",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 28,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Can't find state \\\"%s\\\" in motion list\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
+      "call_site_count": 17,
+      "declared_params": 3,
+      "description": "Signature has too many params - likely wrong calling convention",
+      "estimated_params": 1,
+      "fix_type": "remove_params",
+      "match": "declared:3 vs estimated:1",
+      "param_delta": -2,
+      "text": "Function declares 3 params but call sites push 1 (2 extra)",
+      "type": "param_count_too_many"
     }
   ]
 }

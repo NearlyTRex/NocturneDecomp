@@ -77,7 +77,7 @@ char * __cdecl getKeyDisplayName(EInputCodeType key_code);
 
 // Original: core_menu.cpp_isKeyCodeValidForMode_FUN_00513720
 // Address: 00513720
-int __cdecl isKeyCodeValidForMode(int *key_code_ptr,char *description);
+int __cdecl isKeyCodeValidForMode(EInputCodeType *key_code_ptr,char *description);
 
 // Original: core_menu.cpp_getSinglePressedKey_FUN_00513860
 // Address: 00513860

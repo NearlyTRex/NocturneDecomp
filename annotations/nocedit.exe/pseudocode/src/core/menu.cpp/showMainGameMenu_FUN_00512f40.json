@@ -6,18 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 517,
-    "complexity_score": 226,
+    "complexity_score": 200,
     "cross_reference_count": 1,
     "function_call_count": 25,
     "global_count": 49,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 186,
-    "suspect_count": 3,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 185,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
-      "unaffected_reg"
+      "pointer_cast"
     ],
-    "total_lines": 703
+    "total_lines": 702
   },
   "cross_references": [
     {
@@ -532,28 +531,12 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 9,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "char *unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 56,
+      "line": 55,
       "match": "(char *)((int)",
       "severity": "mild",
       "text": "*(char *)((int)pacVar6 + 1) = cVar1;",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 133,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "core_game_cpp_CGame_loadGame_FUN_004e12b0(g_CGamePtr,(char *)0x0,1,unaff_EBX);",
-      "type": "unaffected_reg"
     }
   ]
 }

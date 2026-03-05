@@ -15,10 +15,10 @@ void __cdecl core_door_cpp_CDoor_propertyDisplayCallback_FUN_00481250(CDoor *thi
   
   pCVar3 = (CDoor *)core_actor_cpp_castToClassHash_FUN_0040c790
                               (&this_ptr->base,g_CDoorClassInfo.name_hash);
-  if (pCVar3->door_state == 0) {
+  if (pCVar3->door_state == DOOR_STATE_CLOSED) {
     pcVar2 = "Closed";
   }
-  else if (pCVar3->door_state == 2) {
+  else if (pCVar3->door_state == DOOR_STATE_OPEN) {
     pcVar2 = "Open";
   }
   else {

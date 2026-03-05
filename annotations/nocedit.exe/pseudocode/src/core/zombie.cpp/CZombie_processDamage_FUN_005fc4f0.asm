@@ -148,7 +148,7 @@ section .text
     ADD ESP,0x4                         ; 005fc649
     PUSH EAX                            ; 005fc64c
     CALL core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460 ; 005fc64d
-        ;   XREF to: 0052d460 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460(CMotionList * this_ptr)
+        ;   XREF to: 0052d460 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460(CMotionList * this_ptr, char * motion_name, int error_on_not_found)
     ADD ESP,0xc                         ; 005fc652
     TEST EAX,EAX                        ; 005fc655
     JL 0x005fc5a0                       ; 005fc657

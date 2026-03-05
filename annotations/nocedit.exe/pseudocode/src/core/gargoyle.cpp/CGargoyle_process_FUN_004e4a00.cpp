@@ -70,7 +70,8 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004e4a00(CGargoyle *this_pt
   local_2c = delta_time * (this_ptr->base).speed;
   pCVar1 = &(this_ptr->base).base.model;
   while (0.0 < local_2c) {
-    iVar4 = core_motion_cpp_CMotionController_advance_FUN_0052d610(&pCVar1->motion_controller);
+    iVar4 = core_motion_cpp_CMotionController_advance_FUN_0052d610
+                      (&pCVar1->motion_controller,&local_2c);
     core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,iVar4);
   }
   fVar10 = (this_ptr->base).speed;

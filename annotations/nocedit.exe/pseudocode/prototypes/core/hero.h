@@ -49,7 +49,7 @@ CPathMap * __cdecl CHero::getPathMap(CHero *this_ptr);
 
 // Original: core_hero.cpp_CHero_isGrabbable_FUN_004f2880
 // Address: 004f2880
-int __cdecl CHero::isGrabbable(CHero *this_ptr);
+int __cdecl CHero::isGrabbable(CHero *this_ptr,CDemonActor *grabber);
 
 // Original: core_hero.cpp_CHero_canBeGrabbed_FUN_004f2890
 // Address: 004f2890
@@ -141,7 +141,7 @@ void __cdecl CHero::setAiTask(CHero *this_ptr,int ai_task);
 
 // Original: core_hero.cpp_CHero_findNearestEnemy_FUN_004f3960
 // Address: 004f3960
-float __cdecl CHero::findNearestEnemy(CHero *this_ptr,float *out_distance);
+CEnemy * __cdecl CHero::findNearestEnemy(CHero *this_ptr,float *out_distance);
 
 // Original: core_hero.cpp_CHero_kill_FUN_004f3af0
 // Address: 004f3af0
@@ -177,7 +177,7 @@ CBoundingBox3D * __cdecl CHeroPlaceholder::getBoundingBox(CHeroPlaceholder *this
 
 // Original: core_hero.cpp_CHeroPlaceholder_createHero_FUN_004f3d80
 // Address: 004f3d80
-CDemonActor * __cdecl CHeroPlaceholder::createHero(CHeroPlaceholder *this_ptr,int param_2);
+CDemonActor * __cdecl CHeroPlaceholder::createHero(CHeroPlaceholder *this_ptr,EHeroType hero_type);
 
 // Original: core_hero.cpp_CHeroPlaceholder_archive_FUN_004f3ef0
 // Address: 004f3ef0

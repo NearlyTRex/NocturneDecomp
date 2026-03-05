@@ -13,6 +13,7 @@ void __cdecl core_armour_cpp_CArmour_process_FUN_00412260(CArmour *this_ptr,floa
   float fVar1;
   float fVar2;
   int iVar3;
+  float local_20;
   CVector3f CStack_1c;
   
   iVar3 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
@@ -22,10 +23,11 @@ void __cdecl core_armour_cpp_CArmour_process_FUN_00412260(CArmour *this_ptr,floa
          (this_ptr->base).base.model.accumulated_root_motion.z;
     (this_ptr->base).base.model.accumulated_root_motion.x =
          (this_ptr->base).base.model.accumulated_root_motion.y;
-    fVar1 = (this_ptr->base).speed;
+    local_20 = delta_time * (this_ptr->base).speed;
     this_ptr_00 = &(this_ptr->base).base.model;
-    while (0.0 < delta_time * fVar1) {
-      core_motion_cpp_CMotionController_advance_FUN_0052d610(&this_ptr_00->motion_controller);
+    while (0.0 < local_20) {
+      core_motion_cpp_CMotionController_advance_FUN_0052d610
+                (&this_ptr_00->motion_controller,&local_20);
     }
     fVar1 = (this_ptr->base).speed;
     fVar2 = (float)3.1415926535000001;

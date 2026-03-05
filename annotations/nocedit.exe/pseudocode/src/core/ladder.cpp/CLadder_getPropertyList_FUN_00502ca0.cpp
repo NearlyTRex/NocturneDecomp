@@ -16,6 +16,6 @@ void __cdecl core_ladder_cpp_CLadder_getPropertyList_FUN_00502ca0(CLadder *this_
             (property_list,"Master actor",&this_ptr->master_actor,1,(char *)0x0,
              (CActorPropertyValidatorFunc *)0x0);
   core_actor_cpp_CActorPropertyList_addGroundType_FUN_0040e300
-            (property_list,"ground type",&this_ptr->ground_type);
+            (property_list,"ground type",(int *)&this_ptr->ground_type);
   return;
 }

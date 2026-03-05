@@ -69,7 +69,7 @@ void __cdecl core_netgame_cpp_CNetGame_processPacket_FUN_005406a0(CNetGame *this
     if ((int)uVar2 < 0) {
       uVar2 = core_netgame_cpp_CNetGame_addPlayer_FUN_005412b0
                         (this_ptr,source_addr,(local_28->player_announce).name,
-                         (local_28->player_announce).hero_number,
+                         (local_28->sim_frame).frame.player_controls[0].action_states[4],
                          (local_28->player_announce).aim_mode);
     }
     else {

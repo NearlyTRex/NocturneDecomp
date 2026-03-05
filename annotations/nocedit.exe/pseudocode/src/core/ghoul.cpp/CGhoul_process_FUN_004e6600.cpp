@@ -69,13 +69,13 @@ void __cdecl core_ghoul_cpp_CGhoul_process_FUN_004e6600(CGhoul *this_ptr,float d
   CVector3f local_15c;
   CVector3f local_150;
   CVector3f local_144;
-  int local_138;
+  EMotionTransitionCmd local_138;
   float local_134;
   CMotionController_vtable *local_130;
   CVector3f local_12c;
   float local_120;
   float local_11c;
-  float local_118;
+  SMotionTransition *local_118;
   CVector3f local_114;
   CVector3f local_108;
   int local_fc;
@@ -93,7 +93,7 @@ void __cdecl core_ghoul_cpp_CGhoul_process_FUN_004e6600(CGhoul *this_ptr,float d
   float local_c4;
   float local_c0;
   float local_bc;
-  float local_b8;
+  SMotionTransition *local_b8;
   double local_b4;
   double local_ac;
   double local_a4;
@@ -112,8 +112,8 @@ void __cdecl core_ghoul_cpp_CGhoul_process_FUN_004e6600(CGhoul *this_ptr,float d
   float local_54;
   float local_50;
   float local_4c;
-  float local_48;
-  float local_44;
+  SMotionTransition *local_48;
+  SMotionTransition *local_44;
   float local_40;
   float local_3c;
   float local_38;
@@ -141,7 +141,8 @@ void __cdecl core_ghoul_cpp_CGhoul_process_FUN_004e6600(CGhoul *this_ptr,float d
 switchD_004e6f9a_caseD_e:
   pCVar11 = local_18;
   if (0.0 < local_64) {
-    iVar7 = core_motion_cpp_CMotionController_advance_FUN_0052d610((CMotionController *)local_18);
+    iVar7 = core_motion_cpp_CMotionController_advance_FUN_0052d610
+                      ((CMotionController *)local_18,&local_64);
     switch(iVar7) {
     case 5:
       pCVar3 = (this_ptr->base).victim;
@@ -483,19 +484,20 @@ LAB_004e6a5f:
                         pCVar13 = (*(((pCVar3->base).vtable._uc)->_uc).getGrabber)(pCVar3),
                         pCVar13 == (CDemonActor *)0x0 && (this_ptr->flinch_blend_weight <= 0.0))))))
               {
-                local_48 = SQRT(local_1f0 * local_1f0 +
+                local_48 = (SMotionTransition *)
+                           SQRT(local_1f0 * local_1f0 +
                                 local_1f8 * local_1f8 + local_1f4 * local_1f4);
                 local_24 = 0.0;
                 local_40 = 0.0;
                 local_38 = 0.0;
                 if ((this_ptr->base).base.model.part_data.visibility_flags
                     [this_ptr->part_indices[3]] != 0) {
-                  local_24 = (1.0 - ABS(local_48 - 3.4f) / 3.4f) *
+                  local_24 = (1.0 - ABS((float)local_48 - 3.4f) / 3.4f) *
                              (float)0.29999999999999999;
                 }
                 if ((this_ptr->base).base.model.part_data.visibility_flags
                     [this_ptr->part_indices[1]] != 0) {
-                  local_40 = (1.0 - ABS(local_48 - 2.5f) / 2.5f) *
+                  local_40 = (1.0 - ABS((float)local_48 - 2.5f) / 2.5f) *
                              (float)0.40000000000000002;
                 }
                 pCVar3 = (this_ptr->base).victim;
@@ -503,7 +505,7 @@ LAB_004e6a5f:
                 iVar9 = (*(((pCVar3->base).vtable._uc)->_uc).canBeGrabbed)
                                   (pCVar3,(CDemonActor *)this_ptr,0);
                 if (iVar9 != 0) {
-                  local_38 = (1.0 - ABS(local_48 - 2.5f) / 2.5f) *
+                  local_38 = (1.0 - ABS((float)local_48 - 2.5f) / 2.5f) *
                              (float)0.29999999999999999;
                 }
                 local_3c = local_24 + local_40;
@@ -716,15 +718,17 @@ LAB_004e7576:
                           (pCVar3->base).location.position.x;
               local_11c = (this_ptr->base).base.base.location.position.y -
                           (pCVar3->base).location.position.y;
-              local_118 = (this_ptr->base).base.base.location.position.z -
-                          (pCVar3->base).location.position.z;
+              local_118 = (SMotionTransition *)
+                          ((this_ptr->base).base.base.location.position.z -
+                          (pCVar3->base).location.position.z);
               if (&local_c0 != &local_120) {
                 local_c0 = local_120;
                 local_bc = local_11c;
                 local_b8 = local_118;
               }
               local_7c = (CDemonActor *)
-                         (local_b8 * local_b8 + local_c0 * local_c0 + local_bc * local_bc);
+                         ((float)local_b8 * (float)local_b8 +
+                         local_c0 * local_c0 + local_bc * local_bc);
               local_78 = (CDemonActor *)(((int)local_7c >> 1) + INT_02d7a7b8);
               if ((float)local_78 < (float)8) goto LAB_004e7243;
             }
@@ -876,7 +880,7 @@ LAB_004e7d9a:
     }
     if (((0.0 <= (float)local_20) && (this_ptr->flinch_blend_weight <= 0.0)) &&
        ((this_ptr->base).victim != (CCharacter *)0x0)) {
-      local_138 = 0;
+      local_138 = MOTION_CMD_NONE;
       local_134 = 0.0;
       local_130 = local_20;
       fVar22 = 0.5235988;
@@ -975,7 +979,7 @@ LAB_004e6754:
     local_14 = local_60;
     core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
               (this_ptr_00,this_ptr->flinch_motion_index,local_60,local_5c,INT_02d83320,
-               core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0);
+               core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0);
     fVar22 = this_ptr->flinch_blend_weight - delta_time / 0.7f;
     this_ptr->flinch_blend_weight = fVar22;
     if (fVar22 < 0.0) {

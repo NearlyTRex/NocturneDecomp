@@ -20,8 +20,8 @@ void __cdecl core_game_cpp_CGame_processHotkeys_FUN_004dcee0(CGame *this_ptr)
   uint uStack00000078;
   int iStack0000007c;
   float in_stack_00000080;
-  uint uVar8;
-  float fVar9;
+  uint clear_enabled;
+  float fVar8;
   float fStack_188;
   char acStack_b4 [164];
   
@@ -104,8 +104,9 @@ void __cdecl core_game_cpp_CGame_processHotkeys_FUN_004dcee0(CGame *this_ptr)
       if (iVar5 != 0) {
         iVar4 = 0xf0;
       }
-      uVar8 = (uint)(iVar5 != 0);
-      core_set_cpp_CDemonSet_reinitCamera_FUN_0056b7e0(g_CDemonSetPtr,uVar8,uVar8,iVar4);
+      clear_enabled = (uint)(iVar5 != 0);
+      core_set_cpp_CDemonSet_reinitCamera_FUN_0056b7e0
+                (g_CDemonSetPtr,clear_enabled,clear_enabled,iVar4);
     }
     if (((this_ptr->velocity_debug_enabled != 0) && (g_MovieRecordingArmed == 0)) &&
        ((iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL), iVar4 != 0 &&
@@ -130,19 +131,19 @@ void __cdecl core_game_cpp_CGame_processHotkeys_FUN_004dcee0(CGame *this_ptr)
     iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_F6);
     if ((iVar4 != 0) && (this_ptr->letterbox_mode == 0)) {
       core_game_cpp_CGame_saveGame_FUN_004e0cd0(this_ptr,"quicksavedgame.noc");
-      fVar9 = 2.0;
+      fVar8 = 2.0;
       pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Quick Save");
-      core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar6,fVar9);
+      core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar6,fVar8);
     }
     if ((this_ptr->subtitle_system_enabled == 0) &&
        (iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_F9), iVar4 != 0)) {
       file_ptr = engine_dosio_c_getFile_FUN_00481a50
                            ("save","quicksavedgame.noc","rb");
       if (file_ptr == (_FILE *)0x0) {
-        fVar9 = 2.0;
+        fVar8 = 2.0;
         pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                            ("No quicked saved game to load");
-        core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar6,fVar9);
+        core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar6,fVar8);
       }
       else {
         shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\core\\game.cpp",0x975);

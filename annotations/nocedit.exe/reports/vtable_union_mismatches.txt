@@ -1,0 +1,125 @@
+====================================================================================================
+VTABLE UNION MEMBER MISMATCH REPORT
+====================================================================================================
+
+Pseudocode locations where a UActorVTable union member is incompatible
+with the declared type of the object whose vtable is accessed. When Ghidra
+picks the wrong union member, method names at overlapping offsets are resolved
+from the wrong vtable struct, producing misleading pseudocode.
+
+----------------------------------------------------------------------------------------------------
+SUMMARY
+----------------------------------------------------------------------------------------------------
+
+  Total mismatches found: 22
+
+  By union member used:
+    _uc (CCharacter_vtable): 19
+    _ue (CEnemy_vtable): 1
+    _uw (CWeapon_vtable): 2
+
+  By source file:
+    core/lightgun.cpp                        4
+    core/turret.cpp                          4
+    core/elephant.cpp                        3
+    core/shotgun.cpp                         3
+    core/crossbow.cpp                        2
+    core/tommygun.cpp                        2
+    core/weapon.cpp                          2
+    core/gun.cpp                             1
+    core/scat.cpp                            1
+
+  By object type:
+    CLightGun                 4  (CLightGun -> CWeapon -> CDemonActor)
+    CTurret                   4  (CTurret -> CWeapon -> CDemonActor)
+    CElephantGun              3  (CElephantGun -> CWeapon -> CDemonActor)
+    CShotgun                  3  (CShotgun -> CWeapon -> CDemonActor)
+    CCharacter                2  (CCharacter -> CDemonActor)
+    CTommyGun                 2  (CTommyGun -> CWeapon -> CDemonActor)
+    CWeapon                   2  (CWeapon -> CDemonActor)
+    CCrossbow                 1  (CCrossbow -> CWeapon -> CDemonActor)
+    CScat                     1  (CScat -> CHero -> CCharacter -> CDemonActor)
+
+====================================================================================================
+DETAILED FINDINGS
+====================================================================================================
+
+  core/lightgun.cpp (4)
+    CLightGun_FUN_00505a20                              this_ptr on CLightGun        used _uc, need _uw  canWalk -> getMuzzlePoint
+    CLightGun_FUN_00505ac0                              this_ptr on CLightGun        used _uc, need _uw  canWalk -> getMuzzlePoint
+    CLightGun_fire_FUN_00505c70                         this_ptr on CLightGun        used _uc, need _uw  canWalk -> getMuzzlePoint
+    CLightGun_fire_FUN_00505c70                         this_ptr on CLightGun        used _uc, need _uw  getGrabbed -> getDamage
+
+  core/turret.cpp (4)
+    CTurret_fire_FUN_005e3750                           this_ptr on CTurret          used _uc, need _uw  canWalk -> getMuzzlePoint
+    CTurret_fire_FUN_005e3750                           this_ptr on CTurret          used _uc, need _uw  getGrabbed -> getDamage
+    CTurret_fire_FUN_005e3750                           this_ptr on CTurret          used _uc, need _uw  getGrabbed -> getDamage
+    CTurret_process_FUN_005e2430                        this_ptr on CTurret          used _uc, need _uw  releaseFromGrab -> fireProjectile
+
+  core/elephant.cpp (3)
+    CElephantGun_fire_FUN_004a7160                      this_ptr on CElephantGun     used _uc, need _uw  canWalk -> getMuzzlePoint
+    CElephantGun_fire_FUN_004a7160                      this_ptr on CElephantGun     used _uc, need _uw  getGrabbed -> getDamage
+    CElephantGun_process_FUN_004a7070                   this_ptr on CElephantGun     used _uc, need _uw  canWalk -> getMuzzlePoint
+
+  core/shotgun.cpp (3)
+    CShotgun_fire_FUN_00588060                          this_ptr on CShotgun         used _uc, need _uw  canWalk -> getMuzzlePoint
+    CShotgun_fire_FUN_00588060                          this_ptr on CShotgun         used _uc, need _uw  getGrabbed -> getDamage
+    CShotgun_process_FUN_00587f70                       this_ptr on CShotgun         used _uc, need _uw  canWalk -> getMuzzlePoint
+
+  core/crossbow.cpp (2)
+    CCrossbow_fire_FUN_00448f20                         this_ptr_03 on CCharacter       used _uw, need _uc  getMuzzlePoint -> canWalk
+    CCrossbow_process_FUN_00448d30                      this_ptr on CCrossbow        used _uc, need _uw  canWalk -> getMuzzlePoint
+
+  core/tommygun.cpp (2)
+    CTommyGun_fire_FUN_005ddb30                         this_ptr on CTommyGun        used _uc, need _uw  getGrabbed -> getDamage
+    CTommyGun_fire_FUN_005ddb30                         this_ptr on CTommyGun        used _uc, need _uw  getGrabbed -> getDamage
+
+  core/weapon.cpp (2)
+    CWeapon_onDropped_FUN_005ee3f0                      this_ptr on CWeapon          used _uc, need _uw  kill -> setWeaponState
+    CWeapon_process_FUN_005ee110                        this_ptr on CWeapon          used _uc, need _uw  getGrabber -> updateLighting
+
+  core/gun.cpp (1)
+    CGun_fire_FUN_004f0350                              this_ptr_01 on CCharacter       used _uw, need _uc  getMuzzlePoint -> canWalk
+
+  core/scat.cpp (1)
+    CScat_process_FUN_005571f0                          this_ptr on CScat            used _ue, need _uh  updateVictim -> drawWeapon
+
+====================================================================================================
+OFFSET COLLISION REFERENCE
+====================================================================================================
+
+  Offset    CCharacter (_uc)                CWeapon (_uw)                 
+  ------------------------------------------------------------------------
+  0xec      applyDamage                     onFired                       
+  0xf0      kill                            setWeaponState                
+  0xf4      canWalk                         getMuzzlePoint                
+  0xf8      isGrabbable                     fire                          
+  0xfc      canBeGrabbed                    isReadyToFire                 
+  0x100     getGrabbed                      getDamage                     
+  0x104     releaseFromGrab                 fireProjectile                
+  0x108     getGrabber                      updateLighting                
+  0x10c     releaseVictim                   -                             
+  0x110     onVictimLost                    -                             
+  0x114     checkCylinderCollisionWorld     -                             
+  0x118     testDamageLine                  -                             
+  0x11c     processDamage                   -                             
+  0x120     getDeathState                   -                             
+  0x124     attractActorToward              -                             
+  0x128     canBeAttracted                  -                             
+  0x12c     getPartDominantBone             -                             
+  0x130     setDoorTarget                   -                             
+  0x134     clearDoorTarget                 -                             
+  0x138     hasDoorTarget                   -                             
+  0x13c     dropCarriedObject               -                             
+  0x140     getCarryObjToBodyXForm          -                             
+  0x144     setWalkTarget                   -                             
+  0x148     setWalkTargetImmediate          -                             
+  0x14c     setWalkTimeout                  -                             
+  0x150     isWalkComplete                  -                             
+
+  Offset    CEnemy (_ue)                    CHero (_uh)                   
+  ------------------------------------------------------------------------
+  0x154     getTargetPoint                  createDefaultWeapon           
+  0x158     updateVictim                    drawWeapon                    
+  0x15c     randomize                       isWeaponDrawn                 
+  0x160     reset                           reset                         

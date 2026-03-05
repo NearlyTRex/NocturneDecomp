@@ -34,7 +34,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_charactr.cpp_CCharacter_isGrabbable_FUN_0042bf30",
-    "signature": "int __cdecl core_charactr_cpp_CCharacter_isGrabbable_FUN_0042bf30(CCharacter *this_ptr)"
+    "signature": "int __cdecl core_charactr_cpp_CCharacter_isGrabbable_FUN_0042bf30(CCharacter *this_ptr,CDemonActor *grabber)"
   },
   "function_calls": [],
   "globals": [],
@@ -52,7 +52,7 @@
       }
     ],
     "confidence": "low",
-    "declared_params": 1,
+    "declared_params": 2,
     "estimated_params": 3
   },
   "pcode_summary": {
@@ -72,10 +72,10 @@
     "pcode_op_count": 12
   },
   "stack_frame": {
-    "frame_size": 8,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -84,6 +84,13 @@
         "offset": 4,
         "size": 4,
         "type": "CCharacter *"
+      },
+      {
+        "is_param": true,
+        "name": "grabber",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonActor *"
       }
     ]
   },

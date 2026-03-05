@@ -52,7 +52,8 @@ void __cdecl core_scat_cpp_CScat_FUN_00558720(CScat *this_ptr)
   }
   local_13c = this_ptr->aim_pitch;
   local_2c = this_ptr->aim_yaw;
-  if (((this_ptr->base).aim_mode != 0) && ((this_ptr->base).control_type != 2)) {
+  if (((this_ptr->base).aim_mode != AIM_MODE_AUTO) &&
+     ((this_ptr->base).control_type != HERO_CONTROL_AI)) {
     local_13c = (this_ptr->base).player_control.look_up_down_speed * (float)3.1415926535000001 *
                 (float)2 * in_stack_00000008 + local_13c;
     local_1c = 0x3fc90fdb;

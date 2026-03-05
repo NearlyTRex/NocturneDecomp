@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_enemy_cpp_CEnemy_FUN_004a9a50(CEnemy *this_ptr,CDemonActor *param_2)
+; int __cdecl core_enemy_cpp_CEnemy_FUN_004a9a50(CEnemy *this_ptr,CDemonActor *target)
 ;
 ; Parameters:
 ; CEnemy *         Stack[0x4]:4   this_ptr
-; CDemonActor *    Stack[0x8]:4   param_2
+; CDemonActor *    Stack[0x8]:4   target
 ; Local Variables:
 ; undefined1       Stack[-0x2c]:1  local_2c
 ;

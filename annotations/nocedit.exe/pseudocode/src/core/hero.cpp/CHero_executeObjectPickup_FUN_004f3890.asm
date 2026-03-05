@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   hand_index
 ;
 ; XREF[2]:
-;   core_gabriela.cpp_CGabriella_FUN_004d4890 at 004d496e
+;   core_gabriela.cpp_CGabriella_processMotionEvents_FUN_004d4890 at 004d496e
 ;   core_stranger.cpp_CStranger_processMotionEvents_FUN_005bdd20 at 005bdf6a
 ;
 ; Called Functions:

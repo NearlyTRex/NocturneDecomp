@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 46,
-    "complexity_score": 82,
+    "complexity_score": 27,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 27,
-    "suspect_count": 5,
-    "suspect_types": [
-      "unnamed_param"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 73
   },
   "cross_references": [],
@@ -29,7 +27,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_cloth.cpp_CClothList_FUN_0043c3e0",
-    "signature": "void __cdecl core_cloth_cpp_CClothList_FUN_0043c3e0(CClothList *this_ptr,CVector3f *param_2)"
+    "signature": "void __cdecl core_cloth_cpp_CClothList_FUN_0043c3e0(CClothList *this_ptr,CVector3f *wind_velocity)"
   },
   "function_calls": [],
   "globals": [],
@@ -82,53 +80,12 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "wind_velocity",
         "offset": 8,
         "size": 4,
         "type": "CVector3f *"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_cloth_cpp_CClothList_FUN_0043c3e0(CClothList *this_ptr,CVector3f *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (&pCVar1->wind_velocity == param_2) break;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(pCVar1->wind_velocity).x = param_2->x;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(pCVar1->wind_velocity).y = param_2->y;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(pCVar1->wind_velocity).z = param_2->z;",
-      "type": "unnamed_param"
-    }
-  ]
+  "suspects": []
 }

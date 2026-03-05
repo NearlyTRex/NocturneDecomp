@@ -2,11 +2,11 @@
 // Address: 00478740
 // Address Range: [[00478740, 0047882a]]
 // Convention: __cdecl
-// Signature: int __cdecl core_dmodel_cpp_CKeyFramedModel_getFloorHeight_FUN_00478740(CKeyFramedModel *this_ptr,int frame_index,float x,float z,float *out_height,CVector3f *transform_vector)
+// Signature: int __cdecl core_dmodel_cpp_CKeyFramedModel_getFloorHeight_FUN_00478740(CKeyFramedModel *this_ptr,int frame_index,CVector3f *position,float search_radius,float *out_height,CVector3f *transform_vector)
 
 #include "nocturne.h"
 
-int __cdecl core_dmodel_cpp_CKeyFramedModel_getFloorHeight_FUN_00478740(CKeyFramedModel *this_ptr,int frame_index,float x,float z,float *out_height,CVector3f *transform_vector)
+int __cdecl core_dmodel_cpp_CKeyFramedModel_getFloorHeight_FUN_00478740(CKeyFramedModel *this_ptr,int frame_index,CVector3f *position,float search_radius,float *out_height,CVector3f *transform_vector)
 
 {
   int iVar1;
@@ -35,7 +35,8 @@ int __cdecl core_dmodel_cpp_CKeyFramedModel_getFloorHeight_FUN_00478740(CKeyFram
   iVar2 = 0;
   if (0 < this_ptr->collision_triangle_count) {
     do {
-      iVar1 = core_dtri_cpp_rayTriangleFloorTest_FUN_0049b2f0(triangle,x,z,out_height);
+      iVar1 = core_dtri_cpp_rayTriangleFloorTest_FUN_0049b2f0
+                        (triangle,position,search_radius,out_height);
       if (iVar1 != 0) {
         iVar3 = 1;
       }

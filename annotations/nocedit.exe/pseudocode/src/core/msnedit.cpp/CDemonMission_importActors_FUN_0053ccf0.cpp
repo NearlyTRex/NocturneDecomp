@@ -16,7 +16,6 @@ void __cdecl core_msnedit_cpp_CDemonMission_importActors_FUN_0053ccf0(CDemonMiss
   CDemonActor *pCVar5;
   CDemonActor *pCVar6;
   CDemonActor *pCVar7;
-  char *unaff_EDI;
   char *pcVar8;
   byte bVar9;
   CPickList local_448;
@@ -59,7 +58,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_importActors_FUN_0053ccf0(CDemonMiss
     core_mission_cpp_CDemonMission_load_FUN_00522d90(local_10,local_3c,1);
   }
   else {
-    core_game_cpp_CGame_loadGame_FUN_004e12b0(g_CGamePtr,local_3c,0,unaff_EDI);
+    core_game_cpp_CGame_loadGame_FUN_004e12b0(g_CGamePtr,local_3c,0);
   }
   core_mission_cpp_CDemonMission_prepareAllActors_FUN_00523cf0(local_10);
   local_14 = 0;
@@ -84,7 +83,7 @@ LAB_0053ce9f:
       pCVar1 = local_10;
       for (pCVar5 = local_10->first_actor; local_10 = pCVar1, pCVar5 != (CDemonActor *)0x0;
           pCVar5 = pCVar5->next_actor) {
-        core_msnedit_cpp_CDemonMission_deleteActor_FUN_00538ea0(this_ptr,(int)pCVar5);
+        core_msnedit_cpp_CDemonMission_deleteActor_FUN_00538ea0(this_ptr,pCVar5);
         pCVar1 = local_10;
       }
       g_CDemonMissionPtr = pCVar1;

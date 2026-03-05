@@ -652,8 +652,8 @@ int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,i
       iVar7 = -1;
       while( true ) {
         shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_2c5c);
-        for (iVar8 = 0; iVar5 = core_charactr_cpp_FUN_0042f9c0(), iVar8 < iVar5; iVar8 = iVar8 + 1)
-        {
+        for (iVar8 = 0; iVar5 = core_charactr_cpp_getDeformableModelPartCount_FUN_0042f9c0(local_20)
+            , iVar8 < iVar5; iVar8 = iVar8 + 1) {
           pSVar6 = core_skeleton_cpp_CDeformableModel_getPartPtr_FUN_0059c220(local_20,iVar8);
           _sprintf(local_170,"%s\t%s",pSVar6);
           shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_2c5c.base,local_170);
@@ -675,7 +675,7 @@ int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,i
       local_1c = &s_EmptyChar_00643d07;
       *value_buffer = '\0';
       do {
-        iVar8 = core_charactr_cpp_FUN_0042f9c0();
+        iVar8 = core_charactr_cpp_getDeformableModelPartCount_FUN_0042f9c0(local_20);
         if (iVar8 <= iVar7) {
           shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_2c5c,0);
           return 1;

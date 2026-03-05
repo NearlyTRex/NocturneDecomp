@@ -31,7 +31,7 @@ int __cdecl core_hero_cpp_CHero_tryOpenNearbyDoor_FUN_004f2d70(CHero *this_ptr)
     this_ptr_00 = (CDoor *)core_actor_cpp_castToClassHash_FUN_0040c790
                                      (*(CDemonActor **)((int)g_CDemonSetPtr->actors + local_14),
                                       g_CDoorClassInfo.name_hash);
-    if ((this_ptr_00 != (CDoor *)0x0) && (this_ptr_00->door_state == 0)) {
+    if ((this_ptr_00 != (CDoor *)0x0) && (this_ptr_00->door_state == DOOR_STATE_CLOSED)) {
       fVar3 = (this_ptr->base).base.location.position.x - (this_ptr_00->open_position).x;
       fVar1 = (this_ptr->base).base.location.position.y;
       fVar2 = (this_ptr_00->open_position).y;

@@ -2,11 +2,11 @@
 // Address: 0042d5a0
 // Address Range: [[0042d5a0, 0042da01] [0042da1e, 0042dcc2]]
 // Convention: __cdecl
-// Signature: void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCharacter *this_ptr,float delta_time,int param_3)
+// Signature: void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCharacter *this_ptr,float delta_time,int disable_search)
 
 #include "nocturne.h"
 
-void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCharacter *this_ptr,float delta_time,int param_3)
+void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCharacter *this_ptr,float delta_time,int disable_search)
 
 {
   int iVar1;
@@ -42,11 +42,11 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCh
   
   iVar1 = (*(((this_ptr->base).vtable._uc)->_uc).getDeathState)(this_ptr);
   if (iVar1 != 0) {
-    param_3 = 1;
+    disable_search = 1;
   }
   pCStack_20 = (CCharacter *)0x0;
   pCVar4 = pCStack_20;
-  if ((param_3 == 0) &&
+  if ((disable_search == 0) &&
      (pCVar4 = this_ptr->look_at_target, this_ptr->look_at_target == (CCharacter *)0x0)) {
     if (this_ptr->look_at_search_timer <= 0.0) {
       CStack_a4.x = 0.0;

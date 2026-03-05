@@ -11,6 +11,7 @@
 # - param_mismatch_analysis.txt - Parameter count mismatch analysis
 # - pass_by_value_report.txt - Pass-by-value struct argument detection
 # - annotation_quality.txt - Annotation quality issues (unnamed funcs/params, type issues)
+# - vtable_union_mismatches.txt - Wrong vtable union member accesses in pseudocode
 # - virtual_files.csv - CSV for graphing
 # - functions.csv - CSV for analysis
 # - completion_pie.svg - Overall completion pie chart
@@ -2438,7 +2439,12 @@ def _get_function_display_name(func):
 
 
 def _is_unnamed_function(func):
-    """Check if a function still has a Ghidra auto-generated name (FUN_XXXXXXXX)."""
+    """Check if a function still has a Ghidra auto-generated name (FUN_XXXXXXXX).
+
+    Detects both bare unnamed functions (file_prefix_FUN_XXXX) and class methods
+    where only the class name is known but the method name is still auto-generated
+    (file_prefix_ClassName_FUN_XXXX).
+    """
     import re
     name = func.get('function', {}).get('name', '')
     vfile = func.get('_virtual_file', '')
@@ -2450,6 +2456,17 @@ def _is_unnamed_function(func):
     if name.startswith(expected_unnamed):
         rest = name[len(expected_unnamed):]
         return bool(re.match(r'^[0-9a-fA-F]+$', rest))
+
+    # Also detect class methods with no real method name:
+    # e.g. core_gabriela_cpp_CGabriella_FUN_004d4890
+    # The part after file_prefix must be a single PascalCase identifier (no underscores)
+    # followed by _FUN_XXXX. This avoids matching real names like CGabriella_process_FUN_XXXX.
+    stripped = name[len(file_prefix) + 1:] if name.startswith(file_prefix + '_') else None
+    if stripped:
+        m2 = re.match(r'^([A-Z][A-Za-z0-9]+)_FUN_([0-9a-fA-F]+)$', stripped)
+        if m2:
+            return True
+
     return False
 
 
@@ -2695,7 +2712,7 @@ def generate_annotation_quality_report(functions, output_path):
 
     # ---- Section 2: Unnamed Functions ----
     lines.append("=" * 100)
-    lines.append("UNNAMED FUNCTIONS (still using FUN_XXXXXXXX)")
+    lines.append("UNNAMED FUNCTIONS (still using FUN_XXXXXXXX or ClassName_FUN_XXXXXXXX)")
     lines.append("=" * 100)
     lines.append("")
     lines.append("Sorted by caller count (most-referenced first = highest priority to name).")
@@ -2827,6 +2844,337 @@ def generate_annotation_quality_report(functions, output_path):
     return report_text
 
 
+# =============================================================================
+# Vtable union mismatch report
+# =============================================================================
+
+def _build_class_hierarchy_from_headers(headers_dir):
+    """Parse struct definitions to find inheritance via 'base' member at offset 0x0."""
+    import re, glob as _glob
+    hierarchy = {}
+    for h in _glob.glob(os.path.join(headers_dir, '*.h')):
+        basename = os.path.basename(h)
+        if '_vtable' in basename or '_full_vtable' in basename:
+            continue
+        with open(h) as f:
+            content = f.read()
+        m_struct = re.search(r'typedef struct (C\w+)\s*\{', content)
+        if not m_struct:
+            continue
+        m_base = re.search(r'^\s+(C\w+)\s+base;\s*//\s*0x0', content, re.MULTILINE)
+        if m_base:
+            hierarchy[m_struct.group(1)] = m_base.group(1)
+    return hierarchy
+
+
+def _get_vtable_valid_union_members(class_name, hierarchy):
+    """Determine which UActorVTable union members are valid for a class."""
+    chain = set()
+    current = class_name
+    while current:
+        chain.add(current)
+        current = hierarchy.get(current)
+    valid = {'_ub'}
+    if 'CCharacter' in chain:
+        valid.add('_uc')
+    if 'CEnemy' in chain:
+        valid.add('_ue')
+    if 'CHero' in chain:
+        valid.add('_uh')
+    if 'CWeapon' in chain:
+        valid.add('_uw')
+    return valid
+
+
+def _parse_vtable_header_methods(vtable_header_path):
+    """Parse a _vtable.h file to extract method names and their offsets."""
+    import re
+    methods = {}
+    with open(vtable_header_path) as f:
+        for line in f:
+            m = re.match(r'\s+\w+\*?\s+(\w+);\s*//\s*(0x[0-9a-fA-F]+)', line)
+            if m:
+                methods[int(m.group(2), 16)] = m.group(1)
+    return methods
+
+
+_UNION_MEMBER_NAMES = {
+    '_ub': 'CDemonActor_vtable (base)',
+    '_uc': 'CCharacter_vtable',
+    '_ue': 'CEnemy_vtable',
+    '_uh': 'CHero_vtable',
+    '_uw': 'CWeapon_vtable',
+}
+
+
+def generate_vtable_union_mismatch_report(pseudocode_src_dir, output_path):
+    """Detect wrong vtable union member accesses in pseudocode .cpp files.
+
+    Scans all .cpp pseudocode files for vtable method calls that use a union member
+    incompatible with the declared type of the object whose vtable is accessed.
+
+    Args:
+        pseudocode_src_dir: Directory containing pseudocode src/ tree
+        output_path: Directory to write the report
+    """
+    import re, glob as _glob
+
+    # Derive paths from pseudocode_src_dir
+    # pseudocode_src_dir is like .../pseudocode/src
+    pseudocode_base = os.path.dirname(pseudocode_src_dir)
+    headers_dir = os.path.join(pseudocode_base, 'include', 'types', 'classes')
+
+    if not os.path.isdir(headers_dir):
+        log_info("Skipping vtable union mismatch report: headers dir not found")
+        return
+
+    # Build class hierarchy
+    hierarchy = _build_class_hierarchy_from_headers(headers_dir)
+    log_info("Vtable union report: %d classes in hierarchy" % len(hierarchy))
+
+    # Build method maps for each sub-vtable section
+    vtable_files = {
+        '_ub': os.path.join(headers_dir, 'CDemonActor_vtable.h'),
+        '_uc': os.path.join(headers_dir, 'CCharacter_vtable.h'),
+        '_ue': os.path.join(headers_dir, 'CEnemy_vtable.h'),
+        '_uh': os.path.join(headers_dir, 'CHero_vtable.h'),
+        '_uw': os.path.join(headers_dir, 'CWeapon_vtable.h'),
+    }
+    method_maps = {}
+    for member, path in vtable_files.items():
+        if os.path.exists(path):
+            method_maps[member] = _parse_vtable_header_methods(path)
+
+    # Regex for vtable accesses
+    vtable_access_re = re.compile(
+        r'(\w+)'
+        r'((?:->base|\.base|\)\.base|\))*)'
+        r'\.vtable\._u([bcehw])'
+    )
+    # Regex for method name after union member
+    sub_method_re = re.compile(r'\)->_u([bcehw])\)\.(\w+)\)')
+    base_method_re = re.compile(r'\)->(\w+)\)')
+
+    # Scan all .cpp pseudocode files
+    cpp_files = [f for f in _glob.glob(
+        os.path.join(pseudocode_src_dir, '**', '*.cpp'), recursive=True
+    ) if os.path.isfile(f)]
+
+    all_issues = []
+
+    for filepath in sorted(cpp_files):
+        with open(filepath) as f:
+            content = f.read()
+
+        if '.vtable._u' not in content:
+            continue
+
+        # Extract variable types
+        var_types = {}
+        m_this = re.search(r'\((\w+)\s+\*\s*this_ptr\b', content)
+        if m_this:
+            var_types['this_ptr'] = m_this.group(1)
+        for m in re.finditer(r'^\s+(C\w+)\s+\*\s*(\w+)\s*[;=]', content, re.MULTILINE):
+            var_types[m.group(2)] = m.group(1)
+
+        lines = content.split('\n')
+        for line_no, line in enumerate(lines, 1):
+            if '.vtable._u' not in line:
+                continue
+            # Skip constructor/assignment patterns
+            if re.search(r'vtable\._u\w\s*=\s*&', line):
+                continue
+            if re.search(r'=\s*.*vtable\._u\w\s*;', line):
+                continue
+
+            for m in vtable_access_re.finditer(line):
+                var_name = m.group(1)
+                union_member = '_u' + m.group(3)
+
+                if var_name in ('base', 'ADJ', 'struct') or union_member == '_ub':
+                    continue
+
+                var_type = var_types.get(var_name)
+                if not var_type:
+                    continue
+
+                # Check this type descends from CDemonActor
+                chain = []
+                current = var_type
+                while current:
+                    chain.append(current)
+                    current = hierarchy.get(current)
+                if 'CDemonActor' not in chain:
+                    continue
+
+                valid = _get_vtable_valid_union_members(var_type, hierarchy)
+                if union_member in valid:
+                    continue
+
+                # Extract method name
+                rest = line[m.end():]
+                method_name = None
+                sm = sub_method_re.match(rest)
+                if sm:
+                    method_name = sm.group(2)
+                else:
+                    sm = base_method_re.match(rest)
+                    if sm:
+                        method_name = sm.group(1)
+
+                # Find correct member and method
+                correct = None
+                for pref in ['_ue', '_uh', '_uc', '_uw']:
+                    if pref in valid:
+                        correct = pref
+                        break
+                if not correct:
+                    correct = '_ub'
+
+                correct_method = None
+                if method_name and union_member in method_maps and correct in method_maps:
+                    used_methods = method_maps[union_member]
+                    for off, name in used_methods.items():
+                        if name == method_name:
+                            correct_method = method_maps[correct].get(off)
+                            break
+
+                all_issues.append({
+                    'file': filepath,
+                    'line_no': line_no,
+                    'line': line.strip(),
+                    'var_name': var_name,
+                    'var_type': var_type,
+                    'union_used': union_member,
+                    'union_valid': sorted(valid),
+                    'correct_member': correct,
+                    'method_shown': method_name,
+                    'method_correct': correct_method,
+                    'hierarchy_chain': ' -> '.join(chain),
+                })
+
+    # Generate report text
+    lines = []
+    lines.append("=" * 100)
+    lines.append("VTABLE UNION MEMBER MISMATCH REPORT")
+    lines.append("=" * 100)
+    lines.append("")
+    lines.append("Pseudocode locations where a UActorVTable union member is incompatible")
+    lines.append("with the declared type of the object whose vtable is accessed. When Ghidra")
+    lines.append("picks the wrong union member, method names at overlapping offsets are resolved")
+    lines.append("from the wrong vtable struct, producing misleading pseudocode.")
+    lines.append("")
+
+    lines.append("-" * 100)
+    lines.append("SUMMARY")
+    lines.append("-" * 100)
+    lines.append("")
+    lines.append("  Total mismatches found: %d" % len(all_issues))
+    lines.append("")
+
+    if all_issues:
+        # By union member
+        by_member = defaultdict(list)
+        for issue in all_issues:
+            by_member[issue['union_used']].append(issue)
+        lines.append("  By union member used:")
+        for member in sorted(by_member):
+            lines.append("    %s (%s): %d" % (
+                member, _UNION_MEMBER_NAMES.get(member, '?'), len(by_member[member])))
+        lines.append("")
+
+        # By source file
+        by_vfile = defaultdict(list)
+        for issue in all_issues:
+            rel = os.path.relpath(issue['file'], pseudocode_src_dir)
+            by_vfile[os.path.dirname(rel)].append(issue)
+        lines.append("  By source file:")
+        for vfile in sorted(by_vfile, key=lambda v: -len(by_vfile[v])):
+            lines.append("    %-40s %d" % (vfile, len(by_vfile[vfile])))
+        lines.append("")
+
+        # By object type
+        by_type = defaultdict(list)
+        for issue in all_issues:
+            by_type[issue['var_type']].append(issue)
+        lines.append("  By object type:")
+        for vtype in sorted(by_type, key=lambda t: -len(by_type[t])):
+            chain = by_type[vtype][0]['hierarchy_chain']
+            lines.append("    %-25s %d  (%s)" % (vtype, len(by_type[vtype]), chain))
+        lines.append("")
+
+        # Detailed findings
+        lines.append("=" * 100)
+        lines.append("DETAILED FINDINGS")
+        lines.append("=" * 100)
+        lines.append("")
+
+        for vfile in sorted(by_vfile, key=lambda v: -len(by_vfile[v])):
+            file_issues = by_vfile[vfile]
+            lines.append("  %s (%d)" % (vfile, len(file_issues)))
+
+            by_func = defaultdict(list)
+            for issue in file_issues:
+                by_func[os.path.basename(issue['file'])].append(issue)
+
+            for func_file in sorted(by_func):
+                for issue in by_func[func_file]:
+                    method_info = ""
+                    if issue.get('method_shown') and issue.get('method_correct'):
+                        method_info = "  %s -> %s" % (
+                            issue['method_shown'], issue['method_correct'])
+                    elif issue.get('method_shown'):
+                        method_info = "  %s -> ?" % issue['method_shown']
+
+                    lines.append("    %-50s  %s on %-15s  used %s, need %s%s" % (
+                        func_file.replace('.cpp', ''),
+                        issue['var_name'],
+                        issue['var_type'],
+                        issue['union_used'],
+                        issue['correct_member'],
+                        method_info))
+            lines.append("")
+
+        # Offset collision reference
+        lines.append("=" * 100)
+        lines.append("OFFSET COLLISION REFERENCE")
+        lines.append("=" * 100)
+        lines.append("")
+        lines.append("  %-8s  %-30s  %-30s" % ("Offset", "CCharacter (_uc)", "CWeapon (_uw)"))
+        lines.append("  " + "-" * 72)
+        uc_methods = method_maps.get('_uc', {})
+        uw_methods = method_maps.get('_uw', {})
+        for rel in sorted(set(list(uc_methods.keys()) + list(uw_methods.keys()))):
+            abs_off = 0xec + rel
+            uc_name = uc_methods.get(rel, '-')
+            uw_name = uw_methods.get(rel, '-')
+            lines.append("  0x%-6x  %-30s  %-30s" % (abs_off, uc_name, uw_name))
+        lines.append("")
+
+        lines.append("  %-8s  %-30s  %-30s" % ("Offset", "CEnemy (_ue)", "CHero (_uh)"))
+        lines.append("  " + "-" * 72)
+        ue_methods = method_maps.get('_ue', {})
+        uh_methods = method_maps.get('_uh', {})
+        for rel in sorted(set(list(ue_methods.keys()) + list(uh_methods.keys()))):
+            abs_off = 0x154 + rel
+            ue_name = ue_methods.get(rel, '-')
+            uh_name = uh_methods.get(rel, '-')
+            lines.append("  0x%-6x  %-30s  %-30s" % (abs_off, ue_name, uh_name))
+        lines.append("")
+    else:
+        lines.append("  No mismatches detected.")
+
+    report_text = '\n'.join(lines)
+    report_path = os.path.join(output_path, "vtable_union_mismatches.txt")
+    try:
+        with open(report_path, 'w') as f:
+            f.write(report_text)
+        log_info("Wrote vtable union mismatch report: %s (%d issues)" % (
+            report_path, len(all_issues)))
+    except Exception as e:
+        log_info("Failed to write vtable union mismatch report: %s" % str(e))
+
+
 def generate_analysis_report(pseudocode_src_dir, output_path):
     """Generate all analysis reports from exported function JSON files.
 
@@ -2860,6 +3208,7 @@ def generate_analysis_report(pseudocode_src_dir, output_path):
     generate_compilation_detailed_report(functions, output_path)
     generate_pass_by_value_report(functions, output_path)
     generate_annotation_quality_report(functions, output_path)
+    generate_vtable_union_mismatch_report(pseudocode_src_dir, output_path)
     generate_csv_data(functions, files, output_path)
 
     # Generate struct quality report

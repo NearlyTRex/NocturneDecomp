@@ -12,26 +12,45 @@ SUMMARY STATISTICS
 ====================================================================================================
 
   Total functions analyzed:          6,487
-  Unnamed functions (FUN_):          65 ( 1.0%)
-  Functions with unnamed params:     30 ( 0.5%)
-  Functions with type issues:        2,412 (37.2%)
+  Unnamed functions (FUN_):          223 ( 3.4%)
+  Functions with unnamed params:     12 ( 0.2%)
+  Functions with type issues:        2,406 (37.1%)
 
   Type issue breakdown:
     Wrong return type (void):          3
     Wrong return type (wide/64-bit):   2
     Missing register params:           14
-    Wrong calling convention:          58
+    Wrong calling convention:          52
     Undefined types in variables:      2274
-    Unresolved stack params:           368
+    Unresolved stack params:           339
 
 ====================================================================================================
-UNNAMED FUNCTIONS (still using FUN_XXXXXXXX)
+UNNAMED FUNCTIONS (still using FUN_XXXXXXXX or ClassName_FUN_XXXXXXXX)
 ====================================================================================================
 
 Sorted by caller count (most-referenced first = highest priority to name).
 
-  core/bugs.cpp (13 unnamed)
+  core/enemy.cpp (5 unnamed)
+    0x004a9fd0  __cdecl       18 callers
+    0x004a9880  __cdecl       14 callers
+    0x004a9930  __cdecl       1 callers
+    0x004a9a50  __cdecl       1 callers
+    0x004aa0f0  __cdecl       0 callers
+
+  core/bugs.cpp (25 unnamed)
+    0x004272f0  __cdecl       5 callers
+    0x004276c0  __cdecl       3 callers
+    0x004257f0  __cdecl       3 callers
+    0x00426420  __cdecl       3 callers
     0x00427ba0  __cdecl       2 callers
+    0x00425fe0  __cdecl       2 callers
+    0x004270f0  __cdecl       1 callers
+    0x00425660  __cdecl       1 callers
+    0x00426410  __cdecl       1 callers
+    0x004268e0  __cdecl       1 callers
+    0x00427400  __cdecl       1 callers
+    0x00425b70  __cdecl       1 callers
+    0x00425cc0  __cdecl       1 callers
     0x00427b70  __cdecl       1 callers
     0x00427b80  __cdecl       0 callers
     0x004279d0  __cdecl       0 callers
@@ -45,7 +64,58 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x00427a20  __cdecl       0 callers
     0x00427b00  __cdecl       0 callers
 
-  core/zombie.cpp (8 unnamed)
+  core/actor.cpp (1 unnamed)
+    0x0040dec0  __cdecl       5 callers
+
+  core/baron.cpp (6 unnamed)
+    0x00413f20  __cdecl       4 callers
+    0x004135a0  __cdecl       2 callers
+    0x004136b0  __cdecl       1 callers
+    0x00413a00  __cdecl       1 callers
+    0x004135e0  __cdecl       1 callers
+    0x00414090  __cdecl       0 callers
+
+  core/manpuz.cpp (16 unnamed)
+    0x0050aef0  __cdecl       4 callers
+    0x0050aee0  __cdecl       3 callers
+    0x0050a420  __cdecl       2 callers
+    0x00509b20  __cdecl       2 callers
+    0x0050a8d0  __cdecl       1 callers
+    0x00509c60  __cdecl       1 callers
+    0x00509d50  __cdecl       1 callers
+    0x00509bf0  __cdecl       1 callers
+    0x0050a610  __cdecl       1 callers
+    0x0050a1f0  __cdecl       1 callers
+    0x005098f0  __cdecl       1 callers
+    0x0050a4f0  __cdecl       1 callers
+    0x0050af00  __cdecl       1 callers
+    0x0050af80  __cdecl       1 callers
+    0x0050b9a0  __cdecl       0 callers
+    0x0050a490  __cdecl       0 callers
+
+  core/boxactor.cpp (6 unnamed)
+    0x004218d0  __cdecl       4 callers
+    0x00422d60  __cdecl       2 callers
+    0x00422390  __cdecl       2 callers
+    0x00422590  __cdecl       1 callers
+    0x004235c0  __cdecl       0 callers
+    0x004235d0  __cdecl       0 callers
+
+  core/frankgen.cpp (6 unnamed)
+    0x004d2190  __cdecl       4 callers
+    0x004d23a0  __cdecl       1 callers
+    0x004d1ec0  __cdecl       1 callers
+    0x004d1f20  __cdecl       1 callers
+    0x004d2890  __cdecl       0 callers
+    0x004d2880  __cdecl       0 callers
+
+  core/zombie.cpp (14 unnamed)
+    0x005fbd00  __cdecl       3 callers
+    0x005fca10  __cdecl       2 callers
+    0x005fbde0  __cdecl       1 callers
+    0x005fc220  __cdecl       1 callers
+    0x005fbda0  __cdecl       1 callers
+    0x005fb530  __cdecl       1 callers
     0x005f8e50  __cdecl       1 callers
     0x005f8da0  __cdecl       0 callers
     0x005fcd10  __cdecl       0 callers
@@ -55,37 +125,229 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x005fcf80  __cdecl       0 callers
     0x005fcd20  __cdecl       0 callers
 
-  core/manpuz.cpp (3 unnamed)
-    0x0050a4f0  __cdecl       1 callers
-    0x0050b9a0  __cdecl       0 callers
-    0x0050a490  __cdecl       0 callers
+  core/grave.cpp (1 unnamed)
+    0x004ee790  __cdecl       3 callers
 
-  core/charactr.cpp (5 unnamed)
-    0x0042f9c0  __cdecl       1 callers
-    0x0042f9d0  __cdecl       0 callers
-    0x0042f920  __cdecl       0 callers
-    0x0042f930  __cdecl       0 callers
-    0x0042f990  __cdecl       0 callers
+  core/waypoint.cpp (5 unnamed)
+    0x005ec640  __cdecl       3 callers
+    0x005ec320  __cdecl       3 callers
+    0x005ec4f0  __cdecl       2 callers
+    0x005ec830  __cdecl       2 callers
+    0x005ebd40  __cdecl       2 callers
 
-  core/icepick.cpp (1 unnamed)
-    0x004f8b00  __cdecl       0 callers
+  core/dracbrid.cpp (5 unnamed)
+    0x004864c0  __cdecl       2 callers
+    0x00485b20  __cdecl       1 callers
+    0x004869a0  __cdecl       1 callers
+    0x004858f0  __cdecl       1 callers
+    0x00486020  __cdecl       1 callers
 
-  core/pendulum.cpp (1 unnamed)
+  core/pendulum.cpp (3 unnamed)
+    0x00549b90  __cdecl       2 callers
+    0x005495c0  __cdecl       1 callers
     0x00549aa0  __cdecl       0 callers
 
-  core/bat.cpp (4 unnamed)
+  core/bat.cpp (5 unnamed)
+    0x00414ce0  __cdecl       2 callers
     0x00415070  __cdecl       0 callers
     0x004146f0  __cdecl       0 callers
     0x00415050  __cdecl       0 callers
     0x00415060  __cdecl       0 callers
 
-  core/mobster.cpp (3 unnamed)
+  core/ammobox.cpp (1 unnamed)
+    0x00411690  __cdecl       2 callers
+
+  core/turret.cpp (6 unnamed)
+    0x005e3560  __cdecl       2 callers
+    0x005e3280  __cdecl       2 callers
+    0x005e2d50  __cdecl       1 callers
+    0x005e3dd0  __cdecl       0 callers
+    0x005e36f0  __cdecl       0 callers
+    0x005e3720  __cdecl       0 callers
+
+  core/werewolf.cpp (3 unnamed)
+    0x005f11e0  __cdecl       2 callers
+    0x005f1230  __cdecl       1 callers
+    0x005f1e40  __cdecl       1 callers
+
+  core/scat.cpp (9 unnamed)
+    0x00558010  __cdecl       2 callers
+    0x005578e0  __cdecl       1 callers
+    0x00557d20  __cdecl       1 callers
+    0x00558720  __cdecl       1 callers
+    0x00558cf0  __cdecl       1 callers
+    0x00558060  __cdecl       1 callers
+    0x005582c0  __cdecl       1 callers
+    0x00558fd0  __cdecl       1 callers
+    0x005584a0  __cdecl       1 callers
+
+  core/tentacle.cpp (3 unnamed)
+    0x005dbb70  __cdecl       2 callers
+    0x005db900  __cdecl       1 callers
+    0x005db9d0  __cdecl       0 callers
+
+  core/lightgun.cpp (4 unnamed)
+    0x00505ac0  __cdecl       2 callers
+    0x00505a20  __cdecl       0 callers
+    0x005059c0  __cdecl       0 callers
+    0x00505b70  __cdecl       0 callers
+
+  core/health.cpp (1 unnamed)
+    0x004f1fd0  __cdecl       1 callers
+
+  core/batcreat.cpp (1 unnamed)
+    0x00415dd0  __cdecl       1 callers
+
+  core/icepick.cpp (7 unnamed)
+    0x004f8c70  __cdecl       1 callers
+    0x004f9490  __cdecl       1 callers
+    0x004f93a0  __cdecl       1 callers
+    0x004f8ad0  __cdecl       1 callers
+    0x004f8810  __cdecl       1 callers
+    0x004f8970  __cdecl       1 callers
+    0x004f8b00  __cdecl       0 callers
+
+  core/vehicle.cpp (1 unnamed)
+    0x005e8b50  __cdecl       1 callers
+
+  core/marquee.cpp (2 unnamed)
+    0x0050bec0  __cdecl       1 callers
+    0x0050bc30  __cdecl       0 callers
+
+  core/dynamite.cpp (3 unnamed)
+    0x0049cf20  __cdecl       1 callers
+    0x0049cf70  __cdecl       1 callers
+    0x0049cf90  __cdecl       1 callers
+
+  core/gargoyle.cpp (2 unnamed)
+    0x004e5530  __cdecl       1 callers
+    0x004e48a0  __cdecl       1 callers
+
+  core/spike.cpp (1 unnamed)
+    0x005b8950  __cdecl       1 callers
+
+  core/mobster.cpp (10 unnamed)
+    0x00525650  __cdecl       1 callers
+    0x00526d90  __cdecl       1 callers
+    0x00525720  __cdecl       1 callers
+    0x00527380  __cdecl       1 callers
+    0x005279f0  __cdecl       1 callers
+    0x005271c0  __cdecl       1 callers
     0x00525110  __cdecl       0 callers
+    0x00527c30  __cdecl       0 callers
     0x005250a0  __cdecl       0 callers
     0x00526b00  __cdecl       0 callers
 
-  core/imp.cpp (1 unnamed)
+  core/imp.cpp (2 unnamed)
+    0x004fab60  __cdecl       1 callers
     0x004fa900  __cdecl       0 callers
+
+  core/smiley.cpp (1 unnamed)
+    0x005a32a0  __cdecl       1 callers
+
+  core/haystack.cpp (3 unnamed)
+    0x004f13f0  __cdecl       1 callers
+    0x004f1ab0  __cdecl       1 callers
+    0x004f1970  __cdecl       1 callers
+
+  core/ghoul.cpp (1 unnamed)
+    0x004e8520  __cdecl       1 callers
+
+  core/weapon.cpp (1 unnamed)
+    0x005ee740  __cdecl       1 callers
+
+  core/moloch.cpp (2 unnamed)
+    0x005293b0  __cdecl       1 callers
+    0x00529900  __cdecl       1 callers
+
+  core/ladder.cpp (2 unnamed)
+    0x00502a70  __cdecl       1 callers
+    0x00502b80  __cdecl       1 callers
+
+  core/colonel.cpp (3 unnamed)
+    0x0043ff20  __cdecl       1 callers
+    0x00440430  __cdecl       1 callers
+    0x00440650  __cdecl       0 callers
+
+  core/crossbow.cpp (1 unnamed)
+    0x00449540  __cdecl       1 callers
+
+  core/cow.cpp (1 unnamed)
+    0x004448c0  __cdecl       1 callers
+
+  core/bride.cpp (2 unnamed)
+    0x00424600  __cdecl       1 callers
+    0x00424800  __cdecl       0 callers
+
+  core/batman.cpp (2 unnamed)
+    0x00417660  __cdecl       1 callers
+    0x004167f0  __cdecl       1 callers
+
+  core/boneguy.cpp (5 unnamed)
+    0x0041cc40  __cdecl       1 callers
+    0x0041d8a0  __cdecl       1 callers
+    0x0041b700  __cdecl       0 callers
+    0x0041b860  __cdecl       0 callers
+    0x0041b770  __cdecl       0 callers
+
+  core/lever.cpp (1 unnamed)
+    0x00504dd0  __cdecl       1 callers
+
+  core/stairs.cpp (1 unnamed)
+    0x005ba700  __cdecl       1 callers
+
+  core/tvbat.cpp (2 unnamed)
+    0x005e4d70  __cdecl       1 callers
+    0x005e3ec0  __cdecl       0 callers
+
+  core/melee.cpp (1 unnamed)
+    0x0050ebe0  __cdecl       1 callers
+
+  core/chain.cpp (5 unnamed)
+    0x0042fcc0  __cdecl       1 callers
+    0x0042fed0  __cdecl       1 callers
+    0x00431340  __cdecl       0 callers
+    0x00431350  __cdecl       0 callers
+    0x00431330  __cdecl       0 callers
+
+  core/hostage.cpp (1 unnamed)
+    0x004f5ff0  __cdecl       1 callers
+
+  core/npc.cpp (2 unnamed)
+    0x00544c50  __cdecl       1 callers
+    0x00544e10  __cdecl       0 callers
+
+  core/emitter.cpp (2 unnamed)
+    0x004a7e80  __cdecl       1 callers
+    0x004a8d20  __cdecl       1 callers
+
+  core/mimic.cpp (6 unnamed)
+    0x0051f930  __cdecl       1 callers
+    0x0051fcc0  __cdecl       1 callers
+    0x00520500  __cdecl       1 callers
+    0x005205f0  __cdecl       1 callers
+    0x0051f130  __cdecl       0 callers
+    0x00520e00  __cdecl       0 callers
+
+  core/vampboss.cpp (6 unnamed)
+    0x005e6ca0  __cdecl       1 callers
+    0x005e7410  __cdecl       1 callers
+    0x005e7320  __cdecl       1 callers
+    0x005e7480  __cdecl       1 callers
+    0x005e74c0  __cdecl       1 callers
+    0x005e7390  __cdecl       1 callers
+
+  core/cloth.cpp (1 unnamed)
+    0x0043c3e0  __cdecl       0 callers
+
+  core/tommygun.cpp (1 unnamed)
+    0x005de330  __cdecl       0 callers
+
+  core/camview.cpp (4 unnamed)
+    0x00427d60  __cdecl       0 callers
+    0x00427d20  __cdecl       0 callers
+    0x00427d70  __cdecl       0 callers
+    0x00427d50  __cdecl       0 callers
 
   core/conveyor.cpp (3 unnamed)
     0x004424a0  __cdecl       0 callers
@@ -97,60 +359,25 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x005c6950  __cdecl       0 callers
     0x005c6930  __cdecl       0 callers
 
-  core/colonel.cpp (1 unnamed)
-    0x00440650  __cdecl       0 callers
-
   core/trash.cpp (1 unnamed)
     0x005decc0  __cdecl       0 callers
-
-  core/bride.cpp (1 unnamed)
-    0x00424800  __cdecl       0 callers
-
-  core/boneguy.cpp (3 unnamed)
-    0x0041b700  __cdecl       0 callers
-    0x0041b860  __cdecl       0 callers
-    0x0041b770  __cdecl       0 callers
 
   core/teleport.cpp (1 unnamed)
     0x005da850  __cdecl       0 callers
 
-  core/tvbat.cpp (1 unnamed)
-    0x005e3ec0  __cdecl       0 callers
+  core/wateract.cpp (2 unnamed)
+    0x005eafa0  __cdecl       0 callers
+    0x005eb040  __cdecl       0 callers
 
-  core/frankgen.cpp (2 unnamed)
-    0x004d2890  __cdecl       0 callers
-    0x004d2880  __cdecl       0 callers
-
-  core/chain.cpp (3 unnamed)
-    0x00431340  __cdecl       0 callers
-    0x00431350  __cdecl       0 callers
-    0x00431330  __cdecl       0 callers
-
-  core/mimic.cpp (2 unnamed)
-    0x0051f130  __cdecl       0 callers
-    0x00520e00  __cdecl       0 callers
-
-  core/gabriela.cpp (3 unnamed)
-    0x004d29f0  __cdecl       0 callers
-    0x004d2a80  __cdecl       0 callers
-    0x004d2a30  __cdecl       0 callers
-
-  core/vampboss.cpp (1 unnamed)
-    0x005e58d0  __cdecl       0 callers
-
-  core/tbplayer.cpp (1 unnamed)
-    0x005da100  __cdecl       0 callers
+  shape/superopt.cpp (2 unnamed)
+    0x005d8630  __cdecl       0 callers
+    0x005d83d0  __cdecl       0 callers
 
 ====================================================================================================
 UNNAMED PARAMETERS (still using param_N)
 ====================================================================================================
 
 Sorted by number of unnamed parameters (most unnamed first).
-
-  CScript_getDialogDuration
-    Address: 0x0055ff00  File: core/script.cpp
-    Unnamed: param_2 (int), param_3 (char *), param_4 (char *)
-    Named:   this_ptr (CScript *)
 
   CBitmap_ctor
     Address: 0x00556a00  File: shape/quantize.cpp
@@ -162,75 +389,10 @@ Sorted by number of unnamed parameters (most unnamed first).
     Unnamed: param_2 (CVector3f *), param_3 (CVector3f *)
     Named:   this_ptr (CBoxActor *)
 
-  CDemonMission_createOneHero
-    Address: 0x00524920  File: core/mission.cpp
-    Unnamed: param_3 (int), param_4 (void *)
-    Named:   this_ptr (CDemonMission *), index (int)
-
-  CDemonSet_reinitCamera
-    Address: 0x0056b7e0  File: core/set.cpp
-    Unnamed: param_2 (uint), param_3 (uint)
-    Named:   this_ptr (CDemonSet *), screen_height (int)
-
-  CBaron
-    Address: 0x004135a0  File: core/baron.cpp
-    Unnamed: param_2 (int)
-    Named:   this_ptr (CBaron *)
-
-  CBaron
-    Address: 0x00413a00  File: core/baron.cpp
-    Unnamed: param_2 (float)
-    Named:   this_ptr (CBaron *)
-
-  CBodyPart_addFire
-    Address: 0x0041ae50  File: core/bodypart.cpp
+  CLever
+    Address: 0x00504dd0  File: core/lever.cpp
     Unnamed: param_2 (CVector3f *)
-    Named:   this_ptr (CBodyPart *)
-
-  CCharacter_findSomethingToLookAt
-    Address: 0x0042d5a0  File: core/charactr.cpp
-    Unnamed: param_3 (int)
-    Named:   this_ptr (CCharacter *), delta_time (float)
-
-  CCharacter_igniteBone
-    Address: 0x0042b5b0  File: core/charactr.cpp
-    Unnamed: param_6 (int)
-    Named:   this_ptr (CCharacter *), position (CVector3f *), fire_type (int), spread_rate (float), allow_hero (int)
-
-  CClothList
-    Address: 0x0043c3e0  File: core/cloth.cpp
-    Unnamed: param_2 (CVector3f *)
-    Named:   this_ptr (CClothList *)
-
-  CEnemy
-    Address: 0x004a9a50  File: core/enemy.cpp
-    Unnamed: param_2 (CDemonActor *)
-    Named:   this_ptr (CEnemy *)
-
-  CGhoul_canBeAttracted
-    Address: 0x004e82d0  File: core/ghoul.cpp
-    Unnamed: param_2 (CVector3f *)
-    Named:   this_ptr (CGhoul *)
-
-  CHeroPlaceholder_createHero
-    Address: 0x004f3d80  File: core/hero.cpp
-    Unnamed: param_2 (int)
-    Named:   this_ptr (CHeroPlaceholder *)
-
-  CLever_setState
-    Address: 0x00504b20  File: core/lever.cpp
-    Unnamed: param_2 (float)
     Named:   this_ptr (CLever *)
-
-  CDemonMission_addSet
-    Address: 0x00538d60  File: core/msnedit.cpp
-    Unnamed: param_2 (char *)
-    Named:   this_ptr (CDemonMission *)
-
-  CDemonMission_deleteActor
-    Address: 0x00538ea0  File: core/msnedit.cpp
-    Unnamed: param_2 (int)
-    Named:   this_ptr (CDemonMission *)
 
   CDemonMission_editActorAtIndex
     Address: 0x0053b030  File: core/msnedit.cpp
@@ -267,29 +429,9 @@ Sorted by number of unnamed parameters (most unnamed first).
     Unnamed: param_2 (void *)
     Named:   vertex_array (int *)
 
-  CStranger_tryPickupObject
-    Address: 0x005c1680  File: core/stranger.cpp
-    Unnamed: param_2 (char *)
-    Named:   this_ptr (CStranger *)
-
   FUN_005e3ec0
     Address: 0x005e3ec0  File: core/tvbat.cpp
     Unnamed: param_1 (float)
-
-  CZombie_canBeAttracted
-    Address: 0x005fc120  File: core/zombie.cpp
-    Unnamed: param_2 (CVector3f *)
-    Named:   this_ptr (CZombie *)
-
-  CZombie_getGrabbed
-    Address: 0x005fc970  File: core/zombie.cpp
-    Unnamed: param_4 (int)
-    Named:   this_ptr (CZombie *), grabber (CDemonActor *), grab_type (int)
-
-  CZombie_isGrabbable
-    Address: 0x005fc920  File: core/zombie.cpp
-    Unnamed: param_2 (CDemonActor *)
-    Named:   this_ptr (CZombie *)
 
   getSocketName
     Address: 0x005e1df0  File: support/trisock.cpp
@@ -427,7 +569,7 @@ Missing register parameters (likely wrong calling convention) (14)
     Suggested: Likely register-based calling convention
 
 --------------------------------------------------------------------------------
-Wrong calling convention (unaffected register usage) (58)
+Wrong calling convention (unaffected register usage) (52)
 --------------------------------------------------------------------------------
 
   CPackedBitmapSet_reloadStoredPBGFile
@@ -452,12 +594,6 @@ Wrong calling convention (unaffected register usage) (58)
     Address: 0x004fb250  File: engine/ini.cpp
     Evidence: unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP
     Signature: int __cdecl engine_ini_cpp_CIni_getProfileString_FUN_004fb250(CIni *this_ptr,char *section,char *key,char *default_value,char *output_buffer,int buffer_size,char *filename)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  getMRGLBounds
-    Address: 0x00528140  File: engine/model.c
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void __cdecl engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHeaderExtended *header,SMRGLModelBounds *output)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
   modelStructNotSupported
@@ -556,22 +692,10 @@ Wrong calling convention (unaffected register usage) (58)
     Signature: void __cdecl core_actor_cpp_deleteActor_FUN_00408820(CDemonActor *actor_ptr)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
-  CDemonMission_importActors
-    Address: 0x0053ccf0  File: core/msnedit.cpp
-    Evidence: unaff_EDI, unaff_EDI
-    Signature: void __cdecl core_msnedit_cpp_CDemonMission_importActors_FUN_0053ccf0(CDemonMission *this_ptr)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
   renderPerspectiveTexturedScanline
     Address: 0x004940e9  File: core/dstrender.cpp
     Evidence: unaff_EBX, unaff_ESI, unaff_EDI, unaff_ESI, unaff_EDI, unaff_ESI, unaff_EDI, unaff_EDI, unaff_ESI, unaff_EBX, unaff_EDI, unaff_EDI
     Signature: void __cdecl core_dstrender_cpp_renderPerspectiveTexturedScanline_FUN_004940e9(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  CScat_process
-    Address: 0x005571f0  File: core/scat.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void __cdecl core_scat_cpp_CScat_process_FUN_005571f0(CScat *this_ptr,float delta_time)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
   CScat
@@ -658,12 +782,6 @@ Wrong calling convention (unaffected register usage) (58)
     Signature: void __cdecl core_course_cpp_CCourse_importMatrices_FUN_00442ea0(CCourse *this_ptr,_FILE *file_handle,int count)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
-  showMainGameMenu
-    Address: 0x00512f40  File: core/menu.cpp
-    Evidence: unaff_EBX, unaff_EBX
-    Signature: int __cdecl core_menu_cpp_showMainGameMenu_FUN_00512f40(void)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
   CPathMap_checkAxisAlignedPath
     Address: 0x00546e90  File: core/path.cpp
     Evidence: unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI
@@ -674,12 +792,6 @@ Wrong calling convention (unaffected register usage) (58)
     Address: 0x004f6550  File: core/hostage.cpp
     Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
     Signature: void __cdecl core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_004f6550(CHostage *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  enterMainGameMenu
-    Address: 0x00507a50  File: core/main.c
-    Evidence: unaff_EBX, unaff_EBX
-    Signature: int __cdecl core_main_c_enterMainGameMenu_FUN_00512f40(void)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
   CLightGun
@@ -710,12 +822,6 @@ Wrong calling convention (unaffected register usage) (58)
     Address: 0x0051f2c0  File: core/mimic.cpp
     Evidence: unaff_EBX, unaff_EBX
     Signature: CMimic * __cdecl core_mimic_cpp_CMimic_dtor_FUN_0051f2c0(CMimic *this_ptr,uint flags)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  CGabriella
-    Address: 0x004d6260  File: core/gabriela.cpp
-    Evidence: unaff_EDI, unaff_EDI
-    Signature: int __cdecl core_gabriela_cpp_CGabriella_FUN_004d6260(CGabriella *this_ptr)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
   CGame_process
@@ -779,7 +885,7 @@ Wrong calling convention (unaffected register usage) (58)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
 --------------------------------------------------------------------------------
-Unresolved stack parameters (missing from signature) (368)
+Unresolved stack parameters (missing from signature) (339)
 --------------------------------------------------------------------------------
 
   CPackedBitmapSet_reload
@@ -888,12 +994,6 @@ Unresolved stack parameters (missing from signature) (368)
     Address: 0x004fbcd0  File: engine/ini.cpp
     Evidence: in_stack_ffffff98, in_stack_ffffff98
     Signature: void __cdecl engine_ini_cpp_CIniFile_getFloat_FUN_004fbcd0(CIniFile *this_ptr,char *key,float *output)
-    Suggested: Signature is missing stack parameters entirely
-
-  getMRGLBounds
-    Address: 0x00528140  File: engine/model.c
-    Evidence: in_stack_fffffea0, in_stack_fffffea0
-    Signature: void __cdecl engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHeaderExtended *header,SMRGLModelBounds *output)
     Suggested: Signature is missing stack parameters entirely
 
   CAlphaBitmap_render
@@ -1658,18 +1758,6 @@ Unresolved stack parameters (missing from signature) (368)
     Signature: int __cdecl core_bat_cpp_FUN_00415060(void)
     Suggested: Signature is missing stack parameters entirely
 
-  CGun_fire
-    Address: 0x004f0350  File: core/gun.cpp
-    Evidence: in_stack_fffffebc, in_stack_fffffebc, in_stack_fffffebc, in_stack_fffffebc, in_stack_fffffebc
-    Signature: int __cdecl core_gun_cpp_CGun_fire_FUN_004f0350(CGun *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CMobster_process
-    Address: 0x00525840  File: core/mobster.cpp
-    Evidence: in_stack_fffffe74, in_stack_fffffe78, in_stack_fffffe84, in_stack_fffffe88, in_stack_fffffe74, in_stack_fffffe84, in_stack_fffffe84, in_stack_fffffe84, in_stack_fffffe84, in_stack_fffffe84, in_stack_fffffe74, in_stack_fffffe74, in_stack_fffffe74, in_stack_fffffe78, in_stack_fffffe84, in_stack_fffffe88
-    Signature: void __cdecl core_mobster_cpp_CMobster_process_FUN_00525840(CMobster *this_ptr,float delta_time)
-    Suggested: Signature is missing stack parameters entirely
-
   FUN_00525110
     Address: 0x00525110  File: core/mobster.cpp
     Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000004, in_stack_00000004
@@ -1904,36 +1992,6 @@ Unresolved stack parameters (missing from signature) (368)
     Signature: void __cdecl core_haystack_cpp_CHaystack_FUN_004f1970(CHaystack *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
-  CMotionList_findMotionIndex
-    Address: 0x0052d460  File: core/motion.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_0000000c
-    Signature: int __cdecl core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(CMotionList *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CMotionController_advance
-    Address: 0x0052d610  File: core/motion.cpp
-    Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: int __cdecl core_motion_cpp_CMotionController_advance_FUN_0052d610(CMotionController *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CMotionList_findStateIndex
-    Address: 0x0052d4f0  File: core/motion.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_0000000c
-    Signature: int __cdecl core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(CMotionList *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CMotionController_save
-    Address: 0x0052e670  File: core/motion.cpp
-    Evidence: in_stack_0000000c, in_stack_0000000c
-    Signature: void __cdecl core_motion_cpp_CMotionController_save_FUN_0052e670(CMotionController *this_ptr,_FILE *file_handle)
-    Suggested: Signature is missing stack parameters entirely
-
-  CMotionController_advanceTween
-    Address: 0x0052e1d0  File: core/motion.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000008, in_stack_00000010, in_stack_0000000c, in_stack_0000000c, in_stack_00000010, in_stack_0000000c
-    Signature: void __cdecl core_motion_cpp_CMotionController_advanceTween_FUN_0052e1d0(CMotionController *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
   CWerewolf_process
     Address: 0x005efde0  File: core/werewolf.cpp
     Evidence: in_stack_fffffcec, in_stack_fffffcec
@@ -1962,12 +2020,6 @@ Unresolved stack parameters (missing from signature) (368)
     Address: 0x00558720  File: core/scat.cpp
     Evidence: in_stack_00000008, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_00000008, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_00000008, in_stack_0000000c
     Signature: void __cdecl core_scat_cpp_CScat_FUN_00558720(CScat *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CScat_process
-    Address: 0x005571f0  File: core/scat.cpp
-    Evidence: in_stack_ffffff78, in_stack_ffffff7c, in_stack_ffffff78, in_stack_ffffff7c
-    Signature: void __cdecl core_scat_cpp_CScat_process_FUN_005571f0(CScat *this_ptr,float delta_time)
     Suggested: Signature is missing stack parameters entirely
 
   CScat
@@ -2010,12 +2062,6 @@ Unresolved stack parameters (missing from signature) (368)
     Address: 0x005bdd20  File: core/stranger.cpp
     Evidence: in_stack_ffffff48, in_stack_ffffff48, in_stack_ffffff48, in_stack_ffffff48, in_stack_ffffff48
     Signature: void __cdecl core_stranger_cpp_CStranger_processMotionEvents_FUN_005bdd20(CStranger *this_ptr,float delta_time)
-    Suggested: Signature is missing stack parameters entirely
-
-  CStranger_updateWeaponLayerActions
-    Address: 0x005c5270  File: core/stranger.cpp
-    Evidence: in_stack_ffffffa4, in_stack_ffffffa8, in_stack_ffffffa4, in_stack_ffffffa8, in_stack_ffffffa4, in_stack_ffffffa8, in_stack_ffffffa4, in_stack_ffffffa8
-    Signature: void __cdecl core_stranger_cpp_CStranger_updateWeaponLayerActions_FUN_005c5270(CStranger *this_ptr,float delta_time)
     Suggested: Signature is missing stack parameters entirely
 
   FUN_005c6930
@@ -2240,52 +2286,16 @@ Unresolved stack parameters (missing from signature) (368)
     Signature: CVector3f * __cdecl core_boneguy_cpp_FUN_0041b770(void)
     Suggested: Signature is missing stack parameters entirely
 
-  FUN_0042f9d0
-    Address: 0x0042f9d0  File: core/charactr.cpp
-    Evidence: in_stack_00000004, in_stack_00000004
-    Signature: int __cdecl core_charactr_cpp_FUN_0042f9d0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_0042f920
-    Address: 0x0042f920  File: core/charactr.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008
-    Signature: void __cdecl core_charactr_cpp_FUN_0042f920(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_0042f930
-    Address: 0x0042f930  File: core/charactr.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_00000008, in_stack_00000004
-    Signature: void __cdecl core_charactr_cpp_FUN_0042f930(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_0042f9c0
-    Address: 0x0042f9c0  File: core/charactr.cpp
-    Evidence: in_stack_00000004, in_stack_00000004
-    Signature: int __cdecl core_charactr_cpp_FUN_0042f9c0(void)
-    Suggested: Signature is missing stack parameters entirely
-
   CCharacter_detachBodyPart
     Address: 0x0042bcc0  File: core/charactr.cpp
     Evidence: in_stack_00000010, in_stack_00000010
     Signature: void __cdecl core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0(CCharacter *this_ptr,int part_index)
     Suggested: Signature is missing stack parameters entirely
 
-  FUN_0042f990
-    Address: 0x0042f990  File: core/charactr.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_charactr_cpp_FUN_0042f990(void)
-    Suggested: Signature is missing stack parameters entirely
-
   CCharacter_updateCarriedObjects
     Address: 0x0042d090  File: core/charactr.cpp
     Evidence: in_stack_fffffd80, in_stack_fffffd80, in_stack_fffffd80
     Signature: void __cdecl core_charactr_cpp_CCharacter_updateCarriedObjects_FUN_0042d090(CCharacter *this_ptr,float delta_time)
-    Suggested: Signature is missing stack parameters entirely
-
-  CLever
-    Address: 0x00504dd0  File: core/lever.cpp
-    Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: CVector3f * __cdecl core_lever_cpp_CLever_FUN_00504dd0(CLever *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
   CTrigger_evaluateTriggerCondition
@@ -2534,70 +2544,16 @@ Unresolved stack parameters (missing from signature) (368)
     Signature: int __cdecl core_waypoint_cpp_CWayPoint_FUN_005ebd40(CWayPoint *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
-  CGabriella
-    Address: 0x004d5550  File: core/gabriela.cpp
-    Evidence: in_stack_00000008, in_stack_fffffc54, in_stack_fffffc58, in_stack_00000008, in_stack_fffffc54, in_stack_fffffc58, in_stack_fffffc54, in_stack_fffffc58
-    Signature: void __cdecl core_gabriela_cpp_CGabriella_FUN_004d5550(CGabriella *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CGabriella
-    Address: 0x004d6260  File: core/gabriela.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_00000008
-    Signature: int __cdecl core_gabriela_cpp_CGabriella_FUN_004d6260(CGabriella *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CGabriella
-    Address: 0x004d6f80  File: core/gabriela.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000014, in_stack_00000018, in_stack_00000014, in_stack_0000000c, in_stack_00000008, in_stack_0000000c, in_stack_00000014, in_stack_00000010, in_stack_00000018, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c
-    Signature: void __cdecl core_gabriela_cpp_CGabriella_FUN_004d6f80(CGabriella *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CGabriella
+  CGabriella_processMotionEvents
     Address: 0x004d4890  File: core/gabriela.cpp
-    Evidence: in_stack_00000008, in_stack_ffffff58, in_stack_ffffff58, in_stack_ffffff58, in_stack_ffffff58, in_stack_00000008
-    Signature: void __cdecl core_gabriela_cpp_CGabriella_FUN_004d4890(CGabriella *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CGabriella
-    Address: 0x004d4cf0  File: core/gabriela.cpp
-    Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: float * __cdecl core_gabriela_cpp_CGabriella_FUN_004d4cf0(CGabriella *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CGabriella
-    Address: 0x004d6540  File: core/gabriela.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_gabriela_cpp_CGabriella_FUN_004d6540(CGabriella *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_004d29f0
-    Address: 0x004d29f0  File: core/gabriela.cpp
-    Evidence: in_stack_0000000c, in_stack_00000010, in_stack_00000010, in_stack_00000010, in_stack_0000000c, in_stack_0000000c
-    Signature: float __cdecl core_gabriela_cpp_FUN_004d29f0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  CGabriella
-    Address: 0x004d6d40  File: core/gabriela.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_0000000c
-    Signature: void __cdecl core_gabriela_cpp_CGabriella_FUN_004d6d40(CGabriella *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_004d2a30
-    Address: 0x004d2a30  File: core/gabriela.cpp
-    Evidence: in_stack_0000000c, in_stack_00000010, in_stack_0000000c, in_stack_00000010, in_stack_00000010, in_stack_0000000c
-    Signature: float __cdecl core_gabriela_cpp_FUN_004d2a30(void)
+    Evidence: in_stack_ffffff58, in_stack_ffffff58, in_stack_ffffff58, in_stack_ffffff58
+    Signature: void __cdecl core_gabriela_cpp_CGabriella_processMotionEvents_FUN_004d4890(CGabriella *this_ptr,float delta_time)
     Suggested: Signature is missing stack parameters entirely
 
   CVampireBoss
     Address: 0x005e6ca0  File: core/vampboss.cpp
     Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
     Signature: void __cdecl core_vampboss_cpp_CVampireBoss_FUN_005e6ca0(CVampireBoss *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005e58d0
-    Address: 0x005e58d0  File: core/vampboss.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: float __cdecl core_vampboss_cpp_FUN_005e58d0(void)
     Suggested: Signature is missing stack parameters entirely
 
   CGame_processHotkeys
@@ -2622,12 +2578,6 @@ Unresolved stack parameters (missing from signature) (368)
     Address: 0x004d7fa0  File: core/game.cpp
     Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000014, in_stack_00000014, in_stack_00000014, in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_0000000c, in_stack_00000004, in_stack_00000014, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000010
     Signature: void __cdecl core_game_cpp_drawHealthBar_FUN_004d7fa0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  CGame_showChapterSelect
-    Address: 0x004e1cb0  File: core/game.cpp
-    Evidence: in_stack_fffff914, in_stack_fffff914, in_stack_fffff914, in_stack_fffff914, in_stack_fffff914, in_stack_fffff914, in_stack_fffff914, in_stack_fffff914, in_stack_fffff914
-    Signature: void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004e1cb0(CGame *this_ptr,int unknown)
     Suggested: Signature is missing stack parameters entirely
 
   CGame_calculateIrisFadeCenter
@@ -2694,12 +2644,6 @@ Unresolved stack parameters (missing from signature) (368)
     Address: 0x004dc370  File: core/game.cpp
     Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_0000000c, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004
     Signature: void __cdecl core_game_cpp_dampControlAxis_FUN_004dc370(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005da100
-    Address: 0x005da100  File: core/tbplayer.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_0000000c, in_stack_00000004, in_stack_00000010
-    Signature: void __cdecl core_tbplayer_cpp_FUN_005da100(void)
     Suggested: Signature is missing stack parameters entirely
 
   createBodyPart
@@ -2810,12 +2754,6 @@ Unresolved stack parameters (missing from signature) (368)
     Signature: int __cdecl shape_design_c_polygonToolModeManager_FUN_00464c90(int input_parameter)
     Suggested: Signature is missing stack parameters entirely
 
-  loadModelBinary
-    Address: 0x00458170  File: shape/design.c
-    Evidence: in_stack_fffffe64, in_stack_fffffe64
-    Signature: int __cdecl shape_design_c_loadModelBinary_FUN_00458170(char *filename)
-    Suggested: Signature is missing stack parameters entirely
-
   sampleAndFilterPixel
     Address: 0x0046ae20  File: shape/design.c
     Evidence: in_stack_ffffff98, in_stack_ffffff98, in_stack_ffffff98, in_stack_ffffff98, in_stack_ffffff98
@@ -2910,12 +2848,6 @@ Unresolved stack parameters (missing from signature) (368)
     Address: 0x0045df60  File: shape/design.c
     Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000010
     Signature: void __cdecl shape_design_c_createQuadPolygon_FUN_0045df60(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  CDSEModel_fitToExistingBIN
-    Address: 0x0048fed0  File: shape/dsemodel.cpp
-    Evidence: in_stack_ffffff38, in_stack_ffffff38
-    Signature: int __cdecl shape_dsemodel_cpp_CDSEModel_fitToExistingBIN_FUN_0048fed0(CDSEModel *this_ptr,char *filename)
     Suggested: Signature is missing stack parameters entirely
 
   CEditorTools_showDirectoryBrowser
@@ -3409,7 +3341,7 @@ Undefined types in variables (2274)
     Locals:  local_13c (undefined1), local_138 (undefined4), local_108 (undefined4), local_104 (undefined4), local_100 (undefined1), local_f4 (undefined4), local_f0 (undefined4), local_ec (undefined4), local_e8 (undefined4), local_e4 (undefined4), local_e0 (undefined4), local_dc (undefined1), local_d8 (undefined4), local_d0 (undefined1), local_cc (undefined4), local_c4 (undefined4), local_c0 (undefined4), local_bc (undefined4), local_b8 (undefined1), local_b4 (undefined4), local_ac (undefined1), local_a0 (undefined4), local_9c (undefined4), local_98 (undefined4), local_94 (undefined4), local_90 (undefined4), local_8c (undefined4), local_88 (undefined4), local_84 (undefined4), local_80 (undefined4), local_7c (undefined4), local_78 (undefined4), local_74 (undefined4), local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined1), local_60 (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined1), local_40 (undefined1), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined1)
     Suggested: Resolve undefined types to concrete types
 
-  CGabriella
+  CGabriella_updateWeaponAndAimAnimation
     Address: 0x004d4d80  File: core/gabriela.cpp
     Locals:  local_200 (undefined4), local_1f8 (undefined4), local_1f4 (undefined1), local_1e4 (undefined1), local_1d4 (undefined1), local_1c4 (undefined1), local_1b4 (undefined1), local_1a4 (undefined1), local_194 (undefined1), local_184 (undefined1), local_174 (undefined1), local_164 (undefined1), local_154 (undefined1), local_144 (undefined1), local_134 (undefined1), local_124 (undefined1), local_114 (undefined1), local_104 (undefined1), local_f4 (undefined1), local_e4 (undefined1), local_d4 (undefined1), local_c4 (undefined1), local_b4 (undefined1), local_a4 (undefined1), local_94 (undefined1), local_84 (undefined4), local_80 (undefined4), local_7c (undefined4), local_78 (undefined4), local_74 (undefined4), local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_58 (undefined8), local_50 (undefined4), local_4c (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined1)
     Suggested: Resolve undefined types to concrete types
@@ -4009,7 +3941,7 @@ Undefined types in variables (2274)
     Locals:  local_88 (undefined4), local_84 (undefined4), local_80 (undefined8), local_78 (undefined4), local_74 (undefined4), local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CGabriella
+  CGabriella_findAndPickupNearbyObject
     Address: 0x004d5870  File: core/gabriela.cpp
     Locals:  local_bc (undefined1), local_b0 (undefined4), local_ac (undefined4), local_a8 (undefined4), local_a4 (undefined4), local_a0 (undefined4), local_9c (undefined4), local_98 (undefined4), local_94 (undefined4), local_90 (undefined4), local_8c (undefined4), local_88 (undefined4), local_84 (undefined4), local_80 (undefined1), local_74 (undefined1), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_38 (undefined1), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -4079,14 +4011,14 @@ Undefined types in variables (2274)
     Locals:  local_80 (undefined4), local_7c (undefined4), local_78 (undefined1), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CGabriella
-    Address: 0x004d5550  File: core/gabriela.cpp
-    Locals:  local_3ac (undefined1), local_37c (undefined1), local_34c (undefined1), local_31c (undefined1), local_2ec (undefined1), local_2bc (undefined1), local_28c (undefined1), local_25c (undefined1), local_22c (undefined1), local_1fc (undefined1), local_1cc (undefined1), local_19c (undefined1), local_16c (undefined1), local_13c (undefined1), local_10c (undefined1), local_dc (undefined1), local_ac (undefined1), local_7c (undefined1), local_4c (undefined1), local_40 (undefined1), local_34 (undefined1), local_2c (undefined4), local_28 (undefined1), local_14 (undefined4), local_10 (undefined1)
-    Suggested: Resolve undefined types to concrete types
-
   CGabriella_getCarryObjToBodyXForm
     Address: 0x004d7120  File: core/gabriela.cpp
     Locals:  local_160 (undefined1), local_154 (undefined4), local_144 (undefined4), local_134 (undefined4), local_a0 (undefined1), local_7c (undefined4), local_78 (undefined4), local_74 (undefined4), local_70 (undefined1), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CGabriella_updateWeaponPosition
+    Address: 0x004d5550  File: core/gabriela.cpp
+    Locals:  local_3ac (undefined1), local_37c (undefined1), local_34c (undefined1), local_31c (undefined1), local_2ec (undefined1), local_2bc (undefined1), local_28c (undefined1), local_25c (undefined1), local_22c (undefined1), local_1fc (undefined1), local_1cc (undefined1), local_19c (undefined1), local_16c (undefined1), local_13c (undefined1), local_10c (undefined1), local_dc (undefined1), local_ac (undefined1), local_7c (undefined1), local_4c (undefined1), local_40 (undefined1), local_34 (undefined1), local_2c (undefined4), local_28 (undefined1), local_14 (undefined4), local_10 (undefined1)
     Suggested: Resolve undefined types to concrete types
 
   CGame_loadGame
@@ -4159,7 +4091,7 @@ Undefined types in variables (2274)
     Locals:  local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CGabriella
+  CGabriella_processAI
     Address: 0x004d4190  File: core/gabriela.cpp
     Locals:  local_12c (undefined4), local_128 (undefined8), local_120 (undefined4), local_11c (undefined4), local_fc (undefined1), local_e4 (undefined1), local_c0 (undefined1), local_bc (undefined4), local_b4 (undefined4), local_b0 (undefined4), local_ac (undefined4), local_9c (undefined4), local_98 (undefined4), local_94 (undefined4), local_84 (undefined4), local_80 (undefined4), local_7c (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -4224,7 +4156,7 @@ Undefined types in variables (2274)
     Locals:  local_98 (undefined4), local_94 (undefined4), local_90 (undefined4), local_8c (undefined1), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined1), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CGabriella
+  CGabriella_tryClimbLadder
     Address: 0x004d5c60  File: core/gabriela.cpp
     Locals:  local_a0 (undefined8), local_98 (undefined8), local_90 (undefined4), local_8c (undefined4), local_88 (undefined4), local_84 (undefined4), local_80 (undefined4), local_7c (undefined4), local_78 (undefined1), local_6c (undefined1), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined1), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined1), local_30 (undefined1), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -5129,7 +5061,7 @@ Undefined types in variables (2274)
     Locals:  local_6c (undefined1), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined1), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined4), local_c (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CGabriella
+  CGabriella_processMotionEvents
     Address: 0x004d4890  File: core/gabriela.cpp
     Locals:  local_a0 (undefined1), local_9c (undefined4), local_84 (undefined4), local_80 (undefined4), local_7c (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined1), local_58 (undefined1), local_40 (undefined1), local_34 (undefined1), local_28 (undefined1), local_1c (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -5349,7 +5281,7 @@ Undefined types in variables (2274)
     Locals:  local_b0 (undefined4), local_ac (undefined1), local_84 (undefined1), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_48 (undefined1), local_3c (undefined4), local_38 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CGabriella
+  CGabriella_updateAimTracking
     Address: 0x004d6540  File: core/gabriela.cpp
     Locals:  local_13c (undefined4), local_138 (undefined4), local_134 (undefined1), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -5729,7 +5661,7 @@ Undefined types in variables (2274)
     Locals:  local_58 (undefined8), local_50 (undefined1), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined1), local_20 (undefined8), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CGabriella
+  CGabriella_binarySearchClavicleBlend
     Address: 0x004d6f80  File: core/gabriela.cpp
     Locals:  local_1b48 (undefined4), local_1b44 (undefined1), local_a8 (undefined1), local_78 (undefined1), local_48 (undefined1), local_3c (undefined1), local_30 (undefined1), local_2c (undefined4), local_24 (undefined1), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -8064,7 +7996,7 @@ Undefined types in variables (2274)
     Locals:  local_60 (undefined4), local_54 (undefined4), local_48 (undefined4), local_40 (undefined1), local_18 (undefined1)
     Suggested: Resolve undefined types to concrete types
 
-  CGabriella
+  CGabriella_getTorsoCenterPosition
     Address: 0x004d4cf0  File: core/gabriela.cpp
     Locals:  local_30 (undefined1), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined1)
     Suggested: Resolve undefined types to concrete types
@@ -8634,7 +8566,7 @@ Undefined types in variables (2274)
     Locals:  local_1c (undefined8), local_14 (undefined8), local_c (undefined4), local_8 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CGabriella
+  CGabriella_updateClavicleCollisionAvoidance
     Address: 0x004d6d40  File: core/gabriela.cpp
     Locals:  local_50 (undefined1), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -9364,14 +9296,14 @@ Undefined types in variables (2274)
     Locals:  local_c (undefined4), local_8 (undefined4), local_4 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_0042f930
-    Address: 0x0042f930  File: core/charactr.cpp
-    Locals:  local_10 (undefined4), local_c (undefined4), local_8 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
   clampNormalizedAngle
     Address: 0x00428670  File: core/charactr.cpp
     Locals:  local_c (undefined4), local_8 (undefined4), local_4 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  projectPointToVertex
+    Address: 0x0042f930  File: core/charactr.cpp
+    Locals:  local_10 (undefined4), local_c (undefined4), local_8 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   drawVertexMarkerAtWorldPos
@@ -9914,7 +9846,7 @@ Undefined types in variables (2274)
     Locals:  local_18 (undefined4), local_14 (undefined4), local_10 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_005e58d0
+  clampAngle
     Address: 0x005e58d0  File: core/vampboss.cpp
     Locals:  local_c (undefined4), local_8 (undefined4), local_4 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -10504,13 +10436,13 @@ Undefined types in variables (2274)
     Locals:  local_104 (undefined1), local_103 (undefined1)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_0042f990
-    Address: 0x0042f990  File: core/charactr.cpp
+  clampFloat
+    Address: 0x00428620  File: core/charactr.cpp
     Locals:  local_8 (undefined4), local_4 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  clampFloat
-    Address: 0x00428620  File: core/charactr.cpp
+  getTranslationMatrix
+    Address: 0x0042f990  File: core/charactr.cpp
     Locals:  local_8 (undefined4), local_4 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
@@ -10665,7 +10597,7 @@ Undefined types in variables (2274)
     Locals:  local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_004d2a30
+  flashlightBlendWeightCallback
     Address: 0x004d2a30  File: core/gabriela.cpp
     Locals:  local_10 (undefined4), local_c (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -12515,23 +12447,23 @@ Undefined types in variables (2274)
     Locals:  local_34 (undefined1)
     Suggested: Resolve undefined types to concrete types
 
-  CGabriella
+  CGabriella_getFlashlightMinAngle
     Address: 0x004d4c90  File: core/gabriela.cpp
     Locals:  local_8 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CGabriella
+  CGabriella_scoreTargetVisibility
     Address: 0x004d6260  File: core/gabriela.cpp
     Locals:  local_f8 (undefined1)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_004d29f0
-    Address: 0x004d29f0  File: core/gabriela.cpp
+  aimRotationBlendWeightCallback
+    Address: 0x004d2a80  File: core/gabriela.cpp
     Locals:  local_4 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_004d2a80
-    Address: 0x004d2a80  File: core/gabriela.cpp
+  weaponDrawBlendWeightCallback
+    Address: 0x004d29f0  File: core/gabriela.cpp
     Locals:  local_4 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
