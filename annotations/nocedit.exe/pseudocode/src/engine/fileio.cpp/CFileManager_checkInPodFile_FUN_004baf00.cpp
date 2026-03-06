@@ -90,7 +90,7 @@ int __cdecl engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00(CFileMana
   if (0 < local_2600.file_count) {
     local_2c = 0;
     do {
-      puVar7 = (uint *)((int)&(local_2600.directory_entries)->name_or_offset + local_2c);
+      puVar7 = (uint *)((int)&(local_2600.directory_entries)->name + local_2c);
       pSVar9 = &local_14c8;
       pcVar8 = (char *)*puVar7;
       do {
@@ -175,7 +175,7 @@ int __cdecl engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00(CFileMana
     pcVar8 = pSVar11->found_path;
     pSVar11 = pSVar10;
   } while (*pcVar8 != '\0');
-  pcVar8 = (char *)((int)&pSVar10[-1].container_size + 3);
+  pcVar8 = (char *)((int)&pSVar10[-1].container_timestamp + 3);
   do {
     cVar1 = pSVar9->found_path[0];
     *pcVar8 = cVar1;

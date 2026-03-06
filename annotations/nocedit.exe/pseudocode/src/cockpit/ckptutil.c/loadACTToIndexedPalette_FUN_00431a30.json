@@ -1,29 +1,22 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 23,
-        "line": 30,
-        "message": "use of undeclared identifier 'stack0xfffffff4'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 53,
-    "complexity_score": 37,
+    "complexity_score": 39,
     "cross_reference_count": 4,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 22,
+    "pseudocode_lines": 24,
     "suspect_count": 1,
     "suspect_types": [
-      "stack_ref"
+      "warning_unmapped_variable"
     ],
-    "total_lines": 75
+    "total_lines": 77
   },
   "cross_references": [
     {
@@ -41,7 +34,7 @@
     {
       "addr": "0054bb40",
       "from_addr": "0054bc50",
-      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_loadPBGFile_FUN_0054bb40",
+      "name": "cockpit_pkbitmap.cpp_loadPBGFile_FUN_0054bb40",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -61,7 +54,7 @@
     ],
     "convention": "__cdecl",
     "name": "cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_00431a30",
-    "signature": "void __cdecl cockpit_ckptutil_c_loadACTToIndexedPalette_FUN_00431a30(char *filename,char *output_palette)"
+    "signature": "void __cdecl cockpit_ckptutil_c_loadACTToIndexedPalette_FUN_00431a30(char *filename,uchar *output_palette)"
   },
   "function_calls": [
     {
@@ -102,7 +95,7 @@
       {
         "call_addr": "0054bc50",
         "call_type": "direct",
-        "caller": "cockpit_pkbitmap.cpp_CPackedBitmap_loadPBGFile_FUN_0054bb40",
+        "caller": "cockpit_pkbitmap.cpp_loadPBGFile_FUN_0054bb40",
         "estimated_params": 2,
         "instructions_analyzed": 6,
         "reg_params": [],
@@ -187,8 +180,8 @@
         "is_param": false,
         "name": "local_c",
         "offset": -12,
-        "size": 4,
-        "type": "undefined4"
+        "size": 1,
+        "type": "uchar"
       },
       {
         "is_param": true,
@@ -202,18 +195,18 @@
         "name": "output_palette",
         "offset": 8,
         "size": 4,
-        "type": "char *"
+        "type": "uchar *"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Direct stack address reference",
-      "line": 23,
-      "match": "&stack0xfffffff4",
+      "description": "Variable defined which should be unmapped",
+      "line": 2,
+      "match": "WARNING: Variable defined which should be unmapped",
       "severity": "moderate",
-      "text": "} while (pbVar4 != &stack0xfffffff4);",
-      "type": "stack_ref"
+      "text": "/* WARNING: Variable defined which should be unmapped: local_c */",
+      "type": "warning_unmapped_variable"
     }
   ]
 }

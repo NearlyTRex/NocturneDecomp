@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SMRGLHeaderExtended * __cdecl engine_boss_c_modelStructNotSupported_FUN_0041dbb0(SMRGLHeaderExtended *header)
+; void __cdecl engine_boss_c_modelStructNotSupported_FUN_0041dbb0(SMRGLHeaderExtended *mrgl_data)
 ;
 ; Parameters:
-; SMRGLHeaderExtended * Stack[0x4]:4   header
+; SMRGLHeaderExtended * Stack[0x4]:4   mrgl_data
 ;
 ; XREF[1]:
 ;   engine_model.c_freeMRGLData_FUN_005280b0 at 005280ca

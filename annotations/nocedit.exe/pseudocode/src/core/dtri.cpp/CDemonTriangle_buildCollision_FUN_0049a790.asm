@@ -9,18 +9,17 @@
 ; CVector3f *      Stack[0xc]:4   vertex2
 ; CVector3f *      Stack[0x10]:4   vertex3
 ;
-; XREF[11]:
+; XREF[10]:
 ;   core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_004781d0 at 004783a1
 ;   core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00478950 at 00478b6f
 ;   core_dtrace.cpp_CDemonRaytrace_addTriangle_FUN_00495100 at 0049512a
-;   core_dtri.cpp_buildClipTriangleFan_FUN_0049cb5a at 0049cb7e
 ;   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0 at 00572003
 ;   core_setcolid.cpp_CDemonSet_testOBBCylinderCollision_FUN_00573140 at 00573201
 ;   core_setcolid.cpp_rayTestQuadFloor_FUN_005715d0 at 005715ef
 ;   core_setcolid.cpp_testCylinderQuadCollision_FUN_005730d0 at 005730eb
 ;   core_skeleton.cpp_CDeformableModel_exactRayTrace_FUN_0059cba0 at 0059cd14
 ;   core_stairs.cpp_CStairs_FUN_005ba700 at 005ba811
-;   ... and 1 more
+;   core_wateract.cpp_CWaterActor_customRayIntersect_FUN_005eb740 at 005eb7ee
 ;
 ; Called Functions:
 ;   core_dtri.cpp_CDemonTriangle_calculateData_FUN_0049a640

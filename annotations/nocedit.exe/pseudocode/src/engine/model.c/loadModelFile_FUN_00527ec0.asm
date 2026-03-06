@@ -240,7 +240,7 @@ section .text
         ;   XREF to: 00527eee (CONDITIONAL_JUMP)  ; LAB_00527eee
     PUSH EBX                            ; 00528092
     CALL engine_boss.c_modelStructNotSupported_FUN_0041db80 ; 00528093
-        ;   XREF to: 0041db80 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_boss.c_modelStructNotSupported_FUN_0041db80(SMRGLHeaderExtended * header)
+        ;   XREF to: 0041db80 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_boss.c_modelStructNotSupported_FUN_0041db80(char * filename)
     ADD ESP,0x4                         ; 00528098
     ADD ESP,0x50                        ; 0052809b
     POP EBP                             ; 0052809e

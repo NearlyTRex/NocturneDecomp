@@ -21,8 +21,8 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0(CDemo
   byte bVar8;
   bool bVar9;
   int aiStackY_1048 [1016];
-  CVector3i *in_stack_ffffffa0;
-  CVector3i *local_54;
+  CVector3i local_60;
+  int local_54;
   int local_50 [4];
   char (*local_40) [320];
   int (*local_3c) [320];
@@ -92,15 +92,15 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0(CDemo
                      pCVar5->x * (float)g_CoronaCameraRotationMatrix.m[0].z +
                      pCVar5->y * (float)g_CoronaCameraRotationMatrix.m[1].z)) {
             core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0
-                      (&g_CurrentLightForCorona->base,local_1c,in_stack_ffffffa0);
-            local_54 = in_stack_ffffffa0;
-            local_50[(uint)bVar8 * -2] = *(int *)(&stack0xffffffa4 + (uint)bVar8 * -8);
+                      (&g_CurrentLightForCorona->base,local_1c,&local_60);
+            local_54 = local_60.x;
+            local_50[(uint)bVar8 * -2] = *(int *)((int)&local_60 + (uint)bVar8 * -8 + 4);
             local_50[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
-                 *(int *)(&stack0xffffffa8 + (uint)bVar8 * -8 + (uint)bVar8 * -8);
+                 *(int *)((int)&local_60 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
             if ((0 < local_50[1]) &&
                ((uVar2 = (uint)g_CurrentLightForCorona->shadow_depth_buffer
                                [(local_50[0] >> 0x10) * g_CurrentLightForCorona->shadow_map_width +
-                                ((int)local_54 >> 0x10)], (int)uVar2 < g_CoronaMaxDepth &&
+                                (local_54 >> 0x10)], (int)uVar2 < g_CoronaMaxDepth &&
                 (local_50[1] < (int)(uVar2 + 0x80))))) {
               *local_14 = *local_14 +
                           (char)((int)((g_CoronaMaxDepth - uVar2) *
@@ -110,7 +110,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0(CDemo
                                               ((byte)g_CurrentLightForCorona->shadow_y_shift & 0x1f)
                                               ) << ((byte)g_CurrentLightForCorona->texture_row_shift
                                                    & 0x1f)) +
-                                             ((int)local_54 >>
+                                             (local_54 >>
                                               ((byte)g_CurrentLightForCorona->shadow_x_shift & 0x1f)
                                              & g_CurrentLightForCorona->texture_coord_mask)]) >>
                                 ((byte)g_CoronaDepthShift & 0x1f));

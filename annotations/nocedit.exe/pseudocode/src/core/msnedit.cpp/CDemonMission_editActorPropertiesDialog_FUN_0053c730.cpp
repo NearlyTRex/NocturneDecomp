@@ -15,6 +15,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_editActorPropertiesDialog_FUN_0053c7
   int iVar4;
   char *pcVar5;
   byte bVar6;
+  uint window_flags;
   CPickList CStack_540;
   char acStack_198 [300];
   char local_6c [100];
@@ -49,10 +50,10 @@ void __cdecl core_msnedit_cpp_CDemonMission_editActorPropertiesDialog_FUN_0053c7
       }
       _sprintf
                 (acStack_198,"Edit %s properties",this_ptr->selected_actor);
-      iVar4 = 0;
+      window_flags = 0;
       iVar2 = shape_edittool_cpp_CStrList_findByFirstField_FUN_004a3070(&CStack_540.base,local_6c);
       iVar2 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                        (&CStack_540,acStack_198,iVar2,iVar4);
+                        (&CStack_540,acStack_198,iVar2,window_flags);
       if (iVar2 < 0) break;
       pcVar5 = local_6c;
       pcVar3 = g_MsnEditPropertyList.properties[iVar2].name;

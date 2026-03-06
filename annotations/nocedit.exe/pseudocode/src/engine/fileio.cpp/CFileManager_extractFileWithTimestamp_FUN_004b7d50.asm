@@ -1,17 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_fileio_cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50(CFileManager *this_ptr,_FILE *source_file,char *dest_filename,char *name_or_offset,int file_size,int file_offset,int checksum,int timestamp)
+; int __cdecl engine_fileio_cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50(CFileManager *this_ptr,_FILE *source_file,char *dest_filename,int file_size,int file_offset,char *timestamp_source,int checksum)
 ;
 ; Parameters:
 ; CFileManager *   Stack[0x4]:4   this_ptr
 ; _FILE *          Stack[0x8]:4   source_file
 ; char *           Stack[0xc]:4   dest_filename
-; char *           Stack[0x10]:4   name_or_offset
-; int              Stack[0x14]:4   file_size
-; int              Stack[0x18]:4   file_offset
+; int              Stack[0x10]:4   file_size
+; int              Stack[0x14]:4   file_offset
+; char *           Stack[0x18]:4   timestamp_source
 ; int              Stack[0x1c]:4   checksum
-; int              Stack[0x20]:4   timestamp
 ; Local Variables:
 ; undefined1       Stack[-0x114]:1  local_114
 ; undefined4       Stack[-0x14]:4  local_14

@@ -2,11 +2,11 @@
 // Address: 00470060
 // Address Range: [[00470060, 0047019f]]
 // Convention: __cdecl
-// Signature: CDemonFilter * __cdecl core_dfilter_cpp_CFilterCache_getFilter_FUN_00470060(CFilterCache *this_ptr,char *filter_name,char *filter_filename,int enable_init)
+// Signature: CDemonFilter * __cdecl core_dfilter_cpp_CFilterCache_getFilter_FUN_00470060(CFilterCache *this_ptr,char *filter_name,int blend_filter)
 
 #include "nocturne.h"
 
-CDemonFilter * __cdecl core_dfilter_cpp_CFilterCache_getFilter_FUN_00470060(CFilterCache *this_ptr,char *filter_name,char *filter_filename,int enable_init)
+CDemonFilter * __cdecl core_dfilter_cpp_CFilterCache_getFilter_FUN_00470060(CFilterCache *this_ptr,char *filter_name,int blend_filter)
 
 {
   char cVar1;
@@ -58,7 +58,7 @@ CDemonFilter * __cdecl core_dfilter_cpp_CFilterCache_getFilter_FUN_00470060(CFil
     core_main_c_displayErrorAndQuit_FUN_00506f10("CFilterCache::getFilter - Out of memory");
   }
   core_dfilter_cpp_CDemonFilter_load_FUN_004702f0(this_ptr->filters[iVar4],filter_name);
-  if (filter_filename != (char *)0x0) {
+  if (blend_filter != 0) {
     core_dfilter_cpp_CDemonFilter_init_FUN_004705a0(this_ptr->filters[iVar4],1.333,1);
   }
   return this_ptr->filters[iVar4];

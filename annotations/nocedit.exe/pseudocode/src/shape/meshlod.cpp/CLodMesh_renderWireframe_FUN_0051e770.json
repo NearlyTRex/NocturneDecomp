@@ -6,19 +6,20 @@
   },
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 144,
+    "complexity_score": 166,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 59,
-    "suspect_count": 7,
+    "pseudocode_lines": 56,
+    "suspect_count": 9,
     "suspect_types": [
       "byvalue_struct_passing",
       "pointer_cast",
-      "warning_unmapped_variable"
+      "stack_param",
+      "stack_ref"
     ],
-    "total_lines": 136
+    "total_lines": 133
   },
   "cross_references": [
     {
@@ -113,26 +114,12 @@
     "pcode_op_count": 382
   },
   "stack_frame": {
-    "frame_size": 132,
-    "local_size": 128,
+    "frame_size": 36,
+    "local_size": 32,
     "param_offset": 4,
     "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
-      {
-        "is_param": false,
-        "name": "local_7c",
-        "offset": -124,
-        "size": 48,
-        "type": "SRenderVertex"
-      },
-      {
-        "is_param": false,
-        "name": "local_4c",
-        "offset": -76,
-        "size": 48,
-        "type": "SRenderVertex"
-      },
       {
         "is_param": false,
         "name": "local_1c",
@@ -189,52 +176,68 @@
   },
   "suspects": [
     {
-      "description": "Variable defined which should be unmapped",
-      "line": 2,
-      "match": "WARNING: Variable defined which should be unmapped",
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_ffffff84",
       "severity": "moderate",
-      "text": "/* WARNING: Variable defined which should be unmapped: local_7c */",
-      "type": "warning_unmapped_variable"
+      "text": "SRenderVertex in_stack_ffffff84;",
+      "type": "stack_param"
     },
     {
-      "description": "Variable defined which should be unmapped",
-      "line": 3,
-      "match": "WARNING: Variable defined which should be unmapped",
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_ffffffb4",
       "severity": "moderate",
-      "text": "/* WARNING: Variable defined which should be unmapped: local_4c */",
-      "type": "warning_unmapped_variable"
+      "text": "SRenderVertex in_stack_ffffffb4;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 35,
+      "match": "&stack0xffffffb4",
+      "severity": "moderate",
+      "text": "piVar8 = (int *)&stack0xffffffb4;",
+      "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 42,
+      "line": 38,
       "match": "(SRenderVertex *)((int)",
       "severity": "mild",
-      "text": "pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar10 * -2 + 1) * 4);",
+      "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar9 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 43,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar9 = (SRenderVertex *)((int)pSVar9 + ((uint)bVar10 * -2 + 1) * 4);",
-      "type": "pointer_cast"
+      "description": "Direct stack address reference",
+      "line": 45,
+      "match": "&stack0xffffff84",
+      "severity": "moderate",
+      "text": "piVar8 = (int *)&stack0xffffff84;",
+      "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 52,
+      "line": 48,
       "match": "(SRenderVertex *)((int)",
       "severity": "mild",
-      "text": "pSVar7 = (SRenderVertex *)((int)pSVar7 + ((uint)bVar10 * -2 + 1) * 4);",
+      "text": "pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar9 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 53,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar10 * -2 + 1) * 4);",
-      "type": "pointer_cast"
+      "description": "Unresolved stack parameter",
+      "line": 51,
+      "match": "in_stack_ffffff84",
+      "severity": "moderate",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff84,in_stack_ffffffb4);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 51,
+      "match": "in_stack_ffffffb4",
+      "severity": "moderate",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff84,in_stack_ffffffb4);",
+      "type": "stack_param"
     },
     {
       "description": "Calls clipAndDrawLine2D - decompiler cannot recognize by-value pattern",

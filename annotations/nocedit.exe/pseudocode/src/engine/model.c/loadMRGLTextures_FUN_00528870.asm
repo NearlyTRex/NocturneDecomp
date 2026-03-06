@@ -77,7 +77,7 @@ section .text
     PUSH EBX                            ; 005288c9
         ;   Label: LAB_005288c9
     CALL engine_boss.c_modelStructNotSupported_FUN_0041dc20 ; 005288ca
-        ;   XREF to: 0041dc20 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_boss.c_modelStructNotSupported_FUN_0041dc20(SMRGLHeaderExtended * header)
+        ;   XREF to: 0041dc20 (UNCONDITIONAL_CALL)  ; void engine_boss.c_modelStructNotSupported_FUN_0041dc20(SMRGLHeaderExtended * mrgl_data)
     ADD ESP,0x4                         ; 005288cf
     JMP 0x005288c1                      ; 005288d2
         ;   XREF to: 005288c1 (UNCONDITIONAL_JUMP)  ; LAB_005288c1

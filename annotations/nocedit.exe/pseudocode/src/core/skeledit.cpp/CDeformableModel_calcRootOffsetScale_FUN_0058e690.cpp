@@ -156,6 +156,6 @@ void __cdecl core_skeledit_cpp_CDeformableModel_calcRootOffsetScale_FUN_0058e690
   (this_ptr->model_scale).z = local_3c / local_24;
   g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
   g_CurrentDebugLine = 0xa32;
-  (*((this_ptr_01->motion_controller).vtable)->dtor)(&this_ptr_01->motion_controller);
+  (*((this_ptr_01->motion_controller).vtable)->dtor)(&this_ptr_01->motion_controller,2);
   return;
 }

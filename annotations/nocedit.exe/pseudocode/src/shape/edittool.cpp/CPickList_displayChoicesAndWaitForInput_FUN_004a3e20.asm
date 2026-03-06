@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20(CPickList *this_ptr,char *dialog_title,int config_param1,int config_param2)
+; int __cdecl shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20(CPickList *this_ptr,char *dialog_title,int initial_selected_index,uint window_flags)
 ;
 ; Parameters:
 ; CPickList *      Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   dialog_title
-; int              Stack[0xc]:4   config_param1
-; int              Stack[0x10]:4   config_param2
+; int              Stack[0xc]:4   initial_selected_index
+; uint             Stack[0x10]:4   window_flags
 ;
 ; XREF[75]:
 ;   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 at 0040f316
@@ -90,7 +90,7 @@ section .text
     MOV EDI,dword ptr [0x006793a8]      ; 004a3e91 | g_InputKeyMask
     MOV dword ptr [0x006793a8],EBP      ; 004a3e97 | g_InputKeyMask
     CALL shape_edittool.cpp_CPickList_initializeDialog_FUN_004a3ef0 ; 004a3e9d
-        ;   XREF to: 004a3ef0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CPickList_initializeDialog_FUN_004a3ef0(CPickList * this_ptr, char * dialog_title, int initial_selected_index, int config_parameter)
+        ;   XREF to: 004a3ef0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CPickList_initializeDialog_FUN_004a3ef0(CPickList * this_ptr, char * dialog_title, int initial_selected_index, uint window_flags)
     ADD ESP,0x10                        ; 004a3ea2
     PUSH ESI                            ; 004a3ea5
         ;   Label: LAB_004a3ea5

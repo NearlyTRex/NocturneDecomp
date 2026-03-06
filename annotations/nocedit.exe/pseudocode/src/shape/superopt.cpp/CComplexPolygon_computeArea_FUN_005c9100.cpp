@@ -2,11 +2,11 @@
 // Address: 005c9100
 // Address Range: [[005c9100, 005c91d8]]
 // Convention: __cdecl
-// Signature: int __cdecl shape_superopt_cpp_CComplexPolygon_computeArea_FUN_005c9100(CComplexPolygon *this_ptr,SExpandedEdge *edges,int edge_count)
+// Signature: double __cdecl shape_superopt_cpp_CComplexPolygon_computeArea_FUN_005c9100(CComplexPolygon *this_ptr,SExpandedEdge *edges,int edge_count)
 
 #include "nocturne.h"
 
-int __cdecl shape_superopt_cpp_CComplexPolygon_computeArea_FUN_005c9100(CComplexPolygon *this_ptr,SExpandedEdge *edges,int edge_count)
+double __cdecl shape_superopt_cpp_CComplexPolygon_computeArea_FUN_005c9100(CComplexPolygon *this_ptr,SExpandedEdge *edges,int edge_count)
 
 {
   double *pdVar1;
@@ -25,7 +25,6 @@ int __cdecl shape_superopt_cpp_CComplexPolygon_computeArea_FUN_005c9100(CComplex
   double local_28;
   double local_20;
   double local_18;
-  int local_10;
   
   local_28 = 0.0;
   local_18 = 0.0;
@@ -51,6 +50,5 @@ int __cdecl shape_superopt_cpp_CComplexPolygon_computeArea_FUN_005c9100(CComplex
       local_18 = (*pdVar11 + pCVar6->x) * (pCVar9->z - *pdVar4) * 0.5 + local_18;
     } while (pCVar13 < &edges[edge_count].start_pos);
   }
-  local_10 = SUB84(SQRT(local_18 * local_18 + local_28 * local_28 + local_20 * local_20),0);
-  return local_10;
+  return SQRT(local_18 * local_18 + local_28 * local_28 + local_20 * local_20);
 }

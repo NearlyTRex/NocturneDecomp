@@ -2,11 +2,11 @@
 // Address: 0054b4b0
 // Address Range: [[0054b4b0, 0054b51e]]
 // Convention: __cdecl
-// Signature: void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_loadByFileExtension_FUN_0054b4b0(CPackedBitmap *this_ptr,int processing_flags)
+// Signature: void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_loadByFileExtension_FUN_0054b4b0(CPackedBitmap *this_ptr,int apply_palette_flag)
 
 #include "nocturne.h"
 
-void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_loadByFileExtension_FUN_0054b4b0(CPackedBitmap *this_ptr,int processing_flags)
+void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_loadByFileExtension_FUN_0054b4b0(CPackedBitmap *this_ptr,int apply_palette_flag)
 
 {
   int iVar1;
@@ -28,12 +28,12 @@ LAB_0054b4d2:
     iVar1 = _stricmp(str1->filename,".raw");
     if (iVar1 == 0) {
       cockpit_pkbitmap_cpp_CPackedBitmap_loadAndCompressBitmap_FUN_0054b080
-                (this_ptr,processing_flags);
+                (this_ptr,apply_palette_flag);
       return;
     }
     iVar1 = _stricmp(str1->filename,".pbm");
     if (iVar1 == 0) {
-      cockpit_pkbitmap_cpp_CPackedBitmap_loadPBMFile_FUN_0054b910(this_ptr,processing_flags);
+      cockpit_pkbitmap_cpp_CPackedBitmap_loadPBMFile_FUN_0054b910(this_ptr,apply_palette_flag);
       return;
     }
   }

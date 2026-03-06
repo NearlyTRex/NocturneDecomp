@@ -13,12 +13,13 @@ void __cdecl core_game_cpp_CGame_beginFadeOut_FUN_004e0960(CGame *this_ptr)
   CBoundingBox3D *pCVar1;
   byte bVar2;
   int aiStackY_1018 [1000];
-  CVector3i *in_stack_ffffff94;
+  CBoundingBox3D CStack_6c;
   CVector3i CStack_54;
   CVector3f CStack_48;
   CVector3f CStack_3c;
   int iStack_30;
-  int aiStack_2c [5];
+  int aiStack_2c [2];
+  CVector3i CStack_24;
   float fStack_18;
   float fStack_14;
   float fStack_10;
@@ -30,8 +31,7 @@ void __cdecl core_game_cpp_CGame_beginFadeOut_FUN_004e0960(CGame *this_ptr)
   g_IrisFadeRadius = (float)g_WindowWidth;
   this_ptr_00 = g_CScriptPtr->focus_actor;
   if (this_ptr_00 != (CDemonActor *)0x0) {
-    pCVar1 = (*((this_ptr_00->vtable)._ub)->getBoundingBox)
-                       (this_ptr_00,(CBoundingBox3D *)&stack0xffffff94);
+    pCVar1 = (*((this_ptr_00->vtable)._ub)->getBoundingBox)(this_ptr_00,&CStack_6c);
     fStack_18 = (pCVar1->min).x + (pCVar1->max).x;
     fStack_14 = (pCVar1->min).y + (pCVar1->max).y;
     CStack_3c.x = fStack_18 * 0.5f;
@@ -44,11 +44,11 @@ void __cdecl core_game_cpp_CGame_beginFadeOut_FUN_004e0960(CGame *this_ptr)
     CStack_54.y = (int)ROUND(CStack_48.y * 256.0f);
     CStack_54.z = (int)ROUND(CStack_48.z * 256.0f);
     core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0
-              (&g_CDemonCameraInstance,&CStack_54,in_stack_ffffff94);
-    iStack_30 = aiStack_2c[2];
-    aiStack_2c[(uint)bVar2 * -2] = aiStack_2c[(uint)bVar2 * -2 + 3];
+              (&g_CDemonCameraInstance,&CStack_54,&CStack_24);
+    iStack_30 = CStack_24.x;
+    aiStack_2c[(uint)bVar2 * -2] = *(int *)((int)&CStack_24 + (uint)bVar2 * -8 + 4);
     aiStack_2c[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
-         aiStack_2c[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 4];
+         *(int *)((int)&CStack_24 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
     if (aiStack_2c[1] != 0) {
       g_IrisFadeCenterX =
            (int)((iStack_30 + (iStack_30 >> 0x1f) * -0x10000) -

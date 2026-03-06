@@ -20,14 +20,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_replicateActor_FUN_0053bd80(CDemonMi
   uint uVar8;
   char *pcVar9;
   byte bVar10;
-  CDemonMission *in_stack_00000010;
-  uint in_stack_ffffff5c;
-  uint in_stack_ffffff60;
-  uint in_stack_ffffff64;
-  uint in_stack_ffffff68;
-  uint in_stack_ffffff6c;
-  uint in_stack_ffffff70;
-  uint in_stack_ffffff74;
+  char local_a4 [100];
   char local_40 [32];
   char local_20 [4];
   char acStack_1c [4];
@@ -36,7 +29,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_replicateActor_FUN_0053bd80(CDemonMi
   float *pfVar6;
   
   bVar10 = 0;
-  pcVar9 = &stack0xffffff5c;
+  pcVar9 = local_a4;
   if (this_ptr->selected_actor == (CDemonActor *)0x0) {
     return;
   }
@@ -77,7 +70,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_replicateActor_FUN_0053bd80(CDemonMi
     pcVar9 = pcVar9 + 2;
   } while (cVar1 != '\0');
   uVar8 = 0xffffffff;
-  pcVar9 = &stack0xffffff5c;
+  pcVar9 = local_a4;
   do {
     if (uVar8 == 0) break;
     uVar8 = uVar8 - 1;
@@ -87,8 +80,8 @@ void __cdecl core_msnedit_cpp_CDemonMission_replicateActor_FUN_0053bd80(CDemonMi
   iVar7 = ~uVar8 - 1;
   while ((iVar3 = iVar7, 0 < iVar7 &&
          (iVar3 = iVar7 + -1,
-         (g_CharacterClassificationTable[(byte)((&stack0xffffff5b)[iVar7] + 1)] & 0x20) != 0))) {
-    (&stack0xffffff5b)[iVar7] = 0;
+         (g_CharacterClassificationTable[(byte)(local_a4[iVar7 + -1] + 1)] & 0x20) != 0))) {
+    local_a4[iVar7 + -1] = '\0';
     iVar7 = iVar3;
   }
   if (iVar3 < 1) {
@@ -96,7 +89,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_replicateActor_FUN_0053bd80(CDemonMi
   }
   else {
     core_mission_cpp_CDemonMission_generateUniqueActorName_FUN_00524660
-              (this_ptr,this_ptr_00->actor_name,&stack0xffffff5c);
+              (this_ptr,this_ptr_00->actor_name,local_a4);
   }
   if (g_ConfirmNewActorNames != 0) {
     pcVar9 = local_40;
@@ -120,9 +113,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_replicateActor_FUN_0053bd80(CDemonMi
           g_CurrentDebugLine = 0x994;
           return;
         }
-        (*((this_ptr_00->vtable)._ub)->dtor)
-                  (this_ptr_00,2,in_stack_ffffff5c,in_stack_ffffff60,in_stack_ffffff64,
-                   in_stack_ffffff68,in_stack_ffffff6c,in_stack_ffffff70,in_stack_ffffff74);
+        (*((this_ptr_00->vtable)._ub)->dtor)(this_ptr_00,2);
         return;
       }
       iVar7 = core_msnedit_cpp_CDemonMission_validateNewActorName_FUN_0053d220
@@ -153,6 +144,6 @@ void __cdecl core_msnedit_cpp_CDemonMission_replicateActor_FUN_0053bd80(CDemonMi
   }
   (*((this_ptr_00->vtable)._ub)->setup)(this_ptr_00);
   (*((this_ptr_00->vtable)._ub)->onDropped)(this_ptr_00,(CVector3f *)0x0);
-  core_msnedit_cpp_CDemonMission_selectActor_FUN_0053c140(in_stack_00000010,this_ptr_00);
+  core_msnedit_cpp_CDemonMission_selectActor_FUN_0053c140(this_ptr,this_ptr_00);
   return;
 }

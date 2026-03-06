@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadPBMFileRange_FUN_0054c3d0(CPackedBitmapSet *this_ptr,char *filename_format,int start_index,int end_index,char *base_path)
+; void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadPBMFileRange_FUN_0054c3d0(CPackedBitmapSet *this_ptr,char *filename_format,int start_index,int end_index,int apply_palette_flag)
 ;
 ; Parameters:
 ; CPackedBitmapSet * Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   filename_format
 ; int              Stack[0xc]:4   start_index
 ; int              Stack[0x10]:4   end_index
-; char *           Stack[0x14]:4   base_path
+; int              Stack[0x14]:4   apply_palette_flag
 ; Local Variables:
 ; undefined        Stack[-0x74]:1  local_74
 ;
@@ -77,7 +77,7 @@ section .text
     PUSH EAX                            ; 0054c44a
     INC EBX                             ; 0054c44b
     CALL cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_0054b860 ; 0054c44c
-        ;   XREF to: 0054b860 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_0054b860(CPackedBitmap * this_ptr, char * filename, int post_load_processing)
+        ;   XREF to: 0054b860 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_0054b860(CPackedBitmap * this_ptr, char * filename, int apply_palette_flag)
     ADD ESI,0x24                        ; 0054c451
     ADD ESP,0xc                         ; 0054c454
     CMP EBX,EBP                         ; 0054c457

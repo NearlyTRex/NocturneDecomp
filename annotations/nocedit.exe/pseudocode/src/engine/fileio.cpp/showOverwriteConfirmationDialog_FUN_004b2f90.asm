@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_fileio_cpp_showOverwriteConfirmationDialog_FUN_004b2f90(int *user_choice_ptr,char *dialog_message)
+; int __cdecl engine_fileio_cpp_showOverwriteConfirmationDialog_FUN_004b2f90(char *dialog_title,int *overwrite_state)
 ;
 ; Parameters:
-; int *            Stack[0x4]:4   user_choice_ptr
-; char *           Stack[0x8]:4   dialog_message
+; char *           Stack[0x4]:4   dialog_title
+; int *            Stack[0x8]:4   overwrite_state
 ; Local Variables:
 ; undefined1       Stack[-0x3b4]:1  local_3b4
 ;
@@ -137,7 +137,7 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 004b307f
     PUSH EAX                            ; 004b3083
     CALL shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20 ; 004b3084
-        ;   XREF to: 004a3e20 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20(CPickList * this_ptr, char * dialog_title, int config_param1, int config_param2)
+        ;   XREF to: 004a3e20 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20(CPickList * this_ptr, char * dialog_title, int initial_selected_index, uint window_flags)
     ADD ESP,0x10                        ; 004b3089
     MOV dword ptr [EBX],EAX             ; 004b308c
     TEST EAX,EAX                        ; 004b308e

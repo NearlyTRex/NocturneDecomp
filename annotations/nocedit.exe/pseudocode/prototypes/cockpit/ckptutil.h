@@ -57,11 +57,11 @@ void __cdecl applyActPalette(char *filename,void *bitmap_buffer,int bitmap_size,
 
 // Original: cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_00431a30
 // Address: 00431a30
-void __cdecl loadACTToIndexedPalette(char *filename,char *output_palette);
+void __cdecl loadACTToIndexedPalette(char *filename,uchar *output_palette);
 
 // Original: cockpit_ckptutil.c_loadACTPaletteFile_FUN_00431ac0
 // Address: 00431ac0
-void __cdecl loadACTPaletteFile(char *base_filename,char *output_buffer);
+void __cdecl loadACTPaletteFile(char *base_filename,uchar *output_buffer);
 
 // Original: cockpit_ckptutil.c_buildHardwarePalettes_FUN_00431c00
 // Address: 00431c00

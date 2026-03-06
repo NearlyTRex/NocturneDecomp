@@ -24,7 +24,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_004518f0(CDemo
   uint uVar13;
   uint uVar14;
   int aiStackY_107c [1014];
-  CVector3i *in_stack_ffffff6c;
+  CVector3i local_94;
   int local_88;
   char *local_80;
   char (*local_7c) [320];
@@ -57,13 +57,11 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_004518f0(CDemo
   bVar3 = 0;
   if ((g_CGamePtr->halo_mode != 0) || ((p2 == 0 && (*(int *)((int)p1 + 0x20) != 0)))) {
     g_CurrentGlobe = p1;
-    pCVar10 = in_stack_ffffff6c;
-    core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0
-              (this_ptr,p1,in_stack_ffffff6c);
-    g_CoronaTargetX = (int)pCVar10;
-    (&g_CoronaTargetY)[(uint)bVar3 * -2] = *(int *)(&stack0xffffff70 + (uint)bVar3 * -8);
+    core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0(this_ptr,p1,&local_94);
+    g_CoronaTargetX = local_94.x;
+    (&g_CoronaTargetY)[(uint)bVar3 * -2] = *(int *)((int)&local_94 + (uint)bVar3 * -8 + 4);
     (&g_CoronaTargetDepth)[(uint)bVar3 * -2 + (uint)bVar3 * -2] =
-         *(int *)(&stack0xffffff74 + (uint)bVar3 * -8 + (uint)bVar3 * -8);
+         *(int *)((int)&local_94 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
     if (*(int *)((int)p1 + 0x20) == 0) {
       g_CoronaVisibilityEnabled = 0;
     }

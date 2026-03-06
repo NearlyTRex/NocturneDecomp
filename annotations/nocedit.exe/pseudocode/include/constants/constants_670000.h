@@ -309,6 +309,12 @@ static char* g_ChapterMissionFiles[5][13] = {
     {"hq-act5.msn", nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr}
 };
 
+// char*[6] constants
+static char* g_PodFileActionNames[6] = {
+    "Skip", "Copy", "Copy & Mount", "Copy & Extract",
+    "Dismount", "Dismount & Delete"
+};
+
 // char*[8] constants
 static char* g_MenuBitmapFilenames[8] = {
     "f0100", "f0300", "f0500", "f0700",

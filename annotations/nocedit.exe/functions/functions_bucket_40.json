@@ -1476,8 +1476,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_3d.c_renderPolygonEngineAPIPremiumMultiState_FUN_004070c0",
-    "ret":"SMRGLHeaderExtended*",
+    "name":"engine_3d.c_flushPremiumRenderBuffer_FUN_004070c0",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -1528,35 +1528,7 @@
           },
           "type":"undefined4"
         }
-      ],
-      "params":[
-        {
-          "name":"prim",
-          "storage":{
-            "offset":4,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x4]",
-                "offset":4,
-                "size":4
-              }
-            ]
-          },
-          "type":"SMRGLHeaderPrimitive*"
-        }
-      ],
-      "ret_storage":{
-        "reg":"EAX",
-        "size":4,
-        "varnodes":[
-          {
-            "addr":"register:00000000",
-            "size":4
-          }
-        ]
-      }
+      ]
     }
   },
   {
@@ -3281,54 +3253,6 @@
             ]
           },
           "type":"CBoundingBox3D*"
-        },
-        {
-          "name":"local_14c",
-          "storage":{
-            "offset":-332,
-            "size":24,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x14c]",
-                "offset":-332,
-                "size":24
-              }
-            ]
-          },
-          "type":"CBoundingBox3D"
-        },
-        {
-          "name":"local_17c",
-          "storage":{
-            "offset":-380,
-            "size":48,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x17c]",
-                "offset":-380,
-                "size":48
-              }
-            ]
-          },
-          "type":"SRenderVertex"
-        },
-        {
-          "name":"local_1ac",
-          "storage":{
-            "offset":-428,
-            "size":48,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x1ac]",
-                "offset":-428,
-                "size":48
-              }
-            ]
-          },
-          "type":"SRenderVertex"
         }
       ],
       "params":[
@@ -11698,7 +11622,7 @@
               }
             ]
           },
-          "type":"char*"
+          "type":"uchar*"
         }
       ]
     }
@@ -30977,38 +30901,6 @@
             ]
           },
           "type":"undefined4"
-        },
-        {
-          "name":"local_6c",
-          "storage":{
-            "offset":-108,
-            "size":48,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x6c]",
-                "offset":-108,
-                "size":48
-              }
-            ]
-          },
-          "type":"SRenderVertex"
-        },
-        {
-          "name":"local_9c",
-          "storage":{
-            "offset":-156,
-            "size":48,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x9c]",
-                "offset":-156,
-                "size":48
-              }
-            ]
-          },
-          "type":"SRenderVertex"
         }
       ],
       "params":[
@@ -31785,7 +31677,7 @@
     "vars":{
       "params":[
         {
-          "name":"dest_ptr",
+          "name":"dst",
           "storage":{
             "offset":4,
             "size":4,
@@ -31801,7 +31693,7 @@
           "type":"int*"
         },
         {
-          "name":"src_ptr",
+          "name":"src",
           "storage":{
             "offset":8,
             "size":4,
@@ -44751,8 +44643,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_frankgen.cpp_CFrankenstienMachine_FUN_004d1ec0",
-    "ret":"void",
+    "name":"core_frankgen.cpp_CFrankenstienMachine_accumulateParticles_FUN_004d1ec0",
+    "ret":"int",
     "vars":{
       "locals":[
         {
@@ -44836,8 +44728,50 @@
             ]
           },
           "type":"CFrankenstienMachine*"
+        },
+        {
+          "name":"emission_rate",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"delta_time",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -60860,7 +60794,7 @@
       ],
       "params":[
         {
-          "name":"header",
+          "name":"mrgl_data",
           "storage":{
             "offset":4,
             "size":4,
@@ -66052,7 +65986,7 @@
           "type":"int"
         },
         {
-          "name":"stride",
+          "name":"apply_palette_flag",
           "storage":{
             "offset":24,
             "size":4,
@@ -66061,22 +65995,6 @@
               {
                 "addr":"Stack[0x18]",
                 "offset":24,
-                "size":4
-              }
-            ]
-          },
-          "type":"int"
-        },
-        {
-          "name":"apply_palette_flag",
-          "storage":{
-            "offset":28,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x1c]",
-                "offset":28,
                 "size":4
               }
             ]
@@ -66373,8 +66291,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"cockpit_pkbitmap.cpp_CPackedBitmap_loadPBGFile_FUN_0054bb40",
-    "ret":"int",
+    "name":"cockpit_pkbitmap.cpp_loadPBGFile_FUN_0054bb40",
+    "ret":"CPackedBitmap*",
     "vars":{
       "locals":[
         {
@@ -66412,7 +66330,7 @@
       ],
       "params":[
         {
-          "name":"this_ptr",
+          "name":"bitmap_set_ptr",
           "storage":{
             "offset":4,
             "size":4,
@@ -66425,7 +66343,7 @@
               }
             ]
           },
-          "type":"CPackedBitmap*"
+          "type":"CPackedBitmapSet*"
         },
         {
           "name":"pbg_filename",
@@ -66444,7 +66362,7 @@
           "type":"char*"
         },
         {
-          "name":"palette_filename",
+          "name":"apply_palette_flag",
           "storage":{
             "offset":12,
             "size":4,
@@ -66457,10 +66375,10 @@
               }
             ]
           },
-          "type":"char*"
+          "type":"int"
         },
         {
-          "name":"param3",
+          "name":"frames_per_bitmap",
           "storage":{
             "offset":16,
             "size":4,
@@ -66476,7 +66394,7 @@
           "type":"int"
         },
         {
-          "name":"param4",
+          "name":"skip_data_load",
           "storage":{
             "offset":20,
             "size":4,
@@ -97304,22 +97222,6 @@
               {
                 "addr":"Stack[0x8]",
                 "offset":8,
-                "size":4
-              }
-            ]
-          },
-          "type":"int"
-        },
-        {
-          "name":"triangle_count",
-          "storage":{
-            "offset":12,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0xc]",
-                "offset":12,
                 "size":4
               }
             ]

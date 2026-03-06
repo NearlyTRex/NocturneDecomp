@@ -728,10 +728,10 @@ LAB_00512b46:
         sound_sndmain_cpp_getSoundDeviceInfo_FUN_005ab370(iVar2,&local_560);
         shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_a20.base,local_560.device_name);
       }
-      iVar7 = 0;
+      uVar6 = 0;
       iVar2 = sound_sndmain_cpp_getCurrentSoundDevice_FUN_005ab6c0();
       iVar2 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                        (&local_a20,"Select sound device",iVar2,iVar7);
+                        (&local_a20,"Select sound device",iVar2,uVar6);
       if (-1 < iVar2) {
         sound_sndmain_cpp_closeSoundDevice_FUN_005ab660();
         sound_sndmain_cpp_selectSoundDevice_FUN_005ab4c0(iVar2);

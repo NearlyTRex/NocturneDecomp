@@ -17,8 +17,8 @@
 ;   TerminatedCString s_Select_bone_to_add_00618656
 ;   TerminatedCString s_Enter_in_X_radius_00618669
 ;   TerminatedCString s_Enter_in_Y_radius_0061867e
-;   CVector3f CVector3f_00838e40
-;   CVector3f CVector3f_00838e4c
+;   UVector3 UNION_UVector3_00838e40
+;   UVector3 UNION_UVector3_00838e4c
 ;   CDeformableModelInstance g_CDeformableModelInstanceInstance
 ;
 ; Called Functions:
@@ -97,15 +97,15 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 0043c4b7
     PUSH EAX                            ; 0043c4bb
     CALL shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20 ; 0043c4bc
-        ;   XREF to: 004a3e20 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20(CPickList * this_ptr, char * dialog_title, int config_param1, int config_param2)
+        ;   XREF to: 004a3e20 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20(CPickList * this_ptr, char * dialog_title, int initial_selected_index, uint window_flags)
     ADD ESP,0x10                        ; 0043c4c1
     TEST EAX,EAX                        ; 0043c4c4
     JGE 0x0043c51d                      ; 0043c4c6
         ;   XREF to: 0043c51d (CONDITIONAL_JUMP)  ; LAB_0043c51d
     PUSH 0x838e58                       ; 0043c4c8 | g_CDeformableModelInstanceInstance
         ;   Label: LAB_0043c4c8
-    PUSH 0x838e4c                       ; 0043c4cd | CVector3f_00838e4c
-    PUSH 0x838e40                       ; 0043c4d2 | CVector3f_00838e40
+    PUSH 0x838e4c                       ; 0043c4cd | UNION_UVector3_00838e4c
+    PUSH 0x838e40                       ; 0043c4d2 | UNION_UVector3_00838e40
     MOV EAX,dword ptr [ESP + 0x4dc]     ; 0043c4d7
     PUSH EAX                            ; 0043c4de
     CALL core_cloth.cpp_CCloth_setup_FUN_00439710 ; 0043c4df

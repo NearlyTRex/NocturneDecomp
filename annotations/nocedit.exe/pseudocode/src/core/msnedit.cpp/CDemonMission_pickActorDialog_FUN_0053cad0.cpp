@@ -14,7 +14,7 @@ int __cdecl core_msnedit_cpp_CDemonMission_pickActorDialog_FUN_0053cad0(CDemonMi
   int iVar3;
   int index;
   int iVar4;
-  int config_param1;
+  int initial_selected_index;
   CPickList local_3b8;
   
   shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_3b8);
@@ -26,21 +26,21 @@ int __cdecl core_msnedit_cpp_CDemonMission_pickActorDialog_FUN_0053cad0(CDemonMi
   }
   core_msnedit_cpp_CDemonMission_buildFilteredActorList_FUN_0053cc30
             (this_ptr,&local_3b8.base,class_type,class_name,filter_func);
-  config_param1 = iVar4;
+  initial_selected_index = iVar4;
   if (((preselect != 0) && (iVar4 < 0)) &&
      ((*out_actor != (CDemonActor *)0x0 && (index = 0, 0 < local_3b8.base.item_count)))) {
     do {
       pCVar2 = *out_actor;
       pcVar1 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_3b8.base,index);
       iVar3 = _stricmp(pcVar1,pCVar2->actor_name);
-      config_param1 = index;
+      initial_selected_index = index;
       if (iVar3 == 0) break;
       index = index + 1;
-      config_param1 = iVar4;
+      initial_selected_index = iVar4;
     } while (index < local_3b8.base.item_count);
   }
   iVar4 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                    (&local_3b8,title,config_param1,0);
+                    (&local_3b8,title,initial_selected_index,0);
   if (-1 < iVar4) {
     pcVar1 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_3b8.base,iVar4);
     pCVar2 = core_mission_cpp_CDemonMission_findActorByName_FUN_00524030(this_ptr,pcVar1);

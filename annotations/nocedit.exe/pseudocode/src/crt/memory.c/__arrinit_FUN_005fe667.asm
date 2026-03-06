@@ -8,8 +8,6 @@
 ; int              Stack[0x8]:4   element_count
 ; WatcomTypeInfo * Stack[0xc]:4   type_info
 ; Local Variables:
-; int              Stack[-0x1c]:4  loop_counter
-; WatcomTypeInfo * Stack[-0x18]:4  temp_type_info
 ; void *           Stack[-0x14]:4  original_array_ptr
 ;
 ; XREF[85]:

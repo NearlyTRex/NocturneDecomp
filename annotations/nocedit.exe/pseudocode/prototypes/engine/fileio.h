@@ -89,7 +89,7 @@ int __cdecl CCheckOutList::write(CCheckOutList *this_ptr,_FILE **file_handle);
 
 // Original: engine_fileio.cpp_showOverwriteConfirmationDialog_FUN_004b2f90
 // Address: 004b2f90
-int __cdecl showOverwriteConfirmationDialog(int *user_choice_ptr,char *dialog_message);
+int __cdecl showOverwriteConfirmationDialog(char *dialog_title,int *overwrite_state);
 
 // Original: engine_fileio.cpp_checkFileOverwriteCondition_FUN_004b3120
 // Address: 004b3120
@@ -173,7 +173,7 @@ void __cdecl CFileManager::load(CFileManager *this_ptr);
 
 // Original: engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10
 // Address: 004b6e10
-void __cdecl CFileManager::extractPodFile(CFileManager *this_ptr,char *pod_filename);
+void __cdecl CFileManager::extractPodFile(CFileManager *this_ptr,char *pod_filename,int offer_dismount);
 
 // Original: engine_fileio.cpp_CFileManager_catalogPodFile_FUN_004b7460
 // Address: 004b7460
@@ -201,7 +201,7 @@ void __cdecl CFileManager::verifyPodCRC(CFileManager *this_ptr,char *pod_filenam
 
 // Original: engine_fileio.cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50
 // Address: 004b7d50
-int __cdecl CFileManager::extractFileWithTimestamp(CFileManager *this_ptr,_FILE *source_file,char *dest_filename,char *name_or_offset,int file_size,int file_offset,int checksum,int timestamp);
+int __cdecl CFileManager::extractFileWithTimestamp(CFileManager *this_ptr,_FILE *source_file,char *dest_filename,int file_size,int file_offset,char *timestamp_source,int checksum);
 
 // Original: engine_fileio.cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50
 // Address: 004b7f50

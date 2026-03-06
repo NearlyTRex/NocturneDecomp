@@ -14,7 +14,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_enemyRandomizer_FUN_005379e0(CDemonM
   CEnemy *this_ptr_00;
   int iVar3;
   CDemonActor *actor_ptr;
-  int config_param1;
+  int initial_selected_index;
   ulonglong in_stack_fffff2fc;
   CEnemy *string_data;
   ulonglong uVar4;
@@ -25,7 +25,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_enemyRandomizer_FUN_005379e0(CDemonM
   char acStack_dc [200];
   float fStack_14;
   
-  config_param1 = 0;
+  initial_selected_index = 0;
 LAB_005379f3:
   do {
     while( true ) {
@@ -35,14 +35,14 @@ LAB_005379f3:
                 (&local_5b0.base,"Randomize all enemies with randomizeMe flag set.");
       shape_edittool_cpp_CStrList_add_FUN_004a2b80
                 (&local_5b0.base,"Randomize enemy speeds for specific enemies.");
-      config_param1 =
+      initial_selected_index =
            shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                     (&local_5b0,"Enemy randomizer",config_param1,0);
-      if (config_param1 < 0) {
+                     (&local_5b0,"Enemy randomizer",initial_selected_index,0);
+      if (initial_selected_index < 0) {
         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_5b0,0);
         return;
       }
-      if (config_param1 == 0) {
+      if (initial_selected_index == 0) {
         for (pCVar1 = this_ptr->first_actor; pCVar1 != (CDemonActor *)0x0;
             pCVar1 = pCVar1->next_actor) {
           this_ptr_00 = (CEnemy *)
@@ -55,7 +55,7 @@ LAB_005379f3:
           }
         }
       }
-      if (config_param1 == 1) break;
+      if (initial_selected_index == 1) break;
 LAB_00537aa5:
       in_stack_fffff2fc = ZEXT48(string_data) << 0x20;
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_5b0,0);

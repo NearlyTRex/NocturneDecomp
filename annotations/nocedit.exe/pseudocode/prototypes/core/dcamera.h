@@ -81,7 +81,7 @@ void __cdecl CDemonCamera::beginBackgroundScene(CDemonCamera *this_ptr);
 
 // Original: core_dcamera.cpp_CDemonCamera_endBackgroundScene_FUN_0044cdf0
 // Address: 0044cdf0
-int __cdecl CDemonCamera::endBackgroundScene(CDemonCamera *this_ptr,int restore_zbuffer);
+void __cdecl CDemonCamera::endBackgroundScene(CDemonCamera *this_ptr,int restore_zbuffer);
 
 // Original: core_dcamera.cpp_CDemonCamera_calculateInverseTransform_FUN_0044cf20
 // Address: 0044cf20
@@ -113,7 +113,7 @@ CVector3i * __stack2_esi CDemonCamera::screenToWorldWithAlpha(CDemonCamera *this
 
 // Original: core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0
 // Address: 0044d7d0
-CVector3i * __cdecl CDemonCamera::worldToScreenWithFrustumCull(CDemonCamera *this_ptr,CVector3i *output_ptr,CVector3i *input_ptr);
+CVector3i * __stack2_esi CDemonCamera::worldToScreenWithFrustumCull(CDemonCamera *this_ptr,CVector3i *input_ptr,CVector3i *output_ptr);
 
 // Original: core_dcamera.cpp_CDemonCamera_worldToCameraSpace_FUN_0044da90
 // Address: 0044da90

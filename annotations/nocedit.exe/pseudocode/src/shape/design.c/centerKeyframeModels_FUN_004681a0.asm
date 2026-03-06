@@ -188,7 +188,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0x10]     ; 004682fa
     PUSH EAX                            ; 004682fd
     CALL engine_model.c_freeMRGLData_FUN_005280b0 ; 004682fe
-        ;   XREF to: 005280b0 (UNCONDITIONAL_CALL)  ; void engine_model.c_freeMRGLData_FUN_005280b0(SMRGLHeaderExtended * modelStruct)
+        ;   XREF to: 005280b0 (UNCONDITIONAL_CALL)  ; void engine_model.c_freeMRGLData_FUN_005280b0(SMRGLHeaderExtended * mrgl_data)
     ADD ESP,0x4                         ; 00468303
     JMP 0x00468218                      ; 00468306
         ;   XREF to: 00468218 (UNCONDITIONAL_JUMP)  ; LAB_00468218
@@ -196,7 +196,7 @@ section .text
         ;   Label: LAB_0046830b
     PUSH EAX                            ; 0046830e
     CALL engine_model.c_freeMRGLData_FUN_005280b0 ; 0046830f
-        ;   XREF to: 005280b0 (UNCONDITIONAL_CALL)  ; void engine_model.c_freeMRGLData_FUN_005280b0(SMRGLHeaderExtended * modelStruct)
+        ;   XREF to: 005280b0 (UNCONDITIONAL_CALL)  ; void engine_model.c_freeMRGLData_FUN_005280b0(SMRGLHeaderExtended * mrgl_data)
     ADD ESP,0x4                         ; 00468314
     MOV ESP,EBP                         ; 00468317
         ;   Label: LAB_00468317

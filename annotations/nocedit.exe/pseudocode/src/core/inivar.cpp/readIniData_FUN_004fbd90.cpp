@@ -11,7 +11,6 @@ void __cdecl core_inivar_cpp_readIniData_FUN_004fbd90(void)
 {
   CGame *pCVar1;
   DWORD DVar2;
-  char *unaff_EBX;
   CIniFile local_204;
   
   DVar2 = engine_dosio_c_setReadonlyAttribute_FUN_00600c30(".\\system\\nocturne.ini",0x180);
@@ -33,7 +32,7 @@ void __cdecl core_inivar_cpp_readIniData_FUN_004fbd90(void)
   engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30
             (&local_204,"useAGPFlag",&g_PodSystemVersion);
   engine_ini_cpp_CIniFile_getString_FUN_004fbb20
-            (&local_204,"rendererDLLPath",g_RendererDllName,0xfa,unaff_EBX);
+            (&local_204,"rendererDLLPath",g_RendererDllName,0xfa);
   engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30(&local_204,"gamma",&g_CGamePtr->gamma);
   engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30
             (&local_204,"heroNumber",(int *)&g_CGamePtr->hero_number);

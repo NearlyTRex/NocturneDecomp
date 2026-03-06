@@ -17,7 +17,6 @@ void __cdecl shape_meshlod_cpp_CLodMesh_collapseEdge_FUN_00517630(CLodMesh *this
   int iVar6;
   int iVar7;
   CLodFace *pCVar8;
-  int extraout_EAX;
   int iVar9;
   CLodVert *pCVar10;
   CLodEdge *pCVar11;
@@ -367,8 +366,9 @@ void __cdecl shape_meshlod_cpp_CLodMesh_collapseEdge_FUN_00517630(CLodMesh *this
         while (local_7c = iVar7, 0 < iVar5) {
           iVar9 = pCVar13->adjacent_tri_indices[0];
           local_80 = this_ptr->tri_data + iVar9;
-          shape_meshlod_cpp_CLodMesh_removeEdgeFromFace_FUN_005183e0(this_ptr,iVar9,local_88);
-          *(int *)((int)(local_80->uv_coords + 3) + extraout_EAX * 4) = local_84;
+          iVar5 = shape_meshlod_cpp_CLodMesh_removeEdgeFromFace_FUN_005183e0
+                            (this_ptr,iVar9,local_88);
+          *(int *)((int)(local_80->uv_coords + 3) + iVar5 * 4) = local_84;
           shape_meshlod_cpp_CLodEdge_addAdjacentFace_FUN_00515ca0
                     ((CLodEdge *)((int)this_ptr->edges_ptr->adjacent_tri_indices + local_7c + -0x28)
                      ,iVar9);

@@ -6,15 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 122,
-    "complexity_score": 50,
+    "complexity_score": 51,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 2,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 50,
+    "pseudocode_lines": 51,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 172
+    "total_lines": 173
   },
   "cross_references": [
     {
@@ -34,7 +34,7 @@
     ],
     "convention": "__cdecl",
     "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadByFilenameAndIndex_FUN_0054c500",
-    "signature": "void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadByFilenameAndIndex_FUN_0054c500(CPackedBitmapSet *this_ptr,char *filename,int bitmap_index)"
+    "signature": "void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadByFilenameAndIndex_FUN_0054c500(CPackedBitmapSet *this_ptr,int apply_palette_flag,int bitmap_index)"
   },
   "function_calls": [
     {
@@ -118,10 +118,10 @@
       },
       {
         "is_param": true,
-        "name": "filename",
+        "name": "apply_palette_flag",
         "offset": 8,
         "size": 4,
-        "type": "char *"
+        "type": "int"
       },
       {
         "is_param": true,

@@ -124,7 +124,7 @@ void __cdecl engine_fileio_cpp_CFileManager_crossReferencePodDuplicates_FUN_004b
         do {
           iVar4 = 0;
           local_18 = 1;
-          pcVar7 = *(char **)((int)&local_24->directory_entries->name_or_offset + local_34);
+          pcVar7 = *(char **)((int)&local_24->directory_entries->name + local_34);
           if (0 < local_28) {
             local_2c = local_34;
             pCVar5 = local_3c;

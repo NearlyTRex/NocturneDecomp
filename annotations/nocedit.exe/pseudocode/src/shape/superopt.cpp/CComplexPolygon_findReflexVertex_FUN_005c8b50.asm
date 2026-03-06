@@ -297,7 +297,7 @@ section .text
     PUSH EDX                            ; 005c8d97
     PUSH EBX                            ; 005c8d98
     CALL shape_superopt.cpp_CComplexPolygon_computeArea_FUN_005c9100 ; 005c8d99
-        ;   XREF to: 005c9100 (UNCONDITIONAL_CALL)  ; int shape_superopt.cpp_CComplexPolygon_computeArea_FUN_005c9100(CComplexPolygon * this_ptr, SExpandedEdge * edges, int edge_count)
+        ;   XREF to: 005c9100 (UNCONDITIONAL_CALL)  ; double shape_superopt.cpp_CComplexPolygon_computeArea_FUN_005c9100(CComplexPolygon * this_ptr, SExpandedEdge * edges, int edge_count)
     MOV dword ptr [EBP + 0x4a],EAX      ; 005c8d9e
     MOV dword ptr [EBP + 0x4e],EDX      ; 005c8da1
     ADD ESP,0xc                         ; 005c8da4
@@ -367,7 +367,7 @@ section .text
     PUSH EDI                            ; 005c8e29
     PUSH EBX                            ; 005c8e2a
     CALL shape_superopt.cpp_CComplexPolygon_computeArea_FUN_005c9100 ; 005c8e2b
-        ;   XREF to: 005c9100 (UNCONDITIONAL_CALL)  ; int shape_superopt.cpp_CComplexPolygon_computeArea_FUN_005c9100(CComplexPolygon * this_ptr, SExpandedEdge * edges, int edge_count)
+        ;   XREF to: 005c9100 (UNCONDITIONAL_CALL)  ; double shape_superopt.cpp_CComplexPolygon_computeArea_FUN_005c9100(CComplexPolygon * this_ptr, SExpandedEdge * edges, int edge_count)
     MOV dword ptr [EBP + 0x4a],EAX      ; 005c8e30
     MOV dword ptr [EBP + 0x4e],EDX      ; 005c8e33
     ADD ESP,0xc                         ; 005c8e36

@@ -17,6 +17,7 @@ int __cdecl core_script_cpp_CScript_browseEventXRefs_FUN_005677a0(CScript *this_
   SScriptXRef *pSVar5;
   char *pcVar6;
   char *pcVar7;
+  uint window_flags;
   CActorPropertyList CStack_2c4c;
   CPickList local_748;
   char local_3a0 [500];
@@ -127,10 +128,10 @@ int __cdecl core_script_cpp_CScript_browseEventXRefs_FUN_005677a0(CScript *this_
   }
   else {
     shape_edittool_cpp_CPickList_setSelectedResult_FUN_004a3e10(&local_748,1);
-    iVar4 = 0;
+    window_flags = 0;
     iVar3 = shape_edittool_cpp_CStrList_findString_FUN_004a3030(&local_748.base,selected_name);
     iVar3 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                      (&local_748,dialog_title,iVar3,iVar4);
+                      (&local_748,dialog_title,iVar3,window_flags);
     if (-1 < iVar3) {
       iVar4 = 0;
       if (0 < this_ptr->xref_count) {

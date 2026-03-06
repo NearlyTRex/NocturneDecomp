@@ -10,8 +10,8 @@
 ; _FILE *          Stack[0x10]:4   file
 ;
 ; XREF[23]:
-;   cockpit_pkbitmap.cpp_CPackedBitmap_writePBGHeader_FUN_0054b930 at 0054b967
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_writePBMFile_FUN_0054b5c0 at 0054b64a
+;   cockpit_pkbitmap.cpp_writePBGHeader_FUN_0054b930 at 0054b967
 ;   core_dcube.cpp_CDemonCubeTriangle_writeToFile_FUN_00455250 at 004552ab
 ;   core_dcube.cpp_CDemonCube_save_FUN_00457430 at 00457445
 ;   core_dpart.cpp_CDemonPart_write_FUN_00482330 at 00482363

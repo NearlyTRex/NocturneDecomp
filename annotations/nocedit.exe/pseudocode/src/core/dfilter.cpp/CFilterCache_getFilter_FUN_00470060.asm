@@ -1,13 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonFilter * __cdecl core_dfilter_cpp_CFilterCache_getFilter_FUN_00470060(CFilterCache *this_ptr,char *filter_name,char *filter_filename,int enable_init)
+; CDemonFilter * __cdecl core_dfilter_cpp_CFilterCache_getFilter_FUN_00470060(CFilterCache *this_ptr,char *filter_name,int blend_filter)
 ;
 ; Parameters:
 ; CFilterCache *   Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   filter_name
-; char *           Stack[0xc]:4   filter_filename
-; int              Stack[0x10]:4   enable_init
+; int              Stack[0xc]:4   blend_filter
 ;
 ; XREF[3]:
 ;   core_lightgun.cpp_CLightGun_process_FUN_00506450 at 0050658c

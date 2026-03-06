@@ -11,7 +11,6 @@ void __cdecl core_setutil_cpp_C3DSLight_addFilter_FUN_00586fa0(C3DSLight *this_p
 {
   char cVar1;
   CDemonFilter *pCVar2;
-  int unaff_EBP;
   char (*pacVar3) [40];
   
   if (0x1f < this_ptr->filter_count) {
@@ -33,7 +32,7 @@ void __cdecl core_setutil_cpp_C3DSLight_addFilter_FUN_00586fa0(C3DSLight *this_p
   this_ptr->filter_indices[this_ptr->filter_count] = filter_mode;
   pCVar2 = core_dfilter_cpp_CFilterCache_getFilter_FUN_00470060
                      (g_CFilterCachePtr,this_ptr->filter_names[this_ptr->filter_count],
-                      (char *)this_ptr->blend_filter,unaff_EBP);
+                      this_ptr->blend_filter);
   this_ptr->filters[this_ptr->filter_count] = pCVar2;
   this_ptr->filter_count = this_ptr->filter_count + 1;
   return;

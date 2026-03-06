@@ -4,13 +4,13 @@
       {
         "category": "other",
         "column": 28,
-        "line": 69,
+        "line": 68,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 120,
-        "line": 128,
+        "line": 127,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
@@ -19,19 +19,18 @@
   },
   "complexity": {
     "assembly_lines": 345,
-    "complexity_score": 228,
+    "complexity_score": 202,
     "cross_reference_count": 1,
     "function_call_count": 21,
     "global_count": 19,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 153,
-    "suspect_count": 6,
+    "pseudocode_lines": 152,
+    "suspect_count": 4,
     "suspect_types": [
       "pointer_cast",
-      "stack_alignment_array",
-      "unaffected_reg"
+      "stack_alignment_array"
     ],
-    "total_lines": 498
+    "total_lines": 497
   },
   "cross_references": [
     {
@@ -487,16 +486,8 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 9,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "int unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 17,
+      "line": 16,
       "match": "atStackY_30f4",
       "severity": "moderate",
       "text": "time_t atStackY_30f4 [2034];",
@@ -504,7 +495,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 88,
+      "line": 87,
       "match": "(time_t *)((int)",
       "severity": "mild",
       "text": "ptVar5 = (time_t *)((int)(local_1108.directory_entries + iVar2) + (uint)bVar10 * -8 + 4);",
@@ -512,7 +503,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 130,
+      "line": 129,
       "match": "(time_t *)((int)",
       "severity": "mild",
       "text": "ptVar6 = (time_t *)((int)&local_1108 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + -0x14);",
@@ -520,19 +511,11 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 132,
+      "line": 131,
       "match": "(time_t *)((int)",
       "severity": "mild",
       "text": "*(time_t *)((int)&local_1108 + (uint)bVar10 * -8 + -0x18) = local_1c[(uint)bVar10 * -2];",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 142,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "(int)this_ptr_02,(int)info,unaff_EBX);",
-      "type": "unaffected_reg"
     }
   ]
 }

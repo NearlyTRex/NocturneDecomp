@@ -6,9 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Variable defined which should be unmapped: local_114 */
-/* WARNING: Variable defined which should be unmapped: local_144 */
-
 int __cdecl core_stairs_cpp_CStairs_renderOpaque_FUN_005b9c10(CStairs *this_ptr)
 {
 __asm {

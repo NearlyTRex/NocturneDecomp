@@ -285,15 +285,15 @@ void __cdecl CDemonRenderer::enableAdvancedCulling(CDemonRenderer *this_ptr,int 
 
 // Original: engine_drender.cpp_CDemonRenderer_renderFaceBatch_FUN_0048ce20
 // Address: 0048ce20
-int __cdecl CDemonRenderer::renderFaceBatch(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *primitive_array,int primitive_count,int render_flags);
+void __cdecl CDemonRenderer::renderFaceBatch(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *primitive_array,int primitive_count,int render_flags);
 
 // Original: engine_drender.cpp_CDemonRenderer_renderPrimitiveBatch_FUN_0048ce90
 // Address: 0048ce90
-int __cdecl CDemonRenderer::renderPrimitiveBatch(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *primitive_array,int primitive_count,int render_flags);
+void __cdecl CDemonRenderer::renderPrimitiveBatch(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *primitive_array,int primitive_count,int render_flags);
 
 // Original: engine_drender.cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00
 // Address: 0048cf00
-int __cdecl CDemonRenderer::renderTriangleFacetList(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *primitive_array,int primitive_count,int render_flags,int primitive_stride);
+void __cdecl CDemonRenderer::renderTriangleFacetList(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *primitive_array,int primitive_count,int primitive_stride,int render_flags);
 
 // Original: engine_drender.cpp_CDemonRenderer_renderFaceList_FUN_0048d170
 // Address: 0048d170

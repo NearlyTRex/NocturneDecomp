@@ -6,18 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 83,
+    "complexity_score": 12,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 13,
-    "suspect_count": 6,
-    "suspect_types": [
-      "param_count_too_many",
-      "unnamed_param"
-    ],
-    "total_lines": 51
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 12,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 50
   },
   "cross_references": [
     {
@@ -37,13 +34,13 @@
     ],
     "convention": "__cdecl",
     "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBGFileComplete_FUN_0054c480",
-    "signature": "void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadPBGFileComplete_FUN_0054c480(CPackedBitmapSet *this_ptr,char *pbg_filename,char *palette_filename,int param3,int param4,int additional_param)"
+    "signature": "void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadPBGFileComplete_FUN_0054c480(CPackedBitmapSet *this_ptr,char *pbg_filename,int apply_palette_flag,int frames_per_bitmap,int skip_data_load)"
   },
   "function_calls": [
     {
       "addr": "0054bb40",
       "is_variadic": false,
-      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_loadPBGFile_FUN_0054bb40"
+      "name": "cockpit_pkbitmap.cpp_loadPBGFile_FUN_0054bb40"
     },
     {
       "addr": "0054bd00",
@@ -75,8 +72,8 @@
         "stack_params": 5
       }
     ],
-    "confidence": "low",
-    "declared_params": 6,
+    "confidence": "medium",
+    "declared_params": 5,
     "estimated_params": 5
   },
   "pcode_summary": {
@@ -100,10 +97,10 @@
     "pcode_op_count": 126
   },
   "stack_frame": {
-    "frame_size": 28,
+    "frame_size": 24,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 24,
+    "param_size": 20,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -122,85 +119,26 @@
       },
       {
         "is_param": true,
-        "name": "palette_filename",
+        "name": "apply_palette_flag",
         "offset": 12,
         "size": 4,
-        "type": "char *"
+        "type": "int"
       },
       {
         "is_param": true,
-        "name": "param3",
+        "name": "frames_per_bitmap",
         "offset": 16,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
-        "name": "param4",
+        "name": "skip_data_load",
         "offset": 20,
-        "size": 4,
-        "type": "int"
-      },
-      {
-        "is_param": true,
-        "name": "additional_param",
-        "offset": 24,
         "size": 4,
         "type": "int"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param3",
-      "severity": "mild",
-      "text": "void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadPBGFileComplete_FUN_0054c480(CPackedBitmapSet *this_ptr,char *pbg_filename,char *palette_filename,int param3,int param4,int additional_param)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param4",
-      "severity": "mild",
-      "text": "void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadPBGFileComplete_FUN_0054c480(CPackedBitmapSet *this_ptr,char *pbg_filename,char *palette_filename,int param3,int param4,int additional_param)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param3",
-      "severity": "mild",
-      "text": "((CPackedBitmap *)this_ptr,pbg_filename,palette_filename,param3,param4,-1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param4",
-      "severity": "mild",
-      "text": "((CPackedBitmap *)this_ptr,pbg_filename,palette_filename,param3,param4,-1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param3",
-      "severity": "mild",
-      "text": "this_ptr->config_param = param3;",
-      "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 6,
-      "description": "Signature has too many params - likely wrong calling convention",
-      "estimated_params": 5,
-      "fix_type": "remove_params",
-      "match": "declared:6 vs estimated:5",
-      "param_delta": -1,
-      "text": "Function declares 6 params but call sites push 5 (1 extra)",
-      "type": "param_count_too_many"
-    }
-  ]
+  "suspects": []
 }

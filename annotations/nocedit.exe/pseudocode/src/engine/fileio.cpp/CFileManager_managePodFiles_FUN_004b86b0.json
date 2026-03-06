@@ -2,118 +2,106 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 22,
-        "line": 483,
-        "message": "use of undeclared identifier 'PTR_ARRAY_00679da0'"
+        "category": "format_error",
+        "column": 46,
+        "line": 480,
+        "message": "format specifies type 'char *' but the argument has type 'void *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 54,
-        "line": 497,
+        "line": 480,
+        "message": "format specifies type 'char *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 54,
+        "line": 495,
         "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 62,
-        "line": 515,
+        "line": 513,
         "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 30,
-        "line": 521,
+        "line": 519,
         "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 67,
-        "line": 521,
+        "line": 519,
         "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 30,
-        "line": 526,
+        "line": 524,
         "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 67,
-        "line": 526,
+        "line": 524,
         "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 30,
-        "line": 531,
+        "line": 529,
         "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 67,
-        "line": 531,
+        "line": 529,
         "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 30,
-        "line": 536,
+        "line": 534,
         "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 67,
-        "line": 536,
+        "line": 534,
         "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 30,
-        "line": 541,
+        "line": 539,
         "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 30,
-        "line": 546,
+        "line": 544,
         "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 67,
-        "line": 546,
+        "line": 544,
         "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 30,
-        "line": 561,
+        "line": 559,
         "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 28,
-        "line": 615,
+        "line": 613,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 71,
-        "line": 618,
-        "message": "use of undeclared identifier 'PTR_ARRAY_00679da0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 73,
-        "line": 620,
-        "message": "use of undeclared identifier 'PTR_ARRAY_00679da0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 73,
-        "line": 624,
-        "message": "use of undeclared identifier 'PTR_ARRAY_00679da0'"
       }
     ],
     "success": false,
@@ -121,17 +109,17 @@
   },
   "complexity": {
     "assembly_lines": 2078,
-    "complexity_score": 1398,
+    "complexity_score": 1406,
     "cross_reference_count": 0,
     "function_call_count": 51,
     "global_count": 109,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 913,
-    "suspect_count": 48,
+    "pseudocode_lines": 911,
+    "suspect_count": 49,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 2991
+    "total_lines": 2989
   },
   "cross_references": [],
   "function": {
@@ -952,13 +940,13 @@
     },
     {
       "addr": "00679da0",
-      "name": "PTR_ARRAY_00679da0",
+      "name": "g_PodFileActionNames",
       "type": "char*[6]",
       "value": null
     },
     {
       "addr": "00679da4",
-      "name": "PTR_ARRAY_00679da0[1]",
+      "name": "g_PodFileActionNames[1]",
       "type": "undefined4",
       "value": null
     },
@@ -976,7 +964,7 @@
     },
     {
       "addr": "00679db0",
-      "name": "PTR_ARRAY_00679da0[4]",
+      "name": "g_PodFileActionNames[4]",
       "type": "undefined4",
       "value": null
     },
@@ -1530,7 +1518,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 125,
+      "line": 124,
       "match": "(char *)((int)",
       "severity": "mild",
       "text": "local_34 = (char *)((int)local_44 + 0x100);",
@@ -1538,7 +1526,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 126,
+      "line": 125,
       "match": "(char *)((int)",
       "severity": "mild",
       "text": "local_30 = (char *)((int)local_44 + 0x204);",
@@ -1546,7 +1534,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 398,
+      "line": 246,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "puVar11 = (uint *)((int)&(local_1b38.directory_entries)->name + local_68);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 396,
       "match": "(char *)((int)",
       "severity": "mild",
       "text": "pcVar12 = (char *)((int)local_44 + 0x100);",
@@ -1554,7 +1550,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 417,
+      "line": 415,
       "match": "(char *)((int)",
       "severity": "mild",
       "text": "pcVar3 = (char *)((int)local_44 + local_28);",
@@ -1562,7 +1558,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 475,
+      "line": 473,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "(local_2338,\"%s\\t%s\\t%s\",pvVar10,*(uint *)((int)pvVar10 + 0x36c),",
@@ -1570,15 +1566,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 476,
+      "line": 474,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "PTR_ARRAY_00679da0[*(int *)((int)pvVar10 + 0x378)]);",
+      "text": "g_PodFileActionNames[*(int *)((int)pvVar10 + 0x378)]);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 477,
+      "line": 475,
       "match": "(char *)((int)",
       "severity": "mild",
       "text": "if (*(char *)((int)pvVar10 + 0x308) != '\\0') {",
@@ -1586,7 +1582,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 494,
+      "line": 492,
       "match": "(void *)((int)",
       "severity": "mild",
       "text": "pvVar10 = (void *)((int)pvVar10 + 0x39c);",
@@ -1594,7 +1590,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 510,
+      "line": 508,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "switch(*(uint *)((int)pvVar10 + iVar2 * 0x39c + 0x370)) {",
@@ -1602,7 +1598,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 549,
+      "line": 547,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (*(int *)((int)pvVar10 + iVar2 * 0x39c + 0x370) != 5) {",
@@ -1610,7 +1606,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 553,
+      "line": 551,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)pvVar10 + iVar2 * 0x39c + 0x390),",
@@ -1618,7 +1614,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 555,
+      "line": 553,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "iVar9 = *(int *)((int)pvVar10 + iVar2 * 0x39c + 900);",
@@ -1626,7 +1622,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 562,
+      "line": 560,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "iVar9 = *(int *)((int)pvVar10 + iVar2 * 0x39c + 0x37c);",
@@ -1634,7 +1630,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 568,
+      "line": 566,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "iVar9 = *(int *)((int)pvVar10 + iVar2 * 0x39c + 0x380);",
@@ -1642,7 +1638,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 574,
+      "line": 572,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "iVar9 = *(int *)((int)pvVar10 + iVar2 * 0x39c + 0x388);",
@@ -1650,7 +1646,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 580,
+      "line": 578,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "iVar9 = *(int *)((int)pvVar10 + iVar2 * 0x39c + 0x38c);",
@@ -1658,7 +1654,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 588,
+      "line": 586,
       "match": "(char *)((int)",
       "severity": "mild",
       "text": "if (*(char *)((int)pvVar10 + iVar2 * 0x39c + 0x308) != '\\0') {",
@@ -1666,7 +1662,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 589,
+      "line": 587,
       "match": "(char *)((int)",
       "severity": "mild",
       "text": "pcVar13 = (char *)((int)pvVar10 + iVar2 * 0x39c + 0x308);",
@@ -1674,7 +1670,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 602,
+      "line": 600,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (*(int *)((int)pvVar10 + iVar2 * 0x39c + 0x374) == 0) {",
@@ -1682,7 +1678,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 612,
+      "line": 610,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (*(int *)((int)pvVar10 + iVar2 * 0x39c + 0x370) != 5) {",
@@ -1690,7 +1686,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 615,
+      "line": 613,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if ((*(int *)((int)pvVar10 + iVar2 * 0x39c + 0x374) == 0) &&",
@@ -1698,7 +1694,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 616,
+      "line": 614,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "(*(int *)((int)pvVar10 + iVar2 * 0x39c + 0x370) != 5)) {",
@@ -1706,7 +1702,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 619,
+      "line": 617,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (*(int *)((int)pvVar10 + iVar2 * 0x39c + 0x370) != 5) {",
@@ -1714,7 +1710,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 622,
+      "line": 620,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (*(int *)((int)pvVar10 + iVar2 * 0x39c + 0x370) == 5) {",
@@ -1722,7 +1718,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 625,
+      "line": 623,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (*(int *)((int)pvVar10 + iVar2 * 0x39c + 0x370) == 5) {",
@@ -1730,7 +1726,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 628,
+      "line": 626,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (*(int *)((int)pvVar10 + iVar2 * 0x39c + 0x370) != 5) {",
@@ -1738,15 +1734,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 634,
+      "line": 632,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "PTR_ARRAY_00679da0[*(int *)((int)pvVar10 + iVar2 * 0x39c + 0x378)]);",
+      "text": "g_PodFileActionNames[*(int *)((int)pvVar10 + iVar2 * 0x39c + 0x378)]);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 646,
+      "line": 644,
       "match": "(char *)((int)",
       "severity": "mild",
       "text": "(this_ptr,(char *)((int)pvVar10 + iVar2 * 0x39c + 0x204));",
@@ -1754,7 +1750,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 656,
+      "line": 654,
       "match": "(char *)((int)",
       "severity": "mild",
       "text": "local_24 = (char *)((int)local_44 + 0x100);",
@@ -1762,7 +1758,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 661,
+      "line": 659,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "iVar2 = *(int *)((int)local_44 + local_20 * 0x39c + 0x378);",
@@ -1770,7 +1766,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 663,
+      "line": 661,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (((*(int *)((int)local_44 + local_20 * 0x39c + 0x370) == 3) &&",
@@ -1778,7 +1774,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 664,
+      "line": 662,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "(*(int *)((int)local_44 + local_20 * 0x39c + 0x37c) == 0)) &&",
@@ -1786,7 +1782,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 665,
+      "line": 663,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "((*(int *)((int)local_44 + local_20 * 0x39c + 0x374) != 0 &&",
@@ -1794,7 +1790,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 684,
+      "line": 682,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "iVar2 = *(int *)((int)pvVar10 + iVar9 * 0x39c + 0x378);",
@@ -1802,7 +1798,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 686,
+      "line": 684,
       "match": "(char *)((int)",
       "severity": "mild",
       "text": "pcVar12 = (char *)((int)pvVar10 + iVar9 * 0x39c + 0x100);",
@@ -1810,7 +1806,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 699,
+      "line": 697,
       "match": "(char *)((int)",
       "severity": "mild",
       "text": "pcVar12 = (char *)((int)pvVar10 + iVar9 * 0x39c + 0x100);",
@@ -1818,7 +1814,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 711,
+      "line": 709,
       "match": "(char *)((int)",
       "severity": "mild",
       "text": "pcVar13 = (char *)((int)pvVar10 + iVar9 * 0x39c + 0x308);",
@@ -1826,7 +1822,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 736,
+      "line": 734,
       "match": "(char *)((int)",
       "severity": "mild",
       "text": "((char *)((int)pvVar10 + iVar9 * 0x39c + 0x100),0);",
@@ -1834,7 +1830,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 747,
+      "line": 745,
       "match": "(char *)((int)",
       "severity": "mild",
       "text": "pcVar12 = (char *)((int)pvVar10 + iVar9 * 0x39c + 0x100);",
@@ -1842,7 +1838,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 761,
+      "line": 759,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "iVar2 = *(int *)((int)pvVar10 + iVar9 * 0x39c + 0x398);",
@@ -1850,7 +1846,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 775,
+      "line": 773,
       "match": "(char *)((int)",
       "severity": "mild",
       "text": "pcVar12 = (char *)((int)pvVar10 + iVar9 * 0x39c + 0x100);",
@@ -1858,7 +1854,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 785,
+      "line": 783,
       "match": "(char *)((int)",
       "severity": "mild",
       "text": "((char *)((int)pvVar10 + iVar9 * 0x39c + 0x308),",
@@ -1866,7 +1862,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 788,
+      "line": 786,
       "match": "(char *)((int)",
       "severity": "mild",
       "text": "pcVar12 = (char *)((int)pvVar10 + iVar9 * 0x39c + 0x100);",
@@ -1874,7 +1870,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 796,
+      "line": 794,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (*(int *)((int)pvVar10 + iVar9 * 0x39c + 0x378) != 3) {",
@@ -1882,7 +1878,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 797,
+      "line": 795,
       "match": "(char *)((int)",
       "severity": "mild",
       "text": "pcVar12 = (char *)((int)pvVar10 + iVar9 * 0x39c + 0x100);",
@@ -1890,7 +1886,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 805,
+      "line": 803,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uVar5 = *(uint *)((int)pvVar10 + iVar9 * 0x39c + 0x378);",
@@ -1898,7 +1894,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 807,
+      "line": 805,
       "match": "(char *)((int)",
       "severity": "mild",
       "text": "pcVar12 = (char *)((int)pvVar10 + iVar9 * 0x39c + 0x100);",
@@ -1906,7 +1902,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 908,
+      "line": 906,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)pvVar10 + iVar2 * 0x39c + 0x378) = iVar6;",

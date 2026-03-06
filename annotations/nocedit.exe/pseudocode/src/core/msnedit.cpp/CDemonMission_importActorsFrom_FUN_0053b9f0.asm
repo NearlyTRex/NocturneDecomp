@@ -7,7 +7,6 @@
 ; CDemonMission *  Stack[0x4]:4   this_ptr
 ; CDemonMission *  Stack[0x8]:4   other
 ; Local Variables:
-; CPickList        Stack[-0x448]:936  local_448
 ; undefined1       Stack[-0xa0]:1  local_a0
 ; undefined1       Stack[-0x3c]:1  local_3c
 ; undefined1       Stack[-0x3b]:1  local_3b
@@ -105,7 +104,7 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 0053ba55
     PUSH EAX                            ; 0053ba59
     CALL shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20 ; 0053ba5a
-        ;   XREF to: 004a3e20 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20(CPickList * this_ptr, char * dialog_title, int config_param1, int config_param2)
+        ;   XREF to: 004a3e20 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20(CPickList * this_ptr, char * dialog_title, int initial_selected_index, uint window_flags)
     ADD ESP,0x10                        ; 0053ba5f
     TEST EAX,EAX                        ; 0053ba62
     JL 0x0053bc0f                       ; 0053ba64

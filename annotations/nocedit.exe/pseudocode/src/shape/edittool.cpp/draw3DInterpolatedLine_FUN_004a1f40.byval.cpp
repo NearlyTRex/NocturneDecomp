@@ -6,9 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Variable defined which should be unmapped: local_6c */
-/* WARNING: Variable defined which should be unmapped: local_9c */
-
 void __cdecl shape_edittool_cpp_draw3DInterpolatedLine_FUN_004a1f40(CVector3f *start_point,CVector3f *end_point)
 {
 __asm {

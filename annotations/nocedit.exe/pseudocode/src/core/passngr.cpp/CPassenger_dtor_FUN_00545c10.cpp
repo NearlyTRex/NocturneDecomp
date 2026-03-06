@@ -19,12 +19,6 @@ CPassenger * __cdecl core_passngr_cpp_CPassenger_dtor_FUN_00545c10(CPassenger *t
   CDeformableModelInstance *pCVar7;
   CPassenger *ptr;
   void *ptr_00;
-  uint unaff_EBX;
-  uint unaff_ESI;
-  uint unaff_retaddr;
-  uint in_stack_0000000c;
-  uint in_stack_00000010;
-  byte in_stack_0000002c;
   
   if ((flags & 4) != 0) {
     ptr_00 = __vec_delete(this_ptr,&g_CPassengerTypeInfo);
@@ -36,9 +30,7 @@ CPassenger * __cdecl core_passngr_cpp_CPassenger_dtor_FUN_00545c10(CPassenger *t
   if (this_ptr_00 != (CDemonActor *)0x0) {
     g_CurrentDebugLine = 0x50;
     g_CurrentDebugFilename = "..\\core\\passngr.cpp";
-    (*((this_ptr_00->vtable)._ub)->dtor)
-              (this_ptr_00,2,unaff_ESI,unaff_EBX,unaff_retaddr,(uint)this_ptr,flags,
-               in_stack_0000000c,in_stack_00000010);
+    (*((this_ptr_00->vtable)._ub)->dtor)(this_ptr_00,2);
   }
   pCVar1 = core_morph_cpp_CMorph_dtor_FUN_0052b330(&this_ptr->morph,0);
   pCVar2 = core_path_cpp_CPathMap_dtor_FUN_005464d0
@@ -56,7 +48,7 @@ CPassenger * __cdecl core_passngr_cpp_CPassenger_dtor_FUN_00545c10(CPassenger *t
   ptr = (CPassenger *)
         core_actor_cpp_CDemonActor_dtor_FUN_00408a30
                   ((CDemonActor *)(pCVar7[-1].part_data.visibility_flags + 7),1);
-  if ((in_stack_0000002c & 2) != 0) {
+  if ((flags & 2) != 0) {
     shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);
     return ptr;
   }

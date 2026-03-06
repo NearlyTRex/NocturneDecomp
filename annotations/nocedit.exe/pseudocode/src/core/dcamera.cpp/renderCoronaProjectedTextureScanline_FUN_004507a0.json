@@ -10,7 +10,7 @@
       {
         "category": "undeclared_identifier",
         "column": 23,
-        "line": 42,
+        "line": 43,
         "message": "use of undeclared identifier 'stack0xffffffc8'"
       }
     ],
@@ -19,17 +19,16 @@
   },
   "complexity": {
     "assembly_lines": 167,
-    "complexity_score": 179,
+    "complexity_score": 144,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 12,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 59,
-    "suspect_count": 10,
+    "suspect_count": 7,
     "suspect_types": [
       "pointer_cast",
       "stack_alignment_array",
-      "stack_param",
       "stack_ref"
     ],
     "total_lines": 226
@@ -291,41 +290,17 @@
     {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 8,
-      "match": "auStackY_1028",
+      "match": "aiStackY_1028",
       "severity": "moderate",
-      "text": "uint auStackY_1028 [1016];",
+      "text": "int aiStackY_1028 [1016];",
       "type": "stack_alignment_array"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_ffffffc0",
-      "severity": "moderate",
-      "text": "CVector3i *in_stack_ffffffc0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_ffffffc0",
-      "severity": "moderate",
-      "text": "(&g_CurrentLightForCorona->base,local_24,in_stack_ffffffc0);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 33,
-      "match": "in_stack_ffffffc0",
-      "severity": "moderate",
-      "text": "in_stack_ffffffc0 = local_34;",
-      "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
       "line": 34,
       "match": "&stack0xffffffc4",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffc4 + (uint)bVar3 * -8) = auStack_30[(uint)bVar3 * -2];",
+      "text": "*(uint *)((int)&stack0xffffffc4 + (uint)bVar3 * -8) =",
       "type": "stack_ref"
     },
     {
@@ -333,12 +308,20 @@
       "line": 34,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&stack0xffffffc4 + (uint)bVar3 * -8) = auStack_30[(uint)bVar3 * -2];",
+      "text": "*(uint *)((int)&stack0xffffffc4 + (uint)bVar3 * -8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 35,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&local_34 + (uint)bVar3 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 35,
+      "line": 36,
       "match": "&stack0xffffffc8",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffc8 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =",
@@ -346,27 +329,19 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 35,
+      "line": 36,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&stack0xffffffc8 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 39,
-      "match": "in_stack_ffffffc0",
-      "severity": "moderate",
-      "text": "[((int)in_stack_ffffffc0 >> 0x10) +",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 44,
-      "match": "in_stack_ffffffc0",
-      "severity": "moderate",
-      "text": "(int)in_stack_ffffffc0 >> ((byte)g_CurrentLightForCorona->shadow_x_shift & 0x1f);",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 37,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&local_34 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);",
+      "type": "pointer_cast"
     }
   ]
 }

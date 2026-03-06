@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 65,
-    "complexity_score": 97,
+    "complexity_score": 42,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 1,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 27,
-    "suspect_count": 6,
+    "suspect_count": 1,
     "suspect_types": [
-      "register_param",
       "unnamed_param"
     ],
     "total_lines": 92
@@ -37,7 +36,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_actor.cpp_CActorPropertyList_addClothList_FUN_0040e500",
-    "signature": "CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addClothList_FUN_0040e500(CActorPropertyList *this_ptr,char *property_name,CClothList *data_ptr,int max_count)"
+    "signature": "void __cdecl core_actor_cpp_CActorPropertyList_addClothList_FUN_0040e500(CActorPropertyList *this_ptr,char *property_name,CClothList *data_ptr,int max_count)"
   },
   "function_calls": [
     {
@@ -149,52 +148,12 @@
   },
   "suspects": [
     {
-      "description": "Inferred register parameter",
-      "line": 5,
-      "match": "in_EAX",
-      "severity": "mild",
-      "text": "CActorProperty *in_EAX;",
-      "type": "register_param"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 22,
-      "match": "in_EAX",
-      "severity": "mild",
-      "text": "in_EAX = core_actor_cpp_CActorPropertyList_snag_FUN_0040e6c0",
-      "type": "register_param"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 24,
-      "match": "in_EAX",
-      "severity": "mild",
-      "text": "(in_EAX->param1).v_int = iVar1;",
-      "type": "register_param"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 24,
       "match": "param1",
       "severity": "mild",
-      "text": "(in_EAX->param1).v_int = iVar1;",
+      "text": "(pCVar1->param1).v_int = iVar2;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 26,
-      "match": "in_EAX",
-      "severity": "mild",
-      "text": "in_EAX->auto_update_flag = 1;",
-      "type": "register_param"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 29,
-      "match": "in_EAX",
-      "severity": "mild",
-      "text": "return in_EAX;",
-      "type": "register_param"
     }
   ]
 }

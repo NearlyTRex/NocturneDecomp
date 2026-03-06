@@ -105,7 +105,7 @@ section .text
     MOV EDX,dword ptr [0x006703ec]      ; 004193f6 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EDX                            ; 004193fc | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_renderFaceBatch_FUN_0048ce20 ; 004193fd
-        ;   XREF to: 0048ce20 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_renderFaceBatch_FUN_0048ce20(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * primitive_array, int primitive_count, int render_flags)
+        ;   XREF to: 0048ce20 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderFaceBatch_FUN_0048ce20(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * primitive_array, int primitive_count, int render_flags)
     ADD ESP,0x10                        ; 00419402
     PUSH 0x1                            ; 00419405
         ;   Label: LAB_00419405

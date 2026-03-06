@@ -6086,7 +6086,7 @@
     "vars":{
       "params":[
         {
-          "name":"header",
+          "name":"mrgl_data",
           "storage":{
             "offset":4,
             "size":4,
@@ -16271,7 +16271,7 @@
         "start":"0044d7d0"
       }
     ],
-    "conv":"__cdecl",
+    "conv":"__stack2_esi",
     "importable":true,
     "name":"core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0",
     "ret":"CVector3i*",
@@ -16392,7 +16392,7 @@
           "type":"CDemonCamera*"
         },
         {
-          "name":"output_ptr",
+          "name":"input_ptr",
           "storage":{
             "offset":8,
             "size":4,
@@ -16408,15 +16408,14 @@
           "type":"CVector3i*"
         },
         {
-          "name":"input_ptr",
+          "name":"output_ptr",
           "storage":{
-            "offset":12,
+            "reg":"ESI",
             "size":4,
-            "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0xc]",
-                "offset":12,
+                "addr":"register:00000018",
+                "offset":24,
                 "size":4
               }
             ]
@@ -36089,38 +36088,6 @@
             ]
           },
           "type":"undefined4"
-        },
-        {
-          "name":"local_140",
-          "storage":{
-            "offset":-320,
-            "size":48,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x140]",
-                "offset":-320,
-                "size":48
-              }
-            ]
-          },
-          "type":"SRenderVertex"
-        },
-        {
-          "name":"local_170",
-          "storage":{
-            "offset":-368,
-            "size":48,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x170]",
-                "offset":-368,
-                "size":48
-              }
-            ]
-          },
-          "type":"SRenderVertex"
         }
       ],
       "params":[
@@ -36401,7 +36368,7 @@
           "type":"char*"
         },
         {
-          "name":"config_parameter",
+          "name":"window_flags",
           "storage":{
             "offset":12,
             "size":4,
@@ -36414,7 +36381,7 @@
               }
             ]
           },
-          "type":"int"
+          "type":"uint"
         }
       ]
     }
@@ -39171,7 +39138,7 @@
           "type":"char*"
         },
         {
-          "name":"name_or_offset",
+          "name":"file_size",
           "storage":{
             "offset":16,
             "size":4,
@@ -39184,10 +39151,10 @@
               }
             ]
           },
-          "type":"char*"
+          "type":"int"
         },
         {
-          "name":"file_size",
+          "name":"file_offset",
           "storage":{
             "offset":20,
             "size":4,
@@ -39203,7 +39170,7 @@
           "type":"int"
         },
         {
-          "name":"file_offset",
+          "name":"timestamp_source",
           "storage":{
             "offset":24,
             "size":4,
@@ -39216,7 +39183,7 @@
               }
             ]
           },
-          "type":"int"
+          "type":"char*"
         },
         {
           "name":"checksum",
@@ -39228,22 +39195,6 @@
               {
                 "addr":"Stack[0x1c]",
                 "offset":28,
-                "size":4
-              }
-            ]
-          },
-          "type":"int"
-        },
-        {
-          "name":"timestamp",
-          "storage":{
-            "offset":32,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x20]",
-                "offset":32,
                 "size":4
               }
             ]
@@ -43055,22 +43006,6 @@
             ]
           },
           "type":"undefined4"
-        },
-        {
-          "name":"local_54",
-          "storage":{
-            "offset":-84,
-            "size":24,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x54]",
-                "offset":-84,
-                "size":24
-              }
-            ]
-          },
-          "type":"SMRGLHeaderPrimitive"
         }
       ],
       "params":[
@@ -56769,7 +56704,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a150",
-    "ret":"int",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -56934,17 +56869,7 @@
           },
           "type":"float"
         }
-      ],
-      "ret_storage":{
-        "reg":"EAX",
-        "size":4,
-        "varnodes":[
-          {
-            "addr":"register:00000000",
-            "size":4
-          }
-        ]
-      }
+      ]
     }
   },
   {
@@ -64193,7 +64118,7 @@
           "type":"int"
         },
         {
-          "name":"base_path",
+          "name":"apply_palette_flag",
           "storage":{
             "offset":20,
             "size":4,
@@ -64206,7 +64131,7 @@
               }
             ]
           },
-          "type":"char*"
+          "type":"int"
         }
       ]
     }
@@ -64243,7 +64168,7 @@
           "type":"CPackedBitmapSet*"
         },
         {
-          "name":"pbg_filename",
+          "name":"apply_palette_flag",
           "storage":{
             "offset":8,
             "size":4,
@@ -64256,7 +64181,23 @@
               }
             ]
           },
-          "type":"char*"
+          "type":"int"
+        },
+        {
+          "name":"bitmap_index",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }

@@ -117,7 +117,7 @@ section .text
     PUSH 0x621401                       ; 004813e8 | = "Open rule"
     PUSH ESI                            ; 004813ed
     CALL core_actor.cpp_CActorPropertyList_addRuleList_FUN_0040e5a0 ; 004813ee
-        ;   XREF to: 0040e5a0 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addRuleList_FUN_0040e5a0(CActorPropertyList * this_ptr, char * property_name, CRuleList * data_ptr, int max_count)
+        ;   XREF to: 0040e5a0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_addRuleList_FUN_0040e5a0(CActorPropertyList * this_ptr, char * property_name, CRuleList * data_ptr, int max_count)
     ADD ESP,0x10                        ; 004813f3
     LEA EAX,[EBX + 0x864]               ; 004813f6
     PUSH EAX                            ; 004813fc

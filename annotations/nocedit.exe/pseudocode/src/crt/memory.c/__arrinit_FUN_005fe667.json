@@ -1,20 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 130,
+    "complexity_score": 101,
     "cross_reference_count": 85,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 20,
-    "suspect_count": 9,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 16,
+    "suspect_count": 7,
     "suspect_types": [
       "pointer_cast",
       "special_crt_function",
-      "unnamed_param",
-      "warning_unmapped_variable"
+      "unnamed_param"
     ],
-    "total_lines": 56
+    "total_lines": 52
   },
   "cross_references": [
     {
@@ -570,26 +569,12 @@
     "pcode_op_count": 136
   },
   "stack_frame": {
-    "frame_size": 44,
-    "local_size": 32,
+    "frame_size": 36,
+    "local_size": 24,
     "param_offset": 4,
     "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
-      {
-        "is_param": false,
-        "name": "loop_counter",
-        "offset": -28,
-        "size": 4,
-        "type": "int"
-      },
-      {
-        "is_param": false,
-        "name": "temp_type_info",
-        "offset": -24,
-        "size": 4,
-        "type": "WatcomTypeInfo *"
-      },
       {
         "is_param": false,
         "name": "original_array_ptr",
@@ -622,24 +607,8 @@
   },
   "suspects": [
     {
-      "description": "Variable defined which should be unmapped",
-      "line": 2,
-      "match": "WARNING: Variable defined which should be unmapped",
-      "severity": "moderate",
-      "text": "/* WARNING: Variable defined which should be unmapped: loop_counter */",
-      "type": "warning_unmapped_variable"
-    },
-    {
-      "description": "Variable defined which should be unmapped",
-      "line": 3,
-      "match": "WARNING: Variable defined which should be unmapped",
-      "severity": "moderate",
-      "text": "/* WARNING: Variable defined which should be unmapped: temp_type_info */",
-      "type": "warning_unmapped_variable"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 10,
+      "line": 7,
       "match": "param0",
       "severity": "mild",
       "text": "void *param0;",
@@ -647,7 +616,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 18,
+      "line": 13,
       "match": "param0",
       "severity": "mild",
       "text": "param0 = array_start;",
@@ -655,7 +624,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 15,
       "match": "param0",
       "severity": "mild",
       "text": "(*pWVar1)(param0);",
@@ -663,7 +632,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 21,
+      "line": 16,
       "match": "(void *)((int)",
       "severity": "mild",
       "text": "param0 = (void *)((int)param0 + iVar2);",
@@ -671,7 +640,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 16,
       "match": "param0",
       "severity": "mild",
       "text": "param0 = (void *)((int)param0 + iVar2);",
@@ -679,7 +648,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 16,
       "match": "param0",
       "severity": "mild",
       "text": "param0 = (void *)((int)param0 + iVar2);",

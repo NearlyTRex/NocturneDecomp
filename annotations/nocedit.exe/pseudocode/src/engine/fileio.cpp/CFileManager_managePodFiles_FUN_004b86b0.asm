@@ -642,7 +642,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x22f4]    ; 004b8d8e
     MOV EAX,dword ptr [EBX + 0x378]     ; 004b8d95
         ;   Label: LAB_004b8d95
-    MOV EDX,dword ptr [EAX*0x4 + 0x679da0] ; 004b8d9b | PTR_ARRAY_00679da0
+    MOV EDX,dword ptr [EAX*0x4 + 0x679da0] ; 004b8d9b | g_PodFileActionNames
     PUSH EDX                            ; 004b8da2
     MOV ECX,dword ptr [EBX + 0x36c]     ; 004b8da3
     PUSH ECX                            ; 004b8da9
@@ -714,7 +714,7 @@ section .text
     LEA EAX,[ESP + 0xc38]               ; 004b8e47
     PUSH EAX                            ; 004b8e4e
     CALL shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20 ; 004b8e4f
-        ;   XREF to: 004a3e20 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20(CPickList * this_ptr, char * dialog_title, int config_param1, int config_param2)
+        ;   XREF to: 004a3e20 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20(CPickList * this_ptr, char * dialog_title, int initial_selected_index, uint window_flags)
     ADD ESP,0x10                        ; 004b8e54
     MOV dword ptr [ESP + 0x22d8],EAX    ; 004b8e57
     TEST EAX,EAX                        ; 004b8e5e
@@ -1399,7 +1399,7 @@ section .text
     CALL shape_edittool.cpp_CPickList_ctor_FUN_004a3b90 ; 004b96bb
         ;   XREF to: 004a3b90 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_ctor_FUN_004a3b90(CPickList * this_ptr)
     ADD ESP,0x4                         ; 004b96c0
-    MOV ECX,dword ptr [0x00679da0]      ; 004b96c3 | PTR_ARRAY_00679da0
+    MOV ECX,dword ptr [0x00679da0]      ; 004b96c3 | g_PodFileActionNames
     PUSH ECX                            ; 004b96c9 | = "Skip"
     LEA EAX,[ESP + 0xfd8]               ; 004b96ca
     PUSH EAX                            ; 004b96d1
@@ -1410,7 +1410,7 @@ section .text
     CMP EBX,0x5                         ; 004b96e0
     JZ 0x004b96fc                       ; 004b96e3
         ;   XREF to: 004b96fc (CONDITIONAL_JUMP)  ; LAB_004b96fc
-    MOV ESI,dword ptr [0x00679da4]      ; 004b96e5 | PTR_ARRAY_00679da0[1]
+    MOV ESI,dword ptr [0x00679da4]      ; 004b96e5 | g_PodFileActionNames[1]
     PUSH ESI                            ; 004b96eb | = "Copy"
     LEA EAX,[ESP + 0xfd8]               ; 004b96ec
     PUSH EAX                            ; 004b96f3
@@ -1436,7 +1436,7 @@ section .text
         ;   Label: LAB_004b9729
     JNZ 0x004b9749                      ; 004b9730
         ;   XREF to: 004b9749 (CONDITIONAL_JUMP)  ; LAB_004b9749
-    MOV EDI,dword ptr [0x00679db0]      ; 004b9732 | PTR_ARRAY_00679da0[4]
+    MOV EDI,dword ptr [0x00679db0]      ; 004b9732 | g_PodFileActionNames[4]
     PUSH EDI                            ; 004b9738 | = "Dismount"
     LEA EAX,[ESP + 0xfd8]               ; 004b9739
     PUSH EAX                            ; 004b9740
@@ -1460,7 +1460,7 @@ section .text
         ;   XREF to: 004b992f (CONDITIONAL_JUMP)  ; LAB_004b992f
     MOV EAX,dword ptr [EBP + 0x378]     ; 004b9776
         ;   Label: LAB_004b9776
-    MOV EBX,dword ptr [EAX*0x4 + 0x679da0] ; 004b977c | PTR_ARRAY_00679da0
+    MOV EBX,dword ptr [EAX*0x4 + 0x679da0] ; 004b977c | g_PodFileActionNames
     PUSH EBX                            ; 004b9783
     LEA EAX,[ESP + 0xfd8]               ; 004b9784
     PUSH EAX                            ; 004b978b
@@ -1478,7 +1478,7 @@ section .text
     LEA EAX,[ESP + 0xfe0]               ; 004b97a5
     PUSH EAX                            ; 004b97ac
     CALL shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20 ; 004b97ad
-        ;   XREF to: 004a3e20 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20(CPickList * this_ptr, char * dialog_title, int config_param1, int config_param2)
+        ;   XREF to: 004a3e20 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20(CPickList * this_ptr, char * dialog_title, int initial_selected_index, uint window_flags)
     ADD ESP,0x10                        ; 004b97b2
     MOV ESI,EAX                         ; 004b97b5
     TEST EAX,EAX                        ; 004b97b7
@@ -1630,7 +1630,7 @@ section .text
     XOR EBX,EBX                         ; 004b9949
         ;   Label: LAB_004b9949
     XOR EDI,EDI                         ; 004b994b
-    MOV EDX,dword ptr [EBX + 0x679da0]  ; 004b994d | PTR_ARRAY_00679da0 | PTR_ARRAY_00679da0[1]
+    MOV EDX,dword ptr [EBX + 0x679da0]  ; 004b994d | g_PodFileActionNames | g_PodFileActionNames[1]
         ;   Label: LAB_004b994d
     PUSH EDX                            ; 004b9953 | = "Skip" | s_Copy_0062844e
     PUSH ESI                            ; 004b9954
@@ -1783,7 +1783,7 @@ section .text
     PUSH EAX                            ; 004b9add
         ;   Label: LAB_004b9add
     CALL engine_fileio.cpp_showOverwriteConfirmationDialog_FUN_004b2f90 ; 004b9ade
-        ;   XREF to: 004b2f90 (UNCONDITIONAL_CALL)  ; int engine_fileio.cpp_showOverwriteConfirmationDialog_FUN_004b2f90(int * user_choice_ptr, char * dialog_message)
+        ;   XREF to: 004b2f90 (UNCONDITIONAL_CALL)  ; int engine_fileio.cpp_showOverwriteConfirmationDialog_FUN_004b2f90(char * dialog_title, int * overwrite_state)
     ADD ESP,0x8                         ; 004b9ae3
     TEST EAX,EAX                        ; 004b9ae6
     JL 0x004b8f64                       ; 004b9ae8

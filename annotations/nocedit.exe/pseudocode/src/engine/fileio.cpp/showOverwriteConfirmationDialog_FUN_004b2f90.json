@@ -52,7 +52,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_fileio.cpp_showOverwriteConfirmationDialog_FUN_004b2f90",
-    "signature": "int __cdecl engine_fileio_cpp_showOverwriteConfirmationDialog_FUN_004b2f90(int *user_choice_ptr,char *dialog_message)"
+    "signature": "int __cdecl engine_fileio_cpp_showOverwriteConfirmationDialog_FUN_004b2f90(char *dialog_title,int *overwrite_state)"
   },
   "function_calls": [
     {
@@ -209,17 +209,17 @@
       },
       {
         "is_param": true,
-        "name": "user_choice_ptr",
+        "name": "dialog_title",
         "offset": 4,
         "size": 4,
-        "type": "int *"
+        "type": "char *"
       },
       {
         "is_param": true,
-        "name": "dialog_message",
+        "name": "overwrite_state",
         "offset": 8,
         "size": 4,
-        "type": "char *"
+        "type": "int *"
       }
     ]
   },

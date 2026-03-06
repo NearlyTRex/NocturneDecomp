@@ -24,7 +24,7 @@ int __cdecl engine_dosio_c_findFileNormally_FUN_004817c0(SFoundFileInfo *info)
       pcVar3 = local_14c;
       info->timestamp = local_4c._st_mtime;
       pcVar4 = info->target_path;
-      info->container_size = local_4c._st_mtime;
+      info->container_timestamp = local_4c._st_mtime;
       do {
         cVar1 = *pcVar3;
         *pcVar4 = cVar1;

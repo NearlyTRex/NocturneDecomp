@@ -32,7 +32,7 @@ section .text
     ADD ESP,0x8                         ; 004b562b
     PUSH EBX                            ; 004b562e
     CALL engine_model.c_freeMRGLData_FUN_005280b0 ; 004b562f
-        ;   XREF to: 005280b0 (UNCONDITIONAL_CALL)  ; void engine_model.c_freeMRGLData_FUN_005280b0(SMRGLHeaderExtended * modelStruct)
+        ;   XREF to: 005280b0 (UNCONDITIONAL_CALL)  ; void engine_model.c_freeMRGLData_FUN_005280b0(SMRGLHeaderExtended * mrgl_data)
     ADD ESP,0x4                         ; 004b5634
     POP EBX                             ; 004b5637
     RET                                 ; 004b5638

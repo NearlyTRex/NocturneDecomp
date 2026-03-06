@@ -46,7 +46,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_dfilter.cpp_CFilterCache_getFilter_FUN_00470060",
-    "signature": "CDemonFilter * __cdecl core_dfilter_cpp_CFilterCache_getFilter_FUN_00470060(CFilterCache *this_ptr,char *filter_name,char *filter_filename,int enable_init)"
+    "signature": "CDemonFilter * __cdecl core_dfilter_cpp_CFilterCache_getFilter_FUN_00470060(CFilterCache *this_ptr,char *filter_name,int blend_filter)"
   },
   "function_calls": [
     {
@@ -156,10 +156,10 @@
     "pcode_op_count": 503
   },
   "stack_frame": {
-    "frame_size": 20,
+    "frame_size": 16,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 16,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -178,15 +178,8 @@
       },
       {
         "is_param": true,
-        "name": "filter_filename",
+        "name": "blend_filter",
         "offset": 12,
-        "size": 4,
-        "type": "char *"
-      },
-      {
-        "is_param": true,
-        "name": "enable_init",
-        "offset": 16,
         "size": 4,
         "type": "int"
       }

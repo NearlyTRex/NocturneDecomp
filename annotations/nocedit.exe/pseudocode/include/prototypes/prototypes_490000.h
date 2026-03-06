@@ -90,7 +90,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderVoxelGrid_FUN_004973b0(CDemonR
 void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500(CDemonRaytrace *this_ptr,int grid_x,int grid_y,int grid_z,int render_mode);
 void __cdecl core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50(CDemonRaytrace *this_ptr,float fov_or_radius,int render_mode);
 void __cdecl core_dtrace_cpp_CDemonRaytrace_setPVS_FUN_00498e50(CDemonRaytrace *this_ptr,int visible_cube_count,int *visible_cube_indices);
-void __cdecl core_dtrace_cpp_CDemonRaytrace_savePVS_FUN_00498fb0(CDemonRaytrace *this_ptr,int *output_count,int **input_indices_array, int **output_indices_array);
+void __cdecl core_dtrace_cpp_CDemonRaytrace_savePVS_FUN_00498fb0(CDemonRaytrace *this_ptr,int *output_count,int **input_indices_array);
 void __cdecl core_dtrace_cpp_CDemonRaytrace_renderPVSCubes_FUN_004990f0(CDemonRaytrace *this_ptr);
 float __cdecl core_dtrace_cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_00499170(CDemonRaytrace *this_ptr,CVector3f *world_position);
 int __cdecl core_dtrace_cpp_CDemonRaytrace_voxelRaycast3D_FUN_00499330(CDemonRaytrace *this_ptr,CVector3f *start_position,CVector3f *end_position);
@@ -134,7 +134,6 @@ void __cdecl core_dtri_cpp_clipPolygonToFar_FUN_0049bf60(float z_far);
 int __cdecl core_dtri_cpp_clipTriangleToBounds_FUN_0049c120(CVector3f *triangle_vertices,CVector3f *bounds_min,CVector3f *bounds_max);
 int __cdecl core_dtri_cpp_getClippedTriangleCount_FUN_0049cb30(void);
 CDemonTriangle * __cdecl core_dtri_cpp_buildClipTriangleFan_FUN_0049cb40(void);
-CDemonTriangle * __cdecl core_dtri_cpp_buildClipTriangleFan_FUN_0049cb5a(int triangle_count);
 int __cdecl core_dtri_cpp_getClippedVertexCount_FUN_0049cbb0(void);
 CVector3f * __cdecl core_dtri_cpp_getClippedVertices_FUN_0049cbc0(void);
 void __cdecl core_dtri_cpp_CDemonTriangle_render_FUN_0049cbd0(CDemonTriangle *this_ptr);

@@ -13,7 +13,7 @@ void __cdecl sound_sndmain_cpp_readIni_FUN_005abf20(CIniFile *ini_file)
   int iVar2;
   char *pcVar3;
   char *pcVar4;
-  char *in_stack_fffffc4c;
+  SSoundDeviceInfo local_3b4;
   SRecordingDeviceInfo local_29c;
   char local_194 [256];
   char local_94 [100];
@@ -33,13 +33,12 @@ void __cdecl sound_sndmain_cpp_readIni_FUN_005abf20(CIniFile *ini_file)
     pcVar3 = pcVar3 + 4;
     pcVar4 = pcVar4 + 4;
   }
-  engine_ini_cpp_CIniFile_getString_FUN_004fbb20
-            (ini_file,"DeviceName",local_194,0x100,in_stack_fffffc4c);
+  engine_ini_cpp_CIniFile_getString_FUN_004fbb20(ini_file,"DeviceName",local_194,0x100);
   sound_sndmain_cpp_closeSoundDevice_FUN_005ab660();
   for (iVar2 = 0; iVar1 = sound_sndmain_cpp_getSoundDeviceCount_FUN_005ab2e0(), iVar2 < iVar1;
       iVar2 = iVar2 + 1) {
-    sound_sndmain_cpp_getSoundDeviceInfo_FUN_005ab370(iVar2,(SSoundDeviceInfo *)&stack0xfffffc4c);
-    iVar1 = _stricmp(&stack0xfffffc4c,local_194);
+    sound_sndmain_cpp_getSoundDeviceInfo_FUN_005ab370(iVar2,&local_3b4);
+    iVar1 = _stricmp(local_3b4.device_name,local_194);
     if (iVar1 == 0) {
       sound_sndmain_cpp_selectSoundDevice_FUN_005ab4c0(iVar2);
       break;
@@ -47,7 +46,7 @@ void __cdecl sound_sndmain_cpp_readIni_FUN_005abf20(CIniFile *ini_file)
   }
   local_194[0] = '\0';
   engine_ini_cpp_CIniFile_getString_FUN_004fbb20
-            (ini_file,"RecordingDeviceName",local_194,0x100,in_stack_fffffc4c);
+            (ini_file,"RecordingDeviceName",local_194,0x100);
   iVar2 = 0;
   sound_sndmain_cpp_releaseRecordingDevice_FUN_005ab930();
   do {

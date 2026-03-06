@@ -1,19 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_0054be70(CPackedBitmapSet *this_ptr,char *filename_format,int start_index,int end_index,char *extension,char *base_path,int stride,int apply_palette_flag)
+; void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_0054be70(CPackedBitmapSet *this_ptr,char *filename_format,int width,int height,int start_index,int end_index,int transparency_color,int apply_palette_flag)
 ;
 ; Parameters:
 ; CPackedBitmapSet * Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   filename_format
-; int              Stack[0xc]:4   start_index
-; int              Stack[0x10]:4   end_index
-; char *           Stack[0x14]:4   extension
-; char *           Stack[0x18]:4   base_path
-; int              Stack[0x1c]:4   stride
+; int              Stack[0xc]:4   width
+; int              Stack[0x10]:4   height
+; int              Stack[0x14]:4   start_index
+; int              Stack[0x18]:4   end_index
+; int              Stack[0x1c]:4   transparency_color
 ; int              Stack[0x20]:4   apply_palette_flag
-; Local Variables:
-; char[116]        Stack[-0x74]:116  local_74
 ;
 ; Called Functions:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_0054b000

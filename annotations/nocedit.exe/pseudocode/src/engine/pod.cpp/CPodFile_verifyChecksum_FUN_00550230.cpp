@@ -46,8 +46,7 @@ int __cdecl engine_pod_cpp_CPodFile_verifyChecksum_FUN_00550230(CPodFile *this_p
         uVar8 = engine_pod_cpp_CPodFile_computeFileCRC_FUN_005507f0(this_ptr,iVar4);
         if (uVar8 != *(uint *)((int)&pCVar2->checksum + iVar7)) {
           shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                    (&local_3c8.base,
-                     *(char **)((int)&this_ptr->directory_entries->name_or_offset + iVar7));
+                    (&local_3c8.base,*(char **)((int)&this_ptr->directory_entries->name + iVar7));
         }
         iVar4 = iVar4 + 1;
         iVar7 = iVar7 + 0x14;

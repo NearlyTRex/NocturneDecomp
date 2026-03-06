@@ -31,9 +31,9 @@ int __cdecl engine_pod_cpp_CPod_getNextSearchResult_FUN_00550ef0(CPod *this_ptr,
         if (this_ptr_00->file_count <= iVar2) break;
         pCVar3 = this_ptr_00->directory_entries;
         iVar4 = shape_edittool_cpp_wildcardStringMatch_FUN_004a6e20
-                          (search_context->search_pattern,(char *)pCVar3[iVar2].name_or_offset,0);
+                          (search_context->search_pattern,pCVar3[iVar2].name,0);
         if (iVar4 != 0) {
-          pcVar5 = (char *)pCVar3[iVar2].name_or_offset;
+          pcVar5 = pCVar3[iVar2].name;
           pCVar6 = search_context;
           goto LAB_00550fb4;
         }

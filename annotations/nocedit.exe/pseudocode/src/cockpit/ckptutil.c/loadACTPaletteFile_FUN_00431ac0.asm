@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl cockpit_ckptutil_c_loadACTPaletteFile_FUN_00431ac0(char *base_filename,char *output_buffer)
+; void __cdecl cockpit_ckptutil_c_loadACTPaletteFile_FUN_00431ac0(char *base_filename,uchar *output_buffer)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   base_filename
-; char *           Stack[0x8]:4   output_buffer
+; uchar *          Stack[0x8]:4   output_buffer
 ; Local Variables:
 ; undefined1       Stack[-0xac]:1  local_ac
 ; undefined1       Stack[-0xab]:1  local_ab

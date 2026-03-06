@@ -6,9 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Variable defined which should be unmapped: local_160 */
-/* WARNING: Variable defined which should be unmapped: local_190 */
-
 void __cdecl core_actor_cpp_drawBoundingBox_FUN_0040d470(CBoundingBox3D *bbox,int line_color)
 {
 __asm {

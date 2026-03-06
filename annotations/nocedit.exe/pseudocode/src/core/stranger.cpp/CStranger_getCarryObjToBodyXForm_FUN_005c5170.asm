@@ -33,7 +33,7 @@ section .text
     LEA ESI,[ESP + 0xc]                 ; 005c5190
     MOV EDI,EBX                         ; 005c5194
     CALL core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_005c07b0 ; 005c5196
-        ;   XREF to: 005c07b0 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_005c07b0(CStranger * this_ptr, CDemonActor * carried_actor, int hand_index)
+        ;   XREF to: 005c07b0 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_005c07b0(CStranger * this_ptr, CDemonActor * carried_actor, int hand_index, CMatrix3x4f * output_matrix)
     MOV ECX,0xc                         ; 005c519b
     LEA ESI,[ESP + 0xc]                 ; 005c51a0
     ADD ESP,0xc                         ; 005c51a4

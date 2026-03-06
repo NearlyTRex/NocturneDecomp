@@ -46,6 +46,7 @@ void __cdecl core_menu_cpp_configureCustomKeyBindings_FUN_005138e0(void)
   char *pcVar35;
   bool bVar36;
   byte bVar37;
+  uint window_flags;
   CPickList local_a7c;
   char local_6d4 [512];
   char acStack_4d4 [512];
@@ -601,11 +602,11 @@ LAB_0051390e:
       } while (iVar31 < g_CustomKeyCount);
     }
     shape_edittool_cpp_CPickList_setSelectedResult_FUN_004a3e10(&local_a7c,1);
-    iVar34 = 0;
+    window_flags = 0;
     iVar31 = local_c;
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Edit key settings");
     iVar31 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                       (&local_a7c,pcVar2,iVar31,iVar34);
+                       (&local_a7c,pcVar2,iVar31,window_flags);
     if (iVar31 < 0) {
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_a7c,0);
       pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Forward");

@@ -725,7 +725,7 @@ section .text
     PUSH EAX                            ; 004588bc
     LEA ESI,[EBP + 0xfffffe78]          ; 004588bd
     CALL engine_model.c_getMRGLBounds_FUN_00528140 ; 004588c3
-        ;   XREF to: 00528140 (UNCONDITIONAL_CALL)  ; SMRGLModelBounds * engine_model.c_getMRGLBounds_FUN_00528140(SMRGLHeaderExtended * header, SMRGLModelBounds * output_bounds)
+        ;   XREF to: 00528140 (UNCONDITIONAL_CALL)  ; SMRGLModelBounds * engine_model.c_getMRGLBounds_FUN_00528140(SMRGLHeaderExtended * mrgl_data, SMRGLModelBounds * output_bounds)
     ADD ESP,0x4                         ; 004588c8
     MOV ECX,0xd                         ; 004588cb
     LEA EDI,[EBP + 0xffffff34]          ; 004588d0
@@ -738,7 +738,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0xc]      ; 004588f1
     PUSH EAX                            ; 004588f4
     CALL engine_model.c_freeMRGLData_FUN_005280b0 ; 004588f5
-        ;   XREF to: 005280b0 (UNCONDITIONAL_CALL)  ; void engine_model.c_freeMRGLData_FUN_005280b0(SMRGLHeaderExtended * modelStruct)
+        ;   XREF to: 005280b0 (UNCONDITIONAL_CALL)  ; void engine_model.c_freeMRGLData_FUN_005280b0(SMRGLHeaderExtended * mrgl_data)
     ADD ESP,0x4                         ; 004588fa
     MOV EAX,dword ptr [EBP + 0xffffff0c] ; 004588fd
     SUB EAX,dword ptr [EBP + 0xffffff00] ; 00458903

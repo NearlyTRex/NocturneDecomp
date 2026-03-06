@@ -7,9 +7,6 @@
 ; CDemonActor *    Stack[0x4]:4   this_ptr
 ; uint32_t         Stack[0x8]:4   color
 ; Local Variables:
-; SRenderVertex    Stack[-0x1ac]:48  local_1ac
-; SRenderVertex    Stack[-0x17c]:48  local_17c
-; CBoundingBox3D   Stack[-0x14c]:24  local_14c
 ; CBoundingBox3D * Stack[-0x14]:4  local_14
 ;
 ; XREF[9]:

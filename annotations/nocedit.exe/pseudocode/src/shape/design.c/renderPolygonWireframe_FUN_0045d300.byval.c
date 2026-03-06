@@ -6,9 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Variable defined which should be unmapped: local_d8 */
-/* WARNING: Variable defined which should be unmapped: local_108 */
-
 void __cdecl shape_design_c_renderPolygonWireframe_FUN_0045d300(SMRGLHeaderPrimitive *polygon_data)
 {
 __asm {

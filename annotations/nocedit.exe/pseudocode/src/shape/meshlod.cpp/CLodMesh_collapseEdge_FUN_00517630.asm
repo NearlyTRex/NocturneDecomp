@@ -435,7 +435,7 @@ section .text
     PUSH EAX                            ; 00517acd
     PUSH EBX                            ; 00517ace
     CALL shape_meshlod.cpp_CLodMesh_removeEdgeFromFace_FUN_005183e0 ; 00517acf
-        ;   XREF to: 005183e0 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_removeEdgeFromFace_FUN_005183e0(CLodMesh * this_ptr, int tri_index, int edge_index)
+        ;   XREF to: 005183e0 (UNCONDITIONAL_CALL)  ; int shape_meshlod.cpp_CLodMesh_removeEdgeFromFace_FUN_005183e0(CLodMesh * this_ptr, int tri_index, int edge_index)
     ADD ESP,0xc                         ; 00517ad4
     JMP 0x0051787b                      ; 00517ad7
         ;   XREF to: 0051787b (UNCONDITIONAL_JUMP)  ; LAB_0051787b
@@ -815,7 +815,7 @@ section .text
     PUSH EBX                            ; 00517f88
     MOV dword ptr [ESP + 0x47c],EDX     ; 00517f89
     CALL shape_meshlod.cpp_CLodMesh_removeEdgeFromFace_FUN_005183e0 ; 00517f90
-        ;   XREF to: 005183e0 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_removeEdgeFromFace_FUN_005183e0(CLodMesh * this_ptr, int tri_index, int edge_index)
+        ;   XREF to: 005183e0 (UNCONDITIONAL_CALL)  ; int shape_meshlod.cpp_CLodMesh_removeEdgeFromFace_FUN_005183e0(CLodMesh * this_ptr, int tri_index, int edge_index)
     ADD ESP,0xc                         ; 00517f95
     SHL EAX,0x2                         ; 00517f98
     ADD EAX,dword ptr [ESP + 0x470]     ; 00517f9b

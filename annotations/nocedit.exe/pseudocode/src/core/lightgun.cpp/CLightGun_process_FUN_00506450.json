@@ -6,19 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 169,
-    "complexity_score": 122,
+    "complexity_score": 96,
     "cross_reference_count": 0,
     "function_call_count": 18,
     "global_count": 18,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 57,
-    "suspect_count": 5,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 56,
+    "suspect_count": 3,
     "suspect_types": [
       "decompiler_intrinsic",
-      "unaffected_reg",
       "warning_inlined_function"
     ],
-    "total_lines": 226
+    "total_lines": 225
   },
   "cross_references": [],
   "function": {
@@ -337,16 +336,8 @@
       "type": "warning_inlined_function"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 12,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "int unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 24,
+      "line": 23,
       "match": "ROUND",
       "severity": "mild",
       "text": "(this_ptr->base).ammo_count = (int)ROUND(ROUND(fVar1 * (float)100));",
@@ -354,19 +345,11 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 24,
+      "line": 23,
       "match": "ROUND",
       "severity": "mild",
       "text": "(this_ptr->base).ammo_count = (int)ROUND(ROUND(fVar1 * (float)100));",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 50,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "(g_CFilterCachePtr,\"lgunmask.raw\",(char *)0x0,unaff_ESI);",
-      "type": "unaffected_reg"
     }
   ],
   "vtable_info": {

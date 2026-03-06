@@ -9,11 +9,10 @@
 void __cdecl engine_ini_cpp_CIniFile_getFloat_FUN_004fbcd0(CIniFile *this_ptr,char *key,float *output)
 
 {
-  char *in_stack_ffffff98;
+  char local_68 [100];
   
-  _sprintf(&stack0xffffff98,"%g",(double)*output);
-  engine_ini_cpp_CIniFile_getString_FUN_004fbb20
-            (this_ptr,key,&stack0xffffff98,100,in_stack_ffffff98);
-  sscanf(&stack0xffffff98,"%f");
+  _sprintf(local_68,"%g",(double)*output);
+  engine_ini_cpp_CIniFile_getString_FUN_004fbb20(this_ptr,key,local_68,100);
+  sscanf(local_68,"%f");
   return;
 }

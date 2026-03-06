@@ -27,7 +27,6 @@ void __cdecl engine_fileio_cpp_CFileManager_managePodFiles_FUN_004b86b0(CFileMan
   char *pcVar13;
   SFoundFileInfo *pSVar14;
   byte bVar15;
-  int *dialog_message;
   char local_2338 [2048];
   CPodFile local_1b38;
   CPickList local_170c;
@@ -35,8 +34,8 @@ void __cdecl engine_fileio_cpp_CFileManager_managePodFiles_FUN_004b86b0(CFileMan
   SFoundFileInfo local_fbc;
   SFoundFileInfo local_da8;
   SFoundFileInfo local_b94;
-  int local_980 [125];
-  int local_78c [125];
+  char local_980 [500];
+  char local_78c [500];
   char local_598 [260];
   char local_494 [256];
   char local_394 [256];
@@ -251,8 +250,7 @@ void __cdecl engine_fileio_cpp_CFileManager_managePodFiles_FUN_004b86b0(CFileMan
           if (0 < local_1b38.file_count) {
             local_68 = 0;
             do {
-              puVar11 = (uint *)
-                        ((int)&(local_1b38.directory_entries)->name_or_offset + local_68);
+              puVar11 = (uint *)((int)&(local_1b38.directory_entries)->name + local_68);
               pSVar14 = &local_da8;
               pcVar12 = (char *)*puVar11;
               do {
@@ -480,7 +478,7 @@ LAB_004b8d5b:
         do {
           _sprintf
                     (local_2338,"%s\t%s\t%s",pvVar10,*(uint *)((int)pvVar10 + 0x36c),
-                     PTR_ARRAY_00679da0[*(int *)((int)pvVar10 + 0x378)]);
+                     g_PodFileActionNames[*(int *)((int)pvVar10 + 0x378)]);
           if (*(char *)((int)pvVar10 + 0x308) != '\0') {
             pcVar12 = local_2338;
             do {
@@ -615,22 +613,22 @@ LAB_004b9590:
           _sprintf(pcVar12,pcVar13);
         }
         shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_1364);
-        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_1364.base,PTR_ARRAY_00679da0[0]);
+        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_1364.base,g_PodFileActionNames[0]);
         if (*(int *)((int)pvVar10 + iVar2 * 0x39c + 0x370) != 5) {
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_1364.base,PTR_ARRAY_00679da0[1]);
+          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_1364.base,g_PodFileActionNames[1]);
         }
         if ((*(int *)((int)pvVar10 + iVar2 * 0x39c + 0x374) == 0) &&
            (*(int *)((int)pvVar10 + iVar2 * 0x39c + 0x370) != 5)) {
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_1364.base,PTR_ARRAY_00679da0[2]);
+          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_1364.base,g_PodFileActionNames[2]);
         }
         if (*(int *)((int)pvVar10 + iVar2 * 0x39c + 0x370) != 5) {
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_1364.base,PTR_ARRAY_00679da0[3]);
+          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_1364.base,g_PodFileActionNames[3]);
         }
         if (*(int *)((int)pvVar10 + iVar2 * 0x39c + 0x370) == 5) {
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_1364.base,PTR_ARRAY_00679da0[4]);
+          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_1364.base,g_PodFileActionNames[4]);
         }
         if (*(int *)((int)pvVar10 + iVar2 * 0x39c + 0x370) == 5) {
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_1364.base,PTR_ARRAY_00679da0[5]);
+          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_1364.base,g_PodFileActionNames[5]);
         }
         if (*(int *)((int)pvVar10 + iVar2 * 0x39c + 0x370) != 5) {
           shape_edittool_cpp_CStrList_add_FUN_004a2b80
@@ -638,7 +636,7 @@ LAB_004b9590:
         }
         iVar9 = shape_edittool_cpp_CStrList_findString_FUN_004a3030
                           (&local_1364.base,
-                           PTR_ARRAY_00679da0[*(int *)((int)pvVar10 + iVar2 * 0x39c + 0x378)]);
+                           g_PodFileActionNames[*(int *)((int)pvVar10 + iVar2 * 0x39c + 0x378)]);
         while (iVar9 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                                  (&local_1364,local_2338,iVar9,0), -1 < iVar9) {
           pcVar13 = "Show local file differences";
@@ -723,18 +721,18 @@ LAB_004b9590:
                      iVar2 != 0)) {
                     if ((local_38 & 8) != 0) goto LAB_004b9af4;
                     _sprintf
-                              ((char *)local_980,"A writable copy of %s exists.  Replace it?",pcVar12);
-                    dialog_message = &g_VersionControlSession.overwrite_writeable_choice;
-                    piVar8 = local_980;
+                              (local_980,"A writable copy of %s exists.  Replace it?",pcVar12);
+                    piVar8 = &g_VersionControlSession.overwrite_writeable_choice;
+                    pcVar12 = local_980;
                   }
                   else {
                     _sprintf
-                              ((char *)local_78c,"You currently have %s checked out.  Replace local copy with network copy?",pcVar12);
-                    dialog_message = &g_VersionControlSession.overwrite_own_choice;
-                    piVar8 = local_78c;
+                              (local_78c,"You currently have %s checked out.  Replace local copy with network copy?",pcVar12);
+                    piVar8 = &g_VersionControlSession.overwrite_own_choice;
+                    pcVar12 = local_78c;
                   }
                   iVar2 = engine_fileio_cpp_showOverwriteConfirmationDialog_FUN_004b2f90
-                                    (piVar8,(char *)dialog_message);
+                                    (pcVar12,piVar8);
                   if (iVar2 < 0) break;
                   if (iVar2 == 0) goto LAB_004b8f32;
                 }
@@ -908,7 +906,7 @@ LAB_004b901b:
     iVar6 = iVar6 + 1;
     if (0x17 < iVar4) break;
 LAB_004b994d:
-    pcVar12 = *(char **)((int)PTR_ARRAY_00679da0 + iVar4);
+    pcVar12 = *(char **)((int)g_PodFileActionNames + iVar4);
     pcVar13 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_1364.base,iVar9);
     iVar7 = _stricmp(pcVar13,pcVar12);
     if (iVar7 == 0) {

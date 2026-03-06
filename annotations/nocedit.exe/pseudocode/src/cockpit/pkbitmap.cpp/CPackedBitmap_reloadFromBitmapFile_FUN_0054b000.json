@@ -13,16 +13,14 @@
   },
   "complexity": {
     "assembly_lines": 61,
-    "complexity_score": 31,
+    "complexity_score": 16,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 16,
-    "suspect_count": 1,
-    "suspect_types": [
-      "param_count_too_many"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 77
   },
   "cross_references": [
@@ -49,7 +47,7 @@
     ],
     "convention": "__cdecl",
     "name": "cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_0054b000",
-    "signature": "void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_reloadFromBitmapFile_FUN_0054b000(CPackedBitmap *this_ptr,char *filename,int width,int height,int transparency_color,int stride,int apply_palette_flag)"
+    "signature": "void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_reloadFromBitmapFile_FUN_0054b000(CPackedBitmap *this_ptr,char *filename,int width,int height,int transparency_color,int apply_palette_flag)"
   },
   "function_calls": [
     {
@@ -113,8 +111,8 @@
         "stack_params": 6
       }
     ],
-    "confidence": "medium",
-    "declared_params": 7,
+    "confidence": "high",
+    "declared_params": 6,
     "estimated_params": 6
   },
   "pcode_summary": {
@@ -146,10 +144,10 @@
     "pcode_op_count": 211
   },
   "stack_frame": {
-    "frame_size": 32,
+    "frame_size": 28,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 28,
+    "param_size": 24,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -189,31 +187,12 @@
       },
       {
         "is_param": true,
-        "name": "stride",
-        "offset": 24,
-        "size": 4,
-        "type": "int"
-      },
-      {
-        "is_param": true,
         "name": "apply_palette_flag",
-        "offset": 28,
+        "offset": 24,
         "size": 4,
         "type": "int"
       }
     ]
   },
-  "suspects": [
-    {
-      "call_site_count": 2,
-      "declared_params": 7,
-      "description": "Signature has too many params - likely wrong calling convention",
-      "estimated_params": 6,
-      "fix_type": "remove_params",
-      "match": "declared:7 vs estimated:6",
-      "param_delta": -1,
-      "text": "Function declares 7 params but call sites push 6 (1 extra)",
-      "type": "param_count_too_many"
-    }
-  ]
+  "suspects": []
 }

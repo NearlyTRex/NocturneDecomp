@@ -91,7 +91,7 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_processFiles_FUN_004b4220(CCheckOutI
     pcVar10 = pSVar9->found_path;
     pSVar9 = pSVar8;
   } while (*pcVar10 != '\0');
-  pcVar10 = (char *)((int)&pSVar8[-1].container_size + 3);
+  pcVar10 = (char *)((int)&pSVar8[-1].container_timestamp + 3);
   do {
     cVar1 = pSVar7->found_path[0];
     *pcVar10 = cVar1;

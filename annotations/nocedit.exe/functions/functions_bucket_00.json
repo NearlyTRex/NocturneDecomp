@@ -947,38 +947,6 @@
             ]
           },
           "type":"SRenderVertex"
-        },
-        {
-          "name":"local_a0",
-          "storage":{
-            "offset":-160,
-            "size":48,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0xa0]",
-                "offset":-160,
-                "size":48
-              }
-            ]
-          },
-          "type":"SRenderVertex"
-        },
-        {
-          "name":"local_d0",
-          "storage":{
-            "offset":-208,
-            "size":48,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0xd0]",
-                "offset":-208,
-                "size":48
-              }
-            ]
-          },
-          "type":"SRenderVertex"
         }
       ],
       "params":[
@@ -2361,7 +2329,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"core_actor.cpp_CActorPropertyList_addClothList_FUN_0040e500",
-    "ret":"CActorProperty*",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -2446,17 +2414,7 @@
           },
           "type":"int"
         }
-      ],
-      "ret_storage":{
-        "reg":"EAX",
-        "size":4,
-        "varnodes":[
-          {
-            "addr":"register:00000000",
-            "size":4
-          }
-        ]
-      }
+      ]
     }
   },
   {
@@ -5640,7 +5598,7 @@
     "vars":{
       "params":[
         {
-          "name":"header",
+          "name":"filename",
           "storage":{
             "offset":4,
             "size":4,
@@ -5653,7 +5611,7 @@
               }
             ]
           },
-          "type":"SMRGLHeaderExtended*"
+          "type":"char*"
         }
       ],
       "ret_storage":{
@@ -16040,38 +15998,6 @@
             ]
           },
           "type":"SRenderVertex"
-        },
-        {
-          "name":"local_d8",
-          "storage":{
-            "offset":-216,
-            "size":48,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0xd8]",
-                "offset":-216,
-                "size":48
-              }
-            ]
-          },
-          "type":"SRenderVertex"
-        },
-        {
-          "name":"local_108",
-          "storage":{
-            "offset":-264,
-            "size":48,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x108]",
-                "offset":-264,
-                "size":48
-              }
-            ]
-          },
-          "type":"SRenderVertex"
         }
       ],
       "params":[
@@ -21326,7 +21252,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"engine_drender.cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00",
-    "ret":"int",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -21476,7 +21402,7 @@
           "type":"int"
         },
         {
-          "name":"render_flags",
+          "name":"primitive_stride",
           "storage":{
             "offset":16,
             "size":4,
@@ -21492,7 +21418,7 @@
           "type":"int"
         },
         {
-          "name":"primitive_stride",
+          "name":"render_flags",
           "storage":{
             "offset":20,
             "size":4,
@@ -21507,17 +21433,7 @@
           },
           "type":"int"
         }
-      ],
-      "ret_storage":{
-        "reg":"EAX",
-        "size":4,
-        "varnodes":[
-          {
-            "addr":"register:00000000",
-            "size":4
-          }
-        ]
-      }
+      ]
     }
   },
   {
@@ -56817,7 +56733,7 @@
           "type":"int"
         },
         {
-          "name":"stride",
+          "name":"apply_palette_flag",
           "storage":{
             "offset":24,
             "size":4,
@@ -56826,22 +56742,6 @@
               {
                 "addr":"Stack[0x18]",
                 "offset":24,
-                "size":4
-              }
-            ]
-          },
-          "type":"int"
-        },
-        {
-          "name":"apply_palette_flag",
-          "storage":{
-            "offset":28,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x1c]",
-                "offset":28,
                 "size":4
               }
             ]
@@ -56983,7 +56883,7 @@
           "type":"char*"
         },
         {
-          "name":"palette_filename",
+          "name":"apply_palette_flag",
           "storage":{
             "offset":12,
             "size":4,
@@ -56996,10 +56896,10 @@
               }
             ]
           },
-          "type":"char*"
+          "type":"int"
         },
         {
-          "name":"param3",
+          "name":"frames_per_bitmap",
           "storage":{
             "offset":16,
             "size":4,
@@ -57015,7 +56915,7 @@
           "type":"int"
         },
         {
-          "name":"param4",
+          "name":"skip_data_load",
           "storage":{
             "offset":20,
             "size":4,
@@ -57024,22 +56924,6 @@
               {
                 "addr":"Stack[0x14]",
                 "offset":20,
-                "size":4
-              }
-            ]
-          },
-          "type":"int"
-        },
-        {
-          "name":"additional_param",
-          "storage":{
-            "offset":24,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x18]",
-                "offset":24,
                 "size":4
               }
             ]
@@ -57081,7 +56965,7 @@
           "type":"CPackedBitmapSet*"
         },
         {
-          "name":"filename",
+          "name":"apply_palette_flag",
           "storage":{
             "offset":8,
             "size":4,
@@ -57094,7 +56978,7 @@
               }
             ]
           },
-          "type":"char*"
+          "type":"int"
         },
         {
           "name":"bitmap_index",
@@ -72550,7 +72434,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"shape_superopt.cpp_CComplexPolygon_computeArea_FUN_005c9100",
-    "ret":"int",
+    "ret":"double",
     "vars":{
       "locals":[
         {
@@ -72669,9 +72553,14 @@
         }
       ],
       "ret_storage":{
-        "reg":"EAX",
-        "size":4,
+        "compound":true,
+        "size":8,
         "varnodes":[
+          {
+            "addr":"register:00000008",
+            "offset":8,
+            "size":4
+          },
           {
             "addr":"register:00000000",
             "size":4

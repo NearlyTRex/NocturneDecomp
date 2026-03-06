@@ -25,7 +25,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x10c]     ; 0054b3f9
     PUSH EDX                            ; 0054b400
     CALL cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_00431a30 ; 0054b401
-        ;   XREF to: 00431a30 (UNCONDITIONAL_CALL)  ; void cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_00431a30(char * filename, char * output_palette)
+        ;   XREF to: 00431a30 (UNCONDITIONAL_CALL)  ; void cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_00431a30(char * filename, uchar * output_palette)
     ADD ESP,0x8                         ; 0054b406
     MOV EAX,ESP                         ; 0054b409
     PUSH EAX                            ; 0054b40b

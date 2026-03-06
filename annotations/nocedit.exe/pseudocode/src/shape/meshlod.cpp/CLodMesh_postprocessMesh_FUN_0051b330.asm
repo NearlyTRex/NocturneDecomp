@@ -70,7 +70,7 @@ section .text
     FSTP float ptr [ESP]                ; 0051b382
     PUSH EBX                            ; 0051b385
     CALL shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a150 ; 0051b386
-        ;   XREF to: 0051a150 (UNCONDITIONAL_CALL)  ; int shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a150(CLodMesh * this_ptr, float weld_threshold)
+        ;   XREF to: 0051a150 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a150(CLodMesh * this_ptr, float weld_threshold)
     ADD ESP,0x8                         ; 0051b38b
     PUSH EBX                            ; 0051b38e
     CALL shape_meshlod.cpp_CLodMesh_markDegenerateFaces_FUN_00516b40 ; 0051b38f

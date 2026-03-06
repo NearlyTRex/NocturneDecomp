@@ -2,11 +2,11 @@
 // Address: 00431ac0
 // Address Range: [[00431ac0, 00431bff]]
 // Convention: __cdecl
-// Signature: void __cdecl cockpit_ckptutil_c_loadACTPaletteFile_FUN_00431ac0(char *base_filename,char *output_buffer)
+// Signature: void __cdecl cockpit_ckptutil_c_loadACTPaletteFile_FUN_00431ac0(char *base_filename,uchar *output_buffer)
 
 #include "nocturne.h"
 
-void __cdecl cockpit_ckptutil_c_loadACTPaletteFile_FUN_00431ac0(char *base_filename,char *output_buffer)
+void __cdecl cockpit_ckptutil_c_loadACTPaletteFile_FUN_00431ac0(char *base_filename,uchar *output_buffer)
 
 {
   char cVar1;
@@ -73,12 +73,12 @@ LAB_00431b33:
     for (iVar3 = 0xc0; iVar3 != 0; iVar3 = iVar3 + -1) {
       *(uint *)output_buffer = *(uint *)puVar6;
       puVar6 = puVar6 + (uint)bVar8 * -8 + 4;
-      output_buffer = (char *)((uchar *)output_buffer + (uint)bVar8 * -8 + 4);
+      output_buffer = output_buffer + (uint)bVar8 * -8 + 4;
     }
     for (iVar3 = 0; iVar3 != 0; iVar3 = iVar3 + -1) {
       *output_buffer = *puVar6;
       puVar6 = puVar6 + (uint)bVar8 * -2 + 1;
-      output_buffer = (char *)((uchar *)output_buffer + (uint)bVar8 * -2 + 1);
+      output_buffer = output_buffer + (uint)bVar8 * -2 + 1;
     }
     return;
   }

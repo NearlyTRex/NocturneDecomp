@@ -43,7 +43,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "engine_fileio.cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50",
-    "signature": "int __cdecl engine_fileio_cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50(CFileManager *this_ptr,_FILE *source_file,char *dest_filename,char *name_or_offset,int file_size,int file_offset,int checksum,int timestamp)"
+    "signature": "int __cdecl engine_fileio_cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50(CFileManager *this_ptr,_FILE *source_file,char *dest_filename,int file_size,int file_offset,char *timestamp_source,int checksum)"
   },
   "function_calls": [
     {
@@ -163,10 +163,10 @@
     "pcode_op_count": 812
   },
   "stack_frame": {
-    "frame_size": 312,
+    "frame_size": 308,
     "local_size": 280,
     "param_offset": 4,
-    "param_size": 32,
+    "param_size": 28,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -206,36 +206,29 @@
       },
       {
         "is_param": true,
-        "name": "name_or_offset",
-        "offset": 16,
-        "size": 4,
-        "type": "char *"
-      },
-      {
-        "is_param": true,
         "name": "file_size",
-        "offset": 20,
+        "offset": 16,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
         "name": "file_offset",
-        "offset": 24,
+        "offset": 20,
         "size": 4,
         "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "timestamp_source",
+        "offset": 24,
+        "size": 4,
+        "type": "char *"
       },
       {
         "is_param": true,
         "name": "checksum",
         "offset": 28,
-        "size": 4,
-        "type": "int"
-      },
-      {
-        "is_param": true,
-        "name": "timestamp",
-        "offset": 32,
         "size": 4,
         "type": "int"
       }

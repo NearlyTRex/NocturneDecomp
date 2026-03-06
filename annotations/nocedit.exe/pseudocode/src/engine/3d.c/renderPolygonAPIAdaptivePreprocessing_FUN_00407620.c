@@ -2,20 +2,16 @@
 // Address: 00407620
 // Address Range: [[00407620, 00407712]]
 // Convention: __cdecl
-// Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAPIAdaptivePreprocessing_FUN_00407620(SMRGLHeaderPrimitive *primitive,int render_flags,int render_state_flags,int alpha_blend_flags,int special_render_mode)
+// Signature: void __cdecl engine_3d_c_renderPolygonAPIAdaptivePreprocessing_FUN_00407620(SMRGLHeaderPrimitive *primitive,int render_flags,int render_state_flags)
 
 #include "nocturne.h"
 
-SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAPIAdaptivePreprocessing_FUN_00407620(SMRGLHeaderPrimitive *primitive,int render_flags,int render_state_flags,int alpha_blend_flags,int special_render_mode)
+void __cdecl engine_3d_c_renderPolygonAPIAdaptivePreprocessing_FUN_00407620(SMRGLHeaderPrimitive *primitive,int render_flags,int render_state_flags)
 
 {
   int iVar1;
-  SMRGLHeaderExtended *extraout_EAX;
-  SMRGLHeaderExtended *pSVar2;
-  SMRGLHeaderExtended *extraout_EAX_00;
   
   iVar1 = engine_3d_c_isVisiblePlane_FUN_00403950(&primitive->surface_normal);
-  pSVar2 = (SMRGLHeaderExtended *)0x0;
   if (iVar1 != 0) {
     if (g_MMXSupported == 0) {
       if (g_BitsPerPixel == 0x20) {
@@ -50,10 +46,9 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAPIAdaptivePreprocessing_
     if (g_AdvancedClippingEnabled == 0) {
       engine_clipper_c_clipPolygonToViewport_FUN_00438420
                 ((primitive->base).count,(int *)(primitive + 1));
-      return extraout_EAX_00;
+      return;
     }
     engine_clipper_c_clipAndRasterize_FUN_004371b0((primitive->base).count,(int *)(primitive + 1));
-    pSVar2 = extraout_EAX;
   }
-  return pSVar2;
+  return;
 }

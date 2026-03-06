@@ -6,17 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 99,
-    "complexity_score": 94,
+    "complexity_score": 44,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 7,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 49,
-    "suspect_count": 4,
-    "suspect_types": [
-      "extra_output"
-    ],
-    "total_lines": 148
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 44,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 143
   },
   "cross_references": [
     {
@@ -36,7 +34,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_3d.c_renderPolygonAPIAdaptivePreprocessing_FUN_00407620",
-    "signature": "SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAPIAdaptivePreprocessing_FUN_00407620(SMRGLHeaderPrimitive *primitive,int render_flags,int render_state_flags,int alpha_blend_flags,int special_render_mode)"
+    "signature": "void __cdecl engine_3d_c_renderPolygonAPIAdaptivePreprocessing_FUN_00407620(SMRGLHeaderPrimitive *primitive,int render_flags,int render_state_flags)"
   },
   "function_calls": [
     {
@@ -130,10 +128,10 @@
     "pcode_op_count": 255
   },
   "stack_frame": {
-    "frame_size": 24,
+    "frame_size": 16,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 20,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -156,55 +154,8 @@
         "offset": 12,
         "size": 4,
         "type": "int"
-      },
-      {
-        "is_param": true,
-        "name": "alpha_blend_flags",
-        "offset": 16,
-        "size": 4,
-        "type": "int"
-      },
-      {
-        "is_param": true,
-        "name": "special_render_mode",
-        "offset": 20,
-        "size": 4,
-        "type": "int"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 6,
-      "match": "extraout_EAX",
-      "severity": "moderate",
-      "text": "SMRGLHeaderExtended *extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 8,
-      "match": "extraout_EAX_00",
-      "severity": "moderate",
-      "text": "SMRGLHeaderExtended *extraout_EAX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 46,
-      "match": "extraout_EAX_00",
-      "severity": "moderate",
-      "text": "return extraout_EAX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 49,
-      "match": "extraout_EAX",
-      "severity": "moderate",
-      "text": "pSVar2 = extraout_EAX;",
-      "type": "extra_output"
-    }
-  ]
+  "suspects": []
 }

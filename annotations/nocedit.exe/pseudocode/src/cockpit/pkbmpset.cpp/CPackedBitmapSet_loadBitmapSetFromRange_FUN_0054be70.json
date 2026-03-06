@@ -1,30 +1,20 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 62,
-        "line": 30,
-        "message": "member reference base type 'char[116]' is not a structure or union"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 78,
-    "complexity_score": 54,
+    "complexity_score": 22,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 24,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unknown_field",
-      "warning_unmapped_variable"
-    ],
-    "total_lines": 102
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 22,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 100
   },
   "cross_references": [],
   "function": {
@@ -37,7 +27,7 @@
     ],
     "convention": "__cdecl",
     "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_0054be70",
-    "signature": "void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_0054be70(CPackedBitmapSet *this_ptr,char *filename_format,int start_index,int end_index,char *extension,char *base_path,int stride,int apply_palette_flag)"
+    "signature": "void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_0054be70(CPackedBitmapSet *this_ptr,char *filename_format,int width,int height,int start_index,int end_index,int transparency_color,int apply_palette_flag)"
   },
   "function_calls": [
     {
@@ -107,19 +97,12 @@
     "pcode_op_count": 333
   },
   "stack_frame": {
-    "frame_size": 152,
-    "local_size": 120,
+    "frame_size": 36,
+    "local_size": 4,
     "param_offset": 4,
     "param_size": 32,
     "return_addr_offset": 0,
     "variables": [
-      {
-        "is_param": false,
-        "name": "local_74",
-        "offset": -116,
-        "size": 116,
-        "type": "char[116]"
-      },
       {
         "is_param": true,
         "name": "this_ptr",
@@ -136,35 +119,35 @@
       },
       {
         "is_param": true,
-        "name": "start_index",
+        "name": "width",
         "offset": 12,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
-        "name": "end_index",
+        "name": "height",
         "offset": 16,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
-        "name": "extension",
+        "name": "start_index",
         "offset": 20,
         "size": 4,
-        "type": "char *"
+        "type": "int"
       },
       {
         "is_param": true,
-        "name": "base_path",
+        "name": "end_index",
         "offset": 24,
         "size": 4,
-        "type": "char *"
+        "type": "int"
       },
       {
         "is_param": true,
-        "name": "stride",
+        "name": "transparency_color",
         "offset": 28,
         "size": 4,
         "type": "int"
@@ -178,22 +161,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Variable defined which should be unmapped",
-      "line": 2,
-      "match": "WARNING: Variable defined which should be unmapped",
-      "severity": "moderate",
-      "text": "/* WARNING: Variable defined which should be unmapped: local_74 */",
-      "type": "warning_unmapped_variable"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 23,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "end_index,stride,apply_palette_flag,local_74._0_4_);",
-      "type": "unknown_field"
-    }
-  ]
+  "suspects": []
 }

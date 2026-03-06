@@ -6,18 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 57,
-    "complexity_score": 85,
+    "complexity_score": 22,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 25,
-    "suspect_count": 5,
-    "suspect_types": [
-      "extra_output",
-      "register_param"
-    ],
-    "total_lines": 82
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 22,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 79
   },
   "cross_references": [
     {
@@ -37,7 +34,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_drender.cpp_CDemonRenderer_renderPrimitiveBatch_FUN_0048ce90",
-    "signature": "int __cdecl engine_drender_cpp_CDemonRenderer_renderPrimitiveBatch_FUN_0048ce90(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *primitive_array,int primitive_count,int render_flags)"
+    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_renderPrimitiveBatch_FUN_0048ce90(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *primitive_array,int primitive_count,int render_flags)"
   },
   "function_calls": [
     {
@@ -116,46 +113,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Inferred register parameter",
-      "line": 5,
-      "match": "in_EAX",
-      "severity": "mild",
-      "text": "int in_EAX;",
-      "type": "register_param"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 6,
-      "match": "extraout_EAX",
-      "severity": "moderate",
-      "text": "int extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 24,
-      "match": "extraout_EAX",
-      "severity": "moderate",
-      "text": "in_EAX = extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 24,
-      "match": "in_EAX",
-      "severity": "mild",
-      "text": "in_EAX = extraout_EAX;",
-      "type": "register_param"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 27,
-      "match": "in_EAX",
-      "severity": "mild",
-      "text": "return in_EAX;",
-      "type": "register_param"
-    }
-  ]
+  "suspects": []
 }

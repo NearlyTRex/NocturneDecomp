@@ -10,15 +10,14 @@ void __cdecl core_inv_cpp_CInventory_load_FUN_004ff400(CInventory *this_ptr,_FIL
 
 {
   char cVar1;
-  CDemonActor *extraout_EAX;
   CDemonActor *pCVar2;
-  CWeapon *pCVar3;
-  int iVar4;
-  CInventory *pCVar5;
-  int iVar6;
-  uint *puVar7;
-  char *pcVar8;
-  CDemonActor *pCVar9;
+  CDemonActor *pCVar3;
+  CWeapon *pCVar4;
+  int iVar5;
+  CInventory *pCVar6;
+  int iVar7;
+  uint *puVar8;
+  char *pcVar9;
   byte bVar10;
   char local_1dc [256];
   char local_dc [100];
@@ -40,70 +39,70 @@ void __cdecl core_inv_cpp_CInventory_load_FUN_004ff400(CInventory *this_ptr,_FIL
     _fscanf(file_handle,"%f\n",this_ptr);
   }
   _fgets(local_1dc,0xff,file_handle);
-  iVar6 = 0;
-  pCVar5 = this_ptr;
+  iVar7 = 0;
+  pCVar6 = this_ptr;
   if (0 < this_ptr->item_count) {
     do {
-      puVar7 = &DAT_0067ce48;
-      pcVar8 = local_dc;
-      for (iVar4 = 0x19; iVar4 != 0; iVar4 = iVar4 + -1) {
-        *(uint *)pcVar8 = *puVar7;
-        puVar7 = puVar7 + (uint)bVar10 * -2 + 1;
-        pcVar8 = pcVar8 + ((uint)bVar10 * -2 + 1) * 4;
+      puVar8 = &DAT_0067ce48;
+      pcVar9 = local_dc;
+      for (iVar5 = 0x19; iVar5 != 0; iVar5 = iVar5 + -1) {
+        *(uint *)pcVar9 = *puVar8;
+        puVar8 = puVar8 + (uint)bVar10 * -2 + 1;
+        pcVar9 = pcVar9 + ((uint)bVar10 * -2 + 1) * 4;
       }
-      puVar7 = &DAT_0067ceb0;
-      pcVar8 = local_78;
-      for (iVar4 = 0x19; iVar4 != 0; iVar4 = iVar4 + -1) {
-        *(uint *)pcVar8 = *puVar7;
-        puVar7 = puVar7 + (uint)bVar10 * -2 + 1;
-        pcVar8 = pcVar8 + ((uint)bVar10 * -2 + 1) * 4;
+      puVar8 = &DAT_0067ceb0;
+      pcVar9 = local_78;
+      for (iVar5 = 0x19; iVar5 != 0; iVar5 = iVar5 + -1) {
+        *(uint *)pcVar9 = *puVar8;
+        puVar8 = puVar8 + (uint)bVar10 * -2 + 1;
+        pcVar9 = pcVar9 + ((uint)bVar10 * -2 + 1) * 4;
       }
       _fscanf(file_handle," %s \"%[^\"]\"\n",local_dc,local_78);
       if (g_CDemonMissionPtr->has_inventory_actors == 0) {
-        pcVar8 = local_78;
-        pCVar2 = core_actor_cpp_createActorByName_FUN_0040c430(local_dc);
-        pCVar9 = pCVar2;
+        pcVar9 = local_78;
+        pCVar3 = core_actor_cpp_createActorByName_FUN_0040c430(local_dc);
+        pCVar2 = pCVar3;
         do {
-          cVar1 = *pcVar8;
-          pCVar9->actor_name[0] = cVar1;
+          cVar1 = *pcVar9;
+          pCVar2->actor_name[0] = cVar1;
           if (cVar1 == '\0') break;
-          cVar1 = pcVar8[1];
-          pcVar8 = pcVar8 + 2;
-          pCVar9->actor_name[1] = cVar1;
-          pCVar9 = (CDemonActor *)(pCVar9->actor_name + 2);
+          cVar1 = pcVar9[1];
+          pcVar9 = pcVar9 + 2;
+          pCVar2->actor_name[1] = cVar1;
+          pCVar2 = (CDemonActor *)(pCVar2->actor_name + 2);
         } while (cVar1 != '\0');
-        pCVar5->items[0] = pCVar2;
+        pCVar6->items[0] = pCVar3;
       }
       else {
-        core_mission_cpp_CDemonMission_getNextLoadedInventoryActor_FUN_00523520
-                  (g_CDemonMissionPtr,local_78);
-        pCVar5->items[0] = extraout_EAX;
+        pCVar2 = core_mission_cpp_CDemonMission_getNextLoadedInventoryActor_FUN_00523520
+                           (g_CDemonMissionPtr,local_78);
+        pCVar6->items[0] = pCVar2;
       }
-      iVar6 = iVar6 + 1;
-      pCVar5 = (CInventory *)&pCVar5->owner;
-    } while (iVar6 < this_ptr->item_count);
+      iVar7 = iVar7 + 1;
+      pCVar6 = (CInventory *)&pCVar6->owner;
+    } while (iVar7 < this_ptr->item_count);
   }
   _fgets(local_1dc,0xff,file_handle);
-  iVar6 = 0;
-  pCVar5 = this_ptr;
+  iVar7 = 0;
+  pCVar6 = this_ptr;
   if (0 < this_ptr->item_count) {
     do {
-      core_actor_cpp_CDemonActor_load_FUN_0040b050(pCVar5->items[0],file_handle);
-      iVar6 = iVar6 + 1;
-      pCVar5 = (CInventory *)&pCVar5->owner;
-    } while (iVar6 < this_ptr->item_count);
+      core_actor_cpp_CDemonActor_load_FUN_0040b050(pCVar6->items[0],file_handle);
+      iVar7 = iVar7 + 1;
+      pCVar6 = (CInventory *)&pCVar6->owner;
+    } while (iVar7 < this_ptr->item_count);
   }
   if (1 < this_ptr->save_version) {
     _fgets(local_1dc,0xff,file_handle);
   }
-  iVar6 = g_CDemonMissionPtr->has_inventory_actors;
+  iVar7 = g_CDemonMissionPtr->has_inventory_actors;
   this_ptr->selected_weapon = (CWeapon *)0x0;
-  this_ptr->preserve_items = iVar6;
+  this_ptr->preserve_items = iVar7;
   if (-1 < local_14) {
-    pCVar3 = (CWeapon *)
+    pCVar4 = (CWeapon *)
              core_actor_cpp_castToClassHash_FUN_0040c790
                        (this_ptr->items[local_14],g_CWeaponClassInfo.name_hash);
-    this_ptr->selected_weapon = pCVar3;
+    this_ptr->selected_weapon = pCVar4;
     if (this_ptr->selected_weapon == (CWeapon *)0x0) {
       g_CurrentFilename = "..\\core\\inv.cpp";
       g_CurrentLineNumber = 0x54b;

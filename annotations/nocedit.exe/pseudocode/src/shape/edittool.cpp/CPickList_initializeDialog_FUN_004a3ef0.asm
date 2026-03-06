@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_edittool_cpp_CPickList_initializeDialog_FUN_004a3ef0(CPickList *this_ptr,char *dialog_title,int initial_selected_index,int config_parameter)
+; void __cdecl shape_edittool_cpp_CPickList_initializeDialog_FUN_004a3ef0(CPickList *this_ptr,char *dialog_title,int initial_selected_index,uint window_flags)
 ;
 ; Parameters:
 ; CPickList *      Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   dialog_title
 ; int              Stack[0xc]:4   initial_selected_index
-; int              Stack[0x10]:4   config_parameter
+; uint             Stack[0x10]:4   window_flags
 ;
 ; XREF[2]:
 ;   core_game.cpp_CGame_runGameSession_FUN_004daf80 at 004dba62
@@ -30,7 +30,7 @@ section .text
     PUSH ECX                            ; 004a3efe
     PUSH EBX                            ; 004a3eff
     CALL shape_edittool.cpp_CPickList_calculateLayoutAndCreateComponents_FUN_004a45d0 ; 004a3f00
-        ;   XREF to: 004a45d0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CPickList_calculateLayoutAndCreateComponents_FUN_004a45d0(CPickList * this_ptr, char * dialog_title, int config_parameter)
+        ;   XREF to: 004a45d0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CPickList_calculateLayoutAndCreateComponents_FUN_004a45d0(CPickList * this_ptr, char * dialog_title, uint window_flags)
     ADD ESP,0xc                         ; 004a3f05
     MOV EAX,dword ptr [ESP + 0x10]      ; 004a3f08
     PUSH EBX                            ; 004a3f0c

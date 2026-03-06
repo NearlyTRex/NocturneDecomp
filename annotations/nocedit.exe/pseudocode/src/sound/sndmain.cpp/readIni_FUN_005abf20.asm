@@ -76,7 +76,7 @@ section .text
     PUSH EBP                            ; 005abf54
     MOVSD.REP ES:EDI,ESI                ; 005abf55 | g_DefaultSoundDeviceName | s__00681b64
     CALL engine_ini.cpp_CIniFile_getString_FUN_004fbb20 ; 005abf57
-        ;   XREF to: 004fbb20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getString_FUN_004fbb20(CIniFile * this_ptr, char * key, char * output_buffer, int buffer_size, ...)
+        ;   XREF to: 004fbb20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getString_FUN_004fbb20(CIniFile * this_ptr, char * key, char * output_buffer, int buffer_size)
     ADD ESP,0x10                        ; 005abf5c
     XOR EBX,EBX                         ; 005abf5f
     CALL sound_sndmain.cpp_closeSoundDevice_FUN_005ab660 ; 005abf61
@@ -96,7 +96,7 @@ section .text
     PUSH 0x650f42                       ; 005abf85 | = "RecordingDeviceName"
     PUSH EBP                            ; 005abf8a
     CALL engine_ini.cpp_CIniFile_getString_FUN_004fbb20 ; 005abf8b
-        ;   XREF to: 004fbb20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getString_FUN_004fbb20(CIniFile * this_ptr, char * key, char * output_buffer, int buffer_size, ...)
+        ;   XREF to: 004fbb20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getString_FUN_004fbb20(CIniFile * this_ptr, char * key, char * output_buffer, int buffer_size)
     ADD ESP,0x10                        ; 005abf90
     XOR EBX,EBX                         ; 005abf93
     CALL sound_sndmain.cpp_releaseRecordingDevice_FUN_005ab930 ; 005abf95

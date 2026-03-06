@@ -12,6 +12,6 @@ typedef struct SFoundFileInfo {
     uint file_size; // 0x204
     int is_archive; // 0x208
     uint timestamp; // 0x20c
-    uint container_size; // 0x210
+    uint container_timestamp; // 0x210
 } SFoundFileInfo;
 

@@ -7,8 +7,6 @@
 ; CLodMesh *       Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   backface_culling_enabled
 ; Local Variables:
-; SRenderVertex    Stack[-0x78]:48  local_78
-; SRenderVertex    Stack[-0x48]:48  local_48
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;

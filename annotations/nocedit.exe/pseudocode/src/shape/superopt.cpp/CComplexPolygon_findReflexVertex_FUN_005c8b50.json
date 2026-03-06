@@ -1,24 +1,74 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "other",
+        "column": 21,
+        "line": 123,
+        "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 21,
+        "line": 125,
+        "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 33,
+        "line": 126,
+        "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 129,
+        "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 21,
+        "line": 138,
+        "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 21,
+        "line": 140,
+        "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 33,
+        "line": 141,
+        "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 144,
+        "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
+      }
+    ],
+    "success": false,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 332,
-    "complexity_score": 386,
+    "complexity_score": 396,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 141,
+    "pseudocode_lines": 146,
     "suspect_count": 23,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
-      "pointer_cast"
+      "pointer_cast",
+      "sub84_truncation",
+      "unknown_field"
     ],
-    "total_lines": 473
+    "total_lines": 478
   },
   "cross_references": [
     {
@@ -383,40 +433,24 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 7,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "uint extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 8,
-      "match": "extraout_EDX_00",
-      "severity": "moderate",
-      "text": "uint extraout_EDX_00;",
-      "type": "extra_output"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 60,
+      "line": 57,
       "match": "(CVector3d *)((int)",
       "severity": "mild",
-      "text": "pCVar6 = (CVector3d *)((int)pCVar6 + ((uint)bVar7 * -2 + 1) * 4);",
+      "text": "pCVar5 = (CVector3d *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 69,
+      "line": 66,
       "match": "(double *)((int)",
       "severity": "mild",
-      "text": "pdVar5 = (double *)((int)pdVar5 + (uint)bVar7 * -8 + 4);",
+      "text": "pdVar4 = (double *)((int)pdVar4 + (uint)bVar6 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 72,
+      "line": 69,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "local_9c = __BITCAST_DOUBLE(CONCAT44(uStack_c0,local_c4)) * local_14->z -",
@@ -424,7 +458,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 73,
+      "line": 70,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "__BITCAST_DOUBLE(CONCAT44(uStack_b8,local_bc)) * local_14->y;",
@@ -432,7 +466,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 74,
+      "line": 71,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "local_94 = __BITCAST_DOUBLE(CONCAT44(uStack_b8,local_bc)) * local_14->x -",
@@ -440,7 +474,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 75,
+      "line": 72,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "__BITCAST_DOUBLE(CONCAT44(uStack_c8,local_cc)) * local_14->z;",
@@ -448,7 +482,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 76,
+      "line": 73,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "local_8c = __BITCAST_DOUBLE(CONCAT44(uStack_c8,local_cc)) * local_14->y -",
@@ -456,7 +490,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 77,
+      "line": 74,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "__BITCAST_DOUBLE(CONCAT44(uStack_c0,local_c4)) * local_14->x;",
@@ -464,107 +498,123 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 78,
+      "line": 75,
       "match": "SQRT",
       "severity": "mild",
-      "text": "dVar1 = 1.0 / SQRT(local_8c * local_8c + local_9c * local_9c + local_94 * local_94);",
+      "text": "dVar7 = 1.0 / SQRT(local_8c * local_8c + local_9c * local_9c + local_94 * local_94);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
+      "description": "Unknown/mangled field access",
       "line": 116,
-      "match": "extraout_EDX_00",
-      "severity": "moderate",
-      "text": "local_38 = extraout_EDX_00;",
-      "type": "extra_output"
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_3c._0_4_ = SUB84(__BITCAST_UINT64(dVar7),0);",
+      "type": "unknown_field"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 116,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "local_3c._0_4_ = SUB84(__BITCAST_UINT64(dVar7),0);",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 116,
+      "match": "SUB84",
+      "severity": "mild",
+      "text": "local_3c._0_4_ = SUB84(__BITCAST_UINT64(dVar7),0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unknown/mangled field access",
       "line": 118,
-      "match": "extraout_EDX_00",
-      "severity": "moderate",
-      "text": "uStack_50 = extraout_EDX_00;",
-      "type": "extra_output"
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_3c._4_4_ = (uint)((ulonglong)dVar7 >> 0x20);",
+      "type": "unknown_field"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
+      "description": "Unknown/mangled field access",
       "line": 119,
-      "match": "extraout_EDX_00",
-      "severity": "moderate",
-      "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_40,local_44)) < __BITCAST_DOUBLE(CONCAT44(extraout_EDX_00,local_3c))) {",
-      "type": "extra_output"
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "uStack_50 = local_3c._4_4_;",
+      "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 119,
+      "line": 120,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_40,local_44)) < __BITCAST_DOUBLE(CONCAT44(extraout_EDX_00,local_3c))) {",
+      "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_40,local_44)) < dVar7) {",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 119,
-      "match": "CONCAT44",
+      "description": "Unknown/mangled field access",
+      "line": 122,
+      "match": "._4_4_",
       "severity": "mild",
-      "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_40,local_44)) < __BITCAST_DOUBLE(CONCAT44(extraout_EDX_00,local_3c))) {",
-      "type": "decompiler_intrinsic"
+      "text": "uStack_40 = local_3c._4_4_;",
+      "type": "unknown_field"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 121,
-      "match": "extraout_EDX_00",
-      "severity": "moderate",
-      "text": "uStack_40 = extraout_EDX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 128,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "local_38 = extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 130,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "uStack_30 = extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
+      "description": "Unknown/mangled field access",
       "line": 131,
-      "match": "extraout_EDX",
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_3c._0_4_ = SUB84(__BITCAST_UINT64(dVar7),0);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 131,
+      "match": "SUB84(",
       "severity": "moderate",
-      "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_40,local_44)) < __BITCAST_DOUBLE(CONCAT44(extraout_EDX,local_3c))) {",
-      "type": "extra_output"
+      "text": "local_3c._0_4_ = SUB84(__BITCAST_UINT64(dVar7),0);",
+      "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 131,
-      "match": "CONCAT44",
+      "match": "SUB84",
       "severity": "mild",
-      "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_40,local_44)) < __BITCAST_DOUBLE(CONCAT44(extraout_EDX,local_3c))) {",
+      "text": "local_3c._0_4_ = SUB84(__BITCAST_UINT64(dVar7),0);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 131,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_40,local_44)) < __BITCAST_DOUBLE(CONCAT44(extraout_EDX,local_3c))) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
+      "description": "Unknown/mangled field access",
       "line": 133,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "uStack_40 = extraout_EDX;",
-      "type": "extra_output"
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_3c._4_4_ = (uint)((ulonglong)dVar7 >> 0x20);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 134,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "uStack_30 = local_3c._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 135,
+      "match": "CONCAT44",
+      "severity": "mild",
+      "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_40,local_44)) < dVar7) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 137,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "uStack_40 = local_3c._4_4_;",
+      "type": "unknown_field"
     }
   ]
 }

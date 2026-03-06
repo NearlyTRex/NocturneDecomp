@@ -1,14 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_ini_cpp_CIniFile_getString_FUN_004fbb20(CIniFile *this_ptr,char *key,char *output_buffer,int buffer_size,char *default_value )
+; void __cdecl engine_ini_cpp_CIniFile_getString_FUN_004fbb20(CIniFile *this_ptr,char *key,char *output_buffer,int buffer_size)
 ;
 ; Parameters:
 ; CIniFile *       Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   key
 ; char *           Stack[0xc]:4   output_buffer
 ; int              Stack[0x10]:4   buffer_size
-; char *           Stack[0x14]:4   default_value
 ;
 ; XREF[5]:
 ;   core_inivar.cpp_readIniData_FUN_004fbd90 at 004fbe6b

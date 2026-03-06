@@ -6,8 +6,6 @@
 ; Parameters:
 ; CStairs *        Stack[0x4]:4   this_ptr
 ; Local Variables:
-; SRenderVertex    Stack[-0x144]:48  local_144
-; SRenderVertex    Stack[-0x114]:48  local_114
 ; undefined1       Stack[-0xbc]:1  local_bc
 ;
 ; Referenced Globals:

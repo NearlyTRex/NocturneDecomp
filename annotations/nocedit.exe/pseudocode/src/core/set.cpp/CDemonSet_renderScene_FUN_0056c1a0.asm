@@ -540,7 +540,7 @@ section .text
         ;   Label: LAB_0056c63d
     PUSH 0x32758e4                      ; 0056c63f | g_CDemonCameraInstance
     CALL core_dcamera.cpp_CDemonCamera_endBackgroundScene_FUN_0044cdf0 ; 0056c644
-        ;   XREF to: 0044cdf0 (UNCONDITIONAL_CALL)  ; int core_dcamera.cpp_CDemonCamera_endBackgroundScene_FUN_0044cdf0(CDemonCamera * this_ptr, int restore_zbuffer)
+        ;   XREF to: 0044cdf0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_endBackgroundScene_FUN_0044cdf0(CDemonCamera * this_ptr, int restore_zbuffer)
     MOV ESI,dword ptr [0x032776b4]      ; 0056c649 | g_DynamicLightCount
     XOR ECX,ECX                         ; 0056c64f
     ADD ESP,0x8                         ; 0056c651

@@ -12,7 +12,7 @@ void __cdecl cockpit_ckptutil_c_applyActPalette_FUN_004319b0(char *filename,void
   uint uVar1;
   byte abStack_104 [256];
   
-  cockpit_ckptutil_c_loadACTToIndexedPalette_FUN_00431a30(filename,(char *)abStack_104);
+  cockpit_ckptutil_c_loadACTToIndexedPalette_FUN_00431a30(filename,abStack_104);
   if ((-1 < palette_index) && (palette_index < 0x100)) {
     abStack_104[palette_index] = (byte)palette_index;
   }

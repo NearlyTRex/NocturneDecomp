@@ -7,5 +7,5 @@
 struct CFont;
 
 // Function Definition: CFont_dtor
-typedef void CFont_dtor(struct CFont* this_ptr);
+typedef void CFont_dtor(struct CFont* this_ptr, uint flags);
 

@@ -11,8 +11,8 @@
 ; XREF[38]:
 ;   cockpit_ckptutil.c_generateScrollHeightMap_FUN_00432df0 at 00432e35
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_0054b190 at 0054b1e5
-;   cockpit_pkbitmap.cpp_CPackedBitmap_parsePBGFile_FUN_0054b9b0 at 0054ba8a
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_0054b690 at 0054b7a5
+;   cockpit_pkbitmap.cpp_parsePBGFile_FUN_0054b9b0 at 0054ba8a
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_alloc_FUN_0054bdb0 at 0054bdf9
 ;   core_cloth.cpp_CCloth_allocMemory_FUN_00438c50 at 00438c6f
 ;   core_course.cpp_CCourse_allocMemory_FUN_00442500 at 0044252c

@@ -19,12 +19,6 @@ CMimic * __cdecl core_mimic_cpp_CMimic_dtor_FUN_0051f2c0(CMimic *this_ptr,uint f
   CDeformableModelInstance *pCVar7;
   CMimic *ptr;
   void *ptr_00;
-  uint unaff_EBX;
-  uint unaff_retaddr;
-  uint in_stack_0000000c;
-  uint in_stack_00000010;
-  uint in_stack_00000014;
-  byte in_stack_0000002c;
   
   if ((flags & 4) != 0) {
     ptr_00 = __vec_delete(this_ptr,&g_CMimicTypeInfo);
@@ -36,9 +30,7 @@ CMimic * __cdecl core_mimic_cpp_CMimic_dtor_FUN_0051f2c0(CMimic *this_ptr,uint f
   g_CurrentDebugFilename = "..\\core\\mimic.cpp";
   g_CurrentDebugLine = 0xa9;
   if (this_ptr_00 != (CDemonActor *)0x0) {
-    (*((this_ptr_00->vtable)._ub)->dtor)
-              (this_ptr_00,2,unaff_EBX,unaff_retaddr,(uint)this_ptr,flags,in_stack_0000000c,
-               in_stack_00000010,in_stack_00000014);
+    (*((this_ptr_00->vtable)._ub)->dtor)(this_ptr_00,2);
   }
   this_ptr->morph_target_actor = (CDemonActor *)0x0;
   pCVar1 = core_morph_cpp_CMorph_dtor_FUN_0052b330(&this_ptr->morph,0);
@@ -56,7 +48,7 @@ CMimic * __cdecl core_mimic_cpp_CMimic_dtor_FUN_0051f2c0(CMimic *this_ptr,uint f
   ptr = (CMimic *)
         core_actor_cpp_CDemonActor_dtor_FUN_00408a30
                   ((CDemonActor *)(pCVar7[-1].part_data.visibility_flags + 7),1);
-  if ((in_stack_0000002c & 2) == 0) {
+  if ((flags & 2) == 0) {
     return ptr;
   }
   shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);

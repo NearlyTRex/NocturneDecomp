@@ -31,6 +31,6 @@ void __cdecl core_skeledit_cpp_previewModel_FUN_00598f10(char *model_name)
   if (this_ptr_00 == (CDeformableModelInstance *)0x0) {
     return;
   }
-  (*((this_ptr_00->motion_controller).vtable)->dtor)(&this_ptr_00->motion_controller);
+  (*((this_ptr_00->motion_controller).vtable)->dtor)(&this_ptr_00->motion_controller,2);
   return;
 }

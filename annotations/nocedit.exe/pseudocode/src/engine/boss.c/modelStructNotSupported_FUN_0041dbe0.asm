@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SMRGLHeaderExtended * __cdecl engine_boss_c_modelStructNotSupported_FUN_0041dbe0(SMRGLHeaderExtended *header)
+; void __cdecl engine_boss_c_modelStructNotSupported_FUN_0041dbe0(SMRGLHeaderExtended *mrgl_data)
 ;
 ; Parameters:
-; SMRGLHeaderExtended * Stack[0x4]:4   header
+; SMRGLHeaderExtended * Stack[0x4]:4   mrgl_data
 ; Local Variables:
 ; undefined1       Stack[-0x3c]:1  local_3c
 ;

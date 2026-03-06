@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_004a0890(CEditorTools *this_ptr,int min_width,int min_height,char *text_content,int modal_flags)
+; void __cdecl shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_004a0890(CEditorTools *this_ptr,int min_width,int min_height,char *text_content,uint window_flags)
 ;
 ; Parameters:
 ; CEditorTools *   Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   min_width
 ; int              Stack[0xc]:4   min_height
 ; char *           Stack[0x10]:4   text_content
-; int              Stack[0x14]:4   modal_flags
+; uint             Stack[0x14]:4   window_flags
 ;
 ; XREF[8]:
 ;   core_menu.cpp_adjustMouseSensitivity_FUN_005107c0 at 005107f8

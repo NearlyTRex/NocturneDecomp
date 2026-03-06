@@ -4,31 +4,19 @@
       {
         "category": "other",
         "column": 28,
-        "line": 58,
+        "line": 56,
         "message": "member reference base type 'char[307200]' is not a structure or union"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 100,
-        "message": "use of undeclared identifier 'stack0xffffff84'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 171,
-        "message": "cast from pointer to smaller type 'uchar' (aka 'unsigned char') loses information"
       },
       {
         "category": "other",
         "column": 72,
-        "line": 171,
+        "line": 170,
         "message": "cast from pointer to smaller type 'uchar' (aka 'unsigned char') loses information"
       },
       {
         "category": "incompatible_types",
         "column": 25,
-        "line": 172,
+        "line": 171,
         "message": "incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'ushort *' (aka 'unsigned short *')"
       }
     ],
@@ -37,20 +25,19 @@
   },
   "complexity": {
     "assembly_lines": 432,
-    "complexity_score": 388,
+    "complexity_score": 382,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 198,
+    "pseudocode_lines": 197,
     "suspect_count": 17,
     "suspect_types": [
       "pointer_cast",
       "stack_alignment_array",
-      "stack_ref",
       "unknown_field"
     ],
-    "total_lines": 630
+    "total_lines": 629
   },
   "cross_references": [
     {
@@ -473,20 +460,12 @@
       "line": 15,
       "match": "apvStackY_185c",
       "severity": "moderate",
-      "text": "void *apvStackY_185c [513];",
-      "type": "stack_alignment_array"
-    },
-    {
-      "description": "StackY array variable (stack alignment artifact)",
-      "line": 16,
-      "match": "aiStackY_1058",
-      "severity": "moderate",
-      "text": "int aiStackY_1058 [1010];",
+      "text": "void *apvStackY_185c [1523];",
       "type": "stack_alignment_array"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 51,
+      "line": 49,
       "match": "._0_4_",
       "severity": "mild",
       "text": "g_LightBufferPool[0x18]._0_4_ = rect;",
@@ -494,31 +473,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 90,
-      "match": "(uint *)((int)",
+      "line": 88,
+      "match": "(int *)((int)",
       "severity": "mild",
-      "text": "puVar7 = (uint *)((int)rect + (uint)bVar10 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 93,
-      "match": "&stack0xffffff84",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffff84 + (uint)bVar10 * -8) = *puVar7;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 93,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&stack0xffffff84 + (uint)bVar10 * -8) = *puVar7;",
+      "text": "piVar7 = (int *)((int)rect + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 126,
+      "line": 124,
       "match": "(void *)((int)",
       "severity": "mild",
       "text": "local_48 = (void *)((int)(light_source->base).base.rotation_matrix.m + (int)local_78 * 4 + -0x10",
@@ -526,7 +489,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 129,
+      "line": 127,
       "match": "(CVector3i *)((int)",
       "severity": "mild",
       "text": "local_30 = (CVector3i *)((int)&local_50->x + local_58);",
@@ -534,7 +497,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 131,
+      "line": 129,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "local_28 = (float *)((int)&local_54->x + local_58);",
@@ -542,7 +505,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 132,
+      "line": 130,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "local_20 = (int *)((int)light_source->corona_visibility_buffers + local_4c + local_44);",
@@ -550,7 +513,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 133,
+      "line": 131,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "local_1c = (uint *)((int)light_source->corona_depth_buffer + local_4c + local_44);",
@@ -558,7 +521,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 135,
+      "line": 133,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "local_24 = (int *)((int)light_source->corona_lightmap_indices + local_4c + local_44);",
@@ -566,31 +529,55 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 158,
-      "match": "(int *)((int)",
+      "line": 156,
+      "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)&local_64 + (uint)bVar10 * -8 + 4) = aiStack_6c[(uint)bVar10 * -2];",
+      "text": "*(uint *)((int)&local_64 + (uint)bVar10 * -8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 157,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&local_70 + (uint)bVar10 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 158,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&local_64 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 159,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&local_70 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 193,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)&local_64 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =",
+      "text": "*(int *)((int)local_48 + 0x14c8) = local_34;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 188,
-      "match": "(CVector3i *)((int)",
+      "line": 194,
+      "match": "(int *)((int)",
       "severity": "mild",
-      "text": "local_18 = (CVector3i *)((int)&local_18->x + 1);",
+      "text": "*(int *)((int)local_48 + 0x1888) = local_38;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 196,
+      "line": 195,
       "match": "(void *)((int)",
       "severity": "mild",
       "text": "local_48 = (void *)((int)local_48 + 4);",
@@ -598,7 +585,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 197,
+      "line": 196,
       "match": "(void *)((int)",
       "severity": "mild",
       "text": "local_2c = (void *)((int)local_2c + 1);",

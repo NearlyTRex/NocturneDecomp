@@ -6,17 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 20,
-    "complexity_score": 33,
+    "complexity_score": 7,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 8,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unaffected_reg"
-    ],
-    "total_lines": 28
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 27
   },
   "cross_references": [
     {
@@ -36,7 +34,7 @@
     ],
     "convention": "__cdecl",
     "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_reloadStoredPBGFile_FUN_0054c4d0",
-    "signature": "void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_reloadStoredPBGFile_FUN_0054c4d0(CPackedBitmapSet *this_ptr,char *pbg_filename)"
+    "signature": "void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_reloadStoredPBGFile_FUN_0054c4d0(CPackedBitmapSet *this_ptr,int apply_palette_flag,int bitmap_index)"
   },
   "function_calls": [
     {
@@ -72,10 +70,10 @@
     "pcode_op_count": 63
   },
   "stack_frame": {
-    "frame_size": 12,
+    "frame_size": 16,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 8,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -87,29 +85,19 @@
       },
       {
         "is_param": true,
-        "name": "pbg_filename",
+        "name": "apply_palette_flag",
         "offset": 8,
         "size": 4,
-        "type": "char *"
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "bitmap_index",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 5,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "int unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 9,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "(this_ptr,this_ptr->filename,pbg_filename,this_ptr->config_param,0,unaff_EBX);",
-      "type": "unaffected_reg"
-    }
-  ]
+  "suspects": []
 }

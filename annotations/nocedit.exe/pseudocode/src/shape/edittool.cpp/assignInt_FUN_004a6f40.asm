@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int * __cdecl shape_edittool_cpp_assignInt_FUN_004a6f40(int *dest_ptr,int *src_ptr)
+; int * __cdecl shape_edittool_cpp_assignInt_FUN_004a6f40(int *dst,int *src)
 ;
 ; Parameters:
-; int *            Stack[0x4]:4   dest_ptr
-; int *            Stack[0x8]:4   src_ptr
+; int *            Stack[0x4]:4   dst
+; int *            Stack[0x8]:4   src
 ;
 ; *****************************************************************************
 

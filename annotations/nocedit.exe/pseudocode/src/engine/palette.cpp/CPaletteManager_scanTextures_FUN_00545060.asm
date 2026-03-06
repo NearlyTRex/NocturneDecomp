@@ -113,7 +113,7 @@ section .text
     ADD ESP,0x8                         ; 00545119
     PUSH EBX                            ; 0054511c
     CALL engine_model.c_freeMRGLData_FUN_005280b0 ; 0054511d
-        ;   XREF to: 005280b0 (UNCONDITIONAL_CALL)  ; void engine_model.c_freeMRGLData_FUN_005280b0(SMRGLHeaderExtended * modelStruct)
+        ;   XREF to: 005280b0 (UNCONDITIONAL_CALL)  ; void engine_model.c_freeMRGLData_FUN_005280b0(SMRGLHeaderExtended * mrgl_data)
     ADD ESP,0x4                         ; 00545122
     MOV EAX,dword ptr [ESP]             ; 00545125
     INC ESI                             ; 00545128

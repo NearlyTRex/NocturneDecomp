@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SMRGLModelBounds * __stack_esi engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHeaderExtended *header,SMRGLModelBounds *output_bounds)
+; SMRGLModelBounds * __stack_esi engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHeaderExtended *mrgl_data,SMRGLModelBounds *output_bounds)
 ;
 ; Parameters:
-; SMRGLHeaderExtended * Stack[0x4]:4   header
+; SMRGLHeaderExtended * Stack[0x4]:4   mrgl_data
 ; Local Variables:
 ; undefined1       Stack[-0x160]:1  local_160
 ; undefined1       Stack[-0x110]:1  local_110
@@ -361,14 +361,14 @@ section .text
     LEA EDI,[ESP + 0xbc]                ; 00528564
     MOV EBX,EAX                         ; 0052856b
     CALL engine_model.c_getMRGLBounds_FUN_00528140 ; 0052856d
-        ;   XREF to: 00528140 (UNCONDITIONAL_CALL)  ; SMRGLModelBounds * engine_model.c_getMRGLBounds_FUN_00528140(SMRGLHeaderExtended * header, SMRGLModelBounds * output_bounds)
+        ;   XREF to: 00528140 (UNCONDITIONAL_CALL)  ; SMRGLModelBounds * engine_model.c_getMRGLBounds_FUN_00528140(SMRGLHeaderExtended * mrgl_data, SMRGLModelBounds * output_bounds)
     ADD ESP,0x4                         ; 00528572
     MOV ECX,0xd                         ; 00528575
     LEA ESI,[ESP + 0xec]                ; 0052857a
     PUSH EBX                            ; 00528581
     MOVSD.REP ES:EDI,ESI                ; 00528582
     CALL engine_model.c_freeMRGLData_FUN_005280b0 ; 00528584
-        ;   XREF to: 005280b0 (UNCONDITIONAL_CALL)  ; void engine_model.c_freeMRGLData_FUN_005280b0(SMRGLHeaderExtended * modelStruct)
+        ;   XREF to: 005280b0 (UNCONDITIONAL_CALL)  ; void engine_model.c_freeMRGLData_FUN_005280b0(SMRGLHeaderExtended * mrgl_data)
     MOV ECX,0xd                         ; 00528589
     LEA EDI,[ESP + 0x54]                ; 0052858e
     LEA ESI,[ESP + 0xbc]                ; 00528592
@@ -380,7 +380,7 @@ section .text
     LEA ESI,[ESP + 0x88]                ; 0052859f
     LEA EDI,[ESP + 0x54]                ; 005285a6
     CALL engine_boss.c_modelStructNotSupported_FUN_0041dbe0 ; 005285aa
-        ;   XREF to: 0041dbe0 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_boss.c_modelStructNotSupported_FUN_0041dbe0(SMRGLHeaderExtended * header)
+        ;   XREF to: 0041dbe0 (UNCONDITIONAL_CALL)  ; void engine_boss.c_modelStructNotSupported_FUN_0041dbe0(SMRGLHeaderExtended * mrgl_data)
     MOV ECX,0xd                         ; 005285af
     LEA ESI,[ESP + 0x88]                ; 005285b4
     ADD ESP,0x4                         ; 005285bb

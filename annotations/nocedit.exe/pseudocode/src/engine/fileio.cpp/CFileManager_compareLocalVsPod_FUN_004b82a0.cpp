@@ -63,7 +63,7 @@ void __cdecl engine_fileio_cpp_CFileManager_compareLocalVsPod_FUN_004b82a0(CFile
   if (0 < local_a08.file_count) {
     do {
       pSVar6 = &local_234;
-      pcVar5 = *(char **)((int)&(local_a08.directory_entries)->name_or_offset + iVar2);
+      pcVar5 = *(char **)((int)&(local_a08.directory_entries)->name + iVar2);
       do {
         cVar1 = *pcVar5;
         pSVar6->found_path[0] = cVar1;

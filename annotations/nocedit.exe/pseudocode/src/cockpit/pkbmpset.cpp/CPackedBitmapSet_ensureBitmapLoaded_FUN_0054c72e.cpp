@@ -2,11 +2,11 @@
 // Address: 0054c72e
 // Address Range: [[0054c72e, 0054c794]]
 // Convention: __cdecl
-// Signature: void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_ensureBitmapLoaded_FUN_0054c72e(CPackedBitmapSet *this_ptr,int bitmap_index,char *filename)
+// Signature: void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_ensureBitmapLoaded_FUN_0054c72e(CPackedBitmapSet *this_ptr,int bitmap_index)
 
 #include "nocturne.h"
 
-void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_ensureBitmapLoaded_FUN_0054c72e(CPackedBitmapSet *this_ptr,int bitmap_index,char *filename)
+void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_ensureBitmapLoaded_FUN_0054c72e(CPackedBitmapSet *this_ptr,int bitmap_index)
 
 {
   int iVar1;
@@ -24,7 +24,7 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_ensureBitmapLoaded_FUN_0054c7
       } while (iVar2 < this_ptr->bitmap_count);
     }
     cockpit_pkbmpset_cpp_CPackedBitmapSet_loadByFilenameAndIndex_FUN_0054c500
-              (this_ptr,(char *)0x1,bitmap_index);
+              (this_ptr,1,bitmap_index);
   }
   return;
 }

@@ -2,11 +2,11 @@
 // Address: 004b7d50
 // Address Range: [[004b7d50, 004b7f42]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_fileio_cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50(CFileManager *this_ptr,_FILE *source_file,char *dest_filename,char *name_or_offset,int file_size,int file_offset,int checksum,int timestamp)
+// Signature: int __cdecl engine_fileio_cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50(CFileManager *this_ptr,_FILE *source_file,char *dest_filename,int file_size,int file_offset,char *timestamp_source,int checksum)
 
 #include "nocturne.h"
 
-int __cdecl engine_fileio_cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50(CFileManager *this_ptr,_FILE *source_file,char *dest_filename,char *name_or_offset,int file_size,int file_offset,int checksum,int timestamp)
+int __cdecl engine_fileio_cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50(CFileManager *this_ptr,_FILE *source_file,char *dest_filename,int file_size,int file_offset,char *timestamp_source,int checksum)
 
 {
   byte bVar1;
@@ -48,14 +48,14 @@ int __cdecl engine_fileio_cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50
     bVar1 = *local_14;
   }
   local_114[uVar7] = '\0';
-  _fseek(source_file,file_size,0);
+  _fseek(source_file,file_offset,0);
   _mkdir(local_114);
   file_ptr = shape_memdbg_cpp_openFile_FUN_0050f7a0
                        (dest_filename,(char *)0x0,"wb","..\\engine\\fileio.cpp",0xae4);
   uVar6 = 0;
   if (file_ptr != (_FILE *)0x0) {
     iVar4 = 0;
-    if (0 < (int)name_or_offset) {
+    if (0 < file_size) {
       do {
         p_Var10 = file_ptr;
         if (((file_ptr->_flag & 0x400) == 0) && (1 < file_ptr->_bufsize - file_ptr->_cnt)) {
@@ -93,14 +93,14 @@ LAB_004b7e34:
           _fputc(uVar6,p_Var10);
         }
         iVar4 = iVar4 + 1;
-      } while (iVar4 < (int)name_or_offset);
+      } while (iVar4 < file_size);
     }
     uVar6 = (uint)((source_file->_flag & 0x20) == 0);
     if ((file_ptr->_flag & 0x20) != 0) {
       uVar6 = 0;
     }
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\engine\\fileio.cpp",0xaf5);
-    iVar4 = engine_dosio_c_copyFileTimestamp_FUN_00481910(dest_filename,(char *)file_offset);
+    iVar4 = engine_dosio_c_copyFileTimestamp_FUN_00481910(dest_filename,timestamp_source);
     if (iVar4 == 0) {
       uVar6 = 0;
       shape_edittool_cpp_CEditorTools_showError_FUN_0049e740

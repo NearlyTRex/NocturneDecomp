@@ -323,25 +323,25 @@ void __cdecl resetRenderBuffer(void);
 // Address: 00407080
 int __cdecl qsortByRenderDepth(SRenderBufferEntry **entry1_ptr,SRenderBufferEntry **entry2_ptr);
 
-// Original: engine_3d.c_renderPolygonEngineAPIPremiumMultiState_FUN_004070c0
+// Original: engine_3d.c_flushPremiumRenderBuffer_FUN_004070c0
 // Address: 004070c0
-SMRGLHeaderExtended * __cdecl renderPolygonEngineAPIPremiumMultiState(SMRGLHeaderPrimitive *prim);
+void __cdecl flushPremiumRenderBuffer(void);
 
 // Original: engine_3d.c_renderPolygonEngineAPIPremiumMultiState_FUN_00407290
 // Address: 00407290
 SMRGLHeaderExtended * __cdecl renderPolygonEngineAPIPremiumMultiState(SMRGLHeaderPrimitive *prim);
 
-// Original: engine_3d.c_renderPolygonEngineAPIPremiumMultiState_FUN_00407470
+// Original: engine_3d.c_renderPolygonEngineAPIPremiumDirect_FUN_00407470
 // Address: 00407470
-SMRGLHeaderExtended * __cdecl renderPolygonEngineAPIPremiumMultiState(SMRGLHeaderPrimitive *primitive);
+SMRGLHeaderExtended * __cdecl renderPolygonEngineAPIPremiumDirect(SMRGLHeaderPrimitive *primitive);
 
 // Original: engine_3d.c_renderPolygonAPIAdaptivePreprocessing_FUN_00407620
 // Address: 00407620
-SMRGLHeaderExtended * __cdecl renderPolygonAPIAdaptivePreprocessing(SMRGLHeaderPrimitive *primitive,int render_flags,int render_state_flags,int alpha_blend_flags,int special_render_mode);
+void __cdecl renderPolygonAPIAdaptivePreprocessing(SMRGLHeaderPrimitive *primitive,int render_flags,int render_state_flags);
 
-// Original: engine_3d.c_renderPolygonAPIAdaptivePreprocessing_FUN_00407720
+// Original: engine_3d.c_renderPolygonAPIAdaptivePreprocessingWithUV_FUN_00407720
 // Address: 00407720
-SMRGLHeaderExtended * __cdecl renderPolygonAPIAdaptivePreprocessing(SMRGLHeaderPrimitive *prim);
+void __cdecl renderPolygonAPIAdaptivePreprocessingWithUV(SMRGLHeaderPrimitive *prim,int render_flags,int render_state_flags);
 
 // Original: engine_3d.c_setProcessorType_FUN_00407870
 // Address: 00407870
@@ -401,7 +401,7 @@ void __cdecl rasterizePolygon(SRenderVertex **vertices,int vertex_count);
 
 // Original: engine_3d.c_rasterizeTriangle_FUN_005fcfc0
 // Address: 005fcfc0
-void __cdecl rasterizeTriangle(SRenderVertex *vertex_buffer,int vertex_count,int triangle_count);
+void __cdecl rasterizeTriangle(SRenderVertex *vertex_buffer,int vertex_count);
 
 // Original: engine_3d.c_rasterizePolygon_FUN_005fd4e0
 // Address: 005fd4e0

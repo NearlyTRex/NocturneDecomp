@@ -617,11 +617,11 @@ CActorProperty * __cdecl CActorPropertyList::addMotion(CActorPropertyList *this_
 
 // Original: core_actor.cpp_CActorPropertyList_addClothList_FUN_0040e500
 // Address: 0040e500
-CActorProperty * __cdecl CActorPropertyList::addClothList(CActorPropertyList *this_ptr,char *property_name,CClothList *data_ptr,int max_count);
+void __cdecl CActorPropertyList::addClothList(CActorPropertyList *this_ptr,char *property_name,CClothList *data_ptr,int max_count);
 
 // Original: core_actor.cpp_CActorPropertyList_addRuleList_FUN_0040e5a0
 // Address: 0040e5a0
-CActorProperty * __cdecl CActorPropertyList::addRuleList(CActorPropertyList *this_ptr,char *property_name,CRuleList *data_ptr,int max_count);
+void __cdecl CActorPropertyList::addRuleList(CActorPropertyList *this_ptr,char *property_name,CRuleList *data_ptr,int max_count);
 
 // Original: core_actor.cpp_CActorPropertyList_addEnumPair_FUN_0040e640
 // Address: 0040e640

@@ -45,7 +45,7 @@ void __cdecl CIniFile::readIniHeader(CIniFile *this_ptr,char *section);
 
 // Original: engine_ini.cpp_CIniFile_getString_FUN_004fbb20
 // Address: 004fbb20
-void __cdecl CIniFile::getString(CIniFile *this_ptr,char *key,char *output_buffer,int buffer_size,char *default_value);
+void __cdecl CIniFile::getString(CIniFile *this_ptr,char *key,char *output_buffer,int buffer_size);
 
 // Original: engine_ini.cpp_CIniFile_setString_FUN_004fbbb0
 // Address: 004fbbb0

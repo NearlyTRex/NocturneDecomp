@@ -2,11 +2,11 @@
 // Address: 004a3e20
 // Address Range: [[004a3e20, 004a3eed]]
 // Convention: __cdecl
-// Signature: int __cdecl shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20(CPickList *this_ptr,char *dialog_title,int config_param1,int config_param2)
+// Signature: int __cdecl shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20(CPickList *this_ptr,char *dialog_title,int initial_selected_index,uint window_flags)
 
 #include "nocturne.h"
 
-int __cdecl shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20(CPickList *this_ptr,char *dialog_title,int config_param1,int config_param2)
+int __cdecl shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20(CPickList *this_ptr,char *dialog_title,int initial_selected_index,uint window_flags)
 
 {
   int iVar1;
@@ -23,7 +23,7 @@ int __cdecl shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3
   if (0 < (this_ptr->base).item_count) {
     g_InputKeyMask = 0x7f;
     shape_edittool_cpp_CPickList_initializeDialog_FUN_004a3ef0
-              (this_ptr,dialog_title,config_param1,config_param2);
+              (this_ptr,dialog_title,initial_selected_index,window_flags);
     do {
       iVar2 = shape_edittool_cpp_CPickList_handleDialogInput_FUN_004a4340(this_ptr);
       shape_edittool_cpp_CPickList_renderDialog_FUN_004a4d40(this_ptr);

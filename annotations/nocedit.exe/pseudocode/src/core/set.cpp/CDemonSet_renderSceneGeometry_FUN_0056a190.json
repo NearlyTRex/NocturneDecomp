@@ -1,29 +1,20 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 77,
-        "line": 49,
-        "message": "cannot cast from type 'float' to pointer type 'int **'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 273,
-    "complexity_score": 118,
+    "complexity_score": 102,
     "cross_reference_count": 14,
     "function_call_count": 17,
     "global_count": 13,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 103,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_unmapped_variable"
-    ],
-    "total_lines": 376
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 102,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 375
   },
   "cross_references": [
     {
@@ -322,19 +313,12 @@
     "pcode_op_count": 944
   },
   "stack_frame": {
-    "frame_size": 44,
-    "local_size": 32,
+    "frame_size": 16,
+    "local_size": 4,
     "param_offset": 4,
     "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
-      {
-        "is_param": false,
-        "name": "local_1c",
-        "offset": -28,
-        "size": 12,
-        "type": "CVector3f"
-      },
       {
         "is_param": true,
         "name": "this_ptr",
@@ -358,14 +342,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Variable defined which should be unmapped",
-      "line": 2,
-      "match": "WARNING: Variable defined which should be unmapped",
-      "severity": "moderate",
-      "text": "/* WARNING: Variable defined which should be unmapped: local_1c */",
-      "type": "warning_unmapped_variable"
-    }
-  ]
+  "suspects": []
 }

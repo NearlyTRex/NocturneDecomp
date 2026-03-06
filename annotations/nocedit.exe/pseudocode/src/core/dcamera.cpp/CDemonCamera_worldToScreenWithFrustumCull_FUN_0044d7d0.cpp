@@ -1,19 +1,18 @@
 // Name: core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0
 // Address: 0044d7d0
 // Address Range: [[0044d7d0, 0044da86]]
-// Convention: __cdecl
-// Signature: CVector3i * __cdecl core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0(CDemonCamera *this_ptr,CVector3i *output_ptr,CVector3i *input_ptr)
+// Convention: __stack2_esi
+// Signature: CVector3i * __stack2_esi core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0(CDemonCamera *this_ptr,CVector3i *input_ptr,CVector3i *output_ptr)
 
 #include "nocturne.h"
 
-CVector3i * __cdecl core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0(CDemonCamera *this_ptr,CVector3i *output_ptr,CVector3i *input_ptr)
+CVector3i * __stack2_esi core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0(CDemonCamera *this_ptr,CVector3i *input_ptr,CVector3i *output_ptr)
 
 {
   longlong lVar1;
   longlong lVar2;
   longlong lVar3;
   int iVar4;
-  CVector3i *unaff_ESI;
   uint *puVar5;
   byte bVar6;
   int aiStackY_1018 [1017];
@@ -28,9 +27,9 @@ CVector3i * __cdecl core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_F
   bVar6 = 0;
   iVar4 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_0048ce00(g_CDemonRendererPtr2);
   if (iVar4 == 0) {
-    local_24 = output_ptr->x - (this_ptr->camera_origin).x;
-    local_20 = output_ptr->y - (this_ptr->camera_origin).y;
-    local_1c = output_ptr->z - (this_ptr->camera_origin).z;
+    local_24 = input_ptr->x - (this_ptr->camera_origin).x;
+    local_20 = input_ptr->y - (this_ptr->camera_origin).y;
+    local_1c = input_ptr->z - (this_ptr->camera_origin).z;
     lVar1 = (longlong)(this_ptr->source_matrix).m[0].z * (longlong)local_24;
     lVar2 = (longlong)(this_ptr->source_matrix).m[1].z * (longlong)local_20;
     lVar3 = (longlong)(this_ptr->source_matrix).m[2].z * (longlong)local_1c;
@@ -64,20 +63,20 @@ LAB_0044da32:
                *(uint *)((int)&stack0xffffffec + (uint)bVar6 * -8);
           *(uint *)(&stack0xffffffd8 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
                *(uint *)((int)&stack0xfffffff0 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
-          puVar5 = (uint *)((int)unaff_ESI + (uint)bVar6 * -8 + 4);
-          unaff_ESI->x = iStack_30;
+          puVar5 = (uint *)((int)output_ptr + (uint)bVar6 * -8 + 4);
+          output_ptr->x = iStack_30;
           *puVar5 = *(uint *)(&stack0xffffffd4 + (uint)bVar6 * -8);
           puVar5[(uint)bVar6 * -2 + 1] =
                *(uint *)(&stack0xffffffd8 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
-          return unaff_ESI;
+          return output_ptr;
         }
       }
     }
   }
   else {
-    local_24 = output_ptr->x - this_ptr->alpha_translations[iVar4].x;
-    local_20 = output_ptr->y - this_ptr->alpha_translations[iVar4].y;
-    local_1c = output_ptr->z - this_ptr->alpha_translations[iVar4].z;
+    local_24 = input_ptr->x - this_ptr->alpha_translations[iVar4].x;
+    local_20 = input_ptr->y - this_ptr->alpha_translations[iVar4].y;
+    local_1c = input_ptr->z - this_ptr->alpha_translations[iVar4].z;
     lVar1 = (longlong)this_ptr->alpha_transform_matrices[2][iVar4] * (longlong)local_24;
     lVar2 = (longlong)this_ptr->alpha_transform_matrices[5][iVar4] * (longlong)local_20;
     lVar3 = (longlong)this_ptr->alpha_transform_matrices[8][iVar4] * (longlong)local_1c;
@@ -107,10 +106,10 @@ LAB_0044da32:
        *(uint *)((int)&g_CameraOutOfBoundsCoord + (uint)bVar6 * -8 + 4);
   *(uint *)(&stack0xffffffd8 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
        *(uint *)((uint)bVar6 * -8 + 0x151bfa0 + (uint)bVar6 * -8);
-  puVar5 = (uint *)((int)unaff_ESI + (uint)bVar6 * -8 + 4);
-  unaff_ESI->x = iStack_30;
+  puVar5 = (uint *)((int)output_ptr + (uint)bVar6 * -8 + 4);
+  output_ptr->x = iStack_30;
   *puVar5 = *(uint *)(&stack0xffffffd4 + (uint)bVar6 * -8);
   puVar5[(uint)bVar6 * -2 + 1] =
        *(uint *)(&stack0xffffffd8 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
-  return unaff_ESI;
+  return output_ptr;
 }

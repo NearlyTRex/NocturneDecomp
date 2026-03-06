@@ -2,11 +2,11 @@
 // Address: 004a45d0
 // Address Range: [[004a45d0, 004a4d33]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN_004a45d0(CPickList *this_ptr,char *dialog_title,int config_parameter)
+// Signature: void __cdecl shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN_004a45d0(CPickList *this_ptr,char *dialog_title,uint window_flags)
 
 #include "nocturne.h"
 
-void __cdecl shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN_004a45d0(CPickList *this_ptr,char *dialog_title,int config_parameter)
+void __cdecl shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN_004a45d0(CPickList *this_ptr,char *dialog_title,uint window_flags)
 
 {
   char cVar1;
@@ -170,7 +170,7 @@ void __cdecl shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN
     iVar4 = iVar4 + iVar9;
   }
   shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_004a0890
-            (g_CEditorToolsPtr,iVar10,iVar4,dialog_title,config_parameter);
+            (g_CEditorToolsPtr,iVar10,iVar4,dialog_title,window_flags);
   iVar10 = (g_ClipRight - g_ClipLeft) + 1;
   iVar4 = (g_ClipBottom - g_ClipTop) + 1;
   if (this_ptr->dialog_result == 1) {

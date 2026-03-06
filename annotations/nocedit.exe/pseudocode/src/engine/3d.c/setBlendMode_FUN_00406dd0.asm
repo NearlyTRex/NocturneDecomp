@@ -8,7 +8,7 @@
 ;
 ; XREF[4]:
 ;   core_moon.cpp_CMoon_render_FUN_00529ed0 at 0052a252
-;   engine_3d.c_renderPolygonEngineAPIPremiumMultiState_FUN_004070c0 at 0040723b
+;   engine_3d.c_flushPremiumRenderBuffer_FUN_004070c0 at 0040723b
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50 at 0048ca55
 ;   engine_ncursfx.cpp_CMouse_render_FUN_005445c0 at 005446b3
 ;

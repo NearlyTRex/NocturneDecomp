@@ -6,19 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 166,
-    "complexity_score": 368,
+    "complexity_score": 190,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 83,
-    "suspect_count": 27,
+    "pseudocode_lines": 80,
+    "suspect_count": 10,
     "suspect_types": [
       "param_count_too_many",
-      "pointer_cast",
-      "register_param"
+      "pointer_cast"
     ],
-    "total_lines": 249
+    "total_lines": 246
   },
   "cross_references": [
     {
@@ -44,7 +43,7 @@
     ],
     "convention": "__cdecl",
     "name": "shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a150",
-    "signature": "int __cdecl shape_meshlod_cpp_CLodMesh_weldVertices_FUN_0051a150(CLodMesh *this_ptr,float weld_threshold)"
+    "signature": "void __cdecl shape_meshlod_cpp_CLodMesh_weldVertices_FUN_0051a150(CLodMesh *this_ptr,float weld_threshold)"
   },
   "function_calls": [],
   "globals": [],
@@ -195,88 +194,32 @@
   },
   "suspects": [
     {
-      "description": "Inferred register parameter",
-      "line": 6,
-      "match": "in_EAX",
-      "severity": "mild",
-      "text": "int in_EAX;",
-      "type": "register_param"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 17,
-      "match": "in_EAX",
-      "severity": "mild",
-      "text": "in_EAX = 0;",
-      "type": "register_param"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 19,
-      "match": "in_EAX",
-      "severity": "mild",
-      "text": "*(int *)((int)this_ptr->vertex_data->adjacent_edge_indices + in_EAX + -8) = iVar5;",
-      "type": "register_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 19,
+      "line": 18,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)this_ptr->vertex_data->adjacent_edge_indices + in_EAX + -8) = iVar5;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 21,
-      "match": "in_EAX",
-      "severity": "mild",
-      "text": "in_EAX = in_EAX + 0x4c4;",
-      "type": "register_param"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 21,
-      "match": "in_EAX",
-      "severity": "mild",
-      "text": "in_EAX = in_EAX + 0x4c4;",
-      "type": "register_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 28,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "iVar3 = *(int *)((int)this_ptr->vertex_data->adjacent_edge_indices + local_1c + -8);",
+      "text": "*(int *)((int)this_ptr->vertex_data->adjacent_edge_indices + iVar2 + -8) = iVar5;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 41,
+      "line": 27,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)this_ptr->vertex_data->adjacent_edge_indices + iVar3 + -8) = iVar5;",
+      "text": "iVar2 = *(int *)((int)this_ptr->vertex_data->adjacent_edge_indices + local_1c + -8);",
       "type": "pointer_cast"
     },
     {
-      "description": "Inferred register parameter",
-      "line": 49,
-      "match": "in_EAX",
+      "description": "Complex pointer cast",
+      "line": 40,
+      "match": "(int *)((int)",
       "severity": "mild",
-      "text": "in_EAX = this_ptr->vertex_count;",
-      "type": "register_param"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 50,
-      "match": "in_EAX",
-      "severity": "mild",
-      "text": "} while (iVar5 < in_EAX);",
-      "type": "register_param"
+      "text": "*(int *)((int)this_ptr->vertex_data->adjacent_edge_indices + iVar2 + -8) = iVar5;",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 60,
+      "line": 58,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)(this_ptr->tri_data->uv_coords + -2) + iVar5 + local_24) =",
@@ -284,123 +227,43 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 61,
+      "line": 59,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "this_ptr->vertex_data[*(int *)((int)(this_ptr->tri_data->uv_coords + -2) + iVar3 + 4)].",
+      "text": "this_ptr->vertex_data[*(int *)((int)(this_ptr->tri_data->uv_coords + -2) + iVar2 + 4)].",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 64,
-      "match": "in_EAX",
-      "severity": "mild",
-      "text": "in_EAX = local_24 + 0x8c;",
-      "type": "register_param"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 66,
-      "match": "in_EAX",
-      "severity": "mild",
-      "text": "local_24 = in_EAX;",
-      "type": "register_param"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 71,
-      "match": "in_EAX",
-      "severity": "mild",
-      "text": "in_EAX = 0;",
-      "type": "register_param"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 73,
-      "match": "in_EAX",
-      "severity": "mild",
-      "text": "*(int *)((int)this_ptr->edges_ptr->adjacent_tri_indices + in_EAX + -0x28) =",
-      "type": "register_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 73,
+      "line": 70,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)this_ptr->edges_ptr->adjacent_tri_indices + in_EAX + -0x28) =",
+      "text": "*(int *)((int)this_ptr->edges_ptr->adjacent_tri_indices + iVar2 + -0x28) =",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 75,
-      "match": "in_EAX",
-      "severity": "mild",
-      "text": "[*(int *)((int)this_ptr->edges_ptr->adjacent_tri_indices + in_EAX + -0x28)].",
-      "type": "register_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 75,
+      "line": 72,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "[*(int *)((int)this_ptr->edges_ptr->adjacent_tri_indices + in_EAX + -0x28)].",
+      "text": "[*(int *)((int)this_ptr->edges_ptr->adjacent_tri_indices + iVar2 + -0x28)].",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 77,
-      "match": "in_EAX",
-      "severity": "mild",
-      "text": "*(int *)((int)this_ptr->edges_ptr->adjacent_tri_indices + in_EAX + -0x24) =",
-      "type": "register_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 77,
+      "line": 74,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)this_ptr->edges_ptr->adjacent_tri_indices + in_EAX + -0x24) =",
+      "text": "*(int *)((int)this_ptr->edges_ptr->adjacent_tri_indices + iVar2 + -0x24) =",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 79,
-      "match": "in_EAX",
-      "severity": "mild",
-      "text": "[*(int *)((int)this_ptr->edges_ptr->adjacent_tri_indices + in_EAX + -0x24)].",
-      "type": "register_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 79,
+      "line": 76,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "[*(int *)((int)this_ptr->edges_ptr->adjacent_tri_indices + in_EAX + -0x24)].",
+      "text": "[*(int *)((int)this_ptr->edges_ptr->adjacent_tri_indices + iVar2 + -0x24)].",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 82,
-      "match": "in_EAX",
-      "severity": "mild",
-      "text": "in_EAX = in_EAX + 0xf0;",
-      "type": "register_param"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 82,
-      "match": "in_EAX",
-      "severity": "mild",
-      "text": "in_EAX = in_EAX + 0xf0;",
-      "type": "register_param"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 85,
-      "match": "in_EAX",
-      "severity": "mild",
-      "text": "return in_EAX;",
-      "type": "register_param"
     },
     {
       "call_site_count": 2,

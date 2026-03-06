@@ -6,19 +6,20 @@
   },
   "complexity": {
     "assembly_lines": 37,
-    "complexity_score": 117,
+    "complexity_score": 141,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 42,
-    "suspect_count": 6,
+    "pseudocode_lines": 41,
+    "suspect_count": 8,
     "suspect_types": [
       "byvalue_struct_passing",
       "pointer_cast",
-      "warning_unmapped_variable"
+      "stack_param",
+      "stack_ref"
     ],
-    "total_lines": 79
+    "total_lines": 78
   },
   "cross_references": [
     {
@@ -110,26 +111,12 @@
     "pcode_op_count": 254
   },
   "stack_frame": {
-    "frame_size": 212,
-    "local_size": 204,
+    "frame_size": 116,
+    "local_size": 108,
     "param_offset": 4,
     "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
-      {
-        "is_param": false,
-        "name": "local_c8",
-        "offset": -200,
-        "size": 48,
-        "type": "SRenderVertex"
-      },
-      {
-        "is_param": false,
-        "name": "local_98",
-        "offset": -152,
-        "size": 48,
-        "type": "SRenderVertex"
-      },
       {
         "is_param": false,
         "name": "local_68",
@@ -193,44 +180,60 @@
   },
   "suspects": [
     {
-      "description": "Variable defined which should be unmapped",
-      "line": 2,
-      "match": "WARNING: Variable defined which should be unmapped",
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_ffffff38",
       "severity": "moderate",
-      "text": "/* WARNING: Variable defined which should be unmapped: local_c8 */",
-      "type": "warning_unmapped_variable"
+      "text": "SRenderVertex in_stack_ffffff38;",
+      "type": "stack_param"
     },
     {
-      "description": "Variable defined which should be unmapped",
-      "line": 3,
-      "match": "WARNING: Variable defined which should be unmapped",
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_ffffff68",
       "severity": "moderate",
-      "text": "/* WARNING: Variable defined which should be unmapped: local_98 */",
-      "type": "warning_unmapped_variable"
+      "text": "SRenderVertex in_stack_ffffff68;",
+      "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 21,
+      "line": 19,
       "match": "(SRenderVertex *)((int)",
       "severity": "mild",
       "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 35,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + 4);",
-      "type": "pointer_cast"
+      "description": "Direct stack address reference",
+      "line": 29,
+      "match": "&stack0xffffff68",
+      "severity": "moderate",
+      "text": "piVar4 = (int *)&stack0xffffff68;",
+      "type": "stack_ref"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Direct stack address reference",
+      "line": 36,
+      "match": "&stack0xffffff38",
+      "severity": "moderate",
+      "text": "piVar4 = (int *)&stack0xffffff38;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
       "line": 42,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + 4);",
-      "type": "pointer_cast"
+      "match": "in_stack_ffffff38",
+      "severity": "moderate",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff38,in_stack_ffffff68);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 42,
+      "match": "in_stack_ffffff68",
+      "severity": "moderate",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff38,in_stack_ffffff68);",
+      "type": "stack_param"
     },
     {
       "description": "Calls clipAndDrawLine2D - decompiler cannot recognize by-value pattern",

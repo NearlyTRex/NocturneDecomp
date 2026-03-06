@@ -37,7 +37,7 @@ void __cdecl CDemonMission::readMissionFile(CDemonMission *this_ptr,_FILE *file_
 
 // Original: core_mission.cpp_CDemonMission_getNextLoadedInventoryActor_FUN_00523520
 // Address: 00523520
-void __cdecl CDemonMission::getNextLoadedInventoryActor(CDemonMission *this_ptr,char *actor_name);
+CDemonActor * __cdecl CDemonMission::getNextLoadedInventoryActor(CDemonMission *this_ptr,char *actor_name);
 
 // Original: core_mission.cpp_CDemonMission_loadScript_FUN_005235b0
 // Address: 005235b0

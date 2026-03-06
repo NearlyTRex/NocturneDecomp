@@ -17,6 +17,7 @@ void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004e1cb0(CGame *this_ptr,
   int iVar6;
   char *pcVar7;
   bool bVar8;
+  uint uVar9;
   CPickList local_6ec;
   CIniFile local_344;
   char local_144 [260];
@@ -124,12 +125,12 @@ void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004e1cb0(CGame *this_ptr,
           } while (iVar5 < local_6ec.base.item_count);
         }
       }
-      iVar5 = 0;
+      uVar9 = 0;
       iVar3 = -1;
       pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Choose a story to play")
       ;
       iVar3 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                        (&local_6ec,pcVar7,iVar3,iVar5);
+                        (&local_6ec,pcVar7,iVar3,uVar9);
       if (iVar3 < 0) {
         g_EditorFont = local_1c;
         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_6ec,0);
@@ -180,12 +181,12 @@ LAB_004e2250:
               iVar5 = iVar5 + 4;
             }
           }
-          iVar5 = 0;
+          uVar9 = 0;
           iVar6 = -1;
           pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                              ("'Dark Reign of the Vampire King'");
           iVar6 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                            (&local_6ec,pcVar7,iVar6,iVar5);
+                            (&local_6ec,pcVar7,iVar6,uVar9);
         }
         if (iVar3 == 1) {
           pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
@@ -224,12 +225,12 @@ LAB_004e2250:
             }
             iVar5 = iVar5 + 4;
           }
-          iVar5 = 0;
+          uVar9 = 0;
           iVar6 = -1;
           pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                              ("'Tomb of the Underground God'");
           iVar6 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                            (&local_6ec,pcVar7,iVar6,iVar5);
+                            (&local_6ec,pcVar7,iVar6,uVar9);
         }
         if (iVar3 == 2) {
           pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
@@ -278,12 +279,12 @@ LAB_004e2250:
             }
             iVar5 = iVar5 + 4;
           }
-          iVar5 = 0;
+          uVar9 = 0;
           iVar6 = -1;
           pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                              ("'Windy City Massacre'");
           iVar6 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                            (&local_6ec,pcVar7,iVar6,iVar5);
+                            (&local_6ec,pcVar7,iVar6,uVar9);
         }
         if (iVar3 == 3) {
           iVar5 = 0x9c;
@@ -311,12 +312,12 @@ LAB_004e2250:
             }
             iVar5 = iVar5 + 4;
           }
-          iVar5 = 0;
+          uVar9 = 0;
           iVar6 = -1;
           pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                              ("'The House on the Edge of Hell'");
           iVar6 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                            (&local_6ec,pcVar7,iVar6,iVar5);
+                            (&local_6ec,pcVar7,iVar6,uVar9);
         }
         if (iVar3 != 4) goto LAB_004e2376;
         iVar5 = 0xd0;
@@ -335,11 +336,11 @@ LAB_004e2250:
           }
           iVar5 = iVar5 + 4;
         }
-        iVar5 = 0;
+        uVar9 = 0;
         iVar6 = -1;
         pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("'Epilogue'");
         iVar6 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                          (&local_6ec,pcVar7,iVar6,iVar5);
+                          (&local_6ec,pcVar7,iVar6,uVar9);
         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_6ec,0);
       }
       else {

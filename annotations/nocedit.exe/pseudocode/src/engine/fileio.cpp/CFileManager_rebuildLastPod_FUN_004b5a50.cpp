@@ -229,8 +229,8 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
             if (0 < this_ptr->tracked_file_count) {
               do {
                 iVar5 = _stricmp
-                                  (*(char **)((int)&(local_1838.directory_entries)->name_or_offset +
-                                             iVar2),*pacVar9);
+                                  (*(char **)((int)&(local_1838.directory_entries)->name + iVar2),
+                                   *pacVar9);
                 if (iVar5 == 0) break;
                 iVar8 = iVar8 + 1;
                 pacVar9 = pacVar9 + 1;
@@ -239,7 +239,7 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
             if (this_ptr->tracked_file_count <= iVar8) {
               pcVar16 = g_CurrentFilenameBuffer;
               iVar2 = 0x4e;
-              pcVar14 = *(char **)((int)&(local_1838.directory_entries)->name_or_offset + local_2c);
+              pcVar14 = *(char **)((int)&(local_1838.directory_entries)->name + local_2c);
               g_AuditOperationType = 1;
               do {
                 cVar1 = *pcVar14;

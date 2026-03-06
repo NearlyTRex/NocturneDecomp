@@ -82,7 +82,7 @@ int __cdecl engine_pod_cpp_CPodFile_mountFromFile_FUN_0054f650(CPodFile *this_pt
     pcVar9[1] = cVar1;
     pcVar9 = pcVar9 + 2;
   } while (cVar1 != '\0');
-  this_ptr->filesize = local_6a4.timestamp;
+  this_ptr->timestamp = local_6a4.timestamp;
   p_Var3 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                      (this_ptr->filename,(char *)0x0,"rb","..\\engine\\pod.cpp",0x150);
   local_20 = p_Var3;
@@ -122,7 +122,7 @@ LAB_0054f6fe:
       local_18 = 0;
       do {
         _fread(local_ac,1,0x50,local_20);
-        *(SIZE_T *)((int)&this_ptr->directory_entries->name_or_offset + local_18) = size;
+        *(SIZE_T *)((int)&this_ptr->directory_entries->name + local_18) = size;
         uVar6 = 0xffffffff;
         pcVar8 = local_ac;
         do {
@@ -145,7 +145,7 @@ LAB_0054f6fe:
         }
         pcVar8 = local_ac;
         pcVar9 = this_ptr->file_data_buffer +
-                 *(int *)((int)&this_ptr->directory_entries->name_or_offset + local_18);
+                 *(int *)((int)&this_ptr->directory_entries->name + local_18);
         do {
           cVar1 = *pcVar8;
           *pcVar9 = cVar1;
@@ -159,7 +159,7 @@ LAB_0054f6fe:
         *(uint *)((int)&this_ptr->directory_entries->offset + local_18) = local_68;
         *(uint *)((int)&this_ptr->directory_entries->checksum + local_18) = local_60;
         local_28 = local_28 + 1;
-        *(uint *)((int)&this_ptr->directory_entries->timestamp + local_18) = this_ptr->filesize;
+        *(uint *)((int)&this_ptr->directory_entries->timestamp + local_18) = this_ptr->timestamp;
         local_18 = local_18 + 0x14;
       } while (local_28 < this_ptr->file_count);
     }
@@ -310,7 +310,7 @@ LAB_0054f6fe:
       local_14 = 0;
       do {
         _fread(local_5c,1,0x28,local_20);
-        *(SIZE_T *)((int)&this_ptr->directory_entries->name_or_offset + local_14) = size;
+        *(SIZE_T *)((int)&this_ptr->directory_entries->name + local_14) = size;
         uVar6 = 0xffffffff;
         pcVar8 = local_5c;
         do {
@@ -333,7 +333,7 @@ LAB_0054f6fe:
         }
         pcVar8 = local_5c;
         pcVar9 = this_ptr->file_data_buffer +
-                 *(int *)((int)&this_ptr->directory_entries->name_or_offset + local_14);
+                 *(int *)((int)&this_ptr->directory_entries->name + local_14);
         do {
           cVar1 = *pcVar8;
           *pcVar9 = cVar1;
@@ -347,7 +347,7 @@ LAB_0054f6fe:
         *(uint *)((int)&this_ptr->directory_entries->offset + local_14) = local_38;
         *(uint *)((int)&this_ptr->directory_entries->checksum + local_14) = 0;
         iVar2 = local_14 + 0x14;
-        *(uint *)((int)&this_ptr->directory_entries->timestamp + local_14) = this_ptr->filesize;
+        *(uint *)((int)&this_ptr->directory_entries->timestamp + local_14) = this_ptr->timestamp;
         local_24 = local_24 + 1;
         local_14 = iVar2;
       } while (local_24 < this_ptr->file_count);
@@ -374,7 +374,7 @@ LAB_0054f9a8:
   if (0 < this_ptr->file_count) {
     iVar7 = 0;
     do {
-      piVar5 = (int *)((int)&this_ptr->directory_entries->name_or_offset + iVar7);
+      piVar5 = (int *)((int)&this_ptr->directory_entries->name + iVar7);
       if ((*piVar5 < 0) || ((int)size <= *piVar5)) goto LAB_0054f6fe;
       *piVar5 = (int)(this_ptr->file_data_buffer + *piVar5);
       iVar2 = iVar2 + 1;

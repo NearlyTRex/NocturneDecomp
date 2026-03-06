@@ -1,11 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_fileio_cpp_CFileManager_extractPodFile_FUN_004b6e10(CFileManager *this_ptr,char *pod_filename)
+; void __cdecl engine_fileio_cpp_CFileManager_extractPodFile_FUN_004b6e10(CFileManager *this_ptr,char *pod_filename,int offer_dismount)
 ;
 ; Parameters:
 ; CFileManager *   Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   pod_filename
+; int              Stack[0xc]:4   offer_dismount
 ; Local Variables:
 ; undefined        Stack[-0xe84]:1  local_e84
 ; undefined        Stack[-0xe80]:1  local_e80
@@ -500,7 +501,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004b72d7
     MOVSD ES:EDI,ESI                    ; 004b72d8
     CALL engine_fileio.cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50 ; 004b72d9
-        ;   XREF to: 004b7d50 (UNCONDITIONAL_CALL)  ; int engine_fileio.cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50(CFileManager * this_ptr, _FILE * source_file, char * dest_filename, char * name_or_offset, ...)
+        ;   XREF to: 004b7d50 (UNCONDITIONAL_CALL)  ; int engine_fileio.cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50(CFileManager * this_ptr, _FILE * source_file, char * dest_filename, int file_size, ...)
     ADD ESP,0x1c                        ; 004b72de
     TEST EAX,EAX                        ; 004b72e1
     JZ 0x004b7428                       ; 004b72e3

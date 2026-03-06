@@ -50,6 +50,6 @@ void __cdecl core_skeledit_cpp_CDeformableModel_groundBias_FUN_0058e4e0(CDeforma
   core_skeledit_cpp_CDeformableModel_offsetRootVertices_FUN_0058e600(this_ptr,&local_20);
   g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
   g_CurrentDebugLine = 0x9d1;
-  (*((this_ptr_01->motion_controller).vtable)->dtor)(&this_ptr_01->motion_controller);
+  (*((this_ptr_01->motion_controller).vtable)->dtor)(&this_ptr_01->motion_controller,2);
   return;
 }

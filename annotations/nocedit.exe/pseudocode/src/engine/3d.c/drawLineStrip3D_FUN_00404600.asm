@@ -6,8 +6,6 @@
 ; Parameters:
 ; SLineStrip *     Stack[0x4]:4   line_strip
 ; Local Variables:
-; SRenderVertex    Stack[-0xd0]:48  local_d0
-; SRenderVertex    Stack[-0xa0]:48  local_a0
 ; SRenderVertex    Stack[-0x70]:48  local_70
 ; SRenderVertex    Stack[-0x40]:48  local_40
 ;

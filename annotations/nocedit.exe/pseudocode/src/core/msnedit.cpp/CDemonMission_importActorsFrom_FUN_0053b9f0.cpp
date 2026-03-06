@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Variable defined which should be unmapped: local_448 */
-
 void __cdecl core_msnedit_cpp_CDemonMission_importActorsFrom_FUN_0053b9f0(CDemonMission *this_ptr,CDemonMission *other)
 
 {
@@ -18,31 +16,30 @@ void __cdecl core_msnedit_cpp_CDemonMission_importActorsFrom_FUN_0053b9f0(CDemon
   int iVar4;
   CDemonActor *pCVar5;
   int iVar6;
-  CDemonMission *in_stack_0000000c;
-  CPickList local_448;
+  CPickList CStack_448;
   char local_a0 [100];
   char local_3c [32];
   CVector3f local_1c;
   
   iVar4 = 0;
-  shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_448);
+  shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&CStack_448);
   if (0 < g_NumActorClassTypes) {
     iVar6 = 0;
     do {
       if (*(int *)(*(int *)((int)g_ActorClassRegistrations + iVar6) + 0x2c) != 0) {
         shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                  (&local_448.base,(char *)(*(int *)((int)g_ActorClassRegistrations + iVar6) + 1));
+                  (&CStack_448.base,(char *)(*(int *)((int)g_ActorClassRegistrations + iVar6) + 1));
       }
       iVar4 = iVar4 + 1;
       iVar6 = iVar6 + 4;
     } while (iVar4 < g_NumActorClassTypes);
   }
-  shape_edittool_cpp_CStrList_sort_FUN_004a2ec0(&local_448.base);
+  shape_edittool_cpp_CStrList_sort_FUN_004a2ec0(&CStack_448.base);
   iVar4 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                    (&local_448,"Choose type of actor to create",INT_00680648,0);
+                    (&CStack_448,"Choose type of actor to create",INT_00680648,0);
   if (-1 < iVar4) {
     INT_00680648 = iVar4;
-    pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_448.base,iVar4);
+    pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&CStack_448.base,iVar4);
     _sprintf(local_a0,"C%s",pcVar2);
     actor = core_actor_cpp_createActorByName_FUN_0040c430(local_a0);
     core_mission_cpp_CDemonMission_generateActorName_FUN_00524700(this_ptr,actor);
@@ -74,11 +71,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_importActorsFrom_FUN_0053b9f0(CDemon
           g_CurrentDebugLine = 0x8ff;
           g_CurrentDebugFilename = "..\\core\\msnedit.cpp";
           if (actor != (CDemonActor *)0x0) {
-            (*((actor->vtable)._ub)->dtor)
-                      (actor,2,local_448.base.item_count,local_448.base.capacity,
-                       (uint)local_448.base.data_array,(uint)local_448.base.vtable,
-                       local_448.tab_column_widths[0],local_448.tab_column_widths[1],
-                       local_448.tab_column_widths[2]);
+            (*((actor->vtable)._ub)->dtor)(actor,2);
           }
           goto LAB_0053bc0f;
         }
@@ -99,31 +92,18 @@ void __cdecl core_msnedit_cpp_CDemonMission_importActorsFrom_FUN_0053b9f0(CDemon
     }
     iVar4 = (*((actor->vtable)._ub)->initializeInEditor)(actor);
     if (iVar4 == 0) {
-      local_448.base.item_count = 2;
       g_CurrentDebugLine = 0x906;
       g_CurrentDebugFilename = "..\\core\\msnedit.cpp";
-      (*((actor->vtable)._ub)->dtor)
-                (actor,2,local_448.base.capacity,(uint)local_448.base.data_array,
-                 (uint)local_448.base.vtable,local_448.tab_column_widths[0],
-                 local_448.tab_column_widths[1],local_448.tab_column_widths[2],
-                 local_448.tab_column_widths[3]);
+      (*((actor->vtable)._ub)->dtor)(actor,2);
     }
     else {
-      local_448.base.item_count = (int)actor;
-      core_mission_cpp_CDemonMission_addActorToList_FUN_00523b70(other,actor);
-      local_448.base.item_count = (int)other;
-      core_mission_cpp_CDemonMission_buildSetActorList_FUN_00523e60(other);
-      local_448.base.item_count = (int)actor;
+      core_mission_cpp_CDemonMission_addActorToList_FUN_00523b70(this_ptr,actor);
+      core_mission_cpp_CDemonMission_buildSetActorList_FUN_00523e60(this_ptr);
       (*((actor->vtable)._ub)->setup)(actor);
-      local_448.base.item_count = (int)in_stack_0000000c;
-      local_448.base.capacity = (int)actor;
-      core_msnedit_cpp_CDemonMission_selectActor_FUN_0053c140(in_stack_0000000c,actor);
+      core_msnedit_cpp_CDemonMission_selectActor_FUN_0053c140(this_ptr,actor);
     }
   }
 LAB_0053bc0f:
-  local_448.tab_column_widths[4] = (int)(local_448.tab_column_widths + 6);
-  local_448.tab_column_widths[5] = 0;
-  local_448.tab_column_widths[3] = 0x53bc1b;
-  shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)(local_448.tab_column_widths + 6),0);
+  shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&CStack_448,0);
   return;
 }

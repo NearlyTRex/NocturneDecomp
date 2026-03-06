@@ -20,7 +20,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showFogEditor_FUN_00580730(CDemonSet *th
   int iVar9;
   char *pcVar10;
   byte bVar11;
-  int config_param2;
+  uint window_flags;
   char *in_stack_fffffa18;
   char local_240 [256];
   char local_140 [256];
@@ -369,10 +369,10 @@ void __cdecl core_setedit_cpp_CDemonSet_showFogEditor_FUN_00580730(CDemonSet *th
                   ((CStrList *)&stack0xfffffa18,"ric-mt0a.wav");
         shape_edittool_cpp_CStrList_add_FUN_004a2b80
                   ((CStrList *)&stack0xfffffa18,"ric-ct0a.wav");
-        config_param2 = 0;
+        window_flags = 0;
         pcVar4 = core_sound_cpp_CSound_getSoundModeName_FUN_005b3c70(g_CSoundPtr,iVar9);
         iVar6 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                          ((CPickList *)&stack0xfffffa18,pcVar4,iVar6,config_param2);
+                          ((CPickList *)&stack0xfffffa18,pcVar4,iVar6,window_flags);
         if (iVar6 < 0) break;
         sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
         sound_sndmain_cpp_setNextSfxStaticPosition_FUN_005a88e0(0.0,0.0,20.0);

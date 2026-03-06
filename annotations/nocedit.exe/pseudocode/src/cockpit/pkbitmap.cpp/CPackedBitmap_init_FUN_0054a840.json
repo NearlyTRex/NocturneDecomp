@@ -6,17 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 34,
+    "complexity_score": 8,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 9,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unaffected_reg"
-    ],
-    "total_lines": 45
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 8,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 44
   },
   "cross_references": [],
   "function": {
@@ -29,7 +27,7 @@
     ],
     "convention": "__cdecl",
     "name": "cockpit_pkbitmap.cpp_CPackedBitmap_init_FUN_0054a840",
-    "signature": "CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_init_FUN_0054a840(CPackedBitmap *this_ptr,char *filename,int width,int height,int transparency_color,int stride,int apply_palette_flag)"
+    "signature": "CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_init_FUN_0054a840(CPackedBitmap *this_ptr,char *filename,int width,int height,int transparency_color,int apply_palette_flag)"
   },
   "function_calls": [
     {
@@ -53,8 +51,8 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 7,
-    "estimated_params": 7
+    "declared_params": 6,
+    "estimated_params": 6
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.625,
@@ -77,10 +75,10 @@
     "pcode_op_count": 116
   },
   "stack_frame": {
-    "frame_size": 32,
+    "frame_size": 28,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 28,
+    "param_size": 24,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -120,36 +118,12 @@
       },
       {
         "is_param": true,
-        "name": "stride",
-        "offset": 24,
-        "size": 4,
-        "type": "int"
-      },
-      {
-        "is_param": true,
         "name": "apply_palette_flag",
-        "offset": 28,
+        "offset": 24,
         "size": 4,
         "type": "int"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 5,
-      "match": "unaff_EBP",
-      "severity": "moderate",
-      "text": "int unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 10,
-      "match": "unaff_EBP",
-      "severity": "moderate",
-      "text": "(this_ptr,filename,width,height,transparency_color,stride,unaff_EBP);",
-      "type": "unaffected_reg"
-    }
-  ]
+  "suspects": []
 }

@@ -1,14 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAPIAdaptivePreprocessing_FUN_00407620(SMRGLHeaderPrimitive *primitive,int render_flags,int render_state_flags,int alpha_blend_flags,int special_render_mode)
+; void __cdecl engine_3d_c_renderPolygonAPIAdaptivePreprocessing_FUN_00407620(SMRGLHeaderPrimitive *primitive,int render_flags,int render_state_flags)
 ;
 ; Parameters:
 ; SMRGLHeaderPrimitive * Stack[0x4]:4   primitive
 ; int              Stack[0x8]:4   render_flags
 ; int              Stack[0xc]:4   render_state_flags
-; int              Stack[0x10]:4   alpha_blend_flags
-; int              Stack[0x14]:4   special_render_mode
 ;
 ; XREF[1]:
 ;   engine_font.cpp_CBitFont_render3DCharacter_FUN_004ce2d0 at 004ce736

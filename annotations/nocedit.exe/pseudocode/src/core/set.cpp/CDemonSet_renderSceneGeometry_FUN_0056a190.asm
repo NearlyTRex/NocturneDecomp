@@ -7,8 +7,6 @@
 ; CDemonSet *      Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   frustum_param
 ; int              Stack[0xc]:4   render_mode
-; Local Variables:
-; CVector3f        Stack[-0x1c]:12  local_1c
 ;
 ; XREF[14]:
 ;   core_course.cpp_CCourse_preview_FUN_00443bc0 at 00443d1d
@@ -116,7 +114,7 @@ section .text
     PUSH EAX                            ; 0056a22d
     PUSH 0x3277d14                      ; 0056a22e | g_CDemonRaytraceInstance
     CALL core_dtrace.cpp_CDemonRaytrace_savePVS_FUN_00498fb0 ; 0056a233
-        ;   XREF to: 00498fb0 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_savePVS_FUN_00498fb0(CDemonRaytrace * this_ptr, int * output_count, int * * input_indices_array, int * * output_indices_array)
+        ;   XREF to: 00498fb0 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_savePVS_FUN_00498fb0(CDemonRaytrace * this_ptr, int * output_count, int * * input_indices_array)
     ADD ESP,0xc                         ; 0056a238
     MOV ECX,dword ptr [0x006703ec]      ; 0056a23b | g_CDemonRendererInstance | g_CDemonRendererPtr2
         ;   Label: LAB_0056a23b

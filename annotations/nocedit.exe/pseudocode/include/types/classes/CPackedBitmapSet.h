@@ -14,6 +14,6 @@ typedef struct CPackedBitmapSet {
     char filename[20]; // 0x8
     int width; // 0x1c
     int height; // 0x20
-    int config_param; // 0x24
+    int frames_per_bitmap; // 0x24
 } CPackedBitmapSet;
 

@@ -6,18 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 22,
-    "complexity_score": 71,
+    "complexity_score": 64,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 21,
+    "pseudocode_lines": 19,
     "suspect_count": 4,
     "suspect_types": [
-      "pointer_cast",
       "unaffected_reg"
     ],
-    "total_lines": 43
+    "total_lines": 41
   },
   "cross_references": [
     {
@@ -37,7 +36,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_boss.c_modelStructNotSupported_FUN_0041dbe0",
-    "signature": "SMRGLHeaderExtended * __cdecl engine_boss_c_modelStructNotSupported_FUN_0041dbe0(SMRGLHeaderExtended *header)"
+    "signature": "void __cdecl engine_boss_c_modelStructNotSupported_FUN_0041dbe0(SMRGLHeaderExtended *mrgl_data)"
   },
   "function_calls": [
     {
@@ -131,7 +130,7 @@
       },
       {
         "is_param": true,
-        "name": "header",
+        "name": "mrgl_data",
         "offset": 4,
         "size": 4,
         "type": "SMRGLHeaderExtended *"
@@ -144,7 +143,7 @@
       "line": 6,
       "match": "unaff_ESI",
       "severity": "moderate",
-      "text": "SMRGLHeaderExtended *unaff_ESI;",
+      "text": "uint *unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
@@ -152,23 +151,23 @@
       "line": 17,
       "match": "unaff_ESI",
       "severity": "moderate",
-      "text": "pSVar3 = unaff_ESI;",
+      "text": "*unaff_ESI = *puVar2;",
       "type": "unaffected_reg"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 21,
-      "match": "(SMRGLHeaderExtended *)((int)",
-      "severity": "mild",
-      "text": "pSVar3 = (SMRGLHeaderExtended *)((int)pSVar3 + (uint)bVar4 * -8 + 4);",
-      "type": "pointer_cast"
+      "description": "Unaffected register variable",
+      "line": 19,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "unaff_ESI = unaff_ESI + (uint)bVar3 * -2 + 1;",
+      "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 23,
+      "line": 19,
       "match": "unaff_ESI",
       "severity": "moderate",
-      "text": "return unaff_ESI;",
+      "text": "unaff_ESI = unaff_ESI + (uint)bVar3 * -2 + 1;",
       "type": "unaffected_reg"
     }
   ]

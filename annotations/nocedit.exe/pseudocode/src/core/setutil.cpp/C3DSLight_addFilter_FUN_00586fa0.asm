@@ -78,7 +78,7 @@ section .text
     MOV EBP,dword ptr [0x0066efcc]      ; 0058702c | g_CFilterCachePtr
     PUSH EBP                            ; 00587032 | g_CFilterCacheInstance
     CALL core_dfilter.cpp_CFilterCache_getFilter_FUN_00470060 ; 00587033
-        ;   XREF to: 00470060 (UNCONDITIONAL_CALL)  ; CDemonFilter * core_dfilter.cpp_CFilterCache_getFilter_FUN_00470060(CFilterCache * this_ptr, char * filter_name, char * filter_filename, int enable_init)
+        ;   XREF to: 00470060 (UNCONDITIONAL_CALL)  ; CDemonFilter * core_dfilter.cpp_CFilterCache_getFilter_FUN_00470060(CFilterCache * this_ptr, char * filter_name, int blend_filter)
     MOV EDX,dword ptr [EBX + 0x11ec]    ; 00587038
     MOV dword ptr [EBX + EDX*0x4 + 0x1810],EAX ; 0058703e
     MOV EAX,dword ptr [EBX + 0x11ec]    ; 00587045

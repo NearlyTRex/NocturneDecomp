@@ -30,8 +30,8 @@ void __cdecl engine_pod_cpp_CPodFile_populateFileInfo_FUN_005501b0(CPodFile *thi
   output_info->file_offset = pCVar2[file_index].offset;
   output_info->file_size = pCVar2[file_index].size;
   output_info->timestamp = pCVar2[file_index].timestamp;
-  uVar3 = this_ptr->filesize;
+  uVar3 = this_ptr->timestamp;
   output_info->is_archive = 1;
-  output_info->container_size = uVar3;
+  output_info->container_timestamp = uVar3;
   return;
 }

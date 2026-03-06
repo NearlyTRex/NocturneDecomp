@@ -17,8 +17,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[10]:
+;   engine_3d.c_renderPolygonAPIAdaptivePreprocessingWithUV_FUN_00407720 at 0040785d
 ;   engine_3d.c_renderPolygonAPIAdaptivePreprocessing_FUN_00407620 at 00407706
-;   engine_3d.c_renderPolygonAPIAdaptivePreprocessing_FUN_00407720 at 0040785d
 ;   engine_3d.c_renderPolygonEngineEnhancedDepthLit_FUN_00406c80 at 00406d45
 ;   engine_3d.c_renderPolygonEnginePlaneMaskedAdvanced_FUN_004057b0 at 00405887
 ;   engine_3d.c_renderPolygonEnginePlaneMaskedEffect_FUN_00405690 at 00405764

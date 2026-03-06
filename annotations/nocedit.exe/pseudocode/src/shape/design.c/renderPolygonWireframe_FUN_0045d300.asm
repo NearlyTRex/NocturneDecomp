@@ -6,8 +6,6 @@
 ; Parameters:
 ; SMRGLHeaderPrimitive * Stack[0x4]:4   polygon_data
 ; Local Variables:
-; SRenderVertex    Stack[-0x108]:48  local_108
-; SRenderVertex    Stack[-0xd8]:48  local_d8
 ; SRenderVertex    Stack[-0xa8]:48  local_a8
 ; SRenderVertex    Stack[-0x78]:48  local_78
 ; SRenderVertex    Stack[-0x48]:48  local_48

@@ -8,7 +8,7 @@
 ; SRenderBufferEntry * * Stack[0x8]:4   entry2_ptr
 ;
 ; XREF[1]:
-;   engine_3d.c_renderPolygonEngineAPIPremiumMultiState_FUN_004070c0 at 00407100
+;   engine_3d.c_flushPremiumRenderBuffer_FUN_004070c0 at 00407100
 ;
 ; *****************************************************************************
 

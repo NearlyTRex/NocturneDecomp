@@ -21,7 +21,7 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3
   CCheckOutItem *pCVar9;
   byte bVar10;
   char *pcVar11;
-  int local_584 [125];
+  char local_584 [500];
   CCheckOutItem local_390;
   char local_228 [260];
   char local_124 [256];
@@ -66,10 +66,9 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3
     iVar2 = 1;
   }
   else {
-    _sprintf
-              ((char *)local_584,"A writable copy of %s exists.  Replace it?",filename);
+    _sprintf(local_584,"A writable copy of %s exists.  Replace it?",filename);
     iVar2 = engine_fileio_cpp_showOverwriteConfirmationDialog_FUN_004b2f90
-                      (local_584,(char *)&g_VersionControlSession.overwrite_writeable_choice);
+                      (local_584,&g_VersionControlSession.overwrite_writeable_choice);
   }
   if (iVar2 < 1) {
     engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860(&local_24);

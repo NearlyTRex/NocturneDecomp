@@ -137,7 +137,7 @@ section .text
     PUSH ECX                            ; 0048a7f6
     PUSH 0x824e28                       ; 0048a7f7 | g_ClippedVertexBuffer
     CALL engine_3d.c_rasterizeTriangle_FUN_005fcfc0 ; 0048a7fc
-        ;   XREF to: 005fcfc0 (UNCONDITIONAL_CALL)  ; void engine_3d.c_rasterizeTriangle_FUN_005fcfc0(SRenderVertex * vertex_buffer, int vertex_count, int triangle_count)
+        ;   XREF to: 005fcfc0 (UNCONDITIONAL_CALL)  ; void engine_3d.c_rasterizeTriangle_FUN_005fcfc0(SRenderVertex * vertex_buffer, int vertex_count)
     ADD ESP,0x8                         ; 0048a801
     POP EBP                             ; 0048a804
     POP EDI                             ; 0048a805

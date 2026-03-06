@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN_004a45d0(CPickList *this_ptr,char *dialog_title,int config_parameter)
+; void __cdecl shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN_004a45d0(CPickList *this_ptr,char *dialog_title,uint window_flags)
 ;
 ; Parameters:
 ; CPickList *      Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   dialog_title
-; int              Stack[0xc]:4   config_parameter
+; uint             Stack[0xc]:4   window_flags
 ; Local Variables:
 ; undefined1       Stack[-0x160]:1  local_160
 ; undefined4       Stack[-0x34]:4  local_34

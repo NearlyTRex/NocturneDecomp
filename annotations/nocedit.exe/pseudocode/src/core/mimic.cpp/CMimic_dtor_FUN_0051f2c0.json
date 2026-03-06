@@ -6,19 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 105,
-    "complexity_score": 199,
+    "complexity_score": 81,
     "cross_reference_count": 0,
     "function_call_count": 11,
     "global_count": 5,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 54,
-    "suspect_count": 13,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 46,
+    "suspect_count": 3,
     "suspect_types": [
-      "negative_offset",
-      "stack_param",
-      "unaffected_reg"
+      "negative_offset"
     ],
-    "total_lines": 159
+    "total_lines": 151
   },
   "cross_references": [],
   "function": {
@@ -179,80 +177,8 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 15,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "uint unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "uint in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_00000010",
-      "severity": "moderate",
-      "text": "uint in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_00000014",
-      "severity": "moderate",
-      "text": "uint in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_0000002c",
-      "severity": "moderate",
-      "text": "byte in_stack_0000002c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 33,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "(this_ptr_00,2,unaff_EBX,unaff_retaddr,(uint)this_ptr,flags,in_stack_0000000c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 33,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "(this_ptr_00,2,unaff_EBX,unaff_retaddr,(uint)this_ptr,flags,in_stack_0000000c,",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 34,
-      "match": "in_stack_00000010",
-      "severity": "moderate",
-      "text": "in_stack_00000010,in_stack_00000014);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 34,
-      "match": "in_stack_00000014",
-      "severity": "moderate",
-      "text": "in_stack_00000010,in_stack_00000014);",
-      "type": "stack_param"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
-      "line": 41,
+      "line": 33,
       "match": "pCVar2[-1].",
       "severity": "mild",
       "text": "((CFlame *)&pCVar2[-1].vertices[0x2cd].locked,0);",
@@ -260,7 +186,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 43,
+      "line": 35,
       "match": "pCVar3[-2].",
       "severity": "mild",
       "text": "((SFire *)(pCVar3[-2].base.create_event + 0x20),0);",
@@ -268,19 +194,11 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 51,
+      "line": 43,
       "match": "pCVar7[-1].",
       "severity": "mild",
       "text": "((CDemonActor *)(pCVar7[-1].part_data.visibility_flags + 7),1);",
       "type": "negative_offset"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 52,
-      "match": "in_stack_0000002c",
-      "severity": "moderate",
-      "text": "if ((in_stack_0000002c & 2) == 0) {",
-      "type": "stack_param"
     }
   ],
   "vtable_info": {

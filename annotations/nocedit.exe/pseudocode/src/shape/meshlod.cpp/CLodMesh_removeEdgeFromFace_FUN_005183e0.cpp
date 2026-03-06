@@ -2,11 +2,11 @@
 // Address: 005183e0
 // Address Range: [[005183e0, 00518481]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_meshlod_cpp_CLodMesh_removeEdgeFromFace_FUN_005183e0(CLodMesh *this_ptr,int tri_index,int edge_index)
+// Signature: int __cdecl shape_meshlod_cpp_CLodMesh_removeEdgeFromFace_FUN_005183e0(CLodMesh *this_ptr,int tri_index,int edge_index)
 
 #include "nocturne.h"
 
-void __cdecl shape_meshlod_cpp_CLodMesh_removeEdgeFromFace_FUN_005183e0(CLodMesh *this_ptr,int tri_index,int edge_index)
+int __cdecl shape_meshlod_cpp_CLodMesh_removeEdgeFromFace_FUN_005183e0(CLodMesh *this_ptr,int tri_index,int edge_index)
 
 {
   int iVar1;
@@ -35,5 +35,5 @@ void __cdecl shape_meshlod_cpp_CLodMesh_removeEdgeFromFace_FUN_005183e0(CLodMesh
     pCVar2 = (CLodFace *)(pCVar2->attribute_indices + 1);
   }
   *(int *)((int)(pCVar4->uv_coords + 3) + iVar3 * 4) = -1;
-  return;
+  return iVar3;
 }

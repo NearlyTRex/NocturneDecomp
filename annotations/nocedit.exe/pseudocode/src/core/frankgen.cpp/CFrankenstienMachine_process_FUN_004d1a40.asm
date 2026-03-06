@@ -34,8 +34,8 @@
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10
 ;   core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004c7b20
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_004c79d0
+;   core_frankgen.cpp_CFrankenstienMachine_accumulateParticles_FUN_004d1ec0
 ;   core_frankgen.cpp_CFrankenstienMachine_findLeader_FUN_004d2330
-;   core_frankgen.cpp_CFrankenstienMachine_FUN_004d1ec0
 ;   core_frankgen.cpp_CFrankenstienMachine_FUN_004d1f20
 ;   core_frankgen.cpp_CFrankenstienMachine_FUN_004d2190
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
@@ -102,8 +102,8 @@ section .text
     PUSH dword ptr [ESP + 0x90]         ; 004d1b00
     PUSH dword ptr [ESP + 0x7c]         ; 004d1b07
     PUSH ESI                            ; 004d1b0b
-    CALL core_frankgen.cpp_CFrankenstienMachine_FUN_004d1ec0 ; 004d1b0c
-        ;   XREF to: 004d1ec0 (UNCONDITIONAL_CALL)  ; void core_frankgen.cpp_CFrankenstienMachine_FUN_004d1ec0(CFrankenstienMachine * this_ptr)
+    CALL core_frankgen.cpp_CFrankenstienMachine_accumulateParticles_FUN_004d1ec0 ; 004d1b0c
+        ;   XREF to: 004d1ec0 (UNCONDITIONAL_CALL)  ; int core_frankgen.cpp_CFrankenstienMachine_accumulateParticles_FUN_004d1ec0(CFrankenstienMachine * this_ptr, float emission_rate, float delta_time)
     ADD ESP,0xc                         ; 004d1b11
     LEA EDX,[ESP + 0x20]                ; 004d1b14
     MOV EBP,EAX                         ; 004d1b18

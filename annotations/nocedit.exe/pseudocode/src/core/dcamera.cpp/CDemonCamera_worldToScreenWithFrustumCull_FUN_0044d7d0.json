@@ -4,61 +4,61 @@
       {
         "category": "undeclared_identifier",
         "column": 22,
-        "line": 63,
+        "line": 62,
         "message": "use of undeclared identifier 'stack0xffffffd4'"
       },
       {
         "category": "undeclared_identifier",
         "column": 32,
-        "line": 64,
+        "line": 63,
         "message": "use of undeclared identifier 'stack0xffffffec'"
       },
       {
         "category": "undeclared_identifier",
         "column": 22,
-        "line": 65,
+        "line": 64,
         "message": "use of undeclared identifier 'stack0xffffffd8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 32,
-        "line": 66,
+        "line": 65,
         "message": "use of undeclared identifier 'stack0xfffffff0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 32,
-        "line": 69,
+        "line": 68,
         "message": "use of undeclared identifier 'stack0xffffffd4'"
       },
       {
         "category": "undeclared_identifier",
         "column": 27,
-        "line": 71,
+        "line": 70,
         "message": "use of undeclared identifier 'stack0xffffffd8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 14,
-        "line": 106,
+        "line": 105,
         "message": "use of undeclared identifier 'stack0xffffffd4'"
       },
       {
         "category": "undeclared_identifier",
         "column": 14,
-        "line": 108,
+        "line": 107,
         "message": "use of undeclared identifier 'stack0xffffffd8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 24,
-        "line": 112,
+        "line": 111,
         "message": "use of undeclared identifier 'stack0xffffffd4'"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 114,
+        "line": 113,
         "message": "use of undeclared identifier 'stack0xffffffd8'"
       }
     ],
@@ -67,20 +67,19 @@
   },
   "complexity": {
     "assembly_lines": 233,
-    "complexity_score": 356,
+    "complexity_score": 280,
     "cross_reference_count": 5,
     "function_call_count": 1,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 106,
-    "suspect_count": 23,
+    "pseudocode_lines": 105,
+    "suspect_count": 16,
     "suspect_types": [
       "pointer_cast",
       "stack_alignment_array",
-      "stack_ref",
-      "unaffected_reg"
+      "stack_ref"
     ],
-    "total_lines": 339
+    "total_lines": 338
   },
   "cross_references": [
     {
@@ -122,9 +121,9 @@
         "0044da86"
       ]
     ],
-    "convention": "__cdecl",
+    "convention": "__stack2_esi",
     "name": "core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0",
-    "signature": "CVector3i * __cdecl core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0(CDemonCamera *this_ptr,CVector3i *output_ptr,CVector3i *input_ptr)"
+    "signature": "CVector3i * __stack2_esi core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0(CDemonCamera *this_ptr,CVector3i *input_ptr,CVector3i *output_ptr)"
   },
   "function_calls": [
     {
@@ -205,10 +204,10 @@
     "pcode_op_count": 1880
   },
   "stack_frame": {
-    "frame_size": 52,
+    "frame_size": 48,
     "local_size": 40,
     "param_offset": 4,
-    "param_size": 12,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -262,15 +261,8 @@
       },
       {
         "is_param": true,
-        "name": "output_ptr",
-        "offset": 8,
-        "size": 4,
-        "type": "CVector3i *"
-      },
-      {
-        "is_param": true,
         "name": "input_ptr",
-        "offset": 12,
+        "offset": 8,
         "size": 4,
         "type": "CVector3i *"
       }
@@ -316,16 +308,8 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 9,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "CVector3i *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 12,
+      "line": 11,
       "match": "aiStackY_1018",
       "severity": "moderate",
       "text": "int aiStackY_1018 [1017];",
@@ -333,7 +317,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 56,
+      "line": 55,
       "match": "&stack0xffffffd4",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffd4 + (uint)bVar6 * -8) =",
@@ -341,7 +325,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 57,
+      "line": 56,
       "match": "&stack0xffffffec",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffec + (uint)bVar6 * -8);",
@@ -349,7 +333,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 57,
+      "line": 56,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&stack0xffffffec + (uint)bVar6 * -8);",
@@ -357,7 +341,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 58,
+      "line": 57,
       "match": "&stack0xffffffd8",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffd8 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =",
@@ -365,7 +349,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 59,
+      "line": 58,
       "match": "&stack0xfffffff0",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xfffffff0 + (uint)bVar6 * -8 + (uint)bVar6 * -8);",
@@ -373,39 +357,23 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 59,
+      "line": 58,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&stack0xfffffff0 + (uint)bVar6 * -8 + (uint)bVar6 * -8);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 60,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "puVar5 = (uint *)((int)unaff_ESI + (uint)bVar6 * -8 + 4);",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 60,
+      "line": 59,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "puVar5 = (uint *)((int)unaff_ESI + (uint)bVar6 * -8 + 4);",
+      "text": "puVar5 = (uint *)((int)output_ptr + (uint)bVar6 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 61,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI->x = iStack_30;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 62,
+      "line": 61,
       "match": "&stack0xffffffd4",
       "severity": "moderate",
       "text": "*puVar5 = *(uint *)(&stack0xffffffd4 + (uint)bVar6 * -8);",
@@ -413,23 +381,15 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 64,
+      "line": 63,
       "match": "&stack0xffffffd8",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffd8 + (uint)bVar6 * -8 + (uint)bVar6 * -8);",
       "type": "stack_ref"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 65,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "return unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 99,
+      "line": 98,
       "match": "&stack0xffffffd4",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffd4 + (uint)bVar6 * -8) =",
@@ -437,7 +397,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 100,
+      "line": 99,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&g_CameraOutOfBoundsCoord + (uint)bVar6 * -8 + 4);",
@@ -445,39 +405,23 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 101,
+      "line": 100,
       "match": "&stack0xffffffd8",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffd8 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =",
       "type": "stack_ref"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 103,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "puVar5 = (uint *)((int)unaff_ESI + (uint)bVar6 * -8 + 4);",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 103,
+      "line": 102,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "puVar5 = (uint *)((int)unaff_ESI + (uint)bVar6 * -8 + 4);",
+      "text": "puVar5 = (uint *)((int)output_ptr + (uint)bVar6 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 104,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI->x = iStack_30;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 105,
+      "line": 104,
       "match": "&stack0xffffffd4",
       "severity": "moderate",
       "text": "*puVar5 = *(uint *)(&stack0xffffffd4 + (uint)bVar6 * -8);",
@@ -485,19 +429,11 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 107,
+      "line": 106,
       "match": "&stack0xffffffd8",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffd8 + (uint)bVar6 * -8 + (uint)bVar6 * -8);",
       "type": "stack_ref"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 108,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "return unaff_ESI;",
-      "type": "unaffected_reg"
     }
   ]
 }

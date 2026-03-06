@@ -81,7 +81,7 @@ section .text
     PUSH 0x643f26                       ; 005660dd | = "The following sound files are missing."
     PUSH 0x310f4b0                      ; 005660e2 | g_ScriptPickList
     CALL shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20 ; 005660e7
-        ;   XREF to: 004a3e20 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20(CPickList * this_ptr, char * dialog_title, int config_param1, int config_param2)
+        ;   XREF to: 004a3e20 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20(CPickList * this_ptr, char * dialog_title, int initial_selected_index, uint window_flags)
     ADD ESP,0x10                        ; 005660ec
     PUSH 0x310f4b0                      ; 005660ef | g_ScriptPickList
     CALL shape_edittool.cpp_CPickList_clear_FUN_004a5770 ; 005660f4

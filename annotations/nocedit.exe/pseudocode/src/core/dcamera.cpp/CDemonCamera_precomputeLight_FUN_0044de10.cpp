@@ -15,18 +15,16 @@ void * __cdecl core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_0044de10(CDemon
   ushort *puVar4;
   uint uVar5;
   uint uVar6;
-  uint *puVar7;
-  uint *puVar8;
+  int *piVar7;
+  int *piVar8;
   int iVar9;
   byte bVar10;
-  void *apvStackY_185c [513];
-  int aiStackY_1058 [1010];
-  CVector3i *input_ptr;
+  void *apvStackY_185c [1523];
+  int local_80;
   int local_7c;
   void *local_78;
   int local_74;
-  int local_70;
-  int aiStack_6c [2];
+  CVector3i local_70;
   CVector3i local_64;
   int local_58;
   CVector3f *local_54;
@@ -36,15 +34,15 @@ void * __cdecl core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_0044de10(CDemon
   int local_44;
   int local_40;
   int local_3c;
-  CVector3i *local_38;
-  CVector3i *local_34;
+  int local_38;
+  int local_34;
   CVector3i *local_30;
   void *local_2c;
   float *local_28;
   int *local_24;
   int *local_20;
   uint *local_1c;
-  CVector3i *local_18;
+  int local_18;
   
   bVar10 = 0;
   local_40 = 0x80;
@@ -91,16 +89,16 @@ void * __cdecl core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_0044de10(CDemon
     local_7c = this_ptr->display_width + -1;
     local_78 = (void *)0x0;
     local_74 = this_ptr->display_height + -1;
-    input_ptr = (CVector3i *)0x0;
+    local_80 = 0;
   }
   else {
-    puVar7 = (uint *)((int)rect + (uint)bVar10 * -8 + 4);
-    input_ptr = (CVector3i *)rect->left;
-    puVar8 = puVar7 + (uint)bVar10 * -2 + 1;
-    *(uint *)((int)&stack0xffffff84 + (uint)bVar10 * -8) = *puVar7;
-    (&local_78)[(uint)bVar10 * -2 + (uint)bVar10 * -2] = (void *)*puVar8;
+    piVar7 = (int *)((int)rect + (uint)bVar10 * -8 + 4);
+    local_80 = rect->left;
+    piVar8 = piVar7 + (uint)bVar10 * -2 + 1;
+    (&local_7c)[(uint)bVar10 * -2] = *piVar7;
+    (&local_78)[(uint)bVar10 * -2 + (uint)bVar10 * -2] = (void *)*piVar8;
     (&local_78 + (uint)bVar10 * -2 + (uint)bVar10 * -2)[(uint)bVar10 * -2 + 1] =
-         (void *)puVar8[(uint)bVar10 * -2 + 1];
+         (void *)piVar8[(uint)bVar10 * -2 + 1];
     iVar1 = 0;
     pCVar3 = light_source;
     if (0 < (int)local_78) {
@@ -125,8 +123,8 @@ void * __cdecl core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_0044de10(CDemon
   local_2c = local_78;
   local_48 = local_78;
   if ((int)local_78 <= local_74) {
-    local_58 = (int)input_ptr * 0xc;
-    local_4c = (int)input_ptr * 4;
+    local_58 = local_80 * 0xc;
+    local_4c = local_80 * 4;
     local_44 = (int)local_78 * 0x500;
     local_50 = g_PrecomputedWorldPositions + (int)local_78 * 0x140;
     local_54 = g_PrecomputedSurfaceNormals + (int)local_78 * 0x140;
@@ -134,18 +132,18 @@ void * __cdecl core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_0044de10(CDemon
                        );
     do {
       local_30 = (CVector3i *)((int)&local_50->x + local_58);
-      local_34 = (CVector3i *)0x3e7;
+      local_34 = 999;
       local_28 = (float *)((int)&local_54->x + local_58);
       local_20 = (int *)((int)light_source->corona_visibility_buffers + local_4c + local_44);
       local_1c = (uint *)((int)light_source->corona_depth_buffer + local_4c + local_44);
-      local_38 = (CVector3i *)0x0;
+      local_38 = 0;
       local_24 = (int *)((int)light_source->corona_lightmap_indices + local_4c + local_44);
-      local_18 = input_ptr;
-      if ((int)input_ptr <= local_7c) {
+      local_18 = local_80;
+      if (local_80 <= local_7c) {
         do {
-          if (((((int)local_18 < 1) || ((int)local_2c < 1)) ||
-              ((iVar1 = (int)local_18 * this_ptr->scale_factor,
-               iVar9 = this_ptr->framebuffer_width + -2, iVar1 - iVar9 != 0 && iVar9 <= iVar1 ||
+          if ((((local_18 < 1) || ((int)local_2c < 1)) ||
+              ((iVar1 = local_18 * this_ptr->scale_factor, iVar9 = this_ptr->framebuffer_width + -2,
+               iVar1 - iVar9 != 0 && iVar9 <= iVar1 ||
                (iVar9 = (int)local_2c * this_ptr->scale_factor,
                iVar1 = this_ptr->framebuffer_height + -2, iVar9 - iVar1 != 0 && iVar1 <= iVar9))))
              || ((local_3c == 0 &&
@@ -160,11 +158,12 @@ LAB_0044e087:
           }
           else {
             core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0
-                      (&light_source->base,local_30,input_ptr);
-            local_64.x = local_70;
-            *(int *)((int)&local_64 + (uint)bVar10 * -8 + 4) = aiStack_6c[(uint)bVar10 * -2];
-            *(int *)((int)&local_64 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
-                 aiStack_6c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
+                      (&light_source->base,local_30,&local_70);
+            local_64.x = local_70.x;
+            *(uint *)((int)&local_64 + (uint)bVar10 * -8 + 4) =
+                 *(uint *)((int)&local_70 + (uint)bVar10 * -8 + 4);
+            *(uint *)((int)&local_64 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
+                 *(uint *)((int)&local_70 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
             if (local_64.z < 1) goto LAB_0044e06f;
             *local_20 = local_64.z - local_40;
             puVar4 = core_dlight_cpp_CDemonLight_projectLightAndMarkVisibility_FUN_00473270
@@ -180,10 +179,10 @@ LAB_0044e087:
                         ((byte)light_source->texture_row_shift & 0x1f)) +
                         (local_64.x >> ((byte)light_source->shadow_x_shift & 0x1f) &
                         light_source->texture_coord_mask);
-            if ((int)local_38 < (int)local_18) {
+            if (local_38 < local_18) {
               local_38 = local_18;
             }
-            if ((int)local_18 < (int)local_34) {
+            if (local_18 < local_34) {
               local_34 = local_18;
             }
           }
@@ -192,14 +191,14 @@ LAB_0044e087:
           local_20 = local_20 + 1;
           local_1c = local_1c + 1;
           local_24 = local_24 + 1;
-          local_18 = (CVector3i *)((int)&local_18->x + 1);
-        } while ((int)local_18 <= local_7c);
+          local_18 = local_18 + 1;
+        } while (local_18 <= local_7c);
       }
       local_44 = local_44 + 0x500;
       local_54 = local_54 + 0x140;
       local_50 = local_50 + 0x140;
-      *(CVector3i **)((int)local_48 + 0x14c8) = local_34;
-      *(CVector3i **)((int)local_48 + 0x1888) = local_38;
+      *(int *)((int)local_48 + 0x14c8) = local_34;
+      *(int *)((int)local_48 + 0x1888) = local_38;
       local_48 = (void *)((int)local_48 + 4);
       local_2c = (void *)((int)local_2c + 1);
     } while ((int)local_2c <= local_74);

@@ -4,68 +4,80 @@
       {
         "category": "undeclared_identifier",
         "column": 58,
-        "line": 65,
-        "message": "use of undeclared identifier 'stack0xfffff17c'; did you mean 'in_stack_fffff17c'?"
+        "line": 63,
+        "message": "use of undeclared identifier 'stack0xfffff17c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 75,
-        "line": 66,
-        "message": "use of undeclared identifier 'stack0xfffff17c'; did you mean 'in_stack_fffff17c'?"
+        "line": 64,
+        "message": "use of undeclared identifier 'stack0xfffff17c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 60,
-        "line": 71,
-        "message": "use of undeclared identifier 'stack0xfffff17c'; did you mean 'in_stack_fffff17c'?"
+        "line": 69,
+        "message": "use of undeclared identifier 'stack0xfffff17c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 76,
-        "line": 74,
-        "message": "use of undeclared identifier 'stack0xfffff17c'; did you mean 'in_stack_fffff17c'?"
+        "line": 72,
+        "message": "use of undeclared identifier 'stack0xfffff17c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 62,
-        "line": 81,
-        "message": "use of undeclared identifier 'stack0xfffff17c'; did you mean 'in_stack_fffff17c'?"
+        "line": 79,
+        "message": "use of undeclared identifier 'stack0xfffff17c'"
       },
       {
         "category": "incompatible_types",
         "column": 14,
-        "line": 87,
+        "line": 85,
         "message": "no matching function for call to 'shape_memdbg_cpp_openFile_FUN_0050f7a0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 60,
-        "line": 92,
-        "message": "use of undeclared identifier 'stack0xfffff17c'; did you mean 'in_stack_fffff17c'?"
+        "line": 90,
+        "message": "use of undeclared identifier 'stack0xfffff17c'"
       },
       {
         "category": "other",
         "column": 25,
-        "line": 102,
+        "line": 100,
         "message": "member reference base type 'byte[2088]' (aka 'unsigned char[2088]') is not a structure or union"
       },
       {
         "category": "other",
-        "column": 47,
-        "line": 105,
+        "column": 48,
+        "line": 103,
         "message": "member reference base type 'byte[2088]' (aka 'unsigned char[2088]') is not a structure or union"
       },
       {
         "category": "incompatible_types",
         "column": 43,
-        "line": 106,
+        "line": 104,
         "message": "incompatible pointer types assigning to 'time_t *' (aka 'long *') from 'uint *' (aka 'unsigned int *')"
       },
       {
         "category": "other",
         "column": 117,
-        "line": 137,
+        "line": 135,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 162,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 7,
+        "line": 163,
+        "message": "no matching function for call to 'engine_2d_c_drawText_FUN_00401fd0'"
       },
       {
         "category": "other",
@@ -86,27 +98,15 @@
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 167,
-        "message": "no matching function for call to 'engine_2d_c_drawText_FUN_00401fd0'"
-      },
-      {
-        "category": "other",
-        "column": 36,
-        "line": 168,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
         "category": "other",
         "column": 27,
-        "line": 169,
+        "line": 167,
         "message": "assigning to 'char *' from 'byte *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not"
       },
       {
         "category": "other",
         "column": 39,
-        "line": 187,
+        "line": 185,
         "message": "member reference base type 'byte[2088]' (aka 'unsigned char[2088]') is not a structure or union"
       }
     ],
@@ -115,21 +115,20 @@
   },
   "complexity": {
     "assembly_lines": 555,
-    "complexity_score": 382,
+    "complexity_score": 335,
     "cross_reference_count": 0,
     "function_call_count": 28,
     "global_count": 30,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 207,
-    "suspect_count": 15,
+    "pseudocode_lines": 205,
+    "suspect_count": 11,
     "suspect_types": [
       "pointer_cast",
       "stack_alignment_array",
-      "stack_param",
       "stack_ref",
       "unknown_field"
     ],
-    "total_lines": 762
+    "total_lines": 760
   },
   "cross_references": [],
   "function": {
@@ -142,7 +141,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10",
-    "signature": "void __cdecl engine_fileio_cpp_CFileManager_extractPodFile_FUN_004b6e10(CFileManager *this_ptr,char *pod_filename)"
+    "signature": "void __cdecl engine_fileio_cpp_CFileManager_extractPodFile_FUN_004b6e10(CFileManager *this_ptr,char *pod_filename,int offer_dismount)"
   },
   "function_calls": [
     {
@@ -472,8 +471,8 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 2,
-    "estimated_params": 2
+    "declared_params": 3,
+    "estimated_params": 3
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.613839285714286,
@@ -511,10 +510,10 @@
     "pcode_op_count": 2067
   },
   "stack_frame": {
-    "frame_size": 3728,
+    "frame_size": 3732,
     "local_size": 3720,
     "param_offset": 4,
-    "param_size": 8,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -705,6 +704,13 @@
         "offset": 8,
         "size": 4,
         "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "offer_dismount",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
@@ -727,32 +733,16 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "int in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 17,
+      "line": 16,
       "match": "atStackY_2e68",
       "severity": "moderate",
       "text": "time_t atStackY_2e68 [2034];",
       "type": "stack_alignment_array"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 23,
-      "match": "in_stack_fffff17c",
-      "severity": "moderate",
-      "text": "int in_stack_fffff17c;",
-      "type": "stack_param"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 58,
+      "line": 56,
       "match": "&stack0xfffff17c",
       "severity": "moderate",
       "text": "engine_pod_cpp_CPodFile_ctor_FUN_0054f5a0((CPodFile *)&stack0xfffff17c);",
@@ -760,7 +750,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 59,
+      "line": 57,
       "match": "&stack0xfffff17c",
       "severity": "moderate",
       "text": "iVar2 = engine_pod_cpp_CPodFile_mountFromFile_FUN_0054f650((CPodFile *)&stack0xfffff17c,local_244)",
@@ -768,7 +758,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 64,
+      "line": 62,
       "match": "&stack0xfffff17c",
       "severity": "moderate",
       "text": "engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xfffff17c,0);",
@@ -776,7 +766,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 67,
+      "line": 65,
       "match": "&stack0xfffff17c",
       "severity": "moderate",
       "text": "iVar2 = engine_pod_cpp_CPodFile_verifyChecksum_FUN_00550230((CPodFile *)&stack0xfffff17c);",
@@ -784,7 +774,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 74,
+      "line": 72,
       "match": "&stack0xfffff17c",
       "severity": "moderate",
       "text": "engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xfffff17c,0);",
@@ -792,7 +782,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 85,
+      "line": 83,
       "match": "&stack0xfffff17c",
       "severity": "moderate",
       "text": "engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xfffff17c,0);",
@@ -800,7 +790,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 95,
+      "line": 93,
       "match": "._1036_4_",
       "severity": "mild",
       "text": "if (0 < (int)local_e80._1036_4_) {",
@@ -808,43 +798,27 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 98,
+      "line": 96,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "puVar5 = (uint *)((int)(uint *)local_e80._1040_4_ + local_1c);",
+      "text": "puVar5 = (uint *)((int)(char **)local_e80._1040_4_ + local_1c);",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 98,
+      "line": 96,
       "match": "._1040_4_",
       "severity": "mild",
-      "text": "puVar5 = (uint *)((int)(uint *)local_e80._1040_4_ + local_1c);",
+      "text": "puVar5 = (uint *)((int)(char **)local_e80._1040_4_ + local_1c);",
       "type": "unknown_field"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 151,
-      "match": "in_stack_fffff17c",
-      "severity": "moderate",
-      "text": "(int)file_offset,(int)pSVar10,in_stack_fffff17c);",
-      "type": "stack_param"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 180,
+      "line": 178,
       "match": "._1036_4_",
       "severity": "mild",
       "text": "} while (local_18 < (int)local_e80._1036_4_);",
       "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 189,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "if (in_stack_0000000c != 0) {",
-      "type": "stack_param"
     }
   ]
 }

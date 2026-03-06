@@ -7,7 +7,7 @@
 ; SMRGLTextureBasic * Stack[0x4]:4   texture_info
 ;
 ; XREF[1]:
-;   engine_3d.c_renderPolygonEngineAPIPremiumMultiState_FUN_004070c0 at 004071d0
+;   engine_3d.c_flushPremiumRenderBuffer_FUN_004070c0 at 004071d0
 ;
 ; Called Functions:
 ;   engine_texture.cpp_ensureTextureLoaded_FUN_005dd800

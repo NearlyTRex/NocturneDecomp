@@ -414,7 +414,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 004baacc
     PUSH EAX                            ; 004baad0
     CALL engine_fileio.cpp_showOverwriteConfirmationDialog_FUN_004b2f90 ; 004baad1
-        ;   XREF to: 004b2f90 (UNCONDITIONAL_CALL)  ; int engine_fileio.cpp_showOverwriteConfirmationDialog_FUN_004b2f90(int * user_choice_ptr, char * dialog_message)
+        ;   XREF to: 004b2f90 (UNCONDITIONAL_CALL)  ; int engine_fileio.cpp_showOverwriteConfirmationDialog_FUN_004b2f90(char * dialog_title, int * overwrite_state)
     ADD ESP,0x8                         ; 004baad6
     JMP 0x004ba900                      ; 004baad9
         ;   XREF to: 004ba900 (UNCONDITIONAL_JUMP)  ; LAB_004ba900

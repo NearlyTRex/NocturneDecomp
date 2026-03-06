@@ -97,7 +97,7 @@ void __cdecl CStranger::updateWeaponPosition(CStranger *this_ptr,int hand_index)
 
 // Original: core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_005c07b0
 // Address: 005c07b0
-void __cdecl CStranger::computeWeaponAttachXForm(CStranger *this_ptr,CDemonActor *carried_actor,int hand_index);
+CMatrix3x4f * __stack3_esi CStranger::computeWeaponAttachXForm(CStranger *this_ptr,CDemonActor *carried_actor,int hand_index,CMatrix3x4f *output_matrix);
 
 // Original: core_stranger.cpp_CStranger_tryPickupObject_FUN_005c1680
 // Address: 005c1680

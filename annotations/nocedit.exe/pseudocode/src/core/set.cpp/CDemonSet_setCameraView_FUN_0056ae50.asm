@@ -533,7 +533,7 @@ section .text
     PUSH EDI                            ; 0056b44d
     PUSH 0x32758e4                      ; 0056b44e | g_CDemonCameraInstance
     CALL core_dcamera.cpp_CDemonCamera_endBackgroundScene_FUN_0044cdf0 ; 0056b453
-        ;   XREF to: 0044cdf0 (UNCONDITIONAL_CALL)  ; int core_dcamera.cpp_CDemonCamera_endBackgroundScene_FUN_0044cdf0(CDemonCamera * this_ptr, int restore_zbuffer)
+        ;   XREF to: 0044cdf0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_endBackgroundScene_FUN_0044cdf0(CDemonCamera * this_ptr, int restore_zbuffer)
     MOV EDX,dword ptr [0x02d03e94]      ; 0056b458 | g_UseExternalRenderer
     ADD ESP,0x8                         ; 0056b45e
     TEST EDX,EDX                        ; 0056b461
@@ -791,7 +791,7 @@ section .text
         ;   Label: LAB_0056b754
     PUSH 0x32758e4                      ; 0056b756 | g_CDemonCameraInstance
     CALL core_dcamera.cpp_CDemonCamera_endBackgroundScene_FUN_0044cdf0 ; 0056b75b
-        ;   XREF to: 0044cdf0 (UNCONDITIONAL_CALL)  ; int core_dcamera.cpp_CDemonCamera_endBackgroundScene_FUN_0044cdf0(CDemonCamera * this_ptr, int restore_zbuffer)
+        ;   XREF to: 0044cdf0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_endBackgroundScene_FUN_0044cdf0(CDemonCamera * this_ptr, int restore_zbuffer)
     ADD ESP,0x8                         ; 0056b760
     PUSH 0x0                            ; 0056b763
     PUSH 0x32758e4                      ; 0056b765 | g_CDemonCameraInstance

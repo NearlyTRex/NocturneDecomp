@@ -2,13 +2,13 @@
 // Address: 00528140
 // Address Range: [[00528140, 005285ea]]
 // Convention: __stack_esi
-// Signature: SMRGLModelBounds * __stack_esi engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHeaderExtended *header,SMRGLModelBounds *output_bounds)
+// Signature: SMRGLModelBounds * __stack_esi engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHeaderExtended *mrgl_data,SMRGLModelBounds *output_bounds)
 
 #include "nocturne.h"
 
 /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
-SMRGLModelBounds * __stack_esi engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHeaderExtended *header,SMRGLModelBounds *output_bounds)
+SMRGLModelBounds * __stack_esi engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHeaderExtended *mrgl_data,SMRGLModelBounds *output_bounds)
 
 {
   int *piVar1;
@@ -16,7 +16,7 @@ SMRGLModelBounds * __stack_esi engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHe
   int iVar3;
   longlong lVar4;
   float fVar5;
-  SMRGLHeaderExtended *header_00;
+  SMRGLHeaderExtended *mrgl_data_00;
   int iVar6;
   int iVar7;
   uint uVar8;
@@ -57,10 +57,10 @@ SMRGLModelBounds * __stack_esi engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHe
   
   bVar15 = 0;
   local_30 = output_bounds;
-  iVar6 = (header->base).type;
+  iVar6 = (mrgl_data->base).type;
   if (iVar6 == 0x20) {
-    header_00 = engine_model_c_loadModelFile_FUN_00527ec0((char *)(header + 2));
-    engine_model_c_getMRGLBounds_FUN_00528140(header_00,&local_74);
+    mrgl_data_00 = engine_model_c_loadModelFile_FUN_00527ec0((char *)(mrgl_data + 2));
+    engine_model_c_getMRGLBounds_FUN_00528140(mrgl_data_00,&local_74);
     pSVar13 = &local_74;
     puVar12 = &local_a8;
     for (iVar6 = 0xd; iVar6 != 0; iVar6 = iVar6 + -1) {
@@ -68,26 +68,26 @@ SMRGLModelBounds * __stack_esi engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHe
       pSVar13 = (SMRGLModelBounds *)((int)pSVar13 + ((uint)bVar15 * -2 + 1) * 4);
       puVar12 = puVar12 + (uint)bVar15 * -2 + 1;
     }
-    engine_model_c_freeMRGLData_FUN_005280b0(header_00);
+    engine_model_c_freeMRGLData_FUN_005280b0(mrgl_data_00);
     iVar6 = 0xd;
     puVar12 = local_110;
     puVar11 = &local_a8;
   }
   else if (iVar6 == 0x26) {
     puVar12 = local_110;
-    engine_boss_c_modelStructNotSupported_FUN_0041dbe0(header);
+    engine_boss_c_modelStructNotSupported_FUN_0041dbe0(mrgl_data);
     iVar6 = 0xd;
     puVar11 = local_dc;
   }
   else {
-    local_28 = &header->child_count;
-    local_34 = &header[1].child_count;
-    if ((header->base).type != 0x14) {
+    local_28 = &mrgl_data->child_count;
+    local_34 = &mrgl_data[1].child_count;
+    if ((mrgl_data->base).type != 0x14) {
       g_CurrentFilename = "..\\engine\\model.c";
       g_CurrentLineNumber = 0x172;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Unable to read magnify!");
     }
-    local_2c = (int)(0x7fffffff / (longlong)(header->base).count) * 2;
+    local_2c = (int)(0x7fffffff / (longlong)(mrgl_data->base).count) * 2;
     if (*local_28 != 2) {
       _sprintf(local_160,"Unable to read verticies in model!");
       g_CurrentFilename = "..\\engine\\model.c";

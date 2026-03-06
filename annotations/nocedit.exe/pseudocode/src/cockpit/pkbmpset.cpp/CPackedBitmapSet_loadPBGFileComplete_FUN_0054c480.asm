@@ -1,21 +1,20 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadPBGFileComplete_FUN_0054c480(CPackedBitmapSet *this_ptr,char *pbg_filename,char *palette_filename,int param3,int param4,int additional_param)
+; void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadPBGFileComplete_FUN_0054c480(CPackedBitmapSet *this_ptr,char *pbg_filename,int apply_palette_flag,int frames_per_bitmap,int skip_data_load)
 ;
 ; Parameters:
 ; CPackedBitmapSet * Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   pbg_filename
-; char *           Stack[0xc]:4   palette_filename
-; int              Stack[0x10]:4   param3
-; int              Stack[0x14]:4   param4
-; int              Stack[0x18]:4   additional_param
+; int              Stack[0xc]:4   apply_palette_flag
+; int              Stack[0x10]:4   frames_per_bitmap
+; int              Stack[0x14]:4   skip_data_load
 ;
 ; XREF[1]:
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_reloadStoredPBGFile_FUN_0054c4d0 at 0054c4ee
 ;
 ; Called Functions:
-;   cockpit_pkbitmap.cpp_CPackedBitmap_loadPBGFile_FUN_0054bb40
+;   cockpit_pkbitmap.cpp_loadPBGFile_FUN_0054bb40
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_init_FUN_0054bd00
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_FUN_0054bd60
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_setFilename_FUN_0054c6f0
@@ -43,8 +42,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x24]      ; 0054c4a1
     PUSH EDI                            ; 0054c4a5
     PUSH EBX                            ; 0054c4a6
-    CALL cockpit_pkbitmap.cpp_CPackedBitmap_loadPBGFile_FUN_0054bb40 ; 0054c4a7
-        ;   XREF to: 0054bb40 (UNCONDITIONAL_CALL)  ; int cockpit_pkbitmap.cpp_CPackedBitmap_loadPBGFile_FUN_0054bb40(CPackedBitmap * this_ptr, char * pbg_filename, char * palette_filename, int param3, ...)
+    CALL cockpit_pkbitmap.cpp_loadPBGFile_FUN_0054bb40 ; 0054c4a7
+        ;   XREF to: 0054bb40 (UNCONDITIONAL_CALL)  ; CPackedBitmap * cockpit_pkbitmap.cpp_loadPBGFile_FUN_0054bb40(CPackedBitmapSet * bitmap_set_ptr, char * pbg_filename, int apply_palette_flag, int frames_per_bitmap, ...)
     ADD ESP,0x18                        ; 0054c4ac
     PUSH EDI                            ; 0054c4af
     PUSH EBX                            ; 0054c4b0

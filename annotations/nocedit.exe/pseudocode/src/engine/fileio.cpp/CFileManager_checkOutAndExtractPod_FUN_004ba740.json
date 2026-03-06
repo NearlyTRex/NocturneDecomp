@@ -9,7 +9,7 @@
       },
       {
         "category": "undeclared_identifier",
-        "column": 32,
+        "column": 25,
         "line": 107,
         "message": "use of undeclared identifier 'stack0xfffff964'"
       }
@@ -19,18 +19,18 @@
   },
   "complexity": {
     "assembly_lines": 730,
-    "complexity_score": 350,
+    "complexity_score": 349,
     "cross_reference_count": 0,
     "function_call_count": 35,
     "global_count": 40,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 300,
+    "pseudocode_lines": 299,
     "suspect_count": 4,
     "suspect_types": [
       "pointer_cast",
       "stack_ref"
     ],
-    "total_lines": 1030
+    "total_lines": 1029
   },
   "cross_references": [],
   "function": {
@@ -676,7 +676,7 @@
       "line": 100,
       "match": "&stack0xfffff964",
       "severity": "moderate",
-      "text": "((int *)&stack0xfffff964,",
+      "text": "(&stack0xfffff964,&g_VersionControlSession.overwrite_writeable_choice);",
       "type": "stack_ref"
     }
   ]

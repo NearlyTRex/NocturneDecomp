@@ -179,7 +179,7 @@ section .text
     LEA EAX,[ESP + 0x840]               ; 004b780a
     PUSH EAX                            ; 004b7811
     CALL shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20 ; 004b7812
-        ;   XREF to: 004a3e20 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20(CPickList * this_ptr, char * dialog_title, int config_param1, int config_param2)
+        ;   XREF to: 004a3e20 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20(CPickList * this_ptr, char * dialog_title, int initial_selected_index, uint window_flags)
     ADD ESP,0x10                        ; 004b7817
     MOV EBX,EAX                         ; 004b781a
     TEST EAX,EAX                        ; 004b781c
@@ -312,7 +312,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004b7991
     MOVSD ES:EDI,ESI                    ; 004b7992
     CALL engine_fileio.cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50 ; 004b7993
-        ;   XREF to: 004b7d50 (UNCONDITIONAL_CALL)  ; int engine_fileio.cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50(CFileManager * this_ptr, _FILE * source_file, char * dest_filename, char * name_or_offset, ...)
+        ;   XREF to: 004b7d50 (UNCONDITIONAL_CALL)  ; int engine_fileio.cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50(CFileManager * this_ptr, _FILE * source_file, char * dest_filename, int file_size, ...)
     ADD ESP,0x1c                        ; 004b7998
     TEST EAX,EAX                        ; 004b799b
     JZ 0x004b7a95                       ; 004b799d

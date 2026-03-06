@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_loadByFileExtension_FUN_0054b4b0(CPackedBitmap *this_ptr,int processing_flags)
+; void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_loadByFileExtension_FUN_0054b4b0(CPackedBitmap *this_ptr,int apply_palette_flag)
 ;
 ; Parameters:
 ; CPackedBitmap *  Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   processing_flags
+; int              Stack[0x8]:4   apply_palette_flag
 ;
 ; XREF[1]:
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadByFilenameAndIndex_FUN_0054c500 at 0054c52c
@@ -77,7 +77,7 @@ section .text
     PUSH ECX                            ; 0054b501
     PUSH EBX                            ; 0054b502
     CALL cockpit_pkbitmap.cpp_CPackedBitmap_loadPBMFile_FUN_0054b910 ; 0054b503
-        ;   XREF to: 0054b910 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmap_loadPBMFile_FUN_0054b910(CPackedBitmap * this_ptr, int post_load_processing)
+        ;   XREF to: 0054b910 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmap_loadPBMFile_FUN_0054b910(CPackedBitmap * this_ptr, int apply_palette_flag)
     ADD ESP,0x8                         ; 0054b508
     POP ESI                             ; 0054b50b
     POP EBX                             ; 0054b50c

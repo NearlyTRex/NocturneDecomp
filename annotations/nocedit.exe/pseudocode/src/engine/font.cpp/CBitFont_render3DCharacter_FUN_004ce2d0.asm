@@ -12,7 +12,6 @@
 ; int              Stack[0x18]:4   bottom_y
 ; int              Stack[0x1c]:4   color_mode
 ; Local Variables:
-; SMRGLHeaderPrimitive Stack[-0x54]:24  local_54
 ; undefined4       Stack[-0x3c]:4  local_3c
 ; undefined4       Stack[-0x38]:4  local_38
 ; undefined4       Stack[-0x34]:4  local_34
@@ -374,7 +373,7 @@ section .text
         ;   Label: LAB_004ce731
     PUSH EAX                            ; 004ce735
     CALL engine_3d.c_renderPolygonAPIAdaptivePreprocessing_FUN_00407620 ; 004ce736
-        ;   XREF to: 00407620 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonAPIAdaptivePreprocessing_FUN_00407620(SMRGLHeaderPrimitive * primitive, int render_flags, int render_state_flags, int alpha_blend_flags, ...)
+        ;   XREF to: 00407620 (UNCONDITIONAL_CALL)  ; void engine_3d.c_renderPolygonAPIAdaptivePreprocessing_FUN_00407620(SMRGLHeaderPrimitive * primitive, int render_flags, int render_state_flags)
     ADD ESP,0xc                         ; 004ce73b
     ADD ESP,0x44                        ; 004ce73e
     POP EBP                             ; 004ce741

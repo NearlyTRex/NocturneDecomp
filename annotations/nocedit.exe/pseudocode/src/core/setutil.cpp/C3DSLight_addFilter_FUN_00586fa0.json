@@ -6,17 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 74,
-    "complexity_score": 55,
+    "complexity_score": 29,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 6,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 30,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unaffected_reg"
-    ],
-    "total_lines": 104
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 29,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 103
   },
   "cross_references": [
     {
@@ -155,22 +153,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 7,
-      "match": "unaff_EBP",
-      "severity": "moderate",
-      "text": "int unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 29,
-      "match": "unaff_EBP",
-      "severity": "moderate",
-      "text": "(char *)this_ptr->blend_filter,unaff_EBP);",
-      "type": "unaffected_reg"
-    }
-  ]
+  "suspects": []
 }

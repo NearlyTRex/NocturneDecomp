@@ -2,11 +2,11 @@
 // Address: 005fcfc0
 // Address Range: [[005fcfc0, 005fd4b7]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_3d_c_rasterizeTriangle_FUN_005fcfc0(SRenderVertex *vertex_buffer,int vertex_count,int triangle_count)
+// Signature: void __cdecl engine_3d_c_rasterizeTriangle_FUN_005fcfc0(SRenderVertex *vertex_buffer,int vertex_count)
 
 #include "nocturne.h"
 
-void __cdecl engine_3d_c_rasterizeTriangle_FUN_005fcfc0(SRenderVertex *vertex_buffer,int vertex_count,int triangle_count)
+void __cdecl engine_3d_c_rasterizeTriangle_FUN_005fcfc0(SRenderVertex *vertex_buffer,int vertex_count)
 
 {
   longlong lVar1;

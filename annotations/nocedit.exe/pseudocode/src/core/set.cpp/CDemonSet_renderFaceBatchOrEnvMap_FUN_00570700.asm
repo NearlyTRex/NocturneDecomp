@@ -54,7 +54,7 @@ section .text
     MOV EBX,dword ptr [0x006703ec]      ; 0057073b | g_CDemonRendererPtr2
     PUSH EBX                            ; 00570741 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_renderFaceBatch_FUN_0048ce20 ; 00570742
-        ;   XREF to: 0048ce20 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_renderFaceBatch_FUN_0048ce20(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * primitive_array, int primitive_count, int render_flags)
+        ;   XREF to: 0048ce20 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderFaceBatch_FUN_0048ce20(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * primitive_array, int primitive_count, int render_flags)
     ADD ESP,0x10                        ; 00570747
     POP EBP                             ; 0057074a
         ;   Label: LAB_0057074a

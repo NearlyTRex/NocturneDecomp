@@ -10,70 +10,68 @@ CDemonLight * __cdecl core_setutil_cpp_C3DSLight_create_FUN_00586a90(C3DSLight *
 
 {
   char cVar1;
-  CDemonLight *pCVar2;
-  CDemonFilter *pCVar3;
   CDemonLight *this_ptr_00;
-  CVector3i *pCVar4;
-  C3DSLight *pCVar5;
-  int iVar6;
-  char *pcVar7;
+  CDemonFilter *pCVar2;
+  CDemonLight *this_ptr_01;
+  CVector3i *pCVar3;
+  C3DSLight *pCVar4;
+  int iVar5;
+  char *pcVar6;
   char (*filter_name) [40];
-  char *pcVar8;
+  char *pcVar7;
   
-  pCVar2 = (CDemonLight *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x2fac,"..\\core\\setutil.cpp",0x2f8);
-  this_ptr_00 = (CDemonLight *)0x0;
-  if (pCVar2 != (CDemonLight *)0x0) {
-    this_ptr_00 = core_dlight_cpp_CDemonLight_ctor_FUN_004726a0
-                            (pCVar2,(this_ptr->size).x,(this_ptr->size).y);
+  this_ptr_00 = (CDemonLight *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x2fac,"..\\core\\setutil.cpp",0x2f8);
+  this_ptr_01 = (CDemonLight *)0x0;
+  if (this_ptr_00 != (CDemonLight *)0x0) {
+    this_ptr_01 = core_dlight_cpp_CDemonLight_ctor_FUN_004726a0
+                            (this_ptr_00,(this_ptr->size).x,(this_ptr->size).y);
   }
-  if (this_ptr_00 == (CDemonLight *)0x0) {
+  if (this_ptr_01 == (CDemonLight *)0x0) {
     g_CurrentFilename = "..\\core\\setutil.cpp";
     g_CurrentLineNumber = 0x2f9;
     core_main_c_displayErrorAndQuit_FUN_00506f10("C3DSLight::create - Out of memory!");
   }
-  pCVar2 = this_ptr_00;
-  core_dlight_cpp_CDemonLight_init_FUN_004727c0(this_ptr_00);
+  core_dlight_cpp_CDemonLight_init_FUN_004727c0(this_ptr_01);
   if (this_ptr->filter_count < 1) {
-    this_ptr_00->shadow_bounds_mode = 1;
+    this_ptr_01->shadow_bounds_mode = 1;
   }
   else {
-    this_ptr_00->shadow_bounds_mode = this_ptr->blend_filter;
+    this_ptr_01->shadow_bounds_mode = this_ptr->blend_filter;
   }
-  pCVar4 = &(pCVar2->base).base.position;
-  if ((CVector3f *)pCVar4 != &this_ptr->pos) {
-    pCVar4->x = (int)(this_ptr->pos).x;
-    (pCVar2->base).base.position.y = (int)(this_ptr->pos).y;
-    (pCVar2->base).base.position.z = (int)(this_ptr->pos).z;
+  pCVar3 = &(this_ptr_01->base).base.position;
+  if ((CVector3f *)pCVar3 != &this_ptr->pos) {
+    pCVar3->x = (int)(this_ptr->pos).x;
+    (this_ptr_01->base).base.position.y = (int)(this_ptr->pos).y;
+    (this_ptr_01->base).base.position.z = (int)(this_ptr->pos).z;
   }
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
-            (&(pCVar2->base).base.rotation_matrix,&this_ptr->orient);
-  (pCVar2->base).base.focal_length = this_ptr->fov;
-  iVar6 = 0;
+            (&(this_ptr_01->base).base.rotation_matrix,&this_ptr->orient);
+  (this_ptr_01->base).base.focal_length = this_ptr->fov;
+  iVar5 = 0;
   if (0 < this_ptr->filter_count) {
     filter_name = this_ptr->filter_names;
-    pCVar5 = this_ptr;
+    pCVar4 = this_ptr;
     do {
-      iVar6 = iVar6 + 1;
-      pCVar3 = core_dfilter_cpp_CFilterCache_getFilter_FUN_00470060
-                         (g_CFilterCachePtr,*filter_name,(char *)this_ptr->blend_filter,(int)pCVar2)
-      ;
-      pCVar5->filters[0] = pCVar3;
+      iVar5 = iVar5 + 1;
+      pCVar2 = core_dfilter_cpp_CFilterCache_getFilter_FUN_00470060
+                         (g_CFilterCachePtr,*filter_name,this_ptr->blend_filter);
+      pCVar4->filters[0] = pCVar2;
       filter_name = filter_name + 1;
-      pCVar5 = (C3DSLight *)pCVar5->name;
-    } while (iVar6 < this_ptr->filter_count);
+      pCVar4 = (C3DSLight *)pCVar4->name;
+    } while (iVar5 < this_ptr->filter_count);
   }
-  pcVar7 = this_ptr->name;
-  pcVar8 = (pCVar2->base).camera_name;
+  pcVar6 = this_ptr->name;
+  pcVar7 = (this_ptr_01->base).camera_name;
   do {
-    cVar1 = *pcVar7;
-    *pcVar8 = cVar1;
+    cVar1 = *pcVar6;
+    *pcVar7 = cVar1;
     if (cVar1 == '\0') {
-      return pCVar2;
+      return this_ptr_01;
     }
-    cVar1 = pcVar7[1];
+    cVar1 = pcVar6[1];
+    pcVar6 = pcVar6 + 2;
+    pcVar7[1] = cVar1;
     pcVar7 = pcVar7 + 2;
-    pcVar8[1] = cVar1;
-    pcVar8 = pcVar8 + 2;
   } while (cVar1 != '\0');
-  return pCVar2;
+  return this_ptr_01;
 }

@@ -6,20 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 56,
-    "complexity_score": 172,
+    "complexity_score": 54,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 3,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 32,
-    "suspect_count": 12,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 24,
+    "suspect_count": 2,
     "suspect_types": [
       "param_count_too_few",
-      "stack_param",
-      "unaffected_reg",
       "warning_unreachable"
     ],
-    "total_lines": 88
+    "total_lines": 80
   },
   "cross_references": [
     {
@@ -167,86 +165,6 @@
       "severity": "mild",
       "text": "/* WARNING: Removing unreachable block (ram,0x004fd155) */",
       "type": "warning_unreachable"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 9,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "uint unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 10,
-      "match": "unaff_EBP",
-      "severity": "moderate",
-      "text": "uint unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "uint in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "uint in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000010",
-      "severity": "moderate",
-      "text": "uint in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "(&this_ptr_00->base,2,unaff_EBP,unaff_EBX,unaff_retaddr,(uint)this_ptr,in_stack_00000008",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 32,
-      "match": "unaff_EBP",
-      "severity": "moderate",
-      "text": "(&this_ptr_00->base,2,unaff_EBP,unaff_EBX,unaff_retaddr,(uint)this_ptr,in_stack_00000008",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 32,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "(&this_ptr_00->base,2,unaff_EBP,unaff_EBX,unaff_retaddr,(uint)this_ptr,in_stack_00000008",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 33,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": ",in_stack_0000000c,in_stack_00000010);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 33,
-      "match": "in_stack_00000010",
-      "severity": "moderate",
-      "text": ",in_stack_0000000c,in_stack_00000010);",
-      "type": "stack_param"
     },
     {
       "call_site_count": 3,

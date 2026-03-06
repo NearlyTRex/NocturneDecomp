@@ -166,7 +166,7 @@ section .text
     PUSH EAX                            ; 004ff56e
     PUSH ESI                            ; 004ff56f | g_CDemonMissionInstance
     CALL core_mission.cpp_CDemonMission_getNextLoadedInventoryActor_FUN_00523520 ; 004ff570
-        ;   XREF to: 00523520 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_getNextLoadedInventoryActor_FUN_00523520(CDemonMission * this_ptr, char * actor_name)
+        ;   XREF to: 00523520 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_CDemonMission_getNextLoadedInventoryActor_FUN_00523520(CDemonMission * this_ptr, char * actor_name)
     ADD ESP,0x8                         ; 004ff575
     MOV dword ptr [EBX + 0xc],EAX       ; 004ff578
     MOV EAX,dword ptr [ESP + 0x1e0]     ; 004ff57b

@@ -16,7 +16,6 @@ void __cdecl core_lightgun_cpp_CLightGun_process_FUN_00506450(CLightGun *this_pt
   int iVar2;
   CDemonFilter *filter_ptr;
   uint uVar3;
-  int unaff_ESI;
   
   core_weapon_cpp_CWeapon_process_FUN_005ee110(&this_ptr->base,delta_time);
   fVar1 = core_inv_cpp_CInventory_calculateTotalBatteryCharge_FUN_004ffda0
@@ -54,7 +53,7 @@ void __cdecl core_lightgun_cpp_CLightGun_process_FUN_00506450(CLightGun *this_pt
     else {
       g_CDemonLightInstance.antialiasing_enabled = 1;
       filter_ptr = core_dfilter_cpp_CFilterCache_getFilter_FUN_00470060
-                             (g_CFilterCachePtr,"lgunmask.raw",(char *)0x0,unaff_ESI);
+                             (g_CFilterCachePtr,"lgunmask.raw",0);
       core_dlight_cpp_CDemonLight_applyFilter_FUN_00474770(&g_CDemonLightInstance,filter_ptr,0,0,0);
       core_weather_cpp_CWeather_createLightningStrike_FUN_005eeeb0(g_CWeatherPtr,0.1,0);
     }

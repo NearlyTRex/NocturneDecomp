@@ -173,7 +173,7 @@ void __cdecl CLodMesh::findClosestFaceToSamplePoint(CLodMesh *this_ptr,int sampl
 
 // Original: shape_meshlod.cpp_CLodMesh_removeEdgeFromFace_FUN_005183e0
 // Address: 005183e0
-void __cdecl CLodMesh::removeEdgeFromFace(CLodMesh *this_ptr,int tri_index,int edge_index);
+int __cdecl CLodMesh::removeEdgeFromFace(CLodMesh *this_ptr,int tri_index,int edge_index);
 
 // Original: shape_meshlod.cpp_CLodMesh_validateEdgeCollapse_FUN_00518490
 // Address: 00518490
@@ -229,7 +229,7 @@ void __cdecl CLodMesh::processGridCell(CLodMesh *this_ptr,int grid_x,int grid_y,
 
 // Original: shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a150
 // Address: 0051a150
-int __cdecl CLodMesh::weldVertices(CLodMesh *this_ptr,float weld_threshold);
+void __cdecl CLodMesh::weldVertices(CLodMesh *this_ptr,float weld_threshold);
 
 // Original: shape_meshlod.cpp_CLodMesh_findClosestPointOnMesh_FUN_0051a300
 // Address: 0051a300

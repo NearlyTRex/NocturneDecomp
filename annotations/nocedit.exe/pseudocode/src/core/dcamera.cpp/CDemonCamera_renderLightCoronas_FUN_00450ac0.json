@@ -1,37 +1,22 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 52,
-        "line": 97,
-        "message": "use of undeclared identifier 'stack0xffffffa4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 28,
-        "line": 99,
-        "message": "use of undeclared identifier 'stack0xffffffa8'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 272,
-    "complexity_score": 348,
+    "complexity_score": 308,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 35,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 128,
-    "suspect_count": 19,
+    "suspect_count": 16,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "stack_alignment_array",
-      "stack_param",
-      "stack_ref",
       "warning_inlined_function"
     ],
     "total_lines": 400
@@ -505,14 +490,6 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_ffffffa0",
-      "severity": "moderate",
-      "text": "CVector3i *in_stack_ffffffa0;",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 45,
       "match": "(uint *)((int)",
@@ -601,36 +578,20 @@
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 88,
-      "match": "in_stack_ffffffa0",
-      "severity": "moderate",
-      "text": "(&g_CurrentLightForCorona->base,local_1c,in_stack_ffffffa0);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 89,
-      "match": "in_stack_ffffffa0",
-      "severity": "moderate",
-      "text": "local_54 = in_stack_ffffffa0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
+      "description": "Complex pointer cast",
       "line": 90,
-      "match": "&stack0xffffffa4",
-      "severity": "moderate",
-      "text": "local_50[(uint)bVar8 * -2] = *(int *)(&stack0xffffffa4 + (uint)bVar8 * -8);",
-      "type": "stack_ref"
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "local_50[(uint)bVar8 * -2] = *(int *)((int)&local_60 + (uint)bVar8 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Direct stack address reference",
+      "description": "Complex pointer cast",
       "line": 92,
-      "match": "&stack0xffffffa8",
-      "severity": "moderate",
-      "text": "*(int *)(&stack0xffffffa8 + (uint)bVar8 * -8 + (uint)bVar8 * -8);",
-      "type": "stack_ref"
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "*(int *)((int)&local_60 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);",
+      "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",

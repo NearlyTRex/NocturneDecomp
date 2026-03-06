@@ -10,8 +10,8 @@
 ;
 ; XREF[8]:
 ;   engine_3d.c_calculatePolygonLighting_FUN_00403a00 at 00403a11
+;   engine_3d.c_renderPolygonAPIAdaptivePreprocessingWithUV_FUN_00407720 at 0040777b
 ;   engine_3d.c_renderPolygonAPIAdaptivePreprocessing_FUN_00407620 at 00407678
-;   engine_3d.c_renderPolygonAPIAdaptivePreprocessing_FUN_00407720 at 0040777b
 ;   engine_3d.c_renderPolygonAdaptiveDepthMode_FUN_00404ae0 at 00404b49
 ;   engine_3d.c_renderPolygonLastPixelMode_FUN_00403ad0 at 00403b2a
 ;   engine_3d.c_renderPolygonLastPixelMode_FUN_004066d0 at 0040672a

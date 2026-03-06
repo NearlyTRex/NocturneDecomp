@@ -29245,7 +29245,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"engine_drender.cpp_CDemonRenderer_renderPrimitiveBatch_FUN_0048ce90",
-    "ret":"int",
+    "ret":"void",
     "vars":{
       "params":[
         {
@@ -29312,17 +29312,7 @@
           },
           "type":"int"
         }
-      ],
-      "ret_storage":{
-        "reg":"EAX",
-        "size":4,
-        "varnodes":[
-          {
-            "addr":"register:00000000",
-            "size":4
-          }
-        ]
-      }
+      ]
     }
   },
   {
@@ -32509,7 +32499,7 @@
           "type":"char*"
         },
         {
-          "name":"modal_flags",
+          "name":"window_flags",
           "storage":{
             "offset":20,
             "size":4,
@@ -32522,7 +32512,7 @@
               }
             ]
           },
-          "type":"int"
+          "type":"uint"
         }
       ]
     }
@@ -34470,7 +34460,7 @@
       ],
       "params":[
         {
-          "name":"user_choice_ptr",
+          "name":"dialog_title",
           "storage":{
             "offset":4,
             "size":4,
@@ -34483,10 +34473,10 @@
               }
             ]
           },
-          "type":"int*"
+          "type":"char*"
         },
         {
-          "name":"dialog_message",
+          "name":"overwrite_state",
           "storage":{
             "offset":8,
             "size":4,
@@ -34499,7 +34489,7 @@
               }
             ]
           },
-          "type":"char*"
+          "type":"int*"
         }
       ],
       "ret_storage":{
@@ -35046,6 +35036,22 @@
             ]
           },
           "type":"char*"
+        },
+        {
+          "name":"offer_dismount",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }
@@ -57044,7 +57050,7 @@
           "type":"CPackedBitmap*"
         },
         {
-          "name":"post_load_processing",
+          "name":"apply_palette_flag",
           "storage":{
             "offset":8,
             "size":4,
@@ -63601,24 +63607,6 @@
     "name":"core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0056a190",
     "ret":"void",
     "vars":{
-      "locals":[
-        {
-          "name":"local_1c",
-          "storage":{
-            "offset":-28,
-            "size":12,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x1c]",
-                "offset":-28,
-                "size":12
-              }
-            ]
-          },
-          "type":"CVector3f"
-        }
-      ],
       "params":[
         {
           "name":"this_ptr",
@@ -82232,38 +82220,6 @@
             ]
           },
           "type":"undefined1"
-        },
-        {
-          "name":"local_114",
-          "storage":{
-            "offset":-276,
-            "size":48,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x114]",
-                "offset":-276,
-                "size":48
-              }
-            ]
-          },
-          "type":"SRenderVertex"
-        },
-        {
-          "name":"local_144",
-          "storage":{
-            "offset":-324,
-            "size":48,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x144]",
-                "offset":-324,
-                "size":48
-              }
-            ]
-          },
-          "type":"SRenderVertex"
         }
       ],
       "params":[

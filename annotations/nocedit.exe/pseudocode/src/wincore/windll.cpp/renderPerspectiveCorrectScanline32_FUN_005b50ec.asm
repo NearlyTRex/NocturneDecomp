@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[57]:
+;   engine_3d.c_flushPremiumRenderBuffer_FUN_004070c0 at 00407136
 ;   engine_3d.c_renderOverlayTextureEnable_FUN_00404020 at 00404048
+;   engine_3d.c_renderPolygonAPIAdaptivePreprocessingWithUV_FUN_00407720 at 0040775a
 ;   engine_3d.c_renderPolygonAPIAdaptivePreprocessing_FUN_00407620 at 00407652
-;   engine_3d.c_renderPolygonAPIAdaptivePreprocessing_FUN_00407720 at 0040775a
 ;   engine_3d.c_renderPolygonAdaptiveDepthMode_FUN_00404ae0 at 00404b24
 ;   engine_3d.c_renderPolygonDepthWriteTexturedAdvanced_FUN_00405e20 at 00405e4c
 ;   engine_3d.c_renderPolygonDepthWriteTexturedLit_FUN_00405d80 at 00405dac
 ;   engine_3d.c_renderPolygonDepthWriteTexturedLit_FUN_00406000 at 0040602c
 ;   engine_3d.c_renderPolygonDepthWriteTextured_FUN_00405960 at 0040598c
-;   engine_3d.c_renderPolygonEngineAPIPremiumMultiState_FUN_004070c0 at 00407136
-;   engine_3d.c_renderPolygonEngineAPIPremiumMultiState_FUN_00407290 at 004072c8
+;   engine_3d.c_renderPolygonEngineAPIPremiumDirect_FUN_00407470 at 004074b0
 ;   ... and 47 more
 ;
 ; Referenced Globals:

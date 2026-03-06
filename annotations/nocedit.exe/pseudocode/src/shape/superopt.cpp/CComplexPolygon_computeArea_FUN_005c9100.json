@@ -1,30 +1,22 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 14,
-        "line": 54,
-        "message": "invalid operands to binary expression ('double' and 'int')"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 83,
-    "complexity_score": 86,
+    "complexity_score": 59,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 46,
-    "suspect_count": 3,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 44,
+    "suspect_count": 1,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "sub84_truncation"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 129
+    "total_lines": 127
   },
   "cross_references": [
     {
@@ -51,7 +43,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "shape_superopt.cpp_CComplexPolygon_computeArea_FUN_005c9100",
-    "signature": "int __cdecl shape_superopt_cpp_CComplexPolygon_computeArea_FUN_005c9100(CComplexPolygon *this_ptr,SExpandedEdge *edges,int edge_count)"
+    "signature": "double __cdecl shape_superopt_cpp_CComplexPolygon_computeArea_FUN_005c9100(CComplexPolygon *this_ptr,SExpandedEdge *edges,int edge_count)"
   },
   "function_calls": [],
   "globals": [
@@ -173,27 +165,11 @@
   },
   "suspects": [
     {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 47,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "local_10 = SUB84(SQRT(local_18 * local_18 + local_28 * local_28 + local_20 * local_20),0);",
-      "type": "sub84_truncation"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 47,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "local_10 = SUB84(SQRT(local_18 * local_18 + local_28 * local_28 + local_20 * local_20),0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 47,
+      "line": 46,
       "match": "SQRT",
       "severity": "mild",
-      "text": "local_10 = SUB84(SQRT(local_18 * local_18 + local_28 * local_28 + local_20 * local_20),0);",
+      "text": "return SQRT(local_18 * local_18 + local_28 * local_28 + local_20 * local_20);",
       "type": "decompiler_intrinsic"
     }
   ]

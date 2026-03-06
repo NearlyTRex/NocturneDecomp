@@ -6,17 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 10,
-    "complexity_score": 33,
+    "complexity_score": 7,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 4,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 8,
-    "suspect_count": 2,
-    "suspect_types": [
-      "extra_output"
-    ],
-    "total_lines": 18
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 17
   },
   "cross_references": [
     {
@@ -36,7 +34,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_boss.c_modelStructNotSupported_FUN_0041dc20",
-    "signature": "SMRGLHeaderExtended * __cdecl engine_boss_c_modelStructNotSupported_FUN_0041dc20(SMRGLHeaderExtended *header)"
+    "signature": "void __cdecl engine_boss_c_modelStructNotSupported_FUN_0041dc20(SMRGLHeaderExtended *mrgl_data)"
   },
   "function_calls": [
     {
@@ -117,29 +115,12 @@
     "variables": [
       {
         "is_param": true,
-        "name": "header",
+        "name": "mrgl_data",
         "offset": 4,
         "size": 4,
         "type": "SMRGLHeaderExtended *"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 5,
-      "match": "extraout_EAX",
-      "severity": "moderate",
-      "text": "SMRGLHeaderExtended *extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 10,
-      "match": "extraout_EAX",
-      "severity": "moderate",
-      "text": "return extraout_EAX;",
-      "type": "extra_output"
-    }
-  ]
+  "suspects": []
 }

@@ -61,7 +61,7 @@ section .text
     PUSH EBX                            ; 005c0701
     LEA ESI,[ESP + 0x10]                ; 005c0702
     CALL core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_005c07b0 ; 005c0706
-        ;   XREF to: 005c07b0 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_005c07b0(CStranger * this_ptr, CDemonActor * carried_actor, int hand_index)
+        ;   XREF to: 005c07b0 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_005c07b0(CStranger * this_ptr, CDemonActor * carried_actor, int hand_index, CMatrix3x4f * output_matrix)
     ADD ESP,0xc                         ; 005c070b
     LEA EAX,[EBX + 0x30]                ; 005c070e
     LEA EDI,[ESP + 0x64]                ; 005c0711

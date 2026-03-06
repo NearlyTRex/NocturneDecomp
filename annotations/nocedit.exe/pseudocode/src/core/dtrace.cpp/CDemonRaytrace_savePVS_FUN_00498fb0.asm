@@ -1,13 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dtrace_cpp_CDemonRaytrace_savePVS_FUN_00498fb0(CDemonRaytrace *this_ptr,int *output_count,int **input_indices_array,int **output_indices_array)
+; void __cdecl core_dtrace_cpp_CDemonRaytrace_savePVS_FUN_00498fb0(CDemonRaytrace *this_ptr,int *output_count,int **input_indices_array)
 ;
 ; Parameters:
 ; CDemonRaytrace * Stack[0x4]:4   this_ptr
 ; int *            Stack[0x8]:4   output_count
 ; int * *          Stack[0xc]:4   input_indices_array
-; int * *          Stack[0x10]:4   output_indices_array
 ;
 ; XREF[1]:
 ;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0056a190 at 0056a233

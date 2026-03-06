@@ -11,7 +11,7 @@ struct CPodDirectoryEntry;
 typedef struct CPodFile {
     int pod_format_version; // 0x0
     char filename[256]; // 0x4
-    uint filesize; // 0x104
+    uint timestamp; // 0x104
     char description[256]; // 0x108
     char author_info[256]; // 0x208
     char copyright_info[256]; // 0x308

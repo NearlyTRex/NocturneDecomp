@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 1009,
-    "complexity_score": 719,
+    "complexity_score": 694,
     "cross_reference_count": 3,
     "function_call_count": 12,
     "global_count": 9,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 449,
-    "suspect_count": 26,
+    "suspect_count": 24,
     "suspect_types": [
-      "extra_output",
       "pointer_cast"
     ],
     "total_lines": 1458
@@ -704,16 +703,8 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 13,
-      "match": "extraout_EAX",
-      "severity": "moderate",
-      "text": "int extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 117,
+      "line": 116,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (*(int *)((int)aiStack_4e8 + iVar5) == local_ac->attribute_indices[0]) break;",
@@ -721,7 +712,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 159,
+      "line": 158,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "iVar7 = *(int *)((int)aiStack_4e8 + iVar9 + 4);",
@@ -729,7 +720,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 160,
+      "line": 159,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "fVar2 = *(float *)((int)afStack_4e0 + iVar9);",
@@ -737,7 +728,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 161,
+      "line": 160,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "iVar1 = *(int *)((int)aiStack_4e8 + iVar9 + 4);",
@@ -745,7 +736,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 163,
+      "line": 162,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)aiStack_4e8 + iVar9 + 4) = 1;",
@@ -753,7 +744,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 164,
+      "line": 163,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)afStack_4e0 + iVar9) = fVar2 / (float)iVar7;",
@@ -761,7 +752,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 165,
+      "line": 164,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)afStack_4e0 + iVar9 + 4) =",
@@ -769,7 +760,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 166,
+      "line": 165,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)afStack_4e0 + iVar9 + 4) / (float)iVar1;",
@@ -777,7 +768,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 175,
+      "line": 174,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "local_14 < *(int *)((int)this_ptr->vertex_data->adjacent_edge_indices + local_5c + -4);",
@@ -785,7 +776,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 178,
+      "line": 177,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)this_ptr->vertex_data->adjacent_edge_indices + local_3c + local_5c);",
@@ -793,7 +784,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 201,
+      "line": 200,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (*(int *)((int)aiStack_4e8 + iVar7) == pCVar8->attribute_indices[0]) break;",
@@ -801,7 +792,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 236,
+      "line": 235,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "local_18 < *(int *)((int)this_ptr->vertex_data->adjacent_edge_indices + local_58 + -4);",
@@ -809,7 +800,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 239,
+      "line": 238,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)this_ptr->vertex_data->adjacent_edge_indices + local_30 + local_58);",
@@ -817,7 +808,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 262,
+      "line": 261,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (*(int *)((int)aiStack_4e8 + iVar7) == pCVar8->attribute_indices[0]) break;",
@@ -825,7 +816,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 296,
+      "line": 295,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)aiStack_1c8 + iVar5) =",
@@ -833,7 +824,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 297,
+      "line": 296,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)this_ptr->vertex_data[vertex_idx_2].adjacent_edge_indices + iVar5);",
@@ -841,26 +832,18 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 306,
+      "line": 305,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "local_88 = *(int *)((int)aiStack_1c8 + local_28);",
       "type": "pointer_cast"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 364,
-      "match": "extraout_EAX",
-      "severity": "moderate",
-      "text": "*(int *)((int)(local_80->uv_coords + 3) + extraout_EAX * 4) = local_84;",
-      "type": "extra_output"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 364,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)(local_80->uv_coords + 3) + extraout_EAX * 4) = local_84;",
+      "text": "*(int *)((int)(local_80->uv_coords + 3) + iVar5 * 4) = local_84;",
       "type": "pointer_cast"
     },
     {

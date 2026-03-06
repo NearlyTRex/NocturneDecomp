@@ -943,7 +943,7 @@ section .text
     LEA EAX,[ESP + 0x438]               ; 004b6411
     PUSH EAX                            ; 004b6418
     CALL shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20 ; 004b6419
-        ;   XREF to: 004a3e20 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20(CPickList * this_ptr, char * dialog_title, int config_param1, int config_param2)
+        ;   XREF to: 004a3e20 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20(CPickList * this_ptr, char * dialog_title, int initial_selected_index, uint window_flags)
     ADD ESP,0x10                        ; 004b641e
     JMP 0x004b62a5                      ; 004b6421
         ;   XREF to: 004b62a5 (UNCONDITIONAL_JUMP)  ; LAB_004b62a5
@@ -1475,7 +1475,7 @@ section .text
     LEA EAX,[ESP + 0x7e0]               ; 004b6b13
     PUSH EAX                            ; 004b6b1a
     CALL shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20 ; 004b6b1b
-        ;   XREF to: 004a3e20 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20(CPickList * this_ptr, char * dialog_title, int config_param1, int config_param2)
+        ;   XREF to: 004a3e20 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20(CPickList * this_ptr, char * dialog_title, int initial_selected_index, uint window_flags)
     ADD ESP,0x10                        ; 004b6b20
     TEST EAX,EAX                        ; 004b6b23
     JNZ 0x004b6b87                      ; 004b6b25

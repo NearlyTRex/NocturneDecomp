@@ -18,9 +18,9 @@ CDemonActorType g_CColonelClassInfo = {};
 CDemonActorType g_CConveyorClassInfo = {};
 CDemonActorType g_CZombieCowClassInfo = {};
 
-// CVector3f
-CVector3f CVector3f_00838e40 = {};
-CVector3f CVector3f_00838e4c = {};
+// UVector3
+UVector3 UNION_UVector3_00838e40 = {};
+UVector3 UNION_UVector3_00838e4c = {};
 
 // char[20]
 char g_ClothBoneScreenshotFilename[20] = {};

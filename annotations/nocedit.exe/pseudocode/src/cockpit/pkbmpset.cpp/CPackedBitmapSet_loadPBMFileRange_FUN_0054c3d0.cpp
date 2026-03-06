@@ -2,11 +2,11 @@
 // Address: 0054c3d0
 // Address Range: [[0054c3d0, 0054c470]]
 // Convention: __cdecl
-// Signature: void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadPBMFileRange_FUN_0054c3d0(CPackedBitmapSet *this_ptr,char *filename_format,int start_index,int end_index,char *base_path)
+// Signature: void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadPBMFileRange_FUN_0054c3d0(CPackedBitmapSet *this_ptr,char *filename_format,int start_index,int end_index,int apply_palette_flag)
 
 #include "nocturne.h"
 
-void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadPBMFileRange_FUN_0054c3d0(CPackedBitmapSet *this_ptr,char *filename_format,int start_index,int end_index,char *base_path)
+void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadPBMFileRange_FUN_0054c3d0(CPackedBitmapSet *this_ptr,char *filename_format,int start_index,int end_index,int apply_palette_flag)
 
 {
   int iVar1;
@@ -21,8 +21,8 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadPBMFileRange_FUN_0054c3d0
       _sprintf(local_74,filename_format,start_index);
       start_index = start_index + 1;
       cockpit_pkbitmap_cpp_CPackedBitmap_openPBMFile_FUN_0054b860
-                ((CPackedBitmap *)(this_ptr->bitmap_array->filename + iVar1),local_74,(int)base_path
-                );
+                ((CPackedBitmap *)(this_ptr->bitmap_array->filename + iVar1),local_74,
+                 apply_palette_flag);
       iVar1 = iVar1 + 0x24;
     } while (start_index <= end_index);
   }

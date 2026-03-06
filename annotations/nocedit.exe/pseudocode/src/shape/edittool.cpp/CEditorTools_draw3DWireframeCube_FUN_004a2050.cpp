@@ -6,9 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Variable defined which should be unmapped: local_140 */
-/* WARNING: Variable defined which should be unmapped: local_170 */
-
 void __cdecl shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050(CEditorTools *this_ptr,CVector3f *corner1,CVector3f *corner2,int color_value)
 
 {
@@ -19,10 +16,15 @@ void __cdecl shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050(CE
   int iVar2;
   float *pfVar3;
   SRenderVertex *pSVar4;
-  SRenderVertex *pSVar5;
+  int *piVar5;
   byte bVar6;
-  SRenderVertex local_170;
-  SRenderVertex local_140;
+  SRenderVertex in_stack_fffffe90;
+  byte auVar7 [24];
+  byte in_stack_fffffec0 [32];
+  uint uVar8;
+  uint uVar9;
+  uint uVar10;
+  CVector3i *pCVar11;
   float afStack_110 [24];
   CVector3i local_b0;
   float local_a4;
@@ -60,11 +62,8 @@ void __cdecl shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050(CE
   float local_14;
   
   bVar6 = 0;
-  local_140.fog = (int)&g_CVectorTypeInfo;
-  local_140.g = 8;
-  local_140.r = (int)afStack_110;
-  local_140.z = 0x4a2079;
-  __arrinit((void *)local_140.r,8,&g_CVectorTypeInfo);
+  uVar8 = 0x4a2079;
+  __arrinit(afStack_110,8,&g_CVectorTypeInfo);
   pfVar3 = afStack_110;
   uVar1 = 0;
   do {
@@ -95,10 +94,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050(CE
           local_8c.x = (int)ROUND(*pfVar3 * 256.0f);
           local_8c.y = (int)ROUND(pfVar3[1] * 256.0f);
           local_8c.z = (int)ROUND(pfVar3[2] * 256.0f);
-          local_140.fog = (int)&local_8c;
-          local_140.g = 0;
-          local_140.r = 0x4a213c;
-          engine_matrix_c_transformToCache_FUN_0050cd70(0,(CVector3i *)local_140.fog);
+          engine_matrix_c_transformToCache_FUN_0050cd70(0,&local_8c);
           local_68 = afStack_110[uVar1 * 3] * 0.2f;
           local_64 = afStack_110[uVar1 * 3 + 1] * 0.2f;
           local_60 = afStack_110[uVar1 * 3 + 2] * 0.2f;
@@ -111,40 +107,43 @@ void __cdecl shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050(CE
           local_8c.x = (int)ROUND(local_44 * 256.0f);
           local_8c.y = (int)ROUND(local_40 * 256.0f);
           local_8c.z = (int)ROUND(local_3c * 256.0f);
-          local_140.fog = (int)&local_8c;
-          local_140.g = 1;
-          local_140.r = 0x4a221b;
-          engine_matrix_c_transformToCache_FUN_0050cd70(1,(CVector3i *)local_140.fog);
+          pCVar11 = &local_8c;
+          uVar10 = 1;
+          uVar9 = 0x4a221b;
+          engine_matrix_c_transformToCache_FUN_0050cd70(1,pCVar11);
           pSVar4 = g_RenderVertexBuffer + 1;
-          pSVar5 = &local_140;
+          piVar5 = (int *)&stack0xfffffec0;
           for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-            *(int *)pSVar5 = (pSVar4->projected_vertex).transformed_x;
+            *piVar5 = (pSVar4->projected_vertex).transformed_x;
             pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);
-            pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar6 * -2 + 1) * 4);
+            piVar5 = piVar5 + (uint)bVar6 * -2 + 1;
           }
           pSVar4 = g_RenderVertexBuffer;
-          pSVar5 = &local_170;
+          piVar5 = (int *)&stack0xfffffe90;
           for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-            *(int *)pSVar5 = (pSVar4->projected_vertex).transformed_x;
+            *piVar5 = (pSVar4->projected_vertex).transformed_x;
             pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);
-            pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar6 * -2 + 1) * 4);
+            piVar5 = piVar5 + (uint)bVar6 * -2 + 1;
           }
-          vertex2.z = local_140.z;
-          vertex2.projected_vertex = local_140.projected_vertex;
-          vertex2.u = local_140.u;
-          vertex2.v = local_140.v;
-          vertex2.r = local_140.r;
-          vertex2.g = local_140.g;
-          vertex2.fog = local_140.fog;
-          engine_3d_c_clipAndDrawLine2D_FUN_00407d70(local_170,vertex2);
+          vertex2.z = uVar8;
+          auVar7 = in_stack_fffffec0._0_24_;
+          vertex2.projected_vertex.transformed_x = auVar7._0_4_;
+          vertex2.projected_vertex.transformed_y = auVar7._4_4_;
+          vertex2.projected_vertex.transformed_z = auVar7._8_4_;
+          vertex2.projected_vertex.inv_z = auVar7._12_4_;
+          vertex2.projected_vertex.screen_x = auVar7._16_4_;
+          vertex2.projected_vertex.screen_y = auVar7._20_4_;
+          vertex2.u = in_stack_fffffec0._24_4_;
+          vertex2.v = in_stack_fffffec0._28_4_;
+          vertex2.r = uVar9;
+          vertex2.g = uVar10;
+          vertex2.fog = (int)pCVar11;
+          engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffe90,vertex2);
           uVar1 = local_20 ^ 2;
           local_b0.x = (int)ROUND(*pfVar3 * 256.0f);
           local_b0.y = (int)ROUND(pfVar3[1] * 256.0f);
           local_b0.z = (int)ROUND(pfVar3[2] * 256.0f);
-          local_140.fog = (int)&local_b0;
-          local_140.g = 0;
-          local_140.r = 0x4a228e;
-          engine_matrix_c_transformToCache_FUN_0050cd70(0,(CVector3i *)local_140.fog);
+          engine_matrix_c_transformToCache_FUN_0050cd70(0,&local_b0);
           local_98 = afStack_110[uVar1 * 3] * 0.2f;
           local_94 = afStack_110[uVar1 * 3 + 1] * 0.2f;
           local_90 = afStack_110[uVar1 * 3 + 2] * 0.2f;
@@ -157,40 +156,43 @@ void __cdecl shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050(CE
           local_b0.x = (int)ROUND(local_2c * 256.0f);
           local_b0.y = (int)ROUND(local_28 * 256.0f);
           local_b0.z = (int)ROUND(local_24 * 256.0f);
-          local_140.fog = (int)&local_b0;
-          local_140.g = 1;
-          local_140.r = 0x4a235b;
-          engine_matrix_c_transformToCache_FUN_0050cd70(1,(CVector3i *)local_140.fog);
+          pCVar11 = &local_b0;
+          uVar10 = 1;
+          uVar9 = 0x4a235b;
+          engine_matrix_c_transformToCache_FUN_0050cd70(1,pCVar11);
           pSVar4 = g_RenderVertexBuffer + 1;
-          pSVar5 = &local_140;
+          piVar5 = (int *)&stack0xfffffec0;
           for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-            *(int *)pSVar5 = (pSVar4->projected_vertex).transformed_x;
+            *piVar5 = (pSVar4->projected_vertex).transformed_x;
             pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);
-            pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar6 * -2 + 1) * 4);
+            piVar5 = piVar5 + (uint)bVar6 * -2 + 1;
           }
           pSVar4 = g_RenderVertexBuffer;
-          pSVar5 = &local_170;
+          piVar5 = (int *)&stack0xfffffe90;
           for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-            *(int *)pSVar5 = (pSVar4->projected_vertex).transformed_x;
+            *piVar5 = (pSVar4->projected_vertex).transformed_x;
             pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);
-            pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar6 * -2 + 1) * 4);
+            piVar5 = piVar5 + (uint)bVar6 * -2 + 1;
           }
-          vertex2_00.z = local_140.z;
-          vertex2_00.projected_vertex = local_140.projected_vertex;
-          vertex2_00.u = local_140.u;
-          vertex2_00.v = local_140.v;
-          vertex2_00.r = local_140.r;
-          vertex2_00.g = local_140.g;
-          vertex2_00.fog = local_140.fog;
-          engine_3d_c_clipAndDrawLine2D_FUN_00407d70(local_170,vertex2_00);
+          vertex2_00.z = uVar8;
+          auVar7 = in_stack_fffffec0._0_24_;
+          vertex2_00.projected_vertex.transformed_x = auVar7._0_4_;
+          vertex2_00.projected_vertex.transformed_y = auVar7._4_4_;
+          vertex2_00.projected_vertex.transformed_z = auVar7._8_4_;
+          vertex2_00.projected_vertex.inv_z = auVar7._12_4_;
+          vertex2_00.projected_vertex.screen_x = auVar7._16_4_;
+          vertex2_00.projected_vertex.screen_y = auVar7._20_4_;
+          vertex2_00.u = in_stack_fffffec0._24_4_;
+          vertex2_00.v = in_stack_fffffec0._28_4_;
+          vertex2_00.r = uVar9;
+          vertex2_00.g = uVar10;
+          vertex2_00.fog = (int)pCVar11;
+          engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffe90,vertex2_00);
           uVar1 = local_20 ^ 4;
           local_50.x = (int)ROUND(*pfVar3 * 256.0f);
           local_50.y = (int)ROUND(pfVar3[1] * 256.0f);
           local_50.z = (int)ROUND(pfVar3[2] * 256.0f);
-          local_140.fog = (int)&local_50;
-          local_140.g = 0;
-          local_140.r = 0x4a23d2;
-          engine_matrix_c_transformToCache_FUN_0050cd70(0,(CVector3i *)local_140.fog);
+          engine_matrix_c_transformToCache_FUN_0050cd70(0,&local_50);
           local_80 = afStack_110[uVar1 * 3] * 0.2f;
           local_7c = afStack_110[uVar1 * 3 + 1] * 0.2f;
           local_78 = 0.2f * afStack_110[uVar1 * 3 + 2];
@@ -203,32 +205,38 @@ void __cdecl shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050(CE
           local_50.x = (int)ROUND(local_5c * 256.0f);
           local_50.y = (int)ROUND(local_58 * 256.0f);
           local_50.z = (int)ROUND(local_54 * 256.0f);
-          local_140.fog = (int)&local_50;
-          local_140.g = 1;
-          local_140.r = 0x4a2492;
-          engine_matrix_c_transformToCache_FUN_0050cd70(1,(CVector3i *)local_140.fog);
+          pCVar11 = &local_50;
+          uVar10 = 1;
+          uVar9 = 0x4a2492;
+          engine_matrix_c_transformToCache_FUN_0050cd70(1,pCVar11);
           pSVar4 = g_RenderVertexBuffer + 1;
-          pSVar5 = &local_140;
+          piVar5 = (int *)&stack0xfffffec0;
           for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-            *(int *)pSVar5 = (pSVar4->projected_vertex).transformed_x;
+            *piVar5 = (pSVar4->projected_vertex).transformed_x;
             pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);
-            pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar6 * -2 + 1) * 4);
+            piVar5 = piVar5 + (uint)bVar6 * -2 + 1;
           }
           pSVar4 = g_RenderVertexBuffer;
-          pSVar5 = &local_170;
+          piVar5 = (int *)&stack0xfffffe90;
           for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-            *(int *)pSVar5 = (pSVar4->projected_vertex).transformed_x;
+            *piVar5 = (pSVar4->projected_vertex).transformed_x;
             pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);
-            pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar6 * -2 + 1) * 4);
+            piVar5 = piVar5 + (uint)bVar6 * -2 + 1;
           }
-          vertex2_01.z = local_140.z;
-          vertex2_01.projected_vertex = local_140.projected_vertex;
-          vertex2_01.u = local_140.u;
-          vertex2_01.v = local_140.v;
-          vertex2_01.r = local_140.r;
-          vertex2_01.g = local_140.g;
-          vertex2_01.fog = local_140.fog;
-          engine_3d_c_clipAndDrawLine2D_FUN_00407d70(local_170,vertex2_01);
+          vertex2_01.z = uVar8;
+          auVar7 = in_stack_fffffec0._0_24_;
+          vertex2_01.projected_vertex.transformed_x = auVar7._0_4_;
+          vertex2_01.projected_vertex.transformed_y = auVar7._4_4_;
+          vertex2_01.projected_vertex.transformed_z = auVar7._8_4_;
+          vertex2_01.projected_vertex.inv_z = auVar7._12_4_;
+          vertex2_01.projected_vertex.screen_x = auVar7._16_4_;
+          vertex2_01.projected_vertex.screen_y = auVar7._20_4_;
+          vertex2_01.u = in_stack_fffffec0._24_4_;
+          vertex2_01.v = in_stack_fffffec0._28_4_;
+          vertex2_01.r = uVar9;
+          vertex2_01.g = uVar10;
+          vertex2_01.fog = (int)pCVar11;
+          engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffe90,vertex2_01);
           local_20 = local_20 + 1;
           pfVar3 = pfVar3 + 3;
         } while ((int)local_20 < 8);

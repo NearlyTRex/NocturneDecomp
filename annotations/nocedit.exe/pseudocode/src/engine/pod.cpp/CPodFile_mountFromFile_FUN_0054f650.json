@@ -836,7 +836,7 @@
       "line": 118,
       "match": "(SIZE_T *)((int)",
       "severity": "mild",
-      "text": "*(SIZE_T *)((int)&this_ptr->directory_entries->name_or_offset + local_18) = size;",
+      "text": "*(SIZE_T *)((int)&this_ptr->directory_entries->name + local_18) = size;",
       "type": "pointer_cast"
     },
     {
@@ -844,7 +844,7 @@
       "line": 141,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)&this_ptr->directory_entries->name_or_offset + local_18);",
+      "text": "*(int *)((int)&this_ptr->directory_entries->name + local_18);",
       "type": "pointer_cast"
     },
     {
@@ -876,7 +876,7 @@
       "line": 155,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&this_ptr->directory_entries->timestamp + local_18) = this_ptr->filesize;",
+      "text": "*(uint *)((int)&this_ptr->directory_entries->timestamp + local_18) = this_ptr->timestamp;",
       "type": "pointer_cast"
     },
     {
@@ -892,7 +892,7 @@
       "line": 306,
       "match": "(SIZE_T *)((int)",
       "severity": "mild",
-      "text": "*(SIZE_T *)((int)&this_ptr->directory_entries->name_or_offset + local_14) = size;",
+      "text": "*(SIZE_T *)((int)&this_ptr->directory_entries->name + local_14) = size;",
       "type": "pointer_cast"
     },
     {
@@ -900,7 +900,7 @@
       "line": 329,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)&this_ptr->directory_entries->name_or_offset + local_14);",
+      "text": "*(int *)((int)&this_ptr->directory_entries->name + local_14);",
       "type": "pointer_cast"
     },
     {
@@ -932,7 +932,7 @@
       "line": 343,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&this_ptr->directory_entries->timestamp + local_14) = this_ptr->filesize;",
+      "text": "*(uint *)((int)&this_ptr->directory_entries->timestamp + local_14) = this_ptr->timestamp;",
       "type": "pointer_cast"
     },
     {
@@ -948,7 +948,7 @@
       "line": 370,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar5 = (int *)((int)&this_ptr->directory_entries->name_or_offset + iVar7);",
+      "text": "piVar5 = (int *)((int)&this_ptr->directory_entries->name + iVar7);",
       "type": "pointer_cast"
     }
   ]

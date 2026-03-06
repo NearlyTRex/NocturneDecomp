@@ -8,9 +8,9 @@
 ; char *           Stack[0x8]:4   filename
 ;
 ; XREF[3]:
-;   cockpit_pkbitmap.cpp_CPackedBitmap_loadPBGFile_FUN_0054bb40 at 0054bbc5
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_0054b860 at 0054b878
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_0054b000 at 0054b01b
+;   cockpit_pkbitmap.cpp_loadPBGFile_FUN_0054bb40 at 0054bbc5
 ;
 ; Called Functions:
 ;   crt_string.c__strncpy_FUN_00600f40

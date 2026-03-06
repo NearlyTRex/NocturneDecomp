@@ -1,36 +1,20 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 82,
-        "line": 41,
-        "message": "use of undeclared identifier 'stack0xfffffc4c'; did you mean 'in_stack_fffffc4c'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 23,
-        "line": 42,
-        "message": "use of undeclared identifier 'stack0xfffffc4c'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 259,
-    "complexity_score": 148,
+    "complexity_score": 87,
     "cross_reference_count": 1,
     "function_call_count": 25,
     "global_count": 13,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 88,
-    "suspect_count": 5,
-    "suspect_types": [
-      "stack_param",
-      "stack_ref"
-    ],
-    "total_lines": 347
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 87,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 346
   },
   "cross_references": [
     {
@@ -407,46 +391,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_fffffc4c",
-      "severity": "moderate",
-      "text": "char *in_stack_fffffc4c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 30,
-      "match": "in_stack_fffffc4c",
-      "severity": "moderate",
-      "text": "(ini_file,\"DeviceName\",local_194,0x100,in_stack_fffffc4c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 34,
-      "match": "&stack0xfffffc4c",
-      "severity": "moderate",
-      "text": "sound_sndmain_cpp_getSoundDeviceInfo_FUN_005ab370(iVar2,(SSoundDeviceInfo *)&stack0xfffffc4c);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 35,
-      "match": "&stack0xfffffc4c",
-      "severity": "moderate",
-      "text": "iVar1 = _stricmp(&stack0xfffffc4c,local_194);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 43,
-      "match": "in_stack_fffffc4c",
-      "severity": "moderate",
-      "text": "(ini_file,\"RecordingDeviceName\",local_194,0x100,in_stack_fffffc4c);",
-      "type": "stack_param"
-    }
-  ]
+  "suspects": []
 }

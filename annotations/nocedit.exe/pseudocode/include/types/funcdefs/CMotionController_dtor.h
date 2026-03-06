@@ -7,5 +7,5 @@
 struct CMotionController;
 
 // Function Definition: CMotionController_dtor
-typedef struct CMotionController* CMotionController_dtor(struct CMotionController* this_ptr);
+typedef struct CMotionController* CMotionController_dtor(struct CMotionController* this_ptr, uint flags);
 

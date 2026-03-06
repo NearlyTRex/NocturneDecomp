@@ -11,9 +11,9 @@ void __cdecl core_frankgen_cpp_CFrankenstienMachine_process_FUN_004d1a40(CFranke
 {
   float fVar1;
   CFrankenstienMachine *pCVar2;
-  int extraout_EAX;
-  CVector3f *pCVar3;
-  int iVar4;
+  int iVar3;
+  CVector3f *pCVar4;
+  int iVar5;
   int alpha_value;
   CFrankenstienMachine *in_stack_ffffff80;
   float fStack_7c;
@@ -60,13 +60,14 @@ void __cdecl core_frankgen_cpp_CFrankenstienMachine_process_FUN_004d1a40(CFranke
         local_10 = (1580.0f - this_ptr->master_frame) * (float)0.01 *
                    (float)50;
       }
-      core_frankgen_cpp_CFrankenstienMachine_FUN_004d1ec0(this_ptr);
-      iVar4 = 0;
+      iVar3 = core_frankgen_cpp_CFrankenstienMachine_accumulateParticles_FUN_004d1ec0
+                        (this_ptr,local_10,delta_time);
+      iVar5 = 0;
       (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&local_68);
       uStack_44 = 0;
       uStack_40 = 0x40800000;
       uStack_3c = 0;
-      if (0 < extraout_EAX) {
+      if (0 < iVar3) {
         do {
           CStack_2c.x = core_actor_cpp_getRandomFloat_FUN_0040cc10(local_68.min.x,local_68.max.x);
           fStack_c = CStack_2c.x;
@@ -74,20 +75,20 @@ void __cdecl core_frankgen_cpp_CFrankenstienMachine_process_FUN_004d1a40(CFranke
           CStack_2c.y = (1.0 - fStack_c) * local_68.min.y + local_68.max.y * fStack_c;
           CStack_2c.z = core_actor_cpp_getRandomFloat_FUN_0040cc10(local_68.min.z,local_68.max.z);
           fStack_c = CStack_2c.z;
-          pCVar3 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+          pCVar4 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                              (&this_ptr->base,&CStack_50,&CStack_2c);
-          if (&CStack_2c != pCVar3) {
-            CStack_2c.x = pCVar3->x;
-            CStack_2c.y = pCVar3->y;
-            CStack_2c.z = pCVar3->z;
+          if (&CStack_2c != pCVar4) {
+            CStack_2c.x = pCVar4->x;
+            CStack_2c.y = pCVar4->y;
+            CStack_2c.z = pCVar4->z;
           }
           alpha_value = 0xffff;
-          pCVar3 = (CVector3f *)0x0;
+          pCVar4 = (CVector3f *)0x0;
           fStack_c = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.5,1.5);
-          iVar4 = iVar4 + 1;
+          iVar5 = iVar5 + 1;
           core_fire_cpp_CFireEffect_createSmokeParticle_FUN_004c7b20
-                    (g_CFireEffectPtr,&CStack_2c,fStack_c,pCVar3,alpha_value);
-        } while (iVar4 < extraout_EAX);
+                    (g_CFireEffectPtr,&CStack_2c,fStack_c,pCVar4,alpha_value);
+        } while (iVar5 < iVar3);
       }
     }
     if ((0x44e10000 < (int)this_ptr->master_frame) && ((int)this_ptr->master_frame < 0x44ed8000)) {
@@ -98,12 +99,12 @@ void __cdecl core_frankgen_cpp_CFrankenstienMachine_process_FUN_004d1a40(CFranke
       fStack_c = CStack_38.x;
       CStack_38.z = core_actor_cpp_getRandomFloat_FUN_0040cc10(fStack_78,fStack_6c);
       fStack_c = CStack_38.z;
-      pCVar3 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+      pCVar4 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                          (&this_ptr->base,&CStack_20,&CStack_38);
-      if (&CStack_38 != pCVar3) {
-        CStack_38.x = pCVar3->x;
-        CStack_38.y = pCVar3->y;
-        CStack_38.z = pCVar3->z;
+      if (&CStack_38 != pCVar4) {
+        CStack_38.x = pCVar4->x;
+        CStack_38.y = pCVar4->y;
+        CStack_38.z = pCVar4->z;
       }
       core_fire_cpp_CFireEffect_createSpark_FUN_004c79d0
                 (g_CFireEffectPtr,&CStack_38,(CVector3f *)0x0,0x4000,0x10000,0,0xffff);

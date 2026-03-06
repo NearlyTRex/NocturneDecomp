@@ -57,7 +57,7 @@ int __cdecl CComplexPolygon::findBestSplitEdge(CComplexPolygon *this_ptr,SExpand
 
 // Original: shape_superopt.cpp_CComplexPolygon_computeArea_FUN_005c9100
 // Address: 005c9100
-int __cdecl CComplexPolygon::computeArea(CComplexPolygon *this_ptr,SExpandedEdge *edges,int edge_count);
+double __cdecl CComplexPolygon::computeArea(CComplexPolygon *this_ptr,SExpandedEdge *edges,int edge_count);
 
 // Original: shape_superopt.cpp_CComplexPolygon_processEdgeSubLoops_FUN_005c91e0
 // Address: 005c91e0

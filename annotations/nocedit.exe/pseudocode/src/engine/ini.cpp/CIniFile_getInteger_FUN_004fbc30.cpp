@@ -9,11 +9,10 @@
 void __cdecl engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30(CIniFile *this_ptr,char *key_name,int *value_ptr)
 
 {
-  char *in_stack_ffffff94;
+  char local_6c [100];
   
-  _sprintf(&stack0xffffff94,"%d",*value_ptr);
-  engine_ini_cpp_CIniFile_getString_FUN_004fbb20
-            (this_ptr,key_name,&stack0xffffff94,100,in_stack_ffffff94);
-  sscanf(&stack0xffffff94,"%d",value_ptr);
+  _sprintf(local_6c,"%d",*value_ptr);
+  engine_ini_cpp_CIniFile_getString_FUN_004fbb20(this_ptr,key_name,local_6c,100);
+  sscanf(local_6c,"%d",value_ptr);
   return;
 }

@@ -129,7 +129,7 @@ void __cdecl CDemonRaytrace::setPVS(CDemonRaytrace *this_ptr,int visible_cube_co
 
 // Original: core_dtrace.cpp_CDemonRaytrace_savePVS_FUN_00498fb0
 // Address: 00498fb0
-void __cdecl CDemonRaytrace::savePVS(CDemonRaytrace *this_ptr,int *output_count,int **input_indices_array,int **output_indices_array);
+void __cdecl CDemonRaytrace::savePVS(CDemonRaytrace *this_ptr,int *output_count,int **input_indices_array);
 
 // Original: core_dtrace.cpp_CDemonRaytrace_renderPVSCubes_FUN_004990f0
 // Address: 004990f0

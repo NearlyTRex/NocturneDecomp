@@ -279,7 +279,7 @@ section .text
     PUSH 0x646727                       ; 00576f9b | = "Can't open the following background i..."
     PUSH 0x3653fc0                      ; 00576fa0 | g_MissingBackdropFiles
     CALL shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20 ; 00576fa5
-        ;   XREF to: 004a3e20 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20(CPickList * this_ptr, char * dialog_title, int config_param1, int config_param2)
+        ;   XREF to: 004a3e20 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20(CPickList * this_ptr, char * dialog_title, int initial_selected_index, uint window_flags)
     ADD ESP,0x10                        ; 00576faa
     PUSH 0x3653fc0                      ; 00576fad | g_MissingBackdropFiles
         ;   Label: LAB_00576fad

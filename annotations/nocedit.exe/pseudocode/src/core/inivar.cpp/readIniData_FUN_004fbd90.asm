@@ -119,7 +119,7 @@ section .text
     LEA EAX,[ESP + 0x18]                ; 004fbe66
     PUSH EAX                            ; 004fbe6a
     CALL engine_ini.cpp_CIniFile_getString_FUN_004fbb20 ; 004fbe6b
-        ;   XREF to: 004fbb20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getString_FUN_004fbb20(CIniFile * this_ptr, char * key, char * output_buffer, int buffer_size, ...)
+        ;   XREF to: 004fbb20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getString_FUN_004fbb20(CIniFile * this_ptr, char * key, char * output_buffer, int buffer_size)
     MOV EAX,[0x0067b654]                ; 004fbe70 | g_CGamePtr
     ADD ESP,0x10                        ; 004fbe75
     ADD EAX,0x224                       ; 004fbe78

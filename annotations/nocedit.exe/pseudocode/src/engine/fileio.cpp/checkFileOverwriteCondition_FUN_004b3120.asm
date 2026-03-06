@@ -81,7 +81,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 004b318f
     PUSH EAX                            ; 004b3193
     CALL engine_fileio.cpp_showOverwriteConfirmationDialog_FUN_004b2f90 ; 004b3194
-        ;   XREF to: 004b2f90 (UNCONDITIONAL_CALL)  ; int engine_fileio.cpp_showOverwriteConfirmationDialog_FUN_004b2f90(int * user_choice_ptr, char * dialog_message)
+        ;   XREF to: 004b2f90 (UNCONDITIONAL_CALL)  ; int engine_fileio.cpp_showOverwriteConfirmationDialog_FUN_004b2f90(char * dialog_title, int * overwrite_state)
     ADD ESP,0x8                         ; 004b3199
     JMP 0x004b316d                      ; 004b319c
         ;   XREF to: 004b316d (UNCONDITIONAL_JUMP)  ; LAB_004b316d
@@ -97,7 +97,7 @@ section .text
     LEA EAX,[ESP + 0x1f8]               ; 004b31b9
     PUSH EAX                            ; 004b31c0
     CALL engine_fileio.cpp_showOverwriteConfirmationDialog_FUN_004b2f90 ; 004b31c1
-        ;   XREF to: 004b2f90 (UNCONDITIONAL_CALL)  ; int engine_fileio.cpp_showOverwriteConfirmationDialog_FUN_004b2f90(int * user_choice_ptr, char * dialog_message)
+        ;   XREF to: 004b2f90 (UNCONDITIONAL_CALL)  ; int engine_fileio.cpp_showOverwriteConfirmationDialog_FUN_004b2f90(char * dialog_title, int * overwrite_state)
     ADD ESP,0x8                         ; 004b31c6
     ADD ESP,0x3e8                       ; 004b31c9
     POP EDI                             ; 004b31cf

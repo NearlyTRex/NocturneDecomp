@@ -61,8 +61,8 @@ void * __cdecl cockpit_ckptutil_c_loadBitmapWithPalette_FUN_004317b0(char *filen
 void __cdecl cockpit_ckptutil_c_applyColorPalette_FUN_004319b0(char *filename,void *bitmap_buffer,int bitmap_size,int palette_index);
 void * __cdecl cockpit_ckptutil_c_readBitmapFile_FUN_00431870(char *filename,void *buffer,int size);
 void __cdecl cockpit_ckptutil_c_applyActPalette_FUN_004319b0(char *filename,void *bitmap_buffer,int bitmap_size,int palette_index);
-void __cdecl cockpit_ckptutil_c_loadACTToIndexedPalette_FUN_00431a30(char *filename,char *output_palette);
-void __cdecl cockpit_ckptutil_c_loadACTPaletteFile_FUN_00431ac0(char *base_filename,char *output_buffer);
+void __cdecl cockpit_ckptutil_c_loadACTToIndexedPalette_FUN_00431a30(char *filename,uchar *output_palette);
+void __cdecl cockpit_ckptutil_c_loadACTPaletteFile_FUN_00431ac0(char *base_filename,uchar *output_buffer);
 void __cdecl cockpit_ckptutil_c_buildHardwarePalettes_FUN_00431c00(char *rgb_palette_data);
 void __cdecl cockpit_ckptutil_c_blitSpanBasedSprite_FUN_00431d00(void *sprite_data,void *span_data,int screen_x,int screen_y,int src_x,int src_y, int width,int height);
 void __cdecl cockpit_ckptutil_c_blitSpanBasedSpriteClipped_FUN_00431f40(void *sprite_data,void *span_data,int screen_x,int screen_y,int src_x,int src_y, int width,int height);

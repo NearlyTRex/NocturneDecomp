@@ -7,8 +7,6 @@
 ; CVector3f *      Stack[0x4]:4   start_point
 ; CVector3f *      Stack[0x8]:4   end_point
 ; Local Variables:
-; SRenderVertex    Stack[-0x9c]:48  local_9c
-; SRenderVertex    Stack[-0x6c]:48  local_6c
 ; undefined4       Stack[-0x3c]:4  local_3c
 ; undefined4       Stack[-0x38]:4  local_38
 ; undefined4       Stack[-0x34]:4  local_34

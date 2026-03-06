@@ -1,42 +1,20 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 14,
-        "message": "use of undeclared identifier 'stack0xffffff94'; did you mean 'in_stack_ffffff94'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 33,
-        "line": 16,
-        "message": "use of undeclared identifier 'stack0xffffff94'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 17,
-        "message": "use of undeclared identifier 'stack0xffffff94'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 35,
-    "complexity_score": 69,
+    "complexity_score": 8,
     "cross_reference_count": 7,
     "function_call_count": 3,
     "global_count": 2,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 9,
-    "suspect_count": 5,
-    "suspect_types": [
-      "stack_param",
-      "stack_ref"
-    ],
-    "total_lines": 44
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 8,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 43
   },
   "cross_references": [
     {
@@ -282,46 +260,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 5,
-      "match": "in_stack_ffffff94",
-      "severity": "moderate",
-      "text": "char *in_stack_ffffff94;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 7,
-      "match": "&stack0xffffff94",
-      "severity": "moderate",
-      "text": "_sprintf(&stack0xffffff94,\"%d\",*value_ptr);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_ffffff94",
-      "severity": "moderate",
-      "text": "(this_ptr,key_name,&stack0xffffff94,100,in_stack_ffffff94);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 9,
-      "match": "&stack0xffffff94",
-      "severity": "moderate",
-      "text": "(this_ptr,key_name,&stack0xffffff94,100,in_stack_ffffff94);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 10,
-      "match": "&stack0xffffff94",
-      "severity": "moderate",
-      "text": "sscanf(&stack0xffffff94,\"%d\",value_ptr);",
-      "type": "stack_ref"
-    }
-  ]
+  "suspects": []
 }

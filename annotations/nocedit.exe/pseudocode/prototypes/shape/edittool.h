@@ -185,11 +185,11 @@ void __cdecl CEditorTools::updatePercentage(CEditorTools *this_ptr,float progres
 
 // Original: shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_004a0890
 // Address: 004a0890
-void __cdecl CEditorTools::createCenteredModal(CEditorTools *this_ptr,int min_width,int min_height,char *text_content,int modal_flags);
+void __cdecl CEditorTools::createCenteredModal(CEditorTools *this_ptr,int min_width,int min_height,char *text_content,uint window_flags);
 
 // Original: shape_edittool.cpp_CEditorTools_createModalWindow_FUN_004a0970
 // Address: 004a0970
-void __cdecl CEditorTools::createModalWindow(CEditorTools *this_ptr,int left,int top,int right,int bottom,char *text_content,int window_flags);
+void __cdecl CEditorTools::createModalWindow(CEditorTools *this_ptr,int left,int top,int right,int bottom,char *text_content,uint window_flags);
 
 // Original: shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0
 // Address: 004a0dd0
@@ -385,11 +385,11 @@ void __cdecl CPickList::setSelectedResult(CPickList *this_ptr,int result_value);
 
 // Original: shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
 // Address: 004a3e20
-int __cdecl CPickList::displayChoicesAndWaitForInput(CPickList *this_ptr,char *dialog_title,int config_param1,int config_param2);
+int __cdecl CPickList::displayChoicesAndWaitForInput(CPickList *this_ptr,char *dialog_title,int initial_selected_index,uint window_flags);
 
 // Original: shape_edittool.cpp_CPickList_initializeDialog_FUN_004a3ef0
 // Address: 004a3ef0
-void __cdecl CPickList::initializeDialog(CPickList *this_ptr,char *dialog_title,int initial_selected_index,int config_parameter);
+void __cdecl CPickList::initializeDialog(CPickList *this_ptr,char *dialog_title,int initial_selected_index,uint window_flags);
 
 // Original: shape_edittool.cpp_CPickList_handleInput_FUN_004a3f20
 // Address: 004a3f20
@@ -401,7 +401,7 @@ int __cdecl CPickList::handleDialogInput(CPickList *this_ptr);
 
 // Original: shape_edittool.cpp_CPickList_calculateLayoutAndCreateComponents_FUN_004a45d0
 // Address: 004a45d0
-void __cdecl CPickList::calculateLayoutAndCreateComponents(CPickList *this_ptr,char *dialog_title,int config_parameter);
+void __cdecl CPickList::calculateLayoutAndCreateComponents(CPickList *this_ptr,char *dialog_title,uint window_flags);
 
 // Original: shape_edittool.cpp_CPickList_renderDialog_FUN_004a4d40
 // Address: 004a4d40
@@ -611,17 +611,17 @@ int __cdecl getFontCharSpacing(CBitFont *font_ptr);
 // Address: 004a6f10
 int __cdecl getFontSpaceCharWidth(CBitFont *font_ptr);
 
-// Original: shape_edittool.cpp_assignInt_FUN_004a6f21
-// Address: 004a6f21
-int * __cdecl assignInt(int *dest_ptr,int *src_ptr);
+// Original: shape_edittool.cpp_assignInt_FUN_004a6f20
+// Address: 004a6f20
+int * __cdecl assignInt(int *dst,int *src);
 
-// Original: shape_edittool.cpp_assignInt_FUN_004a6f31
-// Address: 004a6f31
-int * __cdecl assignInt(int *dest_ptr,int *src_ptr);
+// Original: shape_edittool.cpp_assignInt_FUN_004a6f30
+// Address: 004a6f30
+int * __cdecl assignInt(int *dst,int *src);
 
 // Original: shape_edittool.cpp_assignInt_FUN_004a6f40
 // Address: 004a6f40
-int * __cdecl assignInt(int *dest_ptr,int *src_ptr);
+int * __cdecl assignInt(int *dst,int *src);
 
 // Original: shape_edittool.cpp_CVector3f_arrdtor_FUN_004a6f50
 // Address: 004a6f50

@@ -109,7 +109,7 @@ void __cdecl core_mission_cpp_CDemonMission_clearMissionData_FUN_00522d30(CDemon
 void __cdecl core_mission_cpp_CDemonMission_load_FUN_00522d90(CDemonMission *this_ptr,char *mission_filename,int load_flags);
 void __cdecl core_mission_cpp_CDemonMission_save_FUN_00522e30(CDemonMission *this_ptr,char *filename);
 void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonMission *this_ptr,_FILE *file_handle,int load_flags);
-void __cdecl core_mission_cpp_CDemonMission_getNextLoadedInventoryActor_FUN_00523520(CDemonMission *this_ptr,char *actor_name);
+CDemonActor * __cdecl core_mission_cpp_CDemonMission_getNextLoadedInventoryActor_FUN_00523520(CDemonMission *this_ptr,char *actor_name);
 int __cdecl core_mission_cpp_CDemonMission_loadScript_FUN_005235b0(CDemonMission *this_ptr,int is_loading);
 void __cdecl core_mission_cpp_CDemonMission_writeFile_FUN_00523600(CDemonMission *this_ptr,_FILE *file_handle);
 CDemonActor * __cdecl core_mission_cpp_CDemonMission_loadActor_FUN_00523990(CDemonMission *this_ptr,_FILE *file,CDemonActor *current_actor,char *property_description );
@@ -174,8 +174,8 @@ void __cdecl core_mobster_cpp_CMobster_addFilesToExtract_FUN_00527c40(CMobster *
 CMobster * __cdecl core_mobster_cpp_CMobster_dtor_FUN_00527c70(CMobster *this_ptr,uint flags);
 void __cdecl engine_model_c_byteswapMRGLData_FUN_00527e40(SMRGLHeaderExtended *mrgl_data,int data_size);
 SMRGLHeaderExtended * __cdecl engine_model_c_loadModelFile_FUN_00527ec0(char *filename);
-void __cdecl engine_model_c_freeMRGLData_FUN_005280b0(SMRGLHeaderExtended *modelStruct);
-SMRGLModelBounds * __stack_esi engine_model_c_getMRGLBounds_FUN_00528140 (SMRGLHeaderExtended *header,SMRGLModelBounds *output_bounds);
+void __cdecl engine_model_c_freeMRGLData_FUN_005280b0(SMRGLHeaderExtended *mrgl_data);
+SMRGLModelBounds * __stack_esi engine_model_c_getMRGLBounds_FUN_00528140 (SMRGLHeaderExtended *mrgl_data,SMRGLModelBounds *output_bounds);
 int __cdecl engine_model_c_getMRGLSize_FUN_00528700(SMRGLHeaderExtended *header);
 void __cdecl engine_model_c_loadMRGLTextures_FUN_00528870(SMRGLHeaderExtended *mrgl);
 void __cdecl engine_model_c_initializeMRGLModel_FUN_00528940(SMRGLHeaderExtended *mrgl);

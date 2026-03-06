@@ -144,7 +144,7 @@ section .text
     PUSH ECX                            ; 00506585 | g_CFilterCacheInstance
     MOV dword ptr [0x02d807c0],EDX      ; 00506586 | g_CDemonLightInstance.antialiasing_enabled
     CALL core_dfilter.cpp_CFilterCache_getFilter_FUN_00470060 ; 0050658c
-        ;   XREF to: 00470060 (UNCONDITIONAL_CALL)  ; CDemonFilter * core_dfilter.cpp_CFilterCache_getFilter_FUN_00470060(CFilterCache * this_ptr, char * filter_name, char * filter_filename, int enable_init)
+        ;   XREF to: 00470060 (UNCONDITIONAL_CALL)  ; CDemonFilter * core_dfilter.cpp_CFilterCache_getFilter_FUN_00470060(CFilterCache * this_ptr, char * filter_name, int blend_filter)
     ADD ESP,0xc                         ; 00506591
     PUSH 0x0                            ; 00506594
     PUSH 0x0                            ; 00506596

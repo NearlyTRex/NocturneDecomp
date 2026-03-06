@@ -123,7 +123,7 @@ section .text
     PUSH 0x6311ff                       ; 0050532d | = "Rule"
     PUSH EBX                            ; 00505332
     CALL core_actor.cpp_CActorPropertyList_addRuleList_FUN_0040e5a0 ; 00505333
-        ;   XREF to: 0040e5a0 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addRuleList_FUN_0040e5a0(CActorPropertyList * this_ptr, char * property_name, CRuleList * data_ptr, int max_count)
+        ;   XREF to: 0040e5a0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_addRuleList_FUN_0040e5a0(CActorPropertyList * this_ptr, char * property_name, CRuleList * data_ptr, int max_count)
     ADD ESP,0x10                        ; 00505338
     LEA EAX,[ESI + 0x80c]               ; 0050533b
     PUSH EAX                            ; 00505341

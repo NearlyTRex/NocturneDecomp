@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_openPBMFile_FUN_0054b860(CPackedBitmap *this_ptr,char *filename,int post_load_processing)
+; void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_openPBMFile_FUN_0054b860(CPackedBitmap *this_ptr,char *filename,int apply_palette_flag)
 ;
 ; Parameters:
 ; CPackedBitmap *  Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   filename
-; int              Stack[0xc]:4   post_load_processing
+; int              Stack[0xc]:4   apply_palette_flag
 ; Local Variables:
 ; undefined        Stack[-0x6c]:1  local_6c
 ;

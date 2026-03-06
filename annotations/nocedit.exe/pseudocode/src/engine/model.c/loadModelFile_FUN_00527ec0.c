@@ -33,7 +33,7 @@ LAB_00527ee6:
   if (pcVar5 != (char *)0x0) {
     iVar4 = toupper((uint)(byte)pcVar5[1]);
     if (iVar4 == 0x54) {
-      pSVar2 = engine_boss_c_modelStructNotSupported_FUN_0041db80((SMRGLHeaderExtended *)filename);
+      pSVar2 = engine_boss_c_modelStructNotSupported_FUN_0041db80(filename);
       return pSVar2;
     }
   }

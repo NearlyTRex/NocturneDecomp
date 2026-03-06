@@ -6,17 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 111,
-    "complexity_score": 62,
+    "complexity_score": 35,
     "cross_reference_count": 25,
     "function_call_count": 7,
     "global_count": 8,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 37,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unaffected_reg"
-    ],
-    "total_lines": 148
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 35,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 146
   },
   "cross_references": [
     {
@@ -326,22 +324,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 5,
-      "match": "unaff_EBP",
-      "severity": "moderate",
-      "text": "int unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 35,
-      "match": "unaff_EBP",
-      "severity": "moderate",
-      "text": "(g_ClippedVertexBuffer,g_ClippedVertexCount,unaff_EBP);",
-      "type": "unaffected_reg"
-    }
-  ]
+  "suspects": []
 }

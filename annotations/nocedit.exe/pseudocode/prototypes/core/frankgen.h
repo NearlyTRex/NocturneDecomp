@@ -31,9 +31,9 @@ void __cdecl CFrankenstienMachine::archive(CFrankenstienMachine *this_ptr);
 // Address: 004d1a40
 void __cdecl CFrankenstienMachine::process(CFrankenstienMachine *this_ptr,float delta_time);
 
-// Original: core_frankgen.cpp_CFrankenstienMachine_FUN_004d1ec0
+// Original: core_frankgen.cpp_CFrankenstienMachine_accumulateParticles_FUN_004d1ec0
 // Address: 004d1ec0
-void __cdecl CFrankenstienMachine(CFrankenstienMachine *this_ptr);
+int __cdecl CFrankenstienMachine::accumulateParticles(CFrankenstienMachine *this_ptr,float emission_rate,float delta_time);
 
 // Original: core_frankgen.cpp_CFrankenstienMachine_FUN_004d1f20
 // Address: 004d1f20

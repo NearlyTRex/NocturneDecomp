@@ -6,9 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Variable defined which should be unmapped: local_d0 */
-/* WARNING: Variable defined which should be unmapped: local_a0 */
-
 void __cdecl engine_3d_c_drawLineStrip3D_FUN_00404600(SLineStrip *line_strip)
 {
 __asm {

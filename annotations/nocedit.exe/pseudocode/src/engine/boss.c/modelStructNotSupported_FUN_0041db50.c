@@ -2,11 +2,11 @@
 // Address: 0041db50
 // Address Range: [[0041db50, 0041db75]]
 // Convention: __cdecl
-// Signature: SMRGLHeaderExtended * __cdecl engine_boss_c_modelStructNotSupported_FUN_0041db50(SMRGLHeaderExtended *header)
+// Signature: SMRGLHeaderExtended * __cdecl engine_boss_c_modelStructNotSupported_FUN_0041db50(SMRGLHeaderExtended *mrgl_data)
 
 #include "nocturne.h"
 
-SMRGLHeaderExtended * __cdecl engine_boss_c_modelStructNotSupported_FUN_0041db50(SMRGLHeaderExtended *header)
+SMRGLHeaderExtended * __cdecl engine_boss_c_modelStructNotSupported_FUN_0041db50(SMRGLHeaderExtended *mrgl_data)
 
 {
   g_CurrentFilename = "..\\engine\\boss.c";

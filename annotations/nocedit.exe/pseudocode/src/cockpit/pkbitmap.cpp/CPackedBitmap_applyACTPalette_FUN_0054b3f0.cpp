@@ -11,7 +11,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_applyACTPalette_FUN_0054b3f0(CPa
 {
   uchar auStack_100 [256];
   
-  cockpit_ckptutil_c_loadACTToIndexedPalette_FUN_00431a30(act_filename,(char *)auStack_100);
+  cockpit_ckptutil_c_loadACTToIndexedPalette_FUN_00431a30(act_filename,auStack_100);
   cockpit_pkbitmap_cpp_CPackedBitmap_applyPaletteToPackedData_FUN_0054b440(this_ptr,auStack_100);
   return;
 }

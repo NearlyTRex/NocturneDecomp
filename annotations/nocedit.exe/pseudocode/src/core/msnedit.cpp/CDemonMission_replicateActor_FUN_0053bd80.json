@@ -2,75 +2,45 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 39,
-        "message": "use of undeclared identifier 'stack0xffffff5c'"
-      },
-      {
         "category": "other",
         "column": 39,
-        "line": 43,
+        "line": 36,
         "message": "member reference base type 'const char[13]' is not a structure or union"
       },
       {
         "category": "other",
         "column": 12,
-        "line": 43,
+        "line": 36,
         "message": "array type 'char[4]' is not assignable"
       },
       {
         "category": "other",
         "column": 41,
-        "line": 44,
+        "line": 37,
         "message": "member reference base type 'const char[13]' is not a structure or union"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 44,
+        "line": 37,
         "message": "array type 'char[4]' is not assignable"
       },
       {
         "category": "other",
         "column": 41,
-        "line": 45,
+        "line": 38,
         "message": "member reference base type 'const char[13]' is not a structure or union"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 45,
+        "line": 38,
         "message": "array type 'char[4]' is not assignable"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 80,
-        "message": "use of undeclared identifier 'stack0xffffff5c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 51,
-        "line": 90,
-        "message": "use of undeclared identifier 'stack0xffffff5b'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 91,
-        "message": "use of undeclared identifier 'stack0xffffff5b'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 50,
-        "line": 99,
-        "message": "use of undeclared identifier 'stack0xffffff5c'"
       },
       {
         "category": "incompatible_types",
         "column": 12,
-        "line": 145,
+        "line": 136,
         "message": "incompatible pointer types assigning to 'CDemonActor *' from 'CCharacter *'"
       }
     ],
@@ -79,19 +49,17 @@
   },
   "complexity": {
     "assembly_lines": 322,
-    "complexity_score": 403,
+    "complexity_score": 174,
     "cross_reference_count": 1,
     "function_call_count": 18,
     "global_count": 26,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 148,
-    "suspect_count": 24,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 139,
+    "suspect_count": 3,
     "suspect_types": [
-      "stack_param",
-      "stack_ref",
       "unknown_field"
     ],
-    "total_lines": 470
+    "total_lines": 461
   },
   "cross_references": [
     {
@@ -473,80 +441,8 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000010",
-      "severity": "moderate",
-      "text": "CDemonMission *in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_ffffff5c",
-      "severity": "moderate",
-      "text": "uint in_stack_ffffff5c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_ffffff60",
-      "severity": "moderate",
-      "text": "uint in_stack_ffffff60;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_ffffff64",
-      "severity": "moderate",
-      "text": "uint in_stack_ffffff64;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_ffffff68",
-      "severity": "moderate",
-      "text": "uint in_stack_ffffff68;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_ffffff6c",
-      "severity": "moderate",
-      "text": "uint in_stack_ffffff6c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_ffffff70",
-      "severity": "moderate",
-      "text": "uint in_stack_ffffff70;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 23,
-      "match": "in_stack_ffffff74",
-      "severity": "moderate",
-      "text": "uint in_stack_ffffff74;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 32,
-      "match": "&stack0xffffff5c",
-      "severity": "moderate",
-      "text": "pcVar9 = &stack0xffffff5c;",
-      "type": "stack_ref"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 36,
+      "line": 29,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_20 = (char  [4])\"DUPACTOR.TMP\"._0_4_;",
@@ -554,7 +450,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 37,
+      "line": 30,
       "match": "._4_4_",
       "severity": "mild",
       "text": "acStack_1c = (char  [4])\"DUPACTOR.TMP\"._4_4_;",
@@ -562,107 +458,11 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 38,
+      "line": 31,
       "match": "._8_4_",
       "severity": "mild",
       "text": "acStack_18 = (char  [4])\"DUPACTOR.TMP\"._8_4_;",
       "type": "unknown_field"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 73,
-      "match": "&stack0xffffff5c",
-      "severity": "moderate",
-      "text": "pcVar9 = &stack0xffffff5c;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 83,
-      "match": "&stack0xffffff5b",
-      "severity": "moderate",
-      "text": "(g_CharacterClassificationTable[(byte)((&stack0xffffff5b)[iVar7] + 1)] & 0x20) != 0))) {",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 84,
-      "match": "&stack0xffffff5b",
-      "severity": "moderate",
-      "text": "(&stack0xffffff5b)[iVar7] = 0;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 92,
-      "match": "&stack0xffffff5c",
-      "severity": "moderate",
-      "text": "(this_ptr,this_ptr_00->actor_name,&stack0xffffff5c);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 117,
-      "match": "in_stack_ffffff5c",
-      "severity": "moderate",
-      "text": "(this_ptr_00,2,in_stack_ffffff5c,in_stack_ffffff60,in_stack_ffffff64,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 117,
-      "match": "in_stack_ffffff60",
-      "severity": "moderate",
-      "text": "(this_ptr_00,2,in_stack_ffffff5c,in_stack_ffffff60,in_stack_ffffff64,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 117,
-      "match": "in_stack_ffffff64",
-      "severity": "moderate",
-      "text": "(this_ptr_00,2,in_stack_ffffff5c,in_stack_ffffff60,in_stack_ffffff64,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 118,
-      "match": "in_stack_ffffff68",
-      "severity": "moderate",
-      "text": "in_stack_ffffff68,in_stack_ffffff6c,in_stack_ffffff70,in_stack_ffffff74);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 118,
-      "match": "in_stack_ffffff6c",
-      "severity": "moderate",
-      "text": "in_stack_ffffff68,in_stack_ffffff6c,in_stack_ffffff70,in_stack_ffffff74);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 118,
-      "match": "in_stack_ffffff70",
-      "severity": "moderate",
-      "text": "in_stack_ffffff68,in_stack_ffffff6c,in_stack_ffffff70,in_stack_ffffff74);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 118,
-      "match": "in_stack_ffffff74",
-      "severity": "moderate",
-      "text": "in_stack_ffffff68,in_stack_ffffff6c,in_stack_ffffff70,in_stack_ffffff74);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 149,
-      "match": "in_stack_00000010",
-      "severity": "moderate",
-      "text": "core_msnedit_cpp_CDemonMission_selectActor_FUN_0053c140(in_stack_00000010,this_ptr_00);",
-      "type": "stack_param"
     }
   ]
 }

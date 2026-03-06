@@ -2,15 +2,14 @@
 // Address: 0044cdf0
 // Address Range: [[0044cdf0, 0044cf1b]]
 // Convention: __cdecl
-// Signature: int __cdecl core_dcamera_cpp_CDemonCamera_endBackgroundScene_FUN_0044cdf0(CDemonCamera *this_ptr,int restore_zbuffer)
+// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_endBackgroundScene_FUN_0044cdf0(CDemonCamera *this_ptr,int restore_zbuffer)
 
 #include "nocturne.h"
 
-int __cdecl core_dcamera_cpp_CDemonCamera_endBackgroundScene_FUN_0044cdf0(CDemonCamera *this_ptr,int restore_zbuffer)
+void __cdecl core_dcamera_cpp_CDemonCamera_endBackgroundScene_FUN_0044cdf0(CDemonCamera *this_ptr,int restore_zbuffer)
 
 {
   int *piVar1;
-  int in_EAX;
   int byte_count;
   uint uVar2;
   int iVar3;
@@ -46,7 +45,6 @@ int __cdecl core_dcamera_cpp_CDemonCamera_endBackgroundScene_FUN_0044cdf0(CDemon
     g_RedBitPosition.dword = g_BackgroundSavedRedBitPosition;
     g_GreenBitPosition.dword = g_BackgroundSavedGreenBitPosition;
     g_BlueBitPosition.dword = g_BackgroundSavedBlueBitPosition;
-    in_EAX = g_BackgroundSavedBlueBitPosition;
     if (restore_zbuffer != 0) {
       iVar3 = 0;
       if (0 < this_ptr->framebuffer_height) {
@@ -60,14 +58,13 @@ int __cdecl core_dcamera_cpp_CDemonCamera_endBackgroundScene_FUN_0044cdf0(CDemon
           core_dstrender_cpp_memcpyMMX_FUN_00492001
                     ((void *)(iVar4 * 4 + (int)this_ptr->zbuffer_aligned),
                      (void *)(*piVar1 + byte_count),byte_count);
-          in_EAX = this_ptr->framebuffer_height;
-        } while (iVar3 < in_EAX);
+        } while (iVar3 < this_ptr->framebuffer_height);
       }
       if (g_UseExternalRenderer != 0) {
-        iVar3 = wincore_windll_cpp_masterZBuffer_FUN_005b7d00(0);
-        return iVar3;
+        wincore_windll_cpp_masterZBuffer_FUN_005b7d00(0);
+        return;
       }
     }
   }
-  return in_EAX;
+  return;
 }

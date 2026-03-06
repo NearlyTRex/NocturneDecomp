@@ -50,7 +50,7 @@ section .text
     PUSH 0x61772e                       ; 0042f74d | = "cloth"
     PUSH ESI                            ; 0042f752
     CALL core_actor.cpp_CActorPropertyList_addClothList_FUN_0040e500 ; 0042f753
-        ;   XREF to: 0040e500 (UNCONDITIONAL_CALL)  ; CActorProperty * core_actor.cpp_CActorPropertyList_addClothList_FUN_0040e500(CActorPropertyList * this_ptr, char * property_name, CClothList * data_ptr, int max_count)
+        ;   XREF to: 0040e500 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_addClothList_FUN_0040e500(CActorPropertyList * this_ptr, char * property_name, CClothList * data_ptr, int max_count)
     ADD ESP,0x10                        ; 0042f758
     MOV EAX,EBX                         ; 0042f75b
     MOV ECX,dword ptr [EBX + 0x24ac]    ; 0042f75d

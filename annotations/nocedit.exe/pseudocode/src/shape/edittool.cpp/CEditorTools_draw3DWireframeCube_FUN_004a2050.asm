@@ -9,8 +9,6 @@
 ; CVector3f *      Stack[0xc]:4   corner2
 ; int              Stack[0x10]:4   color_value
 ; Local Variables:
-; SRenderVertex    Stack[-0x170]:48  local_170
-; SRenderVertex    Stack[-0x140]:48  local_140
 ; undefined4       Stack[-0x10c]:4  local_10c
 ; undefined4       Stack[-0x108]:4  local_108
 ; undefined4       Stack[-0xb0]:4  local_b0

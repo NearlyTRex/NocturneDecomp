@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_model_c_freeMRGLData_FUN_005280b0(SMRGLHeaderExtended *modelStruct)
+; void __cdecl engine_model_c_freeMRGLData_FUN_005280b0(SMRGLHeaderExtended *mrgl_data)
 ;
 ; Parameters:
-; SMRGLHeaderExtended * Stack[0x4]:4   modelStruct
+; SMRGLHeaderExtended * Stack[0x4]:4   mrgl_data
 ;
 ; XREF[7]:
 ;   engine_fileio.cpp_CFileManager_loadAndProcessMRGLModel_FUN_004b5610 at 004b562f
@@ -44,7 +44,7 @@ section .text
         ;   XREF to: 00528128 (CONDITIONAL_JUMP)  ; LAB_00528128
     PUSH EBP                            ; 005280c9
     CALL engine_boss.c_modelStructNotSupported_FUN_0041dbb0 ; 005280ca
-        ;   XREF to: 0041dbb0 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_boss.c_modelStructNotSupported_FUN_0041dbb0(SMRGLHeaderExtended * header)
+        ;   XREF to: 0041dbb0 (UNCONDITIONAL_CALL)  ; void engine_boss.c_modelStructNotSupported_FUN_0041dbb0(SMRGLHeaderExtended * mrgl_data)
     ADD ESP,0x4                         ; 005280cf
     POP EBP                             ; 005280d2
         ;   Label: LAB_005280d2
@@ -56,7 +56,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 005280d7
     PUSH EBX                            ; 005280da
     CALL engine_model.c_freeMRGLData_FUN_005280b0 ; 005280db
-        ;   XREF to: 005280b0 (UNCONDITIONAL_CALL)  ; void engine_model.c_freeMRGLData_FUN_005280b0(SMRGLHeaderExtended * modelStruct)
+        ;   XREF to: 005280b0 (UNCONDITIONAL_CALL)  ; void engine_model.c_freeMRGLData_FUN_005280b0(SMRGLHeaderExtended * mrgl_data)
     ADD ESP,0x4                         ; 005280e0
     MOV ESI,dword ptr [EBP + 0x8]       ; 005280e3
     XOR EBX,EBX                         ; 005280e6
@@ -70,7 +70,7 @@ section .text
     ADD ESI,0x4                         ; 005280f5
     INC EBX                             ; 005280f8
     CALL engine_model.c_freeMRGLData_FUN_005280b0 ; 005280f9
-        ;   XREF to: 005280b0 (UNCONDITIONAL_CALL)  ; void engine_model.c_freeMRGLData_FUN_005280b0(SMRGLHeaderExtended * modelStruct)
+        ;   XREF to: 005280b0 (UNCONDITIONAL_CALL)  ; void engine_model.c_freeMRGLData_FUN_005280b0(SMRGLHeaderExtended * mrgl_data)
     MOV EDX,dword ptr [EDI + 0x8]       ; 005280fe
     ADD ESP,0x4                         ; 00528101
     CMP EBX,EDX                         ; 00528104

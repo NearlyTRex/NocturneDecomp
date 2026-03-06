@@ -7,8 +7,6 @@
 ; int              Stack[0x4]:4   vertex_index1
 ; int              Stack[0x8]:4   vertex_index2
 ; Local Variables:
-; SRenderVertex    Stack[-0xc8]:48  local_c8
-; SRenderVertex    Stack[-0x98]:48  local_98
 ; SRenderVertex    Stack[-0x68]:48  local_68
 ; SRenderVertex    Stack[-0x38]:48  local_38
 ;

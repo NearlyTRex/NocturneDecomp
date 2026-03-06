@@ -4,7 +4,7 @@
       {
         "category": "format_error",
         "column": 38,
-        "line": 103,
+        "line": 104,
         "message": "format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]"
       }
     ],
@@ -13,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 366,
-    "complexity_score": 194,
+    "complexity_score": 195,
     "cross_reference_count": 1,
     "function_call_count": 16,
     "global_count": 40,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 169,
+    "pseudocode_lines": 170,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 535
+    "total_lines": 536
   },
   "cross_references": [
     {
@@ -563,7 +563,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 105,
+      "line": 106,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "iVar2 = *(int *)((int)&this_ptr->xref_entries->display_index + iVar4);",
@@ -571,7 +571,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 107,
+      "line": 108,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&this_ptr->xref_entries->display_index + iVar4) = iVar2 + 1;",

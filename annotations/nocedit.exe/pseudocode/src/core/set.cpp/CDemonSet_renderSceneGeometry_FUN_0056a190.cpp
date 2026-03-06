@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Variable defined which should be unmapped: local_1c */
-
 void __cdecl core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0056a190(CDemonSet *this_ptr,float frustum_param,int render_mode)
 
 {
@@ -15,7 +13,7 @@ void __cdecl core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0056a190(CDemonSet *
   int *visible_cube_indices;
   int iVar1;
   CDemonSet *pCVar2;
-  CVector3f local_1c;
+  CVector3f CStack_1c;
   
   engine_drender_cpp_CDemonRenderer_setLightDirection_FUN_0048c6c0
             (g_CDemonRendererPtr2,&g_GlobalLightDirection);
@@ -46,7 +44,7 @@ LAB_0056a1fb:
     core_dtrace_cpp_CDemonRaytrace_savePVS_FUN_00498fb0
               (&g_CDemonRaytraceInstance,
                &this_ptr->cameras[this_ptr->selected_camera_index].pvs_count,
-               &this_ptr->cameras[this_ptr->selected_camera_index].pvs_list,(int **)local_1c.x);
+               &this_ptr->cameras[this_ptr->selected_camera_index].pvs_list);
   }
   iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
   if (iVar1 == 0) {
@@ -55,11 +53,11 @@ LAB_0056a1fb:
     }
     if (g_UseExternalRenderer == 0) {
       if (this_ptr->use_enviro_model != 0) {
-        local_1c.x = (float)g_UseExternalRenderer;
-        local_1c.y = (float)g_UseExternalRenderer;
-        local_1c.z = (float)g_UseExternalRenderer;
+        CStack_1c.x = (float)g_UseExternalRenderer;
+        CStack_1c.y = (float)g_UseExternalRenderer;
+        CStack_1c.z = (float)g_UseExternalRenderer;
         engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-                  (g_CDemonRendererPtr2,&local_1c);
+                  (g_CDemonRendererPtr2,&CStack_1c);
         core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850
                   (&g_CKeyFramedModelInstance,0,(CKeyFramedModelInstance *)0x0,-1);
       }

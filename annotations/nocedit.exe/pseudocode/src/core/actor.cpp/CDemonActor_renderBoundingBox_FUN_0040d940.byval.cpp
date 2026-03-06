@@ -6,10 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Variable defined which should be unmapped: local_17c */
-/* WARNING: Variable defined which should be unmapped: local_14c */
-/* WARNING: Variable defined which should be unmapped: local_1ac */
-
 void __cdecl core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(CDemonActor *this_ptr,uint32_t color)
 {
 __asm {

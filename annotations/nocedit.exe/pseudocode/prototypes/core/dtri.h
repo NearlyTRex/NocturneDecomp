@@ -99,10 +99,6 @@ int __cdecl getClippedTriangleCount(void);
 // Address: 0049cb40
 CDemonTriangle * __cdecl buildClipTriangleFan(void);
 
-// Original: core_dtri.cpp_buildClipTriangleFan_FUN_0049cb5a
-// Address: 0049cb5a
-CDemonTriangle * __cdecl buildClipTriangleFan(int triangle_count);
-
 // Original: core_dtri.cpp_getClippedVertexCount_FUN_0049cbb0
 // Address: 0049cbb0
 int __cdecl getClippedVertexCount(void);

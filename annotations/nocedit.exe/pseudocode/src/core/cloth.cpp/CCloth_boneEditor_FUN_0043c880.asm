@@ -40,11 +40,11 @@
 ;   CKeys* g_CKeysPtr = 02dcd7d4
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CSpotView* g_CSpotViewPtr = 03f6b9e0
-;   CVector3f CVector3f_00838e40
-;   undefined4 CVector3f_00838e40.y
-;   undefined4 CVector3f_00838e40.z
-;   CVector3f CVector3f_00838e4c
-;   undefined4 CVector3f_00838e4c.y
+;   UVector3 UNION_UVector3_00838e40
+;   undefined4 UNION_UVector3_00838e40+4
+;   undefined4 UNION_UVector3_00838e40+8
+;   UVector3 UNION_UVector3_00838e4c
+;   undefined4 UNION_UVector3_00838e4c+4
 ;   ... and 17 more
 ;
 ; Called Functions:
@@ -90,13 +90,13 @@ section .text
     MOV dword ptr [ESP + 0x510],EAX     ; 0043c8bf
     MOV dword ptr [ESP + 0x514],EAX     ; 0043c8c6
     MOV dword ptr [ESP + 0x534],EAX     ; 0043c8cd
-    MOV [0x00838e48],EAX                ; 0043c8d4 | CVector3f_00838e40.z
-    MOV [0x00838e44],EAX                ; 0043c8d9 | CVector3f_00838e40.y
-    MOV [0x00838e40],EAX                ; 0043c8de | CVector3f_00838e40
-    MOV [0x00838e54],EAX                ; 0043c8e3 | CVector3f_00838e4c.z
-    MOV [0x00838e50],EAX                ; 0043c8e8 | CVector3f_00838e4c.y
+    MOV [0x00838e48],EAX                ; 0043c8d4 | UNION_UVector3_00838e40+8
+    MOV [0x00838e44],EAX                ; 0043c8d9 | UNION_UVector3_00838e40+4
+    MOV [0x00838e40],EAX                ; 0043c8de | UNION_UVector3_00838e40
+    MOV [0x00838e54],EAX                ; 0043c8e3 | UNION_UVector3_00838e4c+8
+    MOV [0x00838e50],EAX                ; 0043c8e8 | UNION_UVector3_00838e4c+4
     PUSH EDI                            ; 0043c8ed | g_CSpotViewInstance
-    MOV [0x00838e4c],EAX                ; 0043c8ee | CVector3f_00838e4c
+    MOV [0x00838e4c],EAX                ; 0043c8ee | UNION_UVector3_00838e4c
     XOR EBX,EDX                         ; 0043c8f3
     CALL shape_spotview.cpp_CSpotView_reset_FUN_005b9620 ; 0043c8f5
         ;   XREF to: 005b9620 (UNCONDITIONAL_CALL)  ; void shape_spotview.cpp_CSpotView_reset_FUN_005b9620(CSpotView * this_ptr, uint control_flags)
@@ -117,9 +117,9 @@ section .text
         ;   XREF to: 005a0820 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0043c925
     PUSH 0x838e58                       ; 0043c928 | g_CDeformableModelInstanceInstance
-    PUSH 0x838e4c                       ; 0043c92d | CVector3f_00838e4c
+    PUSH 0x838e4c                       ; 0043c92d | UNION_UVector3_00838e4c
     MOV EBX,EAX                         ; 0043c932
-    PUSH 0x838e40                       ; 0043c934 | CVector3f_00838e40
+    PUSH 0x838e40                       ; 0043c934 | UNION_UVector3_00838e40
     MOV dword ptr [ESP + 0x530],EAX     ; 0043c939
     MOV EAX,[0x006810c8]                ; 0043c940 | g_CDemonSetPtr | g_CDemonSetInstance
     PUSH ESI                            ; 0043c945
@@ -184,8 +184,8 @@ section .text
     PUSH 0x838e58                       ; 0043ca40 | g_CDeformableModelInstanceInstance
     PUSH 0x0                            ; 0043ca45
     PUSH dword ptr [ESP + 0x8]          ; 0043ca47
-    PUSH 0x838e4c                       ; 0043ca4b | CVector3f_00838e4c
-    PUSH 0x838e40                       ; 0043ca50 | CVector3f_00838e40
+    PUSH 0x838e4c                       ; 0043ca4b | UNION_UVector3_00838e4c
+    PUSH 0x838e40                       ; 0043ca50 | UNION_UVector3_00838e40
     PUSH ESI                            ; 0043ca55
     CALL core_cloth.cpp_CCloth_process_FUN_0043ab80 ; 0043ca56
         ;   XREF to: 0043ab80 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_process_FUN_0043ab80(CCloth * this_ptr, CVector3f * position, CVector3f * euler, float delta_time, ...)
@@ -217,14 +217,14 @@ section .text
     ADD ESP,0x14                        ; 0043ca9c
     CALL wincore_windll.cpp_clearZBuffer_FUN_005b3ed4 ; 0043ca9f
         ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearZBuffer_FUN_005b3ed4()
-    PUSH 0x838e40                       ; 0043caa4 | CVector3f_00838e40
+    PUSH 0x838e40                       ; 0043caa4 | UNION_UVector3_00838e40
     MOV EDI,dword ptr [0x006703ec]      ; 0043caa9 | g_CDemonRendererPtr2
     PUSH EDI                            ; 0043caaf | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450 ; 0043cab0
         ;   XREF to: 0048c450 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450(CDemonRenderer * this_ptr, CVector3f * world_position)
     ADD ESP,0x8                         ; 0043cab5
     PUSH 0x0                            ; 0043cab8
-    PUSH 0x838e4c                       ; 0043caba | CVector3f_00838e4c
+    PUSH 0x838e4c                       ; 0043caba | UNION_UVector3_00838e4c
     MOV EAX,[0x006703ec]                ; 0043cabf | g_CDemonRendererPtr2
     PUSH EAX                            ; 0043cac4 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 0043cac5

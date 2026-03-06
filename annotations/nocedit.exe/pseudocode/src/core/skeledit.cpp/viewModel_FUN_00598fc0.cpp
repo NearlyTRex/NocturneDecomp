@@ -162,7 +162,7 @@ LAB_00599119:
       g_CurrentDebugLine = 0x1b7e;
       g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
       if (this_ptr_00 != (CDeformableModelInstance *)0x0) {
-        (*((this_ptr_00->motion_controller).vtable)->dtor)(&this_ptr_00->motion_controller);
+        (*((this_ptr_00->motion_controller).vtable)->dtor)(&this_ptr_00->motion_controller,2);
       }
     }
   } while (iVar4 != 0x1b);
