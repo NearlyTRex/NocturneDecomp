@@ -15,11 +15,7 @@ void __cdecl core_frankgen_cpp_CFrankenstienMachine_process_FUN_004d1a40(CFranke
   CVector3f *pCVar4;
   int iVar5;
   int alpha_value;
-  CFrankenstienMachine *in_stack_ffffff80;
-  float fStack_7c;
-  float fStack_78;
-  float fStack_74;
-  float fStack_6c;
+  CBoundingBox3D local_80;
   CBoundingBox3D local_68;
   CVector3f CStack_50;
   uint uStack_44;
@@ -32,8 +28,7 @@ void __cdecl core_frankgen_cpp_CFrankenstienMachine_process_FUN_004d1a40(CFranke
   float fStack_c;
   
   FLOAT_02d7b7f0 = this_ptr->master_frame;
-  pCVar2 = (CFrankenstienMachine *)
-           core_frankgen_cpp_CFrankenstienMachine_findLeader_FUN_004d2330(in_stack_ffffff80);
+  pCVar2 = (CFrankenstienMachine *)core_frankgen_cpp_findLeader_FUN_004d2330();
   if (pCVar2 == this_ptr) {
     fVar1 = delta_time * 30.0f + this_ptr->master_frame;
     this_ptr->master_frame = fVar1;
@@ -47,7 +42,7 @@ void __cdecl core_frankgen_cpp_CFrankenstienMachine_process_FUN_004d1a40(CFranke
   if (this_ptr->master_frame < FLOAT_02d7b7f0) {
     FLOAT_02d7b7f0 = FLOAT_02d7b7f0 - 2300.0f;
   }
-  core_frankgen_cpp_CFrankenstienMachine_FUN_004d2190(this_ptr);
+  core_frankgen_cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004d2190(this_ptr);
   switch(this_ptr->which_part) {
   case 0:
     fVar1 = this_ptr->master_frame;
@@ -92,12 +87,11 @@ void __cdecl core_frankgen_cpp_CFrankenstienMachine_process_FUN_004d1a40(CFranke
       }
     }
     if ((0x44e10000 < (int)this_ptr->master_frame) && ((int)this_ptr->master_frame < 0x44ed8000)) {
-      (*((this_ptr->base).vtable._ub)->getBoundingBox)
-                (&this_ptr->base,(CBoundingBox3D *)&stack0xffffff80);
-      CStack_38.x = core_actor_cpp_getRandomFloat_FUN_0040cc10((float)in_stack_ffffff80,fStack_74);
-      CStack_38.y = fStack_7c;
+      (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&local_80);
+      CStack_38.x = core_actor_cpp_getRandomFloat_FUN_0040cc10(local_80.min.x,local_80.max.x);
+      CStack_38.y = local_80.min.y;
       fStack_c = CStack_38.x;
-      CStack_38.z = core_actor_cpp_getRandomFloat_FUN_0040cc10(fStack_78,fStack_6c);
+      CStack_38.z = core_actor_cpp_getRandomFloat_FUN_0040cc10(local_80.min.z,local_80.max.z);
       fStack_c = CStack_38.z;
       pCVar4 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                          (&this_ptr->base,&CStack_20,&CStack_38);
@@ -109,35 +103,48 @@ void __cdecl core_frankgen_cpp_CFrankenstienMachine_process_FUN_004d1a40(CFranke
       core_fire_cpp_CFireEffect_createSpark_FUN_004c79d0
                 (g_CFireEffectPtr,&CStack_38,(CVector3f *)0x0,0x4000,0x10000,0,0xffff);
     }
-    core_frankgen_cpp_CFrankenstienMachine_FUN_004d1f20(this_ptr);
-    core_frankgen_cpp_CFrankenstienMachine_FUN_004d1f20(this_ptr);
-    core_frankgen_cpp_CFrankenstienMachine_FUN_004d1f20(this_ptr);
-    core_frankgen_cpp_CFrankenstienMachine_FUN_004d1f20(this_ptr);
-    core_frankgen_cpp_CFrankenstienMachine_FUN_004d1f20(this_ptr);
-    core_frankgen_cpp_CFrankenstienMachine_FUN_004d1f20(this_ptr);
+    core_frankgen_cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004d1f20
+              (this_ptr,1.0,"frankx-bed1.wav");
+    core_frankgen_cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004d1f20
+              (this_ptr,475.0,"frankx-bed2.wav");
+    core_frankgen_cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004d1f20
+              (this_ptr,809.0,"frankx-bed3.wav");
+    core_frankgen_cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004d1f20
+              (this_ptr,1050.0,"frankx-bed4.wav");
+    core_frankgen_cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004d1f20
+              (this_ptr,1380.0,"frankx-water-dip.wav");
+    core_frankgen_cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004d1f20
+              (this_ptr,2040.0,"frankx-big-ramp-bed5.wav");
 switchD_004d1aab_caseD_7:
     return;
   case 1:
-    core_frankgen_cpp_CFrankenstienMachine_FUN_004d1f20(this_ptr);
+    core_frankgen_cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004d1f20
+              (this_ptr,131.0,"frankx-crane1.wav");
     return;
   case 2:
-    core_frankgen_cpp_CFrankenstienMachine_FUN_004d1f20(this_ptr);
+    core_frankgen_cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004d1f20
+              (this_ptr,527.0,"frankx-crane2.wav");
     return;
   case 3:
-    core_frankgen_cpp_CFrankenstienMachine_FUN_004d1f20(this_ptr);
+    core_frankgen_cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004d1f20
+              (this_ptr,1089.0,"frankx-crane3.wav");
     return;
   case 4:
   case 7:
     goto switchD_004d1aab_caseD_7;
   case 5:
-    core_frankgen_cpp_CFrankenstienMachine_FUN_004d1f20(this_ptr);
+    core_frankgen_cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004d1f20
+              (this_ptr,864.0,"frankx-arm.wav");
     return;
   case 6:
-    core_frankgen_cpp_CFrankenstienMachine_FUN_004d1f20(this_ptr);
-    core_frankgen_cpp_CFrankenstienMachine_FUN_004d1f20(this_ptr);
+    core_frankgen_cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004d1f20
+              (this_ptr,1702.0,"frankx-flap-up.wav");
+    core_frankgen_cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004d1f20
+              (this_ptr,1881.0,"frankx-flap-down.wav");
     return;
   case 8:
-    core_frankgen_cpp_CFrankenstienMachine_FUN_004d1f20(this_ptr);
+    core_frankgen_cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004d1f20
+              (this_ptr,1950.0,"frankx-big-ramp.wav");
     return;
   default:
     g_CurrentFilename = "..\\core\\frankgen.cpp";

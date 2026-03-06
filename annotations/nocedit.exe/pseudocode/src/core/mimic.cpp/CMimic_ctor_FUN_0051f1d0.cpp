@@ -6,63 +6,49 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
+
 CMimic * __cdecl core_mimic_cpp_CMimic_ctor_FUN_0051f1d0(CMimic *this_ptr)
 
 {
   char cVar1;
-  SMRGLTextureLod *pSVar2;
+  float fVar2;
   float fVar3;
-  float fVar4;
-  CEnemy *pCVar5;
-  CCloth *pCVar6;
-  CMorph *pCVar7;
-  char *pcVar8;
-  char *pcVar9;
+  CMimic *pCVar5;
+  CMimic_ptr_49028 pCVar6;
+  CMimic_ptr_310820 pCVar7;
+  char *pcVar4;
+  char *pcVar5;
   
-  pCVar5 = core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base);
-  pCVar6 = core_cloth_cpp_CCloth_ctor_FUN_00438ba0
-                     ((CCloth *)(pCVar5[1].base.base.create_event + 0x50));
-  pCVar7 = core_morph_cpp_CMorph_ctor_FUN_0052b310
-                     ((CMorph *)(pCVar6[1].model.model_filename + 0x30));
-  *(CDemonActor_vtable **)pCVar7[-100].models[0].textures[0xe].textures[0].texture_name =
-       &g_CMimicVTable;
-  pCVar7[-0x60].models[0].parts[3].face_count = 0x3f000000;
-  pcVar8 = "CGhoul";
-  pCVar7[-0x60].models[0].parts[3].start_vertex = 0x3f800000;
-  fVar3 = 50.0f;
-  pCVar7[-0x55].models[1].textures[0x10].textures[2].texture_name[0xc] = '\0';
-  fVar4 = 100.0f;
-  *(byte *)&pCVar7[-0x55].models[1].textures[0x12].textures[1].base.type = 0;
-  pCVar7[-0x60].models[0].parts[3].start_face = (int)fVar3;
-  pCVar7[-0x60].models[0].parts[4].vertex_count = (int)fVar4;
-  pCVar7[-1].models[1].textures[0x13].textures[2].base.count = 0;
-  pcVar9 = pCVar7[-1].models[1].textures[0x13].textures[2].texture_name + 4;
-  pSVar2 = pCVar7[-1].models[1].textures + 0x13;
-  pSVar2->textures[2].texture_name[0] = '\0';
-  pSVar2->textures[2].texture_name[1] = '\0';
-  pSVar2->textures[2].texture_name[2] = '\0';
-  pSVar2->textures[2].texture_name[3] = '\0';
+  pCVar5 = (CMimic *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base);
+  pCVar6 = core_cloth_cpp_CCloth_ctor_FUN_00438ba0(&pCVar5->cloth);
+  pCVar7 = core_morph_cpp_CMorph_ctor_FUN_0052b310(&ADJ(pCVar6)->morph);
+  ADJ(pCVar7)->base.base.base.vtable._ub = &g_CMimicVTable;
+  ADJ(pCVar7)->base.base.collision_cylinder_height = 0.5;
+  pcVar4 = "CGhoul";
+  ADJ(pCVar7)->base.base.collision_cylinder_radius = 1.0;
+  fVar2 = 50.0f;
+  ADJ(pCVar7)->mirror_condition[0] = '\0';
+  fVar3 = 100.0f;
+  ADJ(pCVar7)->attack_condition[0] = '\0';
+  ADJ(pCVar7)->base.base.ai_detection_range_min = fVar2;
+  ADJ(pCVar7)->base.base.ai_detection_range_max = fVar3;
+  ADJ(pCVar7)->attack_mode = 0;
+  pcVar5 = ADJ(pCVar7)->morph_actor_type;
+  ADJ(pCVar7)->mirror_plane_actor = (CDemonActor *)0x0;
   do {
-    cVar1 = *pcVar8;
-    *pcVar9 = cVar1;
+    cVar1 = *pcVar4;
+    *pcVar5 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar8[1];
-    pcVar8 = pcVar8 + 2;
-    pcVar9[1] = cVar1;
-    pcVar9 = pcVar9 + 2;
+    cVar1 = pcVar4[1];
+    pcVar4 = pcVar4 + 2;
+    pcVar5[1] = cVar1;
+    pcVar5 = pcVar5 + 2;
   } while (cVar1 != '\0');
-  pCVar7[1].models[0].parts[0].vertex_count = 0;
-  pCVar7[1].models[0].part_count = -0x40800000;
-  pCVar7[-100].models[0].textures[0xd].textures[0].base.count = 0x10000;
-  pSVar2 = pCVar7[-100].models[0].textures;
-  pSVar2[0xd].textures[0].texture_name[0] = '\0';
-  pSVar2[0xd].textures[0].texture_name[1] = '\0';
-  pSVar2[0xd].textures[0].texture_name[2] = '\x01';
-  pSVar2[0xd].textures[0].texture_name[3] = '\0';
-  pSVar2 = pCVar7[-100].models[0].textures + 0xd;
-  pSVar2->textures[0].texture_name[4] = '\0';
-  pSVar2->textures[0].texture_name[5] = '\0';
-  pSVar2->textures[0].texture_name[6] = '\x01';
-  pSVar2->textures[0].texture_name[7] = '\0';
-  return (CMimic *)&pCVar7[-100].models[0].textures[9].textures[1].base.count;
+  ADJ(pCVar7)->morph_target_actor = (CDemonActor *)0x0;
+  ADJ(pCVar7)->morph_blend = -1.0;
+  ADJ(pCVar7)->base.base.base.scale.x = 0x10000;
+  ADJ(pCVar7)->base.base.base.scale.y = 0x10000;
+  ADJ(pCVar7)->base.base.base.scale.z = 0x10000;
+  return ADJ(pCVar7);
 }

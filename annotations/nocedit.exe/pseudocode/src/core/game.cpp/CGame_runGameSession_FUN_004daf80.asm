@@ -343,7 +343,7 @@ section .text
     ADD ESP,0x4                         ; 004db38b
     PUSH ESI                            ; 004db38e
     CALL core_game.cpp_CGame_processFudge_FUN_004d8750 ; 004db38f
-        ;   XREF to: 004d8750 (UNCONDITIONAL_CALL)  ; int core_game.cpp_CGame_processFudge_FUN_004d8750(CGame * this_ptr, float delta_time, int additional_param)
+        ;   XREF to: 004d8750 (UNCONDITIONAL_CALL)  ; int core_game.cpp_CGame_processFudge_FUN_004d8750(CGame * this_ptr)
     ADD ESP,0x4                         ; 004db394
     PUSH ESI                            ; 004db397
     CALL core_game.cpp_CGame_playerControls_FUN_004dbd80 ; 004db398

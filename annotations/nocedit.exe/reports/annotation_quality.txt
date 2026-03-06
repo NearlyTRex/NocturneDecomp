@@ -12,9 +12,9 @@ SUMMARY STATISTICS
 ====================================================================================================
 
   Total functions analyzed:          6,486
-  Unnamed functions (FUN_):          222 ( 3.4%)
+  Unnamed functions (FUN_):          217 ( 3.3%)
   Functions with unnamed params:     12 ( 0.2%)
-  Functions with type issues:        2,392 (36.9%)
+  Functions with type issues:        2,389 (36.8%)
 
   Type issue breakdown:
     Wrong return type (void):          0
@@ -22,7 +22,7 @@ SUMMARY STATISTICS
     Missing register params:           4
     Wrong calling convention:          37
     Undefined types in variables:      2271
-    Unresolved stack params:           331
+    Unresolved stack params:           323
 
 ====================================================================================================
 UNNAMED FUNCTIONS (still using FUN_XXXXXXXX or ClassName_FUN_XXXXXXXX)
@@ -100,13 +100,6 @@ Sorted by caller count (most-referenced first = highest priority to name).
     0x00422590  __cdecl       1 callers
     0x004235c0  __cdecl       0 callers
     0x004235d0  __cdecl       0 callers
-
-  core/frankgen.cpp (5 unnamed)
-    0x004d2190  __cdecl       4 callers
-    0x004d23a0  __cdecl       1 callers
-    0x004d1f20  __cdecl       1 callers
-    0x004d2890  __cdecl       0 callers
-    0x004d2880  __cdecl       0 callers
 
   core/zombie.cpp (14 unnamed)
     0x005fbd00  __cdecl       3 callers
@@ -708,7 +701,7 @@ Wrong calling convention (unaffected register usage) (37)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
 --------------------------------------------------------------------------------
-Unresolved stack parameters (missing from signature) (331)
+Unresolved stack parameters (missing from signature) (323)
 --------------------------------------------------------------------------------
 
   CPackedBitmapSet_reload
@@ -2115,48 +2108,6 @@ Unresolved stack parameters (missing from signature) (331)
     Signature: void __cdecl core_boxactor_cpp_CLightActor_FUN_004235c0(CLightActor *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
-  CFrankenstienMachine_process
-    Address: 0x004d1a40  File: core/frankgen.cpp
-    Evidence: in_stack_ffffff80, in_stack_ffffff80, in_stack_ffffff80
-    Signature: void __cdecl core_frankgen_cpp_CFrankenstienMachine_process_FUN_004d1a40(CFrankenstienMachine *this_ptr,float delta_time)
-    Suggested: Signature is missing stack parameters entirely
-
-  CFrankenstienMachine_setCourseFrame
-    Address: 0x004d2430  File: core/frankgen.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_0000000c, in_stack_00000008
-    Signature: void __cdecl core_frankgen_cpp_CFrankenstienMachine_setCourseFrame_FUN_004d2430(CFrankenstienMachine *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_004d2890
-    Address: 0x004d2890  File: core/frankgen.cpp
-    Evidence: in_stack_00000004, in_stack_00000004
-    Signature: int __cdecl core_frankgen_cpp_FUN_004d2890(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  CFrankenstienMachine_renderOpaque
-    Address: 0x004d1f70  File: core/frankgen.cpp
-    Evidence: in_stack_ffffffc8, in_stack_ffffffc8
-    Signature: int __cdecl core_frankgen_cpp_CFrankenstienMachine_renderOpaque_FUN_004d1f70(CFrankenstienMachine *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CFrankenstienMachine
-    Address: 0x004d23a0  File: core/frankgen.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_0000000c, in_stack_00000008
-    Signature: void __cdecl core_frankgen_cpp_CFrankenstienMachine_FUN_004d23a0(CFrankenstienMachine *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_004d2880
-    Address: 0x004d2880  File: core/frankgen.cpp
-    Evidence: in_stack_00000004, in_stack_00000004
-    Signature: int __cdecl core_frankgen_cpp_FUN_004d2880(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  CFrankenstienMachine
-    Address: 0x004d1f20  File: core/frankgen.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_00000008, in_stack_0000000c
-    Signature: void __cdecl core_frankgen_cpp_CFrankenstienMachine_FUN_004d1f20(CFrankenstienMachine *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
   CPathMap_findPathToDestination
     Address: 0x00547320  File: core/path.cpp
     Evidence: in_stack_fffffee8, in_stack_fffffee8
@@ -2353,12 +2304,6 @@ Unresolved stack parameters (missing from signature) (331)
     Address: 0x004dda80  File: core/game.cpp
     Evidence: in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000010, in_stack_00000010, in_stack_0000000c, in_stack_00000008, in_stack_00000008, in_stack_00000010, in_stack_00000008
     Signature: void __cdecl core_game_cpp_CGame_scaleBoneRecursive_FUN_004dda80(CGame *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CGame_runGameSession
-    Address: 0x004daf80  File: core/game.cpp
-    Evidence: in_stack_fffff790, in_stack_fffff794, in_stack_fffff790, in_stack_fffff794
-    Signature: int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
   endProfileTimer
@@ -6381,7 +6326,7 @@ Undefined types in variables (2271)
     Locals:  local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined1), local_c (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CFrankenstienMachine
+  CFrankenstienMachine_updateAnchorPosition
     Address: 0x004d2190  File: core/frankgen.cpp
     Locals:  local_38 (undefined1), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -10357,14 +10302,14 @@ Undefined types in variables (2271)
     Locals:  local_8 (undefined4), local_4 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CFrankenstienMachine
-    Address: 0x004d23a0  File: core/frankgen.cpp
-    Locals:  local_c (undefined4), local_8 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
   CFrankenstienMachine_getPropertyList
     Address: 0x004d2500  File: core/frankgen.cpp
     Locals:  local_70 (undefined8), local_68 (undefined1)
+    Suggested: Resolve undefined types to concrete types
+
+  CFrankenstienMachine_setPartFrame
+    Address: 0x004d23a0  File: core/frankgen.cpp
+    Locals:  local_c (undefined4), local_8 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CGabriella_processDamage

@@ -269,7 +269,7 @@ LAB_0054f6fe:
         iVar2 = this_ptr->file_count;
         size = (this_ptr->directory_entries->offset - 0x60) + iVar2 * -0x14;
         if (((int)size < iVar2) || (iVar2 * 0x100 < (int)size)) goto LAB_0054f6fe;
-        pcVar8 = shape_memdbg_cpp_debugMalloc_FUN_0050f250(size,"..\\engine\\pod.cpp",0x1e7);
+        pcVar8 = (char *)shape_memdbg_cpp_debugMalloc_FUN_0050f250(size,"..\\engine\\pod.cpp",0x1e7);
         this_ptr->file_data_buffer = pcVar8;
         if (pcVar8 == (char *)0x0) {
           g_CurrentFilename = "..\\engine\\pod.cpp";

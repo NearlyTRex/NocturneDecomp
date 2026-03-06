@@ -39,7 +39,7 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0(CAlphaBitmap *th
     g_CurrentLineNumber = 0x56;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CAlphaBitmap::load - Out of memory");
   }
-  puVar2 = shape_memdbg_cpp_debugMalloc_FUN_0050f250(0x400,"..\\engine\\alphabit.cpp",0x58);
+  puVar2 = (uint *)shape_memdbg_cpp_debugMalloc_FUN_0050f250(0x400,"..\\engine\\alphabit.cpp",0x58);
   this_ptr->act = puVar2;
   if (puVar2 == (uint *)0x0) {
     g_CurrentFilename = "..\\engine\\alphabit.cpp";

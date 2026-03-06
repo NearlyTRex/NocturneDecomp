@@ -9,12 +9,10 @@
 CMoon * __cdecl core_moon_cpp_CMoon_ctor_FUN_00529a80(CMoon *this_ptr)
 
 {
-  CKeyFramedModel *pCVar1;
-  float *pfVar2;
+  CMoon_ptr_8 pCVar1;
   
   pCVar1 = core_dmodel_cpp_CKeyFramedModel_ctor_FUN_00476cf0(&this_ptr->moon);
-  pfVar2 = &pCVar1[-1].rotation_matrix_workspace.m[2].z;
-  pCVar1[-1].dead = 0;
-  *pfVar2 = 0.0;
-  return (CMoon *)pfVar2;
+  ADJ(pCVar1)->rotation_phase = 0.0;
+  ADJ(pCVar1)->is_loaded = 0;
+  return ADJ(pCVar1);
 }

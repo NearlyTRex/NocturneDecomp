@@ -6,17 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 58,
-    "complexity_score": 143,
+    "complexity_score": 233,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 7,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 58,
-    "suspect_count": 8,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 43,
+    "suspect_count": 18,
     "suspect_types": [
-      "negative_offset"
+      "decompiler_intrinsic",
+      "warning_type_propagation"
     ],
-    "total_lines": 116
+    "total_lines": 101
   },
   "cross_references": [
     {
@@ -159,68 +160,148 @@
   },
   "suspects": [
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 18,
+      "match": "ADJ",
+      "severity": "mild",
+      "text": "pCVar7 = core_morph_cpp_CMorph_ctor_FUN_0052b310(&ADJ(pCVar6)->morph);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 19,
+      "match": "ADJ",
+      "severity": "mild",
+      "text": "ADJ(pCVar7)->base.base.base.vtable._ub = &g_CMimicVTable;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 20,
-      "match": "pCVar7[-100].",
+      "match": "ADJ",
       "severity": "mild",
-      "text": "*(CDemonActor_vtable **)pCVar7[-100].models[0].textures[0xe].textures[0].texture_name =",
-      "type": "negative_offset"
+      "text": "ADJ(pCVar7)->base.base.collision_cylinder_height = 0.5;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 22,
+      "match": "ADJ",
+      "severity": "mild",
+      "text": "ADJ(pCVar7)->base.base.collision_cylinder_radius = 1.0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 24,
+      "match": "ADJ",
+      "severity": "mild",
+      "text": "ADJ(pCVar7)->mirror_condition[0] = '\\0';",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 26,
+      "match": "ADJ",
+      "severity": "mild",
+      "text": "ADJ(pCVar7)->attack_condition[0] = '\\0';",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 27,
+      "match": "ADJ",
+      "severity": "mild",
+      "text": "ADJ(pCVar7)->base.base.ai_detection_range_min = fVar2;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 28,
+      "match": "ADJ",
+      "severity": "mild",
+      "text": "ADJ(pCVar7)->base.base.ai_detection_range_max = fVar3;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 29,
+      "match": "ADJ",
+      "severity": "mild",
+      "text": "ADJ(pCVar7)->attack_mode = 0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 30,
+      "match": "ADJ",
+      "severity": "mild",
+      "text": "pcVar5 = ADJ(pCVar7)->morph_actor_type;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 31,
-      "match": "pCVar7[-1].",
+      "match": "ADJ",
       "severity": "mild",
-      "text": "pCVar7[-1].models[1].textures[0x13].textures[2].base.count = 0;",
-      "type": "negative_offset"
+      "text": "ADJ(pCVar7)->mirror_plane_actor = (CDemonActor *)0x0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 32,
-      "match": "pCVar7[-1].",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 41,
+      "match": "ADJ",
       "severity": "mild",
-      "text": "pcVar9 = pCVar7[-1].models[1].textures[0x13].textures[2].texture_name + 4;",
-      "type": "negative_offset"
+      "text": "ADJ(pCVar7)->morph_target_actor = (CDemonActor *)0x0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 33,
-      "match": "pCVar7[-1].",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 42,
+      "match": "ADJ",
       "severity": "mild",
-      "text": "pSVar2 = pCVar7[-1].models[1].textures + 0x13;",
-      "type": "negative_offset"
+      "text": "ADJ(pCVar7)->morph_blend = -1.0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 49,
-      "match": "pCVar7[-100].",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 43,
+      "match": "ADJ",
       "severity": "mild",
-      "text": "pCVar7[-100].models[0].textures[0xd].textures[0].base.count = 0x10000;",
-      "type": "negative_offset"
+      "text": "ADJ(pCVar7)->base.base.base.scale.x = 0x10000;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 50,
-      "match": "pCVar7[-100].",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 44,
+      "match": "ADJ",
       "severity": "mild",
-      "text": "pSVar2 = pCVar7[-100].models[0].textures;",
-      "type": "negative_offset"
+      "text": "ADJ(pCVar7)->base.base.base.scale.y = 0x10000;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 55,
-      "match": "pCVar7[-100].",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 45,
+      "match": "ADJ",
       "severity": "mild",
-      "text": "pSVar2 = pCVar7[-100].models[0].textures + 0xd;",
-      "type": "negative_offset"
+      "text": "ADJ(pCVar7)->base.base.base.scale.z = 0x10000;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 60,
-      "match": "pCVar7[-100].",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 46,
+      "match": "ADJ",
       "severity": "mild",
-      "text": "return (CMimic *)&pCVar7[-100].models[0].textures[9].textures[1].base.count;",
-      "type": "negative_offset"
+      "text": "return ADJ(pCVar7);",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

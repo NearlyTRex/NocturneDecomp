@@ -31,12 +31,13 @@ void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004e1cb0(CGame *this_ptr,
   int local_18;
   uint local_14;
   
-  p_Var2 = engine_dosio_c_getFile_FUN_00481a50(&g_PodDir,"enemy.pod","rb");
+  p_Var2 = engine_dosio_c_getFile_FUN_00481a50
+                     (&s_EmptyChar_0062cc98,"enemy.pod","rb");
   if (p_Var2 != (_FILE *)0x0) {
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\core\\game.cpp",0xecf);
   }
   local_14 = (uint)(p_Var2 == (_FILE *)0x0);
-  this_ptr->game_stat_2 = 0.0;
+  this_ptr->damageable_enemy_count = 0.0;
   this_ptr->game_state_flags = 0;
   this_ptr->game_stat_1 = 0.0;
   this_ptr->total_play_time = 0.0;

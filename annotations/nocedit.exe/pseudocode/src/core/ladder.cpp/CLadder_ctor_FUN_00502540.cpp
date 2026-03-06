@@ -9,25 +9,24 @@
 CLadder * __cdecl core_ladder_cpp_CLadder_ctor_FUN_00502540(CLadder *this_ptr)
 
 {
-  CDemonActor *pCVar1;
-  CKeyFramedModelInstance *this_ptr_00;
+  CLadder *pCVar1;
+  CLadder_ptr_344 this_ptr_00;
   
-  pCVar1 = core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
-  this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0
-                          ((CKeyFramedModelInstance *)(pCVar1 + 1));
-  this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CLadderVTable;
+  pCVar1 = (CLadder *)core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
+  this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&pCVar1->model);
+  ADJ(this_ptr_00)->base.vtable._ub = &g_CLadderVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(this_ptr_00,"null.kfm")
   ;
-  this_ptr_00[1].part_visibility_flags[0] = 0x40000000;
-  this_ptr_00[1].part_visibility_flags[1] = 0x41200000;
-  this_ptr_00[1].part_visibility_flags[2] = 0;
-  this_ptr_00[1].part_visibility_flags[3] = 0;
-  this_ptr_00[1].part_visibility_flags[6] = 0;
-  this_ptr_00[1].part_visibility_flags[5] = this_ptr_00[1].part_visibility_flags[6];
-  this_ptr_00[1].part_visibility_flags[4] = this_ptr_00[1].part_visibility_flags[5];
-  this_ptr_00[1].part_visibility_flags[9] = 0;
-  this_ptr_00[1].part_visibility_flags[8] = this_ptr_00[1].part_visibility_flags[9];
-  this_ptr_00[1].part_visibility_flags[7] = this_ptr_00[1].part_visibility_flags[8];
-  this_ptr_00[1].part_visibility_flags[10] = 0;
-  return (CLadder *)(this_ptr_00[-1].part_visibility_flags + 9);
+  (ADJ(this_ptr_00)->ladder_size).x = 2.0;
+  (ADJ(this_ptr_00)->ladder_size).y = 10.0;
+  (ADJ(this_ptr_00)->ladder_size).z = 0.0;
+  ADJ(this_ptr_00)->master_actor = (CDemonActor *)0x0;
+  (ADJ(this_ptr_00)->relative_position).z = 0.0;
+  (ADJ(this_ptr_00)->relative_position).y = (ADJ(this_ptr_00)->relative_position).z;
+  (ADJ(this_ptr_00)->relative_position).x = (ADJ(this_ptr_00)->relative_position).y;
+  (ADJ(this_ptr_00)->cached_euler_angles).z = 0.0;
+  (ADJ(this_ptr_00)->cached_euler_angles).y = (ADJ(this_ptr_00)->cached_euler_angles).z;
+  (ADJ(this_ptr_00)->cached_euler_angles).x = (ADJ(this_ptr_00)->cached_euler_angles).y;
+  ADJ(this_ptr_00)->ground_type = GROUND_TYPE_DEFAULT;
+  return ADJ(this_ptr_00);
 }

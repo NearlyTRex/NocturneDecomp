@@ -35,9 +35,9 @@
 ;   core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004c7b20
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_004c79d0
 ;   core_frankgen.cpp_CFrankenstienMachine_accumulateParticles_FUN_004d1ec0
-;   core_frankgen.cpp_CFrankenstienMachine_findLeader_FUN_004d2330
-;   core_frankgen.cpp_CFrankenstienMachine_FUN_004d1f20
-;   core_frankgen.cpp_CFrankenstienMachine_FUN_004d2190
+;   core_frankgen.cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004d1f20
+;   core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004d2190
+;   core_frankgen.cpp_findLeader_FUN_004d2330
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;
 ; *****************************************************************************
@@ -51,8 +51,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0x84]      ; 004d1a45
     MOV EAX,dword ptr [ESI + 0x15c]     ; 004d1a4c
     MOV [0x02d7b7f0],EAX                ; 004d1a52 | FLOAT_02d7b7f0
-    CALL core_frankgen.cpp_CFrankenstienMachine_findLeader_FUN_004d2330 ; 004d1a57
-        ;   XREF to: 004d2330 (UNCONDITIONAL_CALL)  ; CDemonActor * core_frankgen.cpp_CFrankenstienMachine_findLeader_FUN_004d2330(CFrankenstienMachine * this_ptr)
+    CALL core_frankgen.cpp_findLeader_FUN_004d2330 ; 004d1a57
+        ;   XREF to: 004d2330 (UNCONDITIONAL_CALL)  ; CDemonActor * core_frankgen.cpp_findLeader_FUN_004d2330()
     CMP EAX,ESI                         ; 004d1a5c
     JZ 0x004d1d83                       ; 004d1a5e
         ;   XREF to: 004d1d83 (CONDITIONAL_JUMP)  ; LAB_004d1d83
@@ -70,8 +70,8 @@ section .text
     FSTP float ptr [0x02d7b7f0]         ; 004d1a8d | FLOAT_02d7b7f0
     PUSH ESI                            ; 004d1a93
         ;   Label: LAB_004d1a93
-    CALL core_frankgen.cpp_CFrankenstienMachine_FUN_004d2190 ; 004d1a94
-        ;   XREF to: 004d2190 (UNCONDITIONAL_CALL)  ; CVector3f * core_frankgen.cpp_CFrankenstienMachine_FUN_004d2190(CFrankenstienMachine * this_ptr)
+    CALL core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004d2190 ; 004d1a94
+        ;   XREF to: 004d2190 (UNCONDITIONAL_CALL)  ; CVector3f * core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004d2190(CFrankenstienMachine * this_ptr)
     MOV EAX,dword ptr [ESI + 0x158]     ; 004d1a99
     ADD ESP,0x4                         ; 004d1a9f
     CMP EAX,0x8                         ; 004d1aa2
@@ -263,38 +263,38 @@ section .text
         ;   Label: LAB_004d1d09
     PUSH 0x3f800000                     ; 004d1d0e
     PUSH ESI                            ; 004d1d13
-    CALL core_frankgen.cpp_CFrankenstienMachine_FUN_004d1f20 ; 004d1d14
-        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)  ; void core_frankgen.cpp_CFrankenstienMachine_FUN_004d1f20(CFrankenstienMachine * this_ptr)
+    CALL core_frankgen.cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004d1f20 ; 004d1d14
+        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)  ; void core_frankgen.cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004d1f20(CFrankenstienMachine * this_ptr, float trigger_frame, char * sfx_filename)
     ADD ESP,0xc                         ; 004d1d19
     PUSH 0x62a9e8                       ; 004d1d1c | = "frankx-bed2.wav"
     PUSH 0x43ed8000                     ; 004d1d21
     PUSH ESI                            ; 004d1d26
-    CALL core_frankgen.cpp_CFrankenstienMachine_FUN_004d1f20 ; 004d1d27
-        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)  ; void core_frankgen.cpp_CFrankenstienMachine_FUN_004d1f20(CFrankenstienMachine * this_ptr)
+    CALL core_frankgen.cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004d1f20 ; 004d1d27
+        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)  ; void core_frankgen.cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004d1f20(CFrankenstienMachine * this_ptr, float trigger_frame, char * sfx_filename)
     ADD ESP,0xc                         ; 004d1d2c
     PUSH 0x62a9f8                       ; 004d1d2f | = "frankx-bed3.wav"
     PUSH 0x444a4000                     ; 004d1d34
     PUSH ESI                            ; 004d1d39
-    CALL core_frankgen.cpp_CFrankenstienMachine_FUN_004d1f20 ; 004d1d3a
-        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)  ; void core_frankgen.cpp_CFrankenstienMachine_FUN_004d1f20(CFrankenstienMachine * this_ptr)
+    CALL core_frankgen.cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004d1f20 ; 004d1d3a
+        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)  ; void core_frankgen.cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004d1f20(CFrankenstienMachine * this_ptr, float trigger_frame, char * sfx_filename)
     ADD ESP,0xc                         ; 004d1d3f
     PUSH 0x62aa08                       ; 004d1d42 | = "frankx-bed4.wav"
     PUSH 0x44834000                     ; 004d1d47
     PUSH ESI                            ; 004d1d4c
-    CALL core_frankgen.cpp_CFrankenstienMachine_FUN_004d1f20 ; 004d1d4d
-        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)  ; void core_frankgen.cpp_CFrankenstienMachine_FUN_004d1f20(CFrankenstienMachine * this_ptr)
+    CALL core_frankgen.cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004d1f20 ; 004d1d4d
+        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)  ; void core_frankgen.cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004d1f20(CFrankenstienMachine * this_ptr, float trigger_frame, char * sfx_filename)
     ADD ESP,0xc                         ; 004d1d52
     PUSH 0x62aa18                       ; 004d1d55 | = "frankx-water-dip.wav"
     PUSH 0x44ac8000                     ; 004d1d5a
     PUSH ESI                            ; 004d1d5f
-    CALL core_frankgen.cpp_CFrankenstienMachine_FUN_004d1f20 ; 004d1d60
-        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)  ; void core_frankgen.cpp_CFrankenstienMachine_FUN_004d1f20(CFrankenstienMachine * this_ptr)
+    CALL core_frankgen.cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004d1f20 ; 004d1d60
+        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)  ; void core_frankgen.cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004d1f20(CFrankenstienMachine * this_ptr, float trigger_frame, char * sfx_filename)
     ADD ESP,0xc                         ; 004d1d65
     PUSH 0x62aa2d                       ; 004d1d68 | = "frankx-big-ramp-bed5.wav"
     PUSH 0x44ff0000                     ; 004d1d6d
     PUSH ESI                            ; 004d1d72
-    CALL core_frankgen.cpp_CFrankenstienMachine_FUN_004d1f20 ; 004d1d73
-        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)  ; void core_frankgen.cpp_CFrankenstienMachine_FUN_004d1f20(CFrankenstienMachine * this_ptr)
+    CALL core_frankgen.cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004d1f20 ; 004d1d73
+        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)  ; void core_frankgen.cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004d1f20(CFrankenstienMachine * this_ptr, float trigger_frame, char * sfx_filename)
     ADD ESP,0xc                         ; 004d1d78
     POP EBX                             ; 004d1d7b
     POP EDI                             ; 004d1d7c
@@ -329,8 +329,8 @@ section .text
         ;   Label: caseD_1
     PUSH 0x43030000                     ; 004d1de4
     PUSH ESI                            ; 004d1de9
-    CALL core_frankgen.cpp_CFrankenstienMachine_FUN_004d1f20 ; 004d1dea
-        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)  ; void core_frankgen.cpp_CFrankenstienMachine_FUN_004d1f20(CFrankenstienMachine * this_ptr)
+    CALL core_frankgen.cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004d1f20 ; 004d1dea
+        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)  ; void core_frankgen.cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004d1f20(CFrankenstienMachine * this_ptr, float trigger_frame, char * sfx_filename)
     ADD ESP,0xc                         ; 004d1def
     ADD ESP,0x78                        ; 004d1df2
     POP EBP                             ; 004d1df5
@@ -340,8 +340,8 @@ section .text
         ;   Label: caseD_2
     PUSH 0x4403c000                     ; 004d1dfd
     PUSH ESI                            ; 004d1e02
-    CALL core_frankgen.cpp_CFrankenstienMachine_FUN_004d1f20 ; 004d1e03
-        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)  ; void core_frankgen.cpp_CFrankenstienMachine_FUN_004d1f20(CFrankenstienMachine * this_ptr)
+    CALL core_frankgen.cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004d1f20 ; 004d1e03
+        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)  ; void core_frankgen.cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004d1f20(CFrankenstienMachine * this_ptr, float trigger_frame, char * sfx_filename)
     ADD ESP,0xc                         ; 004d1e08
     ADD ESP,0x78                        ; 004d1e0b
     POP EBP                             ; 004d1e0e
@@ -351,8 +351,8 @@ section .text
         ;   Label: caseD_3
     PUSH 0x44882000                     ; 004d1e16
     PUSH ESI                            ; 004d1e1b
-    CALL core_frankgen.cpp_CFrankenstienMachine_FUN_004d1f20 ; 004d1e1c
-        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)  ; void core_frankgen.cpp_CFrankenstienMachine_FUN_004d1f20(CFrankenstienMachine * this_ptr)
+    CALL core_frankgen.cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004d1f20 ; 004d1e1c
+        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)  ; void core_frankgen.cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004d1f20(CFrankenstienMachine * this_ptr, float trigger_frame, char * sfx_filename)
     ADD ESP,0xc                         ; 004d1e21
     ADD ESP,0x78                        ; 004d1e24
     POP EBP                             ; 004d1e27
@@ -362,8 +362,8 @@ section .text
         ;   Label: caseD_5
     PUSH 0x44580000                     ; 004d1e2f
     PUSH ESI                            ; 004d1e34
-    CALL core_frankgen.cpp_CFrankenstienMachine_FUN_004d1f20 ; 004d1e35
-        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)  ; void core_frankgen.cpp_CFrankenstienMachine_FUN_004d1f20(CFrankenstienMachine * this_ptr)
+    CALL core_frankgen.cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004d1f20 ; 004d1e35
+        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)  ; void core_frankgen.cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004d1f20(CFrankenstienMachine * this_ptr, float trigger_frame, char * sfx_filename)
     ADD ESP,0xc                         ; 004d1e3a
     ADD ESP,0x78                        ; 004d1e3d
     POP EBP                             ; 004d1e40
@@ -373,14 +373,14 @@ section .text
         ;   Label: caseD_6
     PUSH 0x44d4c000                     ; 004d1e48
     PUSH ESI                            ; 004d1e4d
-    CALL core_frankgen.cpp_CFrankenstienMachine_FUN_004d1f20 ; 004d1e4e
-        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)  ; void core_frankgen.cpp_CFrankenstienMachine_FUN_004d1f20(CFrankenstienMachine * this_ptr)
+    CALL core_frankgen.cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004d1f20 ; 004d1e4e
+        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)  ; void core_frankgen.cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004d1f20(CFrankenstienMachine * this_ptr, float trigger_frame, char * sfx_filename)
     ADD ESP,0xc                         ; 004d1e53
     PUSH 0x62aa9e                       ; 004d1e56 | = "frankx-flap-down.wav"
     PUSH 0x44eb2000                     ; 004d1e5b
     PUSH ESI                            ; 004d1e60
-    CALL core_frankgen.cpp_CFrankenstienMachine_FUN_004d1f20 ; 004d1e61
-        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)  ; void core_frankgen.cpp_CFrankenstienMachine_FUN_004d1f20(CFrankenstienMachine * this_ptr)
+    CALL core_frankgen.cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004d1f20 ; 004d1e61
+        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)  ; void core_frankgen.cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004d1f20(CFrankenstienMachine * this_ptr, float trigger_frame, char * sfx_filename)
     ADD ESP,0xc                         ; 004d1e66
     ADD ESP,0x78                        ; 004d1e69
     POP EBP                             ; 004d1e6c
@@ -390,8 +390,8 @@ section .text
         ;   Label: caseD_8
     PUSH 0x44f3c000                     ; 004d1e74
     PUSH ESI                            ; 004d1e79
-    CALL core_frankgen.cpp_CFrankenstienMachine_FUN_004d1f20 ; 004d1e7a
-        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)  ; void core_frankgen.cpp_CFrankenstienMachine_FUN_004d1f20(CFrankenstienMachine * this_ptr)
+    CALL core_frankgen.cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004d1f20 ; 004d1e7a
+        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)  ; void core_frankgen.cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004d1f20(CFrankenstienMachine * this_ptr, float trigger_frame, char * sfx_filename)
     ADD ESP,0xc                         ; 004d1e7f
     ADD ESP,0x78                        ; 004d1e82
     POP EBP                             ; 004d1e85

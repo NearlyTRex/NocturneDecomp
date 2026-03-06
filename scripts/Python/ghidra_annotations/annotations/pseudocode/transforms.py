@@ -441,15 +441,6 @@ def transform_crt_functions(code):
 # code was C. This transform inserts C-style casts for known void*-returning
 # functions (allocators and castToClassHash).
 
-# Primitive types that should NOT receive void* casts
-_VOID_CAST_PRIMITIVE_TYPES = {
-    'int', 'uint', 'char', 'uchar', 'short', 'ushort', 'long', 'ulong',
-    'float', 'double', 'void', 'byte', 'bool',
-    'undefined', 'undefined1', 'undefined2', 'undefined4', 'undefined8',
-    'size_t', 'SIZE_T', 'time_t', 'wchar_t',
-    'longlong', 'ulonglong',
-}
-
 # Regex for allocator functions that return void*
 _ALLOCATOR_FUNC_RE = re.compile(
     r'(?:shape_memdbg_cpp_debug(?:Alloc|Malloc|Calloc|Realloc)_FUN_[0-9a-f]+'
@@ -499,20 +490,6 @@ def _parse_variable_types(code):
         # Store as "TypeName *" or "TypeName **"
         var_types[var_name] = type_name + ' ' + stars
     return var_types
-
-
-def _is_primitive_pointer_type(type_str):
-    """Check if a type string is a pointer to a primitive type.
-
-    Args:
-        type_str: Type string like "CAmmo *" or "uint *"
-
-    Returns:
-        True if the base type is primitive
-    """
-    # Strip pointer stars and whitespace to get base type
-    base = type_str.replace('*', '').strip()
-    return base in _VOID_CAST_PRIMITIVE_TYPES
 
 
 def transform_void_pointer_casts(code):
@@ -583,7 +560,7 @@ def _transform_void_cast_line(line, var_types):
         if assign_match:
             var_name = assign_match.group(2)
             var_type = var_types.get(var_name)
-            if var_type and not _is_primitive_pointer_type(var_type):
+            if var_type and var_type.replace('*', '').strip() != 'void':
                 cast = '(%s)' % var_type
                 prefix = assign_match.group(1)
                 rest = line[len(prefix):]

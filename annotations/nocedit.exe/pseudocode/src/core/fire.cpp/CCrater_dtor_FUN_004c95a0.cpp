@@ -9,8 +9,9 @@
 CCrater * __cdecl core_fire_cpp_CCrater_dtor_FUN_004c95a0(CCrater *this_ptr,uint flags)
 
 {
-  CVector3f *pCVar1;
+  CCrater_ptr_28 pCVar1;
   
-  pCVar1 = core_cloth_cpp_CVector3f_arrdtor_FUN_0043e460(this_ptr->smoke_positions,0);
-  return (CCrater *)&pCVar1[-3].z;
+  pCVar1 = (CCrater_ptr_28)
+           core_cloth_cpp_CVector3f_arrdtor_FUN_0043e460(this_ptr->smoke_positions,0);
+  return ADJ(pCVar1);
 }

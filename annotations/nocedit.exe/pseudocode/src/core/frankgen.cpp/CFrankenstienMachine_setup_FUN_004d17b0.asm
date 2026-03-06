@@ -29,7 +29,7 @@
 ;   core_course.cpp_CCourse_load_FUN_00442580
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
-;   core_frankgen.cpp_CFrankenstienMachine_FUN_004d2190
+;   core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004d2190
 ;
 ; *****************************************************************************
 
@@ -98,8 +98,8 @@ section .text
     JNZ 0x004d19b2                      ; 004d1850
         ;   XREF to: 004d19b2 (CONDITIONAL_JUMP)  ; LAB_004d19b2
     PUSH EBX                            ; 004d1856
-    CALL core_frankgen.cpp_CFrankenstienMachine_FUN_004d2190 ; 004d1857
-        ;   XREF to: 004d2190 (UNCONDITIONAL_CALL)  ; CVector3f * core_frankgen.cpp_CFrankenstienMachine_FUN_004d2190(CFrankenstienMachine * this_ptr)
+    CALL core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004d2190 ; 004d1857
+        ;   XREF to: 004d2190 (UNCONDITIONAL_CALL)  ; CVector3f * core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004d2190(CFrankenstienMachine * this_ptr)
     ADD ESP,0x4                         ; 004d185c
     POP EDI                             ; 004d185f
     POP ESI                             ; 004d1860
@@ -243,8 +243,8 @@ section .text
         ;   XREF to: 00442580 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_load_FUN_00442580(CCourse * this_ptr, char * filename)
     ADD ESP,0x8                         ; 004d19c5
     PUSH EBX                            ; 004d19c8
-    CALL core_frankgen.cpp_CFrankenstienMachine_FUN_004d2190 ; 004d19c9
-        ;   XREF to: 004d2190 (UNCONDITIONAL_CALL)  ; CVector3f * core_frankgen.cpp_CFrankenstienMachine_FUN_004d2190(CFrankenstienMachine * this_ptr)
+    CALL core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004d2190 ; 004d19c9
+        ;   XREF to: 004d2190 (UNCONDITIONAL_CALL)  ; CVector3f * core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004d2190(CFrankenstienMachine * this_ptr)
     ADD ESP,0x4                         ; 004d19ce
     POP EDI                             ; 004d19d1
     POP ESI                             ; 004d19d2

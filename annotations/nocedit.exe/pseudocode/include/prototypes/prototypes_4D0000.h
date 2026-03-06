@@ -13,6 +13,7 @@
 #include "types/classes/CGabriella.h"
 #include "types/classes/CGame.h"
 #include "types/classes/CInventory.h"
+#include "types/classes/CKeyFramedModel.h"
 #include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CWeapon.h"
@@ -51,21 +52,21 @@ void __cdecl core_frankgen_cpp_CFrankenstienMachine_setup_FUN_004d17b0(CFrankens
 void __cdecl core_frankgen_cpp_CFrankenstienMachine_archive_FUN_004d19e0(CFrankenstienMachine *this_ptr);
 void __cdecl core_frankgen_cpp_CFrankenstienMachine_process_FUN_004d1a40(CFrankenstienMachine *this_ptr,float delta_time);
 int __cdecl core_frankgen_cpp_CFrankenstienMachine_accumulateParticles_FUN_004d1ec0(CFrankenstienMachine *this_ptr,float emission_rate,float delta_time);
-void __cdecl core_frankgen_cpp_CFrankenstienMachine_FUN_004d1f20(CFrankenstienMachine *this_ptr);
+void __cdecl core_frankgen_cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004d1f20(CFrankenstienMachine *this_ptr,float trigger_frame,char *sfx_filename);
 int __cdecl core_frankgen_cpp_CFrankenstienMachine_renderOpaque_FUN_004d1f70(CFrankenstienMachine *this_ptr);
 CBoundingBox3D * __cdecl core_frankgen_cpp_CFrankenstienMachine_getBoundingBox_FUN_004d20f0(CFrankenstienMachine *this_ptr,CBoundingBox3D *out_box);
-CVector3f * __cdecl core_frankgen_cpp_CFrankenstienMachine_FUN_004d2190(CFrankenstienMachine *this_ptr);
-CDemonActor * __cdecl core_frankgen_cpp_CFrankenstienMachine_findLeader_FUN_004d2330(CFrankenstienMachine *this_ptr);
-void __cdecl core_frankgen_cpp_CFrankenstienMachine_FUN_004d23a0(CFrankenstienMachine *this_ptr);
-void __cdecl core_frankgen_cpp_CFrankenstienMachine_setCourseFrame_FUN_004d2430(CFrankenstienMachine *this_ptr);
+CVector3f * __cdecl core_frankgen_cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004d2190(CFrankenstienMachine *this_ptr);
+CDemonActor * __cdecl core_frankgen_cpp_findLeader_FUN_004d2330(void);
+void __cdecl core_frankgen_cpp_CFrankenstienMachine_setPartFrame_FUN_004d23a0(CFrankenstienMachine *this_ptr,float start_frame,float end_frame);
+void __cdecl core_frankgen_cpp_CFrankenstienMachine_setCourseFrame_FUN_004d2430(CFrankenstienMachine *this_ptr,float start_frame,float end_frame);
 int __cdecl core_frankgen_cpp_CFrankenstienMachine_hasCollision_FUN_004d24f0(CFrankenstienMachine *this_ptr,SCollisionInfo *collision_info);
 void __cdecl core_frankgen_cpp_CFrankenstienMachine_getPropertyList_FUN_004d2500(CFrankenstienMachine *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_frankgen_cpp_CFrankenstienMachine_addFilesToExtract_FUN_004d2560(CFrankenstienMachine *this_ptr,_FILE *file_handle);
 void __cdecl core_frankgen_cpp_CFrankenstienMachine_processInEditor_FUN_004d25f0(CFrankenstienMachine *this_ptr);
 void __cdecl core_frankgen_cpp_CFrankenstienMachine_showEditorHelp_FUN_004d2740(CFrankenstienMachine *this_ptr,int *y_pos);
 int __cdecl core_frankgen_cpp_CFrankenstienMachine_initializeInEditor_FUN_004d2770(CFrankenstienMachine *this_ptr);
-int __cdecl core_frankgen_cpp_FUN_004d2880(void);
-int __cdecl core_frankgen_cpp_FUN_004d2890(void);
+int __cdecl core_frankgen_cpp_getFrameCount_FUN_004d2880(CKeyFramedModel *model_ptr);
+char * __cdecl core_frankgen_cpp_getActorName_FUN_004d2890(CDemonActor *actor);
 CFrankenstienMachine * __cdecl core_frankgen_cpp_CFrankenstienMachine_dtor_FUN_004d28a0(CFrankenstienMachine *this_ptr,uint flags);
 void __cdecl core_gabriela_cpp_staticInit_FUN_004d2910(void);
 float __cdecl core_gabriela_cpp_weaponDrawBlendWeightCallback_FUN_004d29f0(int current_bone_index,int target_bone_index,float blend_weight, int hierarchy_distance,CDeformableModelInstance *instance);
@@ -119,7 +120,7 @@ void __cdecl core_game_cpp_drawHealthBar_FUN_004d7fa0(void);
 void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004d8040(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_updateStatusDisplays_FUN_004d85a0(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_setFudgeTarget_FUN_004d8730(CGame *this_ptr,CVector3f *fudge_target,float fudge_step);
-int __cdecl core_game_cpp_CGame_processFudge_FUN_004d8750(CGame *this_ptr,float delta_time,int additional_param);
+int __cdecl core_game_cpp_CGame_processFudge_FUN_004d8750(CGame *this_ptr);
 void __cdecl core_game_cpp_drawCreditsLine_FUN_004d8890(char *text_string);
 void __cdecl core_game_cpp_drawKeyBindingEntry_FUN_004d8910(EInputCodeType key_code,char *action_name);
 void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame *this_ptr);

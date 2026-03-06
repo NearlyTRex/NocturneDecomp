@@ -2,11 +2,11 @@
 // Address: 004d8750
 // Address Range: [[004d8750, 004d8881]]
 // Convention: __cdecl
-// Signature: int __cdecl core_game_cpp_CGame_processFudge_FUN_004d8750(CGame *this_ptr,float delta_time,int additional_param)
+// Signature: int __cdecl core_game_cpp_CGame_processFudge_FUN_004d8750(CGame *this_ptr)
 
 #include "nocturne.h"
 
-int __cdecl core_game_cpp_CGame_processFudge_FUN_004d8750(CGame *this_ptr,float delta_time,int additional_param)
+int __cdecl core_game_cpp_CGame_processFudge_FUN_004d8750(CGame *this_ptr)
 
 {
   CVector3f *pCVar1;

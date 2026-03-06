@@ -9,8 +9,8 @@
 CToss * __cdecl core_fire_cpp_CToss_dtor_FUN_004c95c0(CToss *this_ptr,uint flags)
 
 {
-  CBox *pCVar1;
+  CToss_ptr_384 pCVar1;
   
   pCVar1 = core_box_cpp_CBox_dtor_FUN_0041dd00(&this_ptr->physics_box,0);
-  return (CToss *)&pCVar1[-1].scrape_points[0].raytrace_intersection;
+  return ADJ(pCVar1);
 }

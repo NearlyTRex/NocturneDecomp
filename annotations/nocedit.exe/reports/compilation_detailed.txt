@@ -5,15 +5,15 @@ FUNCTION COMPILATION DETAILED ERRORS
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6486
-Successful: 5754 (88.7%)
-Failed: 732
+Successful: 5766 (88.9%)
+Failed: 720
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                           1496
+  other                           1491
   format_error                     580
-  undeclared_identifier            514
-  incompatible_types               374
+  undeclared_identifier            499
+  incompatible_types               358
   syntax_error                      63
   missing_member                    21
   type_error                        19
@@ -22,19 +22,13 @@ ERROR CATEGORIES
   pointer_precision                  2
 
 ====================================================================================================
-CATEGORY: other (1496 errors)
+CATEGORY: other (1491 errors)
 ====================================================================================================
 
   core_imp.cpp_CImp_process_FUN_004f9c30
     Line 268: C-style cast from 'CDemonActor *' to 'float' is not allowed
-  core_gabriela.cpp_CGabriella_ctor_FUN_004d2b20
-    Line 19: C-style cast from 'CDemonActor_vtable *' to 'float' is not allowed
   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
     Line 54: C-style cast from 'CDemonCamera *' to 'float' is not allowed
-  core_frankgen.cpp_CFrankenstienMachine_processInEditor_FUN_004d25f0
-    Line 36: C-style cast from 'CFrankenstienMachine *' to 'float' is not allowed
-  core_frankgen.cpp_CFrankenstienMachine_process_FUN_004d1a40
-    Line 97: C-style cast from 'CFrankenstienMachine *' to 'float' is not allowed
   core_gabriela.cpp_CGabriella_processMotionEvents_FUN_004d4890
     Line 81: C-style cast from 'CGabriella *' to 'float' is not allowed
   core_set.cpp_CDemonSet_buildDisplayList_FUN_0056fbd0
@@ -994,7 +988,7 @@ CATEGORY: format_error (580 errors)
     Line 36: format specifies type 'unsigned long' but the argument has type 'int' [-Werror,-Wformat]
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (514 errors)
+CATEGORY: undeclared_identifier (499 errors)
 ====================================================================================================
 
   core_actor.cpp_adjustIndentationLevel_FUN_0040aee0
@@ -1135,8 +1129,6 @@ CATEGORY: undeclared_identifier (514 errors)
     Line 121: use of undeclared identifier 'code'
   wincore_winrun.cpp_mainWindowProc_FUN_005f3150
     Line 24: use of undeclared identifier 'code'
-  core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0
-    Line 34: use of undeclared identifier 'g_PodDir'
   engine_fileio.cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40
     Line 44: use of undeclared identifier 'getcwd_wrapper'
   shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420
@@ -1269,8 +1261,6 @@ CATEGORY: undeclared_identifier (514 errors)
     Line 104: use of undeclared identifier 'stack0xfffff300'
   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
     Line 77: use of undeclared identifier 'stack0xfffff6c8'
-  core_game.cpp_CGame_runGameSession_FUN_004daf80
-    Line 44: use of undeclared identifier 'stack0xfffff790'
   engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740
     Line 105: use of undeclared identifier 'stack0xfffff964'
   core_setedit.cpp_CDemonSet_showFogEditor_FUN_00580730
@@ -1333,8 +1323,6 @@ CATEGORY: undeclared_identifier (514 errors)
     Line 110: use of undeclared identifier 'stack0xffffff78'
   core_dmodel.cpp_CKeyFramedModel_snapRotationToAxis_FUN_0047c5f0
     Line 101: use of undeclared identifier 'stack0xffffff7c'
-  core_frankgen.cpp_CFrankenstienMachine_process_FUN_004d1a40
-    Line 96: use of undeclared identifier 'stack0xffffff80'; did you mean 'in_stack_ffffff80'?
   core_course.cpp_CCourse_interpolate_FUN_004427a0
     Line 112: use of undeclared identifier 'stack0xffffff90'
   shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0
@@ -1374,7 +1362,7 @@ CATEGORY: undeclared_identifier (514 errors)
   core_weapon.cpp_CWeapon_updateLighting_FUN_005ee4a0
     Line 21: use of undeclared identifier 'stack0xffffffc8'
   core_frankgen.cpp_CFrankenstienMachine_renderOpaque_FUN_004d1f70
-    Line 28: use of undeclared identifier 'stack0xffffffcc'
+    Line 27: use of undeclared identifier 'stack0xffffffcc'
   shape_superopt.cpp_distancePointToSegmentXY_FUN_005d64a0
     Line 24: use of undeclared identifier 'stack0xffffffcc'
   core_dtrace.cpp_CDemonRaytrace_restoreShadowBitFromBuffer_FUN_0049a280
@@ -1429,7 +1417,7 @@ CATEGORY: undeclared_identifier (514 errors)
     Line 124: use of undeclared identifier 'undefined5'
 
 ====================================================================================================
-CATEGORY: incompatible_types (374 errors)
+CATEGORY: incompatible_types (358 errors)
 ====================================================================================================
 
   engine_fileio.cpp_CCheckOutList_add_FUN_004b2d00
@@ -1558,8 +1546,6 @@ CATEGORY: incompatible_types (374 errors)
     Line 27: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'void *'
   engine_pcx.c_writePCXScanline_FUN_00548c50
     Line 18: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'void *'
-  engine_texture.cpp_CTextureCache_loadTexture_FUN_005dcc00
-    Line 71: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'void *'
   shape_edittool.cpp_CEditorTools_getClipboardText_FUN_004a1b30
     Line 23: assigning to 'char *' from incompatible type 'HANDLE' (aka 'void *')
   shape_edittool.cpp_CEditorTools_setClipboardText_FUN_004a1bc0
@@ -1630,24 +1616,14 @@ CATEGORY: incompatible_types (374 errors)
     Line 42: assigning to 'char *' from incompatible type 'void *'
   engine_palette.cpp_CPaletteManager_ctor_FUN_00544f10
     Line 16: assigning to 'char *' from incompatible type 'void *'
-  shape_edittool.cpp_CStrList_copyToClipboard_FUN_004a3270
-    Line 39: assigning to 'char *' from incompatible type 'void *'
-  shape_edittool.cpp_CStrList_insert_FUN_004a2bc0
-    Line 42: assigning to 'char *' from incompatible type 'void *'
   shape_edittool.cpp_CStrList_setStringAt_FUN_004a3120
     Line 34: assigning to 'char *' from incompatible type 'void *'
-  sound_mp3.cpp_CFileBitStream_init_FUN_0052ecf0
-    Line 28: assigning to 'char *' from incompatible type 'void *'
-  sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00534630
-    Line 55: assigning to 'char *' from incompatible type 'void *'
   sound_sndmain.cpp_CSfxSample_pollStream_FUN_005a6730
     Line 178: assigning to 'char *' from incompatible type 'void *'
   shape_edittool.cpp_CStrList_allocate_FUN_004a2cc0
     Line 26: assigning to 'char **' from incompatible type 'void *'
   wincore_windll.cpp_clearScreen_FUN_005b3e70
     Line 25: assigning to 'double *' from incompatible type 'void *'
-  shape_quantize.cpp_CColorQuantizer_errorDiffusionBuffers_FUN_00555500
-    Line 46: assigning to 'float *' from incompatible type 'void *'
   sound_sndmain.cpp_allocMixBuffers_FUN_005a5730
     Line 34: assigning to 'float *' from incompatible type 'void *'
   sound_sndmain.cpp_analyzeFrequencyBand_FUN_005ac400
@@ -1726,18 +1702,12 @@ CATEGORY: incompatible_types (374 errors)
     Line 21: assigning to 'int' from incompatible type 'void'
   wincore_windll.cpp_setFogColor_FUN_005b7b80
     Line 20: assigning to 'int' from incompatible type 'void'
-  cockpit_ckptutil.c_rotateBitmap_FUN_00434870
-    Line 31: assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'
   cockpit_pkbitmap.cpp_CPackedBitmap_loadAndCompressBitmap_FUN_0054b080
     Line 15: assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'
   cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_0054b000
     Line 16: assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'
   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40
     Line 46: assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'
-  cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_0054c1e0
-    Line 34: assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'
-  core_dlight.cpp_CDemonLight_allocateFilter_FUN_00474720
-    Line 14: assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'
   core_dlight.cpp_CDemonLight_applyFilter_FUN_00474770
     Line 29: assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'
   core_dlight.cpp_CDemonLight_init_FUN_004727c0
@@ -1748,6 +1718,8 @@ CATEGORY: incompatible_types (374 errors)
     Line 139: assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'
   shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180
     Line 50: assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'
+  shape_quantize.cpp_CColorQuantizer_errorDiffusionBuffers_FUN_00555500
+    Line 59: assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'
   shape_quantize.cpp_quantizeRawPixelData_FUN_00556490
     Line 74: assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'
   cockpit_ckptutil.c_copyScreenRegion_FUN_00432d90

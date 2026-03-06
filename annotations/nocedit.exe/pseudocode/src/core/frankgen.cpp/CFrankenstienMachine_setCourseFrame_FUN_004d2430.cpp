@@ -2,16 +2,14 @@
 // Address: 004d2430
 // Address Range: [[004d2430, 004d24e4]]
 // Convention: __cdecl
-// Signature: void __cdecl core_frankgen_cpp_CFrankenstienMachine_setCourseFrame_FUN_004d2430(CFrankenstienMachine *this_ptr)
+// Signature: void __cdecl core_frankgen_cpp_CFrankenstienMachine_setCourseFrame_FUN_004d2430(CFrankenstienMachine *this_ptr,float start_frame,float end_frame)
 
 #include "nocturne.h"
 
-void __cdecl core_frankgen_cpp_CFrankenstienMachine_setCourseFrame_FUN_004d2430(CFrankenstienMachine *this_ptr)
+void __cdecl core_frankgen_cpp_CFrankenstienMachine_setCourseFrame_FUN_004d2430(CFrankenstienMachine *this_ptr,float start_frame,float end_frame)
 
 {
   int iVar1;
-  float in_stack_00000008;
-  float in_stack_0000000c;
   float local_20;
   
   iVar1 = (this_ptr->course).len;
@@ -20,8 +18,7 @@ void __cdecl core_frankgen_cpp_CFrankenstienMachine_setCourseFrame_FUN_004d2430(
     g_CurrentLineNumber = 0x1dc;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CFrankenstienMachine::setCourseFrame - no course!");
   }
-  local_20 = ((float)iVar1 * (this_ptr->master_frame - in_stack_00000008)) /
-             (in_stack_0000000c - in_stack_00000008);
+  local_20 = ((float)iVar1 * (this_ptr->master_frame - start_frame)) / (end_frame - start_frame);
   if (local_20 < 0.0) {
     local_20 = 0.0;
   }

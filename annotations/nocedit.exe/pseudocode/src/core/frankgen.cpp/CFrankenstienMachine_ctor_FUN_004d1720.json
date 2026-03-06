@@ -2,70 +2,21 @@
   "compilation_status": {
     "errors": [],
     "success": true,
-    "warnings": [
-      {
-        "category": "array_error",
-        "column": 3,
-        "line": 22,
-        "message": "array index 4294967294 refers past the last possible element for an array in 32-bit address space containing 3040-bit (380-byte) elements (max possible 11302545 elements) [-Warray-bounds]"
-      },
-      {
-        "category": "array_error",
-        "column": 3,
-        "line": 23,
-        "message": "array index 4294967294 refers past the last possible element for an array in 32-bit address space containing 3040-bit (380-byte) elements (max possible 11302545 elements) [-Warray-bounds]"
-      },
-      {
-        "category": "array_error",
-        "column": 3,
-        "line": 24,
-        "message": "array index 4294967294 refers past the last possible element for an array in 32-bit address space containing 3040-bit (380-byte) elements (max possible 11302545 elements) [-Warray-bounds]"
-      },
-      {
-        "category": "array_error",
-        "column": 3,
-        "line": 25,
-        "message": "array index 4294967294 refers past the last possible element for an array in 32-bit address space containing 3040-bit (380-byte) elements (max possible 11302545 elements) [-Warray-bounds]"
-      },
-      {
-        "category": "array_error",
-        "column": 3,
-        "line": 27,
-        "message": "array index 4294967294 refers past the last possible element for an array in 32-bit address space containing 3040-bit (380-byte) elements (max possible 11302545 elements) [-Warray-bounds]"
-      },
-      {
-        "category": "array_error",
-        "column": 3,
-        "line": 28,
-        "message": "array index 4294967294 refers past the last possible element for an array in 32-bit address space containing 3040-bit (380-byte) elements (max possible 11302545 elements) [-Warray-bounds]"
-      },
-      {
-        "category": "array_error",
-        "column": 3,
-        "line": 29,
-        "message": "array index 4294967294 refers past the last possible element for an array in 32-bit address space containing 3040-bit (380-byte) elements (max possible 11302545 elements) [-Warray-bounds]"
-      },
-      {
-        "category": "array_error",
-        "column": 3,
-        "line": 30,
-        "message": "array index 4294967294 refers past the last possible element for an array in 32-bit address space containing 3040-bit (380-byte) elements (max possible 11302545 elements) [-Warray-bounds]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 28,
-    "complexity_score": 58,
+    "complexity_score": 102,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 23,
-    "suspect_count": 3,
+    "pseudocode_lines": 17,
+    "suspect_count": 8,
     "suspect_types": [
-      "negative_offset"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 51
+    "total_lines": 45
   },
   "cross_references": [
     {
@@ -169,28 +120,68 @@
   },
   "suspects": [
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 12,
+      "match": "ADJ",
+      "severity": "mild",
+      "text": "pCVar3 = core_course_cpp_CCourse_ctor_FUN_004424c0(&ADJ(pCVar2)->course);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 13,
+      "match": "ADJ",
+      "severity": "mild",
+      "text": "pCVar4 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&ADJ(pCVar3)->body_model);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 14,
-      "match": "pCVar2[-2].",
+      "match": "ADJ",
       "severity": "mild",
-      "text": "*(CDemonActor_vtable **)(pCVar2[-2].model_name + 200) = &g_CFrankenstienMachineVTable;",
-      "type": "negative_offset"
+      "text": "ADJ(pCVar4)->base.vtable._ub = &g_CFrankenstienMachineVTable;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 15,
+      "match": "ADJ",
+      "severity": "mild",
+      "text": "ADJ(pCVar4)->master_frame = 0.0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 16,
+      "match": "ADJ",
+      "severity": "mild",
+      "text": "ADJ(pCVar4)->course_filename[0] = '\\0';",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 17,
+      "match": "ADJ",
+      "severity": "mild",
+      "text": "ADJ(pCVar4)->part_frame = 0.0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 18,
+      "match": "ADJ",
+      "severity": "mild",
+      "text": "ADJ(pCVar4)->particle_accumulator = 0.0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 19,
-      "match": "pCVar2[-2].",
+      "match": "ADJ",
       "severity": "mild",
-      "text": "pCVar2[-2].model_name[0xd4] = '\\0';",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 25,
-      "match": "pCVar2[-3].",
-      "severity": "mild",
-      "text": "return (CFrankenstienMachine *)(pCVar2[-3].model_name + 0xf0);",
-      "type": "negative_offset"
+      "text": "return ADJ(pCVar4);",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

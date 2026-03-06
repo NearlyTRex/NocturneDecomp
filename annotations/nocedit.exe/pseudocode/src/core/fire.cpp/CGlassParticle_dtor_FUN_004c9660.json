@@ -6,14 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 15,
-    "complexity_score": 9,
+    "complexity_score": 24,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 9,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "decompiler_intrinsic"
+    ],
     "total_lines": 24
   },
   "cross_references": [],
@@ -94,7 +96,16 @@
       }
     ]
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 10,
+      "match": "ADJ",
+      "severity": "mild",
+      "text": "pCVar2 = (CGlassParticle *)core_particle_cpp_CParticle_dtor_FUN_00545670(&ADJ(pCVar1)->base,1);",
+      "type": "decompiler_intrinsic"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

@@ -3074,6 +3074,7 @@ static char s_BackspaceChar_0062a766 = 0x08;
 static char s_FormFeedChar_0062a76c = 0x0C;
 static char s_MaxChar_0062a8ad = '\0';
 static char s_EmptyChar_0062ca5b = '\0';
+static char s_EmptyChar_0062cc98 = '\0';
 
 // char[11] constants
 static char s_0062a892[] = " ";

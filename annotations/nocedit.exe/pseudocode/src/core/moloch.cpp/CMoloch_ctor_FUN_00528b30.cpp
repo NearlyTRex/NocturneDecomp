@@ -10,60 +10,42 @@ CMoloch * __cdecl core_moloch_cpp_CMoloch_ctor_FUN_00528b30(CMoloch *this_ptr)
 
 {
   char cVar1;
-  SMRGLTextureBasic *pSVar2;
-  CHero *pCVar3;
-  CDeformableModelInstance *pCVar4;
-  CMorph *pCVar5;
-  char *pcVar6;
-  char *pcVar7;
-  SMRGLTextureLod *pSVar8;
+  CMoloch *pCVar3;
+  CMoloch_ptr_130004 pCVar4;
+  CMoloch_ptr_139100 pCVar5;
+  char *pcVar2;
+  char *pcVar3;
   
-  pCVar3 = core_hero_cpp_CHero_ctor_FUN_004f2340(&this_ptr->base);
-  pCVar4 = core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0059ddc0
-                     ((CDeformableModelInstance *)(pCVar3 + 1));
-  pCVar5 = core_morph_cpp_CMorph_ctor_FUN_0052b310((CMorph *)&pCVar4[1].transformed_vertices[10].y);
-  *(CDemonActor_vtable **)(pCVar5[-0x2d].models[0].textures[0x12].textures[2].texture_name + 4) =
-       &g_CMolochVTable;
+  pCVar3 = (CMoloch *)core_hero_cpp_CHero_ctor_FUN_004f2340(&this_ptr->base);
+  pCVar4 = core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0059ddc0(&pCVar3->model);
+  pCVar5 = core_morph_cpp_CMorph_ctor_FUN_0052b310(&ADJ(pCVar4)->morph);
+  ADJ(pCVar5)->base.base.base.vtable._ub = &g_CMolochVTable;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
-            ((CDeformableModelInstance *)
-             (pCVar5[-0x2d].models[0].textures[0x12].textures[2].texture_name + 8),
-             "moloch_h.dfm");
-  pcVar6 = "molochToDemon";
-  pcVar7 = pCVar5[-1].models[1].textures[0x11].textures[1].texture_name + 0xc;
+            (&ADJ(pCVar5)->base.base.model,"moloch_h.dfm");
+  pcVar2 = "molochToDemon";
+  pcVar3 = ADJ(pCVar5)->human_to_demon_condition;
   do {
-    cVar1 = *pcVar6;
-    *pcVar7 = cVar1;
+    cVar1 = *pcVar2;
+    *pcVar3 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar6[1];
-    pcVar6 = pcVar6 + 2;
-    pcVar7[1] = cVar1;
-    pcVar7 = pcVar7 + 2;
+    cVar1 = pcVar2[1];
+    pcVar2 = pcVar2 + 2;
+    pcVar3[1] = cVar1;
+    pcVar3 = pcVar3 + 2;
   } while (cVar1 != '\0');
-  pcVar7 = "molochToHuman";
-  pSVar8 = pCVar5[-1].models[1].textures + 0x13;
+  pcVar2 = "molochToHuman";
+  pcVar3 = ADJ(pCVar5)->demon_to_human_condition;
   do {
-    cVar1 = *pcVar7;
-    *(char *)&pSVar8->textures[0].base.type = cVar1;
+    cVar1 = *pcVar2;
+    *pcVar3 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar7[1];
-    pcVar7 = pcVar7 + 2;
-    *(char *)((int)&pSVar8->textures[0].base.type + 1) = cVar1;
-    pSVar8 = (SMRGLTextureLod *)((int)&pSVar8->textures[0].base.type + 2);
+    cVar1 = pcVar2[1];
+    pcVar2 = pcVar2 + 2;
+    pcVar3[1] = cVar1;
+    pcVar3 = pcVar3 + 2;
   } while (cVar1 != '\0');
-  pSVar8 = pCVar5[-1].models[1].textures + 0x11;
-  pSVar8->textures[1].texture_name[0] = '\x01';
-  pSVar8->textures[1].texture_name[1] = '\0';
-  pSVar8->textures[1].texture_name[2] = '\0';
-  pSVar8->textures[1].texture_name[3] = '\0';
-  pSVar2 = pCVar5[-1].models[1].textures[0x11].textures;
-  pSVar2[1].texture_name[4] = '\0';
-  pSVar2[1].texture_name[5] = '\0';
-  pSVar2[1].texture_name[6] = '\0';
-  pSVar2[1].texture_name[7] = '\0';
-  pSVar2 = pCVar5[-1].models[1].textures[0x11].textures;
-  pSVar2[1].texture_name[8] = '\0';
-  pSVar2[1].texture_name[9] = '\0';
-  pSVar2[1].texture_name[10] = '\0';
-  pSVar2[1].texture_name[0xb] = '\0';
-  return (CMoloch *)pCVar5[-0x2d].models[0].textures[0xe].textures[0].texture_name;
+  ADJ(pCVar5)->in_human_form = 1;
+  ADJ(pCVar5)->morphing = 0;
+  ADJ(pCVar5)->morph_timer = 0.0;
+  return ADJ(pCVar5);
 }

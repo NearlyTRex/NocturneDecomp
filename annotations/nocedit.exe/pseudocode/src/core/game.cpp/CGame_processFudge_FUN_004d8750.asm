@@ -1,12 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_game_cpp_CGame_processFudge_FUN_004d8750(CGame *this_ptr,float delta_time,int additional_param)
+; int __cdecl core_game_cpp_CGame_processFudge_FUN_004d8750(CGame *this_ptr)
 ;
 ; Parameters:
 ; CGame *          Stack[0x4]:4   this_ptr
-; float            Stack[0x8]:4   delta_time
-; int              Stack[0xc]:4   additional_param
 ;
 ; XREF[1]:
 ;   core_game.cpp_CGame_runGameSession_FUN_004daf80 at 004db38f

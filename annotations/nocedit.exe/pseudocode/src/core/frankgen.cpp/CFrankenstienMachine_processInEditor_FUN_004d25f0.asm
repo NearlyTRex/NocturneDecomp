@@ -17,8 +17,8 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_processInEditor_FUN_0040d040
-;   core_frankgen.cpp_CFrankenstienMachine_findLeader_FUN_004d2330
-;   core_frankgen.cpp_CFrankenstienMachine_FUN_004d2190
+;   core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004d2190
+;   core_frankgen.cpp_findLeader_FUN_004d2330
 ;
 ; *****************************************************************************
 
@@ -65,8 +65,8 @@ section .text
     FLD float ptr [ESP]                 ; 004d2647
     FMUL double ptr [0x0062ac05]        ; 004d264a | DOUBLE_0062ac05
     FSTP float ptr [ESP]                ; 004d2650
-    CALL core_frankgen.cpp_CFrankenstienMachine_findLeader_FUN_004d2330 ; 004d2653
-        ;   XREF to: 004d2330 (UNCONDITIONAL_CALL)  ; CDemonActor * core_frankgen.cpp_CFrankenstienMachine_findLeader_FUN_004d2330(CFrankenstienMachine * this_ptr)
+    CALL core_frankgen.cpp_findLeader_FUN_004d2330 ; 004d2653
+        ;   XREF to: 004d2330 (UNCONDITIONAL_CALL)  ; CDemonActor * core_frankgen.cpp_findLeader_FUN_004d2330()
         ;   Label: LAB_004d2653
     PUSH 0x34                           ; 004d2658
     MOV EDI,EAX                         ; 004d265a
@@ -120,8 +120,8 @@ section .text
         ;   Label: LAB_004d26e6
     PUSH EBX                            ; 004d26ec
     FSTP float ptr [EBX + 0x15c]        ; 004d26ed
-    CALL core_frankgen.cpp_CFrankenstienMachine_FUN_004d2190 ; 004d26f3
-        ;   XREF to: 004d2190 (UNCONDITIONAL_CALL)  ; CVector3f * core_frankgen.cpp_CFrankenstienMachine_FUN_004d2190(CFrankenstienMachine * this_ptr)
+    CALL core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004d2190 ; 004d26f3
+        ;   XREF to: 004d2190 (UNCONDITIONAL_CALL)  ; CVector3f * core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004d2190(CFrankenstienMachine * this_ptr)
     ADD ESP,0x4                         ; 004d26f8
     MOV ESP,EBP                         ; 004d26fb
     POP EBP                             ; 004d26fd

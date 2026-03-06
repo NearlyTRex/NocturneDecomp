@@ -10,24 +10,18 @@ CFrankenstienMachine * __cdecl core_frankgen_cpp_CFrankenstienMachine_ctor_FUN_0
 
 {
   CFrankenstienMachine *pCVar1;
-  CKeyFramedModelInstance *pCVar2;
-  CCourse *pCVar3;
+  CFrankenstienMachine_ptr_388 pCVar2;
+  CFrankenstienMachine_ptr_768 pCVar3;
+  CFrankenstienMachine_ptr_780 pCVar4;
   
   pCVar1 = (CFrankenstienMachine *)core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
   pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&pCVar1->bed_model);
-  pCVar3 = core_course_cpp_CCourse_ctor_FUN_004424c0((CCourse *)(pCVar2 + 1));
-  pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0
-                     ((CKeyFramedModelInstance *)(pCVar3 + 1));
-  *(CDemonActor_vtable **)(pCVar2[-2].model_name + 200) = &g_CFrankenstienMachineVTable;
-  pCVar2[-0xffffffff00000002].model_name[0xd0] = '\0';
-  pCVar2[-0xffffffff00000002].model_name[0xd1] = '\0';
-  pCVar2[-0xffffffff00000002].model_name[0xd2] = '\0';
-  pCVar2[-0xffffffff00000002].model_name[0xd3] = '\0';
-  pCVar2[-2].model_name[0xd4] = '\0';
-  pCVar2[-0xffffffff00000002].model_name[0xf4] = '\0';
-  pCVar2[-0xffffffff00000002].model_name[0xf5] = '\0';
-  pCVar2[-0xffffffff00000002].model_name[0xf6] = '\0';
-  pCVar2[-0xffffffff00000002].model_name[0xf7] = '\0';
-  pCVar2[1].part_visibility_flags[1] = 0;
-  return (CFrankenstienMachine *)(pCVar2[-3].model_name + 0xf0);
+  pCVar3 = core_course_cpp_CCourse_ctor_FUN_004424c0(&ADJ(pCVar2)->course);
+  pCVar4 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&ADJ(pCVar3)->body_model);
+  ADJ(pCVar4)->base.vtable._ub = &g_CFrankenstienMachineVTable;
+  ADJ(pCVar4)->master_frame = 0.0;
+  ADJ(pCVar4)->course_filename[0] = '\0';
+  ADJ(pCVar4)->part_frame = 0.0;
+  ADJ(pCVar4)->particle_accumulator = 0.0;
+  return ADJ(pCVar4);
 }

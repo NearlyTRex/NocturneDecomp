@@ -51,7 +51,7 @@ void __cdecl core_game_cpp_CGame_displayActStats_FUN_004e3800(CGame *this_ptr)
   fVar2 = this_ptr->total_play_time - (float)local_28;
   this_ptr->total_play_time = fVar2;
   fVar3 = (float)100;
-  this_ptr->game_state_flags = this_ptr->game_state_flags + (int)this_ptr->game_stat_2;
+  this_ptr->game_state_flags = this_ptr->game_state_flags + (int)this_ptr->damageable_enemy_count;
   local_24 = (int)ROUND(ROUND(fVar2 * fVar3));
   local_14 = local_28;
   pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Level time");
@@ -166,7 +166,7 @@ void __cdecl core_game_cpp_CGame_displayActStats_FUN_004e3800(CGame *this_ptr)
     pcVar10[1] = cVar1;
     pcVar10 = pcVar10 + 2;
   } while (cVar1 != '\0');
-  _sprintf(local_148,"%d\n\n",this_ptr->game_stat_2);
+  _sprintf(local_148,"%d\n\n",this_ptr->damageable_enemy_count);
   this_ptr_00 = g_ThemeFont;
   pcVar4 = local_148;
   iVar5 = -1;

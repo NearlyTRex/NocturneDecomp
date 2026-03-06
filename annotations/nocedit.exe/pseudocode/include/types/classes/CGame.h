@@ -96,7 +96,7 @@ typedef struct CGame {
     int block_auto_save; // 0x240
     int auto_save_blocked; // 0x244
     float game_stat_1; // 0x248
-    float game_stat_2; // 0x24c
+    float damageable_enemy_count; // 0x24c
     float total_play_time; // 0x250
     int game_state_flags; // 0x254
     int act_completion_state; // 0x258

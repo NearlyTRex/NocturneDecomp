@@ -6,18 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 71,
-    "complexity_score": 139,
+    "complexity_score": 136,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 10,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 59,
-    "suspect_count": 7,
+    "pseudocode_lines": 41,
+    "suspect_count": 9,
     "suspect_types": [
-      "negative_offset",
-      "pointer_cast"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 130
+    "total_lines": 112
   },
   "cross_references": [
     {
@@ -182,60 +181,76 @@
   },
   "suspects": [
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 25,
-      "match": "pCVar5[-1].",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 14,
+      "match": "ADJ",
       "severity": "mild",
-      "text": "pcVar7 = pCVar5[-1].models[1].textures[0x11].textures[1].texture_name + 0xc;",
-      "type": "negative_offset"
+      "text": "pCVar5 = core_morph_cpp_CMorph_ctor_FUN_0052b310(&ADJ(pCVar4)->morph);",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 36,
-      "match": "pCVar5[-1].",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 15,
+      "match": "ADJ",
       "severity": "mild",
-      "text": "pSVar8 = pCVar5[-1].models[1].textures + 0x13;",
-      "type": "negative_offset"
+      "text": "ADJ(pCVar5)->base.base.base.vtable._ub = &g_CMolochVTable;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 17,
+      "match": "ADJ",
+      "severity": "mild",
+      "text": "(&ADJ(pCVar5)->base.base.model,\"moloch_h.dfm\");",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 19,
+      "match": "ADJ",
+      "severity": "mild",
+      "text": "pcVar3 = ADJ(pCVar5)->human_to_demon_condition;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 30,
+      "match": "ADJ",
+      "severity": "mild",
+      "text": "pcVar3 = ADJ(pCVar5)->demon_to_human_condition;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 40,
+      "match": "ADJ",
+      "severity": "mild",
+      "text": "ADJ(pCVar5)->in_human_form = 1;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 41,
+      "match": "ADJ",
+      "severity": "mild",
+      "text": "ADJ(pCVar5)->morphing = 0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 42,
+      "match": "ADJ",
+      "severity": "mild",
+      "text": "ADJ(pCVar5)->morph_timer = 0.0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 43,
-      "match": "(char *)((int)",
+      "match": "ADJ",
       "severity": "mild",
-      "text": "*(char *)((int)&pSVar8->textures[0].base.type + 1) = cVar1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 44,
-      "match": "(SMRGLTextureLod *)((int)",
-      "severity": "mild",
-      "text": "pSVar8 = (SMRGLTextureLod *)((int)&pSVar8->textures[0].base.type + 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 46,
-      "match": "pCVar5[-1].",
-      "severity": "mild",
-      "text": "pSVar8 = pCVar5[-1].models[1].textures + 0x11;",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 51,
-      "match": "pCVar5[-1].",
-      "severity": "mild",
-      "text": "pSVar2 = pCVar5[-1].models[1].textures[0x11].textures;",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 56,
-      "match": "pCVar5[-1].",
-      "severity": "mild",
-      "text": "pSVar2 = pCVar5[-1].models[1].textures[0x11].textures;",
-      "type": "negative_offset"
+      "text": "return ADJ(pCVar5);",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

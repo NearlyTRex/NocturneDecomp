@@ -10,43 +10,31 @@ CFlameCan * __cdecl core_flamecan_cpp_CFlameCan_ctor_FUN_004cb160(CFlameCan *thi
 
 {
   char cVar1;
-  CDemonActor *pCVar2;
-  CKeyFramedModelInstance *pCVar3;
-  CFlame *pCVar4;
-  char *pcVar5;
-  char *pcVar6;
+  CFlameCan *pCVar2;
+  CFlameCan_ptr_344 pCVar3;
+  CFlameCan_ptr_832 pCVar4;
+  char *pcVar2;
+  char *pcVar3;
   
-  pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
-  pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0
-                     ((CKeyFramedModelInstance *)(pCVar2 + 1));
-  pCVar4 = core_flame_cpp_CFlame_ctor_FUN_004c9aa0
-                     ((CFlame *)(pCVar3[1].part_visibility_flags + 0x1b));
-  pcVar5 = "none";
-  *(CDemonActor_vtable **)(pCVar4[-1].base.create_event + 0x40) = &g_CFlameCanVTable;
+  pCVar2 = (CFlameCan *)core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
+  pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&pCVar2->model);
+  pCVar4 = core_flame_cpp_CFlame_ctor_FUN_004c9aa0(&ADJ(pCVar3)->flame);
+  pcVar2 = "none";
+  ADJ(pCVar4)->base.vtable._ub = &g_CFlameCanVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
-            ((CKeyFramedModelInstance *)(pCVar4[-1].base.create_event + 0x44),
-             "question.kfm");
-  pCVar4[-0xffffffff00000001].off_event[0x1c] = '\0';
-  pCVar4[-0xffffffff00000001].off_event[0x1d] = '\0';
-  pCVar4[-0xffffffff00000001].off_event[0x1e] = '\0';
-  pCVar4[-0xffffffff00000001].off_event[0x1f] = '\0';
-  pcVar6 = pCVar4[-1].off_event + 0x24;
-  pCVar4[-0xffffffff00000001].off_event[0x20] = '\0';
-  pCVar4[-0xffffffff00000001].off_event[0x21] = '\0';
-  pCVar4[-0xffffffff00000001].off_event[0x22] = ' ';
-  pCVar4[-0xffffffff00000001].off_event[0x23] = 'A';
+            (&ADJ(pCVar4)->model,"question.kfm");
+  ADJ(pCVar4)->on_fire = 0;
+  pcVar3 = ADJ(pCVar4)->on_fire_condition;
+  ADJ(pCVar4)->time_to_explode = 10.0;
   do {
-    cVar1 = *pcVar5;
-    *pcVar6 = cVar1;
+    cVar1 = *pcVar2;
+    *pcVar3 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar5[1];
-    pcVar5 = pcVar5 + 2;
-    pcVar6[1] = cVar1;
-    pcVar6 = pcVar6 + 2;
+    cVar1 = pcVar2[1];
+    pcVar2 = pcVar2 + 2;
+    pcVar3[1] = cVar1;
+    pcVar3 = pcVar3 + 2;
   } while (cVar1 != '\0');
-  pCVar4[1].base.actor_name[0] = '\0';
-  pCVar4[1].base.actor_name[1] = '\0';
-  pCVar4[1].base.actor_name[2] = '\0';
-  pCVar4[1].base.actor_name[3] = '\0';
-  return (CFlameCan *)(pCVar4[-2].on_event + 0x50);
+  ADJ(pCVar4)->is_visible = 0;
+  return ADJ(pCVar4);
 }

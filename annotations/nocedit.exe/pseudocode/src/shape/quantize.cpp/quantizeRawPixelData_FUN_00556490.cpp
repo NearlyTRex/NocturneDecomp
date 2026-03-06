@@ -133,7 +133,7 @@ LAB_00556524:
       puVar3 = puVar3 + (uint)bVar8 * -2 + 1;
       puVar7 = puVar7 + (uint)bVar8 * -2 + 1;
     }
-    puVar3 = shape_memdbg_cpp_debugMalloc_FUN_0050f250(0x300,"..\\shape\\quantize.cpp",0x43a);
+    puVar3 = (uchar *)shape_memdbg_cpp_debugMalloc_FUN_0050f250(0x300,"..\\shape\\quantize.cpp",0x43a);
     *out_palette = puVar3;
     if (puVar3 == (uchar *)0x0) {
       g_CurrentFilename = "..\\shape\\quantize.cpp";

@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 30,
-    "complexity_score": 44,
+    "complexity_score": 113,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 19,
-    "suspect_count": 2,
+    "pseudocode_lines": 18,
+    "suspect_count": 9,
     "suspect_types": [
-      "negative_offset"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 49
+    "total_lines": 48
   },
   "cross_references": [
     {
@@ -124,20 +124,76 @@
   },
   "suspects": [
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 11,
-      "match": "this_ptr_00[-1].",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 10,
+      "match": "ADJ",
       "severity": "mild",
-      "text": "this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CGraveVTable;",
-      "type": "negative_offset"
+      "text": "ADJ(this_ptr_00)->base.vtable._ub = &g_CGraveVTable;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 21,
-      "match": "this_ptr_00[-1].",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 13,
+      "match": "ADJ",
       "severity": "mild",
-      "text": "return (CGrave *)(this_ptr_00[-1].part_visibility_flags + 9);",
-      "type": "negative_offset"
+      "text": "ADJ(this_ptr_00)->cur_frame = 0.0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 14,
+      "match": "ADJ",
+      "severity": "mild",
+      "text": "ADJ(this_ptr_00)->fps = 30.0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 15,
+      "match": "ADJ",
+      "severity": "mild",
+      "text": "ADJ(this_ptr_00)->animation_started = 0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 16,
+      "match": "ADJ",
+      "severity": "mild",
+      "text": "ADJ(this_ptr_00)->grave_state = 0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 17,
+      "match": "ADJ",
+      "severity": "mild",
+      "text": "ADJ(this_ptr_00)->hide_on_first_frame = 1;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 18,
+      "match": "ADJ",
+      "severity": "mild",
+      "text": "ADJ(this_ptr_00)->start_condition[0] = '\\0';",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 19,
+      "match": "ADJ",
+      "severity": "mild",
+      "text": "ADJ(this_ptr_00)->start_sound[0] = '\\0';",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 20,
+      "match": "ADJ",
+      "severity": "mild",
+      "text": "return ADJ(this_ptr_00);",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

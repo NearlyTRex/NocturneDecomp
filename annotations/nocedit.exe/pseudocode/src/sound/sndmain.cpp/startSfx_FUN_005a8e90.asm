@@ -19,7 +19,7 @@
 ; XREF[23]:
 ;   core_event.cpp_CEventList_restartSfxEntries_FUN_004b0f00 at 004b0f59
 ;   core_fire.cpp_CFireball_onCollision_FUN_004c1690 at 004c1736
-;   core_frankgen.cpp_CFrankenstienMachine_FUN_004d1f20 at 004d1f5f
+;   core_frankgen.cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004d1f20 at 004d1f5f
 ;   core_game.cpp_CGame_rollCredits_FUN_004e4010 at 004e43a8
 ;   core_lightgun.cpp_CLightGun_process_FUN_00506450 at 00506641
 ;   core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_0050aba0 at 0050ad04

@@ -11,7 +11,7 @@ void __cdecl core_dlight_cpp_CDemonLight_allocateFilter_FUN_00474720(CDemonLight
 {
   uchar *puVar1;
   
-  puVar1 = shape_memdbg_cpp_debugMalloc_FUN_0050f250(0x10000,"..\\core\\dlight.cpp",0x53f);
+  puVar1 = (uchar *)shape_memdbg_cpp_debugMalloc_FUN_0050f250(0x10000,"..\\core\\dlight.cpp",0x53f);
   this_ptr->filter_buffer = puVar1;
   if (puVar1 != (uchar *)0x0) {
     return;

@@ -17,7 +17,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160
 ;   core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290
-;   core_frankgen.cpp_CFrankenstienMachine_findLeader_FUN_004d2330
+;   core_frankgen.cpp_findLeader_FUN_004d2330
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;
 ; *****************************************************************************
@@ -44,8 +44,8 @@ section .text
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004d2531
     PUSH 0x0                            ; 004d2534
-    CALL core_frankgen.cpp_CFrankenstienMachine_findLeader_FUN_004d2330 ; 004d2536
-        ;   XREF to: 004d2330 (UNCONDITIONAL_CALL)  ; CDemonActor * core_frankgen.cpp_CFrankenstienMachine_findLeader_FUN_004d2330(CFrankenstienMachine * this_ptr)
+    CALL core_frankgen.cpp_findLeader_FUN_004d2330 ; 004d2536
+        ;   XREF to: 004d2330 (UNCONDITIONAL_CALL)  ; CDemonActor * core_frankgen.cpp_findLeader_FUN_004d2330()
     ADD EAX,0x15c                       ; 004d253b
     PUSH EAX                            ; 004d2540
     LEA EAX,[ESP + 0x8]                 ; 004d2541

@@ -62,7 +62,7 @@ CGame * __cdecl core_game_cpp_CGame_ctor_FUN_004d7b40(CGame *this_ptr)
   this_ptr->player_hit_flag = 0;
   this_ptr->game_stat_1 = 0.0;
   this_ptr->total_play_time = 0.0;
-  this_ptr->game_stat_2 = 0.0;
+  this_ptr->damageable_enemy_count = 0.0;
   this_ptr->game_state_flags = 0;
   this_ptr->act_completion_state = 0;
   g_CurrentSaveFile = '\0';

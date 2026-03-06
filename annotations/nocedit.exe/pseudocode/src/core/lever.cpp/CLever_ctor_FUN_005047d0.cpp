@@ -9,48 +9,26 @@
 CLever * __cdecl core_lever_cpp_CLever_ctor_FUN_005047d0(CLever *this_ptr)
 
 {
-  CDemonActor *pCVar1;
-  CKeyFramedModelInstance *this_ptr_00;
+  CLever *pCVar1;
+  CLever_ptr_344 this_ptr_00;
   
-  pCVar1 = core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
-  this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0
-                          ((CKeyFramedModelInstance *)(pCVar1 + 1));
-  core_event_cpp_CRuleList_clear_FUN_004b1670((CRuleList *)(this_ptr_00[1].model_name + 0xd4));
-  this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CLeverVTable;
+  pCVar1 = (CLever *)core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
+  this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&pCVar1->model);
+  core_event_cpp_CRuleList_clear_FUN_004b1670(&ADJ(this_ptr_00)->rule);
+  ADJ(this_ptr_00)->base.vtable._ub = &g_CLeverVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (this_ptr_00,"glever.kfm");
-  this_ptr_00[1].part_visibility_flags[1] = 0;
-  *(byte *)(this_ptr_00[1].part_visibility_flags + 3) = 0;
-  *(byte *)(this_ptr_00[1].part_visibility_flags + 0x1c) = 0;
-  this_ptr_00[1].model_name[0x5c] = '\0';
-  this_ptr_00[1].part_visibility_flags[2] = 0;
-  this_ptr_00[1].model_name[0xc0] = '\x01';
-  this_ptr_00[1].model_name[0xc1] = '\0';
-  this_ptr_00[1].model_name[0xc2] = '\0';
-  this_ptr_00[1].model_name[0xc3] = '\0';
-  this_ptr_00[1].model_name[0xc4] = '\0';
-  this_ptr_00[1].model_name[0xc5] = '\0';
-  this_ptr_00[1].model_name[0xc6] = '\0';
-  this_ptr_00[1].model_name[199] = '\0';
-  this_ptr_00[1].model_name[200] = '\x17';
-  this_ptr_00[1].model_name[0xc9] = '\0';
-  this_ptr_00[1].model_name[0xca] = '\0';
-  this_ptr_00[1].model_name[0xcb] = '\0';
-  this_ptr_00[1].model_name[0xcc] = '\0';
-  this_ptr_00[1].model_name[0xcd] = '\0';
-  this_ptr_00[1].model_name[0xce] = '\0';
-  this_ptr_00[1].model_name[0xcf] = '\0';
-  this_ptr_00[1].model_name[0xd0] = '\0';
-  this_ptr_00[1].model_name[0xd1] = '\0';
-  this_ptr_00[1].model_name[0xd2] = '\0';
-  this_ptr_00[1].model_name[0xd3] = '\0';
-  this_ptr_00[4].model_name[0x4c] = '\x02';
-  this_ptr_00[4].model_name[0x4d] = '\0';
-  this_ptr_00[4].model_name[0x4e] = '\0';
-  this_ptr_00[4].model_name[0x4f] = '\0';
-  this_ptr_00[4].model_name[0x50] = '\x01';
-  this_ptr_00[4].model_name[0x51] = '\0';
-  this_ptr_00[4].model_name[0x52] = '\0';
-  this_ptr_00[4].model_name[0x53] = '\0';
-  return (CLever *)(this_ptr_00[-1].part_visibility_flags + 9);
+  ADJ(this_ptr_00)->lever_type = LEVER_TYPE_GROUND;
+  ADJ(this_ptr_00)->on_event[0] = '\0';
+  ADJ(this_ptr_00)->off_event[0] = '\0';
+  ADJ(this_ptr_00)->sound[0] = '\0';
+  ADJ(this_ptr_00)->param = 0.0;
+  ADJ(this_ptr_00)->momentary_flag = 1;
+  ADJ(this_ptr_00)->linked_lever = 0;
+  ADJ(this_ptr_00)->end_vertex_index = 0x17;
+  ADJ(this_ptr_00)->moving = 0;
+  ADJ(this_ptr_00)->move_to_pct = 0.0;
+  ADJ(this_ptr_00)->allowed_sides = 2;
+  ADJ(this_ptr_00)->enable_collision = 1;
+  return ADJ(this_ptr_00);
 }

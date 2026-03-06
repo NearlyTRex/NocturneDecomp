@@ -15,13 +15,12 @@ int __cdecl core_frankgen_cpp_CFrankenstienMachine_renderOpaque_FUN_004d1f70(CFr
   int iVar3;
   float10 fVar4;
   double dVar5;
-  CFrankenstienMachine *in_stack_ffffffc8;
   float fStack_30;
   
   if (g_CDemonMissionPtr->is_in_editor != 0) {
-    pCVar2 = core_frankgen_cpp_CFrankenstienMachine_findLeader_FUN_004d2330(in_stack_ffffffc8);
+    pCVar2 = core_frankgen_cpp_findLeader_FUN_004d2330();
     this_ptr->master_frame = *(float *)(pCVar2[1].actor_name + 4);
-    core_frankgen_cpp_CFrankenstienMachine_FUN_004d2190(this_ptr);
+    core_frankgen_cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004d2190(this_ptr);
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base);
   this_ptr_00 = (*((this_ptr->base).vtable._ub)->getBoundingBox)

@@ -31,7 +31,7 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_reload_FUN_0054c1e0(CPackedBi
     core_main_c_displayErrorAndQuit_FUN_00506f10(local_e4);
   }
   size = this_ptr->width * this_ptr->height;
-  local_18 = shape_memdbg_cpp_debugMalloc_FUN_0050f250(size,"..\\cockpit\\pkbmpset.cpp",0x110);
+  local_18 = (uchar *)shape_memdbg_cpp_debugMalloc_FUN_0050f250(size,"..\\cockpit\\pkbmpset.cpp",0x110);
   if (local_18 == (uchar *)0x0) {
     _sprintf(local_148,"Can't allocate %u bytes for RAW buffer in CPackedBitmapSet::loadJoinedRAW",size);
     g_CurrentLineNumber = 0x115;

@@ -68,7 +68,7 @@ void __cdecl engine_texture_cpp_CTextureCache_loadTexture_FUN_005dcc00(CTextureC
   core_main_c_displayErrorAndQuit_FUN_00506f10(local_114);
 LAB_005dcc85:
   if (cache->texture_palette_ptrs[cache->current_texture_count] == (byte *)0x0) {
-    pbVar2 = shape_memdbg_cpp_debugMalloc_FUN_0050f250(0x300,"..\\engine\\texture.cpp",0x107);
+    pbVar2 = (byte *)shape_memdbg_cpp_debugMalloc_FUN_0050f250(0x300,"..\\engine\\texture.cpp",0x107);
     cache->texture_palette_ptrs[cache->current_texture_count] = pbVar2;
     if (cache->texture_palette_ptrs[cache->current_texture_count] == (byte *)0x0) {
       g_CurrentFilename = "..\\engine\\texture.cpp";

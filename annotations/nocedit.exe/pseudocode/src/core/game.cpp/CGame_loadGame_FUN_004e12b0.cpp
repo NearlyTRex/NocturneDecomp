@@ -76,7 +76,7 @@ void __cdecl core_game_cpp_CGame_loadGame_FUN_004e12b0(CGame *this_ptr,char *sav
   }
   local_20 = this_ptr->chapter_reload_filename;
   local_2c = &this_ptr->game_state_flags;
-  local_24 = &this_ptr->game_stat_2;
+  local_24 = &this_ptr->damageable_enemy_count;
   local_1c = &this_ptr->game_stat_1;
   local_28 = &this_ptr->total_play_time;
   do {

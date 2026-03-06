@@ -1,0 +1,24 @@
+#pragma once
+
+// Forward declarations
+struct CFlameCan;
+
+// Dependencies
+#include "system/basetypes.h"
+
+// Adjusted pointer: CFlameCan_ptr_832
+// Points to CFlame at offset 0x340 in CFlameCan
+// 32-bit pointer to CFlameCan
+struct CFlame;
+struct CFlameCan_ptr_832 {
+    void *_raw;
+    typedef CFlameCan base_type;
+    CFlameCan_ptr_832() : _raw(0) {}
+    template<typename T> CFlameCan_ptr_832(T* p) : _raw((void*)p) {}
+    template<typename T> CFlameCan_ptr_832& operator=(T* p) { _raw = (void*)p; return *this; }
+    CFlame* operator->() const { return (CFlame*)_raw; }
+    CFlameCan* adj() const { return (CFlameCan*)_raw; }
+    template<typename T> operator T*() const { return (T*)_raw; }
+    explicit operator bool() const { return _raw != 0; }
+};
+

@@ -6,15 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 15,
-    "complexity_score": 24,
+    "complexity_score": 44,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 9,
-    "suspect_count": 1,
+    "suspect_count": 3,
     "suspect_types": [
-      "negative_offset"
+      "decompiler_intrinsic"
     ],
     "total_lines": 24
   },
@@ -91,12 +91,28 @@
   },
   "suspects": [
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 11,
-      "match": "pCVar2[-1].",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 9,
+      "match": "ADJ",
       "severity": "mild",
-      "text": "return (CToss *)&pCVar2[-1].scrape_points[0].raytrace_intersection;",
-      "type": "negative_offset"
+      "text": "pCVar2 = core_box_cpp_CBox_ctor_FUN_0041dc50(&ADJ(pCVar1)->physics_box);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 10,
+      "match": "ADJ",
+      "severity": "mild",
+      "text": "ADJ(pCVar2)->fuse_timer = 0.0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 11,
+      "match": "ADJ",
+      "severity": "mild",
+      "text": "return ADJ(pCVar2);",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

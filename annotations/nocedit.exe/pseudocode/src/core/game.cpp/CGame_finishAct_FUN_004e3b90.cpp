@@ -57,7 +57,7 @@ void __cdecl core_game_cpp_CGame_finishAct_FUN_004e3b90(CGame *this_ptr)
     return;
   }
   this_ptr->game_stat_1 = this_ptr->total_play_time + this_ptr->game_stat_1;
-  this_ptr->game_state_flags = this_ptr->game_state_flags + (int)this_ptr->game_stat_2;
+  this_ptr->game_state_flags = this_ptr->game_state_flags + (int)this_ptr->damageable_enemy_count;
   engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_00410520(&local_4c);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0(&local_4c,"stats",0x280,0x1e0);
   wincore_windll_cpp_clearScreen_FUN_005b3e70();

@@ -48,7 +48,7 @@ void __cdecl core_script_cpp_CScript_buildParsedLines_FUN_0055a370(CScript *this
         cVar1 = *pcVar3;
         pcVar3 = pcVar3 + (uint)bVar6 * -2 + 1;
       } while (cVar1 != '\0');
-      pcVar3 = shape_memdbg_cpp_debugMalloc_FUN_0050f250(~uVar5,"..\\core\\script.cpp",0x39a);
+      pcVar3 = (char *)shape_memdbg_cpp_debugMalloc_FUN_0050f250(~uVar5,"..\\core\\script.cpp",0x39a);
       this_ptr->parsed_lines[this_ptr->parsed_line_count].text = pcVar3;
       if (this_ptr->parsed_lines == (SScriptLine *)0x0) {
         g_CurrentFilename = "..\\core\\script.cpp";

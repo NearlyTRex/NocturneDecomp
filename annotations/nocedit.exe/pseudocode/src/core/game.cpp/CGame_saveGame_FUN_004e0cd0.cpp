@@ -130,7 +130,7 @@ void __cdecl core_game_cpp_CGame_saveGame_FUN_004e0cd0(CGame *this_ptr,char *sav
   }
   _fprintf(file,"Game stats\n");
   _fprintf(file,"%f,%f,%d,%d\n",(double)this_ptr->total_play_time,(double)this_ptr->game_stat_1
-             ,this_ptr->game_stat_2,this_ptr->game_state_flags);
+             ,this_ptr->damageable_enemy_count,this_ptr->game_state_flags);
   core_set_cpp_CDemonSet_saveStateInfo_FUN_005711b0(g_CDemonSetPtr,file);
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\game.cpp",0xd50);
   g_IncludeCommentsWhenWriting = 0;

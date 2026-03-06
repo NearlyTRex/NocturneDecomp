@@ -36,7 +36,7 @@ void __cdecl shape_edittool_cpp_CStrList_copyToClipboard_FUN_004a3270(CStrList *
       iVar5 = iVar5 + ~uVar4;
     } while (iVar6 < this_ptr->item_count);
   }
-  pcVar2 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0(iVar5 + 1,"..\\shape\\edittool.cpp",0xc50);
+  pcVar2 = (char *)shape_memdbg_cpp_debugAlloc_FUN_0050f1f0(iVar5 + 1,"..\\shape\\edittool.cpp",0xc50);
   if (pcVar2 == (char *)0x0) {
     g_CurrentFilename = "..\\shape\\edittool.cpp";
     g_CurrentLineNumber = 0xc51;

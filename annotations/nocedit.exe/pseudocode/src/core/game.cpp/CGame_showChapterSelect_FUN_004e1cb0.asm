@@ -34,7 +34,7 @@
 ;   TerminatedCString s_core_game_cpp_0062cc7a
 ;   TerminatedCString s_rb_0062cc8b
 ;   TerminatedCString s_enemy_pod_0062cc8e
-;   undefined4 g_PodDir
+;   char s_EmptyChar_0062cc98 = \x00
 ;   TerminatedCString s_core_game_cpp_0062cc99
 ;   TerminatedCString s_core_game_cpp_0062ccaa
 ;   TerminatedCString s_rt_0062ccbb
@@ -76,7 +76,7 @@ section .text
     SUB ESP,0x6dc                       ; 004e1cb4
     PUSH 0x62cc8b                       ; 004e1cba | = "rb"
     PUSH 0x62cc8e                       ; 004e1cbf | = "enemy.pod"
-    PUSH 0x62cc98                       ; 004e1cc4 | g_PodDir
+    PUSH 0x62cc98                       ; 004e1cc4 | s_EmptyChar_0062cc98
     CALL engine_dosio.c_getFile_FUN_00481a50 ; 004e1cc9
         ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004e1cce

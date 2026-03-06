@@ -9,15 +9,14 @@
 CGasMask * __cdecl core_gasmask_cpp_CGasMask_ctor_FUN_004e5d00(CGasMask *this_ptr)
 
 {
-  CDemonActor *pCVar1;
-  CKeyFramedModelInstance *this_ptr_00;
+  CGasMask *pCVar1;
+  CGasMask_ptr_344 this_ptr_00;
   
-  pCVar1 = core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
-  this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0
-                          ((CKeyFramedModelInstance *)(pCVar1 + 1));
-  this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CGasMaskVTable;
+  pCVar1 = (CGasMask *)core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
+  this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&pCVar1->model);
+  ADJ(this_ptr_00)->base.vtable._ub = &g_CGasMaskVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (this_ptr_00,"gasmask.kfm");
-  this_ptr_00[1].part_visibility_flags[0] = 0;
-  return (CGasMask *)(this_ptr_00[-1].part_visibility_flags + 9);
+  ADJ(this_ptr_00)->carrier = (CDemonActor *)0x0;
+  return ADJ(this_ptr_00);
 }

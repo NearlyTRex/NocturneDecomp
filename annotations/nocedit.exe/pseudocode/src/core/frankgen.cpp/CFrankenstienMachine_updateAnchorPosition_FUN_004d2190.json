@@ -1,0 +1,300 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 155,
+    "complexity_score": 150,
+    "cross_reference_count": 4,
+    "function_call_count": 8,
+    "global_count": 7,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 80,
+    "suspect_count": 5,
+    "suspect_types": [
+      "decompiler_intrinsic",
+      "pointer_cast",
+      "stack_alignment_array",
+      "warning_inlined_function"
+    ],
+    "total_lines": 235
+  },
+  "cross_references": [
+    {
+      "addr": "004d25f0",
+      "from_addr": "004d26f3",
+      "name": "core_frankgen.cpp_CFrankenstienMachine_processInEditor_FUN_004d25f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d1a40",
+      "from_addr": "004d1a94",
+      "name": "core_frankgen.cpp_CFrankenstienMachine_process_FUN_004d1a40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d1f70",
+      "from_addr": "004d1f9c",
+      "name": "core_frankgen.cpp_CFrankenstienMachine_renderOpaque_FUN_004d1f70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d17b0",
+      "from_addr": "004d1857",
+      "name": "core_frankgen.cpp_CFrankenstienMachine_setup_FUN_004d17b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004d2190",
+    "address_range": [
+      [
+        "004d2190",
+        "004d232c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004d2190",
+    "signature": "CVector3f * __cdecl core_frankgen_cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004d2190(CFrankenstienMachine *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408ec0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0"
+    },
+    {
+      "addr": "00408c10",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10"
+    },
+    {
+      "addr": "00477890",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModel_getFrameVertices_FUN_00477890"
+    },
+    {
+      "addr": "00478d80",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80"
+    },
+    {
+      "addr": "004d2430",
+      "is_variadic": false,
+      "name": "core_frankgen.cpp_CFrankenstienMachine_setCourseFrame_FUN_004d2430"
+    },
+    {
+      "addr": "004d23a0",
+      "is_variadic": false,
+      "name": "core_frankgen.cpp_CFrankenstienMachine_setPartFrame_FUN_004d23a0"
+    },
+    {
+      "addr": "00506f10",
+      "is_variadic": true,
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "005fe6b0",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "004d2168",
+      "name": "switchdataD_004d2168",
+      "type": "void*",
+      "value": "004d21b1"
+    },
+    {
+      "addr": "0062ab35",
+      "name": "s_core_frankgen_cpp_0062ab35",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062ab4a",
+      "name": "s_WTF_0062ab4a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0065e658",
+      "name": "FLOAT_0065e658",
+      "type": "float",
+      "value": "0.00390625"
+    },
+    {
+      "addr": "0065e670",
+      "name": "FLOAT_0065e670",
+      "type": "float",
+      "value": "2300"
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.683760683760684,
+    "instruction_count": 117,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 7,
+      "BOOL_OR": 1,
+      "BRANCH": 8,
+      "BRANCHIND": 1,
+      "CALL": 12,
+      "CBRANCH": 2,
+      "COPY": 158,
+      "FLOAT2FLOAT": 7,
+      "FLOAT_MULT": 3,
+      "INT2FLOAT": 3,
+      "INT_ADD": 48,
+      "INT_AND": 41,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 31,
+      "INT_LEFT": 2,
+      "INT_LESS": 4,
+      "INT_MULT": 8,
+      "INT_NOTEQUAL": 2,
+      "INT_OR": 5,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 10,
+      "INT_SLESS": 17,
+      "INT_SUB": 57,
+      "INT_XOR": 1,
+      "INT_ZEXT": 6,
+      "LOAD": 25,
+      "POPCOUNT": 15,
+      "RETURN": 2,
+      "ROUND": 1,
+      "STORE": 56,
+      "TRUNC": 1
+    },
+    "pcode_op_count": 548
+  },
+  "stack_frame": {
+    "frame_size": 64,
+    "local_size": 60,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFrankenstienMachine *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 13,
+      "match": "aiStackY_1014",
+      "severity": "moderate",
+      "text": "int aiStackY_1014 [1012];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 62,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "frame_index = (int)ROUND(ROUND(this_ptr->part_frame));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 62,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "frame_index = (int)ROUND(ROUND(this_ptr->part_frame));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 68,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "piVar4 = (int *)((int)(pCVar2 + iVar1) + (uint)bVar5 * -8 + 4);",
+      "type": "pointer_cast"
+    }
+  ]
+}

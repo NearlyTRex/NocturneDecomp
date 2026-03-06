@@ -6,7 +6,7 @@
   },
   "complexity": {
     "assembly_lines": 48,
-    "complexity_score": 184,
+    "complexity_score": 179,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 5,
@@ -14,8 +14,7 @@
     "pseudocode_lines": 34,
     "suspect_count": 14,
     "suspect_types": [
-      "negative_offset",
-      "pointer_cast"
+      "decompiler_intrinsic"
     ],
     "total_lines": 82
   },
@@ -142,116 +141,116 @@
   },
   "suspects": [
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 14,
-      "match": "pCVar3[-7].",
+      "match": "ADJ",
       "severity": "mild",
-      "text": "pCVar3[-7].frames = (CCourseFrame *)&g_CMarqueeVTable;",
-      "type": "negative_offset"
+      "text": "ADJ(pCVar3)->base.vtable._ub = &g_CMarqueeVTable;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 15,
-      "match": "pCVar3[-7].",
+      "match": "ADJ",
       "severity": "mild",
-      "text": "piVar5 = &pCVar3[-7].loop;",
-      "type": "negative_offset"
+      "text": "pcVar3 = ADJ(pCVar3)->course_name;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 16,
-      "match": "pCVar3[-4].",
+      "match": "ADJ",
       "severity": "mild",
-      "text": "pCVar3[-4].frames = (CCourseFrame *)0x41200000;",
-      "type": "negative_offset"
+      "text": "ADJ(pCVar3)->total_time = 10.0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 23,
-      "match": "(char *)((int)",
-      "severity": "mild",
-      "text": "*(char *)((int)piVar5 + 1) = cVar1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 24,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "piVar5 = (int *)((int)piVar5 + 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 26,
-      "match": "pCVar3[-4].",
+      "match": "ADJ",
       "severity": "mild",
-      "text": "pCVar3[-4].loop = 0;",
-      "type": "negative_offset"
+      "text": "ADJ(pCVar3)->param = 0.0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 27,
-      "match": "pCVar3[-3].",
+      "match": "ADJ",
       "severity": "mild",
-      "text": "pCVar3[-3].len = 3;",
-      "type": "negative_offset"
+      "text": "ADJ(pCVar3)->phase = 3;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 28,
-      "match": "pCVar3[-3].",
+      "match": "ADJ",
       "severity": "mild",
-      "text": "pCVar3[-3].frames = (CCourseFrame *)0x0;",
-      "type": "negative_offset"
+      "text": "(ADJ(pCVar3)->bounding_box).min.x = 0.0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 29,
-      "match": "pCVar3[-3].",
+      "match": "ADJ",
       "severity": "mild",
-      "text": "pCVar3[-3].loop = 0;",
-      "type": "negative_offset"
+      "text": "(ADJ(pCVar3)->bounding_box).min.y = 0.0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 30,
-      "match": "pCVar3[-2].",
+      "match": "ADJ",
       "severity": "mild",
-      "text": "pCVar3[-2].len = 0;",
-      "type": "negative_offset"
+      "text": "(ADJ(pCVar3)->bounding_box).min.z = 0.0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 31,
-      "match": "pCVar3[-2].",
+      "match": "ADJ",
       "severity": "mild",
-      "text": "pCVar3[-2].frames = (CCourseFrame *)0x0;",
-      "type": "negative_offset"
+      "text": "(ADJ(pCVar3)->bounding_box).max.x = 0.0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 32,
-      "match": "pCVar3[-2].",
+      "match": "ADJ",
       "severity": "mild",
-      "text": "pCVar3[-2].loop = 0;",
-      "type": "negative_offset"
+      "text": "(ADJ(pCVar3)->bounding_box).max.y = 0.0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 33,
-      "match": "pCVar3[-1].",
+      "match": "ADJ",
       "severity": "mild",
-      "text": "pCVar3[-1].len = 0;",
-      "type": "negative_offset"
+      "text": "(ADJ(pCVar3)->bounding_box).max.z = 0.0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 35,
-      "match": "pCVar3[-1].",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 34,
+      "match": "ADJ",
       "severity": "mild",
-      "text": "pCVar3[-1].loop = 1;",
-      "type": "negative_offset"
+      "text": "ADJ(pCVar3)->base.is_transparent = 1;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 35,
+      "match": "ADJ",
+      "severity": "mild",
+      "text": "ADJ(pCVar3)->type = 1;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 36,
+      "match": "ADJ",
+      "severity": "mild",
+      "text": "return ADJ(pCVar3);",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

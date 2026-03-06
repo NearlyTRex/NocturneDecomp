@@ -5,15 +5,15 @@ FUNCTION COMPILATION SUMMARY
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6486
-Successful: 5754 (88.7%)
-Failed: 732
+Successful: 5766 (88.9%)
+Failed: 720
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                           1496
+  other                           1491
   format_error                     580
-  undeclared_identifier            514
-  incompatible_types               374
+  undeclared_identifier            499
+  incompatible_types               358
   syntax_error                      63
   missing_member                    21
   type_error                        19
@@ -22,19 +22,13 @@ ERROR CATEGORIES
   pointer_precision                  2
 
 ====================================================================================================
-CATEGORY: other (1496 errors)
+CATEGORY: other (1491 errors)
 ====================================================================================================
 
   core_imp.cpp_CImp_process_FUN_004f9c30
     Line 268: C-style cast from 'CDemonActor *' to 'float' is not allowed...
-  core_gabriela.cpp_CGabriella_ctor_FUN_004d2b20
-    Line 19: C-style cast from 'CDemonActor_vtable *' to 'float' is not allowed...
   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
     Line 54: C-style cast from 'CDemonCamera *' to 'float' is not allowed...
-  core_frankgen.cpp_CFrankenstienMachine_processInEditor_FUN_004d25f0
-    Line 36: C-style cast from 'CFrankenstienMachine *' to 'float' is not allowed...
-  core_frankgen.cpp_CFrankenstienMachine_process_FUN_004d1a40
-    Line 97: C-style cast from 'CFrankenstienMachine *' to 'float' is not allowed...
   core_gabriela.cpp_CGabriella_processMotionEvents_FUN_004d4890
     Line 81: C-style cast from 'CGabriella *' to 'float' is not allowed...
   core_set.cpp_CDemonSet_buildDisplayList_FUN_0056fbd0
@@ -85,8 +79,14 @@ CATEGORY: other (1496 errors)
     Line 33: C-style cast from 'struct CLodVert *' to 'float' is not allowed...
   core_netgame.cpp_CNetGame_runLobby_FUN_00541390
     Line 68: C-style cast from 'uint' (aka 'unsigned int') to 'uchar[4]' (aka 'unsigned char[...
+  core_setdir.cpp_CZThumb_testCameraVisibility_FUN_005750a0
+    Line 26: C-style cast from 'void *' to 'float' is not allowed...
+  core_mmx.c_detectIntelProcessor_FUN_00524f4c
+    Line 67: assigning to 'char *' from 'const char *' discards qualifiers...
+  core_script.cpp_CCmdParm_setTemplateText_FUN_00560de0
+    Line 47: assigning to 'char *' from 'const char *' discards qualifiers...
 
-  ... and 279 more errors
+  ... and 276 more errors
 
 ====================================================================================================
 CATEGORY: format_error (580 errors)
@@ -156,7 +156,7 @@ CATEGORY: format_error (580 errors)
   ... and 142 more errors
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (514 errors)
+CATEGORY: undeclared_identifier (499 errors)
 ====================================================================================================
 
   core_actor.cpp_adjustIndentationLevel_FUN_0040aee0
@@ -220,10 +220,10 @@ CATEGORY: undeclared_identifier (514 errors)
   core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50
     Line 55: use of undeclared identifier 'code'...
 
-  ... and 185 more errors
+  ... and 182 more errors
 
 ====================================================================================================
-CATEGORY: incompatible_types (374 errors)
+CATEGORY: incompatible_types (358 errors)
 ====================================================================================================
 
   engine_fileio.cpp_CCheckOutList_add_FUN_004b2d00
@@ -287,7 +287,7 @@ CATEGORY: incompatible_types (374 errors)
   shape_superopt.cpp_CObj_allocatePolygons_FUN_005d2320
     Line 22: assigning to 'CPoly *' from incompatible type 'void *'...
 
-  ... and 199 more errors
+  ... and 191 more errors
 
 ====================================================================================================
 CATEGORY: syntax_error (63 errors)
@@ -449,8 +449,8 @@ CATEGORY: pointer_precision (2 errors)
 COMPILATION VS SUSPECT PATTERNS
 ====================================================================================================
 
-Average suspects in successfully compiled functions: 2.04
-Average suspects in failed compilations: 10.46
+Average suspects in successfully compiled functions: 2.05
+Average suspects in failed compilations: 10.55
 
-Functions that compile but have suspect patterns: 1659
+Functions that compile but have suspect patterns: 1657
 (These may have runtime issues even though syntax is valid)

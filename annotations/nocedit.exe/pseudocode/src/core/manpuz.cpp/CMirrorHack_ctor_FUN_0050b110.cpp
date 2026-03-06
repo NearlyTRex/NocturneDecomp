@@ -9,15 +9,14 @@
 CMirrorHack * __cdecl core_manpuz_cpp_CMirrorHack_ctor_FUN_0050b110(CMirrorHack *this_ptr)
 
 {
-  CDemonActor *pCVar1;
-  CKeyFramedModelInstance *this_ptr_00;
+  CMirrorHack *pCVar1;
+  CMirrorHack_ptr_344 this_ptr_00;
   
-  pCVar1 = core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
-  this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0
-                          ((CKeyFramedModelInstance *)(pCVar1 + 1));
-  this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CMirrorHackVTable;
+  pCVar1 = (CMirrorHack *)core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
+  this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&pCVar1->mirror_model);
+  ADJ(this_ptr_00)->base.vtable._ub = &g_CMirrorHackVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (this_ptr_00,"mirrhack.kfm");
-  this_ptr_00[1].part_visibility_flags[0] = 0;
-  return (CMirrorHack *)(this_ptr_00[-1].part_visibility_flags + 9);
+  ADJ(this_ptr_00)->interacting_actor = (CDemonActor *)0x0;
+  return ADJ(this_ptr_00);
 }

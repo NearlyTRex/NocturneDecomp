@@ -25,7 +25,7 @@ void __cdecl sound_mp3_cpp_CFileBitStream_init_FUN_0052ecf0(CFileBitStream *this
   this_ptr->stream_start_position = lVar1;
   this_ptr->stream_length = stream_length;
   this_ptr->buffer_size = buffer_size;
-  pcVar2 = shape_memdbg_cpp_debugMalloc_FUN_0050f250(buffer_size,"..\\sound\\mp3.cpp",0x1ff);
+  pcVar2 = (char *)shape_memdbg_cpp_debugMalloc_FUN_0050f250(buffer_size,"..\\sound\\mp3.cpp",0x1ff);
   this_ptr->buffer = pcVar2;
   if (pcVar2 == (char *)0x0) {
     g_CurrentFilename = "..\\sound\\mp3.cpp";

@@ -4,30 +4,30 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 4308 functions
-  1 suspects: 845 functions
-  2 suspects: 404 functions
-  3 suspects: 261 functions
-  4 suspects: 185 functions
+  0 suspects: 4315 functions
+  1 suspects: 844 functions
+  2 suspects: 396 functions
+  3 suspects: 263 functions
+  4 suspects: 184 functions
   5 suspects: 162 functions
-  6 suspects: 112 functions
-  7 suspects: 107 functions
-  8 suspects: 82 functions
-  9 suspects: 63 functions
+  6 suspects: 108 functions
+  7 suspects: 106 functions
+  8 suspects: 83 functions
+  9 suspects: 65 functions
   10 suspects: 46 functions
   11 suspects: 54 functions
   12 suspects: 39 functions
   13 suspects: 37 functions
   14 suspects: 37 functions
-  15 suspects: 33 functions
+  15 suspects: 34 functions
   16 suspects: 28 functions
-  17 suspects: 24 functions
-  18 suspects: 19 functions
+  17 suspects: 25 functions
+  18 suspects: 20 functions
   19 suspects: 26 functions
   20 suspects: 23 functions
   21 suspects: 15 functions
-  22 suspects: 13 functions
-  23 suspects: 17 functions
+  22 suspects: 12 functions
+  23 suspects: 18 functions
   24 suspects: 18 functions
   25 suspects: 13 functions
   26 suspects: 8 functions
@@ -188,7 +188,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       Function declares 4 params but call sites push 6 (2 missing)...
     ... and 134 more
 
-  [pointer_cast] (135 functions)
+  [pointer_cast] (133 functions)
   ------------------------------------------------------------
     core_dlight.cpp_drawGrayscalePixel_FUN_00473360    (  5 lines)
       *(int *)((int)g_ScreenBufferArray[y] + x * 4) = grayscale_va...
@@ -202,8 +202,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       return (CFootstep *)((int)pvVar1 + -8);...
     core_flies.cpp_SFly_ctor_FUN_004ccd20              (  6 lines)
       return (SFly *)((int)pvVar1 + -4);...
-    core_fire.cpp_CCrater_ctor_FUN_004c9580            (  6 lines)
-      return (CCrater *)((int)pvVar1 + -0x1c);...
     core_morph.cpp_SMorphControlPoint_ctor_FUN_0052cc5 (  6 lines)
       return (SMorphControlPoint *)((int)pvVar1 + -8);...
     core_mirror.cpp_CMirror_ctor_FUN_005213c0          (  6 lines)
@@ -212,8 +210,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       return (CLodFace *)((int)pvVar1 + -0x54);...
     core_manpuz.cpp_SGem_ctor_FUN_0050b940             (  7 lines)
       return (SGem *)((int)pvVar1 + -0x3c);...
-    core_fire.cpp_CGlassParticle_ctor_FUN_004c9630     (  9 lines)
-      return (CGlassParticle *)((int)pvVar2 + -0x78);...
     shape_memdbg.cpp_getMemoryHeaderFromPtr_FUN_0050ef ( 10 lines)
       return (SMemHead *)((int)user_ptr + -0x28);...
     core_morph.cpp_countTrianglesFromPolygons_FUN_0052 ( 12 lines)
@@ -230,9 +226,13 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       piVar1 = (int *)((int)g_ActorClassRegistrations + iVar3);...
     core_actor.cpp_resetActorTypeInfo_FUN_0040c7f0     ( 17 lines)
       piVar1 = (int *)((int)g_ActorClassRegistrations + iVar2);...
-    ... and 115 more
+    cockpit_ckptutil.c_applyActPalette_FUN_004319b0    ( 18 lines)
+      bitmap_buffer = (byte *)((int)bitmap_buffer + 1);...
+    core_netgame.cpp_findSimFrame_FUN_0053f550         ( 18 lines)
+      *(int *)((int)g_SimFrameHistory[0].player_controls[0].action...
+    ... and 113 more
 
-  [decompiler_intrinsic] (66 functions)
+  [decompiler_intrinsic] (72 functions)
   ------------------------------------------------------------
     core_dynamite.cpp_CDynamite_FUN_0049cf90           (  4 lines)
       return (uint)(ABS(this_ptr->fuse_timer) == 0.0);...
@@ -250,6 +250,14 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       return ADJ(pCVar1);...
     core_vehicle.cpp_CTire_ctor_FUN_005e8da0           (  6 lines)
       return ADJ(pCVar1);...
+    core_fire.cpp_CStake_dtor_FUN_004c9760             (  6 lines)
+      return ADJ(pCVar1);...
+    core_fire.cpp_CToss_dtor_FUN_004c95c0              (  6 lines)
+      return ADJ(pCVar1);...
+    core_fire.cpp_CCrater_ctor_FUN_004c9580            (  6 lines)
+      return ADJ(pvVar1);...
+    core_fire.cpp_CStake_ctor_FUN_004c9740             (  6 lines)
+      return ADJ(pCVar1);...
     core_skeleton.cpp_SVert_ctor_FUN_005a1f70          (  6 lines)
       return ADJ(pvVar1);...
     core_bodypart.cpp_SBodyPartFire_ctor_FUN_0041b620  (  6 lines)
@@ -258,67 +266,15 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       return ADJ(pCVar1);...
     shape_design.c_floatEpsilonCompare_FUN_004676b0    (  6 lines)
       local_18 = (uint)(ABS(value1 - value2) < epsilon);...
+    core_fire.cpp_CCrater_dtor_FUN_004c95a0            (  7 lines)
+      return ADJ(pCVar1);...
     core_water.cpp_calculateWaveHeight_FUN_005e9dc0    (  7 lines)
       fVar1 = (float10)fsin((float10)y * (float10)3.14159265350000...
+    core_fire.cpp_CGlassParticle_dtor_FUN_004c9660     (  9 lines)
+      pCVar2 = (CGlassParticle *)core_particle_cpp_CParticle_dtor_...
     core_hero.cpp_CHero_testCylinderCollision_FUN_004f ( 10 lines)
       if ((g_CGamePtr->god_mode_enabled == 0) && (ABS(this_ptr->in...
-    core_hero.cpp_CHero_testLineIntersection_FUN_004f2 ( 10 lines)
-      if ((g_CGamePtr->god_mode_enabled == 0) && (ABS(this_ptr->in...
-    core_event.cpp_getVectorDistance_FUN_004b1930      ( 10 lines)
-      return SQRT(fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1);...
-    shape_superopt.cpp_CP3D_distance_FUN_005d86d0      ( 10 lines)
-      return SQRT(dVar2 * dVar2 + dVar3 * dVar3 + dVar1 * dVar1);...
-    shape_superopt.cpp_CVec_normalize_FUN_005d81c0     ( 14 lines)
-      dVar1 = 1.0 / SQRT(dVar3 * dVar3 + dVar2 * dVar2 + dVar1 * d...
-    shape_superopt.cpp_CVec_setLength_FUN_005d8230     ( 14 lines)
-      dVar1 = length / SQRT(dVar3 * dVar3 + dVar2 * dVar2 + dVar1 ...
-    core_setutil.cpp_C3DSLight_isVisible_FUN_00587df0  ( 18 lines)
-      if (ABS(this_ptr->atten_end) == 0.0) {...
-    ... and 46 more
-
-  [negative_offset] (40 functions)
-  ------------------------------------------------------------
-    core_dracbrid.cpp_SFreaky_dtor_FUN_00486d50        (  6 lines)
-      return (SFreaky *)&pCVar1[-3].y;...
-    core_gore.cpp_CFootstep_dtor_FUN_004ee390          (  6 lines)
-      return (CFootstep *)&pCVar1[-1].y;...
-    core_manpuz.cpp_SGem_dtor_FUN_0050b960             (  6 lines)
-      return (SGem *)&pCVar1[-2].area;...
-    core_fire.cpp_CCrater_dtor_FUN_004c95a0            (  6 lines)
-      return (CCrater *)&pCVar1[-3].z;...
-    core_fire.cpp_CStake_dtor_FUN_004c9760             (  6 lines)
-      return (CStake *)&pCVar1[-1].is_valid;...
-    core_fire.cpp_CToss_dtor_FUN_004c95c0              (  6 lines)
-      return (CToss *)&pCVar1[-1].scrape_points[0].raytrace_inters...
-    core_fire.cpp_CStake_ctor_FUN_004c9740             (  6 lines)
-      return (CStake *)&pCVar1[-1].is_valid;...
-    core_morph.cpp_SMorphControlPoint_dtor_FUN_0052cc7 (  6 lines)
-      return (SMorphControlPoint *)&pCVar1[-1].y;...
-    core_box.cpp_CBox_dtor_FUN_0041dd00                (  6 lines)
-      return (CBox *)&pSVar1[-4].previous_position.y;...
-    core_skeleton.cpp_SVert_dtor_FUN_005a1f90          (  6 lines)
-      return (SVert *)&pCVar1[-2].z;...
-    core_mirror.cpp_CMirror_dtor_FUN_005213e0          (  6 lines)
-      return (CMirror *)&pSVar1[-10].C;...
-    core_bodypart.cpp_SBodyPartFire_dtor_FUN_0041b640  (  6 lines)
-      return (SBodyPartFire *)&pCVar1[-1].next_actor;...
-    core_script.cpp_CScript_dtor_FUN_00559840          (  7 lines)
-      return (CScript *)&pCVar1[-4].data_array;...
-    core_moon.cpp_CMoon_dtor_FUN_00529ab0              (  7 lines)
-      return (CMoon *)&pCVar1[-1].rotation_matrix_workspace.m[2].z...
-    core_fire.cpp_CToss_ctor_FUN_004c3ea0              (  9 lines)
-      return (CToss *)&pCVar2[-1].scrape_points[0].raytrace_inters...
-    support_codec.cpp_CLZWDecompress_ctor_FUN_0043f490 ( 13 lines)
-      puVar3 = &pCVar2[-1].bit_state.accumulated_bits;...
-    core_set.cpp_CDemonSet_dtor_FUN_00569350           ( 14 lines)
-      return (CDemonSet *)&pCVar4[-1].enabled;...
-    core_course.cpp_CCourse_free_FUN_004426c0          ( 14 lines)
-      shape_memdbg_cpp_free_FUN_005fe659(&this_ptr->frames[-1].ori...
-    core_dtrace.cpp_CDemonRaytrace_freeTriList_FUN_004 ( 17 lines)
-      shape_memdbg_cpp_free_FUN_005fe659(&this_ptr->triangle_list[...
-    support_codec.cpp_CLZWCompress_ctor_FUN_0043f2d0   ( 19 lines)
-      puVar4 = &pCVar3[-1].bit_state.accumulated_bits;...
-    ... and 20 more
+    ... and 52 more
 
   [warning_type_propagation] (36 functions)
   ------------------------------------------------------------
@@ -364,7 +320,51 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       /* WARNING: Type propagation algorithm not settling */...
     ... and 16 more
 
-  [param_count_too_many] (33 functions)
+  [negative_offset] (35 functions)
+  ------------------------------------------------------------
+    core_dracbrid.cpp_SFreaky_dtor_FUN_00486d50        (  6 lines)
+      return (SFreaky *)&pCVar1[-3].y;...
+    core_gore.cpp_CFootstep_dtor_FUN_004ee390          (  6 lines)
+      return (CFootstep *)&pCVar1[-1].y;...
+    core_manpuz.cpp_SGem_dtor_FUN_0050b960             (  6 lines)
+      return (SGem *)&pCVar1[-2].area;...
+    core_morph.cpp_SMorphControlPoint_dtor_FUN_0052cc7 (  6 lines)
+      return (SMorphControlPoint *)&pCVar1[-1].y;...
+    core_box.cpp_CBox_dtor_FUN_0041dd00                (  6 lines)
+      return (CBox *)&pSVar1[-4].previous_position.y;...
+    core_skeleton.cpp_SVert_dtor_FUN_005a1f90          (  6 lines)
+      return (SVert *)&pCVar1[-2].z;...
+    core_mirror.cpp_CMirror_dtor_FUN_005213e0          (  6 lines)
+      return (CMirror *)&pSVar1[-10].C;...
+    core_bodypart.cpp_SBodyPartFire_dtor_FUN_0041b640  (  6 lines)
+      return (SBodyPartFire *)&pCVar1[-1].next_actor;...
+    core_script.cpp_CScript_dtor_FUN_00559840          (  7 lines)
+      return (CScript *)&pCVar1[-4].data_array;...
+    core_moon.cpp_CMoon_dtor_FUN_00529ab0              (  7 lines)
+      return (CMoon *)&pCVar1[-1].rotation_matrix_workspace.m[2].z...
+    support_codec.cpp_CLZWDecompress_ctor_FUN_0043f490 ( 13 lines)
+      puVar3 = &pCVar2[-1].bit_state.accumulated_bits;...
+    core_set.cpp_CDemonSet_dtor_FUN_00569350           ( 14 lines)
+      return (CDemonSet *)&pCVar4[-1].enabled;...
+    core_course.cpp_CCourse_free_FUN_004426c0          ( 14 lines)
+      shape_memdbg_cpp_free_FUN_005fe659(&this_ptr->frames[-1].ori...
+    core_dtrace.cpp_CDemonRaytrace_freeTriList_FUN_004 ( 17 lines)
+      shape_memdbg_cpp_free_FUN_005fe659(&this_ptr->triangle_list[...
+    support_codec.cpp_CLZWCompress_ctor_FUN_0043f2d0   ( 19 lines)
+      puVar4 = &pCVar3[-1].bit_state.accumulated_bits;...
+    core_flies.cpp_CFlies_dtor_FUN_004cccb0            ( 19 lines)
+      core_actor_cpp_CDemonActor_dtor_FUN_00408a30((CDemonActor *)...
+    core_stairs.cpp_CStairs_dtor_FUN_005bac10          ( 19 lines)
+      core_actor_cpp_CDemonActor_dtor_FUN_00408a30((CDemonActor *)...
+    support_codec.cpp_CLZWCompress_dtor_FUN_0043f710   ( 20 lines)
+      ((CCodec *)&pCVar1[-1].bit_state.accumulated_bits,1);...
+    support_codec.cpp_CLZWDecompress_dtor_FUN_0043f6b0 ( 20 lines)
+      ((CCodec *)&pCVar1[-1].bit_state.accumulated_bits,1);...
+    core_vessel.cpp_CCryptVessel_dtor_FUN_005e9d30     ( 20 lines)
+      ((CDemonActor *)&pCVar1[-3].orient_matrix.m[0].z,1);...
+    ... and 15 more
+
+  [param_count_too_many] (32 functions)
   ------------------------------------------------------------
     shape_superopt.cpp_CComplexPolygon_setMaterialId_F (  4 lines)
       Function declares 2 params but call sites push 1 (1 extra)...
@@ -406,9 +406,9 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       Function declares 2 params but call sites push 1 (1 extra)...
     sound_mp3.cpp_CMP3Decoder_putByte_FUN_0052f260     ( 14 lines)
       Function declares 3 params but call sites push 2 (1 extra)...
-    ... and 13 more
+    ... and 12 more
 
-  [stack_ref] (29 functions)
+  [stack_ref] (30 functions)
   ------------------------------------------------------------
     core_event.cpp_formatEventError_FUN_004aa2a0       (  7 lines)
       local_4 = &stack0x00000008;...
@@ -450,7 +450,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       if ((float *)&stack0x00000000 == &g_TrainNoiseCooldown) {...
     shape_edittool.cpp_CEditorTools_showYesNoDialog_FU ( 16 lines)
       local_8.value[0] = (char * [1])&stack0x0000000c;...
-    ... and 9 more
+    ... and 10 more
 
   [undefined_data] (14 functions)
   ------------------------------------------------------------
@@ -667,10 +667,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/stranger.cpp, Lines: 5, Types: ['stack_param']
   core_stranger.cpp_FUN_005c6950
     File: core/stranger.cpp, Lines: 5, Types: ['stack_param']
-  core_frankgen.cpp_FUN_004d2890
-    File: core/frankgen.cpp, Lines: 5, Types: ['stack_param']
-  core_frankgen.cpp_FUN_004d2880
-    File: core/frankgen.cpp, Lines: 5, Types: ['stack_param']
   core_chain.cpp_FUN_00431340
     File: core/chain.cpp, Lines: 5, Types: ['stack_param']
   core_chain.cpp_FUN_00431350
@@ -731,5 +727,9 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/actor.cpp, Lines: 9, Types: ['unnamed_param']
   core_actor.cpp_CActorPropertyList_addString_FUN_0040e290
     File: core/actor.cpp, Lines: 9, Types: ['unnamed_param']
+  core_fire.cpp_CGlassParticle_ctor_FUN_004c9630
+    File: core/fire.cpp, Lines: 9, Types: ['decompiler_intrinsic']
+  core_main.c_drawCenteredText_FUN_00508250
+    File: core/main.c, Lines: 9, Types: ['stack_param']
 
-  ... and 615 more
+  ... and 609 more

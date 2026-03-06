@@ -52,7 +52,7 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_parseHeader_FUN_00534630(CMP3Decoder *this
   (this_ptr->file_bitstream).stream_start_position = lVar2;
   (this_ptr->file_bitstream).stream_length = local_24;
   (this_ptr->file_bitstream).buffer_size = local_1c;
-  pcVar3 = shape_memdbg_cpp_debugMalloc_FUN_0050f250(local_1c,"..\\sound\\mp3.cpp",0x1ff);
+  pcVar3 = (char *)shape_memdbg_cpp_debugMalloc_FUN_0050f250(local_1c,"..\\sound\\mp3.cpp",0x1ff);
   (this_ptr->file_bitstream).buffer = pcVar3;
   if (pcVar3 == (char *)0x0) {
     g_CurrentFilename = "..\\sound\\mp3.cpp";
