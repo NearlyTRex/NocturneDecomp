@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 47,
-    "complexity_score": 35,
+    "complexity_score": 33,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 20,
+    "pseudocode_lines": 18,
     "suspect_count": 1,
     "suspect_types": [
-      "negative_offset"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 67
+    "total_lines": 65
   },
   "cross_references": [],
   "function": {
@@ -120,12 +120,12 @@
   },
   "suspects": [
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 17,
-      "match": "pCVar1[-2].",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 15,
+      "match": "ADJ",
       "severity": "mild",
-      "text": "((CDemonActor *)&pCVar1[-2].scrape_points[3].local_position.z,1);",
-      "type": "negative_offset"
+      "text": "ptr = (CSimBox *)core_actor_cpp_CDemonActor_dtor_FUN_00408a30(&ADJ(pCVar1)->base,1);",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

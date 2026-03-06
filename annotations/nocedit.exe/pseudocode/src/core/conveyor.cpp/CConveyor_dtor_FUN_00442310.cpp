@@ -9,7 +9,7 @@
 CConveyor * __cdecl core_conveyor_cpp_CConveyor_dtor_FUN_00442310(CConveyor *this_ptr,uint flags)
 
 {
-  CCourse *pCVar1;
+  CConveyor_ptr_784 pCVar1;
   CConveyor *ptr;
   void *ptr_00;
   
@@ -19,8 +19,7 @@ CConveyor * __cdecl core_conveyor_cpp_CConveyor_dtor_FUN_00442310(CConveyor *thi
     return this_ptr;
   }
   pCVar1 = core_course_cpp_CCourse_dtor_FUN_004424e0(&(this_ptr->base).course,0);
-  ptr = (CConveyor *)
-        core_actor_cpp_CDemonActor_dtor_FUN_00408a30((CDemonActor *)&pCVar1[-0x42].loop,1);
+  ptr = (CConveyor *)core_actor_cpp_CDemonActor_dtor_FUN_00408a30((CDemonActor *)ADJ(pCVar1),1);
   if ((flags & 2) == 0) {
     return ptr;
   }

@@ -9,8 +9,8 @@
 CFootstep * __cdecl core_gore_cpp_CFootstep_dtor_FUN_004ee390(CFootstep *this_ptr,uint flags)
 
 {
-  CVector3f *pCVar1;
+  CFootstep_ptr_8 pCVar1;
   
-  pCVar1 = core_dracbrid_cpp_CVector3f_arrdtor_FUN_00486e30(this_ptr->corners,0);
-  return (CFootstep *)&pCVar1[-1].y;
+  pCVar1 = (CFootstep_ptr_8)core_dracbrid_cpp_CVector3f_arrdtor_FUN_00486e30(this_ptr->corners,0);
+  return ADJ(pCVar1);
 }

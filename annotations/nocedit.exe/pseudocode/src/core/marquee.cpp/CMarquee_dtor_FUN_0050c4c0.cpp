@@ -9,7 +9,7 @@
 CMarquee * __cdecl core_marquee_cpp_CMarquee_dtor_FUN_0050c4c0(CMarquee *this_ptr,uint flags)
 
 {
-  CCourse *pCVar1;
+  CMarquee_ptr_420 pCVar1;
   CMarquee *ptr;
   void *ptr_00;
   
@@ -19,7 +19,7 @@ CMarquee * __cdecl core_marquee_cpp_CMarquee_dtor_FUN_0050c4c0(CMarquee *this_pt
     return this_ptr;
   }
   pCVar1 = core_course_cpp_CCourse_dtor_FUN_004424e0(&this_ptr->course,0);
-  ptr = (CMarquee *)core_actor_cpp_CDemonActor_dtor_FUN_00408a30((CDemonActor *)(pCVar1 + -0x23),1);
+  ptr = (CMarquee *)core_actor_cpp_CDemonActor_dtor_FUN_00408a30(&ADJ(pCVar1)->base,1);
   if ((flags & 2) == 0) {
     return ptr;
   }

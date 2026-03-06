@@ -7,18 +7,18 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 6486
-Clean functions: 4575 (70.5%)
-Functions with suspects: 1911 (29.5%)
+Clean functions: 4608 (71.0%)
+Functions with suspects: 1878 (29.0%)
 
-Total suspect patterns: 19486
-Average suspects per function: 3.00
+Total suspect patterns: 19524
+Average suspects per function: 3.01
 
-Virtual files: 214 total, 24 at 100%, 48 at 90%+
+Virtual files: 214 total, 27 at 100%, 49 at 90%+
 
 Pseudocode lines:
   Min: 4, Max: 3382, Average: 47.4
 
-Average complexity score: 80.3
+Average complexity score: 80.4
 
 COMPILATION STATUS
 ----------------------------------------
@@ -28,8 +28,8 @@ Failed: 720
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
-  decompiler_intrinsic      6555
-  pointer_cast              5737
+  decompiler_intrinsic      6705
+  pointer_cast              5657
   stack_param               2699
   unknown_field             1608
   stack_ref                 467
@@ -38,12 +38,12 @@ SUSPECT PATTERN BREAKDOWN
   warning_inlined_function  261
   unaffected_reg            222
   warning_type_propagation  142
-  negative_offset           129
   unresolved_funcptr        125
   sub84_truncation          125
   unnamed_param             124
   stack_alignment_array     121
   undefined_data            119
+  negative_offset           97
   warning_unreachable       74
   suspect_float             71
   param_count_too_many      68
@@ -126,7 +126,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   005b1680: sound_sndwav.cpp_CWavOutDevice_set3DListenerVelocity_FUN_005b1680 (4 lines)
   005b1660: sound_sndwav.cpp_CWavOutDevice_set3DListenerPos_FUN_005b1660 (4 lines)
   005b16e0: sound_sndwav.cpp_CWavOutDevice_unlockSample_FUN_005b16e0 (4 lines)
-  ... and 4525 more
+  ... and 4558 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -164,7 +164,7 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
 
-  decompiler_intrinsic (857 functions):
+  decompiler_intrinsic (898 functions):
     00488630: cockpit_drawsurf.cpp_CDrawSurface_drawSolidRectangle_FUN_00488630
     004887a0: cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_004887a0
     00487bc0: cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_FUN_00487bc0
@@ -175,9 +175,9 @@ FUNCTIONS BY SUSPECT TYPE
     0043f490: support_codec.cpp_CLZWDecompress_ctor_FUN_0043f490
     0043f710: support_codec.cpp_CLZWCompress_dtor_FUN_0043f710
     0043f2d0: support_codec.cpp_CLZWCompress_ctor_FUN_0043f2d0
-    ... and 847 more
+    ... and 888 more
 
-  pointer_cast (962 functions):
+  pointer_cast (954 functions):
     00488230: cockpit_drawsurf.cpp_CDrawSurface_drawVerticalLine_FUN_00488230
     004874d0: cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0
     00487630: cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_00487630
@@ -188,7 +188,7 @@ FUNCTIONS BY SUSPECT TYPE
     0054ab30: cockpit_pkbitmap.cpp_CPackedBitmap_renderClippedRegion_FUN_0054ab30
     0054ae70: cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0054ae70
     0054aa20: cockpit_pkbitmap.cpp_CPackedBitmap_renderToScreenBuffer_FUN_0054aa20
-    ... and 952 more
+    ... and 944 more
 
   stack_param (322 functions):
     0054c1e0: cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_0054c1e0
@@ -294,19 +294,6 @@ FUNCTIONS BY SUSPECT TYPE
     005f9470: core_zombie.cpp_CZombie_process_FUN_005f9470
     ... and 132 more
 
-  negative_offset (73 functions):
-    004baf00: engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
-    004b4220: engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220
-    005b1560: sound_sndwav.cpp_enumerateWavInDevice_FUN_005b1560
-    005b1470: sound_sndwav.cpp_enumerateWavOutDevice_FUN_005b1470
-    004569b0: core_dcube.cpp_CDemonCube_freeMemory_FUN_004569b0
-    0047f9a0: core_dog.cpp_CZombieDog_dtor_FUN_0047f9a0
-    00486d70: core_dracbrid.cpp_CDraculaBride_dtor_FUN_00486d70
-    0048f5a0: core_drone.cpp_CDrone_dtor_FUN_0048f5a0
-    005fcc50: core_zombie.cpp_CZombie_dtor_FUN_005fcc50
-    00424e50: core_bugs.cpp_CBugs_setup_FUN_00424e50
-    ... and 63 more
-
   unresolved_funcptr (66 functions):
     0043eef0: support_codec.cpp_CLZWDictionary_initTable_FUN_0043eef0
     0043f270: support_codec.cpp_CLZWDictionary_decodeCodeToBuffer_FUN_0043f270
@@ -371,6 +358,19 @@ FUNCTIONS BY SUSPECT TYPE
     00500050: core_inv.cpp_drawWeaponIconBackground_FUN_00500050
     004ff400: core_inv.cpp_CInventory_load_FUN_004ff400
     ... and 39 more
+
+  negative_offset (47 functions):
+    004baf00: engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
+    004b4220: engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220
+    005b1560: sound_sndwav.cpp_enumerateWavInDevice_FUN_005b1560
+    005b1470: sound_sndwav.cpp_enumerateWavOutDevice_FUN_005b1470
+    004569b0: core_dcube.cpp_CDemonCube_freeMemory_FUN_004569b0
+    0047f9a0: core_dog.cpp_CZombieDog_dtor_FUN_0047f9a0
+    00486d70: core_dracbrid.cpp_CDraculaBride_dtor_FUN_00486d70
+    0048f5a0: core_drone.cpp_CDrone_dtor_FUN_0048f5a0
+    005fcc50: core_zombie.cpp_CZombie_dtor_FUN_005fcc50
+    00424e50: core_bugs.cpp_CBugs_setup_FUN_00424e50
+    ... and 37 more
 
   warning_unreachable (40 functions):
     00487010: cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_00487010

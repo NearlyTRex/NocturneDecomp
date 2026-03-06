@@ -9,7 +9,7 @@
 CWeapon * __cdecl core_weapon_cpp_CWeapon_dtor_FUN_005edf80(CWeapon *this_ptr,uint flags)
 
 {
-  CBox *pCVar1;
+  CWeapon_ptr_776 pCVar1;
   CWeapon *ptr;
   void *ptr_00;
   
@@ -20,9 +20,7 @@ CWeapon * __cdecl core_weapon_cpp_CWeapon_dtor_FUN_005edf80(CWeapon *this_ptr,ui
   }
   (this_ptr->base).vtable._ub = &g_CWeaponVTable;
   pCVar1 = core_box_cpp_CBox_dtor_FUN_0041dd00(&this_ptr->physics_box,0);
-  ptr = (CWeapon *)
-        core_actor_cpp_CDemonActor_dtor_FUN_00408a30
-                  ((CDemonActor *)&pCVar1[-2].scrape_points[4].raytrace_intersection,1);
+  ptr = (CWeapon *)core_actor_cpp_CDemonActor_dtor_FUN_00408a30(&ADJ(pCVar1)->base,1);
   if ((flags & 2) == 0) {
     return ptr;
   }

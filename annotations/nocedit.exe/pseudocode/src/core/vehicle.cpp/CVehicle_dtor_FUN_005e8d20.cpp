@@ -9,8 +9,8 @@
 CVehicle * __cdecl core_vehicle_cpp_CVehicle_dtor_FUN_005e8d20(CVehicle *this_ptr,uint flags)
 
 {
-  CCourse *pCVar1;
-  CTire *pCVar2;
+  CVehicle_ptr_4128 pCVar1;
+  CVehicle_ptr_2364 pCVar2;
   CVehicle *ptr;
   void *ptr_00;
   
@@ -20,10 +20,8 @@ CVehicle * __cdecl core_vehicle_cpp_CVehicle_dtor_FUN_005e8d20(CVehicle *this_pt
     return this_ptr;
   }
   pCVar1 = core_course_cpp_CCourse_dtor_FUN_004424e0(&this_ptr->course,0);
-  pCVar2 = core_vehicle_cpp_CTire_arrdtor_FUN_005e8dd0((CTire *)(pCVar1 + -0x93),0);
-  ptr = (CVehicle *)
-        core_actor_cpp_CDemonActor_dtor_FUN_00408a30
-                  ((CDemonActor *)(pCVar2[-6].model.model_name + 0x70),1);
+  pCVar2 = (CVehicle_ptr_2364)core_vehicle_cpp_CTire_arrdtor_FUN_005e8dd0(ADJ(pCVar1)->tires,0);
+  ptr = (CVehicle *)core_actor_cpp_CDemonActor_dtor_FUN_00408a30(&ADJ(pCVar2)->base,1);
   if ((flags & 2) == 0) {
     return ptr;
   }

@@ -9,9 +9,9 @@
 CMoon * __cdecl core_moon_cpp_CMoon_dtor_FUN_00529ab0(CMoon *this_ptr,uint flags)
 
 {
-  CKeyFramedModel *pCVar1;
+  CMoon_ptr_8 pCVar1;
   
   core_moon_cpp_CMoon_free_FUN_00529ce0(this_ptr);
   pCVar1 = core_dmodel_cpp_CKeyFramedModel_dtor_FUN_00476d90(&this_ptr->moon,0);
-  return (CMoon *)&pCVar1[-1].rotation_matrix_workspace.m[2].z;
+  return ADJ(pCVar1);
 }

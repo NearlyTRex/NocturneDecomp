@@ -14,7 +14,7 @@
     "pseudocode_lines": 6,
     "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast"
+      "decompiler_intrinsic"
     ],
     "total_lines": 17
   },
@@ -110,12 +110,12 @@
   },
   "suspects": [
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 8,
-      "match": "(CMirror *)((int)",
+      "match": "ADJ",
       "severity": "mild",
-      "text": "return (CMirror *)((int)pvVar1 + -0x98);",
-      "type": "pointer_cast"
+      "text": "return ADJ(pvVar1);",
+      "type": "decompiler_intrinsic"
     }
   ]
 }

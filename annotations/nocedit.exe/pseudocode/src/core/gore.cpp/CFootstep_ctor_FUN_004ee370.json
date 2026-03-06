@@ -14,7 +14,7 @@
     "pseudocode_lines": 6,
     "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast"
+      "decompiler_intrinsic"
     ],
     "total_lines": 17
   },
@@ -93,12 +93,12 @@
   },
   "suspects": [
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 8,
-      "match": "(CFootstep *)((int)",
+      "match": "ADJ",
       "severity": "mild",
-      "text": "return (CFootstep *)((int)pvVar1 + -8);",
-      "type": "pointer_cast"
+      "text": "return ADJ(pvVar1);",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

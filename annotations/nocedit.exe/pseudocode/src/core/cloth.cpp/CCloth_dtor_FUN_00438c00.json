@@ -6,15 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 27,
-    "complexity_score": 14,
+    "complexity_score": 38,
     "cross_reference_count": 8,
     "function_call_count": 4,
     "global_count": 0,
-    "max_suspect_severity": "clean",
-    "pseudocode_lines": 14,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 41
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 13,
+    "suspect_count": 2,
+    "suspect_types": [
+      "decompiler_intrinsic"
+    ],
+    "total_lines": 40
   },
   "cross_references": [
     {
@@ -146,5 +148,22 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 13,
+      "match": "ADJ",
+      "severity": "mild",
+      "text": "core_cloth_cpp_SClothVertex_arrdtor_FUN_0043e480(ADJ(pSVar1)->vertices,0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 14,
+      "match": "ADJ",
+      "severity": "mild",
+      "text": "pCVar1 = (CCloth *)core_dmodel_cpp_CKeyFramedModel_dtor_FUN_00476d90(&ADJ(pSVar2)->model,1);",
+      "type": "decompiler_intrinsic"
+    }
+  ]
 }

@@ -9,7 +9,7 @@
 CStairs * __cdecl core_stairs_cpp_CStairs_dtor_FUN_005bac10(CStairs *this_ptr,uint flags)
 
 {
-  CDemonTriangle *pCVar1;
+  CStairs_ptr_368 pCVar1;
   CStairs *ptr;
   void *ptr_00;
   
@@ -18,9 +18,9 @@ CStairs * __cdecl core_stairs_cpp_CStairs_dtor_FUN_005bac10(CStairs *this_ptr,ui
     shape_memdbg_cpp_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
-  pCVar1 = core_stairs_cpp_CDemonTriangle_arrdtor_FUN_005bac80(this_ptr->collision_triangles,0);
-  ptr = (CStairs *)
-        core_actor_cpp_CDemonActor_dtor_FUN_00408a30((CDemonActor *)&pCVar1[-7].vertex3,1);
+  pCVar1 = (CStairs_ptr_368)
+           core_stairs_cpp_CDemonTriangle_arrdtor_FUN_005bac80(this_ptr->collision_triangles,0);
+  ptr = (CStairs *)core_actor_cpp_CDemonActor_dtor_FUN_00408a30(&ADJ(pCVar1)->base,1);
   if ((flags & 2) == 0) {
     return ptr;
   }

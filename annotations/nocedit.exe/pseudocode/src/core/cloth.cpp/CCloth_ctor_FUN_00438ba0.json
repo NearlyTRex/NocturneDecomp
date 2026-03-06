@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 25,
-    "complexity_score": 68,
+    "complexity_score": 69,
     "cross_reference_count": 6,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 13,
+    "pseudocode_lines": 14,
     "suspect_count": 5,
     "suspect_types": [
-      "pointer_cast"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 38
+    "total_lines": 39
   },
   "cross_references": [
     {
@@ -134,44 +134,44 @@
   },
   "suspects": [
     {
-      "description": "Complex pointer cast",
-      "line": 11,
-      "match": "(void *)((int)",
-      "severity": "mild",
-      "text": "((void *)((int)pvVar1 + 0x377b8),0x32,&g_SClothBoneTypeInfo);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 12,
-      "match": "(uint *)((int)",
+      "match": "ADJ",
       "severity": "mild",
-      "text": "*(uint *)((int)pvVar1 + 0x2fac) = 0;",
-      "type": "pointer_cast"
+      "text": "(ADJ(pvVar1)->collide_bones,0x32,&g_SClothBoneTypeInfo);",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 13,
-      "match": "(uint *)((int)",
+      "match": "ADJ",
       "severity": "mild",
-      "text": "*(uint *)((int)pvVar1 + -4) = 0;",
-      "type": "pointer_cast"
+      "text": "ADJ(pvVar2)->vertex_sort_buffer = (int *)0x0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 14,
-      "match": "(uint *)((int)",
+      "match": "ADJ",
       "severity": "mild",
-      "text": "*(uint *)((int)pvVar1 + -0xc) = 0;",
-      "type": "pointer_cast"
+      "text": "ADJ(pvVar2)->collide_bone_count = 0;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 15,
-      "match": "(CCloth *)((int)",
+      "match": "ADJ",
       "severity": "mild",
-      "text": "return (CCloth *)((int)pvVar1 + -0x3ce90);",
-      "type": "pointer_cast"
+      "text": "ADJ(pvVar2)->double_sided = 0;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 16,
+      "match": "ADJ",
+      "severity": "mild",
+      "text": "return ADJ(pvVar2);",
+      "type": "decompiler_intrinsic"
     }
   ]
 }

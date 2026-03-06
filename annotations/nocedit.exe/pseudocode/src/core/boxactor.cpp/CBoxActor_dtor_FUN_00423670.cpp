@@ -9,7 +9,7 @@
 CBoxActor * __cdecl core_boxactor_cpp_CBoxActor_dtor_FUN_00423670(CBoxActor *this_ptr,uint flags)
 
 {
-  CBox *pCVar1;
+  CBoxActor_ptr_916 pCVar1;
   CBoxActor *ptr;
   void *ptr_00;
   
@@ -19,9 +19,7 @@ CBoxActor * __cdecl core_boxactor_cpp_CBoxActor_dtor_FUN_00423670(CBoxActor *thi
     return this_ptr;
   }
   pCVar1 = core_box_cpp_CBox_dtor_FUN_0041dd00(&this_ptr->physics_box,0);
-  ptr = (CBoxActor *)
-        core_actor_cpp_CDemonActor_dtor_FUN_00408a30
-                  ((CDemonActor *)(pCVar1[-2].scrape_points + 2),1);
+  ptr = (CBoxActor *)core_actor_cpp_CDemonActor_dtor_FUN_00408a30(&ADJ(pCVar1)->base,1);
   if ((flags & 2) == 0) {
     return ptr;
   }

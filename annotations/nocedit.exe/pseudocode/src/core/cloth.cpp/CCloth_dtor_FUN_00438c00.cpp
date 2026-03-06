@@ -9,16 +9,15 @@
 CCloth * __cdecl core_cloth_cpp_CCloth_dtor_FUN_00438c00(CCloth *this_ptr,uint flags)
 
 {
-  SClothBone *pSVar1;
-  SClothVertex *pSVar2;
-  CCloth *pCVar3;
+  CCloth_ptr_249488 pSVar1;
+  CCloth_ptr_22232 pSVar2;
+  CCloth *pCVar1;
   
   core_cloth_cpp_CCloth_free_FUN_00438cb0(this_ptr);
-  pSVar1 = core_cloth_cpp_SClothBone_arrdtor_FUN_0043e4a0(this_ptr->collide_bones,0);
-  pSVar2 = core_cloth_cpp_SClothVertex_arrdtor_FUN_0043e480
-                     ((SClothVertex *)&pSVar1[-0x52a].local_matrix.m[0].z,0);
-  pCVar3 = (CCloth *)
-           core_dmodel_cpp_CKeyFramedModel_dtor_FUN_00476d90
-                     ((CKeyFramedModel *)&pSVar2[-0x4f].prev_position,1);
-  return pCVar3;
+  pSVar1 = (CCloth_ptr_249488)
+           core_cloth_cpp_SClothBone_arrdtor_FUN_0043e4a0(this_ptr->collide_bones,0);
+  pSVar2 = (CCloth_ptr_22232)
+           core_cloth_cpp_SClothVertex_arrdtor_FUN_0043e480(ADJ(pSVar1)->vertices,0);
+  pCVar1 = (CCloth *)core_dmodel_cpp_CKeyFramedModel_dtor_FUN_00476d90(&ADJ(pSVar2)->model,1);
+  return pCVar1;
 }

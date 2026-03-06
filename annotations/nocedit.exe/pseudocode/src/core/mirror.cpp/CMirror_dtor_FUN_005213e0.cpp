@@ -9,8 +9,9 @@
 CMirror * __cdecl core_mirror_cpp_CMirror_dtor_FUN_005213e0(CMirror *this_ptr,uint flags)
 
 {
-  SClipPlane *pSVar1;
+  CMirror_ptr_152 pSVar1;
   
-  pSVar1 = core_mirror_cpp_SClipPlane_arrdtor_FUN_00522c10(this_ptr->clip_planes,0);
-  return (CMirror *)&pSVar1[-10].C;
+  pSVar1 = (CMirror_ptr_152)core_mirror_cpp_SClipPlane_arrdtor_FUN_00522c10(this_ptr->clip_planes,0)
+  ;
+  return ADJ(pSVar1);
 }

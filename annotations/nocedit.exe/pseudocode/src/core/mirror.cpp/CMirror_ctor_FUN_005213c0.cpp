@@ -9,8 +9,8 @@
 CMirror * __cdecl core_mirror_cpp_CMirror_ctor_FUN_005213c0(CMirror *this_ptr)
 
 {
-  void *pvVar1;
+  CMirror_ptr_152 pvVar1;
   
   pvVar1 = __arrinit(this_ptr->clip_planes,5,&g_SClipPlaneTypeInfo);
-  return (CMirror *)((int)pvVar1 + -0x98);
+  return ADJ(pvVar1);
 }

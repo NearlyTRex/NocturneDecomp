@@ -9,7 +9,7 @@
 CTempleStone * __cdecl core_stone_cpp_CTempleStone_dtor_FUN_005bae10(CTempleStone *this_ptr,uint flags)
 
 {
-  CBox *pCVar1;
+  CTempleStone_ptr_916 pCVar1;
   CTempleStone *ptr;
   void *ptr_00;
   
@@ -19,9 +19,7 @@ CTempleStone * __cdecl core_stone_cpp_CTempleStone_dtor_FUN_005bae10(CTempleSton
     return this_ptr;
   }
   pCVar1 = core_box_cpp_CBox_dtor_FUN_0041dd00(&(this_ptr->base).physics_box,0);
-  ptr = (CTempleStone *)
-        core_actor_cpp_CDemonActor_dtor_FUN_00408a30
-                  ((CDemonActor *)(pCVar1[-2].scrape_points + 2),1);
+  ptr = (CTempleStone *)core_actor_cpp_CDemonActor_dtor_FUN_00408a30((CDemonActor *)ADJ(pCVar1),1);
   if ((flags & 2) == 0) {
     return ptr;
   }

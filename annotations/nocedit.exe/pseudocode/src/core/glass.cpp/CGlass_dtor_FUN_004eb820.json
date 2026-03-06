@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 53,
-    "complexity_score": 37,
+    "complexity_score": 46,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 22,
-    "suspect_count": 1,
+    "pseudocode_lines": 21,
+    "suspect_count": 2,
     "suspect_types": [
-      "negative_offset"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 75
+    "total_lines": 74
   },
   "cross_references": [],
   "function": {
@@ -127,12 +127,20 @@
   },
   "suspects": [
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 19,
-      "match": "pCVar2[-2].",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 17,
+      "match": "ADJ",
       "severity": "mild",
-      "text": "((CDemonActor *)&pCVar2[-2].reflection.mirror_transform_matrix.m[2].x,1);",
-      "type": "negative_offset"
+      "text": "pCVar2 = core_mirror_cpp_CMirror_dtor_FUN_005213e0(&ADJ(pCVar1)->mirror,0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 18,
+      "match": "ADJ",
+      "severity": "mild",
+      "text": "ptr = (CGlass *)core_actor_cpp_CDemonActor_dtor_FUN_00408a30(&ADJ(pCVar2)->base,1);",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

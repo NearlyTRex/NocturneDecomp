@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 53,
-    "complexity_score": 48,
+    "complexity_score": 45,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 23,
+    "pseudocode_lines": 20,
     "suspect_count": 2,
     "suspect_types": [
-      "negative_offset"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 76
+    "total_lines": 73
   },
   "cross_references": [],
   "function": {
@@ -127,20 +127,20 @@
   },
   "suspects": [
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 17,
-      "match": "pCVar1[-1].",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 16,
+      "match": "ADJ",
       "severity": "mild",
-      "text": "((CBox *)(pCVar1[-1].saved_screen_buffer_rows + 0x3ff),0);",
-      "type": "negative_offset"
+      "text": "pCVar2 = core_box_cpp_CBox_dtor_FUN_0041dd00(&ADJ(pCVar1)->base.physics_box,0);",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 20,
-      "match": "pCVar2[-2].",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 17,
+      "match": "ADJ",
       "severity": "mild",
-      "text": "((CDemonActor *)(pCVar2[-2].scrape_points + 2),1);",
-      "type": "negative_offset"
+      "text": "ptr = (CLightActor *)core_actor_cpp_CDemonActor_dtor_FUN_00408a30((CDemonActor *)ADJ(pCVar2),1);",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

@@ -9,7 +9,7 @@
 CPlatform * __cdecl core_conveyor_cpp_CPlatform_dtor_FUN_00442380(CPlatform *this_ptr,uint flags)
 
 {
-  CCourse *pCVar1;
+  CPlatform_ptr_784 pCVar1;
   CPlatform *ptr;
   void *ptr_00;
   
@@ -19,8 +19,7 @@ CPlatform * __cdecl core_conveyor_cpp_CPlatform_dtor_FUN_00442380(CPlatform *thi
     return this_ptr;
   }
   pCVar1 = core_course_cpp_CCourse_dtor_FUN_004424e0(&this_ptr->course,0);
-  ptr = (CPlatform *)
-        core_actor_cpp_CDemonActor_dtor_FUN_00408a30((CDemonActor *)&pCVar1[-0x42].loop,1);
+  ptr = (CPlatform *)core_actor_cpp_CDemonActor_dtor_FUN_00408a30(&ADJ(pCVar1)->base,1);
   if ((flags & 2) == 0) {
     return ptr;
   }

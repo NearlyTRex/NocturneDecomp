@@ -14,7 +14,7 @@
     "pseudocode_lines": 19,
     "suspect_count": 1,
     "suspect_types": [
-      "negative_offset"
+      "decompiler_intrinsic"
     ],
     "total_lines": 66
   },
@@ -120,12 +120,12 @@
   },
   "suspects": [
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 16,
-      "match": "pCVar1[-7].",
+      "match": "ADJ",
       "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_dtor_FUN_00408a30((CDemonActor *)&pCVar1[-7].vertex3,1);",
-      "type": "negative_offset"
+      "text": "ptr = (CStairs *)core_actor_cpp_CDemonActor_dtor_FUN_00408a30(&ADJ(pCVar1)->base,1);",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

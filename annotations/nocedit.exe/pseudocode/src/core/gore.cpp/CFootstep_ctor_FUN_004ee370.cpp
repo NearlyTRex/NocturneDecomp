@@ -9,8 +9,8 @@
 CFootstep * __cdecl core_gore_cpp_CFootstep_ctor_FUN_004ee370(CFootstep *this_ptr)
 
 {
-  void *pvVar1;
+  CFootstep_ptr_8 pvVar1;
   
   pvVar1 = __arrinit(this_ptr->corners,4,&g_CVectorTypeInfo);
-  return (CFootstep *)((int)pvVar1 + -8);
+  return ADJ(pvVar1);
 }
