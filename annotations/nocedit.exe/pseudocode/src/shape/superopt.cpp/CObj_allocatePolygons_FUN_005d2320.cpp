@@ -22,7 +22,7 @@ int __cdecl shape_superopt_cpp_CObj_allocatePolygons_FUN_005d2320(CObj *this_ptr
   pCVar1 = malloc(poly_count * 0x68);
   this_ptr->poly_array = pCVar1;
   if (pCVar1 != (CPoly *)0x0) {
-    shape_superopt_cpp_CPoly_ctor_FUN_005cc620(&local_78);
+    shape_superopt_cpp_CPoly_ctor_FUN_005cc620(&local_78,(CObj *)0x0);
     local_10 = 0;
     if (this_ptr->poly_count != 0) {
       iVar3 = 0;

@@ -14,7 +14,7 @@
     "pseudocode_lines": 7,
     "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast"
+      "decompiler_intrinsic"
     ],
     "total_lines": 18
   },
@@ -93,12 +93,12 @@
   },
   "suspects": [
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 9,
-      "match": "(SGem *)((int)",
+      "match": "ADJ",
       "severity": "mild",
-      "text": "return (SGem *)((int)pvVar1 + -0x3c);",
-      "type": "pointer_cast"
+      "text": "return ADJ(pvVar1);",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

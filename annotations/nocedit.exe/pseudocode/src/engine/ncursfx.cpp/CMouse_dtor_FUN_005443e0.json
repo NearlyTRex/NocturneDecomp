@@ -6,15 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 21,
-    "complexity_score": 9,
+    "complexity_score": 36,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 0,
-    "max_suspect_severity": "clean",
-    "pseudocode_lines": 9,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 30
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 11,
+    "suspect_count": 2,
+    "suspect_types": [
+      "decompiler_intrinsic"
+    ],
+    "total_lines": 32
   },
   "cross_references": [],
   "function": {
@@ -99,7 +101,24 @@
       }
     ]
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 11,
+      "match": "ADJ",
+      "severity": "mild",
+      "text": "engine_ncursfx_cpp_CAlphaBitmap_arrdtor_FUN_00544730(ADJ(pCVar1)->flames,0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 12,
+      "match": "ADJ",
+      "severity": "mild",
+      "text": "pCVar3 = (CMouse *)core_menu_cpp_CAlphaBitmap_arrdtor_FUN_00514f50(ADJ(pCVar2)->cursors,0);",
+      "type": "decompiler_intrinsic"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

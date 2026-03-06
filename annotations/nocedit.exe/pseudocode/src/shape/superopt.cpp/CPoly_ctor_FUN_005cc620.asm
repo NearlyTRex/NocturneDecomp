@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CPoly * __cdecl shape_superopt_cpp_CPoly_ctor_FUN_005cc620(CPoly *this_ptr)
+; CPoly * __cdecl shape_superopt_cpp_CPoly_ctor_FUN_005cc620(CPoly *this_ptr,CObj *parent_obj)
 ;
 ; Parameters:
 ; CPoly *          Stack[0x4]:4   this_ptr
+; CObj *           Stack[0x8]:4   parent_obj
 ;
 ; XREF[4]:
 ;   shape_superopt.cpp_CObj_addPolygons_FUN_005d2410 at 005d2457

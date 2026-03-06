@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 66,
-    "complexity_score": 63,
+    "complexity_score": 61,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 28,
+    "pseudocode_lines": 26,
     "suspect_count": 3,
     "suspect_types": [
-      "negative_offset"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 94
+    "total_lines": 92
   },
   "cross_references": [],
   "function": {
@@ -143,28 +143,28 @@
   },
   "suspects": [
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 20,
-      "match": "pCVar1[-1].",
+      "match": "ADJ",
       "severity": "mild",
-      "text": "((SBodyPartFire *)(pCVar1[-1].fires[0].flame.off_event + 0x3c),0);",
-      "type": "negative_offset"
+      "text": "core_bodypart_cpp_SBodyPartFire_arrdtor_FUN_0041b6b0(ADJ(pCVar1)->fires,0);",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 22,
-      "match": "pSVar1[-2].",
+      "match": "ADJ",
       "severity": "mild",
-      "text": "((SBodyPartModel *)(pSVar1[-2].flame.base.create_event + 0x1c),0);",
-      "type": "negative_offset"
+      "text": "core_bodypart_cpp_SBodyPartModel_arrdtor_FUN_0041b690(ADJ(pSVar1)->attached_models,0);",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 25,
-      "match": "pSVar2[-2].",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 23,
+      "match": "ADJ",
       "severity": "mild",
-      "text": "((CDemonActor *)(pSVar2[-2].model.model_name + 8),1);",
-      "type": "negative_offset"
+      "text": "ptr = (CBodyPart *)core_actor_cpp_CDemonActor_dtor_FUN_00408a30(&ADJ(pSVar2)->base,1);",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

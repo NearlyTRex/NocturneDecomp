@@ -9,8 +9,8 @@
 CLodFace * __cdecl shape_meshlod_cpp_CLodFace_ctor_FUN_0051ef00(CLodFace *this_ptr)
 
 {
-  void *pvVar1;
+  CLodFace_ptr_84 pvVar1;
   
   pvVar1 = __arrinit(this_ptr->edge_perpendiculars,3,&g_CVectorTypeInfo);
-  return (CLodFace *)((int)pvVar1 + -0x54);
+  return ADJ(pvVar1);
 }

@@ -75,7 +75,7 @@ section .text
     PUSH EAX                            ; 005d2390
     XOR EDI,EDI                         ; 005d2391
     CALL shape_superopt.cpp_CPoly_ctor_FUN_005cc620 ; 005d2393
-        ;   XREF to: 005cc620 (UNCONDITIONAL_CALL)  ; CPoly * shape_superopt.cpp_CPoly_ctor_FUN_005cc620(CPoly * this_ptr)
+        ;   XREF to: 005cc620 (UNCONDITIONAL_CALL)  ; CPoly * shape_superopt.cpp_CPoly_ctor_FUN_005cc620(CPoly * this_ptr, CObj * parent_obj)
     ADD ESP,0x8                         ; 005d2398
     MOV EBP,dword ptr [EBX + 0x8]       ; 005d239b
     MOV dword ptr [ESP + 0x6c],EDI      ; 005d239e

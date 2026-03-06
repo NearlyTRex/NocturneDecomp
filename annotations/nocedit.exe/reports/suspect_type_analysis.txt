@@ -4,10 +4,10 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  decompiler_intrinsic            6735 ( 29.3%)
-  pointer_cast                    6048 ( 26.3%)
-  stack_param                     2963 ( 12.9%)
-  unknown_field                   1741 (  7.6%)
+  decompiler_intrinsic            6825 ( 29.6%)
+  pointer_cast                    6040 ( 26.2%)
+  stack_param                     2961 ( 12.8%)
+  unknown_field                   1741 (  7.5%)
   unnamed_param                    758 (  3.3%)
   special_crt_function             636 (  2.8%)
   stack_ref                        524 (  2.3%)
@@ -17,9 +17,9 @@ SUSPECT TYPE COUNTS
   register_param                   302 (  1.3%)
   nonstandard_int                  271 (  1.2%)
   warning_inlined_function         264 (  1.1%)
-  negative_offset                  204 (  0.9%)
   unresolved_funcptr               200 (  0.9%)
   undefined_data                   181 (  0.8%)
+  negative_offset                  174 (  0.8%)
   warning_type_propagation         143 (  0.6%)
   stack_alignment_array            137 (  0.6%)
   sub84_truncation                 134 (  0.6%)
@@ -56,12 +56,12 @@ SUSPECT TYPE COUNTS
   special_entry_point                1 (  0.0%)
 
 ====================================================================================================
-TYPE: decompiler_intrinsic (6735 occurrences)
+TYPE: decompiler_intrinsic (6825 occurrences)
 ====================================================================================================
 
 Unique patterns:
   2654x  ROUND
-  1102x  ADJ
+  1192x  ADJ
    502x  CONCAT44
    427x  SQRT
    323x  ABS
@@ -98,7 +98,7 @@ Example functions:
     ROUND(ROUND((float)(byte)g_SourcePaletteData[iVar3] * fVar2 +...
 
 ====================================================================================================
-TYPE: pointer_cast (6048 occurrences)
+TYPE: pointer_cast (6040 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -136,11 +136,11 @@ Example functions:
     piVar1 = (int *)((int)g_ScreenBufferArray + iVar4);...
 
 ====================================================================================================
-TYPE: stack_param (2963 occurrences)
+TYPE: stack_param (2961 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  1026x  in_stack_00000008
+  1024x  in_stack_00000008
    464x  in_stack_00000004
    300x  in_stack_0000000c
    153x  in_stack_00000010
@@ -668,72 +668,6 @@ Example functions:
     /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */...
 
 ====================================================================================================
-TYPE: negative_offset (204 occurrences)
-====================================================================================================
-
-Unique patterns:
-    29x  pCVar1[-2].
-    23x  pCVar5[-1].
-    18x  pCVar1[-1].
-    11x  pCVar2[-2].
-     9x  pCVar6[-1].
-     8x  this_ptr[-1].
-     7x  pCVar7[-1].
-     6x  pSVar5[-1].
-     4x  piVar4[-2].
-     4x  this_ptr[-2].
-     4x  pCVar2[-1].
-     4x  pCVar1[-3].
-     3x  p_Var3[-2].
-     3x  p_Var3[-1].
-     3x  piVar2[-1].
-     3x  pCVar3[-1].
-     3x  pCVar4[-2].
-     3x  collision_triangle_list[-1].
-     2x  p_Var2[-2].
-     2x  p_Var2[-1].
-
-Example functions:
-  crt_fstream.cpp_ifstream_ctor_FUN_005ff664
-    this_ptr = &piVar4[-2].__tied_stream;...
-  crt_fstream.cpp_fstreambase_ctor_FUN_00606456
-    this_ptr = (fstreambase *)&piVar2[-2].__enabled_exceptions;...
-  crt_fstream.cpp_ofstream_destructor_thunk_from_ostream_FUN_005ff78e
-    crt_fstream_cpp_ofstream_dtor_FUN_005ff7bc(&this_ptr[-2]._ios.__fill_character,d...
-  crt_fstream.cpp_ifstream_destructor_thunk_from_istream_FUN_005ff6e2
-    crt_fstream_cpp_ifstream_dtor_FUN_005ff856(&this_ptr[-2]._ios.__i_lock,dtor_flag...
-  crt_fstream.cpp_ifstream_destructor_thunk_from_ios_FUN_005ff6f8
-    ((void *)((int)this_ptr - (int)this_ptr[-1].cleanup_vtable),dtor_flags);...
-  crt_fstream.cpp_fstream_destructor_thunk_from_ios_FUN_006064f1
-    ((fstreambase *)((int)this_ptr - (int)this_ptr[-1].cleanup_vtable),dtor_flags);...
-  crt_fstream.cpp_ofstream_ctor_FUN_005ff710
-    this_ptr = &piVar4[-2].__format_flags;...
-  crt_fstream.cpp_ofstream_ctor_FUN_005ff95c
-    this_ptr = &piVar5[-2].__format_flags;...
-  crt_fstream.cpp_fstreambase_ctor_FUN_0060658f
-    this_ptr = (fstreambase *)&piVar4[-2].__enabled_exceptions;...
-  crt_fstream.cpp_ofstream_destructor_thunk_from_ios_FUN_005ff7a4
-    ((void *)((int)this_ptr - (int)this_ptr[-1].cleanup_vtable),dtor_flags);...
-  crt_fstream.cpp_ifstream_ctor_FUN_005ff8f0
-    this_ptr = &piVar5[-2].__tied_stream;...
-  crt_fstream.cpp_fstreambase_dtor_FUN_00606509
-    this_ptr = (fstreambase *)(pfVar2[-1].__unbuffered_get_area + 4);...
-  crt_heap.c_InsertHeapBlockInOrder_FUN_006095f0
-    puVar1 = pHVar3[-1].free_list_area + (new_block->size - 0x20);...
-  crt_heap.c_ResizeBlockInPlace_FUN_006097b8
-    ppHVar1 = &in_stack_00000008[-1].next_heap_block;...
-  crt_iostream.cpp_istream_destructor_thunk_from_ios_FUN_006063c9
-    ((_istream *)((int)this_ptr - (int)this_ptr[-1].cleanup_vtable),dtor_flags);...
-  crt_iostream.cpp_istream_ctor_FUN_00606376
-    this_ptr = (_istream *)&piVar3[-1].__xalloc_list;...
-  crt_iostream.cpp_ostream_ctor_FUN_006061a2
-    this_ptr = (_ostream *)&piVar2[-1].__fill_character;...
-  crt_iostream.cpp_ostream_dtor_FUN_00606231
-    this_ptr = (_ostream *)&piVar2[-1].__fill_character;...
-  crt_iostream.cpp_istream_dtor_FUN_006063e1
-    this_ptr = (_istream *)&piVar2[-1].__xalloc_list;...
-
-====================================================================================================
 TYPE: unresolved_funcptr (200 occurrences)
 ====================================================================================================
 
@@ -838,6 +772,72 @@ Example functions:
     while ((bVar1 = *str, bVar1 != 0 && ((local_28[bVar1 >> 3] & (&DAT_00665f28)[bVa...
   crt_heap.c_ValidateHeapIntegrity_FUN_00601ce0
     if (((DAT_03f9b210 == (Heap *)0x0) ||...
+
+====================================================================================================
+TYPE: negative_offset (174 occurrences)
+====================================================================================================
+
+Unique patterns:
+    23x  pCVar1[-2].
+    19x  pCVar5[-1].
+    13x  pCVar1[-1].
+     9x  pCVar2[-2].
+     8x  this_ptr[-1].
+     7x  pCVar7[-1].
+     7x  pCVar6[-1].
+     6x  pSVar5[-1].
+     4x  piVar4[-2].
+     4x  this_ptr[-2].
+     3x  p_Var3[-2].
+     3x  p_Var3[-1].
+     3x  piVar2[-1].
+     3x  pCVar4[-2].
+     3x  pCVar1[-3].
+     3x  pCVar2[-1].
+     3x  collision_triangle_list[-1].
+     2x  p_Var2[-2].
+     2x  p_Var2[-1].
+     2x  piVar2[-2].
+
+Example functions:
+  crt_fstream.cpp_ifstream_ctor_FUN_005ff664
+    this_ptr = &piVar4[-2].__tied_stream;...
+  crt_fstream.cpp_fstreambase_ctor_FUN_00606456
+    this_ptr = (fstreambase *)&piVar2[-2].__enabled_exceptions;...
+  crt_fstream.cpp_ofstream_destructor_thunk_from_ostream_FUN_005ff78e
+    crt_fstream_cpp_ofstream_dtor_FUN_005ff7bc(&this_ptr[-2]._ios.__fill_character,d...
+  crt_fstream.cpp_ifstream_destructor_thunk_from_istream_FUN_005ff6e2
+    crt_fstream_cpp_ifstream_dtor_FUN_005ff856(&this_ptr[-2]._ios.__i_lock,dtor_flag...
+  crt_fstream.cpp_ifstream_destructor_thunk_from_ios_FUN_005ff6f8
+    ((void *)((int)this_ptr - (int)this_ptr[-1].cleanup_vtable),dtor_flags);...
+  crt_fstream.cpp_fstream_destructor_thunk_from_ios_FUN_006064f1
+    ((fstreambase *)((int)this_ptr - (int)this_ptr[-1].cleanup_vtable),dtor_flags);...
+  crt_fstream.cpp_ofstream_ctor_FUN_005ff710
+    this_ptr = &piVar4[-2].__format_flags;...
+  crt_fstream.cpp_ofstream_ctor_FUN_005ff95c
+    this_ptr = &piVar5[-2].__format_flags;...
+  crt_fstream.cpp_fstreambase_ctor_FUN_0060658f
+    this_ptr = (fstreambase *)&piVar4[-2].__enabled_exceptions;...
+  crt_fstream.cpp_ofstream_destructor_thunk_from_ios_FUN_005ff7a4
+    ((void *)((int)this_ptr - (int)this_ptr[-1].cleanup_vtable),dtor_flags);...
+  crt_fstream.cpp_ifstream_ctor_FUN_005ff8f0
+    this_ptr = &piVar5[-2].__tied_stream;...
+  crt_fstream.cpp_fstreambase_dtor_FUN_00606509
+    this_ptr = (fstreambase *)(pfVar2[-1].__unbuffered_get_area + 4);...
+  crt_heap.c_InsertHeapBlockInOrder_FUN_006095f0
+    puVar1 = pHVar3[-1].free_list_area + (new_block->size - 0x20);...
+  crt_heap.c_ResizeBlockInPlace_FUN_006097b8
+    ppHVar1 = &in_stack_00000008[-1].next_heap_block;...
+  crt_iostream.cpp_istream_destructor_thunk_from_ios_FUN_006063c9
+    ((_istream *)((int)this_ptr - (int)this_ptr[-1].cleanup_vtable),dtor_flags);...
+  crt_iostream.cpp_istream_ctor_FUN_00606376
+    this_ptr = (_istream *)&piVar3[-1].__xalloc_list;...
+  crt_iostream.cpp_ostream_ctor_FUN_006061a2
+    this_ptr = (_ostream *)&piVar2[-1].__fill_character;...
+  crt_iostream.cpp_ostream_dtor_FUN_00606231
+    this_ptr = (_ostream *)&piVar2[-1].__fill_character;...
+  crt_iostream.cpp_istream_dtor_FUN_006063e1
+    this_ptr = (_istream *)&piVar2[-1].__xalloc_list;...
 
 ====================================================================================================
 TYPE: warning_type_propagation (143 occurrences)

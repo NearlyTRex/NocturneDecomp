@@ -23,7 +23,7 @@ int __cdecl shape_superopt_cpp_CObj_addPolygons_FUN_005d2410(CObj *this_ptr,int 
                      (this_ptr->poly_array,(this_ptr->poly_count + add_count) * 0x68);
   if (pCVar1 != (CPoly *)0x0) {
     this_ptr->poly_array = pCVar1;
-    shape_superopt_cpp_CPoly_ctor_FUN_005cc620(&local_78);
+    shape_superopt_cpp_CPoly_ctor_FUN_005cc620(&local_78,(CObj *)0x0);
     iVar3 = this_ptr->poly_count * 0x68;
     for (local_10 = this_ptr->poly_count; uVar4 = this_ptr->poly_count + add_count, local_10 < uVar4
         ; local_10 = local_10 + 1) {

@@ -9,8 +9,9 @@
 CPickList * __cdecl shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(CPickList *this_ptr,uint flags)
 
 {
-  CEdButton *pCVar1;
-  CEdScrollBar *pCVar2;
+  CPickList_ptr_704 pCVar1;
+  CPickList_ptr_476 pCVar2;
+  CPickList_ptr_420 pCVar3;
   CPickList *ptr;
   void *ptr_00;
   
@@ -22,11 +23,9 @@ CPickList * __cdecl shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(CPickList *th
   (this_ptr->base).vtable = &g_CPickListVTable;
   shape_edittool_cpp_CPickList_clear_FUN_004a5770(this_ptr);
   pCVar1 = shape_edittool_cpp_CEdButton_dtor_FUN_004a6510(&this_ptr->cancel_button,0);
-  pCVar1 = shape_edittool_cpp_CEdButton_dtor_FUN_004a6510(pCVar1 + -1,0);
-  pCVar2 = shape_edittool_cpp_CEdScrollBar_dtor_FUN_004a5b20
-                     ((CEdScrollBar *)(pCVar1[-1].button_text + 0x90),0);
-  ptr = (CPickList *)
-        shape_edittool_cpp_CStrList_dtor_FUN_004a2a40((CStrList *)&pCVar2[-9].thumb_end,1);
+  pCVar2 = shape_edittool_cpp_CEdButton_dtor_FUN_004a6510(&ADJ(pCVar1)->ok_button,0);
+  pCVar3 = shape_edittool_cpp_CEdScrollBar_dtor_FUN_004a5b20(&ADJ(pCVar2)->scrollbar,0);
+  ptr = (CPickList *)shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&ADJ(pCVar3)->base,1);
   if ((flags & 2) == 0) {
     return ptr;
   }

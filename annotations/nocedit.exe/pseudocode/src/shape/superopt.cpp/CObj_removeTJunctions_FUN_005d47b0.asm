@@ -814,7 +814,7 @@ section .text
     LEA EAX,[ESP + 0xe4]                ; 005d5206
     PUSH EAX                            ; 005d520d
     CALL shape_superopt.cpp_CPoly_ctor_FUN_005cc620 ; 005d520e
-        ;   XREF to: 005cc620 (UNCONDITIONAL_CALL)  ; CPoly * shape_superopt.cpp_CPoly_ctor_FUN_005cc620(CPoly * this_ptr)
+        ;   XREF to: 005cc620 (UNCONDITIONAL_CALL)  ; CPoly * shape_superopt.cpp_CPoly_ctor_FUN_005cc620(CPoly * this_ptr, CObj * parent_obj)
     ADD ESP,0x8                         ; 005d5213
     MOV EDI,dword ptr [EBP + 0x14]      ; 005d5216
     PUSH EDI                            ; 005d5219

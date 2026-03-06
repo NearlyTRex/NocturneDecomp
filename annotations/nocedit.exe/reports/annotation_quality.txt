@@ -14,7 +14,7 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,486
   Unnamed functions (FUN_):          217 ( 3.3%)
   Functions with unnamed params:     12 ( 0.2%)
-  Functions with type issues:        2,389 (36.8%)
+  Functions with type issues:        2,388 (36.8%)
 
   Type issue breakdown:
     Wrong return type (void):          0
@@ -22,7 +22,7 @@ SUMMARY STATISTICS
     Missing register params:           4
     Wrong calling convention:          37
     Undefined types in variables:      2271
-    Unresolved stack params:           323
+    Unresolved stack params:           322
 
 ====================================================================================================
 UNNAMED FUNCTIONS (still using FUN_XXXXXXXX or ClassName_FUN_XXXXXXXX)
@@ -701,7 +701,7 @@ Wrong calling convention (unaffected register usage) (37)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
 --------------------------------------------------------------------------------
-Unresolved stack parameters (missing from signature) (323)
+Unresolved stack parameters (missing from signature) (322)
 --------------------------------------------------------------------------------
 
   CPackedBitmapSet_reload
@@ -2580,12 +2580,6 @@ Unresolved stack parameters (missing from signature) (323)
     Address: 0x004a2050  File: shape/edittool.cpp
     Evidence: in_stack_fffffe90, in_stack_fffffec0, in_stack_fffffec0, in_stack_fffffec0, in_stack_fffffec0, in_stack_fffffe90, in_stack_fffffec0, in_stack_fffffec0, in_stack_fffffec0, in_stack_fffffe90, in_stack_fffffec0, in_stack_fffffec0, in_stack_fffffec0, in_stack_fffffe90
     Signature: void __cdecl shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050(CEditorTools *this_ptr,CVector3f *corner1,CVector3f *corner2,int color_value)
-    Suggested: Signature is missing stack parameters entirely
-
-  CPoly_ctor
-    Address: 0x005cc620  File: shape/superopt.cpp
-    Evidence: in_stack_00000008, in_stack_00000008
-    Signature: CPoly * __cdecl shape_superopt_cpp_CPoly_ctor_FUN_005cc620(CPoly *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
   CPoly_hasCentroidIntersection

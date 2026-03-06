@@ -9,7 +9,7 @@
 CLZWDecompress * __cdecl support_codec_cpp_CLZWDecompress_dtor_FUN_0043f6b0(CLZWDecompress *this_ptr,uint flags)
 
 {
-  CLZWDictionary *pCVar1;
+  CLZWDecompress_ptr_4 pCVar1;
   CLZWDecompress *ptr;
   void *ptr_00;
   
@@ -19,9 +19,7 @@ CLZWDecompress * __cdecl support_codec_cpp_CLZWDecompress_dtor_FUN_0043f6b0(CLZW
     return this_ptr;
   }
   pCVar1 = support_codec_cpp_CLZWDictionary_dtor_FUN_0043edf0(&this_ptr->lzw_dict,0);
-  ptr = (CLZWDecompress *)
-        support_codec_cpp_CCodec_dtor_FUN_0043e9b0
-                  ((CCodec *)&pCVar1[-1].bit_state.accumulated_bits,1);
+  ptr = (CLZWDecompress *)support_codec_cpp_CCodec_dtor_FUN_0043e9b0(&ADJ(pCVar1)->base,1);
   if ((flags & 2) == 0) {
     return ptr;
   }

@@ -91,7 +91,7 @@ void __cdecl shape_superopt_cpp_optimizeCubeTriList_FUN_005d77a0(void)
     local_28 = 0;
     local_2c = g_ModelPolygonData[0].texture_name;
     do {
-      shape_superopt_cpp_CPoly_ctor_FUN_005cc620(&local_168);
+      shape_superopt_cpp_CPoly_ctor_FUN_005cc620(&local_168,(CObj *)0x0);
       pcVar4 = local_2c;
       local_168.parent_obj = &local_58;
       local_168.vertex_idx_0 = *(int *)((int)g_ModelPolygonData[0].vertex_indices + local_28);

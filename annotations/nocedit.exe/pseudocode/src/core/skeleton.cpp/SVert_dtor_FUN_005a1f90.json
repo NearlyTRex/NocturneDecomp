@@ -14,7 +14,7 @@
     "pseudocode_lines": 6,
     "suspect_count": 1,
     "suspect_types": [
-      "negative_offset"
+      "decompiler_intrinsic"
     ],
     "total_lines": 16
   },
@@ -93,12 +93,12 @@
   },
   "suspects": [
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 8,
-      "match": "pCVar1[-2].",
+      "match": "ADJ",
       "severity": "mild",
-      "text": "return (SVert *)&pCVar1[-2].z;",
-      "type": "negative_offset"
+      "text": "return ADJ(pCVar1);",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

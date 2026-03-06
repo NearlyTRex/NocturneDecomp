@@ -6,18 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 21,
-    "complexity_score": 59,
+    "complexity_score": 43,
     "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 2,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 9,
-    "suspect_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 8,
+    "suspect_count": 3,
     "suspect_types": [
-      "pointer_cast",
-      "stack_param"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 30
+    "total_lines": 29
   },
   "cross_references": [
     {
@@ -55,7 +54,7 @@
     ],
     "convention": "__cdecl",
     "name": "shape_superopt.cpp_CPoly_ctor_FUN_005cc620",
-    "signature": "CPoly * __cdecl shape_superopt_cpp_CPoly_ctor_FUN_005cc620(CPoly *this_ptr)"
+    "signature": "CPoly * __cdecl shape_superopt_cpp_CPoly_ctor_FUN_005cc620(CPoly *this_ptr,CObj *parent_obj)"
   },
   "function_calls": [
     {
@@ -104,10 +103,10 @@
     "pcode_op_count": 70
   },
   "stack_frame": {
-    "frame_size": 8,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -116,41 +115,40 @@
         "offset": 4,
         "size": 4,
         "type": "CPoly *"
+      },
+      {
+        "is_param": true,
+        "name": "parent_obj",
+        "offset": 8,
+        "size": 4,
+        "type": "CObj *"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 6,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "CObj *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "shape_superopt_cpp_CPoly_init_FUN_005cc670((CPoly *)((int)pvVar1 + -0x10),in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 10,
-      "match": "(CPoly *)((int)",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 8,
+      "match": "ADJ",
       "severity": "mild",
-      "text": "shape_superopt_cpp_CPoly_init_FUN_005cc670((CPoly *)((int)pvVar1 + -0x10),in_stack_00000008);",
-      "type": "pointer_cast"
+      "text": "ADJ(pvVar1)->vtable = &g_CPolyVTable;",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 11,
-      "match": "(CPoly *)((int)",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 9,
+      "match": "ADJ",
       "severity": "mild",
-      "text": "return (CPoly *)((int)pvVar1 + -0x10);",
-      "type": "pointer_cast"
+      "text": "shape_superopt_cpp_CPoly_init_FUN_005cc670(ADJ(pvVar1),parent_obj);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 10,
+      "match": "ADJ",
+      "severity": "mild",
+      "text": "return ADJ(pvVar1);",
+      "type": "decompiler_intrinsic"
     }
   ]
 }

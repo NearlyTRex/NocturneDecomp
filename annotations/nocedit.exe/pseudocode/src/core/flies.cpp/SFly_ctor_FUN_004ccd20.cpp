@@ -9,8 +9,8 @@
 SFly * __cdecl core_flies_cpp_SFly_ctor_FUN_004ccd20(SFly *this_ptr)
 
 {
-  void *pvVar1;
+  SFly_ptr_4 pvVar1;
   
   pvVar1 = __arrinit(this_ptr->control_points,4,&g_CVectorTypeInfo);
-  return (SFly *)((int)pvVar1 + -4);
+  return ADJ(pvVar1);
 }

@@ -401,7 +401,7 @@ int __cdecl shape_superopt_cpp_CObj_removeTJunctions_FUN_005d47b0(CObj *this_ptr
                 shape_memdbg_cpp_debugFree_FUN_0050f210(local_44);
                 return 0;
               }
-              shape_superopt_cpp_CPoly_ctor_FUN_005cc620((CPoly *)local_1f0);
+              shape_superopt_cpp_CPoly_ctor_FUN_005cc620((CPoly *)local_1f0,(CObj *)0x0);
               local_2e0 = 0x5d522f;
               shape_superopt_cpp_CPoly_copyFrom_FUN_005cc6a0((CPoly *)local_1f0,local_20,this_ptr);
               pCVar9 = local_20;

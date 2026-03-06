@@ -9,8 +9,8 @@
 SMorphControlPoint * __cdecl core_morph_cpp_SMorphControlPoint_ctor_FUN_0052cc50(SMorphControlPoint *this_ptr)
 
 {
-  void *pvVar1;
+  SMorphControlPoint_ptr_8 pvVar1;
   
   pvVar1 = __arrinit(this_ptr->position,2,&g_CVectorTypeInfo);
-  return (SMorphControlPoint *)((int)pvVar1 + -8);
+  return ADJ(pvVar1);
 }

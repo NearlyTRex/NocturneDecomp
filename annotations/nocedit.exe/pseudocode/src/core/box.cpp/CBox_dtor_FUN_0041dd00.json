@@ -14,7 +14,7 @@
     "pseudocode_lines": 6,
     "suspect_count": 1,
     "suspect_types": [
-      "negative_offset"
+      "decompiler_intrinsic"
     ],
     "total_lines": 16
   },
@@ -135,12 +135,12 @@
   },
   "suspects": [
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 8,
-      "match": "pSVar1[-4].",
+      "match": "ADJ",
       "severity": "mild",
-      "text": "return (CBox *)&pSVar1[-4].previous_position.y;",
-      "type": "negative_offset"
+      "text": "return ADJ(pSVar1);",
+      "type": "decompiler_intrinsic"
     }
   ]
 }

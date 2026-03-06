@@ -121,7 +121,7 @@ int __cdecl CComplexPolygon::validateSubChainVisibility(CComplexPolygon *this_pt
 
 // Original: shape_superopt.cpp_CPoly_ctor_FUN_005cc620
 // Address: 005cc620
-CPoly * __cdecl CPoly::ctor(CPoly *this_ptr);
+CPoly * __cdecl CPoly::ctor(CPoly *this_ptr,CObj *parent_obj);
 
 // Original: shape_superopt.cpp_CPoly_dtor_FUN_005cc660
 // Address: 005cc660

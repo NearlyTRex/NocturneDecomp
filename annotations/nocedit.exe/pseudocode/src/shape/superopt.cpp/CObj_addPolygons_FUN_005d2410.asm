@@ -52,7 +52,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 005d2452
     PUSH EAX                            ; 005d2456
     CALL shape_superopt.cpp_CPoly_ctor_FUN_005cc620 ; 005d2457
-        ;   XREF to: 005cc620 (UNCONDITIONAL_CALL)  ; CPoly * shape_superopt.cpp_CPoly_ctor_FUN_005cc620(CPoly * this_ptr)
+        ;   XREF to: 005cc620 (UNCONDITIONAL_CALL)  ; CPoly * shape_superopt.cpp_CPoly_ctor_FUN_005cc620(CPoly * this_ptr, CObj * parent_obj)
     ADD ESP,0x8                         ; 005d245c
     MOV EAX,dword ptr [EBX + 0x8]       ; 005d245f
     MOV dword ptr [ESP + 0x6c],EAX      ; 005d2462
