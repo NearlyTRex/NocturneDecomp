@@ -19,7 +19,7 @@ int __cdecl core_charactr_cpp_CCharacter_updateWanderToWaypoint_FUN_0042e050(CCh
   UVector3 *direction;
   float fVar6;
   float fVar7;
-  int local_1f80 [2005];
+  uint local_1f80 [2005];
   int local_2c;
   int local_28;
   int local_24;
@@ -44,8 +44,8 @@ int __cdecl core_charactr_cpp_CCharacter_updateWanderToWaypoint_FUN_0042e050(CCh
      (float)4 <= SQRT(fVar7 * fVar7 + fVar1 * fVar1 + fVar6 * fVar6))) {
     if (this_ptr->wander_nearest_waypoint == (CWayPoint *)0x0) goto LAB_0042e0e4;
     if (this_ptr->wander_target == (CWayPoint *)0x0) goto LAB_0042e0ee;
-    pCVar3 = (CWayPoint *)
-             core_waypoint_cpp_CWayPoint_FUN_005ec320((CWayPoint *)&(this_ptr->base).location);
+    pCVar3 = core_waypoint_cpp_CWayPoint_findNearestReachable_FUN_005ec320
+                       ((CWayPoint *)&(this_ptr->base).location,this_ptr->wander_target);
     this_ptr->wander_nearest_waypoint = pCVar3;
   }
   else {
@@ -80,12 +80,12 @@ LAB_0042e0ee:
       do {
         while( true ) {
           iVar4 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,local_2c);
-          if (local_1f80[iVar4] != 0) break;
+          if ((CWayPoint *)local_1f80[iVar4] != (CWayPoint *)0x0) break;
           iVar5 = iVar5 + 1;
           if (9 < iVar5) goto LAB_0042e1d9;
         }
-        pCVar3 = (CWayPoint *)
-                 core_waypoint_cpp_CWayPoint_FUN_005ec320((CWayPoint *)&(this_ptr->base).location);
+        pCVar3 = core_waypoint_cpp_CWayPoint_findNearestReachable_FUN_005ec320
+                           ((CWayPoint *)&(this_ptr->base).location,(CWayPoint *)local_1f80[iVar4]);
         this_ptr->wander_nearest_waypoint = pCVar3;
         if (pCVar3 != (CWayPoint *)0x0) {
           this_ptr->wander_target = (CWayPoint *)local_1f80[iVar4];

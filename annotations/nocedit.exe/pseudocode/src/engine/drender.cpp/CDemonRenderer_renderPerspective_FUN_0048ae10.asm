@@ -16,7 +16,7 @@
 ;   core_inv.cpp_drawItemIconBackground_FUN_005001e0 at 00500318
 ;   core_inv.cpp_drawWeaponIconBackground_FUN_00500050 at 00500188
 ;   core_level.cpp_CLevelLoader_update_FUN_00504160 at 00504558
-;   core_marquee.cpp_CMarquee_FUN_0050bec0 at 0050c037
+;   core_marquee.cpp_CMarquee_renderLightBulb_FUN_0050bec0 at 0050c037
 ;   core_menu.cpp_renderAudioSpectrumBar_FUN_0050fe70 at 0050ffc7
 ;   core_trigger.cpp_CTrigger_renderTransparent_FUN_005e00d0 at 005e050d
 ;

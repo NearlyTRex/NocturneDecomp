@@ -14,7 +14,7 @@
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_004a9f10
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
-;   core_smiley.cpp_CSmiley_FUN_005a32a0
+;   core_smiley.cpp_CSmiley_processDismemberment_FUN_005a32a0
 ;
 ; *****************************************************************************
 
@@ -50,8 +50,8 @@ section .text
         ;   XREF to: 005a35ca (CONDITIONAL_JUMP)  ; LAB_005a35ca
     PUSH ESI                            ; 005a35c0
     PUSH EBX                            ; 005a35c1
-    CALL core_smiley.cpp_CSmiley_FUN_005a32a0 ; 005a35c2
-        ;   XREF to: 005a32a0 (UNCONDITIONAL_CALL)  ; void core_smiley.cpp_CSmiley_FUN_005a32a0(CSmiley * this_ptr)
+    CALL core_smiley.cpp_CSmiley_processDismemberment_FUN_005a32a0 ; 005a35c2
+        ;   XREF to: 005a32a0 (UNCONDITIONAL_CALL)  ; void core_smiley.cpp_CSmiley_processDismemberment_FUN_005a32a0(CSmiley * this_ptr, SDamageInfo * damage_info)
     ADD ESP,0x8                         ; 005a35c7
     PUSH EDI                            ; 005a35ca
         ;   Label: LAB_005a35ca

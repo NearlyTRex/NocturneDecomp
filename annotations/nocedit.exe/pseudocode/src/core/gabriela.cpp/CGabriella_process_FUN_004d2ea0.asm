@@ -111,8 +111,8 @@
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
-;   core_ammobox.cpp_CAmmoBox_FUN_00411690
-;   core_boxactor.cpp_CBoxActor_FUN_00422390
+;   core_ammobox.cpp_CAmmoBox_openBox_FUN_00411690
+;   core_boxactor.cpp_CBoxActor_resolveRayPush_FUN_00422390
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_00429820
@@ -748,8 +748,8 @@ section .text
     LEA EAX,[EBP + 0xffffff06]          ; 004d35dc
     PUSH EAX                            ; 004d35e2
     PUSH ESI                            ; 004d35e3
-    CALL core_boxactor.cpp_CBoxActor_FUN_00422390 ; 004d35e4
-        ;   XREF to: 00422390 (UNCONDITIONAL_CALL)  ; void core_boxactor.cpp_CBoxActor_FUN_00422390(CBoxActor * this_ptr, CVector3f * param_2, CVector3f * param_3)
+    CALL core_boxactor.cpp_CBoxActor_resolveRayPush_FUN_00422390 ; 004d35e4
+        ;   XREF to: 00422390 (UNCONDITIONAL_CALL)  ; void core_boxactor.cpp_CBoxActor_resolveRayPush_FUN_00422390(CBoxActor * this_ptr, CVector3f * ray_origin, CVector3f * ray_direction)
     ADD ESP,0xc                         ; 004d35e9
     PUSH dword ptr [EBP + 0x92]         ; 004d35ec
         ;   Label: LAB_004d35ec
@@ -1302,8 +1302,8 @@ section .text
     MOV EAX,dword ptr [EBP + 0x76]      ; 004d3bfb
     MOV dword ptr [ESP],EAX             ; 004d3bfe
     PUSH EDI                            ; 004d3c01
-    CALL core_ammobox.cpp_CAmmoBox_FUN_00411690 ; 004d3c02
-        ;   XREF to: 00411690 (UNCONDITIONAL_CALL)  ; void core_ammobox.cpp_CAmmoBox_FUN_00411690(CAmmoBox * this_ptr, float open_pct)
+    CALL core_ammobox.cpp_CAmmoBox_openBox_FUN_00411690 ; 004d3c02
+        ;   XREF to: 00411690 (UNCONDITIONAL_CALL)  ; void core_ammobox.cpp_CAmmoBox_openBox_FUN_00411690(CAmmoBox * this_ptr, float open_pct)
     ADD ESP,0x8                         ; 004d3c07
     JMP 0x004d321d                      ; 004d3c0a
         ;   XREF to: 004d321d (UNCONDITIONAL_JUMP)  ; LAB_004d321d

@@ -61,8 +61,8 @@ void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet
   CVector3f local_1ac;
   CVector3i local_1a0;
   CVector3f local_194;
-  int local_188;
-  int local_184;
+  float local_188;
+  uint local_184;
   float local_180;
   CVector3f local_17c;
   CVector3i local_170;
@@ -92,8 +92,8 @@ void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet
   CVector3f local_98;
   CVector3f local_8c;
   double local_78;
-  int *local_70;
-  int *local_6c;
+  float *local_70;
+  uint *local_6c;
   _BIT_INTEGER32 local_68;
   C3DSCamera *local_64;
   float local_60;
@@ -135,9 +135,9 @@ void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet
   this_ptr->disable_sky_rendering = 1;
   this_ptr->disable_spotlight_shadows = 1;
   local_64 = this_ptr->cameras;
-  local_6c = &g_CDemonCameraInstance.base.position.y;
+  local_6c = (uint *)((int)&g_CDemonCameraInstance.base.position + 4);
   local_18 = 0;
-  local_70 = &g_CDemonCameraInstance.base.position.z;
+  local_70 = (float *)((int)&g_CDemonCameraInstance.base.position + 8);
   local_40 = local_44;
   do {
     iVar7 = local_18;
@@ -176,9 +176,9 @@ void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet
       }
     }
     if ((int *)&stack0x00000000 != &g_CDemonCameraInstance.rect_array[7].top) {
-      g_CDemonCameraInstance.base.position.x = (int)in_stack_fffffdbc;
-      g_CDemonCameraInstance.base.position.y = (int)in_stack_fffffdc0;
-      g_CDemonCameraInstance.base.position.z = (int)in_stack_fffffdc4;
+      g_CDemonCameraInstance.base.position.f.x = (float)in_stack_fffffdbc;
+      g_CDemonCameraInstance.base.position.f.y = in_stack_fffffdc0;
+      g_CDemonCameraInstance.base.position.f.z = (float)in_stack_fffffdc4;
     }
     fVar16 = 28.0;
     core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
@@ -980,9 +980,9 @@ LAB_00583c6f:
       engine_2d_c_clearInputAndWait_FUN_00403260();
     }
     if (((local_68.dword & 1) != 0) && ((g_MouseButtonFlags.dword & 1) == 0)) {
-      local_188 = g_CDemonCameraInstance.base.position.x;
+      local_188 = g_CDemonCameraInstance.base.position.f.x;
       local_184 = *local_6c;
-      local_180 = (float)*local_70;
+      local_180 = *local_70;
       core_dcamera_cpp_CDemonCamera_screenToWorldDirection_FUN_0044d480
                 (&g_CDemonCameraInstance,&local_d4,g_MouseX,g_MouseY);
       iVar7 = 0;

@@ -15,9 +15,9 @@
 ; XREF[76]:
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210 at 0040a645
 ;   core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470 at 00409558
-;   core_baron.cpp_CBaron_FUN_004136b0 at 004136ed
-;   core_boxactor.cpp_CBoxActor_FUN_00422390 at 004223ab
-;   core_boxactor.cpp_CBoxActor_FUN_00422590 at 004225b1
+;   core_baron.cpp_CBaron_performLightningAttack_FUN_004136b0 at 004136ed
+;   core_boxactor.cpp_CBoxActor_constrainToExtents_FUN_00422590 at 004225b1
+;   core_boxactor.cpp_CBoxActor_resolveRayPush_FUN_00422390 at 004223ab
 ;   core_chain.cpp_CChain_getBoundingBox_FUN_00430eb0 at 00430fa4
 ;   core_charactr.cpp_CCharacter_checkCylinderCollisionWorld_FUN_0042c110 at 0042c123
 ;   core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0 at 0042ee7f

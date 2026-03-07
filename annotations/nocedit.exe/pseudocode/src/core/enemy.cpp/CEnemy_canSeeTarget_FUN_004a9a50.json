@@ -1,0 +1,149 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 73,
+    "complexity_score": 24,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 2,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 24,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 97
+  },
+  "cross_references": [
+    {
+      "addr": "005267a0",
+      "from_addr": "005267da",
+      "name": "core_mobster.cpp_CMobster_aimTommyGun_FUN_005267a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004a9a50",
+    "address_range": [
+      [
+        "004a9a50",
+        "004a9afa"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_enemy.cpp_CEnemy_canSeeTarget_FUN_004a9a50",
+    "signature": "int __cdecl core_enemy_cpp_CEnemy_canSeeTarget_FUN_004a9a50(CEnemy *this_ptr,CDemonActor *target)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408ec0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0"
+    },
+    {
+      "addr": "00408f10",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10"
+    },
+    {
+      "addr": "00421550",
+      "is_variadic": false,
+      "name": "core_box.cpp_CBoundingBox3D_clampPoint_FUN_00421550"
+    },
+    {
+      "addr": "00572510",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_testVoxelRaycast_FUN_00572510"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006810c8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "03114278"
+    },
+    {
+      "addr": "03114278",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005267da",
+        "call_type": "direct",
+        "caller": "core_mobster.cpp_CMobster_aimTommyGun_FUN_005267a0",
+        "estimated_params": 2,
+        "instructions_analyzed": 3,
+        "reg_params": [],
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.2,
+    "instruction_count": 65,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 5,
+      "CALLIND": 2,
+      "CBRANCH": 1,
+      "COPY": 55,
+      "INT_ADD": 30,
+      "INT_AND": 31,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 28,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 9,
+      "INT_SLESS": 14,
+      "INT_SUB": 29,
+      "INT_XOR": 1,
+      "LOAD": 12,
+      "POPCOUNT": 14,
+      "RETURN": 2,
+      "STORE": 28
+    },
+    "pcode_op_count": 273
+  },
+  "stack_frame": {
+    "frame_size": 56,
+    "local_size": 48,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEnemy *"
+      },
+      {
+        "is_param": true,
+        "name": "target",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonActor *"
+      }
+    ]
+  },
+  "suspects": []
+}

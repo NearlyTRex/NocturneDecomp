@@ -38,8 +38,8 @@
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
-;   core_ammobox.cpp_CAmmoBox_FUN_00411690
-;   core_boxactor.cpp_CBoxActor_FUN_00422390
+;   core_ammobox.cpp_CAmmoBox_openBox_FUN_00411690
+;   core_boxactor.cpp_CBoxActor_resolveRayPush_FUN_00422390
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_00429820
@@ -662,8 +662,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x284]     ; 005bc0f0
     FSTP float ptr [ESP]                ; 005bc0f7
     PUSH ECX                            ; 005bc0fa
-    CALL core_ammobox.cpp_CAmmoBox_FUN_00411690 ; 005bc0fb
-        ;   XREF to: 00411690 (UNCONDITIONAL_CALL)  ; void core_ammobox.cpp_CAmmoBox_FUN_00411690(CAmmoBox * this_ptr, float open_pct)
+    CALL core_ammobox.cpp_CAmmoBox_openBox_FUN_00411690 ; 005bc0fb
+        ;   XREF to: 00411690 (UNCONDITIONAL_CALL)  ; void core_ammobox.cpp_CAmmoBox_openBox_FUN_00411690(CAmmoBox * this_ptr, float open_pct)
     ADD ESP,0x8                         ; 005bc100
     PUSH EBX                            ; 005bc103
         ;   Label: LAB_005bc103
@@ -970,8 +970,8 @@ section .text
     LEA EAX,[ESP + 0xc4]                ; 005bc4c3
     PUSH EAX                            ; 005bc4ca
     PUSH ESI                            ; 005bc4cb
-    CALL core_boxactor.cpp_CBoxActor_FUN_00422390 ; 005bc4cc
-        ;   XREF to: 00422390 (UNCONDITIONAL_CALL)  ; void core_boxactor.cpp_CBoxActor_FUN_00422390(CBoxActor * this_ptr, CVector3f * param_2, CVector3f * param_3)
+    CALL core_boxactor.cpp_CBoxActor_resolveRayPush_FUN_00422390 ; 005bc4cc
+        ;   XREF to: 00422390 (UNCONDITIONAL_CALL)  ; void core_boxactor.cpp_CBoxActor_resolveRayPush_FUN_00422390(CBoxActor * this_ptr, CVector3f * ray_origin, CVector3f * ray_direction)
     ADD ESP,0xc                         ; 005bc4d1
     PUSH 0x0                            ; 005bc4d4
         ;   Label: LAB_005bc4d4

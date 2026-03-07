@@ -741,8 +741,8 @@ section .text
     ADD ESP,0xc                         ; 0041c691
     PUSH EAX                            ; 0041c694
     PUSH EBX                            ; 0041c695
-    CALL core_enemy.cpp_CEnemy_FUN_004a9880 ; 0041c696
-        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9880(CEnemy * this_ptr)
+    CALL core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a9880 ; 0041c696
+        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a9880(CEnemy * this_ptr, CVector3f * point, float radius, SDamageInfo * damage_info)
     ADD ESP,0x10                        ; 0041c69b
     JMP 0x0041c3f4                      ; 0041c69e
         ;   XREF to: 0041c3f4 (UNCONDITIONAL_JUMP)  ; caseD_4
@@ -866,8 +866,8 @@ section .text
     PUSH EAX                            ; 0041c7fb
     PUSH EBX                            ; 0041c7fc
     MOV dword ptr [EBP + 0xffffff06],EBX ; 0041c7fd
-    CALL core_enemy.cpp_CEnemy_FUN_004a9930 ; 0041c803
-        ;   XREF to: 004a9930 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9930(CEnemy * this_ptr)
+    CALL core_enemy.cpp_CEnemy_testAttackLine_FUN_004a9930 ; 0041c803
+        ;   XREF to: 004a9930 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_testAttackLine_FUN_004a9930(CEnemy * this_ptr, CVector3f * start, CVector3f * end, SDamageInfo * damage_info)
     ADD ESP,0x10                        ; 0041c808
     JMP 0x0041c3f4                      ; 0041c80b
         ;   XREF to: 0041c3f4 (UNCONDITIONAL_JUMP)  ; caseD_4
@@ -893,8 +893,8 @@ section .text
     PUSH dword ptr [EBP + 0x92]         ; 0041c850
         ;   Label: caseD_0
     PUSH EBX                            ; 0041c856
-    CALL core_enemy.cpp_CEnemy_FUN_004a9fd0 ; 0041c857
-        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9fd0(CEnemy * this_ptr, float delta_time)
+    CALL core_enemy.cpp_CEnemy_updatePatrol_FUN_004a9fd0 ; 0041c857
+        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_updatePatrol_FUN_004a9fd0(CEnemy * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0041c85c
     TEST EAX,EAX                        ; 0041c85f
     JZ 0x0041c875                       ; 0041c861
@@ -937,8 +937,8 @@ section .text
         ;   XREF to: 0041c8f3 (CONDITIONAL_JUMP)  ; LAB_0041c8f3
     PUSH dword ptr [EBP + 0x92]         ; 0041c8cb
     PUSH EBX                            ; 0041c8d1
-    CALL core_enemy.cpp_CEnemy_FUN_004a9fd0 ; 0041c8d2
-        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9fd0(CEnemy * this_ptr, float delta_time)
+    CALL core_enemy.cpp_CEnemy_updatePatrol_FUN_004a9fd0 ; 0041c8d2
+        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_updatePatrol_FUN_004a9fd0(CEnemy * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0041c8d7
     TEST EAX,EAX                        ; 0041c8da
     JNZ 0x0041c3f4                      ; 0041c8dc

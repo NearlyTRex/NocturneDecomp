@@ -31,9 +31,9 @@ void __cdecl CBatCreature::process(CBatCreature *this_ptr,float delta_time);
 // Address: 00415d70
 void __cdecl CBatCreature::archive(CBatCreature *this_ptr);
 
-// Original: core_batcreat.cpp_CBatCreature_FUN_00415dd0
+// Original: core_batcreat.cpp_CBatCreature_processDismemberment_FUN_00415dd0
 // Address: 00415dd0
-void __cdecl CBatCreature(CBatCreature *this_ptr);
+void __cdecl CBatCreature::processDismemberment(CBatCreature *this_ptr,SDamageInfo *damage_info);
 
 // Original: core_batcreat.cpp_CBatCreature_processDamage_FUN_00416030
 // Address: 00416030

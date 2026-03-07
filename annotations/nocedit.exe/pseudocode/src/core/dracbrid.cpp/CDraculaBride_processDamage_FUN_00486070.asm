@@ -24,8 +24,8 @@
 ;   core_actor.cpp_getRandomInt_FUN_0040cc70
 ;   core_actor.cpp_randomChance_FUN_0040cd10
 ;   core_charactr.cpp_CCharacter_igniteBone_FUN_0042b5b0
-;   core_dracbrid.cpp_CDraculaBride_FUN_00486020
-;   core_dracbrid.cpp_CDraculaBride_FUN_004864c0
+;   core_dracbrid.cpp_CDraculaBride_checkHeartShot_FUN_00486020
+;   core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_004864c0
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_004a9f10
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_004c79d0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
@@ -86,8 +86,8 @@ section .text
     PUSH EDI                            ; 004860dc
         ;   Label: LAB_004860dc
     PUSH ESI                            ; 004860dd
-    CALL core_dracbrid.cpp_CDraculaBride_FUN_00486020 ; 004860de
-        ;   XREF to: 00486020 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_CDraculaBride_FUN_00486020(CDraculaBride * this_ptr)
+    CALL core_dracbrid.cpp_CDraculaBride_checkHeartShot_FUN_00486020 ; 004860de
+        ;   XREF to: 00486020 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_CDraculaBride_checkHeartShot_FUN_00486020(CDraculaBride * this_ptr, SDamageInfo * damage_info)
     FLD float ptr [EDI + 0x4]           ; 004860e3
     ADD ESP,0x8                         ; 004860e6
     FSUBR float ptr [ESI + 0x243c]      ; 004860e9
@@ -199,8 +199,8 @@ section .text
         ;   Label: LAB_004861eb
     PUSH 0x621c07                       ; 004861f0 | = "bride-die?.wav"
     PUSH ESI                            ; 004861f5
-    CALL core_dracbrid.cpp_CDraculaBride_FUN_004864c0 ; 004861f6
-        ;   XREF to: 004864c0 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_CDraculaBride_FUN_004864c0(CDraculaBride * this_ptr)
+    CALL core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_004864c0 ; 004861f6
+        ;   XREF to: 004864c0 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_004864c0(CDraculaBride * this_ptr, char * sound_name, float volume)
     ADD ESP,0xc                         ; 004861fb
     PUSH EDI                            ; 004861fe
     PUSH ESI                            ; 004861ff
@@ -242,8 +242,8 @@ section .text
     PUSH 0x40000000                     ; 00486249
     PUSH 0x621c16                       ; 0048624e | = "bride-hurt?.wav"
     PUSH ESI                            ; 00486253
-    CALL core_dracbrid.cpp_CDraculaBride_FUN_004864c0 ; 00486254
-        ;   XREF to: 004864c0 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_CDraculaBride_FUN_004864c0(CDraculaBride * this_ptr)
+    CALL core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_004864c0 ; 00486254
+        ;   XREF to: 004864c0 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_004864c0(CDraculaBride * this_ptr, char * sound_name, float volume)
     ADD ESP,0xc                         ; 00486259
     PUSH EDI                            ; 0048625c
     PUSH ESI                            ; 0048625d

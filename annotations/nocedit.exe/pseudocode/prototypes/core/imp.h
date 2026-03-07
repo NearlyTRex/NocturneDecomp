@@ -27,9 +27,9 @@ void __cdecl CImp::setup(CImp *this_ptr);
 // Address: 004f9c30
 void __cdecl CImp::process(CImp *this_ptr,float delta_time);
 
-// Original: core_imp.cpp_FUN_004fa900
+// Original: core_imp.cpp_setVector_FUN_004fa900
 // Address: 004fa900
-void __cdecl FUN_004fa900(void);
+CVector3f * __cdecl setVector(CVector3f *out,float x,float y,float z);
 
 // Original: core_imp.cpp_CImp_getCarryObjToBodyXForm_FUN_004fa920
 // Address: 004fa920
@@ -43,9 +43,9 @@ int __cdecl CImp::attractActorToward(CImp *this_ptr,CDemonActor *actor,CVector3f
 // Address: 004fab00
 void __cdecl CImp::archive(CImp *this_ptr);
 
-// Original: core_imp.cpp_CImp_FUN_004fab60
+// Original: core_imp.cpp_CImp_processDismemberment_FUN_004fab60
 // Address: 004fab60
-void __cdecl CImp(CImp *this_ptr);
+void __cdecl CImp::processDismemberment(CImp *this_ptr,SDamageInfo *damage_info);
 
 // Original: core_imp.cpp_CImp_processDamage_FUN_004fae00
 // Address: 004fae00

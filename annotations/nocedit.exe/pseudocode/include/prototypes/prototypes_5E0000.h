@@ -13,6 +13,7 @@
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonGlobe.h"
+#include "types/classes/CLocation.h"
 #include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CTVBat.h"
 #include "types/classes/CTerrain.h"
@@ -49,7 +50,7 @@ int __cdecl core_trigger_cpp_CTrigger_evaluateTriggerCondition_FUN_005e0980(CTri
 int __cdecl core_trigger_cpp_CTrigger_processActionButton_FUN_005e0a20(CTrigger *this_ptr);
 void __cdecl core_trigger_cpp_CTrigger_onLaserHit_FUN_005e0a50(CTrigger *this_ptr,SLaserInfo *laser_info);
 void __cdecl core_trigger_cpp_CTrigger_onProjectileHit_FUN_005e0aa0(CTrigger *this_ptr);
-int __cdecl core_trigger_cpp_CTrigger_acceptsDamageFrom_FUN_005e0ac0(CTrigger *this_ptr,char *damage_actor_wildcard_name);
+int __cdecl core_trigger_cpp_CTrigger_acceptsDamageFrom_FUN_005e0ac0(CTrigger *this_ptr,CDemonActor *actor);
 void __cdecl core_trigger_cpp_CTrigger_applyDamage_FUN_005e0b00(CTrigger *this_ptr,float hit_points);
 void __cdecl core_trigger_cpp_CTrigger_calculateTestRadius_FUN_005e0ba0(CTrigger *this_ptr);
 int __cdecl core_trigger_cpp_CTrigger_getTargetPoints_FUN_005e0c30(CTrigger *this_ptr,CVector3f *out_points_array);
@@ -104,19 +105,19 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr,floa
 CBoundingBox3D * __cdecl core_turret_cpp_CTurret_getBoundingBox_FUN_005e2910(CTurret *this_ptr,CBoundingBox3D *out_box);
 float __cdecl core_turret_cpp_CTurret_getCurFrame_FUN_005e2b30(CTurret *this_ptr);
 void __cdecl core_turret_cpp_CTurret_archive_FUN_005e2c40(CTurret *this_ptr);
-void __cdecl core_turret_cpp_CTurret_FUN_005e2d50(CTurret *this_ptr);
-int __cdecl core_turret_cpp_CTurret_FUN_005e3280(CTurret *this_ptr);
+void __cdecl core_turret_cpp_CTurret_updateTargeting_FUN_005e2d50(CTurret *this_ptr,float delta_time);
+int __cdecl core_turret_cpp_CTurret_aimAtTarget_FUN_005e3280(CTurret *this_ptr,CVector3f *target_pos,float delta_time);
 void __cdecl core_turret_cpp_CTurret_getInteractionInfo_FUN_005e3440(CTurret *this_ptr,SInteractionInfo *interaction_info);
 int __cdecl core_turret_cpp_CTurret_startInteraction_FUN_005e34b0(CTurret *this_ptr,CDemonActor *user);
 int __cdecl core_turret_cpp_CTurret_updateInteraction_FUN_005e34d0(CTurret *this_ptr,UOrientationVector *user_orientation,SPlayerControl *player_control );
 void __cdecl core_turret_cpp_CTurret_stopInteraction_FUN_005e3540(CTurret *this_ptr,CDemonActor *user);
-void __cdecl core_turret_cpp_CTurret_FUN_005e3560(CTurret *this_ptr);
-float __cdecl core_turret_cpp_CTurret_FUN_005e36f0(CTurret *this_ptr);
-int __cdecl core_turret_cpp_CTurret_FUN_005e3720(CTurret *this_ptr);
+void __cdecl core_turret_cpp_CTurret_updatePatrol_FUN_005e3560(CTurret *this_ptr,float delta_time);
+float __cdecl core_turret_cpp_CTurret_getDamage_FUN_005e36f0(CTurret *this_ptr);
+CVector3f * __cdecl core_turret_cpp_CTurret_getMuzzlePoint_FUN_005e3720(CTurret *this_ptr,CVector3f *out_point);
 int __cdecl core_turret_cpp_CTurret_fire_FUN_005e3750(CTurret *this_ptr);
 int __cdecl core_turret_cpp_CTurret_canPickup_FUN_005e3c70(CTurret *this_ptr,CDemonActor *picker);
 void __cdecl core_turret_cpp_CTurret_getPropertyList_FUN_005e3ca0(CTurret *this_ptr,CActorPropertyList *property_list);
-void __cdecl core_turret_cpp_CTurret_FUN_005e3dd0(CTurret *this_ptr);
+void __cdecl core_turret_cpp_CTurret_processInEditor_FUN_005e3dd0(CTurret *this_ptr);
 CTurret * __cdecl core_turret_cpp_CTurret_dtor_FUN_005e3e00(CTurret *this_ptr,uint flags);
 void __cdecl core_tvbat_cpp_staticInit_FUN_005e3e50(void);
 CTVBat * __cdecl core_tvbat_cpp_factoryFunc_FUN_005e3e80(void);
@@ -175,7 +176,7 @@ int __cdecl core_vehicle_cpp_CVehicle_hasCollision_FUN_005e88b0(CVehicle *this_p
 int __cdecl core_vehicle_cpp_CVehicle_renderOpaque_FUN_005e88c0(CVehicle *this_ptr);
 int __cdecl core_vehicle_cpp_CVehicle_renderTransparent_FUN_005e8b30(CVehicle *this_ptr);
 void __cdecl core_vehicle_cpp_CVehicle_renderBackground_FUN_005e8b40(CVehicle *this_ptr,int layer_flag);
-uint __cdecl core_vehicle_cpp_CVehicle_FUN_005e8b50(CVehicle *this_ptr);
+uint __cdecl core_vehicle_cpp_CVehicle_playTrackedSound_FUN_005e8b50(CVehicle *this_ptr,char *sound_name);
 void __cdecl core_vehicle_cpp_CVehicle_getPropertyList_FUN_005e8ba0(CVehicle *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_vehicle_cpp_CVehicle_processInEditor_FUN_005e8cf0(CVehicle *this_ptr);
 void __cdecl core_vehicle_cpp_CVehicle_addFilesToExtract_FUN_005e8d00(CVehicle *this_ptr,_FILE *file_handle);
@@ -235,23 +236,23 @@ SWaterVertex * __cdecl core_wateract_cpp_SWaterVertex_ctor_FUN_005ebcd0(SWaterVe
 SWaterVertex * __cdecl core_wateract_cpp_SWaterVertex_dtor_FUN_005ebce0(SWaterVertex *this_ptr,uint flags);
 SWaterVertex * __cdecl core_wateract_cpp_SWaterVertex_arrdtor_FUN_005ebcf0(SWaterVertex *objs,uint flags);
 void __cdecl core_waypoint_cpp_staticInit_FUN_005ebd10(void);
-int __cdecl core_waypoint_cpp_CWayPoint_FUN_005ebd40(CWayPoint *this_ptr);
+int __cdecl core_waypoint_cpp_CWayPoint_isReachable_FUN_005ebd40(CWayPoint *this_ptr,CLocation *from_location,int use_tight_bounds);
 CWayPoint * __cdecl core_waypoint_cpp_factoryFunc_FUN_005ebe30(void);
 CDemonActorType * __cdecl core_waypoint_cpp_CWayPoint_getActorType_FUN_005ebe60(CWayPoint *this_ptr);
 CWayPoint * __cdecl core_waypoint_cpp_CWayPoint_ctor_FUN_005ebe70(CWayPoint *this_ptr);
 void __cdecl core_waypoint_cpp_CWaypoint_setup_FUN_005ebeb0(CWayPoint *this_ptr);
 int __cdecl core_waypoint_cpp_CWaypoint_renderOpaque_FUN_005ebf70(CWayPoint *this_ptr);
 void __cdecl core_waypoint_cpp_CWayPoint_archive_FUN_005ec280(CWayPoint *this_ptr);
-int __cdecl core_waypoint_cpp_CWayPoint_FUN_005ec320(CWayPoint *this_ptr);
+CWayPoint * __cdecl core_waypoint_cpp_CWayPoint_findNearestReachable_FUN_005ec320(CWayPoint *this_ptr,CWayPoint *start_waypoint);
 void __cdecl core_waypoint_cpp_CWayPoint_getPropertyList_FUN_005ec4d0(CWayPoint *this_ptr,CActorPropertyList *property_list);
-void __cdecl core_waypoint_cpp_CWayPoint_FUN_005ec4f0(CWayPoint *this_ptr);
+void __cdecl core_waypoint_cpp_CWayPoint_rebuildConnectivity_FUN_005ec4f0(CWayPoint *this_ptr);
 void __cdecl core_waypoint_cpp_CWayPoint_processInEditor_FUN_005ec5e0(CWayPoint *this_ptr);
 void __cdecl core_waypoint_cpp_CWayPoint_onActorDeleted_FUN_005ec610(CWayPoint *this_ptr,CDemonActor *deleted_actor);
-void __cdecl core_waypoint_cpp_CWayPoint_FUN_005ec640(CWayPoint *this_ptr);
+void __cdecl core_waypoint_cpp_CWayPoint_removeAllAdjTo_FUN_005ec640(CWayPoint *this_ptr,CWayPoint *target);
 void __cdecl core_waypoint_cpp_CWayPoint_showEditorHelp_FUN_005ec690(CWayPoint *this_ptr,int *y_pos);
 void __cdecl core_waypoint_cpp_CWayPoint_addAdj_FUN_005ec700(CWayPoint *this_ptr);
 void __cdecl core_waypoint_cpp_CWayPoint_removeAdj_FUN_005ec7b0(CWayPoint *this_ptr,int index);
-void __cdecl core_waypoint_cpp_CWayPoint_FUN_005ec830(CWayPoint *this_ptr);
+void __cdecl core_waypoint_cpp_CWayPoint_cleanupAdjacency_FUN_005ec830(CWayPoint *this_ptr);
 CWayPoint * __cdecl core_waypoint_cpp_CWayPoint_dtor_FUN_005ec8d0(CWayPoint *this_ptr,uint flags);
 void __cdecl wincore_wddvmem_cpp_cleanupDirectDrawSurfaces_FUN_005ec920(void);
 int __cdecl wincore_wddvmem_cpp_reinitializeDirectDraw_FUN_005ec980(void);
@@ -296,7 +297,7 @@ CVector3f * __cdecl core_weapon_cpp_CWeapon_getMuzzlePoint_FUN_005ee670(CWeapon 
 int __cdecl core_weapon_cpp_CWeapon_fire_FUN_005ee6e0(CWeapon *this_ptr);
 int __cdecl core_weapon_cpp_CWeapon_isReadyToFire_FUN_005ee710(CWeapon *this_ptr);
 float __cdecl core_weapon_cpp_CWeapon_getDamage_FUN_005ee730(CWeapon *this_ptr);
-void __cdecl core_weapon_cpp_CWeapon_FUN_005ee740(CWeapon *this_ptr);
+void __cdecl core_weapon_cpp_CWeapon_setupPhysicsBox_FUN_005ee740(CWeapon *this_ptr);
 void __cdecl core_weapon_cpp_CWeapon_fireProjectile_FUN_005ee830(CWeapon *this_ptr);
 void __cdecl core_weapon_cpp_CWeapon_onFired_FUN_005ee860(CWeapon *this_ptr);
 void __cdecl core_weapon_cpp_CWeapon_getPropertyList_FUN_005ee9f0(CWeapon *this_ptr,CActorPropertyList *property_list);

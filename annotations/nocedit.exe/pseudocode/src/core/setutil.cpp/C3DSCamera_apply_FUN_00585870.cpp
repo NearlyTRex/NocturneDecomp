@@ -9,7 +9,7 @@
 void __cdecl core_setutil_cpp_C3DSCamera_apply_FUN_00585870(C3DSCamera *this_ptr,CDemonCamera *camera)
 
 {
-  CVector3i *pCVar1;
+  UVector3 *pUVar1;
   char cVar2;
   int iVar3;
   CMatrix3x3f *pCVar4;
@@ -24,11 +24,11 @@ void __cdecl core_setutil_cpp_C3DSCamera_apply_FUN_00585870(C3DSCamera *this_ptr
     g_CurrentLineNumber = 0xf7;
     core_main_c_displayErrorAndQuit_FUN_00506f10("C3DSCamera::apply - shouldn't ever do this on panning camera '%s'!",this_ptr);
   }
-  pCVar1 = &(camera->base).position;
-  if ((CVector3f *)pCVar1 != &this_ptr->position) {
-    pCVar1->x = (int)(this_ptr->position).x;
-    (camera->base).position.y = (int)(this_ptr->position).y;
-    (camera->base).position.z = (int)(this_ptr->position).z;
+  pUVar1 = &(camera->base).position;
+  if ((CVector3f *)pUVar1 != &this_ptr->position) {
+    (pUVar1->f).x = (this_ptr->position).x;
+    (camera->base).position.f.y = (this_ptr->position).y;
+    (camera->base).position.f.z = (this_ptr->position).z;
   }
   pCVar4 = &this_ptr->rotation_matrix;
   pCVar6 = &(camera->base).rotation_matrix;

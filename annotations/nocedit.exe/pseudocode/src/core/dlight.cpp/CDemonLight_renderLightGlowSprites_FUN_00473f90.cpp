@@ -56,7 +56,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90(CDe
   float local_2c;
   float local_28;
   float local_24;
-  CVector3i *local_20;
+  UVector3 *local_20;
   int local_1c;
   int local_18;
   float local_14;
@@ -65,9 +65,9 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90(CDe
   if (this_ptr->volumetric_enabled != 0) {
     engine_drender_cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
               (g_CDemonRendererPtr2,&local_74.x);
-    local_74.x = local_74.x - (float)(this_ptr->base).base.position.x;
-    local_74.y = local_74.y - (float)(this_ptr->base).base.position.y;
-    local_74.z = local_74.z - (float)(this_ptr->base).base.position.z;
+    local_74.x = local_74.x - (this_ptr->base).base.position.f.x;
+    local_74.y = local_74.y - (this_ptr->base).base.position.f.y;
+    local_74.z = local_74.z - (this_ptr->base).base.position.f.z;
     pCVar3 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
                        (&(this_ptr->base).base.rotation_matrix,&local_b0,&local_74);
     if (&local_74 != pCVar3) {
@@ -92,9 +92,9 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90(CDe
         local_f8 = (float)local_a4 * 0.00390625f;
         local_f4 = (float)local_a0[0] * 0.00390625f;
         local_f0 = (float)local_a0[1] * 0.00390625f;
-        local_80 = local_f8 - (float)(this_ptr->base).base.position.x;
-        local_7c = local_f4 - (float)(this_ptr->base).base.position.y;
-        local_78 = local_f0 - (float)(this_ptr->base).base.position.z;
+        local_80 = local_f8 - (this_ptr->base).base.position.f.x;
+        local_7c = local_f4 - (this_ptr->base).base.position.f.y;
+        local_78 = local_f0 - (this_ptr->base).base.position.f.z;
         fVar2 = SQRT(local_78 * local_78 + local_80 * local_80 + local_7c * local_7c);
         if (0.0 < fVar2) {
           fVar2 = 1.0 / fVar2;
@@ -128,9 +128,9 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90(CDe
               fVar1 = (float)texture[1].base.count * (float)0.5 *
                       ((fVar1 * (float)18) / (this_ptr->base).base.focal_length) *
                       (float)2;
-              local_68.x = (float)local_20->x + local_104;
-              local_68.y = (float)local_20->y + local_100;
-              local_68.z = (float)local_20->z + local_fc;
+              local_68.x = (local_20->f).x + local_104;
+              local_68.y = (local_20->f).y + local_100;
+              local_68.z = (local_20->f).z + local_fc;
               if (&local_e0 != &local_68) {
                 local_e0.x = local_68.x;
                 local_e0.y = local_68.y;

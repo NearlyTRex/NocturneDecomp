@@ -29,7 +29,7 @@ void __cdecl core_imp_cpp_CImp_processDamage_FUN_004fae00(CImp *this_ptr,SDamage
                 (g_CFireEffectPtr,&local_24,(CVector3f *)0x0,0x4000,0x4000,0,0xffff);
     } while (iVar4 < 5);
   }
-  core_imp_cpp_CImp_FUN_004fab60(this_ptr);
+  core_imp_cpp_CImp_processDismemberment_FUN_004fab60(this_ptr,damage_info);
   fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
   this_ptr_00 = &(this_ptr->base).base.model;
   (this_ptr->base).base.hit_points = fVar1;

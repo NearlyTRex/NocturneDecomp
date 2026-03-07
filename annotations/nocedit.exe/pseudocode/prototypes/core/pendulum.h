@@ -23,17 +23,17 @@ CPendulum * __cdecl CPendulum::ctor(CPendulum *this_ptr);
 // Address: 005494a0
 void __cdecl CPendulum::setup(CPendulum *this_ptr);
 
-// Original: core_pendulum.cpp_CPendulum_FUN_005495c0
+// Original: core_pendulum.cpp_CPendulum_testCollisionWithActor_FUN_005495c0
 // Address: 005495c0
-void __cdecl CPendulum(CPendulum *this_ptr);
+void __cdecl CPendulum::testCollisionWithActor(CPendulum *this_ptr,CDemonActor *actor,CDemonActor *left_hand_actor,CDemonActor *right_hand_actor);
 
-// Original: core_pendulum.cpp_FUN_00549aa0
+// Original: core_pendulum.cpp_didPhaseCross_FUN_00549aa0
 // Address: 00549aa0
-int __cdecl FUN_00549aa0(void);
+int __cdecl didPhaseCross(float threshold,float old_phase,float new_phase);
 
-// Original: core_pendulum.cpp_CPendulum_FUN_00549b90
+// Original: core_pendulum.cpp_CPendulum_updateSwing_FUN_00549b90
 // Address: 00549b90
-void __cdecl CPendulum(CPendulum *this_ptr);
+void __cdecl CPendulum::updateSwing(CPendulum *this_ptr,float delta_time);
 
 // Original: core_pendulum.cpp_CPendulum_process_FUN_0054a180
 // Address: 0054a180

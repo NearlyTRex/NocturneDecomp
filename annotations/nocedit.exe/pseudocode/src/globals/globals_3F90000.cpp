@@ -29,6 +29,9 @@ CVector3f g_WeatherParticlePositions[200] = {};
 // CVector3i
 CVector3i g_TempProjectedCoord = {};
 
+// CWayPoint*[2000]
+CWayPoint* g_WaypointSearchQueue[2000] = {};
+
 // CWeather
 CWeather g_CWeatherInstance = {};
 
@@ -206,8 +209,6 @@ undefined4 DAT_03f90a90 = {};
 undefined4 DAT_03f90a94 = {};
 undefined4 DAT_03f90a98 = {};
 undefined4 DAT_03f90a9c = {};
-undefined4 DAT_03f939a4 = {};
-undefined4 DAT_03f939a8 = {};
 undefined4 g_FreeListHeadPointer = {};
 undefined4 DAT_03f9b210 = {};
 

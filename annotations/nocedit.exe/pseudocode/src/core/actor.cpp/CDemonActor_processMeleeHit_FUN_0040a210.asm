@@ -314,7 +314,7 @@ section .text
     PUSH EBX                            ; 0040a551
     PUSH EAX                            ; 0040a552
     CALL core_trigger.cpp_CTrigger_acceptsDamageFrom_FUN_005e0ac0 ; 0040a553
-        ;   XREF to: 005e0ac0 (UNCONDITIONAL_CALL)  ; int core_trigger.cpp_CTrigger_acceptsDamageFrom_FUN_005e0ac0(CTrigger * this_ptr, char * damage_actor_wildcard_name)
+        ;   XREF to: 005e0ac0 (UNCONDITIONAL_CALL)  ; int core_trigger.cpp_CTrigger_acceptsDamageFrom_FUN_005e0ac0(CTrigger * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 0040a558
     TEST EAX,EAX                        ; 0040a55b
     JZ 0x0040a3e0                       ; 0040a55d
@@ -787,7 +787,7 @@ section .text
         ;   Label: LAB_0040ab07
     PUSH EDI                            ; 0040ab08
     CALL core_trigger.cpp_CTrigger_acceptsDamageFrom_FUN_005e0ac0 ; 0040ab09
-        ;   XREF to: 005e0ac0 (UNCONDITIONAL_CALL)  ; int core_trigger.cpp_CTrigger_acceptsDamageFrom_FUN_005e0ac0(CTrigger * this_ptr, char * damage_actor_wildcard_name)
+        ;   XREF to: 005e0ac0 (UNCONDITIONAL_CALL)  ; int core_trigger.cpp_CTrigger_acceptsDamageFrom_FUN_005e0ac0(CTrigger * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 0040ab0e
     TEST EAX,EAX                        ; 0040ab11
     JZ 0x0040ab8d                       ; 0040ab13

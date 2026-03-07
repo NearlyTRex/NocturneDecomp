@@ -10,7 +10,7 @@
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
-;   core_crossbow.cpp_CCrossbow_FUN_00449540
+;   core_crossbow.cpp_CCrossbow_getCurFrame_FUN_00449540
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
 ;
 ; *****************************************************************************
@@ -52,8 +52,8 @@ section .text
     PUSH -0x1                           ; 00448e42
         ;   Label: LAB_00448e42
     PUSH EBX                            ; 00448e44
-    CALL core_crossbow.cpp_CCrossbow_FUN_00449540 ; 00448e45
-        ;   XREF to: 00449540 (UNCONDITIONAL_CALL)  ; float core_crossbow.cpp_CCrossbow_FUN_00449540(CCrossbow * this_ptr)
+    CALL core_crossbow.cpp_CCrossbow_getCurFrame_FUN_00449540 ; 00448e45
+        ;   XREF to: 00449540 (UNCONDITIONAL_CALL)  ; float core_crossbow.cpp_CCrossbow_getCurFrame_FUN_00449540(CCrossbow * this_ptr)
     MOV dword ptr [ESP + 0x20],EAX      ; 00448e4a
     FLD float ptr [ESP + 0x20]          ; 00448e4e
     ADD ESP,0x4                         ; 00448e52

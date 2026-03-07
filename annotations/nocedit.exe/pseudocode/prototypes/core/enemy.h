@@ -23,21 +23,21 @@ void __cdecl CEnemy::archive(CEnemy *this_ptr);
 // Address: 004a97c0
 int __cdecl CEnemy::getTargetPoints(CEnemy *this_ptr,CVector3f *out_points_array);
 
-// Original: core_enemy.cpp_CEnemy_FUN_004a9880
+// Original: core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a9880
 // Address: 004a9880
-int __cdecl CEnemy(CEnemy *this_ptr);
+int __cdecl CEnemy::testAttackRadius(CEnemy *this_ptr,CVector3f *point,float radius,SDamageInfo *damage_info);
 
-// Original: core_enemy.cpp_CEnemy_FUN_004a9930
+// Original: core_enemy.cpp_CEnemy_testAttackLine_FUN_004a9930
 // Address: 004a9930
-int __cdecl CEnemy(CEnemy *this_ptr);
+int __cdecl CEnemy::testAttackLine(CEnemy *this_ptr,CVector3f *start,CVector3f *end,SDamageInfo *damage_info);
 
 // Original: core_enemy.cpp_CEnemy_getTargetPoint_FUN_004a99d0
 // Address: 004a99d0
 CVector3f * __cdecl CEnemy::getTargetPoint(CEnemy *this_ptr,CVector3f *out_point);
 
-// Original: core_enemy.cpp_CEnemy_FUN_004a9a50
+// Original: core_enemy.cpp_CEnemy_canSeeTarget_FUN_004a9a50
 // Address: 004a9a50
-int __cdecl CEnemy(CEnemy *this_ptr,CDemonActor *target);
+int __cdecl CEnemy::canSeeTarget(CEnemy *this_ptr,CDemonActor *target);
 
 // Original: core_enemy.cpp_CEnemy_updateVictim_FUN_004a9b00
 // Address: 004a9b00
@@ -55,9 +55,9 @@ void __cdecl CEnemy::processDamage(CEnemy *this_ptr,SDamageInfo *damage_info);
 // Address: 004a9fa0
 void __cdecl CEnemy::renderBackground(CEnemy *this_ptr,int layer_flag);
 
-// Original: core_enemy.cpp_CEnemy_FUN_004a9fd0
+// Original: core_enemy.cpp_CEnemy_updatePatrol_FUN_004a9fd0
 // Address: 004a9fd0
-int __cdecl CEnemy(CEnemy *this_ptr,float delta_time);
+int __cdecl CEnemy::updatePatrol(CEnemy *this_ptr,float delta_time);
 
 // Original: core_enemy.cpp_CEnemy_releaseVictim_FUN_004aa030
 // Address: 004aa030
@@ -67,9 +67,9 @@ void __cdecl CEnemy::releaseVictim(CEnemy *this_ptr);
 // Address: 004aa0c0
 void __cdecl CEnemy::onVictimLost(CEnemy *this_ptr,CDemonActor *lost_actor);
 
-// Original: core_enemy.cpp_CEnemy_FUN_004aa0f0
+// Original: core_enemy.cpp_CEnemy_countSameClassAttackingHero_FUN_004aa0f0
 // Address: 004aa0f0
-int __cdecl CEnemy(CEnemy *this_ptr);
+int __cdecl CEnemy::countSameClassAttackingHero(CEnemy *this_ptr);
 
 // Original: core_enemy.cpp_CEnemy_getPropertyList_FUN_004aa170
 // Address: 004aa170

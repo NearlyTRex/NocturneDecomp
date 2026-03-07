@@ -11,12 +11,12 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[7]:
-;   core_baron.cpp_CBaron_FUN_004136b0 at 004136cb
+;   core_baron.cpp_CBaron_performLightningAttack_FUN_004136b0 at 004136cb
 ;   core_colonel.cpp_CColonel_FUN_0043ff20 at 0043ffe3
 ;   core_gabriela.cpp_CGabriella_processAI_FUN_004d4190 at 004d4269
-;   core_haystack.cpp_CHaystack_FUN_004f13f0 at 004f14bc
+;   core_haystack.cpp_CHaystack_updateAI_FUN_004f13f0 at 004f14bc
 ;   core_icepick.cpp_CIcePick_FUN_004f8c70 at 004f8d8e
-;   core_scat.cpp_CScat_FUN_005578e0 at 00557996
+;   core_scat.cpp_CScat_updateAI_FUN_005578e0 at 00557996
 ;   core_svetlana.cpp_CSvetlana_processAI_FUN_005d9260 at 005d937e
 ;
 ; Referenced Globals:

@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   core_boxactor.cpp_CLightActor_FUN_00422d60 at 0042302d
+;   core_boxactor.cpp_CLightActor_setupLightModel_FUN_00422d60 at 0042302d
 ;   core_dfilter.cpp_CFilterCache_getFilter_FUN_00470060 at 00470138
 ;   core_dfilter.cpp_CFilterFX_openMovie_FUN_00470730 at 00470889
 ;

@@ -23,7 +23,8 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_005a2800(CSmiley *this_ptr,floa
   CPathMap *path_map;
   CSmiley *pCVar10;
   float fVar11;
-  float fVar12;
+  SDamageInfo *pSVar12;
+  float fVar13;
   SDamageInfo local_1cc;
   SDamageInfo local_190;
   SDamageInfo local_154;
@@ -133,10 +134,10 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_005a2800(CSmiley *this_ptr,floa
     }
   }
   fVar11 = (this_ptr->base).speed;
-  fVar12 = (float)3.1415926535000001;
+  fVar13 = (float)3.1415926535000001;
   pCVar2 = &(this_ptr->base).base.model;
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
-  (this_ptr->base).base.turn_speed = delta_time * fVar12 * fVar11;
+  (this_ptr->base).base.turn_speed = delta_time * fVar13 * fVar11;
   pSVar6 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                      (&pCVar2->motion_controller);
   iVar4 = pSVar6->state_index;
@@ -189,7 +190,7 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_005a2800(CSmiley *this_ptr,floa
             (*(((pCVar3->base).vtable._uc)->_uc).releaseFromGrab)(pCVar3);
           }
           local_94.z = 2.5f;
-          fVar12 = 0.17453292;
+          fVar13 = 0.17453292;
           local_1c = 2.5f;
           fVar11 = 0.5;
           (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
@@ -205,7 +206,7 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_005a2800(CSmiley *this_ptr,floa
           iVar4 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
                             ((CCharacter *)this_ptr,
                              &(((this_ptr->base).victim)->base).location.position,path_map,pCVar9,
-                             fVar11,fVar12);
+                             fVar11,fVar13);
           if ((-1 < iVar4) && (0 < iVar4)) {
             pCVar3 = (this_ptr->base).victim;
             local_a0 = (pCVar3->base).location.position.x -
@@ -236,16 +237,18 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_005a2800(CSmiley *this_ptr,floa
       else {
         core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_190);
         local_190.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
+        pSVar12 = &local_190;
         local_190.attacker = (CDemonActor *)this_ptr;
         local_190.wielder = (CDemonActor *)this_ptr;
+        fVar11 = 1.0;
         local_14 = local_190.damage_amount;
         pCVar9 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                            (&local_b8,&g_ZeroVector.f,
                             (this_ptr->base).base.model.bone_transform.bone_world_matrices +
                             INT_03f48fa8);
-        core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                  ((CDemonActor *)this_ptr,&local_dc,pCVar9);
-        core_enemy_cpp_CEnemy_FUN_004a9880(&this_ptr->base);
+        pCVar9 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                           ((CDemonActor *)this_ptr,&local_dc,pCVar9);
+        core_enemy_cpp_CEnemy_testAttackRadius_FUN_004a9880(&this_ptr->base,pCVar9,fVar11,pSVar12);
       }
       break;
     case 8:
@@ -270,16 +273,19 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_005a2800(CSmiley *this_ptr,floa
         if (iVar4 == 0) {
           core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_154);
           local_154.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
+          pSVar12 = &local_154;
           local_154.attacker = (CDemonActor *)this_ptr;
           local_154.wielder = (CDemonActor *)this_ptr;
+          fVar11 = 1.0;
           local_14 = local_154.damage_amount;
           pCVar9 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                              (&local_88,&g_ZeroVector.f,
                               (this_ptr->base).base.model.bone_transform.bone_world_matrices +
                               INT_03f48fa8);
-          core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                    ((CDemonActor *)this_ptr,&local_d0,pCVar9);
-          core_enemy_cpp_CEnemy_FUN_004a9880(&this_ptr->base);
+          pCVar9 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                             ((CDemonActor *)this_ptr,&local_d0,pCVar9);
+          core_enemy_cpp_CEnemy_testAttackRadius_FUN_004a9880(&this_ptr->base,pCVar9,fVar11,pSVar12)
+          ;
         }
         else {
           pCVar3 = (this_ptr->base).victim;

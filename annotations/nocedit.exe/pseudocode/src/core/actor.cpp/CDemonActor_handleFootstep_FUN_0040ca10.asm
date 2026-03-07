@@ -24,8 +24,8 @@
 ;   CGore g_CGoreInstance
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 DAT_032758e8
-;   undefined4 g_CDemonCameraInstance.base.position.y
-;   undefined4 g_CDemonCameraInstance.base.position.z
+;   undefined4 g_CDemonCameraInstance.base.position+4
+;   undefined4 g_CDemonCameraInstance.base.position+8
 ;   CSound g_CSoundInstance
 ;
 ; Called Functions:
@@ -52,10 +52,10 @@ section .text
     MOV EAX,[0x032758e8]                ; 0040ca2c | DAT_032758e8
     MOV dword ptr [ESP + 0x64],EAX      ; 0040ca31
     MOV EAX,0x32758e8                   ; 0040ca35 | DAT_032758e8
-    MOV EAX,dword ptr [EAX + 0x4]       ; 0040ca3a | g_CDemonCameraInstance.base.position.y
+    MOV EAX,dword ptr [EAX + 0x4]       ; 0040ca3a | g_CDemonCameraInstance.base.position+4
     MOV dword ptr [ESP + 0x68],EAX      ; 0040ca3d
     MOV EAX,0x32758e8                   ; 0040ca41 | DAT_032758e8
-    MOV EAX,dword ptr [EAX + 0x8]       ; 0040ca46 | g_CDemonCameraInstance.base.position.z
+    MOV EAX,dword ptr [EAX + 0x8]       ; 0040ca46 | g_CDemonCameraInstance.base.position+8
     MOV dword ptr [ESP + 0x6c],EAX      ; 0040ca49
     FLD float ptr [ESI]                 ; 0040ca4d
     FSUB float ptr [ESP + 0x64]         ; 0040ca4f

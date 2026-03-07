@@ -61,7 +61,7 @@ void __cdecl CTrigger::onProjectileHit(CTrigger *this_ptr);
 
 // Original: core_trigger.cpp_CTrigger_acceptsDamageFrom_FUN_005e0ac0
 // Address: 005e0ac0
-int __cdecl CTrigger::acceptsDamageFrom(CTrigger *this_ptr,char *damage_actor_wildcard_name);
+int __cdecl CTrigger::acceptsDamageFrom(CTrigger *this_ptr,CDemonActor *actor);
 
 // Original: core_trigger.cpp_CTrigger_applyDamage_FUN_005e0b00
 // Address: 005e0b00

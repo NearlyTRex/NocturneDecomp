@@ -1949,23 +1949,11 @@
       "type":"struct"
     },
     {
-      "name":"CCameraView",
-      "type":"struct"
-    },
-    {
       "name":"CMatrix3x3i",
       "type":"struct"
     },
     {
       "name":"CCameraTransformState",
-      "type":"struct"
-    },
-    {
-      "name":"CDemonCamera",
-      "type":"struct"
-    },
-    {
-      "name":"CDemonLight",
       "type":"struct"
     },
     {
@@ -5293,6 +5281,18 @@
       "type":"union"
     },
     {
+      "name":"CCameraView",
+      "type":"struct"
+    },
+    {
+      "name":"CDemonCamera",
+      "type":"struct"
+    },
+    {
+      "name":"CDemonLight",
+      "type":"struct"
+    },
+    {
       "name":"VIRTUAL_ALLOC_FUNC",
       "type":"function_definition"
     },
@@ -6135,6 +6135,18 @@
     {
       "name":"dst_rule",
       "type":"struct"
+    },
+    {
+      "name":"dt_7b31f90f",
+      "type":"function_definition"
+    },
+    {
+      "name":"dt_8b5e4c9e",
+      "type":"function_definition"
+    },
+    {
+      "name":"dt_b76712a0",
+      "type":"function_definition"
     },
     {
       "name":"filebuf_vtable",
@@ -16218,6 +16230,52 @@
         }
       ],
       "return_type":"BOOL",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/auto_proto",
+      "importable":true,
+      "name":"dt_7b31f90f",
+      "parameters":[
+        {
+          "name":"param0",
+          "type":"CWeapon*"
+        }
+      ],
+      "return_type":"CVector3f*",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__stack_esi",
+      "cat":"/auto_proto",
+      "importable":true,
+      "name":"dt_8b5e4c9e",
+      "parameters":[
+        {
+          "name":"param0",
+          "type":"CWeapon*"
+        }
+      ],
+      "return_type":"CVector3f*",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__stack_esi",
+      "cat":"/auto_proto",
+      "importable":true,
+      "name":"dt_b76712a0",
+      "parameters":[
+        {
+          "name":"param0",
+          "type":"CWeapon*"
+        },
+        {
+          "name":"param1",
+          "type":"CVector3f*"
+        }
+      ],
+      "return_type":"CVector3f*",
       "type":"function_definition"
     },
     {
@@ -26932,7 +26990,7 @@
           "len":12,
           "name":"position",
           "offset":4,
-          "type":"CVector3i"
+          "type":"UVector3"
         },
         {
           "len":36,
@@ -42399,7 +42457,7 @@
           "len":4,
           "name":"weapon_actor",
           "offset":130024,
-          "type":"CDemonActor*"
+          "type":"CWeapon*"
         },
         {
           "len":4,

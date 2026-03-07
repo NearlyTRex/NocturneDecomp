@@ -83,8 +83,8 @@
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_0042ca70
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_004286e0
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0
-;   core_enemy.cpp_CEnemy_FUN_004a9880
-;   core_enemy.cpp_CEnemy_FUN_004a9fd0
+;   core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a9880
+;   core_enemy.cpp_CEnemy_updatePatrol_FUN_004a9fd0
 ;   ... and 9 more
 ;
 ; *****************************************************************************
@@ -429,8 +429,8 @@ section .text
     ADD ESP,0xc                         ; 004e4dcd
     PUSH EAX                            ; 004e4dd0
     PUSH EBX                            ; 004e4dd1
-    CALL core_enemy.cpp_CEnemy_FUN_004a9880 ; 004e4dd2
-        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9880(CEnemy * this_ptr)
+    CALL core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a9880 ; 004e4dd2
+        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a9880(CEnemy * this_ptr, CVector3f * point, float radius, SDamageInfo * damage_info)
     ADD ESP,0x10                        ; 004e4dd7
     JMP 0x004e4b2d                      ; 004e4dda
         ;   XREF to: 004e4b2d (UNCONDITIONAL_JUMP)  ; caseD_4
@@ -441,8 +441,8 @@ section .text
     CALL dword ptr [EAX + 0x158]        ; 004e4dec
     ADD ESP,0x8                         ; 004e4df2
     PUSH EBX                            ; 004e4df5
-    CALL core_gargoyle.cpp_CGargoyle_FUN_004e48a0 ; 004e4df6
-        ;   XREF to: 004e48a0 (UNCONDITIONAL_CALL)  ; int core_gargoyle.cpp_CGargoyle_FUN_004e48a0(CGargoyle * this_ptr)
+    CALL core_gargoyle.cpp_CGargoyle_shouldMove_FUN_004e48a0 ; 004e4df6
+        ;   XREF to: 004e48a0 (UNCONDITIONAL_CALL)  ; int core_gargoyle.cpp_CGargoyle_shouldMove_FUN_004e48a0(CGargoyle * this_ptr)
     ADD ESP,0x4                         ; 004e4dfb
     TEST EAX,EAX                        ; 004e4dfe
     JZ 0x004e4b2d                       ; 004e4e00
@@ -486,8 +486,8 @@ section .text
     CALL dword ptr [EAX + 0x158]        ; 004e4e7d
     ADD ESP,0x8                         ; 004e4e83
     PUSH EBX                            ; 004e4e86
-    CALL core_gargoyle.cpp_CGargoyle_FUN_004e48a0 ; 004e4e87
-        ;   XREF to: 004e48a0 (UNCONDITIONAL_CALL)  ; int core_gargoyle.cpp_CGargoyle_FUN_004e48a0(CGargoyle * this_ptr)
+    CALL core_gargoyle.cpp_CGargoyle_shouldMove_FUN_004e48a0 ; 004e4e87
+        ;   XREF to: 004e48a0 (UNCONDITIONAL_CALL)  ; int core_gargoyle.cpp_CGargoyle_shouldMove_FUN_004e48a0(CGargoyle * this_ptr)
     ADD ESP,0x4                         ; 004e4e8c
     TEST EAX,EAX                        ; 004e4e8f
     JZ 0x004e4f3b                       ; 004e4e91
@@ -640,8 +640,8 @@ section .text
     PUSH dword ptr [EBP + 0x92]         ; 004e5019
         ;   Label: LAB_004e5019
     PUSH EBX                            ; 004e501f
-    CALL core_enemy.cpp_CEnemy_FUN_004a9fd0 ; 004e5020
-        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9fd0(CEnemy * this_ptr, float delta_time)
+    CALL core_enemy.cpp_CEnemy_updatePatrol_FUN_004a9fd0 ; 004e5020
+        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_updatePatrol_FUN_004a9fd0(CEnemy * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004e5025
     TEST EAX,EAX                        ; 004e5028
     JZ 0x004e4b2d                       ; 004e502a
@@ -661,8 +661,8 @@ section .text
     CALL dword ptr [EAX + 0x158]        ; 004e504f
     ADD ESP,0x8                         ; 004e5055
     PUSH EBX                            ; 004e5058
-    CALL core_gargoyle.cpp_CGargoyle_FUN_004e48a0 ; 004e5059
-        ;   XREF to: 004e48a0 (UNCONDITIONAL_CALL)  ; int core_gargoyle.cpp_CGargoyle_FUN_004e48a0(CGargoyle * this_ptr)
+    CALL core_gargoyle.cpp_CGargoyle_shouldMove_FUN_004e48a0 ; 004e5059
+        ;   XREF to: 004e48a0 (UNCONDITIONAL_CALL)  ; int core_gargoyle.cpp_CGargoyle_shouldMove_FUN_004e48a0(CGargoyle * this_ptr)
     ADD ESP,0x4                         ; 004e505e
     LEA ESI,[EBX + 0x158]               ; 004e5061
     TEST EAX,EAX                        ; 004e5067
@@ -678,8 +678,8 @@ section .text
         ;   XREF to: 004e517c (CONDITIONAL_JUMP)  ; LAB_004e517c
     PUSH dword ptr [EBP + 0x92]         ; 004e508c
     PUSH EBX                            ; 004e5092
-    CALL core_enemy.cpp_CEnemy_FUN_004a9fd0 ; 004e5093
-        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9fd0(CEnemy * this_ptr, float delta_time)
+    CALL core_enemy.cpp_CEnemy_updatePatrol_FUN_004a9fd0 ; 004e5093
+        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_updatePatrol_FUN_004a9fd0(CEnemy * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004e5098
     TEST EAX,EAX                        ; 004e509b
     JZ 0x004e516b                       ; 004e509d

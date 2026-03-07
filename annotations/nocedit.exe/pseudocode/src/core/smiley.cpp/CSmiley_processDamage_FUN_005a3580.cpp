@@ -27,7 +27,7 @@ void __cdecl core_smiley_cpp_CSmiley_processDamage_FUN_005a3580(CSmiley *this_pt
   damage_info->damage_amount = 0.0;
 LAB_005a35b4:
   if (0.0 < damage_info->damage_amount) {
-    core_smiley_cpp_CSmiley_FUN_005a32a0(this_ptr);
+    core_smiley_cpp_CSmiley_processDismemberment_FUN_005a32a0(this_ptr,damage_info);
   }
   fVar2 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
   this_ptr_00 = &(this_ptr->base).base.model;

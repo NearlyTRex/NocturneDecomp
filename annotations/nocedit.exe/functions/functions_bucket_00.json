@@ -3927,7 +3927,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_baron.cpp_CBaron_FUN_00413a00",
+    "name":"core_baron.cpp_CBaron_advanceMotion_FUN_00413a00",
     "ret":"void",
     "vars":{
       "params":[
@@ -26625,7 +26625,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_enemy.cpp_CEnemy_FUN_004a9880",
+    "name":"core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a9880",
     "ret":"int",
     "vars":{
       "params":[
@@ -26644,6 +26644,54 @@
             ]
           },
           "type":"CEnemy*"
+        },
+        {
+          "name":"point",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"radius",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"damage_info",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"SDamageInfo*"
         }
       ],
       "ret_storage":{
@@ -42402,8 +42450,86 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_imp.cpp_FUN_004fa900",
-    "ret":"void"
+    "name":"core_imp.cpp_setVector_FUN_004fa900",
+    "ret":"CVector3f*",
+    "vars":{
+      "params":[
+        {
+          "name":"out",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"x",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"y",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"z",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        }
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
+    }
   },
   {
     "addr":"004fab00",
@@ -75840,7 +75966,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_tentacle.cpp_CTentacle_FUN_005db900",
+    "name":"core_tentacle.cpp_CTentacle_findNearbyTarget_FUN_005db900",
     "ret":"int",
     "vars":{
       "locals":[
@@ -75925,6 +76051,22 @@
             ]
           },
           "type":"CTentacle*"
+        },
+        {
+          "name":"class_name",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
         }
       ],
       "ret_storage":{
@@ -78039,7 +78181,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_turret.cpp_CTurret_FUN_005e3280",
+    "name":"core_turret.cpp_CTurret_aimAtTarget_FUN_005e3280",
     "ret":"int",
     "vars":{
       "locals":[
@@ -78252,6 +78394,38 @@
             ]
           },
           "type":"CTurret*"
+        },
+        {
+          "name":"target_pos",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"delta_time",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
         }
       ],
       "ret_storage":{

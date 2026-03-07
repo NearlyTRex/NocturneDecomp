@@ -8,8 +8,8 @@
 ; int              Stack[0x8]:4   index
 ;
 ; XREF[2]:
-;   core_waypoint.cpp_CWayPoint_FUN_005ec640 at 005ec675
-;   core_waypoint.cpp_CWayPoint_FUN_005ec830 at 005ec861
+;   core_waypoint.cpp_CWayPoint_cleanupAdjacency_FUN_005ec830 at 005ec861
+;   core_waypoint.cpp_CWayPoint_removeAllAdjTo_FUN_005ec640 at 005ec675
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_waypoint_cpp_0065767a

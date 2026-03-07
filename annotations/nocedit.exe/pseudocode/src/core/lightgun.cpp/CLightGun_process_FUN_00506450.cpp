@@ -46,7 +46,7 @@ void __cdecl core_lightgun_cpp_CLightGun_process_FUN_00506450(CLightGun *this_pt
       sound_sndmain_cpp_setSfxVolume_FUN_005a9ae0(this_ptr->sfx_handle,fVar1);
       sound_sndmain_cpp_setSfxBaseFrequency_FUN_005a9b40(this_ptr->sfx_handle,base_frequency);
     }
-    core_lightgun_cpp_CLightGun_FUN_00505ac0(this_ptr);
+    core_lightgun_cpp_CLightGun_updateBeamLight_FUN_00505ac0(this_ptr);
     if (this_ptr->fire_flash_pending == 0) {
       g_CDemonLightInstance.antialiasing_enabled = 0;
     }

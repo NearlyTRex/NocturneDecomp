@@ -78,7 +78,7 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr,floa
       this_ptr->timer = this_ptr->patrol_time;
     }
     else {
-      core_turret_cpp_CTurret_FUN_005e2d50(this_ptr);
+      core_turret_cpp_CTurret_updateTargeting_FUN_005e2d50(this_ptr,delta_time);
       this_ptr->timer = 0.0;
     }
     break;
@@ -98,7 +98,7 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr,floa
     fVar3 = this_ptr->timer - delta_time;
     this_ptr->timer = fVar3;
     if (0.0 < fVar3) {
-      core_turret_cpp_CTurret_FUN_005e3560(this_ptr);
+      core_turret_cpp_CTurret_updatePatrol_FUN_005e3560(this_ptr,delta_time);
       break;
     }
     uVar6 = this_ptr->sfx_handles[1];

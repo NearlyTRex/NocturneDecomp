@@ -14,9 +14,9 @@
 ;   core_ammo.cpp_CAmmo_propertyDisplayCallback_FUN_00411200 at 00411212
 ;   core_ammobox.cpp_CAmmoBox_propertyActionFunc_FUN_00411ab0 at 00411abc
 ;   core_ammobox.cpp_CAmmoBox_propertyDisplayCallback_FUN_00411a30 at 00411a42
-;   core_baron.cpp_CBaronWeapon_FUN_00413f20 at 00413f5f
-;   core_baron.cpp_CBaron_FUN_004135e0 at 00413667
+;   core_baron.cpp_CBaronWeapon_findOrCreateBaron_FUN_00413f20 at 00413f5f
 ;   core_baron.cpp_CBaron_engageTarget_FUN_00413470 at 004134a1
+;   core_baron.cpp_CBaron_updateMountedPosition_FUN_004135e0 at 00413667
 ;   core_batman.cpp_CBatman_process_FUN_00416870 at 004170f6
 ;   ... and 141 more
 ;

@@ -12,7 +12,7 @@ int __cdecl core_baron_cpp_CBaronWeapon_isReadyToFire_FUN_00413e30(CBaronWeapon 
   CBaron *pCVar1;
   SMotion *pSVar2;
   
-  core_baron_cpp_CBaronWeapon_FUN_00413f20(this_ptr);
+  core_baron_cpp_CBaronWeapon_findOrCreateBaron_FUN_00413f20(this_ptr);
   pCVar1 = this_ptr->baron;
   if (pCVar1 != (CBaron *)0x0) {
     if ((pCVar1->base).player_control.action_states[3] != 0) {

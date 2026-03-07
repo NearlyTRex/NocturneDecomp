@@ -11,7 +11,7 @@
 ; int              Stack[0x14]:4   version
 ; CDemonActorType * Stack[0x18]:4   parent_class_info
 ;
-; XREF[107]:
+; XREF[106]:
 ;   core_actor.cpp_staticInit_FUN_00408320 at 00408335
 ;   core_ammo.cpp_staticInit_FUN_00410d50 at 00410d6b
 ;   core_ammobox.cpp_staticInit_FUN_00411530 at 0041154b
@@ -19,10 +19,10 @@
 ;   core_armour.cpp_staticInit_FUN_00412130 at 0041214b
 ;   core_backgnd.cpp_staticInit_FUN_00412740 at 0041275b
 ;   core_baron.cpp_staticInit_FUN_00412b20 at 00412b3b
-;   core_baron.cpp_staticInit_FUN_00412b41 at 00412b6b
 ;   core_barrier.cpp_staticInit_FUN_00414150 at 0041416b
 ;   core_bat.cpp_staticInit_FUN_004146c0 at 004146db
-;   ... and 97 more
+;   core_batcreat.cpp_staticInit_FUN_00415080 at 0041509b
+;   ... and 96 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_actor_cpp_006141e2

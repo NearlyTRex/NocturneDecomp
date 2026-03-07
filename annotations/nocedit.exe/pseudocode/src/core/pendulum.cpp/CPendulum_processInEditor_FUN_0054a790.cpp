@@ -10,6 +10,6 @@ void __cdecl core_pendulum_cpp_CPendulum_processInEditor_FUN_0054a790(CPendulum 
 
 {
   core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(&this_ptr->base);
-  core_pendulum_cpp_CPendulum_FUN_00549b90(this_ptr);
+  core_pendulum_cpp_CPendulum_updateSwing_FUN_00549b90(this_ptr,0.0);
   return;
 }

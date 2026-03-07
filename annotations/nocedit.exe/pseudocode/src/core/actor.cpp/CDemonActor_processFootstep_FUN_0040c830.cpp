@@ -16,9 +16,9 @@ int __cdecl core_actor_cpp_CDemonActor_processFootstep_FUN_0040c830(CDemonActor 
   int iVar4;
   
   position = &this_ptr->location;
-  fVar1 = (position->position).x - (float)g_CDemonCameraInstance.base.position.x;
-  fVar3 = (this_ptr->location).position.y - (float)g_CDemonCameraInstance.base.position.y;
-  fVar2 = (this_ptr->location).position.z - (float)g_CDemonCameraInstance.base.position.z;
+  fVar1 = (position->position).x - g_CDemonCameraInstance.base.position.f.x;
+  fVar3 = (this_ptr->location).position.y - g_CDemonCameraInstance.base.position.f.y;
+  fVar2 = (this_ptr->location).position.z - g_CDemonCameraInstance.base.position.f.z;
   if (10000.0f < fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1) {
     return 0;
   }

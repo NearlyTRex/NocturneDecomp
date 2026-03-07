@@ -998,8 +998,8 @@ section .text
     PUSH ECX                            ; 004f563f
     LEA EAX,[EBX + 0x20]                ; 004f5640
     PUSH EAX                            ; 004f5643
-    CALL core_waypoint.cpp_CWayPoint_FUN_005ec320 ; 004f5644
-        ;   XREF to: 005ec320 (UNCONDITIONAL_CALL)  ; int core_waypoint.cpp_CWayPoint_FUN_005ec320(CWayPoint * this_ptr)
+    CALL core_waypoint.cpp_CWayPoint_findNearestReachable_FUN_005ec320 ; 004f5644
+        ;   XREF to: 005ec320 (UNCONDITIONAL_CALL)  ; CWayPoint * core_waypoint.cpp_CWayPoint_findNearestReachable_FUN_005ec320(CWayPoint * this_ptr, CWayPoint * start_waypoint)
     ADD ESP,0x8                         ; 004f5649
     MOV dword ptr [EBX + 0x1fac8],EAX   ; 004f564c
     JMP 0x004f55ce                      ; 004f5652
@@ -1222,8 +1222,8 @@ section .text
         ;   Label: LAB_004f589e
     LEA EAX,[EBX + 0x20]                ; 004f589f
     PUSH EAX                            ; 004f58a2
-    CALL core_waypoint.cpp_CWayPoint_FUN_005ec320 ; 004f58a3
-        ;   XREF to: 005ec320 (UNCONDITIONAL_CALL)  ; int core_waypoint.cpp_CWayPoint_FUN_005ec320(CWayPoint * this_ptr)
+    CALL core_waypoint.cpp_CWayPoint_findNearestReachable_FUN_005ec320 ; 004f58a3
+        ;   XREF to: 005ec320 (UNCONDITIONAL_CALL)  ; CWayPoint * core_waypoint.cpp_CWayPoint_findNearestReachable_FUN_005ec320(CWayPoint * this_ptr, CWayPoint * start_waypoint)
     ADD ESP,0x8                         ; 004f58a8
     MOV dword ptr [EBX + 0x1fac8],EAX   ; 004f58ab
     JMP 0x004f4fc5                      ; 004f58b1

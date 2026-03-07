@@ -27,13 +27,13 @@ void __cdecl CDraculaBride::setup(CDraculaBride *this_ptr);
 // Address: 00484410
 void __cdecl CDraculaBride::process(CDraculaBride *this_ptr,float delta_time);
 
-// Original: core_dracbrid.cpp_CDraculaBride_FUN_004858f0
+// Original: core_dracbrid.cpp_CDraculaBride_explodeIntoParts_FUN_004858f0
 // Address: 004858f0
-void __cdecl CDraculaBride(CDraculaBride *this_ptr);
+void __cdecl CDraculaBride::explodeIntoParts(CDraculaBride *this_ptr,CVector3f *direction,float spread_angle,int render_in_background);
 
-// Original: core_dracbrid.cpp_CDraculaBride_FUN_00485b20
+// Original: core_dracbrid.cpp_CDraculaBride_dismemberPart_FUN_00485b20
 // Address: 00485b20
-void __cdecl CDraculaBride(CDraculaBride *this_ptr);
+void __cdecl CDraculaBride::dismemberPart(CDraculaBride *this_ptr,int part_index,int flags,int render_in_background);
 
 // Original: core_dracbrid.cpp_CDraculaBride_hasCollision_FUN_00485bc0
 // Address: 00485bc0
@@ -47,9 +47,9 @@ int __cdecl CDraculaBride::renderOpaque(CDraculaBride *this_ptr);
 // Address: 00485dd0
 void __cdecl CDraculaBride::archive(CDraculaBride *this_ptr);
 
-// Original: core_dracbrid.cpp_CDraculaBride_FUN_00486020
+// Original: core_dracbrid.cpp_CDraculaBride_checkHeartShot_FUN_00486020
 // Address: 00486020
-void __cdecl CDraculaBride(CDraculaBride *this_ptr);
+void __cdecl CDraculaBride::checkHeartShot(CDraculaBride *this_ptr,SDamageInfo *damage_info);
 
 // Original: core_dracbrid.cpp_CDraculaBride_processDamage_FUN_00486070
 // Address: 00486070
@@ -67,13 +67,13 @@ int __cdecl CDraculaBride::getTargetPoints(CDraculaBride *this_ptr,CVector3f *ou
 // Address: 00486430
 CVector3f * __cdecl randomizePosition(CVector3f *dest,CVector3f *src);
 
-// Original: core_dracbrid.cpp_CDraculaBride_FUN_004864c0
+// Original: core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_004864c0
 // Address: 004864c0
-void __cdecl CDraculaBride(CDraculaBride *this_ptr);
+void __cdecl CDraculaBride::startFreakySound(CDraculaBride *this_ptr,char *sound_name,float volume);
 
-// Original: core_dracbrid.cpp_CDraculaBride_FUN_004869a0
+// Original: core_dracbrid.cpp_CDraculaBride_updateFreakySounds_FUN_004869a0
 // Address: 004869a0
-void __cdecl CDraculaBride(CDraculaBride *this_ptr);
+void __cdecl CDraculaBride::updateFreakySounds(CDraculaBride *this_ptr,float delta_time);
 
 // Original: core_dracbrid.cpp_CDraculaBride_getPropertyList_FUN_00486c90
 // Address: 00486c90

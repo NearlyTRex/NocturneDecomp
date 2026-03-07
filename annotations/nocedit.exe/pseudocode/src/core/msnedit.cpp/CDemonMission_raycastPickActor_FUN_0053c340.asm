@@ -27,8 +27,8 @@
 ;   int g_DisableMouseHitOnBarrier
 ;   CDemonCamera g_CDemonCameraInstance
 ;   undefined4 DAT_032758e8
-;   undefined4 g_CDemonCameraInstance.base.position.y
-;   undefined4 g_CDemonCameraInstance.base.position.z
+;   undefined4 g_CDemonCameraInstance.base.position+4
+;   undefined4 g_CDemonCameraInstance.base.position+8
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
@@ -80,11 +80,11 @@ section .text
         ;   Label: LAB_0053c378
     MOV dword ptr [ESP + 0x48],EAX      ; 0053c37d
     MOV EAX,0x32758e8                   ; 0053c381 | DAT_032758e8
-    MOV EAX,dword ptr [EAX + 0x4]       ; 0053c386 | g_CDemonCameraInstance.base.position.y
+    MOV EAX,dword ptr [EAX + 0x4]       ; 0053c386 | g_CDemonCameraInstance.base.position+4
     MOV dword ptr [ESP + 0x4c],EAX      ; 0053c389
     MOV EAX,0x32758e8                   ; 0053c38d | DAT_032758e8
     PUSH EDX                            ; 0053c392
-    MOV EAX,dword ptr [EAX + 0x8]       ; 0053c393 | g_CDemonCameraInstance.base.position.z
+    MOV EAX,dword ptr [EAX + 0x8]       ; 0053c393 | g_CDemonCameraInstance.base.position+8
     PUSH EBX                            ; 0053c396
     MOV dword ptr [ESP + 0x58],EAX      ; 0053c397
     LEA EAX,[ESP + 0x2c]                ; 0053c39b

@@ -183,9 +183,9 @@ void __cdecl core_set_cpp_CDemonSet_renderScene_FUN_0056c1a0(CDemonSet *this_ptr
     do {
       pCVar3 = *(CDemonLight **)((int)g_DynamicLights + local_34);
       if (pCVar3->light_enabled_flag != 0) {
-        local_64.x = (float)(pCVar3->base).base.position.x;
-        local_64.y = (float)(pCVar3->base).base.position.y;
-        local_64.z = (float)(pCVar3->base).base.position.z;
+        local_64.x = (pCVar3->base).base.position.f.x;
+        local_64.y = (pCVar3->base).base.position.f.y;
+        local_64.z = (pCVar3->base).base.position.f.z;
         core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_004537d0
                   (&g_CDemonCameraInstance,&local_64,0.0);
         iVar7 = 0;
@@ -229,9 +229,9 @@ void __cdecl core_set_cpp_CDemonSet_renderScene_FUN_0056c1a0(CDemonSet *this_ptr
     do {
       pCVar3 = *(CDemonLight **)((int)g_DynamicLights + local_38);
       if (pCVar3->light_enabled_flag != 0) {
-        local_58.x = (float)(pCVar3->base).base.position.x;
-        local_58.y = (float)(pCVar3->base).base.position.y;
-        local_58.z = (float)(pCVar3->base).base.position.z;
+        local_58.x = (pCVar3->base).base.position.f.x;
+        local_58.y = (pCVar3->base).base.position.f.y;
+        local_58.z = (pCVar3->base).base.position.f.z;
         core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_004537d0
                   (&g_CDemonCameraInstance,&local_58,0.0);
         iVar7 = 0;

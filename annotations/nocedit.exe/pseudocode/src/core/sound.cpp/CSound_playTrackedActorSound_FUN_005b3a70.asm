@@ -12,10 +12,10 @@
 ; XREF[6]:
 ;   core_actor.cpp_CDemonActor_playAmbientSound_FUN_00408f80 at 00408f96
 ;   core_chain.cpp_CChain_process_FUN_004300d0 at 00430853
-;   core_pendulum.cpp_CPendulum_FUN_00549b90 at 0054a0a2
+;   core_pendulum.cpp_CPendulum_updateSwing_FUN_00549b90 at 0054a0a2
 ;   core_sound.cpp_CSound_process_FUN_005b2fd0 at 005b3762
 ;   core_sound.cpp_processTrainSounds_FUN_005b2770 at 005b2bc9
-;   core_vehicle.cpp_CVehicle_FUN_005e8b50 at 005e8b84
+;   core_vehicle.cpp_CVehicle_playTrackedSound_FUN_005e8b50 at 005e8b84
 ;
 ; Called Functions:
 ;   core_sound.cpp_playSfxInternal_FUN_005b1fd0

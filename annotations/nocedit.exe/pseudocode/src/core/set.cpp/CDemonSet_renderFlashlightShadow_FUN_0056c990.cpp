@@ -47,9 +47,9 @@ void __cdecl core_set_cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990(CDemonSe
   g_CDemonLightInstance.volumetric_enabled = 0;
   local_20.y = local_38.y + (this_ptr_00->base).base.orient.vec.y;
   if ((float *)&stack0x00000000 != &g_CDemonLightInstance.base.base.rotation_matrix.m[2].z) {
-    g_CDemonLightInstance.base.base.position.x = (int)local_2c.x;
-    g_CDemonLightInstance.base.base.position.y = (int)local_2c.y;
-    g_CDemonLightInstance.base.base.position.z = (int)local_2c.z;
+    g_CDemonLightInstance.base.base.position.f.x = local_2c.x;
+    g_CDemonLightInstance.base.base.position.f.y = local_2c.y;
+    g_CDemonLightInstance.base.base.position.f.z = local_2c.z;
   }
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
             (&(local_14->base).base.rotation_matrix,&local_20);
@@ -59,9 +59,9 @@ void __cdecl core_set_cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990(CDemonSe
   this_ptr_01 = local_14;
   iVar3 = g_UseExternalRenderer;
   if ((float *)&stack0x00000000 != &g_CDemonCameraInstance.base.rotation_matrix.m[2].z) {
-    g_CDemonCameraInstance.base.position.x = (int)local_2c.x;
-    g_CDemonCameraInstance.base.position.y = (int)local_2c.y;
-    g_CDemonCameraInstance.base.position.z = (int)local_2c.z;
+    g_CDemonCameraInstance.base.position.f.x = local_2c.x;
+    g_CDemonCameraInstance.base.position.f.y = local_2c.y;
+    g_CDemonCameraInstance.base.position.f.z = local_2c.z;
   }
   if (g_CGamePtr->geometry_debug_enabled == 0) {
     core_dlight_cpp_CDemonLight_beginScene_FUN_00472a80(local_14,0);

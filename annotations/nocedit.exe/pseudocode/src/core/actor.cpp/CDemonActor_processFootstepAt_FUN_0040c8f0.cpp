@@ -11,24 +11,24 @@ int __cdecl core_actor_cpp_CDemonActor_processFootstepAt_FUN_0040c8f0(CDemonActo
 {
   int iVar1;
   CVector3f local_34;
-  int local_28;
-  int local_24;
-  int local_20;
+  float local_28;
+  float local_24;
+  float local_20;
   float local_1c;
   float local_18;
   float local_8;
   
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(this_ptr,&local_34,location);
-  local_28 = g_CDemonCameraInstance.base.position.x;
-  local_24 = g_CDemonCameraInstance.base.position.y;
-  local_20 = g_CDemonCameraInstance.base.position.z;
+  local_28 = g_CDemonCameraInstance.base.position.f.x;
+  local_24 = g_CDemonCameraInstance.base.position.f.y;
+  local_20 = g_CDemonCameraInstance.base.position.f.z;
   if (10000.0f <
-      (local_34.z - (float)g_CDemonCameraInstance.base.position.z) *
-      (local_34.z - (float)g_CDemonCameraInstance.base.position.z) +
-      (local_34.y - (float)g_CDemonCameraInstance.base.position.y) *
-      (local_34.y - (float)g_CDemonCameraInstance.base.position.y) +
-      (local_34.x - (float)g_CDemonCameraInstance.base.position.x) *
-      (local_34.x - (float)g_CDemonCameraInstance.base.position.x)) {
+      (local_34.z - g_CDemonCameraInstance.base.position.f.z) *
+      (local_34.z - g_CDemonCameraInstance.base.position.f.z) +
+      (local_34.y - g_CDemonCameraInstance.base.position.f.y) *
+      (local_34.y - g_CDemonCameraInstance.base.position.f.y) +
+      (local_34.x - g_CDemonCameraInstance.base.position.f.x) *
+      (local_34.x - g_CDemonCameraInstance.base.position.f.x)) {
     return 0;
   }
   core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,this_ptr);

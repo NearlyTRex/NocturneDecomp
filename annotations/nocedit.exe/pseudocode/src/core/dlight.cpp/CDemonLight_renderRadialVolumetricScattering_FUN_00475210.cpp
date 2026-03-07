@@ -55,7 +55,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00
   
   if (this_ptr->volumetric_enabled != 0) {
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-              (g_CDemonRendererPtr2,(CVector3f *)&(this_ptr->base).base.position);
+              (g_CDemonRendererPtr2,&(this_ptr->base).base.position.f);
     core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
               (&(this_ptr->base).base.rotation_matrix,&local_94);
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0

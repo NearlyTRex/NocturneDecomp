@@ -7,6 +7,9 @@
 ; CElephantGun *   Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined1       Stack[-0x68]:1  local_68
+; CCrate *         Stack[-0x40]:4  pCStack_40
+; CFlameCan *      Stack[-0x3c]:4  pCStack_3c
+; CGlass *         Stack[-0x30]:4  pCStack_30
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shotgun_noammo_wav_00623fd4

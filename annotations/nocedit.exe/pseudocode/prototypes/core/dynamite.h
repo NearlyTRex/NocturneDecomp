@@ -31,17 +31,17 @@ float __cdecl CDynamite::getDamage(CDynamite *this_ptr);
 // Address: 0049cf10
 void __cdecl CDynamite::fireProjectile(CDynamite *this_ptr);
 
-// Original: core_dynamite.cpp_CDynamite_FUN_0049cf20
+// Original: core_dynamite.cpp_CDynamite_lightFuse_FUN_0049cf20
 // Address: 0049cf20
-void __cdecl CDynamite(CDynamite *this_ptr);
+void __cdecl CDynamite::lightFuse(CDynamite *this_ptr);
 
-// Original: core_dynamite.cpp_CDynamite_FUN_0049cf70
+// Original: core_dynamite.cpp_CDynamite_isFuseLit_FUN_0049cf70
 // Address: 0049cf70
-int __cdecl CDynamite(CDynamite *this_ptr);
+int __cdecl CDynamite::isFuseLit(CDynamite *this_ptr);
 
-// Original: core_dynamite.cpp_CDynamite_FUN_0049cf90
+// Original: core_dynamite.cpp_CDynamite_isFuseBurnedOut_FUN_0049cf90
 // Address: 0049cf90
-int __cdecl CDynamite(CDynamite *this_ptr);
+int __cdecl CDynamite::isFuseBurnedOut(CDynamite *this_ptr);
 
 // Original: core_dynamite.cpp_CDynamite_process_FUN_0049cfb0
 // Address: 0049cfb0

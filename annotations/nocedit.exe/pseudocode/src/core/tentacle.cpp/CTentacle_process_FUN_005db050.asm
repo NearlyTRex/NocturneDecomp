@@ -35,14 +35,14 @@
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_00429820
 ;   core_charactr.cpp_CCharacter_process_FUN_00429870
-;   core_grave.cpp_CGrave_FUN_004ee790
+;   core_grave.cpp_CGrave_startAnimation_FUN_004ee790
 ;   core_motion.cpp_CMotionController_advance_FUN_0052d610
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40
 ;   core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
-;   core_tentacle.cpp_CTentacle_FUN_005db900
-;   core_tentacle.cpp_CTentacle_FUN_005dbb70
+;   core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_005dbb70
+;   core_tentacle.cpp_CTentacle_findNearbyTarget_FUN_005db900
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
 ;   ... and 6 more
 ;
@@ -124,8 +124,8 @@ section .text
         ;   XREF to: 005db4e1 (CONDITIONAL_JUMP)  ; LAB_005db4e1
     PUSH 0x654ddc                       ; 005db12d | = "CHero CNPC"
     PUSH EBX                            ; 005db132
-    CALL core_tentacle.cpp_CTentacle_FUN_005db900 ; 005db133
-        ;   XREF to: 005db900 (UNCONDITIONAL_CALL)  ; int core_tentacle.cpp_CTentacle_FUN_005db900(CTentacle * this_ptr)
+    CALL core_tentacle.cpp_CTentacle_findNearbyTarget_FUN_005db900 ; 005db133
+        ;   XREF to: 005db900 (UNCONDITIONAL_CALL)  ; int core_tentacle.cpp_CTentacle_findNearbyTarget_FUN_005db900(CTentacle * this_ptr, char * class_name)
     ADD ESP,0x8                         ; 005db138
     TEST EAX,EAX                        ; 005db13b
     JZ 0x005db16f                       ; 005db13d
@@ -139,8 +139,8 @@ section .text
     MOV EDX,dword ptr [EBX + 0xbec4]    ; 005db14c
     PUSH EDX                            ; 005db152
     MOV dword ptr [EBX + 0xbebc],0x0    ; 005db153
-    CALL core_grave.cpp_CGrave_FUN_004ee790 ; 005db15d
-        ;   XREF to: 004ee790 (UNCONDITIONAL_CALL)  ; void core_grave.cpp_CGrave_FUN_004ee790(CGrave * this_ptr)
+    CALL core_grave.cpp_CGrave_startAnimation_FUN_004ee790 ; 005db15d
+        ;   XREF to: 004ee790 (UNCONDITIONAL_CALL)  ; void core_grave.cpp_CGrave_startAnimation_FUN_004ee790(CGrave * this_ptr)
     ADD ESP,0x4                         ; 005db162
     MOV dword ptr [EBX + 0xbec4],0x0    ; 005db165
     FLD float ptr [EBP + 0x18]          ; 005db16f
@@ -197,8 +197,8 @@ section .text
     PUSH EBX                            ; 005db1f8
     LEA ESI,[ESP + 0xa4]                ; 005db1f9
     LEA EDI,[ESP + 0x74]                ; 005db200
-    CALL core_tentacle.cpp_CTentacle_FUN_005dbb70 ; 005db204
-        ;   XREF to: 005dbb70 (UNCONDITIONAL_CALL)  ; void core_tentacle.cpp_CTentacle_FUN_005dbb70(CTentacle * this_ptr)
+    CALL core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_005dbb70 ; 005db204
+        ;   XREF to: 005dbb70 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_005dbb70(CTentacle * this_ptr, CMatrix3x4f * out_matrix)
     ADD ESP,0x4                         ; 005db209
     LEA EAX,[ESP + 0x1cc]               ; 005db20c
     MOV ECX,0xc                         ; 005db213
@@ -365,8 +365,8 @@ section .text
     PUSH 0x654de7                       ; 005db4e1 | = "CEnemy CHero CNPC"
         ;   Label: LAB_005db4e1
     PUSH EBX                            ; 005db4e6
-    CALL core_tentacle.cpp_CTentacle_FUN_005db900 ; 005db4e7
-        ;   XREF to: 005db900 (UNCONDITIONAL_CALL)  ; int core_tentacle.cpp_CTentacle_FUN_005db900(CTentacle * this_ptr)
+    CALL core_tentacle.cpp_CTentacle_findNearbyTarget_FUN_005db900 ; 005db4e7
+        ;   XREF to: 005db900 (UNCONDITIONAL_CALL)  ; int core_tentacle.cpp_CTentacle_findNearbyTarget_FUN_005db900(CTentacle * this_ptr, char * class_name)
     ADD ESP,0x8                         ; 005db4ec
     TEST EAX,EAX                        ; 005db4ef
     JZ 0x005db16f                       ; 005db4f1

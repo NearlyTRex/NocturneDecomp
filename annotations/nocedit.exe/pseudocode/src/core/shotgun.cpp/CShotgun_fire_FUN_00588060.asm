@@ -7,6 +7,8 @@
 ; CShotgun *       Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined1       Stack[-0x80]:1  local_80
+; CFlameCan *      Stack[-0x48]:4  pCStack_48
+; CCrate *         Stack[-0x44]:4  pCStack_44
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shotgun_noammo_wav_00649b08

@@ -8,15 +8,15 @@
 ; int              Stack[0x8]:4   part_index
 ;
 ; XREF[10]:
-;   core_batcreat.cpp_CBatCreature_FUN_00415dd0 at 00415fe0
+;   core_batcreat.cpp_CBatCreature_processDismemberment_FUN_00415dd0 at 00415fe0
 ;   core_batman.cpp_CBatman_FUN_00417660 at 004177a1
 ;   core_charactr.cpp_CCharacter_dismember_FUN_0042b9e0 at 0042ba66
 ;   core_cow.cpp_CZombieCow_FUN_004448c0 at 00444a22
-;   core_gargoyle.cpp_CGargoyle_FUN_004e5530 at 004e5661
-;   core_ghoul.cpp_CGhoul_FUN_004e8520 at 004e8682
-;   core_imp.cpp_CImp_FUN_004fab60 at 004faca1
+;   core_gargoyle.cpp_CGargoyle_processDismemberment_FUN_004e5530 at 004e5661
+;   core_ghoul.cpp_CGhoul_processDismemberment_FUN_004e8520 at 004e8682
+;   core_imp.cpp_CImp_processDismemberment_FUN_004fab60 at 004faca1
 ;   core_mobster.cpp_CMobster_FUN_00527380 at 00527504
-;   core_smiley.cpp_CSmiley_FUN_005a32a0 at 005a3421
+;   core_smiley.cpp_CSmiley_processDismemberment_FUN_005a32a0 at 005a3421
 ;   core_zombie.cpp_CZombie_FUN_005fc220 at 005fc382
 ;
 ; Called Functions:

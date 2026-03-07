@@ -134,17 +134,17 @@ section .text
     MOV dword ptr [0x02d807ac],ECX      ; 0056ca41 | g_CDemonLightInstance.volumetric_enabled
     FSTP float ptr [EBP + -0x10]        ; 0056ca47
     FADD float ptr [EBX + 0x34]         ; 0056ca4a
-    ADD EDX,0x4                         ; 0056ca4d | g_CDemonLightInstance.base.base.position.x
+    ADD EDX,0x4                         ; 0056ca4d | g_CDemonLightInstance.base.base.position
     FSTP float ptr [EBP + -0xc]         ; 0056ca50
     CMP EDX,EAX                         ; 0056ca53
     JZ 0x0056ca68                       ; 0056ca55
         ;   XREF to: 0056ca68 (CONDITIONAL_JUMP)  ; LAB_0056ca68
     MOV EAX,dword ptr [EBP + -0x1c]     ; 0056ca57
-    MOV dword ptr [EDX],EAX             ; 0056ca5a | g_CDemonLightInstance.base.base.position.x
+    MOV dword ptr [EDX],EAX             ; 0056ca5a | g_CDemonLightInstance.base.base.position
     MOV EAX,dword ptr [EBP + -0x18]     ; 0056ca5c
-    MOV dword ptr [EDX + 0x4],EAX       ; 0056ca5f | g_CDemonLightInstance.base.base.position.y
+    MOV dword ptr [EDX + 0x4],EAX       ; 0056ca5f | g_CDemonLightInstance.base.base.position+4
     MOV EAX,dword ptr [EBP + -0x14]     ; 0056ca62
-    MOV dword ptr [EDX + 0x8],EAX       ; 0056ca65 | g_CDemonLightInstance.base.base.position.z
+    MOV dword ptr [EDX + 0x8],EAX       ; 0056ca65 | g_CDemonLightInstance.base.base.position+8
     LEA EAX,[EBP + -0x10]               ; 0056ca68
         ;   Label: LAB_0056ca68
     PUSH EAX                            ; 0056ca6b
@@ -169,9 +169,9 @@ section .text
     MOV EAX,dword ptr [EBP + -0x1c]     ; 0056caa7
     MOV [0x032758e8],EAX                ; 0056caaa | DAT_032758e8
     MOV EAX,dword ptr [EBP + -0x18]     ; 0056caaf
-    MOV [0x032758ec],EAX                ; 0056cab2 | g_CDemonCameraInstance.base.position.y
+    MOV [0x032758ec],EAX                ; 0056cab2 | g_CDemonCameraInstance.base.position+4
     MOV EAX,dword ptr [EBP + -0x14]     ; 0056cab7
-    MOV [0x032758f0],EAX                ; 0056caba | g_CDemonCameraInstance.base.position.z
+    MOV [0x032758f0],EAX                ; 0056caba | g_CDemonCameraInstance.base.position+8
     MOV EAX,[0x0067b654]                ; 0056cabf | g_CGameInstance | g_CGamePtr
         ;   Label: LAB_0056cabf
     MOV ECX,dword ptr [EAX + 0x218]     ; 0056cac4 | DAT_02d81cb4

@@ -51,9 +51,9 @@ int __cdecl CVehicle::renderTransparent(CVehicle *this_ptr);
 // Address: 005e8b40
 void __cdecl CVehicle::renderBackground(CVehicle *this_ptr,int layer_flag);
 
-// Original: core_vehicle.cpp_CVehicle_FUN_005e8b50
+// Original: core_vehicle.cpp_CVehicle_playTrackedSound_FUN_005e8b50
 // Address: 005e8b50
-uint __cdecl CVehicle(CVehicle *this_ptr);
+uint __cdecl CVehicle::playTrackedSound(CVehicle *this_ptr,char *sound_name);
 
 // Original: core_vehicle.cpp_CVehicle_getPropertyList_FUN_005e8ba0
 // Address: 005e8ba0

@@ -1,0 +1,122 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 90,
+    "complexity_score": 25,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 3,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 25,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 115
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00549aa0",
+    "address_range": [
+      [
+        "00549aa0",
+        "00549b82"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_pendulum.cpp_didPhaseCross_FUN_00549aa0",
+    "signature": "int __cdecl core_pendulum_cpp_didPhaseCross_FUN_00549aa0(float threshold,float old_phase,float new_phase)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "0063eca1",
+      "name": "DOUBLE_0063eca1",
+      "type": "double",
+      "value": "-0.5"
+    },
+    {
+      "addr": "0063eca9",
+      "name": "DOUBLE_0063eca9",
+      "type": "double",
+      "value": "0.5"
+    },
+    {
+      "addr": "0063ecb1",
+      "name": "FLOAT_0063ecb1",
+      "type": "float",
+      "value": "-1"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 3,
+    "estimated_params": 3
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 10.205479452054794,
+    "instruction_count": 73,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BOOL_OR": 13,
+      "BRANCH": 1,
+      "CBRANCH": 7,
+      "COPY": 380,
+      "FLOAT2FLOAT": 33,
+      "FLOAT_ADD": 10,
+      "FLOAT_EQUAL": 8,
+      "FLOAT_LESS": 8,
+      "FLOAT_NAN": 16,
+      "INT2FLOAT": 5,
+      "INT_ADD": 30,
+      "INT_AND": 45,
+      "INT_EQUAL": 4,
+      "INT_LEFT": 32,
+      "INT_NOTEQUAL": 40,
+      "INT_OR": 40,
+      "INT_SLESS": 2,
+      "INT_XOR": 1,
+      "INT_ZEXT": 32,
+      "LOAD": 24,
+      "POPCOUNT": 2,
+      "RETURN": 2,
+      "STORE": 6
+    },
+    "pcode_op_count": 745
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "threshold",
+        "offset": 4,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "old_phase",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "new_phase",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": []
+}

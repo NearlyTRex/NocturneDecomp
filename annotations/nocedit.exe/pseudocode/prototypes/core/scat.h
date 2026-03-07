@@ -31,13 +31,13 @@ void __cdecl CScat::createDefaultWeapon(CScat *this_ptr);
 // Address: 005571f0
 void __cdecl CScat::process(CScat *this_ptr,float delta_time);
 
-// Original: core_scat.cpp_CScat_FUN_005578e0
+// Original: core_scat.cpp_CScat_updateAI_FUN_005578e0
 // Address: 005578e0
-void __cdecl CScat(CScat *this_ptr);
+void __cdecl CScat::updateAI(CScat *this_ptr,float delta_time);
 
-// Original: core_scat.cpp_CScat_FUN_00557d20
+// Original: core_scat.cpp_CScat_advanceMotionWithGrabDamage_FUN_00557d20
 // Address: 00557d20
-void __cdecl CScat(CScat *this_ptr);
+void __cdecl CScat::advanceMotionWithGrabDamage(CScat *this_ptr,float delta_time);
 
 // Original: core_scat.cpp_CSCat_archive_FUN_00557db0
 // Address: 00557db0
@@ -59,33 +59,33 @@ int __cdecl CScat::isWeaponDrawn(CScat *this_ptr);
 // Address: 00558000
 void __cdecl CScat::drawWeapon(CScat *this_ptr,int drawn);
 
-// Original: core_scat.cpp_CScat_FUN_00558010
+// Original: core_scat.cpp_CScat_isWeaponReady_FUN_00558010
 // Address: 00558010
-int __cdecl CScat(CScat *this_ptr);
+int __cdecl CScat::isWeaponReady(CScat *this_ptr);
 
-// Original: core_scat.cpp_CScat_FUN_00558060
+// Original: core_scat.cpp_CScat_updateWeaponState_FUN_00558060
 // Address: 00558060
-void __cdecl CScat(CScat *this_ptr);
+void __cdecl CScat::updateWeaponState(CScat *this_ptr,float delta_time);
 
-// Original: core_scat.cpp_CScat_FUN_005582c0
+// Original: core_scat.cpp_CScat_blendLayerAction_FUN_005582c0
 // Address: 005582c0
-void __cdecl CScat(CScat *this_ptr);
+void __cdecl CScat::blendLayerAction(CScat *this_ptr);
 
-// Original: core_scat.cpp_CScat_FUN_005584a0
+// Original: core_scat.cpp_CScat_blendAimBones_FUN_005584a0
 // Address: 005584a0
-void __cdecl CScat(CScat *this_ptr);
+void __cdecl CScat::blendAimBones(CScat *this_ptr,int hand_index);
 
-// Original: core_scat.cpp_CScat_FUN_00558720
+// Original: core_scat.cpp_CScat_updateAiming_FUN_00558720
 // Address: 00558720
-void __cdecl CScat(CScat *this_ptr);
+void __cdecl CScat::updateAiming(CScat *this_ptr,float delta_time,int is_holstered);
 
-// Original: core_scat.cpp_CScat_FUN_00558cf0
+// Original: core_scat.cpp_CScat_scoreAimTarget_FUN_00558cf0
 // Address: 00558cf0
-int __cdecl CScat(CScat *this_ptr);
+int __cdecl CScat::scoreAimTarget(CScat *this_ptr,CDemonActor *target,int hand_index);
 
-// Original: core_scat.cpp_CScat_FUN_00558fd0
+// Original: core_scat.cpp_CScat_updateWeaponAttachment_FUN_00558fd0
 // Address: 00558fd0
-void __cdecl CScat(CScat *this_ptr);
+void __cdecl CScat::updateWeaponAttachment(CScat *this_ptr);
 
 // Original: core_scat.cpp_CScat_onActorDeleted_FUN_00559100
 // Address: 00559100

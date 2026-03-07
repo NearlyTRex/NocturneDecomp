@@ -798,7 +798,7 @@ switchD_005bd22e_caseD_6:
                              ((this_ptr->base).object_to_pick_up,g_CAmmoBoxClassInfo.name_hash),
      pCStack_70 != (CAmmoBox *)0x0)) {
     fVar18 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_0052e2b0(pCStack_68);
-    core_ammobox_cpp_CAmmoBox_FUN_00411690(pCStack_70,fVar18);
+    core_ammobox_cpp_CAmmoBox_openBox_FUN_00411690(pCStack_70,fVar18);
   }
   core_charactr_cpp_CCharacter_preProcess_FUN_00429820((CCharacter *)this_ptr);
   core_stranger_cpp_CStranger_updateTurnBlending_FUN_005bf800(this_ptr,delta_time);
@@ -1126,7 +1126,7 @@ LAB_005bc1a6:
       pCVar17 = core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
                           ((CDemonActor *)this_ptr,aCStack_1f4,&CStack_200);
       if (0.0 < pCVar17->z) {
-        core_boxactor_cpp_CBoxActor_FUN_00422390(pCVar20,&CStack_230,&CStack_200);
+        core_boxactor_cpp_CBoxActor_resolveRayPush_FUN_00422390(pCVar20,&CStack_230,&CStack_200);
       }
     }
   }

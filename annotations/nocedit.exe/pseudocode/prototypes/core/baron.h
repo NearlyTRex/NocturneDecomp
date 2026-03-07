@@ -7,10 +7,6 @@
 // Address: 00412b20
 void __cdecl staticInit(void);
 
-// Original: core_baron.cpp_staticInit_FUN_00412b41
-// Address: 00412b41
-void __cdecl staticInit(void);
-
 // Original: core_baron.cpp_factoryFunc_FUN_00412b80
 // Address: 00412b80
 CBaron * __cdecl factoryFunc(void);
@@ -35,21 +31,21 @@ void __cdecl CBaron::process(CBaron *this_ptr,float delta_time);
 // Address: 00413470
 void __cdecl CBaron::engageTarget(CBaron *this_ptr,CDemonActor *target);
 
-// Original: core_baron.cpp_CBaron_FUN_004135a0
+// Original: core_baron.cpp_CBaron_releaseTarget_FUN_004135a0
 // Address: 004135a0
-void __cdecl CBaron(CBaron *this_ptr,CDemonActor *target);
+void __cdecl CBaron::releaseTarget(CBaron *this_ptr,CDemonActor *target);
 
-// Original: core_baron.cpp_CBaron_FUN_004135e0
+// Original: core_baron.cpp_CBaron_updateMountedPosition_FUN_004135e0
 // Address: 004135e0
-void __cdecl CBaron(CBaron *this_ptr);
+void __cdecl CBaron::updateMountedPosition(CBaron *this_ptr);
 
-// Original: core_baron.cpp_CBaron_FUN_004136b0
+// Original: core_baron.cpp_CBaron_performLightningAttack_FUN_004136b0
 // Address: 004136b0
-void __cdecl CBaron(CBaron *this_ptr);
+void __cdecl CBaron::performLightningAttack(CBaron *this_ptr);
 
-// Original: core_baron.cpp_CBaron_FUN_00413a00
+// Original: core_baron.cpp_CBaron_advanceMotion_FUN_00413a00
 // Address: 00413a00
-void __cdecl CBaron(CBaron *this_ptr,float delta_time);
+void __cdecl CBaron::advanceMotion(CBaron *this_ptr,float delta_time);
 
 // Original: core_baron.cpp_CBaron_archive_FUN_00413a70
 // Address: 00413a70
@@ -111,9 +107,9 @@ void __cdecl CBaronWeapon::fireProjectile(CBaronWeapon *this_ptr);
 // Address: 00413e90
 void __cdecl CBaronWeapon::setWeaponState(CBaronWeapon *this_ptr);
 
-// Original: core_baron.cpp_CBaronWeapon_FUN_00413f20
+// Original: core_baron.cpp_CBaronWeapon_findOrCreateBaron_FUN_00413f20
 // Address: 00413f20
-void __cdecl CBaronWeapon(CBaronWeapon *this_ptr);
+void __cdecl CBaronWeapon::findOrCreateBaron(CBaronWeapon *this_ptr);
 
 // Original: core_baron.cpp_CBaron_onActorDeleted_FUN_00413ff0
 // Address: 00413ff0
@@ -127,9 +123,9 @@ void __cdecl CBaron::getPropertyList(CBaron *this_ptr,CActorPropertyList *proper
 // Address: 00414070
 void __cdecl CBaron::addFilesToExtract(CBaron *this_ptr,_FILE *file_handle);
 
-// Original: core_baron.cpp_CBaron_FUN_00414090
+// Original: core_baron.cpp_setStaggerAmount_FUN_00414090
 // Address: 00414090
-void __cdecl CBaron(CBaron *this_ptr);
+void __cdecl setStaggerAmount(CCharacter *this_ptr,float amount);
 
 // Original: core_baron.cpp_CBaron_hasCollision_FUN_004140a0
 // Address: 004140a0

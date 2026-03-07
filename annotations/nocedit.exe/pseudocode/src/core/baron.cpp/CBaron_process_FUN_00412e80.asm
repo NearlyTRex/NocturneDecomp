@@ -51,8 +51,8 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10
-;   core_baron.cpp_CBaron_FUN_004135e0
-;   core_baron.cpp_CBaron_FUN_00413a00
+;   core_baron.cpp_CBaron_advanceMotion_FUN_00413a00
+;   core_baron.cpp_CBaron_updateMountedPosition_FUN_004135e0
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_00429820
 ;   core_charactr.cpp_CCharacter_process_FUN_00429870
@@ -174,8 +174,8 @@ section .text
     MOV dword ptr [EAX + 0x4],EDX       ; 00412fb2
     MOV EDX,dword ptr [EAX + 0x4]       ; 00412fb5
     MOV dword ptr [EAX],EDX             ; 00412fb8
-    CALL core_baron.cpp_CBaron_FUN_00413a00 ; 00412fba
-        ;   XREF to: 00413a00 (UNCONDITIONAL_CALL)  ; void core_baron.cpp_CBaron_FUN_00413a00(CBaron * this_ptr, float delta_time)
+    CALL core_baron.cpp_CBaron_advanceMotion_FUN_00413a00 ; 00412fba
+        ;   XREF to: 00413a00 (UNCONDITIONAL_CALL)  ; void core_baron.cpp_CBaron_advanceMotion_FUN_00413a00(CBaron * this_ptr, float delta_time)
     MOV EBX,dword ptr [EBP + 0x1fccc]   ; 00412fbf
     ADD ESP,0x8                         ; 00412fc5
     TEST EBX,EBX                        ; 00412fc8
@@ -350,8 +350,8 @@ section .text
     PUSH dword ptr [ESP + 0xac]         ; 004131ef
         ;   Label: LAB_004131ef
     PUSH EBP                            ; 004131f6
-    CALL core_baron.cpp_CBaron_FUN_004135e0 ; 004131f7
-        ;   XREF to: 004135e0 (UNCONDITIONAL_CALL)  ; void core_baron.cpp_CBaron_FUN_004135e0(CBaron * this_ptr)
+    CALL core_baron.cpp_CBaron_updateMountedPosition_FUN_004135e0 ; 004131f7
+        ;   XREF to: 004135e0 (UNCONDITIONAL_CALL)  ; void core_baron.cpp_CBaron_updateMountedPosition_FUN_004135e0(CBaron * this_ptr)
     ADD ESP,0x8                         ; 004131fc
     JMP 0x00412f41                      ; 004131ff
         ;   XREF to: 00412f41 (UNCONDITIONAL_JUMP)  ; LAB_00412f41

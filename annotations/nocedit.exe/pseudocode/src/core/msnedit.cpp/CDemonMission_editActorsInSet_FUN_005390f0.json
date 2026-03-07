@@ -39,19 +39,19 @@
       },
       {
         "category": "other",
-        "column": 61,
+        "column": 70,
         "line": 226,
         "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
       },
       {
         "category": "other",
-        "column": 61,
+        "column": 70,
         "line": 227,
         "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
       },
       {
         "category": "other",
-        "column": 61,
+        "column": 70,
         "line": 228,
         "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
       },
@@ -63,19 +63,19 @@
       },
       {
         "category": "other",
-        "column": 61,
+        "column": 70,
         "line": 237,
         "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
       },
       {
         "category": "other",
-        "column": 61,
+        "column": 70,
         "line": 238,
         "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
       },
       {
         "category": "other",
-        "column": 61,
+        "column": 70,
         "line": 239,
         "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
       },
@@ -111,7 +111,7 @@
       },
       {
         "category": "other",
-        "column": 61,
+        "column": 70,
         "line": 274,
         "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
       }
@@ -121,13 +121,13 @@
   },
   "complexity": {
     "assembly_lines": 2710,
-    "complexity_score": 1506,
+    "complexity_score": 1526,
     "cross_reference_count": 1,
     "function_call_count": 96,
     "global_count": 107,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 1001,
-    "suspect_count": 47,
+    "suspect_count": 49,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
@@ -1239,13 +1239,13 @@
     },
     {
       "addr": "032758ec",
-      "name": "g_CDemonCameraInstance.base.position.y",
+      "name": "g_CDemonCameraInstance.base.position+4",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "032758f0",
-      "name": "g_CDemonCameraInstance.base.position.z",
+      "name": "g_CDemonCameraInstance.base.position+8",
       "type": "undefined4",
       "value": null
     },
@@ -1947,11 +1947,27 @@
       "type": "unnamed_param"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 161,
+      "match": "(float *)((int)",
+      "severity": "mild",
+      "text": "local_54 = (float *)((int)&g_CDemonCameraInstance.base.position + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 163,
+      "match": "(float *)((int)",
+      "severity": "mild",
+      "text": "local_58 = (float *)((int)&g_CDemonCameraInstance.base.position + 8);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Unknown/mangled field access",
       "line": 190,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "local_170._0_4_ = g_CDemonCameraInstance.base.position.x;",
+      "text": "local_170._0_4_ = g_CDemonCameraInstance.base.position.f.x;",
       "type": "unknown_field"
     },
     {
@@ -2007,7 +2023,7 @@
       "line": 219,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "g_CDemonCameraInstance.base.position.x = local_170._0_4_;",
+      "text": "g_CDemonCameraInstance.base.position.f.x = (float)local_170._0_4_;",
       "type": "unknown_field"
     },
     {
@@ -2015,7 +2031,7 @@
       "line": 220,
       "match": "._4_4_",
       "severity": "mild",
-      "text": "g_CDemonCameraInstance.base.position.y = local_170._4_4_;",
+      "text": "g_CDemonCameraInstance.base.position.f.y = (float)local_170._4_4_;",
       "type": "unknown_field"
     },
     {
@@ -2023,7 +2039,7 @@
       "line": 221,
       "match": "._8_4_",
       "severity": "mild",
-      "text": "g_CDemonCameraInstance.base.position.z = local_170._8_4_;",
+      "text": "g_CDemonCameraInstance.base.position.f.z = (float)local_170._8_4_;",
       "type": "unknown_field"
     },
     {
@@ -2039,7 +2055,7 @@
       "line": 230,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "g_CDemonCameraInstance.base.position.x = local_170._0_4_;",
+      "text": "g_CDemonCameraInstance.base.position.f.x = (float)local_170._0_4_;",
       "type": "unknown_field"
     },
     {
@@ -2047,7 +2063,7 @@
       "line": 231,
       "match": "._4_4_",
       "severity": "mild",
-      "text": "g_CDemonCameraInstance.base.position.y = local_170._4_4_;",
+      "text": "g_CDemonCameraInstance.base.position.f.y = (float)local_170._4_4_;",
       "type": "unknown_field"
     },
     {
@@ -2055,7 +2071,7 @@
       "line": 232,
       "match": "._8_4_",
       "severity": "mild",
-      "text": "g_CDemonCameraInstance.base.position.z = local_170._8_4_;",
+      "text": "g_CDemonCameraInstance.base.position.f.z = (float)local_170._8_4_;",
       "type": "unknown_field"
     },
     {
@@ -2103,7 +2119,7 @@
       "line": 267,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "g_CDemonCameraInstance.base.position.x = local_170._0_4_;",
+      "text": "g_CDemonCameraInstance.base.position.f.x = (float)local_170._0_4_;",
       "type": "unknown_field"
     },
     {
@@ -2111,7 +2127,7 @@
       "line": 268,
       "match": "._4_4_",
       "severity": "mild",
-      "text": "g_CDemonCameraInstance.base.position.y = local_170._4_4_;",
+      "text": "g_CDemonCameraInstance.base.position.f.y = (float)local_170._4_4_;",
       "type": "unknown_field"
     },
     {
@@ -2119,7 +2135,7 @@
       "line": 269,
       "match": "._8_4_",
       "severity": "mild",
-      "text": "g_CDemonCameraInstance.base.position.z = local_170._8_4_;",
+      "text": "g_CDemonCameraInstance.base.position.f.z = (float)local_170._8_4_;",
       "type": "unknown_field"
     },
     {
@@ -2167,7 +2183,7 @@
       "line": 315,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "g_CDemonCameraInstance.base.position.x = local_170._0_4_;",
+      "text": "g_CDemonCameraInstance.base.position.f.x = (float)local_170._0_4_;",
       "type": "unknown_field"
     },
     {
@@ -2175,7 +2191,7 @@
       "line": 316,
       "match": "._4_4_",
       "severity": "mild",
-      "text": "g_CDemonCameraInstance.base.position.y = local_170._4_4_;",
+      "text": "g_CDemonCameraInstance.base.position.f.y = (float)local_170._4_4_;",
       "type": "unknown_field"
     },
     {
@@ -2183,7 +2199,7 @@
       "line": 317,
       "match": "._8_4_",
       "severity": "mild",
-      "text": "g_CDemonCameraInstance.base.position.z = local_170._8_4_;",
+      "text": "g_CDemonCameraInstance.base.position.f.z = (float)local_170._8_4_;",
       "type": "unknown_field"
     },
     {

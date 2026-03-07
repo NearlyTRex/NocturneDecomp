@@ -245,7 +245,7 @@ void __cdecl core_gabriela_cpp_CGabriella_process_FUN_004d2ea0(CGabriella *this_
               local_14 = (CCharacter_full_vtable *)
                          core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_0052e2b0
                                    (&pCVar2->motion_controller);
-              core_ammobox_cpp_CAmmoBox_FUN_00411690(local_2c,(float)local_14);
+              core_ammobox_cpp_CAmmoBox_openBox_FUN_00411690(local_2c,(float)local_14);
             }
           }
           else if (uVar8 < 0x11) {
@@ -639,7 +639,7 @@ LAB_004d344b:
       pCVar11 = core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
                           ((CDemonActor *)this_ptr,&local_154,&local_190);
       if (0.0 < pCVar11->z) {
-        core_boxactor_cpp_CBoxActor_FUN_00422390(pCVar14,&local_184,&local_190);
+        core_boxactor_cpp_CBoxActor_resolveRayPush_FUN_00422390(pCVar14,&local_184,&local_190);
       }
     }
   }

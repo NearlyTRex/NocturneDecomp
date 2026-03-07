@@ -14,6 +14,7 @@
 #include "types/classes/CDemonGlobe.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
+#include "types/classes/CWayPoint.h"
 #include "types/classes/CWeather.h"
 #include "types/structs/SRenderVertex.h"
 #include "types/structs/SSoftwareEdge.h"
@@ -47,6 +48,9 @@ extern CVector3f g_WeatherParticlePositions[200];
 
 // CVector3i
 extern CVector3i g_TempProjectedCoord;
+
+// CWayPoint*[2000]
+extern CWayPoint* g_WaypointSearchQueue[2000];
 
 // CWeather
 extern CWeather g_CWeatherInstance;
@@ -225,8 +229,6 @@ extern undefined4 DAT_03f90a90;
 extern undefined4 DAT_03f90a94;
 extern undefined4 DAT_03f90a98;
 extern undefined4 DAT_03f90a9c;
-extern undefined4 DAT_03f939a4;
-extern undefined4 DAT_03f939a8;
 extern undefined4 g_FreeListHeadPointer;
 extern undefined4 DAT_03f9b210;
 

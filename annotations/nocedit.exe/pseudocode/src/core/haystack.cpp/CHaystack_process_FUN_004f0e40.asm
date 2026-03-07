@@ -48,8 +48,8 @@
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_00429820
 ;   core_charactr.cpp_CCharacter_process_FUN_00429870
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_0042ca70
-;   core_haystack.cpp_CHaystack_FUN_004f13f0
-;   core_haystack.cpp_CHaystack_FUN_004f1970
+;   core_haystack.cpp_CHaystack_advanceMotion_FUN_004f1970
+;   core_haystack.cpp_CHaystack_updateAI_FUN_004f13f0
 ;   core_hero.cpp_CHero_executeLeverPull_FUN_004f30f0
 ;   core_hero.cpp_CHero_tryInteract_FUN_004f2af0
 ;   core_hero.cpp_CHero_tryOpenDoor_FUN_004f2ed0
@@ -112,8 +112,8 @@ section .text
     MOV dword ptr [EAX + 0x4],EDX       ; 004f0ed5
     MOV EDX,dword ptr [EAX + 0x4]       ; 004f0ed8
     MOV dword ptr [EAX],EDX             ; 004f0edb
-    CALL core_haystack.cpp_CHaystack_FUN_004f1970 ; 004f0edd
-        ;   XREF to: 004f1970 (UNCONDITIONAL_CALL)  ; void core_haystack.cpp_CHaystack_FUN_004f1970(CHaystack * this_ptr)
+    CALL core_haystack.cpp_CHaystack_advanceMotion_FUN_004f1970 ; 004f0edd
+        ;   XREF to: 004f1970 (UNCONDITIONAL_CALL)  ; void core_haystack.cpp_CHaystack_advanceMotion_FUN_004f1970(CHaystack * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004f0ee2
     PUSH dword ptr [EBP + 0x18]         ; 004f0ee5
     PUSH EBX                            ; 004f0ee8
@@ -319,8 +319,8 @@ section .text
     PUSH dword ptr [EBP + 0x18]         ; 004f10ef
         ;   Label: LAB_004f10ef
     PUSH EBX                            ; 004f10f2
-    CALL core_haystack.cpp_CHaystack_FUN_004f13f0 ; 004f10f3
-        ;   XREF to: 004f13f0 (UNCONDITIONAL_CALL)  ; void core_haystack.cpp_CHaystack_FUN_004f13f0(CHaystack * this_ptr)
+    CALL core_haystack.cpp_CHaystack_updateAI_FUN_004f13f0 ; 004f10f3
+        ;   XREF to: 004f13f0 (UNCONDITIONAL_CALL)  ; void core_haystack.cpp_CHaystack_updateAI_FUN_004f13f0(CHaystack * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004f10f8
     JMP 0x004f0e70                      ; 004f10fb
         ;   XREF to: 004f0e70 (UNCONDITIONAL_JUMP)  ; LAB_004f0e70

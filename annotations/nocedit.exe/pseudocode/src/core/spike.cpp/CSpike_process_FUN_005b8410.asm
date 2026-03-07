@@ -28,7 +28,7 @@
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
-;   core_spike.cpp_CSpike_FUN_005b8950
+;   core_spike.cpp_CSpike_testCollisionWithCharacters_FUN_005b8950
 ;
 ; *****************************************************************************
 
@@ -269,8 +269,8 @@ section .text
         ;   XREF to: 005b84db (UNCONDITIONAL_JUMP)  ; LAB_005b84db
     PUSH EBX                            ; 005b8716
         ;   Label: LAB_005b8716
-    CALL core_spike.cpp_CSpike_FUN_005b8950 ; 005b8717
-        ;   XREF to: 005b8950 (UNCONDITIONAL_CALL)  ; void core_spike.cpp_CSpike_FUN_005b8950(CSpike * this_ptr)
+    CALL core_spike.cpp_CSpike_testCollisionWithCharacters_FUN_005b8950 ; 005b8717
+        ;   XREF to: 005b8950 (UNCONDITIONAL_CALL)  ; void core_spike.cpp_CSpike_testCollisionWithCharacters_FUN_005b8950(CSpike * this_ptr)
     ADD ESP,0x4                         ; 005b871c
     ADD ESP,0x40                        ; 005b871f
     POP EBP                             ; 005b8722

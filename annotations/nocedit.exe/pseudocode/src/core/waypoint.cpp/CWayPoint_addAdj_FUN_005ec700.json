@@ -6,26 +6,24 @@
   },
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 136,
+    "complexity_score": 105,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 26,
-    "suspect_count": 9,
+    "pseudocode_lines": 25,
+    "suspect_count": 7,
     "suspect_types": [
       "decompiler_intrinsic",
-      "pointer_cast",
-      "stack_param",
-      "warning_type_propagation"
+      "stack_param"
     ],
-    "total_lines": 85
+    "total_lines": 84
   },
   "cross_references": [
     {
       "addr": "005ec4f0",
       "from_addr": "005ec5b2",
-      "name": "core_waypoint.cpp_CWayPoint_FUN_005ec4f0",
+      "name": "core_waypoint.cpp_CWayPoint_rebuildConnectivity_FUN_005ec4f0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -48,14 +46,14 @@
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
-      "addr": "005ec640",
-      "is_variadic": false,
-      "name": "core_waypoint.cpp_CWayPoint_FUN_005ec640"
-    },
-    {
       "addr": "005ec830",
       "is_variadic": false,
-      "name": "core_waypoint.cpp_CWayPoint_FUN_005ec830"
+      "name": "core_waypoint.cpp_CWayPoint_cleanupAdjacency_FUN_005ec830"
+    },
+    {
+      "addr": "005ec640",
+      "is_variadic": false,
+      "name": "core_waypoint.cpp_CWayPoint_removeAllAdjTo_FUN_005ec640"
     }
   ],
   "globals": [
@@ -139,16 +137,8 @@
   },
   "suspects": [
     {
-      "description": "Type propagation did not converge",
-      "line": 2,
-      "match": "WARNING: Type propagation algorithm not settling",
-      "severity": "moderate",
-      "text": "/* WARNING: Type propagation algorithm not settling */",
-      "type": "warning_type_propagation"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 10,
+      "line": 8,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "CWayPoint *in_stack_00000008;",
@@ -156,7 +146,15 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 11,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "core_waypoint_cpp_CWayPoint_removeAllAdjTo_FUN_005ec640(this_ptr,in_stack_00000008);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "this_ptr->adjacency[this_ptr->num_adjacent_waypoints].waypoint = in_stack_00000008;",
@@ -164,7 +162,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 21,
+      "line": 19,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "(in_stack_00000008->base).base.location.position.x;",
@@ -172,39 +170,23 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 21,
       "match": "in_stack_00000008",
       "severity": "moderate",
-      "text": "*(float *)((int)&(in_stack_00000008->base).base.location.position + 4);",
+      "text": "(in_stack_00000008->base).base.location.position.y;",
       "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 23,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "*(float *)((int)&(in_stack_00000008->base).base.location.position + 4);",
-      "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 25,
+      "line": 23,
       "match": "in_stack_00000008",
       "severity": "moderate",
-      "text": "*(float *)((int)&(in_stack_00000008->base).base.location.position + 8);",
+      "text": "(in_stack_00000008->base).base.location.position.z;",
       "type": "stack_param"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 25,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "*(float *)((int)&(in_stack_00000008->base).base.location.position + 8);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 27,
+      "line": 25,
       "match": "SQRT",
       "severity": "mild",
       "text": "SQRT(fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1);",

@@ -83,9 +83,9 @@ int __cdecl CWeapon::isReadyToFire(CWeapon *this_ptr);
 // Address: 005ee730
 float __cdecl CWeapon::getDamage(CWeapon *this_ptr);
 
-// Original: core_weapon.cpp_CWeapon_FUN_005ee740
+// Original: core_weapon.cpp_CWeapon_setupPhysicsBox_FUN_005ee740
 // Address: 005ee740
-void __cdecl CWeapon(CWeapon *this_ptr);
+void __cdecl CWeapon::setupPhysicsBox(CWeapon *this_ptr);
 
 // Original: core_weapon.cpp_CWeapon_fireProjectile_FUN_005ee830
 // Address: 005ee830

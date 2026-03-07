@@ -1,34 +1,19 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 9,
-        "line": 25,
-        "message": "statement requires expression of integer type ('float' invalid)"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 29,
-        "message": "conversion from 'double' to 'int' is not allowed in a converted constant expression"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 50,
+    "complexity_score": 35,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 2,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 35,
-    "suspect_count": 1,
-    "suspect_types": [
-      "suspect_float"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 112
   },
   "cross_references": [],
@@ -131,16 +116,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 22,
-      "match": "1.12104e-44",
-      "severity": "mild",
-      "text": "case 1.12104e-44:",
-      "type": "suspect_float"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

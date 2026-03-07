@@ -5,6 +5,7 @@
 #include "system/stdio.h"
 #include "types/classes/CActorPropertyList.h"
 #include "types/classes/CBoundingBox3D.h"
+#include "types/classes/CCharacter.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CEnemy.h"
@@ -53,9 +54,9 @@ CDemonActorType * __cdecl core_haystack_cpp_CHaystack_getActorType_FUN_004f0c00(
 CHaystack * __cdecl core_haystack_cpp_CHaystack_ctor_FUN_004f0c10(CHaystack *this_ptr);
 void __cdecl core_haystack_cpp_CHaystack_setup_FUN_004f0c80(CHaystack *this_ptr);
 void __cdecl core_haystack_cpp_CHaystack_process_FUN_004f0e40(CHaystack *this_ptr,float delta_time);
-void __cdecl core_haystack_cpp_CHaystack_FUN_004f13f0(CHaystack *this_ptr);
-void __cdecl core_haystack_cpp_CHaystack_FUN_004f1970(CHaystack *this_ptr);
-void __cdecl core_haystack_cpp_CHaystack_FUN_004f1ab0(CHaystack *this_ptr);
+void __cdecl core_haystack_cpp_CHaystack_updateAI_FUN_004f13f0(CHaystack *this_ptr,float delta_time);
+void __cdecl core_haystack_cpp_CHaystack_advanceMotion_FUN_004f1970(CHaystack *this_ptr,float delta_time);
+void __cdecl core_haystack_cpp_CHaystack_checkMeleeHit_FUN_004f1ab0(CHaystack *this_ptr,int bone_index);
 void __cdecl core_haystack_cpp_CHaystack_archive_FUN_004f1b50(CHaystack *this_ptr);
 void __cdecl core_haystack_cpp_CHaystack_renderOpaque_FUN_004f1b60(CHaystack *this_ptr);
 void __cdecl core_haystack_cpp_CHaystack_processDamage_FUN_004f1b70(CHaystack *this_ptr,SDamageInfo *damage_info);
@@ -76,7 +77,7 @@ CBoundingBox3D * __cdecl core_health_cpp_CHealthItem_getBoundingBox_FUN_004f1ed0
 void __cdecl core_health_cpp_CHealthItem_archive_FUN_004f1f20(CHealthItem *this_ptr);
 int __cdecl core_health_cpp_CHealthItem_hasCollision_FUN_004f1fa0(CHealthItem *this_ptr,SCollisionInfo *collision_info);
 int __cdecl core_health_cpp_CHealthItem_canPickup_FUN_004f1fb0(CHealthItem *this_ptr,CDemonActor *picker);
-int __cdecl core_health_cpp_CHealthItem_FUN_004f1fd0(CHealthItem *this_ptr);
+int __cdecl core_health_cpp_CHealthItem_useItem_FUN_004f1fd0(CHealthItem *this_ptr,CCharacter *user);
 void __cdecl core_health_cpp_CHealthItem_onPickup_FUN_004f2020(CHealthItem *this_ptr,CDemonActor *owner);
 void __cdecl core_health_cpp_CHealthItem_getPropertyList_FUN_004f2040(CHealthItem *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_health_cpp_CHealthItem_addFilesToExtract_FUN_004f20b0(CHealthItem *this_ptr,_FILE *file_handle);
@@ -213,11 +214,11 @@ CDemonActorType * __cdecl core_imp_cpp_CImp_getActorType_FUN_004f9890(CImp *this
 CImp * __cdecl core_imp_cpp_CImp_ctor_FUN_004f98a0(CImp *this_ptr);
 void __cdecl core_imp_cpp_CImp_setup_FUN_004f9910(CImp *this_ptr);
 void __cdecl core_imp_cpp_CImp_process_FUN_004f9c30(CImp *this_ptr,float delta_time);
-void __cdecl core_imp_cpp_FUN_004fa900(void);
+CVector3f * __cdecl core_imp_cpp_setVector_FUN_004fa900(CVector3f *out,float x,float y,float z);
 void __stack2_esi core_imp_cpp_CImp_getCarryObjToBodyXForm_FUN_004fa920 (CImp *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 int __cdecl core_imp_cpp_CImp_attractActorToward_FUN_004faaf0(CImp *this_ptr,CDemonActor *actor,CVector3f *target_local_point);
 void __cdecl core_imp_cpp_CImp_archive_FUN_004fab00(CImp *this_ptr);
-void __cdecl core_imp_cpp_CImp_FUN_004fab60(CImp *this_ptr);
+void __cdecl core_imp_cpp_CImp_processDismemberment_FUN_004fab60(CImp *this_ptr,SDamageInfo *damage_info);
 void __cdecl core_imp_cpp_CImp_processDamage_FUN_004fae00(CImp *this_ptr,SDamageInfo *damage_info);
 int __cdecl core_imp_cpp_CImp_getTargetPoints_FUN_004faf40(CImp *this_ptr,CVector3f *out_points_array);
 void __cdecl core_imp_cpp_CImp_hasCollision_FUN_004fb0f0(CImp *this_ptr,SCollisionInfo *collision_info);

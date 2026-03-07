@@ -34,7 +34,7 @@
 ;   core_actor.cpp_isOfClass_FUN_0040c6d0
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0
 ;   core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180
-;   core_lightgun.cpp_CLightGun_FUN_00505ac0
+;   core_lightgun.cpp_CLightGun_updateBeamLight_FUN_00505ac0
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_005741b0
 ;   core_setcolid.cpp_CDemonSet_init_FUN_00574180
 ;   core_setcolid.cpp_CDemonSet_popRaytraceState_FUN_00573fc0
@@ -210,8 +210,8 @@ section .text
     ADD ESP,0x4                         ; 00505eb1
     MOV EDX,dword ptr [EBP + 0x14]      ; 00505eb4
     PUSH EDX                            ; 00505eb7
-    CALL core_lightgun.cpp_CLightGun_FUN_00505ac0 ; 00505eb8
-        ;   XREF to: 00505ac0 (UNCONDITIONAL_CALL)  ; void core_lightgun.cpp_CLightGun_FUN_00505ac0(CLightGun * this_ptr)
+    CALL core_lightgun.cpp_CLightGun_updateBeamLight_FUN_00505ac0 ; 00505eb8
+        ;   XREF to: 00505ac0 (UNCONDITIONAL_CALL)  ; void core_lightgun.cpp_CLightGun_updateBeamLight_FUN_00505ac0(CLightGun * this_ptr)
     ADD ESP,0x4                         ; 00505ebd
     XOR ECX,ECX                         ; 00505ec0
     MOV dword ptr [ESP + 0x100],ECX     ; 00505ec2
@@ -473,7 +473,7 @@ section .text
     PUSH ESI                            ; 005061fe
     PUSH EBX                            ; 005061ff
     CALL core_trigger.cpp_CTrigger_acceptsDamageFrom_FUN_005e0ac0 ; 00506200
-        ;   XREF to: 005e0ac0 (UNCONDITIONAL_CALL)  ; int core_trigger.cpp_CTrigger_acceptsDamageFrom_FUN_005e0ac0(CTrigger * this_ptr, char * damage_actor_wildcard_name)
+        ;   XREF to: 005e0ac0 (UNCONDITIONAL_CALL)  ; int core_trigger.cpp_CTrigger_acceptsDamageFrom_FUN_005e0ac0(CTrigger * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 00506205
     TEST EAX,EAX                        ; 00506208
     JZ 0x00506239                       ; 0050620a

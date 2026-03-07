@@ -39,9 +39,9 @@ void __cdecl CSmiley::archive(CSmiley *this_ptr);
 // Address: 005a3280
 void __cdecl CSmiley::reset(CSmiley *this_ptr);
 
-// Original: core_smiley.cpp_CSmiley_FUN_005a32a0
+// Original: core_smiley.cpp_CSmiley_processDismemberment_FUN_005a32a0
 // Address: 005a32a0
-void __cdecl CSmiley(CSmiley *this_ptr);
+void __cdecl CSmiley::processDismemberment(CSmiley *this_ptr,SDamageInfo *damage_info);
 
 // Original: core_smiley.cpp_CSmiley_processDamage_FUN_005a3580
 // Address: 005a3580

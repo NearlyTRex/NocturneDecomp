@@ -363,7 +363,7 @@ LAB_004e6a5f:
       if (this_ptr->stun_timer <= 0.0) {
         pCVar13 = this_ptr->dark_waypoint;
         if (pCVar13 == (CDemonActor *)0x0) {
-          iVar9 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base,delta_time);
+          iVar9 = core_enemy_cpp_CEnemy_updatePatrol_FUN_004a9fd0(&this_ptr->base,delta_time);
           if (iVar9 != 0) goto LAB_004e7576;
           (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time)
           ;
@@ -442,7 +442,7 @@ LAB_004e6a5f:
           pCVar3 = (this_ptr->base).victim;
           if (pCVar3 == (CCharacter *)0x0) {
             in_stack_fffffc88 = (char *)0x4e77fa;
-            iVar9 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base,delta_time);
+            iVar9 = core_enemy_cpp_CEnemy_updatePatrol_FUN_004a9fd0(&this_ptr->base,delta_time);
             if (iVar9 == 0) {
               in_stack_fffffc88 = (char *)&(this_ptr->base).base.model;
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
@@ -658,14 +658,16 @@ LAB_004e7576:
               in_stack_fffffc88 = (char *)&local_2d8;
               local_2d8.attacker = (CDemonActor *)this_ptr;
               local_2d8.wielder = (CDemonActor *)this_ptr;
+              fVar22 = 0.2;
               pCVar12 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                                   (&local_114,(CVector3f *)&INT_02d832b4,
                                    (CMatrix3x4f *)
                                    (this_ptr->base).base.model.bone_transform.bone_world_matrices
                                    [INT_02d83304].m);
-              core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                        ((CDemonActor *)this_ptr,&local_1bc,pCVar12);
-              iVar9 = core_enemy_cpp_CEnemy_FUN_004a9880(&this_ptr->base);
+              pCVar12 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                                  ((CDemonActor *)this_ptr,&local_1bc,pCVar12);
+              iVar9 = core_enemy_cpp_CEnemy_testAttackRadius_FUN_004a9880
+                                (&this_ptr->base,pCVar12,fVar22,(SDamageInfo *)in_stack_fffffc88);
               if (iVar9 != 0) {
                 in_stack_fffffc88 = "gh-hits?.wav";
                 (*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -843,14 +845,16 @@ LAB_004e7d9a:
             in_stack_fffffc88 = (char *)&local_314;
             local_314.attacker = (CDemonActor *)this_ptr;
             local_314.wielder = (CDemonActor *)this_ptr;
+            fVar22 = 0.4;
             pCVar12 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                                 (local_210,(CVector3f *)&INT_02d832a8,
                                  (CMatrix3x4f *)
                                  (this_ptr->base).base.model.bone_transform.bone_world_matrices
                                  [INT_02d83300].m);
-            core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                      ((CDemonActor *)this_ptr,&local_21c,pCVar12);
-            iVar9 = core_enemy_cpp_CEnemy_FUN_004a9880(&this_ptr->base);
+            pCVar12 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                                ((CDemonActor *)this_ptr,&local_21c,pCVar12);
+            iVar9 = core_enemy_cpp_CEnemy_testAttackRadius_FUN_004a9880
+                              (&this_ptr->base,pCVar12,fVar22,(SDamageInfo *)in_stack_fffffc88);
             if (iVar9 != 0) {
               in_stack_fffffc88 = "gh-hits?.wav";
               (*((this_ptr->base).base.base.vtable._ub)->playSound)

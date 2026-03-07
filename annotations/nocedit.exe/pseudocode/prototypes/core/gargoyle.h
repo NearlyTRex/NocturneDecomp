@@ -23,9 +23,9 @@ CGargoyle * __cdecl CGargoyle::ctor(CGargoyle *this_ptr);
 // Address: 004e45e0
 void __cdecl CGargoyle::setup(CGargoyle *this_ptr);
 
-// Original: core_gargoyle.cpp_CGargoyle_FUN_004e48a0
+// Original: core_gargoyle.cpp_CGargoyle_shouldMove_FUN_004e48a0
 // Address: 004e48a0
-int __cdecl CGargoyle(CGargoyle *this_ptr);
+int __cdecl CGargoyle::shouldMove(CGargoyle *this_ptr);
 
 // Original: core_gargoyle.cpp_CGargoyle_process_FUN_004e4a00
 // Address: 004e4a00
@@ -39,9 +39,9 @@ void __cdecl CGargoyle::renderOpaque(CGargoyle *this_ptr);
 // Address: 004e5470
 void __cdecl CGargoyle::archive(CGargoyle *this_ptr);
 
-// Original: core_gargoyle.cpp_CGargoyle_FUN_004e5530
+// Original: core_gargoyle.cpp_CGargoyle_processDismemberment_FUN_004e5530
 // Address: 004e5530
-void __cdecl CGargoyle(CGargoyle *this_ptr);
+void __cdecl CGargoyle::processDismemberment(CGargoyle *this_ptr,SDamageInfo *damage_info);
 
 // Original: core_gargoyle.cpp_CGargoyle_processDamage_FUN_004e57d0
 // Address: 004e57d0

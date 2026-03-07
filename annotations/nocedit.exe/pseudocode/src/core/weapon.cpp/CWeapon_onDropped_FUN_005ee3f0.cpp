@@ -15,7 +15,7 @@ void __cdecl core_weapon_cpp_CWeapon_onDropped_FUN_005ee3f0(CWeapon *this_ptr,CV
   float in_stack_fffffff0;
   
   this_ptr->carried_by_actor = (CDemonActor *)0x0;
-  core_weapon_cpp_CWeapon_FUN_005ee740(this_ptr);
+  core_weapon_cpp_CWeapon_setupPhysicsBox_FUN_005ee740(this_ptr);
   if (drop_position != (CVector3f *)0x0) {
     pCVar2 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
                        (&(this_ptr->physics_box).rotation_matrix,(CVector3f *)&stack0xffffffec,

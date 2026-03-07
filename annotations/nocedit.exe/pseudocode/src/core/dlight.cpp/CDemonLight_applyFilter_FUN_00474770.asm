@@ -24,8 +24,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[8]:
-;   core_boxactor.cpp_CLightActor_FUN_00422d60 at 00423059
 ;   core_boxactor.cpp_CLightActor_process_FUN_00422a50 at 00422ae7
+;   core_boxactor.cpp_CLightActor_setupLightModel_FUN_00422d60 at 00423059
 ;   core_dlight.cpp_CDemonLight_init_FUN_004727c0 at 0047286c
 ;   core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0 at 00476626
 ;   core_lightgun.cpp_CLightGun_process_FUN_00506450 at 005065a0

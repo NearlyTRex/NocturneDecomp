@@ -23,6 +23,7 @@ void __cdecl core_cow_cpp_CZombieCow_process_FUN_00444310(CZombieCow *this_ptr,f
   uint uVar9;
   CPathMap *path_map;
   float fVar10;
+  SDamageInfo *damage_info;
   float fVar11;
   SDamageInfo local_c0;
   CVector3f local_84;
@@ -70,7 +71,7 @@ void __cdecl core_cow_cpp_CZombieCow_process_FUN_00444310(CZombieCow *this_ptr,f
   if (iVar6 == 0) {
     switch(iVar4) {
     case 0:
-      iVar4 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base,delta_time);
+      iVar4 = core_enemy_cpp_CEnemy_updatePatrol_FUN_004a9fd0(&this_ptr->base,delta_time);
       if (iVar4 == 0) {
         (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
         if ((this_ptr->base).victim != (CCharacter *)0x0) {
@@ -94,7 +95,7 @@ void __cdecl core_cow_cpp_CZombieCow_process_FUN_00444310(CZombieCow *this_ptr,f
       (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
       fVar10 = 4.5f;
       if ((this_ptr->base).victim == (CCharacter *)0x0) {
-        iVar4 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base,delta_time);
+        iVar4 = core_enemy_cpp_CEnemy_updatePatrol_FUN_004a9fd0(&this_ptr->base,delta_time);
         if (iVar4 == 0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&this_ptr_00->motion_controller,0,1);
@@ -137,14 +138,17 @@ void __cdecl core_cow_cpp_CZombieCow_process_FUN_00444310(CZombieCow *this_ptr,f
       local_c0.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
       local_c0.attacker = (CDemonActor *)this_ptr;
       local_c0.wielder = (CDemonActor *)this_ptr;
+      damage_info = &local_c0;
+      fVar10 = 0.7;
       local_14 = local_c0.damage_amount;
       pCVar8 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                          (&local_3c,&g_ZeroVector.f,
                           (this_ptr->base).base.model.bone_transform.bone_world_matrices +
                           this_ptr->bone_head);
-      core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                ((CDemonActor *)this_ptr,&local_30,pCVar8);
-      core_enemy_cpp_CEnemy_FUN_004a9880(&this_ptr->base);
+      pCVar8 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                         ((CDemonActor *)this_ptr,&local_30,pCVar8);
+      core_enemy_cpp_CEnemy_testAttackRadius_FUN_004a9880(&this_ptr->base,pCVar8,fVar10,damage_info)
+      ;
       break;
     case 5:
       if (((this_ptr->base).pool_me == 0) &&

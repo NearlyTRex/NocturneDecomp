@@ -85,7 +85,7 @@
 ;   float FLOAT_00652556 = 0.2000000
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CDemonSet* g_CDemonSetPtr = 03114278
-;   undefined4 g_CDemonLightInstance.base.base.position.x
+;   undefined4 g_CDemonLightInstance.base.base.position
 ;   ... and 19 more
 ;
 ; Called Functions:
@@ -116,10 +116,10 @@ section .text
     MOV EAX,[0x032758e8]                ; 005b1891 | DAT_032758e8
     MOV dword ptr [ESP + 0x128],EAX     ; 005b1896
     MOV EAX,0x32758e8                   ; 005b189d | DAT_032758e8
-    MOV EAX,dword ptr [EAX + 0x4]       ; 005b18a2 | g_CDemonCameraInstance.base.position.y
+    MOV EAX,dword ptr [EAX + 0x4]       ; 005b18a2 | g_CDemonCameraInstance.base.position+4
     MOV dword ptr [ESP + 0x12c],EAX     ; 005b18a5
     MOV EAX,0x32758e8                   ; 005b18ac | DAT_032758e8
-    MOV EAX,dword ptr [EAX + 0x8]       ; 005b18b1 | g_CDemonCameraInstance.base.position.z
+    MOV EAX,dword ptr [EAX + 0x8]       ; 005b18b1 | g_CDemonCameraInstance.base.position+8
     LEA EDX,[ESP + 0xa4]                ; 005b18b4
     MOV dword ptr [ESP + 0x130],EAX     ; 005b18bb
     LEA EAX,[ESP + 0x128]               ; 005b18c2
@@ -266,14 +266,14 @@ section .text
     POP ESI                             ; 005b1b06
     POP EBX                             ; 005b1b07
     RET                                 ; 005b1b08
-    MOV EAX,[0x02d7eaf4]                ; 005b1b09 | g_CDemonLightInstance.base.base.position.x
+    MOV EAX,[0x02d7eaf4]                ; 005b1b09 | g_CDemonLightInstance.base.base.position
         ;   Label: LAB_005b1b09
     MOV dword ptr [ESP + 0xc8],EAX      ; 005b1b0e
-    MOV EAX,0x2d7eaf4                   ; 005b1b15 | g_CDemonLightInstance.base.base.position.x
-    MOV EAX,dword ptr [EAX + 0x4]       ; 005b1b1a | g_CDemonLightInstance.base.base.position.y
+    MOV EAX,0x2d7eaf4                   ; 005b1b15 | g_CDemonLightInstance.base.base.position
+    MOV EAX,dword ptr [EAX + 0x4]       ; 005b1b1a | g_CDemonLightInstance.base.base.position+4
     MOV dword ptr [ESP + 0xcc],EAX      ; 005b1b1d
-    MOV EAX,0x2d7eaf4                   ; 005b1b24 | g_CDemonLightInstance.base.base.position.x
-    MOV EAX,dword ptr [EAX + 0x8]       ; 005b1b29 | g_CDemonLightInstance.base.base.position.z
+    MOV EAX,0x2d7eaf4                   ; 005b1b24 | g_CDemonLightInstance.base.base.position
+    MOV EAX,dword ptr [EAX + 0x8]       ; 005b1b29 | g_CDemonLightInstance.base.base.position+8
     LEA EDX,[ESP + 0xa4]                ; 005b1b2c
     MOV dword ptr [ESP + 0xd0],EAX      ; 005b1b33
     LEA EAX,[ESP + 0xc8]                ; 005b1b3a

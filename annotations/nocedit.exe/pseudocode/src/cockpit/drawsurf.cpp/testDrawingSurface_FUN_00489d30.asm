@@ -20,6 +20,7 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; Referenced Globals:
+;   undefined4 DAT_00412b41
 ;   TerminatedCString s_Hello_00621eb5
 ;   TerminatedCString s_Hello_00621ebb
 ;   TerminatedCString s_Hello_world_00621ec1
@@ -34,8 +35,7 @@
 ;   TerminatedCString s_anon_00621ef5
 ;   TerminatedCString s_s_00621ef7
 ;   TerminatedCString s_s_00621efa
-;   TerminatedCString s_s_00621efd
-;   ... and 18 more
+;   ... and 19 more
 ;
 ; Called Functions:
 ;   cockpit_drawsurf.cpp_CDrawSurface_ctor_FUN_00486ea0
@@ -410,7 +410,7 @@ section .text
         ;   XREF to: 00487990 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawClippedLine_FUN_00487990(CDrawSurface * this_ptr, int x1, int y1, int x2, ...)
     MOV EAX,[0x006703e4]                ; 0048a0da | = "A+A"
     ADD ESP,0x14                        ; 0048a0df
-    MOV dword ptr [ESP + 0xa8],EAX      ; 0048a0e2
+    MOV dword ptr [ESP + 0xa8],EAX      ; 0048a0e2 | DAT_00412b41
     MOV EAX,[0x00679394]                ; 0048a0e9 | g_WindowWidth
     MOV EDX,EAX                         ; 0048a0ee
     SAR EDX,0x1f                        ; 0048a0f0

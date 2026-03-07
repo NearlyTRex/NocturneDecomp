@@ -6,19 +6,19 @@
   },
   "complexity": {
     "assembly_lines": 572,
-    "complexity_score": 409,
+    "complexity_score": 420,
     "cross_reference_count": 0,
     "function_call_count": 21,
     "global_count": 13,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 264,
-    "suspect_count": 13,
+    "pseudocode_lines": 265,
+    "suspect_count": 14,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "warning_type_propagation"
     ],
-    "total_lines": 836
+    "total_lines": 837
   },
   "cross_references": [],
   "function": {
@@ -72,7 +72,7 @@
     {
       "addr": "004ee790",
       "is_variadic": false,
-      "name": "core_grave.cpp_CGrave_FUN_004ee790"
+      "name": "core_grave.cpp_CGrave_startAnimation_FUN_004ee790"
     },
     {
       "addr": "0052d610",
@@ -100,14 +100,14 @@
       "name": "core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020"
     },
     {
-      "addr": "005db900",
-      "is_variadic": false,
-      "name": "core_tentacle.cpp_CTentacle_FUN_005db900"
-    },
-    {
       "addr": "005dbb70",
       "is_variadic": false,
-      "name": "core_tentacle.cpp_CTentacle_FUN_005dbb70"
+      "name": "core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_005dbb70"
+    },
+    {
+      "addr": "005db900",
+      "is_variadic": false,
+      "name": "core_tentacle.cpp_CTentacle_findNearbyTarget_FUN_005db900"
     },
     {
       "addr": "005e7830",
@@ -364,15 +364,23 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 77,
+      "line": 75,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar12 = (CMatrix3x4f *)((int)pCVar12 + ((uint)bVar14 * -2 + 1) * 4);",
+      "text": "pCVar11 = (CMatrix3x4f *)((int)pCVar11 + ((uint)bVar13 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 76,
+      "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
+      "text": "pCVar10 = (CMatrix3x4f *)((int)pCVar10 + ((uint)bVar13 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 86,
+      "line": 85,
       "match": "ABS",
       "severity": "mild",
       "text": "if (((ABS(fStack_48) <= (float)6) &&",
@@ -380,18 +388,26 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 103,
+      "line": 102,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar11 = (CMatrix3x4f *)((int)pCVar11 + ((uint)bVar14 * -2 + 1) * 4);",
+      "text": "pCVar10 = (CMatrix3x4f *)((int)pCVar10 + ((uint)bVar13 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 104,
+      "line": 103,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar13 = (CMatrix3x4f *)((int)pCVar13 + ((uint)bVar14 * -2 + 1) * 4);",
+      "text": "pCVar12 = (CMatrix3x4f *)((int)pCVar12 + ((uint)bVar13 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 110,
+      "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
+      "text": "pCVar10 = (CMatrix3x4f *)((int)pCVar10 + ((uint)bVar13 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
@@ -399,15 +415,15 @@
       "line": 111,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar11 = (CMatrix3x4f *)((int)pCVar11 + ((uint)bVar14 * -2 + 1) * 4);",
+      "text": "pCVar12 = (CMatrix3x4f *)((int)pCVar12 + ((uint)bVar13 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 112,
+      "line": 118,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar13 = (CMatrix3x4f *)((int)pCVar13 + ((uint)bVar14 * -2 + 1) * 4);",
+      "text": "pCVar11 = (CMatrix3x4f *)((int)pCVar11 + ((uint)bVar13 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
@@ -415,15 +431,15 @@
       "line": 119,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar12 = (CMatrix3x4f *)((int)pCVar12 + ((uint)bVar14 * -2 + 1) * 4);",
+      "text": "pCVar10 = (CMatrix3x4f *)((int)pCVar10 + (uint)bVar13 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 120,
+      "line": 125,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar11 = (CMatrix3x4f *)((int)pCVar11 + (uint)bVar14 * -8 + 4);",
+      "text": "pCVar11 = (CMatrix3x4f *)((int)pCVar11 + (uint)bVar13 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
@@ -431,20 +447,12 @@
       "line": 126,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar12 = (CMatrix3x4f *)((int)pCVar12 + (uint)bVar14 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 127,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "mild",
-      "text": "pCVar11 = (CMatrix3x4f *)((int)pCVar11 + (uint)bVar14 * -8 + 4);",
+      "text": "pCVar10 = (CMatrix3x4f *)((int)pCVar10 + (uint)bVar13 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 216,
+      "line": 217,
       "match": "SQRT",
       "severity": "mild",
       "text": "fVar2 = SQRT(fVar3 * fVar3 + fVar2 * fVar2);",
@@ -452,7 +460,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 218,
+      "line": 219,
       "match": "ABS",
       "severity": "mild",
       "text": "(ABS((this_ptr->base).base.base.location.position.y -",

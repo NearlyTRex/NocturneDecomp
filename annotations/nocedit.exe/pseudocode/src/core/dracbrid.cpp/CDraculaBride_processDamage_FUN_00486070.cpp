@@ -44,7 +44,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_processDamage_FUN_00486070(CDracula
     core_charactr_cpp_CCharacter_igniteBone_FUN_0042b5b0
               ((CCharacter *)this_ptr,&local_24,0,0.0,0x41200000,0);
   }
-  core_dracbrid_cpp_CDraculaBride_FUN_00486020(this_ptr);
+  core_dracbrid_cpp_CDraculaBride_checkHeartShot_FUN_00486020(this_ptr,damage_info);
   fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
   this_ptr_00 = &(this_ptr->base).base.model;
   (this_ptr->base).base.hit_points = fVar1;
@@ -67,7 +67,8 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_processDamage_FUN_00486070(CDracula
     }
     iVar4 = core_actor_cpp_randomChance_FUN_0040cd10(0.4);
     if (iVar4 != 0) {
-      core_dracbrid_cpp_CDraculaBride_FUN_004864c0(this_ptr);
+      core_dracbrid_cpp_CDraculaBride_startFreakySound_FUN_004864c0
+                (this_ptr,"bride-die?.wav",2.0);
       core_enemy_cpp_CEnemy_processDamage_FUN_004a9f10(&this_ptr->base,damage_info);
       return;
     }
@@ -101,7 +102,8 @@ LAB_00486225:
   }
   iVar4 = core_actor_cpp_randomChance_FUN_0040cd10(0.4);
   if (iVar4 != 0) {
-    core_dracbrid_cpp_CDraculaBride_FUN_004864c0(this_ptr);
+    core_dracbrid_cpp_CDraculaBride_startFreakySound_FUN_004864c0
+              (this_ptr,"bride-hurt?.wav",2.0);
     core_enemy_cpp_CEnemy_processDamage_FUN_004a9f10(&this_ptr->base,damage_info);
     return;
   }

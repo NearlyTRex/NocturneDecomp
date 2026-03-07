@@ -9,14 +9,14 @@
 void __cdecl core_setutil_cpp_CDemonLight_setPosition_FUN_005851a0(CDemonLight *this_ptr,CVector3i *position)
 
 {
-  CVector3i *pCVar1;
+  UVector3 *pUVar1;
   
-  pCVar1 = &(this_ptr->base).base.position;
-  if (pCVar1 == position) {
+  pUVar1 = &(this_ptr->base).base.position;
+  if ((CVector3i *)pUVar1 == position) {
     return;
   }
-  pCVar1->x = position->x;
-  (this_ptr->base).base.position.y = position->y;
-  (this_ptr->base).base.position.z = position->z;
+  (pUVar1->f).x = (float)position->x;
+  (this_ptr->base).base.position.f.y = (float)position->y;
+  (this_ptr->base).base.position.f.z = (float)position->z;
   return;
 }

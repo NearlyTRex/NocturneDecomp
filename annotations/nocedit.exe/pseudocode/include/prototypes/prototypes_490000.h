@@ -145,9 +145,9 @@ CDynamite * __cdecl core_dynamite_cpp_CDynamite_ctor_FUN_0049cdc0(CDynamite *thi
 int __cdecl core_dynamite_cpp_CDynamite_fire_FUN_0049ce70(CDynamite *this_ptr);
 float __cdecl core_dynamite_cpp_CDynamite_getDamage_FUN_0049cee0(CDynamite *this_ptr);
 void __cdecl core_dynamite_cpp_CDynamite_fireProjectile_FUN_0049cf10(CDynamite *this_ptr);
-void __cdecl core_dynamite_cpp_CDynamite_FUN_0049cf20(CDynamite *this_ptr);
-int __cdecl core_dynamite_cpp_CDynamite_FUN_0049cf70(CDynamite *this_ptr);
-int __cdecl core_dynamite_cpp_CDynamite_FUN_0049cf90(CDynamite *this_ptr);
+void __cdecl core_dynamite_cpp_CDynamite_lightFuse_FUN_0049cf20(CDynamite *this_ptr);
+int __cdecl core_dynamite_cpp_CDynamite_isFuseLit_FUN_0049cf70(CDynamite *this_ptr);
+int __cdecl core_dynamite_cpp_CDynamite_isFuseBurnedOut_FUN_0049cf90(CDynamite *this_ptr);
 void __cdecl core_dynamite_cpp_CDynamite_process_FUN_0049cfb0(CDynamite *this_ptr,float delta_time);
 CDynamite * __cdecl core_dynamite_cpp_CDynamite_dtor_FUN_0049d120(CDynamite *this_ptr,uint flags);
 void __cdecl shape_edittool_cpp_staticInit_FUN_0049d170(void);

@@ -40,7 +40,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 ;   core_course.cpp_CCourse_evaluate_FUN_00442710
-;   core_marquee.cpp_CMarquee_FUN_0050bec0
+;   core_marquee.cpp_CMarquee_renderLightBulb_FUN_0050bec0
 ;   crt_math.c_round_FUN_005fe6b0
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50
@@ -135,8 +135,8 @@ section .text
     PUSH EAX                            ; 0050c13f
     PUSH EBX                            ; 0050c140
     INC EDI                             ; 0050c141
-    CALL core_marquee.cpp_CMarquee_FUN_0050bec0 ; 0050c142
-        ;   XREF to: 0050bec0 (UNCONDITIONAL_CALL)  ; void core_marquee.cpp_CMarquee_FUN_0050bec0(CMarquee * this_ptr)
+    CALL core_marquee.cpp_CMarquee_renderLightBulb_FUN_0050bec0 ; 0050c142
+        ;   XREF to: 0050bec0 (UNCONDITIONAL_CALL)  ; void core_marquee.cpp_CMarquee_renderLightBulb_FUN_0050bec0(CMarquee * this_ptr, CVector3f * position)
     ADD ESP,0x8                         ; 0050c147
     CMP EDI,EBP                         ; 0050c14a
     JL 0x0050c0da                       ; 0050c14c
@@ -208,8 +208,8 @@ section .text
     PUSH EAX                            ; 0050c20a
     PUSH EBX                            ; 0050c20b
     INC ESI                             ; 0050c20c
-    CALL core_marquee.cpp_CMarquee_FUN_0050bec0 ; 0050c20d
-        ;   XREF to: 0050bec0 (UNCONDITIONAL_CALL)  ; void core_marquee.cpp_CMarquee_FUN_0050bec0(CMarquee * this_ptr)
+    CALL core_marquee.cpp_CMarquee_renderLightBulb_FUN_0050bec0 ; 0050c20d
+        ;   XREF to: 0050bec0 (UNCONDITIONAL_CALL)  ; void core_marquee.cpp_CMarquee_renderLightBulb_FUN_0050bec0(CMarquee * this_ptr, CVector3f * position)
     ADD ESP,0x8                         ; 0050c212
     CMP ESI,EBP                         ; 0050c215
     JGE 0x0050c14e                      ; 0050c217
@@ -286,8 +286,8 @@ section .text
         ;   Label: LAB_0050c2db
     PUSH EAX                            ; 0050c2df
     PUSH EBX                            ; 0050c2e0
-    CALL core_marquee.cpp_CMarquee_FUN_0050bec0 ; 0050c2e1
-        ;   XREF to: 0050bec0 (UNCONDITIONAL_CALL)  ; void core_marquee.cpp_CMarquee_FUN_0050bec0(CMarquee * this_ptr)
+    CALL core_marquee.cpp_CMarquee_renderLightBulb_FUN_0050bec0 ; 0050c2e1
+        ;   XREF to: 0050bec0 (UNCONDITIONAL_CALL)  ; void core_marquee.cpp_CMarquee_renderLightBulb_FUN_0050bec0(CMarquee * this_ptr, CVector3f * position)
     ADD ESP,0x8                         ; 0050c2e6
     JMP 0x0050c268                      ; 0050c2e9
         ;   XREF to: 0050c268 (UNCONDITIONAL_JUMP)  ; LAB_0050c268

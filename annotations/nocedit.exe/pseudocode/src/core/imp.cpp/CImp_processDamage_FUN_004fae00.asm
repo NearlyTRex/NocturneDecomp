@@ -20,7 +20,7 @@
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_004a9f10
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_004c79d0
-;   core_imp.cpp_CImp_FUN_004fab60
+;   core_imp.cpp_CImp_processDismemberment_FUN_004fab60
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
@@ -83,8 +83,8 @@ section .text
     PUSH EDI                            ; 004fae80
         ;   Label: LAB_004fae80
     PUSH ESI                            ; 004fae81
-    CALL core_imp.cpp_CImp_FUN_004fab60 ; 004fae82
-        ;   XREF to: 004fab60 (UNCONDITIONAL_CALL)  ; void core_imp.cpp_CImp_FUN_004fab60(CImp * this_ptr)
+    CALL core_imp.cpp_CImp_processDismemberment_FUN_004fab60 ; 004fae82
+        ;   XREF to: 004fab60 (UNCONDITIONAL_CALL)  ; void core_imp.cpp_CImp_processDismemberment_FUN_004fab60(CImp * this_ptr, SDamageInfo * damage_info)
     FLD float ptr [EDI + 0x4]           ; 004fae87
     ADD ESP,0x8                         ; 004fae8a
     FSUBR float ptr [ESI + 0x243c]      ; 004fae8d

@@ -23,9 +23,9 @@ CTommyGun * __cdecl CTommyGun::ctor(CTommyGun *this_ptr);
 // Address: 005ddb30
 int __cdecl CTommyGun::fire(CTommyGun *this_ptr);
 
-// Original: core_tommygun.cpp_CTommyGun_FUN_005de330
+// Original: core_tommygun.cpp_CTommyGun_getDamage_FUN_005de330
 // Address: 005de330
-float __cdecl CTommyGun(CTommyGun *this_ptr);
+float __cdecl CTommyGun::getDamage(CTommyGun *this_ptr);
 
 // Original: core_tommygun.cpp_CTommyGun_process_FUN_005de360
 // Address: 005de360

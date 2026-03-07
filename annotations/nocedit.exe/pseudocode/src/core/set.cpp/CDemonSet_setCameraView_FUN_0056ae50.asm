@@ -255,10 +255,10 @@ section .text
     MOV EAX,[0x032758e8]                ; 0056b08a | DAT_032758e8
     MOV dword ptr [ESP + 0x154],EAX     ; 0056b08f
     MOV EAX,0x32758e8                   ; 0056b096 | DAT_032758e8
-    MOV EAX,dword ptr [EAX + 0x4]       ; 0056b09b | g_CDemonCameraInstance.base.position.y
+    MOV EAX,dword ptr [EAX + 0x4]       ; 0056b09b | g_CDemonCameraInstance.base.position+4
     MOV dword ptr [ESP + 0x158],EAX     ; 0056b09e
     MOV EAX,0x32758e8                   ; 0056b0a5 | DAT_032758e8
-    MOV EAX,dword ptr [EAX + 0x8]       ; 0056b0aa | g_CDemonCameraInstance.base.position.z
+    MOV EAX,dword ptr [EAX + 0x8]       ; 0056b0aa | g_CDemonCameraInstance.base.position+8
     LEA EDX,[ESP + 0x13c]               ; 0056b0ad
     MOV dword ptr [ESP + 0x15c],EAX     ; 0056b0b4
     LEA EAX,[ESP + 0x154]               ; 0056b0bb

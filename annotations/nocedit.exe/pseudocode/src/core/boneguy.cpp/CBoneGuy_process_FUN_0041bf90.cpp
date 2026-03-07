@@ -31,6 +31,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bf90(CBoneGuy *this_ptr,f
   uint auStackY_1908 [1483];
   CQuaternion4f *quat_in;
   float fVar17;
+  SDamageInfo *damage_info;
   float fVar18;
   SDamageInfo local_1bc;
   SDamageInfo local_180;
@@ -221,7 +222,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bf90(CBoneGuy *this_ptr,f
   if (iVar10 == 0) {
     switch(iVar7) {
     case 0:
-      iVar7 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base,delta_time);
+      iVar7 = core_enemy_cpp_CEnemy_updatePatrol_FUN_004a9fd0(&this_ptr->base,delta_time);
       if (iVar7 == 0) {
         (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
         if ((this_ptr->base).victim != (CCharacter *)0x0) {
@@ -237,7 +238,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bf90(CBoneGuy *this_ptr,f
     case 1:
       (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
       if ((this_ptr->base).victim == (CCharacter *)0x0) {
-        iVar7 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base,delta_time);
+        iVar7 = core_enemy_cpp_CEnemy_updatePatrol_FUN_004a9fd0(&this_ptr->base,delta_time);
         if (iVar7 == 0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&pCVar2->motion_controller,0,1);
@@ -297,16 +298,19 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bf90(CBoneGuy *this_ptr,f
     case 2:
       core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_180);
       local_180.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
+      damage_info = &local_180;
       local_180.attacker = (CDemonActor *)this_ptr;
       local_180.wielder = (CDemonActor *)this_ptr;
+      fVar17 = 0.4;
       local_14 = local_180.damage_amount;
       pCVar13 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                           (&local_94,&g_ZeroVector.f,
                            (this_ptr->base).base.model.bone_transform.bone_world_matrices +
                            INT_00822944);
-      core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                ((CDemonActor *)this_ptr,&local_e8,pCVar13);
-      core_enemy_cpp_CEnemy_FUN_004a9880(&this_ptr->base);
+      pCVar13 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                          ((CDemonActor *)this_ptr,&local_e8,pCVar13);
+      core_enemy_cpp_CEnemy_testAttackRadius_FUN_004a9880
+                (&this_ptr->base,pCVar13,fVar17,damage_info);
       break;
     case 5:
       if (((this_ptr->base).pool_me == 0) &&
@@ -353,7 +357,8 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bf90(CBoneGuy *this_ptr,f
         local_1bc.attacker = (this_ptr->base).base.carry_hands[1].carry_actor;
         local_1bc.wielder = (CDemonActor *)this_ptr;
         local_14 = local_1bc.damage_amount;
-        core_enemy_cpp_CEnemy_FUN_004a9930(&this_ptr->base);
+        core_enemy_cpp_CEnemy_testAttackLine_FUN_004a9930
+                  (&this_ptr->base,&local_100,&local_f4,&local_1bc);
       }
     }
   }

@@ -75,12 +75,12 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_004529b0(CDemonCamer
     local_50[2] = "EFD"[2];
     local_50[3] = "EFD"[3];
     crt_fstream_cpp_ostream_write_FUN_005ffcb3(&local_130,local_50,3);
-    local_5c.x = (int)ROUND(ROUND((double)(float)(this_ptr->base).position.x *
-                                  256));
-    local_5c.y = (int)ROUND(ROUND((double)(float)(this_ptr->base).position.y *
-                                  256));
-    local_5c.z = (int)ROUND(ROUND(256 *
-                                  (double)(float)(this_ptr->base).position.z));
+    local_5c.x = (int)ROUND(ROUND((double)(this_ptr->base).position.f.x * 256)
+                           );
+    local_5c.y = (int)ROUND(ROUND((double)(this_ptr->base).position.f.y * 256)
+                           );
+    local_5c.z = (int)ROUND(ROUND(256 * (double)(this_ptr->base).position.f.z)
+                           );
     support_codec_cpp_CLZWCompress_ctor_FUN_0043f2d0(&local_94,0x10000,6);
     support_codec_cpp_CLZWCompress_init_FUN_0043f320(&local_94);
     local_18 = 0;

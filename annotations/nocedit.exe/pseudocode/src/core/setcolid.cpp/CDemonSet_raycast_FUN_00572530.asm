@@ -26,10 +26,10 @@
 ;   core_gabriela.cpp_CGabriella_processAI_FUN_004d4190 at 004d4651
 ;   core_gabriela.cpp_CGabriella_scoreTargetVisibility_FUN_004d6260 at 004d64c4
 ;   core_gun.cpp_CGun_fire_FUN_004f0350 at 004f050e
-;   core_lightgun.cpp_CLightGun_FUN_00505b70 at 00505c07
+;   core_lightgun.cpp_CLightGun_canSeeTarget_FUN_00505b70 at 00505c07
 ;   core_lightgun.cpp_CLightGun_fire_FUN_00505c70 at 0050606b
 ;   core_msnedit.cpp_CDemonMission_editGore_FUN_0053e220 at 0053e7d1
-;   core_scat.cpp_CScat_FUN_00558cf0 at 00558f54
+;   core_scat.cpp_CScat_scoreAimTarget_FUN_00558cf0 at 00558f54
 ;   ... and 5 more
 ;
 ; Referenced Globals:

@@ -29,6 +29,6 @@ void __cdecl core_bat_cpp_CBat_processInEditor_FUN_00414f00(CBat *this_ptr)
   if (iVar1 != 0) {
     this_ptr->param = this_ptr->param - local_10;
   }
-  core_bat_cpp_CBat_FUN_00414ce0(this_ptr);
+  core_bat_cpp_CBat_updateCoursePosition_FUN_00414ce0(this_ptr);
   return;
 }

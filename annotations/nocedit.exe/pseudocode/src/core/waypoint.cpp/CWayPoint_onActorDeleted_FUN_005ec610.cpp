@@ -9,13 +9,14 @@
 void __cdecl core_waypoint_cpp_CWayPoint_onActorDeleted_FUN_005ec610(CWayPoint *this_ptr,CDemonActor *deleted_actor)
 
 {
-  CDemonActor *pCVar1;
+  CWayPoint *target;
   
-  pCVar1 = (CWayPoint *)core_actor_cpp_castToClassHash_FUN_0040c790(deleted_actor,g_CWayPointClassInfo.name_hash)
+  target = (CWayPoint *)
+           core_actor_cpp_castToClassHash_FUN_0040c790(deleted_actor,g_CWayPointClassInfo.name_hash)
   ;
-  if (pCVar1 == (CDemonActor *)0x0) {
+  if (target == (CWayPoint *)0x0) {
     return;
   }
-  core_waypoint_cpp_CWayPoint_FUN_005ec640(this_ptr);
+  core_waypoint_cpp_CWayPoint_removeAllAdjTo_FUN_005ec640(this_ptr,target);
   return;
 }

@@ -8,15 +8,15 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[14]:
-;   core_batcreat.cpp_CBatCreature_FUN_00415dd0 at 00415f25
+;   core_batcreat.cpp_CBatCreature_processDismemberment_FUN_00415dd0 at 00415f25
 ;   core_batman.cpp_CBatman_FUN_00417660 at 00417732
 ;   core_bride.cpp_CBride_FUN_00424600 at 004246c2
 ;   core_charactr.cpp_CCharacter_detachBodyPart_FUN_0042bcc0 at 0042bcfe
 ;   core_cow.cpp_CZombieCow_FUN_004448c0 at 00444969
-;   core_dracbrid.cpp_CDraculaBride_FUN_00485b20 at 00485b5d
-;   core_gargoyle.cpp_CGargoyle_FUN_004e5530 at 004e55f2
-;   core_ghoul.cpp_CGhoul_FUN_004e8520 at 004e85ed
-;   core_imp.cpp_CImp_FUN_004fab60 at 004fac32
+;   core_dracbrid.cpp_CDraculaBride_dismemberPart_FUN_00485b20 at 00485b5d
+;   core_gargoyle.cpp_CGargoyle_processDismemberment_FUN_004e5530 at 004e55f2
+;   core_ghoul.cpp_CGhoul_processDismemberment_FUN_004e8520 at 004e85ed
+;   core_imp.cpp_CImp_processDismemberment_FUN_004fab60 at 004fac32
 ;   core_mobster.cpp_CMobster_FUN_00527380 at 0052748b
 ;   ... and 4 more
 ;

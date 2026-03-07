@@ -22,6 +22,7 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_0047f140(CZombieDog *this_ptr,f
   CVector3f *pCVar9;
   CPathMap *path_map;
   float fVar10;
+  SDamageInfo *damage_info;
   float fVar11;
   SDamageInfo local_e0;
   CVector3f local_a4;
@@ -79,7 +80,7 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_0047f140(CZombieDog *this_ptr,f
   if (iVar6 == 0) {
     switch(iVar4) {
     case 0:
-      iVar4 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base,delta_time);
+      iVar4 = core_enemy_cpp_CEnemy_updatePatrol_FUN_004a9fd0(&this_ptr->base,delta_time);
       pCVar1 = &(this_ptr->base).base.model;
       if (iVar4 == 0) {
         (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
@@ -121,7 +122,7 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_0047f140(CZombieDog *this_ptr,f
       pCVar3 = (this_ptr->base).victim;
       pCVar1 = &(this_ptr->base).base.model;
       if (pCVar3 == (CCharacter *)0x0) {
-        iVar4 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base,delta_time);
+        iVar4 = core_enemy_cpp_CEnemy_updatePatrol_FUN_004a9fd0(&this_ptr->base,delta_time);
         if (iVar4 == 0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&pCVar1->motion_controller,0,1);
@@ -188,14 +189,17 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_0047f140(CZombieDog *this_ptr,f
       local_e0.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
       local_e0.attacker = (CDemonActor *)this_ptr;
       local_e0.wielder = (CDemonActor *)this_ptr;
+      damage_info = &local_e0;
+      fVar10 = 0.7;
       local_14 = local_e0.damage_amount;
       pCVar9 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                          (&local_98,&g_ZeroVector.f,
                           (this_ptr->base).base.model.bone_transform.bone_world_matrices +
                           this_ptr->bone_indices[1]);
-      core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                ((CDemonActor *)this_ptr,&local_8c,pCVar9);
-      core_enemy_cpp_CEnemy_FUN_004a9880(&this_ptr->base);
+      pCVar9 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                         ((CDemonActor *)this_ptr,&local_8c,pCVar9);
+      core_enemy_cpp_CEnemy_testAttackRadius_FUN_004a9880(&this_ptr->base,pCVar9,fVar10,damage_info)
+      ;
       iVar4 = core_sound_cpp_CSound_isSoundPlaying_FUN_005b3b80(g_CSoundPtr,this_ptr->sfx_handle);
       if (iVar4 == 0) {
         uVar8 = (*((this_ptr->base).base.base.vtable._ub)->playSound)

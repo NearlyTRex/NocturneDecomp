@@ -68,7 +68,7 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00412e80(CBaron *this_ptr,float d
     return;
   }
   if ((this_ptr->base).control_type == HERO_CONTROL_AI) {
-    core_baron_cpp_CBaron_FUN_004135e0(this_ptr);
+    core_baron_cpp_CBaron_updateMountedPosition_FUN_004135e0(this_ptr);
   }
   pCVar2 = g_CGamePtr;
   (this_ptr->base).base.turn_speed = delta_time * (float)12.566370614;
@@ -85,7 +85,7 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00412e80(CBaron *this_ptr,float d
        (this_ptr->base).base.model.accumulated_root_motion.z;
   (this_ptr->base).base.model.accumulated_root_motion.x =
        (this_ptr->base).base.model.accumulated_root_motion.y;
-  core_baron_cpp_CBaron_FUN_00413a00(this_ptr,delta_time);
+  core_baron_cpp_CBaron_advanceMotion_FUN_00413a00(this_ptr,delta_time);
   if (this_ptr->summoned == 0) {
     return;
   }

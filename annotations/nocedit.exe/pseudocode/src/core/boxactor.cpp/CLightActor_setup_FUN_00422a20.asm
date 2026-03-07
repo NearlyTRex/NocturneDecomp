@@ -8,7 +8,7 @@
 ;
 ; Called Functions:
 ;   core_boxactor.cpp_CBoxActor_setup_FUN_00421830
-;   core_boxactor.cpp_CLightActor_FUN_00422d60
+;   core_boxactor.cpp_CLightActor_setupLightModel_FUN_00422d60
 ;   core_dlight.cpp_CDemonLight_init_FUN_004727c0
 ;
 ; *****************************************************************************
@@ -19,8 +19,8 @@ section .text
         ;   Label: core_boxactor.cpp_CLightActor_setup_FUN_00422a20
     MOV EBX,dword ptr [ESP + 0x8]       ; 00422a21
     PUSH EBX                            ; 00422a25
-    CALL core_boxactor.cpp_CLightActor_FUN_00422d60 ; 00422a26
-        ;   XREF to: 00422d60 (UNCONDITIONAL_CALL)  ; void core_boxactor.cpp_CLightActor_FUN_00422d60(CLightActor * this_ptr)
+    CALL core_boxactor.cpp_CLightActor_setupLightModel_FUN_00422d60 ; 00422a26
+        ;   XREF to: 00422d60 (UNCONDITIONAL_CALL)  ; void core_boxactor.cpp_CLightActor_setupLightModel_FUN_00422d60(CLightActor * this_ptr)
     ADD ESP,0x4                         ; 00422a2b
     PUSH EBX                            ; 00422a2e
     CALL core_boxactor.cpp_CBoxActor_setup_FUN_00421830 ; 00422a2f

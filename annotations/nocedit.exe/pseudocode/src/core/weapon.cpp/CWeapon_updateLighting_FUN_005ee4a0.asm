@@ -4,7 +4,10 @@
 ; void __cdecl core_weapon_cpp_CWeapon_updateLighting_FUN_005ee4a0(CWeapon *this_ptr)
 ;
 ; Parameters:
+; char             Stack[0x0]:1   local_res0
 ; CWeapon *        Stack[0x4]:4   this_ptr
+; Local Variables:
+; CVector3f        Stack[-0x20]:12  local_20
 ;
 ; Referenced Globals:
 ;   float FLOAT_00657b21 = 0.3490658
@@ -13,9 +16,9 @@
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CDemonLight g_CDemonLightInstance
-;   undefined4 g_CDemonLightInstance.base.base.position.x
-;   undefined4 g_CDemonLightInstance.base.base.position.y
-;   undefined4 g_CDemonLightInstance.base.base.position.z
+;   undefined4 g_CDemonLightInstance.base.base.position
+;   undefined4 g_CDemonLightInstance.base.base.position+4
+;   undefined4 g_CDemonLightInstance.base.base.position+8
 ;   undefined4 DAT_02d7eb00
 ;   undefined4 g_CDemonLightInstance.base.base.focal_length
 ;   undefined4 g_CDemonLightInstance.base.max_distance
@@ -48,6 +51,7 @@ section .text
     MOV EAX,dword ptr [EBX + 0x154]     ; 005ee4ad
     PUSH EBX                            ; 005ee4b3
     CALL dword ptr [EAX + 0xf4]         ; 005ee4b4
+        ;   Label: prt_5ee4b4_b76712a0
     ADD ESP,0x8                         ; 005ee4ba
     PUSH EAX                            ; 005ee4bd
     LEA EAX,[ESP + 0x1c]                ; 005ee4be
@@ -60,15 +64,15 @@ section .text
     ADD ESP,0xc                         ; 005ee4d2
     MOV dword ptr [0x02d807a4],EDX      ; 005ee4d5 | g_CDemonLightInstance.light_enabled_flag
     MOV dword ptr [0x02d807ac],EDX      ; 005ee4db | g_CDemonLightInstance.volumetric_enabled
-    CMP EAX,0x2d7eaf4                   ; 005ee4e1 | g_CDemonLightInstance.base.base.position.x
+    CMP EAX,0x2d7eaf4                   ; 005ee4e1 | g_CDemonLightInstance.base.base.position
     JZ 0x005ee503                       ; 005ee4e6
         ;   XREF to: 005ee503 (CONDITIONAL_JUMP)  ; LAB_005ee503
     MOV EAX,dword ptr [ESP + 0x18]      ; 005ee4e8
-    MOV [0x02d7eaf4],EAX                ; 005ee4ec | g_CDemonLightInstance.base.base.position.x
+    MOV [0x02d7eaf4],EAX                ; 005ee4ec | g_CDemonLightInstance.base.base.position
     MOV EAX,dword ptr [ESP + 0x1c]      ; 005ee4f1
-    MOV [0x02d7eaf8],EAX                ; 005ee4f5 | g_CDemonLightInstance.base.base.position.y
+    MOV [0x02d7eaf8],EAX                ; 005ee4f5 | g_CDemonLightInstance.base.base.position+4
     MOV EAX,dword ptr [ESP + 0x20]      ; 005ee4fa
-    MOV [0x02d7eafc],EAX                ; 005ee4fe | g_CDemonLightInstance.base.base.position.z
+    MOV [0x02d7eafc],EAX                ; 005ee4fe | g_CDemonLightInstance.base.base.position+8
     LEA EDX,[EBX + 0x30]                ; 005ee503
         ;   Label: LAB_005ee503
     MOV EAX,dword ptr [EDX]             ; 005ee506

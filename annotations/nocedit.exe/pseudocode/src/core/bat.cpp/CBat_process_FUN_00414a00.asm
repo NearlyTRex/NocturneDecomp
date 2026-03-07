@@ -28,7 +28,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10
-;   core_bat.cpp_CBat_FUN_00414ce0
+;   core_bat.cpp_CBat_updateCoursePosition_FUN_00414ce0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
 ;   sound_sndmain.cpp_isWithinListenerRadius_FUN_005aa290
@@ -59,8 +59,8 @@ section .text
     FADD float ptr [EBX + 0x304]        ; 00414a32
     PUSH EBX                            ; 00414a38
     FSTP float ptr [EBX + 0x304]        ; 00414a39
-    CALL core_bat.cpp_CBat_FUN_00414ce0 ; 00414a3f
-        ;   XREF to: 00414ce0 (UNCONDITIONAL_CALL)  ; void core_bat.cpp_CBat_FUN_00414ce0(CBat * this_ptr)
+    CALL core_bat.cpp_CBat_updateCoursePosition_FUN_00414ce0 ; 00414a3f
+        ;   XREF to: 00414ce0 (UNCONDITIONAL_CALL)  ; void core_bat.cpp_CBat_updateCoursePosition_FUN_00414ce0(CBat * this_ptr)
     ADD ESP,0x4                         ; 00414a44
     FLD float ptr [ESI]                 ; 00414a47
     FSUB float ptr [ESP + 0x10]         ; 00414a49

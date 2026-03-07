@@ -6,6 +6,7 @@
 #include "types/classes/CActorPropertyList.h"
 #include "types/classes/CBassPlayer.h"
 #include "types/classes/CBoundingBox3D.h"
+#include "types/classes/CCharacter.h"
 #include "types/classes/CComplexPolygon.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
@@ -240,10 +241,10 @@ void __cdecl core_tentacle_cpp_CTentacle_setup_FUN_005dafc0(CTentacle *this_ptr)
 void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_ptr,float delta_time);
 int __cdecl core_tentacle_cpp_CTentacle_renderOpaque_FUN_005db840(CTentacle *this_ptr);
 void __cdecl core_tentacle_cpp_CTentacle_archive_FUN_005db880(CTentacle *this_ptr);
-int __cdecl core_tentacle_cpp_CTentacle_FUN_005db900(CTentacle *this_ptr);
-int __cdecl core_tentacle_cpp_CTentacle_FUN_005db9d0(CTentacle *this_ptr);
+int __cdecl core_tentacle_cpp_CTentacle_findNearbyTarget_FUN_005db900(CTentacle *this_ptr,char *class_name);
+int __cdecl core_tentacle_cpp_CTentacle_updateGrabbedVictim_FUN_005db9d0(CTentacle *this_ptr,CCharacter *character);
 int __cdecl core_tentacle_cpp_CTentacle_shouldIgnoreForTargeting_FUN_005dbb30(CTentacle *this_ptr);
-void __cdecl core_tentacle_cpp_CTentacle_FUN_005dbb70(CTentacle *this_ptr);
+CMatrix3x4f * __stack_esi core_tentacle_cpp_CTentacle_computeGripBoneMatrix_FUN_005dbb70 (CTentacle *this_ptr,CMatrix3x4f *out_matrix);
 void __cdecl core_tentacle_cpp_CTentacle_getPropertyList_FUN_005dbc60(CTentacle *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_tentacle_cpp_CTentacle_addFilesToExtract_FUN_005dbcc0(CTentacle *this_ptr,_FILE *file_handle);
 CTentacle * __cdecl core_tentacle_cpp_CTentacle_dtor_FUN_005dbcf0(CTentacle *this_ptr,uint flags);
@@ -288,7 +289,7 @@ CTommyGun * __cdecl core_tommygun_cpp_factoryFunc_FUN_005dda50(void);
 CDemonActorType * __cdecl core_tommygun_cpp_CTommyGun_getActorType_FUN_005dda80(CTommyGun *this_ptr);
 CTommyGun * __cdecl core_tommygun_cpp_CTommyGun_ctor_FUN_005dda90(CTommyGun *this_ptr);
 int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_005ddb30(CTommyGun *this_ptr);
-float __cdecl core_tommygun_cpp_CTommyGun_FUN_005de330(CTommyGun *this_ptr);
+float __cdecl core_tommygun_cpp_CTommyGun_getDamage_FUN_005de330(CTommyGun *this_ptr);
 void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_005de360(CTommyGun *this_ptr,float delta_time);
 void __cdecl core_tommygun_cpp_CTommyGun_setWeaponState_FUN_005de5a0(CTommyGun *this_ptr);
 CTommyGun * __cdecl core_tommygun_cpp_CTommyGun_dtor_FUN_005de5d0(CTommyGun *this_ptr,uint flags);

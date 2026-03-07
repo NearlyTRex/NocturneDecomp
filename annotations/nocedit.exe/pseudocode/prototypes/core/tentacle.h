@@ -35,21 +35,21 @@ int __cdecl CTentacle::renderOpaque(CTentacle *this_ptr);
 // Address: 005db880
 void __cdecl CTentacle::archive(CTentacle *this_ptr);
 
-// Original: core_tentacle.cpp_CTentacle_FUN_005db900
+// Original: core_tentacle.cpp_CTentacle_findNearbyTarget_FUN_005db900
 // Address: 005db900
-int __cdecl CTentacle(CTentacle *this_ptr);
+int __cdecl CTentacle::findNearbyTarget(CTentacle *this_ptr,char *class_name);
 
-// Original: core_tentacle.cpp_CTentacle_FUN_005db9d0
+// Original: core_tentacle.cpp_CTentacle_updateGrabbedVictim_FUN_005db9d0
 // Address: 005db9d0
-int __cdecl CTentacle(CTentacle *this_ptr);
+int __cdecl CTentacle::updateGrabbedVictim(CTentacle *this_ptr,CCharacter *character);
 
 // Original: core_tentacle.cpp_CTentacle_shouldIgnoreForTargeting_FUN_005dbb30
 // Address: 005dbb30
 int __cdecl CTentacle::shouldIgnoreForTargeting(CTentacle *this_ptr);
 
-// Original: core_tentacle.cpp_CTentacle_FUN_005dbb70
+// Original: core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_005dbb70
 // Address: 005dbb70
-void __cdecl CTentacle(CTentacle *this_ptr);
+CMatrix3x4f * __stack_esi CTentacle::computeGripBoneMatrix(CTentacle *this_ptr,CMatrix3x4f *out_matrix);
 
 // Original: core_tentacle.cpp_CTentacle_getPropertyList_FUN_005dbc60
 // Address: 005dbc60

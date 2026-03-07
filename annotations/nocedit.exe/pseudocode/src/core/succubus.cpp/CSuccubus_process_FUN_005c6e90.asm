@@ -60,7 +60,7 @@
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_0042ca70
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_004286e0
 ;   core_cloth.cpp_CClothList_process_FUN_0043c2d0
-;   core_enemy.cpp_CEnemy_FUN_004a9fd0
+;   core_enemy.cpp_CEnemy_updatePatrol_FUN_004a9fd0
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 ;   core_hotdemon.cpp_CHotDemon_ctor_FUN_004f6ca0
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_00523b70
@@ -540,8 +540,8 @@ section .text
     PUSH dword ptr [EBP + 0x18]         ; 005c7391
         ;   Label: LAB_005c7391
     PUSH EBX                            ; 005c7394
-    CALL core_enemy.cpp_CEnemy_FUN_004a9fd0 ; 005c7395
-        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9fd0(CEnemy * this_ptr, float delta_time)
+    CALL core_enemy.cpp_CEnemy_updatePatrol_FUN_004a9fd0 ; 005c7395
+        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_updatePatrol_FUN_004a9fd0(CEnemy * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 005c739a
     TEST EAX,EAX                        ; 005c739d
     JZ 0x005c6fd0                       ; 005c739f
@@ -566,8 +566,8 @@ section .text
         ;   XREF to: 005c740d (CONDITIONAL_JUMP)  ; LAB_005c740d
     PUSH dword ptr [EBP + 0x18]         ; 005c73d4
     PUSH EBX                            ; 005c73d7
-    CALL core_enemy.cpp_CEnemy_FUN_004a9fd0 ; 005c73d8
-        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9fd0(CEnemy * this_ptr, float delta_time)
+    CALL core_enemy.cpp_CEnemy_updatePatrol_FUN_004a9fd0 ; 005c73d8
+        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_updatePatrol_FUN_004a9fd0(CEnemy * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 005c73dd
     LEA ESI,[EBX + 0x158]               ; 005c73e0
     TEST EAX,EAX                        ; 005c73e6

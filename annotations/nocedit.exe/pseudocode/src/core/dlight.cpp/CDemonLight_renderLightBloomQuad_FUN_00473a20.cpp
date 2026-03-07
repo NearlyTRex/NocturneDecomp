@@ -11,7 +11,7 @@
 void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20(CDemonLight *this_ptr)
 
 {
-  CVector3i *world_position;
+  UVector3 *world_position;
   longlong lVar1;
   float fVar2;
   CDemonRenderer *this_ptr_00;
@@ -56,7 +56,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20(CDemo
   }
   world_position = &(this_ptr->base).base.position;
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-            (g_CDemonRendererPtr2,(CVector3f *)world_position);
+            (g_CDemonRendererPtr2,&world_position->f);
   engine_drender_cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800
             (g_CDemonRendererPtr2,(float *)&local_34);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
@@ -72,9 +72,9 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20(CDemo
   local_14 = local_60[1];
   local_6c = (float)local_60[0] * local_68;
   local_68 = (float)local_60[1] * local_68;
-  local_a0 = (float)world_position->x - local_70;
-  local_9c = (float)(this_ptr->base).base.position.y - local_6c;
-  local_98 = (float)(this_ptr->base).base.position.z - local_68;
+  local_a0 = (world_position->f).x - local_70;
+  local_9c = (this_ptr->base).base.position.f.y - local_6c;
+  local_98 = (this_ptr->base).base.position.f.z - local_68;
   if (&local_58 != &local_a0) {
     local_58 = local_a0;
     local_54 = local_9c;

@@ -12,7 +12,7 @@
 ;
 ; XREF[79]:
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210 at 0040a5e1
-;   core_ammobox.cpp_CAmmoBox_FUN_00411690 at 004116b5
+;   core_ammobox.cpp_CAmmoBox_openBox_FUN_00411690 at 004116b5
 ;   core_baron.cpp_CBaron_process_FUN_00412e80 at 0041321d
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00415470 at 004156c1
 ;   core_batman.cpp_CBatman_FUN_00417660 at 00417938

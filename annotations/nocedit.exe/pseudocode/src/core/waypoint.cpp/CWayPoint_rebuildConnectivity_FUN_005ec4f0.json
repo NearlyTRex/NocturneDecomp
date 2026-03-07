@@ -1,0 +1,216 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 103,
+    "complexity_score": 62,
+    "cross_reference_count": 2,
+    "function_call_count": 5,
+    "global_count": 7,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 47,
+    "suspect_count": 1,
+    "suspect_types": [
+      "param_count_too_few"
+    ],
+    "total_lines": 150
+  },
+  "cross_references": [
+    {
+      "addr": "0053d7b0",
+      "from_addr": "0053d854",
+      "name": "core_msnedit.cpp_CDemonMission_rebuildWaypointConnectivity_FUN_0053d7b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005ec5e0",
+      "from_addr": "005ec5e6",
+      "name": "core_waypoint.cpp_CWayPoint_processInEditor_FUN_005ec5e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005ec4f0",
+    "address_range": [
+      [
+        "005ec4f0",
+        "005ec5d6"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_waypoint.cpp_CWayPoint_rebuildConnectivity_FUN_005ec4f0",
+    "signature": "void __cdecl core_waypoint_cpp_CWayPoint_rebuildConnectivity_FUN_005ec4f0(CWayPoint *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00523e60",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_buildSetActorList_FUN_00523e60"
+    },
+    {
+      "addr": "005ec700",
+      "is_variadic": false,
+      "name": "core_waypoint.cpp_CWayPoint_addAdj_FUN_005ec700"
+    },
+    {
+      "addr": "005ec830",
+      "is_variadic": false,
+      "name": "core_waypoint.cpp_CWayPoint_cleanupAdjacency_FUN_005ec830"
+    },
+    {
+      "addr": "005ebd40",
+      "is_variadic": false,
+      "name": "core_waypoint.cpp_CWayPoint_isReachable_FUN_005ebd40"
+    },
+    {
+      "addr": "005ec640",
+      "is_variadic": false,
+      "name": "core_waypoint.cpp_CWayPoint_removeAllAdjTo_FUN_005ec640"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0067d550",
+      "name": "g_CDemonMissionPtr",
+      "type": "CDemonMission*",
+      "value": "02f33740"
+    },
+    {
+      "addr": "006810c8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "03114278"
+    },
+    {
+      "addr": "02f33740",
+      "name": "g_CDemonMissionInstance",
+      "type": "CDemonMission",
+      "value": null
+    },
+    {
+      "addr": "03114278",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    },
+    {
+      "addr": "032690dc",
+      "name": "DAT_032690dc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "032690e0",
+      "name": "DAT_032690e0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "032690e4",
+      "name": "DAT_032690e4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "005ec5e6",
+        "call_type": "direct",
+        "caller": "core_waypoint.cpp_CWayPoint_processInEditor_FUN_005ec5e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 3,
+        "reg_params": [],
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0053d854",
+        "call_type": "direct",
+        "caller": "core_msnedit.cpp_CDemonMission_rebuildWaypointConnectivity_FUN_0053d7b0",
+        "estimated_params": 1,
+        "instructions_analyzed": 5,
+        "reg_params": [],
+        "stack_params": 1
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 1,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.7125,
+    "instruction_count": 80,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 7,
+      "CBRANCH": 8,
+      "COPY": 60,
+      "INT_ADD": 33,
+      "INT_AND": 51,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 50,
+      "INT_LESS": 6,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 3,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 12,
+      "INT_SLESS": 24,
+      "INT_SUB": 31,
+      "INT_XOR": 3,
+      "LOAD": 16,
+      "POPCOUNT": 24,
+      "RETURN": 1,
+      "STORE": 28
+    },
+    "pcode_op_count": 377
+  },
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWayPoint *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "call_site_count": 2,
+      "declared_params": 1,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:1 vs estimated:2",
+      "param_delta": 1,
+      "text": "Function declares 1 params but call sites push 2 (1 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

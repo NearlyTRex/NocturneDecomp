@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-
 void __cdecl core_waypoint_cpp_CWayPoint_addAdj_FUN_005ec700(CWayPoint *this_ptr)
 
 {
@@ -16,8 +14,8 @@ void __cdecl core_waypoint_cpp_CWayPoint_addAdj_FUN_005ec700(CWayPoint *this_ptr
   float fVar3;
   CWayPoint *in_stack_00000008;
   
-  core_waypoint_cpp_CWayPoint_FUN_005ec830(this_ptr);
-  core_waypoint_cpp_CWayPoint_FUN_005ec640(this_ptr);
+  core_waypoint_cpp_CWayPoint_cleanupAdjacency_FUN_005ec830(this_ptr);
+  core_waypoint_cpp_CWayPoint_removeAllAdjTo_FUN_005ec640(this_ptr,in_stack_00000008);
   if (0x3b < this_ptr->num_adjacent_waypoints) {
     g_CurrentFilename = "..\\core\\waypoint.cpp";
     g_CurrentLineNumber = 0x188;
@@ -27,9 +25,9 @@ void __cdecl core_waypoint_cpp_CWayPoint_addAdj_FUN_005ec700(CWayPoint *this_ptr
   fVar1 = (this_ptr->base).base.location.position.x -
           (in_stack_00000008->base).base.location.position.x;
   fVar3 = (this_ptr->base).base.location.position.y -
-          *(float *)((int)&(in_stack_00000008->base).base.location.position + 4);
+          (in_stack_00000008->base).base.location.position.y;
   fVar2 = (this_ptr->base).base.location.position.z -
-          *(float *)((int)&(in_stack_00000008->base).base.location.position + 8);
+          (in_stack_00000008->base).base.location.position.z;
   this_ptr->adjacency[this_ptr->num_adjacent_waypoints].distance =
        SQRT(fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1);
   this_ptr->num_adjacent_waypoints = this_ptr->num_adjacent_waypoints + 1;

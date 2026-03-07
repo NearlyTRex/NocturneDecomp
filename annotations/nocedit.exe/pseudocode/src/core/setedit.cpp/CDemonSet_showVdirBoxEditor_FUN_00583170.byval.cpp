@@ -154,9 +154,9 @@ __asm {
         mov EAX,dword ptr [EBP + 0xfffffe4a]
         mov [DAT_032758e8],EAX
         mov EAX,dword ptr [EBP + 0xfffffe4e]
-        mov [g_CDemonCameraInstance.base.position.y],EAX
+        mov [g_CDemonCameraInstance.base.position+4],EAX
         mov EAX,dword ptr [EBP + 0xfffffe52]
-        mov [g_CDemonCameraInstance.base.position.z],EAX
+        mov [g_CDemonCameraInstance.base.position+8],EAX
     LAB_005833c5:
         lea EAX,[EBP + 0xfffffe56]
         push EAX

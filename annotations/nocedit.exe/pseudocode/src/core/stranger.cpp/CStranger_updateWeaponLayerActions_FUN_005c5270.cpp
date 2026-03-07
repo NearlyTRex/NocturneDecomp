@@ -199,10 +199,10 @@ joined_r0x005c57cf:
                  core_actor_cpp_castToClassHash_FUN_0040c790
                            (&this_ptr->weapon->base,g_CDynamiteClassInfo.name_hash);
       if (((local_28 != (CDynamite *)0x0) &&
-          (iVar7 = core_dynamite_cpp_CDynamite_FUN_0049cf70(local_28), iVar7 == 0)) &&
+          (iVar7 = core_dynamite_cpp_CDynamite_isFuseLit_FUN_0049cf70(local_28), iVar7 == 0)) &&
          (local_18 = (float)(0xb / (longlong)*(int *)(local_3c + 100)),
          (float)(int)local_18 <= (this_ptr->base).base.layer_action_t)) {
-        core_dynamite_cpp_CDynamite_FUN_0049cf20(local_28);
+        core_dynamite_cpp_CDynamite_lightFuse_FUN_0049cf20(local_28);
       }
       break;
     case 7:

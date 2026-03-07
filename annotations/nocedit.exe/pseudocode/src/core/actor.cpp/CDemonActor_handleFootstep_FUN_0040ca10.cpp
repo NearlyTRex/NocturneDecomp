@@ -16,16 +16,16 @@ void __cdecl core_actor_cpp_CDemonActor_handleFootstep_FUN_0040ca10(CDemonActor 
   char *pcVar5;
   double dVar6;
   char local_8c [100];
-  int local_28;
-  int local_24;
-  int local_20;
+  float local_28;
+  float local_24;
+  float local_20;
   
-  local_28 = g_CDemonCameraInstance.base.position.x;
-  local_24 = g_CDemonCameraInstance.base.position.y;
-  local_20 = g_CDemonCameraInstance.base.position.z;
-  fVar1 = position->x - (float)g_CDemonCameraInstance.base.position.x;
-  fVar3 = position->y - (float)g_CDemonCameraInstance.base.position.y;
-  fVar2 = position->z - (float)g_CDemonCameraInstance.base.position.z;
+  local_28 = g_CDemonCameraInstance.base.position.f.x;
+  local_24 = g_CDemonCameraInstance.base.position.f.y;
+  local_20 = g_CDemonCameraInstance.base.position.f.z;
+  fVar1 = position->x - g_CDemonCameraInstance.base.position.f.x;
+  fVar3 = position->y - g_CDemonCameraInstance.base.position.f.y;
+  fVar2 = position->z - g_CDemonCameraInstance.base.position.f.z;
   if (10000.0f < fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1) {
     return;
   }

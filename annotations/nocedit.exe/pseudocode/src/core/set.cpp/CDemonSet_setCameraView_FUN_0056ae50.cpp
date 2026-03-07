@@ -245,13 +245,13 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(CDemonSet *this_p
     iVar6 = this_ptr->default_master_reverb;
   }
   core_sound_cpp_CSound_setReverbPreset_FUN_005b3cc0(g_CSoundPtr,iVar6);
-  local_30.x = (float)g_CDemonCameraInstance.base.position.x;
-  local_30.y = (float)g_CDemonCameraInstance.base.position.y;
-  local_30.z = (float)g_CDemonCameraInstance.base.position.z;
+  local_30.x = g_CDemonCameraInstance.base.position.f.x;
+  local_30.y = g_CDemonCameraInstance.base.position.f.y;
+  local_30.z = g_CDemonCameraInstance.base.position.f.z;
   if (&local_48 != &local_30) {
-    local_48.x = (float)g_CDemonCameraInstance.base.position.x;
-    local_48.y = (float)g_CDemonCameraInstance.base.position.y;
-    local_48.z = (float)g_CDemonCameraInstance.base.position.z;
+    local_48.x = g_CDemonCameraInstance.base.position.f.x;
+    local_48.y = g_CDemonCameraInstance.base.position.f.y;
+    local_48.z = g_CDemonCameraInstance.base.position.f.z;
   }
   pCVar9 = &g_CDemonCameraInstance.base.rotation_matrix;
   pfVar10 = local_d4;

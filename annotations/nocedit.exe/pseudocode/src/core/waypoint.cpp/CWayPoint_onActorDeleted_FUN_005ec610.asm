@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
-;   core_waypoint.cpp_CWayPoint_FUN_005ec640
+;   core_waypoint.cpp_CWayPoint_removeAllAdjTo_FUN_005ec640
 ;
 ; *****************************************************************************
 
@@ -35,8 +35,8 @@ section .text
     PUSH EAX                            ; 005ec62a
     MOV EBX,dword ptr [ESP + 0xc]       ; 005ec62b
     PUSH EBX                            ; 005ec62f
-    CALL core_waypoint.cpp_CWayPoint_FUN_005ec640 ; 005ec630
-        ;   XREF to: 005ec640 (UNCONDITIONAL_CALL)  ; void core_waypoint.cpp_CWayPoint_FUN_005ec640(CWayPoint * this_ptr)
+    CALL core_waypoint.cpp_CWayPoint_removeAllAdjTo_FUN_005ec640 ; 005ec630
+        ;   XREF to: 005ec640 (UNCONDITIONAL_CALL)  ; void core_waypoint.cpp_CWayPoint_removeAllAdjTo_FUN_005ec640(CWayPoint * this_ptr, CWayPoint * target)
     ADD ESP,0x8                         ; 005ec635
     POP EBX                             ; 005ec638
     RET                                 ; 005ec639

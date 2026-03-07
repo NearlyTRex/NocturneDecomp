@@ -11,16 +11,16 @@
 void __cdecl core_setutil_cpp_C3DSLight_apply_FUN_00586bf0(C3DSLight *this_ptr,CDemonLight *light)
 
 {
-  CVector3i *pCVar1;
+  UVector3 *pUVar1;
   char cVar2;
   char *pcVar3;
   char *pcVar4;
   
-  pCVar1 = &(light->base).base.position;
-  if ((CVector3f *)pCVar1 != &this_ptr->pos) {
-    pCVar1->x = (int)(this_ptr->pos).x;
-    (light->base).base.position.y = (int)(this_ptr->pos).y;
-    (light->base).base.position.z = (int)(this_ptr->pos).z;
+  pUVar1 = &(light->base).base.position;
+  if ((CVector3f *)pUVar1 != &this_ptr->pos) {
+    (pUVar1->f).x = (this_ptr->pos).x;
+    (light->base).base.position.f.y = (this_ptr->pos).y;
+    (light->base).base.position.f.z = (this_ptr->pos).z;
   }
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
             (&(light->base).base.rotation_matrix,&this_ptr->orient);

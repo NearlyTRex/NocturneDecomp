@@ -33,8 +33,8 @@
 ;   float FLOAT_00661c30 = 0.00390625
 ;   CDemonCamera g_CDemonCameraInstance
 ;   undefined4 DAT_032758e8
-;   undefined4 g_CDemonCameraInstance.base.position.y
-;   undefined4 g_CDemonCameraInstance.base.position.z
+;   undefined4 g_CDemonCameraInstance.base.position+4
+;   undefined4 g_CDemonCameraInstance.base.position+8
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0
@@ -105,10 +105,10 @@ section .text
     MOV EAX,[0x032758e8]                ; 00535cfe | DAT_032758e8
     MOV dword ptr [ESP + 0xc],EAX       ; 00535d03
     MOV EAX,0x32758e8                   ; 00535d07 | DAT_032758e8
-    MOV EAX,dword ptr [EAX + 0x4]       ; 00535d0c | g_CDemonCameraInstance.base.position.y
+    MOV EAX,dword ptr [EAX + 0x4]       ; 00535d0c | g_CDemonCameraInstance.base.position+4
     MOV dword ptr [ESP + 0x10],EAX      ; 00535d0f
     MOV EAX,0x32758e8                   ; 00535d13 | DAT_032758e8
-    MOV EAX,dword ptr [EAX + 0x8]       ; 00535d18 | g_CDemonCameraInstance.base.position.z
+    MOV EAX,dword ptr [EAX + 0x8]       ; 00535d18 | g_CDemonCameraInstance.base.position+8
     MOV dword ptr [ESP + 0x14],EAX      ; 00535d1b
     FLD float ptr [EBP]                 ; 00535d1f
     FSUB float ptr [ESP + 0xc]          ; 00535d22

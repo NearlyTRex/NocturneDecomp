@@ -3208,7 +3208,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_ammobox.cpp_CAmmoBox_FUN_00411690",
+    "name":"core_ammobox.cpp_CAmmoBox_openBox_FUN_00411690",
     "ret":"void",
     "vars":{
       "locals":[
@@ -3724,7 +3724,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_baron.cpp_CBaron_FUN_00414090",
+    "name":"core_baron.cpp_setStaggerAmount_FUN_00414090",
     "ret":"void",
     "vars":{
       "params":[
@@ -3742,7 +3742,23 @@
               }
             ]
           },
-          "type":"CBaron*"
+          "type":"CCharacter*"
+        },
+        {
+          "name":"amount",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
         }
       ]
     }
@@ -7509,7 +7525,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_boxactor.cpp_CBoxActor_FUN_00422390",
+    "name":"core_boxactor.cpp_CBoxActor_resolveRayPush_FUN_00422390",
     "ret":"void",
     "vars":{
       "locals":[
@@ -7644,7 +7660,7 @@
           "type":"CBoxActor*"
         },
         {
-          "name":"param_2",
+          "name":"ray_origin",
           "storage":{
             "offset":8,
             "size":4,
@@ -7660,7 +7676,7 @@
           "type":"CVector3f*"
         },
         {
-          "name":"param_3",
+          "name":"ray_direction",
           "storage":{
             "offset":12,
             "size":4,
@@ -7689,7 +7705,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_boxactor.cpp_CBoxActor_FUN_00422590",
+    "name":"core_boxactor.cpp_CBoxActor_constrainToExtents_FUN_00422590",
     "ret":"void",
     "vars":{
       "locals":[
@@ -31944,7 +31960,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_dynamite.cpp_CDynamite_FUN_0049cf90",
+    "name":"core_dynamite.cpp_CDynamite_isFuseBurnedOut_FUN_0049cf90",
     "ret":"int",
     "vars":{
       "params":[
@@ -43495,7 +43511,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_grave.cpp_CGrave_FUN_004ee790",
+    "name":"core_grave.cpp_CGrave_startAnimation_FUN_004ee790",
     "ret":"void",
     "vars":{
       "params":[
@@ -56549,7 +56565,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_pendulum.cpp_CPendulum_FUN_00549b90",
+    "name":"core_pendulum.cpp_CPendulum_updateSwing_FUN_00549b90",
     "ret":"void",
     "vars":{
       "locals":[
@@ -56874,6 +56890,22 @@
             ]
           },
           "type":"CPendulum*"
+        },
+        {
+          "name":"delta_time",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
         }
       ]
     }
@@ -59388,7 +59420,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_scat.cpp_CScat_FUN_00558010",
+    "name":"core_scat.cpp_CScat_isWeaponReady_FUN_00558010",
     "ret":"int",
     "vars":{
       "params":[

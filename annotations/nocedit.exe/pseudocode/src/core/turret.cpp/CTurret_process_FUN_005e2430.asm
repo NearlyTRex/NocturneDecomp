@@ -41,8 +41,8 @@
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   core_turret.cpp_CTurret_FUN_005e2d50
-;   core_turret.cpp_CTurret_FUN_005e3560
+;   core_turret.cpp_CTurret_updatePatrol_FUN_005e3560
+;   core_turret.cpp_CTurret_updateTargeting_FUN_005e2d50
 ;   core_xform.cpp_eulerToQuaternion_FUN_005f7b20
 ;   core_xform.cpp_quaternionToEulerAngles_FUN_005f7ac0
 ;   core_xform.cpp_slerpQuaternion_FUN_005f77e0
@@ -208,8 +208,8 @@ section .text
     PUSH dword ptr [EBP + 0x18]         ; 005e2622
         ;   Label: LAB_005e2622
     PUSH EBX                            ; 005e2625
-    CALL core_turret.cpp_CTurret_FUN_005e2d50 ; 005e2626
-        ;   XREF to: 005e2d50 (UNCONDITIONAL_CALL)  ; void core_turret.cpp_CTurret_FUN_005e2d50(CTurret * this_ptr)
+    CALL core_turret.cpp_CTurret_updateTargeting_FUN_005e2d50 ; 005e2626
+        ;   XREF to: 005e2d50 (UNCONDITIONAL_CALL)  ; void core_turret.cpp_CTurret_updateTargeting_FUN_005e2d50(CTurret * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 005e262b
     MOV dword ptr [EBX + 0x77c],0x0     ; 005e262e
     JMP 0x005e24da                      ; 005e2638
@@ -257,8 +257,8 @@ section .text
     PUSH dword ptr [EBP + 0x18]         ; 005e26df
         ;   Label: LAB_005e26df
     PUSH EBX                            ; 005e26e2
-    CALL core_turret.cpp_CTurret_FUN_005e3560 ; 005e26e3
-        ;   XREF to: 005e3560 (UNCONDITIONAL_CALL)  ; void core_turret.cpp_CTurret_FUN_005e3560(CTurret * this_ptr)
+    CALL core_turret.cpp_CTurret_updatePatrol_FUN_005e3560 ; 005e26e3
+        ;   XREF to: 005e3560 (UNCONDITIONAL_CALL)  ; void core_turret.cpp_CTurret_updatePatrol_FUN_005e3560(CTurret * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 005e26e8
     JMP 0x005e24da                      ; 005e26eb
         ;   XREF to: 005e24da (UNCONDITIONAL_JUMP)  ; LAB_005e24da

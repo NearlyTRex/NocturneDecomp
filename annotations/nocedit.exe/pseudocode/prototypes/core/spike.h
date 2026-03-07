@@ -43,9 +43,9 @@ void __cdecl CSpike::archive(CSpike *this_ptr);
 // Address: 005b8940
 int __cdecl CSpike::hasCollision(CSpike *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_spike.cpp_CSpike_FUN_005b8950
+// Original: core_spike.cpp_CSpike_testCollisionWithCharacters_FUN_005b8950
 // Address: 005b8950
-void __cdecl CSpike(CSpike *this_ptr);
+void __cdecl CSpike::testCollisionWithCharacters(CSpike *this_ptr);
 
 // Original: core_spike.cpp_CSpike_getPropertyList_FUN_005b8e90
 // Address: 005b8e90

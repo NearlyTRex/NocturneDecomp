@@ -57,7 +57,7 @@ int __cdecl core_marquee_cpp_CMarquee_renderTransparent_FUN_0050c050(CMarquee *t
               local_64.z = pCVar1->z;
             }
             iVar3 = iVar3 + 1;
-            core_marquee_cpp_CMarquee_FUN_0050bec0(this_ptr);
+            core_marquee_cpp_CMarquee_renderLightBulb_FUN_0050bec0(this_ptr,&local_64);
           } while (iVar3 < iVar2);
         }
       }
@@ -80,7 +80,7 @@ int __cdecl core_marquee_cpp_CMarquee_renderTransparent_FUN_0050c050(CMarquee *t
                 local_88.y = pCVar1->y;
                 local_88.z = pCVar1->z;
               }
-              core_marquee_cpp_CMarquee_FUN_0050bec0(this_ptr);
+              core_marquee_cpp_CMarquee_renderLightBulb_FUN_0050bec0(this_ptr,&local_88);
             }
             iVar3 = iVar3 + 1;
             iVar2 = iVar2 + 1;
@@ -105,7 +105,7 @@ int __cdecl core_marquee_cpp_CMarquee_renderTransparent_FUN_0050c050(CMarquee *t
             local_4c.z = pCVar1->z;
           }
           iVar3 = iVar3 + 1;
-          core_marquee_cpp_CMarquee_FUN_0050bec0(this_ptr);
+          core_marquee_cpp_CMarquee_renderLightBulb_FUN_0050bec0(this_ptr,&local_4c);
           this_ptr_00 = local_18;
         } while (iVar3 < iVar2);
       }

@@ -28,7 +28,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_processDamage_FUN_004e57d0(CGargoyle *t
   pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                      (&this_ptr_00->motion_controller);
   if (pSVar2->state_index != 5) {
-    core_gargoyle_cpp_CGargoyle_FUN_004e5530(this_ptr);
+    core_gargoyle_cpp_CGargoyle_processDismemberment_FUN_004e5530(this_ptr,damage_info);
     fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
     (this_ptr->base).base.hit_points = fVar1;
     if (0.0 < fVar1) {

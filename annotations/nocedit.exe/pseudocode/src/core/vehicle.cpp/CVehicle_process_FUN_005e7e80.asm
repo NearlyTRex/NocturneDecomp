@@ -59,7 +59,7 @@
 ;   core_setcolid.cpp_SCollisionInfo_ctor_FUN_005743c0
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 ;   core_tommygun.cpp_CTommyGun_ctor_FUN_005dda90
-;   core_vehicle.cpp_CVehicle_FUN_005e8b50
+;   core_vehicle.cpp_CVehicle_playTrackedSound_FUN_005e8b50
 ;   ... and 3 more
 ;
 ; *****************************************************************************
@@ -385,8 +385,8 @@ section .text
         ;   XREF to: 005e816d (CONDITIONAL_JUMP)  ; LAB_005e816d
     PUSH 0x656e26                       ; 005e8298 | = "model-t-horn?.wav"
     PUSH EBX                            ; 005e829d
-    CALL core_vehicle.cpp_CVehicle_FUN_005e8b50 ; 005e829e
-        ;   XREF to: 005e8b50 (UNCONDITIONAL_CALL)  ; uint core_vehicle.cpp_CVehicle_FUN_005e8b50(CVehicle * this_ptr)
+    CALL core_vehicle.cpp_CVehicle_playTrackedSound_FUN_005e8b50 ; 005e829e
+        ;   XREF to: 005e8b50 (UNCONDITIONAL_CALL)  ; uint core_vehicle.cpp_CVehicle_playTrackedSound_FUN_005e8b50(CVehicle * this_ptr, char * sound_name)
     ADD ESP,0x8                         ; 005e82a3
     MOV dword ptr [EBX + 0x1054],EAX    ; 005e82a6
     JMP 0x005e816d                      ; 005e82ac
@@ -425,8 +425,8 @@ section .text
         ;   XREF to: 005e831b (CONDITIONAL_JUMP)  ; LAB_005e831b
     PUSH 0x656eb1                       ; 005e8307 | = "ext-modelt-fast_??.wav"
     PUSH EBX                            ; 005e830c
-    CALL core_vehicle.cpp_CVehicle_FUN_005e8b50 ; 005e830d
-        ;   XREF to: 005e8b50 (UNCONDITIONAL_CALL)  ; uint core_vehicle.cpp_CVehicle_FUN_005e8b50(CVehicle * this_ptr)
+    CALL core_vehicle.cpp_CVehicle_playTrackedSound_FUN_005e8b50 ; 005e830d
+        ;   XREF to: 005e8b50 (UNCONDITIONAL_CALL)  ; uint core_vehicle.cpp_CVehicle_playTrackedSound_FUN_005e8b50(CVehicle * this_ptr, char * sound_name)
     ADD ESP,0x8                         ; 005e8312
     MOV dword ptr [EBX + 0x1058],EAX    ; 005e8315
     MOV ESI,dword ptr [EBX + 0x1058]    ; 005e831b
@@ -742,8 +742,8 @@ section .text
         ;   XREF to: 005e8346 (CONDITIONAL_JUMP)  ; LAB_005e8346
     PUSH 0x656ec8                       ; 005e86b2 | = "skid_??.wav"
     PUSH EBX                            ; 005e86b7
-    CALL core_vehicle.cpp_CVehicle_FUN_005e8b50 ; 005e86b8
-        ;   XREF to: 005e8b50 (UNCONDITIONAL_CALL)  ; uint core_vehicle.cpp_CVehicle_FUN_005e8b50(CVehicle * this_ptr)
+    CALL core_vehicle.cpp_CVehicle_playTrackedSound_FUN_005e8b50 ; 005e86b8
+        ;   XREF to: 005e8b50 (UNCONDITIONAL_CALL)  ; uint core_vehicle.cpp_CVehicle_playTrackedSound_FUN_005e8b50(CVehicle * this_ptr, char * sound_name)
     ADD ESP,0x8                         ; 005e86bd
     MOV dword ptr [EBX + 0x105c],EAX    ; 005e86c0
     MOV ESP,EBP                         ; 005e86c6

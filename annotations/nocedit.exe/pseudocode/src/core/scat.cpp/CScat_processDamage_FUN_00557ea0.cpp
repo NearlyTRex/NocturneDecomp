@@ -32,7 +32,7 @@ void __cdecl core_scat_cpp_CScat_processDamage_FUN_00557ea0(CScat *this_ptr,SDam
       core_charactr_cpp_CCharacter_processDamage_FUN_0042c3c0((CCharacter *)this_ptr,damage_info);
       return;
     }
-    iVar3 = core_scat_cpp_CScat_FUN_00558010(this_ptr);
+    iVar3 = core_scat_cpp_CScat_isWeaponReady_FUN_00558010(this_ptr);
     if (iVar3 == 0) {
       iVar3 = 0xc;
     }

@@ -78,9 +78,9 @@ LAB_0057af67:
   core_slew_cpp_CSlew_processInput_FUN_005a20b0(g_CSlewPtr);
   if (local_14 != 0) {
     if (g_CSlewPtr != (CSlew *)&g_CDemonLightInstance.base.base.position) {
-      g_CDemonLightInstance.base.base.position.x = (int)(g_CSlewPtr->position).x;
-      g_CDemonLightInstance.base.base.position.z = (int)(g_CSlewPtr->position).z;
-      g_CDemonLightInstance.base.base.position.y = (int)(g_CSlewPtr->position).y;
+      g_CDemonLightInstance.base.base.position.f.x = (g_CSlewPtr->position).x;
+      g_CDemonLightInstance.base.base.position.f.z = (g_CSlewPtr->position).z;
+      g_CDemonLightInstance.base.base.position.f.y = (g_CSlewPtr->position).y;
     }
     core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
               (&g_CDemonLightInstance.base.base.rotation_matrix,(CVector3f *)&g_CSlewPtr->pitch);

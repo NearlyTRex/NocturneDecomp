@@ -10,6 +10,6 @@ void __cdecl core_boxactor_cpp_CBoxActor_processInEditor_FUN_004228e0(CBoxActor 
 
 {
   core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(&this_ptr->base);
-  core_boxactor_cpp_CBoxActor_FUN_004218d0(this_ptr);
+  core_boxactor_cpp_CBoxActor_setupPhysicsBox_FUN_004218d0(this_ptr);
   return;
 }

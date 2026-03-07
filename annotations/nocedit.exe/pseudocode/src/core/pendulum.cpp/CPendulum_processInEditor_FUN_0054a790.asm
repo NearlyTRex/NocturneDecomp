@@ -8,7 +8,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_processInEditor_FUN_0040d040
-;   core_pendulum.cpp_CPendulum_FUN_00549b90
+;   core_pendulum.cpp_CPendulum_updateSwing_FUN_00549b90
 ;
 ; *****************************************************************************
 
@@ -23,8 +23,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x4]       ; 0054a79d
     PUSH 0x0                            ; 0054a7a1
     PUSH ECX                            ; 0054a7a3
-    CALL core_pendulum.cpp_CPendulum_FUN_00549b90 ; 0054a7a4
-        ;   XREF to: 00549b90 (UNCONDITIONAL_CALL)  ; void core_pendulum.cpp_CPendulum_FUN_00549b90(CPendulum * this_ptr)
+    CALL core_pendulum.cpp_CPendulum_updateSwing_FUN_00549b90 ; 0054a7a4
+        ;   XREF to: 00549b90 (UNCONDITIONAL_CALL)  ; void core_pendulum.cpp_CPendulum_updateSwing_FUN_00549b90(CPendulum * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0054a7a9
     RET                                 ; 0054a7ac
 

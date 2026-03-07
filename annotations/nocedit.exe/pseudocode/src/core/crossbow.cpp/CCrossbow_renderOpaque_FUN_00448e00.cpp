@@ -24,7 +24,7 @@ int __cdecl core_crossbow_cpp_CCrossbow_renderOpaque_FUN_00448e00(CCrossbow *thi
     return 0;
   }
   render_flags = -1;
-  fStack_c = core_crossbow_cpp_CCrossbow_FUN_00449540(this_ptr);
+  fStack_c = core_crossbow_cpp_CCrossbow_getCurFrame_FUN_00449540(this_ptr);
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
             (&(this_ptr->base).model,fStack_c,render_flags);
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40((CDemonActor *)this_ptr);

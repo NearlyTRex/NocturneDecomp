@@ -11,7 +11,7 @@
 ; float            Stack[0x14]:4   end_width
 ;
 ; XREF[2]:
-;   core_baron.cpp_CBaron_FUN_004136b0 at 00413781
+;   core_baron.cpp_CBaron_performLightningAttack_FUN_004136b0 at 00413781
 ;   core_emitter.cpp_CEmitter_process_FUN_004a8070 at 004a85a6
 ;
 ; Referenced Globals:

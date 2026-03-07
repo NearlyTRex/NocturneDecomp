@@ -89,7 +89,7 @@
 ;   core_charactr.cpp_CCharacter_spawnBloodAtBone_FUN_0042b810
 ;   core_charactr.cpp_CCharacter_spawnGoreAtBone_FUN_0042b760
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_004286e0
-;   core_enemy.cpp_CEnemy_FUN_004a9fd0
+;   core_enemy.cpp_CEnemy_updatePatrol_FUN_004a9fd0
 ;   core_gore.cpp_CGore_createBloodPool_FUN_004ede30
 ;   ... and 6 more
 ;
@@ -177,8 +177,8 @@ section .text
         ;   XREF to: 00423d2b (CONDITIONAL_JUMP)  ; LAB_00423d2b
     PUSH dword ptr [EBP + 0x92]         ; 00423b5e
     PUSH EBX                            ; 00423b64
-    CALL core_enemy.cpp_CEnemy_FUN_004a9fd0 ; 00423b65
-        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9fd0(CEnemy * this_ptr, float delta_time)
+    CALL core_enemy.cpp_CEnemy_updatePatrol_FUN_004a9fd0 ; 00423b65
+        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_updatePatrol_FUN_004a9fd0(CEnemy * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00423b6a
     TEST EAX,EAX                        ; 00423b6d
     JZ 0x00423d1a                       ; 00423b6f
@@ -261,8 +261,8 @@ section .text
     PUSH dword ptr [EBP + 0x92]         ; 00423c3e
         ;   Label: LAB_00423c3e
     PUSH EBX                            ; 00423c44
-    CALL core_enemy.cpp_CEnemy_FUN_004a9fd0 ; 00423c45
-        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9fd0(CEnemy * this_ptr, float delta_time)
+    CALL core_enemy.cpp_CEnemy_updatePatrol_FUN_004a9fd0 ; 00423c45
+        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_updatePatrol_FUN_004a9fd0(CEnemy * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00423c4a
     TEST EAX,EAX                        ; 00423c4d
     JZ 0x00423c69                       ; 00423c4f

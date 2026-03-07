@@ -31,8 +31,8 @@ void __cdecl core_sound_cpp_updateListeners_FUN_005b1870(void)
   CVector3f local_c0;
   CVector3f local_b4;
   float local_a8;
-  int local_a4;
-  int local_a0;
+  float local_a4;
+  float local_a0;
   float local_9c;
   float local_98;
   float local_94;
@@ -46,8 +46,8 @@ void __cdecl core_sound_cpp_updateListeners_FUN_005b1870(void)
   CVector3f local_60;
   CVector3i local_54;
   float local_48;
-  int local_44;
-  int local_40;
+  float local_44;
+  float local_40;
   CVector3i local_3c;
   CVector3f local_30;
   int local_1c;
@@ -56,13 +56,13 @@ void __cdecl core_sound_cpp_updateListeners_FUN_005b1870(void)
   
   bVar9 = 0;
   if (g_CGamePtr->block_auto_save == 0) {
-    local_48 = (float)g_CDemonCameraInstance.base.position.x;
-    local_44 = g_CDemonCameraInstance.base.position.y;
-    local_40 = g_CDemonCameraInstance.base.position.z;
+    local_48 = g_CDemonCameraInstance.base.position.f.x;
+    local_44 = g_CDemonCameraInstance.base.position.f.y;
+    local_40 = g_CDemonCameraInstance.base.position.f.z;
     if (&local_cc != &local_48) {
-      local_cc = (float)g_CDemonCameraInstance.base.position.x;
-      local_c8 = (float)g_CDemonCameraInstance.base.position.y;
-      local_c4 = (float)g_CDemonCameraInstance.base.position.z;
+      local_cc = g_CDemonCameraInstance.base.position.f.x;
+      local_c8 = g_CDemonCameraInstance.base.position.f.y;
+      local_c4 = g_CDemonCameraInstance.base.position.f.z;
     }
     local_68 = local_c8 - g_SoundListenerPrev.y;
     local_6c = local_cc - g_SoundListenerPrev.x;
@@ -83,13 +83,13 @@ void __cdecl core_sound_cpp_updateListeners_FUN_005b1870(void)
     pfVar8 = (float *)&local_15c;
   }
   else {
-    local_a8 = (float)g_CDemonLightInstance.base.base.position.x;
-    local_a4 = g_CDemonLightInstance.base.base.position.y;
-    local_a0 = g_CDemonLightInstance.base.base.position.z;
+    local_a8 = g_CDemonLightInstance.base.base.position.f.x;
+    local_a4 = g_CDemonLightInstance.base.base.position.f.y;
+    local_a0 = g_CDemonLightInstance.base.base.position.f.z;
     if (&local_cc != &local_a8) {
-      local_cc = (float)g_CDemonLightInstance.base.base.position.x;
-      local_c8 = (float)g_CDemonLightInstance.base.base.position.y;
-      local_c4 = (float)g_CDemonLightInstance.base.base.position.z;
+      local_cc = g_CDemonLightInstance.base.base.position.f.x;
+      local_c8 = g_CDemonLightInstance.base.base.position.f.y;
+      local_c4 = g_CDemonLightInstance.base.base.position.f.z;
     }
     pCVar6 = &g_CDemonLightInstance.base.base.rotation_matrix;
     pfVar8 = local_134;

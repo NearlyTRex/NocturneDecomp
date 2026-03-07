@@ -23,9 +23,9 @@ CBoxActor * __cdecl CBoxActor::ctor(CBoxActor *this_ptr);
 // Address: 00421830
 void __cdecl CBoxActor::setup(CBoxActor *this_ptr);
 
-// Original: core_boxactor.cpp_CBoxActor_FUN_004218d0
+// Original: core_boxactor.cpp_CBoxActor_setupPhysicsBox_FUN_004218d0
 // Address: 004218d0
-void __cdecl CBoxActor(CBoxActor *this_ptr);
+void __cdecl CBoxActor::setupPhysicsBox(CBoxActor *this_ptr);
 
 // Original: core_boxactor.cpp_CBoxActor_process_FUN_004219e0
 // Address: 004219e0
@@ -55,9 +55,9 @@ int __cdecl CBoxActor::getBlockVirtualDirectorFlag(CBoxActor *this_ptr);
 // Address: 00422340
 int __cdecl CBoxActor::hasCollision(CBoxActor *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_boxactor.cpp_CBoxActor_FUN_00422390
+// Original: core_boxactor.cpp_CBoxActor_resolveRayPush_FUN_00422390
 // Address: 00422390
-void __cdecl CBoxActor(CBoxActor *this_ptr,CVector3f *param_2,CVector3f *param_3);
+void __cdecl CBoxActor::resolveRayPush(CBoxActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction);
 
 // Original: core_boxactor.cpp_CBoxActor_canPickup_FUN_004224b0
 // Address: 004224b0
@@ -83,9 +83,9 @@ int __cdecl CBoxActor::getGroundType(CBoxActor *this_ptr);
 // Address: 00422570
 void __cdecl CBoxActor::onPickup(CBoxActor *this_ptr,CDemonActor *owner);
 
-// Original: core_boxactor.cpp_CBoxActor_FUN_00422590
+// Original: core_boxactor.cpp_CBoxActor_constrainToExtents_FUN_00422590
 // Address: 00422590
-void __cdecl CBoxActor(CBoxActor *this_ptr);
+void __cdecl CBoxActor::constrainToExtents(CBoxActor *this_ptr);
 
 // Original: core_boxactor.cpp_CBoxActor_setPositionAndOrientation_FUN_00422640
 // Address: 00422640
@@ -131,9 +131,9 @@ void __cdecl CLightActor::process(CLightActor *this_ptr,float delta_time);
 // Address: 00422c80
 void __cdecl CLightActor::archive(CLightActor *this_ptr);
 
-// Original: core_boxactor.cpp_CLightActor_FUN_00422d60
+// Original: core_boxactor.cpp_CLightActor_setupLightModel_FUN_00422d60
 // Address: 00422d60
-void __cdecl CLightActor(CLightActor *this_ptr);
+void __cdecl CLightActor::setupLightModel(CLightActor *this_ptr);
 
 // Original: core_boxactor.cpp_getLightActorTypeName_FUN_0042307e
 // Address: 0042307e
@@ -167,13 +167,13 @@ void __cdecl CLightActor::getPropertyList(CLightActor *this_ptr,CActorPropertyLi
 // Address: 00423590
 int __cdecl CLightActor::initializeInEditor(CLightActor *this_ptr);
 
-// Original: core_boxactor.cpp_CLightActor_FUN_004235c0
+// Original: core_boxactor.cpp_CLightActor_setLightOrientZ_FUN_004235c0
 // Address: 004235c0
-void __cdecl CLightActor(CLightActor *this_ptr);
+void __cdecl CLightActor::setLightOrientZ(CLightActor *this_ptr,float angle);
 
-// Original: core_boxactor.cpp_CLightActor_FUN_004235d0
+// Original: core_boxactor.cpp_CLightActor_isLightPartVisible_FUN_004235d0
 // Address: 004235d0
-int __cdecl CLightActor(CLightActor *this_ptr);
+int __cdecl CLightActor::isLightPartVisible(CLightActor *this_ptr);
 
 // Original: core_boxactor.cpp_CLightActor_dtor_FUN_004235f0
 // Address: 004235f0

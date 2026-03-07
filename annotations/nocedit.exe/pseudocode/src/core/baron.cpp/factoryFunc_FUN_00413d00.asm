@@ -4,9 +4,6 @@
 ; CBaronWeapon * __cdecl core_baron_cpp_factoryFunc_FUN_00413d00(void)
 ;
 ;
-; XREF[1]:
-;   core_baron.cpp_staticInit_FUN_00412b41 at 00412b5c
-;
 ; Referenced Globals:
 ;   TerminatedCString s_core_baron_cpp_00615099
 ;

@@ -23,6 +23,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
   float fVar10;
   float min_distance;
   float fVar11;
+  SDamageInfo *pSVar12;
   float max_distance;
   SDamageInfo local_1f4;
   SDamageInfo local_1b8;
@@ -68,7 +69,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
     uVar8 = pSVar5->state_index;
     if (uVar8 < 5) {
       if (uVar8 == 0) {
-        iVar4 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base,delta_time);
+        iVar4 = core_enemy_cpp_CEnemy_updatePatrol_FUN_004a9fd0(&this_ptr->base,delta_time);
         if (iVar4 == 0) {
           (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time)
           ;
@@ -114,7 +115,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
         (this_ptr->base).base.turn_speed = fVar10 * fVar11 * delta_time;
         (*(pCVar2->_ue).updateVictim)(&this_ptr->base,delta_time);
         if ((this_ptr->base).victim == (CCharacter *)0x0) {
-          iVar4 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base,delta_time);
+          iVar4 = core_enemy_cpp_CEnemy_updatePatrol_FUN_004a9fd0(&this_ptr->base,delta_time);
           if (iVar4 == 0) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                       (&pCVar1->motion_controller,0,1);
@@ -187,16 +188,19 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
                    != 0)))) {
                 core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_140);
                 local_140.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
+                pSVar12 = &local_140;
                 local_140.attacker = (CDemonActor *)this_ptr;
                 local_140.wielder = (CDemonActor *)this_ptr;
+                fVar10 = 0.4;
                 local_14 = local_140.damage_amount;
                 pCVar6 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                                    (&local_a4,(CVector3f *)&FLOAT_00822c94,
                                     (this_ptr->base).base.model.bone_transform.bone_world_matrices +
                                     INT_00822ce0);
-                core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                          ((CDemonActor *)this_ptr,&local_68,pCVar6);
-                core_enemy_cpp_CEnemy_FUN_004a9880(&this_ptr->base);
+                pCVar6 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                                   ((CDemonActor *)this_ptr,&local_68,pCVar6);
+                core_enemy_cpp_CEnemy_testAttackRadius_FUN_004a9880
+                          (&this_ptr->base,pCVar6,fVar10,pSVar12);
               }
             }
             else if ((this_ptr->base).base.model.part_data.visibility_flags
@@ -205,14 +209,17 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
               local_1f4.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
               local_1f4.attacker = (CDemonActor *)this_ptr;
               local_1f4.wielder = (CDemonActor *)this_ptr;
+              pSVar12 = &local_1f4;
+              fVar10 = 0.4;
               local_14 = local_1f4.damage_amount;
               pCVar6 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                                  (&local_e0,(CVector3f *)&FLOAT_00822c94,
                                   (this_ptr->base).base.model.bone_transform.bone_world_matrices +
                                   INT_00822ce4);
-              core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                        ((CDemonActor *)this_ptr,&local_f8,pCVar6);
-              core_enemy_cpp_CEnemy_FUN_004a9880(&this_ptr->base);
+              pCVar6 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                                 ((CDemonActor *)this_ptr,&local_f8,pCVar6);
+              core_enemy_cpp_CEnemy_testAttackRadius_FUN_004a9880
+                        (&this_ptr->base,pCVar6,fVar10,pSVar12);
             }
           }
         }
@@ -248,14 +255,17 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
                 local_17c.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
                 local_17c.attacker = (CDemonActor *)this_ptr;
                 local_17c.wielder = (CDemonActor *)this_ptr;
+                pSVar12 = &local_17c;
+                fVar10 = 0.4;
                 local_14 = local_17c.damage_amount;
                 pCVar6 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                                    (&local_80,(CVector3f *)&FLOAT_00822c94,
                                     (this_ptr->base).base.model.bone_transform.bone_world_matrices +
                                     INT_00822ce4);
-                core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                          ((CDemonActor *)this_ptr,&local_b0,pCVar6);
-                core_enemy_cpp_CEnemy_FUN_004a9880(&this_ptr->base);
+                pCVar6 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                                   ((CDemonActor *)this_ptr,&local_b0,pCVar6);
+                core_enemy_cpp_CEnemy_testAttackRadius_FUN_004a9880
+                          (&this_ptr->base,pCVar6,fVar10,pSVar12);
               }
             }
             else {
@@ -269,14 +279,17 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
                 local_1b8.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
                 local_1b8.attacker = (CDemonActor *)this_ptr;
                 local_1b8.wielder = (CDemonActor *)this_ptr;
+                pSVar12 = &local_1b8;
+                fVar10 = 0.4;
                 local_14 = local_1b8.damage_amount;
                 pCVar6 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                                    (&local_98,(CVector3f *)&FLOAT_00822c94,
                                     (this_ptr->base).base.model.bone_transform.bone_world_matrices +
                                     INT_00822ce0);
-                core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                          ((CDemonActor *)this_ptr,&local_74,pCVar6);
-                core_enemy_cpp_CEnemy_FUN_004a9880(&this_ptr->base);
+                pCVar6 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                                   ((CDemonActor *)this_ptr,&local_74,pCVar6);
+                core_enemy_cpp_CEnemy_testAttackRadius_FUN_004a9880
+                          (&this_ptr->base,pCVar6,fVar10,pSVar12);
               }
             }
           }

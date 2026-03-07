@@ -8,7 +8,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_processInEditor_FUN_0040d040
-;   core_boxactor.cpp_CBoxActor_FUN_004218d0
+;   core_boxactor.cpp_CBoxActor_setupPhysicsBox_FUN_004218d0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
     ADD ESP,0x4                         ; 004228ea
     MOV ECX,dword ptr [ESP + 0x4]       ; 004228ed
     PUSH ECX                            ; 004228f1
-    CALL core_boxactor.cpp_CBoxActor_FUN_004218d0 ; 004228f2
-        ;   XREF to: 004218d0 (UNCONDITIONAL_CALL)  ; void core_boxactor.cpp_CBoxActor_FUN_004218d0(CBoxActor * this_ptr)
+    CALL core_boxactor.cpp_CBoxActor_setupPhysicsBox_FUN_004218d0 ; 004228f2
+        ;   XREF to: 004218d0 (UNCONDITIONAL_CALL)  ; void core_boxactor.cpp_CBoxActor_setupPhysicsBox_FUN_004218d0(CBoxActor * this_ptr)
     ADD ESP,0x4                         ; 004228f7
     RET                                 ; 004228fa
 

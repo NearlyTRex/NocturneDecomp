@@ -7,9 +7,9 @@
 // Address: 005ebd10
 void __cdecl staticInit(void);
 
-// Original: core_waypoint.cpp_CWayPoint_FUN_005ebd40
+// Original: core_waypoint.cpp_CWayPoint_isReachable_FUN_005ebd40
 // Address: 005ebd40
-int __cdecl CWayPoint(CWayPoint *this_ptr);
+int __cdecl CWayPoint::isReachable(CWayPoint *this_ptr,CLocation *from_location,int use_tight_bounds);
 
 // Original: core_waypoint.cpp_factoryFunc_FUN_005ebe30
 // Address: 005ebe30
@@ -35,17 +35,17 @@ int __cdecl CWaypoint::renderOpaque(CWayPoint *this_ptr);
 // Address: 005ec280
 void __cdecl CWayPoint::archive(CWayPoint *this_ptr);
 
-// Original: core_waypoint.cpp_CWayPoint_FUN_005ec320
+// Original: core_waypoint.cpp_CWayPoint_findNearestReachable_FUN_005ec320
 // Address: 005ec320
-int __cdecl CWayPoint(CWayPoint *this_ptr);
+CWayPoint * __cdecl CWayPoint::findNearestReachable(CWayPoint *this_ptr,CWayPoint *start_waypoint);
 
 // Original: core_waypoint.cpp_CWayPoint_getPropertyList_FUN_005ec4d0
 // Address: 005ec4d0
 void __cdecl CWayPoint::getPropertyList(CWayPoint *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_waypoint.cpp_CWayPoint_FUN_005ec4f0
+// Original: core_waypoint.cpp_CWayPoint_rebuildConnectivity_FUN_005ec4f0
 // Address: 005ec4f0
-void __cdecl CWayPoint(CWayPoint *this_ptr);
+void __cdecl CWayPoint::rebuildConnectivity(CWayPoint *this_ptr);
 
 // Original: core_waypoint.cpp_CWayPoint_processInEditor_FUN_005ec5e0
 // Address: 005ec5e0
@@ -55,9 +55,9 @@ void __cdecl CWayPoint::processInEditor(CWayPoint *this_ptr);
 // Address: 005ec610
 void __cdecl CWayPoint::onActorDeleted(CWayPoint *this_ptr,CDemonActor *deleted_actor);
 
-// Original: core_waypoint.cpp_CWayPoint_FUN_005ec640
+// Original: core_waypoint.cpp_CWayPoint_removeAllAdjTo_FUN_005ec640
 // Address: 005ec640
-void __cdecl CWayPoint(CWayPoint *this_ptr);
+void __cdecl CWayPoint::removeAllAdjTo(CWayPoint *this_ptr,CWayPoint *target);
 
 // Original: core_waypoint.cpp_CWayPoint_showEditorHelp_FUN_005ec690
 // Address: 005ec690
@@ -71,9 +71,9 @@ void __cdecl CWayPoint::addAdj(CWayPoint *this_ptr);
 // Address: 005ec7b0
 void __cdecl CWayPoint::removeAdj(CWayPoint *this_ptr,int index);
 
-// Original: core_waypoint.cpp_CWayPoint_FUN_005ec830
+// Original: core_waypoint.cpp_CWayPoint_cleanupAdjacency_FUN_005ec830
 // Address: 005ec830
-void __cdecl CWayPoint(CWayPoint *this_ptr);
+void __cdecl CWayPoint::cleanupAdjacency(CWayPoint *this_ptr);
 
 // Original: core_waypoint.cpp_CWayPoint_dtor_FUN_005ec8d0
 // Address: 005ec8d0

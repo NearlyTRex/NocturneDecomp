@@ -47,7 +47,7 @@ void __cdecl core_ghoul_cpp_CGhoul_processDamage_FUN_004e87e0(CGhoul *this_ptr,S
   if (damage_info->damage_type == DAMAGE_TYPE_BURN) {
     this_ptr->stun_timer = 4.0;
   }
-  core_ghoul_cpp_CGhoul_FUN_004e8520(this_ptr);
+  core_ghoul_cpp_CGhoul_processDismemberment_FUN_004e8520(this_ptr,damage_info);
   pCVar2 = (this_ptr->base).victim;
   if ((pCVar2 != (CCharacter *)0x0) &&
      (pCVar5 = (CGhoul *)(*(((pCVar2->base).vtable._uc)->_uc).getGrabber)(pCVar2),

@@ -3798,7 +3798,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_baron.cpp_CBaron_FUN_004136b0",
+    "name":"core_baron.cpp_CBaron_performLightningAttack_FUN_004136b0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -28540,7 +28540,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_enemy.cpp_CEnemy_FUN_004a9930",
+    "name":"core_enemy.cpp_CEnemy_testAttackLine_FUN_004a9930",
     "ret":"int",
     "vars":{
       "locals":[
@@ -28577,6 +28577,54 @@
             ]
           },
           "type":"CEnemy*"
+        },
+        {
+          "name":"start",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"end",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"damage_info",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"SDamageInfo*"
         }
       ],
       "ret_storage":{
@@ -39020,7 +39068,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_gargoyle.cpp_CGargoyle_FUN_004e5530",
+    "name":"core_gargoyle.cpp_CGargoyle_processDismemberment_FUN_004e5530",
     "ret":"void",
     "vars":{
       "locals":[
@@ -39057,6 +39105,22 @@
             ]
           },
           "type":"CGargoyle*"
+        },
+        {
+          "name":"damage_info",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"SDamageInfo*"
         }
       ]
     }
@@ -41157,7 +41221,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_haystack.cpp_CHaystack_FUN_004f1ab0",
+    "name":"core_haystack.cpp_CHaystack_checkMeleeHit_FUN_004f1ab0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -41258,6 +41322,22 @@
             ]
           },
           "type":"CHaystack*"
+        },
+        {
+          "name":"bone_index",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }
@@ -46053,7 +46133,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_marquee.cpp_CMarquee_FUN_0050bc30",
+    "name":"core_marquee.cpp_CMarquee_computeBoundingBox_FUN_0050bc30",
     "ret":"void",
     "vars":{
       "locals":[
@@ -85735,6 +85815,70 @@
             ]
           },
           "type":"undefined1"
+        },
+        {
+          "name":"unionfacet5_5ddb71",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:404103dc3782",
+                "offset":70647981815682,
+                "size":4
+              }
+            ]
+          },
+          "type":"UActorVTable*",
+          "use":65
+        },
+        {
+          "name":"unionfacet2_5de022",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:4041f25a9dbf",
+                "offset":70651983076799,
+                "size":4
+              }
+            ]
+          },
+          "type":"UActorVTable*",
+          "use":1266
+        },
+        {
+          "name":"unionfacet5_5de09e",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:4041a5fe6c9d",
+                "offset":70650701966493,
+                "size":4
+              }
+            ]
+          },
+          "type":"UActorVTable*",
+          "use":1390
+        },
+        {
+          "name":"unionfacet5_5de292",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:4041ecac074b",
+                "offset":70651887748939,
+                "size":4
+              }
+            ]
+          },
+          "type":"UActorVTable*",
+          "use":1890
         }
       ],
       "params":[
@@ -85778,7 +85922,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_tommygun.cpp_CTommyGun_FUN_005de330",
+    "name":"core_tommygun.cpp_CTommyGun_getDamage_FUN_005de330",
     "ret":"float",
     "vars":{
       "locals":[
@@ -87836,7 +87980,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_waypoint.cpp_CWayPoint_FUN_005ec830",
+    "name":"core_waypoint.cpp_CWayPoint_cleanupAdjacency_FUN_005ec830",
     "ret":"void",
     "vars":{
       "locals":[

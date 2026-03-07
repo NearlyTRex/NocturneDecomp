@@ -89,7 +89,7 @@
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_0042ca70
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_004286e0
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0
-;   core_enemy.cpp_CEnemy_FUN_004a9880
+;   core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a9880
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 ;   ... and 10 more
 ;
@@ -485,8 +485,8 @@ section .text
     ADD ESP,0xc                         ; 005a2c41
     PUSH EAX                            ; 005a2c44
     PUSH EBX                            ; 005a2c45
-    CALL core_enemy.cpp_CEnemy_FUN_004a9880 ; 005a2c46
-        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9880(CEnemy * this_ptr)
+    CALL core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a9880 ; 005a2c46
+        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a9880(CEnemy * this_ptr, CVector3f * point, float radius, SDamageInfo * damage_info)
     ADD ESP,0x10                        ; 005a2c4b
     JMP 0x005a2abb                      ; 005a2c4e
         ;   XREF to: 005a2abb (UNCONDITIONAL_JUMP)  ; caseD_5
@@ -572,8 +572,8 @@ section .text
     ADD ESP,0xc                         ; 005a2d35
     PUSH EAX                            ; 005a2d38
     PUSH EBX                            ; 005a2d39
-    CALL core_enemy.cpp_CEnemy_FUN_004a9880 ; 005a2d3a
-        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9880(CEnemy * this_ptr)
+    CALL core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a9880 ; 005a2d3a
+        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a9880(CEnemy * this_ptr, CVector3f * point, float radius, SDamageInfo * damage_info)
     ADD ESP,0x10                        ; 005a2d3f
     JMP 0x005a2abb                      ; 005a2d42
         ;   XREF to: 005a2abb (UNCONDITIONAL_JUMP)  ; caseD_5

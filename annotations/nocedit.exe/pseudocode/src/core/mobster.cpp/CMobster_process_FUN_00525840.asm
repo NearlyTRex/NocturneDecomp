@@ -633,8 +633,8 @@ section .text
     ADD ESP,0xc                         ; 00525e47
     PUSH EAX                            ; 00525e4a
     PUSH EBX                            ; 00525e4b
-    CALL core_enemy.cpp_CEnemy_FUN_004a9880 ; 00525e4c
-        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9880(CEnemy * this_ptr)
+    CALL core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a9880 ; 00525e4c
+        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a9880(CEnemy * this_ptr, CVector3f * point, float radius, SDamageInfo * damage_info)
     ADD ESP,0x10                        ; 00525e51
     PUSH 0x41700000                     ; 00525e54
         ;   Label: LAB_00525e54
@@ -676,8 +676,8 @@ section .text
     ADD ESP,0xc                         ; 00525ecc
     PUSH EAX                            ; 00525ecf
     PUSH EBX                            ; 00525ed0
-    CALL core_enemy.cpp_CEnemy_FUN_004a9880 ; 00525ed1
-        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9880(CEnemy * this_ptr)
+    CALL core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a9880 ; 00525ed1
+        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a9880(CEnemy * this_ptr, CVector3f * point, float radius, SDamageInfo * damage_info)
     ADD ESP,0x10                        ; 00525ed6
     JMP 0x00525b97                      ; 00525ed9
         ;   XREF to: 00525b97 (UNCONDITIONAL_JUMP)  ; caseD_4
@@ -955,8 +955,8 @@ section .text
     PUSH dword ptr [EBP + 0x92]         ; 00526201
         ;   Label: LAB_00526201
     PUSH EBX                            ; 00526207
-    CALL core_enemy.cpp_CEnemy_FUN_004a9fd0 ; 00526208
-        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9fd0(CEnemy * this_ptr, float delta_time)
+    CALL core_enemy.cpp_CEnemy_updatePatrol_FUN_004a9fd0 ; 00526208
+        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_updatePatrol_FUN_004a9fd0(CEnemy * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0052620d
     TEST EAX,EAX                        ; 00526210
     JZ 0x00525b97                       ; 00526212
@@ -1162,8 +1162,8 @@ section .text
     PUSH dword ptr [EBP + 0x92]         ; 0052644b
         ;   Label: LAB_0052644b
     PUSH EBX                            ; 00526451
-    CALL core_enemy.cpp_CEnemy_FUN_004a9fd0 ; 00526452
-        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9fd0(CEnemy * this_ptr, float delta_time)
+    CALL core_enemy.cpp_CEnemy_updatePatrol_FUN_004a9fd0 ; 00526452
+        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_updatePatrol_FUN_004a9fd0(CEnemy * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00526457
     TEST EAX,EAX                        ; 0052645a
     JZ 0x00526470                       ; 0052645c

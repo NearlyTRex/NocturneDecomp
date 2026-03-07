@@ -40,7 +40,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderCoronaGeometry_FUN_004736c0(CDemo
   int local_14;
   
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-            (g_CDemonRendererPtr2,(CVector3f *)&(this_ptr->base).base.position);
+            (g_CDemonRendererPtr2,&(this_ptr->base).base.position.f);
   core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
             (&(this_ptr->base).base.rotation_matrix,&local_4c);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
@@ -81,10 +81,10 @@ void __cdecl core_dlight_cpp_CDemonLight_renderCoronaGeometry_FUN_004736c0(CDemo
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(pCVar4,1);
   pfVar5 = engine_drender_cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
                      (g_CDemonRendererPtr2,local_58);
-  local_34[0].x = *pfVar5 - (float)(this_ptr->base).base.position.x;
-  local_34[0].y = pfVar5[1] - (float)(this_ptr->base).base.position.y;
+  local_34[0].x = *pfVar5 - (this_ptr->base).base.position.f.x;
+  local_34[0].y = pfVar5[1] - (this_ptr->base).base.position.f.y;
   bVar7 = false;
-  local_34[0].z = pfVar5[2] - (float)(this_ptr->base).base.position.z;
+  local_34[0].z = pfVar5[2] - (this_ptr->base).base.position.f.z;
   pCVar6 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
                      (&(this_ptr->base).base.rotation_matrix,&local_70,local_34);
   if (local_34 != pCVar6) {

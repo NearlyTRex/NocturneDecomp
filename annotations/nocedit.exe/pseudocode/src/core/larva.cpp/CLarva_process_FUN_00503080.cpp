@@ -159,7 +159,7 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
       (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
       pCVar4 = (this_ptr->base).victim;
       if (pCVar4 == (CCharacter *)0x0) {
-        iVar6 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base,delta_time);
+        iVar6 = core_enemy_cpp_CEnemy_updatePatrol_FUN_004a9fd0(&this_ptr->base,delta_time);
         if (iVar6 != 0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&this_ptr_00->motion_controller,1,1);
@@ -193,7 +193,7 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
       (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
       fVar3 = 20.0f;
       if ((this_ptr->base).victim == (CCharacter *)0x0) {
-        iVar6 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base,delta_time);
+        iVar6 = core_enemy_cpp_CEnemy_updatePatrol_FUN_004a9fd0(&this_ptr->base,delta_time);
         if (iVar6 == 0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&this_ptr_00->motion_controller,0,1);

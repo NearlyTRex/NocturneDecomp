@@ -1,0 +1,299 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 105,
+    "complexity_score": 182,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 82,
+    "suspect_count": 9,
+    "suspect_types": [
+      "decompiler_intrinsic",
+      "pointer_cast"
+    ],
+    "total_lines": 187
+  },
+  "cross_references": [
+    {
+      "addr": "0050c050",
+      "from_addr": "0050c2e1",
+      "name": "core_marquee.cpp_CMarquee_renderTransparent_FUN_0050c050",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0050bec0",
+    "address_range": [
+      [
+        "0050bec0",
+        "0050c046"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_marquee.cpp_CMarquee_renderLightBulb_FUN_0050bec0",
+    "signature": "void __cdecl core_marquee_cpp_CMarquee_renderLightBulb_FUN_0050bec0(CMarquee *this_ptr,CVector3f *position)"
+  },
+  "function_calls": [
+    {
+      "addr": "0048ae10",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10"
+    },
+    {
+      "addr": "005b5a25",
+      "is_variadic": false,
+      "name": "wincore_windll.cpp_transformPoint_FUN_005b5a25"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00661020",
+      "name": "FLOAT_00661020",
+      "type": "float",
+      "value": "256"
+    },
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr2",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "00f80000",
+      "name": "DAT_00f80000",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.901960784313726,
+    "instruction_count": 102,
+    "opcode_distribution": {
+      "BRANCH": 3,
+      "CALL": 2,
+      "CBRANCH": 3,
+      "COPY": 146,
+      "FLOAT2FLOAT": 6,
+      "FLOAT_MULT": 3,
+      "INT_ADD": 57,
+      "INT_AND": 26,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 29,
+      "INT_LESS": 5,
+      "INT_MULT": 6,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 13,
+      "INT_SUB": 25,
+      "INT_XOR": 1,
+      "INT_ZEXT": 6,
+      "LOAD": 84,
+      "POPCOUNT": 13,
+      "RETURN": 1,
+      "ROUND": 3,
+      "STORE": 46,
+      "TRUNC": 3
+    },
+    "pcode_op_count": 500
+  },
+  "stack_frame": {
+    "frame_size": 80,
+    "local_size": 72,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMarquee *"
+      },
+      {
+        "is_param": true,
+        "name": "position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 19,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_1c.x = (int)ROUND(position->x * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 20,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_1c.y = (int)ROUND(position->y * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 21,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_1c.z = (int)ROUND(position->z * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 29,
+      "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
+      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 30,
+      "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
+      "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar5 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 36,
+      "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
+      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 37,
+      "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
+      "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar5 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 43,
+      "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
+      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 44,
+      "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
+      "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar5 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    }
+  ]
+}

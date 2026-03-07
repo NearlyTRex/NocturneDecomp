@@ -1,0 +1,208 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 172,
+    "complexity_score": 100,
+    "cross_reference_count": 3,
+    "function_call_count": 2,
+    "global_count": 7,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 85,
+    "suspect_count": 1,
+    "suspect_types": [
+      "pointer_cast"
+    ],
+    "total_lines": 257
+  },
+  "cross_references": [
+    {
+      "addr": "0042ca70",
+      "from_addr": "0042cce5",
+      "name": "core_charactr.cpp_CCharacter_processWalking_FUN_0042ca70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042e050",
+      "from_addr": "0042e1cb",
+      "name": "core_charactr.cpp_CCharacter_updateWanderToWaypoint_FUN_0042e050",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f4bd0",
+      "from_addr": "004f5644",
+      "name": "core_hostage.cpp_CHostage_process_FUN_004f4bd0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005ec320",
+    "address_range": [
+      [
+        "005ec320",
+        "005ec4c1"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_waypoint.cpp_CWayPoint_findNearestReachable_FUN_005ec320",
+    "signature": "CWayPoint * __cdecl core_waypoint_cpp_CWayPoint_findNearestReachable_FUN_005ec320(CWayPoint *this_ptr,CWayPoint *start_waypoint)"
+  },
+  "function_calls": [
+    {
+      "addr": "005ebd40",
+      "is_variadic": false,
+      "name": "core_waypoint.cpp_CWayPoint_isReachable_FUN_005ebd40"
+    },
+    {
+      "addr": "005fe5e0",
+      "is_variadic": false,
+      "name": "crt_string.c_memmove_FUN_005fe5e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006810c8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "03114278"
+    },
+    {
+      "addr": "03114278",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    },
+    {
+      "addr": "032690dc",
+      "name": "DAT_032690dc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "032690e0",
+      "name": "DAT_032690e0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "032690e4",
+      "name": "DAT_032690e4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f939a4",
+      "name": "g_WaypointSearchQueue",
+      "type": "CWayPoint*[2000]",
+      "value": null
+    },
+    {
+      "addr": "03f939a8",
+      "name": "DAT_03f939a8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.2330827067669174,
+    "instruction_count": 133,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 6,
+      "BOOL_OR": 4,
+      "BRANCH": 4,
+      "CALL": 3,
+      "CBRANCH": 15,
+      "COPY": 144,
+      "FLOAT2FLOAT": 6,
+      "FLOAT_ADD": 1,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_NAN": 4,
+      "INT_ADD": 66,
+      "INT_AND": 94,
+      "INT_CARRY": 11,
+      "INT_EQUAL": 81,
+      "INT_LEFT": 8,
+      "INT_LESS": 8,
+      "INT_MULT": 4,
+      "INT_NOTEQUAL": 15,
+      "INT_OR": 10,
+      "INT_SBORROW": 9,
+      "INT_SCARRY": 16,
+      "INT_SLESS": 39,
+      "INT_SUB": 25,
+      "INT_XOR": 8,
+      "INT_ZEXT": 8,
+      "LOAD": 34,
+      "POPCOUNT": 39,
+      "RETURN": 3,
+      "STORE": 26
+    },
+    "pcode_op_count": 696
+  },
+  "stack_frame": {
+    "frame_size": 36,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWayPoint *"
+      },
+      {
+        "is_param": true,
+        "name": "start_waypoint",
+        "offset": 8,
+        "size": 4,
+        "type": "CWayPoint *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 27,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "piVar1 = (int *)((int)g_CDemonSetPtr->waypoints + iVar4);",
+      "type": "pointer_cast"
+    }
+  ]
+}

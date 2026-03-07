@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_trigger_cpp_CTrigger_acceptsDamageFrom_FUN_005e0ac0(CTrigger *this_ptr,char *damage_actor_wildcard_name)
+; int __cdecl core_trigger_cpp_CTrigger_acceptsDamageFrom_FUN_005e0ac0(CTrigger *this_ptr,CDemonActor *actor)
 ;
 ; Parameters:
 ; CTrigger *       Stack[0x4]:4   this_ptr
-; char *           Stack[0x8]:4   damage_actor_wildcard_name
+; CDemonActor *    Stack[0x8]:4   actor
 ;
 ; XREF[6]:
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210 at 0040ab09

@@ -168,15 +168,15 @@ section .text
     JZ 0x0057b081                       ; 0057af9c
         ;   XREF to: 0057b081 (CONDITIONAL_JUMP)  ; LAB_0057b081
     MOV EAX,[0x00681ab8]                ; 0057afa2 | g_CSlewPtr
-    CMP EAX,0x2d7eaf4                   ; 0057afa7 | g_CDemonLightInstance.base.base.position.x
+    CMP EAX,0x2d7eaf4                   ; 0057afa7 | g_CDemonLightInstance.base.base.position
     JZ 0x0057afc8                       ; 0057afac
         ;   XREF to: 0057afc8 (CONDITIONAL_JUMP)  ; LAB_0057afc8
     FLD float ptr [EAX]                 ; 0057afae | g_CSlewInstance
     FLD float ptr [EAX + 0x8]           ; 0057afb0 | DAT_03f48f8c
     MOV EDX,dword ptr [EAX + 0x4]       ; 0057afb3 | DAT_03f48f88
-    MOV dword ptr [0x02d7eaf8],EDX      ; 0057afb6 | g_CDemonLightInstance.base.base.position.y
-    FSTP float ptr [0x02d7eafc]         ; 0057afbc | g_CDemonLightInstance.base.base.position.z
-    FSTP float ptr [0x02d7eaf4]         ; 0057afc2 | g_CDemonLightInstance.base.base.position.x
+    MOV dword ptr [0x02d7eaf8],EDX      ; 0057afb6 | g_CDemonLightInstance.base.base.position+4
+    FSTP float ptr [0x02d7eafc]         ; 0057afbc | g_CDemonLightInstance.base.base.position+8
+    FSTP float ptr [0x02d7eaf4]         ; 0057afc2 | g_CDemonLightInstance.base.base.position
     MOV EAX,[0x00681ab8]                ; 0057afc8 | g_CSlewPtr
         ;   Label: LAB_0057afc8
     ADD EAX,0xc                         ; 0057afcd | DAT_03f48f90

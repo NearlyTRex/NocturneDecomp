@@ -9,7 +9,7 @@
 void __cdecl core_boxactor_cpp_CLightActor_process_FUN_00422a50(CLightActor *this_ptr,float delta_time)
 
 {
-  CVector3i *pCVar1;
+  UVector3 *pUVar1;
   float fVar2;
   CDemonSet *this_ptr_00;
   uint uVar3;
@@ -50,11 +50,11 @@ void __cdecl core_boxactor_cpp_CLightActor_process_FUN_00422a50(CLightActor *thi
     }
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
               ((CDemonActor *)this_ptr,&local_18,&this_ptr->blight_pos);
-    pCVar1 = &(this_ptr->light).base.base.position;
-    if ((CVector3f *)pCVar1 != &local_18) {
-      pCVar1->x = (int)local_18.x;
-      (this_ptr->light).base.base.position.y = (int)local_18.y;
-      (this_ptr->light).base.base.position.z = (int)local_18.z;
+    pUVar1 = &(this_ptr->light).base.base.position;
+    if ((CVector3f *)pUVar1 != &local_18) {
+      (pUVar1->f).x = local_18.x;
+      (this_ptr->light).base.base.position.f.y = local_18.y;
+      (this_ptr->light).base.base.position.f.z = local_18.z;
     }
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
               (&local_54,&g_ZeroVector.f,&(this_ptr->light_orient).vec);

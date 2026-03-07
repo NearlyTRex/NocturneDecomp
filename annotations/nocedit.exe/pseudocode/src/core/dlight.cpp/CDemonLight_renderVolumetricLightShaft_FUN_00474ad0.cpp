@@ -64,9 +64,9 @@ void __cdecl core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0
   if ((this_ptr->volumetric_enabled != 0) && (g_CGamePtr->halo_mode == 2)) {
     engine_drender_cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
               (g_CDemonRendererPtr2,&local_8c.x);
-    local_8c.x = local_8c.x - (float)(this_ptr->base).base.position.x;
-    local_8c.y = local_8c.y - (float)(this_ptr->base).base.position.y;
-    local_8c.z = local_8c.z - (float)(this_ptr->base).base.position.z;
+    local_8c.x = local_8c.x - (this_ptr->base).base.position.f.x;
+    local_8c.y = local_8c.y - (this_ptr->base).base.position.f.y;
+    local_8c.z = local_8c.z - (this_ptr->base).base.position.f.z;
     pCVar3 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
                        (&(this_ptr->base).base.rotation_matrix,&local_68,&local_8c);
     if (&local_8c != pCVar3) {
@@ -90,9 +90,9 @@ void __cdecl core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0
       local_80 = (float)local_5c * 0.00390625f;
       local_7c = (float)local_58[0] * 0.00390625f;
       local_78 = (float)local_58[1] * 0.00390625f;
-      local_38 = local_80 - (float)(this_ptr->base).base.position.x;
-      local_34 = local_7c - (float)(this_ptr->base).base.position.y;
-      local_30 = local_78 - (float)(this_ptr->base).base.position.z;
+      local_38 = local_80 - (this_ptr->base).base.position.f.x;
+      local_34 = local_7c - (this_ptr->base).base.position.f.y;
+      local_30 = local_78 - (this_ptr->base).base.position.f.z;
       fVar2 = SQRT(local_30 * local_30 + local_38 * local_38 + local_34 * local_34);
       if (0.0 < fVar2) {
         fVar2 = 1.0 / fVar2;
@@ -118,9 +118,9 @@ void __cdecl core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0
             local_ac = local_b8 * fVar2;
             local_b4 = (this_ptr->base).base.rotation_matrix.m[2].z;
             local_a8 = local_b4 * fVar2;
-            local_a4.x = (float)(this_ptr->base).base.position.x + local_b0;
-            local_a4.y = (float)(this_ptr->base).base.position.y + local_ac;
-            local_a4.z = (float)(this_ptr->base).base.position.z + local_a8;
+            local_a4.x = (this_ptr->base).base.position.f.x + local_b0;
+            local_a4.y = (this_ptr->base).base.position.f.y + local_ac;
+            local_a4.z = (this_ptr->base).base.position.f.z + local_a8;
             if (&local_e0 != &local_a4) {
               local_e0.x = local_a4.x;
               local_e0.y = local_a4.y;

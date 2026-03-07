@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
-;   core_waypoint.cpp_CWayPoint_FUN_005ec4f0 at 005ec5b2
+;   core_waypoint.cpp_CWayPoint_rebuildConnectivity_FUN_005ec4f0 at 005ec5b2
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_waypoint_cpp_00657634
@@ -19,8 +19,8 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   core_waypoint.cpp_CWayPoint_FUN_005ec640
-;   core_waypoint.cpp_CWayPoint_FUN_005ec830
+;   core_waypoint.cpp_CWayPoint_cleanupAdjacency_FUN_005ec830
+;   core_waypoint.cpp_CWayPoint_removeAllAdjTo_FUN_005ec640
 ;
 ; *****************************************************************************
 
@@ -33,13 +33,13 @@ section .text
     MOV EBX,dword ptr [ESP + 0x1c]      ; 005ec705
     MOV ESI,dword ptr [ESP + 0x20]      ; 005ec709
     PUSH EBX                            ; 005ec70d
-    CALL core_waypoint.cpp_CWayPoint_FUN_005ec830 ; 005ec70e
-        ;   XREF to: 005ec830 (UNCONDITIONAL_CALL)  ; void core_waypoint.cpp_CWayPoint_FUN_005ec830(CWayPoint * this_ptr)
+    CALL core_waypoint.cpp_CWayPoint_cleanupAdjacency_FUN_005ec830 ; 005ec70e
+        ;   XREF to: 005ec830 (UNCONDITIONAL_CALL)  ; void core_waypoint.cpp_CWayPoint_cleanupAdjacency_FUN_005ec830(CWayPoint * this_ptr)
     ADD ESP,0x4                         ; 005ec713
     PUSH ESI                            ; 005ec716
     PUSH EBX                            ; 005ec717
-    CALL core_waypoint.cpp_CWayPoint_FUN_005ec640 ; 005ec718
-        ;   XREF to: 005ec640 (UNCONDITIONAL_CALL)  ; void core_waypoint.cpp_CWayPoint_FUN_005ec640(CWayPoint * this_ptr)
+    CALL core_waypoint.cpp_CWayPoint_removeAllAdjTo_FUN_005ec640 ; 005ec718
+        ;   XREF to: 005ec640 (UNCONDITIONAL_CALL)  ; void core_waypoint.cpp_CWayPoint_removeAllAdjTo_FUN_005ec640(CWayPoint * this_ptr, CWayPoint * target)
     MOV EDX,dword ptr [EBX + 0x370]     ; 005ec71d
     ADD ESP,0x8                         ; 005ec723
     CMP EDX,0x3c                        ; 005ec726

@@ -9,7 +9,7 @@
 int __cdecl core_scat_cpp_CScat_renderOpaque_FUN_00557df0(CScat *this_ptr)
 
 {
-  CDemonActor *this_ptr_00;
+  CWeapon *this_ptr_00;
   int iVar1;
   int iVar2;
   float fVar3;
@@ -18,15 +18,15 @@ int __cdecl core_scat_cpp_CScat_renderOpaque_FUN_00557df0(CScat *this_ptr)
   iVar2 = 0;
   if (iVar1 != 0) {
     this_ptr_00 = this_ptr->weapon_actor;
-    if (this_ptr_00 != (CDemonActor *)0x0) {
-      (*((this_ptr_00->vtable)._ub)->renderOpaque)(this_ptr_00);
+    if (this_ptr_00 != (CWeapon *)0x0) {
+      (*((this_ptr_00->base).vtable._ub)->renderOpaque)(&this_ptr_00->base);
       iVar2 = 0;
-      if (this_ptr->weapon_actor != (CDemonActor *)0x0) {
-        switch(this_ptr->weapon_actor[2].orient.vec.x) {
+      if (this_ptr->weapon_actor != (CWeapon *)0x0) {
+        switch(this_ptr->weapon_actor->weapon_type) {
         default:
           iVar2 = 2;
           break;
-        case 1.12104e-44:
+        case 8:
           iVar2 = 0;
         }
       }

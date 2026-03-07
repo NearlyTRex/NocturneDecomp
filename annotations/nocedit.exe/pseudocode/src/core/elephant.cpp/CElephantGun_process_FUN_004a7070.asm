@@ -12,9 +12,9 @@
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CDemonLight g_CDemonLightInstance
-;   undefined4 g_CDemonLightInstance.base.base.position.x
-;   undefined4 g_CDemonLightInstance.base.base.position.y
-;   undefined4 g_CDemonLightInstance.base.base.position.z
+;   undefined4 g_CDemonLightInstance.base.base.position
+;   undefined4 g_CDemonLightInstance.base.base.position+4
+;   undefined4 g_CDemonLightInstance.base.base.position+8
 ;   undefined4 DAT_02d7eb00
 ;   undefined4 g_CDemonLightInstance.base.base.focal_length
 ;   undefined4 g_CDemonLightInstance.base.max_distance
@@ -74,15 +74,15 @@ section .text
     LEA EAX,[ESP + 0x14]                ; 004a70cf
     ADD ESP,0xc                         ; 004a70d3
     MOV dword ptr [0x02d807ac],ESI      ; 004a70d6 | g_CDemonLightInstance.volumetric_enabled
-    CMP EAX,0x2d7eaf4                   ; 004a70dc | g_CDemonLightInstance.base.base.position.x
+    CMP EAX,0x2d7eaf4                   ; 004a70dc | g_CDemonLightInstance.base.base.position
     JZ 0x004a70fe                       ; 004a70e1
         ;   XREF to: 004a70fe (CONDITIONAL_JUMP)  ; LAB_004a70fe
     MOV EAX,dword ptr [ESP + 0x8]       ; 004a70e3
-    MOV [0x02d7eaf4],EAX                ; 004a70e7 | g_CDemonLightInstance.base.base.position.x
+    MOV [0x02d7eaf4],EAX                ; 004a70e7 | g_CDemonLightInstance.base.base.position
     MOV EAX,dword ptr [ESP + 0xc]       ; 004a70ec
-    MOV [0x02d7eaf8],EAX                ; 004a70f0 | g_CDemonLightInstance.base.base.position.y
+    MOV [0x02d7eaf8],EAX                ; 004a70f0 | g_CDemonLightInstance.base.base.position+4
     MOV EAX,dword ptr [ESP + 0x10]      ; 004a70f5
-    MOV [0x02d7eafc],EAX                ; 004a70f9 | g_CDemonLightInstance.base.base.position.z
+    MOV [0x02d7eafc],EAX                ; 004a70f9 | g_CDemonLightInstance.base.base.position+8
     LEA EAX,[EBX + 0x30]                ; 004a70fe
         ;   Label: LAB_004a70fe
     PUSH EAX                            ; 004a7101

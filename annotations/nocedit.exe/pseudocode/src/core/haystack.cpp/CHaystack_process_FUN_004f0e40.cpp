@@ -49,7 +49,7 @@ void __cdecl core_haystack_cpp_CHaystack_process_FUN_004f0e40(CHaystack *this_pt
     return;
   }
   if ((this_ptr->base).control_type == HERO_CONTROL_AI) {
-    core_haystack_cpp_CHaystack_FUN_004f13f0(this_ptr);
+    core_haystack_cpp_CHaystack_updateAI_FUN_004f13f0(this_ptr,delta_time);
   }
   pCVar4 = g_CGamePtr;
   (this_ptr->base).base.turn_speed = delta_time * (float)12.566370614;
@@ -66,7 +66,7 @@ void __cdecl core_haystack_cpp_CHaystack_process_FUN_004f0e40(CHaystack *this_pt
        (this_ptr->base).base.model.accumulated_root_motion.z;
   (this_ptr->base).base.model.accumulated_root_motion.x =
        (this_ptr->base).base.model.accumulated_root_motion.y;
-  core_haystack_cpp_CHaystack_FUN_004f1970(this_ptr);
+  core_haystack_cpp_CHaystack_advanceMotion_FUN_004f1970(this_ptr,delta_time);
   iVar5 = core_charactr_cpp_CCharacter_processWalking_FUN_0042ca70
                     ((CCharacter *)this_ptr,delta_time);
   pCVar13 = &(this_ptr->base).base.model;

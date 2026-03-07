@@ -13,15 +13,15 @@ Mismatches may indicate:
 
 SUMMARY
 --------------------------------------------------
-Functions with parameter estimates: 5093
-Functions with no callers: 3234
-Parameter mismatches detected: 464
-Signature accuracy rate: 75.0%
+Functions with parameter estimates: 5092
+Functions with no callers: 3233
+Parameter mismatches detected: 453
+Signature accuracy rate: 75.6%
 
 Mismatches by confidence:
   High confidence:   17 (multiple call sites agree)
-  Medium confidence: 62 (some agreement)
-  Low confidence:    385 (limited data)
+  Medium confidence: 60 (some agreement)
+  Low confidence:    376 (limited data)
 
 ====================================================================================================
 HIGH CONFIDENCE MISMATCHES - Likely signature issues
@@ -77,6 +77,16 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       core_mobster.cpp_CMobster_FUN_ at 00526fcf: 0 reg [], 1 stack
       core_zombie.cpp_CZombie_FUN_00 at 005fb7a8: 0 reg [], 1 stack
 
+  core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a9880
+    Declared: 4 params, Estimated: 2 params (-2)
+    Call sites: 23, Confidence: high
+    File: core/enemy.cpp
+    Signature: int __cdecl core_enemy_cpp_CEnemy_testAttackRadius_FUN_004a9880(CEnemy *this_ptr,CVector3f *point,float radius,SDamageInfo *damage_info)
+    Sample call sites:
+      core_dog.cpp_CZombieDog_proces at 0047f468: 0 reg [], 2 stack
+      core_drone.cpp_CDrone_process_ at 0048f014: 0 reg [], 2 stack
+      core_drone.cpp_CDrone_process_ at 0048f07c: 0 reg [], 2 stack
+
   crt_iostream.cpp_streambuf_initBuffer_FUN_0060b815
     Declared: 4 params, Estimated: 2 params (-2)
     Call sites: 3, Confidence: high
@@ -126,16 +136,6 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       core_set.cpp_CDemonSet_renderS at 0056c081: 0 reg [], 2 stack
       core_set.cpp_CDemonSet_renderS at 0056c131: 0 reg [], 2 stack
       core_set.cpp_CDemonSet_initSce at 0056ab93: 0 reg [], 2 stack
-
-  core_enemy.cpp_CEnemy_FUN_004a9880
-    Declared: 1 params, Estimated: 2 params (+1)
-    Call sites: 23, Confidence: high
-    File: core/enemy.cpp
-    Signature: int __cdecl core_enemy_cpp_CEnemy_FUN_004a9880(CEnemy *this_ptr)
-    Sample call sites:
-      core_dog.cpp_CZombieDog_proces at 0047f468: 0 reg [], 2 stack
-      core_drone.cpp_CDrone_process_ at 0048f014: 0 reg [], 2 stack
-      core_drone.cpp_CDrone_process_ at 0048f07c: 0 reg [], 2 stack
 
   core_level.cpp_CLevelLoader_update_FUN_00504160
     Declared: 3 params, Estimated: 2 params (-1)
@@ -235,30 +235,30 @@ MEDIUM CONFIDENCE MISMATCHES
   cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAli declared:4 est:5 (+1) [2 calls]
   cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAli declared:4 est:5 (+1) [2 calls]
   cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAli declared:4 est:5 (+1) [2 calls]
-  core_ammobox.cpp_CAmmoBox_FUN_00411690             declared:2 est:1 (-1) [2 calls]
+  core_ammobox.cpp_CAmmoBox_openBox_FUN_00411690     declared:2 est:1 (-1) [2 calls]
   core_bugs.cpp_CBugs_FUN_00425fe0                   declared:1 est:2 (+1) [2 calls]
   core_charactr.cpp_CCharacter_dismember_FUN_0042b9e declared:3 est:4 (+1) [9 calls]
   core_cloth.cpp_CCloth_free_FUN_00438cb0            declared:1 est:2 (+1) [2 calls]
   core_dfilter.cpp_CDemonFilter_freeMemory_FUN_00470 declared:1 est:2 (+1) [2 calls]
   core_dimage.cpp_CDemonImage_freeMemory_FUN_00471a4 declared:1 est:2 (+1) [2 calls]
-  core_haystack.cpp_CHaystack_FUN_004f1ab0           declared:1 est:2 (+1) [2 calls]
   core_icepick.cpp_CIcePick_FUN_004f9490             declared:1 est:2 (+1) [2 calls]
   core_manpuz.cpp_CMansionPuzzleCircle_panelOccupied declared:1 est:2 (+1) [2 calls]
   core_mimic.cpp_CMimic_processMorph_FUN_00520ba0    declared:1 est:2 (+1) [2 calls]
   core_moon.cpp_CMoon_update_FUN_00529d60            declared:2 est:1 (-1) [5 calls]
   core_skeleton.cpp_CDeformableModel_selectLOD_FUN_0 declared:2 est:1 (-1) [2 calls]
-  core_turret.cpp_CTurret_FUN_005e3560               declared:1 est:2 (+1) [2 calls]
   core_weapon.cpp_CWeapon_archive_FUN_005ee250       declared:1 est:2 (+1) [2 calls]
   core_weapon.cpp_CWeapon_ctor_FUN_005ede70          declared:1 est:2 (+1) [13 calls]
   core_werewolf.cpp_CWerewolf_FUN_005f1230           declared:1 est:2 (+1) [2 calls]
+  crt_debug.c_TriggerDebuggerBreak_FUN_0060b500      declared:2 est:3 (+1) [2 calls]
+  crt_iostream.cpp_streambuf_destructor_FUN_0060d64f declared:1 est:2 (+1) [2 calls]
 
-  ... and 12 more
+  ... and 10 more
 
 ====================================================================================================
 LOW CONFIDENCE MISMATCHES (limited data)
 ====================================================================================================
 
-  385 functions with low-confidence mismatches
+  376 functions with low-confidence mismatches
   Sample:
     cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_F declared:1 est:5 (+4)
     cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_ declared:1 est:3 (+2)
@@ -275,10 +275,10 @@ LOW CONFIDENCE MISMATCHES (limited data)
 MISMATCH DIRECTION ANALYSIS
 ====================================================================================================
 
-Functions where declaration has MORE params than estimated: 83
+Functions where declaration has MORE params than estimated: 84
   (May indicate: extra params not being passed, or params in globals)
 
-Functions where declaration has FEWER params than estimated: 381
+Functions where declaration has FEWER params than estimated: 369
   (May indicate: missing params in signature, or calling convention issue)
 
 Distribution of differences (estimated - declared):
@@ -289,11 +289,11 @@ Distribution of differences (estimated - declared):
   -5 params: 2 functions
   -4 params: 3 functions
   -3 params: 8 functions
-  -2 params: 16 functions
+  -2 params: 17 functions
   -1 params: 49 functions
-  +1 params: 180 functions
-  +2 params: 75 functions
-  +3 params: 41 functions
+  +1 params: 169 functions
+  +2 params: 76 functions
+  +3 params: 39 functions
   +4 params: 74 functions
   +5 params: 4 functions
   +6 params: 2 functions

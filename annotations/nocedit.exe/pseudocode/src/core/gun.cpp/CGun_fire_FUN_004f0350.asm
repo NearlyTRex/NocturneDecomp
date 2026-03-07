@@ -499,7 +499,7 @@ section .text
     PUSH EBX                            ; 004f0a6a
     PUSH EDI                            ; 004f0a6b
     CALL core_trigger.cpp_CTrigger_acceptsDamageFrom_FUN_005e0ac0 ; 004f0a6c
-        ;   XREF to: 005e0ac0 (UNCONDITIONAL_CALL)  ; int core_trigger.cpp_CTrigger_acceptsDamageFrom_FUN_005e0ac0(CTrigger * this_ptr, char * damage_actor_wildcard_name)
+        ;   XREF to: 005e0ac0 (UNCONDITIONAL_CALL)  ; int core_trigger.cpp_CTrigger_acceptsDamageFrom_FUN_005e0ac0(CTrigger * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 004f0a71
     TEST EAX,EAX                        ; 004f0a74
     JZ 0x004f0aa5                       ; 004f0a76

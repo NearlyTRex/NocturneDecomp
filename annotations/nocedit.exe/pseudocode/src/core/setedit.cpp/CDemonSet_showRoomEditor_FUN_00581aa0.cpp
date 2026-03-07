@@ -113,9 +113,9 @@ void __cdecl core_setedit_cpp_CDemonSet_showRoomEditor_FUN_00581aa0(CDemonSet *t
     }
     local_f0 = 28.0;
     if (&stack0x00000000 != g_CDemonCameraInstance.camera_name + 0xcc) {
-      g_CDemonCameraInstance.base.position.x = local_108._0_4_;
-      g_CDemonCameraInstance.base.position.y = local_108._4_4_;
-      g_CDemonCameraInstance.base.position.z = local_108._8_4_;
+      g_CDemonCameraInstance.base.position.f.x = (float)local_108._0_4_;
+      g_CDemonCameraInstance.base.position.f.y = (float)local_108._4_4_;
+      g_CDemonCameraInstance.base.position.f.z = (float)local_108._8_4_;
     }
     core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
               (&g_CDemonCameraInstance.base.rotation_matrix,(CVector3f *)(local_108 + 0xc));

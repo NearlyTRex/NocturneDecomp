@@ -6,12 +6,12 @@
   },
   "complexity": {
     "assembly_lines": 952,
-    "complexity_score": 528,
+    "complexity_score": 533,
     "cross_reference_count": 0,
     "function_call_count": 37,
     "global_count": 26,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 438,
+    "pseudocode_lines": 443,
     "suspect_count": 7,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -19,7 +19,7 @@
       "stack_alignment_array",
       "warning_type_propagation"
     ],
-    "total_lines": 1390
+    "total_lines": 1395
   },
   "cross_references": [],
   "function": {
@@ -112,19 +112,19 @@
       "name": "core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0"
     },
     {
-      "addr": "004a9880",
-      "is_variadic": false,
-      "name": "core_enemy.cpp_CEnemy_FUN_004a9880"
-    },
-    {
       "addr": "004a9930",
       "is_variadic": false,
-      "name": "core_enemy.cpp_CEnemy_FUN_004a9930"
+      "name": "core_enemy.cpp_CEnemy_testAttackLine_FUN_004a9930"
+    },
+    {
+      "addr": "004a9880",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a9880"
     },
     {
       "addr": "004a9fd0",
       "is_variadic": false,
-      "name": "core_enemy.cpp_CEnemy_FUN_004a9fd0"
+      "name": "core_enemy.cpp_CEnemy_updatePatrol_FUN_004a9fd0"
     },
     {
       "addr": "004adca0",
@@ -951,7 +951,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 125,
+      "line": 126,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar15 = (uint *)((int)&local_12c + (uint)bVar16 * -8 + (uint)bVar16 * -8 + 8);",
@@ -959,7 +959,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 126,
+      "line": 127,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar14 = (uint *)((int)&local_11c + (uint)bVar16 * -8 + (uint)bVar16 * -8 + 8);",
@@ -967,7 +967,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 127,
+      "line": 128,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_12c + (uint)bVar16 * -8 + 4) =",
@@ -975,7 +975,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 128,
+      "line": 129,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_11c + (uint)bVar16 * -8 + 4);",
@@ -983,7 +983,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 271,
+      "line": 272,
       "match": "SQRT",
       "severity": "mild",
       "text": "if ((SQRT(fVar18 * fVar18 + fVar17 * fVar17) <= local_30 + (float)0.5) &&",

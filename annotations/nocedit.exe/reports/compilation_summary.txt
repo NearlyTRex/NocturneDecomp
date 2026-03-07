@@ -4,17 +4,17 @@ FUNCTION COMPILATION SUMMARY
 
 SUMMARY
 --------------------------------------------------
-Total functions compiled: 6486
-Successful: 5766 (88.9%)
-Failed: 720
+Total functions compiled: 6485
+Successful: 5779 (89.1%)
+Failed: 706
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                           1491
+  other                           1397
   format_error                     580
-  undeclared_identifier            499
-  incompatible_types               358
-  syntax_error                      63
+  undeclared_identifier            476
+  incompatible_types               355
+  syntax_error                      54
   missing_member                    21
   type_error                        19
   lvalue_required                   17
@@ -22,11 +22,11 @@ ERROR CATEGORIES
   pointer_precision                  2
 
 ====================================================================================================
-CATEGORY: other (1491 errors)
+CATEGORY: other (1397 errors)
 ====================================================================================================
 
   core_imp.cpp_CImp_process_FUN_004f9c30
-    Line 268: C-style cast from 'CDemonActor *' to 'float' is not allowed...
+    Line 269: C-style cast from 'CDemonActor *' to 'float' is not allowed...
   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
     Line 54: C-style cast from 'CDemonCamera *' to 'float' is not allowed...
   core_gabriela.cpp_CGabriella_processMotionEvents_FUN_004d4890
@@ -37,8 +37,6 @@ CATEGORY: other (1491 errors)
     Line 40: C-style cast from 'CMatrix3x3f *' to 'float' is not allowed...
   core_ghoul.cpp_CGhoul_process_FUN_004e6600
     Line 171: C-style cast from 'CPlatform *' to 'float' is not allowed...
-  core_tommygun.cpp_CTommyGun_fire_FUN_005ddb30
-    Line 111: C-style cast from 'CTrigger *' to 'float' is not allowed...
   core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_004537d0
     Line 19: C-style cast from 'CVector3f *' to 'float' is not allowed...
   core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010
@@ -85,8 +83,10 @@ CATEGORY: other (1491 errors)
     Line 67: assigning to 'char *' from 'const char *' discards qualifiers...
   core_script.cpp_CCmdParm_setTemplateText_FUN_00560de0
     Line 47: assigning to 'char *' from 'const char *' discards qualifiers...
+  core_script.cpp_CScript_loadLineToBuffer_FUN_00566230
+    Line 21: assigning to 'char *' from 'undefined1 *' (aka 'unsigned char *') converts betwe...
 
-  ... and 276 more errors
+  ... and 269 more errors
 
 ====================================================================================================
 CATEGORY: format_error (580 errors)
@@ -156,7 +156,7 @@ CATEGORY: format_error (580 errors)
   ... and 142 more errors
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (499 errors)
+CATEGORY: undeclared_identifier (476 errors)
 ====================================================================================================
 
   core_actor.cpp_adjustIndentationLevel_FUN_0040aee0
@@ -198,7 +198,7 @@ CATEGORY: undeclared_identifier (499 errors)
   shape_memdbg.cpp_SMemHead_checkMemory_FUN_0050f020
     Line 19: use of undeclared identifier 'PTR_s_none_00636540_0067d1fc'...
   core_scat.cpp_CScat_process_FUN_005571f0
-    Line 143: use of undeclared identifier 'SUB14'...
+    Line 140: use of undeclared identifier 'SUB14'...
   core_script.cpp_CScript_step_FUN_0055a810
     Line 1531: use of undeclared identifier 'SUB14'...
   sound_sndmain.cpp_mixResampleMonoToStereo_FUN_005a5e70
@@ -220,10 +220,10 @@ CATEGORY: undeclared_identifier (499 errors)
   core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50
     Line 55: use of undeclared identifier 'code'...
 
-  ... and 182 more errors
+  ... and 167 more errors
 
 ====================================================================================================
-CATEGORY: incompatible_types (358 errors)
+CATEGORY: incompatible_types (355 errors)
 ====================================================================================================
 
   engine_fileio.cpp_CCheckOutList_add_FUN_004b2d00
@@ -287,10 +287,10 @@ CATEGORY: incompatible_types (358 errors)
   shape_superopt.cpp_CObj_allocatePolygons_FUN_005d2320
     Line 22: assigning to 'CPoly *' from incompatible type 'void *'...
 
-  ... and 191 more errors
+  ... and 188 more errors
 
 ====================================================================================================
-CATEGORY: syntax_error (63 errors)
+CATEGORY: syntax_error (54 errors)
 ====================================================================================================
 
   core_dskybox.cpp_renderSkyDome_FUN_004901f0
@@ -305,8 +305,6 @@ CATEGORY: syntax_error (63 errors)
     Line 134: expected expression...
   core_drip.cpp_CDrip_process_FUN_0048e2a0
     Line 116: expected expression...
-  core_elephant.cpp_CElephantGun_fire_FUN_004a7160
-    Line 118: expected expression...
   core_event.cpp_CEventList_evaluateAtom_FUN_004ae140
     Line 1184: expected expression...
   core_fire.cpp_CFireball_process_FUN_004c0b30
@@ -315,22 +313,18 @@ CATEGORY: syntax_error (63 errors)
     Line 1248: expected expression...
   core_ghoul.cpp_CGhoul_process_FUN_004e6600
     Line 152: expected expression...
-  core_lightgun.cpp_CLightGun_fire_FUN_00505c70
-    Line 218: expected expression...
   core_mission.cpp_CDemonMission_loadSet_FUN_00523fb0
     Line 27: expected expression...
   core_mobster.cpp_FUN_005250a0
     Line 21: expected expression...
-  core_pendulum.cpp_CPendulum_FUN_005495c0
-    Line 51: expected expression...
+  core_scat.cpp_CScat_process_FUN_005571f0
+    Line 249: expected expression...
   core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0
     Line 25: expected expression...
   core_setedit.cpp_loadCameraThumbnail_FUN_005769a0
     Line 95: expected expression...
-  core_shotgun.cpp_CShotgun_fire_FUN_00588060
-    Line 120: expected expression...
   core_smiley.cpp_CSmiley_process_FUN_005a2800
-    Line 119: expected expression...
+    Line 120: expected expression...
   core_stranger.cpp_CStranger_processMotionEvents_FUN_005bdd20
     Line 102: expected expression...
   core_trap.cpp_CTrap_process_FUN_005de770
@@ -353,8 +347,14 @@ CATEGORY: syntax_error (63 errors)
     Line 53: expected expression...
   shape_superopt.cpp_CObj_copyFrom_FUN_005d2650
     Line 48: expected expression...
+  shape_superopt.cpp_CObj_hasPolyWithMaterial_FUN_005d4110
+    Line 21: expected expression...
+  shape_superopt.cpp_CObj_isClosedManifold_FUN_005d4070
+    Line 29: expected expression...
+  shape_superopt.cpp_CObj_projectAllPlanarUVs_FUN_005d3e40
+    Line 23: expected expression...
 
-  ... and 13 more errors
+  ... and 10 more errors
 
 ====================================================================================================
 CATEGORY: missing_member (21 errors)
@@ -383,10 +383,10 @@ CATEGORY: type_error (19 errors)
     Line 29: unknown type name 'code'...
   core_icepick.cpp_CIcePick_process_FUN_004f80b0
     Line 30: unknown type name 'code'...
-  core_scat.cpp_CScat_FUN_005584a0
-    Line 22: unknown type name 'code'...
+  core_scat.cpp_CScat_blendAimBones_FUN_005584a0
+    Line 21: unknown type name 'code'...
   core_scat.cpp_CScat_process_FUN_005571f0
-    Line 35: unknown type name 'code'...
+    Line 34: unknown type name 'code'...
   core_stranger.cpp_CStranger_extractTurnPoseData_FUN_005bf720
     Line 21: unknown type name 'code'...
   core_stranger.cpp_CStranger_makeDrawDecision_FUN_005bfb60
@@ -449,8 +449,8 @@ CATEGORY: pointer_precision (2 errors)
 COMPILATION VS SUSPECT PATTERNS
 ====================================================================================================
 
-Average suspects in successfully compiled functions: 2.07
-Average suspects in failed compilations: 10.55
+Average suspects in successfully compiled functions: 2.01
+Average suspects in failed compilations: 10.48
 
-Functions that compile but have suspect patterns: 1669
+Functions that compile but have suspect patterns: 1659
 (These may have runtime issues even though syntax is valid)

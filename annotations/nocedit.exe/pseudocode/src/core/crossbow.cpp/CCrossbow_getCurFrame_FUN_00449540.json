@@ -1,0 +1,139 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 11,
+    "complexity_score": 20,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 3,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 5,
+    "suspect_count": 1,
+    "suspect_types": [
+      "param_count_too_few"
+    ],
+    "total_lines": 16
+  },
+  "cross_references": [
+    {
+      "addr": "00448e00",
+      "from_addr": "00448e45",
+      "name": "core_crossbow.cpp_CCrossbow_renderOpaque_FUN_00448e00",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00449540",
+    "address_range": [
+      [
+        "00449540",
+        "00449568"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_crossbow.cpp_CCrossbow_getCurFrame_FUN_00449540",
+    "signature": "float __cdecl core_crossbow_cpp_CCrossbow_getCurFrame_FUN_00449540(CCrossbow *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "00619ba2",
+      "name": "DOUBLE_00619ba2",
+      "type": "double",
+      "value": "0.666000000000000"
+    },
+    {
+      "addr": "00619baa",
+      "name": "DOUBLE_00619baa",
+      "type": "double",
+      "value": "1.50150150150150"
+    },
+    {
+      "addr": "00619bb2",
+      "name": "DOUBLE_00619bb2",
+      "type": "double",
+      "value": "11"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00448e45",
+        "call_type": "direct",
+        "caller": "core_crossbow.cpp_CCrossbow_renderOpaque_FUN_00448e00",
+        "estimated_params": 2,
+        "instructions_analyzed": 3,
+        "reg_params": [],
+        "stack_params": 2
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 1,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.8,
+    "instruction_count": 10,
+    "opcode_distribution": {
+      "COPY": 23,
+      "FLOAT2FLOAT": 5,
+      "FLOAT_MULT": 2,
+      "FLOAT_SUB": 1,
+      "INT_ADD": 4,
+      "INT_AND": 4,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 4,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 2,
+      "INT_SUB": 1,
+      "LOAD": 4,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 1
+    },
+    "pcode_op_count": 58
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 8,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_4",
+        "offset": -4,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCrossbow *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "call_site_count": 1,
+      "declared_params": 1,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:1 vs estimated:2",
+      "param_delta": 1,
+      "text": "Function declares 1 params but call sites push 2 (1 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

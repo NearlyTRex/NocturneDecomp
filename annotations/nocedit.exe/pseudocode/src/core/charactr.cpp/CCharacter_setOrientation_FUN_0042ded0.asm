@@ -15,7 +15,7 @@
 ; XREF[3]:
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_00429820 at 0042985d
 ;   core_stranger.cpp_CStranger_processFrame_FUN_005bb960 at 005bc849
-;   core_tentacle.cpp_CTentacle_FUN_005db9d0 at 005dbb13
+;   core_tentacle.cpp_CTentacle_updateGrabbedVictim_FUN_005db9d0 at 005dbb13
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0

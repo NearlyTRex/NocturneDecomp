@@ -32,7 +32,7 @@
     {
       "addr": "004136b0",
       "from_addr": "00413984",
-      "name": "core_baron.cpp_CBaron_FUN_004136b0",
+      "name": "core_baron.cpp_CBaron_performLightningAttack_FUN_004136b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -114,15 +114,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004218d0",
-      "from_addr": "0042197a",
-      "name": "core_boxactor.cpp_CBoxActor_FUN_004218d0",
+      "addr": "00422590",
+      "from_addr": "00422614",
+      "name": "core_boxactor.cpp_CBoxActor_constrainToExtents_FUN_00422590",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00422590",
-      "from_addr": "00422614",
-      "name": "core_boxactor.cpp_CBoxActor_FUN_00422590",
+      "addr": "004218d0",
+      "from_addr": "0042197a",
+      "name": "core_boxactor.cpp_CBoxActor_setupPhysicsBox_FUN_004218d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -266,7 +266,7 @@
     {
       "addr": "004858f0",
       "from_addr": "004859e1",
-      "name": "core_dracbrid.cpp_CDraculaBride_FUN_004858f0",
+      "name": "core_dracbrid.cpp_CDraculaBride_explodeIntoParts_FUN_004858f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -320,7 +320,7 @@
     {
       "addr": "004a9a50",
       "from_addr": "004a9a85",
-      "name": "core_enemy.cpp_CEnemy_FUN_004a9a50",
+      "name": "core_enemy.cpp_CEnemy_canSeeTarget_FUN_004a9a50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -428,7 +428,7 @@
     {
       "addr": "004f1ab0",
       "from_addr": "004f1adf",
-      "name": "core_haystack.cpp_CHaystack_FUN_004f1ab0",
+      "name": "core_haystack.cpp_CHaystack_checkMeleeHit_FUN_004f1ab0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -516,15 +516,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00505ac0",
-      "from_addr": "00505ae3",
-      "name": "core_lightgun.cpp_CLightGun_FUN_00505ac0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00505b70",
       "from_addr": "00505bf2",
-      "name": "core_lightgun.cpp_CLightGun_FUN_00505b70",
+      "name": "core_lightgun.cpp_CLightGun_canSeeTarget_FUN_00505b70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -537,6 +531,12 @@
       "addr": "00505c70",
       "from_addr": "00506042",
       "name": "core_lightgun.cpp_CLightGun_fire_FUN_00505c70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00505ac0",
+      "from_addr": "00505ae3",
+      "name": "core_lightgun.cpp_CLightGun_updateBeamLight_FUN_00505ac0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -620,7 +620,7 @@
     {
       "addr": "00549b90",
       "from_addr": "00549ca1",
-      "name": "core_pendulum.cpp_CPendulum_FUN_00549b90",
+      "name": "core_pendulum.cpp_CPendulum_updateSwing_FUN_00549b90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -630,15 +630,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00558720",
-      "from_addr": "00558b09",
-      "name": "core_scat.cpp_CScat_FUN_00558720",
+      "addr": "00558cf0",
+      "from_addr": "00558f15",
+      "name": "core_scat.cpp_CScat_scoreAimTarget_FUN_00558cf0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00558cf0",
-      "from_addr": "00558f15",
-      "name": "core_scat.cpp_CScat_FUN_00558cf0",
+      "addr": "00558720",
+      "from_addr": "00558b09",
+      "name": "core_scat.cpp_CScat_updateAiming_FUN_00558720",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -716,7 +716,7 @@
     {
       "addr": "005b8950",
       "from_addr": "005b8cf0",
-      "name": "core_spike.cpp_CSpike_FUN_005b8950",
+      "name": "core_spike.cpp_CSpike_testCollisionWithCharacters_FUN_005b8950",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -798,12 +798,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005e2d50",
-      "from_addr": "005e2dc1",
-      "name": "core_turret.cpp_CTurret_FUN_005e2d50",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "005e20f0",
       "from_addr": "005e21ed",
       "name": "core_turret.cpp_CTurret_ctor_FUN_005e20f0",
@@ -813,6 +807,12 @@
       "addr": "005e3750",
       "from_addr": "005e3781",
       "name": "core_turret.cpp_CTurret_fire_FUN_005e3750",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005e2d50",
+      "from_addr": "005e2dc1",
+      "name": "core_turret.cpp_CTurret_updateTargeting_FUN_005e2d50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -834,15 +834,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005ee740",
-      "from_addr": "005ee7c7",
-      "name": "core_weapon.cpp_CWeapon_FUN_005ee740",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "005ee830",
       "from_addr": "005ee87b",
       "name": "core_weapon.cpp_CWeapon_fireProjectile_FUN_005ee830",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005ee740",
+      "from_addr": "005ee7c7",
+      "name": "core_weapon.cpp_CWeapon_setupPhysicsBox_FUN_005ee740",
       "type": "UNCONDITIONAL_CALL"
     },
     {

@@ -8,7 +8,7 @@
 ;
 ; Called Functions:
 ;   core_trigger.cpp_CTrigger_processInEditor_FUN_005e1180
-;   core_waypoint.cpp_CWayPoint_FUN_005ec4f0
+;   core_waypoint.cpp_CWayPoint_rebuildConnectivity_FUN_005ec4f0
 ;
 ; *****************************************************************************
 
@@ -18,8 +18,8 @@ section .text
         ;   Label: core_waypoint.cpp_CWayPoint_processInEditor_FUN_005ec5e0
     MOV EBX,dword ptr [ESP + 0x8]       ; 005ec5e1
     PUSH EBX                            ; 005ec5e5
-    CALL core_waypoint.cpp_CWayPoint_FUN_005ec4f0 ; 005ec5e6
-        ;   XREF to: 005ec4f0 (UNCONDITIONAL_CALL)  ; void core_waypoint.cpp_CWayPoint_FUN_005ec4f0(CWayPoint * this_ptr)
+    CALL core_waypoint.cpp_CWayPoint_rebuildConnectivity_FUN_005ec4f0 ; 005ec5e6
+        ;   XREF to: 005ec4f0 (UNCONDITIONAL_CALL)  ; void core_waypoint.cpp_CWayPoint_rebuildConnectivity_FUN_005ec4f0(CWayPoint * this_ptr)
     ADD ESP,0x4                         ; 005ec5eb
     PUSH EBX                            ; 005ec5ee
     CALL core_trigger.cpp_CTrigger_processInEditor_FUN_005e1180 ; 005ec5ef

@@ -14,7 +14,7 @@
 ;   core_bat.cpp_CBat_setup_FUN_004148a0 at 004148af
 ;   core_biggs.cpp_CBiggs_setup_FUN_00418680 at 004186a6
 ;   core_bodypart.cpp_CBodyPart_addAttachedModel_FUN_0041add0 at 0041ae2e
-;   core_boxactor.cpp_CLightActor_FUN_00422d60 at 00422db7
+;   core_boxactor.cpp_CLightActor_setupLightModel_FUN_00422d60 at 00422db7
 ;   core_bugs.cpp_CBugs_setup_FUN_00424e50 at 004250bf
 ;   core_dmodel.cpp_CKeyFramedModelInstance_addFilesToExtract_FUN_0047edd0 at 0047edd6
 ;   ... and 20 more

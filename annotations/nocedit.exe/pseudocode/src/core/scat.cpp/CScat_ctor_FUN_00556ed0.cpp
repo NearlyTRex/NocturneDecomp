@@ -21,7 +21,7 @@ CScat * __cdecl core_scat_cpp_CScat_ctor_FUN_00556ed0(CScat *this_ptr)
   (this_ptr_00->head_euler_angles).y = (this_ptr_00->head_euler_angles).z;
   (this_ptr_00->head_euler_angles).x = (this_ptr_00->head_euler_angles).y;
   core_scat_cpp_CScat_createDefaultWeapon_FUN_00557150(this_ptr_00);
-  this_ptr_00->weapon_actor = (CDemonActor *)0x0;
+  this_ptr_00->weapon_actor = (CWeapon *)0x0;
   this_ptr_00->aim_yaw = 0.0;
   this_ptr_00->aim_target = (CDemonActor *)0x0;
   this_ptr_00->aim_converged = 0;

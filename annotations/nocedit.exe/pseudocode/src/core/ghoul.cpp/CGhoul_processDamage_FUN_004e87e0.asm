@@ -24,7 +24,7 @@
 ;   core_actor.cpp_randomChance_FUN_0040cd10
 ;   core_charactr.cpp_CCharacter_shatter_FUN_0042b8e0
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_004a9f10
-;   core_ghoul.cpp_CGhoul_FUN_004e8520
+;   core_ghoul.cpp_CGhoul_processDismemberment_FUN_004e8520
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 ;   core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
@@ -64,8 +64,8 @@ section .text
     PUSH EDI                            ; 004e881c
         ;   Label: LAB_004e881c
     PUSH EBX                            ; 004e881d
-    CALL core_ghoul.cpp_CGhoul_FUN_004e8520 ; 004e881e
-        ;   XREF to: 004e8520 (UNCONDITIONAL_CALL)  ; void core_ghoul.cpp_CGhoul_FUN_004e8520(CGhoul * this_ptr)
+    CALL core_ghoul.cpp_CGhoul_processDismemberment_FUN_004e8520 ; 004e881e
+        ;   XREF to: 004e8520 (UNCONDITIONAL_CALL)  ; void core_ghoul.cpp_CGhoul_processDismemberment_FUN_004e8520(CGhoul * this_ptr, SDamageInfo * damage_info)
     MOV EDX,dword ptr [EBX + 0xbe3c]    ; 004e8823
     ADD ESP,0x8                         ; 004e8829
     TEST EDX,EDX                        ; 004e882c

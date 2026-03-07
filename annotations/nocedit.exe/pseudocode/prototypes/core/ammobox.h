@@ -27,9 +27,9 @@ void __cdecl CAmmoBox::setup(CAmmoBox *this_ptr);
 // Address: 00411680
 void __cdecl CAmmoBox::process(CAmmoBox *this_ptr,float delta_time);
 
-// Original: core_ammobox.cpp_CAmmoBox_FUN_00411690
+// Original: core_ammobox.cpp_CAmmoBox_openBox_FUN_00411690
 // Address: 00411690
-void __cdecl CAmmoBox(CAmmoBox *this_ptr,float open_pct);
+void __cdecl CAmmoBox::openBox(CAmmoBox *this_ptr,float open_pct);
 
 // Original: core_ammobox.cpp_CAmmoBox_addToInventory_FUN_00411700
 // Address: 00411700

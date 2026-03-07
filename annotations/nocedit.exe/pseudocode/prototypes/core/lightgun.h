@@ -19,21 +19,21 @@ CDemonActorType * __cdecl CLightGun::getActorType(CLightGun *this_ptr);
 // Address: 00505900
 CLightGun * __cdecl CLightGun::ctor(CLightGun *this_ptr);
 
-// Original: core_lightgun.cpp_CLightGun_FUN_005059c0
+// Original: core_lightgun.cpp_CLightGun_isVampireType_FUN_005059c0
 // Address: 005059c0
-int __cdecl CLightGun(CLightGun *this_ptr);
+int __cdecl CLightGun::isVampireType(CLightGun *this_ptr);
 
-// Original: core_lightgun.cpp_CLightGun_FUN_00505a20
+// Original: core_lightgun.cpp_CLightGun_isLightVulnerable_FUN_00505a20
 // Address: 00505a20
-int __cdecl CLightGun(CLightGun *this_ptr);
+int __cdecl CLightGun::isLightVulnerable(CLightGun *this_ptr);
 
-// Original: core_lightgun.cpp_CLightGun_FUN_00505ac0
+// Original: core_lightgun.cpp_CLightGun_updateBeamLight_FUN_00505ac0
 // Address: 00505ac0
-void __cdecl CLightGun(CLightGun *this_ptr);
+void __cdecl CLightGun::updateBeamLight(CLightGun *this_ptr);
 
-// Original: core_lightgun.cpp_CLightGun_FUN_00505b70
+// Original: core_lightgun.cpp_CLightGun_canSeeTarget_FUN_00505b70
 // Address: 00505b70
-int __cdecl CLightGun(CLightGun *this_ptr);
+int __cdecl CLightGun::canSeeTarget(CLightGun *this_ptr,CDemonActor *target);
 
 // Original: core_lightgun.cpp_CLightGun_fire_FUN_00505c70
 // Address: 00505c70

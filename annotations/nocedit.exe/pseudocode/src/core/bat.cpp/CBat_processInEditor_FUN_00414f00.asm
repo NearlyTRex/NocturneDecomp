@@ -14,7 +14,7 @@
 ;   CKeys g_CKeysInstance
 ;
 ; Called Functions:
-;   core_bat.cpp_CBat_FUN_00414ce0
+;   core_bat.cpp_CBat_updateCoursePosition_FUN_00414ce0
 ;
 ; *****************************************************************************
 
@@ -80,8 +80,8 @@ section .text
     FSTP float ptr [EBX + 0x304]        ; 00414f8f
     PUSH EBX                            ; 00414f95
         ;   Label: LAB_00414f95
-    CALL core_bat.cpp_CBat_FUN_00414ce0 ; 00414f96
-        ;   XREF to: 00414ce0 (UNCONDITIONAL_CALL)  ; void core_bat.cpp_CBat_FUN_00414ce0(CBat * this_ptr)
+    CALL core_bat.cpp_CBat_updateCoursePosition_FUN_00414ce0 ; 00414f96
+        ;   XREF to: 00414ce0 (UNCONDITIONAL_CALL)  ; void core_bat.cpp_CBat_updateCoursePosition_FUN_00414ce0(CBat * this_ptr)
     ADD ESP,0x4                         ; 00414f9b
     MOV ESP,EBP                         ; 00414f9e
     POP EBP                             ; 00414fa0

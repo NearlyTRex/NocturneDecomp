@@ -16,7 +16,7 @@ void __cdecl core_bat_cpp_CBat_process_FUN_00414a00(CBat *this_ptr,float delta_t
   
   fVar4 = (this_ptr->base).location.position.y;
   this_ptr->param = this_ptr->course_speed * delta_time + this_ptr->param;
-  core_bat_cpp_CBat_FUN_00414ce0(this_ptr);
+  core_bat_cpp_CBat_updateCoursePosition_FUN_00414ce0(this_ptr);
   fVar4 = (((this_ptr->base).location.position.y - fVar4) * (float)4) / delta_time +
           (float)35;
   if (fVar4 < (float)10) {

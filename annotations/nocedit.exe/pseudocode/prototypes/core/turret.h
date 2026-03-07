@@ -43,13 +43,13 @@ float __cdecl CTurret::getCurFrame(CTurret *this_ptr);
 // Address: 005e2c40
 void __cdecl CTurret::archive(CTurret *this_ptr);
 
-// Original: core_turret.cpp_CTurret_FUN_005e2d50
+// Original: core_turret.cpp_CTurret_updateTargeting_FUN_005e2d50
 // Address: 005e2d50
-void __cdecl CTurret(CTurret *this_ptr);
+void __cdecl CTurret::updateTargeting(CTurret *this_ptr,float delta_time);
 
-// Original: core_turret.cpp_CTurret_FUN_005e3280
+// Original: core_turret.cpp_CTurret_aimAtTarget_FUN_005e3280
 // Address: 005e3280
-int __cdecl CTurret(CTurret *this_ptr);
+int __cdecl CTurret::aimAtTarget(CTurret *this_ptr,CVector3f *target_pos,float delta_time);
 
 // Original: core_turret.cpp_CTurret_getInteractionInfo_FUN_005e3440
 // Address: 005e3440
@@ -67,17 +67,17 @@ int __cdecl CTurret::updateInteraction(CTurret *this_ptr,UOrientationVector *use
 // Address: 005e3540
 void __cdecl CTurret::stopInteraction(CTurret *this_ptr,CDemonActor *user);
 
-// Original: core_turret.cpp_CTurret_FUN_005e3560
+// Original: core_turret.cpp_CTurret_updatePatrol_FUN_005e3560
 // Address: 005e3560
-void __cdecl CTurret(CTurret *this_ptr);
+void __cdecl CTurret::updatePatrol(CTurret *this_ptr,float delta_time);
 
-// Original: core_turret.cpp_CTurret_FUN_005e36f0
+// Original: core_turret.cpp_CTurret_getDamage_FUN_005e36f0
 // Address: 005e36f0
-float __cdecl CTurret(CTurret *this_ptr);
+float __cdecl CTurret::getDamage(CTurret *this_ptr);
 
-// Original: core_turret.cpp_CTurret_FUN_005e3720
+// Original: core_turret.cpp_CTurret_getMuzzlePoint_FUN_005e3720
 // Address: 005e3720
-int __cdecl CTurret(CTurret *this_ptr);
+CVector3f * __cdecl CTurret::getMuzzlePoint(CTurret *this_ptr,CVector3f *out_point);
 
 // Original: core_turret.cpp_CTurret_fire_FUN_005e3750
 // Address: 005e3750
@@ -91,9 +91,9 @@ int __cdecl CTurret::canPickup(CTurret *this_ptr,CDemonActor *picker);
 // Address: 005e3ca0
 void __cdecl CTurret::getPropertyList(CTurret *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_turret.cpp_CTurret_FUN_005e3dd0
+// Original: core_turret.cpp_CTurret_processInEditor_FUN_005e3dd0
 // Address: 005e3dd0
-void __cdecl CTurret(CTurret *this_ptr);
+void __cdecl CTurret::processInEditor(CTurret *this_ptr);
 
 // Original: core_turret.cpp_CTurret_dtor_FUN_005e3e00
 // Address: 005e3e00

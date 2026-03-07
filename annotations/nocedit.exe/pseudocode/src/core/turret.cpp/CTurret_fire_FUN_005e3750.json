@@ -1,75 +1,22 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 67,
-        "line": 93,
-        "message": "cannot initialize a parameter of type 'struct CDemonActor *' with an rvalue of type 'uint32_t' (aka 'unsigned int')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 71,
-        "line": 122,
-        "message": "use of undeclared identifier 'stack0xffffff24'"
-      },
-      {
-        "category": "other",
-        "column": 17,
-        "line": 123,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 46,
-        "line": 125,
-        "message": "cannot initialize a parameter of type 'struct CDemonActor *' with an rvalue of type 'uint32_t' (aka 'unsigned int')"
-      },
-      {
-        "category": "other",
-        "column": 17,
-        "line": 126,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 136,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 21,
-        "line": 150,
-        "message": "C-style cast from 'CTurret *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 12,
-        "line": 153,
-        "message": "C-style cast from 'struct CDemonActor *' to 'float' is not allowed"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 397,
-    "complexity_score": 285,
+    "complexity_score": 170,
     "cross_reference_count": 0,
     "function_call_count": 17,
     "global_count": 22,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 160,
-    "suspect_count": 10,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 155,
+    "suspect_count": 1,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "stack_ref",
-      "sub84_truncation",
-      "suspect_float",
-      "unknown_field"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 557
+    "total_lines": 552
   },
   "cross_references": [],
   "function": {
@@ -397,84 +344,12 @@
   },
   "suspects": [
     {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 86,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "((CCharacter *)this_ptr,SUB84(__BITCAST_UINT64(dVar3),0),",
-      "type": "sub84_truncation"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 86,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "((CCharacter *)this_ptr,SUB84(__BITCAST_UINT64(dVar3),0),",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 115,
-      "match": "&stack0xffffff24",
-      "severity": "moderate",
-      "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xffffff24);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 116,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "auStack_cc._0_4_ =",
-      "type": "unknown_field"
-    },
-    {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 118,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "((CCharacter *)this_ptr,SUB84(__BITCAST_UINT64(dVar3),0),(int)((ulonglong)dVar3 >> 0x20));",
-      "type": "sub84_truncation"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 118,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "((CCharacter *)this_ptr,SUB84(__BITCAST_UINT64(dVar3),0),(int)((ulonglong)dVar3 >> 0x20));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unknown/mangled field access",
       "line": 119,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "auStack_cc._4_4_ = 0.4;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 124,
       "match": "SQRT",
       "severity": "mild",
-      "text": "SQRT(fStack_74 * fStack_74 + fStack_7c * fStack_7c + fStack_78 * fStack_78);",
+      "text": "SQRT(fStack_84 * fStack_84 + fStack_8c * fStack_8c + fStack_88 * fStack_88);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 129,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "auStack_cc._8_4_ = CStack_40.x;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 144,
-      "match": "1.41531e-43",
-      "severity": "mild",
-      "text": "CStack_a0.x = 1.41531e-43;",
-      "type": "suspect_float"
     }
   ],
   "vtable_info": {

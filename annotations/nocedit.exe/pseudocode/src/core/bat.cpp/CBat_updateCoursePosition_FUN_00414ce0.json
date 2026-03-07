@@ -1,0 +1,174 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 78,
+    "complexity_score": 24,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 24,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 102
+  },
+  "cross_references": [
+    {
+      "addr": "00414f00",
+      "from_addr": "00414f96",
+      "name": "core_bat.cpp_CBat_processInEditor_FUN_00414f00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00414a00",
+      "from_addr": "00414a3f",
+      "name": "core_bat.cpp_CBat_process_FUN_00414a00",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00414ce0",
+    "address_range": [
+      [
+        "00414ce0",
+        "00414db6"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_bat.cpp_CBat_updateCoursePosition_FUN_00414ce0",
+    "signature": "void __cdecl core_bat_cpp_CBat_updateCoursePosition_FUN_00414ce0(CBat *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00442710",
+      "is_variadic": false,
+      "name": "core_course.cpp_CCourse_evaluate_FUN_00442710"
+    },
+    {
+      "addr": "005feb90",
+      "is_variadic": false,
+      "name": "crt_math.c_floor_FUN_005feb90"
+    }
+  ],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.529411764705882,
+    "instruction_count": 68,
+    "opcode_distribution": {
+      "BOOL_OR": 4,
+      "BRANCH": 1,
+      "CALL": 3,
+      "CBRANCH": 2,
+      "COPY": 192,
+      "FLOAT2FLOAT": 20,
+      "FLOAT_ADD": 2,
+      "FLOAT_DIV": 2,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_MULT": 2,
+      "FLOAT_NAN": 4,
+      "FLOAT_NEG": 1,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 3,
+      "INT_ADD": 36,
+      "INT_AND": 27,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 16,
+      "INT_LEFT": 8,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 10,
+      "INT_OR": 10,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 8,
+      "INT_SUB": 12,
+      "INT_ZEXT": 8,
+      "LOAD": 23,
+      "POPCOUNT": 8,
+      "RETURN": 1,
+      "STORE": 22
+    },
+    "pcode_op_count": 444
+  },
+  "stack_frame": {
+    "frame_size": 56,
+    "local_size": 52,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBat *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "00414ce7",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": []
+}

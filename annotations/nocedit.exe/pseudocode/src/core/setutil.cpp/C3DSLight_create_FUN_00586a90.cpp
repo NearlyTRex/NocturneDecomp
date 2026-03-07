@@ -13,7 +13,7 @@ CDemonLight * __cdecl core_setutil_cpp_C3DSLight_create_FUN_00586a90(C3DSLight *
   CDemonLight *this_ptr_00;
   CDemonFilter *pCVar2;
   CDemonLight *this_ptr_01;
-  CVector3i *pCVar3;
+  UVector3 *pUVar3;
   C3DSLight *pCVar4;
   int iVar5;
   char *pcVar6;
@@ -38,11 +38,11 @@ CDemonLight * __cdecl core_setutil_cpp_C3DSLight_create_FUN_00586a90(C3DSLight *
   else {
     this_ptr_01->shadow_bounds_mode = this_ptr->blend_filter;
   }
-  pCVar3 = &(this_ptr_01->base).base.position;
-  if ((CVector3f *)pCVar3 != &this_ptr->pos) {
-    pCVar3->x = (int)(this_ptr->pos).x;
-    (this_ptr_01->base).base.position.y = (int)(this_ptr->pos).y;
-    (this_ptr_01->base).base.position.z = (int)(this_ptr->pos).z;
+  pUVar3 = &(this_ptr_01->base).base.position;
+  if ((CVector3f *)pUVar3 != &this_ptr->pos) {
+    (pUVar3->f).x = (this_ptr->pos).x;
+    (this_ptr_01->base).base.position.f.y = (this_ptr->pos).y;
+    (this_ptr_01->base).base.position.f.z = (this_ptr->pos).z;
   }
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
             (&(this_ptr_01->base).base.rotation_matrix,&this_ptr->orient);

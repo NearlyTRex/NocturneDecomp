@@ -33,7 +33,7 @@ void __cdecl core_dlight_cpp_CDemonLight_beginScene_FUN_00472a80(CDemonLight *th
   (this_ptr->base).rect_array_count = 0;
   (this_ptr->base).skip_clear_buffer_flag = skip_clear_buffers;
   engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
-            (this_ptr_00,&(this_ptr->base).base.position);
+            (this_ptr_00,&(this_ptr->base).base.position.i);
   engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0048c650
             (g_CDemonRendererPtr2,(this_ptr->base).base.focal_length);
   engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200

@@ -28,7 +28,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_rebuildWaypointConnectivity_FUN_0053
       for (iVar3 = 0; iVar3 < g_CDemonSetPtr->waypoint_count; iVar3 = iVar3 + 1) {
         puVar1 = (uint *)((int)g_CDemonSetPtr->waypoints + iVar2);
         iVar2 = iVar2 + 4;
-        core_waypoint_cpp_CWayPoint_FUN_005ec4f0((CWayPoint *)*puVar1);
+        core_waypoint_cpp_CWayPoint_rebuildConnectivity_FUN_005ec4f0((CWayPoint *)*puVar1);
       }
       set_index = set_index + 1;
     } while (set_index < this_ptr->num_sets);

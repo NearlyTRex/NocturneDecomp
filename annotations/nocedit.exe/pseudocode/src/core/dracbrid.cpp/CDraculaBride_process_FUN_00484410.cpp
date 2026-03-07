@@ -28,7 +28,8 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_process_FUN_00484410(CDraculaBride 
   CPathMap *pCVar14;
   CLocation *pCVar15;
   float fVar16;
-  float fVar17;
+  SDamageInfo *pSVar17;
+  float fVar18;
   char local_494 [100];
   char local_430 [100];
   char local_3cc [100];
@@ -92,7 +93,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_process_FUN_00484410(CDraculaBride 
   if (this_ptr->exploded != 0) {
     fVar16 = this_ptr->fade_timer - delta_time;
     this_ptr->fade_timer = fVar16;
-    fVar17 = 5.0f;
+    fVar18 = 5.0f;
     if (0.0 <= fVar16) {
       iVar7 = 0;
       if (0 < this_ptr->part_count) {
@@ -107,7 +108,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_process_FUN_00484410(CDraculaBride 
           pCVar13[9].create_event[0x27] = '\0';
           iVar7 = iVar7 + 1;
           *(int *)(pCVar13[9].create_event + 0x30) =
-               (int)ROUND(ROUND((this_ptr->fade_timer * fVar16) / fVar17));
+               (int)ROUND(ROUND((this_ptr->fade_timer * fVar16) / fVar18));
           pCVar10 = (CDraculaBride *)((pCVar10->base).base.base.actor_name + 4);
         } while (iVar7 < this_ptr->part_count);
       }
@@ -127,7 +128,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_process_FUN_00484410(CDraculaBride 
       }
     }
   }
-  core_dracbrid_cpp_CDraculaBride_FUN_004869a0(this_ptr);
+  core_dracbrid_cpp_CDraculaBride_updateFreakySounds_FUN_004869a0(this_ptr,delta_time);
   iVar7 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
   if (iVar7 == 0) {
     return;
@@ -152,7 +153,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_process_FUN_00484410(CDraculaBride 
       local_178.z = 20.0;
       core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
                 ((CDemonActor *)this_ptr,&local_ac,&local_178);
-      core_dracbrid_cpp_CDraculaBride_FUN_004858f0(this_ptr);
+      core_dracbrid_cpp_CDraculaBride_explodeIntoParts_FUN_004858f0(this_ptr,&local_ac,-1.0,1);
       fVar16 = 5.0f;
       pCVar4 = (this_ptr->base).base.base.vtable._ub;
       this_ptr->exploded = 1;
@@ -167,16 +168,16 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_process_FUN_00484410(CDraculaBride 
                      (&pCVar2->motion_controller);
   iVar7 = pSVar8->state_index;
   if (iVar7 == 9) {
-    fVar17 = 6.0f * delta_time;
+    fVar18 = 6.0f * delta_time;
     fVar16 = (this_ptr->base).speed;
     (this_ptr->base).base.turn_speed = 3.141593f * delta_time * (this_ptr->base).speed;
-    (this_ptr->base).base.walk_step_speed = fVar16 * fVar17;
+    (this_ptr->base).base.walk_step_speed = fVar16 * fVar18;
   }
   else {
-    fVar17 = 1.570796f * delta_time;
+    fVar18 = 1.570796f * delta_time;
     fVar16 = (this_ptr->base).speed;
     (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
-    (this_ptr->base).base.turn_speed = fVar17 * fVar16;
+    (this_ptr->base).base.turn_speed = fVar18 * fVar16;
   }
   iVar9 = core_charactr_cpp_CCharacter_processWalking_FUN_0042ca70
                     ((CCharacter *)this_ptr,delta_time);
@@ -213,7 +214,7 @@ LAB_004848f9:
   case 0:
     (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
     if ((this_ptr->base).victim == (CCharacter *)0x0) {
-      iVar7 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base,delta_time);
+      iVar7 = core_enemy_cpp_CEnemy_updatePatrol_FUN_004a9fd0(&this_ptr->base,delta_time);
       if (iVar7 != 0) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&(this_ptr->base).base.model.motion_controller,0xe,1);
@@ -237,7 +238,7 @@ LAB_004848f9:
       if (iVar9 == g_CDemonSetPtr->enemy_count) {
         _sprintf
                   (local_430,"bride-%d?.wav",this_ptr->freaky_voice_number);
-        core_dracbrid_cpp_CDraculaBride_FUN_004864c0(this_ptr);
+        core_dracbrid_cpp_CDraculaBride_startFreakySound_FUN_004864c0(this_ptr,local_430,1.0);
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&(this_ptr->base).base.model.motion_controller,0x17,1);
         (*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -265,31 +266,35 @@ LAB_004848f9:
   case 2:
     core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_28c);
     local_28c.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
+    pSVar17 = &local_28c;
     local_28c.attacker = (CDemonActor *)this_ptr;
     local_28c.wielder = (CDemonActor *)this_ptr;
+    fVar16 = 0.4;
     local_14 = local_28c.damage_amount;
     pCVar12 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                         (&local_b8,&g_ZeroVector.f,
                          (this_ptr->base).base.model.bone_transform.bone_world_matrices +
                          INT_02c6d0a0);
-    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-              ((CDemonActor *)this_ptr,&local_100,pCVar12);
-    core_enemy_cpp_CEnemy_FUN_004a9880(&this_ptr->base);
+    pCVar12 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                        ((CDemonActor *)this_ptr,&local_100,pCVar12);
+    core_enemy_cpp_CEnemy_testAttackRadius_FUN_004a9880(&this_ptr->base,pCVar12,fVar16,pSVar17);
     this_ptr->attack_landed = 1;
     break;
   case 3:
     core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_304);
     local_304.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
+    pSVar17 = &local_304;
     local_304.attacker = (CDemonActor *)this_ptr;
     local_304.wielder = (CDemonActor *)this_ptr;
+    fVar16 = 0.4;
     local_14 = local_304.damage_amount;
     pCVar12 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                         (&local_184,&g_ZeroVector.f,
                          (this_ptr->base).base.model.bone_transform.bone_world_matrices +
                          INT_02c6d0a0);
-    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-              ((CDemonActor *)this_ptr,&local_4c,pCVar12);
-    core_enemy_cpp_CEnemy_FUN_004a9880(&this_ptr->base);
+    pCVar12 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                        ((CDemonActor *)this_ptr,&local_4c,pCVar12);
+    core_enemy_cpp_CEnemy_testAttackRadius_FUN_004a9880(&this_ptr->base,pCVar12,fVar16,pSVar17);
     break;
   case 7:
     if (this_ptr->exploded == 0) {
@@ -309,7 +314,7 @@ LAB_004848f9:
   case 8:
     (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
     if ((this_ptr->base).victim == (CCharacter *)0x0) {
-      iVar7 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base,delta_time);
+      iVar7 = core_enemy_cpp_CEnemy_updatePatrol_FUN_004a9fd0(&this_ptr->base,delta_time);
       if (iVar7 != 0) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&(this_ptr->base).base.model.motion_controller,0xe,1);
@@ -338,17 +343,17 @@ LAB_004848f9:
     if (this_ptr->freaky_timer <= 0.0) {
       _sprintf
                 (local_3cc,"bride-%d?.wav",this_ptr->freaky_voice_number);
-      core_dracbrid_cpp_CDraculaBride_FUN_004864c0(this_ptr);
+      core_dracbrid_cpp_CDraculaBride_startFreakySound_FUN_004864c0(this_ptr,local_3cc,1.0);
       iVar7 = core_actor_cpp_randomChance_FUN_0040cd10(0.2);
       if (iVar7 != 0) {
-        core_dracbrid_cpp_CDraculaBride_FUN_004864c0(this_ptr);
+        core_dracbrid_cpp_CDraculaBride_startFreakySound_FUN_004864c0(this_ptr,local_3cc,1.0);
       }
     }
     (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
     pCVar2 = &(this_ptr->base).base.model;
     if ((this_ptr->base).victim != (CCharacter *)0x0) {
       if (0.0 <= this_ptr->action_delay) {
-        fVar17 = 0.08726646;
+        fVar18 = 0.08726646;
         fVar16 = 0.5;
         local_58.x = 0.0;
         local_58.z = 2.0f;
@@ -359,7 +364,7 @@ LAB_004848f9:
         iVar7 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
                           ((CCharacter *)this_ptr,
                            &(((this_ptr->base).victim)->base).location.position,pCVar14,pCVar12,
-                           fVar16,fVar17);
+                           fVar16,fVar18);
         if (iVar7 < 0) {
           engine_console_cpp_CConsole_printf_FUN_00441890
                     (g_CConsolePtr,"%s gave up chase - I'm confused\n",this_ptr);
@@ -409,7 +414,7 @@ LAB_004848f9:
       }
       break;
     }
-    iVar7 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base,delta_time);
+    iVar7 = core_enemy_cpp_CEnemy_updatePatrol_FUN_004a9fd0(&this_ptr->base,delta_time);
     if (iVar7 == 0) break;
 LAB_004852f8:
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
@@ -429,17 +434,17 @@ LAB_004852f8:
     if (this_ptr->freaky_timer <= 0.0) {
       _sprintf
                 (local_368,"bride-%d?.wav",this_ptr->freaky_voice_number);
-      core_dracbrid_cpp_CDraculaBride_FUN_004864c0(this_ptr);
+      core_dracbrid_cpp_CDraculaBride_startFreakySound_FUN_004864c0(this_ptr,local_368,1.0);
       iVar7 = core_actor_cpp_randomChance_FUN_0040cd10(0.2);
       if (iVar7 != 0) {
-        core_dracbrid_cpp_CDraculaBride_FUN_004864c0(this_ptr);
+        core_dracbrid_cpp_CDraculaBride_startFreakySound_FUN_004864c0(this_ptr,local_368,1.0);
       }
     }
     (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
     fVar16 = 1.5f;
     pCVar2 = &(this_ptr->base).base.model;
     if ((this_ptr->base).victim == (CCharacter *)0x0) {
-      iVar7 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base,delta_time);
+      iVar7 = core_enemy_cpp_CEnemy_updatePatrol_FUN_004a9fd0(&this_ptr->base,delta_time);
       if (iVar7 == 0) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&pCVar2->motion_controller,0,1);
@@ -454,7 +459,7 @@ LAB_004852f8:
            (this_ptr->base).base.model.accumulated_root_motion.y;
       local_1a8.x = 0.0;
       local_1a8.y = 0.0;
-      fVar17 = 0.08726646;
+      fVar18 = 0.08726646;
       local_1a8.z = fVar16;
       pCVar12 = &local_1a8;
       fVar16 = 0.5;
@@ -462,7 +467,7 @@ LAB_004852f8:
       pCVar14 = (*((pCVar6->base).vtable._ub)->getPathMap)(&pCVar6->base);
       iVar7 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
                         ((CCharacter *)this_ptr,&(((this_ptr->base).victim)->base).location.position
-                         ,pCVar14,pCVar12,fVar16,fVar17);
+                         ,pCVar14,pCVar12,fVar16,fVar18);
       if (iVar7 < 0) {
         engine_console_cpp_CConsole_printf_FUN_00441890
                   (g_CConsolePtr,"%s gave up chase - I'm confused\n",this_ptr);
@@ -521,55 +526,61 @@ LAB_004852f8:
   case 0x13:
     core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_2c8);
     local_2c8.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
+    pSVar17 = &local_2c8;
     local_2c8.attacker = (CDemonActor *)this_ptr;
     local_2c8.wielder = (CDemonActor *)this_ptr;
+    fVar16 = 0.4;
     local_14 = local_2c8.damage_amount;
     pCVar12 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                         (&local_13c,&g_ZeroVector.f,
                          (this_ptr->base).base.model.bone_transform.bone_world_matrices +
                          INT_02c6d0a0);
-    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-              ((CDemonActor *)this_ptr,&local_94,pCVar12);
-    core_enemy_cpp_CEnemy_FUN_004a9880(&this_ptr->base);
+    pCVar12 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                        ((CDemonActor *)this_ptr,&local_94,pCVar12);
+    core_enemy_cpp_CEnemy_testAttackRadius_FUN_004a9880(&this_ptr->base,pCVar12,fVar16,pSVar17);
     this_ptr->attack_landed = 1;
     break;
   case 0x14:
     core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_214);
     local_214.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
+    pSVar17 = &local_214;
     local_214.attacker = (CDemonActor *)this_ptr;
     local_214.wielder = (CDemonActor *)this_ptr;
+    fVar16 = 0.4;
     local_14 = local_214.damage_amount;
     pCVar12 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                         (&local_88,&g_ZeroVector.f,
                          (this_ptr->base).base.model.bone_transform.bone_world_matrices +
                          INT_02c6d0a0);
-    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-              ((CDemonActor *)this_ptr,&local_16c,pCVar12);
-    core_enemy_cpp_CEnemy_FUN_004a9880(&this_ptr->base);
+    pCVar12 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                        ((CDemonActor *)this_ptr,&local_16c,pCVar12);
+    core_enemy_cpp_CEnemy_testAttackRadius_FUN_004a9880(&this_ptr->base,pCVar12,fVar16,pSVar17);
     this_ptr->attack_landed = 1;
     break;
   case 0x15:
     core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_250);
     local_250.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
+    pSVar17 = &local_250;
     local_250.attacker = (CDemonActor *)this_ptr;
     local_250.wielder = (CDemonActor *)this_ptr;
+    fVar16 = 0.4;
     local_14 = local_250.damage_amount;
     pCVar12 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                         (&local_1c0,&g_ZeroVector.f,
                          (this_ptr->base).base.model.bone_transform.bone_world_matrices +
                          INT_02c6d0a8);
-    core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-              ((CDemonActor *)this_ptr,&local_154,pCVar12);
-    core_enemy_cpp_CEnemy_FUN_004a9880(&this_ptr->base);
+    pCVar12 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                        ((CDemonActor *)this_ptr,&local_154,pCVar12);
+    core_enemy_cpp_CEnemy_testAttackRadius_FUN_004a9880(&this_ptr->base,pCVar12,fVar16,pSVar17);
     break;
   case 0x17:
     if (this_ptr->freaky_timer <= 0.0) {
       _sprintf
                 (local_494,"bride-%d?.wav",this_ptr->freaky_voice_number);
-      core_dracbrid_cpp_CDraculaBride_FUN_004864c0(this_ptr);
+      core_dracbrid_cpp_CDraculaBride_startFreakySound_FUN_004864c0(this_ptr,local_494,1.0);
       iVar7 = core_actor_cpp_randomChance_FUN_0040cd10(0.2);
       if (iVar7 != 0) {
-        core_dracbrid_cpp_CDraculaBride_FUN_004864c0(this_ptr);
+        core_dracbrid_cpp_CDraculaBride_startFreakySound_FUN_004864c0(this_ptr,local_494,1.0);
       }
     }
     switch(this_ptr->mist_state) {

@@ -21,7 +21,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 ;   core_actor.cpp_getRandomInt_FUN_0040cc70
-;   core_batcreat.cpp_CBatCreature_FUN_00415dd0
+;   core_batcreat.cpp_CBatCreature_processDismemberment_FUN_00415dd0
 ;   core_charactr.cpp_CCharacter_igniteBone_FUN_0042b5b0
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_004a9f10
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_004c79d0
@@ -91,8 +91,8 @@ section .text
     PUSH EDI                            ; 004160b4
         ;   Label: LAB_004160b4
     PUSH ESI                            ; 004160b5
-    CALL core_batcreat.cpp_CBatCreature_FUN_00415dd0 ; 004160b6
-        ;   XREF to: 00415dd0 (UNCONDITIONAL_CALL)  ; void core_batcreat.cpp_CBatCreature_FUN_00415dd0(CBatCreature * this_ptr)
+    CALL core_batcreat.cpp_CBatCreature_processDismemberment_FUN_00415dd0 ; 004160b6
+        ;   XREF to: 00415dd0 (UNCONDITIONAL_CALL)  ; void core_batcreat.cpp_CBatCreature_processDismemberment_FUN_00415dd0(CBatCreature * this_ptr, SDamageInfo * damage_info)
     FLD float ptr [EDI + 0x4]           ; 004160bb
     ADD ESP,0x8                         ; 004160be
     FSUBR float ptr [ESI + 0x243c]      ; 004160c1

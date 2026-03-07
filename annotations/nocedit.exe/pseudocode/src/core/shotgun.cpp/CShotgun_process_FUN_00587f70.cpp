@@ -21,9 +21,9 @@ void __cdecl core_shotgun_cpp_CShotgun_process_FUN_00587f70(CShotgun *this_ptr,f
               ((CDemonActor *)this_ptr,&CStack_1c,input_local_point);
     g_CDemonLightInstance.volumetric_enabled = 0;
     if ((float *)&stack0x00000000 != &g_CDemonLightInstance.base.base.rotation_matrix.m[1].y) {
-      g_CDemonLightInstance.base.base.position.x = (int)CStack_1c.x;
-      g_CDemonLightInstance.base.base.position.y = (int)CStack_1c.y;
-      g_CDemonLightInstance.base.base.position.z = (int)CStack_1c.z;
+      g_CDemonLightInstance.base.base.position.f.x = CStack_1c.x;
+      g_CDemonLightInstance.base.base.position.f.y = CStack_1c.y;
+      g_CDemonLightInstance.base.base.position.f.z = CStack_1c.z;
     }
     core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
               (&g_CDemonLightInstance.base.base.rotation_matrix,&(this_ptr->base).base.orient.vec);

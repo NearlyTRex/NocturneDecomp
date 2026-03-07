@@ -114,7 +114,8 @@ int __cdecl core_inv_cpp_CInventory_select_FUN_004ff800(CInventory *this_ptr,CDe
         pcVar7 = pcVar7 + 2;
       } while (cVar1 != '\0');
       core_game_cpp_CGame_displayMessage_FUN_004d7f20(g_CGamePtr,local_114,5.0);
-      iVar2 = core_health_cpp_CHealthItem_FUN_004f1fd0(local_14);
+      iVar2 = core_health_cpp_CHealthItem_useItem_FUN_004f1fd0
+                        (local_14,&g_HeroActors[g_LocalHeroIndex]->base);
       if (iVar2 < 1) {
         core_inv_cpp_CInventory_removeItem_FUN_004fea70(this_ptr,actor_ptr,1);
         return 1;

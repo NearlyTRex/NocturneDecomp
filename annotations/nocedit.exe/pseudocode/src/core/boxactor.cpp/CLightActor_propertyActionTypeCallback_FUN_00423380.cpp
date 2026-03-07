@@ -23,6 +23,6 @@ int __cdecl core_boxactor_cpp_CLightActor_propertyActionTypeCallback_FUN_0042338
     return 0;
   }
   this_ptr_00->light_actor_type = EVar1;
-  core_boxactor_cpp_CLightActor_FUN_00422d60(this_ptr_00);
+  core_boxactor_cpp_CLightActor_setupLightModel_FUN_00422d60(this_ptr_00);
   return 1;
 }

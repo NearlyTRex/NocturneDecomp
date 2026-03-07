@@ -189,8 +189,8 @@ section .text
     PUSH dword ptr [EBP + 0x92]         ; 004844a0
         ;   Label: LAB_004844a0
     PUSH EBX                            ; 004844a6
-    CALL core_dracbrid.cpp_CDraculaBride_FUN_004869a0 ; 004844a7
-        ;   XREF to: 004869a0 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_CDraculaBride_FUN_004869a0(CDraculaBride * this_ptr)
+    CALL core_dracbrid.cpp_CDraculaBride_updateFreakySounds_FUN_004869a0 ; 004844a7
+        ;   XREF to: 004869a0 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_CDraculaBride_updateFreakySounds_FUN_004869a0(CDraculaBride * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004844ac
     PUSH dword ptr [EBP + 0x92]         ; 004844af
     PUSH EBX                            ; 004844b5
@@ -255,8 +255,8 @@ section .text
     PUSH 0xbf800000                     ; 0048456e
     PUSH EAX                            ; 00484573
     PUSH EBX                            ; 00484574
-    CALL core_dracbrid.cpp_CDraculaBride_FUN_004858f0 ; 00484575
-        ;   XREF to: 004858f0 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_CDraculaBride_FUN_004858f0(CDraculaBride * this_ptr)
+    CALL core_dracbrid.cpp_CDraculaBride_explodeIntoParts_FUN_004858f0 ; 00484575
+        ;   XREF to: 004858f0 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_CDraculaBride_explodeIntoParts_FUN_004858f0(CDraculaBride * this_ptr, CVector3f * direction, float spread_angle, int render_in_background)
     ADD ESP,0x10                        ; 0048457a
     FLD float ptr [0x0065cd8c]          ; 0048457d | FLOAT_0065cd8c
     PUSH 0x6219bd                       ; 00484583 | = "brideexplosion.wav"
@@ -584,8 +584,8 @@ section .text
     PUSH 0x3f800000                     ; 00484960
     PUSH EAX                            ; 00484965
     PUSH EBX                            ; 00484966
-    CALL core_dracbrid.cpp_CDraculaBride_FUN_004864c0 ; 00484967
-        ;   XREF to: 004864c0 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_CDraculaBride_FUN_004864c0(CDraculaBride * this_ptr)
+    CALL core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_004864c0 ; 00484967
+        ;   XREF to: 004864c0 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_004864c0(CDraculaBride * this_ptr, char * sound_name, float volume)
     ADD ESP,0xc                         ; 0048496c
     PUSH 0x3e4ccccd                     ; 0048496f
     CALL core_actor.cpp_randomChance_FUN_0040cd10 ; 00484974
@@ -598,8 +598,8 @@ section .text
     PUSH 0x3f800000                     ; 00484986
     PUSH EAX                            ; 0048498b
     PUSH EBX                            ; 0048498c
-    CALL core_dracbrid.cpp_CDraculaBride_FUN_004864c0 ; 0048498d
-        ;   XREF to: 004864c0 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_CDraculaBride_FUN_004864c0(CDraculaBride * this_ptr)
+    CALL core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_004864c0 ; 0048498d
+        ;   XREF to: 004864c0 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_004864c0(CDraculaBride * this_ptr, char * sound_name, float volume)
     ADD ESP,0xc                         ; 00484992
     JMP 0x00484911                      ; 00484995
         ;   XREF to: 00484911 (UNCONDITIONAL_JUMP)  ; LAB_00484911
@@ -966,8 +966,8 @@ section .text
     ADD ESP,0xc                         ; 00484dc3
     PUSH EAX                            ; 00484dc6
     PUSH EBX                            ; 00484dc7
-    CALL core_enemy.cpp_CEnemy_FUN_004a9880 ; 00484dc8
-        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9880(CEnemy * this_ptr)
+    CALL core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a9880 ; 00484dc8
+        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a9880(CEnemy * this_ptr, CVector3f * point, float radius, SDamageInfo * damage_info)
     ADD ESP,0x10                        ; 00484dcd
     MOV dword ptr [EBX + 0xbf64],0x1    ; 00484dd0
     JMP 0x004846e0                      ; 00484dda
@@ -1013,8 +1013,8 @@ section .text
     ADD ESP,0xc                         ; 00484e5e
     PUSH EAX                            ; 00484e61
     PUSH EBX                            ; 00484e62
-    CALL core_enemy.cpp_CEnemy_FUN_004a9880 ; 00484e63
-        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9880(CEnemy * this_ptr)
+    CALL core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a9880 ; 00484e63
+        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a9880(CEnemy * this_ptr, CVector3f * point, float radius, SDamageInfo * damage_info)
     ADD ESP,0x10                        ; 00484e68
     MOV dword ptr [EBX + 0xbf64],0x1    ; 00484e6b
     JMP 0x004846e0                      ; 00484e75
@@ -1061,8 +1061,8 @@ section .text
     ADD ESP,0xc                         ; 00484efb
     PUSH EAX                            ; 00484efe
     PUSH EBX                            ; 00484eff
-    CALL core_enemy.cpp_CEnemy_FUN_004a9880 ; 00484f00
-        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9880(CEnemy * this_ptr)
+    CALL core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a9880 ; 00484f00
+        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a9880(CEnemy * this_ptr, CVector3f * point, float radius, SDamageInfo * damage_info)
     ADD ESP,0x10                        ; 00484f05
     MOV dword ptr [EBX + 0xbf64],0x1    ; 00484f08
     JMP 0x004846e0                      ; 00484f12
@@ -1109,8 +1109,8 @@ section .text
     ADD ESP,0xc                         ; 00484f9b
     PUSH EAX                            ; 00484f9e
     PUSH EBX                            ; 00484f9f
-    CALL core_enemy.cpp_CEnemy_FUN_004a9880 ; 00484fa0
-        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9880(CEnemy * this_ptr)
+    CALL core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a9880 ; 00484fa0
+        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a9880(CEnemy * this_ptr, CVector3f * point, float radius, SDamageInfo * damage_info)
     ADD ESP,0x10                        ; 00484fa5
     JMP 0x004846e0                      ; 00484fa8
         ;   XREF to: 004846e0 (UNCONDITIONAL_JUMP)  ; default
@@ -1304,8 +1304,8 @@ section .text
     PUSH dword ptr [EBP + 0x92]         ; 004851d6
         ;   Label: LAB_004851d6
     PUSH EBX                            ; 004851dc
-    CALL core_enemy.cpp_CEnemy_FUN_004a9fd0 ; 004851dd
-        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9fd0(CEnemy * this_ptr, float delta_time)
+    CALL core_enemy.cpp_CEnemy_updatePatrol_FUN_004a9fd0 ; 004851dd
+        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_updatePatrol_FUN_004a9fd0(CEnemy * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004851e2
     TEST EAX,EAX                        ; 004851e5
     JZ 0x004846e0                       ; 004851e7
@@ -1348,8 +1348,8 @@ section .text
     PUSH 0x3f800000                     ; 00485247
     PUSH EAX                            ; 0048524c
     PUSH EBX                            ; 0048524d
-    CALL core_dracbrid.cpp_CDraculaBride_FUN_004864c0 ; 0048524e
-        ;   XREF to: 004864c0 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_CDraculaBride_FUN_004864c0(CDraculaBride * this_ptr)
+    CALL core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_004864c0 ; 0048524e
+        ;   XREF to: 004864c0 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_004864c0(CDraculaBride * this_ptr, char * sound_name, float volume)
     ADD ESP,0xc                         ; 00485253
     PUSH 0x3e4ccccd                     ; 00485256
     CALL core_actor.cpp_randomChance_FUN_0040cd10 ; 0048525b
@@ -1362,8 +1362,8 @@ section .text
     PUSH 0x3f800000                     ; 0048526d
     PUSH EAX                            ; 00485272
     PUSH EBX                            ; 00485273
-    CALL core_dracbrid.cpp_CDraculaBride_FUN_004864c0 ; 00485274
-        ;   XREF to: 004864c0 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_CDraculaBride_FUN_004864c0(CDraculaBride * this_ptr)
+    CALL core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_004864c0 ; 00485274
+        ;   XREF to: 004864c0 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_004864c0(CDraculaBride * this_ptr, char * sound_name, float volume)
     ADD ESP,0xc                         ; 00485279
     PUSH dword ptr [EBP + 0x92]         ; 0048527c
         ;   Label: LAB_0048527c
@@ -1402,8 +1402,8 @@ section .text
     PUSH dword ptr [EBP + 0x92]         ; 004852e1
         ;   Label: LAB_004852e1
     PUSH EBX                            ; 004852e7
-    CALL core_enemy.cpp_CEnemy_FUN_004a9fd0 ; 004852e8
-        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9fd0(CEnemy * this_ptr, float delta_time)
+    CALL core_enemy.cpp_CEnemy_updatePatrol_FUN_004a9fd0 ; 004852e8
+        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_updatePatrol_FUN_004a9fd0(CEnemy * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004852ed
     TEST EAX,EAX                        ; 004852f0
     JZ 0x004846e0                       ; 004852f2
@@ -1602,8 +1602,8 @@ section .text
     ADD ESP,0xc                         ; 00485529
     PUSH EAX                            ; 0048552c
     PUSH EBX                            ; 0048552d
-    CALL core_enemy.cpp_CEnemy_FUN_004a9880 ; 0048552e
-        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9880(CEnemy * this_ptr)
+    CALL core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a9880 ; 0048552e
+        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a9880(CEnemy * this_ptr, CVector3f * point, float radius, SDamageInfo * damage_info)
     ADD ESP,0x10                        ; 00485533
     JMP 0x004846e0                      ; 00485536
         ;   XREF to: 004846e0 (UNCONDITIONAL_JUMP)  ; default
@@ -1619,8 +1619,8 @@ section .text
         ;   XREF to: 0048558a (CONDITIONAL_JUMP)  ; LAB_0048558a
     PUSH dword ptr [EBP + 0x92]         ; 0048555b
     PUSH EBX                            ; 00485561
-    CALL core_enemy.cpp_CEnemy_FUN_004a9fd0 ; 00485562
-        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9fd0(CEnemy * this_ptr, float delta_time)
+    CALL core_enemy.cpp_CEnemy_updatePatrol_FUN_004a9fd0 ; 00485562
+        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_updatePatrol_FUN_004a9fd0(CEnemy * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00485567
     TEST EAX,EAX                        ; 0048556a
     JZ 0x004846e0                       ; 0048556c
@@ -1721,8 +1721,8 @@ section .text
     PUSH 0x3f800000                     ; 0048566f
     PUSH EAX                            ; 00485674
     PUSH EBX                            ; 00485675
-    CALL core_dracbrid.cpp_CDraculaBride_FUN_004864c0 ; 00485676
-        ;   XREF to: 004864c0 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_CDraculaBride_FUN_004864c0(CDraculaBride * this_ptr)
+    CALL core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_004864c0 ; 00485676
+        ;   XREF to: 004864c0 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_004864c0(CDraculaBride * this_ptr, char * sound_name, float volume)
     ADD ESP,0xc                         ; 0048567b
     PUSH 0x1                            ; 0048567e
     PUSH 0x17                           ; 00485680
@@ -1773,8 +1773,8 @@ section .text
     PUSH 0x3f800000                     ; 0048570f
     PUSH EAX                            ; 00485714
     PUSH EBX                            ; 00485715
-    CALL core_dracbrid.cpp_CDraculaBride_FUN_004864c0 ; 00485716
-        ;   XREF to: 004864c0 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_CDraculaBride_FUN_004864c0(CDraculaBride * this_ptr)
+    CALL core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_004864c0 ; 00485716
+        ;   XREF to: 004864c0 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_004864c0(CDraculaBride * this_ptr, char * sound_name, float volume)
     ADD ESP,0xc                         ; 0048571b
     PUSH 0x3e4ccccd                     ; 0048571e
     CALL core_actor.cpp_randomChance_FUN_0040cd10 ; 00485723
@@ -1787,8 +1787,8 @@ section .text
     PUSH 0x3f800000                     ; 00485735
     PUSH EAX                            ; 0048573a
     PUSH EBX                            ; 0048573b
-    CALL core_dracbrid.cpp_CDraculaBride_FUN_004864c0 ; 0048573c
-        ;   XREF to: 004864c0 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_CDraculaBride_FUN_004864c0(CDraculaBride * this_ptr)
+    CALL core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_004864c0 ; 0048573c
+        ;   XREF to: 004864c0 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_004864c0(CDraculaBride * this_ptr, char * sound_name, float volume)
     ADD ESP,0xc                         ; 00485741
     PUSH dword ptr [EBP + 0x92]         ; 00485744
         ;   Label: LAB_00485744
@@ -1803,8 +1803,8 @@ section .text
         ;   XREF to: 00485792 (CONDITIONAL_JUMP)  ; LAB_00485792
     PUSH dword ptr [EBP + 0x92]         ; 0048576a
     PUSH EBX                            ; 00485770
-    CALL core_enemy.cpp_CEnemy_FUN_004a9fd0 ; 00485771
-        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004a9fd0(CEnemy * this_ptr, float delta_time)
+    CALL core_enemy.cpp_CEnemy_updatePatrol_FUN_004a9fd0 ; 00485771
+        ;   XREF to: 004a9fd0 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_updatePatrol_FUN_004a9fd0(CEnemy * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00485776
     TEST EAX,EAX                        ; 00485779
     JNZ 0x004846e0                      ; 0048577b

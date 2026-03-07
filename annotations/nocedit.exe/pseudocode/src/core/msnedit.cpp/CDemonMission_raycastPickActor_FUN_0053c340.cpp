@@ -24,9 +24,9 @@ CDemonActor * __cdecl core_msnedit_cpp_CDemonMission_raycastPickActor_FUN_0053c3
   if (((((this_ptr->viewport).left < screen_x) && ((this_ptr->viewport).top < screen_y)) &&
       (screen_x < (this_ptr->viewport).right + -1)) && (screen_y < (this_ptr->viewport).bottom + -1)
      ) {
-    local_28.x = (float)g_CDemonCameraInstance.base.position.x;
-    local_28.y = (float)g_CDemonCameraInstance.base.position.y;
-    local_28.z = (float)g_CDemonCameraInstance.base.position.z;
+    local_28.x = g_CDemonCameraInstance.base.position.f.x;
+    local_28.y = g_CDemonCameraInstance.base.position.f.y;
+    local_28.z = g_CDemonCameraInstance.base.position.f.z;
     core_dcamera_cpp_CDemonCamera_screenToWorldDirection_FUN_0044d480
               (&g_CDemonCameraInstance,&local_4c,screen_x,screen_y);
     local_18 = (float)1000 /

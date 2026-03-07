@@ -22,7 +22,7 @@
 ;   core_gore.cpp_CGore_spawnFliesOnActor_FUN_004ee030
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
-;   core_scat.cpp_CScat_FUN_00558010
+;   core_scat.cpp_CScat_isWeaponReady_FUN_00558010
 ;
 ; *****************************************************************************
 
@@ -140,8 +140,8 @@ section .text
     RET                                 ; 00557fae
     PUSH EBX                            ; 00557faf
         ;   Label: LAB_00557faf
-    CALL core_scat.cpp_CScat_FUN_00558010 ; 00557fb0
-        ;   XREF to: 00558010 (UNCONDITIONAL_CALL)  ; int core_scat.cpp_CScat_FUN_00558010(CScat * this_ptr)
+    CALL core_scat.cpp_CScat_isWeaponReady_FUN_00558010 ; 00557fb0
+        ;   XREF to: 00558010 (UNCONDITIONAL_CALL)  ; int core_scat.cpp_CScat_isWeaponReady_FUN_00558010(CScat * this_ptr)
     ADD ESP,0x4                         ; 00557fb5
     TEST EAX,EAX                        ; 00557fb8
     JZ 0x00557fea                       ; 00557fba

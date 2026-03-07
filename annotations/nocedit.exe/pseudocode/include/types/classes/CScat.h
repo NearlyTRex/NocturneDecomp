@@ -2,6 +2,7 @@
 
 // Forward declarations
 struct CDemonActor;
+struct CWeapon;
 
 // Dependencies
 #include "system/basetypes.h"
@@ -15,7 +16,7 @@ typedef struct CScat {
     int guns_drawn; // 0x1fbd4
     CVector3f head_euler_angles; // 0x1fbd8
     float head_blend_weight; // 0x1fbe4
-    struct CDemonActor* weapon_actor; // 0x1fbe8
+    struct CWeapon* weapon_actor; // 0x1fbe8
     float aim_pitch; // 0x1fbec
     float aim_yaw; // 0x1fbf0
     int dead; // 0x1fbf4

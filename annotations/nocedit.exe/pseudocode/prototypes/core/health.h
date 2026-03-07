@@ -47,9 +47,9 @@ int __cdecl CHealthItem::hasCollision(CHealthItem *this_ptr,SCollisionInfo *coll
 // Address: 004f1fb0
 int __cdecl CHealthItem::canPickup(CHealthItem *this_ptr,CDemonActor *picker);
 
-// Original: core_health.cpp_CHealthItem_FUN_004f1fd0
+// Original: core_health.cpp_CHealthItem_useItem_FUN_004f1fd0
 // Address: 004f1fd0
-int __cdecl CHealthItem(CHealthItem *this_ptr);
+int __cdecl CHealthItem::useItem(CHealthItem *this_ptr,CCharacter *user);
 
 // Original: core_health.cpp_CHealthItem_onPickup_FUN_004f2020
 // Address: 004f2020

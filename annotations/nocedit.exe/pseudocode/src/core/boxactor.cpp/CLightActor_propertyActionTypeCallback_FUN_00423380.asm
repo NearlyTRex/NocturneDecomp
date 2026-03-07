@@ -18,7 +18,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
-;   core_boxactor.cpp_CLightActor_FUN_00422d60
+;   core_boxactor.cpp_CLightActor_setupLightModel_FUN_00422d60
 ;   core_boxactor.cpp_pickLightActorType_FUN_00423110
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;
@@ -67,8 +67,8 @@ section .text
     PUSH EBX                            ; 004233e2
         ;   Label: LAB_004233e2
     MOV dword ptr [EBX + 0x66c],EAX     ; 004233e3
-    CALL core_boxactor.cpp_CLightActor_FUN_00422d60 ; 004233e9
-        ;   XREF to: 00422d60 (UNCONDITIONAL_CALL)  ; void core_boxactor.cpp_CLightActor_FUN_00422d60(CLightActor * this_ptr)
+    CALL core_boxactor.cpp_CLightActor_setupLightModel_FUN_00422d60 ; 004233e9
+        ;   XREF to: 00422d60 (UNCONDITIONAL_CALL)  ; void core_boxactor.cpp_CLightActor_setupLightModel_FUN_00422d60(CLightActor * this_ptr)
     MOV EAX,0x1                         ; 004233ee
     ADD ESP,0x4                         ; 004233f3
     ADD ESP,0x12c                       ; 004233f6

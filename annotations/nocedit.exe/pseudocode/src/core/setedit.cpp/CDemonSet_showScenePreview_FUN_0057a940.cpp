@@ -55,9 +55,9 @@ void __cdecl core_setedit_cpp_CDemonSet_showScenePreview_FUN_0057a940(CDemonSet 
     pvStack_20 = (void *)g_CSlewPtr->slew_rate;
     core_slew_cpp_CSlew_processInput_FUN_005a20b0(g_CSlewPtr);
     if (g_CSlewPtr != (CSlew *)&g_CDemonCameraInstance.base.position) {
-      g_CDemonCameraInstance.base.position.x = (int)(g_CSlewPtr->position).x;
-      g_CDemonCameraInstance.base.position.z = (int)(g_CSlewPtr->position).z;
-      g_CDemonCameraInstance.base.position.y = (int)(g_CSlewPtr->position).y;
+      g_CDemonCameraInstance.base.position.f.x = (g_CSlewPtr->position).x;
+      g_CDemonCameraInstance.base.position.f.z = (g_CSlewPtr->position).z;
+      g_CDemonCameraInstance.base.position.f.y = (g_CSlewPtr->position).y;
     }
     core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
               (&g_CDemonCameraInstance.base.rotation_matrix,(CVector3f *)&g_CSlewPtr->pitch);

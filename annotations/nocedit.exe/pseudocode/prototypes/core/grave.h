@@ -35,9 +35,9 @@ int __cdecl CGrave::renderOpaque(CGrave *this_ptr);
 // Address: 004ee710
 void __cdecl CGrave::renderBackground(CGrave *this_ptr,int layer_flag);
 
-// Original: core_grave.cpp_CGrave_FUN_004ee790
+// Original: core_grave.cpp_CGrave_startAnimation_FUN_004ee790
 // Address: 004ee790
-void __cdecl CGrave(CGrave *this_ptr);
+void __cdecl CGrave::startAnimation(CGrave *this_ptr);
 
 // Original: core_grave.cpp_CGrave_archive_FUN_004ee7f0
 // Address: 004ee7f0

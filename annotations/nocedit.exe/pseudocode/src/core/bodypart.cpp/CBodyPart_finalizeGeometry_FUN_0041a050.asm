@@ -31,16 +31,16 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[16]:
-;   core_batcreat.cpp_CBatCreature_FUN_00415dd0 at 00415ff7
+;   core_batcreat.cpp_CBatCreature_processDismemberment_FUN_00415dd0 at 00415ff7
 ;   core_batman.cpp_CBatman_FUN_00417660 at 00417804
 ;   core_bodypart.cpp_CBodyPart_archive_FUN_00419880 at 00419bb1
 ;   core_bodypart.cpp_CBodyPart_initializeInEditor_FUN_0041b280 at 0041b4b6
 ;   core_bride.cpp_CBride_FUN_00424600 at 00424732
 ;   core_charactr.cpp_CCharacter_detachBodyPart_FUN_0042bcc0 at 0042bd1d
 ;   core_cow.cpp_CZombieCow_FUN_004448c0 at 00444a4c
-;   core_dracbrid.cpp_CDraculaBride_FUN_00485b20 at 00485b7c
-;   core_gargoyle.cpp_CGargoyle_FUN_004e5530 at 004e56b6
-;   core_ghoul.cpp_CGhoul_FUN_004e8520 at 004e86bf
+;   core_dracbrid.cpp_CDraculaBride_dismemberPart_FUN_00485b20 at 00485b7c
+;   core_gargoyle.cpp_CGargoyle_processDismemberment_FUN_004e5530 at 004e56b6
+;   core_ghoul.cpp_CGhoul_processDismemberment_FUN_004e8520 at 004e86bf
 ;   ... and 6 more
 ;
 ; Referenced Globals:

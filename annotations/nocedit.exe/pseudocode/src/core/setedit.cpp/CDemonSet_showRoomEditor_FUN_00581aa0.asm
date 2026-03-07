@@ -259,9 +259,9 @@ section .text
     MOV EAX,dword ptr [EBP + -0x7a]     ; 00581c57
     MOV [0x032758e8],EAX                ; 00581c5a | DAT_032758e8
     MOV EAX,dword ptr [EBP + -0x76]     ; 00581c5f
-    MOV [0x032758ec],EAX                ; 00581c62 | g_CDemonCameraInstance.base.position.y
+    MOV [0x032758ec],EAX                ; 00581c62 | g_CDemonCameraInstance.base.position+4
     MOV EAX,dword ptr [EBP + -0x72]     ; 00581c67
-    MOV [0x032758f0],EAX                ; 00581c6a | g_CDemonCameraInstance.base.position.z
+    MOV [0x032758f0],EAX                ; 00581c6a | g_CDemonCameraInstance.base.position+8
     LEA EAX,[EBP + -0x6e]               ; 00581c6f
         ;   Label: LAB_00581c6f
     PUSH EAX                            ; 00581c72

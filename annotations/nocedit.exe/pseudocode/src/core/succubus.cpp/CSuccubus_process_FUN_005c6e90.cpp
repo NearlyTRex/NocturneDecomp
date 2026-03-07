@@ -90,7 +90,7 @@ void __cdecl core_succubus_cpp_CSuccubus_process_FUN_005c6e90(CSuccubus *this_pt
       (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
       pCVar5 = (this_ptr->base).victim;
       if (pCVar5 == (CCharacter *)0x0) {
-        iVar9 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base,delta_time);
+        iVar9 = core_enemy_cpp_CEnemy_updatePatrol_FUN_004a9fd0(&this_ptr->base,delta_time);
         if (iVar9 != 0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&pCVar15->motion_controller,1,1);
@@ -113,7 +113,7 @@ void __cdecl core_succubus_cpp_CSuccubus_process_FUN_005c6e90(CSuccubus *this_pt
     else if ((uVar12 < 2) || (uVar12 == 2)) {
       (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
       if ((this_ptr->base).victim == (CCharacter *)0x0) {
-        iVar9 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base,delta_time);
+        iVar9 = core_enemy_cpp_CEnemy_updatePatrol_FUN_004a9fd0(&this_ptr->base,delta_time);
         pCVar15 = &(this_ptr->base).base.model;
         if (iVar9 == 0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00

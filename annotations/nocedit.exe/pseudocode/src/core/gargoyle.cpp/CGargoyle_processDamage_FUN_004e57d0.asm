@@ -20,7 +20,7 @@
 ;   core_charactr.cpp_CCharacter_dismember_FUN_0042b9e0
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_004a9f10
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_004c79d0
-;   core_gargoyle.cpp_CGargoyle_FUN_004e5530
+;   core_gargoyle.cpp_CGargoyle_processDismemberment_FUN_004e5530
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
@@ -75,8 +75,8 @@ section .text
         ;   XREF to: 004e58ce (CONDITIONAL_JUMP)  ; LAB_004e58ce
     PUSH EDI                            ; 004e583b
     PUSH ESI                            ; 004e583c
-    CALL core_gargoyle.cpp_CGargoyle_FUN_004e5530 ; 004e583d
-        ;   XREF to: 004e5530 (UNCONDITIONAL_CALL)  ; void core_gargoyle.cpp_CGargoyle_FUN_004e5530(CGargoyle * this_ptr)
+    CALL core_gargoyle.cpp_CGargoyle_processDismemberment_FUN_004e5530 ; 004e583d
+        ;   XREF to: 004e5530 (UNCONDITIONAL_CALL)  ; void core_gargoyle.cpp_CGargoyle_processDismemberment_FUN_004e5530(CGargoyle * this_ptr, SDamageInfo * damage_info)
     FLD float ptr [EDI + 0x4]           ; 004e5842
     FSUBR float ptr [ESI + 0x243c]      ; 004e5845
     ADD ESP,0x8                         ; 004e584b

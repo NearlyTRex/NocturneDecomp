@@ -17,7 +17,7 @@
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
-;   core_grave.cpp_CGrave_FUN_004ee790
+;   core_grave.cpp_CGrave_startAnimation_FUN_004ee790
 ;
 ; *****************************************************************************
 
@@ -62,8 +62,8 @@ section .text
     JZ 0x004ee5dc                       ; 004ee612
         ;   XREF to: 004ee5dc (CONDITIONAL_JUMP)  ; LAB_004ee5dc
     PUSH EBX                            ; 004ee614
-    CALL core_grave.cpp_CGrave_FUN_004ee790 ; 004ee615
-        ;   XREF to: 004ee790 (UNCONDITIONAL_CALL)  ; void core_grave.cpp_CGrave_FUN_004ee790(CGrave * this_ptr)
+    CALL core_grave.cpp_CGrave_startAnimation_FUN_004ee790 ; 004ee615
+        ;   XREF to: 004ee790 (UNCONDITIONAL_CALL)  ; void core_grave.cpp_CGrave_startAnimation_FUN_004ee790(CGrave * this_ptr)
     ADD ESP,0x4                         ; 004ee61a
     JMP 0x004ee5dc                      ; 004ee61d
         ;   XREF to: 004ee5dc (UNCONDITIONAL_JUMP)  ; LAB_004ee5dc

@@ -140,8 +140,8 @@ section .text
     FLD float ptr [EAX]                 ; 0057aa58 | g_CSlewInstance
     FLD float ptr [EAX + 0x8]           ; 0057aa5a | DAT_03f48f8c
     MOV EDX,dword ptr [EAX + 0x4]       ; 0057aa5d | DAT_03f48f88
-    MOV dword ptr [0x032758ec],EDX      ; 0057aa60 | g_CDemonCameraInstance.base.position.y
-    FSTP float ptr [0x032758f0]         ; 0057aa66 | g_CDemonCameraInstance.base.position.z
+    MOV dword ptr [0x032758ec],EDX      ; 0057aa60 | g_CDemonCameraInstance.base.position+4
+    FSTP float ptr [0x032758f0]         ; 0057aa66 | g_CDemonCameraInstance.base.position+8
     FSTP float ptr [0x032758e8]         ; 0057aa6c | DAT_032758e8
     MOV EAX,[0x00681ab8]                ; 0057aa72 | g_CSlewPtr
         ;   Label: LAB_0057aa72

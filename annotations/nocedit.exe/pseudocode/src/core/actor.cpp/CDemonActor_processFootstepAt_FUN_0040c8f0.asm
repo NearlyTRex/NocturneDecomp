@@ -25,8 +25,8 @@
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 DAT_032613ac
 ;   undefined4 DAT_032758e8
-;   undefined4 g_CDemonCameraInstance.base.position.y
-;   undefined4 g_CDemonCameraInstance.base.position.z
+;   undefined4 g_CDemonCameraInstance.base.position+4
+;   undefined4 g_CDemonCameraInstance.base.position+8
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
@@ -56,13 +56,13 @@ section .text
     MOV EAX,0x32758e8                   ; 0040c917 | DAT_032758e8
     FSUB float ptr [ESP + 0xc]          ; 0040c91c
     FMUL ST0                            ; 0040c920
-    MOV EAX,dword ptr [EAX + 0x4]       ; 0040c922 | g_CDemonCameraInstance.base.position.y
+    MOV EAX,dword ptr [EAX + 0x4]       ; 0040c922 | g_CDemonCameraInstance.base.position+4
     FLD float ptr [ESP + 0x4]           ; 0040c925
     MOV dword ptr [ESP + 0x10],EAX      ; 0040c929
     MOV EAX,0x32758e8                   ; 0040c92d | DAT_032758e8
     FSUB float ptr [ESP + 0x10]         ; 0040c932
     FMUL ST0                            ; 0040c936
-    MOV EAX,dword ptr [EAX + 0x8]       ; 0040c938 | g_CDemonCameraInstance.base.position.z
+    MOV EAX,dword ptr [EAX + 0x8]       ; 0040c938 | g_CDemonCameraInstance.base.position+8
     FLD float ptr [ESP + 0x8]           ; 0040c93b
     MOV dword ptr [ESP + 0x14],EAX      ; 0040c93f
     FXCH                                ; 0040c943

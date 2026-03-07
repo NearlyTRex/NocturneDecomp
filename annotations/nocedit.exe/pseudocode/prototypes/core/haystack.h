@@ -27,17 +27,17 @@ void __cdecl CHaystack::setup(CHaystack *this_ptr);
 // Address: 004f0e40
 void __cdecl CHaystack::process(CHaystack *this_ptr,float delta_time);
 
-// Original: core_haystack.cpp_CHaystack_FUN_004f13f0
+// Original: core_haystack.cpp_CHaystack_updateAI_FUN_004f13f0
 // Address: 004f13f0
-void __cdecl CHaystack(CHaystack *this_ptr);
+void __cdecl CHaystack::updateAI(CHaystack *this_ptr,float delta_time);
 
-// Original: core_haystack.cpp_CHaystack_FUN_004f1970
+// Original: core_haystack.cpp_CHaystack_advanceMotion_FUN_004f1970
 // Address: 004f1970
-void __cdecl CHaystack(CHaystack *this_ptr);
+void __cdecl CHaystack::advanceMotion(CHaystack *this_ptr,float delta_time);
 
-// Original: core_haystack.cpp_CHaystack_FUN_004f1ab0
+// Original: core_haystack.cpp_CHaystack_checkMeleeHit_FUN_004f1ab0
 // Address: 004f1ab0
-void __cdecl CHaystack(CHaystack *this_ptr);
+void __cdecl CHaystack::checkMeleeHit(CHaystack *this_ptr,int bone_index);
 
 // Original: core_haystack.cpp_CHaystack_archive_FUN_004f1b50
 // Address: 004f1b50

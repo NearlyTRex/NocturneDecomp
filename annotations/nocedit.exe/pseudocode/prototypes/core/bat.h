@@ -7,9 +7,9 @@
 // Address: 004146c0
 void __cdecl staticInit(void);
 
-// Original: core_bat.cpp_FUN_004146f0
+// Original: core_bat.cpp_fmodfPositive_FUN_004146f0
 // Address: 004146f0
-float __cdecl FUN_004146f0(void);
+float __cdecl fmodfPositive(float value,float modulus);
 
 // Original: core_bat.cpp_factoryFunc_FUN_00414790
 // Address: 00414790
@@ -43,9 +43,9 @@ int __cdecl CBat::renderOpaque(CBat *this_ptr);
 // Address: 00414c60
 CBoundingBox3D * __cdecl CBat::getBoundingBox(CBat *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_bat.cpp_CBat_FUN_00414ce0
+// Original: core_bat.cpp_CBat_updateCoursePosition_FUN_00414ce0
 // Address: 00414ce0
-void __cdecl CBat(CBat *this_ptr);
+void __cdecl CBat::updateCoursePosition(CBat *this_ptr);
 
 // Original: core_bat.cpp_CBat_getPropertyList_FUN_00414dc0
 // Address: 00414dc0
@@ -67,14 +67,14 @@ void __cdecl CBat::showEditorHelp(CBat *this_ptr,int *y_pos);
 // Address: 00414fe0
 CBat * __cdecl CBat::dtor(CBat *this_ptr,uint flags);
 
-// Original: core_bat.cpp_FUN_00415050
+// Original: core_bat.cpp_assignInt_FUN_00415050
 // Address: 00415050
-int __cdecl FUN_00415050(void);
+int * __cdecl assignInt(int *dst,int *src);
 
-// Original: core_bat.cpp_FUN_00415060
+// Original: core_bat.cpp_assignInt_FUN_00415060
 // Address: 00415060
-int __cdecl FUN_00415060(void);
+int * __cdecl assignInt(int *dst,int *src);
 
-// Original: core_bat.cpp_FUN_00415070
+// Original: core_bat.cpp_assignInt_FUN_00415070
 // Address: 00415070
-int __cdecl FUN_00415070(void);
+int * __cdecl assignInt(int *dst,int *src);

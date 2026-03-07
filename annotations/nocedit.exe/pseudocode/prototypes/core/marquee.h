@@ -19,9 +19,9 @@ CDemonActorType * __cdecl CMarquee::getActorType(CMarquee *this_ptr);
 // Address: 0050bb60
 CMarquee * __cdecl CMarquee::ctor(CMarquee *this_ptr);
 
-// Original: core_marquee.cpp_CMarquee_FUN_0050bc30
+// Original: core_marquee.cpp_CMarquee_computeBoundingBox_FUN_0050bc30
 // Address: 0050bc30
-void __cdecl CMarquee(CMarquee *this_ptr);
+void __cdecl CMarquee::computeBoundingBox(CMarquee *this_ptr);
 
 // Original: core_marquee.cpp_CMarquee_setup_FUN_0050bd60
 // Address: 0050bd60
@@ -35,9 +35,9 @@ void __cdecl CMarquee::process(CMarquee *this_ptr,float delta_time);
 // Address: 0050be50
 int __cdecl CMarquee::renderOpaque(CMarquee *this_ptr);
 
-// Original: core_marquee.cpp_CMarquee_FUN_0050bec0
+// Original: core_marquee.cpp_CMarquee_renderLightBulb_FUN_0050bec0
 // Address: 0050bec0
-void __cdecl CMarquee(CMarquee *this_ptr);
+void __cdecl CMarquee::renderLightBulb(CMarquee *this_ptr,CVector3f *position);
 
 // Original: core_marquee.cpp_CMarquee_renderTransparent_FUN_0050c050
 // Address: 0050c050

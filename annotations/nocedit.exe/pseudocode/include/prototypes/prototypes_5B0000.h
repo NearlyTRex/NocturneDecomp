@@ -207,7 +207,7 @@ int __cdecl core_spike_cpp_CSpike_renderOpaque_FUN_005b8730(CSpike *this_ptr);
 CBoundingBox3D * __cdecl core_spike_cpp_CSpike_getBoundingBox_FUN_005b87a0(CSpike *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_spike_cpp_CSpike_archive_FUN_005b87f0(CSpike *this_ptr);
 int __cdecl core_spike_cpp_CSpike_hasCollision_FUN_005b8940(CSpike *this_ptr,SCollisionInfo *collision_info);
-void __cdecl core_spike_cpp_CSpike_FUN_005b8950(CSpike *this_ptr);
+void __cdecl core_spike_cpp_CSpike_testCollisionWithCharacters_FUN_005b8950(CSpike *this_ptr);
 void __cdecl core_spike_cpp_CSpike_getPropertyList_FUN_005b8e90(CSpike *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_spike_cpp_CSpike_processInEditor_FUN_005b9020(CSpike *this_ptr);
 void __cdecl core_spike_cpp_CSpike_addFilesToExtract_FUN_005b9030(CSpike *this_ptr,_FILE *file_handle);

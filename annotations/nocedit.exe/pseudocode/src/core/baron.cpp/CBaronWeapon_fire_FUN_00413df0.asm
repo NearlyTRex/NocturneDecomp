@@ -7,7 +7,7 @@
 ; CBaronWeapon *   Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
-;   core_baron.cpp_CBaronWeapon_FUN_00413f20
+;   core_baron.cpp_CBaronWeapon_findOrCreateBaron_FUN_00413f20
 ;
 ; *****************************************************************************
 
@@ -17,8 +17,8 @@ section .text
         ;   Label: core_baron.cpp_CBaronWeapon_fire_FUN_00413df0
     MOV EBX,dword ptr [ESP + 0x8]       ; 00413df1
     PUSH EBX                            ; 00413df5
-    CALL core_baron.cpp_CBaronWeapon_FUN_00413f20 ; 00413df6
-        ;   XREF to: 00413f20 (UNCONDITIONAL_CALL)  ; void core_baron.cpp_CBaronWeapon_FUN_00413f20(CBaronWeapon * this_ptr)
+    CALL core_baron.cpp_CBaronWeapon_findOrCreateBaron_FUN_00413f20 ; 00413df6
+        ;   XREF to: 00413f20 (UNCONDITIONAL_CALL)  ; void core_baron.cpp_CBaronWeapon_findOrCreateBaron_FUN_00413f20(CBaronWeapon * this_ptr)
     MOV EDX,dword ptr [EBX + 0x578]     ; 00413dfb
     ADD ESP,0x4                         ; 00413e01
     TEST EDX,EDX                        ; 00413e04

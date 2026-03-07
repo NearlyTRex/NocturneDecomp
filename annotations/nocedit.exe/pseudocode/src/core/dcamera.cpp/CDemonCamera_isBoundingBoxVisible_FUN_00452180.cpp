@@ -83,10 +83,10 @@ int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180(CDem
   g_TransformMatrix.m[1].z = (this_ptr->source_matrix).m[1].z;
   g_TransformMatrix.m[2].x = (this_ptr->source_matrix).m[2].x;
   g_TransformMatrix.m[2].y = (this_ptr->source_matrix).m[2].y;
-  g_RelativeX = (int)ROUND(ROUND(((float)(this_ptr->base).position.x - position->x) * fVar2));
+  g_RelativeX = (int)ROUND(ROUND(((this_ptr->base).position.f.x - position->x) * fVar2));
   g_TransformMatrix.m[2].z = (this_ptr->source_matrix).m[2].z;
-  g_RelativeY = (int)ROUND(ROUND(((float)(this_ptr->base).position.y - position->y) * fVar2));
-  g_RelativeZ = (int)ROUND(ROUND(((float)(this_ptr->base).position.z - position->z) * fVar2));
+  g_RelativeY = (int)ROUND(ROUND(((this_ptr->base).position.f.y - position->y) * fVar2));
+  g_RelativeZ = (int)ROUND(ROUND(((this_ptr->base).position.f.z - position->z) * fVar2));
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
             (g_CDemonRendererPtr2,(CVector3i *)min_corner,(CVector3i *)0x0);
   local_118 = *in_stack_00000014;

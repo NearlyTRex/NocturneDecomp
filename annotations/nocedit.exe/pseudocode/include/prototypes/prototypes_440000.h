@@ -164,7 +164,7 @@ int __cdecl core_crossbow_cpp_CCrossbow_renderOpaque_FUN_00448e00(CCrossbow *thi
 int __cdecl core_crossbow_cpp_CCrossbow_renderTransparent_FUN_00448e80(CCrossbow *this_ptr);
 CVector3f * __cdecl core_crossbow_cpp_CCrossbow_getMuzzlePoint_FUN_00448eb0(CCrossbow *this_ptr,CVector3f *out_point);
 int __cdecl core_crossbow_cpp_CCrossbow_fire_FUN_00448f20(CCrossbow *this_ptr);
-float __cdecl core_crossbow_cpp_CCrossbow_FUN_00449540(CCrossbow *this_ptr);
+float __cdecl core_crossbow_cpp_CCrossbow_getCurFrame_FUN_00449540(CCrossbow *this_ptr);
 float __cdecl core_crossbow_cpp_CCrossbow_getDamage_FUN_00449570(CCrossbow *this_ptr);
 CCrossbow * __cdecl core_crossbow_cpp_CCrossbow_dtor_FUN_004495a0(CCrossbow *this_ptr,uint flags);
 void __cdecl core_curtain_cpp_staticInit_FUN_00449610(void);

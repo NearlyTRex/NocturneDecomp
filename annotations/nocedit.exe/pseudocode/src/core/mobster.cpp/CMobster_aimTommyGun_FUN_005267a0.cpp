@@ -42,7 +42,7 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(CMobster *this_p
   else {
     pCVar1 = (this_ptr->base).victim;
     if (pCVar1 != (CCharacter *)0x0) {
-      iVar2 = core_enemy_cpp_CEnemy_FUN_004a9a50(&this_ptr->base,&pCVar1->base);
+      iVar2 = core_enemy_cpp_CEnemy_canSeeTarget_FUN_004a9a50(&this_ptr->base,&pCVar1->base);
       if ((iVar2 == 0) && (this_ptr->hold_pos_flag == 0)) {
         this_ptr->firing_blend = 0.0;
         return;

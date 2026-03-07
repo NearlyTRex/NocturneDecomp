@@ -25,7 +25,7 @@
 ;   core_mission.cpp_CDemonMission_buildSetActorList_FUN_00523e60
 ;   core_mission.cpp_CDemonMission_loadSet_FUN_00523fb0
 ;   core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0
-;   core_waypoint.cpp_CWayPoint_FUN_005ec4f0
+;   core_waypoint.cpp_CWayPoint_rebuildConnectivity_FUN_005ec4f0
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
 ;
 ; *****************************************************************************
@@ -101,8 +101,8 @@ section .text
     PUSH EDX                            ; 0053d84f
     ADD EBX,0x4                         ; 0053d850
     INC ESI                             ; 0053d853
-    CALL core_waypoint.cpp_CWayPoint_FUN_005ec4f0 ; 0053d854
-        ;   XREF to: 005ec4f0 (UNCONDITIONAL_CALL)  ; void core_waypoint.cpp_CWayPoint_FUN_005ec4f0(CWayPoint * this_ptr)
+    CALL core_waypoint.cpp_CWayPoint_rebuildConnectivity_FUN_005ec4f0 ; 0053d854
+        ;   XREF to: 005ec4f0 (UNCONDITIONAL_CALL)  ; void core_waypoint.cpp_CWayPoint_rebuildConnectivity_FUN_005ec4f0(CWayPoint * this_ptr)
     JMP 0x0053d819                      ; 0053d859
         ;   XREF to: 0053d819 (UNCONDITIONAL_JUMP)  ; LAB_0053d819
 

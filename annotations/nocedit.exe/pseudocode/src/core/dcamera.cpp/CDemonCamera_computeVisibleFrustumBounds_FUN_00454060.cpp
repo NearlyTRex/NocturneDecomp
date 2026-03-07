@@ -40,7 +40,7 @@ CVector3f * __cdecl core_dcamera_cpp_CDemonCamera_computeVisibleFrustumBounds_FU
   int local_2c;
   int local_28;
   int local_24;
-  CVector3i *local_20;
+  UVector3 *local_20;
   int local_1c;
   int local_18;
   int local_14;
@@ -89,9 +89,9 @@ LAB_00454218:
         local_a4 = (float)aiStack_70[2] * 0.00390625f;
         local_a0 = (float)aiStack_70[3] * 0.00390625f;
         local_9c = (float)local_60 * 0.00390625f;
-        local_5c.x = local_a4 - (float)local_20->x;
-        local_5c.y = local_a0 - (float)local_20->y;
-        local_5c.z = local_9c - (float)local_20->z;
+        local_5c.x = local_a4 - (local_20->f).x;
+        local_5c.y = local_a0 - (local_20->f).y;
+        local_5c.z = local_9c - (local_20->f).z;
         core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
                   (local_34,&local_50,&local_5c);
         core_box_cpp_CBoundingBox3D_expand_FUN_00420240((CBoundingBox3D *)output_bounds,&local_50);

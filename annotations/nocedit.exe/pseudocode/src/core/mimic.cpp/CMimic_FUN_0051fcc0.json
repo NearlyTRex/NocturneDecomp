@@ -4,37 +4,37 @@
       {
         "category": "other",
         "column": 25,
-        "line": 196,
+        "line": 197,
         "message": "member reference base type 'float' is not a structure or union"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 196,
+        "line": 197,
         "message": "member reference base type 'float' is not a structure or union"
       },
       {
         "category": "other",
         "column": 21,
-        "line": 263,
+        "line": 267,
         "message": "member reference base type 'float' is not a structure or union"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 263,
+        "line": 267,
         "message": "member reference base type 'float' is not a structure or union"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 271,
+        "line": 275,
         "message": "member reference base type 'float' is not a structure or union"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 271,
+        "line": 275,
         "message": "member reference base type 'float' is not a structure or union"
       }
     ],
@@ -43,12 +43,12 @@
   },
   "complexity": {
     "assembly_lines": 698,
-    "complexity_score": 600,
+    "complexity_score": 604,
     "cross_reference_count": 1,
     "function_call_count": 22,
     "global_count": 25,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 315,
+    "pseudocode_lines": 319,
     "suspect_count": 26,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -57,7 +57,7 @@
       "unknown_field",
       "warning_type_propagation"
     ],
-    "total_lines": 1013
+    "total_lines": 1017
   },
   "cross_references": [
     {
@@ -805,7 +805,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 19,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "float in_stack_00000008;",
@@ -813,7 +813,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 79,
+      "line": 80,
       "match": "ABS",
       "severity": "mild",
       "text": "(ABS((this_ptr->base).base.base.location.position.y -",
@@ -821,7 +821,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 85,
+      "line": 86,
       "match": "SQRT",
       "severity": "mild",
       "text": "if (SQRT(local_70.z * local_70.z + local_70.x * local_70.x + local_70.y * local_70.y) <",
@@ -829,7 +829,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 86,
+      "line": 87,
       "match": "ABS",
       "severity": "mild",
       "text": "(1.0 - ABS(local_14) * (float)0.63661977238577705) * (float)25 +",
@@ -837,23 +837,23 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 95,
+      "line": 96,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar10 = (CMatrix3x4f *)((int)pCVar10 + ((uint)bVar13 * -2 + 1) * 4);",
+      "text": "pCVar9 = (CMatrix3x4f *)((int)pCVar9 + ((uint)bVar12 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 96,
+      "line": 97,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar11 = (CMatrix3x4f *)((int)pCVar11 + ((uint)bVar13 * -2 + 1) * 4);",
+      "text": "pCVar10 = (CMatrix3x4f *)((int)pCVar10 + ((uint)bVar12 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 130,
+      "line": 131,
       "match": "SQRT",
       "severity": "mild",
       "text": "if (-local_118.z <= SQRT(local_d4 * local_d4 + local_dc * local_dc)) {",
@@ -861,23 +861,23 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 144,
+      "line": 145,
       "match": "in_stack_00000008",
       "severity": "moderate",
-      "text": "(this_ptr->base).base.turn_speed = in_stack_00000008 * fVar4 * fVar1;",
+      "text": "(this_ptr->base).base.turn_speed = in_stack_00000008 * fVar3 * fVar1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 145,
+      "line": 146,
       "match": "in_stack_00000008",
       "severity": "moderate",
-      "text": "(this_ptr->base).base.walk_step_speed = fVar3 * in_stack_00000008 * fVar2;",
+      "text": "(this_ptr->base).base.walk_step_speed = fVar14 * in_stack_00000008 * fVar2;",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 160,
+      "line": 161,
       "match": "ABS",
       "severity": "mild",
       "text": "if (ABS((this_ptr->base).base.turn_angle_accumulator) /",
@@ -885,7 +885,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 161,
+      "line": 162,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "(in_stack_00000008 * (this_ptr->base).speed) <= (float)0.78539816337500001) {",
@@ -893,7 +893,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 189,
+      "line": 190,
       "match": "._3_1_",
       "severity": "mild",
       "text": "local_ac.x._3_1_ = local_ac.x._3_1_ ^ 0x80;",
@@ -901,7 +901,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 189,
+      "line": 190,
       "match": "._3_1_",
       "severity": "mild",
       "text": "local_ac.x._3_1_ = local_ac.x._3_1_ ^ 0x80;",
@@ -909,23 +909,23 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 232,
+      "line": 236,
       "match": "in_stack_00000008",
       "severity": "moderate",
-      "text": "(this_ptr->base).base.walk_step_speed = fVar3 * in_stack_00000008;",
+      "text": "(this_ptr->base).base.walk_step_speed = fVar14 * in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 233,
+      "line": 237,
       "match": "in_stack_00000008",
       "severity": "moderate",
-      "text": "(this_ptr->base).base.turn_speed = in_stack_00000008 * fVar1 * fVar3;",
+      "text": "(this_ptr->base).base.turn_speed = in_stack_00000008 * fVar1 * fVar14;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 246,
+      "line": 250,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "local_2c[0] = in_stack_00000008 * (this_ptr->base).speed;",
@@ -933,7 +933,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 256,
+      "line": 260,
       "match": "._3_1_",
       "severity": "mild",
       "text": "local_c4.x._3_1_ = local_c4.x._3_1_ ^ 0x80;",
@@ -941,7 +941,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 256,
+      "line": 260,
       "match": "._3_1_",
       "severity": "mild",
       "text": "local_c4.x._3_1_ = local_c4.x._3_1_ ^ 0x80;",
@@ -949,7 +949,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 264,
+      "line": 268,
       "match": "._3_1_",
       "severity": "mild",
       "text": "local_100.x._3_1_ = local_100.x._3_1_ ^ 0x80;",
@@ -957,7 +957,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 264,
+      "line": 268,
       "match": "._3_1_",
       "severity": "mild",
       "text": "local_100.x._3_1_ = local_100.x._3_1_ ^ 0x80;",
@@ -965,7 +965,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 277,
+      "line": 281,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "(this_ptr->base).base.velocity.y - in_stack_00000008 * (float)32;",
@@ -973,7 +973,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 278,
+      "line": 282,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "local_d0 = (this_ptr->base).base.velocity.x * in_stack_00000008;",
@@ -981,7 +981,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 279,
+      "line": 283,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "local_cc = (this_ptr->base).base.velocity.y * in_stack_00000008;",
@@ -989,7 +989,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 280,
+      "line": 284,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "local_c8 = in_stack_00000008 * (this_ptr->base).base.velocity.z;",
@@ -997,7 +997,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 316,
+      "line": 320,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "&(this_ptr->base).base.base.orient.vec,in_stack_00000008,",

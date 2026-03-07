@@ -1,0 +1,217 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 277,
+    "complexity_score": 112,
+    "cross_reference_count": 1,
+    "function_call_count": 7,
+    "global_count": 9,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 97,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_type_propagation"
+    ],
+    "total_lines": 374
+  },
+  "cross_references": [
+    {
+      "addr": "004e87e0",
+      "from_addr": "004e881e",
+      "name": "core_ghoul.cpp_CGhoul_processDamage_FUN_004e87e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004e8520",
+    "address_range": [
+      [
+        "004e8520",
+        "004e87d1"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_ghoul.cpp_CGhoul_processDismemberment_FUN_004e8520",
+    "signature": "void __cdecl core_ghoul_cpp_CGhoul_processDismemberment_FUN_004e8520(CGhoul *this_ptr,SDamageInfo *damage_info)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cd10",
+      "is_variadic": false,
+      "name": "core_actor.cpp_randomChance_FUN_0040cd10"
+    },
+    {
+      "addr": "0041a050",
+      "is_variadic": false,
+      "name": "core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0041a050"
+    },
+    {
+      "addr": "00418e10",
+      "is_variadic": false,
+      "name": "core_bodypart.cpp_createBodyPart_FUN_00418e10"
+    },
+    {
+      "addr": "0042bcc0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_detachBodyPart_FUN_0042bcc0"
+    },
+    {
+      "addr": "0042bd30",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_0042bd30"
+    },
+    {
+      "addr": "0042f300",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_playSoundWithCooldown_FUN_0042f300"
+    },
+    {
+      "addr": "005feb5c",
+      "is_variadic": false,
+      "name": "crt_stdlib.c_rand_FUN_005feb5c"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "004e8504",
+      "name": "switchdataD_004e8504",
+      "type": "void*",
+      "value": "004e855d"
+    },
+    {
+      "addr": "0062de5e",
+      "name": "s_limb_wav_0062de5e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062de6a",
+      "name": "DOUBLE_0062de6a",
+      "type": "double",
+      "value": "7"
+    },
+    {
+      "addr": "0062de72",
+      "name": "DOUBLE_0062de72",
+      "type": "double",
+      "value": "0.5"
+    },
+    {
+      "addr": "0062de7a",
+      "name": "DOUBLE_0062de7a",
+      "type": "double",
+      "value": "2.5"
+    },
+    {
+      "addr": "0067b654",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "02d81a9c"
+    },
+    {
+      "addr": "02d81a9c",
+      "name": "g_CGameInstance",
+      "type": "CGame",
+      "value": null
+    },
+    {
+      "addr": "02d81ab0",
+      "name": "g_CGameInstance.blood_flag",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d81c7c",
+      "name": "g_CGameInstance.gratuitous_dismemberment",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.829383886255924,
+    "instruction_count": 211,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 16,
+      "BOOL_OR": 2,
+      "BRANCH": 7,
+      "BRANCHIND": 1,
+      "CALL": 13,
+      "CBRANCH": 21,
+      "COPY": 291,
+      "FLOAT2FLOAT": 10,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_MULT": 3,
+      "FLOAT_NAN": 2,
+      "INT2FLOAT": 1,
+      "INT_ADD": 86,
+      "INT_AND": 93,
+      "INT_CARRY": 15,
+      "INT_EQUAL": 75,
+      "INT_LEFT": 5,
+      "INT_LESS": 18,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 8,
+      "INT_OR": 10,
+      "INT_SBORROW": 18,
+      "INT_SCARRY": 15,
+      "INT_SDIV": 1,
+      "INT_SEXT": 1,
+      "INT_SLESS": 37,
+      "INT_SREM": 1,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 79,
+      "INT_ZEXT": 6,
+      "LOAD": 65,
+      "POPCOUNT": 37,
+      "RETURN": 3,
+      "STORE": 71,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 1019
+  },
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGhoul *"
+      },
+      {
+        "is_param": true,
+        "name": "damage_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SDamageInfo *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    }
+  ]
+}

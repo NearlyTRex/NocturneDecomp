@@ -17,8 +17,8 @@
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 DAT_032613ac
 ;   undefined4 DAT_032758e8
-;   undefined4 g_CDemonCameraInstance.base.position.y
-;   undefined4 g_CDemonCameraInstance.base.position.z
+;   undefined4 g_CDemonCameraInstance.base.position+4
+;   undefined4 g_CDemonCameraInstance.base.position+8
 ;
 ; Called Functions:
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_005741b0
@@ -38,10 +38,10 @@ section .text
     MOV EAX,[0x032758e8]                ; 0040c83a | DAT_032758e8
     MOV dword ptr [ESP],EAX             ; 0040c83f
     MOV EAX,0x32758e8                   ; 0040c842 | DAT_032758e8
-    MOV EAX,dword ptr [EAX + 0x4]       ; 0040c847 | g_CDemonCameraInstance.base.position.y
+    MOV EAX,dword ptr [EAX + 0x4]       ; 0040c847 | g_CDemonCameraInstance.base.position+4
     MOV dword ptr [ESP + 0x4],EAX       ; 0040c84a
     MOV EAX,0x32758e8                   ; 0040c84e | DAT_032758e8
-    MOV EAX,dword ptr [EAX + 0x8]       ; 0040c853 | g_CDemonCameraInstance.base.position.z
+    MOV EAX,dword ptr [EAX + 0x8]       ; 0040c853 | g_CDemonCameraInstance.base.position+8
     LEA EBX,[ESI + 0x20]                ; 0040c856
     MOV dword ptr [ESP + 0x8],EAX       ; 0040c859
     FLD float ptr [EBX]                 ; 0040c85d

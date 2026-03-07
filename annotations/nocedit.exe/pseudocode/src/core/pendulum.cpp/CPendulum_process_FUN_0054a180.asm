@@ -24,8 +24,8 @@
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
-;   core_pendulum.cpp_CPendulum_FUN_005495c0
-;   core_pendulum.cpp_CPendulum_FUN_00549b90
+;   core_pendulum.cpp_CPendulum_testCollisionWithActor_FUN_005495c0
+;   core_pendulum.cpp_CPendulum_updateSwing_FUN_00549b90
 ;
 ; *****************************************************************************
 
@@ -59,8 +59,8 @@ section .text
     PUSH dword ptr [ESP + 0x18]         ; 0054a1cf
         ;   Label: LAB_0054a1cf
     PUSH ESI                            ; 0054a1d3
-    CALL core_pendulum.cpp_CPendulum_FUN_00549b90 ; 0054a1d4
-        ;   XREF to: 00549b90 (UNCONDITIONAL_CALL)  ; void core_pendulum.cpp_CPendulum_FUN_00549b90(CPendulum * this_ptr)
+    CALL core_pendulum.cpp_CPendulum_updateSwing_FUN_00549b90 ; 0054a1d4
+        ;   XREF to: 00549b90 (UNCONDITIONAL_CALL)  ; void core_pendulum.cpp_CPendulum_updateSwing_FUN_00549b90(CPendulum * this_ptr, float delta_time)
     FLD float ptr [ESI + 0x430]         ; 0054a1d9
     FMUL double ptr [0x0063ed01]        ; 0054a1df | DOUBLE_0063ed01
     FMUL float ptr [ESI + 0x434]        ; 0054a1e5
@@ -144,8 +144,8 @@ section .text
     PUSH EAX                            ; 0054a2a0
     PUSH EBX                            ; 0054a2a1
     PUSH ESI                            ; 0054a2a2
-    CALL core_pendulum.cpp_CPendulum_FUN_005495c0 ; 0054a2a3
-        ;   XREF to: 005495c0 (UNCONDITIONAL_CALL)  ; void core_pendulum.cpp_CPendulum_FUN_005495c0(CPendulum * this_ptr)
+    CALL core_pendulum.cpp_CPendulum_testCollisionWithActor_FUN_005495c0 ; 0054a2a3
+        ;   XREF to: 005495c0 (UNCONDITIONAL_CALL)  ; void core_pendulum.cpp_CPendulum_testCollisionWithActor_FUN_005495c0(CPendulum * this_ptr, CDemonActor * actor, CDemonActor * left_hand_actor, CDemonActor * right_hand_actor)
     ADD ESP,0x10                        ; 0054a2a8
     JMP 0x0054a24e                      ; 0054a2ab
         ;   XREF to: 0054a24e (UNCONDITIONAL_JUMP)  ; LAB_0054a24e
@@ -163,8 +163,8 @@ section .text
     PUSH 0x0                            ; 0054a2c2
     PUSH EBX                            ; 0054a2c4
     PUSH ESI                            ; 0054a2c5
-    CALL core_pendulum.cpp_CPendulum_FUN_005495c0 ; 0054a2c6
-        ;   XREF to: 005495c0 (UNCONDITIONAL_CALL)  ; void core_pendulum.cpp_CPendulum_FUN_005495c0(CPendulum * this_ptr)
+    CALL core_pendulum.cpp_CPendulum_testCollisionWithActor_FUN_005495c0 ; 0054a2c6
+        ;   XREF to: 005495c0 (UNCONDITIONAL_CALL)  ; void core_pendulum.cpp_CPendulum_testCollisionWithActor_FUN_005495c0(CPendulum * this_ptr, CDemonActor * actor, CDemonActor * left_hand_actor, CDemonActor * right_hand_actor)
     ADD ESP,0x10                        ; 0054a2cb
     INC EBP                             ; 0054a2ce
     ADD EDI,0x4                         ; 0054a2cf

@@ -467,7 +467,7 @@ LAB_005f9541:
             goto LAB_005fa18b;
           }
         }
-        iVar6 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base,delta_time);
+        iVar6 = core_enemy_cpp_CEnemy_updatePatrol_FUN_004a9fd0(&this_ptr->base,delta_time);
         if (iVar6 != 0) {
           core_zombie_cpp_CZombie_FUN_005fca10(this_ptr);
         }
@@ -506,7 +506,7 @@ LAB_005f9541:
           (this_ptr->base).victim = &g_HeroActors[g_LocalHeroIndex]->base;
         }
         if ((this_ptr->base).victim == (CCharacter *)0x0) {
-          iVar6 = core_enemy_cpp_CEnemy_FUN_004a9fd0(&this_ptr->base,delta_time);
+          iVar6 = core_enemy_cpp_CEnemy_updatePatrol_FUN_004a9fd0(&this_ptr->base,delta_time);
           if (iVar6 == 0) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                       (&(this_ptr->base).base.model.motion_controller,0,1);
@@ -745,7 +745,8 @@ LAB_005fac96:
                     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                               (&(this_ptr->base).base.model.motion_controller,0xf,1);
                     if ((CGrave *)this_ptr->grave_actor != (CGrave *)0x0) {
-                      core_grave_cpp_CGrave_FUN_004ee790((CGrave *)this_ptr->grave_actor);
+                      core_grave_cpp_CGrave_startAnimation_FUN_004ee790
+                                ((CGrave *)this_ptr->grave_actor);
                       this_ptr->grave_actor = (CDemonActor *)0x0;
                     }
                     (this_ptr->base).guard_distance = 100.0;
