@@ -27,7 +27,7 @@
 ;   ... and 1 more
 ;
 ; Called Functions:
-;   core_actor.cpp_CDemonActor_FUN_0040dec0
+;   core_actor.cpp_CDemonActor_renderBoundingBoxSolid_FUN_0040dec0
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
@@ -471,8 +471,8 @@ section .text
     PUSH ESI                            ; 005e060b
     PUSH EAX                            ; 005e060c
     PUSH EDX                            ; 005e060d
-    CALL core_actor.cpp_CDemonActor_FUN_0040dec0 ; 005e060e
-        ;   XREF to: 0040dec0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_FUN_0040dec0(CDemonActor * this_ptr)
+    CALL core_actor.cpp_CDemonActor_renderBoundingBoxSolid_FUN_0040dec0 ; 005e060e
+        ;   XREF to: 0040dec0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_renderBoundingBoxSolid_FUN_0040dec0(CDemonActor * this_ptr, int red, int green, int blue, ...)
     ADD ESP,0x14                        ; 005e0613
     MOV EAX,dword ptr [ESP + 0xb4]      ; 005e0616
     MOV ESP,EBP                         ; 005e061d

@@ -17,9 +17,10 @@ void __cdecl core_stranger_cpp_CStranger_processMotionEvents_FUN_005bdd20(CStran
   CDemonActor *pCVar1;
   CDemonActor_vtable *pCVar2;
   uint bone_index;
-  int iVar3;
+  EGroundType EVar3;
   CVector3f *pCVar4;
   int iVar5;
+  int iVar6;
   CEnemy *this_ptr_03;
   int unaff_EBP;
   CStranger *in_stack_ffffff48;
@@ -49,12 +50,12 @@ void __cdecl core_stranger_cpp_CStranger_processMotionEvents_FUN_005bdd20(CStran
         if (bone_index < 2) {
           if (bone_index == 1) {
 LAB_005bdd85:
-            iVar3 = INT_03f6bae8;
+            iVar5 = INT_03f6bae8;
             if (bone_index == 7) {
-              iVar3 = INT_03f6baec;
+              iVar5 = INT_03f6baec;
             }
             core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
-                      (this_ptr_04,(CVector3f *)(auStack_64 + 8),iVar3);
+                      (this_ptr_04,(CVector3f *)(auStack_64 + 8),iVar5);
             this_ptr_05 = (this_ptr->base).ladder_to_climb;
             if (this_ptr_05 == (CLadder *)0x0) {
               if (this_ptr->ladder_to_descend == (CLadder *)0x0) {
@@ -85,21 +86,21 @@ LAB_005bdd85:
               }
               else {
                 pCVar2 = (this_ptr->base).base.base.vtable._ub;
-                iVar3 = (*((this_ptr->ladder_to_descend->base).vtable._ub)->getGroundType)
+                EVar3 = (*((this_ptr->ladder_to_descend->base).vtable._ub)->getGroundType)
                                   (&this_ptr->ladder_to_descend->base);
                 pCVar4 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                                    ((CDemonActor *)this_ptr,&CStack_28,(CVector3f *)auStack_58);
                 (*pCVar2->handleFootstep)
-                          ((CDemonActor *)this_ptr,pCVar4,iVar3,(float)in_stack_ffffff48);
+                          ((CDemonActor *)this_ptr,pCVar4,EVar3,(float)in_stack_ffffff48);
               }
             }
             else {
               local_14 = *(float *)&(this_ptr->base).base.base.vtable;
-              iVar3 = (*((this_ptr_05->base).vtable._ub)->getGroundType)(&this_ptr_05->base);
+              EVar3 = (*((this_ptr_05->base).vtable._ub)->getGroundType)(&this_ptr_05->base);
               pCVar4 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                                  ((CDemonActor *)this_ptr,(CVector3f *)auStack_64,
                                   (CVector3f *)auStack_58);
-              (**(code **)(unaff_EBP + 0x20))(this_ptr,pCVar4,iVar3);
+              (**(code **)(unaff_EBP + 0x20))(this_ptr,pCVar4,EVar3);
             }
           }
           else {
@@ -123,20 +124,20 @@ LAB_005be41a:
                       (g_CEditorToolsPtr,"Object to pick up is now NULL\nstranger.cpp line %d",0x78b);
           }
           else {
-            iVar3 = (*((pCVar1->vtable)._ub)->canPickup)(pCVar1,(CDemonActor *)this_ptr);
-            if (iVar3 == 0) {
+            iVar5 = (*((pCVar1->vtable)._ub)->canPickup)(pCVar1,(CDemonActor *)this_ptr);
+            if (iVar5 == 0) {
               (this_ptr->base).object_to_pick_up = (CDemonActor *)0x0;
             }
             else {
               this_ptr_07 = (CStranger *)(this_ptr->base).object_to_pick_up;
               if ((this_ptr_07 != (CStranger *)0x0) &&
-                 (iVar5 = (*((this_ptr_07->base).base.base.vtable._ub)->canPickup)
+                 (iVar6 = (*((this_ptr_07->base).base.base.vtable._ub)->canPickup)
                                     ((CDemonActor *)this_ptr_07,(CDemonActor *)this_ptr),
-                 in_stack_ffffff48 = this_ptr_07, iVar5 == 4)) {
+                 in_stack_ffffff48 = this_ptr_07, iVar6 == 4)) {
                 (this_ptr->base).base.layer_action_t = 0.0;
                 (this_ptr->base).base.layer_action_index = 0xe;
               }
-              if (iVar3 == 2) {
+              if (iVar5 == 2) {
                 if (this_ptr->action_pending != 0) {
                   in_stack_ffffff48 = (CStranger *)g_CEditorToolsPtr;
                   shape_edittool_cpp_CEditorTools_showWarning_FUN_0049e6f0
@@ -152,8 +153,8 @@ LAB_005be41a:
           if (bone_index != 3) goto LAB_005be41a;
           this_ptr_06 = (CWeapon *)(this_ptr->base).base.carry_hands[1].carry_actor;
           core_stranger_cpp_CStranger_dropRightHandObject_FUN_005c1f80(this_ptr);
-          iVar3 = this_ptr->action_pending;
-          if (iVar3 == 2) {
+          iVar5 = this_ptr->action_pending;
+          if (iVar5 == 2) {
             if (this_ptr_06 != (CWeapon *)0x0) {
               (*((this_ptr_06->base).vtable._ub)->setPositionAndOrientation)
                         ((CDemonActor *)this_ptr_06,(CVector3f *)CStack_28.z,local_1c);
@@ -162,13 +163,13 @@ LAB_005bde44:
             this_ptr->action_pending = 0;
           }
           else {
-            if (iVar3 == 6) goto LAB_005bde44;
+            if (iVar5 == 6) goto LAB_005bde44;
             shape_edittool_cpp_CEditorTools_showWarning_FUN_0049e6f0
-                      (g_CEditorToolsPtr,"actionPending = %d\nstranger.cpp line %d",iVar3,0x767);
+                      (g_CEditorToolsPtr,"actionPending = %d\nstranger.cpp line %d",iVar5,0x767);
           }
-          iVar3 = (this_ptr->base).base.layer_action_index;
+          iVar5 = (this_ptr->base).base.layer_action_index;
           (this_ptr->base).target_actor = (CDemonActor *)0x0;
-          if (iVar3 == 0xe) {
+          if (iVar5 == 0xe) {
             (this_ptr->base).base.layer_action_t = 0.0;
             (this_ptr->base).base.layer_action_index = 0;
           }
@@ -267,8 +268,8 @@ LAB_005bde44:
             shape_edittool_cpp_CEditorTools_showWarning_FUN_0049e6f0
                       (g_CEditorToolsPtr,"doorToOpen == NULL\nstranger.cpp line %d",0x822);
           }
-          iVar3 = core_hero_cpp_CHero_tryOpenDoor_FUN_004f2ed0(&this_ptr->base);
-          if (iVar3 == 0) {
+          iVar5 = core_hero_cpp_CHero_tryOpenDoor_FUN_004f2ed0(&this_ptr->base);
+          if (iVar5 == 0) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                       (&this_ptr_04->motion_controller,0,1);
           }

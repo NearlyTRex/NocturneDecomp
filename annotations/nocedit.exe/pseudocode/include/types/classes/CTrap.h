@@ -1,5 +1,8 @@
 #pragma once
 
+// Forward declarations
+struct CWerewolf;
+
 // Dependencies
 #include "system/basetypes.h"
 #include "types/classes/CDemonActor.h"
@@ -11,6 +14,6 @@ typedef struct CTrap {
     CDemonActor base; // 0x0
     CKeyFramedModelInstance model; // 0x158
     struct CDemonActor* carrier; // 0x2d4
-    int wolf_in_trap; // 0x2d8
+    struct CWerewolf* wolf_in_trap; // 0x2d8
 } CTrap;
 

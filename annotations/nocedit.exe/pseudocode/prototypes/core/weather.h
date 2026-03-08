@@ -29,7 +29,7 @@ void __cdecl CWeather::renderParticles(CWeather *this_ptr);
 
 // Original: core_weather.cpp_CWeather_setWeatherType_FUN_005ef8c0
 // Address: 005ef8c0
-void __cdecl CWeather::setWeatherType(CWeather *this_ptr,int type);
+void __cdecl CWeather::setWeatherType(CWeather *this_ptr,EWeatherType type);
 
 // Original: core_weather.cpp_CWeather_setOriginAndRotation_FUN_005ef940
 // Address: 005ef940

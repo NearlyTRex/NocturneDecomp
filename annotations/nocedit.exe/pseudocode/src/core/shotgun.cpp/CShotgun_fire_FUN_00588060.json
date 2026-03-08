@@ -4,13 +4,13 @@
       {
         "category": "other",
         "column": 16,
-        "line": 65,
+        "line": 66,
         "message": "cannot cast from type 'float' to pointer type 'CCrate *'"
       },
       {
         "category": "other",
         "column": 66,
-        "line": 72,
+        "line": 73,
         "message": "C-style cast from 'CCrate *' to 'float' is not allowed"
       }
     ],
@@ -19,17 +19,17 @@
   },
   "complexity": {
     "assembly_lines": 110,
-    "complexity_score": 255,
+    "complexity_score": 256,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 11,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 210,
+    "pseudocode_lines": 211,
     "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 320
+    "total_lines": 321
   },
   "cross_references": [],
   "function": {
@@ -250,31 +250,31 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 56,
+      "line": 57,
       "match": "fptan",
       "severity": "mild",
-      "text": "fVar5 = (float10)fptan((float10)this_ptr->spread_angle * (float10)3.1415926535000001 *",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 66,
-      "match": "fcos",
-      "severity": "mild",
-      "text": "fVar5 = (float10)fcos((float10)fStack_4c);",
+      "text": "fVar6 = (float10)fptan((float10)this_ptr->spread_angle * (float10)3.1415926535000001 *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 67,
-      "match": "fsin",
+      "match": "fcos",
       "severity": "mild",
-      "text": "fVar6 = (float10)fsin((float10)fStack_4c);",
+      "text": "fVar6 = (float10)fcos((float10)fStack_4c);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 170,
+      "line": 68,
+      "match": "fsin",
+      "severity": "mild",
+      "text": "fVar7 = (float10)fsin((float10)fStack_4c);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 171,
       "match": "SQRT",
       "severity": "mild",
       "text": "SQRT(fStack_90 * fStack_90 + fStack_98 * fStack_98 + fStack_94 * fStack_94);",

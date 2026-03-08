@@ -39,9 +39,9 @@ CBoundingBox3D * __cdecl CStairs::getBoundingBox(CStairs *this_ptr,CBoundingBox3
 // Address: 005ba4f0
 void __cdecl CStairs::archive(CStairs *this_ptr);
 
-// Original: core_stairs.cpp_CStairs_hasCollision_FUN_005ba570
+// Original: core_stairs.cpp_CStairs_getCollisionType_FUN_005ba570
 // Address: 005ba570
-int __cdecl CStairs::hasCollision(CStairs *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CStairs::getCollisionType(CStairs *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_stairs.cpp_CStairs_customRayIntersect_FUN_005ba590
 // Address: 005ba590
@@ -57,7 +57,7 @@ int __cdecl CStairs::customGetFloorHeight(CStairs *this_ptr,float x_pos,float z_
 
 // Original: core_stairs.cpp_CStairs_getGroundType_FUN_005ba6f0
 // Address: 005ba6f0
-int __cdecl CStairs::getGroundType(CStairs *this_ptr);
+EGroundType __cdecl CStairs::getGroundType(CStairs *this_ptr);
 
 // Original: core_stairs.cpp_CStairs_FUN_005ba700
 // Address: 005ba700

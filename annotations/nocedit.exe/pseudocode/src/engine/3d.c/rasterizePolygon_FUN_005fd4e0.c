@@ -107,7 +107,7 @@ void __cdecl engine_3d_c_rasterizePolygon_FUN_005fd4e0(SRenderVertex *vertex_buf
         g_RasterizerEdgeArray[(int)pSVar11].base.x_current = (pSVar7->projected_vertex).screen_x;
         g_RasterizerEdgeArray[(int)pSVar11].base.w_current =
              (pSVar7->projected_vertex).transformed_z << 8;
-        g_RasterizerEdgeArray[(int)pSVar11].base.z_current = pSVar7->z;
+        g_RasterizerEdgeArray[(int)pSVar11].base.z_current = pSVar7->r;
         uVar9 = (pSVar10->projected_vertex).screen_y - (pSVar7->projected_vertex).screen_y;
         if (uVar9 < 0x10000) {
           iVar12 = 0;
@@ -127,7 +127,7 @@ void __cdecl engine_3d_c_rasterizePolygon_FUN_005fd4e0(SRenderVertex *vertex_buf
                  (pSVar7->projected_vertex).transformed_z) * 0x100);
         g_RasterizerEdgeArray[(int)pSVar11].base.w_gradient =
              (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
-        lVar2 = (longlong)iVar12 * (longlong)(pSVar10->z - pSVar7->z);
+        lVar2 = (longlong)iVar12 * (longlong)(pSVar10->r - pSVar7->r);
         g_RasterizerEdgeArray[(int)pSVar11].base.z_gradient =
              (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
         uVar9 = (uint)(ushort)((ushort)(pSVar7->projected_vertex).screen_y ^ 0xffff);

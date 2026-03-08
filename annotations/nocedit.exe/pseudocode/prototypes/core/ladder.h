@@ -39,9 +39,9 @@ CBoundingBox3D * __cdecl CLadder::getBoundingBox(CLadder *this_ptr,CBoundingBox3
 // Address: 005029c0
 void __cdecl CLadder::archive(CLadder *this_ptr);
 
-// Original: core_ladder.cpp_CLadder_hasCollision_FUN_00502a40
+// Original: core_ladder.cpp_CLadder_getCollisionType_FUN_00502a40
 // Address: 00502a40
-int __cdecl CLadder::hasCollision(CLadder *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CLadder::getCollisionType(CLadder *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_ladder.cpp_CLadder_FUN_00502a70
 // Address: 00502a70
@@ -53,7 +53,7 @@ void __cdecl CLadder(CLadder *this_ptr);
 
 // Original: core_ladder.cpp_CLadder_getGroundType_FUN_00502c90
 // Address: 00502c90
-int __cdecl CLadder::getGroundType(CLadder *this_ptr);
+EGroundType __cdecl CLadder::getGroundType(CLadder *this_ptr);
 
 // Original: core_ladder.cpp_CLadder_getPropertyList_FUN_00502ca0
 // Address: 00502ca0

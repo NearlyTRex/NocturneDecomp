@@ -10,20 +10,21 @@ void __cdecl core_fire_cpp_initProcess_FUN_004c4b00(void)
 
 {
   CCharacter *this_ptr;
-  int iVar1;
-  CFlameCan *pCVar2;
-  int iVar3;
+  EDeathState EVar1;
+  int iVar2;
+  CFlameCan *pCVar3;
   int iVar4;
+  int iVar5;
   
-  iVar3 = 0;
+  iVar4 = 0;
   g_CharactersOnFireCount = 0;
-  for (iVar4 = 0; iVar4 < g_CDemonSetPtr->character_count; iVar4 = iVar4 + 1) {
-    this_ptr = *(CCharacter **)((int)g_CDemonSetPtr->characters + iVar3);
-    iVar1 = (*(((this_ptr->base).vtable._uc)->_uc).getDeathState)(this_ptr);
-    if (iVar1 == 0) {
-      iVar1 = core_hero_cpp_isAnyHeroWithinRadius_FUN_004f2220
+  for (iVar5 = 0; iVar5 < g_CDemonSetPtr->character_count; iVar5 = iVar5 + 1) {
+    this_ptr = *(CCharacter **)((int)g_CDemonSetPtr->characters + iVar4);
+    EVar1 = (*(((this_ptr->base).vtable._uc)->_uc).getDeathState)(this_ptr);
+    if (EVar1 == DEATH_STATE_ALIVE) {
+      iVar2 = core_hero_cpp_isAnyHeroWithinRadius_FUN_004f2220
                         (&(this_ptr->base).location.position,50.0);
-      if (iVar1 != 0) {
+      if (iVar2 != 0) {
         if (0x31 < g_CharactersOnFireCount) {
           g_CurrentFilename = "..\\core\\fire.cpp";
           g_CurrentLineNumber = 0xd0f;
@@ -33,20 +34,20 @@ void __cdecl core_fire_cpp_initProcess_FUN_004c4b00(void)
         g_CharactersOnFireCount = g_CharactersOnFireCount + 1;
       }
     }
-    iVar3 = iVar3 + 4;
+    iVar4 = iVar4 + 4;
   }
-  iVar4 = 0;
+  iVar5 = 0;
   g_FlameCanCount = 0;
-  for (iVar3 = 0; iVar3 < g_CDemonSetPtr->actor_count; iVar3 = iVar3 + 1) {
-    pCVar2 = (CFlameCan *)
+  for (iVar4 = 0; iVar4 < g_CDemonSetPtr->actor_count; iVar4 = iVar4 + 1) {
+    pCVar3 = (CFlameCan *)
              core_actor_cpp_castToClassHash_FUN_0040c790
-                       (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar4),
+                       (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar5),
                         g_CFlameCanClassInfo.name_hash);
-    if ((pCVar2 != (CFlameCan *)0x0) && (g_FlameCanCount < 0x96)) {
-      g_FlameCans[g_FlameCanCount] = pCVar2;
+    if ((pCVar3 != (CFlameCan *)0x0) && (g_FlameCanCount < 0x96)) {
+      g_FlameCans[g_FlameCanCount] = pCVar3;
       g_FlameCanCount = g_FlameCanCount + 1;
     }
-    iVar4 = iVar4 + 4;
+    iVar5 = iVar5 + 4;
   }
   return;
 }

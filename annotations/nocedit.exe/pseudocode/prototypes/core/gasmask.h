@@ -39,9 +39,9 @@ int __cdecl CGasMask::renderOpaque(CGasMask *this_ptr);
 // Address: 004e5e20
 void __cdecl CGasMask::archive(CGasMask *this_ptr);
 
-// Original: core_gasmask.cpp_CGasMask_hasCollision_FUN_004e5e50
+// Original: core_gasmask.cpp_CGasMask_getCollisionType_FUN_004e5e50
 // Address: 004e5e50
-int __cdecl CGasMask::hasCollision(CGasMask *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CGasMask::getCollisionType(CGasMask *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_gasmask.cpp_CGasMask_getBoundingBox_FUN_004e5e60
 // Address: 004e5e60

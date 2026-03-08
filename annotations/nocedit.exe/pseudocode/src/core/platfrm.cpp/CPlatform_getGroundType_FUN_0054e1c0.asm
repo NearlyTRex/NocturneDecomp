@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_platfrm_cpp_CPlatform_getGroundType_FUN_0054e1c0(CPlatform *this_ptr)
+; EGroundType __cdecl core_platfrm_cpp_CPlatform_getGroundType_FUN_0054e1c0(CPlatform *this_ptr)
 ;
 ; Parameters:
 ; CPlatform *      Stack[0x4]:4   this_ptr

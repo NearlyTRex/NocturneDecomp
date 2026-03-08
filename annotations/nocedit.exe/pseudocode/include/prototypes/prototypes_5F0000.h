@@ -25,6 +25,7 @@
 #include "types/classes/CWerewolf.h"
 #include "types/classes/CWinFont.h"
 #include "types/classes/CZombie.h"
+#include "types/enums/EDeathState.h"
 #include "types/enums/EInputCodeType.h"
 #include "types/funcdefs/RenderScanlineFunc.h"
 #include "types/structs/SDamageInfo.h"
@@ -42,7 +43,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_FUN_005f1230(CWerewolf *this_ptr);
 int __cdecl core_werewolf_cpp_CWerewolf_renderTransparent_FUN_005f1820(CWerewolf *this_ptr);
 void __cdecl core_werewolf_cpp_CWerewolf_archive_FUN_005f1980(CWerewolf *this_ptr);
 void __cdecl core_werewolf_cpp_CWerewolf_processDamage_FUN_005f1ac0(CWerewolf *this_ptr,SDamageInfo *damage_info);
-int __cdecl core_werewolf_cpp_CWerewolf_getDeathState_FUN_005f1db0(CWerewolf *this_ptr);
+EDeathState __cdecl core_werewolf_cpp_CWerewolf_getDeathState_FUN_005f1db0(CWerewolf *this_ptr);
 int __cdecl core_werewolf_cpp_CWerewolf_getTargetPoints_FUN_005f1df0(CWerewolf *this_ptr,CVector3f *out_points_array);
 void __cdecl core_werewolf_cpp_CWerewolf_FUN_005f1e40(CWerewolf *this_ptr);
 void __cdecl core_werewolf_cpp_CWerewolf_propertyDisplayCallback_FUN_005f2010(CWerewolf *this_ptr,CActorProperty *property,char *output_buffer);

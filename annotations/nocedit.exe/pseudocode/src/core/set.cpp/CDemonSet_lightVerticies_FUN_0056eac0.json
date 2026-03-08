@@ -192,25 +192,25 @@
     },
     {
       "addr": "00688034",
-      "name": "g_RenderVertexBuffer[0].z",
-      "type": "undefined4",
-      "value": null
-    },
-    {
-      "addr": "00688038",
       "name": "g_RenderVertexBuffer[0].r",
       "type": "undefined4",
       "value": null
     },
     {
-      "addr": "0068803c",
+      "addr": "00688038",
       "name": "g_RenderVertexBuffer[0].g",
       "type": "undefined4",
       "value": null
     },
     {
+      "addr": "0068803c",
+      "name": "g_RenderVertexBuffer[0].b",
+      "type": "undefined4",
+      "value": null
+    },
+    {
       "addr": "00688040",
-      "name": "g_RenderVertexBuffer[0].fog",
+      "name": "g_RenderVertexBuffer[0].a",
       "type": "undefined4",
       "value": null
     },
@@ -234,25 +234,25 @@
     },
     {
       "addr": "00688064",
-      "name": "g_RenderVertexBuffer[1].z",
-      "type": "undefined4",
-      "value": null
-    },
-    {
-      "addr": "00688068",
       "name": "g_RenderVertexBuffer[1].r",
       "type": "undefined4",
       "value": null
     },
     {
-      "addr": "0068806c",
+      "addr": "00688068",
       "name": "g_RenderVertexBuffer[1].g",
       "type": "undefined4",
       "value": null
     },
     {
+      "addr": "0068806c",
+      "name": "g_RenderVertexBuffer[1].b",
+      "type": "undefined4",
+      "value": null
+    },
+    {
       "addr": "00688070",
-      "name": "g_RenderVertexBuffer[1].fog",
+      "name": "g_RenderVertexBuffer[1].a",
       "type": "undefined4",
       "value": null
     },
@@ -1150,7 +1150,7 @@
       "line": 118,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "*(float *)((int)&g_RenderVertexBuffer[0].fog + iVar12) = g_PerspectiveReciprocal;",
+      "text": "*(float *)((int)&g_RenderVertexBuffer[0].a + iVar12) = g_PerspectiveReciprocal;",
       "type": "pointer_cast"
     },
     {
@@ -1446,7 +1446,7 @@
       "line": 322,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "*(float *)((int)&g_RenderVertexBuffer[0].fog + local_64) =",
+      "text": "*(float *)((int)&g_RenderVertexBuffer[0].a + local_64) = g_PerspectiveReciprocal",
       "type": "pointer_cast"
     },
     {
@@ -1502,7 +1502,7 @@
       "line": 360,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "*(float *)((int)&g_RenderVertexBuffer[0].fog + local_58) =",
+      "text": "*(float *)((int)&g_RenderVertexBuffer[0].a + local_58) = g_PerspectiveReciprocal",
       "type": "pointer_cast"
     },
     {
@@ -1566,7 +1566,7 @@
       "line": 489,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "*(float *)((int)&g_RenderVertexBuffer[0].fog + iVar18) = g_PerspectiveReciprocal;",
+      "text": "*(float *)((int)&g_RenderVertexBuffer[0].a + iVar18) = g_PerspectiveReciprocal;",
       "type": "pointer_cast"
     },
     {
@@ -1630,7 +1630,7 @@
       "line": 521,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "*(float *)((int)&g_RenderVertexBuffer[0].fog + iVar12) = g_PerspectiveReciprocal;",
+      "text": "*(float *)((int)&g_RenderVertexBuffer[0].a + iVar12) = g_PerspectiveReciprocal;",
       "type": "pointer_cast"
     },
     {
@@ -1638,7 +1638,7 @@
       "line": 530,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)&g_RenderVertexBuffer[0].z + iVar18) = this_ptr->mirror_cached_light;",
+      "text": "*(int *)((int)&g_RenderVertexBuffer[0].r + iVar18) = this_ptr->mirror_cached_light;",
       "type": "pointer_cast"
     },
     {
@@ -1646,7 +1646,7 @@
       "line": 531,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)&g_RenderVertexBuffer[0].r + iVar18) = this_ptr->mirror_cached_color;",
+      "text": "*(int *)((int)&g_RenderVertexBuffer[0].g + iVar18) = this_ptr->mirror_cached_color;",
       "type": "pointer_cast"
     },
     {
@@ -1654,7 +1654,7 @@
       "line": 533,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)&g_RenderVertexBuffer[0].g + iVar18) = this_ptr->mirror_cached_fog;",
+      "text": "*(int *)((int)&g_RenderVertexBuffer[0].b + iVar18) = this_ptr->mirror_cached_fog;",
       "type": "pointer_cast"
     },
     {
@@ -1662,7 +1662,7 @@
       "line": 546,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].fog + iVar18) = 0;",
+      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].a + iVar18) = 0;",
       "type": "pointer_cast"
     },
     {
@@ -1670,7 +1670,7 @@
       "line": 559,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)&g_RenderVertexBuffer[0].z + iVar18) = this_ptr->light_scale_factor;",
+      "text": "*(int *)((int)&g_RenderVertexBuffer[0].r + iVar18) = this_ptr->light_scale_factor;",
       "type": "pointer_cast"
     },
     {
@@ -1678,7 +1678,7 @@
       "line": 560,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)&g_RenderVertexBuffer[0].r + iVar18) = this_ptr->color_scale_factor;",
+      "text": "*(int *)((int)&g_RenderVertexBuffer[0].g + iVar18) = this_ptr->color_scale_factor;",
       "type": "pointer_cast"
     },
     {
@@ -1686,7 +1686,7 @@
       "line": 562,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)&g_RenderVertexBuffer[0].g + iVar18) = this_ptr->fog_scale_factor;",
+      "text": "*(int *)((int)&g_RenderVertexBuffer[0].b + iVar18) = this_ptr->fog_scale_factor;",
       "type": "pointer_cast"
     },
     {
@@ -1694,7 +1694,7 @@
       "line": 563,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].fog + iVar18) = 0;",
+      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].a + iVar18) = 0;",
       "type": "pointer_cast"
     },
     {
@@ -1702,7 +1702,7 @@
       "line": 574,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].z + iVar18) = 0xffff;",
+      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].r + iVar18) = 0xffff;",
       "type": "pointer_cast"
     },
     {
@@ -1710,7 +1710,7 @@
       "line": 575,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].r + iVar18) = 0xffff;",
+      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].g + iVar18) = 0xffff;",
       "type": "pointer_cast"
     },
     {
@@ -1718,7 +1718,7 @@
       "line": 576,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].g + iVar18) = 0xffff;",
+      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].b + iVar18) = 0xffff;",
       "type": "pointer_cast"
     },
     {
@@ -1726,7 +1726,7 @@
       "line": 577,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].fog + iVar18) = 0;",
+      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].a + iVar18) = 0;",
       "type": "pointer_cast"
     },
     {
@@ -1734,7 +1734,7 @@
       "line": 590,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].z + iVar18) = 0;",
+      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].r + iVar18) = 0;",
       "type": "pointer_cast"
     },
     {
@@ -1742,7 +1742,7 @@
       "line": 591,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].r + iVar18) = 0;",
+      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].g + iVar18) = 0;",
       "type": "pointer_cast"
     },
     {
@@ -1750,7 +1750,7 @@
       "line": 592,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].g + iVar18) = 0;",
+      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].b + iVar18) = 0;",
       "type": "pointer_cast"
     },
     {
@@ -1758,7 +1758,7 @@
       "line": 593,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].fog + iVar18) = 0;",
+      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].a + iVar18) = 0;",
       "type": "pointer_cast"
     }
   ]

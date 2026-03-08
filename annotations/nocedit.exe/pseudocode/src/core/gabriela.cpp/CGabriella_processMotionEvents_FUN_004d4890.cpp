@@ -16,9 +16,10 @@ void __cdecl core_gabriela_cpp_CGabriella_processMotionEvents_FUN_004d4890(CGabr
   CDemonActor_vtable *pCVar1;
   int iVar2;
   int bone_index;
-  CDemonActor *pCVar3;
+  EGroundType EVar3;
+  CDemonActor *pCVar4;
   CCharacter *this_ptr_02;
-  CVector3f *pCVar4;
+  CVector3f *pCVar5;
   CGabriella *in_stack_ffffff58;
   float fStack_94;
   CVector3f local_84 [2];
@@ -74,18 +75,18 @@ void __cdecl core_gabriela_cpp_CGabriella_processMotionEvents_FUN_004d4890(CGabr
       }
       else {
         pCVar1 = (this_ptr->base).base.base.vtable._ub;
-        iVar2 = (*((this_ptr_01->base).vtable._ub)->getGroundType)(&this_ptr_01->base);
-        pCVar4 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+        EVar3 = (*((this_ptr_01->base).vtable._ub)->getGroundType)(&this_ptr_01->base);
+        pCVar5 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                            ((CDemonActor *)this_ptr,(CVector3f *)auStack_48,
                             (CVector3f *)(local_58 + 4));
-        (*pCVar1->handleFootstep)((CDemonActor *)this_ptr,pCVar4,iVar2,(float)in_stack_ffffff58);
+        (*pCVar1->handleFootstep)((CDemonActor *)this_ptr,pCVar5,EVar3,(float)in_stack_ffffff58);
       }
       break;
     case 2:
-      pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c790
+      pCVar4 = core_actor_cpp_castToClassHash_FUN_0040c790
                          ((this_ptr->base).object_to_pick_up,g_CLightActorClassInfo.name_hash);
-      if (pCVar3 != (CDemonActor *)0x0) {
-        if (pCVar3[4].scale.y != 1) {
+      if (pCVar4 != (CDemonActor *)0x0) {
+        if (pCVar4[4].scale.y != 1) {
           this_ptr->flashlight_angle = -0.5235988;
           core_hero_cpp_CHero_executeObjectPickup_FUN_004f3890(&this_ptr->base,0);
           break;
@@ -111,18 +112,18 @@ void __cdecl core_gabriela_cpp_CGabriella_processMotionEvents_FUN_004d4890(CGabr
                               ((this_ptr->base).base.grabbed_by,g_CEnemyClassInfo.name_hash);
       local_1c = this_ptr_02;
       if (this_ptr_02 != (CCharacter *)0x0) {
-        pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+        pCVar5 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
                            (this_ptr_00,(CVector3f *)(auStack_48 + 8),INT_02d7b878);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                  ((CDemonActor *)this_ptr,(CVector3f *)local_64,pCVar4);
+                  ((CDemonActor *)this_ptr,(CVector3f *)local_64,pCVar5);
         core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xffffff60);
         local_18 = core_actor_cpp_getRandomFloat_FUN_0040cc10(10.0,15.0);
-        pCVar4 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+        pCVar5 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                            ((CDemonActor *)this_ptr_02,&local_34,(CVector3f *)local_64);
-        if (local_84 != pCVar4) {
-          local_84[0].x = pCVar4->x;
-          local_84[0].y = pCVar4->y;
-          local_84[0].z = pCVar4->z;
+        if (local_84 != pCVar5) {
+          local_84[0].x = pCVar5->x;
+          local_84[0].y = pCVar5->y;
+          local_84[0].z = pCVar5->z;
         }
         local_6c = this_ptr;
         local_68 = this_ptr;
@@ -142,11 +143,11 @@ void __cdecl core_gabriela_cpp_CGabriella_processMotionEvents_FUN_004d4890(CGabr
       (this_ptr->base).base.grabbed_by = (CDemonActor *)0x0;
       break;
     case 0xf:
-      pCVar3 = (this_ptr->base).base.grabbed_by;
-      if ((pCVar3 != (CDemonActor *)0x0) &&
-         (pCVar4 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-                             ((CDemonActor *)this_ptr,&local_28,&(pCVar3->location).position),
-         0.0 < pCVar4->z)) {
+      pCVar4 = (this_ptr->base).base.grabbed_by;
+      if ((pCVar4 != (CDemonActor *)0x0) &&
+         (pCVar5 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+                             ((CDemonActor *)this_ptr,&local_28,&(pCVar4->location).position),
+         0.0 < pCVar5->z)) {
         (*((this_ptr->base).base.base.vtable._ub)->playSound)
                   ((CDemonActor *)this_ptr,"hit-gh[4,7].wav");
       }

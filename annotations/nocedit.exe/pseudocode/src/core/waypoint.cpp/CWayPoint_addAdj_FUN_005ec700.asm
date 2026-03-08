@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_waypoint_cpp_CWayPoint_addAdj_FUN_005ec700(CWayPoint *this_ptr)
+; void __cdecl core_waypoint_cpp_CWayPoint_addAdj_FUN_005ec700(CWayPoint *this_ptr,CWayPoint *target)
 ;
 ; Parameters:
 ; CWayPoint *      Stack[0x4]:4   this_ptr
+; CWayPoint *      Stack[0x8]:4   target
 ; Local Variables:
 ; undefined4       Stack[-0x10]:4  local_10
 ;

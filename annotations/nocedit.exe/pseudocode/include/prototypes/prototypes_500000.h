@@ -26,6 +26,8 @@
 #include "types/classes/CMirrorHack.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
+#include "types/enums/ECollisionType.h"
+#include "types/enums/EGroundType.h"
 #include "types/enums/EInputCodeType.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
@@ -66,7 +68,7 @@ void __cdecl core_keyactor_cpp_CKeyActor_process_FUN_00501710(CKeyActor *this_pt
 int __cdecl core_keyactor_cpp_CKeyActor_renderOpaque_FUN_005017c0(CKeyActor *this_ptr);
 CBoundingBox3D * __cdecl core_keyactor_cpp_CKeyActor_getBoundingBox_FUN_00501830(CKeyActor *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_keyactor_cpp_CKeyActor_archive_FUN_00501880(CKeyActor *this_ptr);
-int __cdecl core_keyactor_cpp_CKeyActor_hasCollision_FUN_005018f0(CKeyActor *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl core_keyactor_cpp_CKeyActor_getCollisionType_FUN_005018f0(CKeyActor *this_ptr,SCollisionInfo *collision_info);
 int __cdecl core_keyactor_cpp_CKeyActor_canPickup_FUN_00501900(CKeyActor *this_ptr,CDemonActor *picker);
 void __cdecl core_keyactor_cpp_CKeyActor_onPickup_FUN_00501920(CKeyActor *this_ptr,CDemonActor *owner);
 void __cdecl core_keyactor_cpp_CKeyActor_getPropertyList_FUN_00501940(CKeyActor *this_ptr,CActorPropertyList *property_list);
@@ -95,10 +97,10 @@ void __cdecl core_ladder_cpp_CLadder_process_FUN_00502610(CLadder *this_ptr,floa
 int __cdecl core_ladder_cpp_CLadder_renderOpaque_FUN_00502620(CLadder *this_ptr);
 CBoundingBox3D * __cdecl core_ladder_cpp_CLadder_getBoundingBox_FUN_005028c0(CLadder *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_ladder_cpp_CLadder_archive_FUN_005029c0(CLadder *this_ptr);
-int __cdecl core_ladder_cpp_CLadder_hasCollision_FUN_00502a40(CLadder *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl core_ladder_cpp_CLadder_getCollisionType_FUN_00502a40(CLadder *this_ptr,SCollisionInfo *collision_info);
 void __cdecl core_ladder_cpp_CLadder_FUN_00502a70(CLadder *this_ptr);
 void __cdecl core_ladder_cpp_CLadder_FUN_00502b80(CLadder *this_ptr);
-int __cdecl core_ladder_cpp_CLadder_getGroundType_FUN_00502c90(CLadder *this_ptr);
+EGroundType __cdecl core_ladder_cpp_CLadder_getGroundType_FUN_00502c90(CLadder *this_ptr);
 void __cdecl core_ladder_cpp_CLadder_getPropertyList_FUN_00502ca0(CLadder *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_ladder_cpp_CLadder_processInEditor_FUN_00502d00(CLadder *this_ptr);
 void __cdecl core_ladder_cpp_CLadder_showEditorHelp_FUN_00502e50(CLadder *this_ptr,int *y_pos);
@@ -136,7 +138,7 @@ int __cdecl core_lever_cpp_CLever_renderOpaque_FUN_00504cf0(CLever *this_ptr);
 CBoundingBox3D * __cdecl core_lever_cpp_CLever_getBoundingBox_FUN_00504d80(CLever *this_ptr,CBoundingBox3D *out_box);
 CVector3f * __cdecl core_lever_cpp_CLever_FUN_00504dd0(CLever *this_ptr,CVector3f *param_2);
 void __cdecl core_lever_cpp_CLever_archive_FUN_00504e80(CLever *this_ptr);
-int __cdecl core_lever_cpp_CLever_hasCollision_FUN_00505060(CLever *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl core_lever_cpp_CLever_getCollisionType_FUN_00505060(CLever *this_ptr,SCollisionInfo *collision_info);
 int __cdecl core_lever_cpp_CLever_isAccessibleFrom_FUN_00505080(CLever *this_ptr,CVector3f *world_position);
 void __cdecl core_lever_cpp_CLever_propertyDisplayTypeCallback_FUN_00505100(CLever *this_ptr,CActorProperty *property,char *output_buffer);
 int __cdecl core_lever_cpp_CLever_propertyActionTypeCallback_FUN_00505160(CLever *this_ptr,CActorProperty *property);
@@ -179,7 +181,7 @@ void __cdecl core_litecone_cpp_CLightCone_process_FUN_00506bc0(CLightCone *this_
 int __cdecl core_litecone_cpp_CLightCone_renderTransparent_FUN_00506c20(CLightCone *this_ptr);
 CBoundingBox3D * __cdecl core_litecone_cpp_CLightCone_getBoundingBox_FUN_00506cb0(CLightCone *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_litecone_cpp_CLightCone_archive_FUN_00506d00(CLightCone *this_ptr);
-int __cdecl core_litecone_cpp_CLightCone_hasCollision_FUN_00506d90(CLightCone *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl core_litecone_cpp_CLightCone_getCollisionType_FUN_00506d90(CLightCone *this_ptr,SCollisionInfo *collision_info);
 void __cdecl core_litecone_cpp_CLightCone_getPropertyList_FUN_00506da0(CLightCone *this_ptr,CActorPropertyList *property_list);
 CLightCone * __cdecl core_litecone_cpp_CLightCone_dtor_FUN_00506e30(CLightCone *this_ptr,uint flags);
 void __cdecl core_main_c_staticInit_FUN_00506e80(void);
@@ -202,7 +204,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_setup_FUN_00508a70(CMansionPuz
 int __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderOpaque_FUN_005090d0(CMansionPuzzleCircle *this_ptr);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_process_FUN_005091d0(CMansionPuzzleCircle *this_ptr,float delta_time);
 CBoundingBox3D * __cdecl core_manpuz_cpp_CMansionPuzzleCircle_getBoundingBox_FUN_005092e0(CMansionPuzzleCircle *this_ptr,CBoundingBox3D *out_box);
-int __cdecl core_manpuz_cpp_CMansionPuzzleCircle_hasCollision_FUN_00509320(CMansionPuzzleCircle *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl core_manpuz_cpp_CMansionPuzzleCircle_getCollisionType_FUN_00509320(CMansionPuzzleCircle *this_ptr,SCollisionInfo *collision_info);
 float __cdecl core_manpuz_cpp_CMansionPuzzleCircle_customRayIntersect_FUN_00509330(CMansionPuzzleCircle *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction, CVector3f *out_normal);
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_customIntersectCylinderXZ_FUN_00509720(CMansionPuzzleCircle *this_ptr,SIntersectXZCylinder *cylinder);
 int __cdecl core_manpuz_cpp_CMansionPuzzleCircle_customGetFloorHeight_FUN_005097d0(CMansionPuzzleCircle *this_ptr,float x_pos,float z_pos,float *out_floor_height);
@@ -234,7 +236,7 @@ void __cdecl core_manpuz_cpp_CMirrorHack_setup_FUN_0050b160(CMirrorHack *this_pt
 int __cdecl core_manpuz_cpp_CMirrorHack_renderOpaque_FUN_0050b180(CMirrorHack *this_ptr);
 void __cdecl core_manpuz_cpp_CMirrorHack_process_FUN_0050b1d0(CMirrorHack *this_ptr,float delta_time);
 CBoundingBox3D * __cdecl core_manpuz_cpp_CMirrorHack_getBoundingBox_FUN_0050b260(CMirrorHack *this_ptr,CBoundingBox3D *out_box);
-int __cdecl core_manpuz_cpp_CMirrorHack_hasCollision_FUN_0050b2b0(CMirrorHack *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl core_manpuz_cpp_CMirrorHack_getCollisionType_FUN_0050b2b0(CMirrorHack *this_ptr,SCollisionInfo *collision_info);
 void __cdecl core_manpuz_cpp_CMirrorHack_onLaserHit_FUN_0050b2c0(CMirrorHack *this_ptr,SLaserInfo *laser_info);
 void __cdecl core_manpuz_cpp_CMirrorHack_getInteractionInfo_FUN_0050b2f0(CMirrorHack *this_ptr,SInteractionInfo *out_info);
 int __cdecl core_manpuz_cpp_CMirrorHack_startInteraction_FUN_0050b340(CMirrorHack *this_ptr,CDemonActor *user);
@@ -268,7 +270,7 @@ int __cdecl core_marquee_cpp_CMarquee_renderOpaque_FUN_0050be50(CMarquee *this_p
 void __cdecl core_marquee_cpp_CMarquee_renderLightBulb_FUN_0050bec0(CMarquee *this_ptr,CVector3f *position);
 int __cdecl core_marquee_cpp_CMarquee_renderTransparent_FUN_0050c050(CMarquee *this_ptr);
 void __cdecl core_marquee_cpp_CMarquee_archive_FUN_0050c2f0(CMarquee *this_ptr);
-int __cdecl core_marquee_cpp_CMarquee_hasCollision_FUN_0050c370(CMarquee *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl core_marquee_cpp_CMarquee_getCollisionType_FUN_0050c370(CMarquee *this_ptr,SCollisionInfo *collision_info);
 CBoundingBox3D * __cdecl core_marquee_cpp_CMarquee_getBoundingBox_FUN_0050c380(CMarquee *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_marquee_cpp_CMarquee_getPropertyList_FUN_0050c3e0(CMarquee *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_marquee_cpp_CMarquee_addFilesToExtract_FUN_0050c480(CMarquee *this_ptr,_FILE *file_handle);

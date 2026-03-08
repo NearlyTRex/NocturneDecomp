@@ -12,7 +12,7 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[4]:
-;   core_bugs.cpp_CBugs_FUN_004268e0 at 00426ff4
+;   core_bugs.cpp_CBugs_updateBugRenderingData_FUN_004268e0 at 00426ff4
 ;   core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d7120 at 004d7212
 ;   core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20 at 005a00df
 ;   core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_005c07b0 at 005c128e

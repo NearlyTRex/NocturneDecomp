@@ -18,7 +18,7 @@ float __cdecl core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_00573470(CDe
   float fVar6;
   float fVar7;
   CDeformableModelInstance *pCVar8;
-  uint bounding_box_type;
+  ECollisionType bounding_box_type;
   CBoundingBox3D *pCVar9;
   int iVar10;
   CKeyFramedModel *this_ptr_00;
@@ -85,16 +85,16 @@ float __cdecl core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_00573470(CDe
         if ((pCVar8 == (CDeformableModelInstance *)0x0) &&
            (local_f0.deformable_model = pCVar8,
            local_f0.keyframed_model = (CKeyFramedModelInstance *)pCVar8,
-           bounding_box_type = (*((actor->vtable)._ub)->hasCollision)(actor,&local_f0),
-           bounding_box_type != 0)) {
+           bounding_box_type = (*((actor->vtable)._ub)->getCollisionType)(actor,&local_f0),
+           bounding_box_type != COLLISION_TYPE_NONE)) {
           pCVar9 = core_actor_cpp_CDemonActor_getWorldBoundingBox_FUN_00409270
                              (actor,&CStack_b0,&local_f0,bounding_box_type);
           iVar10 = core_box_cpp_CBoundingBox3D_doesBoxIntersect_FUN_00421010(&local_98,pCVar9);
           if (iVar10 != 0) {
             if ((CDeformableModelInstance *)local_f0.keyframed_model ==
                 (CDeformableModelInstance *)0x0) {
-              if (bounding_box_type < 2) {
-                if (bounding_box_type == 1) {
+              if (bounding_box_type < COLLISION_TYPE_CYLINDER) {
+                if (bounding_box_type == COLLISION_TYPE_MESH) {
                   orientation_matrix = &actor->orient_matrix;
                   pCVar11 = &(actor->location).position;
                   pCVar9 = (*((actor->vtable)._ub)->getBoundingBox)(actor,&CStack_c8);
@@ -111,7 +111,7 @@ LAB_00573d6f:
                   core_main_c_displayErrorAndQuit_FUN_00506f10("Invalid collision type!");
                 }
               }
-              else if (bounding_box_type < 3) {
+              else if (bounding_box_type < COLLISION_TYPE_CUSTOM) {
                 local_f0.cylinder_bottom_y =
                      local_f0.cylinder_bottom_y + (actor->location).position.y;
                 local_f0.cylinder_top_y = local_f0.cylinder_top_y + (actor->location).position.y;
@@ -168,7 +168,7 @@ LAB_00573d6f:
                 }
               }
               else {
-                if (bounding_box_type != 3) goto LAB_00573d6f;
+                if (bounding_box_type != COLLISION_TYPE_CUSTOM) goto LAB_00573d6f;
                 CStack_68.x = local_14c.center_x;
                 CStack_68.z = local_14c.center_z;
                 CStack_68.y = (float)local_f0.keyframed_model;

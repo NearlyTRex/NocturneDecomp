@@ -4,25 +4,25 @@
       {
         "category": "undeclared_identifier",
         "column": 77,
-        "line": 207,
+        "line": 210,
         "message": "use of undeclared identifier 'stack0xfffffce0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 39,
-        "line": 209,
+        "line": 212,
         "message": "use of undeclared identifier 'stack0xfffffce0'"
       },
       {
         "category": "other",
         "column": 15,
-        "line": 331,
+        "line": 335,
         "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       },
       {
         "category": "other",
         "column": 15,
-        "line": 332,
+        "line": 336,
         "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       }
     ],
@@ -31,12 +31,12 @@
   },
   "complexity": {
     "assembly_lines": 1402,
-    "complexity_score": 941,
+    "complexity_score": 948,
     "cross_reference_count": 0,
     "function_call_count": 31,
     "global_count": 37,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 706,
+    "pseudocode_lines": 713,
     "suspect_count": 20,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -47,7 +47,7 @@
       "unknown_field",
       "warning_inlined_function"
     ],
-    "total_lines": 2108
+    "total_lines": 2115
   },
   "cross_references": [],
   "function": {
@@ -1182,7 +1182,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 26,
+      "line": 27,
       "match": "in_stack_fffffcec",
       "severity": "moderate",
       "text": "float in_stack_fffffcec;",
@@ -1190,7 +1190,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 121,
+      "line": 122,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_34 = (int)ROUND(ROUND(local_14 * (float)0.25));",
@@ -1198,7 +1198,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 121,
+      "line": 122,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_34 = (int)ROUND(ROUND(local_14 * (float)0.25));",
@@ -1206,7 +1206,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 200,
+      "line": 203,
       "match": "&stack0xfffffce0",
       "severity": "moderate",
       "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffce0);",
@@ -1214,15 +1214,15 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 202,
+      "line": 205,
       "match": "&stack0xfffffce0",
       "severity": "moderate",
-      "text": "pSVar16 = (SDamageInfo *)&stack0xfffffce0;",
+      "text": "pSVar17 = (SDamageInfo *)&stack0xfffffce0;",
       "type": "stack_ref"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 242,
+      "line": 246,
       "match": "SQRT",
       "severity": "mild",
       "text": "local_24 = SQRT(local_fc * local_fc + local_104 * local_104 + local_100 * local_100);",
@@ -1230,7 +1230,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 281,
+      "line": 285,
       "match": "SQRT",
       "severity": "mild",
       "text": "if (SQRT(local_108 * local_108 + local_110 * local_110 + local_10c * local_10c) <",
@@ -1238,7 +1238,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 282,
+      "line": 286,
       "match": "SQRT",
       "severity": "mild",
       "text": "SQRT(local_1d4 * local_1d4 + local_1dc * local_1dc + local_1d8 * local_1d8))",
@@ -1246,7 +1246,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 303,
+      "line": 307,
       "match": "SQRT",
       "severity": "mild",
       "text": "if (SQRT(local_12c * local_12c + local_134 * local_134 + local_130 * local_130) <",
@@ -1254,47 +1254,47 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 324,
+      "line": 328,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "uVar17._0_4_ = 0.5;",
+      "text": "uVar18._0_4_ = 0.5;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 325,
+      "line": 329,
       "match": "._4_4_",
       "severity": "mild",
-      "text": "uVar17._4_4_ = 0.17453292;",
+      "text": "uVar18._4_4_ = 0.17453292;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 332,
+      "line": 336,
       "match": "in_stack_fffffcec",
       "severity": "moderate",
-      "text": ",SUB84(uVar17,4),in_stack_fffffcec);",
+      "text": ",SUB84(uVar18,4),in_stack_fffffcec);",
       "type": "stack_param"
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 332,
+      "line": 336,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": ",SUB84(uVar17,4),in_stack_fffffcec);",
+      "text": ",SUB84(uVar18,4),in_stack_fffffcec);",
       "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 332,
+      "line": 336,
       "match": "SUB84",
       "severity": "mild",
-      "text": ",SUB84(uVar17,4),in_stack_fffffcec);",
+      "text": ",SUB84(uVar18,4),in_stack_fffffcec);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 353,
+      "line": 357,
       "match": "SQRT",
       "severity": "mild",
       "text": "local_28 = SQRT(local_bc.z * local_bc.z +",
@@ -1302,7 +1302,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 368,
+      "line": 372,
       "match": "ABS",
       "severity": "mild",
       "text": "if (ABS(local_14) < (float)0.39269908168750001) {",
@@ -1310,7 +1310,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 574,
+      "line": 581,
       "match": "SQRT",
       "severity": "mild",
       "text": "local_2c = SQRT(local_a8 * local_a8 + local_b0 * local_b0 + local_ac * local_ac);",
@@ -1318,7 +1318,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 626,
+      "line": 633,
       "match": "ABS",
       "severity": "mild",
       "text": "if ((this_ptr->base).base.turn_speed <= ABS((this_ptr->base).base.turn_angle_accumulator)) {",
@@ -1330,7 +1330,7 @@
       "expected_args": 2,
       "format_string": "Phase: %d, Timer: %f\\n",
       "function_name": "engine_console_cpp_CConsole_printf_FUN_00441890",
-      "line_number": 261,
+      "line_number": 265,
       "match": "engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,\"Phase: %d, Timer: %f\\n\");",
       "text": "Format string expects 2 args but got 0",
       "type": "format_string_mismatch"

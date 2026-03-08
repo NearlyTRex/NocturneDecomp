@@ -1,0 +1,13 @@
+// Name: core_lever.cpp_CLever_getCollisionType_FUN_00505060
+// Address: 00505060
+// Address Range: [[00505060, 00505073]]
+// Convention: __cdecl
+// Signature: ECollisionType __cdecl core_lever_cpp_CLever_getCollisionType_FUN_00505060(CLever *this_ptr,SCollisionInfo *collision_info)
+
+#include "nocturne.h"
+
+ECollisionType __cdecl core_lever_cpp_CLever_getCollisionType_FUN_00505060(CLever *this_ptr,SCollisionInfo *collision_info)
+
+{
+  return (uint)(this_ptr->enable_collision != 0);
+}

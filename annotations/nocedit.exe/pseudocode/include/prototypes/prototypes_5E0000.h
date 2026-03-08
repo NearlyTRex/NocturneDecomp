@@ -29,6 +29,10 @@
 #include "types/classes/CWeapon.h"
 #include "types/classes/CWeather.h"
 #include "types/classes/CWerewolf.h"
+#include "types/enums/ECollisionType.h"
+#include "types/enums/EDeathState.h"
+#include "types/enums/EGroundType.h"
+#include "types/enums/EWeatherType.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SInteractionInfo.h"
@@ -45,7 +49,7 @@
 int __cdecl core_trigger_cpp_CTrigger_renderTransparent_FUN_005e00d0(CTrigger *this_ptr);
 CBoundingBox3D * __cdecl core_trigger_cpp_CTrigger_getBoundingBox_FUN_005e0630(CTrigger *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_trigger_cpp_CTrigger_archive_FUN_005e0690(CTrigger *this_ptr);
-int __cdecl core_trigger_cpp_CTrigger_hasCollision_FUN_005e0930(CTrigger *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl core_trigger_cpp_CTrigger_getCollisionType_FUN_005e0930(CTrigger *this_ptr,SCollisionInfo *collision_info);
 int __cdecl core_trigger_cpp_CTrigger_evaluateTriggerCondition_FUN_005e0980(CTrigger *this_ptr);
 int __cdecl core_trigger_cpp_CTrigger_processActionButton_FUN_005e0a20(CTrigger *this_ptr);
 void __cdecl core_trigger_cpp_CTrigger_onLaserHit_FUN_005e0a50(CTrigger *this_ptr,SLaserInfo *laser_info);
@@ -130,9 +134,9 @@ void __cdecl core_tvbat_cpp_CTVBat_process_FUN_005e4210(CTVBat *this_ptr,float d
 void __cdecl core_tvbat_cpp_CTVBat_FUN_005e4d70(CTVBat *this_ptr);
 int __cdecl core_tvbat_cpp_CTVBat_renderOpaque_FUN_005e4d80(CTVBat *this_ptr);
 CBoundingBox3D * __cdecl core_tvbat_cpp_CTVBat_getBoundingBox_FUN_005e5050(CTVBat *this_ptr,CBoundingBox3D *out_box);
-int __cdecl core_tvbat_cpp_CTVBat_hasCollision_FUN_005e50d0(CTVBat *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl core_tvbat_cpp_CTVBat_getCollisionType_FUN_005e50d0(CTVBat *this_ptr,SCollisionInfo *collision_info);
 int __cdecl core_tvbat_cpp_CTVBat_getTargetPoints_FUN_005e50f0(CTVBat *this_ptr,CVector3f *out_points_array);
-int __cdecl core_tvbat_cpp_CTVBat_getDeathState_FUN_005e5100(CTVBat *this_ptr);
+EDeathState __cdecl core_tvbat_cpp_CTVBat_getDeathState_FUN_005e5100(CTVBat *this_ptr);
 void __cdecl core_tvbat_cpp_CTVBat_processDamage_FUN_005e5130(CTVBat *this_ptr,SDamageInfo *damage_info);
 void __cdecl core_tvbat_cpp_CTVBat_getPropertyList_FUN_005e51a0(CTVBat *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_tvbat_cpp_CTVBat_processInEditor_FUN_005e5260(CTVBat *this_ptr);
@@ -151,7 +155,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_FUN_005e6ca0(CVampireBoss *this_ptr)
 int __cdecl core_vampboss_cpp_CVampireBoss_renderOpaque_FUN_005e6da0(CVampireBoss *this_ptr);
 void __cdecl core_vampboss_cpp_CVampireBoss_archive_FUN_005e6f50(CVampireBoss *this_ptr);
 void __cdecl core_vampboss_cpp_CVampireBoss_processDamage_FUN_005e7030(CVampireBoss *this_ptr,SDamageInfo *damage_info);
-int __cdecl core_vampboss_cpp_CVampireBoss_getDeathState_FUN_005e7270(CVampireBoss *this_ptr);
+EDeathState __cdecl core_vampboss_cpp_CVampireBoss_getDeathState_FUN_005e7270(CVampireBoss *this_ptr);
 int __cdecl core_vampboss_cpp_CVampireBoss_getTargetPoints_FUN_005e7280(CVampireBoss *this_ptr,CVector3f *out_points_array);
 void __cdecl core_vampboss_cpp_CVampireBoss_FUN_005e7320(CVampireBoss *this_ptr);
 void __cdecl core_vampboss_cpp_CVampireBoss_FUN_005e7390(CVampireBoss *this_ptr);
@@ -159,7 +163,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_FUN_005e7410(CVampireBoss *this_ptr)
 void __cdecl core_vampboss_cpp_CVampireBoss_FUN_005e7480(CVampireBoss *this_ptr);
 void __cdecl core_vampboss_cpp_CVampireBoss_FUN_005e74c0(CVampireBoss *this_ptr);
 void __cdecl core_vampboss_cpp_CVampireBoss_chooseDestWayPoint_FUN_005e7510(CVampireBoss *this_ptr);
-int __cdecl core_vampboss_cpp_CVampireBoss_hasCollision_FUN_005e75f0(CVampireBoss *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl core_vampboss_cpp_CVampireBoss_getCollisionType_FUN_005e75f0(CVampireBoss *this_ptr,SCollisionInfo *collision_info);
 void __cdecl core_vampboss_cpp_CVampireBoss_getPropertyList_FUN_005e7650(CVampireBoss *this_ptr,CActorPropertyList *property_list);
 CVampireBoss * __cdecl core_vampboss_cpp_CVampireBoss_dtor_FUN_005e7700(CVampireBoss *this_ptr,uint flags);
 void __cdecl core_vecdir_cpp_staticInit_FUN_005e7810(void);
@@ -172,7 +176,7 @@ void __cdecl core_vehicle_cpp_CVehicle_setup_FUN_005e7b90(CVehicle *this_ptr);
 void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr,float delta_time);
 CBoundingBox3D * __cdecl core_vehicle_cpp_CVehicle_getBoundingBox_FUN_005e86d0(CVehicle *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_vehicle_cpp_CVehicle_archive_FUN_005e8720(CVehicle *this_ptr);
-int __cdecl core_vehicle_cpp_CVehicle_hasCollision_FUN_005e88b0(CVehicle *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl core_vehicle_cpp_CVehicle_getCollisionType_FUN_005e88b0(CVehicle *this_ptr,SCollisionInfo *collision_info);
 int __cdecl core_vehicle_cpp_CVehicle_renderOpaque_FUN_005e88c0(CVehicle *this_ptr);
 int __cdecl core_vehicle_cpp_CVehicle_renderTransparent_FUN_005e8b30(CVehicle *this_ptr);
 void __cdecl core_vehicle_cpp_CVehicle_renderBackground_FUN_005e8b40(CVehicle *this_ptr,int layer_flag);
@@ -199,7 +203,7 @@ int __cdecl core_vessel_cpp_CCryptVessel_renderOpaque_FUN_005e9750(CCryptVessel 
 int __cdecl core_vessel_cpp_CCryptVessel_renderTransparent_FUN_005e98b0(CCryptVessel *this_ptr);
 void __cdecl core_vessel_cpp_CCryptVessel_renderBackground_FUN_005e9a00(CCryptVessel *this_ptr,int layer_flag);
 void __cdecl core_vessel_cpp_CCryptVessel_archive_FUN_005e9a80(CCryptVessel *this_ptr);
-int __cdecl core_vessel_cpp_CCryptVessel_hasCollision_FUN_005e9b90(CCryptVessel *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl core_vessel_cpp_CCryptVessel_getCollisionType_FUN_005e9b90(CCryptVessel *this_ptr,SCollisionInfo *collision_info);
 CBoundingBox3D * __cdecl core_vessel_cpp_CCryptVessel_getBoundingBox_FUN_005e9bb0(CCryptVessel *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_vessel_cpp_CCryptVessel_getPropertyList_FUN_005e9c00(CCryptVessel *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_vessel_cpp_CCryptVessel_addFilesToExtract_FUN_005e9d10(CCryptVessel *this_ptr,_FILE *file_handle);
@@ -223,8 +227,8 @@ void __cdecl core_wateract_cpp_CWaterActor_process_FUN_005eb100(CWaterActor *thi
 int __cdecl core_wateract_cpp_CWaterActor_renderTransparent_FUN_005eb280(CWaterActor *this_ptr);
 CBoundingBox3D * __cdecl core_wateract_cpp_CWaterActor_getBoundingBox_FUN_005eb4b0(CWaterActor *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_wateract_cpp_CWaterActor_archive_FUN_005eb510(CWaterActor *this_ptr);
-int __cdecl core_wateract_cpp_CWaterActor_hasCollision_FUN_005eb710(CWaterActor *this_ptr,SCollisionInfo *collision_info);
-int __cdecl core_wateract_cpp_CWaterActor_getGroundType_FUN_005eb730(CWaterActor *this_ptr);
+ECollisionType __cdecl core_wateract_cpp_CWaterActor_getCollisionType_FUN_005eb710(CWaterActor *this_ptr,SCollisionInfo *collision_info);
+EGroundType __cdecl core_wateract_cpp_CWaterActor_getGroundType_FUN_005eb730(CWaterActor *this_ptr);
 float __cdecl core_wateract_cpp_CWaterActor_customRayIntersect_FUN_005eb740(CWaterActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction, CVector3f *out_normal);
 void __cdecl core_wateract_cpp_CWaterActor_onLaserHit_FUN_005eb910(CWaterActor *this_ptr,SLaserInfo *laser_info);
 void __cdecl core_wateract_cpp_CWaterActor_getPropertyList_FUN_005eb940(CWaterActor *this_ptr,CActorPropertyList *property_list);
@@ -250,7 +254,7 @@ void __cdecl core_waypoint_cpp_CWayPoint_processInEditor_FUN_005ec5e0(CWayPoint 
 void __cdecl core_waypoint_cpp_CWayPoint_onActorDeleted_FUN_005ec610(CWayPoint *this_ptr,CDemonActor *deleted_actor);
 void __cdecl core_waypoint_cpp_CWayPoint_removeAllAdjTo_FUN_005ec640(CWayPoint *this_ptr,CWayPoint *target);
 void __cdecl core_waypoint_cpp_CWayPoint_showEditorHelp_FUN_005ec690(CWayPoint *this_ptr,int *y_pos);
-void __cdecl core_waypoint_cpp_CWayPoint_addAdj_FUN_005ec700(CWayPoint *this_ptr);
+void __cdecl core_waypoint_cpp_CWayPoint_addAdj_FUN_005ec700(CWayPoint *this_ptr,CWayPoint *target);
 void __cdecl core_waypoint_cpp_CWayPoint_removeAdj_FUN_005ec7b0(CWayPoint *this_ptr,int index);
 void __cdecl core_waypoint_cpp_CWayPoint_cleanupAdjacency_FUN_005ec830(CWayPoint *this_ptr);
 CWayPoint * __cdecl core_waypoint_cpp_CWayPoint_dtor_FUN_005ec8d0(CWayPoint *this_ptr,uint flags);
@@ -285,7 +289,7 @@ int __cdecl core_weapon_cpp_CWeapon_renderOpaque_FUN_005ee030(CWeapon *this_ptr)
 CBoundingBox3D * __cdecl core_weapon_cpp_CWeapon_getBoundingBox_FUN_005ee0c0(CWeapon *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_weapon_cpp_CWeapon_process_FUN_005ee110(CWeapon *this_ptr,float delta_time);
 void __cdecl core_weapon_cpp_CWeapon_archive_FUN_005ee250(CWeapon *this_ptr);
-int __cdecl core_weapon_cpp_CWeapon_hasCollision_FUN_005ee330(CWeapon *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl core_weapon_cpp_CWeapon_getCollisionType_FUN_005ee330(CWeapon *this_ptr,SCollisionInfo *collision_info);
 int __cdecl core_weapon_cpp_CWeapon_canPickup_FUN_005ee340(CWeapon *this_ptr,CDemonActor *picker);
 void __cdecl core_weapon_cpp_CWeapon_pickup_FUN_005ee3e0(CWeapon *this_ptr,CDemonActor *carrier);
 void __cdecl core_weapon_cpp_CWeapon_onDropped_FUN_005ee3f0(CWeapon *this_ptr,CVector3f *drop_position);
@@ -310,7 +314,7 @@ void __cdecl core_weather_cpp_CWeather_update_FUN_005eeaf0(CWeather *this_ptr);
 void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_005eeeb0(CWeather *this_ptr,float flash_timer,int play_sound);
 void __cdecl core_weather_cpp_CWeather_createThunder_FUN_005ef140(CWeather *this_ptr);
 void __cdecl core_weather_cpp_CWeather_renderParticles_FUN_005ef190(CWeather *this_ptr);
-void __cdecl core_weather_cpp_CWeather_setWeatherType_FUN_005ef8c0(CWeather *this_ptr,int type);
+void __cdecl core_weather_cpp_CWeather_setWeatherType_FUN_005ef8c0(CWeather *this_ptr,EWeatherType type);
 void __cdecl core_weather_cpp_CWeather_setOriginAndRotation_FUN_005ef940(CWeather *this_ptr,CVector3f *direction,CVector3f *rotation);
 CWeather * __cdecl core_weather_cpp_CWeather_dtor_FUN_005efb40(CWeather *this_ptr,uint flags);
 CVector3f * __cdecl core_weather_cpp_CVector3f_arrdtor_FUN_005efb50(CVector3f *objs,uint flags);

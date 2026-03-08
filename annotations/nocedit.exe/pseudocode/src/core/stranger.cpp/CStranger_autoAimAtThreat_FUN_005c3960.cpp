@@ -18,9 +18,10 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_005c3960(CStranger 
   CDeformableModelInstance *this_ptr_01;
   CVector3f *pCVar6;
   CCharacter *pCVar7;
-  int iVar8;
+  EDeathState EVar8;
   int iVar9;
-  float fVar10;
+  int iVar10;
+  float fVar11;
   float fStack_1a8;
   CVector3f aCStack_1a0 [10];
   CMatrix3x3f CStack_128;
@@ -84,12 +85,12 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_005c3960(CStranger 
     }
     local_30 = -1.3089969;
     local_2c = 0.5235988;
-    iVar8 = INT_03f6bb00;
-    iVar9 = INT_03f6bad8;
+    iVar9 = INT_03f6bb00;
+    iVar10 = INT_03f6bad8;
   }
   else {
-    iVar8 = INT_03f6bb04;
-    iVar9 = INT_03f6badc;
+    iVar9 = INT_03f6bb04;
+    iVar10 = INT_03f6badc;
     if (local_48 == 0) {
       local_2c = 1.3089969;
       local_30 = -0.5235988;
@@ -99,11 +100,11 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_005c3960(CStranger 
       local_30 = -0.5235988;
     }
   }
-  fVar10 = (this_ptr->base).player_control.look_up_down_speed * (float)3.1415926535000001 *
+  fVar11 = (this_ptr->base).player_control.look_up_down_speed * (float)3.1415926535000001 *
            (float)2 * delta_time + local_24->aim_pitch;
   local_24->aim_yaw = 0.0;
-  local_24->aim_pitch = fVar10;
-  if (fVar10 < -1.047198f) {
+  local_24->aim_pitch = fVar11;
+  if (fVar11 < -1.047198f) {
     local_24->aim_pitch = -1.047198f;
   }
   if (1.22173f < local_24->aim_pitch) {
@@ -142,7 +143,7 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_005c3960(CStranger 
     this_ptr_01 = &(this_ptr->base).base.model;
     if (local_48 == 0) {
       pCVar6 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
-                         (this_ptr_01,&CStack_a0,iVar9);
+                         (this_ptr_01,&CStack_a0,iVar10);
       if (&CStack_100 != pCVar6) {
         CStack_100.x = pCVar6->x;
         CStack_100.y = pCVar6->y;
@@ -151,7 +152,7 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_005c3960(CStranger 
     }
     else {
       pCVar6 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
-                         (this_ptr_01,&CStack_c4,iVar8);
+                         (this_ptr_01,&CStack_c4,iVar9);
       if (&CStack_100 != pCVar6) {
         CStack_100.x = pCVar6->x;
         CStack_100.y = pCVar6->y;
@@ -176,13 +177,14 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_005c3960(CStranger 
                          (*(CDemonActor **)((int)g_CDemonSetPtr->threats + iStack_3c),
                           g_CCharacterClassInfo.name_hash);
       if ((pCVar7 == (CCharacter *)0x0) ||
-         ((iVar8 = (*(((pCVar7->base).vtable._uc)->_uc).getDeathState)(pCVar7), iVar8 == 0 &&
-          (iVar8 = (*((pCVar7->base).vtable._ub)->shouldIgnoreForTargeting)((CDemonActor *)pCVar7),
-          iVar8 == 0)))) {
+         ((EVar8 = (*(((pCVar7->base).vtable._uc)->_uc).getDeathState)(pCVar7),
+          EVar8 == DEATH_STATE_ALIVE &&
+          (iVar9 = (*((pCVar7->base).vtable._ub)->shouldIgnoreForTargeting)((CDemonActor *)pCVar7),
+          iVar9 == 0)))) {
         pCStack_1c = *(CDemonActor **)((int)g_CDemonSetPtr->threats + iStack_3c);
         __arrinit(aCStack_1a0,10,&g_CVectorTypeInfo);
         iStack_28 = (*((pCStack_1c->vtable)._ub)->getTargetPoints)(pCStack_1c,aCStack_1a0);
-        if ((0 < iStack_28) && (iVar8 = 0, 0 < iStack_28)) {
+        if ((0 < iStack_28) && (iVar9 = 0, 0 < iStack_28)) {
           pCVar6 = aCStack_1a0;
           do {
             core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(pCStack_1c,&CStack_88,pCVar6);
@@ -200,37 +202,37 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_005c3960(CStranger 
               }
               if (((ABS(aCStack_f4[0].x) <= fStack_1a8) && (local_30 <= aCStack_f4[0].y)) &&
                  (aCStack_f4[0].y <= local_2c)) {
-                fVar10 = SQRT(CStack_b8.z * CStack_b8.z +
+                fVar11 = SQRT(CStack_b8.z * CStack_b8.z +
                               CStack_b8.x * CStack_b8.x + CStack_b8.y * CStack_b8.y);
-                fVar2 = 1.0 / fVar10;
+                fVar2 = 1.0 / fVar11;
                 CStack_b8.y = CStack_b8.y * fVar2;
                 CStack_b8.x = CStack_b8.x * fVar2;
                 CStack_b8.z = CStack_b8.z * fVar2;
-                fVar10 = fVar10 * (float)0.033333333333333298 +
+                fVar11 = fVar11 * (float)0.033333333333333298 +
                          ((float)2 -
                          (CStack_b8.z * CStack_d0.z +
                          CStack_b8.x * CStack_d0.x + CStack_b8.y * CStack_d0.y));
-                if (fVar10 < fStack_20) {
+                if (fVar11 < fStack_20) {
                   core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
                   core_setcolid_cpp_CDemonSet_setRayType_FUN_00574230(g_CDemonSetPtr,2);
                   core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0
                             (g_CDemonSetPtr,(CDemonActor *)this_ptr);
                   core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,pCStack_1c);
-                  iVar9 = core_setcolid_cpp_CDemonSet_testLineOcclusion_FUN_00572460
-                                    (g_CDemonSetPtr,&CStack_94,&CStack_88);
+                  iVar10 = core_setcolid_cpp_CDemonSet_testLineOcclusion_FUN_00572460
+                                     (g_CDemonSetPtr,&CStack_94,&CStack_88);
                   core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
-                  if (iVar9 == 0) {
+                  if (iVar10 == 0) {
                     fStack_38 = aCStack_f4[0].y;
                     fStack_34 = aCStack_f4[0].x;
                     local_24->aim_lock_state = 1;
-                    fStack_20 = fVar10;
+                    fStack_20 = fVar11;
                   }
                 }
               }
             }
-            iVar8 = iVar8 + 1;
+            iVar9 = iVar9 + 1;
             pCVar6 = pCVar6 + 1;
-          } while (iVar8 < iStack_28);
+          } while (iVar9 < iStack_28);
         }
       }
       iStack_3c = iStack_3c + 4;
@@ -261,8 +263,8 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_005c3960(CStranger 
   }
   fStack_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(local_24->target_yaw + fStack_4c);
   local_24->target_yaw = fStack_18;
-  fVar10 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(local_24->target_pitch + fStack_50);
-  local_24->target_pitch = fVar10;
+  fVar11 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(local_24->target_pitch + fStack_50);
+  local_24->target_pitch = fVar11;
   local_24->kickback_factor = 1.0;
   if (((local_24->aim_lock_state == 1) &&
       (ABS(local_24->target_yaw - fStack_38) < (float)0.01)) &&

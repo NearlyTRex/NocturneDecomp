@@ -35,9 +35,9 @@ int __cdecl CAnvil::renderOpaque(CAnvil *this_ptr);
 // Address: 00411f50
 void __cdecl CAnvil::archive(CAnvil *this_ptr);
 
-// Original: core_anvil.cpp_CAnvil_hasCollision_FUN_00411fd0
+// Original: core_anvil.cpp_CAnvil_getCollisionType_FUN_00411fd0
 // Address: 00411fd0
-int __cdecl CAnvil::hasCollision(CAnvil *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CAnvil::getCollisionType(CAnvil *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_anvil.cpp_CAnvil_getBoundingBox_FUN_00411fe0
 // Address: 00411fe0

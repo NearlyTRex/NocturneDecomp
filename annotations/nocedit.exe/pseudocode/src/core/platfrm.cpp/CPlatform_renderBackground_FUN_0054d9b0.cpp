@@ -12,9 +12,7 @@ void __cdecl core_platfrm_cpp_CPlatform_renderBackground_FUN_0054d9b0(CPlatform 
   int iVar1;
   CBoundingBox3D *this_ptr_00;
   CBoundingBox3D local_2c;
-  int iStack_14;
-  int iStack_10;
-  int iStack_c;
+  CVector3i CStack_14;
   
   iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
   if (iVar1 != 0) {
@@ -64,12 +62,12 @@ void __cdecl core_platfrm_cpp_CPlatform_renderBackground_FUN_0054d9b0(CPlatform 
       return;
     }
     g_CDemonSetPtr->per_pixel_lighting_enabled = 1;
-    iStack_14 = (int)ROUND((this_ptr->base).location.position.x * 256.0f);
-    iStack_10 = (int)ROUND((this_ptr->base).location.position.y * 256.0f);
-    iStack_c = (int)ROUND((this_ptr->base).location.position.z * 256.0f);
+    CStack_14.x = (int)ROUND((this_ptr->base).location.position.x * 256.0f);
+    CStack_14.y = (int)ROUND((this_ptr->base).location.position.y * 256.0f);
+    CStack_14.z = (int)ROUND((this_ptr->base).location.position.z * 256.0f);
     g_FlatShadingLightLevel =
-         (*((g_CurrentSceneCamera->base).vtable)->calculatePerspective)
-                   (g_CurrentSceneCamera,&iStack_14,0);
+         (*((g_CurrentSceneCamera->base).vtable)->getFogValueAtPosition)
+                   (g_CurrentSceneCamera,&CStack_14);
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
               (&this_ptr->model,0.0,-1);
     g_CDemonSetPtr->per_pixel_lighting_enabled = 0;

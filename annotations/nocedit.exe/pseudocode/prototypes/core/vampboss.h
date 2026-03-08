@@ -53,7 +53,7 @@ void __cdecl CVampireBoss::processDamage(CVampireBoss *this_ptr,SDamageInfo *dam
 
 // Original: core_vampboss.cpp_CVampireBoss_getDeathState_FUN_005e7270
 // Address: 005e7270
-int __cdecl CVampireBoss::getDeathState(CVampireBoss *this_ptr);
+EDeathState __cdecl CVampireBoss::getDeathState(CVampireBoss *this_ptr);
 
 // Original: core_vampboss.cpp_CVampireBoss_getTargetPoints_FUN_005e7280
 // Address: 005e7280
@@ -83,9 +83,9 @@ void __cdecl CVampireBoss(CVampireBoss *this_ptr);
 // Address: 005e7510
 void __cdecl CVampireBoss::chooseDestWayPoint(CVampireBoss *this_ptr);
 
-// Original: core_vampboss.cpp_CVampireBoss_hasCollision_FUN_005e75f0
+// Original: core_vampboss.cpp_CVampireBoss_getCollisionType_FUN_005e75f0
 // Address: 005e75f0
-int __cdecl CVampireBoss::hasCollision(CVampireBoss *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CVampireBoss::getCollisionType(CVampireBoss *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_vampboss.cpp_CVampireBoss_getPropertyList_FUN_005e7650
 // Address: 005e7650

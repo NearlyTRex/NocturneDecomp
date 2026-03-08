@@ -134,22 +134,22 @@ void __cdecl core_fire_cpp_CFireball_render_FUN_004c0e70(CFireball *this_ptr)
     }
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr2,texture);
     lVar2 = (longlong)this_ptr->timer * (longlong)(0xffff - (int)g_PerspectiveReciprocal);
-    g_RenderVertexBuffer[0].fog = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
-    g_RenderVertexBuffer[0].z = 0xffff;
+    g_RenderVertexBuffer[0].a = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
     g_RenderVertexBuffer[0].r = 0xffff;
     g_RenderVertexBuffer[0].g = 0xffff;
-    g_RenderVertexBuffer[1].z = 0xffff;
+    g_RenderVertexBuffer[0].b = 0xffff;
     g_RenderVertexBuffer[1].r = 0xffff;
     g_RenderVertexBuffer[1].g = 0xffff;
-    g_RenderVertexBuffer[2].z = 0xffff;
+    g_RenderVertexBuffer[1].b = 0xffff;
     g_RenderVertexBuffer[2].r = 0xffff;
     g_RenderVertexBuffer[2].g = 0xffff;
-    g_RenderVertexBuffer[3].z = 0xffff;
+    g_RenderVertexBuffer[2].b = 0xffff;
     g_RenderVertexBuffer[3].r = 0xffff;
     g_RenderVertexBuffer[3].g = 0xffff;
-    g_RenderVertexBuffer[1].fog = g_RenderVertexBuffer[0].fog;
-    g_RenderVertexBuffer[2].fog = g_RenderVertexBuffer[0].fog;
-    g_RenderVertexBuffer[3].fog = g_RenderVertexBuffer[0].fog;
+    g_RenderVertexBuffer[3].b = 0xffff;
+    g_RenderVertexBuffer[1].a = g_RenderVertexBuffer[0].a;
+    g_RenderVertexBuffer[2].a = g_RenderVertexBuffer[0].a;
+    g_RenderVertexBuffer[3].a = g_RenderVertexBuffer[0].a;
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
     engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
               (g_CDemonRendererPtr2,&g_BillboardPrimitive.base);
@@ -214,24 +214,24 @@ void __cdecl core_fire_cpp_CFireball_render_FUN_004c0e70(CFireball *this_ptr)
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_c8);
         (*((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)
-                  (g_CurrentSceneCamera,this_ptr,0);
+                  (g_CurrentSceneCamera,(CVector3f *)this_ptr,0.0);
         lVar2 = (longlong)this_ptr->timer * (longlong)(0xffff - (int)g_PerspectiveReciprocal);
-        g_RenderVertexBuffer[0].fog = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
-        g_RenderVertexBuffer[0].z = 0xffff;
+        g_RenderVertexBuffer[0].a = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
         g_RenderVertexBuffer[0].r = 0xffff;
         g_RenderVertexBuffer[0].g = 0xffff;
-        g_RenderVertexBuffer[1].z = 0xffff;
+        g_RenderVertexBuffer[0].b = 0xffff;
         g_RenderVertexBuffer[1].r = 0xffff;
         g_RenderVertexBuffer[1].g = 0xffff;
-        g_RenderVertexBuffer[2].z = 0xffff;
+        g_RenderVertexBuffer[1].b = 0xffff;
         g_RenderVertexBuffer[2].r = 0xffff;
         g_RenderVertexBuffer[2].g = 0xffff;
-        g_RenderVertexBuffer[3].z = 0xffff;
+        g_RenderVertexBuffer[2].b = 0xffff;
         g_RenderVertexBuffer[3].r = 0xffff;
         g_RenderVertexBuffer[3].g = 0xffff;
-        g_RenderVertexBuffer[1].fog = g_RenderVertexBuffer[0].fog;
-        g_RenderVertexBuffer[2].fog = g_RenderVertexBuffer[0].fog;
-        g_RenderVertexBuffer[3].fog = g_RenderVertexBuffer[0].fog;
+        g_RenderVertexBuffer[3].b = 0xffff;
+        g_RenderVertexBuffer[1].a = g_RenderVertexBuffer[0].a;
+        g_RenderVertexBuffer[2].a = g_RenderVertexBuffer[0].a;
+        g_RenderVertexBuffer[3].a = g_RenderVertexBuffer[0].a;
         engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
         engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
                   (g_CDemonRendererPtr2,&g_BillboardPrimitive.base);

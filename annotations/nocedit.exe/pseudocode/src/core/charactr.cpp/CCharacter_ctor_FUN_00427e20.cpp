@@ -77,7 +77,7 @@ CCharacter * __cdecl core_charactr_cpp_CCharacter_ctor_FUN_00427e20(CCharacter *
   ADJ(pvVar4)->look_at_weight = 0.0;
   ADJ(pvVar4)->look_at_candidate = (CCharacter *)0x0;
   ADJ(pvVar4)->look_at_target = (CCharacter *)0x0;
-  ADJ(pvVar4)->collision_layer = 0;
+  ADJ(pvVar4)->blood_type = 0;
   ADJ(pvVar4)->is_fully_burned = 0;
   ADJ(pvVar4)->is_ethereal = 0;
   ADJ(pvVar4)->grabbed_by = (CDemonActor *)0x0;

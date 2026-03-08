@@ -61,7 +61,7 @@ void __cdecl engine_3d_c_drawLineStrip3D_FUN_00404600(SLineStrip *line_strip)
       pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar8 * -8 + 4);
       piVar7 = piVar7 + (uint)bVar8 * -2 + 1;
     }
-    vertex2.fog = iVar10;
+    vertex2.a = iVar10;
     auVar9 = in_stack_ffffff60._0_24_;
     vertex2.projected_vertex.transformed_x = auVar9._0_4_;
     vertex2.projected_vertex.transformed_y = auVar9._4_4_;
@@ -71,9 +71,9 @@ void __cdecl engine_3d_c_drawLineStrip3D_FUN_00404600(SLineStrip *line_strip)
     vertex2.projected_vertex.screen_y = auVar9._20_4_;
     vertex2.u = in_stack_ffffff60._24_4_;
     vertex2.v = in_stack_ffffff60._28_4_;
-    vertex2.z = in_stack_ffffff60._32_4_;
-    vertex2.r = in_stack_ffffff60._36_4_;
-    vertex2.g = in_stack_ffffff60._40_4_;
+    vertex2.r = in_stack_ffffff60._32_4_;
+    vertex2.g = in_stack_ffffff60._36_4_;
+    vertex2.b = in_stack_ffffff60._40_4_;
     engine_3d_c_clipAndDrawLine3D_FUN_00408070(in_stack_ffffff30,vertex2);
   }
   return;

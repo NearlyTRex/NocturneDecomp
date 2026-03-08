@@ -51,9 +51,9 @@ CVector3f * __cdecl CLever(CLever *this_ptr,CVector3f *param_2);
 // Address: 00504e80
 void __cdecl CLever::archive(CLever *this_ptr);
 
-// Original: core_lever.cpp_CLever_hasCollision_FUN_00505060
+// Original: core_lever.cpp_CLever_getCollisionType_FUN_00505060
 // Address: 00505060
-int __cdecl CLever::hasCollision(CLever *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CLever::getCollisionType(CLever *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_lever.cpp_CLever_isAccessibleFrom_FUN_00505080
 // Address: 00505080

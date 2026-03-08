@@ -21,7 +21,7 @@ int __cdecl core_trap_cpp_CTrap_renderOpaque_FUN_005de920(CTrap *this_ptr)
   this_ptr_00 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&CStack_28);
   iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
   if (iVar1 != 0) {
-    if (this_ptr->wolf_in_trap == 0) {
+    if (this_ptr->wolf_in_trap == (CWerewolf *)0x0) {
       animation_frame = 0.0;
     }
     else {

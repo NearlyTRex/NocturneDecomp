@@ -9,7 +9,7 @@ void __cdecl staticInit(void);
 
 // Original: core_bodypart.cpp_createBodyPart_FUN_00418e10
 // Address: 00418e10
-CBodyPart * __cdecl createBodyPart(void);
+CBodyPart * __cdecl createBodyPart(CVector3f *position,UOrientationVector *orientation,CVector3f *initial_velocity,CDemonActor *scale_source,int dont_use_normals,int is_transparent,int blood_type);
 
 // Original: core_bodypart.cpp_factoryFunc_FUN_00418fd0
 // Address: 00418fd0
@@ -63,9 +63,9 @@ void __cdecl CBodyPart::process(CBodyPart *this_ptr,float delta_time);
 // Address: 00419e10
 void __cdecl CBodyPart::processFires(CBodyPart *this_ptr,float delta_time);
 
-// Original: core_bodypart.cpp_CBodyPart_hasCollision_FUN_00419f50
+// Original: core_bodypart.cpp_CBodyPart_getCollisionType_FUN_00419f50
 // Address: 00419f50
-int __cdecl CBodyPart::hasCollision(CBodyPart *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CBodyPart::getCollisionType(CBodyPart *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_bodypart.cpp_CBodyPart_getBoundingBox_FUN_00419f60
 // Address: 00419f60

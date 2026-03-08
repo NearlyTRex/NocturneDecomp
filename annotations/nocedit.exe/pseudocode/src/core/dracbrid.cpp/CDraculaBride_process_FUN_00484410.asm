@@ -255,8 +255,8 @@ section .text
     PUSH 0xbf800000                     ; 0048456e
     PUSH EAX                            ; 00484573
     PUSH EBX                            ; 00484574
-    CALL core_dracbrid.cpp_CDraculaBride_explodeIntoParts_FUN_004858f0 ; 00484575
-        ;   XREF to: 004858f0 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_CDraculaBride_explodeIntoParts_FUN_004858f0(CDraculaBride * this_ptr, CVector3f * direction, float spread_angle, int render_in_background)
+    CALL core_dracbrid.cpp_CDraculaBride_explode_FUN_004858f0 ; 00484575
+        ;   XREF to: 004858f0 (UNCONDITIONAL_CALL)  ; void core_dracbrid.cpp_CDraculaBride_explode_FUN_004858f0(CDraculaBride * this_ptr, CVector3f * direction, float spread_angle, int render_in_background)
     ADD ESP,0x10                        ; 0048457a
     FLD float ptr [0x0065cd8c]          ; 0048457d | FLOAT_0065cd8c
     PUSH 0x6219bd                       ; 00484583 | = "brideexplosion.wav"

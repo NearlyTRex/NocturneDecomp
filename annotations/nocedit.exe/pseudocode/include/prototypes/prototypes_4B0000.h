@@ -23,6 +23,7 @@
 #include "types/classes/CStake.h"
 #include "types/classes/CStrList.h"
 #include "types/classes/CVector3f.h"
+#include "types/enums/ECollisionType.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SMRGLHeaderExtended.h"
 #include "types/structs/STimestampRecord.h"
@@ -169,7 +170,7 @@ void __cdecl core_filmreel_cpp_CFilmReel_process_FUN_004be800(CFilmReel *this_pt
 int __cdecl core_filmreel_cpp_CFilmReel_renderOpaque_FUN_004be810(CFilmReel *this_ptr);
 void __cdecl core_filmreel_cpp_CFilmReel_renderBackground_FUN_004be880(CFilmReel *this_ptr,int layer_flag);
 void __cdecl core_filmreel_cpp_CFilmReel_archive_FUN_004be8a0(CFilmReel *this_ptr);
-int __cdecl core_filmreel_cpp_CFilmReel_hasCollision_FUN_004be8f0(CFilmReel *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl core_filmreel_cpp_CFilmReel_getCollisionType_FUN_004be8f0(CFilmReel *this_ptr,SCollisionInfo *collision_info);
 CBoundingBox3D * __cdecl core_filmreel_cpp_CFilmReel_getBoundingBox_FUN_004be910(CFilmReel *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_filmreel_cpp_CFilmReel_getPropertyList_FUN_004be960(CFilmReel *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_filmreel_cpp_CFilmReel_addFilesToExtract_FUN_004be9b0(CFilmReel *this_ptr,_FILE *file_handle);

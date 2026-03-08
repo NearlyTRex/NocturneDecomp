@@ -27,9 +27,9 @@ void __cdecl CTrap::setup(CTrap *this_ptr);
 // Address: 005de710
 int __cdecl CTrap::canPickup(CTrap *this_ptr,CDemonActor *picker);
 
-// Original: core_trap.cpp_CTrap_hasCollision_FUN_005de720
+// Original: core_trap.cpp_CTrap_getCollisionType_FUN_005de720
 // Address: 005de720
-int __cdecl CTrap::hasCollision(CTrap *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CTrap::getCollisionType(CTrap *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_trap.cpp_CTrap_pickup_FUN_005de740
 // Address: 005de740

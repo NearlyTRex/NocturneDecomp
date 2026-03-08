@@ -21,7 +21,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 ;   core_actor.cpp_randomChance_FUN_0040cd10
-;   core_bride.cpp_CBride_FUN_00424600
+;   core_bride.cpp_CBride_processDismemberment_FUN_00424600
 ;   core_charactr.cpp_CCharacter_igniteBone_FUN_0042b5b0
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_004a9f10
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_004c79d0
@@ -86,8 +86,8 @@ section .text
     PUSH EDI                            ; 004248a1
         ;   Label: LAB_004248a1
     PUSH ESI                            ; 004248a2
-    CALL core_bride.cpp_CBride_FUN_00424600 ; 004248a3
-        ;   XREF to: 00424600 (UNCONDITIONAL_CALL)  ; void core_bride.cpp_CBride_FUN_00424600(CBride * this_ptr)
+    CALL core_bride.cpp_CBride_processDismemberment_FUN_00424600 ; 004248a3
+        ;   XREF to: 00424600 (UNCONDITIONAL_CALL)  ; void core_bride.cpp_CBride_processDismemberment_FUN_00424600(CBride * this_ptr, SDamageInfo * damage_info)
     FLD float ptr [EDI + 0x4]           ; 004248a8
     FSUBR float ptr [ESI + 0x243c]      ; 004248ab
     MOV EAX,dword ptr [ESI + 0xbedc]    ; 004248b1

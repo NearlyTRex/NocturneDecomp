@@ -2,13 +2,13 @@
 // Address: 0041ba10
 // Address Range: [[0041ba10, 0041bbb7]]
 // Convention: __cdecl
-// Signature: CVector3f * __cdecl core_boneguy_cpp_hsvToRgb_FUN_0041ba10(CVector3f *out_rgb,CVector3f *in_hsv)
+// Signature: CColor3f * __cdecl core_boneguy_cpp_hsvToRgb_FUN_0041ba10(CColor3f *out_rgb,CColor3f *in_hsv)
 
 #include "nocturne.h"
 
 /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
-CVector3f * __cdecl core_boneguy_cpp_hsvToRgb_FUN_0041ba10(CVector3f *out_rgb,CVector3f *in_hsv)
+CColor3f * __cdecl core_boneguy_cpp_hsvToRgb_FUN_0041ba10(CColor3f *out_rgb,CColor3f *in_hsv)
 
 {
   float fVar1;
@@ -23,13 +23,13 @@ CVector3f * __cdecl core_boneguy_cpp_hsvToRgb_FUN_0041ba10(CVector3f *out_rgb,CV
   float local_18;
   float local_10;
   
-  fVar1 = in_hsv->z;
+  fVar1 = in_hsv->b;
   fVar5 = fVar1;
   fVar6 = fVar1;
   fVar7 = fVar1;
-  if (0.0 < in_hsv->y) {
-    fVar6 = in_hsv->y * (float)0.0039215686274509803;
-    fVar5 = in_hsv->x * (float)0.023529411764705899;
+  if (0.0 < in_hsv->g) {
+    fVar6 = in_hsv->g * (float)0.0039215686274509803;
+    fVar5 = in_hsv->r * (float)0.023529411764705899;
     dVar8 = floor((double)fVar5);
     fVar2 = (1.0 - fVar6) * fVar1;
     fVar5 = fVar5 - (float)(int)ROUND(ROUND(dVar8));
@@ -73,8 +73,8 @@ CVector3f * __cdecl core_boneguy_cpp_hsvToRgb_FUN_0041ba10(CVector3f *out_rgb,CV
   local_10 = fVar7;
   local_18 = fVar6;
   local_1c = fVar5;
-  out_rgb->x = local_18;
-  out_rgb->y = local_10;
-  out_rgb->z = local_1c;
+  out_rgb->r = local_18;
+  out_rgb->g = local_10;
+  out_rgb->b = local_1c;
   return out_rgb;
 }

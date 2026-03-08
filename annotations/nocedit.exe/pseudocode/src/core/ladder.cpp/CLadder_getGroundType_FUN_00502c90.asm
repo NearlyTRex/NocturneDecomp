@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_ladder_cpp_CLadder_getGroundType_FUN_00502c90(CLadder *this_ptr)
+; EGroundType __cdecl core_ladder_cpp_CLadder_getGroundType_FUN_00502c90(CLadder *this_ptr)
 ;
 ; Parameters:
 ; CLadder *        Stack[0x4]:4   this_ptr

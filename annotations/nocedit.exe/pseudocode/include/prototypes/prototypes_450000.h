@@ -70,7 +70,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_initCameraShake_FUN_00453fc0(CDemonCa
 CVector3f * __cdecl core_dcamera_cpp_CDemonCamera_computeVisibleFrustumBounds_FUN_00454060(CDemonCamera *this_ptr,CVector3f *output_bounds);
 void __cdecl core_dcamera_cpp_CDemonCamera_saveZBufferScanlines_FUN_00454450(CDemonCamera *this_ptr);
 void __cdecl core_dcamera_cpp_CDemonCamera_restoreZBufferScanlines_FUN_004544a0(CDemonCamera *this_ptr);
-int __cdecl core_dcamera_cpp_CDemonCamera_testBoxOcclusion_FUN_004544f0(CDemonCamera *this_ptr,CVector3i *corners);
+int __cdecl core_dcamera_cpp_CDemonCamera_testVisibility_FUN_004544f0(CDemonCamera *this_ptr,CVector3i *corners);
 CVector3f * __cdecl core_dcamera_cpp_CVector3f_arrdtor_FUN_00454700(CVector3f *objs,uint flags);
 void __cdecl core_dcube_cpp_staticInit_FUN_00454720(void);
 void __cdecl core_dcube_cpp_copyVector3_FUN_004547b0(CVector3f *dest,CVector3f *src);

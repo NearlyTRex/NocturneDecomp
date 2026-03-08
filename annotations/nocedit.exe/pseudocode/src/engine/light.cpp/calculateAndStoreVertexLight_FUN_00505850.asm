@@ -12,7 +12,7 @@
 ;   engine_drender.cpp_calculateVertexLight_FUN_0048c740 at 0048c74a
 ;
 ; Referenced Globals:
-;   undefined4 g_RenderVertexBuffer[0].z
+;   undefined4 g_RenderVertexBuffer[0].r
 ;
 ; Called Functions:
 ;   engine_light.cpp_calculatePhongLighting_FUN_00505530
@@ -38,7 +38,7 @@ section .text
     LEA EAX,[EDX*0x4 + 0x0]             ; 0050586e
     SUB EAX,EDX                         ; 00505875
     SHL EAX,0x4                         ; 00505877
-    MOV dword ptr [EAX + 0x688034],ECX  ; 0050587a | g_RenderVertexBuffer[0].z
+    MOV dword ptr [EAX + 0x688034],ECX  ; 0050587a | g_RenderVertexBuffer[0].r
     POP EBX                             ; 00505880
     RET                                 ; 00505881
 

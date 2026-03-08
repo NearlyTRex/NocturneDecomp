@@ -1,16 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dracbrid_cpp_CDraculaBride_dismemberPart_FUN_00485b20(CDraculaBride *this_ptr,int part_index,int flags,int render_in_background)
+; void __cdecl core_dracbrid_cpp_CDraculaBride_dismemberPart_FUN_00485b20(CDraculaBride *this_ptr,int part_index,CVector3f *initial_velocity,int render_in_background)
 ;
 ; Parameters:
 ; CDraculaBride *  Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   part_index
-; int              Stack[0xc]:4   flags
+; CVector3f *      Stack[0xc]:4   initial_velocity
 ; int              Stack[0x10]:4   render_in_background
 ;
 ; XREF[1]:
-;   core_dracbrid.cpp_CDraculaBride_explodeIntoParts_FUN_004858f0 at 00485966
+;   core_dracbrid.cpp_CDraculaBride_explode_FUN_004858f0 at 00485966
 ;
 ; Called Functions:
 ;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0041a050
@@ -52,7 +52,7 @@ section .text
     LEA EAX,[EBX + 0x20]                ; 00485b59
     PUSH EAX                            ; 00485b5c
     CALL core_bodypart.cpp_createBodyPart_FUN_00418e10 ; 00485b5d
-        ;   XREF to: 00418e10 (UNCONDITIONAL_CALL)  ; CBodyPart * core_bodypart.cpp_createBodyPart_FUN_00418e10()
+        ;   XREF to: 00418e10 (UNCONDITIONAL_CALL)  ; CBodyPart * core_bodypart.cpp_createBodyPart_FUN_00418e10(CVector3f * position, UOrientationVector * orientation, CVector3f * initial_velocity, CDemonActor * scale_source, ...)
     ADD ESP,0x1c                        ; 00485b62
     MOV EDI,dword ptr [ESP + 0x20]      ; 00485b65
     PUSH EDI                            ; 00485b69

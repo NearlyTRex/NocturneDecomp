@@ -186,7 +186,7 @@ section .text
     PUSH EAX                            ; 0057854b
     PUSH EBX                            ; 0057854c
     CALL core_ground.cpp_getGroundTypeCode_FUN_004eece0 ; 0057854d
-        ;   XREF to: 004eece0 (UNCONDITIONAL_CALL)  ; char * core_ground.cpp_getGroundTypeCode_FUN_004eece0(int type)
+        ;   XREF to: 004eece0 (UNCONDITIONAL_CALL)  ; char * core_ground.cpp_getGroundTypeCode_FUN_004eece0(EGroundType type)
     ADD ESP,0x4                         ; 00578552
     PUSH EAX                            ; 00578555
     CALL crt_string.c__stricmp_FUN_005fe7f0 ; 00578556
@@ -223,7 +223,7 @@ section .text
     PUSH EAX                            ; 0057859f
     PUSH EBX                            ; 005785a0
     CALL core_ground.cpp_getGroundTypeName_FUN_004eed80 ; 005785a1
-        ;   XREF to: 004eed80 (UNCONDITIONAL_CALL)  ; char * core_ground.cpp_getGroundTypeName_FUN_004eed80(int type)
+        ;   XREF to: 004eed80 (UNCONDITIONAL_CALL)  ; char * core_ground.cpp_getGroundTypeName_FUN_004eed80(EGroundType type)
     ADD ESP,0x4                         ; 005785a6
     PUSH EAX                            ; 005785a9
     CALL crt_string.c__stricmp_FUN_005fe7f0 ; 005785aa

@@ -44,8 +44,8 @@ void __cdecl core_waypoint_cpp_CWayPoint_rebuildConnectivity_FUN_005ec4f0(CWayPo
       if ((iVar1 != 0) &&
          (iVar1 = core_waypoint_cpp_CWayPoint_isReachable_FUN_005ebd40
                             ((CWayPoint *)this_ptr_01,this_ptr_00,1), iVar1 != 0)) {
-        core_waypoint_cpp_CWayPoint_addAdj_FUN_005ec700(this_ptr);
-        core_waypoint_cpp_CWayPoint_addAdj_FUN_005ec700(pCVar3);
+        core_waypoint_cpp_CWayPoint_addAdj_FUN_005ec700(this_ptr,pCVar3);
+        core_waypoint_cpp_CWayPoint_addAdj_FUN_005ec700(pCVar3,this_ptr);
         if (0x3b < this_ptr->num_adjacent_waypoints) {
           return;
         }

@@ -2,12 +2,12 @@
 // Address: 004eb390
 // Address Range: [[004eb390, 004eb395]]
 // Convention: __cdecl
-// Signature: int __cdecl core_glass_cpp_CGlass_getGroundType_FUN_004eb390(CGlass *this_ptr)
+// Signature: EGroundType __cdecl core_glass_cpp_CGlass_getGroundType_FUN_004eb390(CGlass *this_ptr)
 
 #include "nocturne.h"
 
-int __cdecl core_glass_cpp_CGlass_getGroundType_FUN_004eb390(CGlass *this_ptr)
+EGroundType __cdecl core_glass_cpp_CGlass_getGroundType_FUN_004eb390(CGlass *this_ptr)
 
 {
-  return 0xc;
+  return GROUND_TYPE_GLASS;
 }

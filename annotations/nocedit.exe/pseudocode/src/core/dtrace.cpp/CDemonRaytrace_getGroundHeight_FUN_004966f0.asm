@@ -30,7 +30,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
-;   core_bugs.cpp_CBugs_FUN_004257f0 at 00425b37
+;   core_bugs.cpp_CBugs_updateGroundHeightGrid_FUN_004257f0 at 00425b37
 ;   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0 at 005716f7
 ;
 ; Referenced Globals:

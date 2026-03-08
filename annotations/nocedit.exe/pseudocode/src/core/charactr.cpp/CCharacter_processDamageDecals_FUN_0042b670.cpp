@@ -45,7 +45,7 @@ void __cdecl core_charactr_cpp_CCharacter_processDamageDecals_FUN_0042b670(CChar
           core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
                     (&this_ptr->base,&local_5c,&local_38);
           core_gore_cpp_CGore_spawnBloodParticles_FUN_004edaa0
-                    (g_CGorePtr,&local_44,&local_5c,this_ptr->collision_layer);
+                    (g_CGorePtr,&local_44,&local_5c,this_ptr->blood_type);
         }
       }
       iVar3 = iVar3 + 1;

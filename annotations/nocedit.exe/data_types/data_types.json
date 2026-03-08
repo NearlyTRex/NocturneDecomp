@@ -333,6 +333,26 @@
       "type":"typedef"
     },
     {
+      "name":"CCameraView_dtor",
+      "type":"function_definition"
+    },
+    {
+      "name":"CCameraView_getFogValueAtPosition",
+      "type":"function_definition"
+    },
+    {
+      "name":"CCameraView_saveAlphaTransform",
+      "type":"function_definition"
+    },
+    {
+      "name":"CCameraView_setupPerspectiveAndFog",
+      "type":"function_definition"
+    },
+    {
+      "name":"CCameraView_testVisibility",
+      "type":"function_definition"
+    },
+    {
       "name":"CCameraView_vtable",
       "type":"struct"
     },
@@ -389,10 +409,6 @@
       "type":"function_definition"
     },
     {
-      "name":"CCharacter_isDeathState",
-      "type":"function_definition"
-    },
-    {
       "name":"CCharacter_isGrabbable",
       "type":"function_definition"
     },
@@ -439,10 +455,6 @@
     {
       "name":"CCharacter_testDamageLine",
       "type":"function_definition"
-    },
-    {
-      "name":"CCharacter_vtable",
-      "type":"struct"
     },
     {
       "name":"CCheckOutItem",
@@ -613,14 +625,6 @@
       "type":"function_definition"
     },
     {
-      "name":"CDemonActor_getCollisionType",
-      "type":"function_definition"
-    },
-    {
-      "name":"CDemonActor_getGroundType",
-      "type":"function_definition"
-    },
-    {
       "name":"CDemonActor_getInteractionInfo",
       "type":"function_definition"
     },
@@ -777,14 +781,6 @@
       "type":"function_definition"
     },
     {
-      "name":"CDemonActor_vtable",
-      "type":"struct"
-    },
-    {
-      "name":"CCharacter_full_vtable",
-      "type":"struct"
-    },
-    {
       "name":"CDemonFilter",
       "type":"struct"
     },
@@ -826,10 +822,6 @@
     },
     {
       "name":"CEnemy_vtable",
-      "type":"struct"
-    },
-    {
-      "name":"CEnemy_full_vtable",
       "type":"struct"
     },
     {
@@ -914,10 +906,6 @@
     },
     {
       "name":"CHero_vtable",
-      "type":"struct"
-    },
-    {
-      "name":"CHero_full_vtable",
       "type":"struct"
     },
     {
@@ -2045,14 +2033,6 @@
       "type":"struct"
     },
     {
-      "name":"CWeapon_full_vtable",
-      "type":"struct"
-    },
-    {
-      "name":"CWeather",
-      "type":"struct"
-    },
-    {
       "name":"CZThumb",
       "type":"struct"
     },
@@ -2153,6 +2133,10 @@
       "type":"enum"
     },
     {
+      "name":"EActorLifecycleState",
+      "type":"enum"
+    },
+    {
       "name":"EActorPropertyType",
       "type":"enum"
     },
@@ -2173,6 +2157,10 @@
       "type":"enum"
     },
     {
+      "name":"EBugsState",
+      "type":"enum"
+    },
+    {
       "name":"ECmdParmType",
       "type":"enum"
     },
@@ -2183,6 +2171,14 @@
     {
       "name":"CCmdParse",
       "type":"struct"
+    },
+    {
+      "name":"ECollisionType",
+      "type":"enum"
+    },
+    {
+      "name":"CDemonActor_getCollisionType",
+      "type":"function_definition"
     },
     {
       "name":"EConnectionStatus",
@@ -2199,6 +2195,18 @@
     {
       "name":"EDamageType",
       "type":"enum"
+    },
+    {
+      "name":"EDeathState",
+      "type":"enum"
+    },
+    {
+      "name":"CCharacter_getDeathState",
+      "type":"function_definition"
+    },
+    {
+      "name":"CCharacter_vtable",
+      "type":"struct"
     },
     {
       "name":"EDeathType",
@@ -2227,6 +2235,30 @@
     {
       "name":"EGroundType",
       "type":"enum"
+    },
+    {
+      "name":"CDemonActor_getGroundType",
+      "type":"function_definition"
+    },
+    {
+      "name":"CDemonActor_vtable",
+      "type":"struct"
+    },
+    {
+      "name":"CCharacter_full_vtable",
+      "type":"struct"
+    },
+    {
+      "name":"CEnemy_full_vtable",
+      "type":"struct"
+    },
+    {
+      "name":"CHero_full_vtable",
+      "type":"struct"
+    },
+    {
+      "name":"CWeapon_full_vtable",
+      "type":"struct"
     },
     {
       "name":"EHealthBarMode",
@@ -2331,6 +2363,14 @@
     {
       "name":"EWeaponType",
       "type":"enum"
+    },
+    {
+      "name":"EWeatherType",
+      "type":"enum"
+    },
+    {
+      "name":"CWeather",
+      "type":"struct"
     },
     {
       "name":"EWerewolfType",
@@ -6905,14 +6945,6 @@
       "type":"struct"
     },
     {
-      "name":"CTrap",
-      "type":"struct"
-    },
-    {
-      "name":"CTrap_ptr_344",
-      "type":"typedef"
-    },
-    {
       "name":"CTrash",
       "type":"struct"
     },
@@ -7107,6 +7139,14 @@
     {
       "name":"CWerewolf",
       "type":"struct"
+    },
+    {
+      "name":"CTrap",
+      "type":"struct"
+    },
+    {
+      "name":"CTrap_ptr_344",
+      "type":"typedef"
     },
     {
       "name":"CZombie",
@@ -7329,6 +7369,26 @@
     {
       "cat":"/Nocturne/Enum/Game",
       "importable":true,
+      "name":"EActorLifecycleState",
+      "type":"enum",
+      "values":[
+        {
+          "name":"ACTOR_NOT_CREATED",
+          "val":0
+        },
+        {
+          "name":"ACTOR_CREATED",
+          "val":1
+        },
+        {
+          "name":"ACTOR_DESTROYED",
+          "val":2
+        }
+      ]
+    },
+    {
+      "cat":"/Nocturne/Enum/Game",
+      "importable":true,
       "name":"EActorPropertyType",
       "type":"enum",
       "values":[
@@ -7525,6 +7585,30 @@
     {
       "cat":"/Nocturne/Enum/Game",
       "importable":true,
+      "name":"EBugsState",
+      "type":"enum",
+      "values":[
+        {
+          "name":"BUGS_STATE_IDLE",
+          "val":0
+        },
+        {
+          "name":"BUGS_STATE_ATTACK",
+          "val":1
+        },
+        {
+          "name":"BUGS_STATE_DETACH",
+          "val":2
+        },
+        {
+          "name":"BUGS_STATE_DEAD",
+          "val":3
+        }
+      ]
+    },
+    {
+      "cat":"/Nocturne/Enum/Game",
+      "importable":true,
       "name":"ECmdParmType",
       "type":"enum",
       "values":[
@@ -7655,6 +7739,30 @@
         {
           "name":"PARM_TYPE_INI_VARIABLE",
           "val":31
+        }
+      ]
+    },
+    {
+      "cat":"/Nocturne/Enum/Game",
+      "importable":true,
+      "name":"ECollisionType",
+      "type":"enum",
+      "values":[
+        {
+          "name":"COLLISION_TYPE_NONE",
+          "val":0
+        },
+        {
+          "name":"COLLISION_TYPE_MESH",
+          "val":1
+        },
+        {
+          "name":"COLLISION_TYPE_CYLINDER",
+          "val":2
+        },
+        {
+          "name":"COLLISION_TYPE_CUSTOM",
+          "val":3
         }
       ]
     },
@@ -7803,6 +7911,26 @@
         {
           "name":"DAMAGE_TYPE_BURN",
           "val":108
+        }
+      ]
+    },
+    {
+      "cat":"/Nocturne/Enum/Game",
+      "importable":true,
+      "name":"EDeathState",
+      "type":"enum",
+      "values":[
+        {
+          "name":"DEATH_STATE_ALIVE",
+          "val":0
+        },
+        {
+          "name":"DEATH_STATE_DYING",
+          "val":1
+        },
+        {
+          "name":"DEATH_STATE_DEAD",
+          "val":2
         }
       ]
     },
@@ -9117,6 +9245,26 @@
     {
       "cat":"/Nocturne/Enum/Game",
       "importable":true,
+      "name":"EWeatherType",
+      "type":"enum",
+      "values":[
+        {
+          "name":"WEATHER_TYPE_NONE",
+          "val":0
+        },
+        {
+          "name":"WEATHER_TYPE_RAIN",
+          "val":1
+        },
+        {
+          "name":"WEATHER_TYPE_SNOW",
+          "val":2
+        }
+      ]
+    },
+    {
+      "cat":"/Nocturne/Enum/Game",
+      "importable":true,
       "name":"EWerewolfType",
       "type":"enum",
       "values":[
@@ -10290,6 +10438,100 @@
       "calling_convention":"__cdecl",
       "cat":"/Nocturne/FunctionDefinition/Game",
       "importable":true,
+      "name":"CCameraView_dtor",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CCameraView*"
+        },
+        {
+          "name":"flags",
+          "type":"uint"
+        }
+      ],
+      "return_type":"CCameraView*",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CCameraView_getFogValueAtPosition",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CDemonCamera*"
+        },
+        {
+          "name":"world_position",
+          "type":"CVector3i*"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CCameraView_saveAlphaTransform",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CDemonCamera*"
+        },
+        {
+          "name":"alpha_index",
+          "type":"int"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CCameraView_setupPerspectiveAndFog",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CDemonCamera*"
+        },
+        {
+          "name":"position",
+          "type":"CVector3f*"
+        },
+        {
+          "name":"max_distance",
+          "type":"float"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"CCameraView_testVisibility",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CDemonCamera*"
+        },
+        {
+          "name":"corners",
+          "type":"CVector3i*"
+        }
+      ],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
       "name":"CCharacter_applyDamage",
       "parameters":[
         {
@@ -10472,6 +10714,20 @@
       "calling_convention":"__cdecl",
       "cat":"/Nocturne/FunctionDefinition/Game",
       "importable":true,
+      "name":"CCharacter_getDeathState",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CCharacter*"
+        }
+      ],
+      "return_type":"EDeathState",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
       "name":"CCharacter_getGrabbed",
       "parameters":[
         {
@@ -10527,20 +10783,6 @@
       "cat":"/Nocturne/FunctionDefinition/Game",
       "importable":true,
       "name":"CCharacter_hasDoorTarget",
-      "parameters":[
-        {
-          "name":"this_ptr",
-          "type":"CCharacter*"
-        }
-      ],
-      "return_type":"int",
-      "type":"function_definition"
-    },
-    {
-      "calling_convention":"__cdecl",
-      "cat":"/Nocturne/FunctionDefinition/Game",
-      "importable":true,
-      "name":"CCharacter_isDeathState",
       "parameters":[
         {
           "name":"this_ptr",
@@ -11414,11 +11656,11 @@
           "type":"CDemonActor*"
         },
         {
-          "name":"out_collision",
+          "name":"collision_info",
           "type":"SCollisionInfo*"
         }
       ],
-      "return_type":"int",
+      "return_type":"ECollisionType",
       "type":"function_definition"
     },
     {
@@ -11432,7 +11674,7 @@
           "type":"CDemonActor*"
         }
       ],
-      "return_type":"int",
+      "return_type":"EGroundType",
       "type":"function_definition"
     },
     {
@@ -26708,7 +26950,7 @@
           "len":4,
           "name":"state",
           "offset":48828,
-          "type":"int"
+          "type":"EBugsState"
         },
         {
           "len":4,
@@ -27032,31 +27274,31 @@
           "len":4,
           "name":"dtor",
           "offset":0,
-          "type":"void*"
+          "type":"CCameraView_dtor*"
         },
         {
           "len":4,
           "name":"setupPerspectiveAndFog",
           "offset":4,
-          "type":"void*"
+          "type":"CCameraView_setupPerspectiveAndFog*"
         },
         {
           "len":4,
-          "name":"calculatePerspective",
+          "name":"getFogValueAtPosition",
           "offset":8,
-          "type":"void*"
+          "type":"CCameraView_getFogValueAtPosition*"
         },
         {
           "len":4,
-          "name":"isVisible",
+          "name":"testVisibility",
           "offset":12,
-          "type":"void*"
+          "type":"CCameraView_testVisibility*"
         },
         {
           "len":4,
           "name":"saveAlphaTransform",
           "offset":16,
-          "type":"void*"
+          "type":"CCameraView_saveAlphaTransform*"
         }
       ],
       "importable":true,
@@ -27456,7 +27698,7 @@
         },
         {
           "len":4,
-          "name":"collision_layer",
+          "name":"blood_type",
           "offset":9744,
           "type":"int"
         },
@@ -27801,7 +28043,7 @@
           "len":4,
           "name":"getDeathState",
           "offset":52,
-          "type":"CCharacter_isDeathState*"
+          "type":"CCharacter_getDeathState*"
         },
         {
           "len":4,
@@ -29702,9 +29944,9 @@
         },
         {
           "len":4,
-          "name":"was_created",
+          "name":"lifecycle_state",
           "offset":112,
-          "type":"int"
+          "type":"EActorLifecycleState"
         },
         {
           "len":4,
@@ -29924,9 +30166,9 @@
         },
         {
           "len":4,
-          "name":"hasCollision",
+          "name":"getCollisionType",
           "offset":52,
-          "type":"CDemonActor_hasCollision*"
+          "type":"CDemonActor_getCollisionType*"
         },
         {
           "len":4,
@@ -31992,7 +32234,7 @@
           "len":4,
           "name":"weather_type",
           "offset":1447528,
-          "type":"int"
+          "type":"EWeatherType"
         }
       ],
       "importable":true,
@@ -44917,7 +45159,7 @@
           "len":4,
           "name":"wolf_in_trap",
           "offset":728,
-          "type":"int"
+          "type":"CWerewolf*"
         }
       ],
       "importable":true,
@@ -46555,7 +46797,7 @@
           "len":4,
           "name":"weather_type",
           "offset":0,
-          "type":"int"
+          "type":"EWeatherType"
         },
         {
           "len":4,
@@ -57680,25 +57922,25 @@
         },
         {
           "len":4,
-          "name":"z",
+          "name":"r",
           "offset":32,
           "type":"int"
         },
         {
           "len":4,
-          "name":"r",
+          "name":"g",
           "offset":36,
           "type":"int"
         },
         {
           "len":4,
-          "name":"g",
+          "name":"b",
           "offset":40,
           "type":"int"
         },
         {
           "len":4,
-          "name":"fog",
+          "name":"a",
           "offset":44,
           "type":"int"
         }

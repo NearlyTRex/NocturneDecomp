@@ -20,6 +20,7 @@ int __cdecl core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0(CActorPro
   uint uVar8;
   SIZE_T SVar9;
   void *pvVar10;
+  EGroundType type;
   CActorPropertyActionFunc *pCVar11;
   char *pcVar12;
   int iVar13;
@@ -297,13 +298,13 @@ int __cdecl core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0(CActorPro
     iVar13 = core_sound_cpp_editSoundName_FUN_005b3de0((this_ptr->data).v_string_ptr,local_2a0);
     return iVar13;
   case PROP_GROUND_TYPE:
-    iVar13 = 0;
+    type = GROUND_TYPE_DEFAULT;
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_3444);
     do {
-      pcVar7 = core_ground_cpp_getGroundTypeName_FUN_004eed80(iVar13);
-      iVar13 = iVar13 + 1;
+      pcVar7 = core_ground_cpp_getGroundTypeName_FUN_004eed80(type);
+      type = type + GROUND_TYPE_NONE;
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_3444.base,pcVar7);
-    } while (iVar13 < 0xe);
+    } while ((int)type < 0xe);
     iVar13 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                        (&local_3444,local_2a0,*(this_ptr->data).v_int_ptr,0);
     if (-1 < iVar13) {

@@ -51,13 +51,13 @@ CBoundingBox3D * __cdecl CPendulum::getBoundingBox(CPendulum *this_ptr,CBounding
 // Address: 0054a3b0
 void __cdecl CPendulum::archive(CPendulum *this_ptr);
 
-// Original: core_pendulum.cpp_CPendulum_hasCollision_FUN_0054a550
+// Original: core_pendulum.cpp_CPendulum_getCollisionType_FUN_0054a550
 // Address: 0054a550
-int __cdecl CPendulum::hasCollision(CPendulum *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CPendulum::getCollisionType(CPendulum *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_pendulum.cpp_CPendulum_getGroundType_FUN_0054a590
 // Address: 0054a590
-int __cdecl CPendulum::getGroundType(CPendulum *this_ptr);
+EGroundType __cdecl CPendulum::getGroundType(CPendulum *this_ptr);
 
 // Original: core_pendulum.cpp_CPendulum_propertyDisplayCallback_FUN_0054a5a0
 // Address: 0054a5a0

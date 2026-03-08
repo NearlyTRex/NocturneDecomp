@@ -65,7 +65,7 @@ void __cdecl CWayPoint::showEditorHelp(CWayPoint *this_ptr,int *y_pos);
 
 // Original: core_waypoint.cpp_CWayPoint_addAdj_FUN_005ec700
 // Address: 005ec700
-void __cdecl CWayPoint::addAdj(CWayPoint *this_ptr);
+void __cdecl CWayPoint::addAdj(CWayPoint *this_ptr,CWayPoint *target);
 
 // Original: core_waypoint.cpp_CWayPoint_removeAdj_FUN_005ec7b0
 // Address: 005ec7b0

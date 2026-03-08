@@ -37,15 +37,15 @@ void __cdecl CBeast::processDamage(CBeast *this_ptr,SDamageInfo *damage_info);
 
 // Original: core_beast.cpp_CBeast_getDeathState_FUN_004183a0
 // Address: 004183a0
-int __cdecl CBeast::getDeathState(CBeast *this_ptr);
+EDeathState __cdecl CBeast::getDeathState(CBeast *this_ptr);
 
 // Original: core_beast.cpp_CBeast_getTargetPoints_FUN_004183b0
 // Address: 004183b0
 int __cdecl CBeast::getTargetPoints(CBeast *this_ptr,CVector3f *out_points_array);
 
-// Original: core_beast.cpp_CBeast_hasCollision_FUN_00418400
+// Original: core_beast.cpp_CBeast_getCollisionType_FUN_00418400
 // Address: 00418400
-int __cdecl CBeast::hasCollision(CBeast *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CBeast::getCollisionType(CBeast *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_beast.cpp_CBeast_getPropertyList_FUN_00418420
 // Address: 00418420

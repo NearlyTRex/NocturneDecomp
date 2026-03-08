@@ -47,9 +47,9 @@ CBoundingBox3D * __cdecl CFlame::getBoundingBox(CFlame *this_ptr,CBoundingBox3D 
 // Address: 004cac60
 void __cdecl CFlame::archive(CFlame *this_ptr);
 
-// Original: core_flame.cpp_CFlame_hasCollision_FUN_004cad80
+// Original: core_flame.cpp_CFlame_getCollisionType_FUN_004cad80
 // Address: 004cad80
-int __cdecl CFlame::hasCollision(CFlame *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CFlame::getCollisionType(CFlame *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_flame.cpp_CFlame_updateGlobe_FUN_004cad90
 // Address: 004cad90

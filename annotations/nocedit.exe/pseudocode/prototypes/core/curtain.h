@@ -51,9 +51,9 @@ int __cdecl CCurtain::renderOpaque(CCurtain *this_ptr);
 // Address: 0044b360
 int __cdecl CCurtain::renderTransparent(CCurtain *this_ptr);
 
-// Original: core_curtain.cpp_CCurtain_hasCollision_FUN_0044b370
+// Original: core_curtain.cpp_CCurtain_getCollisionType_FUN_0044b370
 // Address: 0044b370
-int __cdecl CCurtain::hasCollision(CCurtain *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CCurtain::getCollisionType(CCurtain *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_curtain.cpp_CCurtain_getBoundingBox_FUN_0044b380
 // Address: 0044b380

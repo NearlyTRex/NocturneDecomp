@@ -171,25 +171,25 @@ void __cdecl core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0
             local_2c = (int)ROUND(ROUND(((((this_ptr->base).max_distance - fVar2) *
                                          (float)8192) / (this_ptr->base).max_distance) *
                                         (1.0 - fVar1)));
-            g_CDemonRendererPtr2->vertex_buffer_ptr->fog = local_2c;
-            this_ptr_00->vertex_buffer_ptr->z = 0xffff;
+            g_CDemonRendererPtr2->vertex_buffer_ptr->a = local_2c;
             this_ptr_00->vertex_buffer_ptr->r = 0xffff;
             this_ptr_00->vertex_buffer_ptr->g = 0xffff;
+            this_ptr_00->vertex_buffer_ptr->b = 0xffff;
             local_110 = 1;
-            this_ptr_00->vertex_buffer_ptr[1].fog = local_2c;
-            this_ptr_00->vertex_buffer_ptr[1].z = 0xffff;
+            this_ptr_00->vertex_buffer_ptr[1].a = local_2c;
             this_ptr_00->vertex_buffer_ptr[1].r = 0xffff;
             this_ptr_00->vertex_buffer_ptr[1].g = 0xffff;
+            this_ptr_00->vertex_buffer_ptr[1].b = 0xffff;
             local_10c = 2;
-            this_ptr_00->vertex_buffer_ptr[2].fog = local_2c;
-            this_ptr_00->vertex_buffer_ptr[2].z = 0xffff;
+            this_ptr_00->vertex_buffer_ptr[2].a = local_2c;
             this_ptr_00->vertex_buffer_ptr[2].r = 0xffff;
             this_ptr_00->vertex_buffer_ptr[2].g = 0xffff;
+            this_ptr_00->vertex_buffer_ptr[2].b = 0xffff;
             local_108 = 3;
-            this_ptr_00->vertex_buffer_ptr[3].fog = local_2c;
-            this_ptr_00->vertex_buffer_ptr[3].z = 0xffff;
+            this_ptr_00->vertex_buffer_ptr[3].a = local_2c;
             this_ptr_00->vertex_buffer_ptr[3].r = 0xffff;
             this_ptr_00->vertex_buffer_ptr[3].g = 0xffff;
+            this_ptr_00->vertex_buffer_ptr[3].b = 0xffff;
             this_ptr_00->vertex_buffer_ptr->u = 0xf80000;
             this_ptr_00->vertex_buffer_ptr->v = 0xf80000;
             this_ptr_00->vertex_buffer_ptr[1].u = 0x80000;

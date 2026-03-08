@@ -1,0 +1,13 @@
+// Name: core_drip.cpp_CDrip_getCollisionType_FUN_0048e820
+// Address: 0048e820
+// Address Range: [[0048e820, 0048e822]]
+// Convention: __cdecl
+// Signature: ECollisionType __cdecl core_drip_cpp_CDrip_getCollisionType_FUN_0048e820(CDrip *this_ptr,SCollisionInfo *collision_info)
+
+#include "nocturne.h"
+
+ECollisionType __cdecl core_drip_cpp_CDrip_getCollisionType_FUN_0048e820(CDrip *this_ptr,SCollisionInfo *collision_info)
+
+{
+  return COLLISION_TYPE_NONE;
+}

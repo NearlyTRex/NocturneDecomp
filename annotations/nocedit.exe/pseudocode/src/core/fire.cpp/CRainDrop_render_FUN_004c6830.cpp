@@ -91,7 +91,8 @@ void __cdecl core_fire_cpp_CRainDrop_render_FUN_004c6830(CRainDrop *this_ptr)
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_44);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
             (g_CDemonRendererPtr2,&g_FireEffectRainDropTexture);
-  (*((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)(g_CurrentSceneCamera,this_ptr,0);
+  (*((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)
+            (g_CurrentSceneCamera,(CVector3f *)this_ptr,0.0);
   iStack_10 = 0xffff - (int)g_PerspectiveReciprocal;
   g_RenderVertexBuffer[1].u = 0xd00000;
   g_RenderVertexBuffer[0].u = 0x800000;
@@ -100,17 +101,17 @@ void __cdecl core_fire_cpp_CRainDrop_render_FUN_004c6830(CRainDrop *this_ptr)
   g_RenderVertexBuffer[2].u = 0x800000;
   g_RenderVertexBuffer[3].u = 0x800000;
   g_RenderVertexBuffer[2].v = (int)g_CameraLoadImageReadBuffer + 0x771b0;
-  g_RenderVertexBuffer[0].fog =
+  g_RenderVertexBuffer[0].a =
        (int)ROUND(ROUND((float)iStack_10 *
                         (this_ptr->base).lifetime_remaining * (float)4));
   g_RenderVertexBuffer[3].v = (int)g_CameraLoadImageReadBuffer + 0x771b0;
   CStack_2c.x = (int)ROUND((this_ptr->base).position.x * 256.0f);
   CStack_2c.y = (int)ROUND((this_ptr->base).position.y * 256.0f);
   CStack_2c.z = (int)ROUND((this_ptr->base).position.z * 256.0f);
-  g_RenderVertexBuffer[1].fog = g_RenderVertexBuffer[0].fog;
-  g_RenderVertexBuffer[2].fog = g_RenderVertexBuffer[0].fog;
-  g_RenderVertexBuffer[3].fog = g_RenderVertexBuffer[0].fog;
-  iStack_14 = g_RenderVertexBuffer[0].fog;
+  g_RenderVertexBuffer[1].a = g_RenderVertexBuffer[0].a;
+  g_RenderVertexBuffer[2].a = g_RenderVertexBuffer[0].a;
+  g_RenderVertexBuffer[3].a = g_RenderVertexBuffer[0].a;
+  iStack_14 = g_RenderVertexBuffer[0].a;
   core_set_cpp_CDemonSet_computeLighting_FUN_0056e110
             (g_CDemonSetPtr,&CStack_2c,&g_BillboardCameraUp,0,4);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);

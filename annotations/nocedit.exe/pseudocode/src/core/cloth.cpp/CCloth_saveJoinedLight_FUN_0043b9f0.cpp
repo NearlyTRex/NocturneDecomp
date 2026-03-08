@@ -35,10 +35,10 @@ int __cdecl core_cloth_cpp_CCloth_saveJoinedLight_FUN_0043b9f0(CCloth *this_ptr,
     do {
       pCVar2 = g_CDemonRendererPtr2;
       iVar1 = *(int *)(pcVar5 + 0x3f1bc);
-      pCVar3->locked_vertex_indices[600] = g_CDemonRendererPtr2->vertex_buffer_ptr[iVar1].z;
-      pCVar3->locked_vertex_indices[700] = pCVar2->vertex_buffer_ptr[iVar1].r;
+      pCVar3->locked_vertex_indices[600] = g_CDemonRendererPtr2->vertex_buffer_ptr[iVar1].r;
+      pCVar3->locked_vertex_indices[700] = pCVar2->vertex_buffer_ptr[iVar1].g;
       pCVar4 = (CCloth *)((pCVar3->model).model_filename + 4);
-      pCVar3->locked_vertex_indices[800] = pCVar2->vertex_buffer_ptr[iVar1].g;
+      pCVar3->locked_vertex_indices[800] = pCVar2->vertex_buffer_ptr[iVar1].b;
       iVar6 = iVar6 + 1;
       pcVar5 = pcVar5 + 4;
       pCVar3 = pCVar4;

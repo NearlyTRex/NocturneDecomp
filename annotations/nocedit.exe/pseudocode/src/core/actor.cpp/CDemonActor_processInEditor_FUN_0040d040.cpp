@@ -13,7 +13,7 @@ void __cdecl core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(CDemonActor
   int iVar2;
   CSlew CStack_20;
   
-  this_ptr->was_created = 0;
+  this_ptr->lifecycle_state = ACTOR_NOT_CREATED;
   pCVar1 = (*((this_ptr->vtable)._ub)->getCarrier)(this_ptr);
   if (pCVar1 == (CDemonActor *)0x0) {
     iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_GRAVE);

@@ -39,9 +39,9 @@ CBoundingBox3D * __cdecl CAmmo::getBoundingBox(CAmmo *this_ptr,CBoundingBox3D *o
 // Address: 00410f40
 void __cdecl CAmmo::archive(CAmmo *this_ptr);
 
-// Original: core_ammo.cpp_CAmmo_hasCollision_FUN_00410fa0
+// Original: core_ammo.cpp_CAmmo_getCollisionType_FUN_00410fa0
 // Address: 00410fa0
-int __cdecl CAmmo::hasCollision(CAmmo *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CAmmo::getCollisionType(CAmmo *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_ammo.cpp_CAmmo_setWeaponClass_FUN_00410fd0
 // Address: 00410fd0

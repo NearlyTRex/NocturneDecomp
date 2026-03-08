@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CVector3f * __cdecl core_boneguy_cpp_hsvToRgb_FUN_0041ba10(CVector3f *out_rgb,CVector3f *in_hsv)
+; CColor3f * __cdecl core_boneguy_cpp_hsvToRgb_FUN_0041ba10(CColor3f *out_rgb,CColor3f *in_hsv)
 ;
 ; Parameters:
-; CVector3f *      Stack[0x4]:4   out_rgb
-; CVector3f *      Stack[0x8]:4   in_hsv
+; CColor3f *       Stack[0x4]:4   out_rgb
+; CColor3f *       Stack[0x8]:4   in_hsv
 ; Local Variables:
 ; undefined8       Stack[-0x58]:8  local_58
 ; undefined8       Stack[-0x50]:8  local_50

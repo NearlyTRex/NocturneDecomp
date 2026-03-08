@@ -39,15 +39,15 @@
 ;   SRenderVertex[16] g_RenderVertexBuffer
 ;   undefined4 g_RenderVertexBuffer[0].u
 ;   undefined4 g_RenderVertexBuffer[0].v
-;   undefined4 g_RenderVertexBuffer[0].z
 ;   undefined4 g_RenderVertexBuffer[0].r
 ;   undefined4 g_RenderVertexBuffer[0].g
+;   undefined4 g_RenderVertexBuffer[0].b
 ;   undefined4 DAT_00688044
 ;   undefined4 g_RenderVertexBuffer[1].u
 ;   undefined4 g_RenderVertexBuffer[1].v
-;   undefined4 g_RenderVertexBuffer[1].z
 ;   undefined4 g_RenderVertexBuffer[1].r
 ;   undefined4 g_RenderVertexBuffer[1].g
+;   undefined4 g_RenderVertexBuffer[1].b
 ;   ... and 14 more
 ;
 ; Called Functions:
@@ -161,18 +161,18 @@ section .text
     MOV ECX,0x80000                     ; 004c4750
     MOV EBX,0xf80000                    ; 004c4755 | DAT_00f80000
     ADD ESP,0x8                         ; 004c475a
-    MOV dword ptr [0x00688034],ESI      ; 004c475d | g_RenderVertexBuffer[0].z
-    MOV dword ptr [0x00688038],ESI      ; 004c4763 | g_RenderVertexBuffer[0].r
-    MOV dword ptr [0x0068803c],ESI      ; 004c4769 | g_RenderVertexBuffer[0].g
-    MOV dword ptr [0x00688064],ESI      ; 004c476f | g_RenderVertexBuffer[1].z
-    MOV dword ptr [0x00688068],ESI      ; 004c4775 | g_RenderVertexBuffer[1].r
-    MOV dword ptr [0x0068806c],ESI      ; 004c477b | g_RenderVertexBuffer[1].g
-    MOV dword ptr [0x00688094],ESI      ; 004c4781 | g_RenderVertexBuffer[2].z
-    MOV dword ptr [0x00688098],ESI      ; 004c4787 | g_RenderVertexBuffer[2].r
-    MOV dword ptr [0x0068809c],ESI      ; 004c478d | g_RenderVertexBuffer[2].g
-    MOV dword ptr [0x006880c4],ESI      ; 004c4793 | g_RenderVertexBuffer[3].z
-    MOV dword ptr [0x006880c8],ESI      ; 004c4799 | g_RenderVertexBuffer[3].r
-    MOV dword ptr [0x006880cc],ESI      ; 004c479f | g_RenderVertexBuffer[3].g
+    MOV dword ptr [0x00688034],ESI      ; 004c475d | g_RenderVertexBuffer[0].r
+    MOV dword ptr [0x00688038],ESI      ; 004c4763 | g_RenderVertexBuffer[0].g
+    MOV dword ptr [0x0068803c],ESI      ; 004c4769 | g_RenderVertexBuffer[0].b
+    MOV dword ptr [0x00688064],ESI      ; 004c476f | g_RenderVertexBuffer[1].r
+    MOV dword ptr [0x00688068],ESI      ; 004c4775 | g_RenderVertexBuffer[1].g
+    MOV dword ptr [0x0068806c],ESI      ; 004c477b | g_RenderVertexBuffer[1].b
+    MOV dword ptr [0x00688094],ESI      ; 004c4781 | g_RenderVertexBuffer[2].r
+    MOV dword ptr [0x00688098],ESI      ; 004c4787 | g_RenderVertexBuffer[2].g
+    MOV dword ptr [0x0068809c],ESI      ; 004c478d | g_RenderVertexBuffer[2].b
+    MOV dword ptr [0x006880c4],ESI      ; 004c4793 | g_RenderVertexBuffer[3].r
+    MOV dword ptr [0x006880c8],ESI      ; 004c4799 | g_RenderVertexBuffer[3].g
+    MOV dword ptr [0x006880cc],ESI      ; 004c479f | g_RenderVertexBuffer[3].b
     MOV dword ptr [0x0068802c],ECX      ; 004c47a5 | g_RenderVertexBuffer[0].u
     MOV dword ptr [0x00688030],EBX      ; 004c47ab | g_RenderVertexBuffer[0].v
     MOV dword ptr [0x0068805c],EBX      ; 004c47b1 | g_RenderVertexBuffer[1].u

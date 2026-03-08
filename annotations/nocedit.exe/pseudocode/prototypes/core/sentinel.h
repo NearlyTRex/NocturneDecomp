@@ -43,9 +43,9 @@ void __cdecl CSentinel::processDamage(CSentinel *this_ptr,SDamageInfo *damage_in
 // Address: 00568dd0
 int __cdecl CSentinel::getTargetPoints(CSentinel *this_ptr,CVector3f *out_points_array);
 
-// Original: core_sentinel.cpp_CSentinel_hasCollision_FUN_00568ef0
+// Original: core_sentinel.cpp_CSentinel_getCollisionType_FUN_00568ef0
 // Address: 00568ef0
-void __cdecl CSentinel::hasCollision(CSentinel *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CSentinel::getCollisionType(CSentinel *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_sentinel.cpp_CSentinel_getPropertyList_FUN_00568f10
 // Address: 00568f10

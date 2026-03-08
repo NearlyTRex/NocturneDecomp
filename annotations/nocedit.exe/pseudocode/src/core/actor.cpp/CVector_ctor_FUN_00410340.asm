@@ -9,7 +9,7 @@
 ; XREF[10]:
 ;   core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940 at 0040dc20
 ;   core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_0041ca40 at 0041cae9
-;   core_boneguy.cpp_FUN_0041b770 at 0041b796
+;   core_boneguy.cpp_getWorldBoundingBoxCenter_FUN_0041b770 at 0041b796
 ;   core_lightgun.cpp_CLightGun_fire_FUN_00505c70 at 00505fef
 ;   core_mobster.cpp_FUN_00525110 at 00525136
 ;   core_script.cpp_CScript_step_FUN_0055a810 at 0055c899

@@ -10,7 +10,7 @@
 ; XREF[19]:
 ;   core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_00409270 at 00409314
 ;   core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470 at 0040952c
-;   core_bugs.cpp_CBugs_FUN_004272f0 at 00427344
+;   core_bugs.cpp_CBugs_recalculateBoundingBox_FUN_004272f0 at 00427344
 ;   core_cloth.cpp_CCloth_lockedVertexEditor_FUN_0043d590 at 0043d63c
 ;   core_course.cpp_CCourse_showEditorMenu_FUN_00443040 at 004434bc
 ;   core_dcamera.cpp_CDemonCamera_computeVisibleFrustumBounds_FUN_00454060 at 004542c9

@@ -112,7 +112,7 @@ section .text
     LEA EAX,[EBX + 0x20]                ; 004e55ee
     PUSH EAX                            ; 004e55f1
     CALL core_bodypart.cpp_createBodyPart_FUN_00418e10 ; 004e55f2
-        ;   XREF to: 00418e10 (UNCONDITIONAL_CALL)  ; CBodyPart * core_bodypart.cpp_createBodyPart_FUN_00418e10()
+        ;   XREF to: 00418e10 (UNCONDITIONAL_CALL)  ; CBodyPart * core_bodypart.cpp_createBodyPart_FUN_00418e10(CVector3f * position, UOrientationVector * orientation, CVector3f * initial_velocity, CDemonActor * scale_source, ...)
     ADD ESP,0x1c                        ; 004e55f7
     PUSH 0x1                            ; 004e55fa
     MOV EDX,dword ptr [ESI]             ; 004e55fc

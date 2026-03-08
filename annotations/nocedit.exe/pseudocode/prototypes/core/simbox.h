@@ -39,9 +39,9 @@ CBoundingBox3D * __cdecl CSimBox::getBoundingBox(CSimBox *this_ptr,CBoundingBox3
 // Address: 005891b0
 void __cdecl CSimBox::archive(CSimBox *this_ptr);
 
-// Original: core_simbox.cpp_CSimBox_hasCollision_FUN_00589260
+// Original: core_simbox.cpp_CSimBox_getCollisionType_FUN_00589260
 // Address: 00589260
-int __cdecl CSimBox::hasCollision(CSimBox *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CSimBox::getCollisionType(CSimBox *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_simbox.cpp_CSimBox_propertyDisplayCallback_FUN_00589270
 // Address: 00589270

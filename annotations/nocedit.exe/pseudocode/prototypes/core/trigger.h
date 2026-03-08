@@ -39,9 +39,9 @@ CBoundingBox3D * __cdecl CTrigger::getBoundingBox(CTrigger *this_ptr,CBoundingBo
 // Address: 005e0690
 void __cdecl CTrigger::archive(CTrigger *this_ptr);
 
-// Original: core_trigger.cpp_CTrigger_hasCollision_FUN_005e0930
+// Original: core_trigger.cpp_CTrigger_getCollisionType_FUN_005e0930
 // Address: 005e0930
-int __cdecl CTrigger::hasCollision(CTrigger *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CTrigger::getCollisionType(CTrigger *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_trigger.cpp_CTrigger_evaluateTriggerCondition_FUN_005e0980
 // Address: 005e0980

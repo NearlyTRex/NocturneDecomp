@@ -18,10 +18,10 @@
 ; Referenced Globals:
 ;   SRenderVertex[16] g_RenderVertexBuffer
 ;   undefined4 g_RenderVertexBuffer[0].projected_vertex.transformed_z
-;   undefined4 g_RenderVertexBuffer[0].z
 ;   undefined4 g_RenderVertexBuffer[0].r
 ;   undefined4 g_RenderVertexBuffer[0].g
-;   undefined4 g_RenderVertexBuffer[0].fog
+;   undefined4 g_RenderVertexBuffer[0].b
+;   undefined4 g_RenderVertexBuffer[0].a
 ;
 ; Called Functions:
 ;   core_ground.cpp_CGround_getVertexIndex_FUN_004ef380
@@ -84,11 +84,11 @@ section .text
     MOV dword ptr [ESP + 0xc],EBX       ; 004ef422
     CALL wincore_windll.cpp_transformPoint_FUN_005b5a25 ; 004ef426
         ;   XREF to: 005b5a25 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_transformPoint_FUN_005b5a25(SProjectedVertex * output, CVector3i * input)
-    MOV dword ptr [EDI + 0x20],0x3fff   ; 004ef42b | g_RenderVertexBuffer[0].z
-    MOV dword ptr [EDI + 0x24],0x3fff   ; 004ef432 | g_RenderVertexBuffer[0].r
+    MOV dword ptr [EDI + 0x20],0x3fff   ; 004ef42b | g_RenderVertexBuffer[0].r
+    MOV dword ptr [EDI + 0x24],0x3fff   ; 004ef432 | g_RenderVertexBuffer[0].g
     ADD ESP,0x8                         ; 004ef439
     MOV EBX,dword ptr [EDI + 0x8]       ; 004ef43c | g_RenderVertexBuffer[0].projected_vertex.transformed_z
-    MOV dword ptr [EDI + 0x28],0x3fff   ; 004ef43f | g_RenderVertexBuffer[0].g
+    MOV dword ptr [EDI + 0x28],0x3fff   ; 004ef43f | g_RenderVertexBuffer[0].b
     TEST EBX,EBX                        ; 004ef446
     JL 0x004ef472                       ; 004ef448
         ;   XREF to: 004ef472 (CONDITIONAL_JUMP)  ; LAB_004ef472
@@ -100,7 +100,7 @@ section .text
     MOV EAX,EDX                         ; 004ef459
     SAR EDX,0x1f                        ; 004ef45b
     IDIV EBX                            ; 004ef45e
-    MOV dword ptr [EDI + 0x2c],EAX      ; 004ef460 | g_RenderVertexBuffer[0].fog
+    MOV dword ptr [EDI + 0x2c],EAX      ; 004ef460 | g_RenderVertexBuffer[0].a
     CMP EAX,0xffff                      ; 004ef463
     JG 0x004ef47b                       ; 004ef468
         ;   XREF to: 004ef47b (CONDITIONAL_JUMP)  ; LAB_004ef47b
@@ -111,11 +111,11 @@ section .text
     POP ESI                             ; 004ef46f
     POP EBX                             ; 004ef470
     RET                                 ; 004ef471
-    MOV dword ptr [EDI + 0x2c],0x0      ; 004ef472 | g_RenderVertexBuffer[0].fog
+    MOV dword ptr [EDI + 0x2c],0x0      ; 004ef472 | g_RenderVertexBuffer[0].a
         ;   Label: LAB_004ef472
     JMP 0x004ef46a                      ; 004ef479
         ;   XREF to: 004ef46a (UNCONDITIONAL_JUMP)  ; LAB_004ef46a
-    MOV dword ptr [EDI + 0x2c],0xffff   ; 004ef47b | g_RenderVertexBuffer[0].fog
+    MOV dword ptr [EDI + 0x2c],0xffff   ; 004ef47b | g_RenderVertexBuffer[0].a
         ;   Label: LAB_004ef47b
     ADD ESP,0xc                         ; 004ef482
     POP EBP                             ; 004ef485

@@ -1,0 +1,436 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 257,
+    "complexity_score": 195,
+    "cross_reference_count": 3,
+    "function_call_count": 3,
+    "global_count": 7,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 105,
+    "suspect_count": 7,
+    "suspect_types": [
+      "decompiler_intrinsic",
+      "pointer_cast",
+      "warning_inlined_function",
+      "warning_type_propagation"
+    ],
+    "total_lines": 362
+  },
+  "cross_references": [
+    {
+      "addr": "00425fe0",
+      "from_addr": "004263f4",
+      "name": "core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00425fe0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004278d0",
+      "from_addr": "00427951",
+      "name": "core_bugs.cpp_CBugs_processInEditor_FUN_004278d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00425cc0",
+      "from_addr": "00425fb9",
+      "name": "core_bugs.cpp_CBugs_updateBugsBehavior_FUN_00425cc0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004257f0",
+    "address_range": [
+      [
+        "004257f0",
+        "00425b61"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_bugs.cpp_CBugs_updateGroundHeightGrid_FUN_004257f0",
+    "signature": "void __cdecl core_bugs_cpp_CBugs_updateGroundHeightGrid_FUN_004257f0(CBugs *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004966f0",
+      "is_variadic": false,
+      "name": "core_dtrace.cpp_CDemonRaytrace_getGroundHeight_FUN_004966f0"
+    },
+    {
+      "addr": "005feb90",
+      "is_variadic": false,
+      "name": "crt_math.c_floor_FUN_005feb90"
+    },
+    {
+      "addr": "005fe6b0",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00616ddf",
+      "name": "FLOAT_00616ddf",
+      "type": "float",
+      "value": "0.5"
+    },
+    {
+      "addr": "00616de3",
+      "name": "FLOAT_00616de3",
+      "type": "float",
+      "value": "11"
+    },
+    {
+      "addr": "00616deb",
+      "name": "DOUBLE_00616deb",
+      "type": "double",
+      "value": "0.5"
+    },
+    {
+      "addr": "0065b5c8",
+      "name": "FLOAT_0065b5c8",
+      "type": "float",
+      "value": "0.5"
+    },
+    {
+      "addr": "00822d08",
+      "name": "g_BugsGroundHeightGridTemp",
+      "type": "float[12][12]",
+      "value": null
+    },
+    {
+      "addr": "00822d0c",
+      "name": "DAT_00822d0c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03277d14",
+      "name": "g_CDemonRaytraceInstance",
+      "type": "CDemonRaytrace",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.114406779661017,
+    "instruction_count": 236,
+    "opcode_distribution": {
+      "BOOL_AND": 2,
+      "BOOL_NEGATE": 18,
+      "BRANCH": 3,
+      "CALL": 5,
+      "CBRANCH": 10,
+      "COPY": 588,
+      "FLOAT2FLOAT": 56,
+      "FLOAT_ADD": 10,
+      "FLOAT_DIV": 1,
+      "FLOAT_MULT": 11,
+      "FLOAT_SUB": 5,
+      "INT2FLOAT": 5,
+      "INT_2COMP": 2,
+      "INT_ADD": 153,
+      "INT_AND": 111,
+      "INT_CARRY": 14,
+      "INT_EQUAL": 83,
+      "INT_LEFT": 4,
+      "INT_LESS": 14,
+      "INT_MULT": 5,
+      "INT_NOTEQUAL": 13,
+      "INT_OR": 15,
+      "INT_RIGHT": 2,
+      "INT_SBORROW": 16,
+      "INT_SCARRY": 16,
+      "INT_SLESS": 43,
+      "INT_SUB": 37,
+      "INT_XOR": 4,
+      "INT_ZEXT": 4,
+      "LOAD": 84,
+      "POPCOUNT": 38,
+      "RETURN": 1,
+      "ROUND": 2,
+      "STORE": 66,
+      "TRUNC": 2
+    },
+    "pcode_op_count": 1443
+  },
+  "stack_frame": {
+    "frame_size": 140,
+    "local_size": 136,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_84",
+        "offset": -132,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_7c",
+        "offset": -124,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_78",
+        "offset": -120,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_74",
+        "offset": -116,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_70",
+        "offset": -112,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_6c",
+        "offset": -108,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_68",
+        "offset": -104,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_64",
+        "offset": -100,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBugs *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
+    },
+    {
+      "description": "Type propagation did not converge",
+      "line": 3,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 43,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_34 = (int)ROUND(ROUND(local_40));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 43,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_34 = (int)ROUND(ROUND(local_40));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 45,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_10 = (int)ROUND(ROUND(local_40));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 45,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_10 = (int)ROUND(ROUND(local_40));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 94,
+      "match": "(float *)((int)",
+      "severity": "mild",
+      "text": "pCVar9->ground_heights[0][0] = *(float *)((int)g_BugsGroundHeightGridTemp[0] + iVar7);",
+      "type": "pointer_cast"
+    }
+  ]
+}

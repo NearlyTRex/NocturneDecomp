@@ -122,7 +122,7 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
                        *(uint *)((int)&local_154 + (uint)bVar23 * -8 + (uint)bVar23 * -8 + 8);
                   core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0
                             (this_ptr,&local_160,(CVector3i *)0x0,local_44,0);
-                  *(float *)((int)&g_RenderVertexBuffer[0].fog + iVar12) = g_PerspectiveReciprocal;
+                  *(float *)((int)&g_RenderVertexBuffer[0].a + iVar12) = g_PerspectiveReciprocal;
                   local_44 = iVar18 + 1;
                   iVar12 = iVar12 + 0x30;
                 } while (local_44 < vertex_count);
@@ -326,8 +326,8 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
                     core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0
                               (this_ptr,local_68,&local_100,iVar12,0);
                     local_68 = pCVar24 + 1;
-                    *(float *)((int)&g_RenderVertexBuffer[0].fog + local_64) =
-                         g_PerspectiveReciprocal;
+                    *(float *)((int)&g_RenderVertexBuffer[0].a + local_64) = g_PerspectiveReciprocal
+                    ;
                     iVar12 = iVar18;
                     local_64 = local_64 + 0x30;
                   } while (iVar18 < vertex_count);
@@ -364,8 +364,8 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
                               (this_ptr,world_position,pCVar24,local_3c,0);
                     pCVar22 = pCVar22 + 1;
                     local_3c = local_3c + 1;
-                    *(float *)((int)&g_RenderVertexBuffer[0].fog + local_58) =
-                         g_PerspectiveReciprocal;
+                    *(float *)((int)&g_RenderVertexBuffer[0].a + local_58) = g_PerspectiveReciprocal
+                    ;
                     local_60 = local_60 + 1;
                     local_58 = local_58 + 0x30;
                   } while (local_3c < vertex_count);
@@ -493,7 +493,7 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
                 iVar13 = iVar12 + 1;
                 core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0
                           (this_ptr,local_54,(CVector3i *)pCVar22,iVar12,0);
-                *(float *)((int)&g_RenderVertexBuffer[0].fog + iVar18) = g_PerspectiveReciprocal;
+                *(float *)((int)&g_RenderVertexBuffer[0].a + iVar18) = g_PerspectiveReciprocal;
                 local_54 = local_54 + 1;
                 iVar12 = iVar13;
                 iVar18 = iVar18 + 0x30;
@@ -525,7 +525,7 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
             core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0
                       (this_ptr,&local_178,pCVar24,iVar18,iVar13);
             local_40 = local_40 + 1;
-            *(float *)((int)&g_RenderVertexBuffer[0].fog + iVar12) = g_PerspectiveReciprocal;
+            *(float *)((int)&g_RenderVertexBuffer[0].a + iVar12) = g_PerspectiveReciprocal;
             iVar12 = iVar12 + 0x30;
           } while (local_40 < vertex_count);
           return;
@@ -534,10 +534,10 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
       else if (0 < vertex_count) {
         iVar18 = 0;
         do {
-          *(int *)((int)&g_RenderVertexBuffer[0].z + iVar18) = this_ptr->mirror_cached_light;
-          *(int *)((int)&g_RenderVertexBuffer[0].r + iVar18) = this_ptr->mirror_cached_color;
+          *(int *)((int)&g_RenderVertexBuffer[0].r + iVar18) = this_ptr->mirror_cached_light;
+          *(int *)((int)&g_RenderVertexBuffer[0].g + iVar18) = this_ptr->mirror_cached_color;
           iVar13 = iVar18 + 0x30;
-          *(int *)((int)&g_RenderVertexBuffer[0].g + iVar18) = this_ptr->mirror_cached_fog;
+          *(int *)((int)&g_RenderVertexBuffer[0].b + iVar18) = this_ptr->mirror_cached_fog;
           iVar18 = iVar13;
         } while (iVar13 < iVar12);
         return;
@@ -550,7 +550,7 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
           if (0 < vertex_count) {
             iVar18 = 0;
             do {
-              *(uint *)((int)&g_RenderVertexBuffer[0].fog + iVar18) = 0;
+              *(uint *)((int)&g_RenderVertexBuffer[0].a + iVar18) = 0;
               core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0
                         (this_ptr,vertex_positions,(CVector3i *)0x0,iVar12,1);
               iVar12 = iVar12 + 1;
@@ -563,11 +563,11 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
           if (0 < vertex_count) {
             iVar18 = 0;
             do {
-              *(int *)((int)&g_RenderVertexBuffer[0].z + iVar18) = this_ptr->light_scale_factor;
-              *(int *)((int)&g_RenderVertexBuffer[0].r + iVar18) = this_ptr->color_scale_factor;
+              *(int *)((int)&g_RenderVertexBuffer[0].r + iVar18) = this_ptr->light_scale_factor;
+              *(int *)((int)&g_RenderVertexBuffer[0].g + iVar18) = this_ptr->color_scale_factor;
               iVar13 = iVar18 + 0x30;
-              *(int *)((int)&g_RenderVertexBuffer[0].g + iVar18) = this_ptr->fog_scale_factor;
-              *(uint *)((int)&g_RenderVertexBuffer[0].fog + iVar18) = 0;
+              *(int *)((int)&g_RenderVertexBuffer[0].b + iVar18) = this_ptr->fog_scale_factor;
+              *(uint *)((int)&g_RenderVertexBuffer[0].a + iVar18) = 0;
               iVar18 = iVar13;
             } while (iVar13 < iVar12);
             g_PerspectiveReciprocal = 0.0;
@@ -578,10 +578,10 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
           iVar18 = 0;
           do {
             iVar13 = iVar18 + 0x30;
-            *(uint *)((int)&g_RenderVertexBuffer[0].z + iVar18) = 0xffff;
             *(uint *)((int)&g_RenderVertexBuffer[0].r + iVar18) = 0xffff;
             *(uint *)((int)&g_RenderVertexBuffer[0].g + iVar18) = 0xffff;
-            *(uint *)((int)&g_RenderVertexBuffer[0].fog + iVar18) = 0;
+            *(uint *)((int)&g_RenderVertexBuffer[0].b + iVar18) = 0xffff;
+            *(uint *)((int)&g_RenderVertexBuffer[0].a + iVar18) = 0;
             iVar18 = iVar13;
           } while (iVar13 < iVar12);
           g_PerspectiveReciprocal = 0.0;
@@ -594,10 +594,10 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
         iVar18 = 0;
         do {
           iVar13 = iVar18 + 0x30;
-          *(uint *)((int)&g_RenderVertexBuffer[0].z + iVar18) = 0;
           *(uint *)((int)&g_RenderVertexBuffer[0].r + iVar18) = 0;
           *(uint *)((int)&g_RenderVertexBuffer[0].g + iVar18) = 0;
-          *(uint *)((int)&g_RenderVertexBuffer[0].fog + iVar18) = 0;
+          *(uint *)((int)&g_RenderVertexBuffer[0].b + iVar18) = 0;
+          *(uint *)((int)&g_RenderVertexBuffer[0].a + iVar18) = 0;
           iVar18 = iVar13;
         } while (iVar13 < iVar12);
       }

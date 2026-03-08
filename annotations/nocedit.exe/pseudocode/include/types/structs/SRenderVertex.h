@@ -10,9 +10,9 @@ typedef struct SRenderVertex {
     SProjectedVertex projected_vertex; // 0x0
     int u; // 0x18
     int v; // 0x1c
-    int z; // 0x20
-    int r; // 0x24
-    int g; // 0x28
-    int fog; // 0x2c
+    int r; // 0x20
+    int g; // 0x24
+    int b; // 0x28
+    int a; // 0x2c
 } SRenderVertex;
 

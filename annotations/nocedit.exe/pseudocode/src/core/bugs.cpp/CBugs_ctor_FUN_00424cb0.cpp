@@ -22,7 +22,7 @@ CBugs * __cdecl core_bugs_cpp_CBugs_ctor_FUN_00424cb0(CBugs *this_ptr)
                           (&ADJ(pvVar2)->bugs[399].downward_bias,4,
                            &g_CKeyFramedModelInstanceTypeInfo);
   ADJ(this_ptr_00)->base.base.base.vtable._ub = &g_CBugsVTable;
-  ADJ(this_ptr_00)->state = 0;
+  ADJ(this_ptr_00)->state = BUGS_STATE_IDLE;
   ADJ(this_ptr_00)->count = 0x32;
   memset(ADJ(this_ptr_00)->bugs,0,0x6400);
   ADJ(this_ptr_00)->model_count = 3;

@@ -35,9 +35,9 @@ void __cdecl CMansionPuzzleCircle::process(CMansionPuzzleCircle *this_ptr,float 
 // Address: 005092e0
 CBoundingBox3D * __cdecl CMansionPuzzleCircle::getBoundingBox(CMansionPuzzleCircle *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_manpuz.cpp_CMansionPuzzleCircle_hasCollision_FUN_00509320
+// Original: core_manpuz.cpp_CMansionPuzzleCircle_getCollisionType_FUN_00509320
 // Address: 00509320
-int __cdecl CMansionPuzzleCircle::hasCollision(CMansionPuzzleCircle *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CMansionPuzzleCircle::getCollisionType(CMansionPuzzleCircle *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_manpuz.cpp_CMansionPuzzleCircle_customRayIntersect_FUN_00509330
 // Address: 00509330
@@ -163,9 +163,9 @@ void __cdecl CMirrorHack::process(CMirrorHack *this_ptr,float delta_time);
 // Address: 0050b260
 CBoundingBox3D * __cdecl CMirrorHack::getBoundingBox(CMirrorHack *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_manpuz.cpp_CMirrorHack_hasCollision_FUN_0050b2b0
+// Original: core_manpuz.cpp_CMirrorHack_getCollisionType_FUN_0050b2b0
 // Address: 0050b2b0
-int __cdecl CMirrorHack::hasCollision(CMirrorHack *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CMirrorHack::getCollisionType(CMirrorHack *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_manpuz.cpp_CMirrorHack_onLaserHit_FUN_0050b2c0
 // Address: 0050b2c0

@@ -9,7 +9,7 @@
 ;
 ; XREF[17]:
 ;   core_chain.cpp_CChain_renderTransparent_FUN_004308f0 at 00430d60
-;   core_dcamera.cpp_CDemonCamera_testBoxOcclusion_FUN_004544f0 at 0045452f
+;   core_dcamera.cpp_CDemonCamera_testVisibility_FUN_004544f0 at 0045452f
 ;   core_fire.cpp_CCrater_render_FUN_004c4620 at 004c4706
 ;   core_fire.cpp_CLightningBolt_render_FUN_004c5720 at 004c5ae2
 ;   core_fire.cpp_CPopcorn_render_FUN_004c64c0 at 004c6506

@@ -54,7 +54,7 @@ void __cdecl shape_edittool_cpp_draw3DInterpolatedLine_FUN_004a1f40(CVector3f *s
     pSVar2 = (SRenderVertex *)((int)pSVar2 + ((uint)bVar4 * -2 + 1) * 4);
     piVar3 = piVar3 + (uint)bVar4 * -2 + 1;
   }
-  vertex2.r = uVar6;
+  vertex2.g = uVar6;
   auVar5 = in_stack_ffffff94._0_24_;
   vertex2.projected_vertex.transformed_x = auVar5._0_4_;
   vertex2.projected_vertex.transformed_y = auVar5._4_4_;
@@ -64,9 +64,9 @@ void __cdecl shape_edittool_cpp_draw3DInterpolatedLine_FUN_004a1f40(CVector3f *s
   vertex2.projected_vertex.screen_y = auVar5._20_4_;
   vertex2.u = in_stack_ffffff94._24_4_;
   vertex2.v = in_stack_ffffff94._28_4_;
-  vertex2.z = in_stack_ffffff94._32_4_;
-  vertex2.g = uVar7;
-  vertex2.fog = (int)inputPoint;
+  vertex2.r = in_stack_ffffff94._32_4_;
+  vertex2.b = uVar7;
+  vertex2.a = (int)inputPoint;
   engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff64,vertex2);
   return;
 }

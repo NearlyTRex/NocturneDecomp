@@ -39,9 +39,9 @@ void __cdecl CArmour::processDamage(CArmour *this_ptr,SDamageInfo *damage_info);
 // Address: 00412440
 int __cdecl CArmour::getTargetPoints(CArmour *this_ptr,CVector3f *out_points_array);
 
-// Original: core_armour.cpp_CArmour_hasCollision_FUN_00412450
+// Original: core_armour.cpp_CArmour_getCollisionType_FUN_00412450
 // Address: 00412450
-int __cdecl CArmour::hasCollision(CArmour *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CArmour::getCollisionType(CArmour *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_armour.cpp_CArmour_getPropertyList_FUN_00412470
 // Address: 00412470

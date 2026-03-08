@@ -26,9 +26,10 @@ void __cdecl core_gabriela_cpp_CGabriella_process_FUN_004d2ea0(CGabriella *this_
   CVector3f *pCVar12;
   CDemonActor *pCVar13;
   CBoxActor *pCVar14;
-  SMotion *pSVar15;
+  EDeathState EVar15;
+  SMotion *pSVar16;
   uint is_holstering;
-  bool bVar16;
+  bool bVar17;
   char *sound_name;
   CMatrix3x3f local_1dc;
   CBoundingBox3D local_1b4;
@@ -231,9 +232,9 @@ void __cdecl core_gabriela_cpp_CGabriella_process_FUN_004d2ea0(CGabriella *this_
       pCVar2 = &(this_ptr->base).base.model;
       if (iVar10 == 0) {
         if (is_holstering == 0) {
-          pSVar15 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+          pSVar16 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                               (&pCVar2->motion_controller);
-          uVar8 = pSVar15->state_index;
+          uVar8 = pSVar16->state_index;
           if (uVar8 < 0xe) {
             if ((((uVar8 == 0) || (uVar8 < 2)) || (uVar8 < 3)) || (uVar8 == 3)) goto LAB_004d3af9;
           }
@@ -272,8 +273,8 @@ LAB_004d3af9:
                      (this_ptr->base).player_control.turn_speed * (this_ptr->base).base.turn_speed;
                 (this_ptr->base).base.position_delta.z = fVar3 + fVar5;
                 (this_ptr->base).base.position_delta.x = fVar4 + local_20;
-                pSVar15 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(local_3c);
-                if (iVar10 != pSVar15->state_index) {
+                pSVar16 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(local_3c);
+                if (iVar10 != pSVar16->state_index) {
                   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(local_3c,iVar10,1);
                 }
                 if (((this_ptr->base).player_control.action_states[4] != 0) &&
@@ -388,21 +389,21 @@ LAB_004d3215:
 LAB_004d321d:
   if ((this_ptr->base).ladder_to_climb == (CLadder *)0x0) {
     if (((is_holstering == 0) ||
-        (pSVar15 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+        (pSVar16 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                              (&(this_ptr->base).base.model.motion_controller),
-        pSVar15->state_index == 0xd)) ||
+        pSVar16->state_index == 0xd)) ||
        ((this_ptr->base).base.base.standing_platform != (CPlatform *)0x0)) {
       local_178.x = (this_ptr->base).base.position_delta.x;
       local_178.y = (this_ptr->base).base.position_delta.y;
       local_178.z = (this_ptr->base).base.position_delta.z;
-      pSVar15 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+      pSVar16 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                           (&(this_ptr->base).base.model.motion_controller);
-      uVar8 = pSVar15->state_index;
+      uVar8 = pSVar16->state_index;
       if (uVar8 < 3) {
         if (uVar8 == 0) {
-          bVar16 = true;
+          bVar17 = true;
 LAB_004d3cb2:
-          if (!bVar16) {
+          if (!bVar17) {
 LAB_004d3cb4:
             local_178.x = local_178.x + (this_ptr->base).base.model.accumulated_root_motion.x;
             local_178.y = local_178.y + (this_ptr->base).base.model.accumulated_root_motion.y;
@@ -412,13 +413,13 @@ LAB_004d3cb4:
       }
       else if (3 < uVar8) {
         if (uVar8 < 0x11) {
-          bVar16 = uVar8 == 0x10;
+          bVar17 = uVar8 == 0x10;
           goto LAB_004d3cb2;
         }
         if (0x11 < uVar8) {
           if (uVar8 < 0x14) goto LAB_004d3cb4;
           if (0x14 < uVar8) {
-            bVar16 = uVar8 == 0x15;
+            bVar17 = uVar8 == 0x15;
             goto LAB_004d3cb2;
           }
         }
@@ -545,9 +546,9 @@ LAB_004d33ec:
   }
   if (is_holstering == 0) {
     if (((pCVar13 == (CDemonActor *)0x0) || (pCVar13[0x1a].orient.vec.y == 0.0)) ||
-       (pSVar15 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+       (pSVar16 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                             (&(this_ptr->base).base.model.motion_controller),
-       pSVar15->state_index == 5)) {
+       pSVar16->state_index == 5)) {
       fVar3 = delta_time / 1.2f;
       goto LAB_004d344b;
     }
@@ -698,8 +699,8 @@ LAB_004d4152:
     (this_ptr->base).player_control.action_states[3] = 0;
   }
 LAB_004d368e:
-  iVar10 = (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)this_ptr);
-  if (iVar10 != 2) {
+  EVar15 = (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)this_ptr);
+  if (EVar15 != DEATH_STATE_DEAD) {
     core_cloth_cpp_CCloth_process_FUN_0043ab80
               (&this_ptr->coat_cloth,&(this_ptr->base).base.base.location.position,
                &(this_ptr->base).base.base.orient.vec,delta_time,

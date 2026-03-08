@@ -47,13 +47,13 @@ CBoundingBox3D * __cdecl CWaterActor::getBoundingBox(CWaterActor *this_ptr,CBoun
 // Address: 005eb510
 void __cdecl CWaterActor::archive(CWaterActor *this_ptr);
 
-// Original: core_wateract.cpp_CWaterActor_hasCollision_FUN_005eb710
+// Original: core_wateract.cpp_CWaterActor_getCollisionType_FUN_005eb710
 // Address: 005eb710
-int __cdecl CWaterActor::hasCollision(CWaterActor *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CWaterActor::getCollisionType(CWaterActor *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_wateract.cpp_CWaterActor_getGroundType_FUN_005eb730
 // Address: 005eb730
-int __cdecl CWaterActor::getGroundType(CWaterActor *this_ptr);
+EGroundType __cdecl CWaterActor::getGroundType(CWaterActor *this_ptr);
 
 // Original: core_wateract.cpp_CWaterActor_customRayIntersect_FUN_005eb740
 // Address: 005eb740

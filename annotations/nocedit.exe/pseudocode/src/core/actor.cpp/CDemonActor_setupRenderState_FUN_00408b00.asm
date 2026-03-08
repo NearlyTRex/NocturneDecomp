@@ -7,7 +7,7 @@
 ; CDemonActor *    Stack[0x4]:4   actor
 ;
 ; XREF[74]:
-;   core_actor.cpp_CDemonActor_FUN_0040dec0 at 0040dee6
+;   core_actor.cpp_CDemonActor_renderBoundingBoxSolid_FUN_0040dec0 at 0040dee6
 ;   core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940 at 0040d952
 ;   core_ammo.cpp_CAmmo_renderOpaque_FUN_00410e80 at 00410e8a
 ;   core_ammobox.cpp_CAmmoBox_renderOpaque_FUN_00411820 at 0041182d

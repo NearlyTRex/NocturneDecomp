@@ -11,6 +11,7 @@
 #include "types/classes/CFilterCache.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
+#include "types/enums/ECollisionType.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SCram.h"
 #include "types/structs/SMRGLHeaderExtended.h"
@@ -144,7 +145,7 @@ int __cdecl core_dest_cpp_CActorDestination_renderTransparent_FUN_0046fb70(CActo
 CBoundingBox3D * __cdecl core_dest_cpp_CActorDestination_getBoundingBox_FUN_0046fcc0(CActorDestination *this_ptr,CBoundingBox3D *out_box);
 int __cdecl core_dest_cpp_CActorDestination_acceptsActor_FUN_0046fd50(CActorDestination *this_ptr,CDemonActor *actor);
 void __cdecl core_dest_cpp_CActorDestination_archive_FUN_0046fdb0(CActorDestination *this_ptr);
-int __cdecl core_dest_cpp_CActorDestination_hasCollision_FUN_0046fe70(CActorDestination *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl core_dest_cpp_CActorDestination_getCollisionType_FUN_0046fe70(CActorDestination *this_ptr,SCollisionInfo *collision_info);
 void __cdecl core_dest_cpp_CActorDestination_getPropertyList_FUN_0046fe80(CActorDestination *this_ptr,CActorPropertyList *property_list);
 CActorDestination * __cdecl core_dest_cpp_CActorDestination_dtor_FUN_0046ff00(CActorDestination *this_ptr,uint flags);
 void __cdecl core_dfilter_cpp_staticInit_FUN_0046ff50(void);

@@ -12,7 +12,8 @@ float __cdecl core_setcolid_cpp_CDemonSet_raycastAgainstActors_FUN_00572a10(CDem
   CDemonActor *pCVar1;
   float fVar2;
   CDeformableModelInstance *pCVar3;
-  int iVar4;
+  EGroundType EVar4;
+  ECollisionType bbox_type;
   SCollisionInfo local_cc;
   CVector3f CStack_a4;
   int iStack_98;
@@ -85,11 +86,11 @@ float __cdecl core_setcolid_cpp_CDemonSet_raycastAgainstActors_FUN_00572a10(CDem
         if (pCVar3 == (CDeformableModelInstance *)0x0) {
           local_cc.deformable_model = pCVar3;
           local_cc.keyframed_model = (CKeyFramedModelInstance *)pCVar3;
-          iVar4 = (*((pCVar1->vtable)._ub)->hasCollision)(pCVar1,&local_cc);
-          if (iVar4 != 0) {
+          bbox_type = (*((pCVar1->vtable)._ub)->getCollisionType)(pCVar1,&local_cc);
+          if (bbox_type != COLLISION_TYPE_NONE) {
             fStack_14 = core_actor_cpp_CDemonActor_rayIntersect_FUN_00409470
-                                  (pCVar1,ray_origin,&local_64,&CStack_a4,&local_cc,iVar4,&local_88)
-            ;
+                                  (pCVar1,ray_origin,&local_64,&CStack_a4,&local_cc,bbox_type,
+                                   &local_88);
             if (((fStack_14 <= 1.0) && (fVar2 = fStack_14 * local_24, fVar2 < max_t)) &&
                (min_t < fVar2)) {
               if (&CStack_a4 != local_18) {
@@ -136,8 +137,8 @@ float __cdecl core_setcolid_cpp_CDemonSet_raycastAgainstActors_FUN_00572a10(CDem
     }
     pCVar1 = this_ptr->collision_actor;
     if (pCVar1 != (CDemonActor *)0x0) {
-      iVar4 = (*((pCVar1->vtable)._ub)->getGroundType)(pCVar1);
-      this_ptr->ground_type = iVar4;
+      EVar4 = (*((pCVar1->vtable)._ub)->getGroundType)(pCVar1);
+      this_ptr->ground_type = EVar4;
     }
   }
   return max_t;

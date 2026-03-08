@@ -27,7 +27,7 @@
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10
 ;   core_actor.cpp_getRandomInt_FUN_0040cc70
-;   core_bugs.cpp_CBugs_FUN_004272f0
+;   core_bugs.cpp_CBugs_recalculateBoundingBox_FUN_004272f0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
 ;   core_enemy.cpp_CEnemy_setup_FUN_004a9650
@@ -164,8 +164,8 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 00425083
         ;   Label: LAB_00425083
     PUSH EBX                            ; 00425086
-    CALL core_bugs.cpp_CBugs_FUN_004272f0 ; 00425087
-        ;   XREF to: 004272f0 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_CBugs_FUN_004272f0(CBugs * this_ptr)
+    CALL core_bugs.cpp_CBugs_recalculateBoundingBox_FUN_004272f0 ; 00425087
+        ;   XREF to: 004272f0 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_CBugs_recalculateBoundingBox_FUN_004272f0(CBugs * this_ptr)
     MOV dword ptr [EBX + 0x199e4],0xffffd8f1 ; 0042508c
     MOV dword ptr [EBX + 0x199e8],0xffffd8f1 ; 00425096
     MOV dword ptr [EBX + 0x100],0x1     ; 004250a0

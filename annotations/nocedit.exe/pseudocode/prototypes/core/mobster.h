@@ -83,9 +83,9 @@ void __cdecl CMobster::processDamage(CMobster *this_ptr,SDamageInfo *damage_info
 // Address: 005278d0
 int __cdecl CMobster::getTargetPoints(CMobster *this_ptr,CVector3f *out_points_array);
 
-// Original: core_mobster.cpp_CMobster_hasCollision_FUN_005279d0
+// Original: core_mobster.cpp_CMobster_getCollisionType_FUN_005279d0
 // Address: 005279d0
-void __cdecl CMobster::hasCollision(CMobster *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CMobster::getCollisionType(CMobster *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_mobster.cpp_CMobster_FUN_005279f0
 // Address: 005279f0

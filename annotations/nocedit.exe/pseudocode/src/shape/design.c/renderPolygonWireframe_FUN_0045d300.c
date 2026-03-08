@@ -77,7 +77,7 @@ void __cdecl shape_design_c_renderPolygonWireframe_FUN_0045d300(SMRGLHeaderPrimi
         pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar7 * -8 + 4);
         piVar6 = piVar6 + (uint)bVar7 * -2 + 1;
       }
-      vertex2.g = uVar9;
+      vertex2.b = uVar9;
       auVar8 = in_stack_ffffff28._0_24_;
       vertex2.projected_vertex.transformed_x = auVar8._0_4_;
       vertex2.projected_vertex.transformed_y = auVar8._4_4_;
@@ -87,9 +87,9 @@ void __cdecl shape_design_c_renderPolygonWireframe_FUN_0045d300(SMRGLHeaderPrimi
       vertex2.projected_vertex.screen_y = auVar8._20_4_;
       vertex2.u = in_stack_ffffff28._24_4_;
       vertex2.v = in_stack_ffffff28._28_4_;
-      vertex2.z = in_stack_ffffff28._32_4_;
-      vertex2.r = in_stack_ffffff28._36_4_;
-      vertex2.fog = iVar2;
+      vertex2.r = in_stack_ffffff28._32_4_;
+      vertex2.g = in_stack_ffffff28._36_4_;
+      vertex2.a = iVar2;
       engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffef8,vertex2);
     }
     pSVar4 = g_RenderVertexBuffer + *(int *)((int)pSVar1 + (polygon_data->base).count * 4 + -4);
@@ -134,7 +134,7 @@ void __cdecl shape_design_c_renderPolygonWireframe_FUN_0045d300(SMRGLHeaderPrimi
       pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar7 * -8 + 4);
       piVar6 = piVar6 + (uint)bVar7 * -2 + 1;
     }
-    vertex2_00.g = uVar9;
+    vertex2_00.b = uVar9;
     auVar8 = in_stack_ffffff28._0_24_;
     vertex2_00.projected_vertex.transformed_x = auVar8._0_4_;
     vertex2_00.projected_vertex.transformed_y = auVar8._4_4_;
@@ -144,9 +144,9 @@ void __cdecl shape_design_c_renderPolygonWireframe_FUN_0045d300(SMRGLHeaderPrimi
     vertex2_00.projected_vertex.screen_y = auVar8._20_4_;
     vertex2_00.u = in_stack_ffffff28._24_4_;
     vertex2_00.v = in_stack_ffffff28._28_4_;
-    vertex2_00.z = in_stack_ffffff28._32_4_;
-    vertex2_00.r = in_stack_ffffff28._36_4_;
-    vertex2_00.fog = iVar2;
+    vertex2_00.r = in_stack_ffffff28._32_4_;
+    vertex2_00.g = in_stack_ffffff28._36_4_;
+    vertex2_00.a = iVar2;
     engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffef8,vertex2_00);
   }
   return;

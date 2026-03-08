@@ -131,7 +131,7 @@ void __cdecl core_actor_cpp_CActorProperty_renderValue_FUN_0040ea50(CActorProper
     } while (cVar2 != '\0');
     return;
   case PROP_GROUND_TYPE:
-    pcVar12 = core_ground_cpp_getGroundTypeName_FUN_004eed80(*(this_ptr->data).v_int_ptr);
+    pcVar12 = core_ground_cpp_getGroundTypeName_FUN_004eed80(*(this_ptr->data).v_uint_ptr);
     do {
       cVar2 = *pcVar12;
       *output_buffer = cVar2;

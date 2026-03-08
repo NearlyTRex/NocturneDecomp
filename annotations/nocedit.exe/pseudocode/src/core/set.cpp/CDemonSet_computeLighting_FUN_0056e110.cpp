@@ -15,9 +15,9 @@ int __cdecl core_set_cpp_CDemonSet_computeLighting_FUN_0056e110(CDemonSet *this_
             (this_ptr,world_position,surface_normal,start_vertex_index,0);
   iVar1 = start_vertex_index * 0x30 + 0x688044;
   while (vertex_count = vertex_count + -1, 0 < vertex_count) {
-    *(int *)(iVar1 + 0x20) = g_RenderVertexBuffer[start_vertex_index].z;
-    *(int *)(iVar1 + 0x24) = g_RenderVertexBuffer[start_vertex_index].r;
-    *(int *)(iVar1 + 0x28) = g_RenderVertexBuffer[start_vertex_index].g;
+    *(int *)(iVar1 + 0x20) = g_RenderVertexBuffer[start_vertex_index].r;
+    *(int *)(iVar1 + 0x24) = g_RenderVertexBuffer[start_vertex_index].g;
+    *(int *)(iVar1 + 0x28) = g_RenderVertexBuffer[start_vertex_index].b;
     iVar1 = iVar1 + 0x30;
   }
   return iVar1;

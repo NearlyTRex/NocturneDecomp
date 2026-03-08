@@ -51,9 +51,9 @@ int __cdecl CBattery::renderOpaque(CBattery *this_ptr);
 // Address: 00418000
 void __cdecl CBattery::archive(CBattery *this_ptr);
 
-// Original: core_battery.cpp_CBattery_hasCollision_FUN_00418050
+// Original: core_battery.cpp_CBattery_getCollisionType_FUN_00418050
 // Address: 00418050
-int __cdecl CBattery::hasCollision(CBattery *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CBattery::getCollisionType(CBattery *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_battery.cpp_CBattery_getBoundingBox_FUN_00418060
 // Address: 00418060

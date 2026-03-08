@@ -103,7 +103,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderBurn_FUN_0042ad00(CCharacter *th
       local_30 = 65535.0;
     }
     local_1c = local_1c + 0x34;
-    *(int *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->fog + local_18) =
+    *(int *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->a + local_18) =
          (int)ROUND(ROUND(local_30));
     local_18 = local_18 + 0x30;
   }

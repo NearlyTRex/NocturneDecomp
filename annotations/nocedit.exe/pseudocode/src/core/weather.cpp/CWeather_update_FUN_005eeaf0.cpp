@@ -53,7 +53,7 @@ void __cdecl core_weather_cpp_CWeather_update_FUN_005eeaf0(CWeather *this_ptr)
     this_ptr->flash_timer = 0.0;
   }
 LAB_005eeb1c:
-  if (this_ptr->weather_type == 0) {
+  if (this_ptr->weather_type == WEATHER_TYPE_NONE) {
     sound_sndmain_cpp_killSfx_FUN_005a9c40(UINT_03f96b40);
     return;
   }
@@ -68,7 +68,7 @@ LAB_005eeb1c:
     if ((fVar2 < *(float *)((int)g_WeatherParticleGroundHeights + iVar6)) &&
        (*(float *)((int)&g_WeatherParticlePositions[0].y + iVar4) =
              *(float *)((int)&g_WeatherParticlePositions[0].y + iVar4) + 100.0f,
-       this_ptr->weather_type == 1)) {
+       this_ptr->weather_type == WEATHER_TYPE_RAIN)) {
       local_28.x = *(float *)((int)&g_WeatherParticlePositions[0].x + iVar4);
       local_28.z = *(float *)((int)&g_WeatherParticlePositions[0].z + iVar4);
       local_28.y = *(float *)((int)g_WeatherParticleGroundHeights + iVar6);
@@ -85,7 +85,7 @@ LAB_005eeb1c:
     iVar5 = iVar5 + 1;
     iVar6 = iVar6 + 4;
   } while (iVar5 < 200);
-  if (this_ptr->weather_type == 1) {
+  if (this_ptr->weather_type == WEATHER_TYPE_RAIN) {
     fVar2 = this_ptr->lightning_countdown - fVar1;
     this_ptr->lightning_countdown = fVar2;
     if (fVar2 < 0.0) {

@@ -47,9 +47,9 @@ CBoundingBox3D * __cdecl CEmitter::getBoundingBox(CEmitter *this_ptr,CBoundingBo
 // Address: 004a8b30
 void __cdecl CEmitter::archive(CEmitter *this_ptr);
 
-// Original: core_emitter.cpp_CEmitter_hasCollision_FUN_004a8d10
+// Original: core_emitter.cpp_CEmitter_getCollisionType_FUN_004a8d10
 // Address: 004a8d10
-int __cdecl CEmitter::hasCollision(CEmitter *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CEmitter::getCollisionType(CEmitter *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_emitter.cpp_CEmitter_FUN_004a8d20
 // Address: 004a8d20

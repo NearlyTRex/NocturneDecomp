@@ -1,14 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_actor_cpp_CDemonActor_testRayIntersection_FUN_004093f0(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_hit_normal,void *unused)
+; float __cdecl core_actor_cpp_CDemonActor_testRayIntersection_FUN_004093f0(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_hit_normal,int ray_type,CBoundingBox3D *clip_bounds)
 ;
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   ray_origin
 ; CVector3f *      Stack[0xc]:4   ray_direction
 ; CVector3f *      Stack[0x10]:4   out_hit_normal
-; void *           Stack[0x14]:4   unused
+; int              Stack[0x14]:4   ray_type
+; CBoundingBox3D * Stack[0x18]:4   clip_bounds
 ; Local Variables:
 ; undefined4       Stack[-0x34]:4  local_34
 ;

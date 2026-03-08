@@ -1,0 +1,75 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 4,
+    "complexity_score": 4,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 4,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 8
+  },
+  "cross_references": [
+    {
+      "addr": "0055a810",
+      "from_addr": "0055d142",
+      "name": "core_script.cpp_CScript_step_FUN_0055a810",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00427b70",
+    "address_range": [
+      [
+        "00427b70",
+        "00427b79"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_bugs.cpp_getDeformableModelName_FUN_00427b70",
+    "signature": "char * __cdecl core_bugs_cpp_getDeformableModelName_FUN_00427b70(CDeformableModelInstance *model_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.0,
+    "instruction_count": 3,
+    "opcode_distribution": {
+      "COPY": 1,
+      "INT_ADD": 3,
+      "INT_AND": 2,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 1,
+      "LOAD": 2,
+      "POPCOUNT": 1,
+      "RETURN": 1
+    },
+    "pcode_op_count": 15
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "model_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModelInstance *"
+      }
+    ]
+  },
+  "suspects": []
+}

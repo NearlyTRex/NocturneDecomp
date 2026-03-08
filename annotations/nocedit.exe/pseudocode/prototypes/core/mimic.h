@@ -61,7 +61,7 @@ int __cdecl CMimic::renderTransparent(CMimic *this_ptr);
 
 // Original: core_mimic.cpp_CMimic_getDeathState_FUN_005208a0
 // Address: 005208a0
-int __cdecl CMimic::getDeathState(CMimic *this_ptr);
+EDeathState __cdecl CMimic::getDeathState(CMimic *this_ptr);
 
 // Original: core_mimic.cpp_CMimic_renderBackground_FUN_005208b0
 // Address: 005208b0
@@ -71,9 +71,9 @@ void __cdecl CMimic::renderBackground(CMimic *this_ptr,int layer_flag);
 // Address: 00520930
 void __cdecl CMimic::archive(CMimic *this_ptr);
 
-// Original: core_mimic.cpp_CMimic_hasCollision_FUN_00520a00
+// Original: core_mimic.cpp_CMimic_getCollisionType_FUN_00520a00
 // Address: 00520a00
-int __cdecl CMimic::hasCollision(CMimic *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CMimic::getCollisionType(CMimic *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_mimic.cpp_CMimic_beginMorph_FUN_00520a80
 // Address: 00520a80

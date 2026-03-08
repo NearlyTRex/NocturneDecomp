@@ -14,7 +14,7 @@
 ;
 ; XREF[14]:
 ;   core_baron.cpp_CBaron_process_FUN_00412e80 at 004130f9
-;   core_boneguy.cpp_CBoneGuy_FUN_0041d8a0 at 0041d8d5
+;   core_boneguy.cpp_CBoneGuy_beginRecombine_FUN_0041d8a0 at 0041d8d5
 ;   core_colonel.cpp_CColonel_process_FUN_0043fa00 at 0043fc64
 ;   core_conveyor.cpp_CConveyor_setup_FUN_00441d60 at 00441d9b
 ;   core_course.cpp_CCourse_showEditorMenu_FUN_00443040 at 00443585

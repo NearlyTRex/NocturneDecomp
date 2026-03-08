@@ -6,16 +6,20 @@
 // Auto-generated aggregate of all enums type definitions.
 
 #include "types/enums/EActionType.h"
+#include "types/enums/EActorLifecycleState.h"
 #include "types/enums/EActorPropertyType.h"
 #include "types/enums/EAimLockState.h"
 #include "types/enums/EAimMode.h"
 #include "types/enums/EAmmoBoxType.h"
 #include "types/enums/EAmmoType.h"
+#include "types/enums/EBugsState.h"
 #include "types/enums/ECmdParmType.h"
+#include "types/enums/ECollisionType.h"
 #include "types/enums/EConnectionStatus.h"
 #include "types/enums/EConnectionType.h"
 #include "types/enums/EControlMode.h"
 #include "types/enums/EDamageType.h"
+#include "types/enums/EDeathState.h"
 #include "types/enums/EDeathType.h"
 #include "types/enums/EDoorState.h"
 #include "types/enums/EDoorType.h"
@@ -41,5 +45,6 @@
 #include "types/enums/ETriggerEventType.h"
 #include "types/enums/EWeaponState.h"
 #include "types/enums/EWeaponType.h"
+#include "types/enums/EWeatherType.h"
 #include "types/enums/EWerewolfType.h"
 

@@ -30,6 +30,8 @@
 #include "types/classes/CMotionList.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
+#include "types/enums/ECollisionType.h"
+#include "types/enums/EDeathState.h"
 #include "types/structs/SBat.h"
 #include "types/structs/SBitAllocationTable.h"
 #include "types/structs/SCPUInfo.h"
@@ -62,10 +64,10 @@ void __cdecl core_mimic_cpp_CMimic_FUN_00520500(CMimic *this_ptr);
 int __cdecl core_mimic_cpp_CMimic_FUN_005205f0(CMimic *this_ptr);
 int __cdecl core_mimic_cpp_CMimic_renderOpaque_FUN_00520870(CMimic *this_ptr);
 int __cdecl core_mimic_cpp_CMimic_renderTransparent_FUN_00520890(CMimic *this_ptr);
-int __cdecl core_mimic_cpp_CMimic_getDeathState_FUN_005208a0(CMimic *this_ptr);
+EDeathState __cdecl core_mimic_cpp_CMimic_getDeathState_FUN_005208a0(CMimic *this_ptr);
 void __cdecl core_mimic_cpp_CMimic_renderBackground_FUN_005208b0(CMimic *this_ptr,int layer_flag);
 void __cdecl core_mimic_cpp_CMimic_archive_FUN_00520930(CMimic *this_ptr);
-int __cdecl core_mimic_cpp_CMimic_hasCollision_FUN_00520a00(CMimic *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl core_mimic_cpp_CMimic_getCollisionType_FUN_00520a00(CMimic *this_ptr,SCollisionInfo *collision_info);
 void __cdecl core_mimic_cpp_CMimic_beginMorph_FUN_00520a80(CMimic *this_ptr);
 void __cdecl core_mimic_cpp_CMimic_processMorph_FUN_00520ba0(CMimic *this_ptr);
 void __cdecl core_mimic_cpp_CMimic_getPropertyList_FUN_00520d10(CMimic *this_ptr,CActorPropertyList *property_list);
@@ -166,7 +168,7 @@ void __cdecl core_mobster_cpp_CMobster_reset_FUN_00527360(CMobster *this_ptr);
 void __cdecl core_mobster_cpp_CMobster_FUN_00527380(CMobster *this_ptr,SDamageInfo *damage_info);
 void __cdecl core_mobster_cpp_CMobster_processDamage_FUN_00527740(CMobster *this_ptr,SDamageInfo *damage_info);
 int __cdecl core_mobster_cpp_CMobster_getTargetPoints_FUN_005278d0(CMobster *this_ptr,CVector3f *out_points_array);
-void __cdecl core_mobster_cpp_CMobster_hasCollision_FUN_005279d0(CMobster *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl core_mobster_cpp_CMobster_getCollisionType_FUN_005279d0(CMobster *this_ptr,SCollisionInfo *collision_info);
 void __cdecl core_mobster_cpp_CMobster_FUN_005279f0(CMobster *this_ptr,int taunt_category);
 void __cdecl core_mobster_cpp_CMobster_getPropertyList_FUN_00527b70(CMobster *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_mobster_cpp_CMobster_FUN_00527c30(CMobster *this_ptr);

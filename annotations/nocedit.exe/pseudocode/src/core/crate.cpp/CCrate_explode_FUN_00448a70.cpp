@@ -13,7 +13,7 @@ void __cdecl core_crate_cpp_CCrate_explode_FUN_00448a70(CCrate *this_ptr)
   CBoundingBox3D CStack_28;
   CVector3f CStack_10;
   
-  if ((this_ptr->base).was_created != 1) {
+  if ((this_ptr->base).lifecycle_state != ACTOR_CREATED) {
     return;
   }
   engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"%s exploding!\n",this_ptr);
@@ -29,6 +29,6 @@ void __cdecl core_crate_cpp_CCrate_explode_FUN_00448a70(CCrate *this_ptr)
             (g_CFireEffectPtr,&CStack_10,32.0,0x44bb8000);
   core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0
             (g_CDemonMissionPtr,&this_ptr->base,1);
-  (this_ptr->base).was_created = 2;
+  (this_ptr->base).lifecycle_state = ACTOR_DESTROYED;
   return;
 }

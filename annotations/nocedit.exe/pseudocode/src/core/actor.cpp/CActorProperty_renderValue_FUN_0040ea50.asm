@@ -308,7 +308,7 @@ section .text
     MOV ECX,dword ptr [EAX]             ; 0040ec03
     PUSH ECX                            ; 0040ec05
     CALL core_ground.cpp_getGroundTypeName_FUN_004eed80 ; 0040ec06
-        ;   XREF to: 004eed80 (UNCONDITIONAL_CALL)  ; char * core_ground.cpp_getGroundTypeName_FUN_004eed80(int type)
+        ;   XREF to: 004eed80 (UNCONDITIONAL_CALL)  ; char * core_ground.cpp_getGroundTypeName_FUN_004eed80(EGroundType type)
     ADD ESP,0x4                         ; 0040ec0b
     MOV EDI,EBP                         ; 0040ec0e
     MOV ESI,EAX                         ; 0040ec10

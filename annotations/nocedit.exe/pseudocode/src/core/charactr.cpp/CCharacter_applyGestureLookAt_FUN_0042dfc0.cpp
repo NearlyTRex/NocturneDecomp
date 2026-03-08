@@ -9,7 +9,7 @@
 void __cdecl core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(CCharacter *this_ptr,float delta_time)
 
 {
-  int iVar1;
+  EDeathState EVar1;
   
   core_charactr_cpp_CCharacter_applyGesture_FUN_0042d3d0(this_ptr);
   core_charactr_cpp_CCharacter_applyLookAt_FUN_0042dcd0(this_ptr);
@@ -17,8 +17,8 @@ void __cdecl core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0(CChara
   core_charactr_cpp_CCharacter_computeBoundingBox_FUN_0042d530(this_ptr);
   core_charactr_cpp_CCharacter_updateCarriedObjects_FUN_0042d090(this_ptr,delta_time);
   if (this_ptr->was_rendered_opaque == 0) {
-    iVar1 = (*(((this_ptr->base).vtable._uc)->_uc).getDeathState)(this_ptr);
-    if (iVar1 != 1) {
+    EVar1 = (*(((this_ptr->base).vtable._uc)->_uc).getDeathState)(this_ptr);
+    if (EVar1 != DEATH_STATE_DYING) {
       return;
     }
   }

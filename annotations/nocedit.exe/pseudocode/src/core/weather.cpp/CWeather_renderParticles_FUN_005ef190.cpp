@@ -45,15 +45,15 @@ void __cdecl core_weather_cpp_CWeather_renderParticles_FUN_005ef190(CWeather *th
   float local_14;
   float local_10;
   
-  if (this_ptr->weather_type == 0) {
+  if (this_ptr->weather_type == WEATHER_TYPE_NONE) {
     return;
   }
   engine_drender_cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800
             (g_CDemonRendererPtr2,(float *)&local_b0);
-  if (this_ptr->weather_type == 1) {
+  if (this_ptr->weather_type == WEATHER_TYPE_RAIN) {
     local_b0.x = 0;
   }
-  if (this_ptr->weather_type == 1) {
+  if (this_ptr->weather_type == WEATHER_TYPE_RAIN) {
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
               (g_CDemonRendererPtr2,&g_RainDropTexture);
     pCVar1 = g_CDemonRendererPtr2;
@@ -75,7 +75,7 @@ void __cdecl core_weather_cpp_CWeather_renderParticles_FUN_005ef190(CWeather *th
              (CVector3f *)0x0,(CMatrix3x3f *)0x0);
   local_14 = 0.1;
   local_10 = 0.1;
-  if (this_ptr->weather_type == 1) {
+  if (this_ptr->weather_type == WEATHER_TYPE_RAIN) {
     local_10 = -0.4;
     local_14 = 0.05;
   }
@@ -111,7 +111,7 @@ void __cdecl core_weather_cpp_CWeather_renderParticles_FUN_005ef190(CWeather *th
       core_set_cpp_CDemonSet_computeLighting_FUN_0056e110
                 (g_CDemonSetPtr,&local_80,(CVector3i *)0x0,0,4);
       pCVar1 = g_CDemonRendererPtr2;
-      if (this_ptr->weather_type == 2) {
+      if (this_ptr->weather_type == WEATHER_TYPE_SNOW) {
         local_20 = (uVar4 & 3) * 0x400000;
         iVar2 = ((int)(uVar4 & 0xc) >> 2) * 0x400000;
         g_CDemonRendererPtr2->vertex_buffer_ptr->u = local_20 + 0x80000;
@@ -159,7 +159,7 @@ void __cdecl core_weather_cpp_CWeather_renderParticles_FUN_005ef190(CWeather *th
     uVar4 = uVar4 + 1;
     world_position = world_position + 1;
   } while ((int)uVar4 < 200);
-  if (this_ptr->weather_type == 1) {
+  if (this_ptr->weather_type == WEATHER_TYPE_RAIN) {
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
               (g_CDemonRendererPtr2,&g_RainSplashTexture);
     pCVar1 = g_CDemonRendererPtr2;

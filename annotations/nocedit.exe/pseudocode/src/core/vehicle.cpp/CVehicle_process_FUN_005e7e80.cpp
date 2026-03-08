@@ -23,13 +23,15 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr,f
   CVector3f *pCVar9;
   CVehicle *pCVar10;
   CDemonActor *pCVar11;
-  int iVar12;
-  uint uVar13;
+  ECollisionType EVar12;
+  int iVar13;
+  uint uVar14;
   CMobster *this_ptr_00;
   CMobster *this_ptr_01;
   CTommyGun *this_ptr_02;
   CTommyGun *actor;
-  int iVar14;
+  EDeathState EVar15;
+  int iVar16;
   char *model_name;
   SDamageInfo SStack_104;
   SCollisionInfo SStack_c8;
@@ -112,15 +114,15 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr,f
     (this_ptr->local_velocity).y = pCVar9->y;
     (this_ptr->local_velocity).z = pCVar9->z;
   }
-  iVar14 = 0;
+  iVar16 = 0;
   pCVar10 = this_ptr;
   if (0 < this_ptr->tire_count) {
     do {
-      iVar14 = iVar14 + 1;
+      iVar16 = iVar16 + 1;
       pCVar10->tires[0].spin_angle.x =
            pCVar10->tires[0].radius * local_24 + pCVar10->tires[0].spin_angle.x;
       pCVar10 = (CVehicle *)((pCVar10->model).part_visibility_flags + 0x17);
-    } while (iVar14 < this_ptr->tire_count);
+    } while (iVar16 < this_ptr->tire_count);
   }
   fVar3 = (this_ptr->base).location.position.y;
   fVar4 = (this_ptr->base).orient.vec.y;
@@ -131,15 +133,15 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr,f
   (this_ptr->base).orient.vec.y = fVar4;
   (*pCVar6->getBoundingBox)(&this_ptr->base,&local_a0);
   iStack_18 = 0;
-  for (iVar14 = 0; iVar14 < g_CDemonSetPtr->character_count; iVar14 = iVar14 + 1) {
+  for (iVar16 = 0; iVar16 < g_CDemonSetPtr->character_count; iVar16 = iVar16 + 1) {
     pCVar7 = *(CCharacter **)((int)g_CDemonSetPtr->characters + iStack_18);
     pCVar11 = core_actor_cpp_castToClassHash_FUN_0040c790
                         (&pCVar7->base,g_CMobsterClassInfo.name_hash);
     if ((pCVar11 == (CDemonActor *)0x0) ||
        (this_ptr != *(CVehicle **)(pCVar11[0x8e].actor_name + 0x10))) {
       core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(&SStack_c8);
-      iVar12 = (*((pCVar7->base).vtable._ub)->hasCollision)(&pCVar7->base,&SStack_c8);
-      if ((iVar12 == 2) &&
+      EVar12 = (*((pCVar7->base).vtable._ub)->getCollisionType)(&pCVar7->base,&SStack_c8);
+      if ((EVar12 == COLLISION_TYPE_CYLINDER) &&
          (((((pCVar7->base).location.position.y <=
              (this_ptr->base).location.position.y + local_a0.max.y &&
             ((this_ptr->base).location.position.y + local_a0.min.y <=
@@ -156,11 +158,11 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr,f
           (*(((pCVar7->base).vtable._uc)->_uc).processDamage)(pCVar7,&SStack_104);
         }
         else if ((CStack_64.z - SStack_c8.cylinder_radius < local_a0.max.z + (float)30)
-                && (iVar12 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handles[0]),
-                   iVar12 == 0)) {
-          uVar13 = core_vehicle_cpp_CVehicle_playTrackedSound_FUN_005e8b50
+                && (iVar13 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handles[0]),
+                   iVar13 == 0)) {
+          uVar14 = core_vehicle_cpp_CVehicle_playTrackedSound_FUN_005e8b50
                              (this_ptr,"model-t-horn?.wav");
-          this_ptr->sfx_handles[0] = uVar13;
+          this_ptr->sfx_handles[0] = uVar14;
         }
       }
     }
@@ -173,12 +175,12 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr,f
   fStack_38 = (this_ptr->base).location.position.z - (pCVar8->base).base.location.position.z;
   if ((SQRT(fStack_38 * fStack_38 + fStack_40 * fStack_40 + fStack_3c * fStack_3c) <=
        (float)200) || (0x671 < g_CDemonSetPtr->actor_count)) goto LAB_005e82f4;
-  iVar14 = 0;
+  iVar16 = 0;
   iStack_20 = 0;
   iStack_1c = 0;
-  for (iVar12 = 0; iVar12 < g_CDemonSetPtr->enemy_count; iVar12 = iVar12 + 1) {
+  for (iVar13 = 0; iVar13 < g_CDemonSetPtr->enemy_count; iVar13 = iVar13 + 1) {
     pCVar11 = core_actor_cpp_castToClassHash_FUN_0040c790
-                        (*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar14),
+                        (*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar16),
                          g_CMobsterClassInfo.name_hash);
     if ((pCVar11 != (CDemonActor *)0x0) &&
        (pCVar10 = *(CVehicle **)(pCVar11[0x8e].actor_name + 0x10), this_ptr == pCVar10)) {
@@ -191,20 +193,20 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr,f
         iStack_20 = 1;
       }
     }
-    iVar14 = iVar14 + 4;
+    iVar16 = iVar16 + 4;
   }
   if ((iStack_1c != 0) && (iStack_20 != 0)) goto LAB_005e82f4;
   if (iStack_1c == 0) {
     pCVar7 = (CCharacter *)this_ptr->last_mobster_left;
     if (pCVar7 != (CCharacter *)0x0) {
-      iVar14 = (*(((pCVar7->base).vtable._uc)->_uc).getDeathState)(pCVar7);
+      EVar15 = (*(((pCVar7->base).vtable._uc)->_uc).getDeathState)(pCVar7);
 joined_r0x005e8664:
-      if (iVar14 == 0) goto LAB_005e82f4;
+      if (EVar15 == DEATH_STATE_ALIVE) goto LAB_005e82f4;
     }
   }
   else if ((iStack_20 == 0) &&
           (pCVar7 = (CCharacter *)this_ptr->last_mobster_right, pCVar7 != (CCharacter *)0x0)) {
-    iVar14 = (*(((pCVar7->base).vtable._uc)->_uc).getDeathState)(pCVar7);
+    EVar15 = (*(((pCVar7->base).vtable._uc)->_uc).getDeathState)(pCVar7);
     goto joined_r0x005e8664;
   }
   this_ptr_00 = (CMobster *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xbf94,"..\\core\\vehicle.cpp",0x15d);
@@ -222,8 +224,8 @@ joined_r0x005e8664:
     g_CurrentLineNumber = 0x161;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CMobster::process - Out of memory!");
   }
-  iVar14 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);
-  if (iVar14 == 0) {
+  iVar16 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);
+  if (iVar16 == 0) {
     model_name = "mobster4.dfm";
   }
   else {
@@ -275,18 +277,18 @@ joined_r0x005e8664:
   core_mission_cpp_CDemonMission_addActorToList_FUN_00523b70
             (g_CDemonMissionPtr,(CDemonActor *)actor);
 LAB_005e82f4:
-  iVar14 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handles[1]);
-  if (iVar14 == 0) {
-    uVar13 = core_vehicle_cpp_CVehicle_playTrackedSound_FUN_005e8b50
+  iVar16 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handles[1]);
+  if (iVar16 == 0) {
+    uVar14 = core_vehicle_cpp_CVehicle_playTrackedSound_FUN_005e8b50
                        (this_ptr,"ext-modelt-fast_??.wav");
-    this_ptr->sfx_handles[1] = uVar13;
+    this_ptr->sfx_handles[1] = uVar14;
   }
   sound_sndmain_cpp_setSfxBaseFrequency_FUN_005a9b40(this_ptr->sfx_handles[1],1.0);
   if (((float)0.20000000000000001 < ABS((this_ptr->local_velocity).x)) &&
-     (iVar14 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handles[2]), iVar14 == 0))
+     (iVar16 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handles[2]), iVar16 == 0))
   {
-    uVar13 = core_vehicle_cpp_CVehicle_playTrackedSound_FUN_005e8b50(this_ptr,"skid_??.wav");
-    this_ptr->sfx_handles[2] = uVar13;
+    uVar14 = core_vehicle_cpp_CVehicle_playTrackedSound_FUN_005e8b50(this_ptr,"skid_??.wav");
+    this_ptr->sfx_handles[2] = uVar14;
     return;
   }
   return;

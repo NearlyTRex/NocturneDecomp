@@ -14,7 +14,7 @@
 ;   core_anvil.cpp_CAnvil_addFilesToExtract_FUN_00412090 at 004120c6
 ;   core_anvil.cpp_CAnvil_getBoundingBox_FUN_00411fe0 at 00411fef
 ;   core_backgnd.cpp_CBackgroundActor_getBoundingBox_FUN_00412940 at 0041294f
-;   core_backgnd.cpp_CBackgroundActor_hasCollision_FUN_004129f0 at 00412a09
+;   core_backgnd.cpp_CBackgroundActor_getCollisionType_FUN_004129f0 at 00412a09
 ;   core_bat.cpp_CBat_getBoundingBox_FUN_00414c60 at 00414c81
 ;   core_bat.cpp_CBat_process_FUN_00414a00 at 00414ae8
 ;   ... and 74 more

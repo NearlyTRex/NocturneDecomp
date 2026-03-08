@@ -187,7 +187,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_0041a050(CBodyPart
     (this_ptr->physics_box).angular_velocity.y = fVar9;
     return;
   }
-  (this_ptr->base).was_created = 2;
+  (this_ptr->base).lifecycle_state = ACTOR_DESTROYED;
   core_bodypart_cpp_CBodyPart_setCounts_FUN_004191d0(this_ptr,0,0);
   pCVar5 = &(this_ptr->bounding_box).max;
   if ((UVector3 *)pCVar5 != &g_ZeroVector) {

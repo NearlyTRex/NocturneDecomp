@@ -8,8 +8,8 @@
 ; int              Stack[0x8]:4   lod_index
 ;
 ; XREF[17]:
-;   core_bugs.cpp_CBugs_FUN_00425fe0 at 0042612b
-;   core_bugs.cpp_CBugs_FUN_00427400 at 00427533
+;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00425fe0 at 0042612b
+;   core_bugs.cpp_CBugs_setSwarmTarget_FUN_00427400 at 00427533
 ;   core_morph.cpp_CMorphModel_addPartFromDeformableModel_FUN_0052a870 at 0052a87b
 ;   core_morph.cpp_CMorphModel_animateFromDeformableModel_FUN_0052aa30 at 0052aa42
 ;   core_morph.cpp_CMorph_editMorph_FUN_0052bcb0 at 0052beaa

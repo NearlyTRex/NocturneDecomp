@@ -846,7 +846,7 @@ section .text
     PUSH ESI                            ; 0040f652
         ;   Label: LAB_0040f652
     CALL core_ground.cpp_getGroundTypeName_FUN_004eed80 ; 0040f653
-        ;   XREF to: 004eed80 (UNCONDITIONAL_CALL)  ; char * core_ground.cpp_getGroundTypeName_FUN_004eed80(int type)
+        ;   XREF to: 004eed80 (UNCONDITIONAL_CALL)  ; char * core_ground.cpp_getGroundTypeName_FUN_004eed80(EGroundType type)
     ADD ESP,0x4                         ; 0040f658
     PUSH EAX                            ; 0040f65b
     LEA EAX,[ESP + 0x3ac]               ; 0040f65c

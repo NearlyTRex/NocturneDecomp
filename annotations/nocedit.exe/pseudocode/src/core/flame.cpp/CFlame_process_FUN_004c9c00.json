@@ -4,37 +4,37 @@
       {
         "category": "format_error",
         "column": 55,
-        "line": 75,
+        "line": 76,
         "message": "format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 76,
+        "line": 77,
         "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       },
       {
         "category": "other",
         "column": 55,
-        "line": 98,
+        "line": 99,
         "message": "C-style cast from 'struct CDeformableModelInstance *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 100,
+        "line": 101,
         "message": "C-style cast from 'struct CKeyFramedModelInstance *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 27,
-        "line": 131,
+        "line": 132,
         "message": "C-style cast from 'struct CDeformableModelInstance *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 21,
-        "line": 134,
+        "line": 135,
         "message": "C-style cast from 'struct CKeyFramedModelInstance *' to 'float' is not allowed"
       }
     ],
@@ -43,19 +43,19 @@
   },
   "complexity": {
     "assembly_lines": 346,
-    "complexity_score": 262,
+    "complexity_score": 263,
     "cross_reference_count": 4,
     "function_call_count": 10,
     "global_count": 17,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 137,
+    "pseudocode_lines": 138,
     "suspect_count": 11,
     "suspect_types": [
       "decompiler_intrinsic",
       "sub84_truncation",
       "warning_inlined_function"
     ],
-    "total_lines": 483
+    "total_lines": 484
   },
   "cross_references": [
     {
@@ -380,7 +380,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 68,
+      "line": 69,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "((char *)&local_f8,\"torch.wav * %f\",SUB84(__BITCAST_UINT64((double)local_14),0),",
@@ -388,7 +388,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 68,
+      "line": 69,
       "match": "SUB84",
       "severity": "mild",
       "text": "((char *)&local_f8,\"torch.wav * %f\",SUB84(__BITCAST_UINT64((double)local_14),0),",
@@ -396,7 +396,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 94,
+      "line": 95,
       "match": "ROUND",
       "severity": "mild",
       "text": "(float)(int)ROUND(ROUND(((this_ptr->flame_size).x + (this_ptr->flame_size).z) *",
@@ -404,7 +404,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 94,
+      "line": 95,
       "match": "ROUND",
       "severity": "mild",
       "text": "(float)(int)ROUND(ROUND(((this_ptr->flame_size).x + (this_ptr->flame_size).z) *",
@@ -412,7 +412,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 97,
+      "line": 98,
       "match": "ABS",
       "severity": "mild",
       "text": "if ((ABS(fStack_34) < fVar2) && (ABS(fStack_2c) < fVar2)) {",
@@ -420,7 +420,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 97,
+      "line": 98,
       "match": "ABS",
       "severity": "mild",
       "text": "if ((ABS(fStack_34) < fVar2) && (ABS(fStack_2c) < fVar2)) {",
@@ -428,7 +428,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 125,
+      "line": 126,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_14 = (float)(int)ROUND(ROUND(((this_ptr->flame_size).x + (this_ptr->flame_size).z)",
@@ -436,7 +436,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 125,
+      "line": 126,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_14 = (float)(int)ROUND(ROUND(((this_ptr->flame_size).x + (this_ptr->flame_size).z)",
@@ -444,7 +444,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 129,
+      "line": 130,
       "match": "ABS",
       "severity": "mild",
       "text": "if ((ABS(fStack_28) < fVar2) && (ABS(fStack_20) < fVar2)) {",
@@ -452,7 +452,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 129,
+      "line": 130,
       "match": "ABS",
       "severity": "mild",
       "text": "if ((ABS(fStack_28) < fVar2) && (ABS(fStack_20) < fVar2)) {",

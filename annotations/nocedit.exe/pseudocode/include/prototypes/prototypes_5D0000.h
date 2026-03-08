@@ -33,6 +33,7 @@
 #include "types/classes/CVector3d.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVert.h"
+#include "types/enums/ECollisionType.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SExpandedEdge.h"
@@ -215,7 +216,7 @@ CTeleportDest * __cdecl core_teleport_cpp_factoryFunc_FUN_005da730(void);
 CDemonActorType * __cdecl core_teleport_cpp_CTeleportDest_getActorType_FUN_005da760(CTeleportDest *this_ptr);
 CTeleportDest * __cdecl core_teleport_cpp_CTeleportDest_ctor_FUN_005da770(CTeleportDest *this_ptr);
 CBoundingBox3D * __cdecl core_teleport_cpp_CTeleportDest_getBoundingBox_FUN_005da790(CTeleportDest *this_ptr,CBoundingBox3D *out_box);
-int __cdecl core_teleport_cpp_CTeleportDest_hasCollision_FUN_005da7c0(CTeleportDest *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl core_teleport_cpp_CTeleportDest_getCollisionType_FUN_005da7c0(CTeleportDest *this_ptr,SCollisionInfo *collision_info);
 int __cdecl core_teleport_cpp_CTeleportDest_renderOpaque_FUN_005da7d0(CTeleportDest *this_ptr);
 int __cdecl core_teleport_cpp_FUN_005da850(void);
 void __cdecl core_teleport_cpp_CTeleportDest_processInEditor_FUN_005da870(CTeleportDest *this_ptr);
@@ -299,7 +300,7 @@ CDemonActorType * __cdecl core_trap_cpp_CTrap_getActorType_FUN_005de680(CTrap *t
 CTrap * __cdecl core_trap_cpp_CTrap_ctor_FUN_005de690(CTrap *this_ptr);
 void __cdecl core_trap_cpp_CTrap_setup_FUN_005de6e0(CTrap *this_ptr);
 int __cdecl core_trap_cpp_CTrap_canPickup_FUN_005de710(CTrap *this_ptr,CDemonActor *picker);
-int __cdecl core_trap_cpp_CTrap_hasCollision_FUN_005de720(CTrap *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl core_trap_cpp_CTrap_getCollisionType_FUN_005de720(CTrap *this_ptr,SCollisionInfo *collision_info);
 void __cdecl core_trap_cpp_CTrap_pickup_FUN_005de740(CTrap *this_ptr,CDemonActor *carrier);
 void __cdecl core_trap_cpp_CTrap_onDropped_FUN_005de750(CTrap *this_ptr,CVector3f *drop_position);
 CDemonActor * __cdecl core_trap_cpp_CTrap_getCarrier_FUN_005de760(CTrap *this_ptr);
@@ -320,7 +321,7 @@ void __cdecl core_trash_cpp_FUN_005decc0(void);
 void __cdecl core_trash_cpp_CTrash_process_FUN_005decf0(CTrash *this_ptr,float delta_time);
 int __cdecl core_trash_cpp_CTrash_renderOpaque_FUN_005df550(CTrash *this_ptr);
 CBoundingBox3D * __cdecl core_trash_cpp_CTrash_getBoundingBox_FUN_005df610(CTrash *this_ptr,CBoundingBox3D *out_box);
-int __cdecl core_trash_cpp_CTrash_hasCollision_FUN_005df6d0(CTrash *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl core_trash_cpp_CTrash_getCollisionType_FUN_005df6d0(CTrash *this_ptr,SCollisionInfo *collision_info);
 void __cdecl core_trash_cpp_CTrash_getPropertyList_FUN_005df6e0(CTrash *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_trash_cpp_CTrash_addFilesToExtract_FUN_005df720(CTrash *this_ptr,_FILE *file_handle);
 void __cdecl core_trash_cpp_CTrash_processInEditor_FUN_005df750(CTrash *this_ptr);

@@ -16,7 +16,8 @@ void __cdecl core_flame_cpp_CFlame_process_FUN_004c9c00(CFlame *this_ptr,float d
   CEnemy *this_ptr_01;
   float fVar2;
   int iVar3;
-  uint uVar4;
+  ECollisionType EVar4;
+  uint uVar5;
   double local_f8;
   double dStack_f0;
   SCollisionInfo SStack_8c;
@@ -78,16 +79,16 @@ void __cdecl core_flame_cpp_CFlame_process_FUN_004c9c00(CFlame *this_ptr,float d
         iVar3 = 2;
         local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,1.0);
         sound_sndmain_cpp_setNextSfxTriggerTime_FUN_005a8be0((double)local_14,iVar3);
-        uVar4 = (*((this_ptr->base).vtable._ub)->playSound)(&this_ptr->base,(char *)&local_f8);
-        this_ptr->sfx_handle = uVar4;
+        uVar5 = (*((this_ptr->base).vtable._ub)->playSound)(&this_ptr->base,(char *)&local_f8);
+        this_ptr->sfx_handle = uVar5;
         sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
       }
     }
     if (this_ptr->burn_hero != 0) {
       core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(&SStack_8c);
-      iVar3 = (*((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._ub)->hasCollision)
+      EVar4 = (*((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._ub)->getCollisionType)
                         ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],&SStack_8c);
-      if (iVar3 == 2) {
+      if (EVar4 == COLLISION_TYPE_CYLINDER) {
         this_ptr_00 = g_HeroActors[g_LocalHeroIndex];
         pCVar1 = &(this_ptr->base).location;
         fStack_34 = (this_ptr_00->base).base.location.position.x - (pCVar1->position).x;
@@ -118,9 +119,9 @@ void __cdecl core_flame_cpp_CFlame_process_FUN_004c9c00(CFlame *this_ptr,float d
       if (0 < g_CDemonSetPtr->enemy_count) {
         this_ptr_01 = g_CDemonSetPtr->enemies[this_ptr->enemy_burn_index];
         core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(&SStack_64);
-        iVar3 = (*((this_ptr_01->base).base.vtable._ub)->hasCollision)
+        EVar4 = (*((this_ptr_01->base).base.vtable._ub)->getCollisionType)
                           ((CDemonActor *)this_ptr_01,&SStack_64);
-        if (iVar3 == 2) {
+        if (EVar4 == COLLISION_TYPE_CYLINDER) {
           pCVar1 = &(this_ptr->base).location;
           fStack_28 = (this_ptr_01->base).base.location.position.x - (pCVar1->position).x;
           fStack_24 = (this_ptr_01->base).base.location.position.y -

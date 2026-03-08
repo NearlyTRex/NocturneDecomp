@@ -6,17 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 52,
-    "complexity_score": 42,
+    "complexity_score": 16,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 17,
-    "suspect_count": 2,
-    "suspect_types": [
-      "stack_param"
-    ],
-    "total_lines": 69
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 16,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 68
   },
   "cross_references": [],
   "function": {
@@ -29,7 +27,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_actor.cpp_CDemonActor_testRayIntersection_FUN_004093f0",
-    "signature": "int __cdecl core_actor_cpp_CDemonActor_testRayIntersection_FUN_004093f0(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_hit_normal,void *unused)"
+    "signature": "float __cdecl core_actor_cpp_CDemonActor_testRayIntersection_FUN_004093f0(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_hit_normal,int ray_type,CBoundingBox3D *clip_bounds)"
   },
   "function_calls": [
     {
@@ -48,8 +46,8 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 5,
-    "estimated_params": 5
+    "declared_params": 6,
+    "estimated_params": 6
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.276595744680851,
@@ -78,10 +76,10 @@
     "pcode_op_count": 201
   },
   "stack_frame": {
-    "frame_size": 76,
+    "frame_size": 80,
     "local_size": 56,
     "param_offset": 4,
-    "param_size": 20,
+    "param_size": 24,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -121,29 +119,19 @@
       },
       {
         "is_param": true,
-        "name": "unused",
+        "name": "ray_type",
         "offset": 20,
         "size": 4,
-        "type": "void *"
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "clip_bounds",
+        "offset": 24,
+        "size": 4,
+        "type": "CBoundingBox3D *"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 7,
-      "match": "in_stack_00000018",
-      "severity": "moderate",
-      "text": "CBoundingBox3D *in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_00000018",
-      "severity": "moderate",
-      "text": "in_stack_00000018);",
-      "type": "stack_param"
-    }
-  ]
+  "suspects": []
 }

@@ -35,7 +35,7 @@ CBoneGuy * __cdecl core_boneguy_cpp_CBoneGuy_ctor_FUN_0041bbc0(CBoneGuy *this_pt
   pcVar6 = ADJ(dest)->death_event;
   ADJ(dest)->blown_up = 0;
   fVar2 = 50.0f;
-  ADJ(dest)->base.base.collision_layer = 2;
+  ADJ(dest)->base.base.blood_type = 2;
   fVar3 = 100.0f;
   ADJ(dest)->recombine_time = 10.0;
   ADJ(dest)->base.base.ai_detection_range_min = fVar2;
@@ -60,7 +60,7 @@ CBoneGuy * __cdecl core_boneguy_cpp_CBoneGuy_ctor_FUN_0041bbc0(CBoneGuy *this_pt
   local_14.x = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,255.0);
   local_14.y = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,40.0);
   local_14.z = core_actor_cpp_getRandomFloat_FUN_0040cc10(106.0,256.0);
-  core_boneguy_cpp_hsvToRgb_FUN_0041ba10(&local_20,&local_14);
+  core_boneguy_cpp_hsvToRgb_FUN_0041ba10((CColor3f *)&local_20,(CColor3f *)&local_14);
   fVar2 = 256.0f;
   ADJ(dest)->base.base.base.scale.x = (int)ROUND(ROUND(local_20.x * 256.0f));
   ADJ(dest)->base.base.base.scale.y = (int)ROUND(ROUND(local_20.y * fVar2));

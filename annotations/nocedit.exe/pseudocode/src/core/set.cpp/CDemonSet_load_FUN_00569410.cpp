@@ -137,7 +137,7 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00569410(CDemonSet *this_ptr,char *
     ;
   }
   if (this_ptr->set_file_version < 0x19) {
-    this_ptr->weather_type = 0;
+    this_ptr->weather_type = WEATHER_TYPE_NONE;
   }
   else {
     _fgets(local_228,0xff,p_Var4);

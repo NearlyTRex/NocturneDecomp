@@ -43,9 +43,9 @@ void __cdecl CBiggs::processDamage(CBiggs *this_ptr,SDamageInfo *damage_info);
 // Address: 00418c10
 int __cdecl CBiggs::getTargetPoints(CBiggs *this_ptr,CVector3f *out_points_array);
 
-// Original: core_biggs.cpp_CBiggs_hasCollision_FUN_00418c60
+// Original: core_biggs.cpp_CBiggs_getCollisionType_FUN_00418c60
 // Address: 00418c60
-void __cdecl CBiggs::hasCollision(CBiggs *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CBiggs::getCollisionType(CBiggs *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_biggs.cpp_CBiggs_getPropertyList_FUN_00418c80
 // Address: 00418c80

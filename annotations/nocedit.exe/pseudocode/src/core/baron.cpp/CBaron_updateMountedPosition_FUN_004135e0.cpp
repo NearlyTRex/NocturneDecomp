@@ -13,7 +13,7 @@ void __cdecl core_baron_cpp_CBaron_updateMountedPosition_FUN_004135e0(CBaron *th
   CDemonActor *pCVar2;
   CVector3f *pCVar3;
   CCharacter *this_ptr_00;
-  int iVar4;
+  EDeathState EVar4;
   CVector3f *new_orientation;
   CVector3f local_34;
   CVector3f local_28;
@@ -36,8 +36,8 @@ void __cdecl core_baron_cpp_CBaron_updateMountedPosition_FUN_004135e0(CBaron *th
                   core_actor_cpp_castToClassHash_FUN_0040c790
                             (this_ptr->target_actor,g_CCharacterClassInfo.name_hash);
     if (this_ptr_00 != (CCharacter *)0x0) {
-      iVar4 = (*(((this_ptr_00->base).vtable._uc)->_uc).getDeathState)(this_ptr_00);
-      if (iVar4 == 2) {
+      EVar4 = (*(((this_ptr_00->base).vtable._uc)->_uc).getDeathState)(this_ptr_00);
+      if (EVar4 == DEATH_STATE_DEAD) {
         core_baron_cpp_CBaron_releaseTarget_FUN_004135a0(this_ptr,this_ptr->target_actor);
         return;
       }

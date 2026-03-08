@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_batman_cpp_CBatman_FUN_00417660(CBatman *this_ptr)
+; void __cdecl core_batman_cpp_CBatman_FUN_00417660(CBatman *this_ptr,SDamageInfo *damage_info)
 ;
 ; Parameters:
 ; CBatman *        Stack[0x4]:4   this_ptr
+; SDamageInfo *    Stack[0x8]:4   damage_info
 ; Local Variables:
 ; undefined1       Stack[-0x34]:1  local_34
 ; undefined4       Stack[-0x28]:4  local_28
@@ -132,7 +133,7 @@ section .text
     LEA EAX,[EBX + 0x20]                ; 0041772e
     PUSH EAX                            ; 00417731
     CALL core_bodypart.cpp_createBodyPart_FUN_00418e10 ; 00417732
-        ;   XREF to: 00418e10 (UNCONDITIONAL_CALL)  ; CBodyPart * core_bodypart.cpp_createBodyPart_FUN_00418e10()
+        ;   XREF to: 00418e10 (UNCONDITIONAL_CALL)  ; CBodyPart * core_bodypart.cpp_createBodyPart_FUN_00418e10(CVector3f * position, UOrientationVector * orientation, CVector3f * initial_velocity, CDemonActor * scale_source, ...)
     ADD ESP,0x1c                        ; 00417737
     MOV EDI,EAX                         ; 0041773a
     PUSH 0x0                            ; 0041773c

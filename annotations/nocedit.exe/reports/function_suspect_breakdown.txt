@@ -4,41 +4,41 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 4326 functions
-  1 suspects: 859 functions
-  2 suspects: 393 functions
-  3 suspects: 262 functions
-  4 suspects: 183 functions
+  0 suspects: 4342 functions
+  1 suspects: 863 functions
+  2 suspects: 391 functions
+  3 suspects: 263 functions
+  4 suspects: 186 functions
   5 suspects: 157 functions
-  6 suspects: 114 functions
-  7 suspects: 109 functions
-  8 suspects: 82 functions
+  6 suspects: 111 functions
+  7 suspects: 108 functions
+  8 suspects: 79 functions
   9 suspects: 64 functions
-  10 suspects: 43 functions
-  11 suspects: 53 functions
-  12 suspects: 37 functions
+  10 suspects: 41 functions
+  11 suspects: 49 functions
+  12 suspects: 38 functions
   13 suspects: 34 functions
   14 suspects: 37 functions
   15 suspects: 33 functions
-  16 suspects: 25 functions
-  17 suspects: 21 functions
+  16 suspects: 26 functions
+  17 suspects: 20 functions
   18 suspects: 19 functions
-  19 suspects: 27 functions
-  20 suspects: 24 functions
+  19 suspects: 24 functions
+  20 suspects: 23 functions
   21 suspects: 14 functions
-  22 suspects: 12 functions
+  22 suspects: 11 functions
   23 suspects: 16 functions
-  24 suspects: 18 functions
-  25 suspects: 11 functions
-  26 suspects: 9 functions
-  27 suspects: 4 functions
+  24 suspects: 17 functions
+  25 suspects: 10 functions
+  26 suspects: 10 functions
+  27 suspects: 3 functions
   28 suspects: 10 functions
   29 suspects: 12 functions
-  30 suspects: 9 functions
-  31 suspects: 3 functions
+  30 suspects: 8 functions
+  31 suspects: 2 functions
   32 suspects: 7 functions
   33 suspects: 4 functions
-  34 suspects: 4 functions
+  34 suspects: 3 functions
   35 suspects: 4 functions
   36 suspects: 6 functions
   37 suspects: 6 functions
@@ -61,7 +61,7 @@ SUSPECT COUNT DISTRIBUTION
   55 suspects: 4 functions
   56 suspects: 2 functions
   57 suspects: 1 functions
-  58 suspects: 2 functions
+  58 suspects: 1 functions
   59 suspects: 2 functions
   60 suspects: 1 functions
   62 suspects: 1 functions
@@ -167,7 +167,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       Function declares 2 params but call sites push 6 (4 missing)...
     core_netgame.cpp_copyInteger_FUN_00543e30          (  5 lines)
       Function declares 2 params but call sites push 6 (4 missing)...
-    core_bugs.cpp_CBugs_FUN_00426410                   (  5 lines)
+    core_bugs.cpp_CBugs_updateBoundingBox_FUN_00426410 (  5 lines)
       Function declares 1 params but call sites push 2 (1 missing)...
     core_fire.cpp_CSmokeParticle_reset_FUN_004bf2e0    (  5 lines)
       Function declares 1 params but call sites push 4 (3 missing)...
@@ -231,7 +231,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       puVar1 = (uint *)((int)&(this_ptr->vertex_data->position).x ...
     ... and 106 more
 
-  [decompiler_intrinsic] (119 functions)
+  [decompiler_intrinsic] (121 functions)
   ------------------------------------------------------------
     core_dynamite.cpp_CDynamite_isFuseBurnedOut_FUN_00 (  4 lines)
       return (uint)(ABS(this_ptr->fuse_timer) == 0.0);...
@@ -273,23 +273,21 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       return ADJ(pvVar1);...
     core_box.cpp_CBox_dtor_FUN_0041dd00                (  6 lines)
       return ADJ(pSVar1);...
-    ... and 99 more
+    ... and 101 more
 
-  [warning_type_propagation] (42 functions)
+  [warning_type_propagation] (45 functions)
   ------------------------------------------------------------
     core_zombie.cpp_CZombie_FUN_005fbda0               ( 11 lines)
       /* WARNING: Type propagation algorithm not settling */...
-    core_dracbrid.cpp_CDraculaBride_dismemberPart_FUN_ ( 19 lines)
+    core_dracbrid.cpp_CDraculaBride_dismemberPart_FUN_ ( 22 lines)
       /* WARNING: Type propagation algorithm not settling */...
-    core_mimic.cpp_CMimic_hasCollision_FUN_00520a00    ( 23 lines)
+    core_mimic.cpp_CMimic_getCollisionType_FUN_00520a0 ( 23 lines)
       /* WARNING: Type propagation algorithm not settling */...
     core_smiley.cpp_CSmiley_attractActorToward_FUN_005 ( 25 lines)
       /* WARNING: Type propagation algorithm not settling */...
     core_bride.cpp_CBride_getTargetPoints_FUN_00424a10 ( 27 lines)
       /* WARNING: Type propagation algorithm not settling */...
     core_sentinel.cpp_CSentinel_attractActorToward_FUN ( 29 lines)
-      /* WARNING: Type propagation algorithm not settling */...
-    core_bugs.cpp_CBugs_processInEditor_FUN_004278d0   ( 32 lines)
       /* WARNING: Type propagation algorithm not settling */...
     core_flies.cpp_CFlies_initFly_FUN_004cc760         ( 39 lines)
       /* WARNING: Type propagation algorithm not settling */...
@@ -305,6 +303,8 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       /* WARNING: Type propagation algorithm not settling */...
     core_vampboss.cpp_CVampireBoss_chooseDestWayPoint_ ( 43 lines)
       /* WARNING: Type propagation algorithm not settling */...
+    core_bugs.cpp_CBugs_processInEditor_FUN_004278d0   ( 44 lines)
+      /* WARNING: Type propagation algorithm not settling */...
     core_anvil.cpp_CAnvil_process_FUN_00411d90         ( 45 lines)
       /* WARNING: Type propagation algorithm not settling */...
     core_mission.cpp_CDemonMission_process_FUN_0052425 ( 46 lines)
@@ -313,11 +313,11 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       /* WARNING: Type propagation algorithm not settling */...
     core_haystack.cpp_CHaystack_advanceMotion_FUN_004f ( 50 lines)
       /* WARNING: Type propagation algorithm not settling */...
+    core_trap.cpp_CTrap_process_FUN_005de770           ( 58 lines)
+      /* WARNING: Type propagation algorithm not settling */...
     core_bugs.cpp_CBugs_renderOpaque_FUN_004251b0      ( 59 lines)
       /* WARNING: Type propagation algorithm not settling */...
-    core_tvbat.cpp_CTVBat_processInEditor_FUN_005e5260 ( 59 lines)
-      /* WARNING: Type propagation algorithm not settling */...
-    ... and 22 more
+    ... and 25 more
 
   [param_count_too_many] (32 functions)
   ------------------------------------------------------------
@@ -438,33 +438,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     core_fire.cpp_CFireEffect_createBulletImpact_FUN_0 (137 lines)
       puVar5 = &DAT_0067aeb8;...
 
-  [unresolved_funcptr] (12 functions)
-  ------------------------------------------------------------
-    shape_superopt.cpp_CObj_projectAllPlanarUVs_FUN_00 ( 17 lines)
-      (**(code **)(*(int *)(iVar1 + 100) + 0x4c))(iVar1,uv_scale);...
-    shape_superopt.cpp_CObj_setAllPolyMaterialIds_FUN_ ( 17 lines)
-      (**(code **)(*(int *)(iVar1 + 100) + 0x50))(iVar1,material_i...
-    support_codec.cpp_CLZWDictionary_findCode_FUN_0043 ( 18 lines)
-      if (search_code == pCVar2->code) break;...
-    shape_superopt.cpp_CObj_hasPolyWithMaterial_FUN_00 ( 20 lines)
-      iVar1 = (**(code **)(*(int *)(iVar1 + 100) + 0x54))(iVar1);...
-    engine_3d.c_dispatchMRGLBlockChain_FUN_00407890    ( 21 lines)
-      core_main_c_displayErrorAndQuit_FUN_00506f10("Bad code!");...
-    engine_dosio.c_findFile_FUN_00481760               ( 23 lines)
-      iVar1 = (**(code **)((int)g_SearchHandlers + iVar2))(context...
-    shape_superopt.cpp_CObj_isClosedManifold_FUN_005d4 ( 35 lines)
-      iVar1 = (**(code **)(*(int *)(iVar1 + 100) + 0x70))...
-    core_trap.cpp_CTrap_process_FUN_005de770           ( 60 lines)
-      iVar2 = (**(code **)(*(int *)(iVar2 + 0x154) + 0x120))(iVar2...
-    engine_3d.c_renderPolygonAdaptiveDepthMode_FUN_004 ( 73 lines)
-      code *pcVar2;...
-    sound_snddx.cpp_CDirectSoundDevice_reset_FUN_005ae ( 74 lines)
-      uVar2 = (**(code **)(*piVar1 + 0x48))(piVar1);...
-    sound_mp3.cpp_CMP3Decoder_huffmanDecode_FUN_0052f3 ( 84 lines)
-      ("Illegal Huffman code in data.  File: %s",g_CurrentMp3Filen...
-    wincore_winrun.cpp_mainWindowProc_FUN_005f3150     (172 lines)
-      iVar1 = (**(code **)((int)g_WindowMessageHandlers + iVar5))(...
-
   [warning_unreachable] (12 functions)
   ------------------------------------------------------------
     core_procedur.cpp_CProceduralTexture_showMenu_FUN_ ( 20 lines)
@@ -491,6 +464,31 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       /* WARNING: Removing unreachable block (ram,0x0045c93b) */...
     core_stranger.cpp_CStranger_updateWeaponLayerActio (367 lines)
       /* WARNING: Removing unreachable block (ram,0x005c5793) */...
+
+  [unresolved_funcptr] (11 functions)
+  ------------------------------------------------------------
+    shape_superopt.cpp_CObj_projectAllPlanarUVs_FUN_00 ( 17 lines)
+      (**(code **)(*(int *)(iVar1 + 100) + 0x4c))(iVar1,uv_scale);...
+    shape_superopt.cpp_CObj_setAllPolyMaterialIds_FUN_ ( 17 lines)
+      (**(code **)(*(int *)(iVar1 + 100) + 0x50))(iVar1,material_i...
+    support_codec.cpp_CLZWDictionary_findCode_FUN_0043 ( 18 lines)
+      if (search_code == pCVar2->code) break;...
+    shape_superopt.cpp_CObj_hasPolyWithMaterial_FUN_00 ( 20 lines)
+      iVar1 = (**(code **)(*(int *)(iVar1 + 100) + 0x54))(iVar1);...
+    engine_3d.c_dispatchMRGLBlockChain_FUN_00407890    ( 21 lines)
+      core_main_c_displayErrorAndQuit_FUN_00506f10("Bad code!");...
+    engine_dosio.c_findFile_FUN_00481760               ( 23 lines)
+      iVar1 = (**(code **)((int)g_SearchHandlers + iVar2))(context...
+    shape_superopt.cpp_CObj_isClosedManifold_FUN_005d4 ( 35 lines)
+      iVar1 = (**(code **)(*(int *)(iVar1 + 100) + 0x70))...
+    engine_3d.c_renderPolygonAdaptiveDepthMode_FUN_004 ( 73 lines)
+      code *pcVar2;...
+    sound_snddx.cpp_CDirectSoundDevice_reset_FUN_005ae ( 74 lines)
+      uVar2 = (**(code **)(*piVar1 + 0x48))(piVar1);...
+    sound_mp3.cpp_CMP3Decoder_huffmanDecode_FUN_0052f3 ( 84 lines)
+      ("Illegal Huffman code in data.  File: %s",g_CurrentMp3Filen...
+    wincore_winrun.cpp_mainWindowProc_FUN_005f3150     (172 lines)
+      iVar1 = (**(code **)((int)g_WindowMessageHandlers + iVar5))(...
 
   [unnamed_param] (9 functions)
   ------------------------------------------------------------
@@ -627,10 +625,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: crt/strstream.cpp, Lines: 5, Types: ['negative_offset', 'special_crt_function']
   core_dcamera.cpp_log2Custom_FUN_00450a90
     File: core/dcamera.cpp, Lines: 5, Types: ['stack_param']
-  core_bugs.cpp_FUN_00427b60
-    File: core/bugs.cpp, Lines: 5, Types: ['stack_param']
-  core_bugs.cpp_FUN_00427b70
-    File: core/bugs.cpp, Lines: 5, Types: ['stack_param']
   core_stranger.cpp_FUN_005c695e
     File: core/stranger.cpp, Lines: 5, Types: ['stack_param']
   core_stranger.cpp_FUN_005c6950
@@ -699,5 +693,9 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: cockpit/drawsurf.cpp, Lines: 10, Types: ['param_count_too_few', 'stack_ref']
   cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedPrintf
     File: cockpit/drawsurf.cpp, Lines: 10, Types: ['param_count_too_few', 'stack_ref']
+  crt_iostream.cpp_doallocate_FUN_0060d677
+    File: crt/iostream.cpp, Lines: 10, Types: ['pointer_cast', 'special_crt_function']
+  engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_004cdf3
+    File: engine/font.cpp, Lines: 10, Types: ['param_count_too_few', 'stack_ref']
 
-  ... and 605 more
+  ... and 604 more

@@ -43,9 +43,9 @@ int __cdecl CActorDestination::acceptsActor(CActorDestination *this_ptr,CDemonAc
 // Address: 0046fdb0
 void __cdecl CActorDestination::archive(CActorDestination *this_ptr);
 
-// Original: core_dest.cpp_CActorDestination_hasCollision_FUN_0046fe70
+// Original: core_dest.cpp_CActorDestination_getCollisionType_FUN_0046fe70
 // Address: 0046fe70
-int __cdecl CActorDestination::hasCollision(CActorDestination *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CActorDestination::getCollisionType(CActorDestination *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_dest.cpp_CActorDestination_getPropertyList_FUN_0046fe80
 // Address: 0046fe80

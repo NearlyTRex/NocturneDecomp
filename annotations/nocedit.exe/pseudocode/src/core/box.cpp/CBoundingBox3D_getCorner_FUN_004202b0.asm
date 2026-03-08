@@ -13,8 +13,8 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[14]:
-;   core_actor.cpp_CDemonActor_FUN_0040dec0 at 0040df32
 ;   core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_00409270 at 004092b4
+;   core_actor.cpp_CDemonActor_renderBoundingBoxSolid_FUN_0040dec0 at 0040df32
 ;   core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940 at 0040d9a3
 ;   core_actor.cpp_drawBoundingBox_FUN_0040d470 at 0040d49a
 ;   core_box.cpp_CBoundingBox3D_isVisibleWithCamera_FUN_00420680 at 004206a5

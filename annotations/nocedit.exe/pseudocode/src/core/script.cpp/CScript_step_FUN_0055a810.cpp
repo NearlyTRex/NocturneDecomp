@@ -866,6 +866,7 @@ joined_r0x0055f6da:
                                               return -1;
                                             }
                                             core_actor_cpp_CVector_ctor_FUN_00410340(&local_154);
+                                            pCVar13 = (CVector3f *)0x0;
                                             if (*local_11c == ',') {
                                               local_60 = -1;
                                               sscanf
@@ -899,6 +900,7 @@ joined_r0x0055f6da:
                                                 core_actor_cpp_copyVector_FUN_00410360
                                                           (&local_154,pCVar13);
                                               }
+                                              pCVar13 = &local_154;
                                             }
                                             if (*local_11c != ')') {
                                               _sprintf
@@ -910,7 +912,11 @@ joined_r0x0055f6da:
                                             local_11c = local_11c + 1;
                                             if (g_ScriptEventsEnabled == 0) {
                                               local_ec = 
-                                                  core_bodypart_cpp_createBodyPart_FUN_00418e10();
+                                                  core_bodypart_cpp_createBodyPart_FUN_00418e10
+                                                            (&(local_f0->base).location.position,
+                                                             &(local_f0->base).orient,pCVar13,
+                                                             &local_f0->base,0,0,
+                                                             local_f0->blood_type);
                                               iVar11 = 0;
                                               iVar6 = 0;
                                               do {
@@ -1260,12 +1266,14 @@ LAB_0055cd52:
                                                   uVar17 = (uint)(-1 < iVar6);
                                                   }
                                                   if (uVar17 == 0) {
-                                                    iVar6 = core_bugs_cpp_FUN_00427b70();
-                                                    _sprintf
-                                                              (g_ScriptErrorBuffer,
-                                                               "Gesture name %s is not valid for actor %s, model %s",
-                                                               local_19d4,local_23fc,iVar6);
-                                                    return -1;
+                                                    pcVar19 = 
+                                                  core_bugs_cpp_getDeformableModelName_FUN_00427b70
+                                                            (&pCVar14->model);
+                                                  _sprintf
+                                                            (g_ScriptErrorBuffer,
+                                                             "Gesture name %s is not valid for actor %s, model %s",
+                                                             local_19d4,local_23fc,pcVar19);
+                                                  return -1;
                                                   }
                                                   }
                                                   else {

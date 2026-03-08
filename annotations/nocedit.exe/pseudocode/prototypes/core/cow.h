@@ -33,7 +33,7 @@ void __cdecl CZombieCow::archive(CZombieCow *this_ptr);
 
 // Original: core_cow.cpp_CZombieCow_FUN_004448c0
 // Address: 004448c0
-void __cdecl CZombieCow(CZombieCow *this_ptr);
+void __cdecl CZombieCow(CZombieCow *this_ptr,SDamageInfo *damage_info);
 
 // Original: core_cow.cpp_CZombieCow_processDamage_FUN_00444b40
 // Address: 00444b40

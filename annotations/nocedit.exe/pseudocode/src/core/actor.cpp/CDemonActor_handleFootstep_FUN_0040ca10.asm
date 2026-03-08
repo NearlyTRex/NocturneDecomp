@@ -132,7 +132,7 @@ section .text
     FSTP double ptr [ESP]               ; 0040cb11
     PUSH EDI                            ; 0040cb14
     CALL core_ground.cpp_getGroundTypeCode_FUN_004eece0 ; 0040cb15
-        ;   XREF to: 004eece0 (UNCONDITIONAL_CALL)  ; char * core_ground.cpp_getGroundTypeCode_FUN_004eece0(int type)
+        ;   XREF to: 004eece0 (UNCONDITIONAL_CALL)  ; char * core_ground.cpp_getGroundTypeCode_FUN_004eece0(EGroundType type)
     ADD ESP,0x4                         ; 0040cb1a
     PUSH EAX                            ; 0040cb1d
     LEA EAX,[EBX + 0x11c]               ; 0040cb1e

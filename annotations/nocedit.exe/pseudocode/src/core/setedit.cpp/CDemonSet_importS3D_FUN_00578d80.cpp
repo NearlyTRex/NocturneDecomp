@@ -253,7 +253,7 @@ LAB_0057981a:
             else {
               engine_dosio_c_splitPath_FUN_00481f20
                         (local_5a4,(char *)0x0,(char *)0x0,local_3a0,(char *)0x0);
-              pcVar11 = core_ground_cpp_getGroundTypeName_FUN_004eed80(0);
+              pcVar11 = core_ground_cpp_getGroundTypeName_FUN_004eed80(GROUND_TYPE_DEFAULT);
               _fprintf(file,"%s, %s\n",local_3a0,pcVar11);
               shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\setedit.cpp",0x4eb);
             }

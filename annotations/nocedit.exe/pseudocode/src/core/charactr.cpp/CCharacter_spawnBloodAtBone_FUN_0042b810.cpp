@@ -27,7 +27,7 @@ void __cdecl core_charactr_cpp_CCharacter_spawnBloodAtBone_FUN_0042b810(CCharact
       local_10.y = 7.0;
       local_10.z = 0.0;
       core_gore_cpp_CGore_spawnBloodParticles_FUN_004edaa0
-                (g_CGorePtr,&local_28,&local_10,this_ptr->collision_layer);
+                (g_CGorePtr,&local_28,&local_10,this_ptr->blood_type);
       return;
     }
   }

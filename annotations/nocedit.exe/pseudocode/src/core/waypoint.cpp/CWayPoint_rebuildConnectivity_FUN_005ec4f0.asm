@@ -118,12 +118,12 @@ section .text
     PUSH ESI                            ; 005ec5b0
     PUSH EBX                            ; 005ec5b1
     CALL core_waypoint.cpp_CWayPoint_addAdj_FUN_005ec700 ; 005ec5b2
-        ;   XREF to: 005ec700 (UNCONDITIONAL_CALL)  ; void core_waypoint.cpp_CWayPoint_addAdj_FUN_005ec700(CWayPoint * this_ptr)
+        ;   XREF to: 005ec700 (UNCONDITIONAL_CALL)  ; void core_waypoint.cpp_CWayPoint_addAdj_FUN_005ec700(CWayPoint * this_ptr, CWayPoint * target)
     ADD ESP,0x8                         ; 005ec5b7
     PUSH EBX                            ; 005ec5ba
     PUSH ESI                            ; 005ec5bb
     CALL core_waypoint.cpp_CWayPoint_addAdj_FUN_005ec700 ; 005ec5bc
-        ;   XREF to: 005ec700 (UNCONDITIONAL_CALL)  ; void core_waypoint.cpp_CWayPoint_addAdj_FUN_005ec700(CWayPoint * this_ptr)
+        ;   XREF to: 005ec700 (UNCONDITIONAL_CALL)  ; void core_waypoint.cpp_CWayPoint_addAdj_FUN_005ec700(CWayPoint * this_ptr, CWayPoint * target)
     MOV EDX,dword ptr [EBX + 0x370]     ; 005ec5c1
     ADD ESP,0x8                         ; 005ec5c7
     CMP EDX,0x3c                        ; 005ec5ca

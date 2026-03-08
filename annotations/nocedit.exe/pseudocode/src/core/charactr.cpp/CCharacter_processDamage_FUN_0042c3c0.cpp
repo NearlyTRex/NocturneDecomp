@@ -75,7 +75,7 @@ LAB_0042c429:
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
               (&this_ptr->base,&local_1c,&damage_info->impact_direction);
     core_gore_cpp_CGore_spawnBloodBurst_FUN_004edbb0
-              (g_CGorePtr,&local_1c,&damage_info->impact_point,iVar1 + 1,this_ptr->collision_layer);
+              (g_CGorePtr,&local_1c,&damage_info->impact_point,iVar1 + 1,this_ptr->blood_type);
   }
   if ((this_ptr->health_bar_mode == 1) && ((CHero *)this_ptr != g_HeroActors[g_LocalHeroIndex])) {
     core_game_cpp_CGame_setStatusDisplay_FUN_004e0bf0

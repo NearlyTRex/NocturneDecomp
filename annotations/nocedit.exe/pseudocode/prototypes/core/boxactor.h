@@ -51,9 +51,9 @@ void __cdecl CBoxActor::archive(CBoxActor *this_ptr);
 // Address: 00422330
 int __cdecl CBoxActor::getBlockVirtualDirectorFlag(CBoxActor *this_ptr);
 
-// Original: core_boxactor.cpp_CBoxActor_hasCollision_FUN_00422340
+// Original: core_boxactor.cpp_CBoxActor_getCollisionType_FUN_00422340
 // Address: 00422340
-int __cdecl CBoxActor::hasCollision(CBoxActor *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CBoxActor::getCollisionType(CBoxActor *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_boxactor.cpp_CBoxActor_resolveRayPush_FUN_00422390
 // Address: 00422390
@@ -77,7 +77,7 @@ CDemonActor * __cdecl CBoxActor::getCarrier(CBoxActor *this_ptr);
 
 // Original: core_boxactor.cpp_CBoxActor_getGroundType_FUN_00422560
 // Address: 00422560
-int __cdecl CBoxActor::getGroundType(CBoxActor *this_ptr);
+EGroundType __cdecl CBoxActor::getGroundType(CBoxActor *this_ptr);
 
 // Original: core_boxactor.cpp_CBoxActor_onPickup_FUN_00422570
 // Address: 00422570

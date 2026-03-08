@@ -63,9 +63,9 @@ void __cdecl CFrankenstienMachine::setPartFrame(CFrankenstienMachine *this_ptr,f
 // Address: 004d2430
 void __cdecl CFrankenstienMachine::setCourseFrame(CFrankenstienMachine *this_ptr,float start_frame,float end_frame);
 
-// Original: core_frankgen.cpp_CFrankenstienMachine_hasCollision_FUN_004d24f0
+// Original: core_frankgen.cpp_CFrankenstienMachine_getCollisionType_FUN_004d24f0
 // Address: 004d24f0
-int __cdecl CFrankenstienMachine::hasCollision(CFrankenstienMachine *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CFrankenstienMachine::getCollisionType(CFrankenstienMachine *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_frankgen.cpp_CFrankenstienMachine_getPropertyList_FUN_004d2500
 // Address: 004d2500

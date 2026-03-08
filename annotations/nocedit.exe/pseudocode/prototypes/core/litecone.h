@@ -39,9 +39,9 @@ CBoundingBox3D * __cdecl CLightCone::getBoundingBox(CLightCone *this_ptr,CBoundi
 // Address: 00506d00
 void __cdecl CLightCone::archive(CLightCone *this_ptr);
 
-// Original: core_litecone.cpp_CLightCone_hasCollision_FUN_00506d90
+// Original: core_litecone.cpp_CLightCone_getCollisionType_FUN_00506d90
 // Address: 00506d90
-int __cdecl CLightCone::hasCollision(CLightCone *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CLightCone::getCollisionType(CLightCone *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_litecone.cpp_CLightCone_getPropertyList_FUN_00506da0
 // Address: 00506da0

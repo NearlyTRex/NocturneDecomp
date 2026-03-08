@@ -161,18 +161,18 @@ void __cdecl core_course_cpp_CCourse_preview_FUN_00443bc0(CCourse *this_ptr,CKey
       vertex1.projected_vertex.screen_x = auVar7._16_4_;
       vertex1.projected_vertex.screen_y = auVar7._20_4_;
       vertex1.u = in_stack_fffffe70._24_4_;
-      vertex1.z = (int)in_stack_fffffe90;
-      vertex1.r = (int)in_stack_fffffe94;
+      vertex1.r = (int)in_stack_fffffe90;
+      vertex1.g = (int)in_stack_fffffe94;
       vertex1._40_8_ = in_stack_fffffe98;
       vertex2.projected_vertex._8_8_ = in_stack_fffffea8;
       vertex2.projected_vertex._0_8_ = in_stack_fffffea0;
       vertex2.projected_vertex._16_8_ = in_stack_fffffeb0;
       vertex2.u = in_stack_fffffeb8;
       vertex2.v = uVar9;
-      vertex2.z = (int)pCVar10;
-      vertex2.r = uVar11;
-      vertex2.g = (int)output;
-      vertex2.fog = (int)input;
+      vertex2.r = (int)pCVar10;
+      vertex2.g = uVar11;
+      vertex2.b = (int)output;
+      vertex2.a = (int)input;
       engine_3d_c_clipAndDrawLine2D_FUN_00407d70(vertex1,vertex2);
       if (&local_8c == &local_68) {
         local_34 = local_34 + 1;

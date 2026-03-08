@@ -47,9 +47,9 @@ CBoundingBox3D * __cdecl CChain::getBoundingBox(CChain *this_ptr,CBoundingBox3D 
 // Address: 00430fe0
 void __cdecl CChain::archive(CChain *this_ptr);
 
-// Original: core_chain.cpp_CChain_hasCollision_FUN_00431110
+// Original: core_chain.cpp_CChain_getCollisionType_FUN_00431110
 // Address: 00431110
-int __cdecl CChain::hasCollision(CChain *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CChain::getCollisionType(CChain *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_chain.cpp_CChain_getPropertyList_FUN_00431120
 // Address: 00431120

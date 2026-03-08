@@ -339,9 +339,9 @@ void __cdecl CDemonCamera::saveZBufferScanlines(CDemonCamera *this_ptr);
 // Address: 004544a0
 void __cdecl CDemonCamera::restoreZBufferScanlines(CDemonCamera *this_ptr);
 
-// Original: core_dcamera.cpp_CDemonCamera_testBoxOcclusion_FUN_004544f0
+// Original: core_dcamera.cpp_CDemonCamera_testVisibility_FUN_004544f0
 // Address: 004544f0
-int __cdecl CDemonCamera::testBoxOcclusion(CDemonCamera *this_ptr,CVector3i *corners);
+int __cdecl CDemonCamera::testVisibility(CDemonCamera *this_ptr,CVector3i *corners);
 
 // Original: core_dcamera.cpp_CVector3f_arrdtor_FUN_00454700
 // Address: 00454700

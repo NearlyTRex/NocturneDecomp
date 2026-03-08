@@ -21,6 +21,7 @@
 #include "types/classes/CQuaternion4f.h"
 #include "types/classes/CStrList.h"
 #include "types/classes/CVector3f.h"
+#include "types/enums/ECollisionType.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SLaserInfo.h"
@@ -170,7 +171,7 @@ int __cdecl core_emitter_cpp_CEmitter_renderOpaque_FUN_004a8860(CEmitter *this_p
 void __cdecl core_emitter_cpp_CEmitter_renderBackground_FUN_004a8a80(CEmitter *this_ptr,int layer_flag);
 CBoundingBox3D * __cdecl core_emitter_cpp_CEmitter_getBoundingBox_FUN_004a8ad0(CEmitter *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_emitter_cpp_CEmitter_archive_FUN_004a8b30(CEmitter *this_ptr);
-int __cdecl core_emitter_cpp_CEmitter_hasCollision_FUN_004a8d10(CEmitter *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl core_emitter_cpp_CEmitter_getCollisionType_FUN_004a8d10(CEmitter *this_ptr,SCollisionInfo *collision_info);
 CVector3f * __cdecl core_emitter_cpp_CEmitter_FUN_004a8d20(CEmitter *this_ptr);
 void __cdecl core_emitter_cpp_CEmitter_getPropertyList_FUN_004a8db0(CEmitter *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_emitter_cpp_CEmitter_processInEditor_FUN_004a8fe0(CEmitter *this_ptr);

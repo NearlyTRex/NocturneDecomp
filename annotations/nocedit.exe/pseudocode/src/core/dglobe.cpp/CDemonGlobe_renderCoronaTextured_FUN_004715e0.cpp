@@ -45,11 +45,11 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_renderCoronaTextured_FUN_004715e0(CDemo
     pCVar1 = g_CDemonRendererPtr1;
     *(uint *)((int)&g_CDemonRendererPtr1->vertex_buffer_ptr->u + iVar2) = 0x800000;
     *(uint *)((int)&pCVar1->vertex_buffer_ptr->v + iVar2) = 0x800000;
-    *(uint *)((int)&pCVar1->vertex_buffer_ptr->fog + iVar2) = 0x8000;
-    *(uint *)((int)&pCVar1->vertex_buffer_ptr->z + iVar2) = 0xffff;
+    *(uint *)((int)&pCVar1->vertex_buffer_ptr->a + iVar2) = 0x8000;
     *(uint *)((int)&pCVar1->vertex_buffer_ptr->r + iVar2) = 0xffff;
-    iVar3 = iVar3 + 0xc;
     *(uint *)((int)&pCVar1->vertex_buffer_ptr->g + iVar2) = 0xffff;
+    iVar3 = iVar3 + 0xc;
+    *(uint *)((int)&pCVar1->vertex_buffer_ptr->b + iVar2) = 0xffff;
     iVar2 = iVar2 + 0x30;
   } while (iVar3 != 0x2e8);
   engine_texture_cpp_ensureTextureLoaded_FUN_005dd800(&g_CoronaHeadliteTexture);

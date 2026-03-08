@@ -43,13 +43,13 @@ CBoundingBox3D * __cdecl CBackgroundActor::getBoundingBox(CBackgroundActor *this
 // Address: 00412990
 void __cdecl CBackgroundActor::archive(CBackgroundActor *this_ptr);
 
-// Original: core_backgnd.cpp_CBackgroundActor_hasCollision_FUN_004129f0
+// Original: core_backgnd.cpp_CBackgroundActor_getCollisionType_FUN_004129f0
 // Address: 004129f0
-int __cdecl CBackgroundActor::hasCollision(CBackgroundActor *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CBackgroundActor::getCollisionType(CBackgroundActor *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_backgnd.cpp_CBackgroundActor_getGroundType_FUN_00412a30
 // Address: 00412a30
-int __cdecl CBackgroundActor::getGroundType(CBackgroundActor *this_ptr);
+EGroundType __cdecl CBackgroundActor::getGroundType(CBackgroundActor *this_ptr);
 
 // Original: core_backgnd.cpp_CBackgroundActor_getPropertyList_FUN_00412a40
 // Address: 00412a40

@@ -32,7 +32,7 @@ section .text
     PUSH EDI                            ; 00444b4b
     PUSH EBX                            ; 00444b4c
     CALL core_cow.cpp_CZombieCow_FUN_004448c0 ; 00444b4d
-        ;   XREF to: 004448c0 (UNCONDITIONAL_CALL)  ; void core_cow.cpp_CZombieCow_FUN_004448c0(CZombieCow * this_ptr)
+        ;   XREF to: 004448c0 (UNCONDITIONAL_CALL)  ; void core_cow.cpp_CZombieCow_FUN_004448c0(CZombieCow * this_ptr, SDamageInfo * damage_info)
     FLD float ptr [EDI + 0x4]           ; 00444b52
     ADD ESP,0x8                         ; 00444b55
     FSUBR float ptr [EBX + 0x243c]      ; 00444b58

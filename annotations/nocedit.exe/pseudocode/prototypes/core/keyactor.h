@@ -39,9 +39,9 @@ CBoundingBox3D * __cdecl CKeyActor::getBoundingBox(CKeyActor *this_ptr,CBounding
 // Address: 00501880
 void __cdecl CKeyActor::archive(CKeyActor *this_ptr);
 
-// Original: core_keyactor.cpp_CKeyActor_hasCollision_FUN_005018f0
+// Original: core_keyactor.cpp_CKeyActor_getCollisionType_FUN_005018f0
 // Address: 005018f0
-int __cdecl CKeyActor::hasCollision(CKeyActor *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CKeyActor::getCollisionType(CKeyActor *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_keyactor.cpp_CKeyActor_canPickup_FUN_00501900
 // Address: 00501900

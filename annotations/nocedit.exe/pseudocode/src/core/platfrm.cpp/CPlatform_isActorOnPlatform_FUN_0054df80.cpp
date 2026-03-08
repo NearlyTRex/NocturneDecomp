@@ -9,9 +9,10 @@
 int __cdecl core_platfrm_cpp_CPlatform_isActorOnPlatform_FUN_0054df80(CPlatform *this_ptr,CDemonActor *actor)
 
 {
-  int iVar1;
+  ECollisionType EVar1;
   CKeyFramedModel *pCVar2;
   float fVar3;
+  int frame_index;
   CVector3f *ray_origin;
   CVector3f *ray_direction;
   CVector3f *output_normal;
@@ -26,8 +27,8 @@ int __cdecl core_platfrm_cpp_CPlatform_isActorOnPlatform_FUN_0054df80(CPlatform 
   if (actor != (CDemonActor *)0x0) {
     core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(&local_88);
     local_88.ray_type = 0;
-    iVar1 = (*((actor->vtable)._ub)->hasCollision)(actor,&local_88);
-    if (iVar1 == 2) {
+    EVar1 = (*((actor->vtable)._ub)->getCollisionType)(actor,&local_88);
+    if (EVar1 == COLLISION_TYPE_CYLINDER) {
       fStack_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70((this_ptr->base).orient.vec.x);
       fVar3 = (this_ptr->base).orient.vec.z;
       (this_ptr->base).orient.vec.x = fStack_18;
@@ -56,12 +57,12 @@ int __cdecl core_platfrm_cpp_CPlatform_isActorOnPlatform_FUN_0054df80(CPlatform 
             CStack_30.y = 1.0;
             ray_origin = &CStack_48;
             CStack_30.z = 0.0;
-            iVar1 = 0;
+            frame_index = 0;
             CStack_48.y = local_88.cylinder_top_y + -1.0f + CStack_24.y;
             pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
                                (&this_ptr->model);
             fVar3 = core_dmodel_cpp_CKeyFramedModel_intersectRay_FUN_004781d0
-                              (pCVar2,iVar1,ray_origin,ray_direction,output_normal);
+                              (pCVar2,frame_index,ray_origin,ray_direction,output_normal);
             if (fVar3 < 0.0) {
               return 0;
             }

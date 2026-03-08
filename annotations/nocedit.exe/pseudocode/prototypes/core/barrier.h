@@ -35,9 +35,9 @@ CBoundingBox3D * __cdecl CBarrier::getBoundingBox(CBarrier *this_ptr,CBoundingBo
 // Address: 00414340
 void __cdecl CBarrier::archive(CBarrier *this_ptr);
 
-// Original: core_barrier.cpp_CBarrier_hasCollision_FUN_004143a0
+// Original: core_barrier.cpp_CBarrier_getCollisionType_FUN_004143a0
 // Address: 004143a0
-int __cdecl CBarrier::hasCollision(CBarrier *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CBarrier::getCollisionType(CBarrier *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_barrier.cpp_CBarrier_updateCollisionData_FUN_004143e0
 // Address: 004143e0

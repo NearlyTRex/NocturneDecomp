@@ -1,48 +1,23 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 4,
-        "line": 103,
-        "message": "indirection not permitted on operand of type 'void *'"
-      },
-      {
-        "category": "other",
-        "column": 67,
-        "line": 103,
-        "message": "called object type 'void' is not a function or function pointer"
-      },
-      {
-        "category": "other",
-        "column": 6,
-        "line": 183,
-        "message": "indirection not permitted on operand of type 'void *'"
-      },
-      {
-        "category": "other",
-        "column": 15,
-        "line": 184,
-        "message": "called object type 'void' is not a function or function pointer"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 250,
-    "complexity_score": 490,
+    "complexity_score": 491,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 26,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 200,
+    "pseudocode_lines": 201,
     "suspect_count": 28,
     "suspect_types": [
       "decompiler_intrinsic",
       "warning_unreachable"
     ],
-    "total_lines": 450
+    "total_lines": 451
   },
   "cross_references": [],
   "function": {
@@ -142,97 +117,97 @@
     },
     {
       "addr": "00688034",
-      "name": "g_RenderVertexBuffer[0].z",
-      "type": "undefined4",
-      "value": null
-    },
-    {
-      "addr": "00688038",
       "name": "g_RenderVertexBuffer[0].r",
       "type": "undefined4",
       "value": null
     },
     {
-      "addr": "0068803c",
+      "addr": "00688038",
       "name": "g_RenderVertexBuffer[0].g",
       "type": "undefined4",
       "value": null
     },
     {
+      "addr": "0068803c",
+      "name": "g_RenderVertexBuffer[0].b",
+      "type": "undefined4",
+      "value": null
+    },
+    {
       "addr": "00688040",
-      "name": "g_RenderVertexBuffer[0].fog",
+      "name": "g_RenderVertexBuffer[0].a",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00688064",
-      "name": "g_RenderVertexBuffer[1].z",
-      "type": "undefined4",
-      "value": null
-    },
-    {
-      "addr": "00688068",
       "name": "g_RenderVertexBuffer[1].r",
       "type": "undefined4",
       "value": null
     },
     {
-      "addr": "0068806c",
+      "addr": "00688068",
       "name": "g_RenderVertexBuffer[1].g",
       "type": "undefined4",
       "value": null
     },
     {
+      "addr": "0068806c",
+      "name": "g_RenderVertexBuffer[1].b",
+      "type": "undefined4",
+      "value": null
+    },
+    {
       "addr": "00688070",
-      "name": "g_RenderVertexBuffer[1].fog",
+      "name": "g_RenderVertexBuffer[1].a",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00688094",
-      "name": "g_RenderVertexBuffer[2].z",
-      "type": "undefined4",
-      "value": null
-    },
-    {
-      "addr": "00688098",
       "name": "g_RenderVertexBuffer[2].r",
       "type": "undefined4",
       "value": null
     },
     {
-      "addr": "0068809c",
+      "addr": "00688098",
       "name": "g_RenderVertexBuffer[2].g",
       "type": "undefined4",
       "value": null
     },
     {
+      "addr": "0068809c",
+      "name": "g_RenderVertexBuffer[2].b",
+      "type": "undefined4",
+      "value": null
+    },
+    {
       "addr": "006880a0",
-      "name": "g_RenderVertexBuffer[2].fog",
+      "name": "g_RenderVertexBuffer[2].a",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "006880c4",
-      "name": "g_RenderVertexBuffer[3].z",
-      "type": "undefined4",
-      "value": null
-    },
-    {
-      "addr": "006880c8",
       "name": "g_RenderVertexBuffer[3].r",
       "type": "undefined4",
       "value": null
     },
     {
-      "addr": "006880cc",
+      "addr": "006880c8",
       "name": "g_RenderVertexBuffer[3].g",
       "type": "undefined4",
       "value": null
     },
     {
+      "addr": "006880cc",
+      "name": "g_RenderVertexBuffer[3].b",
+      "type": "undefined4",
+      "value": null
+    },
+    {
       "addr": "006880d0",
-      "name": "g_RenderVertexBuffer[3].fog",
+      "name": "g_RenderVertexBuffer[3].a",
       "type": "undefined4",
       "value": null
     },
@@ -610,7 +585,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 144,
+      "line": 145,
       "match": "ROUND",
       "severity": "mild",
       "text": "CStack_58.x = (int)ROUND(local_b8 * 256.0f);",
@@ -618,7 +593,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 145,
+      "line": 146,
       "match": "ROUND",
       "severity": "mild",
       "text": "CStack_58.y = (int)ROUND(local_b8 * 256.0f);",
@@ -626,7 +601,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 146,
+      "line": 147,
       "match": "ROUND",
       "severity": "mild",
       "text": "CStack_58.z = (int)ROUND(256.0f * 0.0);",
@@ -634,7 +609,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 154,
+      "line": 155,
       "match": "ROUND",
       "severity": "mild",
       "text": "aCStack_40[0].x = (int)ROUND(local_b8 * 256.0f);",
@@ -642,7 +617,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 155,
+      "line": 156,
       "match": "ROUND",
       "severity": "mild",
       "text": "aCStack_40[0].y = (int)ROUND(fStack_1c * 256.0f);",
@@ -650,7 +625,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 156,
+      "line": 157,
       "match": "ROUND",
       "severity": "mild",
       "text": "aCStack_40[0].z = (int)ROUND(256.0f * 0.0);",
@@ -658,7 +633,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 163,
+      "line": 164,
       "match": "ROUND",
       "severity": "mild",
       "text": "CStack_c4.x = (int)ROUND(fStack_18 * 256.0f);",
@@ -666,7 +641,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 164,
+      "line": 165,
       "match": "ROUND",
       "severity": "mild",
       "text": "CStack_c4.y = (int)ROUND(fStack_18 * 256.0f);",
@@ -674,7 +649,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 165,
+      "line": 166,
       "match": "ROUND",
       "severity": "mild",
       "text": "CStack_c4.z = (int)ROUND(256.0f * 0.0);",
@@ -682,7 +657,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 171,
+      "line": 172,
       "match": "ROUND",
       "severity": "mild",
       "text": "CStack_94.x = (int)ROUND(fStack_1c * 256.0f);",
@@ -690,7 +665,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 172,
+      "line": 173,
       "match": "ROUND",
       "severity": "mild",
       "text": "CStack_94.y = (int)ROUND(fStack_18 * 256.0f);",
@@ -698,7 +673,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 173,
+      "line": 174,
       "match": "ROUND",
       "severity": "mild",
       "text": "CStack_94.z = (int)ROUND(256.0f * 0.0);",

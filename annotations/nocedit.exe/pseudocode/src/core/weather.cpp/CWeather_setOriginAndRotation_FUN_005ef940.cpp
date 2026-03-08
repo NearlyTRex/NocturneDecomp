@@ -31,7 +31,7 @@ void __cdecl core_weather_cpp_CWeather_setOriginAndRotation_FUN_005ef940(CWeathe
     (this_ptr->rotation).y = rotation->y;
     (this_ptr->rotation).z = rotation->z;
   }
-  if (this_ptr->weather_type != 0) {
+  if (this_ptr->weather_type != WEATHER_TYPE_NONE) {
     pCVar2 = g_WeatherParticlePositions;
     iVar3 = 0;
     do {

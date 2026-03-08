@@ -97,9 +97,9 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_boneguy.cpp_CBoneGuy_beginRecombine_FUN_0041d8a0
 ;   core_boneguy.cpp_CBoneGuy_explode_FUN_0041d680
-;   core_boneguy.cpp_CBoneGuy_FUN_0041cc40
-;   core_boneguy.cpp_CBoneGuy_FUN_0041d8a0
+;   core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_0041cc40
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_004297e0
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40
@@ -182,8 +182,8 @@ section .text
     JBE 0x0041c218                      ; 0041c04d
         ;   XREF to: 0041c218 (CONDITIONAL_JUMP)  ; LAB_0041c218
     PUSH EBX                            ; 0041c053
-    CALL core_boneguy.cpp_CBoneGuy_FUN_0041d8a0 ; 0041c054
-        ;   XREF to: 0041d8a0 (UNCONDITIONAL_CALL)  ; void core_boneguy.cpp_CBoneGuy_FUN_0041d8a0(CBoneGuy * this_ptr)
+    CALL core_boneguy.cpp_CBoneGuy_beginRecombine_FUN_0041d8a0 ; 0041c054
+        ;   XREF to: 0041d8a0 (UNCONDITIONAL_CALL)  ; void core_boneguy.cpp_CBoneGuy_beginRecombine_FUN_0041d8a0(CBoneGuy * this_ptr)
     ADD ESP,0x4                         ; 0041c059
     CMP dword ptr [EBX + 0xc4dc],0x2    ; 0041c05c
         ;   Label: LAB_0041c05c
@@ -954,8 +954,8 @@ section .text
     PUSH dword ptr [EBP + 0x92]         ; 0041c8f3
         ;   Label: LAB_0041c8f3
     PUSH EBX                            ; 0041c8f9
-    CALL core_boneguy.cpp_CBoneGuy_FUN_0041cc40 ; 0041c8fa
-        ;   XREF to: 0041cc40 (UNCONDITIONAL_CALL)  ; int core_boneguy.cpp_CBoneGuy_FUN_0041cc40(CBoneGuy * this_ptr)
+    CALL core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_0041cc40 ; 0041c8fa
+        ;   XREF to: 0041cc40 (UNCONDITIONAL_CALL)  ; int core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_0041cc40(CBoneGuy * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0041c8ff
     TEST EAX,EAX                        ; 0041c902
     JNZ 0x0041c3f4                      ; 0041c904

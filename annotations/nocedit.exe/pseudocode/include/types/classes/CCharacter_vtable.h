@@ -9,6 +9,7 @@ struct SDamageInfo;
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/enums/EDeathState.h"
 #include "types/funcdefs/CCharacter_applyDamage.h"
 #include "types/funcdefs/CCharacter_attractActorToward.h"
 #include "types/funcdefs/CCharacter_canBeAttracted.h"
@@ -18,11 +19,11 @@ struct SDamageInfo;
 #include "types/funcdefs/CCharacter_clearDoorTarget.h"
 #include "types/funcdefs/CCharacter_dropCarriedObject.h"
 #include "types/funcdefs/CCharacter_getCarryObjToBodyXForm.h"
+#include "types/funcdefs/CCharacter_getDeathState.h"
 #include "types/funcdefs/CCharacter_getGrabbed.h"
 #include "types/funcdefs/CCharacter_getGrabber.h"
 #include "types/funcdefs/CCharacter_getPartDominantBone.h"
 #include "types/funcdefs/CCharacter_hasDoorTarget.h"
-#include "types/funcdefs/CCharacter_isDeathState.h"
 #include "types/funcdefs/CCharacter_isGrabbable.h"
 #include "types/funcdefs/CCharacter_isWalkComplete.h"
 #include "types/funcdefs/CCharacter_kill.h"
@@ -52,7 +53,7 @@ typedef struct CCharacter_vtable {
     CCharacter_checkCylinderCollisionWorld* checkCylinderCollisionWorld; // 0x28
     CCharacter_testDamageLine* testDamageLine; // 0x2c
     CCharacter_processDamage* processDamage; // 0x30
-    CCharacter_isDeathState* getDeathState; // 0x34, 0=alive,1=dying,2=dead
+    CCharacter_getDeathState* getDeathState; // 0x34, 0=alive,1=dying,2=dead
     CCharacter_attractActorToward* attractActorToward; // 0x38
     CCharacter_canBeAttracted* canBeAttracted; // 0x3c
     CCharacter_getPartDominantBone* getPartDominantBone; // 0x40

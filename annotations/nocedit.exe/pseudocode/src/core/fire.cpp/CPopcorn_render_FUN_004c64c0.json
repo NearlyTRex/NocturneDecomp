@@ -1,37 +1,24 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 4,
-        "line": 90,
-        "message": "indirection not permitted on operand of type 'void *'"
-      },
-      {
-        "category": "other",
-        "column": 67,
-        "line": 90,
-        "message": "called object type 'void' is not a function or function pointer"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 254,
-    "complexity_score": 358,
+    "complexity_score": 359,
     "cross_reference_count": 0,
     "function_call_count": 11,
     "global_count": 22,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 113,
+    "pseudocode_lines": 114,
     "suspect_count": 23,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "stack_alignment_array"
     ],
-    "total_lines": 367
+    "total_lines": 368
   },
   "cross_references": [],
   "function": {
@@ -142,7 +129,7 @@
     },
     {
       "addr": "00688040",
-      "name": "g_RenderVertexBuffer[0].fog",
+      "name": "g_RenderVertexBuffer[0].a",
       "type": "undefined4",
       "value": null
     },
@@ -160,7 +147,7 @@
     },
     {
       "addr": "00688070",
-      "name": "g_RenderVertexBuffer[1].fog",
+      "name": "g_RenderVertexBuffer[1].a",
       "type": "undefined4",
       "value": null
     },
@@ -178,7 +165,7 @@
     },
     {
       "addr": "006880a0",
-      "name": "g_RenderVertexBuffer[2].fog",
+      "name": "g_RenderVertexBuffer[2].a",
       "type": "undefined4",
       "value": null
     },
@@ -196,7 +183,7 @@
     },
     {
       "addr": "006880d0",
-      "name": "g_RenderVertexBuffer[3].fog",
+      "name": "g_RenderVertexBuffer[3].a",
       "type": "undefined4",
       "value": null
     },
@@ -595,7 +582,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 93,
+      "line": 94,
       "match": "ROUND",
       "severity": "mild",
       "text": "CStack_24.x = (int)ROUND((this_ptr->base).position.x * 256.0f);",
@@ -603,7 +590,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 94,
+      "line": 95,
       "match": "ROUND",
       "severity": "mild",
       "text": "CStack_24.y = (int)ROUND((this_ptr->base).position.y * 256.0f);",
@@ -611,7 +598,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 95,
+      "line": 96,
       "match": "ROUND",
       "severity": "mild",
       "text": "CStack_24.z = (int)ROUND((this_ptr->base).position.z * 256.0f);",

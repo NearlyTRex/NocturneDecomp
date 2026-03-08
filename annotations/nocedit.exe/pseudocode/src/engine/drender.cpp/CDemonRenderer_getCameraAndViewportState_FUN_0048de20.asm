@@ -9,7 +9,7 @@
 ;
 ; XREF[2]:
 ;   core_dcamera.cpp_CDemonCamera_beginBackgroundScene_FUN_0044cc70 at 0044cdbb
-;   core_dcamera.cpp_CDemonCamera_testBoxOcclusion_FUN_004544f0 at 00454507
+;   core_dcamera.cpp_CDemonCamera_testVisibility_FUN_004544f0 at 00454507
 ;
 ; Referenced Globals:
 ;   int g_ProjectionScale = 0x10000

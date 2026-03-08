@@ -11,7 +11,7 @@
 int __cdecl core_smiley_cpp_CSmiley_attractActorToward_FUN_005a3160(CSmiley *this_ptr,CDemonActor *actor,CVector3f *target_local_point)
 
 {
-  int iVar1;
+  EDeathState EVar1;
   CVector3f *input_local_point;
   CVector3f CStack_20;
   CVector3f CStack_14;
@@ -19,8 +19,8 @@ int __cdecl core_smiley_cpp_CSmiley_attractActorToward_FUN_005a3160(CSmiley *thi
   if (actor == (CDemonActor *)0x0) {
     return 0;
   }
-  iVar1 = (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)this_ptr);
-  if (iVar1 != 0) {
+  EVar1 = (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)this_ptr);
+  if (EVar1 != DEATH_STATE_ALIVE) {
     (*(((actor->vtable)._uc)->_uc).releaseFromGrab)((CCharacter *)actor);
     return 1;
   }

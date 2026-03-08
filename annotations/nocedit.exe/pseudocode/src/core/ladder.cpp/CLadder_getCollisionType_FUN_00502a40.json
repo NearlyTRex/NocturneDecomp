@@ -1,0 +1,106 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 16,
+    "complexity_score": 9,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 25
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00502a40",
+    "address_range": [
+      [
+        "00502a40",
+        "00502a65"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_ladder.cpp_CLadder_getCollisionType_FUN_00502a40",
+    "signature": "ECollisionType __cdecl core_ladder_cpp_CLadder_getCollisionType_FUN_00502a40(CLadder *this_ptr,SCollisionInfo *collision_info)"
+  },
+  "function_calls": [
+    {
+      "addr": "00478d80",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.833333333333333,
+    "instruction_count": 12,
+    "opcode_distribution": {
+      "CALL": 1,
+      "CBRANCH": 1,
+      "COPY": 7,
+      "INT_ADD": 6,
+      "INT_AND": 8,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 9,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 4,
+      "INT_SUB": 3,
+      "INT_XOR": 1,
+      "LOAD": 4,
+      "POPCOUNT": 4,
+      "RETURN": 2,
+      "STORE": 2
+    },
+    "pcode_op_count": 58
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLadder *"
+      },
+      {
+        "is_param": true,
+        "name": "collision_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SCollisionInfo *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CLadder",
+        "offset": 52,
+        "vtable_addr": "006605f4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

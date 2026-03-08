@@ -119,10 +119,10 @@ void __cdecl core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(CDemonAct
     vertex2.projected_vertex.screen_x = auVar9._16_4_;
     vertex2.projected_vertex.screen_y = auVar9._20_4_;
     vertex2.u = in_stack_fffffe8c._24_4_;
-    vertex2.z = uVar11;
-    vertex2.r = uVar12;
-    vertex2.g = (int)pSVar13;
-    vertex2.fog = (int)pCVar2;
+    vertex2.r = uVar11;
+    vertex2.g = uVar12;
+    vertex2.b = (int)pSVar13;
+    vertex2.a = (int)pCVar2;
     engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffe5c,vertex2);
     pCVar2 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0
                        (this_ptr_00,&CStack_e4,corner_index ^ 2);
@@ -178,10 +178,10 @@ void __cdecl core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(CDemonAct
     vertex2_00.projected_vertex.screen_x = auVar9._16_4_;
     vertex2_00.projected_vertex.screen_y = auVar9._20_4_;
     vertex2_00.u = in_stack_fffffe8c._24_4_;
-    vertex2_00.z = uVar11;
-    vertex2_00.r = uVar12;
-    vertex2_00.g = (int)pSVar13;
-    vertex2_00.fog = (int)pCVar2;
+    vertex2_00.r = uVar11;
+    vertex2_00.g = uVar12;
+    vertex2_00.b = (int)pSVar13;
+    vertex2_00.a = (int)pCVar2;
     engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffe5c,vertex2_00);
     pCVar2 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0
                        (this_ptr_00,&CStack_84,corner_index ^ 4);
@@ -237,10 +237,10 @@ void __cdecl core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(CDemonAct
     vertex2_01.projected_vertex.screen_x = auVar9._16_4_;
     vertex2_01.projected_vertex.screen_y = auVar9._20_4_;
     vertex2_01.u = in_stack_fffffe8c._24_4_;
-    vertex2_01.z = uVar11;
-    vertex2_01.r = uVar12;
-    vertex2_01.g = (int)pSVar13;
-    vertex2_01.fog = (int)input;
+    vertex2_01.r = uVar11;
+    vertex2_01.g = uVar12;
+    vertex2_01.b = (int)pSVar13;
+    vertex2_01.a = (int)input;
     engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffe5c,vertex2_01);
   } while ((int)corner_index < 8);
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_0000000c);

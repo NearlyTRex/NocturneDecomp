@@ -9,13 +9,14 @@
 void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCharacter *this_ptr,float delta_time,int disable_search)
 
 {
-  int iVar1;
+  EDeathState EVar1;
   int iVar2;
   CEnemy *pCVar3;
   CCharacter *pCVar4;
   CVector3f *pCVar5;
   float fVar6;
   CLocation *pCVar7;
+  int iVar8;
   float fStack_100;
   CVector3f CStack_f8;
   CVector3f CStack_ec;
@@ -36,12 +37,12 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCh
   CVector3f CStack_38;
   float fStack_24;
   CCharacter *pCStack_20;
-  int iStack_1c;
+  EDeathState EStack_1c;
   int iStack_18;
   float fStack_14;
   
-  iVar1 = (*(((this_ptr->base).vtable._uc)->_uc).getDeathState)(this_ptr);
-  if (iVar1 != 0) {
+  EVar1 = (*(((this_ptr->base).vtable._uc)->_uc).getDeathState)(this_ptr);
+  if (EVar1 != DEATH_STATE_ALIVE) {
     disable_search = 1;
   }
   pCStack_20 = (CCharacter *)0x0;
@@ -55,13 +56,13 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCh
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                 (&this_ptr->base,&CStack_5c,&CStack_a4);
       iStack_18 = 0;
-      for (iVar1 = 0; iVar1 < g_CDemonSetPtr->character_count; iVar1 = iVar1 + 1) {
+      for (iVar8 = 0; iVar8 < g_CDemonSetPtr->character_count; iVar8 = iVar8 + 1) {
         pCVar4 = *(CCharacter **)((int)g_CDemonSetPtr->characters + iStack_18);
         if ((pCVar4 != this_ptr) &&
            (iVar2 = (*((pCVar4->base).vtable._ub)->shouldIgnoreForTargeting)(&pCVar4->base),
            iVar2 == 0)) {
-          iStack_1c = (*(((pCVar4->base).vtable._uc)->_uc).getDeathState)(pCVar4);
-          if ((iStack_1c == 0) || ((pCVar4->model).model_name[0] == '\0')) {
+          EStack_1c = (*(((pCVar4->base).vtable._uc)->_uc).getDeathState)(pCVar4);
+          if ((EStack_1c == DEATH_STATE_ALIVE) || ((pCVar4->model).model_name[0] == '\0')) {
             pCVar7 = &(pCVar4->base).location;
             if ((CLocation *)&CStack_ec != pCVar7) {
               CStack_ec.x = (pCVar7->position).x;
@@ -97,7 +98,7 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCh
             pCVar3 = (CEnemy *)
                      core_actor_cpp_castToClassHash_FUN_0040c790
                                (&pCVar4->base,g_CEnemyClassInfo.name_hash);
-            if (((pCVar3 != (CEnemy *)0x0) && (iStack_1c == 0)) &&
+            if (((pCVar3 != (CEnemy *)0x0) && (EStack_1c == DEATH_STATE_ALIVE)) &&
                (fStack_100 = 30.0, this_ptr == pCVar3->victim)) {
               fStack_100 = 40.0;
             }
@@ -106,7 +107,7 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCh
                iVar2 != 0)) {
               fStack_100 = 15.0;
             }
-            if ((fStack_100 < (float)15) && (0 < iStack_1c)) {
+            if ((fStack_100 < (float)15) && (0 < (int)EStack_1c)) {
               fStack_100 = 15.0;
             }
             fStack_100 = ((float)20 / (SQRT(fVar6) + (float)20)) *
@@ -159,8 +160,8 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCh
       g_CurrentLineNumber = 0xda0;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CCharacter::findSomethingToLookAt - Should be a character");
     }
-    iVar1 = (*(((pCVar4->base).vtable._uc)->_uc).getDeathState)(pCVar4);
-    if ((iVar1 == 0) || ((pCVar4->model).model_name[0] == '\0')) {
+    EVar1 = (*(((pCVar4->base).vtable._uc)->_uc).getDeathState)(pCVar4);
+    if ((EVar1 == DEATH_STATE_ALIVE) || ((pCVar4->model).model_name[0] == '\0')) {
       pCVar7 = &(pCVar4->base).location;
       if ((CLocation *)&CStack_74 != pCVar7) {
         CStack_74.x = (pCVar7->position).x;

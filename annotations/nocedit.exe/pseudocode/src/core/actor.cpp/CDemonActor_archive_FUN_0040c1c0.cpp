@@ -22,7 +22,8 @@ void __cdecl core_actor_cpp_CDemonActor_archive_FUN_0040c1c0(CDemonActor *this_p
   else if (g_CDemonActorClassVersion < 6) {
     return;
   }
-  core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->was_created,"wasCreated");
+  core_actor_cpp_archiveInteger_FUN_0040b7f0
+            ((int *)&this_ptr->lifecycle_state,"wasCreated");
   core_actor_cpp_archiveFloat_FUN_0040b770(&this_ptr->create_prob,"createProb");
   core_actor_cpp_archiveString_FUN_0040b5c0(this_ptr->create_event,"createEvent");
   return;

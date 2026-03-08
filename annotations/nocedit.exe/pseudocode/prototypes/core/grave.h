@@ -47,9 +47,9 @@ void __cdecl CGrave::archive(CGrave *this_ptr);
 // Address: 004ee8f0
 CBoundingBox3D * __cdecl CGrave::getBoundingBox(CGrave *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_grave.cpp_CGrave_hasCollision_FUN_004ee9d0
+// Original: core_grave.cpp_CGrave_getCollisionType_FUN_004ee9d0
 // Address: 004ee9d0
-int __cdecl CGrave::hasCollision(CGrave *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CGrave::getCollisionType(CGrave *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_grave.cpp_CGrave_getPropertyList_FUN_004ee9e0
 // Address: 004ee9e0

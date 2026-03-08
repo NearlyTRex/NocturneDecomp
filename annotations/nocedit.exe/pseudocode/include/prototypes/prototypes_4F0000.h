@@ -31,6 +31,8 @@
 #include "types/classes/CPathMap.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CWeapon.h"
+#include "types/enums/ECollisionType.h"
+#include "types/enums/EDeathState.h"
 #include "types/enums/EHeroType.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SCollisionReturnInfo.h"
@@ -75,7 +77,7 @@ void __cdecl core_health_cpp_CHealthItem_process_FUN_004f1e50(CHealthItem *this_
 int __cdecl core_health_cpp_CHealthItem_renderOpaque_FUN_004f1e60(CHealthItem *this_ptr);
 CBoundingBox3D * __cdecl core_health_cpp_CHealthItem_getBoundingBox_FUN_004f1ed0(CHealthItem *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_health_cpp_CHealthItem_archive_FUN_004f1f20(CHealthItem *this_ptr);
-int __cdecl core_health_cpp_CHealthItem_hasCollision_FUN_004f1fa0(CHealthItem *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl core_health_cpp_CHealthItem_getCollisionType_FUN_004f1fa0(CHealthItem *this_ptr,SCollisionInfo *collision_info);
 int __cdecl core_health_cpp_CHealthItem_canPickup_FUN_004f1fb0(CHealthItem *this_ptr,CDemonActor *picker);
 int __cdecl core_health_cpp_CHealthItem_useItem_FUN_004f1fd0(CHealthItem *this_ptr,CCharacter *user);
 void __cdecl core_health_cpp_CHealthItem_onPickup_FUN_004f2020(CHealthItem *this_ptr,CDemonActor *owner);
@@ -168,11 +170,11 @@ CDemonActorType * __cdecl core_hotdemon_cpp_CHotDemon_getActorType_FUN_004f6c90(
 CHotDemon * __cdecl core_hotdemon_cpp_CHotDemon_ctor_FUN_004f6ca0(CHotDemon *this_ptr);
 void __cdecl core_hotdemon_cpp_CHotDemon_setup_FUN_004f6d00(CHotDemon *this_ptr);
 void __cdecl core_hotdemon_cpp_CHotDemon_process_FUN_004f6f20(CHotDemon *this_ptr,float delta_time);
-int __cdecl core_hotdemon_cpp_CHotDemon_getDeathState_FUN_004f7680(CHotDemon *this_ptr);
+EDeathState __cdecl core_hotdemon_cpp_CHotDemon_getDeathState_FUN_004f7680(CHotDemon *this_ptr);
 void __cdecl core_hotdemon_cpp_CHotDemon_archive_FUN_004f76c0(CHotDemon *this_ptr);
 void __cdecl core_hotdemon_cpp_CHotDemon_processDamage_FUN_004f7720(CHotDemon *this_ptr,SDamageInfo *damage_info);
 int __cdecl core_hotdemon_cpp_CHotDemon_getTargetPoints_FUN_004f78f0(CHotDemon *this_ptr,CVector3f *out_points_array);
-void __cdecl core_hotdemon_cpp_CHotDemon_hasCollision_FUN_004f79b0(CHotDemon *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl core_hotdemon_cpp_CHotDemon_getCollisionType_FUN_004f79b0(CHotDemon *this_ptr,SCollisionInfo *collision_info);
 void __cdecl core_hotdemon_cpp_CHotDemon_getPropertyList_FUN_004f79d0(CHotDemon *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_hotdemon_cpp_CHotDemon_addFilesToExtract_FUN_004f7a10(CHotDemon *this_ptr,_FILE *file_handle);
 CDemonActor * __cdecl core_hotdemon_cpp_CHotDemon_dtor_FUN_004f7a40(CHotDemon *this_ptr,uint flags);
@@ -221,7 +223,7 @@ void __cdecl core_imp_cpp_CImp_archive_FUN_004fab00(CImp *this_ptr);
 void __cdecl core_imp_cpp_CImp_processDismemberment_FUN_004fab60(CImp *this_ptr,SDamageInfo *damage_info);
 void __cdecl core_imp_cpp_CImp_processDamage_FUN_004fae00(CImp *this_ptr,SDamageInfo *damage_info);
 int __cdecl core_imp_cpp_CImp_getTargetPoints_FUN_004faf40(CImp *this_ptr,CVector3f *out_points_array);
-void __cdecl core_imp_cpp_CImp_hasCollision_FUN_004fb0f0(CImp *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl core_imp_cpp_CImp_getCollisionType_FUN_004fb0f0(CImp *this_ptr,SCollisionInfo *collision_info);
 void __cdecl core_imp_cpp_CImp_getPropertyList_FUN_004fb110(CImp *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_imp_cpp_CImp_addFilesToExtract_FUN_004fb150(CImp *this_ptr,_FILE *file_handle);
 CImp * __cdecl core_imp_cpp_CImp_dtor_FUN_004fb180(CImp *this_ptr,uint flags);

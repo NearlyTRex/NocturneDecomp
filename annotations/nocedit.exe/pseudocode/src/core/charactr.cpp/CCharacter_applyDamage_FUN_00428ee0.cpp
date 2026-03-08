@@ -9,11 +9,11 @@
 void __cdecl core_charactr_cpp_CCharacter_applyDamage_FUN_00428ee0(CCharacter *this_ptr,int damage_type,float damage_amount)
 
 {
-  int iVar1;
+  EDeathState EVar1;
   SDamageInfo SStack_40;
   
-  iVar1 = (*(((this_ptr->base).vtable._uc)->_uc).getDeathState)(this_ptr);
-  if (0 < iVar1) {
+  EVar1 = (*(((this_ptr->base).vtable._uc)->_uc).getDeathState)(this_ptr);
+  if (0 < (int)EVar1) {
     return;
   }
   core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&SStack_40);

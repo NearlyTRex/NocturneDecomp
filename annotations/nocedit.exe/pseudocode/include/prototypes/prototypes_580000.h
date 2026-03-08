@@ -25,6 +25,7 @@
 #include "types/classes/CSlew.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
+#include "types/enums/ECollisionType.h"
 #include "types/structs/CLodMeshPrecomputeEntry.h"
 #include "types/structs/SCollisionInfo.h"
 
@@ -119,7 +120,7 @@ void __cdecl core_simbox_cpp_CSimBox_process_FUN_00588f20(CSimBox *this_ptr,floa
 int __cdecl core_simbox_cpp_CSimBox_renderOpaque_FUN_005890f0(CSimBox *this_ptr);
 CBoundingBox3D * __cdecl core_simbox_cpp_CSimBox_getBoundingBox_FUN_00589160(CSimBox *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_simbox_cpp_CSimBox_archive_FUN_005891b0(CSimBox *this_ptr);
-int __cdecl core_simbox_cpp_CSimBox_hasCollision_FUN_00589260(CSimBox *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl core_simbox_cpp_CSimBox_getCollisionType_FUN_00589260(CSimBox *this_ptr,SCollisionInfo *collision_info);
 void __cdecl core_simbox_cpp_CSimBox_propertyDisplayCallback_FUN_00589270(CSimBox *this_ptr,CActorProperty *property,char *output_buffer);
 int __cdecl core_simbox_cpp_CSimBox_propertyActionCallback_FUN_005892d0(CSimBox *this_ptr,CActorProperty *property);
 void __cdecl core_simbox_cpp_CSimBox_getPropertyList_FUN_00589310(CSimBox *this_ptr,CActorPropertyList *property_list);

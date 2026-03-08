@@ -8,7 +8,7 @@
 ; SCameraViewportState * Stack[0x8]:4   camera_state
 ;
 ; XREF[1]:
-;   core_dcamera.cpp_CDemonCamera_testBoxOcclusion_FUN_004544f0 at 004545c4
+;   core_dcamera.cpp_CDemonCamera_testVisibility_FUN_004544f0 at 004545c4
 ;
 ; Referenced Globals:
 ;   int g_ProjectionScale = 0x10000

@@ -41,7 +41,7 @@ CDemonActor * __cdecl core_actor_cpp_CDemonActor_ctor_FUN_004088b0(CDemonActor *
     pcVar3[1] = cVar1;
     pcVar3 = pcVar3 + 2;
   } while (cVar1 != '\0');
-  ADJ(pCVar2)->was_created = 0;
+  ADJ(pCVar2)->lifecycle_state = ACTOR_NOT_CREATED;
   ADJ(pCVar2)->standing_platform = (CPlatform *)0x0;
   (ADJ(pCVar2)->platform_position_delta).z = 0.0;
   (ADJ(pCVar2)->platform_position_delta).y = (ADJ(pCVar2)->platform_position_delta).z;

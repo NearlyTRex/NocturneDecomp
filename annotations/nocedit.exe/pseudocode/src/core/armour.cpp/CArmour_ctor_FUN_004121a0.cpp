@@ -37,6 +37,6 @@ CArmour * __cdecl core_armour_cpp_CArmour_ctor_FUN_004121a0(CArmour *this_ptr)
     pcVar6[1] = cVar1;
     pcVar6 = pcVar6 + 2;
   } while (cVar1 != '\0');
-  (pCVar4->base).base.collision_layer = 2;
+  (pCVar4->base).base.blood_type = 2;
   return pCVar4;
 }

@@ -220,7 +220,7 @@
 ;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0041a050
 ;   core_bodypart.cpp_createBodyPart_FUN_00418e10
 ;   core_bodypart.cpp_subtractVector_FUN_0041b510
-;   core_bugs.cpp_FUN_00427b70
+;   core_bugs.cpp_getDeformableModelName_FUN_00427b70
 ;   core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_0042bd30
 ;   core_charactr.cpp_CCharacter_initGesture_FUN_0042d390
 ;   core_charactr.cpp_CCharacter_setLookAtTarget_FUN_0042ddd0
@@ -3201,7 +3201,7 @@ section .text
     LEA EAX,[EDX + 0x20]                ; 0055c8f3
     PUSH EAX                            ; 0055c8f6
     CALL core_bodypart.cpp_createBodyPart_FUN_00418e10 ; 0055c8f7
-        ;   XREF to: 00418e10 (UNCONDITIONAL_CALL)  ; CBodyPart * core_bodypart.cpp_createBodyPart_FUN_00418e10()
+        ;   XREF to: 00418e10 (UNCONDITIONAL_CALL)  ; CBodyPart * core_bodypart.cpp_createBodyPart_FUN_00418e10(CVector3f * position, UOrientationVector * orientation, CVector3f * initial_velocity, CDemonActor * scale_source, ...)
     ADD ESP,0x1c                        ; 0055c8fc
     XOR EDI,EDI                         ; 0055c8ff
     MOV dword ptr [ESP + 0x3ebc],EAX    ; 0055c901
@@ -3859,8 +3859,8 @@ section .text
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
     LEA EAX,[ESI + 0x158]               ; 0055d13b
     PUSH EAX                            ; 0055d141
-    CALL core_bugs.cpp_FUN_00427b70     ; 0055d142
-        ;   XREF to: 00427b70 (UNCONDITIONAL_CALL)  ; int core_bugs.cpp_FUN_00427b70()
+    CALL core_bugs.cpp_getDeformableModelName_FUN_00427b70 ; 0055d142
+        ;   XREF to: 00427b70 (UNCONDITIONAL_CALL)  ; char * core_bugs.cpp_getDeformableModelName_FUN_00427b70(CDeformableModelInstance * model_ptr)
     ADD ESP,0x4                         ; 0055d147
     PUSH EAX                            ; 0055d14a
     LEA EAX,[ESP + 0x1bb0]              ; 0055d14b

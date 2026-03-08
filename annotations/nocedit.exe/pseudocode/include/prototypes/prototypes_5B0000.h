@@ -26,6 +26,8 @@
 #include "types/classes/CWavInDevice.h"
 #include "types/classes/CWavOutDevice.h"
 #include "types/classes/CWeapon.h"
+#include "types/enums/ECollisionType.h"
+#include "types/enums/EGroundType.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SHardwareEdge.h"
 #include "types/structs/SIntersectXZCylinder.h"
@@ -206,7 +208,7 @@ void __cdecl core_spike_cpp_CSpike_process_FUN_005b8410(CSpike *this_ptr,float d
 int __cdecl core_spike_cpp_CSpike_renderOpaque_FUN_005b8730(CSpike *this_ptr);
 CBoundingBox3D * __cdecl core_spike_cpp_CSpike_getBoundingBox_FUN_005b87a0(CSpike *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_spike_cpp_CSpike_archive_FUN_005b87f0(CSpike *this_ptr);
-int __cdecl core_spike_cpp_CSpike_hasCollision_FUN_005b8940(CSpike *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl core_spike_cpp_CSpike_getCollisionType_FUN_005b8940(CSpike *this_ptr,SCollisionInfo *collision_info);
 void __cdecl core_spike_cpp_CSpike_testCollisionWithCharacters_FUN_005b8950(CSpike *this_ptr);
 void __cdecl core_spike_cpp_CSpike_getPropertyList_FUN_005b8e90(CSpike *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_spike_cpp_CSpike_processInEditor_FUN_005b9020(CSpike *this_ptr);
@@ -234,11 +236,11 @@ void __cdecl core_stairs_cpp_CStairs_process_FUN_005b9c00(CStairs *this_ptr,floa
 int __cdecl core_stairs_cpp_CStairs_renderOpaque_FUN_005b9c10(CStairs *this_ptr);
 CBoundingBox3D * __cdecl core_stairs_cpp_CStairs_getBoundingBox_FUN_005ba490(CStairs *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_stairs_cpp_CStairs_archive_FUN_005ba4f0(CStairs *this_ptr);
-int __cdecl core_stairs_cpp_CStairs_hasCollision_FUN_005ba570(CStairs *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl core_stairs_cpp_CStairs_getCollisionType_FUN_005ba570(CStairs *this_ptr,SCollisionInfo *collision_info);
 float __cdecl core_stairs_cpp_CStairs_customRayIntersect_FUN_005ba590(CStairs *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction, CVector3f *out_normal);
 void __cdecl core_stairs_cpp_CStairs_customIntersectCylinderXZ_FUN_005ba660(CStairs *this_ptr,SIntersectXZCylinder *cylinder);
 int __cdecl core_stairs_cpp_CStairs_customGetFloorHeight_FUN_005ba6a0(CStairs *this_ptr,float x_pos,float z_pos,float *out_floor_height);
-int __cdecl core_stairs_cpp_CStairs_getGroundType_FUN_005ba6f0(CStairs *this_ptr);
+EGroundType __cdecl core_stairs_cpp_CStairs_getGroundType_FUN_005ba6f0(CStairs *this_ptr);
 void __cdecl core_stairs_cpp_CStairs_FUN_005ba700(CStairs *this_ptr);
 void __cdecl core_stairs_cpp_CStairs_getPropertyList_FUN_005ba840(CStairs *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_stairs_cpp_CStairs_processInEditor_FUN_005ba900(CStairs *this_ptr);

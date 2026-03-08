@@ -50,9 +50,9 @@ void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_004900b0(SMRGLTextureBas
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[vertex_index].projected_vertex,&local_44);
   iVar1 = (sky_texture->base).type;
-  g_RenderVertexBuffer[vertex_index].z = iVar1;
   g_RenderVertexBuffer[vertex_index].r = iVar1;
   g_RenderVertexBuffer[vertex_index].g = iVar1;
-  g_RenderVertexBuffer[vertex_index].fog = 0;
+  g_RenderVertexBuffer[vertex_index].b = iVar1;
+  g_RenderVertexBuffer[vertex_index].a = 0;
   return;
 }

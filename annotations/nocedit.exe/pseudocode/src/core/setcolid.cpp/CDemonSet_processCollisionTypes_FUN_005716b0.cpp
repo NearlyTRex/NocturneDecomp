@@ -15,7 +15,7 @@ float __cdecl core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0(CDe
   CDemonActor *pCVar2;
   int iVar3;
   CSpike *pCVar4;
-  uint uVar4;
+  ECollisionType bounding_box_type;
   CBoundingBox3D *other;
   CVector3f *pCVar5;
   int iVar6;
@@ -31,6 +31,8 @@ float __cdecl core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0(CDe
   int iVar16;
   CVector3f *pCVar17;
   CKeyFramedModel *this_ptr_00;
+  EGroundType EVar18;
+  uint corner_index;
   CVector3f CStack_308;
   CVector3f CStack_2fc;
   CVector3f CStack_2f0;
@@ -125,10 +127,10 @@ float __cdecl core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0(CDe
           if (pCVar4 == (CSpike *)0x0) {
             local_158.deformable_model = (CDeformableModelInstance *)pCVar4;
             local_158.keyframed_model = (CKeyFramedModelInstance *)pCVar4;
-            uVar4 = (*((pCVar2->vtable)._ub)->hasCollision)(pCVar2,&local_158);
-            if (uVar4 != 0) {
+            bounding_box_type = (*((pCVar2->vtable)._ub)->getCollisionType)(pCVar2,&local_158);
+            if (bounding_box_type != COLLISION_TYPE_NONE) {
               other = core_actor_cpp_CDemonActor_getWorldBoundingBox_FUN_00409270
-                                (pCVar2,&CStack_118,&local_158,uVar4);
+                                (pCVar2,&CStack_118,&local_158,bounding_box_type);
               iVar3 = core_box_cpp_CBoundingBox3D_doesBoxIntersect_FUN_00421010(&local_100,other);
               if (iVar3 != 0) {
                 if ((this_ptr->skip_exact_collisions == 0) &&
@@ -161,15 +163,15 @@ float __cdecl core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0(CDe
                     }
                   }
                 }
-                else if (uVar4 < 2) {
-                  if (uVar4 == 1) {
+                else if (bounding_box_type < COLLISION_TYPE_CYLINDER) {
+                  if (bounding_box_type == COLLISION_TYPE_MESH) {
                     __arrinit(&CStack_308,8,&g_CVectorTypeInfo);
                     pCVar17 = &CStack_308;
-                    uVar4 = 0;
+                    corner_index = 0;
                     (*((pCVar2->vtable)._ub)->getBoundingBox)(pCVar2,&CStack_130);
                     do {
                       pCVar5 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0
-                                         (&CStack_130,&CStack_70,uVar4);
+                                         (&CStack_130,&CStack_70,corner_index);
                       pCVar5 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                                          (pCVar2,&CStack_7c,pCVar5);
                       if (pCVar17 != pCVar5) {
@@ -177,9 +179,9 @@ float __cdecl core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0(CDe
                         pCVar17->y = pCVar5->y;
                         pCVar17->z = pCVar5->z;
                       }
-                      uVar4 = uVar4 + 1;
+                      corner_index = corner_index + 1;
                       pCVar17 = pCVar17 + 1;
-                    } while ((int)uVar4 < 8);
+                    } while ((int)corner_index < 8);
                     core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0049a790
                               (&CStack_270,&CStack_308,&CStack_2d8,&CStack_2c0);
                     iVar3 = core_dtri_cpp_rayTriangleFloorTest_FUN_0049b2f0
@@ -308,8 +310,8 @@ LAB_005722ec:
                     core_main_c_displayErrorAndQuit_FUN_00506f10("Invalid collision type!");
                   }
                 }
-                else if (2 < uVar4) {
-                  if (uVar4 != 3) goto LAB_005722ec;
+                else if (COLLISION_TYPE_CYLINDER < bounding_box_type) {
+                  if (bounding_box_type != COLLISION_TYPE_CUSTOM) goto LAB_005722ec;
                   core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                             (pCVar2,&CStack_4c,&local_e8);
                   fStack_20 = local_28 - (pCVar2->location).position.y;
@@ -338,8 +340,8 @@ LAB_005722ec:
     }
     pCVar2 = this_ptr->collision_actor;
     if (pCVar2 != (CDemonActor *)0x0) {
-      iVar3 = (*((pCVar2->vtable)._ub)->getGroundType)(pCVar2);
-      this_ptr->ground_type = iVar3;
+      EVar18 = (*((pCVar2->vtable)._ub)->getGroundType)(pCVar2);
+      this_ptr->ground_type = EVar18;
       return local_28;
     }
   }

@@ -20,6 +20,7 @@
 #include "types/classes/CStrList.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
+#include "types/enums/ECollisionType.h"
 #include "types/enums/EEditorActionType.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
@@ -113,7 +114,7 @@ int __cdecl core_sentinel_cpp_CSentinel_attractActorToward_FUN_00568b70(CSentine
 void __cdecl core_sentinel_cpp_CSentinel_archive_FUN_00568c70(CSentinel *this_ptr);
 void __cdecl core_sentinel_cpp_CSentinel_processDamage_FUN_00568cd0(CSentinel *this_ptr,SDamageInfo *damage_info);
 int __cdecl core_sentinel_cpp_CSentinel_getTargetPoints_FUN_00568dd0(CSentinel *this_ptr,CVector3f *out_points_array);
-void __cdecl core_sentinel_cpp_CSentinel_hasCollision_FUN_00568ef0(CSentinel *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl core_sentinel_cpp_CSentinel_getCollisionType_FUN_00568ef0(CSentinel *this_ptr,SCollisionInfo *collision_info);
 void __cdecl core_sentinel_cpp_CSentinel_getPropertyList_FUN_00568f10(CSentinel *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_sentinel_cpp_CSentinel_addFilesToExtract_FUN_00568f50(CSentinel *this_ptr,_FILE *file_handle);
 CSentinel * __cdecl core_sentinel_cpp_CSentinel_dtor_FUN_00568f80(CSentinel *this_ptr,uint flags);

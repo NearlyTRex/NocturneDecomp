@@ -1,0 +1,283 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 238,
+    "complexity_score": 198,
+    "cross_reference_count": 1,
+    "function_call_count": 6,
+    "global_count": 8,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 103,
+    "suspect_count": 8,
+    "suspect_types": [
+      "decompiler_intrinsic",
+      "pointer_cast",
+      "warning_type_propagation"
+    ],
+    "total_lines": 341
+  },
+  "cross_references": [
+    {
+      "addr": "00425cc0",
+      "from_addr": "00425d6f",
+      "name": "core_bugs.cpp_CBugs_updateBugsBehavior_FUN_00425cc0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00427400",
+    "address_range": [
+      [
+        "00427400",
+        "004276bc"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_bugs.cpp_CBugs_setSwarmTarget_FUN_00427400",
+    "signature": "void __cdecl core_bugs_cpp_CBugs_setSwarmTarget_FUN_00427400(CBugs *this_ptr,CDemonActor *target)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c790",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790"
+    },
+    {
+      "addr": "0040cc70",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomInt_FUN_0040cc70"
+    },
+    {
+      "addr": "00425660",
+      "is_variadic": false,
+      "name": "core_bugs.cpp_CBugs_initializeSwarmGraph_FUN_00425660"
+    },
+    {
+      "addr": "005a07a0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0"
+    },
+    {
+      "addr": "005a01d0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0"
+    },
+    {
+      "addr": "00441890",
+      "is_variadic": true,
+      "name": "engine_console.cpp_CConsole_printf_FUN_00441890"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00616e63",
+      "name": "s_s_swarming_on_s_at_LOD_d_00616e63",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0066e8e0",
+      "name": "g_CConsolePtr",
+      "type": "CConsole*",
+      "value": "0083b1a4"
+    },
+    {
+      "addr": "00822f48",
+      "name": "g_BugsSortedVertexIndices",
+      "type": "int[700]",
+      "value": null
+    },
+    {
+      "addr": "00822f4c",
+      "name": "DAT_00822f4c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00822f50",
+      "name": "DAT_00822f50",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0083b1a4",
+      "name": "g_CConsoleInstance",
+      "type": "CConsole",
+      "value": null
+    },
+    {
+      "addr": "02cf2bf0",
+      "name": "g_CEnemyClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02db880c",
+      "name": "g_CHeroClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00425d6f",
+        "call_type": "direct",
+        "caller": "core_bugs.cpp_CBugs_updateBugsBehavior_FUN_00425cc0",
+        "estimated_params": 2,
+        "instructions_analyzed": 5,
+        "reg_params": [],
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.896373056994818,
+    "instruction_count": 193,
+    "opcode_distribution": {
+      "BOOL_AND": 2,
+      "BOOL_NEGATE": 12,
+      "BOOL_OR": 4,
+      "BRANCH": 2,
+      "CALL": 9,
+      "CBRANCH": 17,
+      "COPY": 155,
+      "INT_ADD": 107,
+      "INT_AND": 130,
+      "INT_CARRY": 16,
+      "INT_EQUAL": 105,
+      "INT_LEFT": 3,
+      "INT_LESS": 12,
+      "INT_MULT": 15,
+      "INT_NOTEQUAL": 18,
+      "INT_OR": 10,
+      "INT_SBORROW": 13,
+      "INT_SCARRY": 21,
+      "INT_SDIV": 1,
+      "INT_SEXT": 10,
+      "INT_SLESS": 52,
+      "INT_SREM": 1,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 47,
+      "INT_XOR": 7,
+      "INT_ZEXT": 2,
+      "LOAD": 62,
+      "POPCOUNT": 50,
+      "RETURN": 1,
+      "STORE": 51,
+      "SUBPIECE": 8
+    },
+    "pcode_op_count": 945
+  },
+  "stack_frame": {
+    "frame_size": 36,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBugs *"
+      },
+      {
+        "is_param": true,
+        "name": "target",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonActor *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 56,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "*(int *)((int)g_BugsSortedVertexIndices + iVar9) = iVar6;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 65,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "if (*(int *)(*(int *)((int)g_BugsSortedVertexIndices + iVar9 + 4) * 0xc + 4 + iVar1) <",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 66,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "*(int *)(*(int *)((int)g_BugsSortedVertexIndices + iVar9) * 0xc + 4 + iVar1)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 67,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "puVar8 = (uint *)((int)g_BugsSortedVertexIndices + iVar9 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 68,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "uVar2 = *(uint *)((int)g_BugsSortedVertexIndices + iVar9);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 69,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)g_BugsSortedVertexIndices + iVar9) = *puVar8;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 87,
+      "match": "CONCAT44",
+      "severity": "mild",
+      "text": "(0,(int)(CONCAT44(this_ptr->swarm_vertex_count >> 0x1f,",
+      "type": "decompiler_intrinsic"
+    }
+  ]
+}

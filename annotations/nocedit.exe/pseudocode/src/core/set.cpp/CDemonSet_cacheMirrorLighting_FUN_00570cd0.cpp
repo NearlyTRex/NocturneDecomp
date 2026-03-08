@@ -21,11 +21,11 @@ void __cdecl core_set_cpp_CDemonSet_cacheMirrorLighting_FUN_00570cd0(CDemonSet *
   local_10.y = (int)ROUND(position->y * 256.0f);
   local_10.z = (int)ROUND(position->z * 256.0f);
   core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0(this_ptr,&local_10,(CVector3i *)0x0,0,0);
-  iVar1 = g_RenderVertexBuffer[0].z;
+  iVar1 = g_RenderVertexBuffer[0].r;
   this_ptr->mirror_lighting_cached = 1;
-  iVar2 = g_RenderVertexBuffer[0].g;
+  iVar2 = g_RenderVertexBuffer[0].b;
   this_ptr->mirror_cached_light = iVar1;
   this_ptr->mirror_cached_fog = iVar2;
-  this_ptr->mirror_cached_color = g_RenderVertexBuffer[0].r;
+  this_ptr->mirror_cached_color = g_RenderVertexBuffer[0].g;
   return;
 }

@@ -51,9 +51,9 @@ CBoundingBox3D * __cdecl CGlass::getBoundingBox(CGlass *this_ptr,CBoundingBox3D 
 // Address: 004ea090
 void __cdecl CGlass::archive(CGlass *this_ptr);
 
-// Original: core_glass.cpp_CGlass_hasCollision_FUN_004ea190
+// Original: core_glass.cpp_CGlass_getCollisionType_FUN_004ea190
 // Address: 004ea190
-int __cdecl CGlass::hasCollision(CGlass *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CGlass::getCollisionType(CGlass *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_glass.cpp_CGlass_createShatterParticles_FUN_004ea1c0
 // Address: 004ea1c0
@@ -69,7 +69,7 @@ void __cdecl CGlass::onLaserHit(CGlass *this_ptr,SLaserInfo *laser_info);
 
 // Original: core_glass.cpp_CGlass_getGroundType_FUN_004eb390
 // Address: 004eb390
-int __cdecl CGlass::getGroundType(CGlass *this_ptr);
+EGroundType __cdecl CGlass::getGroundType(CGlass *this_ptr);
 
 // Original: core_glass.cpp_CGlass_checkBreakableCondition_FUN_004eb3a0
 // Address: 004eb3a0

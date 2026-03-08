@@ -25,6 +25,7 @@
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
 #include "types/classes/CZombieCow.h"
+#include "types/enums/ECollisionType.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SColorQuantMapper.h"
 #include "types/structs/SCramRectangle.h"
@@ -75,7 +76,7 @@ int __cdecl core_conveyor_cpp_CConveyor_renderOpaque_FUN_00441f40(CConveyor *thi
 void __cdecl core_conveyor_cpp_CConveyor_renderBackground_FUN_00441f50(CConveyor *this_ptr,int layer_flag);
 int __cdecl core_conveyor_cpp_CConveyor_renderTransparent_FUN_00441f60(CConveyor *this_ptr);
 void __cdecl core_conveyor_cpp_CConveyor_archive_FUN_00442020(CConveyor *this_ptr);
-int __cdecl core_conveyor_cpp_CConveyor_hasCollision_FUN_004420c0(CConveyor *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl core_conveyor_cpp_CConveyor_getCollisionType_FUN_004420c0(CConveyor *this_ptr,SCollisionInfo *collision_info);
 CBoundingBox3D * __cdecl core_conveyor_cpp_CConveyor_getBoundingBox_FUN_004420d0(CConveyor *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_conveyor_cpp_CConveyor_getPropertyList_FUN_00442130(CConveyor *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_conveyor_cpp_CConveyor_processInEditor_FUN_004421c0(CConveyor *this_ptr);
@@ -107,7 +108,7 @@ CZombieCow * __cdecl core_cow_cpp_CZombieCow_ctor_FUN_00444140(CZombieCow *this_
 void __cdecl core_cow_cpp_CZombieCow_setup_FUN_004441b0(CZombieCow *this_ptr);
 void __cdecl core_cow_cpp_CZombieCow_process_FUN_00444310(CZombieCow *this_ptr,float delta_time);
 void __cdecl core_cow_cpp_CZombieCow_archive_FUN_00444840(CZombieCow *this_ptr);
-void __cdecl core_cow_cpp_CZombieCow_FUN_004448c0(CZombieCow *this_ptr);
+void __cdecl core_cow_cpp_CZombieCow_FUN_004448c0(CZombieCow *this_ptr,SDamageInfo *damage_info);
 void __cdecl core_cow_cpp_CZombieCow_processDamage_FUN_00444b40(CZombieCow *this_ptr,SDamageInfo *damage_info);
 int __cdecl core_cow_cpp_CZombieCow_getTargetPoints_FUN_00444c00(CZombieCow *this_ptr,CVector3f *out_points_array);
 void __cdecl core_cow_cpp_CZombieCow_getPropertyList_FUN_00444c50(CZombieCow *this_ptr,CActorPropertyList *property_list);
@@ -148,7 +149,7 @@ void __cdecl core_crate_cpp_CCrate_process_FUN_00448660(CCrate *this_ptr,float d
 int __cdecl core_crate_cpp_CCrate_renderOpaque_FUN_00448880(CCrate *this_ptr);
 void __cdecl core_crate_cpp_CCrate_renderBackground_FUN_004488f0(CCrate *this_ptr,int layer_flag);
 void __cdecl core_crate_cpp_CCrate_archive_FUN_00448910(CCrate *this_ptr);
-int __cdecl core_crate_cpp_CCrate_hasCollision_FUN_00448960(CCrate *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl core_crate_cpp_CCrate_getCollisionType_FUN_00448960(CCrate *this_ptr,SCollisionInfo *collision_info);
 CBoundingBox3D * __cdecl core_crate_cpp_CCrate_getBoundingBox_FUN_00448980(CCrate *this_ptr,CBoundingBox3D *out_box);
 int __cdecl core_crate_cpp_CCrate_getTargetPoints_FUN_004489d0(CCrate *this_ptr,CVector3f *out_points_array);
 void __cdecl core_crate_cpp_CCrate_explode_FUN_00448a70(CCrate *this_ptr);
@@ -179,7 +180,7 @@ void __cdecl core_curtain_cpp_CCurtain_process_FUN_0044a920(CCurtain *this_ptr,f
 int __cdecl core_curtain_cpp_CCurtain_renderMesh_FUN_0044b060(CCurtain *this_ptr);
 int __cdecl core_curtain_cpp_CCurtain_renderOpaque_FUN_0044b340(CCurtain *this_ptr);
 int __cdecl core_curtain_cpp_CCurtain_renderTransparent_FUN_0044b360(CCurtain *this_ptr);
-int __cdecl core_curtain_cpp_CCurtain_hasCollision_FUN_0044b370(CCurtain *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl core_curtain_cpp_CCurtain_getCollisionType_FUN_0044b370(CCurtain *this_ptr,SCollisionInfo *collision_info);
 CBoundingBox3D * __cdecl core_curtain_cpp_CCurtain_getBoundingBox_FUN_0044b380(CCurtain *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_curtain_cpp_CCurtain_archive_FUN_0044b3e0(CCurtain *this_ptr);
 int __cdecl core_curtain_cpp_CCurtain_getBlockVirtualDirectorFlag_FUN_0044b600(CCurtain *this_ptr);

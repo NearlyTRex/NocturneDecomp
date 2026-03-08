@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_glass_cpp_CGlass_getGroundType_FUN_004eb390(CGlass *this_ptr)
+; EGroundType __cdecl core_glass_cpp_CGlass_getGroundType_FUN_004eb390(CGlass *this_ptr)
 ;
 ; Parameters:
 ; CGlass *         Stack[0x4]:4   this_ptr

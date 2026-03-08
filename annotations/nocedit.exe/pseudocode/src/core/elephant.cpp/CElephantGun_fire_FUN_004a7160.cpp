@@ -14,10 +14,11 @@ int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_004a7160(CElephantGun *this_
   int iVar2;
   float fVar3;
   CCharacter *this_ptr_00;
+  EDeathState EVar4;
   CTrigger *this_ptr_01;
-  float fVar4;
-  float10 fVar5;
+  float fVar5;
   float10 fVar6;
+  float10 fVar7;
   SDamageInfo SStack_11c;
   CVector3f CStack_e0;
   CVector3f CStack_d4;
@@ -59,9 +60,9 @@ int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_004a7160(CElephantGun *this_
               (g_CSoundPtr,(CDemonActor *)this_ptr,"shotgun-noammo.wav",&CStack_80);
     return 0;
   }
-  fVar5 = (float10)fptan((float10)this_ptr->spread_angle * (float10)3.1415926535000001 *
+  fVar6 = (float10)fptan((float10)this_ptr->spread_angle * (float10)3.1415926535000001 *
                          (float10)0.0055555555555555497);
-  fStack_44 = (float)(fVar5 * (float10)(this_ptr->base).bolt_velocity);
+  fStack_44 = (float)(fVar6 * (float10)(this_ptr->base).bolt_velocity);
   fStack_38 = (float)core_actor_cpp_getRandomInt_FUN_0040cc70(10,0xf);
   pCStack_40 = (CCrate *)0x0;
   if (0 < (int)fStack_38) {
@@ -69,10 +70,10 @@ int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_004a7160(CElephantGun *this_
       fStack_48 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,6.2831855);
       fStack_18 = fStack_48;
       fStack_18 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,fStack_44);
-      fVar5 = (float10)fcos((float10)fStack_48);
-      fVar6 = (float10)fsin((float10)fStack_48);
-      CStack_bc.x = (float)(fVar5 * (float10)fStack_18);
-      CStack_bc.y = (float)(fVar6 * (float10)fStack_18);
+      fVar6 = (float10)fcos((float10)fStack_48);
+      fVar7 = (float10)fsin((float10)fStack_48);
+      CStack_bc.x = (float)(fVar6 * (float10)fStack_18);
+      CStack_bc.y = (float)(fVar7 * (float10)fStack_18);
       CStack_bc.z = (this_ptr->base).bolt_velocity;
       pCVar1 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
                          ((CDemonActor *)this_ptr,&CStack_b0,&CStack_bc);
@@ -108,8 +109,8 @@ int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_004a7160(CElephantGun *this_
                       core_actor_cpp_castToClassHash_FUN_0040c790
                                 (g_CDemonSetPtr->collision_actor,g_CCharacterClassInfo.name_hash);
         if ((this_ptr_00 != (CCharacter *)0x0) &&
-           (iVar2 = (*(((this_ptr_00->base).vtable._uc)->_uc).getDeathState)(this_ptr_00), 0 < iVar2
-           )) {
+           (EVar4 = (*(((this_ptr_00->base).vtable._uc)->_uc).getDeathState)(this_ptr_00),
+           0 < (int)EVar4)) {
           this_ptr_00 = (CCharacter *)0x0;
         }
         pCStack_20 = (CGlass *)
@@ -125,9 +126,9 @@ int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_004a7160(CElephantGun *this_
         pCStack_2c = (CFlameCan *)
                      core_actor_cpp_castToClassHash_FUN_0040c790
                                (g_CDemonSetPtr->collision_actor,g_CFlameCanClassInfo.name_hash);
-        fVar4 = (*(((this_ptr->base).base.vtable._uw)->_uw).getDamage)(&this_ptr->base);
+        fVar5 = (*(((this_ptr->base).base.vtable._uw)->_uw).getDamage)(&this_ptr->base);
         fStack_18 = fStack_38;
-        fStack_28 = ((1.0 - fVar3) * fVar4) / (float)(int)fStack_38;
+        fStack_28 = ((1.0 - fVar3) * fVar5) / (float)(int)fStack_38;
         if (this_ptr_00 == (CCharacter *)0x0) {
           if (pCStack_20 == (CGlass *)0x0) {
             if (this_ptr_01 == (CTrigger *)0x0) {

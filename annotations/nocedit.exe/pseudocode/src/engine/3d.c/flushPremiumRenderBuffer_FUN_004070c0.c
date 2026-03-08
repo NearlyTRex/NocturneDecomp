@@ -69,8 +69,8 @@ void __cdecl engine_3d_c_flushPremiumRenderBuffer_FUN_004070c0(void)
               piVar7 = piVar7 + (uint)bVar9 * -2 + 1;
               pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar9 * -2 + 1) * 4);
             }
-            *(ushort *)&g_RenderVertexBuffer[iVar3].fog =
-                 (ushort)g_RenderVertexBuffer[iVar3].fog ^ 0xffff;
+            *(ushort *)&g_RenderVertexBuffer[iVar3].a =
+                 (ushort)g_RenderVertexBuffer[iVar3].a ^ 0xffff;
             *(int *)((int)g_ProcessedVertexIndices + iVar2) = iVar3;
             iVar3 = iVar3 + 1;
             piVar6 = piVar6 + 0xc;

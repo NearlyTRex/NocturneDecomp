@@ -31,13 +31,13 @@ void __cdecl core_actor_cpp_CDemonActor_handleFootstep_FUN_0040ca10(CDemonActor 
   }
   iVar4 = core_setcolid_cpp_CDemonSet_isPointInWater_FUN_00574580(g_CDemonSetPtr,position);
   if (iVar4 != 0) {
-    surface_type = 6;
+    surface_type = GROUND_TYPE_WATER;
   }
   iVar4 = core_gore_cpp_CGore_findBloodTypeAtPosition_FUN_004ee0f0
                     (g_CGorePtr,position,(int *)&this_ptr->blood_effect_color);
   if (iVar4 == 0) {
     if (this_ptr->blood_effect_timer < 1) {
-      if (surface_type == 3) {
+      if (surface_type == GROUND_TYPE_DIRT) {
         core_gore_cpp_CGore_createFootstep_FUN_004ee070
                   (g_CGorePtr,position,&this_ptr->orient,3,0x4000,0);
       }

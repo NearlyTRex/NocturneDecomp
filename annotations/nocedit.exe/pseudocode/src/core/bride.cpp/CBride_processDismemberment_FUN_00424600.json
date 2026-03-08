@@ -1,0 +1,254 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 226,
+    "complexity_score": 96,
+    "cross_reference_count": 1,
+    "function_call_count": 6,
+    "global_count": 9,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 81,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_type_propagation"
+    ],
+    "total_lines": 307
+  },
+  "cross_references": [
+    {
+      "addr": "00424830",
+      "from_addr": "004248a3",
+      "name": "core_bride.cpp_CBride_processDamage_FUN_00424830",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00424600",
+    "address_range": [
+      [
+        "00424600",
+        "0042482a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_bride.cpp_CBride_processDismemberment_FUN_00424600",
+    "signature": "void __cdecl core_bride_cpp_CBride_processDismemberment_FUN_00424600(CBride *this_ptr,SDamageInfo *damage_info)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cd10",
+      "is_variadic": false,
+      "name": "core_actor.cpp_randomChance_FUN_0040cd10"
+    },
+    {
+      "addr": "0041a050",
+      "is_variadic": false,
+      "name": "core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0041a050"
+    },
+    {
+      "addr": "00418e10",
+      "is_variadic": false,
+      "name": "core_bodypart.cpp_createBodyPart_FUN_00418e10"
+    },
+    {
+      "addr": "0042bd30",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_0042bd30"
+    },
+    {
+      "addr": "0042f300",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_playSoundWithCooldown_FUN_0042f300"
+    },
+    {
+      "addr": "005feb5c",
+      "is_variadic": false,
+      "name": "crt_stdlib.c_rand_FUN_005feb5c"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "004245e8",
+      "name": "switchdataD_004245e8",
+      "type": "void*",
+      "value": "00424640"
+    },
+    {
+      "addr": "00616c69",
+      "name": "s_limb_wav_00616c69",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00616c75",
+      "name": "DOUBLE_00616c75",
+      "type": "double",
+      "value": "0.333000000000000"
+    },
+    {
+      "addr": "00616c7d",
+      "name": "DOUBLE_00616c7d",
+      "type": "double",
+      "value": "7"
+    },
+    {
+      "addr": "00616c85",
+      "name": "DOUBLE_00616c85",
+      "type": "double",
+      "value": "0.5"
+    },
+    {
+      "addr": "00616c8d",
+      "name": "DOUBLE_00616c8d",
+      "type": "double",
+      "value": "2.5"
+    },
+    {
+      "addr": "0067b654",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "02d81a9c"
+    },
+    {
+      "addr": "02d81ab0",
+      "name": "g_CGameInstance.blood_flag",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d81c7c",
+      "name": "g_CGameInstance.gratuitous_dismemberment",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004248a3",
+        "call_type": "direct",
+        "caller": "core_bride.cpp_CBride_processDamage_FUN_00424830",
+        "estimated_params": 2,
+        "instructions_analyzed": 4,
+        "reg_params": [],
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.0,
+    "instruction_count": 172,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 14,
+      "BOOL_OR": 2,
+      "BRANCH": 6,
+      "BRANCHIND": 1,
+      "CALL": 8,
+      "CBRANCH": 18,
+      "COPY": 302,
+      "FLOAT2FLOAT": 13,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_MULT": 4,
+      "FLOAT_NAN": 2,
+      "INT2FLOAT": 1,
+      "INT_ADD": 65,
+      "INT_AND": 74,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 55,
+      "INT_LEFT": 5,
+      "INT_LESS": 15,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 8,
+      "INT_OR": 10,
+      "INT_SBORROW": 15,
+      "INT_SCARRY": 7,
+      "INT_SDIV": 1,
+      "INT_SEXT": 1,
+      "INT_SLESS": 27,
+      "INT_SREM": 1,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 51,
+      "INT_ZEXT": 6,
+      "LOAD": 57,
+      "POPCOUNT": 27,
+      "RETURN": 3,
+      "STORE": 46,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 860
+  },
+  "stack_frame": {
+    "frame_size": 44,
+    "local_size": 36,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBride *"
+      },
+      {
+        "is_param": true,
+        "name": "damage_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SDamageInfo *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "00424609",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    }
+  ]
+}

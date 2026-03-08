@@ -4287,7 +4287,7 @@ section .text
     MOV EDI,dword ptr [0x006848fc]      ; 004ad2ae | g_CWeatherPtr
     PUSH EDI                            ; 004ad2b4 | g_CWeatherInstance
     CALL core_weather.cpp_CWeather_setWeatherType_FUN_005ef8c0 ; 004ad2b5
-        ;   XREF to: 005ef8c0 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_setWeatherType_FUN_005ef8c0(CWeather * this_ptr, int type)
+        ;   XREF to: 005ef8c0 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_setWeatherType_FUN_005ef8c0(CWeather * this_ptr, EWeatherType type)
     ADD ESP,0x8                         ; 004ad2ba
     JMP 0x004aaf1d                      ; 004ad2bd
         ;   XREF to: 004aaf1d (UNCONDITIONAL_JUMP)  ; LAB_004aaf1d

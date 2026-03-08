@@ -103,18 +103,18 @@ void __cdecl engine_drender_cpp_renderTriangleTextured_FUN_00483370(int *vertex_
           lVar1 = (longlong)(int)uVar10 * (longlong)(int)uVar8;
           g_EdgeInterpolationArray[iVar6].base.v_current =
                pSVar9->v + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-          lVar1 = (longlong)iVar7 * (longlong)(local_1c->z - pSVar9->z);
+          lVar1 = (longlong)iVar7 * (longlong)(local_1c->r - pSVar9->r);
           uVar8 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
           g_EdgeInterpolationArray[iVar6].base.z_gradient = uVar8;
           lVar1 = (longlong)(int)uVar10 * (longlong)(int)uVar8;
           g_EdgeInterpolationArray[iVar6].base.z_current =
-               pSVar9->z + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-          lVar1 = (longlong)iVar7 * (longlong)(local_1c->fog - pSVar9->fog);
+               pSVar9->r + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
+          lVar1 = (longlong)iVar7 * (longlong)(local_1c->a - pSVar9->a);
           uVar8 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
           g_EdgeInterpolationArray[iVar6].base.fog_gradient = uVar8;
           lVar1 = (longlong)(int)uVar10 * (longlong)(int)uVar8;
           g_EdgeInterpolationArray[iVar6].base.fog_current =
-               pSVar9->fog + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
+               pSVar9->a + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
           if (g_TexturesDisabled == 0) {
             lVar1 = (longlong)iVar7 *
                     (longlong)
@@ -138,18 +138,18 @@ void __cdecl engine_drender_cpp_renderTriangleTextured_FUN_00483370(int *vertex_
           }
           g_EdgeInterpolationArray[iVar6].base.w_current = iVar4 + local_2c;
           if ((g_RenderStateFlags.dword & 0x200) != 0) {
-            lVar1 = (longlong)iVar7 * (longlong)(local_1c->r - pSVar9->r);
+            lVar1 = (longlong)iVar7 * (longlong)(local_1c->g - pSVar9->g);
             uVar8 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
             g_EdgeInterpolationArray[iVar6].color_gradient = uVar8;
             lVar1 = (longlong)(int)uVar10 * (longlong)(int)uVar8;
             local_2c = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-            g_EdgeInterpolationArray[iVar6].color_current = pSVar9->r + local_2c;
-            lVar1 = (longlong)iVar7 * (longlong)(local_1c->g - pSVar9->g);
+            g_EdgeInterpolationArray[iVar6].color_current = pSVar9->g + local_2c;
+            lVar1 = (longlong)iVar7 * (longlong)(local_1c->b - pSVar9->b);
             uVar8 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
             g_EdgeInterpolationArray[iVar6].alpha_gradient = uVar8;
             lVar1 = (longlong)(int)uVar10 * (longlong)(int)uVar8;
             g_EdgeInterpolationArray[iVar6].alpha_current =
-                 pSVar9->g + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
+                 pSVar9->b + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
           }
           iVar6 = g_RenderTriangleEdgeCount + 1;
         }
@@ -234,14 +234,14 @@ LAB_00483606:
                (local_1c->projected_vertex).transformed_z + (local_1c->projected_vertex).inv_z;
           local_1c->u = iVar6 + iVar7;
           iVar6 = (local_1c->projected_vertex).screen_x;
-          iVar7 = local_1c->g;
+          iVar7 = local_1c->b;
           iVar4 = local_1c[1].projected_vertex.transformed_x;
           iVar5 = (local_1c->projected_vertex).screen_y;
-          local_1c->z = local_1c->z + local_1c->r;
-          iVar2 = local_1c->fog;
+          local_1c->r = local_1c->r + local_1c->g;
+          iVar2 = local_1c->a;
           (local_1c->projected_vertex).screen_x = iVar6 + iVar5;
           iVar6 = local_1c[1].projected_vertex.transformed_y;
-          local_1c->g = iVar7 + iVar2;
+          local_1c->b = iVar7 + iVar2;
           local_1c[1].projected_vertex.transformed_x = iVar4 + iVar6;
           (local_18->base).x_current = (local_18->base).x_current + (local_18->base).x_gradient;
           (local_18->base).u_current = (local_18->base).u_current + (local_18->base).u_gradient;

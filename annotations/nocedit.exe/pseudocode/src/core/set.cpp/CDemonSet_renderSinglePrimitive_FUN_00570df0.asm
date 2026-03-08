@@ -8,8 +8,8 @@
 ; SMRGLHeaderPrimitive * Stack[0x8]:4   prim
 ;
 ; XREF[2]:
-;   core_dcamera.cpp_CDemonCamera_testBoxOcclusion_FUN_004544f0 at 004546e3
-;   core_dlight.cpp_CDemonLight_testLightVolumeVisibility_FUN_00476a60 at 00476b4a
+;   core_dcamera.cpp_CDemonCamera_testVisibility_FUN_004544f0 at 004546e3
+;   core_dlight.cpp_CDemonLight_testVisibility_FUN_00476a60 at 00476b4a
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578

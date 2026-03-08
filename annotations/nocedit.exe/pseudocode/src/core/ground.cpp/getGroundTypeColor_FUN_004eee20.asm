@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint __cdecl core_ground_cpp_getGroundTypeColor_FUN_004eee20(int type)
+; uint __cdecl core_ground_cpp_getGroundTypeColor_FUN_004eee20(EGroundType type)
 ;
 ; Parameters:
-; int              Stack[0x4]:4   type
+; EGroundType      Stack[0x4]:4   type
 ;
 ; Referenced Globals:
 ;   void* switchdataD_004eede0 = 004eee31

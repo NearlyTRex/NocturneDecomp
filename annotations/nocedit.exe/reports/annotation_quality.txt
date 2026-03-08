@@ -11,54 +11,24 @@ manual annotation work.
 SUMMARY STATISTICS
 ====================================================================================================
 
-  Total functions analyzed:          6,485
-  Unnamed functions (FUN_):          137 ( 2.1%)
+  Total functions analyzed:          6,484
+  Unnamed functions (FUN_):          100 ( 1.5%)
   Functions with unnamed params:     11 ( 0.2%)
-  Functions with type issues:        2,373 (36.6%)
+  Functions with type issues:        2,358 (36.4%)
 
   Type issue breakdown:
     Wrong return type (void):          0
     Wrong return type (wide/64-bit):   0
     Missing register params:           4
-    Wrong calling convention:          36
+    Wrong calling convention:          35
     Undefined types in variables:      2271
-    Unresolved stack params:           277
+    Unresolved stack params:           244
 
 ====================================================================================================
 UNNAMED FUNCTIONS (still using FUN_XXXXXXXX or ClassName_FUN_XXXXXXXX)
 ====================================================================================================
 
 Sorted by caller count (most-referenced first = highest priority to name).
-
-  core/bugs.cpp (25 unnamed)
-    0x004272f0  __cdecl       5 callers
-    0x004276c0  __cdecl       3 callers
-    0x004257f0  __cdecl       3 callers
-    0x00426420  __cdecl       3 callers
-    0x00427ba0  __cdecl       2 callers
-    0x00425fe0  __cdecl       2 callers
-    0x004270f0  __cdecl       1 callers
-    0x00425660  __cdecl       1 callers
-    0x00426410  __cdecl       1 callers
-    0x004268e0  __cdecl       1 callers
-    0x00427400  __cdecl       1 callers
-    0x00425b70  __cdecl       1 callers
-    0x00425cc0  __cdecl       1 callers
-    0x00427b70  __cdecl       1 callers
-    0x00427b80  __cdecl       0 callers
-    0x004279d0  __cdecl       0 callers
-    0x00427b40  __cdecl       0 callers
-    0x00425340  __cdecl       0 callers
-    0x00427ad0  __cdecl       0 callers
-    0x00427b60  __cdecl       0 callers
-    0x00427a60  __cdecl       0 callers
-    0x004279b0  __cdecl       0 callers
-    0x004279f0  __cdecl       0 callers
-    0x00427a20  __cdecl       0 callers
-    0x00427b00  __cdecl       0 callers
-
-  core/actor.cpp (1 unnamed)
-    0x0040dec0  __cdecl       5 callers
 
   core/manpuz.cpp (16 unnamed)
     0x0050aef0  __cdecl       4 callers
@@ -136,20 +106,9 @@ Sorted by caller count (most-referenced first = highest priority to name).
   core/cow.cpp (1 unnamed)
     0x004448c0  __cdecl       1 callers
 
-  core/bride.cpp (2 unnamed)
-    0x00424600  __cdecl       1 callers
-    0x00424800  __cdecl       0 callers
-
   core/batman.cpp (2 unnamed)
     0x00417660  __cdecl       1 callers
     0x004167f0  __cdecl       1 callers
-
-  core/boneguy.cpp (5 unnamed)
-    0x0041cc40  __cdecl       1 callers
-    0x0041d8a0  __cdecl       1 callers
-    0x0041b700  __cdecl       0 callers
-    0x0041b860  __cdecl       0 callers
-    0x0041b770  __cdecl       0 callers
 
   core/lever.cpp (1 unnamed)
     0x00504dd0  __cdecl       1 callers
@@ -200,12 +159,6 @@ Sorted by caller count (most-referenced first = highest priority to name).
 
   core/cloth.cpp (1 unnamed)
     0x0043c3e0  __cdecl       0 callers
-
-  core/camview.cpp (4 unnamed)
-    0x00427d60  __cdecl       0 callers
-    0x00427d20  __cdecl       0 callers
-    0x00427d70  __cdecl       0 callers
-    0x00427d50  __cdecl       0 callers
 
   core/conveyor.cpp (3 unnamed)
     0x004424a0  __cdecl       0 callers
@@ -336,7 +289,7 @@ Missing register parameters (likely wrong calling convention) (4)
     Suggested: Likely register-based calling convention
 
 --------------------------------------------------------------------------------
-Wrong calling convention (unaffected register usage) (36)
+Wrong calling convention (unaffected register usage) (35)
 --------------------------------------------------------------------------------
 
   CTextureCache_loadTexture
@@ -427,12 +380,6 @@ Wrong calling convention (unaffected register usage) (36)
     Address: 0x005a14b0  File: core/skeleton.cpp
     Evidence: unaff_EBP, unaff_EBP
     Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_shatter_FUN_005a14b0(CDeformableModelInstance *this_ptr,CVector3f *center_position,CVector3f *orientation_vector,int desired_lod_index)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  FUN_00424800
-    Address: 0x00424800  File: core/bride.cpp
-    Evidence: unaff_EBX, unaff_EBX
-    Signature: void __cdecl core_bride_cpp_FUN_00424800(void)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
   CCharacter_updateCarriedObjects
@@ -556,7 +503,7 @@ Wrong calling convention (unaffected register usage) (36)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
 --------------------------------------------------------------------------------
-Unresolved stack parameters (missing from signature) (277)
+Unresolved stack parameters (missing from signature) (244)
 --------------------------------------------------------------------------------
 
   CPackedBitmapSet_reload
@@ -897,7 +844,7 @@ Unresolved stack parameters (missing from signature) (277)
 
   CZombie
     Address: 0x005fc220  File: core/zombie.cpp
-    Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
+    Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
     Signature: void __cdecl core_zombie_cpp_CZombie_FUN_005fc220(CZombie *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
@@ -967,142 +914,10 @@ Unresolved stack parameters (missing from signature) (277)
     Signature: void __cdecl core_icepick_cpp_FUN_004f8b00(void)
     Suggested: Signature is missing stack parameters entirely
 
-  FUN_00427b80
-    Address: 0x00427b80  File: core/bugs.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_bugs_cpp_FUN_00427b80(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  CBugs
-    Address: 0x004276c0  File: core/bugs.cpp
-    Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_bugs_cpp_CBugs_FUN_004276c0(CBugs *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_004279d0
-    Address: 0x004279d0  File: core/bugs.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000008, in_stack_00000004
-    Signature: void __cdecl core_bugs_cpp_FUN_004279d0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  CBugs
-    Address: 0x004270f0  File: core/bugs.cpp
-    Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_bugs_cpp_CBugs_FUN_004270f0(CBugs *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_00427b40
-    Address: 0x00427b40  File: core/bugs.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000004
-    Signature: int __cdecl core_bugs_cpp_FUN_00427b40(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_00425340
-    Address: 0x00425340  File: core/bugs.cpp
-    Evidence: in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004
-    Signature: void __cdecl core_bugs_cpp_FUN_00425340(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_00427ba0
-    Address: 0x00427ba0  File: core/bugs.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000008
-    Signature: float __cdecl core_bugs_cpp_FUN_00427ba0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_00427ad0
-    Address: 0x00427ad0  File: core/bugs.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008
-    Signature: void __cdecl core_bugs_cpp_FUN_00427ad0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_00427b60
-    Address: 0x00427b60  File: core/bugs.cpp
-    Evidence: in_stack_00000004, in_stack_00000004
-    Signature: int __cdecl core_bugs_cpp_FUN_00427b60(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_00427a60
-    Address: 0x00427a60  File: core/bugs.cpp
-    Evidence: in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004
-    Signature: void __cdecl core_bugs_cpp_FUN_00427a60(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  CBugs
-    Address: 0x00426420  File: core/bugs.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000010, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000010, in_stack_00000010, in_stack_00000008, in_stack_00000010, in_stack_00000008, in_stack_00000010, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: int __cdecl core_bugs_cpp_CBugs_FUN_00426420(CBugs *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_004279b0
-    Address: 0x004279b0  File: core/bugs.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_0000000c, in_stack_00000004, in_stack_00000010
-    Signature: void __cdecl core_bugs_cpp_FUN_004279b0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  CBugs
+  CBugs_initializeSwarmGraph
     Address: 0x00425660  File: core/bugs.cpp
-    Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_bugs_cpp_CBugs_FUN_00425660(CBugs *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CBugs
-    Address: 0x00425fe0  File: core/bugs.cpp
-    Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_bugs_cpp_CBugs_FUN_00425fe0(CBugs *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CBugs
-    Address: 0x004268e0  File: core/bugs.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_0000000c, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_bugs_cpp_CBugs_FUN_004268e0(CBugs *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_004279f0
-    Address: 0x004279f0  File: core/bugs.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000008
-    Signature: void __cdecl core_bugs_cpp_FUN_004279f0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  CBugs
-    Address: 0x00427400  File: core/bugs.cpp
-    Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_bugs_cpp_CBugs_FUN_00427400(CBugs *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CBugs
-    Address: 0x00425b70  File: core/bugs.cpp
-    Evidence: in_stack_0000000c, in_stack_0000000c
-    Signature: int __cdecl core_bugs_cpp_CBugs_FUN_00425b70(CBugs *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CBugs
-    Address: 0x00425cc0  File: core/bugs.cpp
-    Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_bugs_cpp_CBugs_FUN_00425cc0(CBugs *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CBugs_addSwarmGraphEdge
-    Address: 0x00425740  File: core/bugs.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000010, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c
-    Signature: void __cdecl core_bugs_cpp_CBugs_addSwarmGraphEdge_FUN_00425740(CBugs *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_00427a20
-    Address: 0x00427a20  File: core/bugs.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_00000004, in_stack_0000000c, in_stack_00000004, in_stack_0000000c, in_stack_00000008, in_stack_00000004, in_stack_0000000c, in_stack_00000004, in_stack_0000000c, in_stack_00000008, in_stack_00000004, in_stack_0000000c, in_stack_00000004, in_stack_0000000c, in_stack_00000008
-    Signature: float * __cdecl core_bugs_cpp_FUN_00427a20(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_00427b00
-    Address: 0x00427b00  File: core/bugs.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008
-    Signature: void __cdecl core_bugs_cpp_FUN_00427b00(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_00427b70
-    Address: 0x00427b70  File: core/bugs.cpp
-    Evidence: in_stack_00000004, in_stack_00000004
-    Signature: int __cdecl core_bugs_cpp_FUN_00427b70(void)
+    Evidence: in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c
+    Signature: void __cdecl core_bugs_cpp_CBugs_initializeSwarmGraph_FUN_00425660(CBugs *this_ptr,int edge_count)
     Suggested: Signature is missing stack parameters entirely
 
   CBaronWeapon_setWeaponState
@@ -1309,12 +1124,6 @@ Unresolved stack parameters (missing from signature) (277)
     Signature: int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a210(CDemonActor *this_ptr,int hit_type)
     Suggested: Signature is missing stack parameters entirely
 
-  CDemonActor
-    Address: 0x0040dec0  File: core/actor.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000014, in_stack_00000008, in_stack_0000000c, in_stack_00000014, in_stack_00000010
-    Signature: void __cdecl core_actor_cpp_CDemonActor_FUN_0040dec0(CDemonActor *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
   draw3DLineSegment
     Address: 0x0040d330  File: core/actor.cpp
     Evidence: in_stack_ffffff4c, in_stack_ffffff7c, in_stack_ffffff7c, in_stack_ffffff7c, in_stack_ffffff7c, in_stack_ffffff7c, in_stack_ffffff4c
@@ -1325,12 +1134,6 @@ Unresolved stack parameters (missing from signature) (277)
     Address: 0x0040d940  File: core/actor.cpp
     Evidence: in_stack_0000000c, in_stack_00000010, in_stack_fffffe5c, in_stack_fffffe8c, in_stack_00000010, in_stack_fffffe8c, in_stack_fffffe8c, in_stack_fffffe5c, in_stack_fffffe8c, in_stack_fffffe8c, in_stack_fffffe5c, in_stack_fffffe8c, in_stack_fffffe8c, in_stack_fffffe5c, in_stack_0000000c
     Signature: void __cdecl core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(CDemonActor *this_ptr,uint32_t color)
-    Suggested: Signature is missing stack parameters entirely
-
-  CDemonActor_testRayIntersection
-    Address: 0x004093f0  File: core/actor.cpp
-    Evidence: in_stack_00000018, in_stack_00000018
-    Signature: int __cdecl core_actor_cpp_CDemonActor_testRayIntersection_FUN_004093f0(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_hit_normal,void *unused)
     Suggested: Signature is missing stack parameters entirely
 
   CDemonActor_rayIntersect
@@ -1621,51 +1424,9 @@ Unresolved stack parameters (missing from signature) (277)
     Signature: void __cdecl core_trash_cpp_FUN_005decc0(void)
     Suggested: Signature is missing stack parameters entirely
 
-  CZombieCow
-    Address: 0x004448c0  File: core/cow.cpp
-    Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_cow_cpp_CZombieCow_FUN_004448c0(CZombieCow *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CBride
-    Address: 0x00424600  File: core/bride.cpp
-    Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_bride_cpp_CBride_FUN_00424600(CBride *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CBatman
-    Address: 0x00417660  File: core/batman.cpp
-    Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_batman_cpp_CBatman_FUN_00417660(CBatman *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CBoneGuy
-    Address: 0x0041cc40  File: core/boneguy.cpp
-    Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: int __cdecl core_boneguy_cpp_CBoneGuy_FUN_0041cc40(CBoneGuy *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_0041b700
-    Address: 0x0041b700  File: core/boneguy.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004
-    Signature: float * __cdecl core_boneguy_cpp_FUN_0041b700(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_0041b860
-    Address: 0x0041b860  File: core/boneguy.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004
-    Signature: float * __cdecl core_boneguy_cpp_FUN_0041b860(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_0041b770
-    Address: 0x0041b770  File: core/boneguy.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000004, in_stack_00000004
-    Signature: CVector3f * __cdecl core_boneguy_cpp_FUN_0041b770(void)
-    Suggested: Signature is missing stack parameters entirely
-
   CCharacter_detachBodyPart
     Address: 0x0042bcc0  File: core/charactr.cpp
-    Evidence: in_stack_00000010, in_stack_00000010
+    Evidence: in_stack_0000000c, in_stack_00000010, in_stack_0000000c, in_stack_00000010
     Signature: void __cdecl core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0(CCharacter *this_ptr,int part_index)
     Suggested: Signature is missing stack parameters entirely
 
@@ -1831,12 +1592,6 @@ Unresolved stack parameters (missing from signature) (277)
     Signature: void __cdecl core_mimic_cpp_FUN_00520e00(void)
     Suggested: Signature is missing stack parameters entirely
 
-  CWayPoint_addAdj
-    Address: 0x005ec700  File: core/waypoint.cpp
-    Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_waypoint_cpp_CWayPoint_addAdj_FUN_005ec700(CWayPoint *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
   CGabriella_processMotionEvents
     Address: 0x004d4890  File: core/gabriela.cpp
     Evidence: in_stack_ffffff58, in_stack_ffffff58, in_stack_ffffff58, in_stack_ffffff58
@@ -1919,12 +1674,6 @@ Unresolved stack parameters (missing from signature) (277)
     Address: 0x004dc370  File: core/game.cpp
     Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_0000000c, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004
     Signature: void __cdecl core_game_cpp_dampControlAxis_FUN_004dc370(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  createBodyPart
-    Address: 0x00418e10  File: core/bodypart.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000014, in_stack_00000018, in_stack_0000001c, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_00000010, in_stack_00000010, in_stack_00000010, in_stack_00000010, in_stack_00000014, in_stack_00000018, in_stack_00000018, in_stack_0000001c
-    Signature: CBodyPart * __cdecl core_bodypart_cpp_createBodyPart_FUN_00418e10(void)
     Suggested: Signature is missing stack parameters entirely
 
   quantizeRawPixelData
@@ -2530,7 +2279,7 @@ Undefined types in variables (2271)
     Locals:  local_1f4 (undefined), local_f4 (undefined4), local_f0 (undefined4), local_ec (undefined4), local_e8 (undefined4), local_e4 (undefined4), local_e0 (undefined4), local_dc (undefined4), local_d8 (undefined4), local_d4 (undefined4), local_d0 (undefined4), local_cc (undefined4), local_c8 (undefined4), local_c4 (undefined4), local_c0 (undefined4), local_bc (undefined4), local_b8 (undefined4), local_b4 (undefined4), local_b0 (undefined4), local_ac (undefined4), local_a8 (undefined4), local_a4 (undefined4), local_a0 (undefined4), local_9c (undefined4), local_98 (undefined4), local_94 (undefined4), local_90 (undefined4), local_8c (undefined4), local_88 (undefined4), local_84 (undefined4), local_80 (undefined4), local_7c (undefined4), local_78 (undefined4), local_74 (undefined4), local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CBugs
+  CBugs_updateBugRenderingData
     Address: 0x004268e0  File: core/bugs.cpp
     Locals:  local_118 (undefined4), local_114 (undefined4), local_110 (undefined4), local_10c (undefined4), local_108 (undefined4), local_104 (undefined4), local_100 (undefined4), local_fc (undefined4), local_f8 (undefined4), local_f4 (undefined4), local_f0 (undefined4), local_ec (undefined4), local_e8 (undefined4), local_e4 (undefined4), local_e0 (undefined4), local_d8 (undefined4), local_d4 (undefined4), local_d0 (undefined4), local_cc (undefined4), local_c8 (undefined4), local_c4 (undefined4), local_c0 (undefined4), local_bc (undefined4), local_b8 (undefined4), local_b4 (undefined4), local_b0 (undefined4), local_ac (undefined4), local_a8 (undefined1), local_9c (undefined4), local_98 (undefined4), local_94 (undefined4), local_90 (undefined4), local_8c (undefined4), local_88 (undefined4), local_84 (undefined4), local_80 (undefined4), local_7c (undefined4), local_78 (undefined4), local_74 (undefined4), local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined1), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_1c (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -2960,7 +2709,7 @@ Undefined types in variables (2271)
     Locals:  local_b8 (undefined4), local_b4 (undefined4), local_b0 (undefined4), local_ac (undefined4), local_a8 (undefined4), local_a4 (undefined4), local_a0 (undefined1), local_94 (undefined4), local_90 (undefined4), local_8c (undefined4), local_88 (undefined4), local_84 (undefined4), local_80 (undefined4), local_7c (undefined4), local_78 (undefined4), local_74 (undefined4), local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined1), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CBugs
+  CBugs_updateBugPathfinding
     Address: 0x00426420  File: core/bugs.cpp
     Locals:  local_94 (undefined4), local_90 (undefined4), local_8c (undefined4), local_88 (undefined4), local_84 (undefined4), local_80 (undefined4), local_7c (undefined4), local_78 (undefined4), local_74 (undefined4), local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -3090,7 +2839,7 @@ Undefined types in variables (2271)
     Locals:  local_e8 (undefined8), local_e0 (undefined8), local_d8 (undefined8), local_d0 (undefined8), local_c8 (undefined4), local_c4 (undefined4), local_c0 (undefined4), local_bc (undefined4), local_b8 (undefined4), local_b4 (undefined4), local_b0 (undefined8), local_a8 (undefined8), local_a0 (undefined8), local_98 (undefined8), local_90 (undefined8), local_88 (undefined8), local_80 (undefined8), local_78 (undefined8), local_70 (undefined8), local_68 (undefined8), local_60 (undefined8), local_58 (undefined8), local_50 (undefined8), local_48 (undefined8), local_40 (undefined8), local_38 (undefined8), local_30 (undefined8), local_28 (undefined8), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CBugs
+  CBugs_updateGroundHeightGrid
     Address: 0x004257f0  File: core/bugs.cpp
     Locals:  local_84 (undefined8), local_7c (undefined4), local_78 (undefined4), local_74 (undefined4), local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined8), local_38 (undefined1), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined4), local_c (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -4205,7 +3954,7 @@ Undefined types in variables (2271)
     Locals:  local_58 (undefined8), local_50 (undefined8), local_48 (undefined4), local_44 (undefined4), local_40 (undefined8), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CBugs
+  CBugs_findNextSwarmVertex
     Address: 0x004270f0  File: core/bugs.cpp
     Locals:  local_68 (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -4550,7 +4299,7 @@ Undefined types in variables (2271)
     Locals:  local_144 (undefined1), local_44 (undefined1), local_40 (undefined1), local_3c (undefined1), local_38 (undefined1), local_2c (undefined1), local_28 (undefined1), local_24 (undefined1), local_20 (undefined1), local_1c (undefined1), local_18 (undefined1), local_14 (undefined4), local_10 (undefined1)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_00425340
+  CBugs_renderGroundHeightGrid
     Address: 0x00425340  File: core/bugs.cpp
     Locals:  local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -4575,7 +4324,7 @@ Undefined types in variables (2271)
     Locals:  local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CDraculaBride_explodeIntoParts
+  CDraculaBride_explode
     Address: 0x004858f0  File: core/dracbrid.cpp
     Locals:  local_b0 (undefined4), local_ac (undefined1), local_84 (undefined1), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_48 (undefined1), local_3c (undefined4), local_38 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -5200,7 +4949,7 @@ Undefined types in variables (2271)
     Locals:  local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CDemonCamera_testBoxOcclusion
+  CDemonCamera_testVisibility
     Address: 0x004544f0  File: core/dcamera.cpp
     Locals:  local_38 (undefined1), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -5525,7 +5274,7 @@ Undefined types in variables (2271)
     Locals:  local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CDemonLight_testLightVolumeVisibility
+  CDemonLight_testVisibility
     Address: 0x00476a60  File: core/dlight.cpp
     Locals:  local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -5790,7 +5539,7 @@ Undefined types in variables (2271)
     Locals:  local_54 (undefined1), local_50 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined4), local_c (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CBugs
+  CBugs_attackSwarmTarget
     Address: 0x00425fe0  File: core/bugs.cpp
     Locals:  local_184 (undefined4), local_154 (undefined4), local_150 (undefined4), local_11c (undefined1), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -6590,7 +6339,7 @@ Undefined types in variables (2271)
     Locals:  local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CBugs
+  CBugs_sampleGroundHeight
     Address: 0x00425b70  File: core/bugs.cpp
     Locals:  local_24 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined4), local_c (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -7190,7 +6939,7 @@ Undefined types in variables (2271)
     Locals:  local_48 (undefined1), local_3c (undefined1), local_30 (undefined1), local_24 (undefined1), local_18 (undefined1)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_0041b860
+  rgbToHsv
     Address: 0x0041b860  File: core/boneguy.cpp
     Locals:  local_30 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -7745,7 +7494,7 @@ Undefined types in variables (2271)
     Locals:  local_20 (undefined8), local_18 (undefined8), local_10 (undefined8), local_8 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CBoneGuy
+  CBoneGuy_updatePickupBehavior
     Address: 0x0041cc40  File: core/boneguy.cpp
     Locals:  local_2c (undefined4), local_24 (undefined4), local_20 (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -8575,7 +8324,7 @@ Undefined types in variables (2271)
     Locals:  local_3c (undefined1), local_30 (undefined1), local_24 (undefined1)
     Suggested: Resolve undefined types to concrete types
 
-  CBugs
+  CBugs_applySwarmTranslation
     Address: 0x004276c0  File: core/bugs.cpp
     Locals:  local_14 (undefined4), local_10 (undefined4), local_c (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -9695,7 +9444,7 @@ Undefined types in variables (2271)
     Locals:  local_28 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CBoneGuy
+  CBoneGuy_beginRecombine
     Address: 0x0041d8a0  File: core/boneguy.cpp
     Locals:  local_24 (undefined1), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -9715,17 +9464,17 @@ Undefined types in variables (2271)
     Locals:  local_13c (undefined), local_10 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CBride
-    Address: 0x00424600  File: core/bride.cpp
-    Locals:  local_20 (undefined4), local_14 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
   CBride_getTargetPoints
     Address: 0x00424a10  File: core/bride.cpp
     Locals:  local_1c (undefined1), local_10 (undefined1)
     Suggested: Resolve undefined types to concrete types
 
-  CBugs
+  CBride_processDismemberment
+    Address: 0x00424600  File: core/bride.cpp
+    Locals:  local_20 (undefined4), local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CBugs_setSwarmTarget
     Address: 0x00427400  File: core/bugs.cpp
     Locals:  local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -11016,11 +10765,6 @@ Undefined types in variables (2271)
     Locals:  local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CDemonActor
-    Address: 0x0040dec0  File: core/actor.cpp
-    Locals:  local_4c (undefined1)
-    Suggested: Resolve undefined types to concrete types
-
   CDemonActor_archive
     Address: 0x0040c1c0  File: core/actor.cpp
     Locals:  local_8 (undefined1)
@@ -11034,6 +10778,11 @@ Undefined types in variables (2271)
   CDemonActor_localToWorldPoint
     Address: 0x00408ec0  File: core/actor.cpp
     Locals:  local_10 (undefined1)
+    Suggested: Resolve undefined types to concrete types
+
+  CDemonActor_renderBoundingBoxSolid
+    Address: 0x0040dec0  File: core/actor.cpp
+    Locals:  local_4c (undefined1)
     Suggested: Resolve undefined types to concrete types
 
   CDemonActor_renderTargetPoints
@@ -11241,14 +10990,14 @@ Undefined types in variables (2271)
     Locals:  local_44 (undefined1)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_00427a60
-    Address: 0x00427a60  File: core/bugs.cpp
-    Locals:  local_10 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  FUN_00427ba0
+  maxFloat
     Address: 0x00427ba0  File: core/bugs.cpp
     Locals:  local_4 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  normalizeVector
+    Address: 0x00427a60  File: core/bugs.cpp
+    Locals:  local_10 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CChain

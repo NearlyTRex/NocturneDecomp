@@ -51,9 +51,9 @@ void __cdecl CSmiley::processDamage(CSmiley *this_ptr,SDamageInfo *damage_info);
 // Address: 005a3690
 int __cdecl CSmiley::getTargetPoints(CSmiley *this_ptr,CVector3f *out_points_array);
 
-// Original: core_smiley.cpp_CSmiley_hasCollision_FUN_005a37f0
+// Original: core_smiley.cpp_CSmiley_getCollisionType_FUN_005a37f0
 // Address: 005a37f0
-void __cdecl CSmiley::hasCollision(CSmiley *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CSmiley::getCollisionType(CSmiley *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_smiley.cpp_CSmiley_getPropertyList_FUN_005a3810
 // Address: 005a3810

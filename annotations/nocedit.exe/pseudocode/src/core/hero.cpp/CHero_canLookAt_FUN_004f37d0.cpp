@@ -9,11 +9,11 @@
 int __cdecl core_hero_cpp_CHero_canLookAt_FUN_004f37d0(CHero *this_ptr)
 
 {
-  int iVar1;
+  EDeathState EVar1;
   
-  iVar1 = (*(((this_ptr->base).base.vtable._uc)->_uc).getDeathState)(&this_ptr->base);
-  if (iVar1 < 2) {
-    if (iVar1 == 1) {
+  EVar1 = (*(((this_ptr->base).base.vtable._uc)->_uc).getDeathState)(&this_ptr->base);
+  if ((int)EVar1 < 2) {
+    if (EVar1 == DEATH_STATE_DYING) {
       return 1;
     }
     if (((((((this_ptr->player_control).action_states[0] != 0) ||

@@ -43,12 +43,12 @@
   },
   "complexity": {
     "assembly_lines": 322,
-    "complexity_score": 300,
+    "complexity_score": 304,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 5,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 120,
+    "pseudocode_lines": 124,
     "suspect_count": 16,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -56,7 +56,7 @@
       "unknown_field",
       "warning_inlined_function"
     ],
-    "total_lines": 442
+    "total_lines": 446
   },
   "cross_references": [
     {
@@ -94,7 +94,7 @@
     {
       "addr": "00427ba0",
       "is_variadic": false,
-      "name": "core_bugs.cpp_FUN_00427ba0"
+      "name": "core_bugs.cpp_maxFloat_FUN_00427ba0"
     },
     {
       "addr": "005fe6b0",
@@ -378,7 +378,7 @@
       "line": 67,
       "match": "ROUND",
       "severity": "mild",
-      "text": "this_ptr->boxes[box_index].avg_intensity = (short)(int)ROUND(ROUND(local_38 / (float)uVar12));",
+      "text": "this_ptr->boxes[box_index].avg_intensity = (short)(int)ROUND(ROUND(local_38 / (float)uVar11));",
       "type": "decompiler_intrinsic"
     },
     {
@@ -386,7 +386,7 @@
       "line": 67,
       "match": "ROUND",
       "severity": "mild",
-      "text": "this_ptr->boxes[box_index].avg_intensity = (short)(int)ROUND(ROUND(local_38 / (float)uVar12));",
+      "text": "this_ptr->boxes[box_index].avg_intensity = (short)(int)ROUND(ROUND(local_38 / (float)uVar11));",
       "type": "decompiler_intrinsic"
     },
     {
@@ -394,7 +394,7 @@
       "line": 70,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "uVar12 = (*(int *)((int)&this_ptr->boxes[box_index + -1].pixel_count + 2) >> 0x10) -",
+      "text": "uVar11 = (*(int *)((int)&this_ptr->boxes[box_index + -1].pixel_count + 2) >> 0x10) -",
       "type": "pointer_cast"
     },
     {
@@ -402,7 +402,7 @@
       "line": 74,
       "match": "._0_2_",
       "severity": "mild",
-      "text": "iVar3._0_2_ = this_ptr->boxes[box_index].avg_red;",
+      "text": "iVar2._0_2_ = this_ptr->boxes[box_index].avg_red;",
       "type": "unknown_field"
     },
     {
@@ -410,7 +410,7 @@
       "line": 75,
       "match": "._2_2_",
       "severity": "mild",
-      "text": "iVar3._2_2_ = this_ptr->boxes[box_index].avg_green;",
+      "text": "iVar2._2_2_ = this_ptr->boxes[box_index].avg_green;",
       "type": "unknown_field"
     },
     {
@@ -418,7 +418,7 @@
       "line": 78,
       "match": "._0_2_",
       "severity": "mild",
-      "text": "iVar4._0_2_ = this_ptr->boxes[box_index].avg_green;",
+      "text": "iVar3._0_2_ = this_ptr->boxes[box_index].avg_green;",
       "type": "unknown_field"
     },
     {
@@ -426,7 +426,7 @@
       "line": 79,
       "match": "._2_2_",
       "severity": "mild",
-      "text": "iVar4._2_2_ = this_ptr->boxes[box_index].avg_blue;",
+      "text": "iVar3._2_2_ = this_ptr->boxes[box_index].avg_blue;",
       "type": "unknown_field"
     },
     {
@@ -434,7 +434,7 @@
       "line": 84,
       "match": "._0_2_",
       "severity": "mild",
-      "text": "iVar5._0_2_ = this_ptr->boxes[box_index].avg_blue;",
+      "text": "iVar4._0_2_ = this_ptr->boxes[box_index].avg_blue;",
       "type": "unknown_field"
     },
     {
@@ -442,7 +442,7 @@
       "line": 85,
       "match": "._2_2_",
       "severity": "mild",
-      "text": "iVar5._2_2_ = this_ptr->boxes[box_index].avg_intensity;",
+      "text": "iVar4._2_2_ = this_ptr->boxes[box_index].avg_intensity;",
       "type": "unknown_field"
     }
   ]

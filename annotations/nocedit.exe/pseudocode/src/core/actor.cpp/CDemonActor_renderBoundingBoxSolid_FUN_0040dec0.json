@@ -1,0 +1,289 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 190,
+    "complexity_score": 188,
+    "cross_reference_count": 5,
+    "function_call_count": 6,
+    "global_count": 5,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 88,
+    "suspect_count": 9,
+    "suspect_types": [
+      "decompiler_intrinsic",
+      "pointer_cast"
+    ],
+    "total_lines": 278
+  },
+  "cross_references": [
+    {
+      "addr": "00414240",
+      "from_addr": "004142c5",
+      "name": "core_barrier.cpp_CBarrier_renderTransparent_FUN_00414240",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00441f60",
+      "from_addr": "00441ffe",
+      "name": "core_conveyor.cpp_CConveyor_renderTransparent_FUN_00441f60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0046fb70",
+      "from_addr": "0046fbed",
+      "name": "core_dest.cpp_CActorDestination_renderTransparent_FUN_0046fb70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f3c90",
+      "from_addr": "004f3d09",
+      "name": "core_hero.cpp_CHeroPlaceholder_renderTransparent_FUN_004f3c90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005e00d0",
+      "from_addr": "005e060e",
+      "name": "core_trigger.cpp_CTrigger_renderTransparent_FUN_005e00d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0040dec0",
+    "address_range": [
+      [
+        "0040dec0",
+        "0040e125"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_actor.cpp_CDemonActor_renderBoundingBoxSolid_FUN_0040dec0",
+    "signature": "void __cdecl core_actor_cpp_CDemonActor_renderBoundingBoxSolid_FUN_0040dec0(CDemonActor *this_ptr,int red,int green,int blue,int alpha)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408b40",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40"
+    },
+    {
+      "addr": "00408b00",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00"
+    },
+    {
+      "addr": "004202b0",
+      "is_variadic": false,
+      "name": "core_box.cpp_CBoundingBox3D_getCorner_FUN_004202b0"
+    },
+    {
+      "addr": "0048db80",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80"
+    },
+    {
+      "addr": "0048bad0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0"
+    },
+    {
+      "addr": "005b575c",
+      "is_variadic": false,
+      "name": "wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006597b0",
+      "name": "FLOAT_006597b0",
+      "type": "float",
+      "value": "256"
+    },
+    {
+      "addr": "0066e158",
+      "name": "SMRGLTextureBasic_0066e158",
+      "type": "SMRGLTextureBasic",
+      "value": null
+    },
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr2",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "00800000",
+      "name": "DAT_00800000",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.5397727272727275,
+    "instruction_count": 176,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 20,
+      "CALL": 11,
+      "CALLIND": 1,
+      "CBRANCH": 1,
+      "COPY": 203,
+      "FLOAT2FLOAT": 6,
+      "FLOAT_MULT": 3,
+      "INT_ADD": 89,
+      "INT_AND": 98,
+      "INT_CARRY": 15,
+      "INT_EQUAL": 58,
+      "INT_LEFT": 8,
+      "INT_LESS": 2,
+      "INT_MULT": 6,
+      "INT_NOTEQUAL": 9,
+      "INT_OR": 20,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 16,
+      "INT_SLESS": 35,
+      "INT_SUB": 45,
+      "INT_XOR": 9,
+      "LOAD": 28,
+      "POPCOUNT": 27,
+      "RETURN": 1,
+      "ROUND": 3,
+      "STORE": 80,
+      "TRUNC": 3
+    },
+    "pcode_op_count": 799
+  },
+  "stack_frame": {
+    "frame_size": 100,
+    "local_size": 80,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonActor *"
+      },
+      {
+        "is_param": true,
+        "name": "red",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "green",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "blue",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "alpha",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 29,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "CStack_28.x = (int)ROUND(CStack_34.x * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 30,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "CStack_28.y = (int)ROUND(CStack_34.y * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 31,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "CStack_28.z = (int)ROUND(CStack_34.z * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 37,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "*(int *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->r + iVar1) = iStack_18;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 38,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "*(int *)((int)&this_ptr_00->vertex_buffer_ptr->g + iVar1) = iStack_14;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 39,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "*(int *)((int)&this_ptr_00->vertex_buffer_ptr->b + iVar1) = blue << 8;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 40,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "*(int *)((int)&this_ptr_00->vertex_buffer_ptr->a + iVar1) = iStack_1c;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 41,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&this_ptr_00->vertex_buffer_ptr->u + iVar1) = 0x800000;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 43,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&this_ptr_00->vertex_buffer_ptr->v + iVar1) = 0x800000;",
+      "type": "pointer_cast"
+    }
+  ]
+}

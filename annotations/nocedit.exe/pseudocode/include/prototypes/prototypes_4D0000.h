@@ -18,6 +18,7 @@
 #include "types/classes/CVector3f.h"
 #include "types/classes/CWeapon.h"
 #include "types/enums/EAmmoType.h"
+#include "types/enums/ECollisionType.h"
 #include "types/enums/EInputCodeType.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
@@ -59,7 +60,7 @@ CVector3f * __cdecl core_frankgen_cpp_CFrankenstienMachine_updateAnchorPosition_
 CDemonActor * __cdecl core_frankgen_cpp_findLeader_FUN_004d2330(void);
 void __cdecl core_frankgen_cpp_CFrankenstienMachine_setPartFrame_FUN_004d23a0(CFrankenstienMachine *this_ptr,float start_frame,float end_frame);
 void __cdecl core_frankgen_cpp_CFrankenstienMachine_setCourseFrame_FUN_004d2430(CFrankenstienMachine *this_ptr,float start_frame,float end_frame);
-int __cdecl core_frankgen_cpp_CFrankenstienMachine_hasCollision_FUN_004d24f0(CFrankenstienMachine *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl core_frankgen_cpp_CFrankenstienMachine_getCollisionType_FUN_004d24f0(CFrankenstienMachine *this_ptr,SCollisionInfo *collision_info);
 void __cdecl core_frankgen_cpp_CFrankenstienMachine_getPropertyList_FUN_004d2500(CFrankenstienMachine *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_frankgen_cpp_CFrankenstienMachine_addFilesToExtract_FUN_004d2560(CFrankenstienMachine *this_ptr,_FILE *file_handle);
 void __cdecl core_frankgen_cpp_CFrankenstienMachine_processInEditor_FUN_004d25f0(CFrankenstienMachine *this_ptr);

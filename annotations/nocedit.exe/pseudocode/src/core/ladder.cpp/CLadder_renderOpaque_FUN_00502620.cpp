@@ -53,8 +53,8 @@ int __cdecl core_ladder_cpp_CLadder_renderOpaque_FUN_00502620(CLadder *this_ptr)
         if (0.0 < (float)local_74.projected_vertex.transformed_y) {
           uStack_18 = 0;
           iStack_14 = local_74.projected_vertex.transformed_y;
-          local_74.fog = (int)ROUND(256.0f * 0.0);
-          piVar12 = &local_74.fog;
+          local_74.a = (int)ROUND(256.0f * 0.0);
+          piVar12 = &local_74.a;
           pSVar11 = g_CDemonRendererPtr2->vertex_buffer_ptr + 2;
           uVar10 = 0x50281e;
           wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
@@ -82,10 +82,10 @@ int __cdecl core_ladder_cpp_CLadder_renderOpaque_FUN_00502620(CLadder *this_ptr)
           vertex2_00.projected_vertex.screen_x = auVar7._16_4_;
           vertex2_00.projected_vertex.screen_y = auVar7._20_4_;
           vertex2_00.u = in_stack_ffffff58._24_4_;
-          vertex2_00.z = (int)pCVar9;
-          vertex2_00.r = uVar10;
-          vertex2_00.g = (int)pSVar11;
-          vertex2_00.fog = (int)piVar12;
+          vertex2_00.r = (int)pCVar9;
+          vertex2_00.g = uVar10;
+          vertex2_00.b = (int)pSVar11;
+          vertex2_00.a = (int)piVar12;
           engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff28,vertex2_00);
           pSVar4 = g_CDemonRendererPtr2->vertex_buffer_ptr;
           pSVar3 = pSVar4 + 2;
@@ -111,10 +111,10 @@ int __cdecl core_ladder_cpp_CLadder_renderOpaque_FUN_00502620(CLadder *this_ptr)
           vertex2_01.projected_vertex.screen_x = auVar7._16_4_;
           vertex2_01.projected_vertex.screen_y = auVar7._20_4_;
           vertex2_01.u = in_stack_ffffff58._24_4_;
-          vertex2_01.z = (int)pCVar9;
-          vertex2_01.r = uVar10;
-          vertex2_01.g = (int)pSVar11;
-          vertex2_01.fog = (int)piVar12;
+          vertex2_01.r = (int)pCVar9;
+          vertex2_01.g = uVar10;
+          vertex2_01.b = (int)pSVar11;
+          vertex2_01.a = (int)piVar12;
           engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff28,vertex2_01);
         }
         fStack_24 = (float)0.5 * (this_ptr->ladder_size).x;
@@ -126,10 +126,10 @@ int __cdecl core_ladder_cpp_CLadder_renderOpaque_FUN_00502620(CLadder *this_ptr)
         CStack_30.z = (int)ROUND(256.0f * 0.0);
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&CStack_30);
-        local_74.z = (int)ROUND(fStack_24 * 256.0f);
-        local_74.r = (int)ROUND(fStack_20 * 256.0f);
-        local_74.g = (int)ROUND(fStack_1c * 256.0f);
-        piVar12 = &local_74.z;
+        local_74.r = (int)ROUND(fStack_24 * 256.0f);
+        local_74.g = (int)ROUND(fStack_20 * 256.0f);
+        local_74.b = (int)ROUND(fStack_1c * 256.0f);
+        piVar12 = &local_74.r;
         pSVar11 = g_CDemonRendererPtr2->vertex_buffer_ptr + 1;
         uVar10 = 0x50278a;
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
@@ -157,10 +157,10 @@ int __cdecl core_ladder_cpp_CLadder_renderOpaque_FUN_00502620(CLadder *this_ptr)
         vertex2.projected_vertex.screen_x = auVar7._16_4_;
         vertex2.projected_vertex.screen_y = auVar7._20_4_;
         vertex2.u = in_stack_ffffff58._24_4_;
-        vertex2.z = (int)pCVar9;
-        vertex2.r = uVar10;
-        vertex2.g = (int)pSVar11;
-        vertex2.fog = (int)piVar12;
+        vertex2.r = (int)pCVar9;
+        vertex2.g = uVar10;
+        vertex2.b = (int)pSVar11;
+        vertex2.a = (int)piVar12;
         engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff28,vertex2);
         local_74.projected_vertex.transformed_y =
              (int)((float)local_74.projected_vertex.transformed_y + 1.0f);

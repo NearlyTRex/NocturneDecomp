@@ -47,9 +47,9 @@ int __cdecl CMarquee::renderTransparent(CMarquee *this_ptr);
 // Address: 0050c2f0
 void __cdecl CMarquee::archive(CMarquee *this_ptr);
 
-// Original: core_marquee.cpp_CMarquee_hasCollision_FUN_0050c370
+// Original: core_marquee.cpp_CMarquee_getCollisionType_FUN_0050c370
 // Address: 0050c370
-int __cdecl CMarquee::hasCollision(CMarquee *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CMarquee::getCollisionType(CMarquee *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_marquee.cpp_CMarquee_getBoundingBox_FUN_0050c380
 // Address: 0050c380

@@ -121,7 +121,7 @@ void __cdecl core_actor_cpp_drawBoundingBox_FUN_0040d470(CBoundingBox3D *bbox,in
       pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar7 * -2 + 1) * 4);
       piVar6 = piVar6 + (uint)bVar7 * -2 + 1;
     }
-    vertex2.z = uVar9;
+    vertex2.r = uVar9;
     auVar8 = in_stack_fffffea0._0_24_;
     vertex2.projected_vertex.transformed_x = auVar8._0_4_;
     vertex2.projected_vertex.transformed_y = auVar8._4_4_;
@@ -131,9 +131,9 @@ void __cdecl core_actor_cpp_drawBoundingBox_FUN_0040d470(CBoundingBox3D *bbox,in
     vertex2.projected_vertex.screen_y = auVar8._20_4_;
     vertex2.u = in_stack_fffffea0._24_4_;
     vertex2.v = in_stack_fffffea0._28_4_;
-    vertex2.r = uVar10;
-    vertex2.g = (int)pSVar11;
-    vertex2.fog = (int)pCVar12;
+    vertex2.g = uVar10;
+    vertex2.b = (int)pSVar11;
+    vertex2.a = (int)pCVar12;
     engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffe70,vertex2);
     pCVar1 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0(bbox,&local_130,corner_index ^ 2);
     uVar9 = 0x40d635;
@@ -176,7 +176,7 @@ void __cdecl core_actor_cpp_drawBoundingBox_FUN_0040d470(CBoundingBox3D *bbox,in
       pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar7 * -2 + 1) * 4);
       piVar6 = piVar6 + (uint)bVar7 * -2 + 1;
     }
-    vertex2_00.z = uVar9;
+    vertex2_00.r = uVar9;
     auVar8 = in_stack_fffffea0._0_24_;
     vertex2_00.projected_vertex.transformed_x = auVar8._0_4_;
     vertex2_00.projected_vertex.transformed_y = auVar8._4_4_;
@@ -186,9 +186,9 @@ void __cdecl core_actor_cpp_drawBoundingBox_FUN_0040d470(CBoundingBox3D *bbox,in
     vertex2_00.projected_vertex.screen_y = auVar8._20_4_;
     vertex2_00.u = in_stack_fffffea0._24_4_;
     vertex2_00.v = in_stack_fffffea0._28_4_;
-    vertex2_00.r = uVar10;
-    vertex2_00.g = (int)pSVar11;
-    vertex2_00.fog = (int)pCVar12;
+    vertex2_00.g = uVar10;
+    vertex2_00.b = (int)pSVar11;
+    vertex2_00.a = (int)pCVar12;
     engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffe70,vertex2_00);
     pCVar1 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0(bbox,&local_a0,corner_index ^ 4);
     uVar9 = 0x40d7c1;
@@ -232,7 +232,7 @@ void __cdecl core_actor_cpp_drawBoundingBox_FUN_0040d470(CBoundingBox3D *bbox,in
       pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar7 * -2 + 1) * 4);
       piVar6 = piVar6 + (uint)bVar7 * -2 + 1;
     }
-    vertex2_01.z = uVar9;
+    vertex2_01.r = uVar9;
     auVar8 = in_stack_fffffea0._0_24_;
     vertex2_01.projected_vertex.transformed_x = auVar8._0_4_;
     vertex2_01.projected_vertex.transformed_y = auVar8._4_4_;
@@ -242,9 +242,9 @@ void __cdecl core_actor_cpp_drawBoundingBox_FUN_0040d470(CBoundingBox3D *bbox,in
     vertex2_01.projected_vertex.screen_y = auVar8._20_4_;
     vertex2_01.u = in_stack_fffffea0._24_4_;
     vertex2_01.v = in_stack_fffffea0._28_4_;
-    vertex2_01.r = uVar10;
-    vertex2_01.g = (int)pSVar11;
-    vertex2_01.fog = (int)pCVar12;
+    vertex2_01.g = uVar10;
+    vertex2_01.b = (int)pSVar11;
+    vertex2_01.a = (int)pCVar12;
     engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffe70,vertex2_01);
   } while ((int)corner_index < 8);
   return;

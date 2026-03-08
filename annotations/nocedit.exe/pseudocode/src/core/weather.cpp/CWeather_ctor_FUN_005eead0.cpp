@@ -9,6 +9,6 @@
 CWeather * __cdecl core_weather_cpp_CWeather_ctor_FUN_005eead0(CWeather *this_ptr)
 
 {
-  core_weather_cpp_CWeather_setWeatherType_FUN_005ef8c0(this_ptr,0);
+  core_weather_cpp_CWeather_setWeatherType_FUN_005ef8c0(this_ptr,WEATHER_TYPE_NONE);
   return this_ptr;
 }

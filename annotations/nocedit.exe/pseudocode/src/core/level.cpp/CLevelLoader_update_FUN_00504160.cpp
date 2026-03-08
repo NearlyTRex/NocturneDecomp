@@ -111,17 +111,17 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_00504160(CLevelLoader *this_
     if (0xffff < iVar3) {
       iVar3 = 0xffff;
     }
-    g_CDemonRendererPtr2->vertex_buffer_ptr->fog = 0;
-    pCVar1->vertex_buffer_ptr[1].fog = iVar3;
-    pCVar1->vertex_buffer_ptr[2].fog = 0;
-    pCVar1->vertex_buffer_ptr[3].fog = 0;
+    g_CDemonRendererPtr2->vertex_buffer_ptr->a = 0;
+    pCVar1->vertex_buffer_ptr[1].a = iVar3;
+    pCVar1->vertex_buffer_ptr[2].a = 0;
+    pCVar1->vertex_buffer_ptr[3].a = 0;
     iVar3 = 0;
     do {
       pCVar1 = g_CDemonRendererPtr2;
-      *(int *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->z + iVar3) = (this_ptr->color).r << 8;
-      *(int *)((int)&pCVar1->vertex_buffer_ptr->r + iVar3) = (this_ptr->color).g << 8;
+      *(int *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->r + iVar3) = (this_ptr->color).r << 8;
+      *(int *)((int)&pCVar1->vertex_buffer_ptr->g + iVar3) = (this_ptr->color).g << 8;
       iVar6 = iVar3 + 0x30;
-      *(int *)((int)&pCVar1->vertex_buffer_ptr->g + iVar3) = (this_ptr->color).b << 8;
+      *(int *)((int)&pCVar1->vertex_buffer_ptr->b + iVar3) = (this_ptr->color).b << 8;
       iVar3 = iVar6;
     } while (iVar6 != 0xc0);
     local_88.surface_normal.D = 0;

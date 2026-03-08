@@ -11,7 +11,7 @@ int __cdecl core_actor_cpp_CDemonActor_testLineIntersection_FUN_00409150(CDemonA
 {
   float fVar1;
   float fVar2;
-  int iVar3;
+  ECollisionType EVar3;
   float fVar4;
   SCollisionInfo local_6c;
   CVector3f CStack_38;
@@ -20,8 +20,8 @@ int __cdecl core_actor_cpp_CDemonActor_testLineIntersection_FUN_00409150(CDemonA
   
   core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(&local_6c);
   local_6c.ray_type = 0;
-  iVar3 = (*((this_ptr->vtable)._ub)->hasCollision)(this_ptr,&local_6c);
-  if (iVar3 == 2) {
+  EVar3 = (*((this_ptr->vtable)._ub)->getCollisionType)(this_ptr,&local_6c);
+  if (EVar3 == COLLISION_TYPE_CYLINDER) {
     CStack_20.x = line_end->x - line_start->x;
     CStack_20.y = line_end->y - line_start->y;
     CStack_20.z = line_end->z - line_start->z;

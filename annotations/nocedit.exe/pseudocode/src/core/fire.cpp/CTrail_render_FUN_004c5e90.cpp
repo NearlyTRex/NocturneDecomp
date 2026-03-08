@@ -80,18 +80,18 @@ void __cdecl core_fire_cpp_CTrail_render_FUN_004c5e90(CTrail *this_ptr)
   g_RenderVertexBuffer[2].v = 0x80000;
   g_RenderVertexBuffer[3].u = 0x80000;
   g_RenderVertexBuffer[3].v = 0x80000;
-  g_RenderVertexBuffer[0].z = 0xffff;
   g_RenderVertexBuffer[0].r = 0xffff;
   g_RenderVertexBuffer[0].g = 0xffff;
-  g_RenderVertexBuffer[1].z = 0xffff;
+  g_RenderVertexBuffer[0].b = 0xffff;
   g_RenderVertexBuffer[1].r = 0xffff;
   g_RenderVertexBuffer[1].g = 0xffff;
-  g_RenderVertexBuffer[2].z = 0xffff;
+  g_RenderVertexBuffer[1].b = 0xffff;
   g_RenderVertexBuffer[2].r = 0xffff;
   g_RenderVertexBuffer[2].g = 0xffff;
-  g_RenderVertexBuffer[3].z = 0xffff;
+  g_RenderVertexBuffer[2].b = 0xffff;
   g_RenderVertexBuffer[3].r = 0xffff;
   g_RenderVertexBuffer[3].g = 0xffff;
+  g_RenderVertexBuffer[3].b = 0xffff;
   engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
             (g_CDemonRendererPtr2,&local_78);
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();

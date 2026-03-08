@@ -11,9 +11,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_004537d0(C
 {
   uint uVar1;
   uint uVar2;
-  int local_10;
-  int local_c;
-  int local_8;
+  CVector3i local_10;
   
   if (position == (CVector3f *)0x0) {
     g_PerspectiveReciprocal = (float)position;
@@ -23,11 +21,11 @@ void __cdecl core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_004537d0(C
     g_PerspectiveReciprocal = 0.0;
     return;
   }
-  local_10 = (int)ROUND(position->x * 256.0f);
-  local_c = (int)ROUND(position->y * 256.0f);
-  local_8 = (int)ROUND(position->z * 256.0f);
+  local_10.x = (int)ROUND(position->x * 256.0f);
+  local_10.y = (int)ROUND(position->y * 256.0f);
+  local_10.z = (int)ROUND(position->z * 256.0f);
   g_PerspectiveReciprocal =
-       (float)(*((this_ptr->base).vtable)->calculatePerspective)(this_ptr,&local_10,max_distance);
+       (float)(*((this_ptr->base).vtable)->getFogValueAtPosition)(this_ptr,&local_10);
   uVar1 = g_LightmapTexturePalette[g_FogColorIndexB] & 0xff;
   if (g_BitsPerPixel == 0x20) {
     uVar2 = (g_LightmapTexturePalette[g_FogColorIndexR] & 0xff) <<

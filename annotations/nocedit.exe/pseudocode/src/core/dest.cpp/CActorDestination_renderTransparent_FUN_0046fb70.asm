@@ -23,7 +23,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
-;   core_actor.cpp_CDemonActor_FUN_0040dec0
+;   core_actor.cpp_CDemonActor_renderBoundingBoxSolid_FUN_0040dec0
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00
 ;   core_actor.cpp_isOfClass_FUN_0040c6d0
@@ -95,8 +95,8 @@ section .text
     PUSH 0x0                            ; 0046fbe5
     PUSH 0xff                           ; 0046fbe7
     PUSH EBX                            ; 0046fbec
-    CALL core_actor.cpp_CDemonActor_FUN_0040dec0 ; 0046fbed
-        ;   XREF to: 0040dec0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_FUN_0040dec0(CDemonActor * this_ptr)
+    CALL core_actor.cpp_CDemonActor_renderBoundingBoxSolid_FUN_0040dec0 ; 0046fbed
+        ;   XREF to: 0040dec0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_renderBoundingBoxSolid_FUN_0040dec0(CDemonActor * this_ptr, int red, int green, int blue, ...)
     ADD ESP,0x14                        ; 0046fbf2
     MOV EAX,0x1                         ; 0046fbf5
     ADD ESP,0x30                        ; 0046fbfa

@@ -61,7 +61,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_drawLineStrip2D_FUN_00404570(SLineStri
       pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar8 * -8 + 4);
       piVar7 = piVar7 + (uint)bVar8 * -2 + 1;
     }
-    vertex2.fog = iVar10;
+    vertex2.a = iVar10;
     auVar9 = in_stack_ffffff60._0_24_;
     vertex2.projected_vertex.transformed_x = auVar9._0_4_;
     vertex2.projected_vertex.transformed_y = auVar9._4_4_;
@@ -71,9 +71,9 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_drawLineStrip2D_FUN_00404570(SLineStri
     vertex2.projected_vertex.screen_y = auVar9._20_4_;
     vertex2.u = in_stack_ffffff60._24_4_;
     vertex2.v = in_stack_ffffff60._28_4_;
-    vertex2.z = in_stack_ffffff60._32_4_;
-    vertex2.r = in_stack_ffffff60._36_4_;
-    vertex2.g = in_stack_ffffff60._40_4_;
+    vertex2.r = in_stack_ffffff60._32_4_;
+    vertex2.g = in_stack_ffffff60._36_4_;
+    vertex2.b = in_stack_ffffff60._40_4_;
     engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff30,vertex2);
   }
   return (SMRGLHeaderExtended *)(&line_strip[1].primitive_type + line_strip->vertex_count);

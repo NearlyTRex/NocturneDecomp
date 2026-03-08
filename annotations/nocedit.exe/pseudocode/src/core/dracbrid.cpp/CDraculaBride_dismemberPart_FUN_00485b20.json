@@ -6,23 +6,23 @@
   },
   "complexity": {
     "assembly_lines": 58,
-    "complexity_score": 34,
+    "complexity_score": 37,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 19,
+    "pseudocode_lines": 22,
     "suspect_count": 1,
     "suspect_types": [
       "warning_type_propagation"
     ],
-    "total_lines": 77
+    "total_lines": 80
   },
   "cross_references": [
     {
       "addr": "004858f0",
       "from_addr": "00485966",
-      "name": "core_dracbrid.cpp_CDraculaBride_explodeIntoParts_FUN_004858f0",
+      "name": "core_dracbrid.cpp_CDraculaBride_explode_FUN_004858f0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -36,7 +36,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_dracbrid.cpp_CDraculaBride_dismemberPart_FUN_00485b20",
-    "signature": "void __cdecl core_dracbrid_cpp_CDraculaBride_dismemberPart_FUN_00485b20(CDraculaBride *this_ptr,int part_index,int flags,int render_in_background)"
+    "signature": "void __cdecl core_dracbrid_cpp_CDraculaBride_dismemberPart_FUN_00485b20(CDraculaBride *this_ptr,int part_index,CVector3f *initial_velocity,int render_in_background)"
   },
   "function_calls": [
     {
@@ -104,10 +104,10 @@
       },
       {
         "is_param": true,
-        "name": "flags",
+        "name": "initial_velocity",
         "offset": 12,
         "size": 4,
-        "type": "int"
+        "type": "CVector3f *"
       },
       {
         "is_param": true,

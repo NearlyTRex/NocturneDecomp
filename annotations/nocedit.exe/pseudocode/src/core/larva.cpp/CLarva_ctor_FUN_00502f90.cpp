@@ -19,7 +19,7 @@ CLarva * __cdecl core_larva_cpp_CLarva_ctor_FUN_00502f90(CLarva *this_ptr)
             (&(pCVar3->base).base.model,"worm.dfm");
   (pCVar3->base).base.collision_cylinder_height = 0.25;
   (pCVar3->base).base.collision_cylinder_radius = 0.5;
-  (pCVar3->base).base.collision_layer = 1;
+  (pCVar3->base).base.blood_type = 1;
   fVar1 = 20.0f;
   (pCVar3->base).base.hit_points = 15.0;
   fVar2 = 100.0f;

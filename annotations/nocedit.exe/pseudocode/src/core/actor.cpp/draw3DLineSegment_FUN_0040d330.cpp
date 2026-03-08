@@ -75,7 +75,7 @@ void __cdecl core_actor_cpp_draw3DLineSegment_FUN_0040d330(CVector3i *start_poin
     pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);
     piVar4 = piVar4 + (uint)bVar5 * -2 + 1;
   }
-  vertex2.r = uVar7;
+  vertex2.g = uVar7;
   auVar6 = in_stack_ffffff7c._0_24_;
   vertex2.projected_vertex.transformed_x = auVar6._0_4_;
   vertex2.projected_vertex.transformed_y = auVar6._4_4_;
@@ -85,9 +85,9 @@ void __cdecl core_actor_cpp_draw3DLineSegment_FUN_0040d330(CVector3i *start_poin
   vertex2.projected_vertex.screen_y = auVar6._20_4_;
   vertex2.u = in_stack_ffffff7c._24_4_;
   vertex2.v = in_stack_ffffff7c._28_4_;
-  vertex2.z = in_stack_ffffff7c._32_4_;
-  vertex2.g = (int)output;
-  vertex2.fog = (int)input;
+  vertex2.r = in_stack_ffffff7c._32_4_;
+  vertex2.b = (int)output;
+  vertex2.a = (int)input;
   engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff4c,vertex2);
   return;
 }

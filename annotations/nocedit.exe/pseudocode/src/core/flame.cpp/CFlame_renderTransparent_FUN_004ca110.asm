@@ -25,10 +25,10 @@
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   undefined4 g_RenderVertexBuffer[0].u
 ;   undefined4 g_RenderVertexBuffer[0].v
-;   undefined4 g_RenderVertexBuffer[0].z
 ;   undefined4 g_RenderVertexBuffer[0].r
 ;   undefined4 g_RenderVertexBuffer[0].g
-;   undefined4 g_RenderVertexBuffer[0].fog
+;   undefined4 g_RenderVertexBuffer[0].b
+;   undefined4 g_RenderVertexBuffer[0].a
 ;   undefined4 g_RenderVertexBuffer[1].u
 ;   ... and 24 more
 ;
@@ -342,24 +342,24 @@ section .text
     SUB EAX,EDX                         ; 004ca4b2
     SAR EAX,0x1                         ; 004ca4b4
     MOV EDX,EAX                         ; 004ca4b6
-    MOV dword ptr [0x00688070],EDX      ; 004ca4b8 | g_RenderVertexBuffer[1].fog
+    MOV dword ptr [0x00688070],EDX      ; 004ca4b8 | g_RenderVertexBuffer[1].a
         ;   Label: LAB_004ca4b8
-    MOV dword ptr [0x006880a0],EDX      ; 004ca4be | g_RenderVertexBuffer[2].fog
-    MOV dword ptr [0x006880d0],EDX      ; 004ca4c4 | g_RenderVertexBuffer[3].fog
-    MOV dword ptr [0x00688040],EDX      ; 004ca4ca | g_RenderVertexBuffer[0].fog
+    MOV dword ptr [0x006880a0],EDX      ; 004ca4be | g_RenderVertexBuffer[2].a
+    MOV dword ptr [0x006880d0],EDX      ; 004ca4c4 | g_RenderVertexBuffer[3].a
+    MOV dword ptr [0x00688040],EDX      ; 004ca4ca | g_RenderVertexBuffer[0].a
     MOV EDX,0xffff                      ; 004ca4d0
-    MOV dword ptr [0x00688034],EDX      ; 004ca4d5 | g_RenderVertexBuffer[0].z
-    MOV dword ptr [0x00688038],EDX      ; 004ca4db | g_RenderVertexBuffer[0].r
-    MOV dword ptr [0x0068803c],EDX      ; 004ca4e1 | g_RenderVertexBuffer[0].g
-    MOV dword ptr [0x00688064],EDX      ; 004ca4e7 | g_RenderVertexBuffer[1].z
-    MOV dword ptr [0x00688068],EDX      ; 004ca4ed | g_RenderVertexBuffer[1].r
-    MOV dword ptr [0x0068806c],EDX      ; 004ca4f3 | g_RenderVertexBuffer[1].g
-    MOV dword ptr [0x00688094],EDX      ; 004ca4f9 | g_RenderVertexBuffer[2].z
-    MOV dword ptr [0x00688098],EDX      ; 004ca4ff | g_RenderVertexBuffer[2].r
-    MOV dword ptr [0x0068809c],EDX      ; 004ca505 | g_RenderVertexBuffer[2].g
-    MOV dword ptr [0x006880c4],EDX      ; 004ca50b | g_RenderVertexBuffer[3].z
-    MOV dword ptr [0x006880c8],EDX      ; 004ca511 | g_RenderVertexBuffer[3].r
-    MOV dword ptr [0x006880cc],EDX      ; 004ca517 | g_RenderVertexBuffer[3].g
+    MOV dword ptr [0x00688034],EDX      ; 004ca4d5 | g_RenderVertexBuffer[0].r
+    MOV dword ptr [0x00688038],EDX      ; 004ca4db | g_RenderVertexBuffer[0].g
+    MOV dword ptr [0x0068803c],EDX      ; 004ca4e1 | g_RenderVertexBuffer[0].b
+    MOV dword ptr [0x00688064],EDX      ; 004ca4e7 | g_RenderVertexBuffer[1].r
+    MOV dword ptr [0x00688068],EDX      ; 004ca4ed | g_RenderVertexBuffer[1].g
+    MOV dword ptr [0x0068806c],EDX      ; 004ca4f3 | g_RenderVertexBuffer[1].b
+    MOV dword ptr [0x00688094],EDX      ; 004ca4f9 | g_RenderVertexBuffer[2].r
+    MOV dword ptr [0x00688098],EDX      ; 004ca4ff | g_RenderVertexBuffer[2].g
+    MOV dword ptr [0x0068809c],EDX      ; 004ca505 | g_RenderVertexBuffer[2].b
+    MOV dword ptr [0x006880c4],EDX      ; 004ca50b | g_RenderVertexBuffer[3].r
+    MOV dword ptr [0x006880c8],EDX      ; 004ca511 | g_RenderVertexBuffer[3].g
+    MOV dword ptr [0x006880cc],EDX      ; 004ca517 | g_RenderVertexBuffer[3].b
     CMP dword ptr [EBP + 0x294],0x0     ; 004ca51d
     JNZ 0x004caa37                      ; 004ca524
         ;   XREF to: 004caa37 (CONDITIONAL_JUMP)  ; LAB_004caa37

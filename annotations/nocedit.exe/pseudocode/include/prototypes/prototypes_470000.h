@@ -99,7 +99,7 @@ int __cdecl core_dlight_cpp_CDemonLight_testShadowMapRegion_FUN_00476000(CDemonL
 void __cdecl core_dlight_cpp_renderConeLightGeometry_FUN_004760d0(CVector3f *position,CVector3i *rotation,float fov,float falloff);
 void __cdecl core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0(CDemonLight *this_ptr,float intensity);
 void __cdecl core_dlight_cpp_CDemonLight_drawShadowDepthBuffer_FUN_00476670(CDemonLight *this_ptr,int screen_x,int screen_y,int brightness_offset);
-int __cdecl core_dlight_cpp_CDemonLight_testLightVolumeVisibility_FUN_00476a60(CDemonLight *this_ptr);
+int __cdecl core_dlight_cpp_CDemonLight_testVisibility_FUN_00476a60(CDemonLight *this_ptr,CVector3i *corners);
 float * __cdecl core_dlight_cpp_copyFloat_FUN_00476c20(float *dst,float *src);
 float * __cdecl core_dlight_cpp_copyFloat_FUN_00476c30(float *dst,float *src);
 float * __cdecl core_dlight_cpp_copyFloat_FUN_00476c40(float *dst,float *src);

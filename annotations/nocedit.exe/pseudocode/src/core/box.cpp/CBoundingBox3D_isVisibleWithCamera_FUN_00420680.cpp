@@ -16,7 +16,7 @@ int __cdecl core_box_cpp_CBoundingBox3D_isVisibleWithCamera_FUN_00420680(CBoundi
   uint corner_index;
   int iVar5;
   int iVar6;
-  int local_94 [24];
+  CVector3i local_94 [8];
   CVector3f local_34;
   CVector3i local_28;
   int local_1c;
@@ -55,7 +55,7 @@ int __cdecl core_box_cpp_CBoundingBox3D_isVisibleWithCamera_FUN_00420680(CBoundi
       local_18 = *(int *)((int)&(pSVar1->projected_vertex).transformed_y + iVar5);
       local_14 = *(int *)((int)&(pSVar1->projected_vertex).transformed_z + iVar5);
       local_1c = iVar2;
-      *(uint *)((int)local_94 + iVar6) =
+      *(uint *)((int)&local_94[0].x + iVar6) =
            ((uint)((longlong)g_InverseMatrix.m[2].x * (longlong)local_14) >> 0x10 |
            (int)((ulonglong)((longlong)g_InverseMatrix.m[2].x * (longlong)local_14) >> 0x20) << 0x10
            ) + ((uint)((longlong)g_InverseMatrix.m[0].x * (longlong)iVar2) >> 0x10 |
@@ -64,7 +64,7 @@ int __cdecl core_box_cpp_CBoundingBox3D_isVisibleWithCamera_FUN_00420680(CBoundi
                        (int)((ulonglong)((longlong)g_InverseMatrix.m[1].x * (longlong)local_18) >>
                             0x20) << 0x10) + g_CameraOriginX;
       iVar3 = local_1c;
-      *(uint *)((int)local_94 + iVar6 + 4) =
+      *(uint *)((int)&local_94[0].y + iVar6) =
            ((uint)((longlong)g_InverseMatrix.m[2].y * (longlong)local_14) >> 0x10 |
            (int)((ulonglong)((longlong)g_InverseMatrix.m[2].y * (longlong)local_14) >> 0x20) << 0x10
            ) + ((uint)((longlong)g_InverseMatrix.m[0].y * (longlong)iVar2) >> 0x10 |
@@ -73,7 +73,7 @@ int __cdecl core_box_cpp_CBoundingBox3D_isVisibleWithCamera_FUN_00420680(CBoundi
                        (int)((ulonglong)((longlong)g_InverseMatrix.m[1].y * (longlong)local_18) >>
                             0x20) << 0x10) + g_CameraOriginY;
       iVar5 = iVar5 + 0x30;
-      *(uint *)((int)local_94 + iVar6 + 8) =
+      *(uint *)((int)&local_94[0].z + iVar6) =
            ((uint)((longlong)g_InverseMatrix.m[2].z * (longlong)local_14) >> 0x10 |
            (int)((ulonglong)((longlong)g_InverseMatrix.m[2].z * (longlong)local_14) >> 0x20) << 0x10
            ) + ((uint)((longlong)g_InverseMatrix.m[0].z * (longlong)iVar3) >> 0x10 |
@@ -83,7 +83,7 @@ int __cdecl core_box_cpp_CBoundingBox3D_isVisibleWithCamera_FUN_00420680(CBoundi
                             0x20) << 0x10) + g_CameraOriginZ;
       iVar6 = iVar6 + 0xc;
     } while (iVar5 != 0x180);
-    iVar6 = (*((g_CurrentSceneCamera->base).vtable)->isVisible)(g_CurrentSceneCamera,local_94);
+    iVar6 = (*((g_CurrentSceneCamera->base).vtable)->testVisibility)(g_CurrentSceneCamera,local_94);
     return iVar6;
   }
   return 0;

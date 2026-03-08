@@ -24,6 +24,8 @@
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
 #include "types/enums/EActorPropertyType.h"
+#include "types/enums/ECollisionType.h"
+#include "types/enums/EGroundType.h"
 #include "types/funcdefs/CActorPropertyActionFunc.h"
 #include "types/funcdefs/CActorPropertyDisplayFunc.h"
 #include "types/funcdefs/CActorPropertyValidatorFunc.h"
@@ -242,11 +244,11 @@ char * __cdecl core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(CDemonA
 void __cdecl core_actor_cpp_CDemonActor_setup_FUN_00408bb0(CDemonActor *this_ptr);
 void __cdecl core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(CDemonActor *this_ptr);
 CBoundingBox3D * __cdecl core_actor_cpp_CDemonActor_getBoundingBox_FUN_00408c70(CDemonActor *this_ptr,CBoundingBox3D *out_box);
-int __cdecl core_actor_cpp_CDemonActor_hasCollision_FUN_00408ca0(CDemonActor *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl core_actor_cpp_CDemonActor_getCollisionType_FUN_00408ca0(CDemonActor *this_ptr,SCollisionInfo *collision_info);
 float __cdecl core_actor_cpp_CDemonActor_customRayIntersect_FUN_00408cc0(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction, CVector3f *out_normal);
 void __cdecl core_actor_cpp_CDemonActor_customIntersectCylinderXZ_FUN_00408d10(CDemonActor *this_ptr,SIntersectXZCylinder *cylinder);
 int __cdecl core_actor_cpp_CDemonActor_customGetFloorHeight_FUN_00408d50(CDemonActor *this_ptr,float x_pos,float z_pos,float *out_floor_height);
-int __cdecl core_actor_cpp_CDemonActor_getGroundType_FUN_00408d90(CDemonActor *this_ptr);
+EGroundType __cdecl core_actor_cpp_CDemonActor_getGroundType_FUN_00408d90(CDemonActor *this_ptr);
 float __cdecl core_actor_cpp_CDemonActor_cylinderGroundCheck_FUN_00408db0(CDemonActor *this_ptr,float radius,CVector3f *out_normal);
 CVector3f * __cdecl core_actor_cpp_CDemonActor_transformVector_FUN_00408e80(CDemonActor *this_ptr,CVector3f *output,CVector3f *input);
 CVector3f * __cdecl core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0(CDemonActor *this_ptr,CVector3f *output_vector,CVector3f *input_vector);
@@ -265,7 +267,7 @@ CPathMap * __cdecl core_actor_cpp_CDemonActor_getPathMap_FUN_004090a0(CDemonActo
 int __cdecl core_actor_cpp_CDemonActor_testPointInCylinder_FUN_004090c0(CDemonActor *this_ptr,SCollisionReturnInfo *collision_info,float tolerance);
 int __cdecl core_actor_cpp_CDemonActor_testLineIntersection_FUN_00409150(CDemonActor *this_ptr,CVector3f *line_start,CVector3f *line_end, CVector3f *out_intersection_point);
 CBoundingBox3D * __cdecl core_actor_cpp_CDemonActor_getWorldBoundingBox_FUN_00409270(CDemonActor *this_ptr,CBoundingBox3D *output_bbox,SCollisionInfo *collision_info, int bounding_box_type);
-int __cdecl core_actor_cpp_CDemonActor_testRayIntersection_FUN_004093f0(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction, CVector3f *out_hit_normal,void *unused);
+float __cdecl core_actor_cpp_CDemonActor_testRayIntersection_FUN_004093f0(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction, CVector3f *out_hit_normal,int ray_type,CBoundingBox3D *clip_bounds);
 float __cdecl core_actor_cpp_CDemonActor_rayIntersect_FUN_00409470(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction, CVector3f *out_hit_normal,SCollisionInfo *collision_info,int bbox_type, CBoundingBox3D *ray_bbox);
 void __cdecl core_actor_cpp_CDemonActor_onLaserHit_FUN_00409840(CDemonActor *this_ptr,SLaserInfo *laser_info);
 int __cdecl core_actor_cpp_CDemonActor_getBlockVirtualDirectorFlag_FUN_00409880(CDemonActor *this_ptr);
@@ -361,7 +363,7 @@ void __cdecl core_actor_cpp_CDemonActor_getPropertyList_FUN_0040d290(CDemonActor
 void __cdecl core_actor_cpp_draw3DLineSegment_FUN_0040d330(CVector3i *start_point,CVector3f *direction_offset);
 void __cdecl core_actor_cpp_drawBoundingBox_FUN_0040d470(CBoundingBox3D *bbox,int line_color);
 void __cdecl core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(CDemonActor *this_ptr,uint32_t color);
-void __cdecl core_actor_cpp_CDemonActor_FUN_0040dec0(CDemonActor *this_ptr);
+void __cdecl core_actor_cpp_CDemonActor_renderBoundingBoxSolid_FUN_0040dec0(CDemonActor *this_ptr,int red,int green,int blue,int alpha);
 void __cdecl core_actor_cpp_CActorPropertyList_init_FUN_0040e130(CActorPropertyList *this_ptr);
 void __cdecl core_actor_cpp_CActorPropertyList_resetSelection_FUN_0040e150(CActorPropertyList *this_ptr);
 template<typename T_func0>

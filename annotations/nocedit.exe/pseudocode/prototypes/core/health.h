@@ -39,9 +39,9 @@ CBoundingBox3D * __cdecl CHealthItem::getBoundingBox(CHealthItem *this_ptr,CBoun
 // Address: 004f1f20
 void __cdecl CHealthItem::archive(CHealthItem *this_ptr);
 
-// Original: core_health.cpp_CHealthItem_hasCollision_FUN_004f1fa0
+// Original: core_health.cpp_CHealthItem_getCollisionType_FUN_004f1fa0
 // Address: 004f1fa0
-int __cdecl CHealthItem::hasCollision(CHealthItem *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CHealthItem::getCollisionType(CHealthItem *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_health.cpp_CHealthItem_canPickup_FUN_004f1fb0
 // Address: 004f1fb0

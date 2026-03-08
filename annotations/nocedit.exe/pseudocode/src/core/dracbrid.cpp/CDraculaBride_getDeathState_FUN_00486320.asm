@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_dracbrid_cpp_CDraculaBride_getDeathState_FUN_00486320(CDraculaBride *this_ptr)
+; EDeathState __cdecl core_dracbrid_cpp_CDraculaBride_getDeathState_FUN_00486320(CDraculaBride *this_ptr)
 ;
 ; Parameters:
 ; CDraculaBride *  Stack[0x4]:4   this_ptr

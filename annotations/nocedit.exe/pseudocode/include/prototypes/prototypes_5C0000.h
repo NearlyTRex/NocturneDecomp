@@ -19,6 +19,8 @@
 #include "types/classes/CVector2d.h"
 #include "types/classes/CVector3d.h"
 #include "types/classes/CVector3f.h"
+#include "types/enums/ECollisionType.h"
+#include "types/enums/EDeathState.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SExpandedEdge.h"
@@ -57,7 +59,7 @@ int __cdecl core_stranger_cpp_CStranger_isWeaponDrawn_FUN_005c6650(CStranger *th
 void __cdecl core_stranger_cpp_CStranger_drawWeapon_FUN_005c6660(CStranger *this_ptr,int drawn);
 int __cdecl core_stranger_cpp_CStranger_getGrabbed_FUN_005c66a0(CStranger *this_ptr,CDemonActor *grabber,int grab_type);
 void __cdecl core_stranger_cpp_CStranger_reset_FUN_005c6750(CStranger *this_ptr);
-int __cdecl core_stranger_cpp_CStranger_getDeathState_FUN_005c67c0(CStranger *this_ptr);
+EDeathState __cdecl core_stranger_cpp_CStranger_getDeathState_FUN_005c67c0(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_dropCarriedObject_FUN_005c67f0(CStranger *this_ptr,int hand_index,CVector3f *drop_direction);
 void __cdecl core_stranger_cpp_CStranger_drop_FUN_005c6850(CStranger *this_ptr,CDemonActor *carrier,CVector3f *drop_position);
 void __cdecl core_stranger_cpp_CStranger_onActorDeleted_FUN_005c68a0(CStranger *this_ptr,CDemonActor *deleted_actor);
@@ -79,7 +81,7 @@ int __cdecl core_succubus_cpp_CSuccubus_renderOpaque_FUN_005c7590(CSuccubus *thi
 void __cdecl core_succubus_cpp_CSuccubus_archive_FUN_005c7710(CSuccubus *this_ptr);
 void __cdecl core_succubus_cpp_CSuccubus_processDamage_FUN_005c7760(CSuccubus *this_ptr,SDamageInfo *damage_info);
 int __cdecl core_succubus_cpp_CSuccubus_getTargetPoints_FUN_005c7780(CSuccubus *this_ptr,CVector3f *out_points_array);
-void __cdecl core_succubus_cpp_CSuccubus_hasCollision_FUN_005c7790(CSuccubus *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl core_succubus_cpp_CSuccubus_getCollisionType_FUN_005c7790(CSuccubus *this_ptr,SCollisionInfo *collision_info);
 void __cdecl core_succubus_cpp_CSuccubus_getPropertyList_FUN_005c77b0(CSuccubus *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_succubus_cpp_CSuccubus_addFilesToExtract_FUN_005c77f0(CSuccubus *this_ptr,_FILE *file_handle);
 CSuccubus * __cdecl core_succubus_cpp_CSuccubus_dtor_FUN_005c7820(CSuccubus *this_ptr,uint flags);

@@ -3627,7 +3627,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"core_backgnd.cpp_CBackgroundActor_getGroundType_FUN_00412a30",
-    "ret":"int",
+    "ret":"EGroundType",
     "vars":{
       "params":[
         {
@@ -4637,8 +4637,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_batman.cpp_CBatman_hasCollision_FUN_00417cb0",
-    "ret":"int",
+    "name":"core_batman.cpp_CBatman_getCollisionType_FUN_00417cb0",
+    "ret":"ECollisionType",
     "vars":{
       "params":[
         {
@@ -7916,8 +7916,86 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_bugs.cpp_FUN_004279b0",
-    "ret":"void"
+    "name":"core_bugs.cpp_createVector_FUN_004279b0",
+    "ret":"CVector3f*",
+    "vars":{
+      "params":[
+        {
+          "name":"dest",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"x",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"y",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"z",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        }
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
+    }
   },
   {
     "addr":"00427cb0",
@@ -42340,8 +42418,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_hotdemon.cpp_CHotDemon_hasCollision_FUN_004f79b0",
-    "ret":"void",
+    "name":"core_hotdemon.cpp_CHotDemon_getCollisionType_FUN_004f79b0",
+    "ret":"ECollisionType",
     "vars":{
       "params":[
         {
@@ -42376,7 +42454,17 @@
           },
           "type":"SCollisionInfo*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -45953,8 +46041,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_manpuz.cpp_CMirrorHack_hasCollision_FUN_0050b2b0",
-    "ret":"int",
+    "name":"core_manpuz.cpp_CMirrorHack_getCollisionType_FUN_0050b2b0",
+    "ret":"ECollisionType",
     "vars":{
       "params":[
         {
@@ -86190,8 +86278,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_trigger.cpp_CTrigger_hasCollision_FUN_005e0930",
-    "ret":"int",
+    "name":"core_trigger.cpp_CTrigger_getCollisionType_FUN_005e0930",
+    "ret":"ECollisionType",
     "vars":{
       "params":[
         {
@@ -87268,8 +87356,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_vehicle.cpp_CVehicle_hasCollision_FUN_005e88b0",
-    "ret":"int",
+    "name":"core_vehicle.cpp_CVehicle_getCollisionType_FUN_005e88b0",
+    "ret":"ECollisionType",
     "vars":{
       "params":[
         {
@@ -87793,7 +87881,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"core_wateract.cpp_CWaterActor_getGroundType_FUN_005eb730",
-    "ret":"int",
+    "ret":"EGroundType",
     "vars":{
       "params":[
         {
@@ -88180,8 +88268,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_weapon.cpp_CWeapon_hasCollision_FUN_005ee330",
-    "ret":"int",
+    "name":"core_weapon.cpp_CWeapon_getCollisionType_FUN_005ee330",
+    "ret":"ECollisionType",
     "vars":{
       "params":[
         {
@@ -90654,7 +90742,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"core_werewolf.cpp_CWerewolf_getDeathState_FUN_005f1db0",
-    "ret":"int",
+    "ret":"EDeathState",
     "vars":{
       "params":[
         {

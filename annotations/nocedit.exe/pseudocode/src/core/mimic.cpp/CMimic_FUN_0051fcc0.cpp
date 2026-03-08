@@ -16,7 +16,7 @@ void __cdecl core_mimic_cpp_CMimic_FUN_0051fcc0(CMimic *this_ptr)
   float fVar3;
   CVector3f *pCVar4;
   SMotion *pSVar5;
-  int iVar6;
+  EDeathState EVar6;
   uint uVar7;
   CBoundingBox3D *pCVar8;
   CMatrix3x4f *pCVar9;
@@ -25,7 +25,8 @@ void __cdecl core_mimic_cpp_CMimic_FUN_0051fcc0(CMimic *this_ptr)
   byte bVar12;
   float in_stack_00000008;
   CDeformableModelInstance *pCVar13;
-  float fVar14;
+  int iVar14;
+  float fVar15;
   SDamageInfo *damage_info;
   SDamageInfo local_1e4;
   CMatrix3x4f local_1a8;
@@ -81,9 +82,9 @@ void __cdecl core_mimic_cpp_CMimic_FUN_0051fcc0(CMimic *this_ptr)
   uVar7 = pSVar5->state_index;
   if (uVar7 < 2) {
     if (uVar7 == 0) {
-      iVar6 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).getDeathState)
+      EVar6 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).getDeathState)
                         (&g_HeroActors[g_LocalHeroIndex]->base);
-      if (((iVar6 == 0) && (g_CGamePtr->freeze_enemies_enabled == 0)) &&
+      if (((EVar6 == DEATH_STATE_ALIVE) && (g_CGamePtr->freeze_enemies_enabled == 0)) &&
          (ABS((this_ptr->base).base.base.location.position.y -
               (g_HeroActors[g_LocalHeroIndex]->base).base.location.position.y) <=
           (float)15)) {
@@ -98,7 +99,7 @@ void __cdecl core_mimic_cpp_CMimic_FUN_0051fcc0(CMimic *this_ptr)
           local_4c.y = 0.7;
           pCVar9 = &local_1a8;
           pCVar10 = &local_178;
-          for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {
+          for (iVar14 = 0xc; iVar14 != 0; iVar14 = iVar14 + -1) {
             pCVar10->m[0].w = pCVar9->m[0].w;
             pCVar9 = (CMatrix3x4f *)((int)pCVar9 + ((uint)bVar12 * -2 + 1) * 4);
             pCVar10 = (CMatrix3x4f *)((int)pCVar10 + ((uint)bVar12 * -2 + 1) * 4);
@@ -108,9 +109,9 @@ void __cdecl core_mimic_cpp_CMimic_FUN_0051fcc0(CMimic *this_ptr)
           pCVar4 = core_xform_cpp_transformVector3x4_FUN_005f4dc0(&local_b8,&local_4c,&local_178);
           core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                     ((CDemonActor *)this_ptr,&local_f4,pCVar4);
-          iVar6 = core_setcolid_cpp_CDemonSet_testVoxelRaycast_FUN_00572510
-                            (g_CDemonSetPtr,&local_f4,&local_94);
-          if (iVar6 == 0) {
+          iVar14 = core_setcolid_cpp_CDemonSet_testVoxelRaycast_FUN_00572510
+                             (g_CDemonSetPtr,&local_f4,&local_94);
+          if (iVar14 == 0) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                       (&local_18->motion_controller,2,1);
             (*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -121,10 +122,10 @@ void __cdecl core_mimic_cpp_CMimic_FUN_0051fcc0(CMimic *this_ptr)
       goto LAB_0051fdb4;
     }
 LAB_0051fd7d:
-    iVar6 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).getDeathState)
+    EVar6 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).getDeathState)
                       (&g_HeroActors[g_LocalHeroIndex]->base);
-    if ((iVar6 != 0) || (g_CGamePtr->freeze_enemies_enabled != 0)) {
-      iVar6 = 0;
+    if ((EVar6 != DEATH_STATE_ALIVE) || (g_CGamePtr->freeze_enemies_enabled != 0)) {
+      iVar14 = 0;
       goto LAB_0051fda5;
     }
     core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
@@ -142,7 +143,7 @@ LAB_0051fd7d:
       (this_ptr->base).base.walk_step_speed = local_14 * 4.242857f;
       local_14 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
                            (&pCVar13->motion_controller,2);
-      fVar14 = (this_ptr->base).speed;
+      fVar15 = (this_ptr->base).speed;
       fVar1 = (this_ptr->base).speed;
       fVar3 = (float)1.57079632675;
       (this_ptr->base).base.walk_step_speed =
@@ -150,27 +151,27 @@ LAB_0051fd7d:
       local_e8.z = 2.5f;
       fVar2 = (this_ptr->base).base.walk_step_speed;
       (this_ptr->base).base.turn_speed = in_stack_00000008 * fVar3 * fVar1;
-      (this_ptr->base).base.walk_step_speed = fVar14 * in_stack_00000008 * fVar2;
+      (this_ptr->base).base.walk_step_speed = fVar15 * in_stack_00000008 * fVar2;
       local_e8.x = 0.0;
       local_e8.y = 0.0;
-      iVar6 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
-                        ((CCharacter *)this_ptr,
-                         &(g_HeroActors[g_LocalHeroIndex]->base).base.location.position,
-                         &g_HeroActors[g_LocalHeroIndex]->path_map,&local_e8,1.0,0.17453292);
-      if (iVar6 < 0) {
-        iVar6 = 0;
+      iVar14 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
+                         ((CCharacter *)this_ptr,
+                          &(g_HeroActors[g_LocalHeroIndex]->base).base.location.position,
+                          &g_HeroActors[g_LocalHeroIndex]->path_map,&local_e8,1.0,0.17453292);
+      if (iVar14 < 0) {
+        iVar14 = 0;
       }
       else {
-        if (0 < iVar6) {
+        if (0 < iVar14) {
           core_mimic_cpp_CMimic_beginMorph_FUN_00520a80(this_ptr);
           goto LAB_0051fdb4;
         }
         if (ABS((this_ptr->base).base.turn_angle_accumulator) /
             (in_stack_00000008 * (this_ptr->base).speed) <= (float)0.78539816337500001) {
-          iVar6 = 2;
+          iVar14 = 2;
         }
         else {
-          iVar6 = 1;
+          iVar14 = 1;
         }
       }
       goto LAB_0051fdac;
@@ -198,14 +199,14 @@ LAB_0051fd7d:
               core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_1e4);
               local_1e4.damage_amount = local_24;
               damage_info = &local_1e4;
-              fVar14 = 0.2;
+              fVar15 = 0.2;
               local_1e4.attacker = (CDemonActor *)this_ptr;
               local_1e4.wielder = (CDemonActor *)this_ptr;
               pCVar4 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                                  ((CDemonActor *)this_ptr,&local_130,&local_ac);
-              iVar6 = core_enemy_cpp_CEnemy_testAttackRadius_FUN_004a9880
-                                (&this_ptr->base,pCVar4,fVar14,damage_info);
-              if (iVar6 != 0) {
+              iVar14 = core_enemy_cpp_CEnemy_testAttackRadius_FUN_004a9880
+                                 (&this_ptr->base,pCVar4,fVar15,damage_info);
+              if (iVar14 != 0) {
                 (*((this_ptr->base).base.base.vtable._ub)->playSound)
                           ((CDemonActor *)this_ptr,"gh-hits[1,4].wav");
               }
@@ -213,7 +214,7 @@ LAB_0051fd7d:
           }
           goto LAB_0051fdb4;
         }
-        iVar6 = 0;
+        iVar14 = 0;
         pCVar13 = local_18;
         goto LAB_0051fdac;
       }
@@ -229,27 +230,27 @@ LAB_0051fd7d:
       goto LAB_0051fdb4;
     }
 LAB_005202b7:
-    iVar6 = 2;
+    iVar14 = 2;
 LAB_0051fda5:
     pCVar13 = &(this_ptr->base).base.model;
 LAB_0051fdac:
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              (&pCVar13->motion_controller,iVar6,1);
+              (&pCVar13->motion_controller,iVar14,1);
   }
 LAB_0051fdb4:
   if (0.0 <= local_1c) {
-    fVar14 = (this_ptr->base).speed;
+    fVar15 = (this_ptr->base).speed;
     fVar1 = (float)3.1415926535000001;
-    (this_ptr->base).base.walk_step_speed = fVar14 * in_stack_00000008;
-    (this_ptr->base).base.turn_speed = in_stack_00000008 * fVar1 * fVar14;
+    (this_ptr->base).base.walk_step_speed = fVar15 * in_stack_00000008;
+    (this_ptr->base).base.turn_speed = in_stack_00000008 * fVar1 * fVar15;
     local_64.z = local_1c;
     local_64.x = 0.0;
     local_64.y = 0.0;
-    iVar6 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
-                      ((CCharacter *)this_ptr,
-                       &(g_HeroActors[g_LocalHeroIndex]->base).base.location.position,
-                       &g_HeroActors[g_LocalHeroIndex]->path_map,&local_64,3.0,0.5235988);
-    if (iVar6 != 1) {
+    iVar14 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
+                       ((CCharacter *)this_ptr,
+                        &(g_HeroActors[g_LocalHeroIndex]->base).base.location.position,
+                        &g_HeroActors[g_LocalHeroIndex]->path_map,&local_64,3.0,0.5235988);
+    if (iVar14 != 1) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                 (&(this_ptr->base).base.model.motion_controller,2,1);
     }

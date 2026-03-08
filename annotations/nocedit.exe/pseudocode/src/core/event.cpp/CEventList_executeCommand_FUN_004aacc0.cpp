@@ -21,6 +21,7 @@ int __cdecl core_event_cpp_CEventList_executeCommand_FUN_004aacc0(CEventList *th
   CCharacter *pCVar7;
   CLever *this_ptr_01;
   CMotionList *pCVar8;
+  EWeatherType type;
   SMotion *pSVar9;
   byte *pbVar10;
   CDemonActor *pCVar11;
@@ -353,7 +354,7 @@ LAB_004aad41:
             local_f0 = 0;
           }
           if ((pCVar4 != g_ActorNameSentinel) && (local_f0 != 0)) {
-            pCVar4->was_created = 2;
+            pCVar4->lifecycle_state = ACTOR_DESTROYED;
             pCVar6 = (CBoxActor *)core_actor_cpp_castToClassHash_FUN_0040c790(pCVar4,uVar12);
             if (pCVar6 != (CBoxActor *)0x0) {
               pCVar6->loop_wav_name[0] = '\0';
@@ -1700,15 +1701,15 @@ LAB_004aaf38:
                                                               (local_e35 + 1,local_e35 + 2,SVar14);
                                                     SVar14 = SVar14 - 1;
                                                   }
-                                                  iVar3 = _stricmp
+                                                  iVar2 = _stricmp
                                                                     (local_e35 + 1,"none");
-                                                  iVar2 = 0;
-                                                  if (iVar3 != 0) {
+                                                  type = WEATHER_TYPE_NONE;
+                                                  if (iVar2 != 0) {
                                                     iVar2 = _stricmp
                                                                       (local_e35 + 1,"rain"
                                                                       );
                                                     if (iVar2 == 0) {
-                                                      iVar2 = 1;
+                                                      type = WEATHER_TYPE_RAIN;
                                                     }
                                                     else {
                                                       iVar2 = _stricmp
@@ -1721,13 +1722,13 @@ LAB_004aaf38:
                                                                   );
                                                         return 0;
                                                       }
-                                                      iVar2 = 2;
+                                                      type = WEATHER_TYPE_SNOW;
                                                     }
                                                   }
                                                   if (local_f0 != 0) {
                                                                                                         
                                                   core_weather_cpp_CWeather_setWeatherType_FUN_005ef8c0
-                                                            (g_CWeatherPtr,iVar2);
+                                                            (g_CWeatherPtr,type);
                                                   }
                                                   }
                                                   else {

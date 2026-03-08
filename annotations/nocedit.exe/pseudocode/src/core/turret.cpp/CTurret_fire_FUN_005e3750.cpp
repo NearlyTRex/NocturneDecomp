@@ -11,9 +11,10 @@ int __cdecl core_turret_cpp_CTurret_fire_FUN_005e3750(CTurret *this_ptr)
 {
   CVector3f *pCVar1;
   CCharacter *this_ptr_00;
-  int iVar2;
+  EDeathState EVar2;
   CTrigger *this_ptr_01;
   CFlameCan *this_ptr_02;
+  int iVar3;
   CTrigger *actor;
   SDamageInfo SStack_e0;
   CVector3f CStack_a4;
@@ -62,7 +63,8 @@ int __cdecl core_turret_cpp_CTurret_fire_FUN_005e3750(CTurret *this_ptr)
                   core_actor_cpp_castToClassHash_FUN_0040c790
                             (g_CDemonSetPtr->collision_actor,g_CCharacterClassInfo.name_hash);
     if ((this_ptr_00 != (CCharacter *)0x0) &&
-       (iVar2 = (*(((this_ptr_00->base).vtable._uc)->_uc).getDeathState)(this_ptr_00), 0 < iVar2)) {
+       (EVar2 = (*(((this_ptr_00->base).vtable._uc)->_uc).getDeathState)(this_ptr_00),
+       0 < (int)EVar2)) {
       this_ptr_00 = (CCharacter *)0x0;
     }
     pCStack_20 = (CGlass *)
@@ -82,10 +84,10 @@ int __cdecl core_turret_cpp_CTurret_fire_FUN_005e3750(CTurret *this_ptr)
       if (pCStack_20 == (CGlass *)0x0) {
         if (this_ptr_01 != (CTrigger *)0x0) {
           core_trigger_cpp_CTrigger_onProjectileHit_FUN_005e0aa0(this_ptr_01);
-          iVar2 = core_trigger_cpp_CTrigger_acceptsDamageFrom_FUN_005e0ac0
+          iVar3 = core_trigger_cpp_CTrigger_acceptsDamageFrom_FUN_005e0ac0
                             (this_ptr_01,(CDemonActor *)this_ptr);
           actor = pCStack_2c;
-          if (iVar2 != 0) {
+          if (iVar3 != 0) {
             fStack_18 = (*(((this_ptr->base).base.vtable._uw)->_uw).getDamage)(&this_ptr->base);
             core_trigger_cpp_CTrigger_applyDamage_FUN_005e0b00(this_ptr_01,fStack_18);
             actor = pCStack_2c;
@@ -107,8 +109,8 @@ int __cdecl core_turret_cpp_CTurret_fire_FUN_005e3750(CTurret *this_ptr)
         }
       }
       else {
-        iVar2 = core_glass_cpp_CGlass_checkBreakableCondition_FUN_004eb3a0(pCStack_20);
-        if (iVar2 == 0) break;
+        iVar3 = core_glass_cpp_CGlass_checkBreakableCondition_FUN_004eb3a0(pCStack_20);
+        if (iVar3 == 0) break;
         core_glass_cpp_CGlass_shatter_FUN_004eaef0
                   (pCStack_20,&g_CDemonSetPtr->collision_impact_position);
       }

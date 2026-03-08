@@ -55,9 +55,9 @@ void __cdecl CFilmReel::renderBackground(CFilmReel *this_ptr,int layer_flag);
 // Address: 004be8a0
 void __cdecl CFilmReel::archive(CFilmReel *this_ptr);
 
-// Original: core_filmreel.cpp_CFilmReel_hasCollision_FUN_004be8f0
+// Original: core_filmreel.cpp_CFilmReel_getCollisionType_FUN_004be8f0
 // Address: 004be8f0
-int __cdecl CFilmReel::hasCollision(CFilmReel *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CFilmReel::getCollisionType(CFilmReel *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_filmreel.cpp_CFilmReel_getBoundingBox_FUN_004be910
 // Address: 004be910

@@ -32,9 +32,9 @@ void __cdecl shape_meshlod_cpp_CLodMesh_transformVerticesForPreview_FUN_0051e6b0
                  ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x +
                  iVar3),&local_1c);
       pCVar1 = g_CDemonRendererPtr2;
-      *(uint *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->z + iVar3) = 0xffff;
-      *(uint *)((int)&pCVar1->vertex_buffer_ptr->r + iVar3) = 0xffff;
+      *(uint *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->r + iVar3) = 0xffff;
       *(uint *)((int)&pCVar1->vertex_buffer_ptr->g + iVar3) = 0xffff;
+      *(uint *)((int)&pCVar1->vertex_buffer_ptr->b + iVar3) = 0xffff;
       iVar2 = iVar2 + 1;
       iVar4 = iVar4 + 0x4c4;
       iVar3 = iVar3 + 0x30;

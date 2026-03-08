@@ -151,9 +151,9 @@ void __cdecl CCharacter::explode(CCharacter *this_ptr,CVector3f *impact_point,fl
 // Address: 0042b9e0
 void __cdecl CCharacter::dismember(CCharacter *this_ptr,CVector3f *impact_point,float impact_force);
 
-// Original: core_charactr.cpp_CCharacter_hasCollision_FUN_0042bc20
+// Original: core_charactr.cpp_CCharacter_getCollisionType_FUN_0042bc20
 // Address: 0042bc20
-int __cdecl CCharacter::hasCollision(CCharacter *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CCharacter::getCollisionType(CCharacter *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_charactr.cpp_CCharacter_detachBodyPart_FUN_0042bcc0
 // Address: 0042bcc0
@@ -201,7 +201,7 @@ void __cdecl CCharacter::processDamage(CCharacter *this_ptr,SDamageInfo *damage_
 
 // Original: core_charactr.cpp_CCharacter_getDeathState_FUN_0042c580
 // Address: 0042c580
-int __cdecl CCharacter::getDeathState(CCharacter *this_ptr);
+EDeathState __cdecl CCharacter::getDeathState(CCharacter *this_ptr);
 
 // Original: core_charactr.cpp_CCharacter_followActor_FUN_0042c5f0
 // Address: 0042c5f0

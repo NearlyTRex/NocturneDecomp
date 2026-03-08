@@ -26,7 +26,7 @@
 ; XREF[13]:
 ;   core_batcreat.cpp_CBatCreature_processDismemberment_FUN_00415dd0 at 00415f74
 ;   core_batman.cpp_CBatman_FUN_00417660 at 00417781
-;   core_bride.cpp_CBride_FUN_00424600 at 004246f6
+;   core_bride.cpp_CBride_processDismemberment_FUN_00424600 at 004246d7
 ;   core_charactr.cpp_CCharacter_detachBodyPart_FUN_0042bcc0 at 0042bd14
 ;   core_cow.cpp_CZombieCow_FUN_004448c0 at 0044497a
 ;   core_dracbrid.cpp_CDraculaBride_dismemberPart_FUN_00485b20 at 00485b73

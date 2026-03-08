@@ -43,9 +43,9 @@ int __cdecl CConveyor::renderTransparent(CConveyor *this_ptr);
 // Address: 00442020
 void __cdecl CConveyor::archive(CConveyor *this_ptr);
 
-// Original: core_conveyor.cpp_CConveyor_hasCollision_FUN_004420c0
+// Original: core_conveyor.cpp_CConveyor_getCollisionType_FUN_004420c0
 // Address: 004420c0
-int __cdecl CConveyor::hasCollision(CConveyor *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CConveyor::getCollisionType(CConveyor *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_conveyor.cpp_CConveyor_getBoundingBox_FUN_004420d0
 // Address: 004420d0

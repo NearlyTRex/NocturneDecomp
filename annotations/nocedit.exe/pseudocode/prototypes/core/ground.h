@@ -13,15 +13,15 @@ _FILE * __cdecl openFileWithExtension(char *base_filename,char *file_extension,c
 
 // Original: core_ground.cpp_getGroundTypeCode_FUN_004eece0
 // Address: 004eece0
-char * __cdecl getGroundTypeCode(int type);
+char * __cdecl getGroundTypeCode(EGroundType type);
 
 // Original: core_ground.cpp_getGroundTypeName_FUN_004eed80
 // Address: 004eed80
-char * __cdecl getGroundTypeName(int type);
+char * __cdecl getGroundTypeName(EGroundType type);
 
 // Original: core_ground.cpp_getGroundTypeColor_FUN_004eee20
 // Address: 004eee20
-uint __cdecl getGroundTypeColor(int type);
+uint __cdecl getGroundTypeColor(EGroundType type);
 
 // Original: core_ground.cpp_CGround_ctor_FUN_004eee80
 // Address: 004eee80

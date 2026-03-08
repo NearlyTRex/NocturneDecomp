@@ -24,6 +24,7 @@
 #include "types/classes/CSmiley.h"
 #include "types/classes/CVector3d.h"
 #include "types/classes/CVector3f.h"
+#include "types/enums/ECollisionType.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SMixBuffer.h"
@@ -101,7 +102,7 @@ void __cdecl core_smiley_cpp_CSmiley_reset_FUN_005a3280(CSmiley *this_ptr);
 void __cdecl core_smiley_cpp_CSmiley_processDismemberment_FUN_005a32a0(CSmiley *this_ptr,SDamageInfo *damage_info);
 void __cdecl core_smiley_cpp_CSmiley_processDamage_FUN_005a3580(CSmiley *this_ptr,SDamageInfo *damage_info);
 int __cdecl core_smiley_cpp_CSmiley_getTargetPoints_FUN_005a3690(CSmiley *this_ptr,CVector3f *out_points_array);
-void __cdecl core_smiley_cpp_CSmiley_hasCollision_FUN_005a37f0(CSmiley *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl core_smiley_cpp_CSmiley_getCollisionType_FUN_005a37f0(CSmiley *this_ptr,SCollisionInfo *collision_info);
 void __cdecl core_smiley_cpp_CSmiley_getPropertyList_FUN_005a3810(CSmiley *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_smiley_cpp_CSmiley_addFilesToExtract_FUN_005a3850(CSmiley *this_ptr,_FILE *file_handle);
 CSmiley * __cdecl core_smiley_cpp_CSmiley_dtor_FUN_005a3880(CSmiley *this_ptr,uint flags);

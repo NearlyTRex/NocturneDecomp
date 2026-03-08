@@ -4,31 +4,25 @@
       {
         "category": "format_error",
         "column": 89,
-        "line": 872,
+        "line": 873,
         "message": "format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 86,
-        "line": 1267,
-        "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "undeclared_identifier",
         "column": 78,
-        "line": 1531,
+        "line": 1539,
         "message": "use of undeclared identifier 'SUB14'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 2475,
+        "line": 2483,
         "message": "C-style cast from 'struct CDemonActor *' to 'float' is not allowed"
       },
       {
         "category": "undeclared_identifier",
         "column": 63,
-        "line": 2840,
+        "line": 2848,
         "message": "use of undeclared identifier 'PTR_00662638'"
       }
     ],
@@ -37,12 +31,12 @@
   },
   "complexity": {
     "assembly_lines": 7415,
-    "complexity_score": 3492,
+    "complexity_score": 3500,
     "cross_reference_count": 4,
     "function_call_count": 77,
     "global_count": 341,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 3382,
+    "pseudocode_lines": 3390,
     "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -50,7 +44,7 @@
       "sub84_truncation",
       "warning_type_propagation"
     ],
-    "total_lines": 10797
+    "total_lines": 10805
   },
   "cross_references": [
     {
@@ -139,7 +133,7 @@
     {
       "addr": "00427b70",
       "is_variadic": false,
-      "name": "core_bugs.cpp_FUN_00427b70"
+      "name": "core_bugs.cpp_getDeformableModelName_FUN_00427b70"
     },
     {
       "addr": "0042bd30",
@@ -3886,7 +3880,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 910,
+      "line": 916,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (*(int *)((int)local_c8c + iVar11) != 0) {",
@@ -3894,7 +3888,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 1359,
+      "line": 1367,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "dVar1 = __BITCAST_DOUBLE(CONCAT44(local_124,local_11c));",
@@ -3902,7 +3896,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 1364,
+      "line": 1372,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "SUB84(__BITCAST_UINT64(dVar1),0),",
@@ -3910,7 +3904,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 1364,
+      "line": 1372,
       "match": "SUB84",
       "severity": "mild",
       "text": "SUB84(__BITCAST_UINT64(dVar1),0),",
@@ -3918,7 +3912,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 1400,
+      "line": 1408,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "dVar1 = __BITCAST_DOUBLE(CONCAT44(local_124,local_11c));",
@@ -3926,7 +3920,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 1524,
+      "line": 1532,
       "match": "SUB14",
       "severity": "mild",
       "text": "updateVictim)(local_c4,SUB14(local_c0 == 0,0))",
@@ -3934,7 +3928,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 3227,
+      "line": 3235,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "dVar1 = __BITCAST_DOUBLE(CONCAT44(pcVar19,local_124));",

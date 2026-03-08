@@ -41,7 +41,7 @@ void __cdecl core_spike_cpp_CSpike_testCollisionWithCharacters_FUN_005b8950(CSpi
   float fStack_34;
   float fStack_30;
   float fStack_2c;
-  int iStack_28;
+  ECollisionType EStack_28;
   int iStack_24;
   CLocation *pCStack_20;
   int iStack_1c;
@@ -98,8 +98,9 @@ void __cdecl core_spike_cpp_CSpike_testCollisionWithCharacters_FUN_005b8950(CSpi
     if (fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1 <= fStack_2c) {
       core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(&SStack_130);
       SStack_130.ray_type = 0;
-      iStack_28 = (*((this_ptr_00->base).vtable._ub)->hasCollision)(&this_ptr_00->base,&SStack_130);
-      if (iStack_28 != 0) {
+      EStack_28 = (*((this_ptr_00->base).vtable._ub)->getCollisionType)
+                            (&this_ptr_00->base,&SStack_130);
+      if (EStack_28 != COLLISION_TYPE_NONE) {
         SStack_130.cylinder_bottom_y = 0.0;
         core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                   (&this_ptr->base,&CStack_68,&input_world_point->position);
@@ -120,7 +121,7 @@ void __cdecl core_spike_cpp_CSpike_testCollisionWithCharacters_FUN_005b8950(CSpi
                   (&this_ptr->base,&CStack_80,&CStack_68);
         fStack_18 = core_actor_cpp_CDemonActor_rayIntersect_FUN_00409470
                               (&this_ptr_00->base,&CStack_80,&CStack_98,aCStack_108,&SStack_130,
-                               iStack_28,&CStack_d4);
+                               EStack_28,&CStack_d4);
         if ((0.0 <= fStack_18) && (fStack_18 <= 1.0)) {
           fStack_5c = CStack_98.x * fStack_18;
           fStack_58 = CStack_98.y * fStack_18;

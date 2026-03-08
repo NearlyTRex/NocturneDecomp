@@ -51,9 +51,9 @@ void __cdecl CGargoyle::processDamage(CGargoyle *this_ptr,SDamageInfo *damage_in
 // Address: 004e5930
 int __cdecl CGargoyle::getTargetPoints(CGargoyle *this_ptr,CVector3f *out_points_array);
 
-// Original: core_gargoyle.cpp_CGargoyle_hasCollision_FUN_004e5ad0
+// Original: core_gargoyle.cpp_CGargoyle_getCollisionType_FUN_004e5ad0
 // Address: 004e5ad0
-int __cdecl CGargoyle::hasCollision(CGargoyle *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CGargoyle::getCollisionType(CGargoyle *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_gargoyle.cpp_CGargoyle_getPropertyList_FUN_004e5af0
 // Address: 004e5af0

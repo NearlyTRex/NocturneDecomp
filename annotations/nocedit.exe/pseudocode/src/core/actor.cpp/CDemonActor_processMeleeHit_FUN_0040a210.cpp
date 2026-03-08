@@ -18,6 +18,7 @@ int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a210(CDemonActor 
   CTrigger *pCVar5;
   CGlass *pCVar6;
   float fVar7;
+  EDeathState EVar8;
   CFlameCan *this_ptr_00;
   CDemonActor *unaff_retaddr;
   char *in_stack_fffffd6c;
@@ -173,8 +174,7 @@ int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a210(CDemonActor 
           if (0.0 < uStack_26c) {
             core_gore_cpp_CGore_spawnBloodBurst_FUN_004edbb0
                       (g_CGorePtr,(CVector3f *)&local_a4.z,(CVector3f *)&local_3c,
-                       (int)ROUND(ROUND(uStack_26c * 0.5 + 1.0)),pCVar3->collision_layer
-                      );
+                       (int)ROUND(ROUND(uStack_26c * 0.5 + 1.0)),pCVar3->blood_type);
             (*((this_ptr->vtable)._ub)->playAttackHitEffects)
                       (this_ptr,hit_type,(SDamageInfo *)&local_1a0.dismember_prob,
                        (CDemonActor *)pCVar3);
@@ -200,7 +200,7 @@ LAB_0040a3e0:
                core_actor_cpp_castToClassHash_FUN_0040c790
                          (g_CDemonSetPtr->collision_actor,g_CCharacterClassInfo.name_hash);
       if ((pCVar3 != (CCharacter *)0x0) &&
-         (iVar4 = (*(((pCVar3->base).vtable._uc)->_uc).getDeathState)(pCVar3), 0 < iVar4)) {
+         (EVar8 = (*(((pCVar3->base).vtable._uc)->_uc).getDeathState)(pCVar3), 0 < (int)EVar8)) {
         pCVar3 = (CCharacter *)0x0;
       }
       pCVar6 = (CGlass *)

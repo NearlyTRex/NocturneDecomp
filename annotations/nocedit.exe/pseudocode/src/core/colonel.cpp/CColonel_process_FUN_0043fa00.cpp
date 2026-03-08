@@ -18,15 +18,16 @@ void __cdecl core_colonel_cpp_CColonel_process_FUN_0043fa00(CColonel *this_ptr,f
   bool bVar4;
   int iVar5;
   CVector3f *pCVar6;
-  int iVar7;
-  SMotion *pSVar8;
-  uint *puVar9;
+  EDeathState EVar7;
+  int iVar8;
+  SMotion *pSVar9;
   uint *puVar10;
-  byte bVar11;
+  uint *puVar11;
+  byte bVar12;
   float afStackY_1870 [1521];
-  CDeformableModelInstance *pCVar12;
+  CDeformableModelInstance *pCVar13;
   CQuaternion4f *source_quaternions;
-  float fVar13;
+  float fVar14;
   code *blend_callback;
   float local_98;
   CQuaternion4f CStack_94;
@@ -47,14 +48,14 @@ void __cdecl core_colonel_cpp_CColonel_process_FUN_0043fa00(CColonel *this_ptr,f
   CDeformableModelInstance *pCStack_18;
   CCharacter_full_vtable *local_14;
   
-  bVar11 = 0;
+  bVar12 = 0;
   iVar5 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
   if (iVar5 == 0) {
     return;
   }
-  fVar13 = (this_ptr->base).invincibility_timer - delta_time;
-  (this_ptr->base).invincibility_timer = fVar13;
-  if (fVar13 < 0.0) {
+  fVar14 = (this_ptr->base).invincibility_timer - delta_time;
+  (this_ptr->base).invincibility_timer = fVar14;
+  if (fVar14 < 0.0) {
     (this_ptr->base).invincibility_timer = 0.0;
   }
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
@@ -66,16 +67,16 @@ void __cdecl core_colonel_cpp_CColonel_process_FUN_0043fa00(CColonel *this_ptr,f
   if ((this_ptr->base).control_type == HERO_CONTROL_AI) {
     core_colonel_cpp_CColonel_FUN_0043ff20(this_ptr);
   }
-  fVar13 = (float)12.566370614;
+  fVar14 = (float)12.566370614;
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
-  (this_ptr->base).base.turn_speed = delta_time * fVar13;
+  (this_ptr->base).base.turn_speed = delta_time * fVar14;
   iVar5 = core_charactr_cpp_CCharacter_processWalking_FUN_0042ca70
                     ((CCharacter *)this_ptr,delta_time);
-  pCVar12 = &(this_ptr->base).base.model;
+  pCVar13 = &(this_ptr->base).base.model;
   if (iVar5 == 0) {
-    pSVar8 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                       (&pCVar12->motion_controller);
-    switch(pSVar8->state_index) {
+    pSVar9 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                       (&pCVar13->motion_controller);
+    switch(pSVar9->state_index) {
     case 0:
     case 1:
     case 2:
@@ -94,26 +95,26 @@ void __cdecl core_colonel_cpp_CColonel_process_FUN_0043fa00(CColonel *this_ptr,f
           iVar5 = 3;
         }
         if ((this_ptr->base).player_control.action_states[6] != 0) {
-          iVar7 = this_ptr->guns_drawn;
+          iVar8 = this_ptr->guns_drawn;
           (this_ptr->base).player_control.action_states[6] = 0;
           iVar5 = 0;
-          this_ptr->guns_drawn = (uint)(iVar7 == 0);
+          this_ptr->guns_drawn = (uint)(iVar8 == 0);
         }
         if ((this_ptr->base).player_control.action_states[3] != 0) {
           bVar4 = true;
           if ((this_ptr->guns_drawn == 0) && ((this_ptr->base).control_type != HERO_CONTROL_AI)) {
-            iVar7 = core_hero_cpp_CHero_tryInteract_FUN_004f2af0(&this_ptr->base);
+            iVar8 = core_hero_cpp_CHero_tryInteract_FUN_004f2af0(&this_ptr->base);
             bVar4 = false;
-            if (iVar7 != 0) goto LAB_0043fd60;
+            if (iVar8 != 0) goto LAB_0043fd60;
             local_24 = core_hero_cpp_CHero_tryOpenNearbyDoor_FUN_004f2d70(&this_ptr->base);
             if ((local_24 != 0) && (local_24 != 1)) {
               core_hero_cpp_CHero_tryOpenDoor_FUN_004f2ed0(&this_ptr->base);
             }
             if ((local_24 != 0) ||
-               (iVar7 = core_hero_cpp_CHero_tryTalkToNearbyCharacter_FUN_004f2c40(&this_ptr->base),
-               iVar7 != 0)) goto LAB_0043fd60;
-            iVar7 = core_hero_cpp_CHero_tryPullLever_FUN_004f2f50(&this_ptr->base);
-            if (iVar7 != 0) {
+               (iVar8 = core_hero_cpp_CHero_tryTalkToNearbyCharacter_FUN_004f2c40(&this_ptr->base),
+               iVar8 != 0)) goto LAB_0043fd60;
+            iVar8 = core_hero_cpp_CHero_tryPullLever_FUN_004f2f50(&this_ptr->base);
+            if (iVar8 != 0) {
               core_hero_cpp_CHero_executeLeverPull_FUN_004f30f0(&this_ptr->base);
               goto LAB_0043fd60;
             }
@@ -127,9 +128,9 @@ LAB_0043fd60:
 LAB_0043fd6e:
         (this_ptr->base).base.turn_angle_accumulator =
              (this_ptr->base).player_control.turn_speed * (this_ptr->base).base.turn_speed;
-        pSVar8 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+        pSVar9 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                            (&(this_ptr->base).base.model.motion_controller);
-        if (iVar5 != pSVar8->state_index) goto LAB_0043fad3;
+        if (iVar5 != pSVar9->state_index) goto LAB_0043fad3;
       }
       break;
     case 6:
@@ -151,7 +152,7 @@ LAB_0043fcd4:
       if (2 < uVar2) {
         if (uVar2 == 3) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                    (&pCVar12->motion_controller,0,1);
+                    (&pCVar13->motion_controller,0,1);
           engine_console_cpp_CConsole_printf_FUN_00441890
                     (g_CConsolePtr,"%s confused while walking to scriptDest!\n",this_ptr);
           goto switchD_0043fe37_caseD_5;
@@ -187,9 +188,9 @@ switchD_0043fe37_caseD_5:
          (this_ptr->base).base.model.accumulated_root_motion.z;
     pCVar6->x = (this_ptr->base).base.model.accumulated_root_motion.y;
     (this_ptr->base).base.position_delta.z = 0.0;
-    fVar13 = (this_ptr->base).base.position_delta.z;
-    (this_ptr->base).base.position_delta.y = fVar13;
-    pCVar1->x = fVar13;
+    fVar14 = (this_ptr->base).base.position_delta.z;
+    (this_ptr->base).base.position_delta.y = fVar14;
+    pCVar1->x = fVar14;
     core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40((CCharacter *)this_ptr,&local_68);
   }
   else {
@@ -239,23 +240,23 @@ LAB_0043fc14:
   core_charactr_cpp_CCharacter_preProcess_FUN_00429820((CCharacter *)this_ptr);
   pCStack_18 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020(pCStack_18);
-  iVar5 = (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)this_ptr);
-  if (iVar5 == 0) {
+  EVar7 = (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)this_ptr);
+  if (EVar7 == DEATH_STATE_ALIVE) {
     blend_callback = core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0;
-    fVar13 = this_ptr->head_look_blend_weight;
+    fVar14 = this_ptr->head_look_blend_weight;
     iVar5 = INT_0083b124;
     core_xform_cpp_eulerToQuaternion_FUN_005f7b20(&this_ptr->head_look_euler,&CStack_94);
-    pCVar12 = pCStack_18;
+    pCVar13 = pCStack_18;
     source_quaternions = &CStack_84;
     CStack_84.w = CStack_94.w;
-    puVar10 = (uint *)((int)&CStack_84 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
-    puVar9 = (uint *)((int)&CStack_94 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
-    *(uint *)((int)&CStack_84 + (uint)bVar11 * -8 + 4) =
-         *(uint *)((int)&CStack_94 + (uint)bVar11 * -8 + 4);
-    *puVar10 = *puVar9;
-    puVar10[(uint)bVar11 * -2 + 1] = puVar9[(uint)bVar11 * -2 + 1];
+    puVar11 = (uint *)((int)&CStack_84 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
+    puVar10 = (uint *)((int)&CStack_94 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
+    *(uint *)((int)&CStack_84 + (uint)bVar12 * -8 + 4) =
+         *(uint *)((int)&CStack_94 + (uint)bVar12 * -8 + 4);
+    *puVar11 = *puVar10;
+    puVar11[(uint)bVar12 * -2 + 1] = puVar10[(uint)bVar12 * -2 + 1];
     core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750
-              (pCVar12,source_quaternions,fVar13,iVar5,blend_callback);
+              (pCVar13,source_quaternions,fVar14,iVar5,blend_callback);
   }
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr,delta_time);
 switchD_0043fe37_caseD_6:

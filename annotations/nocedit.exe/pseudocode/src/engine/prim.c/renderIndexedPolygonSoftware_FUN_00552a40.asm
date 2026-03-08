@@ -26,8 +26,8 @@
 ;   undefined4 g_RenderVertexBuffer[0].projected_vertex.screen_y
 ;   undefined4 g_RenderVertexBuffer[0].u
 ;   undefined4 g_RenderVertexBuffer[0].v
-;   undefined4 g_RenderVertexBuffer[0].z
-;   undefined4 g_RenderVertexBuffer[0].fog
+;   undefined4 g_RenderVertexBuffer[0].r
+;   undefined4 g_RenderVertexBuffer[0].a
 ;   int g_TexturesDisabled
 ;   int g_CullingMode
 ;   int g_UseExternalRenderer
@@ -427,8 +427,8 @@ section .text
     MOV EAX,dword ptr [EBX + 0x1c]      ; 00552e43 | g_RenderVertexBuffer[0].v
     ADD EAX,EDX                         ; 00552e46
     MOV dword ptr [EBP + 0x20],EAX      ; 00552e48 | DAT_030e524c
-    MOV EAX,dword ptr [EDI + 0x20]      ; 00552e4b | g_RenderVertexBuffer[0].z
-    MOV EDX,dword ptr [EBX + 0x20]      ; 00552e4e | g_RenderVertexBuffer[0].z
+    MOV EAX,dword ptr [EDI + 0x20]      ; 00552e4b | g_RenderVertexBuffer[0].r
+    MOV EDX,dword ptr [EBX + 0x20]      ; 00552e4e | g_RenderVertexBuffer[0].r
     SUB EAX,EDX                         ; 00552e51
     MOV EDX,EAX                         ; 00552e53
     MOV EAX,ECX                         ; 00552e55
@@ -441,11 +441,11 @@ section .text
     SHRD EAX,EDX,0x10                   ; 00552e66
     MOV dword ptr [ESP + 0x40],EAX      ; 00552e6a
     MOV EDX,dword ptr [ESP + 0x40]      ; 00552e6e
-    MOV EAX,dword ptr [EBX + 0x20]      ; 00552e72 | g_RenderVertexBuffer[0].z
+    MOV EAX,dword ptr [EBX + 0x20]      ; 00552e72 | g_RenderVertexBuffer[0].r
     ADD EAX,EDX                         ; 00552e75
     MOV dword ptr [EBP + 0x10],EAX      ; 00552e77 | DAT_030e523c
-    MOV EAX,dword ptr [EDI + 0x2c]      ; 00552e7a | g_RenderVertexBuffer[0].fog
-    MOV EDX,dword ptr [EBX + 0x2c]      ; 00552e7d | g_RenderVertexBuffer[0].fog
+    MOV EAX,dword ptr [EDI + 0x2c]      ; 00552e7a | g_RenderVertexBuffer[0].a
+    MOV EDX,dword ptr [EBX + 0x2c]      ; 00552e7d | g_RenderVertexBuffer[0].a
     SUB EAX,EDX                         ; 00552e80
     MOV EDX,EAX                         ; 00552e82
     MOV EAX,ECX                         ; 00552e84
@@ -458,7 +458,7 @@ section .text
     SHRD EAX,EDX,0x10                   ; 00552e95
     MOV dword ptr [ESP + 0x40],EAX      ; 00552e99
     MOV EDX,dword ptr [ESP + 0x40]      ; 00552e9d
-    MOV EAX,dword ptr [EBX + 0x2c]      ; 00552ea1 | g_RenderVertexBuffer[0].fog
+    MOV EAX,dword ptr [EBX + 0x2c]      ; 00552ea1 | g_RenderVertexBuffer[0].a
     ADD EAX,EDX                         ; 00552ea4
     MOV dword ptr [EBP + 0x30],EAX      ; 00552ea6 | DAT_030e525c
     CMP dword ptr [0x02d052a4],0x1      ; 00552ea9 | g_RenderStateFlag2

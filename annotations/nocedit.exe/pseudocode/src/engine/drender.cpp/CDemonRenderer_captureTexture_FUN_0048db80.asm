@@ -8,7 +8,7 @@
 ; SMRGLTextureBasic * Stack[0x8]:4   texture
 ;
 ; XREF[71]:
-;   core_actor.cpp_CDemonActor_FUN_0040dec0 at 0040dfd4
+;   core_actor.cpp_CDemonActor_renderBoundingBoxSolid_FUN_0040dec0 at 0040dfd4
 ;   core_bodypart.cpp_CBodyPart_renderGeometry_FUN_00419340 at 00419464
 ;   core_chain.cpp_CChain_renderTransparent_FUN_004308f0 at 00430979
 ;   core_charactr.cpp_CCharacter_renderBurn_FUN_0042ad00 at 0042ad2b

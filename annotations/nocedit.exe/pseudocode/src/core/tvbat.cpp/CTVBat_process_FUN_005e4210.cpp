@@ -227,7 +227,7 @@ LAB_005e4342:
   if (((this_ptr->base).victim != (CCharacter *)0x0) && (this_ptr->follow_orders != 0)) {
     core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(&local_128);
     pCVar11 = (this_ptr->base).victim;
-    (*((pCVar11->base).vtable._ub)->hasCollision)(&pCVar11->base,&local_128);
+    (*((pCVar11->base).vtable._ub)->getCollisionType)(&pCVar11->base,&local_128);
     pCVar11 = (this_ptr->base).victim;
     fStack_e8 = (this_ptr->base).base.base.location.position.x - (pCVar11->base).location.position.x
     ;

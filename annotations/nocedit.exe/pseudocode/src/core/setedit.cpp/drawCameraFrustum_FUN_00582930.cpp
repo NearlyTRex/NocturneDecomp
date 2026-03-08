@@ -132,7 +132,7 @@ void __cdecl core_setedit_cpp_drawCameraFrustum_FUN_00582930(int color,int use_3
     pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);
     piVar4 = piVar4 + (uint)bVar5 * -2 + 1;
   }
-  vertex2.z = in_stack_ffffff74;
+  vertex2.r = in_stack_ffffff74;
   auVar6 = in_stack_ffffff54._0_24_;
   vertex2.projected_vertex.transformed_x = auVar6._0_4_;
   vertex2.projected_vertex.transformed_y = auVar6._4_4_;
@@ -142,9 +142,9 @@ void __cdecl core_setedit_cpp_drawCameraFrustum_FUN_00582930(int color,int use_3
   vertex2.projected_vertex.screen_y = auVar6._20_4_;
   vertex2.u = in_stack_ffffff54._24_4_;
   vertex2.v = in_stack_ffffff54._28_4_;
-  vertex2.r = uVar7;
-  vertex2.g = (int)output;
-  vertex2.fog = (int)input;
+  vertex2.g = uVar7;
+  vertex2.b = (int)output;
+  vertex2.a = (int)input;
   engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff24,vertex2);
   pSVar3 = g_CDemonRendererPtr2->vertex_buffer_ptr;
   pSVar2 = pSVar3 + 2;
@@ -161,7 +161,7 @@ void __cdecl core_setedit_cpp_drawCameraFrustum_FUN_00582930(int color,int use_3
     pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);
     piVar4 = piVar4 + (uint)bVar5 * -2 + 1;
   }
-  vertex2_00.z = in_stack_ffffff74;
+  vertex2_00.r = in_stack_ffffff74;
   auVar6 = in_stack_ffffff54._0_24_;
   vertex2_00.projected_vertex.transformed_x = auVar6._0_4_;
   vertex2_00.projected_vertex.transformed_y = auVar6._4_4_;
@@ -171,9 +171,9 @@ void __cdecl core_setedit_cpp_drawCameraFrustum_FUN_00582930(int color,int use_3
   vertex2_00.projected_vertex.screen_y = auVar6._20_4_;
   vertex2_00.u = in_stack_ffffff54._24_4_;
   vertex2_00.v = in_stack_ffffff54._28_4_;
-  vertex2_00.r = uVar7;
-  vertex2_00.g = (int)output;
-  vertex2_00.fog = (int)input;
+  vertex2_00.g = uVar7;
+  vertex2_00.b = (int)output;
+  vertex2_00.a = (int)input;
   engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff24,vertex2_00);
   pSVar3 = g_CDemonRendererPtr2->vertex_buffer_ptr;
   pSVar2 = pSVar3 + 3;
@@ -190,7 +190,7 @@ void __cdecl core_setedit_cpp_drawCameraFrustum_FUN_00582930(int color,int use_3
     pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);
     piVar4 = piVar4 + (uint)bVar5 * -2 + 1;
   }
-  vertex2_01.z = in_stack_ffffff74;
+  vertex2_01.r = in_stack_ffffff74;
   auVar6 = in_stack_ffffff54._0_24_;
   vertex2_01.projected_vertex.transformed_x = auVar6._0_4_;
   vertex2_01.projected_vertex.transformed_y = auVar6._4_4_;
@@ -200,9 +200,9 @@ void __cdecl core_setedit_cpp_drawCameraFrustum_FUN_00582930(int color,int use_3
   vertex2_01.projected_vertex.screen_y = auVar6._20_4_;
   vertex2_01.u = in_stack_ffffff54._24_4_;
   vertex2_01.v = in_stack_ffffff54._28_4_;
-  vertex2_01.r = uVar7;
-  vertex2_01.g = (int)output;
-  vertex2_01.fog = (int)input;
+  vertex2_01.g = uVar7;
+  vertex2_01.b = (int)output;
+  vertex2_01.a = (int)input;
   engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff24,vertex2_01);
   pSVar3 = g_CDemonRendererPtr2->vertex_buffer_ptr;
   pSVar2 = pSVar3;
@@ -219,7 +219,7 @@ void __cdecl core_setedit_cpp_drawCameraFrustum_FUN_00582930(int color,int use_3
     pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);
     piVar4 = piVar4 + (uint)bVar5 * -2 + 1;
   }
-  vertex2_02.z = in_stack_ffffff74;
+  vertex2_02.r = in_stack_ffffff74;
   auVar6 = in_stack_ffffff54._0_24_;
   vertex2_02.projected_vertex.transformed_x = auVar6._0_4_;
   vertex2_02.projected_vertex.transformed_y = auVar6._4_4_;
@@ -229,9 +229,9 @@ void __cdecl core_setedit_cpp_drawCameraFrustum_FUN_00582930(int color,int use_3
   vertex2_02.projected_vertex.screen_y = auVar6._20_4_;
   vertex2_02.u = in_stack_ffffff54._24_4_;
   vertex2_02.v = in_stack_ffffff54._28_4_;
-  vertex2_02.r = uVar7;
-  vertex2_02.g = (int)output;
-  vertex2_02.fog = (int)input;
+  vertex2_02.g = uVar7;
+  vertex2_02.b = (int)output;
+  vertex2_02.a = (int)input;
   engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff24,vertex2_02);
   pSVar3 = g_CDemonRendererPtr2->vertex_buffer_ptr;
   pSVar2 = pSVar3 + 5;
@@ -248,7 +248,7 @@ void __cdecl core_setedit_cpp_drawCameraFrustum_FUN_00582930(int color,int use_3
     pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);
     piVar4 = piVar4 + (uint)bVar5 * -2 + 1;
   }
-  vertex2_03.z = in_stack_ffffff74;
+  vertex2_03.r = in_stack_ffffff74;
   auVar6 = in_stack_ffffff54._0_24_;
   vertex2_03.projected_vertex.transformed_x = auVar6._0_4_;
   vertex2_03.projected_vertex.transformed_y = auVar6._4_4_;
@@ -258,9 +258,9 @@ void __cdecl core_setedit_cpp_drawCameraFrustum_FUN_00582930(int color,int use_3
   vertex2_03.projected_vertex.screen_y = auVar6._20_4_;
   vertex2_03.u = in_stack_ffffff54._24_4_;
   vertex2_03.v = in_stack_ffffff54._28_4_;
-  vertex2_03.r = uVar7;
-  vertex2_03.g = (int)output;
-  vertex2_03.fog = (int)input;
+  vertex2_03.g = uVar7;
+  vertex2_03.b = (int)output;
+  vertex2_03.a = (int)input;
   engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff24,vertex2_03);
   pSVar3 = g_CDemonRendererPtr2->vertex_buffer_ptr;
   pSVar2 = pSVar3 + 6;
@@ -277,7 +277,7 @@ void __cdecl core_setedit_cpp_drawCameraFrustum_FUN_00582930(int color,int use_3
     pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);
     piVar4 = piVar4 + (uint)bVar5 * -2 + 1;
   }
-  vertex2_04.z = in_stack_ffffff74;
+  vertex2_04.r = in_stack_ffffff74;
   auVar6 = in_stack_ffffff54._0_24_;
   vertex2_04.projected_vertex.transformed_x = auVar6._0_4_;
   vertex2_04.projected_vertex.transformed_y = auVar6._4_4_;
@@ -287,9 +287,9 @@ void __cdecl core_setedit_cpp_drawCameraFrustum_FUN_00582930(int color,int use_3
   vertex2_04.projected_vertex.screen_y = auVar6._20_4_;
   vertex2_04.u = in_stack_ffffff54._24_4_;
   vertex2_04.v = in_stack_ffffff54._28_4_;
-  vertex2_04.r = uVar7;
-  vertex2_04.g = (int)output;
-  vertex2_04.fog = (int)input;
+  vertex2_04.g = uVar7;
+  vertex2_04.b = (int)output;
+  vertex2_04.a = (int)input;
   engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff24,vertex2_04);
   pSVar3 = g_CDemonRendererPtr2->vertex_buffer_ptr;
   pSVar2 = pSVar3 + 7;
@@ -306,7 +306,7 @@ void __cdecl core_setedit_cpp_drawCameraFrustum_FUN_00582930(int color,int use_3
     pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);
     piVar4 = piVar4 + (uint)bVar5 * -2 + 1;
   }
-  vertex2_05.z = in_stack_ffffff74;
+  vertex2_05.r = in_stack_ffffff74;
   auVar6 = in_stack_ffffff54._0_24_;
   vertex2_05.projected_vertex.transformed_x = auVar6._0_4_;
   vertex2_05.projected_vertex.transformed_y = auVar6._4_4_;
@@ -316,9 +316,9 @@ void __cdecl core_setedit_cpp_drawCameraFrustum_FUN_00582930(int color,int use_3
   vertex2_05.projected_vertex.screen_y = auVar6._20_4_;
   vertex2_05.u = in_stack_ffffff54._24_4_;
   vertex2_05.v = in_stack_ffffff54._28_4_;
-  vertex2_05.r = uVar7;
-  vertex2_05.g = (int)output;
-  vertex2_05.fog = (int)input;
+  vertex2_05.g = uVar7;
+  vertex2_05.b = (int)output;
+  vertex2_05.a = (int)input;
   engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff24,vertex2_05);
   pSVar3 = g_CDemonRendererPtr2->vertex_buffer_ptr;
   pSVar2 = pSVar3 + 4;
@@ -335,7 +335,7 @@ void __cdecl core_setedit_cpp_drawCameraFrustum_FUN_00582930(int color,int use_3
     pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);
     piVar4 = piVar4 + (uint)bVar5 * -2 + 1;
   }
-  vertex2_06.z = in_stack_ffffff74;
+  vertex2_06.r = in_stack_ffffff74;
   auVar6 = in_stack_ffffff54._0_24_;
   vertex2_06.projected_vertex.transformed_x = auVar6._0_4_;
   vertex2_06.projected_vertex.transformed_y = auVar6._4_4_;
@@ -345,9 +345,9 @@ void __cdecl core_setedit_cpp_drawCameraFrustum_FUN_00582930(int color,int use_3
   vertex2_06.projected_vertex.screen_y = auVar6._20_4_;
   vertex2_06.u = in_stack_ffffff54._24_4_;
   vertex2_06.v = in_stack_ffffff54._28_4_;
-  vertex2_06.r = uVar7;
-  vertex2_06.g = (int)output;
-  vertex2_06.fog = (int)input;
+  vertex2_06.g = uVar7;
+  vertex2_06.b = (int)output;
+  vertex2_06.a = (int)input;
   engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff24,vertex2_06);
   pSVar3 = g_CDemonRendererPtr2->vertex_buffer_ptr;
   pSVar2 = pSVar3 + 4;
@@ -363,7 +363,7 @@ void __cdecl core_setedit_cpp_drawCameraFrustum_FUN_00582930(int color,int use_3
     pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);
     piVar4 = piVar4 + (uint)bVar5 * -2 + 1;
   }
-  vertex2_07.z = in_stack_ffffff74;
+  vertex2_07.r = in_stack_ffffff74;
   auVar6 = in_stack_ffffff54._0_24_;
   vertex2_07.projected_vertex.transformed_x = auVar6._0_4_;
   vertex2_07.projected_vertex.transformed_y = auVar6._4_4_;
@@ -373,9 +373,9 @@ void __cdecl core_setedit_cpp_drawCameraFrustum_FUN_00582930(int color,int use_3
   vertex2_07.projected_vertex.screen_y = auVar6._20_4_;
   vertex2_07.u = in_stack_ffffff54._24_4_;
   vertex2_07.v = in_stack_ffffff54._28_4_;
-  vertex2_07.r = uVar7;
-  vertex2_07.g = (int)output;
-  vertex2_07.fog = (int)input;
+  vertex2_07.g = uVar7;
+  vertex2_07.b = (int)output;
+  vertex2_07.a = (int)input;
   engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff24,vertex2_07);
   pSVar3 = g_CDemonRendererPtr2->vertex_buffer_ptr;
   pSVar2 = pSVar3 + 5;
@@ -392,7 +392,7 @@ void __cdecl core_setedit_cpp_drawCameraFrustum_FUN_00582930(int color,int use_3
     pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);
     piVar4 = piVar4 + (uint)bVar5 * -2 + 1;
   }
-  vertex2_08.z = in_stack_ffffff74;
+  vertex2_08.r = in_stack_ffffff74;
   auVar6 = in_stack_ffffff54._0_24_;
   vertex2_08.projected_vertex.transformed_x = auVar6._0_4_;
   vertex2_08.projected_vertex.transformed_y = auVar6._4_4_;
@@ -402,9 +402,9 @@ void __cdecl core_setedit_cpp_drawCameraFrustum_FUN_00582930(int color,int use_3
   vertex2_08.projected_vertex.screen_y = auVar6._20_4_;
   vertex2_08.u = in_stack_ffffff54._24_4_;
   vertex2_08.v = in_stack_ffffff54._28_4_;
-  vertex2_08.r = uVar7;
-  vertex2_08.g = (int)output;
-  vertex2_08.fog = (int)input;
+  vertex2_08.g = uVar7;
+  vertex2_08.b = (int)output;
+  vertex2_08.a = (int)input;
   engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff24,vertex2_08);
   pSVar3 = g_CDemonRendererPtr2->vertex_buffer_ptr;
   pSVar2 = pSVar3 + 6;
@@ -421,7 +421,7 @@ void __cdecl core_setedit_cpp_drawCameraFrustum_FUN_00582930(int color,int use_3
     pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);
     piVar4 = piVar4 + (uint)bVar5 * -2 + 1;
   }
-  vertex2_09.z = in_stack_ffffff74;
+  vertex2_09.r = in_stack_ffffff74;
   auVar6 = in_stack_ffffff54._0_24_;
   vertex2_09.projected_vertex.transformed_x = auVar6._0_4_;
   vertex2_09.projected_vertex.transformed_y = auVar6._4_4_;
@@ -431,9 +431,9 @@ void __cdecl core_setedit_cpp_drawCameraFrustum_FUN_00582930(int color,int use_3
   vertex2_09.projected_vertex.screen_y = auVar6._20_4_;
   vertex2_09.u = in_stack_ffffff54._24_4_;
   vertex2_09.v = in_stack_ffffff54._28_4_;
-  vertex2_09.r = uVar7;
-  vertex2_09.g = (int)output;
-  vertex2_09.fog = (int)input;
+  vertex2_09.g = uVar7;
+  vertex2_09.b = (int)output;
+  vertex2_09.a = (int)input;
   engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff24,vertex2_09);
   pSVar3 = g_CDemonRendererPtr2->vertex_buffer_ptr;
   pSVar2 = pSVar3 + 7;
@@ -450,7 +450,7 @@ void __cdecl core_setedit_cpp_drawCameraFrustum_FUN_00582930(int color,int use_3
     pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);
     piVar4 = piVar4 + (uint)bVar5 * -2 + 1;
   }
-  vertex2_10.z = in_stack_ffffff74;
+  vertex2_10.r = in_stack_ffffff74;
   auVar6 = in_stack_ffffff54._0_24_;
   vertex2_10.projected_vertex.transformed_x = auVar6._0_4_;
   vertex2_10.projected_vertex.transformed_y = auVar6._4_4_;
@@ -460,9 +460,9 @@ void __cdecl core_setedit_cpp_drawCameraFrustum_FUN_00582930(int color,int use_3
   vertex2_10.projected_vertex.screen_y = auVar6._20_4_;
   vertex2_10.u = in_stack_ffffff54._24_4_;
   vertex2_10.v = in_stack_ffffff54._28_4_;
-  vertex2_10.r = uVar7;
-  vertex2_10.g = (int)output;
-  vertex2_10.fog = (int)input;
+  vertex2_10.g = uVar7;
+  vertex2_10.b = (int)output;
+  vertex2_10.a = (int)input;
   engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff24,vertex2_10);
   return;
 }

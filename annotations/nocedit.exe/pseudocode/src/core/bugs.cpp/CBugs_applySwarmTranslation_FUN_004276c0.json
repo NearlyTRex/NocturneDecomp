@@ -1,0 +1,165 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 107,
+    "complexity_score": 111,
+    "cross_reference_count": 3,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 61,
+    "suspect_count": 4,
+    "suspect_types": [
+      "pointer_cast",
+      "warning_type_propagation"
+    ],
+    "total_lines": 168
+  },
+  "cross_references": [
+    {
+      "addr": "00425fe0",
+      "from_addr": "00426207",
+      "name": "core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00425fe0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004278d0",
+      "from_addr": "00427946",
+      "name": "core_bugs.cpp_CBugs_processInEditor_FUN_004278d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00425cc0",
+      "from_addr": "00425fb0",
+      "name": "core_bugs.cpp_CBugs_updateBugsBehavior_FUN_00425cc0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004276c0",
+    "address_range": [
+      [
+        "004276c0",
+        "004277db"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_bugs.cpp_CBugs_applySwarmTranslation_FUN_004276c0",
+    "signature": "void __cdecl core_bugs_cpp_CBugs_applySwarmTranslation_FUN_004276c0(CBugs *this_ptr,CVector3f *new_position)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.020408163265306,
+    "instruction_count": 98,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "CBRANCH": 4,
+      "COPY": 373,
+      "FLOAT2FLOAT": 48,
+      "FLOAT_SUB": 16,
+      "INT_ADD": 58,
+      "INT_AND": 29,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 28,
+      "INT_LESS": 4,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 4,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 7,
+      "INT_SEXT": 3,
+      "INT_SLESS": 14,
+      "INT_SUB": 6,
+      "INT_XOR": 2,
+      "LOAD": 42,
+      "POPCOUNT": 14,
+      "RETURN": 1,
+      "STORE": 21,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 688
+  },
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBugs *"
+      },
+      {
+        "is_param": true,
+        "name": "new_position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 38,
+      "match": "(CVector3f *)((int)",
+      "severity": "mild",
+      "text": "pCVar8 = (CVector3f *)((int)(pCVar8 + 5) + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 59,
+      "match": "(float *)((int)",
+      "severity": "mild",
+      "text": "*(float *)((int)pcVar9 + 0x128b8) = *(float *)((int)pcVar9 + 0x128b8) - fVar5;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 59,
+      "match": "(float *)((int)",
+      "severity": "mild",
+      "text": "*(float *)((int)pcVar9 + 0x128b8) = *(float *)((int)pcVar9 + 0x128b8) - fVar5;",
+      "type": "pointer_cast"
+    }
+  ]
+}

@@ -24,7 +24,7 @@ void __cdecl core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_00524120
     core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
               (this_ptr_00,"..\\core\\mission.cpp",0x423);
     if ((this_ptr_00->location).area_id == this_ptr->current_set_index) {
-      if (this_ptr_00->was_created == 0) {
+      if (this_ptr_00->lifecycle_state == ACTOR_NOT_CREATED) {
         if (this_ptr_00->create_event[0] != '\0') {
           iVar2 = _stricmp(this_ptr_00->create_event,"none");
           if ((iVar2 != 0) &&
@@ -34,10 +34,10 @@ void __cdecl core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_00524120
         }
         iVar2 = core_actor_cpp_randomChance_FUN_0040cd10(this_ptr_00->create_prob);
         if (iVar2 == 0) {
-          this_ptr_00->was_created = 2;
+          this_ptr_00->lifecycle_state = ACTOR_DESTROYED;
         }
         else {
-          this_ptr_00->was_created = 1;
+          this_ptr_00->lifecycle_state = ACTOR_CREATED;
 LAB_005241b1:
           if (1999 < g_CDemonSetPtr->actor_count) {
             g_CurrentFilename = "..\\core\\mission.cpp";
@@ -51,7 +51,7 @@ LAB_005241b1:
       }
       else {
 LAB_0052422f:
-        if (this_ptr_00->was_created == 1) goto LAB_005241b1;
+        if (this_ptr_00->lifecycle_state == ACTOR_CREATED) goto LAB_005241b1;
       }
     }
     this_ptr_00 = this_ptr_00->next_actor;

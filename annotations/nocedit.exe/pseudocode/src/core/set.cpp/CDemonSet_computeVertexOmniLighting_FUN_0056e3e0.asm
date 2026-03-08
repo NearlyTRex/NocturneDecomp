@@ -29,9 +29,9 @@
 ; Referenced Globals:
 ;   double DOUBLE_00645e8b = 255
 ;   SRenderVertex[16] g_RenderVertexBuffer
-;   undefined4 g_RenderVertexBuffer[0].z
 ;   undefined4 g_RenderVertexBuffer[0].r
 ;   undefined4 g_RenderVertexBuffer[0].g
+;   undefined4 g_RenderVertexBuffer[0].b
 ;   int INT_02d7a7b8
 ;   int g_OmniLightCount
 ;   C3DSLight*[200] g_OmniLights
@@ -132,16 +132,16 @@ section .text
         ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     SHL EAX,0x8                         ; 0056e4da
     FISTP dword ptr [ESP + 0x28]        ; 0056e4dd
-    MOV dword ptr [EBX + 0x20],EAX      ; 0056e4e1 | g_RenderVertexBuffer[0].z
+    MOV dword ptr [EBX + 0x20],EAX      ; 0056e4e1 | g_RenderVertexBuffer[0].r
     MOV EAX,dword ptr [ESP + 0x28]      ; 0056e4e4
     CALL crt_math.c_round_FUN_005fe6b0  ; 0056e4e8
         ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     SHL EAX,0x8                         ; 0056e4ed
     FISTP dword ptr [ESP + 0x28]        ; 0056e4f0
-    MOV dword ptr [EBX + 0x24],EAX      ; 0056e4f4 | g_RenderVertexBuffer[0].r
+    MOV dword ptr [EBX + 0x24],EAX      ; 0056e4f4 | g_RenderVertexBuffer[0].g
     MOV EAX,dword ptr [ESP + 0x28]      ; 0056e4f7
     SHL EAX,0x8                         ; 0056e4fb
-    MOV dword ptr [EBX + 0x28],EAX      ; 0056e4fe | g_RenderVertexBuffer[0].g
+    MOV dword ptr [EBX + 0x28],EAX      ; 0056e4fe | g_RenderVertexBuffer[0].b
     MOV dword ptr [0x02d7a7b8],ESI      ; 0056e501 | INT_02d7a7b8
     MOV ESP,EBP                         ; 0056e507
     POP EBP                             ; 0056e509

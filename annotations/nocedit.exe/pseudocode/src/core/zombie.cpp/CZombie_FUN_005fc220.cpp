@@ -63,7 +63,10 @@ switchD_005fc256_default:
     }
     iVar1 = core_actor_cpp_randomChance_FUN_0040cd10(local_14);
     if (iVar1 != 0) {
-      body_part = core_bodypart_cpp_createBodyPart_FUN_00418e10();
+      body_part = core_bodypart_cpp_createBodyPart_FUN_00418e10
+                            (&(this_ptr->base).base.base.location.position,
+                             &(this_ptr->base).base.base.orient,(CVector3f *)(in_stack_00000008 + 3)
+                             ,(CDemonActor *)this_ptr,0,0,0);
       core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30
                 ((CCharacter *)this_ptr,body_part,*in_stack_00000008,0);
       if (*in_stack_00000008 == this_ptr->part_indices[0]) {

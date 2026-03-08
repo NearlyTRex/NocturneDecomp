@@ -19,7 +19,7 @@
 ; undefined4       Stack[-0x30]:4  local_30
 ;
 ; XREF[7]:
-;   core_bugs.cpp_FUN_00425340 at 0042546d
+;   core_bugs.cpp_CBugs_renderGroundHeightGrid_FUN_00425340 at 0042546d
 ;   core_cloth.cpp_CCloth_lockedVertexEditor_FUN_0043d590 at 0043d7bf
 ;   core_cloth.cpp_CCloth_renderBone_FUN_0043b7e0 at 0043b982
 ;   core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170 at 005839c1

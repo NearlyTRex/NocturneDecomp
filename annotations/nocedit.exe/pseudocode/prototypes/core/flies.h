@@ -47,9 +47,9 @@ int __cdecl CFlies::renderOpaque(CFlies *this_ptr);
 // Address: 004cc700
 CBoundingBox3D * __cdecl CFlies::getBoundingBox(CFlies *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_flies.cpp_CFlies_hasCollision_FUN_004cc750
+// Original: core_flies.cpp_CFlies_getCollisionType_FUN_004cc750
 // Address: 004cc750
-int __cdecl CFlies::hasCollision(CFlies *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CFlies::getCollisionType(CFlies *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_flies.cpp_CFlies_initFly_FUN_004cc760
 // Address: 004cc760

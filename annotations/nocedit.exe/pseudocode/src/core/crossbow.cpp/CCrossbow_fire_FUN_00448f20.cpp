@@ -14,6 +14,7 @@ int __cdecl core_crossbow_cpp_CCrossbow_fire_FUN_00448f20(CCrossbow *this_ptr)
   CVector3f *pCVar1;
   int iVar2;
   CCharacter *this_ptr_01;
+  EDeathState EVar3;
   CTrigger *this_ptr_02;
   float fStack_f8;
   SDamageInfo SStack_f4;
@@ -85,7 +86,8 @@ int __cdecl core_crossbow_cpp_CCrossbow_fire_FUN_00448f20(CCrossbow *this_ptr)
                   core_actor_cpp_castToClassHash_FUN_0040c790
                             (g_CDemonSetPtr->collision_actor,g_CCharacterClassInfo.name_hash);
     if ((this_ptr_01 != (CCharacter *)0x0) &&
-       (iVar2 = (*(((this_ptr_01->base).vtable._uc)->_uc).getDeathState)(this_ptr_01), 0 < iVar2)) {
+       (EVar3 = (*(((this_ptr_01->base).vtable._uc)->_uc).getDeathState)(this_ptr_01),
+       0 < (int)EVar3)) {
       this_ptr_01 = (CCharacter *)0x0;
     }
     pCStack_18 = (CGlass *)

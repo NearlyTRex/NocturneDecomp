@@ -4,25 +4,25 @@
       {
         "category": "type_error",
         "column": 3,
-        "line": 34,
+        "line": 35,
         "message": "unknown type name 'code'"
       },
       {
         "category": "undeclared_identifier",
         "column": 41,
-        "line": 140,
+        "line": 141,
         "message": "use of undeclared identifier 'SUB14'"
       },
       {
         "category": "undeclared_identifier",
         "column": 18,
-        "line": 249,
+        "line": 250,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 25,
-        "line": 249,
+        "line": 250,
         "message": "expected expression"
       }
     ],
@@ -31,12 +31,12 @@
   },
   "complexity": {
     "assembly_lines": 661,
-    "complexity_score": 414,
+    "complexity_score": 415,
     "cross_reference_count": 0,
     "function_call_count": 25,
     "global_count": 15,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 314,
+    "pseudocode_lines": 315,
     "suspect_count": 8,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -44,7 +44,7 @@
       "stack_alignment_array",
       "unresolved_funcptr"
     ],
-    "total_lines": 975
+    "total_lines": 976
   },
   "cross_references": [],
   "function": {
@@ -463,7 +463,7 @@
   "suspects": [
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 23,
+      "line": 24,
       "match": "afStackY_1860",
       "severity": "moderate",
       "text": "float afStackY_1860 [1521];",
@@ -471,7 +471,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 27,
+      "line": 28,
       "match": "code *",
       "severity": "moderate",
       "text": "code *blend_callback;",
@@ -479,7 +479,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 133,
+      "line": 134,
       "match": "SUB14",
       "severity": "mild",
       "text": "((CEnemy *)this_ptr,SUB14(this_ptr->guns_drawn == 0,0));",
@@ -487,7 +487,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 242,
+      "line": 243,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar10 = (**(code **)((int)local_14 + 0x124))(pCVar12,this_ptr,pCVar11);",
@@ -495,18 +495,10 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 304,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar16 = (uint *)((int)&CStack_84 + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 305,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "puVar15 = (uint *)((int)&CStack_74 + (uint)bVar17 * -8 + (uint)bVar17 * -8 + 8);",
+      "text": "puVar17 = (uint *)((int)&CStack_84 + (uint)bVar18 * -8 + (uint)bVar18 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
@@ -514,7 +506,7 @@
       "line": 306,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&CStack_84 + (uint)bVar17 * -8 + 4) =",
+      "text": "puVar16 = (uint *)((int)&CStack_74 + (uint)bVar18 * -8 + (uint)bVar18 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
@@ -522,7 +514,15 @@
       "line": 307,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&CStack_74 + (uint)bVar17 * -8 + 4);",
+      "text": "*(uint *)((int)&CStack_84 + (uint)bVar18 * -8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 308,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&CStack_74 + (uint)bVar18 * -8 + 4);",
       "type": "pointer_cast"
     }
   ],

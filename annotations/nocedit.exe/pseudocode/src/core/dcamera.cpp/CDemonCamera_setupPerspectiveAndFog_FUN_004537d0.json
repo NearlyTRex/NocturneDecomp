@@ -4,20 +4,8 @@
       {
         "category": "other",
         "column": 31,
-        "line": 19,
+        "line": 17,
         "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 16,
-        "line": 30,
-        "message": "indirection not permitted on operand of type 'void *'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 30,
-        "message": "called object type 'void' is not a function or function pointer"
       }
     ],
     "success": false,
@@ -25,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 82,
-    "complexity_score": 70,
+    "complexity_score": 68,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 12,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 35,
+    "pseudocode_lines": 33,
     "suspect_count": 3,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 117
+    "total_lines": 115
   },
   "cross_references": [
     {
@@ -226,26 +214,26 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
+      "line": 17,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_10.x = (int)ROUND(position->x * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 18,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_10.y = (int)ROUND(position->y * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 19,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_10 = (int)ROUND(position->x * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 20,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_c = (int)ROUND(position->y * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 21,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_8 = (int)ROUND(position->z * 256.0f);",
+      "text": "local_10.z = (int)ROUND(position->z * 256.0f);",
       "type": "decompiler_intrinsic"
     }
   ]

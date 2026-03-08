@@ -8,8 +8,8 @@
 ; CVector3f *      Stack[0x8]:4   out_points_array
 ;
 ; XREF[2]:
+;   core_tvbat.cpp_CTVBat_getCollisionType_FUN_005e50d0 at 005e50e1
 ;   core_tvbat.cpp_CTVBat_getDeathState_FUN_005e5100 at 005e5114
-;   core_tvbat.cpp_CTVBat_hasCollision_FUN_005e50d0 at 005e50e1
 ;
 ; *****************************************************************************
 

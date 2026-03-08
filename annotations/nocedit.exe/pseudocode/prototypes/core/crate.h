@@ -55,9 +55,9 @@ void __cdecl CCrate::renderBackground(CCrate *this_ptr,int layer_flag);
 // Address: 00448910
 void __cdecl CCrate::archive(CCrate *this_ptr);
 
-// Original: core_crate.cpp_CCrate_hasCollision_FUN_00448960
+// Original: core_crate.cpp_CCrate_getCollisionType_FUN_00448960
 // Address: 00448960
-int __cdecl CCrate::hasCollision(CCrate *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CCrate::getCollisionType(CCrate *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_crate.cpp_CCrate_getBoundingBox_FUN_00448980
 // Address: 00448980

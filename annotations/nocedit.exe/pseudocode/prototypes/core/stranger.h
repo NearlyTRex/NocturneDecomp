@@ -209,7 +209,7 @@ void __cdecl CStranger::reset(CStranger *this_ptr);
 
 // Original: core_stranger.cpp_CStranger_getDeathState_FUN_005c67c0
 // Address: 005c67c0
-int __cdecl CStranger::getDeathState(CStranger *this_ptr);
+EDeathState __cdecl CStranger::getDeathState(CStranger *this_ptr);
 
 // Original: core_stranger.cpp_CStranger_dropCarriedObject_FUN_005c67f0
 // Address: 005c67f0

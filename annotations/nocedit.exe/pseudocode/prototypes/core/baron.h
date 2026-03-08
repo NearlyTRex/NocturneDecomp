@@ -127,9 +127,9 @@ void __cdecl CBaron::addFilesToExtract(CBaron *this_ptr,_FILE *file_handle);
 // Address: 00414090
 void __cdecl setStaggerAmount(CCharacter *this_ptr,float amount);
 
-// Original: core_baron.cpp_CBaron_hasCollision_FUN_004140a0
+// Original: core_baron.cpp_CBaron_getCollisionType_FUN_004140a0
 // Address: 004140a0
-int __cdecl CBaron::hasCollision(CBaron *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CBaron::getCollisionType(CBaron *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_baron.cpp_CBaronWeapon_dtor_FUN_004140b0
 // Address: 004140b0

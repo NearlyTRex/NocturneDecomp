@@ -12,10 +12,10 @@
 ;   core_chain.cpp_CChain_renderTransparent_FUN_004308f0 at 00430989
 ;   core_cloth.cpp_CCloth_render_FUN_0043bae0 at 0043bceb
 ;   core_curtain.cpp_CCurtain_renderMesh_FUN_0044b060 at 0044b170
-;   core_dcamera.cpp_CDemonCamera_testBoxOcclusion_FUN_004544f0 at 0045456c
+;   core_dcamera.cpp_CDemonCamera_testVisibility_FUN_004544f0 at 0045456c
 ;   core_dcube.cpp_CDemonCube_rotateVertices_FUN_00457650 at 0045769b
 ;   core_dlight.cpp_CDemonLight_renderCoronaGeometry_FUN_004736c0 at 0047381a
-;   core_dlight.cpp_CDemonLight_testLightVolumeVisibility_FUN_00476a60 at 00476a92
+;   core_dlight.cpp_CDemonLight_testVisibility_FUN_00476a60 at 00476a92
 ;   core_dmodel.cpp_CKeyFramedModel_submitToRenderer_FUN_00477980 at 00477a89
 ;   core_dpart.cpp_CDemonPart_renderFaces_FUN_004828b0 at 004828c4
 ;   ... and 11 more

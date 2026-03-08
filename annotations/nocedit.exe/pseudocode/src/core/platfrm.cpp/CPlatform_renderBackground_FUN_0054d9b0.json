@@ -1,35 +1,22 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 11,
-        "line": 71,
-        "message": "indirection not permitted on operand of type 'void *'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 72,
-        "message": "called object type 'void' is not a function or function pointer"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 164,
-    "complexity_score": 104,
+    "complexity_score": 102,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 10,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 69,
+    "pseudocode_lines": 67,
     "suspect_count": 3,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 233
+    "total_lines": 231
   },
   "cross_references": [],
   "function": {
@@ -208,26 +195,26 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
+      "line": 58,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "CStack_14.x = (int)ROUND((this_ptr->base).location.position.x * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 59,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "CStack_14.y = (int)ROUND((this_ptr->base).location.position.y * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 60,
       "match": "ROUND",
       "severity": "mild",
-      "text": "iStack_14 = (int)ROUND((this_ptr->base).location.position.x * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 61,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "iStack_10 = (int)ROUND((this_ptr->base).location.position.y * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 62,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "iStack_c = (int)ROUND((this_ptr->base).location.position.z * 256.0f);",
+      "text": "CStack_14.z = (int)ROUND((this_ptr->base).location.position.z * 256.0f);",
       "type": "decompiler_intrinsic"
     }
   ],

@@ -63,9 +63,9 @@ void __cdecl CCryptVessel::renderBackground(CCryptVessel *this_ptr,int layer_fla
 // Address: 005e9a80
 void __cdecl CCryptVessel::archive(CCryptVessel *this_ptr);
 
-// Original: core_vessel.cpp_CCryptVessel_hasCollision_FUN_005e9b90
+// Original: core_vessel.cpp_CCryptVessel_getCollisionType_FUN_005e9b90
 // Address: 005e9b90
-int __cdecl CCryptVessel::hasCollision(CCryptVessel *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CCryptVessel::getCollisionType(CCryptVessel *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_vessel.cpp_CCryptVessel_getBoundingBox_FUN_005e9bb0
 // Address: 005e9bb0

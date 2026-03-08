@@ -92,7 +92,7 @@ section .text
         ;   Label: LAB_00417a24
     PUSH ESI                            ; 00417a25
     CALL core_batman.cpp_CBatman_FUN_00417660 ; 00417a26
-        ;   XREF to: 00417660 (UNCONDITIONAL_CALL)  ; void core_batman.cpp_CBatman_FUN_00417660(CBatman * this_ptr)
+        ;   XREF to: 00417660 (UNCONDITIONAL_CALL)  ; void core_batman.cpp_CBatman_FUN_00417660(CBatman * this_ptr, SDamageInfo * damage_info)
     FLD float ptr [EDI + 0x4]           ; 00417a2b
     ADD ESP,0x8                         ; 00417a2e
     FSUBR float ptr [ESI + 0x243c]      ; 00417a31

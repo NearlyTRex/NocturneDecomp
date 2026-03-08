@@ -19,6 +19,7 @@
 #include "types/classes/CLZWDictionary.h"
 #include "types/classes/CPackedBitmap.h"
 #include "types/classes/CVector3f.h"
+#include "types/enums/ECollisionType.h"
 #include "types/funcdefs/ColorConversionFunc.h"
 #include "types/funcdefs/OptimizedMemcpyFunc.h"
 #include "types/structs/SBitBuffer.h"
@@ -38,7 +39,7 @@ void __cdecl core_chain_cpp_CChain_process_FUN_004300d0(CChain *this_ptr,float d
 int __cdecl core_chain_cpp_CChain_renderTransparent_FUN_004308f0(CChain *this_ptr);
 CBoundingBox3D * __cdecl core_chain_cpp_CChain_getBoundingBox_FUN_00430eb0(CChain *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_chain_cpp_CChain_archive_FUN_00430fe0(CChain *this_ptr);
-int __cdecl core_chain_cpp_CChain_hasCollision_FUN_00431110(CChain *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl core_chain_cpp_CChain_getCollisionType_FUN_00431110(CChain *this_ptr,SCollisionInfo *collision_info);
 void __cdecl core_chain_cpp_CChain_getPropertyList_FUN_00431120(CChain *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_chain_cpp_CChain_addFilesToExtract_FUN_00431250(CChain *this_ptr,_FILE *file_handle);
 int __cdecl core_chain_cpp_FUN_00431330(void);

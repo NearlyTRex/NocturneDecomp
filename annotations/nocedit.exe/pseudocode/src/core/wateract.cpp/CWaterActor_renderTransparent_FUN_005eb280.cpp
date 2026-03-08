@@ -55,17 +55,17 @@ int __cdecl core_wateract_cpp_CWaterActor_renderTransparent_FUN_005eb280(CWaterA
           core_set_cpp_CDemonSet_computeVertexOmniLighting_FUN_0056e3e0
                     (g_CDemonSetPtr,vertex_position,&g_ZeroVector.f,iVar3);
           pSVar1 = g_CDemonRendererPtr2->vertex_buffer_ptr;
-          lVar2 = (longlong)((this_ptr->color).r << 8) * (longlong)*(int *)((int)&pSVar1->z + iVar6)
-          ;
-          *(uint *)((int)&pSVar1->z + iVar6) =
-               (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
-          lVar2 = (longlong)((this_ptr->color).g << 8) * (longlong)*(int *)((int)&pSVar1->r + iVar6)
+          lVar2 = (longlong)((this_ptr->color).r << 8) * (longlong)*(int *)((int)&pSVar1->r + iVar6)
           ;
           *(uint *)((int)&pSVar1->r + iVar6) =
                (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
-          lVar2 = (longlong)((this_ptr->color).b << 8) * (longlong)*(int *)((int)&pSVar1->g + iVar6)
+          lVar2 = (longlong)((this_ptr->color).g << 8) * (longlong)*(int *)((int)&pSVar1->g + iVar6)
           ;
           *(uint *)((int)&pSVar1->g + iVar6) =
+               (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
+          lVar2 = (longlong)((this_ptr->color).b << 8) * (longlong)*(int *)((int)&pSVar1->b + iVar6)
+          ;
+          *(uint *)((int)&pSVar1->b + iVar6) =
                (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
           iVar3 = iVar3 + 1;
           vertex_position = (CVector3f *)&vertex_position[2].z;

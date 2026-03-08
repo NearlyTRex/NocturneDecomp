@@ -16,8 +16,8 @@
 ;   core_batman.cpp_CBatman_FUN_00417660 at 00417945
 ;   core_batman.cpp_CBatman_process_FUN_00416870 at 00417011
 ;   core_bodypart.cpp_CBodyPart_spawnGore_FUN_0041b1b0 at 0041b1b5
-;   core_bride.cpp_CBride_FUN_00424600 at 0042469f
 ;   core_bride.cpp_CBride_processDamage_FUN_00424830 at 004249cb
+;   core_bride.cpp_CBride_processDismemberment_FUN_00424600 at 0042469f
 ;   core_bride.cpp_CBride_process_FUN_00423a30 at 00423db7
 ;   core_charactr.cpp_CCharacter_processDamageDecals_FUN_0042b670 at 0042b6bd
 ;   ... and 34 more

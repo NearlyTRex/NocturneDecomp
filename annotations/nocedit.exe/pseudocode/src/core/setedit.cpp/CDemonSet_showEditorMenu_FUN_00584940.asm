@@ -133,7 +133,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x15f67c]  ; 00584a1c
     PUSH EBX                            ; 00584a22
     CALL core_ground.cpp_getGroundTypeName_FUN_004eed80 ; 00584a23
-        ;   XREF to: 004eed80 (UNCONDITIONAL_CALL)  ; char * core_ground.cpp_getGroundTypeName_FUN_004eed80(int type)
+        ;   XREF to: 004eed80 (UNCONDITIONAL_CALL)  ; char * core_ground.cpp_getGroundTypeName_FUN_004eed80(EGroundType type)
     ADD ESP,0x4                         ; 00584a28
     PUSH EAX                            ; 00584a2b
     PUSH 0x648f00                       ; 00584a2c | = "D.  Default ground type: %s"
@@ -297,7 +297,7 @@ section .text
     PUSH ESI                            ; 00584bcb
         ;   Label: LAB_00584bcb
     CALL core_ground.cpp_getGroundTypeName_FUN_004eed80 ; 00584bcc
-        ;   XREF to: 004eed80 (UNCONDITIONAL_CALL)  ; char * core_ground.cpp_getGroundTypeName_FUN_004eed80(int type)
+        ;   XREF to: 004eed80 (UNCONDITIONAL_CALL)  ; char * core_ground.cpp_getGroundTypeName_FUN_004eed80(EGroundType type)
     ADD ESP,0x4                         ; 00584bd1
     PUSH EAX                            ; 00584bd4
     LEA EAX,[ESP + 0x4]                 ; 00584bd5

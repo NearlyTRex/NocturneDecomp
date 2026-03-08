@@ -3062,7 +3062,7 @@ section .text
     CALL core_sound.cpp_CSound_playSound_FUN_005b3a20 ; 004dfc83
         ;   XREF to: 005b3a20 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)
     ADD ESP,0xc                         ; 004dfc88
-    PUSH 0x62c61a                       ; 004dfc8b | g_CheatStr_Weather1
+    PUSH 0x62c61a                       ; 004dfc8b | g_CheatStr_WeatherRain
         ;   Label: LAB_004dfc8b
     CALL support_newmsg.cpp_decryptMessage_FUN_00544270 ; 004dfc90
         ;   XREF to: 00544270 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_00544270(char * encrypted_msg)
@@ -3116,9 +3116,9 @@ section .text
     PUSH ESI                            ; 004dfd0f | g_CWeatherInstance
     MOV byte ptr [0x02d831d8],BH        ; 004dfd10 | CHAR_ARRAY_02d831d8
     CALL core_weather.cpp_CWeather_setWeatherType_FUN_005ef8c0 ; 004dfd16
-        ;   XREF to: 005ef8c0 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_setWeatherType_FUN_005ef8c0(CWeather * this_ptr, int type)
+        ;   XREF to: 005ef8c0 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_setWeatherType_FUN_005ef8c0(CWeather * this_ptr, EWeatherType type)
     ADD ESP,0x8                         ; 004dfd1b
-    PUSH 0x62c654                       ; 004dfd1e | g_CheatStr_Weather2
+    PUSH 0x62c654                       ; 004dfd1e | g_CheatStr_WeatherSnow
         ;   Label: LAB_004dfd1e
     CALL support_newmsg.cpp_decryptMessage_FUN_00544270 ; 004dfd23
         ;   XREF to: 00544270 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_00544270(char * encrypted_msg)
@@ -3172,7 +3172,7 @@ section .text
     PUSH EBX                            ; 004dfda2 | g_CWeatherInstance
     MOV byte ptr [0x02d831d8],CL        ; 004dfda3 | CHAR_ARRAY_02d831d8
     CALL core_weather.cpp_CWeather_setWeatherType_FUN_005ef8c0 ; 004dfda9
-        ;   XREF to: 005ef8c0 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_setWeatherType_FUN_005ef8c0(CWeather * this_ptr, int type)
+        ;   XREF to: 005ef8c0 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_setWeatherType_FUN_005ef8c0(CWeather * this_ptr, EWeatherType type)
     ADD ESP,0x8                         ; 004dfdae
     PUSH 0x62c68b                       ; 004dfdb1 | g_CheatStr_BigHat
         ;   Label: LAB_004dfdb1

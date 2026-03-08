@@ -50,22 +50,22 @@ void __cdecl core_path_cpp_renderGridQuad_FUN_00547dd0(int grid_x,int grid_y,int
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_30);
   this_ptr = g_CDemonRendererPtr2;
-  g_CDemonRendererPtr2->vertex_buffer_ptr->z = iVar2;
-  this_ptr->vertex_buffer_ptr->r = iVar3;
-  this_ptr->vertex_buffer_ptr->g = iVar4;
-  this_ptr->vertex_buffer_ptr->fog = iVar1;
-  this_ptr->vertex_buffer_ptr[1].z = iVar2;
-  this_ptr->vertex_buffer_ptr[1].r = iVar3;
-  this_ptr->vertex_buffer_ptr[1].g = iVar4;
-  this_ptr->vertex_buffer_ptr[1].fog = iVar1;
-  this_ptr->vertex_buffer_ptr[2].z = iVar2;
-  this_ptr->vertex_buffer_ptr[2].r = iVar3;
-  this_ptr->vertex_buffer_ptr[2].g = iVar4;
-  this_ptr->vertex_buffer_ptr[2].fog = iVar1;
-  this_ptr->vertex_buffer_ptr[3].z = iVar2;
-  this_ptr->vertex_buffer_ptr[3].r = iVar3;
-  this_ptr->vertex_buffer_ptr[3].g = iVar4;
-  this_ptr->vertex_buffer_ptr[3].fog = iVar1;
+  g_CDemonRendererPtr2->vertex_buffer_ptr->r = iVar2;
+  this_ptr->vertex_buffer_ptr->g = iVar3;
+  this_ptr->vertex_buffer_ptr->b = iVar4;
+  this_ptr->vertex_buffer_ptr->a = iVar1;
+  this_ptr->vertex_buffer_ptr[1].r = iVar2;
+  this_ptr->vertex_buffer_ptr[1].g = iVar3;
+  this_ptr->vertex_buffer_ptr[1].b = iVar4;
+  this_ptr->vertex_buffer_ptr[1].a = iVar1;
+  this_ptr->vertex_buffer_ptr[2].r = iVar2;
+  this_ptr->vertex_buffer_ptr[2].g = iVar3;
+  this_ptr->vertex_buffer_ptr[2].b = iVar4;
+  this_ptr->vertex_buffer_ptr[2].a = iVar1;
+  this_ptr->vertex_buffer_ptr[3].r = iVar2;
+  this_ptr->vertex_buffer_ptr[3].g = iVar3;
+  this_ptr->vertex_buffer_ptr[3].b = iVar4;
+  this_ptr->vertex_buffer_ptr[3].a = iVar1;
   engine_drender_cpp_CDemonRenderer_renderMaximumQualityVariant_FUN_0048bba0
             (this_ptr,&SMRGLPrimitiveQuad_030d4fd0.base);
   return;

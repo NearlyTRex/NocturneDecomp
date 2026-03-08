@@ -56,9 +56,9 @@ void __cdecl engine_font_cpp_CBitFont_render3DCharacter_FUN_004ce2d0(CBitFont *t
   uVar3 = g_ShadowColorGreen;
   if (color_mode != -2) {
     if (color_mode < 0) {
-      g_QuadVertex0.r = 0xffff;
       g_QuadVertex0.g = 0xffff;
-      g_QuadVertex0.z = 0xffff;
+      g_QuadVertex0.b = 0xffff;
+      g_QuadVertex0.r = 0xffff;
       goto LAB_004ce397;
     }
     iVar5 = color_mode * 3;
@@ -66,9 +66,9 @@ void __cdecl engine_font_cpp_CBitFont_render3DCharacter_FUN_004ce2d0(CBitFont *t
     uVar2 = (uint)(byte)g_SourcePaletteData[iVar5];
     uVar3 = (uint)(byte)g_SourcePaletteData[iVar5 + 1];
   }
-  g_QuadVertex0.r = uVar3 << 8;
-  g_QuadVertex0.z = uVar2 << 8;
-  g_QuadVertex0.g = uVar4 << 8;
+  g_QuadVertex0.g = uVar3 << 8;
+  g_QuadVertex0.r = uVar2 << 8;
+  g_QuadVertex0.b = uVar4 << 8;
 LAB_004ce397:
   g_QuadVertex0.projected_vertex.transformed_z = 0x10000;
   g_QuadVertex0.projected_vertex.inv_z = 0x10000;

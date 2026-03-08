@@ -255,7 +255,7 @@ section .text
         ;   XREF to: 004c7823 (CONDITIONAL_JUMP)  ; caseD_6
     PUSH 0x2                            ; 004c78ad
     CALL core_ground.cpp_getGroundTypeCode_FUN_004eece0 ; 004c78af
-        ;   XREF to: 004eece0 (UNCONDITIONAL_CALL)  ; char * core_ground.cpp_getGroundTypeCode_FUN_004eece0(int type)
+        ;   XREF to: 004eece0 (UNCONDITIONAL_CALL)  ; char * core_ground.cpp_getGroundTypeCode_FUN_004eece0(EGroundType type)
     ADD ESP,0x4                         ; 004c78b4
     PUSH EAX                            ; 004c78b7
     PUSH 0x62a003                       ; 004c78b8 | = "ric-%s!?.wav"
@@ -283,7 +283,7 @@ section .text
         ;   XREF to: 004c7823 (CONDITIONAL_JUMP)  ; caseD_6
     PUSH 0x5                            ; 004c78f1
     CALL core_ground.cpp_getGroundTypeCode_FUN_004eece0 ; 004c78f3
-        ;   XREF to: 004eece0 (UNCONDITIONAL_CALL)  ; char * core_ground.cpp_getGroundTypeCode_FUN_004eece0(int type)
+        ;   XREF to: 004eece0 (UNCONDITIONAL_CALL)  ; char * core_ground.cpp_getGroundTypeCode_FUN_004eece0(EGroundType type)
     ADD ESP,0x4                         ; 004c78f8
     PUSH EAX                            ; 004c78fb
     PUSH 0x62a010                       ; 004c78fc | = "ric-%s!?.wav"
@@ -311,7 +311,7 @@ section .text
         ;   XREF to: 004c7823 (CONDITIONAL_JUMP)  ; caseD_6
     PUSH 0x7                            ; 004c7935
     CALL core_ground.cpp_getGroundTypeCode_FUN_004eece0 ; 004c7937
-        ;   XREF to: 004eece0 (UNCONDITIONAL_CALL)  ; char * core_ground.cpp_getGroundTypeCode_FUN_004eece0(int type)
+        ;   XREF to: 004eece0 (UNCONDITIONAL_CALL)  ; char * core_ground.cpp_getGroundTypeCode_FUN_004eece0(EGroundType type)
     ADD ESP,0x4                         ; 004c793c
     PUSH EAX                            ; 004c793f
     PUSH 0x62a01d                       ; 004c7940 | = "ric-%s!?.wav"
@@ -339,7 +339,7 @@ section .text
         ;   XREF to: 004c7823 (CONDITIONAL_JUMP)  ; caseD_6
     PUSH 0x3                            ; 004c7975
     CALL core_ground.cpp_getGroundTypeCode_FUN_004eece0 ; 004c7977
-        ;   XREF to: 004eece0 (UNCONDITIONAL_CALL)  ; char * core_ground.cpp_getGroundTypeCode_FUN_004eece0(int type)
+        ;   XREF to: 004eece0 (UNCONDITIONAL_CALL)  ; char * core_ground.cpp_getGroundTypeCode_FUN_004eece0(EGroundType type)
     ADD ESP,0x4                         ; 004c797c
     PUSH EAX                            ; 004c797f
     PUSH 0x62a02a                       ; 004c7980 | = "ric-%s.wav"

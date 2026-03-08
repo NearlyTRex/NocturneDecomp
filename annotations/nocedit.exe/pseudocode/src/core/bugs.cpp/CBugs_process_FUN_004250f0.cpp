@@ -24,14 +24,14 @@ void __cdecl core_bugs_cpp_CBugs_process_FUN_004250f0(CBugs *this_ptr,float delt
       this_ptr->allow_swarm = 1;
     }
     switch(this_ptr->state) {
-    case 0:
-      core_bugs_cpp_CBugs_FUN_00425cc0(this_ptr);
+    case BUGS_STATE_IDLE:
+      core_bugs_cpp_CBugs_updateBugsBehavior_FUN_00425cc0(this_ptr,delta_time);
       break;
-    case 1:
-      core_bugs_cpp_CBugs_FUN_00425fe0(this_ptr);
+    case BUGS_STATE_ATTACK:
+      core_bugs_cpp_CBugs_attackSwarmTarget_FUN_00425fe0(this_ptr,delta_time);
       return;
-    case 2:
-      core_bugs_cpp_CBugs_FUN_00426410(this_ptr);
+    case BUGS_STATE_DETACH:
+      core_bugs_cpp_CBugs_updateBoundingBox_FUN_00426410(this_ptr);
       return;
     }
   }

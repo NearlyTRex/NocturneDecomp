@@ -55,9 +55,9 @@ void __cdecl CPlatform::archive(CPlatform *this_ptr);
 // Address: 0054df80
 int __cdecl CPlatform::isActorOnPlatform(CPlatform *this_ptr,CDemonActor *actor);
 
-// Original: core_platfrm.cpp_CPlatform_hasCollision_FUN_0054e180
+// Original: core_platfrm.cpp_CPlatform_getCollisionType_FUN_0054e180
 // Address: 0054e180
-int __cdecl CPlatform::hasCollision(CPlatform *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CPlatform::getCollisionType(CPlatform *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_platfrm.cpp_CPlatform_allowBulletHoles_FUN_0054e1a0
 // Address: 0054e1a0
@@ -65,7 +65,7 @@ int __cdecl CPlatform::allowBulletHoles(CPlatform *this_ptr);
 
 // Original: core_platfrm.cpp_CPlatform_getGroundType_FUN_0054e1c0
 // Address: 0054e1c0
-int __cdecl CPlatform::getGroundType(CPlatform *this_ptr);
+EGroundType __cdecl CPlatform::getGroundType(CPlatform *this_ptr);
 
 // Original: core_platfrm.cpp_CPlatform_getBlockVirtualDirectorFlag_FUN_0054e1d0
 // Address: 0054e1d0

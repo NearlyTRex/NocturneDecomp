@@ -55,9 +55,9 @@ void __cdecl CImp::processDamage(CImp *this_ptr,SDamageInfo *damage_info);
 // Address: 004faf40
 int __cdecl CImp::getTargetPoints(CImp *this_ptr,CVector3f *out_points_array);
 
-// Original: core_imp.cpp_CImp_hasCollision_FUN_004fb0f0
+// Original: core_imp.cpp_CImp_getCollisionType_FUN_004fb0f0
 // Address: 004fb0f0
-void __cdecl CImp::hasCollision(CImp *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CImp::getCollisionType(CImp *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_imp.cpp_CImp_getPropertyList_FUN_004fb110
 // Address: 004fb110

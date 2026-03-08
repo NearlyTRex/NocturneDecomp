@@ -19,6 +19,8 @@ union UOrientationVector;
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/enums/ECollisionType.h"
+#include "types/enums/EGroundType.h"
 #include "types/funcdefs/CDemonActor_addFilesToExtract.h"
 #include "types/funcdefs/CDemonActor_allowBulletHoles.h"
 #include "types/funcdefs/CDemonActor_archive.h"
@@ -38,13 +40,13 @@ union UOrientationVector;
 #include "types/funcdefs/CDemonActor_getBlockVirtualDirectorFlag.h"
 #include "types/funcdefs/CDemonActor_getBoundingBox.h"
 #include "types/funcdefs/CDemonActor_getCarrier.h"
+#include "types/funcdefs/CDemonActor_getCollisionType.h"
 #include "types/funcdefs/CDemonActor_getGroundType.h"
 #include "types/funcdefs/CDemonActor_getInteractionInfo.h"
 #include "types/funcdefs/CDemonActor_getPathMap.h"
 #include "types/funcdefs/CDemonActor_getPropertyList.h"
 #include "types/funcdefs/CDemonActor_getTargetPoints.h"
 #include "types/funcdefs/CDemonActor_handleFootstep.h"
-#include "types/funcdefs/CDemonActor_hasCollision.h"
 #include "types/funcdefs/CDemonActor_initializeInEditor.h"
 #include "types/funcdefs/CDemonActor_onActorDeleted.h"
 #include "types/funcdefs/CDemonActor_onAreaDeleted.h"
@@ -95,7 +97,7 @@ typedef struct CDemonActor_vtable {
     CDemonActor_playAmbientSound* playAmbientSound; // 0x28
     CDemonActor_playSoundWithDelay* playSoundWithDelay; // 0x2c
     CDemonActor_playAmbientSoundWithDelay* playAmbientSoundWithVolume; // 0x30
-    CDemonActor_hasCollision* hasCollision; // 0x34
+    CDemonActor_getCollisionType* getCollisionType; // 0x34
     CDemonActor_cylinderGroundCheck* cylinderGroundCheck; // 0x38
     CDemonActor_getGroundType* getGroundType; // 0x3c
     CDemonActor_getBlockVirtualDirectorFlag* getBlockVirtualDirectorFlag; // 0x40

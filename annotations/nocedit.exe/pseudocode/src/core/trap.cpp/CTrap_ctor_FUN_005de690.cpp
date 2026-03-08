@@ -17,6 +17,6 @@ CTrap * __cdecl core_trap_cpp_CTrap_ctor_FUN_005de690(CTrap *this_ptr)
   ADJ(this_ptr_00)->base.vtable._ub = &g_CTrapVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (this_ptr_00,"beartrap.kfm");
-  ADJ(this_ptr_00)->wolf_in_trap = 0;
+  ADJ(this_ptr_00)->wolf_in_trap = (CWerewolf *)0x0;
   return ADJ(this_ptr_00);
 }

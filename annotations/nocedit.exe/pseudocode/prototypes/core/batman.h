@@ -41,7 +41,7 @@ void __cdecl CBatman::archive(CBatman *this_ptr);
 
 // Original: core_batman.cpp_CBatman_FUN_00417660
 // Address: 00417660
-void __cdecl CBatman(CBatman *this_ptr);
+void __cdecl CBatman(CBatman *this_ptr,SDamageInfo *damage_info);
 
 // Original: core_batman.cpp_CBatman_processDamage_FUN_004179a0
 // Address: 004179a0
@@ -51,9 +51,9 @@ void __cdecl CBatman::processDamage(CBatman *this_ptr,SDamageInfo *damage_info);
 // Address: 00417bb0
 int __cdecl CBatman::getTargetPoints(CBatman *this_ptr,CVector3f *out_points_array);
 
-// Original: core_batman.cpp_CBatman_hasCollision_FUN_00417cb0
+// Original: core_batman.cpp_CBatman_getCollisionType_FUN_00417cb0
 // Address: 00417cb0
-int __cdecl CBatman::hasCollision(CBatman *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CBatman::getCollisionType(CBatman *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_batman.cpp_CBatman_getPropertyList_FUN_00417cd0
 // Address: 00417cd0

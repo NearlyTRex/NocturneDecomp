@@ -87,7 +87,8 @@ void __cdecl core_fire_cpp_CPopcorn_render_FUN_004c64c0(CPopcorn *this_ptr)
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_54);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
             (g_CDemonRendererPtr2,&g_FireEffectPopcornTexture);
-  (*((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)(g_CurrentSceneCamera,this_ptr,0);
+  (*((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)
+            (g_CurrentSceneCamera,(CVector3f *)this_ptr,0.0);
   g_RenderVertexBuffer[0].u = 0x80000;
   g_RenderVertexBuffer[0].v = 0xf80000;
   g_RenderVertexBuffer[1].u = 0xf80000;
@@ -95,14 +96,14 @@ void __cdecl core_fire_cpp_CPopcorn_render_FUN_004c64c0(CPopcorn *this_ptr)
   g_RenderVertexBuffer[2].u = 0xf80000;
   g_RenderVertexBuffer[2].v = 0x80000;
   g_RenderVertexBuffer[3].u = 0x80000;
-  g_RenderVertexBuffer[0].fog = 0xffff - (int)g_PerspectiveReciprocal;
+  g_RenderVertexBuffer[0].a = 0xffff - (int)g_PerspectiveReciprocal;
   g_RenderVertexBuffer[3].v = 0x80000;
   CStack_24.x = (int)ROUND((this_ptr->base).position.x * 256.0f);
   CStack_24.y = (int)ROUND((this_ptr->base).position.y * 256.0f);
   CStack_24.z = (int)ROUND((this_ptr->base).position.z * 256.0f);
-  g_RenderVertexBuffer[1].fog = g_RenderVertexBuffer[0].fog;
-  g_RenderVertexBuffer[2].fog = g_RenderVertexBuffer[0].fog;
-  g_RenderVertexBuffer[3].fog = g_RenderVertexBuffer[0].fog;
+  g_RenderVertexBuffer[1].a = g_RenderVertexBuffer[0].a;
+  g_RenderVertexBuffer[2].a = g_RenderVertexBuffer[0].a;
+  g_RenderVertexBuffer[3].a = g_RenderVertexBuffer[0].a;
   core_set_cpp_CDemonSet_computeLighting_FUN_0056e110
             (g_CDemonSetPtr,&CStack_24,&g_BillboardCameraUp,0,4);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);

@@ -42,15 +42,15 @@ void __cdecl core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0(CDemonSet *thi
       iVar8 = 0xffff;
     }
     lVar1 = (longlong)this_ptr->light_scale_factor * (longlong)iVar8;
-    g_RenderVertexBuffer[vertex_index].z =
-         (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    lVar1 = (longlong)this_ptr->color_scale_factor * (longlong)iVar8;
     g_RenderVertexBuffer[vertex_index].r =
          (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    lVar1 = (longlong)this_ptr->fog_scale_factor * (longlong)iVar8;
+    lVar1 = (longlong)this_ptr->color_scale_factor * (longlong)iVar8;
     g_RenderVertexBuffer[vertex_index].g =
          (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    g_RenderVertexBuffer[vertex_index].fog = (int)g_PerspectiveReciprocal;
+    lVar1 = (longlong)this_ptr->fog_scale_factor * (longlong)iVar8;
+    g_RenderVertexBuffer[vertex_index].b =
+         (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
+    g_RenderVertexBuffer[vertex_index].a = (int)g_PerspectiveReciprocal;
     return;
   }
   if (skip_lighting_calculation == 0) {
@@ -153,8 +153,8 @@ void __cdecl core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0(CDemonSet *thi
   if (0xffff < (int)uVar5) {
     uVar5 = 0xffff;
   }
-  g_RenderVertexBuffer[vertex_index].z = g_IntensityToValueLookupTable[local_18];
-  g_RenderVertexBuffer[vertex_index].r = g_IntensityToValueLookupTable[uVar4];
-  g_RenderVertexBuffer[vertex_index].g = g_IntensityToValueLookupTable[uVar5];
+  g_RenderVertexBuffer[vertex_index].r = g_IntensityToValueLookupTable[local_18];
+  g_RenderVertexBuffer[vertex_index].g = g_IntensityToValueLookupTable[uVar4];
+  g_RenderVertexBuffer[vertex_index].b = g_IntensityToValueLookupTable[uVar5];
   return;
 }

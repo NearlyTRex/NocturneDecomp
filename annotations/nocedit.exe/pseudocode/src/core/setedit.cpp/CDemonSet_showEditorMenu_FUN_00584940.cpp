@@ -12,10 +12,12 @@ void __cdecl core_setedit_cpp_CDemonSet_showEditorMenu_FUN_00584940(CDemonSet *t
   char cVar1;
   char *pcVar2;
   uint uVar3;
-  int iVar4;
-  char *pcVar5;
+  EWeatherType EVar4;
+  int iVar5;
+  EGroundType type;
   char *pcVar6;
-  byte bVar7;
+  char *pcVar7;
+  byte bVar8;
   CPickList local_714;
   char local_36c [260];
   char local_268 [256];
@@ -24,7 +26,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showEditorMenu_FUN_00584940(CDemonSet *t
   char *local_18;
   char local_14 [4];
   
-  bVar7 = 0;
+  bVar8 = 0;
   local_18 = this_ptr->geometry_filename;
   this_ptr->actor_count = 0;
   g_CDemonLightInstance.volumetric_enabled = 0;
@@ -56,10 +58,10 @@ void __cdecl core_setedit_cpp_CDemonSet_showEditorMenu_FUN_00584940(CDemonSet *t
       if (uVar3 < 0x33) {
         if (0x30 < uVar3) {
           if (uVar3 < 0x32) {
-            iVar4 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
+            iVar5 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                               (g_CEditorToolsPtr,"Load set","models",
                                "*.set",(int)local_68,0);
-            if (iVar4 != 0) {
+            if (iVar5 != 0) {
               core_set_cpp_CDemonSet_load_FUN_00569410(this_ptr,local_68);
             }
           }
@@ -70,33 +72,33 @@ void __cdecl core_setedit_cpp_CDemonSet_showEditorMenu_FUN_00584940(CDemonSet *t
             else {
               engine_dosio_c_splitPath_FUN_00481f20
                         (local_18,(char *)0x0,(char *)0x0,local_68,(char *)0x0);
-              pcVar5 = ".set";
-              iVar4 = -1;
+              pcVar6 = ".set";
+              iVar5 = -1;
               pcVar2 = local_68;
               do {
-                pcVar6 = pcVar2;
-                if (iVar4 == 0) break;
-                iVar4 = iVar4 + -1;
-                pcVar6 = pcVar2 + (uint)bVar7 * -2 + 1;
+                pcVar7 = pcVar2;
+                if (iVar5 == 0) break;
+                iVar5 = iVar5 + -1;
+                pcVar7 = pcVar2 + (uint)bVar8 * -2 + 1;
                 cVar1 = *pcVar2;
-                pcVar2 = pcVar6;
+                pcVar2 = pcVar7;
               } while (cVar1 != '\0');
-              pcVar6 = pcVar6 + -1;
+              pcVar7 = pcVar7 + -1;
               do {
-                cVar1 = *pcVar5;
-                *pcVar6 = cVar1;
+                cVar1 = *pcVar6;
+                *pcVar7 = cVar1;
                 if (cVar1 == '\0') break;
-                cVar1 = pcVar5[1];
-                pcVar5 = pcVar5 + 2;
-                pcVar6[1] = cVar1;
+                cVar1 = pcVar6[1];
                 pcVar6 = pcVar6 + 2;
+                pcVar7[1] = cVar1;
+                pcVar7 = pcVar7 + 2;
               } while (cVar1 != '\0');
               strupr(local_68);
             }
-            iVar4 = shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
+            iVar5 = shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
                               (g_CEditorToolsPtr,"Save set","models",
                                "set",local_68,1);
-            if (iVar4 != 0) {
+            if (iVar5 != 0) {
               core_setedit_cpp_CDemonSet_save_FUN_0057a2a0(this_ptr,local_68);
             }
           }
@@ -126,13 +128,13 @@ void __cdecl core_setedit_cpp_CDemonSet_showEditorMenu_FUN_00584940(CDemonSet *t
           core_setedit_cpp_CDemonSet_loadOrBuildThumbnails_FUN_00576da0(this_ptr,1);
         }
         else if (uVar3 == 0x44) {
-          iVar4 = 2;
+          type = GROUND_TYPE_CONCRETE;
           shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_714);
           do {
-            pcVar2 = core_ground_cpp_getGroundTypeName_FUN_004eed80(iVar4);
-            iVar4 = iVar4 + 1;
+            pcVar2 = core_ground_cpp_getGroundTypeName_FUN_004eed80(type);
+            type = type + GROUND_TYPE_NONE;
             shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_714.base,pcVar2);
-          } while (iVar4 < 0xe);
+          } while ((int)type < 0xe);
           uVar3 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                             (&local_714,"Select default ground type.",
                              this_ptr->default_ground_type + -2,0);
@@ -150,21 +152,21 @@ void __cdecl core_setedit_cpp_CDemonSet_showEditorMenu_FUN_00584940(CDemonSet *t
       core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(this_ptr);
     }
     else if (uVar3 < 0x49) {
-      iVar4 = this_ptr->weather_type + 1;
-      this_ptr->weather_type = iVar4;
-      if (2 < iVar4) {
-        this_ptr->weather_type = 0;
+      EVar4 = this_ptr->weather_type + WEATHER_TYPE_RAIN;
+      this_ptr->weather_type = EVar4;
+      if (2 < (int)EVar4) {
+        this_ptr->weather_type = WEATHER_TYPE_NONE;
       }
     }
     else if (uVar3 == 0x49) {
-      pcVar5 = ".\\GroundTypes";
+      pcVar6 = ".\\GroundTypes";
       pcVar2 = local_36c;
       do {
-        cVar1 = *pcVar5;
+        cVar1 = *pcVar6;
         *pcVar2 = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = pcVar5[1];
-        pcVar5 = pcVar5 + 2;
+        cVar1 = pcVar6[1];
+        pcVar6 = pcVar6 + 2;
         pcVar2[1] = cVar1;
         pcVar2 = pcVar2 + 2;
       } while (cVar1 != '\0');
@@ -174,9 +176,9 @@ void __cdecl core_setedit_cpp_CDemonSet_showEditorMenu_FUN_00584940(CDemonSet *t
                   (local_18,(char *)0x0,(char *)0x0,local_268,(char *)0x0);
         engine_dosio_c_makePath_FUN_00481f50(local_36c,local_14,local_168,local_268,".txt");
       }
-      iVar4 = shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420
+      iVar5 = shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420
                         (g_CEditorToolsPtr,"Select ground type file to edit",0x648fd8,local_36c);
-      if (iVar4 != 0) {
+      if (iVar5 != 0) {
         core_setedit_cpp_editGroundTypes_FUN_00578630(local_36c);
       }
     }

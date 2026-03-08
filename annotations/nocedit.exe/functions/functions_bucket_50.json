@@ -3914,8 +3914,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_ammobox.cpp_CAmmoBox_hasCollision_FUN_004119d0",
-    "ret":"int",
+    "name":"core_ammobox.cpp_CAmmoBox_getCollisionType_FUN_004119d0",
+    "ret":"ECollisionType",
     "vars":{
       "params":[
         {
@@ -4052,8 +4052,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_anvil.cpp_CAnvil_hasCollision_FUN_00411fd0",
-    "ret":"int",
+    "name":"core_anvil.cpp_CAnvil_getCollisionType_FUN_00411fd0",
+    "ret":"ECollisionType",
     "vars":{
       "params":[
         {
@@ -4112,8 +4112,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_armour.cpp_CArmour_hasCollision_FUN_00412450",
-    "ret":"int",
+    "name":"core_armour.cpp_CArmour_getCollisionType_FUN_00412450",
+    "ret":"ECollisionType",
     "vars":{
       "params":[
         {
@@ -4925,8 +4925,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_battery.cpp_CBattery_hasCollision_FUN_00418050",
-    "ret":"int",
+    "name":"core_battery.cpp_CBattery_getCollisionType_FUN_00418050",
+    "ret":"ECollisionType",
     "vars":{
       "params":[
         {
@@ -5141,8 +5141,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_bodypart.cpp_CBodyPart_hasCollision_FUN_00419f50",
-    "ret":"int",
+    "name":"core_bodypart.cpp_CBodyPart_getCollisionType_FUN_00419f50",
+    "ret":"ECollisionType",
     "vars":{
       "params":[
         {
@@ -11163,8 +11163,54 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_bugs.cpp_FUN_004279d0",
-    "ret":"void"
+    "name":"core_bugs.cpp_scaleVector_FUN_004279d0",
+    "ret":"CVector3f*",
+    "vars":{
+      "params":[
+        {
+          "name":"dest",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"src",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        }
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
+    }
   },
   {
     "addr":"00427ad0",
@@ -11177,8 +11223,54 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_bugs.cpp_FUN_00427ad0",
-    "ret":"void"
+    "name":"core_bugs.cpp_convertVector_FUN_00427ad0",
+    "ret":"CVector3i*",
+    "vars":{
+      "params":[
+        {
+          "name":"dest",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"src",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3i*"
+        }
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
+    }
   },
   {
     "addr":"00427bd0",
@@ -11358,7 +11450,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_camview.cpp_CCameraView_FUN_00427d50",
+    "name":"core_camview.cpp_CCameraView_getFogValueAtPosition_FUN_00427d50",
     "ret":"int",
     "vars":{
       "params":[
@@ -11377,6 +11469,22 @@
             ]
           },
           "type":"CCameraView*"
+        },
+        {
+          "name":"world_position",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3i*"
         }
       ],
       "ret_storage":{
@@ -28017,7 +28125,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"core_door.cpp_CDoor_getGroundType_FUN_00480dd0",
-    "ret":"int",
+    "ret":"EGroundType",
     "vars":{
       "params":[
         {
@@ -42389,8 +42497,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_flies.cpp_CFlies_hasCollision_FUN_004cc750",
-    "ret":"int",
+    "name":"core_flies.cpp_CFlies_getCollisionType_FUN_004cc750",
+    "ret":"ECollisionType",
     "vars":{
       "params":[
         {
@@ -45550,8 +45658,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_gargoyle.cpp_CGargoyle_hasCollision_FUN_004e5ad0",
-    "ret":"int",
+    "name":"core_gargoyle.cpp_CGargoyle_getCollisionType_FUN_004e5ad0",
+    "ret":"ECollisionType",
     "vars":{
       "params":[
         {
@@ -45704,8 +45812,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_gasmask.cpp_CGasMask_hasCollision_FUN_004e5e50",
-    "ret":"int",
+    "name":"core_gasmask.cpp_CGasMask_getCollisionType_FUN_004e5e50",
+    "ret":"ECollisionType",
     "vars":{
       "params":[
         {
@@ -46902,8 +47010,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_grave.cpp_CGrave_hasCollision_FUN_004ee9d0",
-    "ret":"int",
+    "name":"core_grave.cpp_CGrave_getCollisionType_FUN_004ee9d0",
+    "ret":"ECollisionType",
     "vars":{
       "params":[
         {
@@ -58824,8 +58932,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_mobster.cpp_CMobster_hasCollision_FUN_005279d0",
-    "ret":"void",
+    "name":"core_mobster.cpp_CMobster_getCollisionType_FUN_005279d0",
+    "ret":"ECollisionType",
     "vars":{
       "params":[
         {
@@ -58860,7 +58968,17 @@
           },
           "type":"SCollisionInfo*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -64228,8 +64346,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_pendulum.cpp_CPendulum_hasCollision_FUN_0054a550",
-    "ret":"int",
+    "name":"core_pendulum.cpp_CPendulum_getCollisionType_FUN_0054a550",
+    "ret":"ECollisionType",
     "vars":{
       "params":[
         {
@@ -85212,8 +85330,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_trash.cpp_CTrash_hasCollision_FUN_005df6d0",
-    "ret":"int",
+    "name":"core_trash.cpp_CTrash_getCollisionType_FUN_005df6d0",
+    "ret":"ECollisionType",
     "vars":{
       "params":[
         {
@@ -86569,8 +86687,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_tvbat.cpp_CTVBat_hasCollision_FUN_005e50d0",
-    "ret":"int",
+    "name":"core_tvbat.cpp_CTVBat_getCollisionType_FUN_005e50d0",
+    "ret":"ECollisionType",
     "vars":{
       "params":[
         {

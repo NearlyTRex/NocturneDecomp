@@ -13,7 +13,7 @@
 ;   int g_CurrentAlphaValue = 0xff
 ;   SRenderVertex[16] g_RenderVertexBuffer
 ;   undefined4 g_RenderVertexBuffer[0].projected_vertex.transformed_y
-;   undefined4 g_RenderVertexBuffer[0].fog
+;   undefined4 g_RenderVertexBuffer[0].a
 ;   undefined4 DAT_00688044
 ;   int[24] g_ProcessedVertexIndices
 ;   int g_RenderBufferEnabled
@@ -107,10 +107,10 @@ section .text
     LEA ESI,[EBX + 0x4]                 ; 00407193
     LEA EDI,[EDX + 0x688014]            ; 00407196 | g_RenderVertexBuffer
     MOVSD.REP ES:EDI,ESI                ; 0040719c | g_RenderVertexBuffer | g_RenderVertexBuffer[0].projected_vertex.transformed_y | DAT_00688044
-    MOV CX,word ptr [EDX + 0x688040]    ; 0040719e | g_RenderVertexBuffer[0].fog
+    MOV CX,word ptr [EDX + 0x688040]    ; 0040719e | g_RenderVertexBuffer[0].a
     XOR ECX,0xffffffff                  ; 004071a5
     ADD EBP,0x4                         ; 004071a8
-    MOV word ptr [EDX + 0x688040],CX    ; 004071ab | g_RenderVertexBuffer[0].fog
+    MOV word ptr [EDX + 0x688040],CX    ; 004071ab | g_RenderVertexBuffer[0].a
     MOV EDX,dword ptr [ESP + 0x14]      ; 004071b2
     MOV dword ptr [EBP + 0x772a94],EAX  ; 004071b6 | g_ProcessedVertexIndices
     INC EAX                             ; 004071bc

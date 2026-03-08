@@ -1199,7 +1199,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"core_actor.cpp_CDemonActor_getGroundType_FUN_00408d90",
-    "ret":"int",
+    "ret":"EGroundType",
     "vars":{
       "params":[
         {
@@ -3918,8 +3918,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_batcreat.cpp_CBatCreature_hasCollision_FUN_00416290",
-    "ret":"void",
+    "name":"core_batcreat.cpp_CBatCreature_getCollisionType_FUN_00416290",
+    "ret":"ECollisionType",
     "vars":{
       "params":[
         {
@@ -3954,7 +3954,17 @@
           },
           "type":"SCollisionInfo*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -4635,6 +4645,120 @@
             ]
           },
           "type":"undefined4"
+        }
+      ],
+      "params":[
+        {
+          "name":"position",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"orientation",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"UOrientationVector*"
+        },
+        {
+          "name":"initial_velocity",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"scale_source",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonActor*"
+        },
+        {
+          "name":"dont_use_normals",
+          "storage":{
+            "offset":20,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x14]",
+                "offset":20,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"is_transparent",
+          "storage":{
+            "offset":24,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x18]",
+                "offset":24,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"blood_type",
+          "storage":{
+            "offset":28,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x1c]",
+                "offset":28,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ],
       "ret_storage":{
@@ -5362,7 +5486,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"core_boneguy.cpp_hsvToRgb_FUN_0041ba10",
-    "ret":"CVector3f*",
+    "ret":"CColor3f*",
     "vars":{
       "locals":[
         {
@@ -5621,7 +5745,7 @@
               }
             ]
           },
-          "type":"CVector3f*"
+          "type":"CColor3f*"
         },
         {
           "name":"in_hsv",
@@ -5637,7 +5761,7 @@
               }
             ]
           },
-          "type":"CVector3f*"
+          "type":"CColor3f*"
         }
       ],
       "ret_storage":{
@@ -8356,8 +8480,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_bugs.cpp_CBugs_hasCollision_FUN_00425610",
-    "ret":"int",
+    "name":"core_bugs.cpp_CBugs_getCollisionType_FUN_00425610",
+    "ret":"ECollisionType",
     "vars":{
       "params":[
         {
@@ -8416,7 +8540,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_bugs.cpp_CBugs_FUN_00426410",
+    "name":"core_bugs.cpp_CBugs_updateBoundingBox_FUN_00426410",
     "ret":"void",
     "vars":{
       "params":[
@@ -10115,8 +10239,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_chain.cpp_CChain_hasCollision_FUN_00431110",
-    "ret":"int",
+    "name":"core_chain.cpp_CChain_getCollisionType_FUN_00431110",
+    "ret":"ECollisionType",
     "vars":{
       "params":[
         {
@@ -25722,8 +25846,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_door.cpp_CDoor_hasCollision_FUN_00480d90",
-    "ret":"int",
+    "name":"core_door.cpp_CDoor_getCollisionType_FUN_00480d90",
+    "ret":"ECollisionType",
     "vars":{
       "params":[
         {
@@ -34130,8 +34254,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_emitter.cpp_CEmitter_hasCollision_FUN_004a8d10",
-    "ret":"int",
+    "name":"core_emitter.cpp_CEmitter_getCollisionType_FUN_004a8d10",
+    "ret":"ECollisionType",
     "vars":{
       "params":[
         {
@@ -42714,8 +42838,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_glass.cpp_CGlass_hasCollision_FUN_004ea190",
-    "ret":"int",
+    "name":"core_glass.cpp_CGlass_getCollisionType_FUN_004ea190",
+    "ret":"ECollisionType",
     "vars":{
       "params":[
         {
@@ -42775,7 +42899,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"core_glass.cpp_CGlass_getGroundType_FUN_004eb390",
-    "ret":"int",
+    "ret":"EGroundType",
     "vars":{
       "params":[
         {
@@ -46970,7 +47094,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"core_ladder.cpp_CLadder_getGroundType_FUN_00502c90",
-    "ret":"int",
+    "ret":"EGroundType",
     "vars":{
       "params":[
         {
@@ -47487,8 +47611,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_litecone.cpp_CLightCone_hasCollision_FUN_00506d90",
-    "ret":"int",
+    "name":"core_litecone.cpp_CLightCone_getCollisionType_FUN_00506d90",
+    "ret":"ECollisionType",
     "vars":{
       "params":[
         {
@@ -56922,7 +57046,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"core_pendulum.cpp_CPendulum_getGroundType_FUN_0054a590",
-    "ret":"int",
+    "ret":"EGroundType",
     "vars":{
       "params":[
         {
@@ -84552,8 +84676,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_succubus.cpp_CSuccubus_hasCollision_FUN_005c7790",
-    "ret":"void",
+    "name":"core_succubus.cpp_CSuccubus_getCollisionType_FUN_005c7790",
+    "ret":"ECollisionType",
     "vars":{
       "params":[
         {
@@ -84588,7 +84712,17 @@
           },
           "type":"SCollisionInfo*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -93876,8 +94010,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_vessel.cpp_CCryptVessel_hasCollision_FUN_005e9b90",
-    "ret":"int",
+    "name":"core_vessel.cpp_CCryptVessel_getCollisionType_FUN_005e9b90",
+    "ret":"ECollisionType",
     "vars":{
       "params":[
         {
@@ -94122,8 +94256,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_wateract.cpp_CWaterActor_hasCollision_FUN_005eb710",
-    "ret":"int",
+    "name":"core_wateract.cpp_CWaterActor_getCollisionType_FUN_005eb710",
+    "ret":"ECollisionType",
     "vars":{
       "params":[
         {

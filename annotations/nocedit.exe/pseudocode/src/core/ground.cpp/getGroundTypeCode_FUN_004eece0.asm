@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; char * __cdecl core_ground_cpp_getGroundTypeCode_FUN_004eece0(int type)
+; char * __cdecl core_ground_cpp_getGroundTypeCode_FUN_004eece0(EGroundType type)
 ;
 ; Parameters:
-; int              Stack[0x4]:4   type
+; EGroundType      Stack[0x4]:4   type
 ;
 ; XREF[3]:
 ;   core_actor.cpp_CDemonActor_handleFootstep_FUN_0040ca10 at 0040cb15

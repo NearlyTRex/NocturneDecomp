@@ -22,13 +22,11 @@ void __cdecl core_boneguy_cpp_CBoneGuy_explode_FUN_0041d680(CBoneGuy *this_ptr)
   uint *puVar8;
   uint *puVar9;
   byte bVar10;
-  float afStackY_1824 [1523];
+  float afStackY_1824 [1520];
   CQuaternion4f local_48;
-  float local_38;
-  float local_34;
-  float local_30;
+  CVector3f local_38;
   UOrientationVector *local_2c;
-  CLocation *local_28;
+  CVector3f *local_28;
   CDeformableModel *local_24;
   SBoneGuyBox *local_20;
   CBoneGuy *local_1c;
@@ -52,17 +50,18 @@ void __cdecl core_boneguy_cpp_CBoneGuy_explode_FUN_0041d680(CBoneGuy *this_ptr)
   if (0 < local_24->num_parts) {
     local_20 = this_ptr->boxes;
     local_2c = &(this_ptr->base).base.base.orient;
-    local_28 = &(this_ptr->base).base.base.location;
+    local_28 = &(this_ptr->base).base.base.location.position;
     pCVar6 = &this_ptr->boxes[0].orient;
     local_1c = this_ptr;
     do {
-      local_38 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-5.0,5.0);
-      local_14 = local_38;
-      local_34 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,10.0);
-      local_14 = local_34;
-      local_30 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-5.0,5.0);
-      local_14 = local_30;
-      body_part = core_bodypart_cpp_createBodyPart_FUN_00418e10();
+      local_38.x = core_actor_cpp_getRandomFloat_FUN_0040cc10(-5.0,5.0);
+      local_14 = local_38.x;
+      local_38.y = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,10.0);
+      local_14 = local_38.y;
+      local_38.z = core_actor_cpp_getRandomFloat_FUN_0040cc10(-5.0,5.0);
+      local_14 = local_38.z;
+      body_part = core_bodypart_cpp_createBodyPart_FUN_00418e10
+                            (local_28,local_2c,&local_38,(CDemonActor *)this_ptr,1,1,2);
       core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30
                 ((CCharacter *)this_ptr,body_part,local_18,0);
       body_part->dont_pick_me_up = 1;

@@ -29,7 +29,7 @@ void __cdecl CHotDemon::process(CHotDemon *this_ptr,float delta_time);
 
 // Original: core_hotdemon.cpp_CHotDemon_getDeathState_FUN_004f7680
 // Address: 004f7680
-int __cdecl CHotDemon::getDeathState(CHotDemon *this_ptr);
+EDeathState __cdecl CHotDemon::getDeathState(CHotDemon *this_ptr);
 
 // Original: core_hotdemon.cpp_CHotDemon_archive_FUN_004f76c0
 // Address: 004f76c0
@@ -43,9 +43,9 @@ void __cdecl CHotDemon::processDamage(CHotDemon *this_ptr,SDamageInfo *damage_in
 // Address: 004f78f0
 int __cdecl CHotDemon::getTargetPoints(CHotDemon *this_ptr,CVector3f *out_points_array);
 
-// Original: core_hotdemon.cpp_CHotDemon_hasCollision_FUN_004f79b0
+// Original: core_hotdemon.cpp_CHotDemon_getCollisionType_FUN_004f79b0
 // Address: 004f79b0
-void __cdecl CHotDemon::hasCollision(CHotDemon *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CHotDemon::getCollisionType(CHotDemon *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_hotdemon.cpp_CHotDemon_getPropertyList_FUN_004f79d0
 // Address: 004f79d0

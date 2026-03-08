@@ -106,22 +106,22 @@ void __cdecl core_path_cpp_CPathMap_renderPathMap_FUN_00547fc0(CPathMap *this_pt
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_70);
         this_ptr_00 = g_CDemonRendererPtr2;
-        g_CDemonRendererPtr2->vertex_buffer_ptr->z = local_20;
-        this_ptr_00->vertex_buffer_ptr->r = local_28;
-        this_ptr_00->vertex_buffer_ptr->g = local_24;
-        this_ptr_00->vertex_buffer_ptr->fog = local_1c;
-        this_ptr_00->vertex_buffer_ptr[1].z = local_20;
-        this_ptr_00->vertex_buffer_ptr[1].r = local_28;
-        this_ptr_00->vertex_buffer_ptr[1].g = local_24;
-        this_ptr_00->vertex_buffer_ptr[1].fog = local_1c;
-        this_ptr_00->vertex_buffer_ptr[2].z = local_20;
-        this_ptr_00->vertex_buffer_ptr[2].r = local_28;
-        this_ptr_00->vertex_buffer_ptr[2].g = local_24;
-        this_ptr_00->vertex_buffer_ptr[2].fog = local_1c;
-        this_ptr_00->vertex_buffer_ptr[3].z = local_20;
-        this_ptr_00->vertex_buffer_ptr[3].r = local_28;
-        this_ptr_00->vertex_buffer_ptr[3].g = local_24;
-        this_ptr_00->vertex_buffer_ptr[3].fog = local_1c;
+        g_CDemonRendererPtr2->vertex_buffer_ptr->r = local_20;
+        this_ptr_00->vertex_buffer_ptr->g = local_28;
+        this_ptr_00->vertex_buffer_ptr->b = local_24;
+        this_ptr_00->vertex_buffer_ptr->a = local_1c;
+        this_ptr_00->vertex_buffer_ptr[1].r = local_20;
+        this_ptr_00->vertex_buffer_ptr[1].g = local_28;
+        this_ptr_00->vertex_buffer_ptr[1].b = local_24;
+        this_ptr_00->vertex_buffer_ptr[1].a = local_1c;
+        this_ptr_00->vertex_buffer_ptr[2].r = local_20;
+        this_ptr_00->vertex_buffer_ptr[2].g = local_28;
+        this_ptr_00->vertex_buffer_ptr[2].b = local_24;
+        this_ptr_00->vertex_buffer_ptr[2].a = local_1c;
+        this_ptr_00->vertex_buffer_ptr[3].r = local_20;
+        this_ptr_00->vertex_buffer_ptr[3].g = local_28;
+        this_ptr_00->vertex_buffer_ptr[3].b = local_24;
+        this_ptr_00->vertex_buffer_ptr[3].a = local_1c;
         engine_drender_cpp_CDemonRenderer_renderMaximumQualityVariant_FUN_0048bba0
                   (this_ptr_00,&SMRGLPrimitiveQuad_030d4fd0.base);
       }

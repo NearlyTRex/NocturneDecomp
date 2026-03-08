@@ -4,19 +4,19 @@
       {
         "category": "other",
         "column": 72,
-        "line": 81,
+        "line": 82,
         "message": "C-style cast from 'CGabriella *' to 'float' is not allowed"
       },
       {
         "category": "undeclared_identifier",
         "column": 73,
-        "line": 118,
+        "line": 119,
         "message": "use of undeclared identifier 'stack0xffffff60'"
       },
       {
         "category": "undeclared_identifier",
         "column": 45,
-        "line": 130,
+        "line": 131,
         "message": "use of undeclared identifier 'stack0xffffff60'"
       }
     ],
@@ -25,12 +25,12 @@
   },
   "complexity": {
     "assembly_lines": 376,
-    "complexity_score": 276,
+    "complexity_score": 277,
     "cross_reference_count": 1,
     "function_call_count": 16,
     "global_count": 13,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 166,
+    "pseudocode_lines": 167,
     "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -38,7 +38,7 @@
       "stack_ref",
       "warning_inlined_function"
     ],
-    "total_lines": 542
+    "total_lines": 543
   },
   "cross_references": [
     {
@@ -430,7 +430,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 16,
       "match": "in_stack_ffffff58",
       "severity": "moderate",
       "text": "CGabriella *in_stack_ffffff58;",
@@ -438,15 +438,15 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 74,
+      "line": 75,
       "match": "in_stack_ffffff58",
       "severity": "moderate",
-      "text": "(*pCVar1->handleFootstep)((CDemonActor *)this_ptr,pCVar4,iVar2,(float)in_stack_ffffff58);",
+      "text": "(*pCVar1->handleFootstep)((CDemonActor *)this_ptr,pCVar5,EVar3,(float)in_stack_ffffff58);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 94,
+      "line": 95,
       "match": "in_stack_ffffff58",
       "severity": "moderate",
       "text": "in_stack_ffffff58 = (CGabriella *)this_ptr_00;",
@@ -454,7 +454,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 111,
+      "line": 112,
       "match": "&stack0xffffff60",
       "severity": "moderate",
       "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xffffff60);",
@@ -462,7 +462,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 123,
+      "line": 124,
       "match": "&stack0xffffff60",
       "severity": "moderate",
       "text": "(local_1c,(SDamageInfo *)&stack0xffffff60);",
@@ -470,7 +470,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 127,
+      "line": 128,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND((double)fStack_94 * 0.20000000000000001)) + 1,0);",
@@ -478,7 +478,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 127,
+      "line": 128,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND((double)fStack_94 * 0.20000000000000001)) + 1,0);",
@@ -486,7 +486,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 128,
+      "line": 129,
       "match": "in_stack_ffffff58",
       "severity": "moderate",
       "text": "in_stack_ffffff58 = this_ptr;",

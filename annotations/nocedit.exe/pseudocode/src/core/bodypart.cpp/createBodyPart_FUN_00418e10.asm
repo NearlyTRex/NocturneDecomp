@@ -1,8 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBodyPart * __cdecl core_bodypart_cpp_createBodyPart_FUN_00418e10(void)
+; CBodyPart * __cdecl core_bodypart_cpp_createBodyPart_FUN_00418e10(CVector3f *position,UOrientationVector *orientation,CVector3f *initial_velocity,CDemonActor *scale_source,int dont_use_normals,int is_transparent,int blood_type)
 ;
+; Parameters:
+; CVector3f *      Stack[0x4]:4   position
+; UOrientationVector * Stack[0x8]:4   orientation
+; CVector3f *      Stack[0xc]:4   initial_velocity
+; CDemonActor *    Stack[0x10]:4   scale_source
+; int              Stack[0x14]:4   dont_use_normals
+; int              Stack[0x18]:4   is_transparent
+; int              Stack[0x1c]:4   blood_type
 ; Local Variables:
 ; undefined4       Stack[-0x28]:4  local_28
 ; undefined4       Stack[-0x14]:4  local_14
@@ -10,7 +18,7 @@
 ; XREF[14]:
 ;   core_batcreat.cpp_CBatCreature_processDismemberment_FUN_00415dd0 at 00415f25
 ;   core_batman.cpp_CBatman_FUN_00417660 at 00417732
-;   core_bride.cpp_CBride_FUN_00424600 at 004246c2
+;   core_bride.cpp_CBride_processDismemberment_FUN_00424600 at 004246c2
 ;   core_charactr.cpp_CCharacter_detachBodyPart_FUN_0042bcc0 at 0042bcfe
 ;   core_cow.cpp_CZombieCow_FUN_004448c0 at 00444969
 ;   core_dracbrid.cpp_CDraculaBride_dismemberPart_FUN_00485b20 at 00485b5d

@@ -13,15 +13,15 @@ Mismatches may indicate:
 
 SUMMARY
 --------------------------------------------------
-Functions with parameter estimates: 5092
-Functions with no callers: 3233
-Parameter mismatches detected: 453
-Signature accuracy rate: 75.6%
+Functions with parameter estimates: 5091
+Functions with no callers: 3232
+Parameter mismatches detected: 447
+Signature accuracy rate: 76.0%
 
 Mismatches by confidence:
   High confidence:   17 (multiple call sites agree)
-  Medium confidence: 60 (some agreement)
-  Low confidence:    376 (limited data)
+  Medium confidence: 59 (some agreement)
+  Low confidence:    371 (limited data)
 
 ====================================================================================================
 HIGH CONFIDENCE MISMATCHES - Likely signature issues
@@ -63,7 +63,7 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
     File: core/bodypart.cpp
     Signature: CVector3f * __cdecl core_bodypart_cpp_addVector_FUN_0041b540(CVector3f *a,CVector3f *dst,CVector3f *b)
     Sample call sites:
-      core_boneguy.cpp_CBoneGuy_FUN_ at 0041ce45: 0 reg [], 5 stack
+      core_boneguy.cpp_CBoneGuy_upda at 0041ce45: 0 reg [], 5 stack
       core_mobster.cpp_CMobster_FUN_ at 00526fc6: 0 reg [], 5 stack
       core_zombie.cpp_CZombie_FUN_00 at 005fb79f: 0 reg [], 5 stack
 
@@ -73,7 +73,7 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
     File: core/bodypart.cpp
     Signature: CVector3f * __cdecl core_bodypart_cpp_scaleVector_FUN_0041b4e0(CVector3f *src,CVector3f *dst,float *scalar)
     Sample call sites:
-      core_boneguy.cpp_CBoneGuy_FUN_ at 0041ce4e: 0 reg [], 1 stack
+      core_boneguy.cpp_CBoneGuy_upda at 0041ce4e: 0 reg [], 1 stack
       core_mobster.cpp_CMobster_FUN_ at 00526fcf: 0 reg [], 1 stack
       core_zombie.cpp_CZombie_FUN_00 at 005fb7a8: 0 reg [], 1 stack
 
@@ -236,7 +236,6 @@ MEDIUM CONFIDENCE MISMATCHES
   cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAli declared:4 est:5 (+1) [2 calls]
   cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAli declared:4 est:5 (+1) [2 calls]
   core_ammobox.cpp_CAmmoBox_openBox_FUN_00411690     declared:2 est:1 (-1) [2 calls]
-  core_bugs.cpp_CBugs_FUN_00425fe0                   declared:1 est:2 (+1) [2 calls]
   core_charactr.cpp_CCharacter_dismember_FUN_0042b9e declared:3 est:4 (+1) [9 calls]
   core_cloth.cpp_CCloth_free_FUN_00438cb0            declared:1 est:2 (+1) [2 calls]
   core_dfilter.cpp_CDemonFilter_freeMemory_FUN_00470 declared:1 est:2 (+1) [2 calls]
@@ -251,14 +250,15 @@ MEDIUM CONFIDENCE MISMATCHES
   core_werewolf.cpp_CWerewolf_FUN_005f1230           declared:1 est:2 (+1) [2 calls]
   crt_debug.c_TriggerDebuggerBreak_FUN_0060b500      declared:2 est:3 (+1) [2 calls]
   crt_iostream.cpp_streambuf_destructor_FUN_0060d64f declared:1 est:2 (+1) [2 calls]
+  crt_math.c_sqrt_FUN_0060710c                       declared:1 est:0 (-1) [2 calls]
 
-  ... and 10 more
+  ... and 9 more
 
 ====================================================================================================
 LOW CONFIDENCE MISMATCHES (limited data)
 ====================================================================================================
 
-  376 functions with low-confidence mismatches
+  371 functions with low-confidence mismatches
   Sample:
     cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_F declared:1 est:5 (+4)
     cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_ declared:1 est:3 (+2)
@@ -278,7 +278,7 @@ MISMATCH DIRECTION ANALYSIS
 Functions where declaration has MORE params than estimated: 84
   (May indicate: extra params not being passed, or params in globals)
 
-Functions where declaration has FEWER params than estimated: 369
+Functions where declaration has FEWER params than estimated: 363
   (May indicate: missing params in signature, or calling convention issue)
 
 Distribution of differences (estimated - declared):
@@ -291,10 +291,10 @@ Distribution of differences (estimated - declared):
   -3 params: 8 functions
   -2 params: 17 functions
   -1 params: 49 functions
-  +1 params: 169 functions
-  +2 params: 76 functions
-  +3 params: 39 functions
-  +4 params: 74 functions
+  +1 params: 164 functions
+  +2 params: 75 functions
+  +3 params: 40 functions
+  +4 params: 73 functions
   +5 params: 4 functions
   +6 params: 2 functions
   +7 params: 3 functions

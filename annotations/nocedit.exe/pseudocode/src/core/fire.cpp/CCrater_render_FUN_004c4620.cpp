@@ -45,18 +45,18 @@ void __cdecl core_fire_cpp_CCrater_render_FUN_004c4620(CCrater *this_ptr)
   local_14.z = (int)ROUND(this_ptr->corner_positions[3].z * 256.0f);
   wincore_windll_cpp_transformPoint_FUN_005b5a25
             (&g_RenderVertexBuffer[3].projected_vertex,&local_14);
-  g_RenderVertexBuffer[0].z = 0xffff;
   g_RenderVertexBuffer[0].r = 0xffff;
   g_RenderVertexBuffer[0].g = 0xffff;
-  g_RenderVertexBuffer[1].z = 0xffff;
+  g_RenderVertexBuffer[0].b = 0xffff;
   g_RenderVertexBuffer[1].r = 0xffff;
   g_RenderVertexBuffer[1].g = 0xffff;
-  g_RenderVertexBuffer[2].z = 0xffff;
+  g_RenderVertexBuffer[1].b = 0xffff;
   g_RenderVertexBuffer[2].r = 0xffff;
   g_RenderVertexBuffer[2].g = 0xffff;
-  g_RenderVertexBuffer[3].z = 0xffff;
+  g_RenderVertexBuffer[2].b = 0xffff;
   g_RenderVertexBuffer[3].r = 0xffff;
   g_RenderVertexBuffer[3].g = 0xffff;
+  g_RenderVertexBuffer[3].b = 0xffff;
   g_RenderVertexBuffer[0].u = 0x80000;
   g_RenderVertexBuffer[0].v = 0xf80000;
   g_RenderVertexBuffer[1].u = 0xf80000;

@@ -50,9 +50,9 @@ void __cdecl core_glass_cpp_CGlass_renderBrokenGlass_FUN_004e9ca0(CGlass *this_p
                  ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x +
                  iVar3),&CStack_10);
       pCVar1 = g_CDemonRendererPtr2;
-      *(uint *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->z + iVar3) = 0xffff;
-      *(uint *)((int)&pCVar1->vertex_buffer_ptr->r + iVar3) = 0xffff;
+      *(uint *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->r + iVar3) = 0xffff;
       *(uint *)((int)&pCVar1->vertex_buffer_ptr->g + iVar3) = 0xffff;
+      *(uint *)((int)&pCVar1->vertex_buffer_ptr->b + iVar3) = 0xffff;
       iVar2 = iVar2 + 1;
       pCVar5 = pCVar5 + 1;
       iVar3 = iVar3 + 0x30;

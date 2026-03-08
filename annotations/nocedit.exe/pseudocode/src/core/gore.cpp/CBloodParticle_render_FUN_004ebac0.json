@@ -1,48 +1,23 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 4,
-        "line": 136,
-        "message": "indirection not permitted on operand of type 'void *'"
-      },
-      {
-        "category": "other",
-        "column": 67,
-        "line": 136,
-        "message": "called object type 'void' is not a function or function pointer"
-      },
-      {
-        "category": "other",
-        "column": 6,
-        "line": 218,
-        "message": "indirection not permitted on operand of type 'void *'"
-      },
-      {
-        "category": "other",
-        "column": 15,
-        "line": 219,
-        "message": "called object type 'void' is not a function or function pointer"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 280,
-    "complexity_score": 668,
+    "complexity_score": 669,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 25,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 218,
+    "pseudocode_lines": 219,
     "suspect_count": 44,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 498
+    "total_lines": 499
   },
   "cross_references": [],
   "function": {
@@ -148,19 +123,19 @@
     },
     {
       "addr": "00688034",
-      "name": "g_RenderVertexBuffer[0].z",
-      "type": "undefined4",
-      "value": null
-    },
-    {
-      "addr": "00688038",
       "name": "g_RenderVertexBuffer[0].r",
       "type": "undefined4",
       "value": null
     },
     {
-      "addr": "0068803c",
+      "addr": "00688038",
       "name": "g_RenderVertexBuffer[0].g",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0068803c",
+      "name": "g_RenderVertexBuffer[0].b",
       "type": "undefined4",
       "value": null
     },
@@ -178,19 +153,19 @@
     },
     {
       "addr": "00688064",
-      "name": "g_RenderVertexBuffer[1].z",
-      "type": "undefined4",
-      "value": null
-    },
-    {
-      "addr": "00688068",
       "name": "g_RenderVertexBuffer[1].r",
       "type": "undefined4",
       "value": null
     },
     {
-      "addr": "0068806c",
+      "addr": "00688068",
       "name": "g_RenderVertexBuffer[1].g",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0068806c",
+      "name": "g_RenderVertexBuffer[1].b",
       "type": "undefined4",
       "value": null
     },
@@ -659,7 +634,7 @@
       "line": 119,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "lVar2 = (longlong)local_28 * (longlong)*(int *)((int)&g_RenderVertexBuffer[0].z + iVar3);",
+      "text": "lVar2 = (longlong)local_28 * (longlong)*(int *)((int)&g_RenderVertexBuffer[0].r + iVar3);",
       "type": "pointer_cast"
     },
     {
@@ -667,7 +642,7 @@
       "line": 120,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].z + iVar3) =",
+      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].r + iVar3) =",
       "type": "pointer_cast"
     },
     {
@@ -675,7 +650,7 @@
       "line": 122,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "lVar2 = (longlong)local_20 * (longlong)*(int *)((int)&g_RenderVertexBuffer[0].r + iVar3);",
+      "text": "lVar2 = (longlong)local_20 * (longlong)*(int *)((int)&g_RenderVertexBuffer[0].g + iVar3);",
       "type": "pointer_cast"
     },
     {
@@ -683,7 +658,7 @@
       "line": 123,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].r + iVar3) =",
+      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].g + iVar3) =",
       "type": "pointer_cast"
     },
     {
@@ -691,12 +666,12 @@
       "line": 126,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].g + iVar3) = 0;",
+      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].b + iVar3) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 160,
+      "line": 161,
       "match": "ROUND",
       "severity": "mild",
       "text": "CStack_dc.x = (int)ROUND(local_4c * 256.0f);",
@@ -704,7 +679,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 161,
+      "line": 162,
       "match": "ROUND",
       "severity": "mild",
       "text": "CStack_dc.y = (int)ROUND(local_4c * 256.0f);",
@@ -712,7 +687,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 162,
+      "line": 163,
       "match": "ROUND",
       "severity": "mild",
       "text": "CStack_dc.z = (int)ROUND(256.0f * 0.0);",
@@ -720,7 +695,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 170,
+      "line": 171,
       "match": "ROUND",
       "severity": "mild",
       "text": "CStack_ac.x = (int)ROUND(local_4c * 256.0f);",
@@ -728,7 +703,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 171,
+      "line": 172,
       "match": "ROUND",
       "severity": "mild",
       "text": "CStack_ac.y = (int)ROUND(fStack_18 * 256.0f);",
@@ -736,7 +711,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 172,
+      "line": 173,
       "match": "ROUND",
       "severity": "mild",
       "text": "CStack_ac.z = (int)ROUND(256.0f * 0.0);",
@@ -744,7 +719,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 179,
+      "line": 180,
       "match": "ROUND",
       "severity": "mild",
       "text": "CStack_64.x = (int)ROUND(fStack_1c * 256.0f);",
@@ -752,7 +727,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 180,
+      "line": 181,
       "match": "ROUND",
       "severity": "mild",
       "text": "CStack_64.y = (int)ROUND(fStack_1c * 256.0f);",
@@ -760,7 +735,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 181,
+      "line": 182,
       "match": "ROUND",
       "severity": "mild",
       "text": "CStack_64.z = (int)ROUND(256.0f * 0.0);",
@@ -768,7 +743,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 187,
+      "line": 188,
       "match": "ROUND",
       "severity": "mild",
       "text": "CStack_c4.x = (int)ROUND(fStack_18 * 256.0f);",
@@ -776,7 +751,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 188,
+      "line": 189,
       "match": "ROUND",
       "severity": "mild",
       "text": "CStack_c4.y = (int)ROUND(fStack_1c * 256.0f);",
@@ -784,7 +759,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 189,
+      "line": 190,
       "match": "ROUND",
       "severity": "mild",
       "text": "CStack_c4.z = (int)ROUND(256.0f * 0.0);",
@@ -792,7 +767,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 192,
+      "line": 193,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_88.x = (int)ROUND(CStack_e8.x * 256.0f);",
@@ -800,7 +775,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 193,
+      "line": 194,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_88.y = (int)ROUND(CStack_e8.y * 256.0f);",
@@ -808,7 +783,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 194,
+      "line": 195,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_88.z = (int)ROUND(CStack_e8.z * 256.0f);",
@@ -816,31 +791,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 199,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "lVar2 = (longlong)local_28 * (longlong)*(int *)((int)&g_RenderVertexBuffer[0].z + iVar4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 200,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].z + iVar4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 202,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "lVar2 = (longlong)local_20 * (longlong)*(int *)((int)&g_RenderVertexBuffer[0].r + iVar4);",
+      "text": "lVar2 = (longlong)local_28 * (longlong)*(int *)((int)&g_RenderVertexBuffer[0].r + iVar4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 203,
+      "line": 201,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&g_RenderVertexBuffer[0].r + iVar4) =",
@@ -848,18 +807,34 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 206,
+      "line": 203,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "lVar2 = (longlong)local_24 * (longlong)*(int *)((int)&g_RenderVertexBuffer[0].g + iVar4);",
+      "text": "lVar2 = (longlong)local_20 * (longlong)*(int *)((int)&g_RenderVertexBuffer[0].g + iVar4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 204,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].g + iVar4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 207,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "lVar2 = (longlong)local_24 * (longlong)*(int *)((int)&g_RenderVertexBuffer[0].b + iVar4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 208,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].g + iVar4) =",
+      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].b + iVar4) =",
       "type": "pointer_cast"
     }
   ],

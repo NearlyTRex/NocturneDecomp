@@ -42,23 +42,23 @@ void __cdecl engine_clipper_c_interpolateVertexTopClipAdvanced_FUN_004375c0(SRen
   (output->projected_vertex).screen_x = -1;
   (output->projected_vertex).transformed_x =
        (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + iVar2;
-  lVar1 = (longlong)(v2->z - v1->z) * (longlong)iVar4;
-  uVar3 = (uint)lVar1;
-  output->z = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->z;
   lVar1 = (longlong)(v2->r - v1->r) * (longlong)iVar4;
   uVar3 = (uint)lVar1;
   output->r = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->r;
   lVar1 = (longlong)(v2->g - v1->g) * (longlong)iVar4;
   uVar3 = (uint)lVar1;
-  output->g = v1->g + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3);
+  output->g = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->g;
+  lVar1 = (longlong)(v2->b - v1->b) * (longlong)iVar4;
+  uVar3 = (uint)lVar1;
+  output->b = v1->b + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3);
   lVar1 = (longlong)(v2->u - v1->u) * (longlong)iVar4;
   uVar3 = (uint)lVar1;
   output->u = v1->u + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3);
   lVar1 = (longlong)(v2->v - v1->v) * (longlong)iVar4;
   uVar3 = (uint)lVar1;
   output->v = v1->v + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3);
-  lVar1 = (longlong)(v2->fog - v1->fog) * (longlong)iVar4;
+  lVar1 = (longlong)(v2->a - v1->a) * (longlong)iVar4;
   uVar3 = (uint)lVar1;
-  output->fog = v1->fog + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3);
+  output->a = v1->a + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3);
   return;
 }

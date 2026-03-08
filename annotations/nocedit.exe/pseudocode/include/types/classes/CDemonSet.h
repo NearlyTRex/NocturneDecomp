@@ -15,6 +15,7 @@ struct CMirror;
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
 #include "types/classes/CWayPoint.h"
+#include "types/enums/EWeatherType.h"
 #include "types/structs/SFog.h"
 #include "types/structs/SRoom.h"
 #include "types/structs/SVDBox.h"
@@ -114,6 +115,6 @@ typedef struct CDemonSet {
     int mirror_cached_light; // 0x16165c
     int mirror_cached_color; // 0x161660
     int mirror_cached_fog; // 0x161664
-    int weather_type; // 0x161668
+    EWeatherType weather_type; // 0x161668
 } CDemonSet;
 

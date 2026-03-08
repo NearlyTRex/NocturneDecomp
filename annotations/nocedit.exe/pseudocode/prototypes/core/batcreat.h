@@ -43,9 +43,9 @@ void __cdecl CBatCreature::processDamage(CBatCreature *this_ptr,SDamageInfo *dam
 // Address: 00416240
 int __cdecl CBatCreature::getTargetPoints(CBatCreature *this_ptr,CVector3f *out_points_array);
 
-// Original: core_batcreat.cpp_CBatCreature_hasCollision_FUN_00416290
+// Original: core_batcreat.cpp_CBatCreature_getCollisionType_FUN_00416290
 // Address: 00416290
-void __cdecl CBatCreature::hasCollision(CBatCreature *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CBatCreature::getCollisionType(CBatCreature *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_batcreat.cpp_CBatCreature_getPropertyList_FUN_004162b0
 // Address: 004162b0

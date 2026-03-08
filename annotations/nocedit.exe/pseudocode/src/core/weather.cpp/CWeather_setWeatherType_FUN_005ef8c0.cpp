@@ -2,17 +2,17 @@
 // Address: 005ef8c0
 // Address Range: [[005ef8c0, 005ef8e8] [005ef92c, 005ef934]]
 // Convention: __cdecl
-// Signature: void __cdecl core_weather_cpp_CWeather_setWeatherType_FUN_005ef8c0(CWeather *this_ptr,int type)
+// Signature: void __cdecl core_weather_cpp_CWeather_setWeatherType_FUN_005ef8c0(CWeather *this_ptr,EWeatherType type)
 
 #include "nocturne.h"
 
-void __cdecl core_weather_cpp_CWeather_setWeatherType_FUN_005ef8c0(CWeather *this_ptr,int type)
+void __cdecl core_weather_cpp_CWeather_setWeatherType_FUN_005ef8c0(CWeather *this_ptr,EWeatherType type)
 
 {
   float fVar1;
   
   this_ptr->weather_type = type;
-  if (type == 1) {
+  if (type == WEATHER_TYPE_RAIN) {
     this_ptr->particle_speed = 40.0;
   }
   else {

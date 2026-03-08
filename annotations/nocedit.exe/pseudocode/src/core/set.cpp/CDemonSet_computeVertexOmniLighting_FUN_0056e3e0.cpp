@@ -56,8 +56,8 @@ void __cdecl core_set_cpp_CDemonSet_computeVertexOmniLighting_FUN_0056e3e0(CDemo
   if ((float)255 < local_38) {
     local_38 = 255.0;
   }
-  g_RenderVertexBuffer[vertex_index].z = (int)ROUND(ROUND(local_3c)) << 8;
-  g_RenderVertexBuffer[vertex_index].r = (int)ROUND(ROUND(local_40)) << 8;
-  g_RenderVertexBuffer[vertex_index].g = (int)ROUND(ROUND(local_38)) << 8;
+  g_RenderVertexBuffer[vertex_index].r = (int)ROUND(ROUND(local_3c)) << 8;
+  g_RenderVertexBuffer[vertex_index].g = (int)ROUND(ROUND(local_40)) << 8;
+  g_RenderVertexBuffer[vertex_index].b = (int)ROUND(ROUND(local_38)) << 8;
   return;
 }

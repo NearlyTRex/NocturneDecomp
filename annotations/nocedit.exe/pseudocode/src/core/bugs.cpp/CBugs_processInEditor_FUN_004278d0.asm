@@ -22,10 +22,10 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
-;   core_bugs.cpp_CBugs_FUN_004257f0
-;   core_bugs.cpp_CBugs_FUN_00426420
-;   core_bugs.cpp_CBugs_FUN_004272f0
-;   core_bugs.cpp_CBugs_FUN_004276c0
+;   core_bugs.cpp_CBugs_applySwarmTranslation_FUN_004276c0
+;   core_bugs.cpp_CBugs_recalculateBoundingBox_FUN_004272f0
+;   core_bugs.cpp_CBugs_updateBugPathfinding_FUN_00426420
+;   core_bugs.cpp_CBugs_updateGroundHeightGrid_FUN_004257f0
 ;   core_charactr.cpp_CCharacter_processInEditor_FUN_0042f800
 ;
 ; *****************************************************************************
@@ -80,13 +80,13 @@ section .text
     LEA EAX,[EBP + -0x10]               ; 00427941
     PUSH EAX                            ; 00427944
     PUSH EDI                            ; 00427945
-    CALL core_bugs.cpp_CBugs_FUN_004276c0 ; 00427946
-        ;   XREF to: 004276c0 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_CBugs_FUN_004276c0(CBugs * this_ptr)
+    CALL core_bugs.cpp_CBugs_applySwarmTranslation_FUN_004276c0 ; 00427946
+        ;   XREF to: 004276c0 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_CBugs_applySwarmTranslation_FUN_004276c0(CBugs * this_ptr, CVector3f * new_position)
     ADD ESP,0x8                         ; 0042794b
     PUSH EDI                            ; 0042794e
     XOR ESI,ESI                         ; 0042794f
-    CALL core_bugs.cpp_CBugs_FUN_004257f0 ; 00427951
-        ;   XREF to: 004257f0 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_CBugs_FUN_004257f0(CBugs * this_ptr)
+    CALL core_bugs.cpp_CBugs_updateGroundHeightGrid_FUN_004257f0 ; 00427951
+        ;   XREF to: 004257f0 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_CBugs_updateGroundHeightGrid_FUN_004257f0(CBugs * this_ptr)
     MOV EDX,dword ptr [EDI + 0xbec0]    ; 00427956
     ADD ESP,0x4                         ; 0042795c
     TEST EDX,EDX                        ; 0042795f
@@ -102,8 +102,8 @@ section .text
     PUSH EBX                            ; 0042797c
     PUSH EDI                            ; 0042797d
     INC ESI                             ; 0042797e
-    CALL core_bugs.cpp_CBugs_FUN_00426420 ; 0042797f
-        ;   XREF to: 00426420 (UNCONDITIONAL_CALL)  ; int core_bugs.cpp_CBugs_FUN_00426420(CBugs * this_ptr)
+    CALL core_bugs.cpp_CBugs_updateBugPathfinding_FUN_00426420 ; 0042797f
+        ;   XREF to: 00426420 (UNCONDITIONAL_CALL)  ; int core_bugs.cpp_CBugs_updateBugPathfinding_FUN_00426420(CBugs * this_ptr, SBug * bug_data, float delta_time, CVector3f * dest_vertex)
     ADD EBX,0x40                        ; 00427984
     MOV ECX,dword ptr [EDI + 0xbec0]    ; 00427987
     ADD ESP,0x10                        ; 0042798d
@@ -114,8 +114,8 @@ section .text
     LEA EDX,[EDX]                       ; 0042799a
     PUSH EDI                            ; 004279a0
         ;   Label: LAB_004279a0
-    CALL core_bugs.cpp_CBugs_FUN_004272f0 ; 004279a1
-        ;   XREF to: 004272f0 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_CBugs_FUN_004272f0(CBugs * this_ptr)
+    CALL core_bugs.cpp_CBugs_recalculateBoundingBox_FUN_004272f0 ; 004279a1
+        ;   XREF to: 004272f0 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_CBugs_recalculateBoundingBox_FUN_004272f0(CBugs * this_ptr)
     ADD ESP,0x4                         ; 004279a6
     MOV ESP,EBP                         ; 004279a9
     POP EBP                             ; 004279ab

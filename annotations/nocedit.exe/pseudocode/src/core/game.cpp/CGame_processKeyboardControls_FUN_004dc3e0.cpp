@@ -12,9 +12,10 @@ void __cdecl core_game_cpp_CGame_processKeyboardControls_FUN_004dc3e0(CGame *thi
   float *pfVar1;
   float fVar2;
   CHero *this_ptr_00;
-  int iVar3;
-  uint uVar4;
-  byte bVar5;
+  EDeathState EVar3;
+  int iVar4;
+  uint uVar5;
+  byte bVar6;
   
   if (this_ptr->screen_clear_condition != 0) {
     (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIM_LBUTTON);
@@ -127,26 +128,26 @@ LAB_004dc4e9:
     }
   }
   if (this_ptr->always_run == 0) {
-    bVar5 = g_KeyboardState[this_ptr->key_run];
+    bVar6 = g_KeyboardState[this_ptr->key_run];
   }
   else {
-    bVar5 = g_KeyboardState[this_ptr->key_run] == '\0';
+    bVar6 = g_KeyboardState[this_ptr->key_run] == '\0';
   }
-  player_control->action_states[2] = (uint)bVar5;
-  iVar3 = this_ptr->key_walk;
-  if (g_PrevKeyboardState[iVar3] != g_KeyboardState[iVar3]) {
-    player_control->action_states[0] = (uint)(byte)g_KeyboardState[iVar3];
+  player_control->action_states[2] = (uint)bVar6;
+  iVar4 = this_ptr->key_walk;
+  if (g_PrevKeyboardState[iVar4] != g_KeyboardState[iVar4]) {
+    player_control->action_states[0] = (uint)(byte)g_KeyboardState[iVar4];
   }
-  iVar3 = this_ptr->key_backup;
-  if (g_PrevKeyboardState[iVar3] != g_KeyboardState[iVar3]) {
-    player_control->action_states[1] = (uint)(byte)g_KeyboardState[iVar3];
+  iVar4 = this_ptr->key_backup;
+  if (g_PrevKeyboardState[iVar4] != g_KeyboardState[iVar4]) {
+    player_control->action_states[1] = (uint)(byte)g_KeyboardState[iVar4];
   }
-  iVar3 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).getDeathState)
+  EVar3 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).getDeathState)
                     (&g_HeroActors[g_LocalHeroIndex]->base);
-  if (iVar3 == 0) {
-    iVar3 = this_ptr->key_fire;
-    if (g_PrevKeyboardState[iVar3] != g_KeyboardState[iVar3]) {
-      player_control->action_states[3] = (uint)(byte)g_KeyboardState[iVar3];
+  if (EVar3 == DEATH_STATE_ALIVE) {
+    iVar4 = this_ptr->key_fire;
+    if (g_PrevKeyboardState[iVar4] != g_KeyboardState[iVar4]) {
+      player_control->action_states[3] = (uint)(byte)g_KeyboardState[iVar4];
     }
   }
   else {
@@ -170,73 +171,73 @@ LAB_004dc4e9:
   else {
     player_control->action_states[6] = (uint)(byte)g_KeyboardState[this_ptr->key_draw];
   }
-  iVar3 = this_ptr->key_jump;
-  if (g_PrevKeyboardState[iVar3] == g_KeyboardState[iVar3]) {
+  iVar4 = this_ptr->key_jump;
+  if (g_PrevKeyboardState[iVar4] == g_KeyboardState[iVar4]) {
     player_control->action_states[7] = 0;
   }
   else {
-    player_control->action_states[7] = (uint)(byte)g_KeyboardState[iVar3];
+    player_control->action_states[7] = (uint)(byte)g_KeyboardState[iVar4];
   }
-  iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,this_ptr->key_next_weapon);
-  if (iVar3 != 0) {
+  iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,this_ptr->key_next_weapon);
+  if (iVar4 != 0) {
     core_inv_cpp_CInventory_selectWeapon_FUN_004feb10
               (&g_HeroActors[g_LocalHeroIndex]->inventory,(CDemonActor *)0x0,5,1);
   }
-  iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,this_ptr->key_prev_weapon);
-  if (iVar3 != 0) {
+  iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,this_ptr->key_prev_weapon);
+  if (iVar4 != 0) {
     core_inv_cpp_CInventory_selectWeapon_FUN_004feb10
               (&g_HeroActors[g_LocalHeroIndex]->inventory,(CDemonActor *)0x0,5,-1);
   }
-  iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,this_ptr->key_next_item);
-  if (iVar3 != 0) {
+  iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,this_ptr->key_next_item);
+  if (iVar4 != 0) {
     core_inv_cpp_CInventory_selectItem_FUN_004fec10(&g_HeroActors[g_LocalHeroIndex]->inventory,1);
   }
-  iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,this_ptr->key_prev_item);
-  if (iVar3 != 0) {
+  iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,this_ptr->key_prev_item);
+  if (iVar4 != 0) {
     core_inv_cpp_CInventory_selectItem_FUN_004fec10(&g_HeroActors[g_LocalHeroIndex]->inventory,-1);
   }
-  iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,this_ptr->key_next_ammo);
-  if (iVar3 != 0) {
+  iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,this_ptr->key_next_ammo);
+  if (iVar4 != 0) {
     core_inv_cpp_CInventory_cycleWeaponOfSameClass_FUN_004fed10
               (&g_HeroActors[g_LocalHeroIndex]->inventory,1);
   }
-  iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,this_ptr->key_item_desc);
-  if (iVar3 != 0) {
+  iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,this_ptr->key_item_desc);
+  if (iVar4 != 0) {
     core_inv_cpp_CInventory_toggleDetailView_FUN_00501500
               (&g_HeroActors[g_LocalHeroIndex]->inventory);
   }
-  iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,this_ptr->key_weapon_1);
-  if (iVar3 != 0) {
+  iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,this_ptr->key_weapon_1);
+  if (iVar4 != 0) {
     core_inv_cpp_CInventory_selectWeapon_FUN_004feb10
               (&g_HeroActors[g_LocalHeroIndex]->inventory,(CDemonActor *)0x0,0,1);
   }
-  iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,this_ptr->key_weapon_2);
-  if (iVar3 != 0) {
+  iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,this_ptr->key_weapon_2);
+  if (iVar4 != 0) {
     core_inv_cpp_CInventory_selectWeapon_FUN_004feb10
               (&g_HeroActors[g_LocalHeroIndex]->inventory,(CDemonActor *)0x0,1,1);
   }
-  iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,this_ptr->key_weapon_3);
-  if (iVar3 != 0) {
+  iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,this_ptr->key_weapon_3);
+  if (iVar4 != 0) {
     core_inv_cpp_CInventory_selectWeapon_FUN_004feb10
               (&g_HeroActors[g_LocalHeroIndex]->inventory,(CDemonActor *)0x0,2,1);
   }
-  iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,this_ptr->key_weapon_4);
-  if (iVar3 != 0) {
+  iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,this_ptr->key_weapon_4);
+  if (iVar4 != 0) {
     core_inv_cpp_CInventory_selectWeapon_FUN_004feb10
               (&g_HeroActors[g_LocalHeroIndex]->inventory,(CDemonActor *)0x0,4,1);
   }
-  iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,this_ptr->key_weapon_5);
-  if (iVar3 != 0) {
+  iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,this_ptr->key_weapon_5);
+  if (iVar4 != 0) {
     core_inv_cpp_CInventory_selectWeapon_FUN_004feb10
               (&g_HeroActors[g_LocalHeroIndex]->inventory,(CDemonActor *)0x0,3,1);
   }
-  iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,this_ptr->key_infrared);
-  if (iVar3 != 0) {
-    uVar4 = (uint)(this_ptr->block_auto_save == 0);
-    this_ptr->block_auto_save = uVar4;
-    if (((uVar4 == 0) || (this_ptr_00 = g_HeroActors[g_LocalHeroIndex], this_ptr_00 == (CHero *)0x0)
-        ) || (iVar3 = (*(((this_ptr_00->base).base.vtable._uc)->_uc).getDeathState)
-                                (&this_ptr_00->base), iVar3 == 0)) {
+  iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,this_ptr->key_infrared);
+  if (iVar4 != 0) {
+    uVar5 = (uint)(this_ptr->block_auto_save == 0);
+    this_ptr->block_auto_save = uVar5;
+    if (((uVar5 == 0) || (this_ptr_00 = g_HeroActors[g_LocalHeroIndex], this_ptr_00 == (CHero *)0x0)
+        ) || (EVar3 = (*(((this_ptr_00->base).base.vtable._uc)->_uc).getDeathState)
+                                (&this_ptr_00->base), EVar3 == DEATH_STATE_ALIVE)) {
       if (this_ptr->block_auto_save != 0) {
         return;
       }
@@ -244,11 +245,11 @@ LAB_004dc4e9:
     else {
       this_ptr->block_auto_save = 0;
     }
-    iVar3 = g_CDemonSetPtr->selected_camera_index;
+    iVar4 = g_CDemonSetPtr->selected_camera_index;
     core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0
               (g_CDemonSetPtr,g_CScriptPtr->focus_actor,1);
     g_CScriptPtr->focus_actor_changed = 0;
-    if (iVar3 == g_CDemonSetPtr->selected_camera_index) {
+    if (iVar4 == g_CDemonSetPtr->selected_camera_index) {
       core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50
                 (g_CDemonSetPtr,g_CDemonSetPtr->selected_camera_index);
       return;

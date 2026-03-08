@@ -136,29 +136,29 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004ca110(CFlame *this_pt
           wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                     (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&CStack_34);
           (*((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)
-                    (g_CurrentSceneCamera,&(this_ptr->base).location,0);
-          g_RenderVertexBuffer[0].fog = 0xffff - (int)g_PerspectiveReciprocal;
+                    (g_CurrentSceneCamera,&(this_ptr->base).location.position,0.0);
+          g_RenderVertexBuffer[0].a = 0xffff - (int)g_PerspectiveReciprocal;
           if (iStack_18 == 3) {
-            g_RenderVertexBuffer[0].fog = g_RenderVertexBuffer[0].fog / 2;
+            g_RenderVertexBuffer[0].a = g_RenderVertexBuffer[0].a / 2;
           }
           if (this_ptr->which_flame == 4) {
-            g_RenderVertexBuffer[0].fog = g_RenderVertexBuffer[0].fog / 4;
+            g_RenderVertexBuffer[0].a = g_RenderVertexBuffer[0].a / 4;
           }
           if (this_ptr->which_flame == 1) {
-            g_RenderVertexBuffer[0].fog = g_RenderVertexBuffer[0].fog / 2;
+            g_RenderVertexBuffer[0].a = g_RenderVertexBuffer[0].a / 2;
           }
-          g_RenderVertexBuffer[0].z = 0xffff;
           g_RenderVertexBuffer[0].r = 0xffff;
           g_RenderVertexBuffer[0].g = 0xffff;
-          g_RenderVertexBuffer[1].z = 0xffff;
+          g_RenderVertexBuffer[0].b = 0xffff;
           g_RenderVertexBuffer[1].r = 0xffff;
           g_RenderVertexBuffer[1].g = 0xffff;
-          g_RenderVertexBuffer[2].z = 0xffff;
+          g_RenderVertexBuffer[1].b = 0xffff;
           g_RenderVertexBuffer[2].r = 0xffff;
           g_RenderVertexBuffer[2].g = 0xffff;
-          g_RenderVertexBuffer[3].z = 0xffff;
+          g_RenderVertexBuffer[2].b = 0xffff;
           g_RenderVertexBuffer[3].r = 0xffff;
           g_RenderVertexBuffer[3].g = 0xffff;
+          g_RenderVertexBuffer[3].b = 0xffff;
           if (this_ptr->texture_flip == 0) {
             g_RenderVertexBuffer[0].u = 0x80000;
             g_RenderVertexBuffer[1].u = 0x80000;
@@ -176,9 +176,9 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004ca110(CFlame *this_pt
           g_RenderVertexBuffer[1].v = 0x80000;
           g_RenderVertexBuffer[0].v = 0xf80000;
           fStack_10 = (float)(int)ROUND(ROUND(this_ptr->animation_time));
-          g_RenderVertexBuffer[1].fog = g_RenderVertexBuffer[0].fog;
-          g_RenderVertexBuffer[2].fog = g_RenderVertexBuffer[0].fog;
-          g_RenderVertexBuffer[3].fog = g_RenderVertexBuffer[0].fog;
+          g_RenderVertexBuffer[1].a = g_RenderVertexBuffer[0].a;
+          g_RenderVertexBuffer[2].a = g_RenderVertexBuffer[0].a;
+          g_RenderVertexBuffer[3].a = g_RenderVertexBuffer[0].a;
           engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
                     (g_CDemonRendererPtr2,
                      SMRGLTextureBasic_ARRAY_0067b100 +
@@ -259,10 +259,10 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004ca110(CFlame *this_pt
         this_ptr_00 = g_CDemonRendererPtr2;
         iStack_14 = iStack_14 + 0x30;
       } while (iStack_14 != 0xc0);
-      g_CDemonRendererPtr2->vertex_buffer_ptr->fog = 0x4000;
-      this_ptr_00->vertex_buffer_ptr[1].fog = 0x4000;
-      this_ptr_00->vertex_buffer_ptr[2].fog = 0x4000;
-      this_ptr_00->vertex_buffer_ptr[3].fog = 0x4000;
+      g_CDemonRendererPtr2->vertex_buffer_ptr->a = 0x4000;
+      this_ptr_00->vertex_buffer_ptr[1].a = 0x4000;
+      this_ptr_00->vertex_buffer_ptr[2].a = 0x4000;
+      this_ptr_00->vertex_buffer_ptr[3].a = 0x4000;
       this_ptr_00->vertex_buffer_ptr->u = 0x80000;
       this_ptr_00->vertex_buffer_ptr->v = 0xf80000;
       this_ptr_00->vertex_buffer_ptr[1].u = 0xf80000;

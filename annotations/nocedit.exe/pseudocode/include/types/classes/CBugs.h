@@ -9,6 +9,7 @@ struct CDemonActor;
 #include "types/classes/CEnemy.h"
 #include "types/classes/CKeyFramedModelInstance.h"
 #include "types/classes/CMatrix3x4f.h"
+#include "types/enums/EBugsState.h"
 #include "types/structs/SBug.h"
 #include "types/structs/SSwarmVertex.h"
 
@@ -16,7 +17,7 @@ struct CDemonActor;
 // Ghidra size: 0x199f8 (104952 bytes)
 typedef struct CBugs {
     CEnemy base; // 0x0
-    int state; // 0xbebc
+    EBugsState state; // 0xbebc
     int count; // 0xbec0
     SBug bugs[400]; // 0xbec4
     int model_count; // 0x122c4

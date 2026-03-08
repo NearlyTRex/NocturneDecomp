@@ -47,9 +47,9 @@ CBoundingBox3D * __cdecl CAmmoBox::getBoundingBox(CAmmoBox *this_ptr,CBoundingBo
 // Address: 00411900
 void __cdecl CAmmoBox::archive(CAmmoBox *this_ptr);
 
-// Original: core_ammobox.cpp_CAmmoBox_hasCollision_FUN_004119d0
+// Original: core_ammobox.cpp_CAmmoBox_getCollisionType_FUN_004119d0
 // Address: 004119d0
-int __cdecl CAmmoBox::hasCollision(CAmmoBox *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CAmmoBox::getCollisionType(CAmmoBox *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_ammobox.cpp_CAmmoBox_canPickup_FUN_004119f0
 // Address: 004119f0

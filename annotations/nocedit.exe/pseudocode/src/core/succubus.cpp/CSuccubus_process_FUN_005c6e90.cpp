@@ -239,7 +239,7 @@ LAB_005c6fd0:
     pCVar8 = g_CDemonMissionPtr;
     local_18 = pCVar11;
     if (pCVar11 != (CHotDemon *)0x0) {
-      (this_ptr->base).base.base.was_created = 2;
+      (this_ptr->base).base.base.lifecycle_state = ACTOR_DESTROYED;
       core_mission_cpp_CDemonMission_generateActorName_FUN_00524700(pCVar8,(CDemonActor *)pCVar11);
       (pCVar11->base).base.base.location.position.x = (this_ptr->base).base.base.location.position.x
       ;

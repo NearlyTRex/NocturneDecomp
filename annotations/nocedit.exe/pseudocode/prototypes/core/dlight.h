@@ -135,9 +135,9 @@ void __cdecl CDemonLight::setVolumetricIntensity(CDemonLight *this_ptr,float int
 // Address: 00476670
 void __cdecl CDemonLight::drawShadowDepthBuffer(CDemonLight *this_ptr,int screen_x,int screen_y,int brightness_offset);
 
-// Original: core_dlight.cpp_CDemonLight_testLightVolumeVisibility_FUN_00476a60
+// Original: core_dlight.cpp_CDemonLight_testVisibility_FUN_00476a60
 // Address: 00476a60
-int __cdecl CDemonLight::testLightVolumeVisibility(CDemonLight *this_ptr);
+int __cdecl CDemonLight::testVisibility(CDemonLight *this_ptr,CVector3i *corners);
 
 // Original: core_dlight.cpp_copyFloat_FUN_00476c20
 // Address: 00476c20

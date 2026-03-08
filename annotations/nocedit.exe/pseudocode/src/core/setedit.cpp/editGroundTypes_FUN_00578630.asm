@@ -104,7 +104,7 @@ section .text
     MOV AL,byte ptr [EBX + 0x3659190]   ; 0057869f | g_GroundTextureTypes | DAT_03659191
     PUSH EAX                            ; 005786a5
     CALL core_ground.cpp_getGroundTypeName_FUN_004eed80 ; 005786a6
-        ;   XREF to: 004eed80 (UNCONDITIONAL_CALL)  ; char * core_ground.cpp_getGroundTypeName_FUN_004eed80(int type)
+        ;   XREF to: 004eed80 (UNCONDITIONAL_CALL)  ; char * core_ground.cpp_getGroundTypeName_FUN_004eed80(EGroundType type)
     ADD ESP,0x4                         ; 005786ab
     PUSH EAX                            ; 005786ae
     PUSH ESI                            ; 005786af | g_GroundTextureNames
@@ -196,7 +196,7 @@ section .text
     PUSH EBX                            ; 00578792
         ;   Label: LAB_00578792
     CALL core_ground.cpp_getGroundTypeName_FUN_004eed80 ; 00578793
-        ;   XREF to: 004eed80 (UNCONDITIONAL_CALL)  ; char * core_ground.cpp_getGroundTypeName_FUN_004eed80(int type)
+        ;   XREF to: 004eed80 (UNCONDITIONAL_CALL)  ; char * core_ground.cpp_getGroundTypeName_FUN_004eed80(EGroundType type)
     ADD ESP,0x4                         ; 00578798
     PUSH EAX                            ; 0057879b
     LEA EAX,[ESP + 0xc]                 ; 0057879c
@@ -336,7 +336,7 @@ section .text
     MOV AL,byte ptr [EBX + 0x3659190]   ; 00578924 | g_GroundTextureTypes | DAT_03659191
     PUSH EAX                            ; 0057892a
     CALL core_ground.cpp_getGroundTypeName_FUN_004eed80 ; 0057892b
-        ;   XREF to: 004eed80 (UNCONDITIONAL_CALL)  ; char * core_ground.cpp_getGroundTypeName_FUN_004eed80(int type)
+        ;   XREF to: 004eed80 (UNCONDITIONAL_CALL)  ; char * core_ground.cpp_getGroundTypeName_FUN_004eed80(EGroundType type)
     ADD ESP,0x4                         ; 00578930
     PUSH EAX                            ; 00578933
     PUSH ESI                            ; 00578934 | g_GroundTextureNames

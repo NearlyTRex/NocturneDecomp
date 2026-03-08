@@ -39,9 +39,9 @@ CBoundingBox3D * __cdecl CSpike::getBoundingBox(CSpike *this_ptr,CBoundingBox3D 
 // Address: 005b87f0
 void __cdecl CSpike::archive(CSpike *this_ptr);
 
-// Original: core_spike.cpp_CSpike_hasCollision_FUN_005b8940
+// Original: core_spike.cpp_CSpike_getCollisionType_FUN_005b8940
 // Address: 005b8940
-int __cdecl CSpike::hasCollision(CSpike *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CSpike::getCollisionType(CSpike *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_spike.cpp_CSpike_testCollisionWithCharacters_FUN_005b8950
 // Address: 005b8950

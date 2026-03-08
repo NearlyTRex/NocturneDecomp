@@ -27,6 +27,9 @@
 #include "types/classes/CVector2i.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
+#include "types/enums/ECollisionType.h"
+#include "types/enums/EDeathState.h"
+#include "types/enums/EGroundType.h"
 #include "types/enums/ETextAlignment.h"
 #include "types/funcdefs/FileSearchHandlerFunc.h"
 #include "types/funcdefs/RenderScanlineFunc.h"
@@ -54,8 +57,8 @@ int __cdecl core_door_cpp_CDoor_renderOpaque_FUN_004807d0(CDoor *this_ptr);
 void __cdecl core_door_cpp_CDoor_renderBackground_FUN_004809e0(CDoor *this_ptr,int layer_flag);
 CBoundingBox3D * __cdecl core_door_cpp_CDoor_getBoundingBox_FUN_00480a50(CDoor *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_door_cpp_CDoor_archive_FUN_00480aa0(CDoor *this_ptr);
-int __cdecl core_door_cpp_CDoor_hasCollision_FUN_00480d90(CDoor *this_ptr,SCollisionInfo *collision_info);
-int __cdecl core_door_cpp_CDoor_getGroundType_FUN_00480dd0(CDoor *this_ptr);
+ECollisionType __cdecl core_door_cpp_CDoor_getCollisionType_FUN_00480d90(CDoor *this_ptr,SCollisionInfo *collision_info);
+EGroundType __cdecl core_door_cpp_CDoor_getGroundType_FUN_00480dd0(CDoor *this_ptr);
 void __cdecl core_door_cpp_CDoor_setSwingRange_FUN_00480de0(CDoor *this_ptr,float swing_range);
 int __cdecl core_door_cpp_CDoor_getBlockVirtualDirectorFlag_FUN_00480df0(CDoor *this_ptr);
 int __cdecl core_door_cpp_CDoor_allowBulletHoles_FUN_00480e00(CDoor *this_ptr);
@@ -121,14 +124,14 @@ CDemonActorType * __cdecl core_dracbrid_cpp_CDraculaBride_getActorType_FUN_00483
 CDraculaBride * __cdecl core_dracbrid_cpp_CDraculaBride_ctor_FUN_00483fc0(CDraculaBride *this_ptr);
 void __cdecl core_dracbrid_cpp_CDraculaBride_setup_FUN_004840b0(CDraculaBride *this_ptr);
 void __cdecl core_dracbrid_cpp_CDraculaBride_process_FUN_00484410(CDraculaBride *this_ptr,float delta_time);
-void __cdecl core_dracbrid_cpp_CDraculaBride_explodeIntoParts_FUN_004858f0(CDraculaBride *this_ptr,CVector3f *direction,float spread_angle, int render_in_background);
-void __cdecl core_dracbrid_cpp_CDraculaBride_dismemberPart_FUN_00485b20(CDraculaBride *this_ptr,int part_index,int flags,int render_in_background);
-int __cdecl core_dracbrid_cpp_CDraculaBride_hasCollision_FUN_00485bc0(CDraculaBride *this_ptr,SCollisionInfo *collision_info);
+void __cdecl core_dracbrid_cpp_CDraculaBride_explode_FUN_004858f0(CDraculaBride *this_ptr,CVector3f *direction,float spread_angle, int render_in_background);
+void __cdecl core_dracbrid_cpp_CDraculaBride_dismemberPart_FUN_00485b20(CDraculaBride *this_ptr,int part_index,CVector3f *initial_velocity, int render_in_background);
+ECollisionType __cdecl core_dracbrid_cpp_CDraculaBride_getCollisionType_FUN_00485bc0(CDraculaBride *this_ptr,SCollisionInfo *collision_info);
 int __cdecl core_dracbrid_cpp_CDraculaBride_renderOpaque_FUN_00485be0(CDraculaBride *this_ptr);
 void __cdecl core_dracbrid_cpp_CDraculaBride_archive_FUN_00485dd0(CDraculaBride *this_ptr);
 void __cdecl core_dracbrid_cpp_CDraculaBride_checkHeartShot_FUN_00486020(CDraculaBride *this_ptr,SDamageInfo *damage_info);
 void __cdecl core_dracbrid_cpp_CDraculaBride_processDamage_FUN_00486070(CDraculaBride *this_ptr,SDamageInfo *damage_info);
-int __cdecl core_dracbrid_cpp_CDraculaBride_getDeathState_FUN_00486320(CDraculaBride *this_ptr);
+EDeathState __cdecl core_dracbrid_cpp_CDraculaBride_getDeathState_FUN_00486320(CDraculaBride *this_ptr);
 int __cdecl core_dracbrid_cpp_CDraculaBride_getTargetPoints_FUN_00486360(CDraculaBride *this_ptr,CVector3f *out_points_array);
 CVector3f * __cdecl core_dracbrid_cpp_randomizePosition_FUN_00486430(CVector3f *dest,CVector3f *src);
 void __cdecl core_dracbrid_cpp_CDraculaBride_startFreakySound_FUN_004864c0(CDraculaBride *this_ptr,char *sound_name,float volume);
@@ -332,7 +335,7 @@ void __cdecl core_drip_cpp_CDrip_process_FUN_0048e2a0(CDrip *this_ptr,float delt
 void __cdecl core_drip_cpp_CDrip_reset_FUN_0048e6b0(CDrip *this_ptr);
 int __cdecl core_drip_cpp_CDrip_renderOpaque_FUN_0048e6c0(CDrip *this_ptr);
 CBoundingBox3D * __cdecl core_drip_cpp_CDrip_getBoundingBox_FUN_0048e740(CDrip *this_ptr,CBoundingBox3D *out_box);
-int __cdecl core_drip_cpp_CDrip_hasCollision_FUN_0048e820(CDrip *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl core_drip_cpp_CDrip_getCollisionType_FUN_0048e820(CDrip *this_ptr,SCollisionInfo *collision_info);
 void __cdecl core_drip_cpp_CDrip_propertyDisplayCallback_FUN_0048e830(CDrip *this_ptr,CActorProperty *property,char *output_buffer);
 int __cdecl core_drip_cpp_CDrip_propertyActionCallback_FUN_0048e8d0(CDrip *this_ptr,CActorProperty *property);
 void __cdecl core_drip_cpp_CDrip_getPropertyList_FUN_0048e930(CDrip *this_ptr,CActorPropertyList *property_list);

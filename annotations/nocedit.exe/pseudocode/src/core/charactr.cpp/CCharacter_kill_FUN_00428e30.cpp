@@ -9,11 +9,11 @@
 void __cdecl core_charactr_cpp_CCharacter_kill_FUN_00428e30(CCharacter *this_ptr,int damage_type,CVector3f *damage_direction,float impact_force)
 
 {
-  int iVar1;
+  EDeathState EVar1;
   SDamageInfo SStack_44;
   
-  iVar1 = (*(((this_ptr->base).vtable._uc)->_uc).getDeathState)(this_ptr);
-  if (0 < iVar1) {
+  EVar1 = (*(((this_ptr->base).vtable._uc)->_uc).getDeathState)(this_ptr);
+  if (0 < (int)EVar1) {
     return;
   }
   sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handle);

@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; char * __cdecl core_ground_cpp_getGroundTypeName_FUN_004eed80(int type)
+; char * __cdecl core_ground_cpp_getGroundTypeName_FUN_004eed80(EGroundType type)
 ;
 ; Parameters:
-; int              Stack[0x4]:4   type
+; EGroundType      Stack[0x4]:4   type
 ;
 ; XREF[6]:
 ;   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 at 0040f653

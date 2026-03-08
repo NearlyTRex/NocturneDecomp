@@ -125,7 +125,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050(CE
             pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);
             piVar5 = piVar5 + (uint)bVar6 * -2 + 1;
           }
-          vertex2.z = uVar8;
+          vertex2.r = uVar8;
           auVar7 = in_stack_fffffec0._0_24_;
           vertex2.projected_vertex.transformed_x = auVar7._0_4_;
           vertex2.projected_vertex.transformed_y = auVar7._4_4_;
@@ -135,9 +135,9 @@ void __cdecl shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050(CE
           vertex2.projected_vertex.screen_y = auVar7._20_4_;
           vertex2.u = in_stack_fffffec0._24_4_;
           vertex2.v = in_stack_fffffec0._28_4_;
-          vertex2.r = uVar9;
-          vertex2.g = uVar10;
-          vertex2.fog = (int)pCVar11;
+          vertex2.g = uVar9;
+          vertex2.b = uVar10;
+          vertex2.a = (int)pCVar11;
           engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffe90,vertex2);
           uVar1 = local_20 ^ 2;
           local_b0.x = (int)ROUND(*pfVar3 * 256.0f);
@@ -174,7 +174,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050(CE
             pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);
             piVar5 = piVar5 + (uint)bVar6 * -2 + 1;
           }
-          vertex2_00.z = uVar8;
+          vertex2_00.r = uVar8;
           auVar7 = in_stack_fffffec0._0_24_;
           vertex2_00.projected_vertex.transformed_x = auVar7._0_4_;
           vertex2_00.projected_vertex.transformed_y = auVar7._4_4_;
@@ -184,9 +184,9 @@ void __cdecl shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050(CE
           vertex2_00.projected_vertex.screen_y = auVar7._20_4_;
           vertex2_00.u = in_stack_fffffec0._24_4_;
           vertex2_00.v = in_stack_fffffec0._28_4_;
-          vertex2_00.r = uVar9;
-          vertex2_00.g = uVar10;
-          vertex2_00.fog = (int)pCVar11;
+          vertex2_00.g = uVar9;
+          vertex2_00.b = uVar10;
+          vertex2_00.a = (int)pCVar11;
           engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffe90,vertex2_00);
           uVar1 = local_20 ^ 4;
           local_50.x = (int)ROUND(*pfVar3 * 256.0f);
@@ -223,7 +223,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050(CE
             pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);
             piVar5 = piVar5 + (uint)bVar6 * -2 + 1;
           }
-          vertex2_01.z = uVar8;
+          vertex2_01.r = uVar8;
           auVar7 = in_stack_fffffec0._0_24_;
           vertex2_01.projected_vertex.transformed_x = auVar7._0_4_;
           vertex2_01.projected_vertex.transformed_y = auVar7._4_4_;
@@ -233,9 +233,9 @@ void __cdecl shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050(CE
           vertex2_01.projected_vertex.screen_y = auVar7._20_4_;
           vertex2_01.u = in_stack_fffffec0._24_4_;
           vertex2_01.v = in_stack_fffffec0._28_4_;
-          vertex2_01.r = uVar9;
-          vertex2_01.g = uVar10;
-          vertex2_01.fog = (int)pCVar11;
+          vertex2_01.g = uVar9;
+          vertex2_01.b = uVar10;
+          vertex2_01.a = (int)pCVar11;
           engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffe90,vertex2_01);
           local_20 = local_20 + 1;
           pfVar3 = pfVar3 + 3;

@@ -19,7 +19,7 @@ CGargoyle * __cdecl core_gargoyle_cpp_CGargoyle_ctor_FUN_004e44e0(CGargoyle *thi
             (&(pCVar3->base).base.model,"gargoyle.dfm");
   (pCVar3->base).base.collision_cylinder_height = 0.6;
   (pCVar3->base).base.collision_cylinder_radius = 0.6;
-  (pCVar3->base).base.collision_layer = 2;
+  (pCVar3->base).base.blood_type = 2;
   (pCVar3->base).base.hit_points = 30.0;
   (pCVar3->base).base.base.scale.x = 0xffff;
   (pCVar3->base).base.base.scale.y = 0xffff;

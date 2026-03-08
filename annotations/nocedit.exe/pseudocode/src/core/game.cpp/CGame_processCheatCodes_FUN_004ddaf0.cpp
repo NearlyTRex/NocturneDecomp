@@ -1576,7 +1576,7 @@ LAB_004df408:
         core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,"cheat-1.wav")
         ;
       }
-      pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(g_CheatStr_Weather1);
+      pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(g_CheatStr_WeatherRain);
       iStack_158 = 0;
       uVar11 = 0xffffffff;
       pbVar21 = pbVar13;
@@ -1602,9 +1602,9 @@ LAB_004df408:
       }
       if (iStack_158 == iStack_15c) {
         g_InputHistory[1] = '\0';
-        core_weather_cpp_CWeather_setWeatherType_FUN_005ef8c0(g_CWeatherPtr,1);
+        core_weather_cpp_CWeather_setWeatherType_FUN_005ef8c0(g_CWeatherPtr,WEATHER_TYPE_RAIN);
       }
-      pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(g_CheatStr_Weather2);
+      pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(g_CheatStr_WeatherSnow);
       iStack_150 = 0;
       uVar11 = 0xffffffff;
       pbVar21 = pbVar13;
@@ -1630,7 +1630,7 @@ LAB_004df408:
       }
       if (iStack_150 == iStack_154) {
         g_InputHistory[1] = '\0';
-        core_weather_cpp_CWeather_setWeatherType_FUN_005ef8c0(g_CWeatherPtr,2);
+        core_weather_cpp_CWeather_setWeatherType_FUN_005ef8c0(g_CWeatherPtr,WEATHER_TYPE_SNOW);
       }
       pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(g_CheatStr_BigHat);
       uVar11 = 0xffffffff;

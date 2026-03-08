@@ -91,7 +91,7 @@ void __cdecl core_bugs_cpp_CBugs_setup_FUN_00424e50(CBugs *this_ptr)
       local_28 = local_28 + 1;
     } while (local_28 < this_ptr->count);
   }
-  core_bugs_cpp_CBugs_FUN_004272f0(this_ptr);
+  core_bugs_cpp_CBugs_recalculateBoundingBox_FUN_004272f0(this_ptr);
   this_ptr->grid_cell_x = -9999;
   this_ptr->grid_cell_z = -9999;
   (this_ptr->base).base.base.collision_disabled = 1;

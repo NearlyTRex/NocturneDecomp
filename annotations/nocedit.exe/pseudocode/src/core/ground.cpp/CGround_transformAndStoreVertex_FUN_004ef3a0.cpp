@@ -24,19 +24,19 @@ void __cdecl core_ground_cpp_CGround_transformAndStoreVertex_FUN_004ef3a0(CGroun
                               (column & this_ptr->width_minus_1)) * 4);
   wincore_windll_cpp_transformPoint_FUN_005b5a25
             (&g_RenderVertexBuffer[iVar1].projected_vertex,&local_1c);
-  g_RenderVertexBuffer[iVar1].z = 0x3fff;
   g_RenderVertexBuffer[iVar1].r = 0x3fff;
-  iVar2 = g_RenderVertexBuffer[iVar1].projected_vertex.transformed_z;
   g_RenderVertexBuffer[iVar1].g = 0x3fff;
+  iVar2 = g_RenderVertexBuffer[iVar1].projected_vertex.transformed_z;
+  g_RenderVertexBuffer[iVar1].b = 0x3fff;
   if (iVar2 < 0) {
-    g_RenderVertexBuffer[iVar1].fog = 0;
+    g_RenderVertexBuffer[iVar1].a = 0;
   }
   else {
     iVar2 = (g_RenderVertexBuffer[iVar1].projected_vertex.transformed_z << 8) /
             (this_ptr->grid_width * this_ptr->vertical_scale);
-    g_RenderVertexBuffer[iVar1].fog = iVar2;
+    g_RenderVertexBuffer[iVar1].a = iVar2;
     if (0xffff < iVar2) {
-      g_RenderVertexBuffer[iVar1].fog = 0xffff;
+      g_RenderVertexBuffer[iVar1].a = 0xffff;
       return;
     }
   }

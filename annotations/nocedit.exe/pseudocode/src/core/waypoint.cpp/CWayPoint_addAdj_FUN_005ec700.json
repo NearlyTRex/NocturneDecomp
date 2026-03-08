@@ -6,18 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 105,
+    "complexity_score": 36,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 4,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 25,
-    "suspect_count": 7,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 21,
+    "suspect_count": 1,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "stack_param"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 84
+    "total_lines": 80
   },
   "cross_references": [
     {
@@ -37,7 +36,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_waypoint.cpp_CWayPoint_addAdj_FUN_005ec700",
-    "signature": "void __cdecl core_waypoint_cpp_CWayPoint_addAdj_FUN_005ec700(CWayPoint *this_ptr)"
+    "signature": "void __cdecl core_waypoint_cpp_CWayPoint_addAdj_FUN_005ec700(CWayPoint *this_ptr,CWayPoint *target)"
   },
   "function_calls": [
     {
@@ -113,10 +112,10 @@
     "pcode_op_count": 247
   },
   "stack_frame": {
-    "frame_size": 24,
+    "frame_size": 28,
     "local_size": 20,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -132,61 +131,20 @@
         "offset": 4,
         "size": 4,
         "type": "CWayPoint *"
+      },
+      {
+        "is_param": true,
+        "name": "target",
+        "offset": 8,
+        "size": 4,
+        "type": "CWayPoint *"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "CWayPoint *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "core_waypoint_cpp_CWayPoint_removeAllAdjTo_FUN_005ec640(this_ptr,in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "this_ptr->adjacency[this_ptr->num_adjacent_waypoints].waypoint = in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "(in_stack_00000008->base).base.location.position.x;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "(in_stack_00000008->base).base.location.position.y;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 23,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "(in_stack_00000008->base).base.location.position.z;",
-      "type": "stack_param"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 25,
+      "line": 21,
       "match": "SQRT",
       "severity": "mild",
       "text": "SQRT(fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1);",

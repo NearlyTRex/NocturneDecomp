@@ -53,7 +53,7 @@ void __cdecl CWerewolf::processDamage(CWerewolf *this_ptr,SDamageInfo *damage_in
 
 // Original: core_werewolf.cpp_CWerewolf_getDeathState_FUN_005f1db0
 // Address: 005f1db0
-int __cdecl CWerewolf::getDeathState(CWerewolf *this_ptr);
+EDeathState __cdecl CWerewolf::getDeathState(CWerewolf *this_ptr);
 
 // Original: core_werewolf.cpp_CWerewolf_getTargetPoints_FUN_005f1df0
 // Address: 005f1df0

@@ -35,9 +35,9 @@ void __cdecl CWeapon::process(CWeapon *this_ptr,float delta_time);
 // Address: 005ee250
 void __cdecl CWeapon::archive(CWeapon *this_ptr);
 
-// Original: core_weapon.cpp_CWeapon_hasCollision_FUN_005ee330
+// Original: core_weapon.cpp_CWeapon_getCollisionType_FUN_005ee330
 // Address: 005ee330
-int __cdecl CWeapon::hasCollision(CWeapon *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CWeapon::getCollisionType(CWeapon *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_weapon.cpp_CWeapon_canPickup_FUN_005ee340
 // Address: 005ee340

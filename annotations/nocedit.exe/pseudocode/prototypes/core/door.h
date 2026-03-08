@@ -51,13 +51,13 @@ CBoundingBox3D * __cdecl CDoor::getBoundingBox(CDoor *this_ptr,CBoundingBox3D *o
 // Address: 00480aa0
 void __cdecl CDoor::archive(CDoor *this_ptr);
 
-// Original: core_door.cpp_CDoor_hasCollision_FUN_00480d90
+// Original: core_door.cpp_CDoor_getCollisionType_FUN_00480d90
 // Address: 00480d90
-int __cdecl CDoor::hasCollision(CDoor *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CDoor::getCollisionType(CDoor *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_door.cpp_CDoor_getGroundType_FUN_00480dd0
 // Address: 00480dd0
-int __cdecl CDoor::getGroundType(CDoor *this_ptr);
+EGroundType __cdecl CDoor::getGroundType(CDoor *this_ptr);
 
 // Original: core_door.cpp_CDoor_setSwingRange_FUN_00480de0
 // Address: 00480de0

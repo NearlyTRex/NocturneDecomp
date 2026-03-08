@@ -43,9 +43,9 @@ int __cdecl CDrip::renderOpaque(CDrip *this_ptr);
 // Address: 0048e740
 CBoundingBox3D * __cdecl CDrip::getBoundingBox(CDrip *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_drip.cpp_CDrip_hasCollision_FUN_0048e820
+// Original: core_drip.cpp_CDrip_getCollisionType_FUN_0048e820
 // Address: 0048e820
-int __cdecl CDrip::hasCollision(CDrip *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CDrip::getCollisionType(CDrip *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_drip.cpp_CDrip_propertyDisplayCallback_FUN_0048e830
 // Address: 0048e830

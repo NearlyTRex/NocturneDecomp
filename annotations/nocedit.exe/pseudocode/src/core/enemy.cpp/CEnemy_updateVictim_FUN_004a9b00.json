@@ -4,7 +4,7 @@
       {
         "category": "other",
         "column": 19,
-        "line": 140,
+        "line": 143,
         "message": "cannot cast from type 'float' to pointer type 'CCharacter *'"
       }
     ],
@@ -13,18 +13,18 @@
   },
   "complexity": {
     "assembly_lines": 96,
-    "complexity_score": 200,
+    "complexity_score": 203,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 8,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 140,
+    "pseudocode_lines": 143,
     "suspect_count": 5,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 236
+    "total_lines": 239
   },
   "cross_references": [],
   "function": {
@@ -266,7 +266,7 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 66,
+      "line": 68,
       "match": "ABS",
       "severity": "mild",
       "text": "if ((ABS(fVar4) <= fVar1) &&",
@@ -274,7 +274,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 70,
+      "line": 72,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)g_EnemyVictimCandidateDistances + local_20) = fStack_30;",
@@ -282,23 +282,23 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 87,
+      "line": 89,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "if (*(float *)((int)g_EnemyVictimCandidateDistances + iVar7) < local_18) {",
+      "text": "if (*(float *)((int)g_EnemyVictimCandidateDistances + iVar8) < local_18) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 88,
+      "line": 90,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "local_18 = *(float *)((int)g_EnemyVictimCandidateDistances + iVar7);",
+      "text": "local_18 = *(float *)((int)g_EnemyVictimCandidateDistances + iVar8);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 133,
+      "line": 136,
       "match": "NAN",
       "severity": "mild",
       "text": "if (pCVar2 == (CCharacter *)NAN) {",

@@ -1,20 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 14,
-        "line": 86,
-        "message": "indirection not permitted on operand of type 'void *'"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 86,
-        "message": "called object type 'void' is not a function or function pointer"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
@@ -374,7 +361,7 @@
       "line": 51,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)local_94 + iVar6) =",
+      "text": "*(uint *)((int)&local_94[0].x + iVar6) =",
       "type": "pointer_cast"
     },
     {
@@ -382,7 +369,7 @@
       "line": 60,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)local_94 + iVar6 + 4) =",
+      "text": "*(uint *)((int)&local_94[0].y + iVar6) =",
       "type": "pointer_cast"
     },
     {
@@ -390,7 +377,7 @@
       "line": 69,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)local_94 + iVar6 + 8) =",
+      "text": "*(uint *)((int)&local_94[0].z + iVar6) =",
       "type": "pointer_cast"
     },
     {

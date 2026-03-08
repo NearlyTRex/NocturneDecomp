@@ -93,7 +93,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_renderColorCodedEdges_FUN_0051e830(CLodM
           pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar8 * -2 + 1) * 4);
           piVar7 = piVar7 + (uint)bVar8 * -2 + 1;
         }
-        vertex2.z = in_stack_ffffffd8;
+        vertex2.r = in_stack_ffffffd8;
         auVar9 = in_stack_ffffffb8._0_24_;
         vertex2.projected_vertex.transformed_x = auVar9._0_4_;
         vertex2.projected_vertex.transformed_y = auVar9._4_4_;
@@ -103,9 +103,9 @@ void __cdecl shape_meshlod_cpp_CLodMesh_renderColorCodedEdges_FUN_0051e830(CLodM
         vertex2.projected_vertex.screen_y = auVar9._20_4_;
         vertex2.u = in_stack_ffffffb8._24_4_;
         vertex2.v = in_stack_ffffffb8._28_4_;
-        vertex2.r = (int)in_stack_ffffffdc;
-        vertex2.g = (int)in_stack_ffffffe0;
-        vertex2.fog = (int)in_stack_ffffffe4;
+        vertex2.g = (int)in_stack_ffffffdc;
+        vertex2.b = (int)in_stack_ffffffe0;
+        vertex2.a = (int)in_stack_ffffffe4;
         engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff88,vertex2);
       }
 LAB_0051e85d:

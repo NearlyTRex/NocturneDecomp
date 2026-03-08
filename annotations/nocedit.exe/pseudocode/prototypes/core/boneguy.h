@@ -7,13 +7,13 @@
 // Address: 0041b6d0
 void __cdecl staticInit(void);
 
-// Original: core_boneguy.cpp_FUN_0041b700
+// Original: core_boneguy.cpp_getLocalBoundingBoxCenter_FUN_0041b700
 // Address: 0041b700
-float * __cdecl FUN_0041b700(void);
+CVector3f * __cdecl getLocalBoundingBoxCenter(CVector3f *out,CDemonActor *actor);
 
-// Original: core_boneguy.cpp_FUN_0041b770
+// Original: core_boneguy.cpp_getWorldBoundingBoxCenter_FUN_0041b770
 // Address: 0041b770
-CVector3f * __cdecl FUN_0041b770(void);
+CVector3f * __cdecl getWorldBoundingBoxCenter(CVector3f *out,CDemonActor *actor);
 
 // Original: core_boneguy.cpp_factoryFunc_FUN_0041b820
 // Address: 0041b820
@@ -23,13 +23,13 @@ CBoneGuy * __cdecl factoryFunc(void);
 // Address: 0041b850
 CDemonActorType * __cdecl CBoneGuy::getActorType(CBoneGuy *this_ptr);
 
-// Original: core_boneguy.cpp_FUN_0041b860
+// Original: core_boneguy.cpp_rgbToHsv_FUN_0041b860
 // Address: 0041b860
-float * __cdecl FUN_0041b860(void);
+CColor3f * __cdecl rgbToHsv(CColor3f *out_hsv,CColor3f *in_rgb);
 
 // Original: core_boneguy.cpp_hsvToRgb_FUN_0041ba10
 // Address: 0041ba10
-CVector3f * __cdecl hsvToRgb(CVector3f *out_rgb,CVector3f *in_hsv);
+CColor3f * __cdecl hsvToRgb(CColor3f *out_rgb,CColor3f *in_hsv);
 
 // Original: core_boneguy.cpp_CBoneGuy_ctor_FUN_0041bbc0
 // Address: 0041bbc0
@@ -47,9 +47,9 @@ void __cdecl CBoneGuy::process(CBoneGuy *this_ptr,float delta_time);
 // Address: 0041ca40
 void __stack2_esi CBoneGuy::getCarryObjToBodyXForm(CBoneGuy *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
-// Original: core_boneguy.cpp_CBoneGuy_FUN_0041cc40
+// Original: core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_0041cc40
 // Address: 0041cc40
-int __cdecl CBoneGuy(CBoneGuy *this_ptr);
+int __cdecl CBoneGuy::updatePickupBehavior(CBoneGuy *this_ptr,float delta_time);
 
 // Original: core_boneguy.cpp_CBoneGuy_renderOpaque_FUN_0041d180
 // Address: 0041d180
@@ -79,13 +79,13 @@ int __cdecl CBoneGuy::getTargetPoints(CBoneGuy *this_ptr,CVector3f *out_points_a
 // Address: 0041d680
 void __cdecl CBoneGuy::explode(CBoneGuy *this_ptr);
 
-// Original: core_boneguy.cpp_CBoneGuy_FUN_0041d8a0
+// Original: core_boneguy.cpp_CBoneGuy_beginRecombine_FUN_0041d8a0
 // Address: 0041d8a0
-void __cdecl CBoneGuy(CBoneGuy *this_ptr);
+void __cdecl CBoneGuy::beginRecombine(CBoneGuy *this_ptr);
 
-// Original: core_boneguy.cpp_CBoneGuy_hasCollision_FUN_0041d970
+// Original: core_boneguy.cpp_CBoneGuy_getCollisionType_FUN_0041d970
 // Address: 0041d970
-int __cdecl CBoneGuy::hasCollision(CBoneGuy *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CBoneGuy::getCollisionType(CBoneGuy *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_boneguy.cpp_CBoneGuy_getPropertyList_FUN_0041d990
 // Address: 0041d990

@@ -11,6 +11,7 @@ struct CPlatform;
 #include "types/classes/CMatrix3x3f.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
+#include "types/enums/EActorLifecycleState.h"
 #include "types/unions/UActorVTable.h"
 #include "types/unions/UOrientationVector.h"
 
@@ -25,7 +26,7 @@ typedef struct CDemonActor {
     int health; // 0x64
     uintptr_t validation_magic; // 0x68
     int direction_hint; // 0x6c
-    int was_created; // 0x70
+    EActorLifecycleState lifecycle_state; // 0x70
     float create_prob; // 0x74
     char create_event[100]; // 0x78
     struct CPlatform* standing_platform; // 0xdc

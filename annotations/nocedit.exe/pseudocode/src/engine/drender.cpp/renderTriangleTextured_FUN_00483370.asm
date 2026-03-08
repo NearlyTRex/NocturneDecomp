@@ -29,10 +29,10 @@
 ;   undefined4 g_RenderVertexBuffer[0].projected_vertex.screen_y
 ;   undefined4 g_RenderVertexBuffer[0].u
 ;   undefined4 g_RenderVertexBuffer[0].v
-;   undefined4 g_RenderVertexBuffer[0].z
 ;   undefined4 g_RenderVertexBuffer[0].r
 ;   undefined4 g_RenderVertexBuffer[0].g
-;   undefined4 g_RenderVertexBuffer[0].fog
+;   undefined4 g_RenderVertexBuffer[0].b
+;   undefined4 g_RenderVertexBuffer[0].a
 ;   int g_TexturesDisabled
 ;   int g_CullingMode
 ;   int g_RenderTriangleEdgeCount
@@ -451,8 +451,8 @@ section .text
     ADD EAX,EDX                         ; 004837e8
     MOV dword ptr [ECX + 0x20],EAX      ; 004837ea | DAT_02c6cb94
     MOV EAX,dword ptr [ESP + 0x50]      ; 004837ed
-    MOV EDX,dword ptr [ESI + 0x20]      ; 004837f1 | g_RenderVertexBuffer[0].z
-    MOV EAX,dword ptr [EAX + 0x20]      ; 004837f4 | g_RenderVertexBuffer[0].z
+    MOV EDX,dword ptr [ESI + 0x20]      ; 004837f1 | g_RenderVertexBuffer[0].r
+    MOV EAX,dword ptr [EAX + 0x20]      ; 004837f4 | g_RenderVertexBuffer[0].r
     SUB EAX,EDX                         ; 004837f7
     MOV EDX,EAX                         ; 004837f9
     MOV EAX,EBX                         ; 004837fb
@@ -465,12 +465,12 @@ section .text
     SHRD EAX,EDX,0x10                   ; 0048380c
     MOV dword ptr [ESP + 0x40],EAX      ; 00483810
     MOV EDX,dword ptr [ESP + 0x40]      ; 00483814
-    MOV EAX,dword ptr [ESI + 0x20]      ; 00483818 | g_RenderVertexBuffer[0].z
+    MOV EAX,dword ptr [ESI + 0x20]      ; 00483818 | g_RenderVertexBuffer[0].r
     ADD EAX,EDX                         ; 0048381b
     MOV dword ptr [ECX + 0x10],EAX      ; 0048381d | DAT_02c6cb84
     MOV EAX,dword ptr [ESP + 0x50]      ; 00483820
-    MOV EDX,dword ptr [ESI + 0x2c]      ; 00483824 | g_RenderVertexBuffer[0].fog
-    MOV EAX,dword ptr [EAX + 0x2c]      ; 00483827 | g_RenderVertexBuffer[0].fog
+    MOV EDX,dword ptr [ESI + 0x2c]      ; 00483824 | g_RenderVertexBuffer[0].a
+    MOV EAX,dword ptr [EAX + 0x2c]      ; 00483827 | g_RenderVertexBuffer[0].a
     SUB EAX,EDX                         ; 0048382a
     MOV EDX,EAX                         ; 0048382c
     MOV EAX,EBX                         ; 0048382e
@@ -483,7 +483,7 @@ section .text
     SHRD EAX,EDX,0x10                   ; 0048383f
     MOV dword ptr [ESP + 0x40],EAX      ; 00483843
     MOV EDX,dword ptr [ESP + 0x40]      ; 00483847
-    MOV EAX,dword ptr [ESI + 0x2c]      ; 0048384b | g_RenderVertexBuffer[0].fog
+    MOV EAX,dword ptr [ESI + 0x2c]      ; 0048384b | g_RenderVertexBuffer[0].a
     ADD EAX,EDX                         ; 0048384e
     MOV dword ptr [ECX + 0x30],EAX      ; 00483850 | DAT_02c6cba4
     CMP dword ptr [0x00772a74],0x0      ; 00483853 | g_TexturesDisabled
@@ -512,8 +512,8 @@ section .text
     JZ 0x004838fc                       ; 0048389a
         ;   XREF to: 004838fc (CONDITIONAL_JUMP)  ; LAB_004838fc
     MOV EAX,dword ptr [ESP + 0x50]      ; 0048389c
-    MOV EDX,dword ptr [ESI + 0x24]      ; 004838a0 | g_RenderVertexBuffer[0].r
-    MOV EAX,dword ptr [EAX + 0x24]      ; 004838a3 | g_RenderVertexBuffer[0].r
+    MOV EDX,dword ptr [ESI + 0x24]      ; 004838a0 | g_RenderVertexBuffer[0].g
+    MOV EAX,dword ptr [EAX + 0x24]      ; 004838a3 | g_RenderVertexBuffer[0].g
     SUB EAX,EDX                         ; 004838a6
     MOV EDX,EAX                         ; 004838a8
     MOV EAX,EBX                         ; 004838aa
@@ -526,12 +526,12 @@ section .text
     SHRD EAX,EDX,0x10                   ; 004838bb
     MOV dword ptr [ESP + 0x40],EAX      ; 004838bf
     MOV EDX,dword ptr [ESP + 0x40]      ; 004838c3
-    MOV EAX,dword ptr [ESI + 0x24]      ; 004838c7 | g_RenderVertexBuffer[0].r
+    MOV EAX,dword ptr [ESI + 0x24]      ; 004838c7 | g_RenderVertexBuffer[0].g
     ADD EAX,EDX                         ; 004838ca
     MOV dword ptr [ECX + 0x38],EAX      ; 004838cc | DAT_02c6cbac
     MOV EAX,dword ptr [ESP + 0x50]      ; 004838cf
-    MOV EDX,dword ptr [ESI + 0x28]      ; 004838d3 | g_RenderVertexBuffer[0].g
-    MOV EAX,dword ptr [EAX + 0x28]      ; 004838d6 | g_RenderVertexBuffer[0].g
+    MOV EDX,dword ptr [ESI + 0x28]      ; 004838d3 | g_RenderVertexBuffer[0].b
+    MOV EAX,dword ptr [EAX + 0x28]      ; 004838d6 | g_RenderVertexBuffer[0].b
     SUB EAX,EDX                         ; 004838d9
     MOV EDX,EAX                         ; 004838db
     MOV EAX,EBX                         ; 004838dd
@@ -543,7 +543,7 @@ section .text
     IMUL EDX                            ; 004838ec
     SHRD EAX,EDX,0x10                   ; 004838ee
     MOV EDX,EAX                         ; 004838f2
-    MOV EAX,dword ptr [ESI + 0x28]      ; 004838f4 | g_RenderVertexBuffer[0].g
+    MOV EAX,dword ptr [ESI + 0x28]      ; 004838f4 | g_RenderVertexBuffer[0].b
     ADD EAX,EDX                         ; 004838f7
     MOV dword ptr [ECX + 0x40],EAX      ; 004838f9 | DAT_02c6cbb4
     MOV EBP,dword ptr [0x02c6cb70]      ; 004838fc | g_RenderTriangleEdgeCount

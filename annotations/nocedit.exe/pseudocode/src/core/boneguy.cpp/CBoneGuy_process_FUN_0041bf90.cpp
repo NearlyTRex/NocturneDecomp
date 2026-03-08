@@ -98,7 +98,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bf90(CBoneGuy *this_ptr,f
     if (fVar17 <= this_ptr->recombine_time) {
       return;
     }
-    core_boneguy_cpp_CBoneGuy_FUN_0041d8a0(this_ptr);
+    core_boneguy_cpp_CBoneGuy_beginRecombine_FUN_0041d8a0(this_ptr);
   }
   if (this_ptr->blown_up == 2) {
     fVar17 = delta_time / 2.0f + this_ptr->recombine_interpolation;
@@ -245,7 +245,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bf90(CBoneGuy *this_ptr,f
         }
       }
       else {
-        iVar7 = core_boneguy_cpp_CBoneGuy_FUN_0041cc40(this_ptr);
+        iVar7 = core_boneguy_cpp_CBoneGuy_updatePickupBehavior_FUN_0041cc40(this_ptr,delta_time);
         if (iVar7 == 0) {
           local_30 = 2.0f;
           if ((this_ptr->base).base.carry_hands[1].carry_actor != (CDemonActor *)0x0) {

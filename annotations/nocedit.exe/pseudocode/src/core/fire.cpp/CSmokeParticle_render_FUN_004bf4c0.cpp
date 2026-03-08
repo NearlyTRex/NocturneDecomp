@@ -96,7 +96,7 @@ void __cdecl core_fire_cpp_CSmokeParticle_render_FUN_004bf4c0(CSmokeParticle *th
     core_set_cpp_CDemonSet_computeLighting_FUN_0056e110
               (g_CDemonSetPtr,&local_40,&g_BillboardCameraUp,0,4);
     (*((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)
-              (g_CurrentSceneCamera,world_position,0);
+              (g_CurrentSceneCamera,world_position,0.0);
     lVar1 = (longlong)(0xffff - (int)g_PerspectiveReciprocal) * (longlong)this_ptr->alpha_value;
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
               (g_CDemonRendererPtr2,(uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);

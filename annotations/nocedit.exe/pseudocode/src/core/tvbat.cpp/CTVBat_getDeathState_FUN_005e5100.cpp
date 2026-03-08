@@ -2,24 +2,24 @@
 // Address: 005e5100
 // Address Range: [[005e5100, 005e512e]]
 // Convention: __cdecl
-// Signature: int __cdecl core_tvbat_cpp_CTVBat_getDeathState_FUN_005e5100(CTVBat *this_ptr)
+// Signature: EDeathState __cdecl core_tvbat_cpp_CTVBat_getDeathState_FUN_005e5100(CTVBat *this_ptr)
 
 #include "nocturne.h"
 
-int __cdecl core_tvbat_cpp_CTVBat_getDeathState_FUN_005e5100(CTVBat *this_ptr)
+EDeathState __cdecl core_tvbat_cpp_CTVBat_getDeathState_FUN_005e5100(CTVBat *this_ptr)
 
 {
-  int iVar1;
+  EDeathState EVar1;
   
-  if ((this_ptr->base).base.base.was_created == 2) {
-    return 2;
+  if ((this_ptr->base).base.base.lifecycle_state == ACTOR_DESTROYED) {
+    return DEATH_STATE_DEAD;
   }
-  iVar1 = this_ptr->state;
-  if (iVar1 != 0) {
-    if ((iVar1 != 1) && (iVar1 != 2)) {
-      return 2;
+  EVar1 = this_ptr->state;
+  if (EVar1 != DEATH_STATE_ALIVE) {
+    if ((EVar1 != DEATH_STATE_DYING) && (EVar1 != DEATH_STATE_DEAD)) {
+      return DEATH_STATE_DEAD;
     }
-    return iVar1;
+    return EVar1;
   }
-  return 0;
+  return DEATH_STATE_ALIVE;
 }

@@ -37,7 +37,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x34]      ; 005a0ff9
     PUSH ESI                            ; 005a0ffd
     CALL core_bodypart.cpp_createBodyPart_FUN_00418e10 ; 005a0ffe
-        ;   XREF to: 00418e10 (UNCONDITIONAL_CALL)  ; CBodyPart * core_bodypart.cpp_createBodyPart_FUN_00418e10()
+        ;   XREF to: 00418e10 (UNCONDITIONAL_CALL)  ; CBodyPart * core_bodypart.cpp_createBodyPart_FUN_00418e10(CVector3f * position, UOrientationVector * orientation, CVector3f * initial_velocity, CDemonActor * scale_source, ...)
     ADD ESP,0x1c                        ; 005a1003
     MOV EDI,dword ptr [ESP + 0x18]      ; 005a1006
     PUSH EDI                            ; 005a100a

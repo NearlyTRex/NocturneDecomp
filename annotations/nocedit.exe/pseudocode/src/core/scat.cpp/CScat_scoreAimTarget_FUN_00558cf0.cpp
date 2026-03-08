@@ -15,8 +15,9 @@ int __cdecl core_scat_cpp_CScat_scoreAimTarget_FUN_00558cf0(CScat *this_ptr,CDem
   float fVar2;
   CCharacter *this_ptr_00;
   int iVar3;
-  CVector3f *pCVar4;
-  CBoundingBox3D *pCVar5;
+  EDeathState EVar4;
+  CVector3f *pCVar5;
+  CBoundingBox3D *pCVar6;
   CVector3f local_f8 [10];
   CBoundingBox3D CStack_80;
   CVector3f CStack_68;
@@ -39,15 +40,16 @@ int __cdecl core_scat_cpp_CScat_scoreAimTarget_FUN_00558cf0(CScat *this_ptr,CDem
   iVar3 = (*((target->vtable)._ub)->getTargetPoints)(target,local_f8);
   if ((iVar3 != 0) &&
      (((this_ptr_00 == (CCharacter *)0x0 ||
-       (iVar3 = (*(((this_ptr_00->base).vtable._uc)->_uc).getDeathState)(this_ptr_00), iVar3 < 1))
-      && (core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-                    ((CDemonActor *)this_ptr,&CStack_50,&(target->location).position),
-         0.0 < CStack_50.z)))) {
+       (EVar4 = (*(((this_ptr_00->base).vtable._uc)->_uc).getDeathState)(this_ptr_00),
+       (int)EVar4 < 1)) &&
+      (core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+                 ((CDemonActor *)this_ptr,&CStack_50,&(target->location).position),
+      0.0 < CStack_50.z)))) {
     fVar2 = SQRT(CStack_50.z * CStack_50.z + CStack_50.x * CStack_50.x + CStack_50.y * CStack_50.y);
     fStack_20 = fVar2;
-    pCVar4 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&CStack_68,&CStack_50)
+    pCVar5 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&CStack_68,&CStack_50)
     ;
-    fVar1 = pCVar4->y;
+    fVar1 = pCVar5->y;
     if (hand_index == 0) {
       if ((float)30 < fVar2) {
         return -0x40800000;
@@ -70,12 +72,12 @@ int __cdecl core_scat_cpp_CScat_scoreAimTarget_FUN_00558cf0(CScat *this_ptr,CDem
         return -0x40800000;
       }
     }
-    pCVar5 = (*((this_ptr->base).base.base.vtable._ub)->getBoundingBox)
+    pCVar6 = (*((this_ptr->base).base.base.vtable._ub)->getBoundingBox)
                        ((CDemonActor *)this_ptr,&CStack_80);
-    fStack_38 = (pCVar5->min).x + (pCVar5->max).x;
-    fStack_34 = (pCVar5->min).y + (pCVar5->max).y;
+    fStack_38 = (pCVar6->min).x + (pCVar6->max).x;
+    fStack_34 = (pCVar6->min).y + (pCVar6->max).y;
     fStack_2c = fStack_38 * 0.5f;
-    fStack_30 = (pCVar5->min).z + (pCVar5->max).z;
+    fStack_30 = (pCVar6->min).z + (pCVar6->max).z;
     fStack_28 = fStack_34 * 0.5f;
     fStack_24 = fStack_30 * 0.5f;
     CStack_5c.x = (this_ptr->base).base.base.location.position.x + fStack_2c;

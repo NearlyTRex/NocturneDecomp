@@ -42,12 +42,12 @@ void __cdecl engine_clipper_c_interpolateVertexBottomClip_FUN_00435c00(SRenderVe
   (output->projected_vertex).transformed_x =
        (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) +
        (v1->projected_vertex).transformed_x;
-  lVar1 = (longlong)(v2->z - v1->z) * (longlong)iVar3;
+  lVar1 = (longlong)(v2->r - v1->r) * (longlong)iVar3;
   uVar2 = (uint)lVar1;
-  output->z = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->z;
-  lVar1 = (longlong)(v2->fog - v1->fog) * (longlong)iVar3;
+  output->r = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->r;
+  lVar1 = (longlong)(v2->a - v1->a) * (longlong)iVar3;
   uVar2 = (uint)lVar1;
-  output->fog = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->fog;
+  output->a = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->a;
   lVar1 = (longlong)(v2->u - v1->u) * (longlong)iVar3;
   uVar2 = (uint)lVar1;
   output->u = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->u;

@@ -87,6 +87,9 @@ float FLOAT_00822c94 = {};
 float FLOAT_00822c98 = {};
 float FLOAT_00822c9c = {};
 
+// float[12][12]
+float g_BugsGroundHeightGridTemp[12][12] = {};
+
 // int
 int g_RenderFaceCount = {};
 int g_ActorReadingMode = {};
@@ -156,7 +159,6 @@ int INT_00822cf8 = {};
 int INT_00822cfc = {};
 int INT_00822d00 = {};
 int INT_00822d04 = {};
-int INT_00822d08 = {};
 int INT_00823a90 = {};
 int INT_00823a94 = {};
 int g_LineBlendingDisabled = {};
@@ -168,16 +170,13 @@ int g_OutputVertexCount = {};
 int g_TempVertexCount = {};
 int g_IntermediateVertexCount = {};
 
+// int[700]
+int g_BugsSortedVertexIndices[700] = {};
+
 // uint
 uint g_RandomSeedValue = {};
 
-// undefined1
-undefined1 DAT_00822d0c = {};
-
 // undefined4
-undefined4 DAT_00822f48 = {};
-undefined4 DAT_00822f4c = {};
-undefined4 DAT_00822f50 = {};
 undefined4 DAT_00823c54 = {};
 undefined4 DAT_00823c58 = {};
 

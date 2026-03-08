@@ -43,9 +43,9 @@ void __cdecl CSuccubus::processDamage(CSuccubus *this_ptr,SDamageInfo *damage_in
 // Address: 005c7780
 int __cdecl CSuccubus::getTargetPoints(CSuccubus *this_ptr,CVector3f *out_points_array);
 
-// Original: core_succubus.cpp_CSuccubus_hasCollision_FUN_005c7790
+// Original: core_succubus.cpp_CSuccubus_getCollisionType_FUN_005c7790
 // Address: 005c7790
-void __cdecl CSuccubus::hasCollision(CSuccubus *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CSuccubus::getCollisionType(CSuccubus *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_succubus.cpp_CSuccubus_getPropertyList_FUN_005c77b0
 // Address: 005c77b0

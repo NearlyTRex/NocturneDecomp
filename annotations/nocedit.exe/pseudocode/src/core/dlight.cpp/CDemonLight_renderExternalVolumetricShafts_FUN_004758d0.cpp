@@ -221,10 +221,10 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0047
               wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                         (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_c0);
               this_ptr_00 = g_CDemonRendererPtr2;
-              g_CDemonRendererPtr2->vertex_buffer_ptr->z = local_68;
-              this_ptr_00->vertex_buffer_ptr[1].z = local_68;
-              this_ptr_00->vertex_buffer_ptr[2].z = local_64;
-              this_ptr_00->vertex_buffer_ptr[3].z = local_64;
+              g_CDemonRendererPtr2->vertex_buffer_ptr->r = local_68;
+              this_ptr_00->vertex_buffer_ptr[1].r = local_68;
+              this_ptr_00->vertex_buffer_ptr[2].r = local_64;
+              this_ptr_00->vertex_buffer_ptr[3].r = local_64;
               local_160.base.count = 4;
               local_140 = 1;
               local_160.surface_normal.D = 0;

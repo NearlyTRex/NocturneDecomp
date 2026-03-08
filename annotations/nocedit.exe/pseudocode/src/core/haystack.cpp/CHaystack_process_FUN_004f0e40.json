@@ -4,31 +4,31 @@
       {
         "category": "type_error",
         "column": 3,
-        "line": 29,
+        "line": 30,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 221,
+        "line": 222,
         "message": "cannot cast from type 'float' to pointer type 'CCharacter_full_vtable *'"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 223,
-        "message": "C-style cast from 'CCharacter_full_vtable *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 11,
         "line": 224,
         "message": "C-style cast from 'CCharacter_full_vtable *' to 'float' is not allowed"
       },
       {
         "category": "other",
-        "column": 20,
+        "column": 11,
         "line": 225,
+        "message": "C-style cast from 'CCharacter_full_vtable *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 226,
         "message": "C-style cast from 'CCharacter_full_vtable *' to 'float' is not allowed"
       }
     ],
@@ -37,19 +37,19 @@
   },
   "complexity": {
     "assembly_lines": 542,
-    "complexity_score": 351,
+    "complexity_score": 352,
     "cross_reference_count": 0,
     "function_call_count": 24,
     "global_count": 15,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 276,
+    "pseudocode_lines": 277,
     "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
       "stack_alignment_array",
       "unresolved_funcptr"
     ],
-    "total_lines": 818
+    "total_lines": 819
   },
   "cross_references": [],
   "function": {
@@ -470,7 +470,7 @@
   "suspects": [
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 18,
+      "line": 19,
       "match": "afStackY_1868",
       "severity": "moderate",
       "text": "float afStackY_1868 [1521];",
@@ -478,7 +478,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 22,
+      "line": 23,
       "match": "code *",
       "severity": "moderate",
       "text": "code *blend_callback;",
@@ -486,18 +486,10 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 267,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar11 = (uint *)((int)&CStack_7c + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 268,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "puVar10 = (uint *)((int)&CStack_8c + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);",
+      "text": "puVar12 = (uint *)((int)&CStack_7c + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
@@ -505,7 +497,7 @@
       "line": 269,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&CStack_7c + (uint)bVar12 * -8 + 4) =",
+      "text": "puVar11 = (uint *)((int)&CStack_8c + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
@@ -513,7 +505,15 @@
       "line": 270,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&CStack_8c + (uint)bVar12 * -8 + 4);",
+      "text": "*(uint *)((int)&CStack_7c + (uint)bVar13 * -8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 271,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&CStack_8c + (uint)bVar13 * -8 + 4);",
       "type": "pointer_cast"
     }
   ],

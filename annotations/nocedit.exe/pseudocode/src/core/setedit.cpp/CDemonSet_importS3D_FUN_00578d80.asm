@@ -1235,7 +1235,7 @@ section .text
     ADD ESP,0x14                        ; 005799de
     PUSH 0x0                            ; 005799e1
     CALL core_ground.cpp_getGroundTypeName_FUN_004eed80 ; 005799e3
-        ;   XREF to: 004eed80 (UNCONDITIONAL_CALL)  ; char * core_ground.cpp_getGroundTypeName_FUN_004eed80(int type)
+        ;   XREF to: 004eed80 (UNCONDITIONAL_CALL)  ; char * core_ground.cpp_getGroundTypeName_FUN_004eed80(EGroundType type)
     ADD ESP,0x4                         ; 005799e8
     PUSH EAX                            ; 005799eb
     LEA EAX,[ESP + 0x20dc]              ; 005799ec

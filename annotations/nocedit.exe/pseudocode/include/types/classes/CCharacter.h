@@ -59,7 +59,7 @@ typedef struct CCharacter {
     struct CWayPoint* wander_nearest_waypoint; // 0x25f0
     float wander_cooldown; // 0x25f4
     CBoundingBox3D cached_bounding_box; // 0x25f8
-    int collision_layer; // 0x2610
+    int blood_type; // 0x2610
     int is_ethereal; // 0x2614
     float speech_timer; // 0x2618
     float size_scale; // 0x261c

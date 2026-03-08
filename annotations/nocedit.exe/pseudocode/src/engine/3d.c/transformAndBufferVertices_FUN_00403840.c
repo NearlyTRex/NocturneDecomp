@@ -28,7 +28,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_transformAndBufferVertices_FUN_0040384
   if (0 < mrgl->child_count) {
     do {
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c(&output->projected_vertex,input);
-      output->fog = (int)g_PerspectiveReciprocal;
+      output->a = (int)g_PerspectiveReciprocal;
       if ((int)((output->projected_vertex).screen_x & -0x80000000) == 0) {
         local_14 = local_14 + 1;
       }

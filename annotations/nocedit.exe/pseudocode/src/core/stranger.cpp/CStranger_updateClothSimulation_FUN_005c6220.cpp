@@ -13,7 +13,7 @@ void __cdecl core_stranger_cpp_CStranger_updateClothSimulation_FUN_005c6220(CStr
   CCloth *this_ptr_00;
   bool bVar2;
   bool bVar3;
-  int iVar4;
+  EDeathState EVar4;
   SMotion *pSVar5;
   CVector3f *pCVar6;
   uint auStack_28 [3];
@@ -21,9 +21,9 @@ void __cdecl core_stranger_cpp_CStranger_updateClothSimulation_FUN_005c6220(CStr
   
   if (0 < (this_ptr->base).base.cloth_list.count) {
     bVar2 = false;
-    iVar4 = (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)this_ptr);
+    EVar4 = (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)this_ptr);
     bVar3 = false;
-    if (iVar4 < 2) {
+    if ((int)EVar4 < 2) {
       if (((this_ptr->base).base.layer_action_index == 0) &&
          ((float)0.69999999999999996 < (this_ptr->base).base.layer_action_t)) {
         bVar3 = true;

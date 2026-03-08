@@ -47,9 +47,9 @@ int __cdecl CFlameCan::getTargetPoints(CFlameCan *this_ptr,CVector3f *out_points
 // Address: 004cb620
 void __cdecl CFlameCan::archive(CFlameCan *this_ptr);
 
-// Original: core_flamecan.cpp_CFlameCan_hasCollision_FUN_004cb680
+// Original: core_flamecan.cpp_CFlameCan_getCollisionType_FUN_004cb680
 // Address: 004cb680
-int __cdecl CFlameCan::hasCollision(CFlameCan *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CFlameCan::getCollisionType(CFlameCan *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_flamecan.cpp_CFlameCan_getBoundingBox_FUN_004cb690
 // Address: 004cb690

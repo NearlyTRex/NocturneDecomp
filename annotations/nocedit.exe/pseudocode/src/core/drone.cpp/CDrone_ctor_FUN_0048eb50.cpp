@@ -21,7 +21,7 @@ CDrone * __cdecl core_drone_cpp_CDrone_ctor_FUN_0048eb50(CDrone *this_ptr)
   fVar1 = 50.0f;
   (pCVar3->base).base.collision_cylinder_radius = 1.5;
   fVar2 = 100.0f;
-  (pCVar3->base).base.collision_layer = 1;
+  (pCVar3->base).base.blood_type = 1;
   (pCVar3->base).base.hit_points = 75.0;
   (pCVar3->base).base.ai_detection_range_min = fVar1;
   (pCVar3->base).base.ai_detection_range_max = fVar2;

@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_cow_cpp_CZombieCow_FUN_004448c0(CZombieCow *this_ptr)
+; void __cdecl core_cow_cpp_CZombieCow_FUN_004448c0(CZombieCow *this_ptr,SDamageInfo *damage_info)
 ;
 ; Parameters:
 ; CZombieCow *     Stack[0x4]:4   this_ptr
+; SDamageInfo *    Stack[0x8]:4   damage_info
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
@@ -108,7 +109,7 @@ section .text
     LEA EAX,[EBX + 0x20]                ; 00444965
     PUSH EAX                            ; 00444968
     CALL core_bodypart.cpp_createBodyPart_FUN_00418e10 ; 00444969
-        ;   XREF to: 00418e10 (UNCONDITIONAL_CALL)  ; CBodyPart * core_bodypart.cpp_createBodyPart_FUN_00418e10()
+        ;   XREF to: 00418e10 (UNCONDITIONAL_CALL)  ; CBodyPart * core_bodypart.cpp_createBodyPart_FUN_00418e10(CVector3f * position, UOrientationVector * orientation, CVector3f * initial_velocity, CDemonActor * scale_source, ...)
     ADD ESP,0x1c                        ; 0044496e
     PUSH 0x0                            ; 00444971
     MOV EDX,dword ptr [ESI]             ; 00444973

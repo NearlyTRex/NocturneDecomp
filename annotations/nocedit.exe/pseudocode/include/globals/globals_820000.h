@@ -101,6 +101,9 @@ extern float FLOAT_00822c94;
 extern float FLOAT_00822c98;
 extern float FLOAT_00822c9c;
 
+// float[12][12]
+extern float g_BugsGroundHeightGridTemp[12][12];
+
 // int
 extern int g_RenderFaceCount;
 extern int g_ActorReadingMode;
@@ -170,7 +173,6 @@ extern int INT_00822cf8;
 extern int INT_00822cfc;
 extern int INT_00822d00;
 extern int INT_00822d04;
-extern int INT_00822d08;
 extern int INT_00823a90;
 extern int INT_00823a94;
 extern int g_LineBlendingDisabled;
@@ -182,16 +184,13 @@ extern int g_OutputVertexCount;
 extern int g_TempVertexCount;
 extern int g_IntermediateVertexCount;
 
+// int[700]
+extern int g_BugsSortedVertexIndices[700];
+
 // uint
 extern uint g_RandomSeedValue;
 
-// undefined1
-extern undefined1 DAT_00822d0c;
-
 // undefined4
-extern undefined4 DAT_00822f48;
-extern undefined4 DAT_00822f4c;
-extern undefined4 DAT_00822f50;
 extern undefined4 DAT_00823c54;
 extern undefined4 DAT_00823c58;
 

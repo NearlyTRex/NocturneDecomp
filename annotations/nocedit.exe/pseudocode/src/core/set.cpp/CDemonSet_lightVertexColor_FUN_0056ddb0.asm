@@ -23,10 +23,10 @@
 ;   TerminatedCString s_core_set_cpp_00645e2b
 ;   TerminatedCString s_CDemonSet_lightVertexCol_00645e3b
 ;   SRenderVertex[16] g_RenderVertexBuffer
-;   undefined4 g_RenderVertexBuffer[0].z
 ;   undefined4 g_RenderVertexBuffer[0].r
 ;   undefined4 g_RenderVertexBuffer[0].g
-;   undefined4 g_RenderVertexBuffer[0].fog
+;   undefined4 g_RenderVertexBuffer[0].b
+;   undefined4 g_RenderVertexBuffer[0].a
 ;   float g_PerspectiveReciprocal
 ;   int g_CameraOriginX
 ;   int g_CameraOriginZ
@@ -104,19 +104,19 @@ section .text
     ADD ESI,0x688014                    ; 0056de57 | g_RenderVertexBuffer
     IMUL EDX                            ; 0056de5d
     SHRD EAX,EDX,0x10                   ; 0056de5f
-    MOV dword ptr [ESI + 0x20],EAX      ; 0056de63 | g_RenderVertexBuffer[0].z
+    MOV dword ptr [ESI + 0x20],EAX      ; 0056de63 | g_RenderVertexBuffer[0].r
     MOV EDX,ECX                         ; 0056de66
     MOV EAX,dword ptr [EBX + 0x15ae8c]  ; 0056de68
     IMUL EDX                            ; 0056de6e
     SHRD EAX,EDX,0x10                   ; 0056de70
-    MOV dword ptr [ESI + 0x24],EAX      ; 0056de74 | g_RenderVertexBuffer[0].r
+    MOV dword ptr [ESI + 0x24],EAX      ; 0056de74 | g_RenderVertexBuffer[0].g
     MOV EDX,ECX                         ; 0056de77
     MOV EAX,dword ptr [EBX + 0x15ae90]  ; 0056de79
     IMUL EDX                            ; 0056de7f
     SHRD EAX,EDX,0x10                   ; 0056de81
-    MOV dword ptr [ESI + 0x28],EAX      ; 0056de85 | g_RenderVertexBuffer[0].g
+    MOV dword ptr [ESI + 0x28],EAX      ; 0056de85 | g_RenderVertexBuffer[0].b
     MOV EAX,[0x02d051f4]                ; 0056de88 | g_PerspectiveReciprocal
-    MOV dword ptr [ESI + 0x2c],EAX      ; 0056de8d | g_RenderVertexBuffer[0].fog
+    MOV dword ptr [ESI + 0x2c],EAX      ; 0056de8d | g_RenderVertexBuffer[0].a
     ADD ESP,0x24                        ; 0056de90
     POP EBP                             ; 0056de93
     POP EDI                             ; 0056de94
@@ -269,11 +269,11 @@ section .text
         ;   Label: LAB_0056e010
     MOV EDX,dword ptr [ESP + 0x18]      ; 0056e014
     MOV EAX,dword ptr [EAX*0x4 + 0x327d77c] ; 0056e018 | g_IntensityToValueLookupTable | DAT_032bd778
-    MOV dword ptr [EDX + 0x20],EAX      ; 0056e01f | g_RenderVertexBuffer[0].z
+    MOV dword ptr [EDX + 0x20],EAX      ; 0056e01f | g_RenderVertexBuffer[0].r
     MOV EAX,dword ptr [EDI*0x4 + 0x327d77c] ; 0056e022 | g_IntensityToValueLookupTable | DAT_032bd778
-    MOV dword ptr [EDX + 0x24],EAX      ; 0056e029 | g_RenderVertexBuffer[0].r
+    MOV dword ptr [EDX + 0x24],EAX      ; 0056e029 | g_RenderVertexBuffer[0].g
     MOV EAX,dword ptr [EBP*0x4 + 0x327d77c] ; 0056e02c | g_IntensityToValueLookupTable | DAT_032bd778
-    MOV dword ptr [EDX + 0x28],EAX      ; 0056e033 | g_RenderVertexBuffer[0].g
+    MOV dword ptr [EDX + 0x28],EAX      ; 0056e033 | g_RenderVertexBuffer[0].b
     ADD ESP,0x24                        ; 0056e036
     POP EBP                             ; 0056e039
     POP EDI                             ; 0056e03a

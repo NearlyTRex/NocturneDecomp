@@ -48,9 +48,9 @@ void __cdecl core_cloth_cpp_CCloth_render_FUN_0043bae0(CCloth *this_ptr,int use_
       do {
         pCVar1 = g_CDemonRendererPtr2;
         iVar9 = pCVar2->locked_vertex_indices[0];
-        g_CDemonRendererPtr2->vertex_buffer_ptr[iVar9].z = pCVar2->locked_vertex_indices[600];
-        pCVar1->vertex_buffer_ptr[iVar9].r = pCVar2->locked_vertex_indices[700];
-        pCVar1->vertex_buffer_ptr[iVar9].g = pCVar2->locked_vertex_indices[800];
+        g_CDemonRendererPtr2->vertex_buffer_ptr[iVar9].r = pCVar2->locked_vertex_indices[600];
+        pCVar1->vertex_buffer_ptr[iVar9].g = pCVar2->locked_vertex_indices[700];
+        pCVar1->vertex_buffer_ptr[iVar9].b = pCVar2->locked_vertex_indices[800];
         iVar4 = iVar4 + 1;
         pCVar2 = (CCloth *)((pCVar2->model).model_filename + 4);
       } while (iVar4 < this_ptr->locked_vertex_count);
@@ -89,9 +89,9 @@ void __cdecl core_cloth_cpp_CCloth_render_FUN_0043bae0(CCloth *this_ptr,int use_
       do {
         pCVar1 = g_CDemonRendererPtr2;
         iVar9 = pCVar2->locked_vertex_indices[0];
-        g_CDemonRendererPtr2->vertex_buffer_ptr[iVar9].z = pCVar2->locked_vertex_indices[600];
-        pCVar1->vertex_buffer_ptr[iVar9].r = pCVar2->locked_vertex_indices[700];
-        pCVar1->vertex_buffer_ptr[iVar9].g = pCVar2->locked_vertex_indices[800];
+        g_CDemonRendererPtr2->vertex_buffer_ptr[iVar9].r = pCVar2->locked_vertex_indices[600];
+        pCVar1->vertex_buffer_ptr[iVar9].g = pCVar2->locked_vertex_indices[700];
+        pCVar1->vertex_buffer_ptr[iVar9].b = pCVar2->locked_vertex_indices[800];
         iVar4 = iVar4 + 1;
         pCVar2 = (CCloth *)((pCVar2->model).model_filename + 4);
       } while (iVar4 < this_ptr->locked_vertex_count);

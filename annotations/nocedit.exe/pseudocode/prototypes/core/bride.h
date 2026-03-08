@@ -31,13 +31,9 @@ void __cdecl CBride::process(CBride *this_ptr,float delta_time);
 // Address: 00424560
 void __cdecl CBride::archive(CBride *this_ptr);
 
-// Original: core_bride.cpp_CBride_FUN_00424600
+// Original: core_bride.cpp_CBride_processDismemberment_FUN_00424600
 // Address: 00424600
-void __cdecl CBride(CBride *this_ptr);
-
-// Original: core_bride.cpp_FUN_00424800
-// Address: 00424800
-void __cdecl FUN_00424800(void);
+void __cdecl CBride::processDismemberment(CBride *this_ptr,SDamageInfo *damage_info);
 
 // Original: core_bride.cpp_CBride_processDamage_FUN_00424830
 // Address: 00424830

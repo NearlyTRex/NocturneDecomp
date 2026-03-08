@@ -23,6 +23,8 @@
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
 #include "types/classes/CVector4i.h"
+#include "types/enums/ECollisionType.h"
+#include "types/enums/EGroundType.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SLaserInfo.h"
@@ -75,7 +77,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_archive_FUN_004e5470(CGargoyle *this_pt
 void __cdecl core_gargoyle_cpp_CGargoyle_processDismemberment_FUN_004e5530(CGargoyle *this_ptr,SDamageInfo *damage_info);
 void __cdecl core_gargoyle_cpp_CGargoyle_processDamage_FUN_004e57d0(CGargoyle *this_ptr,SDamageInfo *damage_info);
 int __cdecl core_gargoyle_cpp_CGargoyle_getTargetPoints_FUN_004e5930(CGargoyle *this_ptr,CVector3f *out_points_array);
-int __cdecl core_gargoyle_cpp_CGargoyle_hasCollision_FUN_004e5ad0(CGargoyle *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl core_gargoyle_cpp_CGargoyle_getCollisionType_FUN_004e5ad0(CGargoyle *this_ptr,SCollisionInfo *collision_info);
 void __cdecl core_gargoyle_cpp_CGargoyle_getPropertyList_FUN_004e5af0(CGargoyle *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_gargoyle_cpp_CGargoyle_addFilesToExtract_FUN_004e5ba0(CGargoyle *this_ptr,_FILE *file_handle);
 CGargoyle * __cdecl core_gargoyle_cpp_CGargoyle_dtor_FUN_004e5bd0(CGargoyle *this_ptr,uint flags);
@@ -88,7 +90,7 @@ int __cdecl core_gasmask_cpp_CGasMask_canPickup_FUN_004e5d70(CGasMask *this_ptr,
 void __cdecl core_gasmask_cpp_CGasMask_process_FUN_004e5d90(CGasMask *this_ptr,float delta_time);
 int __cdecl core_gasmask_cpp_CGasMask_renderOpaque_FUN_004e5da0(CGasMask *this_ptr);
 void __cdecl core_gasmask_cpp_CGasMask_archive_FUN_004e5e20(CGasMask *this_ptr);
-int __cdecl core_gasmask_cpp_CGasMask_hasCollision_FUN_004e5e50(CGasMask *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl core_gasmask_cpp_CGasMask_getCollisionType_FUN_004e5e50(CGasMask *this_ptr,SCollisionInfo *collision_info);
 CBoundingBox3D * __cdecl core_gasmask_cpp_CGasMask_getBoundingBox_FUN_004e5e60(CGasMask *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_gasmask_cpp_CGasMask_getPropertyList_FUN_004e5eb0(CGasMask *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_gasmask_cpp_CGasMask_addFilesToExtract_FUN_004e5ef0(CGasMask *this_ptr,_FILE *file_handle);
@@ -123,11 +125,11 @@ void __cdecl core_glass_cpp_CGlass_renderBrokenGlass_FUN_004e9ca0(CGlass *this_p
 void __cdecl core_glass_cpp_CGlass_renderBackground_FUN_004e9e90(CGlass *this_ptr,int layer_flag);
 CBoundingBox3D * __cdecl core_glass_cpp_CGlass_getBoundingBox_FUN_004ea030(CGlass *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_glass_cpp_CGlass_archive_FUN_004ea090(CGlass *this_ptr);
-int __cdecl core_glass_cpp_CGlass_hasCollision_FUN_004ea190(CGlass *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl core_glass_cpp_CGlass_getCollisionType_FUN_004ea190(CGlass *this_ptr,SCollisionInfo *collision_info);
 void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004ea1c0(CGlass *this_ptr,SQuadVertices *quad_vertices,CVector4i *quad_uv_u, CVector4i *quad_uv_v,int subdivision_level);
 void __cdecl core_glass_cpp_CGlass_shatter_FUN_004eaef0(CGlass *this_ptr,CVector3f *location);
 void __cdecl core_glass_cpp_CGlass_onLaserHit_FUN_004eb250(CGlass *this_ptr,SLaserInfo *laser_info);
-int __cdecl core_glass_cpp_CGlass_getGroundType_FUN_004eb390(CGlass *this_ptr);
+EGroundType __cdecl core_glass_cpp_CGlass_getGroundType_FUN_004eb390(CGlass *this_ptr);
 int __cdecl core_glass_cpp_CGlass_checkBreakableCondition_FUN_004eb3a0(CGlass *this_ptr);
 void __cdecl core_glass_cpp_CGlass_getPropertyList_FUN_004eb3c0(CGlass *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_glass_cpp_CGlass_processInEditor_FUN_004eb490(CGlass *this_ptr);
@@ -200,7 +202,7 @@ void __cdecl core_grave_cpp_CGrave_renderBackground_FUN_004ee710(CGrave *this_pt
 void __cdecl core_grave_cpp_CGrave_startAnimation_FUN_004ee790(CGrave *this_ptr);
 void __cdecl core_grave_cpp_CGrave_archive_FUN_004ee7f0(CGrave *this_ptr);
 CBoundingBox3D * __cdecl core_grave_cpp_CGrave_getBoundingBox_FUN_004ee8f0(CGrave *this_ptr,CBoundingBox3D *out_box);
-int __cdecl core_grave_cpp_CGrave_hasCollision_FUN_004ee9d0(CGrave *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl core_grave_cpp_CGrave_getCollisionType_FUN_004ee9d0(CGrave *this_ptr,SCollisionInfo *collision_info);
 void __cdecl core_grave_cpp_CGrave_getPropertyList_FUN_004ee9e0(CGrave *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_grave_cpp_CGrave_processInEditor_FUN_004eea70(CGrave *this_ptr);
 void __cdecl core_grave_cpp_CGrave_showEditorHelp_FUN_004eead0(CGrave *this_ptr,int *y_pos);
@@ -208,9 +210,9 @@ void __cdecl core_grave_cpp_CGrave_addFilesToExtract_FUN_004eeb10(CGrave *this_p
 CGrave * __cdecl core_grave_cpp_CGrave_dtor_FUN_004eeb40(CGrave *this_ptr,uint flags);
 void __cdecl core_ground_cpp_staticInit_FUN_004eeb90(void);
 _FILE * __cdecl core_ground_cpp_openFileWithExtension_FUN_004eebc0(char *base_filename,char *file_extension,char *open_mode);
-char * __cdecl core_ground_cpp_getGroundTypeCode_FUN_004eece0(int type);
-char * __cdecl core_ground_cpp_getGroundTypeName_FUN_004eed80(int type);
-uint __cdecl core_ground_cpp_getGroundTypeColor_FUN_004eee20(int type);
+char * __cdecl core_ground_cpp_getGroundTypeCode_FUN_004eece0(EGroundType type);
+char * __cdecl core_ground_cpp_getGroundTypeName_FUN_004eed80(EGroundType type);
+uint __cdecl core_ground_cpp_getGroundTypeColor_FUN_004eee20(EGroundType type);
 CGround * __cdecl core_ground_cpp_CGround_ctor_FUN_004eee80(CGround *this_ptr,int width,int height);
 CGround * __cdecl core_ground_cpp_CGround_dtor_FUN_004eeee0(CGround *this_ptr,uint flags);
 void __cdecl core_ground_cpp_CGround_init_FUN_004eef00(CGround *this_ptr);

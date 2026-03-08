@@ -23,7 +23,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_process_FUN_00419be0(CBodyPart *this_pt
   float local_c;
   
   if ((this_ptr->vertex_count < 3) || (this_ptr->tri_count < 1)) {
-    (this_ptr->base).was_created = 2;
+    (this_ptr->base).lifecycle_state = ACTOR_DESTROYED;
     core_bodypart_cpp_CBodyPart_setCounts_FUN_004191d0(this_ptr,0,0);
     pCVar3 = &(this_ptr->bounding_box).max;
     if ((UVector3 *)pCVar3 != &g_ZeroVector) {

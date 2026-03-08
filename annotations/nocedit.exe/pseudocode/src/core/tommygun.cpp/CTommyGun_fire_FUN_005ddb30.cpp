@@ -15,9 +15,10 @@ int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_005ddb30(CTommyGun *this_ptr)
   CVector3f *pCVar3;
   int iVar4;
   CCharacter *this_ptr_01;
+  EDeathState EVar5;
   CTrigger *this_ptr_02;
   CFlameCan *this_ptr_03;
-  CDemonActor *pCVar5;
+  CDemonActor *pCVar6;
   SDamageInfo SStack_148;
   CMatrix3x3f CStack_10c;
   CVector3f CStack_e4;
@@ -86,9 +87,9 @@ int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_005ddb30(CTommyGun *this_ptr)
   core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
   core_setcolid_cpp_CDemonSet_setRayType_FUN_00574230(g_CDemonSetPtr,1);
   core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,(CDemonActor *)this_ptr);
-  pCVar5 = (this_ptr->base).carried_by_actor;
-  if (pCVar5 != (CDemonActor *)0x0) {
-    core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,pCVar5);
+  pCVar6 = (this_ptr->base).carried_by_actor;
+  if (pCVar6 != (CDemonActor *)0x0) {
+    core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,pCVar6);
   }
   iStack_20 = 0;
   do {
@@ -99,7 +100,8 @@ int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_005ddb30(CTommyGun *this_ptr)
                   core_actor_cpp_castToClassHash_FUN_0040c790
                             (g_CDemonSetPtr->collision_actor,g_CCharacterClassInfo.name_hash);
     if ((this_ptr_01 != (CCharacter *)0x0) &&
-       (iVar4 = (*(((this_ptr_01->base).vtable._uc)->_uc).getDeathState)(this_ptr_01), 0 < iVar4)) {
+       (EVar5 = (*(((this_ptr_01->base).vtable._uc)->_uc).getDeathState)(this_ptr_01),
+       0 < (int)EVar5)) {
       this_ptr_01 = (CCharacter *)0x0;
     }
     pCStack_1c = (CGlass *)
@@ -153,9 +155,9 @@ int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_005ddb30(CTommyGun *this_ptr)
     else {
       iVar4 = (*(((this_ptr_01->base).vtable._uc)->_uc).canWalk)(this_ptr_01);
       if ((iVar4 != 0) &&
-         (pCVar5 = core_actor_cpp_castToClassHash_FUN_0040c790
+         (pCVar6 = core_actor_cpp_castToClassHash_FUN_0040c790
                              ((this_ptr->base).carried_by_actor,g_CHeroClassInfo.name_hash),
-         this_ptr_00 = g_CDemonSetPtr, pCVar5 != (CDemonActor *)0x0)) {
+         this_ptr_00 = g_CDemonSetPtr, pCVar6 != (CDemonActor *)0x0)) {
         if (iStack_20 == 0) {
           (this_ptr->base).ammo_count = (this_ptr->base).ammo_count + 1;
           core_setcolid_cpp_CDemonSet_init_FUN_00574180(this_ptr_00);

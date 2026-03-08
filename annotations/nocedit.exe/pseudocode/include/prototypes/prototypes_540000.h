@@ -24,6 +24,8 @@
 #include "types/classes/CPlatform.h"
 #include "types/classes/CPodFile.h"
 #include "types/classes/CVector3f.h"
+#include "types/enums/ECollisionType.h"
+#include "types/enums/EGroundType.h"
 #include "types/structs/SChatHistory.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
@@ -181,8 +183,8 @@ void __cdecl core_pendulum_cpp_CPendulum_process_FUN_0054a180(CPendulum *this_pt
 int __cdecl core_pendulum_cpp_CPendulum_renderOpaque_FUN_0054a2f0(CPendulum *this_ptr);
 CBoundingBox3D * __cdecl core_pendulum_cpp_CPendulum_getBoundingBox_FUN_0054a360(CPendulum *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_pendulum_cpp_CPendulum_archive_FUN_0054a3b0(CPendulum *this_ptr);
-int __cdecl core_pendulum_cpp_CPendulum_hasCollision_FUN_0054a550(CPendulum *this_ptr,SCollisionInfo *collision_info);
-int __cdecl core_pendulum_cpp_CPendulum_getGroundType_FUN_0054a590(CPendulum *this_ptr);
+ECollisionType __cdecl core_pendulum_cpp_CPendulum_getCollisionType_FUN_0054a550(CPendulum *this_ptr,SCollisionInfo *collision_info);
+EGroundType __cdecl core_pendulum_cpp_CPendulum_getGroundType_FUN_0054a590(CPendulum *this_ptr);
 void __cdecl core_pendulum_cpp_CPendulum_propertyDisplayCallback_FUN_0054a5a0(CPendulum *this_ptr,CActorProperty *property,char *output_buffer);
 int __cdecl core_pendulum_cpp_CPendulum_propertyActionCallback_FUN_0054a5e0(CPendulum *this_ptr,CActorProperty *property);
 void __cdecl core_pendulum_cpp_CPendulum_getPropertyList_FUN_0054a5f0(CPendulum *this_ptr,CActorPropertyList *property_list);
@@ -256,9 +258,9 @@ void __cdecl core_platfrm_cpp_CPlatform_renderBackground_FUN_0054d9b0(CPlatform 
 CBoundingBox3D * __cdecl core_platfrm_cpp_CPlatform_getBoundingBox_FUN_0054db70(CPlatform *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_platfrm_cpp_CPlatform_archive_FUN_0054dbc0(CPlatform *this_ptr);
 int __cdecl core_platfrm_cpp_CPlatform_isActorOnPlatform_FUN_0054df80(CPlatform *this_ptr,CDemonActor *actor);
-int __cdecl core_platfrm_cpp_CPlatform_hasCollision_FUN_0054e180(CPlatform *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl core_platfrm_cpp_CPlatform_getCollisionType_FUN_0054e180(CPlatform *this_ptr,SCollisionInfo *collision_info);
 int __cdecl core_platfrm_cpp_CPlatform_allowBulletHoles_FUN_0054e1a0(CPlatform *this_ptr);
-int __cdecl core_platfrm_cpp_CPlatform_getGroundType_FUN_0054e1c0(CPlatform *this_ptr);
+EGroundType __cdecl core_platfrm_cpp_CPlatform_getGroundType_FUN_0054e1c0(CPlatform *this_ptr);
 int __cdecl core_platfrm_cpp_CPlatform_getBlockVirtualDirectorFlag_FUN_0054e1d0(CPlatform *this_ptr);
 void __cdecl core_platfrm_cpp_CPlatform_attachActor_FUN_0054e1e0(CPlatform *this_ptr);
 void __cdecl core_platfrm_cpp_CPlatform_onActorDeleted_FUN_0054e2e0(CPlatform *this_ptr,CDemonActor *deleted_actor);

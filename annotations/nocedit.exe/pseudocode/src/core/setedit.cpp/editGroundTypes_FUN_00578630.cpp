@@ -13,6 +13,7 @@ void __cdecl core_setedit_cpp_editGroundTypes_FUN_00578630(char *filename)
   int iVar2;
   _FILE *file;
   int iVar3;
+  EGroundType type;
   char (*pacVar4) [40];
   char *pcVar5;
   CPickList local_bdc;
@@ -110,13 +111,13 @@ LAB_00578779:
       g_CurrentLineNumber = 0x332;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Can't find ground texture in list!");
     }
-    iVar2 = 0;
+    type = GROUND_TYPE_DEFAULT;
     shape_edittool_cpp_CPickList_clear_FUN_004a5770(&local_bdc);
     do {
-      pcVar1 = core_ground_cpp_getGroundTypeName_FUN_004eed80(iVar2);
-      iVar2 = iVar2 + 1;
+      pcVar1 = core_ground_cpp_getGroundTypeName_FUN_004eed80(type);
+      type = type + GROUND_TYPE_NONE;
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_bdc.base,pcVar1);
-    } while (iVar2 < 0xe);
+    } while ((int)type < 0xe);
     _sprintf(local_48c,"Select ground type for %s",local_6c);
     iVar2 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                       (&local_bdc,local_48c,(uint)(byte)g_GroundTextureTypes[iVar3],0);

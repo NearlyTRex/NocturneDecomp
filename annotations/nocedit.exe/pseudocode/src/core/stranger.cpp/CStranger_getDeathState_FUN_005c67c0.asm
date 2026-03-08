@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_stranger_cpp_CStranger_getDeathState_FUN_005c67c0(CStranger *this_ptr)
+; EDeathState __cdecl core_stranger_cpp_CStranger_getDeathState_FUN_005c67c0(CStranger *this_ptr)
 ;
 ; Parameters:
 ; CStranger *      Stack[0x4]:4   this_ptr
@@ -35,7 +35,7 @@ section .text
         ;   Label: LAB_005c67db
     PUSH ECX                            ; 005c67df
     CALL core_charactr.cpp_CCharacter_getDeathState_FUN_0042c580 ; 005c67e0
-        ;   XREF to: 0042c580 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_getDeathState_FUN_0042c580(CCharacter * this_ptr)
+        ;   XREF to: 0042c580 (UNCONDITIONAL_CALL)  ; EDeathState core_charactr.cpp_CCharacter_getDeathState_FUN_0042c580(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 005c67e5
     RET                                 ; 005c67e8
 

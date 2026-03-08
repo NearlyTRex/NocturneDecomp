@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   color
 ;
 ; XREF[12]:
-;   core_bugs.cpp_FUN_00425340 at 0042543c
+;   core_bugs.cpp_CBugs_renderGroundHeightGrid_FUN_00425340 at 0042543c
 ;   core_cloth.cpp_CCloth_boneEditor_FUN_0043c880 at 0043cc4b
 ;   core_cloth.cpp_CCloth_lockedVertexEditor_FUN_0043d590 at 0043d769
 ;   core_cloth.cpp_CCloth_renderCollisionBones_FUN_0043b790 at 0043b7a4

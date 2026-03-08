@@ -75,9 +75,9 @@ void __cdecl CDemonActor::updateOrientationMatrix(CDemonActor *this_ptr);
 // Address: 00408c70
 CBoundingBox3D * __cdecl CDemonActor::getBoundingBox(CDemonActor *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_actor.cpp_CDemonActor_hasCollision_FUN_00408ca0
+// Original: core_actor.cpp_CDemonActor_getCollisionType_FUN_00408ca0
 // Address: 00408ca0
-int __cdecl CDemonActor::hasCollision(CDemonActor *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CDemonActor::getCollisionType(CDemonActor *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_actor.cpp_CDemonActor_customRayIntersect_FUN_00408cc0
 // Address: 00408cc0
@@ -93,7 +93,7 @@ int __cdecl CDemonActor::customGetFloorHeight(CDemonActor *this_ptr,float x_pos,
 
 // Original: core_actor.cpp_CDemonActor_getGroundType_FUN_00408d90
 // Address: 00408d90
-int __cdecl CDemonActor::getGroundType(CDemonActor *this_ptr);
+EGroundType __cdecl CDemonActor::getGroundType(CDemonActor *this_ptr);
 
 // Original: core_actor.cpp_CDemonActor_cylinderGroundCheck_FUN_00408db0
 // Address: 00408db0
@@ -169,7 +169,7 @@ CBoundingBox3D * __cdecl CDemonActor::getWorldBoundingBox(CDemonActor *this_ptr,
 
 // Original: core_actor.cpp_CDemonActor_testRayIntersection_FUN_004093f0
 // Address: 004093f0
-int __cdecl CDemonActor::testRayIntersection(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_hit_normal,void *unused);
+float __cdecl CDemonActor::testRayIntersection(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_hit_normal,int ray_type,CBoundingBox3D *clip_bounds);
 
 // Original: core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470
 // Address: 00409470
@@ -539,9 +539,9 @@ void __cdecl drawBoundingBox(CBoundingBox3D *bbox,int line_color);
 // Address: 0040d940
 void __cdecl CDemonActor::renderBoundingBox(CDemonActor *this_ptr,uint32_t color);
 
-// Original: core_actor.cpp_CDemonActor_FUN_0040dec0
+// Original: core_actor.cpp_CDemonActor_renderBoundingBoxSolid_FUN_0040dec0
 // Address: 0040dec0
-void __cdecl CDemonActor(CDemonActor *this_ptr);
+void __cdecl CDemonActor::renderBoundingBoxSolid(CDemonActor *this_ptr,int red,int green,int blue,int alpha);
 
 // Original: core_actor.cpp_CActorPropertyList_init_FUN_0040e130
 // Address: 0040e130

@@ -15,7 +15,7 @@ void __cdecl core_baron_cpp_CBaron_engageTarget_FUN_00413470(CBaron *this_ptr,CD
   CDemonActor *pCVar2;
   CCharacter *this_ptr_00;
   CVector3f *pCVar3;
-  int iVar4;
+  EDeathState EVar4;
   CVector3f local_34;
   float local_28;
   float local_24;
@@ -28,8 +28,8 @@ void __cdecl core_baron_cpp_CBaron_engageTarget_FUN_00413470(CBaron *this_ptr,CD
                      core_actor_cpp_castToClassHash_FUN_0040c790
                                (target,g_CCharacterClassInfo.name_hash),
       this_ptr_00 == (CCharacter *)0x0 ||
-      (iVar4 = (*(((this_ptr_00->base).vtable._uc)->_uc).getDeathState)(this_ptr_00), iVar4 < 1))))
-  {
+      (EVar4 = (*(((this_ptr_00->base).vtable._uc)->_uc).getDeathState)(this_ptr_00), (int)EVar4 < 1
+      )))) {
     this_ptr->target_actor = target;
     local_1c.x = 0.0;
     local_1c.y = 0.0;

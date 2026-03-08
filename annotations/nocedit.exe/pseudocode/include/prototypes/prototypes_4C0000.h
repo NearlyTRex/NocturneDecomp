@@ -39,6 +39,7 @@
 #include "types/classes/CTrail.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
+#include "types/enums/ECollisionType.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SFly.h"
 #include "types/structs/SLaserInfo.h"
@@ -233,7 +234,7 @@ void __cdecl core_flame_cpp_CFlame_hide_FUN_004caa70(CFlame *this_ptr);
 void __cdecl core_flame_cpp_CFlame_renderBackground_FUN_004caa80(CFlame *this_ptr,int layer_flag);
 CBoundingBox3D * __cdecl core_flame_cpp_CFlame_getBoundingBox_FUN_004cac00(CFlame *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_flame_cpp_CFlame_archive_FUN_004cac60(CFlame *this_ptr);
-int __cdecl core_flame_cpp_CFlame_hasCollision_FUN_004cad80(CFlame *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl core_flame_cpp_CFlame_getCollisionType_FUN_004cad80(CFlame *this_ptr,SCollisionInfo *collision_info);
 void __cdecl core_flame_cpp_CFlame_updateGlobe_FUN_004cad90(CFlame *this_ptr);
 void __cdecl core_flame_cpp_CFlame_getPropertyList_FUN_004cae70(CFlame *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_flame_cpp_CFlame_processInEditor_FUN_004caf60(CFlame *this_ptr);
@@ -250,7 +251,7 @@ int __cdecl core_flamecan_cpp_CFlameCan_renderOpaque_FUN_004cb4c0(CFlameCan *thi
 int __cdecl core_flamecan_cpp_CFlameCan_renderTransparent_FUN_004cb550(CFlameCan *this_ptr);
 int __cdecl core_flamecan_cpp_CFlameCan_getTargetPoints_FUN_004cb580(CFlameCan *this_ptr,CVector3f *out_points_array);
 void __cdecl core_flamecan_cpp_CFlameCan_archive_FUN_004cb620(CFlameCan *this_ptr);
-int __cdecl core_flamecan_cpp_CFlameCan_hasCollision_FUN_004cb680(CFlameCan *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl core_flamecan_cpp_CFlameCan_getCollisionType_FUN_004cb680(CFlameCan *this_ptr,SCollisionInfo *collision_info);
 CBoundingBox3D * __cdecl core_flamecan_cpp_CFlameCan_getBoundingBox_FUN_004cb690(CFlameCan *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_flamecan_cpp_CFlameCan_getPropertyList_FUN_004cb6e0(CFlameCan *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_flamecan_cpp_CFlameCan_addFilesToExtract_FUN_004cb750(CFlameCan *this_ptr,_FILE *file_handle);
@@ -285,7 +286,7 @@ void __cdecl core_flies_cpp_drawFlyPixel_FUN_004cc230(int screen_x,int screen_y,
 void __cdecl core_flies_cpp_drawFlyPixelClipped_FUN_004cc2c0(int screen_x,int screen_y,int z_depth);
 int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_004cc300(CFlies *this_ptr);
 CBoundingBox3D * __cdecl core_flies_cpp_CFlies_getBoundingBox_FUN_004cc700(CFlies *this_ptr,CBoundingBox3D *out_box);
-int __cdecl core_flies_cpp_CFlies_hasCollision_FUN_004cc750(CFlies *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl core_flies_cpp_CFlies_getCollisionType_FUN_004cc750(CFlies *this_ptr,SCollisionInfo *collision_info);
 void __cdecl core_flies_cpp_CFlies_initFly_FUN_004cc760(CFlies *this_ptr,int fly_index);
 CVector3f * __cdecl core_flies_cpp_CFlies_generateRandomPoint_FUN_004cc820(CFlies *this_ptr,CVector3f *out_point,CVector3f *reference_point);
 CFlies * __cdecl core_flies_cpp_findFliesByFollowActor_FUN_004cca50(CDemonActor *actor);

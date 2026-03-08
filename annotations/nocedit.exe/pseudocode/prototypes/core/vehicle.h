@@ -35,9 +35,9 @@ CBoundingBox3D * __cdecl CVehicle::getBoundingBox(CVehicle *this_ptr,CBoundingBo
 // Address: 005e8720
 void __cdecl CVehicle::archive(CVehicle *this_ptr);
 
-// Original: core_vehicle.cpp_CVehicle_hasCollision_FUN_005e88b0
+// Original: core_vehicle.cpp_CVehicle_getCollisionType_FUN_005e88b0
 // Address: 005e88b0
-int __cdecl CVehicle::hasCollision(CVehicle *this_ptr,SCollisionInfo *collision_info);
+ECollisionType __cdecl CVehicle::getCollisionType(CVehicle *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_vehicle.cpp_CVehicle_renderOpaque_FUN_005e88c0
 // Address: 005e88c0
