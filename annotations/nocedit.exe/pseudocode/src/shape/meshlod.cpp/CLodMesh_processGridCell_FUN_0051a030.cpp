@@ -16,10 +16,9 @@ void __cdecl shape_meshlod_cpp_CLodMesh_processGridCell_FUN_0051a030(CLodMesh *t
   int iVar5;
   int iVar6;
   double dVar7;
-  CLodFace *face;
-  double local_38;
+  uint local_38;
   uint uStack_34;
-  CLodMesh *local_1c;
+  SLodSamplePoint *local_1c;
   int local_18;
   
   piVar4 = this_ptr->spatial_grid_ptr->cell_start_indices[grid_x][grid_y] + grid_z;
@@ -37,20 +36,19 @@ void __cdecl shape_meshlod_cpp_CLodMesh_processGridCell_FUN_0051a030(CLodMesh *t
         iVar5 = 0;
         local_18 = 0;
         if (0 < g_SamplePointCount) {
-          local_1c = (CLodMesh *)g_SamplePointArray;
+          local_1c = (SLodSamplePoint *)g_SamplePointArray;
           do {
             dVar7 = shape_meshlod_cpp_CLodMesh_computePointToFaceDistance_FUN_0051a400
-                              (local_1c,(SLodSamplePoint *)(this_ptr->tri_data + iVar2),face);
+                              (this_ptr,local_1c,this_ptr->tri_data + iVar2);
             if (dVar7 < *(double *)((int)g_SampleDistances + iVar5)) {
-              face = SUB84(__BITCAST_UINT64(dVar7),0);
-              *(CLodFace **)((int)g_SampleDistances + iVar5) = face;
+              local_38 = SUB84(__BITCAST_UINT64(dVar7),0);
+              *(uint *)((int)g_SampleDistances + iVar5) = local_38;
               uStack_34 = (uint)((ulonglong)dVar7 >> 0x20);
               *(uint *)((int)g_SampleDistances + iVar5 + 4) = uStack_34;
             }
             iVar5 = iVar5 + 8;
-            local_1c = (CLodMesh *)&local_1c->tri_data;
+            local_1c = (SLodSamplePoint *)&local_1c->closest_triangle_idx;
             local_18 = local_18 + 1;
-            local_38 = dVar7;
           } while (local_18 < g_SamplePointCount);
         }
       }

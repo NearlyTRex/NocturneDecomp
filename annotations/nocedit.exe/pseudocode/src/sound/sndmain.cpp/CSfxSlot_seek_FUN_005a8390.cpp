@@ -13,7 +13,6 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_seek_FUN_005a8390(CSfxSlot *this_ptr)
 {
   CSfxSample *this_ptr_00;
   double dVar1;
-  uint in_stack_ffffffe4;
   
   if (this_ptr->sample == (CSfxSample *)0x0) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
@@ -21,15 +20,16 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_seek_FUN_005a8390(CSfxSlot *this_ptr)
     core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSlot::seek - no sample?!");
   }
   dVar1 = sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580
-                    (*(CSampleInfo **)&(this_ptr->options).trigger_time,
-                     *(double *)((int)&(this_ptr->options).trigger_time + 4),0,in_stack_ffffffe4);
+                    (&this_ptr->sample->sample_info,
+                     __BITCAST_DOUBLE(CONCAT26((short)((uint)*(uint *)
+                                                     ((int)&(this_ptr->options).trigger_time + 4) >>
+                                             0x10),*(undefined6 *)&(this_ptr->options).trigger_time))
+                     ,(this_ptr->options).trigger_id,0);
   (this_ptr->options).trigger_id = 0;
   (this_ptr->options).trigger_time = dVar1;
-  dVar1 = sound_sndmain_cpp_CSampleInfo_normalizePlaybackPos_FUN_005a86f0
-                    (*(CSampleInfo **)&(this_ptr->options).trigger_time,
-                     __BITCAST_DOUBLE(CONCAT44((this_ptr->options).trigger_id,
-                                      *(uint *)((int)&(this_ptr->options).trigger_time + 4))),
-                     SUB84(__BITCAST_UINT64(dVar1),0),(uint)((ulonglong)dVar1 >> 0x20));
+  dVar1 = sound_sndmain_cpp_CSfxSample_normalizePlaybackPos_FUN_005a86f0
+                    (this_ptr->sample,(this_ptr->options).trigger_time,
+                     (this_ptr->options).trigger_id);
   this_ptr_00 = this_ptr->sample;
   (this_ptr->options).trigger_time = dVar1;
   if (this_ptr_00->streaming_slot_index < 0) {

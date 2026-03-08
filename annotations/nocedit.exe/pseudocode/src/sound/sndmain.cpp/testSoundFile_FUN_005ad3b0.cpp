@@ -14,13 +14,14 @@ char * __cdecl sound_sndmain_cpp_testSoundFile_FUN_005ad3b0(char *sample_name)
   uint sfx_handle;
   char *pcVar3;
   char *pcVar4;
-  double dVar5;
-  uint in_stack_fffffe90;
+  char local_170 [272];
   int local_60;
+  double local_20;
   float local_18;
+  float fStack_14;
   
-  sound_sndmain_cpp_CSfxSample_init_FUN_005a8480((CSfxSample *)&stack0xfffffe90);
-  pcVar4 = &stack0xfffffe90;
+  sound_sndmain_cpp_CSfxSample_init_FUN_005a8480((CSfxSample *)local_170);
+  pcVar4 = local_170;
   pcVar3 = sample_name;
   do {
     cVar1 = *pcVar3;
@@ -31,7 +32,7 @@ char * __cdecl sound_sndmain_cpp_testSoundFile_FUN_005ad3b0(char *sample_name)
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  iVar2 = sound_sndmain_cpp_getSampleInfo_FUN_005aa3f0((CSfxSample *)&stack0xfffffe90);
+  iVar2 = sound_sndmain_cpp_getSampleInfo_FUN_005aa3f0((CSfxSample *)local_170);
   if (iVar2 == 0) {
     _sprintf
               (g_SoundTestErrorBuffer,"Can't get sample info for %s",sample_name);
@@ -56,18 +57,19 @@ char * __cdecl sound_sndmain_cpp_testSoundFile_FUN_005ad3b0(char *sample_name)
       pcVar3 = g_SoundTestErrorBuffer;
     }
     else {
-      dVar5 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(0,in_stack_fffffe90);
-      local_18 = (float)dVar5;
+      local_20 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(sfx_handle,0);
+      local_18 = (float)local_20;
       if (0.0 <= local_18) {
         while (iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(sfx_handle), iVar2 != 0) {
           iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_ESCAPE);
           if (iVar2 != 0) {
             return "Canceled";
           }
-          dVar5 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(0,in_stack_fffffe90);
-          if ((float)dVar5 < local_18) break;
+          local_20 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(sfx_handle,0);
+          fStack_14 = (float)local_20;
+          if (fStack_14 < local_18) break;
+          local_18 = fStack_14;
           wincore_winrun_cpp_sleep_FUN_005f40e0(0.05);
-          local_18 = (float)dVar5;
         }
       }
       pcVar3 = (char *)0x0;

@@ -32,7 +32,7 @@ void __cdecl core_dcamera_cpp_renderVolumetricLightScanline_FUN_00450440(SSoftwa
 void __cdecl core_dcamera_cpp_renderFlatColorScanline_FUN_004505e0(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 void __cdecl core_dcamera_cpp_renderCoronaProjectedTextureScanline_FUN_004507a0(int scanline_y,int x_start,int x_end);
 void __cdecl core_dcamera_cpp_CDemonCamera_blurCoronaBufferAndClearEdges_FUN_004509b0(CDemonCamera *this_ptr);
-double __watcallRegister core_dcamera_cpp_log2Custom_FUN_00450a90(void);
+double __cdecl core_dcamera_cpp_log2Custom_FUN_00450a90(double val);
 void __cdecl core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0(CDemonCamera *this_ptr,CDemonLight *light_source);
 void __cdecl core_dcamera_cpp_CDemonCamera_addLightmapToCorona_FUN_00450e30(CDemonCamera *this_ptr,CDemonLight *light_source);
 int __cdecl core_dcamera_cpp_CDemonCamera_isCoronaSufficientlyVisible_FUN_00450fc0(CDemonCamera *this_ptr,CDemonLight *light_source);

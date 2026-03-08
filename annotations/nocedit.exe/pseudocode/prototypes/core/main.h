@@ -9,7 +9,7 @@ void __cdecl staticInit(void);
 
 // Original: core_main.c_displayErrorAndQuit_FUN_00506f10
 // Address: 00506f10
-void __cdecl displayErrorAndQuit(char *format,...);
+void __cdecl displayErrorAndQuit(char *format,...) __attribute__((format(printf, 1, 2)));
 
 // Original: core_main.c_showLicenseAgreement_FUN_005070f0
 // Address: 005070f0

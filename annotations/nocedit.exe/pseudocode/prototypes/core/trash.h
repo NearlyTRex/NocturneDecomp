@@ -27,9 +27,9 @@ void __cdecl CTrash::setup(CTrash *this_ptr);
 // Address: 005dec80
 void __cdecl CTrash::archive(CTrash *this_ptr);
 
-// Original: core_trash.cpp_FUN_005decc0
+// Original: core_trash.cpp_addRandomJitter_FUN_005decc0
 // Address: 005decc0
-void __cdecl FUN_005decc0(void);
+void __cdecl addRandomJitter(float *value);
 
 // Original: core_trash.cpp_CTrash_process_FUN_005decf0
 // Address: 005decf0

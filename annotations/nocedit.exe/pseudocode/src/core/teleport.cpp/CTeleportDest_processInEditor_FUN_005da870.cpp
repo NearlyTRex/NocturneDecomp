@@ -20,7 +20,7 @@ void __cdecl core_teleport_cpp_CTeleportDest_processInEditor_FUN_005da870(CTelep
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&CStack_474);
     core_msnedit_cpp_CDemonMission_buildFilteredActorList_FUN_0053cc30
               (g_CDemonMissionPtr,&CStack_474.base,&this_ptr->base,"CTeleport",
-               core_teleport_cpp_FUN_005da850);
+               core_teleport_cpp_matchesTeleportDestination_FUN_005da850);
     if (CStack_474.base.item_count < 1) {
       shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                 (g_CEditorToolsPtr,"No teleporters go to %s",this_ptr);

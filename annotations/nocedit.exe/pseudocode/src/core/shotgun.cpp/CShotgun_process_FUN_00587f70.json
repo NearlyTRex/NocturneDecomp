@@ -1,30 +1,22 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 23,
-        "message": "use of undeclared identifier 'stack0x00000000'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 77,
-    "complexity_score": 69,
+    "assembly_lines": 78,
+    "complexity_score": 55,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 12,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 29,
-    "suspect_count": 3,
+    "pseudocode_lines": 30,
+    "suspect_count": 2,
     "suspect_types": [
-      "stack_param",
-      "stack_ref"
+      "unaffected_reg"
     ],
-    "total_lines": 106
+    "total_lines": 108
   },
   "cross_references": [],
   "function": {
@@ -191,6 +183,13 @@
       },
       {
         "is_param": true,
+        "name": "local_res0",
+        "offset": 0,
+        "size": 1,
+        "type": "char"
+      },
+      {
+        "is_param": true,
         "name": "this_ptr",
         "offset": 4,
         "size": 4,
@@ -207,28 +206,20 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unaffected register variable",
       "line": 6,
-      "match": "in_stack_0000000c",
+      "match": "unaff_ESI",
       "severity": "moderate",
-      "text": "float in_stack_0000000c;",
-      "type": "stack_param"
+      "text": "CVector3f *unaff_ESI;",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 16,
-      "match": "&stack0x00000000",
+      "description": "Unaffected register variable",
+      "line": 13,
+      "match": "unaff_ESI",
       "severity": "moderate",
-      "text": "if ((float *)&stack0x00000000 != &g_CDemonLightInstance.base.base.rotation_matrix.m[1].y) {",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 30,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "core_weapon_cpp_CWeapon_process_FUN_005ee110(&this_ptr->base,in_stack_0000000c);",
-      "type": "stack_param"
+      "text": "(*(((this_ptr->base).base.vtable._uw)->_uw).getMuzzlePoint)(&this_ptr->base,unaff_ESI);",
+      "type": "unaffected_reg"
     }
   ],
   "vtable_info": {

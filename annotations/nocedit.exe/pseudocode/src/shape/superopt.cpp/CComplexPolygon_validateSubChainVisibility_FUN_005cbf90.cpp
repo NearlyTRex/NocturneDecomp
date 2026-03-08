@@ -12,17 +12,14 @@ int __cdecl shape_superopt_cpp_CComplexPolygon_validateSubChainVisibility_FUN_00
   bool bVar1;
   SExpandedEdge *pSVar2;
   int iVar3;
-  double dVar4;
+  double local_138;
   int local_130;
   uint uStack_12c;
   double local_128;
   double local_120;
   int local_118;
   uint uStack_114;
-  uint local_f8;
-  uint uStack_f4;
-  uint local_f0;
-  uint uStack_ec;
+  CVector2d local_f8;
   CVector2d local_e8;
   CVector2d local_d8;
   uint local_c8;
@@ -77,10 +74,10 @@ int __cdecl shape_superopt_cpp_CComplexPolygon_validateSubChainVisibility_FUN_00
     local_128 = -normal->x;
   }
   if (normal->y < 0.0) {
-    dVar4 = -normal->y;
+    local_138 = -normal->y;
   }
   else {
-    dVar4 = normal->y;
+    local_138 = normal->y;
   }
   if (normal->z < 0.0) {
     local_120 = -normal->z;
@@ -88,19 +85,19 @@ int __cdecl shape_superopt_cpp_CComplexPolygon_validateSubChainVisibility_FUN_00
   else {
     local_120 = normal->z;
   }
-  if ((local_128 < dVar4) || (local_128 < local_120)) {
+  if ((local_128 < local_138) || (local_128 < local_120)) {
     local_18 = 0;
   }
   else {
     local_18 = 1;
   }
-  if ((dVar4 < local_128) || (dVar4 < local_120)) {
+  if ((local_138 < local_128) || (local_138 < local_120)) {
     local_1c = 0;
   }
   else {
     local_1c = 1;
   }
-  if ((local_120 < local_128) || (local_120 < dVar4)) {
+  if ((local_120 < local_128) || (local_120 < local_138)) {
     local_20 = 0;
   }
   else {
@@ -155,71 +152,71 @@ int __cdecl shape_superopt_cpp_CComplexPolygon_validateSubChainVisibility_FUN_00
             if (local_18 == 0) {
               if (local_1c == 0) {
                 if (local_20 != 0) {
-                  local_f8 = *(uint *)&(pSVar2->start_pos).x;
-                  uStack_f4 = *(uint *)((int)&(pSVar2->start_pos).x + 4);
-                  local_f0 = *(uint *)&(pSVar2->start_pos).y;
-                  uStack_ec = *(uint *)((int)&(pSVar2->start_pos).y + 4);
+                  local_f8.x._0_4_ = *(uint *)&(pSVar2->start_pos).x;
+                  local_f8.x._4_4_ = *(uint *)((int)&(pSVar2->start_pos).x + 4);
+                  local_f8.y._0_4_ = *(uint *)&(pSVar2->start_pos).y;
+                  local_f8.y._4_4_ = *(uint *)((int)&(pSVar2->start_pos).y + 4);
                   local_e8.x._0_4_ = *(uint *)&(pSVar2->end_pos).x;
                   local_e8.x._4_4_ = *(uint *)((int)&(pSVar2->end_pos).x + 4);
                   local_e8.y._0_4_ = *(uint *)&(pSVar2->end_pos).y;
                   local_e8.y._4_4_ = *(uint *)((int)&(pSVar2->end_pos).y + 4);
-                  local_b0 = local_f8;
-                  local_ac = uStack_f4;
+                  local_b0 = local_f8.x._0_4_;
+                  local_ac = local_f8.x._4_4_;
                   local_a8 = local_e8.y._0_4_;
                   local_a4 = local_e8.y._4_4_;
                   local_60 = local_e8.x._0_4_;
                   local_5c = local_e8.x._4_4_;
-                  local_48 = local_f0;
-                  local_44 = uStack_ec;
+                  local_48 = local_f8.y._0_4_;
+                  local_44 = local_f8.y._4_4_;
                 }
               }
               else {
-                local_f8 = *(uint *)&(pSVar2->start_pos).x;
-                uStack_f4 = *(uint *)((int)&(pSVar2->start_pos).x + 4);
-                local_f0 = *(uint *)&(pSVar2->start_pos).z;
-                uStack_ec = *(uint *)((int)&(pSVar2->start_pos).z + 4);
+                local_f8.x._0_4_ = *(uint *)&(pSVar2->start_pos).x;
+                local_f8.x._4_4_ = *(uint *)((int)&(pSVar2->start_pos).x + 4);
+                local_f8.y._0_4_ = *(uint *)&(pSVar2->start_pos).z;
+                local_f8.y._4_4_ = *(uint *)((int)&(pSVar2->start_pos).z + 4);
                 local_e8.x._0_4_ = *(uint *)&(pSVar2->end_pos).x;
                 local_e8.x._4_4_ = *(uint *)((int)&(pSVar2->end_pos).x + 4);
                 local_e8.y._0_4_ = *(uint *)&(pSVar2->end_pos).z;
                 local_e8.y._4_4_ = *(uint *)((int)&(pSVar2->end_pos).z + 4);
                 local_c0 = local_e8.x._0_4_;
                 local_bc = local_e8.x._4_4_;
-                local_b8 = local_f0;
-                local_b4 = uStack_ec;
+                local_b8 = local_f8.y._0_4_;
+                local_b4 = local_f8.y._4_4_;
                 local_88 = local_e8.y._0_4_;
                 local_84 = local_e8.y._4_4_;
-                local_68 = local_f8;
-                local_64 = uStack_f4;
+                local_68 = local_f8.x._0_4_;
+                local_64 = local_f8.x._4_4_;
               }
             }
             else {
-              local_f8 = *(uint *)&(pSVar2->start_pos).y;
-              uStack_f4 = *(uint *)((int)&(pSVar2->start_pos).y + 4);
-              local_f0 = *(uint *)&(pSVar2->start_pos).z;
-              uStack_ec = *(uint *)((int)&(pSVar2->start_pos).z + 4);
+              local_f8.x._0_4_ = *(uint *)&(pSVar2->start_pos).y;
+              local_f8.x._4_4_ = *(uint *)((int)&(pSVar2->start_pos).y + 4);
+              local_f8.y._0_4_ = *(uint *)&(pSVar2->start_pos).z;
+              local_f8.y._4_4_ = *(uint *)((int)&(pSVar2->start_pos).z + 4);
               local_e8.x._0_4_ = *(uint *)&(pSVar2->end_pos).y;
               local_e8.x._4_4_ = *(uint *)((int)&(pSVar2->end_pos).y + 4);
               local_e8.y._0_4_ = *(uint *)&(pSVar2->end_pos).z;
               local_e8.y._4_4_ = *(uint *)((int)&(pSVar2->end_pos).z + 4);
               local_70 = local_e8.y._0_4_;
               local_6c = local_e8.y._4_4_;
-              local_58 = local_f8;
-              local_54 = uStack_f4;
+              local_58 = local_f8.x._0_4_;
+              local_54 = local_f8.x._4_4_;
               local_40 = local_e8.x._0_4_;
               local_3c = local_e8.x._4_4_;
-              local_38 = local_f0;
-              local_34 = uStack_ec;
+              local_38 = local_f8.y._0_4_;
+              local_34 = local_f8.y._4_4_;
             }
-            if (((__BITCAST_DOUBLE(CONCAT44(uStack_f4,local_f8)) !=
+            if (((__BITCAST_DOUBLE(CONCAT44(local_f8.x._4_4_,local_f8.x._0_4_)) !=
                   __BITCAST_DOUBLE(CONCAT44(local_d8.x._4_4_,local_d8.x._0_4_))) ||
-                (__BITCAST_DOUBLE(CONCAT44(uStack_ec,local_f0)) !=
+                (__BITCAST_DOUBLE(CONCAT44(local_f8.y._4_4_,local_f8.y._0_4_)) !=
                  __BITCAST_DOUBLE(CONCAT44(local_d8.y._4_4_,local_d8.y._0_4_)))) &&
                ((__BITCAST_DOUBLE(CONCAT44(local_e8.x._4_4_,local_e8.x._0_4_)) !=
                  __BITCAST_DOUBLE(CONCAT44(local_d8.x._4_4_,local_d8.x._0_4_)) ||
                 (__BITCAST_DOUBLE(CONCAT44(local_e8.y._4_4_,local_e8.y._0_4_)) !=
                  __BITCAST_DOUBLE(CONCAT44(local_d8.y._4_4_,local_d8.y._0_4_)))))) {
               local_a0 = shape_superopt_cpp_getSignedTriangleArea2D_FUN_005d6640
-                                   (&local_e8,&local_d8,SUB84(__BITCAST_UINT64(dVar4),0));
+                                   (&local_f8,&local_e8,&local_d8);
               uStack_12c = (uint)((ulonglong)local_a0 >> 0x20);
               local_130 = SUB84(local_a0,0);
               if ((((ulonglong)local_a0 & 0x7fffffff00000000) != 0) || (local_130 != 0)) {

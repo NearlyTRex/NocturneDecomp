@@ -17,6 +17,7 @@ CVector3d * __cdecl shape_superopt_cpp_projectPointOntoPlane_FUN_005d63d0(CVecto
   double *pdVar5;
   CVector3d *pCVar6;
   byte bVar7;
+  CVector3d local_70;
   double local_58;
   double local_50;
   double local_48;
@@ -26,9 +27,11 @@ CVector3d * __cdecl shape_superopt_cpp_projectPointOntoPlane_FUN_005d63d0(CVecto
   double local_18;
   
   bVar7 = 0;
+  local_70.x = -plane_normal->x;
+  local_70.y = -plane_normal->y;
+  local_70.z = -plane_normal->z;
   local_18 = shape_superopt_cpp_rayPlaneIntersect_FUN_005d6500
-                       ((CVector3d *)&stack0xffffff90,plane_point,plane_normal,
-                        SUB84(-plane_normal->x,0));
+                       (point,&local_70,plane_point,plane_normal);
   dVar1 = -plane_normal->x;
   dVar2 = -plane_normal->y;
   dVar3 = -plane_normal->z;

@@ -113,7 +113,7 @@ void __cdecl drawTextXY(int x,int y,char *text);
 
 // Original: engine_2d.c_drawTextFormatted_FUN_00402150
 // Address: 00402150
-void __cdecl drawTextFormatted(int x,int y,char *format_string,...);
+void __cdecl drawTextFormatted(int x,int y,char *format_string,...) __attribute__((format(printf, 3, 4)));
 
 // Original: engine_2d.c_drawTextRightAligned_FUN_004021c0
 // Address: 004021c0
@@ -125,7 +125,7 @@ void __cdecl drawTextRightAlignedWrapper(int x,int y,char *text);
 
 // Original: engine_2d.c_drawTextRightAlignedFormatted_FUN_00402210
 // Address: 00402210
-void __cdecl drawTextRightAlignedFormatted(int x,int y,char *format_string,...);
+void __cdecl drawTextRightAlignedFormatted(int x,int y,char *format_string,...) __attribute__((format(printf, 3, 4)));
 
 // Original: engine_2d.c_drawTextCenteredAt_FUN_00402280
 // Address: 00402280
@@ -137,7 +137,7 @@ void __cdecl drawTextCenteredAtWrapper(int x,int y,char *text);
 
 // Original: engine_2d.c_drawTextCenteredAtFormatted_FUN_004022e0
 // Address: 004022e0
-void __cdecl drawTextCenteredAtFormatted(int x,int y,char *format_string,...);
+void __cdecl drawTextCenteredAtFormatted(int x,int y,char *format_string,...) __attribute__((format(printf, 3, 4)));
 
 // Original: engine_2d.c_drawTextCentered_FUN_00402350
 // Address: 00402350
@@ -149,7 +149,7 @@ void __cdecl drawTextCenteredReordered(int left_x,int right_x,int y,char *text);
 
 // Original: engine_2d.c_drawTextCenteredFormatted_FUN_004023c0
 // Address: 004023c0
-void __cdecl drawTextCenteredFormatted(int left_x,int right_x,int y,char *format_string,...);
+void __cdecl drawTextCenteredFormatted(int left_x,int right_x,int y,char *format_string,...) __attribute__((format(printf, 4, 5)));
 
 // Original: engine_2d.c_drawTextColor_FUN_00402430
 // Address: 00402430
@@ -161,7 +161,7 @@ void __cdecl drawTextColorWrapper(int x,int y,char *text);
 
 // Original: engine_2d.c_drawTextColorFormatted_FUN_004024c0
 // Address: 004024c0
-void __cdecl drawTextColorFormatted(int x,int y,char *format_string,...);
+void __cdecl drawTextColorFormatted(int x,int y,char *format_string,...) __attribute__((format(printf, 3, 4)));
 
 // Original: engine_2d.c_drawTextRightAlignedColor_FUN_00402530
 // Address: 00402530
@@ -173,7 +173,7 @@ void __cdecl drawTextRightAlignedColorWrapper(int x,int y,char *text);
 
 // Original: engine_2d.c_drawTextRightAlignedColorFormatted_FUN_00402580
 // Address: 00402580
-void __cdecl drawTextRightAlignedColorFormatted(int x,int y,char *format_string,...);
+void __cdecl drawTextRightAlignedColorFormatted(int x,int y,char *format_string,...) __attribute__((format(printf, 3, 4)));
 
 // Original: engine_2d.c_drawTextCenteredAtColor_FUN_004025f0
 // Address: 004025f0
@@ -185,7 +185,7 @@ void __cdecl drawTextCenteredAtColorWrapper(int x,int y,char *text);
 
 // Original: engine_2d.c_drawTextCenteredAtColorFormatted_FUN_00402650
 // Address: 00402650
-void __cdecl drawTextCenteredAtColorFormatted(int x,int y,char *format_string,...);
+void __cdecl drawTextCenteredAtColorFormatted(int x,int y,char *format_string,...) __attribute__((format(printf, 3, 4)));
 
 // Original: engine_2d.c_drawTextCenteredColor_FUN_004026c0
 // Address: 004026c0
@@ -197,11 +197,11 @@ void __cdecl drawTextCenteredXYColor(int left_x,int right_x,int y,char *text);
 
 // Original: engine_2d.c_drawTextCenteredColorFormatted_FUN_00402730
 // Address: 00402730
-void __cdecl drawTextCenteredColorFormatted(int left_x,int right_x,int y,char *format_string,...);
+void __cdecl drawTextCenteredColorFormatted(int left_x,int right_x,int y,char *format_string,...) __attribute__((format(printf, 4, 5)));
 
 // Original: engine_2d.c_getStringWidthFormatted_FUN_004027a0
 // Address: 004027a0
-int __cdecl getStringWidthFormatted(char *format_string,...);
+int __cdecl getStringWidthFormatted(char *format_string,...) __attribute__((format(printf, 1, 2)));
 
 // Original: engine_2d.c_getTextWrapEnabled_FUN_004027f0
 // Address: 004027f0

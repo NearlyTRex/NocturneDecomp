@@ -4,11 +4,10 @@
 ; double __cdecl core_dmodel_cpp_safeAcos_FUN_0047b170(float value)
 ;
 ; Parameters:
-; float            Stack[0x8]:4   value
+; float            Stack[0x4]:4   value
 ; Local Variables:
-; undefined8       Stack[-0x18]:8  local_18
-; undefined4       Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
+; double           Stack[-0x18]:8  local_18
+; _SPLIT_DOUBLE    Stack[-0x10]:8  local_10
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0062044b = -1

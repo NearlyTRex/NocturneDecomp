@@ -14081,36 +14081,20 @@
           "type":"undefined4"
         },
         {
-          "name":"local_14",
-          "storage":{
-            "offset":-20,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x14]",
-                "offset":-20,
-                "size":4
-              }
-            ]
-          },
-          "type":"undefined4"
-        },
-        {
           "name":"local_18",
           "storage":{
             "offset":-24,
-            "size":4,
+            "size":8,
             "stack":true,
             "varnodes":[
               {
                 "addr":"Stack[-0x18]",
                 "offset":-24,
-                "size":4
+                "size":8
               }
             ]
           },
-          "type":"undefined4"
+          "type":"double"
         }
       ],
       "params":[
@@ -17942,7 +17926,7 @@
         "start":"00450a90"
       }
     ],
-    "conv":"__watcallRegister",
+    "conv":"__cdecl",
     "importable":true,
     "name":"core_dcamera.cpp_log2Custom_FUN_00450a90",
     "ret":"double",
@@ -17963,6 +17947,24 @@
             ]
           },
           "type":"undefined8"
+        }
+      ],
+      "params":[
+        {
+          "name":"val",
+          "storage":{
+            "offset":4,
+            "size":8,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":8
+              }
+            ]
+          },
+          "type":"double"
         }
       ],
       "ret_storage":{
@@ -49140,6 +49142,22 @@
         {
           "name":"query_point",
           "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"edge_vertex_0",
+          "storage":{
             "offset":8,
             "size":4,
             "stack":true,
@@ -49154,7 +49172,7 @@
           "type":"CVector3f*"
         },
         {
-          "name":"edge_vertex_0",
+          "name":"edge_vertex_1",
           "storage":{
             "offset":12,
             "size":4,
@@ -49163,22 +49181,6 @@
               {
                 "addr":"Stack[0xc]",
                 "offset":12,
-                "size":4
-              }
-            ]
-          },
-          "type":"CVector3f*"
-        },
-        {
-          "name":"edge_vertex_1",
-          "storage":{
-            "offset":16,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x10]",
-                "offset":16,
                 "size":4
               }
             ]
@@ -81520,13 +81522,13 @@
         {
           "name":"this_ptr",
           "storage":{
-            "offset":8,
+            "offset":4,
             "size":4,
             "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0x8]",
-                "offset":8,
+                "addr":"Stack[0x4]",
+                "offset":4,
                 "size":4
               }
             ]
@@ -81536,13 +81538,13 @@
         {
           "name":"slot",
           "storage":{
-            "offset":12,
+            "offset":8,
             "size":4,
             "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0xc]",
-                "offset":12,
+                "addr":"Stack[0x8]",
+                "offset":8,
                 "size":4
               }
             ]
@@ -94661,6 +94663,24 @@
     "name":"core_weapon.cpp_CWeapon_process_FUN_005ee110",
     "ret":"void",
     "vars":{
+      "locals":[
+        {
+          "name":"unionfacet5_5ee217",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:40411d061281",
+                "offset":70648403989121,
+                "size":4
+              }
+            ]
+          },
+          "type":"UActorVTable*",
+          "use":263
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",

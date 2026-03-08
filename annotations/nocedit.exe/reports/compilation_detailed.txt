@@ -5,30 +5,32 @@ FUNCTION COMPILATION DETAILED ERRORS
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6484
-Successful: 5791 (89.3%)
-Failed: 693
+Successful: 5696 (87.8%)
+Failed: 788
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                           1370
-  format_error                     579
-  undeclared_identifier            473
-  incompatible_types               355
-  syntax_error                      52
+  other                           1501
+  format_error                     803
+  undeclared_identifier            436
+  incompatible_types               331
+  syntax_error                      53
   missing_member                    22
   type_error                        19
-  lvalue_required                   17
+  lvalue_required                   16
   pointer_arithmetic                 4
   pointer_precision                  2
 
 ====================================================================================================
-CATEGORY: other (1370 errors)
+CATEGORY: other (1501 errors)
 ====================================================================================================
 
   core_imp.cpp_CImp_process_FUN_004f9c30
     Line 271: C-style cast from 'CDemonActor *' to 'float' is not allowed
   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
     Line 54: C-style cast from 'CDemonCamera *' to 'float' is not allowed
+  core_elephant.cpp_CElephantGun_process_FUN_004a7070
+    Line 40: C-style cast from 'CElephantGun *' to 'float' is not allowed
   core_gabriela.cpp_CGabriella_processMotionEvents_FUN_004d4890
     Line 82: C-style cast from 'CGabriella *' to 'float' is not allowed
   core_set.cpp_CDemonSet_buildDisplayList_FUN_0056fbd0
@@ -73,8 +75,6 @@ CATEGORY: other (1370 errors)
     Line 2483: C-style cast from 'struct CDemonActor *' to 'float' is not allowed
   core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00573470
     Line 174: C-style cast from 'struct CKeyFramedModelInstance *' to 'float' is not allowed
-  shape_meshlod.cpp_CLodMesh_computePointToFaceDistance_FUN_0051a400
-    Line 33: C-style cast from 'struct CLodVert *' to 'float' is not allowed
   core_netgame.cpp_CNetGame_runLobby_FUN_00541390
     Line 68: C-style cast from 'uint' (aka 'unsigned int') to 'uchar[4]' (aka 'unsigned char[4]') is not allowed
   core_setdir.cpp_CZThumb_testCameraVisibility_FUN_005750a0
@@ -96,7 +96,7 @@ CATEGORY: other (1370 errors)
   core_colonel.cpp_CColonel_FUN_00440430
     Line 28: called object type 'float' is not a function or function pointer
   shape_design.c_mergeTrianglesIntoQuad_FUN_00462190
-    Line 70: called object type 'float' is not a function or function pointer
+    Line 69: called object type 'float' is not a function or function pointer
   core_enemy.cpp_CEnemy_updateVictim_FUN_004a9b00
     Line 143: cannot cast from type 'float' to pointer type 'CCharacter *'
   core_colonel.cpp_CColonel_process_FUN_0043fa00
@@ -159,12 +159,6 @@ CATEGORY: other (1370 errors)
     Line 22: cannot initialize a parameter of type 'LPDWORD' (aka 'unsigned long *') with an rvalue of type 'uint *' (aka 'unsigned int *')
   sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_005ae830
     Line 73: cannot initialize a parameter of type 'struct IUnknown *' with an lvalue of type 'IDirectSoundBuffer *'
-  sound_snddx.cpp_directSoundEnumerationCallback_FUN_005b0120
-    Line 55: cannot initialize a parameter of type 'struct IUnknown *' with an lvalue of type 'LPDIRECTSOUND' (aka 'IDirectSound *')
-  sound_snddx.cpp_CDirectSoundDevice_allocateSfx_FUN_005af410
-    Line 80: cannot initialize a parameter of type 'void **' with an rvalue of type 'IDirectSound3DBuffer **'
-  sound_snddx.cpp_getDirectSoundDevice_FUN_005b0440
-    Line 61: cannot initialize a parameter of type 'void **' with an rvalue of type 'IDirectSound3DListener **'
   engine_winfont.cpp_CWinFont_createTextBackground_FUN_005f2860
     Line 44: cannot initialize a parameter of type 'void **' with an rvalue of type 'void ***'
   core_ground.cpp_getGroundTypeName_FUN_004eed80
@@ -173,8 +167,6 @@ CATEGORY: other (1370 errors)
     Line 148: cast from pointer to smaller type 'char' loses information
   core_dmodel.cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0
     Line 117: cast from pointer to smaller type 'char' loses information
-  shape_design.c_loadTextureData_FUN_0046b060
-    Line 152: cast from pointer to smaller type 'uchar' (aka 'unsigned char') loses information
   engine_fileio.cpp_getLatestFileFromRepository_FUN_004b3220
     Line 94: comparison between pointer and integer ('char *' and 'uint' (aka 'unsigned int'))
   engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220
@@ -201,24 +193,86 @@ CATEGORY: other (1370 errors)
     Line 44: data argument not used by format string [-Werror,-Wformat-extra-args]
   core_dmodel.cpp_CKeyFramedModel_exportToS3D_FUN_00479f30
     Line 107: data argument not used by format string [-Werror,-Wformat-extra-args]
+  core_event.cpp_CEventList_setTimerEvent_FUN_004b05a0
+    Line 27: data argument not used by format string [-Werror,-Wformat-extra-args]
   core_flame.cpp_CFlame_process_FUN_004c9c00
     Line 77: data argument not used by format string [-Werror,-Wformat-extra-args]
   core_game.cpp_CGame_processFrame_FUN_004da100
-    Line 269: data argument not used by format string [-Werror,-Wformat-extra-args]
+    Line 149: data argument not used by format string [-Werror,-Wformat-extra-args]
   core_gore.cpp_CBloodPool_save_FUN_004ed1c0
     Line 19: data argument not used by format string [-Werror,-Wformat-extra-args]
+  core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_0050aba0
+    Line 24: data argument not used by format string [-Werror,-Wformat-extra-args]
   core_script.cpp_CScript_loadState_FUN_00560820
     Line 45: data argument not used by format string [-Werror,-Wformat-extra-args]
-  core_skeledit.cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0
-    Line 150: data argument not used by format string [-Werror,-Wformat-extra-args]
+  core_setdir.cpp_CDemonSet_saveThumbs_FUN_00575bc0
+    Line 114: data argument not used by format string [-Werror,-Wformat-extra-args]
+  core_stranger.cpp_CStranger_tryDescendLadder_FUN_005c2400
+    Line 123: data argument not used by format string [-Werror,-Wformat-extra-args]
   core_tommygun.cpp_CTommyGun_process_FUN_005de360
-    Line 67: data argument not used by format string [-Werror,-Wformat-extra-args]
+    Line 66: data argument not used by format string [-Werror,-Wformat-extra-args]
+  engine_fileio.cpp_CFileManager_verifyPodCRC_FUN_004b7c90
+    Line 39: data argument not used by format string [-Werror,-Wformat-extra-args]
   shape_edittool.cpp_CEditorTools_promptForValidDouble_FUN_004a01f0
     Line 27: data argument not used by format string [-Werror,-Wformat-extra-args]
   shape_meshlod.cpp_CLodMesh_saveReplayData_FUN_0051d250
     Line 40: data argument not used by format string [-Werror,-Wformat-extra-args]
+  sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_005a45c0
+    Line 134: data argument not used by format string [-Werror,-Wformat-extra-args]
   sound_sndmain.cpp_formatActiveSounds_FUN_005a9f80
     Line 26: data argument not used by format string [-Werror,-Wformat-extra-args]
+  cockpit_ckptutil.c_generateTransparencySpans_FUN_00435730
+    Line 33: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  cockpit_ckptutil.c_loadACTPaletteFile_FUN_00431ac0
+    Line 90: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  cockpit_ckptutil.c_loadEdgeListFile_FUN_004331f0
+    Line 25: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690
+    Line 30: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  cockpit_ckptutil.c_rasterizeEdgeEndpoints_FUN_004336e0
+    Line 29: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  cockpit_ckptutil.c_readBitmapFile_FUN_00431870
+    Line 22: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  cockpit_ckptutil.c_rotateBitmap_FUN_00434870
+    Line 36: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  cockpit_ckptutil.c_saveEdgeListFile_FUN_00433480
+    Line 37: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af0
+    Line 120: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_0054b190
+    Line 89: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_0054b860
+    Line 23: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  cockpit_pkbitmap.cpp_CPackedBitmap_saveToPBMFile_FUN_0054b520
+    Line 22: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  cockpit_pkbitmap.cpp_loadPBGFile_FUN_0054bb40
+    Line 24: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  cockpit_pkbmpset.cpp_CPackedBitmapSet_alloc_FUN_0054bdb0
+    Line 33: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40
+    Line 30: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_0054c1e0
+    Line 31: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  core_dcamera.cpp_CDemonCamera_beginScene_FUN_0044c430
+    Line 59: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  core_dcube.cpp_CDemonCube_loadGeometryFromTriangleList_FUN_004570a0
+    Line 48: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  core_dpart.cpp_CDemonPart_alloc_FUN_00482180
+    Line 26: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  core_dpart.cpp_CDemonPart_importTriangleMesh_FUN_00482a10
+    Line 40: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  core_game.cpp_CGame_loadGame_FUN_004e12b0
+    Line 168: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  core_game.cpp_CGame_processHotkeys_FUN_004dcee0
+    Line 153: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  core_game.cpp_CGame_runGameSession_FUN_004daf80
+    Line 242: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  core_game.cpp_CGame_saveGame_FUN_004e0cd0
+    Line 38: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  core_main.c_initializeGameSystems_FUN_00507a60
+    Line 73: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  core_menu.cpp_configureCustomKeyBindings_FUN_005138e0
+    Line 793: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
   core_menu.cpp_configureCustomKeys_FUN_00511890
     Line 60: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
   core_menu.cpp_configureGraphicsOptions_FUN_00510c80
@@ -227,14 +281,92 @@ CATEGORY: other (1370 errors)
     Line 119: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
   core_menu.cpp_showOptionsScreen_FUN_00512d30
     Line 36: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0
+    Line 270: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
   core_msnedit.cpp_CDemonMission_showOptionsMenu_FUN_00537680
     Line 87: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190
+    Line 261: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  core_skeledit.cpp_CLodMesh_selectAndGenerateLods_FUN_00589c20
+    Line 98: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
   core_werewolf.cpp_CWerewolf_propertyDisplayCallback_FUN_005f2010
     Line 28: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  engine_3d.c_dispatchMRGLToRenderer_FUN_00407aa0
+    Line 64: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  engine_3d.c_oldFunction_FUN_00403740
+    Line 17: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  engine_3d.c_oldFunction_FUN_004041d0
+    Line 17: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  engine_3d.c_oldFunction_FUN_00404df0
+    Line 17: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  engine_3d.c_renderPrim_FUN_00407920
+    Line 30: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  engine_clipper.c_clipPolygonToViewFrustum_FUN_004366e0
+    Line 65: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  engine_fileio.cpp_CCheckOutList_parse_FUN_004b2a60
+    Line 106: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
   engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0
     Line 613: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  engine_fileio.cpp_CFileManager_registerFiles_FUN_004b5640
+    Line 130: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_004cd550
+    Line 57: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
   engine_ini.cpp_CIni_writeProfileString_FUN_004fb660
     Line 76: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  engine_model.c_getMRGLBounds_FUN_00528140
+    Line 95: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  engine_model.c_getMRGLSize_FUN_00528700
+    Line 73: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  engine_model.c_loadModelChunk_FUN_00528970
+    Line 23: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  engine_model.c_loadModelFile_FUN_00527ec0
+    Line 45: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  engine_texture.cpp_CTextureCache_loadTexture_FUN_005dcc00
+    Line 68: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  shape_design.c_cramTextures_FUN_0046a970
+    Line 92: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  shape_design.c_fixupCramUV_FUN_0046e090
+    Line 61: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  shape_design.c_loadTextureData_FUN_0046b060
+    Line 91: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
+    Line 26: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  shape_quantize.cpp_CBitmap_ctor_FUN_00556a00
+    Line 49: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  shape_quantize.cpp_quantizeRawPixelData_FUN_00556490
+    Line 40: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  shape_quantize.cpp_showError_FUN_00556cb0
+    Line 14: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  shape_quantize.cpp_showError_FUN_00556ce0
+    Line 14: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  sound_snddx.cpp_CDirectSoundDevice_allocateSample_FUN_005aef40
+    Line 61: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  sound_snddx.cpp_CDirectSoundDevice_allocateSfx_FUN_005af410
+    Line 70: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  sound_snddx.cpp_CDirectSoundDevice_isSfxPlaying_FUN_005afcc0
+    Line 29: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  sound_snddx.cpp_CDirectSoundDevice_killSfx_FUN_005b0030
+    Line 35: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  sound_snddx.cpp_CDirectSoundDevice_lockSample_FUN_005af220
+    Line 41: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  sound_snddx.cpp_CDirectSoundDevice_reset_FUN_005ae4b0
+    Line 32: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  sound_snddx.cpp_CDirectSoundDevice_startSfx_FUN_005afe80
+    Line 55: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  sound_snddx.cpp_CDirectSoundDevice_start_FUN_005ae340
+    Line 64: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  sound_snddx.cpp_CDirectSoundDevice_unlockSample_FUN_005af320
+    Line 35: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  sound_snddx.cpp_checkDirectSoundError_FUN_005adf90
+    Line 21: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  sound_snddx.cpp_directSoundEnumerationCallback_FUN_005b0120
+    Line 40: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  sound_snddx.cpp_fillStreamBuffer_FUN_005adff0
+    Line 34: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  sound_snddx.cpp_getDirectSoundDevice_FUN_005b0440
+    Line 45: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+  sound_snddx.cpp_releaseSfxHardwareBuffers_FUN_005ae1c0
+    Line 26: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
   wincore_wddvmem.cpp_setupColorPalette_FUN_005ed8f0
     Line 46: indirection not permitted on operand of type 'void *'
   wincore_wddvmem.cpp_videoRestore_FUN_005edc80
@@ -261,8 +393,6 @@ CATEGORY: other (1370 errors)
     Line 90: member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union
   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
     Line 487: member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union
-  engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10
-    Line 100: member reference base type 'byte[2088]' (aka 'unsigned char[2088]') is not a structure or union
   core_turret.cpp_CTurret_process_FUN_005e2430
     Line 192: member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union
   sound_sndmain.cpp_nextMixingBuffer_FUN_005a59c0
@@ -291,42 +421,30 @@ CATEGORY: other (1370 errors)
     Line 15: member reference base type 'double' is not a structure or union
   shape_design.c_calculatePolygonNormal_FUN_0045caa0
     Line 40: member reference base type 'double' is not a structure or union
-  shape_design.c_calculateSamplingWeight_FUN_0046adc0
-    Line 15: member reference base type 'double' is not a structure or union
-  shape_design.c_clampedArccos_FUN_00461c50
-    Line 15: member reference base type 'double' is not a structure or union
   shape_design.c_normalizeVertex_FUN_00461e60
     Line 17: member reference base type 'double' is not a structure or union
   shape_superopt.cpp_CComplexPolygon_canMergeEdges_FUN_005c7fb0
     Line 48: member reference base type 'double' is not a structure or union
   shape_superopt.cpp_CComplexPolygon_isConvex_FUN_005cb3a0
-    Line 128: member reference base type 'double' is not a structure or union
+    Line 121: member reference base type 'double' is not a structure or union
   shape_superopt.cpp_CComplexPolygon_splitByDimensions_FUN_005c9500
     Line 166: member reference base type 'double' is not a structure or union
   shape_superopt.cpp_CComplexPolygon_splitEdgesByPlane_FUN_005c9aa0
     Line 127: member reference base type 'double' is not a structure or union
   shape_superopt.cpp_CComplexPolygon_validateSubChainVisibility_FUN_005cbf90
-    Line 118: member reference base type 'double' is not a structure or union
+    Line 115: member reference base type 'double' is not a structure or union
   shape_superopt.cpp_CPoly_containsPoint2D_FUN_005d0340
-    Line 132: member reference base type 'double' is not a structure or union
+    Line 131: member reference base type 'double' is not a structure or union
   shape_superopt.cpp_CPoly_hasEdgeIntersection_FUN_005d1390
     Line 136: member reference base type 'double' is not a structure or union
   shape_superopt.cpp_isPointOnLineSegment_FUN_005d6c10
     Line 112: member reference base type 'double' is not a structure or union
-  sound_sndmain.cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580
-    Line 15: member reference base type 'double' is not a structure or union
-  sound_sndmain.cpp_CSampleInfo_normalizePlaybackPos_FUN_005a86f0
-    Line 33: member reference base type 'double' is not a structure or union
   sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170
     Line 38: member reference base type 'double' is not a structure or union
   sound_sndmain.cpp_audioThreadProc_FUN_005abba0
     Line 21: member reference base type 'double' is not a structure or union
   sound_sndmain.cpp_enableSoundSystem_FUN_005aaef0
     Line 48: member reference base type 'double' is not a structure or union
-  sound_sndmain.cpp_mixResampleMonoToStereo_FUN_005a5e70
-    Line 33: member reference base type 'double' is not a structure or union
-  sound_sndmain.cpp_mixResampleStereoToStereo_FUN_005a5fb0
-    Line 33: member reference base type 'double' is not a structure or union
   sound_sndmain.cpp_startSoundThread_FUN_005abc00
     Line 18: member reference base type 'double' is not a structure or union
   core_mimic.cpp_CMimic_FUN_0051fcc0
@@ -363,8 +481,6 @@ CATEGORY: other (1370 errors)
     Line 83: member reference base type 'longlong' (aka 'long long') is not a structure or union
   engine_clipper.c_clipPolygonNearPlane_FUN_00436420
     Line 84: member reference base type 'longlong' (aka 'long long') is not a structure or union
-  engine_clipper.c_clipPolygonToViewFrustum_FUN_004366e0
-    Line 99: member reference base type 'longlong' (aka 'long long') is not a structure or union
   core_dskybox.cpp_renderSkyDome_FUN_004901f0
     Line 191: member reference base type 'uint' (aka 'unsigned int') is not a structure or union
   core_netgame.cpp_CNetGame_swapPlayerData_FUN_00543bb0
@@ -375,12 +491,12 @@ CATEGORY: other (1370 errors)
     Line 120: member reference base type 'uint' (aka 'unsigned int') is not a structure or union
   sound_sndmain.cpp_parseWavFile_FUN_005a3fe0
     Line 68: member reference base type 'uint' (aka 'unsigned int') is not a structure or union
+  core_event.cpp_CEventList_updateSfxEntries_FUN_004b0db0
+    Line 29: member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union
   core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0
     Line 335: member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union
-  core_werewolf.cpp_CWerewolf_process_FUN_005efde0
-    Line 335: member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union
   shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
-    Line 373: member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union
+    Line 372: member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union
   shape_superopt.cpp_CComplexPolygon_computeWindingNormal_FUN_005cbb40
     Line 86: member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union
   shape_superopt.cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70
@@ -395,8 +511,14 @@ CATEGORY: other (1370 errors)
     Line 149: member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union
   sound_sndmain.cpp_convertDoubleToFixed_FUN_005a5e10
     Line 19: member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union
+  sound_sndmain.cpp_mixResampleMonoToStereo_FUN_005a5e70
+    Line 31: member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union
+  sound_sndmain.cpp_mixResampleStereoToStereo_FUN_005a5fb0
+    Line 31: member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union
   core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50
     Line 28: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+  core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
+    Line 31: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_actor.cpp_archiveFloat_FUN_0040b770
     Line 15: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_actor.cpp_archiveLocation_FUN_0040b480
@@ -412,29 +534,41 @@ CATEGORY: other (1370 errors)
   core_cloth.cpp_CCloth_save_FUN_00439260
     Line 23: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_course.cpp_CCourse_save_FUN_00442a90
-    Line 31: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+    Line 27: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_dcamera.cpp_saveCameraFog_FUN_00453f10
     Line 13: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0
     Line 421: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_event.cpp_CEventList_executeCommand_FUN_004aacc0
-    Line 255: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+    Line 173: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_event.cpp_CEventList_render_FUN_004addf0
     Line 87: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_event.cpp_CEventList_saveState_FUN_004b1380
     Line 72: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+  core_event.cpp_CEventList_setActorVariable_FUN_004b09a0
+    Line 24: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+  core_game.cpp_CGame_displayBitmap_FUN_004e2890
+    Line 21: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+  core_game.cpp_CGame_showFullscreenBitmap_FUN_004e2910
+    Line 51: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_gore.cpp_CBloodSplat_save_FUN_004ecb90
     Line 16: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_inv.cpp_CInventory_renderAllItems_FUN_00500690
     Line 144: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_inv.cpp_CInventory_save_FUN_004ff210
     Line 15: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+  core_larva.cpp_CLarva_process_FUN_00503080
+    Line 222: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+  core_manpuz.cpp_CMansionPuzzleCircle_panelOccupied_FUN_0050b040
+    Line 18: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_motion.cpp_CMotionList_save_FUN_0052d170
     Line 48: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_msnedit.cpp_drawMotionBar_FUN_00536e20
     Line 45: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_npc.cpp_CNPC_FUN_00544c50
     Line 25: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+  core_script.cpp_CScript_editorAction_FUN_00564820
+    Line 426: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_script.cpp_CScript_saveState_FUN_00560b50
     Line 15: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_script.cpp_editParameterValue_FUN_00562920
@@ -457,10 +591,12 @@ CATEGORY: other (1370 errors)
     Line 16: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810
     Line 283: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+  core_skeledit.cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0
+    Line 66: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_skeledit.cpp_CDeformableModel_saveStream_FUN_0058f120
     Line 49: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
-    Line 237: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+    Line 225: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_skeledit.cpp_CSkeleton_saveStream_FUN_0058b3a0
     Line 26: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_sound.cpp_CSound_process_FUN_005b2fd0
@@ -469,8 +605,14 @@ CATEGORY: other (1370 errors)
     Line 55: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_sound.cpp_processTrainSounds_FUN_005b2770
     Line 150: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+  core_werewolf.cpp_CWerewolf_process_FUN_005efde0
+    Line 272: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   engine_fileio.cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0
+    Line 51: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+  engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10
     Line 68: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+  engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190
+    Line 148: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   engine_ini.cpp_CIniFile_getFloat_FUN_004fbcd0
     Line 16: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   shape_design.c_configureSinglePassPolygonReduction_FUN_00465560
@@ -503,10 +645,16 @@ CATEGORY: other (1370 errors)
     Line 19: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   shape_meshlod.cpp_CLodMesh_exportToS3D_FUN_0051c100
     Line 22: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+  shape_meshlod.cpp_CLodMesh_fixupAfterCram_FUN_0051bac0
+    Line 38: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a0
     Line 42: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   sound_snddx.cpp_CDirectSoundDevice_setSfxPos_FUN_005af750
     Line 70: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+  sound_sndmain.cpp_CSfxSample_seek_FUN_005a65a0
+    Line 52: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+  sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100
+    Line 39: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   sound_sndmain.cpp_formatSfxOptionsToString_FUN_005a8d00
     Line 18: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_platfrm.cpp_CPlatform_ctor_FUN_0054c850
@@ -581,8 +729,6 @@ CATEGORY: other (1370 errors)
     Line 15: no matching conversion for C-style cast from 'va_list_t *' to 'va_list_t'
   shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
     Line 17: no matching conversion for C-style cast from 'va_list_t *' to 'va_list_t'
-  sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100
-    Line 99: no matching literal operator for call to 'operator""_4_4_' with argument of type 'long double' or 'const char *', and no matching literal operator template
   core_scat.cpp_CScat_updateWeaponState_FUN_00558060
     Line 54: statement requires expression of integer type ('float' invalid)
   wincore_windll.cpp_initializeExternalRenderer_FUN_005b5ec0
@@ -605,7 +751,7 @@ CATEGORY: other (1370 errors)
     Line 1033: use of undeclared label 'DAT_032758e8'
 
 ====================================================================================================
-CATEGORY: format_error (579 errors)
+CATEGORY: format_error (803 errors)
 ====================================================================================================
 
   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50
@@ -624,24 +770,76 @@ CATEGORY: format_error (579 errors)
     Line 89: format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror,-Wformat]
   core_setedit.cpp_CDemonSet_writeFileDependencies_FUN_00584e70
     Line 64: format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror,-Wformat]
+  core_setutil.cpp_C3DSCamera_apply_FUN_00585870
+    Line 25: format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror,-Wformat]
   core_setutil.cpp_C3DSCamera_exportS3D_FUN_00586190
     Line 20: format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror,-Wformat]
   core_setutil.cpp_C3DSCamera_importS3D_FUN_00585ff0
     Line 19: format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror,-Wformat]
   core_setutil.cpp_C3DSCamera_load_FUN_00585420
     Line 22: format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror,-Wformat]
+  core_baron.cpp_CBaron_process_FUN_00412e80
+    Line 182: format specifies type 'char *' but the argument has type 'CBaron *' [-Werror,-Wformat]
+  core_batcreat.cpp_CBatCreature_process_FUN_00415470
+    Line 316: format specifies type 'char *' but the argument has type 'CBatCreature *' [-Werror,-Wformat]
+  core_batman.cpp_CBatman_process_FUN_00416870
+    Line 421: format specifies type 'char *' but the argument has type 'CBatman *' [-Werror,-Wformat]
+  core_biggs.cpp_CBiggs_process_FUN_00418700
+    Line 71: format specifies type 'char *' but the argument has type 'CBiggs *' [-Werror,-Wformat]
+  core_bodypart.cpp_CBodyPart_renderBackground_FUN_00419610
+    Line 25: format specifies type 'char *' but the argument has type 'CBodyPart *' [-Werror,-Wformat]
+  core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90
+    Line 269: format specifies type 'char *' but the argument has type 'CBoneGuy *' [-Werror,-Wformat]
+  core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_0041cc40
+    Line 57: format specifies type 'char *' but the argument has type 'CBoneGuy *' [-Werror,-Wformat]
+  core_bugs.cpp_CBugs_setSwarmTarget_FUN_00427400
+    Line 51: format specifies type 'char *' but the argument has type 'CBugs *' [-Werror,-Wformat]
+  core_charactr.cpp_CCharacter_applyGesture_FUN_0042d3d0
+    Line 22: format specifies type 'char *' but the argument has type 'CCharacter *' [-Werror,-Wformat]
+  core_charactr.cpp_CCharacter_applyLookAt_FUN_0042dcd0
+    Line 31: format specifies type 'char *' but the argument has type 'CCharacter *' [-Werror,-Wformat]
+  core_charactr.cpp_CCharacter_followActor_FUN_0042c5f0
+    Line 28: format specifies type 'char *' but the argument has type 'CCharacter *' [-Werror,-Wformat]
+  core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0
+    Line 150: format specifies type 'char *' but the argument has type 'CCharacter *' [-Werror,-Wformat]
+  core_charactr.cpp_CCharacter_processWalking_FUN_0042ca70
+    Line 64: format specifies type 'char *' but the argument has type 'CCharacter *' [-Werror,-Wformat]
+  core_charactr.cpp_CCharacter_setup_FUN_00428140
+    Line 47: format specifies type 'char *' but the argument has type 'CCharacter *' [-Werror,-Wformat]
+  core_lightgun.cpp_CLightGun_fire_FUN_00505c70
+    Line 173: format specifies type 'char *' but the argument has type 'CCharacter *' [-Werror,-Wformat]
   core_script.cpp_parseBodyPartMask_FUN_00559730
     Line 40: format specifies type 'char *' but the argument has type 'CCharacter *' [-Werror,-Wformat]
+  engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3920
+    Line 53: format specifies type 'char *' but the argument has type 'CCheckOutItem *' [-Werror,-Wformat]
   engine_fileio.cpp_CCheckOutList_parse_FUN_004b2a60
     Line 30: format specifies type 'char *' but the argument has type 'CCheckOutItem *' [-Werror,-Wformat]
+  engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740
+    Line 89: format specifies type 'char *' but the argument has type 'CCheckOutItem *' [-Werror,-Wformat]
   core_cloth.cpp_CCloth_addFilesToExtract_FUN_0043e0a0
     Line 12: format specifies type 'char *' but the argument has type 'CCloth *' [-Werror,-Wformat]
+  core_colonel.cpp_CColonel_process_FUN_0043fa00
+    Line 157: format specifies type 'char *' but the argument has type 'CColonel *' [-Werror,-Wformat]
+  core_crate.cpp_CCrate_explode_FUN_00448a70
+    Line 19: format specifies type 'char *' but the argument has type 'CCrate *' [-Werror,-Wformat]
   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0
     Line 84: format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]
+  core_actor.cpp_CDemonActor_load_FUN_0040b050
+    Line 60: format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]
+  core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210
+    Line 147: format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]
   core_actor.cpp_CDemonActor_save_FUN_0040af30
     Line 24: format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]
+  core_actor.cpp_handleActorPropertyParseError_FUN_0040b210
+    Line 35: format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]
   core_inv.cpp_CInventory_saveItems_FUN_004ff3b0
     Line 24: format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]
+  core_inv.cpp_getItemModel_FUN_004fcda0
+    Line 37: format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]
+  core_mission.cpp_CDemonMission_loadActor_FUN_00523990
+    Line 42: format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]
+  core_msnedit.cpp_CDemonMission_deleteActorWithConfirm_FUN_0053bc80
+    Line 17: format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]
   core_msnedit.cpp_CDemonMission_enemyRandomizer_FUN_005379e0
     Line 121: format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]
   core_msnedit.cpp_CDemonMission_showDifficultyStats_FUN_0053d3b0
@@ -660,8 +858,30 @@ CATEGORY: format_error (579 errors)
     Line 78: format specifies type 'char *' but the argument has type 'CDemonActorType *' [-Werror,-Wformat]
   core_door.cpp_CDoor_setup_FUN_0047fc70
     Line 18: format specifies type 'char *' but the argument has type 'CDoor *' [-Werror,-Wformat]
+  core_stranger.cpp_CStranger_handleActionButton_FUN_005c5b90
+    Line 33: format specifies type 'char *' but the argument has type 'CDoor *' [-Werror,-Wformat]
+  core_dracbrid.cpp_CDraculaBride_process_FUN_00484410
+    Line 205: format specifies type 'char *' but the argument has type 'CDraculaBride *' [-Werror,-Wformat]
+  core_drone.cpp_CDrone_process_FUN_0048ec70
+    Line 126: format specifies type 'char *' but the argument has type 'CDrone *' [-Werror,-Wformat]
+  core_enemy.cpp_CEnemy_updateVictim_FUN_004a9b00
+    Line 111: format specifies type 'char *' but the argument has type 'CEnemy *' [-Werror,-Wformat]
+  core_msnedit.cpp_convertAllMissionFiles_FUN_00537230
+    Line 30: format specifies type 'char *' but the argument has type 'CFileFinder *' [-Werror,-Wformat]
   engine_fileio.cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030
     Line 66: format specifies type 'char *' but the argument has type 'CFileFinder *' [-Werror,-Wformat]
+  core_gargoyle.cpp_CGargoyle_process_FUN_004e4a00
+    Line 320: format specifies type 'char *' but the argument has type 'CGargoyle *' [-Werror,-Wformat]
+  core_haystack.cpp_CHaystack_process_FUN_004f0e40
+    Line 172: format specifies type 'char *' but the argument has type 'CHaystack *' [-Werror,-Wformat]
+  core_hostage.cpp_CHostage_process_FUN_004f4bd0
+    Line 130: format specifies type 'char *' but the argument has type 'CHostage *' [-Werror,-Wformat]
+  core_hotdemon.cpp_CHotDemon_process_FUN_004f6f20
+    Line 100: format specifies type 'char *' but the argument has type 'CHotDemon *' [-Werror,-Wformat]
+  core_icepick.cpp_CIcePick_process_FUN_004f80b0
+    Line 222: format specifies type 'char *' but the argument has type 'CIcePick *' [-Werror,-Wformat]
+  core_imp.cpp_CImp_process_FUN_004f9c30
+    Line 472: format specifies type 'char *' but the argument has type 'CImp *' [-Werror,-Wformat]
   core_anvil.cpp_CAnvil_addFilesToExtract_FUN_00412090
     Line 17: format specifies type 'char *' but the argument has type 'CKeyFramedModel *' [-Werror,-Wformat]
   core_battery.cpp_CBattery_addFilesToExtract_FUN_00418110
@@ -670,22 +890,46 @@ CATEGORY: format_error (579 errors)
     Line 16: format specifies type 'char *' but the argument has type 'CKeyFramedModel *' [-Werror,-Wformat]
   core_crate.cpp_CCrate_addFilesToExtract_FUN_00448b60
     Line 17: format specifies type 'char *' but the argument has type 'CKeyFramedModel *' [-Werror,-Wformat]
+  core_dmodel.cpp_CKeyFramedModel_getFloorHeight_FUN_00478740
+    Line 26: format specifies type 'char *' but the argument has type 'CKeyFramedModel *' [-Werror,-Wformat]
+  core_dmodel.cpp_CKeyFramedModel_intersectCylinder_FUN_00478650
+    Line 29: format specifies type 'char *' but the argument has type 'CKeyFramedModel *' [-Werror,-Wformat]
   core_filmreel.cpp_CFilmReel_addFilesToExtract_FUN_004be9b0
     Line 17: format specifies type 'char *' but the argument has type 'CKeyFramedModel *' [-Werror,-Wformat]
   core_flamecan.cpp_CFlameCan_addFilesToExtract_FUN_004cb750
     Line 17: format specifies type 'char *' but the argument has type 'CKeyFramedModel *' [-Werror,-Wformat]
   core_gasmask.cpp_CGasMask_addFilesToExtract_FUN_004e5ef0
     Line 17: format specifies type 'char *' but the argument has type 'CKeyFramedModel *' [-Werror,-Wformat]
+  core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0
+    Line 144: format specifies type 'char *' but the argument has type 'CKeyFramedModel *' [-Werror,-Wformat]
+  core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00573470
+    Line 208: format specifies type 'char *' but the argument has type 'CKeyFramedModel *' [-Werror,-Wformat]
+  core_stranger.cpp_CStranger_tryClimbLadder_FUN_005c1fe0
+    Line 142: format specifies type 'char *' but the argument has type 'CLadder *' [-Werror,-Wformat]
   core_boxactor.cpp_CLightActor_propertyActionFOVCallback_FUN_00423440
     Line 21: format specifies type 'char *' but the argument has type 'CLightActor *' [-Werror,-Wformat]
   core_boxactor.cpp_CLightActor_propertyActionTypeCallback_FUN_00423380
     Line 19: format specifies type 'char *' but the argument has type 'CLightActor *' [-Werror,-Wformat]
+  core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d7120
+    Line 80: format specifies type 'char *' but the argument has type 'CLightActor *' [-Werror,-Wformat]
+  core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_005c07b0
+    Line 498: format specifies type 'char *' but the argument has type 'CLightActor *' [-Werror,-Wformat]
   core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190
     Line 114: format specifies type 'char *' but the argument has type 'CLodMeshPrecomputeEntry *' [-Werror,-Wformat]
   core_skeledit.cpp_CLodMeshPrecomputeEntry_parseLine_FUN_0058a1b0
     Line 17: format specifies type 'char *' but the argument has type 'CLodMeshPrecomputeEntry *' [-Werror,-Wformat]
   core_skeledit.cpp_CLodMeshPrecomputeEntry_save_FUN_0058a0f0
     Line 16: format specifies type 'char *' but the argument has type 'CLodMeshPrecomputeEntry *' [-Werror,-Wformat]
+  core_mimic.cpp_CMimic_FUN_00520500
+    Line 55: format specifies type 'char *' but the argument has type 'CMimic *' [-Werror,-Wformat]
+  core_mimic.cpp_CMimic_beginMorph_FUN_00520a80
+    Line 46: format specifies type 'char *' but the argument has type 'CMimic *' [-Werror,-Wformat]
+  core_mobster.cpp_CMobster_process_FUN_00525840
+    Line 525: format specifies type 'char *' but the argument has type 'CMobster *' [-Werror,-Wformat]
+  core_moloch.cpp_CMoloch_process_FUN_00528d20
+    Line 114: format specifies type 'char *' but the argument has type 'CMoloch *' [-Werror,-Wformat]
+  core_npc.cpp_CNPC_process_FUN_005448b0
+    Line 96: format specifies type 'char *' but the argument has type 'CNPC *' [-Werror,-Wformat]
   cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_0054b190
     Line 86: format specifies type 'char *' but the argument has type 'CPackedBitmap *' [-Werror,-Wformat]
   cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_0054b860
@@ -694,8 +938,46 @@ CATEGORY: format_error (579 errors)
     Line 23: format specifies type 'char *' but the argument has type 'CPlatform *' [-Werror,-Wformat]
   engine_fileio.cpp_CFileManager_searchMountedPods_FUN_004bcb70
     Line 42: format specifies type 'char *' but the argument has type 'CPodSearchContext *' [-Werror,-Wformat]
+  sound_sndmain.cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580
+    Line 21: format specifies type 'char *' but the argument has type 'CSampleInfo *' [-Werror,-Wformat]
+  core_scat.cpp_CScat_process_FUN_005571f0
+    Line 185: format specifies type 'char *' but the argument has type 'CScat *' [-Werror,-Wformat]
+  core_sentinel.cpp_CSentinel_process_FUN_00568030
+    Line 436: format specifies type 'char *' but the argument has type 'CSentinel *' [-Werror,-Wformat]
+  sound_sndmain.cpp_CSfxSample_pollStream_FUN_005a6730
+    Line 56: format specifies type 'char *' but the argument has type 'CSfxSample *' [-Werror,-Wformat]
+  sound_sndmain.cpp_CSfxSample_seek_FUN_005a65a0
+    Line 21: format specifies type 'char *' but the argument has type 'CSfxSample *' [-Werror,-Wformat]
+  sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60
+    Line 25: format specifies type 'char *' but the argument has type 'CSfxSample *' [-Werror,-Wformat]
+  sound_sndmain.cpp_getSampleInfo_FUN_005aa3f0
+    Line 78: format specifies type 'char *' but the argument has type 'CSfxSample *' [-Werror,-Wformat]
+  core_shovel.cpp_CShovel_fire_FUN_00588c20
+    Line 13: format specifies type 'char *' but the argument has type 'CShovel *' [-Werror,-Wformat]
+  core_smiley.cpp_CSmiley_process_FUN_005a2800
+    Line 330: format specifies type 'char *' but the argument has type 'CSmiley *' [-Werror,-Wformat]
+  core_succubus.cpp_CSuccubus_process_FUN_005c6e90
+    Line 184: format specifies type 'char *' but the argument has type 'CSuccubus *' [-Werror,-Wformat]
+  core_svetlana.cpp_CSvetlana_process_FUN_005d8ba0
+    Line 188: format specifies type 'char *' but the argument has type 'CSvetlana *' [-Werror,-Wformat]
   core_teleport.cpp_CTeleportDest_processInEditor_FUN_005da870
-    Line 29: format specifies type 'char *' but the argument has type 'CTeleportDest *' [-Werror,-Wformat]
+    Line 26: format specifies type 'char *' but the argument has type 'CTeleportDest *' [-Werror,-Wformat]
+  core_trigger.cpp_CTrigger_applyDamage_FUN_005e0b00
+    Line 21: format specifies type 'char *' but the argument has type 'CTrigger *' [-Werror,-Wformat]
+  core_trigger.cpp_CTrigger_containsActor_FUN_005e0cd0
+    Line 71: format specifies type 'char *' but the argument has type 'CTrigger *' [-Werror,-Wformat]
+  core_turret.cpp_CTurret_updateTargeting_FUN_005e2d50
+    Line 45: format specifies type 'char *' but the argument has type 'CTurret *' [-Werror,-Wformat]
+  core_werewolf.cpp_CWerewolf_process_FUN_005efde0
+    Line 651: format specifies type 'char *' but the argument has type 'CWerewolf *' [-Werror,-Wformat]
+  core_zombie.cpp_CZombie_FUN_005fb530
+    Line 136: format specifies type 'char *' but the argument has type 'CZombie *' [-Werror,-Wformat]
+  core_zombie.cpp_CZombie_process_FUN_005f9470
+    Line 188: format specifies type 'char *' but the argument has type 'CZombie *' [-Werror,-Wformat]
+  core_cow.cpp_CZombieCow_process_FUN_00444310
+    Line 125: format specifies type 'char *' but the argument has type 'CZombieCow *' [-Werror,-Wformat]
+  core_dog.cpp_CZombieDog_process_FUN_0047f140
+    Line 168: format specifies type 'char *' but the argument has type 'CZombieDog *' [-Werror,-Wformat]
   shape_memdbg.cpp_CLeakChecker_dtor_FUN_0050fbc0
     Line 32: format specifies type 'char *' but the argument has type 'FileTrackingEntry *' [-Werror,-Wformat]
   core_charactr.cpp_CCharacter_propertyActionCallback_FUN_0042f3e0
@@ -704,16 +986,28 @@ CATEGORY: format_error (579 errors)
     Line 34: format specifies type 'char *' but the argument has type 'SBone *' [-Werror,-Wformat]
   core_skeleton.cpp_CSkeleton_loadStream_FUN_00599bb0
     Line 62: format specifies type 'char *' but the argument has type 'SBone *' [-Werror,-Wformat]
+  core_skeledit.cpp_CBoneStructure_fixupMatrices_FUN_0058adb0
+    Line 27: format specifies type 'char *' but the argument has type 'SBoneData *' [-Werror,-Wformat]
   core_skeledit.cpp_CBoneStructure_showBoneHierarchy_FUN_0058afe0
     Line 35: format specifies type 'char *' but the argument has type 'SBoneData *' [-Werror,-Wformat]
   core_cloth.cpp_CCloth_load_FUN_00438cf0
     Line 130: format specifies type 'char *' but the argument has type 'SClothBone *' [-Werror,-Wformat]
   core_cloth.cpp_CCloth_save_FUN_00439260
     Line 52: format specifies type 'char *' but the argument has type 'SClothBone *' [-Werror,-Wformat]
+  core_fileman.cpp_preprocessMusicFiles_FUN_004bd750
+    Line 45: format specifies type 'char *' but the argument has type 'SFoundFileInfo *' [-Werror,-Wformat]
+  engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220
+    Line 77: format specifies type 'char *' but the argument has type 'SFoundFileInfo *' [-Werror,-Wformat]
   engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
-    Line 283: format specifies type 'char *' but the argument has type 'SFoundFileInfo *' [-Werror,-Wformat]
+    Line 161: format specifies type 'char *' but the argument has type 'SFoundFileInfo *' [-Werror,-Wformat]
   engine_fileio.cpp_CFileManager_compareLocalVsPod_FUN_004b82a0
     Line 78: format specifies type 'char *' but the argument has type 'SFoundFileInfo *' [-Werror,-Wformat]
+  engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0
+    Line 169: format specifies type 'char *' but the argument has type 'SFoundFileInfo *' [-Werror,-Wformat]
+  engine_fileio.cpp_getLatestFileFromRepository_FUN_004b3220
+    Line 128: format specifies type 'char *' but the argument has type 'SFoundFileInfo *' [-Werror,-Wformat]
+  engine_fileio.cpp_synchronizeFilesToDirectory_FUN_004bc650
+    Line 66: format specifies type 'char *' but the argument has type 'SFoundFileInfo *' [-Werror,-Wformat]
   sound_sndmain.cpp_testSoundFiles_FUN_005ad5c0
     Line 107: format specifies type 'char *' but the argument has type 'SFoundFileInfo *' [-Werror,-Wformat]
   core_inv.cpp_loadItem_FUN_004fcfe0
@@ -744,12 +1038,18 @@ CATEGORY: format_error (579 errors)
     Line 28: format specifies type 'char *' but the argument has type 'UINT' (aka 'unsigned int') [-Werror,-Wformat]
   core_actor.cpp_archiveRules_FUN_0040c000
     Line 26: format specifies type 'char *' but the argument has type 'char (*)[100]' [-Werror,-Wformat]
+  core_texlist.cpp_CTextureList_renderTexture_FUN_005dca30
+    Line 16: format specifies type 'char *' but the argument has type 'char (*)[16]' [-Werror,-Wformat]
   core_mission.cpp_CDemonMission_readMissionFile_FUN_00522eb0
     Line 76: format specifies type 'char *' but the argument has type 'char (*)[256]' [-Werror,-Wformat]
   core_mission.cpp_CDemonMission_writeFile_FUN_00523600
     Line 39: format specifies type 'char *' but the argument has type 'char (*)[256]' [-Werror,-Wformat]
+  core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0
+    Line 150: format specifies type 'char *' but the argument has type 'char (*)[256]' [-Werror,-Wformat]
   core_motion.cpp_CMotionList_save_FUN_0052d170
     Line 34: format specifies type 'char *' but the argument has type 'char (*)[30]' [-Werror,-Wformat]
+  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
+    Line 264: format specifies type 'char *' but the argument has type 'char (*)[30]' [-Werror,-Wformat]
   core_event.cpp_CEventList_render_FUN_004addf0
     Line 36: format specifies type 'char *' but the argument has type 'char (*)[32]' [-Werror,-Wformat]
   core_event.cpp_CEventList_saveState_FUN_004b1380
@@ -762,50 +1062,70 @@ CATEGORY: format_error (579 errors)
     Line 106: format specifies type 'char *' but the argument has type 'char (*)[40]' [-Werror,-Wformat]
   core_setedit.cpp_editGroundTypes_FUN_00578630
     Line 45: format specifies type 'char *' but the argument has type 'char (*)[40]' [-Werror,-Wformat]
+  core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00
+    Line 108: format specifies type 'char *' but the argument has type 'char (*)[50]' [-Werror,-Wformat]
   engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_004cd550
     Line 54: format specifies type 'char *' but the argument has type 'char (*)[80]' [-Werror,-Wformat]
   core_cloth.cpp_CCloth_boneEditor_FUN_0043c880
     Line 205: format specifies type 'char *' but the argument has type 'float' [-Werror,-Wformat]
   core_charactr.cpp_CCharacter_propertyDisplayCallback_FUN_0042f340
     Line 44: format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]
-  core_game.cpp_CGame_processFrame_FUN_004da100
-    Line 259: format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]
   core_msnedit.cpp_CDemonMission_editActorAtIndex_FUN_0053b030
     Line 74: format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]
   core_msnedit.cpp_CDemonMission_editActorDetailed_FUN_0053b510
     Line 74: format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]
   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0
     Line 192: format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]
+  core_script.cpp_CScript_executeContextAction_FUN_00565d00
+    Line 35: format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]
   core_setedit.cpp_CDemonSet_showLightEditor_FUN_0057c5d0
     Line 93: format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]
-  engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220
-    Line 151: format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]
   shape_design.c_exportModelToMDL_FUN_00459e80
     Line 55: format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]
+  shape_memdbg.cpp_closeFile_FUN_0050f9b0
+    Line 39: format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]
+  core_mission.cpp_CDemonMission_getNextLoadedInventoryActor_FUN_00523520
+    Line 25: format specifies type 'char *' but the argument has type 'struct CDemonActor *' [-Werror,-Wformat]
   core_msnedit.cpp_CDemonMission_changeActorType_FUN_0053d8b0
     Line 61: format specifies type 'char *' but the argument has type 'struct CDemonActor *' [-Werror,-Wformat]
   core_msnedit.cpp_CDemonMission_drawPropertyPanel_FUN_0053c4f0
     Line 62: format specifies type 'char *' but the argument has type 'struct CDemonActor *' [-Werror,-Wformat]
   core_msnedit.cpp_CDemonMission_editActorPropertiesDialog_FUN_0053c730
     Line 52: format specifies type 'char *' but the argument has type 'struct CDemonActor *' [-Werror,-Wformat]
+  core_stranger.cpp_CStranger_tryPickupObject_FUN_005c1680
+    Line 237: format specifies type 'char *' but the argument has type 'struct CDemonActor *' [-Werror,-Wformat]
+  core_teleport.cpp_CTeleport_processInEditor_FUN_005dabe0
+    Line 28: format specifies type 'char *' but the argument has type 'struct CDemonActor *' [-Werror,-Wformat]
+  sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_005a7fe0
+    Line 32: format specifies type 'char *' but the argument has type 'struct CSfxSample *' [-Werror,-Wformat]
+  sound_sndmain.cpp_CSfxSlot_pollHwPlaybackPos_FUN_005a80e0
+    Line 20: format specifies type 'char *' but the argument has type 'struct CSfxSample *' [-Werror,-Wformat]
   sound_sndmain.cpp_formatActiveSounds_FUN_005a9f80
     Line 23: format specifies type 'char *' but the argument has type 'struct CSfxSample *' [-Werror,-Wformat]
   engine_fileio.cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50
     Line 108: format specifies type 'char *' but the argument has type 'uint *' (aka 'unsigned int *') [-Werror,-Wformat]
   core_game.cpp_CGame_saveGame_FUN_004e0cd0
     Line 111: format specifies type 'char *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]
+  core_game.cpp_endProfileTimer_FUN_004e3110
+    Line 20: format specifies type 'char *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]
   core_script.cpp_CScript_loadScript_FUN_00559f80
     Line 108: format specifies type 'char *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]
   core_vehicle.cpp_CVehicle_getPropertyList_FUN_005e8ba0
     Line 30: format specifies type 'char *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]
+  engine_fileio.cpp_readTimestampFile_FUN_004b23a0
+    Line 43: format specifies type 'char *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]
   core_inv.cpp_CInventory_renderAllItems_FUN_00500690
     Line 190: format specifies type 'char *' but the argument has type 'ulonglong' (aka 'unsigned long long') [-Werror,-Wformat]
-  engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0
-    Line 480: format specifies type 'char *' but the argument has type 'void *' [-Werror,-Wformat]
+  engine_fileio.cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0
+    Line 106: format specifies type 'char *' but the argument has type 'void *' [-Werror,-Wformat]
   core_tommygun.cpp_CTommyGun_process_FUN_005de360
-    Line 67: format specifies type 'double' but the argument has type 'int' [-Werror,-Wformat]
+    Line 66: format specifies type 'double' but the argument has type 'int' [-Werror,-Wformat]
+  core_event.cpp_CEventList_setTimerEvent_FUN_004b05a0
+    Line 27: format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]
   core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0
     Line 340: format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]
+  core_stranger.cpp_CStranger_tryDescendLadder_FUN_005c2400
+    Line 123: format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]
   shape_design.c_showFacetPartEditor_FUN_0045f1d0
     Line 304: format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]
   shape_edittool.cpp_CEditorTools_promptForValidDouble_FUN_004a01f0
@@ -814,12 +1134,18 @@ CATEGORY: format_error (579 errors)
     Line 30: format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]
   shape_meshlod.cpp_CLodMesh_saveReplayData_FUN_0051d250
     Line 38: format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]
+  sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_005a45c0
+    Line 134: format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]
+  sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100
+    Line 68: format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]
   sound_sndmain.cpp_formatSfxOptionsToString_FUN_005a8d00
     Line 28: format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]
   core_dmodel.cpp_CKeyFramedModel_exportToS3D_FUN_00479f30
     Line 105: format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]
   core_flame.cpp_CFlame_process_FUN_004c9c00
     Line 76: format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]
+  core_game.cpp_CGame_processFrame_FUN_004da100
+    Line 148: format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]
   core_gore.cpp_CBloodPool_save_FUN_004ed1c0
     Line 18: format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]
   core_skeledit.cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0
@@ -936,6 +1262,8 @@ CATEGORY: format_error (579 errors)
     Line 42: format specifies type 'int' but the argument has type 'HWND' (aka 'HWND__ *') [-Werror,-Wformat]
   engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50
     Line 586: format specifies type 'int' but the argument has type 'SIZE_T' (aka 'unsigned long') [-Werror,-Wformat]
+  shape_memdbg.cpp_debugCalloc_FUN_0050f350
+    Line 25: format specifies type 'int' but the argument has type 'SIZE_T' (aka 'unsigned long') [-Werror,-Wformat]
   core_game.cpp_CGame_renderOverlay_FUN_004d8040
     Line 98: format specifies type 'int' but the argument has type 'char *' [-Werror,-Wformat]
   engine_ini.cpp_getProfileInteger_FUN_004fb9a0
@@ -946,15 +1274,27 @@ CATEGORY: format_error (579 errors)
     Line 169: format specifies type 'int' but the argument has type 'float' [-Werror,-Wformat]
   core_menu.cpp_configureSoundOptions_FUN_00511e50
     Line 127: format specifies type 'int' but the argument has type 'float' [-Werror,-Wformat]
-  core_mission.cpp_CDemonMission_loadActor_FUN_00523990
-    Line 54: format specifies type 'unsigned int *' but the argument has type 'CDemonActor **' [-Werror,-Wformat]
+  core_skeleton.cpp_CDeformableModel_allocLOD_FUN_0059a510
+    Line 74: format specifies type 'int' but the argument has type 'int *' [-Werror,-Wformat]
+  core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
+    Line 79: format specifies type 'unsigned int' but the argument has type 'CDemonActor *' [-Werror,-Wformat]
+  core_game.cpp_CGame_runGameSession_FUN_004daf80
+    Line 45: format specifies type 'unsigned int' but the argument has type 'CPickList *' [-Werror,-Wformat]
   cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_0054c1e0
     Line 36: format specifies type 'unsigned int' but the argument has type 'SIZE_T' (aka 'unsigned long') [-Werror,-Wformat]
+  shape_memdbg.cpp_SMemHead_checkMemory_FUN_0050f020
+    Line 27: format specifies type 'unsigned int' but the argument has type 'SMemHead *' [-Werror,-Wformat]
+  shape_memdbg.cpp_debugMalloc_FUN_0050f250
+    Line 41: format specifies type 'unsigned int' but the argument has type 'SMemHead *' [-Werror,-Wformat]
+  shape_memdbg.cpp_debugFree_FUN_0050f460
+    Line 20: format specifies type 'unsigned int' but the argument has type 'void *' [-Werror,-Wformat]
+  shape_memdbg.cpp_debugRealloc_FUN_0050f540
+    Line 24: format specifies type 'unsigned int' but the argument has type 'void *' [-Werror,-Wformat]
   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40
     Line 36: format specifies type 'unsigned long' but the argument has type 'int' [-Werror,-Wformat]
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (473 errors)
+CATEGORY: undeclared_identifier (436 errors)
 ====================================================================================================
 
   core_actor.cpp_adjustIndentationLevel_FUN_0040aee0
@@ -999,10 +1339,6 @@ CATEGORY: undeclared_identifier (473 errors)
     Line 141: use of undeclared identifier 'SUB14'
   core_script.cpp_CScript_step_FUN_0055a810
     Line 1539: use of undeclared identifier 'SUB14'
-  sound_sndmain.cpp_mixResampleMonoToStereo_FUN_005a5e70
-    Line 39: use of undeclared identifier '_in_stack_00000010'; did you mean 'in_stack_00000010'?
-  sound_sndmain.cpp_mixResampleStereoToStereo_FUN_005a5fb0
-    Line 39: use of undeclared identifier '_in_stack_00000010'; did you mean 'in_stack_00000010'?
   core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0
     Line 95: use of undeclared identifier '_local_1a4'; did you mean 'local_1a4'?
   core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520
@@ -1099,16 +1435,12 @@ CATEGORY: undeclared_identifier (473 errors)
     Line 118: use of undeclared identifier 's__0062a87d'; did you mean 's_0062a87d'?
   core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470
     Line 142: use of undeclared identifier 'stack0x00000000'
-  core_elephant.cpp_CElephantGun_process_FUN_004a7070
-    Line 23: use of undeclared identifier 'stack0x00000000'
   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0
     Line 225: use of undeclared identifier 'stack0x00000000'
   core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990
     Line 49: use of undeclared identifier 'stack0x00000000'
   core_setedit.cpp_CDemonSet_showRoomEditor_FUN_00581aa0
     Line 115: use of undeclared identifier 'stack0x00000000'
-  core_shotgun.cpp_CShotgun_process_FUN_00587f70
-    Line 23: use of undeclared identifier 'stack0x00000000'
   core_skeleton.cpp_CDeformableModel_exactRayTrace_FUN_0059cba0
     Line 74: use of undeclared identifier 'stack0x00000000'
   core_sound.cpp_CSound_init_FUN_005b2dd0
@@ -1239,12 +1571,6 @@ CATEGORY: undeclared_identifier (473 errors)
     Line 79: use of undeclared identifier 'stack0xfffffe90'
   core_setedit.cpp_CDemonSet_positionLight_FUN_0057ae50
     Line 119: use of undeclared identifier 'stack0xfffffe90'
-  core_event.cpp_CEventList_updateSfxEntries_FUN_004b0db0
-    Line 35: use of undeclared identifier 'stack0xfffffe90'; did you mean 'in_stack_fffffe90'?
-  sound_sndmain.cpp_testSoundFile_FUN_005ad3b0
-    Line 22: use of undeclared identifier 'stack0xfffffe90'; did you mean 'in_stack_fffffe90'?
-  core_sound.cpp_CSound_getSoundDuration_FUN_005b3ba0
-    Line 18: use of undeclared identifier 'stack0xfffffea0'; did you mean 'in_stack_fffffea0'?
   core_path.cpp_CPathMap_findPathToDestination_FUN_00547320
     Line 223: use of undeclared identifier 'stack0xfffffee8'; did you mean 'in_stack_fffffee8'?
   core_dmodel.cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0
@@ -1263,8 +1589,6 @@ CATEGORY: undeclared_identifier (473 errors)
     Line 101: use of undeclared identifier 'stack0xffffff7c'
   core_course.cpp_CCourse_interpolate_FUN_004427a0
     Line 112: use of undeclared identifier 'stack0xffffff90'
-  shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0
-    Line 30: use of undeclared identifier 'stack0xffffff90'
   sound_sndmain.cpp_nextMixingBuffer_FUN_005a59c0
     Line 85: use of undeclared identifier 'stack0xffffff94'; did you mean 'in_stack_ffffff94'?
   core_bugs.cpp_CBugs_findNextSwarmVertex_FUN_004270f0
@@ -1296,7 +1620,7 @@ CATEGORY: undeclared_identifier (473 errors)
   core_frankgen.cpp_CFrankenstienMachine_renderOpaque_FUN_004d1f70
     Line 27: use of undeclared identifier 'stack0xffffffcc'
   shape_superopt.cpp_distancePointToSegmentXY_FUN_005d64a0
-    Line 24: use of undeclared identifier 'stack0xffffffcc'
+    Line 23: use of undeclared identifier 'stack0xffffffcc'
   core_dtrace.cpp_CDemonRaytrace_restoreShadowBitFromBuffer_FUN_0049a280
     Line 30: use of undeclared identifier 'stack0xffffffd0'
   core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0
@@ -1327,8 +1651,6 @@ CATEGORY: undeclared_identifier (473 errors)
     Line 55: use of undeclared identifier 'stack0xffffffec'
   engine_matrix.c_normalizeVector3DFixed_FUN_0050d970
     Line 29: use of undeclared identifier 'stack0xffffffec'
-  core_weapon.cpp_CWeapon_onDropped_FUN_005ee3f0
-    Line 21: use of undeclared identifier 'stack0xffffffec'; did you mean 'in_stack_ffffffec'?
   support_trisock.cpp_acceptConnection_FUN_005e1d80
     Line 29: use of undeclared identifier 'stack0xfffffff0'
   support_trisock.cpp_getSocketName_FUN_005e1df0
@@ -1345,9 +1667,11 @@ CATEGORY: undeclared_identifier (473 errors)
     Line 23: use of undeclared identifier 'undefined3'
   engine_colquant.c_computeBoxStatistics_FUN_00441260
     Line 124: use of undeclared identifier 'undefined5'
+  sound_sndmain.cpp_CSfxSlot_seek_FUN_005a8390
+    Line 26: use of undeclared identifier 'undefined6'
 
 ====================================================================================================
-CATEGORY: incompatible_types (355 errors)
+CATEGORY: incompatible_types (331 errors)
 ====================================================================================================
 
   engine_fileio.cpp_CCheckOutList_add_FUN_004b2d00
@@ -1684,28 +2008,14 @@ CATEGORY: incompatible_types (355 errors)
     Line 1239: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0
     Line 168: assigning to 'ushort *' (aka 'unsigned short *') from incompatible type 'void *'
-  sound_sndmain.cpp_convertMixBufToOutput_FUN_005a5b80
-    Line 19: assigning to 'ushort *' (aka 'unsigned short *') from incompatible type 'void *'
   cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_0054b190
     Line 40: assigning to 'void **' from incompatible type 'void *'
   cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_0054b690
     Line 59: assigning to 'void **' from incompatible type 'void *'
   shape_quantize.cpp_CBitmap_ctor_FUN_00556a00
     Line 65: assigning to 'void **' from incompatible type 'void *'
-  shape_meshlod.cpp_CLodMesh_findClosestFaceToSamplePoint_FUN_00518300
-    Line 35: incompatible integer to pointer conversion assigning to 'CLodFace *' from 'uint32_t' (aka 'unsigned int')
-  shape_meshlod.cpp_CLodMesh_processGridCell_FUN_0051a030
-    Line 45: incompatible integer to pointer conversion assigning to 'CLodFace *' from 'uint32_t' (aka 'unsigned int')
-  sound_sndmain.cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580
-    Line 20: incompatible integer to pointer conversion assigning to 'CSampleInfo *' from 'uint32_t' (aka 'unsigned int')
-  sound_sndmain.cpp_CSampleInfo_normalizePlaybackPos_FUN_005a86f0
-    Line 34: incompatible integer to pointer conversion assigning to 'CSampleInfo *' from 'uint32_t' (aka 'unsigned int')
-  shape_superopt.cpp_CPoly_containsPoint2D_FUN_005d0340
-    Line 120: incompatible integer to pointer conversion assigning to 'CVector2d *' from 'uint32_t' (aka 'unsigned int')
   core_texlist.cpp_CTextureList_buildMasterTextureList_FUN_005dc2a0
     Line 32: incompatible integer to pointer conversion assigning to 'HANDLE' (aka 'void *') from 'long'
-  sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0
-    Line 147: incompatible integer to pointer conversion assigning to 'SStereoBuffers *' from 'uint32_t' (aka 'unsigned int')
   engine_clipper.c_clipPolygonToViewFrustum_FUN_004366e0
     Line 172: incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'SRenderVertex *'
   core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10
@@ -1738,20 +2048,14 @@ CATEGORY: incompatible_types (355 errors)
     Line 33: incompatible pointer types assigning to '_FILE *' from 'FILE *' (aka '_IO_FILE *')
   core_frankgen.cpp_CFrankenstienMachine_getPropertyList_FUN_004d2500
     Line 17: invalid conversion specifier '.' [-Werror,-Wformat-invalid-specifier]
-  shape_design.c_mergeAdjacentPolygons_FUN_00462b70
-    Line 140: invalid operands to binary expression ('double' and 'int')
-  shape_design.c_sampleAndFilterPixel_FUN_0046ae20
-    Line 45: invalid operands to binary expression ('double' and 'int')
   shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
-    Line 81: invalid operands to binary expression ('double' and 'int')
+    Line 348: invalid operands to binary expression ('double' and 'int')
   shape_superopt.cpp_CObj_weldVertices_FUN_005d4160
     Line 56: invalid operands to binary expression ('double' and 'int')
   shape_superopt.cpp_CVec_dot_FUN_005d82e0
     Line 14: invalid operands to binary expression ('double' and 'int')
   shape_superopt.cpp_CVec_getLength_FUN_005d8200
     Line 20: invalid operands to binary expression ('double' and 'int')
-  shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0
-    Line 31: invalid operands to binary expression ('double' and 'int')
   sound_snddx.cpp_CDirectSoundDevice_setSfxPos_FUN_005af750
     Line 126: invalid operands to binary expression ('double' and 'int')
   core_sound.cpp_playSfxInternal_FUN_005b1fd0
@@ -1780,15 +2084,15 @@ CATEGORY: incompatible_types (355 errors)
     Line 85: no matching function for call to 'shape_memdbg_cpp_openFile_FUN_0050f7a0'
   shape_superopt.cpp_CComplexPolygon_splitToConvex_FUN_005c84c0
     Line 66: no matching function for call to 'shape_superopt_cpp_CComplexPolygon_processEdgeSubLoops_FUN_005c91e0'
-  sound_sndmain.cpp_CSfxSample_seek_FUN_005a65a0
-    Line 24: no matching function for call to 'sound_sndmain_cpp_CSampleInfo_normalizePlaybackPos_FUN_005a86f0'
+  sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0
+    Line 203: no matching function for call to 'sound_sndmain_cpp_mixResampleStereoToStereo_FUN_005a5fb0'
   sound_sndmain.cpp_getSfxSample_FUN_005a4c80
     Line 104: no matching function for call to 'sound_sndmain_cpp_parseWavFile_FUN_005a3fe0'
   sound_sndmain.cpp_loadStreamingSoundFile_FUN_005a5200
     Line 108: no matching function for call to 'sound_sndmain_cpp_parseWavFile_FUN_005a3fe0'
 
 ====================================================================================================
-CATEGORY: syntax_error (52 errors)
+CATEGORY: syntax_error (53 errors)
 ====================================================================================================
 
   core_dskybox.cpp_renderSkyDome_FUN_004901f0
@@ -1863,6 +2167,8 @@ CATEGORY: syntax_error (52 errors)
     Line 65: expected expression
   sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_005ae830
     Line 81: expected expression
+  sound_sndmain.cpp_CSfxSlot_seek_FUN_005a8390
+    Line 26: expected expression
   sound_sndwav.cpp_CWavInDevice_setMode_FUN_005b0f70
     Line 121: expected expression
   wincore_winrun.cpp_mainWindowProc_FUN_005f3150
@@ -1921,7 +2227,7 @@ CATEGORY: type_error (19 errors)
     Line 23: unknown type name 'undefined5'
 
 ====================================================================================================
-CATEGORY: lvalue_required (17 errors)
+CATEGORY: lvalue_required (16 errors)
 ====================================================================================================
 
   core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0
@@ -1934,8 +2240,6 @@ CATEGORY: lvalue_required (17 errors)
     Line 80: cannot take the address of an rvalue of type 'float'
   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
     Line 532: cannot take the address of an rvalue of type 'float'
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
-    Line 496: cannot take the address of an rvalue of type 'float'
   core_main.c_initializeGameSystems_FUN_00507a60
     Line 145: cannot take the address of an rvalue of type 'int'
   shape_design.c_complexPolygonReduction_FUN_00463b30

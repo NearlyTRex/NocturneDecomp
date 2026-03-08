@@ -1,90 +1,20 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 11,
-        "line": 33,
-        "message": "C-style cast from 'struct CLodVert *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 7,
-        "line": 37,
-        "message": "C-style cast from 'struct CLodVert *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 7,
-        "line": 43,
-        "message": "C-style cast from 'struct CLodVert *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 15,
-        "line": 51,
-        "message": "C-style cast from 'struct CLodVert *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 13,
-        "line": 58,
-        "message": "C-style cast from 'struct CLodVert *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 13,
-        "line": 65,
-        "message": "C-style cast from 'struct CLodVert *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 13,
-        "line": 70,
-        "message": "C-style cast from 'struct CLodVert *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 13,
-        "line": 77,
-        "message": "C-style cast from 'struct CLodVert *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 13,
-        "line": 82,
-        "message": "C-style cast from 'struct CLodVert *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 13,
-        "line": 87,
-        "message": "C-style cast from 'struct CLodVert *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 13,
-        "line": 97,
-        "message": "C-style cast from 'struct CLodVert *' to 'float' is not allowed"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 291,
-    "complexity_score": 161,
+    "complexity_score": 90,
     "cross_reference_count": 3,
     "function_call_count": 3,
     "global_count": 7,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 91,
-    "suspect_count": 6,
-    "suspect_types": [
-      "pointer_cast",
-      "stack_param"
-    ],
-    "total_lines": 382
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 90,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 381
   },
   "cross_references": [
     {
@@ -222,10 +152,10 @@
     "pcode_op_count": 1538
   },
   "stack_frame": {
-    "frame_size": 180,
+    "frame_size": 176,
     "local_size": 164,
     "param_offset": 4,
-    "param_size": 16,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -273,21 +203,21 @@
       {
         "is_param": true,
         "name": "this_ptr",
-        "offset": 8,
+        "offset": 4,
         "size": 4,
         "type": "CLodMesh *"
       },
       {
         "is_param": true,
         "name": "sample_point",
-        "offset": 12,
+        "offset": 8,
         "size": 4,
         "type": "SLodSamplePoint *"
       },
       {
         "is_param": true,
         "name": "face",
-        "offset": 16,
+        "offset": 12,
         "size": 4,
         "type": "CLodFace *"
       }
@@ -310,54 +240,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "CLodMesh *in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "pCVar5 = in_stack_00000004->vertex_data;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 21,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "local_38 = pCVar5 + *(int *)((int)&sample_point->distance_to_triangle + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 28,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "(float)this_ptr->tri_count * *(float *)((int)&sample_point[3].distance_to_triangle + 4) +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 42,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "((float)this_ptr->tri_count * *(float *)((int)&sample_point[2].distance_to_triangle + 4)",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 88,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "(in_stack_00000004,&local_80,(CLodFace *)sample_point);",
-      "type": "stack_param"
-    }
-  ]
+  "suspects": []
 }

@@ -24,7 +24,7 @@ void __cdecl sound_sndmain_cpp_pollAndMixSfx_FUN_005aca90(LPVOID *channel_buffer
   byte in_stack_ffffff68 [20];
   uint in_stack_ffffff7c;
   float *in_stack_ffffff80;
-  void *in_stack_ffffff84;
+  ushort *in_stack_ffffff84;
   uint uVar10;
   CSfxSlot *pCVar11;
   float fVar12;
@@ -91,7 +91,7 @@ void __cdecl sound_sndmain_cpp_pollAndMixSfx_FUN_005aca90(LPVOID *channel_buffer
             piVar1 = (int *)((int)g_ChannelPrimaryBuffers + iVar3);
             iVar3 = iVar3 + 4;
             iVar2 = iVar2 + 1;
-            in_stack_ffffff84 = (void *)0x5acbf4;
+            in_stack_ffffff84 = (ushort *)0x5acbf4;
             memset
                       ((void *)((g_NumMixBuffers + -1) * g_MixBufferSize * 4 + *piVar1),0,count);
           } while (iVar2 < g_AudioChannelCount);
@@ -134,7 +134,7 @@ void __cdecl sound_sndmain_cpp_pollAndMixSfx_FUN_005aca90(LPVOID *channel_buffer
           mix_buffer.channel_buffers[3] = (float *)in_stack_ffffff68._12_4_;
           mix_buffer.channel_buffers[4] = (float *)in_stack_ffffff68._16_4_;
           mix_buffer.channel_buffers[6] = in_stack_ffffff80;
-          mix_buffer.channel_buffers[7] = in_stack_ffffff84;
+          mix_buffer.channel_buffers[7] = (float *)in_stack_ffffff84;
           mix_buffer.num_output_samples = uVar10;
           mix_buffer.num_channels = (int)pCVar11;
           mix_buffer.output_sample_rate = (int)fVar12;
@@ -153,7 +153,7 @@ void __cdecl sound_sndmain_cpp_pollAndMixSfx_FUN_005aca90(LPVOID *channel_buffer
       if (0 < num_channels) {
         iVar5 = 0;
         do {
-          in_stack_ffffff84 = *(void **)((int)local_44 + iVar5 + 4);
+          in_stack_ffffff84 = *(ushort **)((int)local_44 + iVar5 + 4);
           in_stack_ffffff80 =
                (float *)(g_MixBufferWriteIndex * 4 + *(int *)((int)g_ChannelPrimaryBuffers + iVar5))
           ;

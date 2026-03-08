@@ -204,7 +204,7 @@ void __cdecl core_wateract_cpp_CWaterActor_setup_FUN_005ea9f0(CWaterActor *this_
       } while (iVar7 < this_ptr->primitive_count);
     }
   }
-  core_wateract_cpp_CWaterActor_FUN_005eafa0(this_ptr);
+  core_wateract_cpp_CWaterActor_updateWorldPositions_FUN_005eafa0(this_ptr);
   this_ptr->texture_frame = 0;
   this_ptr->texture_anim_accum = 0;
   return;

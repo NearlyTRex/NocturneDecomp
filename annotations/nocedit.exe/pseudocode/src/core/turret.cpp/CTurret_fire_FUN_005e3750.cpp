@@ -24,7 +24,8 @@ int __cdecl core_turret_cpp_CTurret_fire_FUN_005e3750(CTurret *this_ptr)
   float fStack_84;
   CVector3f CStack_80;
   CVector3f CStack_74;
-  CVector3f aCStack_68 [2];
+  CVector3f CStack_68;
+  CVector3f local_5c;
   float fStack_50;
   float fStack_4c;
   float fStack_48;
@@ -37,15 +38,14 @@ int __cdecl core_turret_cpp_CTurret_fire_FUN_005e3750(CTurret *this_ptr)
   float fStack_1c;
   float fStack_18;
   
-  pCVar1 = (CVector3f *)(*(((this_ptr->base).base.vtable._uc)->_uc).canWalk)((CCharacter *)this_ptr)
-  ;
+  pCVar1 = (*(((this_ptr->base).base.vtable._uw)->_uw).getMuzzlePoint)(&this_ptr->base,&local_5c);
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
             ((CDemonActor *)this_ptr,&CStack_a4,pCVar1);
-  aCStack_68[0].z = (this_ptr->base).bolt_velocity;
-  aCStack_68[0].x = 0.0;
-  aCStack_68[0].y = 0.0;
+  CStack_68.z = (this_ptr->base).bolt_velocity;
+  CStack_68.x = 0.0;
+  CStack_68.y = 0.0;
   core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
-            ((CDemonActor *)this_ptr,&CStack_38,aCStack_68);
+            ((CDemonActor *)this_ptr,&CStack_38,&CStack_68);
   CStack_98.x = CStack_a4.x + CStack_38.x;
   CStack_98.y = CStack_a4.y + CStack_38.y;
   CStack_98.z = CStack_a4.z + CStack_38.z;

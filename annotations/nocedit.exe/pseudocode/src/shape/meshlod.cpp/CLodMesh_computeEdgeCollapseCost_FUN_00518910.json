@@ -3,32 +3,14 @@
     "errors": [
       {
         "category": "incompatible_types",
-        "column": 22,
-        "line": 81,
-        "message": "invalid operands to binary expression ('double' and 'int')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 47,
-        "line": 347,
-        "message": "invalid operands to binary expression ('double' and 'int')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 36,
-        "line": 345,
-        "message": "no matching function for call to 'shape_meshlod_cpp_CLodMesh_computePointToFaceDistance_FUN_0051a400'"
-      },
-      {
-        "category": "incompatible_types",
         "column": 39,
-        "line": 349,
+        "line": 348,
         "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 373,
+        "line": 372,
         "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       }
     ],
@@ -37,13 +19,13 @@
   },
   "complexity": {
     "assembly_lines": 846,
-    "complexity_score": 726,
+    "complexity_score": 645,
     "cross_reference_count": 2,
     "function_call_count": 10,
     "global_count": 48,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 381,
-    "suspect_count": 32,
+    "pseudocode_lines": 380,
+    "suspect_count": 24,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
@@ -51,7 +33,7 @@
       "sub84_truncation",
       "unknown_field"
     ],
-    "total_lines": 1227
+    "total_lines": 1226
   },
   "cross_references": [
     {
@@ -939,7 +921,7 @@
       "line": 18,
       "match": "in_stack_fffffed8",
       "severity": "moderate",
-      "text": "double in_stack_fffffed8;",
+      "text": "int in_stack_fffffed8;",
       "type": "stack_param"
     },
     {
@@ -947,24 +929,8 @@
       "line": 74,
       "match": "in_stack_fffffed8",
       "severity": "moderate",
-      "text": "SUB84(in_stack_fffffed8,0));",
+      "text": "(this_ptr,local_58->vertex_idx_1,local_58->vertex_idx_2,in_stack_fffffed8);",
       "type": "stack_param"
-    },
-    {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 74,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "SUB84(in_stack_fffffed8,0));",
-      "type": "sub84_truncation"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 74,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "SUB84(in_stack_fffffed8,0));",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
@@ -1071,36 +1037,12 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 291,
-      "match": "in_stack_fffffed8",
-      "severity": "moderate",
-      "text": "in_stack_fffffed8 = (double)((0.75f * 1e+10) / (float)g_SamplePointCount);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 293,
-      "match": "in_stack_fffffed8",
-      "severity": "moderate",
-      "text": "(this_ptr->next_lod,in_stack_fffffed8);",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 297,
       "match": "(double *)((int)",
       "severity": "mild",
       "text": "pdVar1 = (double *)((int)g_SampleDistances + iVar10);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 299,
-      "match": "in_stack_fffffed8",
-      "severity": "moderate",
-      "text": "local_110 = *pdVar1 * in_stack_fffffed8 + local_110;",
-      "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
@@ -1119,32 +1061,8 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 340,
-      "match": "in_stack_fffffed8",
-      "severity": "moderate",
-      "text": "SUB84(in_stack_fffffed8,0));",
-      "type": "stack_param"
-    },
-    {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 340,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "SUB84(in_stack_fffffed8,0));",
-      "type": "sub84_truncation"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 340,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "SUB84(in_stack_fffffed8,0));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 341,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "if (local_8c < __BITCAST_DOUBLE(CONCAT44(uStack_114,local_118))) {",
@@ -1152,7 +1070,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 342,
+      "line": 341,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "local_108 = SUB84(local_8c,0);",
@@ -1160,7 +1078,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 342,
+      "line": 341,
       "match": "SUB84",
       "severity": "mild",
       "text": "local_108 = SUB84(local_8c,0);",
@@ -1168,15 +1086,15 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 353,
+      "line": 351,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "(float)__BITCAST_DOUBLE(CONCAT44(uStack_114,local_118)) + fVar2;",
+      "text": "fVar2 = local_34->weight * (float)__BITCAST_DOUBLE(CONCAT44(uStack_114,local_118)) + fVar2",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 366,
+      "line": 365,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_58->collapse_cost + 4) = local_110._4_4_;",
@@ -1184,7 +1102,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 366,
+      "line": 365,
       "match": "._4_4_",
       "severity": "mild",
       "text": "*(uint *)((int)&local_58->collapse_cost + 4) = local_110._4_4_;",

@@ -1,0 +1,149 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 67,
+    "complexity_score": 48,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 33,
+    "suspect_count": 1,
+    "suspect_types": [
+      "pointer_cast"
+    ],
+    "total_lines": 100
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005eafa0",
+    "address_range": [
+      [
+        "005eafa0",
+        "005eb03a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_wateract.cpp_CWaterActor_updateWorldPositions_FUN_005eafa0",
+    "signature": "void __cdecl core_wateract_cpp_CWaterActor_updateWorldPositions_FUN_005eafa0(CWaterActor *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00471fd0",
+      "is_variadic": false,
+      "name": "core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.473684210526316,
+    "instruction_count": 57,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 6,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 1,
+      "CBRANCH": 3,
+      "COPY": 99,
+      "FLOAT2FLOAT": 9,
+      "FLOAT_ADD": 3,
+      "INT_ADD": 32,
+      "INT_AND": 34,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 23,
+      "INT_LEFT": 2,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 4,
+      "INT_OR": 5,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 13,
+      "INT_SUB": 12,
+      "INT_XOR": 2,
+      "LOAD": 19,
+      "POPCOUNT": 11,
+      "RETURN": 1,
+      "STORE": 16
+    },
+    "pcode_op_count": 312
+  },
+  "stack_frame": {
+    "frame_size": 56,
+    "local_size": 52,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWaterActor *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 32,
+      "match": "(CVector3f *)((int)",
+      "severity": "mild",
+      "text": "pCVar2 = (CVector3f *)((int)(pCVar2 + 2) + 8);",
+      "type": "pointer_cast"
+    }
+  ]
+}

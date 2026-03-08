@@ -11,7 +11,6 @@ void __cdecl core_msnedit_cpp_CDemonMission_playSound_FUN_0053eb40(CDemonMission
 {
   int iVar1;
   uint sfx_handle;
-  float in_stack_fffffeb8;
   char local_144 [300];
   double local_18;
   
@@ -35,11 +34,10 @@ void __cdecl core_msnedit_cpp_CDemonMission_playSound_FUN_0053eb40(CDemonMission
       shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
                 (g_CEditorToolsPtr,local_144);
       do {
-        local_18 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(2,(uint)in_stack_fffffeb8);
-        in_stack_fffffeb8 = (float)local_18;
-        if (in_stack_fffffeb8 < 0.0) break;
+        local_18 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(sfx_handle,2);
+        if ((float)local_18 < 0.0) break;
         shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
-                  (g_CEditorToolsPtr,in_stack_fffffeb8,1.0);
+                  (g_CEditorToolsPtr,(float)local_18,1.0);
         iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_ESCAPE);
       } while (iVar1 == 0);
       shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);

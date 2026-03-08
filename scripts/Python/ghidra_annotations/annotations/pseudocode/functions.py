@@ -272,6 +272,82 @@ def extract_cpp_function_name(func_name):
         return function_part
 
 
+def _detect_format_attribute(params_str, func_name):
+    """Detect if a variadic function is printf/scanf-like and return the attribute string.
+
+    Args:
+        params_str: The parameter string (e.g. "char *format,...")
+        func_name: The function name for pattern matching
+
+    Returns:
+        Attribute string like ' __attribute__((format(printf, 1, 2)))' or empty string.
+    """
+    if '...' not in params_str:
+        return ''
+
+    # Split parameters and find the last named one before ...
+    params = []
+    depth = 0
+    current = ''
+    for ch in params_str:
+        if ch == '(':
+            depth += 1
+            current += ch
+        elif ch == ')':
+            depth -= 1
+            current += ch
+        elif ch == ',' and depth == 0:
+            params.append(current.strip())
+            current = ''
+        else:
+            current += ch
+    if current.strip():
+        params.append(current.strip())
+
+    # Find index of ... and the param before it
+    variadic_idx = None
+    for i, p in enumerate(params):
+        if p == '...':
+            variadic_idx = i
+            break
+    if variadic_idx is None or variadic_idx == 0:
+        return ''
+
+    format_param = params[variadic_idx - 1]
+
+    # Check if the format param is char *
+    if 'char *' not in format_param and 'char*' not in format_param:
+        return ''
+
+    # Extract the parameter name (last word)
+    param_parts = format_param.split()
+    param_name = param_parts[-1].lstrip('*') if param_parts else ''
+
+    # Determine format type from param name or function name
+    is_scanf = ('scanf' in func_name.lower() or
+                'scan' in param_name.lower())
+    is_printf = ('format' in param_name.lower() or
+                 'fmt' in param_name.lower() or
+                 'printf' in func_name.lower() or
+                 'print' in func_name.lower() or
+                 'log' in func_name.lower() or
+                 'error' in func_name.lower() or
+                 'trace' in func_name.lower() or
+                 'message' in func_name.lower() or
+                 'warning' in func_name.lower() or
+                 'sprintf' in func_name.lower())
+
+    if not is_scanf and not is_printf:
+        return ''
+
+    # Parameter index is 1-based, variadic_idx is the position of the format param
+    fmt_idx = variadic_idx  # 0-based index of format param, 1-based = variadic_idx
+    va_idx = fmt_idx + 1
+    fmt_type = 'scanf' if is_scanf else 'printf'
+
+    return ' __attribute__((format(%s, %d, %d)))' % (fmt_type, fmt_idx, va_idx)
+
+
 def generate_function_prototype(func_signature, original_func_name, cpp_func_name):
     """Generate a C function prototype from signature.
 
@@ -302,7 +378,8 @@ def generate_function_prototype(func_signature, original_func_name, cpp_func_nam
         return "// Invalid signature format for %s" % original_func_name
 
     params_str = func_signature[params_start:params_end].strip()
-    prototype = "%s %s(%s);" % (return_type, cpp_func_name, params_str)
+    format_attr = _detect_format_attribute(params_str, cpp_func_name)
+    prototype = "%s %s(%s)%s;" % (return_type, cpp_func_name, params_str, format_attr)
     return prototype
 
 

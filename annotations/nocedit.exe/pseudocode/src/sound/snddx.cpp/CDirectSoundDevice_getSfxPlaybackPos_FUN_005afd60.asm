@@ -4,8 +4,8 @@
 ; double __cdecl sound_snddx_cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_005afd60(CDirectSoundDevice *this_ptr,CSfxSlot *slot)
 ;
 ; Parameters:
-; CDirectSoundDevice * Stack[0x8]:4   this_ptr
-; CSfxSlot *       Stack[0xc]:4   slot
+; CDirectSoundDevice * Stack[0x4]:4   this_ptr
+; CSfxSlot *       Stack[0x8]:4   slot
 ; Local Variables:
 ; undefined1       Stack[-0x18]:1  local_18
 ; undefined1       Stack[-0x14]:1  local_14

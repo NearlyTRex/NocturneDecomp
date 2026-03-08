@@ -6,24 +6,27 @@
 
 #include "nocturne.h"
 
+/* WARNING: Variable defined which should be unmapped: local_20 */
+
 void __cdecl core_elephant_cpp_CElephantGun_process_FUN_004a7070(CElephantGun *this_ptr,float delta_time)
 
 {
   CVector3f *input_local_point;
-  float in_stack_0000000c;
-  CVector3f CStack_1c;
+  char local_res0;
+  CVector3f local_20;
+  CVector3f local_14;
   
   if (this_ptr->muzzle_flash_active != 0) {
     g_CDemonLightInstance.light_enabled_flag = 1;
     input_local_point =
-         (CVector3f *)(*(((this_ptr->base).base.vtable._uc)->_uc).canWalk)((CCharacter *)this_ptr);
+         (*(((this_ptr->base).base.vtable._uw)->_uw).getMuzzlePoint)(&this_ptr->base,&local_14);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-              ((CDemonActor *)this_ptr,&CStack_1c,input_local_point);
+              ((CDemonActor *)this_ptr,(CVector3f *)&local_20.z,input_local_point);
     g_CDemonLightInstance.volumetric_enabled = 0;
-    if ((float *)&stack0x00000000 != &g_CDemonLightInstance.base.base.rotation_matrix.m[1].y) {
-      g_CDemonLightInstance.base.base.position.f.x = CStack_1c.x;
-      g_CDemonLightInstance.base.base.position.f.y = CStack_1c.y;
-      g_CDemonLightInstance.base.base.position.f.z = CStack_1c.z;
+    if ((CVector3f *)&local_res0 != g_CDemonLightInstance.base.base.rotation_matrix.m + 1) {
+      g_CDemonLightInstance.base.base.position.f.x = local_20.z;
+      g_CDemonLightInstance.base.base.position.f.y = local_14.x;
+      g_CDemonLightInstance.base.base.position.f.z = local_14.y;
     }
     core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
               (&g_CDemonLightInstance.base.base.rotation_matrix,&(this_ptr->base).base.orient.vec);
@@ -33,7 +36,9 @@ void __cdecl core_elephant_cpp_CElephantGun_process_FUN_004a7070(CElephantGun *t
     g_CDemonLightInstance.antialiasing_enabled = 0;
     core_set_cpp_CDemonSet_addDynamicLight_FUN_0056d090(g_CDemonSetPtr,&g_CDemonLightInstance);
   }
+  local_20.y = delta_time;
+  local_20.x = (float)this_ptr;
   this_ptr->muzzle_flash_active = 0;
-  core_weapon_cpp_CWeapon_process_FUN_005ee110(&this_ptr->base,in_stack_0000000c);
+  core_weapon_cpp_CWeapon_process_FUN_005ee110(&this_ptr->base,delta_time);
   return;
 }

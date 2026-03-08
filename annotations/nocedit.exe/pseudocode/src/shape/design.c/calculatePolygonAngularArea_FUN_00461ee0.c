@@ -14,9 +14,7 @@ double __cdecl shape_design_c_calculatePolygonAngularArea_FUN_00461ee0(SShapeEdi
   float *pfVar3;
   byte bVar4;
   double dVar5;
-  float afStackY_2034 [2021];
-  uint in_stack_ffffff64;
-  uint uStack_98;
+  float afStackY_2034 [2020];
   double local_94;
   double local_8c;
   double local_84;
@@ -78,12 +76,7 @@ double __cdecl shape_design_c_calculatePolygonAngularArea_FUN_00461ee0(SShapeEdi
     shape_design_c_normalizeVertex_FUN_00461e60((CVector3f *)&local_94);
     shape_design_c_normalizeVertex_FUN_00461e60((CVector3f *)&local_7c);
     dVar5 = shape_design_c_clampedArccos_FUN_00461c50
-                      (__BITCAST_DOUBLE(CONCAT44(in_stack_ffffff64,
-                                        (int)((ulonglong)
-                                              (local_84 * local_6c +
-                                              local_94 * local_7c + local_8c * local_74) >> 0x20))));
-    in_stack_ffffff64 = SUB84(__BITCAST_UINT64(dVar5),0);
-    uStack_98 = (uint)((ulonglong)dVar5 >> 0x20);
+                      (local_84 * local_6c + local_94 * local_7c + local_8c * local_74);
     local_28 = dVar5 + local_28;
   }
   return local_28 * 57.295779513079999;

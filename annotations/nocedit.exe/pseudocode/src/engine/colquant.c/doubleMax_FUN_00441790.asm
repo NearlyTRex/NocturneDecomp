@@ -7,8 +7,7 @@
 ; double           Stack[0x4]:8   a
 ; double           Stack[0xc]:8   b
 ; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; double           Stack[-0x18]:8  local_18
 ; undefined4       Stack[-0x10]:4  local_10
 ; undefined4       Stack[-0xc]:4  local_c
 ;

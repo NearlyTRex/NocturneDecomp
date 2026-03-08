@@ -17,8 +17,6 @@ int __cdecl shape_design_c_polygonToolModeManager_FUN_00464c90(int input_paramet
   char *pcVar6;
   byte bVar7;
   double dVar8;
-  SShapeEditorPolygon *normal2_ptr;
-  ulonglong in_stack_ffffff28;
   char local_b8 [80];
   char local_68 [80];
   int local_18;
@@ -166,19 +164,18 @@ int __cdecl shape_design_c_polygonToolModeManager_FUN_00464c90(int input_paramet
         do {
           cVar1 = *pcVar5;
           *pcVar6 = cVar1;
-          normal2_ptr = (SShapeEditorPolygon *)in_stack_ffffff28;
           if (cVar1 == '\0') break;
           cVar1 = pcVar5[1];
           pcVar5 = pcVar5 + 2;
           pcVar6[1] = cVar1;
-          normal2_ptr = (SShapeEditorPolygon *)in_stack_ffffff28;
           pcVar6 = pcVar6 + 2;
         } while (cVar1 != '\0');
         engine_2d_c_drawTextColor_FUN_00402430(local_b8,0,g_WindowHeight + -0x42);
         local_18 = iVar2;
         if ((g_PolygonToolMode == 1) && (g_SecondaryPolygonIndex != -1)) {
           dVar8 = shape_design_c_calculateAngleBetweenPolygonNormals_FUN_00461cb0
-                            (g_ModelPolygonData + iVar2,normal2_ptr);
+                            (g_ModelPolygonData + g_SecondaryPolygonIndex,g_ModelPolygonData + iVar2
+                            );
           _sprintf(local_b8,"Angle between polygon normals : %8.6lf",dVar8);
           engine_2d_c_drawTextColor_FUN_00402430(local_b8,0,g_WindowHeight + -0x58);
         }

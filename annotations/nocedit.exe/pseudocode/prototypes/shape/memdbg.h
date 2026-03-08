@@ -41,11 +41,11 @@ void __cdecl SMemHead::checkMemory(SMemHead *header,char *filename,int line_numb
 
 // Original: shape_memdbg.cpp_traceMemory_FUN_0050f150
 // Address: 0050f150
-void __cdecl traceMemory(char *format,...);
+void __cdecl traceMemory(char *format,...) __attribute__((format(printf, 1, 2)));
 
 // Original: shape_memdbg.cpp_traceFile_FUN_0050f180
 // Address: 0050f180
-void __cdecl traceFile(char *format,...);
+void __cdecl traceFile(char *format,...) __attribute__((format(printf, 1, 2)));
 
 // Original: shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
 // Address: 0050f1b0

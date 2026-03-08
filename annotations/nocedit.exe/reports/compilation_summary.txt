@@ -5,30 +5,32 @@ FUNCTION COMPILATION SUMMARY
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6484
-Successful: 5791 (89.3%)
-Failed: 693
+Successful: 5696 (87.8%)
+Failed: 788
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                           1370
-  format_error                     579
-  undeclared_identifier            473
-  incompatible_types               355
-  syntax_error                      52
+  other                           1501
+  format_error                     803
+  undeclared_identifier            436
+  incompatible_types               331
+  syntax_error                      53
   missing_member                    22
   type_error                        19
-  lvalue_required                   17
+  lvalue_required                   16
   pointer_arithmetic                 4
   pointer_precision                  2
 
 ====================================================================================================
-CATEGORY: other (1370 errors)
+CATEGORY: other (1501 errors)
 ====================================================================================================
 
   core_imp.cpp_CImp_process_FUN_004f9c30
     Line 271: C-style cast from 'CDemonActor *' to 'float' is not allowed...
   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
     Line 54: C-style cast from 'CDemonCamera *' to 'float' is not allowed...
+  core_elephant.cpp_CElephantGun_process_FUN_004a7070
+    Line 40: C-style cast from 'CElephantGun *' to 'float' is not allowed...
   core_gabriela.cpp_CGabriella_processMotionEvents_FUN_004d4890
     Line 82: C-style cast from 'CGabriella *' to 'float' is not allowed...
   core_set.cpp_CDemonSet_buildDisplayList_FUN_0056fbd0
@@ -73,8 +75,6 @@ CATEGORY: other (1370 errors)
     Line 2483: C-style cast from 'struct CDemonActor *' to 'float' is not allowed...
   core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00573470
     Line 174: C-style cast from 'struct CKeyFramedModelInstance *' to 'float' is not allowed...
-  shape_meshlod.cpp_CLodMesh_computePointToFaceDistance_FUN_0051a400
-    Line 33: C-style cast from 'struct CLodVert *' to 'float' is not allowed...
   core_netgame.cpp_CNetGame_runLobby_FUN_00541390
     Line 68: C-style cast from 'uint' (aka 'unsigned int') to 'uchar[4]' (aka 'unsigned char[...
   core_setdir.cpp_CZThumb_testCameraVisibility_FUN_005750a0
@@ -86,10 +86,10 @@ CATEGORY: other (1370 errors)
   core_script.cpp_CScript_loadLineToBuffer_FUN_00566230
     Line 21: assigning to 'char *' from 'undefined1 *' (aka 'unsigned char *') converts betwe...
 
-  ... and 259 more errors
+  ... and 332 more errors
 
 ====================================================================================================
-CATEGORY: format_error (579 errors)
+CATEGORY: format_error (803 errors)
 ====================================================================================================
 
   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50
@@ -108,55 +108,55 @@ CATEGORY: format_error (579 errors)
     Line 89: format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror...
   core_setedit.cpp_CDemonSet_writeFileDependencies_FUN_00584e70
     Line 64: format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror...
+  core_setutil.cpp_C3DSCamera_apply_FUN_00585870
+    Line 25: format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror...
   core_setutil.cpp_C3DSCamera_exportS3D_FUN_00586190
     Line 20: format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror...
   core_setutil.cpp_C3DSCamera_importS3D_FUN_00585ff0
     Line 19: format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror...
   core_setutil.cpp_C3DSCamera_load_FUN_00585420
     Line 22: format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror...
+  core_baron.cpp_CBaron_process_FUN_00412e80
+    Line 182: format specifies type 'char *' but the argument has type 'CBaron *' [-Werror,-Wf...
+  core_batcreat.cpp_CBatCreature_process_FUN_00415470
+    Line 316: format specifies type 'char *' but the argument has type 'CBatCreature *' [-Werr...
+  core_batman.cpp_CBatman_process_FUN_00416870
+    Line 421: format specifies type 'char *' but the argument has type 'CBatman *' [-Werror,-W...
+  core_biggs.cpp_CBiggs_process_FUN_00418700
+    Line 71: format specifies type 'char *' but the argument has type 'CBiggs *' [-Werror,-Wf...
+  core_bodypart.cpp_CBodyPart_renderBackground_FUN_00419610
+    Line 25: format specifies type 'char *' but the argument has type 'CBodyPart *' [-Werror,...
+  core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90
+    Line 269: format specifies type 'char *' but the argument has type 'CBoneGuy *' [-Werror,-...
+  core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_0041cc40
+    Line 57: format specifies type 'char *' but the argument has type 'CBoneGuy *' [-Werror,-...
+  core_bugs.cpp_CBugs_setSwarmTarget_FUN_00427400
+    Line 51: format specifies type 'char *' but the argument has type 'CBugs *' [-Werror,-Wfo...
+  core_charactr.cpp_CCharacter_applyGesture_FUN_0042d3d0
+    Line 22: format specifies type 'char *' but the argument has type 'CCharacter *' [-Werror...
+  core_charactr.cpp_CCharacter_applyLookAt_FUN_0042dcd0
+    Line 31: format specifies type 'char *' but the argument has type 'CCharacter *' [-Werror...
+  core_charactr.cpp_CCharacter_followActor_FUN_0042c5f0
+    Line 28: format specifies type 'char *' but the argument has type 'CCharacter *' [-Werror...
+  core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0
+    Line 150: format specifies type 'char *' but the argument has type 'CCharacter *' [-Werror...
+  core_charactr.cpp_CCharacter_processWalking_FUN_0042ca70
+    Line 64: format specifies type 'char *' but the argument has type 'CCharacter *' [-Werror...
+  core_charactr.cpp_CCharacter_setup_FUN_00428140
+    Line 47: format specifies type 'char *' but the argument has type 'CCharacter *' [-Werror...
+  core_lightgun.cpp_CLightGun_fire_FUN_00505c70
+    Line 173: format specifies type 'char *' but the argument has type 'CCharacter *' [-Werror...
   core_script.cpp_parseBodyPartMask_FUN_00559730
     Line 40: format specifies type 'char *' but the argument has type 'CCharacter *' [-Werror...
+  engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3920
+    Line 53: format specifies type 'char *' but the argument has type 'CCheckOutItem *' [-Wer...
   engine_fileio.cpp_CCheckOutList_parse_FUN_004b2a60
     Line 30: format specifies type 'char *' but the argument has type 'CCheckOutItem *' [-Wer...
-  core_cloth.cpp_CCloth_addFilesToExtract_FUN_0043e0a0
-    Line 12: format specifies type 'char *' but the argument has type 'CCloth *' [-Werror,-Wf...
-  core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0
-    Line 84: format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werro...
-  core_actor.cpp_CDemonActor_save_FUN_0040af30
-    Line 24: format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werro...
-  core_inv.cpp_CInventory_saveItems_FUN_004ff3b0
-    Line 24: format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werro...
-  core_msnedit.cpp_CDemonMission_enemyRandomizer_FUN_005379e0
-    Line 121: format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werro...
-  core_msnedit.cpp_CDemonMission_showDifficultyStats_FUN_0053d3b0
-    Line 67: format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werro...
-  core_msnedit.cpp_CDemonMission_showSoundFilesInMission_FUN_0053ec80
-    Line 40: format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werro...
-  core_msnedit.cpp_buildActorClassHierarchy_FUN_00537330
-    Line 36: format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werro...
-  core_msnedit.cpp_showEditorHelpScreen_FUN_00535e70
-    Line 171: format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werro...
-  core_script.cpp_CScript_browseEventXRefs_FUN_005677a0
-    Line 104: format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werro...
-  core_script.cpp_writeActorReference_FUN_005607e0
-    Line 16: format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werro...
-  core_script.cpp_getActor_FUN_005594e0
-    Line 78: format specifies type 'char *' but the argument has type 'CDemonActorType *' [-W...
-  core_door.cpp_CDoor_setup_FUN_0047fc70
-    Line 18: format specifies type 'char *' but the argument has type 'CDoor *' [-Werror,-Wfo...
-  engine_fileio.cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030
-    Line 66: format specifies type 'char *' but the argument has type 'CFileFinder *' [-Werro...
-  core_anvil.cpp_CAnvil_addFilesToExtract_FUN_00412090
-    Line 17: format specifies type 'char *' but the argument has type 'CKeyFramedModel *' [-W...
-  core_battery.cpp_CBattery_addFilesToExtract_FUN_00418110
-    Line 17: format specifies type 'char *' but the argument has type 'CKeyFramedModel *' [-W...
-  core_boxactor.cpp_CBoxActor_addFilesToExtract_FUN_00422900
-    Line 16: format specifies type 'char *' but the argument has type 'CKeyFramedModel *' [-W...
 
-  ... and 142 more errors
+  ... and 239 more errors
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (473 errors)
+CATEGORY: undeclared_identifier (436 errors)
 ====================================================================================================
 
   core_actor.cpp_adjustIndentationLevel_FUN_0040aee0
@@ -201,10 +201,6 @@ CATEGORY: undeclared_identifier (473 errors)
     Line 141: use of undeclared identifier 'SUB14'...
   core_script.cpp_CScript_step_FUN_0055a810
     Line 1539: use of undeclared identifier 'SUB14'...
-  sound_sndmain.cpp_mixResampleMonoToStereo_FUN_005a5e70
-    Line 39: use of undeclared identifier '_in_stack_00000010'; did you mean 'in_stack_000000...
-  sound_sndmain.cpp_mixResampleStereoToStereo_FUN_005a5fb0
-    Line 39: use of undeclared identifier '_in_stack_00000010'; did you mean 'in_stack_000000...
   core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0
     Line 95: use of undeclared identifier '_local_1a4'; did you mean 'local_1a4'?...
   core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520
@@ -219,11 +215,15 @@ CATEGORY: undeclared_identifier (473 errors)
     Line 155: use of undeclared identifier 'code'...
   core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50
     Line 55: use of undeclared identifier 'code'...
+  core_curtain.cpp_CCurtain_process_FUN_0044a920
+    Line 122: use of undeclared identifier 'code'...
+  core_dcube.cpp_CDemonCube_rotateVertices_FUN_00457650
+    Line 78: use of undeclared identifier 'code'...
 
-  ... and 164 more errors
+  ... and 156 more errors
 
 ====================================================================================================
-CATEGORY: incompatible_types (355 errors)
+CATEGORY: incompatible_types (331 errors)
 ====================================================================================================
 
   engine_fileio.cpp_CCheckOutList_add_FUN_004b2d00
@@ -287,10 +287,10 @@ CATEGORY: incompatible_types (355 errors)
   shape_superopt.cpp_CObj_allocatePolygons_FUN_005d2320
     Line 22: assigning to 'CPoly *' from incompatible type 'void *'...
 
-  ... and 188 more errors
+  ... and 178 more errors
 
 ====================================================================================================
-CATEGORY: syntax_error (52 errors)
+CATEGORY: syntax_error (53 errors)
 ====================================================================================================
 
   core_dskybox.cpp_renderSkyDome_FUN_004901f0
@@ -354,7 +354,7 @@ CATEGORY: syntax_error (52 errors)
   shape_superopt.cpp_CObj_saveVertexPositionsWithFlag_FUN_005d37b0
     Line 28: expected expression...
 
-  ... and 8 more errors
+  ... and 9 more errors
 
 ====================================================================================================
 CATEGORY: missing_member (22 errors)
@@ -409,7 +409,7 @@ CATEGORY: type_error (19 errors)
     Line 23: unknown type name 'undefined5'...
 
 ====================================================================================================
-CATEGORY: lvalue_required (17 errors)
+CATEGORY: lvalue_required (16 errors)
 ====================================================================================================
 
   core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0
@@ -422,8 +422,6 @@ CATEGORY: lvalue_required (17 errors)
     Line 80: cannot take the address of an rvalue of type 'float'...
   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
     Line 532: cannot take the address of an rvalue of type 'float'...
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
-    Line 496: cannot take the address of an rvalue of type 'float'...
   core_main.c_initializeGameSystems_FUN_00507a60
     Line 145: cannot take the address of an rvalue of type 'int'...
   shape_design.c_complexPolygonReduction_FUN_00463b30
@@ -449,8 +447,8 @@ CATEGORY: pointer_precision (2 errors)
 COMPILATION VS SUSPECT PATTERNS
 ====================================================================================================
 
-Average suspects in successfully compiled functions: 2.00
-Average suspects in failed compilations: 10.22
+Average suspects in successfully compiled functions: 1.96
+Average suspects in failed compilations: 9.16
 
-Functions that compile but have suspect patterns: 1655
+Functions that compile but have suspect patterns: 1592
 (These may have runtime issues even though syntax is valid)

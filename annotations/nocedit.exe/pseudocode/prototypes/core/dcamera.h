@@ -189,7 +189,7 @@ void __cdecl CDemonCamera::blurCoronaBufferAndClearEdges(CDemonCamera *this_ptr)
 
 // Original: core_dcamera.cpp_log2Custom_FUN_00450a90
 // Address: 00450a90
-double __watcallRegister log2Custom(void);
+double __cdecl log2Custom(double val);
 
 // Original: core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0
 // Address: 00450ac0

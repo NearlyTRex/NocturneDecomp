@@ -1,0 +1,90 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 8,
+    "complexity_score": 4,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 4,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 12
+  },
+  "cross_references": [
+    {
+      "addr": "005da870",
+      "from_addr": "005da8a4",
+      "name": "core_teleport.cpp_CTeleportDest_processInEditor_FUN_005da870",
+      "type": "DATA"
+    }
+  ],
+  "function": {
+    "address": "005da850",
+    "address_range": [
+      [
+        "005da850",
+        "005da868"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_teleport.cpp_matchesTeleportDestination_FUN_005da850",
+    "signature": "int __cdecl core_teleport_cpp_matchesTeleportDestination_FUN_005da850(CTeleportDest *dest,CTeleport *candidate)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.571428571428571,
+    "instruction_count": 7,
+    "opcode_distribution": {
+      "COPY": 7,
+      "INT_ADD": 4,
+      "INT_AND": 5,
+      "INT_EQUAL": 4,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SLESS": 2,
+      "INT_SUB": 1,
+      "LOAD": 4,
+      "POPCOUNT": 2,
+      "RETURN": 1
+    },
+    "pcode_op_count": 32
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "dest",
+        "offset": 4,
+        "size": 4,
+        "type": "CTeleportDest *"
+      },
+      {
+        "is_param": true,
+        "name": "candidate",
+        "offset": 8,
+        "size": 4,
+        "type": "CTeleport *"
+      }
+    ]
+  },
+  "suspects": []
+}

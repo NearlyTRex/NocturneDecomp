@@ -1,23 +1,35 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 54,
+        "line": 26,
+        "message": "use of undeclared identifier 'undefined6'"
+      },
+      {
+        "category": "syntax_error",
+        "column": 66,
+        "line": 26,
+        "message": "expected expression"
+      }
+    ],
+    "success": false,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 180,
+    "complexity_score": 125,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 35,
-    "suspect_count": 12,
+    "suspect_count": 7,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
-      "stack_param",
-      "sub84_truncation",
+      "undefined_ptr_cast",
       "warning_inlined_function"
     ],
     "total_lines": 122
@@ -61,7 +73,7 @@
     {
       "addr": "005a86f0",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_CSampleInfo_normalizePlaybackPos_FUN_005a86f0"
+      "name": "sound_sndmain.cpp_CSfxSample_normalizePlaybackPos_FUN_005a86f0"
     },
     {
       "addr": "005a65a0",
@@ -163,60 +175,20 @@
       "type": "warning_inlined_function"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_ffffffe4",
-      "severity": "moderate",
-      "text": "uint in_stack_ffffffe4;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_ffffffe4",
-      "severity": "moderate",
-      "text": "*(double *)((int)&(this_ptr->options).trigger_time + 4),0,in_stack_ffffffe4);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 18,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "*(double *)((int)&(this_ptr->options).trigger_time + 4),0,in_stack_ffffffe4);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 23,
-      "match": "CONCAT44",
+      "line": 17,
+      "match": "CONCAT26",
       "severity": "mild",
-      "text": "__BITCAST_DOUBLE(CONCAT44((this_ptr->options).trigger_id,",
+      "text": "__BITCAST_DOUBLE(CONCAT26((short)((uint)*(uint *)",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 24,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&(this_ptr->options).trigger_time + 4))),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 25,
-      "match": "SUB84(",
+      "description": "Cast to undefined pointer type",
+      "line": 19,
+      "match": "(undefined6 *)",
       "severity": "moderate",
-      "text": "SUB84(__BITCAST_UINT64(dVar1),0),(uint)((ulonglong)dVar1 >> 0x20));",
-      "type": "sub84_truncation"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 25,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "SUB84(__BITCAST_UINT64(dVar1),0),(uint)((ulonglong)dVar1 >> 0x20));",
-      "type": "decompiler_intrinsic"
+      "text": "0x10),*(undefined6 *)&(this_ptr->options).trigger_time))",
+      "type": "undefined_ptr_cast"
     },
     {
       "description": "Complex pointer cast",

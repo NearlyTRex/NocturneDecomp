@@ -22,7 +22,8 @@ void __cdecl shape_meshlod_cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910(CLo
   CLodFace *pCVar11;
   float *pfVar12;
   int iVar13;
-  double in_stack_fffffed8;
+  int in_stack_fffffed8;
+  double max_search_radius;
   uint local_118;
   uint uStack_114;
   ulonglong local_110;
@@ -64,7 +65,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910(CLo
   int local_40;
   int local_3c;
   int local_38;
-  CLodMesh *local_34;
+  SLodSamplePoint *local_34;
   CLodEdge *local_30;
   int local_2c;
   int local_28;
@@ -77,8 +78,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910(CLo
   local_58->collapse_cost = 9.9999999999999997e+34;
   local_58->needs_recalc_flag = 0;
   iVar3 = shape_meshlod_cpp_CLodMesh_validateEdgeCollapse_FUN_00518490
-                    (this_ptr,local_58->vertex_idx_1,local_58->vertex_idx_2,
-                     SUB84(in_stack_fffffed8,0));
+                    (this_ptr,local_58->vertex_idx_1,local_58->vertex_idx_2,in_stack_fffffed8);
   if (iVar3 == edge_index) {
     iVar3 = shape_meshlod_cpp_CLodMesh_checkEdgeCollapseAngle_FUN_00519480
                       (this_ptr,edge_index,local_58->vertex_idx_1);
@@ -295,15 +295,15 @@ LAB_0051919d:
               }
               g_SamplePointCount = local_54;
             }
-            in_stack_fffffed8 = (double)((0.75f * 1e+10) / (float)g_SamplePointCount);
+            max_search_radius = (double)((0.75f * 1e+10) / (float)g_SamplePointCount);
             shape_meshlod_cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
-                      (this_ptr->next_lod,in_stack_fffffed8);
+                      (this_ptr->next_lod,max_search_radius);
             if (0 < g_SamplePointCount) {
               iVar10 = 0;
               do {
                 pdVar1 = (double *)((int)g_SampleDistances + iVar10);
                 iVar10 = iVar10 + 8;
-                local_110 = *pdVar1 * in_stack_fffffed8 + local_110;
+                local_110 = *pdVar1 * max_search_radius + local_110;
               } while (iVar10 < g_SamplePointCount * 8);
             }
             if (local_58->collapse_cost < local_110) goto LAB_00518f71;
@@ -332,10 +332,10 @@ LAB_0051919d:
               if (0 < this_ptr->sample_point_count) {
                 local_4c = 0;
                 do {
-                  local_34 = (CLodMesh *)
+                  local_34 = (SLodSamplePoint *)
                              ((int)&(this_ptr->sample_points_ptr->position).x + local_4c);
                   if (g_LodTempFaceStamp ==
-                      this_ptr->tri_data[(int)local_34->tri_data].affected_by_edge_stamp) {
+                      this_ptr->tri_data[local_34->closest_triangle_idx].affected_by_edge_stamp) {
                     local_118 = 0x39a08ce9;
                     uStack_114 = 0x46293e59;
                     iVar10 = 0;
@@ -343,8 +343,7 @@ LAB_0051919d:
                       pCVar11 = g_TempNeighborFaces;
                       do {
                         local_8c = shape_meshlod_cpp_CLodMesh_computePointToFaceDistance_FUN_0051a400
-                                             (local_34,(SLodSamplePoint *)pCVar11,
-                                              SUB84(in_stack_fffffed8,0));
+                                             (this_ptr,local_34,pCVar11);
                         if (local_8c < __BITCAST_DOUBLE(CONCAT44(uStack_114,local_118))) {
                           local_108 = SUB84(local_8c,0);
                           local_118 = local_108;
@@ -356,8 +355,8 @@ LAB_0051919d:
                       } while (iVar10 < iVar3);
                     }
                     local_100 = local_100 + 1;
-                    fVar2 = (float)local_34->active_attribute_count *
-                            (float)__BITCAST_DOUBLE(CONCAT44(uStack_114,local_118)) + fVar2;
+                    fVar2 = local_34->weight * (float)__BITCAST_DOUBLE(CONCAT44(uStack_114,local_118)) + fVar2
+                    ;
                   }
                   local_4c = local_4c + 0x1c;
                   local_40 = local_40 + 1;

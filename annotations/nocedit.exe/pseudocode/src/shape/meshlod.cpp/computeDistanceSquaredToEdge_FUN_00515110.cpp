@@ -13,13 +13,12 @@ double __cdecl shape_meshlod_cpp_computeDistanceSquaredToEdge_FUN_00515110(CVect
   float fVar2;
   float fVar3;
   CVector3f *pCVar4;
-  CVector3f *in_stack_00000004;
   CVector3f local_24 [2];
   
   pCVar4 = shape_meshlod_cpp_computeClosestPointOnEdge_FUN_00514f90
-                     (local_24,in_stack_00000004,query_point,edge_vertex_0);
-  fVar1 = in_stack_00000004->x - pCVar4->x;
-  fVar3 = in_stack_00000004->y - pCVar4->y;
-  fVar2 = in_stack_00000004->z - pCVar4->z;
+                     (local_24,query_point,edge_vertex_0,edge_vertex_1);
+  fVar1 = query_point->x - pCVar4->x;
+  fVar3 = query_point->y - pCVar4->y;
+  fVar2 = query_point->z - pCVar4->z;
   return (double)(fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1);
 }

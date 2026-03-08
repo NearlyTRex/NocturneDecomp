@@ -4,8 +4,8 @@
 ; double __cdecl shape_design_c_calculateAngleBetweenPolygonNormals_FUN_00461cb0(SShapeEditorPolygon *normal1_ptr,SShapeEditorPolygon *normal2_ptr)
 ;
 ; Parameters:
-; SShapeEditorPolygon * Stack[0x8]:4   normal1_ptr
-; SShapeEditorPolygon * Stack[0xc]:4   normal2_ptr
+; SShapeEditorPolygon * Stack[0x4]:4   normal1_ptr
+; SShapeEditorPolygon * Stack[0x8]:4   normal2_ptr
 ; Local Variables:
 ; undefined8       Stack[-0x28]:8  local_28
 ; undefined8       Stack[-0x20]:8  local_20

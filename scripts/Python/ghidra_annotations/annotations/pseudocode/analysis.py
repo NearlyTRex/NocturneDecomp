@@ -3175,6 +3175,152 @@ def generate_vtable_union_mismatch_report(pseudocode_src_dir, output_path):
         log_info("Failed to write vtable union mismatch report: %s" % str(e))
 
 
+def generate_double_usage_report(functions, output_path):
+    """Generate report on functions that return double or take double parameters.
+
+    These functions use the Watcom EAX:EDX convention for 64-bit values,
+    which can cause decompiler artifacts (SUB84/CONCAT44/._0_4_/._4_4_ splits).
+    This report helps identify functions that may need _SPLIT_DOUBLE typing
+    or custom storage fixes.
+
+    Args:
+        functions: List of function data dicts from load_function_data()
+        output_path: Base directory for output files
+    """
+    lines = []
+    lines.append("=" * 100)
+    lines.append("DOUBLE USAGE ANALYSIS")
+    lines.append("=" * 100)
+    lines.append("")
+    lines.append("Functions that return double or take double parameters (excluding CRT/entry).")
+    lines.append("These use the Watcom EAX:EDX convention for 64-bit values, which can cause")
+    lines.append("decompiler artifacts (SUB84/CONCAT44/._0_4_/._4_4_ splits).")
+    lines.append("")
+
+    returns_double = []
+    takes_double = []
+
+    for func in functions:
+        vfile = func.get('_virtual_file', '')
+        if _is_crt_or_entry(vfile):
+            continue
+
+        func_info = func.get('function', {})
+        signature = func_info.get('signature', '')
+        name = func_info.get('name', 'unknown')
+        address = func_info.get('address', '?')
+
+        # Check return type - signature starts with "double __cdecl ..." or similar
+        returns_dbl = False
+        sig_stripped = signature.strip()
+        if sig_stripped.startswith('double '):
+            returns_dbl = True
+
+        # Check parameters for double types from stack_frame
+        has_double_param = False
+        double_params = []
+        stack_frame = func.get('stack_frame', {})
+        for var in stack_frame.get('variables', []):
+            if var.get('is_param') and var.get('type') in ('double', 'long double'):
+                has_double_param = True
+                double_params.append(var.get('name', '?'))
+
+        # Also check signature string for double params (catches cases
+        # where stack_frame might not list them properly)
+        paren_idx = signature.find('(')
+        if paren_idx >= 0:
+            param_str = signature[paren_idx:]
+            if 'double ' in param_str and not has_double_param:
+                has_double_param = True
+
+        # Count suspects related to double splitting
+        double_suspects = 0
+        for suspect in func.get('suspects', []):
+            stype = suspect.get('type', '')
+            match = suspect.get('match', '')
+            if stype in ('sub84_truncation', 'decompiler_intrinsic') and \
+               any(x in match for x in ('SUB84', 'CONCAT44', 'CONCAT48', '._0_4_', '._4_4_')):
+                double_suspects += 1
+
+        if returns_dbl:
+            returns_double.append({
+                'name': name,
+                'address': address,
+                'vfile': vfile,
+                'signature': signature,
+                'double_suspects': double_suspects,
+            })
+
+        if has_double_param:
+            takes_double.append({
+                'name': name,
+                'address': address,
+                'vfile': vfile,
+                'signature': signature,
+                'double_params': double_params,
+                'double_suspects': double_suspects,
+            })
+
+    # Summary
+    lines.append("SUMMARY")
+    lines.append("-" * 50)
+    lines.append("Functions returning double:         %d" % len(returns_double))
+    lines.append("Functions with double parameter(s): %d" % len(takes_double))
+    lines.append("")
+
+    # Functions returning double
+    lines.append("=" * 100)
+    lines.append("FUNCTIONS RETURNING DOUBLE (%d)" % len(returns_double))
+    lines.append("=" * 100)
+    lines.append("")
+
+    if returns_double:
+        # Sort by suspect count descending (most problematic first)
+        returns_double.sort(key=lambda x: (-x['double_suspects'], x['name']))
+        for entry in returns_double:
+            suspects_tag = " [%d double-related suspects]" % entry['double_suspects'] \
+                if entry['double_suspects'] > 0 else ""
+            lines.append("  %s" % entry['name'])
+            lines.append("    Address: %s  File: %s%s" % (
+                entry['address'], entry['vfile'], suspects_tag))
+    else:
+        lines.append("  (none)")
+    lines.append("")
+
+    # Functions taking double parameters
+    lines.append("=" * 100)
+    lines.append("FUNCTIONS WITH DOUBLE PARAMETER(S) (%d)" % len(takes_double))
+    lines.append("=" * 100)
+    lines.append("")
+
+    if takes_double:
+        takes_double.sort(key=lambda x: (-x['double_suspects'], x['name']))
+        for entry in takes_double:
+            params_str = ", ".join(entry['double_params']) if entry['double_params'] else "(from signature)"
+            suspects_tag = " [%d double-related suspects]" % entry['double_suspects'] \
+                if entry['double_suspects'] > 0 else ""
+            lines.append("  %s" % entry['name'])
+            lines.append("    Address: %s  File: %s%s" % (
+                entry['address'], entry['vfile'], suspects_tag))
+            lines.append("    Double params: %s" % params_str)
+    else:
+        lines.append("  (none)")
+    lines.append("")
+
+    report_text = "\n".join(lines)
+
+    report_path = os.path.join(output_path, "double_usage_analysis.txt")
+    try:
+        with open(report_path, 'w') as f:
+            f.write(report_text)
+        log_info("Wrote double usage analysis: %s (%d return, %d param)" % (
+            report_path, len(returns_double), len(takes_double)))
+    except Exception as e:
+        log_info("Failed to write double usage analysis: %s" % str(e))
+
+    return report_text
+
+
 def generate_analysis_report(pseudocode_src_dir, output_path):
     """Generate all analysis reports from exported function JSON files.
 
@@ -3209,6 +3355,7 @@ def generate_analysis_report(pseudocode_src_dir, output_path):
     generate_pass_by_value_report(functions, output_path)
     generate_annotation_quality_report(functions, output_path)
     generate_vtable_union_mismatch_report(pseudocode_src_dir, output_path)
+    generate_double_usage_report(functions, output_path)
     generate_csv_data(functions, files, output_path)
 
     # Generate struct quality report

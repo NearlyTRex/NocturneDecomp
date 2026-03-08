@@ -9,23 +9,23 @@
 double __cdecl sound_snddx_cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_005afd60(CDirectSoundDevice *this_ptr,CSfxSlot *slot)
 
 {
-  CSoundDeviceFull_vtable *pCVar1;
+  int iVar1;
   uint uVar2;
   char *pcVar3;
   char acStack_1b0 [408];
   DWORD local_18;
   uint local_14;
   
-  pCVar1 = this_ptr[0x1c].base.vtable;
-  if (((((int)pCVar1 < 1) || (0x1e < (int)pCVar1)) ||
-      (g_DirectSoundHardwareSfxBuffers[(int)pCVar1] == (IDirectSoundBuffer *)0x0)) ||
-     (g_DirectSound3DBufferInterfaces[(int)pCVar1] == (IDirectSound3DBuffer *)0x0)) {
+  iVar1 = slot->hardware_buffer_handle;
+  if ((((iVar1 < 1) || (0x1e < iVar1)) ||
+      (g_DirectSoundHardwareSfxBuffers[iVar1] == (IDirectSoundBuffer *)0x0)) ||
+     (g_DirectSound3DBufferInterfaces[iVar1] == (IDirectSound3DBuffer *)0x0)) {
     g_CurrentFilename = "..\\sound\\snddx.cpp";
     g_CurrentLineNumber = 0x3d6;
     core_main_c_displayErrorAndQuit_FUN_00506f10("DirectSoundDevice::getSfxPlaybackPos - invalid handle");
   }
-  uVar2 = (*g_DirectSoundHardwareSfxBuffers[(int)pCVar1]->vtable->GetCurrentPosition)
-                    (g_DirectSoundHardwareSfxBuffers[(int)pCVar1],&local_14,&local_18);
+  uVar2 = (*g_DirectSoundHardwareSfxBuffers[iVar1]->vtable->GetCurrentPosition)
+                    (g_DirectSoundHardwareSfxBuffers[iVar1],&local_14,&local_18);
   if (uVar2 != 0) {
     pcVar3 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(uVar2);
     _sprintf
@@ -34,7 +34,6 @@ double __cdecl sound_snddx_cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_005afd60
     sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_1b0);
     return -1.0;
   }
-  uVar2 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_005a8550
-                    ((CSfxSample *)this_ptr[0x1e].base.vtable);
+  uVar2 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_005a8550(slot->sample);
   return (double)(local_14 / uVar2);
 }

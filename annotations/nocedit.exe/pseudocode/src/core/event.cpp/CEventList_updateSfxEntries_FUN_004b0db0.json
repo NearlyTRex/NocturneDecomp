@@ -2,22 +2,22 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 71,
-        "line": 35,
-        "message": "use of undeclared identifier 'stack0xfffffe90'; did you mean 'in_stack_fffffe90'?"
+        "category": "other",
+        "column": 15,
+        "line": 29,
+        "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 60,
-        "line": 37,
-        "message": "use of undeclared identifier 'stack0xfffffe90'; did you mean 'in_stack_fffffe90'?"
+        "category": "other",
+        "column": 15,
+        "line": 31,
+        "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 40,
-        "message": "use of undeclared identifier 'stack0xfffffe90'"
+        "category": "other",
+        "column": 61,
+        "line": 32,
+        "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       }
     ],
     "success": false,
@@ -25,19 +25,18 @@
   },
   "complexity": {
     "assembly_lines": 118,
-    "complexity_score": 158,
+    "complexity_score": 133,
     "cross_reference_count": 5,
     "function_call_count": 4,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 53,
-    "suspect_count": 8,
+    "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
-      "stack_param",
-      "stack_ref",
-      "sub84_truncation"
+      "sub84_truncation",
+      "unknown_field"
     ],
     "total_lines": 171
   },
@@ -233,68 +232,52 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_fffffe90",
-      "severity": "moderate",
-      "text": "uint in_stack_fffffe90;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
+      "description": "Unknown/mangled field access",
       "line": 22,
-      "match": "in_stack_fffffe90",
-      "severity": "moderate",
-      "text": "dVar5 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(1,in_stack_fffffe90);",
-      "type": "stack_param"
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_20._0_4_ = SUB84(__BITCAST_UINT64(dVar5),0);",
+      "type": "unknown_field"
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 23,
+      "line": 22,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "local_20 = SUB84(__BITCAST_UINT64(dVar5),0);",
+      "text": "local_20._0_4_ = SUB84(__BITCAST_UINT64(dVar5),0);",
       "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 23,
+      "line": 22,
       "match": "SUB84",
       "severity": "mild",
-      "text": "local_20 = SUB84(__BITCAST_UINT64(dVar5),0);",
+      "text": "local_20._0_4_ = SUB84(__BITCAST_UINT64(dVar5),0);",
       "type": "decompiler_intrinsic"
     },
     {
+      "description": "Unknown/mangled field access",
+      "line": 24,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_20._4_4_ = (int)((ulonglong)dVar5 >> 0x20);",
+      "type": "unknown_field"
+    },
+    {
       "description": "Complex pointer cast",
-      "line": 26,
+      "line": 25,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)&dest->playback_position + 4) = local_1c;",
+      "text": "*(int *)((int)&dest->playback_position + 4) = local_20._4_4_;",
       "type": "pointer_cast"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 28,
-      "match": "&stack0xfffffe90",
-      "severity": "moderate",
-      "text": "sound_sndmain_cpp_CSfxSample_init_FUN_005a8480((CSfxSample *)&stack0xfffffe90);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 30,
-      "match": "&stack0xfffffe90",
-      "severity": "moderate",
-      "text": "(dest->sfx_handle,(CSfxSample *)&stack0xfffffe90);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 33,
-      "match": "&stack0xfffffe90",
-      "severity": "moderate",
-      "text": "pcVar3 = &stack0xfffffe90;",
-      "type": "stack_ref"
+      "description": "Unknown/mangled field access",
+      "line": 25,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "*(int *)((int)&dest->playback_position + 4) = local_20._4_4_;",
+      "type": "unknown_field"
     }
   ]
 }

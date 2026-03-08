@@ -2,10 +2,22 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 24,
-        "message": "no matching function for call to 'sound_sndmain_cpp_CSampleInfo_normalizePlaybackPos_FUN_005a86f0'"
+        "category": "format_error",
+        "column": 91,
+        "line": 21,
+        "message": "format specifies type 'char *' but the argument has type 'CSfxSample *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 110,
+        "line": 40,
+        "message": "format specifies type 'char *' but the argument has type 'CSfxSample *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "other",
+        "column": 68,
+        "line": 52,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
     "success": false,
@@ -13,20 +25,19 @@
   },
   "complexity": {
     "assembly_lines": 137,
-    "complexity_score": 150,
+    "complexity_score": 101,
     "cross_reference_count": 4,
     "function_call_count": 6,
     "global_count": 10,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 50,
-    "suspect_count": 8,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 46,
+    "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic",
-      "stack_param",
-      "sub84_truncation",
+      "format_string_mismatch",
       "warning_inlined_function"
     ],
-    "total_lines": 187
+    "total_lines": 183
   },
   "cross_references": [
     {
@@ -88,14 +99,14 @@
       "name": "sound_mp3.cpp_CMP3Decoder_seek_FUN_00534ba0"
     },
     {
-      "addr": "005a86f0",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_CSampleInfo_normalizePlaybackPos_FUN_005a86f0"
-    },
-    {
       "addr": "005a8550",
       "is_variadic": false,
       "name": "sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_005a8550"
+    },
+    {
+      "addr": "005a86f0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_CSfxSample_normalizePlaybackPos_FUN_005a86f0"
     }
   ],
   "globals": [
@@ -254,48 +265,8 @@
       "type": "warning_inlined_function"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_ffffffe4",
-      "severity": "moderate",
-      "text": "ulonglong in_stack_ffffffe4;",
-      "type": "stack_param"
-    },
-    {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 18,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "(SUB84(__BITCAST_UINT64((double)playback_position),0),",
-      "type": "sub84_truncation"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 18,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "(SUB84(__BITCAST_UINT64((double)playback_position),0),",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_ffffffe4",
-      "severity": "moderate",
-      "text": "(double)((ulonglong)(double)playback_position >> 0x20),(uint)in_stack_ffffffe4,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_ffffffe4",
-      "severity": "moderate",
-      "text": "(uint)((ulonglong)in_stack_ffffffe4 >> 0x20));",
-      "type": "stack_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 21,
       "match": "ROUND",
       "severity": "mild",
       "text": "this_ptr->stream_read_position = (int)ROUND(ROUND(dVar2));",
@@ -303,11 +274,22 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 21,
+      "line": 18,
       "match": "ROUND",
       "severity": "mild",
       "text": "this_ptr->stream_read_position = (int)ROUND(ROUND(dVar2));",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Error seeking %s to %d\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "Error seeking %s to %d",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 45,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Error seeking %s to %d\");",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

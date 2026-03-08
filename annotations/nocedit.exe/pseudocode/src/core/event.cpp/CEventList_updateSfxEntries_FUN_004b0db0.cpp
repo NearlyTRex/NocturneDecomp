@@ -15,9 +15,8 @@ void __cdecl core_event_cpp_CEventList_updateSfxEntries_FUN_004b0db0(CEventList 
   char *pcVar3;
   char *pcVar4;
   double dVar5;
-  uint in_stack_fffffe90;
-  int local_20;
-  int local_1c;
+  char local_170 [336];
+  ulonglong local_20;
   SSfxEntry *local_18;
   int local_14;
   
@@ -26,18 +25,19 @@ void __cdecl core_event_cpp_CEventList_updateSfxEntries_FUN_004b0db0(CEventList 
     dest = (this_ptr->sfx_handles).entries;
     local_18 = (this_ptr->sfx_handles).entries + 1;
     do {
-      dVar5 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(1,in_stack_fffffe90);
-      local_20 = SUB84(__BITCAST_UINT64(dVar5),0);
-      *(int *)&dest->playback_position = local_20;
-      local_1c = (int)((ulonglong)dVar5 >> 0x20);
-      *(int *)((int)&dest->playback_position + 4) = local_1c;
+      dVar5 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(dest->sfx_handle,1);
+      local_20._0_4_ = SUB84(__BITCAST_UINT64(dVar5),0);
+      *(int *)&dest->playback_position = (int)local_20;
+      local_20._4_4_ = (int)((ulonglong)dVar5 >> 0x20);
+      *(int *)((int)&dest->playback_position + 4) = local_20._4_4_;
+      local_20 = dVar5;
       if (0.0 <= dest->playback_position) {
-        sound_sndmain_cpp_CSfxSample_init_FUN_005a8480((CSfxSample *)&stack0xfffffe90);
+        sound_sndmain_cpp_CSfxSample_init_FUN_005a8480((CSfxSample *)local_170);
         iVar2 = sound_sndmain_cpp_getSfxSampleInfo_FUN_005a96e0
-                          (dest->sfx_handle,(CSfxSample *)&stack0xfffffe90);
+                          (dest->sfx_handle,(CSfxSample *)local_170);
         if (iVar2 == 0) goto LAB_004b0e30;
         pcVar4 = dest->sound_filename;
-        pcVar3 = &stack0xfffffe90;
+        pcVar3 = local_170;
         do {
           cVar1 = *pcVar3;
           *pcVar4 = cVar1;

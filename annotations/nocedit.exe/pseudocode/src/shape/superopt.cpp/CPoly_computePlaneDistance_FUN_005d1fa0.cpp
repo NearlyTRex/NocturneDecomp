@@ -10,12 +10,11 @@ double __cdecl shape_superopt_cpp_CPoly_computePlaneDistance_FUN_005d1fa0(CPoly 
 
 {
   int iVar1;
-  int iVar2;
-  int *in_stack_00000004;
+  CVert *pCVar2;
   
-  iVar2 = in_stack_00000004[1] * 0x38;
-  iVar1 = *(int *)(*in_stack_00000004 + 4);
-  return -(*(double *)(iVar2 + 0x10 + iVar1) * *(double *)(in_stack_00000004 + 0x14) +
-          *(double *)(iVar2 + iVar1) * *(double *)(in_stack_00000004 + 0x10) +
-          *(double *)(iVar2 + 8 + iVar1) * *(double *)(in_stack_00000004 + 0x12));
+  iVar1 = this_ptr->vertex_idx_0;
+  pCVar2 = this_ptr->parent_obj->vertex_data;
+  return -(pCVar2[iVar1].position.z * (this_ptr->normal).impl.z +
+          pCVar2[iVar1].position.x * (this_ptr->normal).impl.x +
+          pCVar2[iVar1].position.y * (this_ptr->normal).impl.y);
 }

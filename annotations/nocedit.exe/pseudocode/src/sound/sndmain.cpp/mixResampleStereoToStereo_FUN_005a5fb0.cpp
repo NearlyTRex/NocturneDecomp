@@ -12,11 +12,11 @@
 double __cdecl sound_sndmain_cpp_mixResampleStereoToStereo_FUN_005a5fb0(short *sample_data,SStereoBuffers *channel_buffers,SStereoGains *channel_gains,double resample_position,double resample_delta,int samples_to_process)
 
 {
-  int iVar1;
-  short sVar2;
+  short sVar1;
+  float fVar2;
   float fVar3;
-  float fVar4;
-  int iVar5;
+  float *pfVar4;
+  float *pfVar5;
   int iVar6;
   int iVar7;
   uint uVar8;
@@ -24,47 +24,38 @@ double __cdecl sound_sndmain_cpp_mixResampleStereoToStereo_FUN_005a5fb0(short *s
   int iVar10;
   bool bVar11;
   double dVar12;
-  int in_stack_00000004;
-  int *in_stack_00000008;
-  float *in_stack_0000000c;
-  uint in_stack_00000010;
   ulonglong local_34;
   
-  if (0 < resample_position._0_4_) {
-    dVar12 = floor(__BITCAST_DOUBLE(CONCAT44(sample_data,in_stack_00000010)));
+  if (0 < samples_to_process) {
+    dVar12 = floor(resample_position);
     local_34._0_4_ = (uint)(longlong)ROUND(ROUND(dVar12));
     iVar10 = (uint)local_34;
     local_34 = (longlong)ROUND(ROUND(dVar12)) & 0xffffffff;
     local_34._0_4_ =
-         (uint)(longlong)ROUND(ROUND((_in_stack_00000010 - (double)local_34) * 4294967296));
+         (uint)(longlong)ROUND(ROUND((resample_position - (double)local_34) * 4294967296));
     uVar8 = (uint)local_34;
-    dVar12 = floor(__BITCAST_DOUBLE(CONCAT44(channel_gains,channel_buffers)));
+    dVar12 = floor(resample_delta);
     local_34._0_4_ = (uint)(longlong)ROUND(ROUND(dVar12));
     iVar7 = (uint)local_34;
     local_34 = (longlong)ROUND(ROUND(dVar12)) & 0xffffffff;
     local_34._0_4_ =
-         (uint)(longlong)
-               ROUND(ROUND((__BITCAST_DOUBLE(CONCAT44(channel_gains,channel_buffers)) - (double)local_34) *
-                           4294967296));
-    fVar3 = *in_stack_0000000c;
-    fVar4 = in_stack_0000000c[1];
-    iVar5 = in_stack_00000008[1];
-    iVar6 = *in_stack_00000008;
+         (uint)(longlong)ROUND(ROUND((resample_delta - (double)local_34) * 4294967296));
+    fVar2 = channel_gains->left_gain;
+    fVar3 = channel_gains->right_gain;
+    pfVar4 = channel_buffers->right_channel;
+    pfVar5 = channel_buffers->left_channel;
     iVar9 = 0;
     do {
-      sVar2 = *(short *)(in_stack_00000004 + iVar10 * 4);
-      iVar1 = iVar10 * 4;
+      sVar1 = sample_data[iVar10 * 2];
+      iVar6 = iVar10 * 2;
       bVar11 = CARRY4(uVar8,(uint)local_34);
       uVar8 = uVar8 + (uint)local_34;
       iVar10 = iVar10 + iVar7 + (uint)bVar11;
-      *(float *)(iVar6 + iVar9 * 4) =
-           (float)*(short *)(in_stack_00000004 + 2 + iVar1) * fVar3 + *(float *)(iVar6 + iVar9 * 4);
-      *(float *)(iVar5 + iVar9 * 4) = (float)sVar2 * fVar4 + *(float *)(iVar5 + iVar9 * 4);
+      pfVar5[iVar9] = (float)sample_data[iVar6 + 1] * fVar2 + pfVar5[iVar9];
+      pfVar4[iVar9] = (float)sVar1 * fVar3 + pfVar4[iVar9];
       iVar9 = iVar9 + 1;
-    } while (iVar9 < resample_position._0_4_);
-    _in_stack_00000010 =
-         (double)resample_position._0_4_ * __BITCAST_DOUBLE(CONCAT44(channel_gains,channel_buffers)) +
-         _in_stack_00000010;
+    } while (iVar9 < samples_to_process);
+    resample_position = (double)samples_to_process * resample_delta + resample_position;
   }
-  return _in_stack_00000010;
+  return resample_position;
 }

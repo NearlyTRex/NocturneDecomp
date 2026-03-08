@@ -4,7 +4,7 @@
 ; double __cdecl sound_sndmain_cpp_CSampleInfo_getSampleDuration_FUN_005a84d0(CSampleInfo *this_ptr)
 ;
 ; Parameters:
-; CSampleInfo *    Stack[0x8]:4   this_ptr
+; CSampleInfo *    Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined8       Stack[-0x10]:8  local_10
 ;

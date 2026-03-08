@@ -22,7 +22,7 @@
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_math.c_round_FUN_005fe6b0
 ;   sound_sndmain.cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580
-;   sound_sndmain.cpp_CSampleInfo_normalizePlaybackPos_FUN_005a86f0
+;   sound_sndmain.cpp_CSfxSample_normalizePlaybackPos_FUN_005a86f0
 ;   sound_sndmain.cpp_CSfxSample_seek_FUN_005a65a0
 ;
 ; *****************************************************************************
@@ -73,8 +73,8 @@ section .text
     PUSH EDI                            ; 005a83ff
     MOV EBP,dword ptr [EBX + 0x78]      ; 005a8400
     PUSH EBP                            ; 005a8403
-    CALL sound_sndmain.cpp_CSampleInfo_normalizePlaybackPos_FUN_005a86f0 ; 005a8404
-        ;   XREF to: 005a86f0 (UNCONDITIONAL_CALL)  ; double sound_sndmain.cpp_CSampleInfo_normalizePlaybackPos_FUN_005a86f0(CSampleInfo * this_ptr, double position, uint input_type, uint output_type)
+    CALL sound_sndmain.cpp_CSfxSample_normalizePlaybackPos_FUN_005a86f0 ; 005a8404
+        ;   XREF to: 005a86f0 (UNCONDITIONAL_CALL)  ; double sound_sndmain.cpp_CSfxSample_normalizePlaybackPos_FUN_005a86f0(CSfxSample * this_ptr, double position, uint input_type)
     MOV dword ptr [ESP + 0x10],EAX      ; 005a8409
     MOV dword ptr [ESP + 0x14],EDX      ; 005a840d
     FLD double ptr [ESP + 0x10]         ; 005a8411

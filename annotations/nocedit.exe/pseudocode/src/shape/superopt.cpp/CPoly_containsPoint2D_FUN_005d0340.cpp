@@ -12,7 +12,7 @@ int __cdecl shape_superopt_cpp_CPoly_containsPoint2D_FUN_005d0340(CPoly *this_pt
   int iVar1;
   CVert *pCVar2;
   double dVar3;
-  CVector2d *p3;
+  double local_1d8;
   double local_1d0;
   double local_1b0;
   CVector2d local_1a8;
@@ -112,12 +112,11 @@ int __cdecl shape_superopt_cpp_CPoly_containsPoint2D_FUN_005d0340(CPoly *this_pt
     local_1d0 = -(this_ptr->normal).impl.x;
   }
   if ((this_ptr->normal).impl.y < 0.0) {
-    dVar3 = -(this_ptr->normal).impl.y;
+    local_1d8 = -(this_ptr->normal).impl.y;
   }
   else {
-    dVar3 = (this_ptr->normal).impl.y;
+    local_1d8 = (this_ptr->normal).impl.y;
   }
-  p3 = SUB84(__BITCAST_UINT64(dVar3),0);
   if ((this_ptr->normal).impl.z < 0.0) {
     local_1b0 = -(this_ptr->normal).impl.z;
   }
@@ -125,8 +124,8 @@ int __cdecl shape_superopt_cpp_CPoly_containsPoint2D_FUN_005d0340(CPoly *this_pt
     local_1b0 = (this_ptr->normal).impl.z;
   }
   pCVar2 = this_ptr->parent_obj->vertex_data;
-  if ((local_1d0 < dVar3) || (local_1d0 < local_1b0)) {
-    if ((dVar3 < local_1d0) || (dVar3 < local_1b0)) {
+  if ((local_1d0 < local_1d8) || (local_1d0 < local_1b0)) {
+    if ((local_1d8 < local_1d0) || (local_1d8 < local_1b0)) {
       if (0.0 <= (this_ptr->normal).impl.z) {
         iVar1 = this_ptr->vertex_idx_0;
         local_1a8.x._0_4_ = *(uint *)&pCVar2[iVar1].position.x;
@@ -331,11 +330,14 @@ int __cdecl shape_superopt_cpp_CPoly_containsPoint2D_FUN_005d0340(CPoly *this_pt
     local_c0 = local_188.y._0_4_;
     local_bc = local_188.y._4_4_;
   }
-  local_18 = shape_superopt_cpp_getSignedTriangleArea2D_FUN_005d6640(&local_178,&local_188,p3);
+  local_18 = shape_superopt_cpp_getSignedTriangleArea2D_FUN_005d6640
+                       (&local_198,&local_178,&local_188);
   if (local_18 <= 0.0) {
-    local_18 = shape_superopt_cpp_getSignedTriangleArea2D_FUN_005d6640(&local_1a8,&local_188,p3);
+    local_18 = shape_superopt_cpp_getSignedTriangleArea2D_FUN_005d6640
+                         (&local_178,&local_1a8,&local_188);
     if (local_18 <= 0.0) {
-      dVar3 = shape_superopt_cpp_getSignedTriangleArea2D_FUN_005d6640(&local_198,&local_188,p3);
+      dVar3 = shape_superopt_cpp_getSignedTriangleArea2D_FUN_005d6640
+                        (&local_1a8,&local_198,&local_188);
       if (dVar3 <= 0.0) {
         return 1;
       }

@@ -101,15 +101,15 @@ void __cdecl paintWindowBackground(void);
 
 // Original: shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0
 // Address: 0049e6a0
-void __cdecl CEditorTools::showMessage(CEditorTools *this_ptr,char *format,...);
+void __cdecl CEditorTools::showMessage(CEditorTools *this_ptr,char *format,...) __attribute__((format(printf, 2, 3)));
 
 // Original: shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0
 // Address: 0049e6f0
-void __cdecl CEditorTools::showWarning(CEditorTools *this_ptr,char *format,...);
+void __cdecl CEditorTools::showWarning(CEditorTools *this_ptr,char *format,...) __attribute__((format(printf, 2, 3)));
 
 // Original: shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
 // Address: 0049e740
-void __cdecl CEditorTools::showError(CEditorTools *this_ptr,char *format,...);
+void __cdecl CEditorTools::showError(CEditorTools *this_ptr,char *format,...) __attribute__((format(printf, 2, 3)));
 
 // Original: shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
 // Address: 0049e790
@@ -117,7 +117,7 @@ void __cdecl CEditorTools::displayCenteredStatusMessage(CEditorTools *this_ptr,c
 
 // Original: shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870
 // Address: 0049e870
-void __cdecl CEditorTools::drawWindowStatusMessage(CEditorTools *this_ptr,char *format_string,...);
+void __cdecl CEditorTools::drawWindowStatusMessage(CEditorTools *this_ptr,char *format_string,...) __attribute__((format(printf, 2, 3)));
 
 // Original: shape_edittool.cpp_CEditorTools_createCenteredDialog_FUN_0049e940
 // Address: 0049e940
@@ -129,15 +129,15 @@ int __cdecl showMultiChoiceDialog(CStrList *str_list,char *dialog_title,int dial
 
 // Original: shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
 // Address: 0049f060
-int __cdecl CEditorTools::showConfirmationDialog(CEditorTools *this_ptr,char *format_string,...);
+int __cdecl CEditorTools::showConfirmationDialog(CEditorTools *this_ptr,char *format_string,...) __attribute__((format(printf, 2, 3)));
 
 // Original: shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
 // Address: 0049f0f0
-int __cdecl CEditorTools::showYesNoDialog(CEditorTools *this_ptr,char *format_string,...);
+int __cdecl CEditorTools::showYesNoDialog(CEditorTools *this_ptr,char *format_string,...) __attribute__((format(printf, 2, 3)));
 
 // Original: shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f180
 // Address: 0049f180
-int __cdecl CEditorTools::showConfirmationDialog(CEditorTools *this_ptr,char *format,...);
+int __cdecl CEditorTools::showConfirmationDialog(CEditorTools *this_ptr,char *format,...) __attribute__((format(printf, 2, 3)));
 
 // Original: shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
 // Address: 0049f270

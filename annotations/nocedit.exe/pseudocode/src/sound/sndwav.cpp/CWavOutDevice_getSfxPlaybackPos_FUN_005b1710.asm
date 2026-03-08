@@ -4,8 +4,8 @@
 ; double __cdecl sound_sndwav_cpp_CWavOutDevice_getSfxPlaybackPos_FUN_005b1710(CWavOutDevice *this_ptr,CSfxSlot *slot)
 ;
 ; Parameters:
-; CWavOutDevice *  Stack[0x8]:4   this_ptr
-; CSfxSlot *       Stack[0xc]:4   slot
+; CWavOutDevice *  Stack[0x4]:4   this_ptr
+; CSfxSlot *       Stack[0x8]:4   slot
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8
 ; undefined4       Stack[-0x4]:4  local_4

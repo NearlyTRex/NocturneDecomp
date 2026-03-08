@@ -31,9 +31,9 @@ ECollisionType __cdecl CTeleportDest::getCollisionType(CTeleportDest *this_ptr,S
 // Address: 005da7d0
 int __cdecl CTeleportDest::renderOpaque(CTeleportDest *this_ptr);
 
-// Original: core_teleport.cpp_FUN_005da850
+// Original: core_teleport.cpp_matchesTeleportDestination_FUN_005da850
 // Address: 005da850
-int __cdecl FUN_005da850(void);
+int __cdecl matchesTeleportDestination(CTeleportDest *dest,CTeleport *candidate);
 
 // Original: core_teleport.cpp_CTeleportDest_processInEditor_FUN_005da870
 // Address: 005da870

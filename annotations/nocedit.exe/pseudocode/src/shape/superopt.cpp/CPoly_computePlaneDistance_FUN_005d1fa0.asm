@@ -4,7 +4,7 @@
 ; double __cdecl shape_superopt_cpp_CPoly_computePlaneDistance_FUN_005d1fa0(CPoly *this_ptr)
 ;
 ; Parameters:
-; CPoly *          Stack[0x8]:4   this_ptr
+; CPoly *          Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined8       Stack[-0x8]:8  local_8
 ;

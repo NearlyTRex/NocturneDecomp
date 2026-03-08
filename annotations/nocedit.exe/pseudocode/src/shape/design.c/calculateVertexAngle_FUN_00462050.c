@@ -10,8 +10,6 @@ double __cdecl shape_design_c_calculateVertexAngle_FUN_00462050(int vertex1_inde
 
 {
   double dVar1;
-  int in_stack_00000004;
-  uint in_stack_ffffff74;
   double local_84;
   double local_7c;
   double local_74;
@@ -34,21 +32,21 @@ double __cdecl shape_design_c_calculateVertexAngle_FUN_00462050(int vertex1_inde
   float fStack_20;
   float fStack_1c;
   
-  local_2c = g_LoadedVertices[in_stack_00000004].vertex.x;
-  local_28 = g_LoadedVertices[in_stack_00000004].vertex.y;
-  local_24 = g_LoadedVertices[in_stack_00000004].vertex.z;
-  fStack_20 = g_LoadedVertices[in_stack_00000004].u;
-  fStack_1c = g_LoadedVertices[in_stack_00000004].v;
-  local_54 = g_LoadedVertices[vertex1_index].vertex.x;
-  local_50 = g_LoadedVertices[vertex1_index].vertex.y;
-  local_4c = g_LoadedVertices[vertex1_index].vertex.z;
-  fStack_48 = g_LoadedVertices[vertex1_index].u;
-  fStack_44 = g_LoadedVertices[vertex1_index].v;
-  local_40 = g_LoadedVertices[vertex2_index].vertex.x;
-  local_3c = g_LoadedVertices[vertex2_index].vertex.y;
-  local_38 = g_LoadedVertices[vertex2_index].vertex.z;
-  fStack_34 = g_LoadedVertices[vertex2_index].u;
-  fStack_30 = g_LoadedVertices[vertex2_index].v;
+  local_2c = g_LoadedVertices[vertex1_index].vertex.x;
+  local_28 = g_LoadedVertices[vertex1_index].vertex.y;
+  local_24 = g_LoadedVertices[vertex1_index].vertex.z;
+  fStack_20 = g_LoadedVertices[vertex1_index].u;
+  fStack_1c = g_LoadedVertices[vertex1_index].v;
+  local_54 = g_LoadedVertices[vertex2_index].vertex.x;
+  local_50 = g_LoadedVertices[vertex2_index].vertex.y;
+  local_4c = g_LoadedVertices[vertex2_index].vertex.z;
+  fStack_48 = g_LoadedVertices[vertex2_index].u;
+  fStack_44 = g_LoadedVertices[vertex2_index].v;
+  local_40 = g_LoadedVertices[vertex3_index].vertex.x;
+  local_3c = g_LoadedVertices[vertex3_index].vertex.y;
+  local_38 = g_LoadedVertices[vertex3_index].vertex.z;
+  fStack_34 = g_LoadedVertices[vertex3_index].u;
+  fStack_30 = g_LoadedVertices[vertex3_index].v;
   local_84 = (double)(local_2c - local_54);
   local_7c = (double)(local_28 - local_50);
   local_74 = (double)(local_24 - local_4c);
@@ -58,9 +56,6 @@ double __cdecl shape_design_c_calculateVertexAngle_FUN_00462050(int vertex1_inde
   shape_design_c_normalizeVertex_FUN_00461e60((CVector3f *)&local_84);
   shape_design_c_normalizeVertex_FUN_00461e60((CVector3f *)&local_6c);
   dVar1 = shape_design_c_clampedArccos_FUN_00461c50
-                    (__BITCAST_DOUBLE(CONCAT44(in_stack_ffffff74,
-                                      (int)((ulonglong)
-                                            (local_74 * local_5c +
-                                            local_84 * local_6c + local_7c * local_64) >> 0x20))));
+                    (local_74 * local_5c + local_84 * local_6c + local_7c * local_64);
   return dVar1 * 57.295779513079999;
 }

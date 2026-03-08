@@ -4,16 +4,16 @@
 ; double __cdecl sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580(CSampleInfo *this_ptr,double position,uint input_type,uint output_type)
 ;
 ; Parameters:
-; CSampleInfo *    Stack[0x8]:4   this_ptr
-; double           Stack[0xc]:8   position
-; uint             Stack[0x14]:4   input_type
-; uint             Stack[0x18]:4   output_type
+; CSampleInfo *    Stack[0x4]:4   this_ptr
+; double           Stack[0x8]:8   position
+; uint             Stack[0x10]:4   input_type
+; uint             Stack[0x14]:4   output_type
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   sound_sndmain.cpp_CSampleInfo_normalizePlaybackPos_FUN_005a86f0 at 005a870d
+;   sound_sndmain.cpp_CSfxSample_normalizePlaybackPos_FUN_005a86f0 at 005a870d
 ;   sound_sndmain.cpp_CSfxSlot_seek_FUN_005a8390 at 005a83d6
 ;   sound_sndmain.cpp_getSfxPlaybackPosition_FUN_005a9720 at 005a9770
 ;

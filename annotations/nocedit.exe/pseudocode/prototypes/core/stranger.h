@@ -231,25 +231,25 @@ void __cdecl CStranger::getPropertyList(CStranger *this_ptr,CActorPropertyList *
 // Address: 005c6910
 void __cdecl CStranger::addFilesToExtract(CStranger *this_ptr,_FILE *file_handle);
 
-// Original: core_stranger.cpp_FUN_005c6930
+// Original: core_stranger.cpp_setMatrixTranslation_FUN_005c6930
 // Address: 005c6930
-void __cdecl FUN_005c6930(void);
+void __cdecl setMatrixTranslation(CMatrix3x4f *matrix,CVector3f *translation);
 
-// Original: core_stranger.cpp_FUN_005c6950
+// Original: core_stranger.cpp_isProcessDisabled_FUN_005c6950
 // Address: 005c6950
-int __cdecl FUN_005c6950(void);
+int __cdecl isProcessDisabled(CDemonActor *actor);
 
-// Original: core_stranger.cpp_FUN_005c695e
+// Original: core_stranger.cpp_getScaleY_FUN_005c695e
 // Address: 005c695e
-int __cdecl FUN_005c695e(void);
+int __cdecl getScaleY(CDemonActor *actor);
 
-// Original: core_stranger.cpp_CCloth_setWindVelocity_FUN_005c6970
+// Original: core_stranger.cpp_setWindVelocity_FUN_005c6970
 // Address: 005c6970
-void __cdecl CCloth::setWindVelocity(CCloth *this_ptr,CVector3f *velocity);
+void __cdecl setWindVelocity(CCloth *cloth_ptr,CVector3f *velocity);
 
-// Original: core_stranger.cpp_CCharacter_getCurrentMotionStateIndex_FUN_005c69a0
+// Original: core_stranger.cpp_getCurrentMotionStateIndex_FUN_005c69a0
 // Address: 005c69a0
-int __cdecl CCharacter::getCurrentMotionStateIndex(CCharacter *this_ptr);
+int __cdecl getCurrentMotionStateIndex(CCharacter *this_ptr);
 
 // Original: core_stranger.cpp_CStranger_dtor_FUN_005c69c0
 // Address: 005c69c0

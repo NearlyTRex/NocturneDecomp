@@ -10,13 +10,13 @@ void __cdecl core_crossbow_cpp_CCrossbow_process_FUN_00448d30(CCrossbow *this_pt
 
 {
   CVector3f *pCVar1;
-  CVector3f aCStack_1c [2];
+  CVector3f CStack_1c;
+  CVector3f local_10;
   
   core_weapon_cpp_CWeapon_process_FUN_005ee110(&this_ptr->base,delta_time);
-  pCVar1 = (CVector3f *)(*(((this_ptr->base).base.vtable._uc)->_uc).canWalk)((CCharacter *)this_ptr)
-  ;
+  pCVar1 = (*(((this_ptr->base).base.vtable._uw)->_uw).getMuzzlePoint)(&this_ptr->base,&local_10);
   pCVar1 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                     ((CDemonActor *)this_ptr,aCStack_1c,pCVar1);
+                     ((CDemonActor *)this_ptr,&CStack_1c,pCVar1);
   (this_ptr->bolt_flame).base.location.position.x = pCVar1->x;
   (this_ptr->bolt_flame).base.location.position.y = pCVar1->y;
   (this_ptr->bolt_flame).base.location.position.z = pCVar1->z;

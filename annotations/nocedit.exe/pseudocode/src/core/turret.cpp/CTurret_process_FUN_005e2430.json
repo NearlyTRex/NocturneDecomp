@@ -10,7 +10,7 @@
       {
         "category": "other",
         "column": 32,
-        "line": 193,
+        "line": 194,
         "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
       }
     ],
@@ -19,22 +19,21 @@
   },
   "complexity": {
     "assembly_lines": 379,
-    "complexity_score": 401,
+    "complexity_score": 377,
     "cross_reference_count": 0,
     "function_call_count": 13,
     "global_count": 12,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 191,
-    "suspect_count": 18,
+    "pseudocode_lines": 192,
+    "suspect_count": 16,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "stack_alignment_array",
-      "stack_param",
       "suspect_float",
       "unknown_field"
     ],
-    "total_lines": 570
+    "total_lines": 571
   },
   "cross_references": [],
   "function": {
@@ -383,18 +382,10 @@
     {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 14,
-      "match": "auStackY_186c",
+      "match": "afStackY_186c",
       "severity": "moderate",
-      "text": "uint auStackY_186c [1497];",
+      "text": "float afStackY_186c [1497];",
       "type": "stack_alignment_array"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_ffffff08",
-      "severity": "moderate",
-      "text": "uint in_stack_ffffff08;",
-      "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
@@ -501,24 +492,16 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 185,
-      "match": "in_stack_ffffff08",
-      "severity": "moderate",
-      "text": "local_30._12_8_ = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(2,in_stack_ffffff08);",
-      "type": "stack_param"
-    },
-    {
       "description": "Unknown/mangled field access",
       "line": 185,
       "match": "._12_8_",
       "severity": "mild",
-      "text": "local_30._12_8_ = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(2,in_stack_ffffff08);",
+      "text": "local_30._12_8_ =",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 186,
+      "line": 187,
       "match": "._12_8_",
       "severity": "mild",
       "text": "if (0.0 <= (double)local_30._12_8_) {",

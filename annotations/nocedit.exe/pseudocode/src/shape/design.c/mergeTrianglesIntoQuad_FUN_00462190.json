@@ -4,13 +4,13 @@
       {
         "category": "other",
         "column": 36,
-        "line": 70,
+        "line": 69,
         "message": "called object type 'float' is not a function or function pointer"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 70,
+        "line": 69,
         "message": "called object type 'float' is not a function or function pointer"
       }
     ],
@@ -19,19 +19,18 @@
   },
   "complexity": {
     "assembly_lines": 724,
-    "complexity_score": 410,
+    "complexity_score": 385,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 23,
     "max_suspect_severity": "severe",
     "pseudocode_lines": 215,
-    "suspect_count": 17,
+    "suspect_count": 15,
     "suspect_types": [
       "decompiler_intrinsic",
       "fnstsw_flag_artifact",
       "nan_function_artifact",
-      "pointer_cast",
-      "stack_param"
+      "pointer_cast"
     ],
     "total_lines": 939
   },
@@ -555,16 +554,8 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_fffffe0c",
-      "severity": "moderate",
-      "text": "int in_stack_fffffe0c;",
-      "type": "stack_param"
-    },
-    {
       "description": "FNSTSW flag reconstruction (floating-point comparison artifact)",
-      "line": 61,
+      "line": 60,
       "match": "CONCAT22((short)((ulonglong)dVar9 >> 0x10",
       "severity": "severe",
       "text": "uVar4 = CONCAT22((short)((ulonglong)dVar9 >> 0x10),",
@@ -572,7 +563,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 61,
+      "line": 60,
       "match": "CONCAT22",
       "severity": "mild",
       "text": "uVar4 = CONCAT22((short)((ulonglong)dVar9 >> 0x10),",
@@ -580,7 +571,7 @@
     },
     {
       "description": "NAN() function call (FNSTSW comparison artifact)",
-      "line": 63,
+      "line": 62,
       "match": "NAN(",
       "severity": "severe",
       "text": "(ushort)(NAN(dVar9) || NAN(359.5)) << 10 |",
@@ -588,7 +579,7 @@
     },
     {
       "description": "NAN() function call (FNSTSW comparison artifact)",
-      "line": 63,
+      "line": 62,
       "match": "NAN(",
       "severity": "severe",
       "text": "(ushort)(NAN(dVar9) || NAN(359.5)) << 10 |",
@@ -596,7 +587,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 63,
+      "line": 62,
       "match": "NAN",
       "severity": "mild",
       "text": "(ushort)(NAN(dVar9) || NAN(359.5)) << 10 |",
@@ -604,7 +595,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 63,
+      "line": 62,
       "match": "NAN",
       "severity": "mild",
       "text": "(ushort)(NAN(dVar9) || NAN(359.5)) << 10 |",
@@ -612,7 +603,15 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 78,
+      "line": 77,
+      "match": "ABS",
+      "severity": "mild",
+      "text": "if (((ABS(local_1e8.normal.x) == 0.0) && (ABS(local_1e8.normal.y) == 0.0)) &&",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 77,
       "match": "ABS",
       "severity": "mild",
       "text": "if (((ABS(local_1e8.normal.x) == 0.0) && (ABS(local_1e8.normal.y) == 0.0)) &&",
@@ -621,30 +620,14 @@
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 78,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if (((ABS(local_1e8.normal.x) == 0.0) && (ABS(local_1e8.normal.y) == 0.0)) &&",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 79,
       "match": "ABS",
       "severity": "mild",
       "text": "(ABS(local_1e8.normal.z) == 0.0)) {",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 104,
-      "match": "in_stack_fffffe0c",
-      "severity": "moderate",
-      "text": "in_stack_fffffe0c);",
-      "type": "stack_param"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 129,
+      "line": 128,
       "match": "fcos",
       "severity": "mild",
       "text": "fVar8 = (float10)fcos((float10)0.52359877560000001);",
@@ -652,7 +635,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 144,
+      "line": 143,
       "match": "ABS",
       "severity": "mild",
       "text": "if (((ABS(g_ModelPolygonData[first_polygon_index].normal.x) == 0.0) &&",
@@ -660,7 +643,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 145,
+      "line": 144,
       "match": "ABS",
       "severity": "mild",
       "text": "(ABS(g_ModelPolygonData[first_polygon_index].normal.y) == 0.0)) &&",
@@ -668,7 +651,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 146,
+      "line": 145,
       "match": "ABS",
       "severity": "mild",
       "text": "(ABS(g_ModelPolygonData[first_polygon_index].normal.z) == 0.0)) {",

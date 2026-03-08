@@ -218,7 +218,7 @@ CTeleportDest * __cdecl core_teleport_cpp_CTeleportDest_ctor_FUN_005da770(CTelep
 CBoundingBox3D * __cdecl core_teleport_cpp_CTeleportDest_getBoundingBox_FUN_005da790(CTeleportDest *this_ptr,CBoundingBox3D *out_box);
 ECollisionType __cdecl core_teleport_cpp_CTeleportDest_getCollisionType_FUN_005da7c0(CTeleportDest *this_ptr,SCollisionInfo *collision_info);
 int __cdecl core_teleport_cpp_CTeleportDest_renderOpaque_FUN_005da7d0(CTeleportDest *this_ptr);
-int __cdecl core_teleport_cpp_FUN_005da850(void);
+int __cdecl core_teleport_cpp_matchesTeleportDestination_FUN_005da850(CTeleportDest *dest,CTeleport *candidate);
 void __cdecl core_teleport_cpp_CTeleportDest_processInEditor_FUN_005da870(CTeleportDest *this_ptr);
 void __cdecl core_teleport_cpp_CTeleportDest_showEditorHelp_FUN_005da970(CTeleportDest *this_ptr,int *y_pos);
 CTeleport * __cdecl core_teleport_cpp_factoryFunc_FUN_005da9a0(void);
@@ -317,7 +317,7 @@ CDemonActorType * __cdecl core_trash_cpp_CTrash_getActorType_FUN_005deb60(CTrash
 CTrash * __cdecl core_trash_cpp_CTrash_ctor_FUN_005deb70(CTrash *this_ptr);
 void __cdecl core_trash_cpp_CTrash_setup_FUN_005debc0(CTrash *this_ptr);
 void __cdecl core_trash_cpp_CTrash_archive_FUN_005dec80(CTrash *this_ptr);
-void __cdecl core_trash_cpp_FUN_005decc0(void);
+void __cdecl core_trash_cpp_addRandomJitter_FUN_005decc0(float *value);
 void __cdecl core_trash_cpp_CTrash_process_FUN_005decf0(CTrash *this_ptr,float delta_time);
 int __cdecl core_trash_cpp_CTrash_renderOpaque_FUN_005df550(CTrash *this_ptr);
 CBoundingBox3D * __cdecl core_trash_cpp_CTrash_getBoundingBox_FUN_005df610(CTrash *this_ptr,CBoundingBox3D *out_box);

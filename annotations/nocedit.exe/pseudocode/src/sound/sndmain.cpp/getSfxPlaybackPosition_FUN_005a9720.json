@@ -6,20 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 85,
-    "complexity_score": 134,
+    "complexity_score": 71,
     "cross_reference_count": 5,
     "function_call_count": 4,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 34,
-    "suspect_count": 8,
+    "pseudocode_lines": 31,
+    "suspect_count": 3,
     "suspect_types": [
       "decompiler_intrinsic",
-      "pointer_cast",
-      "stack_param",
       "sub84_truncation"
     ],
-    "total_lines": 119
+    "total_lines": 116
   },
   "cross_references": [
     {
@@ -123,51 +121,37 @@
     "pcode_op_count": 273
   },
   "stack_frame": {
-    "frame_size": 56,
+    "frame_size": 52,
     "local_size": 44,
     "param_offset": 4,
-    "param_size": 12,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_24",
-        "offset": -36,
-        "size": 4,
-        "type": "undefined4"
+        "size": 8,
+        "type": "_SPLIT_DOUBLE"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 8,
-        "type": "undefined8"
-      },
-      {
-        "is_param": false,
-        "name": "local_18",
-        "offset": -24,
-        "size": 8,
-        "type": "undefined8"
+        "type": "_SPLIT_DOUBLE"
       },
       {
         "is_param": true,
         "name": "sfx_handle",
-        "offset": 8,
+        "offset": 4,
         "size": 4,
         "type": "uint"
       },
       {
         "is_param": true,
         "name": "output_format",
-        "offset": 12,
+        "offset": 8,
         "size": 4,
         "type": "uint"
       }
@@ -192,67 +176,27 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "uint in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_ffffffd8",
-      "severity": "moderate",
-      "text": "uint in_stack_ffffffd8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "this_ptr = sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005a5d00(in_stack_00000004,1);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 29,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "*(double *)((int)&(this_ptr->options).trigger_time + 4),sfx_handle,",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 30,
-      "match": "in_stack_ffffffd8",
-      "severity": "moderate",
-      "text": "in_stack_ffffffd8);",
-      "type": "stack_param"
-    },
-    {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 32,
+      "line": 28,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "local_20 = SUB84(__BITCAST_UINT64(dVar2),0);",
+      "text": "local_20.u.low = SUB84(__BITCAST_UINT64(dVar2),0);",
       "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 32,
+      "line": 28,
       "match": "SUB84",
       "severity": "mild",
-      "text": "local_20 = SUB84(__BITCAST_UINT64(dVar2),0);",
+      "text": "local_20.u.low = SUB84(__BITCAST_UINT64(dVar2),0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 36,
+      "line": 33,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "return __BITCAST_DOUBLE(CONCAT44(local_24,local_20));",
+      "text": "return __BITCAST_DOUBLE(CONCAT44(local_28.u.high,local_28.u.low));",
       "type": "decompiler_intrinsic"
     }
   ]

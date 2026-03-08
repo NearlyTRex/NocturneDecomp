@@ -77,7 +77,7 @@ void __cdecl nextMixingBuffer(void);
 
 // Original: sound_sndmain.cpp_convertMixBufToOutput_FUN_005a5b80
 // Address: 005a5b80
-void __cdecl convertMixBufToOutput(float *input_samples,void *output_buffer,int bits_per_sample,int num_samples,int output_stride);
+void __cdecl convertMixBufToOutput(float *input_samples,ushort *output_buffer,int bits_per_sample,int num_samples,int output_stride);
 
 // Original: sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005a5d00
 // Address: 005a5d00
@@ -207,9 +207,9 @@ int __cdecl CSfxSample::getBytesPerFrame(CSfxSample *this_ptr);
 // Address: 005a8580
 double __cdecl CSampleInfo::cvtPlaybackPos(CSampleInfo *this_ptr,double position,uint input_type,uint output_type);
 
-// Original: sound_sndmain.cpp_CSampleInfo_normalizePlaybackPos_FUN_005a86f0
+// Original: sound_sndmain.cpp_CSfxSample_normalizePlaybackPos_FUN_005a86f0
 // Address: 005a86f0
-double __cdecl CSampleInfo::normalizePlaybackPos(CSampleInfo *this_ptr,double position,uint input_type,uint output_type);
+double __cdecl CSfxSample::normalizePlaybackPos(CSfxSample *this_ptr,double position,uint input_type);
 
 // Original: sound_sndmain.cpp_CSfxSample_getLoopMode_FUN_005a87d0
 // Address: 005a87d0
@@ -729,7 +729,7 @@ void __cdecl testSoundFiles(void);
 
 // Original: sound_sndmain.cpp_logSoundError_FUN_005adba0
 // Address: 005adba0
-void __cdecl logSoundError(char *format,...);
+void __cdecl logSoundError(char *format,...) __attribute__((format(printf, 1, 2)));
 
 // Original: sound_sndmain.cpp_CSfxOptions_ctor_FUN_005add70
 // Address: 005add70

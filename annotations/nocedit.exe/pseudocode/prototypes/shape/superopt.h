@@ -5,7 +5,7 @@
 
 // Original: shape_superopt.cpp_logToFile_FUN_005c7910
 // Address: 005c7910
-void __cdecl logToFile(char *format,...);
+void __cdecl logToFile(char *format,...) __attribute__((format(printf, 1, 2)));
 
 // Original: shape_superopt.cpp_CComplexPolygon_ctor_FUN_005c79a0
 // Address: 005c79a0

@@ -9,18 +9,14 @@
 double __cdecl shape_design_c_calculateSamplingWeight_FUN_0046adc0(double current_pos,double start_coord,double end_coord)
 
 {
-  uint in_stack_00000004;
   ulonglong local_18;
   
-  local_18 = __BITCAST_DOUBLE(CONCAT44(end_coord._0_4_,start_coord._4_4_)) -
-             __BITCAST_DOUBLE(CONCAT44(current_pos._0_4_,in_stack_00000004));
+  local_18 = end_coord - current_pos;
   if (1.0 < local_18) {
     local_18 = 1.0;
   }
-  if (__BITCAST_DOUBLE(CONCAT44(current_pos._0_4_,in_stack_00000004)) <
-      __BITCAST_DOUBLE(CONCAT44(start_coord._0_4_,current_pos._4_4_))) {
-    local_18 = (__BITCAST_DOUBLE(CONCAT44(start_coord._0_4_,current_pos._4_4_)) -
-               __BITCAST_DOUBLE(CONCAT44(current_pos._0_4_,in_stack_00000004))) * local_18;
+  if (current_pos < start_coord) {
+    local_18 = (start_coord - current_pos) * local_18;
   }
   return local_18;
 }

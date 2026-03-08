@@ -14,17 +14,14 @@ void __cdecl sound_sndmain_cpp_CSfxSample_seek_FUN_005a65a0(CSfxSample *this_ptr
   int iVar1;
   double dVar2;
   CMP3Decoder *this_ptr_00;
-  ulonglong in_stack_ffffffe4;
   
   if (this_ptr->streaming_slot_index < 0) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
     g_CurrentLineNumber = 0x797;
     core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSample::seek - '%s' isn't streamed!",this_ptr);
   }
-  dVar2 = sound_sndmain_cpp_CSampleInfo_normalizePlaybackPos_FUN_005a86f0
-                    (SUB84(__BITCAST_UINT64((double)playback_position),0),
-                     (double)((ulonglong)(double)playback_position >> 0x20),(uint)in_stack_ffffffe4,
-                     (uint)((ulonglong)in_stack_ffffffe4 >> 0x20));
+  dVar2 = sound_sndmain_cpp_CSfxSample_normalizePlaybackPos_FUN_005a86f0
+                    (this_ptr,(double)playback_position,0);
   this_ptr->stream_read_position = (int)ROUND(ROUND(dVar2));
   if (this_ptr->stream_read_position < 0) {
     this_ptr->stream_read_position = 0;
@@ -52,8 +49,7 @@ void __cdecl sound_sndmain_cpp_CSfxSample_seek_FUN_005a65a0(CSfxSample *this_ptr
     if (iVar1 == 0) {
       g_CurrentFilename = "..\\sound\\sndmain.cpp";
       g_CurrentLineNumber = 0x7ab;
-      core_main_c_displayErrorAndQuit_FUN_00506f10
-                ("Error seeking %s to %d",this_ptr,this_ptr->stream_read_position);
+      core_main_c_displayErrorAndQuit_FUN_00506f10("Error seeking %s to %d");
       return;
     }
   }

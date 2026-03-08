@@ -4,32 +4,32 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  decompiler_intrinsic            6971 ( 31.4%)
-  pointer_cast                    5960 ( 26.8%)
-  stack_param                     2210 (  9.9%)
-  unknown_field                   1703 (  7.7%)
+  decompiler_intrinsic            6897 ( 31.4%)
+  pointer_cast                    5955 ( 27.1%)
+  stack_param                     2032 (  9.3%)
+  unknown_field                   1722 (  7.8%)
   unnamed_param                    751 (  3.4%)
   special_crt_function             636 (  2.9%)
-  stack_ref                        511 (  2.3%)
-  unaffected_reg                   444 (  2.0%)
+  stack_ref                        498 (  2.3%)
+  unaffected_reg                   446 (  2.0%)
   fpu_register_input               325 (  1.5%)
   param_count_too_few              317 (  1.4%)
   register_param                   302 (  1.4%)
   nonstandard_int                  271 (  1.2%)
   warning_inlined_function         264 (  1.2%)
   unresolved_funcptr               185 (  0.8%)
-  undefined_data                   165 (  0.7%)
+  undefined_data                   165 (  0.8%)
   warning_type_propagation         145 (  0.7%)
   negative_offset                  142 (  0.6%)
   stack_alignment_array            137 (  0.6%)
-  sub84_truncation                 128 (  0.6%)
   extra_output                     117 (  0.5%)
+  sub84_truncation                 101 (  0.5%)
   param_count_too_many              84 (  0.4%)
   warning_unreachable               79 (  0.4%)
   suspect_float                     60 (  0.3%)
   unknown_type                      53 (  0.2%)
   mmx_assembly                      34 (  0.2%)
-  format_string_mismatch            29 (  0.1%)
+  format_string_mismatch            28 (  0.1%)
   eflags_input                      26 (  0.1%)
   special_math_intrinsic            24 (  0.1%)
   undefined_ram                     24 (  0.1%)
@@ -39,7 +39,7 @@ SUSPECT TYPE COUNTS
   warning_jumptable                 10 (  0.0%)
   warning_indirect_jump             10 (  0.0%)
   nan_function_artifact             10 (  0.0%)
-  undefined_ptr_cast                 9 (  0.0%)
+  undefined_ptr_cast                10 (  0.0%)
   bare_stack_ref                     5 (  0.0%)
   warning_noreturn                   4 (  0.0%)
   warning_max_restarts               4 (  0.0%)
@@ -47,36 +47,36 @@ SUSPECT TYPE COUNTS
   warning_deadcode_restart           4 (  0.0%)
   special_cpu_detection              4 (  0.0%)
   warning_overlapping_globals        3 (  0.0%)
+  warning_unmapped_variable          2 (  0.0%)
   warning_is_inlined                 2 (  0.0%)
   cpuid_intrinsic                    2 (  0.0%)
-  warning_unmapped_variable          1 (  0.0%)
   warning_overlapping_instructions     1 (  0.0%)
   unresolved_register                1 (  0.0%)
   cpuid_assembly                     1 (  0.0%)
   special_entry_point                1 (  0.0%)
 
 ====================================================================================================
-TYPE: decompiler_intrinsic (6971 occurrences)
+TYPE: decompiler_intrinsic (6897 occurrences)
 ====================================================================================================
 
 Unique patterns:
   2656x  ROUND
   1342x  ADJ
-   502x  CONCAT44
+   460x  CONCAT44
    427x  SQRT
    323x  ABS
    158x  CARRY4
    151x  CONCAT11
-   128x  SUB84
    108x  CONCAT22
    106x  fcos
    105x  fsin
+   101x  SUB84
     96x  CONCAT12
     82x  CONCAT14
-    68x  CONCAT26
     67x  CONCAT21
-    65x  CONCAT24
+    67x  CONCAT26
     65x  CONCAT13
+    63x  CONCAT24
     55x  CONCAT25
     53x  CONCAT41
     50x  CONCAT34
@@ -98,16 +98,16 @@ Example functions:
     ROUND(ROUND((float)(byte)g_SourcePaletteData[iVar3] * fVar2 +...
 
 ====================================================================================================
-TYPE: pointer_cast (5960 occurrences)
+TYPE: pointer_cast (5955 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  2278x  (uint *)((int)
-  1319x  (int *)((int)
-   347x  (float *)((int)
+  2279x  (uint *)((int)
+  1318x  (int *)((int)
+   345x  (float *)((int)
    323x  (SRenderVertex *)((int)
    289x  (CMatrix3x4f *)((int)
-   214x  (double *)((int)
+   212x  (double *)((int)
    203x  (void *)((int)
    189x  (byte *)((int)
     86x  (char *)((int)
@@ -136,14 +136,14 @@ Example functions:
     piVar1 = (int *)((int)g_ScreenBufferArray + iVar4);...
 
 ====================================================================================================
-TYPE: stack_param (2210 occurrences)
+TYPE: stack_param (2032 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   534x  in_stack_00000008
-   345x  in_stack_00000004
-   244x  in_stack_0000000c
-   117x  in_stack_00000010
+   522x  in_stack_00000008
+   262x  in_stack_00000004
+   234x  in_stack_0000000c
+   113x  in_stack_00000010
     65x  in_stack_00000014
     61x  in_stack_fffffd64
     46x  in_stack_fffffc88
@@ -151,15 +151,15 @@ Unique patterns:
     27x  in_stack_00000018
     25x  in_stack_fffffd80
     19x  in_stack_fffffd7c
-    18x  in_stack_ffffff28
     18x  in_stack_ffffff9c
-    17x  in_stack_ffffff74
-    17x  in_stack_fffffeb8
     17x  in_stack_fffffee8
     16x  in_stack_fffffd78
+    15x  in_stack_ffffff74
     15x  in_stack_ffffff84
-    15x  in_stack_fffffea0
+    15x  in_stack_ffffff28
     14x  in_stack_0000001c
+    14x  in_stack_ffffff60
+    14x  in_stack_fffffd14
 
 Example functions:
   cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_0054c1e0
@@ -190,12 +190,12 @@ Example functions:
     char **in_stack_00000010;...
 
 ====================================================================================================
-TYPE: unknown_field (1703 occurrences)
+TYPE: unknown_field (1722 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   572x  ._0_4_
-   524x  ._4_4_
+   570x  ._0_4_
+   545x  ._4_4_
     97x  ._8_4_
     77x  ._12_4_
     72x  ._16_4_
@@ -343,30 +343,30 @@ Example functions:
     CRT function (runtime support) at 00607e64...
 
 ====================================================================================================
-TYPE: stack_ref (511 occurrences)
+TYPE: stack_ref (498 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    20x  &stack0x00000000
     19x  &stack0xfffffa18
+    18x  &stack0x00000000
     17x  &stack0xfffffff0
     15x  &stack0xffffff54
     14x  &stack0x0000000c
     14x  &stack0xffffffc0
-    14x  &stack0xfffffe90
     14x  &stack0xffffff24
     12x  &stack0xffffffd4
     12x  &stack0xfffffd64
     12x  &stack0xfffffd34
     10x  &stack0xffffffdc
     10x  &stack0xfffffff4
-    10x  &stack0xffffffec
     10x  &stack0xffffff58
      9x  &stack0xffffffd8
      9x  &stack0x00000008
+     9x  &stack0xffffffec
      8x  &stack0x00000010
      8x  &stack0xffffffe0
      8x  &stack0xffffff94
+     8x  &stack0xfffffe90
 
 Example functions:
   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_00489c40
@@ -397,11 +397,11 @@ Example functions:
     if (unaff_EAX < &stack0xfffffffc) {...
 
 ====================================================================================================
-TYPE: unaffected_reg (444 occurrences)
+TYPE: unaffected_reg (446 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   145x  unaff_ESI
+   147x  unaff_ESI
    110x  unaff_EDI
    100x  unaff_EBP
     85x  unaff_EBX
@@ -971,51 +971,6 @@ Example functions:
     int aiStackY_10d4 [1015];...
 
 ====================================================================================================
-TYPE: sub84_truncation (128 occurrences)
-====================================================================================================
-
-Unique patterns:
-   128x  SUB84(
-
-Example functions:
-  crt_math.c_dadd_FUN_0060defc
-    uVar12 = SUB84(b,0);...
-  crt_math.c_handle_math_error_FUN_0060c02b
-    local_10 = SUB84(__BITCAST_UINT64(dVar1),0);...
-  crt_math.c_dmul_FUN_0060e0b9
-    uVar14 = SUB84(b,0);...
-  crt_math.c_math_domain_error_FUN_00606832
-    local_10._0_4_ = SUB84(__BITCAST_UINT64(dVar1),0);...
-  crt_math.c_doubleToFloat_FUN_0060b26c
-    uVar4 = SUB84(val,0);...
-  crt_unknown.c_FUN_00603bc9
-    *in_stack_00000008 = SUB84(__BITCAST_UINT64(dVar1),0);...
-  crt_unknown.c_FUN_0060dcf6
-    uVar4 = SUB84(__BITCAST_UINT64((double)fVar22),0);...
-  engine_matrix.c_normalizeVector3DFloat_FUN_0050d9f0
-    local_38 = SUB84(__BITCAST_UINT64(dVar4),0);...
-  engine_colquant.c_computeBoxStatistics_FUN_00441260
-    local_30._0_4_ = SUB84(__BITCAST_UINT64(dVar14),0);...
-  sound_snddx.cpp_CDirectSoundDevice_setSfxPos_FUN_005af750
-    uVar3 = (*local_20->vtable->SetFrequency)(local_20,SUB84(dStack_34,0));...
-  sound_mp3.cpp_antiAliasingButterfly_FUN_005334b0
-    local_48 = SUB84(__BITCAST_UINT64(dVar5),0);...
-  sound_sndmain.cpp_startSoundThread_FUN_005abc00
-    g_AudioLatencySeconds._0_4_ = SUB84(__BITCAST_UINT64(dVar1),0);...
-  sound_sndmain.cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580
-    this_ptr = SUB84(__BITCAST_UINT64(dVar1),0);...
-  sound_sndmain.cpp_CSfxSlot_seek_FUN_005a8390
-    SUB84(__BITCAST_UINT64(dVar1),0),(uint)((ulonglong)dVar1 >> 0x20));...
-  sound_sndmain.cpp_CSampleInfo_normalizePlaybackPos_FUN_005a86f0
-    this_ptr = SUB84(__BITCAST_UINT64(dVar2),0);...
-  sound_sndmain.cpp_CSfxSample_seek_FUN_005a65a0
-    (SUB84(__BITCAST_UINT64((double)playback_position),0),...
-  sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_005a45c0
-    local_478 = SUB84(__BITCAST_UINT64(dVar2),0);...
-  sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0
-    channel_buffers = SUB84(__BITCAST_UINT64(dVar14),0);...
-
-====================================================================================================
 TYPE: extra_output (117 occurrences)
 ====================================================================================================
 
@@ -1061,6 +1016,55 @@ Example functions:
     char extraout_AL;...
   crt_tls.c_shutdown_tls_infrastructure_FUN_0060a388
     BOOL extraout_EAX;...
+
+====================================================================================================
+TYPE: sub84_truncation (101 occurrences)
+====================================================================================================
+
+Unique patterns:
+   101x  SUB84(
+
+Example functions:
+  crt_math.c_dadd_FUN_0060defc
+    uVar12 = SUB84(b,0);...
+  crt_math.c_handle_math_error_FUN_0060c02b
+    local_10 = SUB84(__BITCAST_UINT64(dVar1),0);...
+  crt_math.c_dmul_FUN_0060e0b9
+    uVar14 = SUB84(b,0);...
+  crt_math.c_math_domain_error_FUN_00606832
+    local_10._0_4_ = SUB84(__BITCAST_UINT64(dVar1),0);...
+  crt_math.c_doubleToFloat_FUN_0060b26c
+    uVar4 = SUB84(val,0);...
+  crt_unknown.c_FUN_00603bc9
+    *in_stack_00000008 = SUB84(__BITCAST_UINT64(dVar1),0);...
+  crt_unknown.c_FUN_0060dcf6
+    uVar4 = SUB84(__BITCAST_UINT64((double)fVar22),0);...
+  engine_matrix.c_normalizeVector3DFloat_FUN_0050d9f0
+    local_38 = SUB84(__BITCAST_UINT64(dVar4),0);...
+  engine_colquant.c_computeBoxStatistics_FUN_00441260
+    local_30._0_4_ = SUB84(__BITCAST_UINT64(dVar14),0);...
+  sound_snddx.cpp_CDirectSoundDevice_setSfxPos_FUN_005af750
+    uVar3 = (*local_20->vtable->SetFrequency)(local_20,SUB84(dStack_34,0));...
+  sound_mp3.cpp_antiAliasingButterfly_FUN_005334b0
+    local_48 = SUB84(__BITCAST_UINT64(dVar5),0);...
+  sound_sndmain.cpp_startSoundThread_FUN_005abc00
+    g_AudioLatencySeconds._0_4_ = SUB84(__BITCAST_UINT64(dVar1),0);...
+  sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_005a45c0
+    local_478 = SUB84(__BITCAST_UINT64(dVar2),0);...
+  sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100
+    local_38 = SUB84(__BITCAST_UINT64(dVar4),0);...
+  sound_sndmain.cpp_getSfxPlaybackPosition_FUN_005a9720
+    local_20.u.low = SUB84(__BITCAST_UINT64(dVar2),0);...
+  core_dcube.cpp_clipEdgeToPlane_FUN_004547d0
+    local_28 = SUB84(__BITCAST_UINT64(dVar1),0);...
+  core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
+    uStack_94 = SUB84(__BITCAST_UINT64(dVar6),0);...
+  core_gore.cpp_CBloodPool_save_FUN_004ed1c0
+    _fprintf(file_handle,"%f,%f,%f\n",SUB84(__BITCAST_UINT64(dVar2),0),(int)((ulongl...
+  core_script.cpp_CScript_step_FUN_0055a810
+    SUB84(__BITCAST_UINT64(dVar1),0),...
+  core_xform.cpp_matrixToEulerAngles_FUN_005f5690
+    local_98 = SUB84(__BITCAST_UINT64(dVar9),0);...
 
 ====================================================================================================
 TYPE: param_count_too_many (84 occurrences)
@@ -1377,15 +1381,15 @@ Example functions:
     Function uses MMX instructions...
 
 ====================================================================================================
-TYPE: format_string_mismatch (29 occurrences)
+TYPE: format_string_mismatch (28 occurrences)
 ====================================================================================================
 
 Unique patterns:
      4x  core_main_c_displayErrorAndQuit_FUN_00506f10("Invalid sfx string: %s");
-     2x  core_main_c_displayErrorAndQuit_FUN_00506f10("SampleInfo::cvtPlaybackPos - can't use relative sample
      1x  core_main_c_displayErrorAndQuit_FUN_00506f10("MPEG Layer 2 - pick_table - can't load tables!  File: 
      1x  core_main_c_displayErrorAndQuit_FUN_00506f10("js_bound bad layer/modext (%d/%d)  File: %s");
      1x  core_main_c_displayErrorAndQuit_FUN_00506f10("Not enough main data to decode frame %d.");
+     1x  core_main_c_displayErrorAndQuit_FUN_00506f10("Error seeking %s to %d");
      1x  engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"SFXDBG: sample = %s\n");
      1x  engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"Killing %s in compute()\n");
      1x  core_main_c_displayErrorAndQuit_FUN_00506f10("CMansionPuzzleCircle::panelOccupied - invalid index: %
@@ -1405,8 +1409,8 @@ Unique patterns:
 Example functions:
   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40
     Format string expects 1 args but got 0...
-  sound_sndmain.cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580
-    Format string expects 1 args but got 0...
+  sound_sndmain.cpp_CSfxSample_seek_FUN_005a65a0
+    Format string expects 2 args but got 0...
   sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100
     Format string expects 1 args but got 0...
   core_manpuz.cpp_CMansionPuzzleCircle_panelOccupied_FUN_0050b040
@@ -1756,11 +1760,11 @@ Example functions:
     (ushort)(NAN(dVar9) || NAN(359.5)) << 10 |...
 
 ====================================================================================================
-TYPE: undefined_ptr_cast (9 occurrences)
+TYPE: undefined_ptr_cast (10 occurrences)
 ====================================================================================================
 
 Unique patterns:
-     6x  (undefined6 *)
+     7x  (undefined6 *)
      3x  (undefined5 *)
 
 Example functions:
@@ -1778,6 +1782,8 @@ Example functions:
     unaff_EDI = (char *)*(undefined6 *)pcVar2;...
   engine_colquant.c_computeBoxStatistics_FUN_00441260
     uVar7 = *(undefined5 *)&workspace->boxes[box_index].spread_red;...
+  sound_sndmain.cpp_CSfxSlot_seek_FUN_005a8390
+    0x10),*(undefined6 *)&(this_ptr->options).trigger_time))...
 
 ====================================================================================================
 TYPE: bare_stack_ref (5 occurrences)
@@ -1902,6 +1908,19 @@ Example functions:
     /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
 
 ====================================================================================================
+TYPE: warning_unmapped_variable (2 occurrences)
+====================================================================================================
+
+Unique patterns:
+     2x  WARNING: Variable defined which should be unmapped
+
+Example functions:
+  cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_00431a30
+    /* WARNING: Variable defined which should be unmapped: local_c */...
+  core_elephant.cpp_CElephantGun_process_FUN_004a7070
+    /* WARNING: Variable defined which should be unmapped: local_20 */...
+
+====================================================================================================
 TYPE: warning_is_inlined (2 occurrences)
 ====================================================================================================
 
@@ -1925,17 +1944,6 @@ Unique patterns:
 Example functions:
   core_mmx.c_detectIntelProcessor_FUN_00524f4c
     piVar3 = (int *)cpuid_basic_info(0);...
-
-====================================================================================================
-TYPE: warning_unmapped_variable (1 occurrences)
-====================================================================================================
-
-Unique patterns:
-     1x  WARNING: Variable defined which should be unmapped
-
-Example functions:
-  cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_00431a30
-    /* WARNING: Variable defined which should be unmapped: local_c */...
 
 ====================================================================================================
 TYPE: warning_overlapping_instructions (1 occurrences)

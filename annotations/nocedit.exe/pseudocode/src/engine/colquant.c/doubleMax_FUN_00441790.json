@@ -3,7 +3,13 @@
     "errors": [
       {
         "category": "other",
-        "column": 17,
+        "column": 13,
+        "line": 15,
+        "message": "member reference base type 'double' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 23,
         "line": 15,
         "message": "member reference base type 'double' is not a structure or union"
       },
@@ -21,13 +27,25 @@
       },
       {
         "category": "other",
-        "column": 17,
+        "column": 13,
+        "line": 19,
+        "message": "member reference base type 'double' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 23,
         "line": 19,
         "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "other",
         "column": 37,
+        "line": 21,
+        "message": "member reference base type 'double' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 52,
         "line": 21,
         "message": "member reference base type 'double' is not a structure or union"
       }
@@ -37,13 +55,13 @@
   },
   "complexity": {
     "assembly_lines": 31,
-    "complexity_score": 97,
+    "complexity_score": 127,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 12,
-    "suspect_count": 7,
+    "suspect_count": 10,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_few",
@@ -186,15 +204,8 @@
         "is_param": false,
         "name": "local_18",
         "offset": -24,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_14",
-        "offset": -20,
-        "size": 4,
-        "type": "undefined4"
+        "size": 8,
+        "type": "double"
       },
       {
         "is_param": false,
@@ -249,7 +260,15 @@
       "line": 8,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "local_18 = b._0_4_;",
+      "text": "local_18._0_4_ = b._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 8,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_18._0_4_ = b._0_4_;",
       "type": "unknown_field"
     },
     {
@@ -273,7 +292,15 @@
       "line": 12,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "local_18 = a._0_4_;",
+      "text": "local_18._0_4_ = a._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 12,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_18._0_4_ = a._0_4_;",
       "type": "unknown_field"
     },
     {
@@ -281,7 +308,15 @@
       "line": 14,
       "match": "._4_4_",
       "severity": "mild",
-      "text": "return __BITCAST_DOUBLE(CONCAT44(a._4_4_,local_18));",
+      "text": "return __BITCAST_DOUBLE(CONCAT44(a._4_4_,local_18._0_4_));",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 14,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "return __BITCAST_DOUBLE(CONCAT44(a._4_4_,local_18._0_4_));",
       "type": "unknown_field"
     },
     {
@@ -289,7 +324,7 @@
       "line": 14,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "return __BITCAST_DOUBLE(CONCAT44(a._4_4_,local_18));",
+      "text": "return __BITCAST_DOUBLE(CONCAT44(a._4_4_,local_18._0_4_));",
       "type": "decompiler_intrinsic"
     },
     {

@@ -6037,6 +6037,10 @@
       "type":"function_definition"
     },
     {
+      "name":"_floatx2",
+      "type":"struct"
+    },
+    {
       "name":"_heapinfo",
       "type":"struct"
     },
@@ -6079,6 +6083,14 @@
     {
       "name":"ThreadStartupInfo",
       "type":"struct"
+    },
+    {
+      "name":"_uintx2",
+      "type":"struct"
+    },
+    {
+      "name":"_SPLIT_DOUBLE",
+      "type":"union"
     },
     {
       "name":"_union_518",
@@ -23420,6 +23432,30 @@
       "type":"struct"
     },
     {
+      "alig":1,
+      "cat":"/Nocturne/Struct/System/winnt.h",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"_p1",
+          "offset":0,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"_p2",
+          "offset":4,
+          "type":"float"
+        }
+      ],
+      "importable":true,
+      "len":8,
+      "name":"_floatx2",
+      "pack":false,
+      "type":"struct"
+    },
+    {
       "alig":4,
       "cat":"/Nocturne/Struct/System/wincon.h",
       "desc":"",
@@ -24598,6 +24634,30 @@
       "importable":true,
       "len":36,
       "name":"_tm",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/System/winnt.h",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"low",
+          "offset":0,
+          "type":"uint"
+        },
+        {
+          "len":4,
+          "name":"high",
+          "offset":4,
+          "type":"uint"
+        }
+      ],
+      "importable":true,
+      "len":8,
+      "name":"_uintx2",
       "pack":false,
       "type":"struct"
     },
@@ -64503,6 +64563,30 @@
       "importable":true,
       "len":8,
       "name":"_MMX_INTEGER",
+      "pack":false,
+      "type":"union"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Union/System/winnt.h",
+      "desc":"",
+      "fields":[
+        {
+          "len":8,
+          "name":"d",
+          "offset":0,
+          "type":"double"
+        },
+        {
+          "len":8,
+          "name":"u",
+          "offset":0,
+          "type":"_uintx2"
+        }
+      ],
+      "importable":true,
+      "len":8,
+      "name":"_SPLIT_DOUBLE",
       "pack":false,
       "type":"union"
     },

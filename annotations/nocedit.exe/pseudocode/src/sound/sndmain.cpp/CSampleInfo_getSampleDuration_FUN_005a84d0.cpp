@@ -9,11 +9,8 @@
 double __cdecl sound_sndmain_cpp_CSampleInfo_getSampleDuration_FUN_005a84d0(CSampleInfo *this_ptr)
 
 {
-  int in_stack_00000004;
-  
-  if (0 < *(int *)(in_stack_00000004 + 0x10c)) {
-    return (double)*(int *)(in_stack_00000004 + 0x110) / (double)*(int *)(in_stack_00000004 + 0x10c)
-    ;
+  if (0 < this_ptr->sample_rate) {
+    return (double)this_ptr->sample_count / (double)this_ptr->sample_rate;
   }
   return 0.0;
 }

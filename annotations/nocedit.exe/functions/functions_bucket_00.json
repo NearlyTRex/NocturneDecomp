@@ -49300,6 +49300,22 @@
         {
           "name":"this_ptr",
           "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CLodMesh*"
+        },
+        {
+          "name":"sample_point",
+          "storage":{
             "offset":8,
             "size":4,
             "stack":true,
@@ -49311,10 +49327,10 @@
               }
             ]
           },
-          "type":"CLodMesh*"
+          "type":"SLodSamplePoint*"
         },
         {
-          "name":"sample_point",
+          "name":"face",
           "storage":{
             "offset":12,
             "size":4,
@@ -49323,22 +49339,6 @@
               {
                 "addr":"Stack[0xc]",
                 "offset":12,
-                "size":4
-              }
-            ]
-          },
-          "type":"SLodSamplePoint*"
-        },
-        {
-          "name":"face",
-          "storage":{
-            "offset":16,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x10]",
-                "offset":16,
                 "size":4
               }
             ]
@@ -68768,7 +68768,7 @@
               }
             ]
           },
-          "type":"void*"
+          "type":"ushort*"
         },
         {
           "name":"bits_per_sample",
@@ -69495,13 +69495,13 @@
         {
           "name":"this_ptr",
           "storage":{
-            "offset":8,
+            "offset":4,
             "size":4,
             "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0x8]",
-                "offset":8,
+                "addr":"Stack[0x4]",
+                "offset":4,
                 "size":4
               }
             ]
@@ -69511,13 +69511,13 @@
         {
           "name":"position",
           "storage":{
-            "offset":12,
+            "offset":8,
             "size":8,
             "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0xc]",
-                "offset":12,
+                "addr":"Stack[0x8]",
+                "offset":8,
                 "size":8
               }
             ]
@@ -69527,13 +69527,13 @@
         {
           "name":"input_type",
           "storage":{
-            "offset":20,
+            "offset":16,
             "size":4,
             "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0x14]",
-                "offset":20,
+                "addr":"Stack[0x10]",
+                "offset":16,
                 "size":4
               }
             ]
@@ -69543,13 +69543,13 @@
         {
           "name":"output_type",
           "storage":{
-            "offset":24,
+            "offset":20,
             "size":4,
             "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0x18]",
-                "offset":24,
+                "addr":"Stack[0x14]",
+                "offset":20,
                 "size":4
               }
             ]
@@ -75555,6 +75555,22 @@
         {
           "name":"ray_origin",
           "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3d*"
+        },
+        {
+          "name":"ray_dir",
+          "storage":{
             "offset":8,
             "size":4,
             "stack":true,
@@ -75569,7 +75585,7 @@
           "type":"CVector3d*"
         },
         {
-          "name":"ray_dir",
+          "name":"plane_point",
           "storage":{
             "offset":12,
             "size":4,
@@ -75585,7 +75601,7 @@
           "type":"CVector3d*"
         },
         {
-          "name":"plane_point",
+          "name":"plane_normal",
           "storage":{
             "offset":16,
             "size":4,
@@ -75594,22 +75610,6 @@
               {
                 "addr":"Stack[0x10]",
                 "offset":16,
-                "size":4
-              }
-            ]
-          },
-          "type":"CVector3d*"
-        },
-        {
-          "name":"plane_normal",
-          "storage":{
-            "offset":20,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x14]",
-                "offset":20,
                 "size":4
               }
             ]

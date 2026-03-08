@@ -33,7 +33,8 @@ int __cdecl core_shotgun_cpp_CShotgun_fire_FUN_00588060(CShotgun *this_ptr)
   float fStack_98;
   float fStack_94;
   float fStack_90;
-  CVector3f aCStack_8c [2];
+  CVector3f CStack_8c;
+  CVector3f local_80;
   CVector3f CStack_74;
   CVector3f aCStack_68 [2];
   float fStack_4c;
@@ -51,8 +52,7 @@ int __cdecl core_shotgun_cpp_CShotgun_fire_FUN_00588060(CShotgun *this_ptr)
   float fStack_1c;
   float fStack_18;
   
-  pCVar1 = (CVector3f *)(*(((this_ptr->base).base.vtable._uc)->_uc).canWalk)((CCharacter *)this_ptr)
-  ;
+  pCVar1 = (*(((this_ptr->base).base.vtable._uw)->_uw).getMuzzlePoint)(&this_ptr->base,&local_80);
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
             ((CDemonActor *)this_ptr,&CStack_bc,pCVar1);
   iVar2 = core_weapon_cpp_CWeapon_fire_FUN_005ee6e0(&this_ptr->base);
@@ -209,11 +209,11 @@ int __cdecl core_shotgun_cpp_CShotgun_fire_FUN_00588060(CShotgun *this_ptr)
     } while (iStack_40 < (int)fStack_38);
   }
   core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
-  aCStack_8c[0].x = CStack_bc.x;
-  aCStack_8c[0].z = CStack_bc.z;
-  aCStack_8c[0].y = CStack_bc.y + -0.125f;
+  CStack_8c.x = CStack_bc.x;
+  CStack_8c.z = CStack_bc.z;
+  CStack_8c.y = CStack_bc.y + -0.125f;
   core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_004c7a60
-            (g_CFireEffectPtr,aCStack_8c,&(this_ptr->base).base.orient_matrix);
+            (g_CFireEffectPtr,&CStack_8c,&(this_ptr->base).base.orient_matrix);
   core_sound_cpp_CSound_playActorSound_FUN_005b3a40
             (g_CSoundPtr,(CDemonActor *)this_ptr,"shotgun.wav",&CStack_bc);
   (this_ptr->base).fire_cooldown_timer = 0.666;

@@ -1,7 +1,26 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "format_error",
+        "column": 32,
+        "line": 150,
+        "message": "format specifies type 'char *' but the argument has type 'char (*)[256]' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 95,
+        "line": 256,
+        "message": "format specifies type 'char *' but the argument has type 'CFileFinder *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "other",
+        "column": 84,
+        "line": 270,
+        "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
+      }
+    ],
+    "success": false,
     "warnings": []
   },
   "complexity": {

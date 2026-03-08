@@ -4,9 +4,9 @@
 ; double __cdecl shape_design_c_calculateVertexAngle_FUN_00462050(int vertex1_index,int vertex2_index,int vertex3_index)
 ;
 ; Parameters:
-; int              Stack[0x8]:4   vertex1_index
-; int              Stack[0xc]:4   vertex2_index
-; int              Stack[0x10]:4   vertex3_index
+; int              Stack[0x4]:4   vertex1_index
+; int              Stack[0x8]:4   vertex2_index
+; int              Stack[0xc]:4   vertex3_index
 ; Local Variables:
 ; undefined8       Stack[-0x94]:8  local_94
 ; undefined8       Stack[-0x8c]:8  local_8c

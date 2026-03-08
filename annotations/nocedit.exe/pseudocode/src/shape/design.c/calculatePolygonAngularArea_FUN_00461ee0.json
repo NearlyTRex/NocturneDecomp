@@ -6,20 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 127,
-    "complexity_score": 170,
+    "complexity_score": 88,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 80,
-    "suspect_count": 7,
+    "pseudocode_lines": 73,
+    "suspect_count": 1,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "stack_alignment_array",
-      "stack_param",
-      "sub84_truncation"
+      "stack_alignment_array"
     ],
-    "total_lines": 207
+    "total_lines": 200
   },
   "cross_references": [
     {
@@ -348,56 +345,8 @@
       "line": 10,
       "match": "afStackY_2034",
       "severity": "moderate",
-      "text": "float afStackY_2034 [2021];",
+      "text": "float afStackY_2034 [2020];",
       "type": "stack_alignment_array"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_ffffff64",
-      "severity": "moderate",
-      "text": "uint in_stack_ffffff64;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 74,
-      "match": "in_stack_ffffff64",
-      "severity": "moderate",
-      "text": "(__BITCAST_DOUBLE(CONCAT44(in_stack_ffffff64,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 74,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "(__BITCAST_DOUBLE(CONCAT44(in_stack_ffffff64,",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 78,
-      "match": "in_stack_ffffff64",
-      "severity": "moderate",
-      "text": "in_stack_ffffff64 = SUB84(__BITCAST_UINT64(dVar5),0);",
-      "type": "stack_param"
-    },
-    {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 78,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "in_stack_ffffff64 = SUB84(__BITCAST_UINT64(dVar5),0);",
-      "type": "sub84_truncation"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 78,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "in_stack_ffffff64 = SUB84(__BITCAST_UINT64(dVar5),0);",
-      "type": "decompiler_intrinsic"
     }
   ]
 }

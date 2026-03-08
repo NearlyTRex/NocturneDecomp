@@ -4,25 +4,25 @@
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 24,
+        "line": 23,
         "message": "use of undeclared identifier 'stack0xffffffcc'"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 25,
+        "line": 24,
         "message": "use of undeclared identifier 'stack0xffffffbc'"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 27,
+        "line": 26,
         "message": "use of undeclared identifier 'stack0xffffffc0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 17,
-        "line": 30,
+        "line": 29,
         "message": "use of undeclared identifier 'stack0xffffffc0'"
       }
     ],
@@ -31,21 +31,20 @@
   },
   "complexity": {
     "assembly_lines": 41,
-    "complexity_score": 160,
+    "complexity_score": 134,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 25,
-    "suspect_count": 11,
+    "pseudocode_lines": 24,
+    "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "stack_alignment_array",
-      "stack_param",
       "stack_ref"
     ],
-    "total_lines": 66
+    "total_lines": 65
   },
   "cross_references": [],
   "function": {
@@ -106,10 +105,10 @@
     "pcode_op_count": 206
   },
   "stack_frame": {
-    "frame_size": 92,
+    "frame_size": 88,
     "local_size": 76,
     "param_offset": 4,
-    "param_size": 16,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -143,21 +142,21 @@
       {
         "is_param": true,
         "name": "segStart",
-        "offset": 8,
+        "offset": 4,
         "size": 4,
         "type": "CVector3d *"
       },
       {
         "is_param": true,
         "name": "segEnd",
-        "offset": 12,
+        "offset": 8,
         "size": 4,
         "type": "CVector3d *"
       },
       {
         "is_param": true,
         "name": "point",
-        "offset": 16,
+        "offset": 12,
         "size": 4,
         "type": "CVector3d *"
       }
@@ -182,32 +181,16 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 7,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "CVector3d *in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 8,
+      "line": 7,
       "match": "auStackY_1824",
       "severity": "moderate",
       "text": "uint auStackY_1824 [1524];",
       "type": "stack_alignment_array"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "shape_superopt_cpp_closestPointOnSegment3D_FUN_005d6020(in_stack_00000004,segStart,segEnd);",
-      "type": "stack_param"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 17,
+      "line": 16,
       "match": "&stack0xffffffcc",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffcc + (uint)bVar2 * -8) =",
@@ -215,7 +198,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 17,
+      "line": 16,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&stack0xffffffcc + (uint)bVar2 * -8) =",
@@ -223,7 +206,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 18,
+      "line": 17,
       "match": "&stack0xffffffbc",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffbc + (uint)bVar2 * -8);",
@@ -231,7 +214,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 20,
+      "line": 19,
       "match": "&stack0xffffffc0",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffc0 + (uint)bVar2 * -8 + (uint)bVar2 * -8);",
@@ -239,7 +222,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 21,
+      "line": 20,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)(local_30 + (-(uint)bVar2 - (uint)bVar2)) + ((uint)bVar2 * -2 + 1) * 4) =",
@@ -247,7 +230,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 23,
+      "line": 22,
       "match": "&stack0xffffffc0",
       "severity": "moderate",
       "text": "((int)(&stack0xffffffc0 + (uint)bVar2 * -8 + (uint)bVar2 * -8) + ((uint)bVar2 * -2 + 1) * 4)",
@@ -255,15 +238,15 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 25,
+      "line": 24,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "dVar1 = segEnd->x - __BITCAST_DOUBLE(CONCAT44(uStack_34,local_38));",
+      "text": "dVar1 = point->x - __BITCAST_DOUBLE(CONCAT44(uStack_34,local_38));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 27,
+      "line": 26,
       "match": "SQRT",
       "severity": "mild",
       "text": "return SQRT(local_30[0] * local_30[0] + dVar1 * dVar1);",

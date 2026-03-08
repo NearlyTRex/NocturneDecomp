@@ -4,10 +4,12 @@
 ; void __cdecl core_elephant_cpp_CElephantGun_process_FUN_004a7070(CElephantGun *this_ptr,float delta_time)
 ;
 ; Parameters:
+; char             Stack[0x0]:1   local_res0
 ; CElephantGun *   Stack[0x4]:4   this_ptr
-; float            Stack[0x8]:4   delta_time
+; float            Stack[0x10]:4   delta_time
 ; Local Variables:
-; undefined1       Stack[-0x14]:1  local_14
+; CVector3f        Stack[-0x20]:12  local_20
+; CVector3f        Stack[-0x14]:12  local_14
 ;
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 03114278

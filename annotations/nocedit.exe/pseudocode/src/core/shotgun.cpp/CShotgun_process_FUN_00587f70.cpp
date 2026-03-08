@@ -10,20 +10,21 @@ void __cdecl core_shotgun_cpp_CShotgun_process_FUN_00587f70(CShotgun *this_ptr,f
 
 {
   CVector3f *input_local_point;
-  float in_stack_0000000c;
-  CVector3f CStack_1c;
+  CVector3f *unaff_ESI;
+  char local_res0;
+  CVector3f aCStack_20 [2];
   
   if (this_ptr->muzzle_flash_active != 0) {
     g_CDemonLightInstance.light_enabled_flag = 1;
     input_local_point =
-         (CVector3f *)(*(((this_ptr->base).base.vtable._uc)->_uc).canWalk)((CCharacter *)this_ptr);
+         (*(((this_ptr->base).base.vtable._uw)->_uw).getMuzzlePoint)(&this_ptr->base,unaff_ESI);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-              ((CDemonActor *)this_ptr,&CStack_1c,input_local_point);
+              ((CDemonActor *)this_ptr,aCStack_20,input_local_point);
     g_CDemonLightInstance.volumetric_enabled = 0;
-    if ((float *)&stack0x00000000 != &g_CDemonLightInstance.base.base.rotation_matrix.m[1].y) {
-      g_CDemonLightInstance.base.base.position.f.x = CStack_1c.x;
-      g_CDemonLightInstance.base.base.position.f.y = CStack_1c.y;
-      g_CDemonLightInstance.base.base.position.f.z = CStack_1c.z;
+    if ((float *)&local_res0 != &g_CDemonLightInstance.base.base.rotation_matrix.m[1].z) {
+      g_CDemonLightInstance.base.base.position.f.x = aCStack_20[0].x;
+      g_CDemonLightInstance.base.base.position.f.y = aCStack_20[0].y;
+      g_CDemonLightInstance.base.base.position.f.z = aCStack_20[0].z;
     }
     core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
               (&g_CDemonLightInstance.base.base.rotation_matrix,&(this_ptr->base).base.orient.vec);
@@ -34,6 +35,6 @@ void __cdecl core_shotgun_cpp_CShotgun_process_FUN_00587f70(CShotgun *this_ptr,f
     core_set_cpp_CDemonSet_addDynamicLight_FUN_0056d090(g_CDemonSetPtr,&g_CDemonLightInstance);
   }
   this_ptr->muzzle_flash_active = 0;
-  core_weapon_cpp_CWeapon_process_FUN_005ee110(&this_ptr->base,in_stack_0000000c);
+  core_weapon_cpp_CWeapon_process_FUN_005ee110(&this_ptr->base,delta_time);
   return;
 }

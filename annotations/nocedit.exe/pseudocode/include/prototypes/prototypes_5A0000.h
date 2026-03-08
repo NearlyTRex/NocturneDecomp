@@ -124,7 +124,7 @@ float __cdecl sound_sndmain_cpp_calculateDistanceGain_FUN_005a56c0(float distanc
 void __cdecl sound_sndmain_cpp_allocMixBuffers_FUN_005a5730(int requested_size,int num_buffers);
 void __cdecl sound_sndmain_cpp_freeMixBuffers_FUN_005a5900(void);
 void __cdecl sound_sndmain_cpp_nextMixingBuffer_FUN_005a59c0(void);
-void __cdecl sound_sndmain_cpp_convertMixBufToOutput_FUN_005a5b80(float *input_samples,void *output_buffer,int bits_per_sample,int num_samples, int output_stride);
+void __cdecl sound_sndmain_cpp_convertMixBufToOutput_FUN_005a5b80(float *input_samples,ushort *output_buffer,int bits_per_sample,int num_samples, int output_stride);
 CSfxSlot * __cdecl sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005a5d00(uint sfx_handle,int check_hardware_playback);
 void __cdecl sound_sndmain_cpp_generateSilence_FUN_005a5db0(void *buffer,uint bits_per_sample,uint num_samples);
 void __cdecl sound_sndmain_cpp_convertDoubleToFixed_FUN_005a5e10(double input,int *out_integer_part,int *out_fractional_part);
@@ -157,7 +157,7 @@ double __cdecl sound_sndmain_cpp_CSampleInfo_getSampleDuration_FUN_005a84d0(CSam
 int __cdecl sound_sndmain_cpp_CSfxSample_computeDataSize_FUN_005a8520(CSfxSample *this_ptr);
 int __cdecl sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_005a8550(CSfxSample *this_ptr);
 double __cdecl sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580(CSampleInfo *this_ptr,double position,uint input_type,uint output_type);
-double __cdecl sound_sndmain_cpp_CSampleInfo_normalizePlaybackPos_FUN_005a86f0(CSampleInfo *this_ptr,double position,uint input_type,uint output_type);
+double __cdecl sound_sndmain_cpp_CSfxSample_normalizePlaybackPos_FUN_005a86f0(CSfxSample *this_ptr,double position,uint input_type);
 int __cdecl sound_sndmain_cpp_CSfxSample_getLoopMode_FUN_005a87d0(CSfxSample *this_ptr);
 int __cdecl sound_sndmain_cpp_CSfxSample_hasAdvancedLoopMode_FUN_005a8810(CSfxSample *this_ptr);
 void __cdecl sound_sndmain_cpp_CSfxOptions_reset_FUN_005a8830(CSfxOptions *this_ptr);
@@ -287,7 +287,7 @@ void __cdecl sound_sndmain_cpp_pollAllStreams_FUN_005ace90(int paused_mode);
 void __cdecl sound_sndmain_cpp_convertMp3ToSfxMetadata_FUN_005acf20(char *mp3_filename);
 char * __cdecl sound_sndmain_cpp_testSoundFile_FUN_005ad3b0(char *sample_name);
 void __cdecl sound_sndmain_cpp_testSoundFiles_FUN_005ad5c0(void);
-void __cdecl sound_sndmain_cpp_logSoundError_FUN_005adba0(char *format,...);
+void __cdecl sound_sndmain_cpp_logSoundError_FUN_005adba0(char *format,...) __attribute__((format(printf, 1, 2)));
 CSfxOptions * __cdecl sound_sndmain_cpp_CSfxOptions_ctor_FUN_005add70(CSfxOptions *this_ptr);
 int __cdecl sound_sndmain_cpp_CSfxSample_getStreamingBufferSizeBytes_FUN_005add90(CSfxSample *this_ptr);
 int __cdecl sound_sndmain_cpp_return16_FUN_005addb0(void);

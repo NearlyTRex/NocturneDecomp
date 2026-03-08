@@ -201,7 +201,7 @@ int __cdecl core_enemy_cpp_CEnemy_getPropertyList_FUN_004aa170(CEnemy *this_ptr,
 void __cdecl core_enemy_cpp_CEnemy_randomize_FUN_004aa250(CEnemy *this_ptr);
 void __cdecl core_event_cpp_staticInit_FUN_004aa260(void);
 int __cdecl core_event_cpp_setEventError_FUN_004aa270(char *source_file,int source_line,char *error_message);
-int __cdecl core_event_cpp_formatEventError_FUN_004aa2a0(char *format,...);
+int __cdecl core_event_cpp_formatEventError_FUN_004aa2a0(char *format,...) __attribute__((format(printf, 1, 2)));
 char * __cdecl core_event_cpp_skipWhitespace_FUN_004aa2d0(char *str);
 int * __cdecl core_event_cpp_skipWhitespaceIndexed_FUN_004aa2f0(char *expression,int *parse_position);
 int __cdecl core_event_cpp_parseComparisonOp_FUN_004aa320(char *str);

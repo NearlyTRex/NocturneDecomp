@@ -18,7 +18,6 @@ uint __cdecl shape_design_c_mergeTrianglesIntoQuad_FUN_00462190(int first_polygo
   byte bVar7;
   float10 fVar8;
   double dVar9;
-  int in_stack_fffffe0c;
   SShapeEditorPolygon local_1e8;
   float local_64 [4];
   float local_54;
@@ -107,8 +106,8 @@ LAB_004623f2:
         }
         else {
           dVar9 = shape_design_c_calculateVertexAngle_FUN_00462050
-                            (local_1e8.vertex_indices[1],local_1e8.vertex_indices[2],
-                             in_stack_fffffe0c);
+                            (local_1e8.vertex_indices[0],local_1e8.vertex_indices[1],
+                             local_1e8.vertex_indices[2]);
           if (170 < dVar9) {
             local_2c = local_3c[0];
             local_1e8.vertex_indices[0] = local_3c[1];
@@ -167,8 +166,9 @@ LAB_004623f2:
           }
           else {
             dVar9 = shape_design_c_calculateVertexAngle_FUN_00462050
-                              (g_ModelPolygonData[first_polygon_index].vertex_indices[1],
-                               g_ModelPolygonData[first_polygon_index].vertex_indices[2],uVar4);
+                              (g_ModelPolygonData[first_polygon_index].vertex_indices[0],
+                               g_ModelPolygonData[first_polygon_index].vertex_indices[1],
+                               g_ModelPolygonData[first_polygon_index].vertex_indices[2]);
             if (170 < dVar9) {
               uVar4 = g_ModelPolygonData[first_polygon_index].vertex_indices[0];
               fVar1 = g_ModelPolygonData[first_polygon_index].uv_u[0];

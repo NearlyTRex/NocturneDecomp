@@ -2,10 +2,10 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 23,
-        "message": "use of undeclared identifier 'stack0x00000000'"
+        "category": "other",
+        "column": 16,
+        "line": 40,
+        "message": "C-style cast from 'CElephantGun *' to 'float' is not allowed"
       }
     ],
     "success": false,
@@ -13,18 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 69,
+    "complexity_score": 48,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 12,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 29,
-    "suspect_count": 3,
+    "pseudocode_lines": 33,
+    "suspect_count": 1,
     "suspect_types": [
-      "stack_param",
-      "stack_ref"
+      "warning_unmapped_variable"
     ],
-    "total_lines": 106
+    "total_lines": 110
   },
   "cross_references": [],
   "function": {
@@ -176,18 +175,32 @@
     "pcode_op_count": 266
   },
   "stack_frame": {
-    "frame_size": 32,
-    "local_size": 24,
+    "frame_size": 52,
+    "local_size": 36,
     "param_offset": 4,
-    "param_size": 8,
+    "param_size": 16,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
         "name": "local_14",
         "offset": -20,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": true,
+        "name": "local_res0",
+        "offset": 0,
         "size": 1,
-        "type": "undefined1"
+        "type": "char"
       },
       {
         "is_param": true,
@@ -199,7 +212,7 @@
       {
         "is_param": true,
         "name": "delta_time",
-        "offset": 8,
+        "offset": 16,
         "size": 4,
         "type": "float"
       }
@@ -207,28 +220,12 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 6,
-      "match": "in_stack_0000000c",
+      "description": "Variable defined which should be unmapped",
+      "line": 2,
+      "match": "WARNING: Variable defined which should be unmapped",
       "severity": "moderate",
-      "text": "float in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 16,
-      "match": "&stack0x00000000",
-      "severity": "moderate",
-      "text": "if ((float *)&stack0x00000000 != &g_CDemonLightInstance.base.base.rotation_matrix.m[1].y) {",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 30,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "core_weapon_cpp_CWeapon_process_FUN_005ee110(&this_ptr->base,in_stack_0000000c);",
-      "type": "stack_param"
+      "text": "/* WARNING: Variable defined which should be unmapped: local_20 */",
+      "type": "warning_unmapped_variable"
     }
   ],
   "vtable_info": {

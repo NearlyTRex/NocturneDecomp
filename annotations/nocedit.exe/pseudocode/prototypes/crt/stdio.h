@@ -17,7 +17,7 @@ int __cdecl ::vsprintf(char *buffer,char *format,va_list_t args);
 
 // Original: crt_stdio.c__sprintf_FUN_005fdbd0
 // Address: 005fdbd0
-int __cdecl ::sprintf(char *buffer,char *format,...);
+int __cdecl ::sprintf(char *buffer,char *format,...) __attribute__((format(printf, 2, 3)));
 
 // Original: crt_stdio.c_fwrite_FUN_005fdc00
 // Address: 005fdc00
@@ -25,7 +25,7 @@ SIZE_T __cdecl fwrite(void *ptr,SIZE_T size,SIZE_T count,_FILE *file);
 
 // Original: crt_stdio.c_fprintf_FUN_005fe6d0
 // Address: 005fe6d0
-int __cdecl fprintf(_FILE *file,char *format,...);
+int __cdecl fprintf(_FILE *file,char *format,...) __attribute__((format(printf, 2, 3)));
 
 // Original: crt_stdio.c_getc_helper_FUN_005fe700
 // Address: 005fe700
@@ -41,7 +41,7 @@ int __cdecl vfscanf(_FILE *file,char *format,va_list_t args);
 
 // Original: crt_stdio.c_fscanf_FUN_005fe7c0
 // Address: 005fe7c0
-int __cdecl fscanf(_FILE *file,char *format,...);
+int __cdecl fscanf(_FILE *file,char *format,...) __attribute__((format(scanf, 2, 3)));
 
 // Original: crt_stdio.c_fgetc_FUN_005fe840
 // Address: 005fe840
@@ -65,7 +65,7 @@ char * __cdecl fgets(char *str,int num,_FILE *stream);
 
 // Original: crt_stdio.c_printf_FUN_005ff0d0
 // Address: 005ff0d0
-int __cdecl printf(char *format,...);
+int __cdecl printf(char *format,...) __attribute__((format(printf, 1, 2)));
 
 // Original: crt_stdio.c_remove_FUN_005ff9d0
 // Address: 005ff9d0
@@ -97,7 +97,7 @@ int __cdecl vsscanf(char *str,char *format,va_list_t args);
 
 // Original: crt_stdio.c_sscanf_FUN_0060013c
 // Address: 0060013c
-int __cdecl sscanf(char *str,char *format,...);
+int __cdecl sscanf(char *str,char *format,...) __attribute__((format(scanf, 2, 3)));
 
 // Original: crt_stdio.c_formatTwoDigits_FUN_006002a0
 // Address: 006002a0
@@ -165,7 +165,7 @@ int __cdecl ::fclose(_FILE *file_handle,int force_close_flag);
 
 // Original: crt_stdio.c_fprintf_FUN_006021c0
 // Address: 006021c0
-void __cdecl fprintf(_FILE *stream,char *format,...);
+void __cdecl fprintf(_FILE *stream,char *format,...) __attribute__((format(printf, 2, 3)));
 
 // Original: crt_stdio.c_InitializeFileBuffer_FUN_006027e0
 // Address: 006027e0

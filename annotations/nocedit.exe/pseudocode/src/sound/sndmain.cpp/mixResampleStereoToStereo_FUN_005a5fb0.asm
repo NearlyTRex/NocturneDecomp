@@ -4,12 +4,12 @@
 ; double __cdecl sound_sndmain_cpp_mixResampleStereoToStereo_FUN_005a5fb0(short *sample_data,SStereoBuffers *channel_buffers,SStereoGains *channel_gains,double resample_position,double resample_delta,int samples_to_process)
 ;
 ; Parameters:
-; short *          Stack[0x14]:4   sample_data
-; SStereoBuffers * Stack[0x18]:4   channel_buffers
-; SStereoGains *   Stack[0x1c]:4   channel_gains
-; double           Stack[0x20]:8   resample_position
-; double           Stack[0x28]:8   resample_delta
-; int              Stack[0x30]:4   samples_to_process
+; short *          Stack[0x4]:4   sample_data
+; SStereoBuffers * Stack[0x8]:4   channel_buffers
+; SStereoGains *   Stack[0xc]:4   channel_gains
+; double           Stack[0x10]:8   resample_position
+; double           Stack[0x18]:8   resample_delta
+; int              Stack[0x20]:4   samples_to_process
 ; Local Variables:
 ; undefined4       Stack[-0x3c]:4  local_3c
 ; undefined4       Stack[-0x38]:4  local_38

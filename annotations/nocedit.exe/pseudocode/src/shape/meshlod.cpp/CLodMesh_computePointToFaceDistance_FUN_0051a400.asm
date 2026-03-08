@@ -4,9 +4,9 @@
 ; double __cdecl shape_meshlod_cpp_CLodMesh_computePointToFaceDistance_FUN_0051a400(CLodMesh *this_ptr,SLodSamplePoint *sample_point,CLodFace *face)
 ;
 ; Parameters:
-; CLodMesh *       Stack[0x8]:4   this_ptr
-; SLodSamplePoint * Stack[0xc]:4   sample_point
-; CLodFace *       Stack[0x10]:4   face
+; CLodMesh *       Stack[0x4]:4   this_ptr
+; SLodSamplePoint * Stack[0x8]:4   sample_point
+; CLodFace *       Stack[0xc]:4   face
 ; Local Variables:
 ; undefined8       Stack[-0xa0]:8  local_a0
 ; undefined        Stack[-0x98]:1  local_98

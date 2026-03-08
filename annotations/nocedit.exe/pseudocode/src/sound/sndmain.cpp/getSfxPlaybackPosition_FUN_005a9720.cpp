@@ -12,16 +12,13 @@ double __cdecl sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(uint sfx_ha
   CSfxSlot *this_ptr;
   int iVar1;
   double dVar2;
-  uint in_stack_00000004;
-  uint in_stack_ffffffd8;
-  uint local_24;
-  uint local_20;
-  uint uStack_1c;
+  _SPLIT_DOUBLE local_28;
+  _SPLIT_DOUBLE local_20;
   
-  this_ptr = sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005a5d00(in_stack_00000004,1);
+  this_ptr = sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005a5d00(sfx_handle,1);
   if (this_ptr == (CSfxSlot *)0x0) {
-    local_24 = 0xbff00000;
-    local_20 = 0;
+    local_28.u.high = 0xbff00000;
+    local_28.u.low = 0;
   }
   else {
     if ((this_ptr->hardware_buffer_handle != 0) && (g_CSoundDevicePtr != (CSoundDevice *)0x0)) {
@@ -32,13 +29,13 @@ double __cdecl sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(uint sfx_ha
       }
     }
     dVar2 = sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580
-                      (*(CSampleInfo **)&(this_ptr->options).trigger_time,
-                       *(double *)((int)&(this_ptr->options).trigger_time + 4),sfx_handle,
-                       in_stack_ffffffd8);
+                      (&this_ptr->sample->sample_info,(this_ptr->options).trigger_time,
+                       (this_ptr->options).trigger_id,output_format);
     sound_sndmain_cpp_unlockSound_FUN_005abdc0();
-    local_20 = SUB84(__BITCAST_UINT64(dVar2),0);
-    uStack_1c = (uint)((ulonglong)dVar2 >> 0x20);
-    local_24 = uStack_1c;
+    local_20.u.low = SUB84(__BITCAST_UINT64(dVar2),0);
+    local_28.u.low = local_20.u.low;
+    local_20.u.high = (uint)((ulonglong)dVar2 >> 0x20);
+    local_28.u.high = local_20.u.high;
   }
-  return __BITCAST_DOUBLE(CONCAT44(local_24,local_20));
+  return __BITCAST_DOUBLE(CONCAT44(local_28.u.high,local_28.u.low));
 }

@@ -4,13 +4,13 @@
       {
         "category": "format_error",
         "column": 63,
-        "line": 67,
+        "line": 66,
         "message": "format specifies type 'double' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 68,
-        "line": 67,
+        "line": 66,
         "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       }
     ],
@@ -19,19 +19,18 @@
   },
   "complexity": {
     "assembly_lines": 137,
-    "complexity_score": 138,
+    "complexity_score": 112,
     "cross_reference_count": 0,
     "function_call_count": 13,
     "global_count": 3,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 63,
-    "suspect_count": 6,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 62,
+    "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic",
-      "stack_param",
       "warning_inlined_function"
     ],
-    "total_lines": 200
+    "total_lines": 199
   },
   "cross_references": [],
   "function": {
@@ -311,24 +310,8 @@
       "type": "warning_inlined_function"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_fffffe10",
-      "severity": "moderate",
-      "text": "uint in_stack_fffffe10;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_fffffe10",
-      "severity": "moderate",
-      "text": "local_20 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(2,in_stack_fffffe10);",
-      "type": "stack_param"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 32,
+      "line": 31,
       "match": "ROUND",
       "severity": "mild",
       "text": "iVar3 = (int)ROUND(ROUND((float)local_1dc.sample_info.sample_count * (float)(fVar1 - fVar5)",
@@ -336,7 +319,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 32,
+      "line": 31,
       "match": "ROUND",
       "severity": "mild",
       "text": "iVar3 = (int)ROUND(ROUND((float)local_1dc.sample_info.sample_count * (float)(fVar1 - fVar5)",
@@ -344,7 +327,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 60,
+      "line": 59,
       "match": "SUB82",
       "severity": "mild",
       "text": "((char *)&local_1dc.taken,\"m-gun1.wav @ 2.3 * %f\",0xe9,SUB82(__BITCAST_UINT64((double)fVar2),0),",

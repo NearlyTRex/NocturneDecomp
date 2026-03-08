@@ -23,13 +23,13 @@ CWaterActor * __cdecl CWaterActor::ctor(CWaterActor *this_ptr);
 // Address: 005ea9f0
 void __cdecl CWaterActor::setup(CWaterActor *this_ptr);
 
-// Original: core_wateract.cpp_CWaterActor_FUN_005eafa0
+// Original: core_wateract.cpp_CWaterActor_updateWorldPositions_FUN_005eafa0
 // Address: 005eafa0
-void __cdecl CWaterActor(CWaterActor *this_ptr);
+void __cdecl CWaterActor::updateWorldPositions(CWaterActor *this_ptr);
 
-// Original: core_wateract.cpp_CWaterActor_FUN_005eb040
+// Original: core_wateract.cpp_CWaterActor_updateLocalPositions_FUN_005eb040
 // Address: 005eb040
-void __cdecl CWaterActor(CWaterActor *this_ptr);
+void __cdecl CWaterActor::updateLocalPositions(CWaterActor *this_ptr);
 
 // Original: core_wateract.cpp_CWaterActor_process_FUN_005eb100
 // Address: 005eb100

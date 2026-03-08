@@ -4,7 +4,7 @@
 ; double __cdecl shape_design_c_clampedArccos_FUN_00461c50(double dot_product)
 ;
 ; Parameters:
-; double           Stack[0x8]:8   dot_product
+; double           Stack[0x4]:8   dot_product
 ; Local Variables:
 ; undefined8       Stack[-0x18]:8  local_18
 ;

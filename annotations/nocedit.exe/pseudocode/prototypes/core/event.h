@@ -13,7 +13,7 @@ int __cdecl setEventError(char *source_file,int source_line,char *error_message)
 
 // Original: core_event.cpp_formatEventError_FUN_004aa2a0
 // Address: 004aa2a0
-int __cdecl formatEventError(char *format,...);
+int __cdecl formatEventError(char *format,...) __attribute__((format(printf, 1, 2)));
 
 // Original: core_event.cpp_skipWhitespace_FUN_004aa2d0
 // Address: 004aa2d0

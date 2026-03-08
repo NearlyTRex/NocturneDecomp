@@ -16,7 +16,6 @@ void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_005de360(CTommyGun *this_pt
   int iVar3;
   uint uVar4;
   float10 fVar5;
-  uint in_stack_fffffe10;
   CSfxSample local_1dc;
   double local_28;
   double local_20;
@@ -24,7 +23,7 @@ void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_005de360(CTommyGun *this_pt
   
   core_weapon_cpp_CWeapon_process_FUN_005ee110(&this_ptr->base,delta_time);
   if (this_ptr->fire_frames_remaining < 1) {
-    local_20 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(2,in_stack_fffffe10);
+    local_20 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(this_ptr->sfx_handles[0],2);
     fVar2 = (float)local_20;
     if (0.0 <= fVar2) {
       sound_sndmain_cpp_lockSound_FUN_005abd30();

@@ -4,13 +4,11 @@
 ; double __cdecl sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(uint sfx_handle,uint output_format)
 ;
 ; Parameters:
-; uint             Stack[0x8]:4   sfx_handle
-; uint             Stack[0xc]:4   output_format
+; uint             Stack[0x4]:4   sfx_handle
+; uint             Stack[0x8]:4   output_format
 ; Local Variables:
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined8       Stack[-0x20]:8  local_20
-; undefined8       Stack[-0x18]:8  local_18
+; _SPLIT_DOUBLE    Stack[-0x28]:8  local_28
+; _SPLIT_DOUBLE    Stack[-0x20]:8  local_20
 ;
 ; XREF[5]:
 ;   core_event.cpp_CEventList_updateSfxEntries_FUN_004b0db0 at 004b0df3

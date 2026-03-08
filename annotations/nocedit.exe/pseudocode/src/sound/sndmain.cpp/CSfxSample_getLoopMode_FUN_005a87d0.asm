@@ -7,8 +7,8 @@
 ; CSfxSample *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[5]:
-;   sound_sndmain.cpp_CSampleInfo_normalizePlaybackPos_FUN_005a86f0 at 005a8726
 ;   sound_sndmain.cpp_CSfxSample_hasAdvancedLoopMode_FUN_005a8810 at 005a8815
+;   sound_sndmain.cpp_CSfxSample_normalizePlaybackPos_FUN_005a86f0 at 005a8726
 ;   sound_sndmain.cpp_CSfxSample_pollStream_FUN_005a6730 at 005a67f5
 ;   sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_005a7fe0 at 005a8055
 ;   sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170 at 005a8329

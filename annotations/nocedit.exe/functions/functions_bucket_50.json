@@ -19807,13 +19807,13 @@
         {
           "name":"dot_product",
           "storage":{
-            "offset":8,
+            "offset":4,
             "size":8,
             "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0x8]",
-                "offset":8,
+                "addr":"Stack[0x4]",
+                "offset":4,
                 "size":8
               }
             ]
@@ -20146,6 +20146,22 @@
         {
           "name":"vertex1_index",
           "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"vertex2_index",
+          "storage":{
             "offset":8,
             "size":4,
             "stack":true,
@@ -20160,7 +20176,7 @@
           "type":"int"
         },
         {
-          "name":"vertex2_index",
+          "name":"vertex3_index",
           "storage":{
             "offset":12,
             "size":4,
@@ -20169,22 +20185,6 @@
               {
                 "addr":"Stack[0xc]",
                 "offset":12,
-                "size":4
-              }
-            ]
-          },
-          "type":"int"
-        },
-        {
-          "name":"vertex3_index",
-          "storage":{
-            "offset":16,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x10]",
-                "offset":16,
                 "size":4
               }
             ]
@@ -74945,13 +74945,13 @@
         {
           "name":"this_ptr",
           "storage":{
-            "offset":8,
+            "offset":4,
             "size":4,
             "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0x8]",
-                "offset":8,
+                "addr":"Stack[0x4]",
+                "offset":4,
                 "size":4
               }
             ]
@@ -79895,9 +79895,27 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_stranger.cpp_FUN_005c6950",
+    "name":"core_stranger.cpp_isProcessDisabled_FUN_005c6950",
     "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"actor",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonActor*"
+        }
+      ],
       "ret_storage":{
         "reg":"EAX",
         "size":4,
@@ -84305,9 +84323,43 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_teleport.cpp_FUN_005da850",
+    "name":"core_teleport.cpp_matchesTeleportDestination_FUN_005da850",
     "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"dest",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CTeleportDest*"
+        },
+        {
+          "name":"candidate",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CTeleport*"
+        }
+      ],
       "ret_storage":{
         "reg":"EAX",
         "size":4,
@@ -86429,6 +86481,22 @@
             ]
           },
           "type":"undefined1"
+        },
+        {
+          "name":"unionfacet5_5e376a",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:40410f119d1b",
+                "offset":70648169864475,
+                "size":4
+              }
+            ]
+          },
+          "type":"UActorVTable*",
+          "use":26
         },
         {
           "name":"unionfacet5_5e3963",

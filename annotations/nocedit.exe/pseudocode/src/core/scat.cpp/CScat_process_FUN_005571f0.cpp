@@ -137,8 +137,8 @@ void __cdecl core_scat_cpp_CScat_process_FUN_005571f0(CScat *this_ptr,float delt
         }
         if ((this_ptr->base).player_control.action_states[6] != 0) {
           (this_ptr->base).player_control.action_states[6] = 0;
-          (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)
-                    ((CEnemy *)this_ptr,SUB14(this_ptr->guns_drawn == 0,0));
+          (*(((this_ptr->base).base.base.vtable._uh)->_uh).drawWeapon)
+                    (&this_ptr->base,SUB14(this_ptr->guns_drawn == 0,0));
         }
       }
       break;

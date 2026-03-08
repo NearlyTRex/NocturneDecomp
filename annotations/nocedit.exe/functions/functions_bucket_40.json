@@ -22185,13 +22185,13 @@
         {
           "name":"current_pos",
           "storage":{
-            "offset":8,
+            "offset":4,
             "size":8,
             "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0x8]",
-                "offset":8,
+                "addr":"Stack[0x4]",
+                "offset":4,
                 "size":8
               }
             ]
@@ -22201,13 +22201,13 @@
         {
           "name":"start_coord",
           "storage":{
-            "offset":16,
+            "offset":12,
             "size":8,
             "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0x10]",
-                "offset":16,
+                "addr":"Stack[0xc]",
+                "offset":12,
                 "size":8
               }
             ]
@@ -22217,13 +22217,13 @@
         {
           "name":"end_coord",
           "storage":{
-            "offset":24,
+            "offset":20,
             "size":8,
             "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0x18]",
-                "offset":24,
+                "addr":"Stack[0x14]",
+                "offset":20,
                 "size":8
               }
             ]
@@ -90292,6 +90292,22 @@
         {
           "name":"p1",
           "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector2d*"
+        },
+        {
+          "name":"p2",
+          "storage":{
             "offset":8,
             "size":4,
             "stack":true,
@@ -90306,7 +90322,7 @@
           "type":"CVector2d*"
         },
         {
-          "name":"p2",
+          "name":"p3",
           "storage":{
             "offset":12,
             "size":4,
@@ -90315,22 +90331,6 @@
               {
                 "addr":"Stack[0xc]",
                 "offset":12,
-                "size":4
-              }
-            ]
-          },
-          "type":"CVector2d*"
-        },
-        {
-          "name":"p3",
-          "storage":{
-            "offset":16,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x10]",
-                "offset":16,
                 "size":4
               }
             ]
@@ -91567,7 +91567,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_trash.cpp_FUN_005decc0",
+    "name":"core_trash.cpp_addRandomJitter_FUN_005decc0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -91586,6 +91586,24 @@
             ]
           },
           "type":"undefined4"
+        }
+      ],
+      "params":[
+        {
+          "name":"value",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"float*"
         }
       ]
     }
@@ -93095,7 +93113,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_wateract.cpp_CWaterActor_FUN_005eb040",
+    "name":"core_wateract.cpp_CWaterActor_updateLocalPositions_FUN_005eb040",
     "ret":"void",
     "vars":{
       "locals":[

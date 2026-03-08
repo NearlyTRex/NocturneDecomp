@@ -61,7 +61,7 @@ double __cdecl engine_colquant_c_doubleMax_FUN_00441790(double a,double b);
 void __cdecl engine_console_cpp_staticInit_FUN_004417e0(void);
 CConsole * __cdecl engine_console_cpp_CConsole_ctor_FUN_00441810(CConsole *this_ptr,int width,int height,int screen_x,int screen_y);
 CConsole * __cdecl engine_console_cpp_CConsole_dtor_FUN_00441880(CConsole *this_ptr,uint flags);
-void __cdecl engine_console_cpp_CConsole_printf_FUN_00441890(CConsole *this_ptr,char *format,...);
+void __cdecl engine_console_cpp_CConsole_printf_FUN_00441890(CConsole *this_ptr,char *format,...) __attribute__((format(printf, 2, 3)));
 void __cdecl engine_console_cpp_CConsole_writeChar_FUN_00441970(CConsole *this_ptr,char character);
 void __cdecl engine_console_cpp_CConsole_reset_FUN_00441a40(CConsole *this_ptr);
 void __cdecl engine_console_cpp_CConsole_scrollUp_FUN_00441a80(CConsole *this_ptr);

@@ -4,6 +4,7 @@
 ; void __cdecl core_shotgun_cpp_CShotgun_process_FUN_00587f70(CShotgun *this_ptr,float delta_time)
 ;
 ; Parameters:
+; char             Stack[0x0]:1   local_res0
 ; CShotgun *       Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
@@ -63,6 +64,7 @@ section .text
     PUSH EBX                            ; 00587fb1
     MOV dword ptr [0x02d807a4],ECX      ; 00587fb2 | g_CDemonLightInstance.light_enabled_flag
     CALL dword ptr [EDX + 0xf4]         ; 00587fb8
+        ;   Label: prt_587fb8_b76712a0
     ADD ESP,0x8                         ; 00587fbe
     PUSH EAX                            ; 00587fc1
     LEA EAX,[ESP + 0xc]                 ; 00587fc2

@@ -10,20 +10,19 @@ double __cdecl shape_superopt_cpp_rayPlaneIntersect_FUN_005d6500(CVector3d *ray_
 
 {
   double dVar1;
-  double *in_stack_00000004;
   double local_70;
   
-  dVar1 = plane_point->z * ray_origin->z +
-          plane_point->x * ray_origin->x + plane_point->y * ray_origin->y;
+  dVar1 = plane_normal->z * ray_dir->z + plane_normal->x * ray_dir->x + plane_normal->y * ray_dir->y
+  ;
   local_70 = dVar1;
   if (dVar1 < 0.0) {
     local_70 = -dVar1;
   }
   if (1e-08 <= local_70) {
-    return -((plane_point->z * in_stack_00000004[2] +
-              plane_point->x * *in_stack_00000004 + plane_point->y * in_stack_00000004[1] +
-             -(plane_point->z * ray_dir->z +
-              plane_point->x * ray_dir->x + plane_point->y * ray_dir->y)) / dVar1);
+    return -((plane_normal->z * ray_origin->z +
+              plane_normal->x * ray_origin->x + plane_normal->y * ray_origin->y +
+             -(plane_normal->z * plane_point->z +
+              plane_normal->x * plane_point->x + plane_normal->y * plane_point->y)) / dVar1);
   }
   return -1.0;
 }

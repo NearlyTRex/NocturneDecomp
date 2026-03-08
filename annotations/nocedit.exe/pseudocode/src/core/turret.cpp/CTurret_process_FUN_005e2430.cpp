@@ -10,18 +10,18 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr,floa
 
 {
   UOrientationVector *pUVar1;
-  CEventList *pCVar2;
-  float fVar3;
+  float fVar2;
+  CEventList *pCVar3;
   int iVar4;
   CVector3f *pCVar5;
   uint uVar6;
   uint *puVar7;
   uint *puVar8;
   byte bVar9;
-  uint auStackY_186c [1497];
+  float afStackY_186c [1497];
   CQuaternion4f *quat_in;
   char *sound_name;
-  uint in_stack_ffffff08;
+  float local_f8;
   char local_f4 [100];
   CQuaternion4f local_90;
   CVector3f local_80;
@@ -58,9 +58,9 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr,floa
     sound_name = "turret-ani?.wav";
     goto LAB_005e24c7;
   case 1:
-    fVar3 = this_ptr->timer - delta_time;
-    this_ptr->timer = fVar3;
-    if (fVar3 <= 0.0) {
+    fVar2 = this_ptr->timer - delta_time;
+    this_ptr->timer = fVar2;
+    if (fVar2 <= 0.0) {
       this_ptr->timer = 0.0;
       this_ptr->state = 2;
       (this_ptr->base).fire_cooldown_timer = 0.0;
@@ -68,11 +68,11 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr,floa
     break;
   case 2:
     (this_ptr->base).muzzle_flash_offset.x = 3.57331e-43;
-    pCVar2 = g_CEventListPtr;
+    pCVar3 = g_CEventListPtr;
     (this_ptr->base).muzzle_flash_offset.y = 0.0;
     (this_ptr->base).muzzle_flash_offset.z = 0.0;
     iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
-                      (pCVar2,this_ptr->activate_event);
+                      (pCVar3,this_ptr->activate_event);
     if (iVar4 == 0) {
       this_ptr->state = 3;
       this_ptr->timer = this_ptr->patrol_time;
@@ -84,20 +84,20 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr,floa
     break;
   case 3:
     (this_ptr->base).muzzle_flash_offset.x = 0.0;
-    pCVar2 = g_CEventListPtr;
+    pCVar3 = g_CEventListPtr;
     (this_ptr->base).muzzle_flash_offset.y = 3.57331e-43;
     (this_ptr->base).muzzle_flash_offset.z = 0.0;
     iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
-                      (pCVar2,this_ptr->activate_event);
+                      (pCVar3,this_ptr->activate_event);
     if (iVar4 != 0) {
       this_ptr->timer = 0.0;
       this_ptr->state = 2;
       (this_ptr->base).fire_cooldown_timer = 0.0;
       break;
     }
-    fVar3 = this_ptr->timer - delta_time;
-    this_ptr->timer = fVar3;
-    if (0.0 < fVar3) {
+    fVar2 = this_ptr->timer - delta_time;
+    this_ptr->timer = fVar2;
+    if (0.0 < fVar2) {
       core_turret_cpp_CTurret_updatePatrol_FUN_005e3560(this_ptr,delta_time);
       break;
     }
@@ -169,19 +169,19 @@ LAB_005e24c7:
     core_main_c_displayErrorAndQuit_FUN_00506f10("CTurret::process - invalid state");
   }
   if (-1 < (int)(this_ptr->base).muzzle_flash_offset.x) {
-    (*(((this_ptr->base).base.vtable._uc)->_uc).releaseFromGrab)((CCharacter *)this_ptr);
+    (*(((this_ptr->base).base.vtable._uw)->_uw).fireProjectile)(&this_ptr->base);
   }
-  fVar3 = (this_ptr->base).fire_cooldown_timer;
+  fVar2 = (this_ptr->base).fire_cooldown_timer;
   iVar4 = this_ptr->fire_sound_frames;
   this_ptr->fire_sound_timer = this_ptr->fire_sound_timer - delta_time;
-  (this_ptr->base).fire_cooldown_timer = fVar3 - delta_time;
+  (this_ptr->base).fire_cooldown_timer = fVar2 - delta_time;
   if ((0 < iVar4) || (0.0 < this_ptr->fire_sound_timer)) {
     this_ptr->fire_sound_frames = this_ptr->fire_sound_frames + -1;
-    fVar3 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.9,1.1111112);
-    local_14 = fVar3;
-    iVar4 = sound_sndmain_cpp_setSfxBaseFrequency_FUN_005a9b40(this_ptr->sfx_handles[0],fVar3);
+    local_f8 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.9,1.1111112);
+    local_14 = local_f8;
+    iVar4 = sound_sndmain_cpp_setSfxBaseFrequency_FUN_005a9b40(this_ptr->sfx_handles[0],local_f8);
     if (iVar4 == 0) {
-      _sprintf(local_f4,"turret-loop.wav * %f",(double)fVar3);
+      _sprintf(local_f4,"turret-loop.wav * %f",(double)local_f8);
       uVar6 = (*((this_ptr->base).base.vtable._ub)->playAmbientSound)
                         ((CDemonActor *)this_ptr,local_f4);
       this_ptr->sfx_handles[0] = uVar6;
@@ -189,7 +189,8 @@ LAB_005e24c7:
     }
   }
   else {
-    local_30._12_8_ = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(2,in_stack_ffffff08);
+    local_30._12_8_ =
+         sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(this_ptr->sfx_handles[0],2);
     if (0.0 <= (double)local_30._12_8_) {
       sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handles[0]);
       (*((this_ptr->base).base.vtable._ub)->playSound)

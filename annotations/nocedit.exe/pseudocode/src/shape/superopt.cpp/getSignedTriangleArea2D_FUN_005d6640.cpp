@@ -10,11 +10,9 @@ double __cdecl shape_superopt_cpp_getSignedTriangleArea2D_FUN_005d6640(CVector2d
 
 {
   double dVar1;
-  double *in_stack_00000004;
   double local_20;
   
-  dVar1 = (p1->x - *in_stack_00000004) * (p2->y - in_stack_00000004[1]) -
-          (p2->x - *in_stack_00000004) * (p1->y - in_stack_00000004[1]);
+  dVar1 = (p2->x - p1->x) * (p3->y - p1->y) - (p3->x - p1->x) * (p2->y - p1->y);
   local_20 = dVar1;
   if (dVar1 < 0.0) {
     local_20 = -dVar1;

@@ -13,16 +13,13 @@ int __cdecl shape_superopt_cpp_CComplexPolygon_isConvex_FUN_005cb3a0(CComplexPol
   uint uVar2;
   uint uVar3;
   double dVar4;
-  double in_stack_fffffe80;
+  int local_180;
   double local_170;
   double local_168;
   double local_160;
   int local_148;
   CVector3d local_140;
-  uint local_128;
-  uint local_124;
-  uint local_120;
-  uint local_11c;
+  CVector2d local_128;
   CVector2d local_118;
   CVector2d local_108;
   CVector2d local_f8;
@@ -121,36 +118,36 @@ int __cdecl shape_superopt_cpp_CComplexPolygon_isConvex_FUN_005cb3a0(CComplexPol
     do {
       if (local_1c == 0) {
         if (local_18 == 0) {
-          local_128 = *(uint *)&(local_20->start_pos).x;
-          local_124 = *(uint *)((int)&(local_20->start_pos).x + 4);
-          local_120 = *(uint *)&(local_20->start_pos).y;
-          local_11c = *(uint *)((int)&(local_20->start_pos).y + 4);
+          local_128.x._0_4_ = *(uint *)&(local_20->start_pos).x;
+          local_128.x._4_4_ = *(uint *)((int)&(local_20->start_pos).x + 4);
+          local_128.y._0_4_ = *(uint *)&(local_20->start_pos).y;
+          local_128.y._4_4_ = *(uint *)((int)&(local_20->start_pos).y + 4);
           local_108.x._0_4_ = *(uint *)&(local_20->end_pos).x;
           local_108.x._4_4_ = *(uint *)((int)&(local_20->end_pos).x + 4);
           local_108.y._0_4_ = *(uint *)&(local_20->end_pos).y;
           local_108.y._4_4_ = *(uint *)((int)&(local_20->end_pos).y + 4);
           local_c8 = local_108.x._0_4_;
           local_c4 = local_108.x._4_4_;
-          local_b8 = local_120;
-          local_b4 = local_11c;
+          local_b8 = local_128.y._0_4_;
+          local_b4 = local_128.y._4_4_;
           local_a8 = local_108.y._0_4_;
           local_a4 = local_108.y._4_4_;
-          local_60 = local_128;
-          local_5c = local_124;
+          local_60 = local_128.x._0_4_;
+          local_5c = local_128.x._4_4_;
         }
         else {
-          local_128 = *(uint *)&(local_20->start_pos).x;
-          local_124 = *(uint *)((int)&(local_20->start_pos).x + 4);
-          local_120 = *(uint *)&(local_20->start_pos).z;
-          local_11c = *(uint *)((int)&(local_20->start_pos).z + 4);
+          local_128.x._0_4_ = *(uint *)&(local_20->start_pos).x;
+          local_128.x._4_4_ = *(uint *)((int)&(local_20->start_pos).x + 4);
+          local_128.y._0_4_ = *(uint *)&(local_20->start_pos).z;
+          local_128.y._4_4_ = *(uint *)((int)&(local_20->start_pos).z + 4);
           local_108.x._0_4_ = *(uint *)&(local_20->end_pos).x;
           local_108.x._4_4_ = *(uint *)((int)&(local_20->end_pos).x + 4);
           local_108.y._0_4_ = *(uint *)&(local_20->end_pos).z;
           local_108.y._4_4_ = *(uint *)((int)&(local_20->end_pos).z + 4);
-          local_c0 = local_128;
-          local_bc = local_124;
-          local_38 = local_120;
-          local_34 = local_11c;
+          local_c0 = local_128.x._0_4_;
+          local_bc = local_128.x._4_4_;
+          local_38 = local_128.y._0_4_;
+          local_34 = local_128.y._4_4_;
           local_30 = local_108.x._0_4_;
           local_2c = local_108.x._4_4_;
           local_28 = local_108.y._0_4_;
@@ -158,20 +155,20 @@ int __cdecl shape_superopt_cpp_CComplexPolygon_isConvex_FUN_005cb3a0(CComplexPol
         }
       }
       else {
-        local_128 = *(uint *)&(local_20->start_pos).y;
-        local_124 = *(uint *)((int)&(local_20->start_pos).y + 4);
-        local_120 = *(uint *)&(local_20->start_pos).z;
-        local_11c = *(uint *)((int)&(local_20->start_pos).z + 4);
+        local_128.x._0_4_ = *(uint *)&(local_20->start_pos).y;
+        local_128.x._4_4_ = *(uint *)((int)&(local_20->start_pos).y + 4);
+        local_128.y._0_4_ = *(uint *)&(local_20->start_pos).z;
+        local_128.y._4_4_ = *(uint *)((int)&(local_20->start_pos).z + 4);
         local_108.x._0_4_ = *(uint *)&(local_20->end_pos).y;
         local_108.x._4_4_ = *(uint *)((int)&(local_20->end_pos).y + 4);
         local_108.y._0_4_ = *(uint *)&(local_20->end_pos).z;
         local_108.y._4_4_ = *(uint *)((int)&(local_20->end_pos).z + 4);
-        local_e8 = local_128;
-        local_e4 = local_124;
+        local_e8 = local_128.x._0_4_;
+        local_e4 = local_128.x._4_4_;
         local_d0 = local_108.y._0_4_;
         local_cc = local_108.y._4_4_;
-        local_98 = local_120;
-        local_94 = local_11c;
+        local_98 = local_128.y._0_4_;
+        local_94 = local_128.y._4_4_;
         local_90 = local_108.x._0_4_;
         local_8c = local_108.x._4_4_;
       }
@@ -237,17 +234,15 @@ int __cdecl shape_superopt_cpp_CComplexPolygon_isConvex_FUN_005cb3a0(CComplexPol
               local_84 = local_118.y._4_4_;
             }
             dVar4 = shape_superopt_cpp_getSignedTriangleArea2D_FUN_005d6640
-                              (&local_108,&local_f8,SUB84(in_stack_fffffe80,0));
+                              (&local_128,&local_108,&local_f8);
             local_40 = dVar4;
-            in_stack_fffffe80 =
-                 shape_superopt_cpp_getSignedTriangleArea2D_FUN_005d6640
-                           (&local_108,&local_118,SUB84(in_stack_fffffe80,0));
+            local_40 = shape_superopt_cpp_getSignedTriangleArea2D_FUN_005d6640
+                                 (&local_128,&local_108,&local_118);
             local_148 = SUB84(__BITCAST_UINT64(dVar4),0);
             if (((((((ulonglong)dVar4 & 0x7fffffff00000000) == 0) && (local_148 == 0)) &&
-                 (((ulonglong)in_stack_fffffe80 & 0x7fffffff00000000) == 0)) &&
-                (SUB84(in_stack_fffffe80,0) == 0)) ||
-               (((dVar4 < 0.0 && (0.0 < in_stack_fffffe80)) ||
-                ((local_40 = in_stack_fffffe80, 0.0 < dVar4 && (in_stack_fffffe80 < 0.0)))))) {
+                 (local_180 = SUB84(local_40,0), ((ulonglong)local_40 & 0x7fffffff00000000) == 0))
+                && (local_180 == 0)) ||
+               (((dVar4 < 0.0 && (0.0 < local_40)) || ((0.0 < dVar4 && (local_40 < 0.0)))))) {
               return 0;
             }
           }

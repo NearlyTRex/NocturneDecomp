@@ -15,6 +15,7 @@ from ghidra_annotations.annotations.pseudocode.strings import (
     format_single_char_pointer, format_2d_char_array, format_array_initializer
 )
 from ghidra_annotations.annotations.pseudocode.headers import strip_type_prefix
+from ghidra_annotations.annotations.pseudocode.functions import _detect_format_attribute
 
 
 def build_write_xref_addresses(annotations_path):
@@ -2529,8 +2530,17 @@ def generate_prototypes_header_file(functions_list, range_key="", type_to_path_m
             content.append(_generate_template_prototype(
                 sig, funcdef_param_indices))
         else:
+            # Detect printf/scanf format attribute for variadic functions
+            format_attr = ''
+            paren_pos = sig.find('(')
+            if paren_pos != -1:
+                params_end = sig.rfind(')')
+                if params_end != -1:
+                    params_str = sig[paren_pos + 1:params_end].strip()
+                    func_name = sig[:paren_pos].split()[-1] if sig[:paren_pos].split() else ''
+                    format_attr = _detect_format_attribute(params_str, func_name)
             # Regular extern declaration
-            content.append(sig + ';')
+            content.append(sig + format_attr + ';')
 
     content.append("")
     return "\n".join(content)

@@ -1,31 +1,24 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 22,
-        "line": 45,
-        "message": "incompatible integer to pointer conversion assigning to 'CLodFace *' from 'uint32_t' (aka 'unsigned int')"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 106,
-    "complexity_score": 105,
+    "complexity_score": 113,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 50,
-    "suspect_count": 4,
+    "pseudocode_lines": 48,
+    "suspect_count": 5,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "sub84_truncation"
     ],
-    "total_lines": 156
+    "total_lines": 154
   },
   "cross_references": [
     {
@@ -237,7 +230,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 37,
+      "line": 36,
       "match": "(double *)((int)",
       "severity": "mild",
       "text": "if (dVar7 < *(double *)((int)g_SampleDistances + iVar5)) {",
@@ -245,23 +238,31 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 38,
+      "line": 37,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "face = SUB84(__BITCAST_UINT64(dVar7),0);",
+      "text": "local_38 = SUB84(__BITCAST_UINT64(dVar7),0);",
       "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 38,
+      "line": 37,
       "match": "SUB84",
       "severity": "mild",
-      "text": "face = SUB84(__BITCAST_UINT64(dVar7),0);",
+      "text": "local_38 = SUB84(__BITCAST_UINT64(dVar7),0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 41,
+      "line": 38,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)g_SampleDistances + iVar5) = local_38;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 40,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)g_SampleDistances + iVar5 + 4) = uStack_34;",

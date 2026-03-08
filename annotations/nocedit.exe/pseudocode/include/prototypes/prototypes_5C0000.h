@@ -65,11 +65,11 @@ void __cdecl core_stranger_cpp_CStranger_drop_FUN_005c6850(CStranger *this_ptr,C
 void __cdecl core_stranger_cpp_CStranger_onActorDeleted_FUN_005c68a0(CStranger *this_ptr,CDemonActor *deleted_actor);
 void __cdecl core_stranger_cpp_CStranger_getPropertyList_FUN_005c68f0(CStranger *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_stranger_cpp_CStranger_addFilesToExtract_FUN_005c6910(CStranger *this_ptr,_FILE *file_handle);
-void __cdecl core_stranger_cpp_FUN_005c6930(void);
-int __cdecl core_stranger_cpp_FUN_005c6950(void);
-int __cdecl core_stranger_cpp_FUN_005c695e(void);
-void __cdecl core_stranger_cpp_CCloth_setWindVelocity_FUN_005c6970(CCloth *this_ptr,CVector3f *velocity);
-int __cdecl core_stranger_cpp_CCharacter_getCurrentMotionStateIndex_FUN_005c69a0(CCharacter *this_ptr);
+void __cdecl core_stranger_cpp_setMatrixTranslation_FUN_005c6930(CMatrix3x4f *matrix,CVector3f *translation);
+int __cdecl core_stranger_cpp_isProcessDisabled_FUN_005c6950(CDemonActor *actor);
+int __cdecl core_stranger_cpp_getScaleY_FUN_005c695e(CDemonActor *actor);
+void __cdecl core_stranger_cpp_setWindVelocity_FUN_005c6970(CCloth *cloth_ptr,CVector3f *velocity);
+int __cdecl core_stranger_cpp_getCurrentMotionStateIndex_FUN_005c69a0(CCharacter *this_ptr);
 CStranger * __cdecl core_stranger_cpp_CStranger_dtor_FUN_005c69c0(CStranger *this_ptr,uint flags);
 void __cdecl core_succubus_cpp_staticInit_FUN_005c6a10(void);
 CSuccubus * __cdecl core_succubus_cpp_factoryFunc_FUN_005c6a40(void);
@@ -85,7 +85,7 @@ ECollisionType __cdecl core_succubus_cpp_CSuccubus_getCollisionType_FUN_005c7790
 void __cdecl core_succubus_cpp_CSuccubus_getPropertyList_FUN_005c77b0(CSuccubus *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_succubus_cpp_CSuccubus_addFilesToExtract_FUN_005c77f0(CSuccubus *this_ptr,_FILE *file_handle);
 CSuccubus * __cdecl core_succubus_cpp_CSuccubus_dtor_FUN_005c7820(CSuccubus *this_ptr,uint flags);
-void __cdecl shape_superopt_cpp_logToFile_FUN_005c7910(char *format,...);
+void __cdecl shape_superopt_cpp_logToFile_FUN_005c7910(char *format,...) __attribute__((format(printf, 1, 2)));
 CComplexPolygon * __cdecl shape_superopt_cpp_CComplexPolygon_ctor_FUN_005c79a0(CComplexPolygon *this_ptr);
 CComplexPolygon * __cdecl shape_superopt_cpp_CComplexPolygon_dtor_FUN_005c79d0(CComplexPolygon *this_ptr,uint flags);
 void __cdecl shape_superopt_cpp_CComplexPolygon_free_FUN_005c79f0(CComplexPolygon *this_ptr);

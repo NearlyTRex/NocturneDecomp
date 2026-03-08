@@ -4,9 +4,9 @@
 ; double __cdecl shape_superopt_cpp_distancePointToSegmentXY_FUN_005d64a0(CVector3d *segStart,CVector3d *segEnd,CVector3d *point)
 ;
 ; Parameters:
-; CVector3d *      Stack[0x8]:4   segStart
-; CVector3d *      Stack[0xc]:4   segEnd
-; CVector3d *      Stack[0x10]:4   point
+; CVector3d *      Stack[0x4]:4   segStart
+; CVector3d *      Stack[0x8]:4   segEnd
+; CVector3d *      Stack[0xc]:4   point
 ; Local Variables:
 ; undefined        Stack[-0x48]:1  local_48
 ; undefined8       Stack[-0x38]:8  local_38

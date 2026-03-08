@@ -35,8 +35,8 @@
 ;   crt_math.c_round_FUN_005fe6b0
 ;   crt_stdio.c_fseek_FUN_005ffacc
 ;   sound_mp3.cpp_CMP3Decoder_seek_FUN_00534ba0
-;   sound_sndmain.cpp_CSampleInfo_normalizePlaybackPos_FUN_005a86f0
 ;   sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_005a8550
+;   sound_sndmain.cpp_CSfxSample_normalizePlaybackPos_FUN_005a86f0
 ;
 ; *****************************************************************************
 
@@ -61,8 +61,8 @@ section .text
     SUB ESP,0x8                         ; 005a65ca
     FSTP double ptr [ESP]               ; 005a65cd
     PUSH EBX                            ; 005a65d0
-    CALL sound_sndmain.cpp_CSampleInfo_normalizePlaybackPos_FUN_005a86f0 ; 005a65d1
-        ;   XREF to: 005a86f0 (UNCONDITIONAL_CALL)  ; double sound_sndmain.cpp_CSampleInfo_normalizePlaybackPos_FUN_005a86f0(CSampleInfo * this_ptr, double position, uint input_type, uint output_type)
+    CALL sound_sndmain.cpp_CSfxSample_normalizePlaybackPos_FUN_005a86f0 ; 005a65d1
+        ;   XREF to: 005a86f0 (UNCONDITIONAL_CALL)  ; double sound_sndmain.cpp_CSfxSample_normalizePlaybackPos_FUN_005a86f0(CSfxSample * this_ptr, double position, uint input_type)
     MOV dword ptr [ESP + 0x10],EAX      ; 005a65d6
     MOV dword ptr [ESP + 0x14],EDX      ; 005a65da
     FLD double ptr [ESP + 0x10]         ; 005a65de

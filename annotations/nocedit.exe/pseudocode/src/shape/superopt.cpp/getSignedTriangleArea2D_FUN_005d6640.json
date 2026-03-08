@@ -6,17 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 62,
-    "complexity_score": 71,
+    "complexity_score": 14,
     "cross_reference_count": 3,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 16,
-    "suspect_count": 5,
-    "suspect_types": [
-      "stack_param"
-    ],
-    "total_lines": 78
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 14,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 76
   },
   "cross_references": [
     {
@@ -97,10 +95,10 @@
     "pcode_op_count": 339
   },
   "stack_frame": {
-    "frame_size": 52,
+    "frame_size": 48,
     "local_size": 36,
     "param_offset": 4,
-    "param_size": 16,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -134,21 +132,21 @@
       {
         "is_param": true,
         "name": "p1",
-        "offset": 8,
+        "offset": 4,
         "size": 4,
         "type": "CVector2d *"
       },
       {
         "is_param": true,
         "name": "p2",
-        "offset": 12,
+        "offset": 8,
         "size": 4,
         "type": "CVector2d *"
       },
       {
         "is_param": true,
         "name": "p3",
-        "offset": 16,
+        "offset": 12,
         "size": 4,
         "type": "CVector2d *"
       }
@@ -171,46 +169,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 6,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "double *in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "dVar1 = (p1->x - *in_stack_00000004) * (p2->y - in_stack_00000004[1]) -",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "dVar1 = (p1->x - *in_stack_00000004) * (p2->y - in_stack_00000004[1]) -",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "(p2->x - *in_stack_00000004) * (p1->y - in_stack_00000004[1]);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "(p2->x - *in_stack_00000004) * (p1->y - in_stack_00000004[1]);",
-      "type": "stack_param"
-    }
-  ]
+  "suspects": []
 }

@@ -10,22 +10,21 @@ double __cdecl core_dmodel_cpp_safeAcos_FUN_0047b170(float value)
 
 {
   double dVar1;
-  float in_stack_00000004;
-  uint local_10;
-  uint local_c;
+  double local_18;
+  _SPLIT_DOUBLE local_10;
   
-  dVar1 = (double)in_stack_00000004;
+  dVar1 = (double)value;
   if (1.0 <= dVar1) {
-    local_10 = 0;
-    local_c = 0;
+    local_10.u.low = 0;
+    local_10.u.high = 0;
   }
   else {
     if (-1 < dVar1) {
       dVar1 = acos(dVar1);
       return dVar1;
     }
-    local_10 = 0x54411744;
-    local_c = 0x400921fb;
+    local_10.u.low = 0x54411744;
+    local_10.u.high = 0x400921fb;
   }
-  return __BITCAST_DOUBLE(CONCAT44(local_c,local_10));
+  return __BITCAST_DOUBLE(CONCAT44(local_10.u.high,local_10.u.low));
 }

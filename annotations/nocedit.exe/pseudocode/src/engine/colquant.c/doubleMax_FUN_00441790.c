@@ -9,14 +9,14 @@
 double __cdecl engine_colquant_c_doubleMax_FUN_00441790(double a,double b)
 
 {
-  uint local_18;
+  double local_18;
   
   if (a <= b) {
-    local_18 = b._0_4_;
+    local_18._0_4_ = b._0_4_;
     a._4_4_ = b._4_4_;
   }
   else {
-    local_18 = a._0_4_;
+    local_18._0_4_ = a._0_4_;
   }
-  return __BITCAST_DOUBLE(CONCAT44(a._4_4_,local_18));
+  return __BITCAST_DOUBLE(CONCAT44(a._4_4_,local_18._0_4_));
 }

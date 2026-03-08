@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_sndmain_cpp_convertMixBufToOutput_FUN_005a5b80(float *input_samples,void *output_buffer,int bits_per_sample,int num_samples,int output_stride)
+; void __cdecl sound_sndmain_cpp_convertMixBufToOutput_FUN_005a5b80(float *input_samples,ushort *output_buffer,int bits_per_sample,int num_samples,int output_stride)
 ;
 ; Parameters:
 ; float *          Stack[0x4]:4   input_samples
-; void *           Stack[0x8]:4   output_buffer
+; ushort *         Stack[0x8]:4   output_buffer
 ; int              Stack[0xc]:4   bits_per_sample
 ; int              Stack[0x10]:4   num_samples
 ; int              Stack[0x14]:4   output_stride

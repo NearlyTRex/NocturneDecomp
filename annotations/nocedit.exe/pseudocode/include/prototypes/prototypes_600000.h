@@ -28,7 +28,7 @@ double __cdecl crt_math_c_ldexp_FUN_00600002(double x,int exp);
 int __cdecl crt_stdio_c_string_getc_FUN_006000d0(scanf_state_t *state);
 int __cdecl crt_stdio_c_string_ungetc_FUN_006000f8(int ch,scanf_state_t *state);
 int __cdecl crt_stdio_c_vsscanf_FUN_00600100(char *str,char *format,va_list_t args);
-int __cdecl crt_stdio_c_sscanf_FUN_0060013c(char *str,char *format,...);
+int __cdecl crt_stdio_c_sscanf_FUN_0060013c(char *str,char *format,...) __attribute__((format(scanf, 2, 3)));
 double __fpustack_safe crt_math_c_acos_FUN_00600162(double x);
 double __crtmath crt_math_c_ceil_FUN_006001b2(double value);
 time_t __cdecl crt_time_c__time_FUN_006001f0(int *time);
@@ -103,7 +103,7 @@ void * __cdecl crt_memory_c___arr_op_FUN_006020c2(void *dest,void *source,int co
 int __cdecl crt_string_c__stricmp_FUN_005fe7f0(char *str1,char *str2);
 double __crtmath crt_math_c_modf_FUN_00602102(double value,double *integer_part);
 int __watcallStack crt_stdlib_c_system_FUN_00602130(char *command);
-void __cdecl crt_stdio_c_fprintf_FUN_006021c0(_FILE *stream,char *format,...);
+void __cdecl crt_stdio_c_fprintf_FUN_006021c0(_FILE *stream,char *format,...) __attribute__((format(printf, 2, 3)));
 void * __cdecl shape_memdbg_cpp_malloc_FUN_006021da(SIZE_T size);
 HANDLE __cdecl crt_io_c__findfirst_FUN_006021f0(char *filespec,LPWIN32_FIND_DATAA find_data);
 void __watcallStack crt_io_c_convertFileInfo_FUN_00602264(LPWIN32_FIND_DATAA win32_data,_find_t *dos_info);

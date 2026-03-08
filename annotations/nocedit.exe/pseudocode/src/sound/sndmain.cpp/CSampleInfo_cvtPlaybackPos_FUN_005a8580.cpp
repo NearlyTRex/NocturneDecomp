@@ -9,34 +9,21 @@
 double __cdecl sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580(CSampleInfo *this_ptr,double position,uint input_type,uint output_type)
 
 {
-  double dVar1;
-  int in_stack_00000004;
-  
-  if (position._4_4_ != input_type) {
-    if (position._4_4_ != 0) {
-      if ((ulonglong)position < 0x200000000) {
-        dVar1 = (double)*(int *)(in_stack_00000004 + 0x10c) *
-                __BITCAST_DOUBLE(CONCAT44(position._0_4_,this_ptr));
-        this_ptr = SUB84(__BITCAST_UINT64(dVar1),0);
-        position._0_4_ = (uint)((ulonglong)dVar1 >> 0x20);
+  if (input_type != output_type) {
+    if (input_type != 0) {
+      if (input_type < 2) {
+        position = (double)this_ptr->sample_rate * position;
       }
-      else if (position._4_4_ == 2) {
-        if (*(int *)(in_stack_00000004 + 0x110) < 1) {
+      else if (input_type == 2) {
+        if (this_ptr->sample_count < 1) {
           g_CurrentFilename = "..\\sound\\sndmain.cpp";
           g_CurrentLineNumber = 0xc44;
-          core_main_c_displayErrorAndQuit_FUN_00506f10("SampleInfo::cvtPlaybackPos - can't use relative sample position when length of %s is not known.");
-          dVar1 = (double)*(int *)(in_stack_00000004 + 0x110) *
-                  __BITCAST_DOUBLE(CONCAT44(position._0_4_,this_ptr));
-          this_ptr = SUB84(__BITCAST_UINT64(dVar1),0);
-          position._0_4_ = (uint)((ulonglong)dVar1 >> 0x20);
-          position = __BITCAST_DOUBLE(CONCAT44(2,position._0_4_));
+          core_main_c_displayErrorAndQuit_FUN_00506f10("SampleInfo::cvtPlaybackPos - can't use relative sample position when length of %s is not known.",this_ptr)
+          ;
+          position = (double)this_ptr->sample_count * position;
         }
         else {
-          dVar1 = (double)*(int *)(in_stack_00000004 + 0x110) *
-                  __BITCAST_DOUBLE(CONCAT44(position._0_4_,this_ptr));
-          this_ptr = SUB84(__BITCAST_UINT64(dVar1),0);
-          position._0_4_ = (uint)((ulonglong)dVar1 >> 0x20);
-          position = __BITCAST_DOUBLE(CONCAT44(2,position._0_4_));
+          position = (double)this_ptr->sample_count * position;
         }
       }
       else {
@@ -45,28 +32,20 @@ double __cdecl sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580(CSample
         core_main_c_displayErrorAndQuit_FUN_00506f10("SampleInfo::cvtPlaybackPos - Invalid input sample pos type");
       }
     }
-    if (input_type != 0) {
-      if (input_type < 2) {
-        dVar1 = __BITCAST_DOUBLE(CONCAT44(position._0_4_,this_ptr)) /
-                (double)*(int *)(in_stack_00000004 + 0x10c);
-        this_ptr = SUB84(__BITCAST_UINT64(dVar1),0);
-        position._0_4_ = (uint)((ulonglong)dVar1 >> 0x20);
+    if (output_type != 0) {
+      if (output_type < 2) {
+        position = position / (double)this_ptr->sample_rate;
       }
-      else if (input_type == 2) {
-        if (*(int *)(in_stack_00000004 + 0x110) < 1) {
+      else if (output_type == 2) {
+        if (this_ptr->sample_count < 1) {
           g_CurrentFilename = "..\\sound\\sndmain.cpp";
           g_CurrentLineNumber = 0xc57;
-          core_main_c_displayErrorAndQuit_FUN_00506f10("SampleInfo::cvtPlaybackPos - can't use relative sample position when length of %s is not known.");
-          dVar1 = __BITCAST_DOUBLE(CONCAT44(position._0_4_,this_ptr)) /
-                  (double)*(int *)(in_stack_00000004 + 0x110);
-          this_ptr = SUB84(__BITCAST_UINT64(dVar1),0);
-          position._0_4_ = (uint)((ulonglong)dVar1 >> 0x20);
+          core_main_c_displayErrorAndQuit_FUN_00506f10("SampleInfo::cvtPlaybackPos - can't use relative sample position when length of %s is not known.",this_ptr)
+          ;
+          position = position / (double)this_ptr->sample_count;
         }
         else {
-          dVar1 = __BITCAST_DOUBLE(CONCAT44(position._0_4_,this_ptr)) /
-                  (double)*(int *)(in_stack_00000004 + 0x110);
-          this_ptr = SUB84(__BITCAST_UINT64(dVar1),0);
-          position._0_4_ = (uint)((ulonglong)dVar1 >> 0x20);
+          position = position / (double)this_ptr->sample_count;
         }
       }
       else {
@@ -76,5 +55,5 @@ double __cdecl sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580(CSample
       }
     }
   }
-  return __BITCAST_DOUBLE(CONCAT44(position._0_4_,this_ptr));
+  return position;
 }

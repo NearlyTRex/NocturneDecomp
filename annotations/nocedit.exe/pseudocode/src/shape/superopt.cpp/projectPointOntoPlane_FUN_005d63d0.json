@@ -1,45 +1,24 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 25,
-        "line": 31,
-        "message": "invalid operands to binary expression ('double' and 'int')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 14,
-        "line": 29,
-        "message": "no matching function for call to 'shape_superopt_cpp_rayPlaneIntersect_FUN_005d6500'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 39,
-        "line": 30,
-        "message": "use of undeclared identifier 'stack0xffffff90'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 82,
-    "complexity_score": 155,
+    "complexity_score": 118,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 40,
-    "suspect_count": 9,
+    "pseudocode_lines": 43,
+    "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
-      "stack_ref",
-      "sub84_truncation",
       "unaffected_reg"
     ],
-    "total_lines": 122
+    "total_lines": 125
   },
   "cross_references": [
     {
@@ -219,32 +198,8 @@
       "type": "unaffected_reg"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 23,
-      "match": "&stack0xffffff90",
-      "severity": "moderate",
-      "text": "((CVector3d *)&stack0xffffff90,plane_point,plane_normal,",
-      "type": "stack_ref"
-    },
-    {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 24,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "SUB84(-plane_normal->x,0));",
-      "type": "sub84_truncation"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 24,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "SUB84(-plane_normal->x,0));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 28,
+      "line": 31,
       "match": "SQRT",
       "severity": "mild",
       "text": "local_18 = local_18 / SQRT(dVar3 * dVar3 + dVar1 * dVar1 + dVar2 * dVar2);",
@@ -252,7 +207,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 36,
+      "line": 39,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "pCVar6 = unaff_ESI;",
@@ -260,7 +215,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 39,
+      "line": 42,
       "match": "(double *)((int)",
       "severity": "mild",
       "text": "pdVar5 = (double *)((int)pdVar5 + (uint)bVar7 * -8 + 4);",
@@ -268,7 +223,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 40,
+      "line": 43,
       "match": "(CVector3d *)((int)",
       "severity": "mild",
       "text": "pCVar6 = (CVector3d *)((int)pCVar6 + (uint)bVar7 * -8 + 4);",
@@ -276,7 +231,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 42,
+      "line": 45,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "return unaff_ESI;",

@@ -1,42 +1,20 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 65,
-        "line": 22,
-        "message": "use of undeclared identifier 'stack0xfffffe90'; did you mean 'in_stack_fffffe90'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 23,
-        "message": "use of undeclared identifier 'stack0xfffffe90'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 71,
-        "line": 34,
-        "message": "use of undeclared identifier 'stack0xfffffe90'; did you mean 'in_stack_fffffe90'?"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 207,
-    "complexity_score": 137,
+    "complexity_score": 69,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 7,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 67,
-    "suspect_count": 6,
-    "suspect_types": [
-      "stack_param",
-      "stack_ref"
-    ],
-    "total_lines": 274
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 69,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 276
   },
   "cross_references": [
     {
@@ -309,54 +287,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_fffffe90",
-      "severity": "moderate",
-      "text": "uint in_stack_fffffe90;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 15,
-      "match": "&stack0xfffffe90",
-      "severity": "moderate",
-      "text": "sound_sndmain_cpp_CSfxSample_init_FUN_005a8480((CSfxSample *)&stack0xfffffe90);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 16,
-      "match": "&stack0xfffffe90",
-      "severity": "moderate",
-      "text": "pcVar4 = &stack0xfffffe90;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 27,
-      "match": "&stack0xfffffe90",
-      "severity": "moderate",
-      "text": "iVar2 = sound_sndmain_cpp_getSampleInfo_FUN_005aa3f0((CSfxSample *)&stack0xfffffe90);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 52,
-      "match": "in_stack_fffffe90",
-      "severity": "moderate",
-      "text": "dVar5 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(0,in_stack_fffffe90);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 60,
-      "match": "in_stack_fffffe90",
-      "severity": "moderate",
-      "text": "dVar5 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(0,in_stack_fffffe90);",
-      "type": "stack_param"
-    }
-  ]
+  "suspects": []
 }

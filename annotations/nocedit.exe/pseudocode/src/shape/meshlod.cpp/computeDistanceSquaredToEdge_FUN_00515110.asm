@@ -4,9 +4,9 @@
 ; double __cdecl shape_meshlod_cpp_computeDistanceSquaredToEdge_FUN_00515110(CVector3f *query_point,CVector3f *edge_vertex_0,CVector3f *edge_vertex_1)
 ;
 ; Parameters:
-; CVector3f *      Stack[0x8]:4   query_point
-; CVector3f *      Stack[0xc]:4   edge_vertex_0
-; CVector3f *      Stack[0x10]:4   edge_vertex_1
+; CVector3f *      Stack[0x4]:4   query_point
+; CVector3f *      Stack[0x8]:4   edge_vertex_0
+; CVector3f *      Stack[0xc]:4   edge_vertex_1
 ; Local Variables:
 ; undefined        Stack[-0x24]:1  local_24
 ; undefined8       Stack[-0x18]:8  local_18

@@ -4,9 +4,9 @@
 ; double __cdecl shape_superopt_cpp_getSignedTriangleArea2D_FUN_005d6640(CVector2d *p1,CVector2d *p2,CVector2d *p3)
 ;
 ; Parameters:
-; CVector2d *      Stack[0x8]:4   p1
-; CVector2d *      Stack[0xc]:4   p2
-; CVector2d *      Stack[0x10]:4   p3
+; CVector2d *      Stack[0x4]:4   p1
+; CVector2d *      Stack[0x8]:4   p2
+; CVector2d *      Stack[0xc]:4   p3
 ; Local Variables:
 ; undefined8       Stack[-0x20]:8  local_20
 ; undefined8       Stack[-0x18]:8  local_18

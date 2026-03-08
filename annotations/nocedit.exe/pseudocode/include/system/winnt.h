@@ -218,6 +218,12 @@ typedef _RTL_CRITICAL_SECTION CRITICAL_SECTION;
 // pointer to _RTL_CRITICAL_SECTION
 typedef PRTL_CRITICAL_SECTION LPCRITICAL_SECTION;
 
+// Structure: _floatx2
+typedef struct _floatx2 {
+    float _p1;
+    float _p2;
+} _floatx2;
+
 // Structure: _struct_19
 typedef struct _struct_19 {
     DWORD LowPart;
@@ -244,6 +250,18 @@ typedef struct _struct_519 {
     DWORD Offset;
     DWORD OffsetHigh;
 } _struct_519;
+
+// Structure: _uintx2
+typedef struct _uintx2 {
+    uint low;
+    uint high;
+} _uintx2;
+
+// Union: _SPLIT_DOUBLE
+typedef union _SPLIT_DOUBLE {
+    double d;
+    _uintx2 u;
+} _SPLIT_DOUBLE;
 
 // Union: _union_518
 typedef union _union_518 {
