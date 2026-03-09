@@ -113,7 +113,7 @@ void __cdecl CEditorTools::showError(CEditorTools *this_ptr,char *format,...) __
 
 // Original: shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
 // Address: 0049e790
-void __cdecl CEditorTools::displayCenteredStatusMessage(CEditorTools *this_ptr,char *message);
+void __cdecl CEditorTools::displayCenteredStatusMessage(CEditorTools *this_ptr,char *format,...) __attribute__((format(printf, 2, 3)));
 
 // Original: shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870
 // Address: 0049e870

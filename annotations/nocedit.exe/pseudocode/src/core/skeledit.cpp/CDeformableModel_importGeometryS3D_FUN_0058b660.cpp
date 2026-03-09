@@ -28,7 +28,7 @@ void __cdecl core_skeledit_cpp_CDeformableModel_importGeometryS3D_FUN_0058b660(C
   
   __STK();
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-            (g_CEditorToolsPtr,"Importing deformable model from %s...");
+            (g_CEditorToolsPtr,"Importing deformable model from %s...",filename);
   core_skeleton_cpp_CDeformableModel_free_FUN_0059a2b0(this_ptr);
   file = shape_memdbg_cpp_openFile_FUN_0050f7a0
                    (filename,(char *)0x0,"rt","..\\core\\skeledit.cpp",0x4ba);
@@ -90,7 +90,7 @@ LAB_0058b7a0:
       core_skeledit_cpp_CDeformableModel_initSinglePart_FUN_0058f790(this_ptr);
       core_skeledit_cpp_CDeformableModel_sortFacesByTexture_FUN_0058e240(this_ptr);
       shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-                (g_CEditorToolsPtr,"Imported deformable model from %s OK");
+                (g_CEditorToolsPtr,"Imported deformable model from %s OK",filename);
       return;
     }
   } while( true );

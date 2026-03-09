@@ -332,7 +332,7 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
         core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory!");
       }
       shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-                (g_CEditorToolsPtr,"Checking files...");
+                (g_CEditorToolsPtr,"Checking files...",local_290);
       local_60 = local_44 + this_ptr->tracked_file_count * 0x14 + 0x60;
       local_30 = 0;
       local_38 = local_60;
@@ -396,7 +396,7 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
           core_main_c_displayErrorAndQuit_FUN_00506f10("Hell froze.");
         }
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-                  (g_CEditorToolsPtr,"Creating %s...");
+                  (g_CEditorToolsPtr,"Creating %s...",local_290);
         local_20 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                              (local_290,(char *)0x0,"wb","..\\engine\\fileio.cpp",0x866
                              );

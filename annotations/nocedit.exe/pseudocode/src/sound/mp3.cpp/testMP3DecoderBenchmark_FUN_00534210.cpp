@@ -71,7 +71,7 @@ void __cdecl sound_mp3_cpp_testMP3DecoderBenchmark_FUN_00534210(void)
     if (local_20 != 0) {
       local_18 = iVar2;
       shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-                (g_CEditorToolsPtr,"%.1fk");
+                (g_CEditorToolsPtr,"%.1fk",(double)iVar2 * 0.0009765625);
     }
   } while (size == samples_requested);
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_28,"..\\sound\\mp3.cpp",0xde8);

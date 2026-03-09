@@ -1,46 +1,19 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 22,
-        "line": 15,
-        "message": "assigning to 'char *' from incompatible type 'char *[1]'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 35,
-        "line": 15,
-        "message": "use of undeclared identifier 'stack0x00000010'"
-      },
-      {
-        "category": "other",
-        "column": 31,
-        "line": 16,
-        "message": "no matching conversion for C-style cast from 'va_list_t *' to 'va_list_t'"
-      },
-      {
-        "category": "other",
-        "column": 22,
-        "line": 17,
-        "message": "C-style cast from 'char *' to 'char *[1]' is not allowed"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 30,
-    "complexity_score": 25,
+    "complexity_score": 10,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 10,
-    "suspect_count": 1,
-    "suspect_types": [
-      "stack_ref"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 40
   },
   "cross_references": [],
@@ -143,14 +116,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Direct stack address reference",
-      "line": 8,
-      "match": "&stack0x00000010",
-      "severity": "moderate",
-      "text": "local_c.value[0] = (char * [1])&stack0x00000010;",
-      "type": "stack_ref"
-    }
-  ]
+  "suspects": []
 }

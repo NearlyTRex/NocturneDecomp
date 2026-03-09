@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl sound_sndwav_cpp_CWavOutDevice_setMode_FUN_005b0a30(CWavOutDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_samples_per_block)
+; int __cdecl sound_sndwav_cpp_CWavOutDevice_setMode_FUN_005b0a30(CWavOutDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_buffer_size)
 ;
 ; Parameters:
 ; CWavOutDevice *  Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   bits_per_sample
 ; int              Stack[0xc]:4   channels
 ; int              Stack[0x10]:4   sample_rate
-; int *            Stack[0x14]:4   out_samples_per_block
+; int *            Stack[0x14]:4   out_buffer_size
 ;
 ; Referenced Globals:
 ;   WAVE_OUT_OPEN_FUNC* g_waveOutOpenFunc = 00211944
@@ -173,6 +173,7 @@ section .text
         ;   Label: LAB_005b0bdc
     MOV EAX,dword ptr [EDI]             ; 005b0bdd
     CALL dword ptr [EAX]                ; 005b0bdf
+        ;   Label: prt_5b0bdf_d91e5264
     ADD ESP,0x4                         ; 005b0be1
     XOR EAX,EAX                         ; 005b0be4
     ADD ESP,0x14                        ; 005b0be6

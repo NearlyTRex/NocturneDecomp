@@ -1,10 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_chain_cpp_CChain_FUN_0042fed0(CChain *this_ptr)
+; void __cdecl core_chain_cpp_CChain_constrainSegmentDistance_FUN_0042fed0(CChain *this_ptr,SChainVertex *vertex_a,SChainVertex *vertex_b)
 ;
 ; Parameters:
 ; CChain *         Stack[0x4]:4   this_ptr
+; SChainVertex *   Stack[0x8]:4   vertex_a
+; SChainVertex *   Stack[0xc]:4   vertex_b
 ; Local Variables:
 ; undefined4       Stack[-0x68]:4  local_68
 ; undefined4       Stack[-0x64]:4  local_64
@@ -40,7 +42,7 @@
 section .text
 
     PUSH EBX                            ; 0042fed0
-        ;   Label: core_chain.cpp_CChain_FUN_0042fed0
+        ;   Label: core_chain.cpp_CChain_constrainSegmentDistance_FUN_0042fed0
     PUSH ESI                            ; 0042fed1
     PUSH EDI                            ; 0042fed2
     SUB ESP,0x5c                        ; 0042fed3

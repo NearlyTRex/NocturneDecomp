@@ -28277,13 +28277,13 @@
         {
           "name":"format",
           "storage":{
-            "offset":20,
+            "offset":16,
             "size":4,
             "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0x14]",
-                "offset":20,
+                "addr":"Stack[0x10]",
+                "offset":16,
                 "size":4
               }
             ]
@@ -28369,13 +28369,13 @@
         {
           "name":"format",
           "storage":{
-            "offset":16,
+            "offset":12,
             "size":4,
             "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0x10]",
-                "offset":16,
+                "addr":"Stack[0xc]",
+                "offset":12,
                 "size":4
               }
             ]
@@ -82995,6 +82995,24 @@
     "name":"sound_sndwav.cpp_CWavInDevice_setMode_FUN_005b0f70",
     "ret":"int",
     "vars":{
+      "locals":[
+        {
+          "name":"WStack_28",
+          "storage":{
+            "offset":-40,
+            "size":20,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[-0x28]",
+                "offset":-40,
+                "size":20
+              }
+            ]
+          },
+          "type":"WAVEFORMATEX"
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",
@@ -83061,7 +83079,7 @@
           "type":"int"
         },
         {
-          "name":"out_samples_per_block",
+          "name":"stereo_flag",
           "storage":{
             "offset":20,
             "size":4,
@@ -83074,7 +83092,7 @@
               }
             ]
           },
-          "type":"int*"
+          "type":"int"
         }
       ],
       "ret_storage":{

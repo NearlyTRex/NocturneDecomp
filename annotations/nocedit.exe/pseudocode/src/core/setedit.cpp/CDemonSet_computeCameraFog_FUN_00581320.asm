@@ -55,7 +55,7 @@ section .text
     PUSH ECX                            ; 00581345 | g_CEditorToolsInstance
     MOV dword ptr [0x02d807a4],EDX      ; 00581346 | g_CDemonLightInstance.light_enabled_flag
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0058134c
-        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
+        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 00581351
     MOV EDI,dword ptr [0x0067b654]      ; 00581354 | g_CGamePtr
     PUSH EDI                            ; 0058135a | g_CGameInstance
@@ -75,7 +75,7 @@ section .text
     MOV EAX,[0x00678a60]                ; 0058137d | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH EAX                            ; 00581382 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 00581383
-        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
+        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 00581388
     PUSH EDI                            ; 0058138b
     PUSH 0x6489e3                       ; 0058138c | = "backdrop\\%s.fog"

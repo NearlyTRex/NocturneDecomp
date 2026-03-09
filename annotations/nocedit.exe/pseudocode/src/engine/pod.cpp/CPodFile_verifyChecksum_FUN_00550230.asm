@@ -89,7 +89,7 @@ section .text
     MOV EBX,dword ptr [0x00678a60]      ; 0055027f | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH EBX                            ; 00550285 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 00550286
-        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
+        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 0055028b
     PUSH 0x2ef                          ; 0055028e
     PUSH 0x6403ea                       ; 00550293 | = "..\\engine\\pod.cpp"

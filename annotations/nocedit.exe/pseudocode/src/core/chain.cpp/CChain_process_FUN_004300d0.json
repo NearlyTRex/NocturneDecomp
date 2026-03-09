@@ -6,18 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 659,
-    "complexity_score": 354,
+    "complexity_score": 370,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 6,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 254,
+    "pseudocode_lines": 270,
     "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic",
       "negative_offset"
     ],
-    "total_lines": 913
+    "total_lines": 929
   },
   "cross_references": [],
   "function": {
@@ -35,14 +35,14 @@
   },
   "function_calls": [
     {
-      "addr": "0042fcc0",
-      "is_variadic": false,
-      "name": "core_chain.cpp_CChain_FUN_0042fcc0"
-    },
-    {
       "addr": "0042fed0",
       "is_variadic": false,
-      "name": "core_chain.cpp_CChain_FUN_0042fed0"
+      "name": "core_chain.cpp_CChain_constrainSegmentDistance_FUN_0042fed0"
+    },
+    {
+      "addr": "0042fcc0",
+      "is_variadic": false,
+      "name": "core_chain.cpp_CChain_getTargetBoneWorldPosition_FUN_0042fcc0"
     },
     {
       "addr": "005b3a70",
@@ -530,31 +530,31 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 64,
-      "match": "pSVar5[-1].",
+      "line": 71,
+      "match": "pSVar4[-1].",
       "severity": "mild",
-      "text": "local_7c = pSVar5[-1].position.x - (pSVar5->position).x;",
+      "text": "local_7c = pSVar4[-1].position.x - (pSVar4->position).x;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 65,
-      "match": "pSVar5[-1].",
+      "line": 72,
+      "match": "pSVar4[-1].",
       "severity": "mild",
-      "text": "local_78 = pSVar5[-1].position.y - (pSVar5->position).y;",
+      "text": "local_78 = pSVar4[-1].position.y - (pSVar4->position).y;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 66,
-      "match": "pSVar5[-1].",
+      "line": 73,
+      "match": "pSVar4[-1].",
       "severity": "mild",
-      "text": "local_74 = pSVar5[-1].position.z - (pSVar5->position).z;",
+      "text": "local_74 = pSVar4[-1].position.z - (pSVar4->position).z;",
       "type": "negative_offset"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 67,
+      "line": 74,
       "match": "SQRT",
       "severity": "mild",
       "text": "local_ec = SQRT(local_74 * local_74 + local_7c * local_7c + local_78 * local_78) + local_ec;",
@@ -562,31 +562,31 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 208,
-      "match": "pSVar5[-1].",
+      "line": 224,
+      "match": "pSVar4[-1].",
       "severity": "mild",
-      "text": "local_c4 = pSVar5[-1].position.x - (pSVar5->position).x;",
+      "text": "local_c4 = pSVar4[-1].position.x - (pSVar4->position).x;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 209,
-      "match": "pSVar5[-1].",
+      "line": 225,
+      "match": "pSVar4[-1].",
       "severity": "mild",
-      "text": "local_c0 = pSVar5[-1].position.y - (pSVar5->position).y;",
+      "text": "local_c0 = pSVar4[-1].position.y - (pSVar4->position).y;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 210,
-      "match": "pSVar5[-1].",
+      "line": 226,
+      "match": "pSVar4[-1].",
       "severity": "mild",
-      "text": "local_bc = pSVar5[-1].position.z - (pSVar5->position).z;",
+      "text": "local_bc = pSVar4[-1].position.z - (pSVar4->position).z;",
       "type": "negative_offset"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 211,
+      "line": 227,
       "match": "SQRT",
       "severity": "mild",
       "text": "local_f0 = SQRT(local_bc * local_bc + local_c4 * local_c4 + local_c0 * local_c0) + local_f0;",
@@ -594,7 +594,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 222,
+      "line": 238,
       "match": "SQRT",
       "severity": "mild",
       "text": "SQRT(local_98 * local_98 + local_a0 * local_a0 + local_9c * local_9c)) {",

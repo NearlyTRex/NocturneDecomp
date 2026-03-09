@@ -2,13 +2,13 @@
 // Address: 005b0a30
 // Address Range: [[005b0a30, 005b0c05]]
 // Convention: __cdecl
-// Signature: int __cdecl sound_sndwav_cpp_CWavOutDevice_setMode_FUN_005b0a30(CWavOutDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_samples_per_block)
+// Signature: int __cdecl sound_sndwav_cpp_CWavOutDevice_setMode_FUN_005b0a30(CWavOutDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_buffer_size)
 
 #include "nocturne.h"
 
 /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
-int __cdecl sound_sndwav_cpp_CWavOutDevice_setMode_FUN_005b0a30(CWavOutDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_samples_per_block)
+int __cdecl sound_sndwav_cpp_CWavOutDevice_setMode_FUN_005b0a30(CWavOutDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_buffer_size)
 
 {
   int iVar1;
@@ -32,7 +32,7 @@ int __cdecl sound_sndwav_cpp_CWavOutDevice_setMode_FUN_005b0a30(CWavOutDevice *t
   g_WaveOutBitsPerSample = channels;
   g_WaveOutChannels = sample_rate;
   g_WaveOutNumBuffers = 4;
-  g_WaveOutSampleRate = (int)out_samples_per_block;
+  g_WaveOutSampleRate = (int)out_buffer_size;
   fVar2 = sound_sndmain_cpp_getMaxSwLatency_FUN_005abea0();
   g_WaveOutBufferSize =
        (int)ROUND(ROUND(((float)g_WaveOutSampleRate * fVar2) / (float)g_WaveOutNumBuffers));

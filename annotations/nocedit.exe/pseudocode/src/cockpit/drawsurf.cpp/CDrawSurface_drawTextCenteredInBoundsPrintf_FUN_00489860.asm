@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   x
 ; int              Stack[0xc]:4   y
 ; int              Stack[0x10]:4   width
-; char *           Stack[0x18]:4   format
+; char *           Stack[0x14]:4   format
 ; Local Variables:
 ; char[4096]       Stack[-0x1014]:4096  local_1014
 ; va_list_t        Stack[-0x14]:4  local_14

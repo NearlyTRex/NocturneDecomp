@@ -21,9 +21,9 @@
 ;   int g_WaveInSampleRate
 ;   int g_WaveInBufferSizeSamples
 ;   int g_WaveInNumBuffers
+;   int g_WaveInRequestedBitsPerSample
 ;   int g_WaveInRequestedChannels
 ;   int g_WaveInRequestedSampleRate
-;   int g_WaveInRequestedBitsPerSample
 ;   int g_WaveInStereoRequested
 ;   int g_WaveInCurrentBufferIndex
 ;   int g_WaveInCurrentSampleOffset
@@ -68,7 +68,7 @@ section .text
         ;   XREF to: 005b142f (CONDITIONAL_JUMP)  ; LAB_005b142f
     MOV EBX,dword ptr [0x03f6af3c]      ; 005b133b | g_WaveInCurrentSampleOffset
     MOV EDX,dword ptr [0x03f6af20]      ; 005b1341 | g_WaveInBufferSizeSamples
-    MOV EAX,[0x03f6af30]                ; 005b1347 | g_WaveInRequestedBitsPerSample
+    MOV EAX,[0x03f6af30]                ; 005b1347 | g_WaveInRequestedSampleRate
     SUB EDX,EBX                         ; 005b134c
     IMUL EDX,EAX                        ; 005b134e
     MOV ECX,dword ptr [0x03f6af18]      ; 005b1351 | g_WaveInSampleRate
@@ -88,11 +88,11 @@ section .text
     PUSH EDI                            ; 005b136f
     MOV EAX,[0x03f6af34]                ; 005b1370 | g_WaveInStereoRequested
     PUSH EAX                            ; 005b1375
-    MOV EDX,dword ptr [0x03f6af30]      ; 005b1376 | g_WaveInRequestedBitsPerSample
+    MOV EDX,dword ptr [0x03f6af30]      ; 005b1376 | g_WaveInRequestedSampleRate
     PUSH EDX                            ; 005b137c
-    MOV ECX,dword ptr [0x03f6af2c]      ; 005b137d | g_WaveInRequestedSampleRate
+    MOV ECX,dword ptr [0x03f6af2c]      ; 005b137d | g_WaveInRequestedChannels
     PUSH ECX                            ; 005b1383
-    MOV EAX,[0x03f6af28]                ; 005b1384 | g_WaveInRequestedChannels
+    MOV EAX,[0x03f6af28]                ; 005b1384 | g_WaveInRequestedBitsPerSample
     MOV ECX,dword ptr [ESP + 0x1c]      ; 005b1389
     PUSH EAX                            ; 005b138d
     MOV EAX,[0x03f6af3c]                ; 005b138e | g_WaveInCurrentSampleOffset
@@ -116,7 +116,7 @@ section .text
     ADD ESP,0x2c                        ; 005b13cd
     MOV EAX,dword ptr [ESP]             ; 005b13d0
     IMUL EAX,EBX                        ; 005b13d3
-    MOV ECX,dword ptr [0x03f6af30]      ; 005b13d6 | g_WaveInRequestedBitsPerSample
+    MOV ECX,dword ptr [0x03f6af30]      ; 005b13d6 | g_WaveInRequestedSampleRate
     ADD EDI,EAX                         ; 005b13dc
     MOV EAX,EDX                         ; 005b13de
     SAR EDX,0x1f                        ; 005b13e0

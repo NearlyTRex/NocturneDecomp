@@ -200,7 +200,7 @@ section .text
     MOV EAX,[0x00678a60]                ; 005343ae | g_CEditorToolsPtr
     PUSH EAX                            ; 005343b3 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 005343b4
-        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
+        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 005343b9
     CMP ESI,EDI                         ; 005343bc
         ;   Label: LAB_005343bc

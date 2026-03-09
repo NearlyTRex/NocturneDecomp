@@ -85,7 +85,7 @@ void __cdecl engine_fileio_cpp_synchronizeFilesToDirectory_FUN_004bc650(_FILE *f
           core_main_c_displayErrorAndQuit_FUN_00506f10("Can't create %s",local_328);
         }
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-                  (g_CEditorToolsPtr,"Copying %s -> %s");
+                  (g_CEditorToolsPtr,"Copying %s -> %s",full_path,local_328);
         while( true ) {
           iVar3 = _fgetc(file);
           if (iVar3 == -1) break;

@@ -177,7 +177,7 @@ void __cdecl shape_edittool_cpp_paintWindowBackground_FUN_0049e590(void);
 void __cdecl shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0(CEditorTools *this_ptr,char *format,...) __attribute__((format(printf, 2, 3)));
 void __cdecl shape_edittool_cpp_CEditorTools_showWarning_FUN_0049e6f0(CEditorTools *this_ptr,char *format,...) __attribute__((format(printf, 2, 3)));
 void __cdecl shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(CEditorTools *this_ptr,char *format,...) __attribute__((format(printf, 2, 3)));
-void __cdecl shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools *this_ptr,char *message);
+void __cdecl shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools *this_ptr,char *format,...) __attribute__((format(printf, 2, 3)));
 void __cdecl shape_edittool_cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870(CEditorTools *this_ptr,char *format_string,...) __attribute__((format(printf, 2, 3)));
 void __cdecl shape_edittool_cpp_CEditorTools_createCenteredDialog_FUN_0049e940(CEditorTools *this_ptr,char *dialog_text);
 int __cdecl shape_edittool_cpp_showMultiChoiceDialog_FUN_0049e9d0(CStrList *str_list,char *dialog_title,int dialog_mode);

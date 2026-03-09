@@ -80,7 +80,7 @@ int __cdecl engine_pod_cpp_CPodFile_verifyChecksum_FUN_00550230(CPodFile *this_p
   }
   pcVar6 = this_ptr->filename;
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-            (g_CEditorToolsPtr,"Verifying CRC for %s...");
+            (g_CEditorToolsPtr,"Verifying CRC for %s...",pcVar6);
   p_Var3 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                      (pcVar6,(char *)0x0,"rb","..\\engine\\pod.cpp",0x2ef);
   if (p_Var3 == (_FILE *)0x0) {

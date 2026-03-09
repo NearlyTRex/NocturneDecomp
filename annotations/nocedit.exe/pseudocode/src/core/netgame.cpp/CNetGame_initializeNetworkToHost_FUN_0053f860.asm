@@ -40,7 +40,7 @@ section .text
     MOV EDX,dword ptr [0x00678a60]      ; 0053f86e | g_CEditorToolsPtr
     PUSH EDX                            ; 0053f874 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0053f875
-        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
+        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0053f87a
     PUSH 0x0                            ; 0053f87d
     PUSH EBX                            ; 0053f87f

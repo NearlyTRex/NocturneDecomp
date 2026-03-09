@@ -12,7 +12,7 @@ int __cdecl _sprintf(char *buffer,char *format,...)
   int iVar1;
   va_list_t args;
   
-  args.value[0] = (char * [1])&stack0x0000000c;
-  iVar1 = _vsprintf(buffer,format,(va_list_t)&args);
+  VA_START_T(args, format);
+  iVar1 = _vsprintf(buffer,format,args);
   return iVar1;
 }

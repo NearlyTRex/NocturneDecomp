@@ -51,7 +51,7 @@ void __cdecl core_fileman_cpp_preprocessMusicFiles_FUN_004bd750(char *source_dir
       iVar3 = engine_dosio_c_findFileNormally_FUN_004817c0(&local_438);
       if ((iVar3 == 0) || (local_438.timestamp < local_64c.timestamp - 1)) {
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-                  (g_CEditorToolsPtr,"Computing length of %s");
+                  (g_CEditorToolsPtr,"Computing length of %s",&local_64c);
         sound_sndmain_cpp_convertMp3ToSfxMetadata_FUN_005acf20(local_64c.found_path);
       }
       index = index + 1;

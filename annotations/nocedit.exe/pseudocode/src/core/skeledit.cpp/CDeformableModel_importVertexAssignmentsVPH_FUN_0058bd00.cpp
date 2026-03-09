@@ -47,7 +47,7 @@ void __cdecl core_skeledit_cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0
   bVar10 = 0;
   __STK();
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-            (g_CEditorToolsPtr,"Importing vertex assignments from %s...");
+            (g_CEditorToolsPtr,"Importing vertex assignments from %s...",filename);
   local_28 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                        (filename,(char *)0x0,"rb","..\\core\\skeledit.cpp",0x593);
   if (local_28 == (_FILE *)0x0) {
@@ -155,6 +155,6 @@ void __cdecl core_skeledit_cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0
   }
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_28,"..\\core\\skeledit.cpp",0x5f9);
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-            (g_CEditorToolsPtr,"Imported vertex assignments from %s OK");
+            (g_CEditorToolsPtr,"Imported vertex assignments from %s OK",filename);
   return;
 }

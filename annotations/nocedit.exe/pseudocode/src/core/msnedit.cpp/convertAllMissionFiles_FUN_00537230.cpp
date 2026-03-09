@@ -19,10 +19,10 @@ void __cdecl core_msnedit_cpp_convertAllMissionFiles_FUN_00537230(void)
                        ((CPod *)g_CDemonPodPtr,"world",local_124.filename,(int *)0x0);
     if (pCVar1 == (CPodFile *)0x0) {
       shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-                (g_CEditorToolsPtr,"Loading %s...");
+                (g_CEditorToolsPtr,"Loading %s...",&local_124);
       core_mission_cpp_CDemonMission_load_FUN_00522d90(g_CDemonMissionPtr,local_124.filename,0);
       shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-                (g_CEditorToolsPtr,"Saving %s...");
+                (g_CEditorToolsPtr,"Saving %s...",&local_124);
       core_mission_cpp_CDemonMission_save_FUN_00522e30(g_CDemonMissionPtr,local_124.filename);
     }
     else {

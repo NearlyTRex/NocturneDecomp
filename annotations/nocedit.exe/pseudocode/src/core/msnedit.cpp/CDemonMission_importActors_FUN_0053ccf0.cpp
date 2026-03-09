@@ -51,7 +51,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_importActors_FUN_0053ccf0(CDemonMiss
   }
   core_mission_cpp_CDemonMission_reset_FUN_00522c80(local_10);
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-            (g_CEditorToolsPtr,"Loading %s");
+            (g_CEditorToolsPtr,"Loading %s",local_3c);
   this_ptr->skip_gore_load_flag = 1;
   g_CDemonMissionPtr = local_10;
   if (iVar2 == 0) {

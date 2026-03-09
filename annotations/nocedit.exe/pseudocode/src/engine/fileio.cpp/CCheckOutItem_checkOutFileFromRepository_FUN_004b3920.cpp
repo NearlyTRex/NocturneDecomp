@@ -112,7 +112,7 @@ LAB_004b39fc:
     pcVar8 = pcVar8 + 2;
   } while (cVar1 != '\0');
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-            (g_CEditorToolsPtr,"Marking %s as checked out...");
+            (g_CEditorToolsPtr,"Marking %s as checked out...",filename);
   iVar2 = 0;
   do {
     stream_ptr = shape_memdbg_cpp_openFile_FUN_0050f7a0
@@ -188,7 +188,7 @@ LAB_004b3ae9:
             }
             engine_fileio_cpp_logOffVersionControl_FUN_004b2830();
             shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-                      (g_CEditorToolsPtr,"Getting %s...");
+                      (g_CEditorToolsPtr,"Getting %s...",filename);
             iVar2 = engine_fileio_cpp_getLatestFileFromRepository_FUN_004b3220
                               (this_ptr->name,filename);
             if (iVar2 == 0) {
@@ -196,7 +196,7 @@ LAB_004b3ae9:
                         (this_ptr,filename);
             }
             shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-                      (g_CEditorToolsPtr,"Clearing read-only bit for %s...");
+                      (g_CEditorToolsPtr,"Clearing read-only bit for %s...",local_228);
             uVar3 = engine_dosio_c_getFileTimestamp_FUN_00481960((char *)0x0,filename);
             if (((int)uVar3 < 0) || ((uVar3 & 8) == 0)) {
 LAB_004b3f0c:

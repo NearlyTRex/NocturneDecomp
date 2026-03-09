@@ -2592,6 +2592,15 @@ def export_system_grouped_files(currentProgram, pseudocode_dir, system_grouped_t
         if header_name == "dsound":
             content.extend(generate_dsound_api_functions())
 
+        # Special case: append VA_START_T/VA_END_T macros to stdarg.h
+        if header_name == "stdarg":
+            content.append("// Variadic argument macros for va_list_t")
+            content.append("// Ghidra produces uncompilable va_list_t initialization patterns in variadic")
+            content.append("// functions. These macros provide compilable equivalents.")
+            content.append('#define VA_START_T(ap, last) do { (ap).value[0] = (char*)(&(last) + 1); } while(0)')
+            content.append('#define VA_END_T(ap) do { (ap).value[0] = (char*)0; } while(0)')
+            content.append("")
+
         # Write header file
         header_path = os.path.join(system_dir, "%s.h" % header_name)
         write_header_file(header_path, "\n".join(content))

@@ -40,7 +40,7 @@ section .text
     MOV EDX,dword ptr [0x00678a60]      ; 0051c07d | g_CEditorToolsPtr
     PUSH EDX                            ; 0051c083 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0051c084
-        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
+        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 0051c089
     PUSH 0x133e                         ; 0051c08c
     PUSH 0x637e32                       ; 0051c091 | = "..\\shape\\meshlod.cpp"

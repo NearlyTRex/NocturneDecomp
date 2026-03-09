@@ -244,11 +244,11 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
           ;
           if (pCVar3 == (CPodFile *)0x0) {
             shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-                      (g_CEditorToolsPtr,"Loading %s...");
+                      (g_CEditorToolsPtr,"Loading %s...",&local_434);
             core_mission_cpp_CDemonMission_load_FUN_00522d90
                       (g_CDemonMissionPtr,local_434.filename,0);
             shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-                      (g_CEditorToolsPtr,"Saving %s...");
+                      (g_CEditorToolsPtr,"Saving %s...",&local_434);
             core_mission_cpp_CDemonMission_save_FUN_00522e30(g_CDemonMissionPtr,local_434.filename);
           }
           else {

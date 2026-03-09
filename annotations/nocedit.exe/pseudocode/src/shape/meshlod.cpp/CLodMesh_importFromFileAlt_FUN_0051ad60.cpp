@@ -12,7 +12,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_importFromFileAlt_FUN_0051ad60(CLodMesh 
   _FILE *file_handle;
   
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-            (g_CEditorToolsPtr,"Importing %s");
+            (g_CEditorToolsPtr,"Importing %s",filename);
   file_handle = shape_memdbg_cpp_openFile_FUN_0050f7a0
                           (filename,(char *)0x0,"rt","..\\shape\\meshlod.cpp",0x10ce);
   if (file_handle == (_FILE *)0x0) {

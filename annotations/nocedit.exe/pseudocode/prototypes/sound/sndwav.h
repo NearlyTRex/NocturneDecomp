@@ -29,7 +29,7 @@ int __cdecl CWavOutDevice::reset(CWavOutDevice *this_ptr);
 
 // Original: sound_sndwav.cpp_CWavOutDevice_setMode_FUN_005b0a30
 // Address: 005b0a30
-int __cdecl CWavOutDevice::setMode(CWavOutDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_samples_per_block);
+int __cdecl CWavOutDevice::setMode(CWavOutDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_buffer_size);
 
 // Original: sound_sndwav.cpp_CWavOutDevice_poll_FUN_005b0c10
 // Address: 005b0c10
@@ -57,7 +57,7 @@ int __cdecl CWavInDevice::reset(CWavInDevice *this_ptr);
 
 // Original: sound_sndwav.cpp_CWavInDevice_setMode_FUN_005b0f70
 // Address: 005b0f70
-int __cdecl CWavInDevice::setMode(CWavInDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_samples_per_block);
+int __cdecl CWavInDevice::setMode(CWavInDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int stereo_flag);
 
 // Original: sound_sndwav.cpp_CWavInDevice_poll_FUN_005b12e0
 // Address: 005b12e0

@@ -12,9 +12,9 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPr
   char local_1014 [4096];
   va_list_t local_14;
   
-  local_14.value[0] = (char * [1])&stack0x0000001c;
-  _vsprintf(local_1014,format,(va_list_t)&local_14);
-  local_14.value[0] = (char * [1])(char *)0x0;
+  VA_START_T(local_14, format);
+  _vsprintf(local_1014,format,local_14);
+  VA_END_T(local_14);
   cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInAreaWithWidth_FUN_004899c0
             (this_ptr,local_1014,x,width,y,height);
   return;

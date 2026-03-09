@@ -12,9 +12,9 @@ int __cdecl engine_font_cpp_CBitFont_drawTextCenterInBoundsF_FUN_004cdf30(CBitFo
   int iVar1;
   va_list_t local_14;
   
-  local_14.value[0] = (char * [1])&stack0x00000020;
+  VA_START_T(local_14, format_string);
   iVar1 = engine_font_cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf80
                     (this_ptr,left_x,right_x,y,color_mode,color_value,format_string,
-                     (va_list_t)&local_14);
+                     local_14);
   return iVar1;
 }

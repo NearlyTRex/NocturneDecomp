@@ -1,40 +1,19 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 23,
-        "line": 14,
-        "message": "assigning to 'char *' from incompatible type 'char *[1]'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 36,
-        "line": 14,
-        "message": "use of undeclared identifier 'stack0x0000001c'"
-      },
-      {
-        "category": "other",
-        "column": 57,
-        "line": 16,
-        "message": "no matching conversion for C-style cast from 'va_list_t *' to 'va_list_t'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 33,
-    "complexity_score": 23,
+    "complexity_score": 8,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 8,
-    "suspect_count": 1,
-    "suspect_types": [
-      "stack_ref"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 41
   },
   "cross_references": [],
@@ -146,14 +125,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Direct stack address reference",
-      "line": 7,
-      "match": "&stack0x0000001c",
-      "severity": "moderate",
-      "text": "local_14.value[0] = (char * [1])&stack0x0000001c;",
-      "type": "stack_ref"
-    }
-  ]
+  "suspects": []
 }

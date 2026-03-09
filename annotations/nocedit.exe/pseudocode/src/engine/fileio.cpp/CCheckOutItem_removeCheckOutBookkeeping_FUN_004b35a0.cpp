@@ -37,7 +37,7 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35
     if (iVar2 == 0) goto LAB_004b36da;
   }
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-            (g_CEditorToolsPtr,"Marking %s as no longer checked out");
+            (g_CEditorToolsPtr,"Marking %s as no longer checked out",unused_param);
   if (g_VersionControlDirectory[0] == '\0') {
     g_CurrentFilename = "..\\engine\\fileio.cpp";
     g_CurrentLineNumber = 0xdd;

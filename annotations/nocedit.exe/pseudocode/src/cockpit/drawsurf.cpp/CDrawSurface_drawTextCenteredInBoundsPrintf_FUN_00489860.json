@@ -1,42 +1,22 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 23,
-        "line": 16,
-        "message": "C-style cast from 'char **' to 'char *[1]' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 42,
-        "line": 17,
-        "message": "no matching conversion for C-style cast from 'va_list_t *' to 'va_list_t'"
-      },
-      {
-        "category": "other",
-        "column": 23,
-        "line": 18,
-        "message": "C-style cast from 'char *' to 'char *[1]' is not allowed"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 52,
+    "complexity_score": 26,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 12,
-    "suspect_count": 3,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 11,
+    "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_few",
-      "stack_param"
+      "param_count_too_few"
     ],
-    "total_lines": 50
+    "total_lines": 49
   },
   "cross_references": [
     {
@@ -121,10 +101,10 @@
     "pcode_op_count": 135
   },
   "stack_frame": {
-    "frame_size": 4144,
+    "frame_size": 4140,
     "local_size": 4120,
     "param_offset": 4,
-    "param_size": 24,
+    "param_size": 20,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -172,29 +152,13 @@
       {
         "is_param": true,
         "name": "format",
-        "offset": 24,
+        "offset": 20,
         "size": 4,
         "type": "char *"
       }
     ]
   },
   "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 5,
-      "match": "in_stack_00000014",
-      "severity": "moderate",
-      "text": "char *in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000014",
-      "severity": "moderate",
-      "text": "_vsprintf(local_1014,in_stack_00000014,(va_list_t)&local_14);",
-      "type": "stack_param"
-    },
     {
       "call_site_count": 2,
       "declared_params": 5,

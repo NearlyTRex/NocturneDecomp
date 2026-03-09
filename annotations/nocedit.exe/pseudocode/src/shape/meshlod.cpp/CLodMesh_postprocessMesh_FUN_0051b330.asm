@@ -84,7 +84,7 @@ section .text
     MOV EDX,dword ptr [0x00678a60]      ; 0051b3a5 | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH EDX                            ; 0051b3ab | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0051b3ac
-        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
+        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0051b3b1
     PUSH EBX                            ; 0051b3b4
     CALL shape_meshlod.cpp_CLodMesh_validateAndRemoveInvalidFaces_FUN_005197c0 ; 0051b3b5

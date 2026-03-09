@@ -12,9 +12,9 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullHeightPrintf_
   char local_100c [4096];
   va_list_t local_c;
   
-  local_c.value[0] = (char * [1])&stack0x00000010;
-  _vsprintf(local_100c,format,(va_list_t)&local_c);
-  local_c.value[0] = (char * [1])(char *)0x0;
+  VA_START_T(local_c, format);
+  _vsprintf(local_100c,format,local_c);
+  VA_END_T(local_c);
   cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullHeight_FUN_00489b60(this_ptr,local_100c,x);
   return;
 }

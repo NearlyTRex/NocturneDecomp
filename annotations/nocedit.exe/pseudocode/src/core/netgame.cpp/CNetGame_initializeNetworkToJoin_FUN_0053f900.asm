@@ -134,7 +134,7 @@ section .text
     SUB EDI,0x50000                     ; 0053f9c7
     MOV [0x02f7c8bc],EAX                ; 0053f9cd | g_ConnectionStatus
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0053f9d2
-        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
+        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * format)
     MOV EAX,[0x006849a8]                ; 0053f9d7 | g_ForceMessagePump
     ADD ESP,0x8                         ; 0053f9dc
     XOR ECX,ECX                         ; 0053f9df

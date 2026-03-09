@@ -18,10 +18,10 @@ void __cdecl shape_edittool_cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e87
   }
   g_FontCharacterHeight = g_EditorFont->max_char_width;
   g_FontCharacterWidth = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(g_EditorFont,0x6a);
-  local_14.value[0] = (char * [1])&stack0x0000000c;
-  _vsprintf(g_ConfirmationMessageBuffer,format_string,(va_list_t)&local_14)
+  VA_START_T(local_14, format_string);
+  _vsprintf(g_ConfirmationMessageBuffer,format_string,local_14)
   ;
-  local_14.value[0] = (char * [1])(char *)0x0;
+  VA_END_T(local_14);
   shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(this_ptr);
   engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
   engine_font_cpp_CBitFont_drawText_FUN_004cda80

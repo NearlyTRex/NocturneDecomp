@@ -6,9 +6,9 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 214
 Total functions: 6484
-Clean functions: 4709 (72.6%)
+Clean functions: 4737 (73.1%)
 Files at 100%: 32
-Files at 90%+: 60
+Files at 90%+: 61
 Files at 50%+: 200
 
 ====================================================================================================
@@ -63,6 +63,10 @@ FILES AT 90-99% (ALMOST COMPLETE)
    95.2% | cockpit/pkbmpset.cpp
          20/21 clean, 1 remaining
            - cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_FUN_0054bd60 (11 lines) [param_count_too_few]
+
+   95.2% | core/chain.cpp
+         20/21 clean, 1 remaining
+           - core_chain.cpp_CChain_process_FUN_004300d0 (270 lines) [decompiler_intrinsic, negative_offset]
 
    95.2% | core/stairs.cpp
          20/21 clean, 1 remaining
@@ -172,7 +176,7 @@ FILES AT 90-99% (ALMOST COMPLETE)
          9/10 clean, 1 remaining
            - engine_light.cpp_calculatePhongLighting_FUN_00505530 (97 lines) [param_count_too_few, pointer_cast, stack_alignment_array]
 
-Total: 28 files
+Total: 29 files
 
 ====================================================================================================
 FILES AT 50-89%
@@ -224,6 +228,9 @@ FILES AT 50-89%
            - core_turret.cpp_CTurret_getBoundingBox_FUN_005e2910 (69 lines) [decompiler_intrinsic, pointer_cast, warning_inlined_function]
            - core_turret.cpp_CTurret_process_FUN_005e2430 (192 lines) [decompiler_intrinsic, pointer_cast, stack_alignment_array, suspect_float, unknown_field]
            - core_turret.cpp_CTurret_getCurFrame_FUN_005e2b30 (48 lines) [stack_param]
+   87.5% | engine/console.cpp
+         7/8 clean, 1 remaining
+           - engine_console.cpp_CConsole_render_FUN_00441b00 (51 lines) [pointer_cast]
    86.7% | core/moloch.cpp
          13/15 clean, 2 remaining
            - core_moloch.cpp_CMoloch_FUN_005293b0 (134 lines) [decompiler_intrinsic, stack_param, warning_type_propagation]
@@ -293,6 +300,33 @@ FILES AT 50-89%
            - core_svetlana.cpp_CSvetlana_process_FUN_005d8ba0 (295 lines) [pointer_cast, stack_alignment_array, unresolved_funcptr, warning_type_propagation]
            - core_svetlana.cpp_CSvetlana_processAI_FUN_005d9260 (237 lines) [decompiler_intrinsic, warning_type_propagation]
            - core_svetlana.cpp_CSvetlana_renderOpaque_FUN_005d9bc0 (60 lines) [warning_type_propagation]
+   84.0% | shape/edittool.cpp
+         131/156 clean, 25 remaining
+           - shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420 (209 lines) [stack_param, undefined_data]
+           - shape_edittool.cpp_CEditorTools_draw3DAxisLabelsAt_FUN_004a1e90 (18 lines) [decompiler_intrinsic, param_count_too_many]
+           - shape_edittool.cpp_CEditorTools_draw3DProjectedLine_FUN_004a28a0 (15 lines) [decompiler_intrinsic, param_count_too_many]
+           - shape_edittool.cpp_CEdCheck_clearActiveButtonIfMatch_FUN_004a6b50 (8 lines) [param_count_too_few]
+           - shape_edittool.cpp_CEditorTools_promptForValidDouble_FUN_004a01f0 (49 lines) [decompiler_intrinsic, pointer_cast, unknown_field]
+           - shape_edittool.cpp_CEdScrollBar_clampToValidRange_FUN_004a63b0 (16 lines) [param_count_too_few]
+           - shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0 (174 lines) [byvalue_struct_passing, decompiler_intrinsic, pointer_cast, stack_param, stack_ref, unknown_field, warning_inlined_function]
+           - shape_edittool.cpp_CEdCheck_calculateBaseWidth_FUN_004a6bb0 (8 lines) [param_count_too_few]
+           - shape_edittool.cpp_CEdScrollBar_clearActiveButtonIfMatch_FUN_004a5b40 (8 lines) [param_count_too_few]
+           - shape_edittool.cpp_paintWindowBackground_FUN_0049e590 (50 lines) [pointer_cast]
+           - shape_edittool.cpp_draw3DInterpolatedLine_FUN_004a1f40 (62 lines) [byvalue_struct_passing, decompiler_intrinsic, pointer_cast, stack_param, stack_ref, unknown_field]
+           - shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050 (240 lines) [byvalue_struct_passing, decompiler_intrinsic, pointer_cast, stack_param, stack_ref, unknown_field]
+           - shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70 (203 lines) [negative_offset, pointer_cast]
+           - shape_edittool.cpp_CStrList_copyFrom_FUN_004a2ac0 (15 lines) [param_count_too_few]
+           - shape_edittool.cpp_CStrList_insertSortedFileRecord_FUN_004a3360 (94 lines) [pointer_cast]
+           - shape_edittool.cpp_CInputString_init_FUN_0049d3d0 (32 lines) [pointer_cast]
+           - shape_edittool.cpp_showTextInputDialog_FUN_0049db10 (134 lines) [param_count_too_few, pointer_cast]
+           - shape_edittool.cpp_CEditorTools_restoreScreen_FUN_0049e4d0 (48 lines) [pointer_cast]
+           - shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0 (50 lines) [pointer_cast]
+           - shape_edittool.cpp_CEditorTools_showCheatInputDialog_FUN_004a0400 (7 lines) [param_count_too_many]
+           - shape_edittool.cpp_CPickList_calculateLayoutAndCreateComponents_FUN_004a45d0 (216 lines) [param_count_too_few]
+           - shape_edittool.cpp_CEditorTools_backupScreen_FUN_0049e410 (48 lines) [pointer_cast]
+           - shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530 (85 lines) [decompiler_intrinsic, warning_inlined_function]
+           - shape_edittool.cpp_CEdButton_clearActiveButtonIfMatch_FUN_004a6530 (8 lines) [param_count_too_few]
+           - shape_edittool.cpp_CEditorTools_createModalWindow_FUN_004a0970 (154 lines) [pointer_cast]
    83.3% | core/frankgen.cpp
          20/24 clean, 4 remaining
            - core_frankgen.cpp_CFrankenstienMachine_renderOpaque_FUN_004d1f70 (54 lines) [stack_ref]
@@ -551,41 +585,6 @@ FILES AT 50-89%
            - core_waypoint.cpp_CWayPoint_rebuildConnectivity_FUN_005ec4f0 (47 lines) [param_count_too_few]
            - core_waypoint.cpp_CWayPoint_findNearestReachable_FUN_005ec320 (85 lines) [pointer_cast]
            - core_waypoint.cpp_CWayPoint_cleanupAdjacency_FUN_005ec830 (36 lines) [param_count_too_few]
-   78.8% | shape/edittool.cpp
-         123/156 clean, 33 remaining
-           - shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870 (22 lines) [stack_ref]
-           - shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420 (209 lines) [stack_param, undefined_data]
-           - shape_edittool.cpp_CEditorTools_draw3DAxisLabelsAt_FUN_004a1e90 (18 lines) [decompiler_intrinsic, param_count_too_many]
-           - shape_edittool.cpp_CEditorTools_draw3DProjectedLine_FUN_004a28a0 (15 lines) [decompiler_intrinsic, param_count_too_many]
-           - shape_edittool.cpp_CEdCheck_clearActiveButtonIfMatch_FUN_004a6b50 (8 lines) [param_count_too_few]
-           - shape_edittool.cpp_CEditorTools_promptForValidDouble_FUN_004a01f0 (49 lines) [decompiler_intrinsic, pointer_cast, unknown_field]
-           - shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 (10 lines) [stack_ref]
-           - shape_edittool.cpp_CEdScrollBar_clampToValidRange_FUN_004a63b0 (16 lines) [param_count_too_few]
-           - shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0 (174 lines) [byvalue_struct_passing, decompiler_intrinsic, pointer_cast, stack_param, stack_ref, unknown_field, warning_inlined_function]
-           - shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0 (10 lines) [stack_ref]
-           - shape_edittool.cpp_CEdCheck_calculateBaseWidth_FUN_004a6bb0 (8 lines) [param_count_too_few]
-           - shape_edittool.cpp_CEdScrollBar_clearActiveButtonIfMatch_FUN_004a5b40 (8 lines) [param_count_too_few]
-           - shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060 (17 lines) [stack_ref]
-           - shape_edittool.cpp_paintWindowBackground_FUN_0049e590 (50 lines) [pointer_cast]
-           - shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 (10 lines) [stack_ref]
-           - shape_edittool.cpp_draw3DInterpolatedLine_FUN_004a1f40 (62 lines) [byvalue_struct_passing, decompiler_intrinsic, pointer_cast, stack_param, stack_ref, unknown_field]
-           - shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050 (240 lines) [byvalue_struct_passing, decompiler_intrinsic, pointer_cast, stack_param, stack_ref, unknown_field]
-           - shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70 (203 lines) [negative_offset, pointer_cast]
-           - shape_edittool.cpp_CStrList_copyFrom_FUN_004a2ac0 (15 lines) [param_count_too_few]
-           - shape_edittool.cpp_CStrList_insertSortedFileRecord_FUN_004a3360 (94 lines) [pointer_cast]
-           - shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0 (16 lines) [stack_ref]
-           - shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f180 (31 lines) [stack_ref]
-           - shape_edittool.cpp_CInputString_init_FUN_0049d3d0 (32 lines) [pointer_cast]
-           - shape_edittool.cpp_showTextInputDialog_FUN_0049db10 (134 lines) [param_count_too_few, pointer_cast]
-           - shape_edittool.cpp_CEditorTools_restoreScreen_FUN_0049e4d0 (48 lines) [pointer_cast]
-           - shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0 (50 lines) [pointer_cast]
-           - shape_edittool.cpp_CEditorTools_showCheatInputDialog_FUN_004a0400 (7 lines) [param_count_too_many]
-           - shape_edittool.cpp_CPickList_calculateLayoutAndCreateComponents_FUN_004a45d0 (216 lines) [param_count_too_few]
-           - shape_edittool.cpp_CEditorTools_backupScreen_FUN_0049e410 (48 lines) [pointer_cast]
-           - shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530 (85 lines) [decompiler_intrinsic, warning_inlined_function]
-           - shape_edittool.cpp_CEdButton_clearActiveButtonIfMatch_FUN_004a6530 (8 lines) [param_count_too_few]
-           - shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 (21 lines) [stack_ref]
-           - shape_edittool.cpp_CEditorTools_createModalWindow_FUN_004a0970 (154 lines) [pointer_cast]
    78.6% | core/sentinel.cpp
          11/14 clean, 3 remaining
            - core_sentinel.cpp_CSentinel_dtor_FUN_00568f80 (31 lines) [negative_offset]
@@ -661,6 +660,26 @@ FILES AT 50-89%
            - core_imp.cpp_CImp_getTargetPoints_FUN_004faf40 (68 lines) [warning_type_propagation]
            - core_imp.cpp_CImp_dtor_FUN_004fb180 (30 lines) [negative_offset]
            - core_imp.cpp_CImp_getCarryObjToBodyXForm_FUN_004fa920 (64 lines) [pointer_cast, warning_type_propagation]
+   76.3% | engine/2d.c
+         58/76 clean, 18 remaining
+           - engine_2d.c_drawCharacter_FUN_00401a10 (74 lines) [pointer_cast]
+           - engine_2d.c_getTextWrapEnabled_FUN_004027f0 (4 lines) [param_count_too_few]
+           - engine_2d.c_findBestPaletteMatch_FUN_00401460 (41 lines) [decompiler_intrinsic, pointer_cast]
+           - engine_2d.c_drawVLine_FUN_00402ff0 (56 lines) [pointer_cast]
+           - engine_2d.c_reinitializeGraphicsSystem_FUN_005ed4b0 (32 lines) [param_count_too_few]
+           - engine_2d.c_drawCharacterHighlighted_FUN_00401b70 (56 lines) [pointer_cast]
+           - engine_2d.c_mapFrameBuffer_FUN_00403430 (66 lines) [param_count_too_few, pointer_cast]
+           - engine_2d.c_drawTextCenteredAt_FUN_00402280 (7 lines) [param_count_too_few]
+           - engine_2d.c_getStringWidthFormatted_FUN_004027a0 (11 lines) [stack_ref]
+           - engine_2d.c_drawCharacterMasked_FUN_00401900 (64 lines) [pointer_cast]
+           - engine_2d.c_clipAndDrawLine_FUN_00402ca0 (88 lines) [param_count_too_few]
+           - engine_2d.c_plotPixelWithDepth_FUN_00401290 (21 lines) [pointer_cast]
+           - engine_2d.c_buildColorLookupTable_FUN_00402870 (48 lines) [decompiler_intrinsic, pointer_cast]
+           - engine_2d.c_drawCharacter_FUN_00401610 (85 lines) [pointer_cast]
+           - engine_2d.c_unmapFrameBuffer_FUN_00403670 (30 lines) [pointer_cast]
+           - engine_2d.c_drawTextCentered_FUN_00402350 (7 lines) [param_count_too_few]
+           - engine_2d.c_drawTextRightAligned_FUN_004021c0 (7 lines) [param_count_too_few]
+           - engine_2d.c_initGraphicsSystem_FUN_00401010 (34 lines) [pointer_cast]
    76.2% | core/werewolf.cpp
          16/21 clean, 5 remaining
            - core_werewolf.cpp_CWerewolf_process_FUN_005efde0 (713 lines) [decompiler_intrinsic, format_string_mismatch, stack_param, stack_ref, sub84_truncation, unknown_field, warning_inlined_function]
@@ -714,10 +733,6 @@ FILES AT 50-89%
          6/8 clean, 2 remaining
            - core_water.cpp_CWater_calculateVisibleTiles_FUN_005e9e70 (154 lines) [decompiler_intrinsic, extra_output, undefined_data, warning_inlined_function]
            - core_water.cpp_CWater_render_FUN_005ea320 (147 lines) [decompiler_intrinsic, pointer_cast]
-   75.0% | engine/console.cpp
-         6/8 clean, 2 remaining
-           - engine_console.cpp_CConsole_render_FUN_00441b00 (51 lines) [pointer_cast]
-           - engine_console.cpp_CConsole_printf_FUN_00441890 (43 lines) [stack_ref]
    75.0% | support/newmsg.cpp
          3/4 clean, 1 remaining
            - support_newmsg.cpp_readMessageFile_FUN_00543e40 (124 lines) [pointer_cast]
@@ -796,7 +811,7 @@ FILES AT 50-89%
            - core_msnedit.cpp_CDemonMission_drawPropertyPanel_FUN_0053c4f0 (57 lines) [undefined_data]
            - core_msnedit.cpp_CDemonMission_enemyRandomizer_FUN_005379e0 (139 lines) [stack_param, stack_ref, undefined_data]
            - core_msnedit.cpp_CDemonMission_playMission_FUN_00538ba0 (52 lines) [unknown_field]
-           - core_msnedit.cpp_CDemonMission_rebuildWaypointConnectivity_FUN_0053d7b0 (27 lines) [pointer_cast]
+           - core_msnedit.cpp_CDemonMission_rebuildWaypointConnectivity_FUN_0053d7b0 (30 lines) [pointer_cast]
            - core_msnedit.cpp_CDemonMission_editActorPropertiesDialog_FUN_0053c730 (68 lines) [undefined_data]
            - core_msnedit.cpp_CDemonMission_changeActorType_FUN_0053d8b0 (171 lines) [pointer_cast]
            - core_msnedit.cpp_CDemonMission_showDifficultyStats_FUN_0053d3b0 (105 lines) [decompiler_intrinsic, unknown_field, warning_inlined_function]
@@ -836,14 +851,6 @@ FILES AT 50-89%
            - core_dcube.cpp_CDemonCube_save_FUN_00457430 (44 lines) [pointer_cast]
            - core_dcube.cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0 (95 lines) [pointer_cast]
            - core_dcube.cpp_CDemonCube_rotateVertices_FUN_00457650 (98 lines) [decompiler_intrinsic, pointer_cast, unresolved_funcptr, warning_indirect_jump, warning_jumptable]
-   71.4% | core/chain.cpp
-         15/21 clean, 6 remaining
-           - core_chain.cpp_FUN_00431340 (5 lines) [stack_param]
-           - core_chain.cpp_CChain_FUN_0042fcc0 (15 lines) [stack_param]
-           - core_chain.cpp_CChain_FUN_0042fed0 (54 lines) [stack_param]
-           - core_chain.cpp_FUN_00431350 (5 lines) [stack_param]
-           - core_chain.cpp_CChain_process_FUN_004300d0 (254 lines) [decompiler_intrinsic, negative_offset]
-           - core_chain.cpp_FUN_00431330 (5 lines) [stack_param]
    71.4% | core/lightgun.cpp
          10/14 clean, 4 remaining
            - core_lightgun.cpp_CLightGun_ctor_FUN_00505900 (26 lines) [suspect_float]
@@ -998,6 +1005,23 @@ FILES AT 50-89%
            - wincore_winrun.cpp_getNextKeypress_FUN_005f2e90 (24 lines) [decompiler_intrinsic, undefined_type]
            - wincore_winrun.cpp_getRegistryStringValue_FUN_005f4210 (19 lines) [stack_param, undefined_data]
            - wincore_winrun.cpp_sleep_FUN_005f40e0 (12 lines) [decompiler_intrinsic, warning_inlined_function]
+   69.4% | engine/font.cpp
+         34/49 clean, 15 remaining
+           - engine_font.cpp_CBitFont_printFV_FUN_004cdd70 (8 lines) [param_count_too_few]
+           - engine_font.cpp_CBitFont_printCenterFV_FUN_004ce090 (9 lines) [param_count_too_few]
+           - engine_font.cpp_CBitFont_render3DCharacter_FUN_004ce2d0 (161 lines) [pointer_cast]
+           - engine_font.cpp_CBitFont_drawCharacter_FUN_004ce7a0 (560 lines) [pointer_cast]
+           - engine_font.cpp_setShadowColor_FUN_004ce0f0 (27 lines) [warning_unreachable]
+           - engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_004cdf30 (10 lines) [param_count_too_few]
+           - engine_font.cpp_drawAlphaBlendedPixels_FUN_004ce240 (74 lines) [decompiler_intrinsic, mmx_assembly, nonstandard_int]
+           - engine_font.cpp_CBitFont_drawTextCenterFV_FUN_004cde70 (9 lines) [param_count_too_few]
+           - engine_font.cpp_CBitFont_loadBitmap_FUN_004ccff0 (77 lines) [stack_param, stack_ref]
+           - engine_font.cpp_CBitFont_free_FUN_004cd4e0 (16 lines) [param_count_too_few]
+           - engine_font.cpp_CBitFont_drawTextFV_FUN_004cdc70 (9 lines) [param_count_too_few]
+           - engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf80 (9 lines) [param_count_too_few]
+           - engine_font.cpp_CBitFont_drawTextWrapper_FUN_004cdbf0 (6 lines) [param_count_too_many]
+           - engine_font.cpp_CBitFont_remapPalette_FUN_004d02a0 (56 lines) [pointer_cast, warning_unreachable]
+           - engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_004cd550 (151 lines) [param_count_too_many]
    68.8% | core/gargoyle.cpp
          11/16 clean, 5 remaining
            - core_gargoyle.cpp_CGargoyle_shouldMove_FUN_004e48a0 (51 lines) [decompiler_intrinsic, warning_type_propagation]
@@ -1086,6 +1110,39 @@ FILES AT 50-89%
            - engine_3d.c_renderPrimitiveAdaptivePlaneMasked_FUN_00404840 (90 lines) [pointer_cast, undefined_data]
            - engine_3d.c_renderPolygonTexturePerspectiveCorrect_FUN_00406290 (74 lines) [pointer_cast]
            - engine_3d.c_clipAndDrawLine3D_FUN_00408070 (142 lines) [param_count_too_many, pointer_cast]
+   66.7% | cockpit/drawsurf.cpp
+         62/93 clean, 31 remaining
+           - cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_00487010 (53 lines) [warning_unreachable]
+           - cockpit_drawsurf.cpp_CDrawSurface_drawSolidRectangle_FUN_00488630 (14 lines) [decompiler_intrinsic, warning_inlined_function]
+           - cockpit_drawsurf.cpp_CDrawSurface_drawTextCentered_FUN_00489590 (6 lines) [param_count_too_few]
+           - cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariantPrintf_FUN_00489520 (11 lines) [param_count_too_few]
+           - cockpit_drawsurf.cpp_CDrawSurface_setColorRGB_FUN_00487220 (40 lines) [warning_unreachable]
+           - cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullHeight_FUN_00489b60 (6 lines) [param_count_too_few]
+           - cockpit_drawsurf.cpp_CDrawSurface_drawVerticalLine_FUN_00488230 (86 lines) [pointer_cast]
+           - cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_00489c40 (10 lines) [param_count_too_few]
+           - cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_00489a30 (11 lines) [param_count_too_few]
+           - cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVCentered_FUN_00489660 (6 lines) [param_count_too_few]
+           - cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0 (60 lines) [pointer_cast]
+           - cockpit_drawsurf.cpp_CDrawSurface_clipLine_FUN_00487e20 (121 lines) [register_param]
+           - cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariant_FUN_004894c0 (6 lines) [param_count_too_few]
+           - cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBounds_FUN_00489800 (6 lines) [param_count_too_few]
+           - cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredBoth_FUN_00489730 (6 lines) [param_count_too_few]
+           - cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidth_FUN_00489ab0 (6 lines) [param_count_too_few]
+           - cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_00487630 (36 lines) [pointer_cast]
+           - cockpit_drawsurf.cpp_CDrawSurface_fillPoly_FUN_00488cd0 (195 lines) [pointer_cast, stack_alignment_array]
+           - cockpit_drawsurf.cpp_CDrawSurface_fillRectangle_FUN_00488ad0 (88 lines) [pointer_cast]
+           - cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBoundsPrintf_FUN_00489860 (11 lines) [param_count_too_few]
+           - cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInArea_FUN_004898e0 (6 lines) [param_count_too_few]
+           - cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLine_FUN_00488110 (59 lines) [pointer_cast]
+           - cockpit_drawsurf.cpp_CDrawSurface_init_FUN_00486ee0 (45 lines) [param_count_too_few]
+           - cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_004887a0 (58 lines) [decompiler_intrinsic, warning_inlined_function]
+           - cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredPrintf_FUN_004895f0 (10 lines) [param_count_too_few]
+           - cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVCenteredPrintf_FUN_004896c0 (11 lines) [param_count_too_few]
+           - cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedPrintf_FUN_00489450 (10 lines) [param_count_too_few]
+           - cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120 (101 lines) [param_count_too_few]
+           - cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredBothPrintf_FUN_00489790 (10 lines) [param_count_too_few]
+           - cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaPrintf_FUN_00489940 (11 lines) [param_count_too_few]
+           - cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_FUN_00487bc0 (91 lines) [decompiler_intrinsic, warning_inlined_function]
    66.7% | cockpit/pkbitmap.cpp
          22/33 clean, 11 remaining
            - cockpit_pkbitmap.cpp_CPackedBitmap_copyRawDataToCompressedRuns_FUN_0054b0e0 (46 lines) [pointer_cast]
@@ -1208,34 +1265,6 @@ FILES AT 50-89%
            - engine_fileio.cpp_CFileManager_createPodConfigWizard_FUN_004bccf0 (39 lines) [param_count_too_few]
            - engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50 (637 lines) [pointer_cast]
            - engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190 (213 lines) [pointer_cast, stack_param]
-   65.8% | engine/2d.c
-         50/76 clean, 26 remaining
-           - engine_2d.c_drawCharacter_FUN_00401a10 (74 lines) [pointer_cast]
-           - engine_2d.c_drawTextCenteredFormatted_FUN_004023c0 (10 lines) [stack_ref]
-           - engine_2d.c_drawTextCenteredColorFormatted_FUN_00402730 (10 lines) [stack_ref]
-           - engine_2d.c_getTextWrapEnabled_FUN_004027f0 (4 lines) [param_count_too_few]
-           - engine_2d.c_findBestPaletteMatch_FUN_00401460 (41 lines) [decompiler_intrinsic, pointer_cast]
-           - engine_2d.c_drawVLine_FUN_00402ff0 (56 lines) [pointer_cast]
-           - engine_2d.c_drawTextRightAlignedFormatted_FUN_00402210 (10 lines) [stack_ref]
-           - engine_2d.c_reinitializeGraphicsSystem_FUN_005ed4b0 (32 lines) [param_count_too_few]
-           - engine_2d.c_drawCharacterHighlighted_FUN_00401b70 (56 lines) [pointer_cast]
-           - engine_2d.c_mapFrameBuffer_FUN_00403430 (66 lines) [param_count_too_few, pointer_cast]
-           - engine_2d.c_drawTextColorFormatted_FUN_004024c0 (10 lines) [stack_ref]
-           - engine_2d.c_drawTextCenteredAt_FUN_00402280 (7 lines) [param_count_too_few]
-           - engine_2d.c_drawTextRightAlignedColorFormatted_FUN_00402580 (10 lines) [stack_ref]
-           - engine_2d.c_drawTextCenteredAtFormatted_FUN_004022e0 (10 lines) [stack_ref]
-           - engine_2d.c_getStringWidthFormatted_FUN_004027a0 (11 lines) [stack_ref]
-           - engine_2d.c_drawCharacterMasked_FUN_00401900 (64 lines) [pointer_cast]
-           - engine_2d.c_clipAndDrawLine_FUN_00402ca0 (88 lines) [param_count_too_few]
-           - engine_2d.c_plotPixelWithDepth_FUN_00401290 (21 lines) [pointer_cast]
-           - engine_2d.c_buildColorLookupTable_FUN_00402870 (48 lines) [decompiler_intrinsic, pointer_cast]
-           - engine_2d.c_drawTextFormatted_FUN_00402150 (10 lines) [stack_ref]
-           - engine_2d.c_drawCharacter_FUN_00401610 (85 lines) [pointer_cast]
-           - engine_2d.c_unmapFrameBuffer_FUN_00403670 (30 lines) [pointer_cast]
-           - engine_2d.c_drawTextCentered_FUN_00402350 (7 lines) [param_count_too_few]
-           - engine_2d.c_drawTextRightAligned_FUN_004021c0 (7 lines) [param_count_too_few]
-           - engine_2d.c_drawTextCenteredAtColorFormatted_FUN_00402650 (10 lines) [stack_ref]
-           - engine_2d.c_initGraphicsSystem_FUN_00401010 (34 lines) [pointer_cast]
    65.6% | core/netgame.cpp
          42/64 clean, 22 remaining
            - core_netgame.cpp_CNetGame_processChatOut_FUN_00541e40 (60 lines) [pointer_cast]
@@ -1270,41 +1299,6 @@ FILES AT 50-89%
            - core_icepick.cpp_FUN_004f8b00 (11 lines) [stack_param]
            - core_icepick.cpp_CIcePick_getCarryObjToBodyXForm_FUN_004f8b20 (49 lines) [pointer_cast, warning_type_propagation]
            - core_icepick.cpp_CIcePick_FUN_004f8970 (52 lines) [decompiler_intrinsic, warning_type_propagation]
-   64.5% | cockpit/drawsurf.cpp
-         60/93 clean, 33 remaining
-           - cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_00487010 (53 lines) [warning_unreachable]
-           - cockpit_drawsurf.cpp_CDrawSurface_drawSolidRectangle_FUN_00488630 (14 lines) [decompiler_intrinsic, warning_inlined_function]
-           - cockpit_drawsurf.cpp_CDrawSurface_drawTextCentered_FUN_00489590 (6 lines) [param_count_too_few]
-           - cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariantPrintf_FUN_00489520 (12 lines) [param_count_too_few, stack_param]
-           - cockpit_drawsurf.cpp_CDrawSurface_setColorRGB_FUN_00487220 (40 lines) [warning_unreachable]
-           - cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullHeight_FUN_00489b60 (6 lines) [param_count_too_few]
-           - cockpit_drawsurf.cpp_CDrawSurface_drawVerticalLine_FUN_00488230 (86 lines) [pointer_cast]
-           - cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_00489c40 (10 lines) [param_count_too_few, stack_ref]
-           - cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_00489a30 (11 lines) [param_count_too_few, stack_ref]
-           - cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVCentered_FUN_00489660 (6 lines) [param_count_too_few]
-           - cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0 (60 lines) [pointer_cast]
-           - cockpit_drawsurf.cpp_CDrawSurface_clipLine_FUN_00487e20 (121 lines) [register_param]
-           - cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullHeightPrintf_FUN_00489bb0 (10 lines) [stack_ref]
-           - cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariant_FUN_004894c0 (6 lines) [param_count_too_few]
-           - cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBounds_FUN_00489800 (6 lines) [param_count_too_few]
-           - cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredBoth_FUN_00489730 (6 lines) [param_count_too_few]
-           - cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidth_FUN_00489ab0 (6 lines) [param_count_too_few]
-           - cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_00487630 (36 lines) [pointer_cast]
-           - cockpit_drawsurf.cpp_CDrawSurface_fillPoly_FUN_00488cd0 (195 lines) [pointer_cast, stack_alignment_array]
-           - cockpit_drawsurf.cpp_CDrawSurface_fillRectangle_FUN_00488ad0 (88 lines) [pointer_cast]
-           - cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBoundsPrintf_FUN_00489860 (12 lines) [param_count_too_few, stack_param]
-           - cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInArea_FUN_004898e0 (6 lines) [param_count_too_few]
-           - cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLine_FUN_00488110 (59 lines) [pointer_cast]
-           - cockpit_drawsurf.cpp_CDrawSurface_init_FUN_00486ee0 (45 lines) [param_count_too_few]
-           - cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_004887a0 (58 lines) [decompiler_intrinsic, warning_inlined_function]
-           - cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredPrintf_FUN_004895f0 (11 lines) [param_count_too_few, stack_param]
-           - cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVCenteredPrintf_FUN_004896c0 (12 lines) [param_count_too_few, stack_param]
-           - cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedPrintf_FUN_00489450 (10 lines) [param_count_too_few, stack_ref]
-           - cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120 (101 lines) [param_count_too_few]
-           - cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredBothPrintf_FUN_00489790 (11 lines) [param_count_too_few, stack_param]
-           - cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaPrintf_FUN_00489940 (11 lines) [param_count_too_few, stack_ref]
-           - cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_FUN_00487bc0 (91 lines) [decompiler_intrinsic, warning_inlined_function]
-           - cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidthPrintf_FUN_00489af0 (11 lines) [stack_param]
    64.3% | core/bride.cpp
          9/14 clean, 5 remaining
            - core_bride.cpp_CBride_getTargetPoints_FUN_00424a10 (27 lines) [warning_type_propagation]
@@ -1341,10 +1335,10 @@ FILES AT 50-89%
            - sound_sndwav.cpp_CWavInDevice_reset_FUN_005b0f10 (23 lines) [pointer_cast]
            - sound_sndwav.cpp_CWavOutDevice_reset_FUN_005b09c0 (27 lines) [pointer_cast]
            - sound_sndwav.cpp_enumerateWavInDevice_FUN_005b1560 (52 lines) [negative_offset, pointer_cast]
-           - sound_sndwav.cpp_CWavInDevice_setMode_FUN_005b0f70 (119 lines) [pointer_cast, stack_param, unknown_field, unresolved_funcptr]
+           - sound_sndwav.cpp_CWavInDevice_setMode_FUN_005b0f70 (121 lines) [pointer_cast, stack_param, unknown_field, unresolved_funcptr]
            - sound_sndwav.cpp_enumerateWavOutDevice_FUN_005b1470 (54 lines) [negative_offset, pointer_cast]
            - sound_sndwav.cpp_CWavInDevice_start_FUN_005b0e20 (37 lines) [pointer_cast]
-           - sound_sndwav.cpp_CWavInDevice_poll_FUN_005b12e0 (56 lines) [pointer_cast]
+           - sound_sndwav.cpp_CWavInDevice_poll_FUN_005b12e0 (55 lines) [pointer_cast]
            - sound_sndwav.cpp_CWavOutDevice_setMode_FUN_005b0a30 (68 lines) [decompiler_intrinsic, pointer_cast, stack_param, warning_inlined_function]
            - sound_sndwav.cpp_CWavInDevice_close_FUN_005b0d70 (34 lines) [pointer_cast]
            - sound_sndwav.cpp_CWavOutDevice_poll_FUN_005b0c10 (25 lines) [pointer_cast]
@@ -1365,27 +1359,6 @@ FILES AT 50-89%
            - support_trisock.cpp_getSocketName_FUN_005e1df0 (22 lines) [pointer_cast]
            - support_trisock.cpp_bindSocketWrapper_FUN_005e1af0 (5 lines) [param_count_too_few]
            - support_trisock.cpp_buildIPAddress_FUN_005e1870 (12 lines) [param_count_too_few]
-   61.2% | engine/font.cpp
-         30/49 clean, 19 remaining
-           - engine_font.cpp_CBitFont_printFV_FUN_004cdd70 (8 lines) [param_count_too_few]
-           - engine_font.cpp_CBitFont_printCenterF_FUN_004ce050 (8 lines) [stack_ref]
-           - engine_font.cpp_CBitFont_printCenterFV_FUN_004ce090 (9 lines) [param_count_too_few]
-           - engine_font.cpp_CBitFont_render3DCharacter_FUN_004ce2d0 (161 lines) [pointer_cast]
-           - engine_font.cpp_CBitFont_drawCharacter_FUN_004ce7a0 (560 lines) [pointer_cast]
-           - engine_font.cpp_setShadowColor_FUN_004ce0f0 (27 lines) [warning_unreachable]
-           - engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_004cdf30 (10 lines) [param_count_too_few, stack_ref]
-           - engine_font.cpp_drawAlphaBlendedPixels_FUN_004ce240 (74 lines) [decompiler_intrinsic, mmx_assembly, nonstandard_int]
-           - engine_font.cpp_CBitFont_drawTextCenterFV_FUN_004cde70 (9 lines) [param_count_too_few]
-           - engine_font.cpp_CBitFont_loadBitmap_FUN_004ccff0 (77 lines) [stack_param, stack_ref]
-           - engine_font.cpp_CBitFont_free_FUN_004cd4e0 (16 lines) [param_count_too_few]
-           - engine_font.cpp_CBitFont_drawTextCenterF_FUN_004cde20 (9 lines) [stack_ref]
-           - engine_font.cpp_CBitFont_drawTextFV_FUN_004cdc70 (9 lines) [param_count_too_few]
-           - engine_font.cpp_CBitFont_drawTextF_FUN_004cdc20 (9 lines) [stack_ref]
-           - engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf80 (9 lines) [param_count_too_few]
-           - engine_font.cpp_CBitFont_drawTextWrapper_FUN_004cdbf0 (6 lines) [param_count_too_many]
-           - engine_font.cpp_CBitFont_printF_FUN_004cdd20 (8 lines) [stack_ref]
-           - engine_font.cpp_CBitFont_remapPalette_FUN_004d02a0 (56 lines) [pointer_cast, warning_unreachable]
-           - engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_004cd550 (151 lines) [param_count_too_many]
    60.9% | core/game.cpp
          42/69 clean, 27 remaining
            - core_game.cpp_CGame_processHotkeys_FUN_004dcee0 (251 lines) [stack_param, stack_ref]
@@ -1616,7 +1589,7 @@ FILES AT 50-89%
            - core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0 (233 lines) [pointer_cast]
            - core_skeledit.cpp_CBoneStructure_fixupMatrices_FUN_0058adb0 (33 lines) [decompiler_intrinsic, sub84_truncation]
            - core_skeledit.cpp_CBoneStructure_importBON_FUN_0058a3d0 (30 lines) [stack_param, stack_ref]
-           - core_skeledit.cpp_CDeformableModel_removeDuplicateFaces_FUN_0058ede0 (82 lines) [pointer_cast]
+           - core_skeledit.cpp_CDeformableModel_removeDuplicateFaces_FUN_0058ede0 (85 lines) [pointer_cast]
            - core_skeledit.cpp_CDeformableModel_extractLodLevel_FUN_0058d790 (240 lines) [decompiler_intrinsic, pointer_cast, warning_inlined_function]
            - core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (1127 lines) [decompiler_intrinsic, pointer_cast, stack_ref, suspect_float, undefined_data, unknown_field, warning_inlined_function]
            - core_skeledit.cpp_CDeformableModel_scaleAllVertices_FUN_0058e3e0 (45 lines) [pointer_cast]
@@ -1974,7 +1947,7 @@ FILES AT 50-89%
            - engine_pcx.c_writePCXScanline_FUN_00548c50 (50 lines) [pointer_cast]
            - engine_pcx.c_saveScreenshotGeneral_FUN_005490c0 (104 lines) [pointer_cast]
 
-Total: 140 files
+Total: 139 files
 
 ====================================================================================================
 FILES BELOW 50%

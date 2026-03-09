@@ -19,10 +19,10 @@ void __cdecl engine_console_cpp_CConsole_printf_FUN_00441890(CConsole *this_ptr,
   va_list_t local_14;
   
   bVar5 = 0;
-  local_14.value[0] = (char * [1])&stack0x0000000c;
-  _vsprintf(local_1014,format,(va_list_t)&local_14);
+  VA_START_T(local_14, format);
+  _vsprintf(local_1014,format,local_14);
   iVar3 = 0;
-  local_14.value[0] = (char * [1])(char *)0x0;
+  VA_END_T(local_14);
   uVar2 = 0xffffffff;
   pcVar4 = local_1014;
   do {

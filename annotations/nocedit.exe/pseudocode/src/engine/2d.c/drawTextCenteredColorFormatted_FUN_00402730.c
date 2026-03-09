@@ -12,9 +12,9 @@ void __cdecl engine_2d_c_drawTextCenteredColorFormatted_FUN_00402730(int left_x,
   char local_1010 [4096];
   va_list_t local_10;
   
-  local_10.value[0] = (char * [1])&stack0x00000014;
-  _vsprintf(local_1010,format_string,(va_list_t)&local_10);
-  local_10.value[0] = (char * [1])(char *)0x0;
+  VA_START_T(local_10, format_string);
+  _vsprintf(local_1010,format_string,local_10);
+  VA_END_T(local_10);
   engine_2d_c_drawTextCenteredColor_FUN_004026c0(local_1010,left_x,right_x,y);
   return;
 }

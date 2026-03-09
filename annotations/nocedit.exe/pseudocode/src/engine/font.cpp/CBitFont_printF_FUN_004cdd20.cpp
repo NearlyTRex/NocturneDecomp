@@ -11,8 +11,8 @@ void __cdecl engine_font_cpp_CBitFont_printF_FUN_004cdd20(CBitFont *this_ptr,int
 {
   va_list_t local_14;
   
-  local_14.value[0] = (char * [1])&stack0x0000001c;
+  VA_START_T(local_14, format);
   engine_font_cpp_CBitFont_printFV_FUN_004cdd70
-            (this_ptr,x,y,color_mode,color_value,format,(va_list_t)&local_14);
+            (this_ptr,x,y,color_mode,color_value,format,local_14);
   return;
 }

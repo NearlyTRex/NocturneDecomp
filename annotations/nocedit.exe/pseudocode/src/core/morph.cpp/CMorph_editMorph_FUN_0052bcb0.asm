@@ -175,7 +175,7 @@ section .text
     MOV EBX,dword ptr [0x00678a60]      ; 0052bd60 | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH EBX                            ; 0052bd66 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0052bd67
-        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
+        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0052bd6c
     LEA EAX,[ESP + 0xc]                 ; 0052bd6f
     PUSH EAX                            ; 0052bd73

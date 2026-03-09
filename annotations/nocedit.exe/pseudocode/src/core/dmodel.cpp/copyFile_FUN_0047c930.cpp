@@ -21,7 +21,7 @@ int __cdecl core_dmodel_cpp_copyFile_FUN_0047c930(char *source_filename,char *de
                              "..\\core\\dmodel.cpp",0xb83);
     if (file_ptr_00 != (_FILE *)0x0) {
       shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-                (g_CEditorToolsPtr,"Copying %s -> %s");
+                (g_CEditorToolsPtr,"Copying %s -> %s",source_filename,destination_filename);
       while( true ) {
         character = _fgetc(file_ptr);
         if (character < 0) break;

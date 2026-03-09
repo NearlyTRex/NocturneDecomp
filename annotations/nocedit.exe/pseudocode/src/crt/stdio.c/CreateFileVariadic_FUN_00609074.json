@@ -1,17 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 19,
-    "complexity_score": 53,
+    "complexity_score": 38,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 8,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
       "param_count_too_few",
-      "special_crt_function",
-      "stack_ref"
+      "special_crt_function"
     ],
     "total_lines": 27
   },
@@ -135,14 +134,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Direct stack address reference",
-      "line": 8,
-      "match": "&stack0x00000010",
-      "severity": "moderate",
-      "text": "variadic_args.value[0] = (char * [1])&stack0x00000010;",
-      "type": "stack_ref"
-    },
     {
       "call_site_count": 2,
       "declared_params": 3,

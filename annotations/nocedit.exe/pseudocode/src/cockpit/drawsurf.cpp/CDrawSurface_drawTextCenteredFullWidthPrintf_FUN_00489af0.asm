@@ -6,7 +6,7 @@
 ; Parameters:
 ; CDrawSurface *   Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   y
-; char *           Stack[0x10]:4   format
+; char *           Stack[0xc]:4   format
 ; Local Variables:
 ; char[4096]       Stack[-0x100c]:4096  local_100c
 ; va_list_t        Stack[-0xc]:4  local_c

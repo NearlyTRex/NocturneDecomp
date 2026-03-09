@@ -65,7 +65,7 @@ void __cdecl core_setedit_cpp_editGroundTypes_FUN_00578630(char *filename)
       if (-1 < iVar3) {
         if (iVar3 == 0) {
           shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-                    (g_CEditorToolsPtr,"Saving %s...");
+                    (g_CEditorToolsPtr,"Saving %s...",filename);
           file = shape_memdbg_cpp_openFile_FUN_0050f7a0
                            (filename,(char *)0x0,"wt","..\\core\\setedit.cpp",0x326);
           if (file == (_FILE *)0x0) {

@@ -301,7 +301,7 @@ section .text
     MOV ECX,dword ptr [0x00678a60]      ; 005788be | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH ECX                            ; 005788c4 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 005788c5
-        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
+        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 005788ca
     PUSH 0x326                          ; 005788cd
     PUSH 0x646a31                       ; 005788d2 | = "..\\core\\setedit.cpp"

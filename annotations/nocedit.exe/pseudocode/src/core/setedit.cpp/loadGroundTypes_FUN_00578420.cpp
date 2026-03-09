@@ -22,7 +22,7 @@ void __cdecl core_setedit_cpp_loadGroundTypes_FUN_00578420(char *filename)
   EGroundType local_c;
   
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-            (g_CEditorToolsPtr,"Importing texture ground type list from %s...");
+            (g_CEditorToolsPtr,"Importing texture ground type list from %s...",filename);
   stream = shape_memdbg_cpp_openFile_FUN_0050f7a0
                      (filename,(char *)0x0,"rt","..\\core\\setedit.cpp",0x2c3);
   if (stream != (_FILE *)0x0) {
@@ -91,7 +91,7 @@ LAB_005784e7:
     }
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(stream,"..\\core\\setedit.cpp",0x2f4);
     shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-              (g_CEditorToolsPtr,"Imported texture ground type list from %s OK.");
+              (g_CEditorToolsPtr,"Imported texture ground type list from %s OK.",filename);
   }
   return;
 }

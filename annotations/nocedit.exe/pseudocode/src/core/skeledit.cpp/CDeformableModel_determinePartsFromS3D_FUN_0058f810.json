@@ -3,6 +3,12 @@
     "errors": [
       {
         "category": "other",
+        "column": 42,
+        "line": 259,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "other",
         "column": 54,
         "line": 283,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
@@ -51,6 +57,12 @@
       },
       {
         "category": "other",
+        "column": 57,
+        "line": 309,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "other",
         "column": 53,
         "line": 310,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
@@ -81,6 +93,12 @@
       },
       {
         "category": "other",
+        "column": 66,
+        "line": 338,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "other",
         "column": 56,
         "line": 339,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
@@ -96,24 +114,6 @@
         "column": 39,
         "line": 396,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "other",
-        "column": 49,
-        "line": 411,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 54,
-        "line": 423,
-        "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 64,
-        "line": 423,
-        "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       }
     ],
     "success": false,
@@ -212,7 +212,7 @@
     },
     {
       "addr": "0049e790",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790"
     },
     {

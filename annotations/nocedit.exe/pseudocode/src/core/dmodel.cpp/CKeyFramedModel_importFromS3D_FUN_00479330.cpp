@@ -228,7 +228,7 @@ LAB_0047983f:
         }
         makepath(local_4a4,(char *)0x0,"art",local_3a0,local_2a0);
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-                  (g_CEditorToolsPtr,"Copying %s -> %s");
+                  (g_CEditorToolsPtr,"Copying %s -> %s",local_7b0,local_4a4);
         p_Var8 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                            (local_7b0,(char *)0x0,"rb","..\\core\\dmodel.cpp",0x5ef);
         if (p_Var8 != (_FILE *)0x0) {

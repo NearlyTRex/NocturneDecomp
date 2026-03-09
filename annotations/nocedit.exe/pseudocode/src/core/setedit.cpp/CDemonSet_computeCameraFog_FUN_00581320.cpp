@@ -19,7 +19,8 @@ void __cdecl core_setedit_cpp_CDemonSet_computeCameraFog_FUN_00581320(CDemonSet 
   core_set_cpp_CDemonSet_initScene_FUN_0056aa10(this_ptr);
   do {
     shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-              (g_CEditorToolsPtr,"Computing fog for camera %s");
+              (g_CEditorToolsPtr,"Computing fog for camera %s",
+               this_ptr->cameras + camera_index);
     _sprintf
               (local_110,"backdrop\\%s.fog",this_ptr->cameras + camera_index);
     remove(local_110);

@@ -102,7 +102,7 @@ section .text
     MOV EDI,dword ptr [0x00678a60]      ; 0047c9ba | g_CEditorToolsPtr
     PUSH EDI                            ; 0047c9c0 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0047c9c1
-        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
+        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 0047c9c6
     PUSH ESI                            ; 0047c9c9
         ;   Label: LAB_0047c9c9

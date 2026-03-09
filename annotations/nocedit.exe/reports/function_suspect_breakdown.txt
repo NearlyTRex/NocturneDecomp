@@ -4,10 +4,10 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 4388 functions
-  1 suspects: 867 functions
-  2 suspects: 386 functions
-  3 suspects: 259 functions
+  0 suspects: 4416 functions
+  1 suspects: 856 functions
+  2 suspects: 377 functions
+  3 suspects: 252 functions
   4 suspects: 178 functions
   5 suspects: 150 functions
   6 suspects: 108 functions
@@ -23,8 +23,8 @@ SUSPECT COUNT DISTRIBUTION
   16 suspects: 27 functions
   17 suspects: 17 functions
   18 suspects: 19 functions
-  19 suspects: 23 functions
-  20 suspects: 25 functions
+  19 suspects: 22 functions
+  20 suspects: 26 functions
   21 suspects: 14 functions
   22 suspects: 11 functions
   23 suspects: 16 functions
@@ -42,7 +42,7 @@ SUSPECT COUNT DISTRIBUTION
   35 suspects: 5 functions
   36 suspects: 6 functions
   37 suspects: 6 functions
-  39 suspects: 6 functions
+  39 suspects: 5 functions
   40 suspects: 4 functions
   41 suspects: 7 functions
   42 suspects: 1 functions
@@ -96,7 +96,7 @@ SUSPECT COUNT DISTRIBUTION
 EASY WINS: FUNCTIONS WITH 1 SUSPECT
 ========================================================================================================================
 
-  [special_crt_function] (282 functions)
+  [special_crt_function] (283 functions)
   ------------------------------------------------------------
     crt_fstream.cpp_ofstream_dtor_FUN_005ff7bc         (  1 lines)
       CRT function (runtime support) at 005ff7bc...
@@ -138,9 +138,9 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       CRT function (runtime support) at 0060b9b7...
     crt_iostream.cpp_streambuf_seekoff_FUN_00610ab0    (  4 lines)
       CRT function (runtime support) at 00610ab0...
-    ... and 262 more
+    ... and 263 more
 
-  [param_count_too_few] (156 functions)
+  [param_count_too_few] (166 functions)
   ------------------------------------------------------------
     cockpit_ckptutil.c_isLineClippingDisabled_FUN_0043 (  4 lines)
       Function declares 0 params but call sites push 4 (4 missing)...
@@ -182,7 +182,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       Function declares 4 params but call sites push 6 (2 missing)...
     cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAli (  6 lines)
       Function declares 4 params but call sites push 6 (2 missing)...
-    ... and 136 more
+    ... and 146 more
 
   [pointer_cast] (130 functions)
   ------------------------------------------------------------
@@ -360,50 +360,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       Function declares 3 params but call sites push 2 (1 extra)...
     ... and 13 more
 
-  [stack_ref] (30 functions)
-  ------------------------------------------------------------
-    core_event.cpp_formatEventError_FUN_004aa2a0       (  7 lines)
-      local_4 = &stack0x00000008;...
-    engine_font.cpp_CBitFont_printCenterF_FUN_004ce050 (  8 lines)
-      local_14.value[0] = (char * [1])&stack0x00000018;...
-    engine_font.cpp_CBitFont_printF_FUN_004cdd20       (  8 lines)
-      local_14.value[0] = (char * [1])&stack0x0000001c;...
-    engine_font.cpp_CBitFont_drawTextCenterF_FUN_004cd (  9 lines)
-      local_14.value[0] = (char * [1])&stack0x0000001c;...
-    engine_font.cpp_CBitFont_drawTextF_FUN_004cdc20    (  9 lines)
-      local_14.value[0] = (char * [1])&stack0x0000001c;...
-    cockpit_drawsurf.cpp_CDrawSurface_drawTextCentered ( 10 lines)
-      local_c.value[0] = (char * [1])&stack0x00000010;...
-    engine_2d.c_drawTextCenteredFormatted_FUN_004023c0 ( 10 lines)
-      local_10.value[0] = (char * [1])&stack0x00000014;...
-    engine_2d.c_drawTextCenteredColorFormatted_FUN_004 ( 10 lines)
-      local_10.value[0] = (char * [1])&stack0x00000014;...
-    engine_2d.c_drawTextRightAlignedFormatted_FUN_0040 ( 10 lines)
-      local_c.value[0] = (char * [1])&stack0x00000010;...
-    engine_2d.c_drawTextColorFormatted_FUN_004024c0    ( 10 lines)
-      local_c.value[0] = (char * [1])&stack0x00000010;...
-    engine_2d.c_drawTextRightAlignedColorFormatted_FUN ( 10 lines)
-      local_c.value[0] = (char * [1])&stack0x00000010;...
-    engine_2d.c_drawTextCenteredAtFormatted_FUN_004022 ( 10 lines)
-      local_c.value[0] = (char * [1])&stack0x00000010;...
-    engine_2d.c_drawTextFormatted_FUN_00402150         ( 10 lines)
-      local_c.value[0] = (char * [1])&stack0x00000010;...
-    engine_2d.c_drawTextCenteredAtColorFormatted_FUN_0 ( 10 lines)
-      local_c.value[0] = (char * [1])&stack0x00000010;...
-    shape_edittool.cpp_CEditorTools_showMessage_FUN_00 ( 10 lines)
-      local_8.value[0] = (char * [1])&stack0x0000000c;...
-    shape_edittool.cpp_CEditorTools_showWarning_FUN_00 ( 10 lines)
-      local_8.value[0] = (char * [1])&stack0x0000000c;...
-    shape_edittool.cpp_CEditorTools_showError_FUN_0049 ( 10 lines)
-      local_8.value[0] = (char * [1])&stack0x0000000c;...
-    engine_2d.c_getStringWidthFormatted_FUN_004027a0   ( 11 lines)
-      local_4 = &stack0x00000008;...
-    core_sound.cpp_resetTrainSounds_FUN_005b26f0       ( 12 lines)
-      if ((float *)&stack0x00000000 == &g_TrainNoiseCooldown) {...
-    shape_edittool.cpp_CEditorTools_showYesNoDialog_FU ( 16 lines)
-      local_8.value[0] = (char * [1])&stack0x0000000c;...
-    ... and 10 more
-
   [warning_unreachable] (12 functions)
   ------------------------------------------------------------
     core_procedur.cpp_CProceduralTexture_showMenu_FUN_ ( 20 lines)
@@ -476,6 +432,25 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       (pCVar1->param1).v_int = iVar2;...
     core_actor.cpp_CActorPropertyList_addFile_FUN_0040 ( 31 lines)
       (pCVar2->param1).v_int = allow_none;...
+
+  [stack_ref] (8 functions)
+  ------------------------------------------------------------
+    core_event.cpp_formatEventError_FUN_004aa2a0       (  7 lines)
+      local_4 = &stack0x00000008;...
+    engine_2d.c_getStringWidthFormatted_FUN_004027a0   ( 11 lines)
+      local_4 = &stack0x00000008;...
+    core_sound.cpp_resetTrainSounds_FUN_005b26f0       ( 12 lines)
+      if ((float *)&stack0x00000000 == &g_TrainNoiseCooldown) {...
+    shape_design.c_renderEditorBackgroundOverlay_FUN_0 ( 19 lines)
+      engine_3d_c_processPolygonColor_FUN_00403e30((SMRGLHeaderPri...
+    shape_superopt.cpp_logToFile_FUN_005c7910          ( 20 lines)
+      local_8 = &stack0x00000008;...
+    core_sound.cpp_CSound_init_FUN_005b2dd0            ( 50 lines)
+      if ((uint *)&stack0x00000000 != &g_TrainRailNoiseHandle) {...
+    core_frankgen.cpp_CFrankenstienMachine_renderOpaqu ( 54 lines)
+      (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffcc);...
+    sound_sndmain.cpp_logSoundError_FUN_005adba0       ( 56 lines)
+      local_10 = &stack0x00000008;...
 
   [undefined_data] (7 functions)
   ------------------------------------------------------------
@@ -610,12 +585,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: crt/strstream.cpp, Lines: 5, Types: ['negative_offset', 'special_crt_function']
   crt_strstream.cpp_ostrstream_destructor_thunk_from_ostream_F
     File: crt/strstream.cpp, Lines: 5, Types: ['negative_offset', 'special_crt_function']
-  core_chain.cpp_FUN_00431340
-    File: core/chain.cpp, Lines: 5, Types: ['stack_param']
-  core_chain.cpp_FUN_00431350
-    File: core/chain.cpp, Lines: 5, Types: ['stack_param']
-  core_chain.cpp_FUN_00431330
-    File: core/chain.cpp, Lines: 5, Types: ['stack_param']
   crt_process.c_spawnCommand_FUN_00609c90
     File: crt/process.c, Lines: 6, Types: ['param_count_too_many', 'special_crt_function']
   crt_process.c_spawnvp_FUN_0060ca20
@@ -646,14 +615,14 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: shape/superopt.cpp, Lines: 7, Types: ['decompiler_intrinsic', 'sub84_truncation']
   wincore_windll.cpp_renderScanline_FUN_005b5710
     File: wincore/windll.cpp, Lines: 7, Types: ['warning_indirect_jump', 'warning_jumptable']
-  crt_stdio.c__sprintf_FUN_005fdbd0
-    File: crt/stdio.c, Lines: 8, Types: ['special_crt_function', 'stack_ref']
   crt_stdio.c_fprintf_FUN_005fe6d0
     File: crt/stdio.c, Lines: 8, Types: ['special_crt_function', 'stack_ref']
   crt_stdio.c_sscanf_FUN_0060013c
     File: crt/stdio.c, Lines: 8, Types: ['special_crt_function', 'stack_ref']
   crt_stdio.c_fscanf_FUN_005fe7c0
     File: crt/stdio.c, Lines: 8, Types: ['special_crt_function', 'stack_ref']
+  crt_stdio.c_CreateFileVariadic_FUN_00609074
+    File: crt/stdio.c, Lines: 8, Types: ['param_count_too_few', 'special_crt_function']
   crt_stdio.c_printf_FUN_005ff0d0
     File: crt/stdio.c, Lines: 8, Types: ['special_crt_function', 'stack_ref']
   sound_sndmain.cpp_convert16BitAudioSignedness_FUN_005aa7d0
@@ -668,21 +637,27 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/fire.cpp, Lines: 9, Types: ['decompiler_intrinsic']
   core_main.c_drawCenteredText_FUN_00508250
     File: core/main.c, Lines: 9, Types: ['stack_param']
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurfac
-    File: cockpit/drawsurf.cpp, Lines: 10, Types: ['param_count_too_few', 'stack_ref']
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedPrintf
-    File: cockpit/drawsurf.cpp, Lines: 10, Types: ['param_count_too_few', 'stack_ref']
   crt_iostream.cpp_doallocate_FUN_0060d677
     File: crt/iostream.cpp, Lines: 10, Types: ['pointer_cast', 'special_crt_function']
-  engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_004cdf3
-    File: engine/font.cpp, Lines: 10, Types: ['param_count_too_few', 'stack_ref']
   core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050aee0
     File: core/manpuz.cpp, Lines: 10, Types: ['stack_param']
   core_actor.cpp_CActorPropertyList_addEnumPair_FUN_0040e640
     File: core/actor.cpp, Lines: 10, Types: ['unnamed_param']
   core_wateract.cpp_staticInit_FUN_005ea810
     File: core/wateract.cpp, Lines: 10, Types: ['undefined_data']
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWith
-    File: cockpit/drawsurf.cpp, Lines: 11, Types: ['param_count_too_few', 'stack_ref']
+  crt_locale.c_ismultibyte_FUN_00610a20
+    File: crt/locale.c, Lines: 11, Types: ['param_count_too_few', 'special_crt_function']
+  crt_stdio.c_string_getc_FUN_006000d0
+    File: crt/stdio.c, Lines: 11, Types: ['pointer_cast', 'special_crt_function']
+  engine_ncursfx.cpp_CMouse_dtor_FUN_005443e0
+    File: engine/ncursfx.cpp, Lines: 11, Types: ['decompiler_intrinsic']
+  core_trash.cpp_CTrash_ctor_FUN_005deb70
+    File: core/trash.cpp, Lines: 11, Types: ['decompiler_intrinsic']
+  core_netgame.cpp_CNetGame_send_FUN_005411c0
+    File: core/netgame.cpp, Lines: 12, Types: ['stack_param']
+  core_xform.cpp_quaternionFromAngleY_FUN_005f79f0
+    File: core/xform.cpp, Lines: 12, Types: ['decompiler_intrinsic']
+  core_xform.cpp_quaternionFromAngleZ_FUN_005f7a30
+    File: core/xform.cpp, Lines: 12, Types: ['decompiler_intrinsic']
 
-  ... and 595 more
+  ... and 579 more

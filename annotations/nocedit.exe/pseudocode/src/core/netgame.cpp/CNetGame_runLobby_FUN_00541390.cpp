@@ -194,7 +194,7 @@ LAB_005415cb:
           pcVar6 = local_2c;
           if (iVar4 != 0) {
             shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-                      (g_CEditorToolsPtr,"Loading %s");
+                      (g_CEditorToolsPtr,"Loading %s",local_2c);
             srand(this_ptr->random_seed);
             core_actor_cpp_setRandomSeed_FUN_0040cb90(this_ptr->random_seed);
             core_mission_cpp_CDemonMission_load_FUN_00522d90(g_CDemonMissionPtr,pcVar6,0);
@@ -214,7 +214,7 @@ LAB_005415cb:
       if ((this_ptr->connection_type == CONNECTION_CLIENT) &&
          (this_ptr->network_mode == NET_MODE_SYNCING)) {
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-                  (g_CEditorToolsPtr,"Loading %s");
+                  (g_CEditorToolsPtr,"Loading %s",this_ptr->mission_name);
         srand(this_ptr->random_seed);
         core_actor_cpp_setRandomSeed_FUN_0040cb90(this_ptr->random_seed);
         core_mission_cpp_CDemonMission_load_FUN_00522d90

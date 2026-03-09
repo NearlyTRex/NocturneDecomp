@@ -9594,9 +9594,27 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_chain.cpp_FUN_00431330",
+    "name":"core_chain.cpp_passthroughInt_FUN_00431330",
     "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"value",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ],
       "ret_storage":{
         "reg":"EAX",
         "size":4,
@@ -75460,7 +75478,7 @@
           "type":"int"
         },
         {
-          "name":"out_samples_per_block",
+          "name":"out_buffer_size",
           "storage":{
             "offset":20,
             "size":4,

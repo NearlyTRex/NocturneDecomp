@@ -14,7 +14,7 @@ void __cdecl core_skeledit_cpp_CDeformableModel_save_FUN_0058f040(CDeformableMod
   
   __STK();
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-            (g_CEditorToolsPtr,"Saving model to %s...");
+            (g_CEditorToolsPtr,"Saving model to %s...",filename);
   pCVar1 = engine_pod_cpp_CPod_locateFile_FUN_005512f0
                      ((CPod *)g_CDemonPodPtr,"models",filename,(int *)0x0);
   if (pCVar1 != (CPodFile *)0x0) {
@@ -31,6 +31,6 @@ void __cdecl core_skeledit_cpp_CDeformableModel_save_FUN_0058f040(CDeformableMod
   core_skeledit_cpp_CDeformableModel_saveStream_FUN_0058f120(this_ptr,file_handle);
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\core\\skeledit.cpp",0xb2e);
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-            (g_CEditorToolsPtr,"Saved model to %s OK");
+            (g_CEditorToolsPtr,"Saved model to %s OK",filename);
   return;
 }

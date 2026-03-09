@@ -6,17 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 32,
-    "complexity_score": 50,
+    "complexity_score": 14,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 1,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 15,
-    "suspect_count": 3,
-    "suspect_types": [
-      "stack_param"
-    ],
-    "total_lines": 47
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 14,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 46
   },
   "cross_references": [
     {
@@ -35,8 +33,8 @@
       ]
     ],
     "convention": "__cdecl",
-    "name": "core_chain.cpp_CChain_FUN_0042fcc0",
-    "signature": "CVector3f * __cdecl core_chain_cpp_CChain_FUN_0042fcc0(CChain *this_ptr)"
+    "name": "core_chain.cpp_CChain_getTargetBoneWorldPosition_FUN_0042fcc0",
+    "signature": "CVector3f * __cdecl core_chain_cpp_CChain_getTargetBoneWorldPosition_FUN_0042fcc0(CChain *this_ptr,CVector3f *out_point)"
   },
   "function_calls": [
     {
@@ -87,10 +85,10 @@
     "pcode_op_count": 155
   },
   "stack_frame": {
-    "frame_size": 28,
+    "frame_size": 32,
     "local_size": 24,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -106,33 +104,15 @@
         "offset": 4,
         "size": 4,
         "type": "CChain *"
+      },
+      {
+        "is_param": true,
+        "name": "out_point",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 6,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "CVector3f *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "(this_ptr->target,in_stack_00000008,input_local_point);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "return in_stack_00000008;",
-      "type": "stack_param"
-    }
-  ]
+  "suspects": []
 }

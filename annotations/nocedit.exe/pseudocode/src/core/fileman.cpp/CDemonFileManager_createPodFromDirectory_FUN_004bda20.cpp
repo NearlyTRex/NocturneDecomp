@@ -163,7 +163,7 @@ LAB_004bdb2c:
             iVar2 = _stricmp(local_2a5 + 1,"msn");
             if (iVar2 == 0) {
               shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-                        (g_CEditorToolsPtr,"Loading %s");
+                        (g_CEditorToolsPtr,"Loading %s",local_3a5 + 1);
               core_mission_cpp_CDemonMission_load_FUN_00522d90(g_CDemonMissionPtr,local_3a5 + 1,0);
               core_mission_cpp_CDemonMission_createHeros_FUN_00524a80
                         (g_CDemonMissionPtr,(CCharacter *)0x0);

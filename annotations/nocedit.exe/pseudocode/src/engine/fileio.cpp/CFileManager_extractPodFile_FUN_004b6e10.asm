@@ -388,7 +388,7 @@ section .text
     MOV ESI,dword ptr [0x00678a60]      ; 004b71b8 | g_CEditorToolsPtr
     PUSH ESI                            ; 004b71be | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 004b71bf
-        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
+        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004b71c4
     MOV EDI,dword ptr [0x00680cdc]      ; 004b71c7 | g_CDemonPodPtr
     PUSH EDI                            ; 004b71cd | g_CDemonPodInstance

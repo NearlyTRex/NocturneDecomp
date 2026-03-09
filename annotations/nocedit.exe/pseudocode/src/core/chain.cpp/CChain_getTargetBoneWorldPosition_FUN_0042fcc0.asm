@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CVector3f * __cdecl core_chain_cpp_CChain_FUN_0042fcc0(CChain *this_ptr)
+; CVector3f * __cdecl core_chain_cpp_CChain_getTargetBoneWorldPosition_FUN_0042fcc0(CChain *this_ptr,CVector3f *out_point)
 ;
 ; Parameters:
 ; CChain *         Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   out_point
 ; Local Variables:
 ; undefined1       Stack[-0x14]:1  local_14
 ;
@@ -23,7 +24,7 @@
 section .text
 
     PUSH EBX                            ; 0042fcc0
-        ;   Label: core_chain.cpp_CChain_FUN_0042fcc0
+        ;   Label: core_chain.cpp_CChain_getTargetBoneWorldPosition_FUN_0042fcc0
     PUSH ESI                            ; 0042fcc1
     SUB ESP,0xc                         ; 0042fcc2
     MOV ESI,dword ptr [ESP + 0x18]      ; 0042fcc5

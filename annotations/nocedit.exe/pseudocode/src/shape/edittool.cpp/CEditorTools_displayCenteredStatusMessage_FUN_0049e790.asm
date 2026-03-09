@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools *this_ptr,char *message)
+; void __cdecl shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools *this_ptr,char *format,...)
 ;
 ; Parameters:
 ; CEditorTools *   Stack[0x4]:4   this_ptr
-; char *           Stack[0x8]:4   message
+; char *           Stack[0x8]:4   format
 ; Local Variables:
 ; va_list_t        Stack[-0x14]:4  local_14
 ;

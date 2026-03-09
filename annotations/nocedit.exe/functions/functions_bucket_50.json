@@ -12565,7 +12565,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_chain.cpp_CChain_FUN_0042fed0",
+    "name":"core_chain.cpp_CChain_constrainSegmentDistance_FUN_0042fed0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -12938,6 +12938,38 @@
             ]
           },
           "type":"CChain*"
+        },
+        {
+          "name":"vertex_a",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"SChainVertex*"
+        },
+        {
+          "name":"vertex_b",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"SChainVertex*"
         }
       ]
     }
@@ -13857,9 +13889,27 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_chain.cpp_FUN_00431350",
-    "ret":"int",
+    "name":"core_chain.cpp_fastSqrt_FUN_00431350",
+    "ret":"float",
     "vars":{
+      "params":[
+        {
+          "name":"value",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        }
+      ],
       "ret_storage":{
         "reg":"EAX",
         "size":4,

@@ -12,9 +12,9 @@ SUMMARY STATISTICS
 ====================================================================================================
 
   Total functions analyzed:          6,484
-  Unnamed functions (FUN_):          71 ( 1.1%)
+  Unnamed functions (FUN_):          66 ( 1.0%)
   Functions with unnamed params:     1 ( 0.0%)
-  Functions with type issues:        2,344 (36.2%)
+  Functions with type issues:        2,335 (36.0%)
 
   Type issue breakdown:
     Wrong return type (void):          0
@@ -22,7 +22,7 @@ SUMMARY STATISTICS
     Missing register params:           4
     Wrong calling convention:          29
     Undefined types in variables:      2268
-    Unresolved stack params:           185
+    Unresolved stack params:           174
 
 ====================================================================================================
 UNNAMED FUNCTIONS (still using FUN_XXXXXXXX or ClassName_FUN_XXXXXXXX)
@@ -121,13 +121,6 @@ Sorted by caller count (most-referenced first = highest priority to name).
 
   core/melee.cpp (1 unnamed)
     0x0050ebe0  __cdecl       1 callers
-
-  core/chain.cpp (5 unnamed)
-    0x0042fcc0  __cdecl       1 callers
-    0x0042fed0  __cdecl       1 callers
-    0x00431340  __cdecl       0 callers
-    0x00431350  __cdecl       0 callers
-    0x00431330  __cdecl       0 callers
 
   core/hostage.cpp (1 unnamed)
     0x004f5ff0  __cdecl       1 callers
@@ -369,44 +362,8 @@ Wrong calling convention (unaffected register usage) (29)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
 --------------------------------------------------------------------------------
-Unresolved stack parameters (missing from signature) (185)
+Unresolved stack parameters (missing from signature) (174)
 --------------------------------------------------------------------------------
-
-  CDrawSurface_drawTextRightAlignedVariantPrintf
-    Address: 0x00489520  File: cockpit/drawsurf.cpp
-    Evidence: in_stack_00000010, in_stack_00000010
-    Signature: void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedVariantPrintf_FUN_00489520(CDrawSurface *this_ptr,int x,int y,char *format,...)
-    Suggested: Signature is missing stack parameters entirely
-
-  CDrawSurface_drawTextCenteredInBoundsPrintf
-    Address: 0x00489860  File: cockpit/drawsurf.cpp
-    Evidence: in_stack_00000014, in_stack_00000014
-    Signature: void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInBoundsPrintf_FUN_00489860(CDrawSurface *this_ptr,int x,int y,int width,char *format,...)
-    Suggested: Signature is missing stack parameters entirely
-
-  CDrawSurface_drawTextCenteredPrintf
-    Address: 0x004895f0  File: cockpit/drawsurf.cpp
-    Evidence: in_stack_00000010, in_stack_00000010
-    Signature: void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredPrintf_FUN_004895f0(CDrawSurface *this_ptr,int x,int y,char *format,...)
-    Suggested: Signature is missing stack parameters entirely
-
-  CDrawSurface_drawTextRightAlignedVCenteredPrintf
-    Address: 0x004896c0  File: cockpit/drawsurf.cpp
-    Evidence: in_stack_00000010, in_stack_00000010
-    Signature: void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedVCenteredPrintf_FUN_004896c0(CDrawSurface *this_ptr,int x,int y,char *format,...)
-    Suggested: Signature is missing stack parameters entirely
-
-  CDrawSurface_drawTextCenteredBothPrintf
-    Address: 0x00489790  File: cockpit/drawsurf.cpp
-    Evidence: in_stack_00000010, in_stack_00000010
-    Signature: void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredBothPrintf_FUN_00489790(CDrawSurface *this_ptr,int x,int y,char *format,...)
-    Suggested: Signature is missing stack parameters entirely
-
-  CDrawSurface_drawTextCenteredFullWidthPrintf
-    Address: 0x00489af0  File: cockpit/drawsurf.cpp
-    Evidence: in_stack_0000000c, in_stack_0000000c
-    Signature: void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullWidthPrintf_FUN_00489af0(CDrawSurface *this_ptr,int y,char *format,...)
-    Suggested: Signature is missing stack parameters entirely
 
   traceConnectedEdges
     Address: 0x00434af0  File: cockpit/ckptutil.c
@@ -537,13 +494,13 @@ Unresolved stack parameters (missing from signature) (185)
   CWavInDevice_setMode
     Address: 0x005b0f70  File: sound/sndwav.cpp
     Evidence: in_stack_00000018, in_stack_00000018
-    Signature: int __cdecl sound_sndwav_cpp_CWavInDevice_setMode_FUN_005b0f70(CWavInDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_samples_per_block)
+    Signature: int __cdecl sound_sndwav_cpp_CWavInDevice_setMode_FUN_005b0f70(CWavInDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int stereo_flag)
     Suggested: Signature is missing stack parameters entirely
 
   CWavOutDevice_setMode
     Address: 0x005b0a30  File: sound/sndwav.cpp
     Evidence: in_stack_00000018, in_stack_00000018
-    Signature: int __cdecl sound_sndwav_cpp_CWavOutDevice_setMode_FUN_005b0a30(CWavOutDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_samples_per_block)
+    Signature: int __cdecl sound_sndwav_cpp_CWavOutDevice_setMode_FUN_005b0a30(CWavOutDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_buffer_size)
     Suggested: Signature is missing stack parameters entirely
 
   pollAndMixSfx
@@ -1180,36 +1137,6 @@ Unresolved stack parameters (missing from signature) (185)
     Address: 0x005214c0  File: core/mirror.cpp
     Evidence: in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000010, in_stack_00000008
     Signature: void __cdecl core_mirror_cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0(CMirrorReflection *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_00431340
-    Address: 0x00431340  File: core/chain.cpp
-    Evidence: in_stack_00000004, in_stack_00000004
-    Signature: int __cdecl core_chain_cpp_FUN_00431340(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  CChain
-    Address: 0x0042fcc0  File: core/chain.cpp
-    Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: CVector3f * __cdecl core_chain_cpp_CChain_FUN_0042fcc0(CChain *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CChain
-    Address: 0x0042fed0  File: core/chain.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c
-    Signature: void __cdecl core_chain_cpp_CChain_FUN_0042fed0(CChain *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_00431350
-    Address: 0x00431350  File: core/chain.cpp
-    Evidence: in_stack_00000004, in_stack_00000004
-    Signature: int __cdecl core_chain_cpp_FUN_00431350(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_00431330
-    Address: 0x00431330  File: core/chain.cpp
-    Evidence: in_stack_00000004, in_stack_00000004
-    Signature: int __cdecl core_chain_cpp_FUN_00431330(void)
     Suggested: Signature is missing stack parameters entirely
 
   drawCenteredText
@@ -2796,7 +2723,7 @@ Undefined types in variables (2268)
     Locals:  local_b0 (undefined4), local_ac (undefined4), local_a8 (undefined4), local_50 (undefined1), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined4), local_c (undefined4), local_8 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CChain
+  CChain_constrainSegmentDistance
     Address: 0x0042fed0  File: core/chain.cpp
     Locals:  local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -10497,7 +10424,7 @@ Undefined types in variables (2268)
     Locals:  local_10 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CChain
+  CChain_getTargetBoneWorldPosition
     Address: 0x0042fcc0  File: core/chain.cpp
     Locals:  local_14 (undefined1)
     Suggested: Resolve undefined types to concrete types

@@ -433,6 +433,141 @@ def transform_crt_functions(code):
 
 
 # =============================================================================
+# VARIADIC FUNCTION TRANSFORM
+# =============================================================================
+#
+# Ghidra decompiles variadic functions with uncompilable va_list_t patterns:
+#   va_list_t local_XX;
+#   local_XX.value[0] = (char * [1])&stack0xXXXXXXXX;    <- undeclared identifier
+#   _vsprintf(buf, fmt, (va_list_t)&local_XX);            <- invalid cast
+#   local_XX.value[0] = (char * [1])(char *)0x0;          <- invalid cast
+#
+# This transform converts them to compilable equivalents using VA_START_T/VA_END_T
+# macros defined in system/stdarg.h:
+#   va_list_t local_XX;
+#   VA_START_T(local_XX, format);
+#   _vsprintf(buf, fmt, local_XX);
+#   VA_END_T(local_XX);
+
+# Pattern: local_XX.value[0] = (char * [1])&stack0xXXXXXXXX;
+# Also matches: local_XX.value[0] = (char * [1])&format;  (AND ESP variant)
+_VA_START_PATTERN = re.compile(
+    r'(\w+)\.value\[0\]\s*=\s*\(char\s*\*\s*\[1\]\)\s*&(?:stack0x[0-9a-fA-F]+|\w+)\s*;'
+)
+
+# Pattern: (va_list_t)&local_XX
+_VA_LIST_CAST_PATTERN = re.compile(
+    r'\(va_list_t\)\s*&(\w+)'
+)
+
+# Pattern: local_XX.value[0] = (char * [1])(char *)0x0;
+_VA_END_PATTERN = re.compile(
+    r'(\w+)\.value\[0\]\s*=\s*\(char\s*\*\s*\[1\]\)\s*\(char\s*\*\)\s*0x0\s*;'
+)
+
+
+def _find_last_named_param(code):
+    """Extract the last named parameter before '...' from a variadic function signature.
+
+    Parses the function signature (first line starting with a return type) to find
+    the parameter just before the variadic '...' marker.
+
+    Args:
+        code: Decompiled code string containing the function signature
+
+    Returns:
+        The name of the last named parameter, or None if not found
+    """
+    # Find the function signature line (contains '...')
+    for line in code.split('\n'):
+        if '...' in line and '(' in line:
+            # Extract the parameter list
+            paren_start = line.rfind('(')
+            paren_end = line.rfind(')')
+            if paren_start < 0 or paren_end < 0:
+                continue
+            params_str = line[paren_start + 1:paren_end]
+            # Split by comma, find the param before '...'
+            params = [p.strip() for p in params_str.split(',')]
+            for i, p in enumerate(params):
+                if p.startswith('...'):
+                    if i > 0:
+                        # Previous param: extract the name (last word)
+                        prev_param = params[i - 1].strip()
+                        # Handle "char *format" or "char * format_string"
+                        parts = prev_param.split()
+                        if parts:
+                            name = parts[-1].lstrip('*')
+                            return name
+            break
+    return None
+
+
+def transform_variadic_functions(code):
+    """Transform Ghidra va_list_t patterns to compilable equivalents.
+
+    Converts uncompilable Ghidra patterns in variadic functions to use
+    VA_START_T/VA_END_T macros from system/stdarg.h.
+
+    Only applies to functions whose signature contains '...'.
+
+    Args:
+        code: Decompiled code string
+
+    Returns:
+        Transformed code with compilable va_list_t usage
+    """
+    # Only apply to variadic functions
+    if '...' not in code:
+        return code
+
+    # Check for the actual broken patterns
+    if '.value[0]' not in code and '(va_list_t)&' not in code:
+        return code
+
+    last_param = _find_last_named_param(code)
+    if last_param is None:
+        return code
+
+    # Collect va_list_t variable names from VA_START pattern matches
+    va_list_vars = set()
+    for m in _VA_START_PATTERN.finditer(code):
+        va_list_vars.add(m.group(1))
+
+    if not va_list_vars:
+        return code
+
+    # 1. Replace va_start pattern: local_XX.value[0] = (char * [1])&stack0x...;
+    #    -> VA_START_T(local_XX, last_param);
+    def replace_va_start(m):
+        var_name = m.group(1)
+        return 'VA_START_T(%s, %s);' % (var_name, last_param)
+
+    code = _VA_START_PATTERN.sub(replace_va_start, code)
+
+    # 2. Replace va_end pattern: local_XX.value[0] = (char * [1])(char *)0x0;
+    #    -> VA_END_T(local_XX);
+    def replace_va_end(m):
+        var_name = m.group(1)
+        if var_name in va_list_vars:
+            return 'VA_END_T(%s);' % var_name
+        return m.group(0)
+
+    code = _VA_END_PATTERN.sub(replace_va_end, code)
+
+    # 3. Replace cast pattern: (va_list_t)&local_XX -> local_XX
+    def replace_va_cast(m):
+        var_name = m.group(1)
+        if var_name in va_list_vars:
+            return var_name
+        return m.group(0)
+
+    code = _VA_LIST_CAST_PATTERN.sub(replace_va_cast, code)
+
+    return code
+
+
+# =============================================================================
 # VOID POINTER CAST TRANSFORM
 # =============================================================================
 #
@@ -1224,6 +1359,7 @@ def apply_all_transforms(code, transforms=None, var_info=None):
         ('float_concat_bitcast', transform_float_concat_bitcast),
         ('sub_float_bitcast', transform_sub_float_bitcast),
         ('crt_functions', transform_crt_functions),
+        ('variadic_functions', transform_variadic_functions),
         ('file_pointer_casts', transform_file_pointer_casts),
         ('void_pointer_casts', transform_void_pointer_casts),
         ('funcptr_assignments', transform_funcptr_assignments),

@@ -21,13 +21,14 @@ void __cdecl core_chain_cpp_CChain_setup_FUN_0042fd20(CChain *this_ptr)
   int iVar10;
   CVector3f *pCVar11;
   SChainVertex *pSVar12;
+  CVector3f CStack_3c;
   float local_30;
   float local_2c;
   float local_28;
   
   core_actor_cpp_CDemonActor_setup_FUN_00408bb0(&this_ptr->base);
   if (this_ptr->target != (CDemonActor *)0x0) {
-    pCVar9 = core_chain_cpp_CChain_FUN_0042fcc0(this_ptr);
+    pCVar9 = core_chain_cpp_CChain_getTargetBoneWorldPosition_FUN_0042fcc0(this_ptr,&CStack_3c);
     pCVar1 = &(this_ptr->base).location;
     fVar2 = pCVar9->x;
     fVar3 = (pCVar1->position).x;

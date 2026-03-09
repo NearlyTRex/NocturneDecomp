@@ -84,7 +84,7 @@ section .text
     MOV ECX,dword ptr [0x00678a60]      ; 0058bd22 | g_CEditorToolsPtr
     PUSH ECX                            ; 0058bd28 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0058bd29
-        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
+        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 0058bd2e
     PUSH 0x593                          ; 0058bd31
     PUSH 0x64a934                       ; 0058bd36 | = "..\\core\\skeledit.cpp"
@@ -372,7 +372,7 @@ section .text
     MOV EDX,dword ptr [0x00678a60]      ; 0058c0f6 | g_CEditorToolsPtr
     PUSH EDX                            ; 0058c0fc | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0058c0fd
-        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
+        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 0058c102
     MOV ESP,EBP                         ; 0058c105
     POP EBP                             ; 0058c107

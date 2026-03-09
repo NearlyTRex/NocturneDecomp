@@ -259,11 +259,11 @@ int __cdecl engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00(CFileMana
     pcVar12 = pcVar12 + 2;
   } while (cVar1 != '\0');
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-            (g_CEditorToolsPtr,"Reading %s");
+            (g_CEditorToolsPtr,"Reading %s",local_984);
   local_4c = engine_fileio_cpp_findMaxFieldInTimestampFile_FUN_004b2640(local_3c);
   if (local_4c < 0) goto LAB_004bb1fa;
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-            (g_CEditorToolsPtr,"Opening local file %s");
+            (g_CEditorToolsPtr,"Opening local file %s",&local_12b4);
   local_40 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                        (local_12b4.found_path,(char *)0x0,"rb","..\\engine\\fileio.cpp"
                         ,0x567);
@@ -305,7 +305,7 @@ LAB_004bb723:
     pcVar12 = pcVar12 + 2;
   } while (cVar1 != '\0');
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-            (g_CEditorToolsPtr,"Creating temporary network file %s...");
+            (g_CEditorToolsPtr,"Creating temporary network file %s...",local_880);
   engine_dosio_c_setFileAttributes_FUN_004819f0(local_880,0);
   remove(local_880);
   p_Var3 = shape_memdbg_cpp_openFile_FUN_0050f7a0
@@ -368,7 +368,7 @@ LAB_004bb83f:
     local_60.items = (CCheckOutItem *)0x0;
     if (local_44 == (_FILE *)0x0) {
       shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-                (g_CEditorToolsPtr,"Grabbing %s...");
+                (g_CEditorToolsPtr,"Grabbing %s...",local_678);
       do {
         p_Var3 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                            (local_678,(char *)0x0,"r+t","..\\engine\\fileio.cpp",0x153)
@@ -408,7 +408,7 @@ LAB_004bbc40:
     else {
 LAB_004bba53:
       shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-                (g_CEditorToolsPtr,"Finalizing %s to network...");
+                (g_CEditorToolsPtr,"Finalizing %s to network...",local_3c);
       iVar2 = 0;
       engine_2d_c_clearInputAndWait_FUN_00403260();
       while( true ) {

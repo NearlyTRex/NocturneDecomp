@@ -252,7 +252,7 @@ LAB_0058c613:
                                 0x6a9);
             }
             shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-                      (g_CEditorToolsPtr,"Copying %s -> %s");
+                      (g_CEditorToolsPtr,"Copying %s -> %s",local_a1c,local_c24);
             if (file == (_FILE *)0x0) {
               if (entry->skip_generation != 2) {
                 _sprintf
@@ -588,7 +588,7 @@ LAB_0058c601:
       local_40 = 0;
       do {
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-                  (g_CEditorToolsPtr,"Extracting LOD %d of %d");
+                  (g_CEditorToolsPtr,"Extracting LOD %d of %d",iVar12,this_ptr->num_lods);
         shape_meshlod_cpp_CLodMesh_ctor_FUN_00515840(&local_2dc);
         if (local_9c == 0) {
           shape_meshlod_cpp_CLodMesh_copyFrom_FUN_0051a8c0(&local_2dc,&local_1f4);

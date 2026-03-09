@@ -4,18 +4,18 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  decompiler_intrinsic            6897 ( 31.7%)
-  pointer_cast                    5951 ( 27.3%)
-  stack_param                     1943 (  8.9%)
-  unknown_field                   1722 (  7.9%)
+  decompiler_intrinsic            6897 ( 31.8%)
+  pointer_cast                    5951 ( 27.5%)
+  stack_param                     1883 (  8.7%)
+  unknown_field                   1723 (  8.0%)
   unnamed_param                    699 (  3.2%)
   special_crt_function             636 (  2.9%)
-  stack_ref                        487 (  2.2%)
+  stack_ref                        458 (  2.1%)
   unaffected_reg                   425 (  2.0%)
   fpu_register_input               325 (  1.5%)
   param_count_too_few              314 (  1.4%)
   register_param                   302 (  1.4%)
-  nonstandard_int                  271 (  1.2%)
+  nonstandard_int                  271 (  1.3%)
   warning_inlined_function         264 (  1.2%)
   unresolved_funcptr               189 (  0.9%)
   undefined_data                   153 (  0.7%)
@@ -136,15 +136,15 @@ Example functions:
     piVar1 = (int *)((int)g_ScreenBufferArray + iVar4);...
 
 ====================================================================================================
-TYPE: stack_param (1943 occurrences)
+TYPE: stack_param (1883 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   479x  in_stack_00000008
-   233x  in_stack_00000004
-   231x  in_stack_0000000c
-   111x  in_stack_00000010
-    65x  in_stack_00000014
+   453x  in_stack_00000008
+   227x  in_stack_00000004
+   213x  in_stack_0000000c
+   103x  in_stack_00000010
+    63x  in_stack_00000014
     61x  in_stack_fffffd64
     46x  in_stack_fffffc88
     39x  in_stack_ffffff54
@@ -162,41 +162,33 @@ Unique patterns:
     14x  in_stack_fffffd14
 
 Example functions:
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariantPrintf_FUN_00489520
-    char *in_stack_00000010;...
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBoundsPrintf_FUN_00489860
-    char *in_stack_00000014;...
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredPrintf_FUN_004895f0
-    char *in_stack_00000010;...
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVCenteredPrintf_FUN_004896c0
-    char *in_stack_00000010;...
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredBothPrintf_FUN_00489790
-    char *in_stack_00000010;...
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidthPrintf_FUN_00489af0
-    char *in_stack_0000000c;...
   cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af0
     int in_stack_00000020;...
   cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690
     int in_stack_00000018;...
   crt_process.c_spawnvp_FUN_0060f39c
     char **in_stack_00000010;...
+  crt_process.c_spawn_FUN_006105a0
+    char **in_stack_00000014;...
+  crt_startup.cpp_GetOrCreateThreadData_FUN_0060a23c
+    ThreadData *in_stack_00000004;...
 
 ====================================================================================================
-TYPE: unknown_field (1722 occurrences)
+TYPE: unknown_field (1723 occurrences)
 ====================================================================================================
 
 Unique patterns:
    570x  ._0_4_
    545x  ._4_4_
     97x  ._8_4_
-    77x  ._12_4_
-    72x  ._16_4_
+    78x  ._12_4_
+    68x  ._16_4_
     47x  ._24_4_
     45x  ._20_4_
-    42x  ._2_2_
+    43x  ._2_2_
     40x  ._0_24_
     30x  ._28_4_
-    27x  ._0_2_
+    28x  ._0_2_
     26x  ._0_1_
     16x  ._1_1_
     16x  ._3_1_
@@ -204,7 +196,7 @@ Unique patterns:
     11x  ._30_2_
     10x  ._32_4_
      6x  ._36_4_
-     4x  ._40_4_
+     5x  ._40_4_
      4x  ._24_8_
 
 Example functions:
@@ -335,7 +327,7 @@ Example functions:
     CRT function (runtime support) at 00607e64...
 
 ====================================================================================================
-TYPE: stack_ref (487 occurrences)
+TYPE: stack_ref (458 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -343,7 +335,6 @@ Unique patterns:
     18x  &stack0x00000000
     16x  &stack0xfffffff0
     15x  &stack0xffffff54
-    14x  &stack0x0000000c
     14x  &stack0xffffffc0
     14x  &stack0xffffff24
     12x  &stack0xffffffd4
@@ -354,23 +345,14 @@ Unique patterns:
      9x  &stack0xfffffff4
      9x  &stack0xffffffd8
      9x  &stack0xffffffec
-     8x  &stack0x00000010
      8x  &stack0xffffffe0
      8x  &stack0x00000008
      8x  &stack0xffffff94
      8x  &stack0xfffffe90
+     8x  &stack0xffffffe8
+     8x  &stack0xfffffee8
 
 Example functions:
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_00489c40
-    local_8.value[0] = (char * [1])&stack0x0000000c;...
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_00489a30
-    local_14.value[0] = (char * [1])&stack0x0000001c;...
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullHeightPrintf_FUN_00489bb0
-    local_c.value[0] = (char * [1])&stack0x00000010;...
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedPrintf_FUN_00489450
-    local_10.value[0] = (char * [1])&stack0x00000014;...
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaPrintf_FUN_00489940
-    local_14.value[0] = (char * [1])&stack0x00000018;...
   crt_io.c_write_FUN_006084ec
     puVar6 = &stack0xfffffff0;...
   crt_process.c_spawnvp_FUN_0060f39c
@@ -387,6 +369,12 @@ Example functions:
     *(int *)(&stack0xfffffff4 + iVar3) = iVar3;...
   crt_stack.c_check_stack_target_FUN_005ffa03
     if (unaff_EAX < &stack0xfffffffc) {...
+  crt_stack.c_GetStackUsage_FUN_0060c260
+    return (int)(&stack0xfffffffc + -pTVar1->stack_limit);...
+  crt_stack.c_ProbeStackSpace_FUN_005ffa2f
+    *(int *)(&stack0xfffffff8 + iVar3) = iVar3;...
+  crt_thread.c_create_thread_with_sync_FUN_0060f960
+    pvStack_20 = (*g_CreateEventAFunc)((LPSECURITY_ATTRIBUTES)0x0,0,0,&stack0xffffff...
 
 ====================================================================================================
 TYPE: unaffected_reg (425 occurrences)
@@ -846,7 +834,7 @@ Unique patterns:
      7x  pCVar1[-1].
      6x  pCVar2[-2].
      6x  pCVar6[-1].
-     6x  pSVar5[-1].
+     6x  pSVar4[-1].
      4x  piVar4[-2].
      4x  this_ptr[-2].
      3x  p_Var3[-2].

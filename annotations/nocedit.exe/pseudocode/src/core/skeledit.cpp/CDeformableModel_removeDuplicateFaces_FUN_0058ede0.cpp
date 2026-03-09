@@ -15,6 +15,7 @@ void __cdecl core_skeledit_cpp_CDeformableModel_removeDuplicateFaces_FUN_0058ede
   short *psVar4;
   CDeformableModel *local_54;
   int local_50;
+  int local_44;
   int local_40;
   int local_3c;
   int local_38;
@@ -25,6 +26,7 @@ void __cdecl core_skeledit_cpp_CDeformableModel_removeDuplicateFaces_FUN_0058ede
   __STK();
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Searching for duplicate faces.");
+  local_44 = 0;
   local_50 = 0;
   if (0 < this_ptr->num_lods) {
     local_54 = this_ptr;
@@ -67,6 +69,7 @@ LAB_0058ee5a:
                             (local_54->index_data_ptr[0] + local_30,
                              (void *)(local_40 + (int)local_54->index_data_ptr[0]),
                              (local_54->tri_count[0] - local_30) * 4);
+                  local_44 = local_44 + 1;
                   goto LAB_0058ee5a;
                 }
                 iVar3 = iVar3 + 1;
@@ -87,6 +90,6 @@ LAB_0058ee5a:
     } while (local_50 < this_ptr->num_lods);
   }
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-            (g_CEditorToolsPtr,"%d duplicate faces removed.");
+            (g_CEditorToolsPtr,"%d duplicate faces removed.",local_44);
   return;
 }

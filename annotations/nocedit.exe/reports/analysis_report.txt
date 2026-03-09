@@ -7,32 +7,32 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 6484
-Clean functions: 4709 (72.6%)
-Functions with suspects: 1775 (27.4%)
+Clean functions: 4737 (73.1%)
+Functions with suspects: 1747 (26.9%)
 
-Total suspect patterns: 18174
-Average suspects per function: 2.80
+Total suspect patterns: 18088
+Average suspects per function: 2.79
 
-Virtual files: 214 total, 32 at 100%, 60 at 90%+
+Virtual files: 214 total, 32 at 100%, 61 at 90%+
 
 Pseudocode lines:
   Min: 4, Max: 3390, Average: 47.4
 
-Average complexity score: 78.1
+Average complexity score: 78.0
 
 COMPILATION STATUS
 ----------------------------------------
 Functions compiled: 6484
-Successful: 5703 (88.0%)
-Failed: 781
+Successful: 5735 (88.4%)
+Failed: 749
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
   decompiler_intrinsic      6627
   pointer_cast              5648
-  stack_param               1681
-  unknown_field             1589
-  stack_ref                 430
+  stack_param               1621
+  unknown_field             1590
+  stack_ref                 403
   nonstandard_int           268
   warning_inlined_function  261
   param_count_too_few       240
@@ -125,7 +125,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   005b1680: sound_sndwav.cpp_CWavOutDevice_set3DListenerVelocity_FUN_005b1680 (4 lines)
   005b1660: sound_sndwav.cpp_CWavOutDevice_set3DListenerPos_FUN_005b1660 (4 lines)
   005b16e0: sound_sndwav.cpp_CWavOutDevice_unlockSample_FUN_005b16e0 (4 lines)
-  ... and 4659 more
+  ... and 4687 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -189,18 +189,18 @@ FUNCTIONS BY SUSPECT TYPE
     0054aa20: cockpit_pkbitmap.cpp_CPackedBitmap_renderToScreenBuffer_FUN_0054aa20
     ... and 939 more
 
-  stack_param (185 functions):
-    00489520: cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariantPrintf_FUN_00489520
-    00489860: cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBoundsPrintf_FUN_00489860
-    004895f0: cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredPrintf_FUN_004895f0
-    004896c0: cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVCenteredPrintf_FUN_004896c0
-    00489790: cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredBothPrintf_FUN_00489790
-    00489af0: cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidthPrintf_FUN_00489af0
+  stack_param (174 functions):
     00434af0: cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af0
     00434690: cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690
     00481b50: engine_dosio.c_reopenFileStream_FUN_00481b50
     005f2440: engine_winfont.cpp_CWinFont_setColorAndDrawText_FUN_005f2440
-    ... and 175 more
+    005f22e0: engine_winfont.cpp_CWinFont_ctor_FUN_005f22e0
+    004ccff0: engine_font.cpp_CBitFont_loadBitmap_FUN_004ccff0
+    00410b00: engine_alphabit.cpp_CAlphaBitmap_render_FUN_00410b00
+    00404600: engine_3d.c_drawLineStrip3D_FUN_00404600
+    00407cf0: engine_3d.c_drawLine2DFromIndices_FUN_00407cf0
+    00404570: engine_3d.c_drawLineStrip2D_FUN_00404570
+    ... and 164 more
 
   unknown_field (107 functions):
     0043e530: support_codec.cpp_readBitsFromStream_FUN_0043e530
@@ -215,18 +215,18 @@ FUNCTIONS BY SUSPECT TYPE
     00436420: engine_clipper.c_clipPolygonNearPlane_FUN_00436420
     ... and 97 more
 
-  stack_ref (132 functions):
-    00489c40: cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_00489c40
-    00489a30: cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_00489a30
-    00489bb0: cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullHeightPrintf_FUN_00489bb0
-    00489450: cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedPrintf_FUN_00489450
-    00489940: cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaPrintf_FUN_00489940
+  stack_ref (105 functions):
     0050d970: engine_matrix.c_normalizeVector3DFixed_FUN_0050d970
-    004023c0: engine_2d.c_drawTextCenteredFormatted_FUN_004023c0
-    00402730: engine_2d.c_drawTextCenteredColorFormatted_FUN_00402730
-    00402210: engine_2d.c_drawTextRightAlignedFormatted_FUN_00402210
-    004024c0: engine_2d.c_drawTextColorFormatted_FUN_004024c0
-    ... and 122 more
+    004027a0: engine_2d.c_getStringWidthFormatted_FUN_004027a0
+    004ccff0: engine_font.cpp_CBitFont_loadBitmap_FUN_004ccff0
+    00404600: engine_3d.c_drawLineStrip3D_FUN_00404600
+    00407cf0: engine_3d.c_drawLine2DFromIndices_FUN_00407cf0
+    00404570: engine_3d.c_drawLineStrip2D_FUN_00404570
+    00407ff0: engine_3d.c_drawLine3DFromIndices_FUN_00407ff0
+    004b6e10: engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10
+    004ba740: engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740
+    004b5950: engine_fileio.cpp_CFileManager_addPodAuditRecord_FUN_004b5950
+    ... and 95 more
 
   nonstandard_int (23 functions):
     004ce240: engine_font.cpp_drawAlphaBlendedPixels_FUN_004ce240

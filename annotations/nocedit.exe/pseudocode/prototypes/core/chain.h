@@ -19,17 +19,17 @@ CDemonActorType * __cdecl CChain::getActorType(CChain *this_ptr);
 // Address: 0042fb80
 CChain * __cdecl CChain::ctor(CChain *this_ptr);
 
-// Original: core_chain.cpp_CChain_FUN_0042fcc0
+// Original: core_chain.cpp_CChain_getTargetBoneWorldPosition_FUN_0042fcc0
 // Address: 0042fcc0
-CVector3f * __cdecl CChain(CChain *this_ptr);
+CVector3f * __cdecl CChain::getTargetBoneWorldPosition(CChain *this_ptr,CVector3f *out_point);
 
 // Original: core_chain.cpp_CChain_setup_FUN_0042fd20
 // Address: 0042fd20
 void __cdecl CChain::setup(CChain *this_ptr);
 
-// Original: core_chain.cpp_CChain_FUN_0042fed0
+// Original: core_chain.cpp_CChain_constrainSegmentDistance_FUN_0042fed0
 // Address: 0042fed0
-void __cdecl CChain(CChain *this_ptr);
+void __cdecl CChain::constrainSegmentDistance(CChain *this_ptr,SChainVertex *vertex_a,SChainVertex *vertex_b);
 
 // Original: core_chain.cpp_CChain_process_FUN_004300d0
 // Address: 004300d0
@@ -59,17 +59,17 @@ void __cdecl CChain::getPropertyList(CChain *this_ptr,CActorPropertyList *proper
 // Address: 00431250
 void __cdecl CChain::addFilesToExtract(CChain *this_ptr,_FILE *file_handle);
 
-// Original: core_chain.cpp_FUN_00431330
+// Original: core_chain.cpp_passthroughInt_FUN_00431330
 // Address: 00431330
-int __cdecl FUN_00431330(void);
+int __cdecl passthroughInt(int value);
 
-// Original: core_chain.cpp_FUN_00431340
+// Original: core_chain.cpp_passthroughInt_FUN_00431340
 // Address: 00431340
-int __cdecl FUN_00431340(void);
+int __cdecl passthroughInt(int value);
 
-// Original: core_chain.cpp_FUN_00431350
+// Original: core_chain.cpp_fastSqrt_FUN_00431350
 // Address: 00431350
-int __cdecl FUN_00431350(void);
+float __cdecl fastSqrt(float value);
 
 // Original: core_chain.cpp_CChain_dtor_FUN_00431360
 // Address: 00431360

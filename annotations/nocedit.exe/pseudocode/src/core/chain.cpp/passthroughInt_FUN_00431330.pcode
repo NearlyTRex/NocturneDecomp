@@ -2,9 +2,9 @@
 # Function P-code Export
 # ============================================================================
 #
-# Function:    core_chain.cpp_FUN_00431340
-# Entry:       00431340
-# Signature:   int __cdecl core_chain_cpp_FUN_00431340(void)
+# Function:    core_chain.cpp_passthroughInt_FUN_00431330
+# Entry:       00431330
+# Signature:   int __cdecl core_chain_cpp_passthroughInt_FUN_00431330(int value)
 #
 # Format: @<address> [ESP:offset] # <assembly>
 #         [ESP:offset] = cumulative ESP delta from function entry
@@ -16,12 +16,12 @@
 #
 # ============================================================================
 
-@00431340 [ESP:+0]  # MOV EAX, dword ptr [ESP + 0x4]
+@00431330 [ESP:+0]  # MOV EAX, dword ptr [ESP + 0x4]
 INT_ADD (unique,0x3b00,4) = (const,0x4,4), (register,0x10,4) /* ESP */
 LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3b00,4)
 COPY (register,0x0,4) /* EAX */ = (unique,0xb900,4)
 
-@00431344 [ESP:+4](+4)  # RET
+@00431334 [ESP:+4](+4)  # RET
 LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)

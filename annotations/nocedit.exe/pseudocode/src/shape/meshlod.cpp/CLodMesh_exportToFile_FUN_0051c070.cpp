@@ -12,7 +12,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_exportToFile_FUN_0051c070(CLodMesh *this
   _FILE *file_ptr;
   
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-            (g_CEditorToolsPtr,"Exporting %s");
+            (g_CEditorToolsPtr,"Exporting %s",filename);
   file_ptr = shape_memdbg_cpp_openFile_FUN_0050f7a0
                        (filename,(char *)0x0,"wt","..\\shape\\meshlod.cpp",0x133e);
   if (file_ptr == (_FILE *)0x0) {

@@ -5,24 +5,24 @@ FUNCTION COMPILATION DETAILED ERRORS
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6484
-Successful: 5703 (88.0%)
-Failed: 781
+Successful: 5735 (88.4%)
+Failed: 749
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                           1503
-  format_error                     801
-  undeclared_identifier            421
-  incompatible_types               331
+  other                           1447
+  format_error                     810
+  undeclared_identifier            393
+  incompatible_types               304
   syntax_error                      51
   type_error                        22
-  missing_member                    22
+  missing_member                    20
   lvalue_required                   16
   pointer_arithmetic                10
   pointer_precision                  2
 
 ====================================================================================================
-CATEGORY: other (1503 errors)
+CATEGORY: other (1447 errors)
 ====================================================================================================
 
   core_imp.cpp_CImp_process_FUN_004f9c30
@@ -53,18 +53,6 @@ CATEGORY: other (1503 errors)
     Line 73: C-style cast from 'SClothBone *' to 'float' is not allowed
   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_0042d090
     Line 41: C-style cast from 'UOrientationVector *' to 'float' is not allowed
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredBothPrintf_FUN_00489790
-    Line 16: C-style cast from 'char **' to 'char *[1]' is not allowed
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidthPrintf_FUN_00489af0
-    Line 16: C-style cast from 'char **' to 'char *[1]' is not allowed
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBoundsPrintf_FUN_00489860
-    Line 16: C-style cast from 'char **' to 'char *[1]' is not allowed
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredPrintf_FUN_004895f0
-    Line 16: C-style cast from 'char **' to 'char *[1]' is not allowed
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVCenteredPrintf_FUN_004896c0
-    Line 16: C-style cast from 'char **' to 'char *[1]' is not allowed
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariantPrintf_FUN_00489520
-    Line 16: C-style cast from 'char **' to 'char *[1]' is not allowed
   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210
     Line 113: C-style cast from 'float *' to 'float' is not allowed
   core_hero.cpp_CHero_tryApproachNearbyActor_FUN_004f33b0
@@ -215,6 +203,8 @@ CATEGORY: other (1503 errors)
     Line 123: data argument not used by format string [-Werror,-Wformat-extra-args]
   core_tommygun.cpp_CTommyGun_process_FUN_005de360
     Line 66: data argument not used by format string [-Werror,-Wformat-extra-args]
+  engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50
+    Line 335: data argument not used by format string [-Werror,-Wformat-extra-args]
   engine_fileio.cpp_CFileManager_verifyPodCRC_FUN_004b7c90
     Line 39: data argument not used by format string [-Werror,-Wformat-extra-args]
   shape_edittool.cpp_CEditorTools_promptForValidDouble_FUN_004a01f0
@@ -276,7 +266,7 @@ CATEGORY: other (1503 errors)
   core_main.c_initializeGameSystems_FUN_00507a60
     Line 73: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
   core_menu.cpp_configureCustomKeyBindings_FUN_005138e0
-    Line 793: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+    Line 756: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
   core_menu.cpp_configureCustomKeys_FUN_00511890
     Line 60: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
   core_menu.cpp_configureGraphicsOptions_FUN_00510c80
@@ -403,6 +393,8 @@ CATEGORY: other (1503 errors)
     Line 92: member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union
   core_course.cpp_CCourse_interpolate_FUN_004427a0
     Line 59: member reference base type 'byte[32]' (aka 'unsigned char[32]') is not a structure or union
+  sound_sndwav.cpp_CWavInDevice_setMode_FUN_005b0f70
+    Line 36: member reference base type 'byte[44]' (aka 'unsigned char[44]') is not a structure or union
   core_boxactor.cpp_CBoxActor_process_FUN_004219e0
     Line 57: member reference base type 'byte[52]' (aka 'unsigned char[52]') is not a structure or union
   core_particle.cpp_CParticle_process_FUN_00545760
@@ -592,7 +584,7 @@ CATEGORY: other (1503 errors)
   core_setutil.cpp_C3DSLight_save_FUN_00587090
     Line 16: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810
-    Line 283: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+    Line 259: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_skeledit.cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0
     Line 66: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_skeledit.cpp_CDeformableModel_saveStream_FUN_0058f120
@@ -677,60 +669,6 @@ CATEGORY: other (1503 errors)
     Line 39: no matching conversion for C-style cast from 'int' to '_BIT_INTEGER32'
   engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
     Line 27: no matching conversion for C-style cast from 'int' to '_BIT_INTEGER32'
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullHeightPrintf_FUN_00489bb0
-    Line 16: no matching conversion for C-style cast from 'va_list_t *' to 'va_list_t'
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_00489c40
-    Line 16: no matching conversion for C-style cast from 'va_list_t *' to 'va_list_t'
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaPrintf_FUN_00489940
-    Line 16: no matching conversion for C-style cast from 'va_list_t *' to 'va_list_t'
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_00489a30
-    Line 16: no matching conversion for C-style cast from 'va_list_t *' to 'va_list_t'
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedPrintf_FUN_00489450
-    Line 16: no matching conversion for C-style cast from 'va_list_t *' to 'va_list_t'
-  engine_2d.c_drawTextCenteredAtColorFormatted_FUN_00402650
-    Line 16: no matching conversion for C-style cast from 'va_list_t *' to 'va_list_t'
-  engine_2d.c_drawTextCenteredAtFormatted_FUN_004022e0
-    Line 16: no matching conversion for C-style cast from 'va_list_t *' to 'va_list_t'
-  engine_2d.c_drawTextCenteredColorFormatted_FUN_00402730
-    Line 16: no matching conversion for C-style cast from 'va_list_t *' to 'va_list_t'
-  engine_2d.c_drawTextCenteredFormatted_FUN_004023c0
-    Line 16: no matching conversion for C-style cast from 'va_list_t *' to 'va_list_t'
-  engine_2d.c_drawTextColorFormatted_FUN_004024c0
-    Line 16: no matching conversion for C-style cast from 'va_list_t *' to 'va_list_t'
-  engine_2d.c_drawTextFormatted_FUN_00402150
-    Line 16: no matching conversion for C-style cast from 'va_list_t *' to 'va_list_t'
-  engine_2d.c_drawTextRightAlignedColorFormatted_FUN_00402580
-    Line 16: no matching conversion for C-style cast from 'va_list_t *' to 'va_list_t'
-  engine_2d.c_drawTextRightAlignedFormatted_FUN_00402210
-    Line 16: no matching conversion for C-style cast from 'va_list_t *' to 'va_list_t'
-  engine_console.cpp_CConsole_printf_FUN_00441890
-    Line 23: no matching conversion for C-style cast from 'va_list_t *' to 'va_list_t'
-  engine_font.cpp_CBitFont_drawTextCenterF_FUN_004cde20
-    Line 17: no matching conversion for C-style cast from 'va_list_t *' to 'va_list_t'
-  engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_004cdf30
-    Line 18: no matching conversion for C-style cast from 'va_list_t *' to 'va_list_t'
-  engine_font.cpp_CBitFont_drawTextF_FUN_004cdc20
-    Line 17: no matching conversion for C-style cast from 'va_list_t *' to 'va_list_t'
-  engine_font.cpp_CBitFont_printCenterF_FUN_004ce050
-    Line 16: no matching conversion for C-style cast from 'va_list_t *' to 'va_list_t'
-  engine_font.cpp_CBitFont_printF_FUN_004cdd20
-    Line 16: no matching conversion for C-style cast from 'va_list_t *' to 'va_list_t'
-  shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-    Line 22: no matching conversion for C-style cast from 'va_list_t *' to 'va_list_t'
-  shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870
-    Line 22: no matching conversion for C-style cast from 'va_list_t *' to 'va_list_t'
-  shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
-    Line 18: no matching conversion for C-style cast from 'va_list_t *' to 'va_list_t'
-  shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f180
-    Line 17: no matching conversion for C-style cast from 'va_list_t *' to 'va_list_t'
-  shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
-    Line 15: no matching conversion for C-style cast from 'va_list_t *' to 'va_list_t'
-  shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0
-    Line 15: no matching conversion for C-style cast from 'va_list_t *' to 'va_list_t'
-  shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0
-    Line 15: no matching conversion for C-style cast from 'va_list_t *' to 'va_list_t'
-  shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
-    Line 17: no matching conversion for C-style cast from 'va_list_t *' to 'va_list_t'
   core_scat.cpp_CScat_updateWeaponState_FUN_00558060
     Line 54: statement requires expression of integer type ('float' invalid)
   wincore_windll.cpp_initializeExternalRenderer_FUN_005b5ec0
@@ -753,13 +691,13 @@ CATEGORY: other (1503 errors)
     Line 1033: use of undeclared label 'DAT_032758e8'
 
 ====================================================================================================
-CATEGORY: format_error (801 errors)
+CATEGORY: format_error (810 errors)
 ====================================================================================================
 
   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50
     Line 142: format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror,-Wformat]
   core_setedit.cpp_CDemonSet_computeCameraFog_FUN_00581320
-    Line 24: format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror,-Wformat]
+    Line 23: format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror,-Wformat]
   core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660
     Line 124: format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror,-Wformat]
   core_setedit.cpp_CDemonSet_rebuildAllFogAndPVS_FUN_005805a0
@@ -873,7 +811,7 @@ CATEGORY: format_error (801 errors)
   core_enemy.cpp_CEnemy_updateVictim_FUN_004a9b00
     Line 111: format specifies type 'char *' but the argument has type 'CEnemy *' [-Werror,-Wformat]
   core_msnedit.cpp_convertAllMissionFiles_FUN_00537230
-    Line 30: format specifies type 'char *' but the argument has type 'CFileFinder *' [-Werror,-Wformat]
+    Line 22: format specifies type 'char *' but the argument has type 'CFileFinder *' [-Werror,-Wformat]
   engine_fileio.cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030
     Line 66: format specifies type 'char *' but the argument has type 'CFileFinder *' [-Werror,-Wformat]
   core_gargoyle.cpp_CGargoyle_process_FUN_004e4a00
@@ -1050,6 +988,8 @@ CATEGORY: format_error (801 errors)
     Line 76: format specifies type 'char *' but the argument has type 'char (*)[256]' [-Werror,-Wformat]
   core_mission.cpp_CDemonMission_writeFile_FUN_00523600
     Line 39: format specifies type 'char *' but the argument has type 'char (*)[256]' [-Werror,-Wformat]
+  core_msnedit.cpp_CDemonMission_rebuildWaypointConnectivity_FUN_0053d7b0
+    Line 26: format specifies type 'char *' but the argument has type 'char (*)[256]' [-Werror,-Wformat]
   core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0
     Line 150: format specifies type 'char *' but the argument has type 'char (*)[256]' [-Werror,-Wformat]
   core_motion.cpp_CMotionList_save_FUN_0052d170
@@ -1119,7 +1059,7 @@ CATEGORY: format_error (801 errors)
   core_inv.cpp_CInventory_renderAllItems_FUN_00500690
     Line 190: format specifies type 'char *' but the argument has type 'ulonglong' (aka 'unsigned long long') [-Werror,-Wformat]
   engine_fileio.cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0
-    Line 106: format specifies type 'char *' but the argument has type 'void *' [-Werror,-Wformat]
+    Line 40: format specifies type 'char *' but the argument has type 'void *' [-Werror,-Wformat]
   core_tommygun.cpp_CTommyGun_process_FUN_005de360
     Line 66: format specifies type 'double' but the argument has type 'int' [-Werror,-Wformat]
   core_event.cpp_CEventList_setTimerEvent_FUN_004b05a0
@@ -1296,7 +1236,7 @@ CATEGORY: format_error (801 errors)
     Line 36: format specifies type 'unsigned long' but the argument has type 'int' [-Werror,-Wformat]
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (421 errors)
+CATEGORY: undeclared_identifier (393 errors)
 ====================================================================================================
 
   core_actor.cpp_adjustIndentationLevel_FUN_0040aee0
@@ -1416,7 +1356,7 @@ CATEGORY: undeclared_identifier (421 errors)
   sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_005ae830
     Line 81: use of undeclared identifier 'code'
   sound_sndwav.cpp_CWavInDevice_setMode_FUN_005b0f70
-    Line 121: use of undeclared identifier 'code'
+    Line 123: use of undeclared identifier 'code'
   wincore_winrun.cpp_mainWindowProc_FUN_005f3150
     Line 24: use of undeclared identifier 'code'
   engine_fileio.cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40
@@ -1463,60 +1403,6 @@ CATEGORY: undeclared_identifier (421 errors)
     Line 17: use of undeclared identifier 'stack0x00000008'; did you mean 'in_stack_00000008'?
   core_icepick.cpp_CIcePick_FUN_004f93a0
     Line 21: use of undeclared identifier 'stack0x00000008'; did you mean 'in_stack_00000008'?
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_00489c40
-    Line 15: use of undeclared identifier 'stack0x0000000c'
-  engine_console.cpp_CConsole_printf_FUN_00441890
-    Line 22: use of undeclared identifier 'stack0x0000000c'
-  shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-    Line 21: use of undeclared identifier 'stack0x0000000c'
-  shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870
-    Line 21: use of undeclared identifier 'stack0x0000000c'
-  shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
-    Line 16: use of undeclared identifier 'stack0x0000000c'
-  shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f180
-    Line 16: use of undeclared identifier 'stack0x0000000c'
-  shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
-    Line 14: use of undeclared identifier 'stack0x0000000c'
-  shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0
-    Line 14: use of undeclared identifier 'stack0x0000000c'
-  shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0
-    Line 14: use of undeclared identifier 'stack0x0000000c'
-  shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
-    Line 16: use of undeclared identifier 'stack0x0000000c'
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullHeightPrintf_FUN_00489bb0
-    Line 15: use of undeclared identifier 'stack0x00000010'
-  engine_2d.c_drawTextCenteredAtColorFormatted_FUN_00402650
-    Line 15: use of undeclared identifier 'stack0x00000010'
-  engine_2d.c_drawTextCenteredAtFormatted_FUN_004022e0
-    Line 15: use of undeclared identifier 'stack0x00000010'
-  engine_2d.c_drawTextColorFormatted_FUN_004024c0
-    Line 15: use of undeclared identifier 'stack0x00000010'
-  engine_2d.c_drawTextFormatted_FUN_00402150
-    Line 15: use of undeclared identifier 'stack0x00000010'
-  engine_2d.c_drawTextRightAlignedColorFormatted_FUN_00402580
-    Line 15: use of undeclared identifier 'stack0x00000010'
-  engine_2d.c_drawTextRightAlignedFormatted_FUN_00402210
-    Line 15: use of undeclared identifier 'stack0x00000010'
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedPrintf_FUN_00489450
-    Line 15: use of undeclared identifier 'stack0x00000014'
-  engine_2d.c_drawTextCenteredColorFormatted_FUN_00402730
-    Line 15: use of undeclared identifier 'stack0x00000014'
-  engine_2d.c_drawTextCenteredFormatted_FUN_004023c0
-    Line 15: use of undeclared identifier 'stack0x00000014'
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaPrintf_FUN_00489940
-    Line 15: use of undeclared identifier 'stack0x00000018'
-  engine_font.cpp_CBitFont_printCenterF_FUN_004ce050
-    Line 14: use of undeclared identifier 'stack0x00000018'
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_00489a30
-    Line 15: use of undeclared identifier 'stack0x0000001c'
-  engine_font.cpp_CBitFont_drawTextCenterF_FUN_004cde20
-    Line 15: use of undeclared identifier 'stack0x0000001c'
-  engine_font.cpp_CBitFont_drawTextF_FUN_004cdc20
-    Line 15: use of undeclared identifier 'stack0x0000001c'
-  engine_font.cpp_CBitFont_printF_FUN_004cdd20
-    Line 14: use of undeclared identifier 'stack0x0000001c'
-  engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_004cdf30
-    Line 15: use of undeclared identifier 'stack0x00000020'
   engine_fileio.cpp_CFileManager_addPodAuditRecord_FUN_004b5950
     Line 41: use of undeclared identifier 'stack0x0000002c'
   core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190
@@ -1663,7 +1549,7 @@ CATEGORY: undeclared_identifier (421 errors)
     Line 26: use of undeclared identifier 'undefined6'
 
 ====================================================================================================
-CATEGORY: incompatible_types (331 errors)
+CATEGORY: incompatible_types (304 errors)
 ====================================================================================================
 
   engine_fileio.cpp_CCheckOutList_add_FUN_004b2d00
@@ -1796,60 +1682,6 @@ CATEGORY: incompatible_types (331 errors)
     Line 38: assigning to 'char *' from incompatible type 'LPVOID' (aka 'void *')
   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0
     Line 145: assigning to 'char *' from incompatible type 'byte[300]' (aka 'unsigned char[300]')
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullHeightPrintf_FUN_00489bb0
-    Line 15: assigning to 'char *' from incompatible type 'char *[1]'
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_00489c40
-    Line 15: assigning to 'char *' from incompatible type 'char *[1]'
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaPrintf_FUN_00489940
-    Line 15: assigning to 'char *' from incompatible type 'char *[1]'
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_00489a30
-    Line 15: assigning to 'char *' from incompatible type 'char *[1]'
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedPrintf_FUN_00489450
-    Line 15: assigning to 'char *' from incompatible type 'char *[1]'
-  engine_2d.c_drawTextCenteredAtColorFormatted_FUN_00402650
-    Line 15: assigning to 'char *' from incompatible type 'char *[1]'
-  engine_2d.c_drawTextCenteredAtFormatted_FUN_004022e0
-    Line 15: assigning to 'char *' from incompatible type 'char *[1]'
-  engine_2d.c_drawTextCenteredColorFormatted_FUN_00402730
-    Line 15: assigning to 'char *' from incompatible type 'char *[1]'
-  engine_2d.c_drawTextCenteredFormatted_FUN_004023c0
-    Line 15: assigning to 'char *' from incompatible type 'char *[1]'
-  engine_2d.c_drawTextColorFormatted_FUN_004024c0
-    Line 15: assigning to 'char *' from incompatible type 'char *[1]'
-  engine_2d.c_drawTextFormatted_FUN_00402150
-    Line 15: assigning to 'char *' from incompatible type 'char *[1]'
-  engine_2d.c_drawTextRightAlignedColorFormatted_FUN_00402580
-    Line 15: assigning to 'char *' from incompatible type 'char *[1]'
-  engine_2d.c_drawTextRightAlignedFormatted_FUN_00402210
-    Line 15: assigning to 'char *' from incompatible type 'char *[1]'
-  engine_console.cpp_CConsole_printf_FUN_00441890
-    Line 22: assigning to 'char *' from incompatible type 'char *[1]'
-  engine_font.cpp_CBitFont_drawTextCenterF_FUN_004cde20
-    Line 15: assigning to 'char *' from incompatible type 'char *[1]'
-  engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_004cdf30
-    Line 15: assigning to 'char *' from incompatible type 'char *[1]'
-  engine_font.cpp_CBitFont_drawTextF_FUN_004cdc20
-    Line 15: assigning to 'char *' from incompatible type 'char *[1]'
-  engine_font.cpp_CBitFont_printCenterF_FUN_004ce050
-    Line 14: assigning to 'char *' from incompatible type 'char *[1]'
-  engine_font.cpp_CBitFont_printF_FUN_004cdd20
-    Line 14: assigning to 'char *' from incompatible type 'char *[1]'
-  shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-    Line 21: assigning to 'char *' from incompatible type 'char *[1]'
-  shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870
-    Line 21: assigning to 'char *' from incompatible type 'char *[1]'
-  shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
-    Line 16: assigning to 'char *' from incompatible type 'char *[1]'
-  shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f180
-    Line 16: assigning to 'char *' from incompatible type 'char *[1]'
-  shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
-    Line 14: assigning to 'char *' from incompatible type 'char *[1]'
-  shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0
-    Line 14: assigning to 'char *' from incompatible type 'char *[1]'
-  shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0
-    Line 14: assigning to 'char *' from incompatible type 'char *[1]'
-  shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
-    Line 16: assigning to 'char *' from incompatible type 'char *[1]'
   cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690
     Line 23: assigning to 'char *' from incompatible type 'void *'
   core_script.cpp_CScript_editorAction_FUN_00564820
@@ -2158,7 +1990,7 @@ CATEGORY: syntax_error (51 errors)
   sound_sndmain.cpp_CSfxSlot_seek_FUN_005a8390
     Line 26: expected expression
   sound_sndwav.cpp_CWavInDevice_setMode_FUN_005b0f70
-    Line 121: expected expression
+    Line 123: expected expression
   wincore_winrun.cpp_mainWindowProc_FUN_005f3150
     Line 24: expected expression
 
@@ -2208,11 +2040,11 @@ CATEGORY: type_error (22 errors)
     Line 23: unknown type name 'undefined5'
 
 ====================================================================================================
-CATEGORY: missing_member (22 errors)
+CATEGORY: missing_member (20 errors)
 ====================================================================================================
 
   sound_sndwav.cpp_CWavInDevice_setMode_FUN_005b0f70
-    Line 35: no member named '_16_4_' in 'tWAVEFORMATEX'
+    Line 111: no member named '_18_2_' in 'tWAVEFORMATEX'
   core_actor.cpp_CDemonActor_ctor_FUN_004088b0
     Line 20: no member named 'unk15' in 'CDemonActor'
 

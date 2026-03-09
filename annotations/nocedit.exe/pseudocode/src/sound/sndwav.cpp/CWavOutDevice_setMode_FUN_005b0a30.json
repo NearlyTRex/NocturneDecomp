@@ -5,7 +5,7 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 153,
+    "assembly_lines": 154,
     "complexity_score": 188,
     "cross_reference_count": 0,
     "function_call_count": 6,
@@ -19,7 +19,7 @@
       "stack_param",
       "warning_inlined_function"
     ],
-    "total_lines": 221
+    "total_lines": 222
   },
   "cross_references": [],
   "function": {
@@ -32,7 +32,7 @@
     ],
     "convention": "__cdecl",
     "name": "sound_sndwav.cpp_CWavOutDevice_setMode_FUN_005b0a30",
-    "signature": "int __cdecl sound_sndwav_cpp_CWavOutDevice_setMode_FUN_005b0a30(CWavOutDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_samples_per_block)"
+    "signature": "int __cdecl sound_sndwav_cpp_CWavOutDevice_setMode_FUN_005b0a30(CWavOutDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_buffer_size)"
   },
   "function_calls": [
     {
@@ -244,7 +244,7 @@
       },
       {
         "is_param": true,
-        "name": "out_samples_per_block",
+        "name": "out_buffer_size",
         "offset": 20,
         "size": 4,
         "type": "int *"

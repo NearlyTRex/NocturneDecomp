@@ -32,6 +32,7 @@
 #include "types/enums/EGroundType.h"
 #include "types/enums/ELightActorType.h"
 #include "types/structs/SBug.h"
+#include "types/structs/SChainVertex.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SFire.h"
@@ -289,7 +290,7 @@ void __cdecl core_chain_cpp_staticInit_FUN_0042fb10(void);
 CChain * __cdecl core_chain_cpp_factoryFunc_FUN_0042fb40(void);
 CDemonActorType * __cdecl core_chain_cpp_CChain_getActorType_FUN_0042fb70(CChain *this_ptr);
 CChain * __cdecl core_chain_cpp_CChain_ctor_FUN_0042fb80(CChain *this_ptr);
-CVector3f * __cdecl core_chain_cpp_CChain_FUN_0042fcc0(CChain *this_ptr);
+CVector3f * __cdecl core_chain_cpp_CChain_getTargetBoneWorldPosition_FUN_0042fcc0(CChain *this_ptr,CVector3f *out_point);
 void __cdecl core_chain_cpp_CChain_setup_FUN_0042fd20(CChain *this_ptr);
-void __cdecl core_chain_cpp_CChain_FUN_0042fed0(CChain *this_ptr);
+void __cdecl core_chain_cpp_CChain_constrainSegmentDistance_FUN_0042fed0(CChain *this_ptr,SChainVertex *vertex_a,SChainVertex *vertex_b);
 

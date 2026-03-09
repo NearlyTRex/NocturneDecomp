@@ -2,40 +2,46 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "missing_member",
-        "column": 13,
-        "line": 35,
-        "message": "no member named '_16_4_' in 'tWAVEFORMATEX'"
+        "category": "other",
+        "column": 25,
+        "line": 36,
+        "message": "member reference base type 'byte[44]' (aka 'unsigned char[44]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 31,
+        "line": 110,
+        "message": "member reference base type 'DWORD' (aka 'unsigned long') is not a structure or union"
       },
       {
         "category": "missing_member",
-        "column": 85,
-        "line": 42,
-        "message": "no member named '_16_4_' in 'tWAVEFORMATEX'"
+        "column": 17,
+        "line": 111,
+        "message": "no member named '_18_2_' in 'tWAVEFORMATEX'"
+      },
+      {
+        "category": "other",
+        "column": 31,
+        "line": 112,
+        "message": "member reference base type 'DWORD' (aka 'unsigned long') is not a structure or union"
+      },
+      {
+        "category": "missing_member",
+        "column": 17,
+        "line": 116,
+        "message": "no member named '_12_4_' in 'tWAVEFORMATEX'"
       },
       {
         "category": "undeclared_identifier",
         "column": 16,
-        "line": 121,
+        "line": 123,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 22,
-        "line": 121,
+        "line": 123,
         "message": "expected expression"
-      },
-      {
-        "category": "missing_member",
-        "column": 15,
-        "line": 125,
-        "message": "no member named '_16_4_' in 'tWAVEFORMATEX'"
-      },
-      {
-        "category": "missing_member",
-        "column": 34,
-        "line": 125,
-        "message": "no member named '_16_4_' in 'tWAVEFORMATEX'"
       }
     ],
     "success": false,
@@ -43,20 +49,20 @@
   },
   "complexity": {
     "assembly_lines": 284,
-    "complexity_score": 329,
+    "complexity_score": 341,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 30,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 119,
-    "suspect_count": 19,
+    "pseudocode_lines": 121,
+    "suspect_count": 20,
     "suspect_types": [
       "pointer_cast",
       "stack_param",
       "unknown_field",
       "unresolved_funcptr"
     ],
-    "total_lines": 403
+    "total_lines": 405
   },
   "cross_references": [],
   "function": {
@@ -69,7 +75,7 @@
     ],
     "convention": "__cdecl",
     "name": "sound_sndwav.cpp_CWavInDevice_setMode_FUN_005b0f70",
-    "signature": "int __cdecl sound_sndwav_cpp_CWavInDevice_setMode_FUN_005b0f70(CWavInDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_samples_per_block)"
+    "signature": "int __cdecl sound_sndwav_cpp_CWavInDevice_setMode_FUN_005b0f70(CWavInDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int stereo_flag)"
   },
   "function_calls": [
     {
@@ -257,19 +263,19 @@
     },
     {
       "addr": "03f6af28",
-      "name": "g_WaveInRequestedChannels",
+      "name": "g_WaveInRequestedBitsPerSample",
       "type": "int",
       "value": null
     },
     {
       "addr": "03f6af2c",
-      "name": "g_WaveInRequestedSampleRate",
+      "name": "g_WaveInRequestedChannels",
       "type": "int",
       "value": null
     },
     {
       "addr": "03f6af30",
-      "name": "g_WaveInRequestedBitsPerSample",
+      "name": "g_WaveInRequestedSampleRate",
       "type": "int",
       "value": null
     },
@@ -328,12 +334,19 @@
     "pcode_op_count": 1336
   },
   "stack_frame": {
-    "frame_size": 24,
-    "local_size": 4,
+    "frame_size": 64,
+    "local_size": 44,
     "param_offset": 4,
     "param_size": 20,
     "return_addr_offset": 0,
     "variables": [
+      {
+        "is_param": false,
+        "name": "WStack_28",
+        "offset": -40,
+        "size": 20,
+        "type": "WAVEFORMATEX"
+      },
       {
         "is_param": true,
         "name": "this_ptr",
@@ -364,10 +377,10 @@
       },
       {
         "is_param": true,
-        "name": "out_samples_per_block",
+        "name": "stereo_flag",
         "offset": 20,
         "size": 4,
-        "type": "int *"
+        "type": "int"
       }
     ]
   },
@@ -382,7 +395,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 27,
+      "line": 28,
       "match": "in_stack_00000018",
       "severity": "moderate",
       "text": "g_WaveInStereoRequested = (int)(in_stack_00000018 != 0);",
@@ -390,31 +403,23 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 28,
-      "match": "._16_4_",
+      "line": 29,
+      "match": "._40_4_",
       "severity": "mild",
-      "text": "WStack_24._16_4_ = tStack_54.dwFormats;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 35,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "if ((*(uint *)((int)&g_WaveInFormatTable[0].format_flags + iVar8) & WStack_24._16_4_) != 0) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 35,
-      "match": "._16_4_",
-      "severity": "mild",
-      "text": "if ((*(uint *)((int)&g_WaveInFormatTable[0].format_flags + iVar8) & WStack_24._16_4_) != 0) {",
+      "text": "uStack_14 = auStack_54._40_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
       "line": 36,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "if ((*(uint *)((int)&g_WaveInFormatTable[0].format_flags + iVar8) & uStack_14) != 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 37,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "uVar4 = (uint)(channels < *(int *)((int)&g_WaveInFormatTable[0].bits_per_sample + iVar8));",
@@ -422,7 +427,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 37,
+      "line": 38,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (*(int *)((int)&g_WaveInFormatTable[0].bits_per_sample + iVar8) < channels) {",
@@ -433,20 +438,20 @@
       "line": 41,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)&g_WaveInFormatTable[0].sample_rate + iVar8)) {",
+      "text": "if (g_WaveInRequestedSampleRate < *(int *)((int)&g_WaveInFormatTable[0].sample_rate + iVar8)",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 44,
+      "line": 45,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "if (*(int *)((int)&g_WaveInFormatTable[0].sample_rate + iVar8) <",
+      "text": "if (*(int *)((int)&g_WaveInFormatTable[0].sample_rate + iVar8) < g_WaveInRequestedSampleRate",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 48,
+      "line": 49,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (sample_rate < *(int *)((int)&g_WaveInFormatTable[0].channels + iVar8)) {",
@@ -454,7 +459,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 51,
+      "line": 52,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (*(int *)((int)&g_WaveInFormatTable[0].channels + iVar8) < sample_rate) {",
@@ -462,7 +467,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 86,
+      "line": 87,
       "match": "(HGLOBAL *)((int)",
       "severity": "mild",
       "text": "*(HGLOBAL *)((int)g_WaveInBufferHandles + iVar8) = pvVar5;",
@@ -470,7 +475,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 89,
+      "line": 90,
       "match": "(LPVOID *)((int)",
       "severity": "mild",
       "text": "*(LPVOID *)((int)g_WaveInBuffers + iVar8) = pvVar6;",
@@ -478,7 +483,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 92,
+      "line": 93,
       "match": "(HGLOBAL *)((int)",
       "severity": "mild",
       "text": "*(HGLOBAL *)((int)g_WaveInHeaderHandles + iVar8) = pvVar5;",
@@ -486,7 +491,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 95,
+      "line": 96,
       "match": "(HGLOBAL *)((int)",
       "severity": "mild",
       "text": "pvVar6 = (*g_GlobalLockFunc)(*(HGLOBAL *)((int)g_WaveInHeaderHandles + iVar8));",
@@ -494,35 +499,51 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 97,
+      "line": 98,
       "match": "(LPVOID *)((int)",
       "severity": "mild",
       "text": "*(LPVOID *)((int)g_WaveInHeaders + iVar8) = pvVar6;",
       "type": "pointer_cast"
     },
     {
+      "description": "Unknown/mangled field access",
+      "line": 103,
+      "match": "._0_2_",
+      "severity": "mild",
+      "text": "WStack_28.nSamplesPerSec._0_2_ = 1;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 104,
+      "match": "._18_2_",
+      "severity": "mild",
+      "text": "WStack_28._18_2_ = (ushort)g_WaveInBitsPerSample;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 105,
+      "match": "._2_2_",
+      "severity": "mild",
+      "text": "WStack_28.nSamplesPerSec._2_2_ = (short)g_WaveInChannels;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 109,
+      "match": "._12_4_",
+      "severity": "mild",
+      "text": "WStack_28._12_4_ = g_WaveInSampleRate * (uint)WStack_28.cbSize;",
+      "type": "unknown_field"
+    },
+    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 114,
+      "line": 116,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar7 = (*(code *)**(uint **)bits_per_sample)(bits_per_sample);",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 118,
-      "match": "._16_4_",
-      "severity": "mild",
-      "text": "WStack_24._16_4_ = WStack_24._16_4_ & ~g_WaveInFormatTable[iVar2].format_flags;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 118,
-      "match": "._16_4_",
-      "severity": "mild",
-      "text": "WStack_24._16_4_ = WStack_24._16_4_ & ~g_WaveInFormatTable[iVar2].format_flags;",
-      "type": "unknown_field"
     }
   ],
   "vtable_info": {

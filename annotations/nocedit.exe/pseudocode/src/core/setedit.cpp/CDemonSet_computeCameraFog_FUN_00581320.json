@@ -3,8 +3,14 @@
     "errors": [
       {
         "category": "format_error",
+        "column": 16,
+        "line": 23,
+        "message": "format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
         "column": 45,
-        "line": 24,
+        "line": 25,
         "message": "format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror,-Wformat]"
       }
     ],
@@ -13,15 +19,15 @@
   },
   "complexity": {
     "assembly_lines": 123,
-    "complexity_score": 43,
+    "complexity_score": 44,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 10,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 43,
+    "pseudocode_lines": 44,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 166
+    "total_lines": 167
   },
   "cross_references": [
     {
@@ -91,7 +97,7 @@
     },
     {
       "addr": "0049e790",
-      "is_variadic": false,
+      "is_variadic": true,
       "name": "shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790"
     },
     {

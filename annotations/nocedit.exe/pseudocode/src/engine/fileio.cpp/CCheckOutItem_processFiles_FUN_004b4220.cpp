@@ -173,13 +173,13 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_processFiles_FUN_004b4220(CCheckOutI
     pcVar11 = pcVar11 + 2;
   } while (cVar1 != '\0');
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-            (g_CEditorToolsPtr,"Reading %s");
+            (g_CEditorToolsPtr,"Reading %s",local_964);
   local_3c = engine_fileio_cpp_findMaxFieldInTimestampFile_FUN_004b2640((char *)operation_mode);
   if (local_3c < 0) {
     return 0;
   }
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-            (g_CEditorToolsPtr,"Opening local file %s");
+            (g_CEditorToolsPtr,"Opening local file %s",&local_e0c);
   local_24 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                        (local_e0c.found_path,(char *)0x0,"rb","..\\engine\\fileio.cpp",
                         0x567);
@@ -219,7 +219,7 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_processFiles_FUN_004b4220(CCheckOutI
     pcVar11 = pcVar11 + 2;
   } while (cVar1 != '\0');
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-            (g_CEditorToolsPtr,"Creating temporary network file %s...");
+            (g_CEditorToolsPtr,"Creating temporary network file %s...",local_a68);
   engine_dosio_c_setFileAttributes_FUN_004819f0(local_a68,0);
   remove(local_a68);
   p_Var2 = shape_memdbg_cpp_openFile_FUN_0050f7a0
@@ -277,7 +277,7 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_processFiles_FUN_004b4220(CCheckOutI
       local_50.items = (CCheckOutItem *)0x0;
       if (local_34 == (_FILE *)0x0) {
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-                  (g_CEditorToolsPtr,"Grabbing %s...");
+                  (g_CEditorToolsPtr,"Grabbing %s...",local_860);
         do {
           p_Var2 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                              (local_860,(char *)0x0,"r+t","..\\engine\\fileio.cpp",
@@ -317,7 +317,7 @@ LAB_004b4ad9:
       else {
 LAB_004b4980:
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-                  (g_CEditorToolsPtr,"Finalizing %s to network...");
+                  (g_CEditorToolsPtr,"Finalizing %s to network...",operation_mode);
         engine_2d_c_clearInputAndWait_FUN_00403260();
         iVar6 = 0;
         while( true ) {

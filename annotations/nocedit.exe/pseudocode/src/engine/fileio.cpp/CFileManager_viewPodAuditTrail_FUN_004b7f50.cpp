@@ -69,7 +69,7 @@ void __cdecl engine_fileio_cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50(CFile
     return;
   }
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-            (g_CEditorToolsPtr,"Reading %d audit records from %s");
+            (g_CEditorToolsPtr,"Reading %d audit records from %s",local_cdc.audit_count,local_508);
   record_index = 0;
   shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_8b0);
   iVar2 = local_14;

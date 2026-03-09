@@ -11862,7 +11862,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_chain.cpp_CChain_FUN_0042fcc0",
+    "name":"core_chain.cpp_CChain_getTargetBoneWorldPosition_FUN_0042fcc0",
     "ret":"CVector3f*",
     "vars":{
       "locals":[
@@ -11899,6 +11899,22 @@
             ]
           },
           "type":"CChain*"
+        },
+        {
+          "name":"out_point",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
         }
       ],
       "ret_storage":{
@@ -11924,9 +11940,27 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_chain.cpp_FUN_00431340",
+    "name":"core_chain.cpp_passthroughInt_FUN_00431340",
     "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"value",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ],
       "ret_storage":{
         "reg":"EAX",
         "size":4,
@@ -28963,13 +28997,13 @@
         {
           "name":"format",
           "storage":{
-            "offset":20,
+            "offset":16,
             "size":4,
             "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0x14]",
-                "offset":20,
+                "addr":"Stack[0x10]",
+                "offset":16,
                 "size":4
               }
             ]

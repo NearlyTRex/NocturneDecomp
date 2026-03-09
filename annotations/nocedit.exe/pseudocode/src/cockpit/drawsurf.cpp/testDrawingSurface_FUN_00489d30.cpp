@@ -107,20 +107,20 @@ void __cdecl cockpit_drawsurf_cpp_testDrawingSurface_FUN_00489d30(CBitFont *test
     cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedPrintf_FUN_00489450
               (&local_44,1,1,"%s",local_24);
     cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedVariantPrintf_FUN_00489520
-              (&local_44,199,1,local_24,"%s");
+              (&local_44,199,1,"%s",local_24);
     cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredPrintf_FUN_004895f0
-              (&local_44,100,1,local_24,"%s");
+              (&local_44,100,1,"%s",local_24);
     iVar2 = iVar1 + 1;
     cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedVCenteredPrintf_FUN_004896c0
-              (&local_44,100,iVar2,local_24,"%s");
+              (&local_44,100,iVar2,"%s",local_24);
     local_10 = iVar1 * 2;
     local_c = local_10 + 1;
     cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredBothPrintf_FUN_00489790
-              (&local_44,100,local_c,local_24,"%s");
+              (&local_44,100,local_c,"%s",local_24);
     local_1c = iVar1 * 3;
     local_20 = iVar3 + iVar1 * -3;
     cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInBoundsPrintf_FUN_00489860
-              (&local_44,0x32,0x96,local_20,local_24,"%s");
+              (&local_44,0x32,0x96,local_20,"%s",local_24);
     local_14 = iVar3 - local_10;
     cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInAreaPrintf_FUN_00489940
               (&local_44,100,local_14 + -0x32,local_14 + 0x32,"%s",local_24);
@@ -152,16 +152,16 @@ void __cdecl cockpit_drawsurf_cpp_testDrawingSurface_FUN_00489d30(CBitFont *test
     cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedPrintf_FUN_00489450
               (&local_84,1,1,"%s",local_24);
     cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedVariantPrintf_FUN_00489520
-              (&local_84,199,1,local_24,"%s");
+              (&local_84,199,1,"%s",local_24);
     cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredPrintf_FUN_004895f0
-              (&local_84,100,1,local_24,"%s");
+              (&local_84,100,1,"%s",local_24);
     cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedVCenteredPrintf_FUN_004896c0
-              (&local_84,100,iVar2,local_24,"%s");
+              (&local_84,100,iVar2,"%s",local_24);
     cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredBothPrintf_FUN_00489790
-              (&local_84,100,local_c,local_24,"%s");
+              (&local_84,100,local_c,"%s",local_24);
     local_18 = iVar4 - local_1c;
     cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInBoundsPrintf_FUN_00489860
-              (&local_84,0x32,0x96,local_18,local_24,"%s");
+              (&local_84,0x32,0x96,local_18,"%s",local_24);
     iVar3 = iVar4 - local_10;
     cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInAreaPrintf_FUN_00489940
               (&local_84,100,iVar3 + -0x32,iVar3 + 0x32,"%s",local_24);

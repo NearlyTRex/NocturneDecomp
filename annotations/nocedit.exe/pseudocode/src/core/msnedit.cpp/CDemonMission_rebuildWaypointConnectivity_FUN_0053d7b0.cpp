@@ -13,15 +13,17 @@ void __cdecl core_msnedit_cpp_CDemonMission_rebuildWaypointConnectivity_FUN_0053
   int iVar2;
   int iVar3;
   int set_index;
+  char (*local_14) [256];
   
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Preparing actors.");
   set_index = 0;
   core_mission_cpp_CDemonMission_prepareAllActors_FUN_00523cf0(this_ptr);
   if (0 < this_ptr->num_sets) {
+    local_14 = this_ptr->set_names;
     do {
       shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-                (g_CEditorToolsPtr,"Rebuilding waypoint connectivity in set %s");
+                (g_CEditorToolsPtr,"Rebuilding waypoint connectivity in set %s",local_14);
       core_mission_cpp_CDemonMission_loadSet_FUN_00523fb0(this_ptr,set_index);
       iVar2 = 0;
       core_mission_cpp_CDemonMission_buildSetActorList_FUN_00523e60(this_ptr);
@@ -31,6 +33,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_rebuildWaypointConnectivity_FUN_0053
         core_waypoint_cpp_CWayPoint_rebuildConnectivity_FUN_005ec4f0((CWayPoint *)*puVar1);
       }
       set_index = set_index + 1;
+      local_14 = local_14 + 1;
     } while (set_index < this_ptr->num_sets);
   }
   return;

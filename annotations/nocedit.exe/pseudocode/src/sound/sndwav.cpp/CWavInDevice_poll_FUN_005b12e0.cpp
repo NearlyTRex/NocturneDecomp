@@ -24,8 +24,8 @@ int __cdecl sound_sndwav_cpp_CWavInDevice_poll_FUN_005b12e0(CWavInDevice *this_p
     if (g_WaveInBuffers[g_WaveInCurrentBufferIndex] == (LPVOID)0x0) {
       return -1;
     }
-    iVar1 = ((g_WaveInBufferSizeSamples - g_WaveInCurrentSampleOffset) *
-            g_WaveInRequestedBitsPerSample) / g_WaveInSampleRate;
+    iVar1 = ((g_WaveInBufferSizeSamples - g_WaveInCurrentSampleOffset) * g_WaveInRequestedSampleRate
+            ) / g_WaveInSampleRate;
     if (num_samples < iVar1) {
       iVar1 = num_samples;
     }
@@ -34,13 +34,12 @@ int __cdecl sound_sndwav_cpp_CWavInDevice_poll_FUN_005b12e0(CWavInDevice *this_p
                 (g_WaveInBitsPerSample,g_WaveInChannels,g_WaveInSampleRate,(uint)bVar5,
                  (short *)(g_WaveInCurrentSampleOffset * iVar3 +
                           (int)g_WaveInBuffers[g_WaveInCurrentBufferIndex]),
-                 g_WaveInRequestedChannels,g_WaveInRequestedSampleRate,
-                 g_WaveInRequestedBitsPerSample,g_WaveInStereoRequested,output_buffer,iVar1);
+                 g_WaveInRequestedBitsPerSample,g_WaveInRequestedChannels,
+                 g_WaveInRequestedSampleRate,g_WaveInStereoRequested,output_buffer,iVar1);
       output_buffer = (short *)((int)output_buffer + iVar3 * iVar1);
       num_samples = num_samples - iVar1;
       g_WaveInCurrentSampleOffset =
-           g_WaveInCurrentSampleOffset +
-           (g_WaveInSampleRate * iVar1) / g_WaveInRequestedBitsPerSample;
+           g_WaveInCurrentSampleOffset + (g_WaveInSampleRate * iVar1) / g_WaveInRequestedSampleRate;
       iVar4 = iVar4 + iVar1;
     }
     if (num_samples < 1) {

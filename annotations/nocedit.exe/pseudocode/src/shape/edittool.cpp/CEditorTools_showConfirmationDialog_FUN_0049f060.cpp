@@ -13,10 +13,10 @@ int __cdecl shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060(
   CStrList local_18;
   va_list_t local_8;
   
-  local_8.value[0] = (char * [1])&stack0x0000000c;
+  VA_START_T(local_8, format_string);
   _vsprintf
-            (g_ConfirmationMessageBuffer + 0x400,format_string,(va_list_t)&local_8);
-  local_8.value[0] = (char * [1])(char *)0x0;
+            (g_ConfirmationMessageBuffer + 0x400,format_string,local_8);
+  VA_END_T(local_8);
   shape_edittool_cpp_CStrList_ctor_FUN_004a2a20(&local_18);
   shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_18,"^Yes, I know what I'm doing and I hate these annoying prompts.");
   shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_18,"^No, please, I didn't mean to do it!");

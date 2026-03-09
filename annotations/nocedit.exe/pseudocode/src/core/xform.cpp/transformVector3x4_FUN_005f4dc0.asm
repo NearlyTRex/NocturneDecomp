@@ -17,7 +17,7 @@
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90 at 0041c67e
 ;   core_bride.cpp_CBride_getTargetPoint_FUN_00424aa0 at 00424af2
 ;   core_bugs.cpp_CBugs_updateBugRenderingData_FUN_004268e0 at 00426ace
-;   core_chain.cpp_CChain_FUN_0042fcc0 at 0042fcf8
+;   core_chain.cpp_CChain_getTargetBoneWorldPosition_FUN_0042fcc0 at 0042fcf8
 ;   core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_0042bd30 at 0042bf07
 ;   ... and 42 more
 ;

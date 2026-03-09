@@ -285,7 +285,7 @@ section .text
     MOV ECX,dword ptr [0x00678a60]      ; 004b4450 | g_CEditorToolsPtr
     PUSH ECX                            ; 004b4456 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 004b4457
-        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
+        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004b445c
     LEA EAX,[ESP + 0xa64]               ; 004b445f
     PUSH EAX                            ; 004b4466
@@ -459,7 +459,7 @@ section .text
     MOV EDI,dword ptr [0x00678a60]      ; 004b45e3 | g_CEditorToolsPtr
     PUSH EDI                            ; 004b45e9 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 004b45ea
-        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
+        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004b45ef
     PUSH 0x567                          ; 004b45f2
     PUSH 0x626bed                       ; 004b45f7 | = "..\\engine\\fileio.cpp"
@@ -481,7 +481,7 @@ section .text
     MOV EAX,[0x00678a60]                ; 004b4630 | g_CEditorToolsPtr
     PUSH EAX                            ; 004b4635 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 004b4636
-        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
+        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004b463b
     CALL engine_fileio.cpp_logOnAsVersionControlUser_FUN_004b2770 ; 004b463e
         ;   XREF to: 004b2770 (UNCONDITIONAL_CALL)  ; int engine_fileio.cpp_logOnAsVersionControlUser_FUN_004b2770()
@@ -545,7 +545,7 @@ section .text
     MOV EDX,dword ptr [0x00678a60]      ; 004b46e2 | g_CEditorToolsPtr
     PUSH EDX                            ; 004b46e8 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 004b46e9
-        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
+        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004b46ee
     PUSH 0x0                            ; 004b46f1
     LEA EAX,[ESP + 0x964]               ; 004b46f3
@@ -670,7 +670,7 @@ section .text
     MOV ESI,dword ptr [0x00678a60]      ; 004b483f | g_CEditorToolsPtr
     PUSH ESI                            ; 004b4845 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 004b4846
-        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
+        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004b484b
     MOV EDI,dword ptr [ESP + 0x7c0]     ; 004b484e
     PUSH EDI                            ; 004b4855
@@ -781,7 +781,7 @@ section .text
     MOV EBX,dword ptr [0x00678a60]      ; 004b4989 | g_CEditorToolsPtr
     PUSH EBX                            ; 004b498f | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 004b4990
-        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
+        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004b4995
     CALL engine_2d.c_clearInputAndWait_FUN_00403260 ; 004b4998
         ;   XREF to: 00403260 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403260()
@@ -871,7 +871,7 @@ section .text
     PUSH EDX                            ; 004b4a91 | g_CEditorToolsInstance
     LEA EDI,[ESP + 0xb74]               ; 004b4a92
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 004b4a99
-        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
+        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004b4a9e
     PUSH 0x153                          ; 004b4aa1
         ;   Label: LAB_004b4aa1
