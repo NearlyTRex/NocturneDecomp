@@ -2,21 +2,24 @@
 // Address: 0053b030
 // Address Range: [[0053b030, 0053b507]]
 // Convention: __cdecl
-// Signature: void __cdecl core_msnedit_cpp_CDemonMission_editActorAtIndex_FUN_0053b030(CDemonMission *this_ptr,int param_2)
+// Signature: void __cdecl core_msnedit_cpp_CDemonMission_editActorAtIndex_FUN_0053b030(CDemonMission *this_ptr,CActorProperty *property)
 
 #include "nocturne.h"
 
-void __cdecl core_msnedit_cpp_CDemonMission_editActorAtIndex_FUN_0053b030(CDemonMission *this_ptr,int param_2)
+void __cdecl core_msnedit_cpp_CDemonMission_editActorAtIndex_FUN_0053b030(CDemonMission *this_ptr,CActorProperty *property)
 
 {
-  byte *pbVar1;
-  char cVar2;
-  int iVar3;
+  code *pcVar1;
+  byte *pbVar2;
+  code cVar3;
+  char cVar4;
+  int iVar5;
   CDemonActor *actor;
-  int iVar4;
-  char *pcVar5;
-  char *pcVar6;
+  int iVar6;
   char *pcVar7;
+  char *pcVar8;
+  CActorPropertyActionFunc *pCVar9;
+  char *pcVar10;
   CActorPropertyList CStack_2bb0;
   CPickList local_6ac;
   char acStack_304 [300];
@@ -32,33 +35,33 @@ void __cdecl core_msnedit_cpp_CDemonMission_editActorAtIndex_FUN_0053b030(CDemon
   int iStack_14;
   
   shape_edittool_cpp_CStrList_ctor_FUN_004a2a20(&local_38);
-  pcVar7 = *(char **)(param_2 + 0x68);
-  cVar2 = *pcVar7;
-  while (cVar2 != '\0') {
-    cVar2 = *pcVar7;
-    if ((((g_CharacterClassificationTable[(byte)(cVar2 + 1)] & 0xe0) == 0) && (cVar2 != '-')) &&
-       (cVar2 != '_')) {
-      pcVar7 = pcVar7 + 1;
+  pCVar9 = (property->data).v_action_func_ptr;
+  cVar3 = *pCVar9;
+  while (cVar3 != (code)0x0) {
+    cVar4 = (char)*pCVar9;
+    if ((((g_CharacterClassificationTable[(byte)(cVar4 + 1)] & 0xe0) == 0) && (cVar4 != '-')) &&
+       (cVar4 != '_')) {
+      pCVar9 = pCVar9 + 1;
     }
     else {
-      pcVar5 = local_110;
+      pcVar7 = local_110;
       do {
         do {
-          *pcVar5 = *pcVar7;
-          pbVar1 = (byte *)(pcVar7 + 1);
-          local_28 = (uint)*pbVar1;
+          *pcVar7 = (char)*pCVar9;
+          pcVar1 = pCVar9 + 1;
+          local_28 = (uint)(byte)*pcVar1;
+          pCVar9 = pCVar9 + 1;
           pcVar7 = pcVar7 + 1;
-          pcVar5 = pcVar5 + 1;
-        } while ((g_CharacterClassificationTable[(byte)(*pbVar1 + 1)] & 0xe0) != 0);
+        } while ((g_CharacterClassificationTable[(byte)((char)*pcVar1 + 1)] & 0xe0) != 0);
       } while ((local_28 == 0x2d) || (local_28 == 0x5f));
-      *pcVar5 = '\0';
-      iVar3 = _stricmp(local_110,"none");
-      if ((iVar3 != 0) &&
-         (iVar3 = _stricmp(local_110,"true"), iVar3 != 0)) {
+      *pcVar7 = '\0';
+      iVar5 = _stricmp(local_110,"none");
+      if ((iVar5 != 0) &&
+         (iVar5 = _stricmp(local_110,"true"), iVar5 != 0)) {
         shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_38,local_110);
       }
     }
-    cVar2 = *pcVar7;
+    cVar3 = *pCVar9;
   }
   core_mission_cpp_CDemonMission_countActors_FUN_00523cc0(this_ptr);
   shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_6ac);
@@ -71,7 +74,8 @@ void __cdecl core_msnedit_cpp_CDemonMission_editActorAtIndex_FUN_0053b030(CDemon
       }
       else {
         shape_edittool_cpp_CStrList_sort_FUN_004a2ec0(&local_6ac.base);
-        _sprintf(acStack_304,"Actors relevent to \"%s\"",param_2 + 4);
+        _sprintf
+                  (acStack_304,"Actors relevent to \"%s\"",property->name);
         pcVar7 = (char *)shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                                    (&local_6ac,acStack_304,-1,0);
         if (-1 < (int)pcVar7) {
@@ -91,8 +95,8 @@ void __cdecl core_msnedit_cpp_CDemonMission_editActorAtIndex_FUN_0053b030(CDemon
     if (0 < local_38.item_count) {
       do {
         pcVar7 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_38,iStack_1c);
-        iVar3 = _stricmp(pcVar7,local_18->actor_name);
-        if (iVar3 == 0) {
+        iVar5 = _stricmp(pcVar7,local_18->actor_name);
+        if (iVar5 == 0) {
           _sprintf(acStack_304,"%s\tReferenced by name",local_18);
           shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_6ac.base,acStack_304);
         }
@@ -100,51 +104,51 @@ void __cdecl core_msnedit_cpp_CDemonMission_editActorAtIndex_FUN_0053b030(CDemon
         if (0 < CStack_2bb0.count) {
           pcStack_24 = CStack_2bb0.properties[0].name;
           do {
-            iVar3 = iStack_14;
+            iVar5 = iStack_14;
             if (CStack_2bb0.properties[iStack_14].type == PROP_BUTTON) {
               shape_edittool_cpp_CStrList_ctor_FUN_004a2a20(&CStack_48);
-              pcVar5 = CStack_2bb0.properties[iVar3].data.v_string_ptr;
-              cVar2 = *pcVar5;
-              while (cVar2 != '\0') {
-                cVar2 = *pcVar5;
-                if ((((g_CharacterClassificationTable[(byte)(cVar2 + 1)] & 0xe0) == 0) &&
-                    (cVar2 != '-')) && (cVar2 != '_')) {
-                  pcVar5 = pcVar5 + 1;
+              pcVar10 = CStack_2bb0.properties[iVar5].data.v_string_ptr;
+              cVar4 = *pcVar10;
+              while (cVar4 != '\0') {
+                cVar4 = *pcVar10;
+                if ((((g_CharacterClassificationTable[(byte)(cVar4 + 1)] & 0xe0) == 0) &&
+                    (cVar4 != '-')) && (cVar4 != '_')) {
+                  pcVar10 = pcVar10 + 1;
                 }
                 else {
-                  pcVar6 = acStack_1d8;
+                  pcVar8 = acStack_1d8;
                   do {
                     do {
-                      *pcVar6 = *pcVar5;
-                      pbVar1 = (byte *)(pcVar5 + 1);
-                      uStack_20 = (uint)*pbVar1;
-                      pcVar5 = pcVar5 + 1;
-                      pcVar6 = pcVar6 + 1;
-                    } while ((g_CharacterClassificationTable[(byte)(*pbVar1 + 1)] & 0xe0) != 0);
+                      *pcVar8 = *pcVar10;
+                      pbVar2 = (byte *)(pcVar10 + 1);
+                      uStack_20 = (uint)*pbVar2;
+                      pcVar10 = pcVar10 + 1;
+                      pcVar8 = pcVar8 + 1;
+                    } while ((g_CharacterClassificationTable[(byte)(*pbVar2 + 1)] & 0xe0) != 0);
                   } while ((uStack_20 == 0x2d) || (uStack_20 == 0x5f));
-                  *pcVar6 = '\0';
-                  iVar3 = _stricmp(acStack_1d8,"none");
-                  if ((iVar3 != 0) &&
-                     (iVar3 = _stricmp(acStack_1d8,"true"),
-                     iVar3 != 0)) {
+                  *pcVar8 = '\0';
+                  iVar5 = _stricmp(acStack_1d8,"none");
+                  if ((iVar5 != 0) &&
+                     (iVar5 = _stricmp(acStack_1d8,"true"),
+                     iVar5 != 0)) {
                     shape_edittool_cpp_CStrList_add_FUN_004a2b80(&CStack_48,acStack_1d8);
                   }
                 }
-                cVar2 = *pcVar5;
+                cVar4 = *pcVar10;
               }
-              iVar3 = 0;
+              iVar5 = 0;
               if (0 < CStack_48.item_count) {
                 do {
-                  pcVar5 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&CStack_48,iVar3);
-                  iVar4 = _stricmp(pcVar7,pcVar5);
-                  if (iVar4 == 0) {
+                  pcVar10 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&CStack_48,iVar5);
+                  iVar6 = _stricmp(pcVar7,pcVar10);
+                  if (iVar6 == 0) {
                     _sprintf
                               (acStack_304,"%s\tRaises \"%s\" in \"%s\"",local_18,pcVar7,pcStack_24);
                     shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_6ac.base,acStack_304);
                     break;
                   }
-                  iVar3 = iVar3 + 1;
-                } while (iVar3 < CStack_48.item_count);
+                  iVar5 = iVar5 + 1;
+                } while (iVar5 < CStack_48.item_count);
               }
               shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&CStack_48,0);
             }

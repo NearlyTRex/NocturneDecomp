@@ -12,8 +12,8 @@
 ;
 ; XREF[3]:
 ;   shape_meshlod.cpp_CLodMesh_getLOD_FUN_0051b920 at 0051b94d
+;   shape_meshlod.cpp_CLodMesh_initializeFromPrecomputedData_FUN_0051b8a0 at 0051b8e4
 ;   shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_00516d50 at 00516dc2
-;   shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_0051b8a0 at 0051b8e4
 ;
 ; Called Functions:
 ;   shape_meshlod.cpp_CLodEdge_addAdjacentFace_FUN_00515ca0

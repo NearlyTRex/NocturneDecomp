@@ -79,7 +79,7 @@ void __cdecl core_game_cpp_CGame_processHotkeys_FUN_004dcee0(CGame *this_ptr)
     iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LMENU);
     if ((iVar4 != 0) &&
        (iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_M), iVar4 != 0)) {
-      DAT_02f43978 = (uint)(DAT_02f43978 == 0);
+      INT_02f43978 = (int)(INT_02f43978 == 0);
     }
     if (((this_ptr->subtitle_system_enabled == 0) &&
         (iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_F5), iVar4 != 0)) ||

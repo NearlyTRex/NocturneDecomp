@@ -39,17 +39,17 @@ void __cdecl CNPC::renderBackground(CNPC *this_ptr,int layer_flag);
 // Address: 00544ba0
 void __cdecl CNPC::archive(CNPC *this_ptr);
 
-// Original: core_npc.cpp_CNPC_FUN_00544c50
+// Original: core_npc.cpp_CNPC_setRandomMotionVariant_FUN_00544c50
 // Address: 00544c50
-int __cdecl CNPC(CNPC *this_ptr);
+int __cdecl CNPC::setRandomMotionVariant(CNPC *this_ptr,char *motion_name);
 
 // Original: core_npc.cpp_CNPC_processDamage_FUN_00544d30
 // Address: 00544d30
 void __cdecl CNPC::processDamage(CNPC *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_npc.cpp_CNPC_FUN_00544e10
+// Original: core_npc.cpp_CNPC_isInvulnerable_FUN_00544e10
 // Address: 00544e10
-int __cdecl CNPC(CNPC *this_ptr);
+int __cdecl CNPC::isInvulnerable(CNPC *this_ptr);
 
 // Original: core_npc.cpp_CNPC_getPathMap_FUN_00544e30
 // Address: 00544e30

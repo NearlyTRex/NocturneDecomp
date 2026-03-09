@@ -81,4 +81,4 @@ int __cdecl CGround::getHeightAtPosition(CGround *this_ptr,int world_x,int world
 
 // Original: core_ground.cpp_CGround_getNormalAtPosition_FUN_004effb0
 // Address: 004effb0
-void __cdecl CGround::getNormalAtPosition(CGround *this_ptr,int world_x,int world_z,CVector3i *out_normal);
+CVector3i * __stack3_esi CGround::getNormalAtPosition(CGround *this_ptr,int world_x,int world_z,CVector3i *out_normal);

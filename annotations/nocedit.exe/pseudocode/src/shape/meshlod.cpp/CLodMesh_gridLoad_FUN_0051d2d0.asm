@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_0051b8a0 at 0051b8db
+;   shape_meshlod.cpp_CLodMesh_initializeFromPrecomputedData_FUN_0051b8a0 at 0051b8db
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_meshlod_cpp_00638147

@@ -2,11 +2,11 @@
 // Address: 0056a470
 // Address Range: [[0056a470, 0056aa00]]
 // Convention: __cdecl
-// Signature: void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemonSet *this_ptr,int param_2)
+// Signature: void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemonSet *this_ptr,int light_index)
 
 #include "nocturne.h"
 
-void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemonSet *this_ptr,int param_2)
+void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemonSet *this_ptr,int light_index)
 
 {
   CDemonLight *light_source;
@@ -55,7 +55,7 @@ void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemo
   g_SpotLightCount = 0;
   if (0 < this_ptr->camera_count) {
     local_38 = this_ptr->lights;
-    local_48 = param_2 + 1;
+    local_48 = light_index + 1;
     local_44 = this_ptr->cameras;
     local_40 = 0;
     local_3c = this_ptr;
@@ -91,9 +91,9 @@ void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemo
       local_1c = 0x21;
       local_24 = this_ptr->light_count;
       local_14 = 0;
-      if (param_2 != -1) {
+      if (light_index != -1) {
         local_24 = local_48;
-        local_14 = param_2;
+        local_14 = light_index;
       }
       if (local_14 < local_24) {
         local_28 = local_3c;

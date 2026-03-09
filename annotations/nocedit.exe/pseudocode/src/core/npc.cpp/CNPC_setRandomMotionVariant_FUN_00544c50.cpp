@@ -1,0 +1,51 @@
+// Name: core_npc.cpp_CNPC_setRandomMotionVariant_FUN_00544c50
+// Address: 00544c50
+// Address Range: [[00544c50, 00544d28]]
+// Convention: __cdecl
+// Signature: int __cdecl core_npc_cpp_CNPC_setRandomMotionVariant_FUN_00544c50(CNPC *this_ptr,char *motion_name)
+
+#include "nocturne.h"
+
+int __cdecl core_npc_cpp_CNPC_setRandomMotionVariant_FUN_00544c50(CNPC *this_ptr,char *motion_name)
+
+{
+  char cVar1;
+  CMotionList *this_ptr_00;
+  int iVar2;
+  int iVar3;
+  char *pcVar4;
+  char local_d8 [200];
+  
+  iVar3 = 0;
+  this_ptr_00 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
+                          ((CMotionController *)this_ptr);
+  pcVar4 = local_d8;
+  while( true ) {
+    _sprintf(local_d8,"%s_%d",motion_name,iVar3 + 1);
+    iVar2 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(this_ptr_00,local_d8,0);
+    if (iVar2 < 0) break;
+    iVar3 = iVar3 + 1;
+  }
+  if (iVar3 == 0) {
+    do {
+      cVar1 = *motion_name;
+      *pcVar4 = cVar1;
+      if (cVar1 == '\0') break;
+      cVar1 = motion_name[1];
+      motion_name = motion_name + 2;
+      pcVar4[1] = cVar1;
+      pcVar4 = pcVar4 + 2;
+    } while (cVar1 != '\0');
+  }
+  else {
+    iVar3 = core_actor_cpp_getRandomInt_FUN_0040cc70(1,iVar3);
+    _sprintf(local_d8,"%s_%d",motion_name,iVar3);
+  }
+  iVar3 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(this_ptr_00,local_d8,0);
+  if (-1 < iVar3) {
+    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
+              ((CMotionController *)this_ptr,iVar3,1);
+    return 1;
+  }
+  return 0;
+}

@@ -93,7 +93,7 @@ void __cdecl CDemonMission::addSet(CDemonMission *this_ptr,char *set_name);
 
 // Original: core_msnedit.cpp_CDemonMission_removeSet_FUN_00538df0
 // Address: 00538df0
-void __cdecl CDemonMission::removeSet(CDemonMission *this_ptr,int param_2);
+void __cdecl CDemonMission::removeSet(CDemonMission *this_ptr,int set_index);
 
 // Original: core_msnedit.cpp_CDemonMission_deleteActor_FUN_00538ea0
 // Address: 00538ea0
@@ -109,27 +109,27 @@ int __cdecl CDemonMission::pickSet(CDemonMission *this_ptr,char *title,int selec
 
 // Original: core_msnedit.cpp_CDemonMission_editActorProperties_FUN_00539060
 // Address: 00539060
-void __cdecl CDemonMission::editActorProperties(CDemonMission *this_ptr,int param_2);
+void __cdecl CDemonMission::editActorProperties(CDemonMission *this_ptr,int show_3d_viewport);
 
 // Original: core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0
 // Address: 005390f0
-int __cdecl CDemonMission::editActorsInSet(CDemonMission *this_ptr,int param_2);
+int __cdecl CDemonMission::editActorsInSet(CDemonMission *this_ptr,int reset_cameras);
 
 // Original: core_msnedit.cpp_CDemonMission_pasteActorProperty_FUN_0053af50
 // Address: 0053af50
-void __cdecl CDemonMission::pasteActorProperty(CDemonMission *this_ptr,char *property);
+void __cdecl CDemonMission::pasteActorProperty(CDemonMission *this_ptr,CActorProperty *property);
 
 // Original: core_msnedit.cpp_CDemonMission_editActorAtIndex_FUN_0053b030
 // Address: 0053b030
-void __cdecl CDemonMission::editActorAtIndex(CDemonMission *this_ptr,int param_2);
+void __cdecl CDemonMission::editActorAtIndex(CDemonMission *this_ptr,CActorProperty *property);
 
 // Original: core_msnedit.cpp_CDemonMission_editActorDetailed_FUN_0053b510
 // Address: 0053b510
-void __cdecl CDemonMission::editActorDetailed(CDemonMission *this_ptr,int param_2);
+void __cdecl CDemonMission::editActorDetailed(CDemonMission *this_ptr,CActorProperty *property);
 
 // Original: core_msnedit.cpp_CDemonMission_importActorsFrom_FUN_0053b9f0
 // Address: 0053b9f0
-void __cdecl CDemonMission::importActorsFrom(CDemonMission *this_ptr,CDemonMission *other);
+void __cdecl CDemonMission::importActorsFrom(CDemonMission *this_ptr);
 
 // Original: core_msnedit.cpp_CDemonMission_deleteActorWithConfirm_FUN_0053bc80
 // Address: 0053bc80
@@ -185,7 +185,7 @@ void __cdecl CDemonMission::moveActorToMousePos(CDemonMission *this_ptr,CDemonAc
 
 // Original: core_msnedit.cpp_CDemonMission_findNextVisibleActor_FUN_0053ca30
 // Address: 0053ca30
-void __cdecl CDemonMission::findNextVisibleActor(CDemonMission *this_ptr,CDemonActor *actor);
+CDemonActor * __cdecl CDemonMission::findNextVisibleActor(CDemonMission *this_ptr,CDemonActor *actor);
 
 // Original: core_msnedit.cpp_CDemonMission_findPrevVisibleActor_FUN_0053ca80
 // Address: 0053ca80

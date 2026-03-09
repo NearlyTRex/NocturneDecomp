@@ -24,7 +24,7 @@
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
-;   undefined4 DAT_02f43978
+;   int INT_02f43978
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40
@@ -80,7 +80,7 @@ section .text
     MOV dword ptr [EBX + 0x2620],0x1    ; 0042a31a
     CALL core_charactr.cpp_CCharacter_renderCharacter_FUN_00429aa0 ; 0042a324
         ;   XREF to: 00429aa0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_renderCharacter_FUN_00429aa0(CCharacter * this_ptr)
-    MOV EDI,dword ptr [0x02f43978]      ; 0042a329 | DAT_02f43978
+    MOV EDI,dword ptr [0x02f43978]      ; 0042a329 | INT_02f43978
     ADD ESP,0x4                         ; 0042a32f
     TEST EDI,EDI                        ; 0042a332
     JZ 0x0042a366                       ; 0042a334

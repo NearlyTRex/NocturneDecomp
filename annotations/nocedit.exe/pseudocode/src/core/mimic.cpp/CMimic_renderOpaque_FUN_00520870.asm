@@ -7,7 +7,7 @@
 ; CMimic *         Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
-;   core_mimic.cpp_CMimic_FUN_005205f0
+;   core_mimic.cpp_CMimic_renderMirrored_FUN_005205f0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
     RET                                 ; 0052087f
     PUSH EAX                            ; 00520880
         ;   Label: LAB_00520880
-    CALL core_mimic.cpp_CMimic_FUN_005205f0 ; 00520881
-        ;   XREF to: 005205f0 (UNCONDITIONAL_CALL)  ; int core_mimic.cpp_CMimic_FUN_005205f0(CMimic * this_ptr)
+    CALL core_mimic.cpp_CMimic_renderMirrored_FUN_005205f0 ; 00520881
+        ;   XREF to: 005205f0 (UNCONDITIONAL_CALL)  ; int core_mimic.cpp_CMimic_renderMirrored_FUN_005205f0(CMimic * this_ptr)
     ADD ESP,0x4                         ; 00520886
     RET                                 ; 00520889
 

@@ -21,7 +21,7 @@
 ;   float FLOAT_008224dc
 ;   CKeyFramedModelInstance g_CKeyFramedModelInstanceInstance
 ;   CDemonRenderer g_CDemonRendererInstance
-;   undefined4 DAT_02f43978
+;   int INT_02f43978
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40
@@ -185,7 +185,7 @@ section .text
     PUSH EAX                            ; 00413c59 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80 ; 00413c5a
         ;   XREF to: 0048da80 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80(CDemonRenderer * this_ptr)
-    MOV EDX,dword ptr [0x02f43978]      ; 00413c5f | DAT_02f43978
+    MOV EDX,dword ptr [0x02f43978]      ; 00413c5f | INT_02f43978
     ADD ESP,0x4                         ; 00413c65
     TEST EDX,EDX                        ; 00413c68
     JZ 0x00413c76                       ; 00413c6a

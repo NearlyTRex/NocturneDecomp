@@ -48,7 +48,7 @@
 ;   shape_edittool.cpp_CStrList_add_FUN_004a2b80
 ;   shape_meshlod.cpp_CLodMesh_closePrecomputeFile_FUN_0051b870
 ;   shape_meshlod.cpp_CLodMesh_generateLOD_FUN_00516ba0
-;   shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_0051b8a0
+;   shape_meshlod.cpp_CLodMesh_initializeFromPrecomputedData_FUN_0051b8a0
 ;   ... and 6 more
 ;
 ; *****************************************************************************
@@ -209,8 +209,8 @@ section .text
     MOV EBP,dword ptr [EBX + 0x38]      ; 00589dc0
     PUSH EBP                            ; 00589dc3
     PUSH EBX                            ; 00589dc4
-    CALL shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_0051b8a0 ; 00589dc5
-        ;   XREF to: 0051b8a0 (UNCONDITIONAL_CALL)  ; int shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_0051b8a0(CLodMesh * this_ptr, _FILE * file_handle)
+    CALL shape_meshlod.cpp_CLodMesh_initializeFromPrecomputedData_FUN_0051b8a0 ; 00589dc5
+        ;   XREF to: 0051b8a0 (UNCONDITIONAL_CALL)  ; int shape_meshlod.cpp_CLodMesh_initializeFromPrecomputedData_FUN_0051b8a0(CLodMesh * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 00589dca
     TEST EAX,EAX                        ; 00589dcd
     JZ 0x00589e0e                       ; 00589dcf

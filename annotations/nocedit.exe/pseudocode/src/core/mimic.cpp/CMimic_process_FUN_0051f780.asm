@@ -24,10 +24,10 @@
 ;   core_charactr.cpp_CCharacter_process_FUN_00429870
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   core_mimic.cpp_CMimic_FUN_0051f930
-;   core_mimic.cpp_CMimic_FUN_0051fcc0
-;   core_mimic.cpp_CMimic_FUN_00520500
+;   core_mimic.cpp_CMimic_processAnimation_FUN_0051fcc0
 ;   core_mimic.cpp_CMimic_processMorph_FUN_00520ba0
+;   core_mimic.cpp_CMimic_setupCloth_FUN_00520500
+;   core_mimic.cpp_CMimic_updatePose_FUN_0051f930
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 ;
 ; *****************************************************************************
@@ -74,8 +74,8 @@ section .text
         ;   XREF to: 0051f850 (CONDITIONAL_JUMP)  ; LAB_0051f850
     PUSH dword ptr [ESP + 0x10]         ; 0051f7fd
     PUSH EBX                            ; 0051f801
-    CALL core_mimic.cpp_CMimic_FUN_0051fcc0 ; 0051f802
-        ;   XREF to: 0051fcc0 (UNCONDITIONAL_CALL)  ; void core_mimic.cpp_CMimic_FUN_0051fcc0(CMimic * this_ptr)
+    CALL core_mimic.cpp_CMimic_processAnimation_FUN_0051fcc0 ; 0051f802
+        ;   XREF to: 0051fcc0 (UNCONDITIONAL_CALL)  ; void core_mimic.cpp_CMimic_processAnimation_FUN_0051fcc0(CMimic * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0051f807
     PUSH EBX                            ; 0051f80a
         ;   Label: LAB_0051f80a
@@ -103,7 +103,7 @@ section .text
         ;   Label: LAB_0051f840
     PUSH EBX                            ; 0051f844
     CALL core_mimic.cpp_CMimic_processMorph_FUN_00520ba0 ; 0051f845
-        ;   XREF to: 00520ba0 (UNCONDITIONAL_CALL)  ; void core_mimic.cpp_CMimic_processMorph_FUN_00520ba0(CMimic * this_ptr)
+        ;   XREF to: 00520ba0 (UNCONDITIONAL_CALL)  ; void core_mimic.cpp_CMimic_processMorph_FUN_00520ba0(CMimic * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0051f84a
     POP EDI                             ; 0051f84d
     POP EBX                             ; 0051f84e
@@ -134,8 +134,8 @@ section .text
     JZ 0x0051f80a                       ; 0051f88d
         ;   XREF to: 0051f80a (CONDITIONAL_JUMP)  ; LAB_0051f80a
     PUSH EBX                            ; 0051f893
-    CALL core_mimic.cpp_CMimic_FUN_0051f930 ; 0051f894
-        ;   XREF to: 0051f930 (UNCONDITIONAL_CALL)  ; void core_mimic.cpp_CMimic_FUN_0051f930(CMimic * this_ptr)
+    CALL core_mimic.cpp_CMimic_updatePose_FUN_0051f930 ; 0051f894
+        ;   XREF to: 0051f930 (UNCONDITIONAL_CALL)  ; void core_mimic.cpp_CMimic_updatePose_FUN_0051f930(CMimic * this_ptr)
     MOV ECX,dword ptr [EBX + 0x4bdf4]   ; 0051f899
     ADD ESP,0x4                         ; 0051f89f
     CMP ECX,0x1                         ; 0051f8a2
@@ -160,8 +160,8 @@ section .text
         ;   XREF to: 0051f80a (CONDITIONAL_JUMP)  ; LAB_0051f80a
     PUSH EBX                            ; 0051f8da
         ;   Label: LAB_0051f8da
-    CALL core_mimic.cpp_CMimic_FUN_00520500 ; 0051f8db
-        ;   XREF to: 00520500 (UNCONDITIONAL_CALL)  ; void core_mimic.cpp_CMimic_FUN_00520500(CMimic * this_ptr)
+    CALL core_mimic.cpp_CMimic_setupCloth_FUN_00520500 ; 0051f8db
+        ;   XREF to: 00520500 (UNCONDITIONAL_CALL)  ; void core_mimic.cpp_CMimic_setupCloth_FUN_00520500(CMimic * this_ptr)
     ADD ESP,0x4                         ; 0051f8e0
     PUSH EBX                            ; 0051f8e3
     CALL core_charactr.cpp_CCharacter_computeBoundingBox_FUN_0042d530 ; 0051f8e4

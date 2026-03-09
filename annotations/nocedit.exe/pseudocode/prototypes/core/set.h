@@ -29,7 +29,7 @@ void __cdecl CDemonSet::renderSceneGeometry(CDemonSet *this_ptr,float frustum_pa
 
 // Original: core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470
 // Address: 0056a470
-void __cdecl CDemonSet::precomputeLightVisibility(CDemonSet *this_ptr,int param_2);
+void __cdecl CDemonSet::precomputeLightVisibility(CDemonSet *this_ptr,int light_index);
 
 // Original: core_set.cpp_CDemonSet_initScene_FUN_0056aa10
 // Address: 0056aa10
@@ -121,7 +121,7 @@ int __cdecl CDemonSet::computeLighting(CDemonSet *this_ptr,CVector3i *world_posi
 
 // Original: core_set.cpp_computeTriangleNormal_FUN_0056e180
 // Address: 0056e180
-void __cdecl computeTriangleNormal(int *vertex_array,void *param_2);
+void __cdecl computeTriangleNormal(CVector3i *vertex_array,SMRGLPrimitiveTriangle *triangle);
 
 // Original: core_set.cpp_computeTriangleNormalIndexed_FUN_0056e2b0
 // Address: 0056e2b0

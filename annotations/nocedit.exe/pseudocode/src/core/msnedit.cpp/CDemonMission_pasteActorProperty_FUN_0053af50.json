@@ -6,15 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 116,
-    "complexity_score": 40,
+    "complexity_score": 41,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 7,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 40,
+    "pseudocode_lines": 41,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 156
+    "total_lines": 157
   },
   "cross_references": [
     {
@@ -34,7 +34,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_msnedit.cpp_CDemonMission_pasteActorProperty_FUN_0053af50",
-    "signature": "void __cdecl core_msnedit_cpp_CDemonMission_pasteActorProperty_FUN_0053af50(CDemonMission *this_ptr,char *property)"
+    "signature": "void __cdecl core_msnedit_cpp_CDemonMission_pasteActorProperty_FUN_0053af50(CDemonMission *this_ptr,CActorProperty *property)"
   },
   "function_calls": [
     {
@@ -116,13 +116,13 @@
     },
     {
       "addr": "02f7c52c",
-      "name": "INT_02f7c52c",
+      "name": "g_SelectedMotionPropertyIndex",
       "type": "int",
       "value": null
     },
     {
       "addr": "02f7c530",
-      "name": "INT_02f7c530",
+      "name": "g_MotionPropertyEditState",
       "type": "int",
       "value": null
     }
@@ -183,7 +183,7 @@
         "name": "property",
         "offset": 8,
         "size": 4,
-        "type": "char *"
+        "type": "CActorProperty *"
       }
     ]
   },

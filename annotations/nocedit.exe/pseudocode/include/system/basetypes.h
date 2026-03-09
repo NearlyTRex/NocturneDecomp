@@ -36,6 +36,7 @@
 #define __cdecl36
 #define __cdecl40
 #define __stack_esi
+#define __stackdbl_esi
 #define __stack2_esi
 #define __stack3_esi
 #define __stack_esi_edi

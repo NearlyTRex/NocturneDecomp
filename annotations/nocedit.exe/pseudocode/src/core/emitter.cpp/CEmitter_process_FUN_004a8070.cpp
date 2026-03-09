@@ -141,7 +141,7 @@ LAB_004a811d:
               (g_CFireEffectPtr,&(this_ptr->base).location.position,&local_94,model_ptr);
     break;
   case 5:
-    core_emitter_cpp_CEmitter_FUN_004a8d20(this_ptr);
+    core_emitter_cpp_CEmitter_getRandomBoundingBoxPoint_FUN_004a8d20(this_ptr,&local_b8);
     core_fire_cpp_CFireEffect_createGunFlames_FUN_004c8ef0
               (g_CFireEffectPtr,&local_b8,&(this_ptr->base).orient.vec,2,1);
     this_ptr_00 = g_HeroActors[g_LocalHeroIndex];

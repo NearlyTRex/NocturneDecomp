@@ -12,17 +12,17 @@ SUMMARY STATISTICS
 ====================================================================================================
 
   Total functions analyzed:          6,484
-  Unnamed functions (FUN_):          93 ( 1.4%)
-  Functions with unnamed params:     11 ( 0.2%)
-  Functions with type issues:        2,351 (36.3%)
+  Unnamed functions (FUN_):          71 ( 1.1%)
+  Functions with unnamed params:     1 ( 0.0%)
+  Functions with type issues:        2,344 (36.2%)
 
   Type issue breakdown:
     Wrong return type (void):          0
     Wrong return type (wide/64-bit):   0
     Missing register params:           4
-    Wrong calling convention:          36
+    Wrong calling convention:          29
     Undefined types in variables:      2268
-    Unresolved stack params:           202
+    Unresolved stack params:           185
 
 ====================================================================================================
 UNNAMED FUNCTIONS (still using FUN_XXXXXXXX or ClassName_FUN_XXXXXXXX)
@@ -116,9 +116,8 @@ Sorted by caller count (most-referenced first = highest priority to name).
   core/stairs.cpp (1 unnamed)
     0x005ba700  __cdecl       1 callers
 
-  core/tvbat.cpp (2 unnamed)
+  core/tvbat.cpp (1 unnamed)
     0x005e4d70  __cdecl       1 callers
-    0x005e3ec0  __cdecl       0 callers
 
   core/melee.cpp (1 unnamed)
     0x0050ebe0  __cdecl       1 callers
@@ -133,41 +132,8 @@ Sorted by caller count (most-referenced first = highest priority to name).
   core/hostage.cpp (1 unnamed)
     0x004f5ff0  __cdecl       1 callers
 
-  core/npc.cpp (2 unnamed)
-    0x00544c50  __cdecl       1 callers
-    0x00544e10  __cdecl       0 callers
-
-  core/emitter.cpp (2 unnamed)
-    0x004a7e80  __cdecl       1 callers
-    0x004a8d20  __cdecl       1 callers
-
-  core/mimic.cpp (6 unnamed)
-    0x0051f930  __cdecl       1 callers
-    0x0051fcc0  __cdecl       1 callers
-    0x00520500  __cdecl       1 callers
-    0x005205f0  __cdecl       1 callers
-    0x0051f130  __cdecl       0 callers
-    0x00520e00  __cdecl       0 callers
-
-  core/vampboss.cpp (6 unnamed)
-    0x005e6ca0  __cdecl       1 callers
-    0x005e7410  __cdecl       1 callers
-    0x005e7320  __cdecl       1 callers
-    0x005e7480  __cdecl       1 callers
-    0x005e74c0  __cdecl       1 callers
-    0x005e7390  __cdecl       1 callers
-
-  core/cloth.cpp (1 unnamed)
-    0x0043c3e0  __cdecl       0 callers
-
-  core/conveyor.cpp (3 unnamed)
-    0x004424a0  __cdecl       0 callers
-    0x004423f0  __cdecl       0 callers
-    0x00442400  __cdecl       0 callers
-
-  shape/superopt.cpp (2 unnamed)
-    0x005d8630  __cdecl       0 callers
-    0x005d83d0  __cdecl       0 callers
+  shape/superopt.cpp (1 unnamed)
+    0x005d8630  __stackdbl_esi  0 callers
 
 ====================================================================================================
 UNNAMED PARAMETERS (still using param_N)
@@ -175,59 +141,10 @@ UNNAMED PARAMETERS (still using param_N)
 
 Sorted by number of unnamed parameters (most unnamed first).
 
-  CBitmap_ctor
-    Address: 0x00556a00  File: shape/quantize.cpp
-    Unnamed: param_2 (int), param_3 (int), param_4 (int)
-    Named:   this_ptr (CBitmap *)
-
   CLever
     Address: 0x00504dd0  File: core/lever.cpp
     Unnamed: param_2 (CVector3f *)
     Named:   this_ptr (CLever *)
-
-  CDemonMission_editActorAtIndex
-    Address: 0x0053b030  File: core/msnedit.cpp
-    Unnamed: param_2 (int)
-    Named:   this_ptr (CDemonMission *)
-
-  CDemonMission_editActorDetailed
-    Address: 0x0053b510  File: core/msnedit.cpp
-    Unnamed: param_2 (int)
-    Named:   this_ptr (CDemonMission *)
-
-  CDemonMission_editActorProperties
-    Address: 0x00539060  File: core/msnedit.cpp
-    Unnamed: param_2 (int)
-    Named:   this_ptr (CDemonMission *)
-
-  CDemonMission_editActorsInSet
-    Address: 0x005390f0  File: core/msnedit.cpp
-    Unnamed: param_2 (int)
-    Named:   this_ptr (CDemonMission *)
-
-  CDemonMission_removeSet
-    Address: 0x00538df0  File: core/msnedit.cpp
-    Unnamed: param_2 (int)
-    Named:   this_ptr (CDemonMission *)
-
-  CDemonSet_precomputeLightVisibility
-    Address: 0x0056a470  File: core/set.cpp
-    Unnamed: param_2 (int)
-    Named:   this_ptr (CDemonSet *)
-
-  computeTriangleNormal
-    Address: 0x0056e180  File: core/set.cpp
-    Unnamed: param_2 (void *)
-    Named:   vertex_array (int *)
-
-  FUN_005e3ec0
-    Address: 0x005e3ec0  File: core/tvbat.cpp
-    Unnamed: param_1 (float)
-
-  getSocketName
-    Address: 0x005e1df0  File: support/trisock.cpp
-    Unnamed: param_2 (SNetworkAddr *)
-    Named:   socket_handle (_SOCKET *)
 
 ====================================================================================================
 TYPE CORRECTNESS ISSUES (heuristic-based)
@@ -274,7 +191,7 @@ Missing register parameters (likely wrong calling convention) (4)
     Suggested: Likely register-based calling convention
 
 --------------------------------------------------------------------------------
-Wrong calling convention (unaffected register usage) (36)
+Wrong calling convention (unaffected register usage) (29)
 --------------------------------------------------------------------------------
 
   CTextureCache_loadTexture
@@ -385,12 +302,6 @@ Wrong calling convention (unaffected register usage) (36)
     Signature: void __cdecl core_setdir_cpp_CDemonSet_saveThumbs_FUN_00575bc0(CDemonSet *this_ptr,_FILE *file_handle)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
-  CGround_getNormalAtPosition
-    Address: 0x004effb0  File: core/ground.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void __cdecl core_ground_cpp_CGround_getNormalAtPosition_FUN_004effb0(CGround *this_ptr,int world_x,int world_z,CVector3i *out_normal)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
   CCourse_importMatrices
     Address: 0x00442ea0  File: core/course.cpp
     Evidence: unaff_ESI, unaff_EDI, unaff_ESI, unaff_EDI, unaff_ESI, unaff_EDI, unaff_ESI, unaff_EDI
@@ -401,12 +312,6 @@ Wrong calling convention (unaffected register usage) (36)
     Address: 0x00546e90  File: core/path.cpp
     Evidence: unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI
     Signature: int __cdecl core_path_cpp_CPathMap_checkAxisAlignedPath_FUN_00546e90(CPathMap *this_ptr,int start_x,int start_z,int start_height,int end_x,int end_z)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  CHostage_getCarryObjToBodyXForm
-    Address: 0x004f6550  File: core/hostage.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void __cdecl core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_004f6550(CHostage *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
   CLightGun_updateBeamLight
@@ -448,31 +353,7 @@ Wrong calling convention (unaffected register usage) (36)
   quantizeRawPixelData
     Address: 0x00556490  File: shape/quantize.cpp
     Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: int __cdecl shape_quantize_cpp_quantizeRawPixelData_FUN_00556490(uchar *src_pixel_data,uchar **out_pixel_data,uchar **out_palette,short width,short height,uint bit_depth,int line_number,int show_progress)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  CLodMesh_initializeLodGeneration
-    Address: 0x00516d50  File: shape/meshlod.cpp
-    Evidence: unaff_ESI, unaff_ESI
-    Signature: void __cdecl shape_meshlod_cpp_CLodMesh_initializeLodGeneration_FUN_00516d50(CLodMesh *this_ptr)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  CLodMesh_initializeLodGeneration
-    Address: 0x0051b8a0  File: shape/meshlod.cpp
-    Evidence: unaff_ESI, unaff_ESI
-    Signature: int __cdecl shape_meshlod_cpp_CLodMesh_initializeLodGeneration_FUN_0051b8a0(CLodMesh *this_ptr,_FILE *file_handle)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  CP3D
-    Address: 0x005d8630  File: shape/superopt.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: CP3D * __cdecl shape_superopt_cpp_CP3D_FUN_005d8630(CP3D *this_ptr,double scalar)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  CPoly_hasCentroidIntersection
-    Address: 0x005d1230  File: shape/superopt.cpp
-    Evidence: unaff_EDI, unaff_EDI
-    Signature: int __cdecl shape_superopt_cpp_CPoly_hasCentroidIntersection_FUN_005d1230(CPoly *this_ptr,CPoly *other)
+    Signature: int __cdecl shape_quantize_cpp_quantizeRawPixelData_FUN_00556490(uchar *src_pixel_data,uchar **out_pixel_data,uchar **out_palette,int width,int height ,uint bit_depth,int line_number,int show_progress)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
   closestPointOnSegment3D
@@ -487,21 +368,9 @@ Wrong calling convention (unaffected register usage) (36)
     Signature: CVector3d * __cdecl shape_superopt_cpp_projectPointOntoPlane_FUN_005d63d0(CVector3d *point,CVector3d *plane_point,CVector3d *plane_normal)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
-  CP2D
-    Address: 0x005d83d0  File: shape/superopt.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: CP2D * __cdecl shape_superopt_cpp_CP2D_FUN_005d83d0(CP2D *this_ptr,double scale)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
 --------------------------------------------------------------------------------
-Unresolved stack parameters (missing from signature) (202)
+Unresolved stack parameters (missing from signature) (185)
 --------------------------------------------------------------------------------
-
-  CPackedBitmapSet_reload
-    Address: 0x0054c1e0  File: cockpit/pkbmpset.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_00000008
-    Signature: void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_reload_FUN_0054c1e0(CPackedBitmapSet *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
 
   CDrawSurface_drawTextRightAlignedVariantPrintf
     Address: 0x00489520  File: cockpit/drawsurf.cpp
@@ -539,28 +408,10 @@ Unresolved stack parameters (missing from signature) (202)
     Signature: void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullWidthPrintf_FUN_00489af0(CDrawSurface *this_ptr,int y,char *format,...)
     Suggested: Signature is missing stack parameters entirely
 
-  CPackedBitmap_load
-    Address: 0x0054b190  File: cockpit/pkbitmap.cpp
-    Evidence: in_stack_00000019
-    Signature: void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_0054b190(CPackedBitmap *this_ptr,uchar *bitmap_data,int width,int height,int stride_bytes,uchar transparency_color)
-    Suggested: Signature is missing stack parameters entirely
-
-  mirrorBitmapHorizontally
-    Address: 0x00433160  File: cockpit/ckptutil.c
-    Evidence: in_stack_00000010, in_stack_00000010
-    Signature: void __cdecl cockpit_ckptutil_c_mirrorBitmapHorizontally_FUN_00433160(void *bitmap_data,int width,int height)
-    Suggested: Signature is missing stack parameters entirely
-
   traceConnectedEdges
     Address: 0x00434af0  File: cockpit/ckptutil.c
     Evidence: in_stack_00000020, in_stack_00000024, in_stack_00000024, in_stack_00000020, in_stack_00000024
     Signature: void * __cdecl cockpit_ckptutil_c_traceConnectedEdges_FUN_00434af0(SEdgeList *edge_lists,void *output_buffer,int *output_count,int max_x,int max_y,int gap_tolerance_x,int gap_tolerance_y)
-    Suggested: Signature is missing stack parameters entirely
-
-  copyBitmapRegion
-    Address: 0x00432860  File: cockpit/ckptutil.c
-    Evidence: in_stack_00000020, in_stack_00000020
-    Signature: void __cdecl cockpit_ckptutil_c_copyBitmapRegion_FUN_00432860(void *src_buffer,int src_stride,void *dest_buffer,int copy_width,int copy_height,int src_x,int src_y)
     Suggested: Signature is missing stack parameters entirely
 
   loadRotatedBitmapFile
@@ -1103,30 +954,6 @@ Unresolved stack parameters (missing from signature) (202)
     Signature: void __cdecl core_msnedit_cpp_CDemonMission_enemyRandomizer_FUN_005379e0(CDemonMission *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
-  CDemonMission_editActorsInSet
-    Address: 0x005390f0  File: core/msnedit.cpp
-    Evidence: in_stack_fffff64c, in_stack_fffff64c, in_stack_fffff64c
-    Signature: int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMission *this_ptr,int param_2)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_004424a0
-    Address: 0x004424a0  File: core/conveyor.cpp
-    Evidence: in_stack_00000004, in_stack_00000004
-    Signature: void __cdecl core_conveyor_cpp_FUN_004424a0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_004423f0
-    Address: 0x004423f0  File: core/conveyor.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004
-    Signature: int __cdecl core_conveyor_cpp_FUN_004423f0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_00442400
-    Address: 0x00442400  File: core/conveyor.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008
-    Signature: float __cdecl core_conveyor_cpp_FUN_00442400(void)
-    Suggested: Signature is missing stack parameters entirely
-
   CTurret_getCurFrame
     Address: 0x005e2b30  File: core/turret.cpp
     Evidence: in_stack_00000008, in_stack_00000008
@@ -1409,46 +1236,10 @@ Unresolved stack parameters (missing from signature) (202)
     Signature: void __cdecl core_platfrm_cpp_CPlatform_attachActor_FUN_0054e1e0(CPlatform *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
-  CNPC
-    Address: 0x00544c50  File: core/npc.cpp
-    Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: int __cdecl core_npc_cpp_CNPC_FUN_00544c50(CNPC *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CEmitter
-    Address: 0x004a8d20  File: core/emitter.cpp
-    Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: CVector3f * __cdecl core_emitter_cpp_CEmitter_FUN_004a8d20(CEmitter *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CMimic
-    Address: 0x0051fcc0  File: core/mimic.cpp
-    Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_mimic_cpp_CMimic_FUN_0051fcc0(CMimic *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CMimic_processMorph
-    Address: 0x00520ba0  File: core/mimic.cpp
-    Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_mimic_cpp_CMimic_processMorph_FUN_00520ba0(CMimic *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_00520e00
-    Address: 0x00520e00  File: core/mimic.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008
-    Signature: void __cdecl core_mimic_cpp_FUN_00520e00(void)
-    Suggested: Signature is missing stack parameters entirely
-
   CGabriella_processMotionEvents
     Address: 0x004d4890  File: core/gabriela.cpp
     Evidence: in_stack_ffffff58, in_stack_ffffff58, in_stack_ffffff58, in_stack_ffffff58
     Signature: void __cdecl core_gabriela_cpp_CGabriella_processMotionEvents_FUN_004d4890(CGabriella *this_ptr,float delta_time)
-    Suggested: Signature is missing stack parameters entirely
-
-  CVampireBoss
-    Address: 0x005e6ca0  File: core/vampboss.cpp
-    Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_vampboss_cpp_CVampireBoss_FUN_005e6ca0(CVampireBoss *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
   CGame_processHotkeys
@@ -1523,12 +1314,6 @@ Unresolved stack parameters (missing from signature) (202)
     Signature: void __cdecl core_game_cpp_dampControlAxis_FUN_004dc370(void)
     Suggested: Signature is missing stack parameters entirely
 
-  quantizeRawPixelData
-    Address: 0x00556490  File: shape/quantize.cpp
-    Evidence: in_stack_00000012, in_stack_00000016
-    Signature: int __cdecl shape_quantize_cpp_quantizeRawPixelData_FUN_00556490(uchar *src_pixel_data,uchar **out_pixel_data,uchar **out_palette,short width,short height,uint bit_depth,int line_number,int show_progress)
-    Suggested: Signature is missing stack parameters entirely
-
   CCramTex_runInteractiveAtlasGeneration
     Address: 0x00446160  File: shape/cramtex.cpp
     Evidence: in_stack_ffffff50, in_stack_ffffff50, in_stack_ffffff50, in_stack_ffffff50, in_stack_ffffff50, in_stack_ffffff50, in_stack_ffffff50, in_stack_ffffff50
@@ -1557,12 +1342,6 @@ Unresolved stack parameters (missing from signature) (202)
     Address: 0x0051d990  File: shape/meshlod.cpp
     Evidence: in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000014, in_stack_00000008, in_stack_0000000c, in_stack_0000000c, in_stack_00000008, in_stack_0000000c, in_stack_0000000c, in_stack_00000014, in_stack_0000000c, in_stack_00000008, in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_00000014, in_stack_00000014, in_stack_00000014, in_stack_00000010, in_stack_0000000c, in_stack_00000008, in_stack_00000010, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_00000008, in_stack_00000008, in_stack_0000000c, in_stack_0000000c, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c
     Signature: int __cdecl shape_meshlod_cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990(CLodMesh *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CLodMesh_createNextLOD
-    Address: 0x00516f50  File: shape/meshlod.cpp
-    Evidence: in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004
-    Signature: void __cdecl shape_meshlod_cpp_CLodMesh_createNextLOD_FUN_00516f50(CLodMesh *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
   CLodMesh_renderColorCodedEdges
@@ -1689,12 +1468,6 @@ Unresolved stack parameters (missing from signature) (202)
     Address: 0x004a2050  File: shape/edittool.cpp
     Evidence: in_stack_fffffe90, in_stack_fffffec0, in_stack_fffffec0, in_stack_fffffec0, in_stack_fffffec0, in_stack_fffffe90, in_stack_fffffec0, in_stack_fffffec0, in_stack_fffffec0, in_stack_fffffe90, in_stack_fffffec0, in_stack_fffffec0, in_stack_fffffec0, in_stack_fffffe90
     Signature: void __cdecl shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050(CEditorTools *this_ptr,CVector3f *corner1,CVector3f *corner2,int color_value)
-    Suggested: Signature is missing stack parameters entirely
-
-  CPoly_hasCentroidIntersection
-    Address: 0x005d1230  File: shape/superopt.cpp
-    Evidence: in_stack_ffffff8c, in_stack_ffffff9c, in_stack_ffffff8c, in_stack_ffffff9c
-    Signature: int __cdecl shape_superopt_cpp_CPoly_hasCentroidIntersection_FUN_005d1230(CPoly *this_ptr,CPoly *other)
     Suggested: Signature is missing stack parameters entirely
 
   COptimize_exportOptimizeGeometry
@@ -2073,7 +1846,7 @@ Undefined types in variables (2268)
     Locals:  local_fc (undefined4), local_f8 (undefined4), local_f4 (undefined4), local_f0 (undefined4), local_ec (undefined4), local_e8 (undefined4), local_e4 (undefined4), local_e0 (undefined4), local_dc (undefined4), local_d8 (undefined1), local_cc (undefined4), local_c8 (undefined4), local_c4 (undefined4), local_c0 (undefined1), local_b4 (undefined4), local_b0 (undefined4), local_ac (undefined4), local_a8 (undefined4), local_a4 (undefined4), local_a0 (undefined4), local_9c (undefined4), local_98 (undefined4), local_94 (undefined4), local_90 (undefined4), local_8c (undefined4), local_88 (undefined4), local_84 (undefined4), local_80 (undefined4), local_7c (undefined4), local_78 (undefined4), local_74 (undefined4), local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CMimic
+  CMimic_processAnimation
     Address: 0x0051fcc0  File: core/mimic.cpp
     Locals:  local_1e4 (undefined1), local_1e0 (undefined4), local_1b0 (undefined4), local_1ac (undefined4), local_1a8 (undefined1), local_178 (undefined1), local_148 (undefined1), local_130 (undefined1), local_124 (undefined4), local_120 (undefined4), local_11c (undefined4), local_118 (undefined1), local_110 (undefined4), local_10c (undefined1), local_100 (undefined1), local_fd (undefined1), local_f4 (undefined1), local_e8 (undefined4), local_e4 (undefined4), local_e0 (undefined4), local_dc (undefined4), local_d8 (undefined4), local_d4 (undefined4), local_d0 (undefined4), local_cc (undefined4), local_c8 (undefined4), local_c4 (undefined1), local_c1 (undefined1), local_b8 (undefined1), local_ac (undefined1), local_a9 (undefined1), local_a0 (undefined1), local_94 (undefined1), local_90 (undefined4), local_88 (undefined4), local_80 (undefined4), local_7c (undefined1), local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined1), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_38 (undefined8), local_2c (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined1)
     Suggested: Resolve undefined types to concrete types
@@ -2958,7 +2731,7 @@ Undefined types in variables (2268)
     Locals:  local_94 (undefined1), local_88 (undefined4), local_84 (undefined4), local_80 (undefined4), local_7c (undefined1), local_70 (undefined1), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined1), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined1), local_34 (undefined1), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined4), local_c (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CMimic
+  CMimic_updatePose
     Address: 0x0051f930  File: core/mimic.cpp
     Locals:  local_2d0 (undefined1), local_2a0 (undefined1), local_270 (undefined1), local_240 (undefined1), local_210 (undefined1), local_1e0 (undefined1), local_1b0 (undefined1), local_180 (undefined1), local_150 (undefined1), local_120 (undefined1), local_f0 (undefined1), local_c0 (undefined1), local_90 (undefined1), local_60 (undefined1), local_54 (undefined4), local_44 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined1), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -3383,7 +3156,7 @@ Undefined types in variables (2268)
     Locals:  local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CEmitter
+  CEmitter_launchFireballAtHero
     Address: 0x004a7e80  File: core/emitter.cpp
     Locals:  local_74 (undefined4), local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined1[12]), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -3593,11 +3366,6 @@ Undefined types in variables (2268)
     Locals:  local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CMimic
-    Address: 0x005205f0  File: core/mimic.cpp
-    Locals:  local_f4 (undefined1), local_c4 (undefined1), local_94 (undefined1), local_64 (undefined1), local_4c (undefined1), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined1), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined1)
-    Suggested: Resolve undefined types to concrete types
-
   computePlaneFromTriangle
     Address: 0x00520fe0  File: core/mirror.cpp
     Locals:  local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4)
@@ -3731,6 +3499,11 @@ Undefined types in variables (2268)
   rayTriangleIntersection
     Address: 0x0049a800  File: core/dtri.cpp
     Locals:  local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CMimic_renderMirrored
+    Address: 0x005205f0  File: core/mimic.cpp
+    Locals:  local_f4 (undefined1), local_c4 (undefined1), local_94 (undefined1), local_64 (undefined1), local_4c (undefined1), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined1), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_10 (undefined1)
     Suggested: Resolve undefined types to concrete types
 
   CMotionController_advance
@@ -7553,7 +7326,7 @@ Undefined types in variables (2268)
     Locals:  local_20 (undefined8), local_18 (undefined4), local_14 (undefined4), local_10 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CVampireBoss
+  CVampireBoss_advanceAnimation
     Address: 0x005e6ca0  File: core/vampboss.cpp
     Locals:  local_88 (undefined8), local_80 (undefined8), local_78 (undefined4), local_74 (undefined1)
     Suggested: Resolve undefined types to concrete types
@@ -8088,7 +7861,7 @@ Undefined types in variables (2268)
     Locals:  local_10 (undefined4), local_c (undefined4), local_8 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_00442400
+  floatModulo
     Address: 0x00442400  File: core/conveyor.cpp
     Locals:  local_20 (undefined8), local_18 (undefined8), local_10 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -9549,7 +9322,7 @@ Undefined types in variables (2268)
     Locals:  local_10 (undefined4), local_c (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CNPC
+  CNPC_setRandomMotionVariant
     Address: 0x00544c50  File: core/npc.cpp
     Locals:  local_d8 (undefined1), local_d7 (undefined1)
     Suggested: Resolve undefined types to concrete types
@@ -9789,7 +9562,7 @@ Undefined types in variables (2268)
     Locals:  local_c (undefined4), local_8 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_005e3ec0
+  jitterValue
     Address: 0x005e3ec0  File: core/tvbat.cpp
     Locals:  local_8 (undefined4), local_4 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -10264,13 +10037,13 @@ Undefined types in variables (2268)
     Locals:  local_8 (undefined4), local_4 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CP2D
-    Address: 0x005d83d0  File: shape/superopt.cpp
+  CP2D_add
+    Address: 0x005d8390  File: shape/superopt.cpp
     Locals:  local_18 (undefined8), local_10 (undefined8)
     Suggested: Resolve undefined types to concrete types
 
-  CP2D_add
-    Address: 0x005d8390  File: shape/superopt.cpp
+  CP2D_scale
+    Address: 0x005d83d0  File: shape/superopt.cpp
     Locals:  local_18 (undefined8), local_10 (undefined8)
     Suggested: Resolve undefined types to concrete types
 
@@ -10382,11 +10155,6 @@ Undefined types in variables (2268)
   connectSocket
     Address: 0x005e1bd0  File: support/trisock.cpp
     Locals:  local_28 (undefined), local_18 (undefined)
-    Suggested: Resolve undefined types to concrete types
-
-  getSocketName
-    Address: 0x005e1df0  File: support/trisock.cpp
-    Locals:  local_1c (undefined), local_4 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   performSocketOperation
@@ -11529,14 +11297,14 @@ Undefined types in variables (2268)
     Locals:  local_10 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CMimic
-    Address: 0x00520500  File: core/mimic.cpp
-    Locals:  local_c (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
   CMimic_processMorph
     Address: 0x00520ba0  File: core/mimic.cpp
     Locals:  local_18 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CMimic_setupCloth
+    Address: 0x00520500  File: core/mimic.cpp
+    Locals:  local_c (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CMirror_reflectAndClipPrimitive
@@ -13002,6 +12770,11 @@ Undefined types in variables (2268)
   buildSockaddrIn
     Address: 0x005e19d0  File: support/trisock.cpp
     Locals:  local_18 (undefined2)
+    Suggested: Resolve undefined types to concrete types
+
+  getSocketName
+    Address: 0x005e1df0  File: support/trisock.cpp
+    Locals:  local_4 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   setSocketBlocking

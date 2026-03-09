@@ -2,18 +2,17 @@
 // Address: 00520ba0
 // Address Range: [[00520ba0, 00520d07]]
 // Convention: __cdecl
-// Signature: void __cdecl core_mimic_cpp_CMimic_processMorph_FUN_00520ba0(CMimic *this_ptr)
+// Signature: void __cdecl core_mimic_cpp_CMimic_processMorph_FUN_00520ba0(CMimic *this_ptr,float delta_time)
 
 #include "nocturne.h"
 
-void __cdecl core_mimic_cpp_CMimic_processMorph_FUN_00520ba0(CMimic *this_ptr)
+void __cdecl core_mimic_cpp_CMimic_processMorph_FUN_00520ba0(CMimic *this_ptr,float delta_time)
 
 {
   SMorphPoint *pSVar1;
   float fVar2;
   int iVar3;
   int iVar4;
-  float in_stack_00000008;
   float local_18 [2];
   
   if (this_ptr->morph_target_actor == (CDemonActor *)0x0) {
@@ -21,7 +20,7 @@ void __cdecl core_mimic_cpp_CMimic_processMorph_FUN_00520ba0(CMimic *this_ptr)
     g_CurrentLineNumber = 0x4c9;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CMimic::processMorph - can't process morph unless we've started morph!");
   }
-  fVar2 = in_stack_00000008 / 1.0f + this_ptr->morph_blend;
+  fVar2 = delta_time / 1.0f + this_ptr->morph_blend;
   this_ptr->morph_blend = fVar2;
   if (1.0 <= fVar2) {
     core_mission_cpp_CDemonMission_generateActorName_FUN_00524700
@@ -33,12 +32,12 @@ void __cdecl core_mimic_cpp_CMimic_processMorph_FUN_00520ba0(CMimic *this_ptr)
               (g_CDemonMissionPtr,(CDemonActor *)this_ptr,1);
   }
   else {
-    local_18[0] = in_stack_00000008;
+    local_18[0] = delta_time;
     while (0.0 < local_18[0]) {
       core_motion_cpp_CMotionController_advance_FUN_0052d610
                 (&(this_ptr->base).base.model.motion_controller,local_18);
     }
-    local_18[0] = in_stack_00000008;
+    local_18[0] = delta_time;
     while (0.0 < local_18[0]) {
       core_motion_cpp_CMotionController_advance_FUN_0052d610
                 ((CMotionController *)(this_ptr->morph_target_actor + 1),local_18);

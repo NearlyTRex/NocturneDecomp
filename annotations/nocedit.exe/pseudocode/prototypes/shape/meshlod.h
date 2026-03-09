@@ -307,9 +307,9 @@ _FILE * __cdecl CLodMesh::openPrecomputeFile(CLodMesh *this_ptr,char *mode);
 // Address: 0051b870
 void __cdecl CLodMesh::closePrecomputeFile(CLodMesh *this_ptr);
 
-// Original: shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_0051b8a0
+// Original: shape_meshlod.cpp_CLodMesh_initializeFromPrecomputedData_FUN_0051b8a0
 // Address: 0051b8a0
-int __cdecl CLodMesh::initializeLodGeneration(CLodMesh *this_ptr,_FILE *file_handle);
+int __cdecl CLodMesh::initializeFromPrecomputedData(CLodMesh *this_ptr,_FILE *file_handle);
 
 // Original: shape_meshlod.cpp_CLodMesh_getLOD_FUN_0051b920
 // Address: 0051b920

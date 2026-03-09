@@ -1,11 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_msnedit_cpp_CDemonMission_importActorsFrom_FUN_0053b9f0(CDemonMission *this_ptr,CDemonMission *other)
+; void __cdecl core_msnedit_cpp_CDemonMission_importActorsFrom_FUN_0053b9f0(CDemonMission *this_ptr)
 ;
 ; Parameters:
 ; CDemonMission *  Stack[0x4]:4   this_ptr
-; CDemonMission *  Stack[0x8]:4   other
 ; Local Variables:
 ; undefined1       Stack[-0xa0]:1  local_a0
 ; undefined1       Stack[-0x3c]:1  local_3c

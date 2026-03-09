@@ -11768,7 +11768,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_conveyor.cpp_FUN_00442400",
+    "name":"core_conveyor.cpp_floatModulo_FUN_00442400",
     "ret":"float",
     "vars":{
       "locals":[
@@ -11819,6 +11819,40 @@
             ]
           },
           "type":"undefined8"
+        }
+      ],
+      "params":[
+        {
+          "name":"value",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"divisor",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
         }
       ],
       "ret_storage":{
@@ -26328,7 +26362,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_emitter.cpp_CEmitter_FUN_004a7e80",
+    "name":"core_emitter.cpp_CEmitter_launchFireballAtHero_FUN_004a7e80",
     "ret":"void",
     "vars":{
       "locals":[
@@ -50043,7 +50077,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_mimic.cpp_CMimic_FUN_00520500",
+    "name":"core_mimic.cpp_CMimic_setupCloth_FUN_00520500",
     "ret":"void",
     "vars":{
       "locals":[
@@ -50189,8 +50223,54 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_mimic.cpp_FUN_00520e00",
-    "ret":"void"
+    "name":"core_mimic.cpp_copyQuaternion_FUN_00520e00",
+    "ret":"CQuaternion4f*",
+    "vars":{
+      "params":[
+        {
+          "name":"dest",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CQuaternion4f*"
+        },
+        {
+          "name":"src",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CQuaternion4f*"
+        }
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
+    }
   },
   {
     "addr":"00520e80",
@@ -59062,7 +59142,7 @@
           "type":"CBitmap*"
         },
         {
-          "name":"param_2",
+          "name":"width",
           "storage":{
             "offset":8,
             "size":4,
@@ -59078,7 +59158,7 @@
           "type":"int"
         },
         {
-          "name":"param_3",
+          "name":"height",
           "storage":{
             "offset":12,
             "size":4,
@@ -59094,7 +59174,7 @@
           "type":"int"
         },
         {
-          "name":"param_4",
+          "name":"bit_depth",
           "storage":{
             "offset":16,
             "size":4,
@@ -61170,10 +61250,10 @@
               }
             ]
           },
-          "type":"int*"
+          "type":"CVector3i*"
         },
         {
-          "name":"param_2",
+          "name":"triangle",
           "storage":{
             "offset":8,
             "size":4,
@@ -61186,7 +61266,7 @@
               }
             ]
           },
-          "type":"void*"
+          "type":"SMRGLPrimitiveTriangle*"
         }
       ]
     }
@@ -79209,7 +79289,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_vampboss.cpp_CVampireBoss_FUN_005e7480",
+    "name":"core_vampboss.cpp_CVampireBoss_transformToBat_FUN_005e7480",
     "ret":"void",
     "vars":{
       "params":[

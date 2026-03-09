@@ -77,7 +77,7 @@ void __cdecl CPackedBitmap::copyRawDataToCompressedRuns(CPackedBitmap *this_ptr,
 
 // Original: cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_0054b190
 // Address: 0054b190
-void __cdecl CPackedBitmap::load(CPackedBitmap *this_ptr,uchar *bitmap_data,int width,int height,int stride_bytes,uchar transparency_color);
+void __cdecl CPackedBitmap::load(CPackedBitmap *this_ptr,uchar *bitmap_data,int width,int height,int transparency_color,int row_stride);
 
 // Original: cockpit_pkbitmap.cpp_CPackedBitmap_applyACTPalette_FUN_0054b3f0
 // Address: 0054b3f0

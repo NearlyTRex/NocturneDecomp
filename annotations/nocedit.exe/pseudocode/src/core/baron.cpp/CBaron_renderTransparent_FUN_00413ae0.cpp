@@ -73,7 +73,7 @@ LAB_00413b59:
     pCVar1 = &(this_ptr->base).base.model;
     core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150(pCVar1,-1,0x2e7,1,0);
     engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80(g_CDemonRendererPtr2);
-    if (DAT_02f43978 != 0) {
+    if (INT_02f43978 != 0) {
       core_motion_cpp_CMotionController_render_FUN_0052e700
                 (&pCVar1->motion_controller,(CDemonActor *)this_ptr);
     }

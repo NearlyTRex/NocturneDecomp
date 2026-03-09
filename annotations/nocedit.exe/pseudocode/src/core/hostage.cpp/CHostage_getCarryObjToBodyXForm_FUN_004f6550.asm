@@ -1,12 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_004f6550(CHostage *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
+; void __stack2_esi core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_004f6550(CHostage *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 ;
 ; Parameters:
 ; CHostage *       Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   hand_index
-; CMatrix3x4f *    Stack[0xc]:4   out_matrix
 ; Local Variables:
 ; undefined1       Stack[-0x294]:1  local_294
 ; undefined1       Stack[-0x264]:1  local_264

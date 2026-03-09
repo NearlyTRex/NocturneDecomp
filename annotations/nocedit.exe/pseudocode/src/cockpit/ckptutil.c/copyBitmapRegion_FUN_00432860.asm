@@ -1,16 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl cockpit_ckptutil_c_copyBitmapRegion_FUN_00432860(void *src_buffer,int src_stride,void *dest_buffer,int copy_width,int copy_height,int src_x,int src_y)
+; void __cdecl cockpit_ckptutil_c_copyBitmapRegion_FUN_00432860(uchar *src_buffer,int src_stride,int unused,uchar *dest_buffer,int bytes_per_row,int num_rows,int src_x_offset,int src_y_offset)
 ;
 ; Parameters:
-; void *           Stack[0x4]:4   src_buffer
+; uchar *          Stack[0x4]:4   src_buffer
 ; int              Stack[0x8]:4   src_stride
-; void *           Stack[0xc]:4   dest_buffer
-; int              Stack[0x10]:4   copy_width
-; int              Stack[0x14]:4   copy_height
-; int              Stack[0x18]:4   src_x
-; int              Stack[0x1c]:4   src_y
+; int              Stack[0xc]:4   unused
+; uchar *          Stack[0x10]:4   dest_buffer
+; int              Stack[0x14]:4   bytes_per_row
+; int              Stack[0x18]:4   num_rows
+; int              Stack[0x1c]:4   src_x_offset
+; int              Stack[0x20]:4   src_y_offset
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;

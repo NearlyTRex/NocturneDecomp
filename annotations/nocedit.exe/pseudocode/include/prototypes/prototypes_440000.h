@@ -83,9 +83,9 @@ void __cdecl core_conveyor_cpp_CConveyor_processInEditor_FUN_004421c0(CConveyor 
 void __cdecl core_conveyor_cpp_CConveyor_addFilesToExtract_FUN_004422f0(CConveyor *this_ptr,_FILE *file_handle);
 CConveyor * __cdecl core_conveyor_cpp_CConveyor_dtor_FUN_00442310(CConveyor *this_ptr,uint flags);
 CPlatform * __cdecl core_conveyor_cpp_CPlatform_dtor_FUN_00442380(CPlatform *this_ptr,uint flags);
-int __cdecl core_conveyor_cpp_FUN_004423f0(void);
-float __cdecl core_conveyor_cpp_FUN_00442400(void);
-void __cdecl core_conveyor_cpp_FUN_004424a0(void);
+int * __cdecl core_conveyor_cpp_assignInt_FUN_004423f0(int *dest,int *src);
+float __cdecl core_conveyor_cpp_floatModulo_FUN_00442400(float value,float divisor);
+void __cdecl core_conveyor_cpp_skipToNewline_FUN_004424a0(_FILE *file_handle);
 CCourse * __cdecl core_course_cpp_CCourse_ctor_FUN_004424c0(CCourse *this_ptr);
 CCourse * __cdecl core_course_cpp_CCourse_dtor_FUN_004424e0(CCourse *this_ptr,uint flags);
 void __cdecl core_course_cpp_CCourse_allocMemory_FUN_00442500(CCourse *this_ptr,int count);

@@ -7,9 +7,9 @@
 // Address: 0051f100
 void __cdecl staticInit(void);
 
-// Original: core_mimic.cpp_FUN_0051f130
+// Original: core_mimic.cpp_mirrorXTransform_FUN_0051f130
 // Address: 0051f130
-void __cdecl FUN_0051f130(void);
+void __cdecl mirrorXTransform(void);
 
 // Original: core_mimic.cpp_factoryFunc_FUN_0051f190
 // Address: 0051f190
@@ -35,21 +35,21 @@ void __cdecl CMimic::setup(CMimic *this_ptr);
 // Address: 0051f780
 void __cdecl CMimic::process(CMimic *this_ptr,float delta_time);
 
-// Original: core_mimic.cpp_CMimic_FUN_0051f930
+// Original: core_mimic.cpp_CMimic_updatePose_FUN_0051f930
 // Address: 0051f930
-void __cdecl CMimic(CMimic *this_ptr);
+void __cdecl CMimic::updatePose(CMimic *this_ptr);
 
-// Original: core_mimic.cpp_CMimic_FUN_0051fcc0
+// Original: core_mimic.cpp_CMimic_processAnimation_FUN_0051fcc0
 // Address: 0051fcc0
-void __cdecl CMimic(CMimic *this_ptr);
+void __cdecl CMimic::processAnimation(CMimic *this_ptr,float delta_time);
 
-// Original: core_mimic.cpp_CMimic_FUN_00520500
+// Original: core_mimic.cpp_CMimic_setupCloth_FUN_00520500
 // Address: 00520500
-void __cdecl CMimic(CMimic *this_ptr);
+void __cdecl CMimic::setupCloth(CMimic *this_ptr);
 
-// Original: core_mimic.cpp_CMimic_FUN_005205f0
+// Original: core_mimic.cpp_CMimic_renderMirrored_FUN_005205f0
 // Address: 005205f0
-int __cdecl CMimic(CMimic *this_ptr);
+int __cdecl CMimic::renderMirrored(CMimic *this_ptr);
 
 // Original: core_mimic.cpp_CMimic_renderOpaque_FUN_00520870
 // Address: 00520870
@@ -81,7 +81,7 @@ void __cdecl CMimic::beginMorph(CMimic *this_ptr);
 
 // Original: core_mimic.cpp_CMimic_processMorph_FUN_00520ba0
 // Address: 00520ba0
-void __cdecl CMimic::processMorph(CMimic *this_ptr);
+void __cdecl CMimic::processMorph(CMimic *this_ptr,float delta_time);
 
 // Original: core_mimic.cpp_CMimic_getPropertyList_FUN_00520d10
 // Address: 00520d10
@@ -95,6 +95,6 @@ void __cdecl CMimic::onActorDeleted(CMimic *this_ptr,CDemonActor *deleted_actor)
 // Address: 00520dd0
 void __cdecl CMimic::addFilesToExtract(CMimic *this_ptr,_FILE *file_handle);
 
-// Original: core_mimic.cpp_FUN_00520e00
+// Original: core_mimic.cpp_copyQuaternion_FUN_00520e00
 // Address: 00520e00
-void __cdecl FUN_00520e00(void);
+CQuaternion4f * __cdecl copyQuaternion(CQuaternion4f *dest,CQuaternion4f *src);

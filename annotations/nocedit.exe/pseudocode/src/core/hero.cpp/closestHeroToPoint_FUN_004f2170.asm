@@ -11,7 +11,7 @@
 ;
 ; XREF[2]:
 ;   core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0 at 0042ee67
-;   core_emitter.cpp_CEmitter_FUN_004a7e80 at 004a7e91
+;   core_emitter.cpp_CEmitter_launchFireballAtHero_FUN_004a7e80 at 004a7e91
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_hero_cpp_0062ea7d

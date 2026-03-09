@@ -16,8 +16,8 @@
 ;   core_hero.cpp_CHero_getGrabbed_FUN_004f28d0 at 004f2916
 ;   core_hero.cpp_CHero_releaseFromGrab_FUN_004f29b0 at 004f29e8
 ;   core_motion.cpp_CMotionController_setDesiredStateByName_FUN_0052db90 at 0052dba0
-;   core_npc.cpp_CNPC_FUN_00544c50 at 00544ccf
 ;   core_npc.cpp_CNPC_process_FUN_005448b0 at 00544b37
+;   core_npc.cpp_CNPC_setRandomMotionVariant_FUN_00544c50 at 00544ccf
 ;   core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 at 00592dd6
 ;   ... and 3 more
 ;

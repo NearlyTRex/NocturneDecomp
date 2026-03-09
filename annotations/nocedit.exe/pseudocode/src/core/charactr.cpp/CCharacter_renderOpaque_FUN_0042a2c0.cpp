@@ -25,7 +25,7 @@ int __cdecl core_charactr_cpp_CCharacter_renderOpaque_FUN_0042a2c0(CCharacter *t
     if (iVar1 != 0) {
       this_ptr->was_rendered_opaque = 1;
       core_charactr_cpp_CCharacter_renderCharacter_FUN_00429aa0(this_ptr);
-      if (DAT_02f43978 != 0) {
+      if (INT_02f43978 != 0) {
         iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
         if (iVar2 == 0) {
           core_motion_cpp_CMotionController_render_FUN_0052e700

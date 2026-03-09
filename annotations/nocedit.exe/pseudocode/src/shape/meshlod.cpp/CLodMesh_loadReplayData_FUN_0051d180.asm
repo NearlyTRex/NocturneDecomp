@@ -8,7 +8,7 @@
 ; _FILE *          Stack[0x8]:4   file_handle
 ;
 ; XREF[2]:
-;   shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_0051b8a0 at 0051b90d
+;   shape_meshlod.cpp_CLodMesh_initializeFromPrecomputedData_FUN_0051b8a0 at 0051b90d
 ;   shape_meshlod.cpp_CLodMesh_replayLodGeneration_FUN_005173f0 at 0051743c
 ;
 ; Referenced Globals:

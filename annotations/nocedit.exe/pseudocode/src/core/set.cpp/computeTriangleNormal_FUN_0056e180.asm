@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_set_cpp_computeTriangleNormal_FUN_0056e180(int *vertex_array,void *param_2)
+; void __cdecl core_set_cpp_computeTriangleNormal_FUN_0056e180(CVector3i *vertex_array,SMRGLPrimitiveTriangle *triangle)
 ;
 ; Parameters:
-; int *            Stack[0x4]:4   vertex_array
-; void *           Stack[0x8]:4   param_2
+; CVector3i *      Stack[0x4]:4   vertex_array
+; SMRGLPrimitiveTriangle * Stack[0x8]:4   triangle
 ; Local Variables:
 ; undefined4       Stack[-0x48]:4  local_48
 ; undefined4       Stack[-0x3c]:4  local_3c

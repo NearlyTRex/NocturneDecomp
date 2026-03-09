@@ -59,7 +59,7 @@
 ;   core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_00471360
 ;   core_dglobe.cpp_CDemonGlobe_setPosition_FUN_00471310
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
-;   core_emitter.cpp_CEmitter_FUN_004a8d20
+;   core_emitter.cpp_CEmitter_getRandomBoundingBoxPoint_FUN_004a8d20
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 ;   core_fire.cpp_CFireEffect_createGunFlames_FUN_004c8ef0
 ;   core_fire.cpp_CFireEffect_createLightningBolt_FUN_004c8f50
@@ -405,8 +405,8 @@ section .text
         ;   Label: caseD_5
     PUSH EAX                            ; 004a8480
     PUSH EBX                            ; 004a8481
-    CALL core_emitter.cpp_CEmitter_FUN_004a8d20 ; 004a8482
-        ;   XREF to: 004a8d20 (UNCONDITIONAL_CALL)  ; CVector3f * core_emitter.cpp_CEmitter_FUN_004a8d20(CEmitter * this_ptr)
+    CALL core_emitter.cpp_CEmitter_getRandomBoundingBoxPoint_FUN_004a8d20 ; 004a8482
+        ;   XREF to: 004a8d20 (UNCONDITIONAL_CALL)  ; CVector3f * core_emitter.cpp_CEmitter_getRandomBoundingBoxPoint_FUN_004a8d20(CEmitter * this_ptr, CVector3f * out_point)
     ADD ESP,0x8                         ; 004a8487
     PUSH 0x1                            ; 004a848a
     PUSH 0x2                            ; 004a848c

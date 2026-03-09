@@ -25,15 +25,18 @@ void __cdecl core_npc_cpp_CNPC_processDamage_FUN_00544d30(CNPC *this_ptr,SDamage
       (this_ptr->base).hit_points = 0.0;
       (*pCVar1->spawnFlies)((CDemonActor *)this_ptr,0x32,25.0);
       core_charactr_cpp_CCharacter_dropAllCarriedObjects_FUN_0042d060(&this_ptr->base);
-      core_npc_cpp_CNPC_FUN_00544c50((CNPC *)this_ptr_00);
+      core_npc_cpp_CNPC_setRandomMotionVariant_FUN_00544c50((CNPC *)this_ptr_00,"DIE");
     }
     else if ((0.0 < damage_info->damage_amount) &&
             ((this_ptr->base).grabbed_by == (CDemonActor *)0x0)) {
-      iVar4 = core_npc_cpp_CNPC_FUN_00544c50((CNPC *)this_ptr_00);
+      iVar4 = core_npc_cpp_CNPC_setRandomMotionVariant_FUN_00544c50
+                        ((CNPC *)this_ptr_00,"HURT");
       if (iVar4 == 0) {
-        iVar4 = core_npc_cpp_CNPC_FUN_00544c50((CNPC *)this_ptr_00);
+        iVar4 = core_npc_cpp_CNPC_setRandomMotionVariant_FUN_00544c50
+                          ((CNPC *)this_ptr_00,"DAMAGE");
         if (iVar4 == 0) {
-          core_npc_cpp_CNPC_FUN_00544c50((CNPC *)this_ptr_00);
+          core_npc_cpp_CNPC_setRandomMotionVariant_FUN_00544c50((CNPC *)this_ptr_00,"SHOT")
+          ;
           core_charactr_cpp_CCharacter_processDamage_FUN_0042c3c0(&this_ptr->base,damage_info);
           return;
         }

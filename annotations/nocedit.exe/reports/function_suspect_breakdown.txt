@@ -4,24 +4,24 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 4364 functions
-  1 suspects: 869 functions
-  2 suspects: 388 functions
+  0 suspects: 4388 functions
+  1 suspects: 867 functions
+  2 suspects: 386 functions
   3 suspects: 259 functions
-  4 suspects: 184 functions
-  5 suspects: 153 functions
-  6 suspects: 109 functions
-  7 suspects: 107 functions
+  4 suspects: 178 functions
+  5 suspects: 150 functions
+  6 suspects: 108 functions
+  7 suspects: 105 functions
   8 suspects: 74 functions
-  9 suspects: 63 functions
-  10 suspects: 42 functions
-  11 suspects: 46 functions
+  9 suspects: 62 functions
+  10 suspects: 40 functions
+  11 suspects: 45 functions
   12 suspects: 37 functions
-  13 suspects: 34 functions
-  14 suspects: 37 functions
-  15 suspects: 33 functions
+  13 suspects: 33 functions
+  14 suspects: 38 functions
+  15 suspects: 32 functions
   16 suspects: 27 functions
-  17 suspects: 19 functions
+  17 suspects: 17 functions
   18 suspects: 19 functions
   19 suspects: 23 functions
   20 suspects: 25 functions
@@ -30,7 +30,7 @@ SUSPECT COUNT DISTRIBUTION
   23 suspects: 16 functions
   24 suspects: 18 functions
   25 suspects: 10 functions
-  26 suspects: 10 functions
+  26 suspects: 9 functions
   27 suspects: 3 functions
   28 suspects: 10 functions
   29 suspects: 12 functions
@@ -39,7 +39,7 @@ SUSPECT COUNT DISTRIBUTION
   32 suspects: 6 functions
   33 suspects: 4 functions
   34 suspects: 3 functions
-  35 suspects: 4 functions
+  35 suspects: 5 functions
   36 suspects: 6 functions
   37 suspects: 6 functions
   39 suspects: 6 functions
@@ -52,7 +52,7 @@ SUSPECT COUNT DISTRIBUTION
   46 suspects: 3 functions
   47 suspects: 1 functions
   48 suspects: 1 functions
-  49 suspects: 3 functions
+  49 suspects: 2 functions
   52 suspects: 1 functions
   53 suspects: 4 functions
   54 suspects: 3 functions
@@ -140,7 +140,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       CRT function (runtime support) at 00610ab0...
     ... and 262 more
 
-  [param_count_too_few] (155 functions)
+  [param_count_too_few] (156 functions)
   ------------------------------------------------------------
     cockpit_ckptutil.c_isLineClippingDisabled_FUN_0043 (  4 lines)
       Function declares 0 params but call sites push 4 (4 missing)...
@@ -182,9 +182,9 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       Function declares 4 params but call sites push 6 (2 missing)...
     cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAli (  6 lines)
       Function declares 4 params but call sites push 6 (2 missing)...
-    ... and 135 more
+    ... and 136 more
 
-  [pointer_cast] (126 functions)
+  [pointer_cast] (130 functions)
   ------------------------------------------------------------
     core_dlight.cpp_drawGrayscalePixel_FUN_00473360    (  5 lines)
       *(int *)((int)g_ScreenBufferArray[y] + x * 4) = grayscale_va...
@@ -218,15 +218,15 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       *(byte *)((int)g_ScreenBufferArray[y_coord] + x_coord) = (by...
     sound_sndmain.cpp_killSfxByName_FUN_005aa2f0       ( 21 lines)
       ((CSfxSlot *)((int)g_SfxSlots[0].options.userdata + iVar2 + ...
+    support_trisock.cpp_getSocketName_FUN_005e1df0     ( 22 lines)
+      uVar1 = *(uint *)((int)pSVar3 + (uint)bVar4 * -8 + 4);...
     core_dcamera.cpp_CDemonCamera_sampleFramebufferPix ( 22 lines)
       uVar1 = *(uint *)((int)this_ptr->framebuffer_aligned +...
     core_sound.cpp_CSound_selectReverbPreset_FUN_005b3 ( 22 lines)
       puVar1 = (uint *)((int)&g_SoundModeTable[0].name + iVar2);...
     shape_meshlod.cpp_CLodMesh_gridSave_FUN_0051d420   ( 22 lines)
       puVar1 = (uint *)((int)this_ptr->spatial_grid_ptr->cell_star...
-    shape_superopt.cpp_CObj_restoreVertexPositions_FUN ( 22 lines)
-      puVar1 = (uint *)((int)&(this_ptr->vertex_data->position).x ...
-    ... and 106 more
+    ... and 110 more
 
   [decompiler_intrinsic] (122 functions)
   ------------------------------------------------------------
@@ -404,37 +404,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       local_8.value[0] = (char * [1])&stack0x0000000c;...
     ... and 10 more
 
-  [undefined_data] (14 functions)
-  ------------------------------------------------------------
-    sound_snddx.cpp_CDirectSoundDevice_commitDeferredS ( 11 lines)
-      (g_DirectSoundPropertySet,&DAT_00681df0,0,(LPVOID)0x0,0,loca...
-    core_actor.cpp_adjustIndentationLevel_FUN_0040aee0 ( 24 lines)
-      (&DAT_0066e177)[iVar2] = 9;...
-    wincore_winrun.cpp_setRegistryStringValue_FUN_005f ( 28 lines)
-      ((HKEY)&DAT_80000002,key_path,0,"suck",0,0x20006,...
-    core_charactr.cpp_CCharacter_renderOpaque_FUN_0042 ( 31 lines)
-      if (DAT_02f43978 != 0) {...
-    engine_matrix.c_projectTransformedPoint_FUN_0050cd ( 38 lines)
-      point->screen_x = (int)&DAT_80000010;...
-    core_script.cpp_CScript_loadLineToBuffer_FUN_00566 ( 44 lines)
-      pcVar5 = &DAT_00643f94;...
-    core_moloch.cpp_CMoloch_renderOpaque_FUN_00529750  ( 45 lines)
-      if (DAT_02f43978 != 0) {...
-    core_biggs.cpp_CBiggs_renderOpaque_FUN_004189b0    ( 46 lines)
-      if (DAT_02f43978 != 0) {...
-    core_succubus.cpp_CSuccubus_renderOpaque_FUN_005c7 ( 55 lines)
-      if ((DAT_02f43978 != 0) &&...
-    core_batman.cpp_CBatman_renderOpaque_FUN_004173b0  ( 66 lines)
-      if ((DAT_02f43978 != 0) &&...
-    core_vampboss.cpp_CVampireBoss_renderOpaque_FUN_00 ( 66 lines)
-      if (DAT_02f43978 != 0) {...
-    core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_0 ( 71 lines)
-      if (DAT_02f43978 != 0) {...
-    sound_snddx.cpp_getDirectSoundDevice_FUN_005b0440  ( 76 lines)
-      ((IUnknown *)g_DirectSoundPrimaryBuffer,&DAT_00686d58,&g_Dir...
-    core_fire.cpp_CFireEffect_createBulletImpact_FUN_0 (137 lines)
-      puVar5 = &DAT_0067aeb8;...
-
   [warning_unreachable] (12 functions)
   ------------------------------------------------------------
     core_procedur.cpp_CProceduralTexture_showMenu_FUN_ ( 20 lines)
@@ -507,6 +476,23 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       (pCVar1->param1).v_int = iVar2;...
     core_actor.cpp_CActorPropertyList_addFile_FUN_0040 ( 31 lines)
       (pCVar2->param1).v_int = allow_none;...
+
+  [undefined_data] (7 functions)
+  ------------------------------------------------------------
+    sound_snddx.cpp_CDirectSoundDevice_commitDeferredS ( 11 lines)
+      (g_DirectSoundPropertySet,&DAT_00681df0,0,(LPVOID)0x0,0,loca...
+    core_actor.cpp_adjustIndentationLevel_FUN_0040aee0 ( 24 lines)
+      (&DAT_0066e177)[iVar2] = 9;...
+    wincore_winrun.cpp_setRegistryStringValue_FUN_005f ( 28 lines)
+      ((HKEY)&DAT_80000002,key_path,0,"suck",0,0x20006,...
+    engine_matrix.c_projectTransformedPoint_FUN_0050cd ( 38 lines)
+      point->screen_x = (int)&DAT_80000010;...
+    core_script.cpp_CScript_loadLineToBuffer_FUN_00566 ( 44 lines)
+      pcVar5 = &DAT_00643f94;...
+    sound_snddx.cpp_getDirectSoundDevice_FUN_005b0440  ( 76 lines)
+      ((IUnknown *)g_DirectSoundPrimaryBuffer,&DAT_00686d58,&g_Dir...
+    core_fire.cpp_CFireEffect_createBulletImpact_FUN_0 (137 lines)
+      puVar5 = &DAT_0067aeb8;...
 
   [negative_offset] (7 functions)
   ------------------------------------------------------------
@@ -642,8 +628,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: crt/stack.c, Lines: 6, Types: ['special_crt_function', 'stack_ref']
   crt_heap.c__heapwalk_FUN_006012c0
     File: crt/heap.c, Lines: 6, Types: ['param_count_too_few', 'special_crt_function']
-  core_tvbat.cpp_FUN_005e3ec0
-    File: core/tvbat.cpp, Lines: 6, Types: ['unnamed_param']
   crt_stack.c___STK_FUN_005ff9f3
     File: crt/stack.c, Lines: 7, Types: ['param_count_too_few', 'special_crt_function']
   crt_string.c_mbtowc_peek_FUN_006059e0
@@ -698,5 +682,7 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/actor.cpp, Lines: 10, Types: ['unnamed_param']
   core_wateract.cpp_staticInit_FUN_005ea810
     File: core/wateract.cpp, Lines: 10, Types: ['undefined_data']
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWith
+    File: cockpit/drawsurf.cpp, Lines: 11, Types: ['param_count_too_few', 'stack_ref']
 
-  ... and 597 more
+  ... and 595 more

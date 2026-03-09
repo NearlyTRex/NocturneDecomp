@@ -9,42 +9,42 @@
 int __cdecl shape_superopt_cpp_CPoly_hasCentroidIntersection_FUN_005d1230(CPoly *this_ptr,CPoly *other)
 
 {
-  int iVar1;
-  uint *puVar2;
-  int unaff_EDI;
-  uint *puVar3;
-  byte bVar4;
-  CVector3d *in_stack_ffffff8c;
-  uint uStack_6c;
-  CVector3d *in_stack_ffffff9c;
-  uint local_44 [2];
-  CVector2d aCStack_3c [2];
-  uint auStack_1c [2];
+  CPoly_vtable *pCVar1;
+  int iVar2;
+  CVector3d *pCVar3;
+  CVector2d *pCVar4;
+  byte bVar5;
+  CVector3d local_74;
+  CVector3d CStack_5c;
+  CVector2d local_44;
+  CVector2d CStack_2c;
   CPoly_vtable *local_14;
   
-  bVar4 = 0;
+  bVar5 = 0;
   local_14 = this_ptr->vtable;
-  (*other->vtable->getCentroid)(other,in_stack_ffffff8c);
-  puVar2 = &uStack_6c;
-  puVar3 = local_44;
-  for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar3 = *puVar2;
-    puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
-    puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
+  (*other->vtable->getCentroid)(other,&local_74);
+  pCVar1 = local_14;
+  pCVar3 = &local_74;
+  pCVar4 = &local_44;
+  for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
+    *(uint *)&pCVar4->x = *(uint *)pCVar3;
+    pCVar3 = (CVector3d *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
+    pCVar4 = (CVector2d *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
   }
-  iVar1 = (**(code **)(unaff_EDI + 100))(this_ptr,aCStack_3c);
-  if (iVar1 == 0) {
-    uStack_6c = 0x5d129a;
-    (*this_ptr->vtable->getCentroid)(this_ptr,in_stack_ffffff9c);
-    puVar2 = local_44;
-    puVar3 = auStack_1c;
-    for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *puVar3 = *puVar2;
-      puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
-      puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
+  iVar2 = (*pCVar1->containsPoint2D)(this_ptr,&local_44);
+  if (iVar2 == 0) {
+    local_14 = other->vtable;
+    (*this_ptr->vtable->getCentroid)(this_ptr,&CStack_5c);
+    pCVar1 = local_14;
+    pCVar3 = &CStack_5c;
+    pCVar4 = &CStack_2c;
+    for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
+      *(uint *)&pCVar4->x = *(uint *)&pCVar3->x;
+      pCVar3 = (CVector3d *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
+      pCVar4 = (CVector2d *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
     }
-    iVar1 = (*(code *)this_ptr->vtable)(other,(CVector2d *)&local_14);
-    if (iVar1 == 0) {
+    iVar2 = (*pCVar1->containsPoint2D)(other,&CStack_2c);
+    if (iVar2 == 0) {
       return 0;
     }
   }

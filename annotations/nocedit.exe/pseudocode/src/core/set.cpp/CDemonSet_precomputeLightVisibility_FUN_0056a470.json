@@ -19,17 +19,16 @@
   },
   "complexity": {
     "assembly_lines": 398,
-    "complexity_score": 314,
+    "complexity_score": 269,
     "cross_reference_count": 6,
     "function_call_count": 17,
     "global_count": 15,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 179,
-    "suspect_count": 12,
+    "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
-      "stack_alignment_array",
-      "unnamed_param"
+      "stack_alignment_array"
     ],
     "total_lines": 577
   },
@@ -81,7 +80,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470",
-    "signature": "void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemonSet *this_ptr,int param_2)"
+    "signature": "void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemonSet *this_ptr,int light_index)"
   },
   "function_calls": [
     {
@@ -479,7 +478,7 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "light_index",
         "offset": 8,
         "size": 4,
         "type": "int"
@@ -488,44 +487,12 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemonSet *this_ptr,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 18,
       "match": "auStackY_1838",
       "severity": "moderate",
       "text": "uint auStackY_1838 [1443];",
       "type": "stack_alignment_array"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 51,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_48 = param_2 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 87,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 != -1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 89,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_14 = param_2;",
-      "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",

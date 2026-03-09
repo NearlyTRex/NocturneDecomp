@@ -546,7 +546,7 @@ section .text
     PUSH -0x1                           ; 0057cb0f
     PUSH EBX                            ; 0057cb11
     CALL core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470 ; 0057cb12
-        ;   XREF to: 0056a470 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemonSet * this_ptr, int param_2)
+        ;   XREF to: 0056a470 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemonSet * this_ptr, int light_index)
     ADD ESP,0x8                         ; 0057cb17
     MOV EAX,dword ptr [EBP + 0x14]      ; 0057cb1a
         ;   Label: LAB_0057cb1a

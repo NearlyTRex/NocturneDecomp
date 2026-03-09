@@ -2,35 +2,42 @@
 // Address: 0056e180
 // Address Range: [[0056e180, 0056e2a3]]
 // Convention: __cdecl
-// Signature: void __cdecl core_set_cpp_computeTriangleNormal_FUN_0056e180(int *vertex_array,void *param_2)
+// Signature: void __cdecl core_set_cpp_computeTriangleNormal_FUN_0056e180(CVector3i *vertex_array,SMRGLPrimitiveTriangle *triangle)
 
 #include "nocturne.h"
 
-void __cdecl core_set_cpp_computeTriangleNormal_FUN_0056e180(int *vertex_array,void *param_2)
+void __cdecl core_set_cpp_computeTriangleNormal_FUN_0056e180(CVector3i *vertex_array,SMRGLPrimitiveTriangle *triangle)
 
 {
-  int *piVar1;
+  CVector3i *pCVar1;
   float fVar2;
   float fVar3;
   float fVar4;
   float fVar5;
-  int *piVar6;
-  int *piVar7;
+  float fVar6;
+  float fVar7;
+  CVector3i *pCVar8;
+  CVector3i *pCVar9;
+  int iVar10;
+  int iVar11;
   
-  piVar6 = vertex_array + *(int *)((int)param_2 + 0x24) * 3;
-  piVar1 = vertex_array + *(int *)((int)param_2 + 0x18) * 3;
-  piVar7 = vertex_array + *(int *)((int)param_2 + 0x30) * 3;
-  fVar2 = (float)(piVar6[1] - piVar1[1]) * (float)(piVar7[2] - piVar6[2]) -
-          (float)(piVar7[1] - piVar6[1]) * (float)(piVar6[2] - piVar1[2]);
-  fVar5 = (float)(*piVar7 - *piVar6) * (float)(piVar6[2] - piVar1[2]) -
-          (float)(*piVar6 - *piVar1) * (float)(piVar7[2] - piVar6[2]);
-  fVar4 = (float)(*piVar6 - *piVar1) * (float)(piVar7[1] - piVar6[1]) -
-          (float)(*piVar7 - *piVar6) * (float)(piVar6[1] - piVar1[1]);
-  fVar3 = (float)(g_LightAttenuationMax -
-                 ((int)(fVar4 * fVar4 + fVar5 * fVar5 + fVar2 * fVar2) >> 1)) *
+  pCVar8 = vertex_array + triangle->vertices[1].vertex_index;
+  pCVar1 = vertex_array + triangle->vertices[0].vertex_index;
+  iVar10 = pCVar8->x - pCVar1->x;
+  pCVar9 = vertex_array + triangle->vertices[2].vertex_index;
+  iVar11 = pCVar9->x - pCVar8->x;
+  fVar4 = (float)(pCVar8->z - pCVar1->z);
+  fVar7 = (float)(pCVar8->y - pCVar1->y);
+  fVar2 = (float)(pCVar9->z - pCVar8->z);
+  fVar6 = (float)(pCVar9->y - pCVar8->y);
+  fVar3 = fVar7 * fVar2 - fVar6 * fVar4;
+  fVar5 = (float)iVar11 * fVar4 - (float)iVar10 * fVar2;
+  fVar4 = (float)iVar10 * fVar6 - (float)iVar11 * fVar7;
+  fVar2 = (float)(g_LightAttenuationMax -
+                 ((int)(fVar4 * fVar4 + fVar5 * fVar5 + fVar3 * fVar3) >> 1)) *
           (float)65535;
-  *(float *)((int)param_2 + 8) = fVar2 * fVar3;
-  *(float *)((int)param_2 + 0xc) = fVar5 * fVar3;
-  *(float *)((int)param_2 + 0x10) = fVar4 * fVar3;
+  (triangle->base).surface_normal.A = (int)(fVar3 * fVar2);
+  (triangle->base).surface_normal.B = (int)(fVar5 * fVar2);
+  (triangle->base).surface_normal.C = (int)(fVar4 * fVar2);
   return;
 }

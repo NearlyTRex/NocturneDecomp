@@ -1,49 +1,22 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 35,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 22,
-        "line": 35,
-        "message": "expected expression"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 16,
-        "line": 46,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 22,
-        "line": 46,
-        "message": "expected expression"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 63,
-    "complexity_score": 137,
+    "assembly_lines": 65,
+    "complexity_score": 87,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 42,
-    "suspect_count": 8,
+    "suspect_count": 4,
     "suspect_types": [
-      "stack_param",
-      "unaffected_reg",
-      "unresolved_funcptr"
+      "pointer_cast"
     ],
-    "total_lines": 105
+    "total_lines": 107
   },
   "cross_references": [],
   "function": {
@@ -140,68 +113,36 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 7,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "int unaff_EDI;",
-      "type": "unaffected_reg"
+      "description": "Complex pointer cast",
+      "line": 24,
+      "match": "(CVector3d *)((int)",
+      "severity": "mild",
+      "text": "pCVar3 = (CVector3d *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_ffffff8c",
-      "severity": "moderate",
-      "text": "CVector3d *in_stack_ffffff8c;",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 25,
+      "match": "(CVector2d *)((int)",
+      "severity": "mild",
+      "text": "pCVar4 = (CVector2d *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_ffffff9c",
-      "severity": "moderate",
-      "text": "CVector3d *in_stack_ffffff9c;",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 36,
+      "match": "(CVector3d *)((int)",
+      "severity": "mild",
+      "text": "pCVar3 = (CVector3d *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_ffffff8c",
-      "severity": "moderate",
-      "text": "(*other->vtable->getCentroid)(other,in_stack_ffffff8c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 28,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "iVar1 = (**(code **)(unaff_EDI + 100))(this_ptr,aCStack_3c);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 28,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar1 = (**(code **)(unaff_EDI + 100))(this_ptr,aCStack_3c);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 31,
-      "match": "in_stack_ffffff9c",
-      "severity": "moderate",
-      "text": "(*this_ptr->vtable->getCentroid)(this_ptr,in_stack_ffffff9c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 39,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar1 = (*(code *)this_ptr->vtable)(other,(CVector2d *)&local_14);",
-      "type": "unresolved_funcptr"
+      "description": "Complex pointer cast",
+      "line": 37,
+      "match": "(CVector2d *)((int)",
+      "severity": "mild",
+      "text": "pCVar4 = (CVector2d *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

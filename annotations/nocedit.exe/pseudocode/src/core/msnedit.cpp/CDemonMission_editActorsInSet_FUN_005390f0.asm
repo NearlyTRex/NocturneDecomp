@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMission *this_ptr,int param_2)
+; int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMission *this_ptr,int reset_cameras)
 ;
 ; Parameters:
 ; CDemonMission *  Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param_2
+; int              Stack[0x8]:4   reset_cameras
 ; Local Variables:
 ; undefined4       Stack[-0x9b4]:4  local_9b4
 ; undefined1       Stack[-0x60c]:1  local_60c
@@ -233,7 +233,7 @@ section .text
     PUSH EAX                            ; 0053924e
     PUSH EBX                            ; 0053924f
     CALL core_msnedit.cpp_CDemonMission_editActorProperties_FUN_00539060 ; 00539250
-        ;   XREF to: 00539060 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_editActorProperties_FUN_00539060(CDemonMission * this_ptr, int param_2)
+        ;   XREF to: 00539060 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_editActorProperties_FUN_00539060(CDemonMission * this_ptr, int show_3d_viewport)
     ADD ESP,0x8                         ; 00539255
     CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00539258
         ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
@@ -507,7 +507,7 @@ section .text
     PUSH EDI                            ; 005395d0 | g_CDemonMissionInstance
     MOV dword ptr [0x02f7c634],ESI      ; 005395d1 | INT_02f7c634
     CALL core_msnedit.cpp_CDemonMission_editActorProperties_FUN_00539060 ; 005395d7
-        ;   XREF to: 00539060 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_editActorProperties_FUN_00539060(CDemonMission * this_ptr, int param_2)
+        ;   XREF to: 00539060 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_editActorProperties_FUN_00539060(CDemonMission * this_ptr, int show_3d_viewport)
     ADD ESP,0x8                         ; 005395dc
     CALL engine_2d.c_clearInputAndWait_FUN_00403260 ; 005395df
         ;   XREF to: 00403260 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403260()
@@ -1249,7 +1249,7 @@ section .text
     PUSH EAX                            ; 00539d61 | g_CDemonMissionInstance
     MOV dword ptr [0x02f7c634],EDI      ; 00539d62 | INT_02f7c634
     CALL core_msnedit.cpp_CDemonMission_editActorProperties_FUN_00539060 ; 00539d68
-        ;   XREF to: 00539060 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_editActorProperties_FUN_00539060(CDemonMission * this_ptr, int param_2)
+        ;   XREF to: 00539060 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_editActorProperties_FUN_00539060(CDemonMission * this_ptr, int show_3d_viewport)
         ;   Label: LAB_00539d68
     ADD ESP,0x8                         ; 00539d6d
     CALL engine_2d.c_clearInputAndWait_FUN_00403260 ; 00539d70
@@ -1832,7 +1832,7 @@ section .text
     PUSH EDX                            ; 0053a489
     PUSH EAX                            ; 0053a48a
     CALL core_msnedit.cpp_CDemonMission_findNextVisibleActor_FUN_0053ca30 ; 0053a48b
-        ;   XREF to: 0053ca30 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_findNextVisibleActor_FUN_0053ca30(CDemonMission * this_ptr, CDemonActor * actor)
+        ;   XREF to: 0053ca30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_msnedit.cpp_CDemonMission_findNextVisibleActor_FUN_0053ca30(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 0053a490
     PUSH EAX                            ; 0053a493
     MOV EBX,dword ptr [EBP + 0x92]      ; 0053a494
@@ -2035,7 +2035,7 @@ section .text
     MOV ESI,dword ptr [EBP + 0x92]      ; 0053a6ac
     PUSH ESI                            ; 0053a6b2
     CALL core_msnedit.cpp_CDemonMission_importActorsFrom_FUN_0053b9f0 ; 0053a6b3
-        ;   XREF to: 0053b9f0 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_importActorsFrom_FUN_0053b9f0(CDemonMission * this_ptr, CDemonMission * other)
+        ;   XREF to: 0053b9f0 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_importActorsFrom_FUN_0053b9f0(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 0053a6b8
     PUSH 0x20                           ; 0053a6bb
         ;   Label: LAB_0053a6bb
@@ -2304,7 +2304,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x92]      ; 0053a947
     PUSH EAX                            ; 0053a94d
     CALL core_msnedit.cpp_CDemonMission_editActorProperties_FUN_00539060 ; 0053a94e
-        ;   XREF to: 00539060 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_editActorProperties_FUN_00539060(CDemonMission * this_ptr, int param_2)
+        ;   XREF to: 00539060 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_editActorProperties_FUN_00539060(CDemonMission * this_ptr, int show_3d_viewport)
     ADD ESP,0x8                         ; 0053a953
     PUSH 0x1c                           ; 0053a956
         ;   Label: LAB_0053a956
@@ -2389,7 +2389,7 @@ section .text
     PUSH ESI                            ; 0053aa1e | g_CDemonMissionInstance
     MOV dword ptr [0x02f7c634],EBX      ; 0053aa1f | INT_02f7c634
     CALL core_msnedit.cpp_CDemonMission_editActorProperties_FUN_00539060 ; 0053aa25
-        ;   XREF to: 00539060 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_editActorProperties_FUN_00539060(CDemonMission * this_ptr, int param_2)
+        ;   XREF to: 00539060 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_editActorProperties_FUN_00539060(CDemonMission * this_ptr, int show_3d_viewport)
     ADD ESP,0x8                         ; 0053aa2a
     CALL engine_2d.c_clearInputAndWait_FUN_00403260 ; 0053aa2d
         ;   XREF to: 00403260 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403260()
@@ -2429,7 +2429,7 @@ section .text
     PUSH EBX                            ; 0053aa87
     PUSH EAX                            ; 0053aa88
     CALL core_msnedit.cpp_CDemonMission_editActorProperties_FUN_00539060 ; 0053aa89
-        ;   XREF to: 00539060 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_editActorProperties_FUN_00539060(CDemonMission * this_ptr, int param_2)
+        ;   XREF to: 00539060 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_editActorProperties_FUN_00539060(CDemonMission * this_ptr, int show_3d_viewport)
     ADD ESP,0x8                         ; 0053aa8e
     MOV EAX,[0x00661c44]                ; 0053aa91 | FLOAT_00661c44
         ;   Label: caseD_3
@@ -2676,7 +2676,7 @@ section .text
     MOV EDX,dword ptr [EBP + 0x92]      ; 0053ad63
     PUSH EDX                            ; 0053ad69
     CALL core_msnedit.cpp_CDemonMission_pasteActorProperty_FUN_0053af50 ; 0053ad6a
-        ;   XREF to: 0053af50 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_pasteActorProperty_FUN_0053af50(CDemonMission * this_ptr, char * property)
+        ;   XREF to: 0053af50 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_pasteActorProperty_FUN_0053af50(CDemonMission * this_ptr, CActorProperty * property)
     ADD ESP,0x8                         ; 0053ad6f
     MOV dword ptr [0x00680818],0x501502f9 ; 0053ad72 | FLOAT_00680818
         ;   Label: LAB_0053ad72

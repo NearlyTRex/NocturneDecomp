@@ -140,7 +140,7 @@ section .text
     PUSH EBP                            ; 0054c5bb
     PUSH EDI                            ; 0054c5bc
     CALL cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_0054c1e0 ; 0054c5bd
-        ;   XREF to: 0054c1e0 (UNCONDITIONAL_CALL)  ; void cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_0054c1e0(CPackedBitmapSet * this_ptr)
+        ;   XREF to: 0054c1e0 (UNCONDITIONAL_CALL)  ; void cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_0054c1e0(CPackedBitmapSet * this_ptr, int apply_palette_flag, int bitmap_index)
     ADD ESP,0xc                         ; 0054c5c2
     POP EBP                             ; 0054c5c5
     POP EDI                             ; 0054c5c6

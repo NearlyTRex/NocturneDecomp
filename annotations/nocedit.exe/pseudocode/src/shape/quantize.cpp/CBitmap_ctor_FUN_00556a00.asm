@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBitmap * __cdecl shape_quantize_cpp_CBitmap_ctor_FUN_00556a00(CBitmap *this_ptr,int param_2,int param_3,int param_4)
+; CBitmap * __cdecl shape_quantize_cpp_CBitmap_ctor_FUN_00556a00(CBitmap *this_ptr,int width,int height,int bit_depth)
 ;
 ; Parameters:
 ; CBitmap *        Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param_2
-; int              Stack[0xc]:4   param_3
-; int              Stack[0x10]:4   param_4
+; int              Stack[0x8]:4   width
+; int              Stack[0xc]:4   height
+; int              Stack[0x10]:4   bit_depth
 ; Local Variables:
 ; undefined1       Stack[-0x68]:1  local_68
 ;

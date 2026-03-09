@@ -726,7 +726,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x2480]    ; 005793e8
     PUSH ESI                            ; 005793ef
     CALL core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470 ; 005793f0
-        ;   XREF to: 0056a470 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemonSet * this_ptr, int param_2)
+        ;   XREF to: 0056a470 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemonSet * this_ptr, int light_index)
     ADD ESP,0x8                         ; 005793f5
     CMP dword ptr [ESP + 0x2400],0x0    ; 005793f8
         ;   Label: LAB_005793f8

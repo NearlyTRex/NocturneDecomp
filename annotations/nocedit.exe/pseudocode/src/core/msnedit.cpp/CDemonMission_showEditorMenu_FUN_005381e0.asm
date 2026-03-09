@@ -485,7 +485,7 @@ section .text
     PUSH EBX                            ; 005386a1
     PUSH EBP                            ; 005386a2
     CALL core_msnedit.cpp_CDemonMission_removeSet_FUN_00538df0 ; 005386a3
-        ;   XREF to: 00538df0 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_removeSet_FUN_00538df0(CDemonMission * this_ptr, int param_2)
+        ;   XREF to: 00538df0 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_removeSet_FUN_00538df0(CDemonMission * this_ptr, int set_index)
     JMP 0x005384e9                      ; 005386a8
         ;   XREF to: 005384e9 (UNCONDITIONAL_JUMP)  ; LAB_005384e9
     MOV EBX,dword ptr [EBP]             ; 005386ad
@@ -529,7 +529,7 @@ section .text
         ;   Label: LAB_0053870b
     PUSH EBP                            ; 0053870c
     CALL core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 ; 0053870d
-        ;   XREF to: 005390f0 (UNCONDITIONAL_CALL)  ; int core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMission * this_ptr, int param_2)
+        ;   XREF to: 005390f0 (UNCONDITIONAL_CALL)  ; int core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMission * this_ptr, int reset_cameras)
     ADD ESP,0x8                         ; 00538712
     CMP EAX,0x2                         ; 00538715
     JNZ 0x005384ec                      ; 00538718
@@ -562,7 +562,7 @@ section .text
     MOV ECX,dword ptr [0x006810c8]      ; 0053875b | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH ECX                            ; 00538761 | g_CDemonSetInstance
     CALL core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470 ; 00538762
-        ;   XREF to: 0056a470 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemonSet * this_ptr, int param_2)
+        ;   XREF to: 0056a470 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemonSet * this_ptr, int light_index)
     ADD ESP,0x8                         ; 00538767
     CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0053876a
         ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()

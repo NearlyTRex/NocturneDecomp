@@ -17,8 +17,8 @@
 ;   core_charactr.cpp_CCharacter_renderCharacter_FUN_00429aa0 at 00429b15
 ;   core_cloth.cpp_CCloth_boneEditor_FUN_0043c880 at 0043cae4
 ;   core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_00485be0 at 00485d6d
-;   core_mimic.cpp_CMimic_FUN_005205f0 at 005206f7
 ;   core_mimic.cpp_CMimic_renderBackground_FUN_005208b0 at 00520907
+;   core_mimic.cpp_CMimic_renderMirrored_FUN_005205f0 at 005206f7
 ;   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 at 005971ca
 ;   core_succubus.cpp_CSuccubus_renderOpaque_FUN_005c7590 at 005c760e
 ;   ... and 1 more

@@ -20,7 +20,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[2]:
-;   core_mimic.cpp_CMimic_FUN_0051f930 at 0051fb30
+;   core_mimic.cpp_CMimic_updatePose_FUN_0051f930 at 0051fb30
 ;   core_xform.cpp_buildMirrorTransform_FUN_005f7000 at 005f70d0
 ;
 ; Referenced Globals:

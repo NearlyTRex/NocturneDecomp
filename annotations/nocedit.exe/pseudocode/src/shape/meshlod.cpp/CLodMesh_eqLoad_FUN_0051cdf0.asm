@@ -19,7 +19,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
-;   shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_0051b8a0 at 0051b903
+;   shape_meshlod.cpp_CLodMesh_initializeFromPrecomputedData_FUN_0051b8a0 at 0051b903
 ;   shape_meshlod.cpp_CLodMesh_replayLodGeneration_FUN_005173f0 at 005174ea
 ;
 ; Referenced Globals:

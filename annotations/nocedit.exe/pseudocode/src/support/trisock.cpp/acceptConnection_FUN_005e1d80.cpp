@@ -13,6 +13,7 @@ int __cdecl support_trisock_cpp_acceptConnection_FUN_005e1d80(_SOCKET *listen_so
   SOCKADDR_IN *pSVar2;
   byte bVar3;
   SOCKADDR local_20;
+  SNetworkAddr SStack_10;
   int local_8;
   
   bVar3 = 0;
@@ -25,8 +26,7 @@ int __cdecl support_trisock_cpp_acceptConnection_FUN_005e1d80(_SOCKET *listen_so
   if (new_socket == (_SOCKET *)0x0) {
     return 1;
   }
-  pSVar2 = support_trisock_cpp_convertSockAddr_FUN_005e1960
-                     ((SOCKADDR_IN *)&stack0xfffffff0,&local_20);
+  pSVar2 = support_trisock_cpp_convertSockAddr_FUN_005e1960(&SStack_10,&local_20);
   *new_socket = *(_SOCKET *)pSVar2;
   new_socket[(uint)bVar3 * -2 + 1] = *(_SOCKET *)((int)pSVar2 + (uint)bVar3 * -8 + 4);
   return 1;

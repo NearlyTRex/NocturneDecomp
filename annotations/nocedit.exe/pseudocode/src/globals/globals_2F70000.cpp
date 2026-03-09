@@ -32,8 +32,8 @@ float FLOAT_02f7c630 = {};
 // int
 int g_DisableMouseHitOnBarrier = {};
 int INT_02f7c528 = {};
-int INT_02f7c52c = {};
-int INT_02f7c530 = {};
+int g_SelectedMotionPropertyIndex = {};
+int g_MotionPropertyEditState = {};
 int INT_02f7c538 = {};
 int INT_02f7c53c = {};
 int INT_02f7c634 = {};

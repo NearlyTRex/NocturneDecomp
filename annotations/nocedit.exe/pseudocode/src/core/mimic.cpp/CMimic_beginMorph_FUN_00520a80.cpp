@@ -39,7 +39,7 @@ void __cdecl core_mimic_cpp_CMimic_beginMorph_FUN_00520a80(CMimic *this_ptr)
   this_ptr->morph_blend = 0.0;
   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
             (&(this_ptr->base).base.model.motion_controller,0,1);
-  core_mimic_cpp_CMimic_processMorph_FUN_00520ba0(this_ptr);
+  core_mimic_cpp_CMimic_processMorph_FUN_00520ba0(this_ptr,0.0);
   this_ptr_00 = g_CConsolePtr;
   (this_ptr->base).base.base.is_transparent = 1;
   engine_console_cpp_CConsole_printf_FUN_00441890

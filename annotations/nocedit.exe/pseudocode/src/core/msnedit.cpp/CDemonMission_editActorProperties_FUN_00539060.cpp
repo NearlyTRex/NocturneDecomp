@@ -2,18 +2,18 @@
 // Address: 00539060
 // Address Range: [[00539060, 005390c4]]
 // Convention: __cdecl
-// Signature: void __cdecl core_msnedit_cpp_CDemonMission_editActorProperties_FUN_00539060(CDemonMission *this_ptr,int param_2)
+// Signature: void __cdecl core_msnedit_cpp_CDemonMission_editActorProperties_FUN_00539060(CDemonMission *this_ptr,int show_3d_viewport)
 
 #include "nocturne.h"
 
-void __cdecl core_msnedit_cpp_CDemonMission_editActorProperties_FUN_00539060(CDemonMission *this_ptr,int param_2)
+void __cdecl core_msnedit_cpp_CDemonMission_editActorProperties_FUN_00539060(CDemonMission *this_ptr,int show_3d_viewport)
 
 {
   int iVar1;
   
-  if (param_2 != this_ptr->show_3d_viewport) {
+  if (show_3d_viewport != this_ptr->show_3d_viewport) {
     (this_ptr->viewport).left = 0;
-    this_ptr->show_3d_viewport = param_2;
+    this_ptr->show_3d_viewport = show_3d_viewport;
     iVar1 = this_ptr->show_3d_viewport;
     (this_ptr->viewport).top = 0;
     if (iVar1 == 0) {

@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
-;   shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_0051b8a0
+;   shape_meshlod.cpp_CLodMesh_initializeFromPrecomputedData_FUN_0051b8a0
 ;   shape_meshlod.cpp_CLodMesh_openPrecomputeFile_FUN_0051b770
 ;
 ; *****************************************************************************
@@ -38,8 +38,8 @@ section .text
     PUSH EAX                            ; 0051b73d
         ;   Label: LAB_0051b73d
     PUSH ESI                            ; 0051b73e
-    CALL shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_0051b8a0 ; 0051b73f
-        ;   XREF to: 0051b8a0 (UNCONDITIONAL_CALL)  ; int shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_0051b8a0(CLodMesh * this_ptr, _FILE * file_handle)
+    CALL shape_meshlod.cpp_CLodMesh_initializeFromPrecomputedData_FUN_0051b8a0 ; 0051b73f
+        ;   XREF to: 0051b8a0 (UNCONDITIONAL_CALL)  ; int shape_meshlod.cpp_CLodMesh_initializeFromPrecomputedData_FUN_0051b8a0(CLodMesh * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 0051b744
     PUSH 0x121e                         ; 0051b747
     PUSH 0x637d10                       ; 0051b74c | = "..\\shape\\meshlod.cpp"

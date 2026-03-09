@@ -4,11 +4,11 @@
 ; void __cdecl shape_meshlod_cpp_CLodMesh_createNextLOD_FUN_00516f50(CLodMesh *this_ptr)
 ;
 ; Parameters:
-; CLodMesh *       Stack[0x8]:4   this_ptr
+; CLodMesh *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
+;   shape_meshlod.cpp_CLodMesh_initializeFromPrecomputedData_FUN_0051b8a0 at 0051b8ce
 ;   shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_00516d50 at 00516d9d
-;   shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_0051b8a0 at 0051b8ce
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_meshlod_cpp_00637675

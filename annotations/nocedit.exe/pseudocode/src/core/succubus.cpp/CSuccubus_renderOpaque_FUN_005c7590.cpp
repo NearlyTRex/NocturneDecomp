@@ -50,7 +50,7 @@ int __cdecl core_succubus_cpp_CSuccubus_renderOpaque_FUN_005c7590(CSuccubus *thi
                   (model_ptr,-1,0xffffffff,1,0);
         core_cloth_cpp_CClothList_render_FUN_0043c320(&this_ptr->hotdemon_cloth_list,model_ptr);
       }
-      if ((DAT_02f43978 != 0) &&
+      if ((INT_02f43978 != 0) &&
          (iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
          iVar1 == 0)) {
         core_motion_cpp_CMotionController_render_FUN_0052e700

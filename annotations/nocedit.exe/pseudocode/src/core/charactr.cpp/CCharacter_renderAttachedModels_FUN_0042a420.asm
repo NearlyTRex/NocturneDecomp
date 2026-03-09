@@ -19,7 +19,7 @@
 ;
 ; XREF[3]:
 ;   core_charactr.cpp_CCharacter_renderCharacter_FUN_00429aa0 at 00429aec
-;   core_mimic.cpp_CMimic_FUN_005205f0 at 00520803
+;   core_mimic.cpp_CMimic_renderMirrored_FUN_005205f0 at 00520803
 ;   core_vampboss.cpp_CVampireBoss_renderOpaque_FUN_005e6da0 at 005e6e37
 ;
 ; Referenced Globals:

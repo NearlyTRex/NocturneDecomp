@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SOCKADDR_IN * __cdecl support_trisock_cpp_convertSockAddr_FUN_005e1960(SOCKADDR_IN *dest_addr,SOCKADDR *src_addr)
+; SOCKADDR_IN * __cdecl support_trisock_cpp_convertSockAddr_FUN_005e1960(SNetworkAddr *dest_addr,SOCKADDR *src_addr)
 ;
 ; Parameters:
-; SOCKADDR_IN *    Stack[0x4]:4   dest_addr
+; SNetworkAddr *   Stack[0x4]:4   dest_addr
 ; SOCKADDR *       Stack[0x8]:4   src_addr
 ;
 ; XREF[3]:

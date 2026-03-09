@@ -1,30 +1,20 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 18,
-        "line": 27,
-        "message": "assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'void *'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 70,
-    "complexity_score": 82,
+    "complexity_score": 31,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 32,
-    "suspect_count": 4,
-    "suspect_types": [
-      "pointer_cast",
-      "stack_param"
-    ],
-    "total_lines": 102
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 31,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 101
   },
   "cross_references": [],
   "function": {
@@ -37,7 +27,7 @@
     ],
     "convention": "__cdecl",
     "name": "cockpit_ckptutil.c_mirrorBitmapHorizontally_FUN_00433160",
-    "signature": "void __cdecl cockpit_ckptutil_c_mirrorBitmapHorizontally_FUN_00433160(void *bitmap_data,int width,int height)"
+    "signature": "void __cdecl cockpit_ckptutil_c_mirrorBitmapHorizontally_FUN_00433160(uchar *bitmap_data,int width,int height,int bytes_per_pixel)"
   },
   "function_calls": [],
   "globals": [],
@@ -45,8 +35,8 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 3,
-    "estimated_params": 3
+    "declared_params": 4,
+    "estimated_params": 4
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.180327868852459,
@@ -81,10 +71,10 @@
     "pcode_op_count": 316
   },
   "stack_frame": {
-    "frame_size": 48,
+    "frame_size": 52,
     "local_size": 36,
     "param_offset": 4,
-    "param_size": 12,
+    "param_size": 16,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -120,7 +110,7 @@
         "name": "bitmap_data",
         "offset": 4,
         "size": 4,
-        "type": "void *"
+        "type": "uchar *"
       },
       {
         "is_param": true,
@@ -135,41 +125,15 @@
         "offset": 12,
         "size": 4,
         "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "bytes_per_pixel",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000010",
-      "severity": "moderate",
-      "text": "int in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000010",
-      "severity": "moderate",
-      "text": "iVar2 = width * in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 28,
-      "match": "(byte *)((int)",
-      "severity": "mild",
-      "text": "} while (puVar3 < (byte *)((int)bitmap_data + iVar2));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 31,
-      "match": "(void *)((int)",
-      "severity": "mild",
-      "text": "bitmap_data = (void *)((int)bitmap_data + iVar2);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

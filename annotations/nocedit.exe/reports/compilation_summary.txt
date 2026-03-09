@@ -5,24 +5,24 @@ FUNCTION COMPILATION SUMMARY
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6484
-Successful: 5696 (87.8%)
-Failed: 788
+Successful: 5703 (88.0%)
+Failed: 781
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                           1501
-  format_error                     803
-  undeclared_identifier            436
+  other                           1503
+  format_error                     801
+  undeclared_identifier            421
   incompatible_types               331
-  syntax_error                      53
+  syntax_error                      51
+  type_error                        22
   missing_member                    22
-  type_error                        19
   lvalue_required                   16
-  pointer_arithmetic                 4
+  pointer_arithmetic                10
   pointer_precision                  2
 
 ====================================================================================================
-CATEGORY: other (1501 errors)
+CATEGORY: other (1503 errors)
 ====================================================================================================
 
   core_imp.cpp_CImp_process_FUN_004f9c30
@@ -86,10 +86,10 @@ CATEGORY: other (1501 errors)
   core_script.cpp_CScript_loadLineToBuffer_FUN_00566230
     Line 21: assigning to 'char *' from 'undefined1 *' (aka 'unsigned char *') converts betwe...
 
-  ... and 332 more errors
+  ... and 333 more errors
 
 ====================================================================================================
-CATEGORY: format_error (803 errors)
+CATEGORY: format_error (801 errors)
 ====================================================================================================
 
   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50
@@ -156,7 +156,7 @@ CATEGORY: format_error (803 errors)
   ... and 239 more errors
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (436 errors)
+CATEGORY: undeclared_identifier (421 errors)
 ====================================================================================================
 
   core_actor.cpp_adjustIndentationLevel_FUN_0040aee0
@@ -205,10 +205,6 @@ CATEGORY: undeclared_identifier (436 errors)
     Line 95: use of undeclared identifier '_local_1a4'; did you mean 'local_1a4'?...
   core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520
     Line 157: use of undeclared identifier '_local_1ecc'; did you mean 'local_1ecc'?...
-  cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_0054b190
-    Line 37: use of undeclared identifier '_transparency_color'; did you mean 'transparency_c...
-  shape_quantize.cpp_quantizeRawPixelData_FUN_00556490
-    Line 73: use of undeclared identifier '_width'; did you mean 'width'?...
   engine_dosio.c_reopenFileStream_FUN_00481b50
     Line 17: use of undeclared identifier 'clear_and_preserve_state'...
   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0
@@ -219,8 +215,12 @@ CATEGORY: undeclared_identifier (436 errors)
     Line 122: use of undeclared identifier 'code'...
   core_dcube.cpp_CDemonCube_rotateVertices_FUN_00457650
     Line 78: use of undeclared identifier 'code'...
+  core_door.cpp_CDoor_process_FUN_004800c0
+    Line 134: use of undeclared identifier 'code'...
+  core_drip.cpp_CDrip_process_FUN_0048e2a0
+    Line 116: use of undeclared identifier 'code'...
 
-  ... and 156 more errors
+  ... and 151 more errors
 
 ====================================================================================================
 CATEGORY: incompatible_types (331 errors)
@@ -287,10 +287,10 @@ CATEGORY: incompatible_types (331 errors)
   shape_superopt.cpp_CObj_allocatePolygons_FUN_005d2320
     Line 22: assigning to 'CPoly *' from incompatible type 'void *'...
 
-  ... and 178 more errors
+  ... and 177 more errors
 
 ====================================================================================================
-CATEGORY: syntax_error (53 errors)
+CATEGORY: syntax_error (51 errors)
 ====================================================================================================
 
   core_dskybox.cpp_renderSkyDome_FUN_004901f0
@@ -354,19 +354,10 @@ CATEGORY: syntax_error (53 errors)
   shape_superopt.cpp_CObj_saveVertexPositionsWithFlag_FUN_005d37b0
     Line 28: expected expression...
 
-  ... and 9 more errors
+  ... and 8 more errors
 
 ====================================================================================================
-CATEGORY: missing_member (22 errors)
-====================================================================================================
-
-  sound_sndwav.cpp_CWavInDevice_setMode_FUN_005b0f70
-    Line 35: no member named '_16_4_' in 'tWAVEFORMATEX'...
-  core_actor.cpp_CDemonActor_ctor_FUN_004088b0
-    Line 20: no member named 'unk15' in 'CDemonActor'...
-
-====================================================================================================
-CATEGORY: type_error (19 errors)
+CATEGORY: type_error (22 errors)
 ====================================================================================================
 
   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0
@@ -383,6 +374,10 @@ CATEGORY: type_error (19 errors)
     Line 30: unknown type name 'code'...
   core_icepick.cpp_CIcePick_process_FUN_004f80b0
     Line 31: unknown type name 'code'...
+  core_msnedit.cpp_CDemonMission_editActorAtIndex_FUN_0053b030
+    Line 12: unknown type name 'code'...
+  core_msnedit.cpp_CDemonMission_editActorDetailed_FUN_0053b510
+    Line 12: unknown type name 'code'...
   core_scat.cpp_CScat_blendAimBones_FUN_005584a0
     Line 21: unknown type name 'code'...
   core_scat.cpp_CScat_process_FUN_005571f0
@@ -399,14 +394,21 @@ CATEGORY: type_error (19 errors)
     Line 13: unknown type name 'code'...
   engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80
     Line 18: unknown type name 'code'...
-  cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_0054b190
-    Line 24: unknown type name 'undefined3'...
   engine_dosio.c_reopenFileStream_FUN_00481b50
     Line 13: unknown type name 'undefined3'...
   wincore_winrun.cpp_getNextKeypress_FUN_005f2e90
     Line 13: unknown type name 'undefined3'...
   engine_colquant.c_computeBoxStatistics_FUN_00441260
     Line 23: unknown type name 'undefined5'...
+
+====================================================================================================
+CATEGORY: missing_member (22 errors)
+====================================================================================================
+
+  sound_sndwav.cpp_CWavInDevice_setMode_FUN_005b0f70
+    Line 35: no member named '_16_4_' in 'tWAVEFORMATEX'...
+  core_actor.cpp_CDemonActor_ctor_FUN_004088b0
+    Line 20: no member named 'unk15' in 'CDemonActor'...
 
 ====================================================================================================
 CATEGORY: lvalue_required (16 errors)
@@ -428,13 +430,17 @@ CATEGORY: lvalue_required (16 errors)
     Line 46: cannot take the address of an rvalue of type 'int'...
 
 ====================================================================================================
-CATEGORY: pointer_arithmetic (4 errors)
+CATEGORY: pointer_arithmetic (10 errors)
 ====================================================================================================
 
   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0
     Line 152: arithmetic on a pointer to the function type 'CActorPropertyActionFunc' (aka 'in...
   core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50
     Line 52: arithmetic on a pointer to the function type 'CActorPropertyActionFunc' (aka 'in...
+  core_msnedit.cpp_CDemonMission_editActorAtIndex_FUN_0053b030
+    Line 44: arithmetic on a pointer to the function type 'CActorPropertyActionFunc' (aka 'in...
+  core_msnedit.cpp_CDemonMission_editActorDetailed_FUN_0053b510
+    Line 44: arithmetic on a pointer to the function type 'CActorPropertyActionFunc' (aka 'in...
 
 ====================================================================================================
 CATEGORY: pointer_precision (2 errors)
@@ -447,8 +453,8 @@ CATEGORY: pointer_precision (2 errors)
 COMPILATION VS SUSPECT PATTERNS
 ====================================================================================================
 
-Average suspects in successfully compiled functions: 1.96
-Average suspects in failed compilations: 9.16
+Average suspects in successfully compiled functions: 1.94
+Average suspects in failed compilations: 9.12
 
-Functions that compile but have suspect patterns: 1592
+Functions that compile but have suspect patterns: 1576
 (These may have runtime issues even though syntax is valid)

@@ -46,7 +46,8 @@ LAB_0054c582:
     if (str1 != (char *)0x0) {
       iVar1 = _stricmp(str1,".raw");
       if (iVar1 == 0) {
-        cockpit_pkbmpset_cpp_CPackedBitmapSet_reload_FUN_0054c1e0(this_ptr);
+        cockpit_pkbmpset_cpp_CPackedBitmapSet_reload_FUN_0054c1e0
+                  (this_ptr,apply_palette_flag,bitmap_index);
         return;
       }
       iVar1 = _stricmp(str1,".pbg");

@@ -1,10 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_reload_FUN_0054c1e0(CPackedBitmapSet *this_ptr)
+; void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_reload_FUN_0054c1e0(CPackedBitmapSet *this_ptr,int apply_palette_flag,int bitmap_index)
 ;
 ; Parameters:
 ; CPackedBitmapSet * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   apply_palette_flag
+; int              Stack[0xc]:4   bitmap_index
 ; Local Variables:
 ; undefined        Stack[-0x148]:1  local_148
 ; undefined        Stack[-0xe4]:1  local_e4

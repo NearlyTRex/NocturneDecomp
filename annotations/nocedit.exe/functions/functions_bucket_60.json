@@ -11088,7 +11088,7 @@
               }
             ]
           },
-          "type":"void*"
+          "type":"uchar*"
         },
         {
           "name":"src_stride",
@@ -11107,7 +11107,7 @@
           "type":"int"
         },
         {
-          "name":"dest_buffer",
+          "name":"unused",
           "storage":{
             "offset":12,
             "size":4,
@@ -11120,10 +11120,10 @@
               }
             ]
           },
-          "type":"void*"
+          "type":"int"
         },
         {
-          "name":"copy_width",
+          "name":"dest_buffer",
           "storage":{
             "offset":16,
             "size":4,
@@ -11136,10 +11136,10 @@
               }
             ]
           },
-          "type":"int"
+          "type":"uchar*"
         },
         {
-          "name":"copy_height",
+          "name":"bytes_per_row",
           "storage":{
             "offset":20,
             "size":4,
@@ -11155,7 +11155,7 @@
           "type":"int"
         },
         {
-          "name":"src_x",
+          "name":"num_rows",
           "storage":{
             "offset":24,
             "size":4,
@@ -11171,7 +11171,7 @@
           "type":"int"
         },
         {
-          "name":"src_y",
+          "name":"src_x_offset",
           "storage":{
             "offset":28,
             "size":4,
@@ -11180,6 +11180,22 @@
               {
                 "addr":"Stack[0x1c]",
                 "offset":28,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"src_y_offset",
+          "storage":{
+            "offset":32,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x20]",
+                "offset":32,
                 "size":4
               }
             ]
@@ -11528,7 +11544,7 @@
               }
             ]
           },
-          "type":"void*"
+          "type":"uchar*"
         },
         {
           "name":"width",
@@ -11556,6 +11572,22 @@
               {
                 "addr":"Stack[0xc]",
                 "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"bytes_per_pixel",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
                 "size":4
               }
             ]
@@ -13303,7 +13335,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_cloth.cpp_CClothList_FUN_0043c3e0",
+    "name":"core_cloth.cpp_CClothList_setWindVelocity_FUN_0043c3e0",
     "ret":"void",
     "vars":{
       "params":[
@@ -48221,7 +48253,7 @@
           "type":"CDemonMission*"
         },
         {
-          "name":"param_2",
+          "name":"show_3d_viewport",
           "storage":{
             "offset":8,
             "size":4,
@@ -50242,6 +50274,38 @@
             ]
           },
           "type":"CPackedBitmapSet*"
+        },
+        {
+          "name":"apply_palette_flag",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"bitmap_index",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }
@@ -70417,7 +70481,7 @@
               }
             ]
           },
-          "type":"SOCKADDR_IN*"
+          "type":"SNetworkAddr*"
         },
         {
           "name":"src_addr",

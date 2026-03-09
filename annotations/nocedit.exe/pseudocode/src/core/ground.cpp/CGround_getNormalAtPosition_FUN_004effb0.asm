@@ -1,13 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_ground_cpp_CGround_getNormalAtPosition_FUN_004effb0(CGround *this_ptr,int world_x,int world_z,CVector3i *out_normal)
+; CVector3i * __stack3_esi core_ground_cpp_CGround_getNormalAtPosition_FUN_004effb0(CGround *this_ptr,int world_x,int world_z,CVector3i *out_normal)
 ;
 ; Parameters:
 ; CGround *        Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   world_x
 ; int              Stack[0xc]:4   world_z
-; CVector3i *      Stack[0x10]:4   out_normal
 ; Local Variables:
 ; undefined        Stack[-0x60]:1  local_60
 ; undefined        Stack[-0x54]:1  local_54

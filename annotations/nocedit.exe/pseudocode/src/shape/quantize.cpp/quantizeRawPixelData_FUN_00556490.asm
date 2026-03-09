@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl shape_quantize_cpp_quantizeRawPixelData_FUN_00556490(uchar *src_pixel_data,uchar **out_pixel_data,uchar **out_palette,short width,short height,uint bit_depth,int line_number,int show_progress)
+; int __cdecl shape_quantize_cpp_quantizeRawPixelData_FUN_00556490(uchar *src_pixel_data,uchar **out_pixel_data,uchar **out_palette,int width,int height ,uint bit_depth,int line_number,int show_progress)
 ;
 ; Parameters:
 ; uchar *          Stack[0x4]:4   src_pixel_data
 ; uchar * *        Stack[0x8]:4   out_pixel_data
 ; uchar * *        Stack[0xc]:4   out_palette
-; short            Stack[0x10]:2   width
-; short            Stack[0x14]:2   height
+; int              Stack[0x10]:4   width
+; int              Stack[0x14]:4   height
 ; uint             Stack[0x18]:4   bit_depth
 ; int              Stack[0x1c]:4   line_number
 ; int              Stack[0x20]:4   show_progress
@@ -187,7 +187,7 @@ section .text
     PUSH EBP                            ; 00556608
     MOV dword ptr [EBP],0x0             ; 00556609
     CALL shape_quantize.cpp_CColorQuantizer_quantizeBitmap_FUN_00556470 ; 00556610
-        ;   XREF to: 00556470 (UNCONDITIONAL_CALL)  ; void shape_quantize.cpp_CColorQuantizer_quantizeBitmap_FUN_00556470(CColorQuantizer * this_ptr, CBitmap * * bitmap_ptr)
+        ;   XREF to: 00556470 (UNCONDITIONAL_CALL)  ; int shape_quantize.cpp_CColorQuantizer_quantizeBitmap_FUN_00556470(CColorQuantizer * this_ptr, CBitmap * * bitmap_ptr)
     ADD ESP,0x8                         ; 00556615
     TEST EAX,EAX                        ; 00556618
     JZ 0x005567b2                       ; 0055661a
@@ -336,7 +336,7 @@ section .text
     PUSH ECX                            ; 005567d7
     PUSH EAX                            ; 005567d8
     CALL shape_quantize.cpp_CBitmap_ctor_FUN_00556a00 ; 005567d9
-        ;   XREF to: 00556a00 (UNCONDITIONAL_CALL)  ; CBitmap * shape_quantize.cpp_CBitmap_ctor_FUN_00556a00(CBitmap * this_ptr, int param_2, int param_3, int param_4)
+        ;   XREF to: 00556a00 (UNCONDITIONAL_CALL)  ; CBitmap * shape_quantize.cpp_CBitmap_ctor_FUN_00556a00(CBitmap * this_ptr, int width, int height, int bit_depth)
     ADD ESP,0x10                        ; 005567de
     JMP 0x005564d0                      ; 005567e1
         ;   XREF to: 005564d0 (UNCONDITIONAL_JUMP)  ; LAB_005564d0

@@ -6,29 +6,27 @@
   },
   "complexity": {
     "assembly_lines": 72,
-    "complexity_score": 112,
+    "complexity_score": 26,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 8,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 27,
-    "suspect_count": 8,
-    "suspect_types": [
-      "stack_param"
-    ],
-    "total_lines": 99
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 26,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 98
   },
   "cross_references": [
+    {
+      "addr": "0051b8a0",
+      "from_addr": "0051b8ce",
+      "name": "shape_meshlod.cpp_CLodMesh_initializeFromPrecomputedData_FUN_0051b8a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "00516d50",
       "from_addr": "00516d9d",
       "name": "shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_00516d50",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0051b8a0",
-      "from_addr": "0051b8ce",
-      "name": "shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_0051b8a0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -132,7 +130,7 @@
       {
         "call_addr": "0051b8ce",
         "call_type": "direct",
-        "caller": "shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_0051b8a0",
+        "caller": "shape_meshlod.cpp_CLodMesh_initializeFromPrecomputedData_FUN_0051b8a0",
         "estimated_params": 1,
         "instructions_analyzed": 3,
         "reg_params": [],
@@ -176,85 +174,20 @@
     "pcode_op_count": 210
   },
   "stack_frame": {
-    "frame_size": 12,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 8,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": true,
         "name": "this_ptr",
-        "offset": 8,
+        "offset": 4,
         "size": 4,
         "type": "CLodMesh *"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 7,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "CLodMesh *in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "if (in_stack_00000004->next_lod != (CLodMesh *)0x0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "pCVar1 = shape_meshlod_cpp_CLodMesh_dtor_FUN_00515950(in_stack_00000004->next_lod,0);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "in_stack_00000004->next_lod = pCVar1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "shape_meshlod_cpp_CLodMesh_copyFrom_FUN_0051a8c0(in_stack_00000004->next_lod,in_stack_00000004);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "shape_meshlod_cpp_CLodMesh_copyFrom_FUN_0051a8c0(in_stack_00000004->next_lod,in_stack_00000004);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 28,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "shape_meshlod_cpp_CLodMesh_copyFrom_FUN_0051a8c0(in_stack_00000004->next_lod,in_stack_00000004);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 28,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "shape_meshlod_cpp_CLodMesh_copyFrom_FUN_0051a8c0(in_stack_00000004->next_lod,in_stack_00000004);",
-      "type": "stack_param"
-    }
-  ]
+  "suspects": []
 }

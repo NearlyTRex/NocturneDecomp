@@ -679,9 +679,9 @@ CP2D * __stack2_esi CP2D::subtract(CP2D *this_ptr,CP2D *a,CP2D *b);
 // Address: 005d8390
 CP2D * __stack2_esi CP2D::add(CP2D *this_ptr,CP2D *a,CP2D *b);
 
-// Original: shape_superopt.cpp_CP2D_FUN_005d83d0
+// Original: shape_superopt.cpp_CP2D_scale_FUN_005d83d0
 // Address: 005d83d0
-CP2D * __cdecl CP2D(CP2D *this_ptr,double scale);
+CP2D * __stackdbl_esi CP2D::scale(CP2D *this_ptr,double scale,CP2D *result);
 
 // Original: shape_superopt.cpp_CP2D_isEqual_FUN_005d8410
 // Address: 005d8410
@@ -721,7 +721,7 @@ CP3D * __stack2_esi CP3D::multiply(CP3D *this_ptr,CP3D *a,CP3D *b);
 
 // Original: shape_superopt.cpp_CP3D_FUN_005d8630
 // Address: 005d8630
-CP3D * __cdecl CP3D(CP3D *this_ptr,double scalar);
+CP3D * __stackdbl_esi CP3D(CP3D *this_ptr,double scalar,CP3D *result);
 
 // Original: shape_superopt.cpp_CP3D_isEqual_FUN_005d8670
 // Address: 005d8670

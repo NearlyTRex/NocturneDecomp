@@ -2289,7 +2289,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0x1c]     ; 0046d2dc
     PUSH EAX                            ; 0046d2df
     CALL shape_quantize.cpp_quantizeRawPixelData_FUN_00556490 ; 0046d2e0
-        ;   XREF to: 00556490 (UNCONDITIONAL_CALL)  ; int shape_quantize.cpp_quantizeRawPixelData_FUN_00556490(uchar * src_pixel_data, uchar * * out_pixel_data, uchar * * out_palette, short width, ...)
+        ;   XREF to: 00556490 (UNCONDITIONAL_CALL)  ; int shape_quantize.cpp_quantizeRawPixelData_FUN_00556490(uchar * src_pixel_data, uchar * * out_pixel_data, uchar * * out_palette, int width, ...)
     ADD ESP,0x20                        ; 0046d2e5
     TEST EAX,EAX                        ; 0046d2e8
     JNZ 0x0046d30e                      ; 0046d2ea

@@ -23,7 +23,7 @@ void __cdecl core_motion_cpp_CMotionController_render_FUN_0052e700(CMotionContro
   uint local_18;
   int local_14;
   
-  if ((DAT_02f43978 != 0) &&
+  if ((INT_02f43978 != 0) &&
      (local_20 = (float)engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
                                   (g_CDemonRendererPtr2), local_20 == 0.0)) {
     pCVar3 = (*((actor->vtable)._ub)->getBoundingBox)(actor,&local_44);

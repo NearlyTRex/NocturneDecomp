@@ -49684,7 +49684,7 @@
         "start":"004f6550"
       }
     ],
-    "conv":"__cdecl",
+    "conv":"__stack2_esi",
     "importable":true,
     "name":"core_hostage.cpp_CHostage_getCarryObjToBodyXForm_FUN_004f6550",
     "ret":"void",
@@ -50559,13 +50559,12 @@
         {
           "name":"out_matrix",
           "storage":{
-            "offset":12,
+            "reg":"ESI",
             "size":4,
-            "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0xc]",
-                "offset":12,
+                "addr":"register:00000018",
+                "offset":24,
                 "size":4
               }
             ]
@@ -56533,13 +56532,13 @@
         {
           "name":"this_ptr",
           "storage":{
-            "offset":8,
+            "offset":4,
             "size":4,
             "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0x8]",
-                "offset":8,
+                "addr":"Stack[0x4]",
+                "offset":4,
                 "size":4
               }
             ]
@@ -62288,7 +62287,7 @@
               }
             ]
           },
-          "type":"char*"
+          "type":"CActorProperty*"
         }
       ]
     }
@@ -63510,7 +63509,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_npc.cpp_CNPC_FUN_00544c50",
+    "name":"core_npc.cpp_CNPC_setRandomMotionVariant_FUN_00544c50",
     "ret":"int",
     "vars":{
       "locals":[
@@ -63563,6 +63562,22 @@
             ]
           },
           "type":"CNPC*"
+        },
+        {
+          "name":"motion_name",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
         }
       ],
       "ret_storage":{
@@ -83630,9 +83645,9 @@
         "start":"005d83d0"
       }
     ],
-    "conv":"__cdecl",
+    "conv":"__stackdbl_esi",
     "importable":true,
-    "name":"shape_superopt.cpp_CP2D_FUN_005d83d0",
+    "name":"shape_superopt.cpp_CP2D_scale_FUN_005d83d0",
     "ret":"CP2D*",
     "vars":{
       "locals":[
@@ -83701,6 +83716,21 @@
             ]
           },
           "type":"double"
+        },
+        {
+          "name":"result",
+          "storage":{
+            "reg":"ESI",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000018",
+                "offset":24,
+                "size":4
+              }
+            ]
+          },
+          "type":"CP2D*"
         }
       ],
       "ret_storage":{

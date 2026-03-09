@@ -1,29 +1,20 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 39,
-        "line": 26,
-        "message": "use of undeclared identifier 'stack0xfffffff4'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 97,
+    "complexity_score": 37,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 22,
-    "suspect_count": 6,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
-      "stack_ref",
-      "unnamed_param"
+      "pointer_cast"
     ],
     "total_lines": 60
   },
@@ -45,7 +36,7 @@
     ],
     "convention": "__cdecl",
     "name": "support_trisock.cpp_getSocketName_FUN_005e1df0",
-    "signature": "int __cdecl support_trisock_cpp_getSocketName_FUN_005e1df0(_SOCKET *socket_handle,SNetworkAddr *param_2)"
+    "signature": "int __cdecl support_trisock_cpp_getSocketName_FUN_005e1df0(_SOCKET *socket_handle,SNetworkAddr *out_address)"
   },
   "function_calls": [
     {
@@ -97,8 +88,8 @@
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
-        "size": 1,
-        "type": "undefined"
+        "size": 16,
+        "type": "SOCKADDR"
       },
       {
         "is_param": false,
@@ -116,7 +107,7 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "out_address",
         "offset": 8,
         "size": 4,
         "type": "SNetworkAddr *"
@@ -125,52 +116,12 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "int __cdecl support_trisock_cpp_getSocketName_FUN_005e1df0(_SOCKET *socket_handle,SNetworkAddr *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 19,
-      "match": "&stack0xfffffff4",
-      "severity": "moderate",
-      "text": "((SOCKADDR_IN *)&stack0xfffffff4,&local_1c);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2->ip_address = *(uint *)pSVar3;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 21,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uVar1 = *(uint *)((int)pSVar3 + (uint)bVar4 * -8 + 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[-(uint)bVar4].port = (short)uVar1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[-(uint)bVar4].other = (short)((uint)uVar1 >> 0x10);",
-      "type": "unnamed_param"
     }
   ]
 }

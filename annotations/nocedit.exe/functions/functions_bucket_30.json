@@ -40995,10 +40995,10 @@
         "start":"004effb0"
       }
     ],
-    "conv":"__cdecl",
+    "conv":"__stack3_esi",
     "importable":true,
     "name":"core_ground.cpp_CGround_getNormalAtPosition_FUN_004effb0",
-    "ret":"void",
+    "ret":"CVector3i*",
     "vars":{
       "locals":[
         {
@@ -41262,20 +41262,29 @@
         {
           "name":"out_normal",
           "storage":{
-            "offset":16,
+            "reg":"ESI",
             "size":4,
-            "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0x10]",
-                "offset":16,
+                "addr":"register:00000018",
+                "offset":24,
                 "size":4
               }
             ]
           },
           "type":"CVector3i*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -49703,7 +49712,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_mimic.cpp_FUN_0051f130",
+    "name":"core_mimic.cpp_mirrorXTransform_FUN_0051f130",
     "ret":"void"
   },
   {
@@ -49717,7 +49726,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_mimic.cpp_CMimic_FUN_0051f930",
+    "name":"core_mimic.cpp_CMimic_updatePose_FUN_0051f930",
     "ret":"void",
     "vars":{
       "locals":[
@@ -54911,7 +54920,7 @@
           "type":"CDemonMission*"
         },
         {
-          "name":"param_2",
+          "name":"property",
           "storage":{
             "offset":8,
             "size":4,
@@ -54924,7 +54933,7 @@
               }
             ]
           },
-          "type":"int"
+          "type":"CActorProperty*"
         }
       ]
     }
@@ -55077,7 +55086,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"core_msnedit.cpp_CDemonMission_findNextVisibleActor_FUN_0053ca30",
-    "ret":"void",
+    "ret":"CDemonActor*",
     "vars":{
       "params":[
         {
@@ -55112,7 +55121,17 @@
           },
           "type":"CDemonActor*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -85295,7 +85314,7 @@
         "start":"005d8630"
       }
     ],
-    "conv":"__cdecl",
+    "conv":"__stackdbl_esi",
     "importable":true,
     "name":"shape_superopt.cpp_CP3D_FUN_005d8630",
     "ret":"CP3D*",
@@ -85382,6 +85401,21 @@
             ]
           },
           "type":"double"
+        },
+        {
+          "name":"result",
+          "storage":{
+            "reg":"ESI",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000018",
+                "offset":24,
+                "size":4
+              }
+            ]
+          },
+          "type":"CP3D*"
         }
       ],
       "ret_storage":{

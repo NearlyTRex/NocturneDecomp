@@ -61,11 +61,11 @@ int __cdecl CColorQuantizer::quantizeBitmaps(CColorQuantizer *this_ptr,int bitma
 
 // Original: shape_quantize.cpp_CColorQuantizer_quantizeBitmap_FUN_00556470
 // Address: 00556470
-void __cdecl CColorQuantizer::quantizeBitmap(CColorQuantizer *this_ptr,CBitmap **bitmap_ptr);
+int __cdecl CColorQuantizer::quantizeBitmap(CColorQuantizer *this_ptr,CBitmap **bitmap_ptr);
 
 // Original: shape_quantize.cpp_quantizeRawPixelData_FUN_00556490
 // Address: 00556490
-int __cdecl quantizeRawPixelData(uchar *src_pixel_data,uchar **out_pixel_data,uchar **out_palette,short width,short height,uint bit_depth,int line_number,int show_progress);
+int __cdecl quantizeRawPixelData(uchar *src_pixel_data,uchar **out_pixel_data,uchar **out_palette,int width,int height ,uint bit_depth,int line_number,int show_progress);
 
 // Original: shape_quantize.cpp_displayProgressBar_FUN_005568f0
 // Address: 005568f0
@@ -73,7 +73,7 @@ int __cdecl displayProgressBar(char *label,int total_count,int current_index);
 
 // Original: shape_quantize.cpp_CBitmap_ctor_FUN_00556a00
 // Address: 00556a00
-CBitmap * __cdecl CBitmap::ctor(CBitmap *this_ptr,int param_2,int param_3,int param_4);
+CBitmap * __cdecl CBitmap::ctor(CBitmap *this_ptr,int width,int height,int bit_depth);
 
 // Original: shape_quantize.cpp_CBitmap_dtor_FUN_00556c20
 // Address: 00556c20

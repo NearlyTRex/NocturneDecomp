@@ -6,18 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 58,
-    "complexity_score": 72,
+    "complexity_score": 21,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 22,
-    "suspect_count": 4,
-    "suspect_types": [
-      "pointer_cast",
-      "stack_param"
-    ],
-    "total_lines": 80
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 21,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 79
   },
   "cross_references": [],
   "function": {
@@ -30,7 +27,7 @@
     ],
     "convention": "__cdecl",
     "name": "cockpit_ckptutil.c_copyBitmapRegion_FUN_00432860",
-    "signature": "void __cdecl cockpit_ckptutil_c_copyBitmapRegion_FUN_00432860(void *src_buffer,int src_stride,void *dest_buffer,int copy_width,int copy_height,int src_x,int src_y)"
+    "signature": "void __cdecl cockpit_ckptutil_c_copyBitmapRegion_FUN_00432860(uchar *src_buffer,int src_stride,int unused,uchar *dest_buffer,int bytes_per_row,int num_rows,int src_x_offset,int src_y_offset)"
   },
   "function_calls": [
     {
@@ -44,8 +41,8 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 7,
-    "estimated_params": 7
+    "declared_params": 8,
+    "estimated_params": 8
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.938775510204081,
@@ -79,10 +76,10 @@
     "pcode_op_count": 242
   },
   "stack_frame": {
-    "frame_size": 52,
+    "frame_size": 56,
     "local_size": 24,
     "param_offset": 4,
-    "param_size": 28,
+    "param_size": 32,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -97,7 +94,7 @@
         "name": "src_buffer",
         "offset": 4,
         "size": 4,
-        "type": "void *"
+        "type": "uchar *"
       },
       {
         "is_param": true,
@@ -108,73 +105,47 @@
       },
       {
         "is_param": true,
-        "name": "dest_buffer",
+        "name": "unused",
         "offset": 12,
-        "size": 4,
-        "type": "void *"
-      },
-      {
-        "is_param": true,
-        "name": "copy_width",
-        "offset": 16,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
-        "name": "copy_height",
+        "name": "dest_buffer",
+        "offset": 16,
+        "size": 4,
+        "type": "uchar *"
+      },
+      {
+        "is_param": true,
+        "name": "bytes_per_row",
         "offset": 20,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
-        "name": "src_x",
+        "name": "num_rows",
         "offset": 24,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
-        "name": "src_y",
+        "name": "src_x_offset",
         "offset": 28,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "src_y_offset",
+        "offset": 32,
         "size": 4,
         "type": "int"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_00000020",
-      "severity": "moderate",
-      "text": "int in_stack_00000020;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000020",
-      "severity": "moderate",
-      "text": "dest_buffer_00 = (void *)((int)src_buffer + in_stack_00000020 * src_stride + src_y);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 12,
-      "match": "(void *)((int)",
-      "severity": "mild",
-      "text": "dest_buffer_00 = (void *)((int)src_buffer + in_stack_00000020 * src_stride + src_y);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 19,
-      "match": "(void *)((int)",
-      "severity": "mild",
-      "text": "dest_buffer_00 = (void *)((int)dest_buffer_00 + src_stride);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

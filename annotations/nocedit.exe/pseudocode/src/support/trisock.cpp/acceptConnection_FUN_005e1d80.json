@@ -1,28 +1,20 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 39,
-        "line": 29,
-        "message": "use of undeclared identifier 'stack0xfffffff0'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 49,
-    "complexity_score": 53,
+    "complexity_score": 38,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 23,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
-      "stack_ref"
+      "pointer_cast"
     ],
     "total_lines": 72
   },
@@ -131,14 +123,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Direct stack address reference",
-      "line": 22,
-      "match": "&stack0xfffffff0",
-      "severity": "moderate",
-      "text": "((SOCKADDR_IN *)&stack0xfffffff0,&local_20);",
-      "type": "stack_ref"
-    },
     {
       "description": "Complex pointer cast",
       "line": 24,

@@ -2,21 +2,63 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "format_error",
-        "column": 58,
-        "line": 74,
-        "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
+        "category": "type_error",
+        "column": 3,
+        "line": 12,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "type_error",
+        "column": 3,
+        "line": 14,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 20,
+        "line": 40,
+        "message": "use of undeclared identifier 'code'"
+      },
+      {
+        "category": "other",
+        "column": 13,
+        "line": 41,
+        "message": "cast from pointer to smaller type 'char' loses information"
+      },
+      {
+        "category": "pointer_arithmetic",
+        "column": 23,
+        "line": 44,
+        "message": "arithmetic on a pointer to the function type 'CActorPropertyActionFunc' (aka 'int (struct CDemonActor *, struct CActorProperty *)')"
+      },
+      {
+        "category": "other",
+        "column": 21,
+        "line": 50,
+        "message": "cast from pointer to smaller type 'char' loses information"
+      },
+      {
+        "category": "pointer_arithmetic",
+        "column": 27,
+        "line": 51,
+        "message": "arithmetic on a pointer to the function type 'CActorPropertyActionFunc' (aka 'int (struct CDemonActor *, struct CActorProperty *)')"
+      },
+      {
+        "category": "pointer_arithmetic",
+        "column": 27,
+        "line": 53,
+        "message": "arithmetic on a pointer to the function type 'CActorPropertyActionFunc' (aka 'int (struct CDemonActor *, struct CActorProperty *)')"
       },
       {
         "category": "format_error",
         "column": 57,
-        "line": 96,
+        "line": 100,
         "message": "format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 78,
-        "line": 142,
+        "line": 146,
         "message": "format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]"
       }
     ],
@@ -25,17 +67,17 @@
   },
   "complexity": {
     "assembly_lines": 424,
-    "complexity_score": 186,
+    "complexity_score": 190,
     "cross_reference_count": 1,
     "function_call_count": 16,
     "global_count": 9,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 151,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 155,
     "suspect_count": 3,
     "suspect_types": [
-      "unnamed_param"
+      "unresolved_funcptr"
     ],
-    "total_lines": 575
+    "total_lines": 579
   },
   "cross_references": [
     {
@@ -55,7 +97,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_msnedit.cpp_CDemonMission_editActorDetailed_FUN_0053b510",
-    "signature": "void __cdecl core_msnedit_cpp_CDemonMission_editActorDetailed_FUN_0053b510(CDemonMission *this_ptr,int param_2)"
+    "signature": "void __cdecl core_msnedit_cpp_CDemonMission_editActorDetailed_FUN_0053b510(CDemonMission *this_ptr,CActorProperty *property)"
   },
   "function_calls": [
     {
@@ -303,37 +345,37 @@
       },
       {
         "is_param": true,
-        "name": "param_2",
+        "name": "property",
         "offset": 8,
         "size": 4,
-        "type": "int"
+        "type": "CActorProperty *"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_msnedit_cpp_CDemonMission_editActorDetailed_FUN_0053b510(CDemonMission *this_ptr,int param_2)",
-      "type": "unnamed_param"
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 5,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "code *pcVar1;",
+      "type": "unresolved_funcptr"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "pcVar7 = *(char **)(param_2 + 0x68);",
-      "type": "unnamed_param"
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 7,
+      "match": "code",
+      "severity": "moderate",
+      "text": "code cVar3;",
+      "type": "unresolved_funcptr"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 67,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "_sprintf(acStack_304,\"Actors relevent to \\\"%s\\\"\",param_2 + 4);",
-      "type": "unnamed_param"
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 33,
+      "match": "code",
+      "severity": "moderate",
+      "text": "while (cVar3 != (code)0x0) {",
+      "type": "unresolved_funcptr"
     }
   ]
 }

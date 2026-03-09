@@ -71,7 +71,7 @@ void __cdecl cockpit_ckptutil_c_blitRectangleClipped_FUN_00432190(void *sprite_d
 void __cdecl cockpit_ckptutil_c_blitUnifiedSprite_FUN_00432300(void *sprite_data,void *span_data,int dest_x,int dest_y,int width,int height);
 void __cdecl cockpit_ckptutil_c_blitSimpleSprite_FUN_00432540(void *sprite_data,int dest_x,int dest_y,int width,int height);
 void __cdecl cockpit_ckptutil_c_blitDualModeSprite_FUN_004326a0(void *sprite_data,void *span_data,int dest_x,int dest_y,int width,int height);
-void __cdecl cockpit_ckptutil_c_copyBitmapRegion_FUN_00432860(void *src_buffer,int src_stride,void *dest_buffer,int copy_width,int copy_height, int src_x,int src_y);
+void __cdecl cockpit_ckptutil_c_copyBitmapRegion_FUN_00432860(uchar *src_buffer,int src_stride,int unused,uchar *dest_buffer,int bytes_per_row, int num_rows,int src_x_offset,int src_y_offset);
 void __cdecl cockpit_ckptutil_c_blitHorizontallyClippedSprite_FUN_004328d0(void *sprite_data,int start_x,int dest_y,int end_x,int max_height,int unused_param, int src_y_offset,int src_stride);
 void __cdecl cockpit_ckptutil_c_blitVerticalColumn_FUN_00432a10(void *sprite_data,void *unused_param,int start_x,int start_y,int end_x,int end_y);
 void __cdecl cockpit_ckptutil_c_blitSolidSprite_FUN_00432af0(void *sprite_data,int screen_x,int screen_y,int src_x,int src_y,int width,int height ,int src_y_param);
@@ -81,7 +81,7 @@ void __cdecl cockpit_ckptutil_c_blitWithTransparencyFallback_FUN_00432d00(void *
 void __cdecl cockpit_ckptutil_c_copyScreenRegion_FUN_00432d90(void *dest_buffer,int src_x,int src_y,int start_row,int bytes_per_row,int height);
 void __cdecl cockpit_ckptutil_c_generateScrollHeightMap_FUN_00432df0(void *bitmap_data,int end_x,int start_x,int bitmap_height,int *height_output, int num_height_rows,int transparency_color);
 void __cdecl cockpit_ckptutil_c_rotateCircularBitmap_FUN_00433030(void *bitmap_data,int width,int height,int num_iterations);
-void __cdecl cockpit_ckptutil_c_mirrorBitmapHorizontally_FUN_00433160(void *bitmap_data,int width,int height);
+void __cdecl cockpit_ckptutil_c_mirrorBitmapHorizontally_FUN_00433160(uchar *bitmap_data,int width,int height,int bytes_per_pixel);
 void __cdecl cockpit_ckptutil_c_loadEdgeListFile_FUN_004331f0(char *filename,SEdgeList *edge_lists,int expected_count);
 void __cdecl cockpit_ckptutil_c_loadSingleEdgeList_FUN_00433440(char *filename,void **edge_data_out,int *edge_count_out);
 void __cdecl cockpit_ckptutil_c_saveEdgeListFile_FUN_00433480(char *filename,SEdgeList *edge_lists,int edge_list_count);
@@ -160,7 +160,7 @@ void __cdecl core_cloth_cpp_CClothList_setup_FUN_0043c290(CClothList *this_ptr,C
 void __cdecl core_cloth_cpp_CClothList_process_FUN_0043c2d0(CClothList *this_ptr,CVector3f *position,CVector3f *euler,float delta_time, float floor_y,CDeformableModelInstance *model_ptr);
 void __cdecl core_cloth_cpp_CClothList_render_FUN_0043c320(CClothList *this_ptr,CDeformableModelInstance *model_ptr);
 void __cdecl core_cloth_cpp_CClothList_applyRotation_FUN_0043c3a0(CClothList *this_ptr,CVector3f *euler);
-void __cdecl core_cloth_cpp_CClothList_FUN_0043c3e0(CClothList *this_ptr,CVector3f *wind_velocity);
+void __cdecl core_cloth_cpp_CClothList_setWindVelocity_FUN_0043c3e0(CClothList *this_ptr,CVector3f *wind_velocity);
 void __cdecl core_cloth_cpp_CCloth_addCollisionBone_FUN_0043c430(CCloth *this_ptr);
 void __cdecl core_cloth_cpp_plotPixelSafe_FUN_0043c6b0(int x,int y);
 void __cdecl core_cloth_cpp_drawVertexMarker_FUN_0043c6e0(int vert_index);

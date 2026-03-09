@@ -12375,8 +12375,28 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_conveyor.cpp_FUN_004424a0",
-    "ret":"void"
+    "name":"core_conveyor.cpp_skipToNewline_FUN_004424a0",
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"file_handle",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"_FILE*"
+        }
+      ]
+    }
   },
   {
     "addr":"004427a0",
@@ -31648,7 +31668,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_emitter.cpp_CEmitter_FUN_004a8d20",
+    "name":"core_emitter.cpp_CEmitter_getRandomBoundingBoxPoint_FUN_004a8d20",
     "ret":"CVector3f*",
     "vars":{
       "params":[
@@ -31667,6 +31687,22 @@
             ]
           },
           "type":"CEmitter*"
+        },
+        {
+          "name":"out_point",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
         }
       ],
       "ret_storage":{
@@ -51042,7 +51078,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_0051b8a0",
+    "name":"shape_meshlod.cpp_CLodMesh_initializeFromPrecomputedData_FUN_0051b8a0",
     "ret":"int",
     "vars":{
       "params":[
@@ -51983,6 +52019,22 @@
             ]
           },
           "type":"CMimic*"
+        },
+        {
+          "name":"delta_time",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
         }
       ]
     }
@@ -92103,7 +92155,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_vampboss.cpp_CVampireBoss_FUN_005e6ca0",
+    "name":"core_vampboss.cpp_CVampireBoss_advanceAnimation_FUN_005e6ca0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -92188,6 +92240,22 @@
             ]
           },
           "type":"CVampireBoss*"
+        },
+        {
+          "name":"delta_time",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
         }
       ]
     }
@@ -92265,7 +92333,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_vampboss.cpp_CVampireBoss_FUN_005e7320",
+    "name":"core_vampboss.cpp_CVampireBoss_summonBats_FUN_005e7320",
     "ret":"void",
     "vars":{
       "params":[

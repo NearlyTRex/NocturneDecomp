@@ -15,9 +15,9 @@ CTVBat * __cdecl factoryFunc(void);
 // Address: 005e3eb0
 CDemonActorType * __cdecl CTVBat::getActorType(CTVBat *this_ptr);
 
-// Original: core_tvbat.cpp_FUN_005e3ec0
+// Original: core_tvbat.cpp_jitterValue_FUN_005e3ec0
 // Address: 005e3ec0
-float __cdecl FUN_005e3ec0(float param_1);
+float __cdecl jitterValue(float value);
 
 // Original: core_tvbat.cpp_CTVBat_ctor_FUN_005e3ef0
 // Address: 005e3ef0

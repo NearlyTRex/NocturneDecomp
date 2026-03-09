@@ -16036,9 +16036,43 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_conveyor.cpp_FUN_004423f0",
-    "ret":"int",
+    "name":"core_conveyor.cpp_assignInt_FUN_004423f0",
+    "ret":"int*",
     "vars":{
+      "params":[
+        {
+          "name":"dest",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int*"
+        },
+        {
+          "name":"src",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int*"
+        }
+      ],
       "ret_storage":{
         "reg":"EAX",
         "size":4,
@@ -56945,7 +56979,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_mimic.cpp_CMimic_FUN_005205f0",
+    "name":"core_mimic.cpp_CMimic_renderMirrored_FUN_005205f0",
     "ret":"int",
     "vars":{
       "locals":[
@@ -56979,7 +57013,7 @@
               }
             ]
           },
-          "type":"undefined4"
+          "type":"CStranger*"
         },
         {
           "name":"local_18",
@@ -61831,7 +61865,7 @@
           "type":"CDemonMission*"
         },
         {
-          "name":"param_2",
+          "name":"set_index",
           "storage":{
             "offset":8,
             "size":4,
@@ -63099,7 +63133,7 @@
           "type":"CDemonMission*"
         },
         {
-          "name":"param_2",
+          "name":"reset_cameras",
           "storage":{
             "offset":8,
             "size":4,
@@ -63218,22 +63252,6 @@
               {
                 "addr":"Stack[0x4]",
                 "offset":4,
-                "size":4
-              }
-            ]
-          },
-          "type":"CDemonMission*"
-        },
-        {
-          "name":"other",
-          "storage":{
-            "offset":8,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x8]",
-                "offset":8,
                 "size":4
               }
             ]
@@ -68429,7 +68447,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"shape_quantize.cpp_CColorQuantizer_quantizeBitmap_FUN_00556470",
-    "ret":"void",
+    "ret":"int",
     "vars":{
       "params":[
         {
@@ -68464,7 +68482,17 @@
           },
           "type":"CBitmap**"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -70726,7 +70754,7 @@
           "type":"CDemonSet*"
         },
         {
-          "name":"param_2",
+          "name":"light_index",
           "storage":{
             "offset":8,
             "size":4,
@@ -91211,17 +91239,17 @@
           "name":"local_1c",
           "storage":{
             "offset":-28,
-            "size":1,
+            "size":16,
             "stack":true,
             "varnodes":[
               {
                 "addr":"Stack[-0x1c]",
                 "offset":-28,
-                "size":1
+                "size":16
               }
             ]
           },
-          "type":"undefined1"
+          "type":"SOCKADDR"
         }
       ],
       "params":[
@@ -91242,7 +91270,7 @@
           "type":"_SOCKET*"
         },
         {
-          "name":"param_2",
+          "name":"out_address",
           "storage":{
             "offset":8,
             "size":4,

@@ -4,25 +4,25 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  decompiler_intrinsic            6897 ( 31.4%)
-  pointer_cast                    5955 ( 27.1%)
-  stack_param                     2032 (  9.3%)
-  unknown_field                   1722 (  7.8%)
-  unnamed_param                    751 (  3.4%)
+  decompiler_intrinsic            6897 ( 31.7%)
+  pointer_cast                    5951 ( 27.3%)
+  stack_param                     1943 (  8.9%)
+  unknown_field                   1722 (  7.9%)
+  unnamed_param                    699 (  3.2%)
   special_crt_function             636 (  2.9%)
-  stack_ref                        498 (  2.3%)
-  unaffected_reg                   446 (  2.0%)
+  stack_ref                        487 (  2.2%)
+  unaffected_reg                   425 (  2.0%)
   fpu_register_input               325 (  1.5%)
-  param_count_too_few              317 (  1.4%)
+  param_count_too_few              314 (  1.4%)
   register_param                   302 (  1.4%)
   nonstandard_int                  271 (  1.2%)
   warning_inlined_function         264 (  1.2%)
-  unresolved_funcptr               185 (  0.8%)
-  undefined_data                   165 (  0.8%)
+  unresolved_funcptr               189 (  0.9%)
+  undefined_data                   153 (  0.7%)
   warning_type_propagation         145 (  0.7%)
-  negative_offset                  142 (  0.6%)
+  negative_offset                  142 (  0.7%)
   stack_alignment_array            137 (  0.6%)
-  extra_output                     117 (  0.5%)
+  extra_output                     113 (  0.5%)
   sub84_truncation                 101 (  0.5%)
   param_count_too_many              84 (  0.4%)
   warning_unreachable               79 (  0.4%)
@@ -34,7 +34,7 @@ SUSPECT TYPE COUNTS
   special_math_intrinsic            24 (  0.1%)
   undefined_ram                     24 (  0.1%)
   byvalue_struct_passing            21 (  0.1%)
-  undefined_type                    20 (  0.1%)
+  undefined_type                    19 (  0.1%)
   fnstsw_flag_artifact              14 (  0.1%)
   warning_jumptable                 10 (  0.0%)
   warning_indirect_jump             10 (  0.0%)
@@ -98,18 +98,18 @@ Example functions:
     ROUND(ROUND((float)(byte)g_SourcePaletteData[iVar3] * fVar2 +...
 
 ====================================================================================================
-TYPE: pointer_cast (5955 occurrences)
+TYPE: pointer_cast (5951 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  2279x  (uint *)((int)
-  1318x  (int *)((int)
-   345x  (float *)((int)
+  2282x  (uint *)((int)
+  1313x  (int *)((int)
+   342x  (float *)((int)
    323x  (SRenderVertex *)((int)
-   289x  (CMatrix3x4f *)((int)
+   290x  (CMatrix3x4f *)((int)
    212x  (double *)((int)
-   203x  (void *)((int)
-   189x  (byte *)((int)
+   200x  (void *)((int)
+   188x  (byte *)((int)
     86x  (char *)((int)
     82x  (ushort *)((int)
     61x  (short *)((int)
@@ -118,9 +118,9 @@ Unique patterns:
     32x  (CMatrix3x3f *)((int)
     21x  (SMRGLHeaderExtended *)((int)
     18x  (SScriptXRef *)((int)
+    16x  (CVector3d *)((int)
     14x  (HGLOBAL *)((int)
     14x  (SVoxelGrid *)((int)
-    14x  (CVector3d *)((int)
     14x  (SExpandedEdge *)((int)
 
 Example functions:
@@ -136,14 +136,14 @@ Example functions:
     piVar1 = (int *)((int)g_ScreenBufferArray + iVar4);...
 
 ====================================================================================================
-TYPE: stack_param (2032 occurrences)
+TYPE: stack_param (1943 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   522x  in_stack_00000008
-   262x  in_stack_00000004
-   234x  in_stack_0000000c
-   113x  in_stack_00000010
+   479x  in_stack_00000008
+   233x  in_stack_00000004
+   231x  in_stack_0000000c
+   111x  in_stack_00000010
     65x  in_stack_00000014
     61x  in_stack_fffffd64
     46x  in_stack_fffffc88
@@ -151,9 +151,9 @@ Unique patterns:
     27x  in_stack_00000018
     25x  in_stack_fffffd80
     19x  in_stack_fffffd7c
-    18x  in_stack_ffffff9c
     17x  in_stack_fffffee8
     16x  in_stack_fffffd78
+    16x  in_stack_ffffff9c
     15x  in_stack_ffffff74
     15x  in_stack_ffffff84
     15x  in_stack_ffffff28
@@ -162,8 +162,6 @@ Unique patterns:
     14x  in_stack_fffffd14
 
 Example functions:
-  cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_0054c1e0
-    int in_stack_00000008;...
   cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariantPrintf_FUN_00489520
     char *in_stack_00000010;...
   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBoundsPrintf_FUN_00489860
@@ -176,13 +174,7 @@ Example functions:
     char *in_stack_00000010;...
   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidthPrintf_FUN_00489af0
     char *in_stack_0000000c;...
-  cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_0054b190
-    undefined3 in_stack_00000019;...
-  cockpit_ckptutil.c_mirrorBitmapHorizontally_FUN_00433160
-    int in_stack_00000010;...
   cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af0
-    int in_stack_00000020;...
-  cockpit_ckptutil.c_copyBitmapRegion_FUN_00432860
     int in_stack_00000020;...
   cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690
     int in_stack_00000018;...
@@ -232,14 +224,14 @@ Example functions:
     if ((param1._4_4_ & 0x7ff00000) == 0x7ff00000) {...
 
 ====================================================================================================
-TYPE: unnamed_param (751 occurrences)
+TYPE: unnamed_param (699 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   240x  param_1
-   190x  param_2
-    99x  param_3
-    66x  param_4
+   238x  param_1
+   153x  param_2
+    97x  param_3
+    55x  param_4
     45x  param1
     39x  param_5
     17x  param0
@@ -343,13 +335,13 @@ Example functions:
     CRT function (runtime support) at 00607e64...
 
 ====================================================================================================
-TYPE: stack_ref (498 occurrences)
+TYPE: stack_ref (487 occurrences)
 ====================================================================================================
 
 Unique patterns:
     19x  &stack0xfffffa18
     18x  &stack0x00000000
-    17x  &stack0xfffffff0
+    16x  &stack0xfffffff0
     15x  &stack0xffffff54
     14x  &stack0x0000000c
     14x  &stack0xffffffc0
@@ -358,13 +350,13 @@ Unique patterns:
     12x  &stack0xfffffd64
     12x  &stack0xfffffd34
     10x  &stack0xffffffdc
-    10x  &stack0xfffffff4
     10x  &stack0xffffff58
+     9x  &stack0xfffffff4
      9x  &stack0xffffffd8
-     9x  &stack0x00000008
      9x  &stack0xffffffec
      8x  &stack0x00000010
      8x  &stack0xffffffe0
+     8x  &stack0x00000008
      8x  &stack0xffffff94
      8x  &stack0xfffffe90
 
@@ -397,12 +389,12 @@ Example functions:
     if (unaff_EAX < &stack0xfffffffc) {...
 
 ====================================================================================================
-TYPE: unaffected_reg (446 occurrences)
+TYPE: unaffected_reg (425 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   147x  unaff_ESI
-   110x  unaff_EDI
+   128x  unaff_ESI
+   108x  unaff_EDI
    100x  unaff_EBP
     85x  unaff_EBX
      4x  unaff_EAX
@@ -448,21 +440,21 @@ Example functions:
     float10 in_ST0;...
 
 ====================================================================================================
-TYPE: param_count_too_few (317 occurrences)
+TYPE: param_count_too_few (314 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    66x  declared:1 vs estimated:2
+    64x  declared:1 vs estimated:2
     27x  declared:3 vs estimated:4
     21x  declared:1 vs estimated:5
     15x  declared:0 vs estimated:4
     14x  declared:2 vs estimated:3
     12x  declared:2 vs estimated:6
-    11x  declared:1 vs estimated:3
     11x  declared:4 vs estimated:6
     11x  declared:4 vs estimated:5
     11x  declared:0 vs estimated:1
     11x  declared:0 vs estimated:2
+    10x  declared:1 vs estimated:3
      9x  declared:2 vs estimated:4
      8x  declared:3 vs estimated:5
      8x  declared:1 vs estimated:4
@@ -476,8 +468,6 @@ Unique patterns:
 Example functions:
   cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_FUN_0054bd60
     Function declares 1 params but call sites push 5 (4 missing)...
-  cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_0054c1e0
-    Function declares 1 params but call sites push 3 (2 missing)...
   cockpit_drawsurf.cpp_CDrawSurface_drawTextCentered_FUN_00489590
     Function declares 4 params but call sites push 6 (2 missing)...
   cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariantPrintf_FUN_00489520
@@ -533,6 +523,8 @@ Example functions:
   cockpit_ckptutil.c_isLineClippingDisabled_FUN_00434660
     Function declares 0 params but call sites push 4 (4 missing)...
   crt_io.c_CheckFileHandleAvailability_FUN_00608940
+    Function declares 0 params but call sites push 4 (4 missing)...
+  crt_windows.c_has_active_window_FUN_0060a710
     Function declares 0 params but call sites push 4 (4 missing)...
 
 ====================================================================================================
@@ -668,12 +660,12 @@ Example functions:
     /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */...
 
 ====================================================================================================
-TYPE: unresolved_funcptr (185 occurrences)
+TYPE: unresolved_funcptr (189 occurrences)
 ====================================================================================================
 
 Unique patterns:
    136x  code *
-    49x  code
+    53x  code
 
 Example functions:
   crt_fstream.cpp_istream_seekg_FUN_00600ee4
@@ -710,11 +702,10 @@ Example functions:
     code *pcVar1;...
 
 ====================================================================================================
-TYPE: undefined_data (165 occurrences)
+TYPE: undefined_data (153 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    12x  DAT_02f43978
     11x  DAT_03f9b210
      9x  DAT_00823c54
      8x  DAT_00684edc
@@ -734,6 +725,7 @@ Unique patterns:
      2x  DAT_00665f50
      2x  DAT_03f9b874
      2x  DAT_00685030
+     2x  DAT_03f9b851
 
 Example functions:
   crt_io.c_getTempDirectory_FUN_00609afc
@@ -932,7 +924,7 @@ Unique patterns:
      2x  aiStackY_101c
      2x  aiStackY_10d8
      2x  afStackY_1850
-     2x  aiStackY_1024
+     1x  aiStackY_1818
 
 Example functions:
   cockpit_drawsurf.cpp_CDrawSurface_fillPoly_FUN_00488cd0
@@ -971,13 +963,13 @@ Example functions:
     int aiStackY_10d4 [1015];...
 
 ====================================================================================================
-TYPE: extra_output (117 occurrences)
+TYPE: extra_output (113 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    43x  extraout_EAX
+    41x  extraout_EAX
     11x  extraout_EDI
-    10x  extraout_EAX_00
+     8x  extraout_EAX_00
      8x  extraout_var
      6x  extraout_AL
      5x  extraout_ST0_00
@@ -1600,14 +1592,13 @@ Example functions:
     Function calls by-value struct passing functions...
 
 ====================================================================================================
-TYPE: undefined_type (20 occurrences)
+TYPE: undefined_type (19 occurrences)
 ====================================================================================================
 
 Unique patterns:
      6x  undefined6 uStack0000000c
      5x  undefined6 uStack00000020
      2x  undefined6 uVar7
-     1x  undefined3 in_stack_00000019
      1x  undefined3 in_stack_00000005
      1x  undefined3 in_stack_0000000d
      1x  undefined5 uVar7
@@ -1616,8 +1607,6 @@ Unique patterns:
      1x  undefined3 uVar2
 
 Example functions:
-  cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_0054b190
-    undefined3 in_stack_00000019;...
   crt_locale.c_istrailbyte_FUN_00610a70
     undefined3 in_stack_00000005;...
   crt_math.c_fdiv_thunk_FUN_00606d6b

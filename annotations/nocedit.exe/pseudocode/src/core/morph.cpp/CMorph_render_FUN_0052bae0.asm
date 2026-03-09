@@ -11,7 +11,7 @@
 ;
 ; XREF[7]:
 ;   core_biggs.cpp_CBiggs_renderOpaque_FUN_004189b0 at 00418a5e
-;   core_mimic.cpp_CMimic_FUN_005205f0 at 0052065e
+;   core_mimic.cpp_CMimic_renderMirrored_FUN_005205f0 at 0052065e
 ;   core_moloch.cpp_CMoloch_renderOpaque_FUN_00529750 at 00529805
 ;   core_morph.cpp_CMorph_previewMorph_FUN_0052ca90 at 0052cb34
 ;   core_passngr.cpp_CPassenger_renderOpaque_FUN_005460c0 at 00546174

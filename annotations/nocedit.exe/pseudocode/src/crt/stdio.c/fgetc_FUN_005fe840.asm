@@ -15,7 +15,7 @@
 ;   core_actor.cpp_archivePartStatus_FUN_0040bae0 at 0040bb03
 ;   core_actor.cpp_archiveRules_FUN_0040c000 at 0040c0c2
 ;   core_actor.cpp_archiveString_FUN_0040b5c0 at 0040b5e0
-;   core_conveyor.cpp_FUN_004424a0 at 004424a6
+;   core_conveyor.cpp_skipToNewline_FUN_004424a0 at 004424a6
 ;   core_course.cpp_CCourse_importBON_FUN_00442bc0 at 00442c22
 ;   ... and 56 more
 ;

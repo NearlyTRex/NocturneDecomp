@@ -2,19 +2,17 @@
 // Address: 0054c1e0
 // Address Range: [[0054c1e0, 0054c3cf]]
 // Convention: __cdecl
-// Signature: void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_reload_FUN_0054c1e0(CPackedBitmapSet *this_ptr)
+// Signature: void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_reload_FUN_0054c1e0(CPackedBitmapSet *this_ptr,int apply_palette_flag,int bitmap_index)
 
 #include "nocturne.h"
 
-void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_reload_FUN_0054c1e0(CPackedBitmapSet *this_ptr)
+void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_reload_FUN_0054c1e0(CPackedBitmapSet *this_ptr,int apply_palette_flag,int bitmap_index)
 
 {
   SIZE_T SVar1;
   int iVar2;
   SIZE_T size;
   int iVar3;
-  int in_stack_00000008;
-  int in_stack_0000000c;
   char local_148 [100];
   char local_e4 [100];
   char local_80 [100];
@@ -43,7 +41,7 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_reload_FUN_0054c1e0(CPackedBi
     local_1c = this_ptr->filename;
     iVar3 = 0;
     do {
-      if ((in_stack_0000000c < 0) || (iVar2 == in_stack_0000000c)) {
+      if ((bitmap_index < 0) || (iVar2 == bitmap_index)) {
         SVar1 = _fread(local_18,size,1,local_14);
         if (SVar1 != 1) {
           _sprintf(local_80,"Error reading from %s in CPackedBitmapSet::loadJoinedRAW",local_1c);
@@ -64,7 +62,7 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_reload_FUN_0054c1e0(CPackedBi
   }
   shape_memdbg_cpp_debugFree_FUN_0050f460(local_18,"..\\cockpit\\pkbmpset.cpp",0x132);
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_14,"..\\cockpit\\pkbmpset.cpp",0x133);
-  if (in_stack_00000008 == 0) {
+  if (apply_palette_flag == 0) {
     return;
   }
   cockpit_pkbmpset_cpp_CPackedBitmapSet_loadStoredACTFile_FUN_0054c710(this_ptr);

@@ -37,17 +37,16 @@
   },
   "complexity": {
     "assembly_lines": 182,
-    "complexity_score": 165,
+    "complexity_score": 150,
     "cross_reference_count": 9,
     "function_call_count": 7,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 60,
-    "suspect_count": 9,
+    "suspect_count": 8,
     "suspect_types": [
       "decompiler_intrinsic",
-      "stack_ref",
-      "undefined_data"
+      "stack_ref"
     ],
     "total_lines": 242
   },
@@ -85,7 +84,7 @@
     {
       "addr": "005205f0",
       "from_addr": "0052082f",
-      "name": "core_mimic.cpp_CMimic_FUN_005205f0",
+      "name": "core_mimic.cpp_CMimic_renderMirrored_FUN_005205f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -190,8 +189,8 @@
     },
     {
       "addr": "02f43978",
-      "name": "DAT_02f43978",
-      "type": "undefined4",
+      "name": "INT_02f43978",
+      "type": "int",
       "value": null
     }
   ],
@@ -332,14 +331,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_02f43978",
-      "severity": "mild",
-      "text": "if ((DAT_02f43978 != 0) &&",
-      "type": "undefined_data"
-    },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 25,

@@ -25,7 +25,7 @@
 ;   core_biggs.cpp_CBiggs_renderOpaque_FUN_004189b0 at 00418a8a
 ;   core_charactr.cpp_CCharacter_renderOpaque_FUN_0042a2c0 at 0042a351
 ;   core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_00485be0 at 00485cb2
-;   core_mimic.cpp_CMimic_FUN_005205f0 at 0052082f
+;   core_mimic.cpp_CMimic_renderMirrored_FUN_005205f0 at 0052082f
 ;   core_moloch.cpp_CMoloch_renderOpaque_FUN_00529750 at 00529830
 ;   core_succubus.cpp_CSuccubus_renderOpaque_FUN_005c7590 at 005c764a
 ;   core_vampboss.cpp_CVampireBoss_renderOpaque_FUN_005e6da0 at 005e6e64
@@ -36,7 +36,7 @@
 ;   float FLOAT_00661ba0 = 256
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
-;   undefined4 DAT_02f43978
+;   int INT_02f43978
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
@@ -60,7 +60,7 @@ section .text
     SUB ESP,0x98                        ; 0052e706
     SUB EBP,0x7a                        ; 0052e70c
     MOV EDI,dword ptr [EBP + 0x92]      ; 0052e70f
-    CMP dword ptr [0x02f43978],0x0      ; 0052e715 | DAT_02f43978
+    CMP dword ptr [0x02f43978],0x0      ; 0052e715 | INT_02f43978
     JNZ 0x0052e726                      ; 0052e71c
         ;   XREF to: 0052e726 (CONDITIONAL_JUMP)  ; LAB_0052e726
     LEA ESP,[EBP + 0x7a]                ; 0052e71e

@@ -32,9 +32,7 @@ extern float g_MpegSynthesisDctTable[64][32];
 
 // int
 extern int INT_02f43974;
+extern int INT_02f43978;
 extern int g_HuffmanTablesInitialized;
 extern int g_MpegRequantTablesInitialized;
-
-// undefined4
-extern undefined4 DAT_02f43978;
 

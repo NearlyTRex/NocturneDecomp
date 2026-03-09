@@ -41,8 +41,8 @@ extern float FLOAT_02f7c630;
 // int
 extern int g_DisableMouseHitOnBarrier;
 extern int INT_02f7c528;
-extern int INT_02f7c52c;
-extern int INT_02f7c530;
+extern int g_SelectedMotionPropertyIndex;
+extern int g_MotionPropertyEditState;
 extern int INT_02f7c538;
 extern int INT_02f7c53c;
 extern int INT_02f7c634;

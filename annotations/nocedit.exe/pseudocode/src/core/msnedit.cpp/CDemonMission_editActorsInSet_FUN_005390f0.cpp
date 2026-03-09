@@ -2,11 +2,11 @@
 // Address: 005390f0
 // Address Range: [[005390f0, 0053af22]]
 // Convention: __cdecl
-// Signature: int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMission *this_ptr,int param_2)
+// Signature: int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMission *this_ptr,int reset_cameras)
 
 #include "nocturne.h"
 
-int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMission *this_ptr,int param_2)
+int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMission *this_ptr,int reset_cameras)
 
 {
   CGame *this_ptr_00;
@@ -16,7 +16,6 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
   CBoundingBox3D *pCVar4;
   CDemonActor *extraout_EAX;
   CVector3f *pCVar5;
-  CDemonActor *extraout_EAX_00;
   CDemonActor *pCVar6;
   int iVar7;
   CActorProperty *this_ptr_01;
@@ -29,7 +28,7 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
   byte bVar14;
   char *pcVar15;
   UOrientationVector *orientation;
-  CDemonMission *in_stack_fffff64c;
+  CPickList local_9b4;
   char local_60c [300];
   char local_4e0 [300];
   char local_3b4 [260];
@@ -121,7 +120,7 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
   core_mission_cpp_CDemonMission_prepareAllActors_FUN_00523cf0(this_ptr);
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Setting initial camera view.");
-  if (param_2 != 0) {
+  if (reset_cameras != 0) {
     INT_02f7c53c = 0;
     this_ptr->current_camera_index = 0;
     INT_02f7c634 = 0;
@@ -614,9 +613,8 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
       if (iVar11 != 0) {
         iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
         if (iVar11 == 0) {
-          core_msnedit_cpp_CDemonMission_findNextVisibleActor_FUN_0053ca30
-                    (this_ptr,this_ptr->selected_actor);
-          pCVar6 = extraout_EAX_00;
+          pCVar6 = core_msnedit_cpp_CDemonMission_findNextVisibleActor_FUN_0053ca30
+                             (this_ptr,this_ptr->selected_actor);
         }
         else {
           core_msnedit_cpp_CDemonMission_findPrevVisibleActor_FUN_0053ca80
@@ -728,7 +726,7 @@ LAB_00539e00:
       }
       iVar11 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_I);
       if (iVar11 != 0) {
-        core_msnedit_cpp_CDemonMission_importActorsFrom_FUN_0053b9f0(this_ptr,in_stack_fffff64c);
+        core_msnedit_cpp_CDemonMission_importActorsFrom_FUN_0053b9f0(this_ptr);
       }
       iVar11 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_D);
       if (iVar11 != 0) {
@@ -796,22 +794,19 @@ LAB_00539e00:
         if (iVar11 == 0) {
           iVar11 = -1;
           while( true ) {
-            shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff64c);
+            shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_9b4);
             for (pCVar6 = this_ptr->first_actor; pCVar6 != (CDemonActor *)0x0;
                 pCVar6 = pCVar6->next_actor) {
               if (pCVar6->is_editor_hidden != 0) {
-                shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                          ((CStrList *)&stack0xfffff64c,pCVar6->actor_name);
+                shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_9b4.base,pCVar6->actor_name);
               }
             }
-            if ((int)in_stack_fffff64c < 1) break;
-            shape_edittool_cpp_CStrList_sort_FUN_004a2ec0((CStrList *)&stack0xfffff64c);
+            if (local_9b4.base.item_count < 1) break;
+            shape_edittool_cpp_CStrList_sort_FUN_004a2ec0(&local_9b4.base);
             iVar11 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                               ((CPickList *)&stack0xfffff64c,"Select actor to unhide",
-                                iVar11,0);
+                               (&local_9b4,"Select actor to unhide",iVar11,0);
             if (iVar11 < 0) goto LAB_0053a88c;
-            pcVar15 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70
-                                ((CStrList *)&stack0xfffff64c,iVar11);
+            pcVar15 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_9b4.base,iVar11);
             pCVar6 = core_mission_cpp_CDemonMission_findActorByName_FUN_00524030(this_ptr,pcVar15);
             if (pCVar6 == (CDemonActor *)0x0) {
               g_CurrentFilename = "..\\core\\msnedit.cpp";
@@ -819,14 +814,14 @@ LAB_00539e00:
               core_main_c_displayErrorAndQuit_FUN_00506f10("Hell froze.");
             }
             pCVar6->is_editor_hidden = 0;
-            shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffff64c,0);
+            shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_9b4,0);
           }
           if (iVar11 < 0) {
             shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                       (g_CEditorToolsPtr,"No actors hidden.");
           }
 LAB_0053a88c:
-          shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffff64c,0);
+          shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_9b4,0);
         }
         else {
           for (pCVar6 = this_ptr->first_actor; pCVar6 != (CDemonActor *)0x0;
@@ -988,8 +983,7 @@ LAB_0053aea7:
           }
         }
         else {
-          core_msnedit_cpp_CDemonMission_pasteActorProperty_FUN_0053af50
-                    (this_ptr,(char *)this_ptr_01);
+          core_msnedit_cpp_CDemonMission_pasteActorProperty_FUN_0053af50(this_ptr,this_ptr_01);
 LAB_0053ad72:
           FLOAT_00680818 = 1e+10;
         }

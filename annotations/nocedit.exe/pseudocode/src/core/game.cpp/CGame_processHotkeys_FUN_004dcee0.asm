@@ -146,10 +146,10 @@ section .text
     TEST EAX,EAX                        ; 004dcfd5
     JZ 0x004dcfed                       ; 004dcfd7
         ;   XREF to: 004dcfed (CONDITIONAL_JUMP)  ; LAB_004dcfed
-    CMP dword ptr [0x02f43978],0x0      ; 004dcfd9 | DAT_02f43978
+    CMP dword ptr [0x02f43978],0x0      ; 004dcfd9 | INT_02f43978
     SETZ AL                             ; 004dcfe0
     AND EAX,0xff                        ; 004dcfe3
-    MOV [0x02f43978],EAX                ; 004dcfe8 | DAT_02f43978
+    MOV [0x02f43978],EAX                ; 004dcfe8 | INT_02f43978
     CMP dword ptr [EBX + 0x1dc],0x0     ; 004dcfed
         ;   Label: LAB_004dcfed
     JZ 0x004dd46c                       ; 004dcff4

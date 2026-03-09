@@ -6,19 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 147,
-    "complexity_score": 139,
+    "complexity_score": 78,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 7,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 54,
-    "suspect_count": 7,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 53,
+    "suspect_count": 2,
     "suspect_types": [
-      "param_count_too_few",
-      "pointer_cast",
-      "stack_param"
+      "pointer_cast"
     ],
-    "total_lines": 201
+    "total_lines": 200
   },
   "cross_references": [
     {
@@ -45,7 +43,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_mimic.cpp_CMimic_processMorph_FUN_00520ba0",
-    "signature": "void __cdecl core_mimic_cpp_CMimic_processMorph_FUN_00520ba0(CMimic *this_ptr)"
+    "signature": "void __cdecl core_mimic_cpp_CMimic_processMorph_FUN_00520ba0(CMimic *this_ptr,float delta_time)"
   },
   "function_calls": [
     {
@@ -145,8 +143,8 @@
         "stack_params": 2
       }
     ],
-    "confidence": "medium",
-    "declared_params": 1,
+    "confidence": "high",
+    "declared_params": 2,
     "estimated_params": 2
   },
   "pcode_summary": {
@@ -190,10 +188,10 @@
     "pcode_op_count": 623
   },
   "stack_frame": {
-    "frame_size": 32,
+    "frame_size": 36,
     "local_size": 28,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -209,6 +207,13 @@
         "offset": 4,
         "size": 4,
         "type": "CMimic *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
       }
     ]
   },
@@ -231,40 +236,8 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "float in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "fVar2 = in_stack_00000008 / 1.0f + this_ptr->morph_blend;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 29,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "local_18[0] = in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 34,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "local_18[0] = in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 49,
+      "line": 48,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)&(pSVar1->position).x + iVar4) =",
@@ -272,22 +245,11 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 50,
+      "line": 49,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "-*(float *)((int)&(pSVar1->position).x + iVar4);",
       "type": "pointer_cast"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 1,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:1 vs estimated:2",
-      "param_delta": 1,
-      "text": "Function declares 1 params but call sites push 2 (1 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

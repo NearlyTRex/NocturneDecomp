@@ -30,6 +30,7 @@ section .text
     LEA ESI,[ESP + 0x4]                 ; 005d124a
     LEA EDI,[ESP + 0x34]                ; 005d124e
     CALL dword ptr [EAX + 0x6c]         ; 005d1252
+        ;   Label: prt_5d1252_11b7af31
     ADD ESP,0x4                         ; 005d1255
     LEA EAX,[ESP + 0x30]                ; 005d1258
     MOV ECX,0x6                         ; 005d125c
@@ -59,6 +60,7 @@ section .text
     LEA ESI,[ESP + 0x1c]                ; 005d128f
     LEA EDI,[ESP + 0x4c]                ; 005d1293
     CALL dword ptr [EAX + 0x6c]         ; 005d1297
+        ;   Label: prt_5d1297_11b7af31
     ADD ESP,0x4                         ; 005d129a
     LEA EAX,[ESP + 0x48]                ; 005d129d
     MOV ECX,0x6                         ; 005d12a1

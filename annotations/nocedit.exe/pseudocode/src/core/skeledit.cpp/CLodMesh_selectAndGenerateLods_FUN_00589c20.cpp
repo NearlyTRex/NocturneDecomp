@@ -79,7 +79,7 @@ int __cdecl core_skeledit_cpp_CLodMesh_selectAndGenerateLods_FUN_00589c20(CLodMe
       core_skeledit_cpp_CLodMeshPrecomputeEntry_ctor_FUN_00589fa0(&local_320);
       core_skeledit_cpp_CLodMeshPrecomputeEntry_load_FUN_00589fe0
                 (&local_320,this_ptr->precompute_file);
-      iVar1 = shape_meshlod_cpp_CLodMesh_initializeLodGeneration_FUN_0051b8a0
+      iVar1 = shape_meshlod_cpp_CLodMesh_initializeFromPrecomputedData_FUN_0051b8a0
                         (this_ptr,this_ptr->precompute_file);
       if (iVar1 == 0) {
         shape_meshlod_cpp_CLodMesh_closePrecomputeFile_FUN_0051b870(this_ptr);

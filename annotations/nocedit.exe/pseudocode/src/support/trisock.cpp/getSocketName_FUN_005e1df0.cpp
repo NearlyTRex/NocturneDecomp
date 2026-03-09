@@ -2,11 +2,11 @@
 // Address: 005e1df0
 // Address Range: [[005e1df0, 005e1e42]]
 // Convention: __cdecl
-// Signature: int __cdecl support_trisock_cpp_getSocketName_FUN_005e1df0(_SOCKET *socket_handle,SNetworkAddr *param_2)
+// Signature: int __cdecl support_trisock_cpp_getSocketName_FUN_005e1df0(_SOCKET *socket_handle,SNetworkAddr *out_address)
 
 #include "nocturne.h"
 
-int __cdecl support_trisock_cpp_getSocketName_FUN_005e1df0(_SOCKET *socket_handle,SNetworkAddr *param_2)
+int __cdecl support_trisock_cpp_getSocketName_FUN_005e1df0(_SOCKET *socket_handle,SNetworkAddr *out_address)
 
 {
   uint uVar1;
@@ -14,6 +14,7 @@ int __cdecl support_trisock_cpp_getSocketName_FUN_005e1df0(_SOCKET *socket_handl
   SOCKADDR_IN *pSVar3;
   byte bVar4;
   SOCKADDR local_1c;
+  SNetworkAddr SStack_c;
   int local_4;
   
   bVar4 = 0;
@@ -22,11 +23,10 @@ int __cdecl support_trisock_cpp_getSocketName_FUN_005e1df0(_SOCKET *socket_handl
   if (iVar2 != 0) {
     return 0;
   }
-  pSVar3 = support_trisock_cpp_convertSockAddr_FUN_005e1960
-                     ((SOCKADDR_IN *)&stack0xfffffff4,&local_1c);
-  param_2->ip_address = *(uint *)pSVar3;
+  pSVar3 = support_trisock_cpp_convertSockAddr_FUN_005e1960(&SStack_c,&local_1c);
+  out_address->ip_address = *(uint *)pSVar3;
   uVar1 = *(uint *)((int)pSVar3 + (uint)bVar4 * -8 + 4);
-  param_2[-(uint)bVar4].port = (short)uVar1;
-  param_2[-(uint)bVar4].other = (short)((uint)uVar1 >> 0x10);
+  out_address[-(uint)bVar4].port = (short)uVar1;
+  out_address[-(uint)bVar4].other = (short)((uint)uVar1 >> 0x10);
   return 1;
 }

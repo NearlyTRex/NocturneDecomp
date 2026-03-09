@@ -15,7 +15,7 @@
 ;   core_cloth.cpp_CClothList_process_FUN_0043c2d0 at 0043c304
 ;   core_cloth.cpp_CCloth_boneEditor_FUN_0043c880 at 0043ca56
 ;   core_gabriela.cpp_CGabriella_process_FUN_004d2ea0 at 004d36c5
-;   core_mimic.cpp_CMimic_FUN_0051fcc0 at 005204b6
+;   core_mimic.cpp_CMimic_processAnimation_FUN_0051fcc0 at 005204b6
 ;   core_svetlana.cpp_CSvetlana_process_FUN_005d8ba0 at 005d8ed2
 ;   core_vampboss.cpp_CVampireBoss_process_FUN_005e5970 at 005e6189
 ;

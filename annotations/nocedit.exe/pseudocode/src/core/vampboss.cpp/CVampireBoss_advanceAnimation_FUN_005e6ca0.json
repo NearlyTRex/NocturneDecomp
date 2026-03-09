@@ -1,0 +1,179 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 108,
+    "complexity_score": 45,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 3,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 45,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 153
+  },
+  "cross_references": [
+    {
+      "addr": "005e5970",
+      "from_addr": "005e59c2",
+      "name": "core_vampboss.cpp_CVampireBoss_process_FUN_005e5970",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005e6ca0",
+    "address_range": [
+      [
+        "005e6ca0",
+        "005e6d9b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_vampboss.cpp_CVampireBoss_advanceAnimation_FUN_005e6ca0",
+    "signature": "void __cdecl core_vampboss_cpp_CVampireBoss_advanceAnimation_FUN_005e6ca0(CVampireBoss *this_ptr,float delta_time)"
+  },
+  "function_calls": [
+    {
+      "addr": "0052d610",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_advance_FUN_0052d610"
+    },
+    {
+      "addr": "005fdbd0",
+      "is_variadic": true,
+      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00656bcb",
+      "name": "s_wing_wav_f_00656bcb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00656bd9",
+      "name": "s_wing_wav_1_5_1_2_00656bd9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00656bf3",
+      "name": "DOUBLE_00656bf3",
+      "type": "double",
+      "value": "2.5"
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.095238095238095,
+    "instruction_count": 84,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 7,
+      "BOOL_OR": 5,
+      "BRANCH": 1,
+      "CALL": 2,
+      "CALLIND": 1,
+      "CBRANCH": 11,
+      "COPY": 166,
+      "FLOAT2FLOAT": 9,
+      "FLOAT_EQUAL": 4,
+      "FLOAT_LESS": 4,
+      "FLOAT_MULT": 1,
+      "FLOAT_NAN": 8,
+      "INT2FLOAT": 4,
+      "INT_ADD": 31,
+      "INT_AND": 47,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 26,
+      "INT_LEFT": 16,
+      "INT_LESS": 8,
+      "INT_NOTEQUAL": 20,
+      "INT_OR": 20,
+      "INT_SBORROW": 8,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 13,
+      "INT_SUB": 21,
+      "INT_XOR": 1,
+      "INT_ZEXT": 16,
+      "LOAD": 22,
+      "POPCOUNT": 13,
+      "RETURN": 2,
+      "STORE": 19
+    },
+    "pcode_op_count": 512
+  },
+  "stack_frame": {
+    "frame_size": 148,
+    "local_size": 140,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_88",
+        "offset": -136,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_80",
+        "offset": -128,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_78",
+        "offset": -120,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_74",
+        "offset": -116,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CVampireBoss *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005e6ca8",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": []
+}

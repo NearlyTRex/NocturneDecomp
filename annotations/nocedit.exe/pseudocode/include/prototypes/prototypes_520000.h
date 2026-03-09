@@ -28,6 +28,7 @@
 #include "types/classes/CMorphModel.h"
 #include "types/classes/CMotionController.h"
 #include "types/classes/CMotionList.h"
+#include "types/classes/CQuaternion4f.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
 #include "types/enums/ECollisionType.h"
@@ -60,8 +61,8 @@
 // FUNCTION PROTOTYPES - Range 0x520000
 // =============================================================================
 
-void __cdecl core_mimic_cpp_CMimic_FUN_00520500(CMimic *this_ptr);
-int __cdecl core_mimic_cpp_CMimic_FUN_005205f0(CMimic *this_ptr);
+void __cdecl core_mimic_cpp_CMimic_setupCloth_FUN_00520500(CMimic *this_ptr);
+int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_005205f0(CMimic *this_ptr);
 int __cdecl core_mimic_cpp_CMimic_renderOpaque_FUN_00520870(CMimic *this_ptr);
 int __cdecl core_mimic_cpp_CMimic_renderTransparent_FUN_00520890(CMimic *this_ptr);
 EDeathState __cdecl core_mimic_cpp_CMimic_getDeathState_FUN_005208a0(CMimic *this_ptr);
@@ -69,11 +70,11 @@ void __cdecl core_mimic_cpp_CMimic_renderBackground_FUN_005208b0(CMimic *this_pt
 void __cdecl core_mimic_cpp_CMimic_archive_FUN_00520930(CMimic *this_ptr);
 ECollisionType __cdecl core_mimic_cpp_CMimic_getCollisionType_FUN_00520a00(CMimic *this_ptr,SCollisionInfo *collision_info);
 void __cdecl core_mimic_cpp_CMimic_beginMorph_FUN_00520a80(CMimic *this_ptr);
-void __cdecl core_mimic_cpp_CMimic_processMorph_FUN_00520ba0(CMimic *this_ptr);
+void __cdecl core_mimic_cpp_CMimic_processMorph_FUN_00520ba0(CMimic *this_ptr,float delta_time);
 void __cdecl core_mimic_cpp_CMimic_getPropertyList_FUN_00520d10(CMimic *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_mimic_cpp_CMimic_onActorDeleted_FUN_00520da0(CMimic *this_ptr,CDemonActor *deleted_actor);
 void __cdecl core_mimic_cpp_CMimic_addFilesToExtract_FUN_00520dd0(CMimic *this_ptr,_FILE *file_handle);
-void __cdecl core_mimic_cpp_FUN_00520e00(void);
+CQuaternion4f * __cdecl core_mimic_cpp_copyQuaternion_FUN_00520e00(CQuaternion4f *dest,CQuaternion4f *src);
 void __cdecl core_minecar_cpp_staticInit_FUN_00520e20(void);
 CMineCar * __cdecl core_minecar_cpp_factoryFunc_FUN_00520e50(void);
 CDemonActorType * __cdecl core_minecar_cpp_CMinecar_getActorType_FUN_00520e80(CMineCar *this_ptr);

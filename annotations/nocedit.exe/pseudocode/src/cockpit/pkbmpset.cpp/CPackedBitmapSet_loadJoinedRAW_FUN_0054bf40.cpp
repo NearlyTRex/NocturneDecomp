@@ -2,11 +2,11 @@
 // Address: 0054bf40
 // Address Range: [[0054bf40, 0054c1d1]]
 // Convention: __cdecl
-// Signature: void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40(CPackedBitmapSet *this_ptr,char *filename,int bitmap_width,int bitmap_height,int total_bitmaps,int unknown_param)
+// Signature: void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40(CPackedBitmapSet *this_ptr,char *filename,int bitmap_width,int bitmap_height,int transparency_color,int apply_palette_flag)
 
 #include "nocturne.h"
 
-void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40(CPackedBitmapSet *this_ptr,char *filename,int bitmap_width,int bitmap_height,int total_bitmaps,int unknown_param)
+void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40(CPackedBitmapSet *this_ptr,char *filename,int bitmap_width,int bitmap_height,int transparency_color,int apply_palette_flag)
 
 {
   int iVar1;
@@ -65,14 +65,14 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40(CP
       iVar1 = iVar1 + 1;
       cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_0054b190
                 ((CPackedBitmap *)(this_ptr->bitmap_array->filename + iVar2),bitmap_data,
-                 this_ptr->width,this_ptr->height,total_bitmaps,(uchar)bitmap_width);
+                 this_ptr->width,this_ptr->height,transparency_color,bitmap_width);
       iVar2 = iVar2 + 0x24;
     } while (iVar1 < this_ptr->bitmap_count);
   }
   shape_memdbg_cpp_debugFree_FUN_0050f460(bitmap_data,"..\\cockpit\\pkbmpset.cpp",0xec);
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_18,"..\\cockpit\\pkbmpset.cpp",0xed);
   cockpit_pkbmpset_cpp_CPackedBitmapSet_setFilename_FUN_0054c6f0(this_ptr,filename);
-  if (unknown_param == 0) {
+  if (apply_palette_flag == 0) {
     return;
   }
   cockpit_pkbmpset_cpp_CPackedBitmapSet_loadStoredACTFile_FUN_0054c710(this_ptr);

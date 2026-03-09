@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CP3D * __cdecl shape_superopt_cpp_CP3D_FUN_005d8630(CP3D *this_ptr,double scalar)
+; CP3D * __stackdbl_esi shape_superopt_cpp_CP3D_FUN_005d8630(CP3D *this_ptr,double scalar,CP3D *result)
 ;
 ; Parameters:
 ; CP3D *           Stack[0x4]:4   this_ptr

@@ -115,7 +115,7 @@ int __cdecl shape_meshlod_cpp_CLodMesh_loadPrecomputeFile_FUN_0051b6f0(CLodMesh 
 int __cdecl shape_meshlod_cpp_CLodMesh_loadPrecomputedLodData_FUN_0051b720(CLodMesh *this_ptr);
 _FILE * __cdecl shape_meshlod_cpp_CLodMesh_openPrecomputeFile_FUN_0051b770(CLodMesh *this_ptr,char *mode);
 void __cdecl shape_meshlod_cpp_CLodMesh_closePrecomputeFile_FUN_0051b870(CLodMesh *this_ptr);
-int __cdecl shape_meshlod_cpp_CLodMesh_initializeLodGeneration_FUN_0051b8a0(CLodMesh *this_ptr,_FILE *file_handle);
+int __cdecl shape_meshlod_cpp_CLodMesh_initializeFromPrecomputedData_FUN_0051b8a0(CLodMesh *this_ptr,_FILE *file_handle);
 void __cdecl shape_meshlod_cpp_CLodMesh_getLOD_FUN_0051b920(CLodMesh *this_ptr);
 void __cdecl shape_meshlod_cpp_CLodMesh_fixupAfterCram_FUN_0051bac0(CLodMesh *this_ptr);
 void __cdecl shape_meshlod_cpp_CLodMesh_clearFaceAttributes_FUN_0051bcc0(CLodMesh *this_ptr);
@@ -164,13 +164,13 @@ float * __cdecl shape_meshlod_cpp_copyFloat_FUN_0051f0b0(float *dest_ptr,float *
 CLodFace * __cdecl shape_meshlod_cpp_CLodFace_arrdtor_FUN_0051f0c0(CLodFace *objs,uint flags);
 CVector3f * __cdecl shape_meshlod_cpp_CVector3f_arrdtor_FUN_0051f0e0(CVector3f *objs,uint flags);
 void __cdecl core_mimic_cpp_staticInit_FUN_0051f100(void);
-void __cdecl core_mimic_cpp_FUN_0051f130(void);
+void __cdecl core_mimic_cpp_mirrorXTransform_FUN_0051f130(void);
 CMimic * __cdecl core_mimic_cpp_factoryFunc_FUN_0051f190(void);
 CDemonActorType * __cdecl core_mimic_cpp_CMimic_getActorType_FUN_0051f1c0(CMimic *this_ptr);
 CMimic * __cdecl core_mimic_cpp_CMimic_ctor_FUN_0051f1d0(CMimic *this_ptr);
 CMimic * __cdecl core_mimic_cpp_CMimic_dtor_FUN_0051f2c0(CMimic *this_ptr,uint flags);
 void __cdecl core_mimic_cpp_CMimic_setup_FUN_0051f3e0(CMimic *this_ptr);
 void __cdecl core_mimic_cpp_CMimic_process_FUN_0051f780(CMimic *this_ptr,float delta_time);
-void __cdecl core_mimic_cpp_CMimic_FUN_0051f930(CMimic *this_ptr);
-void __cdecl core_mimic_cpp_CMimic_FUN_0051fcc0(CMimic *this_ptr);
+void __cdecl core_mimic_cpp_CMimic_updatePose_FUN_0051f930(CMimic *this_ptr);
+void __cdecl core_mimic_cpp_CMimic_processAnimation_FUN_0051fcc0(CMimic *this_ptr,float delta_time);
 

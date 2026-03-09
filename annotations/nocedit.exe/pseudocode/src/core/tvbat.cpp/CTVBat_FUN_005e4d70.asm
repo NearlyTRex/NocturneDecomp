@@ -7,7 +7,7 @@
 ; CTVBat *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_vampboss.cpp_CVampireBoss_FUN_005e7320 at 005e7373
+;   core_vampboss.cpp_CVampireBoss_summonBats_FUN_005e7320 at 005e7373
 ;
 ; *****************************************************************************
 

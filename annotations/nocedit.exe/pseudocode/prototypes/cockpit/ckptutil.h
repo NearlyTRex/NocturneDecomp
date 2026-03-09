@@ -93,7 +93,7 @@ void __cdecl blitDualModeSprite(void *sprite_data,void *span_data,int dest_x,int
 
 // Original: cockpit_ckptutil.c_copyBitmapRegion_FUN_00432860
 // Address: 00432860
-void __cdecl copyBitmapRegion(void *src_buffer,int src_stride,void *dest_buffer,int copy_width,int copy_height,int src_x,int src_y);
+void __cdecl copyBitmapRegion(uchar *src_buffer,int src_stride,int unused,uchar *dest_buffer,int bytes_per_row,int num_rows,int src_x_offset,int src_y_offset);
 
 // Original: cockpit_ckptutil.c_blitHorizontallyClippedSprite_FUN_004328d0
 // Address: 004328d0
@@ -133,7 +133,7 @@ void __cdecl rotateCircularBitmap(void *bitmap_data,int width,int height,int num
 
 // Original: cockpit_ckptutil.c_mirrorBitmapHorizontally_FUN_00433160
 // Address: 00433160
-void __cdecl mirrorBitmapHorizontally(void *bitmap_data,int width,int height);
+void __cdecl mirrorBitmapHorizontally(uchar *bitmap_data,int width,int height,int bytes_per_pixel);
 
 // Original: cockpit_ckptutil.c_loadEdgeListFile_FUN_004331f0
 // Address: 004331f0

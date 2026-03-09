@@ -23,10 +23,11 @@ void __cdecl core_msnedit_cpp_drawMotionBar_FUN_00536e20(void)
   int local_14;
   
   INT_02f7c538 = 0;
-  if ((((g_CDemonMissionPtr->selected_actor != (CDemonActor *)0x0) && (-1 < INT_02f7c52c)) &&
-      (INT_02f7c52c < g_MsnEditPropertyList.count)) &&
-     ((g_MsnEditPropertyList.properties[INT_02f7c52c].type == PROP_MOTION &&
-      (this_ptr = g_MsnEditPropertyList.properties[INT_02f7c52c].data.v_dfm_ptr,
+  if ((((g_CDemonMissionPtr->selected_actor != (CDemonActor *)0x0) &&
+       (-1 < g_SelectedMotionPropertyIndex)) &&
+      (g_SelectedMotionPropertyIndex < g_MsnEditPropertyList.count)) &&
+     ((g_MsnEditPropertyList.properties[g_SelectedMotionPropertyIndex].type == PROP_MOTION &&
+      (this_ptr = g_MsnEditPropertyList.properties[g_SelectedMotionPropertyIndex].data.v_dfm_ptr,
       this_ptr != (CDeformableModelInstance *)0x0)))) {
     local_14 = 0x9b;
     iVar2 = (g_CDemonMissionPtr->viewport).bottom + -0x38;
@@ -46,13 +47,13 @@ void __cdecl core_msnedit_cpp_drawMotionBar_FUN_00536e20(void)
     iVar1 = core_msnedit_cpp_drawClickableButton_FUN_00536cd0(local_f4,local_24,local_20,1,0);
     if (iVar1 != 0) {
       core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
-                (g_MsnEditPropertyList.properties + INT_02f7c52c,g_CDemonMissionPtr->selected_actor)
-      ;
+                (g_MsnEditPropertyList.properties + g_SelectedMotionPropertyIndex,
+                 g_CDemonMissionPtr->selected_actor);
     }
     iVar1 = core_msnedit_cpp_drawClickableButton_FUN_00536cd0
                       (" X ",local_14 + -0x11,local_20,1,0);
     if (iVar1 != 0) {
-      INT_02f7c52c = -1;
+      g_SelectedMotionPropertyIndex = -1;
     }
     _sprintf(local_f4,"%6.2f",(double)local_f8);
     iVar1 = core_msnedit_cpp_drawClickableButton_FUN_00536cd0(local_f4,local_24,local_20 + 0x10,1,0)
@@ -67,7 +68,7 @@ void __cdecl core_msnedit_cpp_drawMotionBar_FUN_00536e20(void)
     iVar2 = core_msnedit_cpp_drawClickableButton_FUN_00536cd0
                       (" << ",local_24 + 7,local_1c,1,0);
     if (iVar2 != 0) {
-      INT_02f7c530 = 0;
+      g_MotionPropertyEditState = 0;
       local_f8 = 0.0;
     }
     iVar2 = core_msnedit_cpp_drawClickableButton_FUN_00536cd0
@@ -79,20 +80,20 @@ void __cdecl core_msnedit_cpp_drawMotionBar_FUN_00536e20(void)
         local_18 = motion_name->frame_count + -1;
         local_f8 = (float)local_18;
       }
-      INT_02f7c530 = 0;
+      g_MotionPropertyEditState = 0;
     }
-    if (INT_02f7c530 == 0) {
+    if (g_MotionPropertyEditState == 0) {
       iVar2 = core_msnedit_cpp_drawClickableButton_FUN_00536cd0
                         (" |> ",iVar1 + 0x38,local_1c,1,0);
       if (iVar2 != 0) {
-        INT_02f7c530 = 1;
+        g_MotionPropertyEditState = 1;
       }
     }
     else {
       iVar2 = core_msnedit_cpp_drawClickableButton_FUN_00536cd0
                         (" || ",iVar1 + 0x38,local_1c,1,0);
       if (iVar2 != 0) {
-        INT_02f7c530 = 0;
+        g_MotionPropertyEditState = 0;
       }
     }
     iVar2 = core_msnedit_cpp_drawClickableButton_FUN_00536cd0
@@ -100,16 +101,16 @@ void __cdecl core_msnedit_cpp_drawMotionBar_FUN_00536e20(void)
     if (iVar2 != 0) {
       local_2c = floor((double)local_f8);
       local_f8 = (float)local_2c + 1.0;
-      INT_02f7c530 = 0;
+      g_MotionPropertyEditState = 0;
     }
     iVar1 = core_msnedit_cpp_drawClickableButton_FUN_00536cd0
                       (" >> ",iVar1 + 0x69,local_1c,1,0);
     if (iVar1 != 0) {
       local_18 = motion_name->frame_count + -1;
-      INT_02f7c530 = 0;
+      g_MotionPropertyEditState = 0;
       local_f8 = (float)local_18;
     }
-    if ((INT_02f7c530 != 0) &&
+    if ((g_MotionPropertyEditState != 0) &&
        (local_f8 = g_CGamePtr->delta_time_float * motion_name->fps + local_f8,
        (float)motion_name->frame_count <= local_f8)) {
       local_f8 = 0.0;

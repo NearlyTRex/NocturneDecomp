@@ -45,7 +45,7 @@ void __cdecl createNetworkAddr(SNetworkAddr *dest_addr,uint32_t *ip_address_ptr,
 
 // Original: support_trisock.cpp_convertSockAddr_FUN_005e1960
 // Address: 005e1960
-SOCKADDR_IN * __cdecl convertSockAddr(SOCKADDR_IN *dest_addr,SOCKADDR *src_addr);
+SOCKADDR_IN * __cdecl convertSockAddr(SNetworkAddr *dest_addr,SOCKADDR *src_addr);
 
 // Original: support_trisock.cpp_buildSockaddrIn_FUN_005e19d0
 // Address: 005e19d0
@@ -113,7 +113,7 @@ int __cdecl acceptConnection(_SOCKET *listen_socket,SNetworkAddr *client_addr,_S
 
 // Original: support_trisock.cpp_getSocketName_FUN_005e1df0
 // Address: 005e1df0
-int __cdecl getSocketName(_SOCKET *socket_handle,SNetworkAddr *param_2);
+int __cdecl getSocketName(_SOCKET *socket_handle,SNetworkAddr *out_address);
 
 // Original: support_trisock.cpp_setSocketBlocking_FUN_005e1e50
 // Address: 005e1e50

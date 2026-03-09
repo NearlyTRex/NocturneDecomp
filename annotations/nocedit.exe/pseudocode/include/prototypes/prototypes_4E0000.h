@@ -227,5 +227,5 @@ void __cdecl core_ground_cpp_CGround_renderTerrainQuad_FUN_004ef990(CGround *thi
 void __cdecl core_ground_cpp_CGround_renderVisibleTerrain_FUN_004efb70(CGround *this_ptr);
 void __cdecl core_ground_cpp_CGround_render_FUN_004efc90(CGround *this_ptr);
 int __cdecl core_ground_cpp_CGround_getHeightAtPosition_FUN_004efd30(CGround *this_ptr,int world_x,int world_z);
-void __cdecl core_ground_cpp_CGround_getNormalAtPosition_FUN_004effb0(CGround *this_ptr,int world_x,int world_z,CVector3i *out_normal);
+CVector3i * __stack3_esi core_ground_cpp_CGround_getNormalAtPosition_FUN_004effb0 (CGround *this_ptr,int world_x,int world_z,CVector3i *out_normal);
 

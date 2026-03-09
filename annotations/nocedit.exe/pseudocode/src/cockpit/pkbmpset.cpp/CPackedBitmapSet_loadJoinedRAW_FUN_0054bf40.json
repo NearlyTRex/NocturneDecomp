@@ -70,7 +70,7 @@
     ],
     "convention": "__cdecl",
     "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40",
-    "signature": "void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40(CPackedBitmapSet *this_ptr,char *filename,int bitmap_width,int bitmap_height,int total_bitmaps,int unknown_param)"
+    "signature": "void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40(CPackedBitmapSet *this_ptr,char *filename,int bitmap_width,int bitmap_height,int transparency_color,int apply_palette_flag)"
   },
   "function_calls": [
     {
@@ -360,14 +360,14 @@
       },
       {
         "is_param": true,
-        "name": "total_bitmaps",
+        "name": "transparency_color",
         "offset": 20,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
-        "name": "unknown_param",
+        "name": "apply_palette_flag",
         "offset": 24,
         "size": 4,
         "type": "int"

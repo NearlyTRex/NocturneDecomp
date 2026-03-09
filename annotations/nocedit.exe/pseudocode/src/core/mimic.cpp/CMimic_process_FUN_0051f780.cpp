@@ -25,7 +25,7 @@ void __cdecl core_mimic_cpp_CMimic_process_FUN_0051f780(CMimic *this_ptr,float d
   fVar1 = this_ptr->morph_blend;
   (this_ptr->base).base.base.scale.z = (g_HeroActors[iVar3]->base).base.scale.z;
   if (0.0 <= fVar1) {
-    core_mimic_cpp_CMimic_processMorph_FUN_00520ba0(this_ptr);
+    core_mimic_cpp_CMimic_processMorph_FUN_00520ba0(this_ptr,delta_time);
     return;
   }
   iVar3 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
@@ -38,14 +38,14 @@ void __cdecl core_mimic_cpp_CMimic_process_FUN_0051f780(CMimic *this_ptr,float d
       }
       iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                         (g_CEventListPtr,this_ptr->mirror_condition);
-      if ((iVar3 != 0) && (core_mimic_cpp_CMimic_FUN_0051f930(this_ptr), this_ptr->attack_mode == 1)
-         ) {
+      if ((iVar3 != 0) &&
+         (core_mimic_cpp_CMimic_updatePose_FUN_0051f930(this_ptr), this_ptr->attack_mode == 1)) {
         pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                            (&(g_HeroActors[g_LocalHeroIndex]->base).model.motion_controller);
         uVar2 = pSVar4->state_index;
         if ((uVar2 < 3) || (uVar2 < 4)) {
 LAB_0051f8da:
-          core_mimic_cpp_CMimic_FUN_00520500(this_ptr);
+          core_mimic_cpp_CMimic_setupCloth_FUN_00520500(this_ptr);
           core_charactr_cpp_CCharacter_computeBoundingBox_FUN_0042d530((CCharacter *)this_ptr);
           return;
         }
@@ -67,7 +67,7 @@ LAB_0051f8da:
       }
     }
     else {
-      core_mimic_cpp_CMimic_FUN_0051fcc0(this_ptr);
+      core_mimic_cpp_CMimic_processAnimation_FUN_0051fcc0(this_ptr,delta_time);
     }
     core_charactr_cpp_CCharacter_computeBoundingBox_FUN_0042d530((CCharacter *)this_ptr);
   }

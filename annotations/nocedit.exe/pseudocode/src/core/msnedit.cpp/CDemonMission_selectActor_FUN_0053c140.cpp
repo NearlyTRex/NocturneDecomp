@@ -13,7 +13,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_selectActor_FUN_0053c140(CDemonMissi
   _FILE *file_handle;
   
   remove("$$UNDO$$.TMP");
-  INT_02f7c52c = -1;
+  g_SelectedMotionPropertyIndex = -1;
   this_ptr->selected_actor = actor;
   if (actor != (CDemonActor *)0x0) {
     actor->is_editor_hidden = 0;

@@ -23,9 +23,9 @@ CEmitter * __cdecl CEmitter::ctor(CEmitter *this_ptr);
 // Address: 004a7e00
 void __cdecl CEmitter::setup(CEmitter *this_ptr);
 
-// Original: core_emitter.cpp_CEmitter_FUN_004a7e80
+// Original: core_emitter.cpp_CEmitter_launchFireballAtHero_FUN_004a7e80
 // Address: 004a7e80
-void __cdecl CEmitter(CEmitter *this_ptr);
+void __cdecl CEmitter::launchFireballAtHero(CEmitter *this_ptr);
 
 // Original: core_emitter.cpp_CEmitter_process_FUN_004a8070
 // Address: 004a8070
@@ -51,9 +51,9 @@ void __cdecl CEmitter::archive(CEmitter *this_ptr);
 // Address: 004a8d10
 ECollisionType __cdecl CEmitter::getCollisionType(CEmitter *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_emitter.cpp_CEmitter_FUN_004a8d20
+// Original: core_emitter.cpp_CEmitter_getRandomBoundingBoxPoint_FUN_004a8d20
 // Address: 004a8d20
-CVector3f * __cdecl CEmitter(CEmitter *this_ptr);
+CVector3f * __cdecl CEmitter::getRandomBoundingBoxPoint(CEmitter *this_ptr,CVector3f *out_point);
 
 // Original: core_emitter.cpp_CEmitter_getPropertyList_FUN_004a8db0
 // Address: 004a8db0

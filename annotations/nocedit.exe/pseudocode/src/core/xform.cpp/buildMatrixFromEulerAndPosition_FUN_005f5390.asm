@@ -22,7 +22,7 @@
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047e27f
 ;   core_fire.cpp_CBulletHole_init_FUN_004bf7f0 at 004bf92f
 ;   core_ladder.cpp_CLadder_FUN_00502b80 at 00502bcb
-;   core_mimic.cpp_CMimic_FUN_0051f930 at 0051faca
+;   core_mimic.cpp_CMimic_updatePose_FUN_0051f930 at 0051faca
 ;   core_platfrm.cpp_CPlatform_attachActor_FUN_0054e1e0 at 0054e268
 ;   core_platfrm.cpp_CPlatform_processInEditor_FUN_0054ea00 at 0054ee11
 ;   ... and 7 more

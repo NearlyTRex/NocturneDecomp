@@ -12,8 +12,8 @@
 ;   engine_dosio.c_getFile_FUN_00481a50 at 00481a9c
 ;   engine_dosio.c_reopenFileStream_FUN_00481b50 at 00481ba7
 ;   engine_fileio.cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50 at 004b7dc9
+;   shape_meshlod.cpp_CLodMesh_initializeFromPrecomputedData_FUN_0051b8a0 at 0051b8af
 ;   shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_00516d50 at 00516d64
-;   shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_0051b8a0 at 0051b8af
 ;   shape_meshlod.cpp_initializeLogDirectory_FUN_00515190 at 00515195
 ;
 ; Referenced Globals:

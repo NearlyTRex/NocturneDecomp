@@ -2,29 +2,28 @@
 // Address: 00432860
 // Address Range: [[00432860, 004328cd]]
 // Convention: __cdecl
-// Signature: void __cdecl cockpit_ckptutil_c_copyBitmapRegion_FUN_00432860(void *src_buffer,int src_stride,void *dest_buffer,int copy_width,int copy_height,int src_x,int src_y)
+// Signature: void __cdecl cockpit_ckptutil_c_copyBitmapRegion_FUN_00432860(uchar *src_buffer,int src_stride,int unused,uchar *dest_buffer,int bytes_per_row,int num_rows,int src_x_offset,int src_y_offset)
 
 #include "nocturne.h"
 
-void __cdecl cockpit_ckptutil_c_copyBitmapRegion_FUN_00432860(void *src_buffer,int src_stride,void *dest_buffer,int copy_width,int copy_height,int src_x,int src_y)
+void __cdecl cockpit_ckptutil_c_copyBitmapRegion_FUN_00432860(uchar *src_buffer,int src_stride,int unused,uchar *dest_buffer,int bytes_per_row,int num_rows,int src_x_offset,int src_y_offset)
 
 {
   OptimizedMemcpyFunc *pOVar1;
-  void *dest_buffer_00;
+  uchar *dest_buffer_00;
   int iVar2;
-  int in_stack_00000020;
   
-  if ((copy_width != 0) && (src_buffer != (void *)0x0)) {
+  if ((dest_buffer != (uchar *)0x0) && (src_buffer != (uchar *)0x0)) {
     pOVar1 = cockpit_ckptutil_c_getOptimizedMemcpyFunction_FUN_00431780();
-    dest_buffer_00 = (void *)((int)src_buffer + in_stack_00000020 * src_stride + src_y);
+    dest_buffer_00 = src_buffer + src_y_offset * src_stride + src_x_offset;
     iVar2 = 0;
-    if (0 < src_x) {
+    if (0 < num_rows) {
       do {
         iVar2 = iVar2 + 1;
-        (*pOVar1)(dest_buffer_00,(void *)copy_width,copy_height);
-        copy_width = copy_width + copy_height;
-        dest_buffer_00 = (void *)((int)dest_buffer_00 + src_stride);
-      } while (iVar2 < src_x);
+        (*pOVar1)(dest_buffer_00,dest_buffer,bytes_per_row);
+        dest_buffer = dest_buffer + bytes_per_row;
+        dest_buffer_00 = dest_buffer_00 + src_stride;
+      } while (iVar2 < num_rows);
       return;
     }
   }

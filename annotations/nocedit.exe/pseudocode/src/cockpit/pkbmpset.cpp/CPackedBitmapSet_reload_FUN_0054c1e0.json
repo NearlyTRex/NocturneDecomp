@@ -4,25 +4,25 @@
       {
         "category": "other",
         "column": 50,
-        "line": 31,
+        "line": 29,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
       },
       {
         "category": "format_error",
         "column": 100,
-        "line": 36,
+        "line": 34,
         "message": "format specifies type 'unsigned int' but the argument has type 'SIZE_T' (aka 'unsigned long') [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 39,
+        "line": 37,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
       },
       {
         "category": "other",
         "column": 56,
-        "line": 52,
+        "line": 50,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
       }
     ],
@@ -31,18 +31,15 @@
   },
   "complexity": {
     "assembly_lines": 174,
-    "complexity_score": 132,
+    "complexity_score": 60,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 13,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 62,
-    "suspect_count": 6,
-    "suspect_types": [
-      "param_count_too_few",
-      "stack_param"
-    ],
-    "total_lines": 236
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 60,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 234
   },
   "cross_references": [
     {
@@ -62,7 +59,7 @@
     ],
     "convention": "__cdecl",
     "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_0054c1e0",
-    "signature": "void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_reload_FUN_0054c1e0(CPackedBitmapSet *this_ptr)"
+    "signature": "void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_reload_FUN_0054c1e0(CPackedBitmapSet *this_ptr,int apply_palette_flag,int bitmap_index)"
   },
   "function_calls": [
     {
@@ -209,8 +206,8 @@
         "stack_params": 3
       }
     ],
-    "confidence": "low",
-    "declared_params": 1,
+    "confidence": "medium",
+    "declared_params": 3,
     "estimated_params": 3
   },
   "pcode_summary": {
@@ -245,10 +242,10 @@
     "pcode_op_count": 565
   },
   "stack_frame": {
-    "frame_size": 336,
+    "frame_size": 344,
     "local_size": 332,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -299,60 +296,22 @@
         "offset": 4,
         "size": 4,
         "type": "CPackedBitmapSet *"
+      },
+      {
+        "is_param": true,
+        "name": "apply_palette_flag",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "bitmap_index",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "int in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "int in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 39,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "if ((in_stack_0000000c < 0) || (iVar2 == in_stack_0000000c)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 39,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "if ((in_stack_0000000c < 0) || (iVar2 == in_stack_0000000c)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 60,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "if (in_stack_00000008 == 0) {",
-      "type": "stack_param"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 1,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
-      "fix_type": "add_params",
-      "match": "declared:1 vs estimated:3",
-      "param_delta": 2,
-      "text": "Function declares 1 params but call sites push 3 (2 missing)",
-      "type": "param_count_too_few"
-    }
-  ]
+  "suspects": []
 }

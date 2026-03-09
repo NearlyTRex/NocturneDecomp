@@ -87,7 +87,7 @@ section .text
     PUSH EAX                            ; 0053fc3c
     PUSH EBX                            ; 0053fc3d
     CALL support_trisock.cpp_getSocketName_FUN_005e1df0 ; 0053fc3e
-        ;   XREF to: 005e1df0 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_getSocketName_FUN_005e1df0(_SOCKET * socket_handle, SNetworkAddr * param_2)
+        ;   XREF to: 005e1df0 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_getSocketName_FUN_005e1df0(_SOCKET * socket_handle, SNetworkAddr * out_address)
     ADD ESP,0x8                         ; 0053fc43
     TEST EAX,EAX                        ; 0053fc46
     JZ 0x0053fcdf                       ; 0053fc48

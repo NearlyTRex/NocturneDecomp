@@ -2,11 +2,11 @@
 // Address: 0053b9f0
 // Address Range: [[0053b9f0, 0053bc79]]
 // Convention: __cdecl
-// Signature: void __cdecl core_msnedit_cpp_CDemonMission_importActorsFrom_FUN_0053b9f0(CDemonMission *this_ptr,CDemonMission *other)
+// Signature: void __cdecl core_msnedit_cpp_CDemonMission_importActorsFrom_FUN_0053b9f0(CDemonMission *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_msnedit_cpp_CDemonMission_importActorsFrom_FUN_0053b9f0(CDemonMission *this_ptr,CDemonMission *other)
+void __cdecl core_msnedit_cpp_CDemonMission_importActorsFrom_FUN_0053b9f0(CDemonMission *this_ptr)
 
 {
   char cVar1;

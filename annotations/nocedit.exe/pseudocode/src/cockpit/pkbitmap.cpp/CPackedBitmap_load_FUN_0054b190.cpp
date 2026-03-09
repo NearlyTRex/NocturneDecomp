@@ -2,11 +2,11 @@
 // Address: 0054b190
 // Address Range: [[0054b190, 0054b3ec]]
 // Convention: __cdecl
-// Signature: void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_0054b190(CPackedBitmap *this_ptr,uchar *bitmap_data,int width,int height,int stride_bytes,uchar transparency_color)
+// Signature: void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_0054b190(CPackedBitmap *this_ptr,uchar *bitmap_data,int width,int height,int transparency_color,int row_stride)
 
 #include "nocturne.h"
 
-void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_0054b190(CPackedBitmap *this_ptr,uchar *bitmap_data,int width,int height,int stride_bytes,uchar transparency_color)
+void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_0054b190(CPackedBitmap *this_ptr,uchar *bitmap_data,int width,int height,int transparency_color,int row_stride)
 
 {
   ushort uVar1;
@@ -21,7 +21,6 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_0054b190(CPackedBitmap 
   int new_size;
   uchar *puVar10;
   byte bVar11;
-  undefined3 in_stack_00000019;
   char local_154 [300];
   int local_28;
   int local_24;
@@ -34,8 +33,8 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_0054b190(CPackedBitmap 
   cockpit_pkbitmap_cpp_CPackedBitmap_free_FUN_0054a8e0(this_ptr);
   this_ptr->width = width;
   this_ptr->height = height;
-  if (_transparency_color == 0) {
-    _transparency_color = this_ptr->width;
+  if (row_stride == 0) {
+    row_stride = this_ptr->width;
   }
   ppvVar2 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
                       ((this_ptr->height + 1) * 4,"..\\cockpit\\pkbitmap.cpp",0x378);
@@ -63,7 +62,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_0054b190(CPackedBitmap 
       do {
         pbVar3 = local_14 + iVar8;
         iVar9 = iVar8;
-        if ((uint)*pbVar3 == stride_bytes) {
+        if ((uint)*pbVar3 == transparency_color) {
           iVar9 = iVar8 + 1;
         }
         else {
@@ -71,7 +70,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_0054b190(CPackedBitmap 
             iVar9 = iVar9 + 1;
             pbVar3 = pbVar3 + 1;
             if (this_ptr->width <= iVar9) break;
-          } while ((uint)*pbVar3 != stride_bytes);
+          } while ((uint)*pbVar3 != transparency_color);
           local_20 = iVar9 - iVar8;
           iVar4 = (local_20 + 3U & 0xfffffffc) + new_size;
           local_1c = iVar4 + 4;
@@ -112,6 +111,6 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_0054b190(CPackedBitmap 
     }
     local_24 = local_24 + 1;
     local_28 = local_28 + 4;
-    local_14 = local_14 + _transparency_color;
+    local_14 = local_14 + row_stride;
   } while( true );
 }

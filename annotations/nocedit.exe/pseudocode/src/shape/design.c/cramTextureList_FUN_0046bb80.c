@@ -795,8 +795,8 @@ LAB_0046cf33:
         local_80 = &local_24;
         local_7c = &local_20;
         iVar4 = shape_quantize_cpp_quantizeRawPixelData_FUN_00556490
-                          (local_2c,local_80,local_7c,(short)g_TextureAtlasDimension,
-                           (short)g_TextureAtlasDimension,0x18,2,1);
+                          (local_2c,local_80,local_7c,g_TextureAtlasDimension,
+                           g_TextureAtlasDimension,0x18,2,1);
         if (iVar4 == 0) {
           g_CurrentFilename = "..\\shape\\design.c";
           g_CurrentLineNumber = 0x2b1b;

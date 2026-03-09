@@ -11,7 +11,7 @@
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
-;   undefined4 DAT_02f43978
+;   int INT_02f43978
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40
@@ -96,7 +96,7 @@ section .text
     PUSH EBX                            ; 005e6e36
     CALL core_charactr.cpp_CCharacter_renderAttachedModels_FUN_0042a420 ; 005e6e37
         ;   XREF to: 0042a420 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_renderAttachedModels_FUN_0042a420(CCharacter * this_ptr)
-    MOV EDI,dword ptr [0x02f43978]      ; 005e6e3c | DAT_02f43978
+    MOV EDI,dword ptr [0x02f43978]      ; 005e6e3c | INT_02f43978
     ADD ESP,0x4                         ; 005e6e42
     TEST EDI,EDI                        ; 005e6e45
     JZ 0x005e6e6c                       ; 005e6e47

@@ -35,9 +35,9 @@ void __cdecl CVampireBoss::process(CVampireBoss *this_ptr,float delta_time);
 // Address: 005e6b80
 void __stack2_esi CVampireBoss::getCarryObjToBodyXForm(CVampireBoss *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
-// Original: core_vampboss.cpp_CVampireBoss_FUN_005e6ca0
+// Original: core_vampboss.cpp_CVampireBoss_advanceAnimation_FUN_005e6ca0
 // Address: 005e6ca0
-void __cdecl CVampireBoss(CVampireBoss *this_ptr);
+void __cdecl CVampireBoss::advanceAnimation(CVampireBoss *this_ptr,float delta_time);
 
 // Original: core_vampboss.cpp_CVampireBoss_renderOpaque_FUN_005e6da0
 // Address: 005e6da0
@@ -59,25 +59,25 @@ EDeathState __cdecl CVampireBoss::getDeathState(CVampireBoss *this_ptr);
 // Address: 005e7280
 int __cdecl CVampireBoss::getTargetPoints(CVampireBoss *this_ptr,CVector3f *out_points_array);
 
-// Original: core_vampboss.cpp_CVampireBoss_FUN_005e7320
+// Original: core_vampboss.cpp_CVampireBoss_summonBats_FUN_005e7320
 // Address: 005e7320
-void __cdecl CVampireBoss(CVampireBoss *this_ptr);
+void __cdecl CVampireBoss::summonBats(CVampireBoss *this_ptr);
 
-// Original: core_vampboss.cpp_CVampireBoss_FUN_005e7390
+// Original: core_vampboss.cpp_CVampireBoss_summonStalagmites_FUN_005e7390
 // Address: 005e7390
-void __cdecl CVampireBoss(CVampireBoss *this_ptr);
+void __cdecl CVampireBoss::summonStalagmites(CVampireBoss *this_ptr);
 
-// Original: core_vampboss.cpp_CVampireBoss_FUN_005e7410
+// Original: core_vampboss.cpp_CVampireBoss_summonFireEmitters_FUN_005e7410
 // Address: 005e7410
-void __cdecl CVampireBoss(CVampireBoss *this_ptr);
+void __cdecl CVampireBoss::summonFireEmitters(CVampireBoss *this_ptr);
 
-// Original: core_vampboss.cpp_CVampireBoss_FUN_005e7480
+// Original: core_vampboss.cpp_CVampireBoss_transformToBat_FUN_005e7480
 // Address: 005e7480
-void __cdecl CVampireBoss(CVampireBoss *this_ptr);
+void __cdecl CVampireBoss::transformToBat(CVampireBoss *this_ptr);
 
-// Original: core_vampboss.cpp_CVampireBoss_FUN_005e74c0
+// Original: core_vampboss.cpp_CVampireBoss_transformToHuman_FUN_005e74c0
 // Address: 005e74c0
-void __cdecl CVampireBoss(CVampireBoss *this_ptr);
+void __cdecl CVampireBoss::transformToHuman(CVampireBoss *this_ptr);
 
 // Original: core_vampboss.cpp_CVampireBoss_chooseDestWayPoint_FUN_005e7510
 // Address: 005e7510

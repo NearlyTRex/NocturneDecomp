@@ -4,6 +4,7 @@
 #include "system/basetypes.h"
 #include "system/stdint.h"
 #include "system/stdio.h"
+#include "types/classes/CActorProperty.h"
 #include "types/classes/CDSEModel.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonMission.h"
@@ -81,16 +82,16 @@ void __cdecl core_msnedit_cpp_CDemonMission_saveWithNewName_FUN_00537f60(CDemonM
 void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMission *this_ptr);
 void __cdecl core_msnedit_cpp_CDemonMission_playMission_FUN_00538ba0(CDemonMission *this_ptr);
 void __cdecl core_msnedit_cpp_CDemonMission_addSet_FUN_00538d60(CDemonMission *this_ptr,char *set_name);
-void __cdecl core_msnedit_cpp_CDemonMission_removeSet_FUN_00538df0(CDemonMission *this_ptr,int param_2);
+void __cdecl core_msnedit_cpp_CDemonMission_removeSet_FUN_00538df0(CDemonMission *this_ptr,int set_index);
 void __cdecl core_msnedit_cpp_CDemonMission_deleteActor_FUN_00538ea0(CDemonMission *this_ptr,CDemonActor *actor);
 int __cdecl core_msnedit_cpp_CDemonMission_findSetByName_FUN_00538f40(CDemonMission *this_ptr,char *set_name);
 int __cdecl core_msnedit_cpp_CDemonMission_pickSet_FUN_00538f90(CDemonMission *this_ptr,char *title,int selected_index);
-void __cdecl core_msnedit_cpp_CDemonMission_editActorProperties_FUN_00539060(CDemonMission *this_ptr,int param_2);
-int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMission *this_ptr,int param_2);
-void __cdecl core_msnedit_cpp_CDemonMission_pasteActorProperty_FUN_0053af50(CDemonMission *this_ptr,char *property);
-void __cdecl core_msnedit_cpp_CDemonMission_editActorAtIndex_FUN_0053b030(CDemonMission *this_ptr,int param_2);
-void __cdecl core_msnedit_cpp_CDemonMission_editActorDetailed_FUN_0053b510(CDemonMission *this_ptr,int param_2);
-void __cdecl core_msnedit_cpp_CDemonMission_importActorsFrom_FUN_0053b9f0(CDemonMission *this_ptr,CDemonMission *other);
+void __cdecl core_msnedit_cpp_CDemonMission_editActorProperties_FUN_00539060(CDemonMission *this_ptr,int show_3d_viewport);
+int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMission *this_ptr,int reset_cameras);
+void __cdecl core_msnedit_cpp_CDemonMission_pasteActorProperty_FUN_0053af50(CDemonMission *this_ptr,CActorProperty *property);
+void __cdecl core_msnedit_cpp_CDemonMission_editActorAtIndex_FUN_0053b030(CDemonMission *this_ptr,CActorProperty *property);
+void __cdecl core_msnedit_cpp_CDemonMission_editActorDetailed_FUN_0053b510(CDemonMission *this_ptr,CActorProperty *property);
+void __cdecl core_msnedit_cpp_CDemonMission_importActorsFrom_FUN_0053b9f0(CDemonMission *this_ptr);
 void __cdecl core_msnedit_cpp_CDemonMission_deleteActorWithConfirm_FUN_0053bc80(CDemonMission *this_ptr,CDemonActor *actor,int skip_confirmation);
 void __cdecl core_msnedit_cpp_CDemonMission_selectNearestActor_FUN_0053bcf0(CDemonMission *this_ptr);
 void __cdecl core_msnedit_cpp_CDemonMission_replicateActor_FUN_0053bd80(CDemonMission *this_ptr);
@@ -104,7 +105,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_dropActorToGround_FUN_0053c8d0(CDemo
 void __cdecl core_msnedit_cpp_CDemonMission_moveActorToViewportCenter_FUN_0053c930(CDemonMission *this_ptr,CDemonActor *actor);
 void __cdecl core_msnedit_cpp_CDemonMission_moveActorToScreenPos_FUN_0053c970(CDemonMission *this_ptr,CDemonActor *actor,int screen_x,int screen_y);
 void __cdecl core_msnedit_cpp_CDemonMission_moveActorToMousePos_FUN_0053ca00(CDemonMission *this_ptr,CDemonActor *actor);
-void __cdecl core_msnedit_cpp_CDemonMission_findNextVisibleActor_FUN_0053ca30(CDemonMission *this_ptr,CDemonActor *actor);
+CDemonActor * __cdecl core_msnedit_cpp_CDemonMission_findNextVisibleActor_FUN_0053ca30(CDemonMission *this_ptr,CDemonActor *actor);
 void __cdecl core_msnedit_cpp_CDemonMission_findPrevVisibleActor_FUN_0053ca80(CDemonMission *this_ptr,CDemonActor *actor);
 template<typename T_func0>
 inline int core_msnedit_cpp_CDemonMission_pickActorDialog_FUN_0053cad0(CDemonMission *this_ptr,CDemonActor *class_type,char *title,CDemonActor **out_actor,int allow_none,char *class_name,T_func0 filter_func,int preselect) {

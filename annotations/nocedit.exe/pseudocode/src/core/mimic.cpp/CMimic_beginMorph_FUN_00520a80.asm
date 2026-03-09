@@ -7,7 +7,7 @@
 ; CMimic *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_mimic.cpp_CMimic_FUN_0051fcc0 at 0052007f
+;   core_mimic.cpp_CMimic_processAnimation_FUN_0051fcc0 at 0052007f
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_mimic_cpp_0063883f
@@ -81,7 +81,7 @@ section .text
     PUSH 0x0                            ; 00520b36
     PUSH EBX                            ; 00520b38
     CALL core_mimic.cpp_CMimic_processMorph_FUN_00520ba0 ; 00520b39
-        ;   XREF to: 00520ba0 (UNCONDITIONAL_CALL)  ; void core_mimic.cpp_CMimic_processMorph_FUN_00520ba0(CMimic * this_ptr)
+        ;   XREF to: 00520ba0 (UNCONDITIONAL_CALL)  ; void core_mimic.cpp_CMimic_processMorph_FUN_00520ba0(CMimic * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00520b3e
     LEA EAX,[EBX + 0x4bdfc]             ; 00520b41
     PUSH EAX                            ; 00520b47

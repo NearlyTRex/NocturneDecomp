@@ -100,7 +100,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *t
   }
   iVar9 = this_ptr->form;
   if (iVar9 == 2) {
-    core_vampboss_cpp_CVampireBoss_FUN_005e6ca0(this_ptr);
+    core_vampboss_cpp_CVampireBoss_advanceAnimation_FUN_005e6ca0(this_ptr,delta_time);
     core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000
               (&this_ptr->model);
     core_cloth_cpp_CCloth_process_FUN_0043ab80
@@ -200,7 +200,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *t
          (fVar3 = local_b8 - (this_ptr->base).base.base.location.position.x,
          fVar6 = local_b0 - (this_ptr->base).base.base.location.position.z,
          SQRT(fVar6 * fVar6 + fVar3 * fVar3) < (float)4)) {
-        core_vampboss_cpp_CVampireBoss_FUN_005e74c0(this_ptr);
+        core_vampboss_cpp_CVampireBoss_transformToHuman_FUN_005e74c0(this_ptr);
       }
     }
     local_b4 = local_b4 + 4.0f;
@@ -293,7 +293,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *t
       this_ptr->form = 2;
       core_event_cpp_CEventList_executeCommands_FUN_004aabe0(pCVar7,"morphCompleted");
     }
-    core_vampboss_cpp_CVampireBoss_FUN_005e6ca0(this_ptr);
+    core_vampboss_cpp_CVampireBoss_advanceAnimation_FUN_005e6ca0(this_ptr,delta_time);
     core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000
               (&this_ptr->model);
     core_cloth_cpp_CCloth_process_FUN_0043ab80
@@ -355,7 +355,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *t
       this_ptr->morph_t = 0.0;
     }
     (this_ptr->base).base.base.location.position.y = fVar3;
-    core_vampboss_cpp_CVampireBoss_FUN_005e6ca0(this_ptr);
+    core_vampboss_cpp_CVampireBoss_advanceAnimation_FUN_005e6ca0(this_ptr,delta_time);
     core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000
               (&this_ptr->model);
     core_cloth_cpp_CCloth_process_FUN_0043ab80
@@ -404,18 +404,18 @@ void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *t
                        (&local_30->motion_controller,local_78);
     if (uVar12 < 2) {
       if (uVar12 == 1) {
-        core_vampboss_cpp_CVampireBoss_FUN_005e7390(this_ptr);
+        core_vampboss_cpp_CVampireBoss_summonStalagmites_FUN_005e7390(this_ptr);
 LAB_005e648e:
         this_ptr->action_timer = 1.0;
       }
     }
     else {
       if (uVar12 < 3) {
-        core_vampboss_cpp_CVampireBoss_FUN_005e7410(this_ptr);
+        core_vampboss_cpp_CVampireBoss_summonFireEmitters_FUN_005e7410(this_ptr);
         goto LAB_005e648e;
       }
       if (uVar12 < 4) {
-        core_vampboss_cpp_CVampireBoss_FUN_005e7320(this_ptr);
+        core_vampboss_cpp_CVampireBoss_summonBats_FUN_005e7320(this_ptr);
         goto LAB_005e648e;
       }
       if (uVar12 == 0x29a) {
@@ -567,7 +567,7 @@ LAB_005e648e:
       }
       else {
 LAB_005e6560:
-        core_vampboss_cpp_CVampireBoss_FUN_005e7480(this_ptr);
+        core_vampboss_cpp_CVampireBoss_transformToBat_FUN_005e7480(this_ptr);
       }
     }
     break;

@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_msnedit_cpp_CDemonMission_pasteActorProperty_FUN_0053af50(CDemonMission *this_ptr,char *property)
+; void __cdecl core_msnedit_cpp_CDemonMission_pasteActorProperty_FUN_0053af50(CDemonMission *this_ptr,CActorProperty *property)
 ;
 ; Parameters:
 ; CDemonMission *  Stack[0x4]:4   this_ptr
-; char *           Stack[0x8]:4   property
+; CActorProperty * Stack[0x8]:4   property
 ;
 ; XREF[1]:
 ;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 0053ad6a
@@ -16,8 +16,8 @@
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   CEditorTools g_CEditorToolsInstance
 ;   undefined4 DAT_02f7a02c
-;   int INT_02f7c52c
-;   int INT_02f7c530
+;   int g_SelectedMotionPropertyIndex
+;   int g_MotionPropertyEditState
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0
@@ -98,7 +98,7 @@ section .text
         ;   Label: caseD_b
     PUSH EBX                            ; 0053afc3
     CALL core_msnedit.cpp_CDemonMission_editActorAtIndex_FUN_0053b030 ; 0053afc4
-        ;   XREF to: 0053b030 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_editActorAtIndex_FUN_0053b030(CDemonMission * this_ptr, int param_2)
+        ;   XREF to: 0053b030 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_editActorAtIndex_FUN_0053b030(CDemonMission * this_ptr, CActorProperty * property)
     ADD ESP,0x8                         ; 0053afc9
     POP EBP                             ; 0053afcc
     POP EDI                             ; 0053afcd
@@ -108,7 +108,7 @@ section .text
         ;   Label: caseD_c
     PUSH EBX                            ; 0053afd1
     CALL core_msnedit.cpp_CDemonMission_editActorDetailed_FUN_0053b510 ; 0053afd2
-        ;   XREF to: 0053b510 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_editActorDetailed_FUN_0053b510(CDemonMission * this_ptr, int param_2)
+        ;   XREF to: 0053b510 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_editActorDetailed_FUN_0053b510(CDemonMission * this_ptr, CActorProperty * property)
     ADD ESP,0x8                         ; 0053afd7
     POP EBP                             ; 0053afda
     POP EDI                             ; 0053afdb
@@ -127,11 +127,11 @@ section .text
     POP EDI                             ; 0053afee
     POP EBX                             ; 0053afef
     RET                                 ; 0053aff0
-    CMP dword ptr [0x02f7c52c],0x0      ; 0053aff1 | INT_02f7c52c
+    CMP dword ptr [0x02f7c52c],0x0      ; 0053aff1 | g_SelectedMotionPropertyIndex
         ;   Label: caseD_d
     JL 0x0053b008                       ; 0053aff8
         ;   XREF to: 0053b008 (CONDITIONAL_JUMP)  ; LAB_0053b008
-    MOV dword ptr [0x02f7c52c],0xffffffff ; 0053affa | INT_02f7c52c
+    MOV dword ptr [0x02f7c52c],0xffffffff ; 0053affa | g_SelectedMotionPropertyIndex
     POP EBP                             ; 0053b004
     POP EDI                             ; 0053b005
     POP EBX                             ; 0053b006
@@ -144,8 +144,8 @@ section .text
     SAR EDX,0x1f                        ; 0053b017
     IDIV EBX                            ; 0053b01a
     XOR ECX,ECX                         ; 0053b01c
-    MOV dword ptr [0x02f7c530],ECX      ; 0053b01e | INT_02f7c530
-    MOV [0x02f7c52c],EAX                ; 0053b024 | INT_02f7c52c
+    MOV dword ptr [0x02f7c530],ECX      ; 0053b01e | g_MotionPropertyEditState
+    MOV [0x02f7c52c],EAX                ; 0053b024 | g_SelectedMotionPropertyIndex
     POP EBP                             ; 0053b029
     POP EDI                             ; 0053b02a
     POP EBX                             ; 0053b02b
