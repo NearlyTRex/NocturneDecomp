@@ -150,13 +150,13 @@ void __cdecl core_fire_cpp_CFireEffect_createExplosion_FUN_004c8c10(CFireEffect 
 int __cdecl core_fire_cpp_CFireEffect_checkExplosionDamage_FUN_004c8c90(CFireEffect *this_ptr,CVector3f *position,float radius,CVector3f *out_force_dir, int *out_damage);
 void __cdecl core_fire_cpp_CFireEffect_createToss_FUN_004c8dd0(CFireEffect *this_ptr,CVector3f *position,UOrientationVector *orientation, CVector3f *velocity,float fuse_time,uint sfx_handle);
 int __cdecl core_fire_cpp_CFireEffect_allocateToss_FUN_004c8e40(CFireEffect *this_ptr,int toss_type,CVector3f *position, UOrientationVector *orientation,CVector3f *velocity,float fuse_time);
-void __cdecl core_fire_cpp_CFireEffect_createCrater_FUN_004c8ea0(CFireEffect *this_ptr);
+void __cdecl core_fire_cpp_CFireEffect_createCrater_FUN_004c8ea0(CFireEffect *this_ptr,CVector3f *position,float radius);
 void __cdecl core_fire_cpp_CFireEffect_createGunFlames_FUN_004c8ef0(CFireEffect *this_ptr,CVector3f *position,CVector3f *euler_angles,int flame_count, int flame_type);
 void __cdecl core_fire_cpp_CFireEffect_createLightningBolt_FUN_004c8f50(CFireEffect *this_ptr,CVector3f *start_position,float start_width, int enable_camera_shake,float end_width);
 void __cdecl core_fire_cpp_CFireEffect_createLightningBoltDirectional_FUN_004c8fd0(CFireEffect *this_ptr,CVector3f *start_position,CVector3f *end_position, int enable_camera_shake,float end_width,float end_spread);
-int __cdecl core_fire_cpp_CFireEffect_createTrailSegment_FUN_004c9060(CFireEffect *this_ptr);
-int __cdecl core_fire_cpp_CFireEffect_createTrailFromPoints_FUN_004c90c0(CFireEffect *this_ptr);
-void __cdecl core_fire_cpp_CFireEffect_createShell_FUN_004c91e0(CFireEffect *this_ptr);
+void __cdecl core_fire_cpp_CFireEffect_createTrailSegment_FUN_004c9060(CFireEffect *this_ptr,CVector3f *position,float size,float alpha,float lifetime, SMRGLTextureBasic *texture_ptr);
+void __cdecl core_fire_cpp_CFireEffect_createTrailFromPoints_FUN_004c90c0(CFireEffect *this_ptr,CVector3f *start_point,CVector3f *end_point,float size, float alpha,float lifetime,SMRGLTextureBasic *texture_ptr);
+void __cdecl core_fire_cpp_CFireEffect_createShell_FUN_004c91e0(CFireEffect *this_ptr,CVector3f *position,CVector3f *euler_angles, CVector3f *velocity,CKeyFramedModel *model_ptr);
 void __cdecl core_fire_cpp_CFireEffect_createPopcorn_FUN_004c9240(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity);
 void __cdecl core_fire_cpp_CFireEffect_createRainDrop_FUN_004c9290(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity);
 void __cdecl core_fire_cpp_CFireEffect_load_FUN_004c9300(CFireEffect *this_ptr,_FILE *file_handle);
@@ -308,7 +308,7 @@ void __cdecl engine_font_cpp_CBitFont_loadNewBitmap_FUN_004cd280(CBitFont *this_
 void __cdecl engine_font_cpp_CBitFont_loadFromFile_FUN_004cd2c0(CBitFont *this_ptr,char *font_path);
 void __cdecl engine_font_cpp_CBitFont_free_FUN_004cd4e0(CBitFont *this_ptr);
 void __cdecl engine_font_cpp_CBitFont_setInitializedFlag_FUN_004cd540(CBitFont *this_ptr);
-void __cdecl engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_004cd550(CBitFont *this_ptr,int bitmapcount,int other2,int bitmap_index,int width,int height, int first_char);
+void __cdecl engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_004cd550(CBitFont *this_ptr,int bitmap_count,int bitmap_width,int bitmap_height, int first_char);
 int __cdecl engine_font_cpp_CBitFont_calculateCharacterHeight_FUN_004cda20(CBitFont *this_ptr,uchar *char_bitmap,int char_width,int char_height, int bitmap_stride);
 int __cdecl engine_font_cpp_CBitFont_drawText_FUN_004cda80(CBitFont *this_ptr,char *text,int x,int y,int color_mode,int color_value);
 int __cdecl engine_font_cpp_CBitFont_drawTextWrapper_FUN_004cdbf0(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *text);

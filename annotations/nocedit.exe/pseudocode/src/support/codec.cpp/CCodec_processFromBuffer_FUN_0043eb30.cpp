@@ -2,11 +2,11 @@
 // Address: 0043eb30
 // Address Range: [[0043eb30, 0043eb9b]]
 // Convention: __cdecl
-// Signature: int __cdecl support_codec_cpp_CCodec_processFromBuffer_FUN_0043eb30(CCodec *this_ptr,char *input,int *input_length,char *output,int *output_length)
+// Signature: int __cdecl support_codec_cpp_CCodec_processFromBuffer_FUN_0043eb30(CCodec *this_ptr,char *input,int *input_length,char *output)
 
 #include "nocturne.h"
 
-int __cdecl support_codec_cpp_CCodec_processFromBuffer_FUN_0043eb30(CCodec *this_ptr,char *input,int *input_length,char *output,int *output_length)
+int __cdecl support_codec_cpp_CCodec_processFromBuffer_FUN_0043eb30(CCodec *this_ptr,char *input,int *input_length,char *output)
 
 {
   int iVar1;

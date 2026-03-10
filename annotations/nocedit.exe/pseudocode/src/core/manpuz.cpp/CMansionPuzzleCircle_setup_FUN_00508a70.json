@@ -6,18 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 13,
-    "complexity_score": 328,
+    "complexity_score": 329,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 248,
+    "pseudocode_lines": 249,
     "suspect_count": 7,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 261
+    "total_lines": 262
   },
   "cross_references": [],
   "function": {
@@ -439,7 +439,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 148,
+      "line": 149,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
       "text": "pCVar13 = (CMatrix3x4f *)((int)pCVar13 + ((uint)bVar16 * -2 + 1) * 4);",
@@ -447,7 +447,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 149,
+      "line": 150,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
       "text": "pCVar15 = (CMatrix3x4f *)((int)pCVar15 + ((uint)bVar16 * -2 + 1) * 4);",
@@ -455,7 +455,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 199,
+      "line": 200,
       "match": "fcos",
       "severity": "mild",
       "text": "fVar17 = (float10)fcos((float10)0.5235988f);",
@@ -463,7 +463,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 200,
+      "line": 201,
       "match": "fsin",
       "severity": "mild",
       "text": "fVar18 = (float10)fsin((float10)0.5235988f);",

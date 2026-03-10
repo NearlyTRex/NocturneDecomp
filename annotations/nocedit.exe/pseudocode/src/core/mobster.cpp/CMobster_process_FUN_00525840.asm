@@ -138,8 +138,8 @@ section .text
     RET                                 ; 00525878
     PUSH EBX                            ; 00525879
         ;   Label: LAB_00525879
-    CALL core_mobster.cpp_CMobster_FUN_00525650 ; 0052587a
-        ;   XREF to: 00525650 (UNCONDITIONAL_CALL)  ; void core_mobster.cpp_CMobster_FUN_00525650(CMobster * this_ptr)
+    CALL core_mobster.cpp_CMobster_positionOnVehicle_FUN_00525650 ; 0052587a
+        ;   XREF to: 00525650 (UNCONDITIONAL_CALL)  ; void core_mobster.cpp_CMobster_positionOnVehicle_FUN_00525650(CMobster * this_ptr)
     ADD ESP,0x4                         ; 0052587f
     PUSH dword ptr [EBP + 0x92]         ; 00525882
     PUSH EBX                            ; 00525888
@@ -690,8 +690,8 @@ section .text
     JC 0x00525b97                       ; 00525eeb
         ;   XREF to: 00525b97 (CONDITIONAL_JUMP)  ; caseD_4
     PUSH EBX                            ; 00525ef1
-    CALL core_mobster.cpp_CMobster_FUN_005271c0 ; 00525ef2
-        ;   XREF to: 005271c0 (UNCONDITIONAL_CALL)  ; void core_mobster.cpp_CMobster_FUN_005271c0(CMobster * this_ptr)
+    CALL core_mobster.cpp_CMobster_startFiringAttack_FUN_005271c0 ; 00525ef2
+        ;   XREF to: 005271c0 (UNCONDITIONAL_CALL)  ; void core_mobster.cpp_CMobster_startFiringAttack_FUN_005271c0(CMobster * this_ptr)
     ADD ESP,0x4                         ; 00525ef7
     JMP 0x00525b97                      ; 00525efa
         ;   XREF to: 00525b97 (UNCONDITIONAL_JUMP)  ; caseD_4
@@ -741,8 +741,8 @@ section .text
         ;   XREF to: 00525b97 (CONDITIONAL_JUMP)  ; caseD_4
     PUSH 0x3                            ; 00525f87
     PUSH EBX                            ; 00525f89
-    CALL core_mobster.cpp_CMobster_FUN_005279f0 ; 00525f8a
-        ;   XREF to: 005279f0 (UNCONDITIONAL_CALL)  ; void core_mobster.cpp_CMobster_FUN_005279f0(CMobster * this_ptr, int taunt_category)
+    CALL core_mobster.cpp_CMobster_playTaunt_FUN_005279f0 ; 00525f8a
+        ;   XREF to: 005279f0 (UNCONDITIONAL_CALL)  ; void core_mobster.cpp_CMobster_playTaunt_FUN_005279f0(CMobster * this_ptr, int taunt_category)
     ADD ESP,0x8                         ; 00525f8f
     JMP 0x00525b97                      ; 00525f92
         ;   XREF to: 00525b97 (UNCONDITIONAL_JUMP)  ; caseD_4
@@ -884,8 +884,8 @@ section .text
         ;   XREF to: 00525b97 (CONDITIONAL_JUMP)  ; caseD_4
     PUSH EBX                            ; 00526138
         ;   Label: LAB_00526138
-    CALL core_mobster.cpp_CMobster_FUN_005271c0 ; 00526139
-        ;   XREF to: 005271c0 (UNCONDITIONAL_CALL)  ; void core_mobster.cpp_CMobster_FUN_005271c0(CMobster * this_ptr)
+    CALL core_mobster.cpp_CMobster_startFiringAttack_FUN_005271c0 ; 00526139
+        ;   XREF to: 005271c0 (UNCONDITIONAL_CALL)  ; void core_mobster.cpp_CMobster_startFiringAttack_FUN_005271c0(CMobster * this_ptr)
     ADD ESP,0x4                         ; 0052613e
     JMP 0x00525b97                      ; 00526141
         ;   XREF to: 00525b97 (UNCONDITIONAL_JUMP)  ; caseD_4
@@ -947,8 +947,8 @@ section .text
     JZ 0x00526138                       ; 005261ed
         ;   XREF to: 00526138 (CONDITIONAL_JUMP)  ; LAB_00526138
     PUSH EBX                            ; 005261f3
-    CALL core_mobster.cpp_CMobster_FUN_00525720 ; 005261f4
-        ;   XREF to: 00525720 (UNCONDITIONAL_CALL)  ; void core_mobster.cpp_CMobster_FUN_00525720(CMobster * this_ptr)
+    CALL core_mobster.cpp_CMobster_dismountVehicle_FUN_00525720 ; 005261f4
+        ;   XREF to: 00525720 (UNCONDITIONAL_CALL)  ; void core_mobster.cpp_CMobster_dismountVehicle_FUN_00525720(CMobster * this_ptr)
     ADD ESP,0x4                         ; 005261f9
     JMP 0x00525b97                      ; 005261fc
         ;   XREF to: 00525b97 (UNCONDITIONAL_JUMP)  ; caseD_4
@@ -1097,8 +1097,8 @@ section .text
         ;   XREF to: 0052634e (CONDITIONAL_JUMP)  ; LAB_0052634e
     PUSH 0x1                            ; 00526374
     PUSH EBX                            ; 00526376
-    CALL core_mobster.cpp_CMobster_FUN_005279f0 ; 00526377
-        ;   XREF to: 005279f0 (UNCONDITIONAL_CALL)  ; void core_mobster.cpp_CMobster_FUN_005279f0(CMobster * this_ptr, int taunt_category)
+    CALL core_mobster.cpp_CMobster_playTaunt_FUN_005279f0 ; 00526377
+        ;   XREF to: 005279f0 (UNCONDITIONAL_CALL)  ; void core_mobster.cpp_CMobster_playTaunt_FUN_005279f0(CMobster * this_ptr, int taunt_category)
     ADD ESP,0x8                         ; 0052637c
     MOV dword ptr [EBX + 0xbecc],0x1    ; 0052637f
     JMP 0x00525b97                      ; 00526389
@@ -1197,8 +1197,8 @@ section .text
     PUSH dword ptr [EBP + 0x92]         ; 00526493
         ;   Label: LAB_00526493
     PUSH EBX                            ; 00526499
-    CALL core_mobster.cpp_CMobster_FUN_00526d90 ; 0052649a
-        ;   XREF to: 00526d90 (UNCONDITIONAL_CALL)  ; int core_mobster.cpp_CMobster_FUN_00526d90(CMobster * this_ptr, float delta_time)
+    CALL core_mobster.cpp_CMobster_processWeaponPickup_FUN_00526d90 ; 0052649a
+        ;   XREF to: 00526d90 (UNCONDITIONAL_CALL)  ; int core_mobster.cpp_CMobster_processWeaponPickup_FUN_00526d90(CMobster * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0052649f
     TEST EAX,EAX                        ; 005264a2
     JNZ 0x00525b97                      ; 005264a4
@@ -1384,8 +1384,8 @@ section .text
         ;   XREF to: 005266b8 (CONDITIONAL_JUMP)  ; LAB_005266b8
     PUSH 0x2                            ; 005266ad
     PUSH EBX                            ; 005266af
-    CALL core_mobster.cpp_CMobster_FUN_005279f0 ; 005266b0
-        ;   XREF to: 005279f0 (UNCONDITIONAL_CALL)  ; void core_mobster.cpp_CMobster_FUN_005279f0(CMobster * this_ptr, int taunt_category)
+    CALL core_mobster.cpp_CMobster_playTaunt_FUN_005279f0 ; 005266b0
+        ;   XREF to: 005279f0 (UNCONDITIONAL_CALL)  ; void core_mobster.cpp_CMobster_playTaunt_FUN_005279f0(CMobster * this_ptr, int taunt_category)
     ADD ESP,0x8                         ; 005266b5
     FLD float ptr [EBX + 0xbed4]        ; 005266b8
         ;   Label: LAB_005266b8
@@ -1419,8 +1419,8 @@ section .text
         ;   XREF to: 0052663e (UNCONDITIONAL_JUMP)  ; LAB_0052663e
     PUSH EBX                            ; 005266fb
         ;   Label: LAB_005266fb
-    CALL core_mobster.cpp_CMobster_FUN_005271c0 ; 005266fc
-        ;   XREF to: 005271c0 (UNCONDITIONAL_CALL)  ; void core_mobster.cpp_CMobster_FUN_005271c0(CMobster * this_ptr)
+    CALL core_mobster.cpp_CMobster_startFiringAttack_FUN_005271c0 ; 005266fc
+        ;   XREF to: 005271c0 (UNCONDITIONAL_CALL)  ; void core_mobster.cpp_CMobster_startFiringAttack_FUN_005271c0(CMobster * this_ptr)
     ADD ESP,0x4                         ; 00526701
     JMP 0x0052663e                      ; 00526704
         ;   XREF to: 0052663e (UNCONDITIONAL_JUMP)  ; LAB_0052663e
@@ -1473,8 +1473,8 @@ section .text
         ;   Label: switchD
     PUSH EBX                            ; 00526786
         ;   Label: LAB_00526786
-    CALL core_mobster.cpp_CMobster_FUN_00525650 ; 00526787
-        ;   XREF to: 00525650 (UNCONDITIONAL_CALL)  ; void core_mobster.cpp_CMobster_FUN_00525650(CMobster * this_ptr)
+    CALL core_mobster.cpp_CMobster_positionOnVehicle_FUN_00525650 ; 00526787
+        ;   XREF to: 00525650 (UNCONDITIONAL_CALL)  ; void core_mobster.cpp_CMobster_positionOnVehicle_FUN_00525650(CMobster * this_ptr)
     ADD ESP,0x4                         ; 0052678c
     JMP 0x00525cd1                      ; 0052678f
         ;   XREF to: 00525cd1 (UNCONDITIONAL_JUMP)  ; LAB_00525cd1

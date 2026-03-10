@@ -94,7 +94,7 @@ section .text
     PUSH ECX                            ; 00543a16
     PUSH EBX                            ; 00543a17
     CALL core_netgame.cpp_CNetGame_send_FUN_005411c0 ; 00543a18
-        ;   XREF to: 005411c0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_send_FUN_005411c0(CNetGame * this_ptr, int player_index)
+        ;   XREF to: 005411c0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_send_FUN_005411c0(CNetGame * this_ptr, int player_index, SNetPacketHeader * packet)
     MOV EAX,[0x02f7c8b8]                ; 00543a1d | g_CurrentGameTime
     ADD ESP,0xc                         ; 00543a22
     MOV [0x02f7c8c8],EAX                ; 00543a25 | UINT_02f7c8c8

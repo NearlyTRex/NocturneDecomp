@@ -49,7 +49,7 @@ section .text
     PUSH 0x0                            ; 005e2926
     PUSH EBX                            ; 005e2928
     CALL core_turret.cpp_CTurret_getCurFrame_FUN_005e2b30 ; 005e2929
-        ;   XREF to: 005e2b30 (UNCONDITIONAL_CALL)  ; float core_turret.cpp_CTurret_getCurFrame_FUN_005e2b30(CTurret * this_ptr)
+        ;   XREF to: 005e2b30 (UNCONDITIONAL_CALL)  ; float core_turret.cpp_CTurret_getCurFrame_FUN_005e2b30(CTurret * this_ptr, int model_index)
     MOV dword ptr [ESP + 0xfc],EAX      ; 005e292e
     FLD float ptr [ESP + 0xfc]          ; 005e2935
     LEA EAX,[EBX + 0x158]               ; 005e293c
@@ -134,7 +134,7 @@ section .text
     PUSH EBX                            ; 005e2a2d
     MOVSD.REP ES:EDI,ESI                ; 005e2a2e
     CALL core_turret.cpp_CTurret_getCurFrame_FUN_005e2b30 ; 005e2a30
-        ;   XREF to: 005e2b30 (UNCONDITIONAL_CALL)  ; float core_turret.cpp_CTurret_getCurFrame_FUN_005e2b30(CTurret * this_ptr)
+        ;   XREF to: 005e2b30 (UNCONDITIONAL_CALL)  ; float core_turret.cpp_CTurret_getCurFrame_FUN_005e2b30(CTurret * this_ptr, int model_index)
     MOV dword ptr [ESP + 0x104],EAX     ; 005e2a35
     FLD float ptr [ESP + 0x104]         ; 005e2a3c
     ADD ESP,0x8                         ; 005e2a43

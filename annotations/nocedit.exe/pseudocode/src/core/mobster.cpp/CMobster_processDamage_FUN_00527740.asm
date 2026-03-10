@@ -16,7 +16,7 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
 ;   core_actor.cpp_randomChance_FUN_0040cd10
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_004a9f10
-;   core_mobster.cpp_CMobster_FUN_00527380
+;   core_mobster.cpp_CMobster_processDismemberment_FUN_00527380
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
@@ -45,8 +45,8 @@ section .text
     ADD ESP,0x4                         ; 00527767
     PUSH EDI                            ; 0052776a
     PUSH EBX                            ; 0052776b
-    CALL core_mobster.cpp_CMobster_FUN_00527380 ; 0052776c
-        ;   XREF to: 00527380 (UNCONDITIONAL_CALL)  ; void core_mobster.cpp_CMobster_FUN_00527380(CMobster * this_ptr, SDamageInfo * damage_info)
+    CALL core_mobster.cpp_CMobster_processDismemberment_FUN_00527380 ; 0052776c
+        ;   XREF to: 00527380 (UNCONDITIONAL_CALL)  ; void core_mobster.cpp_CMobster_processDismemberment_FUN_00527380(CMobster * this_ptr, SDamageInfo * damage_info)
     MOV EAX,dword ptr [EBX + 0xbf64]    ; 00527771
     MOV ESI,dword ptr [EBX + EAX*0x4 + 0x2298] ; 00527777
     ADD ESP,0x8                         ; 0052777e

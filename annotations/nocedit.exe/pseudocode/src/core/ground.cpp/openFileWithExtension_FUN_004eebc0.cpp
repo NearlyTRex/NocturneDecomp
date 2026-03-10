@@ -2,28 +2,27 @@
 // Address: 004eebc0
 // Address Range: [[004eebc0, 004eec9e]]
 // Convention: __cdecl
-// Signature: _FILE * __cdecl core_ground_cpp_openFileWithExtension_FUN_004eebc0(char *base_filename,char *file_extension,char *open_mode)
+// Signature: _FILE * __cdecl core_ground_cpp_openFileWithExtension_FUN_004eebc0(char *directory,char *filename,char *new_extension,char *open_mode)
 
 #include "nocturne.h"
 
-_FILE * __cdecl core_ground_cpp_openFileWithExtension_FUN_004eebc0(char *base_filename,char *file_extension,char *open_mode)
+_FILE * __cdecl core_ground_cpp_openFileWithExtension_FUN_004eebc0(char *directory,char *filename,char *new_extension,char *open_mode)
 
 {
   char cVar1;
   _FILE *p_Var2;
   char *pcVar3;
   char *pcVar4;
-  char *in_stack_00000010;
   char local_60 [80];
   
   pcVar4 = local_60;
   do {
-    cVar1 = *file_extension;
+    cVar1 = *filename;
     *pcVar4 = cVar1;
     pcVar3 = local_60;
     if (cVar1 == '\0') break;
-    cVar1 = file_extension[1];
-    file_extension = file_extension + 2;
+    cVar1 = filename[1];
+    filename = filename + 2;
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
     pcVar3 = local_60;
@@ -45,15 +44,15 @@ LAB_004eec03:
   }
   pcVar4 = pcVar4 + 1;
   do {
-    cVar1 = *open_mode;
+    cVar1 = *new_extension;
     *pcVar4 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = open_mode[1];
-    open_mode = open_mode + 2;
+    cVar1 = new_extension[1];
+    new_extension = new_extension + 2;
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  p_Var2 = engine_dosio_c_getFile_FUN_00481a50(base_filename,local_60,in_stack_00000010);
+  p_Var2 = engine_dosio_c_getFile_FUN_00481a50(directory,local_60,open_mode);
   if (p_Var2 == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\ground.cpp";
     g_CurrentLineNumber = 0x44;

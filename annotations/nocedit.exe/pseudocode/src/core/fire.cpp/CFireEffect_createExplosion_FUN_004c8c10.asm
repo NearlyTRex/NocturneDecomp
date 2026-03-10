@@ -75,7 +75,7 @@ section .text
     PUSH EBX                            ; 004c8c77
     PUSH EDI                            ; 004c8c78
     CALL core_fire.cpp_CFireEffect_createCrater_FUN_004c8ea0 ; 004c8c79
-        ;   XREF to: 004c8ea0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createCrater_FUN_004c8ea0(CFireEffect * this_ptr)
+        ;   XREF to: 004c8ea0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createCrater_FUN_004c8ea0(CFireEffect * this_ptr, CVector3f * position, float radius)
     ADD ESP,0xc                         ; 004c8c7e
     POP EBP                             ; 004c8c81
     POP EDI                             ; 004c8c82

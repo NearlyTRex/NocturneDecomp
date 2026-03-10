@@ -59,9 +59,9 @@ void __cdecl CZThumb::popRenderingContext(CZThumb *this_ptr);
 // Address: 00574f20
 void __cdecl CZThumb::render(CZThumb *this_ptr,int screen_x,int screen_y);
 
-// Original: core_setdir.cpp_CZThumb_testCameraVisibility_FUN_005750a0
+// Original: core_setdir.cpp_testCameraVisibility_FUN_005750a0
 // Address: 005750a0
-float __cdecl CZThumb::testCameraVisibility(CZThumb *this_ptr);
+float __cdecl testCameraVisibility(CDemonActor *actor,CVector3i *bbox_vertices,SMRGLHeaderPrimitive *primitives,int camera_index,C3DSCamera *camera,float radius);
 
 // Original: core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0
 // Address: 005751d0

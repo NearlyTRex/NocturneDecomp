@@ -52,7 +52,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_fileio.cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50",
-    "signature": "int __cdecl engine_fileio_cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50(CCheckOutItem *this_ptr,char *filename_out,char *out_buffer,char *wildcard_pattern,char *dialog_title)"
+    "signature": "int __cdecl engine_fileio_cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50(CCheckOutItem *this_ptr,char *preselected_filename,char *out_buffer,char *dialog_title,char *wildcard_pattern)"
   },
   "function_calls": [
     {
@@ -215,7 +215,7 @@
       },
       {
         "is_param": true,
-        "name": "filename_out",
+        "name": "preselected_filename",
         "offset": 8,
         "size": 4,
         "type": "char *"
@@ -229,14 +229,14 @@
       },
       {
         "is_param": true,
-        "name": "wildcard_pattern",
+        "name": "dialog_title",
         "offset": 16,
         "size": 4,
         "type": "char *"
       },
       {
         "is_param": true,
-        "name": "dialog_title",
+        "name": "wildcard_pattern",
         "offset": 20,
         "size": 4,
         "type": "char *"

@@ -1,15 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_path_cpp_renderGridQuad_FUN_00547dd0(int grid_x,int grid_y,int grid_z,int color,int fog,float w_recip)
+; void __cdecl core_path_cpp_renderGridQuad_FUN_00547dd0(int grid_x,int grid_y,int grid_z,int red,int green,int blue,int alpha)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   grid_x
 ; int              Stack[0x8]:4   grid_y
 ; int              Stack[0xc]:4   grid_z
-; int              Stack[0x10]:4   color
-; int              Stack[0x14]:4   fog
-; float            Stack[0x18]:4   w_recip
+; int              Stack[0x10]:4   red
+; int              Stack[0x14]:4   green
+; int              Stack[0x18]:4   blue
+; int              Stack[0x1c]:4   alpha
 ; Local Variables:
 ; undefined4       Stack[-0x30]:4  local_30
 ; undefined4       Stack[-0x2c]:4  local_2c

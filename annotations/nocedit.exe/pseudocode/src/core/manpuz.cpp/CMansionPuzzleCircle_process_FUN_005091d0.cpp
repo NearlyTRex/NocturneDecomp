@@ -23,27 +23,27 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_process_FUN_005091d0(CMansionP
     } while (iVar3 < 0xc);
     iVar3 = 0;
     do {
-      core_manpuz_cpp_CMansionPuzzleCircle_FUN_0050af00(this_ptr);
+      core_manpuz_cpp_CMansionPuzzleCircle_updateReflector_FUN_0050af00(this_ptr,iVar3,delta_time);
       iVar3 = iVar3 + 1;
     } while (iVar3 < 2);
     iVar3 = 0;
     do {
-      core_manpuz_cpp_CMansionPuzzleCircle_FUN_0050a8d0(this_ptr);
+      core_manpuz_cpp_CMansionPuzzleCircle_updateLaser_FUN_0050a8d0(this_ptr,iVar3,delta_time);
       iVar3 = iVar3 + 1;
     } while (iVar3 < 0xc);
     iVar3 = 0;
     do {
-      core_manpuz_cpp_CMansionPuzzleCircle_FUN_0050a610(this_ptr);
+      core_manpuz_cpp_CMansionPuzzleCircle_updateGem_FUN_0050a610(this_ptr,iVar3,delta_time);
       iVar3 = iVar3 + 1;
     } while (iVar3 < 0xc);
     iVar3 = 0;
     do {
-      core_manpuz_cpp_CMansionPuzzleCircle_FUN_00509b20(this_ptr);
+      core_manpuz_cpp_CMansionPuzzleCircle_updatePanelTransform_FUN_00509b20(this_ptr,iVar3);
       iVar3 = iVar3 + 1;
     } while (iVar3 < 0xc);
     iVar3 = 0;
     do {
-      core_manpuz_cpp_CMansionPuzzleCircle_FUN_0050af80(this_ptr);
+      core_manpuz_cpp_CMansionPuzzleCircle_updateReflectorPosition_FUN_0050af80(this_ptr,iVar3);
       iVar3 = iVar3 + 1;
     } while (iVar3 < 2);
     pCVar1 = &this_ptr->reflectors[1].rotation;

@@ -157,7 +157,7 @@ int __cdecl CDeformableModel::getBonePart(CDeformableModel *this_ptr,int bone_in
 
 // Original: core_skeleton.cpp_CDeformableModel_computeBoneDominantPart_FUN_0059c2f0
 // Address: 0059c2f0
-int __cdecl CDeformableModel::computeBoneDominantPart(CDeformableModel *this_ptr,int bone_index,CVector3f *reference_position);
+int __cdecl CDeformableModel::computeBoneDominantPart(CDeformableModel *this_ptr,int bone_index);
 
 // Original: core_skeleton.cpp_CDeformableModel_dismember_FUN_0059c5e0
 // Address: 0059c5e0
@@ -277,7 +277,7 @@ void __cdecl CDeformableModelInstance::offsetAllBonePositions(CDeformableModelIn
 
 // Original: core_skeleton.cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0059fdd0
 // Address: 0059fdd0
-void __cdecl CDeformableModelInstance::aimBoneAtTarget(CDeformableModelInstance *this_ptr,CVector3f *target_position,float blend_weight,int bone_index,CDeformableModel_MotionBlendWeightFunc *blend_callback);
+void __cdecl CDeformableModelInstance::aimBoneAtTarget(CDeformableModelInstance *this_ptr,CVector3f *target_position,float blend_weight,int bone_index,CQuaternion4f *base_orientation,CDeformableModel_MotionBlendWeightFunc *blend_callback);
 
 // Original: core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20
 // Address: 0059ff20

@@ -2,20 +2,19 @@
 // Address: 00452180
 // Address Range: [[00452180, 00452707]]
 // Convention: __cdecl
-// Signature: int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180(CDemonCamera *this_ptr,CVector3f *position,CVector3f *min_corner,CVector3f *max_corner)
+// Signature: int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180(CDemonCamera *this_ptr,CVector3f *position,CVector3f *orientation,CVector3f *bbox_min ,CVector3f *bbox_max)
 
 #include "nocturne.h"
 
 /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
-int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180(CDemonCamera *this_ptr,CVector3f *position,CVector3f *min_corner,CVector3f *max_corner)
+int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180(CDemonCamera *this_ptr,CVector3f *position,CVector3f *orientation,CVector3f *bbox_min ,CVector3f *bbox_max)
 
 {
   uint *puVar1;
   float fVar2;
   int iVar3;
   uint uVar4;
-  float *in_stack_00000014;
   CVector3i local_130;
   float local_124;
   float local_120;
@@ -88,10 +87,10 @@ int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180(CDem
   g_RelativeY = (int)ROUND(ROUND(((this_ptr->base).position.f.y - position->y) * fVar2));
   g_RelativeZ = (int)ROUND(ROUND(((this_ptr->base).position.f.z - position->z) * fVar2));
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-            (g_CDemonRendererPtr2,(CVector3i *)min_corner,(CVector3i *)0x0);
-  local_118 = *in_stack_00000014;
-  local_114 = max_corner->y;
-  local_110 = in_stack_00000014[2];
+            (g_CDemonRendererPtr2,(CVector3i *)orientation,(CVector3i *)0x0);
+  local_118 = bbox_max->x;
+  local_114 = bbox_min->y;
+  local_110 = bbox_max->z;
   local_e8.x = (int)ROUND(local_118 * 256.0f);
   local_e8.y = (int)ROUND(local_114 * 256.0f);
   local_e8.z = (int)ROUND(local_110 * 256.0f);
@@ -100,9 +99,9 @@ int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180(CDem
   local_54 = local_110;
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[0x4e18].projected_vertex,&local_e8);
-  local_dc = max_corner->x;
-  local_d8 = max_corner->y;
-  local_d4 = in_stack_00000014[2];
+  local_dc = bbox_min->x;
+  local_d8 = bbox_min->y;
+  local_d4 = bbox_max->z;
   local_d0.x = (int)ROUND(local_dc * 256.0f);
   local_d0.y = (int)ROUND(local_d8 * 256.0f);
   local_d0.z = (int)ROUND(local_d4 * 256.0f);
@@ -111,9 +110,9 @@ int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180(CDem
   local_60 = local_d4;
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[0x4e19].projected_vertex,&local_d0);
-  local_88 = max_corner->x;
-  local_84 = max_corner->y;
-  local_80 = max_corner->z;
+  local_88 = bbox_min->x;
+  local_84 = bbox_min->y;
+  local_80 = bbox_min->z;
   local_f4.x = (int)ROUND(local_88 * 256.0f);
   local_f4.y = (int)ROUND(local_84 * 256.0f);
   local_f4.z = (int)ROUND(local_80 * 256.0f);
@@ -122,9 +121,9 @@ int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180(CDem
   local_28 = local_80;
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[0x4e1a].projected_vertex,&local_f4);
-  local_124 = *in_stack_00000014;
-  local_120 = max_corner->y;
-  local_11c = max_corner->z;
+  local_124 = bbox_max->x;
+  local_120 = bbox_min->y;
+  local_11c = bbox_min->z;
   local_10c.x = (int)ROUND(local_124 * 256.0f);
   local_10c.y = (int)ROUND(local_120 * 256.0f);
   local_10c.z = (int)ROUND(local_11c * 256.0f);
@@ -133,9 +132,9 @@ int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180(CDem
   local_14 = local_11c;
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[0x4e1b].projected_vertex,&local_10c);
-  local_a0 = *in_stack_00000014;
-  local_9c = in_stack_00000014[1];
-  local_98 = in_stack_00000014[2];
+  local_a0 = bbox_max->x;
+  local_9c = bbox_max->y;
+  local_98 = bbox_max->z;
   local_130.x = (int)ROUND(local_a0 * 256.0f);
   local_130.y = (int)ROUND(local_9c * 256.0f);
   local_130.z = (int)ROUND(local_98 * 256.0f);
@@ -144,9 +143,9 @@ int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180(CDem
   local_38 = local_9c;
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[0x4e1c].projected_vertex,&local_130);
-  local_94 = max_corner->x;
-  local_90 = in_stack_00000014[1];
-  local_8c = in_stack_00000014[2];
+  local_94 = bbox_min->x;
+  local_90 = bbox_max->y;
+  local_8c = bbox_max->z;
   local_ac.x = (int)ROUND(local_94 * 256.0f);
   local_ac.y = (int)ROUND(local_90 * 256.0f);
   local_ac.z = (int)ROUND(local_8c * 256.0f);
@@ -155,9 +154,9 @@ int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180(CDem
   local_40 = local_8c;
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[0x4e1d].projected_vertex,&local_ac);
-  local_100 = max_corner->x;
-  local_fc = in_stack_00000014[1];
-  local_f8 = max_corner->z;
+  local_100 = bbox_min->x;
+  local_fc = bbox_max->y;
+  local_f8 = bbox_min->z;
   local_7c.x = (int)ROUND(local_100 * 256.0f);
   local_7c.y = (int)ROUND(local_fc * 256.0f);
   local_7c.z = (int)ROUND(local_f8 * 256.0f);
@@ -166,9 +165,9 @@ int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180(CDem
   local_1c = local_f8;
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[0x4e1e].projected_vertex,&local_7c);
-  local_c4 = *in_stack_00000014;
-  local_c0 = in_stack_00000014[1];
-  local_bc = max_corner->z;
+  local_c4 = bbox_max->x;
+  local_c0 = bbox_max->y;
+  local_bc = bbox_min->z;
   local_b8.x = (int)ROUND(local_c4 * 256.0f);
   local_b8.y = (int)ROUND(local_c0 * 256.0f);
   local_b8.z = (int)ROUND(local_bc * 256.0f);

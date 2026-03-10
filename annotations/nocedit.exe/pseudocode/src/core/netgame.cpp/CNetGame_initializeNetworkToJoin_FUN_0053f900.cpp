@@ -21,6 +21,8 @@ int __cdecl core_netgame_cpp_CNetGame_initializeNetworkToJoin_FUN_0053f900(CNetG
   EHeroType hero_number;
   EAimMode aim_mode;
   float local_60;
+  SNetPacketHeader local_5c;
+  uint local_57;
   uint uStack_53;
   char local_4f [20];
   EHeroType local_3b;
@@ -72,6 +74,9 @@ int __cdecl core_netgame_cpp_CNetGame_initializeNetworkToJoin_FUN_0053f900(CNetG
         local_60 = 30.0;
       }
       if ((float)0.20000000000000001 < local_60) {
+        local_5c.size = 0x29;
+        local_5c.type = PACKET_PLAYER_ANNOUNCE;
+        local_57 = local_28.ip_address;
         (&uStack_53)[(uint)bVar7 * -2] = *(uint *)&(&local_28)[-(uint)bVar7].port;
         local_3b = this_ptr->players[this_ptr->local_player_index].hero_number;
         local_37 = this_ptr->players[this_ptr->local_player_index].aim_mode;
@@ -86,7 +91,8 @@ int __cdecl core_netgame_cpp_CNetGame_initializeNetworkToJoin_FUN_0053f900(CNetG
           pcVar6[1] = cVar1;
           pcVar6 = pcVar6 + 2;
         } while (cVar1 != '\0');
-        core_netgame_cpp_CNetGame_send_FUN_005411c0(this_ptr,this_ptr->server_player_index);
+        core_netgame_cpp_CNetGame_send_FUN_005411c0
+                  (this_ptr,this_ptr->server_player_index,&local_5c);
         uVar5 = g_CurrentGameTime;
       }
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();

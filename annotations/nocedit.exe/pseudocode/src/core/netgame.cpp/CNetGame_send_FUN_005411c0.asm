@@ -1,11 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_netgame_cpp_CNetGame_send_FUN_005411c0(CNetGame *this_ptr,int player_index)
+; void __cdecl core_netgame_cpp_CNetGame_send_FUN_005411c0(CNetGame *this_ptr,int player_index,SNetPacketHeader *packet)
 ;
 ; Parameters:
 ; CNetGame *       Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   player_index
+; SNetPacketHeader * Stack[0xc]:4   packet
 ;
 ; XREF[8]:
 ;   core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_0053f900 at 0053faac

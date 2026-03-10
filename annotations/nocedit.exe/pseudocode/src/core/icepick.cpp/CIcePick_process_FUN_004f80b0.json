@@ -10,31 +10,31 @@
       {
         "category": "format_error",
         "column": 81,
-        "line": 222,
+        "line": 223,
         "message": "format specifies type 'char *' but the argument has type 'CIcePick *' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 256,
+        "line": 257,
         "message": "cannot cast from type 'float' to pointer type 'CCharacter_full_vtable *'"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 257,
-        "message": "C-style cast from 'CCharacter_full_vtable *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 9,
         "line": 258,
         "message": "C-style cast from 'CCharacter_full_vtable *' to 'float' is not allowed"
       },
       {
         "category": "other",
-        "column": 18,
+        "column": 9,
         "line": 259,
+        "message": "C-style cast from 'CCharacter_full_vtable *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 18,
+        "line": 260,
         "message": "C-style cast from 'CCharacter_full_vtable *' to 'float' is not allowed"
       }
     ],
@@ -43,12 +43,12 @@
   },
   "complexity": {
     "assembly_lines": 682,
-    "complexity_score": 405,
+    "complexity_score": 406,
     "cross_reference_count": 0,
     "function_call_count": 30,
     "global_count": 14,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 315,
+    "pseudocode_lines": 316,
     "suspect_count": 7,
     "suspect_types": [
       "pointer_cast",
@@ -56,7 +56,7 @@
       "unresolved_funcptr",
       "warning_unreachable"
     ],
-    "total_lines": 997
+    "total_lines": 998
   },
   "cross_references": [],
   "function": {
@@ -149,29 +149,29 @@
       "name": "core_hero.cpp_CHero_tryTalkToNearbyCharacter_FUN_004f2c40"
     },
     {
-      "addr": "004f8810",
-      "is_variadic": false,
-      "name": "core_icepick.cpp_CIcePick_FUN_004f8810"
-    },
-    {
       "addr": "004f8970",
       "is_variadic": false,
-      "name": "core_icepick.cpp_CIcePick_FUN_004f8970"
-    },
-    {
-      "addr": "004f8ad0",
-      "is_variadic": false,
-      "name": "core_icepick.cpp_CIcePick_FUN_004f8ad0"
+      "name": "core_icepick.cpp_CIcePick_findAndPickupGun_FUN_004f8970"
     },
     {
       "addr": "004f8c70",
       "is_variadic": false,
-      "name": "core_icepick.cpp_CIcePick_FUN_004f8c70"
+      "name": "core_icepick.cpp_CIcePick_processAI_FUN_004f8c70"
     },
     {
       "addr": "004f93a0",
       "is_variadic": false,
-      "name": "core_icepick.cpp_CIcePick_FUN_004f93a0"
+      "name": "core_icepick.cpp_CIcePick_processMotionEvents_FUN_004f93a0"
+    },
+    {
+      "addr": "004f8ad0",
+      "is_variadic": false,
+      "name": "core_icepick.cpp_CIcePick_startThrowAttack_FUN_004f8ad0"
+    },
+    {
+      "addr": "004f8810",
+      "is_variadic": false,
+      "name": "core_icepick.cpp_CIcePick_updateShootBlend_FUN_004f8810"
     },
     {
       "addr": "004ffad0",
@@ -546,7 +546,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 307,
+      "line": 308,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar11 = (uint *)((int)&CStack_84 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);",
@@ -554,7 +554,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 308,
+      "line": 309,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar10 = (uint *)((int)&CStack_94 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);",
@@ -562,7 +562,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 309,
+      "line": 310,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&CStack_84 + (uint)bVar12 * -8 + 4) =",
@@ -570,7 +570,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 310,
+      "line": 311,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&CStack_94 + (uint)bVar12 * -8 + 4);",

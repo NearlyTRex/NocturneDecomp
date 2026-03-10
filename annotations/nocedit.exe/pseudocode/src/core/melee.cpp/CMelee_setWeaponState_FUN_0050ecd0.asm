@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_melee_cpp_CMelee_setWeaponState_FUN_0050ecd0(CMelee *this_ptr)
+; void __cdecl core_melee_cpp_CMelee_setWeaponState_FUN_0050ecd0(CMelee *this_ptr,int weapon_state)
 ;
 ; Parameters:
 ; CMelee *         Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   weapon_state
 ;
 ; Called Functions:
 ;   core_weapon.cpp_CWeapon_setWeaponState_FUN_005ee640

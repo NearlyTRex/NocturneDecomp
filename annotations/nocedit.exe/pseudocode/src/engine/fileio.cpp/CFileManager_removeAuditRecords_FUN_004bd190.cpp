@@ -2,11 +2,11 @@
 // Address: 004bd190
 // Address Range: [[004bd190, 004bd70b]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_fileio_cpp_CFileManager_removeAuditRecords_FUN_004bd190(CFileManager *this_ptr,char *pod_file_path)
+// Signature: void __cdecl engine_fileio_cpp_CFileManager_removeAuditRecords_FUN_004bd190(CFileManager *this_ptr,char *pod_file_path,time_t cutoff_timestamp)
 
 #include "nocturne.h"
 
-void __cdecl engine_fileio_cpp_CFileManager_removeAuditRecords_FUN_004bd190(CFileManager *this_ptr,char *pod_file_path)
+void __cdecl engine_fileio_cpp_CFileManager_removeAuditRecords_FUN_004bd190(CFileManager *this_ptr,char *pod_file_path,time_t cutoff_timestamp)
 
 {
   char cVar1;
@@ -21,7 +21,6 @@ void __cdecl engine_fileio_cpp_CFileManager_removeAuditRecords_FUN_004bd190(CFil
   CPodAuditRecord *pCVar8;
   char *pcVar9;
   byte bVar10;
-  uint in_stack_0000000c;
   CPodFile local_9d8;
   uint local_5ac [8];
   uint local_58c;
@@ -69,7 +68,7 @@ void __cdecl engine_fileio_cpp_CFileManager_removeAuditRecords_FUN_004bd190(CFil
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"Can't remove audit records on POD of this version.");
   }
-  if (in_stack_0000000c != 0) {
+  if (cutoff_timestamp != 0) {
 LAB_004bd3c3:
     iVar2 = 0;
     g_AuditRecordCount = 0;
@@ -89,7 +88,7 @@ LAB_004bd3c3:
           puVar5 = puVar5 + (uint)bVar10 * -2 + 1;
           puVar7 = puVar7 + (uint)bVar10 * -2 + 1;
         }
-        if (local_58c < in_stack_0000000c) {
+        if (local_58c < (uint)cutoff_timestamp) {
           iVar2 = iVar2 + 1;
         }
         else {
@@ -214,8 +213,8 @@ LAB_004bd3c3:
       local_40.tm_isdst = -1;
       local_40.tm_min = 0;
       local_40.tm_sec = 0;
-      in_stack_0000000c = _mktime(&local_40);
-      if (in_stack_0000000c != 0xffffffff) goto LAB_004bd3c3;
+      cutoff_timestamp = _mktime(&local_40);
+      if (cutoff_timestamp != -1) goto LAB_004bd3c3;
     }
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"Please enter a valid date");

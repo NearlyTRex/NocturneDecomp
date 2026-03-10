@@ -312,7 +312,7 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_005ae830(CDirectSound
 int __cdecl sound_snddx_cpp_CDirectSoundDevice_poll_FUN_005aed50(CDirectSoundDevice *this_ptr,short *output_buffer,int num_samples);
 int __cdecl sound_snddx_cpp_CDirectSoundDevice_hasHardware3D_FUN_005aee20(CDirectSoundDevice *this_ptr);
 void __cdecl sound_snddx_cpp_CDirectSoundDevice_set3DListenerPos_FUN_005aee30(CDirectSoundDevice *this_ptr,double x,double y,double z);
-void __cdecl sound_snddx_cpp_CDirectSoundDevice_set3DListenerOrient_FUN_005aee70(CDirectSoundDevice *this_ptr,double x_front,double y_front,double z_front, double x_top,double y_top,double z_top);
+void __cdecl sound_snddx_cpp_CDirectSoundDevice_set3DListenerOrient_FUN_005aee70(CDirectSoundDevice *this_ptr,double x_front,double y_front,double z_front, double x_top,double y_top,double z_top,double x_right,double y_right,double z_right);
 void __cdecl sound_snddx_cpp_CDirectSoundDevice_set3DListenerVelocity_FUN_005aeed0(CDirectSoundDevice *this_ptr,double x_velocity,double y_velocity,double z_velocity);
 void __cdecl sound_snddx_cpp_CDirectSoundDevice_set3DListenerDistanceFactor_FUN_005aef10(CDirectSoundDevice *this_ptr,double distance_in_feet);
 int __cdecl sound_snddx_cpp_CDirectSoundDevice_allocateSample_FUN_005aef40(CDirectSoundDevice *this_ptr,int bits_per_sample,int channel_count,int sample_rate, int sample_count);

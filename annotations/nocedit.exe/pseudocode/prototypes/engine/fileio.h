@@ -45,11 +45,11 @@ int __cdecl parseTimestampRecord(char *input_string,STimestampRecord *output_rec
 
 // Original: engine_fileio.cpp_readTimestampFile_FUN_004b23a0
 // Address: 004b23a0
-int __cdecl readTimestampFile(_FILE *file,STimestampRecord **records,int *count);
+int __cdecl readTimestampFile(_FILE *file_handle,STimestampRecord **records,char *directory,char *filename);
 
 // Original: engine_fileio.cpp_findMaxFieldInTimestampFile_FUN_004b2640
 // Address: 004b2640
-int __cdecl findMaxFieldInTimestampFile(char *filename);
+int __cdecl findMaxFieldInTimestampFile(char *directory,char *filename);
 
 // Original: engine_fileio.cpp_logOnAsVersionControlUser_FUN_004b2770
 // Address: 004b2770
@@ -113,7 +113,7 @@ int __cdecl CCheckOutItem::checkOutFileFromRepository(CCheckOutItem *this_ptr,ch
 
 // Original: engine_fileio.cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50
 // Address: 004b3f50
-int __cdecl CCheckOutItem::selectCheckedOutFile(CCheckOutItem *this_ptr,char *filename_out,char *out_buffer,char *wildcard_pattern,char *dialog_title);
+int __cdecl CCheckOutItem::selectCheckedOutFile(CCheckOutItem *this_ptr,char *preselected_filename,char *out_buffer,char *dialog_title,char *wildcard_pattern);
 
 // Original: engine_fileio.cpp_CCheckOutItem_revert_FUN_004b41c0
 // Address: 004b41c0
@@ -121,7 +121,7 @@ void __cdecl CCheckOutItem::revert(CCheckOutItem *this_ptr,char *output_buffer);
 
 // Original: engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220
 // Address: 004b4220
-int __cdecl CCheckOutItem::processFiles(CCheckOutItem *this_ptr,int operation_mode,char *filename);
+int __cdecl CCheckOutItem::processFiles(CCheckOutItem *this_ptr,char *filename);
 
 // Original: engine_fileio.cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030
 // Address: 004b5030
@@ -241,7 +241,7 @@ int __cdecl CFileManager::checkInPodFile(CFileManager *this_ptr,char *checkout_i
 
 // Original: engine_fileio.cpp_CFileManager_undoCheckout_FUN_004bc2b0
 // Address: 004bc2b0
-int __cdecl CFileManager::undoCheckout(CFileManager *this_ptr,CCheckOutItem *checkout_item);
+int __cdecl CFileManager::undoCheckout(CFileManager *this_ptr,CCheckOutItem *checkout_item,char *source_path);
 
 // Original: engine_fileio.cpp_CFileManager_setVersionControlDirectory_FUN_004bc5a0
 // Address: 004bc5a0
@@ -285,7 +285,7 @@ void __cdecl CFileManager::managePodMounts(CFileManager *this_ptr);
 
 // Original: engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190
 // Address: 004bd190
-void __cdecl CFileManager::removeAuditRecords(CFileManager *this_ptr,char *pod_file_path);
+void __cdecl CFileManager::removeAuditRecords(CFileManager *this_ptr,char *pod_file_path,time_t cutoff_timestamp);
 
 // Original: engine_fileio.cpp_CCheckOutList_ctor_FUN_004bd710
 // Address: 004bd710

@@ -4,85 +4,85 @@
       {
         "category": "undeclared_identifier",
         "column": 12,
-        "line": 95,
+        "line": 92,
         "message": "use of undeclared identifier '_local_1a4'; did you mean 'local_1a4'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 12,
-        "line": 95,
+        "line": 92,
         "message": "use of undeclared identifier '_local_1a4'; did you mean 'local_1a4'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 12,
-        "line": 95,
+        "line": 92,
         "message": "use of undeclared identifier '_local_1a4'; did you mean 'local_1a4'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 51,
-        "line": 95,
+        "line": 92,
         "message": "use of undeclared identifier '_local_1a4'; did you mean 'local_1a4'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 51,
-        "line": 95,
+        "line": 92,
         "message": "use of undeclared identifier '_local_1a4'; did you mean 'local_1a4'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 51,
-        "line": 95,
+        "line": 92,
         "message": "use of undeclared identifier '_local_1a4'; did you mean 'local_1a4'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 32,
-        "line": 96,
+        "line": 93,
         "message": "use of undeclared identifier '_local_1a4'; did you mean 'local_1a4'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 32,
-        "line": 96,
+        "line": 93,
         "message": "use of undeclared identifier '_local_1a4'; did you mean 'local_1a4'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 32,
-        "line": 96,
+        "line": 93,
         "message": "use of undeclared identifier '_local_1a4'; did you mean 'local_1a4'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 15,
-        "line": 110,
+        "line": 107,
         "message": "use of undeclared identifier '_local_1a4'; did you mean 'local_1a4'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 26,
-        "line": 113,
+        "line": 110,
         "message": "use of undeclared identifier '_local_1a4'; did you mean 'local_1a4'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 44,
-        "line": 114,
+        "line": 111,
         "message": "use of undeclared identifier '_local_1a4'; did you mean 'local_1a4'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 39,
-        "line": 134,
+        "line": 131,
         "message": "use of undeclared identifier '_local_1a4'; did you mean 'local_1a4'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 15,
-        "line": 135,
+        "line": 132,
         "message": "use of undeclared identifier '_local_1a4'; did you mean 'local_1a4'?"
       }
     ],
@@ -91,20 +91,18 @@
   },
   "complexity": {
     "assembly_lines": 876,
-    "complexity_score": 817,
+    "complexity_score": 634,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 10,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 387,
-    "suspect_count": 41,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 384,
+    "suspect_count": 24,
     "suspect_types": [
       "decompiler_intrinsic",
-      "param_count_too_few",
-      "pointer_cast",
-      "stack_param"
+      "pointer_cast"
     ],
-    "total_lines": 1263
+    "total_lines": 1260
   },
   "cross_references": [
     {
@@ -125,7 +123,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0",
-    "signature": "void __cdecl core_mirror_cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0(CMirrorReflection *this_ptr)"
+    "signature": "void __cdecl core_mirror_cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0(CMirrorReflection *this_ptr,CVector3f *camera_position,CVector3f *camera_rotation,float projection_scale)"
   },
   "function_calls": [
     {
@@ -239,8 +237,8 @@
         "stack_params": 4
       }
     ],
-    "confidence": "low",
-    "declared_params": 1,
+    "confidence": "medium",
+    "declared_params": 4,
     "estimated_params": 4
   },
   "pcode_summary": {
@@ -288,10 +286,10 @@
     "pcode_op_count": 3991
   },
   "stack_frame": {
-    "frame_size": 1240,
+    "frame_size": 1252,
     "local_size": 1236,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 16,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -1126,6 +1124,27 @@
         "offset": 4,
         "size": 4,
         "type": "CMirrorReflection *"
+      },
+      {
+        "is_param": true,
+        "name": "camera_position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "camera_rotation",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "projection_scale",
+        "offset": 16,
+        "size": 4,
+        "type": "float"
       }
     ]
   },
@@ -1148,32 +1167,8 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "CVector3f *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "CVector3f *in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000010",
-      "severity": "moderate",
-      "text": "float in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 88,
+      "line": 85,
       "match": "ABS",
       "severity": "mild",
       "text": "if ((ABS(_local_1a4) <= ABS(local_1a0)) || (ABS(_local_1a4) <= ABS(local_19c))) {",
@@ -1181,7 +1176,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 88,
+      "line": 85,
       "match": "ABS",
       "severity": "mild",
       "text": "if ((ABS(_local_1a4) <= ABS(local_1a0)) || (ABS(_local_1a4) <= ABS(local_19c))) {",
@@ -1189,7 +1184,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 88,
+      "line": 85,
       "match": "ABS",
       "severity": "mild",
       "text": "if ((ABS(_local_1a4) <= ABS(local_1a0)) || (ABS(_local_1a4) <= ABS(local_19c))) {",
@@ -1197,7 +1192,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 88,
+      "line": 85,
       "match": "ABS",
       "severity": "mild",
       "text": "if ((ABS(_local_1a4) <= ABS(local_1a0)) || (ABS(_local_1a4) <= ABS(local_19c))) {",
@@ -1205,7 +1200,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 89,
+      "line": 86,
       "match": "ABS",
       "severity": "mild",
       "text": "if ((ABS(local_1a0) <= ABS(_local_1a4)) || (ABS(local_1a0) <= ABS(local_19c))) {",
@@ -1213,7 +1208,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 89,
+      "line": 86,
       "match": "ABS",
       "severity": "mild",
       "text": "if ((ABS(local_1a0) <= ABS(_local_1a4)) || (ABS(local_1a0) <= ABS(local_19c))) {",
@@ -1221,7 +1216,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 89,
+      "line": 86,
       "match": "ABS",
       "severity": "mild",
       "text": "if ((ABS(local_1a0) <= ABS(_local_1a4)) || (ABS(local_1a0) <= ABS(local_19c))) {",
@@ -1229,7 +1224,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 89,
+      "line": 86,
       "match": "ABS",
       "severity": "mild",
       "text": "if ((ABS(local_1a0) <= ABS(_local_1a4)) || (ABS(local_1a0) <= ABS(local_19c))) {",
@@ -1237,7 +1232,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 114,
+      "line": 111,
       "match": "SQRT",
       "severity": "mild",
       "text": "fVar1 = SQRT(local_18c * local_18c + local_194 * local_194 + local_190 * local_190);",
@@ -1245,7 +1240,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 134,
+      "line": 131,
       "match": "SQRT",
       "severity": "mild",
       "text": "fVar1 = SQRT(local_15c * local_15c + local_164 * local_164 + local_160 * local_160);",
@@ -1253,7 +1248,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 170,
+      "line": 167,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
       "text": "pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar9 * -2 + 1) * 4);",
@@ -1261,7 +1256,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 171,
+      "line": 168,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
       "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar9 * -2 + 1) * 4);",
@@ -1269,7 +1264,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 180,
+      "line": 177,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
       "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar9 * -2 + 1) * 4);",
@@ -1277,7 +1272,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 181,
+      "line": 178,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
       "text": "pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar9 * -2 + 1) * 4);",
@@ -1285,7 +1280,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 188,
+      "line": 185,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
       "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar9 * -2 + 1) * 4);",
@@ -1293,7 +1288,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 189,
+      "line": 186,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
       "text": "pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar9 * -2 + 1) * 4);",
@@ -1301,7 +1296,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 196,
+      "line": 193,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
       "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar9 * -2 + 1) * 4);",
@@ -1309,7 +1304,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 197,
+      "line": 194,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
       "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar9 * -2 + 1) * 4);",
@@ -1317,7 +1312,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 204,
+      "line": 201,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
       "text": "pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar9 * -2 + 1) * 4);",
@@ -1325,7 +1320,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 205,
+      "line": 202,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
       "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar9 * -2 + 1) * 4);",
@@ -1333,7 +1328,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 212,
+      "line": 209,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
       "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar9 * -2 + 1) * 4);",
@@ -1341,111 +1336,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 213,
+      "line": 210,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
       "text": "pCVar6 = (CMatrix3x4f *)((int)pCVar6 + (uint)bVar9 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 216,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "(&local_8c,in_stack_00000008,&this_ptr->mirror_transform_matrix);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 223,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "(&this_ptr->reflection_matrix,in_stack_0000000c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 233,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "local_104.x = local_38 + in_stack_00000008->x;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 234,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "local_104.y = local_18 + in_stack_00000008->y;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 235,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "local_104.z = local_34 + in_stack_00000008->z;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 244,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "local_c8.x = local_30 + in_stack_00000008->x;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 245,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "local_c8.y = local_2c + in_stack_00000008->y;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 246,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "local_c8.z = local_28 + in_stack_00000008->z;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 255,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "local_ec.x = local_24 + in_stack_00000008->x;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 256,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "local_ec.y = local_20 + in_stack_00000008->y;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 257,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "local_ec.z = local_1c + in_stack_00000008->z;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 320,
-      "match": "in_stack_00000010",
-      "severity": "moderate",
-      "text": "this_ptr->projection_scale = in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 341,
+      "line": 338,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
       "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar9 * -2 + 1) * 4);",
@@ -1453,30 +1352,11 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 342,
+      "line": 339,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
       "text": "pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar9 * -2 + 1) * 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 370,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "(&local_17c,in_stack_00000008,&this_ptr->mirror_transform_matrix);",
-      "type": "stack_param"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 1,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 4,
-      "fix_type": "add_params",
-      "match": "declared:1 vs estimated:4",
-      "param_delta": 3,
-      "text": "Function declares 1 params but call sites push 4 (3 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

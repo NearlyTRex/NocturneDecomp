@@ -257,7 +257,7 @@ section .text
     PUSH EAX                            ; 00505f46
     PUSH 0x2d7eaf0                      ; 00505f47 | g_CDemonLightInstance
     CALL core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180 ; 00505f4c
-        ;   XREF to: 00452180 (UNCONDITIONAL_CALL)  ; int core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180(CDemonCamera * this_ptr, CVector3f * position, CVector3f * min_corner, CVector3f * max_corner)
+        ;   XREF to: 00452180 (UNCONDITIONAL_CALL)  ; int core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180(CDemonCamera * this_ptr, CVector3f * position, CVector3f * orientation, CVector3f * bbox_min, ...)
     ADD ESP,0x14                        ; 00505f51
     TEST EAX,EAX                        ; 00505f54
     JZ 0x005060a3                       ; 00505f56

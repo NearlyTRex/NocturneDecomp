@@ -2,11 +2,11 @@
 // Address: 004e63d0
 // Address Range: [[004e63d0, 004e6413]]
 // Convention: __cdecl
-// Signature: void __cdecl core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004e63d0(CGhoul *this_ptr)
+// Signature: void __cdecl core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004e63d0(CGhoul *this_ptr,float delta_time)
 
 #include "nocturne.h"
 
-void __cdecl core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004e63d0(CGhoul *this_ptr)
+void __cdecl core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004e63d0(CGhoul *this_ptr,float delta_time)
 
 {
   float fVar1;
@@ -15,7 +15,6 @@ void __cdecl core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004e63d0(CGhoul *this_pt
   CPathMap *this_ptr_01;
   CGhoul *pCVar3;
   int iVar4;
-  float in_stack_00000008;
   CVector3f CStack_30;
   CVector3f *local_24;
   int local_20;
@@ -24,8 +23,7 @@ void __cdecl core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004e63d0(CGhoul *this_pt
   float local_14;
   
   if ((this_ptr->is_berserk == 0) &&
-     (fVar1 = this_ptr->heal_timer - in_stack_00000008, this_ptr->heal_timer = fVar1, fVar1 <= 0.0))
-  {
+     (fVar1 = this_ptr->heal_timer - delta_time, this_ptr->heal_timer = fVar1, fVar1 <= 0.0)) {
     local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(1.0,2.0);
     local_24 = &(this_ptr->base).base.base.location.position;
     local_18 = 0;

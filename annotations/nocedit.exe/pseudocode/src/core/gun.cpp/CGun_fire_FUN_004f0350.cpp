@@ -13,6 +13,7 @@ int __cdecl core_gun_cpp_CGun_fire_FUN_004f0350(CGun *this_ptr)
   CDemonSet *this_ptr_00;
   CVector3f *pCVar1;
   int iVar2;
+  CKeyFramedModel *model_ptr;
   CCharacter *this_ptr_01;
   EDeathState EVar3;
   CTrigger *this_ptr_02;
@@ -217,7 +218,9 @@ int __cdecl core_gun_cpp_CGun_fire_FUN_004f0350(CGun *this_ptr)
     CStack_90.y = pCVar1->y;
     CStack_90.z = pCVar1->z;
   }
-  core_dmodel_cpp_loadModel_FUN_00478c00("gatbullet.kfm");
-  core_fire_cpp_CFireEffect_createShell_FUN_004c91e0(g_CFireEffectPtr);
+  model_ptr = core_dmodel_cpp_loadModel_FUN_00478c00("gatbullet.kfm");
+  core_fire_cpp_CFireEffect_createShell_FUN_004c91e0
+            (g_CFireEffectPtr,&(this_ptr->base).base.location.position,
+             &(this_ptr->base).base.orient.vec,&CStack_90,model_ptr);
   return 1;
 }

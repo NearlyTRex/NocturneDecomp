@@ -43,7 +43,8 @@ int __cdecl core_hero_cpp_CHero_tryInteract_FUN_004f2af0(CHero *this_ptr)
   iVar4 = (CDemonActor *)0x0;
   for (iVar3 = 0; iVar3 < g_CDemonSetPtr->actor_count; iVar3 = iVar3 + 1) {
     iVar1 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar2);
-    fStack_18 = (*((iVar1->vtable)._ub)->evaluateTriggerCondition)(iVar1);
+    fStack_18 = (*((iVar1->vtable)._ub)->evaluateTriggerCondition)
+                          (iVar1,(CDemonActor *)this_ptr,&CStack_4c);
     if ((0.0 <= fStack_18) && (fStack_18 < fStack_1c)) {
       iVar4 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar2);
       fStack_1c = fStack_18;

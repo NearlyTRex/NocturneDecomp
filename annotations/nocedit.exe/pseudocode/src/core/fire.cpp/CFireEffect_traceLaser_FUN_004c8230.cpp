@@ -15,7 +15,6 @@ void __cdecl core_fire_cpp_CFireEffect_traceLaser_FUN_004c8230(CFireEffect *this
   CCharacter *this_ptr_01;
   int iVar3;
   double dVar4;
-  float in_stack_fffffd70;
   SLaserInfo local_23c;
   SLaserInfo local_1e8;
   float local_194;
@@ -249,7 +248,6 @@ void __cdecl core_fire_cpp_CFireEffect_traceLaser_FUN_004c8230(CFireEffect *this
         local_3c = &local_1c->z;
         local_38 = &local_18->y;
         local_44 = &local_18->z;
-        in_stack_fffffd70 = laser_info->intensity * laser_info->transparency;
         core_setcolid_cpp_CDemonSet_pushRaytraceState_FUN_00573e10(g_CDemonSetPtr);
         core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
         local_23c.intensity = laser_info->intensity;
@@ -345,7 +343,7 @@ LAB_004c8ae9:
     core_fire_cpp_CFireEffect_createLaserSegment_FUN_004c7eb0
               (this_ptr,&local_e0,&local_134,laser_info->intensity,local_28,&local_a4,
                (laser_info->color).r,(laser_info->color).g,(laser_info->color).b,
-               laser_info->beam_width,in_stack_fffffd70);
+               laser_info->beam_width);
   }
   return;
 }

@@ -6,18 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 102,
-    "complexity_score": 167,
+    "complexity_score": 100,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 4,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 57,
-    "suspect_count": 10,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 55,
+    "suspect_count": 4,
     "suspect_types": [
-      "pointer_cast",
-      "stack_param"
+      "pointer_cast"
     ],
-    "total_lines": 159
+    "total_lines": 157
   },
   "cross_references": [
     {
@@ -37,7 +36,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_platfrm.cpp_CPlatform_attachActor_FUN_0054e1e0",
-    "signature": "void __cdecl core_platfrm_cpp_CPlatform_attachActor_FUN_0054e1e0(CPlatform *this_ptr)"
+    "signature": "void __cdecl core_platfrm_cpp_CPlatform_attachActor_FUN_0054e1e0(CPlatform *this_ptr,CDemonActor *actor)"
   },
   "function_calls": [
     {
@@ -116,10 +115,10 @@
     "pcode_op_count": 383
   },
   "stack_frame": {
-    "frame_size": 168,
+    "frame_size": 172,
     "local_size": 164,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -149,61 +148,20 @@
         "offset": 4,
         "size": 4,
         "type": "CPlatform *"
+      },
+      {
+        "is_param": true,
+        "name": "actor",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonActor *"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "CDemonActor *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "if (in_stack_00000008 != (CDemonActor *)0x0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "while (in_stack_00000008 != pCVar1) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 30,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "(&local_a0,&(in_stack_00000008->location).position,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 31,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "&(in_stack_00000008->orient).vec);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 34,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "pCVar2->attach_actors[0].actor = in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 40,
+      "line": 38,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
       "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);",
@@ -211,7 +169,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 41,
+      "line": 39,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
       "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + (uint)bVar6 * -8 + 4);",
@@ -219,7 +177,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 48,
+      "line": 46,
       "match": "(CPlatform *)((int)",
       "severity": "mild",
       "text": "pCVar2 = (CPlatform *)((int)&(pCVar2->base).orient + 4);",
@@ -227,7 +185,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 56,
+      "line": 54,
       "match": "(CPlatform *)((int)",
       "severity": "mild",
       "text": "pCVar2 = (CPlatform *)((int)&(pCVar2->base).orient + 4);",

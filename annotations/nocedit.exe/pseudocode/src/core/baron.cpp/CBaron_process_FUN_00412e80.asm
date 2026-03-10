@@ -466,7 +466,7 @@ section .text
     MOV EDI,dword ptr [0x0067a3d0]      ; 0041332f | g_CFireEffectPtr
     PUSH EDI                            ; 00413335 | g_CFireEffectInstance
     CALL core_fire.cpp_CFireEffect_createTrailFromPoints_FUN_004c90c0 ; 00413336
-        ;   XREF to: 004c90c0 (UNCONDITIONAL_CALL)  ; int core_fire.cpp_CFireEffect_createTrailFromPoints_FUN_004c90c0(CFireEffect * this_ptr)
+        ;   XREF to: 004c90c0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createTrailFromPoints_FUN_004c90c0(CFireEffect * this_ptr, CVector3f * start_point, CVector3f * end_point, float size, ...)
     ADD ESP,0x1c                        ; 0041333b
     PUSH 0x66e460                       ; 0041333e | SMRGLTextureBasic_0066e460
     PUSH 0x3f000000                     ; 00413343
@@ -479,7 +479,7 @@ section .text
     MOV EAX,[0x0067a3d0]                ; 0041335e | g_CFireEffectPtr | g_CFireEffectInstance
     PUSH EAX                            ; 00413363 | g_CFireEffectInstance
     CALL core_fire.cpp_CFireEffect_createTrailFromPoints_FUN_004c90c0 ; 00413364
-        ;   XREF to: 004c90c0 (UNCONDITIONAL_CALL)  ; int core_fire.cpp_CFireEffect_createTrailFromPoints_FUN_004c90c0(CFireEffect * this_ptr)
+        ;   XREF to: 004c90c0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createTrailFromPoints_FUN_004c90c0(CFireEffect * this_ptr, CVector3f * start_point, CVector3f * end_point, float size, ...)
     ADD ESP,0x1c                        ; 00413369
     LEA EAX,[ESP + 0x78]                ; 0041336c
         ;   Label: LAB_0041336c

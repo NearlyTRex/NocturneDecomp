@@ -37,7 +37,7 @@ CBoundingBox3D * __cdecl CTurret::getBoundingBox(CTurret *this_ptr,CBoundingBox3
 
 // Original: core_turret.cpp_CTurret_getCurFrame_FUN_005e2b30
 // Address: 005e2b30
-float __cdecl CTurret::getCurFrame(CTurret *this_ptr);
+float __cdecl CTurret::getCurFrame(CTurret *this_ptr,int model_index);
 
 // Original: core_turret.cpp_CTurret_archive_FUN_005e2c40
 // Address: 005e2c40

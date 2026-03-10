@@ -459,7 +459,7 @@ LAB_004e6a5f:
             local_1f4 = 0.0;
             if ((((this_ptr->base).base.hit_points < (float)25) && (cVar19 != '\0')) &&
                (this_ptr->dark_waypoint == (CDemonActor *)0x0)) {
-              core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004e63d0(this_ptr);
+              core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004e63d0(this_ptr,delta_time);
             }
             local_30 = &(this_ptr->base).base.model.motion_controller;
             pCVar14 = this_ptr->dark_waypoint;

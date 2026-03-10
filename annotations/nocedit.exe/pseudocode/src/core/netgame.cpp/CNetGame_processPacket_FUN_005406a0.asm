@@ -228,7 +228,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00540806
     MOVSD ES:EDI,ESI                    ; 00540807
     CALL core_netgame.cpp_CNetGame_send_FUN_005411c0 ; 00540808
-        ;   XREF to: 005411c0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_send_FUN_005411c0(CNetGame * this_ptr, int player_index)
+        ;   XREF to: 005411c0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_send_FUN_005411c0(CNetGame * this_ptr, int player_index, SNetPacketHeader * packet)
     ADD ESP,0xc                         ; 0054080d
     MOV EAX,dword ptr [EBP + 0x14]      ; 00540810
     MOV EAX,dword ptr [EAX + 0x114]     ; 00540813
@@ -688,7 +688,7 @@ section .text
     PUSH ECX                            ; 00540cbe
     PUSH EDX                            ; 00540cbf
     CALL core_netgame.cpp_CNetGame_send_FUN_005411c0 ; 00540cc0
-        ;   XREF to: 005411c0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_send_FUN_005411c0(CNetGame * this_ptr, int player_index)
+        ;   XREF to: 005411c0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_send_FUN_005411c0(CNetGame * this_ptr, int player_index, SNetPacketHeader * packet)
     MOV EDI,dword ptr [0x02f7c8c0]      ; 00540cc5 | g_RemoteSyncStage
     MOV EAX,dword ptr [ESI + 0x5]       ; 00540ccb
     ADD ESP,0xc                         ; 00540cce
@@ -879,7 +879,7 @@ section .text
     PUSH EDX                            ; 00540e9e
     PUSH EAX                            ; 00540e9f
     CALL core_netgame.cpp_CNetGame_send_FUN_005411c0 ; 00540ea0
-        ;   XREF to: 005411c0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_send_FUN_005411c0(CNetGame * this_ptr, int player_index)
+        ;   XREF to: 005411c0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_send_FUN_005411c0(CNetGame * this_ptr, int player_index, SNetPacketHeader * packet)
     ADD ESP,0xc                         ; 00540ea5
     MOV ESP,EBP                         ; 00540ea8
     POP EBP                             ; 00540eaa

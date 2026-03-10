@@ -453,7 +453,7 @@ int __cdecl CFireEffect::allocateToss(CFireEffect *this_ptr,int toss_type,CVecto
 
 // Original: core_fire.cpp_CFireEffect_createCrater_FUN_004c8ea0
 // Address: 004c8ea0
-void __cdecl CFireEffect::createCrater(CFireEffect *this_ptr);
+void __cdecl CFireEffect::createCrater(CFireEffect *this_ptr,CVector3f *position,float radius);
 
 // Original: core_fire.cpp_CFireEffect_createGunFlames_FUN_004c8ef0
 // Address: 004c8ef0
@@ -469,15 +469,15 @@ void __cdecl CFireEffect::createLightningBoltDirectional(CFireEffect *this_ptr,C
 
 // Original: core_fire.cpp_CFireEffect_createTrailSegment_FUN_004c9060
 // Address: 004c9060
-int __cdecl CFireEffect::createTrailSegment(CFireEffect *this_ptr);
+void __cdecl CFireEffect::createTrailSegment(CFireEffect *this_ptr,CVector3f *position,float size,float alpha,float lifetime,SMRGLTextureBasic *texture_ptr);
 
 // Original: core_fire.cpp_CFireEffect_createTrailFromPoints_FUN_004c90c0
 // Address: 004c90c0
-int __cdecl CFireEffect::createTrailFromPoints(CFireEffect *this_ptr);
+void __cdecl CFireEffect::createTrailFromPoints(CFireEffect *this_ptr,CVector3f *start_point,CVector3f *end_point,float size,float alpha,float lifetime,SMRGLTextureBasic *texture_ptr);
 
 // Original: core_fire.cpp_CFireEffect_createShell_FUN_004c91e0
 // Address: 004c91e0
-void __cdecl CFireEffect::createShell(CFireEffect *this_ptr);
+void __cdecl CFireEffect::createShell(CFireEffect *this_ptr,CVector3f *position,CVector3f *euler_angles,CVector3f *velocity,CKeyFramedModel *model_ptr);
 
 // Original: core_fire.cpp_CFireEffect_createPopcorn_FUN_004c9240
 // Address: 004c9240

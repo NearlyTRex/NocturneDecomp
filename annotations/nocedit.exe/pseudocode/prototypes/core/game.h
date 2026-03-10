@@ -45,7 +45,7 @@ void __cdecl CGame::clearOverlay(CGame *this_ptr);
 
 // Original: core_game.cpp_drawHealthBar_FUN_004d7fa0
 // Address: 004d7fa0
-void __cdecl drawHealthBar(void);
+void __cdecl drawHealthBar(int x1,int y1,int x2,int y2,float fill_percent);
 
 // Original: core_game.cpp_CGame_renderOverlay_FUN_004d8040
 // Address: 004d8040
@@ -113,11 +113,11 @@ void __cdecl pollKeyStateOnChange(void);
 
 // Original: core_game.cpp_pollKeyEdgeTrigger_FUN_004dc2a0
 // Address: 004dc2a0
-void __cdecl pollKeyEdgeTrigger(void);
+void __cdecl pollKeyEdgeTrigger(int key_index,uint *out_state);
 
 // Original: core_game.cpp_rampControlAxis_FUN_004dc2d0
 // Address: 004dc2d0
-void __cdecl rampControlAxis(void);
+void __cdecl rampControlAxis(int negative_key,int positive_key,float *axis_value,float ramp_time,float max_value);
 
 // Original: core_game.cpp_dampControlAxis_FUN_004dc370
 // Address: 004dc370
@@ -145,7 +145,7 @@ int __cdecl checkCheatCode(char *cheat_string);
 
 // Original: core_game.cpp_giveHeroWeapon_FUN_004dd870
 // Address: 004dd870
-void __cdecl giveHeroWeapon(char *p1);
+void __cdecl giveHeroWeapon(char *class_name);
 
 // Original: core_game.cpp_giveHeroWeaponAmmo_FUN_004dd930
 // Address: 004dd930
@@ -153,11 +153,11 @@ void __cdecl giveHeroWeaponAmmo(char *p1,EAmmoType p3);
 
 // Original: core_game.cpp_checkCheatAndGiveWeapon_FUN_004dd9d0
 // Address: 004dd9d0
-void __cdecl checkCheatAndGiveWeapon(void);
+void __cdecl checkCheatAndGiveWeapon(char *cheat_code,char *class_name,char *message);
 
-// Original: core_game.cpp_CGame_scaleBoneRecursive_FUN_004dda80
+// Original: core_game.cpp_scaleBoneRecursive_FUN_004dda80
 // Address: 004dda80
-void __cdecl CGame::scaleBoneRecursive(CGame *this_ptr);
+void __cdecl scaleBoneRecursive(CDeformableModelInstance *model_instance,CSkeleton *skeleton,float scale_factor,int bone_index);
 
 // Original: core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0
 // Address: 004ddaf0
@@ -213,7 +213,7 @@ void __cdecl CGame::loadGame(CGame *this_ptr,char *save_filename,int load_mode);
 
 // Original: core_game.cpp_disableUnavailableChapters_FUN_004e1c30
 // Address: 004e1c30
-void __cdecl disableUnavailableChapters(void);
+void __cdecl disableUnavailableChapters(CPickList *pick_list,int chapter_index);
 
 // Original: core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0
 // Address: 004e1cb0
@@ -221,7 +221,7 @@ void __cdecl CGame::showChapterSelect(CGame *this_ptr,int unknown);
 
 // Original: core_game.cpp_CGame_displayBitmap_FUN_004e2890
 // Address: 004e2890
-void __cdecl CGame::displayBitmap(CGame *this_ptr);
+void __cdecl CGame::displayBitmap(CGame *this_ptr,char *filename,int width,int height);
 
 // Original: core_game.cpp_CGame_showFullscreenBitmap_FUN_004e2910
 // Address: 004e2910
@@ -245,7 +245,7 @@ void __cdecl beginProfileTimer(void);
 
 // Original: core_game.cpp_endProfileTimer_FUN_004e3110
 // Address: 004e3110
-void __cdecl endProfileTimer(void);
+void __cdecl endProfileTimer(char *timer_name);
 
 // Original: core_game.cpp_CGame_process_FUN_004e3190
 // Address: 004e3190

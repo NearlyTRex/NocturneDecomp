@@ -61,7 +61,7 @@ int __cdecl CPathMap::findPathWithRetry(CPathMap *this_ptr,CVector3f *dest_posit
 
 // Original: core_path.cpp_renderGridQuad_FUN_00547dd0
 // Address: 00547dd0
-void __cdecl renderGridQuad(int grid_x,int grid_y,int grid_z,int color,int fog,float w_recip);
+void __cdecl renderGridQuad(int grid_x,int grid_y,int grid_z,int red,int green,int blue,int alpha);
 
 // Original: core_path.cpp_CPathMap_renderPathMap_FUN_00547fc0
 // Address: 00547fc0

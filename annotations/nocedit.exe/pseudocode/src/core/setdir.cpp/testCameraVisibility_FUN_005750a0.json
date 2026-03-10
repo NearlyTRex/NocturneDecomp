@@ -1,0 +1,176 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 128,
+    "complexity_score": 36,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 2,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 36,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 164
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005750a0",
+    "address_range": [
+      [
+        "005750a0",
+        "005751c8"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_setdir.cpp_testCameraVisibility_FUN_005750a0",
+    "signature": "float __cdecl core_setdir_cpp_testCameraVisibility_FUN_005750a0(CDemonActor *actor,CVector3i *bbox_vertices,SMRGLHeaderPrimitive *primitives,int camera_index,C3DSCamera *camera,float radius)"
+  },
+  "function_calls": [
+    {
+      "addr": "00574ba0",
+      "is_variadic": false,
+      "name": "core_setdir.cpp_CZThumb_calculateActorVisibility_FUN_00574ba0"
+    },
+    {
+      "addr": "00585970",
+      "is_variadic": false,
+      "name": "core_setutil.cpp_C3DSCamera_testSphereInFrustum_FUN_00585970"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006629d4",
+      "name": "g_VDCameraDistanceRadius",
+      "type": "float",
+      "value": "200"
+    },
+    {
+      "addr": "03347108",
+      "name": "g_CZThumbPool",
+      "type": "CZThumb[1500]",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 6,
+    "estimated_params": 6
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.723214285714286,
+    "instruction_count": 112,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 11,
+      "BOOL_OR": 2,
+      "BRANCH": 1,
+      "CALL": 3,
+      "CBRANCH": 5,
+      "COPY": 226,
+      "FLOAT2FLOAT": 12,
+      "FLOAT_ADD": 3,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_MULT": 4,
+      "FLOAT_NAN": 2,
+      "FLOAT_SUB": 3,
+      "INT_ADD": 57,
+      "INT_AND": 68,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 40,
+      "INT_LEFT": 8,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 9,
+      "INT_OR": 15,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 9,
+      "INT_SLESS": 23,
+      "INT_SUB": 25,
+      "INT_XOR": 4,
+      "INT_ZEXT": 4,
+      "LOAD": 39,
+      "POPCOUNT": 19,
+      "RETURN": 3,
+      "STORE": 29
+    },
+    "pcode_op_count": 641
+  },
+  "stack_frame": {
+    "frame_size": 64,
+    "local_size": 40,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "actor",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonActor *"
+      },
+      {
+        "is_param": true,
+        "name": "bbox_vertices",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3i *"
+      },
+      {
+        "is_param": true,
+        "name": "primitives",
+        "offset": 12,
+        "size": 4,
+        "type": "SMRGLHeaderPrimitive *"
+      },
+      {
+        "is_param": true,
+        "name": "camera_index",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "camera",
+        "offset": 20,
+        "size": 4,
+        "type": "C3DSCamera *"
+      },
+      {
+        "is_param": true,
+        "name": "radius",
+        "offset": 24,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": []
+}

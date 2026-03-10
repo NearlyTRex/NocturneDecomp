@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_event_cpp_CRuleList_remove_FUN_004b17c0(CRuleList *this_ptr)
+; void __cdecl core_event_cpp_CRuleList_remove_FUN_004b17c0(CRuleList *this_ptr,int index)
 ;
 ; Parameters:
 ; CRuleList *      Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   index
 ;
 ; XREF[1]:
 ;   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 at 0040fe51

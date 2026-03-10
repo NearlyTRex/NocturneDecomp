@@ -3,6 +3,7 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "system/stdio.h"
+#include "system/time.h"
 #include "types/classes/CActorPropertyList.h"
 #include "types/classes/CBoundingBox3D.h"
 #include "types/classes/CBulletHole.h"
@@ -43,7 +44,7 @@ int __cdecl core_event_cpp_CEventList_findPersistentEvent_FUN_004b0860(CEventLis
 int __cdecl core_event_cpp_CEventList_findGameFlag_FUN_004b08b0(CEventList *this_ptr,char *name);
 int __cdecl core_event_cpp_CEventList_findTimer_FUN_004b0900(CEventList *this_ptr,char *name);
 int __cdecl core_event_cpp_CEventList_findCounter_FUN_004b0950(CEventList *this_ptr,char *name);
-void __cdecl core_event_cpp_CEventList_setActorVariable_FUN_004b09a0(CEventList *this_ptr);
+void __cdecl core_event_cpp_CEventList_setActorVariable_FUN_004b09a0(CEventList *this_ptr,char *var_name,CDemonActor *actor);
 CDemonActor * __cdecl core_event_cpp_CEventList_getActorByVarName_FUN_004b0b80(CEventList *this_ptr,char *name);
 int __cdecl core_event_cpp_CEventList_findActorVariable_FUN_004b0bf0(CEventList *this_ptr,char *name);
 uint __cdecl core_event_cpp_CEventList_getSfxHandle_FUN_004b0c40(CEventList *this_ptr,char *name);
@@ -55,8 +56,8 @@ int __cdecl core_event_cpp_isValidIdentifierChar_FUN_004b0f90(int ch);
 int __cdecl core_event_cpp_CEventList_loadState_FUN_004b0fc0(CEventList *this_ptr,_FILE *file_handle);
 int __cdecl core_event_cpp_CEventList_saveState_FUN_004b1380(CEventList *this_ptr,_FILE *file_handle);
 void __cdecl core_event_cpp_CRuleList_clear_FUN_004b1670(CRuleList *this_ptr);
-void __cdecl core_event_cpp_CRuleList_insert_FUN_004b1680(CRuleList *this_ptr);
-void __cdecl core_event_cpp_CRuleList_remove_FUN_004b17c0(CRuleList *this_ptr);
+void __cdecl core_event_cpp_CRuleList_insert_FUN_004b1680(CRuleList *this_ptr,int index,char *condition,char *event);
+void __cdecl core_event_cpp_CRuleList_remove_FUN_004b17c0(CRuleList *this_ptr,int index);
 int __cdecl core_event_cpp_CRuleList_findFirst_FUN_004b1890(CRuleList *this_ptr);
 int __cdecl core_event_cpp_CRuleList_evaluateAndRun_FUN_004b18e0(CRuleList *this_ptr);
 float __cdecl core_event_cpp_getVectorDistance_FUN_004b1930(CVector3f *a,CVector3f *b);
@@ -84,8 +85,8 @@ void __cdecl engine_fileio_cpp_formatSystemError_FUN_004b1fe0(char *dest_buffer)
 char * __cdecl engine_fileio_cpp_copyFileWithProgress_FUN_004b2030(_FILE *source_file,_FILE *dest_file,char *source_filename,char *dest_filename, int file_size_bytes);
 _FILE * __cdecl engine_fileio_cpp_openFileWithRetry_FUN_004b2200(char *filename,char *mode);
 int __cdecl engine_fileio_cpp_parseTimestampRecord_FUN_004b2270(char *input_string,STimestampRecord *output_record);
-int __cdecl engine_fileio_cpp_readTimestampFile_FUN_004b23a0(_FILE *file,STimestampRecord **records,int *count);
-int __cdecl engine_fileio_cpp_findMaxFieldInTimestampFile_FUN_004b2640(char *filename);
+int __cdecl engine_fileio_cpp_readTimestampFile_FUN_004b23a0(_FILE *file_handle,STimestampRecord **records,char *directory,char *filename);
+int __cdecl engine_fileio_cpp_findMaxFieldInTimestampFile_FUN_004b2640(char *directory,char *filename);
 int __cdecl engine_fileio_cpp_logOnAsVersionControlUser_FUN_004b2770(void);
 void __cdecl engine_fileio_cpp_logOffVersionControl_FUN_004b2830(void);
 void __cdecl engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860(CCheckOutList *this_ptr);
@@ -101,9 +102,9 @@ int __cdecl engine_fileio_cpp_copyFileTimestamp_FUN_004b31e0(char *source_file,c
 int __cdecl engine_fileio_cpp_getLatestFileFromRepository_FUN_004b3220(char *base_directory,char *filename);
 int __cdecl engine_fileio_cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0(CCheckOutItem *this_ptr,void *unused_param);
 int __cdecl engine_fileio_cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3920(CCheckOutItem *this_ptr,char *filename);
-int __cdecl engine_fileio_cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50(CCheckOutItem *this_ptr,char *filename_out,char *out_buffer,char *wildcard_pattern, char *dialog_title);
+int __cdecl engine_fileio_cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50(CCheckOutItem *this_ptr,char *preselected_filename,char *out_buffer, char *dialog_title,char *wildcard_pattern);
 void __cdecl engine_fileio_cpp_CCheckOutItem_revert_FUN_004b41c0(CCheckOutItem *this_ptr,char *output_buffer);
-int __cdecl engine_fileio_cpp_CCheckOutItem_processFiles_FUN_004b4220(CCheckOutItem *this_ptr,int operation_mode,char *filename);
+int __cdecl engine_fileio_cpp_CCheckOutItem_processFiles_FUN_004b4220(CCheckOutItem *this_ptr,char *filename);
 int __cdecl engine_fileio_cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030(CCheckOutItem *this_ptr,char *file_pattern,char *output_filename_buffer);
 void __cdecl engine_fileio_cpp_remountAllPods_FUN_004b5350(void);
 CFileManager * __cdecl engine_fileio_cpp_CFileManager_ctor_FUN_004b53a0(CFileManager *this_ptr);
@@ -133,7 +134,7 @@ void __cdecl engine_fileio_cpp_CFileManager_writePodConfigFile_FUN_004ba620(CFil
 int __cdecl engine_fileio_cpp_CFileManager_findPodInList_FUN_004ba6c0(CFileManager *this_ptr,CStrList *pod_list,char *target_filename);
 int __cdecl engine_fileio_cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740(CFileManager *this_ptr,CCheckOutItem *checkout_item,_FILE *optional_pod_file);
 int __cdecl engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00(CFileManager *this_ptr,char *checkout_item_name,char *timestamp_file, char *pod_filename);
-int __cdecl engine_fileio_cpp_CFileManager_undoCheckout_FUN_004bc2b0(CFileManager *this_ptr,CCheckOutItem *checkout_item);
+int __cdecl engine_fileio_cpp_CFileManager_undoCheckout_FUN_004bc2b0(CFileManager *this_ptr,CCheckOutItem *checkout_item,char *source_path);
 void __cdecl engine_fileio_cpp_CFileManager_setVersionControlDirectory_FUN_004bc5a0(CFileManager *this_ptr,char *directory);
 void __cdecl engine_fileio_cpp_CFileManager_setVersionControlCredentials_FUN_004bc5d0(CFileManager *this_ptr,char *network_username,char *password,char *domain);
 void __cdecl engine_fileio_cpp_synchronizeFilesToDirectory_FUN_004bc650(_FILE *file_list_output,char *source_directory,char *file_pattern, char *dest_directory);
@@ -144,7 +145,7 @@ int __cdecl engine_fileio_cpp_CFileManager_createPodConfigWizard_FUN_004bccf0(CF
 int __cdecl engine_fileio_cpp_logOnAsVersionControlUser_FUN_004b2770(void);
 void __cdecl engine_fileio_cpp_logOffVersionControl_FUN_004b2830(void);
 void __cdecl engine_fileio_cpp_CFileManager_managePodMounts_FUN_004bcec0(CFileManager *this_ptr);
-void __cdecl engine_fileio_cpp_CFileManager_removeAuditRecords_FUN_004bd190(CFileManager *this_ptr,char *pod_file_path);
+void __cdecl engine_fileio_cpp_CFileManager_removeAuditRecords_FUN_004bd190(CFileManager *this_ptr,char *pod_file_path,time_t cutoff_timestamp);
 CCheckOutList * __cdecl engine_fileio_cpp_CCheckOutList_ctor_FUN_004bd710(CCheckOutList *this_ptr);
 CCheckOutList * __cdecl engine_fileio_cpp_CCheckOutList_dtor_FUN_004bd730(CCheckOutList *this_ptr,uint flags);
 void __cdecl core_fileman_cpp_preprocessMusicFiles_FUN_004bd750(char *source_directory);

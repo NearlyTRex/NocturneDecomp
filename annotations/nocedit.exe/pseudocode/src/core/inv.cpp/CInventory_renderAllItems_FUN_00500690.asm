@@ -689,7 +689,7 @@ section .text
     PUSH EAX                            ; 00500e6d
     PUSH 0x2dcd6dc                      ; 00500e6e | g_HealthBar1Bitmap
     CALL engine_alphabit.cpp_CAlphaBitmap_render_FUN_00410b00 ; 00500e73
-        ;   XREF to: 00410b00 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_render_FUN_00410b00(CAlphaBitmap * this_ptr, int dest_y, int dest_x, int left_x, ...)
+        ;   XREF to: 00410b00 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_render_FUN_00410b00(CAlphaBitmap * this_ptr, int dest_x, int dest_y, int left_x, ...)
     ADD ESP,0x20                        ; 00500e78
     PUSH ESI                            ; 00500e7b
     PUSH 0x4                            ; 00500e7c

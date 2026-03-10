@@ -29,7 +29,7 @@
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_004c79d0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
-;   core_werewolf.cpp_CWerewolf_FUN_005f11e0
+;   core_werewolf.cpp_CWerewolf_playHowl_FUN_005f11e0
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
 ;   sound_sndmain.cpp_killSfx_FUN_005a9c40
 ;
@@ -138,8 +138,8 @@ section .text
     RET                                 ; 005f1bd9
     PUSH ESI                            ; 005f1bda
         ;   Label: LAB_005f1bda
-    CALL core_werewolf.cpp_CWerewolf_FUN_005f11e0 ; 005f1bdb
-        ;   XREF to: 005f11e0 (UNCONDITIONAL_CALL)  ; void core_werewolf.cpp_CWerewolf_FUN_005f11e0(CWerewolf * this_ptr)
+    CALL core_werewolf.cpp_CWerewolf_playHowl_FUN_005f11e0 ; 005f1bdb
+        ;   XREF to: 005f11e0 (UNCONDITIONAL_CALL)  ; void core_werewolf.cpp_CWerewolf_playHowl_FUN_005f11e0(CWerewolf * this_ptr)
     ADD ESP,0x4                         ; 005f1be0
     PUSH 0x1                            ; 005f1be3
     PUSH 0x16                           ; 005f1be5

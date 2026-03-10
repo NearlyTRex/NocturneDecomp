@@ -121,20 +121,20 @@
   },
   "complexity": {
     "assembly_lines": 2062,
-    "complexity_score": 1316,
+    "complexity_score": 1338,
     "cross_reference_count": 3,
     "function_call_count": 31,
     "global_count": 44,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 756,
-    "suspect_count": 54,
+    "pseudocode_lines": 758,
+    "suspect_count": 56,
     "suspect_types": [
       "pointer_cast",
       "unknown_field",
       "unnamed_param",
       "unresolved_funcptr"
     ],
-    "total_lines": 2818
+    "total_lines": 2820
   },
   "cross_references": [
     {
@@ -1417,7 +1417,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 672,
+      "line": 588,
+      "match": "param1",
+      "severity": "mild",
+      "text": "((this_ptr->data).v_rulelist_ptr,(this_ptr->param1).v_int);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 673,
       "match": "param1",
       "severity": "mild",
       "text": "if (pCVar5->list_size <= (this_ptr->param1).v_int) {",
@@ -1425,7 +1433,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 676,
+      "line": 675,
+      "match": "param1",
+      "severity": "mild",
+      "text": "(pCVar5,(this_ptr->param1).v_int,acStack_1d9 + 1,local_175 + 1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 678,
       "match": "param1",
       "severity": "mild",
       "text": "pacVar18 = pCVar5->conditions + (this_ptr->param1).v_int;",
@@ -1433,7 +1449,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 707,
+      "line": 709,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&SPropertyFlag_ARRAY_0066e30c[0].mask + iVar20)) != 0) {",
@@ -1441,7 +1457,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 712,
+      "line": 714,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&SPropertyFlag_ARRAY_0066e30c[0].name + iVar20),pcVar7);",
@@ -1449,7 +1465,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 745,
+      "line": 747,
       "match": "(char *)((int)",
       "severity": "mild",
       "text": "pcVar12 = (char *)((int)((this_ptr->data).v_dfm_ptr)->transformed_vertices +",
@@ -1457,7 +1473,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 746,
+      "line": 748,
       "match": "param1",
       "severity": "mild",
       "text": "(this_ptr->param1).v_int * 100 + 0x1a0);",

@@ -12,6 +12,8 @@ void __cdecl core_charactr_cpp_CCharacter_dismember_FUN_0042b9e0(CCharacter *thi
   CDeformableModel *pCVar1;
   CBoundingBox3D *pCVar2;
   int part_index;
+  int in_stack_00000010;
+  CVector3f *initial_velocity;
   float local_b0;
   CMatrix3x3f local_ac;
   CBoundingBox3D local_84;
@@ -40,6 +42,7 @@ void __cdecl core_charactr_cpp_CCharacter_dismember_FUN_0042b9e0(CCharacter *thi
       part_index = 0;
       if (0 < local_24) {
         do {
+          initial_velocity = impact_point;
           if ((impact_point != (CVector3f *)0x0) && (0.0 < local_b0)) {
             core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_3c,impact_point)
             ;
@@ -56,8 +59,10 @@ void __cdecl core_charactr_cpp_CCharacter_dismember_FUN_0042b9e0(CCharacter *thi
             local_6c.y = 0.0;
             local_1c = local_6c.z;
             core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0(&local_ac,&local_48,&local_6c);
+            initial_velocity = &local_48;
           }
-          core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0(this_ptr,part_index);
+          core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0
+                    (this_ptr,part_index,initial_velocity,in_stack_00000010);
           part_index = part_index + 1;
         } while (part_index < local_24);
       }

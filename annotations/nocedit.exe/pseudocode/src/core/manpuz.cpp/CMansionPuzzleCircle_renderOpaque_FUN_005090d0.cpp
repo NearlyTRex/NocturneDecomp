@@ -26,8 +26,8 @@ int __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderOpaque_FUN_005090d0(CMans
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[1000].projected_vertex,&CStack_14);
     iVar2 = 0;
     do {
-      core_manpuz_cpp_CMansionPuzzleCircle_FUN_00509bf0(this_ptr);
-      core_manpuz_cpp_CMansionPuzzleCircle_FUN_00509d50(this_ptr);
+      core_manpuz_cpp_CMansionPuzzleCircle_renderPanel_FUN_00509bf0(this_ptr,iVar2);
+      core_manpuz_cpp_CMansionPuzzleCircle_renderGem_FUN_00509d50(this_ptr,iVar2);
       iVar2 = iVar2 + 1;
     } while (iVar2 < 0xc);
     if ((g_CDemonMissionPtr->is_in_editor != 0) &&
@@ -35,13 +35,13 @@ int __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderOpaque_FUN_005090d0(CMans
        iVar2 == 0)) {
       iVar2 = 0;
       do {
-        core_manpuz_cpp_CMansionPuzzleCircle_FUN_00509c60(this_ptr);
+        core_manpuz_cpp_CMansionPuzzleCircle_renderEmitter_FUN_00509c60(this_ptr,iVar2);
         iVar2 = iVar2 + 1;
       } while (iVar2 < 0xc);
     }
     iVar2 = 0;
     do {
-      core_manpuz_cpp_CMansionPuzzleCircle_FUN_0050a1f0(this_ptr);
+      core_manpuz_cpp_CMansionPuzzleCircle_renderReflector_FUN_0050a1f0(this_ptr,iVar2);
       iVar2 = iVar2 + 1;
     } while (iVar2 < 2);
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(&this_ptr->base);

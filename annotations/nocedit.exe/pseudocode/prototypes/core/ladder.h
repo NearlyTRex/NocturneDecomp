@@ -43,13 +43,13 @@ void __cdecl CLadder::archive(CLadder *this_ptr);
 // Address: 00502a40
 ECollisionType __cdecl CLadder::getCollisionType(CLadder *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_ladder.cpp_CLadder_FUN_00502a70
+// Original: core_ladder.cpp_CLadder_updatePositionFromMaster_FUN_00502a70
 // Address: 00502a70
-void __cdecl CLadder(CLadder *this_ptr);
+void __cdecl CLadder::updatePositionFromMaster(CLadder *this_ptr);
 
-// Original: core_ladder.cpp_CLadder_FUN_00502b80
+// Original: core_ladder.cpp_CLadder_cacheRelativePosition_FUN_00502b80
 // Address: 00502b80
-void __cdecl CLadder(CLadder *this_ptr);
+void __cdecl CLadder::cacheRelativePosition(CLadder *this_ptr);
 
 // Original: core_ladder.cpp_CLadder_getGroundType_FUN_00502c90
 // Address: 00502c90

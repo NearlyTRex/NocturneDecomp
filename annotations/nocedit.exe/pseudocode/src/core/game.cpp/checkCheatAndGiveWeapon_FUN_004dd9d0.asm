@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_game_cpp_checkCheatAndGiveWeapon_FUN_004dd9d0(void)
+; void __cdecl core_game_cpp_checkCheatAndGiveWeapon_FUN_004dd9d0(char *cheat_code,char *class_name,char *message)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   cheat_code
+; char *           Stack[0x8]:4   class_name
+; char *           Stack[0xc]:4   message
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
@@ -87,7 +91,7 @@ section .text
     PUSH EBX                            ; 004dda35
     MOV byte ptr [0x02d831d8],AH        ; 004dda36 | CHAR_ARRAY_02d831d8
     CALL core_game.cpp_giveHeroWeapon_FUN_004dd870 ; 004dda3c
-        ;   XREF to: 004dd870 (UNCONDITIONAL_CALL)  ; void core_game.cpp_giveHeroWeapon_FUN_004dd870(char * p1)
+        ;   XREF to: 004dd870 (UNCONDITIONAL_CALL)  ; void core_game.cpp_giveHeroWeapon_FUN_004dd870(char * class_name)
     ADD ESP,0x4                         ; 004dda41
     MOV ESI,dword ptr [ESP + 0x24]      ; 004dda44
     PUSH 0x40a00000                     ; 004dda48

@@ -1,0 +1,117 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 51,
+    "complexity_score": 31,
+    "cross_reference_count": 2,
+    "function_call_count": 4,
+    "global_count": 1,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 31,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 82
+  },
+  "cross_references": [
+    {
+      "addr": "005fb530",
+      "from_addr": "005fb933",
+      "name": "core_zombie.cpp_CZombie_processPickup_FUN_005fb530",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005f9470",
+      "from_addr": "005f95b4",
+      "name": "core_zombie.cpp_CZombie_process_FUN_005f9470",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005fca10",
+    "address_range": [
+      [
+        "005fca10",
+        "005fca77"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_zombie.cpp_CZombie_resetChaseState_FUN_005fca10",
+    "signature": "void __cdecl core_zombie_cpp_CZombie_resetChaseState_FUN_005fca10(CZombie *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cc70",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomInt_FUN_0040cc70"
+    },
+    {
+      "addr": "0052dce0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0"
+    },
+    {
+      "addr": "0052db00",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00"
+    },
+    {
+      "addr": "0052d4f0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00658a47",
+      "name": "s_CHASE_2_00658a47",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.333333333333333,
+    "instruction_count": 39,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 1,
+      "CALL": 5,
+      "CBRANCH": 2,
+      "COPY": 25,
+      "INT_ADD": 14,
+      "INT_AND": 19,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 18,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 9,
+      "INT_SUB": 21,
+      "LOAD": 7,
+      "POPCOUNT": 9,
+      "RETURN": 2,
+      "STORE": 20
+    },
+    "pcode_op_count": 169
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CZombie *"
+      }
+    ]
+  },
+  "suspects": []
+}

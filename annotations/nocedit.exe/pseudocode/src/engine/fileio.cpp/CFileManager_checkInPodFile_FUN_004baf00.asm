@@ -143,7 +143,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x18]      ; 004baf40
     PUSH EBX                            ; 004baf43
     CALL engine_fileio.cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50 ; 004baf44
-        ;   XREF to: 004b3f50 (UNCONDITIONAL_CALL)  ; int engine_fileio.cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50(CCheckOutItem * this_ptr, char * filename_out, char * out_buffer, char * wildcard_pattern, ...)
+        ;   XREF to: 004b3f50 (UNCONDITIONAL_CALL)  ; int engine_fileio.cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50(CCheckOutItem * this_ptr, char * preselected_filename, char * out_buffer, char * dialog_title, ...)
     ADD ESP,0x14                        ; 004baf49
     TEST EAX,EAX                        ; 004baf4c
     JZ 0x004baf1f                       ; 004baf4e
@@ -246,7 +246,7 @@ section .text
     PUSH EDX                            ; 004bb081
     MOVSD.REP ES:EDI,ESI                ; 004bb082 | g_DefaultCheckOutPath | s__00679ddc
     CALL engine_fileio.cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50 ; 004bb084
-        ;   XREF to: 004b3f50 (UNCONDITIONAL_CALL)  ; int engine_fileio.cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50(CCheckOutItem * this_ptr, char * filename_out, char * out_buffer, char * wildcard_pattern, ...)
+        ;   XREF to: 004b3f50 (UNCONDITIONAL_CALL)  ; int engine_fileio.cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50(CCheckOutItem * this_ptr, char * preselected_filename, char * out_buffer, char * dialog_title, ...)
     ADD ESP,0x14                        ; 004bb089
     TEST EAX,EAX                        ; 004bb08c
     JZ 0x004bb1fa                       ; 004bb08e
@@ -583,7 +583,7 @@ section .text
     PUSH EAX                            ; 004bb431
     PUSH EBX                            ; 004bb432
     CALL engine_fileio.cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50 ; 004bb433
-        ;   XREF to: 004b3f50 (UNCONDITIONAL_CALL)  ; int engine_fileio.cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50(CCheckOutItem * this_ptr, char * filename_out, char * out_buffer, char * wildcard_pattern, ...)
+        ;   XREF to: 004b3f50 (UNCONDITIONAL_CALL)  ; int engine_fileio.cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50(CCheckOutItem * this_ptr, char * preselected_filename, char * out_buffer, char * dialog_title, ...)
     ADD ESP,0x14                        ; 004bb438
     TEST EAX,EAX                        ; 004bb43b
     JZ 0x004bb575                       ; 004bb43d
@@ -798,7 +798,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x25c8]    ; 004bb68e
     PUSH EBX                            ; 004bb695
     CALL engine_fileio.cpp_findMaxFieldInTimestampFile_FUN_004b2640 ; 004bb696
-        ;   XREF to: 004b2640 (UNCONDITIONAL_CALL)  ; int engine_fileio.cpp_findMaxFieldInTimestampFile_FUN_004b2640(char * filename)
+        ;   XREF to: 004b2640 (UNCONDITIONAL_CALL)  ; int engine_fileio.cpp_findMaxFieldInTimestampFile_FUN_004b2640(char * directory, char * filename)
     ADD ESP,0x8                         ; 004bb69b
     MOV dword ptr [ESP + 0x25b4],EAX    ; 004bb69e
     TEST EAX,EAX                        ; 004bb6a5

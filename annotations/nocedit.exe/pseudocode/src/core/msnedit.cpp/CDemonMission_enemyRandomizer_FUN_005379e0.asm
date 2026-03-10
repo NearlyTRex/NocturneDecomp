@@ -238,7 +238,7 @@ section .text
         ;   XREF to: 004a2b80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_add_FUN_004a2b80(CStrList * this_ptr, char * string_data)
     ADD ESP,0x8                         ; 00537be3
     PUSH 0x0                            ; 00537be6
-    MOV ECX,dword ptr [0x02f797e0]      ; 00537be8 | DAT_02f797e0
+    MOV ECX,dword ptr [0x02f797e0]      ; 00537be8 | INT_02f797e0
     PUSH ECX                            ; 00537bee
     PUSH 0x63bbe3                       ; 00537bef | = "Randomize speeds"
     LEA EAX,[ESP + 0x3b4]               ; 00537bf4
@@ -249,7 +249,7 @@ section .text
     TEST EAX,EAX                        ; 00537c04
     JL 0x00537c8b                       ; 00537c06
         ;   XREF to: 00537c8b (CONDITIONAL_JUMP)  ; LAB_00537c8b
-    MOV [0x02f797e0],EAX                ; 00537c0c | DAT_02f797e0
+    MOV [0x02f797e0],EAX                ; 00537c0c | INT_02f797e0
     MOV EAX,ESP                         ; 00537c11
     PUSH EAX                            ; 00537c13
     CALL shape_edittool.cpp_CPickList_ctor_FUN_004a3b90 ; 00537c14
@@ -316,7 +316,7 @@ section .text
     ADD ESP,0x8                         ; 00537cac
     JMP 0x005379f3                      ; 00537caf
         ;   XREF to: 005379f3 (UNCONDITIONAL_JUMP)  ; LAB_005379f3
-    CMP dword ptr [0x02f797e0],0x0      ; 00537cb4 | DAT_02f797e0
+    CMP dword ptr [0x02f797e0],0x0      ; 00537cb4 | INT_02f797e0
         ;   Label: LAB_00537cb4
     JZ 0x00537d5f                       ; 00537cbb
         ;   XREF to: 00537d5f (CONDITIONAL_JUMP)  ; LAB_00537d5f

@@ -17,7 +17,7 @@
 ;
 ; XREF[2]:
 ;   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0 at 005759d9
-;   core_setdir.cpp_CZThumb_testCameraVisibility_FUN_005750a0 at 0057511d
+;   core_setdir.cpp_testCameraVisibility_FUN_005750a0 at 0057511d
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030

@@ -4,13 +4,13 @@
       {
         "category": "type_error",
         "column": 3,
-        "line": 27,
+        "line": 26,
         "message": "unknown type name 'code'"
       },
       {
         "category": "format_error",
         "column": 77,
-        "line": 182,
+        "line": 183,
         "message": "format specifies type 'char *' but the argument has type 'CBaron *' [-Werror,-Wformat]"
       }
     ],
@@ -19,12 +19,12 @@
   },
   "complexity": {
     "assembly_lines": 494,
-    "complexity_score": 322,
+    "complexity_score": 321,
     "cross_reference_count": 0,
     "function_call_count": 18,
     "global_count": 19,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 232,
+    "pseudocode_lines": 231,
     "suspect_count": 7,
     "suspect_types": [
       "pointer_cast",
@@ -32,7 +32,7 @@
       "unresolved_funcptr",
       "warning_type_propagation"
     ],
-    "total_lines": 726
+    "total_lines": 725
   },
   "cross_references": [],
   "function": {
@@ -492,14 +492,14 @@
     {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 15,
-      "match": "apCStackY_1880",
+      "match": "afStackY_1880",
       "severity": "moderate",
-      "text": "CVector3f *apCStackY_1880 [1519];",
+      "text": "float afStackY_1880 [1519];",
       "type": "stack_alignment_array"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 20,
+      "line": 19,
       "match": "code *",
       "severity": "moderate",
       "text": "code *blend_callback;",
@@ -507,7 +507,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 210,
+      "line": 211,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar7 = (uint *)((int)&local_94 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);",
@@ -515,7 +515,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 211,
+      "line": 212,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar6 = (uint *)((int)&local_a4 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);",
@@ -523,7 +523,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 212,
+      "line": 213,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_94 + (uint)bVar8 * -8 + 4) =",
@@ -531,7 +531,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 213,
+      "line": 214,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_a4 + (uint)bVar8 * -8 + 4);",

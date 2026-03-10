@@ -1,12 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; _FILE * __cdecl core_ground_cpp_openFileWithExtension_FUN_004eebc0(char *base_filename,char *file_extension,char *open_mode)
+; _FILE * __cdecl core_ground_cpp_openFileWithExtension_FUN_004eebc0(char *directory,char *filename,char *new_extension,char *open_mode)
 ;
 ; Parameters:
-; char *           Stack[0x4]:4   base_filename
-; char *           Stack[0x8]:4   file_extension
-; char *           Stack[0xc]:4   open_mode
+; char *           Stack[0x4]:4   directory
+; char *           Stack[0x8]:4   filename
+; char *           Stack[0xc]:4   new_extension
+; char *           Stack[0x10]:4   open_mode
 ; Local Variables:
 ; undefined1       Stack[-0x60]:1  local_60
 ; undefined1       Stack[-0x5f]:1  local_5f

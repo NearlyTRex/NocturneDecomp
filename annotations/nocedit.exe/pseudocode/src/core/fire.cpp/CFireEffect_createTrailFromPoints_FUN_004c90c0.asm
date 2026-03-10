@@ -1,10 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_fire_cpp_CFireEffect_createTrailFromPoints_FUN_004c90c0(CFireEffect *this_ptr)
+; void __cdecl core_fire_cpp_CFireEffect_createTrailFromPoints_FUN_004c90c0(CFireEffect *this_ptr,CVector3f *start_point,CVector3f *end_point,float size,float alpha,float lifetime,SMRGLTextureBasic *texture_ptr)
 ;
 ; Parameters:
 ; CFireEffect *    Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   start_point
+; CVector3f *      Stack[0xc]:4   end_point
+; float            Stack[0x10]:4   size
+; float            Stack[0x14]:4   alpha
+; float            Stack[0x18]:4   lifetime
+; SMRGLTextureBasic * Stack[0x1c]:4   texture_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x38]:4  local_38
 ; undefined4       Stack[-0x34]:4  local_34
@@ -103,7 +109,7 @@ section .text
     PUSH EAX                            ; 004c9182
     PUSH EDI                            ; 004c9183
     CALL core_fire.cpp_CFireEffect_createTrailSegment_FUN_004c9060 ; 004c9184
-        ;   XREF to: 004c9060 (UNCONDITIONAL_CALL)  ; int core_fire.cpp_CFireEffect_createTrailSegment_FUN_004c9060(CFireEffect * this_ptr)
+        ;   XREF to: 004c9060 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createTrailSegment_FUN_004c9060(CFireEffect * this_ptr, CVector3f * position, float size, float alpha, ...)
     ADD ESP,0x18                        ; 004c9189
     INC EBX                             ; 004c918c
     FLD float ptr [ESP + 0x4]           ; 004c918d

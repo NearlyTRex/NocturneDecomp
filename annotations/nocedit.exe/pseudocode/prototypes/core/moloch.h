@@ -31,9 +31,9 @@ void __cdecl CMoloch::setup(CMoloch *this_ptr);
 // Address: 00528d20
 void __cdecl CMoloch::process(CMoloch *this_ptr,float delta_time);
 
-// Original: core_moloch.cpp_CMoloch_FUN_005293b0
+// Original: core_moloch.cpp_CMoloch_processAI_FUN_005293b0
 // Address: 005293b0
-void __cdecl CMoloch(CMoloch *this_ptr);
+void __cdecl CMoloch::processAI(CMoloch *this_ptr,float delta_time);
 
 // Original: core_moloch.cpp_CMoloch_renderOpaque_FUN_00529750
 // Address: 00529750
@@ -43,9 +43,9 @@ int __cdecl CMoloch::renderOpaque(CMoloch *this_ptr);
 // Address: 00529880
 void __cdecl CMoloch::archive(CMoloch *this_ptr);
 
-// Original: core_moloch.cpp_CMoloch_FUN_00529900
+// Original: core_moloch.cpp_CMoloch_startMorph_FUN_00529900
 // Address: 00529900
-void __cdecl CMoloch(CMoloch *this_ptr);
+void __cdecl CMoloch::startMorph(CMoloch *this_ptr);
 
 // Original: core_moloch.cpp_CMoloch_getPropertyList_FUN_00529950
 // Address: 00529950

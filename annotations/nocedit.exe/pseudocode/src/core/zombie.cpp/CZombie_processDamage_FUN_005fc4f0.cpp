@@ -20,7 +20,7 @@ void __cdecl core_zombie_cpp_CZombie_processDamage_FUN_005fc4f0(CZombie *this_pt
   char *pcVar5;
   int iVar6;
   
-  core_zombie_cpp_CZombie_FUN_005fc220(this_ptr);
+  core_zombie_cpp_CZombie_processDismemberment_FUN_005fc220(this_ptr,damage_info);
   (*(((this_ptr->base).base.base.vtable._uc)->_uc).releaseVictim)((CCharacter *)this_ptr);
   iVar4 = this_ptr->part_indices[6];
   (this_ptr->base).base.hit_points = (this_ptr->base).base.hit_points - damage_info->damage_amount;
@@ -57,7 +57,7 @@ void __cdecl core_zombie_cpp_CZombie_processDamage_FUN_005fc4f0(CZombie *this_pt
     pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                        (&this_ptr_00->motion_controller);
     if ((pSVar2->state_index != 8) && (pSVar2->state_index != 7)) {
-      core_zombie_cpp_CZombie_FUN_005fbde0(this_ptr);
+      core_zombie_cpp_CZombie_dropAndClearTarget_FUN_005fbde0(this_ptr);
       iVar4 = 6;
       if (((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[6]] == 0)
          && (((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[2]] != 0

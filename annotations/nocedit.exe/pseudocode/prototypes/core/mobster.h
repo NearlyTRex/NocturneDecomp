@@ -7,13 +7,13 @@
 // Address: 00525070
 void __cdecl staticInit(void);
 
-// Original: core_mobster.cpp_FUN_005250a0
+// Original: core_mobster.cpp_getObjectGrabPointLocal_FUN_005250a0
 // Address: 005250a0
-float * __cdecl FUN_005250a0(void);
+CVector3f * __cdecl getObjectGrabPointLocal(CVector3f *out,CDemonActor *actor);
 
-// Original: core_mobster.cpp_FUN_00525110
+// Original: core_mobster.cpp_getObjectGrabPointWorld_FUN_00525110
 // Address: 00525110
-CVector3f * __cdecl FUN_00525110(void);
+CVector3f * __cdecl getObjectGrabPointWorld(CVector3f *out,CDemonActor *actor);
 
 // Original: core_mobster.cpp_factoryFunc_FUN_005251c0
 // Address: 005251c0
@@ -31,13 +31,13 @@ CMobster * __cdecl CMobster::ctor(CMobster *this_ptr);
 // Address: 00525340
 void __cdecl CMobster::setup(CMobster *this_ptr);
 
-// Original: core_mobster.cpp_CMobster_FUN_00525650
+// Original: core_mobster.cpp_CMobster_positionOnVehicle_FUN_00525650
 // Address: 00525650
-void __cdecl CMobster(CMobster *this_ptr);
+void __cdecl CMobster::positionOnVehicle(CMobster *this_ptr);
 
-// Original: core_mobster.cpp_CMobster_FUN_00525720
+// Original: core_mobster.cpp_CMobster_dismountVehicle_FUN_00525720
 // Address: 00525720
-void __cdecl CMobster(CMobster *this_ptr);
+void __cdecl CMobster::dismountVehicle(CMobster *this_ptr);
 
 // Original: core_mobster.cpp_CMobster_process_FUN_00525840
 // Address: 00525840
@@ -47,21 +47,21 @@ void __cdecl CMobster::process(CMobster *this_ptr,float delta_time);
 // Address: 005267a0
 void __cdecl CMobster::aimTommyGun(CMobster *this_ptr,float delta_time);
 
-// Original: core_mobster.cpp_FUN_00526b00
+// Original: core_mobster.cpp_setEulerAngles_FUN_00526b00
 // Address: 00526b00
-void __cdecl FUN_00526b00(void);
+CVector3f * __cdecl setEulerAngles(CVector3f *out,float x,float z,float y);
 
 // Original: core_mobster.cpp_CMobster_getCarryObjToBodyXForm_FUN_00526b20
 // Address: 00526b20
 void __stack2_esi CMobster::getCarryObjToBodyXForm(CMobster *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
-// Original: core_mobster.cpp_CMobster_FUN_00526d90
+// Original: core_mobster.cpp_CMobster_processWeaponPickup_FUN_00526d90
 // Address: 00526d90
-int __cdecl CMobster(CMobster *this_ptr,float delta_time);
+int __cdecl CMobster::processWeaponPickup(CMobster *this_ptr,float delta_time);
 
-// Original: core_mobster.cpp_CMobster_FUN_005271c0
+// Original: core_mobster.cpp_CMobster_startFiringAttack_FUN_005271c0
 // Address: 005271c0
-void __cdecl CMobster(CMobster *this_ptr);
+void __cdecl CMobster::startFiringAttack(CMobster *this_ptr);
 
 // Original: core_mobster.cpp_CMobster_archive_FUN_00527230
 // Address: 00527230
@@ -71,9 +71,9 @@ void __cdecl CMobster::archive(CMobster *this_ptr);
 // Address: 00527360
 void __cdecl CMobster::reset(CMobster *this_ptr);
 
-// Original: core_mobster.cpp_CMobster_FUN_00527380
+// Original: core_mobster.cpp_CMobster_processDismemberment_FUN_00527380
 // Address: 00527380
-void __cdecl CMobster(CMobster *this_ptr,SDamageInfo *damage_info);
+void __cdecl CMobster::processDismemberment(CMobster *this_ptr,SDamageInfo *damage_info);
 
 // Original: core_mobster.cpp_CMobster_processDamage_FUN_00527740
 // Address: 00527740
@@ -87,17 +87,17 @@ int __cdecl CMobster::getTargetPoints(CMobster *this_ptr,CVector3f *out_points_a
 // Address: 005279d0
 ECollisionType __cdecl CMobster::getCollisionType(CMobster *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_mobster.cpp_CMobster_FUN_005279f0
+// Original: core_mobster.cpp_CMobster_playTaunt_FUN_005279f0
 // Address: 005279f0
-void __cdecl CMobster(CMobster *this_ptr,int taunt_category);
+void __cdecl CMobster::playTaunt(CMobster *this_ptr,int taunt_category);
 
 // Original: core_mobster.cpp_CMobster_getPropertyList_FUN_00527b70
 // Address: 00527b70
 void __cdecl CMobster::getPropertyList(CMobster *this_ptr,CActorPropertyList *property_list);
 
-// Original: core_mobster.cpp_CMobster_FUN_00527c30
+// Original: core_mobster.cpp_CMobster_randomize_FUN_00527c30
 // Address: 00527c30
-void __cdecl CMobster(CMobster *this_ptr);
+void __cdecl CMobster::randomize(CMobster *this_ptr);
 
 // Original: core_mobster.cpp_CMobster_addFilesToExtract_FUN_00527c40
 // Address: 00527c40

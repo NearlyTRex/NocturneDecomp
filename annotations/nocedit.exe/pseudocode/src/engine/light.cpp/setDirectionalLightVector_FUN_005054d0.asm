@@ -10,8 +10,8 @@
 ;
 ; XREF[4]:
 ;   core_texlist.cpp_CTextureList_previewTexture_FUN_005dc760 at 005dc844
+;   engine_drender.cpp_CDemonRenderer_scaleAndSetDirectionalLight_FUN_0048c6e0 at 0048c72a
 ;   engine_drender.cpp_CDemonRenderer_setLightDirection_FUN_0048c6c0 at 0048c6d0
-;   engine_drender.cpp_scaleAndSetDirectionalLight_FUN_0048c6e0 at 0048c72a
 ;   shape_design.c_showFacetPartEditor_FUN_0045f1d0 at 0045f41e
 ;
 ; Referenced Globals:

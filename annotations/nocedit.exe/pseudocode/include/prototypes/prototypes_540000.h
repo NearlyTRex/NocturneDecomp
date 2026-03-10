@@ -35,6 +35,7 @@
 #include "types/structs/SNetworkAddr.h"
 #include "types/structs/SPlayer.h"
 #include "types/structs/SPlayerControl.h"
+#include "types/structs/SSimFrame.h"
 #include "types/unions/UNetPacket.h"
 
 // =============================================================================
@@ -45,7 +46,7 @@ int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_005401e0(CNetGame *this_pt
 void __cdecl core_netgame_cpp_CNetGame_flushIncomingPackets_FUN_00540550(CNetGame *this_ptr);
 void __cdecl core_netgame_cpp_CNetGame_receivePackets_FUN_005405b0(CNetGame *this_ptr);
 void __cdecl core_netgame_cpp_CNetGame_processPacket_FUN_005406a0(CNetGame *this_ptr,SNetworkAddr *source_addr,UNetPacket *packet);
-void __cdecl core_netgame_cpp_CNetGame_send_FUN_005411c0(CNetGame *this_ptr,int player_index);
+void __cdecl core_netgame_cpp_CNetGame_send_FUN_005411c0(CNetGame *this_ptr,int player_index,SNetPacketHeader *packet);
 void __cdecl core_netgame_cpp_CNetGame_sendPacket_FUN_00541230(CNetGame *this_ptr,SNetworkAddr *dest_addr,SNetPacketHeader *packet);
 int __cdecl core_netgame_cpp_CNetGame_findPlayerByAddr_FUN_00541260(CNetGame *this_ptr,SNetworkAddr *addr);
 int __cdecl core_netgame_cpp_CNetGame_addPlayer_FUN_005412b0(CNetGame *this_ptr,SNetworkAddr *addr,char *name,int hero_number,int aim_mode);
@@ -61,7 +62,7 @@ void __cdecl core_netgame_cpp_CNetGame_sendGameSetting_FUN_00542dd0(CNetGame *th
 void __cdecl core_netgame_cpp_CNetGame_sendMyStateChanged_FUN_00542ff0(CNetGame *this_ptr);
 void __cdecl core_netgame_cpp_CNetGame_processServerFrame_FUN_00543150(CNetGame *this_ptr);
 void __cdecl core_netgame_cpp_CNetGame_processClientFrame_FUN_005435a0(CNetGame *this_ptr);
-void __cdecl core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_00543800(CNetGame *this_ptr);
+void __cdecl core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_00543800(CNetGame *this_ptr,SSimFrame *sim_frame);
 SPlayerControl * __cdecl core_netgame_cpp_CNetGame_getMyControls_FUN_005438c0(CNetGame *this_ptr);
 void __cdecl core_netgame_cpp_CNetGame_sendDisconnectNotify_FUN_00543930(CNetGame *this_ptr,SNetworkAddr *dest_addr,int payload);
 void __cdecl core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_00543970(CNetGame *this_ptr);
@@ -156,7 +157,7 @@ int __cdecl core_path_cpp_CPathMap_checkAxisAlignedPath_FUN_00546e90(CPathMap *t
 int __cdecl core_path_cpp_CPathMap_findPathToDestination_FUN_00547320(CPathMap *this_ptr,CVector3f *dest_position,CVector3f *out_euler_angles, int direction_hint);
 void __cdecl core_path_cpp_CPathMap_previewPathfinding_FUN_00547c00(CPathMap *this_ptr);
 int __cdecl core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00(CPathMap *this_ptr,CVector3f *dest_position,CVector3f *out_euler_angles, int direction_hint);
-void __cdecl core_path_cpp_renderGridQuad_FUN_00547dd0(int grid_x,int grid_y,int grid_z,int color,int fog,float w_recip);
+void __cdecl core_path_cpp_renderGridQuad_FUN_00547dd0(int grid_x,int grid_y,int grid_z,int red,int green,int blue,int alpha);
 void __cdecl core_path_cpp_CPathMap_renderPathMap_FUN_00547fc0(CPathMap *this_ptr,int depth,int red,int green,int fog);
 CPathMap * __cdecl core_path_cpp_getOrCreatePathMap_FUN_00548390(CLocation *location);
 CPathMap * __cdecl core_path_cpp_getPathMap_FUN_00548500(CLocation *location);
@@ -262,7 +263,7 @@ ECollisionType __cdecl core_platfrm_cpp_CPlatform_getCollisionType_FUN_0054e180(
 int __cdecl core_platfrm_cpp_CPlatform_allowBulletHoles_FUN_0054e1a0(CPlatform *this_ptr);
 EGroundType __cdecl core_platfrm_cpp_CPlatform_getGroundType_FUN_0054e1c0(CPlatform *this_ptr);
 int __cdecl core_platfrm_cpp_CPlatform_getBlockVirtualDirectorFlag_FUN_0054e1d0(CPlatform *this_ptr);
-void __cdecl core_platfrm_cpp_CPlatform_attachActor_FUN_0054e1e0(CPlatform *this_ptr);
+void __cdecl core_platfrm_cpp_CPlatform_attachActor_FUN_0054e1e0(CPlatform *this_ptr,CDemonActor *actor);
 void __cdecl core_platfrm_cpp_CPlatform_onActorDeleted_FUN_0054e2e0(CPlatform *this_ptr,CDemonActor *deleted_actor);
 void __cdecl core_platfrm_cpp_CPlatform_updateAttachedActors_FUN_0054e320(CPlatform *this_ptr);
 void __cdecl core_platfrm_cpp_CPlatform_propertyDisplaySlewCallback_FUN_0054e400(CPlatform *this_ptr,CActorProperty *property,char *output_buffer);

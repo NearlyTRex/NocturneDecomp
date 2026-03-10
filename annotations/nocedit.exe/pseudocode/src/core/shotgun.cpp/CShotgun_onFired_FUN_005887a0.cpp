@@ -10,6 +10,7 @@ void __cdecl core_shotgun_cpp_CShotgun_onFired_FUN_005887a0(CShotgun *this_ptr)
 
 {
   CVector3f *pCVar1;
+  CKeyFramedModel *model_ptr;
   CMatrix3x3f local_64;
   CVector3f local_3c;
   CVector3f local_30;
@@ -37,8 +38,10 @@ void __cdecl core_shotgun_cpp_CShotgun_onFired_FUN_005887a0(CShotgun *this_ptr)
     local_30.y = pCVar1->y;
     local_30.z = pCVar1->z;
   }
-  core_dmodel_cpp_loadModel_FUN_00478c00("shell.kfm");
-  core_fire_cpp_CFireEffect_createShell_FUN_004c91e0(g_CFireEffectPtr);
+  model_ptr = core_dmodel_cpp_loadModel_FUN_00478c00("shell.kfm");
+  core_fire_cpp_CFireEffect_createShell_FUN_004c91e0
+            (g_CFireEffectPtr,&(this_ptr->base).base.location.position,
+             &(this_ptr->base).base.orient.vec,&local_30,model_ptr);
   (*((this_ptr->base).base.vtable._ub)->playSound)
             ((CDemonActor *)this_ptr,"shotgun-cock.wav");
   return;

@@ -1,10 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_fire_cpp_CFireEffect_createTrailSegment_FUN_004c9060(CFireEffect *this_ptr)
+; void __cdecl core_fire_cpp_CFireEffect_createTrailSegment_FUN_004c9060(CFireEffect *this_ptr,CVector3f *position,float size,float alpha,float lifetime,SMRGLTextureBasic *texture_ptr)
 ;
 ; Parameters:
 ; CFireEffect *    Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   position
+; float            Stack[0xc]:4   size
+; float            Stack[0x10]:4   alpha
+; float            Stack[0x14]:4   lifetime
+; SMRGLTextureBasic * Stack[0x18]:4   texture_ptr
 ;
 ; XREF[1]:
 ;   core_fire.cpp_CFireEffect_createTrailFromPoints_FUN_004c90c0 at 004c9184

@@ -164,7 +164,7 @@
 ;
 ; XREF[3]:
 ;   core_emitter.cpp_CEmitter_renderOpaque_FUN_004a8860 at 004a89bb
-;   core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050a8d0 at 0050ab13
+;   core_manpuz.cpp_CMansionPuzzleCircle_updateLaser_FUN_0050a8d0 at 0050ab13
 ;   core_weapon.cpp_CWeapon_fireProjectile_FUN_005ee830 at 005ee9c5
 ;
 ; Referenced Globals:
@@ -912,6 +912,7 @@ section .text
     PUSH EDX                            ; 004c8b12
     CALL core_fire.cpp_CFireEffect_createLaserSegment_FUN_004c7eb0 ; 004c8b13
         ;   XREF to: 004c7eb0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLaserSegment_FUN_004c7eb0(CFireEffect * this_ptr, CVector3f * origin, CVector3f * hit_position, float beam_width, ...)
+        ;   Label: prt_4c8b13_486ab265
     ADD ESP,0x28                        ; 004c8b18
     LEA ESP,[EBP + 0x6e]                ; 004c8b1b
         ;   Label: LAB_004c8b1b

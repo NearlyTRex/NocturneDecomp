@@ -105,7 +105,7 @@ int __cdecl core_set_cpp_CDemonSet_gatherVisibleLights_FUN_0056d4a0(CDemonSet *t
         if (((*(CDemonCamera **)((int)g_DynamicLights + iVar9))[1].rect_array[0x61].right != 0) &&
            (iVar6 = core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180
                               (*(CDemonCamera **)((int)g_DynamicLights + iVar9),position,orientation
-                               ,aabb_min), iVar6 != 0)) {
+                               ,aabb_min,aabb_max), iVar6 != 0)) {
           g_PrimaryDirectionalLights[g_PrimaryDirectionalLightCount] =
                *(CDemonLight **)((int)g_DynamicLights + iVar9);
           g_PrimaryDirectionalLightCount = g_PrimaryDirectionalLightCount + 1;
@@ -122,7 +122,7 @@ int __cdecl core_set_cpp_CDemonSet_gatherVisibleLights_FUN_0056d4a0(CDemonSet *t
         if (((*(CDemonCamera **)((int)g_SpotLightList + iVar9))[1].rect_array[0x61].right != 0) &&
            (iVar6 = core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180
                               (*(CDemonCamera **)((int)g_SpotLightList + iVar9),position,orientation
-                               ,aabb_min), iVar6 != 0)) {
+                               ,aabb_min,aabb_max), iVar6 != 0)) {
           g_SecondaryDirectionalLights[g_SecondaryDirectionalLightCount] =
                *(CDemonLight **)((int)g_SpotLightList + iVar9);
           g_SecondaryDirectionalLightCount = g_SecondaryDirectionalLightCount + 1;

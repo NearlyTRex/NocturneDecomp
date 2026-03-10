@@ -1,0 +1,110 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 31,
+    "complexity_score": 17,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 3,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 17,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 48
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005fcf80",
+    "address_range": [
+      [
+        "005fcf80",
+        "005fcfb5"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_3d.c_findRasterizerEdge_FUN_005fcf80",
+    "signature": "SSoftwareEdge * __cdecl engine_3d_c_findRasterizerEdge_FUN_005fcf80(int y_start,SSoftwareEdge *exclude_edge)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "03f9ad5c",
+      "name": "g_RasterizerEdgeCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f9ad60",
+      "name": "g_RasterizerEdgeArray",
+      "type": "SSoftwareEdge[16]",
+      "value": null
+    },
+    {
+      "addr": "03f9ada8",
+      "name": "g_RasterizerEdgeArray[1].base.y_min",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.0,
+    "instruction_count": 22,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 1,
+      "CBRANCH": 4,
+      "COPY": 20,
+      "INT_ADD": 7,
+      "INT_AND": 17,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 16,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 8,
+      "INT_SUB": 5,
+      "INT_XOR": 2,
+      "LOAD": 6,
+      "POPCOUNT": 8,
+      "RETURN": 1,
+      "STORE": 2
+    },
+    "pcode_op_count": 110
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "y_start",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "exclude_edge",
+        "offset": 8,
+        "size": 4,
+        "type": "SSoftwareEdge *"
+      }
+    ]
+  },
+  "suspects": []
+}

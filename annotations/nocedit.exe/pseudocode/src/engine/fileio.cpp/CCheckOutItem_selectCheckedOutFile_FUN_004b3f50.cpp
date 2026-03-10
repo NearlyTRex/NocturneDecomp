@@ -2,11 +2,11 @@
 // Address: 004b3f50
 // Address Range: [[004b3f50, 004b41b3]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_fileio_cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50(CCheckOutItem *this_ptr,char *filename_out,char *out_buffer,char *wildcard_pattern,char *dialog_title)
+// Signature: int __cdecl engine_fileio_cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50(CCheckOutItem *this_ptr,char *preselected_filename,char *out_buffer,char *dialog_title,char *wildcard_pattern)
 
 #include "nocturne.h"
 
-int __cdecl engine_fileio_cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50(CCheckOutItem *this_ptr,char *filename_out,char *out_buffer,char *wildcard_pattern,char *dialog_title)
+int __cdecl engine_fileio_cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50(CCheckOutItem *this_ptr,char *preselected_filename,char *out_buffer,char *dialog_title,char *wildcard_pattern)
 
 {
   char cVar1;
@@ -28,23 +28,23 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50(CC
     engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860(&local_18);
     return 0;
   }
-  if (filename_out != (char *)0x0) {
-    iVar2 = engine_fileio_cpp_CCheckOutList_findEntry_FUN_004b2e60(&local_18,filename_out);
+  if (preselected_filename != (char *)0x0) {
+    iVar2 = engine_fileio_cpp_CCheckOutList_findEntry_FUN_004b2e60(&local_18,preselected_filename);
     if (((-1 < iVar2) &&
         (iVar3 = _stricmp
                            (local_18.items[iVar2].value,g_VersionControlSession.primary_username),
         iVar3 != 0)) || (iVar2 < 0)) {
       shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
-                (g_CEditorToolsPtr,"You do not currently have %s checked out",filename_out);
+                (g_CEditorToolsPtr,"You do not currently have %s checked out",preselected_filename);
       engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860(&local_18);
       return 0;
     }
     do {
-      cVar1 = *filename_out;
+      cVar1 = *preselected_filename;
       *out_buffer = cVar1;
       if (cVar1 == '\0') break;
-      cVar1 = filename_out[1];
-      filename_out = filename_out + 2;
+      cVar1 = preselected_filename[1];
+      preselected_filename = preselected_filename + 2;
       out_buffer[1] = cVar1;
       out_buffer = out_buffer + 2;
     } while (cVar1 != '\0');
@@ -61,7 +61,7 @@ LAB_004b3ff0:
                         ((local_18.items)->value + iVar3,g_VersionControlSession.primary_username);
       if ((iVar4 == 0) &&
          (iVar4 = shape_edittool_cpp_wildcardStringMatch_FUN_004a6e20
-                            (dialog_title,(local_18.items)->name + iVar3,0), iVar4 != 0)) {
+                            (wildcard_pattern,(local_18.items)->name + iVar3,0), iVar4 != 0)) {
         shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_3c0.base,(local_18.items)->name + iVar3)
         ;
       }
@@ -75,7 +75,7 @@ LAB_004b3ff0:
   }
   else {
     iVar2 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                      (&local_3c0,wildcard_pattern,-1,0);
+                      (&local_3c0,dialog_title,-1,0);
     if (-1 < iVar2) {
       pcVar5 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_3c0.base,iVar2);
       do {

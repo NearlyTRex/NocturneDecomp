@@ -515,7 +515,7 @@ LAB_0055bb9d:
                                                &g_CDemonActorClassInfo),
                          pCVar16 == (CDemonActor *)0x0)) goto joined_r0x0055c026;
                       if (g_ScriptEventsEnabled == 0) {
-                        core_platfrm_cpp_CPlatform_attachActor_FUN_0054e1e0(pCVar9);
+                        core_platfrm_cpp_CPlatform_attachActor_FUN_0054e1e0(pCVar9,pCVar16);
                       }
                     }
                     else {
@@ -691,7 +691,7 @@ LAB_0055c37e:
                                     }
                                     if (g_ScriptEventsEnabled == 0) {
                                       core_event_cpp_CEventList_setActorVariable_FUN_004b09a0
-                                                (g_CEventListPtr);
+                                                (g_CEventListPtr,local_3784,(CDemonActor *)0x0);
                                     }
                                   }
                                   else {
@@ -1355,7 +1355,9 @@ LAB_0055cd52:
                                                   if (g_ScriptEventsEnabled == 0) {
                                                                                                         
                                                   core_event_cpp_CEventList_setActorVariable_FUN_004b09a0
-                                                            (g_CEventListPtr);
+                                                            (g_CEventListPtr,local_1074,
+                                                             (CDemonActor *)
+                                                             pCVar16[2].orient_matrix.m[1].y);
                                                   }
                                                   }
                                                   else {
@@ -2382,7 +2384,7 @@ LAB_0055e656:
                                                   if (g_ScriptEventsEnabled == 0) {
                                                                                                         
                                                   core_event_cpp_CEventList_setActorVariable_FUN_004b09a0
-                                                            (g_CEventListPtr);
+                                                            (g_CEventListPtr,local_12cc,pCVar16);
                                                   }
                                                   else if ((pCVar16 == (CDemonActor *)0x0) &&
                                                           (g_ActorLookedUpByVariable == 0)) {

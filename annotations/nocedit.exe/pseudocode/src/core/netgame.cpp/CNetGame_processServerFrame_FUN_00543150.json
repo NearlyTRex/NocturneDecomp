@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 413,
-    "complexity_score": 277,
+    "complexity_score": 286,
     "cross_reference_count": 2,
     "function_call_count": 10,
     "global_count": 30,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 202,
+    "pseudocode_lines": 211,
     "suspect_count": 7,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 615
+    "total_lines": 624
   },
   "cross_references": [
     {
@@ -446,7 +446,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 80,
+      "line": 84,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (*(int *)((int)g_SimFrameHistory[0].player_controls[0].action_states + iVar3 + -0xc) <",
@@ -454,7 +454,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 84,
+      "line": 88,
       "match": "(void *)((int)",
       "severity": "mild",
       "text": "((void *)((int)g_SimFrameHistory[0].player_controls[0].action_states +",
@@ -462,7 +462,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 99,
+      "line": 103,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (iVar2 == *(int *)((int)g_SimFrameHistory[0].player_controls[0].action_states +",
@@ -470,23 +470,23 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 134,
+      "line": 138,
       "match": "(SPlayerControl *)((int)",
       "severity": "mild",
-      "text": "pSVar9 = (SPlayerControl *)((int)pSVar9 + (uint)bVar12 * -8 + 4);",
+      "text": "pSVar8 = (SPlayerControl *)((int)pSVar8 + (uint)bVar11 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 135,
+      "line": 139,
       "match": "(SPlayerControl *)((int)",
       "severity": "mild",
-      "text": "pSVar10 = (SPlayerControl *)((int)pSVar10 + ((uint)bVar12 * -2 + 1) * 4);",
+      "text": "pSVar9 = (SPlayerControl *)((int)pSVar9 + (uint)bVar11 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 167,
+      "line": 171,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)g_SimFrameHistory[0].player_controls[0].action_states +",
@@ -494,10 +494,10 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 188,
+      "line": 197,
       "match": "(SPlayerControl *)((int)",
       "severity": "mild",
-      "text": "pSVar9 = (SPlayerControl *)((int)pSVar9 + ((uint)bVar12 * -2 + 1) * 4);",
+      "text": "pSVar8 = (SPlayerControl *)((int)pSVar8 + ((uint)bVar11 * -2 + 1) * 4);",
       "type": "pointer_cast"
     }
   ]

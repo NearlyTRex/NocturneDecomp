@@ -9,7 +9,7 @@
 ;
 ; XREF[2]:
 ;   engine_3d.c_processVertexLighting_FUN_00403a20 at 00403a47
-;   engine_drender.cpp_calculateVertexLight_FUN_0048c740 at 0048c74a
+;   engine_drender.cpp_CDemonRenderer_calculateVertexLight_FUN_0048c740 at 0048c74a
 ;
 ; Referenced Globals:
 ;   undefined4 g_RenderVertexBuffer[0].r

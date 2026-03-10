@@ -2663,6 +2663,38 @@
             ]
           },
           "type":"CDemonActor*"
+        },
+        {
+          "name":"querying_actor",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonActor*"
+        },
+        {
+          "name":"query_position",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
         }
       ],
       "ret_storage":{
@@ -10850,6 +10882,38 @@
               {
                 "addr":"Stack[0x8]",
                 "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"initial_velocity",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"render_in_background",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
                 "size":4
               }
             ]
@@ -29653,12 +29717,12 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_drender.cpp_calculateVertexLight_FUN_0048c740",
+    "name":"engine_drender.cpp_CDemonRenderer_calculateVertexLight_FUN_0048c740",
     "ret":"void",
     "vars":{
       "params":[
         {
-          "name":"vertex_index",
+          "name":"this_ptr",
           "storage":{
             "offset":4,
             "size":4,
@@ -29671,10 +29735,10 @@
               }
             ]
           },
-          "type":"int"
+          "type":"CDemonRenderer*"
         },
         {
-          "name":"vertex_position",
+          "name":"vertex_index",
           "storage":{
             "offset":8,
             "size":4,
@@ -29683,6 +29747,22 @@
               {
                 "addr":"Stack[0x8]",
                 "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"vertex_position",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
                 "size":4
               }
             ]
@@ -37146,6 +37226,22 @@
             ]
           },
           "type":"CRuleList*"
+        },
+        {
+          "name":"index",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }
@@ -37234,7 +37330,7 @@
       ],
       "params":[
         {
-          "name":"filename",
+          "name":"directory",
           "storage":{
             "offset":4,
             "size":4,
@@ -37243,6 +37339,22 @@
               {
                 "addr":"Stack[0x4]",
                 "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        },
+        {
+          "name":"filename",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
                 "size":4
               }
             ]
@@ -43571,7 +43683,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"core_fire.cpp_CFireEffect_createTrailFromPoints_FUN_004c90c0",
-    "ret":"int",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -43719,18 +43831,104 @@
             ]
           },
           "type":"CFireEffect*"
+        },
+        {
+          "name":"start_point",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"end_point",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"size",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"alpha",
+          "storage":{
+            "offset":20,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x14]",
+                "offset":20,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"lifetime",
+          "storage":{
+            "offset":24,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x18]",
+                "offset":24,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"texture_ptr",
+          "storage":{
+            "offset":28,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x1c]",
+                "offset":28,
+                "size":4
+              }
+            ]
+          },
+          "type":"SMRGLTextureBasic*"
         }
-      ],
-      "ret_storage":{
-        "reg":"EAX",
-        "size":4,
-        "varnodes":[
-          {
-            "addr":"register:00000000",
-            "size":4
-          }
-        ]
-      }
+      ]
     }
   },
   {
@@ -50625,7 +50823,7 @@
       ],
       "params":[
         {
-          "name":"base_filename",
+          "name":"directory",
           "storage":{
             "offset":4,
             "size":4,
@@ -50641,7 +50839,7 @@
           "type":"char*"
         },
         {
-          "name":"file_extension",
+          "name":"filename",
           "storage":{
             "offset":8,
             "size":4,
@@ -50657,7 +50855,7 @@
           "type":"char*"
         },
         {
-          "name":"open_mode",
+          "name":"new_extension",
           "storage":{
             "offset":12,
             "size":4,
@@ -50666,6 +50864,22 @@
               {
                 "addr":"Stack[0xc]",
                 "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        },
+        {
+          "name":"open_mode",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
                 "size":4
               }
             ]
@@ -53514,6 +53728,22 @@
             ]
           },
           "type":"CMansionPuzzleCircle*"
+        },
+        {
+          "name":"panel_index",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ],
       "ret_storage":{
@@ -59654,6 +59884,54 @@
             ]
           },
           "type":"CMirrorReflection*"
+        },
+        {
+          "name":"camera_position",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"camera_rotation",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"projection_scale",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
         }
       ]
     }
@@ -60865,7 +61143,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_mobster.cpp_CMobster_FUN_005271c0",
+    "name":"core_mobster.cpp_CMobster_startFiringAttack_FUN_005271c0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -64929,6 +65207,22 @@
             ]
           },
           "type":"int"
+        },
+        {
+          "name":"packet",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"SNetPacketHeader*"
         }
       ]
     }
@@ -94545,7 +94839,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_werewolf.cpp_CWerewolf_FUN_005f1e40",
+    "name":"core_werewolf.cpp_CWerewolf_processChainConstraint_FUN_005f1e40",
     "ret":"void",
     "vars":{
       "locals":[
@@ -97859,7 +98153,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_zombie.cpp_FUN_005f8cc0",
+    "name":"core_zombie.cpp_getObjectHeightScale_FUN_005f8cc0",
     "ret":"float",
     "vars":{
       "locals":[
@@ -97878,6 +98172,24 @@
             ]
           },
           "type":"undefined4"
+        }
+      ],
+      "params":[
+        {
+          "name":"actor",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonActor*"
         }
       ],
       "ret_storage":{
@@ -97955,8 +98267,44 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_zombie.cpp_FUN_005fce40",
-    "ret":"void"
+    "name":"engine_3d.c_addRasterizerEdgeWithDepth_FUN_005fce40",
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"v0",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"SRenderVertex*"
+        },
+        {
+          "name":"v1",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"SRenderVertex*"
+        }
+      ]
+    }
   },
   {
     "addr":"005fcfc0",

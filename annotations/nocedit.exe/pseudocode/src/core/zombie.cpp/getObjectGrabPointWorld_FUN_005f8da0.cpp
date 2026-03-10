@@ -1,0 +1,27 @@
+// Name: core_zombie.cpp_getObjectGrabPointWorld_FUN_005f8da0
+// Address: 005f8da0
+// Address Range: [[005f8da0, 005f8e4a]]
+// Convention: __cdecl
+// Signature: CVector3f * __cdecl core_zombie_cpp_getObjectGrabPointWorld_FUN_005f8da0(CVector3f *out_point,CDemonActor *actor)
+
+#include "nocturne.h"
+
+CVector3f * __cdecl core_zombie_cpp_getObjectGrabPointWorld_FUN_005f8da0(CVector3f *out_point,CDemonActor *actor)
+
+{
+  CBoundingBox3D CStack_40;
+  CVector3f CStack_28;
+  CVector3f CStack_1c;
+  
+  (*((actor->vtable)._ub)->getBoundingBox)(actor,&CStack_40);
+  core_actor_cpp_CVector_ctor_FUN_00410340(&CStack_1c);
+  CStack_1c.x = CStack_40.min.x + CStack_40.max.x;
+  CStack_1c.y = CStack_40.min.y + CStack_40.max.y;
+  CStack_1c.z = CStack_40.min.z + CStack_40.max.z;
+  core_actor_cpp_CVector_ctor_FUN_00410340(&CStack_28);
+  CStack_28.x = CStack_1c.x * 0.5f;
+  CStack_28.y = CStack_1c.y * 0.5f;
+  CStack_28.z = CStack_40.min.z + (float)0.40000000000000002;
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(actor,out_point,&CStack_28);
+  return out_point;
+}

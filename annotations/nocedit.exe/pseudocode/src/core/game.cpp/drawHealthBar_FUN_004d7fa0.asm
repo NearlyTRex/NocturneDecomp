@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_game_cpp_drawHealthBar_FUN_004d7fa0(void)
+; void __cdecl core_game_cpp_drawHealthBar_FUN_004d7fa0(int x1,int y1,int x2,int y2,float fill_percent)
 ;
+; Parameters:
+; int              Stack[0x4]:4   x1
+; int              Stack[0x8]:4   y1
+; int              Stack[0xc]:4   x2
+; int              Stack[0x10]:4   y2
+; float            Stack[0x14]:4   fill_percent
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14

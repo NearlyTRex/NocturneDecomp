@@ -27,37 +27,37 @@ void __cdecl CIcePick::setup(CIcePick *this_ptr);
 // Address: 004f80b0
 void __cdecl CIcePick::process(CIcePick *this_ptr,float delta_time);
 
-// Original: core_icepick.cpp_CIcePick_FUN_004f8810
+// Original: core_icepick.cpp_CIcePick_updateShootBlend_FUN_004f8810
 // Address: 004f8810
-void __cdecl CIcePick(CIcePick *this_ptr);
+void __cdecl CIcePick::updateShootBlend(CIcePick *this_ptr,float delta_time);
 
-// Original: core_icepick.cpp_CIcePick_FUN_004f8970
+// Original: core_icepick.cpp_CIcePick_findAndPickupGun_FUN_004f8970
 // Address: 004f8970
-int __cdecl CIcePick(CIcePick *this_ptr);
+int __cdecl CIcePick::findAndPickupGun(CIcePick *this_ptr);
 
-// Original: core_icepick.cpp_CIcePick_FUN_004f8ad0
+// Original: core_icepick.cpp_CIcePick_startThrowAttack_FUN_004f8ad0
 // Address: 004f8ad0
-int __cdecl CIcePick(CIcePick *this_ptr);
+int __cdecl CIcePick::startThrowAttack(CIcePick *this_ptr);
 
-// Original: core_icepick.cpp_FUN_004f8b00
+// Original: core_icepick.cpp_setEulerAngles_FUN_004f8b00
 // Address: 004f8b00
-void __cdecl FUN_004f8b00(void);
+CVector3f * __cdecl setEulerAngles(CVector3f *out,float x,float z,float y);
 
 // Original: core_icepick.cpp_CIcePick_getCarryObjToBodyXForm_FUN_004f8b20
 // Address: 004f8b20
 void __stack2_esi CIcePick::getCarryObjToBodyXForm(CIcePick *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
-// Original: core_icepick.cpp_CIcePick_FUN_004f8c70
+// Original: core_icepick.cpp_CIcePick_processAI_FUN_004f8c70
 // Address: 004f8c70
-void __cdecl CIcePick(CIcePick *this_ptr);
+void __cdecl CIcePick::processAI(CIcePick *this_ptr,float delta_time);
 
-// Original: core_icepick.cpp_CIcePick_FUN_004f93a0
+// Original: core_icepick.cpp_CIcePick_processMotionEvents_FUN_004f93a0
 // Address: 004f93a0
-void __cdecl CIcePick(CIcePick *this_ptr);
+void __cdecl CIcePick::processMotionEvents(CIcePick *this_ptr,float delta_time);
 
-// Original: core_icepick.cpp_CIcePick_FUN_004f9490
+// Original: core_icepick.cpp_CIcePick_performMeleeAttack_FUN_004f9490
 // Address: 004f9490
-void __cdecl CIcePick(CIcePick *this_ptr);
+void __cdecl CIcePick::performMeleeAttack(CIcePick *this_ptr,int bone_index);
 
 // Original: core_icepick.cpp_CIcePick_archive_FUN_004f9590
 // Address: 004f9590

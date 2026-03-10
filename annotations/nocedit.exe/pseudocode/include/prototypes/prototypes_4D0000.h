@@ -15,6 +15,7 @@
 #include "types/classes/CInventory.h"
 #include "types/classes/CKeyFramedModel.h"
 #include "types/classes/CMatrix3x4f.h"
+#include "types/classes/CSkeleton.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CWeapon.h"
 #include "types/enums/EAmmoType.h"
@@ -117,7 +118,7 @@ void __cdecl core_game_cpp_CGame_updateDT_FUN_004d7d90(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_drawScreenBorder_FUN_004d7e50(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_displayMessage_FUN_004d7f20(CGame *this_ptr,char *message,float duration);
 void __cdecl core_game_cpp_CGame_clearOverlay_FUN_004d7f80(CGame *this_ptr);
-void __cdecl core_game_cpp_drawHealthBar_FUN_004d7fa0(void);
+void __cdecl core_game_cpp_drawHealthBar_FUN_004d7fa0(int x1,int y1,int x2,int y2,float fill_percent);
 void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004d8040(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_updateStatusDisplays_FUN_004d85a0(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_setFudgeTarget_FUN_004d8730(CGame *this_ptr,CVector3f *fudge_target,float fudge_step);
@@ -134,17 +135,17 @@ void __cdecl core_game_cpp_CGame_playerControls_FUN_004dbd80(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_resetKeyState_FUN_004dbe60(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_processJoystickControls_FUN_004dc230(CGame *this_ptr,SPlayerControl *player_control);
 void __cdecl core_game_cpp_pollKeyStateOnChange_FUN_004dc270(void);
-void __cdecl core_game_cpp_pollKeyEdgeTrigger_FUN_004dc2a0(void);
-void __cdecl core_game_cpp_rampControlAxis_FUN_004dc2d0(void);
+void __cdecl core_game_cpp_pollKeyEdgeTrigger_FUN_004dc2a0(int key_index,uint *out_state);
+void __cdecl core_game_cpp_rampControlAxis_FUN_004dc2d0(int negative_key,int positive_key,float *axis_value,float ramp_time,float max_value);
 void __cdecl core_game_cpp_dampControlAxis_FUN_004dc370(void);
 void __cdecl core_game_cpp_CGame_processKeyboardControls_FUN_004dc3e0(CGame *this_ptr,SPlayerControl *player_control);
 void __cdecl core_game_cpp_CGame_processMouseControls_FUN_004dccc0(CGame *this_ptr,SPlayerControl *player_control);
 void __cdecl core_game_cpp_CGame_resetInputAndCenterCursor_FUN_004dce70(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_processHotkeys_FUN_004dcee0(CGame *this_ptr);
 int __cdecl core_game_cpp_checkCheatCode_FUN_004dd7f0(char *cheat_string);
-void __cdecl core_game_cpp_giveHeroWeapon_FUN_004dd870(char *p1);
+void __cdecl core_game_cpp_giveHeroWeapon_FUN_004dd870(char *class_name);
 void __cdecl core_game_cpp_giveHeroWeaponAmmo_FUN_004dd930(char *p1,EAmmoType p3);
-void __cdecl core_game_cpp_checkCheatAndGiveWeapon_FUN_004dd9d0(void);
-void __cdecl core_game_cpp_CGame_scaleBoneRecursive_FUN_004dda80(CGame *this_ptr);
+void __cdecl core_game_cpp_checkCheatAndGiveWeapon_FUN_004dd9d0(char *cheat_code,char *class_name,char *message);
+void __cdecl core_game_cpp_scaleBoneRecursive_FUN_004dda80(CDeformableModelInstance *model_instance,CSkeleton *skeleton,float scale_factor, int bone_index);
 void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr);
 

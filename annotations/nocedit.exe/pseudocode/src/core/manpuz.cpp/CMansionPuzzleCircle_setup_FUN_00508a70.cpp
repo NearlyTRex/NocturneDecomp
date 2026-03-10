@@ -120,10 +120,11 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_setup_FUN_00508a70(CMansionPuz
   local_38 = 0;
   do {
     iVar11 = local_38;
-    core_manpuz_cpp_CMansionPuzzleCircle_FUN_00509b20(this_ptr);
+    core_manpuz_cpp_CMansionPuzzleCircle_updatePanelTransform_FUN_00509b20(this_ptr,local_38);
     pSVar12 = local_34 + iVar11;
     local_24 = pSVar12;
-    core_manpuz_cpp_CMansionPuzzleCircle_FUN_0050a420(this_ptr);
+    core_manpuz_cpp_CMansionPuzzleCircle_getPanelColor_FUN_0050a420
+              (this_ptr,iVar11,(float *)pSVar12,local_2c,local_30);
     (pSVar12->hum_color).b = 0.0;
     (pSVar12->hum_color).g = (pSVar12->hum_color).b;
     fVar1 = (pSVar12->hum_color).g;
@@ -251,7 +252,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_setup_FUN_00508a70(CMansionPuz
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
             (&this_ptr->reflectors[1].rotation_matrix,pCVar10);
   do {
-    core_manpuz_cpp_CMansionPuzzleCircle_FUN_0050af80(this_ptr);
+    core_manpuz_cpp_CMansionPuzzleCircle_updateReflectorPosition_FUN_0050af80(this_ptr,iVar11);
     iVar11 = iVar11 + 1;
   } while (iVar11 < 2);
   return;

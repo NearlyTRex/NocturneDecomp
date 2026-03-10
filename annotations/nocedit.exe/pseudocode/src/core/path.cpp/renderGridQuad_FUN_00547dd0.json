@@ -6,19 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 162,
-    "complexity_score": 226,
+    "complexity_score": 200,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 9,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 61,
-    "suspect_count": 15,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 60,
+    "suspect_count": 13,
     "suspect_types": [
       "decompiler_intrinsic",
-      "stack_param",
       "warning_inlined_function"
     ],
-    "total_lines": 223
+    "total_lines": 222
   },
   "cross_references": [],
   "function": {
@@ -31,7 +30,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_path.cpp_renderGridQuad_FUN_00547dd0",
-    "signature": "void __cdecl core_path_cpp_renderGridQuad_FUN_00547dd0(int grid_x,int grid_y,int grid_z,int color,int fog,float w_recip)"
+    "signature": "void __cdecl core_path_cpp_renderGridQuad_FUN_00547dd0(int grid_x,int grid_y,int grid_z,int red,int green,int blue,int alpha)"
   },
   "function_calls": [
     {
@@ -110,8 +109,8 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 6,
-    "estimated_params": 6
+    "declared_params": 7,
+    "estimated_params": 7
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.833333333333333,
@@ -148,10 +147,10 @@
     "pcode_op_count": 875
   },
   "stack_frame": {
-    "frame_size": 76,
+    "frame_size": 80,
     "local_size": 52,
     "param_offset": 4,
-    "param_size": 24,
+    "param_size": 28,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -226,24 +225,31 @@
       },
       {
         "is_param": true,
-        "name": "color",
+        "name": "red",
         "offset": 16,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
-        "name": "fog",
+        "name": "green",
         "offset": 20,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
-        "name": "w_recip",
+        "name": "blue",
         "offset": 24,
         "size": 4,
-        "type": "float"
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "alpha",
+        "offset": 28,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
@@ -257,24 +263,16 @@
       "type": "warning_inlined_function"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_0000001c",
-      "severity": "moderate",
-      "text": "int in_stack_0000001c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 22,
-      "match": "in_stack_0000001c",
-      "severity": "moderate",
-      "text": "iVar1 = in_stack_0000001c << 8;",
-      "type": "stack_param"
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_30.x = (int)ROUND(ROUND((float)grid_x * local_24));",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 23,
+      "line": 22,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_30.x = (int)ROUND(ROUND((float)grid_x * local_24));",
@@ -285,12 +283,12 @@
       "line": 23,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_30.x = (int)ROUND(ROUND((float)grid_x * local_24));",
+      "text": "local_30.z = (int)ROUND(ROUND((float)grid_z * local_1c));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 24,
+      "line": 23,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_30.z = (int)ROUND(ROUND((float)grid_z * local_1c));",
@@ -301,12 +299,12 @@
       "line": 24,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_30.z = (int)ROUND(ROUND((float)grid_z * local_1c));",
+      "text": "local_30.y = (int)ROUND(ROUND(256 +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 25,
+      "line": 24,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_30.y = (int)ROUND(ROUND(256 +",
@@ -314,15 +312,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 25,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_30.y = (int)ROUND(ROUND(256 +",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 31,
+      "line": 30,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_30.x = (int)ROUND(ROUND((float)local_30.x + local_24));",
@@ -330,7 +320,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 31,
+      "line": 30,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_30.x = (int)ROUND(ROUND((float)local_30.x + local_24));",
@@ -338,7 +328,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 35,
+      "line": 34,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_30.z = (int)ROUND(ROUND((float)local_30.z + local_1c));",
@@ -346,7 +336,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 35,
+      "line": 34,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_30.z = (int)ROUND(ROUND((float)local_30.z + local_1c));",
@@ -354,7 +344,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 39,
+      "line": 38,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_30.x = (int)ROUND(ROUND((float)local_30.x - local_24));",
@@ -362,7 +352,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 39,
+      "line": 38,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_30.x = (int)ROUND(ROUND((float)local_30.x - local_24));",

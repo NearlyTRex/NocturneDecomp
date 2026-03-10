@@ -6,19 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 116,
-    "complexity_score": 119,
+    "complexity_score": 83,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 3,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 44,
-    "suspect_count": 6,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 43,
+    "suspect_count": 3,
     "suspect_types": [
       "param_count_too_many",
-      "pointer_cast",
-      "stack_param"
+      "pointer_cast"
     ],
-    "total_lines": 160
+    "total_lines": 159
   },
   "cross_references": [
     {
@@ -38,7 +37,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_alphabit.cpp_CAlphaBitmap_render_FUN_00410b00",
-    "signature": "void __cdecl engine_alphabit_cpp_CAlphaBitmap_render_FUN_00410b00(CAlphaBitmap *this_ptr,int dest_y,int dest_x,int left_x,int top_y,int right_x,int bottom_y)"
+    "signature": "void __cdecl engine_alphabit_cpp_CAlphaBitmap_render_FUN_00410b00(CAlphaBitmap *this_ptr,int dest_x,int dest_y,int left_x,int top_y,int right_x,int bottom_y,int global_alpha)"
   },
   "function_calls": [
     {
@@ -91,7 +90,7 @@
       }
     ],
     "confidence": "low",
-    "declared_params": 7,
+    "declared_params": 8,
     "estimated_params": 6
   },
   "pcode_summary": {
@@ -127,10 +126,10 @@
     "pcode_op_count": 548
   },
   "stack_frame": {
-    "frame_size": 76,
+    "frame_size": 80,
     "local_size": 48,
     "param_offset": 4,
-    "param_size": 28,
+    "param_size": 32,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -191,14 +190,14 @@
       },
       {
         "is_param": true,
-        "name": "dest_y",
+        "name": "dest_x",
         "offset": 8,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
-        "name": "dest_x",
+        "name": "dest_y",
         "offset": 12,
         "size": 4,
         "type": "int"
@@ -230,59 +229,42 @@
         "offset": 28,
         "size": 4,
         "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "global_alpha",
+        "offset": 32,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000020",
-      "severity": "moderate",
-      "text": "int in_stack_00000020;",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 26,
+      "line": 25,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "((uint *)(*(int *)((int)g_ScreenBufferArray + local_18) + dest_y * 4),srcIndices,",
+      "text": "((uint *)(*(int *)((int)g_ScreenBufferArray + local_18) + dest_x * 4),srcIndices,",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_00000020",
-      "severity": "moderate",
-      "text": "srcAlpha,in_stack_00000020,pixelCount);",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 38,
+      "line": 37,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "((ushort *)(*(int *)((int)g_ScreenBufferArray + local_14) + dest_y * 2),srcIndices,",
+      "text": "((ushort *)(*(int *)((int)g_ScreenBufferArray + local_14) + dest_x * 2),srcIndices,",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 39,
-      "match": "in_stack_00000020",
-      "severity": "moderate",
-      "text": "srcAlpha,in_stack_00000020,pixelCount);",
-      "type": "stack_param"
     },
     {
       "call_site_count": 1,
-      "declared_params": 7,
+      "declared_params": 8,
       "description": "Signature has too many params - likely wrong calling convention",
       "estimated_params": 6,
       "fix_type": "remove_params",
-      "match": "declared:7 vs estimated:6",
-      "param_delta": -1,
-      "text": "Function declares 7 params but call sites push 6 (1 extra)",
+      "match": "declared:8 vs estimated:6",
+      "param_delta": -2,
+      "text": "Function declares 8 params but call sites push 6 (2 extra)",
       "type": "param_count_too_many"
     }
   ]

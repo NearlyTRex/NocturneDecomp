@@ -153,7 +153,7 @@ int __cdecl CEventList::findCounter(CEventList *this_ptr,char *name);
 
 // Original: core_event.cpp_CEventList_setActorVariable_FUN_004b09a0
 // Address: 004b09a0
-void __cdecl CEventList::setActorVariable(CEventList *this_ptr);
+void __cdecl CEventList::setActorVariable(CEventList *this_ptr,char *var_name,CDemonActor *actor);
 
 // Original: core_event.cpp_CEventList_getActorByVarName_FUN_004b0b80
 // Address: 004b0b80
@@ -201,11 +201,11 @@ void __cdecl CRuleList::clear(CRuleList *this_ptr);
 
 // Original: core_event.cpp_CRuleList_insert_FUN_004b1680
 // Address: 004b1680
-void __cdecl CRuleList::insert(CRuleList *this_ptr);
+void __cdecl CRuleList::insert(CRuleList *this_ptr,int index,char *condition,char *event);
 
 // Original: core_event.cpp_CRuleList_remove_FUN_004b17c0
 // Address: 004b17c0
-void __cdecl CRuleList::remove(CRuleList *this_ptr);
+void __cdecl CRuleList::remove(CRuleList *this_ptr,int index);
 
 // Original: core_event.cpp_CRuleList_findFirst_FUN_004b1890
 // Address: 004b1890

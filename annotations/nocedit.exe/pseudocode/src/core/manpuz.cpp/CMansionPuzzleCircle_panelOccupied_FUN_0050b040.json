@@ -1,30 +1,20 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 105,
-        "line": 18,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 62,
-    "complexity_score": 107,
+    "complexity_score": 32,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 4,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 17,
-    "suspect_count": 7,
+    "suspect_count": 1,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "format_string_mismatch",
-      "param_count_too_few",
-      "stack_param"
+      "decompiler_intrinsic"
     ],
     "total_lines": 79
   },
@@ -32,7 +22,7 @@
     {
       "addr": "0050a610",
       "from_addr": "0050a891",
-      "name": "core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050a610",
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_updateGem_FUN_0050a610",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -46,7 +36,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_manpuz.cpp_CMansionPuzzleCircle_panelOccupied_FUN_0050b040",
-    "signature": "int __cdecl core_manpuz_cpp_CMansionPuzzleCircle_panelOccupied_FUN_0050b040(CMansionPuzzleCircle *this_ptr)"
+    "signature": "int __cdecl core_manpuz_cpp_CMansionPuzzleCircle_panelOccupied_FUN_0050b040(CMansionPuzzleCircle *this_ptr,int panel_index)"
   },
   "function_calls": [
     {
@@ -57,7 +47,7 @@
     {
       "addr": "0050aef0",
       "is_variadic": false,
-      "name": "core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050aef0"
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_getPrevPanelIndex_FUN_0050aef0"
     }
   ],
   "globals": [
@@ -92,7 +82,7 @@
       {
         "call_addr": "0050a891",
         "call_type": "direct",
-        "caller": "core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050a610",
+        "caller": "core_manpuz.cpp_CMansionPuzzleCircle_updateGem_FUN_0050a610",
         "estimated_params": 2,
         "instructions_analyzed": 4,
         "reg_params": [],
@@ -101,15 +91,15 @@
       {
         "call_addr": "0050a879",
         "call_type": "direct",
-        "caller": "core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050a610",
+        "caller": "core_manpuz.cpp_CMansionPuzzleCircle_updateGem_FUN_0050a610",
         "estimated_params": 2,
         "instructions_analyzed": 4,
         "reg_params": [],
         "stack_params": 2
       }
     ],
-    "confidence": "medium",
-    "declared_params": 1,
+    "confidence": "high",
+    "declared_params": 2,
     "estimated_params": 2
   },
   "pcode_summary": {
@@ -142,10 +132,10 @@
     "pcode_op_count": 356
   },
   "stack_frame": {
-    "frame_size": 8,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -154,42 +144,17 @@
         "offset": 4,
         "size": 4,
         "type": "CMansionPuzzleCircle *"
+      },
+      {
+        "is_param": true,
+        "name": "panel_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
   "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 6,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "int in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "if ((in_stack_00000008 < 0) || (0xb < in_stack_00000008)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "if ((in_stack_00000008 < 0) || (0xb < in_stack_00000008)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "if (this_ptr->panels[in_stack_00000008].exists == 0) {",
-      "type": "stack_param"
-    },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 15,
@@ -197,28 +162,6 @@
       "severity": "mild",
       "text": "if ((this_ptr->panels[iVar1].exists == 0) || (ABS(this_ptr->panels[iVar1].anim_speed) == 0.0)) {",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 1,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:1 vs estimated:2",
-      "param_delta": 1,
-      "text": "Function declares 1 params but call sites push 2 (1 missing)",
-      "type": "param_count_too_few"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"CMansionPuzzleCircle::panelOccupied - invalid inde...\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "CMansionPuzzleCircle::panelOccupied - invalid index: %d",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 11,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"CMansionPuzzleCircle::panelOccupied - invalid index: %",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     }
   ]
 }

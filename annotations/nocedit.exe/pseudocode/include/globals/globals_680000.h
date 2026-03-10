@@ -22,6 +22,7 @@
 #include "types/classes/CSound.h"
 #include "types/classes/CSpotView.h"
 #include "types/classes/CTerrain.h"
+#include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
 #include "types/classes/CWater.h"
 #include "types/classes/CWeather.h"
@@ -74,6 +75,9 @@ extern CSpotView* g_CSpotViewPtr;
 
 // CTerrain*
 extern CTerrain* g_CTerrainPtr;
+
+// CVector3f
+extern CVector3f CVector3f_006819fc;
 
 // CVector3i
 extern CVector3i g_GlobalLightDirection;
@@ -339,7 +343,6 @@ extern dst_rule g_DstStartRule;
 
 // float
 extern float FLOAT_00680818;
-extern float FLOAT_00681a00;
 extern float g_MaxSoftwareLatency;
 
 // int

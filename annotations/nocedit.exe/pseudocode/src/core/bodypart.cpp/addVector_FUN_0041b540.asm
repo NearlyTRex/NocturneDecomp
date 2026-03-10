@@ -10,8 +10,8 @@
 ;
 ; XREF[3]:
 ;   core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_0041cc40 at 0041ce45
-;   core_mobster.cpp_CMobster_FUN_00526d90 at 00526fc6
-;   core_zombie.cpp_CZombie_FUN_005fb530 at 005fb79f
+;   core_mobster.cpp_CMobster_processWeaponPickup_FUN_00526d90 at 00526fc6
+;   core_zombie.cpp_CZombie_processPickup_FUN_005fb530 at 005fb79f
 ;
 ; *****************************************************************************
 

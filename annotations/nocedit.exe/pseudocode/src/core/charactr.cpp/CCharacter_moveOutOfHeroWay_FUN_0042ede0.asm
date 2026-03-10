@@ -19,8 +19,8 @@
 ;
 ; XREF[4]:
 ;   core_hostage.cpp_CHostage_process_FUN_004f4bd0 at 004f566f
-;   core_icepick.cpp_CIcePick_FUN_004f8c70 at 004f9302
-;   core_moloch.cpp_CMoloch_FUN_005293b0 at 005296e5
+;   core_icepick.cpp_CIcePick_processAI_FUN_004f8c70 at 004f9302
+;   core_moloch.cpp_CMoloch_processAI_FUN_005293b0 at 005296e5
 ;   core_svetlana.cpp_CSvetlana_processAI_FUN_005d9260 at 005d974c
 ;
 ; Referenced Globals:

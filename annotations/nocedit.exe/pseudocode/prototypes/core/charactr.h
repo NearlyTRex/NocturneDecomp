@@ -157,7 +157,7 @@ ECollisionType __cdecl CCharacter::getCollisionType(CCharacter *this_ptr,SCollis
 
 // Original: core_charactr.cpp_CCharacter_detachBodyPart_FUN_0042bcc0
 // Address: 0042bcc0
-void __cdecl CCharacter::detachBodyPart(CCharacter *this_ptr,int part_index);
+void __cdecl CCharacter::detachBodyPart(CCharacter *this_ptr,int part_index,CVector3f *initial_velocity,int render_in_background);
 
 // Original: core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_0042bd30
 // Address: 0042bd30

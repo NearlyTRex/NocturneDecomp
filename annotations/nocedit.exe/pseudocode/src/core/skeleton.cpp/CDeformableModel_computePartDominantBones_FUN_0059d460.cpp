@@ -24,8 +24,7 @@ int __cdecl core_skeleton_cpp_CDeformableModel_computePartDominantBones_FUN_0059
   SVert *pSVar13;
   CDeformableModel *pCVar14;
   ushort *puVar15;
-  CVector3f *in_stack_fffffdd0;
-  float afStack_22c [99];
+  float local_230 [100];
   float local_a0;
   float local_9c;
   float local_98;
@@ -102,7 +101,7 @@ int __cdecl core_skeleton_cpp_CDeformableModel_computePartDominantBones_FUN_0059
           iVar12 = 0;
           do {
             iVar6 = iVar12 + 4;
-            *(uint *)((int)afStack_22c + iVar12 + -4) = 0;
+            *(uint *)((int)local_230 + iVar12) = 0;
             iVar12 = iVar6;
           } while (iVar6 < iVar10);
         }
@@ -159,7 +158,7 @@ int __cdecl core_skeleton_cpp_CDeformableModel_computePartDominantBones_FUN_0059
                 puVar2 = pSVar11->bone_indices;
                 pSVar8 = (SVert *)pSVar8->bone_weights;
                 pSVar11 = (SVert *)pSVar11->bone_indices;
-                afStack_22c[*puVar2 - 1] = *pfVar1 * local_14 + afStack_22c[*puVar2 - 1];
+                local_230[*puVar2] = *pfVar1 * local_14 + local_230[*puVar2];
               }
               puVar15 = puVar15 + 1;
             } while (puVar15 != local_18);
@@ -171,7 +170,7 @@ int __cdecl core_skeleton_cpp_CDeformableModel_computePartDominantBones_FUN_0059
         if (1 < (int)local_24) {
           iVar10 = 4;
           do {
-            if (afStack_22c[iVar9 + -1] < *(float *)((int)afStack_22c + iVar10 + -4)) {
+            if (local_230[iVar9] < *(float *)((int)local_230 + iVar10)) {
               iVar9 = iVar12;
             }
             iVar12 = iVar12 + 1;
@@ -194,7 +193,7 @@ int __cdecl core_skeleton_cpp_CDeformableModel_computePartDominantBones_FUN_0059
     if (0 < (int)local_24) {
       do {
         iVar12 = core_skeleton_cpp_CDeformableModel_computeBoneDominantPart_FUN_0059c2f0
-                           (this_ptr,iVar9,in_stack_fffffdd0);
+                           (this_ptr,iVar9);
         iVar9 = iVar9 + 1;
         pCVar14->bone_to_part_map[0] = iVar12;
         pCVar14 = (CDeformableModel *)pCVar14->lod_info;

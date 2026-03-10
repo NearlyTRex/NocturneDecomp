@@ -2,18 +2,17 @@
 // Address: 0059fdd0
 // Address Range: [[0059fdd0, 0059ff14]]
 // Convention: __cdecl
-// Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0059fdd0(CDeformableModelInstance *this_ptr,CVector3f *target_position,float blend_weight,int bone_index,CDeformableModel_MotionBlendWeightFunc *blend_callback)
+// Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0059fdd0(CDeformableModelInstance *this_ptr,CVector3f *target_position,float blend_weight,int bone_index,CQuaternion4f *base_orientation,CDeformableModel_MotionBlendWeightFunc *blend_callback)
 
 #include "nocturne.h"
 
-void __cdecl core_skeleton_cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0059fdd0(CDeformableModelInstance *this_ptr,CVector3f *target_position,float blend_weight,int bone_index,CDeformableModel_MotionBlendWeightFunc *blend_callback)
+void __cdecl core_skeleton_cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0059fdd0(CDeformableModelInstance *this_ptr,CVector3f *target_position,float blend_weight,int bone_index,CQuaternion4f *base_orientation,CDeformableModel_MotionBlendWeightFunc *blend_callback)
 
 {
   CVector3f *pCVar1;
   uint *puVar2;
   uint *puVar3;
   byte bVar4;
-  CDeformableModel_MotionBlendWeightFunc *in_stack_00000018;
   float afStackY_1888 [1521];
   CQuaternion4f *quat2_in;
   CQuaternion4f *quat2_in_00;
@@ -58,8 +57,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0059
        *(uint *)((int)&local_6c + (uint)bVar4 * -8 + 4);
   *puVar3 = *puVar2;
   puVar3[(uint)bVar4 * -2 + 1] = puVar2[(uint)bVar4 * -2 + 1];
-  core_xform_cpp_multiplyQuaternion_FUN_005f7640((CQuaternion4f *)blend_callback,quat2_in,&local_5c)
-  ;
+  core_xform_cpp_multiplyQuaternion_FUN_005f7640(base_orientation,quat2_in,&local_5c);
   local_7c.w = local_5c.w;
   puVar3 = (uint *)((int)&local_7c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
   puVar2 = (uint *)((int)&local_5c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
@@ -76,6 +74,6 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0059
   *puVar3 = *puVar2;
   puVar3[(uint)bVar4 * -2 + 1] = puVar2[(uint)bVar4 * -2 + 1];
   core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750
-            (this_ptr,&local_9c,blend_weight,bone_index,in_stack_00000018);
+            (this_ptr,&local_9c,blend_weight,bone_index,blend_callback);
   return;
 }

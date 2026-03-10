@@ -2,13 +2,13 @@
 // Address: 004b4220
 // Address Range: [[004b4220, 004b502e]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_fileio_cpp_CCheckOutItem_processFiles_FUN_004b4220(CCheckOutItem *this_ptr,int operation_mode,char *filename)
+// Signature: int __cdecl engine_fileio_cpp_CCheckOutItem_processFiles_FUN_004b4220(CCheckOutItem *this_ptr,char *filename)
 
 #include "nocturne.h"
 
 /* WARNING: Removing unreachable block (ram,0x004b4aea) */
 
-int __cdecl engine_fileio_cpp_CCheckOutItem_processFiles_FUN_004b4220(CCheckOutItem *this_ptr,int operation_mode,char *filename)
+int __cdecl engine_fileio_cpp_CCheckOutItem_processFiles_FUN_004b4220(CCheckOutItem *this_ptr,char *filename)
 
 {
   char cVar1;
@@ -66,8 +66,8 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_processFiles_FUN_004b4220(CCheckOutI
   local_2c = (_FILE *)0x0;
   local_28 = (_FILE *)0x0;
   iVar6 = engine_fileio_cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50
-                    (this_ptr,(char *)operation_mode,local_e0c.found_path,
-                     "Select file to check in","*");
+                    (this_ptr,filename,local_e0c.found_path,"Select file to check in",
+                     "*");
   if (iVar6 == 0) {
     return 0;
   }
@@ -124,8 +124,8 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_processFiles_FUN_004b4220(CCheckOutI
     }
     if (iVar6 == 0) {
       iVar6 = engine_fileio_cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50
-                        (this_ptr,(char *)operation_mode,local_658,
-                         "Select file to undo check out","*");
+                        (this_ptr,filename,local_658,"Select file to undo check out",
+                         "*");
       if ((iVar6 == 0) ||
          (iVar6 = engine_fileio_cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0
                             (this_ptr,local_658), iVar6 == 0)) {
@@ -148,7 +148,7 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_processFiles_FUN_004b4220(CCheckOutI
     g_CurrentLineNumber = 0xe7;
     core_main_c_displayErrorAndQuit_FUN_00506f10("versionControlDirectory not set!");
   }
-  _sprintf(local_75c,"history\\%s.%s",operation_mode,local_38);
+  _sprintf(local_75c,"history\\%s.%s",filename,local_38);
   engine_dosio_c_ensureTrailingSlash_FUN_00481f80(g_VersionControlDirectory,local_1c,local_150);
   engine_dosio_c_makePath_FUN_00481f50(local_964,local_1c,local_150,(char *)0x0,(char *)0x0);
   pcVar10 = local_75c;
@@ -174,7 +174,7 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_processFiles_FUN_004b4220(CCheckOutI
   } while (cVar1 != '\0');
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Reading %s",local_964);
-  local_3c = engine_fileio_cpp_findMaxFieldInTimestampFile_FUN_004b2640((char *)operation_mode);
+  local_3c = engine_fileio_cpp_findMaxFieldInTimestampFile_FUN_004b2640(filename,local_964);
   if (local_3c < 0) {
     return 0;
   }
@@ -317,7 +317,7 @@ LAB_004b4ad9:
       else {
 LAB_004b4980:
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-                  (g_CEditorToolsPtr,"Finalizing %s to network...",operation_mode);
+                  (g_CEditorToolsPtr,"Finalizing %s to network...",filename);
         engine_2d_c_clearInputAndWait_FUN_00403260();
         iVar6 = 0;
         while( true ) {

@@ -591,7 +591,8 @@ LAB_0040fdd3:
     if (iVar13 != 0) {
       if (local_444[0] == '\0') {
         if ((this_ptr->param1).v_int < ((this_ptr->data).v_rulelist_ptr)->list_size) {
-          core_event_cpp_CRuleList_remove_FUN_004b17c0((this_ptr->data).v_rulelist_ptr);
+          core_event_cpp_CRuleList_remove_FUN_004b17c0
+                    ((this_ptr->data).v_rulelist_ptr,(this_ptr->param1).v_int);
         }
         return 1;
       }
@@ -677,7 +678,8 @@ LAB_0040fdd3:
           if (pcVar7 == (char *)0x0) {
             pCVar5 = (this_ptr->data).v_rulelist_ptr;
             if (pCVar5->list_size <= (this_ptr->param1).v_int) {
-              core_event_cpp_CRuleList_insert_FUN_004b1680(pCVar5);
+              core_event_cpp_CRuleList_insert_FUN_004b1680
+                        (pCVar5,(this_ptr->param1).v_int,acStack_1d9 + 1,local_175 + 1);
               return 1;
             }
             pacVar18 = pCVar5->conditions + (this_ptr->param1).v_int;

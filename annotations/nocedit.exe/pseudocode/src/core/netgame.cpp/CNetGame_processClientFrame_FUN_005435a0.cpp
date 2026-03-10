@@ -33,7 +33,10 @@ LAB_00543605:
           if (this_ptr->players[this_ptr->local_player_index].sim_frame_index ==
               *(int *)((int)g_SimFrameHistory[0].player_controls[0].action_states + iVar1 + -0xc)) {
             if (-1 < iVar2) {
-              core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_00543800(this_ptr);
+              core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_00543800
+                        (this_ptr,(SSimFrame *)
+                                  ((int)g_SimFrameHistory[0].player_controls[0].action_states +
+                                  iVar1 + -0xc));
               core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_00543970(this_ptr);
               iVar1 = 0;
               iVar2 = this_ptr->players[this_ptr->local_player_index].sim_frame_index;

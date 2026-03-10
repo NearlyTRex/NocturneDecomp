@@ -1,0 +1,293 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 348,
+    "complexity_score": 188,
+    "cross_reference_count": 1,
+    "function_call_count": 8,
+    "global_count": 8,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 148,
+    "suspect_count": 3,
+    "suspect_types": [
+      "decompiler_intrinsic",
+      "warning_type_propagation"
+    ],
+    "total_lines": 496
+  },
+  "cross_references": [
+    {
+      "addr": "00525840",
+      "from_addr": "0052649a",
+      "name": "core_mobster.cpp_CMobster_process_FUN_00525840",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00526d90",
+    "address_range": [
+      [
+        "00526d90",
+        "00526e9b"
+      ],
+      [
+        "00526ebb",
+        "005271b7"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_mobster.cpp_CMobster_processWeaponPickup_FUN_00526d90",
+    "signature": "int __cdecl core_mobster_cpp_CMobster_processWeaponPickup_FUN_00526d90(CMobster *this_ptr,float delta_time)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408ec0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0"
+    },
+    {
+      "addr": "0040cc10",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomFloat_FUN_0040cc10"
+    },
+    {
+      "addr": "0040cc70",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomInt_FUN_0040cc70"
+    },
+    {
+      "addr": "0040c6d0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_isOfClass_FUN_0040c6d0"
+    },
+    {
+      "addr": "0041b540",
+      "is_variadic": false,
+      "name": "core_bodypart.cpp_addVector_FUN_0041b540"
+    },
+    {
+      "addr": "0041b4e0",
+      "is_variadic": false,
+      "name": "core_bodypart.cpp_scaleVector_FUN_0041b4e0"
+    },
+    {
+      "addr": "004286e0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_walkToPoint_FUN_004286e0"
+    },
+    {
+      "addr": "0052db00",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00639906",
+      "name": "s_CTommyGun_00639906",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00639916",
+      "name": "DOUBLE_00639916",
+      "type": "double",
+      "value": "0.333333333333333"
+    },
+    {
+      "addr": "0063991e",
+      "name": "DOUBLE_0063991e",
+      "type": "double",
+      "value": "5"
+    },
+    {
+      "addr": "00639926",
+      "name": "DOUBLE_00639926",
+      "type": "double",
+      "value": "0.400000000000000"
+    },
+    {
+      "addr": "006810c8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "03114278"
+    },
+    {
+      "addr": "032613cc",
+      "name": "g_CDemonSetInstance.actor_count",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "032613d0",
+      "name": "g_CDemonSetInstance.actors[0]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "032613d4",
+      "name": "DAT_032613d4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0052649a",
+        "call_type": "direct",
+        "caller": "core_mobster.cpp_CMobster_process_FUN_00525840",
+        "estimated_params": 2,
+        "instructions_analyzed": 3,
+        "reg_params": [],
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.301003344481606,
+    "instruction_count": 299,
+    "opcode_distribution": {
+      "BOOL_AND": 2,
+      "BOOL_NEGATE": 12,
+      "BOOL_OR": 9,
+      "BRANCH": 2,
+      "CALL": 11,
+      "CALLIND": 4,
+      "CBRANCH": 20,
+      "COPY": 526,
+      "FLOAT2FLOAT": 39,
+      "FLOAT_ADD": 5,
+      "FLOAT_EQUAL": 6,
+      "FLOAT_LESS": 6,
+      "FLOAT_MULT": 9,
+      "FLOAT_NAN": 12,
+      "FLOAT_SQRT": 2,
+      "FLOAT_SUB": 8,
+      "INT2FLOAT": 5,
+      "INT_ADD": 153,
+      "INT_AND": 136,
+      "INT_CARRY": 19,
+      "INT_EQUAL": 92,
+      "INT_LEFT": 26,
+      "INT_LESS": 8,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 35,
+      "INT_OR": 35,
+      "INT_SBORROW": 8,
+      "INT_SCARRY": 23,
+      "INT_SLESS": 46,
+      "INT_SUB": 67,
+      "INT_XOR": 6,
+      "INT_ZEXT": 24,
+      "LOAD": 88,
+      "POPCOUNT": 44,
+      "RETURN": 5,
+      "STORE": 89
+    },
+    "pcode_op_count": 1585
+  },
+  "stack_frame": {
+    "frame_size": 48,
+    "local_size": 40,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMobster *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "00526d9c",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 73,
+      "match": "SQRT",
+      "severity": "mild",
+      "text": "fVar2 = SQRT(fStack_54 * fStack_54 + fStack_5c * fStack_5c + fStack_58 * fStack_58);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 107,
+      "match": "SQRT",
+      "severity": "mild",
+      "text": "SQRT(fVar3 * fVar3 + fVar2 * fVar2) * (float)0.33333333333333298;",
+      "type": "decompiler_intrinsic"
+    }
+  ]
+}

@@ -2,11 +2,11 @@
 // Address: 0054e1e0
 // Address Range: [[0054e1e0, 0054e2d5]]
 // Convention: __cdecl
-// Signature: void __cdecl core_platfrm_cpp_CPlatform_attachActor_FUN_0054e1e0(CPlatform *this_ptr)
+// Signature: void __cdecl core_platfrm_cpp_CPlatform_attachActor_FUN_0054e1e0(CPlatform *this_ptr,CDemonActor *actor)
 
 #include "nocturne.h"
 
-void __cdecl core_platfrm_cpp_CPlatform_attachActor_FUN_0054e1e0(CPlatform *this_ptr)
+void __cdecl core_platfrm_cpp_CPlatform_attachActor_FUN_0054e1e0(CPlatform *this_ptr,CDemonActor *actor)
 
 {
   CDemonActor *pCVar1;
@@ -15,17 +15,16 @@ void __cdecl core_platfrm_cpp_CPlatform_attachActor_FUN_0054e1e0(CPlatform *this
   CMatrix3x4f *pCVar4;
   CMatrix3x4f *pCVar5;
   byte bVar6;
-  CDemonActor *in_stack_00000008;
   CMatrix3x4f local_a0;
   CMatrix3x4f local_70;
   CMatrix3x4f local_40;
   
   bVar6 = 0;
-  if (in_stack_00000008 != (CDemonActor *)0x0) {
+  if (actor != (CDemonActor *)0x0) {
     iVar3 = 0;
     pCVar1 = this_ptr->attach_actors[0].actor;
     pCVar2 = this_ptr;
-    while (in_stack_00000008 != pCVar1) {
+    while (actor != pCVar1) {
       iVar3 = iVar3 + 1;
       if (9 < iVar3) {
         pCVar1 = this_ptr->attach_actors[0].actor;
@@ -34,11 +33,10 @@ void __cdecl core_platfrm_cpp_CPlatform_attachActor_FUN_0054e1e0(CPlatform *this
         while( true ) {
           if (pCVar1 == (CDemonActor *)0x0) {
             core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
-                      (&local_a0,&(in_stack_00000008->location).position,
-                       &(in_stack_00000008->orient).vec);
+                      (&local_a0,&(actor->location).position,&(actor->orient).vec);
             core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
                       (&local_40,&(this_ptr->base).location.position,&(this_ptr->base).orient.vec);
-            pCVar2->attach_actors[0].actor = in_stack_00000008;
+            pCVar2->attach_actors[0].actor = actor;
             core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_a0,&local_40,&local_70);
             pCVar4 = &local_70;
             pCVar5 = &pCVar2->attach_actors[0].matrix;

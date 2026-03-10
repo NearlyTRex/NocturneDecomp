@@ -167,7 +167,7 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_00505c70(CLightGun *this_ptr)
       (*((this_ptr_00->base).vtable._ub)->getBoundingBox)(&this_ptr_00->base,&CStack_d8);
       iVar5 = core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180
                         (&g_CDemonLightInstance.base,&(this_ptr_00->base).location.position,
-                         &(this_ptr_00->base).orient.vec,&CStack_d8.min);
+                         &(this_ptr_00->base).orient.vec,&CStack_d8.min,&CStack_d8.max);
       if (iVar5 != 0) {
         engine_console_cpp_CConsole_printf_FUN_00441890
                   (g_CConsolePtr,"%s in volume\n",this_ptr_00);

@@ -13,6 +13,8 @@ void __cdecl core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_00543970(CNetGame *th
   SPlayerControl *pSVar2;
   int *piVar3;
   byte bVar4;
+  SNetPacketHeader local_48;
+  int local_43;
   int local_3f [11];
   
   bVar4 = 0;
@@ -36,6 +38,9 @@ void __cdecl core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_00543970(CNetGame *th
     g_CurrentLineNumber = 0xa2c;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CNetGame::sendSimFrameAck - I'm not in player list");
   }
+  local_48.size = 0x35;
+  local_48.type = PACKET_PLAYER_CONTROL;
+  local_43 = this_ptr->players[this_ptr->local_player_index].sim_frame_index;
   pSVar2 = &this_ptr->players[this_ptr->local_player_index].controls;
   piVar3 = local_3f;
   for (iVar1 = 0xb; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -43,7 +48,7 @@ void __cdecl core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_00543970(CNetGame *th
     pSVar2 = (SPlayerControl *)((int)pSVar2 + ((uint)bVar4 * -2 + 1) * 4);
     piVar3 = piVar3 + (uint)bVar4 * -2 + 1;
   }
-  core_netgame_cpp_CNetGame_send_FUN_005411c0(this_ptr,this_ptr->server_player_index);
+  core_netgame_cpp_CNetGame_send_FUN_005411c0(this_ptr,this_ptr->server_player_index,&local_48);
   UINT_02f7c8c8 = g_CurrentGameTime;
   return;
 }

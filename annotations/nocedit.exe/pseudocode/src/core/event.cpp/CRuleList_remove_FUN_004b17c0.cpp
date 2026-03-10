@@ -2,17 +2,16 @@
 // Address: 004b17c0
 // Address Range: [[004b17c0, 004b1884]]
 // Convention: __cdecl
-// Signature: void __cdecl core_event_cpp_CRuleList_remove_FUN_004b17c0(CRuleList *this_ptr)
+// Signature: void __cdecl core_event_cpp_CRuleList_remove_FUN_004b17c0(CRuleList *this_ptr,int index)
 
 #include "nocturne.h"
 
-void __cdecl core_event_cpp_CRuleList_remove_FUN_004b17c0(CRuleList *this_ptr)
+void __cdecl core_event_cpp_CRuleList_remove_FUN_004b17c0(CRuleList *this_ptr,int index)
 
 {
   int iVar1;
-  int in_stack_00000008;
   
-  if ((in_stack_00000008 < 0) || (this_ptr->list_size <= in_stack_00000008)) {
+  if ((index < 0) || (this_ptr->list_size <= index)) {
     g_CurrentFilename = "..\\core\\event.cpp";
     g_CurrentLineNumber = 0xcef;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CRuleList::remove - invalid index");
@@ -20,10 +19,9 @@ void __cdecl core_event_cpp_CRuleList_remove_FUN_004b17c0(CRuleList *this_ptr)
   iVar1 = this_ptr->list_size + -1;
   this_ptr->list_size = iVar1;
   memmove
-            (this_ptr->conditions + in_stack_00000008,this_ptr->conditions + in_stack_00000008 + 1,
-             (iVar1 - in_stack_00000008) * 100);
+            (this_ptr->conditions + index,this_ptr->conditions + index + 1,(iVar1 - index) * 100);
   memmove
-            (this_ptr->events + in_stack_00000008,this_ptr->events + in_stack_00000008 + 1,
-             (this_ptr->list_size - in_stack_00000008) * 100);
+            (this_ptr->events + index,this_ptr->events + index + 1,
+             (this_ptr->list_size - index) * 100);
   return;
 }

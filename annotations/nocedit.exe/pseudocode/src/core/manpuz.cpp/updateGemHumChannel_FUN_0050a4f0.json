@@ -1,0 +1,274 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 136,
+    "complexity_score": 42,
+    "cross_reference_count": 1,
+    "function_call_count": 9,
+    "global_count": 1,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 42,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 178
+  },
+  "cross_references": [
+    {
+      "addr": "0050a610",
+      "from_addr": "0050a6a3",
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_updateGem_FUN_0050a610",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0050a4f0",
+    "address_range": [
+      [
+        "0050a4f0",
+        "0050a60e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_manpuz.cpp_updateGemHumChannel_FUN_0050a4f0",
+    "signature": "int __cdecl core_manpuz_cpp_updateGemHumChannel_FUN_0050a4f0(float *hum_value,float target,float max_step,uint *sfx_handle,char *wav_filename,CVector3f *world_position)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a9660",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_isSfxPlaying_FUN_005a9660"
+    },
+    {
+      "addr": "005a9c40",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_killSfx_FUN_005a9c40"
+    },
+    {
+      "addr": "005a8cb0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0"
+    },
+    {
+      "addr": "005a8c30",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30"
+    },
+    {
+      "addr": "005a88e0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setNextSfxStaticPosition_FUN_005a88e0"
+    },
+    {
+      "addr": "005a8a60",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setNextSfxVolume_FUN_005a8a60"
+    },
+    {
+      "addr": "005a9820",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setSfxPosition_FUN_005a9820"
+    },
+    {
+      "addr": "005a9ae0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setSfxVolume_FUN_005a9ae0"
+    },
+    {
+      "addr": "005a8e90",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_startSfx_FUN_005a8e90"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063576d",
+      "name": "DOUBLE_0063576d",
+      "type": "double",
+      "value": "0.00392156862745098"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "0050a6a3",
+        "call_type": "direct",
+        "caller": "core_manpuz.cpp_CMansionPuzzleCircle_updateGem_FUN_0050a610",
+        "estimated_params": 6,
+        "instructions_analyzed": 13,
+        "reg_params": [],
+        "stack_params": 6
+      },
+      {
+        "call_addr": "0050a6c7",
+        "call_type": "direct",
+        "caller": "core_manpuz.cpp_CMansionPuzzleCircle_updateGem_FUN_0050a610",
+        "estimated_params": 6,
+        "instructions_analyzed": 12,
+        "reg_params": [],
+        "stack_params": 6
+      },
+      {
+        "call_addr": "0050a67c",
+        "call_type": "direct",
+        "caller": "core_manpuz.cpp_CMansionPuzzleCircle_updateGem_FUN_0050a610",
+        "estimated_params": 6,
+        "instructions_analyzed": 11,
+        "reg_params": [],
+        "stack_params": 6
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 6,
+    "estimated_params": 6
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.245614035087719,
+    "instruction_count": 114,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 5,
+      "BRANCH": 2,
+      "CALL": 9,
+      "CBRANCH": 4,
+      "COPY": 300,
+      "FLOAT2FLOAT": 27,
+      "FLOAT_ADD": 1,
+      "FLOAT_EQUAL": 3,
+      "FLOAT_LESS": 3,
+      "FLOAT_MULT": 1,
+      "FLOAT_NAN": 6,
+      "FLOAT_NEG": 1,
+      "FLOAT_SUB": 2,
+      "INT2FLOAT": 1,
+      "INT_ADD": 39,
+      "INT_AND": 51,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 34,
+      "INT_LEFT": 12,
+      "INT_LESS": 7,
+      "INT_NOTEQUAL": 15,
+      "INT_OR": 15,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 17,
+      "INT_SUB": 27,
+      "INT_XOR": 1,
+      "INT_ZEXT": 12,
+      "LOAD": 43,
+      "POPCOUNT": 17,
+      "RETURN": 3,
+      "STORE": 31
+    },
+    "pcode_op_count": 712
+  },
+  "stack_frame": {
+    "frame_size": 76,
+    "local_size": 52,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "hum_value",
+        "offset": 4,
+        "size": 4,
+        "type": "float *"
+      },
+      {
+        "is_param": true,
+        "name": "target",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "max_step",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "sfx_handle",
+        "offset": 16,
+        "size": 4,
+        "type": "uint *"
+      },
+      {
+        "is_param": true,
+        "name": "wav_filename",
+        "offset": 20,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "world_position",
+        "offset": 24,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0050a4f9",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": []
+}

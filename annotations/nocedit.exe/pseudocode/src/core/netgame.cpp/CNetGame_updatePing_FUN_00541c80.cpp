@@ -14,6 +14,9 @@ void __cdecl core_netgame_cpp_CNetGame_updatePing_FUN_00541c80(CNetGame *this_pt
   uint uVar3;
   float local_2c;
   float local_28;
+  SNetPacketHeader local_24;
+  uint local_1f;
+  int local_18;
   
   if ((player_index < 0) || (this_ptr->player_count <= player_index)) {
     g_CurrentFilename = "..\\core\\netgame.cpp";
@@ -42,8 +45,8 @@ void __cdecl core_netgame_cpp_CNetGame_updatePing_FUN_00541c80(CNetGame *this_pt
       local_28 = 30.0;
     }
     if ((float)0.40000000000000002 <= local_28) {
-      local_2c = (float)(int)(uVar3 - this_ptr->players[player_index].last_ping_response) *
-                 (float)1.52587890625e-05;
+      local_18 = uVar3 - this_ptr->players[player_index].last_ping_response;
+      local_2c = (float)local_18 * (float)1.52587890625e-05;
       if (local_2c < 0.0) {
         local_2c = 0.0;
       }
@@ -54,8 +57,11 @@ void __cdecl core_netgame_cpp_CNetGame_updatePing_FUN_00541c80(CNetGame *this_pt
         if ((float)5 < local_2c) {
           this_ptr->players[player_index].ping_quality = -1.0;
         }
+        local_24.type = PACKET_PING;
+        local_24.size = 9;
+        local_1f = g_CurrentGameTime;
         this_ptr->players[player_index].last_ping_sent = g_CurrentGameTime;
-        core_netgame_cpp_CNetGame_send_FUN_005411c0(this_ptr,player_index);
+        core_netgame_cpp_CNetGame_send_FUN_005411c0(this_ptr,player_index,&local_24);
       }
     }
     return;

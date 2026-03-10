@@ -1,10 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_mirror_cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0(CMirrorReflection *this_ptr)
+; void __cdecl core_mirror_cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0(CMirrorReflection *this_ptr,CVector3f *camera_position,CVector3f *camera_rotation,float projection_scale)
 ;
 ; Parameters:
 ; CMirrorReflection * Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   camera_position
+; CVector3f *      Stack[0xc]:4   camera_rotation
+; float            Stack[0x10]:4   projection_scale
 ; Local Variables:
 ; undefined8       Stack[-0x4d0]:8  local_4d0
 ; undefined8       Stack[-0x4c8]:8  local_4c8

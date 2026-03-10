@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_skeledit_cpp_createMeshPrecomputeFile_FUN_00589bb0(CLodMesh *mesh_ptr)
+; void __cdecl core_skeledit_cpp_createMeshPrecomputeFile_FUN_00589bb0(CLodMesh *mesh_ptr,CLodMeshPrecomputeEntry *precompute_entry)
 ;
 ; Parameters:
 ; CLodMesh *       Stack[0x4]:4   mesh_ptr
+; CLodMeshPrecomputeEntry * Stack[0x8]:4   precompute_entry
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_wt_00649e31

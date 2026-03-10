@@ -25,7 +25,7 @@ void __cdecl CGhoul::setup(CGhoul *this_ptr);
 
 // Original: core_ghoul.cpp_CGhoul_findDarkWayPoint_FUN_004e63d0
 // Address: 004e63d0
-void __cdecl CGhoul::findDarkWayPoint(CGhoul *this_ptr);
+void __cdecl CGhoul::findDarkWayPoint(CGhoul *this_ptr,float delta_time);
 
 // Original: core_ghoul.cpp_CGhoul_process_FUN_004e6600
 // Address: 004e6600

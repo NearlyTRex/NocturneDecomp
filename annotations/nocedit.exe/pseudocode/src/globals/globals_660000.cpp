@@ -3746,7 +3746,7 @@ CEnemy_vtable DAT_00661578 = {
 CEnemy_vtable DAT_006618E8 = {
     .getTargetPoint = (CEnemy_getTargetPoint *)core_enemy_cpp_CEnemy_getTargetPoint_FUN_004a99d0,
     .updateVictim = (CEnemy_updateVictim *)core_enemy_cpp_CEnemy_updateVictim_FUN_004a9b00,
-    .randomize = (CEnemy_randomize *)core_mobster_cpp_CMobster_FUN_00527c30,
+    .randomize = (CEnemy_randomize *)core_mobster_cpp_CMobster_randomize_FUN_00527c30,
     .reset = (CEnemy_reset *)core_mobster_cpp_CMobster_reset_FUN_00527360
 };
 CEnemy_vtable DAT_006627E8 = {
@@ -3860,6 +3860,26 @@ CKeys_vtable g_CKeysVTable = {
     .getKeyState = (CKeys_getKeyState *)engine_keys_cpp_CKeys_getKeyState_FUN_00502420,
     .getAndClearKeyState = (CKeys_getAndClearKeyState *)engine_keys_cpp_CKeys_getAndClearKeyState_FUN_00502430,
     .clearKeyPresses = (CKeys_clearKeypresses *)engine_keys_cpp_CKeys_clearKeypresses_FUN_00502450
+};
+
+// CMatrix3x4f
+CMatrix3x4f CMatrix3x4f_00665968 = {
+    .m = {{
+        .w = 1.0f,
+        .x = 0.0f,
+        .y = 0.0f,
+        .z = 0.0f
+    }, {
+        .w = 0.0f,
+        .x = 1.0f,
+        .y = 0.0f,
+        .z = 0.0f
+    }, {
+        .w = 0.0f,
+        .x = 0.0f,
+        .y = 1.0f,
+        .z = 0.0f
+    }}
 };
 
 // CMotionController_vtable
@@ -7702,9 +7722,6 @@ filebuf_vtable g_FilebufVTable = {
     .destructor = (cpp_streambuf_destructor *)crt_fstream_cpp_filebuf_dtor_FUN_0060bdf9,
     .doallocate = (cpp_streambuf_doallocate *)crt_iostream_cpp_doallocate_FUN_0060d677
 };
-
-// float
-float FLOAT_0066596c = 0.0f;
 
 // int
 int g_Istrstream_IstreamLastReadLength = 0x48;

@@ -13,11 +13,11 @@
 ;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00425fe0 at 004262a8
 ;   core_bugs.cpp_CBugs_updateBugsBehavior_FUN_00425cc0 at 00425e27
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_004286e0 at 00428868
-;   core_colonel.cpp_CColonel_FUN_0043ff20 at 00440359
+;   core_colonel.cpp_CColonel_processAI_FUN_0043ff20 at 00440359
 ;   core_gabriela.cpp_CGabriella_processAI_FUN_004d4190 at 004d46f7
 ;   core_haystack.cpp_CHaystack_updateAI_FUN_004f13f0 at 004f1879
-;   core_icepick.cpp_CIcePick_FUN_004f8c70 at 004f922b
-;   core_moloch.cpp_CMoloch_FUN_005293b0 at 005294c1
+;   core_icepick.cpp_CIcePick_processAI_FUN_004f8c70 at 004f922b
+;   core_moloch.cpp_CMoloch_processAI_FUN_005293b0 at 005294c1
 ;   core_scat.cpp_CScat_updateAI_FUN_005578e0 at 00557ad1
 ;   core_svetlana.cpp_CSvetlana_processAI_FUN_005d9260 at 005d981b
 ;   ... and 1 more

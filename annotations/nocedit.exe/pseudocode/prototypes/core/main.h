@@ -29,7 +29,7 @@ void __cdecl initializeGameSystems(void);
 
 // Original: core_main.c_drawCenteredText_FUN_00508250
 // Address: 00508250
-void __cdecl drawCenteredText(char *text,int y_pos,int color);
+void __cdecl drawCenteredText(char *text,int x,int y,int color_mode);
 
 // Original: core_main.c_waitWithSkip_FUN_005082a0
 // Address: 005082a0

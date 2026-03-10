@@ -2,21 +2,18 @@
 // Address: 004b1680
 // Address Range: [[004b1680, 004b17ba]]
 // Convention: __cdecl
-// Signature: void __cdecl core_event_cpp_CRuleList_insert_FUN_004b1680(CRuleList *this_ptr)
+// Signature: void __cdecl core_event_cpp_CRuleList_insert_FUN_004b1680(CRuleList *this_ptr,int index,char *condition,char *event)
 
 #include "nocturne.h"
 
-void __cdecl core_event_cpp_CRuleList_insert_FUN_004b1680(CRuleList *this_ptr)
+void __cdecl core_event_cpp_CRuleList_insert_FUN_004b1680(CRuleList *this_ptr,int index,char *condition,char *event)
 
 {
   char cVar1;
   char (*src) [100];
   char (*src_00) [100];
-  int in_stack_00000008;
-  char *in_stack_0000000c;
-  char *in_stack_00000010;
   
-  if ((in_stack_00000008 < 0) || (this_ptr->list_size < in_stack_00000008)) {
+  if ((index < 0) || (this_ptr->list_size < index)) {
     g_CurrentFilename = "..\\core\\event.cpp";
     g_CurrentLineNumber = 0xcd9;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CRuleList::insert - invalid index");
@@ -26,32 +23,30 @@ void __cdecl core_event_cpp_CRuleList_insert_FUN_004b1680(CRuleList *this_ptr)
     g_CurrentLineNumber = 0xcda;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CRuleList::insert - list full");
   }
-  src = this_ptr->conditions + in_stack_00000008;
+  src = this_ptr->conditions + index;
   memmove
-            (this_ptr->conditions + in_stack_00000008 + 1,src,
-             (this_ptr->list_size - in_stack_00000008) * 100);
-  src_00 = this_ptr->events + in_stack_00000008;
+            (this_ptr->conditions + index + 1,src,(this_ptr->list_size - index) * 100);
+  src_00 = this_ptr->events + index;
   memmove
-            (this_ptr->events + in_stack_00000008 + 1,src_00,
-             (this_ptr->list_size - in_stack_00000008) * 100);
+            (this_ptr->events + index + 1,src_00,(this_ptr->list_size - index) * 100);
   this_ptr->list_size = this_ptr->list_size + 1;
   do {
-    cVar1 = *in_stack_0000000c;
+    cVar1 = *condition;
     (*src)[0] = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = in_stack_0000000c[1];
-    in_stack_0000000c = in_stack_0000000c + 2;
+    cVar1 = condition[1];
+    condition = condition + 2;
     (*src)[1] = cVar1;
     src = (char (*) [100])(*src + 2);
   } while (cVar1 != '\0');
   do {
-    cVar1 = *in_stack_00000010;
+    cVar1 = *event;
     (*src_00)[0] = cVar1;
     if (cVar1 == '\0') {
       return;
     }
-    cVar1 = in_stack_00000010[1];
-    in_stack_00000010 = in_stack_00000010 + 2;
+    cVar1 = event[1];
+    event = event + 2;
     (*src_00)[1] = cVar1;
     src_00 = (char (*) [100])(*src_00 + 2);
   } while (cVar1 != '\0');

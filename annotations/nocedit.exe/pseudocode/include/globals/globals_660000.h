@@ -18,6 +18,7 @@
 #include "types/classes/CFont_vtable.h"
 #include "types/classes/CHero_vtable.h"
 #include "types/classes/CKeys_vtable.h"
+#include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CMotionController_vtable.h"
 #include "types/classes/CObj_vtable.h"
 #include "types/classes/COptimize_vtable.h"
@@ -163,6 +164,9 @@ extern CHero_vtable DAT_00663EB8;
 
 // CKeys_vtable
 extern CKeys_vtable g_CKeysVTable;
+
+// CMatrix3x4f
+extern CMatrix3x4f CMatrix3x4f_00665968;
 
 // CMotionController_vtable
 extern CMotionController_vtable g_CMotionControllerVTable;
@@ -447,9 +451,6 @@ extern char g_LoadedModelName[80];
 
 // filebuf_vtable
 extern filebuf_vtable g_FilebufVTable;
-
-// float
-extern float FLOAT_0066596c;
 
 // int
 extern int g_Istrstream_IstreamLastReadLength;

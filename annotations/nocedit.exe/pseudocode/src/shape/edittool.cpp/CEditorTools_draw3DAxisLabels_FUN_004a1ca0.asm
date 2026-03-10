@@ -16,8 +16,8 @@
 ;
 ; XREF[8]:
 ;   core_cloth.cpp_CCloth_renderBone_FUN_0043b7e0 at 0043b9e0
-;   core_manpuz.cpp_CMansionPuzzleCircle_FUN_00509c60 at 00509cff
-;   core_manpuz.cpp_CMansionPuzzleCircle_FUN_00509d50 at 00509de2
+;   core_manpuz.cpp_CMansionPuzzleCircle_renderEmitter_FUN_00509c60 at 00509cff
+;   core_manpuz.cpp_CMansionPuzzleCircle_renderGem_FUN_00509d50 at 00509de2
 ;   core_setedit.cpp_CDemonSet_showRoomEditor_FUN_00581aa0 at 00581d79
 ;   core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170 at 00583539
 ;   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 at 005975b4

@@ -250,7 +250,7 @@ section .text
     PUSH EBX                            ; 00540418
     PUSH ESI                            ; 00540419
     CALL core_netgame.cpp_CNetGame_send_FUN_005411c0 ; 0054041a
-        ;   XREF to: 005411c0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_send_FUN_005411c0(CNetGame * this_ptr, int player_index)
+        ;   XREF to: 005411c0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_send_FUN_005411c0(CNetGame * this_ptr, int player_index, SNetPacketHeader * packet)
     ADD ESP,0xc                         ; 0054041f
         ;   Label: LAB_0054041f
     INC EBX                             ; 00540422

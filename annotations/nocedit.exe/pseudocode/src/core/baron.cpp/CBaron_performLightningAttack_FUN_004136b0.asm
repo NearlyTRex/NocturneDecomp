@@ -134,7 +134,7 @@ section .text
     MOV ECX,dword ptr [0x0067a3d0]      ; 0041378f | g_CFireEffectInstance | g_CFireEffectPtr
     PUSH ECX                            ; 00413795 | g_CFireEffectInstance
     CALL core_fire.cpp_CFireEffect_createCrater_FUN_004c8ea0 ; 00413796
-        ;   XREF to: 004c8ea0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createCrater_FUN_004c8ea0(CFireEffect * this_ptr)
+        ;   XREF to: 004c8ea0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createCrater_FUN_004c8ea0(CFireEffect * this_ptr, CVector3f * position, float radius)
     ADD ESP,0xc                         ; 0041379b
     LEA EAX,[ESP + 0x80]                ; 0041379e
         ;   Label: LAB_0041379e

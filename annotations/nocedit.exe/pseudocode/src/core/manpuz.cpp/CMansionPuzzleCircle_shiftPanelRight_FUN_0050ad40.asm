@@ -7,7 +7,7 @@
 ; CMansionPuzzleCircle * Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050a610 at 0050a8a3
+;   core_manpuz.cpp_CMansionPuzzleCircle_updateGem_FUN_0050a610 at 0050a8a3
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_manpuz_cpp_00635835
@@ -18,7 +18,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050aee0
+;   core_manpuz.cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_0050aee0
 ;   sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0
 ;   sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30
 ;   sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_005a8940
@@ -43,8 +43,8 @@ section .text
     SHL EAX,0x2                         ; 0050ad60
     PUSH EDX                            ; 0050ad63
     LEA EBX,[ESI + EAX*0x1]             ; 0050ad64
-    CALL core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050aee0 ; 0050ad67
-        ;   XREF to: 0050aee0 (UNCONDITIONAL_CALL)  ; int core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050aee0(CMansionPuzzleCircle * this_ptr)
+    CALL core_manpuz.cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_0050aee0 ; 0050ad67
+        ;   XREF to: 0050aee0 (UNCONDITIONAL_CALL)  ; int core_manpuz.cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_0050aee0(CMansionPuzzleCircle * this_ptr, int panel_index)
     MOV EDX,EAX                         ; 0050ad6c
     SHL EAX,0x2                         ; 0050ad6e
     SUB EAX,EDX                         ; 0050ad71

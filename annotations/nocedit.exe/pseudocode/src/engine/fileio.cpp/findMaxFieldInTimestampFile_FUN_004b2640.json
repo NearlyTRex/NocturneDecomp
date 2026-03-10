@@ -6,18 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 130,
-    "complexity_score": 96,
+    "complexity_score": 54,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 5,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 56,
-    "suspect_count": 3,
-    "suspect_types": [
-      "param_count_too_few",
-      "stack_param"
-    ],
-    "total_lines": 186
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 54,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 184
   },
   "cross_references": [
     {
@@ -43,7 +40,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_fileio.cpp_findMaxFieldInTimestampFile_FUN_004b2640",
-    "signature": "int __cdecl engine_fileio_cpp_findMaxFieldInTimestampFile_FUN_004b2640(char *filename)"
+    "signature": "int __cdecl engine_fileio_cpp_findMaxFieldInTimestampFile_FUN_004b2640(char *directory,char *filename)"
   },
   "function_calls": [
     {
@@ -131,8 +128,8 @@
         "stack_params": 2
       }
     ],
-    "confidence": "medium",
-    "declared_params": 1,
+    "confidence": "high",
+    "declared_params": 2,
     "estimated_params": 2
   },
   "pcode_summary": {
@@ -165,10 +162,10 @@
     "pcode_op_count": 454
   },
   "stack_frame": {
-    "frame_size": 32,
+    "frame_size": 36,
     "local_size": 28,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -187,40 +184,19 @@
       },
       {
         "is_param": true,
-        "name": "filename",
+        "name": "directory",
         "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 8,
         "size": 4,
         "type": "char *"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "char *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "(in_stack_00000008,(char *)0x0,\"rt\",\"..\\\\engine\\\\fileio.cpp\",",
-      "type": "stack_param"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 1,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:1 vs estimated:2",
-      "param_delta": 1,
-      "text": "Function declares 1 params but call sites push 2 (1 missing)",
-      "type": "param_count_too_few"
-    }
-  ]
+  "suspects": []
 }

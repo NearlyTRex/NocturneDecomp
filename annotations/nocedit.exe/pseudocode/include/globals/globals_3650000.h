@@ -20,6 +20,9 @@ extern CPickList g_MissingBackdropFiles;
 // char[100][30]
 extern char g_BoneNameBuffer[100][30];
 
+// char[120][260]
+extern char g_MotionFilenames[120][260];
+
 // char[200][50]
 extern char g_SkeletonBoneNames[200][50];
 

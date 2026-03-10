@@ -11,6 +11,7 @@
 void __cdecl core_batman_cpp_CBatman_FUN_00417660(CBatman *this_ptr,SDamageInfo *damage_info)
 
 {
+  CVector3f *initial_velocity;
   float fVar1;
   CConsole *this_ptr_00;
   int iVar2;
@@ -81,16 +82,17 @@ switchD_00417696_default:
                   ((CCharacter *)this_ptr,body_part,this_ptr->part_indices[5],0);
       }
       if (this_ptr->part_indices[1] == damage_info->hit_part_index) {
+        initial_velocity = &damage_info->impact_point;
         core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0
-                  ((CCharacter *)this_ptr,this_ptr->part_indices[4]);
+                  ((CCharacter *)this_ptr,this_ptr->part_indices[4],initial_velocity,0);
         core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0
-                  ((CCharacter *)this_ptr,this_ptr->part_indices[5]);
+                  ((CCharacter *)this_ptr,this_ptr->part_indices[5],initial_velocity,0);
         core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0
-                  ((CCharacter *)this_ptr,this_ptr->part_indices[2]);
+                  ((CCharacter *)this_ptr,this_ptr->part_indices[2],initial_velocity,0);
         core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0
-                  ((CCharacter *)this_ptr,this_ptr->part_indices[3]);
+                  ((CCharacter *)this_ptr,this_ptr->part_indices[3],initial_velocity,0);
         core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0
-                  ((CCharacter *)this_ptr,this_ptr->part_indices[0]);
+                  ((CCharacter *)this_ptr,this_ptr->part_indices[0],initial_velocity,0);
       }
       core_charactr_cpp_CCharacter_playSoundWithCooldown_FUN_0042f300
                 ((CCharacter *)this_ptr,"limb?.wav");

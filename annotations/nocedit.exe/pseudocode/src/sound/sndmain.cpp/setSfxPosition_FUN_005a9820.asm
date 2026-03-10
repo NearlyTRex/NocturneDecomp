@@ -10,7 +10,7 @@
 ; double           Stack[0x18]:8   pos_z
 ;
 ; XREF[1]:
-;   core_manpuz.cpp_FUN_0050a4f0 at 0050a57b
+;   core_manpuz.cpp_updateGemHumChannel_FUN_0050a4f0 at 0050a57b
 ;
 ; Referenced Globals:
 ;   CSoundDevice* g_CSoundDevicePtr

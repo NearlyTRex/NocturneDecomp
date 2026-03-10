@@ -2,11 +2,11 @@
 // Address: 00409f40
 // Address Range: [[00409f40, 00409f5e]]
 // Convention: __cdecl
-// Signature: float __cdecl core_actor_cpp_CDemonActor_evaluateTriggerCondition_FUN_00409f40(CDemonActor *this_ptr)
+// Signature: float __cdecl core_actor_cpp_CDemonActor_evaluateTriggerCondition_FUN_00409f40(CDemonActor *this_ptr,CDemonActor *querying_actor,CVector3f *query_position)
 
 #include "nocturne.h"
 
-float __cdecl core_actor_cpp_CDemonActor_evaluateTriggerCondition_FUN_00409f40(CDemonActor *this_ptr)
+float __cdecl core_actor_cpp_CDemonActor_evaluateTriggerCondition_FUN_00409f40(CDemonActor *this_ptr,CDemonActor *querying_actor,CVector3f *query_position)
 
 {
   core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80

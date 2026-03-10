@@ -2,16 +2,15 @@
 // Address: 005e2b30
 // Address Range: [[005e2b30, 005e2c3f]]
 // Convention: __cdecl
-// Signature: float __cdecl core_turret_cpp_CTurret_getCurFrame_FUN_005e2b30(CTurret *this_ptr)
+// Signature: float __cdecl core_turret_cpp_CTurret_getCurFrame_FUN_005e2b30(CTurret *this_ptr,int model_index)
 
 #include "nocturne.h"
 
-float __cdecl core_turret_cpp_CTurret_getCurFrame_FUN_005e2b30(CTurret *this_ptr)
+float __cdecl core_turret_cpp_CTurret_getCurFrame_FUN_005e2b30(CTurret *this_ptr,int model_index)
 
 {
   CKeyFramedModel *pCVar1;
   CKeyFramedModelInstance *this_ptr_00;
-  int in_stack_00000008;
   float local_18;
   float local_14;
   
@@ -45,7 +44,7 @@ float __cdecl core_turret_cpp_CTurret_getCurFrame_FUN_005e2b30(CTurret *this_ptr
     if (1.0 < local_18) {
       local_18 = 1.0;
     }
-    if (in_stack_00000008 == 0) {
+    if (model_index == 0) {
       this_ptr_00 = &(this_ptr->base).model;
     }
     else {

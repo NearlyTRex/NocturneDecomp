@@ -1,7 +1,6 @@
 #pragma once
 
 // Dependencies
-#include <math.h>
 #include "system/basetypes.h"
 #include "globals.h"
 #include "constants.h"
@@ -379,8 +378,6 @@ static double DOUBLE_0068506c = -709.78271289338397;
 // float constants
 static float FLOAT_006804b0 = 0.9f;
 static float FLOAT_006804b4 = 1.1f;
-static float FLOAT_006819fc = NAN;
-static float FLOAT_00681a04 = NAN;
 static float FLOAT_00684170 = 12.0f;
 static float FLOAT_00684174 = 1.0f;
 static float g_IEEE754NormalScaleFactor = 0.9375f;

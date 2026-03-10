@@ -41,6 +41,13 @@ CSpotView* g_CSpotViewPtr = (CSpotView*)&g_CSpotViewInstance;
 // CTerrain*
 CTerrain* g_CTerrainPtr = (CTerrain*)&g_CTerrainInstance;
 
+// CVector3f
+CVector3f CVector3f_006819fc = {
+    .x = NAN,
+    .y = 0.0f,
+    .z = NAN
+};
+
 // CVector3i
 CVector3i g_GlobalLightDirection = {
     .x = 0x00000000,
@@ -3822,7 +3829,6 @@ dst_rule g_DstStartRule = {
 
 // float
 float FLOAT_00680818 = 1e+10f;
-float FLOAT_00681a00 = 0.0f;
 float g_MaxSoftwareLatency = 0.5f;
 
 // int

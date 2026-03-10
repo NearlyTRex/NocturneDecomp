@@ -1690,7 +1690,8 @@ LAB_004df408:
               if (0 < pCVar17->bone_count) {
                 do {
                   if (iStack_130 == pCVar20->bone_list[0].parent_index) {
-                    core_game_cpp_CGame_scaleBoneRecursive_FUN_004dda80((CGame *)pCStack_138);
+                    core_game_cpp_scaleBoneRecursive_FUN_004dda80
+                              (pCStack_138,pCVar17,fStack_134,iVar18);
                   }
                   iVar18 = iVar18 + 1;
                   pCVar20 = (CSkeleton *)((pCVar20->motion_list).state_names[1] + 2);
@@ -1710,7 +1711,8 @@ LAB_004df408:
               if (0 < pCStack_13c->bone_count) {
                 do {
                   if (iStack_124 == pCVar20->bone_list[0].parent_index) {
-                    core_game_cpp_CGame_scaleBoneRecursive_FUN_004dda80((CGame *)pCStack_12c);
+                    core_game_cpp_scaleBoneRecursive_FUN_004dda80
+                              (pCStack_12c,pCVar17,fStack_128,iVar18);
                   }
                   iVar18 = iVar18 + 1;
                   pCVar20 = (CSkeleton *)((pCVar20->motion_list).state_names[1] + 2);
@@ -1730,7 +1732,8 @@ LAB_004df408:
               if (0 < pCStack_13c->bone_count) {
                 do {
                   if (iStack_118 == pCVar20->bone_list[0].parent_index) {
-                    core_game_cpp_CGame_scaleBoneRecursive_FUN_004dda80((CGame *)pCStack_120);
+                    core_game_cpp_scaleBoneRecursive_FUN_004dda80
+                              (pCStack_120,pCVar17,fStack_11c,iVar18);
                   }
                   iVar18 = iVar18 + 1;
                   pCVar20 = (CSkeleton *)((pCVar20->motion_list).state_names[1] + 2);

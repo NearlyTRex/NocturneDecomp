@@ -10,6 +10,7 @@ void __cdecl core_platfrm_cpp_CPlatform_setup_FUN_0054ca20(CPlatform *this_ptr)
 
 {
   CPlatform *pCVar1;
+  CDemonActor *actor;
   CPlatform *pCVar2;
   
   core_actor_cpp_CDemonActor_setup_FUN_00408bb0(&this_ptr->base);
@@ -22,9 +23,9 @@ void __cdecl core_platfrm_cpp_CPlatform_setup_FUN_0054ca20(CPlatform *this_ptr)
   pCVar1 = (CPlatform *)((this_ptr->model).model_name + 0x38);
   pCVar2 = this_ptr;
   do {
-    while (pCVar2->attach_actors[0].actor != (CDemonActor *)0x0) {
+    while (actor = pCVar2->attach_actors[0].actor, actor != (CDemonActor *)0x0) {
       pCVar2->attach_actors[0].actor = (CDemonActor *)0x0;
-      core_platfrm_cpp_CPlatform_attachActor_FUN_0054e1e0(this_ptr);
+      core_platfrm_cpp_CPlatform_attachActor_FUN_0054e1e0(this_ptr,actor);
       pCVar2 = (CPlatform *)((int)&(pCVar2->base).orient + 4);
       if (pCVar2 == pCVar1) {
         return;

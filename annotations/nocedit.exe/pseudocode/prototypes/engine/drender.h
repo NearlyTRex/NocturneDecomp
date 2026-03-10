@@ -187,13 +187,13 @@ void __cdecl CDemonRenderer::setLightIntensity(CDemonRenderer *this_ptr,float in
 // Address: 0048c6c0
 void __cdecl CDemonRenderer::setLightDirection(CDemonRenderer *this_ptr,CVector3i *direction);
 
-// Original: engine_drender.cpp_scaleAndSetDirectionalLight_FUN_0048c6e0
+// Original: engine_drender.cpp_CDemonRenderer_scaleAndSetDirectionalLight_FUN_0048c6e0
 // Address: 0048c6e0
-void __cdecl scaleAndSetDirectionalLight(CVector3f *light_direction);
+void __cdecl CDemonRenderer::scaleAndSetDirectionalLight(CDemonRenderer *this_ptr,CVector3f *light_direction);
 
-// Original: engine_drender.cpp_calculateVertexLight_FUN_0048c740
+// Original: engine_drender.cpp_CDemonRenderer_calculateVertexLight_FUN_0048c740
 // Address: 0048c740
-void __cdecl calculateVertexLight(int vertex_index,CVector3i *vertex_position);
+void __cdecl CDemonRenderer::calculateVertexLight(CDemonRenderer *this_ptr,int vertex_index,CVector3i *vertex_position);
 
 // Original: engine_drender.cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760
 // Address: 0048c760

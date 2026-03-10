@@ -49,7 +49,7 @@ void __cdecl CBitFont::setInitializedFlag(CBitFont *this_ptr);
 
 // Original: engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_004cd550
 // Address: 004cd550
-void __cdecl CBitFont::parseCharacterMetrics(CBitFont *this_ptr,int bitmapcount,int other2,int bitmap_index,int width,int height,int first_char);
+void __cdecl CBitFont::parseCharacterMetrics(CBitFont *this_ptr,int bitmap_count,int bitmap_width,int bitmap_height,int first_char);
 
 // Original: engine_font.cpp_CBitFont_calculateCharacterHeight_FUN_004cda20
 // Address: 004cda20

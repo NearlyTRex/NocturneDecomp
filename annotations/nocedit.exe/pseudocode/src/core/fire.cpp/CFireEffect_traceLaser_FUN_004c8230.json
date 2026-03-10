@@ -4,13 +4,19 @@
       {
         "category": "other",
         "column": 18,
-        "line": 114,
+        "line": 113,
         "message": "cannot cast from type 'float' to pointer type 'float *'"
       },
       {
         "category": "other",
         "column": 26,
-        "line": 116,
+        "line": 115,
+        "message": "C-style cast from 'float *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 36,
+        "line": 140,
         "message": "C-style cast from 'float *' to 'float' is not allowed"
       },
       {
@@ -21,34 +27,33 @@
       },
       {
         "category": "other",
-        "column": 36,
+        "column": 21,
         "line": 142,
         "message": "C-style cast from 'float *' to 'float' is not allowed"
       },
       {
-        "category": "other",
-        "column": 21,
-        "line": 143,
-        "message": "C-style cast from 'float *' to 'float' is not allowed"
+        "category": "incompatible_types",
+        "column": 5,
+        "line": 343,
+        "message": "no matching function for call to 'core_fire_cpp_CFireEffect_createLaserSegment_FUN_004c7eb0'"
       }
     ],
     "success": false,
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 817,
-    "complexity_score": 401,
+    "assembly_lines": 818,
+    "complexity_score": 364,
     "cross_reference_count": 3,
     "function_call_count": 11,
     "global_count": 11,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 341,
-    "suspect_count": 5,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 339,
+    "suspect_count": 2,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "stack_param"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 1158
+    "total_lines": 1157
   },
   "cross_references": [
     {
@@ -60,7 +65,7 @@
     {
       "addr": "0050a8d0",
       "from_addr": "0050ab13",
-      "name": "core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050a8d0",
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_updateLaser_FUN_0050a8d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -223,7 +228,7 @@
       {
         "call_addr": "0050ab13",
         "call_type": "direct",
-        "caller": "core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050a8d0",
+        "caller": "core_manpuz.cpp_CMansionPuzzleCircle_updateLaser_FUN_0050a8d0",
         "estimated_params": 4,
         "instructions_analyzed": 30,
         "reg_params": [],
@@ -1390,16 +1395,8 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_fffffd70",
-      "severity": "moderate",
-      "text": "float in_stack_fffffd70;",
-      "type": "stack_param"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 119,
+      "line": 118,
       "match": "SQRT",
       "severity": "mild",
       "text": "local_40 = SQRT(local_a4.z * local_a4.z + local_a4.x * local_a4.x + local_a4.y * local_a4.y)",
@@ -1407,27 +1404,11 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 191,
+      "line": 190,
       "match": "SQRT",
       "severity": "mild",
       "text": "local_48 = SQRT(local_e4 * local_e4 + local_ec * local_ec + local_e8 * local_e8);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 245,
-      "match": "in_stack_fffffd70",
-      "severity": "moderate",
-      "text": "in_stack_fffffd70 = laser_info->intensity * laser_info->transparency;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 341,
-      "match": "in_stack_fffffd70",
-      "severity": "moderate",
-      "text": "laser_info->beam_width,in_stack_fffffd70);",
-      "type": "stack_param"
     }
   ]
 }

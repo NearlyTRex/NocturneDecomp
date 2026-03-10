@@ -6,17 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 113,
-    "complexity_score": 79,
+    "complexity_score": 53,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 6,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 54,
-    "suspect_count": 2,
-    "suspect_types": [
-      "stack_param"
-    ],
-    "total_lines": 167
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 53,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 166
   },
   "cross_references": [],
   "function": {
@@ -29,7 +27,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_ground.cpp_openFileWithExtension_FUN_004eebc0",
-    "signature": "_FILE * __cdecl core_ground_cpp_openFileWithExtension_FUN_004eebc0(char *base_filename,char *file_extension,char *open_mode)"
+    "signature": "_FILE * __cdecl core_ground_cpp_openFileWithExtension_FUN_004eebc0(char *directory,char *filename,char *new_extension,char *open_mode)"
   },
   "function_calls": [
     {
@@ -85,8 +83,8 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 3,
-    "estimated_params": 3
+    "declared_params": 4,
+    "estimated_params": 4
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.111111111111111,
@@ -113,10 +111,10 @@
     "pcode_op_count": 370
   },
   "stack_frame": {
-    "frame_size": 112,
+    "frame_size": 116,
     "local_size": 100,
     "param_offset": 4,
-    "param_size": 12,
+    "param_size": 16,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -135,22 +133,29 @@
       },
       {
         "is_param": true,
-        "name": "base_filename",
+        "name": "directory",
         "offset": 4,
         "size": 4,
         "type": "char *"
       },
       {
         "is_param": true,
-        "name": "file_extension",
+        "name": "filename",
         "offset": 8,
         "size": 4,
         "type": "char *"
       },
       {
         "is_param": true,
-        "name": "open_mode",
+        "name": "new_extension",
         "offset": 12,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "open_mode",
+        "offset": 16,
         "size": 4,
         "type": "char *"
       }
@@ -180,22 +185,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000010",
-      "severity": "moderate",
-      "text": "char *in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 49,
-      "match": "in_stack_00000010",
-      "severity": "moderate",
-      "text": "p_Var2 = engine_dosio_c_getFile_FUN_00481a50(base_filename,local_60,in_stack_00000010);",
-      "type": "stack_param"
-    }
-  ]
+  "suspects": []
 }

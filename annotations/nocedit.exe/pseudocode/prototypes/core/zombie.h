@@ -7,21 +7,21 @@
 // Address: 005f8c90
 void __cdecl staticInit(void);
 
-// Original: core_zombie.cpp_FUN_005f8cc0
+// Original: core_zombie.cpp_getObjectHeightScale_FUN_005f8cc0
 // Address: 005f8cc0
-float __cdecl FUN_005f8cc0(void);
+float __cdecl getObjectHeightScale(CDemonActor *actor);
 
-// Original: core_zombie.cpp_FUN_005f8d30
+// Original: core_zombie.cpp_getObjectGrabPointLocal_FUN_005f8d30
 // Address: 005f8d30
-float * __cdecl FUN_005f8d30(void);
+CVector3f * __cdecl getObjectGrabPointLocal(CVector3f *out_point,CDemonActor *actor);
 
-// Original: core_zombie.cpp_FUN_005f8da0
+// Original: core_zombie.cpp_getObjectGrabPointWorld_FUN_005f8da0
 // Address: 005f8da0
-CVector3f * __cdecl FUN_005f8da0(void);
+CVector3f * __cdecl getObjectGrabPointWorld(CVector3f *out_point,CDemonActor *actor);
 
-// Original: core_zombie.cpp_FUN_005f8e50
+// Original: core_zombie.cpp_classifyObjectShape_FUN_005f8e50
 // Address: 005f8e50
-int __cdecl FUN_005f8e50(void);
+int __cdecl classifyObjectShape(CVector3f *dimensions);
 
 // Original: core_zombie.cpp_factoryFunc_FUN_005f8fa0
 // Address: 005f8fa0
@@ -47,21 +47,21 @@ void __cdecl CZombie::process(CZombie *this_ptr,float delta_time);
 // Address: 005fb1f0
 void __stack2_esi CZombie::getCarryObjToBodyXForm(CZombie *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
-// Original: core_zombie.cpp_CZombie_FUN_005fb530
+// Original: core_zombie.cpp_CZombie_processPickup_FUN_005fb530
 // Address: 005fb530
-int __cdecl CZombie(CZombie *this_ptr);
+int __cdecl CZombie::processPickup(CZombie *this_ptr,float delta_time);
 
-// Original: core_zombie.cpp_CZombie_FUN_005fbd00
+// Original: core_zombie.cpp_CZombie_getPickupHandIndex_FUN_005fbd00
 // Address: 005fbd00
-int __cdecl CZombie(CZombie *this_ptr);
+int __cdecl CZombie::getPickupHandIndex(CZombie *this_ptr,int object_shape_type);
 
-// Original: core_zombie.cpp_CZombie_FUN_005fbda0
+// Original: core_zombie.cpp_CZombie_canPickupWithHand_FUN_005fbda0
 // Address: 005fbda0
-int __cdecl CZombie(CZombie *this_ptr);
+int __cdecl CZombie::canPickupWithHand(CZombie *this_ptr,int object_shape_type);
 
-// Original: core_zombie.cpp_CZombie_FUN_005fbde0
+// Original: core_zombie.cpp_CZombie_dropAndClearTarget_FUN_005fbde0
 // Address: 005fbde0
-void __cdecl CZombie(CZombie *this_ptr);
+void __cdecl CZombie::dropAndClearTarget(CZombie *this_ptr);
 
 // Original: core_zombie.cpp_CZombie_renderOpaque_FUN_005fbe20
 // Address: 005fbe20
@@ -79,9 +79,9 @@ void __cdecl CZombie::archive(CZombie *this_ptr);
 // Address: 005fc120
 int __cdecl CZombie::canBeAttracted(CZombie *this_ptr,CVector3f *out_attract_position);
 
-// Original: core_zombie.cpp_CZombie_FUN_005fc220
+// Original: core_zombie.cpp_CZombie_processDismemberment_FUN_005fc220
 // Address: 005fc220
-void __cdecl CZombie(CZombie *this_ptr);
+void __cdecl CZombie::processDismemberment(CZombie *this_ptr,SDamageInfo *damage_info);
 
 // Original: core_zombie.cpp_CZombie_processDamage_FUN_005fc4f0
 // Address: 005fc4f0
@@ -107,9 +107,9 @@ int __cdecl CZombie::getGrabbed(CZombie *this_ptr,CDemonActor *grabber,int grab_
 // Address: 005fc9e0
 int __cdecl CZombie::shouldIgnoreForTargeting(CZombie *this_ptr);
 
-// Original: core_zombie.cpp_CZombie_FUN_005fca10
+// Original: core_zombie.cpp_CZombie_resetChaseState_FUN_005fca10
 // Address: 005fca10
-void __cdecl CZombie(CZombie *this_ptr);
+void __cdecl CZombie::resetChaseState(CZombie *this_ptr);
 
 // Original: core_zombie.cpp_CZombie_getPropertyList_FUN_005fca80
 // Address: 005fca80
@@ -127,18 +127,6 @@ void __cdecl CZombie::addFilesToExtract(CZombie *this_ptr,_FILE *file_handle);
 // Address: 005fcc50
 CZombie * __cdecl CZombie::dtor(CZombie *this_ptr,uint flags);
 
-// Original: core_zombie.cpp_FUN_005fcd10
+// Original: core_zombie.cpp_assignInt_FUN_005fcd10
 // Address: 005fcd10
-int __cdecl FUN_005fcd10(void);
-
-// Original: core_zombie.cpp_FUN_005fcd20
-// Address: 005fcd20
-void __cdecl FUN_005fcd20(void);
-
-// Original: core_zombie.cpp_FUN_005fce40
-// Address: 005fce40
-void __cdecl FUN_005fce40(void);
-
-// Original: core_zombie.cpp_FUN_005fcf80
-// Address: 005fcf80
-SSoftwareEdge * __cdecl FUN_005fcf80(void);
+int * __cdecl assignInt(int *dest,int *src);

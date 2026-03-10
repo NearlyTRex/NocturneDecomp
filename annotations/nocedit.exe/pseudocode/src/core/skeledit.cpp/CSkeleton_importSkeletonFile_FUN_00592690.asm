@@ -724,17 +724,17 @@ section .text
     TEST ESI,ESI                        ; 00592bd8
     JLE 0x005938cf                      ; 00592bda
         ;   XREF to: 005938cf (CONDITIONAL_JUMP)  ; LAB_005938cf
-    MOV EBX,0x365caf8                   ; 00592be0 | DAT_0365caf8
+    MOV EBX,0x365caf8                   ; 00592be0 | g_MotionFilenames
     ADD EAX,0x968                       ; 00592be5
     XOR ESI,ESI                         ; 00592bea
-    MOV dword ptr [EBP + 0x46],EBX      ; 00592bec | DAT_0365caf8
+    MOV dword ptr [EBP + 0x46],EBX      ; 00592bec | g_MotionFilenames
     MOV dword ptr [EBP + 0x4a],EAX      ; 00592bef
     MOV dword ptr [EBP + 0x4e],ESI      ; 00592bf2
     MOV EAX,dword ptr [EBP + 0x4a]      ; 00592bf5
         ;   Label: LAB_00592bf5
     MOV dword ptr [EBP + -0x62],EAX     ; 00592bf8
     MOV EAX,dword ptr [EBP + 0x46]      ; 00592bfb
-    MOV dword ptr [EBP + -0x5e],EAX     ; 00592bfe | DAT_0365caf8 | DAT_0365cbfc
+    MOV dword ptr [EBP + -0x5e],EAX     ; 00592bfe | g_MotionFilenames | g_MotionFilenames[1][0]
     MOV EAX,dword ptr [EBP + 0xffffff7e] ; 00592c01
     SUB ESP,0x4                         ; 00592c07
     MOV dword ptr [EBP + 0x5e],EAX      ; 00592c0a
@@ -781,7 +781,7 @@ section .text
     LEA EDI,[EBP + 0xfffffc56]          ; 00592c8b
     MOV EAX,dword ptr [EAX + 0x64]      ; 00592c91
     MOV dword ptr [EDX + 0x30],0x1      ; 00592c94
-    MOV ESI,0x665968                    ; 00592c9b | FLOAT_00665968
+    MOV ESI,0x665968                    ; 00592c9b | CMatrix3x4f_00665968
     MOV dword ptr [EDX + 0x3c],0x0      ; 00592ca0
     XOR ECX,ECX                         ; 00592ca7
     MOV dword ptr [EDX + 0x40],0x0      ; 00592ca9
@@ -829,7 +829,7 @@ section .text
     MOV dword ptr [EBP + 0xffffff4a],EDX ; 00592d43
     MOV dword ptr [EBP + -0x1e],EAX     ; 00592d49
     MOV EAX,dword ptr [EBP + 0x4e]      ; 00592d4c
-    MOVSD.REP ES:EDI,ESI                ; 00592d4f | FLOAT_00665968 | FLOAT_0066596c
+    MOVSD.REP ES:EDI,ESI                ; 00592d4f | CMatrix3x4f_00665968 | CMatrix3x4f_00665968.m[0].x
     MOV dword ptr [EBP + 0xffffff4e],EDX ; 00592d51
     MOV EDI,dword ptr [EAX + EBP*0x1 + 0xffffd96a] ; 00592d57
     MOV dword ptr [EBP + -0x22],EAX     ; 00592d5e
@@ -959,7 +959,7 @@ section .text
     PUSH 0x10a4                         ; 00592ebc
     PUSH 0x64c245                       ; 00592ec1 | = "..\\core\\skeledit.cpp"
     PUSH 0x64c25a                       ; 00592ec6 | = "rt"
-    MOV EDX,0x365caf8                   ; 00592ecb | DAT_0365caf8
+    MOV EDX,0x365caf8                   ; 00592ecb | g_MotionFilenames
     PUSH 0x0                            ; 00592ed0
     ADD EDX,EAX                         ; 00592ed2
     PUSH EDX                            ; 00592ed4
@@ -1254,17 +1254,17 @@ section .text
     MOV EAX,dword ptr [EBP + 0x8e]      ; 0059321f
     IMUL EDI,dword ptr [EAX + 0x964],0x104 ; 00593225
     LEA ESI,[EBP + 0xffffe112]          ; 0059322f
-    ADD EDI,0x365caf8                   ; 00593235 | DAT_0365caf8
+    ADD EDI,0x365caf8                   ; 00593235 | g_MotionFilenames
     PUSH EDI                            ; 0059323b
     MOV AL,byte ptr [ESI]               ; 0059323c
         ;   Label: LAB_0059323c
-    MOV byte ptr [EDI],AL               ; 0059323e | DAT_0365caf8 | DAT_0365cafa
+    MOV byte ptr [EDI],AL               ; 0059323e | g_MotionFilenames | g_MotionFilenames[0][2]
     CMP AL,0x0                          ; 00593240
     JZ 0x00593254                       ; 00593242
         ;   XREF to: 00593254 (CONDITIONAL_JUMP)  ; LAB_00593254
     MOV AL,byte ptr [ESI + 0x1]         ; 00593244
     ADD ESI,0x2                         ; 00593247
-    MOV byte ptr [EDI + 0x1],AL         ; 0059324a | DAT_0365caf9 | DAT_0365cafb
+    MOV byte ptr [EDI + 0x1],AL         ; 0059324a | g_MotionFilenames[0][1] | g_MotionFilenames[0][3]
     ADD EDI,0x2                         ; 0059324d
     CMP AL,0x0                          ; 00593250
     JNZ 0x0059323c                      ; 00593252
@@ -1475,7 +1475,7 @@ section .text
     CALL crt_string.c__strnicmp_FUN_005ff070 ; 00593486
         ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 0059348b
-    ADD ESI,0x365caf8                   ; 0059348e | DAT_0365caf8
+    ADD ESI,0x365caf8                   ; 0059348e | g_MotionFilenames
     TEST EAX,EAX                        ; 00593494
     JNZ 0x00593666                      ; 00593496
         ;   XREF to: 00593666 (CONDITIONAL_JUMP)  ; LAB_00593666
@@ -1868,7 +1868,7 @@ section .text
     ADD EDI,0x4                         ; 005938b1
     INC EAX                             ; 005938b4
     MOV ECX,dword ptr [EDX + 0x964]     ; 005938b5
-    MOV dword ptr [EBP + 0x46],EBX      ; 005938bb | DAT_0365cbfc
+    MOV dword ptr [EBP + 0x46],EBX      ; 005938bb | g_MotionFilenames[1][0]
     MOV dword ptr [EBP + 0x4a],ESI      ; 005938be
     MOV dword ptr [EBP + 0x4e],EDI      ; 005938c1
     MOV dword ptr [EBP + 0x52],EAX      ; 005938c4
@@ -1911,7 +1911,7 @@ section .text
     MOV EBX,0x1                         ; 00593938
     SHL ECX,0x4                         ; 0059393d
     XOR EAX,EAX                         ; 00593940
-    MOV EDX,dword ptr [EAX + 0x3670b60] ; 00593942 | DAT_03670b60 | DAT_03670b70
+    MOV EDX,dword ptr [EAX + 0x3670b60] ; 00593942 | g_SkeleditBiasEntries | DAT_03670b70
         ;   Label: LAB_00593942
     ADD EAX,0x10                        ; 00593948
     MOV dword ptr [EBP + EDX*0x4 + 0xffffdb4a],EBX ; 0059394b
@@ -1935,7 +1935,7 @@ section .text
     MOV ESI,dword ptr [0x03670b5c]      ; 0059397b | g_SkeleditBiasEntryCount
     XOR EAX,EAX                         ; 00593981
     SHL ESI,0x4                         ; 00593983
-    CMP dword ptr [EAX + 0x3670b60],0x0 ; 00593986 | DAT_03670b60 | DAT_03670b70
+    CMP dword ptr [EAX + 0x3670b60],0x0 ; 00593986 | g_SkeleditBiasEntries | DAT_03670b70
         ;   Label: LAB_00593986
     JL 0x0059399f                       ; 0059398d
         ;   XREF to: 0059399f (CONDITIONAL_JUMP)  ; LAB_0059399f
@@ -1953,10 +1953,10 @@ section .text
         ;   Label: LAB_005939a7
     JGE 0x00595ef3                      ; 005939ad
         ;   XREF to: 00595ef3 (CONDITIONAL_JUMP)  ; LAB_00595ef3
-    MOV ESI,0x3670b60                   ; 005939b3 | DAT_03670b60
+    MOV ESI,0x3670b60                   ; 005939b3 | g_SkeleditBiasEntries
     SHL EBX,0x4                         ; 005939b8
     ADD ESI,EBX                         ; 005939bb
-    MOV EDX,dword ptr [ESI]             ; 005939bd | DAT_03670b60
+    MOV EDX,dword ptr [ESI]             ; 005939bd | g_SkeleditBiasEntries
     IMUL EDX,EDX,0x54c                  ; 005939bf
     ADD EDX,dword ptr [EBP + 0x8e]      ; 005939c5
     IMUL EAX,dword ptr [ESI + 0x8],0x54c ; 005939cb | DAT_03670b68
@@ -1966,7 +1966,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x8e]      ; 005939dd
     ADD EBX,EAX                         ; 005939e3
     IMUL EAX,EDX,0xc                    ; 005939e5
-    MOV ECX,dword ptr [ESI + 0xc]       ; 005939e8 | DAT_03670b6c
+    MOV ECX,dword ptr [ESI + 0xc]       ; 005939e8 | g_SkeleditBiasEntries[0].ref_frame
     MOV EBX,dword ptr [EBX + 0x9c8]     ; 005939eb
     ADD EBX,ECX                         ; 005939f1
     IMUL EBX,EBX,0xc                    ; 005939f3
@@ -1983,7 +1983,7 @@ section .text
     FSUB float ptr [EDX + EAX*0x1 + 0x8] ; 00593a26
     XOR EBX,EBX                         ; 00593a2a
     FSTP float ptr [EBP + 0xfffffebe]   ; 00593a2c
-    IMUL EAX,dword ptr [ESI],0x54c      ; 00593a32 | DAT_03670b60
+    IMUL EAX,dword ptr [ESI],0x54c      ; 00593a32 | g_SkeleditBiasEntries
         ;   Label: LAB_00593a32
     ADD EAX,ECX                         ; 00593a38
     CMP EBX,dword ptr [EAX + 0x9cc]     ; 00593a3a
@@ -3568,9 +3568,9 @@ section .text
     MOV EBX,dword ptr [0x03670b5c]      ; 00594a96 | g_SkeleditBiasEntryCount
         ;   Label: LAB_00594a96
     SHL EBX,0x4                         ; 00594a9c
-    ADD EBX,0x3670b60                   ; 00594a9f | DAT_03670b60
+    ADD EBX,0x3670b60                   ; 00594a9f | g_SkeleditBiasEntries
     MOV EAX,dword ptr [EBP + 0x52]      ; 00594aa5
-    MOV dword ptr [EBX],EAX             ; 00594aa8 | DAT_03670b60
+    MOV dword ptr [EBX],EAX             ; 00594aa8 | g_SkeleditBiasEntries
     MOV EAX,dword ptr [EBP + -0x62]     ; 00594aaa
     PUSH 0x0                            ; 00594aad
     MOV EDI,dword ptr [EAX + 0x64]      ; 00594aaf
@@ -3670,8 +3670,8 @@ section .text
     PUSH 0x0                            ; 00594bb8
     MOV EDI,dword ptr [EAX + 0x9cc]     ; 00594bba
     PUSH EDI                            ; 00594bc0
-    ADD EBX,0xc                         ; 00594bc1 | DAT_03670b6c
-    PUSH EBX                            ; 00594bc4 | DAT_03670b6c
+    ADD EBX,0xc                         ; 00594bc1 | g_SkeleditBiasEntries[0].ref_frame
+    PUSH EBX                            ; 00594bc4 | g_SkeleditBiasEntries[0].ref_frame
     LEA EAX,[EBP + 0xfffffaf6]          ; 00594bc5
     PUSH EAX                            ; 00594bcb
     CALL core_skeledit.cpp_parseBoneParentToken_FUN_00592520 ; 00594bcc
@@ -4406,7 +4406,7 @@ section .text
     PUSH 0x64d3d3                       ; 00595379 | = "rt"
     PUSH 0x0                            ; 0059537e
     MOV ESI,dword ptr [EBP + -0x5e]     ; 00595380
-    PUSH ESI                            ; 00595383 | DAT_0365caf8
+    PUSH ESI                            ; 00595383 | g_MotionFilenames
     CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 00595384
         ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; _FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     ADD ESP,0x14                        ; 00595389
@@ -4894,7 +4894,7 @@ section .text
     MOV EDI,dword ptr [EBP + 0x92]      ; 00595994
         ;   Label: LAB_00595994
     PUSH EDI                            ; 0059599a
-    PUSH ESI                            ; 0059599b | DAT_0365caf8
+    PUSH ESI                            ; 0059599b | g_MotionFilenames
     PUSH 0x64d3d6                       ; 0059599c | = "Can't open %s mentioned in %s"
     MOV EDX,dword ptr [0x00678a60]      ; 005959a1 | g_CEditorToolsPtr
     PUSH EDX                            ; 005959a7 | g_CEditorToolsInstance
@@ -5287,13 +5287,13 @@ section .text
     ADD ESP,0x8                         ; 00595e90
     JMP 0x005958ce                      ; 00595e93
         ;   XREF to: 005958ce (UNCONDITIONAL_JUMP)  ; LAB_005958ce
-    MOV EAX,dword ptr [ESI]             ; 00595e98 | DAT_03670b60
+    MOV EAX,dword ptr [ESI]             ; 00595e98 | g_SkeleditBiasEntries
         ;   Label: LAB_00595e98
     XOR EDX,EDX                         ; 00595e9a
     MOV ECX,dword ptr [0x03670b5c]      ; 00595e9c | g_SkeleditBiasEntryCount
     MOV dword ptr [EBP + EAX*0x4 + 0xffffdb4a],EDX ; 00595ea2
     INC EDI                             ; 00595ea9
-    MOV dword ptr [ESI],0xffffffff      ; 00595eaa | DAT_03670b60
+    MOV dword ptr [ESI],0xffffffff      ; 00595eaa | g_SkeleditBiasEntries
     CMP EDI,ECX                         ; 00595eb0
     JL 0x00593970                       ; 00595eb2
         ;   XREF to: 00593970 (CONDITIONAL_JUMP)  ; LAB_00593970

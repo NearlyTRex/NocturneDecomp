@@ -25,7 +25,8 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_processPanel_FUN_0050a290(CMan
       pSVar3->anim_progress = 0.0;
     }
     if (1.0 <= pSVar3->anim_progress) {
-      iVar2 = core_manpuz_cpp_CMansionPuzzleCircle_FUN_0050aee0(this_ptr);
+      iVar2 = core_manpuz_cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_0050aee0
+                        (this_ptr,in_stack_00000008);
       pSVar4 = this_ptr->panels + iVar2;
       if (pSVar4->exists != 0) {
         g_CurrentFilename = "..\\core\\manpuz.cpp";

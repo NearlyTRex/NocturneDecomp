@@ -16,8 +16,7 @@ int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_005401e0(CNetGame *this_pt
   float local_198;
   char local_194 [256];
   char local_94 [100];
-  uint local_30;
-  byte local_2c;
+  SNetPacketHeader local_30;
   int local_2b;
   uint local_24;
   SNetPlayer *local_20;
@@ -86,15 +85,15 @@ int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_005401e0(CNetGame *this_pt
       }
       if ((float)0.10000000000000001 < local_198) {
         local_24 = g_CurrentGameTime;
-        local_2c = 8;
-        local_30 = 9;
+        local_30.type = PACKET_SYNC_STAGE_REQ;
+        local_30.size = 9;
         local_2b = sync_stage;
         iVar2 = 0;
         pCVar4 = this_ptr;
         if (0 < this_ptr->player_count) {
           do {
             if (pCVar4->players[0].local_sync_stage < sync_stage) {
-              core_netgame_cpp_CNetGame_send_FUN_005411c0(this_ptr,iVar2);
+              core_netgame_cpp_CNetGame_send_FUN_005411c0(this_ptr,iVar2,&local_30);
             }
             else {
               core_netgame_cpp_CNetGame_updatePing_FUN_00541c80(this_ptr,iVar2,2.0);

@@ -1,29 +1,20 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "format_error",
-        "column": 46,
-        "line": 20,
-        "message": "format specifies type 'char *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 39,
+    "complexity_score": 13,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 11,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 14,
-    "suspect_count": 2,
-    "suspect_types": [
-      "stack_param"
-    ],
-    "total_lines": 52
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 13,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 51
   },
   "cross_references": [],
   "function": {
@@ -36,7 +27,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_game.cpp_endProfileTimer_FUN_004e3110",
-    "signature": "void __cdecl core_game_cpp_endProfileTimer_FUN_004e3110(void)"
+    "signature": "void __cdecl core_game_cpp_endProfileTimer_FUN_004e3110(char *timer_name)"
   },
   "function_calls": [
     {
@@ -122,8 +113,8 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "estimated_params": 0
+    "declared_params": 1,
+    "estimated_params": 1
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.151515151515151,
@@ -153,10 +144,10 @@
     "pcode_op_count": 170
   },
   "stack_frame": {
-    "frame_size": 32,
+    "frame_size": 36,
     "local_size": 32,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -172,25 +163,15 @@
         "offset": -4,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "timer_name",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 6,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "uint in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "(g_CConsolePtr,\"%s : %3.2f ms\\n\",in_stack_00000004,",
-      "type": "stack_param"
-    }
-  ]
+  "suspects": []
 }

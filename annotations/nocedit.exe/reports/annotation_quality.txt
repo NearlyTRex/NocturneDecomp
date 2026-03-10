@@ -12,9 +12,9 @@ SUMMARY STATISTICS
 ====================================================================================================
 
   Total functions analyzed:          6,484
-  Unnamed functions (FUN_):          66 ( 1.0%)
+  Unnamed functions (FUN_):          9 ( 0.1%)
   Functions with unnamed params:     1 ( 0.0%)
-  Functions with type issues:        2,335 (36.0%)
+  Functions with type issues:        2,297 (35.4%)
 
   Type issue breakdown:
     Wrong return type (void):          0
@@ -22,86 +22,13 @@ SUMMARY STATISTICS
     Missing register params:           4
     Wrong calling convention:          29
     Undefined types in variables:      2268
-    Unresolved stack params:           174
+    Unresolved stack params:           88
 
 ====================================================================================================
 UNNAMED FUNCTIONS (still using FUN_XXXXXXXX or ClassName_FUN_XXXXXXXX)
 ====================================================================================================
 
 Sorted by caller count (most-referenced first = highest priority to name).
-
-  core/manpuz.cpp (16 unnamed)
-    0x0050aef0  __cdecl       4 callers
-    0x0050aee0  __cdecl       3 callers
-    0x0050a420  __cdecl       2 callers
-    0x00509b20  __cdecl       2 callers
-    0x0050a8d0  __cdecl       1 callers
-    0x00509c60  __cdecl       1 callers
-    0x00509d50  __cdecl       1 callers
-    0x00509bf0  __cdecl       1 callers
-    0x0050a610  __cdecl       1 callers
-    0x0050a1f0  __cdecl       1 callers
-    0x005098f0  __cdecl       1 callers
-    0x0050a4f0  __cdecl       1 callers
-    0x0050af00  __cdecl       1 callers
-    0x0050af80  __cdecl       1 callers
-    0x0050b9a0  __cdecl       0 callers
-    0x0050a490  __cdecl       0 callers
-
-  core/zombie.cpp (14 unnamed)
-    0x005fbd00  __cdecl       3 callers
-    0x005fca10  __cdecl       2 callers
-    0x005fbde0  __cdecl       1 callers
-    0x005fc220  __cdecl       1 callers
-    0x005fbda0  __cdecl       1 callers
-    0x005fb530  __cdecl       1 callers
-    0x005f8e50  __cdecl       1 callers
-    0x005f8da0  __cdecl       0 callers
-    0x005fcd10  __cdecl       0 callers
-    0x005f8cc0  __cdecl       0 callers
-    0x005fce40  __cdecl       0 callers
-    0x005f8d30  __cdecl       0 callers
-    0x005fcf80  __cdecl       0 callers
-    0x005fcd20  __cdecl       0 callers
-
-  core/werewolf.cpp (3 unnamed)
-    0x005f11e0  __cdecl       2 callers
-    0x005f1230  __cdecl       1 callers
-    0x005f1e40  __cdecl       1 callers
-
-  core/icepick.cpp (7 unnamed)
-    0x004f8c70  __cdecl       1 callers
-    0x004f9490  __cdecl       1 callers
-    0x004f93a0  __cdecl       1 callers
-    0x004f8ad0  __cdecl       1 callers
-    0x004f8810  __cdecl       1 callers
-    0x004f8970  __cdecl       1 callers
-    0x004f8b00  __cdecl       0 callers
-
-  core/mobster.cpp (10 unnamed)
-    0x00525650  __cdecl       1 callers
-    0x00526d90  __cdecl       1 callers
-    0x00525720  __cdecl       1 callers
-    0x00527380  __cdecl       1 callers
-    0x005279f0  __cdecl       1 callers
-    0x005271c0  __cdecl       1 callers
-    0x00525110  __cdecl       0 callers
-    0x00527c30  __cdecl       0 callers
-    0x005250a0  __cdecl       0 callers
-    0x00526b00  __cdecl       0 callers
-
-  core/moloch.cpp (2 unnamed)
-    0x005293b0  __cdecl       1 callers
-    0x00529900  __cdecl       1 callers
-
-  core/ladder.cpp (2 unnamed)
-    0x00502a70  __cdecl       1 callers
-    0x00502b80  __cdecl       1 callers
-
-  core/colonel.cpp (3 unnamed)
-    0x0043ff20  __cdecl       1 callers
-    0x00440430  __cdecl       1 callers
-    0x00440650  __cdecl       0 callers
 
   core/cow.cpp (1 unnamed)
     0x004448c0  __cdecl       1 callers
@@ -362,7 +289,7 @@ Wrong calling convention (unaffected register usage) (29)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
 --------------------------------------------------------------------------------
-Unresolved stack parameters (missing from signature) (174)
+Unresolved stack parameters (missing from signature) (88)
 --------------------------------------------------------------------------------
 
   traceConnectedEdges
@@ -389,24 +316,6 @@ Unresolved stack parameters (missing from signature) (174)
     Signature: void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005f2440(CWinFont *this_ptr,HDC device_context,int x_position,int y_position,char *text_string,int foreground_color,int background_color)
     Suggested: Signature is missing stack parameters entirely
 
-  CWinFont_ctor
-    Address: 0x005f22e0  File: engine/winfont.cpp
-    Evidence: in_stack_00000014, in_stack_00000014
-    Signature: CWinFont * __cdecl engine_winfont_cpp_CWinFont_ctor_FUN_005f22e0(CWinFont *this_ptr,char *font_name,int font_height,int font_width)
-    Suggested: Signature is missing stack parameters entirely
-
-  CBitFont_loadBitmap
-    Address: 0x004ccff0  File: engine/font.cpp
-    Evidence: in_stack_fffffbc4, in_stack_fffffbc8, in_stack_fffffbc4, in_stack_fffffbc8
-    Signature: void __cdecl engine_font_cpp_CBitFont_loadBitmap_FUN_004ccff0(CBitFont *this_ptr,char *filename,int width,int height,int first_char)
-    Suggested: Signature is missing stack parameters entirely
-
-  CAlphaBitmap_render
-    Address: 0x00410b00  File: engine/alphabit.cpp
-    Evidence: in_stack_00000020, in_stack_00000020, in_stack_00000020
-    Signature: void __cdecl engine_alphabit_cpp_CAlphaBitmap_render_FUN_00410b00(CAlphaBitmap *this_ptr,int dest_y,int dest_x,int left_x,int top_y,int right_x,int bottom_y)
-    Suggested: Signature is missing stack parameters entirely
-
   drawLineStrip3D
     Address: 0x00404600  File: engine/3d.c
     Evidence: in_stack_ffffff30, in_stack_ffffff60, in_stack_ffffff60, in_stack_ffffff60, in_stack_ffffff60, in_stack_ffffff60, in_stack_ffffff60, in_stack_ffffff60, in_stack_ffffff30
@@ -431,58 +340,10 @@ Unresolved stack parameters (missing from signature) (174)
     Signature: void __cdecl engine_3d_c_drawLine3DFromIndices_FUN_00407ff0(int vertex_index1,int vertex_index2)
     Suggested: Signature is missing stack parameters entirely
 
-  recomputeKeyFrameNormals
-    Address: 0x00502320  File: engine/keyframe.c
-    Evidence: in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004
-    Signature: void __cdecl engine_keyframe_c_recomputeKeyFrameNormals_FUN_00502320(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  scaleAndSetDirectionalLight
-    Address: 0x0048c6e0  File: engine/drender.cpp
-    Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl engine_drender_cpp_scaleAndSetDirectionalLight_FUN_0048c6e0(CVector3f *light_direction)
-    Suggested: Signature is missing stack parameters entirely
-
   CDemonRenderer_setupSceneRendering
     Address: 0x0048c1d0  File: engine/drender.cpp
     Evidence: in_stack_00000008, in_stack_00000008
     Signature: void __cdecl engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(CDemonRenderer *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  calculateVertexLight
-    Address: 0x0048c740  File: engine/drender.cpp
-    Evidence: in_stack_0000000c, in_stack_0000000c
-    Signature: void __cdecl engine_drender_cpp_calculateVertexLight_FUN_0048c740(int vertex_index,CVector3i *vertex_position)
-    Suggested: Signature is missing stack parameters entirely
-
-  CFileManager_undoCheckout
-    Address: 0x004bc2b0  File: engine/fileio.cpp
-    Evidence: in_stack_0000000c, in_stack_0000000c
-    Signature: int __cdecl engine_fileio_cpp_CFileManager_undoCheckout_FUN_004bc2b0(CFileManager *this_ptr,CCheckOutItem *checkout_item)
-    Suggested: Signature is missing stack parameters entirely
-
-  readTimestampFile
-    Address: 0x004b23a0  File: engine/fileio.cpp
-    Evidence: in_stack_00000010, in_stack_00000010, in_stack_00000010, in_stack_00000010
-    Signature: int __cdecl engine_fileio_cpp_readTimestampFile_FUN_004b23a0(_FILE *file,STimestampRecord **records,int *count)
-    Suggested: Signature is missing stack parameters entirely
-
-  findMaxFieldInTimestampFile
-    Address: 0x004b2640  File: engine/fileio.cpp
-    Evidence: in_stack_00000008, in_stack_00000008
-    Signature: int __cdecl engine_fileio_cpp_findMaxFieldInTimestampFile_FUN_004b2640(char *filename)
-    Suggested: Signature is missing stack parameters entirely
-
-  CFileManager_removeAuditRecords
-    Address: 0x004bd190  File: engine/fileio.cpp
-    Evidence: in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c
-    Signature: void __cdecl engine_fileio_cpp_CFileManager_removeAuditRecords_FUN_004bd190(CFileManager *this_ptr,char *pod_file_path)
-    Suggested: Signature is missing stack parameters entirely
-
-  CDirectSoundDevice_set3DListenerOrient
-    Address: 0x005aee70  File: sound/snddx.cpp
-    Evidence: in_stack_00000038, in_stack_00000040, in_stack_00000048, in_stack_00000038, in_stack_00000040, in_stack_00000048
-    Signature: void __cdecl sound_snddx_cpp_CDirectSoundDevice_set3DListenerOrient_FUN_005aee70(CDirectSoundDevice *this_ptr,double x_front,double y_front,double z_front,double x_top,double y_top,double z_top)
     Suggested: Signature is missing stack parameters entirely
 
   CMP3Decoder_decodeFrame
@@ -515,36 +376,6 @@ Unresolved stack parameters (missing from signature) (174)
     Signature: void __cdecl sound_sndmain_cpp_nextMixingBuffer_FUN_005a59c0(void)
     Suggested: Signature is missing stack parameters entirely
 
-  allocSimFrame
-    Address: 0x0053f5a0  File: core/netgame.cpp
-    Evidence: in_stack_00000004, in_stack_00000004, in_stack_00000004
-    Signature: int * __cdecl core_netgame_cpp_allocSimFrame_FUN_0053f5a0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  CNetGame_applySimFrameHistory
-    Address: 0x00543800  File: core/netgame.cpp
-    Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_00543800(CNetGame *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CNetGame_send
-    Address: 0x005411c0  File: core/netgame.cpp
-    Evidence: in_stack_0000000c, in_stack_0000000c
-    Signature: void __cdecl core_netgame_cpp_CNetGame_send_FUN_005411c0(CNetGame *this_ptr,int player_index)
-    Suggested: Signature is missing stack parameters entirely
-
-  CDemonCamera_saveBackdrop
-    Address: 0x004529b0  File: core/dcamera.cpp
-    Evidence: in_stack_fffffd8c, in_stack_fffffd8c
-    Signature: void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_004529b0(CDemonCamera *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CDemonCamera_isBoundingBoxVisible
-    Address: 0x00452180  File: core/dcamera.cpp
-    Evidence: in_stack_00000014, in_stack_00000014, in_stack_00000014, in_stack_00000014, in_stack_00000014, in_stack_00000014, in_stack_00000014, in_stack_00000014, in_stack_00000014, in_stack_00000014, in_stack_00000014, in_stack_00000014, in_stack_00000014
-    Signature: int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180(CDemonCamera *this_ptr,CVector3f *position,CVector3f *min_corner,CVector3f *max_corner)
-    Suggested: Signature is missing stack parameters entirely
-
   CCloth_boneEditor
     Address: 0x0043c880  File: core/cloth.cpp
     Evidence: in_stack_00000010, in_stack_00000020, in_stack_00000028, in_stack_0000002c, in_stack_00000034, in_stack_0000003c, in_stack_00000054, in_stack_fffffac4, in_stack_fffffac4, in_stack_fffffac4, in_stack_00000028, in_stack_0000002c, in_stack_0000002c, in_stack_0000002c, in_stack_00000010, in_stack_0000003c, in_stack_00000020, in_stack_0000003c, in_stack_00000020, in_stack_0000003c, in_stack_00000054, in_stack_00000034, in_stack_00000034, in_stack_00000034, in_stack_00000034
@@ -555,102 +386,6 @@ Unresolved stack parameters (missing from signature) (174)
     Address: 0x0043c430  File: core/cloth.cpp
     Evidence: in_stack_fffffb34, in_stack_fffffb34, in_stack_fffffb34
     Signature: void __cdecl core_cloth_cpp_CCloth_addCollisionBone_FUN_0043c430(CCloth *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005f8da0
-    Address: 0x005f8da0  File: core/zombie.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000004, in_stack_00000004
-    Signature: CVector3f * __cdecl core_zombie_cpp_FUN_005f8da0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  CZombie
-    Address: 0x005fbd00  File: core/zombie.cpp
-    Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: int __cdecl core_zombie_cpp_CZombie_FUN_005fbd00(CZombie *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005fcd10
-    Address: 0x005fcd10  File: core/zombie.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004
-    Signature: int __cdecl core_zombie_cpp_FUN_005fcd10(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005f8cc0
-    Address: 0x005f8cc0  File: core/zombie.cpp
-    Evidence: in_stack_00000004, in_stack_00000004, in_stack_00000004
-    Signature: float __cdecl core_zombie_cpp_FUN_005f8cc0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  CZombie
-    Address: 0x005fc220  File: core/zombie.cpp
-    Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_zombie_cpp_CZombie_FUN_005fc220(CZombie *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005fce40
-    Address: 0x005fce40  File: core/zombie.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_zombie_cpp_FUN_005fce40(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005f8d30
-    Address: 0x005f8d30  File: core/zombie.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004
-    Signature: float * __cdecl core_zombie_cpp_FUN_005f8d30(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  CZombie
-    Address: 0x005fb530  File: core/zombie.cpp
-    Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: int __cdecl core_zombie_cpp_CZombie_FUN_005fb530(CZombie *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005f8e50
-    Address: 0x005f8e50  File: core/zombie.cpp
-    Evidence: in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004
-    Signature: int __cdecl core_zombie_cpp_FUN_005f8e50(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005fcf80
-    Address: 0x005fcf80  File: core/zombie.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008
-    Signature: SSoftwareEdge * __cdecl core_zombie_cpp_FUN_005fcf80(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005fcd20
-    Address: 0x005fcd20  File: core/zombie.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_zombie_cpp_FUN_005fcd20(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  CIcePick
-    Address: 0x004f8c70  File: core/icepick.cpp
-    Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_icepick_cpp_CIcePick_FUN_004f8c70(CIcePick *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CIcePick
-    Address: 0x004f9490  File: core/icepick.cpp
-    Evidence: in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_icepick_cpp_CIcePick_FUN_004f9490(CIcePick *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CIcePick
-    Address: 0x004f93a0  File: core/icepick.cpp
-    Evidence: in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_icepick_cpp_CIcePick_FUN_004f93a0(CIcePick *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CIcePick
-    Address: 0x004f8810  File: core/icepick.cpp
-    Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_icepick_cpp_CIcePick_FUN_004f8810(CIcePick *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_004f8b00
-    Address: 0x004f8b00  File: core/icepick.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_0000000c, in_stack_00000004, in_stack_00000010
-    Signature: void __cdecl core_icepick_cpp_FUN_004f8b00(void)
     Suggested: Signature is missing stack parameters entirely
 
   CBugs_initializeSwarmGraph
@@ -679,116 +414,14 @@ Unresolved stack parameters (missing from signature) (174)
 
   CMansionPuzzleCircle_shiftPanelRight
     Address: 0x0050ad40  File: core/manpuz.cpp
-    Evidence: in_stack_00000008, in_stack_00000008
+    Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008
     Signature: void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_0050ad40(CMansionPuzzleCircle *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CMansionPuzzleCircle
-    Address: 0x0050a8d0  File: core/manpuz.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_0050a8d0(CMansionPuzzleCircle *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CMansionPuzzleCircle
-    Address: 0x00509c60  File: core/manpuz.cpp
-    Evidence: in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_00509c60(CMansionPuzzleCircle *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CMansionPuzzleCircle
-    Address: 0x0050aee0  File: core/manpuz.cpp
-    Evidence: in_stack_00000008, in_stack_00000008
-    Signature: int __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_0050aee0(CMansionPuzzleCircle *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CMansionPuzzleCircle
-    Address: 0x00509d50  File: core/manpuz.cpp
-    Evidence: in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_00509d50(CMansionPuzzleCircle *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CMansionPuzzleCircle
-    Address: 0x0050a420  File: core/manpuz.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000014, in_stack_00000014, in_stack_00000010, in_stack_00000014, in_stack_0000000c, in_stack_00000010, in_stack_00000008, in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_00000010, in_stack_00000008, in_stack_00000014, in_stack_00000008
-    Signature: void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_0050a420(CMansionPuzzleCircle *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
   CMansionPuzzleCircle_processPanel
     Address: 0x0050a290  File: core/manpuz.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_0000000c
+    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_0000000c, in_stack_00000008
     Signature: void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_processPanel_FUN_0050a290(CMansionPuzzleCircle *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CMansionPuzzleCircle
-    Address: 0x00509bf0  File: core/manpuz.cpp
-    Evidence: in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_00509bf0(CMansionPuzzleCircle *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_0050b9a0
-    Address: 0x0050b9a0  File: core/manpuz.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008
-    Signature: void __cdecl core_manpuz_cpp_FUN_0050b9a0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  CMansionPuzzleCircle
-    Address: 0x0050a610  File: core/manpuz.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_0000000c, in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_0050a610(CMansionPuzzleCircle *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CMansionPuzzleCircle
-    Address: 0x0050a1f0  File: core/manpuz.cpp
-    Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_0050a1f0(CMansionPuzzleCircle *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CMansionPuzzleCircle
-    Address: 0x00509b20  File: core/manpuz.cpp
-    Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_00509b20(CMansionPuzzleCircle *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CMansionPuzzleCircle_shiftPanelLeft
-    Address: 0x0050aba0  File: core/manpuz.cpp
-    Evidence: in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_0050aba0(CMansionPuzzleCircle *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_0050a4f0
-    Address: 0x0050a4f0  File: core/manpuz.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000014, in_stack_00000018, in_stack_00000008, in_stack_0000000c, in_stack_0000000c, in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000010, in_stack_00000010, in_stack_00000018, in_stack_00000018, in_stack_00000018, in_stack_00000010, in_stack_00000018, in_stack_00000018, in_stack_00000018, in_stack_00000014, in_stack_00000010
-    Signature: int __cdecl core_manpuz_cpp_FUN_0050a4f0(void *ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CMansionPuzzleCircle
-    Address: 0x0050aef0  File: core/manpuz.cpp
-    Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: int __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_0050aef0(CMansionPuzzleCircle *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_0050a490
-    Address: 0x0050a490  File: core/manpuz.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_00000004, in_stack_0000000c, in_stack_00000004, in_stack_0000000c, in_stack_00000008, in_stack_00000004, in_stack_0000000c, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_0000000c, in_stack_00000004
-    Signature: int __cdecl core_manpuz_cpp_FUN_0050a490(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  CMansionPuzzleCircle
-    Address: 0x0050af00  File: core/manpuz.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_0050af00(CMansionPuzzleCircle *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CMansionPuzzleCircle_panelOccupied
-    Address: 0x0050b040  File: core/manpuz.cpp
-    Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: int __cdecl core_manpuz_cpp_CMansionPuzzleCircle_panelOccupied_FUN_0050b040(CMansionPuzzleCircle *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CMansionPuzzleCircle
-    Address: 0x0050af80  File: core/manpuz.cpp
-    Evidence: in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_0050af80(CMansionPuzzleCircle *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
   CDemonImage_load
@@ -821,30 +454,6 @@ Unresolved stack parameters (missing from signature) (174)
     Signature: void __cdecl core_setedit_cpp_CDemonSet_showFogEditor_FUN_00580730(CDemonSet *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
-  FUN_00525110
-    Address: 0x00525110  File: core/mobster.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000004, in_stack_00000004
-    Signature: CVector3f * __cdecl core_mobster_cpp_FUN_00525110(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_005250a0
-    Address: 0x005250a0  File: core/mobster.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004
-    Signature: float * __cdecl core_mobster_cpp_FUN_005250a0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_00526b00
-    Address: 0x00526b00  File: core/mobster.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_0000000c, in_stack_00000004, in_stack_00000010
-    Signature: void __cdecl core_mobster_cpp_FUN_00526b00(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  CTommyGun_setWeaponState
-    Address: 0x005de5a0  File: core/tommygun.cpp
-    Evidence: in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_tommygun_cpp_CTommyGun_setWeaponState_FUN_005de5a0(CTommyGun *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
   CDemonActor_processMeleeHit
     Address: 0x0040a210  File: core/actor.cpp
     Evidence: in_stack_fffffd6c, in_stack_fffffd70, in_stack_fffffd6c, in_stack_fffffd70, in_stack_fffffd6c, in_stack_fffffd6c, in_stack_fffffd70, in_stack_fffffd6c, in_stack_fffffd70, in_stack_fffffd6c, in_stack_fffffd70, in_stack_fffffd6c, in_stack_fffffd70, in_stack_fffffd6c, in_stack_fffffd70
@@ -875,34 +484,10 @@ Unresolved stack parameters (missing from signature) (174)
     Signature: void __cdecl core_actor_cpp_drawBoundingBox_FUN_0040d470(CBoundingBox3D *bbox,int line_color)
     Suggested: Signature is missing stack parameters entirely
 
-  CFireEffect_createTrailSegment
-    Address: 0x004c9060  File: core/fire.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000014, in_stack_00000018, in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000014, in_stack_00000018
-    Signature: int __cdecl core_fire_cpp_CFireEffect_createTrailSegment_FUN_004c9060(CFireEffect *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CFireEffect_traceLaser
-    Address: 0x004c8230  File: core/fire.cpp
-    Evidence: in_stack_fffffd70, in_stack_fffffd70, in_stack_fffffd70
-    Signature: void __cdecl core_fire_cpp_CFireEffect_traceLaser_FUN_004c8230(CFireEffect *this_ptr,CVector3f *origin,CVector3f *direction,SLaserInfo *laser_info,int recursion_depth)
-    Suggested: Signature is missing stack parameters entirely
-
-  CFireEffect_createTrailFromPoints
-    Address: 0x004c90c0  File: core/fire.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_0000000c, in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_00000010
-    Signature: int __cdecl core_fire_cpp_CFireEffect_createTrailFromPoints_FUN_004c90c0(CFireEffect *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CFireEffect_createCrater
-    Address: 0x004c8ea0  File: core/fire.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_0000000c
-    Signature: void __cdecl core_fire_cpp_CFireEffect_createCrater_FUN_004c8ea0(CFireEffect *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CFireEffect_createShell
-    Address: 0x004c91e0  File: core/fire.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000014, in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000014
-    Signature: void __cdecl core_fire_cpp_CFireEffect_createShell_FUN_004c91e0(CFireEffect *this_ptr)
+  CFireEffect_createExplosion
+    Address: 0x004c8c10  File: core/fire.cpp
+    Evidence: in_stack_00000014, in_stack_00000014
+    Signature: void __cdecl core_fire_cpp_CFireEffect_createExplosion_FUN_004c8c10(CFireEffect *this_ptr,CVector3f *position,float scale,int damage_amount)
     Suggested: Signature is missing stack parameters entirely
 
   CDemonMission_enemyRandomizer
@@ -911,22 +496,10 @@ Unresolved stack parameters (missing from signature) (174)
     Signature: void __cdecl core_msnedit_cpp_CDemonMission_enemyRandomizer_FUN_005379e0(CDemonMission *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
-  CTurret_getCurFrame
-    Address: 0x005e2b30  File: core/turret.cpp
-    Evidence: in_stack_00000008, in_stack_00000008
-    Signature: float __cdecl core_turret_cpp_CTurret_getCurFrame_FUN_005e2b30(CTurret *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
   CWerewolf_process
     Address: 0x005efde0  File: core/werewolf.cpp
     Evidence: in_stack_fffffcec, in_stack_fffffcec
     Signature: void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_ptr,float delta_time)
-    Suggested: Signature is missing stack parameters entirely
-
-  CWerewolf
-    Address: 0x005f1230  File: core/werewolf.cpp
-    Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_werewolf_cpp_CWerewolf_FUN_005f1230(CWerewolf *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
   CStranger_processFrame
@@ -965,18 +538,6 @@ Unresolved stack parameters (missing from signature) (174)
     Signature: int __cdecl core_skeledit_cpp_CDeformableModel_buildFromPosFile_FUN_0058c190(CDeformableModel *this_ptr,CLodMeshPrecomputeEntry *entry)
     Suggested: Signature is missing stack parameters entirely
 
-  createMeshPrecomputeFile
-    Address: 0x00589bb0  File: core/skeledit.cpp
-    Evidence: in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_skeledit_cpp_createMeshPrecomputeFile_FUN_00589bb0(CLodMesh *mesh_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CGhoul_findDarkWayPoint
-    Address: 0x004e63d0  File: core/ghoul.cpp
-    Evidence: in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004e63d0(CGhoul *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
   CGhoul_process
     Address: 0x004e6600  File: core/ghoul.cpp
     Evidence: in_stack_fffffc88, in_stack_fffffc8c, in_stack_fffffc94, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc8c, in_stack_fffffc88, in_stack_fffffc94, in_stack_fffffc8c, in_stack_fffffc94, in_stack_fffffc8c, in_stack_fffffc94, in_stack_fffffc88, in_stack_fffffc94, in_stack_fffffc8c, in_stack_fffffc94, in_stack_fffffc94, in_stack_fffffc88, in_stack_fffffc8c, in_stack_fffffc94, in_stack_fffffc8c, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc94, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc94, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc8c, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88
@@ -995,12 +556,6 @@ Unresolved stack parameters (missing from signature) (174)
     Signature: void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float delta_time)
     Suggested: Signature is missing stack parameters entirely
 
-  CMoloch
-    Address: 0x005293b0  File: core/moloch.cpp
-    Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_moloch_cpp_CMoloch_FUN_005293b0(CMoloch *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
   CLadder_renderOpaque
     Address: 0x00502620  File: core/ladder.cpp
     Evidence: in_stack_ffffff28, in_stack_ffffff58, in_stack_ffffff58, in_stack_ffffff58, in_stack_ffffff28, in_stack_ffffff58, in_stack_ffffff58, in_stack_ffffff28, in_stack_ffffff58, in_stack_ffffff58, in_stack_ffffff28
@@ -1013,64 +568,16 @@ Unresolved stack parameters (missing from signature) (174)
     Signature: void __cdecl core_ladder_cpp_CLadder_processInEditor_FUN_00502d00(CLadder *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
-  CColonel
-    Address: 0x0043ff20  File: core/colonel.cpp
-    Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_colonel_cpp_CColonel_FUN_0043ff20(CColonel *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  FUN_00440650
-    Address: 0x00440650  File: core/colonel.cpp
-    Evidence: in_stack_00000004, in_stack_00000004
-    Signature: int __cdecl core_colonel_cpp_FUN_00440650(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  CColonel
-    Address: 0x00440430  File: core/colonel.cpp
-    Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: int __cdecl core_colonel_cpp_CColonel_FUN_00440430(CColonel *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CDeformableModelInstance_aimBoneAtTarget
-    Address: 0x0059fdd0  File: core/skeleton.cpp
-    Evidence: in_stack_00000018, in_stack_00000018
-    Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0059fdd0(CDeformableModelInstance *this_ptr,CVector3f *target_position,float blend_weight,int bone_index,CDeformableModel_MotionBlendWeightFunc *blend_callback)
-    Suggested: Signature is missing stack parameters entirely
-
   CDeformableModel_renderSkeleton
     Address: 0x0059b640  File: core/skeleton.cpp
     Evidence: in_stack_ffffff54, in_stack_ffffff84, in_stack_ffffffa4, in_stack_ffffffa8, in_stack_ffffffa8, in_stack_ffffffa4, in_stack_ffffff84, in_stack_ffffff84, in_stack_ffffff84, in_stack_ffffffa8, in_stack_ffffff54
     Signature: void __cdecl core_skeleton_cpp_CDeformableModel_renderSkeleton_FUN_0059b640(CDeformableModel *this_ptr,int color,CMatrix3x4f *bone_matrices,int render_flags)
     Suggested: Signature is missing stack parameters entirely
 
-  CDeformableModel_computePartDominantBones
-    Address: 0x0059d460  File: core/skeleton.cpp
-    Evidence: in_stack_fffffdd0, in_stack_fffffdd0
-    Signature: int __cdecl core_skeleton_cpp_CDeformableModel_computePartDominantBones_FUN_0059d460(CDeformableModel *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CEventList_setActorVariable
-    Address: 0x004b09a0  File: core/event.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c
-    Signature: void __cdecl core_event_cpp_CEventList_setActorVariable_FUN_004b09a0(CEventList *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CRuleList_insert
-    Address: 0x004b1680  File: core/event.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_00000010, in_stack_00000010, in_stack_00000010, in_stack_00000010
-    Signature: void __cdecl core_event_cpp_CRuleList_insert_FUN_004b1680(CRuleList *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CRuleList_remove
-    Address: 0x004b17c0  File: core/event.cpp
-    Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_event_cpp_CRuleList_remove_FUN_004b17c0(CRuleList *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CCharacter_detachBodyPart
-    Address: 0x0042bcc0  File: core/charactr.cpp
-    Evidence: in_stack_0000000c, in_stack_00000010, in_stack_0000000c, in_stack_00000010
-    Signature: void __cdecl core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0(CCharacter *this_ptr,int part_index)
+  CCharacter_dismember
+    Address: 0x0042b9e0  File: core/charactr.cpp
+    Evidence: in_stack_00000010, in_stack_00000010
+    Signature: void __cdecl core_charactr_cpp_CCharacter_dismember_FUN_0042b9e0(CCharacter *this_ptr,CVector3f *impact_point,float impact_force)
     Suggested: Signature is missing stack parameters entirely
 
   CCharacter_updateCarriedObjects
@@ -1079,28 +586,10 @@ Unresolved stack parameters (missing from signature) (174)
     Signature: void __cdecl core_charactr_cpp_CCharacter_updateCarriedObjects_FUN_0042d090(CCharacter *this_ptr,float delta_time)
     Suggested: Signature is missing stack parameters entirely
 
-  CTrigger_evaluateTriggerCondition
-    Address: 0x005e0980  File: core/trigger.cpp
-    Evidence: in_stack_0000000c, in_stack_0000000c
-    Signature: int __cdecl core_trigger_cpp_CTrigger_evaluateTriggerCondition_FUN_005e0980(CTrigger *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CZThumb_testCameraVisibility
-    Address: 0x005750a0  File: core/setdir.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000014, in_stack_00000018, in_stack_00000014, in_stack_00000014, in_stack_00000014, in_stack_00000014, in_stack_00000014, in_stack_00000018, in_stack_00000010, in_stack_00000014, in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_0000000c, in_stack_00000010
-    Signature: float __cdecl core_setdir_cpp_CZThumb_testCameraVisibility_FUN_005750a0(CZThumb *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
   CStairs_renderOpaque
     Address: 0x005b9c10  File: core/stairs.cpp
     Evidence: in_stack_0000000c, in_stack_fffffeb8, in_stack_fffffee8, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_fffffee8, in_stack_fffffee8, in_stack_fffffeb8, in_stack_fffffee8, in_stack_fffffee8, in_stack_fffffeb8, in_stack_fffffee8, in_stack_fffffee8, in_stack_fffffeb8, in_stack_fffffee8, in_stack_fffffee8, in_stack_fffffeb8, in_stack_fffffee8, in_stack_fffffee8, in_stack_fffffeb8, in_stack_fffffee8, in_stack_fffffee8, in_stack_fffffeb8, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_fffffee8, in_stack_fffffee8, in_stack_fffffeb8, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c
     Signature: int __cdecl core_stairs_cpp_CStairs_renderOpaque_FUN_005b9c10(CStairs *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  openFileWithExtension
-    Address: 0x004eebc0  File: core/ground.cpp
-    Evidence: in_stack_00000010, in_stack_00000010
-    Signature: _FILE * __cdecl core_ground_cpp_openFileWithExtension_FUN_004eebc0(char *base_filename,char *file_extension,char *open_mode)
     Suggested: Signature is missing stack parameters entirely
 
   CCourse_preview
@@ -1115,34 +604,10 @@ Unresolved stack parameters (missing from signature) (174)
     Signature: int __cdecl core_path_cpp_CPathMap_findPathToDestination_FUN_00547320(CPathMap *this_ptr,CVector3f *dest_position,CVector3f *out_euler_angles,int direction_hint)
     Suggested: Signature is missing stack parameters entirely
 
-  renderGridQuad
-    Address: 0x00547dd0  File: core/path.cpp
-    Evidence: in_stack_0000001c, in_stack_0000001c
-    Signature: void __cdecl core_path_cpp_renderGridQuad_FUN_00547dd0(int grid_x,int grid_y,int grid_z,int color,int fog,float w_recip)
-    Suggested: Signature is missing stack parameters entirely
-
-  CMelee_setWeaponState
-    Address: 0x0050ecd0  File: core/melee.cpp
-    Evidence: in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_melee_cpp_CMelee_setWeaponState_FUN_0050ecd0(CMelee *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
   CMelee
     Address: 0x0050ebe0  File: core/melee.cpp
     Evidence: in_stack_00000008, in_stack_0000000c, in_stack_0000000c, in_stack_00000008
     Signature: void __cdecl core_melee_cpp_CMelee_FUN_0050ebe0(CMelee *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CMirrorReflection_setupMirrorReflection
-    Address: 0x005214c0  File: core/mirror.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000010, in_stack_00000008
-    Signature: void __cdecl core_mirror_cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0(CMirrorReflection *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  drawCenteredText
-    Address: 0x00508250  File: core/main.c
-    Evidence: in_stack_00000010, in_stack_00000010
-    Signature: void __cdecl core_main_c_drawCenteredText_FUN_00508250(char *text,int y_pos,int color)
     Suggested: Signature is missing stack parameters entirely
 
   CDemonRaytrace_restoreShadowBitFromBuffer
@@ -1157,12 +622,6 @@ Unresolved stack parameters (missing from signature) (174)
     Signature: void __cdecl core_dtrace_cpp_CDemonRaytrace_setVoxelShadowBit_FUN_0049a160(CDemonRaytrace *this_ptr,CVector3f *world_position)
     Suggested: Signature is missing stack parameters entirely
 
-  CPlatform_attachActor
-    Address: 0x0054e1e0  File: core/platfrm.cpp
-    Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_platfrm_cpp_CPlatform_attachActor_FUN_0054e1e0(CPlatform *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
   CGabriella_processMotionEvents
     Address: 0x004d4890  File: core/gabriela.cpp
     Evidence: in_stack_ffffff58, in_stack_ffffff58, in_stack_ffffff58, in_stack_ffffff58
@@ -1173,54 +632,6 @@ Unresolved stack parameters (missing from signature) (174)
     Address: 0x004dcee0  File: core/game.cpp
     Evidence: in_stack_00000080, in_stack_00000080, in_stack_00000080
     Signature: void __cdecl core_game_cpp_CGame_processHotkeys_FUN_004dcee0(CGame *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  checkCheatAndGiveWeapon
-    Address: 0x004dd9d0  File: core/game.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000008, in_stack_0000000c
-    Signature: void __cdecl core_game_cpp_checkCheatAndGiveWeapon_FUN_004dd9d0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  drawHealthBar
-    Address: 0x004d7fa0  File: core/game.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000014, in_stack_00000014, in_stack_00000014, in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_0000000c, in_stack_00000004, in_stack_00000014, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000010
-    Signature: void __cdecl core_game_cpp_drawHealthBar_FUN_004d7fa0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  pollKeyEdgeTrigger
-    Address: 0x004dc2a0  File: core/game.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000008
-    Signature: void __cdecl core_game_cpp_pollKeyEdgeTrigger_FUN_004dc2a0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  rampControlAxis
-    Address: 0x004dc2d0  File: core/game.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000014, in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000014, in_stack_00000014, in_stack_00000010, in_stack_0000000c, in_stack_0000000c, in_stack_00000014, in_stack_0000000c, in_stack_00000014, in_stack_00000014, in_stack_0000000c, in_stack_0000000c, in_stack_00000014, in_stack_00000010, in_stack_0000000c, in_stack_0000000c
-    Signature: void __cdecl core_game_cpp_rampControlAxis_FUN_004dc2d0(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  CGame_displayBitmap
-    Address: 0x004e2890  File: core/game.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_0000000c, in_stack_00000010
-    Signature: void __cdecl core_game_cpp_CGame_displayBitmap_FUN_004e2890(CGame *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CGame_scaleBoneRecursive
-    Address: 0x004dda80  File: core/game.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000010, in_stack_00000010, in_stack_0000000c, in_stack_00000008, in_stack_00000008, in_stack_00000010, in_stack_00000008
-    Signature: void __cdecl core_game_cpp_CGame_scaleBoneRecursive_FUN_004dda80(CGame *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  endProfileTimer
-    Address: 0x004e3110  File: core/game.cpp
-    Evidence: in_stack_00000004, in_stack_00000004
-    Signature: void __cdecl core_game_cpp_endProfileTimer_FUN_004e3110(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  disableUnavailableChapters
-    Address: 0x004e1c30  File: core/game.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000004
-    Signature: void __cdecl core_game_cpp_disableUnavailableChapters_FUN_004e1c30(void)
     Suggested: Signature is missing stack parameters entirely
 
   pollKeyStateOnChange
@@ -1638,7 +1049,7 @@ Undefined types in variables (2268)
     Locals:  local_260 (undefined4), local_25c (undefined4), local_258 (undefined4), local_254 (undefined4), local_250 (undefined4), local_24c (undefined4), local_248 (undefined4), local_244 (undefined1), local_240 (undefined4), local_210 (undefined4), local_20c (undefined4), local_1cc (undefined1), local_1c0 (undefined1), local_1b4 (undefined1), local_1a4 (undefined1), local_19c (undefined1), local_184 (undefined1), local_178 (undefined1), local_16c (undefined1), local_154 (undefined1), local_13c (undefined4), local_138 (undefined4), local_134 (undefined4), local_130 (undefined1), local_120 (undefined4), local_114 (undefined4), local_100 (undefined4), local_fc (undefined4), local_f8 (undefined4), local_f4 (undefined4), local_f0 (undefined4), local_ec (undefined4), local_e8 (undefined4), local_e4 (undefined4), local_e0 (undefined4), local_dc (undefined1), local_d0 (undefined4), local_cc (undefined4), local_c8 (undefined4), local_bc (undefined4), local_b8 (undefined4), local_b4 (undefined4), local_b0 (undefined4), local_78 (undefined4), local_70 (undefined4), local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CWerewolf
+  CWerewolf_renderEyeGlow
     Address: 0x005f1230  File: core/werewolf.cpp
     Locals:  local_118 (undefined4), local_114 (undefined4), local_110 (undefined4), local_10c (undefined4), local_108 (undefined4), local_104 (undefined4), local_100 (undefined4), local_fc (undefined4), local_f8 (undefined4), local_f4 (undefined4), local_f0 (undefined4), local_ec (undefined4), local_e8 (undefined4), local_e4 (undefined4), local_e0 (undefined4), local_dc (undefined4), local_d8 (undefined4), local_d4 (undefined4), local_d0 (undefined4), local_cc (undefined4), local_c8 (undefined4), local_c4 (undefined4), local_c0 (undefined4), local_bc (undefined4), local_b8 (undefined4), local_b4 (undefined4), local_b0 (undefined4), local_ac (undefined4), local_a8 (undefined4), local_a4 (undefined4), local_a0 (undefined4), local_9c (undefined4), local_98 (undefined4), local_94 (undefined4), local_90 (undefined4), local_8c (undefined4), local_88 (undefined4), local_84 (undefined4), local_80 (undefined4), local_7c (undefined4), local_78 (undefined4), local_74 (undefined4), local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -1758,7 +1169,7 @@ Undefined types in variables (2268)
     Locals:  local_138 (undefined8), local_130 (undefined8), local_128 (undefined8), local_120 (undefined8), local_118 (undefined8), local_110 (undefined8), local_108 (undefined8), local_100 (undefined8), local_f8 (undefined8), local_f0 (undefined8), local_e8 (undefined8), local_e0 (undefined8), local_d8 (undefined8), local_d0 (undefined8), local_c8 (undefined4), local_c4 (undefined4), local_c0 (undefined4), local_bc (undefined4), local_b8 (undefined4), local_b4 (undefined4), local_b0 (undefined4), local_ac (undefined4), local_a8 (undefined4), local_a4 (undefined4), local_a0 (undefined8), local_98 (undefined4), local_94 (undefined4), local_90 (undefined4), local_8c (undefined4), local_88 (undefined4), local_84 (undefined4), local_80 (undefined4), local_7c (undefined4), local_78 (undefined4), local_74 (undefined4), local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CMansionPuzzleCircle
+  CMansionPuzzleCircle_updateLaser
     Address: 0x0050a8d0  File: core/manpuz.cpp
     Locals:  local_114 (undefined4), local_110 (undefined4), local_10c (undefined4), local_108 (undefined4), local_104 (undefined4), local_100 (undefined4), local_fc (undefined4), local_f8 (undefined4), local_f4 (undefined4), local_f0 (undefined4), local_ec (undefined4), local_e8 (undefined4), local_e4 (undefined4), local_e0 (undefined4), local_dc (undefined4), local_d8 (undefined4), local_d4 (undefined4), local_d0 (undefined4), local_cc (undefined4), local_c8 (undefined4), local_c4 (undefined4), local_c0 (undefined4), local_bc (undefined4), local_b8 (undefined4), local_b4 (undefined4), local_b0 (undefined4), local_ac (undefined4), local_a8 (undefined4), local_a4 (undefined4), local_a0 (undefined4), local_9c (undefined4), local_98 (undefined4), local_94 (undefined4), local_90 (undefined4), local_8c (undefined4), local_88 (undefined4), local_84 (undefined4), local_80 (undefined4), local_7c (undefined4), local_78 (undefined4), local_74 (undefined4), local_70 (undefined4), local_6c (undefined1), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined1), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined1), local_30 (undefined1), local_24 (undefined8), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined1)
     Suggested: Resolve undefined types to concrete types
@@ -2158,14 +1569,14 @@ Undefined types in variables (2268)
     Locals:  local_b4 (undefined1), local_8c (undefined4), local_88 (undefined4), local_84 (undefined4), local_80 (undefined4), local_7c (undefined4), local_78 (undefined4), local_74 (undefined4), local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CMansionPuzzleCircle
-    Address: 0x00509d50  File: core/manpuz.cpp
-    Locals:  local_a4 (undefined4), local_90 (undefined4), local_8c (undefined4), local_88 (undefined4), local_84 (undefined4), local_80 (undefined4), local_7c (undefined4), local_78 (undefined4), local_74 (undefined4), local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
   CMansionPuzzleCircle_customRayIntersect
     Address: 0x00509330  File: core/manpuz.cpp
     Locals:  local_d8 (undefined4), local_d4 (undefined4), local_d0 (undefined4), local_cc (undefined4), local_c8 (undefined4), local_c4 (undefined4), local_c0 (undefined4), local_bc (undefined4), local_b8 (undefined4), local_b4 (undefined4), local_b0 (undefined4), local_ac (undefined4), local_a8 (undefined1), local_9c (undefined4), local_98 (undefined4), local_94 (undefined4), local_90 (undefined1), local_84 (undefined1), local_78 (undefined1), local_6c (undefined1), local_60 (undefined1), local_54 (undefined1), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined1), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CMansionPuzzleCircle_renderGem
+    Address: 0x00509d50  File: core/manpuz.cpp
+    Locals:  local_a4 (undefined4), local_90 (undefined4), local_8c (undefined4), local_88 (undefined4), local_84 (undefined4), local_80 (undefined4), local_7c (undefined4), local_78 (undefined4), local_74 (undefined4), local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CStranger_tryPlaceObject
@@ -2283,7 +1694,7 @@ Undefined types in variables (2268)
     Locals:  local_84 (undefined8), local_7c (undefined4), local_78 (undefined4), local_74 (undefined4), local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined8), local_38 (undefined1), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined4), local_c (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CColonel
+  CColonel_processAI
     Address: 0x0043ff20  File: core/colonel.cpp
     Locals:  local_ac (undefined4), local_a8 (undefined8), local_a0 (undefined8), local_98 (undefined8), local_90 (undefined4), local_8c (undefined4), local_88 (undefined4), local_84 (undefined1), local_80 (undefined4), local_78 (undefined4), local_74 (undefined4), local_70 (undefined4), local_6c (undefined1), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_44 (undefined4), local_3c (undefined1), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -2518,7 +1929,7 @@ Undefined types in variables (2268)
     Locals:  local_74 (undefined4), local_70 (undefined4), local_6c (undefined), local_68 (undefined2), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CWerewolf
+  CWerewolf_processChainConstraint
     Address: 0x005f1e40  File: core/werewolf.cpp
     Locals:  local_7c (undefined8), local_74 (undefined4), local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined8), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -4173,14 +3584,14 @@ Undefined types in variables (2268)
     Locals:  local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CLadder
-    Address: 0x00502a70  File: core/ladder.cpp
-    Locals:  local_dc (undefined1), local_ac (undefined1), local_7c (undefined1), local_70 (undefined4), local_60 (undefined4), local_50 (undefined4), local_4c (undefined1), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined1)
-    Suggested: Resolve undefined types to concrete types
-
-  CLadder
+  CLadder_cacheRelativePosition
     Address: 0x00502b80  File: core/ladder.cpp
     Locals:  local_e4 (undefined1), local_b4 (undefined1), local_84 (undefined1), local_78 (undefined4), local_68 (undefined4), local_58 (undefined4), local_54 (undefined1), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined1)
+    Suggested: Resolve undefined types to concrete types
+
+  CLadder_updatePositionFromMaster
+    Address: 0x00502a70  File: core/ladder.cpp
+    Locals:  local_dc (undefined1), local_ac (undefined1), local_7c (undefined1), local_70 (undefined4), local_60 (undefined4), local_50 (undefined4), local_4c (undefined1), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined1)
     Suggested: Resolve undefined types to concrete types
 
   computePlaneIntersection
@@ -4443,7 +3854,7 @@ Undefined types in variables (2268)
     Locals:  local_528 (undefined1), local_328 (undefined1), local_228 (undefined1), local_144 (undefined1), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_2c (undefined1), local_20 (undefined1), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CMansionPuzzleCircle
+  CMansionPuzzleCircle_updateReflectorPosition
     Address: 0x0050af80  File: core/manpuz.cpp
     Locals:  local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined4), local_c (undefined4), local_8 (undefined4), local_4 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -4458,13 +3869,13 @@ Undefined types in variables (2268)
     Locals:  local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined1)
     Suggested: Resolve undefined types to concrete types
 
-  CMobster
-    Address: 0x00525650  File: core/mobster.cpp
+  CMobster_dismountVehicle
+    Address: 0x00525720  File: core/mobster.cpp
     Locals:  local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined1), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CMobster
-    Address: 0x00525720  File: core/mobster.cpp
+  CMobster_positionOnVehicle
+    Address: 0x00525650  File: core/mobster.cpp
     Locals:  local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined1), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
@@ -4763,12 +4174,12 @@ Undefined types in variables (2268)
     Locals:  local_84 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_3c (undefined1), local_30 (undefined1), local_20 (undefined4), local_1c (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CIcePick
+  CIcePick_performMeleeAttack
     Address: 0x004f9490  File: core/icepick.cpp
     Locals:  local_6c (undefined4), local_68 (undefined4), local_40 (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined1), local_24 (undefined1), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CMansionPuzzleCircle
+  CMansionPuzzleCircle_updateGem
     Address: 0x0050a610  File: core/manpuz.cpp
     Locals:  local_3c (undefined1), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -5098,7 +4509,7 @@ Undefined types in variables (2268)
     Locals:  local_38 (undefined1), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CMoloch
+  CMoloch_processAI
     Address: 0x005293b0  File: core/moloch.cpp
     Locals:  local_74 (undefined4), local_70 (undefined4), local_6c (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_24 (undefined4), local_20 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -5468,7 +4879,7 @@ Undefined types in variables (2268)
     Locals:  local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CIcePick
+  CIcePick_processAI
     Address: 0x004f8c70  File: core/icepick.cpp
     Locals:  local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_30 (undefined4), local_28 (undefined4), local_24 (undefined4), local_1c (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -5478,7 +4889,7 @@ Undefined types in variables (2268)
     Locals:  local_410 (undefined), local_210 (undefined), local_12c (undefined), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CMansionPuzzleCircle
+  CMansionPuzzleCircle_renderEmitter
     Address: 0x00509c60  File: core/manpuz.cpp
     Locals:  local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -5948,7 +5359,7 @@ Undefined types in variables (2268)
     Locals:  local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined1), local_8 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CIcePick
+  CIcePick_findAndPickupGun
     Address: 0x004f8970  File: core/icepick.cpp
     Locals:  local_34 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -5963,14 +5374,14 @@ Undefined types in variables (2268)
     Locals:  local_100 (undefined8), local_f8 (undefined8), local_f0 (undefined4), local_ec (undefined4), local_e8 (undefined1), local_84 (undefined1)
     Suggested: Resolve undefined types to concrete types
 
-  CMansionPuzzleCircle
-    Address: 0x00509b20  File: core/manpuz.cpp
-    Locals:  local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined1), local_1c (undefined1), local_10 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
   CMansionPuzzleCircle_customIntersectCylinderXZ
     Address: 0x00509720  File: core/manpuz.cpp
     Locals:  local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CMansionPuzzleCircle_updatePanelTransform
+    Address: 0x00509b20  File: core/manpuz.cpp
+    Locals:  local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined1), local_1c (undefined1), local_10 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CMorphModel_setFaceListFromPolygon
@@ -6538,7 +5949,7 @@ Undefined types in variables (2268)
     Locals:  local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_0050a4f0
+  updateGemHumChannel
     Address: 0x0050a4f0  File: core/manpuz.cpp
     Locals:  local_30 (undefined8), local_28 (undefined8), local_20 (undefined8), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -6688,12 +6099,12 @@ Undefined types in variables (2268)
     Locals:  local_58 (undefined1), local_28 (undefined1), local_18 (undefined4), local_14 (undefined4), local_10 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CZombie
+  CZombie_processPickup
     Address: 0x005fb530  File: core/zombie.cpp
     Locals:  local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_005f8e50
+  classifyObjectShape
     Address: 0x005f8e50  File: core/zombie.cpp
     Locals:  local_30 (undefined8), local_28 (undefined8), local_20 (undefined8), local_18 (undefined8), local_10 (undefined8)
     Suggested: Resolve undefined types to concrete types
@@ -7078,19 +6489,19 @@ Undefined types in variables (2268)
     Locals:  local_11c (undefined8), local_114 (undefined1), local_113 (undefined1), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CMobster
-    Address: 0x00526d90  File: core/mobster.cpp
-    Locals:  local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_14 (undefined4)
+  CMobster_playTaunt
+    Address: 0x005279f0  File: core/mobster.cpp
+    Locals:  local_80 (undefined1), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CMobster
+  CMobster_processDismemberment
     Address: 0x00527380  File: core/mobster.cpp
     Locals:  local_30 (undefined8), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CMobster
-    Address: 0x005279f0  File: core/mobster.cpp
-    Locals:  local_80 (undefined1), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
+  CMobster_processWeaponPickup
+    Address: 0x00526d90  File: core/mobster.cpp
+    Locals:  local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CMoon_update
@@ -8203,7 +7614,7 @@ Undefined types in variables (2268)
     Locals:  local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CZThumb_testCameraVisibility
+  testCameraVisibility
     Address: 0x005750a0  File: core/setdir.cpp
     Locals:  local_24 (undefined4), local_20 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -9144,7 +8555,7 @@ Undefined types in variables (2268)
     Locals:  local_1c (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CIcePick
+  CIcePick_updateShootBlend
     Address: 0x004f8810  File: core/icepick.cpp
     Locals:  local_30 (undefined1), local_20 (undefined1)
     Suggested: Resolve undefined types to concrete types
@@ -9179,7 +8590,7 @@ Undefined types in variables (2268)
     Locals:  local_14 (undefined4), local_10 (undefined1)
     Suggested: Resolve undefined types to concrete types
 
-  CMansionPuzzleCircle
+  CMansionPuzzleCircle_renderReflector
     Address: 0x0050a1f0  File: core/manpuz.cpp
     Locals:  local_18 (undefined4), local_10 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -9644,13 +9055,13 @@ Undefined types in variables (2268)
     Locals:  local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CDemonRenderer_setCameraOriginFromScaledPoint
-    Address: 0x0048c150  File: engine/drender.cpp
+  CDemonRenderer_scaleAndSetDirectionalLight
+    Address: 0x0048c6e0  File: engine/drender.cpp
     Locals:  local_c (undefined4), local_8 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  scaleAndSetDirectionalLight
-    Address: 0x0048c6e0  File: engine/drender.cpp
+  CDemonRenderer_setCameraOriginFromScaledPoint
+    Address: 0x0048c150  File: engine/drender.cpp
     Locals:  local_c (undefined4), local_8 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
@@ -11174,14 +10585,14 @@ Undefined types in variables (2268)
     Locals:  local_110 (undefined)
     Suggested: Resolve undefined types to concrete types
 
-  CMansionPuzzleCircle
-    Address: 0x005098f0  File: core/manpuz.cpp
-    Locals:  local_14 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
   CMansionPuzzleCircle_archive
     Address: 0x0050adf0  File: core/manpuz.cpp
     Locals:  local_c (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CMansionPuzzleCircle_initPuzzleState
+    Address: 0x005098f0  File: core/manpuz.cpp
+    Locals:  local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CMansionPuzzleCircle_onLaserHit
@@ -11199,7 +10610,7 @@ Undefined types in variables (2268)
     Locals:  local_10 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_0050a490
+  stepToward
     Address: 0x0050a490  File: core/manpuz.cpp
     Locals:  local_4 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -11274,7 +10685,7 @@ Undefined types in variables (2268)
     Locals:  local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CMobster
+  CMobster_startFiringAttack
     Address: 0x005271c0  File: core/mobster.cpp
     Locals:  local_8 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -11909,13 +11320,13 @@ Undefined types in variables (2268)
     Locals:  local_38 (undefined1)
     Suggested: Resolve undefined types to concrete types
 
-  CZombie
-    Address: 0x005fc220  File: core/zombie.cpp
+  CZombie_ctor
+    Address: 0x005f8fe0  File: core/zombie.cpp
     Locals:  local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CZombie_ctor
-    Address: 0x005f8fe0  File: core/zombie.cpp
+  CZombie_processDismemberment
+    Address: 0x005fc220  File: core/zombie.cpp
     Locals:  local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
@@ -11924,14 +11335,9 @@ Undefined types in variables (2268)
     Locals:  local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  FUN_005f8cc0
+  getObjectHeightScale
     Address: 0x005f8cc0  File: core/zombie.cpp
     Locals:  local_c (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  FUN_005fcd20
-    Address: 0x005fcd20  File: core/zombie.cpp
-    Locals:  local_10 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   buildColorLookupTable
@@ -11972,6 +11378,11 @@ Undefined types in variables (2268)
   wrapTextToWidth
     Address: 0x00401d80  File: engine/2d.c
     Locals:  local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  addRasterizerEdge
+    Address: 0x005fcd20  File: engine/3d.c
+    Locals:  local_10 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   clipAndDrawLine2D

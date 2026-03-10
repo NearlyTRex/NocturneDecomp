@@ -36,7 +36,8 @@ void __cdecl core_set_cpp_CDemonSet_setupMirrorRendering_FUN_005709e0(CDemonSet 
                  (g_CDemonRendererPtr2);
   local_14 = g_SavedProjectionFactor;
   core_mirror_cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0
-            (&(this_ptr->mirror_glass_actors[mirror_index]->mirror).reflection);
+            (&(this_ptr->mirror_glass_actors[mirror_index]->mirror).reflection,
+             &g_SavedCameraOrigin.f,&g_SavedCameraRotation,g_SavedProjectionFactor);
   engine_drender_cpp_CDemonRenderer_enableAdvancedCulling_FUN_0048ce10(g_CDemonRendererPtr2,1);
   (*((g_CurrentSceneCamera->base).vtable)->saveAlphaTransform)
             (g_CurrentSceneCamera,mirror_index + 1);

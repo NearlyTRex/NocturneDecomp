@@ -34,7 +34,7 @@ section .text
     PUSH EDX                            ; 004b41e4
     PUSH EBX                            ; 004b41e5
     CALL engine_fileio.cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50 ; 004b41e6
-        ;   XREF to: 004b3f50 (UNCONDITIONAL_CALL)  ; int engine_fileio.cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50(CCheckOutItem * this_ptr, char * filename_out, char * out_buffer, char * wildcard_pattern, ...)
+        ;   XREF to: 004b3f50 (UNCONDITIONAL_CALL)  ; int engine_fileio.cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50(CCheckOutItem * this_ptr, char * preselected_filename, char * out_buffer, char * dialog_title, ...)
     ADD ESP,0x14                        ; 004b41eb
     TEST EAX,EAX                        ; 004b41ee
     JNZ 0x004b41fa                      ; 004b41f0

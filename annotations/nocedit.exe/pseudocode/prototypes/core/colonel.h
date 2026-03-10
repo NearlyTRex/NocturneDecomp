@@ -27,13 +27,13 @@ void __cdecl CColonel::setup(CColonel *this_ptr);
 // Address: 0043fa00
 void __cdecl CColonel::process(CColonel *this_ptr,float delta_time);
 
-// Original: core_colonel.cpp_CColonel_FUN_0043ff20
+// Original: core_colonel.cpp_CColonel_processAI_FUN_0043ff20
 // Address: 0043ff20
-void __cdecl CColonel(CColonel *this_ptr);
+void __cdecl CColonel::processAI(CColonel *this_ptr,float delta_time);
 
-// Original: core_colonel.cpp_CColonel_FUN_00440430
+// Original: core_colonel.cpp_CColonel_processMotionEvents_FUN_00440430
 // Address: 00440430
-int __cdecl CColonel(CColonel *this_ptr);
+void __cdecl CColonel::processMotionEvents(CColonel *this_ptr,float delta_time);
 
 // Original: core_colonel.cpp_CColonel_archive_FUN_00440490
 // Address: 00440490
@@ -67,9 +67,9 @@ void __cdecl CColonel::getPropertyList(CColonel *this_ptr,CActorPropertyList *pr
 // Address: 00440630
 void __cdecl CColonel::addFilesToExtract(CColonel *this_ptr,_FILE *file_handle);
 
-// Original: core_colonel.cpp_FUN_00440650
+// Original: core_colonel.cpp_getCurrentMotionState_FUN_00440650
 // Address: 00440650
-int __cdecl FUN_00440650(void);
+int __cdecl getCurrentMotionState(CMotionController *motion_ptr);
 
 // Original: core_colonel.cpp_CColonel_dtor_FUN_00440670
 // Address: 00440670

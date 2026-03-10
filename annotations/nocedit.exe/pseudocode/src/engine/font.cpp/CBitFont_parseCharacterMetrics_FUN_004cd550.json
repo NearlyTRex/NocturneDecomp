@@ -49,16 +49,14 @@
   },
   "complexity": {
     "assembly_lines": 357,
-    "complexity_score": 166,
+    "complexity_score": 151,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 12,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 151,
-    "suspect_count": 1,
-    "suspect_types": [
-      "param_count_too_many"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 508
   },
   "cross_references": [
@@ -79,7 +77,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_004cd550",
-    "signature": "void __cdecl engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_004cd550(CBitFont *this_ptr,int bitmapcount,int other2,int bitmap_index,int width,int height,int first_char)"
+    "signature": "void __cdecl engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_004cd550(CBitFont *this_ptr,int bitmap_count,int bitmap_width,int bitmap_height,int first_char)"
   },
   "function_calls": [
     {
@@ -195,8 +193,8 @@
         "stack_params": 5
       }
     ],
-    "confidence": "low",
-    "declared_params": 7,
+    "confidence": "medium",
+    "declared_params": 5,
     "estimated_params": 5
   },
   "pcode_summary": {
@@ -233,10 +231,10 @@
     "pcode_op_count": 1393
   },
   "stack_frame": {
-    "frame_size": 396,
+    "frame_size": 388,
     "local_size": 368,
     "param_offset": 4,
-    "param_size": 28,
+    "param_size": 20,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -339,59 +337,33 @@
       },
       {
         "is_param": true,
-        "name": "bitmapcount",
+        "name": "bitmap_count",
         "offset": 8,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
-        "name": "other2",
+        "name": "bitmap_width",
         "offset": 12,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
-        "name": "bitmap_index",
+        "name": "bitmap_height",
         "offset": 16,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
-        "name": "width",
-        "offset": 20,
-        "size": 4,
-        "type": "int"
-      },
-      {
-        "is_param": true,
-        "name": "height",
-        "offset": 24,
-        "size": 4,
-        "type": "int"
-      },
-      {
-        "is_param": true,
         "name": "first_char",
-        "offset": 28,
+        "offset": 20,
         "size": 4,
         "type": "int"
       }
     ]
   },
-  "suspects": [
-    {
-      "call_site_count": 1,
-      "declared_params": 7,
-      "description": "Signature has too many params - likely wrong calling convention",
-      "estimated_params": 5,
-      "fix_type": "remove_params",
-      "match": "declared:7 vs estimated:5",
-      "param_delta": -2,
-      "text": "Function declares 7 params but call sites push 5 (2 extra)",
-      "type": "param_count_too_many"
-    }
-  ]
+  "suspects": []
 }

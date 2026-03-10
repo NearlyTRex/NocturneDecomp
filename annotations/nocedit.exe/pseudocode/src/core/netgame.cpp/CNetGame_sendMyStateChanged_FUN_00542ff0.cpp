@@ -14,6 +14,8 @@ void __cdecl core_netgame_cpp_CNetGame_sendMyStateChanged_FUN_00542ff0(CNetGame 
   int iVar3;
   SNetPlayer *pSVar4;
   char *pcVar5;
+  SNetPacketHeader local_3c;
+  uint local_37;
   char local_33 [20];
   int local_1f;
   EHeroType local_1b;
@@ -34,6 +36,8 @@ void __cdecl core_netgame_cpp_CNetGame_sendMyStateChanged_FUN_00542ff0(CNetGame 
     iVar3 = 0x20000;
   }
   g_CurrentGameTime = g_CurrentGameTime + iVar3;
+  local_3c.size = 0x29;
+  local_3c.type = PACKET_PLAYER_STATE;
   local_1f = this_ptr->players[this_ptr->local_player_index].ready_flag;
   local_1b = this_ptr->players[this_ptr->local_player_index].hero_number;
   local_17 = this_ptr->players[this_ptr->local_player_index].aim_mode;
@@ -49,7 +53,8 @@ void __cdecl core_netgame_cpp_CNetGame_sendMyStateChanged_FUN_00542ff0(CNetGame 
     pcVar5 = pcVar5 + 2;
   } while (cVar1 != '\0');
   g_LastPingTime = iVar2 / 0x12;
-  core_netgame_cpp_CNetGame_send_FUN_005411c0(this_ptr,this_ptr->server_player_index);
+  local_37 = g_CurrentGameTime;
+  core_netgame_cpp_CNetGame_send_FUN_005411c0(this_ptr,this_ptr->server_player_index,&local_3c);
   INT_00680a04 = 1;
   this_ptr->players[this_ptr->local_player_index].state_change_time = g_CurrentGameTime;
   return;

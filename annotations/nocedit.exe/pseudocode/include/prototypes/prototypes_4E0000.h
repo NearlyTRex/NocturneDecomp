@@ -20,6 +20,7 @@
 #include "types/classes/CGore.h"
 #include "types/classes/CGrave.h"
 #include "types/classes/CGround.h"
+#include "types/classes/CPickList.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
 #include "types/classes/CVector4i.h"
@@ -48,15 +49,15 @@ void __cdecl core_game_cpp_CGame_resetInventoryDisplayTimer_FUN_004e0bd0(CGame *
 void __cdecl core_game_cpp_CGame_setStatusDisplay_FUN_004e0bf0(CGame *this_ptr,char *name,int value,float duration);
 void __cdecl core_game_cpp_CGame_saveGame_FUN_004e0cd0(CGame *this_ptr,char *save_filename);
 void __cdecl core_game_cpp_CGame_loadGame_FUN_004e12b0(CGame *this_ptr,char *save_filename,int load_mode);
-void __cdecl core_game_cpp_disableUnavailableChapters_FUN_004e1c30(void);
+void __cdecl core_game_cpp_disableUnavailableChapters_FUN_004e1c30(CPickList *pick_list,int chapter_index);
 void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004e1cb0(CGame *this_ptr,int unknown);
-void __cdecl core_game_cpp_CGame_displayBitmap_FUN_004e2890(CGame *this_ptr);
+void __cdecl core_game_cpp_CGame_displayBitmap_FUN_004e2890(CGame *this_ptr,char *filename,int width,int height);
 void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004e2910(CGame *this_ptr);
 void __cdecl core_game_cpp_hostNetworkGame_FUN_004e2f10(void);
 void __cdecl core_game_cpp_joinNetworkGame_FUN_004e2fc0(void);
 void __cdecl core_game_cpp_CGame_slamDT_FUN_004e3080(CGame *this_ptr,float delta_time);
 void __cdecl core_game_cpp_beginProfileTimer_FUN_004e30f0(void);
-void __cdecl core_game_cpp_endProfileTimer_FUN_004e3110(void);
+void __cdecl core_game_cpp_endProfileTimer_FUN_004e3110(char *timer_name);
 void __cdecl core_game_cpp_CGame_process_FUN_004e3190(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_promptLoadGame_FUN_004e36f0(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_displayActStats_FUN_004e3800(CGame *this_ptr);
@@ -100,7 +101,7 @@ CGhoul * __cdecl core_ghoul_cpp_factoryFunc_FUN_004e5ff0(void);
 CDemonActorType * __cdecl core_ghoul_cpp_CGhoul_getActorType_FUN_004e6020(CGhoul *this_ptr);
 CGhoul * __cdecl core_ghoul_cpp_CGhoul_ctor_FUN_004e6030(CGhoul *this_ptr);
 void __cdecl core_ghoul_cpp_CGhoul_setup_FUN_004e6160(CGhoul *this_ptr);
-void __cdecl core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004e63d0(CGhoul *this_ptr);
+void __cdecl core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004e63d0(CGhoul *this_ptr,float delta_time);
 void __cdecl core_ghoul_cpp_CGhoul_process_FUN_004e6600(CGhoul *this_ptr,float delta_time);
 void __cdecl core_ghoul_cpp_CGhoul_renderBackground_FUN_004e8190(CGhoul *this_ptr,int layer_flag);
 void __cdecl core_ghoul_cpp_CGhoul_archive_FUN_004e81c0(CGhoul *this_ptr);
@@ -209,7 +210,7 @@ void __cdecl core_grave_cpp_CGrave_showEditorHelp_FUN_004eead0(CGrave *this_ptr,
 void __cdecl core_grave_cpp_CGrave_addFilesToExtract_FUN_004eeb10(CGrave *this_ptr,_FILE *file_handle);
 CGrave * __cdecl core_grave_cpp_CGrave_dtor_FUN_004eeb40(CGrave *this_ptr,uint flags);
 void __cdecl core_ground_cpp_staticInit_FUN_004eeb90(void);
-_FILE * __cdecl core_ground_cpp_openFileWithExtension_FUN_004eebc0(char *base_filename,char *file_extension,char *open_mode);
+_FILE * __cdecl core_ground_cpp_openFileWithExtension_FUN_004eebc0(char *directory,char *filename,char *new_extension,char *open_mode);
 char * __cdecl core_ground_cpp_getGroundTypeCode_FUN_004eece0(EGroundType type);
 char * __cdecl core_ground_cpp_getGroundTypeName_FUN_004eed80(EGroundType type);
 uint __cdecl core_ground_cpp_getGroundTypeColor_FUN_004eee20(EGroundType type);

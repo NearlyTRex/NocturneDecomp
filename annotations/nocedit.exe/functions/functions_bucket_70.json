@@ -45136,7 +45136,7 @@
     "vars":{
       "params":[
         {
-          "name":"p1",
+          "name":"class_name",
           "storage":{
             "offset":4,
             "size":4,
@@ -49903,7 +49903,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_icepick.cpp_CIcePick_FUN_004f8970",
+    "name":"core_icepick.cpp_CIcePick_findAndPickupGun_FUN_004f8970",
     "ret":"int",
     "vars":{
       "locals":[
@@ -50045,7 +50045,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_icepick.cpp_CIcePick_FUN_004f8c70",
+    "name":"core_icepick.cpp_CIcePick_processAI_FUN_004f8c70",
     "ret":"void",
     "vars":{
       "locals":[
@@ -50178,6 +50178,22 @@
             ]
           },
           "type":"CIcePick*"
+        },
+        {
+          "name":"delta_time",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
         }
       ]
     }
@@ -51327,7 +51343,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_ladder.cpp_CLadder_FUN_00502a70",
+    "name":"core_ladder.cpp_CLadder_updatePositionFromMaster_FUN_00502a70",
     "ret":"void",
     "vars":{
       "locals":[
@@ -52955,7 +52971,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_manpuz.cpp_CMansionPuzzleCircle_FUN_005098f0",
+    "name":"core_manpuz.cpp_CMansionPuzzleCircle_initPuzzleState_FUN_005098f0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -53007,7 +53023,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_manpuz.cpp_CMansionPuzzleCircle_FUN_00509bf0",
+    "name":"core_manpuz.cpp_CMansionPuzzleCircle_renderPanel_FUN_00509bf0",
     "ret":"void",
     "vars":{
       "params":[
@@ -53026,6 +53042,22 @@
             ]
           },
           "type":"CMansionPuzzleCircle*"
+        },
+        {
+          "name":"panel_index",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }
@@ -53041,7 +53073,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050a1f0",
+    "name":"core_manpuz.cpp_CMansionPuzzleCircle_renderReflector_FUN_0050a1f0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -53094,6 +53126,22 @@
             ]
           },
           "type":"CMansionPuzzleCircle*"
+        },
+        {
+          "name":"reflector_index",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }
@@ -53109,7 +53157,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_manpuz.cpp_FUN_0050a4f0",
+    "name":"core_manpuz.cpp_updateGemHumChannel_FUN_0050a4f0",
     "ret":"int",
     "vars":{
       "locals":[
@@ -53196,7 +53244,7 @@
       ],
       "params":[
         {
-          "name":"ptr",
+          "name":"hum_value",
           "storage":{
             "offset":4,
             "size":4,
@@ -53209,7 +53257,87 @@
               }
             ]
           },
-          "type":"void*"
+          "type":"float*"
+        },
+        {
+          "name":"target",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"max_step",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"sfx_handle",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint*"
+        },
+        {
+          "name":"wav_filename",
+          "storage":{
+            "offset":20,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x14]",
+                "offset":20,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        },
+        {
+          "name":"world_position",
+          "storage":{
+            "offset":24,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x18]",
+                "offset":24,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
         }
       ],
       "ret_storage":{
@@ -53287,7 +53415,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050aef0",
+    "name":"core_manpuz.cpp_CMansionPuzzleCircle_getPrevPanelIndex_FUN_0050aef0",
     "ret":"int",
     "vars":{
       "params":[
@@ -53306,6 +53434,22 @@
             ]
           },
           "type":"CMansionPuzzleCircle*"
+        },
+        {
+          "name":"panel_index",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ],
       "ret_storage":{
@@ -58195,7 +58339,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_mobster.cpp_CMobster_FUN_005279f0",
+    "name":"core_mobster.cpp_CMobster_playTaunt_FUN_005279f0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -79510,22 +79654,6 @@
             ]
           },
           "type":"int"
-        },
-        {
-          "name":"reference_position",
-          "storage":{
-            "offset":12,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0xc]",
-                "offset":12,
-                "size":4
-              }
-            ]
-          },
-          "type":"CVector3f*"
         }
       ],
       "ret_storage":{
@@ -82852,6 +82980,54 @@
               {
                 "addr":"Stack[0x30]",
                 "offset":48,
+                "size":8
+              }
+            ]
+          },
+          "type":"double"
+        },
+        {
+          "name":"x_right",
+          "storage":{
+            "offset":56,
+            "size":8,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x38]",
+                "offset":56,
+                "size":8
+              }
+            ]
+          },
+          "type":"double"
+        },
+        {
+          "name":"y_right",
+          "storage":{
+            "offset":64,
+            "size":8,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x40]",
+                "offset":64,
+                "size":8
+              }
+            ]
+          },
+          "type":"double"
+        },
+        {
+          "name":"z_right",
+          "storage":{
+            "offset":72,
+            "size":8,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x48]",
+                "offset":72,
                 "size":8
               }
             ]

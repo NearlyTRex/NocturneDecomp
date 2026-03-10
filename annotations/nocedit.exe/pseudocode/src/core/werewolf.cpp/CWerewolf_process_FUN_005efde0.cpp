@@ -381,7 +381,7 @@ LAB_005f0ae7:
                           (&pCVar1->motion_controller,8,1);
                 iVar7 = core_actor_cpp_randomChance_FUN_0040cd10(0.85);
                 if (iVar7 != 0) {
-                  core_werewolf_cpp_CWerewolf_FUN_005f11e0(this_ptr);
+                  core_werewolf_cpp_CWerewolf_playHowl_FUN_005f11e0(this_ptr);
                 }
                 iVar7 = 0;
                 for (iVar15 = 0; iVar15 < g_CDemonSetPtr->enemy_count; iVar15 = iVar15 + 1) {
@@ -434,14 +434,14 @@ LAB_005f0ae7:
             (this_ptr->base).attack_cooldown = 1.0;
             iVar7 = core_actor_cpp_randomChance_FUN_0040cd10(0.6);
             if (iVar7 != 0) {
-              core_werewolf_cpp_CWerewolf_FUN_005f11e0(this_ptr);
+              core_werewolf_cpp_CWerewolf_playHowl_FUN_005f11e0(this_ptr);
             }
           }
         }
         fVar16 = this_ptr->howl_cooldown - delta_time;
         this_ptr->howl_cooldown = fVar16;
         if (fVar16 < 0.0) {
-          core_werewolf_cpp_CWerewolf_FUN_005f11e0(this_ptr);
+          core_werewolf_cpp_CWerewolf_playHowl_FUN_005f11e0(this_ptr);
         }
         goto LAB_005f0010;
       }
@@ -597,7 +597,7 @@ LAB_005f0481:
         if ((this_ptr->base).victim == (CCharacter *)0x0) goto LAB_005f0010;
         iVar7 = core_actor_cpp_randomChance_FUN_0040cd10(0.4);
         if (iVar7 != 0) {
-          core_werewolf_cpp_CWerewolf_FUN_005f11e0(this_ptr);
+          core_werewolf_cpp_CWerewolf_playHowl_FUN_005f11e0(this_ptr);
         }
         if (local_18 == 0xe) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
@@ -718,7 +718,7 @@ LAB_005f0010:
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
             (&(this_ptr->base).base.model);
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr,delta_time);
-  core_werewolf_cpp_CWerewolf_FUN_005f1e40(this_ptr);
+  core_werewolf_cpp_CWerewolf_processChainConstraint_FUN_005f1e40(this_ptr);
   this_ptr->eye_glow_phase = delta_time * (float)0.5 + this_ptr->eye_glow_phase;
   return;
 }

@@ -1,10 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_event_cpp_CEventList_setActorVariable_FUN_004b09a0(CEventList *this_ptr)
+; void __cdecl core_event_cpp_CEventList_setActorVariable_FUN_004b09a0(CEventList *this_ptr,char *var_name,CDemonActor *actor)
 ;
 ; Parameters:
 ; CEventList *     Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   var_name
+; CDemonActor *    Stack[0xc]:4   actor
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14

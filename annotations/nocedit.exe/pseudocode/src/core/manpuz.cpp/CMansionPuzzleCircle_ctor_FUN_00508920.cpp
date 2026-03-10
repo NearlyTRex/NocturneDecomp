@@ -53,7 +53,7 @@ CMansionPuzzleCircle * __cdecl core_manpuz_cpp_CMansionPuzzleCircle_ctor_FUN_005
   *(uint *)((int)pvVar4 + -0xd54) = 0;
   *(uint *)((int)pvVar4 + -0xd58) = *(uint *)((int)pvVar4 + -0xd54);
   *(uint *)((int)pvVar4 + -0xd5c) = *(uint *)((int)pvVar4 + -0xd58);
-  core_manpuz_cpp_CMansionPuzzleCircle_FUN_005098f0((CMansionPuzzleCircle *)((int)pvVar4 + -0x1340))
-  ;
+  core_manpuz_cpp_CMansionPuzzleCircle_initPuzzleState_FUN_005098f0
+            ((CMansionPuzzleCircle *)((int)pvVar4 + -0x1340));
   return (CMansionPuzzleCircle *)((int)pvVar4 + -0x1340);
 }

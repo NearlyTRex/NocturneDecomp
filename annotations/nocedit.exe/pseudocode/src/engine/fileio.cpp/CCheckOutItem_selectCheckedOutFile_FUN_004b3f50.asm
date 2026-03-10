@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_fileio_cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50(CCheckOutItem *this_ptr,char *filename_out,char *out_buffer,char *wildcard_pattern,char *dialog_title)
+; int __cdecl engine_fileio_cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50(CCheckOutItem *this_ptr,char *preselected_filename,char *out_buffer,char *dialog_title,char *wildcard_pattern)
 ;
 ; Parameters:
 ; CCheckOutItem *  Stack[0x4]:4   this_ptr
-; char *           Stack[0x8]:4   filename_out
+; char *           Stack[0x8]:4   preselected_filename
 ; char *           Stack[0xc]:4   out_buffer
-; char *           Stack[0x10]:4   wildcard_pattern
-; char *           Stack[0x14]:4   dialog_title
+; char *           Stack[0x10]:4   dialog_title
+; char *           Stack[0x14]:4   wildcard_pattern
 ; Local Variables:
 ; undefined4       Stack[-0x3c0]:4  local_3c0
 ; undefined4       Stack[-0x18]:4  local_18

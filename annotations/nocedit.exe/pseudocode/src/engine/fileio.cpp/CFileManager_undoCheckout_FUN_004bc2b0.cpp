@@ -2,16 +2,15 @@
 // Address: 004bc2b0
 // Address Range: [[004bc2b0, 004bc591]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_fileio_cpp_CFileManager_undoCheckout_FUN_004bc2b0(CFileManager *this_ptr,CCheckOutItem *checkout_item)
+// Signature: int __cdecl engine_fileio_cpp_CFileManager_undoCheckout_FUN_004bc2b0(CFileManager *this_ptr,CCheckOutItem *checkout_item,char *source_path)
 
 #include "nocturne.h"
 
-int __cdecl engine_fileio_cpp_CFileManager_undoCheckout_FUN_004bc2b0(CFileManager *this_ptr,CCheckOutItem *checkout_item)
+int __cdecl engine_fileio_cpp_CFileManager_undoCheckout_FUN_004bc2b0(CFileManager *this_ptr,CCheckOutItem *checkout_item,char *source_path)
 
 {
   int iVar1;
   int iVar2;
-  char *in_stack_0000000c;
   CPickList local_7bc;
   char local_414 [500];
   char local_220 [260];
@@ -21,8 +20,8 @@ int __cdecl engine_fileio_cpp_CFileManager_undoCheckout_FUN_004bc2b0(CFileManage
   iVar1 = engine_fileio_cpp_CFileManager_createPodConfigWizard_FUN_004bccf0(this_ptr);
   if (iVar1 != 0) {
     iVar1 = engine_fileio_cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50
-                      (checkout_item,in_stack_0000000c,local_11c,"Select file to undo check out"
-                       ,"*.pod");
+                      (checkout_item,source_path,local_11c,"Select file to undo check out",
+                       "*.pod");
     if (iVar1 != 0) {
       iVar1 = engine_fileio_cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50
                         (checkout_item,local_11c,local_220,"Select file to undo check out",

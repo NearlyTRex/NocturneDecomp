@@ -5,7 +5,7 @@
 
 // Original: engine_winfont.cpp_CWinFont_ctor_FUN_005f22e0
 // Address: 005f22e0
-CWinFont * __cdecl CWinFont::ctor(CWinFont *this_ptr,char *font_name,int font_height,int font_width);
+CWinFont * __cdecl CWinFont::ctor(CWinFont *this_ptr,char *font_name,int font_height,int y_offset1,int y_offset2);
 
 // Original: engine_winfont.cpp_CWinFont_dtor_FUN_005f2390
 // Address: 005f2390

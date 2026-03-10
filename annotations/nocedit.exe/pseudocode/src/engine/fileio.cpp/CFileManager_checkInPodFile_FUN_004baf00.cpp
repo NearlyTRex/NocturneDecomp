@@ -260,7 +260,7 @@ int __cdecl engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00(CFileMana
   } while (cVar1 != '\0');
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Reading %s",local_984);
-  local_4c = engine_fileio_cpp_findMaxFieldInTimestampFile_FUN_004b2640(local_3c);
+  local_4c = engine_fileio_cpp_findMaxFieldInTimestampFile_FUN_004b2640(local_3c,local_984);
   if (local_4c < 0) goto LAB_004bb1fa;
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Opening local file %s",&local_12b4);

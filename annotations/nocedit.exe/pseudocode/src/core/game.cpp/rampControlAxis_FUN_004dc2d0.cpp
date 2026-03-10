@@ -2,36 +2,30 @@
 // Address: 004dc2d0
 // Address Range: [[004dc2d0, 004dc364]]
 // Convention: __cdecl
-// Signature: void __cdecl core_game_cpp_rampControlAxis_FUN_004dc2d0(void)
+// Signature: void __cdecl core_game_cpp_rampControlAxis_FUN_004dc2d0(int negative_key,int positive_key,float *axis_value,float ramp_time,float max_value)
 
 #include "nocturne.h"
 
-void __cdecl core_game_cpp_rampControlAxis_FUN_004dc2d0(void)
+void __cdecl core_game_cpp_rampControlAxis_FUN_004dc2d0(int negative_key,int positive_key,float *axis_value,float ramp_time,float max_value)
 
 {
   float fVar1;
   float fVar2;
-  int in_stack_00000004;
-  int in_stack_00000008;
-  float *in_stack_0000000c;
-  float in_stack_00000010;
-  float in_stack_00000014;
   
-  if (g_KeyboardState[in_stack_00000004] == '\0') {
-    if (((g_KeyboardState[in_stack_00000008] != '\0') && (*in_stack_0000000c < in_stack_00000014))
-       && (fVar1 = (g_CGamePtr->delta_time_float * in_stack_00000014) / in_stack_00000010 +
-                   *in_stack_0000000c, *in_stack_0000000c = fVar1, in_stack_00000014 < fVar1)) {
-      *in_stack_0000000c = in_stack_00000014;
+  if (g_KeyboardState[negative_key] == '\0') {
+    if (((g_KeyboardState[positive_key] != '\0') && (*axis_value < max_value)) &&
+       (fVar1 = (g_CGamePtr->delta_time_float * max_value) / ramp_time + *axis_value,
+       *axis_value = fVar1, max_value < fVar1)) {
+      *axis_value = max_value;
       return;
     }
   }
   else {
-    fVar1 = -in_stack_00000014;
-    if ((fVar1 < *in_stack_0000000c) &&
-       (fVar2 = *in_stack_0000000c -
-                (g_CGamePtr->delta_time_float * in_stack_00000014) / in_stack_00000010,
-       *in_stack_0000000c = fVar2, fVar2 < fVar1)) {
-      *in_stack_0000000c = fVar1;
+    fVar1 = -max_value;
+    if ((fVar1 < *axis_value) &&
+       (fVar2 = *axis_value - (g_CGamePtr->delta_time_float * max_value) / ramp_time,
+       *axis_value = fVar2, fVar2 < fVar1)) {
+      *axis_value = fVar1;
       return;
     }
   }

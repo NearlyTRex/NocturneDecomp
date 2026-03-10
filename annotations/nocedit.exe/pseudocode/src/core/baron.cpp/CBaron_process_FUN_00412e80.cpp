@@ -19,8 +19,7 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00412e80(CBaron *this_ptr,float d
   uint *puVar6;
   uint *puVar7;
   byte bVar8;
-  CVector3f *apCStackY_1880 [1519];
-  CVector3f *pCStack_c0;
+  float afStackY_1880 [1519];
   CDeformableModelInstance *pCVar9;
   CQuaternion4f *source_quaternions;
   float fVar10;
@@ -147,10 +146,12 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00412e80(CBaron *this_ptr,float d
         local_54.z = pCVar4->z;
       }
       if (this_ptr->new_attack == 0) {
-        pCStack_c0 = &local_30;
-        core_fire_cpp_CFireEffect_createTrailFromPoints_FUN_004c90c0(g_CFireEffectPtr);
-        pCStack_c0 = &local_54;
-        core_fire_cpp_CFireEffect_createTrailFromPoints_FUN_004c90c0(g_CFireEffectPtr);
+        core_fire_cpp_CFireEffect_createTrailFromPoints_FUN_004c90c0
+                  (g_CFireEffectPtr,&local_30,&this_ptr->left_hand_pos,2.0,0.5,0.5,
+                   &SMRGLTextureBasic_0066e460);
+        core_fire_cpp_CFireEffect_createTrailFromPoints_FUN_004c90c0
+                  (g_CFireEffectPtr,&local_54,&this_ptr->right_hand_pos,2.0,0.5,0.5,
+                   &SMRGLTextureBasic_0066e460);
       }
       if (&this_ptr->left_hand_pos != &local_30) {
         (this_ptr->left_hand_pos).x = local_30.x;
@@ -220,7 +221,6 @@ switchD_0041345d_default:
        *(uint *)((int)&local_a4 + (uint)bVar8 * -8 + 4);
   *puVar7 = *puVar6;
   puVar7[(uint)bVar8 * -2 + 1] = puVar6[(uint)bVar8 * -2 + 1];
-  pCStack_c0 = (CVector3f *)0x413118;
   core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750
             (pCVar9,source_quaternions,fVar10,iVar3,blend_callback);
   iVar3 = 0;
@@ -234,7 +234,6 @@ switchD_0041345d_default:
     local_60.x = local_60.x + (this_ptr->base).base.base.location.position.x;
     local_60.y = local_60.y + (this_ptr->base).base.base.location.position.y;
     local_60.z = local_10 + (this_ptr->base).base.base.location.position.z;
-    pCStack_c0 = (CVector3f *)0x4131c5;
     core_fire_cpp_CFireEffect_createSmokeParticle_FUN_004c7b20
               (g_CFireEffectPtr,&local_60,2.0,(CVector3f *)0x0,0xffff);
   } while (iVar3 < 2);

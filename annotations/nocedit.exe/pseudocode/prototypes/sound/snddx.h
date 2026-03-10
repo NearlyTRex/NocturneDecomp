@@ -57,7 +57,7 @@ void __cdecl CDirectSoundDevice::set3DListenerPos(CDirectSoundDevice *this_ptr,d
 
 // Original: sound_snddx.cpp_CDirectSoundDevice_set3DListenerOrient_FUN_005aee70
 // Address: 005aee70
-void __cdecl CDirectSoundDevice::set3DListenerOrient(CDirectSoundDevice *this_ptr,double x_front,double y_front,double z_front,double x_top,double y_top,double z_top);
+void __cdecl CDirectSoundDevice::set3DListenerOrient(CDirectSoundDevice *this_ptr,double x_front,double y_front,double z_front,double x_top,double y_top,double z_top,double x_right,double y_right,double z_right);
 
 // Original: sound_snddx.cpp_CDirectSoundDevice_set3DListenerVelocity_FUN_005aeed0
 // Address: 005aeed0

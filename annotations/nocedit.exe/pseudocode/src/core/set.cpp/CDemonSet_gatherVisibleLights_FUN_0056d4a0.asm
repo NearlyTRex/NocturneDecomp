@@ -203,7 +203,7 @@ section .text
     PUSH ESI                            ; 0056d5ea
     PUSH EAX                            ; 0056d5eb
     CALL core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180 ; 0056d5ec
-        ;   XREF to: 00452180 (UNCONDITIONAL_CALL)  ; int core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180(CDemonCamera * this_ptr, CVector3f * position, CVector3f * min_corner, CVector3f * max_corner)
+        ;   XREF to: 00452180 (UNCONDITIONAL_CALL)  ; int core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180(CDemonCamera * this_ptr, CVector3f * position, CVector3f * orientation, CVector3f * bbox_min, ...)
     ADD ESP,0x14                        ; 0056d5f1
     TEST EAX,EAX                        ; 0056d5f4
     JZ 0x0056d614                       ; 0056d5f6
@@ -244,7 +244,7 @@ section .text
     PUSH ESI                            ; 0056d662
     PUSH EAX                            ; 0056d663
     CALL core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180 ; 0056d664
-        ;   XREF to: 00452180 (UNCONDITIONAL_CALL)  ; int core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180(CDemonCamera * this_ptr, CVector3f * position, CVector3f * min_corner, CVector3f * max_corner)
+        ;   XREF to: 00452180 (UNCONDITIONAL_CALL)  ; int core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180(CDemonCamera * this_ptr, CVector3f * position, CVector3f * orientation, CVector3f * bbox_min, ...)
     ADD ESP,0x14                        ; 0056d669
     TEST EAX,EAX                        ; 0056d66c
     JZ 0x0056d68b                       ; 0056d66e

@@ -241,7 +241,7 @@ void __cdecl transformAndStoreVertex(int vertex_index,float x,float y,float z);
 
 // Original: core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180
 // Address: 00452180
-int __cdecl CDemonCamera::isBoundingBoxVisible(CDemonCamera *this_ptr,CVector3f *position,CVector3f *min_corner,CVector3f *max_corner);
+int __cdecl CDemonCamera::isBoundingBoxVisible(CDemonCamera *this_ptr,CVector3f *position,CVector3f *orientation,CVector3f *bbox_min ,CVector3f *bbox_max);
 
 // Original: core_dcamera.cpp_CDemonCamera_isSphereVisible_FUN_00452730
 // Address: 00452730

@@ -78,9 +78,9 @@
 ;   core_event.cpp_CEventList_executeCommands_FUN_004aabe0
 ;   core_event.cpp_CEventList_validateCommands_FUN_004add40
 ;   core_game.cpp_CGame_displayMessage_FUN_004d7f20
-;   core_game.cpp_CGame_scaleBoneRecursive_FUN_004dda80
 ;   core_game.cpp_giveHeroWeapon_FUN_004dd870
 ;   core_game.cpp_giveHeroWeaponAmmo_FUN_004dd930
+;   core_game.cpp_scaleBoneRecursive_FUN_004dda80
 ;   ... and 24 more
 ;
 ; *****************************************************************************
@@ -1290,7 +1290,7 @@ section .text
     PUSH ESI                            ; 004de863 | = "CShotgun"
     MOV [0x02d831d8],AL                 ; 004de864 | CHAR_ARRAY_02d831d8
     CALL core_game.cpp_giveHeroWeapon_FUN_004dd870 ; 004de869
-        ;   XREF to: 004dd870 (UNCONDITIONAL_CALL)  ; void core_game.cpp_giveHeroWeapon_FUN_004dd870(char * p1)
+        ;   XREF to: 004dd870 (UNCONDITIONAL_CALL)  ; void core_game.cpp_giveHeroWeapon_FUN_004dd870(char * class_name)
     ADD ESP,0x4                         ; 004de86e
     MOV EDI,dword ptr [ESP + 0x220]     ; 004de871
     PUSH 0x40a00000                     ; 004de878
@@ -1370,7 +1370,7 @@ section .text
     PUSH ECX                            ; 004de94b | = "CCrossbow"
     MOV byte ptr [0x02d831d8],AH        ; 004de94c | CHAR_ARRAY_02d831d8
     CALL core_game.cpp_giveHeroWeapon_FUN_004dd870 ; 004de952
-        ;   XREF to: 004dd870 (UNCONDITIONAL_CALL)  ; void core_game.cpp_giveHeroWeapon_FUN_004dd870(char * p1)
+        ;   XREF to: 004dd870 (UNCONDITIONAL_CALL)  ; void core_game.cpp_giveHeroWeapon_FUN_004dd870(char * class_name)
     ADD ESP,0x4                         ; 004de957
     MOV EBX,dword ptr [ESP + 0x230]     ; 004de95a
     PUSH 0x40a00000                     ; 004de961
@@ -1449,7 +1449,7 @@ section .text
     PUSH EAX                            ; 004dea33 | = "CDynamite"
     MOV byte ptr [0x02d831d8],DL        ; 004dea34 | CHAR_ARRAY_02d831d8
     CALL core_game.cpp_giveHeroWeapon_FUN_004dd870 ; 004dea3a
-        ;   XREF to: 004dd870 (UNCONDITIONAL_CALL)  ; void core_game.cpp_giveHeroWeapon_FUN_004dd870(char * p1)
+        ;   XREF to: 004dd870 (UNCONDITIONAL_CALL)  ; void core_game.cpp_giveHeroWeapon_FUN_004dd870(char * class_name)
     ADD ESP,0x4                         ; 004dea3f
     MOV EDX,dword ptr [ESP + 0x240]     ; 004dea42
     PUSH 0x40a00000                     ; 004dea49
@@ -1528,7 +1528,7 @@ section .text
     PUSH ESI                            ; 004deb1b | = "CFlameThrower"
     MOV byte ptr [0x02d831d8],DH        ; 004deb1c | CHAR_ARRAY_02d831d8
     CALL core_game.cpp_giveHeroWeapon_FUN_004dd870 ; 004deb22
-        ;   XREF to: 004dd870 (UNCONDITIONAL_CALL)  ; void core_game.cpp_giveHeroWeapon_FUN_004dd870(char * p1)
+        ;   XREF to: 004dd870 (UNCONDITIONAL_CALL)  ; void core_game.cpp_giveHeroWeapon_FUN_004dd870(char * class_name)
     ADD ESP,0x4                         ; 004deb27
     MOV EDI,dword ptr [ESP + 0x250]     ; 004deb2a
     PUSH 0x40a00000                     ; 004deb31
@@ -1607,7 +1607,7 @@ section .text
     PUSH ECX                            ; 004dec02 | = "CTommyGun"
     MOV byte ptr [0x02d831d8],BL        ; 004dec03 | CHAR_ARRAY_02d831d8
     CALL core_game.cpp_giveHeroWeapon_FUN_004dd870 ; 004dec09
-        ;   XREF to: 004dd870 (UNCONDITIONAL_CALL)  ; void core_game.cpp_giveHeroWeapon_FUN_004dd870(char * p1)
+        ;   XREF to: 004dd870 (UNCONDITIONAL_CALL)  ; void core_game.cpp_giveHeroWeapon_FUN_004dd870(char * class_name)
     ADD ESP,0x4                         ; 004dec0e
     MOV EBX,dword ptr [ESP + 0x260]     ; 004dec11
     PUSH 0x40a00000                     ; 004dec18
@@ -1686,7 +1686,7 @@ section .text
     PUSH EAX                            ; 004decea | = "CBaronWeapon"
     MOV byte ptr [0x02d831d8],BH        ; 004deceb | CHAR_ARRAY_02d831d8
     CALL core_game.cpp_giveHeroWeapon_FUN_004dd870 ; 004decf1
-        ;   XREF to: 004dd870 (UNCONDITIONAL_CALL)  ; void core_game.cpp_giveHeroWeapon_FUN_004dd870(char * p1)
+        ;   XREF to: 004dd870 (UNCONDITIONAL_CALL)  ; void core_game.cpp_giveHeroWeapon_FUN_004dd870(char * class_name)
     ADD ESP,0x4                         ; 004decf6
     MOV EDX,dword ptr [ESP + 0x270]     ; 004decf9
     PUSH 0x40a00000                     ; 004ded00
@@ -1765,7 +1765,7 @@ section .text
     PUSH ESI                            ; 004dedd2 | = "CElephantGun"
     MOV byte ptr [0x02d831d8],CL        ; 004dedd3 | CHAR_ARRAY_02d831d8
     CALL core_game.cpp_giveHeroWeapon_FUN_004dd870 ; 004dedd9
-        ;   XREF to: 004dd870 (UNCONDITIONAL_CALL)  ; void core_game.cpp_giveHeroWeapon_FUN_004dd870(char * p1)
+        ;   XREF to: 004dd870 (UNCONDITIONAL_CALL)  ; void core_game.cpp_giveHeroWeapon_FUN_004dd870(char * class_name)
     ADD ESP,0x4                         ; 004dedde
     MOV EDI,dword ptr [ESP + 0x280]     ; 004dede1
     PUSH 0x40a00000                     ; 004dede8
@@ -1844,7 +1844,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x28c]     ; 004deeb8 | = "CLightGun"
     PUSH ECX                            ; 004deebf | = "CLightGun"
     CALL core_game.cpp_giveHeroWeapon_FUN_004dd870 ; 004deec0
-        ;   XREF to: 004dd870 (UNCONDITIONAL_CALL)  ; void core_game.cpp_giveHeroWeapon_FUN_004dd870(char * p1)
+        ;   XREF to: 004dd870 (UNCONDITIONAL_CALL)  ; void core_game.cpp_giveHeroWeapon_FUN_004dd870(char * class_name)
     ADD ESP,0x4                         ; 004deec5
     MOV EBX,dword ptr [ESP + 0x290]     ; 004deec8
     PUSH 0x40a00000                     ; 004deecf
@@ -1929,11 +1929,11 @@ section .text
     ADD ESP,0x8                         ; 004defab
     PUSH 0x62c186                       ; 004defae | = "CShotgun"
     CALL core_game.cpp_giveHeroWeapon_FUN_004dd870 ; 004defb3
-        ;   XREF to: 004dd870 (UNCONDITIONAL_CALL)  ; void core_game.cpp_giveHeroWeapon_FUN_004dd870(char * p1)
+        ;   XREF to: 004dd870 (UNCONDITIONAL_CALL)  ; void core_game.cpp_giveHeroWeapon_FUN_004dd870(char * class_name)
     ADD ESP,0x4                         ; 004defb8
     PUSH 0x62c18f                       ; 004defbb | = "CCrossbow"
     CALL core_game.cpp_giveHeroWeapon_FUN_004dd870 ; 004defc0
-        ;   XREF to: 004dd870 (UNCONDITIONAL_CALL)  ; void core_game.cpp_giveHeroWeapon_FUN_004dd870(char * p1)
+        ;   XREF to: 004dd870 (UNCONDITIONAL_CALL)  ; void core_game.cpp_giveHeroWeapon_FUN_004dd870(char * class_name)
     ADD ESP,0x4                         ; 004defc5
     PUSH 0x1                            ; 004defc8
     PUSH 0x62c199                       ; 004defca | = "CCrossbow"
@@ -1942,23 +1942,23 @@ section .text
     ADD ESP,0x8                         ; 004defd4
     PUSH 0x62c1a3                       ; 004defd7 | = "CDynamite"
     CALL core_game.cpp_giveHeroWeapon_FUN_004dd870 ; 004defdc
-        ;   XREF to: 004dd870 (UNCONDITIONAL_CALL)  ; void core_game.cpp_giveHeroWeapon_FUN_004dd870(char * p1)
+        ;   XREF to: 004dd870 (UNCONDITIONAL_CALL)  ; void core_game.cpp_giveHeroWeapon_FUN_004dd870(char * class_name)
     ADD ESP,0x4                         ; 004defe1
     PUSH 0x62c1ad                       ; 004defe4 | = "CFlameThrower"
     CALL core_game.cpp_giveHeroWeapon_FUN_004dd870 ; 004defe9
-        ;   XREF to: 004dd870 (UNCONDITIONAL_CALL)  ; void core_game.cpp_giveHeroWeapon_FUN_004dd870(char * p1)
+        ;   XREF to: 004dd870 (UNCONDITIONAL_CALL)  ; void core_game.cpp_giveHeroWeapon_FUN_004dd870(char * class_name)
     ADD ESP,0x4                         ; 004defee
     PUSH 0x62c1bb                       ; 004deff1 | = "CTommyGun"
     CALL core_game.cpp_giveHeroWeapon_FUN_004dd870 ; 004deff6
-        ;   XREF to: 004dd870 (UNCONDITIONAL_CALL)  ; void core_game.cpp_giveHeroWeapon_FUN_004dd870(char * p1)
+        ;   XREF to: 004dd870 (UNCONDITIONAL_CALL)  ; void core_game.cpp_giveHeroWeapon_FUN_004dd870(char * class_name)
     ADD ESP,0x4                         ; 004deffb
     PUSH 0x62c1c5                       ; 004deffe | = "CElephantGun"
     CALL core_game.cpp_giveHeroWeapon_FUN_004dd870 ; 004df003
-        ;   XREF to: 004dd870 (UNCONDITIONAL_CALL)  ; void core_game.cpp_giveHeroWeapon_FUN_004dd870(char * p1)
+        ;   XREF to: 004dd870 (UNCONDITIONAL_CALL)  ; void core_game.cpp_giveHeroWeapon_FUN_004dd870(char * class_name)
     ADD ESP,0x4                         ; 004df008
     PUSH 0x62c1d2                       ; 004df00b | = "CLightGun"
     CALL core_game.cpp_giveHeroWeapon_FUN_004dd870 ; 004df010
-        ;   XREF to: 004dd870 (UNCONDITIONAL_CALL)  ; void core_game.cpp_giveHeroWeapon_FUN_004dd870(char * p1)
+        ;   XREF to: 004dd870 (UNCONDITIONAL_CALL)  ; void core_game.cpp_giveHeroWeapon_FUN_004dd870(char * class_name)
     ADD ESP,0x4                         ; 004df015
     PUSH 0x40a00000                     ; 004df018
     PUSH 0x62c1dc                       ; 004df01d | = "You've got all the weapons"
@@ -3363,8 +3363,8 @@ section .text
     PUSH EDI                            ; 004e0010
     MOV ECX,dword ptr [ESP + 0x334]     ; 004e0011
     PUSH ECX                            ; 004e0018
-    CALL core_game.cpp_CGame_scaleBoneRecursive_FUN_004dda80 ; 004e0019
-        ;   XREF to: 004dda80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_scaleBoneRecursive_FUN_004dda80(CGame * this_ptr)
+    CALL core_game.cpp_scaleBoneRecursive_FUN_004dda80 ; 004e0019
+        ;   XREF to: 004dda80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_scaleBoneRecursive_FUN_004dda80(CDeformableModelInstance * model_instance, CSkeleton * skeleton, float scale_factor, int bone_index)
     ADD ESP,0x10                        ; 004e001e
     INC EBX                             ; 004e0021
         ;   Label: LAB_004e0021
@@ -3412,8 +3412,8 @@ section .text
     PUSH EDI                            ; 004e00bd
     MOV ECX,dword ptr [ESP + 0x340]     ; 004e00be
     PUSH ECX                            ; 004e00c5
-    CALL core_game.cpp_CGame_scaleBoneRecursive_FUN_004dda80 ; 004e00c6
-        ;   XREF to: 004dda80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_scaleBoneRecursive_FUN_004dda80(CGame * this_ptr)
+    CALL core_game.cpp_scaleBoneRecursive_FUN_004dda80 ; 004e00c6
+        ;   XREF to: 004dda80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_scaleBoneRecursive_FUN_004dda80(CDeformableModelInstance * model_instance, CSkeleton * skeleton, float scale_factor, int bone_index)
     ADD ESP,0x10                        ; 004e00cb
     INC EBX                             ; 004e00ce
         ;   Label: LAB_004e00ce
@@ -3461,8 +3461,8 @@ section .text
     PUSH EDI                            ; 004e016e
     MOV ECX,dword ptr [ESP + 0x34c]     ; 004e016f
     PUSH ECX                            ; 004e0176
-    CALL core_game.cpp_CGame_scaleBoneRecursive_FUN_004dda80 ; 004e0177
-        ;   XREF to: 004dda80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_scaleBoneRecursive_FUN_004dda80(CGame * this_ptr)
+    CALL core_game.cpp_scaleBoneRecursive_FUN_004dda80 ; 004e0177
+        ;   XREF to: 004dda80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_scaleBoneRecursive_FUN_004dda80(CDeformableModelInstance * model_instance, CSkeleton * skeleton, float scale_factor, int bone_index)
     ADD ESP,0x10                        ; 004e017c
     INC EBX                             ; 004e017f
         ;   Label: LAB_004e017f

@@ -1,29 +1,19 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 78,
-        "line": 24,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 215,
-    "complexity_score": 343,
+    "complexity_score": 83,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 6,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 83,
-    "suspect_count": 25,
-    "suspect_types": [
-      "format_string_mismatch",
-      "stack_param"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 298
   },
   "cross_references": [
@@ -44,7 +34,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_event.cpp_CEventList_setActorVariable_FUN_004b09a0",
-    "signature": "void __cdecl core_event_cpp_CEventList_setActorVariable_FUN_004b09a0(CEventList *this_ptr)"
+    "signature": "void __cdecl core_event_cpp_CEventList_setActorVariable_FUN_004b09a0(CEventList *this_ptr,char *var_name,CDemonActor *actor)"
   },
   "function_calls": [
     {
@@ -136,10 +126,10 @@
     "pcode_op_count": 1004
   },
   "stack_frame": {
-    "frame_size": 32,
+    "frame_size": 40,
     "local_size": 28,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -162,212 +152,22 @@
         "offset": 4,
         "size": 4,
         "type": "CEventList *"
+      },
+      {
+        "is_param": true,
+        "name": "var_name",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "actor",
+        "offset": 12,
+        "size": 4,
+        "type": "CDemonActor *"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "char *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "CDemonActor *in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "if ((in_stack_0000000c != (CDemonActor *)0x0) && (in_stack_0000000c->actor_name[0] == '\\0')) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "if ((in_stack_0000000c != (CDemonActor *)0x0) && (in_stack_0000000c->actor_name[0] == '\\0')) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(in_stack_0000000c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "iVar2 = core_event_cpp_CEventList_findActorVariable_FUN_004b0bf0(this_ptr,in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "if (in_stack_0000000c != (CDemonActor *)0x0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 29,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "cVar1 = *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "cVar1 = in_stack_00000008[1];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 33,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "in_stack_00000008 = in_stack_00000008 + 2;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 33,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "in_stack_00000008 = in_stack_00000008 + 2;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 39,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "cVar1 = in_stack_0000000c->actor_name[0];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 42,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "cVar1 = in_stack_0000000c->actor_name[1];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 43,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "in_stack_0000000c = (CDemonActor *)(in_stack_0000000c->actor_name + 2);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 43,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "in_stack_0000000c = (CDemonActor *)(in_stack_0000000c->actor_name + 2);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 54,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "if (in_stack_0000000c == (CDemonActor *)0x0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 65,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "cVar1 = *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 68,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "cVar1 = in_stack_00000008[1];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 69,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "in_stack_00000008 = in_stack_00000008 + 2;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 69,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "in_stack_00000008 = in_stack_00000008 + 2;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 74,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "cVar1 = in_stack_0000000c->actor_name[0];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 79,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "cVar1 = in_stack_0000000c->actor_name[1];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 80,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "in_stack_0000000c = (CDemonActor *)(in_stack_0000000c->actor_name + 2);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 80,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "in_stack_0000000c = (CDemonActor *)(in_stack_0000000c->actor_name + 2);",
-      "type": "stack_param"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Tried to assign actor var %s an actor of type %s w...\" has 2 specifiers but 0 arguments after it",
-      "expected_args": 2,
-      "format_string": "Tried to assign actor var %s an actor of type %s with no name",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 17,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Tried to assign actor var %s an actor of type %s with ",
-      "text": "Format string expects 2 args but got 0",
-      "type": "format_string_mismatch"
-    }
-  ]
+  "suspects": []
 }

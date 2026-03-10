@@ -251,7 +251,7 @@ section .text
     PUSH EBX                            ; 00543345
     XOR EBP,EBP                         ; 00543346
     CALL core_netgame.cpp_CNetGame_applySimFrameHistory_FUN_00543800 ; 00543348
-        ;   XREF to: 00543800 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_applySimFrameHistory_FUN_00543800(CNetGame * this_ptr)
+        ;   XREF to: 00543800 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_applySimFrameHistory_FUN_00543800(CNetGame * this_ptr, SSimFrame * sim_frame)
     ADD ESP,0x8                         ; 0054334d
     MOV EAX,dword ptr [EBX + 0x1c]      ; 00543350
     MOV dword ptr [ESP + 0x6c],EBP      ; 00543353
@@ -440,7 +440,7 @@ section .text
     PUSH EAX                            ; 0054353f
     PUSH EBX                            ; 00543540
     CALL core_netgame.cpp_CNetGame_send_FUN_005411c0 ; 00543541
-        ;   XREF to: 005411c0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_send_FUN_005411c0(CNetGame * this_ptr, int player_index)
+        ;   XREF to: 005411c0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_send_FUN_005411c0(CNetGame * this_ptr, int player_index, SNetPacketHeader * packet)
     ADD ESP,0xc                         ; 00543546
     MOV EDX,dword ptr [ESP + 0x70]      ; 00543549
     INC EDX                             ; 0054354d

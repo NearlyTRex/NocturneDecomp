@@ -1,13 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180(CDemonCamera *this_ptr,CVector3f *position,CVector3f *min_corner,CVector3f *max_corner)
+; int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180(CDemonCamera *this_ptr,CVector3f *position,CVector3f *orientation,CVector3f *bbox_min ,CVector3f *bbox_max)
 ;
 ; Parameters:
 ; CDemonCamera *   Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   position
-; CVector3f *      Stack[0xc]:4   min_corner
-; CVector3f *      Stack[0x10]:4   max_corner
+; CVector3f *      Stack[0xc]:4   orientation
+; CVector3f *      Stack[0x10]:4   bbox_min
+; CVector3f *      Stack[0x14]:4   bbox_max
 ; Local Variables:
 ; undefined4       Stack[-0x130]:4  local_130
 ; undefined4       Stack[-0x12c]:4  local_12c

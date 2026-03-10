@@ -1110,7 +1110,7 @@ section .text
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510 ; 005972ee
         ;   XREF to: 005a1510 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510(CDeformableModelInstance * this_ptr, SPose * bone_transform)
     ADD ESP,0x8                         ; 005972f3
-    PUSH 0x36644d8                      ; 005972f6 | DAT_036644d8
+    PUSH 0x36644d8                      ; 005972f6 | SPose_036644d8
     PUSH EBX                            ; 005972fb
     CALL core_skeleton.cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0 ; 005972fc
         ;   XREF to: 005a15e0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0(CDeformableModelInstance * this_ptr, SPose * bone_transform)
@@ -1156,16 +1156,16 @@ section .text
     TEST EAX,EAX                        ; 0059736b
     JZ 0x0059739c                       ; 0059736d
         ;   XREF to: 0059739c (CONDITIONAL_JUMP)  ; LAB_0059739c
-    MOV ESI,dword ptr [0x036712e0]      ; 0059736f | DAT_036712e0
+    MOV ESI,dword ptr [0x036712e0]      ; 0059736f | g_SkeletonViewModelScreenshotCounter
     INC ESI                             ; 00597375
     PUSH ESI                            ; 00597376
     PUSH 0x64d8fa                       ; 00597377 | = "noc%d.pcx"
-    PUSH 0x36712e8                      ; 0059737c | DAT_036712e8
-    MOV dword ptr [0x036712e0],ESI      ; 00597381 | DAT_036712e0
+    PUSH 0x36712e8                      ; 0059737c | g_SkeletonViewModelScreenshotFilename
+    MOV dword ptr [0x036712e0],ESI      ; 00597381 | g_SkeletonViewModelScreenshotCounter
     CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00597387
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0059738c
-    PUSH 0x36712e8                      ; 0059738f | DAT_036712e8
+    PUSH 0x36712e8                      ; 0059738f | g_SkeletonViewModelScreenshotFilename
     CALL engine_pcx.c_saveScreenshotGeneral_FUN_005490c0 ; 00597394
         ;   XREF to: 005490c0 (UNCONDITIONAL_CALL)  ; void engine_pcx.c_saveScreenshotGeneral_FUN_005490c0(char * filename)
     ADD ESP,0x4                         ; 00597399
@@ -1179,7 +1179,7 @@ section .text
     LEA EAX,[EBP + -0x4e]               ; 005973af
     LEA EDI,[EBP + 0xffffff3a]          ; 005973b2
     MOV EDX,dword ptr [0x006703ec]      ; 005973b8 | g_CDemonRendererPtr2
-    MOV ESI,0x6819fc                    ; 005973be | FLOAT_006819fc
+    MOV ESI,0x6819fc                    ; 005973be | CVector3f_006819fc
     FXCH ST2                            ; 005973c3
     FCHS                                ; 005973c5
     FXCH                                ; 005973c7
@@ -1200,9 +1200,9 @@ section .text
     LEA EAX,[EBP + 0xffffff3a]          ; 005973e7
     MOV EDX,dword ptr [0x006703ec]      ; 005973ed | g_CDemonRendererPtr2
     ADD ESP,0xc                         ; 005973f3
-    MOVSD ES:EDI,ESI                    ; 005973f6 | FLOAT_006819fc
-    MOVSD ES:EDI,ESI                    ; 005973f7 | FLOAT_00681a00
-    MOVSD ES:EDI,ESI                    ; 005973f8 | FLOAT_00681a04
+    MOVSD ES:EDI,ESI                    ; 005973f6 | CVector3f_006819fc
+    MOVSD ES:EDI,ESI                    ; 005973f7 | CVector3f_006819fc.y
+    MOVSD ES:EDI,ESI                    ; 005973f8 | CVector3f_006819fc.z
     PUSH EAX                            ; 005973f9
     MOV EAX,dword ptr [EDX]             ; 005973fa | g_CDemonRendererInstance
     PUSH EAX                            ; 005973fc
@@ -3064,7 +3064,7 @@ section .text
     TEST EAX,EAX                        ; 00598920
     JZ 0x00598e1f                       ; 00598922
         ;   XREF to: 00598e1f (CONDITIONAL_JUMP)  ; LAB_00598e1f
-    PUSH 0x36644d8                      ; 00598928 | DAT_036644d8
+    PUSH 0x36644d8                      ; 00598928 | SPose_036644d8
     MOV EDX,dword ptr [EBP + 0x92]      ; 0059892d
     PUSH EDX                            ; 00598933
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510 ; 00598934

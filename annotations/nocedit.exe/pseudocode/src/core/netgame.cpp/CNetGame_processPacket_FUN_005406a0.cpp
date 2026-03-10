@@ -28,18 +28,17 @@ void __cdecl core_netgame_cpp_CNetGame_processPacket_FUN_005406a0(CNetGame *this
   float local_f0;
   float local_ec;
   float local_e8;
+  SNetPacketHeader local_e4;
   char local_df [20];
   char local_cb [80];
   uint local_7b;
   uint uStack_77;
   SNetPacketHeader local_70;
   uint local_6b;
-  uint local_64;
-  byte local_60;
+  SNetPacketHeader local_64;
   int local_5f;
   SNetPacketHeader local_58 [2];
-  uint local_4c;
-  byte local_48;
+  SNetPacketHeader local_4c;
   int local_47;
   SNetPacketHeader local_40;
   uint local_3b;
@@ -93,7 +92,9 @@ void __cdecl core_netgame_cpp_CNetGame_processPacket_FUN_005406a0(CNetGame *this
       }
     }
     pcVar11 = local_cb;
+    local_e4.size = 0x71;
     pcVar12 = this_ptr->mission_name;
+    local_e4.type = PACKET_SERVER_ACCEPT;
     do {
       cVar1 = *pcVar12;
       *pcVar11 = cVar1;
@@ -116,7 +117,7 @@ void __cdecl core_netgame_cpp_CNetGame_processPacket_FUN_005406a0(CNetGame *this
     } while (cVar1 != '\0');
     local_7b = source_addr->ip_address;
     (&uStack_77)[(uint)bVar10 * -2] = *(uint *)&source_addr[-(uint)bVar10].port;
-    core_netgame_cpp_CNetGame_send_FUN_005411c0(this_ptr,uVar2);
+    core_netgame_cpp_CNetGame_send_FUN_005411c0(this_ptr,uVar2,&local_e4);
     iVar4 = this_ptr->local_player_index;
     this_ptr->players[iVar4].addr.ip_address = (local_28->player_announce).addr.ip_address;
     *(uint *)((int)this_ptr + (uint)bVar10 * -8 + iVar4 * 0x78 + 0x40) =
@@ -245,10 +246,10 @@ LAB_0054097f:
        ((packet->player_announce).addr.ip_address == 1)) {
       this_ptr->network_mode = NET_MODE_SYNCING;
     }
-    local_4c = 9;
-    local_48 = 9;
+    local_4c.size = 9;
+    local_4c.type = PACKET_SYNC_STAGE_RESP;
     local_47 = this_ptr->players[this_ptr->local_player_index].local_sync_stage;
-    core_netgame_cpp_CNetGame_send_FUN_005411c0(this_ptr,this_ptr->server_player_index);
+    core_netgame_cpp_CNetGame_send_FUN_005411c0(this_ptr,this_ptr->server_player_index,&local_4c);
     if (g_RemoteSyncStage < (packet->simple).value) {
       g_RemoteSyncStage = (packet->simple).value;
       return;
@@ -313,10 +314,10 @@ LAB_00540df8:
         }
         INT_02f7c8c4 = (packet->simple).value;
       }
-      local_64 = 9;
-      local_60 = 0xc;
+      local_64.size = 9;
+      local_64.type = PACKET_SETTINGS_ACK;
       local_5f = INT_02f7c8c4;
-      core_netgame_cpp_CNetGame_send_FUN_005411c0(this_ptr,this_ptr->server_player_index);
+      core_netgame_cpp_CNetGame_send_FUN_005411c0(this_ptr,this_ptr->server_player_index,&local_64);
       return;
     }
     break;
@@ -382,8 +383,8 @@ LAB_00540df8:
     memset(dest,0,100);
     dest->sequence_number = local_2c;
 LAB_00541015:
-    dest->timestamp = *(uint *)&(packet->player_announce).addr.port;
-    dest->frame_flags = (packet->sim_frame).frame.frame_flags;
+    dest->random_seed = *(int *)&(packet->player_announce).addr.port;
+    dest->delta_time = (packet->sim_frame).frame.delta_time;
     iVar4 = 0;
     if (0 < this_ptr->player_count) {
       local_18 = packet;

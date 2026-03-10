@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_game_cpp_rampControlAxis_FUN_004dc2d0(void)
+; void __cdecl core_game_cpp_rampControlAxis_FUN_004dc2d0(int negative_key,int positive_key,float *axis_value,float ramp_time,float max_value)
 ;
+; Parameters:
+; int              Stack[0x4]:4   negative_key
+; int              Stack[0x8]:4   positive_key
+; float *          Stack[0xc]:4   axis_value
+; float            Stack[0x10]:4   ramp_time
+; float            Stack[0x14]:4   max_value
 ; Local Variables:
 ; undefined4       Stack[-0x4]:4  local_4
 ;

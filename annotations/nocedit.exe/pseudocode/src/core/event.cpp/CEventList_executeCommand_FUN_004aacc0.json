@@ -68,52 +68,52 @@
         "message": "use of undeclared identifier 'stack0xffffe9c4'"
       },
       {
+        "category": "undeclared_identifier",
+        "column": 38,
+        "line": 405,
+        "message": "use of undeclared identifier 'stack0xffffe9c4'"
+      },
+      {
         "category": "other",
         "column": 50,
-        "line": 417,
+        "line": 418,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 63,
-        "line": 439,
+        "line": 440,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 76,
-        "line": 575,
+        "line": 576,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 72,
-        "line": 648,
+        "line": 649,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 69,
-        "line": 669,
+        "line": 670,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 56,
-        "line": 725,
+        "line": 726,
         "message": "format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 96,
-        "line": 724,
+        "line": 725,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 58,
-        "line": 732,
-        "message": "format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]"
       }
     ],
     "success": false,
@@ -121,13 +121,13 @@
   },
   "complexity": {
     "assembly_lines": 5057,
-    "complexity_score": 2293,
+    "complexity_score": 2304,
     "cross_reference_count": 1,
     "function_call_count": 53,
     "global_count": 177,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 2168,
-    "suspect_count": 10,
+    "pseudocode_lines": 2169,
+    "suspect_count": 11,
     "suspect_types": [
       "format_string_mismatch",
       "pointer_cast",
@@ -135,7 +135,7 @@
       "undefined_data",
       "warning_type_propagation"
     ],
-    "total_lines": 7225
+    "total_lines": 7226
   },
   "cross_references": [
     {
@@ -2617,8 +2617,16 @@
       "type": "stack_ref"
     },
     {
+      "description": "Direct stack address reference",
+      "line": 398,
+      "match": "&stack0xffffe9c4",
+      "severity": "moderate",
+      "text": "(g_CGamePtr,&stack0xffffe9c4,local_d8,local_d4);",
+      "type": "stack_ref"
+    },
+    {
       "description": "Undefined global data reference",
-      "line": 1017,
+      "line": 1018,
       "match": "DAT_006793d8",
       "severity": "mild",
       "text": "puVar17 = &DAT_006793d8;",
@@ -2626,7 +2634,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 1022,
+      "line": 1023,
       "match": "(char *)((int)",
       "severity": "mild",
       "text": "pcVar16 = (char *)((int)pcVar16 +",
@@ -2634,7 +2642,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1893,
+      "line": 1894,
       "match": "DAT_006794a0",
       "severity": "mild",
       "text": "puVar17 = &DAT_006794a0;",

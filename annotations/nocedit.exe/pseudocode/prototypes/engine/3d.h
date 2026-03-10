@@ -399,6 +399,18 @@ SHardwareEdge * __cdecl findHardwareEdgeByYMin(int y_min,SHardwareEdge *exclude_
 // Address: 004d1340
 void __cdecl rasterizePolygon(SRenderVertex **vertices,int vertex_count);
 
+// Original: engine_3d.c_addRasterizerEdge_FUN_005fcd20
+// Address: 005fcd20
+void __cdecl addRasterizerEdge(SRenderVertex *v0,SRenderVertex *v1);
+
+// Original: engine_3d.c_addRasterizerEdgeWithDepth_FUN_005fce40
+// Address: 005fce40
+void __cdecl addRasterizerEdgeWithDepth(SRenderVertex *v0,SRenderVertex *v1);
+
+// Original: engine_3d.c_findRasterizerEdge_FUN_005fcf80
+// Address: 005fcf80
+SSoftwareEdge * __cdecl findRasterizerEdge(int y_start,SSoftwareEdge *exclude_edge);
+
 // Original: engine_3d.c_rasterizeTriangle_FUN_005fcfc0
 // Address: 005fcfc0
 void __cdecl rasterizeTriangle(SRenderVertex *vertex_buffer,int vertex_count);

@@ -57,7 +57,7 @@ void __cdecl core_icepick_cpp_CIcePick_process_FUN_004f80b0(CIcePick *this_ptr,f
     return;
   }
   if ((this_ptr->base).control_type == HERO_CONTROL_AI) {
-    core_icepick_cpp_CIcePick_FUN_004f8c70(this_ptr);
+    core_icepick_cpp_CIcePick_processAI_FUN_004f8c70(this_ptr,delta_time);
   }
   fVar2 = (float)12.566370614;
   fVar13 = (this_ptr->base).invincibility_timer;
@@ -74,7 +74,7 @@ void __cdecl core_icepick_cpp_CIcePick_process_FUN_004f80b0(CIcePick *this_ptr,f
   (this_ptr->base).base.model.accumulated_root_motion.y =
        (this_ptr->base).base.model.accumulated_root_motion.z;
   pCVar4->x = (this_ptr->base).base.model.accumulated_root_motion.y;
-  core_icepick_cpp_CIcePick_FUN_004f93a0(this_ptr);
+  core_icepick_cpp_CIcePick_processMotionEvents_FUN_004f93a0(this_ptr,delta_time);
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
   iVar3 = core_charactr_cpp_CCharacter_processWalking_FUN_0042ca70
                     ((CCharacter *)this_ptr,delta_time);
@@ -189,8 +189,9 @@ switchD_004f8665_default:
                         (&(this_ptr->base).base.model.motion_controller,iVar3,1);
             }
             if (((this_ptr->base).player_control.action_states[4] != 0) &&
-               (iVar3 = core_icepick_cpp_CIcePick_FUN_004f8970(this_ptr), iVar3 == 0)) {
-              core_icepick_cpp_CIcePick_FUN_004f8ad0(this_ptr);
+               (iVar3 = core_icepick_cpp_CIcePick_findAndPickupGun_FUN_004f8970(this_ptr),
+               iVar3 == 0)) {
+              core_icepick_cpp_CIcePick_startThrowAttack_FUN_004f8ad0(this_ptr);
             }
           }
         }
@@ -320,7 +321,7 @@ LAB_004f82f8:
     core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750
               (pCStack_20,&CStack_84,fVar13,iVar3,blend_callback);
   }
-  core_icepick_cpp_CIcePick_FUN_004f8810(this_ptr);
+  core_icepick_cpp_CIcePick_updateShootBlend_FUN_004f8810(this_ptr,delta_time);
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr,delta_time);
   return;
 }

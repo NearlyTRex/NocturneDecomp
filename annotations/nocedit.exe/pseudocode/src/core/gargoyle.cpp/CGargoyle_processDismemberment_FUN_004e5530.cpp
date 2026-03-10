@@ -11,6 +11,7 @@
 void __cdecl core_gargoyle_cpp_CGargoyle_processDismemberment_FUN_004e5530(CGargoyle *this_ptr,SDamageInfo *damage_info)
 
 {
+  CVector3f *initial_velocity;
   int iVar1;
   CBodyPart *body_part;
   float local_14;
@@ -74,16 +75,17 @@ switchD_004e5566_default:
                   ((CCharacter *)this_ptr,body_part,this_ptr->part_indices[3],1);
       }
       if (this_ptr->part_indices[9] == damage_info->hit_part_index) {
+        initial_velocity = &damage_info->impact_point;
         core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0
-                  ((CCharacter *)this_ptr,this_ptr->part_indices[2]);
+                  ((CCharacter *)this_ptr,this_ptr->part_indices[2],initial_velocity,1);
         core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0
-                  ((CCharacter *)this_ptr,this_ptr->part_indices[3]);
+                  ((CCharacter *)this_ptr,this_ptr->part_indices[3],initial_velocity,1);
         core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0
-                  ((CCharacter *)this_ptr,this_ptr->part_indices[0]);
+                  ((CCharacter *)this_ptr,this_ptr->part_indices[0],initial_velocity,1);
         core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0
-                  ((CCharacter *)this_ptr,this_ptr->part_indices[1]);
+                  ((CCharacter *)this_ptr,this_ptr->part_indices[1],initial_velocity,1);
         core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0
-                  ((CCharacter *)this_ptr,this_ptr->part_indices[10]);
+                  ((CCharacter *)this_ptr,this_ptr->part_indices[10],initial_velocity,1);
       }
       core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_0041a050(body_part);
       if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[10]] == 0) {

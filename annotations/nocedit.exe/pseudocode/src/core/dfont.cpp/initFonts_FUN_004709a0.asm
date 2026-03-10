@@ -458,7 +458,7 @@ section .text
     PUSH 0x680a70                       ; 00470ede | g_OSFontName
     PUSH EAX                            ; 00470ee3
     CALL engine_winfont.cpp_CWinFont_ctor_FUN_005f22e0 ; 00470ee4
-        ;   XREF to: 005f22e0 (UNCONDITIONAL_CALL)  ; CWinFont * engine_winfont.cpp_CWinFont_ctor_FUN_005f22e0(CWinFont * this_ptr, char * font_name, int font_height, int font_width)
+        ;   XREF to: 005f22e0 (UNCONDITIONAL_CALL)  ; CWinFont * engine_winfont.cpp_CWinFont_ctor_FUN_005f22e0(CWinFont * this_ptr, char * font_name, int font_height, int y_offset1, ...)
     ADD ESP,0x14                        ; 00470ee9
     MOV [0x020a5730],EAX                ; 00470eec | g_MediumWinFont
         ;   Label: LAB_00470eec
@@ -493,7 +493,7 @@ section .text
     PUSH 0x680a70                       ; 00470f53 | g_OSFontName
     PUSH EAX                            ; 00470f58
     CALL engine_winfont.cpp_CWinFont_ctor_FUN_005f22e0 ; 00470f59
-        ;   XREF to: 005f22e0 (UNCONDITIONAL_CALL)  ; CWinFont * engine_winfont.cpp_CWinFont_ctor_FUN_005f22e0(CWinFont * this_ptr, char * font_name, int font_height, int font_width)
+        ;   XREF to: 005f22e0 (UNCONDITIONAL_CALL)  ; CWinFont * engine_winfont.cpp_CWinFont_ctor_FUN_005f22e0(CWinFont * this_ptr, char * font_name, int font_height, int y_offset1, ...)
     ADD ESP,0x14                        ; 00470f5e
     MOV [0x020a5738],EAX                ; 00470f61 | g_ThemeWinFont
         ;   Label: LAB_00470f61
@@ -528,7 +528,7 @@ section .text
     PUSH 0x680a70                       ; 00470fc9 | g_OSFontName
     PUSH EAX                            ; 00470fce
     CALL engine_winfont.cpp_CWinFont_ctor_FUN_005f22e0 ; 00470fcf
-        ;   XREF to: 005f22e0 (UNCONDITIONAL_CALL)  ; CWinFont * engine_winfont.cpp_CWinFont_ctor_FUN_005f22e0(CWinFont * this_ptr, char * font_name, int font_height, int font_width)
+        ;   XREF to: 005f22e0 (UNCONDITIONAL_CALL)  ; CWinFont * engine_winfont.cpp_CWinFont_ctor_FUN_005f22e0(CWinFont * this_ptr, char * font_name, int font_height, int y_offset1, ...)
     ADD ESP,0x14                        ; 00470fd4
     MOV [0x020a5734],EAX                ; 00470fd7 | g_TinyWinFont
         ;   Label: LAB_00470fd7
@@ -563,7 +563,7 @@ section .text
     PUSH 0x680a70                       ; 0047103f | g_OSFontName
     PUSH EAX                            ; 00471044
     CALL engine_winfont.cpp_CWinFont_ctor_FUN_005f22e0 ; 00471045
-        ;   XREF to: 005f22e0 (UNCONDITIONAL_CALL)  ; CWinFont * engine_winfont.cpp_CWinFont_ctor_FUN_005f22e0(CWinFont * this_ptr, char * font_name, int font_height, int font_width)
+        ;   XREF to: 005f22e0 (UNCONDITIONAL_CALL)  ; CWinFont * engine_winfont.cpp_CWinFont_ctor_FUN_005f22e0(CWinFont * this_ptr, char * font_name, int font_height, int y_offset1, ...)
     ADD ESP,0x14                        ; 0047104a
     MOV [0x020a573c],EAX                ; 0047104d | g_DebugWinFont
         ;   Label: LAB_0047104d

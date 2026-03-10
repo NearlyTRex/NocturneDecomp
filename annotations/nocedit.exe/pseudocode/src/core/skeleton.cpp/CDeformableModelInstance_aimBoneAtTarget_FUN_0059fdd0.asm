@@ -1,14 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_skeleton_cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0059fdd0(CDeformableModelInstance *this_ptr,CVector3f *target_position,float blend_weight,int bone_index,CDeformableModel_MotionBlendWeightFunc *blend_callback)
+; void __cdecl core_skeleton_cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0059fdd0(CDeformableModelInstance *this_ptr,CVector3f *target_position,float blend_weight,int bone_index,CQuaternion4f *base_orientation,CDeformableModel_MotionBlendWeightFunc *blend_callback)
 ;
 ; Parameters:
 ; CDeformableModelInstance * Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   target_position
 ; float            Stack[0xc]:4   blend_weight
 ; int              Stack[0x10]:4   bone_index
-; CDeformableModel_MotionBlendWeightFunc * Stack[0x14]:4   blend_callback
+; CQuaternion4f *  Stack[0x14]:4   base_orientation
+; CDeformableModel_MotionBlendWeightFunc * Stack[0x18]:4   blend_callback
 ; Local Variables:
 ; undefined        Stack[-0xac]:1  local_ac
 ; undefined        Stack[-0x9c]:1  local_9c

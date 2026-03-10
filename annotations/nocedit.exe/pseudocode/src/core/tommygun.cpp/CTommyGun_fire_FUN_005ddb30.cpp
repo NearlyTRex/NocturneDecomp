@@ -14,6 +14,7 @@ int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_005ddb30(CTommyGun *this_ptr)
   CDemonSet *this_ptr_00;
   CVector3f *pCVar3;
   int iVar4;
+  CKeyFramedModel *model_ptr;
   CCharacter *this_ptr_01;
   EDeathState EVar5;
   CTrigger *this_ptr_02;
@@ -230,8 +231,10 @@ LAB_005ddd4e:
           CStack_e4.y = pCVar3->y;
           CStack_e4.z = pCVar3->z;
         }
-        core_dmodel_cpp_loadModel_FUN_00478c00("bullet.kfm");
-        core_fire_cpp_CFireEffect_createShell_FUN_004c91e0(g_CFireEffectPtr);
+        model_ptr = core_dmodel_cpp_loadModel_FUN_00478c00("bullet.kfm");
+        core_fire_cpp_CFireEffect_createShell_FUN_004c91e0
+                  (g_CFireEffectPtr,&(this_ptr->base).base.location.position,
+                   &(this_ptr->base).base.orient.vec,&CStack_e4,model_ptr);
       }
       return 1;
     }

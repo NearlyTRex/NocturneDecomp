@@ -6,17 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 83,
-    "complexity_score": 132,
+    "complexity_score": 35,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 8,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 37,
-    "suspect_count": 9,
-    "suspect_types": [
-      "stack_param"
-    ],
-    "total_lines": 120
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 35,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 118
   },
   "cross_references": [],
   "function": {
@@ -29,7 +27,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_game.cpp_checkCheatAndGiveWeapon_FUN_004dd9d0",
-    "signature": "void __cdecl core_game_cpp_checkCheatAndGiveWeapon_FUN_004dd9d0(void)"
+    "signature": "void __cdecl core_game_cpp_checkCheatAndGiveWeapon_FUN_004dd9d0(char *cheat_code,char *class_name,char *message)"
   },
   "function_calls": [
     {
@@ -107,8 +105,8 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "estimated_params": 0
+    "declared_params": 3,
+    "estimated_params": 3
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.9714285714285715,
@@ -143,10 +141,10 @@
     "pcode_op_count": 348
   },
   "stack_frame": {
-    "frame_size": 28,
+    "frame_size": 40,
     "local_size": 28,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -162,81 +160,29 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "cheat_code",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "class_name",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "message",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "byte *in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "char *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "char *in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "pbVar6 = in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 26,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "uVar2 = toupper((uint)*in_stack_00000004);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 30,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "in_stack_00000004 = in_stack_00000004 + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 30,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "in_stack_00000004 = in_stack_00000004 + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 36,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "core_game_cpp_giveHeroWeapon_FUN_004dd870(in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 37,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "core_game_cpp_CGame_displayMessage_FUN_004d7f20(g_CGamePtr,in_stack_0000000c,5.0);",
-      "type": "stack_param"
-    }
-  ]
+  "suspects": []
 }

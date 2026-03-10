@@ -9,7 +9,7 @@ void __cdecl staticInit(void);
 
 // Original: core_ground.cpp_openFileWithExtension_FUN_004eebc0
 // Address: 004eebc0
-_FILE * __cdecl openFileWithExtension(char *base_filename,char *file_extension,char *open_mode);
+_FILE * __cdecl openFileWithExtension(char *directory,char *filename,char *new_extension,char *open_mode);
 
 // Original: core_ground.cpp_getGroundTypeCode_FUN_004eece0
 // Address: 004eece0

@@ -17,6 +17,9 @@ void __cdecl core_netgame_cpp_CNetGame_sendGameSetting_FUN_00542dd0(CNetGame *th
   SNetPlayer *pSVar6;
   char *pcVar7;
   byte bVar8;
+  SNetPacketHeader local_c8;
+  int local_c3;
+  uint local_bf;
   char local_bb [80];
   int local_6b;
   char local_67 [20];
@@ -35,7 +38,11 @@ void __cdecl core_netgame_cpp_CNetGame_sendGameSetting_FUN_00542dd0(CNetGame *th
     g_CurrentLineNumber = 0x8ae;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CNetGame::send - invalid player index");
   }
+  local_c8.type = PACKET_GAME_SETTINGS;
+  local_c8.size = 0xb1;
   __arrinit(local_67,2,&g_SPlayerTypeInfo);
+  local_bf = this_ptr->random_seed;
+  local_c3 = INT_02f7c8c4;
   pcVar7 = local_bb;
   local_6b = this_ptr->player_count;
   pcVar5 = this_ptr->mission_name;
@@ -80,7 +87,7 @@ LAB_00542ef5:
       pCVar2 = (CNetGame *)(pCVar2->players[0].controls.action_states + 3);
     } while (iVar4 < this_ptr->player_count);
   }
-  core_netgame_cpp_CNetGame_send_FUN_005411c0(this_ptr,player_index);
+  core_netgame_cpp_CNetGame_send_FUN_005411c0(this_ptr,player_index,&local_c8);
   iVar4 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
   iVar3 = iVar4 / 0x12 - g_LastPingTime;
   if (iVar3 < 0) {

@@ -61,7 +61,7 @@ void __cdecl CMelee::process(CMelee *this_ptr,float delta_time);
 
 // Original: core_melee.cpp_CMelee_setWeaponState_FUN_0050ecd0
 // Address: 0050ecd0
-void __cdecl CMelee::setWeaponState(CMelee *this_ptr);
+void __cdecl CMelee::setWeaponState(CMelee *this_ptr,int weapon_state);
 
 // Original: core_melee.cpp_CMelee_getPropertyList_FUN_0050ecf0
 // Address: 0050ecf0

@@ -25,6 +25,7 @@
 #include "types/structs/SMpegSubbandQuantizedSamples.h"
 #include "types/structs/SMpegSubbandSamples.h"
 #include "types/structs/SMpegSubbandScalefactors.h"
+#include "types/structs/SSimFrame.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x530000
@@ -143,7 +144,7 @@ float __cdecl core_netgame_cpp_getElapsedSeconds_FUN_0053f440(uint timestamp);
 void __cdecl core_netgame_cpp_resetChatCounts_FUN_0053f4a2(int count);
 void __cdecl core_netgame_cpp_removeChatOut_FUN_0053f4b0(int index);
 int __cdecl core_netgame_cpp_findSimFrame_FUN_0053f550(int sequence_number);
-int * __cdecl core_netgame_cpp_allocSimFrame_FUN_0053f5a0(void);
+SSimFrame * __cdecl core_netgame_cpp_allocSimFrame_FUN_0053f5a0(int sequence_number);
 void __cdecl core_netgame_cpp_purgeOldSimFrames_FUN_0053f650(int min_sequence);
 CNetGame * __cdecl core_netgame_cpp_CNetGame_ctor_FUN_0053f6d0(CNetGame *this_ptr);
 CNetGame * __cdecl core_netgame_cpp_CNetGame_dtor_FUN_0053f760(CNetGame *this_ptr,uint flags);

@@ -1,13 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CWinFont * __cdecl engine_winfont_cpp_CWinFont_ctor_FUN_005f22e0(CWinFont *this_ptr,char *font_name,int font_height,int font_width)
+; CWinFont * __cdecl engine_winfont_cpp_CWinFont_ctor_FUN_005f22e0(CWinFont *this_ptr,char *font_name,int font_height,int y_offset1,int y_offset2)
 ;
 ; Parameters:
 ; CWinFont *       Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   font_name
 ; int              Stack[0xc]:4   font_height
-; int              Stack[0x10]:4   font_width
+; int              Stack[0x10]:4   y_offset1
+; int              Stack[0x14]:4   y_offset2
 ;
 ; XREF[1]:
 ;   core_dfont.cpp_initFonts_FUN_004709a0 at 00470ee4

@@ -330,7 +330,7 @@ LAB_005009c0:
     iVar4 = local_64 / 2;
     local_70 = (int)ROUND(ROUND((float)local_14 - (float)local_14 * local_680));
     engine_alphabit_cpp_CAlphaBitmap_render_FUN_00410b00
-              (&g_HealthBar1Bitmap,local_74,local_70 + 4,0,local_70,iVar8 + -1,local_14);
+              (&g_HealthBar1Bitmap,local_74,local_70 + 4,0,local_70,iVar8 + -1,local_14,iVar4);
     engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(&g_HealthBar2Bitmap,local_74,4,iVar4);
   }
   dVar1 = (double)this_ptr->message_display_timer;

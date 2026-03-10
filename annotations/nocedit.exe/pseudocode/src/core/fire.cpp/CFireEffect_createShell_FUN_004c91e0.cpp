@@ -2,21 +2,15 @@
 // Address: 004c91e0
 // Address Range: [[004c91e0, 004c923c]]
 // Convention: __cdecl
-// Signature: void __cdecl core_fire_cpp_CFireEffect_createShell_FUN_004c91e0(CFireEffect *this_ptr)
+// Signature: void __cdecl core_fire_cpp_CFireEffect_createShell_FUN_004c91e0(CFireEffect *this_ptr,CVector3f *position,CVector3f *euler_angles,CVector3f *velocity,CKeyFramedModel *model_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_fire_cpp_CFireEffect_createShell_FUN_004c91e0(CFireEffect *this_ptr)
+void __cdecl core_fire_cpp_CFireEffect_createShell_FUN_004c91e0(CFireEffect *this_ptr,CVector3f *position,CVector3f *euler_angles,CVector3f *velocity,CKeyFramedModel *model_ptr)
 
 {
-  CVector3f *in_stack_00000008;
-  CVector3f *in_stack_0000000c;
-  CVector3f *in_stack_00000010;
-  CKeyFramedModel *in_stack_00000014;
-  
   core_fire_cpp_CShell_setup_FUN_004c6170
-            (g_ShellPool + g_ShellAllocIndex,in_stack_00000008,in_stack_0000000c,in_stack_00000010,
-             in_stack_00000014);
+            (g_ShellPool + g_ShellAllocIndex,position,euler_angles,velocity,model_ptr);
   g_ShellAllocIndex = g_ShellAllocIndex + 1;
   if (g_ShellAllocIndex < 0x32) {
     return;

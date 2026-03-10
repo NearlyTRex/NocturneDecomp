@@ -12,7 +12,7 @@
 ;   core_event.cpp_CEventList_executeCommand_FUN_004aacc0 at 004ab6bc
 ;   core_lightgun.cpp_CLightGun_fire_FUN_00505c70 at 0050641b
 ;   core_lightgun.cpp_CLightGun_process_FUN_00506450 at 00506541
-;   core_manpuz.cpp_FUN_0050a4f0 at 0050a589
+;   core_manpuz.cpp_updateGemHumChannel_FUN_0050a4f0 at 0050a589
 ;   core_sound.cpp_CSound_process_FUN_005b2fd0 at 005b30b3
 ;   core_sound.cpp_processTrainSounds_FUN_005b2770 at 005b2ae1
 ;

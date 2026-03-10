@@ -2,22 +2,20 @@
 // Address: 004e1c30
 // Address Range: [[004e1c30, 004e1ca2]]
 // Convention: __cdecl
-// Signature: void __cdecl core_game_cpp_disableUnavailableChapters_FUN_004e1c30(void)
+// Signature: void __cdecl core_game_cpp_disableUnavailableChapters_FUN_004e1c30(CPickList *pick_list,int chapter_index)
 
 #include "nocturne.h"
 
-void __cdecl core_game_cpp_disableUnavailableChapters_FUN_004e1c30(void)
+void __cdecl core_game_cpp_disableUnavailableChapters_FUN_004e1c30(CPickList *pick_list,int chapter_index)
 
 {
   _FILE *file_ptr;
   int item_index;
   int iVar1;
-  CPickList *in_stack_00000004;
-  int in_stack_00000008;
   
   item_index = 0;
-  iVar1 = in_stack_00000008 * 0x34;
-  if ((in_stack_00000004->base).item_count < 1) {
+  iVar1 = chapter_index * 0x34;
+  if ((pick_list->base).item_count < 1) {
     return;
   }
   do {
@@ -25,13 +23,13 @@ void __cdecl core_game_cpp_disableUnavailableChapters_FUN_004e1c30(void)
                          ("world",*(char **)((int)g_ChapterMissionFiles[0] + iVar1),
                           "rt");
     if (file_ptr == (_FILE *)0x0) {
-      shape_edittool_cpp_CPickList_enableItem_FUN_004a5410(in_stack_00000004,item_index,0);
+      shape_edittool_cpp_CPickList_enableItem_FUN_004a5410(pick_list,item_index,0);
     }
     else {
       shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\core\\game.cpp",0xec1);
     }
     item_index = item_index + 1;
     iVar1 = iVar1 + 4;
-  } while (item_index < (in_stack_00000004->base).item_count);
+  } while (item_index < (pick_list->base).item_count);
   return;
 }

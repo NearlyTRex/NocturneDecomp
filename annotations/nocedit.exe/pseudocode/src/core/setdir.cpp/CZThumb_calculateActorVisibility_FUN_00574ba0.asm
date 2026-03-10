@@ -22,7 +22,7 @@
 ;
 ; XREF[2]:
 ;   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0 at 00575a6b
-;   core_setdir.cpp_CZThumb_testCameraVisibility_FUN_005750a0 at 005751a1
+;   core_setdir.cpp_testCameraVisibility_FUN_005750a0 at 005751a1
 ;
 ; Referenced Globals:
 ;   double DOUBLE_006464ae = 0.5

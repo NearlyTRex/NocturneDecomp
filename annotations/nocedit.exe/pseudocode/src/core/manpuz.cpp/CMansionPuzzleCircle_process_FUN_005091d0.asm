@@ -15,12 +15,12 @@
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
 ;   core_game.cpp_CGame_setFudgeTarget_FUN_004d8730
 ;   core_hero.cpp_isAnyHeroWithinRadius_FUN_004f2220
-;   core_manpuz.cpp_CMansionPuzzleCircle_FUN_00509b20
-;   core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050a610
-;   core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050a8d0
-;   core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050af00
-;   core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050af80
 ;   core_manpuz.cpp_CMansionPuzzleCircle_processPanel_FUN_0050a290
+;   core_manpuz.cpp_CMansionPuzzleCircle_updateGem_FUN_0050a610
+;   core_manpuz.cpp_CMansionPuzzleCircle_updateLaser_FUN_0050a8d0
+;   core_manpuz.cpp_CMansionPuzzleCircle_updatePanelTransform_FUN_00509b20
+;   core_manpuz.cpp_CMansionPuzzleCircle_updateReflector_FUN_0050af00
+;   core_manpuz.cpp_CMansionPuzzleCircle_updateReflectorPosition_FUN_0050af80
 ;
 ; *****************************************************************************
 
@@ -56,8 +56,8 @@ section .text
         ;   Label: LAB_00509207
     PUSH ESI                            ; 0050920b
     PUSH EBX                            ; 0050920c
-    CALL core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050af00 ; 0050920d
-        ;   XREF to: 0050af00 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050af00(CMansionPuzzleCircle * this_ptr)
+    CALL core_manpuz.cpp_CMansionPuzzleCircle_updateReflector_FUN_0050af00 ; 0050920d
+        ;   XREF to: 0050af00 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_CMansionPuzzleCircle_updateReflector_FUN_0050af00(CMansionPuzzleCircle * this_ptr, int reflector_index, float delta_time)
     INC ESI                             ; 00509212
     ADD ESP,0xc                         ; 00509213
     CMP ESI,0x2                         ; 00509216
@@ -68,8 +68,8 @@ section .text
         ;   Label: LAB_0050921d
     PUSH ESI                            ; 00509221
     PUSH EBX                            ; 00509222
-    CALL core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050a8d0 ; 00509223
-        ;   XREF to: 0050a8d0 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050a8d0(CMansionPuzzleCircle * this_ptr)
+    CALL core_manpuz.cpp_CMansionPuzzleCircle_updateLaser_FUN_0050a8d0 ; 00509223
+        ;   XREF to: 0050a8d0 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_CMansionPuzzleCircle_updateLaser_FUN_0050a8d0(CMansionPuzzleCircle * this_ptr, int panel_index, float delta_time)
     INC ESI                             ; 00509228
     ADD ESP,0xc                         ; 00509229
     CMP ESI,0xc                         ; 0050922c
@@ -80,8 +80,8 @@ section .text
         ;   Label: LAB_00509233
     PUSH ESI                            ; 00509237
     PUSH EBX                            ; 00509238
-    CALL core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050a610 ; 00509239
-        ;   XREF to: 0050a610 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050a610(CMansionPuzzleCircle * this_ptr)
+    CALL core_manpuz.cpp_CMansionPuzzleCircle_updateGem_FUN_0050a610 ; 00509239
+        ;   XREF to: 0050a610 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_CMansionPuzzleCircle_updateGem_FUN_0050a610(CMansionPuzzleCircle * this_ptr, int gem_index, float delta_time)
     INC ESI                             ; 0050923e
     ADD ESP,0xc                         ; 0050923f
     CMP ESI,0xc                         ; 00509242
@@ -91,8 +91,8 @@ section .text
     PUSH ESI                            ; 00509249
         ;   Label: LAB_00509249
     PUSH EBX                            ; 0050924a
-    CALL core_manpuz.cpp_CMansionPuzzleCircle_FUN_00509b20 ; 0050924b
-        ;   XREF to: 00509b20 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_CMansionPuzzleCircle_FUN_00509b20(CMansionPuzzleCircle * this_ptr)
+    CALL core_manpuz.cpp_CMansionPuzzleCircle_updatePanelTransform_FUN_00509b20 ; 0050924b
+        ;   XREF to: 00509b20 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_CMansionPuzzleCircle_updatePanelTransform_FUN_00509b20(CMansionPuzzleCircle * this_ptr, int panel_index)
     INC ESI                             ; 00509250
     ADD ESP,0x8                         ; 00509251
     CMP ESI,0xc                         ; 00509254
@@ -102,8 +102,8 @@ section .text
     PUSH ESI                            ; 0050925b
         ;   Label: LAB_0050925b
     PUSH EBX                            ; 0050925c
-    CALL core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050af80 ; 0050925d
-        ;   XREF to: 0050af80 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050af80(CMansionPuzzleCircle * this_ptr)
+    CALL core_manpuz.cpp_CMansionPuzzleCircle_updateReflectorPosition_FUN_0050af80 ; 0050925d
+        ;   XREF to: 0050af80 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_CMansionPuzzleCircle_updateReflectorPosition_FUN_0050af80(CMansionPuzzleCircle * this_ptr, int reflector_index)
     INC ESI                             ; 00509262
     ADD ESP,0x8                         ; 00509263
     CMP ESI,0x2                         ; 00509266

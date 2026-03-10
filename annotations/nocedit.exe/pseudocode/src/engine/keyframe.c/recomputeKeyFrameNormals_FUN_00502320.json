@@ -6,17 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 119,
-    "complexity_score": 231,
+    "complexity_score": 55,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 6,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 56,
-    "suspect_count": 17,
-    "suspect_types": [
-      "stack_param"
-    ],
-    "total_lines": 175
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 55,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 174
   },
   "cross_references": [],
   "function": {
@@ -29,7 +27,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_keyframe.c_recomputeKeyFrameNormals_FUN_00502320",
-    "signature": "void __cdecl engine_keyframe_c_recomputeKeyFrameNormals_FUN_00502320(void)"
+    "signature": "void __cdecl engine_keyframe_c_recomputeKeyFrameNormals_FUN_00502320(SMRGLPrimitiveTriangle *primitive_list)"
   },
   "function_calls": [
     {
@@ -95,8 +93,8 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "estimated_params": 0
+    "declared_params": 1,
+    "estimated_params": 1
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.7073170731707314,
@@ -130,149 +128,20 @@
     "pcode_op_count": 468
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "primitive_list",
+        "offset": 4,
+        "size": 4,
+        "type": "SMRGLPrimitiveTriangle *"
+      }
+    ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "SMRGLPrimitiveTriangle *in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "iVar1 = (in_stack_00000004->base).base.type;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "if ((in_stack_00000004->base).base.type == 2) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "vertex_data = (CVector3i *)&(in_stack_00000004->base).surface_normal.B;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "iVar1 = (in_stack_00000004->base).base.type;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "pSVar3 = in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "uVar2 = engine_model_c_getMRGLSize_FUN_00528700((SMRGLHeaderExtended *)in_stack_00000004);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "in_stack_00000004 =",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 23,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "((int)&(((SMRGLPrimitiveTriangle *)(in_stack_00000004->vertices + -2))->base).base.type +",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 25,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "iVar1 = (in_stack_00000004->base).base.type;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 38,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "uVar2 = (in_stack_00000004->base).base.type;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 42,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "engine_keyframe_c_calculateSurfaceNormal_FUN_00501bc0(vertex_data,in_stack_00000004);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 47,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "(vertex_data,(SMRGLPrimitiveTriangleIndex *)in_stack_00000004);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 50,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "uVar2 = engine_model_c_getMRGLSize_FUN_00528700((SMRGLHeaderExtended *)in_stack_00000004);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 51,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "in_stack_00000004 =",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 53,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "((int)&(((SMRGLPrimitiveTriangle *)(in_stack_00000004->vertices + -2))->base).base.type +",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 55,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "if ((in_stack_00000004->base).base.type == 0) {",
-      "type": "stack_param"
-    }
-  ]
+  "suspects": []
 }

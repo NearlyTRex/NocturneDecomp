@@ -2478,7 +2478,7 @@ section .text
     PUSH EAX                            ; 0055c070
     PUSH ESI                            ; 0055c071
     CALL core_platfrm.cpp_CPlatform_attachActor_FUN_0054e1e0 ; 0055c072
-        ;   XREF to: 0054e1e0 (UNCONDITIONAL_CALL)  ; void core_platfrm.cpp_CPlatform_attachActor_FUN_0054e1e0(CPlatform * this_ptr)
+        ;   XREF to: 0054e1e0 (UNCONDITIONAL_CALL)  ; void core_platfrm.cpp_CPlatform_attachActor_FUN_0054e1e0(CPlatform * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 0055c077
     JMP 0x0055a8bb                      ; 0055c07a
         ;   XREF to: 0055a8bb (UNCONDITIONAL_JUMP)  ; LAB_0055a8bb
@@ -2795,7 +2795,7 @@ section .text
     MOV ESI,dword ptr [0x006793d0]      ; 0055c3d3 | g_CEventListPtr
     PUSH ESI                            ; 0055c3d9 | g_CEventListInstance
     CALL core_event.cpp_CEventList_setActorVariable_FUN_004b09a0 ; 0055c3da
-        ;   XREF to: 004b09a0 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_setActorVariable_FUN_004b09a0(CEventList * this_ptr)
+        ;   XREF to: 004b09a0 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_setActorVariable_FUN_004b09a0(CEventList * this_ptr, char * var_name, CDemonActor * actor)
     ADD ESP,0xc                         ; 0055c3df
     JMP 0x0055a8bb                      ; 0055c3e2
         ;   XREF to: 0055a8bb (UNCONDITIONAL_JUMP)  ; LAB_0055a8bb
@@ -4047,7 +4047,7 @@ section .text
     MOV EAX,[0x006793d0]                ; 0055d3a4 | g_CEventListPtr | g_CEventListInstance
     PUSH EAX                            ; 0055d3a9 | g_CEventListInstance
     CALL core_event.cpp_CEventList_setActorVariable_FUN_004b09a0 ; 0055d3aa
-        ;   XREF to: 004b09a0 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_setActorVariable_FUN_004b09a0(CEventList * this_ptr)
+        ;   XREF to: 004b09a0 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_setActorVariable_FUN_004b09a0(CEventList * this_ptr, char * var_name, CDemonActor * actor)
     ADD ESP,0xc                         ; 0055d3af
     JMP 0x0055a8bb                      ; 0055d3b2
         ;   XREF to: 0055a8bb (UNCONDITIONAL_JUMP)  ; LAB_0055a8bb
@@ -5884,7 +5884,7 @@ section .text
     MOV EDI,dword ptr [0x006793d0]      ; 0055ea28 | g_CEventListPtr
     PUSH EDI                            ; 0055ea2e | g_CEventListInstance
     CALL core_event.cpp_CEventList_setActorVariable_FUN_004b09a0 ; 0055ea2f
-        ;   XREF to: 004b09a0 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_setActorVariable_FUN_004b09a0(CEventList * this_ptr)
+        ;   XREF to: 004b09a0 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_setActorVariable_FUN_004b09a0(CEventList * this_ptr, char * var_name, CDemonActor * actor)
     ADD ESP,0xc                         ; 0055ea34
     JMP 0x0055a8bb                      ; 0055ea37
         ;   XREF to: 0055a8bb (UNCONDITIONAL_JUMP)  ; LAB_0055a8bb

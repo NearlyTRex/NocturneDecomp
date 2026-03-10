@@ -63,9 +63,9 @@ void __cdecl core_colonel_cpp_CColonel_process_FUN_0043fa00(CColonel *this_ptr,f
        (this_ptr->base).base.model.accumulated_root_motion.z;
   (this_ptr->base).base.model.accumulated_root_motion.x =
        (this_ptr->base).base.model.accumulated_root_motion.y;
-  core_colonel_cpp_CColonel_FUN_00440430(this_ptr);
+  core_colonel_cpp_CColonel_processMotionEvents_FUN_00440430(this_ptr,delta_time);
   if ((this_ptr->base).control_type == HERO_CONTROL_AI) {
-    core_colonel_cpp_CColonel_FUN_0043ff20(this_ptr);
+    core_colonel_cpp_CColonel_processAI_FUN_0043ff20(this_ptr,delta_time);
   }
   fVar14 = (float)12.566370614;
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;

@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_game_cpp_giveHeroWeapon_FUN_004dd870(char *p1)
+; void __cdecl core_game_cpp_giveHeroWeapon_FUN_004dd870(char *class_name)
 ;
 ; Parameters:
-; char *           Stack[0x4]:4   p1
+; char *           Stack[0x4]:4   class_name
 ;
 ; XREF[2]:
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 at 004deec0

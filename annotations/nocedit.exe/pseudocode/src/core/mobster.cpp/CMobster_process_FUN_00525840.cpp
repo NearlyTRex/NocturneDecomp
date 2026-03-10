@@ -72,7 +72,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_00525840(CMobster *this_ptr,f
   iVar6 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
   if (iVar6 == 0) {
     if (this_ptr->vehicle != (CDemonActor *)0x0) {
-      core_mobster_cpp_CMobster_FUN_00525650(this_ptr);
+      core_mobster_cpp_CMobster_positionOnVehicle_FUN_00525650(this_ptr);
       core_charactr_cpp_CCharacter_updateCarriedObjects_FUN_0042d090
                 ((CCharacter *)this_ptr,delta_time);
     }
@@ -227,7 +227,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_00525840(CMobster *this_ptr,f
           }
           if ((this_ptr->weapon_search_count == 0) &&
              (iVar6 = core_actor_cpp_randomChance_FUN_0040cd10(0.7), iVar6 != 0)) {
-            core_mobster_cpp_CMobster_FUN_005279f0(this_ptr,1);
+            core_mobster_cpp_CMobster_playTaunt_FUN_005279f0(this_ptr,1);
             this_ptr->weapon_search_count = 1;
           }
           else {
@@ -238,7 +238,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_00525840(CMobster *this_ptr,f
         if (this_ptr->firing_blend <= (float)0.5) break;
         iVar6 = core_actor_cpp_randomChance_FUN_0040cd10(0.25);
         if (iVar6 != 0) {
-          core_mobster_cpp_CMobster_FUN_00525720(this_ptr);
+          core_mobster_cpp_CMobster_dismountVehicle_FUN_00525720(this_ptr);
           break;
         }
       }
@@ -247,7 +247,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_00525840(CMobster *this_ptr,f
         (this_ptr->base).victim = &g_HeroActors[g_LocalHeroIndex]->base;
         if (fVar16 <= (float)0.5) break;
       }
-      core_mobster_cpp_CMobster_FUN_005271c0(this_ptr);
+      core_mobster_cpp_CMobster_startFiringAttack_FUN_005271c0(this_ptr);
       break;
     case 1:
     case 8:
@@ -265,7 +265,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_00525840(CMobster *this_ptr,f
         }
       }
       else if (this_ptr->post_mode == 0) {
-        iVar6 = core_mobster_cpp_CMobster_FUN_00526d90(this_ptr,delta_time);
+        iVar6 = core_mobster_cpp_CMobster_processWeaponPickup_FUN_00526d90(this_ptr,delta_time);
         if (iVar6 == 0) {
           local_24 = 3.0f + 1.0;
           if ((this_ptr->base).base.carry_hands[1].carry_actor != (CDemonActor *)0x0) {
@@ -322,10 +322,10 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_00525840(CMobster *this_ptr,f
                   this_ptr->taunt_timer = 0.0;
                   iVar6 = core_actor_cpp_randomChance_FUN_0040cd10(0.3);
                   if (iVar6 != 0) {
-                    core_mobster_cpp_CMobster_FUN_005279f0(this_ptr,2);
+                    core_mobster_cpp_CMobster_playTaunt_FUN_005279f0(this_ptr,2);
                   }
                   if (this_ptr->taunt_timer <= 0.0) {
-                    core_mobster_cpp_CMobster_FUN_005271c0(this_ptr);
+                    core_mobster_cpp_CMobster_startFiringAttack_FUN_005271c0(this_ptr);
                   }
                   else {
                     pCVar2 = &(this_ptr->base).base.model;
@@ -450,7 +450,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_00525840(CMobster *this_ptr,f
                   (&(this_ptr->base).base.model.motion_controller,0,1);
         iVar6 = core_actor_cpp_randomChance_FUN_0040cd10(0.3);
         if (iVar6 != 0) {
-          core_mobster_cpp_CMobster_FUN_005279f0(this_ptr,3);
+          core_mobster_cpp_CMobster_playTaunt_FUN_005279f0(this_ptr,3);
         }
       }
       break;
@@ -499,7 +499,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_00525840(CMobster *this_ptr,f
     case 10:
     case 0xb:
       if (this_ptr->taunt_timer <= 0.0) {
-        core_mobster_cpp_CMobster_FUN_005271c0(this_ptr);
+        core_mobster_cpp_CMobster_startFiringAttack_FUN_005271c0(this_ptr);
       }
     }
     goto switchD_0052677f_caseD_7;
@@ -567,7 +567,7 @@ switchD_0052677f_caseD_7:
     }
   }
   else {
-    core_mobster_cpp_CMobster_FUN_00525650(this_ptr);
+    core_mobster_cpp_CMobster_positionOnVehicle_FUN_00525650(this_ptr);
   }
   pCVar12 = core_actor_cpp_castToClassHash_FUN_0040c790
                       ((this_ptr->base).base.carry_hands[1].carry_actor,g_CWeaponClassInfo.name_hash

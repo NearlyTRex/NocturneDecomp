@@ -2,28 +2,10 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "format_error",
-        "column": 55,
-        "line": 43,
-        "message": "format specifies type 'char *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 66,
-        "line": 64,
-        "message": "format specifies type 'char *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
-      },
-      {
         "category": "incompatible_types",
         "column": 14,
-        "line": 78,
+        "line": 76,
         "message": "assigning to 'STimestampRecord *' from incompatible type 'void *'"
-      },
-      {
-        "category": "format_error",
-        "column": 73,
-        "line": 88,
-        "message": "format specifies type 'char *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
       }
     ],
     "success": false,
@@ -31,18 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 218,
-    "complexity_score": 172,
+    "complexity_score": 105,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 9,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 92,
-    "suspect_count": 7,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 90,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
-      "stack_param"
+      "pointer_cast"
     ],
-    "total_lines": 310
+    "total_lines": 308
   },
   "cross_references": [
     {
@@ -62,7 +43,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_fileio.cpp_readTimestampFile_FUN_004b23a0",
-    "signature": "int __cdecl engine_fileio_cpp_readTimestampFile_FUN_004b23a0(_FILE *file,STimestampRecord **records,int *count)"
+    "signature": "int __cdecl engine_fileio_cpp_readTimestampFile_FUN_004b23a0(_FILE *file_handle,STimestampRecord **records,char *directory,char *filename)"
   },
   "function_calls": [
     {
@@ -191,10 +172,10 @@
     "pcode_op_count": 715
   },
   "stack_frame": {
-    "frame_size": 1392,
+    "frame_size": 1396,
     "local_size": 1380,
     "param_offset": 4,
-    "param_size": 12,
+    "param_size": 16,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -234,7 +215,7 @@
       },
       {
         "is_param": true,
-        "name": "file",
+        "name": "file_handle",
         "offset": 4,
         "size": 4,
         "type": "_FILE *"
@@ -248,68 +229,27 @@
       },
       {
         "is_param": true,
-        "name": "count",
+        "name": "directory",
         "offset": 12,
         "size": 4,
-        "type": "int *"
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 16,
+        "size": 4,
+        "type": "char *"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000010",
-      "severity": "moderate",
-      "text": "uint in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 36,
-      "match": "in_stack_00000010",
-      "severity": "moderate",
-      "text": "(g_CEditorToolsPtr,\"Error reading %s\",in_stack_00000010);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 57,
-      "match": "in_stack_00000010",
-      "severity": "moderate",
-      "text": "(g_CEditorToolsPtr,\"Error parsing %s, record %d\",in_stack_00000010,local_18);",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 66,
-      "match": "(char *)((int)",
-      "severity": "mild",
-      "text": "cVar1 = *(char *)((int)piVar5 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 67,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "piVar5 = (int *)((int)piVar5 + 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 81,
-      "match": "in_stack_00000010",
-      "severity": "moderate",
-      "text": "(g_CEditorToolsPtr,\"Out of memory reading %s record %d\",in_stack_00000010,local_18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 89,
+      "line": 87,
       "match": "(STimestampRecord *)((int)",
       "severity": "mild",
-      "text": "pSVar6 = (STimestampRecord *)((int)pSVar6 + ((uint)bVar7 * -2 + 1) * 4);",
+      "text": "pSVar5 = (STimestampRecord *)((int)pSVar5 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
     }
   ]

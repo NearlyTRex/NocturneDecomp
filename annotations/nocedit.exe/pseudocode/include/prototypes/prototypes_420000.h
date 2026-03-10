@@ -215,7 +215,7 @@ void __cdecl core_charactr_cpp_CCharacter_shatter_FUN_0042b8e0(CCharacter *this_
 void __cdecl core_charactr_cpp_CCharacter_explode_FUN_0042b930(CCharacter *this_ptr,CVector3f *impact_point,float impact_force);
 void __cdecl core_charactr_cpp_CCharacter_dismember_FUN_0042b9e0(CCharacter *this_ptr,CVector3f *impact_point,float impact_force);
 ECollisionType __cdecl core_charactr_cpp_CCharacter_getCollisionType_FUN_0042bc20(CCharacter *this_ptr,SCollisionInfo *collision_info);
-void __cdecl core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0(CCharacter *this_ptr,int part_index);
+void __cdecl core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0(CCharacter *this_ptr,int part_index,CVector3f *initial_velocity, int render_in_background);
 void __cdecl core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30(CCharacter *this_ptr,CBodyPart *body_part,int part_index,int render_in_background);
 int __cdecl core_charactr_cpp_CCharacter_isGrabbable_FUN_0042bf30(CCharacter *this_ptr,CDemonActor *grabber);
 void __cdecl core_charactr_cpp_CCharacter_releaseFromGrab_FUN_0042bf40(CCharacter *this_ptr);

@@ -22,7 +22,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_004529b0(CDemonCamer
   int iVar8;
   CVector3i *end_pos;
   int iVar9;
-  int *in_stack_fffffd8c;
+  char local_274 [256];
   byte local_174 [68];
   _ostream local_130;
   char local_f8 [100];
@@ -54,14 +54,13 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_004529b0(CDemonCamer
       g_CameraFogGrid.scroll_vector.z == 0) {
     g_ImageBytesPerPixel = 1;
   }
-  _sprintf(&stack0xfffffd8c,"%s.fog",this_ptr->camera_name);
-  file_ptr = engine_dosio_c_getFile_FUN_00481a50("backdrop",&stack0xfffffd8c,"rb")
-  ;
+  _sprintf(local_274,"%s.fog",this_ptr->camera_name);
+  file_ptr = engine_dosio_c_getFile_FUN_00481a50("backdrop",local_274,"rb");
   if (file_ptr != (_FILE *)0x0) {
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\core\\dcamera.cpp",0x12d5);
     return;
   }
-  _sprintf(local_f8,"backdrop\\%s",&stack0xfffffd8c);
+  _sprintf(local_f8,"backdrop\\%s",local_274);
   crt_fstream_cpp_ofstream_ctor_FUN_005ff710(local_174,0,local_f8,0x110,g_DefaultStreamBufferSize);
   if (local_130._ios.__enabled_exceptions != 0) {
     g_CurrentFilename = "..\\core\\dcamera.cpp";
@@ -175,7 +174,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_004529b0(CDemonCamer
         local_4c = 0x12c00;
         iVar6 = support_codec_cpp_CCodec_processFromBuffer_FUN_0043eb30
                           (&local_94.base,(char *)&g_CameraPlaneWorkBuffer,&local_4c,
-                           (char *)&local_130,in_stack_fffffd8c);
+                           (char *)&local_130);
         if (iVar6 == 0) {
           g_CurrentFilename = "..\\core\\dcamera.cpp";
           g_CurrentLineNumber = 0x1349;

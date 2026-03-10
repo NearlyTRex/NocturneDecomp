@@ -1,10 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_event_cpp_CRuleList_insert_FUN_004b1680(CRuleList *this_ptr)
+; void __cdecl core_event_cpp_CRuleList_insert_FUN_004b1680(CRuleList *this_ptr,int index,char *condition,char *event)
 ;
 ; Parameters:
 ; CRuleList *      Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   index
+; char *           Stack[0xc]:4   condition
+; char *           Stack[0x10]:4   event
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14

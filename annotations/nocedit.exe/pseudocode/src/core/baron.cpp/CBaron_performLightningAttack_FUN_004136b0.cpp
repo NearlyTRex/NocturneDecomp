@@ -11,6 +11,7 @@
 void __cdecl core_baron_cpp_CBaron_performLightningAttack_FUN_004136b0(CBaron *this_ptr)
 
 {
+  CLocation *start_position;
   CEnemy *this_ptr_00;
   CVector3f *pCVar1;
   int iVar2;
@@ -46,9 +47,11 @@ void __cdecl core_baron_cpp_CBaron_performLightningAttack_FUN_004136b0(CBaron *t
   local_40.y = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(local_40.y);
   local_14 = local_40.y;
   if ((local_40.y < (float)-0.78539816337500001) || (0.78539816337500001 < (double)local_40.y)) {
+    start_position = &(this_ptr_00->base).base.location;
     core_fire_cpp_CFireEffect_createLightningBolt_FUN_004c8f50
-              (g_CFireEffectPtr,&(this_ptr_00->base).base.location.position,16.0,1,0.0);
-    core_fire_cpp_CFireEffect_createCrater_FUN_004c8ea0(g_CFireEffectPtr);
+              (g_CFireEffectPtr,&start_position->position,16.0,1,0.0);
+    core_fire_cpp_CFireEffect_createCrater_FUN_004c8ea0
+              (g_CFireEffectPtr,&start_position->position,4.0);
   }
   else {
     __arrinit(local_148,10,&g_CVectorTypeInfo);

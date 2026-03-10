@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 8,
-    "complexity_score": 51,
+    "complexity_score": 52,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 26,
+    "pseudocode_lines": 27,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 34
+    "total_lines": 35
   },
   "cross_references": [
     {
@@ -110,7 +110,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 21,
+      "line": 22,
       "match": "(CPlatform *)((int)",
       "severity": "mild",
       "text": "pCVar2 = (CPlatform *)((int)&(pCVar2->base).orient + 4);",
@@ -118,7 +118,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 26,
+      "line": 27,
       "match": "(CPlatform *)((int)",
       "severity": "mild",
       "text": "pCVar2 = (CPlatform *)((int)&(pCVar2->base).orient + 4);",

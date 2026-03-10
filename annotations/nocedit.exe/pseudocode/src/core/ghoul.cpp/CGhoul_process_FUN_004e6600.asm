@@ -1641,7 +1641,7 @@ section .text
     PUSH dword ptr [EBP + 0x92]         ; 004e7716
     PUSH EBX                            ; 004e771c
     CALL core_ghoul.cpp_CGhoul_findDarkWayPoint_FUN_004e63d0 ; 004e771d
-        ;   XREF to: 004e63d0 (UNCONDITIONAL_CALL)  ; void core_ghoul.cpp_CGhoul_findDarkWayPoint_FUN_004e63d0(CGhoul * this_ptr)
+        ;   XREF to: 004e63d0 (UNCONDITIONAL_CALL)  ; void core_ghoul.cpp_CGhoul_findDarkWayPoint_FUN_004e63d0(CGhoul * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004e7722
     LEA EAX,[EBX + 0x158]               ; 004e7725
         ;   Label: LAB_004e7725

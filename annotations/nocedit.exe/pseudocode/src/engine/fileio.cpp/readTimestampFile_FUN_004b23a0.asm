@@ -1,12 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_fileio_cpp_readTimestampFile_FUN_004b23a0(_FILE *file,STimestampRecord **records,int *count)
+; int __cdecl engine_fileio_cpp_readTimestampFile_FUN_004b23a0(_FILE *file_handle,STimestampRecord **records,char *directory,char *filename)
 ;
 ; Parameters:
-; _FILE *          Stack[0x4]:4   file
+; _FILE *          Stack[0x4]:4   file_handle
 ; STimestampRecord * * Stack[0x8]:4   records
-; int *            Stack[0xc]:4   count
+; char *           Stack[0xc]:4   directory
+; char *           Stack[0x10]:4   filename
 ; Local Variables:
 ; undefined        Stack[-0x560]:1  local_560
 ; undefined        Stack[-0x160]:1  local_160

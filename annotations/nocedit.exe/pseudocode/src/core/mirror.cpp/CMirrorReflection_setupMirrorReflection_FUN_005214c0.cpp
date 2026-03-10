@@ -2,11 +2,11 @@
 // Address: 005214c0
 // Address Range: [[005214c0, 005222ed]]
 // Convention: __cdecl
-// Signature: void __cdecl core_mirror_cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0(CMirrorReflection *this_ptr)
+// Signature: void __cdecl core_mirror_cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0(CMirrorReflection *this_ptr,CVector3f *camera_position,CVector3f *camera_rotation,float projection_scale)
 
 #include "nocturne.h"
 
-void __cdecl core_mirror_cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0(CMirrorReflection *this_ptr)
+void __cdecl core_mirror_cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0(CMirrorReflection *this_ptr,CVector3f *camera_position,CVector3f *camera_rotation,float projection_scale)
 
 {
   float fVar1;
@@ -18,9 +18,6 @@ void __cdecl core_mirror_cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c
   CMatrix3x4f *pCVar7;
   CMatrix3x4f *pCVar8;
   byte bVar9;
-  CVector3f *in_stack_00000008;
-  CVector3f *in_stack_0000000c;
-  float in_stack_00000010;
   CMatrix3x4f local_4a4;
   CMatrix3x4f local_474;
   CMatrix3x4f local_444;
@@ -220,14 +217,14 @@ void __cdecl core_mirror_cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c
     pCVar6 = (CMatrix3x4f *)((int)pCVar6 + (uint)bVar9 * -8 + 4);
   }
   pCVar2 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                     (&local_8c,in_stack_00000008,&this_ptr->mirror_transform_matrix);
+                     (&local_8c,camera_position,&this_ptr->mirror_transform_matrix);
   if ((CVector3f *)&this_ptr->camera_origin != pCVar2) {
     (this_ptr->camera_origin).x = (int)pCVar2->x;
     (this_ptr->camera_origin).y = (int)pCVar2->y;
     (this_ptr->camera_origin).z = (int)pCVar2->z;
   }
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
-            (&this_ptr->reflection_matrix,in_stack_0000000c);
+            (&this_ptr->reflection_matrix,camera_rotation);
   local_38 = (this_ptr->reflection_matrix).m[0].y;
   local_18 = (this_ptr->reflection_matrix).m[1].y;
   local_34 = (this_ptr->reflection_matrix).m[2].y;
@@ -237,9 +234,9 @@ void __cdecl core_mirror_cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c
   local_24 = (this_ptr->reflection_matrix).m[0].z;
   local_20 = (this_ptr->reflection_matrix).m[1].z;
   local_1c = (this_ptr->reflection_matrix).m[2].z;
-  local_104.x = local_38 + in_stack_00000008->x;
-  local_104.y = local_18 + in_stack_00000008->y;
-  local_104.z = local_34 + in_stack_00000008->z;
+  local_104.x = local_38 + camera_position->x;
+  local_104.y = local_18 + camera_position->y;
+  local_104.z = local_34 + camera_position->z;
   local_128.x = local_38;
   local_128.y = local_18;
   local_128.z = local_34;
@@ -248,9 +245,9 @@ void __cdecl core_mirror_cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c
     local_128.y = local_104.y;
     local_128.z = local_104.z;
   }
-  local_c8.x = local_30 + in_stack_00000008->x;
-  local_c8.y = local_2c + in_stack_00000008->y;
-  local_c8.z = local_28 + in_stack_00000008->z;
+  local_c8.x = local_30 + camera_position->x;
+  local_c8.y = local_2c + camera_position->y;
+  local_c8.z = local_28 + camera_position->z;
   local_e0.x = local_30;
   local_e0.y = local_2c;
   local_e0.z = local_28;
@@ -259,9 +256,9 @@ void __cdecl core_mirror_cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c
     local_e0.y = local_c8.y;
     local_e0.z = local_c8.z;
   }
-  local_ec.x = local_24 + in_stack_00000008->x;
-  local_ec.y = local_20 + in_stack_00000008->y;
-  local_ec.z = local_1c + in_stack_00000008->z;
+  local_ec.x = local_24 + camera_position->x;
+  local_ec.y = local_20 + camera_position->y;
+  local_ec.z = local_1c + camera_position->z;
   local_5c.x = local_24;
   local_5c.y = local_20;
   local_5c.z = local_1c;
@@ -324,7 +321,7 @@ void __cdecl core_mirror_cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c
   (this_ptr->reflection_matrix).m[0].z = local_5c.x;
   (this_ptr->reflection_matrix).m[1].z = local_5c.y;
   (this_ptr->reflection_matrix).m[2].z = local_5c.z;
-  this_ptr->projection_scale = in_stack_00000010;
+  this_ptr->projection_scale = projection_scale;
   core_mirror_cpp_CMirrorReflection_setupMirrorCamera_FUN_00521480(this_ptr);
   core_xform_cpp_setIdentityMatrix3x4_FUN_005f5100(&local_3e4);
   local_3e4.m[0].z = -(float)(this_ptr->camera_origin).x;
@@ -374,7 +371,7 @@ void __cdecl core_mirror_cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c
   }
   pCVar7 = &local_324;
   pCVar2 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                     (&local_17c,in_stack_00000008,&this_ptr->mirror_transform_matrix);
+                     (&local_17c,camera_position,&this_ptr->mirror_transform_matrix);
   pCVar2 = core_xform_cpp_transformVector3x4_FUN_005f4dc0(&local_11c,pCVar2,pCVar7);
   if (&local_98 != pCVar2) {
     local_98.x = pCVar2->x;

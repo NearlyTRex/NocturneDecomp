@@ -9,6 +9,8 @@
 void __cdecl core_fire_cpp_CFireEffect_createExplosion_FUN_004c8c10(CFireEffect *this_ptr,CVector3f *position,float scale,int damage_amount)
 
 {
+  float in_stack_00000014;
+  
   core_fire_cpp_CExplosion_activate_FUN_004c3970
             (g_ExplosionPool + g_ExplosionPoolIndex,position,scale,damage_amount);
   g_ExplosionPoolIndex = g_ExplosionPoolIndex + 1;
@@ -17,6 +19,6 @@ void __cdecl core_fire_cpp_CFireEffect_createExplosion_FUN_004c8c10(CFireEffect 
   }
   core_sound_cpp_CSound_playActorSound_FUN_005b3a40
             (g_CSoundPtr,(CDemonActor *)this_ptr,"xplode?.wav @ 6.0",position);
-  core_fire_cpp_CFireEffect_createCrater_FUN_004c8ea0(this_ptr);
+  core_fire_cpp_CFireEffect_createCrater_FUN_004c8ea0(this_ptr,position,in_stack_00000014);
   return;
 }

@@ -101,7 +101,7 @@ section .text
     ADD EAX,0x1ec                       ; 00570a93
     PUSH EAX                            ; 00570a98
     CALL core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0 ; 00570a99
-        ;   XREF to: 005214c0 (UNCONDITIONAL_CALL)  ; void core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0(CMirrorReflection * this_ptr)
+        ;   XREF to: 005214c0 (UNCONDITIONAL_CALL)  ; void core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0(CMirrorReflection * this_ptr, CVector3f * camera_position, CVector3f * camera_rotation, float projection_scale)
     ADD ESP,0x10                        ; 00570a9e
     PUSH 0x1                            ; 00570aa1
     MOV EBP,dword ptr [0x006703ec]      ; 00570aa3 | g_CDemonRendererPtr2

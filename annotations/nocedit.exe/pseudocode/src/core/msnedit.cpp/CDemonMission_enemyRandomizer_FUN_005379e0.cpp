@@ -98,16 +98,16 @@ LAB_00537aa5:
           shape_edittool_cpp_CStrList_add_FUN_004a2b80
                     (&CStack_958.base,"Randomize speed for all specified enemies");
           iVar3 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                            (&CStack_958,"Randomize speeds",DAT_02f797e0,0);
+                            (&CStack_958,"Randomize speeds",INT_02f797e0,0);
           if (-1 < iVar3) {
-            DAT_02f797e0 = iVar3;
+            INT_02f797e0 = iVar3;
             shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff300);
             for (pCVar1 = this_ptr->first_actor; pCVar1 != (CDemonActor *)0x0;
                 pCVar1 = pCVar1->next_actor) {
               actor_ptr = core_actor_cpp_castToClassHash_FUN_0040c790
                                     (pCVar1,g_CEnemyClassInfo.name_hash);
               if (((actor_ptr != (CDemonActor *)0x0) &&
-                  (((DAT_02f797e0 != 0 || (*(int *)(actor_ptr[0x8d].create_event + 0x3c) != 0)) &&
+                  (((INT_02f797e0 != 0 || (*(int *)(actor_ptr[0x8d].create_event + 0x3c) != 0)) &&
                    (iVar3 = core_actor_cpp_isOfClass_FUN_0040c6d0(actor_ptr,"CEnemy"),
                    iVar3 != 0)))) &&
                  (iVar3 = shape_edittool_cpp_wildcardStringMatch_FUN_004a6e20

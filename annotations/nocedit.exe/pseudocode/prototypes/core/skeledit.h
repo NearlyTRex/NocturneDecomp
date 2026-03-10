@@ -45,7 +45,7 @@ void __cdecl onLodGenerationComplete(int use_simple_message);
 
 // Original: core_skeledit.cpp_createMeshPrecomputeFile_FUN_00589bb0
 // Address: 00589bb0
-void __cdecl createMeshPrecomputeFile(CLodMesh *mesh_ptr);
+void __cdecl createMeshPrecomputeFile(CLodMesh *mesh_ptr,CLodMeshPrecomputeEntry *precompute_entry);
 
 // Original: core_skeledit.cpp_CLodMesh_selectAndGenerateLods_FUN_00589c20
 // Address: 00589c20

@@ -180,7 +180,8 @@ LAB_005f9504:
           pCVar17 = this_ptr->pickup_target;
           if (pCVar17 != (CDemonActor *)0x0) {
             this_ptr->pickup_target = (CDemonActor *)0x0;
-            iVar6 = core_zombie_cpp_CZombie_FUN_005fbd00(this_ptr);
+            iVar6 = core_zombie_cpp_CZombie_getPickupHandIndex_FUN_005fbd00
+                              (this_ptr,this_ptr->object_shape_class);
             if (-1 < iVar6) {
               core_charactr_cpp_CCharacter_pickupObjectNow_FUN_0042cdb0
                         ((CCharacter *)this_ptr,iVar6,pCVar17,0.2);
@@ -229,13 +230,13 @@ LAB_005f9541:
                iVar9 = (*(((pCVar3->base).vtable._uc)->_uc).getGrabbed)
                                  (pCVar3,(CDemonActor *)this_ptr,0), iVar9 != 0)) {
               if (iVar6 != 0) {
-                core_zombie_cpp_CZombie_FUN_005fca10(this_ptr);
+                core_zombie_cpp_CZombie_resetChaseState_FUN_005fca10(this_ptr);
               }
               goto LAB_005f9504;
             }
           }
         }
-        core_zombie_cpp_CZombie_FUN_005fca10(this_ptr);
+        core_zombie_cpp_CZombie_resetChaseState_FUN_005fca10(this_ptr);
         goto LAB_005f9504;
       }
       if (uVar8 != 10) {
@@ -252,7 +253,7 @@ LAB_005f9541:
           fVar25 = local_248.x - (pCVar3->base).location.position.x;
           fVar26 = local_248.z - (pCVar3->base).location.position.z;
           if ((float)1.5 < SQRT(fVar26 * fVar26 + fVar25 * fVar25)) {
-            core_zombie_cpp_CZombie_FUN_005fca10(this_ptr);
+            core_zombie_cpp_CZombie_resetChaseState_FUN_005fca10(this_ptr);
             goto LAB_005f9504;
           }
         }
@@ -260,7 +261,7 @@ LAB_005f9541:
           pCVar3 = (this_ptr->base).victim;
           pCVar11 = (CZombie *)(*(((pCVar3->base).vtable._uc)->_uc).getGrabber)(pCVar3);
           if (pCVar11 != this_ptr) {
-            core_zombie_cpp_CZombie_FUN_005fca10(this_ptr);
+            core_zombie_cpp_CZombie_resetChaseState_FUN_005fca10(this_ptr);
             goto LAB_005f9504;
           }
         }
@@ -282,16 +283,16 @@ LAB_005f9541:
         if (0 < (int)EVar12) {
           pCVar3 = (this_ptr->base).victim;
           (*(((pCVar3->base).vtable._uc)->_uc).releaseFromGrab)(pCVar3);
-          core_zombie_cpp_CZombie_FUN_005fca10(this_ptr);
+          core_zombie_cpp_CZombie_resetChaseState_FUN_005fca10(this_ptr);
         }
         (*((this_ptr->base).base.base.vtable._ub)->playSound)
                   ((CDemonActor *)this_ptr,"ghoul-eat-?.wav");
         goto LAB_005f9504;
       }
-      core_zombie_cpp_CZombie_FUN_005fca10(this_ptr);
+      core_zombie_cpp_CZombie_resetChaseState_FUN_005fca10(this_ptr);
     }
     else if (uVar8 < 0xc) {
-      iVar6 = core_zombie_cpp_CZombie_FUN_005fbd00(this_ptr);
+      iVar6 = core_zombie_cpp_CZombie_getPickupHandIndex_FUN_005fbd00(this_ptr,2);
       if (iVar6 < 0) {
         g_CurrentFilename = "..\\core\\zombie.cpp";
         g_CurrentLineNumber = 0x1ee;
@@ -311,7 +312,7 @@ LAB_005f9541:
       }
     }
     else if (uVar8 < 0xd) {
-      iVar6 = core_zombie_cpp_CZombie_FUN_005fbd00(this_ptr);
+      iVar6 = core_zombie_cpp_CZombie_getPickupHandIndex_FUN_005fbd00(this_ptr,3);
       if (iVar6 < 0) {
         g_CurrentFilename = "..\\core\\zombie.cpp";
         g_CurrentLineNumber = 0x205;
@@ -470,7 +471,7 @@ LAB_005f9541:
         }
         iVar6 = core_enemy_cpp_CEnemy_updatePatrol_FUN_004a9fd0(&this_ptr->base,delta_time);
         if (iVar6 != 0) {
-          core_zombie_cpp_CZombie_FUN_005fca10(this_ptr);
+          core_zombie_cpp_CZombie_resetChaseState_FUN_005fca10(this_ptr);
         }
         (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
         if (((this_ptr->base).victim == (CCharacter *)0x0) && (local_38 != 0)) {
@@ -481,7 +482,7 @@ LAB_005f9541:
           (this_ptr->base).victim = &g_HeroActors[g_LocalHeroIndex]->base;
         }
         if ((this_ptr->base).victim != (CCharacter *)0x0) {
-          core_zombie_cpp_CZombie_FUN_005fca10(this_ptr);
+          core_zombie_cpp_CZombie_resetChaseState_FUN_005fca10(this_ptr);
           iVar6 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handles[1]);
           if (iVar6 == 0) {
             if (this_ptr->is_female == 0) {
@@ -527,7 +528,7 @@ LAB_005f9541:
             this_ptr->sfx_handles[1] = uVar8;
           }
 LAB_005fa85e:
-          core_zombie_cpp_CZombie_FUN_005fca10(this_ptr);
+          core_zombie_cpp_CZombie_resetChaseState_FUN_005fca10(this_ptr);
         }
         else {
           cVar20 = (this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[1]]
@@ -541,10 +542,10 @@ LAB_005fa85e:
                (this_ptr->base).base.model.accumulated_root_motion.z;
           (this_ptr->base).base.model.accumulated_root_motion.x =
                (this_ptr->base).base.model.accumulated_root_motion.y;
-          iVar6 = core_zombie_cpp_CZombie_FUN_005fb530(this_ptr);
+          iVar6 = core_zombie_cpp_CZombie_processPickup_FUN_005fb530(this_ptr,delta_time);
           if (iVar6 == 0) {
             local_50 = 1.3f;
-            local_40 = core_zombie_cpp_CZombie_FUN_005fbd00(this_ptr);
+            local_40 = core_zombie_cpp_CZombie_getPickupHandIndex_FUN_005fbd00(this_ptr,1);
             if (((-1 < local_40) &&
                 (pCVar17 = (this_ptr->base).base.carry_hands[local_40].carry_actor,
                 pCVar17 != (CDemonActor *)0x0)) && (this_ptr->object_shape_class == 1)) {
@@ -580,7 +581,8 @@ LAB_005fa85e:
                         (&pCVar2->motion_controller,0,1);
             }
             else if (iVar6 < 1) {
-              iVar6 = core_zombie_cpp_CZombie_FUN_005fbd00(this_ptr);
+              iVar6 = core_zombie_cpp_CZombie_getPickupHandIndex_FUN_005fbd00
+                                (this_ptr,this_ptr->object_shape_class);
               pCVar3 = (this_ptr->base).victim;
               local_1ac = (this_ptr->base).base.base.location.position.x -
                           (pCVar3->base).location.position.x;
@@ -652,10 +654,10 @@ LAB_005fa85e:
       else if (uVar8 < 3) {
         if ((this_ptr->base).victim == (CCharacter *)0x0) {
 LAB_005fac96:
-          core_zombie_cpp_CZombie_FUN_005fca10(this_ptr);
+          core_zombie_cpp_CZombie_resetChaseState_FUN_005fca10(this_ptr);
         }
         else {
-          iVar6 = core_zombie_cpp_CZombie_FUN_005fbd00(this_ptr);
+          iVar6 = core_zombie_cpp_CZombie_getPickupHandIndex_FUN_005fbd00(this_ptr,1);
           if ((((iVar6 < 0) ||
                (pCVar3 = (this_ptr->base).victim,
                EVar12 = (*(((pCVar3->base).vtable._uc)->_uc).getDeathState)(pCVar3), 0 < (int)EVar12
@@ -665,7 +667,7 @@ LAB_005fac96:
                 pCVar17 != (CDemonActor *)0x0)) {
             engine_console_cpp_CConsole_printf_FUN_00441890
                       (g_CConsolePtr,"%s gave up swing\n",this_ptr);
-            core_zombie_cpp_CZombie_FUN_005fca10(this_ptr);
+            core_zombie_cpp_CZombie_resetChaseState_FUN_005fca10(this_ptr);
           }
           else {
             pCVar17 = (this_ptr->base).base.carry_hands[iVar6].carry_actor;
@@ -865,7 +867,7 @@ LAB_005fa18b:
       if (iVar6 != 1) {
         engine_console_cpp_CConsole_printf_FUN_00441890
                   (g_CConsolePtr,"%s giving up attack\n",this_ptr);
-        core_zombie_cpp_CZombie_FUN_005fca10(this_ptr);
+        core_zombie_cpp_CZombie_resetChaseState_FUN_005fca10(this_ptr);
         (this_ptr->base).base.turn_angle_accumulator = 0.0;
       }
     }
@@ -876,7 +878,7 @@ LAB_005fa18b:
       if (uVar8 == 1) {
 LAB_005f9ea6:
         if (iVar6 != 1) {
-          core_zombie_cpp_CZombie_FUN_005fca10(this_ptr);
+          core_zombie_cpp_CZombie_resetChaseState_FUN_005fca10(this_ptr);
         }
       }
       else {
@@ -1027,7 +1029,7 @@ LAB_005f9f22:
     }
     core_charactr_cpp_CCharacter_processDamageDecals_FUN_0042b670((CCharacter *)this_ptr);
   }
-  iVar6 = core_zombie_cpp_CZombie_FUN_005fbd00(this_ptr);
+  iVar6 = core_zombie_cpp_CZombie_getPickupHandIndex_FUN_005fbd00(this_ptr,1);
   if (((local_48 != 0) && (-1 < iVar6)) &&
      (pCVar17 = (this_ptr->base).base.carry_hands[iVar6].carry_actor, pCVar17 != (CDemonActor *)0x0)
      ) {

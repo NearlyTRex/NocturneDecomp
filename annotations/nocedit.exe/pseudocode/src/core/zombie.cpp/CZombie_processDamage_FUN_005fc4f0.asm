@@ -20,8 +20,8 @@
 ;   core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 ;   core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460
-;   core_zombie.cpp_CZombie_FUN_005fbde0
-;   core_zombie.cpp_CZombie_FUN_005fc220
+;   core_zombie.cpp_CZombie_dropAndClearTarget_FUN_005fbde0
+;   core_zombie.cpp_CZombie_processDismemberment_FUN_005fc220
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
 ;   sound_sndmain.cpp_killSfx_FUN_005a9c40
 ;
@@ -37,8 +37,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x14]      ; 005fc4f7
     PUSH EDI                            ; 005fc4fb
     PUSH EBX                            ; 005fc4fc
-    CALL core_zombie.cpp_CZombie_FUN_005fc220 ; 005fc4fd
-        ;   XREF to: 005fc220 (UNCONDITIONAL_CALL)  ; void core_zombie.cpp_CZombie_FUN_005fc220(CZombie * this_ptr)
+    CALL core_zombie.cpp_CZombie_processDismemberment_FUN_005fc220 ; 005fc4fd
+        ;   XREF to: 005fc220 (UNCONDITIONAL_CALL)  ; void core_zombie.cpp_CZombie_processDismemberment_FUN_005fc220(CZombie * this_ptr, SDamageInfo * damage_info)
     ADD ESP,0x8                         ; 005fc502
     MOV EAX,dword ptr [EBX + 0x154]     ; 005fc505
     PUSH EBX                            ; 005fc50b
@@ -76,8 +76,8 @@ section .text
         ;   XREF to: 005fc5f9 (CONDITIONAL_JUMP)  ; LAB_005fc5f9
     PUSH ESI                            ; 005fc580
     PUSH EBX                            ; 005fc581
-    CALL core_zombie.cpp_CZombie_FUN_005fbde0 ; 005fc582
-        ;   XREF to: 005fbde0 (UNCONDITIONAL_CALL)  ; void core_zombie.cpp_CZombie_FUN_005fbde0(CZombie * this_ptr)
+    CALL core_zombie.cpp_CZombie_dropAndClearTarget_FUN_005fbde0 ; 005fc582
+        ;   XREF to: 005fbde0 (UNCONDITIONAL_CALL)  ; void core_zombie.cpp_CZombie_dropAndClearTarget_FUN_005fbde0(CZombie * this_ptr)
     MOV EAX,dword ptr [EBX + 0xbf90]    ; 005fc587
     MOV ESI,0x6                         ; 005fc58d
     MOV EBP,dword ptr [EBX + EAX*0x4 + 0x2298] ; 005fc592

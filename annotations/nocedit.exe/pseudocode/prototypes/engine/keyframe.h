@@ -21,4 +21,4 @@ SMRGLHeaderExtended * __cdecl interpolateCubicKeyframes(SMRGLHeaderExtended *hea
 
 // Original: engine_keyframe.c_recomputeKeyFrameNormals_FUN_00502320
 // Address: 00502320
-void __cdecl recomputeKeyFrameNormals(void);
+void __cdecl recomputeKeyFrameNormals(SMRGLPrimitiveTriangle *primitive_list);

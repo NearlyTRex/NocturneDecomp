@@ -280,7 +280,7 @@ void __cdecl core_actor_cpp_CDemonActor_renderTargetPoints_FUN_00409b90(CDemonAc
 void __cdecl core_actor_cpp_CDemonActor_spawnFlies_FUN_00409e70(CDemonActor *this_ptr,int fly_count,float spawn_radius);
 void __cdecl core_actor_cpp_CDemonActor_calculateChecksum_FUN_00409ec0(CDemonActor *this_ptr,uint *out_crc);
 int __cdecl core_actor_cpp_CDemonActor_canLookAt_FUN_00409f20(CDemonActor *this_ptr);
-float __cdecl core_actor_cpp_CDemonActor_evaluateTriggerCondition_FUN_00409f40(CDemonActor *this_ptr);
+float __cdecl core_actor_cpp_CDemonActor_evaluateTriggerCondition_FUN_00409f40(CDemonActor *this_ptr,CDemonActor *querying_actor,CVector3f *query_position);
 int __cdecl core_actor_cpp_CDemonActor_processActionButton_FUN_00409f60(CDemonActor *this_ptr);
 void __cdecl core_actor_cpp_CDemonActor_setPositionAndOrientation_FUN_00409fb0(CDemonActor *this_ptr,CVector3f *new_position,CVector3f *new_orientation);
 void __cdecl core_actor_cpp_CDemonActor_onPickup_FUN_0040a010(CDemonActor *this_ptr,CDemonActor *owner);

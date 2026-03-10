@@ -1041,7 +1041,7 @@ section .text
     MOV EBX,dword ptr [0x0067b654]      ; 004ab475 | g_CGameInstance | g_CGamePtr
     PUSH EBX                            ; 004ab47b | g_CGameInstance
     CALL core_game.cpp_CGame_displayBitmap_FUN_004e2890 ; 004ab47c
-        ;   XREF to: 004e2890 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_displayBitmap_FUN_004e2890(CGame * this_ptr)
+        ;   XREF to: 004e2890 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_displayBitmap_FUN_004e2890(CGame * this_ptr, char * filename, int width, int height)
     ADD ESP,0x10                        ; 004ab481
     JMP 0x004aaf1d                      ; 004ab484
         ;   XREF to: 004aaf1d (UNCONDITIONAL_JUMP)  ; LAB_004aaf1d

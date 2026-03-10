@@ -21,10 +21,10 @@
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
-;   core_manpuz.cpp_CMansionPuzzleCircle_FUN_00509bf0
-;   core_manpuz.cpp_CMansionPuzzleCircle_FUN_00509c60
-;   core_manpuz.cpp_CMansionPuzzleCircle_FUN_00509d50
-;   core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050a1f0
+;   core_manpuz.cpp_CMansionPuzzleCircle_renderEmitter_FUN_00509c60
+;   core_manpuz.cpp_CMansionPuzzleCircle_renderGem_FUN_00509d50
+;   core_manpuz.cpp_CMansionPuzzleCircle_renderPanel_FUN_00509bf0
+;   core_manpuz.cpp_CMansionPuzzleCircle_renderReflector_FUN_0050a1f0
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
 ;   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
 ;
@@ -90,13 +90,13 @@ section .text
     PUSH EBX                            ; 0050915b
         ;   Label: LAB_0050915b
     PUSH ESI                            ; 0050915c
-    CALL core_manpuz.cpp_CMansionPuzzleCircle_FUN_00509bf0 ; 0050915d
-        ;   XREF to: 00509bf0 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_CMansionPuzzleCircle_FUN_00509bf0(CMansionPuzzleCircle * this_ptr)
+    CALL core_manpuz.cpp_CMansionPuzzleCircle_renderPanel_FUN_00509bf0 ; 0050915d
+        ;   XREF to: 00509bf0 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_CMansionPuzzleCircle_renderPanel_FUN_00509bf0(CMansionPuzzleCircle * this_ptr, int panel_index)
     ADD ESP,0x8                         ; 00509162
     PUSH EBX                            ; 00509165
     PUSH ESI                            ; 00509166
-    CALL core_manpuz.cpp_CMansionPuzzleCircle_FUN_00509d50 ; 00509167
-        ;   XREF to: 00509d50 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_CMansionPuzzleCircle_FUN_00509d50(CMansionPuzzleCircle * this_ptr)
+    CALL core_manpuz.cpp_CMansionPuzzleCircle_renderGem_FUN_00509d50 ; 00509167
+        ;   XREF to: 00509d50 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_CMansionPuzzleCircle_renderGem_FUN_00509d50(CMansionPuzzleCircle * this_ptr, int gem_index)
     INC EBX                             ; 0050916c
     ADD ESP,0x8                         ; 0050916d
     CMP EBX,0xc                         ; 00509170
@@ -111,8 +111,8 @@ section .text
     PUSH EBX                            ; 00509182
         ;   Label: LAB_00509182
     PUSH ESI                            ; 00509183
-    CALL core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050a1f0 ; 00509184
-        ;   XREF to: 0050a1f0 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050a1f0(CMansionPuzzleCircle * this_ptr)
+    CALL core_manpuz.cpp_CMansionPuzzleCircle_renderReflector_FUN_0050a1f0 ; 00509184
+        ;   XREF to: 0050a1f0 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_CMansionPuzzleCircle_renderReflector_FUN_0050a1f0(CMansionPuzzleCircle * this_ptr, int reflector_index)
     INC EBX                             ; 00509189
     ADD ESP,0x8                         ; 0050918a
     CMP EBX,0x2                         ; 0050918d
@@ -141,8 +141,8 @@ section .text
     PUSH EBX                            ; 005091b9
         ;   Label: LAB_005091b9
     PUSH ESI                            ; 005091ba
-    CALL core_manpuz.cpp_CMansionPuzzleCircle_FUN_00509c60 ; 005091bb
-        ;   XREF to: 00509c60 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_CMansionPuzzleCircle_FUN_00509c60(CMansionPuzzleCircle * this_ptr)
+    CALL core_manpuz.cpp_CMansionPuzzleCircle_renderEmitter_FUN_00509c60 ; 005091bb
+        ;   XREF to: 00509c60 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_CMansionPuzzleCircle_renderEmitter_FUN_00509c60(CMansionPuzzleCircle * this_ptr, int panel_index)
     INC EBX                             ; 005091c0
     ADD ESP,0x8                         ; 005091c1
     CMP EBX,0xc                         ; 005091c4

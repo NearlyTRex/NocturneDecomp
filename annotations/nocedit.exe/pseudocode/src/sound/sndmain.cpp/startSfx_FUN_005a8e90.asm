@@ -24,7 +24,7 @@
 ;   core_lightgun.cpp_CLightGun_process_FUN_00506450 at 00506641
 ;   core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_0050aba0 at 0050ad04
 ;   core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_0050ad40 at 0050adba
-;   core_manpuz.cpp_FUN_0050a4f0 at 0050a5e3
+;   core_manpuz.cpp_updateGemHumChannel_FUN_0050a4f0 at 0050a5e3
 ;   core_menu.cpp_configureSoundOptions_FUN_00511e50 at 00512877
 ;   core_setedit.cpp_CDemonSet_showFogEditor_FUN_00580730 at 00581131
 ;   ... and 13 more

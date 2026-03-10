@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_keyframe_c_recomputeKeyFrameNormals_FUN_00502320(void)
+; void __cdecl engine_keyframe_c_recomputeKeyFrameNormals_FUN_00502320(SMRGLPrimitiveTriangle *primitive_list)
 ;
+; Parameters:
+; SMRGLPrimitiveTriangle * Stack[0x4]:4   primitive_list
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_keyframe_c_00630d70

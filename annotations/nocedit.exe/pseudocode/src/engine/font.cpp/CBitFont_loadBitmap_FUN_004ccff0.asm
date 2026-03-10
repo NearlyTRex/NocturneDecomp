@@ -254,7 +254,7 @@ section .text
     PUSH EBP                            ; 004cd233
     PUSH EBX                            ; 004cd234
     CALL engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_004cd550 ; 004cd235
-        ;   XREF to: 004cd550 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_004cd550(CBitFont * this_ptr, int bitmapcount, int other2, int bitmap_index, ...)
+        ;   XREF to: 004cd550 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_004cd550(CBitFont * this_ptr, int bitmap_count, int bitmap_width, int bitmap_height, ...)
     MOV EAX,dword ptr [EBX]             ; 004cd23a
     ADD ESP,0x14                        ; 004cd23c
     INC EAX                             ; 004cd23f

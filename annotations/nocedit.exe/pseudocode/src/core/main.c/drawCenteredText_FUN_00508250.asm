@@ -1,12 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_main_c_drawCenteredText_FUN_00508250(char *text,int y_pos,int color)
+; void __cdecl core_main_c_drawCenteredText_FUN_00508250(char *text,int x,int y,int color_mode)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   text
-; int              Stack[0x8]:4   y_pos
-; int              Stack[0xc]:4   color
+; int              Stack[0x8]:4   x
+; int              Stack[0xc]:4   y
+; int              Stack[0x10]:4   color_mode
 ;
 ; Referenced Globals:
 ;   CBitFont* g_MediumFont

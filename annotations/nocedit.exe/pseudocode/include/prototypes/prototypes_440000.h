@@ -19,6 +19,7 @@
 #include "types/classes/CDemonLight.h"
 #include "types/classes/CKeyFramedModel.h"
 #include "types/classes/CMatrix3x3f.h"
+#include "types/classes/CMotionController.h"
 #include "types/classes/CPlatform.h"
 #include "types/classes/CQuaternion4f.h"
 #include "types/classes/CRect.h"
@@ -38,7 +39,7 @@
 // FUNCTION PROTOTYPES - Range 0x440000
 // =============================================================================
 
-int __cdecl core_colonel_cpp_CColonel_FUN_00440430(CColonel *this_ptr);
+void __cdecl core_colonel_cpp_CColonel_processMotionEvents_FUN_00440430(CColonel *this_ptr,float delta_time);
 void __cdecl core_colonel_cpp_CColonel_archive_FUN_00440490(CColonel *this_ptr);
 void __cdecl core_colonel_cpp_CColonel_renderOpaque_FUN_004404a0(CColonel *this_ptr);
 void __cdecl core_colonel_cpp_CColonel_processDamage_FUN_004404b0(CColonel *this_ptr,SDamageInfo *damage_info);
@@ -47,7 +48,7 @@ void __cdecl core_colonel_cpp_CColonel_drawWeapon_FUN_004405e0(CColonel *this_pt
 void __cdecl core_colonel_cpp_CColonel_onActorDeleted_FUN_004405f0(CColonel *this_ptr,CDemonActor *deleted_actor);
 void __cdecl core_colonel_cpp_CColonel_getPropertyList_FUN_00440610(CColonel *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_colonel_cpp_CColonel_addFilesToExtract_FUN_00440630(CColonel *this_ptr,_FILE *file_handle);
-int __cdecl core_colonel_cpp_FUN_00440650(void);
+int __cdecl core_colonel_cpp_getCurrentMotionState_FUN_00440650(CMotionController *motion_ptr);
 CColonel * __cdecl core_colonel_cpp_CColonel_dtor_FUN_00440670(CColonel *this_ptr,uint flags);
 char * __cdecl engine_colquant_c_quantizeColors_FUN_004406c0(SColorQuantMapper *workspace,char *color_data,int color_count, int num_palette_entries);
 void __cdecl engine_colquant_c_partitionByRed_FUN_00440b40(SColorQuantMapper *workspace,int box_index,int new_box_index);

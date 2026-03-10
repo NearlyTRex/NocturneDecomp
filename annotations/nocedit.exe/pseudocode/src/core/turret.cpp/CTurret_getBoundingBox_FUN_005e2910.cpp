@@ -30,7 +30,7 @@ CBoundingBox3D * __cdecl core_turret_cpp_CTurret_getBoundingBox_FUN_005e2910(CTu
   int local_c;
   
   bVar7 = 0;
-  fVar1 = core_turret_cpp_CTurret_getCurFrame_FUN_005e2b30(this_ptr);
+  fVar1 = core_turret_cpp_CTurret_getCurFrame_FUN_005e2b30(this_ptr,0);
   local_c = (int)ROUND(ROUND(fVar1));
   pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&(this_ptr->base).model)
   ;
@@ -58,7 +58,7 @@ CBoundingBox3D * __cdecl core_turret_cpp_CTurret_getBoundingBox_FUN_005e2910(CTu
     pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar7 * -2 + 1) * 4);
     pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar7 * -2 + 1) * 4);
   }
-  fVar1 = core_turret_cpp_CTurret_getCurFrame_FUN_005e2b30(this_ptr);
+  fVar1 = core_turret_cpp_CTurret_getCurFrame_FUN_005e2b30(this_ptr,1);
   local_c = (int)ROUND(ROUND(fVar1));
   pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(local_10);
   pCVar3 = pCVar2->frame_bounds + local_c * 2;

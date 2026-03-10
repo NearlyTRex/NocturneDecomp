@@ -199,7 +199,7 @@ void __cdecl support_codec_cpp_CCodec_init_FUN_0043e9d0(CCodec *this_ptr);
 int __cdecl support_codec_cpp_CCodec_finalize_FUN_0043ea00(CCodec *this_ptr,_FILE *output_file);
 int __cdecl support_codec_cpp_CCodec_process_FUN_0043ea10(CCodec *this_ptr,_istream *istream,int byte_count,_ostream *ostream);
 int __cdecl support_codec_cpp_CCodec_processToBuffer_FUN_0043ea80(CCodec *this_ptr,_istream *ifstream,int byte_count,char *output_buffer, int *output_size,int enable_finalize);
-int __cdecl support_codec_cpp_CCodec_processFromBuffer_FUN_0043eb30(CCodec *this_ptr,char *input,int *input_length,char *output,int *output_length);
+int __cdecl support_codec_cpp_CCodec_processFromBuffer_FUN_0043eb30(CCodec *this_ptr,char *input,int *input_length,char *output);
 int __cdecl support_codec_cpp_CCodec_processBuffer_FUN_0043eba0(CCodec *this_ptr,char *input,int *input_length,char *output,int *output_length, int enable_callback);
 int __cdecl support_codec_cpp_CCodec_processFiles_FUN_0043ec30(CCodec *this_ptr,char *input_file_path,char *output_file_path);
 int __cdecl support_codec_cpp_CCodec_finalizeBuffer_FUN_0043ed50(CCodec *this_ptr,char *buffer_ptr,int *buffer_size_ptr);
@@ -233,5 +233,5 @@ CDemonActorType * __cdecl core_colonel_cpp_CColonel_getActorType_FUN_0043f7d0(CC
 CColonel * __cdecl core_colonel_cpp_CColonel_ctor_FUN_0043f7e0(CColonel *this_ptr);
 void __cdecl core_colonel_cpp_CColonel_setup_FUN_0043f850(CColonel *this_ptr);
 void __cdecl core_colonel_cpp_CColonel_process_FUN_0043fa00(CColonel *this_ptr,float delta_time);
-void __cdecl core_colonel_cpp_CColonel_FUN_0043ff20(CColonel *this_ptr);
+void __cdecl core_colonel_cpp_CColonel_processAI_FUN_0043ff20(CColonel *this_ptr,float delta_time);
 

@@ -1,16 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_alphabit_cpp_CAlphaBitmap_render_FUN_00410b00(CAlphaBitmap *this_ptr,int dest_y,int dest_x,int left_x,int top_y,int right_x,int bottom_y)
+; void __cdecl engine_alphabit_cpp_CAlphaBitmap_render_FUN_00410b00(CAlphaBitmap *this_ptr,int dest_x,int dest_y,int left_x,int top_y,int right_x,int bottom_y,int global_alpha)
 ;
 ; Parameters:
 ; CAlphaBitmap *   Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   dest_y
-; int              Stack[0xc]:4   dest_x
+; int              Stack[0x8]:4   dest_x
+; int              Stack[0xc]:4   dest_y
 ; int              Stack[0x10]:4   left_x
 ; int              Stack[0x14]:4   top_y
 ; int              Stack[0x18]:4   right_x
 ; int              Stack[0x1c]:4   bottom_y
+; int              Stack[0x20]:4   global_alpha
 ; Local Variables:
 ; undefined4       Stack[-0x2c]:4  local_2c
 ; undefined4       Stack[-0x28]:4  local_28

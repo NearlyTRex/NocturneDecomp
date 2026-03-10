@@ -4781,6 +4781,10 @@
       "type":"struct"
     },
     {
+      "name":"SSkeleditBiasEntry",
+      "type":"struct"
+    },
+    {
       "name":"SSoftwareEdge",
       "type":"struct"
     },
@@ -6190,6 +6194,10 @@
     },
     {
       "name":"dt_11b7af31",
+      "type":"function_definition"
+    },
+    {
+      "name":"dt_486ab265",
       "type":"function_definition"
     },
     {
@@ -11555,6 +11563,14 @@
         {
           "name":"this_ptr",
           "type":"CDemonActor*"
+        },
+        {
+          "name":"querying_actor",
+          "type":"CDemonActor*"
+        },
+        {
+          "name":"query_position",
+          "type":"CVector3f*"
         }
       ],
       "return_type":"float",
@@ -16511,6 +16527,56 @@
         {
           "name":"param1",
           "type":"CVector3d*"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/auto_proto",
+      "importable":true,
+      "name":"dt_486ab265",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"CFireEffect*"
+        },
+        {
+          "name":"origin",
+          "type":"CVector3f*"
+        },
+        {
+          "name":"hit_position",
+          "type":"CVector3f*"
+        },
+        {
+          "name":"beam_width",
+          "type":"float"
+        },
+        {
+          "name":"reticle_intensity",
+          "type":"float"
+        },
+        {
+          "name":"reflection_normal",
+          "type":"CVector3f*"
+        },
+        {
+          "name":"red",
+          "type":"int"
+        },
+        {
+          "name":"green",
+          "type":"int"
+        },
+        {
+          "name":"blue",
+          "type":"int"
+        },
+        {
+          "name":"halo_spread",
+          "type":"float"
         }
       ],
       "return_type":"void",
@@ -58479,15 +58545,15 @@
         },
         {
           "len":4,
-          "name":"timestamp",
+          "name":"random_seed",
           "offset":4,
-          "type":"uint"
+          "type":"int"
         },
         {
           "len":4,
-          "name":"frame_flags",
+          "name":"delta_time",
           "offset":8,
-          "type":"uint"
+          "type":"float"
         },
         {
           "len":88,
@@ -58499,6 +58565,42 @@
       "importable":true,
       "len":100,
       "name":"SSimFrame",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"motion_index",
+          "offset":0,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"source_frame",
+          "offset":4,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"ref_motion_index",
+          "offset":8,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"ref_frame",
+          "offset":12,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":16,
+      "name":"SSkeleditBiasEntry",
       "pack":false,
       "type":"struct"
     },

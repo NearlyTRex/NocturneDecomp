@@ -2,17 +2,17 @@
 // Address: 004dd870
 // Address Range: [[004dd870, 004dd924]]
 // Convention: __cdecl
-// Signature: void __cdecl core_game_cpp_giveHeroWeapon_FUN_004dd870(char *p1)
+// Signature: void __cdecl core_game_cpp_giveHeroWeapon_FUN_004dd870(char *class_name)
 
 #include "nocturne.h"
 
-void __cdecl core_game_cpp_giveHeroWeapon_FUN_004dd870(char *p1)
+void __cdecl core_game_cpp_giveHeroWeapon_FUN_004dd870(char *class_name)
 
 {
   CDemonActor *actor;
   CDemonActor *pCVar1;
   
-  actor = core_actor_cpp_createActorByName_FUN_0040c430(p1);
+  actor = core_actor_cpp_createActorByName_FUN_0040c430(class_name);
   core_mission_cpp_CDemonMission_generateActorName_FUN_00524700(g_CDemonMissionPtr,actor);
   (*((actor->vtable)._ub)->setup)(actor);
   pCVar1 = (CWeapon *)core_actor_cpp_castToClassHash_FUN_0040c790(actor,g_CWeaponClassInfo.name_hash);

@@ -221,7 +221,7 @@ int __cdecl CDemonActor::canLookAt(CDemonActor *this_ptr);
 
 // Original: core_actor.cpp_CDemonActor_evaluateTriggerCondition_FUN_00409f40
 // Address: 00409f40
-float __cdecl CDemonActor::evaluateTriggerCondition(CDemonActor *this_ptr);
+float __cdecl CDemonActor::evaluateTriggerCondition(CDemonActor *this_ptr,CDemonActor *querying_actor,CVector3f *query_position);
 
 // Original: core_actor.cpp_CDemonActor_processActionButton_FUN_00409f60
 // Address: 00409f60

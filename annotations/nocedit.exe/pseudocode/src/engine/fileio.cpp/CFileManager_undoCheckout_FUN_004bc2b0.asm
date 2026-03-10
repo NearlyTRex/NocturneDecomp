@@ -1,11 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_fileio_cpp_CFileManager_undoCheckout_FUN_004bc2b0(CFileManager *this_ptr,CCheckOutItem *checkout_item)
+; int __cdecl engine_fileio_cpp_CFileManager_undoCheckout_FUN_004bc2b0(CFileManager *this_ptr,CCheckOutItem *checkout_item,char *source_path)
 ;
 ; Parameters:
 ; CFileManager *   Stack[0x4]:4   this_ptr
 ; CCheckOutItem *  Stack[0x8]:4   checkout_item
+; char *           Stack[0xc]:4   source_path
 ; Local Variables:
 ; undefined        Stack[-0x7bc]:1  local_7bc
 ; undefined        Stack[-0x414]:1  local_414
@@ -81,7 +82,7 @@ section .text
     PUSH EDX                            ; 004bc2f9
     PUSH ESI                            ; 004bc2fa
     CALL engine_fileio.cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50 ; 004bc2fb
-        ;   XREF to: 004b3f50 (UNCONDITIONAL_CALL)  ; int engine_fileio.cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50(CCheckOutItem * this_ptr, char * filename_out, char * out_buffer, char * wildcard_pattern, ...)
+        ;   XREF to: 004b3f50 (UNCONDITIONAL_CALL)  ; int engine_fileio.cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50(CCheckOutItem * this_ptr, char * preselected_filename, char * out_buffer, char * dialog_title, ...)
     ADD ESP,0x14                        ; 004bc300
     TEST EAX,EAX                        ; 004bc303
     JZ 0x004bc2d3                       ; 004bc305
@@ -94,7 +95,7 @@ section .text
     PUSH EAX                            ; 004bc320
     PUSH ESI                            ; 004bc321
     CALL engine_fileio.cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50 ; 004bc322
-        ;   XREF to: 004b3f50 (UNCONDITIONAL_CALL)  ; int engine_fileio.cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50(CCheckOutItem * this_ptr, char * filename_out, char * out_buffer, char * wildcard_pattern, ...)
+        ;   XREF to: 004b3f50 (UNCONDITIONAL_CALL)  ; int engine_fileio.cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50(CCheckOutItem * this_ptr, char * preselected_filename, char * out_buffer, char * dialog_title, ...)
     ADD ESP,0x14                        ; 004bc327
     TEST EAX,EAX                        ; 004bc32a
     JZ 0x004bc2d3                       ; 004bc32c

@@ -1,11 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0(CCharacter *this_ptr,int part_index)
+; void __cdecl core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0(CCharacter *this_ptr,int part_index,CVector3f *initial_velocity,int render_in_background)
 ;
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   part_index
+; CVector3f *      Stack[0xc]:4   initial_velocity
+; int              Stack[0x10]:4   render_in_background
 ;
 ; XREF[10]:
 ;   core_batcreat.cpp_CBatCreature_processDismemberment_FUN_00415dd0 at 00415fe0
@@ -15,9 +17,9 @@
 ;   core_gargoyle.cpp_CGargoyle_processDismemberment_FUN_004e5530 at 004e5661
 ;   core_ghoul.cpp_CGhoul_processDismemberment_FUN_004e8520 at 004e8682
 ;   core_imp.cpp_CImp_processDismemberment_FUN_004fab60 at 004faca1
-;   core_mobster.cpp_CMobster_FUN_00527380 at 00527504
+;   core_mobster.cpp_CMobster_processDismemberment_FUN_00527380 at 00527504
 ;   core_smiley.cpp_CSmiley_processDismemberment_FUN_005a32a0 at 005a3421
-;   core_zombie.cpp_CZombie_FUN_005fc220 at 005fc382
+;   core_zombie.cpp_CZombie_processDismemberment_FUN_005fc220 at 005fc382
 ;
 ; Called Functions:
 ;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0041a050

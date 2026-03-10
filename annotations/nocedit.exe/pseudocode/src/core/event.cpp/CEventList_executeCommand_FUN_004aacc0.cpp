@@ -401,7 +401,8 @@ LAB_004aad41:
               return iVar2;
             }
             if (local_f0 != 0) {
-              core_game_cpp_CGame_displayBitmap_FUN_004e2890(g_CGamePtr);
+              core_game_cpp_CGame_displayBitmap_FUN_004e2890
+                        (g_CGamePtr,&stack0xffffe9c4,local_d8,local_d4);
             }
           }
           else {

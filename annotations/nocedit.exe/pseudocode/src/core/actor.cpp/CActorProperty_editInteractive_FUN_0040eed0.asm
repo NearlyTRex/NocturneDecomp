@@ -1647,7 +1647,7 @@ section .text
         ;   Label: LAB_0040fe4f
     PUSH EAX                            ; 0040fe50
     CALL core_event.cpp_CRuleList_remove_FUN_004b17c0 ; 0040fe51
-        ;   XREF to: 004b17c0 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CRuleList_remove_FUN_004b17c0(CRuleList * this_ptr)
+        ;   XREF to: 004b17c0 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CRuleList_remove_FUN_004b17c0(CRuleList * this_ptr, int index)
     ADD ESP,0x8                         ; 0040fe56
     JMP 0x0040fe15                      ; 0040fe59
         ;   XREF to: 0040fe15 (UNCONDITIONAL_JUMP)  ; LAB_0040fe15
@@ -1854,7 +1854,7 @@ section .text
     PUSH EBP                            ; 00410036
     PUSH ESI                            ; 00410037
     CALL core_event.cpp_CRuleList_insert_FUN_004b1680 ; 00410038
-        ;   XREF to: 004b1680 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CRuleList_insert_FUN_004b1680(CRuleList * this_ptr)
+        ;   XREF to: 004b1680 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CRuleList_insert_FUN_004b1680(CRuleList * this_ptr, int index, char * condition, char * event)
     ADD ESP,0x10                        ; 0041003d
     MOV ESI,0x1                         ; 00410040
     MOV EAX,ESI                         ; 00410045

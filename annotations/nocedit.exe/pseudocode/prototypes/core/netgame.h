@@ -37,7 +37,7 @@ int __cdecl findSimFrame(int sequence_number);
 
 // Original: core_netgame.cpp_allocSimFrame_FUN_0053f5a0
 // Address: 0053f5a0
-int * __cdecl allocSimFrame(void);
+SSimFrame * __cdecl allocSimFrame(int sequence_number);
 
 // Original: core_netgame.cpp_purgeOldSimFrames_FUN_0053f650
 // Address: 0053f650
@@ -93,7 +93,7 @@ void __cdecl CNetGame::processPacket(CNetGame *this_ptr,SNetworkAddr *source_add
 
 // Original: core_netgame.cpp_CNetGame_send_FUN_005411c0
 // Address: 005411c0
-void __cdecl CNetGame::send(CNetGame *this_ptr,int player_index);
+void __cdecl CNetGame::send(CNetGame *this_ptr,int player_index,SNetPacketHeader *packet);
 
 // Original: core_netgame.cpp_CNetGame_sendPacket_FUN_00541230
 // Address: 00541230
@@ -157,7 +157,7 @@ void __cdecl CNetGame::processClientFrame(CNetGame *this_ptr);
 
 // Original: core_netgame.cpp_CNetGame_applySimFrameHistory_FUN_00543800
 // Address: 00543800
-void __cdecl CNetGame::applySimFrameHistory(CNetGame *this_ptr);
+void __cdecl CNetGame::applySimFrameHistory(CNetGame *this_ptr,SSimFrame *sim_frame);
 
 // Original: core_netgame.cpp_CNetGame_getMyControls_FUN_005438c0
 // Address: 005438c0

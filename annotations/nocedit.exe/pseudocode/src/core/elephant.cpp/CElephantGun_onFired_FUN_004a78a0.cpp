@@ -10,6 +10,7 @@ void __cdecl core_elephant_cpp_CElephantGun_onFired_FUN_004a78a0(CElephantGun *t
 
 {
   CVector3f *pCVar1;
+  CKeyFramedModel *model_ptr;
   CMatrix3x3f local_6c;
   CVector3f local_44;
   CVector3f local_38;
@@ -34,8 +35,10 @@ void __cdecl core_elephant_cpp_CElephantGun_onFired_FUN_004a78a0(CElephantGun *t
     local_38.y = pCVar1->y;
     local_38.z = pCVar1->z;
   }
-  core_dmodel_cpp_loadModel_FUN_00478c00("shell.kfm");
-  core_fire_cpp_CFireEffect_createShell_FUN_004c91e0(g_CFireEffectPtr);
+  model_ptr = core_dmodel_cpp_loadModel_FUN_00478c00("shell.kfm");
+  core_fire_cpp_CFireEffect_createShell_FUN_004c91e0
+            (g_CFireEffectPtr,&(this_ptr->base).base.location.position,
+             &(this_ptr->base).base.orient.vec,&local_38,model_ptr);
   (*((this_ptr->base).base.vtable._ub)->playSound)((CDemonActor *)this_ptr,"sh-cock.wav");
   return;
 }

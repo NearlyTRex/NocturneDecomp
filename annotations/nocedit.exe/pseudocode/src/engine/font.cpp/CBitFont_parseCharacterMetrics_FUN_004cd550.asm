@@ -1,16 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_004cd550(CBitFont *this_ptr,int bitmapcount,int other2,int bitmap_index,int width,int height,int first_char)
+; void __cdecl engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_004cd550(CBitFont *this_ptr,int bitmap_count,int bitmap_width,int bitmap_height,int first_char)
 ;
 ; Parameters:
 ; CBitFont *       Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   bitmapcount
-; int              Stack[0xc]:4   other2
-; int              Stack[0x10]:4   bitmap_index
-; int              Stack[0x14]:4   width
-; int              Stack[0x18]:4   height
-; int              Stack[0x1c]:4   first_char
+; int              Stack[0x8]:4   bitmap_count
+; int              Stack[0xc]:4   bitmap_width
+; int              Stack[0x10]:4   bitmap_height
+; int              Stack[0x14]:4   first_char
 ; Local Variables:
 ; undefined1       Stack[-0x16c]:1  local_16c
 ; undefined4       Stack[-0x40]:4  local_40

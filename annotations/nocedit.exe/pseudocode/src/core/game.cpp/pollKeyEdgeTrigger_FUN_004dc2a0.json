@@ -6,17 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 14,
-    "complexity_score": 86,
+    "complexity_score": 9,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 2,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 11,
-    "suspect_count": 7,
-    "suspect_types": [
-      "stack_param"
-    ],
-    "total_lines": 25
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 23
   },
   "cross_references": [],
   "function": {
@@ -29,7 +27,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_game.cpp_pollKeyEdgeTrigger_FUN_004dc2a0",
-    "signature": "void __cdecl core_game_cpp_pollKeyEdgeTrigger_FUN_004dc2a0(void)"
+    "signature": "void __cdecl core_game_cpp_pollKeyEdgeTrigger_FUN_004dc2a0(int key_index,uint *out_state)"
   },
   "function_calls": [],
   "globals": [
@@ -50,8 +48,8 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "estimated_params": 0
+    "declared_params": 2,
+    "estimated_params": 2
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.0,
@@ -75,69 +73,27 @@
     "pcode_op_count": 44
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "key_index",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "out_state",
+        "offset": 8,
+        "size": 4,
+        "type": "uint *"
+      }
+    ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 5,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "int in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 6,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "uint *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "if (g_PrevKeyboardState[in_stack_00000004] != g_KeyboardState[in_stack_00000004]) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "if (g_PrevKeyboardState[in_stack_00000004] != g_KeyboardState[in_stack_00000004]) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "*in_stack_00000008 = (uint)(byte)g_KeyboardState[in_stack_00000004];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "*in_stack_00000008 = (uint)(byte)g_KeyboardState[in_stack_00000004];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "*in_stack_00000008 = 0;",
-      "type": "stack_param"
-    }
-  ]
+  "suspects": []
 }

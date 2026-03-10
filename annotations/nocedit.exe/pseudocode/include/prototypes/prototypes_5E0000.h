@@ -50,7 +50,7 @@ int __cdecl core_trigger_cpp_CTrigger_renderTransparent_FUN_005e00d0(CTrigger *t
 CBoundingBox3D * __cdecl core_trigger_cpp_CTrigger_getBoundingBox_FUN_005e0630(CTrigger *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_trigger_cpp_CTrigger_archive_FUN_005e0690(CTrigger *this_ptr);
 ECollisionType __cdecl core_trigger_cpp_CTrigger_getCollisionType_FUN_005e0930(CTrigger *this_ptr,SCollisionInfo *collision_info);
-int __cdecl core_trigger_cpp_CTrigger_evaluateTriggerCondition_FUN_005e0980(CTrigger *this_ptr);
+float __cdecl core_trigger_cpp_CTrigger_evaluateTriggerCondition_FUN_005e0980(CTrigger *this_ptr,CDemonActor *querying_actor,CVector3f *query_position);
 int __cdecl core_trigger_cpp_CTrigger_processActionButton_FUN_005e0a20(CTrigger *this_ptr);
 void __cdecl core_trigger_cpp_CTrigger_onLaserHit_FUN_005e0a50(CTrigger *this_ptr,SLaserInfo *laser_info);
 void __cdecl core_trigger_cpp_CTrigger_onProjectileHit_FUN_005e0aa0(CTrigger *this_ptr);
@@ -107,7 +107,7 @@ void __cdecl core_turret_cpp_CTurret_setup_FUN_005e2240(CTurret *this_ptr);
 int __cdecl core_turret_cpp_CTurret_renderOpaque_FUN_005e2320(CTurret *this_ptr);
 void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr,float delta_time);
 CBoundingBox3D * __cdecl core_turret_cpp_CTurret_getBoundingBox_FUN_005e2910(CTurret *this_ptr,CBoundingBox3D *out_box);
-float __cdecl core_turret_cpp_CTurret_getCurFrame_FUN_005e2b30(CTurret *this_ptr);
+float __cdecl core_turret_cpp_CTurret_getCurFrame_FUN_005e2b30(CTurret *this_ptr,int model_index);
 void __cdecl core_turret_cpp_CTurret_archive_FUN_005e2c40(CTurret *this_ptr);
 void __cdecl core_turret_cpp_CTurret_updateTargeting_FUN_005e2d50(CTurret *this_ptr,float delta_time);
 int __cdecl core_turret_cpp_CTurret_aimAtTarget_FUN_005e3280(CTurret *this_ptr,CVector3f *target_pos,float delta_time);

@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_00543800(CNetGame *this_ptr)
+; void __cdecl core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_00543800(CNetGame *this_ptr,SSimFrame *sim_frame)
 ;
 ; Parameters:
 ; CNetGame *       Stack[0x4]:4   this_ptr
+; SSimFrame *      Stack[0x8]:4   sim_frame
 ;
 ; XREF[2]:
 ;   core_netgame.cpp_CNetGame_processClientFrame_FUN_005435a0 at 00543640

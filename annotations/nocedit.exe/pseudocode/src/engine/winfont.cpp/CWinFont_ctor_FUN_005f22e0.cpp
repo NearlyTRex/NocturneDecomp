@@ -2,16 +2,15 @@
 // Address: 005f22e0
 // Address Range: [[005f22e0, 005f238c]]
 // Convention: __cdecl
-// Signature: CWinFont * __cdecl engine_winfont_cpp_CWinFont_ctor_FUN_005f22e0(CWinFont *this_ptr,char *font_name,int font_height,int font_width)
+// Signature: CWinFont * __cdecl engine_winfont_cpp_CWinFont_ctor_FUN_005f22e0(CWinFont *this_ptr,char *font_name,int font_height,int y_offset1,int y_offset2)
 
 #include "nocturne.h"
 
-CWinFont * __cdecl engine_winfont_cpp_CWinFont_ctor_FUN_005f22e0(CWinFont *this_ptr,char *font_name,int font_height,int font_width)
+CWinFont * __cdecl engine_winfont_cpp_CWinFont_ctor_FUN_005f22e0(CWinFont *this_ptr,char *font_name,int font_height,int y_offset1,int y_offset2)
 
 {
   CWinFont *pCVar1;
   HFONT pHVar2;
-  int in_stack_00000014;
   
   pCVar1 = (CWinFont *)engine_palette_cpp_CFont_ctor_FUN_00544eb0(&this_ptr->base);
   (pCVar1->base).vtable = &g_CWinFontVTable;
@@ -26,7 +25,7 @@ CWinFont * __cdecl engine_winfont_cpp_CWinFont_ctor_FUN_005f22e0(CWinFont *this_
   pCVar1->cached_background_color = 0;
   pHVar2 = (*g_CreateFontAFunc)(-font_height,0,0,0,400,0,0,0,1,0,0,0,0,font_name);
   pCVar1->font_handle = pHVar2;
-  pCVar1->y_offset1 = font_width;
-  pCVar1->y_offset2 = in_stack_00000014;
+  pCVar1->y_offset1 = y_offset1;
+  pCVar1->y_offset2 = y_offset2;
   return pCVar1;
 }

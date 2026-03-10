@@ -2,11 +2,11 @@
 // Address: 004b2640
 // Address Range: [[004b2640, 004b2760]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_fileio_cpp_findMaxFieldInTimestampFile_FUN_004b2640(char *filename)
+// Signature: int __cdecl engine_fileio_cpp_findMaxFieldInTimestampFile_FUN_004b2640(char *directory,char *filename)
 
 #include "nocturne.h"
 
-int __cdecl engine_fileio_cpp_findMaxFieldInTimestampFile_FUN_004b2640(char *filename)
+int __cdecl engine_fileio_cpp_findMaxFieldInTimestampFile_FUN_004b2640(char *directory,char *filename)
 
 {
   int *piVar1;
@@ -14,15 +14,13 @@ int __cdecl engine_fileio_cpp_findMaxFieldInTimestampFile_FUN_004b2640(char *fil
   int iVar3;
   int iVar4;
   uint uVar5;
-  char *in_stack_00000008;
   _FILE *local_18;
   STimestampRecord *local_14;
   
   iVar4 = 0;
   do {
     local_18 = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                         (in_stack_00000008,(char *)0x0,"rt","..\\engine\\fileio.cpp",
-                          0x153);
+                         (filename,(char *)0x0,"rt","..\\engine\\fileio.cpp",0x153);
     if (local_18 != (_FILE *)0x0) {
       _setvbuf(local_18,(char *)0x0,0,0x400);
       goto LAB_004b2681;
@@ -39,7 +37,7 @@ LAB_004b2681:
   }
   local_14 = (STimestampRecord *)0x0;
   iVar4 = engine_fileio_cpp_readTimestampFile_FUN_004b23a0
-                    ((_FILE *)&local_18,&local_14,(int *)filename);
+                    ((_FILE *)&local_18,&local_14,directory,filename);
   if (local_18 != (_FILE *)0x0) {
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_18,"..\\engine\\fileio.cpp",0xc4);
     local_18 = (_FILE *)0x0;

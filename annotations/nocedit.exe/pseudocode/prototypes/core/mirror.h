@@ -37,7 +37,7 @@ void __cdecl CMirrorReflection::setupMirrorCamera(CMirrorReflection *this_ptr);
 
 // Original: core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0
 // Address: 005214c0
-void __cdecl CMirrorReflection::setupMirrorReflection(CMirrorReflection *this_ptr);
+void __cdecl CMirrorReflection::setupMirrorReflection(CMirrorReflection *this_ptr,CVector3f *camera_position,CVector3f *camera_rotation,float projection_scale);
 
 // Original: core_mirror.cpp_CMirrorReflection_applyMirrorTransform_FUN_005222f0
 // Address: 005222f0

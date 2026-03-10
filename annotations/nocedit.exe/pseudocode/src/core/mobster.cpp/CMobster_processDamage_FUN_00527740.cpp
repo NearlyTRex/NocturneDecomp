@@ -20,7 +20,7 @@ void __cdecl core_mobster_cpp_CMobster_processDamage_FUN_00527740(CMobster *this
   
   sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handle);
   sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handles[1]);
-  core_mobster_cpp_CMobster_FUN_00527380(this_ptr,damage_info);
+  core_mobster_cpp_CMobster_processDismemberment_FUN_00527380(this_ptr,damage_info);
   if (((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[1]] == 0) &&
      ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[3]] == 0)) {
     damage_info->damage_amount = 9999.9;

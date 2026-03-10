@@ -138,7 +138,7 @@ section .text
     PUSH ESI                            ; 00543107
     PUSH EBX                            ; 00543108
     CALL core_netgame.cpp_CNetGame_send_FUN_005411c0 ; 00543109
-        ;   XREF to: 005411c0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_send_FUN_005411c0(CNetGame * this_ptr, int player_index)
+        ;   XREF to: 005411c0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_send_FUN_005411c0(CNetGame * this_ptr, int player_index, SNetPacketHeader * packet)
     MOV EAX,dword ptr [EBX + 0x114]     ; 0054310e
     SHL EAX,0x3                         ; 00543114
     MOV EDX,EAX                         ; 00543117

@@ -213,7 +213,7 @@ section .text
     PUSH ESI                            ; 0053faaa
     PUSH EBX                            ; 0053faab
     CALL core_netgame.cpp_CNetGame_send_FUN_005411c0 ; 0053faac
-        ;   XREF to: 005411c0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_send_FUN_005411c0(CNetGame * this_ptr, int player_index)
+        ;   XREF to: 005411c0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_send_FUN_005411c0(CNetGame * this_ptr, int player_index, SNetPacketHeader * packet)
     MOV EDI,dword ptr [0x02f7c8b8]      ; 0053fab1 | g_CurrentGameTime
     ADD ESP,0xc                         ; 0053fab7
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 0053faba

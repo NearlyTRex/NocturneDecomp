@@ -149,7 +149,7 @@ void __cdecl core_dfont_cpp_initFonts_FUN_004709a0(void)
   pCVar3 = (CWinFont *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x13c,"..\\core\\dfont.cpp",0xa4);
   pCVar4 = (CWinFont *)0x0;
   if (pCVar3 != (CWinFont *)0x0) {
-    pCVar4 = engine_winfont_cpp_CWinFont_ctor_FUN_005f22e0(pCVar3,g_OSFontName,0xe,2);
+    pCVar4 = engine_winfont_cpp_CWinFont_ctor_FUN_005f22e0(pCVar3,g_OSFontName,0xe,2,2);
   }
   g_MediumWinFont = pCVar4;
   if (pCVar4 == (CWinFont *)0x0) {
@@ -164,7 +164,7 @@ void __cdecl core_dfont_cpp_initFonts_FUN_004709a0(void)
   pCVar3 = (CWinFont *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x13c,"..\\core\\dfont.cpp",0xaa);
   pCVar4 = (CWinFont *)0x0;
   if (pCVar3 != (CWinFont *)0x0) {
-    pCVar4 = engine_winfont_cpp_CWinFont_ctor_FUN_005f22e0(pCVar3,g_OSFontName,0x12,0);
+    pCVar4 = engine_winfont_cpp_CWinFont_ctor_FUN_005f22e0(pCVar3,g_OSFontName,0x12,0,0);
   }
   g_ThemeWinFont = pCVar4;
   if (pCVar4 == (CWinFont *)0x0) {
@@ -179,7 +179,7 @@ void __cdecl core_dfont_cpp_initFonts_FUN_004709a0(void)
   pCVar3 = (CWinFont *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x13c,"..\\core\\dfont.cpp",0xb0);
   pCVar4 = (CWinFont *)0x0;
   if (pCVar3 != (CWinFont *)0x0) {
-    pCVar4 = engine_winfont_cpp_CWinFont_ctor_FUN_005f22e0(pCVar3,g_OSFontName,0xc,0);
+    pCVar4 = engine_winfont_cpp_CWinFont_ctor_FUN_005f22e0(pCVar3,g_OSFontName,0xc,0,0);
   }
   g_TinyWinFont = pCVar4;
   if (pCVar4 == (CWinFont *)0x0) {
@@ -194,7 +194,7 @@ void __cdecl core_dfont_cpp_initFonts_FUN_004709a0(void)
   pCVar3 = (CWinFont *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x13c,"..\\core\\dfont.cpp",0xb6);
   pCVar4 = (CWinFont *)0x0;
   if (pCVar3 != (CWinFont *)0x0) {
-    pCVar4 = engine_winfont_cpp_CWinFont_ctor_FUN_005f22e0(pCVar3,g_OSFontName,10,0);
+    pCVar4 = engine_winfont_cpp_CWinFont_ctor_FUN_005f22e0(pCVar3,g_OSFontName,10,0,0);
   }
   g_DebugWinFont = pCVar4;
   if (pCVar4 == (CWinFont *)0x0) {

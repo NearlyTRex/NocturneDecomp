@@ -185,7 +185,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0xd4]      ; 00542f6b
     PUSH ESI                            ; 00542f72
     CALL core_netgame.cpp_CNetGame_send_FUN_005411c0 ; 00542f73
-        ;   XREF to: 005411c0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_send_FUN_005411c0(CNetGame * this_ptr, int player_index)
+        ;   XREF to: 005411c0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_send_FUN_005411c0(CNetGame * this_ptr, int player_index, SNetPacketHeader * packet)
     ADD ESP,0xc                         ; 00542f78
     CALL wincore_winrun.cpp_getTime_FUN_005f2dc0 ; 00542f7b
         ;   XREF to: 005f2dc0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005f2dc0()

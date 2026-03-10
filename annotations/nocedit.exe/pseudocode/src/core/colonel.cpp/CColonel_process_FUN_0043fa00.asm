@@ -48,8 +48,8 @@
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_00429820
 ;   core_charactr.cpp_CCharacter_process_FUN_00429870
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_0042ca70
-;   core_colonel.cpp_CColonel_FUN_0043ff20
-;   core_colonel.cpp_CColonel_FUN_00440430
+;   core_colonel.cpp_CColonel_processAI_FUN_0043ff20
+;   core_colonel.cpp_CColonel_processMotionEvents_FUN_00440430
 ;   core_hero.cpp_CHero_executeLeverPull_FUN_004f30f0
 ;   core_hero.cpp_CHero_tryInteract_FUN_004f2af0
 ;   core_hero.cpp_CHero_tryOpenDoor_FUN_004f2ed0
@@ -97,8 +97,8 @@ section .text
     MOV dword ptr [EAX + 0x4],EDX       ; 0043fa5c
     MOV EDX,dword ptr [EAX + 0x4]       ; 0043fa5f
     MOV dword ptr [EAX],EDX             ; 0043fa62
-    CALL core_colonel.cpp_CColonel_FUN_00440430 ; 0043fa64
-        ;   XREF to: 00440430 (UNCONDITIONAL_CALL)  ; int core_colonel.cpp_CColonel_FUN_00440430(CColonel * this_ptr)
+    CALL core_colonel.cpp_CColonel_processMotionEvents_FUN_00440430 ; 0043fa64
+        ;   XREF to: 00440430 (UNCONDITIONAL_CALL)  ; void core_colonel.cpp_CColonel_processMotionEvents_FUN_00440430(CColonel * this_ptr, float delta_time)
     MOV EDX,dword ptr [EBX + 0xbe28]    ; 0043fa69
     ADD ESP,0x8                         ; 0043fa6f
     CMP EDX,0x2                         ; 0043fa72
@@ -106,8 +106,8 @@ section .text
         ;   XREF to: 0043fa83 (CONDITIONAL_JUMP)  ; LAB_0043fa83
     PUSH dword ptr [EBP + 0x18]         ; 0043fa77
     PUSH EBX                            ; 0043fa7a
-    CALL core_colonel.cpp_CColonel_FUN_0043ff20 ; 0043fa7b
-        ;   XREF to: 0043ff20 (UNCONDITIONAL_CALL)  ; void core_colonel.cpp_CColonel_FUN_0043ff20(CColonel * this_ptr)
+    CALL core_colonel.cpp_CColonel_processAI_FUN_0043ff20 ; 0043fa7b
+        ;   XREF to: 0043ff20 (UNCONDITIONAL_CALL)  ; void core_colonel.cpp_CColonel_processAI_FUN_0043ff20(CColonel * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0043fa80
     FLD float ptr [EBP + 0x18]          ; 0043fa83
         ;   Label: LAB_0043fa83

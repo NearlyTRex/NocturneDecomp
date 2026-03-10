@@ -13,7 +13,7 @@ void __cdecl core_ladder_cpp_CLadder_archive_FUN_005029c0(CLadder *this_ptr)
   core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b8f0(&this_ptr->model,"model");
   core_actor_cpp_archiveVector_FUN_0040b340(&this_ptr->ladder_size,"ladderSize");
   core_actor_cpp_archiveActor_FUN_0040b870(&this_ptr->master_actor,"masterActor");
-  core_ladder_cpp_CLadder_FUN_00502b80(this_ptr);
+  core_ladder_cpp_CLadder_cacheRelativePosition_FUN_00502b80(this_ptr);
   if (g_CLadderClassVersion < 2) {
     return;
   }

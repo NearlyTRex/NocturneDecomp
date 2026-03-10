@@ -1,0 +1,246 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 284,
+    "complexity_score": 135,
+    "cross_reference_count": 1,
+    "function_call_count": 7,
+    "global_count": 9,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 105,
+    "suspect_count": 2,
+    "suspect_types": [
+      "param_count_too_few",
+      "warning_type_propagation"
+    ],
+    "total_lines": 389
+  },
+  "cross_references": [
+    {
+      "addr": "005fc4f0",
+      "from_addr": "005fc4fd",
+      "name": "core_zombie.cpp_CZombie_processDamage_FUN_005fc4f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005fc220",
+    "address_range": [
+      [
+        "005fc220",
+        "005fc4ea"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_zombie.cpp_CZombie_processDismemberment_FUN_005fc220",
+    "signature": "void __cdecl core_zombie_cpp_CZombie_processDismemberment_FUN_005fc220(CZombie *this_ptr,SDamageInfo *damage_info)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cd10",
+      "is_variadic": false,
+      "name": "core_actor.cpp_randomChance_FUN_0040cd10"
+    },
+    {
+      "addr": "0041a050",
+      "is_variadic": false,
+      "name": "core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0041a050"
+    },
+    {
+      "addr": "00418e10",
+      "is_variadic": false,
+      "name": "core_bodypart.cpp_createBodyPart_FUN_00418e10"
+    },
+    {
+      "addr": "0042bcc0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_detachBodyPart_FUN_0042bcc0"
+    },
+    {
+      "addr": "0042bd30",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_0042bd30"
+    },
+    {
+      "addr": "0042f300",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_playSoundWithCooldown_FUN_0042f300"
+    },
+    {
+      "addr": "005feb5c",
+      "is_variadic": false,
+      "name": "crt_stdlib.c_rand_FUN_005feb5c"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005fc200",
+      "name": "switchdataD_005fc200",
+      "type": "void*",
+      "value": "005fc25d"
+    },
+    {
+      "addr": "006589b9",
+      "name": "s_limb_wav_006589b9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006589c5",
+      "name": "DOUBLE_006589c5",
+      "type": "double",
+      "value": "7"
+    },
+    {
+      "addr": "006589cd",
+      "name": "DOUBLE_006589cd",
+      "type": "double",
+      "value": "0.5"
+    },
+    {
+      "addr": "006589d5",
+      "name": "DOUBLE_006589d5",
+      "type": "double",
+      "value": "2.5"
+    },
+    {
+      "addr": "0067b654",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "02d81a9c"
+    },
+    {
+      "addr": "02d81a9c",
+      "name": "g_CGameInstance",
+      "type": "CGame",
+      "value": null
+    },
+    {
+      "addr": "02d81ab0",
+      "name": "g_CGameInstance.blood_flag",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d81c7c",
+      "name": "g_CGameInstance.gratuitous_dismemberment",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005fc4fd",
+        "call_type": "direct",
+        "caller": "core_zombie.cpp_CZombie_processDamage_FUN_005fc4f0",
+        "estimated_params": 5,
+        "instructions_analyzed": 7,
+        "reg_params": [],
+        "stack_params": 5
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 2,
+    "estimated_params": 5
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.823255813953488,
+    "instruction_count": 215,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 16,
+      "BOOL_OR": 2,
+      "BRANCH": 8,
+      "BRANCHIND": 1,
+      "CALL": 13,
+      "CBRANCH": 22,
+      "COPY": 293,
+      "FLOAT2FLOAT": 10,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_MULT": 3,
+      "FLOAT_NAN": 2,
+      "INT2FLOAT": 1,
+      "INT_ADD": 88,
+      "INT_AND": 95,
+      "INT_CARRY": 15,
+      "INT_EQUAL": 77,
+      "INT_LEFT": 5,
+      "INT_LESS": 19,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 9,
+      "INT_OR": 10,
+      "INT_SBORROW": 19,
+      "INT_SCARRY": 15,
+      "INT_SDIV": 1,
+      "INT_SEXT": 1,
+      "INT_SLESS": 38,
+      "INT_SREM": 1,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 80,
+      "INT_ZEXT": 6,
+      "LOAD": 66,
+      "POPCOUNT": 38,
+      "RETURN": 3,
+      "STORE": 72,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 1037
+  },
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CZombie *"
+      },
+      {
+        "is_param": true,
+        "name": "damage_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SDamageInfo *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 2,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 5,
+      "fix_type": "add_params",
+      "match": "declared:2 vs estimated:5",
+      "param_delta": 3,
+      "text": "Function declares 2 params but call sites push 5 (3 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

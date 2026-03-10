@@ -109,7 +109,7 @@ section .text
         ;   Label: LAB_0042ba64
     PUSH EDI                            ; 0042ba65
     CALL core_charactr.cpp_CCharacter_detachBodyPart_FUN_0042bcc0 ; 0042ba66
-        ;   XREF to: 0042bcc0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_detachBodyPart_FUN_0042bcc0(CCharacter * this_ptr, int part_index)
+        ;   XREF to: 0042bcc0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_detachBodyPart_FUN_0042bcc0(CCharacter * this_ptr, int part_index, CVector3f * initial_velocity, int render_in_background)
     ADD ESP,0x10                        ; 0042ba6b
     MOV EDX,dword ptr [ESP + 0x8c]      ; 0042ba6e
     INC ESI                             ; 0042ba75

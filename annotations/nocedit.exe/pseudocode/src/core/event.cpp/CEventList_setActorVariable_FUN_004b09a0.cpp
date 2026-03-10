@@ -2,89 +2,89 @@
 // Address: 004b09a0
 // Address Range: [[004b09a0, 004b0b7a]]
 // Convention: __cdecl
-// Signature: void __cdecl core_event_cpp_CEventList_setActorVariable_FUN_004b09a0(CEventList *this_ptr)
+// Signature: void __cdecl core_event_cpp_CEventList_setActorVariable_FUN_004b09a0(CEventList *this_ptr,char *var_name,CDemonActor *actor)
 
 #include "nocturne.h"
 
-void __cdecl core_event_cpp_CEventList_setActorVariable_FUN_004b09a0(CEventList *this_ptr)
+void __cdecl core_event_cpp_CEventList_setActorVariable_FUN_004b09a0(CEventList *this_ptr,char *var_name,CDemonActor *actor)
 
 {
   char cVar1;
-  int iVar2;
+  char *pcVar2;
+  int iVar3;
   char (*dest) [30];
-  char (*pacVar3) [30];
-  int iVar4;
-  char *in_stack_00000008;
-  CDemonActor *in_stack_0000000c;
+  char (*pacVar4) [30];
+  int iVar5;
   
-  if ((in_stack_0000000c != (CDemonActor *)0x0) && (in_stack_0000000c->actor_name[0] == '\0')) {
+  if ((actor != (CDemonActor *)0x0) && (actor->actor_name[0] == '\0')) {
     g_CurrentFilename = "..\\core\\event.cpp";
     g_CurrentLineNumber = 0xb2b;
-    core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(in_stack_0000000c);
-    core_main_c_displayErrorAndQuit_FUN_00506f10("Tried to assign actor var %s an actor of type %s with no name");
+    pcVar2 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(actor);
+    core_main_c_displayErrorAndQuit_FUN_00506f10
+              ("Tried to assign actor var %s an actor of type %s with no name",var_name,pcVar2);
   }
-  iVar2 = core_event_cpp_CEventList_findActorVariable_FUN_004b0bf0(this_ptr,in_stack_00000008);
-  if (iVar2 < 0) {
-    if (in_stack_0000000c != (CDemonActor *)0x0) {
+  iVar3 = core_event_cpp_CEventList_findActorVariable_FUN_004b0bf0(this_ptr,var_name);
+  if (iVar3 < 0) {
+    if (actor != (CDemonActor *)0x0) {
       if (0x18 < (this_ptr->actor_vars).count) {
         g_CurrentFilename = "..\\core\\event.cpp";
         g_CurrentLineNumber = 0xb38;
         core_main_c_displayErrorAndQuit_FUN_00506f10("CEventList::setActorVariable - already too many actor variables.  Max is %d.",0x19);
       }
-      pacVar3 = (this_ptr->actor_vars).var_names + (this_ptr->actor_vars).count;
+      pacVar4 = (this_ptr->actor_vars).var_names + (this_ptr->actor_vars).count;
       do {
-        cVar1 = *in_stack_00000008;
-        (*pacVar3)[0] = cVar1;
+        cVar1 = *var_name;
+        (*pacVar4)[0] = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = in_stack_00000008[1];
-        in_stack_00000008 = in_stack_00000008 + 2;
-        (*pacVar3)[1] = cVar1;
-        pacVar3 = (char (*) [30])(*pacVar3 + 2);
+        cVar1 = var_name[1];
+        var_name = var_name + 2;
+        (*pacVar4)[1] = cVar1;
+        pacVar4 = (char (*) [30])(*pacVar4 + 2);
       } while (cVar1 != '\0');
-      pacVar3 = (this_ptr->actor_vars).actor_names + (this_ptr->actor_vars).count;
+      pacVar4 = (this_ptr->actor_vars).actor_names + (this_ptr->actor_vars).count;
       do {
-        cVar1 = in_stack_0000000c->actor_name[0];
-        (*pacVar3)[0] = cVar1;
+        cVar1 = actor->actor_name[0];
+        (*pacVar4)[0] = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = in_stack_0000000c->actor_name[1];
-        in_stack_0000000c = (CDemonActor *)(in_stack_0000000c->actor_name + 2);
-        (*pacVar3)[1] = cVar1;
-        pacVar3 = (char (*) [30])(*pacVar3 + 2);
+        cVar1 = actor->actor_name[1];
+        actor = (CDemonActor *)(actor->actor_name + 2);
+        (*pacVar4)[1] = cVar1;
+        pacVar4 = (char (*) [30])(*pacVar4 + 2);
       } while (cVar1 != '\0');
       (this_ptr->actor_vars).count = (this_ptr->actor_vars).count + 1;
       return;
     }
   }
   else {
-    dest = (this_ptr->actor_vars).actor_names + iVar2;
-    pacVar3 = (this_ptr->actor_vars).var_names + iVar2;
-    if (in_stack_0000000c == (CDemonActor *)0x0) {
-      iVar4 = (this_ptr->actor_vars).count + -1;
-      (this_ptr->actor_vars).count = iVar4;
+    dest = (this_ptr->actor_vars).actor_names + iVar3;
+    pacVar4 = (this_ptr->actor_vars).var_names + iVar3;
+    if (actor == (CDemonActor *)0x0) {
+      iVar5 = (this_ptr->actor_vars).count + -1;
+      (this_ptr->actor_vars).count = iVar5;
       memmove
-                (pacVar3,(this_ptr->actor_vars).var_names + iVar2 + 1,(iVar4 - iVar2) * 0x1e);
+                (pacVar4,(this_ptr->actor_vars).var_names + iVar3 + 1,(iVar5 - iVar3) * 0x1e);
       memmove
-                (dest,(this_ptr->actor_vars).actor_names + iVar2 + 1,
-                 ((this_ptr->actor_vars).count - iVar2) * 0x1e);
+                (dest,(this_ptr->actor_vars).actor_names + iVar3 + 1,
+                 ((this_ptr->actor_vars).count - iVar3) * 0x1e);
       return;
     }
     do {
-      cVar1 = *in_stack_00000008;
-      (*pacVar3)[0] = cVar1;
+      cVar1 = *var_name;
+      (*pacVar4)[0] = cVar1;
       if (cVar1 == '\0') break;
-      cVar1 = in_stack_00000008[1];
-      in_stack_00000008 = in_stack_00000008 + 2;
-      (*pacVar3)[1] = cVar1;
-      pacVar3 = (char (*) [30])(*pacVar3 + 2);
+      cVar1 = var_name[1];
+      var_name = var_name + 2;
+      (*pacVar4)[1] = cVar1;
+      pacVar4 = (char (*) [30])(*pacVar4 + 2);
     } while (cVar1 != '\0');
     do {
-      cVar1 = in_stack_0000000c->actor_name[0];
+      cVar1 = actor->actor_name[0];
       (*dest)[0] = cVar1;
       if (cVar1 == '\0') {
         return;
       }
-      cVar1 = in_stack_0000000c->actor_name[1];
-      in_stack_0000000c = (CDemonActor *)(in_stack_0000000c->actor_name + 2);
+      cVar1 = actor->actor_name[1];
+      actor = (CDemonActor *)(actor->actor_name + 2);
       (*dest)[1] = cVar1;
       dest = (char (*) [30])(*dest + 2);
     } while (cVar1 != '\0');

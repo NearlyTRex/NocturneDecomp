@@ -2,6 +2,7 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CFireEffect.h"
 #include "types/classes/CPoly.h"
 #include "types/classes/CSoundDevice.h"
 #include "types/classes/CVector3d.h"
@@ -13,6 +14,7 @@
 // =============================================================================
 
 // Forward declarations
+struct CFireEffect;
 struct CPoly;
 struct CSoundDevice;
 struct CVector3d;
@@ -21,6 +23,9 @@ struct CWeapon;
 
 // Function Definition: dt_11b7af31
 typedef void dt_11b7af31(struct CPoly* param, struct CVector3d* param1);
+
+// Function Definition: dt_486ab265
+typedef void dt_486ab265(struct CFireEffect* this_ptr, struct CVector3f* origin, struct CVector3f* hit_position, float beam_width, float reticle_intensity, struct CVector3f* reflection_normal, int red, int green, int blue, float halo_spread);
 
 // Function Definition: dt_536b4adf
 typedef int dt_536b4adf(struct CSoundDevice* param);

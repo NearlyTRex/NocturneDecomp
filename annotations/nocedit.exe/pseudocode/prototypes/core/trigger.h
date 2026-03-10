@@ -45,7 +45,7 @@ ECollisionType __cdecl CTrigger::getCollisionType(CTrigger *this_ptr,SCollisionI
 
 // Original: core_trigger.cpp_CTrigger_evaluateTriggerCondition_FUN_005e0980
 // Address: 005e0980
-int __cdecl CTrigger::evaluateTriggerCondition(CTrigger *this_ptr);
+float __cdecl CTrigger::evaluateTriggerCondition(CTrigger *this_ptr,CDemonActor *querying_actor,CVector3f *query_position);
 
 // Original: core_trigger.cpp_CTrigger_processActionButton_FUN_005e0a20
 // Address: 005e0a20

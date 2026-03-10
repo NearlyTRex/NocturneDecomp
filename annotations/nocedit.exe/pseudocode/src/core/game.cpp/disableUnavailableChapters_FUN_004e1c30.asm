@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_game_cpp_disableUnavailableChapters_FUN_004e1c30(void)
+; void __cdecl core_game_cpp_disableUnavailableChapters_FUN_004e1c30(CPickList *pick_list,int chapter_index)
 ;
+; Parameters:
+; CPickList *      Stack[0x4]:4   pick_list
+; int              Stack[0x8]:4   chapter_index
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_rt_0062cc71

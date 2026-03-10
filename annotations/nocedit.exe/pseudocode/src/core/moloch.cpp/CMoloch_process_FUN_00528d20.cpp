@@ -74,7 +74,7 @@ void __cdecl core_moloch_cpp_CMoloch_process_FUN_00528d20(CMoloch *this_ptr,floa
                     ((CCharacter *)this_ptr,delta_time);
   if (iVar6 == 0) {
     if ((this_ptr->base).control_type == HERO_CONTROL_AI) {
-      core_moloch_cpp_CMoloch_FUN_005293b0(this_ptr);
+      core_moloch_cpp_CMoloch_processAI_FUN_005293b0(this_ptr,delta_time);
     }
     pSVar8 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                        (&(this_ptr->base).base.model.motion_controller);
@@ -87,7 +87,7 @@ void __cdecl core_moloch_cpp_CMoloch_process_FUN_00528d20(CMoloch *this_ptr,floa
       }
       if ((this_ptr->base).player_control.action_states[6] != 0) {
         if (this_ptr->morphing == 0) {
-          core_moloch_cpp_CMoloch_FUN_00529900(this_ptr);
+          core_moloch_cpp_CMoloch_startMorph_FUN_00529900(this_ptr);
         }
         (this_ptr->base).player_control.action_states[6] = 0;
       }
@@ -200,7 +200,7 @@ LAB_00528f8e:
       iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                         (g_CEventListPtr,this_ptr->demon_to_human_condition);
       if (iVar6 != 0) {
-        core_moloch_cpp_CMoloch_FUN_00529900(this_ptr);
+        core_moloch_cpp_CMoloch_startMorph_FUN_00529900(this_ptr);
         return;
       }
     }
@@ -208,7 +208,7 @@ LAB_00528f8e:
       iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                         (g_CEventListPtr,this_ptr->human_to_demon_condition);
       if (iVar6 != 0) {
-        core_moloch_cpp_CMoloch_FUN_00529900(this_ptr);
+        core_moloch_cpp_CMoloch_startMorph_FUN_00529900(this_ptr);
         return;
       }
     }

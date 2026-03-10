@@ -1,0 +1,109 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 47,
+    "complexity_score": 20,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 20,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 67
+  },
+  "cross_references": [
+    {
+      "addr": "004ddaf0",
+      "from_addr": "004e00c6",
+      "name": "core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004dda80",
+    "address_range": [
+      [
+        "004dda80",
+        "004ddae6"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_game.cpp_scaleBoneRecursive_FUN_004dda80",
+    "signature": "void __cdecl core_game_cpp_scaleBoneRecursive_FUN_004dda80(CDeformableModelInstance *model_instance,CSkeleton *skeleton,float scale_factor,int bone_index)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.891891891891892,
+    "instruction_count": 37,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 1,
+      "CBRANCH": 3,
+      "COPY": 49,
+      "FLOAT2FLOAT": 3,
+      "FLOAT_MULT": 1,
+      "INT_ADD": 21,
+      "INT_AND": 17,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 16,
+      "INT_LESS": 2,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 8,
+      "INT_SUB": 11,
+      "INT_XOR": 1,
+      "LOAD": 15,
+      "POPCOUNT": 8,
+      "RETURN": 1,
+      "STORE": 10
+    },
+    "pcode_op_count": 181
+  },
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "model_instance",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModelInstance *"
+      },
+      {
+        "is_param": true,
+        "name": "skeleton",
+        "offset": 8,
+        "size": 4,
+        "type": "CSkeleton *"
+      },
+      {
+        "is_param": true,
+        "name": "scale_factor",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "bone_index",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

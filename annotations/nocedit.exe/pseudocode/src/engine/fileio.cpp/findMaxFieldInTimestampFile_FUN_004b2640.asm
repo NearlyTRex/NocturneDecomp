@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_fileio_cpp_findMaxFieldInTimestampFile_FUN_004b2640(char *filename)
+; int __cdecl engine_fileio_cpp_findMaxFieldInTimestampFile_FUN_004b2640(char *directory,char *filename)
 ;
 ; Parameters:
-; char *           Stack[0x4]:4   filename
+; char *           Stack[0x4]:4   directory
+; char *           Stack[0x8]:4   filename
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
@@ -76,7 +77,7 @@ section .text
     PUSH EAX                            ; 004b26a1
     MOV dword ptr [ESP + 0x14],ECX      ; 004b26a2
     CALL engine_fileio.cpp_readTimestampFile_FUN_004b23a0 ; 004b26a6
-        ;   XREF to: 004b23a0 (UNCONDITIONAL_CALL)  ; int engine_fileio.cpp_readTimestampFile_FUN_004b23a0(_FILE * file, STimestampRecord * * records, int * count)
+        ;   XREF to: 004b23a0 (UNCONDITIONAL_CALL)  ; int engine_fileio.cpp_readTimestampFile_FUN_004b23a0(_FILE * file_handle, STimestampRecord * * records, char * directory, char * filename)
     ADD ESP,0x10                        ; 004b26ab
     MOV EBP,dword ptr [ESP]             ; 004b26ae
     MOV EDI,EAX                         ; 004b26b1

@@ -136,7 +136,7 @@ void __cdecl core_skeledit_cpp_readQuotedString_FUN_00589740(_FILE *file_handle,
 void __cdecl core_skeledit_cpp_loadIni_FUN_005897b0(void);
 void __cdecl core_skeledit_cpp_saveIni_FUN_00589a40(void);
 void __cdecl core_skeledit_cpp_onLodGenerationComplete_FUN_00589b10(int use_simple_message);
-void __cdecl core_skeledit_cpp_createMeshPrecomputeFile_FUN_00589bb0(CLodMesh *mesh_ptr);
+void __cdecl core_skeledit_cpp_createMeshPrecomputeFile_FUN_00589bb0(CLodMesh *mesh_ptr,CLodMeshPrecomputeEntry *precompute_entry);
 int __cdecl core_skeledit_cpp_CLodMesh_selectAndGenerateLods_FUN_00589c20(CLodMesh *this_ptr,CLodMeshPrecomputeEntry *entry,int render_mode);
 void __cdecl core_skeledit_cpp_warnIfFileExistsInPod_FUN_00589f40(char *base_path,char *filename);
 CLodMeshPrecomputeEntry * __cdecl core_skeledit_cpp_CLodMeshPrecomputeEntry_ctor_FUN_00589fa0(CLodMeshPrecomputeEntry *this_ptr);

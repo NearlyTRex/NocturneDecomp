@@ -114,8 +114,8 @@ section .text
     MOV dword ptr [ESI + 0x4],EAX       ; 004f814b
     MOV EAX,dword ptr [ESI + 0x4]       ; 004f814e
     MOV dword ptr [ESI],EAX             ; 004f8151
-    CALL core_icepick.cpp_CIcePick_FUN_004f93a0 ; 004f8153
-        ;   XREF to: 004f93a0 (UNCONDITIONAL_CALL)  ; void core_icepick.cpp_CIcePick_FUN_004f93a0(CIcePick * this_ptr)
+    CALL core_icepick.cpp_CIcePick_processMotionEvents_FUN_004f93a0 ; 004f8153
+        ;   XREF to: 004f93a0 (UNCONDITIONAL_CALL)  ; void core_icepick.cpp_CIcePick_processMotionEvents_FUN_004f93a0(CIcePick * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004f8158
     PUSH dword ptr [EBP + 0x18]         ; 004f815b
     FLD float ptr [EBX + 0x23b4]        ; 004f815e
@@ -328,8 +328,8 @@ section .text
     PUSH dword ptr [EBP + 0x18]         ; 004f83b3
         ;   Label: LAB_004f83b3
     PUSH EBX                            ; 004f83b6
-    CALL core_icepick.cpp_CIcePick_FUN_004f8810 ; 004f83b7
-        ;   XREF to: 004f8810 (UNCONDITIONAL_CALL)  ; void core_icepick.cpp_CIcePick_FUN_004f8810(CIcePick * this_ptr)
+    CALL core_icepick.cpp_CIcePick_updateShootBlend_FUN_004f8810 ; 004f83b7
+        ;   XREF to: 004f8810 (UNCONDITIONAL_CALL)  ; void core_icepick.cpp_CIcePick_updateShootBlend_FUN_004f8810(CIcePick * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004f83bc
     PUSH dword ptr [EBP + 0x18]         ; 004f83bf
     PUSH EBX                            ; 004f83c2
@@ -346,8 +346,8 @@ section .text
     PUSH dword ptr [EBP + 0x18]         ; 004f83d2
         ;   Label: LAB_004f83d2
     PUSH EBX                            ; 004f83d5
-    CALL core_icepick.cpp_CIcePick_FUN_004f8c70 ; 004f83d6
-        ;   XREF to: 004f8c70 (UNCONDITIONAL_CALL)  ; void core_icepick.cpp_CIcePick_FUN_004f8c70(CIcePick * this_ptr)
+    CALL core_icepick.cpp_CIcePick_processAI_FUN_004f8c70 ; 004f83d6
+        ;   XREF to: 004f8c70 (UNCONDITIONAL_CALL)  ; void core_icepick.cpp_CIcePick_processAI_FUN_004f8c70(CIcePick * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004f83db
     JMP 0x004f80f0                      ; 004f83de
         ;   XREF to: 004f80f0 (UNCONDITIONAL_JUMP)  ; LAB_004f80f0
@@ -499,15 +499,15 @@ section .text
     JZ 0x004f81b6                       ; 004f8572
         ;   XREF to: 004f81b6 (CONDITIONAL_JUMP)  ; LAB_004f81b6
     PUSH EBX                            ; 004f8578
-    CALL core_icepick.cpp_CIcePick_FUN_004f8970 ; 004f8579
-        ;   XREF to: 004f8970 (UNCONDITIONAL_CALL)  ; int core_icepick.cpp_CIcePick_FUN_004f8970(CIcePick * this_ptr)
+    CALL core_icepick.cpp_CIcePick_findAndPickupGun_FUN_004f8970 ; 004f8579
+        ;   XREF to: 004f8970 (UNCONDITIONAL_CALL)  ; int core_icepick.cpp_CIcePick_findAndPickupGun_FUN_004f8970(CIcePick * this_ptr)
     ADD ESP,0x4                         ; 004f857e
     TEST EAX,EAX                        ; 004f8581
     JNZ 0x004f81b6                      ; 004f8583
         ;   XREF to: 004f81b6 (CONDITIONAL_JUMP)  ; LAB_004f81b6
     PUSH EBX                            ; 004f8589
-    CALL core_icepick.cpp_CIcePick_FUN_004f8ad0 ; 004f858a
-        ;   XREF to: 004f8ad0 (UNCONDITIONAL_CALL)  ; int core_icepick.cpp_CIcePick_FUN_004f8ad0(CIcePick * this_ptr)
+    CALL core_icepick.cpp_CIcePick_startThrowAttack_FUN_004f8ad0 ; 004f858a
+        ;   XREF to: 004f8ad0 (UNCONDITIONAL_CALL)  ; int core_icepick.cpp_CIcePick_startThrowAttack_FUN_004f8ad0(CIcePick * this_ptr)
     ADD ESP,0x4                         ; 004f858f
     JMP 0x004f81b6                      ; 004f8592
         ;   XREF to: 004f81b6 (UNCONDITIONAL_JUMP)  ; LAB_004f81b6

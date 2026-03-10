@@ -126,7 +126,7 @@ void __cdecl core_setdir_cpp_CZThumb_setupZBufferScanlines_FUN_00574e30(CZThumb 
 void __cdecl core_setdir_cpp_CZThumb_pushRenderingContext_FUN_00574e70(CZThumb *this_ptr);
 void __cdecl core_setdir_cpp_CZThumb_popRenderingContext_FUN_00574ef0(CZThumb *this_ptr);
 void __cdecl core_setdir_cpp_CZThumb_render_FUN_00574f20(CZThumb *this_ptr,int screen_x,int screen_y);
-float __cdecl core_setdir_cpp_CZThumb_testCameraVisibility_FUN_005750a0(CZThumb *this_ptr);
+float __cdecl core_setdir_cpp_testCameraVisibility_FUN_005750a0(CDemonActor *actor,CVector3i *bbox_vertices,SMRGLHeaderPrimitive *primitives, int camera_index,C3DSCamera *camera,float radius);
 int __cdecl core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0(CDemonSet *this_ptr,CDemonActor *actor,int force_evaluation_mode);
 void __cdecl core_setdir_cpp_CDemonSet_setPendingCamera_FUN_00575b00(CDemonSet *this_ptr,int camera_index,float hold_time);
 void __cdecl core_setdir_cpp_CDemonSet_clearCameraSwitchCooldown_FUN_00575b20(CDemonSet *this_ptr);

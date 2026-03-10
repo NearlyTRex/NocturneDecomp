@@ -37,7 +37,7 @@ void __cdecl core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(C
   ushort uVar22;
   CPickList local_1900;
   CPickList local_1558;
-  byte local_11b0 [936];
+  CPickList local_11b0;
   CPickList local_e08;
   char local_a60 [256];
   char local_960 [256];
@@ -505,7 +505,7 @@ LAB_0059722b:
       core_skeleton_cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510
                 (this_ptr,(SPose *)&stack0xffffcc64);
       core_skeleton_cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0
-                (this_ptr,(SPose *)&DAT_036644d8);
+                (this_ptr,&SPose_036644d8);
       engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0048d6c0(g_CDemonRendererPtr2,1);
       engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,0x8000);
       core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
@@ -516,9 +516,9 @@ LAB_0059722b:
     }
     iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_F4);
     if (iVar7 != 0) {
-      DAT_036712e0 = DAT_036712e0 + 1;
-      _sprintf(&DAT_036712e8,"noc%d.pcx");
-      engine_pcx_c_saveScreenshotGeneral_FUN_005490c0(&DAT_036712e8);
+      g_SkeletonViewModelScreenshotCounter = g_SkeletonViewModelScreenshotCounter + 1;
+      _sprintf(g_SkeletonViewModelScreenshotFilename,"noc%d.pcx");
+      engine_pcx_c_saveScreenshotGeneral_FUN_005490c0(g_SkeletonViewModelScreenshotFilename);
     }
     if (local_4c != 0) {
       local_dc.x = (int)-local_100.x;
@@ -526,10 +526,11 @@ LAB_0059722b:
       local_dc.z = (int)-local_100.z;
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
                 (g_CDemonRendererPtr2,&local_d0,&local_dc);
-      local_154.x = (int)NAN;
-      *(float *)((int)&local_154 + (uint)bVar20 * -8 + 4) = (&FLOAT_00681a00)[(uint)bVar20 * -2];
-      *(float *)((int)&local_154 + (uint)bVar20 * -8 + (uint)bVar20 * -8 + 8) =
-           (&NAN)[(uint)bVar20 * -2 + (uint)bVar20 * -2];
+      local_154.x = (int)CVector3f_006819fc.x;
+      *(uint *)((int)&local_154 + (uint)bVar20 * -8 + 4) =
+           *(uint *)((int)&CVector3f_006819fc + (uint)bVar20 * -8 + 4);
+      *(uint *)((int)&local_154 + (uint)bVar20 * -8 + (uint)bVar20 * -8 + 8) =
+           *(uint *)((uint)bVar20 * -8 + 0x681a04 + (uint)bVar20 * -8);
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_154);
       local_154.x = 0xf00;
@@ -934,23 +935,22 @@ LAB_005975b4:
           }
         }
         if (local_2c == 1) {
-          shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)local_11b0);
+          shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_11b0);
           iVar7 = 0;
           string_data = local_28;
           if (0 < local_bc->bone_count) {
             do {
-              shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                        ((CStrList *)local_11b0,string_data->bone_name);
+              shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_11b0.base,string_data->bone_name);
               iVar7 = iVar7 + 1;
               string_data = string_data + 1;
             } while (iVar7 < local_bc->bone_count);
           }
           iVar7 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                            ((CPickList *)local_11b0,"Select bone",-1,0);
+                            (&local_11b0,"Select bone",-1,0);
           if (-1 < iVar7) {
             local_64 = iVar7;
           }
-          shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)local_11b0,0);
+          shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_11b0,0);
         }
         if (local_2c == 2) {
           shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_004a0300
@@ -1037,7 +1037,7 @@ LAB_005975b4:
       }
       else {
         core_skeleton_cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510
-                  (this_ptr,(SPose *)&DAT_036644d8);
+                  (this_ptr,&SPose_036644d8);
         local_88 = 1;
       }
     }

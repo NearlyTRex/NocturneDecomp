@@ -6,19 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 390,
-    "complexity_score": 261,
+    "complexity_score": 235,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 9,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 196,
-    "suspect_count": 5,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 195,
+    "suspect_count": 3,
     "suspect_types": [
       "decompiler_intrinsic",
-      "pointer_cast",
-      "stack_param"
+      "pointer_cast"
     ],
-    "total_lines": 586
+    "total_lines": 585
   },
   "cross_references": [
     {
@@ -469,24 +468,16 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_fffffdd0",
-      "severity": "moderate",
-      "text": "CVector3f *in_stack_fffffdd0;",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 98,
+      "line": 97,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)afStack_22c + iVar12 + -4) = 0;",
+      "text": "*(uint *)((int)local_230 + iVar12) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 145,
+      "line": 144,
       "match": "SQRT",
       "severity": "mild",
       "text": "local_14 = SQRT(local_5c * local_5c + local_64 * local_64 + local_60 * local_60);",
@@ -494,19 +485,11 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 167,
+      "line": 166,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "if (afStack_22c[iVar9 + -1] < *(float *)((int)afStack_22c + iVar10 + -4)) {",
+      "text": "if (local_230[iVar9] < *(float *)((int)local_230 + iVar10)) {",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 190,
-      "match": "in_stack_fffffdd0",
-      "severity": "moderate",
-      "text": "(this_ptr,iVar9,in_stack_fffffdd0);",
-      "type": "stack_param"
     }
   ]
 }

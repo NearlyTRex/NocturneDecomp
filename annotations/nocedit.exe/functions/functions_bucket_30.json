@@ -13358,22 +13358,6 @@
             ]
           },
           "type":"char*"
-        },
-        {
-          "name":"output_length",
-          "storage":{
-            "offset":20,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x14]",
-                "offset":20,
-                "size":4
-              }
-            ]
-          },
-          "type":"int*"
         }
       ],
       "ret_storage":{
@@ -13696,8 +13680,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_colonel.cpp_CColonel_FUN_00440430",
-    "ret":"int",
+    "name":"core_colonel.cpp_CColonel_processMotionEvents_FUN_00440430",
+    "ret":"void",
     "vars":{
       "params":[
         {
@@ -13715,18 +13699,24 @@
             ]
           },
           "type":"CColonel*"
+        },
+        {
+          "name":"delta_time",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
         }
-      ],
-      "ret_storage":{
-        "reg":"EAX",
-        "size":4,
-        "varnodes":[
-          {
-            "addr":"register:00000000",
-            "size":4
-          }
-        ]
-      }
+      ]
     }
   },
   {
@@ -30887,6 +30877,22 @@
             ]
           },
           "type":"CCheckOutItem*"
+        },
+        {
+          "name":"source_path",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
         }
       ],
       "ret_storage":{
@@ -38859,7 +38865,43 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"core_game.cpp_disableUnavailableChapters_FUN_004e1c30",
-    "ret":"void"
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"pick_list",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CPickList*"
+        },
+        {
+          "name":"chapter_index",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ]
+    }
   },
   {
     "addr":"004e1cb0",
@@ -51193,7 +51235,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_mobster.cpp_CMobster_FUN_00527c30",
+    "name":"core_mobster.cpp_CMobster_randomize_FUN_00527c30",
     "ret":"void",
     "vars":{
       "params":[
@@ -51352,7 +51394,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_moloch.cpp_CMoloch_FUN_005293b0",
+    "name":"core_moloch.cpp_CMoloch_processAI_FUN_005293b0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -51501,6 +51543,22 @@
             ]
           },
           "type":"CMoloch*"
+        },
+        {
+          "name":"delta_time",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
         }
       ]
     }
@@ -68605,6 +68663,22 @@
             ]
           },
           "type":"CLodMesh*"
+        },
+        {
+          "name":"precompute_entry",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CLodMeshPrecomputeEntry*"
         }
       ]
     }
@@ -87107,6 +87181,22 @@
             ]
           },
           "type":"CTurret*"
+        },
+        {
+          "name":"model_index",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ],
       "ret_storage":{
@@ -89769,7 +89859,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_werewolf.cpp_CWerewolf_FUN_005f1230",
+    "name":"core_werewolf.cpp_CWerewolf_renderEyeGlow_FUN_005f1230",
     "ret":"void",
     "vars":{
       "locals":[
@@ -90846,6 +90936,22 @@
             ]
           },
           "type":"CWerewolf*"
+        },
+        {
+          "name":"eye_position",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
         }
       ]
     }
@@ -91481,9 +91587,43 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_zombie.cpp_FUN_005f8d30",
-    "ret":"float*",
+    "name":"core_zombie.cpp_getObjectGrabPointLocal_FUN_005f8d30",
+    "ret":"CVector3f*",
     "vars":{
+      "params":[
+        {
+          "name":"out_point",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
+        },
+        {
+          "name":"actor",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonActor*"
+        }
+      ],
       "ret_storage":{
         "reg":"EAX",
         "size":4,
@@ -91512,7 +91652,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_zombie.cpp_CZombie_FUN_005fb530",
+    "name":"core_zombie.cpp_CZombie_processPickup_FUN_005fb530",
     "ret":"int",
     "vars":{
       "locals":[
@@ -91613,6 +91753,22 @@
             ]
           },
           "type":"CZombie*"
+        },
+        {
+          "name":"delta_time",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
         }
       ],
       "ret_storage":{

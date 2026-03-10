@@ -11,6 +11,7 @@
 void __cdecl core_batcreat_cpp_CBatCreature_processDismemberment_FUN_00415dd0(CBatCreature *this_ptr,SDamageInfo *damage_info)
 
 {
+  CVector3f *initial_velocity;
   int iVar1;
   CBodyPart *body_part;
   float local_14;
@@ -79,16 +80,17 @@ switchD_00415e06_default:
                 ((CCharacter *)this_ptr,body_part,this_ptr->part_indices[0xb],0);
     }
     if (this_ptr->part_indices[1] == damage_info->hit_part_index) {
+      initial_velocity = &damage_info->impact_point;
       core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0
-                ((CCharacter *)this_ptr,this_ptr->part_indices[10]);
+                ((CCharacter *)this_ptr,this_ptr->part_indices[10],initial_velocity,0);
       core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0
-                ((CCharacter *)this_ptr,this_ptr->part_indices[0xb]);
+                ((CCharacter *)this_ptr,this_ptr->part_indices[0xb],initial_velocity,0);
       core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0
-                ((CCharacter *)this_ptr,this_ptr->part_indices[8]);
+                ((CCharacter *)this_ptr,this_ptr->part_indices[8],initial_velocity,0);
       core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0
-                ((CCharacter *)this_ptr,this_ptr->part_indices[9]);
+                ((CCharacter *)this_ptr,this_ptr->part_indices[9],initial_velocity,0);
       core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0
-                ((CCharacter *)this_ptr,this_ptr->part_indices[0]);
+                ((CCharacter *)this_ptr,this_ptr->part_indices[0],initial_velocity,0);
     }
     core_charactr_cpp_CCharacter_playSoundWithCooldown_FUN_0042f300
               ((CCharacter *)this_ptr,"limb?.wav");

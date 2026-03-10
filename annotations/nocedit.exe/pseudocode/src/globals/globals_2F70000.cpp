@@ -30,6 +30,7 @@ float FLOAT_02f7c540 = {};
 float FLOAT_02f7c630 = {};
 
 // int
+int INT_02f797e0 = {};
 int g_DisableMouseHitOnBarrier = {};
 int INT_02f7c528 = {};
 int g_SelectedMotionPropertyIndex = {};
@@ -48,7 +49,4 @@ uint UINT_02f7c8c8 = {};
 
 // undefined1
 undefined1 DAT_02f79818 = {};
-
-// undefined4
-undefined4 DAT_02f797e0 = {};
 

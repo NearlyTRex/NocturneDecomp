@@ -33,7 +33,7 @@ void __cdecl CTommyGun::process(CTommyGun *this_ptr,float delta_time);
 
 // Original: core_tommygun.cpp_CTommyGun_setWeaponState_FUN_005de5a0
 // Address: 005de5a0
-void __cdecl CTommyGun::setWeaponState(CTommyGun *this_ptr);
+void __cdecl CTommyGun::setWeaponState(CTommyGun *this_ptr,int weapon_state);
 
 // Original: core_tommygun.cpp_CTommyGun_dtor_FUN_005de5d0
 // Address: 005de5d0

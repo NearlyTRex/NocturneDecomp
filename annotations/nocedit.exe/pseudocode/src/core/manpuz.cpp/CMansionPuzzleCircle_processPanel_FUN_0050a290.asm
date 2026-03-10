@@ -18,7 +18,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050aee0
+;   core_manpuz.cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_0050aee0
 ;
 ; *****************************************************************************
 
@@ -73,8 +73,8 @@ section .text
     PUSH EDI                            ; 0050a2fc
     PUSH ECX                            ; 0050a2fd
     PUSH ESI                            ; 0050a2fe
-    CALL core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050aee0 ; 0050a2ff
-        ;   XREF to: 0050aee0 (UNCONDITIONAL_CALL)  ; int core_manpuz.cpp_CMansionPuzzleCircle_FUN_0050aee0(CMansionPuzzleCircle * this_ptr)
+    CALL core_manpuz.cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_0050aee0 ; 0050a2ff
+        ;   XREF to: 0050aee0 (UNCONDITIONAL_CALL)  ; int core_manpuz.cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_0050aee0(CMansionPuzzleCircle * this_ptr, int panel_index)
     MOV EDX,EAX                         ; 0050a304
     SHL EAX,0x2                         ; 0050a306
     SUB EAX,EDX                         ; 0050a309

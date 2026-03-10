@@ -6,17 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 57,
-    "complexity_score": 92,
+    "complexity_score": 25,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 5,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 27,
-    "suspect_count": 6,
-    "suspect_types": [
-      "stack_param"
-    ],
-    "total_lines": 84
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 25,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 82
   },
   "cross_references": [],
   "function": {
@@ -29,7 +27,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_game.cpp_disableUnavailableChapters_FUN_004e1c30",
-    "signature": "void __cdecl core_game_cpp_disableUnavailableChapters_FUN_004e1c30(void)"
+    "signature": "void __cdecl core_game_cpp_disableUnavailableChapters_FUN_004e1c30(CPickList *pick_list,int chapter_index)"
   },
   "function_calls": [
     {
@@ -84,8 +82,8 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "estimated_params": 0
+    "declared_params": 2,
+    "estimated_params": 2
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.913043478260869,
@@ -118,61 +116,27 @@
     "pcode_op_count": 272
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "pick_list",
+        "offset": 4,
+        "size": 4,
+        "type": "CPickList *"
+      },
+      {
+        "is_param": true,
+        "name": "chapter_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "CPickList *in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "int in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "iVar1 = in_stack_00000008 * 0x34;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "if ((in_stack_00000004->base).item_count < 1) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "shape_edittool_cpp_CPickList_enableItem_FUN_004a5410(in_stack_00000004,item_index,0);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 28,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "} while (item_index < (in_stack_00000004->base).item_count);",
-      "type": "stack_param"
-    }
-  ]
+  "suspects": []
 }

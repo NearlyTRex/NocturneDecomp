@@ -14,7 +14,8 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_0050ad40(C
   int in_stack_00000008;
   
   pSVar1 = this_ptr->panels + in_stack_00000008;
-  iVar2 = core_manpuz_cpp_CMansionPuzzleCircle_FUN_0050aee0(this_ptr);
+  iVar2 = core_manpuz_cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_0050aee0
+                    (this_ptr,in_stack_00000008);
   if ((((pSVar1->exists == 0) || (this_ptr->panels[iVar2].exists != 0)) ||
       (ABS(pSVar1->anim_progress) != 0.0)) || (ABS(pSVar1->anim_speed) != 0.0)) {
     g_CurrentFilename = "..\\core\\manpuz.cpp";
