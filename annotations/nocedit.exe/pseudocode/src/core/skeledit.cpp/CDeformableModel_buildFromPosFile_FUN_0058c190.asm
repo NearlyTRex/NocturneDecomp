@@ -1797,7 +1797,7 @@ section .text
     LEA EAX,[ESP + 0xa044]              ; 0058d634
     PUSH EAX                            ; 0058d63b
     CALL shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990 ; 0058d63c
-        ;   XREF to: 0051d990 (UNCONDITIONAL_CALL)  ; int shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990(CLodMesh * this_ptr)
+        ;   XREF to: 0051d990 (UNCONDITIONAL_CALL)  ; int shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990(CLodMesh * this_ptr, int * pixel_heights, int * face_counts, int max_lods, ...)
     ADD ESP,0x14                        ; 0058d641
     MOV dword ptr [EBP],EAX             ; 0058d644
     CMP EAX,0x1                         ; 0058d647
@@ -1858,7 +1858,7 @@ section .text
     LEA EAX,[ESP + 0x9ee8]              ; 0058d6e7
     PUSH EAX                            ; 0058d6ee
     CALL shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990 ; 0058d6ef
-        ;   XREF to: 0051d990 (UNCONDITIONAL_CALL)  ; int shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990(CLodMesh * this_ptr)
+        ;   XREF to: 0051d990 (UNCONDITIONAL_CALL)  ; int shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990(CLodMesh * this_ptr, int * pixel_heights, int * face_counts, int max_lods, ...)
     ADD ESP,0x14                        ; 0058d6f4
     CMP EAX,ESI                         ; 0058d6f7
     JL 0x0058d5ef                       ; 0058d6f9

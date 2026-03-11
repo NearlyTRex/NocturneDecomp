@@ -14,7 +14,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
-;   core_melee.cpp_CMelee_FUN_0050ebe0
+;   core_melee.cpp_CMelee_initBloodSpurtEffects_FUN_0050ebe0
 ;
 ; *****************************************************************************
 
@@ -45,8 +45,8 @@ section .text
     PUSH EDI                            ; 0050eb7e
     PUSH 0x14                           ; 0050eb7f
     PUSH EBX                            ; 0050eb81
-    CALL core_melee.cpp_CMelee_FUN_0050ebe0 ; 0050eb82
-        ;   XREF to: 0050ebe0 (UNCONDITIONAL_CALL)  ; void core_melee.cpp_CMelee_FUN_0050ebe0(CMelee * this_ptr)
+    CALL core_melee.cpp_CMelee_initBloodSpurtEffects_FUN_0050ebe0 ; 0050eb82
+        ;   XREF to: 0050ebe0 (UNCONDITIONAL_CALL)  ; void core_melee.cpp_CMelee_initBloodSpurtEffects_FUN_0050ebe0(CMelee * this_ptr, int blood_spurt_count, int blood_gore_type)
     ADD ESP,0xc                         ; 0050eb87
     CMP dword ptr [ESP + 0x10],0x1      ; 0050eb8a
     JNZ 0x0050eba8                      ; 0050eb8f

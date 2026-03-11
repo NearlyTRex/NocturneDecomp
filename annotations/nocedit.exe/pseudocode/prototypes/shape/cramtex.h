@@ -57,15 +57,15 @@ void __cdecl CCramTex::renderAllTexturesAndRectangles(CCramTex *this_ptr,int x,i
 
 // Original: shape_cramtex.cpp_CCramTex_renderTextureEntry_FUN_00447c20
 // Address: 00447c20
-void __cdecl CCramTex::renderTextureEntry(CCramTex *this_ptr,int visualization_mode,int draw_x,int draw_y,int draw_width,int draw_height);
+void __cdecl CCramTex::renderTextureEntry(CCramTex *this_ptr,int show_final_placement,int draw_x,int draw_y,int draw_right,int draw_bottom);
 
 // Original: shape_cramtex.cpp_calculateAtlasEfficiency_FUN_00447e80
 // Address: 00447e80
 double __cdecl calculateAtlasEfficiency(void);
 
-// Original: shape_cramtex.cpp_CCramTex_visualizeTextureAtlas_FUN_00447f20
+// Original: shape_cramtex.cpp_visualizeTextureAtlas_FUN_00447f20
 // Address: 00447f20
-void __cdecl CCramTex::visualizeTextureAtlas(CCramTex *this_ptr,int visualization_mode,int completion_mode,int display_mode);
+void __cdecl visualizeTextureAtlas(int show_textures,int is_complete);
 
 // Original: shape_cramtex.cpp_printAtlasLayoutReport_FUN_004481d0
 // Address: 004481d0

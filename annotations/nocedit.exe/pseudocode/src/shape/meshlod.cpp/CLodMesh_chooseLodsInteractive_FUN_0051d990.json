@@ -4,67 +4,67 @@
       {
         "category": "other",
         "column": 16,
-        "line": 133,
+        "line": 129,
         "message": "cannot cast from type 'float' to pointer type 'int *'"
       },
       {
         "category": "other",
         "column": 33,
-        "line": 134,
+        "line": 130,
         "message": "C-style cast from 'int *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 33,
-        "line": 134,
+        "line": 130,
         "message": "C-style cast from 'int *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 33,
-        "line": 134,
+        "line": 130,
         "message": "C-style cast from 'int *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 33,
-        "line": 134,
+        "line": 130,
         "message": "C-style cast from 'int *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 33,
-        "line": 134,
+        "line": 130,
         "message": "C-style cast from 'int *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 33,
-        "line": 134,
+        "line": 130,
         "message": "C-style cast from 'int *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 33,
-        "line": 134,
+        "line": 130,
         "message": "C-style cast from 'int *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 33,
-        "line": 134,
+        "line": 130,
         "message": "C-style cast from 'int *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 33,
-        "line": 134,
+        "line": 130,
         "message": "C-style cast from 'int *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 300,
+        "line": 296,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
       }
     ],
@@ -73,20 +73,19 @@
   },
   "complexity": {
     "assembly_lines": 1088,
-    "complexity_score": 851,
+    "complexity_score": 451,
     "cross_reference_count": 1,
     "function_call_count": 35,
     "global_count": 36,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 391,
-    "suspect_count": 44,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 386,
+    "suspect_count": 5,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
-      "stack_param",
       "warning_inlined_function"
     ],
-    "total_lines": 1479
+    "total_lines": 1474
   },
   "cross_references": [
     {
@@ -107,7 +106,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990",
-    "signature": "int __cdecl shape_meshlod_cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990(CLodMesh *this_ptr)"
+    "signature": "int __cdecl shape_meshlod_cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990(CLodMesh *this_ptr,int *pixel_heights,int *face_counts,int max_lods,int render_mode)"
   },
   "function_calls": [
     {
@@ -550,10 +549,10 @@
     "pcode_op_count": 3824
   },
   "stack_frame": {
-    "frame_size": 992,
+    "frame_size": 1008,
     "local_size": 988,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 20,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -947,6 +946,34 @@
         "offset": 4,
         "size": 4,
         "type": "CLodMesh *"
+      },
+      {
+        "is_param": true,
+        "name": "pixel_heights",
+        "offset": 8,
+        "size": 4,
+        "type": "int *"
+      },
+      {
+        "is_param": true,
+        "name": "face_counts",
+        "offset": 12,
+        "size": 4,
+        "type": "int *"
+      },
+      {
+        "is_param": true,
+        "name": "max_lods",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "render_mode",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
@@ -977,56 +1004,8 @@
       "type": "warning_inlined_function"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "int *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "int *in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_00000010",
-      "severity": "moderate",
-      "text": "int in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_00000014",
-      "severity": "moderate",
-      "text": "uint in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 59,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "*in_stack_00000008 = 999999;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 62,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "*in_stack_0000000c = iVar3;",
-      "type": "stack_param"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 127,
+      "line": 123,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_34 = (int)ROUND(ROUND((float)local_14));",
@@ -1034,291 +1013,27 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 127,
+      "line": 123,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_34 = (int)ROUND(ROUND((float)local_14));",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 135,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "iVar8 = in_stack_0000000c[iVar8];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 138,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "piVar6 = in_stack_00000008 + iVar8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 144,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "iVar8 = in_stack_0000000c[iVar8];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 151,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "iVar8 = in_stack_0000000c[iVar3];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 155,
-      "match": "in_stack_00000014",
-      "severity": "moderate",
-      "text": "INT_0067d39c = iVar8, in_stack_00000014 == 2)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 161,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "in_stack_0000000c[iVar3] = local_180.tri_count;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 162,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "in_stack_00000008[iVar3] = local_34;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 190,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "local_2c = in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 191,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "local_20 = in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 198,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "(local_248,\"LOD%d: P=%d F=%d\",iVar8,in_stack_00000008[iVar8],*local_20);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 238,
-      "match": "in_stack_00000014",
-      "severity": "moderate",
-      "text": "if (in_stack_00000014 == 0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 241,
-      "match": "in_stack_00000014",
-      "severity": "moderate",
-      "text": "else if ((in_stack_00000014 < 2) || (in_stack_00000014 == 2)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 241,
-      "match": "in_stack_00000014",
-      "severity": "moderate",
-      "text": "else if ((in_stack_00000014 < 2) || (in_stack_00000014 == 2)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 252,
-      "match": "in_stack_00000010",
-      "severity": "moderate",
-      "text": "if (local_30 < in_stack_00000010) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 253,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "in_stack_0000000c[local_30] = local_180.tri_count;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 254,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "in_stack_00000008[local_30] = local_34;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 262,
-      "match": "in_stack_00000010",
-      "severity": "moderate",
-      "text": "(g_CEditorToolsPtr,\"Can't have more than %d LODs.\",in_stack_00000010);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 266,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "iVar8 = in_stack_0000000c[iVar3] / 0x14;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 277,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "in_stack_0000000c[iVar3] = in_stack_0000000c[iVar3] - iVar8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 277,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "in_stack_0000000c[iVar3] = in_stack_0000000c[iVar3] - iVar8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 281,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "in_stack_0000000c[iVar3] = in_stack_0000000c[iVar3] + iVar8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 281,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "in_stack_0000000c[iVar3] = in_stack_0000000c[iVar3] + iVar8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 286,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "(g_CEditorToolsPtr,\"Enter face count\",in_stack_0000000c + iVar3,0,0,0,1);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 298,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "memmove(in_stack_00000008 + iVar3,in_stack_00000008 + iVar3 + 1,n)",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 298,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "memmove(in_stack_00000008 + iVar3,in_stack_00000008 + iVar3 + 1,n)",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 301,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "(in_stack_0000000c + iVar3,(void *)((int)in_stack_0000000c + (int)local_14),n);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 301,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "(in_stack_0000000c + iVar3,(void *)((int)in_stack_0000000c + (int)local_14),n);",
-      "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 301,
+      "line": 296,
       "match": "(void *)((int)",
       "severity": "mild",
-      "text": "(in_stack_0000000c + iVar3,(void *)((int)in_stack_0000000c + (int)local_14),n);",
+      "text": "(face_counts + iVar3,(void *)((int)face_counts + (int)local_14),n);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 303,
+      "line": 298,
       "match": "(void *)((int)",
       "severity": "mild",
       "text": "(local_3d8 + iVar3,(void *)((int)local_3d8 + (int)local_14),n);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 312,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "piVar6 = in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 320,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "*piVar7 = in_stack_00000008[iVar9 + 1];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 321,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "in_stack_00000008[iVar9 + 1] = iStack_40;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 322,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "local_14 = in_stack_0000000c + iVar9 + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 323,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "iStack_3c = in_stack_0000000c[iVar9];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 324,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "in_stack_0000000c[iVar9] = *local_14;",
-      "type": "stack_param"
     }
   ]
 }

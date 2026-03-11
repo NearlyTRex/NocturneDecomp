@@ -39,7 +39,8 @@ void __cdecl engine_fileio_cpp_CFileManager_removeAuditRecords_FUN_004bd190(CFil
   bVar10 = 0;
   if (pod_file_path == (char *)0x0) {
     iVar2 = shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420
-                      (g_CEditorToolsPtr,"Select POD file to remove audit records",0x6293c5,local_204);
+                      (g_CEditorToolsPtr,"Select POD file to remove audit records","*.pod",
+                       local_204,0);
     if (iVar2 == 0) {
       return;
     }

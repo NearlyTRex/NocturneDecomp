@@ -21,10 +21,10 @@
 ; Called Functions:
 ;   crt_errno.c___set_errno_FUN_006083fc
 ;   crt_errno.c_setErrno_FUN_00602790
-;   crt_io.c_getcwd_FUN_00608d20
 ;   crt_memory.c_free_FUN_00601cd0
 ;   crt_memory.c_malloc_FUN_00601bb0
 ;   crt_string.c__stricmp_FUN_005fe7f0
+;   crt_watcom.c_getcwd_FUN_00608d20
 ;   GetFullPathNameA
 ;
 ; *****************************************************************************
@@ -71,8 +71,8 @@ section .text
     PUSH EDI                            ; 00601187
         ;   Label: LAB_00601187
     PUSH EBX                            ; 00601188
-    CALL crt_io.c_getcwd_FUN_00608d20   ; 00601189
-        ;   XREF to: 00608d20 (UNCONDITIONAL_CALL)  ; char * crt_io.c_getcwd_FUN_00608d20(char * buffer, SIZE_T size)
+    CALL crt_watcom.c_getcwd_FUN_00608d20 ; 00601189
+        ;   XREF to: 00608d20 (UNCONDITIONAL_CALL)  ; char * crt_watcom.c_getcwd_FUN_00608d20(char * buffer, SIZE_T size)
     ADD ESP,0x8                         ; 0060118e
     ADD ESP,0x4                         ; 00601191
     POP EBP                             ; 00601194

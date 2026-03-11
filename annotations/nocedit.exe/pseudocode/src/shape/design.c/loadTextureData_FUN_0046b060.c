@@ -2,26 +2,25 @@
 // Address: 0046b060
 // Address Range: [[0046b060, 0046b6d9]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_design_c_loadTextureData_FUN_0046b060(STextureAtlasEntry *entry,uchar *rgb_buffer,uchar *alpha_buffer,int atlas_width,int atlas_height)
+// Signature: void __cdecl shape_design_c_loadTextureData_FUN_0046b060(STextureAtlasEntry *entry,uchar *rgb_buffer,uchar *alpha_buffer,int pixel_depth,int atlas_total_width,int atlas_total_height)
 
 #include "nocturne.h"
 
 /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
-void __cdecl shape_design_c_loadTextureData_FUN_0046b060(STextureAtlasEntry *entry,uchar *rgb_buffer,uchar *alpha_buffer,int atlas_width,int atlas_height)
+void __cdecl shape_design_c_loadTextureData_FUN_0046b060(STextureAtlasEntry *entry,uchar *rgb_buffer,uchar *alpha_buffer,int pixel_depth,int atlas_total_width,int atlas_total_height)
 
 {
   int iVar1;
-  int in_stack_00000018;
-  byte *in_stack_fffffe7c;
-  byte *in_stack_fffffe80;
-  byte local_17c [4];
+  uchar local_184 [4];
+  uchar local_180 [4];
+  uchar local_17c [4];
   double local_178;
   double local_170;
   double local_168;
   double local_160;
   int local_158;
-  byte local_154 [4];
+  uchar local_154 [4];
   int local_150;
   int local_14c;
   char local_148 [260];
@@ -70,17 +69,17 @@ void __cdecl shape_design_c_loadTextureData_FUN_0046b060(STextureAtlasEntry *ent
     local_3c = entry->original_height;
     while (local_3c = local_3c - 1, -1 < (int)local_3c) {
       shape_design_c_readPixelRowFromFile_FUN_0046abf0
-                (local_1c,(byte *)(local_3c * local_14 + (int)local_28),
-                 (byte *)(local_3c * entry->original_width + (int)local_24),entry->original_width,
-                 atlas_width);
+                (local_1c,(uchar *)(local_3c * local_14 + (int)local_28),
+                 (uchar *)(local_3c * entry->original_width + (int)local_24),entry->original_width,
+                 pixel_depth);
     }
   }
   else {
     for (local_3c = 0; (int)local_3c < (int)entry->original_height; local_3c = local_3c + 1) {
       shape_design_c_readPixelRowFromFile_FUN_0046abf0
-                (local_1c,(byte *)(local_3c * local_14 + (int)local_28),
-                 (byte *)(local_3c * entry->original_width + (int)local_24),entry->original_width,
-                 atlas_width);
+                (local_1c,(uchar *)(local_3c * local_14 + (int)local_28),
+                 (uchar *)(local_3c * entry->original_width + (int)local_24),entry->original_width,
+                 pixel_depth);
     }
   }
   if ((local_1c->_flag & 0x20) != 0) {
@@ -101,15 +100,15 @@ void __cdecl shape_design_c_loadTextureData_FUN_0046b060(STextureAtlasEntry *ent
     memset(local_24,0xff,entry->original_width * entry->original_height);
   }
   local_38 = (int)ROUND(ROUND(((double)g_TextureAtlasDimension * (double)entry->atlas_width) /
-                              (double)atlas_height + 0.5));
+                              (double)atlas_total_width + 0.5));
   local_34 = (int)ROUND(ROUND(((double)g_TextureAtlasDimension * (double)entry->atlas_height) /
-                              (double)in_stack_00000018 + 0.5));
+                              (double)atlas_total_height + 0.5));
   entry->packed_width = local_38;
   entry->packed_height = local_34;
   local_30 = (int)ROUND(ROUND(((double)g_TextureAtlasDimension * (double)entry->atlas_x) /
-                              (double)atlas_height + 0.5));
+                              (double)atlas_total_width + 0.5));
   local_2c = (int)ROUND(ROUND(((double)g_TextureAtlasDimension * (double)entry->atlas_y) /
-                              (double)in_stack_00000018 + 0.5));
+                              (double)atlas_total_height + 0.5));
   if (g_TextureAtlasDimension + -1 < local_30) {
     local_30 = g_TextureAtlasDimension + -1;
   }
@@ -139,8 +138,7 @@ void __cdecl shape_design_c_loadTextureData_FUN_0046b060(STextureAtlasEntry *ent
                   5.9604644775390599e-08;
       shape_design_c_sampleAndFilterPixel_FUN_0046ae20
                 (local_28,local_24,entry->original_width,entry->original_height,local_160,local_168,
-                 local_170,local_178,(int)&stack0xfffffe7c,(int)&stack0xfffffe80,local_154,local_17c
-                 ,in_stack_fffffe7c,in_stack_fffffe80);
+                 local_170,local_178,local_184,local_180,local_154,local_17c);
       if (entry->rotation_flag == 0) {
         local_150 = g_TextureAtlasDimension * (local_2c + local_3c) + local_30 + local_40;
       }
@@ -149,8 +147,8 @@ void __cdecl shape_design_c_loadTextureData_FUN_0046b060(STextureAtlasEntry *ent
                     local_30 + ((local_34 + -1) - local_3c);
       }
       local_14c = local_150 * 3;
-      rgb_buffer[local_14c] = (uchar)in_stack_fffffe7c;
-      rgb_buffer[local_14c + 1] = (uchar)in_stack_fffffe80;
+      rgb_buffer[local_14c] = local_184[0];
+      rgb_buffer[local_14c + 1] = local_180[0];
       rgb_buffer[local_14c + 2] = local_154[0];
       alpha_buffer[local_150] = local_17c[0];
     }

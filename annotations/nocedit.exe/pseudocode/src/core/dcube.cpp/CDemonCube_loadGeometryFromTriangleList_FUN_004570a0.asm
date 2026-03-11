@@ -185,7 +185,7 @@ section .text
     PUSH 0xbf800000                     ; 004572a7
     PUSH 0x3c23d70a                     ; 004572ac
     CALL shape_design.c_vertexReducer_FUN_00467850 ; 004572b1
-        ;   XREF to: 00467850 (UNCONDITIONAL_CALL)  ; void shape_design.c_vertexReducer_FUN_00467850(float tolerance, float angle_tolerance, int display_progress)
+        ;   XREF to: 00467850 (UNCONDITIONAL_CALL)  ; void shape_design.c_vertexReducer_FUN_00467850(float tolerance, float angle_tolerance, int ui_mode)
     MOV EAX,[0x01626408]                ; 004572b6 | g_VertexCount
     MOV dword ptr [ESI + 0x20],EAX      ; 004572bb
     MOV EAX,[0x016e990c]                ; 004572be | g_PolygonCount

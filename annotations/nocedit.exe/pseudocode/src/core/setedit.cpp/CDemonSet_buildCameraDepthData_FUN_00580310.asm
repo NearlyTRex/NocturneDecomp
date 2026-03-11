@@ -144,7 +144,7 @@ section .text
     MOV ESI,dword ptr [0x006703ec]      ; 00580414 | g_CDemonRendererPtr2
     PUSH ESI                            ; 0058041a | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0 ; 0058041b
-        ;   XREF to: 0048c1d0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(CDemonRenderer * this_ptr)
+        ;   XREF to: 0048c1d0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(CDemonRenderer * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 00580420
     MOV ECX,dword ptr [ESP + 0x14]      ; 00580423
     MOV EAX,[0x02d052e8]                ; 00580427 | g_TransformMatrix

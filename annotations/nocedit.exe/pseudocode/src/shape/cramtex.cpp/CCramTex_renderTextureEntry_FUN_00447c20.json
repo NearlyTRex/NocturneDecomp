@@ -26,7 +26,7 @@
     {
       "addr": "00447f20",
       "from_addr": "004480e5",
-      "name": "shape_cramtex.cpp_CCramTex_visualizeTextureAtlas_FUN_00447f20",
+      "name": "shape_cramtex.cpp_visualizeTextureAtlas_FUN_00447f20",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -40,7 +40,7 @@
     ],
     "convention": "__cdecl",
     "name": "shape_cramtex.cpp_CCramTex_renderTextureEntry_FUN_00447c20",
-    "signature": "void __cdecl shape_cramtex_cpp_CCramTex_renderTextureEntry_FUN_00447c20(CCramTex *this_ptr,int visualization_mode,int draw_x,int draw_y,int draw_width,int draw_height)"
+    "signature": "void __cdecl shape_cramtex_cpp_CCramTex_renderTextureEntry_FUN_00447c20(CCramTex *this_ptr,int show_final_placement,int draw_x,int draw_y,int draw_right,int draw_bottom)"
   },
   "function_calls": [
     {
@@ -181,7 +181,7 @@
       },
       {
         "is_param": true,
-        "name": "visualization_mode",
+        "name": "show_final_placement",
         "offset": 8,
         "size": 4,
         "type": "int"
@@ -202,14 +202,14 @@
       },
       {
         "is_param": true,
-        "name": "draw_width",
+        "name": "draw_right",
         "offset": 20,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
-        "name": "draw_height",
+        "name": "draw_bottom",
         "offset": 24,
         "size": 4,
         "type": "int"

@@ -101,7 +101,7 @@ section .text
     MOV EBX,dword ptr [0x006703ec]      ; 00529f18 | g_CDemonRendererPtr2 | g_CDemonRendererInstance
     PUSH EBX                            ; 00529f1e | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0 ; 00529f1f
-        ;   XREF to: 0048c1d0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(CDemonRenderer * this_ptr)
+        ;   XREF to: 0048c1d0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(CDemonRenderer * this_ptr, CVector3f * euler_angles)
     FLD double ptr [0x00639f99]         ; 00529f24 | DOUBLE_00639f99
     FLD float ptr [ESI + 0x4]           ; 00529f2a
     FADD ST0,ST1                        ; 00529f2d

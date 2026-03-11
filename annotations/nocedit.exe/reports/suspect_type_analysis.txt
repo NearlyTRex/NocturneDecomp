@@ -4,27 +4,27 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  decompiler_intrinsic            6893 ( 32.9%)
-  pointer_cast                    5954 ( 28.5%)
-  unknown_field                   1723 (  8.2%)
-  stack_param                     1191 (  5.7%)
-  unnamed_param                    701 (  3.4%)
-  special_crt_function             636 (  3.0%)
-  stack_ref                        448 (  2.1%)
-  unaffected_reg                   425 (  2.0%)
+  decompiler_intrinsic            6891 ( 33.2%)
+  pointer_cast                    5954 ( 28.7%)
+  unknown_field                   1720 (  8.3%)
+  stack_param                     1062 (  5.1%)
+  unnamed_param                    698 (  3.4%)
+  special_crt_function             636 (  3.1%)
+  stack_ref                        421 (  2.0%)
+  unaffected_reg                   415 (  2.0%)
   fpu_register_input               325 (  1.6%)
-  register_param                   302 (  1.4%)
-  param_count_too_few              299 (  1.4%)
+  register_param                   302 (  1.5%)
+  param_count_too_few              295 (  1.4%)
   nonstandard_int                  271 (  1.3%)
   warning_inlined_function         264 (  1.3%)
   unresolved_funcptr               186 (  0.9%)
   warning_type_propagation         145 (  0.7%)
   negative_offset                  142 (  0.7%)
   stack_alignment_array            137 (  0.7%)
-  undefined_data                   129 (  0.6%)
+  undefined_data                   123 (  0.6%)
   extra_output                     110 (  0.5%)
-  sub84_truncation                 101 (  0.5%)
-  param_count_too_many              83 (  0.4%)
+  sub84_truncation                 100 (  0.5%)
+  param_count_too_many              81 (  0.4%)
   warning_unreachable               79 (  0.4%)
   suspect_float                     60 (  0.3%)
   unknown_type                      53 (  0.3%)
@@ -56,13 +56,13 @@ SUSPECT TYPE COUNTS
   special_entry_point                1 (  0.0%)
 
 ====================================================================================================
-TYPE: decompiler_intrinsic (6893 occurrences)
+TYPE: decompiler_intrinsic (6891 occurrences)
 ====================================================================================================
 
 Unique patterns:
   2656x  ROUND
   1342x  ADJ
-   460x  CONCAT44
+   459x  CONCAT44
    427x  SQRT
    323x  ABS
    158x  CARRY4
@@ -70,7 +70,7 @@ Unique patterns:
    107x  CONCAT22
    106x  fcos
    105x  fsin
-   101x  SUB84
+   100x  SUB84
     96x  CONCAT12
     82x  CONCAT14
     67x  CONCAT21
@@ -102,7 +102,7 @@ TYPE: pointer_cast (5954 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  2285x  (uint *)((int)
+  2286x  (uint *)((int)
   1314x  (int *)((int)
    340x  (float *)((int)
    323x  (SRenderVertex *)((int)
@@ -136,12 +136,12 @@ Example functions:
     piVar1 = (int *)((int)g_ScreenBufferArray + iVar4);...
 
 ====================================================================================================
-TYPE: unknown_field (1723 occurrences)
+TYPE: unknown_field (1720 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   570x  ._0_4_
-   545x  ._4_4_
+   571x  ._0_4_
+   541x  ._4_4_
     97x  ._8_4_
     78x  ._12_4_
     68x  ._16_4_
@@ -171,37 +171,39 @@ Example functions:
   crt_math.c_process_math_error_FUN_0060bf2d
     local_3c.inputValue1._0_4_ = *(uint *)value1;...
   crt_math.c_ldexp_FUN_00600002
-    if (x._4_4_ < -16000) {...
+    if ((((ulonglong)x & 0x7fffffff00000000) != 0) || (x._0_4_ != 0)) {...
   crt_math.c_math_domain_error_FUN_00606832
     if (y._4_1_ < 2) {...
   crt_math.c_pentiumFdivBugWorkaroundDouble_FUN_00606f98
     if ((param1._4_4_ & 0x7ff00000) == 0x7ff00000) {...
+  crt_unknown.c_FUN_00604478
+    local_14._0_1_ = '\0';...
 
 ====================================================================================================
-TYPE: stack_param (1191 occurrences)
+TYPE: stack_param (1062 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   127x  in_stack_00000008
-   118x  in_stack_0000000c
-    82x  in_stack_00000004
+   106x  in_stack_00000008
+    95x  in_stack_0000000c
+    66x  in_stack_00000004
     61x  in_stack_fffffd64
-    53x  in_stack_00000010
+    48x  in_stack_00000010
     46x  in_stack_fffffc88
     39x  in_stack_ffffff54
     25x  in_stack_fffffd80
-    22x  in_stack_00000014
     19x  in_stack_fffffd7c
     17x  in_stack_fffffee8
     16x  in_stack_fffffd78
     16x  in_stack_ffffff9c
+    15x  in_stack_00000014
     15x  in_stack_ffffff74
-    15x  in_stack_ffffff84
     15x  in_stack_ffffff28
-    14x  in_stack_00000018
     14x  in_stack_ffffff60
     14x  in_stack_fffffd14
     13x  in_stack_0000000a
+    13x  in_stack_ffffff84
+    13x  in_stack_ffffff94
 
 Example functions:
   cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af0
@@ -216,12 +218,12 @@ Example functions:
     ThreadData *in_stack_00000004;...
 
 ====================================================================================================
-TYPE: unnamed_param (701 occurrences)
+TYPE: unnamed_param (698 occurrences)
 ====================================================================================================
 
 Unique patterns:
    238x  param_1
-   153x  param_2
+   150x  param_2
     97x  param_3
     55x  param_4
     47x  param1
@@ -301,8 +303,6 @@ Example functions:
     CRT function (runtime support) at 0060c2e0...
   crt_io.c_invalidate_handle_wrapper_FUN_00602448
     CRT function (runtime support) at 00602448...
-  crt_io.c_getcwd_wrapper_FUN_00608d20
-    CRT function (runtime support) at 0060128c...
   crt_io.c_access_FUN_0060c9f0
     CRT function (runtime support) at 0060c9f0...
   crt_io.c_close_FUN_00609bd0
@@ -325,13 +325,14 @@ Example functions:
     CRT function (runtime support) at 00608990...
   crt_io.c_stat_FUN_00607e64
     CRT function (runtime support) at 00607e64...
+  crt_io.c_setFileDescriptorFlags_FUN_00608908
+    CRT function (runtime support) at 00608908...
 
 ====================================================================================================
-TYPE: stack_ref (448 occurrences)
+TYPE: stack_ref (421 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    19x  &stack0xfffffa18
     18x  &stack0x00000000
     16x  &stack0xfffffff0
     15x  &stack0xffffff54
@@ -351,6 +352,7 @@ Unique patterns:
      8x  &stack0xffffffe8
      8x  &stack0xfffffee8
      7x  &stack0xfffffeb8
+     6x  &stack0x00000008
 
 Example functions:
   crt_io.c_write_FUN_006084ec
@@ -377,14 +379,14 @@ Example functions:
     pvStack_20 = (*g_CreateEventAFunc)((LPSECURITY_ATTRIBUTES)0x0,0,0,&stack0xffffff...
 
 ====================================================================================================
-TYPE: unaffected_reg (425 occurrences)
+TYPE: unaffected_reg (415 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   128x  unaff_ESI
-   108x  unaff_EDI
+   124x  unaff_ESI
+   106x  unaff_EDI
    100x  unaff_EBP
-    85x  unaff_EBX
+    81x  unaff_EBX
      4x  unaff_EAX
 
 Example functions:
@@ -464,26 +466,26 @@ Example functions:
     uint in_ECX;...
 
 ====================================================================================================
-TYPE: param_count_too_few (299 occurrences)
+TYPE: param_count_too_few (295 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    54x  declared:1 vs estimated:2
+    53x  declared:1 vs estimated:2
     27x  declared:3 vs estimated:4
     19x  declared:1 vs estimated:5
-    15x  declared:0 vs estimated:4
     14x  declared:2 vs estimated:3
+    14x  declared:0 vs estimated:4
     12x  declared:2 vs estimated:6
     11x  declared:4 vs estimated:6
     11x  declared:4 vs estimated:5
     11x  declared:0 vs estimated:2
     10x  declared:0 vs estimated:1
-     9x  declared:1 vs estimated:3
      9x  declared:2 vs estimated:4
      8x  declared:2 vs estimated:5
      8x  declared:3 vs estimated:5
-     7x  declared:5 vs estimated:6
+     8x  declared:1 vs estimated:3
      7x  declared:1 vs estimated:4
+     6x  declared:5 vs estimated:6
      6x  declared:3 vs estimated:6
      5x  declared:4 vs estimated:7
      5x  declared:7 vs estimated:11
@@ -887,7 +889,7 @@ Example functions:
     int aiStackY_10d4 [1015];...
 
 ====================================================================================================
-TYPE: undefined_data (129 occurrences)
+TYPE: undefined_data (123 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -998,11 +1000,11 @@ Example functions:
     BOOL extraout_EAX;...
 
 ====================================================================================================
-TYPE: sub84_truncation (101 occurrences)
+TYPE: sub84_truncation (100 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   101x  SUB84(
+   100x  SUB84(
 
 Example functions:
   crt_math.c_dadd_FUN_0060defc
@@ -1016,7 +1018,7 @@ Example functions:
   crt_math.c_doubleToFloat_FUN_0060b26c
     uVar4 = SUB84(val,0);...
   crt_unknown.c_FUN_00603bc9
-    *in_stack_00000008 = SUB84(__BITCAST_UINT64(dVar1),0);...
+    local_c = SUB84(__BITCAST_UINT64(dVar1),0);...
   crt_unknown.c_FUN_0060dcf6
     uVar4 = SUB84(__BITCAST_UINT64((double)fVar22),0);...
   engine_matrix.c_normalizeVector3DFloat_FUN_0050d9f0
@@ -1047,19 +1049,19 @@ Example functions:
     local_98 = SUB84(__BITCAST_UINT64(dVar9),0);...
 
 ====================================================================================================
-TYPE: param_count_too_many (83 occurrences)
+TYPE: param_count_too_many (81 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    26x  declared:2 vs estimated:1
+    25x  declared:2 vs estimated:1
      9x  declared:3 vs estimated:2
      8x  declared:3 vs estimated:1
      7x  declared:1 vs estimated:0
-     3x  declared:4 vs estimated:2
      3x  declared:2 vs estimated:0
      3x  declared:5 vs estimated:2
      3x  declared:4 vs estimated:3
      3x  declared:4 vs estimated:1
+     2x  declared:4 vs estimated:2
      2x  declared:8 vs estimated:6
      2x  declared:6 vs estimated:1
      2x  declared:5 vs estimated:1
@@ -1101,8 +1103,6 @@ Example functions:
     Function declares 3 params but call sites push 2 (1 extra)...
   crt_file.c_normalize_path_separator_FUN_005febe0
     Function declares 2 params but call sites push 1 (1 extra)...
-  crt_iostream.cpp_streambuf_initBuffer_FUN_0060b815
-    Function declares 4 params but call sites push 2 (2 extra)...
   support_trisock.cpp_buildSockaddrIn_FUN_005e19d0
     Function declares 2 params but call sites push 1 (1 extra)...
   engine_dosio.c_changeFileExtension_FUN_00482050
@@ -1133,6 +1133,8 @@ Example functions:
     Function declares 3 params but call sites push 0 (3 extra)...
   core_dcamera.cpp_CDemonCamera_computeLightExtentBounds_FUN_00451090
     Function declares 3 params but call sites push 2 (1 extra)...
+  core_script.cpp_trimLine_FUN_005592c0
+    Function declares 2 params but call sites push 1 (1 extra)...
 
 ====================================================================================================
 TYPE: warning_unreachable (79 occurrences)

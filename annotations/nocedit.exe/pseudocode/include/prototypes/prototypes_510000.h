@@ -136,7 +136,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_gridLoad_FUN_0051d2d0(CLodMesh *this_ptr
 void __cdecl shape_meshlod_cpp_CLodMesh_gridSave_FUN_0051d420(CLodMesh *this_ptr,_FILE *file_handle);
 void __cdecl shape_meshlod_cpp_CLodMesh_recordEdgeCollapse_FUN_0051d4a0(CLodMesh *this_ptr,CLodEdge *edge_data);
 int __cdecl shape_meshlod_cpp_CLodMesh_previewLodGeneration_FUN_0051d520(CLodMesh *this_ptr,int pause_flag,int render_mode);
-int __cdecl shape_meshlod_cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990(CLodMesh *this_ptr);
+int __cdecl shape_meshlod_cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990(CLodMesh *this_ptr,int *pixel_heights,int *face_counts,int max_lods,int render_mode);
 void __cdecl shape_meshlod_cpp_CLodMesh_transformVerticesForPreview_FUN_0051e6b0(CLodMesh *this_ptr);
 void __cdecl shape_meshlod_cpp_CLodMesh_renderWireframe_FUN_0051e770(CLodMesh *this_ptr);
 void __cdecl shape_meshlod_cpp_CLodMesh_renderColorCodedEdges_FUN_0051e830(CLodMesh *this_ptr,int backface_culling_enabled);

@@ -6,18 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 153,
-    "complexity_score": 147,
+    "complexity_score": 81,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 15,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 57,
-    "suspect_count": 8,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 56,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast",
-      "stack_param"
+      "pointer_cast"
     ],
-    "total_lines": 210
+    "total_lines": 209
   },
   "cross_references": [],
   "function": {
@@ -31,7 +30,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "shape_design.c_triangulateDSE_FUN_0046e4d0",
-    "signature": "void __cdecl shape_design_c_triangulateDSE_FUN_0046e4d0(void)"
+    "signature": "void __cdecl shape_design_c_triangulateDSE_FUN_0046e4d0(int max_vertices)"
   },
   "function_calls": [
     {
@@ -136,8 +135,8 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "estimated_params": 0
+    "declared_params": 1,
+    "estimated_params": 1
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 7.661417322834645,
@@ -176,10 +175,10 @@
     "pcode_op_count": 973
   },
   "stack_frame": {
-    "frame_size": 44,
+    "frame_size": 48,
     "local_size": 44,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -223,37 +222,20 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "max_vertices",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "uint in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "if ((int)in_stack_00000004 < (int)g_ModelPolygonData[local_14].vertex_indices_count) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 23,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "local_1c = in_stack_00000004 - 1;",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 37,
+      "line": 36,
       "match": "(SShapeEditorPolygon *)((int)",
       "severity": "mild",
       "text": "pSVar6 = (SShapeEditorPolygon *)((int)pSVar6 + ((uint)bVar8 * -2 + 1) * 4);",
@@ -261,35 +243,11 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 38,
+      "line": 37,
       "match": "(SShapeEditorPolygon *)((int)",
       "severity": "mild",
       "text": "pSVar7 = (SShapeEditorPolygon *)((int)pSVar7 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 45,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "if ((int)in_stack_00000004 < (int)g_ModelPolygonData[iVar2].vertex_indices_count) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 46,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "g_ModelPolygonData[iVar2].vertex_indices_count = in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 56,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "g_ModelPolygonData[local_14].vertex_indices_count = in_stack_00000004;",
-      "type": "stack_param"
     }
   ]
 }

@@ -393,6 +393,7 @@ CRT_STANDARD_FUNCTIONS = {
         'open', 'close', 'read', 'write', 'lseek',
         'access', 'chmod', 'unlink', 'dup', 'dup2',
         'isatty', 'filelength', 'tell', 'eof',
+        'getcwd',
     },
 }
 

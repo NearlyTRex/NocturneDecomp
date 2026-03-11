@@ -320,7 +320,7 @@ LAB_00445252:
     if ((g_CramAtlasDimension + -1 + g_CramPaddingSize * g_CramCurrentAcceptableSize) /
         g_CramAtlasDimension <= g_CramPaddingCalculation) {
       iVar13 = 0;
-      shape_cramtex_cpp_CCramTex_visualizeTextureAtlas_FUN_00447f20((CCramTex *)0x1,1,0,seed);
+      shape_cramtex_cpp_visualizeTextureAtlas_FUN_00447f20(1,1);
       if (0 < g_CramTextureCount) {
         pCVar11 = g_CramSortedTextureEntries;
         do {

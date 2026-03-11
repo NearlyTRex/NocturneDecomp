@@ -177,7 +177,8 @@ void __cdecl core_setedit_cpp_CDemonSet_showEditorMenu_FUN_00584940(CDemonSet *t
         engine_dosio_c_makePath_FUN_00481f50(local_36c,local_14,local_168,local_268,".txt");
       }
       iVar5 = shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420
-                        (g_CEditorToolsPtr,"Select ground type file to edit",0x648fd8,local_36c);
+                        (g_CEditorToolsPtr,"Select ground type file to edit","*.txt",
+                         local_36c,1);
       if (iVar5 != 0) {
         core_setedit_cpp_editGroundTypes_FUN_00578630(local_36c);
       }

@@ -4,8 +4,8 @@
 ; double __cdecl crt_math_c_ldexp_FUN_00600002(double x,int exp)
 ;
 ; Parameters:
-; double           Stack[0x8]:8   x
-; int              Stack[0x10]:4   exp
+; double           Stack[0x4]:8   x
+; int              Stack[0xc]:4   exp
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
 ; undefined4       Stack[-0x20]:4  local_20

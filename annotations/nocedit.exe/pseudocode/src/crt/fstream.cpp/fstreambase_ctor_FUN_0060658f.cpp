@@ -14,8 +14,6 @@ fstreambase * __cdecl crt_fstream_cpp_fstreambase_ctor_FUN_0060658f(fstreambase 
   void *pvVar3;
   filebuf *buffer_ptr;
   ios *piVar4;
-  int unaff_EBX;
-  char *unaff_retaddr;
   
   if ((c1 & 1) == 0) {
     (this_ptr->base).layout_info = &g_FStreamBase_VirtualBaseLayout;
@@ -33,7 +31,6 @@ fstreambase * __cdecl crt_fstream_cpp_fstreambase_ctor_FUN_0060658f(fstreambase 
   crt_iostream_cpp_streambuf_initBuffer_FUN_0060b815
             ((streambuf *)
              ((pfVar1->base)._filebuf.__unbuffered_get_area +
-             *(int *)((int)(pfVar1->base).layout_info + 4) + -0x38),(char *)buffer_ptr,unaff_EBX,
-             unaff_retaddr);
+             *(int *)((int)(pfVar1->base).layout_info + 4) + -0x38),(char *)buffer_ptr);
   return pfVar1;
 }

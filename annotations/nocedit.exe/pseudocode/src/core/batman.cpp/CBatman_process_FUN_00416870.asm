@@ -95,7 +95,7 @@
 ;   core_actor.cpp_isOfClass_FUN_0040c6d0
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 ;   core_actor.cpp_randomChance_FUN_0040cd10
-;   core_batman.cpp_CBatman_FUN_004167f0
+;   core_batman.cpp_CBatman_pickRandomMovementState_FUN_004167f0
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_004297e0
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40
@@ -584,8 +584,8 @@ section .text
     MOV dword ptr [EBX + 0xbf5c],0x0    ; 00416daf
     PUSH EBX                            ; 00416db9
     MOV dword ptr [EBX + 0xbf58],0x0    ; 00416dba
-    CALL core_batman.cpp_CBatman_FUN_004167f0 ; 00416dc4
-        ;   XREF to: 004167f0 (UNCONDITIONAL_CALL)  ; void core_batman.cpp_CBatman_FUN_004167f0(CBatman * this_ptr)
+    CALL core_batman.cpp_CBatman_pickRandomMovementState_FUN_004167f0 ; 00416dc4
+        ;   XREF to: 004167f0 (UNCONDITIONAL_CALL)  ; void core_batman.cpp_CBatman_pickRandomMovementState_FUN_004167f0(CBatman * this_ptr)
     ADD ESP,0x4                         ; 00416dc9
     JMP 0x00416970                      ; 00416dcc
         ;   XREF to: 00416970 (UNCONDITIONAL_JUMP)  ; default
@@ -855,8 +855,8 @@ section .text
     ADD ESP,0xc                         ; 004170a9
     PUSH EBX                            ; 004170ac
         ;   Label: LAB_004170ac
-    CALL core_batman.cpp_CBatman_FUN_004167f0 ; 004170ad
-        ;   XREF to: 004167f0 (UNCONDITIONAL_CALL)  ; void core_batman.cpp_CBatman_FUN_004167f0(CBatman * this_ptr)
+    CALL core_batman.cpp_CBatman_pickRandomMovementState_FUN_004167f0 ; 004170ad
+        ;   XREF to: 004167f0 (UNCONDITIONAL_CALL)  ; void core_batman.cpp_CBatman_pickRandomMovementState_FUN_004167f0(CBatman * this_ptr)
     ADD ESP,0x4                         ; 004170b2
     JMP 0x00416970                      ; 004170b5
         ;   XREF to: 00416970 (UNCONDITIONAL_JUMP)  ; default

@@ -284,7 +284,7 @@ section .text
     LEA EAX,[EBP + 0xfffffef4]          ; 0053f0eb
     PUSH EAX                            ; 0053f0f1
     CALL shape_design.c_exportModelToBIN_FUN_0045aa80 ; 0053f0f2
-        ;   XREF to: 0045aa80 (UNCONDITIONAL_CALL)  ; void shape_design.c_exportModelToBIN_FUN_0045aa80(char * filename, int depth_mode, int scale_mode, int export_format, ...)
+        ;   XREF to: 0045aa80 (UNCONDITIONAL_CALL)  ; void shape_design.c_exportModelToBIN_FUN_0045aa80(char * filename, int render_mode, int scale_mode, int export_format, ...)
     ADD ESP,0x14                        ; 0053f0f7
     MOV dword ptr [EBP + -0x8],0x61     ; 0053f0fa
     JMP 0x0053f109                      ; 0053f101
@@ -425,7 +425,7 @@ section .text
     LEA EAX,[EBP + 0xfffffef4]          ; 0053f284
     PUSH EAX                            ; 0053f28a
     CALL shape_design.c_exportModelToBIN_FUN_0045aa80 ; 0053f28b
-        ;   XREF to: 0045aa80 (UNCONDITIONAL_CALL)  ; void shape_design.c_exportModelToBIN_FUN_0045aa80(char * filename, int depth_mode, int scale_mode, int export_format, ...)
+        ;   XREF to: 0045aa80 (UNCONDITIONAL_CALL)  ; void shape_design.c_exportModelToBIN_FUN_0045aa80(char * filename, int render_mode, int scale_mode, int export_format, ...)
     ADD ESP,0x14                        ; 0053f290
     JMP 0x0053f103                      ; 0053f293
         ;   XREF to: 0053f103 (UNCONDITIONAL_JUMP)  ; LAB_0053f103

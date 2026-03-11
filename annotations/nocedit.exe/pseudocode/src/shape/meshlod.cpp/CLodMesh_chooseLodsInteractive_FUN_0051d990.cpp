@@ -2,13 +2,13 @@
 // Address: 0051d990
 // Address Range: [[0051d990, 0051e6aa]]
 // Convention: __cdecl
-// Signature: int __cdecl shape_meshlod_cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990(CLodMesh *this_ptr)
+// Signature: int __cdecl shape_meshlod_cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990(CLodMesh *this_ptr,int *pixel_heights,int *face_counts,int max_lods,int render_mode)
 
 #include "nocturne.h"
 
 /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
-int __cdecl shape_meshlod_cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990(CLodMesh *this_ptr)
+int __cdecl shape_meshlod_cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990(CLodMesh *this_ptr,int *pixel_heights,int *face_counts,int max_lods,int render_mode)
 
 {
   float *pfVar1;
@@ -22,10 +22,6 @@ int __cdecl shape_meshlod_cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990(CLodMe
   int iVar9;
   SIZE_T n;
   bool bVar10;
-  int *in_stack_00000008;
-  int *in_stack_0000000c;
-  int in_stack_00000010;
-  uint in_stack_00000014;
   char *text;
   CPickList CStack_780;
   float local_3d8 [100];
@@ -63,10 +59,10 @@ int __cdecl shape_meshlod_cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990(CLodMe
     g_CurrentLineNumber = 0x155a;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't call LodMesh::chooseLodsInteractive until LODs have been created!");
   }
-  *in_stack_00000008 = 999999;
+  *pixel_heights = 999999;
   local_30 = 1;
   iVar3 = shape_meshlod_cpp_CLodMesh_countUnprocessedFaces_FUN_005164d0(this_ptr->next_lod);
-  *in_stack_0000000c = iVar3;
+  *face_counts = iVar3;
   shape_meshlod_cpp_CLodMesh_computeVertexBoundingBox_FUN_00516500(this_ptr,&local_94);
   shape_spotview_cpp_CSpotView_ctor_FUN_005b95c0(&local_d0);
   shape_spotview_cpp_CSpotView_reset_FUN_005b9620(&local_d0,0x1f);
@@ -139,34 +135,34 @@ int __cdecl shape_meshlod_cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990(CLodMe
       iVar8 = local_30 + -1;
       if (iVar8 < 1) {
 LAB_0051e453:
-        iVar8 = in_stack_0000000c[iVar8];
+        iVar8 = face_counts[iVar8];
       }
       else {
-        piVar6 = in_stack_00000008 + iVar8;
+        piVar6 = pixel_heights + iVar8;
         do {
           if (local_34 < *piVar6) goto LAB_0051e453;
           iVar8 = iVar8 + -1;
           piVar6 = piVar6 + -1;
         } while (0 < iVar8);
-        iVar8 = in_stack_0000000c[iVar8];
+        iVar8 = face_counts[iVar8];
       }
     }
     else if (iVar3 == 0) {
       iVar8 = this_ptr->next_lod->tri_count;
     }
     else {
-      iVar8 = in_stack_0000000c[iVar3];
+      iVar8 = face_counts[iVar3];
     }
     if (((local_180.tri_count < iVar8 + -1) || (iVar8 < local_180.tri_count)) &&
        (shape_meshlod_cpp_CLodMesh_getLOD_FUN_0051b920(this_ptr), iVar8 = INT_0067d39c,
-       INT_0067d39c = iVar8, in_stack_00000014 == 2)) {
+       INT_0067d39c = iVar8, render_mode == 2)) {
       INT_0067d39c = 0;
       shape_meshlod_cpp_CLodMesh_fixupAfterCram_FUN_0051bac0(&local_180);
       INT_0067d39c = iVar8;
     }
     if (0 < iVar3) {
-      in_stack_0000000c[iVar3] = local_180.tri_count;
-      in_stack_00000008[iVar3] = local_34;
+      face_counts[iVar3] = local_180.tri_count;
+      pixel_heights[iVar3] = local_34;
       local_3d8[iVar3] = local_d0.distance;
     }
     if (iVar3 < 0) {
@@ -194,15 +190,15 @@ LAB_0051e453:
     iVar8 = 0;
     if (0 < local_30) {
       local_38 = local_24 + -0x2c;
-      local_2c = in_stack_00000008;
-      local_20 = in_stack_0000000c;
+      local_2c = pixel_heights;
+      local_20 = face_counts;
       do {
         if (iVar8 < 1) {
           _sprintf(local_248,"LOD%d: F=%d",iVar8,*local_20);
         }
         else {
           _sprintf
-                    (local_248,"LOD%d: P=%d F=%d",iVar8,in_stack_00000008[iVar8],*local_20);
+                    (local_248,"LOD%d: P=%d F=%d",iVar8,pixel_heights[iVar8],*local_20);
         }
         iVar9 = local_24 - (*local_2c * local_38) / 0x1e0;
         if (iVar9 < 0x2c) {
@@ -242,10 +238,10 @@ LAB_0051e453:
       engine_2d_c_drawLine_FUN_004011b0(0,iVar8,10,iVar8);
     }
     shape_meshlod_cpp_CLodMesh_transformVerticesForPreview_FUN_0051e6b0(&local_180);
-    if (in_stack_00000014 == 0) {
+    if (render_mode == 0) {
       shape_meshlod_cpp_CLodMesh_renderShadedTriangles_FUN_0051e990(&local_180,0);
     }
-    else if ((in_stack_00000014 < 2) || (in_stack_00000014 == 2)) {
+    else if (((uint)render_mode < 2) || (render_mode == 2)) {
       shape_meshlod_cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0(&local_180,0);
     }
     iVar8 = shape_meshlod_cpp_CLodMesh_countUnprocessedFaces_FUN_005164d0(&local_180);
@@ -256,9 +252,9 @@ LAB_0051e453:
     iVar9 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_N);
     iVar8 = local_30;
     if (iVar9 != 0) {
-      if (local_30 < in_stack_00000010) {
-        in_stack_0000000c[local_30] = local_180.tri_count;
-        in_stack_00000008[local_30] = local_34;
+      if (local_30 < max_lods) {
+        face_counts[local_30] = local_180.tri_count;
+        pixel_heights[local_30] = local_34;
         pfVar1 = local_3d8 + local_30;
         local_30 = local_30 + 1;
         *pfVar1 = local_d0.distance;
@@ -266,11 +262,11 @@ LAB_0051e453:
       }
       else {
         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
-                  (g_CEditorToolsPtr,"Can't have more than %d LODs.",in_stack_00000010);
+                  (g_CEditorToolsPtr,"Can't have more than %d LODs.",max_lods);
       }
     }
     if (0 < iVar3) {
-      iVar8 = in_stack_0000000c[iVar3] / 0x14;
+      iVar8 = face_counts[iVar3] / 0x14;
       iVar9 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
       if (iVar9 != 0) {
         iVar8 = iVar8 * 3;
@@ -281,16 +277,16 @@ LAB_0051e453:
       }
       iVar9 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD4);
       if (iVar9 != 0) {
-        in_stack_0000000c[iVar3] = in_stack_0000000c[iVar3] - iVar8;
+        face_counts[iVar3] = face_counts[iVar3] - iVar8;
       }
       iVar9 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD6);
       if (iVar9 != 0) {
-        in_stack_0000000c[iVar3] = in_stack_0000000c[iVar3] + iVar8;
+        face_counts[iVar3] = face_counts[iVar3] + iVar8;
       }
       iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_F);
       if (iVar8 != 0) {
         shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_004a0020
-                  (g_CEditorToolsPtr,"Enter face count",in_stack_0000000c + iVar3,0,0,0,1);
+                  (g_CEditorToolsPtr,"Enter face count",face_counts + iVar3,0,0,0,1);
       }
     }
     iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_D);
@@ -302,10 +298,9 @@ LAB_0051e453:
         local_30 = local_30 + -1;
         local_14 = (int *)(iVar3 * 4 + 4);
         n = (local_30 - iVar3) * 4;
-        memmove(in_stack_00000008 + iVar3,in_stack_00000008 + iVar3 + 1,n)
-        ;
+        memmove(pixel_heights + iVar3,pixel_heights + iVar3 + 1,n);
         memmove
-                  (in_stack_0000000c + iVar3,(void *)((int)in_stack_0000000c + (int)local_14),n);
+                  (face_counts + iVar3,(void *)((int)face_counts + (int)local_14),n);
         memmove
                   (local_3d8 + iVar3,(void *)((int)local_3d8 + (int)local_14),n);
       }
@@ -316,7 +311,7 @@ LAB_0051e453:
       do {
         iVar9 = 1;
         iVar8 = iVar3;
-        piVar6 = in_stack_00000008;
+        piVar6 = pixel_heights;
         if (1 < iStack_1c) {
           do {
             piVar7 = piVar6 + 1;
@@ -324,11 +319,11 @@ LAB_0051e453:
             iVar3 = iVar8;
             if (*piVar7 < piVar6[2]) {
               iStack_40 = *piVar7;
-              *piVar7 = in_stack_00000008[iVar9 + 1];
-              in_stack_00000008[iVar9 + 1] = iStack_40;
-              local_14 = in_stack_0000000c + iVar9 + 1;
-              iStack_3c = in_stack_0000000c[iVar9];
-              in_stack_0000000c[iVar9] = *local_14;
+              *piVar7 = pixel_heights[iVar9 + 1];
+              pixel_heights[iVar9 + 1] = iStack_40;
+              local_14 = face_counts + iVar9 + 1;
+              iStack_3c = face_counts[iVar9];
+              face_counts[iVar9] = *local_14;
               *local_14 = iStack_3c;
               fVar2 = local_3d8[iVar9];
               local_3d8[iVar9] = local_3d8[iVar9 + 1];

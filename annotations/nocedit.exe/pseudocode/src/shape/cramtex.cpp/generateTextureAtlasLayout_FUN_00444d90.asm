@@ -58,7 +58,7 @@
 ;   crt_stdlib.c_rand_FUN_005feb5c
 ;   crt_stdlib.c_srand_FUN_005feb80
 ;   shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160
-;   shape_cramtex.cpp_CCramTex_visualizeTextureAtlas_FUN_00447f20
+;   shape_cramtex.cpp_visualizeTextureAtlas_FUN_00447f20
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;   shape_memdbg.cpp_openFile_FUN_0050f7a0
 ;   wincore_winrun.cpp_getTime_FUN_005f2dc0
@@ -484,8 +484,8 @@ section .text
     PUSH 0x1                            ; 004452ae
     PUSH 0x1                            ; 004452b0
     XOR EBX,EBX                         ; 004452b2
-    CALL shape_cramtex.cpp_CCramTex_visualizeTextureAtlas_FUN_00447f20 ; 004452b4
-        ;   XREF to: 00447f20 (UNCONDITIONAL_CALL)  ; void shape_cramtex.cpp_CCramTex_visualizeTextureAtlas_FUN_00447f20(CCramTex * this_ptr, int visualization_mode, int completion_mode, int display_mode)
+    CALL shape_cramtex.cpp_visualizeTextureAtlas_FUN_00447f20 ; 004452b4
+        ;   XREF to: 00447f20 (UNCONDITIONAL_CALL)  ; void shape_cramtex.cpp_visualizeTextureAtlas_FUN_00447f20(int show_textures, int is_complete)
     MOV EDI,dword ptr [0x0084a854]      ; 004452b9 | g_CramTextureCount
     ADD ESP,0xc                         ; 004452bf
     TEST EDI,EDI                        ; 004452c2

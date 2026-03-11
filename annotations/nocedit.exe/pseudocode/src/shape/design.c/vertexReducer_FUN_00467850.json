@@ -4,7 +4,7 @@
       {
         "category": "other",
         "column": 113,
-        "line": 190,
+        "line": 189,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
@@ -13,19 +13,18 @@
   },
   "complexity": {
     "assembly_lines": 625,
-    "complexity_score": 399,
+    "complexity_score": 363,
     "cross_reference_count": 4,
     "function_call_count": 14,
     "global_count": 25,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 214,
-    "suspect_count": 17,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 213,
+    "suspect_count": 14,
     "suspect_types": [
       "decompiler_intrinsic",
-      "pointer_cast",
-      "stack_param"
+      "pointer_cast"
     ],
-    "total_lines": 839
+    "total_lines": 838
   },
   "cross_references": [
     {
@@ -64,7 +63,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "shape_design.c_vertexReducer_FUN_00467850",
-    "signature": "void __cdecl shape_design_c_vertexReducer_FUN_00467850(float tolerance,float angle_tolerance,int display_progress)"
+    "signature": "void __cdecl shape_design_c_vertexReducer_FUN_00467850(float tolerance,float angle_tolerance,int ui_mode)"
   },
   "function_calls": [
     {
@@ -507,7 +506,7 @@
       },
       {
         "is_param": true,
-        "name": "display_progress",
+        "name": "ui_mode",
         "offset": 12,
         "size": 4,
         "type": "int"
@@ -516,32 +515,8 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_fffffebc",
-      "severity": "moderate",
-      "text": "char *in_stack_fffffebc;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 51,
-      "match": "in_stack_fffffebc",
-      "severity": "moderate",
-      "text": "dVar9 = _strtod(in_stack_fffffebc);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 79,
-      "match": "in_stack_fffffebc",
-      "severity": "moderate",
-      "text": "dVar9 = _strtod(in_stack_fffffebc);",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 101,
+      "line": 100,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)local_18 + local_34 * 8) = local_34;",
@@ -549,7 +524,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 102,
+      "line": 101,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)local_18 + local_34 * 8 + 4) = local_34;",
@@ -557,7 +532,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 121,
+      "line": 120,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)local_14 + local_2c->vertex_indices[local_30] * 4) = local_34;",
@@ -565,7 +540,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 126,
+      "line": 125,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (*(int *)((int)local_18 + local_34 * 8 + 4) == *(int *)((int)local_18 + local_34 * 8)) {",
@@ -573,7 +548,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 126,
+      "line": 125,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (*(int *)((int)local_18 + local_34 * 8 + 4) == *(int *)((int)local_18 + local_34 * 8)) {",
@@ -581,7 +556,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 132,
+      "line": 131,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (*(int *)((int)local_18 + local_30 * 8 + 4) == *(int *)((int)local_18 + local_30 * 8)",
@@ -589,7 +564,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 132,
+      "line": 131,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (*(int *)((int)local_18 + local_30 * 8 + 4) == *(int *)((int)local_18 + local_30 * 8)",
@@ -597,7 +572,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 137,
+      "line": 136,
       "match": "ABS",
       "severity": "mild",
       "text": "if (((ABS(g_LoadedVertices[iVar2].vertex.x - g_LoadedVertices[iVar3].vertex.x) <",
@@ -605,7 +580,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 139,
+      "line": 138,
       "match": "ABS",
       "severity": "mild",
       "text": "(ABS(g_LoadedVertices[iVar2].vertex.y - g_LoadedVertices[iVar3].vertex.y) <",
@@ -613,7 +588,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 141,
+      "line": 140,
       "match": "ABS",
       "severity": "mild",
       "text": "(ABS(g_LoadedVertices[iVar2].vertex.z - g_LoadedVertices[iVar3].vertex.z) <",
@@ -621,7 +596,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 144,
+      "line": 143,
       "match": "fcos",
       "severity": "mild",
       "text": "fVar8 = (float10)fcos((float10)angle_tolerance *",
@@ -629,7 +604,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 155,
+      "line": 154,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)local_18 + local_30 * 8 + 4) =",
@@ -637,7 +612,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 156,
+      "line": 155,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)local_18 + local_34 * 8);",
@@ -645,7 +620,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 171,
+      "line": 170,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)local_18 + local_2c->vertex_indices[local_30] * 8 + 4);",

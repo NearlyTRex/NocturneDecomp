@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_design_c_createReversedQuadPolygon_FUN_0045e040(void)
+; void __cdecl shape_design_c_createReversedQuadPolygon_FUN_0045e040(uint vertex0,uint vertex1,uint vertex2,uint vertex3)
 ;
+; Parameters:
+; uint             Stack[0x4]:4   vertex0
+; uint             Stack[0x8]:4   vertex1
+; uint             Stack[0xc]:4   vertex2
+; uint             Stack[0x10]:4   vertex3
 ;
 ; XREF[1]:
 ;   shape_design.c_createRotationalSweepGeometry_FUN_0045e070 at 0045e471
@@ -30,7 +35,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x20]      ; 0045e058
     PUSH EAX                            ; 0045e05b
     CALL shape_design.c_createQuadPolygon_FUN_0045df60 ; 0045e05c
-        ;   XREF to: 0045df60 (UNCONDITIONAL_CALL)  ; void shape_design.c_createQuadPolygon_FUN_0045df60()
+        ;   XREF to: 0045df60 (UNCONDITIONAL_CALL)  ; void shape_design.c_createQuadPolygon_FUN_0045df60(uint vertex0, uint vertex1, uint vertex2, uint vertex3)
     ADD ESP,0x10                        ; 0045e061
     POP EBP                             ; 0045e064
     POP EDI                             ; 0045e065

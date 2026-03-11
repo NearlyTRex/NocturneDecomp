@@ -419,7 +419,7 @@ section .text
     MOV EDX,dword ptr [0x00678a60]      ; 00584d15 | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH EDX                            ; 00584d1b | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420 ; 00584d1c
-        ;   XREF to: 0049f420 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420(CEditorTools * this_ptr, char * file_pattern, int include_files, char * initial_path)
+        ;   XREF to: 0049f420 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420(CEditorTools * this_ptr, char * title_text, char * search_pattern, char * initial_path, ...)
     ADD ESP,0x14                        ; 00584d21
     TEST EAX,EAX                        ; 00584d24
     JZ 0x00584b04                       ; 00584d26

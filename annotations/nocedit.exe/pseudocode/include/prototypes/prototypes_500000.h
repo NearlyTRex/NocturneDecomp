@@ -136,7 +136,7 @@ void __cdecl core_lever_cpp_CLever_setState_FUN_00504b20(CLever *this_ptr,float 
 void __cdecl core_lever_cpp_CLever_activate_FUN_00504c90(CLever *this_ptr);
 int __cdecl core_lever_cpp_CLever_renderOpaque_FUN_00504cf0(CLever *this_ptr);
 CBoundingBox3D * __cdecl core_lever_cpp_CLever_getBoundingBox_FUN_00504d80(CLever *this_ptr,CBoundingBox3D *out_box);
-CVector3f * __cdecl core_lever_cpp_CLever_FUN_00504dd0(CLever *this_ptr,CVector3f *param_2);
+CVector3f * __cdecl core_lever_cpp_CLever_getHandlePosition_FUN_00504dd0(CLever *this_ptr,CVector3f *out_position);
 void __cdecl core_lever_cpp_CLever_archive_FUN_00504e80(CLever *this_ptr);
 ECollisionType __cdecl core_lever_cpp_CLever_getCollisionType_FUN_00505060(CLever *this_ptr,SCollisionInfo *collision_info);
 int __cdecl core_lever_cpp_CLever_isAccessibleFrom_FUN_00505080(CLever *this_ptr,CVector3f *world_position);
@@ -317,7 +317,7 @@ int __cdecl core_melee_cpp_CMelee_canPickup_FUN_0050eab0(CMelee *this_ptr,CDemon
 int __cdecl core_melee_cpp_CMelee_getAllowedMeleeAttackTypes_FUN_0050eae0(CMelee *this_ptr);
 void __cdecl core_melee_cpp_CMelee_fillAttackDamageInfo_FUN_0050eaf0(CMelee *this_ptr,int attack_flags,SDamageInfo *out_damage_info,CDemonActor *victim);
 void __cdecl core_melee_cpp_CMelee_playAttackHitEffects_FUN_0050eb50(CMelee *this_ptr,int attack_flags,SDamageInfo *damage_info,CDemonActor *victim);
-void __cdecl core_melee_cpp_CMelee_FUN_0050ebe0(CMelee *this_ptr);
+void __cdecl core_melee_cpp_CMelee_initBloodSpurtEffects_FUN_0050ebe0(CMelee *this_ptr,int blood_spurt_count,int blood_gore_type);
 void __cdecl core_melee_cpp_CMelee_process_FUN_0050ec10(CMelee *this_ptr,float delta_time);
 void __cdecl core_melee_cpp_CMelee_setWeaponState_FUN_0050ecd0(CMelee *this_ptr,int weapon_state);
 void __cdecl core_melee_cpp_CMelee_getPropertyList_FUN_0050ecf0(CMelee *this_ptr,CActorPropertyList *property_list);

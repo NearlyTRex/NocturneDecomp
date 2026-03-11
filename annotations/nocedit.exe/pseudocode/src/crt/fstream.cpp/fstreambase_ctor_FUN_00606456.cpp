@@ -13,8 +13,6 @@ void __cdecl crt_fstream_cpp_fstreambase_ctor_FUN_00606456(fstreambase *this_ptr
   ios *piVar2;
   filebuf *this_ptr_00;
   int iVar3;
-  char *unaff_ESI;
-  int unaff_EDI;
   
   if ((ctor_flags & 1U) == 0) {
     (this_ptr->base).layout_info = &g_FStreamBase_VirtualBaseLayout;
@@ -29,8 +27,7 @@ void __cdecl crt_fstream_cpp_fstreambase_ctor_FUN_00606456(fstreambase *this_ptr
   *(void ***)(this_ptr_00->__unbuffered_get_area + *(int *)(iVar3 + 4) + -0x10) =
        &g_FStreamBase_IOSDestructor;
   crt_iostream_cpp_streambuf_initBuffer_FUN_0060b815
-            ((streambuf *)(pcVar1 + *(int *)(*(int *)pcVar1 + 4)),(char *)this_ptr_00,unaff_EDI,
-             unaff_ESI);
+            ((streambuf *)(pcVar1 + *(int *)(*(int *)pcVar1 + 4)),(char *)this_ptr_00);
   iVar3 = crt_fstream_cpp_filebuf_open_FUN_00608c15(this_ptr_00,(char *)fd,mode,(int)buffer);
   if (iVar3 == 0) {
     reportStreamError

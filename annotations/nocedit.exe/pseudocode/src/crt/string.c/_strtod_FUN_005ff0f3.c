@@ -10,8 +10,7 @@ double __cdecl _strtod(char *str)
 
 {
   double dVar1;
-  char **in_stack_ffffffec;
   
-  dVar1 = strtod_main((char *)0x0,in_stack_ffffffec);
+  dVar1 = strtod_main(str,(char **)0x0);
   return dVar1;
 }

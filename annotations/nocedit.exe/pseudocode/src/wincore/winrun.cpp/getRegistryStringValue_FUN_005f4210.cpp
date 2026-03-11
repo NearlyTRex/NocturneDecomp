@@ -10,20 +10,20 @@ void __cdecl wincore_winrun_cpp_getRegistryStringValue_FUN_005f4210(char *key_pa
 
 {
   LSTATUS LVar1;
-  LPCSTR in_stack_00000004;
   HKEY pHStack_10;
-  char *pcStack_c;
+  uint *puStack_c;
   DWORD DStack_8;
   
-  *value_name = '\0';
-  LVar1 = (*g_RegOpenKeyExAFunc)((HKEY)&DAT_80000002,in_stack_00000004,0,1,&pHStack_10);
+  *output_buffer = '\0';
+  LVar1 = (*g_RegOpenKeyExAFunc)((HKEY)&DAT_80000002,key_path,0,1,&pHStack_10);
   if (LVar1 != 0) {
     return;
   }
-  pcStack_c = output_buffer;
+  puStack_c = buffer_size;
   DStack_8 = 1;
   (*g_RegQueryValueExAFunc)
-            (pHStack_10,key_path,(LPDWORD)0x0,&DStack_8,(LPBYTE)value_name,(LPDWORD)&pcStack_c);
+            (pHStack_10,value_name,(LPDWORD)0x0,&DStack_8,(LPBYTE)output_buffer,(LPDWORD)&puStack_c)
+  ;
   (*g_RegCloseKeyFunc)(pHStack_10);
   return;
 }

@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_design_c_createQuadPolygon_FUN_0045df60(void)
+; void __cdecl shape_design_c_createQuadPolygon_FUN_0045df60(uint vertex0,uint vertex1,uint vertex2,uint vertex3)
 ;
+; Parameters:
+; uint             Stack[0x4]:4   vertex0
+; uint             Stack[0x8]:4   vertex1
+; uint             Stack[0xc]:4   vertex2
+; uint             Stack[0x10]:4   vertex3
 ;
 ; XREF[3]:
 ;   shape_design.c_createBoxPrimitive_FUN_0045e520 at 0045e8f2

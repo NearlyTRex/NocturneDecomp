@@ -19,6 +19,7 @@ void __cdecl core_setdir_cpp_CZThumb_pushRenderingContext_FUN_00574e70(CZThumb *
             (g_CDemonRendererPtr2,(CVector3i *)&this_ptr->camera_position);
   engine_drender_cpp_CDemonRenderer_setProjectionScaleSimple_FUN_0048c670
             (g_CDemonRendererPtr2,(float)this_ptr->projection_scale);
-  engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(g_CDemonRendererPtr2);
+  engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0
+            (g_CDemonRendererPtr2,&this_ptr->look_at_position);
   return;
 }

@@ -323,6 +323,11 @@ inline char* _fullpath(char* buffer, const char* path, size_t maxlen) {
 }
 #endif
 
+// _getcwd() - get current working directory
+#ifndef _MSC_VER
+inline char* _getcwd(char* buffer, int size) { return getcwd(buffer, size); }
+#endif
+
 // ---------------------------------------------------------------------------
 // File Find Functions (Watcom io.h)
 // ---------------------------------------------------------------------------

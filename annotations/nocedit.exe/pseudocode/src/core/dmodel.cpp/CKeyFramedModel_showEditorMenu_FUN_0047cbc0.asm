@@ -306,7 +306,7 @@ section .text
     MOV EDX,dword ptr [0x006703ec]      ; 0047cd64 | g_CDemonRendererPtr2
     PUSH EDX                            ; 0047cd6a | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0 ; 0047cd6b
-        ;   XREF to: 0048c1d0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(CDemonRenderer * this_ptr)
+        ;   XREF to: 0048c1d0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(CDemonRenderer * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 0047cd70
     MOV ECX,dword ptr [0x006703ec]      ; 0047cd73 | g_CDemonRendererPtr2
     PUSH dword ptr [EBP + 0xe]          ; 0047cd79
@@ -945,12 +945,12 @@ section .text
     INC ECX                             ; 0047d560
     PUSH ECX                            ; 0047d561
     PUSH 0x62090d                       ; 0047d562 | = "noc%d.pcx"
-    PUSH 0x2c14c88                      ; 0047d567 | CHAR_ARRAY_02c14c88
+    PUSH 0x2c14c88                      ; 0047d567 | g_KFMShowEditorScreenshotFile
     MOV dword ptr [0x02c14c84],ECX      ; 0047d56c | g_KeyFrameModelPoolEnd
     CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0047d572
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0047d577
-    PUSH 0x2c14c88                      ; 0047d57a | CHAR_ARRAY_02c14c88
+    PUSH 0x2c14c88                      ; 0047d57a | g_KFMShowEditorScreenshotFile
     CALL engine_pcx.c_saveScreenshotGeneral_FUN_005490c0 ; 0047d57f
         ;   XREF to: 005490c0 (UNCONDITIONAL_CALL)  ; void engine_pcx.c_saveScreenshotGeneral_FUN_005490c0(char * filename)
     ADD ESP,0x4                         ; 0047d584
@@ -1313,7 +1313,7 @@ section .text
     MOV ESI,dword ptr [0x00678a60]      ; 0047d8f6 | g_CEditorToolsPtr
     PUSH ESI                            ; 0047d8fc | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420 ; 0047d8fd
-        ;   XREF to: 0049f420 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420(CEditorTools * this_ptr, char * file_pattern, int include_files, char * initial_path)
+        ;   XREF to: 0049f420 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420(CEditorTools * this_ptr, char * title_text, char * search_pattern, char * initial_path, ...)
     ADD ESP,0x14                        ; 0047d902
     TEST EAX,EAX                        ; 0047d905
     JZ 0x0047d6c7                       ; 0047d907
@@ -2448,12 +2448,12 @@ section .text
     LEA EAX,[EBP + 0xfffffbbe]          ; 0047e646
     PUSH EAX                            ; 0047e64c
     LEA EDI,[EBP + 0xfffffe16]          ; 0047e64d
-    MOV ESI,0x670210                    ; 0047e653 | DAT_00670210
+    MOV ESI,0x670210                    ; 0047e653 | g_ModelLastScaleInput
     CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0047e658
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV ECX,0x19                        ; 0047e65d
     ADD ESP,0x54                        ; 0047e662
-    MOVSD.REP ES:EDI,ESI                ; 0047e665 | DAT_00670210 | DAT_00670214
+    MOVSD.REP ES:EDI,ESI                ; 0047e665 | g_ModelLastScaleInput | DAT_00670214
     MOV EBX,0x1                         ; 0047e667
     PUSH EBX                            ; 0047e66c
         ;   Label: LAB_0047e66c
@@ -2541,7 +2541,7 @@ section .text
     MOV ESI,dword ptr [0x00678a60]      ; 0047e757 | g_CEditorToolsPtr
     PUSH ESI                            ; 0047e75d | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420 ; 0047e75e
-        ;   XREF to: 0049f420 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420(CEditorTools * this_ptr, char * file_pattern, int include_files, char * initial_path)
+        ;   XREF to: 0049f420 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420(CEditorTools * this_ptr, char * title_text, char * search_pattern, char * initial_path, ...)
     ADD ESP,0x14                        ; 0047e763
     TEST EAX,EAX                        ; 0047e766
     JZ 0x0047d6c7                       ; 0047e768

@@ -20,8 +20,8 @@
 ;
 ; Called Functions:
 ;   crt_env.c_getenv_FUN_006013f0
-;   crt_io.c_getcwd_FUN_00608d20
 ;   crt_stdlib.c__fullpath_FUN_00601140
+;   crt_watcom.c_getcwd_FUN_00608d20
 ;
 ; *****************************************************************************
 
@@ -81,8 +81,8 @@ section .text
         ;   XREF to: 00609b91 (CONDITIONAL_JUMP)  ; LAB_00609b91
     PUSH 0x0                            ; 00609b64
     PUSH 0x0                            ; 00609b66
-    CALL crt_io.c_getcwd_FUN_00608d20   ; 00609b68
-        ;   XREF to: 00608d20 (UNCONDITIONAL_CALL)  ; char * crt_io.c_getcwd_FUN_00608d20(char * buffer, SIZE_T size)
+    CALL crt_watcom.c_getcwd_FUN_00608d20 ; 00609b68
+        ;   XREF to: 00608d20 (UNCONDITIONAL_CALL)  ; char * crt_watcom.c_getcwd_FUN_00608d20(char * buffer, SIZE_T size)
     ADD ESP,0x8                         ; 00609b6d
     MOV EDI,0x6852dc                    ; 00609b70 | g_TempDirectoryBuffer
     MOV ESI,EAX                         ; 00609b75

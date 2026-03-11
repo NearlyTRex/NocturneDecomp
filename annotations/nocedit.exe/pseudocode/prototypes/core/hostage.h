@@ -31,9 +31,9 @@ int __cdecl CHostage::renderOpaque(CHostage *this_ptr);
 // Address: 004f4bd0
 void __cdecl CHostage::process(CHostage *this_ptr,float delta_time);
 
-// Original: core_hostage.cpp_CHostage_FUN_004f5ff0
+// Original: core_hostage.cpp_CHostage_processGrabberFlee_FUN_004f5ff0
 // Address: 004f5ff0
-int __cdecl CHostage(CHostage *this_ptr,float delta_time);
+int __cdecl CHostage::processGrabberFlee(CHostage *this_ptr,float delta_time);
 
 // Original: core_hostage.cpp_CHostage_renderBackground_FUN_004f6120
 // Address: 004f6120

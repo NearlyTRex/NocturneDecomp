@@ -12,8 +12,8 @@
 ; XREF[44]:
 ;   core_batcreat.cpp_CBatCreature_processDismemberment_FUN_00415dd0 at 00415e7a
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00415470 at 0041586b
-;   core_batman.cpp_CBatman_FUN_004167f0 at 004167f5
-;   core_batman.cpp_CBatman_FUN_00417660 at 00417945
+;   core_batman.cpp_CBatman_pickRandomMovementState_FUN_004167f0 at 004167f5
+;   core_batman.cpp_CBatman_processDismemberment_FUN_00417660 at 00417945
 ;   core_batman.cpp_CBatman_process_FUN_00416870 at 00417011
 ;   core_bodypart.cpp_CBodyPart_spawnGore_FUN_0041b1b0 at 0041b1b5
 ;   core_bride.cpp_CBride_processDamage_FUN_00424830 at 004249cb

@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 218,
-    "complexity_score": 109,
+    "complexity_score": 110,
     "cross_reference_count": 2,
     "function_call_count": 16,
     "global_count": 8,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 84,
+    "pseudocode_lines": 85,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 302
+    "total_lines": 303
   },
   "cross_references": [
     {
@@ -316,7 +316,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 56,
+      "line": 57,
       "match": "(time_t *)((int)",
       "severity": "mild",
       "text": "((time_t *)((int)&(local_d00.directory_entries)->timestamp + iVar4));",
@@ -324,7 +324,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 74,
+      "line": 75,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&(local_d00.directory_entries)->size + iVar4),local_2c);",

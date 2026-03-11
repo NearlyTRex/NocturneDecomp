@@ -110,7 +110,7 @@ void __cdecl shape_superopt_cpp_CComplexPolygon_storeEdgeSubChain_FUN_005cbe20(C
 void * __cdecl shape_superopt_cpp_CComplexPolygon_getConvexSubChains_FUN_005cbec0(CComplexPolygon *this_ptr,int *out_count);
 int __cdecl shape_superopt_cpp_CComplexPolygon_getExpandedEdgeCount_FUN_005cbee0(CComplexPolygon *this_ptr);
 CVector3d * __cdecl shape_superopt_cpp_CComplexPolygon_getNormal_FUN_005cbef0(CComplexPolygon *this_ptr);
-int __cdecl shape_superopt_cpp_CComplexPolygon_setMaterialId_FUN_005cbf00(CComplexPolygon *this_ptr,int material_id);
+int __cdecl shape_superopt_cpp_CComplexPolygon_getMaterialId_FUN_005cbf00(CComplexPolygon *this_ptr);
 void * __cdecl shape_superopt_cpp_CComplexPolygon_getExpandedEdges_FUN_005cbf10(CComplexPolygon *this_ptr);
 int __cdecl shape_superopt_cpp_CComplexPolygon_isEdgeChainClosed_FUN_005cbf20(CComplexPolygon *this_ptr,SExpandedEdge *edges,int edge_count);
 int __cdecl shape_superopt_cpp_CComplexPolygon_validateSubChainVisibility_FUN_005cbf90(CComplexPolygon *this_ptr,CVector3d *normal,SExpandedEdge *sub_chain, int sub_chain_count,SExpandedEdge *full_edges,int full_edge_count);

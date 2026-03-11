@@ -141,7 +141,7 @@ void __cdecl CDemonRenderer::setCameraRotationFromPoint(CDemonRenderer *this_ptr
 
 // Original: engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0
 // Address: 0048c1d0
-void __cdecl CDemonRenderer::setupSceneRendering(CDemonRenderer *this_ptr);
+void __cdecl CDemonRenderer::setupSceneRendering(CDemonRenderer *this_ptr,CVector3f *euler_angles);
 
 // Original: engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200
 // Address: 0048c200

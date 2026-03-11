@@ -7,10 +7,6 @@
 // Address: 00600cf0
 int __cdecl chsize(int file_handle,long new_size);
 
-// Original: crt_io.c_getcwd_wrapper_FUN_00608d20
-// Address: 0060128c
-char * __cdecl getcwd::wrapper(char *buffer,SIZE_T size);
-
 // Original: crt_io.c_chdir_FUN_006012a0
 // Address: 006012a0
 int __cdecl chdir(char *path);
@@ -94,10 +90,6 @@ int __cdecl InitializeStandardHandles(void);
 // Original: crt_io.c_CreateFallbackHandle_FUN_00608b88
 // Address: 00608b88
 HANDLE __cdecl CreateFallbackHandle(void);
-
-// Original: crt_io.c_getcwd_FUN_00608d20
-// Address: 00608d20
-char * __cdecl getcwd(char *buffer,SIZE_T size);
 
 // Original: crt_io.c_getTempDirectory_FUN_00609afc
 // Address: 00609afc

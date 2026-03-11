@@ -1,23 +1,21 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_design_c_sampleAndFilterPixel_FUN_0046ae20(void *rgb_buffer,void *alpha_buffer,int col_coord,int row_coord,double coord_x1,double coord_y1,double coord_x2,double coord_y2,int atlas_width,int atlas_height,byte *red_out,byte *green_out,byte *blue_out,byte *alpha_out)
+; void __cdecl shape_design_c_sampleAndFilterPixel_FUN_0046ae20(void *rgb_buffer,void *alpha_buffer,int atlas_width,int atlas_height,double coord_x1 ,double coord_y1,double coord_x2,double coord_y2,uchar *red_out,uchar *green_out,uchar *blue_out,uchar *alpha_out)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   rgb_buffer
 ; void *           Stack[0x8]:4   alpha_buffer
-; int              Stack[0xc]:4   col_coord
-; int              Stack[0x10]:4   row_coord
+; int              Stack[0xc]:4   atlas_width
+; int              Stack[0x10]:4   atlas_height
 ; double           Stack[0x14]:8   coord_x1
 ; double           Stack[0x1c]:8   coord_y1
 ; double           Stack[0x24]:8   coord_x2
 ; double           Stack[0x2c]:8   coord_y2
-; int              Stack[0x34]:4   atlas_width
-; int              Stack[0x38]:4   atlas_height
-; byte *           Stack[0x3c]:4   red_out
-; byte *           Stack[0x40]:4   green_out
-; byte *           Stack[0x44]:4   blue_out
-; byte *           Stack[0x48]:4   alpha_out
+; uchar *          Stack[0x34]:4   red_out
+; uchar *          Stack[0x38]:4   green_out
+; uchar *          Stack[0x3c]:4   blue_out
+; uchar *          Stack[0x40]:4   alpha_out
 ; Local Variables:
 ; undefined8       Stack[-0x80]:8  local_80
 ; undefined8       Stack[-0x78]:8  local_78

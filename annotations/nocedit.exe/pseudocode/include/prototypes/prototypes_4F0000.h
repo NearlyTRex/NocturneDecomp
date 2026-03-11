@@ -153,7 +153,7 @@ CHostage * __cdecl core_hostage_cpp_CHostage_ctor_FUN_004f4840(CHostage *this_pt
 void __cdecl core_hostage_cpp_CHostage_setup_FUN_004f4970(CHostage *this_ptr);
 int __cdecl core_hostage_cpp_CHostage_renderOpaque_FUN_004f4b40(CHostage *this_ptr);
 void __cdecl core_hostage_cpp_CHostage_process_FUN_004f4bd0(CHostage *this_ptr,float delta_time);
-int __cdecl core_hostage_cpp_CHostage_FUN_004f5ff0(CHostage *this_ptr,float delta_time);
+int __cdecl core_hostage_cpp_CHostage_processGrabberFlee_FUN_004f5ff0(CHostage *this_ptr,float delta_time);
 void __cdecl core_hostage_cpp_CHostage_renderBackground_FUN_004f6120(CHostage *this_ptr,int layer_flag);
 void __cdecl core_hostage_cpp_CHostage_archive_FUN_004f6170(CHostage *this_ptr);
 int __cdecl core_hostage_cpp_CHostage_isGrabbable_FUN_004f6390(CHostage *this_ptr,CDemonActor *grabber);

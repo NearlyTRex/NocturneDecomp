@@ -1,0 +1,102 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 10,
+    "complexity_score": 8,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 8,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 18
+  },
+  "cross_references": [
+    {
+      "addr": "0050eb50",
+      "from_addr": "0050eb82",
+      "name": "core_melee.cpp_CMelee_playAttackHitEffects_FUN_0050eb50",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0050ebe0",
+    "address_range": [
+      [
+        "0050ebe0",
+        "0050ec0e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_melee.cpp_CMelee_initBloodSpurtEffects_FUN_0050ebe0",
+    "signature": "void __cdecl core_melee_cpp_CMelee_initBloodSpurtEffects_FUN_0050ebe0(CMelee *this_ptr,int blood_spurt_count,int blood_gore_type)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0050eb82",
+        "call_type": "direct",
+        "caller": "core_melee.cpp_CMelee_playAttackHitEffects_FUN_0050eb50",
+        "estimated_params": 3,
+        "instructions_analyzed": 5,
+        "reg_params": [],
+        "stack_params": 3
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 3,
+    "estimated_params": 3
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.0,
+    "instruction_count": 9,
+    "opcode_distribution": {
+      "COPY": 24,
+      "FLOAT2FLOAT": 2,
+      "INT_ADD": 9,
+      "LOAD": 5,
+      "RETURN": 1,
+      "STORE": 4
+    },
+    "pcode_op_count": 45
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMelee *"
+      },
+      {
+        "is_param": true,
+        "name": "blood_spurt_count",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "blood_gore_type",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

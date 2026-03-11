@@ -10,6 +10,6 @@ void __cdecl core_stairs_cpp_CStairs_setup_FUN_005b9be0(CStairs *this_ptr)
 
 {
   core_actor_cpp_CDemonActor_setup_FUN_00408bb0(&this_ptr->base);
-  core_stairs_cpp_CStairs_FUN_005ba700(this_ptr);
+  core_stairs_cpp_CStairs_buildCollision_FUN_005ba700(this_ptr);
   return;
 }

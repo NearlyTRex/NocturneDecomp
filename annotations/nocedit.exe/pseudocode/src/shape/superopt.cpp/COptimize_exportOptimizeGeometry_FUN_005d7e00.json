@@ -3,15 +3,9 @@
     "errors": [
       {
         "category": "incompatible_types",
-        "column": 18,
-        "line": 44,
+        "column": 16,
+        "line": 47,
         "message": "assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 49,
-        "line": 45,
-        "message": "use of undeclared identifier 'stack0xffffffc4'"
       }
     ],
     "success": false,
@@ -19,19 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 270,
-    "complexity_score": 271,
+    "complexity_score": 220,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 45,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 146,
-    "suspect_count": 11,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 155,
+    "suspect_count": 6,
     "suspect_types": [
-      "pointer_cast",
-      "stack_param",
-      "stack_ref"
+      "pointer_cast"
     ],
-    "total_lines": 416
+    "total_lines": 425
   },
   "cross_references": [
     {
@@ -77,7 +69,7 @@
     {
       "addr": "005cbf00",
       "is_variadic": false,
-      "name": "shape_superopt.cpp_CComplexPolygon_setMaterialId_FUN_005cbf00"
+      "name": "shape_superopt.cpp_CComplexPolygon_getMaterialId_FUN_005cbf00"
     }
   ],
   "globals": [
@@ -481,92 +473,52 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_ffffffc4",
-      "severity": "moderate",
-      "text": "uint in_stack_ffffffc4;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 38,
-      "match": "&stack0xffffffc4",
-      "severity": "moderate",
-      "text": "(this_ptr_00,(int *)&stack0xffffffc4);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 40,
-      "match": "in_stack_ffffffc4",
-      "severity": "moderate",
-      "text": "(this_ptr_00,in_stack_ffffffc4);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 42,
-      "match": "in_stack_ffffffc4",
-      "severity": "moderate",
-      "text": "if (in_stack_ffffffc4 != 0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 57,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "*(float *)((int)&g_LoadedVertices[0].vertex.x + iVar10) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 59,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "*(float *)((int)&g_LoadedVertices[0].vertex.y + iVar10) =",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 61,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "*(float *)((int)&g_LoadedVertices[0].vertex.z + iVar10) =",
+      "text": "*(float *)((int)&g_LoadedVertices[0].vertex.x + iVar6) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 117,
+      "line": 63,
+      "match": "(float *)((int)",
+      "severity": "mild",
+      "text": "*(float *)((int)&g_LoadedVertices[0].vertex.y + iVar6) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 65,
+      "match": "(float *)((int)",
+      "severity": "mild",
+      "text": "*(float *)((int)&g_LoadedVertices[0].vertex.z + iVar6) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 125,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar8 + 4) = iVar10;",
+      "text": "*(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar7 + 4) = iVar6;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 118,
+      "line": 126,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "*(float *)((int)g_ModelPolygonData[0].uv_u + iVar8 + 4) =",
+      "text": "*(float *)((int)g_ModelPolygonData[0].uv_u + iVar7 + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 124,
+      "line": 132,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "*(float *)((int)g_ModelPolygonData[0].uv_v + iVar8 + 4) =",
+      "text": "*(float *)((int)g_ModelPolygonData[0].uv_v + iVar7 + 4) =",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 147,
-      "match": "in_stack_ffffffc4",
-      "severity": "moderate",
-      "text": "if (in_stack_ffffffc4 <= local_30) goto LAB_005d80b9;",
-      "type": "stack_param"
     }
   ]
 }

@@ -52314,6 +52314,70 @@
             ]
           },
           "type":"CLodMesh*"
+        },
+        {
+          "name":"pixel_heights",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int*"
+        },
+        {
+          "name":"face_counts",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int*"
+        },
+        {
+          "name":"max_lods",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"render_mode",
+          "storage":{
+            "offset":20,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x14]",
+                "offset":20,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ],
       "ret_storage":{
@@ -96376,6 +96440,22 @@
         {
           "name":"key_path",
           "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        },
+        {
+          "name":"value_name",
+          "storage":{
             "offset":8,
             "size":4,
             "stack":true,
@@ -96390,7 +96470,7 @@
           "type":"char*"
         },
         {
-          "name":"value_name",
+          "name":"output_buffer",
           "storage":{
             "offset":12,
             "size":4,
@@ -96406,7 +96486,7 @@
           "type":"char*"
         },
         {
-          "name":"output_buffer",
+          "name":"buffer_size",
           "storage":{
             "offset":16,
             "size":4,
@@ -96415,22 +96495,6 @@
               {
                 "addr":"Stack[0x10]",
                 "offset":16,
-                "size":4
-              }
-            ]
-          },
-          "type":"char*"
-        },
-        {
-          "name":"buffer_size",
-          "storage":{
-            "offset":20,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x14]",
-                "offset":20,
                 "size":4
               }
             ]

@@ -23,10 +23,9 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
   char *pcVar10;
   int iVar11;
   char *pcVar12;
-  uint *puVar13;
   int x;
-  CKeyFramedModel *pCVar14;
-  byte bVar16;
+  CKeyFramedModel *pCVar13;
+  byte bVar15;
   int local_ca8;
   char local_c9c [260];
   char local_b98 [256];
@@ -125,9 +124,9 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
   float local_1c;
   char local_18 [4];
   char local_14 [4];
-  CKeyFramedModel *pCVar15;
+  CKeyFramedModel *pCVar14;
   
-  bVar16 = 0;
+  bVar15 = 0;
   local_84 = 0;
   engine_2d_c_clearInputAndWait_FUN_00403260();
   local_78 = 0.0;
@@ -178,7 +177,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
       }
       engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
                 (g_CDemonRendererPtr2,(CVector3i *)&local_90);
-      engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(g_CDemonRendererPtr2);
+      engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0
+                (g_CDemonRendererPtr2,&local_d8);
       engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0048c650
                 (g_CDemonRendererPtr2,local_80);
       local_114.x = 0.0;
@@ -418,8 +418,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
     iVar9 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_F4);
     if (iVar9 != 0) {
       g_KeyFrameModelPoolEnd = (CKeyFramedModel *)(g_KeyFrameModelPoolEnd->model_filename + 1);
-      _sprintf(CHAR_ARRAY_02c14c88,"noc%d.pcx");
-      engine_pcx_c_saveScreenshotGeneral_FUN_005490c0(CHAR_ARRAY_02c14c88);
+      _sprintf(g_KFMShowEditorScreenshotFile,"noc%d.pcx");
+      engine_pcx_c_saveScreenshotGeneral_FUN_005490c0(g_KFMShowEditorScreenshotFile);
     }
     iVar9 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD5);
     if (iVar9 != 0) {
@@ -503,8 +503,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
                 pcVar10 = pcVar10 + 2;
               } while (cVar2 != '\0');
               iVar9 = shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420
-                                (g_CEditorToolsPtr,"Import Keyframed model",0x6209a0,
-                                 local_408);
+                                (g_CEditorToolsPtr,"Import Keyframed model","*.s3d",
+                                 local_408,1);
               if (iVar9 != 0) {
                 core_dmodel_cpp_CKeyFramedModel_importFromS3D_FUN_00479330(this_ptr,local_408);
                 local_64 = 0;
@@ -512,16 +512,16 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
                           (local_408,(char *)0x0,(char *)0x0,this_ptr->model_filename,(char *)0x0);
                 pcVar10 = ".kfm";
                 iVar9 = -1;
-                pCVar15 = this_ptr;
+                pCVar14 = this_ptr;
                 do {
-                  pCVar14 = pCVar15;
+                  pCVar13 = pCVar14;
                   if (iVar9 == 0) break;
                   iVar9 = iVar9 + -1;
-                  pCVar14 = (CKeyFramedModel *)((int)pCVar15 + (uint)bVar16 * -2 + 1);
-                  pcVar12 = pCVar15->model_filename;
-                  pCVar15 = pCVar14;
+                  pCVar13 = (CKeyFramedModel *)((int)pCVar14 + (uint)bVar15 * -2 + 1);
+                  pcVar12 = pCVar14->model_filename;
+                  pCVar14 = pCVar13;
                 } while (*pcVar12 != '\0');
-                pcVar12 = (char *)((int)&pCVar14[-1].dead + 3);
+                pcVar12 = (char *)((int)&pCVar13[-1].dead + 3);
                 do {
                   cVar2 = *pcVar10;
                   *pcVar12 = cVar2;
@@ -535,8 +535,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
             }
             else {
               iVar9 = shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420
-                                (g_CEditorToolsPtr,"Get model and textures from network",0x6209c2,
-                                 "t:\\");
+                                (g_CEditorToolsPtr,"Get model and textures from network",
+                                 "*.kfm","t:\\",1);
               if (iVar9 != 0) {
                 splitpath
                           ("t:\\",local_18,local_998,local_698,local_b98);
@@ -842,12 +842,12 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
               local_11c = local_170;
               local_118 = local_16c;
               _sprintf(local_4d0,"Current dimensions on frame %d\nX: (%6.2f ... %6.2f), size = %g\nY: (%6.2f ... %6.2f), size = %g\nZ: (%6.2f ... %6.2f), size = %g\n\nEnter uniform scale factor, or x,y,z scale factor\n");
-              puVar13 = &DAT_00670210;
-              pcVar10 = local_278;
+              pcVar10 = g_ModelLastScaleInput;
+              pcVar12 = local_278;
               for (iVar9 = 0x19; iVar9 != 0; iVar9 = iVar9 + -1) {
-                *(uint *)pcVar10 = *puVar13;
-                puVar13 = puVar13 + (uint)bVar16 * -2 + 1;
-                pcVar10 = pcVar10 + ((uint)bVar16 * -2 + 1) * 4;
+                *(uint *)pcVar12 = *(uint *)pcVar10;
+                pcVar10 = pcVar10 + ((uint)bVar15 * -2 + 1) * 4;
+                pcVar12 = pcVar12 + ((uint)bVar15 * -2 + 1) * 4;
               }
               while (iVar9 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
                                        (g_CEditorToolsPtr,local_4d0,local_278,100,1), iVar9 != 0) {

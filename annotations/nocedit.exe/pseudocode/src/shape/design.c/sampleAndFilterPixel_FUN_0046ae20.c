@@ -2,13 +2,13 @@
 // Address: 0046ae20
 // Address Range: [[0046ae20, 0046b051]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_design_c_sampleAndFilterPixel_FUN_0046ae20(void *rgb_buffer,void *alpha_buffer,int col_coord,int row_coord,double coord_x1,double coord_y1,double coord_x2,double coord_y2,int atlas_width,int atlas_height,byte *red_out,byte *green_out,byte *blue_out,byte *alpha_out)
+// Signature: void __cdecl shape_design_c_sampleAndFilterPixel_FUN_0046ae20(void *rgb_buffer,void *alpha_buffer,int atlas_width,int atlas_height,double coord_x1 ,double coord_y1,double coord_x2,double coord_y2,uchar *red_out,uchar *green_out,uchar *blue_out,uchar *alpha_out)
 
 #include "nocturne.h"
 
 /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
-void __cdecl shape_design_c_sampleAndFilterPixel_FUN_0046ae20(void *rgb_buffer,void *alpha_buffer,int col_coord,int row_coord,double coord_x1,double coord_y1,double coord_x2,double coord_y2,int atlas_width,int atlas_height,byte *red_out,byte *green_out,byte *blue_out,byte *alpha_out)
+void __cdecl shape_design_c_sampleAndFilterPixel_FUN_0046ae20(void *rgb_buffer,void *alpha_buffer,int atlas_width,int atlas_height,double coord_x1 ,double coord_y1,double coord_x2,double coord_y2,uchar *red_out,uchar *green_out,uchar *blue_out,uchar *alpha_out)
 
 {
   double dVar1;
@@ -44,7 +44,7 @@ void __cdecl shape_design_c_sampleAndFilterPixel_FUN_0046ae20(void *rgb_buffer,v
       dVar2 = shape_design_c_calculateSamplingWeight_FUN_0046adc0
                         ((double)local_60,coord_x1,coord_x2);
       shape_design_c_samplePixelAndAccumulate_FUN_0046ad00
-                (rgb_buffer,alpha_buffer,col_coord,row_coord,local_60,local_14,dVar2 * dVar1,
+                (rgb_buffer,alpha_buffer,atlas_width,atlas_height,local_60,local_14,dVar2 * dVar1,
                  &local_4c,&local_44,&local_3c,&local_34);
       local_2c = local_2c + dVar2 * dVar1;
     }
@@ -55,9 +55,9 @@ void __cdecl shape_design_c_sampleAndFilterPixel_FUN_0046ae20(void *rgb_buffer,v
     local_3c = local_3c / local_2c;
     local_34 = local_34 / local_2c;
   }
-  *(int *)atlas_width = (int)ROUND(ROUND(local_4c + 0.5));
-  *(int *)atlas_height = (int)ROUND(ROUND(local_44 + 0.5));
-  *(int *)red_out = (int)ROUND(ROUND(local_3c + 0.5));
-  *(int *)green_out = (int)ROUND(ROUND(local_34 + 0.5));
+  *(int *)red_out = (int)ROUND(ROUND(local_4c + 0.5));
+  *(int *)green_out = (int)ROUND(ROUND(local_44 + 0.5));
+  *(int *)blue_out = (int)ROUND(ROUND(local_3c + 0.5));
+  *(int *)alpha_out = (int)ROUND(ROUND(local_34 + 0.5));
   return;
 }

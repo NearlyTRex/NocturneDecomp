@@ -1,0 +1,186 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 62,
+    "complexity_score": 63,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 23,
+    "suspect_count": 3,
+    "suspect_types": [
+      "decompiler_intrinsic",
+      "warning_inlined_function"
+    ],
+    "total_lines": 85
+  },
+  "cross_references": [
+    {
+      "addr": "005be520",
+      "from_addr": "005be8cf",
+      "name": "core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00504dd0",
+    "address_range": [
+      [
+        "00504dd0",
+        "00504e7f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_lever.cpp_CLever_getHandlePosition_FUN_00504dd0",
+    "signature": "CVector3f * __cdecl core_lever_cpp_CLever_getHandlePosition_FUN_00504dd0(CLever *this_ptr,CVector3f *out_position)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408ec0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0"
+    },
+    {
+      "addr": "00478d80",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80"
+    },
+    {
+      "addr": "005fe6b0",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006608f8",
+      "name": "FLOAT_006608f8",
+      "type": "float",
+      "value": "0.00390625"
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.035714285714286,
+    "instruction_count": 56,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "CALL": 5,
+      "COPY": 108,
+      "FLOAT2FLOAT": 7,
+      "FLOAT_MULT": 4,
+      "INT2FLOAT": 4,
+      "INT_ADD": 29,
+      "INT_AND": 33,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 23,
+      "INT_LEFT": 2,
+      "INT_LESS": 2,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 3,
+      "INT_OR": 5,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 7,
+      "INT_SEXT": 3,
+      "INT_SLESS": 13,
+      "INT_SUB": 19,
+      "INT_XOR": 1,
+      "LOAD": 17,
+      "POPCOUNT": 11,
+      "RETURN": 1,
+      "ROUND": 1,
+      "STORE": 20,
+      "SUBPIECE": 2,
+      "TRUNC": 1
+    },
+    "pcode_op_count": 338
+  },
+  "stack_frame": {
+    "frame_size": 48,
+    "local_size": 40,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLever *"
+      },
+      {
+        "is_param": true,
+        "name": "out_position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 19,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_18 = (int)ROUND(ROUND((float)local_14 * this_ptr->param));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 19,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_18 = (int)ROUND(ROUND((float)local_14 * this_ptr->param));",
+      "type": "decompiler_intrinsic"
+    }
+  ]
+}

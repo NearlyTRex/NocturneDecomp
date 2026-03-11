@@ -13,7 +13,7 @@
 ;   CSound g_CSoundInstance
 ;
 ; Called Functions:
-;   core_cow.cpp_CZombieCow_FUN_004448c0
+;   core_cow.cpp_CZombieCow_processDismemberment_FUN_004448c0
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_004a9f10
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
@@ -31,8 +31,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x14]      ; 00444b47
     PUSH EDI                            ; 00444b4b
     PUSH EBX                            ; 00444b4c
-    CALL core_cow.cpp_CZombieCow_FUN_004448c0 ; 00444b4d
-        ;   XREF to: 004448c0 (UNCONDITIONAL_CALL)  ; void core_cow.cpp_CZombieCow_FUN_004448c0(CZombieCow * this_ptr, SDamageInfo * damage_info)
+    CALL core_cow.cpp_CZombieCow_processDismemberment_FUN_004448c0 ; 00444b4d
+        ;   XREF to: 004448c0 (UNCONDITIONAL_CALL)  ; void core_cow.cpp_CZombieCow_processDismemberment_FUN_004448c0(CZombieCow * this_ptr, SDamageInfo * damage_info)
     FLD float ptr [EDI + 0x4]           ; 00444b52
     ADD ESP,0x8                         ; 00444b55
     FSUBR float ptr [EBX + 0x243c]      ; 00444b58

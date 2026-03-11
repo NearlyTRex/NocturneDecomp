@@ -10,11 +10,11 @@
 ;   crt_io.c_access_FUN_0060c9f0 at 0060c9ff
 ;   crt_io.c_chdir_FUN_006012a0 at 006012ae
 ;   crt_io.c_chsize_FUN_00600cf0 at 00600d81
-;   crt_io.c_getcwd_FUN_00608d20 at 00608d4c
 ;   crt_io.c_stat_FUN_00607e64 at 00607f99
 ;   crt_io.c_tell_FUN_00606720 at 00606776
 ;   crt_io.c_utime_FUN_00608160 at 0060818e
 ;   crt_io.c_write_FUN_006084ec at 006087c2
+;   crt_process.c_spawn_FUN_006105a0 at 006106a0
 ;   ... and 12 more
 ;
 ; Referenced Globals:

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_design_c_triangulateDSE_FUN_0046e4d0(void)
+; void __cdecl shape_design_c_triangulateDSE_FUN_0046e4d0(int max_vertices)
 ;
+; Parameters:
+; int              Stack[0x4]:4   max_vertices
 ; Local Variables:
 ; undefined4       Stack[-0x28]:4  local_28
 ; undefined4       Stack[-0x24]:4  local_24

@@ -21,7 +21,7 @@ extern CKeyFramedModel* g_KeyFrameModelPoolEnd;
 extern FileSearchHandlerFunc* g_SearchHandlers[5];
 
 // char[20]
-extern char CHAR_ARRAY_02c14c88[20];
+extern char g_KFMShowEditorScreenshotFile[20];
 
 // char[72]
 extern char g_PolyDataConversionBuffer[72];

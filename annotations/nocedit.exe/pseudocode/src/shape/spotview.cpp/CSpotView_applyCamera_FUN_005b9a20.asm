@@ -112,7 +112,7 @@ section .text
     MOV ESI,dword ptr [0x006703ec]      ; 005b9adf | g_CDemonRendererPtr2
     PUSH ESI                            ; 005b9ae5 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0 ; 005b9ae6
-        ;   XREF to: 0048c1d0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(CDemonRenderer * this_ptr)
+        ;   XREF to: 0048c1d0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(CDemonRenderer * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 005b9aeb
     ADD ESP,0x64                        ; 005b9aee
     POP ESI                             ; 005b9af1

@@ -4,37 +4,37 @@
       {
         "category": "other",
         "column": 48,
-        "line": 51,
+        "line": 52,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 47,
-        "line": 60,
+        "line": 61,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 28,
-        "line": 68,
+        "line": 69,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 120,
-        "line": 127,
+        "line": 128,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 46,
-        "line": 132,
+        "line": 133,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
       },
       {
         "category": "other",
         "column": 65,
-        "line": 151,
+        "line": 152,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
@@ -43,18 +43,18 @@
   },
   "complexity": {
     "assembly_lines": 345,
-    "complexity_score": 202,
+    "complexity_score": 203,
     "cross_reference_count": 1,
     "function_call_count": 21,
     "global_count": 19,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 152,
+    "pseudocode_lines": 153,
     "suspect_count": 4,
     "suspect_types": [
       "pointer_cast",
       "stack_alignment_array"
     ],
-    "total_lines": 497
+    "total_lines": 498
   },
   "cross_references": [
     {
@@ -519,7 +519,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 87,
+      "line": 88,
       "match": "(time_t *)((int)",
       "severity": "mild",
       "text": "ptVar5 = (time_t *)((int)(local_1108.directory_entries + iVar2) + (uint)bVar10 * -8 + 4);",
@@ -527,7 +527,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 129,
+      "line": 130,
       "match": "(time_t *)((int)",
       "severity": "mild",
       "text": "ptVar6 = (time_t *)((int)&local_1108 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + -0x14);",
@@ -535,7 +535,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 131,
+      "line": 132,
       "match": "(time_t *)((int)",
       "severity": "mild",
       "text": "*(time_t *)((int)&local_1108 + (uint)bVar10 * -8 + -0x18) = local_1c[(uint)bVar10 * -2];",

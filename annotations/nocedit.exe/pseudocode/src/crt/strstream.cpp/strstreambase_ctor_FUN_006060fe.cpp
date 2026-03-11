@@ -12,9 +12,7 @@ strstreambase * __cdecl crt_strstream_cpp_strstreambase_ctor_FUN_006060fe(strstr
   int iVar1;
   strstreambuf *this_ptr_00;
   ios *piVar2;
-  char *unaff_EBX;
   short *psVar3;
-  int unaff_ESI;
   
   if ((ctor_flags & 1U) == 0) {
     (this_ptr->_strstreambase_core).layout_info = &DAT_00665d60;
@@ -33,7 +31,6 @@ strstreambase * __cdecl crt_strstream_cpp_strstreambase_ctor_FUN_006060fe(strstr
   *(void ***)((int)&(this_ptr_00->_streambuf).__flags + *(int *)(iVar1 + 4)) =
        &g_StrStreamBase_IOSDestructor;
   crt_iostream_cpp_streambuf_initBuffer_FUN_0060b815
-            ((streambuf *)((int)psVar3 + *(int *)(*(int *)psVar3 + 4)),(char *)this_ptr_00,unaff_ESI
-             ,unaff_EBX);
+            ((streambuf *)((int)psVar3 + *(int *)(*(int *)psVar3 + 4)),(char *)this_ptr_00);
   return (strstreambase *)psVar3;
 }

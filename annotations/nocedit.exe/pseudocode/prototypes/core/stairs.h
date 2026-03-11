@@ -59,9 +59,9 @@ int __cdecl CStairs::customGetFloorHeight(CStairs *this_ptr,float x_pos,float z_
 // Address: 005ba6f0
 EGroundType __cdecl CStairs::getGroundType(CStairs *this_ptr);
 
-// Original: core_stairs.cpp_CStairs_FUN_005ba700
+// Original: core_stairs.cpp_CStairs_buildCollision_FUN_005ba700
 // Address: 005ba700
-void __cdecl CStairs(CStairs *this_ptr);
+void __cdecl CStairs::buildCollision(CStairs *this_ptr);
 
 // Original: core_stairs.cpp_CStairs_getPropertyList_FUN_005ba840
 // Address: 005ba840

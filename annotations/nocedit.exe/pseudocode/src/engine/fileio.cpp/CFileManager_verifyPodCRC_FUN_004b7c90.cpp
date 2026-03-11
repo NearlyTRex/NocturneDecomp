@@ -17,7 +17,8 @@ void __cdecl engine_fileio_cpp_CFileManager_verifyPodCRC_FUN_004b7c90(CFileManag
   pcVar3 = local_108;
   if (pod_filename == (char *)0x0) {
     iVar2 = shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420
-                      (g_CEditorToolsPtr,"Select POD file to check",0x6280ad,local_108);
+                      (g_CEditorToolsPtr,"Select POD file to check","*.pod",
+                       local_108,0);
     if (iVar2 == 0) {
       return;
     }

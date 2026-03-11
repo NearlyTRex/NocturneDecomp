@@ -506,7 +506,7 @@ section .text
     PUSH 0xbf800000                     ; 005d7cfd
     PUSH 0x3c23d70a                     ; 005d7d02
     CALL shape_design.c_vertexReducer_FUN_00467850 ; 005d7d07
-        ;   XREF to: 00467850 (UNCONDITIONAL_CALL)  ; void shape_design.c_vertexReducer_FUN_00467850(float tolerance, float angle_tolerance, int display_progress)
+        ;   XREF to: 00467850 (UNCONDITIONAL_CALL)  ; void shape_design.c_vertexReducer_FUN_00467850(float tolerance, float angle_tolerance, int ui_mode)
     ADD ESP,0xc                         ; 005d7d0c
     LEA EAX,[ESP + 0x68]                ; 005d7d0f
     PUSH EAX                            ; 005d7d13

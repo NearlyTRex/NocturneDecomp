@@ -41,7 +41,7 @@ void __cdecl engine_fileio_cpp_CFileManager_crossReferencePodDuplicates_FUN_004b
     pcVar6 = pcVar6 + 4;
   }
   if (pod_filename == (char *)0x0) {
-    getcwd_wrapper(local_154,0x104);
+    _getcwd(local_154,0x104);
   }
   else {
     pcVar7 = local_154;

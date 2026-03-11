@@ -25,7 +25,7 @@
 ; XREF[9]:
 ;   core_armour.cpp_CArmour_processDamage_FUN_00412400 at 0041240f
 ;   core_armour.cpp_CArmour_process_FUN_00412260 at 00412390
-;   core_batman.cpp_CBatman_FUN_00417660 at 00417988
+;   core_batman.cpp_CBatman_processDismemberment_FUN_00417660 at 00417988
 ;   core_charactr.cpp_CCharacter_explode_FUN_0042b930 at 0042b9cb
 ;   core_charactr.cpp_CCharacter_processDamage_FUN_0042c3c0 at 0042c513
 ;   core_charactr.cpp_CCharacter_processFire_FUN_0042a830 at 0042ab97

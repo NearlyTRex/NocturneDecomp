@@ -44,7 +44,7 @@
 ;   crt_memory.c_memset_FUN_005fde40
 ;   shape_design.c_calculateVertexNormals_FUN_0045be40
 ;   shape_superopt.cpp_CComplexPolygon_getConvexSubChains_FUN_005cbec0
-;   shape_superopt.cpp_CComplexPolygon_setMaterialId_FUN_005cbf00
+;   shape_superopt.cpp_CComplexPolygon_getMaterialId_FUN_005cbf00
 ;
 ; *****************************************************************************
 
@@ -93,8 +93,8 @@ section .text
     ADD ESP,0x8                         ; 005d7e6d
     PUSH EBX                            ; 005d7e70
     MOV ESI,EAX                         ; 005d7e71
-    CALL shape_superopt.cpp_CComplexPolygon_setMaterialId_FUN_005cbf00 ; 005d7e73
-        ;   XREF to: 005cbf00 (UNCONDITIONAL_CALL)  ; int shape_superopt.cpp_CComplexPolygon_setMaterialId_FUN_005cbf00(CComplexPolygon * this_ptr, int material_id)
+    CALL shape_superopt.cpp_CComplexPolygon_getMaterialId_FUN_005cbf00 ; 005d7e73
+        ;   XREF to: 005cbf00 (UNCONDITIONAL_CALL)  ; int shape_superopt.cpp_CComplexPolygon_getMaterialId_FUN_005cbf00(CComplexPolygon * this_ptr)
     IMUL EAX,EAX,0x50                   ; 005d7e78
     XOR EDI,EDI                         ; 005d7e7b
     ADD ESP,0x4                         ; 005d7e7d

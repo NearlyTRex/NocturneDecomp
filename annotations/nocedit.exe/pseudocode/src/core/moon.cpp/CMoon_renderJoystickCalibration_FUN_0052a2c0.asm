@@ -72,7 +72,7 @@ section .text
     PUSH EBX                            ; 0052a304 | g_CDemonRendererInstance
     MOV EBP,0x42100000                  ; 0052a305
     CALL engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0 ; 0052a30a
-        ;   XREF to: 0048c1d0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(CDemonRenderer * this_ptr)
+        ;   XREF to: 0048c1d0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(CDemonRenderer * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 0052a30f
     LEA EAX,[ESP + 0x18]                ; 0052a312
     XOR ESI,ESI                         ; 0052a316

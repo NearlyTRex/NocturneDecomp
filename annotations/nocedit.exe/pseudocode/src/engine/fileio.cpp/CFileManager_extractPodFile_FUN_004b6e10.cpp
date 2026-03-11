@@ -43,7 +43,8 @@ void __cdecl engine_fileio_cpp_CFileManager_extractPodFile_FUN_004b6e10(CFileMan
   bVar11 = 0;
   if (pod_filename == (char *)0x0) {
     iVar2 = shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420
-                      (g_CEditorToolsPtr,"Select POD file to extract",0x627b23,local_244);
+                      (g_CEditorToolsPtr,"Select POD file to extract","*.pod",
+                       local_244,0);
     if (iVar2 == 0) {
       return;
     }

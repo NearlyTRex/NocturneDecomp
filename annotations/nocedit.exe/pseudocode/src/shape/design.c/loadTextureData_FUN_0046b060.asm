@@ -1,14 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_design_c_loadTextureData_FUN_0046b060(STextureAtlasEntry *entry,uchar *rgb_buffer,uchar *alpha_buffer,int atlas_width,int atlas_height)
+; void __cdecl shape_design_c_loadTextureData_FUN_0046b060(STextureAtlasEntry *entry,uchar *rgb_buffer,uchar *alpha_buffer,int pixel_depth,int atlas_total_width,int atlas_total_height)
 ;
 ; Parameters:
 ; STextureAtlasEntry * Stack[0x4]:4   entry
 ; uchar *          Stack[0x8]:4   rgb_buffer
 ; uchar *          Stack[0xc]:4   alpha_buffer
-; int              Stack[0x10]:4   atlas_width
-; int              Stack[0x14]:4   atlas_height
+; int              Stack[0x10]:4   pixel_depth
+; int              Stack[0x14]:4   atlas_total_width
+; int              Stack[0x18]:4   atlas_total_height
 ; Local Variables:
 ; undefined8       Stack[-0x1b4]:8  local_1b4
 ; undefined8       Stack[-0x1ac]:8  local_1ac
@@ -217,7 +218,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0xc]      ; 0046b1e3
     PUSH EAX                            ; 0046b1e6
     CALL shape_design.c_readPixelRowFromFile_FUN_0046abf0 ; 0046b1e7
-        ;   XREF to: 0046abf0 (UNCONDITIONAL_CALL)  ; void shape_design.c_readPixelRowFromFile_FUN_0046abf0(_FILE * file_handle, byte * rgb_buffer, byte * alpha_buffer, int pixel_count, ...)
+        ;   XREF to: 0046abf0 (UNCONDITIONAL_CALL)  ; void shape_design.c_readPixelRowFromFile_FUN_0046abf0(_FILE * file_handle, uchar * rgb_buffer, uchar * alpha_buffer, int pixel_count, ...)
     ADD ESP,0x14                        ; 0046b1ec
     JMP 0x0046b1a7                      ; 0046b1ef
         ;   XREF to: 0046b1a7 (UNCONDITIONAL_JUMP)  ; LAB_0046b1a7
@@ -254,7 +255,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0xc]      ; 0046b237
     PUSH EAX                            ; 0046b23a
     CALL shape_design.c_readPixelRowFromFile_FUN_0046abf0 ; 0046b23b
-        ;   XREF to: 0046abf0 (UNCONDITIONAL_CALL)  ; void shape_design.c_readPixelRowFromFile_FUN_0046abf0(_FILE * file_handle, byte * rgb_buffer, byte * alpha_buffer, int pixel_count, ...)
+        ;   XREF to: 0046abf0 (UNCONDITIONAL_CALL)  ; void shape_design.c_readPixelRowFromFile_FUN_0046abf0(_FILE * file_handle, uchar * rgb_buffer, uchar * alpha_buffer, int pixel_count, ...)
     ADD ESP,0x14                        ; 0046b240
     JMP 0x0046b202                      ; 0046b243
         ;   XREF to: 0046b202 (UNCONDITIONAL_JUMP)  ; LAB_0046b202
@@ -540,7 +541,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0x18]     ; 0046b5ee
     PUSH EAX                            ; 0046b5f1
     CALL shape_design.c_sampleAndFilterPixel_FUN_0046ae20 ; 0046b5f2
-        ;   XREF to: 0046ae20 (UNCONDITIONAL_CALL)  ; void shape_design.c_sampleAndFilterPixel_FUN_0046ae20(void * rgb_buffer, void * alpha_buffer, int col_coord, int row_coord, ...)
+        ;   XREF to: 0046ae20 (UNCONDITIONAL_CALL)  ; void shape_design.c_sampleAndFilterPixel_FUN_0046ae20(void * rgb_buffer, void * alpha_buffer, int atlas_width, int atlas_height, ...)
     ADD ESP,0x40                        ; 0046b5f7
     MOV EAX,dword ptr [EBP + 0x14]      ; 0046b5fa
     CMP dword ptr [EAX + 0x214],0x0     ; 0046b5fd

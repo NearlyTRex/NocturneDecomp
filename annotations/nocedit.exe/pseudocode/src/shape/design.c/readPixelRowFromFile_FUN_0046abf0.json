@@ -35,7 +35,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "shape_design.c_readPixelRowFromFile_FUN_0046abf0",
-    "signature": "void __cdecl shape_design_c_readPixelRowFromFile_FUN_0046abf0(_FILE *file_handle,byte *rgb_buffer,byte *alpha_buffer,int pixel_count,int file_flags)"
+    "signature": "void __cdecl shape_design_c_readPixelRowFromFile_FUN_0046abf0(_FILE *file_handle,uchar *rgb_buffer,uchar *alpha_buffer,int pixel_count,int pixel_depth)"
   },
   "function_calls": [
     {
@@ -91,14 +91,14 @@
         "name": "rgb_buffer",
         "offset": 8,
         "size": 4,
-        "type": "byte *"
+        "type": "uchar *"
       },
       {
         "is_param": true,
         "name": "alpha_buffer",
         "offset": 12,
         "size": 4,
-        "type": "byte *"
+        "type": "uchar *"
       },
       {
         "is_param": true,
@@ -109,7 +109,7 @@
       },
       {
         "is_param": true,
-        "name": "file_flags",
+        "name": "pixel_depth",
         "offset": 20,
         "size": 4,
         "type": "int"

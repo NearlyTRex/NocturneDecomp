@@ -393,7 +393,7 @@ int __cdecl CLodMesh::previewLodGeneration(CLodMesh *this_ptr,int pause_flag,int
 
 // Original: shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990
 // Address: 0051d990
-int __cdecl CLodMesh::chooseLodsInteractive(CLodMesh *this_ptr);
+int __cdecl CLodMesh::chooseLodsInteractive(CLodMesh *this_ptr,int *pixel_heights,int *face_counts,int max_lods,int render_mode);
 
 // Original: shape_meshlod.cpp_CLodMesh_transformVerticesForPreview_FUN_0051e6b0
 // Address: 0051e6b0

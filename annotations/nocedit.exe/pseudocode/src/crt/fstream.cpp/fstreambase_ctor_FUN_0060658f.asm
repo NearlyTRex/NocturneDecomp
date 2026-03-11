@@ -53,7 +53,7 @@ section .text
     ADD EAX,EBX                         ; 006065d2
     PUSH EAX                            ; 006065d4
     CALL crt_iostream.cpp_streambuf_initBuffer_FUN_0060b815 ; 006065d5
-        ;   XREF to: 0060b8da (UNCONDITIONAL_CALL)  ; void crt_iostream.cpp_streambuf_initBuffer_FUN_0060b815(streambuf * this_ptr, char * buffer_ptr, int buffer_size, char * put_start)
+        ;   XREF to: 0060b8da (UNCONDITIONAL_CALL)  ; void crt_iostream.cpp_streambuf_initBuffer_FUN_0060b815(streambuf * this_ptr, char * buffer_ptr)
     ADD ESP,0x8                         ; 006065da
     MOV EAX,EBX                         ; 006065dd
     POP EBX                             ; 006065df

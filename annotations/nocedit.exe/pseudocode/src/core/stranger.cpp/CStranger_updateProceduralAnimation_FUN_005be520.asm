@@ -162,7 +162,7 @@
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
 ;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0
-;   core_lever.cpp_CLever_FUN_00504dd0
+;   core_lever.cpp_CLever_getHandlePosition_FUN_00504dd0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 ;   core_motion.cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
 ;   core_motion.cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0
@@ -466,8 +466,8 @@ section .text
     LEA EAX,[ESP + 0x1ef8]              ; 005be8c6
     PUSH EAX                            ; 005be8cd
     PUSH EDI                            ; 005be8ce
-    CALL core_lever.cpp_CLever_FUN_00504dd0 ; 005be8cf
-        ;   XREF to: 00504dd0 (UNCONDITIONAL_CALL)  ; CVector3f * core_lever.cpp_CLever_FUN_00504dd0(CLever * this_ptr, CVector3f * param_2)
+    CALL core_lever.cpp_CLever_getHandlePosition_FUN_00504dd0 ; 005be8cf
+        ;   XREF to: 00504dd0 (UNCONDITIONAL_CALL)  ; CVector3f * core_lever.cpp_CLever_getHandlePosition_FUN_00504dd0(CLever * this_ptr, CVector3f * out_position)
     ADD ESP,0x8                         ; 005be8d4
     PUSH EAX                            ; 005be8d7
     LEA EAX,[ESP + 0x1eb4]              ; 005be8d8
@@ -969,8 +969,8 @@ section .text
     PUSH EAX                            ; 005bf00a
     MOV EAX,[0x03f6baa8]                ; 005bf00b | PTR_03f6baa8
     PUSH EAX                            ; 005bf010
-    CALL core_lever.cpp_CLever_FUN_00504dd0 ; 005bf011
-        ;   XREF to: 00504dd0 (UNCONDITIONAL_CALL)  ; CVector3f * core_lever.cpp_CLever_FUN_00504dd0(CLever * this_ptr, CVector3f * param_2)
+    CALL core_lever.cpp_CLever_getHandlePosition_FUN_00504dd0 ; 005bf011
+        ;   XREF to: 00504dd0 (UNCONDITIONAL_CALL)  ; CVector3f * core_lever.cpp_CLever_getHandlePosition_FUN_00504dd0(CLever * this_ptr, CVector3f * out_position)
     ADD ESP,0x8                         ; 005bf016
     PUSH EAX                            ; 005bf019
     LEA EAX,[ESP + 0x1e00]              ; 005bf01a

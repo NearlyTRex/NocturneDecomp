@@ -28,7 +28,8 @@ void __cdecl engine_fileio_cpp_CFileManager_catalogPodFile_FUN_004b7460(CFileMan
   bVar6 = 0;
   if (pod_filename == (char *)0x0) {
     iVar2 = shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420
-                      (g_CEditorToolsPtr,"Select POD file to catalog",0x627d97,local_52c);
+                      (g_CEditorToolsPtr,"Select POD file to catalog","*.pod",
+                       local_52c,0);
     if (iVar2 == 0) {
       return;
     }

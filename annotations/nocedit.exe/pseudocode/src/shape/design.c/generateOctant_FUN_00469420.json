@@ -6,19 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 243,
-    "complexity_score": 149,
+    "complexity_score": 123,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 94,
-    "suspect_count": 4,
+    "pseudocode_lines": 93,
+    "suspect_count": 2,
     "suspect_types": [
       "decompiler_intrinsic",
-      "stack_param",
       "sub84_truncation"
     ],
-    "total_lines": 337
+    "total_lines": 336
   },
   "cross_references": [
     {
@@ -314,24 +313,8 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_ffffff6c",
-      "severity": "moderate",
-      "text": "char *in_stack_ffffff6c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 66,
-      "match": "in_stack_ffffff6c",
-      "severity": "moderate",
-      "text": "dVar6 = _strtod(in_stack_ffffff6c);",
-      "type": "stack_param"
-    },
-    {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 68,
+      "line": 67,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "iVar2 = SUB84(__BITCAST_UINT64(dVar6),0);",
@@ -339,7 +322,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 68,
+      "line": 67,
       "match": "SUB84",
       "severity": "mild",
       "text": "iVar2 = SUB84(__BITCAST_UINT64(dVar6),0);",

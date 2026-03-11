@@ -15,7 +15,6 @@ void __cdecl shape_design_c_centerVerticesAroundPoint_FUN_0045ea90(void)
   char *pcVar4;
   byte bVar5;
   double dVar6;
-  char *in_stack_ffffffa0;
   char local_54 [40];
   int local_2c;
   float local_28;
@@ -56,7 +55,7 @@ void __cdecl shape_design_c_centerVerticesAroundPoint_FUN_0045ea90(void)
         if (iVar3 == -2) {
           return;
         }
-        dVar6 = _strtod(in_stack_ffffffa0);
+        dVar6 = _strtod(local_54);
         local_28 = (float)dVar6;
         local_24 = local_28;
         local_20 = local_28;

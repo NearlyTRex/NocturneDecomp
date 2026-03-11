@@ -131,7 +131,7 @@ CTVBat * __cdecl core_tvbat_cpp_CTVBat_ctor_FUN_005e3ef0(CTVBat *this_ptr);
 void __cdecl core_tvbat_cpp_CTVBat_setup_FUN_005e4050(CTVBat *this_ptr);
 void __cdecl core_tvbat_cpp_CTVBat_archive_FUN_005e40c0(CTVBat *this_ptr);
 void __cdecl core_tvbat_cpp_CTVBat_process_FUN_005e4210(CTVBat *this_ptr,float delta_time);
-void __cdecl core_tvbat_cpp_CTVBat_FUN_005e4d70(CTVBat *this_ptr);
+void __cdecl core_tvbat_cpp_CTVBat_orderAttack_FUN_005e4d70(CTVBat *this_ptr);
 int __cdecl core_tvbat_cpp_CTVBat_renderOpaque_FUN_005e4d80(CTVBat *this_ptr);
 CBoundingBox3D * __cdecl core_tvbat_cpp_CTVBat_getBoundingBox_FUN_005e5050(CTVBat *this_ptr,CBoundingBox3D *out_box);
 ECollisionType __cdecl core_tvbat_cpp_CTVBat_getCollisionType_FUN_005e50d0(CTVBat *this_ptr,SCollisionInfo *collision_info);

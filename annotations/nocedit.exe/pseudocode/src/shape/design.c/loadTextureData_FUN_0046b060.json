@@ -4,38 +4,14 @@
       {
         "category": "format_error",
         "column": 52,
-        "line": 87,
+        "line": 86,
         "message": "format specifies type 'char *' but the argument has type 'STextureAtlasEntry *' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 91,
+        "line": 90,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 44,
-        "line": 142,
-        "message": "use of undeclared identifier 'stack0xfffffe7c'; did you mean 'in_stack_fffffe7c'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 66,
-        "line": 142,
-        "message": "use of undeclared identifier 'stack0xfffffe80'; did you mean 'in_stack_fffffe80'?"
-      },
-      {
-        "category": "other",
-        "column": 31,
-        "line": 152,
-        "message": "cast from pointer to smaller type 'uchar' (aka 'unsigned char') loses information"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 153,
-        "message": "cast from pointer to smaller type 'uchar' (aka 'unsigned char') loses information"
       }
     ],
     "success": false,
@@ -43,22 +19,19 @@
   },
   "complexity": {
     "assembly_lines": 535,
-    "complexity_score": 400,
+    "complexity_score": 263,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 22,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 150,
-    "suspect_count": 22,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 148,
+    "suspect_count": 10,
     "suspect_types": [
       "decompiler_intrinsic",
-      "param_count_too_few",
       "pointer_cast",
-      "stack_param",
-      "stack_ref",
       "warning_inlined_function"
     ],
-    "total_lines": 685
+    "total_lines": 683
   },
   "cross_references": [
     {
@@ -79,7 +52,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "shape_design.c_loadTextureData_FUN_0046b060",
-    "signature": "void __cdecl shape_design_c_loadTextureData_FUN_0046b060(STextureAtlasEntry *entry,uchar *rgb_buffer,uchar *alpha_buffer,int atlas_width,int atlas_height)"
+    "signature": "void __cdecl shape_design_c_loadTextureData_FUN_0046b060(STextureAtlasEntry *entry,uchar *rgb_buffer,uchar *alpha_buffer,int pixel_depth,int atlas_total_width,int atlas_total_height)"
   },
   "function_calls": [
     {
@@ -295,8 +268,8 @@
         "stack_params": 6
       }
     ],
-    "confidence": "low",
-    "declared_params": 5,
+    "confidence": "medium",
+    "declared_params": 6,
     "estimated_params": 6
   },
   "pcode_summary": {
@@ -338,10 +311,10 @@
     "pcode_op_count": 2492
   },
   "stack_frame": {
-    "frame_size": 460,
+    "frame_size": 464,
     "local_size": 440,
     "param_offset": 4,
-    "param_size": 20,
+    "param_size": 24,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -570,15 +543,22 @@
       },
       {
         "is_param": true,
-        "name": "atlas_width",
+        "name": "pixel_depth",
         "offset": 16,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
-        "name": "atlas_height",
+        "name": "atlas_total_width",
         "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "atlas_total_height",
+        "offset": 24,
         "size": 4,
         "type": "int"
       }
@@ -594,32 +574,8 @@
       "type": "warning_inlined_function"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_00000018",
-      "severity": "moderate",
-      "text": "int in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_fffffe7c",
-      "severity": "moderate",
-      "text": "byte *in_stack_fffffe7c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_fffffe80",
-      "severity": "moderate",
-      "text": "byte *in_stack_fffffe80;",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 89,
+      "line": 88,
       "match": "(char *)((int)",
       "severity": "mild",
       "text": "iVar1 - local_44 != 0 && local_44 <= iVar1 && (*(char *)((int)local_24 + local_44) == '\\0'));",
@@ -627,7 +583,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 96,
+      "line": 95,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_38 = (int)ROUND(ROUND(((double)g_TextureAtlasDimension * (double)entry->atlas_width) /",
@@ -635,7 +591,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 96,
+      "line": 95,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_38 = (int)ROUND(ROUND(((double)g_TextureAtlasDimension * (double)entry->atlas_width) /",
@@ -643,7 +599,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 98,
+      "line": 97,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_34 = (int)ROUND(ROUND(((double)g_TextureAtlasDimension * (double)entry->atlas_height) /",
@@ -651,23 +607,15 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 98,
+      "line": 97,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_34 = (int)ROUND(ROUND(((double)g_TextureAtlasDimension * (double)entry->atlas_height) /",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 99,
-      "match": "in_stack_00000018",
-      "severity": "moderate",
-      "text": "(double)in_stack_00000018 + 0.5));",
-      "type": "stack_param"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 102,
+      "line": 101,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_30 = (int)ROUND(ROUND(((double)g_TextureAtlasDimension * (double)entry->atlas_x) /",
@@ -675,7 +623,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 102,
+      "line": 101,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_30 = (int)ROUND(ROUND(((double)g_TextureAtlasDimension * (double)entry->atlas_x) /",
@@ -683,7 +631,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 104,
+      "line": 103,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_2c = (int)ROUND(ROUND(((double)g_TextureAtlasDimension * (double)entry->atlas_y) /",
@@ -691,78 +639,11 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 104,
+      "line": 103,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_2c = (int)ROUND(ROUND(((double)g_TextureAtlasDimension * (double)entry->atlas_y) /",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 105,
-      "match": "in_stack_00000018",
-      "severity": "moderate",
-      "text": "(double)in_stack_00000018 + 0.5));",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 135,
-      "match": "&stack0xfffffe7c",
-      "severity": "moderate",
-      "text": "local_170,local_178,(int)&stack0xfffffe7c,(int)&stack0xfffffe80,local_154,local_17c",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 135,
-      "match": "&stack0xfffffe80",
-      "severity": "moderate",
-      "text": "local_170,local_178,(int)&stack0xfffffe7c,(int)&stack0xfffffe80,local_154,local_17c",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 136,
-      "match": "in_stack_fffffe7c",
-      "severity": "moderate",
-      "text": ",in_stack_fffffe7c,in_stack_fffffe80);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 136,
-      "match": "in_stack_fffffe80",
-      "severity": "moderate",
-      "text": ",in_stack_fffffe7c,in_stack_fffffe80);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 145,
-      "match": "in_stack_fffffe7c",
-      "severity": "moderate",
-      "text": "rgb_buffer[local_14c] = (uchar)in_stack_fffffe7c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 146,
-      "match": "in_stack_fffffe80",
-      "severity": "moderate",
-      "text": "rgb_buffer[local_14c + 1] = (uchar)in_stack_fffffe80;",
-      "type": "stack_param"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 5,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 6,
-      "fix_type": "add_params",
-      "match": "declared:5 vs estimated:6",
-      "param_delta": 1,
-      "text": "Function declares 5 params but call sites push 6 (1 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

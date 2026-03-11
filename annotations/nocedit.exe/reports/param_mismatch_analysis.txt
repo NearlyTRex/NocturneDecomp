@@ -15,13 +15,13 @@ SUMMARY
 --------------------------------------------------
 Functions with parameter estimates: 5091
 Functions with no callers: 3232
-Parameter mismatches detected: 428
-Signature accuracy rate: 77.0%
+Parameter mismatches detected: 422
+Signature accuracy rate: 77.3%
 
 Mismatches by confidence:
-  High confidence:   16 (multiple call sites agree)
+  High confidence:   14 (multiple call sites agree)
   Medium confidence: 52 (some agreement)
-  Low confidence:    360 (limited data)
+  Low confidence:    356 (limited data)
 
 ====================================================================================================
 HIGH CONFIDENCE MISMATCHES - Likely signature issues
@@ -76,16 +76,6 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       core_dog.cpp_CZombieDog_proces at 0047f468: 0 reg [], 2 stack
       core_drone.cpp_CDrone_process_ at 0048f014: 0 reg [], 2 stack
       core_drone.cpp_CDrone_process_ at 0048f07c: 0 reg [], 2 stack
-
-  crt_iostream.cpp_streambuf_initBuffer_FUN_0060b815
-    Declared: 4 params, Estimated: 2 params (-2)
-    Call sites: 3, Confidence: high
-    File: crt/iostream.cpp
-    Signature: void __watcallStack crt_iostream_cpp_streambuf_initBuffer_FUN_0060b815(streambuf *this_ptr,char *buffer_ptr,int buffer_size,char *put_start)
-    Sample call sites:
-      crt_strstream.cpp_strstreambas at 00606166: 0 reg [], 2 stack
-      crt_fstream.cpp_fstreambase_ct at 006064b3: 0 reg [], 2 stack
-      crt_fstream.cpp_fstreambase_ct at 006065d5: 0 reg [], 2 stack
 
   crt_math.c_fdiv_FUN_00606960
     Declared: 2 params, Estimated: 0 params (-2)
@@ -167,16 +157,6 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       engine_3d.c_renderPolygonTextu at 00406655: 0 reg [], 2 stack
       engine_3d.c_renderPolygonAdapt at 00404b5e: 0 reg [], 2 stack
 
-  engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0
-    Declared: 1 params, Estimated: 2 params (+1)
-    Call sites: 11, Confidence: high
-    File: engine/drender.cpp
-    Signature: void __cdecl engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(CDemonRenderer *this_ptr)
-    Sample call sites:
-      core_setdir.cpp_CZThumb_pushRe at 00574ee3: 0 reg [], 2 stack
-      shape_spotview.cpp_CSpotView_a at 005b9ae6: 0 reg [], 2 stack
-      core_set.cpp_CDemonSet_restore at 00570b28: 0 reg [], 2 stack
-
   sound_sndmain.cpp_setNextSfxDelay_FUN_005a8b40
     Declared: 1 params, Estimated: 0 params (-1)
     Call sites: 3, Confidence: high
@@ -248,7 +228,7 @@ MEDIUM CONFIDENCE MISMATCHES
 LOW CONFIDENCE MISMATCHES (limited data)
 ====================================================================================================
 
-  360 functions with low-confidence mismatches
+  356 functions with low-confidence mismatches
   Sample:
     cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_F declared:1 est:5 (+4)
     cockpit_drawsurf.cpp_CDrawSurface_drawTextCen declared:4 est:6 (+2)
@@ -265,26 +245,26 @@ LOW CONFIDENCE MISMATCHES (limited data)
 MISMATCH DIRECTION ANALYSIS
 ====================================================================================================
 
-Functions where declaration has MORE params than estimated: 83
+Functions where declaration has MORE params than estimated: 81
   (May indicate: extra params not being passed, or params in globals)
 
-Functions where declaration has FEWER params than estimated: 345
+Functions where declaration has FEWER params than estimated: 341
   (May indicate: missing params in signature, or calling convention issue)
 
 Distribution of differences (estimated - declared):
   -11 params: 1 functions
   -8 params: 1 functions
   -7 params: 1 functions
-  -6 params: 2 functions
+  -6 params: 1 functions
   -5 params: 2 functions
-  -4 params: 3 functions
+  -4 params: 4 functions
   -3 params: 8 functions
-  -2 params: 17 functions
-  -1 params: 48 functions
-  +1 params: 151 functions
-  +2 params: 73 functions
+  -2 params: 16 functions
+  -1 params: 47 functions
+  +1 params: 149 functions
+  +2 params: 72 functions
   +3 params: 40 functions
-  +4 params: 71 functions
+  +4 params: 70 functions
   +5 params: 3 functions
   +6 params: 2 functions
   +7 params: 3 functions

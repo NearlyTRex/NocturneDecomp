@@ -96,6 +96,9 @@ static WatcomThunkedDestructor DAT_00665b70 = {.destructor_func = (void *)0x0000
 static WatcomVirtualBaseDescriptor DAT_00665b68 = {.flags = 0x00000000, .offset_to_vbase = 0x00000054};
 static WatcomVirtualBaseDescriptor DAT_00665d60 = {.flags = 0x00000000, .offset_to_vbase = 0x0000004C};
 
+// char*[4] constants
+static char* g_CourseAxisLabels[4] = {nullptr, "x", "y", "z"};
+
 // double constants
 static double g_InfiniteCollapseCost = 9.9999999999999997e+34;
 static double DOUBLE_00663138 = -1;
@@ -272,5 +275,4 @@ static void* DAT_00665CD0 = (void*)0x00665CE8; // DAT_00665ce8
 static void* DAT_00665CE0 = (void*)0x00665CF8; // DAT_00665cf8
 static void* DAT_00665D68 = (void*)0x00665D78; // DAT_00665d78
 static void* DAT_00665FA4 = (void*)0x00685038; // DAT_00685038
-static void* DAT_0066EC5C = (void*)s_z_00619453;
 

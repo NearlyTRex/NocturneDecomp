@@ -885,8 +885,8 @@ section .text
     PUSH dword ptr [EBP + 0x18]         ; 004f54e3
         ;   Label: caseD_0
     PUSH EBX                            ; 004f54e6
-    CALL core_hostage.cpp_CHostage_FUN_004f5ff0 ; 004f54e7
-        ;   XREF to: 004f5ff0 (UNCONDITIONAL_CALL)  ; int core_hostage.cpp_CHostage_FUN_004f5ff0(CHostage * this_ptr, float delta_time)
+    CALL core_hostage.cpp_CHostage_processGrabberFlee_FUN_004f5ff0 ; 004f54e7
+        ;   XREF to: 004f5ff0 (UNCONDITIONAL_CALL)  ; int core_hostage.cpp_CHostage_processGrabberFlee_FUN_004f5ff0(CHostage * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004f54ec
     TEST EAX,EAX                        ; 004f54ef
     JNZ 0x004f4fc5                      ; 004f54f1
@@ -1007,8 +1007,8 @@ section .text
     PUSH dword ptr [EBP + 0x18]         ; 004f5657
         ;   Label: LAB_004f5657
     PUSH EBX                            ; 004f565a
-    CALL core_hostage.cpp_CHostage_FUN_004f5ff0 ; 004f565b
-        ;   XREF to: 004f5ff0 (UNCONDITIONAL_CALL)  ; int core_hostage.cpp_CHostage_FUN_004f5ff0(CHostage * this_ptr, float delta_time)
+    CALL core_hostage.cpp_CHostage_processGrabberFlee_FUN_004f5ff0 ; 004f565b
+        ;   XREF to: 004f5ff0 (UNCONDITIONAL_CALL)  ; int core_hostage.cpp_CHostage_processGrabberFlee_FUN_004f5ff0(CHostage * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004f5660
     TEST EAX,EAX                        ; 004f5663
     JNZ 0x004f4fc5                      ; 004f5665
@@ -1098,8 +1098,8 @@ section .text
     PUSH dword ptr [EBP + 0x18]         ; 004f5747
         ;   Label: caseD_2
     PUSH EBX                            ; 004f574a
-    CALL core_hostage.cpp_CHostage_FUN_004f5ff0 ; 004f574b
-        ;   XREF to: 004f5ff0 (UNCONDITIONAL_CALL)  ; int core_hostage.cpp_CHostage_FUN_004f5ff0(CHostage * this_ptr, float delta_time)
+    CALL core_hostage.cpp_CHostage_processGrabberFlee_FUN_004f5ff0 ; 004f574b
+        ;   XREF to: 004f5ff0 (UNCONDITIONAL_CALL)  ; int core_hostage.cpp_CHostage_processGrabberFlee_FUN_004f5ff0(CHostage * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004f5750
     TEST EAX,EAX                        ; 004f5753
     JNZ 0x004f4fc5                      ; 004f5755

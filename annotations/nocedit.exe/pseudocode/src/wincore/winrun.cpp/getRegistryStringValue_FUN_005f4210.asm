@@ -4,10 +4,10 @@
 ; void __cdecl wincore_winrun_cpp_getRegistryStringValue_FUN_005f4210(char *key_path,char *value_name,char *output_buffer,uint *buffer_size)
 ;
 ; Parameters:
-; char *           Stack[0x8]:4   key_path
-; char *           Stack[0xc]:4   value_name
-; char *           Stack[0x10]:4   output_buffer
-; uint *           Stack[0x14]:4   buffer_size
+; char *           Stack[0x4]:4   key_path
+; char *           Stack[0x8]:4   value_name
+; char *           Stack[0xc]:4   output_buffer
+; uint *           Stack[0x10]:4   buffer_size
 ;
 ; Referenced Globals:
 ;   REG_CLOSE_KEY_FUNC* g_RegCloseKeyFunc = 002119dc

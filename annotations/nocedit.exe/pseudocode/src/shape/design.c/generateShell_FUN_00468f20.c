@@ -14,7 +14,6 @@ void __cdecl shape_design_c_generateShell_FUN_00468f20(void)
   char *pcVar3;
   byte bVar4;
   double dVar5;
-  char *in_stack_ffffff70;
   char local_88 [80];
   int local_38;
   int local_34;
@@ -65,7 +64,7 @@ void __cdecl shape_design_c_generateShell_FUN_00468f20(void)
         pcVar3 = pcVar3 + (uint)bVar4 * -2 + 1;
       } while (cVar1 != '\0');
       if (iVar2 != -2) {
-        dVar5 = _strtod(in_stack_ffffff70);
+        dVar5 = _strtod(local_88);
         local_1c = (float)dVar5;
         for (local_28 = 0; local_28 <= local_30; local_28 = local_28 + 1) {
           for (local_2c = 0; local_2c < local_34; local_2c = local_2c + 1) {

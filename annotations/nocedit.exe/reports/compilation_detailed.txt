@@ -5,15 +5,15 @@ FUNCTION COMPILATION DETAILED ERRORS
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6484
-Successful: 5749 (88.7%)
-Failed: 735
+Successful: 5752 (88.7%)
+Failed: 732
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                           1446
+  other                           1444
   format_error                     805
-  undeclared_identifier            376
-  incompatible_types               306
+  undeclared_identifier            355
+  incompatible_types               305
   syntax_error                      48
   type_error                        22
   missing_member                    20
@@ -22,7 +22,7 @@ ERROR CATEGORIES
   pointer_precision                  2
 
 ====================================================================================================
-CATEGORY: other (1446 errors)
+CATEGORY: other (1444 errors)
 ====================================================================================================
 
   core_imp.cpp_CImp_process_FUN_004f9c30
@@ -72,7 +72,7 @@ CATEGORY: other (1446 errors)
   cockpit_ckptutil.c_rotateCircularBitmap_FUN_00433030
     Line 70: assigning to 'int *' from 'uint *' (aka 'unsigned int *') converts between pointers to integer types with different sign
   engine_fileio.cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50
-    Line 88: assigning to 'int *' from 'uint *' (aka 'unsigned int *') converts between pointers to integer types with different sign
+    Line 89: assigning to 'int *' from 'uint *' (aka 'unsigned int *') converts between pointers to integer types with different sign
   core_wateract.cpp_CWaterActor_renderTransparent_FUN_005eb280
     Line 37: assigning to 'int *' from 'undefined4 *' (aka 'unsigned int *') converts between pointers to integer types with different sign
   core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0
@@ -132,7 +132,7 @@ CATEGORY: other (1446 errors)
   core_fire.cpp_CFireEffect_traceLaser_FUN_004c8230
     Line 113: cannot cast from type 'float' to pointer type 'float *'
   shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990
-    Line 133: cannot cast from type 'float' to pointer type 'int *'
+    Line 129: cannot cast from type 'float' to pointer type 'int *'
   core_setedit.cpp_CDemonSet_showScenePreview_FUN_0057a940
     Line 55: cannot cast from type 'float' to pointer type 'void *'
   shape_superopt.cpp_COptimize_optimizeComplex_FUN_005d7350
@@ -200,7 +200,7 @@ CATEGORY: other (1446 errors)
   engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50
     Line 335: data argument not used by format string [-Werror,-Wformat-extra-args]
   engine_fileio.cpp_CFileManager_verifyPodCRC_FUN_004b7c90
-    Line 39: data argument not used by format string [-Werror,-Wformat-extra-args]
+    Line 40: data argument not used by format string [-Werror,-Wformat-extra-args]
   shape_edittool.cpp_CEditorTools_promptForValidDouble_FUN_004a01f0
     Line 27: data argument not used by format string [-Werror,-Wformat-extra-args]
   shape_meshlod.cpp_CLodMesh_saveReplayData_FUN_0051d250
@@ -274,7 +274,7 @@ CATEGORY: other (1446 errors)
   core_msnedit.cpp_CDemonMission_showOptionsMenu_FUN_00537680
     Line 87: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
   core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190
-    Line 261: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+    Line 263: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
   core_skeledit.cpp_CLodMesh_selectAndGenerateLods_FUN_00589c20
     Line 98: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
   core_werewolf.cpp_CWerewolf_propertyDisplayCallback_FUN_005f2010
@@ -318,7 +318,7 @@ CATEGORY: other (1446 errors)
   shape_design.c_fixupCramUV_FUN_0046e090
     Line 61: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
   shape_design.c_loadTextureData_FUN_0046b060
-    Line 91: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+    Line 90: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
   shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
     Line 26: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
   shape_quantize.cpp_CBitmap_ctor_FUN_00556a00
@@ -592,15 +592,15 @@ CATEGORY: other (1446 errors)
   core_werewolf.cpp_CWerewolf_process_FUN_005efde0
     Line 272: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   engine_fileio.cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0
-    Line 51: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+    Line 52: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10
-    Line 68: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+    Line 69: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190
-    Line 147: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+    Line 148: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   engine_ini.cpp_CIniFile_getFloat_FUN_004fbcd0
     Line 16: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   shape_design.c_configureSinglePassPolygonReduction_FUN_00465560
-    Line 93: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+    Line 92: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   shape_design.c_cramTextureList_FUN_0046bb80
     Line 105: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   shape_design.c_exportModelToMDL_FUN_00459e80
@@ -616,7 +616,7 @@ CATEGORY: other (1446 errors)
   shape_design.c_showPointEditor_FUN_0045c6c0
     Line 51: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   shape_design.c_vertexReducer_FUN_00467850
-    Line 190: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+    Line 189: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   shape_design.c_writeBinaryTreeNode_FUN_00457fd0
     Line 14: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   shape_design.c_writePolygonModel_FUN_0045a320
@@ -849,7 +849,7 @@ CATEGORY: format_error (805 errors)
   core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_005c07b0
     Line 498: format specifies type 'char *' but the argument has type 'CLightActor *' [-Werror,-Wformat]
   core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190
-    Line 114: format specifies type 'char *' but the argument has type 'CLodMeshPrecomputeEntry *' [-Werror,-Wformat]
+    Line 116: format specifies type 'char *' but the argument has type 'CLodMeshPrecomputeEntry *' [-Werror,-Wformat]
   core_skeledit.cpp_CLodMeshPrecomputeEntry_parseLine_FUN_0058a1b0
     Line 17: format specifies type 'char *' but the argument has type 'CLodMeshPrecomputeEntry *' [-Werror,-Wformat]
   core_skeledit.cpp_CLodMeshPrecomputeEntry_save_FUN_0058a0f0
@@ -935,7 +935,7 @@ CATEGORY: format_error (805 errors)
   engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
     Line 161: format specifies type 'char *' but the argument has type 'SFoundFileInfo *' [-Werror,-Wformat]
   engine_fileio.cpp_CFileManager_compareLocalVsPod_FUN_004b82a0
-    Line 78: format specifies type 'char *' but the argument has type 'SFoundFileInfo *' [-Werror,-Wformat]
+    Line 79: format specifies type 'char *' but the argument has type 'SFoundFileInfo *' [-Werror,-Wformat]
   engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0
     Line 169: format specifies type 'char *' but the argument has type 'SFoundFileInfo *' [-Werror,-Wformat]
   engine_fileio.cpp_getLatestFileFromRepository_FUN_004b3220
@@ -967,7 +967,7 @@ CATEGORY: format_error (805 errors)
   sound_sndmain.cpp_logSoundError_FUN_005adba0
     Line 56: format specifies type 'char *' but the argument has type 'SSoundDeviceInfo *' [-Werror,-Wformat]
   shape_design.c_loadTextureData_FUN_0046b060
-    Line 87: format specifies type 'char *' but the argument has type 'STextureAtlasEntry *' [-Werror,-Wformat]
+    Line 86: format specifies type 'char *' but the argument has type 'STextureAtlasEntry *' [-Werror,-Wformat]
   sound_snddx.cpp_enumerateDirectSoundDevice_FUN_005b0390
     Line 28: format specifies type 'char *' but the argument has type 'UINT' (aka 'unsigned int') [-Werror,-Wformat]
   core_actor.cpp_archiveRules_FUN_0040c000
@@ -1035,7 +1035,7 @@ CATEGORY: format_error (805 errors)
   sound_sndmain.cpp_formatActiveSounds_FUN_005a9f80
     Line 23: format specifies type 'char *' but the argument has type 'struct CSfxSample *' [-Werror,-Wformat]
   engine_fileio.cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50
-    Line 108: format specifies type 'char *' but the argument has type 'uint *' (aka 'unsigned int *') [-Werror,-Wformat]
+    Line 109: format specifies type 'char *' but the argument has type 'uint *' (aka 'unsigned int *') [-Werror,-Wformat]
   core_game.cpp_CGame_saveGame_FUN_004e0cd0
     Line 111: format specifies type 'char *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]
   core_script.cpp_CScript_loadScript_FUN_00559f80
@@ -1222,9 +1222,11 @@ CATEGORY: format_error (805 errors)
     Line 36: format specifies type 'unsigned long' but the argument has type 'int' [-Werror,-Wformat]
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (376 errors)
+CATEGORY: undeclared_identifier (355 errors)
 ====================================================================================================
 
+  engine_fileio.cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40
+    Line 137: use of undeclared identifier 'DAT_00628c6a'
   core_actor.cpp_adjustIndentationLevel_FUN_0040aee0
     Line 31: use of undeclared identifier 'DAT_0066e177'
   core_inv.cpp_drawWeaponIconBackground_FUN_00500050
@@ -1234,7 +1236,7 @@ CATEGORY: undeclared_identifier (376 errors)
   core_path.cpp_CPathMap_searchGrid_FUN_005487a0
     Line 105: use of undeclared identifier 'DAT_030d2857'
   wincore_winrun.cpp_getRegistryStringValue_FUN_005f4210
-    Line 19: use of undeclared identifier 'DAT_80000002'
+    Line 18: use of undeclared identifier 'DAT_80000002'
   wincore_winrun.cpp_setRegistryStringValue_FUN_005f4290
     Line 22: use of undeclared identifier 'DAT_80000002'
   engine_matrix.c_projectTransformedPoint_FUN_0050cdc0
@@ -1337,10 +1339,6 @@ CATEGORY: undeclared_identifier (376 errors)
     Line 123: use of undeclared identifier 'code'
   wincore_winrun.cpp_mainWindowProc_FUN_005f3150
     Line 24: use of undeclared identifier 'code'
-  engine_fileio.cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40
-    Line 44: use of undeclared identifier 'getcwd_wrapper'
-  shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420
-    Line 57: use of undeclared identifier 'getcwd_wrapper'
   engine_pod.cpp_CPod_init_FUN_00550c30
     Line 16: use of undeclared identifier 'iRam00000000'
   core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0
@@ -1382,7 +1380,7 @@ CATEGORY: undeclared_identifier (376 errors)
   core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
     Line 409: use of undeclared identifier 'stack0xfffeec08'; did you mean 'in_stack_fffeec08'?
   core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190
-    Line 126: use of undeclared identifier 'stack0xffff5dd8'; did you mean 'in_stack_ffff5dd8'?
+    Line 128: use of undeclared identifier 'stack0xffff5dd8'; did you mean 'in_stack_ffff5dd8'?
   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
     Line 506: use of undeclared identifier 'stack0xffffcc64'
   core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
@@ -1394,21 +1392,17 @@ CATEGORY: undeclared_identifier (376 errors)
   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0
     Line 544: use of undeclared identifier 'stack0xfffff150'
   engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10
-    Line 63: use of undeclared identifier 'stack0xfffff17c'
+    Line 64: use of undeclared identifier 'stack0xfffff17c'
   core_msnedit.cpp_CDemonMission_enemyRandomizer_FUN_005379e0
     Line 104: use of undeclared identifier 'stack0xfffff300'
   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
     Line 77: use of undeclared identifier 'stack0xfffff6c8'
   engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740
     Line 105: use of undeclared identifier 'stack0xfffff964'
-  core_setedit.cpp_CDemonSet_showFogEditor_FUN_00580730
-    Line 343: use of undeclared identifier 'stack0xfffffa18'; did you mean 'in_stack_fffffa18'?
   core_cloth.cpp_CCloth_boneEditor_FUN_0043c880
     Line 210: use of undeclared identifier 'stack0xfffffac0'
   core_setedit.cpp_CDemonSet_showScenePreview_FUN_0057a940
     Line 86: use of undeclared identifier 'stack0xfffffae0'
-  core_cloth.cpp_CCloth_addCollisionBone_FUN_0043c430
-    Line 32: use of undeclared identifier 'stack0xfffffb34'; did you mean 'in_stack_fffffb34'?
   core_werewolf.cpp_CWerewolf_process_FUN_005efde0
     Line 210: use of undeclared identifier 'stack0xfffffce0'
   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210
@@ -1419,8 +1413,6 @@ CATEGORY: undeclared_identifier (376 errors)
     Line 229: use of undeclared identifier 'stack0xfffffe54'
   core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
     Line 253: use of undeclared identifier 'stack0xfffffe68'
-  shape_design.c_loadTextureData_FUN_0046b060
-    Line 142: use of undeclared identifier 'stack0xfffffe7c'; did you mean 'in_stack_fffffe7c'?
   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0
     Line 98: use of undeclared identifier 'stack0xfffffe8c'
   core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470
@@ -1467,8 +1459,6 @@ CATEGORY: undeclared_identifier (376 errors)
     Line 28: use of undeclared identifier 'stack0xffffffc4'
   core_skeleton.cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a05e0
     Line 53: use of undeclared identifier 'stack0xffffffc4'
-  shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00
-    Line 45: use of undeclared identifier 'stack0xffffffc4'
   core_frankgen.cpp_CFrankenstienMachine_renderOpaque_FUN_004d1f70
     Line 27: use of undeclared identifier 'stack0xffffffcc'
   shape_superopt.cpp_distancePointToSegmentXY_FUN_005d64a0
@@ -1517,7 +1507,7 @@ CATEGORY: undeclared_identifier (376 errors)
     Line 26: use of undeclared identifier 'undefined6'
 
 ====================================================================================================
-CATEGORY: incompatible_types (306 errors)
+CATEGORY: incompatible_types (305 errors)
 ====================================================================================================
 
   engine_fileio.cpp_CCheckOutList_add_FUN_004b2d00
@@ -1571,7 +1561,7 @@ CATEGORY: incompatible_types (306 errors)
   engine_fileio.cpp_CFileManager_addPodAuditRecord_FUN_004b5950
     Line 24: assigning to 'CPodAuditRecord *' from incompatible type 'void *'
   engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190
-    Line 104: assigning to 'CPodAuditRecord *' from incompatible type 'void *'
+    Line 105: assigning to 'CPodAuditRecord *' from incompatible type 'void *'
   engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650
     Line 107: assigning to 'CPodDirectoryEntry *' from incompatible type 'void *'
   engine_fileio.cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40
@@ -1791,7 +1781,7 @@ CATEGORY: incompatible_types (306 errors)
   shape_superopt.cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590
     Line 134: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
   shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00
-    Line 44: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
+    Line 47: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
   wincore_windll.cpp_presentToExternalRenderer_FUN_005b7c30
     Line 21: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
   core_event.cpp_CEventList_evaluateAtom_FUN_004ae140
@@ -1827,7 +1817,7 @@ CATEGORY: incompatible_types (306 errors)
   core_vampboss.cpp_CVampireBoss_processDamage_FUN_005e7030
     Line 41: incompatible pointer types assigning to 'CDemonActor *' from 'CHero *'
   core_inv.cpp_CInventory_renderItemModel_FUN_004fee00
-    Line 100: incompatible pointer types assigning to 'CDemonActor *' from 'CMelee *'
+    Line 101: incompatible pointer types assigning to 'CDemonActor *' from 'CMelee *'
   core_inv.cpp_clampWeaponAmmoCount_FUN_004fd5d0
     Line 14: incompatible pointer types assigning to 'CDemonActor *' from 'CTommyGun *'
   core_game.cpp_giveHeroWeapon_FUN_004dd870
@@ -1856,8 +1846,6 @@ CATEGORY: incompatible_types (306 errors)
     Line 461: no matching function for call to '_sprintf'
   core_script.cpp_CCmdParm_setTemplateText_FUN_00560de0
     Line 43: no matching function for call to '_strnicmp'
-  shape_design.c_sizeForStadium_FUN_00469c70
-    Line 77: no matching function for call to '_strtod'
   engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50
     Line 156: no matching function for call to '_time'
   core_dtrace.cpp_CDemonRaytrace_convertLinearIndexToWorldPosAndCallback_FUN_00494710
@@ -1873,7 +1861,7 @@ CATEGORY: incompatible_types (306 errors)
   shape_design.c_embedCopyrightWatermark_FUN_0046b9a0
     Line 20: no matching function for call to 'shape_design_c_quantizePaletteColors_FUN_0046b770'
   engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10
-    Line 85: no matching function for call to 'shape_memdbg_cpp_openFile_FUN_0050f7a0'
+    Line 86: no matching function for call to 'shape_memdbg_cpp_openFile_FUN_0050f7a0'
   shape_superopt.cpp_CComplexPolygon_splitToConvex_FUN_005c84c0
     Line 66: no matching function for call to 'shape_superopt_cpp_CComplexPolygon_processEdgeSubLoops_FUN_005c91e0'
   sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0

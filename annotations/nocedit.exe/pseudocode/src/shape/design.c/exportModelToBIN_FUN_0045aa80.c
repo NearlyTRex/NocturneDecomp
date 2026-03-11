@@ -2,13 +2,13 @@
 // Address: 0045aa80
 // Address Range: [[0045aa80, 0045b84c]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_design_c_exportModelToBIN_FUN_0045aa80(char *filename,int depth_mode,int scale_mode,int export_format,int include_textures)
+// Signature: void __cdecl shape_design_c_exportModelToBIN_FUN_0045aa80(char *filename,int render_mode,int scale_mode,int export_format,int include_textures )
 
 #include "nocturne.h"
 
 /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
-void __cdecl shape_design_c_exportModelToBIN_FUN_0045aa80(char *filename,int depth_mode,int scale_mode,int export_format,int include_textures)
+void __cdecl shape_design_c_exportModelToBIN_FUN_0045aa80(char *filename,int render_mode,int scale_mode,int export_format,int include_textures )
 
 {
   char cVar1;
@@ -18,7 +18,6 @@ void __cdecl shape_design_c_exportModelToBIN_FUN_0045aa80(char *filename,int dep
   char *pcVar5;
   char *pcVar6;
   double dVar7;
-  int in_stack_ffffff04;
   int local_f8;
   uint local_98;
   uint local_94;
@@ -118,8 +117,7 @@ void __cdecl shape_design_c_exportModelToBIN_FUN_0045aa80(char *filename,int dep
       }
       local_18 = (int)ROUND(ROUND(((double)local_14 * 0.6931471805599453) /
                                   (2 * 0.6931471805599453))) + 1;
-      dVar7 = ldexp(__BITCAST_DOUBLE(CONCAT44(local_18,0x3ff00000)),in_stack_ffffff04)
-      ;
+      dVar7 = ldexp(1.0,local_18);
       local_14 = (float)64 / (float)dVar7;
     }
     local_38 = 0x14;
@@ -150,7 +148,7 @@ void __cdecl shape_design_c_exportModelToBIN_FUN_0045aa80(char *filename,int dep
                                   g_LoadedVertices[local_28].vertex.z *
                                   (float)256));
       if (export_format == 0) {
-        _fprintf(local_1c,"\tVERTEX\t%d,%d,%d\n",local_68,(short)local_64,local_60);
+        _fprintf(local_1c,"\tVERTEX\t%d,%d,%d\n",(char)local_68,(short)local_64,local_60);
       }
       else {
         _fwrite(&local_68,1,0xc,local_1c);
@@ -168,7 +166,7 @@ void __cdecl shape_design_c_exportModelToBIN_FUN_0045aa80(char *filename,int dep
         _fwrite(&local_68,1,0xc,local_1c);
       }
     }
-    if ((depth_mode == 0x59) || (depth_mode == 0x5a)) {
+    if ((render_mode == 0x59) || (render_mode == 0x5a)) {
       local_44 = 0x17;
       local_40 = 0;
       local_3c = g_VertexCount;
@@ -206,7 +204,7 @@ void __cdecl shape_design_c_exportModelToBIN_FUN_0045aa80(char *filename,int dep
           }
           g_EditorColorIndex = g_ModelPolygonData[local_28].material_id;
         }
-        if (depth_mode == 0x58) {
+        if (render_mode == 0x58) {
           if (g_GouraudShadingEnabled == 0) {
             local_80 = 5;
           }
@@ -227,7 +225,7 @@ void __cdecl shape_design_c_exportModelToBIN_FUN_0045aa80(char *filename,int dep
           if (local_80 == 5) {
             _fprintf(local_1c,"\tFACET");
           }
-          _fprintf(local_1c,"%d\t%d,%d,%d,%d",local_7c,local_78,local_74,(short)local_70,
+          _fprintf(local_1c,"%d\t%d,%d,%d,%d",local_7c,local_78,(char)local_74,(short)local_70,
                      local_6c);
           for (local_24 = 0; local_24 < (int)local_7c; local_24 = local_24 + 1) {
             _fprintf(local_1c,",%d",g_ModelPolygonData[local_28].vertex_indices[local_24]);
@@ -276,16 +274,16 @@ void __cdecl shape_design_c_exportModelToBIN_FUN_0045aa80(char *filename,int dep
             }
           }
         }
-        if (depth_mode == 0x58) {
+        if (render_mode == 0x58) {
           local_80 = 0xe;
         }
-        else if (depth_mode == 0x54) {
+        else if (render_mode == 0x54) {
           local_80 = 0x11;
         }
-        else if (depth_mode == 0x52) {
+        else if (render_mode == 0x52) {
           local_80 = 0x33;
         }
-        else if (depth_mode == 0x47) {
+        else if (render_mode == 0x47) {
           local_80 = 0x34;
           local_78 = (int)ROUND(ROUND(g_ModelPolygonData[local_28].normal.x *
                                       (float)2048));
@@ -298,7 +296,7 @@ void __cdecl shape_design_c_exportModelToBIN_FUN_0045aa80(char *filename,int dep
                                       (float)2048 *
                                       (float)256));
         }
-        else if (depth_mode == 0x48) {
+        else if (render_mode == 0x48) {
           local_80 = 0xe;
           local_78 = (int)ROUND(ROUND(g_ModelPolygonData[local_28].normal.x *
                                       (float)2048));
@@ -311,7 +309,7 @@ void __cdecl shape_design_c_exportModelToBIN_FUN_0045aa80(char *filename,int dep
                                       (float)2048 *
                                       (float)256));
         }
-        else if (depth_mode == 0x5a) {
+        else if (render_mode == 0x5a) {
           local_80 = 0x22;
         }
         else if (g_GouraudShadingEnabled == 0) {
@@ -354,11 +352,11 @@ void __cdecl shape_design_c_exportModelToBIN_FUN_0045aa80(char *filename,int dep
           if (local_80 == 0x22) {
             _fprintf(local_1c,"\tZPFACET");
           }
-          _fprintf(local_1c,"%dTMAP\t%d,%d,%d,%d",local_7c,local_78,local_74,(short)local_70,
-                     local_6c);
+          _fprintf(local_1c,"%dTMAP\t%d,%d,%d,%d",local_7c,local_78,(char)local_74,
+                     (short)local_70,local_6c);
           for (local_24 = 0; local_24 < (int)local_7c; local_24 = local_24 + 1) {
             _fprintf(local_1c,",%d,%d,%d",
-                       g_ModelPolygonData[local_28].vertex_indices[local_24],
+                       (char)g_ModelPolygonData[local_28].vertex_indices[local_24],
                        (short)(int)ROUND(ROUND(g_ModelPolygonData[local_28].uv_u[local_24])),
                        (int)ROUND(ROUND(g_ModelPolygonData[local_28].uv_v[local_24])));
           }

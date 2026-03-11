@@ -9,9 +9,9 @@
 ;
 ; XREF[9]:
 ;   core_batcreat.cpp_CBatCreature_processDismemberment_FUN_00415dd0 at 00415fee
-;   core_batman.cpp_CBatman_FUN_00417660 at 004177fb
+;   core_batman.cpp_CBatman_processDismemberment_FUN_00417660 at 004177fb
 ;   core_bride.cpp_CBride_processDismemberment_FUN_00424600 at 00424725
-;   core_cow.cpp_CZombieCow_FUN_004448c0 at 00444a43
+;   core_cow.cpp_CZombieCow_processDismemberment_FUN_004448c0 at 00444a43
 ;   core_ghoul.cpp_CGhoul_processDismemberment_FUN_004e8520 at 004e86b6
 ;   core_imp.cpp_CImp_processDismemberment_FUN_004fab60 at 004facfb
 ;   core_mobster.cpp_CMobster_processDismemberment_FUN_00527380 at 00527586

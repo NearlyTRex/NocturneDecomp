@@ -241,7 +241,7 @@ float __cdecl core_stairs_cpp_CStairs_customRayIntersect_FUN_005ba590(CStairs *t
 void __cdecl core_stairs_cpp_CStairs_customIntersectCylinderXZ_FUN_005ba660(CStairs *this_ptr,SIntersectXZCylinder *cylinder);
 int __cdecl core_stairs_cpp_CStairs_customGetFloorHeight_FUN_005ba6a0(CStairs *this_ptr,float x_pos,float z_pos,float *out_floor_height);
 EGroundType __cdecl core_stairs_cpp_CStairs_getGroundType_FUN_005ba6f0(CStairs *this_ptr);
-void __cdecl core_stairs_cpp_CStairs_FUN_005ba700(CStairs *this_ptr);
+void __cdecl core_stairs_cpp_CStairs_buildCollision_FUN_005ba700(CStairs *this_ptr);
 void __cdecl core_stairs_cpp_CStairs_getPropertyList_FUN_005ba840(CStairs *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_stairs_cpp_CStairs_processInEditor_FUN_005ba900(CStairs *this_ptr);
 void __cdecl core_stairs_cpp_CStairs_showEditorHelp_FUN_005bab90(CStairs *this_ptr,int *y_pos);

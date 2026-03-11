@@ -150,7 +150,8 @@ void __cdecl core_course_cpp_renderCourseGizmo_FUN_00443760(CVector3f *position)
   do {
     if ((int)(pSVar1[1].projected_vertex.screen_x & -0x80000000) == 0) {
       engine_2d_c_drawText_FUN_00401fd0
-                (*(char **)(iVar2 + 0x66ec50),pSVar1[1].projected_vertex.screen_x >> 0x10,
+                (*(char **)((int)g_CourseAxisLabels + iVar2),
+                 pSVar1[1].projected_vertex.screen_x >> 0x10,
                  pSVar1[1].projected_vertex.screen_y >> 0x10);
     }
     iVar2 = iVar2 + 4;

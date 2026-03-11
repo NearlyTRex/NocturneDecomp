@@ -4,67 +4,67 @@
       {
         "category": "format_error",
         "column": 54,
-        "line": 114,
+        "line": 116,
         "message": "format specifies type 'char *' but the argument has type 'CLodMeshPrecomputeEntry *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 36,
-        "line": 124,
+        "line": 126,
         "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "undeclared_identifier",
         "column": 33,
-        "line": 126,
+        "line": 128,
         "message": "use of undeclared identifier 'stack0xffff5dd8'; did you mean 'in_stack_ffff5dd8'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 42,
-        "line": 133,
+        "line": 135,
         "message": "use of undeclared identifier 'stack0xffff5dd8'; did you mean 'in_stack_ffff5dd8'?"
       },
       {
         "category": "format_error",
         "column": 93,
-        "line": 137,
+        "line": 139,
         "message": "format specifies type 'char *' but the argument has type 'CLodMeshPrecomputeEntry *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 39,
-        "line": 140,
+        "line": 142,
         "message": "format specifies type 'char *' but the argument has type 'CLodMeshPrecomputeEntry *' [-Werror,-Wformat]"
       },
       {
         "category": "undeclared_identifier",
         "column": 41,
-        "line": 151,
+        "line": 153,
         "message": "use of undeclared identifier 'stack0xffff5dd8'; did you mean 'in_stack_ffff5dd8'?"
       },
       {
         "category": "format_error",
         "column": 55,
-        "line": 170,
+        "line": 172,
         "message": "format specifies type 'char *' but the argument has type 'CLodMeshPrecomputeEntry *' [-Werror,-Wformat]"
       },
       {
         "category": "undeclared_identifier",
         "column": 33,
-        "line": 196,
+        "line": 198,
         "message": "use of undeclared identifier 'stack0xffff5dd8'; did you mean 'in_stack_ffff5dd8'?"
       },
       {
         "category": "undeclared_identifier",
         "column": 42,
-        "line": 198,
+        "line": 200,
         "message": "use of undeclared identifier 'stack0xffff5dd8'; did you mean 'in_stack_ffff5dd8'?"
       },
       {
         "category": "other",
         "column": 55,
-        "line": 261,
+        "line": 263,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
       }
     ],
@@ -73,19 +73,19 @@
   },
   "complexity": {
     "assembly_lines": 1765,
-    "complexity_score": 937,
+    "complexity_score": 941,
     "cross_reference_count": 0,
     "function_call_count": 65,
     "global_count": 65,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 692,
+    "pseudocode_lines": 696,
     "suspect_count": 23,
     "suspect_types": [
       "pointer_cast",
       "stack_param",
       "stack_ref"
     ],
-    "total_lines": 2457
+    "total_lines": 2461
   },
   "cross_references": [],
   "function": {
@@ -1534,7 +1534,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 119,
+      "line": 121,
       "match": "&stack0xffff5dd8",
       "severity": "moderate",
       "text": "((CBoneStructure *)&stack0xffff5dd8,(_FILE *)this_ptr_00,&local_b4);",
@@ -1542,7 +1542,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 121,
+      "line": 123,
       "match": "in_stack_ffff5dd8",
       "severity": "moderate",
       "text": "(this_ptr_00,(_FILE *)0x0,in_stack_ffff5dd8);",
@@ -1550,7 +1550,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 126,
+      "line": 128,
       "match": "&stack0xffff5dd8",
       "severity": "moderate",
       "text": "((CBoneStructure *)&stack0xffff5dd8,(CBoneStructure *)local_6d04);",
@@ -1558,7 +1558,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 144,
+      "line": 146,
       "match": "&stack0xffff5dd8",
       "severity": "moderate",
       "text": "((CBoneStructure *)&stack0xffff5dd8,entry->pos_filename);",
@@ -1566,7 +1566,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 189,
+      "line": 191,
       "match": "&stack0xffff5dd8",
       "severity": "moderate",
       "text": "((CBoneStructure *)&stack0xffff5dd8,(CMatrix3x4f *)(local_6d04 + 0x3524));",
@@ -1574,7 +1574,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 191,
+      "line": 193,
       "match": "&stack0xffff5dd8",
       "severity": "moderate",
       "text": "(this_ptr,(CBoneStructure *)&stack0xffff5dd8);",
@@ -1582,7 +1582,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 193,
+      "line": 195,
       "match": "in_stack_ffff5dd8",
       "severity": "moderate",
       "text": "if (0 < in_stack_ffff5dd8) {",
@@ -1590,7 +1590,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 198,
+      "line": 200,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "pfVar19 = (float *)((int)&local_2520[0].m[0].w + iVar12);",
@@ -1598,7 +1598,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 203,
+      "line": 205,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
       "text": "pCVar14 = (CMatrix3x4f *)((int)pCVar14 + ((uint)bVar22 * -2 + 1) * 4);",
@@ -1606,7 +1606,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 207,
+      "line": 209,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
       "text": "local_70 = &((CMatrix3x4f *)((int)local_70 + 0x60))->m[2].x;",
@@ -1614,7 +1614,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 208,
+      "line": 210,
       "match": "in_stack_ffff5dd8",
       "severity": "moderate",
       "text": "} while (local_28 < in_stack_ffff5dd8);",
@@ -1622,7 +1622,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 361,
+      "line": 363,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)pcVar20 = *(uint *)((int)pSVar2->bone_weights + local_68 + 0xc);",
@@ -1630,7 +1630,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 362,
+      "line": 364,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)(pcVar20 + 4) = *(uint *)((int)pSVar2->bone_weights + local_68 + 0x10);",
@@ -1638,7 +1638,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 363,
+      "line": 365,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)(pcVar20 + 8) = *(uint *)((int)pSVar2->bone_weights + local_68 + 0x14);",
@@ -1646,7 +1646,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 374,
+      "line": 376,
       "match": "in_stack_ffff5dd8",
       "severity": "moderate",
       "text": "if (((iVar6 != 1) || (local_94 < 1)) || (in_stack_ffff5dd8 < local_94)) {",
@@ -1654,7 +1654,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 407,
+      "line": 409,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar13 = (uint *)((int)(local_1f4.tri_data)->attribute_indices + local_58);",
@@ -1662,7 +1662,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 411,
+      "line": 413,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uVar3 = *(uint *)((int)this_ptr->index_data_ptr[0] + local_60);",
@@ -1670,7 +1670,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 449,
+      "line": 451,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar13 = (uint *)((int)(local_1f4.tri_data)->attribute_indices + local_48);",
@@ -1678,7 +1678,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 453,
+      "line": 455,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uVar3 = *(uint *)((int)this_ptr->index_data_ptr[0] + local_50);",
@@ -1686,7 +1686,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 494,
+      "line": 496,
       "match": "(STextureSet *)((int)",
       "severity": "mild",
       "text": "pSVar17 = (STextureSet *)((int)pSVar17 + (uint)bVar22 * -8 + 4);",
@@ -1694,7 +1694,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 495,
+      "line": 497,
       "match": "(SMRGLTextureLod *)((int)",
       "severity": "mild",
       "text": "pSVar21 = (SMRGLTextureLod *)((int)pSVar21 + ((uint)bVar22 * -2 + 1) * 4);",
@@ -1702,7 +1702,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 569,
+      "line": 572,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "iVar7 = *(int *)((int)local_d8 + iVar12);",

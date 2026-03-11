@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(CDemonRenderer *this_ptr)
+; void __cdecl engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(CDemonRenderer *this_ptr,CVector3f *euler_angles)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   euler_angles
 ; Local Variables:
 ; undefined1       Stack[-0x28]:1  local_28
 ;

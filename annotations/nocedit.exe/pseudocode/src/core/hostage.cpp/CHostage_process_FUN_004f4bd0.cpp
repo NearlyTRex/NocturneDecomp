@@ -229,7 +229,7 @@ LAB_004f4fc0:
     if (iVar13 == 0) {
       switch(this_ptr->hostage_state) {
       case 0:
-        iVar13 = core_hostage_cpp_CHostage_FUN_004f5ff0(this_ptr,delta_time);
+        iVar13 = core_hostage_cpp_CHostage_processGrabberFlee_FUN_004f5ff0(this_ptr,delta_time);
         if (iVar13 == 0) {
           pCVar8 = g_HeroActors[g_LocalHeroIndex];
           local_e0 = (pCVar8->base).base.location.position.x -
@@ -265,7 +265,7 @@ LAB_004f4fc0:
         }
         pCVar12 = g_CConsolePtr;
         if (this_ptr->next_way_point == (CDemonActor *)0x0) {
-          iVar13 = core_hostage_cpp_CHostage_FUN_004f5ff0(this_ptr,delta_time);
+          iVar13 = core_hostage_cpp_CHostage_processGrabberFlee_FUN_004f5ff0(this_ptr,delta_time);
           if (iVar13 == 0) {
             iVar13 = core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0
                                ((CCharacter *)this_ptr,delta_time);
@@ -312,7 +312,7 @@ LAB_004f4fc0:
         }
         break;
       case 2:
-        iVar13 = core_hostage_cpp_CHostage_FUN_004f5ff0(this_ptr,delta_time);
+        iVar13 = core_hostage_cpp_CHostage_processGrabberFlee_FUN_004f5ff0(this_ptr,delta_time);
         if (iVar13 == 0) {
           core_charactr_cpp_CCharacter_followActor_FUN_0042c5f0
                     ((CCharacter *)this_ptr,(CDemonActor *)g_HeroActors[g_LocalHeroIndex],4.0,10.0,

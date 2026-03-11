@@ -13,7 +13,8 @@ void __cdecl core_set_cpp_CDemonSet_restoreCameraAfterMirror_FUN_00570af0(CDemon
             (g_CDemonRendererPtr2,&g_SavedCameraOrigin.i);
   engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0048c650
             (g_CDemonRendererPtr2,g_SavedProjectionFactor);
-  engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(g_CDemonRendererPtr2);
+  engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0
+            (g_CDemonRendererPtr2,&g_SavedCameraRotation);
   engine_drender_cpp_CDemonRenderer_enableAdvancedCulling_FUN_0048ce10(g_CDemonRendererPtr2,0);
   engine_drender_cpp_CDemonRenderer_setAlphaMask_FUN_0048cdf0(g_CDemonRendererPtr2,0);
   this_ptr->active_mirror = (CMirror *)0x0;

@@ -13738,7 +13738,7 @@
           "type":"CCramTex*"
         },
         {
-          "name":"visualization_mode",
+          "name":"show_final_placement",
           "storage":{
             "offset":8,
             "size":4,
@@ -13786,7 +13786,7 @@
           "type":"int"
         },
         {
-          "name":"draw_width",
+          "name":"draw_right",
           "storage":{
             "offset":20,
             "size":4,
@@ -13802,7 +13802,7 @@
           "type":"int"
         },
         {
-          "name":"draw_height",
+          "name":"draw_bottom",
           "storage":{
             "offset":24,
             "size":4,
@@ -13831,7 +13831,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_cramtex.cpp_CCramTex_visualizeTextureAtlas_FUN_00447f20",
+    "name":"shape_cramtex.cpp_visualizeTextureAtlas_FUN_00447f20",
     "ret":"void",
     "vars":{
       "locals":[
@@ -14062,7 +14062,7 @@
       ],
       "params":[
         {
-          "name":"this_ptr",
+          "name":"show_textures",
           "storage":{
             "offset":4,
             "size":4,
@@ -14075,10 +14075,10 @@
               }
             ]
           },
-          "type":"CCramTex*"
+          "type":"int"
         },
         {
-          "name":"visualization_mode",
+          "name":"is_complete",
           "storage":{
             "offset":8,
             "size":4,
@@ -14087,38 +14087,6 @@
               {
                 "addr":"Stack[0x8]",
                 "offset":8,
-                "size":4
-              }
-            ]
-          },
-          "type":"int"
-        },
-        {
-          "name":"completion_mode",
-          "storage":{
-            "offset":12,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0xc]",
-                "offset":12,
-                "size":4
-              }
-            ]
-          },
-          "type":"int"
-        },
-        {
-          "name":"display_mode",
-          "storage":{
-            "offset":16,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x10]",
-                "offset":16,
                 "size":4
               }
             ]
@@ -19730,7 +19698,7 @@
           "type":"void*"
         },
         {
-          "name":"col_coord",
+          "name":"atlas_width",
           "storage":{
             "offset":12,
             "size":4,
@@ -19746,7 +19714,7 @@
           "type":"int"
         },
         {
-          "name":"row_coord",
+          "name":"atlas_height",
           "storage":{
             "offset":16,
             "size":4,
@@ -19826,7 +19794,7 @@
           "type":"double"
         },
         {
-          "name":"atlas_width",
+          "name":"red_out",
           "storage":{
             "offset":52,
             "size":4,
@@ -19839,10 +19807,10 @@
               }
             ]
           },
-          "type":"int"
+          "type":"uchar*"
         },
         {
-          "name":"atlas_height",
+          "name":"green_out",
           "storage":{
             "offset":56,
             "size":4,
@@ -19855,10 +19823,10 @@
               }
             ]
           },
-          "type":"int"
+          "type":"uchar*"
         },
         {
-          "name":"red_out",
+          "name":"blue_out",
           "storage":{
             "offset":60,
             "size":4,
@@ -19871,10 +19839,10 @@
               }
             ]
           },
-          "type":"byte*"
+          "type":"uchar*"
         },
         {
-          "name":"green_out",
+          "name":"alpha_out",
           "storage":{
             "offset":64,
             "size":4,
@@ -19887,39 +19855,7 @@
               }
             ]
           },
-          "type":"byte*"
-        },
-        {
-          "name":"blue_out",
-          "storage":{
-            "offset":68,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x44]",
-                "offset":68,
-                "size":4
-              }
-            ]
-          },
-          "type":"byte*"
-        },
-        {
-          "name":"alpha_out",
-          "storage":{
-            "offset":72,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x48]",
-                "offset":72,
-                "size":4
-              }
-            ]
-          },
-          "type":"byte*"
+          "type":"uchar*"
         }
       ]
     }
@@ -29853,7 +29789,7 @@
           "type":"CEditorTools*"
         },
         {
-          "name":"file_pattern",
+          "name":"title_text",
           "storage":{
             "offset":8,
             "size":4,
@@ -29869,7 +29805,7 @@
           "type":"char*"
         },
         {
-          "name":"include_files",
+          "name":"search_pattern",
           "storage":{
             "offset":12,
             "size":4,
@@ -29882,7 +29818,7 @@
               }
             ]
           },
-          "type":"int"
+          "type":"char*"
         },
         {
           "name":"initial_path",
@@ -29899,6 +29835,22 @@
             ]
           },
           "type":"char*"
+        },
+        {
+          "name":"flags",
+          "storage":{
+            "offset":20,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x14]",
+                "offset":20,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint"
         }
       ],
       "ret_storage":{
@@ -97954,7 +97906,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"crt_io.c_getcwd_FUN_00608d20",
+    "name":"crt_watcom.c_getcwd_FUN_00608d20",
     "ret":"char*",
     "vars":{
       "params":[

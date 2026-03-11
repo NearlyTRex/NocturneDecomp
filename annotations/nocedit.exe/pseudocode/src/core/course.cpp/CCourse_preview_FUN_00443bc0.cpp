@@ -32,7 +32,7 @@ void __cdecl core_course_cpp_CCourse_preview_FUN_00443bc0(CCourse *this_ptr,CKey
   CCourse *pCVar10;
   uint uVar11;
   SRenderVertex *output;
-  CVector3f *input;
+  CVector3i *input;
   byte local_cc [16];
   float local_bc;
   float local_b8;
@@ -41,7 +41,7 @@ void __cdecl core_course_cpp_CCourse_preview_FUN_00443bc0(CCourse *this_ptr,CKey
   CVector3f local_98;
   CVector3f local_8c;
   CVector3f local_80;
-  CVector3f local_74;
+  CVector3i local_74;
   CVector3f local_68;
   CVector3i local_5c;
   CVector3f local_50;
@@ -101,7 +101,8 @@ void __cdecl core_course_cpp_CCourse_preview_FUN_00443bc0(CCourse *this_ptr,CKey
     }
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
     wincore_windll_cpp_clearZBuffer_FUN_005b3ed4();
-    engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(g_CDemonRendererPtr2);
+    engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0
+              (g_CDemonRendererPtr2,(CVector3f *)(local_cc + 0xc));
     engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
               (g_CDemonRendererPtr2,(CVector3i *)local_cc);
     if (local_2c == 0) {
@@ -130,14 +131,13 @@ void __cdecl core_course_cpp_CCourse_preview_FUN_00443bc0(CCourse *this_ptr,CKey
       local_5c.z = (int)ROUND(local_8c.z * 256.0f);
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_5c);
-      local_74.x = (float)(int)ROUND(local_68.x * 256.0f);
-      local_74.y = (float)(int)ROUND(local_68.y * 256.0f);
-      local_74.z = (float)(int)ROUND(local_68.z * 256.0f);
+      local_74.x = (int)ROUND(local_68.x * 256.0f);
+      local_74.y = (int)ROUND(local_68.y * 256.0f);
+      local_74.z = (int)ROUND(local_68.z * 256.0f);
       input = &local_74;
       output = g_CDemonRendererPtr2->vertex_buffer_ptr + 1;
       uVar11 = 0x443e21;
-      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                (&output->projected_vertex,(CVector3i *)input);
+      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c(&output->projected_vertex,input);
       pSVar4 = g_CDemonRendererPtr2->vertex_buffer_ptr;
       pSVar3 = pSVar4 + 1;
       piVar5 = (int *)&stack0xfffffea0;

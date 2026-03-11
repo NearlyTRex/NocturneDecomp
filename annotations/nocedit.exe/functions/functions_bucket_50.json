@@ -21483,7 +21483,7 @@
           "type":"float"
         },
         {
-          "name":"display_progress",
+          "name":"ui_mode",
           "storage":{
             "offset":12,
             "size":4,
@@ -22015,6 +22015,24 @@
             ]
           },
           "type":"undefined4"
+        }
+      ],
+      "params":[
+        {
+          "name":"max_vertices",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }
@@ -30987,6 +31005,22 @@
             ]
           },
           "type":"CDemonRenderer*"
+        },
+        {
+          "name":"euler_angles",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3f*"
         }
       ]
     }
@@ -52329,7 +52363,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_lever.cpp_CLever_FUN_00504dd0",
+    "name":"core_lever.cpp_CLever_getHandlePosition_FUN_00504dd0",
     "ret":"CVector3f*",
     "vars":{
       "locals":[
@@ -52432,7 +52466,7 @@
           "type":"CLever*"
         },
         {
-          "name":"param_2",
+          "name":"out_position",
           "storage":{
             "offset":8,
             "size":4,

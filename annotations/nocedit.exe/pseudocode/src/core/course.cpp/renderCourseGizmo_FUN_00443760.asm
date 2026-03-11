@@ -49,8 +49,8 @@
 ;   TerminatedCString s_x_0061944f
 ;   TerminatedCString s_y_00619451
 ;   float FLOAT_0065c060 = 256
-;   void* PTR_s_x_0066ec54 = 0061944f
-;   void* PTR_s_y_0066ec58 = 00619451
+;   undefined4 g_CourseAxisLabels[1]
+;   undefined4 g_CourseAxisLabels[2]
 ;   CDemonRenderer* g_CDemonRendererPtr1 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   uchar[32768] g_ColorCubeLookup
@@ -352,7 +352,7 @@ section .text
     MOV EAX,dword ptr [EBX + 0x10]      ; 00443b0c
     SAR EAX,0x10                        ; 00443b0f
     PUSH EAX                            ; 00443b12
-    MOV EDI,dword ptr [ESI + 0x66ec50]  ; 00443b13 | PTR_s_x_0066ec54 | PTR_s_y_0066ec58
+    MOV EDI,dword ptr [ESI + 0x66ec50]  ; 00443b13 | g_CourseAxisLabels[1] | g_CourseAxisLabels[2]
     PUSH EDI                            ; 00443b19 | = "x" | s_y_00619451
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 00443b1a
         ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)

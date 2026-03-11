@@ -106,14 +106,22 @@ void __cdecl shape_design_c_createRotationalSweepGeometry_FUN_0045e070(void)
     if ((local_14 == 0x42) || (local_14 == 0x49)) {
       for (local_40 = 0; local_40 < local_4c; local_40 = local_40 + 1) {
         for (local_3c = 1; local_3c < local_50 + -1; local_3c = local_3c + 1) {
-          shape_design_c_createReversedQuadPolygon_FUN_0045e040();
+          shape_design_c_createReversedQuadPolygon_FUN_0045e040
+                    (((local_50 + -1) * local_40 + local_38 + local_3c) - 1,
+                     (local_50 + -1) * local_40 + local_38 + local_3c,
+                     (local_50 + -1) * (local_40 + 1) + local_38 + local_3c,
+                     ((local_50 + -1) * (local_40 + 1) + local_38 + local_3c) - 1);
         }
       }
     }
     if ((local_14 == 0x42) || (local_14 == 0x4f)) {
       for (local_40 = 0; local_40 < local_4c; local_40 = local_40 + 1) {
         for (local_3c = 1; local_3c < local_50 + -1; local_3c = local_3c + 1) {
-          shape_design_c_createQuadPolygon_FUN_0045df60();
+          shape_design_c_createQuadPolygon_FUN_0045df60
+                    (((local_50 + -1) * local_40 + local_38 + local_3c) - 1,
+                     (local_50 + -1) * local_40 + local_38 + local_3c,
+                     (local_50 + -1) * (local_40 + 1) + local_38 + local_3c,
+                     ((local_50 + -1) * (local_40 + 1) + local_38 + local_3c) - 1);
         }
       }
     }

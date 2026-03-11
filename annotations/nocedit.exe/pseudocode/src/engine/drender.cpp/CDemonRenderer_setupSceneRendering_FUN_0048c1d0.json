@@ -6,18 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 18,
-    "complexity_score": 48,
+    "complexity_score": 7,
     "cross_reference_count": 11,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 8,
-    "suspect_count": 3,
-    "suspect_types": [
-      "param_count_too_few",
-      "stack_param"
-    ],
-    "total_lines": 26
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 25
   },
   "cross_references": [
     {
@@ -97,7 +94,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0",
-    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(CDemonRenderer *this_ptr)"
+    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(CDemonRenderer *this_ptr,CVector3f *euler_angles)"
   },
   "function_calls": [
     {
@@ -207,7 +204,7 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 1,
+    "declared_params": 2,
     "estimated_params": 2
   },
   "pcode_summary": {
@@ -233,10 +230,10 @@
     "pcode_op_count": 66
   },
   "stack_frame": {
-    "frame_size": 48,
+    "frame_size": 52,
     "local_size": 44,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -252,36 +249,15 @@
         "offset": 4,
         "size": 4,
         "type": "CDemonRenderer *"
+      },
+      {
+        "is_param": true,
+        "name": "euler_angles",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 5,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "CVector3f *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(&local_28,in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "call_site_count": 11,
-      "declared_params": 1,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:1 vs estimated:2",
-      "param_delta": 1,
-      "text": "Function declares 1 params but call sites push 2 (1 missing)",
-      "type": "param_count_too_few"
-    }
-  ]
+  "suspects": []
 }

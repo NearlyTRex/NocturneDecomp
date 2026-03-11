@@ -190,7 +190,7 @@ section .text
     MOV EDI,dword ptr [0x006703ec]      ; 00443cd8 | g_CDemonRendererPtr2
     PUSH EDI                            ; 00443cde | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0 ; 00443cdf
-        ;   XREF to: 0048c1d0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(CDemonRenderer * this_ptr)
+        ;   XREF to: 0048c1d0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(CDemonRenderer * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 00443ce4
     LEA EAX,[EBP + -0x42]               ; 00443ce7
     PUSH EAX                            ; 00443cea

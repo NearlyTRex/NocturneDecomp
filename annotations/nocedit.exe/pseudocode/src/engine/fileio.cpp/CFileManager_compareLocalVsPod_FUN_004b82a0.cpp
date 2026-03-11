@@ -28,7 +28,8 @@ void __cdecl engine_fileio_cpp_CFileManager_compareLocalVsPod_FUN_004b82a0(CFile
   pcVar5 = local_1208;
   if (pod_filename == (char *)0x0) {
     iVar2 = shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420
-                      (g_CEditorToolsPtr,"Select POD file to compare with local files",0x62822a,local_1208);
+                      (g_CEditorToolsPtr,"Select POD file to compare with local files","*.pod",
+                       local_1208,0);
     if (iVar2 == 0) {
       return;
     }

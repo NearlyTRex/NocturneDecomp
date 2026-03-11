@@ -57,8 +57,10 @@ int __cdecl core_skeledit_cpp_CDeformableModel_buildFromPosFile_FUN_0058c190(CDe
   CLodMesh local_1f4;
   char local_180 [100];
   CMatrix3x4f local_11c;
-  uint local_ec;
-  int local_d8 [9];
+  int local_ec [5];
+  int local_d8 [5];
+  int local_c4 [2];
+  int local_bc [2];
   int local_b4;
   int local_b0;
   int local_ac;
@@ -564,7 +566,8 @@ LAB_0058c601:
   local_9c = core_skeledit_cpp_CLodMesh_selectAndGenerateLods_FUN_00589c20(&local_1f4,entry,2);
   if (-1 < local_9c) {
     if (local_9c != 0) {
-      iVar12 = shape_meshlod_cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990(&local_1f4);
+      iVar12 = shape_meshlod_cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990
+                         (&local_1f4,local_d8,local_ec,5,2);
       this_ptr->num_lods = iVar12;
       if (iVar12 < 1) goto LAB_0058d5ef;
       iVar6 = 0;
@@ -632,14 +635,15 @@ LAB_0058c601:
     }
     this_ptr->lod_info[0].shadow_only_flag = 0;
     this_ptr->lod_info[0].pixel_height = 999999;
-    local_ec = 999999;
+    local_ec[0] = 999999;
     if (this_ptr->num_lods < 5) {
       entry->for_shadows = 1;
       g_LodReplayMode = 1;
       iVar12 = core_skeledit_cpp_CLodMesh_selectAndGenerateLods_FUN_00589c20(&local_350,entry,0);
       if (iVar12 < 0) goto LAB_0058d5ef;
       if (iVar12 != 0) {
-        iVar12 = shape_meshlod_cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990(&local_350);
+        iVar12 = shape_meshlod_cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990
+                           (&local_350,local_c4,local_bc,2,0);
         if (iVar12 < 1) goto LAB_0058d5ef;
         if (iVar12 == 2) {
           this_ptr->lod_info[this_ptr->num_lods].pixel_height = 999999;

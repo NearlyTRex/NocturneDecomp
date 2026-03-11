@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 23,
-    "complexity_score": 20,
+    "complexity_score": 5,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 5,
-    "suspect_count": 1,
-    "suspect_types": [
-      "param_count_too_few"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 28
   },
   "cross_references": [
@@ -37,7 +35,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "shape_design.c_createReversedQuadPolygon_FUN_0045e040",
-    "signature": "void __cdecl shape_design_c_createReversedQuadPolygon_FUN_0045e040(void)"
+    "signature": "void __cdecl shape_design_c_createReversedQuadPolygon_FUN_0045e040(uint vertex0,uint vertex1,uint vertex2,uint vertex3)"
   },
   "function_calls": [
     {
@@ -60,8 +58,8 @@
         "stack_params": 4
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
+    "confidence": "medium",
+    "declared_params": 4,
     "estimated_params": 4
   },
   "pcode_summary": {
@@ -87,24 +85,41 @@
     "pcode_op_count": 77
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 20,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 16,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "vertex0",
+        "offset": 4,
+        "size": 4,
+        "type": "uint"
+      },
+      {
+        "is_param": true,
+        "name": "vertex1",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      },
+      {
+        "is_param": true,
+        "name": "vertex2",
+        "offset": 12,
+        "size": 4,
+        "type": "uint"
+      },
+      {
+        "is_param": true,
+        "name": "vertex3",
+        "offset": 16,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
   },
-  "suspects": [
-    {
-      "call_site_count": 1,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 4,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:4",
-      "param_delta": 4,
-      "text": "Function declares 0 params but call sites push 4 (4 missing)",
-      "type": "param_count_too_few"
-    }
-  ]
+  "suspects": []
 }

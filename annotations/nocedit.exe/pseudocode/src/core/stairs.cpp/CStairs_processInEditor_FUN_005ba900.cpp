@@ -88,6 +88,6 @@ void __cdecl core_stairs_cpp_CStairs_processInEditor_FUN_005ba900(CStairs *this_
        (fVar3 - this_ptr->run) + (this_ptr->base).location.position.z;
   (this_ptr->base).location.position.y = (fVar4 - fVar1) + fVar2;
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr->base);
-  core_stairs_cpp_CStairs_FUN_005ba700(this_ptr);
+  core_stairs_cpp_CStairs_buildCollision_FUN_005ba700(this_ptr);
   return;
 }

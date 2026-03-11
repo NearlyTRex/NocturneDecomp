@@ -389,7 +389,7 @@ section .text
     LEA EAX,[EBP + -0x5c]               ; 0045aa68
     PUSH EAX                            ; 0045aa6b
     CALL shape_design.c_exportModelToBIN_FUN_0045aa80 ; 0045aa6c
-        ;   XREF to: 0045aa80 (UNCONDITIONAL_CALL)  ; void shape_design.c_exportModelToBIN_FUN_0045aa80(char * filename, int depth_mode, int scale_mode, int export_format, ...)
+        ;   XREF to: 0045aa80 (UNCONDITIONAL_CALL)  ; void shape_design.c_exportModelToBIN_FUN_0045aa80(char * filename, int render_mode, int scale_mode, int export_format, ...)
     ADD ESP,0x14                        ; 0045aa71
     MOV ESP,EBP                         ; 0045aa74
         ;   Label: LAB_0045aa74

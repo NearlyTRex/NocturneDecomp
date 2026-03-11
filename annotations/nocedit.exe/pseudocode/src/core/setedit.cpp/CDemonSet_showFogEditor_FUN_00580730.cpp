@@ -21,7 +21,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showFogEditor_FUN_00580730(CDemonSet *th
   char *pcVar10;
   byte bVar11;
   uint window_flags;
-  char *in_stack_fffffa18;
+  CPickList local_5e8;
   char local_240 [256];
   char local_140 [256];
   double local_40;
@@ -203,7 +203,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showFogEditor_FUN_00580730(CDemonSet *th
           pcVar4 = pcVar4 + (uint)bVar11 * -2 + 1;
         } while (cVar1 != '\0');
         if (iVar9 != -2) {
-          local_40 = _strtod(in_stack_fffffa18);
+          local_40 = _strtod(local_140);
           pSVar7->height_threshold = (float)local_40;
         }
       }
@@ -220,7 +220,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showFogEditor_FUN_00580730(CDemonSet *th
           pcVar4 = pcVar4 + (uint)bVar11 * -2 + 1;
         } while (cVar1 != '\0');
         if (iVar9 != -2) {
-          local_40 = _strtod(in_stack_fffffa18);
+          local_40 = _strtod(local_140);
           pSVar7->density_multiplier = (float)local_40;
         }
       }
@@ -325,7 +325,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showFogEditor_FUN_00580730(CDemonSet *th
         pcVar4 = pcVar4 + (uint)bVar11 * -2 + 1;
       } while (cVar1 != '\0');
       if (iVar9 != -2) {
-        local_40 = _strtod(in_stack_fffffa18);
+        local_40 = _strtod(local_140);
         pSVar7->temperature = (float)local_40;
       }
     }
@@ -340,49 +340,39 @@ void __cdecl core_setedit_cpp_CDemonSet_showFogEditor_FUN_00580730(CDemonSet *th
       iVar6 = 0;
       sound_sndmain_cpp_set3DListenerOrient_FUN_005aa0a0(1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0);
       while( true ) {
-        shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffffa18);
+        shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_5e8);
+        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_5e8.base,"45.wav");
+        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_5e8.base,"cre-fire.wav");
+        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_5e8.base,"shotgun.wav");
+        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_5e8.base,"zom-s04.wav");
+        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_5e8.base,"stranger_hit01.wav");
+        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_5e8.base,"xplode1.wav");
+        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_5e8.base,"limb1.wav");
         shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                  ((CStrList *)&stack0xfffffa18,"45.wav");
+                  (&local_5e8.base,"footstep-str-0-ct-1.wav");
         shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                  ((CStrList *)&stack0xfffffa18,"cre-fire.wav");
+                  (&local_5e8.base,"footstep-str-0-wd-1.wav");
         shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                  ((CStrList *)&stack0xfffffa18,"shotgun.wav");
+                  (&local_5e8.base,"footstep-str-0-mt-1.wav");
         shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                  ((CStrList *)&stack0xfffffa18,"zom-s04.wav");
+                  (&local_5e8.base,"footstep-str-0-mb-1.wav");
         shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                  ((CStrList *)&stack0xfffffa18,"stranger_hit01.wav");
-        shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                  ((CStrList *)&stack0xfffffa18,"xplode1.wav");
-        shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                  ((CStrList *)&stack0xfffffa18,"limb1.wav");
-        shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                  ((CStrList *)&stack0xfffffa18,"footstep-str-0-ct-1.wav");
-        shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                  ((CStrList *)&stack0xfffffa18,"footstep-str-0-wd-1.wav");
-        shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                  ((CStrList *)&stack0xfffffa18,"footstep-str-0-mt-1.wav");
-        shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                  ((CStrList *)&stack0xfffffa18,"footstep-str-0-mb-1.wav");
-        shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                  ((CStrList *)&stack0xfffffa18,"footstep-str-0-gr-1.wav");
-        shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                  ((CStrList *)&stack0xfffffa18,"ric-mt0a.wav");
-        shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                  ((CStrList *)&stack0xfffffa18,"ric-ct0a.wav");
+                  (&local_5e8.base,"footstep-str-0-gr-1.wav");
+        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_5e8.base,"ric-mt0a.wav");
+        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_5e8.base,"ric-ct0a.wav");
         window_flags = 0;
         pcVar4 = core_sound_cpp_CSound_getSoundModeName_FUN_005b3c70(g_CSoundPtr,iVar9);
         iVar6 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                          ((CPickList *)&stack0xfffffa18,pcVar4,iVar6,window_flags);
+                          (&local_5e8,pcVar4,iVar6,window_flags);
         if (iVar6 < 0) break;
         sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
         sound_sndmain_cpp_setNextSfxStaticPosition_FUN_005a88e0(0.0,0.0,20.0);
-        pcVar4 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70
-                           ((CStrList *)&stack0xfffffa18,iVar6);
+        pcVar4 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_5e8.base,iVar6);
         sound_sndmain_cpp_startSfx_FUN_005a8e90(pcVar4);
         sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
-        shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffffa18,0);
+        shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_5e8,0);
       }
-      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffffa18,0);
+      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_5e8,0);
       sound_sndmain_cpp_resetSoundDevice_FUN_005ab130();
     }
     if (local_2c == 0x1b) {

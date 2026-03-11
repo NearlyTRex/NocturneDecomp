@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_design_c_exportModelToBIN_FUN_0045aa80(char *filename,int depth_mode,int scale_mode,int export_format,int include_textures)
+; void __cdecl shape_design_c_exportModelToBIN_FUN_0045aa80(char *filename,int render_mode,int scale_mode,int export_format,int include_textures )
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename
-; int              Stack[0x8]:4   depth_mode
+; int              Stack[0x8]:4   render_mode
 ; int              Stack[0xc]:4   scale_mode
 ; int              Stack[0x10]:4   export_format
 ; int              Stack[0x14]:4   include_textures

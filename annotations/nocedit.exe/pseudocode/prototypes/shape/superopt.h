@@ -103,9 +103,9 @@ int __cdecl CComplexPolygon::getExpandedEdgeCount(CComplexPolygon *this_ptr);
 // Address: 005cbef0
 CVector3d * __cdecl CComplexPolygon::getNormal(CComplexPolygon *this_ptr);
 
-// Original: shape_superopt.cpp_CComplexPolygon_setMaterialId_FUN_005cbf00
+// Original: shape_superopt.cpp_CComplexPolygon_getMaterialId_FUN_005cbf00
 // Address: 005cbf00
-int __cdecl CComplexPolygon::setMaterialId(CComplexPolygon *this_ptr,int material_id);
+int __cdecl CComplexPolygon::getMaterialId(CComplexPolygon *this_ptr);
 
 // Original: shape_superopt.cpp_CComplexPolygon_getExpandedEdges_FUN_005cbf10
 // Address: 005cbf10
@@ -719,9 +719,9 @@ CP3D * __stack2_esi CP3D::add(CP3D *this_ptr,CP3D *a,CP3D *b);
 // Address: 005d85f0
 CP3D * __stack2_esi CP3D::multiply(CP3D *this_ptr,CP3D *a,CP3D *b);
 
-// Original: shape_superopt.cpp_CP3D_FUN_005d8630
+// Original: shape_superopt.cpp_CP3D_scale_FUN_005d8630
 // Address: 005d8630
-CP3D * __stackdbl_esi CP3D(CP3D *this_ptr,double scalar,CP3D *result);
+CP3D * __stackdbl_esi CP3D::scale(CP3D *this_ptr,double scalar,CP3D *result);
 
 // Original: shape_superopt.cpp_CP3D_isEqual_FUN_005d8670
 // Address: 005d8670

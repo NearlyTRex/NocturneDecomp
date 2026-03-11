@@ -16,7 +16,6 @@ void __cdecl shape_design_c_configureSinglePassPolygonReduction_FUN_00465560(int
   byte bVar6;
   float10 fVar7;
   double dVar8;
-  char *in_stack_ffffff84;
   byte local_74 [80];
   int local_24;
   int local_20;
@@ -46,7 +45,7 @@ void __cdecl shape_design_c_configureSinglePassPolygonReduction_FUN_00465560(int
     pbVar5 = pbVar5 + (uint)bVar6 * -2 + 1;
   } while (bVar1 != 0);
   if (iVar2 != -2) {
-    dVar8 = _strtod(in_stack_ffffff84);
+    dVar8 = _strtod((char *)local_74);
     local_14 = (float)dVar8;
   }
   if (0 < ui_mode) {

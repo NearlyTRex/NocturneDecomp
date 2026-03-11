@@ -161,7 +161,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
                       (&(this_ptr->base).base.model.motion_controller,3,1);
           }
         }
-        core_batman_cpp_CBatman_FUN_004167f0(this_ptr);
+        core_batman_cpp_CBatman_pickRandomMovementState_FUN_004167f0(this_ptr);
       }
       break;
     case 1:
@@ -393,7 +393,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
         if (fVar13 < 0.0) {
           this_ptr->vanish_timer = 0.0;
           this_ptr->mist_state = 0;
-          core_batman_cpp_CBatman_FUN_004167f0(this_ptr);
+          core_batman_cpp_CBatman_pickRandomMovementState_FUN_004167f0(this_ptr);
         }
       }
     }

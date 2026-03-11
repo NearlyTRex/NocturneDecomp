@@ -36,7 +36,8 @@ void __cdecl engine_fileio_cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50(CFile
   bVar9 = 0;
   if (pod_filename == (char *)0x0) {
     iVar2 = shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420
-                      (g_CEditorToolsPtr,"Select POD file to view audit trail",0x62813f,local_508);
+                      (g_CEditorToolsPtr,"Select POD file to view audit trail","*.pod",
+                       local_508,0);
     if (iVar2 == 0) {
       return;
     }

@@ -4347,7 +4347,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_batman.cpp_CBatman_FUN_00417660",
+    "name":"core_batman.cpp_CBatman_processDismemberment_FUN_00417660",
     "ret":"void",
     "vars":{
       "locals":[
@@ -19690,7 +19690,75 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"shape_design.c_createQuadPolygon_FUN_0045df60",
-    "ret":"void"
+    "ret":"void",
+    "vars":{
+      "params":[
+        {
+          "name":"vertex0",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint"
+        },
+        {
+          "name":"vertex1",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint"
+        },
+        {
+          "name":"vertex2",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint"
+        },
+        {
+          "name":"vertex3",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint"
+        }
+      ]
+    }
   },
   {
     "addr":"00461560",
@@ -22271,7 +22339,7 @@
           "type":"uchar*"
         },
         {
-          "name":"atlas_width",
+          "name":"pixel_depth",
           "storage":{
             "offset":16,
             "size":4,
@@ -22287,7 +22355,7 @@
           "type":"int"
         },
         {
-          "name":"atlas_height",
+          "name":"atlas_total_width",
           "storage":{
             "offset":20,
             "size":4,
@@ -22296,6 +22364,22 @@
               {
                 "addr":"Stack[0x14]",
                 "offset":20,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"atlas_total_height",
+          "storage":{
+            "offset":24,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x18]",
+                "offset":24,
                 "size":4
               }
             ]
@@ -41593,7 +41677,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_melee.cpp_CMelee_FUN_0050ebe0",
+    "name":"core_melee.cpp_CMelee_initBloodSpurtEffects_FUN_0050ebe0",
     "ret":"void",
     "vars":{
       "params":[
@@ -41612,6 +41696,38 @@
             ]
           },
           "type":"CMelee*"
+        },
+        {
+          "name":"blood_spurt_count",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"blood_gore_type",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }

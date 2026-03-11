@@ -19,7 +19,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
-;   core_tvbat.cpp_CTVBat_FUN_005e4d70
+;   core_tvbat.cpp_CTVBat_orderAttack_FUN_005e4d70
 ;
 ; *****************************************************************************
 
@@ -61,8 +61,8 @@ section .text
     JZ 0x005e737b                       ; 005e7370
         ;   XREF to: 005e737b (CONDITIONAL_JUMP)  ; LAB_005e737b
     PUSH EAX                            ; 005e7372
-    CALL core_tvbat.cpp_CTVBat_FUN_005e4d70 ; 005e7373
-        ;   XREF to: 005e4d70 (UNCONDITIONAL_CALL)  ; void core_tvbat.cpp_CTVBat_FUN_005e4d70(CTVBat * this_ptr)
+    CALL core_tvbat.cpp_CTVBat_orderAttack_FUN_005e4d70 ; 005e7373
+        ;   XREF to: 005e4d70 (UNCONDITIONAL_CALL)  ; void core_tvbat.cpp_CTVBat_orderAttack_FUN_005e4d70(CTVBat * this_ptr)
     ADD ESP,0x4                         ; 005e7378
     INC EBX                             ; 005e737b
         ;   Label: LAB_005e737b

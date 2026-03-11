@@ -258,7 +258,7 @@ section .text
     MOV EAX,[0x006703ec]                ; 004feff5 | g_CDemonRendererPtr2
     PUSH EAX                            ; 004feffa | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0 ; 004feffb
-        ;   XREF to: 0048c1d0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(CDemonRenderer * this_ptr)
+        ;   XREF to: 0048c1d0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(CDemonRenderer * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 004ff000
     PUSH 0x3f87558                      ; 004ff003 | g_ZeroVector
     MOV EDX,dword ptr [0x006703ec]      ; 004ff008 | g_CDemonRendererPtr2

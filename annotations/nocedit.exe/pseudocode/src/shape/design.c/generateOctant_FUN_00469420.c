@@ -15,7 +15,6 @@ int __cdecl shape_design_c_generateOctant_FUN_00469420(void)
   char *pcVar4;
   byte bVar5;
   double dVar6;
-  char *in_stack_ffffff6c;
   char local_8c [80];
   uint local_3c;
   int local_38;
@@ -70,7 +69,7 @@ int __cdecl shape_design_c_generateOctant_FUN_00469420(void)
         pcVar4 = pcVar4 + (uint)bVar5 * -2 + 1;
       } while (cVar1 != '\0');
       if (iVar3 != -2) {
-        dVar6 = _strtod(in_stack_ffffff6c);
+        dVar6 = _strtod(local_8c);
         local_20 = (float)dVar6;
         iVar2 = SUB84(__BITCAST_UINT64(dVar6),0);
         for (local_14 = 0; local_14 < 8; local_14 = local_14 + 1) {

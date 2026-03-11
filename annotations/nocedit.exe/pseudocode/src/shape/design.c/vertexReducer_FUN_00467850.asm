@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_design_c_vertexReducer_FUN_00467850(float tolerance,float angle_tolerance,int display_progress)
+; void __cdecl shape_design_c_vertexReducer_FUN_00467850(float tolerance,float angle_tolerance,int ui_mode)
 ;
 ; Parameters:
 ; float            Stack[0x4]:4   tolerance
 ; float            Stack[0x8]:4   angle_tolerance
-; int              Stack[0xc]:4   display_progress
+; int              Stack[0xc]:4   ui_mode
 ; Local Variables:
 ; undefined8       Stack[-0x14c]:8  local_14c
 ; undefined4       Stack[-0x144]:4  local_144

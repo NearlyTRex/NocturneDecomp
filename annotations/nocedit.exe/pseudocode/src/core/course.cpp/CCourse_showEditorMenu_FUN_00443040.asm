@@ -76,8 +76,8 @@ section .text
     MOV EBP,dword ptr [ESP + 0x500]     ; 0044304a
     MOV ECX,0x41                        ; 00443051
     LEA EDI,[ESP + 0x30c]               ; 00443056
-    MOV ESI,0x66e940                    ; 0044305d | DAT_0066e940
-    MOVSD.REP ES:EDI,ESI                ; 00443062 | DAT_0066e940 | DAT_0066e944
+    MOV ESI,0x66e940                    ; 0044305d | g_CourseLastPthPath
+    MOVSD.REP ES:EDI,ESI                ; 00443062 | g_CourseLastPthPath | DAT_0066e944
     CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00443064
         ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
         ;   Label: LAB_00443064
@@ -255,8 +255,8 @@ section .text
     MOV ECX,0x41                        ; 0044323e
         ;   Label: LAB_0044323e
     MOV EDI,ESP                         ; 00443243
-    MOV ESI,0x66ea48                    ; 00443245 | DAT_0066ea48
-    MOVSD.REP ES:EDI,ESI                ; 0044324a | DAT_0066ea48 | DAT_0066ea4c
+    MOV ESI,0x66ea48                    ; 00443245 | g_CourseLastCrsPath
+    MOVSD.REP ES:EDI,ESI                ; 0044324a | g_CourseLastCrsPath | DAT_0066ea4c
     PUSH 0x1                            ; 0044324c
         ;   Label: LAB_0044324c
     LEA EAX,[ESP + 0x4]                 ; 0044324e
@@ -266,7 +266,7 @@ section .text
     MOV EDX,dword ptr [0x00678a60]      ; 0044325d | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH EDX                            ; 00443263 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420 ; 00443264
-        ;   XREF to: 0049f420 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420(CEditorTools * this_ptr, char * file_pattern, int include_files, char * initial_path)
+        ;   XREF to: 0049f420 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420(CEditorTools * this_ptr, char * title_text, char * search_pattern, char * initial_path, ...)
     ADD ESP,0x14                        ; 00443269
     TEST EAX,EAX                        ; 0044326c
     JZ 0x004431bd                       ; 0044326e
@@ -609,8 +609,8 @@ section .text
         ;   XREF to: 0044323e (CONDITIONAL_JUMP)  ; LAB_0044323e
     MOV ECX,0x41                        ; 00443626
     LEA EDI,[ESP + 0x104]               ; 0044362b
-    MOV ESI,0x66eb50                    ; 00443632 | DAT_0066eb50
-    MOVSD.REP ES:EDI,ESI                ; 00443637 | DAT_0066eb50 | DAT_0066eb54
+    MOV ESI,0x66eb50                    ; 00443632 | g_CourseLastBonPath
+    MOVSD.REP ES:EDI,ESI                ; 00443637 | g_CourseLastBonPath | DAT_0066eb54
     PUSH 0x1                            ; 00443639
         ;   Label: LAB_00443639
     LEA EAX,[ESP + 0x108]               ; 0044363b
@@ -620,7 +620,7 @@ section .text
     MOV EAX,[0x00678a60]                ; 0044364d | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH EAX                            ; 00443652 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420 ; 00443653
-        ;   XREF to: 0049f420 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420(CEditorTools * this_ptr, char * file_pattern, int include_files, char * initial_path)
+        ;   XREF to: 0049f420 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420(CEditorTools * this_ptr, char * title_text, char * search_pattern, char * initial_path, ...)
     ADD ESP,0x14                        ; 00443658
     TEST EAX,EAX                        ; 0044365b
     JZ 0x004431bd                       ; 0044365d

@@ -2,11 +2,11 @@
 // Address: 0049f420
 // Address Range: [[0049f420, 0049fb65]]
 // Convention: __cdecl
-// Signature: int __cdecl shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420(CEditorTools *this_ptr,char *file_pattern,int include_files,char *initial_path)
+// Signature: int __cdecl shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420(CEditorTools *this_ptr,char *title_text,char *search_pattern,char *initial_path,uint flags)
 
 #include "nocturne.h"
 
-int __cdecl shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420(CEditorTools *this_ptr,char *file_pattern,int include_files,char *initial_path)
+int __cdecl shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420(CEditorTools *this_ptr,char *title_text,char *search_pattern,char *initial_path,uint flags)
 
 {
   char cVar1;
@@ -15,10 +15,8 @@ int __cdecl shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420(CE
   _tm *time_ptr;
   int iVar4;
   uint uVar5;
-  uint *puVar6;
-  byte bVar7;
-  byte in_stack_00000014;
-  char *pcVar8;
+  byte bVar6;
+  char *pcVar7;
   CPickList local_1ec8;
   char local_1b20 [560];
   CFileFinder local_18f0;
@@ -53,21 +51,21 @@ int __cdecl shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420(CE
   char local_10 [4];
   char local_c [4];
   
-  bVar7 = 0;
-  pcVar2 = getcwd_wrapper(local_14d0,0x104);
+  bVar6 = 0;
+  pcVar2 = _getcwd(local_14d0,0x104);
   if (pcVar2 == (char *)0x0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (this_ptr,"Error getting current directory.");
     return 0;
   }
-  puVar6 = &DAT_00678a70;
-  pcVar2 = local_12c8;
+  pcVar2 = g_BrowserLastSelectedFile;
+  pcVar7 = local_12c8;
   for (iVar4 = 0x41; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *(uint *)pcVar2 = *puVar6;
-    puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
-    pcVar2 = pcVar2 + ((uint)bVar7 * -2 + 1) * 4;
+    *(uint *)pcVar7 = *(uint *)pcVar2;
+    pcVar2 = pcVar2 + ((uint)bVar6 * -2 + 1) * 4;
+    pcVar7 = pcVar7 + ((uint)bVar6 * -2 + 1) * 4;
   }
-  if ((in_stack_00000014 & 1) != 0) {
+  if ((flags & 1) != 0) {
     engine_dosio_c_splitPath_FUN_00481f20(initial_path,local_c,local_bc4,local_ec4,local_3c4);
     engine_dosio_c_makePath_FUN_00481f50(local_13cc,local_c,local_bc4,(char *)0x0,(char *)0x0);
     chdir(local_13cc);
@@ -78,20 +76,20 @@ int __cdecl shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420(CE
 LAB_0049f47a:
   do {
     pcVar2 = "[ERROR: Can't get current directory.]";
-    pcVar8 = local_17dc;
+    pcVar7 = local_17dc;
     for (iVar4 = 0x41; iVar4 != 0; iVar4 = iVar4 + -1) {
-      *(uint *)pcVar8 = *(uint *)pcVar2;
-      pcVar2 = pcVar2 + ((uint)bVar7 * -2 + 1) * 4;
-      pcVar8 = pcVar8 + ((uint)bVar7 * -2 + 1) * 4;
+      *(uint *)pcVar7 = *(uint *)pcVar2;
+      pcVar2 = pcVar2 + ((uint)bVar6 * -2 + 1) * 4;
+      pcVar7 = pcVar7 + ((uint)bVar6 * -2 + 1) * 4;
     }
-    getcwd_wrapper(local_17dc,0x104);
-    _sprintf(local_1b20,"%s\n%s",file_pattern,local_17dc);
+    _getcwd(local_17dc,0x104);
+    _sprintf(local_1b20,"%s\n%s",title_text,local_17dc);
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_1ec8);
     engine_dosio_c_CFileFinder_ctor_FUN_00481c30(&local_18f0);
-    if (include_files == 0) {
-      include_files = (int)"*.*";
+    if (search_pattern == (char *)0x0) {
+      search_pattern = "*.*";
     }
-    engine_dosio_c_CFileFinder_openSearch_FUN_00481c70(&local_18f0,(char *)include_files);
+    engine_dosio_c_CFileFinder_openSearch_FUN_00481c70(&local_18f0,search_pattern);
     while (local_18f0.filename[0] != '\0') {
       if (((byte)local_18f0.file_size & 4) == 0) {
         engine_dosio_c_splitPath_FUN_00481f20
@@ -103,7 +101,7 @@ LAB_0049f47a:
             if (uVar5 == 0) break;
             uVar5 = uVar5 - 1;
             cVar1 = *pcVar2;
-            pcVar2 = pcVar2 + (uint)bVar7 * -2 + 1;
+            pcVar2 = pcVar2 + (uint)bVar6 * -2 + 1;
           } while (cVar1 != '\0');
           memmove(&local_4c4,local_4c3,~uVar5 - 1);
         }
@@ -144,7 +142,7 @@ LAB_0049f47a:
       if (((byte)local_18f0.file_size & 4) != 0) {
         iVar3 = _strcmp(local_18f0.filename,"..");
         if (iVar3 == 0) {
-          pcVar8 = "..\t\t(DIR)";
+          pcVar7 = "..\t\t(DIR)";
         }
         else {
           iVar3 = _strcmp(local_18f0.filename,".");
@@ -153,20 +151,20 @@ LAB_0049f47a:
                     (local_18f0.filename,(char *)0x0,(char *)0x0,local_ac4,&local_6c4);
           if (local_6c4 == '.') {
             uVar5 = 0xffffffff;
-            pcVar8 = &local_6c4;
+            pcVar7 = &local_6c4;
             do {
               if (uVar5 == 0) break;
               uVar5 = uVar5 - 1;
-              cVar1 = *pcVar8;
-              pcVar8 = pcVar8 + (uint)bVar7 * -2 + 1;
+              cVar1 = *pcVar7;
+              pcVar7 = pcVar7 + (uint)bVar6 * -2 + 1;
             } while (cVar1 != '\0');
             memmove(&local_6c4,local_6c3,~uVar5 - 1);
           }
           _sprintf(local_1c4,"%s\t%s\t(DIR)",local_ac4,&local_6c4);
           strupr(local_1c4);
-          pcVar8 = local_1c4;
+          pcVar7 = local_1c4;
         }
-        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_1ec8.base,pcVar8);
+        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_1ec8.base,pcVar7);
       }
 LAB_0049f64e:
       engine_dosio_c_CFileFinder_findNext_FUN_00481cf0(&local_18f0);
@@ -178,12 +176,12 @@ LAB_0049f64e:
                                (&local_1ec8,local_1b20,(int)pcVar2,0);
     if ((int)pcVar2 < 0) goto LAB_0049f983;
     if (local_1ec8.base.item_count + -1 <= (int)pcVar2) {
-      puVar6 = &DAT_00678c80;
-      pcVar2 = local_16d8;
+      pcVar2 = g_BrowserLastEnteredPath;
+      pcVar7 = local_16d8;
       for (iVar4 = 0x41; iVar4 != 0; iVar4 = iVar4 + -1) {
-        *(uint *)pcVar2 = *puVar6;
-        puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
-        pcVar2 = pcVar2 + ((uint)bVar7 * -2 + 1) * 4;
+        *(uint *)pcVar7 = *(uint *)pcVar2;
+        pcVar2 = pcVar2 + ((uint)bVar6 * -2 + 1) * 4;
+        pcVar7 = pcVar7 + ((uint)bVar6 * -2 + 1) * 4;
       }
       while ((iVar4 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
                                 (this_ptr,"Enter new path",local_16d8,0x104,1), iVar4 != 0

@@ -15,7 +15,7 @@ CKeyFramedModel* g_KeyFrameModelPoolEnd = {};
 FileSearchHandlerFunc* g_SearchHandlers[5] = {};
 
 // char[20]
-char CHAR_ARRAY_02c14c88[20] = {};
+char g_KFMShowEditorScreenshotFile[20] = {};
 
 // char[72]
 char g_PolyDataConversionBuffer[72] = {};

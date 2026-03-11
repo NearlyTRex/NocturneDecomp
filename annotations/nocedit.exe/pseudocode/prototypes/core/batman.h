@@ -23,9 +23,9 @@ CBatman * __cdecl CBatman::ctor(CBatman *this_ptr);
 // Address: 00416510
 void __cdecl CBatman::setup(CBatman *this_ptr);
 
-// Original: core_batman.cpp_CBatman_FUN_004167f0
+// Original: core_batman.cpp_CBatman_pickRandomMovementState_FUN_004167f0
 // Address: 004167f0
-void __cdecl CBatman(CBatman *this_ptr);
+void __cdecl CBatman::pickRandomMovementState(CBatman *this_ptr);
 
 // Original: core_batman.cpp_CBatman_process_FUN_00416870
 // Address: 00416870
@@ -39,9 +39,9 @@ int __cdecl CBatman::renderOpaque(CBatman *this_ptr);
 // Address: 00417580
 void __cdecl CBatman::archive(CBatman *this_ptr);
 
-// Original: core_batman.cpp_CBatman_FUN_00417660
+// Original: core_batman.cpp_CBatman_processDismemberment_FUN_00417660
 // Address: 00417660
-void __cdecl CBatman(CBatman *this_ptr,SDamageInfo *damage_info);
+void __cdecl CBatman::processDismemberment(CBatman *this_ptr,SDamageInfo *damage_info);
 
 // Original: core_batman.cpp_CBatman_processDamage_FUN_004179a0
 // Address: 004179a0

@@ -217,12 +217,19 @@ extern char g_DefaultAuditPath[100];
 extern char g_DefaultAuditRecordPath[100];
 extern char g_EventCommandBuffer[100];
 
+// char[116]
+extern char g_ModelLastScaleInput[116];
+
 // char[260]
 extern char g_FilePathBuffer[260];
 extern char g_DefaultCheckOutPath[260];
 extern char g_DefaultPodDirectoryPath[260];
 extern char g_DirectoryBufferTemplate[260];
 extern char g_FilenameBufferTemplate[260];
+
+// char[264]
+extern char g_BrowserLastSelectedFile[264];
+extern char g_BrowserLastEnteredPath[264];
 
 // char[512]
 extern char g_Field1ParseBuffer[512];
@@ -383,8 +390,6 @@ extern undefined1 g_MagicNumEFD;
 extern undefined2 DAT_0067aebc;
 
 // undefined4
-extern undefined4 DAT_00670210;
-extern undefined4 DAT_00670214;
 extern undefined4 DAT_0067241c;
 extern undefined4 DAT_00672420;
 extern undefined4 DAT_00672424;
@@ -401,10 +406,6 @@ extern undefined4 DAT_0067244c;
 extern undefined4 DAT_00672450;
 extern undefined4 DAT_00672454;
 extern undefined4 DAT_00672458;
-extern undefined4 DAT_00678a70;
-extern undefined4 DAT_00678a74;
-extern undefined4 DAT_00678c80;
-extern undefined4 DAT_00678c84;
 extern undefined4 DAT_006793d8;
 extern undefined4 DAT_006793dc;
 extern undefined4 DAT_006794a0;

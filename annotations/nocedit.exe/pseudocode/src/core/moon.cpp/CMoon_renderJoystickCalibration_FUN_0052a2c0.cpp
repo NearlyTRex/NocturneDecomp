@@ -22,7 +22,8 @@ void __cdecl core_moon_cpp_CMoon_renderJoystickCalibration_FUN_0052a2c0(CMoon *t
   engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
             (g_CDemonRendererPtr2,&g_ZeroVector.i);
   engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0048c650(g_CDemonRendererPtr2,56.0);
-  engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(g_CDemonRendererPtr2);
+  engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0
+            (g_CDemonRendererPtr2,&g_ZeroVector.f);
   local_1c.x = 0.0;
   local_1c.y = 0.0;
   local_1c.z = 36.0;

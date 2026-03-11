@@ -83,7 +83,8 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004fee00(CInventory *th
     engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
               (g_CDemonRendererPtr2,&local_44);
     engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0048c650(g_CDemonRendererPtr2,36.0);
-    engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(g_CDemonRendererPtr2);
+    engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0
+              (g_CDemonRendererPtr2,&g_ZeroVector.f);
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
               (g_CDemonRendererPtr2,&g_ZeroVector.f);
     local_50.x = (int)((fVar2 + fVar5) * -0.5f);

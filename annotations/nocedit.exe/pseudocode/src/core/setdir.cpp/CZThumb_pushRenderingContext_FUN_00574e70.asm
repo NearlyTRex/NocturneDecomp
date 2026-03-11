@@ -71,7 +71,7 @@ section .text
     MOV EDI,dword ptr [0x006703ec]      ; 00574edc | g_CDemonRendererPtr2
     PUSH EDI                            ; 00574ee2 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0 ; 00574ee3
-        ;   XREF to: 0048c1d0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(CDemonRenderer * this_ptr)
+        ;   XREF to: 0048c1d0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(CDemonRenderer * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 00574ee8
     POP EDI                             ; 00574eeb
     POP ESI                             ; 00574eec

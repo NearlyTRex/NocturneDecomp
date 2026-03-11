@@ -1,13 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420(CEditorTools *this_ptr,char *file_pattern,int include_files,char *initial_path)
+; int __cdecl shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420(CEditorTools *this_ptr,char *title_text,char *search_pattern,char *initial_path,uint flags)
 ;
 ; Parameters:
 ; CEditorTools *   Stack[0x4]:4   this_ptr
-; char *           Stack[0x8]:4   file_pattern
-; int              Stack[0xc]:4   include_files
+; char *           Stack[0x8]:4   title_text
+; char *           Stack[0xc]:4   search_pattern
 ; char *           Stack[0x10]:4   initial_path
+; uint             Stack[0x14]:4   flags
 ; Local Variables:
 ; undefined4       Stack[-0x1ec8]:4  local_1ec8
 ; undefined1       Stack[-0x1b20]:1  local_1b20
@@ -73,13 +74,12 @@
 ;   TerminatedCString s_Change_Path_0062315c
 ;   string s_Enter_new_path_0062316a
 ;   TerminatedCString s_Can_t_change_to_s_00623179
-;   undefined4 DAT_00678a70
+;   char[264] g_BrowserLastSelectedFile
 ;   undefined4 DAT_00678a74
 ;   ... and 4 more
 ;
 ; Called Functions:
 ;   crt_io.c_chdir_FUN_006012a0
-;   crt_io.c_getcwd_wrapper_FUN_00608d20
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_string.c__strcmp_FUN_005fef20
 ;   crt_string.c__stricmp_FUN_005fe7f0
@@ -87,6 +87,7 @@
 ;   crt_string.c_strupr_FUN_00600770
 ;   crt_time.c__localtime_FUN_00600288
 ;   crt_time.c__strftime_FUN_006002d4
+;   crt_watcom.c__getcwd_FUN_00608d20
 ;   engine_dosio.c_CFileFinder_ctor_FUN_00481c30
 ;   engine_dosio.c_CFileFinder_dtor_FUN_00481c50
 ;   engine_dosio.c_CFileFinder_findNext_FUN_00481cf0
@@ -107,8 +108,8 @@ section .text
     PUSH 0x104                          ; 0049f42f
     LEA EAX,[ESP + 0x9fc]               ; 0049f434
     PUSH EAX                            ; 0049f43b
-    CALL crt_io.c_getcwd_wrapper_FUN_00608d20 ; 0049f43c
-        ;   XREF to: 0060128c (UNCONDITIONAL_CALL)  ; char * crt_io.c_getcwd_wrapper_FUN_00608d20(char * buffer, SIZE_T size)
+    CALL crt_watcom.c__getcwd_FUN_00608d20 ; 0049f43c
+        ;   XREF to: 0060128c (UNCONDITIONAL_CALL)  ; char * crt_watcom.c__getcwd_FUN_00608d20(char * buffer, SIZE_T size)
     ADD ESP,0x8                         ; 0049f441
     TEST EAX,EAX                        ; 0049f444
     JZ 0x0049f71b                       ; 0049f446
@@ -117,9 +118,9 @@ section .text
     PUSH ESI                            ; 0049f44d
     MOV ECX,0x41                        ; 0049f44e
     LEA EDI,[ESP + 0xc08]               ; 0049f453
-    MOV ESI,0x678a70                    ; 0049f45a | DAT_00678a70
+    MOV ESI,0x678a70                    ; 0049f45a | g_BrowserLastSelectedFile
     MOV AH,byte ptr [ESP + 0x1ee4]      ; 0049f45f
-    MOVSD.REP ES:EDI,ESI                ; 0049f466 | DAT_00678a70 | DAT_00678a74
+    MOVSD.REP ES:EDI,ESI                ; 0049f466 | g_BrowserLastSelectedFile | DAT_00678a74
     TEST AH,0x1                         ; 0049f468
     JNZ 0x0049f734                      ; 0049f46b
         ;   XREF to: 0049f734 (CONDITIONAL_JUMP)  ; LAB_0049f734
@@ -134,8 +135,8 @@ section .text
     MOV ESI,0x678b78                    ; 0049f492 | = "[ERROR: Can't get current directory.]"
     PUSH EAX                            ; 0049f497
     MOVSD.REP ES:EDI,ESI                ; 0049f498 | = "[ERROR: Can't get current directory.]" | s_OR:_Can't_get_current_directory._00678b7c
-    CALL crt_io.c_getcwd_wrapper_FUN_00608d20 ; 0049f49a
-        ;   XREF to: 0060128c (UNCONDITIONAL_CALL)  ; char * crt_io.c_getcwd_wrapper_FUN_00608d20(char * buffer, SIZE_T size)
+    CALL crt_watcom.c__getcwd_FUN_00608d20 ; 0049f49a
+        ;   XREF to: 0060128c (UNCONDITIONAL_CALL)  ; char * crt_watcom.c__getcwd_FUN_00608d20(char * buffer, SIZE_T size)
     ADD ESP,0x8                         ; 0049f49f
     LEA EAX,[ESP + 0x6f4]               ; 0049f4a2
     PUSH EAX                            ; 0049f4a9
@@ -324,8 +325,8 @@ section .text
         ;   XREF to: 0049f9ff (CONDITIONAL_JUMP)  ; LAB_0049f9ff
     MOV ECX,0x41                        ; 0049f6bd
     LEA EDI,[ESP + 0x7f8]               ; 0049f6c2
-    MOV ESI,0x678c80                    ; 0049f6c9 | DAT_00678c80
-    MOVSD.REP ES:EDI,ESI                ; 0049f6ce | DAT_00678c80 | DAT_00678c84
+    MOV ESI,0x678c80                    ; 0049f6c9 | g_BrowserLastEnteredPath
+    MOVSD.REP ES:EDI,ESI                ; 0049f6ce | g_BrowserLastEnteredPath | DAT_00678c84
     PUSH 0x1                            ; 0049f6d0
         ;   Label: LAB_0049f6d0
     PUSH 0x104                          ; 0049f6d2

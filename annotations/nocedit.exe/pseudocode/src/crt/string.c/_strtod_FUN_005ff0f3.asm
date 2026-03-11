@@ -4,7 +4,7 @@
 ; double __cdecl crt_string_c__strtod_FUN_005ff0f3(char *str)
 ;
 ; Parameters:
-; char *           Stack[0x8]:4   str
+; char *           Stack[0x4]:4   str
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ; undefined4       Stack[-0x10]:4  local_10

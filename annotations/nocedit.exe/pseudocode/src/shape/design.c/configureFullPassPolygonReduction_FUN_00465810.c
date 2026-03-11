@@ -14,7 +14,6 @@ void __cdecl shape_design_c_configureFullPassPolygonReduction_FUN_00465810(int u
   byte *pbVar3;
   byte bVar4;
   double dVar5;
-  char *in_stack_ffffff8c;
   byte local_6c [80];
   int local_1c;
   int local_18;
@@ -41,7 +40,7 @@ void __cdecl shape_design_c_configureFullPassPolygonReduction_FUN_00465810(int u
     pbVar3 = pbVar3 + (uint)bVar4 * -2 + 1;
   } while (bVar1 != 0);
   if (iVar2 != -2) {
-    dVar5 = _strtod(in_stack_ffffff8c);
+    dVar5 = _strtod((char *)local_6c);
     local_14 = (float)dVar5;
   }
   if (0 < ui_mode) {

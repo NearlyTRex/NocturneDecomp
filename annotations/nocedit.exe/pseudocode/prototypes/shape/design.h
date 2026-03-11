@@ -69,7 +69,7 @@ void __cdecl modelExportWizard(int export_format_type);
 
 // Original: shape_design.c_exportModelToBIN_FUN_0045aa80
 // Address: 0045aa80
-void __cdecl exportModelToBIN(char *filename,int depth_mode,int scale_mode,int export_format,int include_textures);
+void __cdecl exportModelToBIN(char *filename,int render_mode,int scale_mode,int export_format,int include_textures);
 
 // Original: shape_design.c_polygonTextureNameComparator_FUN_0045b850
 // Address: 0045b850
@@ -185,11 +185,11 @@ void __cdecl selectModelPart(void);
 
 // Original: shape_design.c_createQuadPolygon_FUN_0045df60
 // Address: 0045df60
-void __cdecl createQuadPolygon(void);
+void __cdecl createQuadPolygon(uint vertex0,uint vertex1,uint vertex2,uint vertex3);
 
 // Original: shape_design.c_createReversedQuadPolygon_FUN_0045e040
 // Address: 0045e040
-void __cdecl createReversedQuadPolygon(void);
+void __cdecl createReversedQuadPolygon(uint vertex0,uint vertex1,uint vertex2,uint vertex3);
 
 // Original: shape_design.c_createRotationalSweepGeometry_FUN_0045e070
 // Address: 0045e070
@@ -437,7 +437,7 @@ int __cdecl qsortByOriginalIndex(SVertexPair *vertex_pair1,SVertexPair *vertex_p
 
 // Original: shape_design.c_vertexReducer_FUN_00467850
 // Address: 00467850
-void __cdecl vertexReducer(float tolerance,float angle_tolerance,int display_progress);
+void __cdecl vertexReducer(float tolerance,float angle_tolerance,int ui_mode);
 
 // Original: shape_design.c_scaleModel_FUN_00467e70
 // Address: 00467e70
@@ -553,7 +553,7 @@ void __cdecl cramTextures(char *texture_filename,int min_u,int min_v,int max_u,i
 
 // Original: shape_design.c_readPixelRowFromFile_FUN_0046abf0
 // Address: 0046abf0
-void __cdecl readPixelRowFromFile(_FILE *file_handle,byte *rgb_buffer,byte *alpha_buffer,int pixel_count,int file_flags);
+void __cdecl readPixelRowFromFile(_FILE *file_handle,uchar *rgb_buffer,uchar *alpha_buffer,int pixel_count,int pixel_depth);
 
 // Original: shape_design.c_checkNonFFBytes_FUN_0046ac70
 // Address: 0046ac70
@@ -573,11 +573,11 @@ double __cdecl calculateSamplingWeight(double current_pos,double start_coord,dou
 
 // Original: shape_design.c_sampleAndFilterPixel_FUN_0046ae20
 // Address: 0046ae20
-void __cdecl sampleAndFilterPixel(void *rgb_buffer,void *alpha_buffer,int col_coord,int row_coord,double coord_x1,double coord_y1,double coord_x2,double coord_y2,int atlas_width,int atlas_height,byte *red_out,byte *green_out,byte *blue_out,byte *alpha_out);
+void __cdecl sampleAndFilterPixel(void *rgb_buffer,void *alpha_buffer,int atlas_width,int atlas_height,double coord_x1 ,double coord_y1,double coord_x2,double coord_y2,uchar *red_out,uchar *green_out,uchar *blue_out,uchar *alpha_out);
 
 // Original: shape_design.c_loadTextureData_FUN_0046b060
 // Address: 0046b060
-void __cdecl loadTextureData(STextureAtlasEntry *entry,uchar *rgb_buffer,uchar *alpha_buffer,int atlas_width,int atlas_height);
+void __cdecl loadTextureData(STextureAtlasEntry *entry,uchar *rgb_buffer,uchar *alpha_buffer,int pixel_depth,int atlas_total_width,int atlas_total_height);
 
 // Original: shape_design.c_initializeCram_FUN_0046b6e0
 // Address: 0046b6e0
@@ -617,7 +617,7 @@ void __cdecl normalizeUVCoordinates(void);
 
 // Original: shape_design.c_triangulateDSE_FUN_0046e4d0
 // Address: 0046e4d0
-void __cdecl triangulateDSE(void);
+void __cdecl triangulateDSE(int max_vertices);
 
 // Original: shape_design.c_clearAllTextureNames_FUN_0046e6b0
 // Address: 0046e6b0

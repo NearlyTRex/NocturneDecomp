@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl crt_unknown_c_FUN_00603bc9(void)
+; void __cdecl crt_unknown_c_FUN_00603bc9(char *str,double *output)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   str
+; double *         Stack[0x8]:4   output
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
 ; undefined4       Stack[-0x8]:4  local_8

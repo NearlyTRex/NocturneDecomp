@@ -54,66 +54,6 @@
         "column": 53,
         "line": 269,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 70,
-        "line": 343,
-        "message": "use of undeclared identifier 'stack0xfffffa18'; did you mean 'in_stack_fffffa18'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 33,
-        "line": 345,
-        "message": "use of undeclared identifier 'stack0xfffffa18'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 33,
-        "line": 347,
-        "message": "use of undeclared identifier 'stack0xfffffa18'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 33,
-        "line": 349,
-        "message": "use of undeclared identifier 'stack0xfffffa18'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 33,
-        "line": 351,
-        "message": "use of undeclared identifier 'stack0xfffffa18'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 33,
-        "line": 353,
-        "message": "use of undeclared identifier 'stack0xfffffa18'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 33,
-        "line": 355,
-        "message": "use of undeclared identifier 'stack0xfffffa18'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 33,
-        "line": 357,
-        "message": "use of undeclared identifier 'stack0xfffffa18'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 33,
-        "line": 359,
-        "message": "use of undeclared identifier 'stack0xfffffa18'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 33,
-        "line": 361,
-        "message": "use of undeclared identifier 'stack0xfffffa18'"
       }
     ],
     "success": false,
@@ -121,20 +61,18 @@
   },
   "complexity": {
     "assembly_lines": 1019,
-    "complexity_score": 673,
+    "complexity_score": 423,
     "cross_reference_count": 1,
     "function_call_count": 36,
     "global_count": 55,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 383,
-    "suspect_count": 27,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 373,
+    "suspect_count": 4,
     "suspect_types": [
       "pointer_cast",
-      "stack_param",
-      "stack_ref",
       "undefined_data"
     ],
-    "total_lines": 1402
+    "total_lines": 1392
   },
   "cross_references": [
     {
@@ -876,14 +814,6 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_fffffa18",
-      "severity": "moderate",
-      "text": "char *in_stack_fffffa18;",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 96,
       "match": "(int *)((int)",
@@ -908,188 +838,12 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 199,
-      "match": "in_stack_fffffa18",
-      "severity": "moderate",
-      "text": "local_40 = _strtod(in_stack_fffffa18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 216,
-      "match": "in_stack_fffffa18",
-      "severity": "moderate",
-      "text": "local_40 = _strtod(in_stack_fffffa18);",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 243,
       "match": "(SFog *)((int)",
       "severity": "mild",
       "text": "pSVar7 = (SFog *)((int)(pSVar7 + 0xb) + 0x18);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 321,
-      "match": "in_stack_fffffa18",
-      "severity": "moderate",
-      "text": "local_40 = _strtod(in_stack_fffffa18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 336,
-      "match": "&stack0xfffffa18",
-      "severity": "moderate",
-      "text": "shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffffa18);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 338,
-      "match": "&stack0xfffffa18",
-      "severity": "moderate",
-      "text": "((CStrList *)&stack0xfffffa18,\"45.wav\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 340,
-      "match": "&stack0xfffffa18",
-      "severity": "moderate",
-      "text": "((CStrList *)&stack0xfffffa18,\"cre-fire.wav\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 342,
-      "match": "&stack0xfffffa18",
-      "severity": "moderate",
-      "text": "((CStrList *)&stack0xfffffa18,\"shotgun.wav\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 344,
-      "match": "&stack0xfffffa18",
-      "severity": "moderate",
-      "text": "((CStrList *)&stack0xfffffa18,\"zom-s04.wav\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 346,
-      "match": "&stack0xfffffa18",
-      "severity": "moderate",
-      "text": "((CStrList *)&stack0xfffffa18,\"stranger_hit01.wav\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 348,
-      "match": "&stack0xfffffa18",
-      "severity": "moderate",
-      "text": "((CStrList *)&stack0xfffffa18,\"xplode1.wav\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 350,
-      "match": "&stack0xfffffa18",
-      "severity": "moderate",
-      "text": "((CStrList *)&stack0xfffffa18,\"limb1.wav\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 352,
-      "match": "&stack0xfffffa18",
-      "severity": "moderate",
-      "text": "((CStrList *)&stack0xfffffa18,\"footstep-str-0-ct-1.wav\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 354,
-      "match": "&stack0xfffffa18",
-      "severity": "moderate",
-      "text": "((CStrList *)&stack0xfffffa18,\"footstep-str-0-wd-1.wav\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 356,
-      "match": "&stack0xfffffa18",
-      "severity": "moderate",
-      "text": "((CStrList *)&stack0xfffffa18,\"footstep-str-0-mt-1.wav\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 358,
-      "match": "&stack0xfffffa18",
-      "severity": "moderate",
-      "text": "((CStrList *)&stack0xfffffa18,\"footstep-str-0-mb-1.wav\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 360,
-      "match": "&stack0xfffffa18",
-      "severity": "moderate",
-      "text": "((CStrList *)&stack0xfffffa18,\"footstep-str-0-gr-1.wav\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 362,
-      "match": "&stack0xfffffa18",
-      "severity": "moderate",
-      "text": "((CStrList *)&stack0xfffffa18,\"ric-mt0a.wav\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 364,
-      "match": "&stack0xfffffa18",
-      "severity": "moderate",
-      "text": "((CStrList *)&stack0xfffffa18,\"ric-ct0a.wav\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 368,
-      "match": "&stack0xfffffa18",
-      "severity": "moderate",
-      "text": "((CPickList *)&stack0xfffffa18,pcVar4,iVar6,window_flags);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 373,
-      "match": "&stack0xfffffa18",
-      "severity": "moderate",
-      "text": "((CStrList *)&stack0xfffffa18,iVar6);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 376,
-      "match": "&stack0xfffffa18",
-      "severity": "moderate",
-      "text": "shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffffa18,0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 378,
-      "match": "&stack0xfffffa18",
-      "severity": "moderate",
-      "text": "shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffffa18,0);",
-      "type": "stack_ref"
     }
   ]
 }

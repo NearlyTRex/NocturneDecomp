@@ -37,7 +37,7 @@ void __cdecl staticFinal(void);
 
 // Original: crt_unknown.c_FUN_00603bc9
 // Address: 00603bc9
-void __cdecl FUN_00603bc9(void);
+void __cdecl FUN_00603bc9(char *str,double *output);
 
 // Original: crt_unknown.c_FUN_00603bf5
 // Address: 00603bf5

@@ -10,7 +10,7 @@
 ; Local Variables:
 ; undefined4       Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x1c]:4  local_1c
-; undefined8       Stack[-0x18]:8  local_18
+; double           Stack[-0x18]:8  local_18
 ;
 ; XREF[1]:
 ;   shape_design.c_sampleAndFilterPixel_FUN_0046ae20 at 0046af2c

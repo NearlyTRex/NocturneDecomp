@@ -49,10 +49,10 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   crt_io.c_getcwd_wrapper_FUN_00608d20
 ;   crt_memory.c___vec_delete_FUN_005fe632
 ;   crt_memory.c___vec_new_FUN_00601272
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_watcom.c__getcwd_FUN_00608d20
 ;   engine_pod.cpp_CPodFile_findFileIndex_FUN_00550140
 ;   engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
@@ -125,8 +125,8 @@ section .text
         ;   Label: LAB_004b9fbd
     LEA EAX,[ESP + 0x3ac]               ; 004b9fc2
     PUSH EAX                            ; 004b9fc9
-    CALL crt_io.c_getcwd_wrapper_FUN_00608d20 ; 004b9fca
-        ;   XREF to: 0060128c (UNCONDITIONAL_CALL)  ; char * crt_io.c_getcwd_wrapper_FUN_00608d20(char * buffer, SIZE_T size)
+    CALL crt_watcom.c__getcwd_FUN_00608d20 ; 004b9fca
+        ;   XREF to: 0060128c (UNCONDITIONAL_CALL)  ; char * crt_watcom.c__getcwd_FUN_00608d20(char * buffer, SIZE_T size)
     ADD ESP,0x8                         ; 004b9fcf
     JMP 0x004b9f8b                      ; 004b9fd2
         ;   XREF to: 004b9f8b (UNCONDITIONAL_JUMP)  ; LAB_004b9f8b

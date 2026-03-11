@@ -4,13 +4,13 @@
       {
         "category": "incompatible_types",
         "column": 16,
-        "line": 104,
+        "line": 105,
         "message": "assigning to 'CPodAuditRecord *' from incompatible type 'void *'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 147,
+        "line": 148,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
@@ -19,17 +19,17 @@
   },
   "complexity": {
     "assembly_lines": 484,
-    "complexity_score": 227,
+    "complexity_score": 228,
     "cross_reference_count": 0,
     "function_call_count": 21,
     "global_count": 28,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 212,
+    "pseudocode_lines": 213,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 696
+    "total_lines": 697
   },
   "cross_references": [],
   "function": {
@@ -568,7 +568,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 111,
+      "line": 112,
       "match": "(CPodAuditRecord *)((int)",
       "severity": "mild",
       "text": "pCVar8 = (CPodAuditRecord *)((int)pCVar8 + (uint)bVar10 * -8 + 4);",

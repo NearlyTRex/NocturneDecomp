@@ -1,18 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 21,
-    "complexity_score": 47,
+    "complexity_score": 21,
     "cross_reference_count": 13,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 7,
-    "suspect_count": 3,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 6,
+    "suspect_count": 1,
     "suspect_types": [
-      "special_crt_function",
-      "stack_param"
+      "special_crt_function"
     ],
-    "total_lines": 28
+    "total_lines": 27
   },
   "cross_references": [
     {
@@ -138,10 +137,10 @@
     "pcode_op_count": 66
   },
   "stack_frame": {
-    "frame_size": 32,
+    "frame_size": 28,
     "local_size": 24,
     "param_offset": 4,
-    "param_size": 8,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -175,29 +174,13 @@
       {
         "is_param": true,
         "name": "str",
-        "offset": 8,
+        "offset": 4,
         "size": 4,
         "type": "char *"
       }
     ]
   },
   "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 6,
-      "match": "in_stack_ffffffec",
-      "severity": "moderate",
-      "text": "char **in_stack_ffffffec;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_ffffffec",
-      "severity": "moderate",
-      "text": "dVar1 = strtod_main((char *)0x0,in_stack_ffffffec);",
-      "type": "stack_param"
-    },
     {
       "address": "005ff0f3",
       "crt_type": "runtime support",

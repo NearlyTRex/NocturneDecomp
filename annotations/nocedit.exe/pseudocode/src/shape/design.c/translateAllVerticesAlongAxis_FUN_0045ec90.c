@@ -15,7 +15,6 @@ void __cdecl shape_design_c_translateAllVerticesAlongAxis_FUN_0045ec90(void)
   char *pcVar4;
   byte bVar5;
   double dVar6;
-  char *in_stack_ffffffac;
   char local_48 [40];
   int local_20;
   float local_1c;
@@ -33,7 +32,7 @@ void __cdecl shape_design_c_translateAllVerticesAlongAxis_FUN_0045ec90(void)
     pcVar4 = pcVar4 + (uint)bVar5 * -2 + 1;
   } while (cVar1 != '\0');
   if (iVar3 != -2) {
-    dVar6 = _strtod(in_stack_ffffffac);
+    dVar6 = _strtod(local_48);
     local_1c = (float)dVar6;
     iVar3 = engine_2d_c_getInputWithPrompt_FUN_004032c0
                       (local_48,0x14,0,0x16,"Press <Enter> or enter point to set to location : ");

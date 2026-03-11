@@ -21,7 +21,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 ;   core_actor.cpp_getRandomInt_FUN_0040cc70
-;   core_batman.cpp_CBatman_FUN_00417660
+;   core_batman.cpp_CBatman_processDismemberment_FUN_00417660
 ;   core_charactr.cpp_CCharacter_igniteBone_FUN_0042b5b0
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_004a9f10
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_004c79d0
@@ -91,8 +91,8 @@ section .text
     PUSH EDI                            ; 00417a24
         ;   Label: LAB_00417a24
     PUSH ESI                            ; 00417a25
-    CALL core_batman.cpp_CBatman_FUN_00417660 ; 00417a26
-        ;   XREF to: 00417660 (UNCONDITIONAL_CALL)  ; void core_batman.cpp_CBatman_FUN_00417660(CBatman * this_ptr, SDamageInfo * damage_info)
+    CALL core_batman.cpp_CBatman_processDismemberment_FUN_00417660 ; 00417a26
+        ;   XREF to: 00417660 (UNCONDITIONAL_CALL)  ; void core_batman.cpp_CBatman_processDismemberment_FUN_00417660(CBatman * this_ptr, SDamageInfo * damage_info)
     FLD float ptr [EDI + 0x4]           ; 00417a2b
     ADD ESP,0x8                         ; 00417a2e
     FSUBR float ptr [ESI + 0x243c]      ; 00417a31

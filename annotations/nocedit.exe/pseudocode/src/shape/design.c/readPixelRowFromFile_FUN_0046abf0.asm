@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_design_c_readPixelRowFromFile_FUN_0046abf0(_FILE *file_handle,byte *rgb_buffer,byte *alpha_buffer,int pixel_count,int file_flags)
+; void __cdecl shape_design_c_readPixelRowFromFile_FUN_0046abf0(_FILE *file_handle,uchar *rgb_buffer,uchar *alpha_buffer,int pixel_count,int pixel_depth)
 ;
 ; Parameters:
 ; _FILE *          Stack[0x4]:4   file_handle
-; byte *           Stack[0x8]:4   rgb_buffer
-; byte *           Stack[0xc]:4   alpha_buffer
+; uchar *          Stack[0x8]:4   rgb_buffer
+; uchar *          Stack[0xc]:4   alpha_buffer
 ; int              Stack[0x10]:4   pixel_count
-; int              Stack[0x14]:4   file_flags
+; int              Stack[0x14]:4   pixel_depth
 ;
 ; XREF[1]:
 ;   shape_design.c_loadTextureData_FUN_0046b060 at 0046b1e7

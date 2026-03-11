@@ -20,6 +20,9 @@
 #define GAME_WINDOW_RESOLUTION_640                640  // 0x280
 #define GAME_WINDOW_RESOLUTION_BPP                32  // 0x20
 
+// HKEY Constants
+#define HKEY_LOCAL_MACHINE                        0x80000002  // 2147483650
+
 // PREPROCESS Constants
 #define PREPROCESS_DEPTH_BUFFER_PREP              1
 #define PREPROCESS_NEAR_PLANE_CORRECT             3
@@ -89,6 +92,6 @@
 #define SYSTEM_WATCOM_ENOMEM                      12  // 0xC
 #define SYSTEM_WINDOWS_NT_4_0                     0x8000  // 32768
 
-// Total equates: 77
-// Total references: 273
+// Total equates: 78
+// Total references: 274
 

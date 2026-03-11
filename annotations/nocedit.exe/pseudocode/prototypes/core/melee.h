@@ -51,9 +51,9 @@ void __cdecl CMelee::fillAttackDamageInfo(CMelee *this_ptr,int attack_flags,SDam
 // Address: 0050eb50
 void __cdecl CMelee::playAttackHitEffects(CMelee *this_ptr,int attack_flags,SDamageInfo *damage_info,CDemonActor *victim);
 
-// Original: core_melee.cpp_CMelee_FUN_0050ebe0
+// Original: core_melee.cpp_CMelee_initBloodSpurtEffects_FUN_0050ebe0
 // Address: 0050ebe0
-void __cdecl CMelee(CMelee *this_ptr);
+void __cdecl CMelee::initBloodSpurtEffects(CMelee *this_ptr,int blood_spurt_count,int blood_gore_type);
 
 // Original: core_melee.cpp_CMelee_process_FUN_0050ec10
 // Address: 0050ec10

@@ -370,7 +370,7 @@ section .text
     MOV EDX,dword ptr [0x006703ec]      ; 0056cccd | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EDX                            ; 0056ccd3 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0 ; 0056ccd4
-        ;   XREF to: 0048c1d0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(CDemonRenderer * this_ptr)
+        ;   XREF to: 0048c1d0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(CDemonRenderer * this_ptr, CVector3f * euler_angles)
     MOV ECX,0x1                         ; 0056ccd9
     ADD ESP,0x8                         ; 0056ccde
     MOV dword ptr [0x03277d14],ECX      ; 0056cce1 | g_CDemonRaytraceInstance

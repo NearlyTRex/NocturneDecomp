@@ -9,7 +9,7 @@
       },
       {
         "category": "other",
-        "column": 41,
+        "column": 51,
         "line": 421,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
@@ -61,19 +61,18 @@
   },
   "complexity": {
     "assembly_lines": 2429,
-    "complexity_score": 1386,
+    "complexity_score": 1371,
     "cross_reference_count": 2,
     "function_call_count": 71,
     "global_count": 126,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 896,
-    "suspect_count": 46,
+    "suspect_count": 45,
     "suspect_types": [
       "decompiler_intrinsic",
       "negative_offset",
       "pointer_cast",
       "stack_ref",
-      "undefined_data",
       "warning_inlined_function"
     ],
     "total_lines": 3325
@@ -1079,8 +1078,8 @@
     },
     {
       "addr": "00670210",
-      "name": "DAT_00670210",
-      "type": "undefined4",
+      "name": "g_ModelLastScaleInput",
+      "type": "char[116]",
       "value": null
     },
     {
@@ -1151,7 +1150,7 @@
     },
     {
       "addr": "02c14c88",
-      "name": "CHAR_ARRAY_02c14c88",
+      "name": "g_KFMShowEditorScreenshotFile",
       "type": "char[20]",
       "value": null
     },
@@ -2257,15 +2256,15 @@
       "line": 513,
       "match": "(CKeyFramedModel *)((int)",
       "severity": "mild",
-      "text": "pCVar14 = (CKeyFramedModel *)((int)pCVar15 + (uint)bVar16 * -2 + 1);",
+      "text": "pCVar13 = (CKeyFramedModel *)((int)pCVar14 + (uint)bVar15 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 517,
-      "match": "pCVar14[-1].",
+      "match": "pCVar13[-1].",
       "severity": "mild",
-      "text": "pcVar12 = (char *)((int)&pCVar14[-1].dead + 3);",
+      "text": "pcVar12 = (char *)((int)&pCVar13[-1].dead + 3);",
       "type": "negative_offset"
     },
     {
@@ -2273,7 +2272,7 @@
       "line": 517,
       "match": "(char *)((int)",
       "severity": "mild",
-      "text": "pcVar12 = (char *)((int)&pCVar14[-1].dead + 3);",
+      "text": "pcVar12 = (char *)((int)&pCVar13[-1].dead + 3);",
       "type": "pointer_cast"
     },
     {
@@ -2483,14 +2482,6 @@
       "severity": "mild",
       "text": "local_20 = (int)ROUND(ROUND(local_70));",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 838,
-      "match": "DAT_00670210",
-      "severity": "mild",
-      "text": "puVar13 = &DAT_00670210;",
-      "type": "undefined_data"
     }
   ]
 }

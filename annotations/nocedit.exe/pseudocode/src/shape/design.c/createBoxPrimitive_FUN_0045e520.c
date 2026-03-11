@@ -23,7 +23,7 @@ void __cdecl shape_design_c_createBoxPrimitive_FUN_0045e520(void)
   float local_20;
   float local_1c;
   int local_18;
-  int local_14;
+  uint local_14;
   
   bVar5 = 0;
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
@@ -90,20 +90,31 @@ void __cdecl shape_design_c_createBoxPrimitive_FUN_0045e520(void)
       g_LoadedVertices[iVar3 + 7].vertex.y = local_2c * 0.5f + local_20;
       g_LoadedVertices[iVar3 + 7].vertex.z = local_1c - local_28 * 0.5f;
       if ((local_18 == 0x42) || (local_18 == 0x49)) {
-        shape_design_c_createQuadPolygon_FUN_0045df60();
-        shape_design_c_createQuadPolygon_FUN_0045df60();
-        shape_design_c_createQuadPolygon_FUN_0045df60();
-        shape_design_c_createQuadPolygon_FUN_0045df60();
-        shape_design_c_createQuadPolygon_FUN_0045df60();
-        shape_design_c_createQuadPolygon_FUN_0045df60();
+        shape_design_c_createQuadPolygon_FUN_0045df60(iVar3,iVar3 + 1,iVar3 + 5,iVar3 + 4);
+        shape_design_c_createQuadPolygon_FUN_0045df60
+                  (local_14 + 1,local_14 + 2,local_14 + 6,local_14 + 5);
+        shape_design_c_createQuadPolygon_FUN_0045df60
+                  (local_14 + 2,local_14 + 3,local_14 + 7,local_14 + 6);
+        shape_design_c_createQuadPolygon_FUN_0045df60
+                  (local_14 + 3,local_14,local_14 + 4,local_14 + 7);
+        shape_design_c_createQuadPolygon_FUN_0045df60
+                  (local_14 + 4,local_14 + 5,local_14 + 6,local_14 + 7);
+        shape_design_c_createQuadPolygon_FUN_0045df60
+                  (local_14 + 3,local_14 + 2,local_14 + 1,local_14);
       }
       if ((local_18 == 0x42) || (local_18 == 0x4f)) {
-        shape_design_c_createQuadPolygon_FUN_0045df60();
-        shape_design_c_createQuadPolygon_FUN_0045df60();
-        shape_design_c_createQuadPolygon_FUN_0045df60();
-        shape_design_c_createQuadPolygon_FUN_0045df60();
-        shape_design_c_createQuadPolygon_FUN_0045df60();
-        shape_design_c_createQuadPolygon_FUN_0045df60();
+        shape_design_c_createQuadPolygon_FUN_0045df60
+                  (local_14 + 1,local_14,local_14 + 4,local_14 + 5);
+        shape_design_c_createQuadPolygon_FUN_0045df60
+                  (local_14 + 2,local_14 + 1,local_14 + 5,local_14 + 6);
+        shape_design_c_createQuadPolygon_FUN_0045df60
+                  (local_14 + 3,local_14 + 2,local_14 + 6,local_14 + 7);
+        shape_design_c_createQuadPolygon_FUN_0045df60
+                  (local_14,local_14 + 3,local_14 + 7,local_14 + 4);
+        shape_design_c_createQuadPolygon_FUN_0045df60
+                  (local_14 + 7,local_14 + 6,local_14 + 5,local_14 + 4);
+        shape_design_c_createQuadPolygon_FUN_0045df60
+                  (local_14,local_14 + 1,local_14 + 2,local_14 + 3);
       }
       engine_2d_c_clearInputAndWait_FUN_00403260();
     }

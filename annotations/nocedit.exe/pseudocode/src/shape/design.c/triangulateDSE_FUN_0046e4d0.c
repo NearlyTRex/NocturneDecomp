@@ -2,11 +2,11 @@
 // Address: 0046e4d0
 // Address Range: [[0046e4d0, 0046e6a4]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_design_c_triangulateDSE_FUN_0046e4d0(void)
+// Signature: void __cdecl shape_design_c_triangulateDSE_FUN_0046e4d0(int max_vertices)
 
 #include "nocturne.h"
 
-void __cdecl shape_design_c_triangulateDSE_FUN_0046e4d0(void)
+void __cdecl shape_design_c_triangulateDSE_FUN_0046e4d0(int max_vertices)
 
 {
   int iVar1;
@@ -17,7 +17,6 @@ void __cdecl shape_design_c_triangulateDSE_FUN_0046e4d0(void)
   SShapeEditorPolygon *pSVar6;
   SShapeEditorPolygon *pSVar7;
   byte bVar8;
-  uint in_stack_00000004;
   int local_24;
   int local_1c;
   int local_14;
@@ -26,8 +25,8 @@ void __cdecl shape_design_c_triangulateDSE_FUN_0046e4d0(void)
   bVar8 = 0;
   for (local_14 = 0; local_14 < iVar1; local_14 = local_14 + 1) {
     pSVar4 = g_ModelPolygonData + local_14;
-    if ((int)in_stack_00000004 < (int)g_ModelPolygonData[local_14].vertex_indices_count) {
-      local_1c = in_stack_00000004 - 1;
+    if (max_vertices < (int)g_ModelPolygonData[local_14].vertex_indices_count) {
+      local_1c = max_vertices + -1;
       while (local_1c < (int)(g_ModelPolygonData[local_14].vertex_indices_count - 1)) {
         if (19999 < g_PolygonCount) {
           g_CurrentFilename = "..\\shape\\design.c";
@@ -49,8 +48,8 @@ void __cdecl shape_design_c_triangulateDSE_FUN_0046e4d0(void)
         g_ModelPolygonData[iVar2].uv_v[1] = pSVar4->uv_v[local_1c];
         g_ModelPolygonData[iVar2].vertex_indices_count =
              (g_ModelPolygonData[local_14].vertex_indices_count - local_1c) + 1;
-        if ((int)in_stack_00000004 < (int)g_ModelPolygonData[iVar2].vertex_indices_count) {
-          g_ModelPolygonData[iVar2].vertex_indices_count = in_stack_00000004;
+        if (max_vertices < (int)g_ModelPolygonData[iVar2].vertex_indices_count) {
+          g_ModelPolygonData[iVar2].vertex_indices_count = max_vertices;
         }
         for (local_24 = 2; local_24 < (int)g_ModelPolygonData[iVar2].vertex_indices_count;
             local_24 = local_24 + 1) {
@@ -60,7 +59,7 @@ void __cdecl shape_design_c_triangulateDSE_FUN_0046e4d0(void)
           local_1c = local_1c + 1;
         }
       }
-      g_ModelPolygonData[local_14].vertex_indices_count = in_stack_00000004;
+      g_ModelPolygonData[local_14].vertex_indices_count = max_vertices;
     }
   }
   return;

@@ -15,7 +15,7 @@ void __cdecl core_cow_cpp_CZombieCow_processDamage_FUN_00444b40(CZombieCow *this
   uint uVar3;
   int iVar4;
   
-  core_cow_cpp_CZombieCow_FUN_004448c0(this_ptr,damage_info);
+  core_cow_cpp_CZombieCow_processDismemberment_FUN_004448c0(this_ptr,damage_info);
   fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
   this_ptr_00 = &(this_ptr->base).base.model;
   (this_ptr->base).base.hit_points = fVar1;

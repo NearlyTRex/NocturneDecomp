@@ -13,7 +13,8 @@ void __cdecl core_melee_cpp_CMelee_playAttackHitEffects_FUN_0050eb50(CMelee *thi
   
   pCVar1 = (CCharacter *)core_actor_cpp_castToClassHash_FUN_0040c790(victim,g_CCharacterClassInfo.name_hash);
   if (pCVar1 != (CDemonActor *)0x0) {
-    core_melee_cpp_CMelee_FUN_0050ebe0(this_ptr);
+    core_melee_cpp_CMelee_initBloodSpurtEffects_FUN_0050ebe0
+              (this_ptr,0x14,pCVar1[0x1c].lifecycle_state);
     if (attack_flags == 1) {
       (*((this_ptr->base).base.vtable._ub)->playSound)
                 ((CDemonActor *)this_ptr,this_ptr->thrust_hit_character_sound);

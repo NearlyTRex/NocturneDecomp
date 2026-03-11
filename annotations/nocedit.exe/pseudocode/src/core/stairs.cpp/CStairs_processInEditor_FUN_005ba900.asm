@@ -21,7 +21,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_processInEditor_FUN_0040d040
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
-;   core_stairs.cpp_CStairs_FUN_005ba700
+;   core_stairs.cpp_CStairs_buildCollision_FUN_005ba700
 ;
 ; *****************************************************************************
 
@@ -136,8 +136,8 @@ section .text
         ;   XREF to: 00408c10 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 005baa59
     PUSH EBX                            ; 005baa5c
-    CALL core_stairs.cpp_CStairs_FUN_005ba700 ; 005baa5d
-        ;   XREF to: 005ba700 (UNCONDITIONAL_CALL)  ; void core_stairs.cpp_CStairs_FUN_005ba700(CStairs * this_ptr)
+    CALL core_stairs.cpp_CStairs_buildCollision_FUN_005ba700 ; 005baa5d
+        ;   XREF to: 005ba700 (UNCONDITIONAL_CALL)  ; void core_stairs.cpp_CStairs_buildCollision_FUN_005ba700(CStairs * this_ptr)
     ADD ESP,0x4                         ; 005baa62
     MOV ESP,EBP                         ; 005baa65
     POP EBP                             ; 005baa67

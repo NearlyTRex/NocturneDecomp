@@ -1,10 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl shape_meshlod_cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990(CLodMesh *this_ptr)
+; int __cdecl shape_meshlod_cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990(CLodMesh *this_ptr,int *pixel_heights,int *face_counts,int max_lods,int render_mode)
 ;
 ; Parameters:
 ; CLodMesh *       Stack[0x4]:4   this_ptr
+; int *            Stack[0x8]:4   pixel_heights
+; int *            Stack[0xc]:4   face_counts
+; int              Stack[0x10]:4   max_lods
+; int              Stack[0x14]:4   render_mode
 ; Local Variables:
 ; undefined4       Stack[-0x3d8]:4  local_3d8
 ; undefined        Stack[-0x248]:1  local_248

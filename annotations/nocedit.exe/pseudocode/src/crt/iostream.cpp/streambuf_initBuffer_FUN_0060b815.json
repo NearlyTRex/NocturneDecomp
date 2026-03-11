@@ -1,15 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 23,
-    "complexity_score": 47,
+    "complexity_score": 32,
     "cross_reference_count": 3,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 17,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_many",
       "special_crt_function"
     ],
     "total_lines": 40
@@ -44,7 +43,7 @@
     ],
     "convention": "__watcallStack",
     "name": "crt_iostream.cpp_streambuf_initBuffer_FUN_0060b815",
-    "signature": "void __watcallStack crt_iostream_cpp_streambuf_initBuffer_FUN_0060b815(streambuf *this_ptr,char *buffer_ptr,int buffer_size,char *put_start)"
+    "signature": "void __watcallStack crt_iostream_cpp_streambuf_initBuffer_FUN_0060b815(streambuf *this_ptr,char *buffer_ptr)"
   },
   "function_calls": [],
   "globals": [],
@@ -80,7 +79,7 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 4,
+    "declared_params": 2,
     "estimated_params": 2
   },
   "pcode_summary": {
@@ -102,10 +101,10 @@
     "pcode_op_count": 55
   },
   "stack_frame": {
-    "frame_size": 20,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 16,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -121,35 +120,10 @@
         "offset": 8,
         "size": 4,
         "type": "char *"
-      },
-      {
-        "is_param": true,
-        "name": "buffer_size",
-        "offset": 12,
-        "size": 4,
-        "type": "int"
-      },
-      {
-        "is_param": true,
-        "name": "put_start",
-        "offset": 16,
-        "size": 4,
-        "type": "char *"
       }
     ]
   },
   "suspects": [
-    {
-      "call_site_count": 3,
-      "declared_params": 4,
-      "description": "Signature has too many params - likely wrong calling convention",
-      "estimated_params": 2,
-      "fix_type": "remove_params",
-      "match": "declared:4 vs estimated:2",
-      "param_delta": -2,
-      "text": "Function declares 4 params but call sites push 2 (2 extra)",
-      "type": "param_count_too_many"
-    },
     {
       "address": "0060b8da",
       "crt_type": "runtime support",

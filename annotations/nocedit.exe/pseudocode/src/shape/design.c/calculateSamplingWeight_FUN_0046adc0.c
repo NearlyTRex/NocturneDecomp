@@ -9,7 +9,7 @@
 double __cdecl shape_design_c_calculateSamplingWeight_FUN_0046adc0(double current_pos,double start_coord,double end_coord)
 
 {
-  ulonglong local_18;
+  double local_18;
   
   local_18 = end_coord - current_pos;
   if (1.0 < local_18) {

@@ -109,7 +109,7 @@ CZombieCow * __cdecl core_cow_cpp_CZombieCow_ctor_FUN_00444140(CZombieCow *this_
 void __cdecl core_cow_cpp_CZombieCow_setup_FUN_004441b0(CZombieCow *this_ptr);
 void __cdecl core_cow_cpp_CZombieCow_process_FUN_00444310(CZombieCow *this_ptr,float delta_time);
 void __cdecl core_cow_cpp_CZombieCow_archive_FUN_00444840(CZombieCow *this_ptr);
-void __cdecl core_cow_cpp_CZombieCow_FUN_004448c0(CZombieCow *this_ptr,SDamageInfo *damage_info);
+void __cdecl core_cow_cpp_CZombieCow_processDismemberment_FUN_004448c0(CZombieCow *this_ptr,SDamageInfo *damage_info);
 void __cdecl core_cow_cpp_CZombieCow_processDamage_FUN_00444b40(CZombieCow *this_ptr,SDamageInfo *damage_info);
 int __cdecl core_cow_cpp_CZombieCow_getTargetPoints_FUN_00444c00(CZombieCow *this_ptr,CVector3f *out_points_array);
 void __cdecl core_cow_cpp_CZombieCow_getPropertyList_FUN_00444c50(CZombieCow *this_ptr,CActorPropertyList *property_list);
@@ -129,9 +129,9 @@ int __cdecl shape_cramtex_cpp_CCramTex_findRightmostOverlappingX_FUN_004479a0(CC
 int __cdecl shape_cramtex_cpp_CCramTex_findLeftmostOverlappingX_FUN_00447a10(CCramTex *this_ptr);
 int __cdecl shape_cramtex_cpp_mapCoordinateToAtlas_FUN_00447a80(int min_coord,int max_coord,int pixel_offset);
 void __cdecl shape_cramtex_cpp_CCramTex_renderAllTexturesAndRectangles_FUN_00447ab0(CCramTex *this_ptr,int x,int y,int width,int height,int render_mode);
-void __cdecl shape_cramtex_cpp_CCramTex_renderTextureEntry_FUN_00447c20(CCramTex *this_ptr,int visualization_mode,int draw_x,int draw_y,int draw_width, int draw_height);
+void __cdecl shape_cramtex_cpp_CCramTex_renderTextureEntry_FUN_00447c20(CCramTex *this_ptr,int show_final_placement,int draw_x,int draw_y,int draw_right, int draw_bottom);
 double __cdecl shape_cramtex_cpp_calculateAtlasEfficiency_FUN_00447e80(void);
-void __cdecl shape_cramtex_cpp_CCramTex_visualizeTextureAtlas_FUN_00447f20(CCramTex *this_ptr,int visualization_mode,int completion_mode,int display_mode);
+void __cdecl shape_cramtex_cpp_visualizeTextureAtlas_FUN_00447f20(int show_textures,int is_complete);
 void __cdecl shape_cramtex_cpp_printAtlasLayoutReport_FUN_004481d0(_FILE *output_file);
 void __cdecl shape_cramtex_cpp_placementCollisionCheck_FUN_00448260(int layer_id,int start_x,int start_y,int width,int height);
 int __cdecl shape_cramtex_cpp_CCramTex_checkTextureCollision_FUN_00448390(CCramTex *this_ptr,CCramTex *other);

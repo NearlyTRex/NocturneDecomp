@@ -4,8 +4,8 @@
 ; double __cdecl crt_string_c_strtod_main_FUN_00605d5d(char *str,char **endptr)
 ;
 ; Parameters:
-; char *           Stack[0x8]:4   str
-; char * *         Stack[0xc]:4   endptr
+; char *           Stack[0x4]:4   str
+; char * *         Stack[0x8]:4   endptr
 ; Local Variables:
 ; undefined1[12]   Stack[-0x34]:12  local_34
 ; undefined8       Stack[-0x28]:8  local_28

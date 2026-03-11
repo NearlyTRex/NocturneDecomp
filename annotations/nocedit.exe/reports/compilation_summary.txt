@@ -5,15 +5,15 @@ FUNCTION COMPILATION SUMMARY
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6484
-Successful: 5749 (88.7%)
-Failed: 735
+Successful: 5752 (88.7%)
+Failed: 732
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                           1446
+  other                           1444
   format_error                     805
-  undeclared_identifier            376
-  incompatible_types               306
+  undeclared_identifier            355
+  incompatible_types               305
   syntax_error                      48
   type_error                        22
   missing_member                    20
@@ -22,7 +22,7 @@ ERROR CATEGORIES
   pointer_precision                  2
 
 ====================================================================================================
-CATEGORY: other (1446 errors)
+CATEGORY: other (1444 errors)
 ====================================================================================================
 
   core_imp.cpp_CImp_process_FUN_004f9c30
@@ -72,7 +72,7 @@ CATEGORY: other (1446 errors)
   cockpit_ckptutil.c_rotateCircularBitmap_FUN_00433030
     Line 70: assigning to 'int *' from 'uint *' (aka 'unsigned int *') converts between point...
   engine_fileio.cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50
-    Line 88: assigning to 'int *' from 'uint *' (aka 'unsigned int *') converts between point...
+    Line 89: assigning to 'int *' from 'uint *' (aka 'unsigned int *') converts between point...
   core_wateract.cpp_CWaterActor_renderTransparent_FUN_005eb280
     Line 37: assigning to 'int *' from 'undefined4 *' (aka 'unsigned int *') converts between...
   core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0
@@ -156,9 +156,11 @@ CATEGORY: format_error (805 errors)
   ... and 238 more errors
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (376 errors)
+CATEGORY: undeclared_identifier (355 errors)
 ====================================================================================================
 
+  engine_fileio.cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40
+    Line 137: use of undeclared identifier 'DAT_00628c6a'...
   core_actor.cpp_adjustIndentationLevel_FUN_0040aee0
     Line 31: use of undeclared identifier 'DAT_0066e177'...
   core_inv.cpp_drawWeaponIconBackground_FUN_00500050
@@ -168,7 +170,7 @@ CATEGORY: undeclared_identifier (376 errors)
   core_path.cpp_CPathMap_searchGrid_FUN_005487a0
     Line 105: use of undeclared identifier 'DAT_030d2857'...
   wincore_winrun.cpp_getRegistryStringValue_FUN_005f4210
-    Line 19: use of undeclared identifier 'DAT_80000002'...
+    Line 18: use of undeclared identifier 'DAT_80000002'...
   wincore_winrun.cpp_setRegistryStringValue_FUN_005f4290
     Line 22: use of undeclared identifier 'DAT_80000002'...
   engine_matrix.c_projectTransformedPoint_FUN_0050cdc0
@@ -217,13 +219,11 @@ CATEGORY: undeclared_identifier (376 errors)
     Line 134: use of undeclared identifier 'code'...
   core_drip.cpp_CDrip_process_FUN_0048e2a0
     Line 116: use of undeclared identifier 'code'...
-  core_event.cpp_CEventList_evaluateAtom_FUN_004ae140
-    Line 1185: use of undeclared identifier 'code'...
 
-  ... and 115 more errors
+  ... and 110 more errors
 
 ====================================================================================================
-CATEGORY: incompatible_types (306 errors)
+CATEGORY: incompatible_types (305 errors)
 ====================================================================================================
 
   engine_fileio.cpp_CCheckOutList_add_FUN_004b2d00
@@ -277,7 +277,7 @@ CATEGORY: incompatible_types (306 errors)
   engine_fileio.cpp_CFileManager_addPodAuditRecord_FUN_004b5950
     Line 24: assigning to 'CPodAuditRecord *' from incompatible type 'void *'...
   engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190
-    Line 104: assigning to 'CPodAuditRecord *' from incompatible type 'void *'...
+    Line 105: assigning to 'CPodAuditRecord *' from incompatible type 'void *'...
   engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650
     Line 107: assigning to 'CPodDirectoryEntry *' from incompatible type 'void *'...
   engine_fileio.cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40
@@ -287,7 +287,7 @@ CATEGORY: incompatible_types (306 errors)
   shape_superopt.cpp_CObj_allocatePolygons_FUN_005d2320
     Line 22: assigning to 'CPoly *' from incompatible type 'void *'...
 
-  ... and 151 more errors
+  ... and 150 more errors
 
 ====================================================================================================
 CATEGORY: syntax_error (48 errors)
@@ -451,8 +451,8 @@ CATEGORY: pointer_precision (2 errors)
 COMPILATION VS SUSPECT PATTERNS
 ====================================================================================================
 
-Average suspects in successfully compiled functions: 1.82
-Average suspects in failed compilations: 9.34
+Average suspects in successfully compiled functions: 1.81
+Average suspects in failed compilations: 9.24
 
-Functions that compile but have suspect patterns: 1537
+Functions that compile but have suspect patterns: 1525
 (These may have runtime issues even though syntax is valid)

@@ -269,7 +269,7 @@ LAB_005be795:
       if (iVar18 == 0x1f) {
         this_ptr_00 = (this_ptr->base).lever_to_pull;
         if (this_ptr_00 == (CLever *)0x0) {
-          pCVar5 = core_lever_cpp_CLever_FUN_00504dd0(PTR_03f6baa8,&local_10c);
+          pCVar5 = core_lever_cpp_CLever_getHandlePosition_FUN_00504dd0(PTR_03f6baa8,&local_10c);
           pCVar5 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                              ((CDemonActor *)this_ptr,&local_154,pCVar5);
           if (pCVar7 != pCVar5) {
@@ -279,7 +279,7 @@ LAB_005be795:
           }
         }
         else {
-          pCVar5 = core_lever_cpp_CLever_FUN_00504dd0(this_ptr_00,&local_58);
+          pCVar5 = core_lever_cpp_CLever_getHandlePosition_FUN_00504dd0(this_ptr_00,&local_58);
           pCVar5 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                              ((CDemonActor *)this_ptr,&local_a0,pCVar5);
           if (pCVar7 != pCVar5) {

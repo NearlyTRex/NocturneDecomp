@@ -12,9 +12,9 @@ SUMMARY STATISTICS
 ====================================================================================================
 
   Total functions analyzed:          6,484
-  Unnamed functions (FUN_):          9 ( 0.1%)
-  Functions with unnamed params:     1 ( 0.0%)
-  Functions with type issues:        2,297 (35.4%)
+  Unnamed functions (FUN_):          0 ( 0.0%)
+  Functions with unnamed params:     0 ( 0.0%)
+  Functions with type issues:        2,294 (35.4%)
 
   Type issue breakdown:
     Wrong return type (void):          0
@@ -22,7 +22,7 @@ SUMMARY STATISTICS
     Missing register params:           4
     Wrong calling convention:          29
     Undefined types in variables:      2268
-    Unresolved stack params:           88
+    Unresolved stack params:           64
 
 ====================================================================================================
 UNNAMED FUNCTIONS (still using FUN_XXXXXXXX or ClassName_FUN_XXXXXXXX)
@@ -30,30 +30,7 @@ UNNAMED FUNCTIONS (still using FUN_XXXXXXXX or ClassName_FUN_XXXXXXXX)
 
 Sorted by caller count (most-referenced first = highest priority to name).
 
-  core/cow.cpp (1 unnamed)
-    0x004448c0  __cdecl       1 callers
-
-  core/batman.cpp (2 unnamed)
-    0x00417660  __cdecl       1 callers
-    0x004167f0  __cdecl       1 callers
-
-  core/lever.cpp (1 unnamed)
-    0x00504dd0  __cdecl       1 callers
-
-  core/stairs.cpp (1 unnamed)
-    0x005ba700  __cdecl       1 callers
-
-  core/tvbat.cpp (1 unnamed)
-    0x005e4d70  __cdecl       1 callers
-
-  core/melee.cpp (1 unnamed)
-    0x0050ebe0  __cdecl       1 callers
-
-  core/hostage.cpp (1 unnamed)
-    0x004f5ff0  __cdecl       1 callers
-
-  shape/superopt.cpp (1 unnamed)
-    0x005d8630  __stackdbl_esi  0 callers
+  (none)
 
 ====================================================================================================
 UNNAMED PARAMETERS (still using param_N)
@@ -61,10 +38,7 @@ UNNAMED PARAMETERS (still using param_N)
 
 Sorted by number of unnamed parameters (most unnamed first).
 
-  CLever
-    Address: 0x00504dd0  File: core/lever.cpp
-    Unnamed: param_2 (CVector3f *)
-    Named:   this_ptr (CLever *)
+  (none)
 
 ====================================================================================================
 TYPE CORRECTNESS ISSUES (heuristic-based)
@@ -289,7 +263,7 @@ Wrong calling convention (unaffected register usage) (29)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
 --------------------------------------------------------------------------------
-Unresolved stack parameters (missing from signature) (88)
+Unresolved stack parameters (missing from signature) (64)
 --------------------------------------------------------------------------------
 
   traceConnectedEdges
@@ -340,12 +314,6 @@ Unresolved stack parameters (missing from signature) (88)
     Signature: void __cdecl engine_3d_c_drawLine3DFromIndices_FUN_00407ff0(int vertex_index1,int vertex_index2)
     Suggested: Signature is missing stack parameters entirely
 
-  CDemonRenderer_setupSceneRendering
-    Address: 0x0048c1d0  File: engine/drender.cpp
-    Evidence: in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(CDemonRenderer *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
   CMP3Decoder_decodeFrame
     Address: 0x00534d40  File: sound/mp3.cpp
     Evidence: in_stack_ffff9f14, in_stack_ffff9f18, in_stack_ffff9f18, in_stack_ffff9f14, in_stack_ffff9f18, in_stack_ffff9f14
@@ -380,12 +348,6 @@ Unresolved stack parameters (missing from signature) (88)
     Address: 0x0043c880  File: core/cloth.cpp
     Evidence: in_stack_00000010, in_stack_00000020, in_stack_00000028, in_stack_0000002c, in_stack_00000034, in_stack_0000003c, in_stack_00000054, in_stack_fffffac4, in_stack_fffffac4, in_stack_fffffac4, in_stack_00000028, in_stack_0000002c, in_stack_0000002c, in_stack_0000002c, in_stack_00000010, in_stack_0000003c, in_stack_00000020, in_stack_0000003c, in_stack_00000020, in_stack_0000003c, in_stack_00000054, in_stack_00000034, in_stack_00000034, in_stack_00000034, in_stack_00000034
     Signature: void __cdecl core_cloth_cpp_CCloth_boneEditor_FUN_0043c880(CCloth *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CCloth_addCollisionBone
-    Address: 0x0043c430  File: core/cloth.cpp
-    Evidence: in_stack_fffffb34, in_stack_fffffb34, in_stack_fffffb34
-    Signature: void __cdecl core_cloth_cpp_CCloth_addCollisionBone_FUN_0043c430(CCloth *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
   CBugs_initializeSwarmGraph
@@ -446,12 +408,6 @@ Unresolved stack parameters (missing from signature) (88)
     Address: 0x00583170  File: core/setedit.cpp
     Evidence: in_stack_fffffd34, in_stack_fffffd64, in_stack_fffffd78, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffdbc, in_stack_fffffdc0, in_stack_fffffdc4, in_stack_fffffdcc, in_stack_fffffdcc, in_stack_fffffdcc, in_stack_fffffdcc, in_stack_fffffdbc, in_stack_fffffdc0, in_stack_fffffdc4, in_stack_fffffdbc, in_stack_fffffdc0, in_stack_fffffdc4, in_stack_fffffd7c, in_stack_fffffd78, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd80, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd78, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd80, in_stack_fffffd80, in_stack_fffffd80, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd78, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd78, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd34, in_stack_fffffd78, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd34, in_stack_fffffd78, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd34, in_stack_fffffd78, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd34, in_stack_fffffd78, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd34, in_stack_fffffd78, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd34, in_stack_fffffd78, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd34, in_stack_fffffd78, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd34, in_stack_fffffd78, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd34, in_stack_fffffd78, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd34, in_stack_fffffd78, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd34, in_stack_fffffd78, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd34, in_stack_fffffdbc, in_stack_fffffdc0, in_stack_fffffdc4, in_stack_fffffdcc, in_stack_fffffdbc, in_stack_fffffdc0, in_stack_fffffdc4, in_stack_fffffdcc
     Signature: void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CDemonSet_showFogEditor
-    Address: 0x00580730  File: core/setedit.cpp
-    Evidence: in_stack_fffffa18, in_stack_fffffa18, in_stack_fffffa18, in_stack_fffffa18
-    Signature: void __cdecl core_setedit_cpp_CDemonSet_showFogEditor_FUN_00580730(CDemonSet *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
   CDemonActor_processMeleeHit
@@ -604,12 +560,6 @@ Unresolved stack parameters (missing from signature) (88)
     Signature: int __cdecl core_path_cpp_CPathMap_findPathToDestination_FUN_00547320(CPathMap *this_ptr,CVector3f *dest_position,CVector3f *out_euler_angles,int direction_hint)
     Suggested: Signature is missing stack parameters entirely
 
-  CMelee
-    Address: 0x0050ebe0  File: core/melee.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_0000000c, in_stack_00000008
-    Signature: void __cdecl core_melee_cpp_CMelee_FUN_0050ebe0(CMelee *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
   CDemonRaytrace_restoreShadowBitFromBuffer
     Address: 0x0049a280  File: core/dtrace.cpp
     Evidence: in_stack_ffffffc0, in_stack_ffffffc0
@@ -652,12 +602,6 @@ Unresolved stack parameters (missing from signature) (88)
     Signature: void __cdecl core_game_cpp_dampControlAxis_FUN_004dc370(void)
     Suggested: Signature is missing stack parameters entirely
 
-  CCramTex_runInteractiveAtlasGeneration
-    Address: 0x00446160  File: shape/cramtex.cpp
-    Evidence: in_stack_ffffff50, in_stack_ffffff50, in_stack_ffffff50, in_stack_ffffff50, in_stack_ffffff50, in_stack_ffffff50, in_stack_ffffff50, in_stack_ffffff50
-    Signature: int __cdecl shape_cramtex_cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160(CCramTex *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
   CLodMesh_computeEdgeCollapseCost
     Address: 0x00518910  File: shape/meshlod.cpp
     Evidence: in_stack_fffffed8, in_stack_fffffed8
@@ -676,118 +620,16 @@ Unresolved stack parameters (missing from signature) (88)
     Signature: void __cdecl shape_meshlod_cpp_CLodMesh_getLOD_FUN_0051b920(CLodMesh *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
-  CLodMesh_chooseLodsInteractive
-    Address: 0x0051d990  File: shape/meshlod.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000014, in_stack_00000008, in_stack_0000000c, in_stack_0000000c, in_stack_00000008, in_stack_0000000c, in_stack_0000000c, in_stack_00000014, in_stack_0000000c, in_stack_00000008, in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_00000014, in_stack_00000014, in_stack_00000014, in_stack_00000010, in_stack_0000000c, in_stack_00000008, in_stack_00000010, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_00000008, in_stack_00000008, in_stack_0000000c, in_stack_0000000c, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c
-    Signature: int __cdecl shape_meshlod_cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990(CLodMesh *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
   CLodMesh_renderColorCodedEdges
     Address: 0x0051e830  File: shape/meshlod.cpp
     Evidence: in_stack_ffffff88, in_stack_ffffffb8, in_stack_ffffffd8, in_stack_ffffffdc, in_stack_ffffffe0, in_stack_ffffffe4, in_stack_ffffffe4, in_stack_ffffffe0, in_stack_ffffffdc, in_stack_ffffffd8, in_stack_ffffffdc, in_stack_ffffffe0, in_stack_ffffffe4, in_stack_ffffffd8, in_stack_ffffffb8, in_stack_ffffffb8, in_stack_ffffffb8, in_stack_ffffffdc, in_stack_ffffffe0, in_stack_ffffffe4, in_stack_ffffff88
     Signature: void __cdecl shape_meshlod_cpp_CLodMesh_renderColorCodedEdges_FUN_0051e830(CLodMesh *this_ptr,int backface_culling_enabled)
     Suggested: Signature is missing stack parameters entirely
 
-  triangulateDSE
-    Address: 0x0046e4d0  File: shape/design.c
-    Evidence: in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004
-    Signature: void __cdecl shape_design_c_triangulateDSE_FUN_0046e4d0(void)
-    Suggested: Signature is missing stack parameters entirely
-
   renderPolygonWireframe
     Address: 0x0045d300  File: shape/design.c
     Evidence: in_stack_fffffef8, in_stack_ffffff28, in_stack_ffffff28, in_stack_ffffff28, in_stack_ffffff28, in_stack_ffffff28, in_stack_ffffff28, in_stack_fffffef8, in_stack_ffffff28, in_stack_ffffff28, in_stack_ffffff28, in_stack_ffffff28, in_stack_ffffff28, in_stack_fffffef8
     Signature: void __cdecl shape_design_c_renderPolygonWireframe_FUN_0045d300(SMRGLHeaderPrimitive *polygon_data)
-    Suggested: Signature is missing stack parameters entirely
-
-  createKeyframeModel
-    Address: 0x00468320  File: shape/design.c
-    Evidence: in_stack_fffffd94, in_stack_fffffd94
-    Signature: void __cdecl shape_design_c_createKeyframeModel_FUN_00468320(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  generateGlobe
-    Address: 0x00468910  File: shape/design.c
-    Evidence: in_stack_ffffff70, in_stack_ffffff70
-    Signature: void __cdecl shape_design_c_generateGlobe_FUN_00468910(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  generateOctant
-    Address: 0x00469420  File: shape/design.c
-    Evidence: in_stack_ffffff6c, in_stack_ffffff6c
-    Signature: int __cdecl shape_design_c_generateOctant_FUN_00469420(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  generateShell
-    Address: 0x00468f20  File: shape/design.c
-    Evidence: in_stack_ffffff70, in_stack_ffffff70
-    Signature: void __cdecl shape_design_c_generateShell_FUN_00468f20(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  exportModelToBIN
-    Address: 0x0045aa80  File: shape/design.c
-    Evidence: in_stack_ffffff04, in_stack_ffffff04
-    Signature: void __cdecl shape_design_c_exportModelToBIN_FUN_0045aa80(char *filename,int depth_mode,int scale_mode,int export_format,int include_textures)
-    Suggested: Signature is missing stack parameters entirely
-
-  loadTextureData
-    Address: 0x0046b060  File: shape/design.c
-    Evidence: in_stack_00000018, in_stack_fffffe7c, in_stack_fffffe80, in_stack_00000018, in_stack_00000018, in_stack_fffffe7c, in_stack_fffffe80, in_stack_fffffe7c, in_stack_fffffe80
-    Signature: void __cdecl shape_design_c_loadTextureData_FUN_0046b060(STextureAtlasEntry *entry,uchar *rgb_buffer,uchar *alpha_buffer,int atlas_width,int atlas_height)
-    Suggested: Signature is missing stack parameters entirely
-
-  configureFullPassPolygonReduction
-    Address: 0x00465810  File: shape/design.c
-    Evidence: in_stack_ffffff8c, in_stack_ffffff8c
-    Signature: void __cdecl shape_design_c_configureFullPassPolygonReduction_FUN_00465810(int ui_mode)
-    Suggested: Signature is missing stack parameters entirely
-
-  scaleModel
-    Address: 0x00467e70  File: shape/design.c
-    Evidence: in_stack_ffffff90, in_stack_ffffff90
-    Signature: void __cdecl shape_design_c_scaleModel_FUN_00467e70(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  centerVerticesAroundPoint
-    Address: 0x0045ea90  File: shape/design.c
-    Evidence: in_stack_ffffffa0, in_stack_ffffffa0
-    Signature: void __cdecl shape_design_c_centerVerticesAroundPoint_FUN_0045ea90(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  sizeForStadium
-    Address: 0x00469c70  File: shape/design.c
-    Evidence: in_stack_ffffff10, in_stack_ffffff10
-    Signature: void __cdecl shape_design_c_sizeForStadium_FUN_00469c70(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  vertexReducer
-    Address: 0x00467850  File: shape/design.c
-    Evidence: in_stack_fffffebc, in_stack_fffffebc, in_stack_fffffebc
-    Signature: void __cdecl shape_design_c_vertexReducer_FUN_00467850(float tolerance,float angle_tolerance,int display_progress)
-    Suggested: Signature is missing stack parameters entirely
-
-  translateAllVerticesAlongAxis
-    Address: 0x0045ec90  File: shape/design.c
-    Evidence: in_stack_ffffffac, in_stack_ffffffac
-    Signature: void __cdecl shape_design_c_translateAllVerticesAlongAxis_FUN_0045ec90(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  configureSinglePassPolygonReduction
-    Address: 0x00465560  File: shape/design.c
-    Evidence: in_stack_ffffff84, in_stack_ffffff84
-    Signature: void __cdecl shape_design_c_configureSinglePassPolygonReduction_FUN_00465560(int ui_mode)
-    Suggested: Signature is missing stack parameters entirely
-
-  createQuadPolygon
-    Address: 0x0045df60  File: shape/design.c
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000010
-    Signature: void __cdecl shape_design_c_createQuadPolygon_FUN_0045df60(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  CEditorTools_showDirectoryBrowser
-    Address: 0x0049f420  File: shape/edittool.cpp
-    Evidence: in_stack_00000014, in_stack_00000014
-    Signature: int __cdecl shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420(CEditorTools *this_ptr,char *file_pattern,int include_files,char *initial_path)
     Suggested: Signature is missing stack parameters entirely
 
   CEditorTools_draw3DAxisLabels
@@ -806,18 +648,6 @@ Unresolved stack parameters (missing from signature) (88)
     Address: 0x004a2050  File: shape/edittool.cpp
     Evidence: in_stack_fffffe90, in_stack_fffffec0, in_stack_fffffec0, in_stack_fffffec0, in_stack_fffffec0, in_stack_fffffe90, in_stack_fffffec0, in_stack_fffffec0, in_stack_fffffec0, in_stack_fffffe90, in_stack_fffffec0, in_stack_fffffec0, in_stack_fffffec0, in_stack_fffffe90
     Signature: void __cdecl shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050(CEditorTools *this_ptr,CVector3f *corner1,CVector3f *corner2,int color_value)
-    Suggested: Signature is missing stack parameters entirely
-
-  COptimize_exportOptimizeGeometry
-    Address: 0x005d7e00  File: shape/superopt.cpp
-    Evidence: in_stack_ffffffc4, in_stack_ffffffc4, in_stack_ffffffc4, in_stack_ffffffc4
-    Signature: void __cdecl shape_superopt_cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00(COptimize *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  getRegistryStringValue
-    Address: 0x005f4210  File: wincore/winrun.cpp
-    Evidence: in_stack_00000004, in_stack_00000004
-    Signature: void __cdecl wincore_winrun_cpp_getRegistryStringValue_FUN_005f4210(char *key_path,char *value_name,char *output_buffer,uint *buffer_size)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
@@ -2419,7 +2249,7 @@ Undefined types in variables (2268)
     Locals:  local_d8 (undefined1), local_c8 (undefined1), local_b8 (undefined1), local_a8 (undefined1), local_98 (undefined1), local_88 (undefined1), local_78 (undefined1), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CStairs
+  CStairs_buildCollision
     Address: 0x005ba700  File: core/stairs.cpp
     Locals:  local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -3079,7 +2909,7 @@ Undefined types in variables (2268)
     Locals:  local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CCramTex_visualizeTextureAtlas
+  visualizeTextureAtlas
     Address: 0x00447f20  File: shape/cramtex.cpp
     Locals:  local_118 (undefined8), local_110 (undefined8), local_100 (undefined1), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined1)
     Suggested: Resolve undefined types to concrete types
@@ -5354,7 +5184,7 @@ Undefined types in variables (2268)
     Locals:  local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined1), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CHostage
+  CHostage_processGrabberFlee
     Address: 0x004f5ff0  File: core/hostage.cpp
     Locals:  local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined1), local_8 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -5774,7 +5604,7 @@ Undefined types in variables (2268)
     Locals:  local_48 (undefined1), local_44 (undefined4), local_18 (undefined4), local_14 (undefined4), local_10 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CBatman
+  CBatman_processDismemberment
     Address: 0x00417660  File: core/batman.cpp
     Locals:  local_34 (undefined1), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -5944,7 +5774,7 @@ Undefined types in variables (2268)
     Locals:  local_1dc (undefined1), local_dc (undefined1), local_78 (undefined1), local_77 (undefined1), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CLever
+  CLever_getHandlePosition
     Address: 0x00504dd0  File: core/lever.cpp
     Locals:  local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
@@ -7894,11 +7724,6 @@ Undefined types in variables (2268)
     Locals:  local_28 (undefined8), local_20 (undefined8), local_18 (undefined8)
     Suggested: Resolve undefined types to concrete types
 
-  calculateSamplingWeight
-    Address: 0x0046adc0  File: shape/design.c
-    Locals:  local_20 (undefined4), local_1c (undefined4), local_18 (undefined8)
-    Suggested: Resolve undefined types to concrete types
-
   checkVertexCountLimit
     Address: 0x00460a10  File: shape/design.c
     Locals:  local_68 (undefined1), local_18 (undefined4), local_14 (undefined4)
@@ -8034,11 +7859,6 @@ Undefined types in variables (2268)
     Locals:  local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CP3D
-    Address: 0x005d8630  File: shape/superopt.cpp
-    Locals:  local_20 (undefined8), local_18 (undefined8), local_10 (undefined8)
-    Suggested: Resolve undefined types to concrete types
-
   CP3D_add
     Address: 0x005d8520  File: shape/superopt.cpp
     Locals:  local_20 (undefined8), local_18 (undefined8), local_10 (undefined8)
@@ -8051,6 +7871,11 @@ Undefined types in variables (2268)
 
   CP3D_multiply
     Address: 0x005d85f0  File: shape/superopt.cpp
+    Locals:  local_20 (undefined8), local_18 (undefined8), local_10 (undefined8)
+    Suggested: Resolve undefined types to concrete types
+
+  CP3D_scale
+    Address: 0x005d8630  File: shape/superopt.cpp
     Locals:  local_20 (undefined8), local_18 (undefined8), local_10 (undefined8)
     Suggested: Resolve undefined types to concrete types
 
@@ -9200,6 +9025,11 @@ Undefined types in variables (2268)
     Locals:  local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
+  calculateSamplingWeight
+    Address: 0x0046adc0  File: shape/design.c
+    Locals:  local_20 (undefined4), local_1c (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
   calculateTextureQualityLevel
     Address: 0x0046a930  File: shape/design.c
     Locals:  local_18 (undefined4), local_14 (undefined4)
@@ -9925,14 +9755,14 @@ Undefined types in variables (2268)
     Locals:  local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CZombieCow
-    Address: 0x004448c0  File: core/cow.cpp
-    Locals:  local_14 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
   CZombieCow_getTargetPoints
     Address: 0x00444c00  File: core/cow.cpp
     Locals:  local_10 (undefined1)
+    Suggested: Resolve undefined types to concrete types
+
+  CZombieCow_processDismemberment
+    Address: 0x004448c0  File: core/cow.cpp
+    Locals:  local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CCrate_process

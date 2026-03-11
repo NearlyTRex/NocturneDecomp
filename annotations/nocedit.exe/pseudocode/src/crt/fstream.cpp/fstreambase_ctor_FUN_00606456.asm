@@ -68,7 +68,7 @@ section .text
     ADD EAX,EBX                         ; 006064b0
     PUSH EAX                            ; 006064b2
     CALL crt_iostream.cpp_streambuf_initBuffer_FUN_0060b815 ; 006064b3
-        ;   XREF to: 0060b8da (UNCONDITIONAL_CALL)  ; void crt_iostream.cpp_streambuf_initBuffer_FUN_0060b815(streambuf * this_ptr, char * buffer_ptr, int buffer_size, char * put_start)
+        ;   XREF to: 0060b8da (UNCONDITIONAL_CALL)  ; void crt_iostream.cpp_streambuf_initBuffer_FUN_0060b815(streambuf * this_ptr, char * buffer_ptr)
     ADD ESP,0x8                         ; 006064b8
     MOV EDX,dword ptr [ESP + 0x20]      ; 006064bb
     PUSH EDX                            ; 006064bf

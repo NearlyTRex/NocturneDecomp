@@ -20,7 +20,6 @@ void __cdecl shape_design_c_createKeyframeModel_FUN_00468320(void)
   char (*pacVar6) [16];
   byte bVar7;
   double dVar8;
-  ulonglong in_stack_fffffd94;
   SMRGLKeyframeModel local_264;
   char local_10c [80];
   char local_bc [80];
@@ -56,8 +55,7 @@ void __cdecl shape_design_c_createKeyframeModel_FUN_00468320(void)
     if (((iVar3 != -2) &&
         (local_264.header.child_count = atoi((char *)local_6c),
         1 < local_264.header.child_count)) && (local_264.header.child_count < 0x11)) {
-      for (local_18 = 0; pcVar5 = (char *)in_stack_fffffd94, local_18 < local_264.header.child_count
-          ; local_18 = local_18 + 1) {
+      for (local_18 = 0; local_18 < local_264.header.child_count; local_18 = local_18 + 1) {
         wincore_windll_cpp_clearScreen_FUN_005b3e70();
         _sprintf(local_bc,"Enter key frame of object %d : ",local_18 + 1)
         ;
@@ -97,7 +95,7 @@ void __cdecl shape_design_c_createKeyframeModel_FUN_00468320(void)
         pbVar4 = pbVar4 + (uint)bVar7 * -2 + 1;
       } while (bVar2 != 0);
       if (iVar3 != -2) {
-        dVar8 = _strtod(pcVar5);
+        dVar8 = _strtod((char *)local_6c);
         local_14 = (float)dVar8;
         if ((0.0 < local_14) && (local_14 < (float)127)) {
           local_264.cycle_length = (int)ROUND(ROUND(local_14 * (float)65536));

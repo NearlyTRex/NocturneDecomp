@@ -789,7 +789,7 @@ LAB_0046cf33:
           if (g_TextureAtlasEntries[local_5c].atlas_map_index == local_30) {
             shape_design_c_loadTextureData_FUN_0046b060
                       (g_TextureAtlasEntries + local_5c,local_2c,local_28,auStack_848[local_5c],
-                       local_74);
+                       local_74,local_60);
           }
         }
         local_80 = &local_24;

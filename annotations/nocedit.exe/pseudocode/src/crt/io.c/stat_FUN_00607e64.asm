@@ -39,7 +39,6 @@
 ;   crt_errno.c_setErrno_FUN_00602790
 ;   crt_io.c_analyze_file_type_FUN_00607d50
 ;   crt_io.c_chdir_FUN_006012a0
-;   crt_io.c_getcwd_FUN_00608d20
 ;   crt_memory.c_memset_FUN_005fde40
 ;   crt_stdlib.c__fullpath_FUN_00601140
 ;   crt_string.c__strncpy_FUN_00600f40
@@ -47,6 +46,7 @@
 ;   crt_string.c_strpbrk_FUN_0060c190
 ;   crt_time.c_dos_datetime_to_time_t_FUN_0060c1e0
 ;   crt_time.c_filetime_to_dos_datetime_FUN_00609cb0
+;   crt_watcom.c_getcwd_FUN_00608d20
 ;   FindClose
 ;   FindFirstFileA
 ;
@@ -87,8 +87,8 @@ section .text
         ;   Label: LAB_00607eaa
     LEA EAX,[ESP + 0x248]               ; 00607eaf
     PUSH EAX                            ; 00607eb6
-    CALL crt_io.c_getcwd_FUN_00608d20   ; 00607eb7
-        ;   XREF to: 00608d20 (UNCONDITIONAL_CALL)  ; char * crt_io.c_getcwd_FUN_00608d20(char * buffer, SIZE_T size)
+    CALL crt_watcom.c_getcwd_FUN_00608d20 ; 00607eb7
+        ;   XREF to: 00608d20 (UNCONDITIONAL_CALL)  ; char * crt_watcom.c_getcwd_FUN_00608d20(char * buffer, SIZE_T size)
     ADD ESP,0x8                         ; 00607ebc
     PUSH 0x104                          ; 00607ebf
     PUSH ESI                            ; 00607ec4

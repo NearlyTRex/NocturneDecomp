@@ -2267,7 +2267,7 @@ section .text
     ADD EAX,EDX                         ; 0046d2a9
     PUSH EAX                            ; 0046d2ab
     CALL shape_design.c_loadTextureData_FUN_0046b060 ; 0046d2ac
-        ;   XREF to: 0046b060 (UNCONDITIONAL_CALL)  ; void shape_design.c_loadTextureData_FUN_0046b060(STextureAtlasEntry * entry, uchar * rgb_buffer, uchar * alpha_buffer, int atlas_width, ...)
+        ;   XREF to: 0046b060 (UNCONDITIONAL_CALL)  ; void shape_design.c_loadTextureData_FUN_0046b060(STextureAtlasEntry * entry, uchar * rgb_buffer, uchar * alpha_buffer, int pixel_depth, ...)
     ADD ESP,0x18                        ; 0046d2b1
     JMP 0x0046d25b                      ; 0046d2b4
         ;   XREF to: 0046d25b (UNCONDITIONAL_JUMP)  ; LAB_0046d25b

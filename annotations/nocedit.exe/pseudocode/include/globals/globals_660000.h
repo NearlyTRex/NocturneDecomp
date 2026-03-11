@@ -443,6 +443,13 @@ extern WatcomVirtualBaseDescriptor g_FStreamBase_VirtualBaseLayout;
 // char[104]
 extern char g_PropertyNamePrefix[104];
 
+// char[256]
+extern char g_CourseLastBonPath[256];
+
+// char[264]
+extern char g_CourseLastPthPath[264];
+extern char g_CourseLastCrsPath[264];
+
 // char[300]
 extern char g_LocalizationTemplate[300];
 
@@ -523,14 +530,6 @@ extern streambuf_vtable g_StreambufVTable;
 
 // strstreambuf_vtable
 extern strstreambuf_vtable g_StrstreambufVTable;
-
-// undefined4
-extern undefined4 DAT_0066e940;
-extern undefined4 DAT_0066e944;
-extern undefined4 DAT_0066ea48;
-extern undefined4 DAT_0066ea4c;
-extern undefined4 DAT_0066eb50;
-extern undefined4 DAT_0066eb54;
 
 // void*
 extern void* g_IFStream_FStreamBaseDestructor;

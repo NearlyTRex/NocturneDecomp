@@ -16,8 +16,8 @@ void __cdecl core_course_cpp_CCourse_showEditorMenu_FUN_00443040(CCourse *this_p
   CKeyFramedModel *model_ptr;
   CVector3f *point;
   int iVar5;
-  float *pfVar6;
-  uint *puVar7;
+  uint *puVar6;
+  float *pfVar7;
   char *pcVar8;
   uint *puVar9;
   float *pfVar10;
@@ -44,12 +44,12 @@ void __cdecl core_course_cpp_CCourse_showEditorMenu_FUN_00443040(CCourse *this_p
   int local_14;
   
   bVar13 = 0;
-  puVar7 = &DAT_0066e940;
-  pcVar3 = local_1f0;
+  pcVar3 = g_CourseLastPthPath;
+  pcVar8 = local_1f0;
   for (iVar5 = 0x41; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *(uint *)pcVar3 = *puVar7;
-    puVar7 = puVar7 + 1;
+    *(uint *)pcVar8 = *(uint *)pcVar3;
     pcVar3 = pcVar3 + 4;
+    pcVar8 = pcVar8 + 4;
   }
   do {
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
@@ -98,16 +98,17 @@ void __cdecl core_course_cpp_CCourse_showEditorMenu_FUN_00443040(CCourse *this_p
         }
       }
       else if (local_1c < 0x34) {
-        puVar7 = &DAT_0066ea48;
-        pcVar3 = local_4fc;
+        pcVar3 = g_CourseLastCrsPath;
+        pcVar8 = local_4fc;
         for (iVar5 = 0x41; iVar5 != 0; iVar5 = iVar5 + -1) {
-          *(uint *)pcVar3 = *puVar7;
-          puVar7 = puVar7 + (uint)bVar13 * -2 + 1;
-          pcVar3 = (char *)((int)pcVar3 + ((uint)bVar13 * -2 + 1) * 4);
+          *(uint *)pcVar8 = *(uint *)pcVar3;
+          pcVar3 = pcVar3 + ((uint)bVar13 * -2 + 1) * 4;
+          pcVar8 = (char *)((int)pcVar8 + ((uint)bVar13 * -2 + 1) * 4);
         }
         do {
           iVar5 = shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420
-                            (g_CEditorToolsPtr,"Import .CRS file",0x6192f4,local_4fc);
+                            (g_CEditorToolsPtr,"Import .CRS file","*.crs",local_4fc,1
+                            );
           if (iVar5 == 0) goto LAB_004431bd;
           iVar5 = core_course_cpp_CCourse_importCRS_FUN_00442d70(this_ptr,local_4fc);
         } while (iVar5 == 0);
@@ -136,16 +137,17 @@ void __cdecl core_course_cpp_CCourse_showEditorMenu_FUN_00443040(CCourse *this_p
         } while (cVar1 != '\0');
       }
       else {
-        puVar7 = &DAT_0066eb50;
-        pcVar3 = local_3f8;
+        pcVar3 = g_CourseLastBonPath;
+        pcVar8 = local_3f8;
         for (iVar5 = 0x41; iVar5 != 0; iVar5 = iVar5 + -1) {
-          *(uint *)pcVar3 = *puVar7;
-          puVar7 = puVar7 + (uint)bVar13 * -2 + 1;
-          pcVar3 = pcVar3 + (uint)bVar13 * -8 + 4;
+          *(uint *)pcVar8 = *(uint *)pcVar3;
+          pcVar3 = pcVar3 + ((uint)bVar13 * -2 + 1) * 4;
+          pcVar8 = pcVar8 + (uint)bVar13 * -8 + 4;
         }
         do {
           iVar5 = shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420
-                            (g_CEditorToolsPtr,"Import .BON file",0x619310,local_3f8);
+                            (g_CEditorToolsPtr,"Import .BON file","*.bon",local_3f8,1
+                            );
           if (iVar5 == 0) goto LAB_004431bd;
           iVar5 = core_course_cpp_CCourse_importBON_FUN_00442bc0(this_ptr,local_3f8);
         } while (iVar5 == 0);
@@ -204,23 +206,23 @@ void __cdecl core_course_cpp_CCourse_showEditorMenu_FUN_00443040(CCourse *this_p
           core_xform_cpp_eulerToQuaternion_FUN_005f7b20(&local_44,&local_84);
           local_74.w = local_84.w;
           puVar9 = (uint *)((int)&local_74 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);
-          puVar7 = (uint *)((int)&local_84 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);
+          puVar6 = (uint *)((int)&local_84 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);
           *(uint *)((int)&local_74 + (uint)bVar13 * -8 + 4) =
                *(uint *)((int)&local_84 + (uint)bVar13 * -8 + 4);
-          *puVar9 = *puVar7;
-          puVar9[(uint)bVar13 * -2 + 1] = puVar7[(uint)bVar13 * -2 + 1];
+          *puVar9 = *puVar6;
+          puVar9[(uint)bVar13 * -2 + 1] = puVar6[(uint)bVar13 * -2 + 1];
           iVar5 = 0;
           for (local_14 = 0; local_14 < this_ptr->len; local_14 = local_14 + 1) {
             core_xform_cpp_multiplyQuaternion_FUN_005f7640
                       (&local_74,(CQuaternion4f *)((int)&(this_ptr->frames->orient).w + iVar5),
                        &local_54);
-            pfVar6 = (float *)((int)&(this_ptr->frames->orient).w + iVar5);
-            pfVar10 = pfVar6 + (uint)bVar13 * -2 + 1;
-            *pfVar6 = local_54.w;
-            pfVar6 = (float *)((int)&local_54 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);
+            pfVar7 = (float *)((int)&(this_ptr->frames->orient).w + iVar5);
+            pfVar10 = pfVar7 + (uint)bVar13 * -2 + 1;
+            *pfVar7 = local_54.w;
+            pfVar7 = (float *)((int)&local_54 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);
             *pfVar10 = *(float *)((int)&local_54 + (uint)bVar13 * -8 + 4);
-            pfVar10[(uint)bVar13 * -2 + 1] = *pfVar6;
-            (pfVar10 + (uint)bVar13 * -2 + 1)[(uint)bVar13 * -2 + 1] = pfVar6[(uint)bVar13 * -2 + 1]
+            pfVar10[(uint)bVar13 * -2 + 1] = *pfVar7;
+            (pfVar10 + (uint)bVar13 * -2 + 1)[(uint)bVar13 * -2 + 1] = pfVar7[(uint)bVar13 * -2 + 1]
             ;
             iVar5 = iVar5 + 0x1c;
           }
@@ -273,14 +275,14 @@ void __cdecl core_course_cpp_CCourse_showEditorMenu_FUN_00443040(CCourse *this_p
                        (CVector3f *)((int)&(this_ptr->frames->orient).w + iVar5));
             local_38.z = 0.0;
             core_xform_cpp_eulerToQuaternion_FUN_005f7b20(&local_38,&local_64);
-            pfVar6 = (float *)((int)&(this_ptr->frames->orient).w + iVar5);
+            pfVar7 = (float *)((int)&(this_ptr->frames->orient).w + iVar5);
             iVar5 = iVar5 + 0x1c;
-            pfVar10 = pfVar6 + (uint)bVar13 * -2 + 1;
-            *pfVar6 = local_64.w;
-            pfVar6 = (float *)((int)&local_64 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);
+            pfVar10 = pfVar7 + (uint)bVar13 * -2 + 1;
+            *pfVar7 = local_64.w;
+            pfVar7 = (float *)((int)&local_64 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);
             *pfVar10 = *(float *)((int)&local_64 + (uint)bVar13 * -8 + 4);
-            pfVar10[(uint)bVar13 * -2 + 1] = *pfVar6;
-            (pfVar10 + (uint)bVar13 * -2 + 1)[(uint)bVar13 * -2 + 1] = pfVar6[(uint)bVar13 * -2 + 1]
+            pfVar10[(uint)bVar13 * -2 + 1] = *pfVar7;
+            (pfVar10 + (uint)bVar13 * -2 + 1)[(uint)bVar13 * -2 + 1] = pfVar7[(uint)bVar13 * -2 + 1]
             ;
             local_18 = local_18 + 1;
           } while (local_18 < this_ptr->len);

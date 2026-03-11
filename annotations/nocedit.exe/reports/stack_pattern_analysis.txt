@@ -89,10 +89,6 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     File: cockpit/ckptutil.c, Suspects: 0
     - [stack_alignment] at 00433c99: AND ESP,0xfffffff8
 
-  crt_io.c_getcwd_FUN_00608d20
-    File: crt/io.c, Suspects: 1
-    - [alt_frame_pointer] at 00608da2: MOV ESI,ESP
-
   crt_process.c_build_file_info_env_FUN_0060ffd0
     File: crt/process.c, Suspects: 2
     - [alt_frame_pointer] at 00610075: MOV EDI,ESP
@@ -102,6 +98,10 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 0061014b: MOV EDI,ESP
     - [alt_frame_pointer] at 0061017c: MOV EDI,ESP
     - [alt_frame_pointer] at 006101a4: MOV ESI,ESP
+
+  crt_watcom.c_getcwd_FUN_00608d20
+    File: crt/watcom.c, Suspects: 1
+    - [alt_frame_pointer] at 00608da2: MOV ESI,ESP
 
   crt_thread.c_create_thread_with_sync_FUN_0060f960
     File: crt/thread.c, Suspects: 3
@@ -294,5 +294,5 @@ CORRELATION: Stack patterns vs suspect counts
 
 Functions with stack patterns tend to have more suspects:
 
-  With stack patterns:    avg 10.5 suspects/function
+  With stack patterns:    avg 10.4 suspects/function
   Without stack patterns: avg 2.1 suspects/function

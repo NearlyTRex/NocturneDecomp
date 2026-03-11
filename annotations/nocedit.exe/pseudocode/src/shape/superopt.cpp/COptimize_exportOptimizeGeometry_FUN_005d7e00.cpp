@@ -12,25 +12,28 @@ void __cdecl shape_superopt_cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00(CO
   double *pdVar1;
   char cVar2;
   CComplexPolygon *this_ptr_00;
-  uint uVar3;
-  uint uVar4;
-  int iVar5;
+  int iVar3;
+  int iVar4;
+  uint *puVar5;
   int iVar6;
   int iVar7;
-  int iVar8;
+  uint uVar8;
   uint uVar9;
   int iVar10;
-  uint uVar11;
-  int iVar12;
-  char *pcVar13;
-  char *pcVar14;
-  float10 fVar15;
-  uint in_stack_ffffffc4;
+  char *pcVar11;
+  char *pcVar12;
+  float10 fVar13;
+  uint local_3c;
   int local_38;
   uint local_34;
   uint local_30;
   uint *local_2c;
+  int local_28;
+  char *local_24;
+  uint local_20;
+  uint local_1c;
   uint local_18;
+  uint local_14;
   
   g_PolygonCount = 0;
   g_VertexCount = 0;
@@ -41,103 +44,108 @@ void __cdecl shape_superopt_cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00(CO
     local_38 = 0;
     do {
       this_ptr_00 = *(CComplexPolygon **)((int)this_ptr->complex_polygons + local_38);
-      local_2c = shape_superopt_cpp_CComplexPolygon_getConvexSubChains_FUN_005cbec0
-                           (this_ptr_00,(int *)&stack0xffffffc4);
-      iVar7 = shape_superopt_cpp_CComplexPolygon_setMaterialId_FUN_005cbf00
-                        (this_ptr_00,in_stack_ffffffc4);
+      puVar5 = shape_superopt_cpp_CComplexPolygon_getConvexSubChains_FUN_005cbec0
+                         (this_ptr_00,(int *)&local_3c);
+      iVar6 = shape_superopt_cpp_CComplexPolygon_getMaterialId_FUN_005cbf00(this_ptr_00);
+      local_24 = g_TriListTextureNames[iVar6];
       local_30 = 0;
-      if (in_stack_ffffffc4 != 0) {
+      if (local_3c != 0) {
 LAB_005d7e9e:
-        uVar3 = local_2c[1];
-        uVar4 = *local_2c;
-        if (20000 < g_VertexCount + uVar4) {
+        local_2c = puVar5;
+        local_14 = local_2c[1];
+        local_1c = *local_2c;
+        if (20000 < g_VertexCount + local_1c) {
           g_CurrentFilename = "..\\shape\\superopt.cpp";
           g_CurrentLineNumber = 0x25b3;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Too many points!");
         }
-        uVar9 = 0;
-        if (uVar4 != 0) {
-          iVar10 = g_VertexCount * 0x14;
-          uVar11 = uVar3;
+        uVar8 = 0;
+        if (local_1c != 0) {
+          iVar6 = g_VertexCount * 0x14;
+          uVar9 = local_14;
           do {
-            uVar9 = uVar9 + 1;
-            *(float *)((int)&g_LoadedVertices[0].vertex.x + iVar10) =
-                 (float)*(double *)(uVar11 + 0x10);
-            *(float *)((int)&g_LoadedVertices[0].vertex.y + iVar10) =
-                 (float)*(double *)(uVar11 + 0x18);
-            *(float *)((int)&g_LoadedVertices[0].vertex.z + iVar10) =
-                 (float)*(double *)(uVar11 + 0x20);
-            iVar10 = iVar10 + 0x14;
-            uVar11 = uVar11 + 0x60;
-          } while (uVar9 < uVar4);
+            uVar8 = uVar8 + 1;
+            *(float *)((int)&g_LoadedVertices[0].vertex.x + iVar6) =
+                 (float)*(double *)(uVar9 + 0x10);
+            *(float *)((int)&g_LoadedVertices[0].vertex.y + iVar6) =
+                 (float)*(double *)(uVar9 + 0x18);
+            *(float *)((int)&g_LoadedVertices[0].vertex.z + iVar6) =
+                 (float)*(double *)(uVar9 + 0x20);
+            iVar6 = iVar6 + 0x14;
+            uVar9 = uVar9 + 0x60;
+          } while (uVar8 < local_1c);
         }
         local_18 = 1;
-        uVar9 = this_ptr->max_polygon_sides - 1;
+        local_20 = local_1c - 1;
+        uVar8 = this_ptr->max_polygon_sides - 1;
         do {
-          uVar11 = uVar9;
-          if (uVar4 <= uVar9) {
-            uVar11 = uVar4 - 1;
+          uVar9 = uVar8;
+          if (local_1c <= uVar8) {
+            uVar9 = local_20;
           }
           if (19999 < g_PolygonCount) {
             g_CurrentFilename = "..\\shape\\superopt.cpp";
             g_CurrentLineNumber = 0x25c1;
             core_main_c_displayErrorAndQuit_FUN_00506f10("Too many polys!");
           }
-          iVar10 = g_PolygonCount;
-          g_ModelPolygonData[g_PolygonCount].polygon_type = 1;
-          g_ModelPolygonData[iVar10].part_assignment = 0;
-          pcVar14 = g_ModelPolygonData[iVar10].texture_name;
-          pcVar13 = g_TriListTextureNames[iVar7];
-          do {
-            cVar2 = *pcVar13;
-            *pcVar14 = cVar2;
-            if (cVar2 == '\0') break;
-            cVar2 = pcVar13[1];
-            pcVar13 = pcVar13 + 2;
-            pcVar14[1] = cVar2;
-            pcVar14 = pcVar14 + 2;
-          } while (cVar2 != '\0');
-          pcVar14 = g_ModelPolygonData[g_PolygonCount].lightmap_name;
-          pcVar13 = g_TriListTextureNames[iVar7];
-          do {
-            cVar2 = *pcVar13;
-            *pcVar14 = cVar2;
-            if (cVar2 == '\0') break;
-            cVar2 = pcVar13[1];
-            pcVar13 = pcVar13 + 2;
-            pcVar14[1] = cVar2;
-            pcVar14 = pcVar14 + 2;
-          } while (cVar2 != '\0');
           iVar6 = g_PolygonCount;
-          iVar8 = g_PolygonCount * 0x184;
+          g_ModelPolygonData[g_PolygonCount].polygon_type = 1;
+          g_ModelPolygonData[iVar6].part_assignment = 0;
+          pcVar12 = g_ModelPolygonData[iVar6].texture_name;
+          pcVar11 = local_24;
+          do {
+            cVar2 = *pcVar11;
+            *pcVar12 = cVar2;
+            if (cVar2 == '\0') break;
+            cVar2 = pcVar11[1];
+            pcVar11 = pcVar11 + 2;
+            pcVar12[1] = cVar2;
+            pcVar12 = pcVar12 + 2;
+          } while (cVar2 != '\0');
+          pcVar12 = g_ModelPolygonData[g_PolygonCount].lightmap_name;
+          pcVar11 = local_24;
+          do {
+            cVar2 = *pcVar11;
+            *pcVar12 = cVar2;
+            if (cVar2 == '\0') break;
+            cVar2 = pcVar11[1];
+            pcVar11 = pcVar11 + 2;
+            pcVar12[1] = cVar2;
+            pcVar12 = pcVar12 + 2;
+          } while (cVar2 != '\0');
+          iVar4 = g_PolygonCount;
+          local_28 = g_PolygonCount * 0x184;
           g_ModelPolygonData[g_PolygonCount].vertex_indices[0] = g_VertexCount;
-          fVar15 = (float10)256;
-          g_ModelPolygonData[iVar6].uv_u[0] = (float)((float10)*(double *)(uVar3 + 0x40) * fVar15);
-          iVar5 = g_VertexCount;
-          iVar12 = local_18 * 0x60 + uVar3;
-          iVar10 = local_18 + g_VertexCount;
-          uVar9 = 1;
-          g_ModelPolygonData[iVar6].uv_v[0] = (float)((float10)*(double *)(uVar3 + 0x48) * fVar15);
-          if (iVar10 <= (int)(iVar5 + uVar11)) {
-            fVar15 = (float10)256;
+          fVar13 = (float10)256;
+          g_ModelPolygonData[iVar4].uv_u[0] =
+               (float)((float10)*(double *)(local_14 + 0x40) * fVar13);
+          iVar3 = g_VertexCount;
+          iVar10 = local_18 * 0x60 + local_14;
+          iVar6 = local_18 + g_VertexCount;
+          uVar8 = 1;
+          g_ModelPolygonData[iVar4].uv_v[0] =
+               (float)((float10)*(double *)(local_14 + 0x48) * fVar13);
+          if (iVar6 <= (int)(iVar3 + uVar9)) {
+            fVar13 = (float10)256;
+            iVar7 = local_28;
             do {
-              *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar8 + 4) = iVar10;
-              *(float *)((int)g_ModelPolygonData[0].uv_u + iVar8 + 4) =
-                   (float)((float10)*(double *)(iVar12 + 0x40) * fVar15);
-              pdVar1 = (double *)(iVar12 + 0x48);
-              uVar9 = uVar9 + 1;
-              iVar12 = iVar12 + 0x60;
-              iVar10 = iVar10 + 1;
-              *(float *)((int)g_ModelPolygonData[0].uv_v + iVar8 + 4) =
-                   (float)((float10)*pdVar1 * fVar15);
-              iVar8 = iVar8 + 4;
-            } while (iVar10 <= (int)(iVar5 + uVar11));
+              *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar7 + 4) = iVar6;
+              *(float *)((int)g_ModelPolygonData[0].uv_u + iVar7 + 4) =
+                   (float)((float10)*(double *)(iVar10 + 0x40) * fVar13);
+              pdVar1 = (double *)(iVar10 + 0x48);
+              uVar8 = uVar8 + 1;
+              iVar10 = iVar10 + 0x60;
+              iVar6 = iVar6 + 1;
+              *(float *)((int)g_ModelPolygonData[0].uv_v + iVar7 + 4) =
+                   (float)((float10)*pdVar1 * fVar13);
+              iVar7 = iVar7 + 4;
+            } while (iVar6 <= (int)(iVar3 + uVar9));
           }
-          g_ModelPolygonData[iVar6].vertex_indices_count = uVar9;
+          g_ModelPolygonData[iVar4].vertex_indices_count = uVar8;
           g_PolygonCount = g_PolygonCount + 1;
-          if (uVar4 - 1 <= uVar11) goto LAB_005d80e9;
-          uVar9 = uVar11 + this_ptr->max_polygon_sides + -2;
-          local_18 = uVar11;
+          if (local_20 <= uVar9) goto LAB_005d80e9;
+          uVar8 = uVar9 + this_ptr->max_polygon_sides + -2;
+          local_18 = uVar9;
         } while( true );
       }
 LAB_005d80b9:
@@ -149,8 +157,9 @@ LAB_005d80b9:
   return;
 LAB_005d80e9:
   local_2c = local_2c + 2;
-  g_VertexCount = g_VertexCount + uVar4;
+  g_VertexCount = g_VertexCount + local_1c;
   local_30 = local_30 + 1;
-  if (in_stack_ffffffc4 <= local_30) goto LAB_005d80b9;
+  puVar5 = local_2c;
+  if (local_3c <= local_30) goto LAB_005d80b9;
   goto LAB_005d7e9e;
 }

@@ -4,31 +4,31 @@
       {
         "category": "format_error",
         "column": 49,
-        "line": 78,
+        "line": 79,
         "message": "format specifies type 'char *' but the argument has type 'SFoundFileInfo *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 55,
-        "line": 84,
+        "line": 85,
         "message": "format specifies type 'char *' but the argument has type 'SFoundFileInfo *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 55,
-        "line": 90,
+        "line": 91,
         "message": "format specifies type 'char *' but the argument has type 'SFoundFileInfo *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 40,
-        "line": 96,
+        "line": 97,
         "message": "format specifies type 'char *' but the argument has type 'SFoundFileInfo *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 65,
-        "line": 101,
+        "line": 102,
         "message": "format specifies type 'char *' but the argument has type 'SFoundFileInfo *' [-Werror,-Wformat]"
       }
     ],
@@ -37,17 +37,17 @@
   },
   "complexity": {
     "assembly_lines": 365,
-    "complexity_score": 168,
+    "complexity_score": 169,
     "cross_reference_count": 3,
     "function_call_count": 12,
     "global_count": 19,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 133,
+    "pseudocode_lines": 134,
     "suspect_count": 3,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 498
+    "total_lines": 499
   },
   "cross_references": [
     {
@@ -443,7 +443,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 75,
+      "line": 76,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "else if (*(int *)((int)&(local_a08.directory_entries)->timestamp + iVar2) + 2U <",
@@ -451,7 +451,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 82,
+      "line": 83,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&(local_a08.directory_entries)->timestamp + iVar2) - 2U) {",
@@ -459,7 +459,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 87,
+      "line": 88,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "else if (local_234.file_size == *(uint *)((int)&(local_a08.directory_entries)->size + iVar2))",

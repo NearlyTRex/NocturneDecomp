@@ -2,11 +2,11 @@
 // Address: 00447c20
 // Address Range: [[00447c20, 00447e7d]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_cramtex_cpp_CCramTex_renderTextureEntry_FUN_00447c20(CCramTex *this_ptr,int visualization_mode,int draw_x,int draw_y,int draw_width,int draw_height)
+// Signature: void __cdecl shape_cramtex_cpp_CCramTex_renderTextureEntry_FUN_00447c20(CCramTex *this_ptr,int show_final_placement,int draw_x,int draw_y,int draw_right,int draw_bottom)
 
 #include "nocturne.h"
 
-void __cdecl shape_cramtex_cpp_CCramTex_renderTextureEntry_FUN_00447c20(CCramTex *this_ptr,int visualization_mode,int draw_x,int draw_y,int draw_width,int draw_height)
+void __cdecl shape_cramtex_cpp_CCramTex_renderTextureEntry_FUN_00447c20(CCramTex *this_ptr,int show_final_placement,int draw_x,int draw_y,int draw_right,int draw_bottom)
 
 {
   int iVar1;
@@ -18,7 +18,7 @@ void __cdecl shape_cramtex_cpp_CCramTex_renderTextureEntry_FUN_00447c20(CCramTex
   int local_18;
   
   __STK();
-  if (visualization_mode == 0) {
+  if (show_final_placement == 0) {
     if (g_CramMapNumber != this_ptr->assigned_map_number) {
       return;
     }
@@ -36,8 +36,8 @@ void __cdecl shape_cramtex_cpp_CCramTex_renderTextureEntry_FUN_00447c20(CCramTex
     iVar4 = this_ptr->final_bottom;
     iVar6 = this_ptr->final_left;
   }
-  iVar1 = draw_width - draw_x;
-  iVar2 = draw_height - draw_y;
+  iVar1 = draw_right - draw_x;
+  iVar2 = draw_bottom - draw_y;
   engine_2d_c_fillRectColor_FUN_00403170
             ((iVar1 * iVar6) / g_CramCurrentAcceptableSize + draw_x,
              draw_y + (iVar2 * iVar5) / g_CramCurrentAcceptableSize,
@@ -49,7 +49,7 @@ void __cdecl shape_cramtex_cpp_CCramTex_renderTextureEntry_FUN_00447c20(CCramTex
   engine_2d_c_fillRectColor_FUN_00403170
             (iVar6,iVar5,((local_18 - iVar3) * iVar1) / g_CramCurrentAcceptableSize + draw_x + -1,
              ((iVar4 - iVar3) * iVar2) / g_CramCurrentAcceptableSize + draw_y + -1,2);
-  if (visualization_mode != 0) {
+  if (show_final_placement != 0) {
     if (this_ptr->rotation_applied == 0) {
       iVar4 = this_ptr->width;
     }
@@ -64,10 +64,10 @@ void __cdecl shape_cramtex_cpp_CCramTex_renderTextureEntry_FUN_00447c20(CCramTex
     }
     engine_2d_c_fillRectColor_FUN_00403170
               (iVar6,iVar5,
-               draw_x + ((draw_width - draw_x) *
+               draw_x + ((draw_right - draw_x) *
                         ((g_CramPaddingCalculation + iVar4 + this_ptr->final_left) -
                         g_CramPaddingCalculation / 2)) / g_CramCurrentAcceptableSize + -1,
-               ((draw_height - draw_y) *
+               ((draw_bottom - draw_y) *
                ((g_CramPaddingCalculation + iVar1 + this_ptr->final_top) -
                g_CramPaddingCalculation / 2)) / g_CramCurrentAcceptableSize + draw_y + -1,0xfa);
   }

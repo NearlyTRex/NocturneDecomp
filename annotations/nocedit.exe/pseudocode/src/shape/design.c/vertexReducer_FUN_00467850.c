@@ -2,11 +2,11 @@
 // Address: 00467850
 // Address Range: [[00467850, 00467e64]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_design_c_vertexReducer_FUN_00467850(float tolerance,float angle_tolerance,int display_progress)
+// Signature: void __cdecl shape_design_c_vertexReducer_FUN_00467850(float tolerance,float angle_tolerance,int ui_mode)
 
 #include "nocturne.h"
 
-void __cdecl shape_design_c_vertexReducer_FUN_00467850(float tolerance,float angle_tolerance,int display_progress)
+void __cdecl shape_design_c_vertexReducer_FUN_00467850(float tolerance,float angle_tolerance,int ui_mode)
 
 {
   byte bVar1;
@@ -17,7 +17,6 @@ void __cdecl shape_design_c_vertexReducer_FUN_00467850(float tolerance,float ang
   byte bVar7;
   float10 fVar8;
   double dVar9;
-  char *in_stack_fffffebc;
   byte local_134 [256];
   int local_34;
   int local_30;
@@ -35,7 +34,7 @@ void __cdecl shape_design_c_vertexReducer_FUN_00467850(float tolerance,float ang
   local_20 = 0;
   local_1c = g_PolygonCount;
   if (0 < g_VertexCount) {
-    if (display_progress < 1) {
+    if (ui_mode < 1) {
       local_134[0] = 0;
     }
     else {
@@ -55,10 +54,10 @@ void __cdecl shape_design_c_vertexReducer_FUN_00467850(float tolerance,float ang
       pbVar6 = pbVar6 + (uint)bVar7 * -2 + 1;
     } while (bVar1 != 0);
     if (iVar2 != -2) {
-      dVar9 = _strtod(in_stack_fffffebc);
+      dVar9 = _strtod((char *)local_134);
       tolerance = (float)dVar9;
     }
-    if (display_progress < 1) {
+    if (ui_mode < 1) {
       if (0.0 <= angle_tolerance) {
         local_20 = 1;
       }
@@ -83,12 +82,12 @@ void __cdecl shape_design_c_vertexReducer_FUN_00467850(float tolerance,float ang
           pbVar6 = pbVar6 + (uint)bVar7 * -2 + 1;
         } while (bVar1 != 0);
         if (iVar2 != -2) {
-          dVar9 = _strtod(in_stack_fffffebc);
+          dVar9 = _strtod((char *)local_134);
           angle_tolerance = (float)dVar9;
         }
       }
     }
-    if (-1 < display_progress) {
+    if (-1 < ui_mode) {
       wincore_windll_cpp_clearScreen_FUN_005b3e70();
       engine_2d_c_drawText_FUN_00401fd0("Scanning vertices...",0,0);
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
@@ -189,7 +188,7 @@ LAB_00467b49:
     _sprintf
               ((char *)local_134,"Original vertices: %d    New total: %d\n\nTotal passes: %d\n\nPolys removed: %d",local_24,g_VertexCount,
                g_VertexOptimizationPasses);
-    if (0 < display_progress) {
+    if (0 < ui_mode) {
       pcVar4 = "\n\nHit a key...";
       iVar2 = -1;
       pbVar6 = local_134;
@@ -212,11 +211,11 @@ LAB_00467b49:
         pbVar5 = pbVar5 + 2;
       } while (bVar7 != 0);
     }
-    if (-1 < display_progress) {
+    if (-1 < ui_mode) {
       engine_2d_c_drawText_FUN_00401fd0((char *)local_134,0,0);
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     }
-    if (0 < display_progress) {
+    if (0 < ui_mode) {
       wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
     }
   }

@@ -406,7 +406,7 @@ section .text
     PUSH 0xbf800000                     ; 0046f6c5
     PUSH 0x3dcccccd                     ; 0046f6ca
     CALL shape_design.c_vertexReducer_FUN_00467850 ; 0046f6cf
-        ;   XREF to: 00467850 (UNCONDITIONAL_CALL)  ; void shape_design.c_vertexReducer_FUN_00467850(float tolerance, float angle_tolerance, int display_progress)
+        ;   XREF to: 00467850 (UNCONDITIONAL_CALL)  ; void shape_design.c_vertexReducer_FUN_00467850(float tolerance, float angle_tolerance, int ui_mode)
     ADD ESP,0xc                         ; 0046f6d4
     JMP 0x0046f86f                      ; 0046f6d7
         ;   XREF to: 0046f86f (UNCONDITIONAL_JUMP)  ; LAB_0046f86f

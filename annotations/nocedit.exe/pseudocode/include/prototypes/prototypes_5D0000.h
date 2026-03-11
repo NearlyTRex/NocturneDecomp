@@ -169,7 +169,7 @@ CP3D * __stack2_esi shape_superopt_cpp_CP3D_add_FUN_005d8520(CP3D *this_ptr,CP3D
 CP3D * __cdecl shape_superopt_cpp_CP3D_increment_FUN_005d8570(CP3D *this_ptr,CP3D *other);
 CP3D * __stack2_esi shape_superopt_cpp_CP3D_add_FUN_005d85a0(CP3D *this_ptr,CP3D *a,CP3D *b);
 CP3D * __stack2_esi shape_superopt_cpp_CP3D_multiply_FUN_005d85f0(CP3D *this_ptr,CP3D *a,CP3D *b);
-CP3D * __stackdbl_esi shape_superopt_cpp_CP3D_FUN_005d8630(CP3D *this_ptr,double scalar,CP3D *result);
+CP3D * __stackdbl_esi shape_superopt_cpp_CP3D_scale_FUN_005d8630(CP3D *this_ptr,double scalar,CP3D *result);
 int __cdecl shape_superopt_cpp_CP3D_isEqual_FUN_005d8670(CP3D *this_ptr,CP3D *other);
 int __cdecl shape_superopt_cpp_CP3D_isNotEqual_FUN_005d86a0(CP3D *this_ptr,CP3D *other);
 double __cdecl shape_superopt_cpp_CP3D_distance_FUN_005d86d0(CP3D *this_ptr,CP3D *other);

@@ -49,7 +49,8 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_00504160(CLevelLoader *this_
     }
     engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0048c650(g_CDemonRendererPtr2,local_18)
     ;
-    engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(g_CDemonRendererPtr2);
+    engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0
+              (g_CDemonRendererPtr2,&g_ZeroVector.f);
     local_24.x = 0.0;
     local_24.y = 0.0;
     local_24.z = 36.0;

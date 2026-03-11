@@ -43,9 +43,9 @@ int __cdecl CLever::renderOpaque(CLever *this_ptr);
 // Address: 00504d80
 CBoundingBox3D * __cdecl CLever::getBoundingBox(CLever *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_lever.cpp_CLever_FUN_00504dd0
+// Original: core_lever.cpp_CLever_getHandlePosition_FUN_00504dd0
 // Address: 00504dd0
-CVector3f * __cdecl CLever(CLever *this_ptr,CVector3f *param_2);
+CVector3f * __cdecl CLever::getHandlePosition(CLever *this_ptr,CVector3f *out_position);
 
 // Original: core_lever.cpp_CLever_archive_FUN_00504e80
 // Address: 00504e80

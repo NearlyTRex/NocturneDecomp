@@ -15,7 +15,6 @@ double __cdecl strtod_main(char *str,char **endptr)
   int iVar4;
   uint uVar5;
   uint uVar6;
-  char *in_stack_00000004;
   ulonglong local_34;
   byte uStack_2c;
   byte bStack_2b;
@@ -23,7 +22,7 @@ double __cdecl strtod_main(char *str,char **endptr)
   ulonglong local_20;
   ulonglong local_18;
   
-  iVar4 = parseFloatString(in_stack_00000004,&local_34,(char **)str);
+  iVar4 = parseFloatString(str,&local_34,endptr);
   if (iVar4 == 0) {
     uVar5 = 0;
     uVar1 = 0;

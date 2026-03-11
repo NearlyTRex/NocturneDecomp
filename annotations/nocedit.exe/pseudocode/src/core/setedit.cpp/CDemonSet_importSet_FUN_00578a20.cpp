@@ -35,7 +35,7 @@ void __cdecl core_setedit_cpp_CDemonSet_importSet_FUN_00578a20(CDemonSet *this_p
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
   iVar2 = shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420
-                    (g_CEditorToolsPtr,"Import set",0x646ae0,local_3d8);
+                    (g_CEditorToolsPtr,"Import set","*.s3d",local_3d8,1);
   if (iVar2 == 0) {
     return;
   }

@@ -101,7 +101,7 @@ section .text
     PUSH EBP                            ; 00447b25 | g_CramSortedTextureEntries | DAT_0083c228
     INC EBX                             ; 00447b26
     CALL shape_cramtex.cpp_CCramTex_renderTextureEntry_FUN_00447c20 ; 00447b27
-        ;   XREF to: 00447c20 (UNCONDITIONAL_CALL)  ; void shape_cramtex.cpp_CCramTex_renderTextureEntry_FUN_00447c20(CCramTex * this_ptr, int visualization_mode, int draw_x, int draw_y, ...)
+        ;   XREF to: 00447c20 (UNCONDITIONAL_CALL)  ; void shape_cramtex.cpp_CCramTex_renderTextureEntry_FUN_00447c20(CCramTex * this_ptr, int show_final_placement, int draw_x, int draw_y, ...)
     ADD ESP,0x18                        ; 00447b2c
     ADD EBP,0x4c                        ; 00447b2f
     CMP EBX,ESI                         ; 00447b32

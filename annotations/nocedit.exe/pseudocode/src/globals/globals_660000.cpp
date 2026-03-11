@@ -7702,6 +7702,13 @@ WatcomVirtualBaseDescriptor g_FStreamBase_VirtualBaseLayout = {.flags = 0x000000
 // char[104]
 char g_PropertyNamePrefix[] = "";
 
+// char[256]
+char g_CourseLastBonPath[] = "";
+
+// char[264]
+char g_CourseLastPthPath[] = "";
+char g_CourseLastCrsPath[] = "";
+
 // char[300]
 char g_LocalizationTemplate[] = "";
 
@@ -7826,14 +7833,6 @@ strstreambuf_vtable g_StrstreambufVTable = {
     .destructor = (cpp_streambuf_destructor *)crt_strstream_cpp_strstreambuf_dtor_FUN_0060bb7f,
     .doallocate = (cpp_streambuf_doallocate *)crt_strstream_cpp_strstreambuf_doallocate_FUN_0060bc22
 };
-
-// undefined4
-undefined4 DAT_0066e940 = 0;
-undefined4 DAT_0066e944 = 0;
-undefined4 DAT_0066ea48 = 0;
-undefined4 DAT_0066ea4c = 0;
-undefined4 DAT_0066eb50 = 0;
-undefined4 DAT_0066eb54 = 0;
 
 // void*
 void* g_IFStream_FStreamBaseDestructor = (void*)crt_fstream_cpp_ifstream_dtor_FUN_005ff856;
